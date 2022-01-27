@@ -24,7 +24,7 @@ import StatInput from "../StatInput";
 export default function CharacterOverviewPane() {
   const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
-  const charEle = data.getStr(input.charEle).value as ElementKey
+  const charEle = data.get(input.charEle).value as ElementKey
   const weaponTypeKey = characterSheet.weaponTypeKey
   const level = data.get(input.lvl).value
   const ascension = data.get(input.asc).value
@@ -129,7 +129,7 @@ const statBreakpoint = {
   xs: 12, sm: 6, md: 6, lg: 4,
 } as const
 
-function StatDisplayContent({ nodes, statBreakpoint, extra }: { nodes: ReadNode[], statBreakpoint: object, extra?: Displayable }) {
+function StatDisplayContent({ nodes, statBreakpoint, extra }: { nodes: ReadNode<number>[], statBreakpoint: object, extra?: Displayable }) {
   const { data, oldData } = useContext(DataContext)
   return <Grid container columnSpacing={{ xs: 2, lg: 3 }} rowSpacing={1}>
     {nodes.map((rn, i) => <Grid item key={i} {...statBreakpoint} >

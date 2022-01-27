@@ -54,8 +54,8 @@ export async function getDisplayHeader(data: UIData, sectionKey: string): Promis
       }
     }
   } else {
-    const cKey = data.getStr(input.charKey).value
-    const cEle = data.getStr(input.charEle).value
+    const cKey = data.get(input.charKey).value
+    const cEle = data.get(input.charEle).value
     if (!cKey || !cEle) return errHeader
     const sheet = await CharacterSheet.get(cKey as CharacterKey)
     const talentKey = ["normal", "charged", "plunging"].includes(sectionKey) ? "auto" : sectionKey

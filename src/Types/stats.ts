@@ -6,8 +6,8 @@ import { IConditionalValue, IConditionalValues } from "./IConditional";
 type Flat = number
 type Percent = number
 
-/** 
- * Stats that are not affected by artifacts 
+/**
+ * Stats that are not affected by artifacts
  * @deprecated
  */
 export interface BasicStats {
@@ -60,7 +60,7 @@ export type ICalculatedStats = BasicStats & Required<BonusStats> & {
   [key: string]: any
 }
 
-/** 
+/**
  * Stats that can be increased from artifacts
  * @deprecated
  */
@@ -75,9 +75,9 @@ export type BonusStats = {
   partyActive?: BonusStats
 }
 
-/** 
+/**
  * @deprecated
  */
 export interface Modifier {
-  [key: string]: string[][]
+  [key: string]: readonly (readonly string[])[]
 }

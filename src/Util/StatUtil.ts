@@ -32,8 +32,8 @@ export function mergeStats(initialStats: BonusStats, stats: BonusStats | undefin
 }
 export function mergeModifiers(dest: Modifier, partial: Modifier) {
   for (const [key, paths] of Object.entries(partial)) {
-    dest[key] = dest[key] ?? []
-    dest[key].push(...paths)
+    dest[key] = dest[key] ?? [];
+    (dest[key] as any).push(...paths)
   }
 }
 function mergePartyStats(initialStats: ICalculatedStats, stats: BonusStats | undefined) {

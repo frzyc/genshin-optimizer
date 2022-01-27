@@ -83,7 +83,7 @@ export function layeredAssignment(obj, keys: string[], value) {
   return obj
 }
 //get the value in a nested object, giving array of path
-export function objPathValue(obj: object, keys: string[]) {
+export function objPathValue(obj: object, keys: readonly string[]) {
   return keys.reduce((a, k) => a?.[k], obj)
 }
 //delete the value denoted by the path. Will also delete empty objects as well.
@@ -130,5 +130,5 @@ export function range(from, to) {
 }
 
 export function assertUnreachable(value: never): never {
-  throw new Error("Should not reach this")
+  throw new Error(`Should not reach this with value ${value}`)
 }

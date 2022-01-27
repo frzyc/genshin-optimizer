@@ -1,11 +1,11 @@
 import { BonusStats, BasicStats } from "./stats";
 import { IFieldDisplay } from "./IFieldDisplay_WR";
-import { Node } from "../Formula/type";
+import { ReadNode, NumNode, StrNode } from "../Formula/type";
 import { ArtifactSetKey, CharacterKey, WeaponKey } from "./consts";
 
 export default interface IConditional {
   path: string[],
-  value: StringReadNode,
+  value: ReadNode<string>,
   name: Displayable;
   header?: {
     title: Displayable;
@@ -13,7 +13,7 @@ export default interface IConditional {
     action?: Displayable;
   }
   description?: Displayable;
-  canShow?: Node;
+  canShow?: NumNode | StrNode;
   states: {
     [key: string]: {
       name?: Displayable,

@@ -127,7 +127,7 @@ export default function WeaponDisplayCard({
           <CloseButton onClick={onClose} />
         </Grid>}
         {database === localDatabase && <Grid item >
-          <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, data.getStr(input.charKey).value as CharacterKey)} />
+          <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, data.get(input.charKey).value as CharacterKey)} />
         </Grid>}
       </Grid>
     </CardContent>

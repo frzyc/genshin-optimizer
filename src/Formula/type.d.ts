@@ -4,22 +4,22 @@ import type { ArtifactSetKey, CharacterKey, ElementKey, ElementKeyWithPhy, React
 import type { Path } from "../Util/KeyPathUtil"
 import type { Input } from "./index"
 
-type Move = "normal" | "charged" | "plunging" | "skill" | "burst"
-type Stat = MainStatKey | SubstatKey
-
-export type Node =
-  ConstantNode | ComputeNode | StringMatchNode |
-  SubscriptNode | LookupNode |
-  ReadNode | DataNode
-
-export type StringNode =
-  StringConstantNode | StringPriorityNode |
-  StringReadNode | StringMatchStringNode | StringLookupNode
-
-interface NodeBase {
-  operands: Node[]
+export type NumNode = ComputeNode | ThresholdNode<NumNode> |
+  DataNode<NumNode> |
+  LookupNode<NumNode> | MatchNode<NumNode, StrNode> | MatchNode<NumNode, NumNode> |
+  SubscriptNode<number> |
+  ReadNode<number> | ConstantNode<number>
+export type StrNode = StrPrioNode |
+  DataNode<StrNode> |
+  LookupNode<StrNode> |
+  MatchNode<StrNode, StrNode> | MatchNode<StrNode, NumNode> |
+  ReadNode<string | undefined> | ConstantNode<string | undefined>
+export type AnyNode = NumNode | StrNode | {
+  operation: string
+  operands: readonly AnyNode[]
   info?: Info
 }
+
 interface Info {
   key?: string
   namePrefix?: string
@@ -29,79 +29,70 @@ interface Info {
 }
 export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "success"
 
-export interface ConstantNode extends NodeBase {
-  operation: "const"
-  value: number
+interface Base {
+  operands: readonly AnyNode[]
+  info?: Info
 }
-export interface ComputeNode extends NodeBase {
-  operation: Operation
+export interface StrPrioNode extends Base {
+  operation: "prio"
+  operands: readonly StrNode[]
 }
-export interface SubscriptNode extends NodeBase {
-  operation: "subscript"
-  list: number[]
-}
-export interface StringMatchNode extends NodeBase {
-  operation: "match" | "unmatch"
-  string1: StringNode
-  string2: StringNode
-}
-export interface LookupNode extends NodeBase {
+export interface LookupNode<N> extends Base {
   operation: "lookup"
-  string: StringNode
-  table: Dict<string | undefined, Node>
+  operands: readonly [index: StrNode] | readonly [index: StrNode, defaultNode: N]
+  table: Dict<string, N>
 }
-
-export interface ReadNode extends NodeBase {
-  operation: "read"
-  path: Path<NodeData, Node | undefined>
-  accumulation: CommutativeMonoidOperation | "unique"
-}
-export interface DataNode extends NodeBase {
+export interface DataNode<N> extends Base {
   operation: "data"
+  operands: readonly [N]
   data: Data
-
   reset?: true
 }
-
-interface StringNodeBase {
-  operands: StringNode[]
+export interface ComputeNode extends Base {
+  operation: Operation
+  operands: readonly NumNode[]
 }
-export interface StringConstantNode extends StringNodeBase {
-  operation: "sconst"
-  value: string | undefined
+export interface ThresholdNode<N> extends Base {
+  operation: "threshold_add"
+  operands: readonly [NumNode, NumNode, N]
 }
-export interface StringPriorityNode extends StringNodeBase {
-  operation: "prio"
+export interface MatchNode<N, M = StrNode> extends Base {
+  operation: "match"
+  operands: readonly [v1: M, v2: M, match: N, unmatch: N]
+  emptyOn?: "match" | "unmatch"
 }
-export interface StringMatchStringNode extends StringNodeBase {
-  operation: "smatch"
+export interface SubscriptNode<V> extends Base {
+  operation: "subscript"
+  operands: readonly [index: NumNode]
+  list: readonly V[]
 }
-export interface StringReadNode extends StringNodeBase {
-  operation: "sread"
-  path: Path<StringFormulaTemplate, StringNode>
-
-  accumulation?: never
+export interface ReadNode<V> extends Base {
+  operation: "read"
+  operands: readonly []
+  accu?: V extends number ? CommutativeMonoidOperation : undefined
+  path: readonly string[]
+  type: V extends number ? "number" : V extends string ? "string" : undefined
 }
-export interface StringLookupNode extends StringNodeBase {
-  operation: "slookup"
-  table: Dict<string | undefined, StringNode>
+export interface ConstantNode<V> extends Base {
+  operation: "const"
+  operands: readonly []
+  value: V
+  type: V extends number ? "number" : V extends string ? "string" : undefined
 }
 
 export type Data = Input & DynamicNumInput
-
-export type DisplaySub<T = Node> = { [key in string]?: T }
-interface DynamicNumInput<T = Node> {
+export type DisplaySub<T = NumNode> = { [key in string]?: T }
+interface DynamicNumInput<T = NumNode> {
   display?: {
     [key: string]: DisplaySub
   }
   conditional?: NodeData<T>
 }
-export interface NodeData<T = Node> {
+export interface NodeData<T = NumNode> {
   [key: string]: typeof key extends "operation" ? never : (NodeData<T> | T)
 }
 
 export type CommutativeMonoidOperation = "min" | "max" | "add" | "mul"
 export type Operation = CommutativeMonoidOperation |
-  "res" |         // Resistance from base resistance
-  "sum_frac" |    // linear fractional; operands[0] / (operands[0] + operands[1])
-  "threshold_add" // operands[0] <= operands[1] ? operands[2] : 0
+  "res" |    // Resistance from base resistance
+  "sum_frac" // linear fractional; operands[0] / (operands[0] + operands[1])

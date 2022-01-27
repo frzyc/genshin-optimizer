@@ -1,9 +1,9 @@
-import { input } from "."
+import { effectiveReaction, input } from "./index"
 import ColorText from "../Components/ColoredText"
 import KeyMap from "../KeyMap"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
-import { ComputeNode, Data, DataNode, DisplaySub, LookupNode, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode, Variant } from "./type"
+import { ComputeNode, Data, DataNode, DisplaySub, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, Variant } from "./type"
 
 const shouldWrap = true
 
@@ -22,12 +22,12 @@ export function valueString(value: number, unit: "%" | "flat", fixed = -1): stri
   }
   return `${value.toFixed(fixed)}${unit}`
 }
-export interface NodeDisplay {
+export interface NodeDisplay<V = number> {
   /** Leave this here to make sure one can use `crawlObject` on hierarchy of `NodeDisplay` */
   operation: true
   namePrefix?: string
   key?: string
-  value: number
+  value: V
   /** Whether the node fails the conditional test (`threshold_add`, `match`, etc.) or consists solely of empty nodes */
   isEmpty: boolean
   unit: "%" | "flat"
@@ -41,9 +41,8 @@ export class UIData {
   children = new Map<Data, UIData>()
 
   data: Data[]
-  nodes = new Map<Node, ContextNodeDisplay>()
-  string = new Map<StringNode, ContextString>()
-  processed = new Map<Node, NodeDisplay>()
+  nodes = new Map<NumNode | StrNode, ContextNodeDisplay<number | string | undefined>>()
+  processed = new Map<NumNode | StrNode, NodeDisplay<number | string | undefined>>()
 
   display: any = undefined
 
@@ -68,83 +67,61 @@ export class UIData {
     this.display = {}
     for (const data of this.data) {
       if (!data.display) continue
-      crawlObject(data.display, [], (x: any) => x.operation, (x: Node, key: string[]) =>
+      crawlObject(data.display, [], (x: any) => x.operation, (x: NumNode, key: string[]) =>
         layeredAssignment(this.display, key, this.get(x)))
     }
     const it = input.total
     const basicNodes = [it.atk, it.hp, it.def, it.eleMas, it.critRate_, it.critDMG_, it.heal_, it.enerRech_]
-    if (this.getStr(input.weaponType).value !== "catalyst") basicNodes.push(it.physical_dmg_)
-    basicNodes.push(it[`${this.getStr(input.charEle).value}_dmg_`])
+    if (this.get(input.weaponType).value !== "catalyst") basicNodes.push(it.physical_dmg_)
+    basicNodes.push(it[`${this.get(input.charEle).value}_dmg_`])
     const dns = basicNodes.map(n => this.get(n))
     this.display.basic = Object.fromEntries(dns.map(n => [n.key, n]))
     return this.display
   }
-  get(node: Node): NodeDisplay {
+  get(node: NumNode): NodeDisplay
+  get(node: StrNode): NodeDisplay<string | undefined>
+  get(node: NumNode | StrNode): NodeDisplay<number | string | undefined>
+  get(node: NumNode | StrNode): NodeDisplay<number | string | undefined> {
     const old = this.processed.get(node)
     if (old) return old
 
-    // Detect loops in dev build
-    const visited = (process.env.NODE_ENV === "development") ? new Set<Node>() : undefined
-    const result = computeNodeDisplay(this.computeNode(node, visited))
-
+    const result = computeNodeDisplay(this.computeNode(node))
     this.processed.set(node, result)
     return result
   }
-  getStr(node: StringNode): ContextString {
-    const old = this.string.get(node)
-    if (old) return old
-
-    const { operation } = node
-    let result: ContextString
-    switch (operation) {
-      case "sconst": result = { value: node.value }; break
-      case "sread": result = this.readFirstString(node.path) ?? {}; break
-      case "prio": {
-        const operands = node.operands.map(x => this.getStr(x)).filter(x => x.value)
-        result = { value: operands[0]?.value, }
-        break
-      }
-      case "smatch": {
-        const [str1, str2] = node.operands.slice(0, 2).map(x => this.getStr(x).value)
-        result = this.getStr(str1 === str2 ? node.operands[2] : node.operands[3])
-        break
-      }
-      case "slookup": {
-        const str = this.getStr(node.operands[0])
-        const tmp = node.table[str.value!] ?? node.operands[1]
-        result = tmp ? this.getStr(tmp) : {}
-        break
-      }
-      default: assertUnreachable(operation)
-    }
-
-    this.string.set(node, result)
-    return result
-  }
-
-  private computeNode(node: Node, visited: Set<Node> | undefined): ContextNodeDisplay {
+  private computeNode(node: NumNode): ContextNodeDisplay
+  private computeNode(node: StrNode): ContextNodeDisplay<string | undefined>
+  private computeNode(node: NumNode | StrNode): ContextNodeDisplay<number | string | undefined>
+  private computeNode(node: NumNode | StrNode): ContextNodeDisplay<number | string | undefined> {
     const old = this.nodes.get(node)
     if (old) return old
 
-    if (visited) {
-      if (visited.has(node))
-        throw new Error("Found Loop")
-      visited.add(node)
-    }
-
     const { operation, info } = node
-    let result: ContextNodeDisplay
+    let result: ContextNodeDisplay<number | string | undefined>
     switch (operation) {
       case "add": case "mul": case "min": case "max":
       case "res": case "sum_frac": case "threshold_add":
-        result = this._compute(node, visited); break
+        result = this._compute(node); break
       case "const": result = this._constant(node.value); break
-      case "subscript": result = this._subscript(node, visited); break
-      case "read": result = this._read(node, visited); break
-      case "data": result = this._data(node, visited); break
-      case "match": case "unmatch": result = this._match(node, visited); break
-      case "lookup": result = this._lookup(node, visited); break
+      case "subscript": result = this._subscript(node); break
+      case "read": result = this._read(node); break
+      case "data": result = this._data(node); break
+      case "match": result = this._match(node); break
+      case "lookup": result = this._lookup(node); break
+      case "prio": {
+        const first = node.operands.find(x => this.computeNode(x).value !== undefined)
+        if (first) result = this.computeNode(first)
+        else result = illformed
+        break
+      }
       default: assertUnreachable(operation)
+    }
+
+    if (node === input.hit.reaction && result.value === "vaporize") {
+      console.log(this.data, node, result)
+    }
+    if (node === effectiveReaction && result.value !== undefined) {
+      console.log(node, this.get(input.hit.reaction), this.get(input.hit.ele), result)
     }
 
     if (info) {
@@ -165,8 +142,8 @@ export class UIData {
         delete result.assignment
         result.dependencies = new Set()
       }
-      if (result.key && result.key !== '_')
-        result.name = createName(result)
+      if (result.key && result.key !== '_' && typeof result.value === "number")
+        result.name = createName(result as ContextNodeDisplay)
       if (result.name && result.formula)
         result.assignment = createAssignFormula(result.name, result.formula)
       if (result.name && (result.pivot || !result.dependencies.size))
@@ -177,54 +154,54 @@ export class UIData {
     return result
   }
 
-  private readAll(path: string[], visited: Set<Node> | undefined): ContextNodeDisplay[] {
-    return this.data.map(x => objPathValue(x, path) as Node).filter(x => x).map(x => this.computeNode(x, visited))
+  private readAll(path: readonly string[]): ContextNodeDisplay<number | string | undefined>[] {
+    return this.data.map(x => objPathValue(x, path) as NumNode | StrNode).filter(x => x).map(x => this.computeNode(x))
   }
-  private readFirstString(path: string[]): ContextString | undefined {
-    const data = this.data.map(x => objPathValue(x, path) as StringNode).find(x => x)
-    return data && this.getStr(data)
+  private readFirst(path: readonly string[]): ContextNodeDisplay<number | string | undefined> | undefined {
+    const data = this.data.map(x => objPathValue(x, path) as NumNode | StrNode).find(x => x)
+    return data && this.computeNode(data)
   }
 
-  private _read(node: ReadNode, visited: Set<Node> | undefined): ContextNodeDisplay {
-    const { path } = node, nodes = this.readAll(path, visited)
-
-    const result = (node.accumulation === "unique")
-      ? (nodes[0] ?? illformed)
-      : this._accumulate(node.accumulation, nodes)
+  private _read(node: ReadNode<number | string | undefined>): ContextNodeDisplay<number | string | undefined> {
+    const { path } = node
+    const result = (node.accu === undefined)
+      ? this.readFirst(path) ?? (node.type === "string" ? this._constant(undefined) : illformed)
+      : this._accumulate(node.accu, this.readAll(path) as ContextNodeDisplay[])
     return result
   }
-  private _lookup(node: LookupNode, visited: Set<Node> | undefined): ContextNodeDisplay {
-    const key = this.getStr(node.string).value
-    const selected = node.table[key!] ?? node.operands[0]
-    if (!selected) throw new Error(`Lookup Fail with key ${key}`)
-
-    return this.computeNode(selected, visited)
+  private _lookup(node: LookupNode<NumNode | StrNode>): ContextNodeDisplay<number | string | undefined> {
+    const key = this.computeNode(node.operands[0]).value
+    const selected = node.table[key!] ?? node.operands[1]
+    if (!selected) {
+      console.log(node, node.operands[1])
+      throw new Error(`Lookup Fail with key ${key}`)
+    }
+    return this.computeNode(selected)
   }
-  private _match(node: StringMatchNode, visited: Set<Node> | undefined): ContextNodeDisplay {
-    const string1 = this.getStr(node.string1).value
-    const string2 = this.getStr(node.string2).value
-    const base = this.computeNode(node.operands[0], visited)
-
-    return makeEmpty(base, ((string1 === string2) !== (node.operation === "match")))
+  private _match(node: MatchNode<StrNode | NumNode, StrNode | NumNode>): ContextNodeDisplay<number | string | undefined> {
+    const [v1, v2, match, unmatch] = node.operands.map(x => this.computeNode(x))
+    const matching = v1.value === v2.value
+    let result = matching ? match : unmatch
+    return makeEmpty(result, (matching && node.emptyOn === "match") || (!matching && node.emptyOn === "unmatch"), result.value)
   }
-  private _data(node: DataNode, visited: Set<Node> | undefined): ContextNodeDisplay {
+  private _data(node: DataNode<NumNode | StrNode>): ContextNodeDisplay<number | string | undefined> {
     let child = this.children.get(node.data)
     if (!child) {
       child = new UIData(node.data, node.reset ? this.origin : this)
       this.children.set(node.data, child)
     }
-    return child.computeNode(node.operands[0], visited && new Set())
+    return child.computeNode(node.operands[0])
   }
-  private _compute(node: ComputeNode, visited: Set<Node> | undefined): ContextNodeDisplay {
+  private _compute(node: ComputeNode | ThresholdNode<NumNode>): ContextNodeDisplay {
     const { operation, operands } = node
-    return this._accumulate(operation, operands.map(x => this.computeNode(x, visited)))
+    return this._accumulate(operation, operands.map(x => this.computeNode(x)))
   }
-  private _subscript(node: SubscriptNode, visited: Set<Node> | undefined): ContextNodeDisplay {
-    const operand = this.computeNode(node.operands[0], visited)
+  private _subscript(node: SubscriptNode<number>): ContextNodeDisplay {
+    const operand = this.computeNode(node.operands[0])
     const value = node.list[operand.value] ?? NaN
     return this._constant(value)
   }
-  private _constant(value: number): ContextNodeDisplay {
+  private _constant<V>(value: V): ContextNodeDisplay<V> {
     return {
       value, pivot: false,
       empty: false,
@@ -233,7 +210,7 @@ export class UIData {
     }
   }
 
-  private _accumulate(operation: ComputeNode["operation"], operands: ContextNodeDisplay[]): ContextNodeDisplay {
+  private _accumulate(operation: ComputeNode["operation"] | "threshold_add", operands: ContextNodeDisplay[]): ContextNodeDisplay {
     let variant: Variant | undefined
     switch (operation) {
       case "add": case "mul": case "min": case "max":
@@ -274,7 +251,7 @@ export class UIData {
       }
       case "threshold_add":
         const value = operands[0].value, threshold = operands[1].value
-        return makeEmpty(operands[2], value < threshold)
+        return makeEmpty(operands[2], value < threshold, 0)
       default: assertUnreachable(operation)
     }
     switch (operation) {
@@ -328,13 +305,13 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
   })
   return { display: mergeFormulaComponents(predisplay), dependencies: [...dependencies] }
 }
-function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["variant"] {
+function mergeVariants<V>(operands: ContextNodeDisplay<V>[]): ContextNodeDisplay<V>["variant"] {
   const unique = new Set(operands.map(x => x.variant))
   if (unique.size > 1) unique.delete(undefined)
   if (unique.size > 1) unique.delete("physical")
   return unique.values().next().value
 }
-function computeNodeDisplay(node: ContextNodeDisplay): NodeDisplay {
+function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
   const { key, namePrefix, dependencies, value, variant, formula, assignment, empty } = node
   return {
     operation: true,
@@ -368,16 +345,14 @@ function createAssignFormula(name: Displayable, formula: Displayable) {
 }
 //*/
 
-interface ContextString { value?: string }
-
-interface ContextNodeDisplay {
+interface ContextNodeDisplay<V = number> {
   key?: string
   namePrefix?: string
 
   pivot: boolean
   empty: boolean
 
-  value: number
+  value: V
   variant?: Variant
 
   dependencies: Set<Displayable>
@@ -396,11 +371,14 @@ const illformed: ContextNodeDisplay = {
   dependencies: new Set(),
   mayNeedWrapping: false
 }
-function makeEmpty(node: ContextNodeDisplay, shouldMakeEmpty: boolean): ContextNodeDisplay {
+function makeEmpty(node: ContextNodeDisplay<number>, shouldMakeEmpty: boolean, emptyValue: number): ContextNodeDisplay<number>
+function makeEmpty(node: ContextNodeDisplay<string | undefined>, shouldMakeEmpty: boolean, emptyValue: string | undefined): ContextNodeDisplay<string | undefined>
+function makeEmpty(node: ContextNodeDisplay<number | string | undefined>, shouldMakeEmpty: boolean, emptyValue: number | string | undefined): ContextNodeDisplay<number | string | undefined>
+function makeEmpty(node: ContextNodeDisplay<number | string | undefined>, shouldMakeEmpty: boolean, emptyValue: number | string | undefined): ContextNodeDisplay<number | string | undefined> {
   if (!shouldMakeEmpty) return node
 
-  const result: ContextNodeDisplay = {
-    value: 0, pivot: false, empty: true, dependencies: new Set(), mayNeedWrapping: false
+  const result: ContextNodeDisplay<number | string | undefined> = {
+    value: emptyValue, pivot: false, empty: true, dependencies: new Set(), mayNeedWrapping: false
   }
   if (node.key) result.key = node.key
   if (node.variant) result.variant = node.variant

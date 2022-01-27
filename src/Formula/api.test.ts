@@ -2,9 +2,8 @@ import { computeUIData, dataObjForArtifact, dataObjForCharacter, dataObjForWeapo
 import { data as sucroseData, dmgFormulas } from "../Data/Characters/Sucrose/index_WR"
 import { data as moonglowData } from "../Data/Weapons/Catalyst/EverlastingMoonglow/index_WR"
 import artifact from "../Data/Artifacts/index_WR"
-import { common, input } from "./index";
-import { constant } from "./internal";
-import { customRead } from "./utils";
+import { common } from "./index";
+import { constant, customRead } from "./utils";
 
 const charData = dataObjForCharacter({
   equippedArtifacts: { "circlet": "", "flower": "", "goblet": "", "plume": "", "sands": "" },

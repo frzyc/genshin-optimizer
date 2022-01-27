@@ -2,8 +2,8 @@ import { amplifyingReactions, transformativeReactions } from "../StatConstants"
 import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
 import { allArtifactSets, allElementsWithPhy, allSlotKeys } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
-import { Info, Node, ReadNode, StringNode, StringReadNode } from "./type"
-import { frac, lookup, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringConst, stringLookup, stringMatch, stringPrio, stringRead, sum, constant, unit } from "./utils"
+import { Info, NumNode, StrNode, ReadNode } from "./type"
+import { frac, lookup, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, sum, constant, unit, match } from "./utils"
 
 const allMainSubStats = [...new Set([...allMainStatKeys, ...allSubstats] as const)]
 const allElements = allElementsWithPhy
@@ -40,16 +40,16 @@ const custom = setReadNodeKeys({
 const rd = setReadNodeKeys({
   charKey: stringRead(), charEle: stringRead(), infusion: stringRead(), weaponType: stringRead(),
 
-  lvl: read("unique", { key: "level" }), constellation: read("unique"), asc: read("unique"),
+  lvl: read(undefined, { key: "level" }), constellation: read(undefined), asc: read(undefined),
 
   talent: objectFromKeyMap(["base", "boost", "total", "index"] as const, type =>
-    objectFromKeyMap(["auto", "skill", "burst"] as const, _ => read(type === "boost" ? "add" : "unique"))),
+    objectFromKeyMap(["auto", "skill", "burst"] as const, _ => read(type === "boost" ? "add" : undefined))),
 
-  ...objectFromKeyMap(["hp", "atk", "def"] as const, key => read("unique", { ...charInfo, key, asConst })),
-  special: read("unique", { ...charInfo, asConst }),
+  ...objectFromKeyMap(["hp", "atk", "def"] as const, key => read(undefined, { ...charInfo, key, asConst })),
+  special: read(undefined, { ...charInfo, asConst }),
 
   base: objectFromKeyMap(["atk", "hp", "def"] as const, key =>
-    read(key === "atk" ? "add" : "unique", { key, namePrefix: "Base", pivot })),
+    read(key === "atk" ? "add" : undefined, { key, namePrefix: "Base", pivot })),
   premod: objectFromKeyMap(allMainSubStats, _ => read("add")),
   total: {
     dmgBonus: {
@@ -58,7 +58,7 @@ const rd = setReadNodeKeys({
         read("add", { ...custom.bonus.dmg[key].info, ...totalInfo, })),
     },
     ...objectFromKeyMap(allMainSubStats, key => read("add", { ...totalInfo, key })),
-    cappedCritRate: read("unique", { ...totalInfo, key: "critRate_", namePrefix: "Capped", pivot }), // Total Crit Rate capped to [0%, 100%]
+    cappedCritRate: read(undefined, { ...totalInfo, key: "critRate_", namePrefix: "Capped", pivot }), // Total Crit Rate capped to [0%, 100%]
   },
 
   art: {
@@ -72,20 +72,20 @@ const rd = setReadNodeKeys({
   weapon: {
     key: stringRead(), type: stringRead(),
 
-    lvl: read("unique", { ...weaponInfo }), asc: read("unique", { ...weaponInfo }),
-    refineIndex: read("unique", { ...weaponInfo }), refinement: read("unique", { ...weaponInfo }),
-    main: read("unique", { ...weaponInfo }),
-    sub: read("unique", { ...weaponInfo }),
-    sub2: read("unique", { ...weaponInfo }),
+    lvl: read(undefined, { ...weaponInfo }), asc: read(undefined, { ...weaponInfo }),
+    refineIndex: read(undefined, { ...weaponInfo }), refinement: read(undefined, { ...weaponInfo }),
+    main: read(undefined, { ...weaponInfo }),
+    sub: read(undefined, { ...weaponInfo }),
+    sub2: read(undefined, { ...weaponInfo }),
   },
 
   team: { infusion: stringRead() },
 
   enemy: {
     def: read("add", { key: "enemyDef_multi", pivot }),
-    resMulti: objectFromKeyMap(allElements, _ => read("unique")),
+    resMulti: objectFromKeyMap(allElements, _ => read(undefined)),
 
-    level: read("unique", { key: "enemyLevel" }),
+    level: read(undefined, { key: "enemyLevel" }),
     res: objectFromKeyMap(allElements, ele => read("add", { key: `${ele}_enemyRes_`, variant: ele })),
     defRed: read("add", { key: "enemyDefRed_", pivot }),
     defIgn: read("add", { key: "enemyDefIgn_", pivot }),
@@ -95,7 +95,7 @@ const rd = setReadNodeKeys({
     ele: stringRead(), reaction: stringRead(), move: stringRead(), hitMode: stringRead(),
     base: read("add", { key: "base" }),
 
-    dmg: read("unique"), trans: read("unique"),
+    dmg: read(undefined), trans: read(undefined),
   },
 
   misc: objectFromKeyMap([
@@ -119,14 +119,14 @@ for (const ele of allElements) {
 /** Base Amplifying Bonus */
 const baseAmpBonus = sum(unit, prod(25 / 9, frac(total.eleMas, 1400)))
 /** Effective reaction, taking into account the hit's element */
-const effectiveReaction = stringLookup(hit.ele, {
-  pyro: stringLookup(hit.reaction, { vaporize: stringConst("vaporize"), melt: stringConst("melt") }),
-  hydro: stringMatch(hit.reaction, "vaporize", "vaporize", undefined),
-  cryo: stringMatch(hit.reaction, "melt", "melt", undefined),
-})
+export const effectiveReaction = lookup(hit.ele, {
+  pyro: lookup(hit.reaction, { vaporize: constant("vaporize"), melt: constant("melt") }, undefined),
+  hydro: match(hit.reaction, "vaporize", "vaporize", undefined),
+  cryo: match(hit.reaction, "melt", "melt", undefined),
+}, undefined)
 
 const common = {
-  base: objectFromKeyMap(["hp", "atk", "def"], key => rd[key] as Node),
+  base: objectFromKeyMap(["hp", "atk", "def"], key => rd[key] as NumNode),
   talent: {
     total: objectFromKeyMap(["auto", "skill", "burst"] as const, talent =>
       sum(rd.talent.base[talent], rd.talent.boost[talent])),
@@ -157,9 +157,9 @@ const common = {
           sum(total.dmgBonus[ele], art[`${ele}_dmg_`])), 0)
       ),
       ...objectFromKeyMap(Object.keys(custom.bonus.dmg), key =>
-        custom.bonus.dmg[key] as Node),
+        custom.bonus.dmg[key] as NumNode),
     },
-    ...objectFromKeyMap(allMainSubStats, key => premod[key] as Node),
+    ...objectFromKeyMap(allMainSubStats, key => premod[key] as NumNode),
     cappedCritRate: max(min(total.critRate_, unit), naught),
   },
 
@@ -167,8 +167,8 @@ const common = {
     ele: stringPrio(
       rd.infusion,
       rd.team.infusion,
-      stringMatch(hit.move, stringConst("charged"), rd.charEle,
-        stringMatch(rd.weaponType, stringConst("catalyst"), rd.charEle, stringConst(undefined))
+      match(hit.move, constant("charged"), rd.charEle,
+        match(rd.weaponType, constant("catalyst"), rd.charEle, constant(undefined))
       ),
     ),
     dmg: prod(
@@ -178,10 +178,10 @@ const common = {
         hit: unit,
         critHit: sum(unit, total.critDMG_),
         avgHit: sum(unit, prod(total.cappedCritRate, total.critDMG_)),
-      }, undefined),
+      }, NaN),
       enemy.def,
       lookup(hit.ele,
-        objectFromKeyMap(allElements, ele => enemy.resMulti[ele]), undefined),
+        objectFromKeyMap(allElements, ele => enemy.resMulti[ele]), NaN),
       lookup(effectiveReaction, {
         melt: lookup(hit.ele, {
           pyro: prod(2, baseAmpBonus),
@@ -206,16 +206,16 @@ const common = {
   }
 } as const
 
-type _StrictInput<T, Num, Str> = T extends ReadNode ? Num : T extends StringReadNode ? Str : { [key in keyof T]: _StrictInput<T[key], Num, Str> }
-type _Input<T, Num, Str> = T extends ReadNode ? Num : T extends StringReadNode ? Str : { [key in keyof T]?: _Input<T[key], Num, Str> }
+type _StrictInput<T, Num, Str> = T extends ReadNode<number> ? Num : T extends ReadNode<string> ? Str : { [key in keyof T]: _StrictInput<T[key], Num, Str> }
+type _Input<T, Num, Str> = T extends ReadNode<number> ? Num : T extends ReadNode<string> ? Str : { [key in keyof T]?: _Input<T[key], Num, Str> }
 function typecheck<A, B extends A>(): B | void { }
 
-export type StrictInput<Num = Node, Str = StringNode> = _StrictInput<typeof rd, Num, Str>
-export type Input<Num = Node, Str = StringNode> = _Input<typeof rd, Num, Str>
-export type Custom<Num = Node, Str = StringNode> = _Input<typeof custom, Num, Str>
+export type StrictInput<Num = NumNode, Str = StrNode> = _StrictInput<typeof rd, Num, Str>
+export type Input<Num = NumNode, Str = StrNode> = _Input<typeof rd, Num, Str>
+export type Custom<Num = NumNode, Str = StrNode> = _Input<typeof custom, Num, Str>
 
 // Make sure that `common` contains only entries matching `rd` and `str`.
-typecheck<typeof common, StrictInput<Node, StringNode>>()
+typecheck<typeof common, StrictInput<NumNode, StrNode>>()
 
 export {
   rd as input, common, custom

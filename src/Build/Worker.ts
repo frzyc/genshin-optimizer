@@ -1,11 +1,11 @@
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../Types/consts';
 import { optimize, precompute } from '../Formula/optimization';
-import type { Node } from '../Formula/type'
+import type { NumNode } from '../Formula/type'
 import type { MainStatKey, SubstatKey } from '../Types/artifact';
 
 let id: string
 let artifactsBySlot: StrictDict<SlotKey, ArtifactBuildData[]>
-let nodes: Node[]
+let nodes: NumNode[]
 
 let maxNumBuilds: number
 let threshold = -Infinity
@@ -113,9 +113,9 @@ export interface Setup {
   command: "setup"
   id: string
   artifactsBySlot: ArtifactsBySlot
-  optimizationTarget: Node
-  filters: { value: Node, min: number }[]
-  plotBase: Node | undefined,
+  optimizationTarget: NumNode
+  filters: { value: NumNode, min: number }[]
+  plotBase: NumNode | undefined,
   maxBuildsToShow: number
 }
 export interface Request {

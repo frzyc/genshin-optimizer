@@ -6,9 +6,9 @@ import { allElementsWithPhy, ArtifactSetKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, layeredAssignment, objectFromKeyMap } from "../Util/Util";
 import { input } from "./index";
-import { Data, DisplaySub, Node, ReadNode } from "./type";
+import { Data, DisplaySub, NumNode, ReadNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
-import { frac, constant, infoMut, percent, prod, stringConst, subscript, sum, unit } from "./utils";
+import { frac, constant, infoMut, percent, prod, subscript, sum, unit } from "./utils";
 
 function dataObjForArtifactSheet(
   key: ArtifactSetKey,
@@ -32,7 +32,7 @@ function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel: numbe
       ...Object.fromEntries(stats.map(([key, value]) =>
         key.endsWith("_") ? [key, percent(value / 100)] : [key, constant(value)])),
       [art.slotKey]: {
-        id: stringConst(art.id), set: stringConst(art.setKey)
+        id: constant(art.id), set: constant(art.setKey)
       },
     },
     artSet: {
@@ -62,7 +62,7 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
       level: constant(char.enemyOverride.enemyLevel ?? char.level),
     },
     hit: {
-      hitMode: stringConst(char.hitMode)
+      hitMode: constant(char.hitMode)
     }
   }
   if (char.enemyOverride.enemyDefRed_)
@@ -70,14 +70,14 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
   if (char.enemyOverride.enemyDefIgn_)
     result.enemy!.defIgn = percent(char.enemyOverride.enemyDefIgn_)
   if (char.elementKey) {
-    result.charEle = stringConst(char.elementKey)
+    result.charEle = constant(char.elementKey)
     result.display = {
       reaction: reactions[char.elementKey]
     }
   }
 
   crawlObject(char.conditional, ["conditional"], (x: any) => typeof x === "string", (x: string, keys: string[]) =>
-    layeredAssignment(result, keys, stringConst(x)))
+    layeredAssignment(result, keys, constant(x)))
   return result
 }
 function dataObjForWeapon(weapon: ICachedWeapon): Data {
@@ -94,12 +94,12 @@ function mergeData(data: Data[]): Data {
   function internal(data: any[], input: any, path: string[]): any {
     if (data.length <= 1) return data[0]
     if (data[0].operation) {
-      const accumulation = (input as ReadNode | undefined)?.accumulation ?? "unique"
-      if (accumulation === "unique") {
+      const accu = (input as ReadNode<number> | undefined)?.accu
+      if (accu === undefined) {
         if (data.length !== 1) throw new Error(`Multiple entries when merging \`unique\` for key ${path}`)
         return data[0]
       }
-      const result: Node = { operation: accumulation, operands: data, }
+      const result: NumNode = { operation: accu, operands: data, }
       return result
     } else {
       return Object.fromEntries([...new Set(data.flatMap(x => Object.keys(x) as string[]))]

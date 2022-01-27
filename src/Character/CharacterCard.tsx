@@ -22,6 +22,7 @@ import WeaponSheet from '../Weapon/WeaponSheet_WR';
 import CharacterSheet from './CharacterSheet_WR';
 import { ICachedArtifact } from '../Types/artifact_WR';
 import useCharUIData from '../ReactHooks/useCharUIData';
+import { NumNode } from '../Formula/type';
 
 type CharacterCardProps = {
   characterKey: CharacterKey | "",
@@ -62,8 +63,8 @@ export default function CharacterCard({ build, characterKey, artifactChildren, w
 }
 function Header({ onClick, characterSheet, data }:
   { onClick?: (characterKey: CharacterKey) => void, characterSheet: CharacterSheet, data: UIData }) {
-  const characterKey = data.getStr(input.charKey).value as CharacterKey
-  const characterEle = data.getStr(input.charEle).value as ElementKey
+  const characterKey = data.get(input.charKey).value as CharacterKey
+  const characterEle = data.get(input.charEle).value as ElementKey
   const characterLevel = data.get(input.lvl).value
   const constellation = data.get(input.constellation).value
   const ascension = data.get(input.asc).value
@@ -181,13 +182,13 @@ function ArtifactDisplay({ artifacts }: { artifacts: Record<SlotKey, ICachedArti
 }
 function Stats({ data }: { data: UIData }) {
   const statkeys = ["hp", "atk", "def", "eleMas", "critRate_", "critDMG_", "enerRech_",]
-  statkeys.push(`${data.getStr(input.charEle).value}_dmg_`)
-  if (data.getStr(input.weaponType).value !== "catalyst")
+  statkeys.push(`${data.get(input.charEle).value}_dmg_`)
+  if (data.get(input.weaponType).value !== "catalyst")
     statkeys.push("physical_dmg_")
 
   return <Box sx={{ width: "100%" }} >
     {statkeys.map(statKey => {
-      const stat = data.get(input.total[statKey])
+      const stat = data.get(input.total[statKey] as NumNode)
       const val = valueString(stat.value, stat.unit, stat.unit === "flat" ? 0 : undefined)
       return <Box sx={{ display: "flex" }} key={statKey}>
         <Typography flexGrow={1} color={`${stat.variant}.main`}><strong>{StatIcon[statKey]} {KeyMap.get(stat.key!)}</strong></Typography>

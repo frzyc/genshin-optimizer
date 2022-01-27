@@ -18,12 +18,13 @@ import { input } from "../../Formula";
 import { ElementKey } from "../../Types/consts";
 import KeyMap from '../../KeyMap'
 import { NodeDisplay, valueString } from '../../Formula/uiData'
+import { NumNode } from "../../Formula/type";
 export default function CharacterTalentPane() {
   const { data, character, characterSheet } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(character.key)
   const skillBurstList = [["auto", "Normal/Charged Attack"], ["skill", "Elemental Skill"], ["burst", "Elemental Burst"]] as [TalentSheetElementKey, string][]
   const passivesList: [tKey: TalentSheetElementKey, tText: string, asc: number][] = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
-  const charEle = data.getStr(input.charEle).value as ElementKey | undefined
+  const charEle = data.get(input.charEle).value as ElementKey | undefined
   const ascension = data.get(input.asc).value
   const constellation = data.get(input.constellation).value
   return <>
@@ -181,7 +182,7 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
   let header: Displayable | null = null
 
   if (talentKey in talent) {
-    const levelBoost = data.get(input.talent.boost[talentKey]).value
+    const levelBoost = data.get(input.talent.boost[talentKey] as NumNode).value
     const level = data.get(input.talent.total[talentKey]).value
     const asc = data.get(input.asc).value
     const setTalentLevel = (tKey, newTalentLevelKey) => {
@@ -198,7 +199,7 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
       <Divider />
     </>
   }
-  const talentSheet = characterSheet.getTalentOfKey(talentKey, data.getStr(input.charEle).value as ElementKey | undefined)
+  const talentSheet = characterSheet.getTalentOfKey(talentKey, data.get(input.charEle).value as ElementKey | undefined)
 
   return <CardLight sx={{ height: "100%" }}>
     {header}

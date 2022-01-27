@@ -24,7 +24,7 @@ export default class Formula_DEP {
     return s => Object.fromEntries(objs.map(([key, formulas]) =>
       [key, formulas.reduce((a, formula) => a + formula(s), 0)]))
   }
-  static getCurrent(path: string[], stat: IBaseStat): FormulaItem {
+  static getCurrent(path: readonly string[], stat: IBaseStat): FormulaItem {
     return resolve<any, (stat: IBaseStat) => FormulaItem>(Formula_DEP.formulas, path)(stat)
   }
 }

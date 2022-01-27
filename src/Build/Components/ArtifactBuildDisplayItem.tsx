@@ -22,12 +22,12 @@ export default function ArtifactBuildDisplayItem({ index, onClick, compareBuild,
   const { character, data, oldData } = dataContext
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   if (!character || !artifactSheets || !oldData) return null
-  const currentlyEquipped = allSlotKeys.every(slotKey => data.getStr(input.art[slotKey].id).value === oldData.getStr(input.art[slotKey].id).value)
+  const currentlyEquipped = allSlotKeys.every(slotKey => data.get(input.art[slotKey].id).value === oldData.get(input.art[slotKey].id).value)
   const statProviderContext = { ...dataContext }
   if (!compareBuild) statProviderContext.oldData = undefined
   const setToSlots: Partial<Record<ArtifactSetKey, SlotKey[]>> = {}
   allSlotKeys.forEach(slotKey => {
-    const set = data.getStr(input.art[slotKey].set).value as ArtifactSetKey | undefined
+    const set = data.get(input.art[slotKey].set).value as ArtifactSetKey | undefined
     if (!set) return
     if (setToSlots[set]) setToSlots[set]!.push(slotKey)
     else setToSlots[set] = [slotKey]

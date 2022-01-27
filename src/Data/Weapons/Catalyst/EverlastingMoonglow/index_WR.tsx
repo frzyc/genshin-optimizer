@@ -16,7 +16,7 @@ export const data = dataObjForWeaponSheet("EverlastingMoonglow", "catalyst", dat
   normalDmgInc
 }, {
   hit: {
-    base: match(input.hit.move, "normal", normalDmgInc)
+    base: match(input.hit.move, "normal", normalDmgInc, 0)
   }
 })
 const weapon: IWeaponSheet = {

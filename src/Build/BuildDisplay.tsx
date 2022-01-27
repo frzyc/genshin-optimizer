@@ -23,7 +23,7 @@ import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { DataContext, dataContextObj } from '../DataContext';
 import { input } from '../Formula';
-import { Data, Node } from '../Formula/type';
+import { Data, NumNode } from '../Formula/type';
 import { computeUIData, dataObjForArtifact, mergeData } from '../Formula/api';
 import { UIData } from '../Formula/uiData'
 import { GlobalSettingsContext } from '../GlobalSettings';
@@ -192,8 +192,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const generateBuilds = useCallback(async () => {
     if (!data || !dataWoArt || !optimizationTarget) return
     const workerData: Data = mergeData(dataWoArt)
-    const optimizationTargetNode: Node = objPathValue(data.getDisplay(), optimizationTarget) as Node
-    const valueFilter: { value: Node, minimum: number }[] = []
+    const optimizationTargetNode = objPathValue(data.getDisplay(), optimizationTarget) as NumNode
+    const valueFilter: { value: NumNode, minimum: number }[] = []
     const setFilters: Dict<ArtifactSetKey, number> = {}
 
     const t1 = performance.now()
@@ -211,7 +211,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     }
 
     let nodes = [optimizationTargetNode, ...valueFilter.map(x => x.value)]
-    let affine: Node[]
+    let affine: NumNode[]
     const minimum = [-Infinity, ...valueFilter.map(x => x.minimum)]
     {
       const compact = compactNodes([optimizationTargetNode, ...valueFilter.map(x => x.value)])

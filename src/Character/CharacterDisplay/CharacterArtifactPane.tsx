@@ -36,7 +36,7 @@ function CharacterArtifactPane() {
   const equipArts = useCallback(() => {
     if (!window.confirm("Do you want to equip this artifact build to this character?")) return
     if (!oldData) return
-    const newBuild = Object.fromEntries(allSlotKeys.map(s => [s, data.getStr(input.art[s].id).value])) as Record<SlotKey, string>
+    const newBuild = Object.fromEntries(allSlotKeys.map(s => [s, data.get(input.art[s].id).value])) as Record<SlotKey, string>
     database.equipArtifacts(character.key, newBuild)
   }, [character, data, oldData, database])
 
@@ -45,7 +45,7 @@ function CharacterArtifactPane() {
     if (!window.confirm("Do you want to move all currently equipped artifacts to inventory?")) return
     database.equipArtifacts(character.key, objectFromKeyMap(allSlotKeys, () => ""))
   }, [character, database])
-  const artIds = allSlotKeys.map(slotKey => data.getStr(input.art[slotKey].id).value)
+  const artIds = allSlotKeys.map(slotKey => data.get(input.art[slotKey].id).value)
   const artSetNums = Object.entries(input.artSet).map(([key, value]) => [key, data.get(value).value]) as [ArtifactSetKey, number][]
   return <>
     <CardLight sx={{ mb: 1 }}>

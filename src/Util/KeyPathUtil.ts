@@ -21,4 +21,4 @@ type PartialPath<Base, Value> = {
   [key in keyof Value]: PartialPath<Base, Value[key]> & (() => Path<Base, Value>)
 }
 // eslint-disable-next-line
-export type Path<Base, Value> = string[]
+export type Path<Base, Value> = readonly string[]

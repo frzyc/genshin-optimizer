@@ -16,7 +16,7 @@ export default function ConditionalDisplay({ conditional, hideHeader = false, hi
   const { data } = useContext(DataContext)
   const canShow = conditional.canShow ? !data.get(conditional.canShow).isEmpty : true
   if (!canShow) return null
-  const condVal = data.getStr(conditional.value).value
+  const condVal = data.get(conditional.value).value
 
   const description = !hideDesc && conditional.description
   const { icon, title, action } = conditional.header ?? {}

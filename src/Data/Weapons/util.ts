@@ -5,7 +5,7 @@ import { WeaponKey, WeaponTypeKey } from "../../Types/consts";
 import _weaponCurves from "../../Weapon/expCurve_gen.json";
 import { input } from "../../Formula";
 import { Data, DisplaySub } from "../../Formula/type";
-import { infoMut, prod, stringConst, subscript, sum } from "../../Formula/utils";
+import { infoMut, prod, constant, subscript, sum } from "../../Formula/utils";
 
 // TODO: Remove this conversion after changing the file format
 const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
@@ -21,7 +21,7 @@ export function dataObjForWeaponSheet(
     base: {},
     premod: {},
     weapon: {
-      key: stringConst(key), type: stringConst(type),
+      key: constant(key), type: constant(type),
     },
     display: {
       [`weapon:${key}`]: displayWeapon

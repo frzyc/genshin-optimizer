@@ -8,7 +8,7 @@ import { DataContext } from "../DataContext";
 import { custom, input } from "../Formula";
 import { valueString } from "../Formula/uiData";
 import KeyMap from '../KeyMap';
-import { allElementsWithPhy } from "../Types/consts";
+import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";
 import CardLight from "./Card/CardLight";
 import ColorText from "./ColoredText";
 import ExpandButton from "./ExpandButton";
@@ -62,10 +62,10 @@ export function EnemyExpandCard() {
   </CardLight>
 }
 
-export function EnemyResText({ element }: { element: string }) {
+export function EnemyResText({ element }: { element: ElementKeyWithPhy }) {
   const { data } = useContext(DataContext)
   const node = data.get(input.enemy.res[element])
-  const immune = node.value === Number.MAX_VALUE
+  const immune = !isFinite(node.value)
   const content = immune ? <span >{uncoloredEleIcons[element]} IMMUNE</span> :
     <span >{uncoloredEleIcons[element]}RES <strong>{valueString(node.value, node.unit)}</strong></span>
   return <ColorText color={element}>{content}</ColorText>
@@ -98,7 +98,7 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
     {allElementsWithPhy.map(eleKey => {
       const statKey = `${eleKey}_enemyRes_`
       const node = data.get(input.enemy.res[eleKey])
-      const elementImmunity = node.value === Number.MAX_VALUE
+      const elementImmunity = !isFinite(node.value)
       return <Grid item key={eleKey} {...bsProps}>
         <StatInput
           sx={{ bgcolor: t => t.palette.contentLight.main, width: "100%" }}

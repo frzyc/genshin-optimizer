@@ -13,8 +13,8 @@ export default function StatFilterCard({ statFilters = {}, setStatFilters, disab
   { statFilters: Dict<StatKey, number>, setStatFilters: (object: Dict<StatKey, number>) => void, disabled?: boolean }) {
   const { data } = useContext(DataContext)
   const statKeys: StatKey[] = ["atk", "hp", "def", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_"]
-  if (data.getStr(input.weaponType).value !== "catalyst") statKeys.push("physical_dmg_")
-  const charEle = data.getStr(input.charEle).value as ElementKey
+  if (data.get(input.weaponType).value !== "catalyst") statKeys.push("physical_dmg_")
+  const charEle = data.get(input.charEle).value as ElementKey
   statKeys.push(`${charEle}_dmg_`)
 
   const remainingKeys = statKeys.filter(key => !(Object.keys(statFilters) as any).some(k => k === key))

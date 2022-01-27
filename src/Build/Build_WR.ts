@@ -2,34 +2,43 @@ import { ArtCharDatabase } from "../Database/Database";
 import { dataObjForArtifact, mergeData } from "../Formula/api";
 import { forEachNodes, mapFormulas } from "../Formula/internal";
 import { allOperations, constantFold } from "../Formula/optimization";
-import { ConstantNode, Data, Node } from "../Formula/type";
+import { ConstantNode, Data, NumNode, StrNode } from "../Formula/type";
 import { customRead } from "../Formula/utils";
 import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
 import { assertUnreachable, objectFromKeyMap } from "../Util/Util";
 import { ArtifactsBySlot, Build, PlotData, RequestFilter } from "./Worker";
 
-export function compactNodes(nodes: Node[]): CompactNodes {
-  const affineNodes = new Set<Node>(), topLevelAffine = new Set<Node>()
+export function compactNodes(nodes: NumNode[]): CompactNodes {
+  const affineNodes = new Set<NumNode>(), topLevelAffine = new Set<NumNode>()
 
-  function visit(node: Node, isAffine: boolean) {
+  function visit(node: NumNode, isAffine: boolean) {
     if (isAffine) affineNodes.add(node)
-    else node.operands.forEach(op => affineNodes.has(op) && topLevelAffine.add(op))
+    else node.operands.forEach(_op => {
+      const op = _op as NumNode
+      affineNodes.has(op) && topLevelAffine.add(op)
+    })
   }
 
   forEachNodes(nodes, _ => { }, f => {
     const operation = f.operation
     switch (operation) {
-      case "read": visit(f, f.accumulation === "add"); break
+      case "read":
+        if (f.type !== "number")
+          throw new Error(`Found unsupported ${operation} node when computing affine nodes`)
+        visit(f, f.accu === "add"); break
       case "add": visit(f, f.operands.every(op => affineNodes.has(op))); break
       case "mul": {
         const nonConst = f.operands.filter(op => op.operation !== "const")
         visit(f, nonConst.length === 0 || (nonConst.length === 1 && affineNodes.has(nonConst[0])))
         break
       }
-      case "const": visit(f, true); break
+      case "const":
+        if (typeof f.value === "string" || f.value === undefined)
+          throw new Error(`Found constant ${f.value} while compacting`)
+        visit(f as NumNode, true); break
       case "res": case "threshold_add": case "sum_frac":
       case "max": case "min": visit(f, false); break
-      case "data": case "subscript": case "lookup": case "match": case "unmatch":
+      case "data": case "subscript": case "lookup": case "match": case "prio":
         throw new Error(`Found unsupported ${operation} node when computing affine nodes`)
       default: assertUnreachable(operation)
     }
@@ -37,19 +46,19 @@ export function compactNodes(nodes: Node[]): CompactNodes {
 
   const affine = [...topLevelAffine].filter(f => f.operation !== "const")
   const affineMap = new Map(affine.map((node, i) => [node, customRead(["aff", `${i}`])]))
-  nodes = mapFormulas(nodes, f => affineMap.get(f) ?? f, f => f)
+  nodes = mapFormulas(nodes, f => affineMap.get(f as NumNode) ?? f, f => f)
   return { nodes, affine }
 }
-export function compactArtifacts(db: ArtCharDatabase, affine: Node[], data: Data, mainStatAssumptionLevel: number): ArtifactsBySlot {
+export function compactArtifacts(db: ArtCharDatabase, affine: NumNode[], data: Data, mainStatAssumptionLevel: number): ArtifactsBySlot {
   const result: ArtifactsBySlot = { flower: [], plume: [], goblet: [], circlet: [], sands: [] }
-  const base = (constantFold(affine, data, _ => true) as ConstantNode[])
+  const base = (constantFold(affine, data, _ => true) as ConstantNode<number>[])
     .map(x => x.value)
 
   for (const art of db._getArts()) {
     const artData = dataObjForArtifact(art, mainStatAssumptionLevel)
     result[art.slotKey].push({
       id: art.id, set: art.setKey,
-      values: (constantFold(affine, mergeData([data, artData]), _ => true) as ConstantNode[])
+      values: (constantFold(affine, mergeData([data, artData]), _ => true) as ConstantNode<number>[])
         .map((x, i) => x.value - base[i])
     })
   }
@@ -75,7 +84,7 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySl
   return progress ? newArts : arts
 }
 /** Remove artifacts that cannot reach `minimum` in any build */
-export function pruneRange(nodes: Node[], arts: ArtifactsBySlot, minimum: number[]): ArtifactsBySlot {
+export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[]): ArtifactsBySlot {
   while (true) {
     const artRanges = objectFromKeyMap(allSlotKeys, slot => arts[slot].reduce((prev, cur) =>
       prev.map((value, i) => computeMinMax([value.min, value.max, cur.values[i]]), { min: Infinity, max: -Infinity }),
@@ -99,10 +108,11 @@ export function pruneRange(nodes: Node[], arts: ArtifactsBySlot, minimum: number
     arts = newArts
   }
 }
-export function computeRange(nodes: Node[], reads: MinMax[]): Map<Node, MinMax> {
-  const range = new Map<Node, MinMax>()
+export function computeRange(nodes: NumNode[], reads: MinMax[]): Map<NumNode, MinMax> {
+  const range = new Map<NumNode, MinMax>()
 
-  forEachNodes(nodes, _ => { }, f => {
+  forEachNodes(nodes, _ => { }, _f => {
+    const f = _f as NumNode
     const { operation } = f
     const operands = f.operands.map(op => range.get(op)!)
     let current: MinMax
@@ -140,7 +150,7 @@ export function computeRange(nodes: Node[], reads: MinMax[]): Map<Node, MinMax> 
           ])
         break
       }
-      case "data": case "lookup": case "match": case "unmatch":
+      case "data": case "lookup": case "match":
         throw new Error(`Unsupported ${operation} node`)
       default: assertUnreachable(operation)
     }
@@ -148,7 +158,7 @@ export function computeRange(nodes: Node[], reads: MinMax[]): Map<Node, MinMax> 
   })
   return range
 }
-function computeMinMax(values: number[], minMaxes: MinMax[] = []): MinMax {
+function computeMinMax(values: readonly number[], minMaxes: readonly MinMax[] = []): MinMax {
   const max = Math.max(values.reduce((a, b) => a > b ? a : b, -Infinity), ...minMaxes.map(x => x.max))
   const min = Math.min(values.reduce((a, b) => a > b ? b : a, Infinity), ...minMaxes.map(x => x.min))
   return { min, max }
@@ -220,4 +230,4 @@ export function mergePlot(plots: PlotData[]): PlotData {
 }
 
 type MinMax = { min: number, max: number }
-type CompactNodes = { nodes: Node[], affine: Node[] }
+type CompactNodes = { nodes: NumNode[], affine: NumNode[] }

@@ -1,4 +1,4 @@
-import { Node } from "../Formula/type";
+import { NumNode } from "../Formula/type";
 import { BasicStats, ICalculatedStats } from "./stats";
 
 export interface IBasicFieldDisplay {
@@ -12,7 +12,7 @@ export interface IBasicFieldDisplay {
 
 export interface INodeFieldDisplay {
   canShow?: (data: UIData) => boolean;
-  node: Node;
+  node: NumNode;
 }
 
 export type IFieldDisplay = INodeFieldDisplay | IBasicFieldDisplay

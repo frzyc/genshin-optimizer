@@ -1,8 +1,8 @@
 import { mapContextualFormulas as mapFormulas } from "./internal"
-import { Node } from "./type"
+import { NumNode } from "./type"
 import { prod, read, setReadNodeKeys, sum } from "./utils"
 
-const inputs = setReadNodeKeys(Object.fromEntries([...Array(6).keys()].map(i => [i, read("unique")])))
+const inputs = setReadNodeKeys(Object.fromEntries([...Array(6).keys()].map(i => [i, read()])))
 
 describe("internal `mapFormulas`", () => {
   test("Access order", () => {
@@ -23,10 +23,10 @@ describe("internal `mapFormulas`", () => {
      */
 
     // Top-down with replace
-    const mockTopDown = jest.fn((x: Node, contextId: number) => [x === r2 ? f2 : x, contextId] as [Node, number])
-    const mockBottomUp = jest.fn((x: Node, _: Node) => x)
+    const mockTopDown = jest.fn((x: NumNode, contextId: number) => [x === r2 ? f2 : x, contextId] as [NumNode, number])
+    const mockBottomUp = jest.fn((x: NumNode, _: NumNode) => x)
 
-    const result = mapFormulas([f1], 0, mockTopDown, mockBottomUp)
+    const result = mapFormulas([f1], 0, mockTopDown as any, mockBottomUp as any)
     expect(result).toEqual([sum(r1, prod(r3, r4), r1)])
 
     expect(mockTopDown.mock.calls.map(x => x[0])).toEqual(
@@ -42,10 +42,10 @@ describe("internal `mapFormulas`", () => {
 
     const f1 = Object.freeze(sum(r1, r2, r3))
     const f2 = Object.freeze(sum(r4))
-    const mockTopDown = jest.fn((x: Node, contextId: number) => [(x === r1 || x === r3) ? f2 : x, contextId] as [Node, number])
-    const mockBottomUp = jest.fn((x: Node, _: Node) => x)
+    const mockTopDown = jest.fn((x: NumNode, contextId: number) => [(x === r1 || x === r3) ? f2 : x, contextId] as [NumNode, number])
+    const mockBottomUp = jest.fn((x: NumNode, _: NumNode) => x)
 
-    const result = mapFormulas([f1], 0, mockTopDown, mockBottomUp)
+    const result = mapFormulas([f1], 0, mockTopDown as any, mockBottomUp as any)
     expect(result).toEqual([sum(sum(r4), r2, sum(r4))])
 
     /**

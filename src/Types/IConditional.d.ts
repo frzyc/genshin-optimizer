@@ -15,12 +15,12 @@ export interface IConditionalBase {
   keys?: string[]
 }
 export interface IConditionalSimple extends IConditionalBase {
-  stats?: BonusStats | ((stats: BasicStats) => BonusStats);
+  stats?: BonusStats | ((stats: BasicStats) => BonusStats) | any
   fields?: IFieldDisplay[];
   maxStack?: number | ((stats: BasicStats) => number);
 }
 export interface IConditionalConstant extends IConditionalBase {
-  stats?: BonusStats | ((stats: BasicStats) => BonusStats)
+  stats?: BonusStats | ((stats: BasicStats) => BonusStats) | any
   fields?: IFieldDisplay[]
   name?: Displayable
   maxStack: 0

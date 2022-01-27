@@ -22,8 +22,8 @@ export default function ChartCard({ plotData, plotBase, setPlotBase, disabled = 
   const { data } = useContext(DataContext)
 
   const statKeys = ["atk", "hp", "def", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_"]
-  if (data.getStr(input.weaponType).value !== "catalyst") statKeys.push("physical_dmg_")
-  statKeys.push(`${data.getStr(input.charEle).value}_dmg_`)
+  if (data.get(input.weaponType).value !== "catalyst") statKeys.push("physical_dmg_")
+  statKeys.push(`${data.get(input.charEle).value}_dmg_`)
 
   const { displayData, downloadData } = useMemo(() => {
     type Point = { x: number, y: number, min?: number }

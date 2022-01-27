@@ -2,8 +2,8 @@ import _charCurves from "../../Character/expCurve_gen.json";
 import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey } from "../../Types/consts";
 import { input } from "../../Formula";
-import { Data, DisplaySub, Node } from "../../Formula/type";
-import { data, infoMut, prod, stringConst, subscript, sum } from "../../Formula/utils";
+import { Data, DisplaySub, NumNode } from "../../Formula/type";
+import { constant, data, infoMut, prod, subscript, sum } from "../../Formula/utils";
 import { mergeData, reactions } from "../../Formula/api";
 
 export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[]
@@ -11,7 +11,7 @@ export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[
 // TODO: Remove this conversion after changing the file format
 const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
-export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): Node {
+export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
   let talentType: "auto" | "skill" | "burst"
   switch (move) {
     case "normal": case "charged": case "plunging": talentType = "auto"; break
@@ -21,7 +21,7 @@ export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "norma
   return data(input.hit.dmg, mergeData([{
     hit: {
       base: prod(input.total[base], subscript(input.talent.index[talentType], lvlMultiplier, { key: '_' })),
-      move: stringConst(move), // TODO: element ?: T, reaction ?: T, critType ?: T
+      move: constant(move), // TODO: element ?: T, reaction ?: T, critType ?: T
     },
   }, additional]))
 }
@@ -37,24 +37,24 @@ export function dataObjForCharacterSheet(
   display: { [key: string]: DisplaySub },
   additional: Data = {},
 ): Data {
-  function curve(base: number, lvlCurve: string): Node {
+  function curve(base: number, lvlCurve: string): NumNode {
     return prod(base, subscript(input.lvl, charCurves[lvlCurve]))
   }
 
   const data: Data = {
-    charKey: stringConst(key),
-    weaponType: stringConst(gen.weaponTypeKey),
+    charKey: constant(key),
+    weaponType: constant(gen.weaponTypeKey),
     premod: {},
     display,
   }
   if (element) {
-    data.charEle = stringConst(element)
+    data.charEle = constant(element)
     data.display!.reaction = reactions[element]
   }
 
   let foundSpecial: boolean | undefined
   for (const stat of [...allMainStatKeys, "def" as const]) {
-    const list: Node[] = []
+    const list: NumNode[] = []
     if (gen.curves[stat])
       list.push(curve(gen.base[stat], gen.curves[stat]!))
     const asc = gen.ascensions.some(x => x.props[stat])

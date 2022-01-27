@@ -28,7 +28,7 @@ export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {
 type ReactionToggleProps = Omit<ToggleButtonGroupProps, "color">
 export function ReactionToggle(props: ReactionToggleProps) {
   const { data, character: { reactionMode, infusionAura }, characterDispatch } = useContext(DataContext)
-  const charEleKey = data.getStr(input.charEle).value as ElementKey
+  const charEleKey = data.get(input.charEle).value as ElementKey
   if (!["pyro", "hydro", "cryo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusionAura)) return null
   return <SolidToggleButtonGroup exclusive baseColor="secondary"
     value={reactionMode} onChange={(e, reactionMode) => characterDispatch({ reactionMode })} {...props}>
