@@ -24,7 +24,7 @@ import { dbStorage } from '../Database/DBStorage';
 import { DataContext, dataContextObj } from '../DataContext';
 import { input } from '../Formula';
 import { Data, Node } from '../Formula/type';
-import { computeUIData, dataObjForArtifact } from '../Formula/api';
+import { computeUIData, dataObjForArtifact, mergeData } from '../Formula/api';
 import { UIData } from '../Formula/uiData'
 import { GlobalSettingsContext } from '../GlobalSettings';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
@@ -34,7 +34,7 @@ import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
 import { ArtifactsBySlot, BuildSetting } from '../Types/Build';
 import { allSlotKeys, ArtifactSetKey, CharacterKey } from '../Types/consts';
-import { objectFromKeyMap } from '../Util/Util';
+import { objectFromKeyMap, objPathValue } from '../Util/Util';
 import { calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import { compactArtifacts, compactNodes, countBuilds, filterArts, mergeBuilds, mergePlot, pruneOrder, pruneRange, setPermutations } from './Build_WR';
@@ -190,9 +190,9 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
   const generateBuilds = useCallback(async () => {
-    // TODO: Connect this to the UI
-    const data: Data = {}
-    const optimizationTarget: Node = input.total.atk
+    if (!data || !dataWoArt || !optimizationTarget) return
+    const workerData: Data = mergeData(dataWoArt)
+    const optimizationTargetNode: Node = objPathValue(data.getDisplay(), optimizationTarget) as Node
     const valueFilter: { value: Node, minimum: number }[] = []
     const setFilters: Dict<ArtifactSetKey, number> = {}
 
@@ -210,15 +210,15 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       workerkillers.forEach(w => w())
     }
 
-    let nodes = [optimizationTarget, ...valueFilter.map(x => x.value)]
+    let nodes = [optimizationTargetNode, ...valueFilter.map(x => x.value)]
     let affine: Node[]
     const minimum = [-Infinity, ...valueFilter.map(x => x.minimum)]
     {
-      const compact = compactNodes([optimizationTarget, ...valueFilter.map(x => x.value)])
+      const compact = compactNodes([optimizationTargetNode, ...valueFilter.map(x => x.value)])
       nodes = compact.nodes
       affine = compact.affine
     }
-    let artifactsBySlot = compactArtifacts(database, affine, data, mainStatAssumptionLevel)
+    let artifactsBySlot = compactArtifacts(database, affine, workerData, mainStatAssumptionLevel)
     const origCount = countBuilds(artifactsBySlot)
 
     while (true) {
@@ -259,7 +259,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         id: `${i}`,
         artifactsBySlot,
         optimizationTarget: nodes[0],
-        plotBase: undefined, // TODO
+        plotBase: input.total[plotBase],
         maxBuildsToShow,
         filters: nodes
           .map((value, i) => ({ value, min: minimum[i] }))
@@ -323,12 +323,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       ReactGA.timing({
         category: "Build Generation",
         variable: "timing",
-        value: 0, // TODO
+        value: totalDuration,
         label: totBuildNumber.toString()
       })
     }
     setgeneratingBuilds(false)
-  }, [artifactSheets, split, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, setFilters, statFilters, plotBase, tcMode, buildSettingsDispatch])
+  }, [data, database, dataWoArt, artifactSheets, split, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, setFilters, statFilters, plotBase, tcMode, buildSettingsDispatch])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
@@ -455,7 +455,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
             <Grid item flexGrow={1} >
               <ButtonGroup>
                 <Button
-                  disabled={!characterKey || generatingBuilds}
+                  disabled={!characterKey || generatingBuilds || !optimizationTarget || !totBuildNumber}
                   color={(characterKey && totBuildNumber <= warningBuildNumber) ? "success" : "warning"}
                   onClick={generateBuilds}
                   startIcon={<FontAwesomeIcon icon={faCalculator} />}
