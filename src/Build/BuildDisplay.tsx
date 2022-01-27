@@ -6,7 +6,7 @@ import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, use
 import ReactGA from 'react-ga';
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
-import Worker from "worker-loader!./BuildWorker";
+import Worker from "worker-loader!./BackgroundWorker";
 import Artifact from '../Artifact/Artifact';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet_WR';
 import CharacterCard from '../Character/CharacterCard';
@@ -52,6 +52,8 @@ import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './Worker
 import useCharacter from '../ReactHooks/useCharacter';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ChartCard from './ChartCard';
+import { customRead } from '../Formula/utils';
+import { optimize } from '../Formula/optimization';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -192,9 +194,11 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const generateBuilds = useCallback(async () => {
     if (!data || !dataWoArt || !optimizationTarget) return
     const workerData: Data = mergeData(dataWoArt)
-    const optimizationTargetNode = objPathValue(data.getDisplay(), optimizationTarget) as NumNode
+    const optimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode
     const valueFilter: { value: NumNode, minimum: number }[] = []
     const setFilters: Dict<ArtifactSetKey, number> = {}
+
+    if (!optimizationTargetNode) return
 
     const t1 = performance.now()
     setgeneratingBuilds(true)
@@ -210,11 +214,13 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       workerkillers.forEach(w => w())
     }
 
-    let nodes = [optimizationTargetNode, ...valueFilter.map(x => x.value)]
+    let nodes = optimize([optimizationTargetNode, ...valueFilter.map(x => x.value)], workerData, ({ path: [p] }) => p !== "art" && p !== "artSet")
     let affine: NumNode[]
     const minimum = [-Infinity, ...valueFilter.map(x => x.minimum)]
     {
-      const compact = compactNodes([optimizationTargetNode, ...valueFilter.map(x => x.value)])
+      const precompact = nodes
+      console.log(precompact)
+      const compact = compactNodes(precompact)
       nodes = compact.nodes
       affine = compact.affine
     }

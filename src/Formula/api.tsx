@@ -72,6 +72,7 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
   if (char.elementKey) {
     result.charEle = constant(char.elementKey)
     result.display = {
+      basic: { [`${char.elementKey}_dmg_`]: input.total[`${char.elementKey}_dmg_`] },
       reaction: reactions[char.elementKey]
     }
   }

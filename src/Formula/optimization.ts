@@ -314,7 +314,7 @@ export function constantFold(formulas: NumNode[], topLevelData: Data, shouldFold
             case "max": return constant(-Infinity)
             case "min": return constant(Infinity)
             case "mul": return constant(1)
-            case undefined: return constant(undefined)
+            case undefined: return formula.type === "string" ? constant(undefined) : constant(NaN)
           }
         }
         break

@@ -49,7 +49,12 @@ export function dataObjForCharacterSheet(
   }
   if (element) {
     data.charEle = constant(element)
+    data.display!.basic = { [`${element}_dmg_`]: input.total[`${element}_dmg_`] }
     data.display!.reaction = reactions[element]
+  }
+  if (gen.weaponTypeKey !== "catalyst") {
+    if (!data.display!.basic) data.display!.basic = {}
+    data.display!.basic!.physical_dmg_ = input.total.physical_dmg_
   }
 
   let foundSpecial: boolean | undefined

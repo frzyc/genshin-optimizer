@@ -70,12 +70,9 @@ export class UIData {
       crawlObject(data.display, [], (x: any) => x.operation, (x: NumNode, key: string[]) =>
         layeredAssignment(this.display, key, this.get(x)))
     }
-    const it = input.total
-    const basicNodes = [it.atk, it.hp, it.def, it.eleMas, it.critRate_, it.critDMG_, it.heal_, it.enerRech_]
-    if (this.get(input.weaponType).value !== "catalyst") basicNodes.push(it.physical_dmg_)
-    basicNodes.push(it[`${this.get(input.charEle).value}_dmg_`])
-    const dns = basicNodes.map(n => this.get(n))
-    this.display.basic = Object.fromEntries(dns.map(n => [n.key, n]))
+    // CAUTION:
+    // Don't add nodes to this function
+    // Add nodes to `display` namespace in appropriate `Data` instead
     return this.display
   }
   get(node: NumNode): NodeDisplay
