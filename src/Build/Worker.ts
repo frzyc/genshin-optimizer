@@ -15,7 +15,7 @@ let builds: Build[] = []
 let plotData: PlotData | undefined
 let callback: (interim: InterimResult) => void
 
-export function setup({ id: _id, optimizationTarget, filters, plotBase, maxBuildsToShow, artifactsBySlot: _artifactsBySlot }: Setup, _callback: (interim: InterimResult) => void) {
+export function setup({ id: _id, optimizationTarget, filters, plotBase, maxBuildsToShow, artifactsBySlot: _artifactsBySlot }: Setup, _callback: (interim: InterimResult) => void): RequestResult {
   id = _id
   callback = _callback
   builds = []
@@ -27,11 +27,13 @@ export function setup({ id: _id, optimizationTarget, filters, plotBase, maxBuild
     plotData = {}
     nodes.push(plotBase)
   }
-  nodes = optimize(nodes, {}, ({ path: [p] }) => p !== "art" && p !== "artSet")
+  nodes = optimize(nodes, {}, ({ path: [p] }) => p !== "aff")
   maxNumBuilds = maxBuildsToShow
   artifactsBySlot = _artifactsBySlot
   Object.values(artifactsBySlot).forEach(arts =>
     arts.forEach(art => art.values[art.set] = 1))
+
+  return { command: "request", id }
 }
 
 export function request({ threshold: newThreshold, filter: filters }: Request): RequestResult {
@@ -45,7 +47,8 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
     }
   }).sort((a, b) => a.length - b.length)
 
-  const compute = precompute(optimize(nodes, {}, ({ path: [p] }) => p !== "art" && p !== "artSet"),
+  const optimized = optimize(nodes, {}, f => f.path[0] !== "aff")
+  const compute = precompute(optimized,
     f => f.path[1])
 
   const ids: string[] = Array(arts.length).fill("")
@@ -80,7 +83,7 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
   }
 
   permute(arts.length - 1, {})
-  return { command: "request" }
+  return { command: "request", id }
 }
 export function finalize(): FinalizeResult {
   return { command: "finalize", id, builds, plotData }
@@ -133,7 +136,7 @@ export interface Finalize {
   command: "finalize"
 }
 
-export type WorkerResult = InterimResult | RequestResult | FinalizeResult
+export type WorkerResult = InterimResult | RequestResult | FinalizeResult | DebugMsg
 export interface InterimResult {
   command: "interim"
   id: string
@@ -152,9 +155,15 @@ export interface FinalizeResult {
 }
 export interface RequestResult {
   command: "request"
+  id: string
 }
 export interface Build {
   value: number
   plot?: number
   artifactIds: string[]
+}
+export interface DebugMsg {
+  command: "debug"
+  id: string
+  value: any
 }

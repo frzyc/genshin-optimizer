@@ -41,7 +41,7 @@ export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<num
     const { operation } = f
     switch (operation) {
       case "read":
-        if (f.accu !== "add")
+        if (f.type !== "number" || (f.accu && f.accu !== "add"))
           throw new Error(`Unsupported ${operation} node in precompute`)
         const name = binding(f)
         uniqueReadStrings.add(name)

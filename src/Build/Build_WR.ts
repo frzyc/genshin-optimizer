@@ -44,6 +44,7 @@ export function compactNodes(nodes: NumNode[]): CompactNodes {
     }
   })
 
+  nodes.forEach(node => affineNodes.has(node) && topLevelAffine.add(node))
   const affine = [...topLevelAffine].filter(f => f.operation !== "const")
   const affineMap = new Map(affine.map((node, i) => [node, customRead(["aff", `${i}`])]))
   nodes = mapFormulas(nodes, f => affineMap.get(f as NumNode) ?? f, f => f)
@@ -71,11 +72,11 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySl
     const list = arts[slot]
     const newList = list.filter(art => {
       let count = 0
-      return list.some(other => {
-        const greaterEqual = other.values.every((o, i) => o >= art[i])
-        const greater = other.values.some((o, i) => o > art[i])
+      return list.every(other => {
+        const greaterEqual = other.values.every((o, i) => o >= art.values[i])
+        const greater = other.values.some((o, i) => o > art.values[i])
         if (greaterEqual && (greater || other.id > art.id)) count++
-        return count >= numTop
+        return count < numTop
       })
     })
     if (newList.length !== list.length) progress = true
@@ -87,13 +88,14 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySl
 export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[]): ArtifactsBySlot {
   while (true) {
     const artRanges = objectFromKeyMap(allSlotKeys, slot => arts[slot].reduce((prev, cur) =>
-      prev.map((value, i) => computeMinMax([value.min, value.max, cur.values[i]]), { min: Infinity, max: -Infinity }),
-      Array(arts[0].values.length).fill({ min: Infinity, max: -Infinity }) as MinMax[]))
+      prev.map((value, i) => computeMinMax([cur.values[i]], [value])),
+      Array(arts[slot][0].values.length).fill({ min: Infinity, max: -Infinity })))
     const otherArtRanges = objectFromKeyMap(allSlotKeys, key => allSlotKeys
       .map(other => key === other ? [...artRanges[other]].fill({ min: 0, max: 0 }) : artRanges[other])
       .reduce((accu, other) => accu.map((x, i) => ({ min: x.min + other[i].min, max: x.max + other[i].max }))))
 
     let progress = false
+
     const newArts = objectFromKeyMap(allSlotKeys, slot => {
       const result = arts[slot].filter(art => {
         const read = otherArtRanges[slot].map((x, i) => ({ min: art.values[i] + x.min, max: art.values[i] + x.max }))
@@ -117,7 +119,7 @@ export function computeRange(nodes: NumNode[], reads: MinMax[]): Map<NumNode, Mi
     const operands = f.operands.map(op => range.get(op)!)
     let current: MinMax
     switch (operation) {
-      case "read": current = reads[f.path[0] as any as number]; break
+      case "read": current = reads[f.path[1] as any as number]; break
       case "const": current = computeMinMax([f.value]); break
       case "subscript": current = computeMinMax(f.list); break
       case "add": case "min": case "max":
@@ -159,8 +161,8 @@ export function computeRange(nodes: NumNode[], reads: MinMax[]): Map<NumNode, Mi
   return range
 }
 function computeMinMax(values: readonly number[], minMaxes: readonly MinMax[] = []): MinMax {
-  const max = Math.max(values.reduce((a, b) => a > b ? a : b, -Infinity), ...minMaxes.map(x => x.max))
-  const min = Math.min(values.reduce((a, b) => a > b ? b : a, Infinity), ...minMaxes.map(x => x.min))
+  const max = Math.max(...values, ...minMaxes.map(x => x.max))
+  const min = Math.min(...values, ...minMaxes.map(x => x.min))
   return { min, max }
 }
 export function* setPermutations(setFilters: Dict<ArtifactSetKey, number>): Iterable<RequestFilter> {

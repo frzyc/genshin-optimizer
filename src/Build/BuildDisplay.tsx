@@ -52,7 +52,6 @@ import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './Worker
 import useCharacter from '../ReactHooks/useCharacter';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ChartCard from './ChartCard';
-import { customRead } from '../Formula/utils';
 import { optimize } from '../Formula/optimization';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
@@ -218,9 +217,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     let affine: NumNode[]
     const minimum = [-Infinity, ...valueFilter.map(x => x.minimum)]
     {
-      const precompact = nodes
-      console.log(precompact)
-      const compact = compactNodes(precompact)
+      const compact = compactNodes(nodes)
       nodes = compact.nodes
       affine = compact.affine
     }
@@ -292,7 +289,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               worker.postMessage(finalize)
             }
             break
-          case "finalize": finalize(data)
+          case "finalize": finalize(data); break
+          default: console.log("DEBUG", data)
         }
       }
 
@@ -309,6 +307,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     workerkillers.forEach(x => x())
     clearInterval(buildTimer)
     cancelToken.current = () => { }
+
+    // TODO Check below that the data are sent to the UI & DB properly
 
     if (cancelled) {
       setgenerationDuration(0)
