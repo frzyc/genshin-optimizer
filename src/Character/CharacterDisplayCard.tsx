@@ -13,6 +13,7 @@ import FormulaCalcCard from '../Components/FormulaCalcCard';
 import { DamageOptionsCard } from '../Components/HitModeEditor';
 import { sgt } from '../Data/Characters/SheetUtil';
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/LevelData';
+import { DatabaseContext } from '../Database/Database';
 import { DataContext } from '../DataContext';
 import { UIData } from '../Formula/api';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
@@ -59,8 +60,8 @@ type CharacterDisplayCardProps = {
   isFlex?: boolean,
 }
 export default function CharacterDisplayCard({ characterKey, footer, newBuild, mainStatAssumptionLevel = 0, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
-  const { data: charUIData, character, characterSheet, database } = useCharUIData(characterKey, mainStatAssumptionLevel) ?? {}
-
+  const { data: charUIData, character, characterSheet } = useCharUIData(characterKey, mainStatAssumptionLevel) ?? {}
+  const database = useContext(DatabaseContext)
   useEffect(() => {
     if (!characterKey || !database) return
     if (database._getChar(characterKey)) return
@@ -78,7 +79,6 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild, m
 
   // set initial state to false, because it fails to check validity of the tab values on 1st load
   const [tab, settab] = useState<string | boolean>(tabName ? tabName : (newBuild ? "newartifacts" : "character"))
-
   const onTab = useCallback((e, v) => settab(v), [settab])
 
   const characterDispatch = useCharacterReducer(character?.key ?? "")
