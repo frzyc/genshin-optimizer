@@ -206,12 +206,6 @@ const common = {
   }
 } as const
 
-(common as any).display = {
-  basic: {
-    atk: total.atk, hp: total.hp, def: total.def, eleMas: total.eleMas, critRate_: total.critRate_, critDMG_: total.critDMG_, heal_: total.heal_, enerRech_: total.enerRech_
-  }
-}
-
 type _StrictInput<T, Num, Str> = T extends ReadNode<number> ? Num : T extends ReadNode<string> ? Str : { [key in keyof T]: _StrictInput<T[key], Num, Str> }
 type _Input<T, Num, Str> = T extends ReadNode<number> ? Num : T extends ReadNode<string> ? Str : { [key in keyof T]?: _Input<T[key], Num, Str> }
 function typecheck<A, B extends A>(): B | void { }

@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, Card, CardContent, Divider, Grid, MenuItem, Skeleton, Tab, Tabs, Typography } from '@mui/material';
+import { Button, ButtonGroup, Card, CardContent, Divider, Grid, MenuItem, Skeleton, Tab, Tabs, ToggleButton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useEffect, useState } from 'react';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
@@ -11,6 +11,7 @@ import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import { EnemyExpandCard } from '../Components/EnemyEditor';
 import FormulaCalcCard from '../Components/FormulaCalcCard';
 import { DamageOptionsCard } from '../Components/HitModeEditor';
+import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import { sgt } from '../Data/Characters/SheetUtil';
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/LevelData';
 import { DatabaseContext } from '../Database/Database';
@@ -85,13 +86,12 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild, m
   if (!character || !characterSheet || !charUIData) return <></>
   const { compareData } = character
   // main CharacterDisplayCard
-  const newData = undefined as UIData | undefined
   const dataContextValue = {
     character,
     characterSheet,
     mainStatAssumptionLevel,
-    data: (newData ? newData : charUIData) as UIData,
-    oldData: (compareData && newData) ? charUIData : undefined,
+    data: (newBuild ? newBuild : charUIData),
+    oldData: (compareData && newBuild) ? charUIData : undefined,
     characterDispatch
   }
   return <CardDark >
@@ -100,9 +100,21 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild, m
         "> div:not(:last-child)": { mb: 1 },
       }}>
         <Grid container spacing={1}>
-          <Grid item flexGrow={1}>
+          <Grid item>
             <CharSelectDropdown />
           </Grid>
+          <Grid item>
+            {/* Compare against new build toggle */}
+            {!!newBuild && <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
+              <ToggleButton value={false} disabled={!compareData}>
+                <small>Show New artifact Stats</small>
+              </ToggleButton>
+              <ToggleButton value={true} disabled={compareData}>
+                <small>Compare against equipped artifacts</small>
+              </ToggleButton>
+            </SolidToggleButtonGroup>}
+          </Grid>
+          <Grid item flexGrow={1} />
           {!!mainStatAssumptionLevel && <Grid item><Card sx={{ p: 1, bgcolor: t => t.palette.warning.dark }}><Typography><strong>Assume Main Stats are Level {mainStatAssumptionLevel}</strong></Typography></Card></Grid>}
           {!!onClose && <Grid item>
             <CloseButton onClick={onClose} />
@@ -132,9 +144,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild, m
           <TabPanel value="artifacts" current={tab} ><CharacterArtifactPane /></TabPanel >
         </DataContext.Provider>
         {/* new build panel */}
-        <TabPanel value="newartifacts" current={tab} >
-          <CharacterArtifactPane />
-        </TabPanel >
+        <TabPanel value="newartifacts" current={tab} ><CharacterArtifactPane newBuild /></TabPanel >
         {/* Buffs panel */}
         {/* {characterSheet && <TabPanel value="buffs" current={tab}>
           <CharacterTeamBuffsPane characterSheet={characterSheet} character={character} />

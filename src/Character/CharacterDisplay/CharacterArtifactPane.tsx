@@ -16,7 +16,7 @@ import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
 import { objectFromKeyMap } from '../../Util/Util';
 import StatDisplayComponent from './StatDisplayComponent';
 
-function CharacterArtifactPane() {
+function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
   const { data, oldData, character, mainStatAssumptionLevel, characterDispatch } = useContext(DataContext)
   const compareData = !!oldData
 
@@ -56,18 +56,7 @@ function CharacterArtifactPane() {
       <CardContent sx={{ py: 1 }}>
         <Grid container spacing={1}>
           <Grid item>
-            {!!oldData ? <Button onClick={equipArts} className="mr-2">Equip artifacts</Button> : (database === localDatabase && <Button color="error" onClick={unequipArts}>Unequip all artifacts</Button>)}
-          </Grid>
-          <Grid item>
-            {/* Compare against new build toggle */}
-            {!!oldData && <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
-              <ToggleButton value={false} disabled={!compareData}>
-                <small>Show New artifact Stats</small>
-              </ToggleButton>
-              <ToggleButton value={true} disabled={compareData}>
-                <small>Compare against equipped artifacts</small>
-              </ToggleButton>
-            </SolidToggleButtonGroup>}
+            {newBuild ? <Button onClick={equipArts} className="mr-2">Equip artifacts</Button> : (database === localDatabase && <Button color="error" onClick={unequipArts}>Unequip all artifacts</Button>)}
           </Grid>
           <Grid item flexGrow={1}></Grid>
           <Grid item>{!!mainStatAssumptionLevel && <Card sx={{ p: 1, bgcolor: t => t.palette.warning.dark }}><Typography><strong>Assume Main Stats are Level {mainStatAssumptionLevel}</strong></Typography></Card>}</Grid>

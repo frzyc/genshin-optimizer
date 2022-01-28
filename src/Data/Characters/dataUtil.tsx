@@ -11,6 +11,10 @@ export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[
 // TODO: Remove this conversion after changing the file format
 const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
+const commonBasic = {
+  atk: input.total.atk, hp: input.total.hp, def: input.total.def, eleMas: input.total.eleMas, critRate_: input.total.critRate_, critDMG_: input.total.critDMG_, heal_: input.total.heal_, enerRech_: input.total.enerRech_
+} as const
+
 export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
   let talentType: "auto" | "skill" | "burst"
   switch (move) {
@@ -40,7 +44,7 @@ export function dataObjForCharacterSheet(
   function curve(base: number, lvlCurve: string): NumNode {
     return prod(base, subscript(input.lvl, charCurves[lvlCurve]))
   }
-
+  display.basic = { ...commonBasic }
   const data: Data = {
     charKey: constant(key),
     weaponType: constant(gen.weaponTypeKey),
@@ -49,7 +53,7 @@ export function dataObjForCharacterSheet(
   }
   if (element) {
     data.charEle = constant(element)
-    data.display!.basic = { [`${element}_dmg_`]: input.total[`${element}_dmg_`] }
+    data.display!.basic[`${element}_dmg_`] = input.total[`${element}_dmg_`]
     data.display!.reaction = reactions[element]
   }
   if (gen.weaponTypeKey !== "catalyst") {

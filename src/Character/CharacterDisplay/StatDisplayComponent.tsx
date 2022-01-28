@@ -1,7 +1,7 @@
 import { Masonry } from "@mui/lab"
 import { CardContent, CardHeader, Divider } from "@mui/material"
 import { Box } from "@mui/system"
-import { useContext } from "react"
+import { useContext, useMemo } from "react"
 import CardDark from "../../Components/Card/CardDark"
 import { NodeFieldDisplay } from "../../Components/FieldDisplay"
 import ImgIcon from "../../Components/Image/ImgIcon"
@@ -11,6 +11,7 @@ import { DisplaySub } from "../../Formula/type"
 import { NodeDisplay } from "../../Formula/uiData"
 import { customRead } from "../../Formula/utils"
 import usePromise from "../../ReactHooks/usePromise"
+import { objectMap } from "../../Util/Util"
 
 export default function StatDisplayComponent() {
   const { data } = useContext(DataContext)
@@ -26,13 +27,14 @@ export default function StatDisplayComponent() {
 function Section({ displayNs, sectionKey }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string }) {
   const { data, oldData } = useContext(DataContext)
   const header = usePromise(getDisplayHeader(data, sectionKey), [data, sectionKey])
+  const displayNsReads = useMemo(() => objectMap(displayNs, (n, nodeKey) => customRead(["display", sectionKey, nodeKey])), [displayNs, sectionKey]);
   if (!header) return null
   const { title, icon, action } = header
   return <CardDark >
     <CardHeader avatar={icon && <ImgIcon size={2} sx={{ m: -1 }} src={icon} />} title={title} action={action} titleTypographyProps={{ variant: "subtitle1" }} />
     <Divider />
     <CardContent>
-      {Object.entries(displayNs).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(customRead([sectionKey, nodeKey])).value : undefined} />)}
+      {Object.entries(displayNs).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(displayNsReads[nodeKey]).value : undefined} />)}
     </CardContent>
   </CardDark>
 }

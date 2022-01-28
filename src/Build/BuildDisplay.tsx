@@ -139,8 +139,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const noArtifact = useMemo(() => !database._getArts().length, [database])
 
   const buildSettingsDispatch = useCallback((action) =>
-    character && characterDispatch({ buildSettings: buildSettingsReducer(buildSettings, action) })
-    , [character, characterDispatch, buildSettings])
+    characterDispatch && characterDispatch({ buildSettings: buildSettingsReducer(buildSettings, action) })
+    , [characterDispatch, buildSettings])
 
   useEffect(() => ReactGA.pageview('/build'), [])
 
@@ -514,7 +514,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               {buildDatas ? <span>Showing <strong>{buildDatas.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
                 : <span>Select a character to generate builds.</span>}
             </Typography>
-            <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => buildSettingsDispatch({ compareData: v })} size="small">
+            <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
               <ToggleButton value={false} disabled={!compareData}>
                 <small>Show New artifact Stats</small>
               </ToggleButton>
@@ -527,7 +527,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       </CardDark>
       <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
         {/* Build List */}
-        {buildDatas?.map((build, index) => <DataContext.Provider value={{ ...dataContext, data: build, oldData: data }}>
+        {buildDatas?.map((build, index) => <DataContext.Provider key={index} value={{ ...dataContext, data: build, oldData: data }}>
           <ArtifactBuildDisplayItem index={index} key={index} onClick={() => setmodalBuildIndex(index)} compareBuild={compareData} disabled={!!generatingBuilds} />
         </DataContext.Provider>
         )}

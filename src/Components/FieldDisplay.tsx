@@ -45,7 +45,7 @@ export function NodeFieldDisplay({ node, oldValue }: { node: NodeDisplay, oldVal
   let fieldVal = "" as Displayable
   if (oldValue) {
     const diff = node.value - oldValue
-    fieldVal = <span>{valueString(oldValue, node.unit)}{diff ? <ColorText color={diff > 0 ? "success" : "error"}> ({diff > 0 ? "+" : ""}{valueString(diff, node.unit)})</ColorText> : ""}</span>
+    fieldVal = <span>{valueString(oldValue, node.unit)}{diff ? <ColorText color={diff > 0 ? "success" : "error"}> {diff > 0 ? "+" : ""}{valueString(diff, node.unit)}</ColorText> : ""}</span>
   } else fieldVal = valueString(node.value, node.unit)
   const formulaTextOverlay = !!node.formula && <BootstrapTooltip placement="top" title={<Typography>{fieldFormulaText}</Typography>}>
     <Box component="span" sx={{ cursor: "help", ml: 1 }}><FontAwesomeIcon icon={faQuestionCircle} /></Box>
