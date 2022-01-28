@@ -2,7 +2,7 @@ import { ArtCharDatabase } from "../Database/Database";
 import { dataObjForArtifact, mergeData } from "../Formula/api";
 import { forEachNodes, mapFormulas } from "../Formula/internal";
 import { allOperations, constantFold } from "../Formula/optimization";
-import { ConstantNode, Data, NumNode, StrNode } from "../Formula/type";
+import { ConstantNode, Data, NumNode } from "../Formula/type";
 import { customRead } from "../Formula/utils";
 import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
 import { assertUnreachable, objectFromKeyMap } from "../Util/Util";

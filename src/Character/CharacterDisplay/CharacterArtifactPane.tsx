@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, CardHeader, Divider, Grid, ToggleButton, Typography } from '@mui/material';
+import { Button, Card, CardContent, CardHeader, Divider, Grid, Typography } from '@mui/material';
 import { useCallback, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import ArtifactCard from '../../Artifact/ArtifactCard';
@@ -6,7 +6,6 @@ import { ArtifactSheet } from '../../Artifact/ArtifactSheet_WR';
 import SetEffectDisplay from '../../Artifact/Component/SetEffectDisplay';
 import CardLight from '../../Components/Card/CardLight';
 import ImgIcon from '../../Components/Image/ImgIcon';
-import SolidToggleButtonGroup from '../../Components/SolidToggleButtonGroup';
 import { database as localDatabase, DatabaseContext } from '../../Database/Database';
 import { DataContext } from '../../DataContext';
 import { input } from '../../Formula';
@@ -17,8 +16,7 @@ import { objectFromKeyMap } from '../../Util/Util';
 import StatDisplayComponent from './StatDisplayComponent';
 
 function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
-  const { data, oldData, character, mainStatAssumptionLevel, characterDispatch } = useContext(DataContext)
-  const compareData = !!oldData
+  const { data, oldData, character, mainStatAssumptionLevel } = useContext(DataContext)
 
   const database = useContext(DatabaseContext)
   const history = useHistory()

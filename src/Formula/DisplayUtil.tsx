@@ -1,5 +1,4 @@
 import { Typography } from "@mui/material";
-import { kill } from "process";
 import { input } from ".";
 import { ArtifactSheet } from "../Artifact/ArtifactSheet_WR";
 import CharacterSheet from "../Character/CharacterSheet_WR";

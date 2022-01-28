@@ -16,11 +16,12 @@ import { ReadNode } from "../../Formula/type";
 import KeyMap from "../../KeyMap";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import { amplifyingReactions, transformativeReactions } from "../../StatConstants";
-import { ICachedCharacter, TalentSheetElementKey } from "../../Types/character";
+import {  TalentSheetElementKey } from "../../Types/character";
 import { allElementsWithPhy, ElementKey } from "../../Types/consts";
 import WeaponDisplayCard from "../../Weapon/WeaponDisplayCard";
 import CharacterSheet from "../CharacterSheet_WR";
 import StatInput from "../StatInput";
+import { TeamBuffDisplay } from "./CharacterTeamBuffsPane";
 export default function CharacterOverviewPane() {
   const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
@@ -145,8 +146,7 @@ function MainStatsCards() {
   const specialNode = data.get(input.special)
 
   return <>
-    {/* TODO: Team buff stuff */}
-    {/* <TeamBuffDisplay character={character} /> */}
+    <TeamBuffDisplay />
     <StatDisplayCard
       title="Main Stats"
       content={<StatDisplayContent statBreakpoint={statBreakpoint} nodes={mainReadNodes}
@@ -225,24 +225,6 @@ function StatDisplayCard({ title, content, editContent }) {
     <Divider />
     <CardContent>
       {edit ? editContent : content}
-    </CardContent>
-  </CardLight>
-}
-function TeamBuffDisplay({ character }: { character: ICachedCharacter }) {
-  // const { newBuild, equippedBuild } = useContext(buildContext)
-  // const build = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
-  // if (!Object.keys(build.partyBuff).length) return null
-  return <CardLight>
-    <CardContent>
-      Team Buffs
-    </CardContent>
-    <Divider />
-    <CardContent>
-      {/* <Grid container columnSpacing={2} rowSpacing={1}>
-        {Object.entries(build.partyBuff).map(([statKey, value]) => <Grid item {...statBreakpoint} key={statKey} >
-          <StatDisplay character={character} newBuild={newBuild} equippedBuild={equippedBuild} statKey={statKey} partyBuff />
-        </Grid>)}
-      </Grid> */}
     </CardContent>
   </CardLight>
 }

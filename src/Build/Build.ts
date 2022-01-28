@@ -1,25 +1,8 @@
-import { createContext } from "react"
 import { ICachedArtifact, StatKey, SubstatKey } from "../Types/artifact"
 import { ArtifactsBySlot, ArtifactSetEffects, SetFilter } from "../Types/Build"
 import { allElementsWithPhy, ArtifactSetKey, ElementKey, SetNum, SlotKey } from "../Types/consts"
 import { BasicStats, BonusStats, ICalculatedStats } from "../Types/stats"
 import { deepCloneStats, mergeCalculatedStats, mergeStats } from "../Util/StatUtil"
-
-type buildContextObj = {
-  newBuild?: ICalculatedStats,
-  equippedBuild?: ICalculatedStats,
-  compareBuild?: boolean,
-  setCompareBuild?: ((boolean) => void),
-}
-/**
- * @deprecated
- */
-export const buildContext = createContext({
-  newBuild: undefined,
-  equippedBuild: undefined,
-  compareBuild: false,
-  setCompareBuild: undefined,
-} as buildContextObj)
 
 export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5

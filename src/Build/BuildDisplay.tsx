@@ -53,7 +53,7 @@ import useCharacter from '../ReactHooks/useCharacter';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ChartCard from './ChartCard';
 import { optimize } from '../Formula/optimization';
-import { formulaString } from '../Formula/debug';
+
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -120,7 +120,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const character = useCharacter(characterKey)
   const buildSettings = character?.buildSettings ?? initialBuildSettings()
   const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSettings
-  const { data, characterSheet, weapon, weaponSheet, dataWoArt } = useCharUIData(characterKey, mainStatAssumptionLevel) ?? {}
+  const { data, characterSheet, dataWoArt } = useCharUIData(characterKey, mainStatAssumptionLevel) ?? {}
 
   const compareData = character?.compareData ?? false
 

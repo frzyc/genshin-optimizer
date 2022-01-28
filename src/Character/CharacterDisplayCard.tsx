@@ -146,9 +146,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild, m
         {/* new build panel */}
         <TabPanel value="newartifacts" current={tab} ><CharacterArtifactPane newBuild /></TabPanel >
         {/* Buffs panel */}
-        {/* {characterSheet && <TabPanel value="buffs" current={tab}>
-          <CharacterTeamBuffsPane characterSheet={characterSheet} character={character} />
-        </TabPanel >} */}
+        <TabPanel value="buffs" current={tab}><CharacterTeamBuffsPane /></TabPanel >
         {/* talent panel */}
         <TabPanel value="talent" current={tab}>
           <CharacterTalentPane />
