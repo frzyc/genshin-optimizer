@@ -53,6 +53,7 @@ import useCharacter from '../ReactHooks/useCharacter';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ChartCard from './ChartCard';
 import { optimize } from '../Formula/optimization';
+import { formulaString } from '../Formula/debug';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -221,7 +222,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       nodes = compact.nodes
       affine = compact.affine
     }
-    let artifactsBySlot = compactArtifacts(database, affine, workerData, mainStatAssumptionLevel)
+    let { artifactsBySlot, base } = compactArtifacts(database, affine, workerData, mainStatAssumptionLevel)
     const origCount = countBuilds(artifactsBySlot)
 
     while (true) {
@@ -260,6 +261,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       const setup: Setup = {
         command: "setup",
         id: `${i}`,
+        affineBase: base,
         artifactsBySlot,
         optimizationTarget: nodes[0],
         plotBase: input.total[plotBase],

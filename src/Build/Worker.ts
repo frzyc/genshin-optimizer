@@ -4,6 +4,7 @@ import type { NumNode } from '../Formula/type'
 import type { MainStatKey, SubstatKey } from '../Types/artifact';
 
 let id: string
+let affineBase: number[]
 let artifactsBySlot: StrictDict<SlotKey, ArtifactBuildData[]>
 let nodes: NumNode[]
 
@@ -15,7 +16,7 @@ let builds: Build[] = []
 let plotData: PlotData | undefined
 let callback: (interim: InterimResult) => void
 
-export function setup({ id: _id, optimizationTarget, filters, plotBase, maxBuildsToShow, artifactsBySlot: _artifactsBySlot }: Setup, _callback: (interim: InterimResult) => void): RequestResult {
+export function setup({ id: _id, optimizationTarget, filters, plotBase, maxBuildsToShow, affineBase: _affineBase, artifactsBySlot: _artifactsBySlot }: Setup, _callback: (interim: InterimResult) => void): RequestResult {
   id = _id
   callback = _callback
   builds = []
@@ -29,6 +30,7 @@ export function setup({ id: _id, optimizationTarget, filters, plotBase, maxBuild
   }
   nodes = optimize(nodes, {}, ({ path: [p] }) => p !== "aff")
   maxNumBuilds = maxBuildsToShow
+  affineBase = _affineBase
   artifactsBySlot = _artifactsBySlot
   Object.values(artifactsBySlot).forEach(arts =>
     arts.forEach(art => art.values[art.set] = 1))
@@ -82,7 +84,10 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
     }
   }
 
-  permute(arts.length - 1, {})
+  // TODO: Update to array-based
+  const base = {}
+  affineBase.forEach((v, i) => base[i] = v)
+  permute(arts.length - 1, base)
   return { command: "request", id }
 }
 export function finalize(): FinalizeResult {
@@ -115,6 +120,7 @@ export type ArtifactsBySlot = StrictDict<SlotKey, ArtifactBuildData[]>
 export interface Setup {
   command: "setup"
   id: string
+  affineBase: number[]
   artifactsBySlot: ArtifactsBySlot
   optimizationTarget: NumNode
   filters: { value: NumNode, min: number }[]

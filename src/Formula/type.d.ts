@@ -4,7 +4,7 @@ import type { ArtifactSetKey, CharacterKey, ElementKey, ElementKeyWithPhy, React
 import type { Path } from "../Util/KeyPathUtil"
 import type { Input } from "./index"
 
-export type NumNode = ComputeNode | ThresholdNode<NumNode> |
+export type NumNode = ComputeNode | ThresholdNode |
   DataNode<NumNode> |
   LookupNode<NumNode> | MatchNode<NumNode, StrNode> | MatchNode<NumNode, NumNode> |
   SubscriptNode<number> |
@@ -52,9 +52,9 @@ export interface ComputeNode extends Base {
   operation: Operation
   operands: readonly NumNode[]
 }
-export interface ThresholdNode<N> extends Base {
+export interface ThresholdNode extends Base {
   operation: "threshold_add"
-  operands: readonly [NumNode, NumNode, N]
+  operands: readonly [NumNode, NumNode, NumNode]
 }
 export interface MatchNode<N, M = StrNode> extends Base {
   operation: "match"

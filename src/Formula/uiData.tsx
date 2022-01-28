@@ -114,13 +114,6 @@ export class UIData {
       default: assertUnreachable(operation)
     }
 
-    if (node === input.hit.reaction && result.value === "vaporize") {
-      console.log(this.data, node, result)
-    }
-    if (node === effectiveReaction && result.value !== undefined) {
-      console.log(node, this.get(input.hit.reaction), this.get(input.hit.ele), result)
-    }
-
     if (info) {
       const { namePrefix, variant, key, asConst } = info
       let { pivot } = info
@@ -169,10 +162,8 @@ export class UIData {
   private _lookup(node: LookupNode<NumNode | StrNode>): ContextNodeDisplay<number | string | undefined> {
     const key = this.computeNode(node.operands[0]).value
     const selected = node.table[key!] ?? node.operands[1]
-    if (!selected) {
-      console.log(node, node.operands[1])
+    if (!selected)
       throw new Error(`Lookup Fail with key ${key}`)
-    }
     return this.computeNode(selected)
   }
   private _match(node: MatchNode<StrNode | NumNode, StrNode | NumNode>): ContextNodeDisplay<number | string | undefined> {
@@ -189,7 +180,7 @@ export class UIData {
     }
     return child.computeNode(node.operands[0])
   }
-  private _compute(node: ComputeNode | ThresholdNode<NumNode>): ContextNodeDisplay {
+  private _compute(node: ComputeNode | ThresholdNode): ContextNodeDisplay {
     const { operation, operands } = node
     return this._accumulate(operation, operands.map(x => this.computeNode(x)))
   }

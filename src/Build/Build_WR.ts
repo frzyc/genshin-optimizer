@@ -23,9 +23,9 @@ export function compactNodes(nodes: NumNode[]): CompactNodes {
     const operation = f.operation
     switch (operation) {
       case "read":
-        if (f.type !== "number")
-          throw new Error(`Found unsupported ${operation} node when computing affine nodes`)
-        visit(f, f.accu === "add"); break
+        if (f.type !== "number" || f.accu !== "add")
+          throw new Error(`Found unsupported ${operation} node at path ${f.path} when computing affine nodes`)
+        visit(f, true); break
       case "add": visit(f, f.operands.every(op => affineNodes.has(op))); break
       case "mul": {
         const nonConst = f.operands.filter(op => op.operation !== "const")
@@ -50,7 +50,7 @@ export function compactNodes(nodes: NumNode[]): CompactNodes {
   nodes = mapFormulas(nodes, f => affineMap.get(f as NumNode) ?? f, f => f)
   return { nodes, affine }
 }
-export function compactArtifacts(db: ArtCharDatabase, affine: NumNode[], data: Data, mainStatAssumptionLevel: number): ArtifactsBySlot {
+export function compactArtifacts(db: ArtCharDatabase, affine: NumNode[], data: Data, mainStatAssumptionLevel: number): { artifactsBySlot: ArtifactsBySlot, base: number[] } {
   const result: ArtifactsBySlot = { flower: [], plume: [], goblet: [], circlet: [], sands: [] }
   const base = (constantFold(affine, data, _ => true) as ConstantNode<number>[])
     .map(x => x.value)
@@ -63,7 +63,7 @@ export function compactArtifacts(db: ArtCharDatabase, affine: NumNode[], data: D
         .map((x, i) => x.value - base[i])
     })
   }
-  return result
+  return { artifactsBySlot: result, base }
 }
 /** Remove artifacts that cannot be in top `numTop` builds */
 export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySlot {

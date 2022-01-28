@@ -1,8 +1,7 @@
-import { resolve } from "../Util/KeyPathUtil"
-import { assertUnreachable } from "../Util/Util"
-import { forEachNodes, mapContextualFormulas, mapFormulas } from "./internal"
+import { assertUnreachable, objPathValue } from "../Util/Util"
+import { forEachNodes, mapFormulas } from "./internal"
 import { constant } from "./utils"
-import { AnyNode, CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode } from "./type"
+import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode } from "./type"
 
 const allCommutativeMonoidOperations: StrictDict<CommutativeMonoidOperation, (_: number[]) => number> = {
   min: (x: number[]): number => Math.min(...x),
@@ -253,23 +252,30 @@ function deduplicate(formulas: NumNode[]): NumNode[] {
  * avoiding removal of any nodes that pass `isFixed` predicate
  */
 export function constantFold(formulas: NumNode[], topLevelData: Data, shouldFold = (_formula: ReadNode<number | string | undefined>) => false): NumNode[] {
-  return applyRead(formulas, topLevelData, formula => {
-    const { operation } = formula
-    let result = formula
+  type Context = { data: Data[], processed: Map<NumNode | StrNode, NumNode | StrNode> }
+  const origin: Context = { data: [], processed: new Map() }
+  const nextContextMap = new Map([[origin, new Map<Data, Context>()]])
 
+  function fold(formula: StrNode, context: Context): StrNode
+  function fold(formula: NumNode, context: Context): NumNode
+  function fold(formula: NumNode | StrNode, context: Context): NumNode | StrNode
+  function fold(formula: NumNode | StrNode, context: Context): NumNode | StrNode {
+    const old = context.processed.get(formula)
+    if (old) return old
+
+    const { operation } = formula
+    let result: NumNode | StrNode
     switch (operation) {
-      case "threshold_add":
-        const [value, threshold, addition] = formula.operands
-        if (value.operation === "const" && threshold.operation === "const")
-          result = value.value >= threshold.value ? addition : constant(0)
-        break
-      case "min": case "max": case "add": case "mul":
+      case "const": return formula
+      case "add": case "mul": case "max": case "min":
         const f = allOperations[operation]
         const numericOperands: number[] = []
-        const formulaOperands: NumNode[] = formula.operands.filter(formula =>
-          (formula.operation !== "const")
-            ? true
-            : (numericOperands.push(formula.value), false))
+        const formulaOperands: NumNode[] = formula.operands.filter(formula => {
+          const folded = fold(formula, context)
+          return (folded.operation === "const")
+            ? (numericOperands.push(folded.value), false)
+            : true
+        }).map(x => fold(x, context))
         const numericValue = f(numericOperands)
 
         // Fold degenerate cases. This may incorrectly compute NaN
@@ -299,102 +305,101 @@ export function constantFold(formulas: NumNode[], topLevelData: Data, shouldFold
         if (numericValue !== f([])) // Skip vacuous values
           formulaOperands.push(constant(numericValue))
         if (formulaOperands.length <= 1) result = formulaOperands[0] ?? constant(f([]))
-        else result = { operation: formula.operation, operands: formulaOperands }
+        else result = { operation, operands: formulaOperands }
         break
-      case "sum_frac": case "res":
-        if (formula.operands.every(f => f.operation === "const")) {
-          const operands = (formula.operands as ConstantNode<number>[]).map(({ value }) => value)
-          result = constant(allOperations[operation](operands))
-        }
-        break
-      case "read":
-        if (shouldFold(formula)) {
-          switch (formula.accu) {
-            case "add": return constant(0)
-            case "max": return constant(-Infinity)
-            case "min": return constant(Infinity)
-            case "mul": return constant(1)
-            case undefined: return formula.type === "string" ? constant(undefined) : constant(NaN)
-          }
-        }
-        break
-      case "subscript":
-        const [index] = formula.operands
-        if (index.operation !== "const")
-          throw new Error(`${operation} node must be known at optimization time`)
-        result = constant(formula.list[index.value]) as NumNode | StrNode
-        break
-      case "match": {
-        const [v1, v2, match, unmatch] = formula.operands
-        if (v1.operation !== "const" || v2.operation !== "const")
-          throw new Error(`${operation} node must be known at optimization time`)
-        result = (v1.value === v2.value) ? match : unmatch
+      case "res": case "sum_frac": {
+        const operands = formula.operands.map(x => fold(x, context))
+        const f = allOperations[operation]
+        if (operands.every(x => x.operation === "const"))
+          result = constant(f(operands.map(x => (x as ConstantNode<number>).value)))
+        else result = { ...formula, operands }
         break
       }
       case "lookup": {
-        const [index, defaultNode] = formula.operands
-        if (index.operation !== "const")
-          throw new Error(`${operation} node must be known at optimization time`)
-        const selected = formula.table[index.value!] ?? defaultNode
-        if (selected === undefined)
-          throw new Error("Found lookup node without value")
-        result = selected
-        break
+        const index = fold(formula.operands[0], context)
+        if (index.operation === "const") {
+          const selected = formula.table[index.value!] ?? formula.operands[1]
+          if (selected) {
+            result = fold(selected, context)
+            break
+          }
+        }
+        throw new Error(`Unsupported ${operation} node while folding`)
       }
       case "prio": {
-        const string = formula.operands.find(x => x.operation === "const" && x.value !== undefined)
-        if (!string)
-          throw new Error(`${operation} node must be known at optimization time`)
-        result = string
+        const first = formula.operands.find(op => {
+          const folded = fold(op, context)
+          if (folded.operation !== "const")
+            throw new Error(`Unsupported ${operation} node while folding`)
+          return folded.value !== undefined
+        })
+        if (!first)
+          throw new Error(`Unsupported ${operation} node while folding`)
+        result = fold(first, context)
         break
       }
-      case "const": break
-      case "data": throw new Error("Unreachable")
-      default: assertUnreachable(operation) // Exhaustive switch
-    }
-    return result
-  })
-}
-
-/**
- * - Apply all `ReadNode`s
- * - Remove all `DataNode`s
- */
-function applyRead(formulas: NumNode[], topLevelData: Data, bottomUpMap = (formula: NumNode | StrNode, _orig: NumNode | StrNode) => formula): NumNode[] {
-  const dataFromId = [[], topLevelData ? [topLevelData] : []], nextIdsFromCurrentIds = [new Map<Data, number>(), new Map<Data, number>()]
-  nextIdsFromCurrentIds[0].set(topLevelData, 1)
-
-  function topDown(_formula: AnyNode, contextId: number): [AnyNode, number] {
-    const formula = _formula as NumNode | StrNode
-    switch (formula.operation) {
-      case "data": {
-        const { data, operands: [baseFormula] } = formula
-        if (formula.reset) contextId = 0
-        const nextIds = nextIdsFromCurrentIds[contextId]
-        if (nextIds.has(data)) return topDown(baseFormula, nextIds.get(data)!)
-
-        const nextId = dataFromId.length
-        nextIds.set(data, nextId)
-        dataFromId.push([data, ...dataFromId[contextId]])
-        nextIdsFromCurrentIds.push(new Map())
-
-        return topDown(baseFormula, nextId)
+      case "match": {
+        const [v1, v2, match, unmatch] = formula.operands.map((x: NumNode | StrNode) => fold(x, context))
+        if (v1.operation !== "const" || v2.operation !== "const")
+          throw new Error(`Unsupported ${operation} node while folding`)
+        result = (v1.value === v2.value) ? match : unmatch
+        break
+      }
+      case "threshold_add": {
+        const [value, threshold, addition] = formula.operands.map(x => fold(x, context))
+        if (value.operation === "const" && threshold.operation === "const")
+          result = value.value >= threshold.value ? addition : constant(0)
+        else
+          result = { ...formula, operands: [value, threshold, addition] }
+        break
+      }
+      case "subscript": {
+        const [index] = formula.operands.map(x => fold(x, context))
+        result = (index.operation === "const")
+          ? constant(formula.list[index.value])
+          : { ...formula, operands: [index] }
+        break
       }
       case "read": {
-        const data = dataFromId[contextId], { path, accu } = formula
-        const operands = data?.map(context => resolve(context, path) as NumNode | StrNode).filter(x => x)
+        const operands = context.data
+          .map(x => objPathValue(x, formula.path) as (NumNode | StrNode))
+          .filter(x => x)
 
-        if (operands.length === 0)
-          return [formula, contextId]
-        if (accu === undefined)
-          return topDown({ ...formula, ...(operands[0] as any) }, contextId)
-        return [{ ...formula, operation: accu, operands }, contextId]
+        if (operands.length === 0) {
+          if (shouldFold(formula)) {
+            const { accu } = formula
+            if (accu === undefined)
+              result = formula.type === "string" ? constant(undefined) : constant(NaN)
+            else result = constant(allOperations[accu]([]))
+          } else result = formula
+        } else if (formula.accu === undefined)
+          result = fold(operands[0], context)
+        else
+          result = fold({ operation: formula.accu, operands } as ComputeNode, context)
+        break
       }
+      case "data":
+        if (formula.reset) context = origin
+        const map = nextContextMap.get(context)!
+        let nextContext = map.get(formula.data)
+        if (!nextContext) {
+          nextContext = { data: [...context.data, formula.data], processed: new Map() }
+          nextContextMap.set(nextContext, new Map())
+          map.set(formula.data, nextContext)
+        }
+        result = fold(formula.operands[0], nextContext)
+        break
+      default: assertUnreachable(operation)
     }
-    return [formula, contextId]
+
+    context.processed.set(formula, result)
+    return result
   }
 
-  return mapContextualFormulas(formulas, 1, topDown, bottomUpMap as any)
+  const context = { data: [topLevelData], processed: new Map() }
+  nextContextMap.set(context, new Map())
+  nextContextMap.get(origin)!.set(topLevelData, context)
+  return formulas.map(x => fold(x, context))
 }
 
 export const testing = {
