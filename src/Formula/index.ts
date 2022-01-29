@@ -217,10 +217,9 @@ export type Custom<Num = NumNode, Str = StrNode> = _Input<typeof custom, Num, St
 // Make sure that `common` contains only entries matching `rd` and `str`.
 typecheck<typeof common, StrictInput<NumNode, StrNode>>()
 
-const teamBuff = setReadNodeKeys(deepClone(rd), ["teamBuff"])
 const target = setReadNodeKeys(deepClone(rd), ["target"])
 
 export {
   rd as input, common, custom,
-  teamBuff, target
+  target
 }

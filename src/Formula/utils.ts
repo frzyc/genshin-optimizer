@@ -101,10 +101,10 @@ export function resetData(base: AnyNode, data: Data): DataNode<any> {
 }
 
 
-export function customRead(path: string[], info?: Info): ReadNode<number> {
+export function customRead(path: readonly string[], info?: Info): ReadNode<number> {
   return { operation: "read", operands: [], path, info, type: "number" }
 }
-export function customStringRead(path: string[]): ReadNode<string> {
+export function customStringRead(path: readonly string[]): ReadNode<string> {
   return { operation: "read", operands: [], path, type: "string" }
 }
 export function read(accu?: ReadNode<number>["accu"], info?: Info): ReadNode<number> {
