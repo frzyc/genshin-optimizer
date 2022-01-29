@@ -4,11 +4,11 @@ import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character_WR";
 import { allElementsWithPhy, ArtifactSetKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import { crawlObject, layeredAssignment, objectFromKeyMap } from "../Util/Util";
-import { input } from "./index";
-import { Data, DisplaySub, NumNode, ReadNode } from "./type";
+import { crawlObject, deepClone, layeredAssignment, objectFromKeyMap, objPathValue } from "../Util/Util";
+import { input, teamBuff } from "./index";
+import { Data, DisplaySub, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
-import { frac, constant, infoMut, percent, prod, subscript, sum, unit } from "./utils";
+import { frac, constant, infoMut, percent, prod, subscript, sum, unit, resetData } from "./utils";
 
 function dataObjForArtifactSheet(
   key: ArtifactSetKey,
@@ -90,6 +90,62 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
       refineIndex: constant(weapon.refinement - 1)
     },
   }
+}
+export function dataObjForTeam(teamData: Data[][], dynamicArtifactOnFirstChar: boolean): Data[] {
+  // May the goddess of wisdom bless any and all souls courageous
+  // enough to attempt for the understanding of this abomination.
+
+  // TODO: Handle dynamicArtifactOnFirstChar
+
+  const mergedData = teamData.map(x => ({ ...mergeData(x) }))
+  const targetData = mergedData.map(_ => ({} as Data))
+
+  const buffData = targetData.map(target =>
+    mergedData.map((source, j) => {
+      // This construction creates a `Data` representing buff
+      // from j-th member applied to `target`. It has 3 data:
+      // - `target` contains the reference for the final
+      //   data. It is not populated at this stage,
+      // - `calc` contains the calculation of the buffs,
+      // - `buff` contains read nodes that point to the
+      //   calculation in `calc`.
+
+      const { teamBuff: base } = source
+      if (!base) return {}
+      // Create new copy of `calc` as we're mutating it later
+      const buff: Data = {}, calc: Data = deepClone({ teamBuff: base })
+
+      crawlObject(base, [], (x: any) => x.operation, (x: NumNode | StrNode, key: string[]) => {
+        {
+          const inputNode = objPathValue(teamBuff, key) as ReadNode<number | string> | undefined
+          if (!inputNode) throw new Error(`Unknown team buff destination ${key}`)
+          layeredAssignment(buff, key, resetData(inputNode, calc))
+        }
+
+        crawlObject(x, [], (x: any) => x?.operation === "read", (x: ReadNode<number | string>) => {
+          if (x.path[0] === "targetBuff") return
+          let inputNode: ReadNode<number | string> | undefined, data: Data
+          if (x.path[0] === "target") { // Link the node to target data
+            inputNode = objPathValue(input, x.path.slice(1)) as any
+            data = target
+          } else { // Link the node to source data
+            inputNode = objPathValue(input, x.path) as any
+            data = targetData[j]
+          }
+          if (!inputNode) throw new Error(`Unknown team buff read path ${x.path}`)
+          layeredAssignment(calc, x.path, resetData(inputNode, data))
+        })
+      })
+      return buff
+    })
+  )
+  targetData.forEach((target, i) => {
+    delete mergedData[i]?.teamBuff
+    const final = mergeData([mergedData[i], ...buffData[i]])
+    Object.entries(final).forEach(([key, value]) =>
+      target[key] = value as any)
+  })
+  return targetData
 }
 function mergeData(data: Data[]): Data {
   function internal(data: any[], input: any, path: string[]): any {
