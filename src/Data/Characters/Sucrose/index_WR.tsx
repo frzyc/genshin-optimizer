@@ -19,7 +19,7 @@ import { Translate } from '../../../Components/Translate'
 import { normalSrc, sgt, talentTemplate } from '../SheetUtil_WR'
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
-import { input } from "../../../Formula";
+import { input, target } from "../../../Formula/index";
 import { constant, customRead, customStringRead, infoMut, match, percent, prod, sum, threshold_add, unmatch } from "../../../Formula/utils";
 import { ICharacterSheet } from '../../../Types/character_WR'
 import { objectFromKeyMap } from '../../../Util/Util'
@@ -87,13 +87,13 @@ const condSkillHitOpponent = customRead(["conditional", characterKey, "skillHit"
 
 // Conditional Output
 // TODO: Check if total or premod
-// TODO: Use on-field char element
-// TODO: Add to team buff
-const asc1 = match(input.charEle, condSwirlReaction, threshold_add(input.asc, 1, 80), { key: "eleMas" })
-// TODO: Use on-field char key
-// TODO: Add to team buff
-const asc4 = threshold_add(condSkillHitOpponent, 1, unmatch(input.charKey, characterKey,
-  threshold_add(input.asc, 4, prod(percent(0.2), input.premod.eleMas))), { key: "eleMas" })
+const asc1 = threshold_add(input.asc, 1,
+  unmatch(target.charKey, characterKey,
+    match(target.charEle, condSwirlReaction, 50)), { key: "eleMas" })
+const asc4 = threshold_add(condSkillHitOpponent, 1,
+  unmatch(target.charKey, characterKey,
+    threshold_add(input.asc, 4,
+      prod(percent(0.2), input.premod.eleMas))), { key: "eleMas" })
 const c6Base = threshold_add(input.constellation, 6, percent(0.2))
 // TODO: Add to team buff
 const c6Bonus = objectFromKeyMap(absorbableEle, ele =>
@@ -118,7 +118,6 @@ export const dmgFormulas = {
 }
 export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dmgFormulas, {
   // TODO: include
-  // Teambuff: A1, A4,
   // Misc: C1, C2, C4
   talent: {
     boost: {
@@ -129,10 +128,7 @@ export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dm
   total: { eleMas: sum(asc1, asc4), dmgBonus: c6Bonus },
   teamBuff: {
     total: {
-      eleMas: threshold_add(input.asc, 1,
-        unmatch(input.charKey, "Sucrose",
-          match(input.charEle, "anemo" /* Use swirl element */, 50))
-      )
+      eleMas: sum(asc1, asc4)
     }
   }
 })

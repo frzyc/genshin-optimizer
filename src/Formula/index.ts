@@ -218,9 +218,9 @@ export type Custom<Num = NumNode, Str = StrNode> = _Input<typeof custom, Num, St
 typecheck<typeof common, StrictInput<NumNode, StrNode>>()
 
 const teamBuff = setReadNodeKeys(deepClone(rd), ["teamBuff"])
-const buffSrc = setReadNodeKeys(deepClone(rd), ["buffSource"])
+const target = setReadNodeKeys(deepClone(rd), ["target"])
 
 export {
   rd as input, common, custom,
-  teamBuff, buffSrc
+  teamBuff, target
 }
