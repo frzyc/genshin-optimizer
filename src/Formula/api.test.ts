@@ -1,8 +1,8 @@
-import { computeUIData, dataObjForArtifact, dataObjForCharacter, dataObjForWeapon } from "./api";
+import { computeUIData, dataObjForArtifact, dataObjForCharacter, dataObjForTeam, dataObjForWeapon } from "./api";
 import { data as sucroseData, dmgFormulas } from "../Data/Characters/Sucrose/index_WR"
 import { data as moonglowData } from "../Data/Weapons/Catalyst/EverlastingMoonglow/index_WR"
 import artifact from "../Data/Artifacts/index_WR"
-import { common } from "./index";
+import { common, input } from "./index";
 import { constant, customRead } from "./utils";
 
 const charData = dataObjForCharacter({
@@ -38,12 +38,14 @@ const weaponData = dataObjForWeapon({
 
 describe("API", () => {
   test("none", async () => {
-    const computed = computeUIData([
+    const char1Data = [
       // ...(dmgFormulas.normal[0] as DataNode).data,
       common, charData, sucroseData, weaponData, moonglowData,
       artifact.EmblemOfSeveredFate.data,
       { artSet: { EmblemOfSeveredFate: constant(4) } }
-    ])
-    console.log(computed.get(customRead(["display", "reaction", "electroSwirl"])))
+    ]
+    const teamData = dataObjForTeam({ Sucrose: char1Data })
+    const computed = teamData["Sucrose"]!.target
+    console.log(computed.getTeamBuff())
   })
 })

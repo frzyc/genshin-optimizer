@@ -218,8 +218,9 @@ export type Custom<Num = NumNode, Str = StrNode> = _Input<typeof custom, Num, St
 typecheck<typeof common, StrictInput<NumNode, StrNode>>()
 
 const target = setReadNodeKeys(deepClone(rd), ["target"])
+const teamBuff = setReadNodeKeys(deepClone(rd), ["teamBuff"]) // Use ONLY by dataObjForTeam
 
 export {
   rd as input, common, custom,
-  target
+  target, teamBuff
 }

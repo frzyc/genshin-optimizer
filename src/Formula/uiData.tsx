@@ -1,3 +1,4 @@
+import { Input } from "."
 import ColorText from "../Components/ColoredText"
 import KeyMap from "../KeyMap"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
@@ -44,6 +45,7 @@ export class UIData {
   processed = new Map<NumNode | StrNode, NodeDisplay<number | string | undefined>>()
 
   display: any = undefined
+  teamBuff: any = undefined
 
   constructor(data: Data, parent: UIData | undefined) {
     if (data === undefined) {
@@ -62,17 +64,20 @@ export class UIData {
   getDisplay(): {
     [key: string]: DisplaySub<NodeDisplay>
   } {
-    if (this.display) return this.display
-    this.display = {}
-    for (const data of this.data) {
-      if (!data.display) continue
-      crawlObject(data.display, [], (x: any) => x.operation, (x: NumNode, key: string[]) =>
-        layeredAssignment(this.display, key, this.get(x)))
-    }
-    // CAUTION:
-    // Don't add nodes to this function
-    // Add nodes to `display` namespace in appropriate `Data` instead
+    if (!this.display) this.display = this.getAll(["display"])
     return this.display
+  }
+  getTeamBuff(): Input<NodeDisplay, NodeDisplay<string>> {
+    if (!this.teamBuff) this.teamBuff = this.getAll(["teamBuff"])
+    return this.teamBuff
+  }
+  getAll(prefix: string[]): any {
+    const result = {}
+    for (const data of this.data) {
+      crawlObject(objPathValue(data, prefix) ?? {}, [], (x: any) => x.operation,
+        (x: NumNode, key: string[]) => layeredAssignment(result, key, this.get(x)))
+    }
+    return result
   }
   get(node: NumNode): NodeDisplay
   get(node: StrNode): NodeDisplay<string | undefined>

@@ -5,10 +5,10 @@ import { ICachedCharacter } from "../Types/character_WR";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, deepClone, layeredAssignment, objectFromKeyMap, objPathValue } from "../Util/Util";
-import { input } from "./index";
+import { input, teamBuff } from "./index";
 import { Data, DisplaySub, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
-import { frac, constant, infoMut, percent, prod, subscript, sum, unit, resetData, customRead, setReadNodeKeys } from "./utils";
+import { frac, constant, infoMut, percent, prod, subscript, sum, unit, resetData, customRead } from "./utils";
 
 function dataObjForArtifactSheet(
   key: ArtifactSetKey,
@@ -91,8 +91,7 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
     },
   }
 }
-const teamBuff = setReadNodeKeys(deepClone(input), ["teamBuff"]) // Use ONLY by dataObjForTeam
-export function dataObjForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<CharacterKey, { target: Data, buffs: Dict<CharacterKey, Data> }> {
+export function dataObjForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<CharacterKey, { target: UIData }> {
   // May the goddess of wisdom bless any and all souls courageous
   // enough to attempt for the understanding of this abomination.
 
@@ -123,6 +122,7 @@ export function dataObjForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Chara
           const inputNode = objPathValue(teamBuff, key) as ReadNode<number | string> | undefined
           if (!inputNode) throw new Error(`Unknown team buff destination ${key}`)
           layeredAssignment(buff, key, resetData(inputNode, calc))
+          layeredAssignment(buff, ["teamBuff", ...key], resetData(inputNode, calc))
         }
 
         crawlObject(x, [], (x: any) => x?.operation === "read", (x: ReadNode<number | string>) => {
@@ -154,7 +154,10 @@ export function dataObjForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Chara
     Object.entries(final).forEach(([key, value]) =>
       target[key] = value as any)
   })
-  return result
+  const origin = new UIData(undefined as any, undefined)
+  const uiDataResult = Object.fromEntries(Object.entries(result).map(([key, value]) =>
+    [key, { target: new UIData(value.target, origin) }]))
+  return uiDataResult
 }
 function mergeData(data: Data[]): Data {
   function internal(data: any[], input: any, path: string[]): any {
