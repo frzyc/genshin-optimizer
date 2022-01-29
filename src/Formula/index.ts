@@ -74,9 +74,9 @@ const rd = setReadNodeKeys({
 
     lvl: read(undefined, { ...weaponInfo }), asc: read(undefined, { ...weaponInfo }),
     refineIndex: read(undefined, { ...weaponInfo }), refinement: read(undefined, { ...weaponInfo }),
-    main: read(undefined, { ...weaponInfo }),
-    sub: read(undefined, { ...weaponInfo }),
-    sub2: read(undefined, { ...weaponInfo }),
+    main: read(undefined),
+    sub: read(undefined),
+    sub2: read(undefined),
   },
 
   team: { infusion: stringRead() },

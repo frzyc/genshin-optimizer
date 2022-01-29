@@ -30,17 +30,17 @@ export function dataObjForWeaponSheet(
 
   const { mainStat, subStat } = gen
 
-  const mainStatNode = infoMut(sum(prod(mainStat.base, subscript(input.weapon.lvl, weaponCurves[mainStat.curve])), subscript(input.weapon.asc, gen.ascension.map(x => x.addStats[mainStat.type] ?? 0))), { key: mainStat.type })
+  const mainStatNode = infoMut(sum(prod(mainStat.base, subscript(input.weapon.lvl, weaponCurves[mainStat.curve])), subscript(input.weapon.asc, gen.ascension.map(x => x.addStats[mainStat.type] ?? 0))), { key: mainStat.type, namePrefix: "Weapon" })
   result.base![mainStat.type] = mainStatNode
   result.weapon!.main = mainStatNode
 
   if (subStat) {
-    const substatNode = subStat && infoMut(prod(subStat.base, subscript(input.weapon.lvl, weaponCurves[subStat.curve])), { key: subStat.type })
+    const substatNode = infoMut(prod(subStat.base, subscript(input.weapon.lvl, weaponCurves[subStat.curve])), { key: subStat.type, namePrefix: "Weapon" })
     result.premod![subStat.type] = substatNode
     result.weapon!.sub = substatNode
   }
   if (substat2) {
-    const substat2Node = subscript(input.weapon.refineIndex, gen.addProps.map(x => x[substat2] ?? NaN), { key: substat2 })
+    const substat2Node = subscript(input.weapon.refineIndex, gen.addProps.map(x => x[substat2] ?? NaN), { key: substat2, namePrefix: " Weapon" })
     result.weapon!.sub2 = substat2Node
     result.premod![substat2] = substat2 !== subStat?.type
       ? input.weapon.sub2 : sum(input.weapon.sub, input.weapon.sub2)
