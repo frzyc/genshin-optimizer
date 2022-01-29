@@ -74,7 +74,7 @@ export function objMultiplication(obj, multi) {
 }
 
 //assign obj.[keys...] = value
-export function layeredAssignment(obj, keys: string[], value) {
+export function layeredAssignment(obj, keys: readonly string[], value) {
   keys.reduce((accu, key, i, arr) => {
     if (i === arr.length - 1) return (accu[key] = value)
     if (!accu[key]) accu[key] = {}

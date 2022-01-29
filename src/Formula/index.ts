@@ -1,9 +1,9 @@
 import { amplifyingReactions, transformativeReactions } from "../StatConstants"
 import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
 import { allArtifactSets, allElementsWithPhy, allSlotKeys } from "../Types/consts"
-import { objectFromKeyMap } from "../Util/Util"
+import { deepClone, objectFromKeyMap } from "../Util/Util"
 import { Info, NumNode, StrNode, ReadNode } from "./type"
-import { frac, lookup, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, sum, constant, unit, match } from "./utils"
+import { frac, lookup, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, sum, constant, unit, match, matchStr } from "./utils"
 
 const allMainSubStats = [...new Set([...allMainStatKeys, ...allSubstats] as const)]
 const allElements = allElementsWithPhy
@@ -121,8 +121,8 @@ const baseAmpBonus = sum(unit, prod(25 / 9, frac(total.eleMas, 1400)))
 /** Effective reaction, taking into account the hit's element */
 export const effectiveReaction = lookup(hit.ele, {
   pyro: lookup(hit.reaction, { vaporize: constant("vaporize"), melt: constant("melt") }, undefined),
-  hydro: match(hit.reaction, "vaporize", "vaporize", undefined),
-  cryo: match(hit.reaction, "melt", "melt", undefined),
+  hydro: matchStr(hit.reaction, "vaporize", "vaporize", undefined),
+  cryo: matchStr(hit.reaction, "melt", "melt", undefined),
 }, undefined)
 
 const common = {
@@ -167,8 +167,8 @@ const common = {
     ele: stringPrio(
       rd.infusion,
       rd.team.infusion,
-      match(hit.move, constant("charged"), rd.charEle,
-        match(rd.weaponType, constant("catalyst"), rd.charEle, constant(undefined))
+      matchStr(hit.move, constant("charged"), rd.charEle,
+        matchStr(rd.weaponType, constant("catalyst"), rd.charEle, constant(undefined))
       ),
     ),
     dmg: prod(
@@ -217,6 +217,10 @@ export type Custom<Num = NumNode, Str = StrNode> = _Input<typeof custom, Num, St
 // Make sure that `common` contains only entries matching `rd` and `str`.
 typecheck<typeof common, StrictInput<NumNode, StrNode>>()
 
+const teamBuff = setReadNodeKeys(deepClone(rd), ["teamBuff"])
+const buffSrc = setReadNodeKeys(deepClone(rd), ["buffSource"])
+
 export {
-  rd as input, common, custom
+  rd as input, common, custom,
+  teamBuff, buffSrc
 }

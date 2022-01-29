@@ -20,7 +20,7 @@ import { normalSrc, sgt, talentTemplate } from '../SheetUtil_WR'
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 import { input } from "../../../Formula";
-import { constant, customRead, customStringRead, infoMut, match, percent, prod, sum, threshold_add } from "../../../Formula/utils";
+import { constant, customRead, customStringRead, infoMut, match, percent, prod, sum, threshold_add, unmatch } from "../../../Formula/utils";
 import { ICharacterSheet } from '../../../Types/character_WR'
 import { objectFromKeyMap } from '../../../Util/Util'
 import skillParam_gen_pre from './skillParam_gen.json'
@@ -89,15 +89,15 @@ const condSkillHitOpponent = customRead(["conditional", characterKey, "skillHit"
 // TODO: Check if total or premod
 // TODO: Use on-field char element
 // TODO: Add to team buff
-const asc1 = match(input.charEle, condSwirlReaction, threshold_add(input.asc, 1, 80), 0, "unmatch", { key: "eleMas" })
+const asc1 = match(input.charEle, condSwirlReaction, threshold_add(input.asc, 1, 80), { key: "eleMas" })
 // TODO: Use on-field char key
 // TODO: Add to team buff
-const asc4 = threshold_add(condSkillHitOpponent, 1, match(input.charKey, characterKey,
-  0, threshold_add(input.asc, 4, prod(percent(0.2), input.premod.eleMas))), { key: "eleMas" })
+const asc4 = threshold_add(condSkillHitOpponent, 1, unmatch(input.charKey, characterKey,
+  threshold_add(input.asc, 4, prod(percent(0.2), input.premod.eleMas))), { key: "eleMas" })
 const c6Base = threshold_add(input.constellation, 6, percent(0.2))
 // TODO: Add to team buff
 const c6Bonus = objectFromKeyMap(absorbableEle, ele =>
-  match(condAbsorption, ele, c6Base, 0, "unmatch", { key: `${ele}_dmg_` }))
+  match(condAbsorption, ele, c6Base, { key: `${ele}_dmg_` }))
 
 export const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -113,7 +113,7 @@ export const dmgFormulas = {
   burst: {
     dot: dmgNode("atk", datamine.burst.dot, "burst"),
     ...Object.fromEntries(absorbableEle.map(key =>
-      [key, match(condAbsorption, key, dmgNode("atk", datamine.burst.dmg_, "burst", { hit: { ele: constant(key) } }), 0)]))
+      [key, match(condAbsorption, key, dmgNode("atk", datamine.burst.dmg_, "burst", { hit: { ele: constant(key) } }))]))
   },
 }
 export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dmgFormulas, {
@@ -127,6 +127,14 @@ export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dm
     }
   },
   total: { eleMas: sum(asc1, asc4), dmgBonus: c6Bonus },
+  teamBuff: {
+    total: {
+      eleMas: threshold_add(input.asc, 1,
+        unmatch(input.charKey, "Sucrose",
+          match(input.charEle, "anemo" /* Use swirl element */, 50))
+      )
+    }
+  }
 })
 
 const sheet: ICharacterSheet = {

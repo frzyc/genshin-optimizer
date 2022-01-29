@@ -28,12 +28,19 @@ export function infoMut(node: NumNode | StrNode, info: Info): NumNode | StrNode 
   if (info) node.info = { ...node.info, ...info }
   return node
 }
-/** `v1` === `v2` ? `match` : `unmatch` */
-export function match(v1: Str, v2: Str, match: Num, unmatch: Num, emptyOn?: "match" | "unmatch", info?: Info): NumNode
-export function match(v1: Str, v2: Str, match: Str, unmatch: Str, emptyOn?: "match" | "unmatch", info?: Info): StrNode
-export function match(v1: Str, v2: Str, match: Any, unmatch: Any, emptyOn?: "match" | "unmatch", info?: Info): MatchNode<any, StrNode> {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(unmatch)], info, emptyOn }
+/** `v1` === `v2` ? `match` : 0 */
+export function match(v1: Str, v2: Str, match: Num, info?: Info): NumNode {
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(0)], info, emptyOn: "unmatch" }
 }
+/** `v1` === `v2` ? 0 : `unmatch` */
+export function unmatch(v1: Str, v2: Str, unmatch: Num, info?: Info): NumNode {
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(0), intoV(unmatch)], info, emptyOn: "match" }
+}
+/** `v1` === `v2` ? 0 : `unmatch` */
+export function matchStr(v1: Str, v2: Str, match: Str, unmatch: Str, info?: Info): MatchNode<StrNode, StrNode> {
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(unmatch)], info }
+}
+
 /** `table[string] ?? defaultNode` */
 export function lookup(index: StrNode, table: Dict<string, NumNode>, defaultV: Num | "none", info?: Info): NumNode
 export function lookup(index: StrNode, table: Dict<string, StrNode>, defaultV: Str | "none", info?: Info): StrNode
@@ -88,6 +95,7 @@ export function data(base: AnyNode, data: Data): DataNode<AnyNode> {
 }
 export function resetData(base: NumNode, data: Data): NumNode
 export function resetData(base: StrNode, data: Data): StrNode
+export function resetData(base: NumNode | StrNode, data: Data): DataNode<NumNode | StrNode>
 export function resetData(base: AnyNode, data: Data): DataNode<any> {
   return { operation: "data", operands: [base], data, reset: true }
 }
