@@ -85,14 +85,14 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySl
   return progress ? newArts : arts
 }
 /** Remove artifacts that cannot reach `minimum` in any build */
-export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[]): ArtifactsBySlot {
+export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, base: number[], minimum: number[]): ArtifactsBySlot {
   while (true) {
     const artRanges = objectFromKeyMap(allSlotKeys, slot => arts[slot].reduce((prev, cur) =>
       prev.map((value, i) => computeMinMax([cur.values[i]], [value])),
       Array(arts[slot][0].values.length).fill({ min: Infinity, max: -Infinity })))
     const otherArtRanges = objectFromKeyMap(allSlotKeys, key => allSlotKeys
       .map(other => key === other ? [...artRanges[other]].fill({ min: 0, max: 0 }) : artRanges[other])
-      .reduce((accu, other) => accu.map((x, i) => ({ min: x.min + other[i].min, max: x.max + other[i].max }))))
+      .reduce((accu, other) => accu.map((x, i) => ({ min: x.min + other[i].min, max: x.max + other[i].max })), base.map(i => ({ min: i, max: i }))))
 
     let progress = false
 

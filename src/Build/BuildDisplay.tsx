@@ -221,7 +221,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     const origCount = countBuilds(artifactsBySlot)
 
     while (true) {
-      const newArts = pruneRange(nodes, artifactsBySlot, minimum)
+      const newArts = pruneRange(nodes, artifactsBySlot, base, minimum)
       if (newArts === artifactsBySlot)
         break
       artifactsBySlot = newArts
