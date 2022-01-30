@@ -13,6 +13,12 @@ import useForceUpdate from "./useForceUpdate";
 import usePromise from "./usePromise";
 import useWeapon from "./useWeapon";
 
+/**
+ * @deprecated
+ * @param characterKey
+ * @param mainStatAssumptionLevel
+ * @returns
+ */
 export default function useCharUIData(characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0) {
   const database = useContext(DatabaseContext)
   const character = useCharacter(characterKey)

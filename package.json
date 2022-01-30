@@ -1,5 +1,5 @@
 {
-  "homepage": "https://frzyc.github.io/genshin-optimizer/",
+  "homepage": "https://frzyc.github.io/genshin-optimizer-waverider/",
   "name": "genshin-optimizer",
   "version": "7.8.4",
   "private": true,
@@ -52,7 +52,7 @@
     "localization-load": "cd ./localization && npx ts-node ./load.ts",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build -r https://github.com/frzyc/genshin-optimizer-waverider",
     "check-types": "tsc --noEmit"
   },
   "eslintConfig": {

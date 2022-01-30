@@ -23,21 +23,24 @@ import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { DataContext, dataContextObj } from '../DataContext';
 import { input } from '../Formula';
-import { Data, NumNode } from '../Formula/type';
-import { computeUIData, dataObjForArtifact, mergeData } from '../Formula/api';
-import { UIData } from '../Formula/uiData'
+import { optimize } from '../Formula/optimization';
+import { NumNode } from '../Formula/type';
+import { UIData } from '../Formula/uiData';
 import { GlobalSettingsContext } from '../GlobalSettings';
+import useCharacter from '../ReactHooks/useCharacter';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
-import useCharUIData from '../ReactHooks/useCharUIData';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
+import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
 import { ArtifactsBySlot, BuildSetting } from '../Types/Build';
 import { allSlotKeys, ArtifactSetKey, CharacterKey } from '../Types/consts';
 import { objectFromKeyMap, objPathValue } from '../Util/Util';
 import { calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import { compactArtifacts, compactNodes, countBuilds, filterArts, mergeBuilds, mergePlot, pruneOrder, pruneRange, setPermutations } from './Build_WR';
+import ChartCard from './ChartCard';
+import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
 import BonusStatsCard from './Components/BonusStatsCard';
@@ -49,10 +52,6 @@ import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard';
 import TeamBuffCard from './Components/TeamBuffCard';
 import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './Worker';
-import useCharacter from '../ReactHooks/useCharacter';
-import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
-import ChartCard from './ChartCard';
-import { optimize } from '../Formula/optimization';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
@@ -120,20 +119,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const character = useCharacter(characterKey)
   const buildSettings = character?.buildSettings ?? initialBuildSettings()
   const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSettings
-  const { data, characterSheet, dataWoArt } = useCharUIData(characterKey, mainStatAssumptionLevel) ?? {}
+  const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
+  const { characterSheet, target: data } = teamData?.[characterKey] ?? {}
+
+  const buildDatas = [] as UIData[] // TODO:
 
   const compareData = character?.compareData ?? false
-
-  const buildDatas = useMemo(() => {
-    if (!dataWoArt) return []
-    return builds.map(build => {
-      const arts = build.map(id => database._getArt(id))
-      return computeUIData([
-        ...arts.filter(a => a).map(a => dataObjForArtifact(a!)),
-        ...dataWoArt,
-      ])
-    }).filter(build => build)
-  }, [builds, database, dataWoArt])
 
   const noCharacter = useMemo(() => !database._getCharKeys().length, [database])
   const noArtifact = useMemo(() => !database._getArts().length, [database])
@@ -192,9 +183,11 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
   const generateBuilds = useCallback(async () => {
-    if (!data || !dataWoArt || !optimizationTarget) return
-    const workerData: Data = mergeData(dataWoArt)
-    const optimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode
+    if (!optimizationTarget) return
+    const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
+    if (!teamData) return
+    const workerData = teamData.teamData
+    const optimizationTargetNode = objPathValue(charData.display ?? {}, optimizationTarget) as NumNode
     const valueFilter: { value: NumNode, minimum: number }[] = []
     const setFilters: Dict<ArtifactSetKey, number> = {}
 
@@ -336,7 +329,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       })
     }
     setgeneratingBuilds(false)
-  }, [data, database, dataWoArt, artifactSheets, split, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, setFilters, statFilters, plotBase, tcMode, buildSettingsDispatch])
+  }, [data, database, artifactSheets, split, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, setFilters, statFilters, plotBase, tcMode, buildSettingsDispatch])
 
   const characterName = characterSheet?.name ?? "Character Name"
 

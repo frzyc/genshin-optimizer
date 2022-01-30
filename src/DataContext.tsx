@@ -2,14 +2,24 @@ import { createContext } from "react"
 import CharacterSheet from "./Character/CharacterSheet_WR"
 import { UIData } from "./Formula/uiData"
 import { ICachedCharacter } from "./Types/character_WR"
-
+import { CharacterKey } from "./Types/consts"
+import { ICachedWeapon } from "./Types/weapon_WR"
+import WeaponSheet from "./Weapon/WeaponSheet_WR"
+export type TeamData = Partial<Record<CharacterKey, {
+  target: UIData
+  character: ICachedCharacter,
+  weapon: ICachedWeapon,
+  characterSheet: CharacterSheet,
+  weaponSheet: WeaponSheet
+}>>
 export type dataContextObj = {
   character: ICachedCharacter,
   characterSheet: CharacterSheet
   data: UIData,
   oldData?: UIData,
   mainStatAssumptionLevel: number,
-  characterDispatch: (any) => void
+  teamData: TeamData,
+  characterDispatch: (any) => void,
 }
 
 // If using this context without a Provider, then stuff will crash...

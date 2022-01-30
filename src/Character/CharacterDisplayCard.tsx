@@ -1,5 +1,5 @@
 import { Button, ButtonGroup, Card, CardContent, Divider, Grid, MenuItem, Skeleton, Tab, Tabs, ToggleButton, Typography } from '@mui/material';
-import { Suspense, useCallback, useContext, useEffect, useState } from 'react';
+import { Suspense, useCallback, useContext, useState } from 'react';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
@@ -14,21 +14,17 @@ import { DamageOptionsCard } from '../Components/HitModeEditor';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import { sgt } from '../Data/Characters/SheetUtil';
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/LevelData';
-import { DatabaseContext } from '../Database/Database';
 import { DataContext } from '../DataContext';
 import { UIData } from '../Formula/api';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
-import useCharUIData from '../ReactHooks/useCharUIData';
+import useTeamData from '../ReactHooks/useTeamData';
 import { CharacterKey } from '../Types/consts';
 import { clamp } from '../Util/Util';
-import { defaultInitialWeapon } from '../Weapon/WeaponUtil';
 import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
 import CharacterTeamBuffsPane from './CharacterDisplay/CharacterTeamBuffsPane';
-import CharacterSheet from './CharacterSheet_WR';
-import { initialCharacter } from './CharacterUtil';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -61,29 +57,16 @@ type CharacterDisplayCardProps = {
   isFlex?: boolean,
 }
 export default function CharacterDisplayCard({ characterKey, footer, newBuild, mainStatAssumptionLevel = 0, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
-  const { data: charUIData, character, characterSheet } = useCharUIData(characterKey, mainStatAssumptionLevel) ?? {}
-  const database = useContext(DatabaseContext)
-  useEffect(() => {
-    if (!characterKey || !database) return
-    if (database._getChar(characterKey)) return
-    // Create a new character + weapon, with linking if char isnt in db.
-    (async () => {
-      const newChar = initialCharacter(characterKey)
-      database.updateChar(newChar)
-      const characterSheet = await CharacterSheet.get(characterKey)
-      if (!characterSheet) return
-      const weapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
-      const weaponId = database.createWeapon(weapon)
-      database.setWeaponLocation(weaponId, characterKey)
-    })()
-  }, [database, characterKey])
+  // const { data: charUIData, character, characterSheet } = useCharUIData(characterKey, mainStatAssumptionLevel) ?? {}
+  const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
+  const { character, characterSheet, target: charUIData } = teamData?.[characterKey] ?? {}
 
   // set initial state to false, because it fails to check validity of the tab values on 1st load
   const [tab, settab] = useState<string | boolean>(tabName ? tabName : (newBuild ? "newartifacts" : "character"))
   const onTab = useCallback((e, v) => settab(v), [settab])
 
   const characterDispatch = useCharacterReducer(character?.key ?? "")
-  if (!character || !characterSheet || !charUIData) return <></>
+  if (!teamData || !character || !characterSheet || !charUIData) return <></>
   const { compareData } = character
   // main CharacterDisplayCard
   const dataContextValue = {
@@ -91,6 +74,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild, m
     characterSheet,
     mainStatAssumptionLevel,
     data: (newBuild ? newBuild : charUIData),
+    teamData,
     oldData: (compareData && newBuild) ? charUIData : undefined,
     characterDispatch
   }

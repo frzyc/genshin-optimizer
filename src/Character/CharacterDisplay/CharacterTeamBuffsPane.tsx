@@ -12,7 +12,6 @@ import { input } from "../../Formula";
 import { NumNode } from "../../Formula/type";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import useCharSelectionCallback from "../../ReactHooks/useCharSelectionCallback";
-import useCharUIData from "../../ReactHooks/useCharUIData";
 import { range } from "../../Util/Util";
 import CharacterCard from "../CharacterCard";
 
@@ -80,16 +79,18 @@ function ResonanceDisplay() {
   </CardLight>
 }
 function TeammateDisplay({ index }: { index: number }) {
-  const { character: active } = useContext(DataContext)
+  const { character: active, teamData } = useContext(DataContext)
   const characterKey = active.team[index]
   const characterDispatch = useCharacterReducer(characterKey)
   // TODO: this UIData should be fed from the main CharacterDisplayCard for teams.
-  const dataBundle = useCharUIData(characterKey)
   const onClickHandler = useCharSelectionCallback()
+
+  const dataBundle = teamData[characterKey]
   const dataContext: dataContextObj | undefined = dataBundle && characterDispatch && {
     character: dataBundle.character,
     characterSheet: dataBundle.characterSheet,
-    data: dataBundle.data,
+    data: dataBundle.target,
+    teamData: teamData,
     mainStatAssumptionLevel: 0,
     characterDispatch
   }
