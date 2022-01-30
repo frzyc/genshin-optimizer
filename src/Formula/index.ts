@@ -2,8 +2,8 @@ import { amplifyingReactions, transformativeReactions } from "../StatConstants"
 import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
 import { allArtifactSets, allElementsWithPhy, allSlotKeys } from "../Types/consts"
 import { deepClone, objectFromKeyMap } from "../Util/Util"
-import { Info, NumNode, StrNode, ReadNode } from "./type"
-import { frac, lookup, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, sum, constant, unit, match, matchStr } from "./utils"
+import { Info, NumNode, ReadNode, StrNode } from "./type"
+import { constant, frac, lookup, matchStr, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, sum, unit } from "./utils"
 
 const allMainSubStats = [...new Set([...allMainStatKeys, ...allSubstats] as const)]
 const allElements = allElementsWithPhy
