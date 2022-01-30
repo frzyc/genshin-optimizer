@@ -219,8 +219,14 @@ typecheck<typeof common, StrictInput<NumNode, StrNode>>()
 
 const target = setReadNodeKeys(deepClone(rd), ["target"])
 const teamBuff = setReadNodeKeys(deepClone(rd), ["teamBuff"]) // Use ONLY by dataObjForTeam
+const dynamic = setReadNodeKeys(deepClone({ dyn: { ...rd.art, ...rd.artSet } }))
+const dynamicData: Input = {
+  art: objectFromKeyMap(allMainSubStats, key => dynamic.dyn[key]),
+  artSet: objectFromKeyMap(allArtifactSets, key => dynamic.dyn[key])
+}
 
 export {
   rd as input, common, custom,
-  target, teamBuff
+  target, teamBuff,
+  dynamicData,
 }

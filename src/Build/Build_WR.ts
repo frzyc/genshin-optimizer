@@ -59,7 +59,7 @@ export function compactArtifacts(db: ArtCharDatabase, affine: NumNode[], data: D
     const artData = dataObjForArtifact(art, mainStatAssumptionLevel)
     result[art.slotKey].push({
       id: art.id, set: art.setKey,
-      values: (constantFold(affine, mergeData([data, artData]), _ => true) as ConstantNode<number>[])
+      values: (constantFold(affine, mergeData([data, { dyn: { ...artData.art, ...artData.artSet } } as any]), _ => true) as ConstantNode<number>[])
         .map((x, i) => x.value - base[i])
     })
   }

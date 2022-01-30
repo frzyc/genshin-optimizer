@@ -22,7 +22,8 @@ import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { DataContext, dataContextObj } from '../DataContext';
-import { input } from '../Formula';
+import { dynamicData, input } from '../Formula/index';
+import { dataObjForTeam, mergeData } from '../Formula/api';
 import { optimize } from '../Formula/optimization';
 import { NumNode } from '../Formula/type';
 import { UIData } from '../Formula/uiData';
@@ -186,12 +187,13 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     if (!optimizationTarget) return
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
-    const workerData = teamData.teamData
-    const optimizationTargetNode = objPathValue(charData.display ?? {}, optimizationTarget) as NumNode
-    const valueFilter: { value: NumNode, minimum: number }[] = []
-    const setFilters: Dict<ArtifactSetKey, number> = {}
-
+    const workerData = dataObjForTeam(teamData.teamData)[characterKey as CharacterKey]?.target.data![0]
+    if (!workerData) return
+    Object.entries(mergeData([workerData, dynamicData])).forEach(([key, value]) =>
+      workerData[key] = value as any) // Mark art fields as dynamic
+    const optimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
     if (!optimizationTargetNode) return
+    const valueFilter: { value: NumNode, minimum: number }[] = [] // TODO: Connect to statFilter
 
     const t1 = performance.now()
     setgeneratingBuilds(true)
@@ -207,7 +209,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       workerkillers.forEach(w => w())
     }
 
-    let nodes = optimize([optimizationTargetNode, ...valueFilter.map(x => x.value)], workerData, ({ path: [p] }) => p !== "art" && p !== "artSet")
+    let nodes = optimize([optimizationTargetNode, ...valueFilter.map(x => x.value)], workerData, ({ path: [p] }) => p !== "dyn")
     let affine: NumNode[]
     const minimum = [-Infinity, ...valueFilter.map(x => x.minimum)]
     {
@@ -229,7 +231,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     let buildCount = 0, failedCount = 0, skippedCount = origCount - countBuilds(artifactsBySlot)
     let threshold = -Infinity
 
-    const setPerm = setPermutations(setFilters)[Symbol.iterator]()
+    const setPerm = setPermutations(Object.fromEntries(setFilters.map(({ key, num }) => [key, num]).filter(x => x[1])))[Symbol.iterator]()
 
     function fetchWork(): Request | undefined {
       const next = setPerm.next()
