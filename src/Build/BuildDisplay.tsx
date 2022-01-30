@@ -317,7 +317,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         setchartData(plotData)
       }
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
-      setTeamDataBuilds(await Promise.all(builds.map(async b => {
+      setTeamDataBuilds(await Promise.all(builds.map(async ({ artifactIds: b }) => {
         const { teamData, teamBundle } = (await getTeamData(database, characterKey, mainStatAssumptionLevel, Object.values(b).filter(a => a).map(a => database._getArt(a as any)) as ICachedArtifact[])) as any
         const calcData = dataObjForTeam(teamData)
         const data = objectMap(calcData as any, (obj: object, ck) => {
