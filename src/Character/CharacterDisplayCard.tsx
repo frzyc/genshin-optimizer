@@ -14,7 +14,7 @@ import { DamageOptionsCard } from '../Components/HitModeEditor';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import { sgt } from '../Data/Characters/SheetUtil';
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/LevelData';
-import { DataContext, TeamData } from '../DataContext';
+import { DataContext, dataContextObj, TeamData } from '../DataContext';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useTeamData from '../ReactHooks/useTeamData';
@@ -67,11 +67,11 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
   if (!teamData || !character || !characterSheet || !charUIData) return <></>
   const { compareData } = character
   // main CharacterDisplayCard
-  const dataContextValue = {
+  const dataContextValue: dataContextObj = {
     character,
     characterSheet,
     mainStatAssumptionLevel,
-    data: (newteamData ? newteamData[characterKey] : charUIData),
+    data: (newteamData ? newteamData[characterKey]!.target : charUIData),
     teamData,
     oldData: (compareData && newteamData) ? charUIData : undefined,
     characterDispatch

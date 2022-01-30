@@ -2,17 +2,20 @@ import { useContext, useEffect } from "react";
 import { ArtifactSheet } from "../Artifact/ArtifactSheet_WR";
 import CharacterSheet from "../Character/CharacterSheet_WR";
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database";
+import { TeamData } from "../DataContext";
 import { common } from "../Formula";
 import { dataObjForArtifact, dataObjForCharacter, dataObjForTeam, dataObjForWeapon } from "../Formula/api";
 import { Data } from "../Formula/type";
 import { ICachedArtifact } from "../Types/artifact_WR";
+import { ICachedCharacter } from "../Types/character_WR";
 import { CharacterKey } from "../Types/consts";
+import { ICachedWeapon } from "../Types/weapon_WR";
 import { objectMap } from "../Util/Util";
 import WeaponSheet from "../Weapon/WeaponSheet_WR";
 import useForceUpdate from "./useForceUpdate";
 import usePromise from "./usePromise";
 
-export default function useTeamData(characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0) {
+export default function useTeamData(characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0): TeamData | undefined {
   const database = useContext(DatabaseContext)
   const [dbDirty, setDbDirty] = useForceUpdate()
   const { team = [], teamData, teamBundle } = usePromise(getTeamData(database, characterKey, mainStatAssumptionLevel), [dbDirty, characterKey, database]) ?? {}
@@ -62,7 +65,15 @@ export async function getTeamData(database: ArtCharDatabase, characterKey: Chara
 
   return { team, teamData, teamBundle }
 }
-async function getCharDataBundle(database: ArtCharDatabase, characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[]) {
+type CharBundle = {
+  character: ICachedCharacter,
+  weapon: ICachedWeapon,
+  characterSheet: CharacterSheet,
+  weaponSheet: WeaponSheet,
+  data: Data[]
+}
+async function getCharDataBundle(database: ArtCharDatabase, characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[])
+  : Promise<CharBundle | undefined> {
   if (!characterKey) return
   const character = database._getChar(characterKey)
   if (!character) return
