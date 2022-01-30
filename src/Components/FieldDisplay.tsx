@@ -38,7 +38,6 @@ function BasicFieldDisplay({ field }: { field: IBasicFieldDisplay }) {
   </Box>
 }
 
-// TODO: "dim" field and use `N/A` for value when the node.isEmpty
 export function NodeFieldDisplay({ node, oldValue }: { node: NodeDisplay, oldValue?: number }) {
   const fieldText = node.key ? KeyMap.get(node.key) : ""
   const fieldFormulaText = node.formula
@@ -47,10 +46,13 @@ export function NodeFieldDisplay({ node, oldValue }: { node: NodeDisplay, oldVal
     const diff = node.value - oldValue
     fieldVal = <span>{valueString(oldValue, node.unit)}{diff ? <ColorText color={diff > 0 ? "success" : "error"}> {diff > 0 ? "+" : ""}{valueString(diff, node.unit)}</ColorText> : ""}</span>
   } else fieldVal = valueString(node.value, node.unit)
+  const dim = node.isEmpty
+  if (dim)
+    fieldVal = NaN.toString()
   const formulaTextOverlay = !!node.formula && <BootstrapTooltip placement="top" title={<Typography>{fieldFormulaText}</Typography>}>
     <Box component="span" sx={{ cursor: "help", ml: 1 }}><FontAwesomeIcon icon={faQuestionCircle} /></Box>
   </BootstrapTooltip>
-  return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between" }}  >
+  return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", opacity: dim ? 0.5 : 1 }}  >
     <ColorText color={node.variant}>{node.key && (<span>{StatIcon[node.key]} </span>)}<b>{fieldText}</b>{formulaTextOverlay}</ColorText>
     <Typography >{fieldVal}</Typography>
   </Box>
