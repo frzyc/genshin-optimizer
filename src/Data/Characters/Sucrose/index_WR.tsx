@@ -16,7 +16,7 @@ import passive3 from './passive3.png'
 import data_gen from './data_gen.json'
 import { absorbableEle, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { Translate } from '../../../Components/Translate'
-import { normalSrc, sgt, talentTemplate } from '../SheetUtil_WR'
+import { conditionalHeader, normalSrc, sgt, talentTemplate } from '../SheetUtil_WR'
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from "../../../Formula/index";
@@ -29,7 +29,7 @@ const characterKey: CharacterKey = "Sucrose"
 const tr = (strKey: string) => <Translate ns={`char_${characterKey}_gen`} key18={strKey} />
 
 const skillParam_gen = skillParam_gen_pre as any
-let a = 0, s = 0, b = 0, p1, p2 = 0
+let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
 const datamine = {
   normal: {
     hitArr: [
@@ -60,12 +60,12 @@ const datamine = {
     enerCost: skillParam_gen.burst[b++][0],
   },
   passive1: {
-    eleMas: skillParam_gen.passive1[p1++],
-    duration: skillParam_gen.passive1[p1++],
+    eleMas: skillParam_gen.passive1[p1++][0],
+    duration: skillParam_gen.passive1[p1++][0],
   },
   passive2: {
-    eleMas_: skillParam_gen.passive2[p2++],
-    duration: skillParam_gen.passive2[p2++],
+    eleMas_: skillParam_gen.passive2[p2++][0],
+    duration: skillParam_gen.passive2[p2++][0],
   },
   constellation2: {
     durationInc: skillParam_gen.constellation2[0],
@@ -74,23 +74,24 @@ const datamine = {
     ele_dmg_: skillParam_gen.constellation6[0],
   }
 } as const
-// TODO: Hook these to the Sheet/UI
 
 // Conditional Input
 // Absorption Element
 const condAbsorptionPath = [characterKey, "absorption"]
 const condAbsorption = customStringRead(["conditional", ...condAbsorptionPath])
 // A1 Swirl Reaction Element
-const condSwirlReaction = customStringRead(["conditional", characterKey, "swirl"])
-// Set to 1 if skill hit opponents
-const condSkillHitOpponent = customRead(["conditional", characterKey, "skillHit"])
+const condSwirlReactionPath = [characterKey, "swirl"]
+const condSwirlReaction = customStringRead(["conditional", ...condSwirlReactionPath])
+// Set to "hit" if skill hit opponents
+const condSkillHitOpponentPath = [characterKey, "skillHit"]
+const condSkillHitOpponent = customStringRead(["conditional", ...condSkillHitOpponentPath])
 
 // Conditional Output
 // TODO: Check if total or premod
 const asc1 = threshold_add(input.asc, 1,
   unmatch(target.charKey, characterKey,
-    match(target.charEle, condSwirlReaction, 50)), { key: "eleMas" })
-const asc4 = threshold_add(condSkillHitOpponent, 1,
+    match(target.charEle, condSwirlReaction, datamine.passive1.eleMas)), { key: "eleMas" })
+const asc4 = match("hit", condSkillHitOpponent,
   unmatch(target.charKey, characterKey,
     threshold_add(input.asc, 4,
       prod(percent(0.2), input.premod.eleMas))), { key: "eleMas" })
@@ -213,31 +214,28 @@ const sheet: ICharacterSheet = {
           conditional: { // Absorption
             value: condAbsorption,
             path: condAbsorptionPath,
-            name: "Elemental Absorption",
+            name: "Elemental Absorption", // TODO: trans
             states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
               name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
               fields: [{
-                // canShow: stats => {
-                //   const [num, condEleKey] = stats.conditionalValues?.character?.Sucrose?.q ?? []
-                //   return !!num && condEleKey === eleKey
-                // },
                 node: infoMut(dmgFormulas.burst[eleKey], { key: `char_${characterKey}_gen:burst.skillParams.1` }),
               }]
             }]))
           },
         }, {
-          // conditional: { // Absorption
-          //   key: "c6",
-          //   partyBuff: "partyAll",
-          //   header: conditionalHeader("constellation6", tr, c6),
-          //   description: tr("constellation6.description"),
-          //   name: "Elemental Absorption",
-          //   canShow: stats => stats.constellation >= 6,
-          //   states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-          //     name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-          //     stats: { [`${eleKey}_dmg_`]: 20 } //TODO: remove?
-          //   }]))
-          // },
+          conditional: { // Absorption
+            value: condAbsorption,
+            path: condAbsorptionPath,
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
+            name: "Elemental Absorption", // TODO: trans
+            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+              fields: [{
+                node: c6Bonus[eleKey],
+              }],
+            }]))
+          },
         }]
       },
       passive1: {
@@ -245,17 +243,23 @@ const sheet: ICharacterSheet = {
         img: passive1,
         sections: [{
           text: tr("passive1.description"),
-          // conditional: {
-          //   key: "a1",
-          //   canShow: stats => stats.ascension >= 4,
-          //   partyBuff: "partyOnly",
-          //   header: conditionalHeader("passive1", tr, passive1),
-          //   description: tr("passive1.description"),
-          //   name: "When Sucrose triggers a Swirl reaction",
-          //   fields: [{
-          //     text: <ColorText color="warning">This Team buff currently does not work. please add the EM manually to the characer.</ColorText>
-          //   }]
-          // }
+          conditional: { // Swirl Element
+            value: condSwirlReaction,
+            path: condSwirlReactionPath,
+            header: conditionalHeader("passive1", tr, passive1),
+            description: tr("passive1.description"),
+            name: "Swirled Element", // TODO: trans
+            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+              fields: [{
+                node: asc1,
+              }, {
+                text: sgt("duration"),
+                value: datamine.passive1.duration,
+                unit: "s"
+              }],
+            }]))
+          },
         }]
       },
       passive2: {
@@ -263,22 +267,24 @@ const sheet: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          // conditional: {
-          //   key: "a4",
-          //   canShow: stats => stats.ascension >= 4,
-          //   partyBuff: "partyOnly",
-          //   header: conditionalHeader("passive2", tr, passive2),
-          //   description: tr("passive2.description"),
-          //   name: "When Skill hits opponent",
-          //   fields: [{
-          //     text: "Elemental Mastery Bonus",
-          //     node: input.total.eleMas // TODO: Find the node for this one
-          //   }, {
-          //     text: sgt("duration"),
-          //     value: 8,
-          //     unit: "s"
-          //   }]
-          // }
+          conditional: { // Swirl Element
+            value: condSkillHitOpponent,
+            path: condSkillHitOpponentPath,
+            header: conditionalHeader("passive1", tr, passive1),
+            description: tr("passive1.description"),
+            name: <span>When <strong>Astable Anemohypostasis Creation - 6308 or Forbidden Creation - Isomer 75 / Type II</strong> hits an opponent</span>, // TODO: trans
+            states: {
+              hit: {
+                fields: [{
+                  node: asc4,
+                }, {
+                  text: sgt("duration"),
+                  value: datamine.passive2.duration,
+                  unit: "s"
+                }],
+              }
+            }
+          },
         }]
       },
       passive3: talentTemplate("passive3", tr, passive3),

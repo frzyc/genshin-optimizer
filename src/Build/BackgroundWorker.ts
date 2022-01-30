@@ -1,4 +1,3 @@
-import '../WorkerHack';
 import { Command, setup, request, finalize } from "./Worker"
 import { assertUnreachable } from '../Util/Util';
 
