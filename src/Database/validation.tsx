@@ -117,6 +117,12 @@ export function parseArtifact(obj: any): IArtifact | undefined {
   lock = !!lock
   exclude = !!exclude
   level = Math.round(level)
+  // TODO: Validate artifact set vs slot
+  // TODO: Validate artifact set vs rarity
+  const plausibleMainStats = Artifact.slotMainStats(slotKey)
+  if (!plausibleMainStats.includes(mainStatKey))
+    if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
+    else return // ambiguous mainstat
   if (!allCharacterKeys.includes(location)) location = ""
   return { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock }
 }
