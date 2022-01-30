@@ -14,8 +14,7 @@ import { DamageOptionsCard } from '../Components/HitModeEditor';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import { sgt } from '../Data/Characters/SheetUtil';
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/LevelData';
-import { DataContext } from '../DataContext';
-import { UIData } from '../Formula/api';
+import { DataContext, TeamData } from '../DataContext';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useTeamData from '../ReactHooks/useTeamData';
@@ -50,19 +49,18 @@ function TabPanel({ children, current, value, ...other }: TabPanelProps) {
 type CharacterDisplayCardProps = {
   characterKey: CharacterKey,
   footer?: JSX.Element
-  newBuild?: UIData,
+  newteamData?: TeamData,
   mainStatAssumptionLevel?: number,
   onClose?: (any) => void,
   tabName?: string,
   isFlex?: boolean,
 }
-export default function CharacterDisplayCard({ characterKey, footer, newBuild, mainStatAssumptionLevel = 0, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
-  // const { data: charUIData, character, characterSheet } = useCharUIData(characterKey, mainStatAssumptionLevel) ?? {}
+export default function CharacterDisplayCard({ characterKey, footer, newteamData, mainStatAssumptionLevel = 0, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { character, characterSheet, target: charUIData } = teamData?.[characterKey] ?? {}
 
   // set initial state to false, because it fails to check validity of the tab values on 1st load
-  const [tab, settab] = useState<string | boolean>(tabName ? tabName : (newBuild ? "newartifacts" : "character"))
+  const [tab, settab] = useState<string | boolean>(tabName ? tabName : (newteamData ? "newartifacts" : "character"))
   const onTab = useCallback((e, v) => settab(v), [settab])
 
   const characterDispatch = useCharacterReducer(character?.key ?? "")
@@ -73,9 +71,9 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild, m
     character,
     characterSheet,
     mainStatAssumptionLevel,
-    data: (newBuild ? newBuild : charUIData),
+    data: (newteamData ? newteamData[characterKey] : charUIData),
     teamData,
-    oldData: (compareData && newBuild) ? charUIData : undefined,
+    oldData: (compareData && newteamData) ? charUIData : undefined,
     characterDispatch
   }
   return <CardDark >
@@ -89,7 +87,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild, m
           </Grid>
           <Grid item>
             {/* Compare against new build toggle */}
-            {!!newBuild && <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
+            {!!newteamData && <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
               <ToggleButton value={false} disabled={!compareData}>
                 <small>Show New artifact Stats</small>
               </ToggleButton>
@@ -111,8 +109,8 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild, m
             variant="fullWidth"
           >
             <Tab value="character" label="Character" />
-            {!!newBuild && <Tab value="newartifacts" label="New Artifacts" />}
-            <Tab value="artifacts" label={newBuild ? "Current Artifacts" : "Artifacts"} />
+            {!!newteamData && <Tab value="newartifacts" label="New Artifacts" />}
+            <Tab value="artifacts" label={newteamData ? "Current Artifacts" : "Artifacts"} />
             {!isFlex && <Tab value="buffs" label="Team Buffs" />}
             <Tab value="talent" label="Talents" />
           </Tabs>

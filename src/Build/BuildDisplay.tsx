@@ -21,12 +21,11 @@ import ModalWrapper from '../Components/ModalWrapper';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
-import { DataContext, dataContextObj } from '../DataContext';
-import { dynamicData, input } from '../Formula/index';
+import { DataContext, dataContextObj, TeamData } from '../DataContext';
 import { dataObjForTeam, mergeData } from '../Formula/api';
+import { dynamicData, input } from '../Formula/index';
 import { optimize } from '../Formula/optimization';
 import { NumNode } from '../Formula/type';
-import { UIData } from '../Formula/uiData';
 import { GlobalSettingsContext } from '../GlobalSettings';
 import useCharacter from '../ReactHooks/useCharacter';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
@@ -34,9 +33,10 @@ import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
+import { ICachedArtifact } from '../Types/artifact';
 import { ArtifactsBySlot, BuildSetting } from '../Types/Build';
-import { allSlotKeys, ArtifactSetKey, CharacterKey } from '../Types/consts';
-import { objectFromKeyMap, objPathValue } from '../Util/Util';
+import { allSlotKeys, CharacterKey } from '../Types/consts';
+import { objectFromKeyMap, objectMap, objPathValue } from '../Util/Util';
 import { calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import { compactArtifacts, compactNodes, countBuilds, filterArts, mergeBuilds, mergePlot, pruneOrder, pruneRange, setPermutations } from './Build_WR';
@@ -123,7 +123,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey] ?? {}
 
-  const buildDatas = [] as UIData[] // TODO:
+  const [teamDataBuilds, setTeamDataBuilds] = useState([] as TeamData[])
 
   const compareData = character?.compareData ?? false
 
@@ -317,6 +317,15 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         setchartData(plotData)
       }
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
+      setTeamDataBuilds(await Promise.all(builds.map(async b => {
+        const { teamData, teamBundle } = (await getTeamData(database, characterKey, mainStatAssumptionLevel, Object.values(b).filter(a => a).map(a => database._getArt(a as any)) as ICachedArtifact[])) as any
+        const calcData = dataObjForTeam(teamData)
+        const data = objectMap(calcData as any, (obj: object, ck) => {
+          const { data: _, ...rest } = teamBundle[ck]
+          return { ...obj, ...rest }
+        })
+        return data
+      })))
       buildSettingsDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
       const totalDuration = performance.now() - t1
 
@@ -356,7 +365,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         "Rainbow builds can sometimes be \"optimal\". Good substat combinations can sometimes surpass set effects.",
         "The more complex the formula, the longer the generation time.",]}
     ><InfoDisplay /></InfoComponent>
-    <BuildModal build={buildDatas[modalBuildIndex]} characterKey={characterKey} onClose={closeBuildModal} />
+    <BuildModal teamData={teamDataBuilds[modalBuildIndex]} characterKey={characterKey} onClose={closeBuildModal} />
     {noCharacter && <Alert severity="error" variant="filled"> Opps! It looks like you haven't added a character to GO yet! You should go to the <Link component={RouterLink} to="/character">Characters</Link> page and add some!</Alert>}
     {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
     {/* Build Generator Editor */}
@@ -506,7 +515,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         <CardContent>
           <Box display="flex" justifyContent="space-between" alignItems="center" >
             <Typography>
-              {buildDatas ? <span>Showing <strong>{buildDatas.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
+              {teamDataBuilds ? <span>Showing <strong>{teamDataBuilds.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
                 : <span>Select a character to generate builds.</span>}
             </Typography>
             <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
@@ -522,7 +531,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       </CardDark>
       <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
         {/* Build List */}
-        {buildDatas?.map((build, index) => <DataContext.Provider key={index} value={{ ...dataContext, data: build, oldData: data }}>
+        {teamDataBuilds?.map((teamData, index) => <DataContext.Provider key={index} value={{ ...dataContext, data: teamData[characterKey].target, teamData, oldData: data }}>
           <ArtifactBuildDisplayItem index={index} key={index} onClick={() => setmodalBuildIndex(index)} compareBuild={compareData} disabled={!!generatingBuilds} />
         </DataContext.Provider>
         )}
@@ -531,11 +540,11 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   </Box>
 }
 
-function BuildModal({ build, characterKey, onClose }: { build: UIData, characterKey: CharacterKey, onClose: () => void }) {
-  return <ModalWrapper open={!!build} onClose={onClose} containerProps={{ maxWidth: "xl" }}>
+function BuildModal({ teamData, characterKey, onClose }: { teamData: TeamData, characterKey: CharacterKey, onClose: () => void }) {
+  return <ModalWrapper open={!!teamData} onClose={onClose} containerProps={{ maxWidth: "xl" }}>
     <CharacterDisplayCard
       characterKey={characterKey}
-      newBuild={build}
+      newteamData={teamData}
       onClose={onClose}
       footer={<CloseButton large onClick={onClose} />} />
   </ModalWrapper>
