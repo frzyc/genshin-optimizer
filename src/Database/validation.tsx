@@ -113,12 +113,15 @@ export function parseArtifact(obj: any): IArtifact | undefined {
     typeof level !== "number" || level < 0 || level > 20)
     return // non-recoverable
 
+  // TODO:
+  // These two requires information from artifact sheet,
+  // which normally isn't loaded at this point yet.
+  // - Validate artifact set vs slot
+  // - Validate artifact set vs rarity
   substats = parseSubstats(substats)
   lock = !!lock
   exclude = !!exclude
   level = Math.round(level)
-  // TODO: Validate artifact set vs slot
-  // TODO: Validate artifact set vs rarity
   const plausibleMainStats = Artifact.slotMainStats(slotKey)
   if (!plausibleMainStats.includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
