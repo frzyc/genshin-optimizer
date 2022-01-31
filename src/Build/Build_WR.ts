@@ -1,14 +1,14 @@
+import Artifact from "../Artifact/Artifact";
 import { ArtCharDatabase } from "../Database/Database";
-import { dataObjForArtifact, mergeData } from "../Formula/api";
 import { forEachNodes, mapFormulas } from "../Formula/internal";
 import { allOperations, constantFold } from "../Formula/optimization";
-import { ConstantNode, Data, NumNode } from "../Formula/type";
+import { ConstantNode, NumNode } from "../Formula/type";
 import { constant, customRead, max, min } from "../Formula/utils";
 import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
 import { assertUnreachable, objectFromKeyMap } from "../Util/Util";
-import { ArtifactBuildData, ArtifactsBySlot, Build, PlotData, RequestFilter } from "./Worker";
+import type { ArtifactBuildData, ArtifactsBySlot, Build, DynStat, PlotData, RequestFilter } from "./Worker";
 
-export function compactNodes(nodes: NumNode[]): CompactNodes {
+export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot): { nodes: NumNode[], arts: ArtifactsBySlot } {
   const affineNodes = new Set<NumNode>(), topLevelAffine = new Set<NumNode>()
 
   function visit(node: NumNode, isAffine: boolean) {
@@ -19,13 +19,17 @@ export function compactNodes(nodes: NumNode[]): CompactNodes {
     })
   }
 
+  const dynKeys = new Set<string>()
+
   forEachNodes(nodes, _ => { }, f => {
     const operation = f.operation
     switch (operation) {
       case "read":
-        if (f.type !== "number" || f.accu !== "add")
+        if (f.type !== "number" || f.path[0] !== "dyn" || f.accu !== "add")
           throw new Error(`Found unsupported ${operation} node at path ${f.path} when computing affine nodes`)
-        visit(f, true); break
+        dynKeys.add(f.path[1])
+        visit(f, true)
+        break
       case "add": visit(f, f.operands.every(op => affineNodes.has(op))); break
       case "mul": {
         const nonConst = f.operands.filter(op => op.operation !== "const")
@@ -44,37 +48,73 @@ export function compactNodes(nodes: NumNode[]): CompactNodes {
     }
   })
 
+  let current = -1
+  function nextDynKey(): string {
+    while (dynKeys.has(`${++current}`));
+    return `${current}`
+  }
+
   nodes.forEach(node => affineNodes.has(node) && topLevelAffine.add(node))
   const affine = [...topLevelAffine].filter(f => f.operation !== "const")
-  const affineMap = new Map(affine.map((node, i) => [node, customRead(["aff", `${i}`])]))
+  const affineMap = new Map(affine.map(node => [node, { ...customRead(["dyn", `${nextDynKey()}`]), accu: "add" as const }]))
   nodes = mapFormulas(nodes, f => affineMap.get(f as NumNode) ?? f, f => f)
-  return { nodes, affine }
+
+  function reaffineArt(stat: DynStat): DynStat {
+    const values = constantFold([...affineMap.keys()], {
+      dyn: Object.fromEntries(Object.entries(stat).map(([key, value]) => [key, constant(value)]))
+    } as any, _ => true)
+    return Object.fromEntries([...affineMap.values()].map((v, i) => [v.path[1], (values[i] as ConstantNode<number>).value]))
+  }
+  const result = {
+    nodes, arts: {
+      base: reaffineArt(arts.base),
+      values: objectFromKeyMap(allSlotKeys, slot =>
+        arts.values[slot].map(({ id, set, values }) => ({ id, set, values: reaffineArt(values) })))
+    }
+  }
+  for (const arts of Object.values(result.arts.values))
+    for (const { values } of arts)
+      for (const [key, baseValue] of Object.entries(result.arts.base))
+        values[key] -= baseValue
+  return result
 }
-export function compactArtifacts(db: ArtCharDatabase, affine: NumNode[], data: Data, mainStatAssumptionLevel: number): { artifactsBySlot: ArtifactsBySlot, base: number[] } {
-  const result: ArtifactsBySlot = { flower: [], plume: [], goblet: [], circlet: [], sands: [] }
-  const base = (constantFold(affine, data, _ => true) as ConstantNode<number>[])
-    .map(x => x.value)
+export function compactArtifacts(db: ArtCharDatabase, mainStatAssumptionLevel: number): ArtifactsBySlot {
+  const result: ArtifactsBySlot = {
+    base: {},
+    values: { flower: [], plume: [], goblet: [], circlet: [], sands: [] }
+  }
+  const keys = new Set<string>()
 
   for (const art of db._getArts()) {
-    const artData = dataObjForArtifact(art, mainStatAssumptionLevel)
-    result[art.slotKey].push({
+    const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level))
+
+    const data: ArtifactBuildData = {
       id: art.id, set: art.setKey,
-      values: (constantFold(affine, mergeData([data, { dyn: { ...artData.art, ...artData.artSet } } as any]), _ => true) as ConstantNode<number>[])
-        .map((x, i) => x.value - base[i])
-    })
+      values: {
+        [art.setKey]: 1,
+        [art.mainStatKey]: art.mainStatKey.endsWith('_') ? mainStatVal / 100 : mainStatVal,
+        /* TODO: Use accurate value */
+        ...Object.fromEntries(art.substats.map(substat =>
+          [substat.key, substat.key.endsWith('_') ? substat.value / 100 : substat.value]))
+      },
+    }
+    delete data.values[""]
+    result.values[art.slotKey].push(data)
+    Object.keys(data.values).forEach(x => keys.add(x))
   }
-  return { artifactsBySlot: result, base }
+  result.base = Object.fromEntries([...keys].map(key => [key, 0]))
+  return result
 }
 /** Remove artifacts that cannot be in top `numTop` builds */
 export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySlot {
   let progress = false
-  const newArts = objectFromKeyMap(allSlotKeys, slot => {
-    const list = arts[slot]
+  const values = objectFromKeyMap(allSlotKeys, slot => {
+    const list = arts.values[slot]
     const newList = list.filter(art => {
       let count = 0
       return list.every(other => {
-        const greaterEqual = other.values.every((o, i) => o >= art.values[i])
-        const greater = other.values.some((o, i) => o > art.values[i])
+        const greaterEqual = Object.entries(other.values).every(([k, o]) => o >= art.values[k])
+        const greater = Object.entries(other.values).some(([k, o]) => o > art.values[k])
         if (greaterEqual && (greater || other.id > art.id)) count++
         return count < numTop
       })
@@ -82,35 +122,35 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySl
     if (newList.length !== list.length) progress = true
     return newList
   })
-  return progress ? newArts : arts
+  return progress ? { base: arts.base, values } : arts
 }
 /** Remove artifacts that cannot reach `minimum` in any build */
-export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, base: number[], minimum: number[]): ArtifactsBySlot {
-  const baseRange = base.map(x => ({ min: x, max: x }))
+export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[]): ArtifactsBySlot {
+  const baseRange = Object.fromEntries(Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }]))
   while (true) {
-    const artRanges = objectFromKeyMap(allSlotKeys, slot => computeArtRange(arts[slot]))
+    const artRanges = objectFromKeyMap(allSlotKeys, slot => computeArtRange(arts.values[slot]))
     const otherArtRanges = objectFromKeyMap(allSlotKeys, key =>
       addArtRange(Object.entries(artRanges).map(a => a[0] === key ? baseRange : a[1]).filter(x => x)))
 
     let progress = false
 
-    const newArts = objectFromKeyMap(allSlotKeys, slot => {
-      const result = arts[slot].filter(art => {
-        const read = otherArtRanges[slot].map((x, i) => ({ min: art.values[i] + x.min, max: art.values[i] + x.max }))
+    const values = objectFromKeyMap(allSlotKeys, slot => {
+      const result = arts.values[slot].filter(art => {
+        const read = addArtRange([computeArtRange([art]), otherArtRanges[slot]])
         const newRange = computeNodeRange(nodes, read)
         return nodes.every((node, i) => newRange.get(node)!.min >= minimum[i])
       })
-      if (result.length !== arts[slot].length)
+      if (result.length !== arts.values[slot].length)
         progress = true
       return result
     })
     if (!progress) return arts // Make sure we return the original `arts` if there is no progress
-    arts = newArts
+    arts = { base: arts.base, values }
   }
 }
-export function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot, base: number[]): NumNode[] {
-  const baseRange = base.map(x => ({ min: x, max: x }))
-  const reads = addArtRange([baseRange, ...Object.values(arts).map(values => computeArtRange(values))])
+export function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot): NumNode[] {
+  const baseRange = Object.fromEntries(Object.entries(arts.base).map(([key, value]) => [key, { min: value, max: value }]))
+  const reads = addArtRange([baseRange, ...Object.values(arts.values).map(values => computeArtRange(values))])
   const nodeRange = computeNodeRange(nodes, reads)
 
   return mapFormulas(nodes, f => {
@@ -143,27 +183,32 @@ export function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot, base: nu
     return f
   }, f => f)
 }
-function addArtRange(ranges: MinMax[][]): MinMax[] {
-  const result = ranges[0].map(_ => ({ min: 0, max: 0 }))
+function addArtRange(ranges: DynMinMax[]): DynMinMax {
+  const result: DynMinMax = {}
   ranges.forEach(range => {
-    range.map((r, i) => {
-      result[i].max += r.max
-      result[i].min += r.min
+    Object.entries(range).map(([key, value]) => {
+      if (result[key]) {
+        result[key].min += value.min
+        result[key].max += value.max
+      } else result[key] = { ...value }
     })
   })
   return result
 }
-function computeArtRange(arts: ArtifactBuildData[]): MinMax[] {
-  const result = arts[0].values.map(_ => ({ min: Infinity, max: -Infinity }))
+function computeArtRange(arts: ArtifactBuildData[]): DynMinMax {
+  const result: DynMinMax = {}
   arts.forEach(({ values }) => {
-    values.forEach((value, i) => {
-      if (result[i].max < value) result[i].max = value
-      if (result[i].min > value) result[i].min = value
+    Object.entries(values).forEach(([key, value]) => {
+      if (result[key]) {
+        if (result[key].max < value) result[key].max = value
+        if (result[key].min > value) result[key].min = value
+      } else result[key] = { min: value, max: value }
     })
   })
+
   return result
 }
-export function computeNodeRange(nodes: NumNode[], reads: MinMax[]): Map<NumNode, MinMax> {
+export function computeNodeRange(nodes: NumNode[], reads: DynMinMax): Map<NumNode, MinMax> {
   const range = new Map<NumNode, MinMax>()
 
   forEachNodes(nodes, _ => { }, _f => {
@@ -172,7 +217,11 @@ export function computeNodeRange(nodes: NumNode[], reads: MinMax[]): Map<NumNode
     const operands = f.operands.map(op => range.get(op)!)
     let current: MinMax
     switch (operation) {
-      case "read": current = reads[f.path[1] as any as number]; break
+      case "read":
+        if (f.path[0] !== "dyn")
+          throw new Error(`Found non-dyn path ${f.path} while computing range`)
+        current = reads[f.path[1] as any as number]
+        break
       case "const": current = computeMinMax([f.value]); break
       case "subscript": current = computeMinMax(f.list); break
       case "add": case "min": case "max":
@@ -251,17 +300,20 @@ export function* setPermutations(setFilters: Dict<ArtifactSetKey, number>): Iter
   }
 }
 export function filterArts(arts: ArtifactsBySlot, filters: RequestFilter): ArtifactsBySlot {
-  return objectFromKeyMap(allSlotKeys, slot => {
-    const filter = filters[slot]
-    switch (filter.kind) {
-      case "id": return arts[slot].filter(art => filter.ids.has(art.id))
-      case "exclude": return arts[slot].filter(art => !filter.sets.has(art.set))
-      case "required": return arts[slot].filter(art => filter.sets.has(art.set))
-    }
-  })
+  return {
+    base: arts.base,
+    values: objectFromKeyMap(allSlotKeys, slot => {
+      const filter = filters[slot]
+      switch (filter.kind) {
+        case "id": return arts.values[slot].filter(art => filter.ids.has(art.id))
+        case "exclude": return arts.values[slot].filter(art => !filter.sets.has(art.set))
+        case "required": return arts.values[slot].filter(art => filter.sets.has(art.set))
+      }
+    })
+  }
 }
 export function countBuilds(arts: ArtifactsBySlot): number {
-  return allSlotKeys.reduce((_count, slot) => arts[slot].length, 1)
+  return allSlotKeys.reduce((_count, slot) => arts.values[slot].length, 1)
 }
 export function mergeBuilds(builds: Build[][], maxNum: number): Build[] {
   return builds.flatMap(x => x).sort((a, b) => b.value - a.value).slice(0, maxNum)
@@ -284,5 +336,6 @@ export function mergePlot(plots: PlotData[]): PlotData {
   return result
 }
 
+type DynMinMax = { [key in string]: MinMax }
 type MinMax = { min: number, max: number }
 type CompactNodes = { nodes: NumNode[], affine: NumNode[] }

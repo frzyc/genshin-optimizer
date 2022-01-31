@@ -39,7 +39,7 @@ import { allSlotKeys, CharacterKey } from '../Types/consts';
 import { objectFromKeyMap, objectMap, objPathValue } from '../Util/Util';
 import { calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
-import { compactArtifacts, compactNodes, countBuilds, filterArts, mergeBuilds, mergePlot, pruneNodeRange, pruneOrder, pruneRange, setPermutations } from './Build_WR';
+import { compactArtifacts, countBuilds, filterArts, mergeBuilds, mergePlot, pruneNodeRange, pruneOrder, pruneRange, reaffine, setPermutations } from './Build_WR';
 import ChartCard from './ChartCard';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
@@ -210,26 +210,21 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     }
 
     let nodes = optimize([optimizationTargetNode, ...valueFilter.map(x => x.value)], workerData, ({ path: [p] }) => p !== "dyn")
-    let affine: NumNode[]
-    const minimum = [-Infinity, ...valueFilter.map(x => x.minimum)]
-    {
-      const compact = compactNodes(nodes)
-      nodes = compact.nodes
-      affine = compact.affine
-    }
-    let { artifactsBySlot, base } = compactArtifacts(database, affine, workerData, mainStatAssumptionLevel)
-    const origCount = countBuilds(artifactsBySlot)
+    let arts = compactArtifacts(database, mainStatAssumptionLevel)
+    const minimum = [-Infinity, ...valueFilter.map(x => x.minimum)];
+    ({ nodes, arts } = reaffine(nodes, arts))
+    const origCount = countBuilds(arts)
 
     while (true) {
-      const newArts = pruneRange(nodes, artifactsBySlot, base, minimum)
-      if (newArts === artifactsBySlot)
+      const newArts = pruneRange(nodes, arts, minimum)
+      if (newArts === arts)
         break
-      artifactsBySlot = newArts
+      arts = newArts
     }
-    artifactsBySlot = pruneOrder(artifactsBySlot, maxBuildsToShow)
-    nodes = pruneNodeRange(nodes, artifactsBySlot, base)
+    arts = pruneOrder(arts, maxBuildsToShow)
+    nodes = pruneNodeRange(nodes, arts)
 
-    let buildCount = 0, failedCount = 0, skippedCount = origCount - countBuilds(artifactsBySlot)
+    let buildCount = 0, failedCount = 0, skippedCount = origCount - countBuilds(arts)
     let threshold = -Infinity
 
     const setPerm = setPermutations(Object.fromEntries(setFilters.map(({ key, num }) => [key, num]).filter(x => x[1])))[Symbol.iterator]()
@@ -239,7 +234,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       if (next.done) return
       const filter = next.value
 
-      const filtered = filterArts(artifactsBySlot, filter)
+      const filtered = filterArts(arts, filter)
       const count = countBuilds(filtered)
 
       // TODO: Break down filter when `count` is too high
@@ -257,17 +252,15 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       const setup: Setup = {
         command: "setup",
         id: `${i}`,
-        affineBase: base,
-        artifactsBySlot,
+        arts,
         optimizationTarget: nodes[0],
         plotBase: input.total[plotBase],
-        maxBuildsToShow,
+        maxBuilds: maxBuildsToShow,
         filters: nodes
           .map((value, i) => ({ value, min: minimum[i] }))
           .filter(x => x.min > -Infinity)
       }
       worker.postMessage(setup, undefined)
-
       let finalize: (_: FinalizeResult) => void
       const finalizePromise = new Promise<FinalizeResult>(r => finalize = r)
       worker.onmessage = async ({ data }: { data: WorkerResult }) => {

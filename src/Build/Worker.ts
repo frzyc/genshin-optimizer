@@ -2,56 +2,53 @@ import { allSlotKeys, ArtifactSetKey, SlotKey } from '../Types/consts';
 import { optimize, precompute } from '../Formula/optimization';
 import type { NumNode } from '../Formula/type'
 import type { MainStatKey, SubstatKey } from '../Types/artifact';
+import { objectFromKeyMap } from '../Util/Util';
 
 let id: string
-let affineBase: number[]
-let artifactsBySlot: StrictDict<SlotKey, ArtifactBuildData[]>
-let nodes: NumNode[]
-
-let maxNumBuilds: number
-let threshold = -Infinity
-let minThresholds: number[]
-let builds: Build[] = []
-
+let builds: Build[]
 let plotData: PlotData | undefined
-let callback: (interim: InterimResult) => void
+let threshold: number
 
-export function setup({ id: _id, optimizationTarget, filters, plotBase, maxBuildsToShow, affineBase: _affineBase, artifactsBySlot: _artifactsBySlot }: Setup, _callback: (interim: InterimResult) => void): RequestResult {
-  id = _id
-  callback = _callback
-  builds = []
+type WorkerStat = {
+  arts: ArtifactsBySlot
+  nodes: NumNode[]
 
-  minThresholds = filters.map(x => x.min)
-  nodes = filters.map(x => x.value)
-  nodes.push(optimizationTarget)
-  if (plotBase) {
+  maxBuilds: number
+  min: number[]
+
+  callback: (interim: InterimResult) => void
+}
+let shared: WorkerStat = undefined as any
+
+export function setup(msg: Setup, callback: WorkerStat["callback"]): RequestResult {
+  shared = { ...msg } as any
+  shared.nodes = msg.filters.map(x => x.value)
+  shared.min = msg.filters.map(x => x.min)
+  shared.callback = callback
+  shared.nodes.push(msg.optimizationTarget)
+  if (msg.plotBase) {
     plotData = {}
-    nodes.push(plotBase)
+    shared.nodes.push(msg.plotBase)
   }
-  nodes = optimize(nodes, {}, ({ path: [p] }) => p !== "aff")
-  maxNumBuilds = maxBuildsToShow
-  affineBase = _affineBase
-  artifactsBySlot = _artifactsBySlot
-  Object.values(artifactsBySlot).forEach(arts =>
-    arts.forEach(art => art.values[art.set] = 1))
+  id = msg.id
+  builds = []
+  threshold = -Infinity
 
   return { command: "request", id }
 }
 
-export function request({ threshold: newThreshold, filter: filters }: Request): RequestResult {
-  if (threshold > newThreshold) threshold = newThreshold
-  const arts = allSlotKeys.map(slot => {
+export function request({ threshold: newThreshold, filter: filters }: Request): RequestResult & { total: number } {
+  if (shared.min[0] > newThreshold) shared.min[0] = newThreshold
+  const arts = Object.values(objectFromKeyMap(allSlotKeys, slot => {
     const filter = filters[slot]
     switch (filter.kind) {
-      case "required": return artifactsBySlot[slot].filter(art => filter.sets.has(art.set))
-      case "exclude": return artifactsBySlot[slot].filter(art => !filter.sets.has(art.set))
-      case "id": return artifactsBySlot[slot].filter(art => filter.ids.has(art.id))
+      case "id": return shared.arts.values[slot].filter(art => filter.ids.has(art.id))
+      case "exclude": return shared.arts.values[slot].filter(art => !filter.sets.has(art.set))
+      case "required": return shared.arts.values[slot].filter(art => filter.sets.has(art.set))
     }
-  }).sort((a, b) => a.length - b.length)
-
-  const optimized = optimize(nodes, {}, f => f.path[0] !== "aff")
-  const compute = precompute(optimized,
-    f => f.path[1])
+  })).sort((a, b) => a.length - b.length)
+  const optimized = optimize(shared.nodes, {}, _ => false)
+  const compute = precompute(optimized, f => f.path[1])
 
   const ids: string[] = Array(arts.length).fill("")
   let count = { build: 0, failed: 0 }
@@ -59,10 +56,10 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
   function permute(i: number, stats: Stats) {
     if (i < 0) {
       const result = compute(stats)
-      if (minThresholds.every((min, i) => (min <= result[i]))) {
-        const value = result[minThresholds.length]
+      if (shared.min.every((m, i) => (m <= result[i]))) {
+        const value = result[shared.min.length]
         if (value >= threshold)
-          builds.push({ value, plot: result[minThresholds.length + 1], artifactIds: [...ids] })
+          builds.push({ value, plot: result[shared.min.length + 1], artifactIds: [...ids] })
       }
       else count.failed += 1
       return
@@ -85,47 +82,54 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
   }
 
   // TODO: Update to array-based
-  const base = {}
-  affineBase.forEach((v, i) => base[i] = v)
-  permute(arts.length - 1, base)
-  return { command: "request", id }
+  permute(arts.length - 1, shared.arts.base)
+  return { command: "request", id, total: arts.reduce((count, a) => a.length * count, 1) }
 }
 export function finalize(): FinalizeResult {
+  refresh()
   return { command: "finalize", id, builds, plotData }
 }
 
 export let interimReport = (count: { build: number, failed: number }): void => {
-  // TODO: Update plot
-
-  const newBuilds = builds
-    .sort((a, b) => b.value - a.value)
-    .slice(0, maxNumBuilds)
-
-  const newThreshold = newBuilds[newBuilds.length - 1]?.value ?? -Infinity
-  threshold = newThreshold
-  callback({ command: "interim", id, threshold, buildCount: count.build, failedCount: count.failed, skippedCount: 0 })
+  refresh()
+  shared.callback({
+    command: "interim", id, threshold,
+    buildCount: count.build, failedCount: count.failed, skippedCount: 0
+  })
   count.build = 0
   count.failed = 0
+}
+function refresh(): void {
+  // TODO: Update plot
+
+  builds = builds
+    .sort((a, b) => b.value - a.value)
+    .slice(0, shared.maxBuilds)
+
+  const newThreshold = builds[shared.maxBuilds - 1]?.value ?? -Infinity
+  threshold = newThreshold
 }
 
 type Stats = { [key in MainStatKey | SubstatKey]?: number }
 export type ArtifactBuildData = {
   id: string
   set: ArtifactSetKey
-  values: number[]
+  values: DynStat
 }
 
 export type Command = Setup | Request | Finalize
-export type ArtifactsBySlot = StrictDict<SlotKey, ArtifactBuildData[]>
+export type ArtifactsBySlot = { base: DynStat, values: StrictDict<SlotKey, ArtifactBuildData[]> }
+export type DynStat = { [key in string]: number }
 export interface Setup {
   command: "setup"
+
   id: string
-  affineBase: number[]
-  artifactsBySlot: ArtifactsBySlot
+  arts: ArtifactsBySlot
+
   optimizationTarget: NumNode
   filters: { value: NumNode, min: number }[]
   plotBase: NumNode | undefined,
-  maxBuildsToShow: number
+  maxBuilds: number
 }
 export interface Request {
   command: "request"

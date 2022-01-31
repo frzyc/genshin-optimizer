@@ -6,11 +6,11 @@ import { dataObjForTeam, mergeData } from '../Formula/api';
 import { optimize } from '../Formula/optimization';
 import { customRead } from '../Formula/utils';
 import { getTeamData } from '../ReactHooks/useTeamData';
-import { compactArtifacts, compactNodes } from './Build_WR';
-import { request, setup } from './Worker';
+import { compactArtifacts, reaffine } from './Build_WR';
+import { finalize, request, setup } from './Worker';
 import * as data1 from "./Worker.perf.test.json"
 
-describe.skip("Worker Perf", () => {
+describe("Worker Perf", () => {
   test("Test", async () => {
     dbStorage.copyFrom(importGOOD(data1 as any, database)!.storage)
     database.reloadStorage()
@@ -21,26 +21,24 @@ describe.skip("Worker Perf", () => {
     Object.entries(mergeData([workerData, dynamicData])).forEach(([key, value]) =>
       workerData[key] = value as any) // Mark art fields as dynamic
 
-    const { nodes, affine } = compactNodes(optimize([optimizationTargetNode], workerData, ({ path: [p] }) => p !== "dyn"))
-    let { artifactsBySlot, base } = compactArtifacts(database, affine, workerData, 0)
-    const minimum = [-Infinity]
+    let nodes = optimize([optimizationTargetNode], workerData, ({ path: [p] }) => p !== "dyn")
+    let arts = compactArtifacts(database, 0)
+    const minimum = [-Infinity];
+    ({ nodes, arts } = reaffine(nodes, arts))
 
     setup({
       command: "setup",
       id: `0`,
-      affineBase: base,
-      artifactsBySlot,
+      arts,
       optimizationTarget: nodes[0],
       plotBase: undefined,
-      maxBuildsToShow: 0,
-      filters: nodes
-        .map((value, i) => ({ value, min: minimum[i] }))
-        .filter(x => x.min > -Infinity)
+      maxBuilds: 2,
+      filters: []
     }, () => { })
 
     const date1 = new Date().getTime();
 
-    request({
+    const { total } = request({
       command: "request",
       threshold: -Infinity, filter: {
         "flower": { kind: "exclude", sets: new Set() },
@@ -51,9 +49,9 @@ describe.skip("Worker Perf", () => {
       }
     })
 
-    const total = Object.values(artifactsBySlot).map(x => x.length).reduce((a, b) => a * b, 1)
     const date2 = new Date().getTime()
     const diff = (date2 - date1) / 1000 // total time in seconds
     console.log(`Build speed: ${total / diff} builds/s (${total} builds over ${diff} seconds)`)
+    console.log(finalize().builds.map(build => build.value))
   })
 })
