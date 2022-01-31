@@ -1,4 +1,4 @@
-import CharacterSheet from "../Character/CharacterSheet_WR";
+import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { ArtCharDatabase } from "../Database/Database";
 import { CharacterKey } from "../Types/consts";
 import { FilterConfigs, SortConfigs } from "./SortByFilters";

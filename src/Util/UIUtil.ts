@@ -1,3 +1,6 @@
+/**
+ * @deprecated
+ */
 export function valueStringWithUnit(value: number, unit: string): string {
   switch (unit) {
     case "%": return valueString(value, unit) + "%"
@@ -5,7 +8,9 @@ export function valueStringWithUnit(value: number, unit: string): string {
     default: return valueString(value, unit)
   }
 }
-
+/**
+ * @deprecated
+ */
 export function valueString(value: number, unit: string): string {
   switch (unit) {
     case "%": return (Math.round(value * 10) / 10).toFixed(1) // TODO: % conversion

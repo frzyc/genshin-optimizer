@@ -1,35 +1,40 @@
-import { WeaponData } from 'pipeline'
-import { getTalentStatKey } from '../../../../Build/Build'
-import ColorText from '../../../../Components/ColoredText'
+import type { WeaponData } from 'pipeline'
 import { Translate } from '../../../../Components/Translate'
-import Stat from '../../../../Stat'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
 import icon from './Icon.png'
 import iconAwaken from './AwakenIcon.png'
+import { infoMut, match, prod, subscript } from "../../../../Formula/utils"
+import { dataObjForWeaponSheet } from '../../util'
+import { input } from '../../../../Formula'
+import data_gen_json from './data_gen.json'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
+import { WeaponKey } from '../../../../Types/consts'
 
-const heal_ = [10, 12.5, 15, 17.5, 20]
+const key: WeaponKey = "EverlastingMoonglow"
 
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const data_gen = data_gen_json as WeaponData
+
+const hp_conv = [0.01, 0.015, 0.02, 0.025, 0.03]
+
+const normalDmgInc = infoMut(prod(subscript(input.weapon.refineIndex, hp_conv, { key: '_' }), input.premod.hp), { key: "normal_dmg_inc" })
+export const data = dataObjForWeaponSheet(key, "catalyst", data_gen, "heal_", {
+  normalDmgInc
+}, {
+  hit: {
+    base: match(input.hit.move, "normal", normalDmgInc)
+  }
+})
+const sheet: IWeaponSheet = {
+  weaponType: data_gen.weaponType,
+  rarity: data_gen.rarity,
   icon,
   iconAwaken,
-  stats: stats => ({
-    heal_: heal_[stats.weapon.refineIndex],
-  }),
   document: [{
     fields: [
       {
-        text: <Translate ns="weapon_EverlastingMoonglow" key18="name" />,
-        formulaText: stats => <span>{data.hp_conv[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats, true)} * {Stat.printStat(getTalentStatKey("elemental", stats) + "_multi", stats)}</span>,
-        formula: formula.norm,
-        variant: stats => stats.characterEle
-      },
-      {
-        text: <ColorText color="warning">The normal damage increase is not currently being added to the character's normal damage as a singular damage number, pending future implemention.</ColorText>
+        text: <Translate ns={`"weapon_${key}"`} key18="name" />,
+        node: normalDmgInc,
       }
     ],
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data)

@@ -1,4 +1,4 @@
-import { getTalentStatKey } from "../../../Build/Build"
+import { getTalentStatKey } from "../../../PageBuild/Build"
 import { FormulaItem, IFormulaSheet } from "../../../Types/character"
 import { BasicStats } from "../../../Types/stats"
 import { toTalentPercent } from "../../../Util/DataminedUtil"

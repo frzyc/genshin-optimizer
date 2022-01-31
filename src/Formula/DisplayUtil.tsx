@@ -1,12 +1,12 @@
 import { Typography } from "@mui/material";
 import { input } from ".";
-import { ArtifactSheet } from "../Artifact/ArtifactSheet_WR";
-import CharacterSheet from "../Character/CharacterSheet_WR";
+import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
+import CharacterSheet from "../Data/Characters/CharacterSheet";
 import ColorText from "../Components/ColoredText";
 import SqBadge from "../Components/SqBadge";
 import { ArtifactSetKey, CharacterKey, ElementKey, WeaponKey } from "../Types/consts";
 import { range } from "../Util/Util";
-import WeaponSheet from "../Weapon/WeaponSheet_WR";
+import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import { DisplaySub } from "./type";
 import { NodeDisplay, UIData } from "./uiData";
 

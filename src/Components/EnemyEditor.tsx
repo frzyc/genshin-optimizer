@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ExpandMore } from "@mui/icons-material";
 import { Button, CardContent, Chip, Collapse, Grid, Typography } from "@mui/material";
 import { useCallback, useContext, useState } from 'react';
-import StatInput from "../Character/StatInput";
+import StatInput from "../PageCharacter/StatInput";
 import { DataContext } from "../DataContext";
 import { input } from "../Formula";
 import { valueString } from "../Formula/uiData";

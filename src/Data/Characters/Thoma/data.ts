@@ -1,4 +1,4 @@
-import { getTalentStatKey } from "../../../Build/Build"
+import { getTalentStatKey } from "../../../PageBuild/Build"
 import { IFormulaSheet } from "../../../Types/character"
 import { singleToTalentPercent, toTalentInt, toTalentPercent } from "../../../Util/DataminedUtil"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"

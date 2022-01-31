@@ -10,7 +10,7 @@ import passive1 from './passive1.png'
 import passive2 from './passive2.png'
 import Stat from '../../../../Stat'
 import formula, { data } from './data'
-import { getTalentStatKey, getTalentStatKeyVariant } from "../../../../Build/Build"
+import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../PageBuild/Build'
 import { TalentSheet } from '../../../../Types/character';
 import { absorbableEle } from '../../dataUtil'
 import { Translate } from '../../../../Components/Translate'

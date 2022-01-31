@@ -1,7 +1,7 @@
 import { CharacterExpCurveData } from "./DataminedModules/character/characterExpCurve";
 import { WeaponExpCurveData } from "./DataminedModules/weapon/WeaponCurveExcelConfigData";
-import { WeaponData } from './main'
-export { CharacterExpCurveData, WeaponExpCurveData, WeaponData }
+import { WeaponData, CharacterData } from './main'
+export { CharacterExpCurveData, WeaponExpCurveData, WeaponData, CharacterData }
 
 export const tagColor = {
   "FFD780FF": "strong",
@@ -73,7 +73,7 @@ export const characterIdMap = {
   // 11000026: "TEMPLATE", Yaoyao
   // 11000028: "TEMPLATE", Shiro Maiden
   // 11000030: "TEMPLATE", Greatsword Maiden
-  // 11000035: "TEMPLATE", Lance Warrioress  
+  // 11000035: "TEMPLATE", Lance Warrioress
 } as const
 export type CharacterId = keyof typeof characterIdMap
 export type CharacterKey = typeof characterIdMap[keyof typeof characterIdMap]

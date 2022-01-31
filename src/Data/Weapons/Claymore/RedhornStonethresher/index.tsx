@@ -1,5 +1,5 @@
 import { WeaponData } from 'pipeline'
-import { getTalentStatKey } from '../../../../Build/Build'
+import { getTalentStatKey } from '../../../../PageBuild/Build'
 import ColorText from '../../../../Components/ColoredText'
 import { Translate } from '../../../../Components/Translate'
 import Stat from '../../../../Stat'

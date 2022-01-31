@@ -1,5 +1,5 @@
 import { basicDMGFormula } from "../../../Util/FormulaUtil";
-import { getTalentStatKey } from "../../../Build/Build";
+import { getTalentStatKey } from "../../../PageBuild/Build";
 import { FormulaItem, IFormulaSheet } from "../../../Types/character";
 
 

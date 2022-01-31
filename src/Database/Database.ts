@@ -8,7 +8,7 @@ import { validateArtifact, parseCharacter, parseArtifact, removeArtifactCache, v
 import { DBStorage, dbStorage } from "./DBStorage";
 import { ICachedWeapon, IWeapon } from "../Types/weapon";
 import { createContext } from "react";
-import { defaultInitialWeapon } from "../Weapon/WeaponUtil";
+import { defaultInitialWeapon } from "../Util/WeaponUtil";
 
 export class ArtCharDatabase {
   storage: DBStorage

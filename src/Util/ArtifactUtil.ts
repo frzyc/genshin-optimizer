@@ -1,11 +1,11 @@
-import Artifact from "../Artifact/Artifact"
-import { ArtifactSheet } from "../Artifact/ArtifactSheet"
-import Stat from "../Stat"
+import Artifact from "./Artifact"
+import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet"
 import { allSubstats, IArtifact, ISubstat, SubstatKey } from "../Types/artifact"
 import { allArtifactSets } from "../Types/consts"
 import { valueString } from "./UIUtil"
 import { getRandomElementFromArray, getRandomIntInclusive } from "./Util"
-import artifactSubstatRollCorrection from '../Artifact/artifact_sub_rolls_correction_gen.json'
+import artifactSubstatRollCorrection from '../PageArtifact/artifact_sub_rolls_correction_gen.json'
+import KeyMap from "../KeyMap"
 
 export async function randomizeArtifact(): Promise<IArtifact> {
   const setKey = getRandomElementFromArray(allArtifactSets)
@@ -36,7 +36,7 @@ export async function randomizeArtifact(): Promise<IArtifact> {
   }
   for (const substat of substats)
     if (substat.key) {
-      const value = valueString(substat.value, Stat.getStatUnit(substat.key))
+      const value = valueString(substat.value, KeyMap.unit(substat.key))
       substat.value = parseFloat(artifactSubstatRollCorrection[rarity]?.[substat.key]?.[value] ?? value)
     }
 

@@ -7,7 +7,7 @@ import { Suspense, useState } from "react";
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from "react-i18next";
 import { Link as RouterLink, useRouteMatch } from "react-router-dom";
-import { SlotIconSVG } from "./Artifact/Component/SlotNameWIthIcon";
+import { SlotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
 
 const content = [{
   i18Key: "tabs.artifacts",

@@ -1,6 +1,6 @@
 import { faDiceD20 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAnemo, faAtk, faCdReductionPrimary, faCdReductionSecondary, faCritRate, faCryo, faDef, faDendro, faElectro, faElementalMastery, faEnergyRechargePrimary, faEnergyRechargeSecondary, faGeo, faHealingBonus, faHpPrimary, faHpSecondary, faHydro, faMaxStamina, faPhysicalDmgBonus, faPyro, faShieldStrength } from '../faIcons'
+import { faAnemo, faAtk, faCdReductionPrimary, faCdReductionSecondary, faCritRate, faCryo, faDef, faDendro, faElectro, faElementalMastery, faEnergyRechargePrimary, faEnergyRechargeSecondary, faGeo, faHealingBonus, faHpPrimary, faHpSecondary, faHydro, faMaxStamina, faPhysicalDmgBonus, faPyro, faShieldStrength } from './faIcons'
 import { objectFromKeyMap } from '../Util/Util'
 import ColorText from './ColoredText'
 

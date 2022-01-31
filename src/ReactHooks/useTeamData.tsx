@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
-import { ArtifactSheet } from "../Artifact/ArtifactSheet_WR";
-import CharacterSheet from "../Character/CharacterSheet_WR";
+import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
+import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database";
 import { TeamData } from "../DataContext";
 import { common } from "../Formula";
@@ -11,7 +11,7 @@ import { ICachedCharacter } from "../Types/character_WR";
 import { CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon_WR";
 import { objectMap } from "../Util/Util";
-import WeaponSheet from "../Weapon/WeaponSheet_WR";
+import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import useForceUpdate from "./useForceUpdate";
 import usePromise from "./usePromise";
 

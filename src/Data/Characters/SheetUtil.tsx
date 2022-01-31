@@ -1,5 +1,5 @@
 import Assets from "../../Assets/Assets";
-import { getTalentStatKey, getTalentStatKeyVariant } from "../../Build/Build";
+import { getTalentStatKey, getTalentStatKeyVariant } from "../../PageBuild/Build";
 import ImgIcon from "../../Components/Image/ImgIcon";
 import SqBadge from "../../Components/SqBadge";
 import { Translate } from "../../Components/Translate";

@@ -1,12 +1,12 @@
-import Artifact from "../Artifact/Artifact";
-import { maxBuildsToShowDefault, maxBuildsToShowList } from "../Build/Build";
-import { initialBuildSettings } from "../Build/BuildSetting";
 import { ascensionMaxLevel } from "../Data/LevelData";
-import Stat from "../Stat";
+import KeyMap from "../KeyMap";
+import { maxBuildsToShowDefault, maxBuildsToShowList } from "../PageBuild/Build";
+import { initialBuildSettings } from "../PageBuild/BuildSetting";
 import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter, ICharacter } from "../Types/character_WR";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
 import { IWeapon, ICachedWeapon } from "../Types/weapon";
+import Artifact from "../Util/Artifact";
 import { objectFromKeyMap } from "../Util/Util";
 
 // MIGRATION STEP: Always keep validate/parse in sync with the latest format
@@ -48,7 +48,7 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
     } else { // Invalid Substat
       substat.rolls = []
       substat.efficiency = 0
-      errors.push(<>Invalid substat {Stat.getStatNameWithPercent(substat.key)}</>)
+      errors.push(<>Invalid substat {KeyMap.get(substat.key)}</>)
     }
   })
 
@@ -93,7 +93,7 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
   if (substats.some((substat) => !substat.key)) {
     let substat = substats.find(substat => (substat.rolls?.length ?? 0) > 1)
     if (substat)
-      errors.push(<>Substat {Stat.getStatNameWithPercent(substat.key)} has {'>'} 1 roll, but not all substats are unlocked.</>)
+      errors.push(<>Substat {KeyMap.get(substat.key)} has {'>'} 1 roll, but not all substats are unlocked.</>)
   }
 
   return { artifact: validated, errors }

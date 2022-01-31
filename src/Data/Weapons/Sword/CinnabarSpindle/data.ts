@@ -1,4 +1,4 @@
-import { getTalentStatKey } from "../../../../Build/Build";
+import { getTalentStatKey } from '../../../../PageBuild/Build';
 import { ISubFormula } from "../../../../Types/character";
 export const data = {
   defConv: [40, 50, 60, 70, 80],

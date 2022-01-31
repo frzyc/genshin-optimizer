@@ -3,14 +3,33 @@ import plume from './plume.png'
 import sands from './sands.png'
 import goblet from './goblet.png'
 import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-import { FormulaPathBase } from '../../formula'
-import formula from './data'
-import { KeyPath } from '../../../Util/KeyPathUtil'
-import Stat from '../../../Stat'
+import { Data } from '../../../Formula/type'
+import { infoMut, min, percent, prod, threshold_add } from '../../../Formula/utils'
+import { input } from '../../../Formula'
+import { dataObjForArtifactSheet } from '../../../Formula/api'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+const key: ArtifactSetKey = "EmblemOfSeveredFate"
 
-const path = KeyPath<FormulaPathBase>().artifact.EmblemOfSeveredFate
-const artifact: IArtifactSheet = {
+const set2 = threshold_add(input.artSet.EmblemOfSeveredFate, 2, percent(0.2))
+
+const burstBonus = threshold_add(input.artSet.EmblemOfSeveredFate, 4,
+  min(percent(0.75), prod(percent(0.25), input.premod.enerRech_)))
+
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    enerRech_: set2
+  },
+  total: {
+    dmgBonus: {
+      burst: burstBonus
+    }
+  }
+}, {
+  burstBonus
+})
+
+const sheet: IArtifactSheet = {
   name: "Emblem of Severed Fate", rarity: [4, 5],
   icons: {
     flower,
@@ -19,24 +38,21 @@ const artifact: IArtifactSheet = {
     goblet,
     circlet
   },
-    setEffects: {
+  setEffects: {
     2: {
-      stats: { enerRech_: 20 }
-    },
-    4: {
-      stats: {
-        modifiers: { burst_dmg_: [path.s4()] },
-      },
       document: [{
         fields: [{
-          text: "Elemental Burst DMG",
-          formulaText: stats => <span>min ( 25% * {Stat.printStat("enerRech_", stats, true)} , 75% )</span>,
-          formula: formula.s4,
-          fixed: 1,
-          unit: "%"
+          node: infoMut(set2, { key: "enerRech_" }),
+        }]
+      }]
+    },
+    4: {
+      document: [{
+        fields: [{
+          node: infoMut(burstBonus, { key: "burst_dmg_" }),
         }]
       }]
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

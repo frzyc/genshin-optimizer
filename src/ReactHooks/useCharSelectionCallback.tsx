@@ -1,10 +1,10 @@
 import { useCallback, useContext } from "react";
 import { useHistory } from "react-router";
-import CharacterSheet from "../Character/CharacterSheet_WR";
-import { initialCharacter } from "../Character/CharacterUtil";
+import CharacterSheet from "../Data/Characters/CharacterSheet";
+import { initialCharacter } from "../Util/CharacterUtil";
 import { DatabaseContext } from "../Database/Database";
 import { CharacterKey } from "../Types/consts";
-import { defaultInitialWeapon } from "../Weapon/WeaponUtil";
+import { defaultInitialWeapon } from "../Util/WeaponUtil";
 
 /**
  * Basically a history hook to go to the dedicated character page. Will create the character if it doesn't exist.
@@ -28,7 +28,7 @@ export default function useCharSelectionCallback() {
       }
       history.push(`/character/${characterKey}`)
     },
-    [history],
+    [history, database],
   )
   return cb
 }

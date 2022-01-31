@@ -1,9 +1,9 @@
 import { Replay } from "@mui/icons-material"
 import { ButtonProps, Divider, ListItemIcon, ListItemText, MenuItem } from "@mui/material"
 import { useTranslation } from "react-i18next"
-import { artifactSlotIcon } from "../../Artifact/Component/SlotNameWIthIcon"
 import { allSlotKeys, SlotKey } from "../../Types/consts"
 import DropdownButton from "../DropdownMenu/DropdownButton"
+import { artifactSlotIcon } from "./SlotNameWIthIcon"
 
 type ArtifactSlotDropdownProps = ButtonProps & {
   slotKey?: SlotKey | ""

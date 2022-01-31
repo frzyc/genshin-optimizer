@@ -1,7 +1,7 @@
 import { computeUIData, dataObjForArtifact, dataObjForCharacter, dataObjForTeam, dataObjForWeapon } from "./api";
-import { data as sucroseData, dmgFormulas } from "../Data/Characters/Sucrose/index_WR"
-import { data as moonglowData } from "../Data/Weapons/Catalyst/EverlastingMoonglow/index_WR"
-import artifact from "../Data/Artifacts/index_WR"
+import { data as sucroseData, dmgFormulas } from "../Data/Characters/Sucrose"
+import { data as moonglowData } from "../Data/Weapons/Catalyst/EverlastingMoonglow"
+import artifact from "../Data/Artifacts"
 import { common, input } from "./index";
 import { constant, customRead } from "./utils";
 

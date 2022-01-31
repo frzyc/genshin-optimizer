@@ -1,10 +1,10 @@
 import { createContext } from "react"
-import CharacterSheet from "./Character/CharacterSheet_WR"
+import CharacterSheet from "./Data/Characters/CharacterSheet"
 import { UIData } from "./Formula/uiData"
 import { ICachedCharacter } from "./Types/character_WR"
 import { CharacterKey } from "./Types/consts"
 import { ICachedWeapon } from "./Types/weapon_WR"
-import WeaponSheet from "./Weapon/WeaponSheet_WR"
+import WeaponSheet from "./Data/Weapons/WeaponSheet"
 export type TeamData = Partial<Record<CharacterKey, {
   target: UIData
   character: ICachedCharacter,

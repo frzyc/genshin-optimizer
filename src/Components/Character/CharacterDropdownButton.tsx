@@ -2,7 +2,7 @@ import { BusinessCenter, Replay } from "@mui/icons-material";
 import { Divider, ListItemIcon, MenuItem, Typography } from "@mui/material";
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
-import CharacterSheet from "../../Character/CharacterSheet_WR";
+import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
 import usePromise from "../../ReactHooks/usePromise";
 import { CharacterKey } from "../../Types/consts";

@@ -1,4 +1,4 @@
-import _charCurves from "../../Character/expCurve_gen.json";
+import _charCurves from "../../PageCharacter/expCurve_gen.json";
 import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey } from "../../Types/consts";
 import { input } from "../../Formula";

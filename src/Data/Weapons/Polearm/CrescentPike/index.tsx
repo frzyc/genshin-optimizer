@@ -1,4 +1,4 @@
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../Build/Build'
+import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../PageBuild/Build'
 import Stat from '../../../../Stat'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import icon from './Icon.png'

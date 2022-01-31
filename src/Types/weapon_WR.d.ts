@@ -6,15 +6,6 @@ import { BasicStats, BonusStats } from "./stats";
 
 export type IWeaponSheets = Record<WeaponKey, IWeaponSheet>
 
-export interface IWeaponSheet {
-  weaponType: WeaponTypeKey
-  rarity: 1 | 2 | 3 | 4 | 5
-  icon: string,
-  iconAwaken: string,
-  stats?: BonusStats | ((stats: BasicStats) => BonusStats | undefined)
-  document: DocumentSection[],
-}
-
 export interface IWeapon {
   key: WeaponKey // "CrescentPike"
   level: number // 1-90 inclusive

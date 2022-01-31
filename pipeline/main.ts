@@ -44,7 +44,7 @@ export type CharacterData = {
     atk: CharacterGrowCurveKey,
     def: CharacterGrowCurveKey,
   },
-  star: number,
+  star: 1 | 2 | 3 | 4 | 5,
   ascensions: {
     props: { [key: string]: number }
   }[],

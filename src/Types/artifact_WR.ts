@@ -1,17 +1,4 @@
 import { ArtifactRarity, ArtifactSetKey, CharacterKey, ElementKey, SetNum, SlotKey } from "./consts";
-import { DocumentSection } from "./character_WR";
-
-export type IArtifactSheets = StrictDict<ArtifactSetKey, IArtifactSheet>
-
-export interface IArtifactSheet {
-  name: string, // only to stored the English name for OCR, otherwise, should come from localization pipeline
-  rarity: readonly ArtifactRarity[],
-  icons: Dict<SlotKey, string>,
-  setEffects: Dict<SetNum, SetEffectEntry>
-}
-export interface SetEffectEntry {
-  document?: DocumentSection[],
-}
 
 export interface IArtifact {
   setKey: ArtifactSetKey,

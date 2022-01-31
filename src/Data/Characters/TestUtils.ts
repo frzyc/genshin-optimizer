@@ -1,9 +1,7 @@
-import Artifact from "../../Artifact/Artifact"
 import { importFlex } from "../../Database/exim/flex"
-import { PreprocessFormulas } from "../../ProcessFormula"
-import { StatData } from "../../StatData"
-import { GetDependencies } from "../../StatDependency"
+import { allStatKeys } from "../../KeyMap"
 import { ICalculatedStats } from "../../Types/stats"
+import Artifact from "../../Util/Artifact"
 
 export const defaultInitialStats = () => ({
   teamStats: [null, null, null], partyAllModifiers: {}, partyOnlyModifiers: {}, partyActiveModifiers: {}
@@ -11,8 +9,8 @@ export const defaultInitialStats = () => ({
 export const createProxiedStats = (baseStats: Partial<ICalculatedStats>) =>
   new Proxy({ ...defaultInitialStats(), ...baseStats }, {
     get: (target, property: string) => {
-      if (!(property in StatData) && !(property in target)) throw property
-      return target[property] ?? StatData[property].default ?? 0
+      if (!(property in allStatKeys) && !(property in target)) throw property
+      return target[property] ?? 0
     }
   })
 export function applyArtifacts(stats, artifacts) {
@@ -22,10 +20,7 @@ export function applyArtifacts(stats, artifacts) {
   )
 }
 export function computeAllStats(baseStats) {
-  const stats = { ...baseStats }
-  const { initialStats, formula } = PreprocessFormulas(GetDependencies(stats, stats.modifiers), stats)
-  formula(initialStats)
-  return { ...stats, ...initialStats }
+  return {} as any
 }
 
 export function parseTestFlexObject(url) {

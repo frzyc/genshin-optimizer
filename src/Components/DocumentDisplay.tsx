@@ -1,7 +1,7 @@
 import { Box, ListItem } from "@mui/material"
 import { useContext } from "react"
 import { DataContext } from "../DataContext"
-import { DocumentSection } from "../Types/character_WR"
+import { DocumentSection } from "../Types/sheet"
 import { evalIfFunc } from "../Util/Util"
 import ConditionalDisplay from "./ConditionalDisplay"
 import FieldDisplay, { FieldDisplayList } from "./FieldDisplay"

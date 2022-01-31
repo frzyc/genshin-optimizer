@@ -5,48 +5,8 @@ import { ICachedCharacter } from "./character";
 import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponTypeKey } from "./consts";
 import IConditional, { IConditionalValues } from "./IConditional_WR";
 import { IFieldDisplay } from "./IFieldDisplay_WR";
+import { DocumentSection } from "./sheet";
 import { BasicStats, ICalculatedStats } from "./stats";
-
-interface ICharacterSheetBase {
-  name: Displayable
-  cardImg: string
-  thumbImg: string
-  thumbImgSide: string
-  barImg?: string
-  bannerImg?: string
-  rarity: Rarity
-  weaponTypeKey: WeaponTypeKey
-  gender: string
-  constellationName: Displayable
-  title: Displayable
-}
-interface ICharacterSheetTalent extends ICharacterSheetBase {
-  elementKey: ElementKey
-  talent: TalentSheet
-}
-interface ICharacterSheetTalents extends ICharacterSheetBase {
-  talents: Dict<ElementKey, TalentSheet>
-}
-export type ICharacterSheet = ICharacterSheetTalent | ICharacterSheetTalents
-interface IBaseStat {
-  hp: number
-  atk: number
-  def: number
-}
-interface IBaseStatCurve {
-  hp: string
-  atk: string
-  def: string
-}
-interface ascension {
-  props: {
-    hp: number
-    atk: number
-    def: number
-    [key: string]: number //TODO: [key: CharacterSpecializedStatKey]: number
-  }
-}
-
 export interface ICharacter {
   key: CharacterKey
   level: number
@@ -84,12 +44,6 @@ export interface TalentSheetElement {
   name: Displayable //talentName
   img: string
   sections: DocumentSection[]
-}
-export interface DocumentSection {
-  canShow?: (data: UIData) => boolean
-  text?: Displayable | ((data: UIData) => Displayable)
-  fields?: IFieldDisplay[]
-  conditional?: IConditional
 }
 
 export interface IFormulaSheet {

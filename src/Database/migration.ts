@@ -1,4 +1,4 @@
-import { initialBuildSettings } from "../Build/BuildSetting"
+import { initialBuildSettings } from "../PageBuild/BuildSetting"
 import { ascensionMaxLevel } from "../Data/LevelData"
 import { allCharacterKeys } from "../Types/consts"
 import { crawlObject, layeredAssignment } from "../Util/Util"
@@ -60,7 +60,7 @@ function migrateV2ToV3(storage: DBStorage) {
 }
 
 /// v5.0.0 - v5.7.15
-function migrateV3ToV4(storage: DBStorage) { // 
+function migrateV3ToV4(storage: DBStorage) { //
   // Convert anemo traveler to traveler, and remove geo traveler
   const traveler = storage.get("char_traveler_anemo")
   // Deletion of old travelers are handled during validation

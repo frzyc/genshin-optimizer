@@ -2,7 +2,7 @@ import { Replay } from "@mui/icons-material";
 import { ButtonProps, Divider, ListItemIcon, ListItemText, MenuItem, Typography } from "@mui/material";
 import React, { useMemo } from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { ArtifactSheet } from "../../Artifact/ArtifactSheet_WR";
+import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
 import usePromise from "../../ReactHooks/usePromise";
 import { ArtifactRarity, ArtifactSetKey, Rarity } from "../../Types/consts";
 import DropdownButton from "../DropdownMenu/DropdownButton";

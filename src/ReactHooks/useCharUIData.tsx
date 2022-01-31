@@ -1,13 +1,13 @@
 import { useContext, useEffect, useMemo } from "react";
-import { ArtifactSheet } from "../Artifact/ArtifactSheet_WR";
-import CharacterSheet from "../Character/CharacterSheet_WR";
+import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
+import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../Database/Database";
 import { common } from "../Formula";
 import { computeUIData, dataObjForArtifact, dataObjForCharacter, dataObjForWeapon } from "../Formula/api";
 import { ICachedArtifact } from "../Types/artifact_WR";
 import { CharacterKey, SlotKey } from "../Types/consts";
 import { objectMap } from "../Util/Util";
-import WeaponSheet from "../Weapon/WeaponSheet_WR";
+import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import useCharacter from "./useCharacter";
 import useForceUpdate from "./useForceUpdate";
 import usePromise from "./usePromise";

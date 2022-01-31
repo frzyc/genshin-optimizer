@@ -1,7 +1,7 @@
 import { Box, CardActionArea, CardContent, Divider, Grid, Typography } from "@mui/material";
 import { useContext, useMemo, useState } from "react";
 import Assets from "../../Assets/Assets";
-import CharacterSheet from "../../Character/CharacterSheet_WR";
+import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
 import { input } from "../../Formula";
 import useCharUIData from "../../ReactHooks/useCharUIData";

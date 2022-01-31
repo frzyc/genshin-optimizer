@@ -1,4 +1,4 @@
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
+import { getTalentStatKey, getTalentStatKeyVariant } from '../../../PageBuild/Build'
 import { Translate } from '../../../Components/Translate'
 import Stat from '../../../Stat'
 import { ICharacterSheet } from '../../../Types/character'

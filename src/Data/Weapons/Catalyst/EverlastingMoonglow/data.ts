@@ -1,4 +1,4 @@
-import { getTalentStatKey } from "../../../../Build/Build";
+import { getTalentStatKey } from '../../../../PageBuild/Build';
 import { ISubFormula } from "../../../../Types/character";
 export const data = {
   hp_conv: [1, 1.5, 2, 2.5, 3]

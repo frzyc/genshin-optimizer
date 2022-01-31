@@ -287,8 +287,9 @@ const characterV3 = object({
     value.levelDiff = ascensionMaxLevel[value.ascension] - value.level
     value.ascensionConstellation = value.ascension * 8 + value.constellation
 
-    if ((value.characterKey as CharacterKey) !== "Traveler") value.reserved = []
-    else value.reserved = [allElements.indexOf(value.elementKey)]
+    // TODO: Traveler
+    // if ((value.characterKey as CharacterKey) !== "Traveler") value.reserved = []
+    // else value.reserved = [allElements.indexOf(value.elementKey)]
 
     return value
   },
@@ -297,8 +298,9 @@ const characterV3 = object({
     value.ascension = (value.ascensionConstellation - value.constellation) / 8
     value.level = ascensionMaxLevel[value.ascension] - value.levelDiff
 
-    if ((value.characterKey as CharacterKey) === "Traveler")
-      value.elementKey = allElements[value.reserved[0]] ?? "anemo"
+    // TODO: Traveler
+    // if ((value.characterKey as CharacterKey) === "Traveler")
+    //   value.elementKey = allElements[value.reserved[0]] ?? "anemo"
     return value
   },
 })

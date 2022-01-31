@@ -10,16 +10,16 @@ import Header from './Header';
 import './i18n';
 
 const Home = lazy(() => import('./PageHome/HomeDisplay'))
-const ArtifactDisplay = lazy(() => import('./Artifact/ArtifactDisplay'))
-const CharacterRouter = lazy(() => import('./Character/CharacterRouter'))
-const BuildDisplay = lazy(() => import('./Build/BuildDisplay'))
-const ToolsDisplay = lazy(() => import('./Tools/ToolsDisplay'))
-const TestDisplay = lazy(() => import('./TestPage/TestDisplay'))
-const FlexDisplay = lazy(() => import('./FlexPage/FlexDisplay'))
-const SettingsDisplay = lazy(() => import('./Settings/SettingsDisplay'))
-const WeaponDisplay = lazy(() => import('./Weapon/WeaponDisplay'))
-const DocumentationDisplay = lazy(() => import('./DocumentationPage/DocumentationDisplay'))
-const ScannerDisplay = lazy(() => import('./ScannerPage/ScannerDisplay'))
+const ArtifactDisplay = lazy(() => import('./PageArtifact/ArtifactDisplay'))
+const CharacterRouter = lazy(() => import('./PageCharacter/CharacterRouter'))
+const BuildDisplay = lazy(() => import('./PageBuild/BuildDisplay'))
+const ToolsDisplay = lazy(() => import('./PageTools/ToolsDisplay'))
+const TestDisplay = lazy(() => import('./PageTest/TestDisplay'))
+const FlexDisplay = lazy(() => import('./PageFlex/FlexDisplay'))
+const SettingsDisplay = lazy(() => import('./PageSettings/SettingsDisplay'))
+const WeaponDisplay = lazy(() => import('./PageWeapon/WeaponDisplay'))
+const DocumentationDisplay = lazy(() => import('./PageDocumentation/DocumentationDisplay'))
+const ScannerDisplay = lazy(() => import('./PageScanner/ScannerDisplay'))
 
 function ScrollTop({ children }: { children: React.ReactElement }) {
   const trigger = useScrollTrigger({

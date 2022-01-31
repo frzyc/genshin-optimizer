@@ -51,9 +51,9 @@ export type ICalculatedStats = BasicStats & Required<BonusStats> & {
   // Save the stats from the party
   partyBuff: Partial<ICalculatedStats>
   // Pass on stats to the party
-  partyAllModifiers: Modifier
-  partyOnlyModifiers: Modifier
-  partyActiveModifiers: Modifier
+  partyAllModifiers: any
+  partyOnlyModifiers: any
+  partyActiveModifiers: any
   equippedArtifacts?: StrictDict<SlotKey, string>
   setToSlots: Dict<ArtifactSetKey, SlotKey[]>
 } & {
@@ -69,15 +69,8 @@ export type BonusStats = {
 } & {
   infusionSelf?: ElementKey
   infusionAura?: ElementKey
-  modifiers?: Modifier,
+  modifiers?: any,
   partyAll?: BonusStats
   partyOnly?: BonusStats
   partyActive?: BonusStats
-}
-
-/**
- * @deprecated
- */
-export interface Modifier {
-  [key: string]: readonly (readonly string[])[]
 }
