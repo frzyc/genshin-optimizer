@@ -167,9 +167,11 @@ const common = {
     ele: stringPrio(
       rd.infusion,
       rd.team.infusion,
-      matchStr(hit.move, constant("charged"), rd.charEle,
-        matchStr(rd.weaponType, constant("catalyst"), rd.charEle, constant(undefined))
+      matchStr(hit.move, "charged",
+        matchStr(rd.weaponType, "catalyst", rd.charEle, undefined),
+        undefined,
       ),
+      "physical",
     ),
     dmg: prod(
       hit.base,
