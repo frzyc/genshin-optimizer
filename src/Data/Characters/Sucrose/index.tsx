@@ -7,7 +7,7 @@ import { CharacterKey, Rarity, WeaponTypeKey } from '../../../Types/consts'
 import { objectFromKeyMap } from '../../../Util/Util'
 import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
 import { absorbableEle, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import { conditionalHeader, normalSrc, sgt, talentTemplate } from '../SheetUtil_WR'
+import { conditionalHeader, normalSrc, sgt, st, talentTemplate } from '../SheetUtil_WR'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -81,7 +81,7 @@ const asc1 = threshold_add(input.asc, 1,
 const asc4 = match("hit", condSkillHitOpponent,
   unmatch(target.charKey, characterKey,
     threshold_add(input.asc, 4,
-      prod(percent(0.2), input.premod.eleMas))), { key: "eleMas" })
+      prod(percent(datamine.passive2.eleMas_), input.premod.eleMas))), { key: "eleMas" })
 const c6Base = threshold_add(input.constellation, 6, percent(0.2))
 // TODO: Add to team buff
 const c6Bonus = objectFromKeyMap(absorbableEle, ele =>
@@ -105,8 +105,6 @@ export const dmgFormulas = {
   },
 }
 export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dmgFormulas, {
-  // TODO: include
-  // Misc: C1, C2, C4
   talent: {
     boost: {
       skill: threshold_add(input.constellation, 3, 3),
@@ -176,6 +174,10 @@ const sheet: ICharacterSheet = {
             text: tr("skill.skillParams.1"),
             value: datamine.skill.cd,
             unit: "s"
+          }, {
+            canShow: (data) => data.get(input.constellation).value >= 1,
+            text: st("charges"),
+            value: 2
           }]
         }]
       },
@@ -188,7 +190,7 @@ const sheet: ICharacterSheet = {
             node: infoMut(dmgFormulas.burst.dot, { key: `char_${characterKey}_gen:burst.skillParams.0` }),
           }, {
             text: tr("burst.skillParams.2"),
-            value: datamine.burst.duration,
+            value: data => data.get(input.constellation).value >= 2 ? `${datamine.burst.duration}s + 2` : datamine.burst.duration,
             unit: "s"
           }, {
             text: tr("burst.skillParams.3"),
@@ -201,7 +203,7 @@ const sheet: ICharacterSheet = {
           conditional: { // Absorption
             value: condAbsorption,
             path: condAbsorptionPath,
-            name: "Elemental Absorption", // TODO: trans
+            name: st("eleAbsor"),
             states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
               name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
               fields: [{
@@ -215,7 +217,7 @@ const sheet: ICharacterSheet = {
             path: condAbsorptionPath,
             header: conditionalHeader("constellation6", tr, c6),
             description: tr("constellation6.description"),
-            name: "Elemental Absorption", // TODO: trans
+            name: st("eleAbsor"),
             states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
               name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
               fields: [{
@@ -235,7 +237,7 @@ const sheet: ICharacterSheet = {
             path: condSwirlReactionPath,
             header: conditionalHeader("passive1", tr, passive1),
             description: tr("passive1.description"),
-            name: "Swirled Element", // TODO: trans
+            name: st("eleSwirled"),
             states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
               name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
               fields: [{

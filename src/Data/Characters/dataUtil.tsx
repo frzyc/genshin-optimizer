@@ -15,13 +15,25 @@ const commonBasic = {
   atk: input.total.atk, hp: input.total.hp, def: input.total.def, eleMas: input.total.eleMas, critRate_: input.total.critRate_, critDMG_: input.total.critDMG_, heal_: input.total.heal_, enerRech_: input.total.enerRech_
 } as const
 
-export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
-  let talentType: "auto" | "skill" | "burst"
+function getTalentType(move: "normal" | "charged" | "plunging" | "skill" | "burst") {
   switch (move) {
-    case "normal": case "charged": case "plunging": talentType = "auto"; break
-    case "skill": talentType = "skill"; break
-    case "burst": talentType = "burst"; break
+    case "normal": case "charged": case "plunging": return "auto";
+    case "skill": return "skill";
+    case "burst": return "burst";
   }
+}
+
+export function singleDmgNode(base: MainStatKey, multiplier: number, move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
+  return data(input.hit.dmg, mergeData([{
+    hit: {
+      base: prod(input.total[base], multiplier,),
+      move: constant(move), // TODO: element ?: T, reaction ?: T, critType ?: T
+    },
+  }, additional]))
+}
+
+export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
+  const talentType = getTalentType(move)
   return data(input.hit.dmg, mergeData([{
     hit: {
       base: prod(input.total[base], subscript(input.talent.index[talentType], lvlMultiplier, { key: '_' })),

@@ -1,11 +1,12 @@
 import { CharacterData } from 'pipeline'
+import ColorText from '../../../Components/ColoredText'
 import { Translate } from '../../../Components/Translate'
 import { input } from '../../../Formula'
-import { infoMut, threshold_add } from '../../../Formula/utils'
+import { constant, customStringRead, infoMut, match, percent, prod, threshold_add } from '../../../Formula/utils'
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
-import { absorbableEle, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import { normalSrc, talentTemplate } from '../SheetUtil_WR'
+import { absorbableEle, dataObjForCharacterSheet, dmgNode, singleDmgNode } from '../dataUtil'
+import { conditionalHeader, normalSrc, sgt, st, talentTemplate } from '../SheetUtil_WR'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -67,7 +68,23 @@ const datamine = {
   }
 } as const
 
-export const dmgFormulas = {
+const condBurstAbsorptionPath = [characterKey, "burstAbsorption"]
+const condBurstAbsorption = customStringRead(["conditional", ...condBurstAbsorptionPath])
+
+const condSkillAbsorptionPath = [characterKey, "skillAbsorption"]
+const condSkillAbsorption = customStringRead(["conditional", ...condSkillAbsorptionPath])
+
+const condSwirlPaths = Object.fromEntries(absorbableEle.map(e => [e, [characterKey, `swirl${e}`]]))
+const condSwirls = Object.fromEntries(absorbableEle.map(e => [e, customStringRead(["conditional", ...condSwirlPaths[e]])]))
+
+const asc4 = Object.fromEntries(absorbableEle.map(ele =>
+  [ele, threshold_add(input.asc, 4,
+    match("swirl", condSwirls[ele],
+      prod(percent(datamine.passive2.elemas_dmg_), input.premod.eleMas)
+    )
+  )]))
+
+const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
@@ -87,32 +104,28 @@ export const dmgFormulas = {
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
     dot: dmgNode("atk", datamine.burst.dot, "burst"),
-    // ...Object.fromEntries(absorbableEle.map(eleKey => [eleKey, stats => basicDMGFormula(data.burst.add[stats.tlvl.burst], stats, "burst", eleKey)]))
-    // ...Object.fromEntries(absorbableEle.map(key =>
-    //   [key, match(condAbsorption, key, dmgNode("atk", datamine.burst.dmg_, "burst", { hit: { ele: constant(key) } }))]))
+    ...Object.fromEntries(absorbableEle.map(key =>
+      [key, match(condBurstAbsorption, key, dmgNode("atk", datamine.burst.add, "burst", { hit: { ele: constant(key) } }))]))
   },
-  // passive1: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, stats => basicDMGFormula(200, stats, "plunging", eleKey)])),
-  // passive2: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, stats => [s => (s.premod?.eleMas ?? s.eleMas) * 0.04, ['eleMas']]])),
+  passive1: Object.fromEntries(absorbableEle.map(key =>
+    [key, match(condSkillAbsorption, key, singleDmgNode("atk", datamine.passive1.asorbAdd, "plunging", { hit: { ele: constant(key) } }))]))
   // constellation6: {
   //   bonus: stats => [s => (s.premod?.eleMas ?? s.eleMas) * 0.2, ['eleMas']]
   // }
 }
 
 export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dmgFormulas, {
-  // TODO: include
-  // Misc: C1, C2, C4
   talent: {
     boost: {
       skill: threshold_add(input.constellation, 3, 3),
       burst: threshold_add(input.constellation, 5, 3),
     }
   },
-  // total: { eleMas: sum(asc1, asc4), dmgBonus: c6Bonus },
-  // teamBuff: {
-  //   total: {
-  //     eleMas: sum(asc1, asc4)
-  //   }
-  // }
+  teamBuff: {
+    total: {
+      dmgBonus: asc4
+    }
+  }
 })
 
 const sheet: ICharacterSheet = {
@@ -212,23 +225,17 @@ const sheet: ICharacterSheet = {
             value: datamine.burst.enerCost,
           }]
         }, {
-          // conditional: { // Absorption
-          //   key: "q",
-          //   name: st("eleAbsor"),
-          //   states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-          //     name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-          //     fields: [{
-          //       canShow: stats => {
-          //         const [num, condEleKey] = stats.conditionalValues?.character?.KaedeharaKazuha?.q ?? []
-          //         return !!num && condEleKey === eleKey
-          //       },
-          //       text: st("absorDot"),
-          //       formulaText: stats => <span>{data.burst.add[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats, eleKey), stats)}</span>,
-          //       formula: formula.burst[eleKey],
-          //       variant: eleKey
-          //     }],
-          //   }]))
-          // },
+          conditional: { // Burst Absorption
+            value: condBurstAbsorption,
+            path: condBurstAbsorptionPath,
+            name: st("eleAbsor"),
+            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+              fields: [{
+                node: infoMut(dmgFormulas.burst[eleKey], { key: `char_${characterKey}_gen:burst.skillParams.2` }),
+              }]
+            }]))
+          },
         }, {
           // conditional: {
           //   key: "c2",
@@ -246,24 +253,17 @@ const sheet: ICharacterSheet = {
         img: passive1,
         sections: [{
           text: tr("passive1.description"),
-          // conditional: {// Soumon Swordsmanship
-          //   key: "a1",
-          //   canShow: stats => stats.ascension >= 1,
-          //   name: st("eleAbsor"),
-          //   states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-          //     name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-          //     fields: [{
-          //       canShow: stats => {
-          //         const [num, condEleKey] = stats.conditionalValues?.character?.KaedeharaKazuha?.a1 ?? []
-          //         return !!num && condEleKey === eleKey
-          //       },
-          //       text: sgt("addEleDMG"),
-          //       formulaText: stats => <span>200% {Stat.printStat(getTalentStatKey("plunging", stats, eleKey), stats)}</span>,
-          //       formula: formula.passive1[eleKey],
-          //       variant: eleKey
-          //     }],
-          //   }]))
-          // },
+          conditional: { // Skill Absorption
+            value: condSkillAbsorption,
+            path: condSkillAbsorptionPath,
+            name: st("eleAbsor"),
+            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+              fields: [{
+                node: infoMut(dmgFormulas.passive1[eleKey], { key: `sheet_gen:addEleDMG` }),
+              }]
+            }]))
+          },
         }],
       },
       passive2: {
@@ -272,26 +272,24 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("passive2.description"),
         }, ...absorbableEle.map(eleKey => ({
-          // conditional: { // Poetics of Fuubutsu
-          //   key: `a4${eleKey}`,
-          //   canShow: stats => stats.ascension >= 4,
-          //   partyBuff: "partyAll",
-          //   header: conditionalHeader("passive2", tr, passive2),
-          //   description: tr("passive2.description"),
-          //   name: <Translate ns="char_KaedeharaKazuha" key18={`a4.name_${eleKey}`} />,
-          //   stats: { modifiers: { [`${eleKey}_dmg_`]: [[...path.passive2(), eleKey]] } },
-          //   fields: [{
-          //     text: Stat.getStatName(`${eleKey}_dmg_`),
-          //     formulaText: stats => <span>0.04% {Stat.printStat("eleMas", stats, true)}</span>,
-          //     formula: formula.passive2[eleKey],
-          //     variant: eleKey,
-          //     fixed: 1,
-          //     unit: "%"
-          //   }, {
-          //     text: sgt("duration"),
-          //     value: "8s",
-          //   }]
-          // },
+          conditional: { // Poetics of Fuubutsu
+            value: condSwirls[eleKey],
+            path: condSwirlPaths[eleKey],
+            header: conditionalHeader("passive2", tr, passive2),
+            description: tr("passive2.description"),
+            name: <Translate ns="char_KaedeharaKazuha" key18={`a4.name_${eleKey}`} />,
+            states: {
+              swirl: {
+                fields: [{
+                  node: asc4[eleKey]
+                }, {
+                  text: sgt("duration"),
+                  value: datamine.passive2.duration,
+                  unit: "s"
+                }]
+              }
+            }
+          },
         }))],
       },
       passive3: {

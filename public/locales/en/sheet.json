@@ -26,6 +26,8 @@
     "atk": "ATK Increase"
   },
   "eleAbsor": "Elemental Absorption",
+  "eleSwirled": "Swirled Element",
   "absorDot": "Absorption DoT",
-  "incInterRes": "Increase resistance to interruption"
+  "incInterRes": "Increase resistance to interruption",
+  "charges": "Charges"
 }
