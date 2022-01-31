@@ -12,6 +12,7 @@ export interface IBasicFieldDisplay {
 
 export interface INodeFieldDisplay {
   canShow?: (data: UIData) => boolean;
+  textSuffix?: Displayable,
   node: NumNode;
 }
 

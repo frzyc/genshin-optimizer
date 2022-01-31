@@ -14,7 +14,7 @@
 // import Gorou from './Gorou'
 // import HuTao from './HuTao'
 // import Jean from './Jean'
-// import KaedeharaKazuha from './KaedeharaKazuha'
+import * as KaedeharaKazuha from './KaedeharaKazuha/index_WR'
 // import Kaeya from './Kaeya'
 // import KamisatoAyaka from './KamisatoAyaka'
 // import Keqing from './Keqing'
@@ -44,7 +44,6 @@
 // import Zhongli from './Zhongli'
 import * as Sucrose from "./Sucrose/index_WR"
 const characters = {
-  Sucrose
   // Albedo,
   // Aloy,
   // Amber,
@@ -61,7 +60,7 @@ const characters = {
   // Gorou,
   // HuTao,
   // Jean,
-  // KaedeharaKazuha,
+  KaedeharaKazuha,
   // Kaeya,
   // KamisatoAyaka,
   // Keqing,
@@ -77,7 +76,7 @@ const characters = {
   // Rosaria,
   // SangonomiyaKokomi,
   // Sayu,
-  // Sucrose,
+  Sucrose,
   // Tartaglia,
   // Thoma,
   // Traveler,

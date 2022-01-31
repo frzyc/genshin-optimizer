@@ -1,3 +1,8 @@
+/**
+ * @deprecated
+ * @param prefix
+ * @returns
+ */
 export function KeyPath<Base, Value = Base>(prefix: string[] = []): PartialPath<Base, Value> {
   const path = () => path.keys
   path.keys = prefix
