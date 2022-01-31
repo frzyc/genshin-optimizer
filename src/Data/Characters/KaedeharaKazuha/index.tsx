@@ -82,7 +82,7 @@ const asc4 = Object.fromEntries(absorbableEle.map(ele =>
     match("swirl", condSwirls[ele],
       prod(percent(datamine.passive2.elemas_dmg_), input.premod.eleMas)
     )
-  )]))
+    , { key: `${ele}_dmg_`, variant: ele })]))
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
