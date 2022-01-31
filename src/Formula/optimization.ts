@@ -124,7 +124,7 @@ export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<num
     readStrings.forEach((id, i) => buffer[readOffset + i] = values[id] ?? 0)
     computations.forEach(({ out, ins, op, buff }) => {
       ins.forEach((i, j) => buff[j] = buffer[i])
-      buffer[out] = op(ins)
+      buffer[out] = op(buff)
     })
     copyFormula?.()
     return buffer
