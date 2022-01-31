@@ -9,8 +9,8 @@ import TextButton from '../../../Components/TextButton';
 import { allSubstats, ICachedArtifact, ISubstat } from '../../../Types/artifact';
 import { valueString } from '../../../Util/UIUtil';
 import { clamp } from '../../../Util/Util';
-import Artifact from '../../../Util/Artifact';
-import artifactSubstatRollCorrection from '../../artifact_sub_rolls_correction_gen.json';
+import Artifact from '../../../Data/Artifacts/Artifact';
+import artifactSubstatRollCorrection from '../../../Data/Artifacts/artifact_sub_rolls_correction_gen.json';
 import PercentBadge from '../../PercentBadge';
 import KeyMap from '../../../KeyMap';
 export default function SubstatInput({ index, artifact, setSubstat }: { index: number, artifact: ICachedArtifact | undefined, setSubstat: (index: number, substat: ISubstat) => void, }) {

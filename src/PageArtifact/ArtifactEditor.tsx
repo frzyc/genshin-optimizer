@@ -23,7 +23,7 @@ import { ArtifactRarity, ArtifactSetKey, SlotKey } from '../Types/consts';
 import { randomizeArtifact } from '../Util/ArtifactUtil';
 import { valueString } from '../Util/UIUtil';
 import { clamp, deepClone } from '../Util/Util';
-import Artifact from '../Util/Artifact';
+import Artifact from '../Data/Artifacts/Artifact';
 import ArtifactCard from './ArtifactCard';
 import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard';
 import SubstatInput from './ArtifactEditor/Components/SubstatInput';

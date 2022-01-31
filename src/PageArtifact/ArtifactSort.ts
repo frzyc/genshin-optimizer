@@ -1,7 +1,7 @@
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { allArtifactRarities, ArtifactRarity, ArtifactSetKey, CharacterKey, SlotKey } from "../Types/consts";
 import { FilterConfigs, SortConfigs } from "../Util/SortByFilters";
-import Artifact from "../Util/Artifact";
+import Artifact from "../Data/Artifacts/Artifact";
 import { probability } from "./RollProbability";
 export const artifactSortKeys = ["rarity", "level", "artsetkey", "efficiency", "mefficiency", "probability"] as const
 export const artifactSortKeysTC = ["probability"] as const

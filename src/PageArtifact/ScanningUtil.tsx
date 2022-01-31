@@ -6,7 +6,7 @@ import { allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactRarity, Arti
 import { BorrowManager } from './BorrowManager';
 import { valueStringWithUnit } from '../Util/UIUtil';
 import { clamp, hammingDistance, objectFromKeyMap } from '../Util/Util';
-import Artifact from '../Util/Artifact';
+import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import KeyMap from '../KeyMap';
 

@@ -2,7 +2,7 @@ import type { WeaponData } from "pipeline";
 import { mergeData } from "../../Formula/api";
 import { MainStatKey, SubstatKey } from "../../Types/artifact";
 import { WeaponKey, WeaponTypeKey } from "../../Types/consts";
-import _weaponCurves from "../../PageWeapon/expCurve_gen.json";
+import _weaponCurves from "./expCurve_gen.json";
 import { input } from "../../Formula";
 import { Data, DisplaySub } from "../../Formula/type";
 import { infoMut, prod, constant, subscript, sum } from "../../Formula/utils";

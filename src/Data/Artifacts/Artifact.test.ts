@@ -1,6 +1,5 @@
-import Artifact from "../Util/Artifact";
-import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
-import artifactSubstatRoll from './artifact_sub_rolls_gen.json'
+import Artifact from "./Artifact";
+import artifactSubstatRoll from './artifact_sub_rolls_gen.json';
 
 //post-load the artifact data
 // beforeAll(() => Artifact.getDataimport());

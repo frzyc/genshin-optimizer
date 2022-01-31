@@ -3,7 +3,7 @@ import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character_WR";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import Artifact from "../Util/Artifact";
+import Artifact from "../Data/Artifacts/Artifact";
 import { crawlObject, deepClone, layeredAssignment, objectFromKeyMap, objPathValue } from "../Util/Util";
 import { input, teamBuff } from "./index";
 import { Data, DisplaySub, NumNode, ReadNode, StrNode } from "./type";

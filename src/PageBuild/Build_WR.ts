@@ -4,7 +4,7 @@ import { allOperations, constantFold } from "../Formula/optimization";
 import { ConstantNode, NumNode } from "../Formula/type";
 import { constant, customRead, max, min } from "../Formula/utils";
 import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
-import Artifact from "../Util/Artifact";
+import Artifact from "../Data/Artifacts/Artifact";
 import { assertUnreachable, objectFromKeyMap } from "../Util/Util";
 import type { ArtifactBuildData, ArtifactsBySlot, Build, DynStat, PlotData, RequestFilter } from "./Worker";
 

@@ -18,7 +18,7 @@ import { allSubstats, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Typ
 import { CharacterKey } from '../Types/consts';
 import { valueStringWithUnit } from '../Util/UIUtil';
 import { clamp } from '../Util/Util';
-import Artifact from '../Util/Artifact';
+import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';

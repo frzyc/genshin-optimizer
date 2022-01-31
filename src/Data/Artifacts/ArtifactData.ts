@@ -1,5 +1,5 @@
-import { MainStatKey } from '../Types/artifact';
-import { Rarity, SlotKey } from '../Types/consts'
+import { MainStatKey } from '../../Types/artifact';
+import { Rarity, SlotKey } from '../../Types/consts'
 
 const ArtifactSubstatRollData: StrictDict<Rarity, { low: number, high: number, numUpgrades: number }> = {
   1: { low: 0, high: 0, numUpgrades: 1 },

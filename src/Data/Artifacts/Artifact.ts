@@ -1,11 +1,11 @@
-import { ArtifactSlotsData, ArtifactStarsData } from '../Data/ArtifactData';
-import { allSubstats, ICachedArtifact, MainStatKey, SubstatKey } from '../Types/artifact';
-import { allRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
-import { valueString } from './UIUtil';
-import { clampPercent, objectFromKeyMap } from './Util';
-import ArtifactMainStatsData from '../PageArtifact/artifact_main_gen.json';
-import ArtifactSubstatsData from '../PageArtifact/artifact_sub_gen.json';
-import ArtifactSubstatLookupTable from '../PageArtifact/artifact_sub_rolls_gen.json';
+import { ArtifactSlotsData, ArtifactStarsData } from './ArtifactData';
+import { allSubstats, ICachedArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
+import { allRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../../Types/consts';
+import { valueString } from '../../Util/UIUtil';
+import { clampPercent, objectFromKeyMap } from '../../Util/Util';
+import ArtifactMainStatsData from './artifact_main_gen.json';
+import ArtifactSubstatsData from './artifact_sub_gen.json';
+import ArtifactSubstatLookupTable from './artifact_sub_rolls_gen.json';
 
 const maxStar: Rarity = 5
 

@@ -6,7 +6,7 @@ import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, ICachedSubsta
 import { ICachedCharacter, ICharacter } from "../Types/character_WR";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
 import { IWeapon, ICachedWeapon } from "../Types/weapon";
-import Artifact from "../Util/Artifact";
+import Artifact from "../Data/Artifacts/Artifact";
 import { objectFromKeyMap } from "../Util/Util";
 
 // MIGRATION STEP: Always keep validate/parse in sync with the latest format

@@ -203,14 +203,14 @@ Object.entries(weaponDataDump).forEach(([weaponKey, data]) =>
   dumpFile(`${__dirname}/../src/Data/Weapons/${data.weaponType[0].toUpperCase() + data.weaponType.slice(1)}/${weaponKey}/data_gen.json`, data))
 
 //exp curve to generate  stats at every level
-dumpFile(`${__dirname}/../src/Weapon/expCurve_gen.json`, weaponCurveExcelConfigData)
-dumpFile(`${__dirname}/../src/Character/expCurve_gen.json`, characterExpCurve)
+dumpFile(`${__dirname}/../src/Data/Weapons/expCurve_gen.json`, weaponCurveExcelConfigData)
+dumpFile(`${__dirname}/../src/Data/Characters/expCurve_gen.json`, characterExpCurve)
 
 //dump artifact data
-dumpFile(`${__dirname}/../src/Artifact/artifact_sub_gen.json`, artifactSubstatData)
-dumpFile(`${__dirname}/../src/Artifact/artifact_main_gen.json`, artifactMainstatData)
-dumpFile(`${__dirname}/../src/Artifact/artifact_sub_rolls_gen.json`, artifactSubstatRollData)
-dumpFile(`${__dirname}/../src/Artifact/artifact_sub_rolls_correction_gen.json`, artifactSubstatRollCorrection)
+dumpFile(`${__dirname}/../src/Data/Artifacts/artifact_sub_gen.json`, artifactSubstatData)
+dumpFile(`${__dirname}/../src/Data/Artifacts/artifact_main_gen.json`, artifactMainstatData)
+dumpFile(`${__dirname}/../src/Data/Artifacts/artifact_sub_rolls_gen.json`, artifactSubstatRollData)
+dumpFile(`${__dirname}/../src/Data/Artifacts/artifact_sub_rolls_correction_gen.json`, artifactSubstatRollCorrection)
 
 //generate the MapHashes for localization for artifacts
 Object.entries(reliquarySetExcelConfigData).filter(([SetId, data]) => SetId in artifactIdMap).forEach(([SetId, data]) => {

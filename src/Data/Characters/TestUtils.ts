@@ -1,7 +1,7 @@
 import { importFlex } from "../../Database/exim/flex"
 import { allStatKeys } from "../../KeyMap"
 import { ICalculatedStats } from "../../Types/stats"
-import Artifact from "../../Util/Artifact"
+import Artifact from "../Artifacts/Artifact"
 
 export const defaultInitialStats = () => ({
   teamStats: [null, null, null], partyAllModifiers: {}, partyOnlyModifiers: {}, partyActiveModifiers: {}

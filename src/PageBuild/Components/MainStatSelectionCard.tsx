@@ -12,7 +12,7 @@ import KeyMap from '../../KeyMap';
 import { MainStatKey } from '../../Types/artifact';
 import { BuildSetting } from '../../Types/Build';
 import { SlotKey } from '../../Types/consts';
-import Artifact from '../../Util/Artifact';
+import Artifact from '../../Data/Artifacts/Artifact';
 
 export const artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"] as const
 

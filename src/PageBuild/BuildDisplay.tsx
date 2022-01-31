@@ -51,7 +51,7 @@ import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from '../Components/StatFilterCard';
 import TeamBuffCard from './Components/TeamBuffCard';
 import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './Worker';
-import Artifact from '../Util/Artifact';
+import Artifact from '../Data/Artifacts/Artifact';
 import CharacterCard from '../PageCharacter/CharacterCard';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
