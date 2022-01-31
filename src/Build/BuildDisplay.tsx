@@ -39,7 +39,7 @@ import { allSlotKeys, CharacterKey } from '../Types/consts';
 import { objectFromKeyMap, objectMap, objPathValue } from '../Util/Util';
 import { calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
-import { compactArtifacts, compactNodes, countBuilds, filterArts, mergeBuilds, mergePlot, pruneOrder, pruneRange, setPermutations } from './Build_WR';
+import { compactArtifacts, compactNodes, countBuilds, filterArts, mergeBuilds, mergePlot, pruneNodeRange, pruneOrder, pruneRange, setPermutations } from './Build_WR';
 import ChartCard from './ChartCard';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
@@ -227,6 +227,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       artifactsBySlot = newArts
     }
     artifactsBySlot = pruneOrder(artifactsBySlot, maxBuildsToShow)
+    nodes = pruneNodeRange(nodes, artifactsBySlot, base)
 
     let buildCount = 0, failedCount = 0, skippedCount = origCount - countBuilds(artifactsBySlot)
     let threshold = -Infinity

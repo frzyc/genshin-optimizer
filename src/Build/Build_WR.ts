@@ -3,10 +3,10 @@ import { dataObjForArtifact, mergeData } from "../Formula/api";
 import { forEachNodes, mapFormulas } from "../Formula/internal";
 import { allOperations, constantFold } from "../Formula/optimization";
 import { ConstantNode, Data, NumNode } from "../Formula/type";
-import { customRead } from "../Formula/utils";
+import { constant, customRead, max, min } from "../Formula/utils";
 import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
 import { assertUnreachable, objectFromKeyMap } from "../Util/Util";
-import { ArtifactsBySlot, Build, PlotData, RequestFilter } from "./Worker";
+import { ArtifactBuildData, ArtifactsBySlot, Build, PlotData, RequestFilter } from "./Worker";
 
 export function compactNodes(nodes: NumNode[]): CompactNodes {
   const affineNodes = new Set<NumNode>(), topLevelAffine = new Set<NumNode>()
@@ -86,20 +86,18 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySl
 }
 /** Remove artifacts that cannot reach `minimum` in any build */
 export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, base: number[], minimum: number[]): ArtifactsBySlot {
+  const baseRange = base.map(x => ({ min: x, max: x }))
   while (true) {
-    const artRanges = objectFromKeyMap(allSlotKeys, slot => arts[slot].reduce((prev, cur) =>
-      prev.map((value, i) => computeMinMax([cur.values[i]], [value])),
-      Array(arts[slot][0].values.length).fill({ min: Infinity, max: -Infinity })))
-    const otherArtRanges = objectFromKeyMap(allSlotKeys, key => allSlotKeys
-      .map(other => key === other ? [...artRanges[other]].fill({ min: 0, max: 0 }) : artRanges[other])
-      .reduce((accu, other) => accu.map((x, i) => ({ min: x.min + other[i].min, max: x.max + other[i].max })), base.map(i => ({ min: i, max: i }))))
+    const artRanges = objectFromKeyMap(allSlotKeys, slot => computeArtRange(arts[slot]))
+    const otherArtRanges = objectFromKeyMap(allSlotKeys, key =>
+      addArtRange(Object.entries(artRanges).map(a => a[0] === key ? baseRange : a[1]).filter(x => x)))
 
     let progress = false
 
     const newArts = objectFromKeyMap(allSlotKeys, slot => {
       const result = arts[slot].filter(art => {
         const read = otherArtRanges[slot].map((x, i) => ({ min: art.values[i] + x.min, max: art.values[i] + x.max }))
-        const newRange = computeRange(nodes, read)
+        const newRange = computeNodeRange(nodes, read)
         return nodes.every((node, i) => newRange.get(node)!.min >= minimum[i])
       })
       if (result.length !== arts[slot].length)
@@ -110,7 +108,62 @@ export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, base: number
     arts = newArts
   }
 }
-export function computeRange(nodes: NumNode[], reads: MinMax[]): Map<NumNode, MinMax> {
+export function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot, base: number[]): NumNode[] {
+  const baseRange = base.map(x => ({ min: x, max: x }))
+  const reads = addArtRange([baseRange, ...Object.values(arts).map(values => computeArtRange(values))])
+  const nodeRange = computeNodeRange(nodes, reads)
+
+  return mapFormulas(nodes, f => {
+    const { operation } = f
+    const operandRanges = f.operands.map(x => nodeRange.get(x)!)
+    switch (operation) {
+      case "threshold_add": {
+        const [value, threshold] = operandRanges
+        if (value.min >= threshold.max) return f.operands[2]
+        else if (value.max < threshold.min) return constant(0)
+        break
+      }
+      case "min": {
+        const newOperands = f.operands.filter((_, i) => {
+          const op1 = operandRanges[i]
+          return operandRanges.every((op2, j) => op1.min <= op2.max)
+        })
+        if (newOperands.length < operandRanges.length) return min(...newOperands)
+        break
+      }
+      case "max": {
+        const newOperands = f.operands.filter((_, i) => {
+          const op1 = operandRanges[i]
+          return operandRanges.every(op2 => op1.max >= op2.min)
+        })
+        if (newOperands.length < operandRanges.length) return max(...newOperands)
+        break
+      }
+    }
+    return f
+  }, f => f)
+}
+function addArtRange(ranges: MinMax[][]): MinMax[] {
+  const result = ranges[0].map(_ => ({ min: 0, max: 0 }))
+  ranges.forEach(range => {
+    range.map((r, i) => {
+      result[i].max += r.max
+      result[i].min += r.min
+    })
+  })
+  return result
+}
+function computeArtRange(arts: ArtifactBuildData[]): MinMax[] {
+  const result = arts[0].values.map(_ => ({ min: Infinity, max: -Infinity }))
+  arts.forEach(({ values }) => {
+    values.forEach((value, i) => {
+      if (result[i].max < value) result[i].max = value
+      if (result[i].min > value) result[i].min = value
+    })
+  })
+  return result
+}
+export function computeNodeRange(nodes: NumNode[], reads: MinMax[]): Map<NumNode, MinMax> {
   const range = new Map<NumNode, MinMax>()
 
   forEachNodes(nodes, _ => { }, _f => {
