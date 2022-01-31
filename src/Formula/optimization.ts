@@ -28,7 +28,7 @@ export function optimize(formulas: NumNode[], topLevelData: Data, shouldFold = (
   formulas = deduplicate(formulas)
   return formulas
 }
-export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<number>) => string): (values: Dict<string, number>) => Float32Array {
+export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<number>) => string): (values: Dict<string, number>) => number[] {
   // TODO: Use min-cut to minimize the size of interim array
   type Reference = string | number | { ins: Reference[] }
 
@@ -77,7 +77,7 @@ export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<num
 
   const readStrings = [...uniqueReadStrings], readOffset = formulas.length
   const constValues = [...uniqueNumbers]
-  const computations: { out: number, ins: number[], op: (_: number[]) => number }[] = []
+  const computations: { out: number, ins: number[], op: (_: number[]) => number, buff: number[] }[] = []
 
   formulas.forEach((f, i) => {
     locations.set(f, i)
@@ -102,11 +102,12 @@ export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<num
     computations.push({
       out: locations.get(node)!,
       ins: node.operands.map(op => locations.get(op)!),
-      op: allOperations[node.operation]
+      op: allOperations[node.operation],
+      buff: Array(node.operands.length).fill(0),
     })
   })
 
-  const buffer = new Float32Array(offset)
+  const buffer = Array(offset).fill(0)
   buffer.forEach((_, i, array) => array[i] = NaN)
   uniqueNumbers.forEach(number => buffer[locations.get(number)!] = number)
 
@@ -121,7 +122,10 @@ export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<num
 
   return values => {
     readStrings.forEach((id, i) => buffer[readOffset + i] = values[id] ?? 0)
-    computations.forEach(({ out, ins, op }) => buffer[out] = op(ins.map(i => buffer[i])))
+    computations.forEach(({ out, ins, op, buff }) => {
+      ins.forEach((i, j) => buff[j] = buffer[i])
+      buffer[out] = op(ins)
+    })
     copyFormula?.()
     return buffer
   }

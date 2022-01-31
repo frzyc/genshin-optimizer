@@ -83,6 +83,7 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
 
   // TODO: Update to array-based
   permute(arts.length - 1, shared.arts.base)
+  interimReport(count)
   return { command: "request", id, total: arts.reduce((count, a) => a.length * count, 1) }
 }
 export function finalize(): FinalizeResult {

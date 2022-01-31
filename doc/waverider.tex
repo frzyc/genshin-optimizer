@@ -24,7 +24,10 @@
 
 \section{Motivation}
 
-The current calculation system is long overdue for an overhaul. It works well for baked-in sets of formulas but has shortcomings when specification involves more complicated procedures. For example, Ganyu's A1, which increases the Frost Flake CRIT Rate by 20\%, requires the Frost Flake calculation to use a new formula with a different CRIT Rate calculation instead of the preexisting one. Using different formulas for similar calculations, such as in this scenario, also prevents the optimizer from merging those calculations.
+The current calculation system is long overdue for an overhaul.
+It works well for baked-in sets of formulas but has shortcomings when specification involves more complicated procedures
+For example, Ganyu's A1, which increases the Frost Flake CRIT Rate by 20\%, requires the Frost Flake calculation to use a new formula with a different CRIT Rate calculation instead of the preexisting one.
+Using different formulas for similar calculations, such as in this scenario, also prevents the optimizer from merging those calculations.
 
 The goal of the new formula engine includes
 
@@ -232,7 +235,8 @@ The rationale is that some read nodes require the values of the string node to b
 
 \subsection{Constant Folding}
 
-The values of some nodes don't change across computations. We can directly replace it with fewer computations, such as
+The values of some nodes don't change across computations.
+We can directly replace it with fewer computations, such as
 %
 \begin{itemize}
 	\item If all operands of a node are Constant Nodes, we can replace it with the result of the calculation (as another Constant Nodes),
@@ -319,7 +323,8 @@ These nodes include
 Furthermore, if any two commutative monoid nodes have more than one common dependency, we can separate common nodes into a nested operand.
 
 Figure~\ref{fig:optimization:deduplicate} shows an example of deduplication on~$(1 + a + b) * \max(1 + a, c)$
-In this figure, the the node~$1 + a + b$ and~$1 + a$ share the same part of the computation~$1 + a$. The~$1 + a$ formula is then used to replace a portion of the formula~$1 + a + b$.
+In this figure, the the node~$1 + a + b$ and~$1 + a$ share the same part of the computation~$1 + a$.
+The~$1 + a$ formula is then used to replace a portion of the formula~$1 + a + b$.
 %
 \begin{figure}
 	\centering
