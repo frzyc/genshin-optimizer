@@ -322,9 +322,8 @@ export class SetPerm {
       const arts = filterArts(this.arts, currentFilter)
       const count = countBuilds(arts)
       if (!count) continue
-      if (count <= this.limit) {
+      if (count <= this.limit)
         return currentFilter
-      }
 
       const canSplitBySet = allSlotKeys
         // TODO: Cache this loop

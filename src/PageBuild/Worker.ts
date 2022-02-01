@@ -74,7 +74,7 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
       permute(i - 1, newStats)
     })
     if (i === 0) {
-      count.build += arts.length
+      count.build += arts[0].length
       if (count.build > 4096)
         interimReport(count)
     }
@@ -106,8 +106,7 @@ function refresh(): void {
     .sort((a, b) => b.value - a.value)
     .slice(0, shared.maxBuilds)
 
-  const newThreshold = builds[shared.maxBuilds - 1]?.value ?? -Infinity
-  threshold = newThreshold
+  threshold = builds[shared.maxBuilds - 1]?.value ?? -Infinity
 }
 
 type Stats = { [key in MainStatKey | SubstatKey]?: number }
