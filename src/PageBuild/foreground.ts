@@ -69,6 +69,7 @@ export function* artSetPerm(filters: SetFilter[]): Iterable<RequestFilter> {
   }), 5)
 }
 export function* breakSetPermBySet(_arts: ArtifactsBySlot, perms: Iterable<RequestFilter>, limit: number): Iterable<RequestFilter> {
+  if (limit < 100) limit = 100
 
   for (const perm of perms) {
     const list = [perm]
