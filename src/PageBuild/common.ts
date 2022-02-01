@@ -112,7 +112,7 @@ export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: num
       const result = wrap.arts.values[slot].filter(art => {
         const read = addArtRange([computeArtRange([art]), otherArtRanges[slot]])
         const newRange = computeNodeRange(wrap.nodes, read)
-        return wrap.nodes.every((node, i) => newRange.get(node)!.min >= minimum[i])
+        return wrap.nodes.every((node, i) => newRange.get(node)!.min >= (minimum[i] ?? -Infinity))
       })
       if (result.length !== wrap.arts.values[slot].length) {
         internalWrap.anyProgress = true
