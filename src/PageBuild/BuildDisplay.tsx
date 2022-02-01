@@ -37,7 +37,7 @@ import { allSlotKeys, CharacterKey } from '../Types/consts';
 import { objectFromKeyMap, objectMap, objPathValue } from '../Util/Util';
 import { calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
-import { compactArtifacts, countBuilds, filterArts, mergeBuilds, mergePlot, pruneNodeRange, pruneOrder, pruneRange, reaffine, setPermutations } from './Build_WR';
+import { compactArtifacts, countBuilds, filterArts, mergeBuilds, mergePlot, pruneNodeRange, pruneOrder, pruneRange, reaffine, SetPerm } from './Build_WR';
 import ChartCard from './ChartCard';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
@@ -227,24 +227,19 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     let buildCount = 0, failedCount = 0, skippedCount = origCount - countBuilds(arts)
     let threshold = -Infinity
 
-    const setPerm = setPermutations(Object.fromEntries(setFilters.map(({ key, num }) => [key, num]).filter(x => x[1])))[Symbol.iterator]()
+    const maxWorkers = navigator.hardwareConcurrency || 4
+    const setPerm = new SetPerm(arts, [setFilters],
+      // 4 perms / worker, up to 1M builds / perm
+      Math.min(origCount / maxWorkers / 4, 1_000_000))
 
     function fetchWork(): Request | undefined {
-      const next = setPerm.next()
-      if (next.done) return
-      const filter = next.value
-
-      const filtered = filterArts(arts, filter)
-      const count = countBuilds(filtered)
-
-      // TODO: Break down filter when `count` is too high
-      return {
+      const filter = setPerm.nextPerm()
+      return filter && {
         command: "request",
         threshold, filter,
       }
     }
 
-    const maxWorkers = navigator.hardwareConcurrency || 4
     const workers: Worker[] = [], finalized: Promise<FinalizeResult>[] = []
     for (let i = 0; i < maxWorkers; i++) {
       const worker = new Worker()

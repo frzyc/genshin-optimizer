@@ -1,4 +1,4 @@
-import { ArtifactRarity, ArtifactSetKey, CharacterKey, ElementKey, SetNum, SlotKey } from "./consts";
+import { ArtifactRarity, ArtifactSetKey, CharacterKey, ElementKey, SlotKey } from "./consts";
 
 export interface IArtifact {
   setKey: ArtifactSetKey,

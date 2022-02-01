@@ -75,9 +75,8 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
     })
     if (i === 0) {
       count.build += arts.length
-      if (count.build >= 100_000) {
+      if (count.build > 4096)
         interimReport(count)
-      }
     }
   }
 
