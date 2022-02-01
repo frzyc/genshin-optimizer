@@ -6,8 +6,9 @@ import { dataObjForTeam, mergeData } from '../Formula/api';
 import { optimize } from '../Formula/optimization';
 import { customRead } from '../Formula/utils';
 import { getTeamData } from '../ReactHooks/useTeamData';
-import { compactArtifacts, reaffine } from './Build_WR';
-import { finalize, request, setup } from './Worker';
+import { compactArtifacts } from './foreground';
+import { reaffine } from './common';
+import { finalize, request, setup } from './background';
 import * as data1 from "./Worker.perf.test.json"
 
 describe("Worker Perf", () => {
