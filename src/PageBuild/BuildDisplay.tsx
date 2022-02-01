@@ -444,7 +444,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
             <Grid item flexGrow={1} >
               <ButtonGroup>
                 <Button
-                  disabled={!characterKey || generatingBuilds || !optimizationTarget || !totBuildNumber}
+                  disabled={!characterKey || generatingBuilds || !optimizationTarget || !totBuildNumber || !objPathValue(data.getDisplay(), optimizationTarget)}
                   color={(characterKey && totBuildNumber <= warningBuildNumber) ? "success" : "warning"}
                   onClick={generateBuilds}
                   startIcon={<FontAwesomeIcon icon={faCalculator} />}
