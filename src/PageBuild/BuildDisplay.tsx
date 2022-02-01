@@ -219,8 +219,11 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     const maxWorkers = navigator.hardwareConcurrency || 4
 
     const setPerm = breakSetPermBySet(arts, artSetPerm([setFilters]),
-      // 8 perms / worker, up to 1M builds / perm
-      Math.min(origCount / maxWorkers / 4, 1_000_000))[Symbol.iterator]()
+      maxWorkers === 1
+        // Don't split for single worker
+        ? Infinity
+        // 8 perms / worker, up to 1M builds / perm
+        : Math.min(origCount / maxWorkers / 4, 1_000_000))[Symbol.iterator]()
 
     function fetchWork(): Request | undefined {
       const { done, value } = setPerm.next()
