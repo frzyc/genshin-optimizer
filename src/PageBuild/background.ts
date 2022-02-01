@@ -1,8 +1,8 @@
-import { allSlotKeys, ArtifactSetKey, SlotKey } from '../Types/consts';
 import { optimize, precompute } from '../Formula/optimization';
-import type { NumNode } from '../Formula/type'
+import type { NumNode } from '../Formula/type';
 import type { MainStatKey, SubstatKey } from '../Types/artifact';
-import { objectFromKeyMap } from '../Util/Util';
+import { ArtifactSetKey, SlotKey } from '../Types/consts';
+import { filterArts } from './common';
 
 let id: string
 let builds: Build[]
@@ -39,16 +39,12 @@ export function setup(msg: Setup, callback: WorkerStat["callback"]): RequestResu
 
 export function request({ threshold: newThreshold, filter: filters }: Request): RequestResult & { total: number } {
   if (shared.min[0] > newThreshold) shared.min[0] = newThreshold
-  const arts = Object.values(objectFromKeyMap(allSlotKeys, slot => {
-    const filter = filters[slot]
-    switch (filter.kind) {
-      case "id": return shared.arts.values[slot].filter(art => filter.ids.has(art.id))
-      case "exclude": return shared.arts.values[slot].filter(art => !filter.sets.has(art.set))
-      case "required": return shared.arts.values[slot].filter(art => filter.sets.has(art.set))
-    }
-  })).sort((a, b) => a.length - b.length)
-  const optimized = optimize(shared.nodes, {}, _ => false)
-  const compute = precompute(optimized, f => f.path[1])
+  let preArts = filterArts(shared.arts, filters)
+
+  let nodes = optimize(shared.nodes, {}, _ => false);
+  //({ nodes, arts: preArts } = pruneRange(nodes, preArts, shared.min))
+  const compute = precompute(nodes, f => f.path[1])
+  const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length)
 
   const ids: string[] = Array(arts.length).fill("")
   let count = { build: 0, failed: 0 }

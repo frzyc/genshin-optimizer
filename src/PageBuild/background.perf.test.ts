@@ -9,7 +9,7 @@ import { getTeamData } from '../ReactHooks/useTeamData';
 import { compactArtifacts } from './foreground';
 import { reaffine } from './common';
 import { finalize, request, setup } from './background';
-import * as data1 from "./Worker.perf.test.json"
+import * as data1 from "./background.perf.test.json"
 
 describe("Worker Perf", () => {
   test("Test", async () => {

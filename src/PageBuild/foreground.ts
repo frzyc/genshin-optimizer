@@ -33,62 +33,55 @@ export function compactArtifacts(db: ArtCharDatabase, mainStatAssumptionLevel: n
   result.base = Object.fromEntries([...keys].map(key => [key, 0]))
   return result
 }
-const noFilter = { kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }
-export class SetPerm {
-  arts: ArtifactsBySlot
-  limit: number
-  list: RequestFilter[] = []
-
-  constructor(arts: ArtifactsBySlot, filters: SetFilter[], limit: number) {
-    this.arts = arts
-    this.limit = limit
-    const list = this.list
-
-    const dummy = objectFromKeyMap(allSlotKeys, _ => noFilter)
-    function check(request: RequestFilter, filters: Dict<ArtifactSetKey, number>[], remainingSlots: number) {
-      if (!filters.length) return
-      if (filters.some(filter => !Object.keys(filter).length)) {
-        list.push(request)
-        return
-      }
-
-      const slot = allSlotKeys[remainingSlots - 1]
-      const keys = new Set(filters.flatMap(filter => Object.keys(filter)))
-      for (const key of keys) {
-        const newRequest = { ...request, [slot]: { kind: "required", sets: new Set([key]) } }
-        const newFilters = filters
-          .filter(filter => filter[key])
-          .map(filter => {
-            const result = { ...filter }
-            result[key]! -= 1
-            if (!result[key]) delete result[key]
-            return result
-          })
-        check(newRequest, newFilters, remainingSlots - 1)
-      }
-      {
-        const newRequest = { ...request, [slot]: { kind: "exclude", sets: keys } }
-        const newFilters = filters.filter(filter =>
-          Object.values(filter).reduce((a, b) => a + b, 0) < remainingSlots)
-        check(newRequest, newFilters, remainingSlots - 1)
-      }
+export function* artSetPerm(filters: SetFilter[]): Iterable<RequestFilter> {
+  function* check(request: RequestFilter, filters: Dict<ArtifactSetKey, number>[], remainingSlots: number) {
+    if (!filters.length) return
+    if (filters.some(filter => !Object.keys(filter).length)) {
+      yield request
+      return
     }
-    check(dummy, filters.map(filter => {
-      const result: Dict<ArtifactSetKey, number> = {}
-      filter.forEach(({ key, num }) => key && num && (result[key] = (result[key] ?? 0) + num))
-      return result
-    }), 5)
-  }
-  nextPerm(): RequestFilter | undefined {
-    while (true) {
-      if (!this.list.length) return
 
-      const currentFilter = this.list.pop()!
-      const arts = filterArts(this.arts, currentFilter)
+    const slot = allSlotKeys[remainingSlots - 1]
+    const keys = new Set(filters.flatMap(filter => Object.keys(filter)))
+    for (const key of keys) {
+      const newRequest = { ...request, [slot]: { kind: "required", sets: new Set([key]) } }
+      const newFilters = filters
+        .filter(filter => filter[key])
+        .map(filter => {
+          const result = { ...filter }
+          result[key]! -= 1
+          if (!result[key]) delete result[key]
+          return result
+        })
+      yield* check(newRequest, newFilters, remainingSlots - 1)
+    }
+    {
+      const newRequest = { ...request, [slot]: { kind: "exclude", sets: keys } }
+      const newFilters = filters.filter(filter =>
+        Object.values(filter).reduce((a, b) => a + b, 0) < remainingSlots)
+      yield* check(newRequest, newFilters, remainingSlots - 1)
+    }
+  }
+  yield* check(objectFromKeyMap(allSlotKeys, _ => noFilter), filters.map(filter => {
+    const result: Dict<ArtifactSetKey, number> = {}
+    filter.forEach(({ key, num }) => key && num && (result[key] = (result[key] ?? 0) + num))
+    return result
+  }), 5)
+}
+export function* breakSetPermBySet(_arts: ArtifactsBySlot, perms: Iterable<RequestFilter>, limit: number): Iterable<RequestFilter> {
+
+  for (const perm of perms) {
+    const list = [perm]
+
+    while (list.length) {
+      const currentFilter = list.pop()!
+      const arts = filterArts(_arts, currentFilter)
       const count = countBuilds(arts)
-      if (!count) continue
-      if (count <= this.limit)
-        return currentFilter
+      if (count <= limit) {
+        if (count)
+          yield currentFilter
+        continue
+      }
 
       const canSplitBySet = allSlotKeys
         // TODO: Cache this loop
@@ -97,7 +90,7 @@ export class SetPerm {
         .sort((a, b) => a.sets.size - b.sets.size)[0]
       if (canSplitBySet) {
         const { sets, slot } = canSplitBySet
-        this.list.push(...[...sets].map(set => ({
+        list.push(...[...sets].map(set => ({
           ...currentFilter, [slot]: { kind: "required", sets: new Set([set]) }
         })))
         continue
@@ -106,14 +99,17 @@ export class SetPerm {
         .map(slot => ({ slot, length: arts.values[slot].length }))
         .filter(x => x.length > 1)
       const minSlot = counts.reduce((a, b) => a.length < b.length ? a : b)
-      const numPerSlot = Math.max(Math.floor(this.limit * minSlot.length / count), 1)
+      const numPerSlot = Math.max(Math.floor(limit * minSlot.length / count), 1)
       const ids = arts.values[minSlot.slot].map(x => x.id)
       const chunk = Array(Math.ceil(ids.length / numPerSlot)).fill(0).map(_ => new Set<string>())
       ids.forEach((id, i) => chunk[Math.floor(i / numPerSlot)].add(id))
-      this.list.push(...chunk.map(ids => ({ ...currentFilter, [minSlot.slot]: { kind: "id", ids } })))
+      list.push(...chunk.map(ids => ({ ...currentFilter, [minSlot.slot]: { kind: "id", ids } })))
     }
   }
 }
+
+const noFilter = { kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }
+
 export function countBuilds(arts: ArtifactsBySlot): number {
   return allSlotKeys.reduce((_count, slot) => _count * arts.values[slot].length, 1)
 }

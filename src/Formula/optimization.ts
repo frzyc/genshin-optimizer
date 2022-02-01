@@ -157,25 +157,27 @@ function deduplicate(formulas: NumNode[]): NumNode[] {
     return [...counts].flatMap(([dep, count]) => Array(count).fill(dep))
   }
 
-  let common = {
-    counts: new Map<NumNode, number>(),
-    formulas: new Set<NumNode>(),
-    operation: "add" as Operation
+  const wrap = {
+    common: {
+      counts: new Map<NumNode, number>(),
+      formulas: new Set<NumNode>(),
+      operation: "add" as Operation
+    }
   }
 
   while (true) {
-    let next: typeof common | undefined
+    let next: typeof wrap.common | undefined
 
-    const factored: ComputeNode = { operation: common.operation, operands: arrayFromCounts(common.counts) }
+    const factored: ComputeNode = { operation: wrap.common.operation, operands: arrayFromCounts(wrap.common.counts) }
 
     let candidatesByOperation = new Map<Operation, [ComputeNode, Map<NumNode, number>][]>()
     for (const operation of Object.keys(allCommutativeMonoidOperations))
       candidatesByOperation.set(operation, [])
 
     formulas = mapFormulas(formulas, _formula => {
-      if (common.formulas.has(_formula as NumNode)) {
+      if (wrap.common.formulas.has(_formula as NumNode)) {
         const formula = _formula as ComputeNode
-        const remainingCounts = new Map(common.counts)
+        const remainingCounts = new Map(wrap.common.counts)
         const operands = formula.operands.filter(dep => {
           const count = remainingCounts.get(dep)
           if (count) {
@@ -244,7 +246,7 @@ function deduplicate(formulas: NumNode[]): NumNode[] {
       return formula
     })
 
-    if (next) common = next
+    if (next) wrap.common = next
     else break
   }
 

@@ -99,35 +99,36 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySl
   return progress ? { base: arts.base, values } : arts
 }
 /** Remove artifacts that cannot reach `minimum` in any build */
-export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[]): ArtifactsBySlot {
-  const baseRange = Object.fromEntries(Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }]))
+export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[]): { nodes: NumNode[], arts: ArtifactsBySlot } {
+  const wrap = { nodes, arts }, internalWrap = { anyProgress: false }
+  const baseRange = Object.fromEntries(Object.entries(wrap.arts.base).map(([key, x]) => [key, { min: x, max: x }]))
   while (true) {
-    const artRanges = objectFromKeyMap(allSlotKeys, slot => computeArtRange(arts.values[slot]))
+    const artRanges = objectFromKeyMap(allSlotKeys, slot => computeArtRange(wrap.arts.values[slot]))
     const otherArtRanges = objectFromKeyMap(allSlotKeys, key =>
       addArtRange(Object.entries(artRanges).map(a => a[0] === key ? baseRange : a[1]).filter(x => x)))
 
     let progress = false
-
     const values = objectFromKeyMap(allSlotKeys, slot => {
-      const result = arts.values[slot].filter(art => {
+      const result = wrap.arts.values[slot].filter(art => {
         const read = addArtRange([computeArtRange([art]), otherArtRanges[slot]])
-        const newRange = computeNodeRange(nodes, read)
-        return nodes.every((node, i) => newRange.get(node)!.min >= minimum[i])
+        const newRange = computeNodeRange(wrap.nodes, read)
+        return wrap.nodes.every((node, i) => newRange.get(node)!.min >= minimum[i])
       })
-      if (result.length !== arts.values[slot].length)
+      if (result.length !== wrap.arts.values[slot].length) {
+        internalWrap.anyProgress = true
         progress = true
+      }
       return result
     })
-    if (!progress) return arts // Make sure we return the original `arts` if there is no progress
-    arts = { base: arts.base, values }
+    if (!progress) break
+    wrap.arts = { base: wrap.arts.base, values }
   }
-}
-export function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot): NumNode[] {
-  const baseRange = Object.fromEntries(Object.entries(arts.base).map(([key, value]) => [key, { min: value, max: value }]))
-  const reads = addArtRange([baseRange, ...Object.values(arts.values).map(values => computeArtRange(values))])
-  const nodeRange = computeNodeRange(nodes, reads)
+  if (!internalWrap.anyProgress) return { nodes, arts }
 
-  return mapFormulas(nodes, f => {
+  const reads = addArtRange([baseRange, ...Object.values(arts.values).map(values => computeArtRange(values))])
+  const nodeRange = computeNodeRange(wrap.nodes, reads)
+
+  wrap.nodes = mapFormulas(wrap.nodes, f => {
     const { operation } = f
     const operandRanges = f.operands.map(x => nodeRange.get(x)!)
     switch (operation) {
@@ -156,11 +157,13 @@ export function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot): NumNode
     }
     return f
   }, f => f)
+
+  return wrap
 }
 function addArtRange(ranges: DynMinMax[]): DynMinMax {
   const result: DynMinMax = {}
   ranges.forEach(range => {
-    Object.entries(range).map(([key, value]) => {
+    Object.entries(range).forEach(([key, value]) => {
       if (result[key]) {
         result[key].min += value.min
         result[key].max += value.max

@@ -40,9 +40,9 @@ import { allSlotKeys, CharacterKey } from '../Types/consts';
 import { objectFromKeyMap, objectMap, objPathValue } from '../Util/Util';
 import { calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
-import { compactArtifacts, countBuilds, SetPerm } from './foreground';
+import { artSetPerm, breakSetPermBySet, compactArtifacts, countBuilds } from './foreground';
 import ChartCard from './ChartCard';
-import { mergeBuilds, mergePlot, pruneNodeRange, pruneOrder, pruneRange, reaffine } from './common';
+import { mergeBuilds, mergePlot, pruneOrder, pruneRange, reaffine } from './common';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
@@ -216,28 +216,25 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     ({ nodes, arts } = reaffine(nodes, arts))
     const origCount = countBuilds(arts)
 
-    while (true) {
-      const newArts = pruneRange(nodes, arts, minimum)
-      if (newArts === arts)
-        break
-      arts = newArts
+    {
+      ({ nodes, arts } = pruneRange(nodes, arts, minimum))
+      arts = pruneOrder(arts, maxBuildsToShow)
     }
-    arts = pruneOrder(arts, maxBuildsToShow)
-    nodes = pruneNodeRange(nodes, arts)
 
     let buildCount = 0, failedCount = 0, skippedCount = origCount - countBuilds(arts)
     let threshold = -Infinity
 
     const maxWorkers = navigator.hardwareConcurrency || 4
-    const setPerm = new SetPerm(arts, [setFilters],
-      // 4 perms / worker, up to 1M builds / perm
-      Math.min(origCount / maxWorkers / 4, 1_000_000))
+
+    const setPerm = breakSetPermBySet(arts, artSetPerm([setFilters]),
+      // 8 perms / worker, up to 1M builds / perm
+      Math.min(origCount / maxWorkers / 4, 1_000_000))[Symbol.iterator]()
 
     function fetchWork(): Request | undefined {
-      const filter = setPerm.nextPerm()
-      return filter && {
+      const { done, value } = setPerm.next()
+      return done ? undefined : {
         command: "request",
-        threshold, filter,
+        threshold, filter: value,
       }
     }
 
