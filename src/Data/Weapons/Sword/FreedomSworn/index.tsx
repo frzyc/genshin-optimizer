@@ -13,7 +13,6 @@ import { dataObjForWeaponSheet } from '../../util'
 const key: WeaponKey = "FreedomSworn"
 const data_gen = data_gen_json as WeaponData
 const tr = (strKey: string) => <Translate ns={`weapon_${key}_gen`} key18={strKey} />
-const dmg_ = [0.10, 0.125, 0.15, 0.175, 0.20]
 const autoSrc = [0.16, 0.20, 0.24, 0.28, 0.32]
 const atk_Src = [0.2, 0.25, 0.3, 0.35, 0.40]
 
@@ -68,7 +67,6 @@ const sheet: IWeaponSheet = {
           }]
         }
       }
-
     }
   }],
 }
