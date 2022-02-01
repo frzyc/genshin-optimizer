@@ -209,7 +209,7 @@ export const allWeaponKeys = [
   // "SongOfBrokenPines",
   // "DodocoTales",
   // "MitternachtsWaltz",
-  // "FreedomSworn",
+  "FreedomSworn",
   // "AmenomaKageuchi",
   // "MistsplitterReforged",
   // "KatsuragikiriNagamasa",

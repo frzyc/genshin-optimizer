@@ -3,6 +3,7 @@ import { useContext } from "react"
 import ConditionalSelector from "../Conditional/ConditionalSelector"
 import { DataContext } from "../DataContext"
 import IConditional from "../Types/IConditional_WR"
+import { evalIfFunc } from "../Util/Util"
 import CardDark from "./Card/CardDark"
 import FieldDisplay, { FieldDisplayList } from "./FieldDisplay"
 
@@ -18,8 +19,9 @@ export default function ConditionalDisplay({ conditional, hideHeader = false, hi
   if (!canShow) return null
   const condVal = data.get(conditional.value).value
 
-  const description = !hideDesc && conditional.description
-  const { icon, title, action } = conditional.header ?? {}
+  const description = !hideDesc && evalIfFunc(conditional.description, data)
+  let { icon, title, action } = conditional.header ?? {}
+  icon = evalIfFunc(icon, data)
   const fields = condVal && conditional.states[condVal]?.fields
 
   return <CardDark>

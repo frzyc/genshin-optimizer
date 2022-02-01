@@ -16,7 +16,7 @@ const data_gen = data_gen_json as WeaponData
 const hp_conv = [0.01, 0.015, 0.02, 0.025, 0.03]
 
 const normalDmgInc = infoMut(prod(subscript(input.weapon.refineIndex, hp_conv, { key: '_' }), input.premod.hp), { key: "normal_dmg_inc" })
-export const data = dataObjForWeaponSheet(key, "catalyst", data_gen, "heal_", {
+export const data = dataObjForWeaponSheet(key, data_gen, "heal_", {
   normalDmgInc
 }, {
   hit: {

@@ -338,6 +338,7 @@ export type MainStatKey = typeof MainPropMap[keyof typeof MainPropMap]
 export const propTypeMap = {
   ...SubStatPropTypeMap,
   ...MainPropMap,
+  FIGHT_PROP_ADD_HURT: "dmg_",
   FIGHT_PROP_BASE_HP: "hp",
   FIGHT_PROP_BASE_ATTACK: "atk",
   FIGHT_PROP_BASE_DEFENSE: "def",

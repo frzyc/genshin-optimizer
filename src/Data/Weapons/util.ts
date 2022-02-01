@@ -11,17 +11,18 @@ import { infoMut, prod, constant, subscript, sum } from "../../Formula/utils";
 const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
 export function dataObjForWeaponSheet(
-  key: WeaponKey, type: WeaponTypeKey,
+  key: WeaponKey,
   gen: WeaponData,
-  substat2: MainStatKey | SubstatKey | undefined,
+  substat2: MainStatKey | SubstatKey | "dmg_" | undefined = undefined,
   displayWeapon: DisplaySub = {},
   additional: Data = {}
 ): Data {
   const result: Data = {
     base: {},
     premod: {},
+    total: {},
     weapon: {
-      key: constant(key), type: constant(type),
+      key: constant(key), type: constant(gen.weaponType),
     },
     display: {
       [`weapon:${key}`]: displayWeapon
@@ -42,8 +43,12 @@ export function dataObjForWeaponSheet(
   if (substat2) {
     const substat2Node = subscript(input.weapon.refineIndex, gen.addProps.map(x => x[substat2] ?? NaN), { key: substat2, namePrefix: " Weapon" })
     result.weapon!.sub2 = substat2Node
-    result.premod![substat2] = substat2 !== subStat?.type
+    const node = substat2 !== subStat?.type
       ? input.weapon.sub2 : sum(input.weapon.sub, input.weapon.sub2)
+    if (substat2 === "dmg_") {
+      if (!result.total!.dmgBonus) result.total!.dmgBonus = {}
+      result.total!.dmgBonus.hit = node
+    } else result.premod![substat2] = node
   }
 
   return mergeData([result, additional])

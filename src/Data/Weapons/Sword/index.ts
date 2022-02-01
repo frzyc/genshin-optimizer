@@ -8,7 +8,7 @@
 // import FavoniusSword from './FavoniusSword'
 // import FesteringDesire from './FesteringDesire'
 // import FilletBlade from './FilletBlade'
-// import FreedomSworn from './FreedomSworn'
+import FreedomSworn from './FreedomSworn'
 // import HarbingerOfDawn from './HarbingerOfDawn'
 // import IronSting from './IronSting'
 // import LionsRoar from './LionsRoar'
@@ -37,7 +37,7 @@ const sword = {
   // FavoniusSword,
   // FesteringDesire,
   // FilletBlade,
-  // FreedomSworn,
+  FreedomSworn,
   // HarbingerOfDawn,
   // IronSting,
   // LionsRoar,
