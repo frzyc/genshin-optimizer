@@ -203,26 +203,18 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     setgenerationProgress(0)
     setgenerationSkipped(0)
 
-    let cancelled = false
-    const workerkillers = [] as (() => void)[]
-    cancelToken.current = () => {
-      cancelled = true
-      workerkillers.forEach(w => w())
-    }
+    const cancelled = new Promise<void>(r => cancelToken.current = r)
 
     let nodes = optimize([optimizationTargetNode, ...valueFilter.map(x => x.value)], workerData, ({ path: [p] }) => p !== "dyn")
     let arts = compactArtifacts(database, mainStatAssumptionLevel)
     const minimum = [-Infinity, ...valueFilter.map(x => x.minimum)];
     ({ nodes, arts } = reaffine(nodes, arts))
-    const origCount = countBuilds(arts)
+    const origCount = countBuilds(arts);
 
-    {
-      ({ nodes, arts } = pruneRange(nodes, arts, minimum))
-      arts = pruneOrder(arts, maxBuildsToShow)
-    }
+    ({ nodes, arts } = pruneRange(nodes, arts, minimum))
+    arts = pruneOrder(arts, maxBuildsToShow)
 
-    let buildCount = 0, failedCount = 0, skippedCount = origCount - countBuilds(arts)
-    let threshold = -Infinity
+    let wrap = { buildCount: 0, failedCount: 0, skippedCount: origCount - countBuilds(arts), threshold: -Infinity }
 
     const maxWorkers = navigator.hardwareConcurrency || 4
 
@@ -234,11 +226,11 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       const { done, value } = setPerm.next()
       return done ? undefined : {
         command: "request",
-        threshold, filter: value,
+        threshold: wrap.threshold, filter: value,
       }
     }
 
-    const workers: Worker[] = [], finalized: Promise<FinalizeResult>[] = []
+    const finalizedList: Promise<FinalizeResult>[] = []
     for (let i = 0; i < maxWorkers; i++) {
       const worker = new Worker()
 
@@ -255,22 +247,22 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       }
       worker.postMessage(setup, undefined)
       let finalize: (_: FinalizeResult) => void
-      const finalizePromise = new Promise<FinalizeResult>(r => finalize = r)
+      const finalized = new Promise<FinalizeResult>(r => finalize = r)
       worker.onmessage = async ({ data }: { data: WorkerResult }) => {
         switch (data.command) {
           case "interim":
-            buildCount += data.buildCount
-            failedCount += data.failedCount
-            skippedCount += data.skippedCount
-            if (threshold < data.threshold) threshold = data.threshold
+            wrap.buildCount += data.buildCount
+            wrap.failedCount += data.failedCount
+            wrap.skippedCount += data.skippedCount
+            if (wrap.threshold < data.threshold) wrap.threshold = data.threshold
             break
           case "request":
             const work = fetchWork()
             if (work) {
               worker.postMessage(work)
             } else {
-              const finalize: Finalize = { command: "finalize" }
-              worker.postMessage(finalize)
+              const finalizeCommand: Finalize = { command: "finalize" }
+              worker.postMessage(finalizeCommand)
             }
             break
           case "finalize": finalize(data); break
@@ -278,23 +270,21 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         }
       }
 
-      workers.push(worker)
-      workerkillers.push(() => worker.terminate())
-      finalized.push(finalizePromise)
+      cancelled.then(() => worker.terminate())
+      finalizedList.push(finalized)
     }
 
     const buildTimer = setInterval(() => {
-      setgenerationProgress(buildCount)
+      setgenerationProgress(wrap.buildCount)
       setgenerationDuration(performance.now() - t1)
     }, 100)
-    const results = await Promise.all(finalized)
-    workerkillers.forEach(x => x())
+    const results = await Promise.any([Promise.all(finalizedList), cancelled])
     clearInterval(buildTimer)
     cancelToken.current = () => { }
 
     // TODO Check below that the data are sent to the UI & DB properly
-
-    if (cancelled) {
+    console.log(results)
+    if (!results) {
       setgenerationDuration(0)
       setgenerationProgress(0)
       setgenerationSkipped(0)
@@ -316,7 +306,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       buildSettingsDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
       const totalDuration = performance.now() - t1
 
-      setgenerationProgress(buildCount)
+      setgenerationProgress(wrap.buildCount)
       setgenerationDuration(totalDuration)
 
       ReactGA.timing({
@@ -327,7 +317,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       })
     }
     setgeneratingBuilds(false)
-  }, [data, database, artifactSheets, split, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, setFilters, statFilters, plotBase, tcMode, buildSettingsDispatch])
+  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, setFilters, statFilters, plotBase, buildSettingsDispatch])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
