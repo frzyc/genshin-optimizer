@@ -36,7 +36,7 @@ import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 // import Thundersoother from './Thundersoother'
 // import TinyMiracle from './TinyMiracle'
 // import TravelingDoctor from './TravelingDoctor'
-// import ViridescentVenerer from './ViridescentVenerer'
+import ViridescentVenerer from './ViridescentVenerer'
 // import WanderersTroupe from './WanderersTroupe'
 const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   // Adventurer,
@@ -74,7 +74,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   // Thundersoother,
   // TinyMiracle,
   // TravelingDoctor,
-  // ViridescentVenerer,
+  ViridescentVenerer,
   // WanderersTroupe,
 } as const
 

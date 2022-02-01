@@ -109,7 +109,7 @@ const ArtifactSetKeyMap: Dict<string, ArtifactSetKey> = {
   // "thunderSmoother": "Thundersoother",
   // "tinyMiracle": "TinyMiracle",
   // "travelingDoctor": "TravelingDoctor",
-  // "viridescentVenerer": "ViridescentVenerer",
+  "viridescentVenerer": "ViridescentVenerer",
   // "wandererTroupe": "WanderersTroupe",
   // "tenacityOfTheMillelith": "TenacityOfTheMillelith",
   // "paleFlame": "PaleFlame",

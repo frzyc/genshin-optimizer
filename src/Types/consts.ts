@@ -42,7 +42,7 @@ export const allArtifactSets = [
   // "Thundersoother",
   // "TinyMiracle",
   // "TravelingDoctor",
-  // "ViridescentVenerer",
+  "ViridescentVenerer",
   // "WanderersTroupe",
   // "TenacityOfTheMillelith",
   // "PaleFlame",

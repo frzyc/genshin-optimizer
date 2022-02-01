@@ -1,14 +1,10 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
+import icons from './icons'
 import { Data } from '../../../Formula/type'
 import { infoMut, min, percent, prod, threshold_add } from '../../../Formula/utils'
 import { input } from '../../../Formula'
-import { dataObjForArtifactSheet } from '../../../Formula/api'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
 const key: ArtifactSetKey = "EmblemOfSeveredFate"
 
 const set2 = threshold_add(input.artSet.EmblemOfSeveredFate, 2, percent(0.2))
@@ -31,13 +27,7 @@ export const data: Data = dataObjForArtifactSheet(key, {
 
 const sheet: IArtifactSheet = {
   name: "Emblem of Severed Fate", rarity: [4, 5],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
-  },
+  icons,
   setEffects: {
     2: {
       document: [{

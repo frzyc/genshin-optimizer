@@ -96,10 +96,9 @@ const dmgFormulas = {
   skill: {
     press: dmgNode("atk", datamine.skill.press, "skill"),
     hold: dmgNode("atk", datamine.skill.hold, "skill"),
-    // TODO: these plunging should be anemo dmg
-    pdmg: dmgNode("atk", datamine.plunging.dmg, "plunging"),
-    plow: dmgNode("atk", datamine.plunging.low, "plunging"),
-    phigh: dmgNode("atk", datamine.plunging.high, "plunging"),
+    pdmg: dmgNode("atk", datamine.plunging.dmg, "plunging", { hit: { ele: constant("anemo") } }),
+    plow: dmgNode("atk", datamine.plunging.low, "plunging", { hit: { ele: constant("anemo") } }),
+    phigh: dmgNode("atk", datamine.plunging.high, "plunging", { hit: { ele: constant("anemo") } }),
   },
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),

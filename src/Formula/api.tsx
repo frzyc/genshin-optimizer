@@ -1,27 +1,16 @@
+import Artifact from "../Data/Artifacts/Artifact";
 import { transformativeReactionLevelMultipliers, transformativeReactions } from "../StatConstants";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character_WR";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import Artifact from "../Data/Artifacts/Artifact";
 import { crawlObject, deepClone, layeredAssignment, objectFromKeyMap, objPathValue } from "../Util/Util";
 import { input, teamBuff } from "./index";
-import { Data, DisplaySub, NumNode, ReadNode, StrNode } from "./type";
+import { Data, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
-import { frac, constant, infoMut, percent, prod, subscript, sum, unit, resetData, customRead } from "./utils";
+import { constant, customRead, frac, infoMut, percent, prod, resetData, subscript, sum, unit } from "./utils";
 
-function dataObjForArtifactSheet(
-  key: ArtifactSetKey,
-  data: Data = {},
-  displayArtifact: DisplaySub = {},
-): Data {
 
-  return mergeData([data, {
-    display: {
-      [`artifact:${key}`]: displayArtifact
-    },
-  }])
-}
 function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel: number = 0): Data {
   const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level))
   const stats: [ArtifactSetKey | MainStatKey | SubstatKey, number][] = []
@@ -236,7 +225,5 @@ export const reactions = {
 export type { NodeDisplay, UIData };
 export {
   dataObjForArtifact, dataObjForCharacter, dataObjForWeapon,
-  dataObjForArtifactSheet,
-
   mergeData, computeUIData, valueString,
 };
