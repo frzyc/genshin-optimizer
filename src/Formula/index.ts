@@ -99,7 +99,8 @@ const rd = setReadNodeKeys({
   },
 
   misc: objectFromKeyMap([
-    "stamina", "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_"
+    "stamina", "staminaDec_", "staminaSprintDec_", "staminaGlidingDec_", "staminaChargedDec_",
+    "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_"
   ] as const, key => read("add", { key }))
 })
 

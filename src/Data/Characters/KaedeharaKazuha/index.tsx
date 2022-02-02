@@ -1,8 +1,8 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { Translate } from '../../../Components/Translate'
-import { input } from '../../../Formula'
-import { constant, customStringRead, infoMut, match, percent, prod, threshold_add } from '../../../Formula/utils'
+import { input, target } from '../../../Formula'
+import { constant, customStringRead, infoMut, match, percent, prod, threshold_add, unmatch } from '../../../Formula/utils'
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
 import { absorbableEle, dataObjForCharacterSheet, dmgNode, singleDmgNode } from '../dataUtil'
@@ -76,13 +76,43 @@ const condSkillAbsorption = customStringRead(["conditional", ...condSkillAbsorpt
 
 const condSwirlPaths = Object.fromEntries(absorbableEle.map(e => [e, [characterKey, `swirl${e}`]]))
 const condSwirls = Object.fromEntries(absorbableEle.map(e => [e, customStringRead(["conditional", ...condSwirlPaths[e]])]))
-
 const asc4 = Object.fromEntries(absorbableEle.map(ele =>
   [ele, threshold_add(input.asc, 4,
     match("swirl", condSwirls[ele],
       prod(percent(datamine.passive2.elemas_dmg_), input.premod.eleMas)
     )
     , { key: `${ele}_dmg_`, variant: ele })]))
+
+const condC2Path = [characterKey, "c2"]
+const condC2 = customStringRead(["conditional", ...condC2Path])
+const c2EleMas = threshold_add(input.constellation, 6,
+  match("c2", condC2, datamine.constellation2.elemas)
+)
+
+const condC2PPath = [characterKey, "c2p"]
+const condC2P = customStringRead(["conditional", ...condC2PPath])
+const c2PEleMas = threshold_add(input.constellation, 6,
+  match("c2p", condC2,
+    unmatch(target.charKey, characterKey, datamine.constellation2.elemas)
+  )
+)
+
+const condC6Path = [characterKey, "c6"]
+const condC6 = customStringRead(["conditional", ...condC6Path])
+// const c6infusion = threshold_add(input.constellation, 6,
+//   match("c6", condC6, constant("anemo"))
+// )
+const c6NormDmg_ = threshold_add(input.constellation, 6,
+  match("c6", condC6, prod(datamine.constellation6.auto_, input.premod.eleMas))
+)
+const c6ChargedDmg_ = threshold_add(input.constellation, 6,
+  match("c6", condC6, prod(datamine.constellation6.auto_, input.premod.eleMas))
+)
+const c6PlungingDmg_ = threshold_add(input.constellation, 6,
+  match("c6", condC6, prod(datamine.constellation6.auto_, input.premod.eleMas))
+)
+
+const passive = percent(0.2)
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -122,8 +152,22 @@ export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dm
   },
   teamBuff: {
     total: {
-      dmgBonus: asc4
+      dmgBonus: asc4,
+      eleMas: c2EleMas,
+    },
+    misc: {
+      staminaSprintDec_: passive
     }
+  },
+  // TODO:
+  // infusion: c6infusion,
+  premod: {
+    // TODO:
+    // dmgBonus: {
+    //   normal: c6NormDmg_,
+    //   charged: c6ChargedDmg_,
+    //   plunging: c6PlungingDmg_,
+    // }
   }
 })
 
@@ -236,15 +280,33 @@ const sheet: ICharacterSheet = {
             }]))
           },
         }, {
-          // conditional: {
-          //   key: "c2",
-          //   canShow: stats => stats.constellation >= 2,
-          //   partyBuff: "partyAll",
-          //   header: conditionalHeader("constellation2", tr, c2),
-          //   description: tr("constellation2.description"),
-          //   name: <Translate ns="char_KaedeharaKazuha" key18="c2" />,
-          //   stats: { eleMas: 200 }
-          // },
+          conditional: { // C2
+            value: condC2,
+            path: condC2Path,
+            name: <Translate ns="char_KaedeharaKazuha" key18="c2" />,
+            states: {
+              c2: {
+                fields: [{
+                  node: infoMut(c2EleMas, { key: `eleMas` })
+                }]
+              }
+            }
+          },
+        }, {
+          conditional: { // C2 Party
+            value: condC2P,
+            path: condC2PPath,
+            header: conditionalHeader("constellation2", tr, c2),
+            description: tr("constellation2.description"),
+            name: <Translate ns="char_KaedeharaKazuha" key18="c2p" />,
+            states: {
+              c2p: {
+                fields: [{
+                  node: infoMut(c2PEleMas, { key: `eleMas` })
+                }]
+              }
+            }
+          },
         }],
       },
       passive1: {
@@ -296,14 +358,11 @@ const sheet: ICharacterSheet = {
         img: passive3,
         sections: [{
           text: tr("passive3.description"),
-          // conditional: {
-          //   key: "pas",
-          //   maxStack: 0,
-          //   partyBuff: "partyAll",
-          //   header: conditionalHeader("passive3", tr, passive3),
-          //   description: tr("passive3.description"),
-          //   stats: { staminaSprintDec_: 20 },
-          // }
+          fields: [{ //TODO: put into subsection since this is teambuff
+            //   header: conditionalHeader("passive3", tr, passive3),
+            //   description: tr("passive3.description"),
+            node: infoMut(passive, { key: "staminaSprintDec_" })
+          }]
         }],
       },
       constellation1: talentTemplate("constellation1", tr, c1),
@@ -316,29 +375,31 @@ const sheet: ICharacterSheet = {
         img: c6,
         sections: [{
           text: tr("constellation6.description"),
-          // conditional: {//Crimson Momiji
-          //   key: "c6",
-          //   canShow: stats => stats.constellation >= 6,
-          //   name: <Translate ns="char_KaedeharaKazuha" key18="c6.after" />,
-          //   stats: {
-          //     modifiers: {
-          //       normal_dmg_: [path.constellation6.bonus()],
-          //       charged_dmg_: [path.constellation6.bonus()],
-          //       plunging_dmg_: [path.constellation6.bonus()],
-          //     },
-          //     infusionSelf: "anemo",
-          //   },
-          //   fields: [{
-          //     text: <Translate ns="char_KaedeharaKazuha" key18="c6.bonus" />,
-          //     formulaText: stats => <span>0.2% {Stat.printStat("eleMas", stats, true)}</span>,
-          //     formula: formula.constellation6.bonus,
-          //     fixed: 1,
-          //     unit: "%"
-          //   }, {
-          //     text: sgt("duration"),
-          //     value: "5s",
-          //   }]
-          // }
+          conditional: {//Crimson Momiji
+            value: condC6,
+            path: condC6Path,
+            name: <Translate ns="char_KaedeharaKazuha" key18="c6.after" />,
+            states: {
+              c6: {
+                fields: [
+                  // { // TODO:
+                  //   node: c6infusion
+                  // },
+                  {
+                    node: infoMut(c6NormDmg_, { key: "normal_dmg_" })
+                  }, {
+                    node: infoMut(c6ChargedDmg_, { key: "charged_dmg_" })
+                  }, {
+                    node: infoMut(c6PlungingDmg_, { key: "plunging_dmg_" })
+                  }, {
+                    text: sgt("duration"),
+                    value: datamine.constellation6.duration,
+                    unit: "s",
+                  }]
+              }
+            }
+
+          }
         }]
       }
     }
