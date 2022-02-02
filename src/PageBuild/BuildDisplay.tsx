@@ -214,7 +214,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     ({ nodes, arts } = pruneRange(nodes, arts, minimum))
     arts = pruneOrder(arts, maxBuildsToShow)
 
-    let wrap = { buildCount: 0, failedCount: 0, skippedCount: origCount - countBuilds(arts), threshold: -Infinity }
+    let wrap = { buildCount: 0, failedCount: 0, skippedCount: origCount - countBuilds(arts), buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity) }
 
     const maxWorkers = navigator.hardwareConcurrency || 4
 
@@ -229,7 +229,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       const { done, value } = setPerm.next()
       return done ? undefined : {
         command: "request",
-        threshold: wrap.threshold, filter: value,
+        threshold: wrap.buildValues[maxBuildsToShow - 1], filter: value,
       }
     }
 
@@ -257,7 +257,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
             wrap.buildCount += data.buildCount
             wrap.failedCount += data.failedCount
             wrap.skippedCount += data.skippedCount
-            if (wrap.threshold < data.threshold) wrap.threshold = data.threshold
+            if (data.buildValues) {
+              wrap.buildValues.push(...data.buildValues)
+              wrap.buildValues.sort((a, b) => b - a).splice(maxBuildsToShow)
+            }
             break
           case "request":
             const work = fetchWork()
@@ -286,7 +289,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     cancelToken.current = () => { }
 
     // TODO Check below that the data are sent to the UI & DB properly
-    console.log(results)
     if (!results) {
       setgenerationDuration(0)
       setgenerationProgress(0)

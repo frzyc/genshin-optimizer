@@ -2,10 +2,11 @@ import { optimize, precompute } from '../Formula/optimization';
 import type { NumNode } from '../Formula/type';
 import type { MainStatKey, SubstatKey } from '../Types/artifact';
 import { ArtifactSetKey, SlotKey } from '../Types/consts';
-import { filterArts, pruneRange } from './common';
+import { filterArts, mergePlot, pruneOrder, pruneRange } from './common';
 
 let id: string
 let builds: Build[]
+let buildValues: number[] | undefined
 let plotData: PlotData | undefined
 let threshold: number
 
@@ -32,17 +33,23 @@ export function setup(msg: Setup, callback: WorkerStat["callback"]): RequestResu
   }
   id = msg.id
   builds = []
+  buildValues = undefined
   threshold = -Infinity
 
   return { command: "request", id }
 }
 
 export function request({ threshold: newThreshold, filter: filters }: Request): RequestResult & { total: number } {
-  if (shared.min[0] > newThreshold) shared.min[0] = newThreshold
+  if (threshold > newThreshold) threshold = newThreshold
   let preArts = filterArts(shared.arts, filters)
 
-  let nodes = optimize(shared.nodes, {}, _ => false);
-  ({ nodes, arts: preArts } = pruneRange(nodes, preArts, shared.min))
+  let nodes = optimize(shared.nodes, {}, _ => false)
+  {
+    shared.min.push(threshold);
+    ({ nodes, arts: preArts } = pruneRange(nodes, preArts, shared.min))
+    shared.min.pop()
+  }
+  preArts = pruneOrder(preArts, shared.maxBuilds)
   const compute = precompute(nodes, f => f.path[1])
   const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length)
 
@@ -56,6 +63,11 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
         const value = result[shared.min.length]
         if (value >= threshold)
           builds.push({ value, plot: result[shared.min.length + 1], artifactIds: [...ids] })
+        if (plotData) {
+          const x = result[shared.min.length + 1]
+          if (!plotData[x] || plotData[x]!.value < value)
+            plotData[x] = { value, artifactIds: [...ids] }
+        }
       }
       else count.failed += 1
       return
@@ -71,7 +83,7 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
     })
     if (i === 0) {
       count.build += arts[0].length
-      if (count.build > 4096)
+      if (count.build > 8192)
         interimReport(count)
     }
   }
@@ -82,27 +94,31 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
   return { command: "request", id, total: arts.reduce((count, a) => a.length * count, 1) }
 }
 export function finalize(): FinalizeResult {
-  refresh()
+  refresh(true)
   return { command: "finalize", id, builds, plotData }
 }
 
 export let interimReport = (count: { build: number, failed: number }): void => {
-  refresh()
+  refresh(false)
   shared.callback({
-    command: "interim", id, threshold,
+    command: "interim", id, buildValues,
     buildCount: count.build, failedCount: count.failed, skippedCount: 0
   })
+  buildValues = undefined
   count.build = 0
   count.failed = 0
 }
-function refresh(): void {
-  // TODO: Update plot
+function refresh(force: boolean): void {
+  if (plotData && Object.keys(plotData).length >= 100000)
+    plotData = mergePlot([plotData])
 
-  builds = builds
-    .sort((a, b) => b.value - a.value)
-    .slice(0, shared.maxBuilds)
-
-  threshold = builds[shared.maxBuilds - 1]?.value ?? -Infinity
+  if (builds.length >= 100000 || force) {
+    builds = builds
+      .sort((a, b) => b.value - a.value)
+      .slice(0, shared.maxBuilds)
+    buildValues = builds.map(x => x.value)
+    threshold = Math.max(threshold, buildValues[shared.maxBuilds - 1] ?? -Infinity)
+  }
 }
 
 type Stats = { [key in MainStatKey | SubstatKey]?: number }
@@ -145,7 +161,7 @@ export type WorkerResult = InterimResult | RequestResult | FinalizeResult | Debu
 export interface InterimResult {
   command: "interim"
   id: string
-  threshold: number
+  buildValues: number[] | undefined
   /** The number of builds since last report, including failed builds */
   buildCount: number
   /** The number of builds that does not meet the min-filter requirement since last report */
