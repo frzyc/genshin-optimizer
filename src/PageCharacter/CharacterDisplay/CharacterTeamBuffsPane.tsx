@@ -79,7 +79,8 @@ function ResonanceDisplay() {
   </CardLight>
 }
 function TeammateDisplay({ index }: { index: number }) {
-  const { character: active, teamData } = useContext(DataContext)
+  const { character: active, teamData, characterDispatch: activeCharacterDispatch } = useContext(DataContext)
+  const activeCharacterKey = active.key
   const characterKey = active.team[index]
   const characterDispatch = useCharacterReducer(characterKey)
   // TODO: this UIData should be fed from the main CharacterDisplayCard for teams.
@@ -97,14 +98,12 @@ function TeammateDisplay({ index }: { index: number }) {
   return <CardLight>
     <CardContent>
       <CharacterDropdownButton fullWidth value={characterKey}
-        onChange={charKey => characterDispatch({ type: "team", index, charKey })}
-        filter={(_, ck) => ck !== characterKey && !active.team.includes(ck)} unSelectText={`Teammate ${index + 1}`} unSelectIcon={<PersonAdd />} />
+        onChange={charKey => activeCharacterDispatch({ type: "team", index, charKey })}
+        filter={(_, ck) => ck !== activeCharacterKey && !active.team.includes(ck)} unSelectText={`Teammate ${index + 1}`} unSelectIcon={<PersonAdd />} />
     </CardContent>
     {dataContext && <DataContext.Provider value={dataContext}>
       <CharacterCard characterKey={characterKey}
         onClickHeader={onClickHandler}
-        // TODO: funnel build to CharacterCard? since these builds will have buffs?
-        // build={condCharStats}
         artifactChildren={<CharArtifactCondDisplay />}
         weaponChildren={<CharWeaponCondDisplay />}
         footer={<CharTalentCondDisplay />}

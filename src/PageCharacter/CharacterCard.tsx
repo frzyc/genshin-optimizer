@@ -30,21 +30,22 @@ type CharacterCardProps = {
   artifactChildren?: Displayable,
   weaponChildren?: Displayable,
   footer?: Displayable,
-  build?: TeamData,
 }
-export default function CharacterCard({ build, characterKey, artifactChildren, weaponChildren, onClick, onClickHeader, footer }: CharacterCardProps) {
-  const teamData = useTeamData(build ? "" : characterKey) ?? build
-  const { character, characterSheet, target: charUIData } = teamData?.[characterKey] ?? {}
+export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, onClick, onClickHeader, footer }: CharacterCardProps) {
+  const { teamData: teamDataContext } = useContext(DataContext)
+  const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
+  const { character, characterSheet, target: data } = teamData?.[characterKey] ?? {}
   const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={onClickHandler} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
     [onClickHandler],
   )
   const characterDispatch = useCharacterReducer(characterKey)
-  if (!teamData || !character || !characterSheet || !charUIData) return null;
+  if (!teamData || !character || !characterSheet || !data) return null;
+  console.log(data.getTeamBuff())
   const dataContextObj: dataContextObj = {
     character,
-    data: charUIData,
+    data,
     characterSheet,
     mainStatAssumptionLevel: 0,
     teamData,
