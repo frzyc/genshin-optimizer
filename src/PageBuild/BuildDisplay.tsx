@@ -17,7 +17,6 @@ import InfoComponent from '../Components/InfoComponent';
 import ModalWrapper from '../Components/ModalWrapper';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import StatFilterCard from '../Components/StatFilterCard';
-import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
@@ -35,14 +34,14 @@ import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../Types/artifact';
-import { ArtifactsBySlot, BuildSetting } from '../Types/Build';
-import { allSlotKeys, CharacterKey } from '../Types/consts';
-import { objectFromKeyMap, objectMap, objPathValue } from '../Util/Util';
-import { calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
+import { BuildSetting } from '../Types/Build';
+import { CharacterKey } from '../Types/consts';
+import { objectMap, objPathValue } from '../Util/Util';
+import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
+import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
-import { artSetPerm, breakSetPermBySet, compactArtifacts, countBuilds } from './foreground';
 import ChartCard from './ChartCard';
-import { mergeBuilds, mergePlot, pruneOrder, pruneRange, reaffine } from './common';
+import { filterArts, mergeBuilds, mergePlot, pruneOrder, pruneRange, reaffine } from './common';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
@@ -50,10 +49,10 @@ import BonusStatsCard from './Components/BonusStatsCard';
 import BuildAlert, { warningBuildNumber } from './Components/BuildAlert';
 import EnemyEditorCard from './Components/EnemyEditorCard';
 import HitModeCard from './Components/HitModeCard';
-import MainStatSelectionCard, { artifactsSlotsToSelectMainStats } from './Components/MainStatSelectionCard';
+import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import TeamBuffCard from './Components/TeamBuffCard';
-import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
+import { artSetPerm, breakSetPermBySet, compactArtifacts, countBuilds } from './foreground';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
@@ -112,8 +111,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   const [chartData, setchartData] = useState(undefined as any)
 
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
-
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
   const setCharacter = useCharSelectionCallback()
@@ -154,10 +151,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     dbStorage.set("BuildsDisplay.state", { characterKey })
   }, [characterKey])
 
-  const { split, totBuildNumber } = useMemo(() => {
+  const { split, setPerms, totBuildNumber } = useMemo(() => {
     if (!characterKey) // Make sure we have all slotKeys
-      return { split: objectFromKeyMap(allSlotKeys, () => []) as ArtifactsBySlot, totBuildNumber: 0 }
-    const artifactDatabase = database._getArts().filter(art => {
+      return { totBuildNumber: 0 }
+    const arts = database._getArts().filter(art => {
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       // If its equipped on the selected character, bypass the check
@@ -165,15 +162,15 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
       if (art.exclude && !useExcludedArts) return false
       if (art.location && !useEquippedArts) return false
+      const mainStats = mainStatKeys[art.slotKey]
+      if (mainStats?.length && !mainStats.includes(art.mainStatKey)) return false
       return true
     })
-    const split = Artifact.splitArtifactsBySlot(artifactDatabase);
-    // Filter the split slots on the mainstats selected.
-    artifactsSlotsToSelectMainStats.forEach(slotKey =>
-      mainStatKeys[slotKey].length && (split[slotKey] = split[slotKey]?.filter((art) => mainStatKeys[slotKey].includes(art.mainStatKey))))
-    const totBuildNumber = calculateTotalBuildNumber(split, setFilters)
-    return artsDirty && { split, totBuildNumber }
-  }, [characterKey, useExcludedArts, useEquippedArts, mainStatKeys, setFilters, levelLow, levelHigh, artsDirty, database])
+    const split = compactArtifacts(arts, mainStatAssumptionLevel)
+    const setPerms = artSetPerm([setFilters])
+    const totBuildNumber = [...setPerms].map(perm => countBuilds(filterArts(split, perm))).reduce((a, b) => a + b, 0)
+    return artsDirty && { split, setPerms, totBuildNumber }
+  }, [characterKey, useExcludedArts, useEquippedArts, mainStatKeys, setFilters, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
 
   // Reset the Alert by setting progress to zero.
   useEffect(() => {
@@ -185,7 +182,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
   const generateBuilds = useCallback(async () => {
-    if (!optimizationTarget) return
+    if (!optimizationTarget || !split || !setPerms) return
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
     const workerData = dataObjForTeam(teamData.teamData)[characterKey as CharacterKey]?.target.data![0]
@@ -206,7 +203,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     const cancelled = new Promise<void>(r => cancelToken.current = r)
 
     let nodes = optimize([optimizationTargetNode, ...valueFilter.map(x => x.value)], workerData, ({ path: [p] }) => p !== "dyn")
-    let arts = compactArtifacts(database, mainStatAssumptionLevel)
+    let arts = split!
     const minimum = [-Infinity, ...valueFilter.map(x => x.minimum)];
     ({ nodes, arts } = reaffine(nodes, arts))
     const origCount = countBuilds(arts);
@@ -218,7 +215,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
     const maxWorkers = navigator.hardwareConcurrency || 4
 
-    const setPerm = breakSetPermBySet(arts, artSetPerm([setFilters]),
+    const setPerm = breakSetPermBySet(arts, setPerms,
       maxWorkers === 1
         // Don't split for single worker
         ? Infinity
@@ -322,7 +319,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       })
     }
     setgeneratingBuilds(false)
-  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, setFilters, statFilters, plotBase, buildSettingsDispatch])
+  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingsDispatch])
 
   const characterName = characterSheet?.name ?? "Character Name"
 

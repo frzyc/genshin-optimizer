@@ -11,7 +11,9 @@ export interface BuildSetting {
   mainStatKeys: {
     sands: MainStatKey[],
     goblet: MainStatKey[],
-    circlet: MainStatKey[]
+    circlet: MainStatKey[],
+    flower?: never,
+    plume?: never,
   },
   optimizationTarget?: string[],
   mainStatAssumptionLevel: number,

@@ -1,19 +1,19 @@
 import Artifact from "../Data/Artifacts/Artifact";
-import { ArtCharDatabase } from "../Database/Database";
 import { SetFilter } from "../Types/Build";
 import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
 import { objectFromKeyMap } from "../Util/Util";
 import { filterArts } from "./common";
 import type { ArtifactBuildData, ArtifactsBySlot, RequestFilter } from "./background";
+import { ICachedArtifact } from "../Types/artifact_WR";
 
-export function compactArtifacts(db: ArtCharDatabase, mainStatAssumptionLevel: number): ArtifactsBySlot {
+export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLevel: number): ArtifactsBySlot {
   const result: ArtifactsBySlot = {
     base: {},
     values: { flower: [], plume: [], goblet: [], circlet: [], sands: [] }
   }
   const keys = new Set<string>()
 
-  for (const art of db._getArts()) {
+  for (const art of arts) {
     const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level))
 
     const data: ArtifactBuildData = {
