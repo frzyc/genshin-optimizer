@@ -165,7 +165,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       return true
     })
     const split = compactArtifacts(arts, mainStatAssumptionLevel)
-    const setPerms = artSetPerm([setFilters])
+    const setPerms = [...artSetPerm([setFilters])]
     const totBuildNumber = [...setPerms].map(perm => countBuilds(filterArts(split, perm))).reduce((a, b) => a + b, 0)
     return artsDirty && { split, setPerms, totBuildNumber }
   }, [characterKey, useExcludedArts, useEquippedArts, mainStatKeys, setFilters, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
