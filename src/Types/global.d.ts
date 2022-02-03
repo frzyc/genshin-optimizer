@@ -9,13 +9,13 @@ declare global {
     }
 
     interface ObjectConstructor {
-        export keys<K, V>(o: Dict<K, V> | {}): K extends number ? string[] : (K)[]
+        export keys<K, V>(o: Dict<K, V> | {}): `${K}`[]
         export values<K, V>(o: Dict<K, V> | {}): V[]
-        export entries<K, V>(o: Dict<K, V> | {}): [K extends number ? string : K, V][]
+        export entries<K, V>(o: Dict<K, V> | {}): [`${K}`, V][]
 
-        export keys<K, V>(o: StrictDict<K, V> | {}): K extends number ? string[] : (K)[]
+        export keys<K, V>(o: StrictDict<K, V> | {}): `${K}`[]
         export values<K, V>(o: StrictDict<K, V> | {}): V[]
-        export entries<K, V>(o: StrictDict<K, V> | {}): [K extends number ? string : K, V][]
+        export entries<K, V>(o: StrictDict<K, V> | {}): [`${K}`, V][]
     }
 }
 
