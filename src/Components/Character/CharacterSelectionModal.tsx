@@ -101,9 +101,9 @@ function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characte
           <Typography variant="h6"> {characterSheet.elementKey && StatIcon[characterSheet.elementKey]} <ImgIcon src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} />{` `}{CharacterSheet.getLevelString(UIDataBundle.data.get(input.lvl).value, UIDataBundle.data.get(input.asc).value)}</Typography>
           <Typography >
             <SqBadge color="success">{`C${UIDataBundle.data.get(input.constellation).value}`}</SqBadge>{` `}
-            <SqBadge color={UIDataBundle.data.get(input.talent.boost.auto).value ? "info" : "secondary"}><strong >{UIDataBundle.data.get(input.talent.total.auto).value}</strong></SqBadge>{` `}
-            <SqBadge color={UIDataBundle.data.get(input.talent.boost.skill).value ? "info" : "secondary"}><strong >{UIDataBundle.data.get(input.talent.total.skill).value}</strong></SqBadge>{` `}
-            <SqBadge color={UIDataBundle.data.get(input.talent.boost.burst).value ? "info" : "secondary"}><strong >{UIDataBundle.data.get(input.talent.total.burst).value}</strong></SqBadge>
+            <SqBadge color={UIDataBundle.data.get(input.bonus.talent.auto).value ? "info" : "secondary"}><strong >{UIDataBundle.data.get(input.total.talent.auto).value}</strong></SqBadge>{` `}
+            <SqBadge color={UIDataBundle.data.get(input.bonus.talent.skill).value ? "info" : "secondary"}><strong >{UIDataBundle.data.get(input.total.talent.skill).value}</strong></SqBadge>{` `}
+            <SqBadge color={UIDataBundle.data.get(input.bonus.talent.burst).value ? "info" : "secondary"}><strong >{UIDataBundle.data.get(input.total.talent.burst).value}</strong></SqBadge>
           </Typography>
         </> : <>
           <Typography variant="h6"><SqBadge color="primary">NEW</SqBadge></Typography>

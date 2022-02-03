@@ -5,7 +5,7 @@ import { ICachedCharacter } from "../Types/character_WR";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, deepClone, layeredAssignment, objectFromKeyMap, objPathValue } from "../Util/Util";
-import { input, teamBuff } from "./index";
+import { customBonus, input, teamBuff } from "./index";
 import { Data, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
 import { constant, customRead, frac, infoMut, percent, prod, resetData, subscript, sum, unit } from "./utils";
@@ -35,12 +35,12 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     constellation: constant(char.constellation),
     asc: constant(char.ascension),
 
-    talent: {
-      base: {
+    premod: {
+      talent: {
         auto: constant(char.talent.auto),
         skill: constant(char.talent.skill),
         burst: constant(char.talent.burst),
-      }
+      },
     },
     enemy: {
       res: {
@@ -52,8 +52,13 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     },
     hit: {
       hitMode: constant(char.hitMode)
-    }
+    },
+    customBonus: {},
   }
+
+  for (const [key, value] of Object.entries(char.bonusStats))
+    result.customBonus![key] = constant(value)
+
   if (char.enemyOverride.enemyDefRed_)
     result.enemy!.defRed = percent(char.enemyOverride.enemyDefRed_)
   if (char.enemyOverride.enemyDefIgn_)

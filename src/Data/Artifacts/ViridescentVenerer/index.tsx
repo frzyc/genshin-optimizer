@@ -32,11 +32,7 @@ const condSwirlNodes = Object.fromEntries(absorbableEle.map(e => [e,
 const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     anemo_dmg_: set2,
-  },
-  total: {
-    dmgBonus: {
-      swirl: set4
-    },
+    dmgBonus: { swirl: set4, },
   },
   enemy: {
     res: condSwirlNodes

@@ -2,7 +2,7 @@ import _charCurves from "./expCurve_gen.json";
 import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey } from "../../Types/consts";
 import { input } from "../../Formula";
-import { Data, DisplaySub, NumNode } from "../../Formula/type";
+import { Data, DisplaySub, NumNode, ReadNode } from "../../Formula/type";
 import { constant, data, infoMut, prod, subscript, sum } from "../../Formula/utils";
 import { mergeData, reactions } from "../../Formula/api";
 
@@ -11,9 +11,7 @@ export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[
 // TODO: Remove this conversion after changing the file format
 const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
-const commonBasic = {
-  atk: input.total.atk, hp: input.total.hp, def: input.total.def, eleMas: input.total.eleMas, critRate_: input.total.critRate_, critDMG_: input.total.critDMG_, heal_: input.total.heal_, enerRech_: input.total.enerRech_
-} as const
+const commonBasic = Object.fromEntries(Object.entries(input.total).filter(([key, value]) => key !== "critRate_" && (value as any).operation)) as Dict<string, ReadNode<number>>
 
 function getTalentType(move: "normal" | "charged" | "plunging" | "skill" | "burst") {
   switch (move) {
@@ -36,7 +34,7 @@ export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "norma
   const talentType = getTalentType(move)
   return data(input.hit.dmg, mergeData([{
     hit: {
-      base: prod(input.total[base], subscript(input.talent.index[talentType], lvlMultiplier, { key: '_' })),
+      base: prod(input.total[base], subscript(input.total.talent[talentType], lvlMultiplier, { key: '_' })),
       move: constant(move), // TODO: element ?: T, reaction ?: T, critType ?: T
     },
   }, additional]))
@@ -59,6 +57,7 @@ export function dataObjForCharacterSheet(
   display.basic = { ...commonBasic }
   const data: Data = {
     charKey: constant(key),
+    base: {},
     weaponType: constant(gen.weaponTypeKey),
     premod: {},
     display,
@@ -84,10 +83,10 @@ export function dataObjForCharacterSheet(
 
     if (!list.length) continue
 
-    const result = infoMut(list.length === 1 ? list[0] : sum(...list), { key: stat, asConst: true })
+    const result = infoMut(list.length === 1 ? list[0] : sum(...list), { key: stat, namePrefix: "Char.", asConst: true })
     if (stat.endsWith("_dmg_")) result.info!.variant = stat.slice(0, -5) as any
     if (stat === "atk" || stat === "def" || stat === "hp")
-      data[stat] = result
+      data.base![stat] = result
     else {
       if (foundSpecial) throw new Error("Duplicated Char Special")
       foundSpecial = true

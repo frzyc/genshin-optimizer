@@ -1,4 +1,4 @@
-import { Input } from "."
+import { Input } from "./type"
 import ColorText from "../Components/ColoredText"
 import KeyMap from "../KeyMap"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"

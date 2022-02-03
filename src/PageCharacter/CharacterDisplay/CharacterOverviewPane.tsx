@@ -11,12 +11,12 @@ import { Stars } from "../../Components/StarDisplay";
 import StatIcon from "../../Components/StatIcon";
 import { DataContext } from "../../DataContext";
 import { valueString } from "../../Formula/api";
-import { input, custom } from "../../Formula";
+import { input, customBonus } from "../../Formula";
 import { ReadNode } from "../../Formula/type";
 import KeyMap from "../../KeyMap";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import { amplifyingReactions, transformativeReactions } from "../../StatConstants";
-import {  TalentSheetElementKey } from "../../Types/character";
+import { TalentSheetElementKey } from "../../Types/character";
 import { allElementsWithPhy, ElementKey } from "../../Types/consts";
 import WeaponDisplayCard from "../../PageWeapon/WeaponDisplayCard";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
@@ -31,14 +31,14 @@ export default function CharacterOverviewPane() {
   const ascension = data.get(input.asc).value
   const constellation = data.get(input.constellation).value
   const tlvl = {
-    auto: data.get(input.talent.total.auto).value,
-    skill: data.get(input.talent.total.skill).value,
-    burst: data.get(input.talent.total.burst).value,
+    auto: data.get(input.total.talent.auto).value,
+    skill: data.get(input.total.talent.skill).value,
+    burst: data.get(input.total.talent.burst).value,
   }
   const tBoost = {
-    auto: data.get(input.talent.boost.auto).value,
-    skill: data.get(input.talent.boost.skill).value,
-    burst: data.get(input.talent.boost.burst).value,
+    auto: data.get(input.bonus.talent.auto).value,
+    skill: data.get(input.bonus.talent.skill).value,
+    burst: data.get(input.bonus.talent.burst).value,
   }
   return <Grid container spacing={1}>
     <Grid item xs={12} md={3}  >
@@ -106,25 +106,25 @@ const mainReadNodes = [...mainBaseKeys, ...mainSubKeys].map(k => input.total[k])
 const mainEditKeys = ["atk_", "atk", "hp_", "hp", "def_", "def", ...mainSubKeys] as const
 
 const otherStatReadNodes = [
-  ...allElementsWithPhy.map(ele => custom.bonus.dmg[ele]),
-  ...allElementsWithPhy.map(ele => custom.bonus.res[ele]),
-  ...["stamina", "incHeal_", "shield_", "cdRed_"].map(x => input.misc[x])
+  ...allElementsWithPhy.map(ele => customBonus[`${ele}_dmg_`]),
+  ...allElementsWithPhy.map(ele => customBonus[`${ele}_res_`]),
+  ...(["stamina", "incHeal_", "shield_", "cdRed_"] as const).map(x => input.misc[x])
 ]
-const otherStatKeys = otherStatReadNodes.map(x => x.info.key)
+const otherStatKeys = otherStatReadNodes.map(x => x.info!.key!)
 
 const miscStatReadNodes = [
-  custom.bonus.dmg.common,
+  customBonus.common_dmg_,
   ...allElementsWithPhy.map(x => input.enemy.res[x]),
-  custom.bonus.dmg.normal, custom.bonus.crit.normal,
-  custom.bonus.dmg.charged, custom.bonus.crit.charged,
-  custom.bonus.dmg.plunging, custom.bonus.crit.plunging,
-  custom.bonus.dmg.skill, custom.bonus.crit.skill,
-  custom.bonus.dmg.burst, custom.bonus.crit.burst,
-  ...Object.keys(transformativeReactions).map(x => custom.bonus.dmg[x]),
-  ...Object.keys(amplifyingReactions).map(x => custom.bonus.dmg[x]),
-  ...["moveSPD_", "atkSPD_", "weakspotDMG_"].map(x => input.misc[x])
+  customBonus.normal_dmg_, customBonus.normal_critRate_,
+  customBonus.charged_dmg_, customBonus.charged_critRate_,
+  customBonus.plunging_dmg_, customBonus.plunging_critRate_,
+  customBonus.skill_dmg_, customBonus.skill_critRate_,
+  customBonus.burst_dmg_, customBonus.burst_critRate_,
+  ...Object.keys(transformativeReactions).map(x => customBonus[`${x}_dmg_`]),
+  ...Object.keys(amplifyingReactions).map(x => customBonus[`${x}_dmg_`]),
+  ...(["moveSPD_", "atkSPD_", "weakspotDMG_"] as const).map(x => input.misc[x])
 ]
-const miscStatkeys = miscStatReadNodes.map(x => x.info.key)
+const miscStatkeys = miscStatReadNodes.map(x => x.info!.key!)
 
 const statBreakpoint = {
   xs: 12, sm: 6, md: 6, lg: 4,

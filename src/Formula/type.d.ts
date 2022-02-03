@@ -2,7 +2,7 @@ import { AmplifyingReactionsKey, TransformativeReactionsKey } from "../StatConst
 import type { MainStatKey, SubstatKey } from "../Types/artifact"
 import type { ArtifactSetKey, CharacterKey, ElementKey, ElementKeyWithPhy, ReactionModeKey, WeaponKey } from "../Types/consts"
 import type { Path } from "../Util/KeyPathUtil"
-import type { Input } from "./index"
+import type { input } from "./index"
 
 export type NumNode = ComputeNode | ThresholdNode |
   DataNode<NumNode> |
@@ -79,6 +79,11 @@ export interface ConstantNode<V> extends Base {
   value: V
   type: V extends number ? "number" : V extends string ? "string" : undefined
 }
+
+type _StrictInput<T, Num, Str> = T extends ReadNode<number> ? Num : T extends ReadNode<string> ? Str : { [key in keyof T]: _StrictInput<T[key], Num, Str> }
+type _Input<T, Num, Str> = T extends ReadNode<number> ? Num : T extends ReadNode<string> ? Str : { [key in keyof T]?: _Input<T[key], Num, Str> }
+export type StrictInput<Num = NumNode, Str = StrNode> = _StrictInput<typeof input, Num, Str>
+export type Input<Num = NumNode, Str = StrNode> = _Input<typeof input, Num, Str>
 
 export type Data = Input & DynamicNumInput
 export type DisplaySub<T = NumNode> = { [key in string]?: T }

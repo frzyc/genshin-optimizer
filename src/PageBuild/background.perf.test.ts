@@ -23,7 +23,7 @@ describe("Worker Perf", () => {
       workerData[key] = value as any) // Mark art fields as dynamic
 
     let nodes = optimize([optimizationTargetNode], workerData, ({ path: [p] }) => p !== "dyn")
-    let arts = compactArtifacts(database, 0)
+    let arts = compactArtifacts(database._getArts(), 0)
     const minimum = [-Infinity];
     ({ nodes, arts } = reaffine(nodes, arts))
 

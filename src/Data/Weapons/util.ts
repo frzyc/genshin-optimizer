@@ -1,7 +1,7 @@
 import type { WeaponData } from "pipeline";
 import { mergeData } from "../../Formula/api";
 import { MainStatKey, SubstatKey } from "../../Types/artifact";
-import { WeaponKey, WeaponTypeKey } from "../../Types/consts";
+import { WeaponKey } from "../../Types/consts";
 import _weaponCurves from "./expCurve_gen.json";
 import { input } from "../../Formula";
 import { Data, DisplaySub } from "../../Formula/type";
@@ -13,7 +13,7 @@ const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key,
 export function dataObjForWeaponSheet(
   key: WeaponKey,
   gen: WeaponData,
-  substat2: MainStatKey | SubstatKey | "dmg_" | undefined = undefined,
+  subStat2: MainStatKey | SubstatKey | "dmg_" | undefined = undefined,
   displayWeapon: DisplaySub = {},
   additional: Data = {}
 ): Data {
@@ -30,26 +30,30 @@ export function dataObjForWeaponSheet(
   }
 
   const { mainStat, subStat } = gen
+  const merging = [result]
 
-  const mainStatNode = infoMut(sum(prod(mainStat.base, subscript(input.weapon.lvl, weaponCurves[mainStat.curve])), subscript(input.weapon.asc, gen.ascension.map(x => x.addStats[mainStat.type] ?? 0))), { key: mainStat.type, namePrefix: "Weapon" })
-  result.base![mainStat.type] = mainStatNode
-  result.weapon!.main = mainStatNode
+  if (mainStat.type !== "atk" && mainStat.type !== "def" && mainStat.type !== "hp") throw new Error("Main stat type must be `atk`")
+  const mainStatNode = infoMut(sum(prod(mainStat.base, subscript(input.weapon.lvl, weaponCurves[mainStat.curve])), subscript(input.weapon.asc, gen.ascension.map(x => x.addStats[mainStat.type] ?? 0))), { key: mainStat.type })
+  merging.push({ base: { [mainStat.type]: input.weapon.main }, weapon: { main: mainStatNode } })
 
   if (subStat) {
-    const substatNode = infoMut(prod(subStat.base, subscript(input.weapon.lvl, weaponCurves[subStat.curve])), { key: subStat.type, namePrefix: "Weapon" })
-    result.premod![subStat.type] = substatNode
-    result.weapon!.sub = substatNode
+    if (subStat.type === "atk" || subStat.type === "def" || subStat.type === "hp") throw new Error("SubStat cannot be `atk`, `def`, or `hp`")
+    const substatNode = infoMut(prod(subStat.base, subscript(input.weapon.lvl, weaponCurves[subStat.curve])), { key: subStat.type })
+    merging.push({
+      premod: subStat.type.endsWith('_dmg_')
+        ? { dmgBonus: { [subStat.type.slice(0, -5)]: input.weapon.sub } }
+        : { [subStat.type]: input.weapon.sub },
+      weapon: { sub: substatNode }
+    })
   }
-  if (substat2) {
-    const substat2Node = subscript(input.weapon.refineIndex, gen.addProps.map(x => x[substat2] ?? NaN), { key: substat2, namePrefix: " Weapon" })
-    result.weapon!.sub2 = substat2Node
-    const node = substat2 !== subStat?.type
-      ? input.weapon.sub2 : sum(input.weapon.sub, input.weapon.sub2)
-    if (substat2 === "dmg_") {
-      if (!result.total!.dmgBonus) result.total!.dmgBonus = {}
-      result.total!.dmgBonus.hit = node
-    } else result.premod![substat2] = node
+  if (subStat2) {
+    if (subStat2 === "atk" || subStat2 === "def" || subStat2 === "hp") throw new Error("SubStat 2 cannot be `atk`, `def`, or `hp`")
+    const substat2Node = subscript(input.weapon.refineIndex, gen.addProps.map(x => x[subStat2] ?? NaN), { key: subStat2 })
+    merging.push({
+      premod: { [subStat2]: input.weapon.sub },
+      weapon: { sub2: substat2Node },
+    })
   }
 
-  return mergeData([result, additional])
+  return mergeData([...merging, additional])
 }

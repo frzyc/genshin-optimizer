@@ -1,89 +1,97 @@
-import { amplifyingReactions, transformativeReactions } from "../StatConstants"
 import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
 import { allArtifactSets, allElementsWithPhy, allSlotKeys } from "../Types/consts"
-import { deepClone, objectFromKeyMap } from "../Util/Util"
-import { Info, NumNode, ReadNode, StrNode } from "./type"
+import { crawlObject, deepClone, objectFromKeyMap } from "../Util/Util"
+import { Data, Info, Input, NumNode, ReadNode, StrNode } from "./type"
 import { constant, frac, lookup, matchStr, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, sum, unit } from "./utils"
 
 const allMainSubStats = [...new Set([...allMainStatKeys, ...allSubstats] as const)]
+const allNonDmgMainSubStats = ["hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_"] as const
+const allTransformative = ["overloaded", "shattered", "electrocharged", "superconduct", "swirl"] as const
+const allAmplifying = ["vaporize", "melt"] as const
 const allElements = allElementsWithPhy
 const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
 const asConst = true as const, pivot = true as const
+const allTalents = ["auto", "skill", "burst"] as const
+const allDmgBonuses = ["common", ...allTransformative, ...allAmplifying, ...allMoves] as const
 
-const customInfo: Info = { namePrefix: "Custom", asConst, pivot }
-const charInfo: Info = { namePrefix: "Char.", asConst, pivot }
-const artInfo: Info = { namePrefix: "Art.", asConst, pivot }
-const weaponInfo: Info = { namePrefix: "Weapon", asConst, pivot }
-const totalInfo: Info = { namePrefix: "Tot.", pivot }
+const talent = objectFromKeyMap(allTalents, _ => read())
 
-/** All custom bonus/override nodes */
-const custom = setReadNodeKeys({
-  bonus: {
-    crit: objectFromKeyMap(allMoves, move => read("add", { ...customInfo, key: `${move}_critRate_` })),
-    dmg: {
-      common: read("add", { ...customInfo, key: "dmg_" }),
-      ...objectFromKeyMap(Object.keys(transformativeReactions), reaction =>
-        read("add", { ...customInfo, key: `${reaction}_dmg_`, variant: reaction })),
-      ...objectFromKeyMap(Object.keys(amplifyingReactions), reaction =>
-        read("add", { ...customInfo, key: `${reaction}_dmg_`, variant: reaction })),
-      ...objectFromKeyMap(allMoves, move =>
-        read("add", { ...customInfo, key: `${move}_dmg_` })),
-      ...objectFromKeyMap(allElements, ele =>
-        read("add", { ...customInfo, key: `${ele}_dmg_`, variant: ele })),
-    },
-    res: objectFromKeyMap(allElements, ele =>
-      read("add", { ...customInfo, key: `${ele}_res_`, variant: ele })),
-  },
-}, ["custom"])
+const mainSubStatNodes = objectFromKeyMap(allMainSubStats, key => read(undefined, { key }))
+
+const dmgBonus = objectFromKeyMap(allDmgBonuses, key =>
+  read(undefined, { key: `${key}_dmg_` as const }))
+const suffixedDmgBonusNodes = objectFromKeyMap(allDmgBonuses.map(x => `${x}_dmg_` as const), key =>
+  read(undefined, { key }))
+const suffixedResBonusNodes = objectFromKeyMap(allElements.map(x => `${x}_res_` as const), key =>
+  read(undefined, { key }))
+const suffixedCritRateBonusNodes = objectFromKeyMap(allMoves.map(x => `${x}_critRate_` as const), key =>
+  read(undefined, { key }))
+
+dmgBonus.common.info!.key = "dmg_"
+suffixedDmgBonusNodes.common_dmg_.info!.key = "dmg_"
+for (const ele of allElements) {
+  mainSubStatNodes[`${ele}_dmg_`].info!.variant = ele
+  suffixedResBonusNodes[`${ele}_res_`].info!.variant = ele
+}
+for (const reaction of [...allTransformative, ...allAmplifying]) {
+  dmgBonus[reaction].info!.variant = reaction
+  suffixedDmgBonusNodes[`${reaction}_dmg_`].info!.variant = reaction
+}
+
+function withDefaultInfo<T>(info: Info, value: T): T {
+  value = deepClone(value)
+  crawlObject(value, [], (x: any) => x.operation, (x: NumNode | StrNode) => x.info = { ...info, ...x.info, })
+  return value
+}
+function markAccu<T>(accu: ReadNode<number>["accu"], value: T): T {
+  value = deepClone(value)
+  crawlObject(value, [], (x: any) => x.operation, (x: ReadNode<number | string>) => x.accu = accu)
+  return value
+}
 
 /** All read nodes */
-const rd = setReadNodeKeys({
+const input = setReadNodeKeys(deepClone({
   charKey: stringRead(), charEle: stringRead(), infusion: stringRead(), weaponType: stringRead(),
+  lvl: read(), constellation: read(), asc: read(), special: read(),
 
-  lvl: read(undefined, { key: "level" }), constellation: read(undefined), asc: read(undefined),
+  /** Stats from character & weapon */
+  base: objectFromKeyMap(['atk', 'hp', 'def'], key => read("add", { key, namePrefix: "Base", pivot })),
+  /** Custom stat bonuses */
+  customBonus: markAccu('add', withDefaultInfo({ namePrefix: "Custom", pivot }, {
+    ...mainSubStatNodes,
+    ...suffixedDmgBonusNodes,
+    ...suffixedResBonusNodes,
+    ...suffixedCritRateBonusNodes,
+  })),
+  bonus: markAccu('add', { talent }),
+  /** Stage 1 stats */
+  premod: markAccu('add', { talent, dmgBonus, ...mainSubStatNodes }),
+  /** Stage 2 stats */
+  total: withDefaultInfo({ namePrefix: "Total", pivot }, {
+    talent, dmgBonus: markAccu('add', dmgBonus),
+    ...markAccu('add', mainSubStatNodes),
+    /** Total Crit Rate capped to [0%, 100%] */
+    cappedCritRate: read(undefined, { key: "critRate_", namePrefix: "Capped" }),
+  }),
 
-  talent: objectFromKeyMap(["base", "boost", "total", "index"] as const, type =>
-    objectFromKeyMap(["auto", "skill", "burst"] as const, _ => read(type === "boost" ? "add" : undefined))),
-
-  ...objectFromKeyMap(["hp", "atk", "def"] as const, key => read(undefined, { ...charInfo, key, asConst })),
-  special: read(undefined, { ...charInfo, asConst }),
-
-  base: objectFromKeyMap(["atk", "hp", "def"] as const, key =>
-    read(key === "atk" ? "add" : undefined, { key, namePrefix: "Base", pivot })),
-  premod: objectFromKeyMap(allMainSubStats, _ => read("add")),
-  total: {
-    dmgBonus: {
-      hit: read("add", { ...totalInfo, key: "dmg_" }), // Total DMG Bonus
-      ...objectFromKeyMap(Object.keys(custom.bonus.dmg), key =>
-        read("add", { ...custom.bonus.dmg[key].info, ...totalInfo, })),
-    },
-    ...objectFromKeyMap(allMainSubStats, key => read("add", { ...totalInfo, key })),
-    cappedCritRate: read(undefined, { ...totalInfo, key: "critRate_", namePrefix: "Capped", pivot }), // Total Crit Rate capped to [0%, 100%]
-  },
-
-  art: {
-    ...objectFromKeyMap(allMainSubStats, key => read("add", { ...artInfo, key })),
+  art: withDefaultInfo({ namePrefix: "Art.", asConst }, {
+    ...markAccu('add', mainSubStatNodes),
     ...objectFromKeyMap(allSlotKeys, _ => ({ id: stringRead(), set: stringRead() })),
-  },
-  artSet: {
-    ...objectFromKeyMap(allArtifactSets, set => read("add", { ...artInfo, key: set })),
-  },
+  }),
+  artSet: objectFromKeyMap(allArtifactSets, set => read("add", { key: set })),
 
-  weapon: {
+  weapon: withDefaultInfo({ namePrefix: "Weapon", asConst }, {
     key: stringRead(), type: stringRead(),
 
-    lvl: read(undefined, { ...weaponInfo }), asc: read(undefined, { ...weaponInfo }),
-    refineIndex: read(undefined, { ...weaponInfo }), refinement: read(undefined, { ...weaponInfo }),
-    main: read(undefined),
-    sub: read(undefined),
-    sub2: read(undefined),
-  },
+    lvl: read(), asc: read(), refinement: read(), refineIndex: read(),
+    main: read(), sub: read(), sub2: read(),
+  }),
 
   team: { infusion: stringRead() },
 
   enemy: {
     def: read("add", { key: "enemyDef_multi", pivot }),
-    resMulti: objectFromKeyMap(allElements, _ => read(undefined)),
+    resMulti: objectFromKeyMap(allElements, _ => read()),
 
     level: read(undefined, { key: "enemyLevel" }),
     res: objectFromKeyMap(allElements, ele => read("add", { key: `${ele}_enemyRes_`, variant: ele })),
@@ -95,25 +103,18 @@ const rd = setReadNodeKeys({
     ele: stringRead(), reaction: stringRead(), move: stringRead(), hitMode: stringRead(),
     base: read("add", { key: "base" }),
 
-    dmg: read(undefined), trans: read(undefined),
+    dmgBonus: read(), dmg: read(),
   },
 
   misc: objectFromKeyMap([
     "stamina", "staminaDec_", "staminaSprintDec_", "staminaGlidingDec_", "staminaChargedDec_",
     "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_"
   ] as const, key => read("add", { key }))
-})
+}))
 
-const { base, art, premod, total, hit, enemy } = rd
+const { base, bonus, customBonus, premod, total, art, hit, enemy } = input
 
-// Note:
-// We may need to annotate variants on other values as well
-// However, since the variants propagate to parent nodes
-// We only need to annotate values at the very leafs of the
-// computation.
-for (const ele of allElements) {
-  art[`${ele}_dmg_` as const].info!.variant = ele
-}
+crawlObject(premod, [], (x: any) => x.operation, (x: NumNode | StrNode) => delete x.info)
 
 // Nodes that are not used anywhere else but `common` below
 
@@ -126,57 +127,55 @@ export const effectiveReaction = lookup(hit.ele, {
   cryo: matchStr(hit.reaction, "melt", "melt", undefined),
 }, undefined)
 
-const common = {
-  base: objectFromKeyMap(["hp", "atk", "def"], key => rd[key] as NumNode),
-  talent: {
-    total: objectFromKeyMap(["auto", "skill", "burst"] as const, talent =>
-      sum(rd.talent.base[talent], rd.talent.boost[talent])),
-    index: objectFromKeyMap(["auto", "skill", "burst"] as const, talent =>
-      sum(rd.talent.total[talent], -1)),
-  },
+const common: Data = {
   premod: {
-    ...objectFromKeyMap(allMainSubStats, key => {
-      if (key === "atk" || key === "def" || key === "hp")
-        return sum(prod(base[key], sum(unit, premod[`${key}_` as const])), art[key])
-      if (key === "critRate_")
-        return sum(percent(0.05), art[key],
-          lookup(hit.move, objectFromKeyMap(allMoves, move => custom.bonus.crit[move]), 0))
-      if (key === "critDMG_") return sum(percent(0.5), art[key])
-      if (key === "enerRech_") return sum(unit, art[key])
-      else return art[key]
+    talent: objectFromKeyMap(allTalents, talent => bonus.talent[talent]),
+    dmgBonus: objectFromKeyMap(allDmgBonuses, key => customBonus[`${key}_dmg_` as const]),
+    ...objectFromKeyMap(allMainSubStats, stat => {
+      const operands: NumNode[] = []
+
+      switch (stat) {
+        case "atk": case "def": case "hp":
+          operands.push(prod(base[stat], premod[`${stat}_` as const]))
+          break
+        case "critRate_":
+          operands.push(percent(0.05),
+            lookup(hit.move, objectFromKeyMap(allMoves, move => customBonus[`${move}_critRate_`]), 0)
+          )
+          break
+        case "critDMG_":
+          operands.push(percent(0.5))
+          break
+      }
+      return sum(...[...operands, base[stat], art[stat], customBonus[stat]].filter(x => x))
     }),
   },
   total: {
-    dmgBonus: {
-      hit: sum(
-        total.dmgBonus.common,
-        lookup(effectiveReaction, objectFromKeyMap([
-          ...Object.keys(amplifyingReactions)],
-          reaction => total.dmgBonus[reaction]), naught),
-        lookup(hit.move, objectFromKeyMap(allMoves, move => total.dmgBonus[move]), 0),
-        lookup(hit.ele, objectFromKeyMap(allElements, ele =>
-          sum(total.dmgBonus[ele], art[`${ele}_dmg_`])), 0)
-      ),
-      ...objectFromKeyMap(Object.keys(custom.bonus.dmg), key =>
-        custom.bonus.dmg[key] as NumNode),
-    },
-    ...objectFromKeyMap(allMainSubStats, key => premod[key] as NumNode),
+    talent: objectFromKeyMap(allTalents, talent => premod.talent[talent]),
+    dmgBonus: objectFromKeyMap(allDmgBonuses, key => premod.dmgBonus[key]),
+    ...objectFromKeyMap(allMainSubStats, stat => premod[stat]),
     cappedCritRate: max(min(total.critRate_, unit), naught),
   },
 
   hit: {
+    dmgBonus: sum(
+      total.dmgBonus.common,
+      lookup(effectiveReaction, objectFromKeyMap(allAmplifying, reaction => total.dmgBonus[reaction]), naught),
+      lookup(hit.move, objectFromKeyMap(allMoves, move => total.dmgBonus[move]), naught),
+      lookup(hit.ele, objectFromKeyMap(allElements, ele => total.dmgBonus[ele]), naught)
+    ),
     ele: stringPrio(
-      rd.infusion,
-      rd.team.infusion,
+      input.infusion,
+      input.team.infusion,
       matchStr(hit.move, "charged",
-        matchStr(rd.weaponType, "catalyst", rd.charEle, undefined),
+        matchStr(input.weaponType, "catalyst", input.charEle, undefined),
         undefined,
       ),
       "physical",
     ),
     dmg: prod(
       hit.base,
-      sum(unit, total.dmgBonus.hit),
+      sum(unit, hit.dmgBonus),
       lookup(hit.hitMode, {
         hit: unit,
         critHit: sum(unit, total.critDMG_),
@@ -200,37 +199,27 @@ const common = {
 
   enemy: {
     // TODO: shred cap of 90%
-    def: frac(sum(rd.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed)), sum(1, prod(-1, enemy.defIgn)))),
+    def: frac(sum(input.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed)), sum(1, prod(-1, enemy.defIgn)))),
     resMulti: objectFromKeyMap(allElements, ele => res(enemy.res[ele])),
   },
 
   misc: {
     stamina: constant(100)
   }
-} as const
+}
 
-type _StrictInput<T, Num, Str> = T extends ReadNode<number> ? Num : T extends ReadNode<string> ? Str : { [key in keyof T]: _StrictInput<T[key], Num, Str> }
-type _Input<T, Num, Str> = T extends ReadNode<number> ? Num : T extends ReadNode<string> ? Str : { [key in keyof T]?: _Input<T[key], Num, Str> }
-function typecheck<A, B extends A>(): B | void { }
-
-export type StrictInput<Num = NumNode, Str = StrNode> = _StrictInput<typeof rd, Num, Str>
-export type Input<Num = NumNode, Str = StrNode> = _Input<typeof rd, Num, Str>
-export type Custom<Num = NumNode, Str = StrNode> = _Input<typeof custom, Num, Str>
-
-// Make sure that `common` contains only entries matching `rd` and `str`.
-typecheck<typeof common, StrictInput<NumNode, StrNode>>()
-
-const target = setReadNodeKeys(deepClone(rd), ["target"])
-const teamBuff = setReadNodeKeys(deepClone(rd), ["teamBuff"]); // Use ONLY by dataObjForTeam
-(rd as any).teamBuff = teamBuff
-const dynamic = setReadNodeKeys(deepClone({ dyn: { ...rd.art, ...rd.artSet } }))
+const target = setReadNodeKeys(deepClone(input), ["target"])
+const teamBuff = setReadNodeKeys(deepClone(input), ["teamBuff"]); // Use ONLY by dataObjForTeam
+(input as any).teamBuff = teamBuff
+const dynamic = setReadNodeKeys(deepClone({ dyn: { ...input.art, ...input.artSet } }))
 const dynamicData: Input = {
   art: objectFromKeyMap(allMainSubStats, key => dynamic.dyn[key]),
   artSet: objectFromKeyMap(allArtifactSets, key => dynamic.dyn[key])
 }
 
 export {
-  rd as input, common, custom,
+  input, common, customBonus,
+
   target, teamBuff,
   dynamicData,
 }
