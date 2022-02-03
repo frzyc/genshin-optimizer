@@ -33,10 +33,10 @@ export function EnemyExpandCard() {
               <Typography key={element} ><EnemyResText element={element} /></Typography>
             </Grid>)}
             <Grid item>
-              <Typography>DEF Reduction {valueString(eDefRed.value, eDefRed.unit)}%</Typography>
+              <Typography>DEF Reduction {valueString(eDefRed.value, eDefRed.unit)}</Typography>
             </Grid>
             <Grid item>
-              <Typography>DEF Ignore {valueString(eDefIgn.value, eDefIgn.unit)}%</Typography>
+              <Typography>DEF Ignore {valueString(eDefIgn.value, eDefIgn.unit)}</Typography>
             </Grid>
           </Grid>
         </Grid>
@@ -73,7 +73,7 @@ export function EnemyResText({ element }: { element: ElementKeyWithPhy }) {
 
 export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object }) {
   const { data, characterDispatch } = useContext(DataContext)
-  const defaultVal = 0.1
+  const defaultVal = 10
 
   const eLvlNode = data.get(input.enemy.level)
   const eDefRed = data.get(input.enemy.defRed)
@@ -103,7 +103,7 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
         <StatInput
           sx={{ bgcolor: t => t.palette.contentLight.main, width: "100%" }}
           name={<b>{KeyMap.get(node.key)}</b>}
-          value={node.value}
+          value={node.value * 100}
           placeholder={KeyMap.getStr(node.key)}
           defaultValue={defaultVal}
           onValueChange={value => characterDispatch({ type: "enemyOverride", statKey, value })}

@@ -11,7 +11,8 @@ const statMap = {
 
   // Misc. Stats
   base: "Base DMG",
-  dmg_: "DMG Bonus",
+  dmg_: "Total DMG Bonus",
+  all_dmg_: "Common DMG Bonus",
   weakspotDMG_: "Weakspot DMG",
   incHeal_: "Incoming Healing Bonus",
   shield_: "Shield Strength",
@@ -51,6 +52,7 @@ const statMap = {
   skillBoost: "Ele. Skill Level Boost",
   burstBoost: "Ele. Burst Level Boost",
 
+  level: "Level",
 } as const
 
 export type BaseKeys = keyof typeof statMap
@@ -69,7 +71,6 @@ Object.entries(elementalData).forEach(([e, { name }]) => {
   statMap[`${e}_res_`] = `${name} DMG RES`
 
   statMap[`${e}_enemyRes_`] = `Enemy ${name} DMG RES`
-  // statMap[`${e}_enemyImmunity`] = `Enemy ${name} Immunity` TODO: figure out immunity
 })
 
 export type HitMoveDmgKey = `${HitMoveKey}_dmg_`

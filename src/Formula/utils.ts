@@ -13,12 +13,12 @@ export function constant(value: number, info?: Info): NumNode
 export function constant(value: string | undefined, info?: Info): StrNode
 export function constant(value: number | string | undefined, info?: Info): AnyNode
 export function constant(value: number | string | undefined, info?: Info): AnyNode {
-  if (value === Number.MAX_VALUE) value = Infinity
-  if (value === Number.MIN_VALUE) value = -Infinity
   return { operation: "const", operands: [], value, info }
 }
-/** `value` in percentage. The value is written as non-percentage, e.g., use `percent(1)` for 100% */
+/** `value` in percentage. The value is written as non-percentage, e.g., `percent(1)` for 100% */
 export function percent(value: number, info?: Info): NumNode {
+  if (value >= Number.MAX_VALUE / 100) value = Infinity
+  if (value <= -Number.MAX_VALUE / 100) value = -Infinity
   return constant(value, { key: "_", ...info })
 }
 /** Inject `info` to the node in-place */

@@ -108,12 +108,12 @@ const mainEditKeys = ["atk_", "atk", "hp_", "hp", "def_", "def", ...mainSubKeys]
 const otherStatReadNodes = [
   ...allElementsWithPhy.map(ele => customBonus[`${ele}_dmg_`]),
   ...allElementsWithPhy.map(ele => customBonus[`${ele}_res_`]),
-  ...(["stamina", "incHeal_", "shield_", "cdRed_"] as const).map(x => input.misc[x])
+  ...(["stamina", "incHeal_", "shield_", "cdRed_"] as const).map(x => customBonus[x])
 ]
 const otherStatKeys = otherStatReadNodes.map(x => x.info!.key!)
 
 const miscStatReadNodes = [
-  customBonus.common_dmg_,
+  customBonus.all_dmg_,
   ...allElementsWithPhy.map(x => input.enemy.res[x]),
   customBonus.normal_dmg_, customBonus.normal_critRate_,
   customBonus.charged_dmg_, customBonus.charged_critRate_,
@@ -122,7 +122,7 @@ const miscStatReadNodes = [
   customBonus.burst_dmg_, customBonus.burst_critRate_,
   ...Object.keys(transformativeReactions).map(x => customBonus[`${x}_dmg_`]),
   ...Object.keys(amplifyingReactions).map(x => customBonus[`${x}_dmg_`]),
-  ...(["moveSPD_", "atkSPD_", "weakspotDMG_"] as const).map(x => input.misc[x])
+  ...(["moveSPD_", "atkSPD_", "weakspotDMG_"] as const).map(x => customBonus[x])
 ]
 const miscStatkeys = miscStatReadNodes.map(x => x.info!.key!)
 

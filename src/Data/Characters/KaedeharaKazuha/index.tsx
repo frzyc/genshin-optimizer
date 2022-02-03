@@ -77,7 +77,7 @@ const condSkillAbsorption = customStringRead(["conditional", ...condSkillAbsorpt
 const condSwirlPaths = Object.fromEntries(absorbableEle.map(e => [e, [characterKey, `swirl${e}`]]))
 const condSwirls = Object.fromEntries(absorbableEle.map(e => [e, customStringRead(["conditional", ...condSwirlPaths[e]])]))
 const asc4 = Object.fromEntries(absorbableEle.map(ele =>
-  [ele, threshold_add(input.asc, 4,
+  [`${ele}_dmg_`, threshold_add(input.asc, 4,
     match("swirl", condSwirls[ele],
       prod(percent(datamine.passive2.elemas_dmg_), input.premod.eleMas)
     )
@@ -151,13 +151,13 @@ export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dm
     }
   },
   teamBuff: {
+    premod: {
+      ...asc4,
+      misc: { staminaSprintDec_: passive, },
+    },
     total: {
-      dmgBonus: asc4,
       eleMas: c2EleMas,
     },
-    misc: {
-      staminaSprintDec_: passive
-    }
   },
   // TODO:
   // infusion: c6infusion,
