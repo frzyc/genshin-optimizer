@@ -5,7 +5,7 @@ import { ICachedCharacter } from "../Types/character_WR";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, deepClone, layeredAssignment, objectFromKeyMap, objPathValue } from "../Util/Util";
-import { customBonus, input, teamBuff } from "./index";
+import { input, teamBuff } from "./index";
 import { Data, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
 import { constant, customRead, frac, infoMut, percent, prod, resetData, subscript, sum, unit } from "./utils";
@@ -183,14 +183,14 @@ const trans = {
     const { multi, variants: [ele] } = transformativeReactions[reaction]
     return infoMut(prod(
       infoMut(prod(multi, transMulti1), { asConst: true }),
-      sum(unit, prod(transMulti2, input.total.dmgBonus[reaction])),
+      sum(unit, prod(transMulti2, input.total[`${reaction}_dmg_`])),
       input.enemy.resMulti[ele]),
       { key: `${reaction}_hit`, variant: reaction })
   }),
   swirl: objectFromKeyMap(transformativeReactions.swirl.variants, ele => infoMut(
     prod(
       infoMut(prod(transformativeReactions.swirl.multi, transMulti1), { asConst: true }),
-      sum(unit, prod(transMulti2, input.total.dmgBonus.swirl)),
+      sum(unit, prod(transMulti2, input.total.swirl_dmg_)),
       input.enemy.resMulti[ele]),
     { key: `${ele}_swirl_hit`, variant: ele }))
 }

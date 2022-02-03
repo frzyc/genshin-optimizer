@@ -1,5 +1,5 @@
 import _charCurves from "./expCurve_gen.json";
-import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
+import { allMainStatKeys, allSubstats, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey } from "../../Types/consts";
 import { input } from "../../Formula";
 import { Data, DisplaySub, NumNode, ReadNode } from "../../Formula/type";
@@ -11,7 +11,8 @@ export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[
 // TODO: Remove this conversion after changing the file format
 const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
-const commonBasic = Object.fromEntries(Object.entries(input.total).filter(([key, value]) => key !== "critRate_" && (value as any).operation)) as Dict<string, ReadNode<number>>
+const commonBasic = Object.fromEntries([...allSubstats, "def"].map(key => [key, input.total[key]]))
+commonBasic.critRate_ = input.total.cappedCritRate
 
 function getTalentType(move: "normal" | "charged" | "plunging" | "skill" | "burst") {
   switch (move) {
