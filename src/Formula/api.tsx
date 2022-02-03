@@ -44,10 +44,8 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     },
     enemy: {
       res: {
-        ...objectFromKeyMap(allElementsWithPhy, ele => {
-          const value = char.enemyOverride[`${ele}_enemyRes_`]
-          return percent(value ? value / 100 : 0.1)
-        }),
+        ...objectFromKeyMap(allElementsWithPhy, ele =>
+          percent((char.enemyOverride[`${ele}_enemyRes_`] ?? 10) / 100)),
       },
       level: constant(char.enemyOverride.enemyLevel ?? char.level),
     },

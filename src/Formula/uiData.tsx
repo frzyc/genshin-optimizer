@@ -101,8 +101,9 @@ export class UIData {
     let result: ContextNodeDisplay<number | string | undefined>
     switch (operation) {
       case "add": case "mul": case "min": case "max":
-      case "res": case "sum_frac": case "threshold_add":
+      case "res": case "sum_frac":
         result = this._compute(node); break
+      case "threshold_add": result = this._threshold(node); break
       case "const": result = this._constant(node.value); break
       case "subscript": result = this._subscript(node); break
       case "read": result = this._read(node); break
@@ -171,10 +172,17 @@ export class UIData {
     return this.computeNode(selected)
   }
   private _match(node: MatchNode<StrNode | NumNode, StrNode | NumNode>): ContextNodeDisplay<number | string | undefined> {
-    const [v1, v2, match, unmatch] = node.operands.map(x => this.computeNode(x))
+    const [v1Node, v2Node, matchNode, unmatchNode] = node.operands
+    const v1 = this.computeNode(v1Node), v2 = this.computeNode(v2Node)
     const matching = v1.value === v2.value
-    let result = matching ? match : unmatch
-    return makeEmpty(result, (matching && node.emptyOn === "match") || (!matching && node.emptyOn === "unmatch"), result.value)
+    let result = this.computeNode(matching ? matchNode : unmatchNode)
+    return ((matching && node.emptyOn === "match") || (!matching && node.emptyOn === "unmatch"))
+      ? makeEmpty(result.value) : result
+  }
+  private _threshold(node: ThresholdNode): ContextNodeDisplay {
+    const [valueNode, thresholdNode, additionNode] = node.operands
+    const value = this.computeNode(valueNode), threshold = this.computeNode(thresholdNode)
+    return value.value >= threshold.value ? this.computeNode(additionNode) : makeEmpty(0)
   }
   private _data(node: DataNode<NumNode | StrNode>): ContextNodeDisplay<number | string | undefined> {
     let child = this.children.get(node.data)
@@ -184,7 +192,7 @@ export class UIData {
     }
     return child.computeNode(node.operands[0])
   }
-  private _compute(node: ComputeNode | ThresholdNode): ContextNodeDisplay {
+  private _compute(node: ComputeNode): ContextNodeDisplay {
     const { operation, operands } = node
     return this._accumulate(operation, operands.map(x => this.computeNode(x)))
   }
@@ -201,14 +209,12 @@ export class UIData {
       dependencies: new Set(),
     }
   }
-
-  private _accumulate(operation: ComputeNode["operation"] | "threshold_add", operands: ContextNodeDisplay[]): ContextNodeDisplay {
+  private _accumulate(operation: ComputeNode["operation"], operands: ContextNodeDisplay[]): ContextNodeDisplay {
     let variant: Variant | undefined
     switch (operation) {
       case "add": case "mul": case "min": case "max":
       case "res": case "sum_frac":
         variant = mergeVariants(operands); break
-      case "threshold_add": variant = operands[2].variant; break
       default: assertUnreachable(operation)
     }
     switch (operation) {
@@ -241,9 +247,6 @@ export class UIData {
         }
         break
       }
-      case "threshold_add":
-        const value = operands[0].value, threshold = operands[1].value
-        return makeEmpty(operands[2], value < threshold, 0)
       default: assertUnreachable(operation)
     }
     switch (operation) {
@@ -316,6 +319,8 @@ function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
 
 //* Comment/uncomment this line to toggle between string formulas and JSX formulas
 function createName({ key, value, namePrefix, variant }: ContextNodeDisplay): Displayable {
+  const a = { a: 1, b: 2, c: 4 }
+  const b = Object.keys(a)
   return <><ColorText color={variant}>{namePrefix}{namePrefix ? ' ' : ''}{KeyMap.getNoUnit(key!)}</ColorText> {valueString(value, KeyMap.unit(key!))}</>
 }
 function mergeFormulaComponents(components: Displayable[]): Displayable {
@@ -363,16 +368,11 @@ const illformed: ContextNodeDisplay = {
   dependencies: new Set(),
   mayNeedWrapping: false
 }
-function makeEmpty(node: ContextNodeDisplay<number>, shouldMakeEmpty: boolean, emptyValue: number): ContextNodeDisplay<number>
-function makeEmpty(node: ContextNodeDisplay<string | undefined>, shouldMakeEmpty: boolean, emptyValue: string | undefined): ContextNodeDisplay<string | undefined>
-function makeEmpty(node: ContextNodeDisplay<number | string | undefined>, shouldMakeEmpty: boolean, emptyValue: number | string | undefined): ContextNodeDisplay<number | string | undefined>
-function makeEmpty(node: ContextNodeDisplay<number | string | undefined>, shouldMakeEmpty: boolean, emptyValue: number | string | undefined): ContextNodeDisplay<number | string | undefined> {
-  if (!shouldMakeEmpty) return node
-
-  const result: ContextNodeDisplay<number | string | undefined> = {
+function makeEmpty(emptyValue: number): ContextNodeDisplay<number>
+function makeEmpty(emptyValue: string | undefined): ContextNodeDisplay<string | undefined>
+function makeEmpty(emptyValue: number | string | undefined): ContextNodeDisplay<number | string | undefined>
+function makeEmpty(emptyValue: number | string | undefined): ContextNodeDisplay<number | string | undefined> {
+  return {
     value: emptyValue, pivot: false, empty: true, dependencies: new Set(), mayNeedWrapping: false
   }
-  if (node.key) result.key = node.key
-  if (node.variant) result.variant = node.variant
-  return result
 }
