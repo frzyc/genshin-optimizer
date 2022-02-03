@@ -219,7 +219,7 @@ const sheet: ICharacterSheet = {
             states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
               name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
               fields: [{
-                node: c6Bonus[eleKey],
+                node: c6Bonus[`${eleKey}_dmg_`],
               }],
             }]))
           },
