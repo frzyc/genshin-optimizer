@@ -17,9 +17,9 @@ export function formulaString(formula: NumNode | StrNode): string {
     case "sum_frac":
       const [x, c] = formula.operands.map(formulaString)
       return `( ${x} / ( ${x} + ${c} ) )`
-    case "threshold_add":
-      const [value, threshold, addition] = formula.operands.map(formulaString)
-      return `( ${value} >= ${threshold} ? ${addition} : 0 )`
+    case "threshold":
+      const [value, threshold, pass, fail] = formula.operands.map(formulaString)
+      return `( ${value} >= ${threshold} ? ${pass} : ${fail} )`
     case "res":
       return `Res${formulaString(formula.operands[0])}`
     case "match":

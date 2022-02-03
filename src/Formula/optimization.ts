@@ -9,7 +9,7 @@ const allCommutativeMonoidOperations: StrictDict<CommutativeMonoidOperation, (_:
   add: (x: number[]): number => x.reduce((a, b) => a + b, 0),
   mul: (x: number[]): number => x.reduce((a, b) => a * b, 1),
 }
-export const allOperations: StrictDict<Operation | "threshold_add", (_: number[]) => number> = {
+export const allOperations: StrictDict<Operation | "threshold", (_: number[]) => number> = {
   ...allCommutativeMonoidOperations,
   res: ([res]: number[]): number => {
     if (res < 0) return 1 - res / 2
@@ -17,7 +17,7 @@ export const allOperations: StrictDict<Operation | "threshold_add", (_: number[]
     return 1 - res
   },
   sum_frac: (x: number[]): number => x[0] / x.reduce((a, b) => a + b),
-  threshold_add: ([value, threshold, addition]: number[]): number => value >= threshold ? addition : 0,
+  threshold: ([value, threshold, pass, fail]: number[]): number => value >= threshold ? pass : fail,
 }
 
 const commutativeMonoidOperationSet = new Set(Object.keys(allCommutativeMonoidOperations) as (NumNode["operation"])[])
@@ -47,7 +47,7 @@ export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<num
         mapping.set(f, name)
         break
       case "add": case "min": case "max": case "mul":
-      case "threshold_add": case "res": case "sum_frac":
+      case "threshold": case "res": case "sum_frac":
         mapping.set(f, { ins: f.operands.map(op => mapping.get(op)!) })
         break
       case "const":
@@ -351,12 +351,12 @@ export function constantFold(formulas: NumNode[], topLevelData: Data, shouldFold
         result = (v1.value === v2.value) ? match : unmatch
         break
       }
-      case "threshold_add": {
-        const [value, threshold, addition] = formula.operands.map(x => fold(x, context))
+      case "threshold": {
+        const [value, threshold, pass, fail] = formula.operands.map(x => fold(x, context))
         if (value.operation === "const" && threshold.operation === "const")
-          result = value.value >= threshold.value ? addition : constant(0)
+          result = value.value >= threshold.value ? pass : fail
         else
-          result = { ...formula, operands: [value, threshold, addition] }
+          result = { ...formula, operands: [value, threshold, pass, fail] }
         break
       }
       case "subscript": {

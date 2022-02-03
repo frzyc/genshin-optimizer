@@ -37,8 +37,8 @@ export function unmatch(v1: Str, v2: Str, unmatch: Num, info?: Info): NumNode {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(0), intoV(unmatch)], info, emptyOn: "match" }
 }
 /** `v1` === `v2` ? 0 : `unmatch` */
-export function matchStr(v1: Str, v2: Str, match: Str, unmatch: Str, info?: Info): MatchNode<StrNode, StrNode> {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(unmatch)], info }
+export function matchStr(v1: Str, v2: Str, match: Str, unmatch: Str, info?: Info, emptyOn?: "match" | "unmatch"): MatchNode<StrNode, StrNode> {
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(unmatch)], info, emptyOn }
 }
 
 /** `table[string] ?? defaultNode` */
@@ -70,9 +70,15 @@ export function frac(x: Num, c: Num): NumNode {
   return { operation: "sum_frac", operands: intoOps([x, c]) }
 }
 /** value >= threshold ? addition : 0 */
-export function threshold_add(value: Num, threshold: Num, addition: Num, info?: Info): NumNode {
-  const operands = [intoV(value), intoV(threshold), intoV(addition)] as const
-  return { operation: "threshold_add", operands, info }
+export function threshold_add(value: Num, thres: Num, addition: Num, info?: Info): NumNode {
+  return threshold(value, thres, addition, 0, info)
+}
+/** value >= threshold ? value : emptyValue */
+export function threshold(value: Num, threshold: Num, pass: Str, fail: Str, info?: Info): StrNode
+export function threshold(value: Num, threshold: Num, pass: Num, fail: Num, info?: Info): NumNode
+export function threshold(value: Num, threshold: Num, pass: Num | Str, fail: Num | Str, info?: Info): NumNode | StrNode {
+  const operands = [intoV(value), intoV(threshold), intoV(pass), intoV(fail)] as any
+  return { operation: "threshold", operands, info }
 }
 export function res(base: Num): NumNode {
   return { operation: "res", operands: intoOps([base]) }
@@ -132,7 +138,7 @@ function intoOps(values: Any[]): AnyNode[] {
 }
 function intoV(value: Num): NumNode
 function intoV(value: Str): StrNode
-function intoV(value: Any): AnyNode
+function intoV(value: Num | Str): NumNode | StrNode
 function intoV(value: Any): AnyNode {
   return (typeof value !== "object") ? constant(value) : value
 }

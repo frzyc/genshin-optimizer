@@ -2,7 +2,7 @@ import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
-import { constant, customStringRead, infoMut, match, percent, prod, threshold_add, unmatch } from '../../../Formula/utils'
+import { constant, customStringRead, infoMut, match, matchStr, percent, prod, threshold, threshold_add, unmatch } from '../../../Formula/utils'
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
 import { absorbableEle, dataObjForCharacterSheet, dmgNode, singleDmgNode } from '../dataUtil'
@@ -99,18 +99,17 @@ const c2PEleMas = threshold_add(input.constellation, 6,
 
 const condC6Path = [characterKey, "c6"]
 const condC6 = customStringRead(["conditional", ...condC6Path])
-// const c6infusion = threshold_add(input.constellation, 6,
-//   match("c6", condC6, constant("anemo"))
-// )
-const c6NormDmg_ = threshold_add(input.constellation, 6,
+const c6infusion = threshold(input.constellation, 6,
+  matchStr("c6", condC6, "anemo", undefined, undefined, "unmatch"),
+  undefined
+)
+const c6Dmg_ = threshold_add(input.constellation, 6,
   match("c6", condC6, prod(datamine.constellation6.auto_, input.premod.eleMas))
 )
-const c6ChargedDmg_ = threshold_add(input.constellation, 6,
-  match("c6", condC6, prod(datamine.constellation6.auto_, input.premod.eleMas))
-)
-const c6PlungingDmg_ = threshold_add(input.constellation, 6,
-  match("c6", condC6, prod(datamine.constellation6.auto_, input.premod.eleMas))
-)
+// Share `match` and `prod` between the three nodes
+const c6NormDmg_ = { ...c6Dmg_ }
+const c6ChargedDmg_ = { ...c6Dmg_ }
+const c6PlungingDmg_ = { ...c6Dmg_ }
 
 const passive = percent(0.2)
 
@@ -137,10 +136,11 @@ const dmgFormulas = {
       [key, match(condBurstAbsorption, key, dmgNode("atk", datamine.burst.add, "burst", { hit: { ele: constant(key) } }))]))
   },
   passive1: Object.fromEntries(absorbableEle.map(key =>
-    [key, match(condSkillAbsorption, key, singleDmgNode("atk", datamine.passive1.asorbAdd, "plunging", { hit: { ele: constant(key) } }))]))
-  // constellation6: {
-  //   bonus: stats => [s => (s.premod?.eleMas ?? s.eleMas) * 0.2, ['eleMas']]
-  // }
+    [key, match(condSkillAbsorption, key, singleDmgNode("atk", datamine.passive1.asorbAdd, "plunging", { hit: { ele: constant(key) } }))])),
+  constellation6: {
+    bonus: threshold_add(input.constellation, 6,
+      match("c6", condC6, prod(percent(0.002), input.premod.eleMas /* TODO: Check if premod or total */)))
+  }
 }
 
 export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dmgFormulas, {
@@ -159,15 +159,13 @@ export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dm
       eleMas: c2EleMas,
     },
   },
-  // TODO:
-  // infusion: c6infusion,
+  infusion: c6infusion,
   premod: {
-    // TODO:
-    // dmgBonus: {
-    //   normal: c6NormDmg_,
-    //   charged: c6ChargedDmg_,
-    //   plunging: c6PlungingDmg_,
-    // }
+    dmgBonus: {
+      normal: c6NormDmg_,
+      charged: c6ChargedDmg_,
+      plunging: c6PlungingDmg_,
+    }
   }
 })
 

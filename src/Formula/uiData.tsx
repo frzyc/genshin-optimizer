@@ -103,7 +103,7 @@ export class UIData {
       case "add": case "mul": case "min": case "max":
       case "res": case "sum_frac":
         result = this._compute(node); break
-      case "threshold_add": result = this._threshold(node); break
+      case "threshold": result = this._threshold(node); break
       case "const": result = this._constant(node.value); break
       case "subscript": result = this._subscript(node); break
       case "read": result = this._read(node); break
@@ -179,7 +179,7 @@ export class UIData {
     return ((matching && node.emptyOn === "match") || (!matching && node.emptyOn === "unmatch"))
       ? makeEmpty(result.value) : result
   }
-  private _threshold(node: ThresholdNode): ContextNodeDisplay {
+  private _threshold(node: ThresholdNode<NumNode | StrNode>): ContextNodeDisplay<number | string | undefined> {
     const [valueNode, thresholdNode, additionNode] = node.operands
     const value = this.computeNode(valueNode), threshold = this.computeNode(thresholdNode)
     return value.value >= threshold.value ? this.computeNode(additionNode) : makeEmpty(0)

@@ -52,9 +52,9 @@ export interface ComputeNode extends Base {
   operation: Operation
   operands: readonly NumNode[]
 }
-export interface ThresholdNode extends Base {
-  operation: "threshold_add"
-  operands: readonly [NumNode, NumNode, NumNode]
+export interface ThresholdNode<M = NumNode> extends Base {
+  operation: "threshold"
+  operands: readonly [NumNode, NumNode, M, M]
 }
 export interface MatchNode<N, M = StrNode> extends Base {
   operation: "match"
