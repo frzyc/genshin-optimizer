@@ -83,6 +83,10 @@ export class UIData {
   get(node: StrNode): NodeDisplay<string | undefined>
   get(node: NumNode | StrNode): NodeDisplay<number | string | undefined>
   get(node: NumNode | StrNode): NodeDisplay<number | string | undefined> {
+    if (node === undefined) {
+      console.trace("Please report this bug with this trace")
+      return { operation: true, value: undefined, isEmpty: true, unit: "flat", formulas: [] }
+    }
     const old = this.processed.get(node)
     if (old) return old
 
