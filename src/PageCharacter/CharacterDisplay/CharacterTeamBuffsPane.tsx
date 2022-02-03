@@ -33,7 +33,7 @@ export function TeamBuffDisplay() {
   const { data, oldData, character } = useContext(DataContext)
   const bonusStatsKeys = Object.keys(character?.bonusStats)
   if (!bonusStatsKeys.length) return null
-  const nodes = bonusStatsKeys.map(k => data.get(input.total[k] as NumNode))
+  const nodes = bonusStatsKeys.map(k => input.total[k] && data.get(input.total[k]))
   const oldValues = oldData && bonusStatsKeys.map(k => oldData.get(input.total[k] as NumNode).value)
 
   if (!nodes.length) return null
