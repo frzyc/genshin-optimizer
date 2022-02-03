@@ -41,7 +41,7 @@ export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot): { nodes: NumN
         if (typeof f.value === "string" || f.value === undefined)
           throw new Error(`Found constant ${f.value} while compacting`)
         visit(f as NumNode, true); break
-      case "res": case "threshold_add": case "sum_frac":
+      case "res": case "threshold": case "sum_frac":
       case "max": case "min": visit(f, false); break
       case "data": case "subscript": case "lookup": case "match": case "prio":
         throw new Error(`Found unsupported ${operation} node when computing affine nodes`)
@@ -132,7 +132,7 @@ export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: num
     const { operation } = f
     const operandRanges = f.operands.map(x => nodeRange.get(x)!)
     switch (operation) {
-      case "threshold_add": {
+      case "threshold": {
         const [value, threshold] = operandRanges
         if (value.min >= threshold.max) return f.operands[2]
         else if (value.max < threshold.min) return constant(0)
@@ -214,7 +214,7 @@ export function computeNodeRange(nodes: NumNode[], reads: DynMinMax): Map<NumNod
         accu.min * current.min, accu.min * current.max,
         accu.max * current.min, accu.max * current.max,
       ])); break
-      case "threshold_add":
+      case "threshold":
         if (operands[0].min >= operands[1].max) current = operands[2]
         else if (operands[0].max < operands[1].min) current = computeMinMax([0])
         else current = computeMinMax([0], [operands[2]])
