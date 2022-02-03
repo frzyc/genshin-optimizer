@@ -323,8 +323,6 @@ function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
 
 //* Comment/uncomment this line to toggle between string formulas and JSX formulas
 function createName({ key, value, namePrefix, variant }: ContextNodeDisplay): Displayable {
-  const a = { a: 1, b: 2, c: 4 }
-  const b = Object.keys(a)
   return <><ColorText color={variant}>{namePrefix}{namePrefix ? ' ' : ''}{KeyMap.getNoUnit(key!)}</ColorText> {valueString(value, KeyMap.unit(key!))}</>
 }
 function mergeFormulaComponents(components: Displayable[]): Displayable {
