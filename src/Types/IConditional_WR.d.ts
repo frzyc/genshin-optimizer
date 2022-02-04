@@ -7,6 +7,7 @@ import { UIData } from "../Formula/uiData";
 export default interface IConditional {
   path: string[],
   value: ReadNode<string>,
+  teamBuff?: boolean,
   name: Displayable;
   header?: {
     title: Displayable;

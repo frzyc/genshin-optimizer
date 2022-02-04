@@ -19,17 +19,17 @@ const atk_Src = [0.2, 0.25, 0.3, 0.35, 0.40]
 const condPath = [key, "MillennialMovement"]
 const cond = customStringRead(["conditional", ...condPath])
 const atk_ = match("on", cond, subscript(input.weapon.refineIndex, atk_Src))
-const normal = match("on", cond, subscript(input.weapon.refineIndex, autoSrc))
-const charged = match("on", cond, subscript(input.weapon.refineIndex, autoSrc))
-const plunging = match("on", cond, subscript(input.weapon.refineIndex, autoSrc))
+const normal_dmg_ = match("on", cond, subscript(input.weapon.refineIndex, autoSrc))
+const charged_dmg_ = match("on", cond, subscript(input.weapon.refineIndex, autoSrc))
+const plunging_dmg_ = match("on", cond, subscript(input.weapon.refineIndex, autoSrc))
 
 const data = dataObjForWeaponSheet(key, data_gen, "dmg_", undefined, {
   teamBuff: {
     premod: {
       atk_,
-      normal_dmg_: normal,
-      charged_dmg_: charged,
-      plunging_dmg_: plunging,
+      normal_dmg_,
+      charged_dmg_,
+      plunging_dmg_,
     }
   }
 })
@@ -42,6 +42,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: cond,
       path: condPath,
+      teamBuff: true,
       header: {
         title: tr(`passiveName`),
         icon: data => <ImgIcon size={2} sx={{ m: -1 }} src={data.get(input.weapon.asc).value < 2 ? icon : iconAwaken} />,
@@ -53,11 +54,11 @@ const sheet: IWeaponSheet = {
           fields: [{
             node: infoMut(atk_, { key: "atk_" })
           }, {
-            node: infoMut(normal, { key: "normal_dmg_" })
+            node: infoMut(normal_dmg_, { key: "normal_dmg_" })
           }, {
-            node: infoMut(charged, { key: "charged_dmg_" })
+            node: infoMut(charged_dmg_, { key: "charged_dmg_" })
           }, {
-            node: infoMut(plunging, { key: "plunging_dmg_" })
+            node: infoMut(plunging_dmg_, { key: "plunging_dmg_" })
           }, {
             text: sgt("duration"),
             value: 12,

@@ -80,22 +80,21 @@ const asc4 = Object.fromEntries(absorbableEle.map(ele =>
   [`${ele}_dmg_`, threshold_add(input.asc, 4,
     match("swirl", condSwirls[ele],
       prod(percent(datamine.passive2.elemas_dmg_), input.premod.eleMas)
-    )
-    , { key: `${ele}_dmg_`, variant: ele })]))
+    ), { key: `${ele}_dmg_`, variant: ele })]))
 
+/** TODO: the C2 actually only applies to "active" character, so the following needs to be changed... */
 const condC2Path = [characterKey, "c2"]
 const condC2 = customStringRead(["conditional", ...condC2Path])
-const c2EleMas = threshold_add(input.constellation, 6,
-  match("c2", condC2, datamine.constellation2.elemas)
+const c2EleMas = threshold_add(input.constellation, 2,
+  match("c2", condC2, datamine.constellation2.elemas), { key: `eleMas` }
 )
 
 const condC2PPath = [characterKey, "c2p"]
 const condC2P = customStringRead(["conditional", ...condC2PPath])
-const c2PEleMas = threshold_add(input.constellation, 6,
-  match("c2p", condC2,
+const c2PEleMas = threshold_add(input.constellation, 2,
+  match("c2p", condC2P,
     unmatch(target.charKey, characterKey, datamine.constellation2.elemas)
-  )
-)
+  ), { key: `eleMas` })
 
 const condC6Path = [characterKey, "c6"]
 const condC6 = customStringRead(["conditional", ...condC6Path])
@@ -156,7 +155,7 @@ export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dm
       ...asc4,
     },
     total: {
-      eleMas: c2EleMas,
+      eleMas: c2PEleMas,
       staminaSprintDec_: passive,
     },
   },
@@ -165,7 +164,10 @@ export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dm
     normal_dmg_: c6NormDmg_,
     charged_dmg_: c6ChargedDmg_,
     plunging_dmg_: c6PlungingDmg_,
-  }
+  },
+  total: {
+    eleMas: c2EleMas,
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -278,28 +280,31 @@ const sheet: ICharacterSheet = {
           },
         }, {
           conditional: { // C2
+            canShow: c2EleMas,
             value: condC2,
             path: condC2Path,
             name: <Translate ns="char_KaedeharaKazuha" key18="c2" />,
             states: {
               c2: {
                 fields: [{
-                  node: infoMut(c2EleMas, { key: `eleMas` })
+                  node: c2EleMas
                 }]
               }
             }
           },
         }, {
           conditional: { // C2 Party
+            canShow: c2PEleMas,
             value: condC2P,
             path: condC2PPath,
+            teamBuff: true,
             header: conditionalHeader("constellation2", tr, c2),
             description: tr("constellation2.description"),
             name: <Translate ns="char_KaedeharaKazuha" key18="c2p" />,
             states: {
               c2p: {
                 fields: [{
-                  node: infoMut(c2PEleMas, { key: `eleMas` })
+                  node: c2PEleMas
                 }]
               }
             }
@@ -333,13 +338,14 @@ const sheet: ICharacterSheet = {
           conditional: { // Poetics of Fuubutsu
             value: condSwirls[eleKey],
             path: condSwirlPaths[eleKey],
+            teamBuff: true,
             header: conditionalHeader("passive2", tr, passive2),
             description: tr("passive2.description"),
             name: <Translate ns="char_KaedeharaKazuha" key18={`a4.name_${eleKey}`} />,
             states: {
               swirl: {
                 fields: [{
-                  node: asc4[eleKey]
+                  node: asc4[`${eleKey}_dmg_`]
                 }, {
                   text: sgt("duration"),
                   value: datamine.passive2.duration,
@@ -399,11 +405,11 @@ const sheet: ICharacterSheet = {
                   }]
               }
             }
-
           }
         }]
       }
     }
   },
 };
+console.log(sheet)
 export default new CharacterSheet(sheet, data);
