@@ -98,7 +98,7 @@ export const allCharacterKeys = [
   // "AratakiItto"
 ] as const
 export const allWeaponKeys = [
-  // "DullBlade",
+  "DullBlade",
   // "SilverSword",
   // "CoolSteel",
   // "DarkIronSword",

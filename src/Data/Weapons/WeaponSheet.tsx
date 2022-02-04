@@ -1,14 +1,13 @@
 import { Translate } from '../../Components/Translate';
 import { Data } from '../../Formula/type';
-import { WeaponKey, WeaponTypeKey } from '../../Types/consts';
+import { Rarity, WeaponKey, WeaponTypeKey } from '../../Types/consts';
 import { DocumentSection } from '../../Types/sheet';
 import { ICachedWeapon } from '../../Types/weapon_WR';
 import { ascensionMaxLevel } from '../LevelData';
+import type { WeaponData } from 'pipeline';
 const weaponSheets = import('.').then(imp => imp.default)
 
 export interface IWeaponSheet {
-  weaponType: WeaponTypeKey
-  rarity: 1 | 2 | 3 | 4 | 5
   icon: string,
   iconAwaken: string,
   document: DocumentSection[],
@@ -18,7 +17,11 @@ export default class WeaponSheet {
   readonly key: WeaponKey;
   readonly sheet: IWeaponSheet;
   readonly data: Data;
-  constructor(key: string, weaponSheet: IWeaponSheet, data: Data) {
+  readonly rarity: Rarity;
+  readonly weaponType: WeaponTypeKey;
+  constructor(key: string, weaponSheet: IWeaponSheet, weaponData: WeaponData, data: Data) {
+    this.rarity = weaponData.rarity
+    this.weaponType = weaponData.weaponType
     this.key = key as WeaponKey
     this.sheet = weaponSheet
     this.data = data
@@ -33,9 +36,7 @@ export default class WeaponSheet {
   get passiveName() { return this.rarity > 2 ? this.tr("passiveName") : "" }
   get description() { return this.tr("description") }
   passiveDescription = (refineIndex: number) => this.rarity > 2 ? this.tr(`passiveDescription.${refineIndex}`) : ""
-  get weaponType() { return this.sheet.weaponType }
   get img() { return this.sheet.icon }
   get imgAwaken() { return this.sheet.iconAwaken }
-  get rarity() { return this.sheet.rarity }
   get document() { return this.sheet.document }
 }

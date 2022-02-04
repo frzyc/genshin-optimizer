@@ -2,16 +2,15 @@ import { WeaponKey, WeaponTypeKey } from "../Types/consts"
 import { ICachedWeapon } from "../Types/weapon"
 
 function defaultInitialWeaponKey(type: WeaponTypeKey): WeaponKey {
-  // TODO: restore
-  return "EverlastingMoonglow"
-  // switch (type) {
-  //   case "sword": return "DullBlade"
-  //   case "bow": return "HuntersBow"
-  //   case "claymore": return "WasterGreatsword"
-  //   case "polearm": return "BeginnersProtector"
-  //   case "catalyst": return "ApprenticesNotes"
-  //   default: return "DullBlade"
-  // }
+  switch (type) {
+    case "sword": return "DullBlade"
+    // TODO: restore
+    // case "bow": return "HuntersBow"
+    // case "claymore": return "WasterGreatsword"
+    // case "polearm": return "BeginnersProtector"
+    // case "catalyst": return "ApprenticesNotes"
+    default: return "DullBlade"
+  }
 }
 export const defaultInitialWeapon = (type: WeaponTypeKey): ICachedWeapon =>
   initialWeapon(defaultInitialWeaponKey(type))

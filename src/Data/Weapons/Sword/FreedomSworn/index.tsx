@@ -35,7 +35,6 @@ const data = dataObjForWeaponSheet(key, data_gen, "dmg_", undefined, {
 })
 
 const sheet: IWeaponSheet = {
-  ...data_gen as WeaponData,
   icon,
   iconAwaken,
   document: [{
@@ -69,4 +68,4 @@ const sheet: IWeaponSheet = {
     }
   }],
 }
-export default new WeaponSheet(key, sheet, data)
+export default new WeaponSheet(key, sheet, data_gen, data)

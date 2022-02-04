@@ -415,5 +415,4 @@ const sheet: ICharacterSheet = {
     }
   },
 };
-console.log(sheet)
 export default new CharacterSheet(sheet, data);

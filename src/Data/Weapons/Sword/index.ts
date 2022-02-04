@@ -4,7 +4,7 @@
 // import CinnabarSpindle from './CinnabarSpindle'
 // import CoolSteel from './CoolSteel'
 // import DarkIronSword from './DarkIronSword'
-// import DullBlade from './DullBlade'
+import DullBlade from './DullBlade'
 // import FavoniusSword from './FavoniusSword'
 // import FesteringDesire from './FesteringDesire'
 // import FilletBlade from './FilletBlade'
@@ -33,7 +33,7 @@ const sword = {
   // CinnabarSpindle,
   // CoolSteel,
   // DarkIronSword,
-  // DullBlade,
+  DullBlade,
   // FavoniusSword,
   // FesteringDesire,
   // FilletBlade,
