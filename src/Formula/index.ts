@@ -129,6 +129,8 @@ markAccu(undefined, {
   c: Object.fromEntries(Object.keys(suffixedDmgBonusNodes).map(key => [key, total[key]]))
 })
 base.atk.info = { key: "atk", namePrefix: "Base", pivot }
+delete total.critRate_.info!.pivot
+total.critRate_.info!.namePrefix = "Uncapped"
 
 // Nodes that are not used anywhere else but `common` below
 
