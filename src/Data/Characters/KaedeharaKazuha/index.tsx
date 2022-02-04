@@ -100,7 +100,7 @@ const c2PEleMas = threshold_add(input.constellation, 6,
 const condC6Path = [characterKey, "c6"]
 const condC6 = customStringRead(["conditional", ...condC6Path])
 const c6infusion = threshold(input.constellation, 6,
-  matchStr("c6", condC6, "anemo", undefined, undefined, "unmatch"),
+  matchStr("c6", condC6, "anemo", undefined, undefined),
   undefined
 )
 const c6Dmg_ = threshold_add(input.constellation, 6,

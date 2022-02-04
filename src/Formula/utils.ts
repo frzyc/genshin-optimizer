@@ -36,9 +36,9 @@ export function match(v1: Str, v2: Str, match: Num, info?: Info): NumNode {
 export function unmatch(v1: Str, v2: Str, unmatch: Num, info?: Info): NumNode {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(0), intoV(unmatch)], info, emptyOn: "match" }
 }
-/** `v1` === `v2` ? 0 : `unmatch` */
-export function matchStr(v1: Str, v2: Str, match: Str, unmatch: Str, info?: Info, emptyOn?: "match" | "unmatch"): MatchNode<StrNode, StrNode> {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(unmatch)], info, emptyOn }
+/** `v1` === `v2` ? `match` : `unmatch` */
+export function matchStr(v1: Str, v2: Str, match: Str, unmatch: Str, info?: Info): MatchNode<StrNode, StrNode> {
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(unmatch)], info }
 }
 
 /** `table[string] ?? defaultNode` */
