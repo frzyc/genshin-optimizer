@@ -26,11 +26,9 @@ const plunging = match("on", cond, subscript(input.weapon.refineIndex, autoSrc))
 const data = dataObjForWeaponSheet(key, data_gen, "dmg_", undefined, {
   premod: {
     atk_,
-    dmgBonus: {
-      normal,
-      charged,
-      plunging,
-    }
+    normal_dmg_: normal,
+    charged_dmg_: charged,
+    plunging_dmg_: plunging,
   }
 })
 

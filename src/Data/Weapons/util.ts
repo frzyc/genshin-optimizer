@@ -40,10 +40,8 @@ export function dataObjForWeaponSheet(
     if (subStat.type === "atk" || subStat.type === "def" || subStat.type === "hp") throw new Error("SubStat cannot be `atk`, `def`, or `hp`")
     const substatNode = infoMut(prod(subStat.base, subscript(input.weapon.lvl, weaponCurves[subStat.curve])), { key: subStat.type })
     merging.push({
-      premod: subStat.type.endsWith('_dmg_')
-        ? { dmgBonus: { [subStat.type.slice(0, -5)]: input.weapon.sub } }
-        : { [subStat.type]: input.weapon.sub },
-      weapon: { sub: substatNode }
+      premod: { [subStat.type]: input.weapon.sub },
+      weapon: { sub: substatNode },
     })
   }
   if (subStat2) {

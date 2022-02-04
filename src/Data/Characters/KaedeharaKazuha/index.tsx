@@ -161,11 +161,9 @@ export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dm
   },
   infusion: c6infusion,
   premod: {
-    dmgBonus: {
-      normal: c6NormDmg_,
-      charged: c6ChargedDmg_,
-      plunging: c6PlungingDmg_,
-    }
+    normal_dmg_: c6NormDmg_,
+    charged_dmg_: c6ChargedDmg_,
+    plunging_dmg_: c6PlungingDmg_,
   }
 })
 

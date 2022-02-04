@@ -1,4 +1,4 @@
-import { allEleEnemyResKeys, StatKey } from "../KeyMap"
+import { allEleEnemyResKeys } from "../KeyMap"
 import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
 import { allArtifactSets, allElementsWithPhy, allSlotKeys } from "../Types/consts"
 import { crawlObject, deepClone, objectFromKeyMap } from "../Util/Util"
@@ -71,7 +71,7 @@ const input = setReadNodeKeys(deepClone({
     ...misc,
   }),
   bonus: { talent },
-  premod: withDefaultInfo({ namePrefix: "Premod", pivot }, { talent, dmgBonus, misc, ...mainSubStatNodes }),
+  premod: withDefaultInfo({ namePrefix: "Premod", pivot }, { talent, misc, ...suffixedDmgBonusNodes, ...mainSubStatNodes }),
   total: withDefaultInfo({ namePrefix: "Total", pivot }, {
     talent,
     ...suffixedDmgBonusNodes,
@@ -145,11 +145,11 @@ export const effectiveReaction = lookup(hit.ele, {
 const common: Data = {
   premod: {
     talent: objectFromKeyMap(allTalents, talent => bonus.talent[talent]),
-    dmgBonus: objectFromKeyMap(allDmgBonuses, key => customBonus[`${key}_dmg_` as const]),
     misc: {
       ...objectFromKeyMap(allMisc, key => customBonus[key]),
       stamina: sum(100, customBonus.stamina),
     },
+    ...objectFromKeyMap(allSuffixedDmgBonuses, key => customBonus[key]),
     ...objectFromKeyMap(allMainSubStats, stat => {
       const operands: NumNode[] = []
 
@@ -171,7 +171,7 @@ const common: Data = {
   },
   total: {
     talent: objectFromKeyMap(allTalents, talent => premod.talent[talent]),
-    ...objectFromKeyMap(allSuffixedDmgBonuses, key => premod.dmgBonus[key.slice(0, -5)]),
+    ...objectFromKeyMap(allSuffixedDmgBonuses, key => premod[key]),
     ...objectFromKeyMap(allMainSubStats, stat => premod[stat]),
     cappedCritRate: max(min(total.critRate_, unit), naught),
     ...objectFromKeyMap(allMisc, key => premod.misc[key]),

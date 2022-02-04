@@ -15,9 +15,7 @@ const burstBonus = threshold_add(input.artSet.EmblemOfSeveredFate, 4,
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     enerRech_: set2,
-    dmgBonus: {
-      burst: burstBonus,
-    },
+    burst_dmg_: burstBonus,
   },
 }, {
   burstBonus,
