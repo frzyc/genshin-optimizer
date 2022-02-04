@@ -104,7 +104,7 @@ const c6infusion = threshold(input.constellation, 6,
   undefined
 )
 const c6Dmg_ = threshold_add(input.constellation, 6,
-  match("c6", condC6, prod(datamine.constellation6.auto_, input.premod.eleMas))
+  match("c6", condC6, prod(percent(datamine.constellation6.auto_), input.premod.eleMas))
 )
 // Share `match` and `prod` between the three nodes
 const c6NormDmg_ = { ...c6Dmg_ }
@@ -138,8 +138,9 @@ const dmgFormulas = {
   passive1: Object.fromEntries(absorbableEle.map(key =>
     [key, match(condSkillAbsorption, key, singleDmgNode("atk", datamine.passive1.asorbAdd, "plunging", { hit: { ele: constant(key) } }))])),
   constellation6: {
-    bonus: threshold_add(input.constellation, 6,
-      match("c6", condC6, prod(percent(0.002), input.premod.eleMas /* TODO: Check if premod or total */)))
+    normal_dmg_: { ...c6Dmg_ },
+    charged_dmg_: { ...c6Dmg_ },
+    plunging_dmg_: { ...c6Dmg_ }
   }
 }
 
@@ -382,11 +383,15 @@ const sheet: ICharacterSheet = {
                   //   node: c6infusion
                   // },
                   {
-                    node: infoMut(c6NormDmg_, { key: "normal_dmg_" })
+                    canShow: data => data.get(c6infusion).value === "anemo",
+                    text: <ColorText color="anemo">Anemo Infusion</ColorText>
+                  },
+                  {
+                    node: infoMut(dmgFormulas.constellation6.normal_dmg_, { key: "normal_dmg_" })
                   }, {
-                    node: infoMut(c6ChargedDmg_, { key: "charged_dmg_" })
+                    node: infoMut(dmgFormulas.constellation6.charged_dmg_, { key: "charged_dmg_" })
                   }, {
-                    node: infoMut(c6PlungingDmg_, { key: "plunging_dmg_" })
+                    node: infoMut(dmgFormulas.constellation6.plunging_dmg_, { key: "plunging_dmg_" })
                   }, {
                     text: sgt("duration"),
                     value: datamine.constellation6.duration,
