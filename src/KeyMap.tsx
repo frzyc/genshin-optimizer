@@ -111,8 +111,8 @@ Object.entries(amplifyingReactions).forEach(([reaction, { name }]) => {
 
 export type StatKey = BaseKeys | EleDmgKey | EleResKey | EleEnemyResKey | HitMoveDmgKey | HitMoveIncKey | HitMoveCritRateKey | TransformativeReactionsDmgKey | AmplifyingReactionsDmgKey
 
-export type SubKey = 'default' | 'base' | 'total' | 'uncapped' | 'custom' | 'char' | 'art' | 'weapon'
-const subKeyMap: StrictDict<SubKey, string> = {
+export type KeyMapPrefix = 'default' | 'base' | 'total' | 'uncapped' | 'custom' | 'char' | 'art' | 'weapon'
+const subKeyMap: StrictDict<KeyMapPrefix, string> = {
   default: "Default", base: "Base", total: "Total", uncapped: "Uncapped",
   custom: "Custom", char: "Char.", art: "Art.", weapon: "Weapon"
 }
@@ -125,8 +125,8 @@ export default class KeyMap {
     if (this instanceof KeyMap)
       throw Error('A static class cannot be instantiated.');
   }
-  static getSubKeyStr(subkey: SubKey): string {
-    return subKeyMap[subkey]
+  static getPrefixStr(prefix: KeyMapPrefix): string {
+    return subKeyMap[prefix]
   }
   static getStr(key: string = ""): string | undefined {
     return statMap[key]

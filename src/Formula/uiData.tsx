@@ -1,6 +1,6 @@
 import { Input } from "./type"
 import ColorText from "../Components/ColoredText"
-import KeyMap from "../KeyMap"
+import KeyMap, { KeyMapPrefix } from "../KeyMap"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
 import { ComputeNode, Data, DataNode, DisplaySub, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, Variant } from "./type"
@@ -25,7 +25,7 @@ export function valueString(value: number, unit: "%" | "flat", fixed = -1): stri
 export interface NodeDisplay<V = number> {
   /** Leave this here to make sure one can use `crawlObject` on hierarchy of `NodeDisplay` */
   operation: true
-  namePrefix?: string
+  prefix?: KeyMapPrefix
   key?: string
   value: V
   /** Whether the node fails the conditional test (`threshold_add`, `match`, etc.) or consists solely of empty nodes */
@@ -124,7 +124,7 @@ export class UIData {
     }
 
     if (info) {
-      const { namePrefix, variant, key, asConst } = info
+      const { prefix, variant, key, asConst } = info
       let { pivot } = info
       result = { ...result }
 
@@ -132,7 +132,7 @@ export class UIData {
       // if (key) pivot = true
 
       if (variant) result.variant = variant
-      if (namePrefix) result.namePrefix = namePrefix
+      if (prefix) result.prefix = prefix
       if (key) result.key = key
       if (pivot) result.pivot = pivot
 
@@ -311,10 +311,10 @@ function mergeVariants<V>(operands: ContextNodeDisplay<V>[]): ContextNodeDisplay
   return unique.values().next().value
 }
 function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
-  const { key, namePrefix, dependencies, value, variant, formula, assignment, empty } = node
+  const { key, prefix, dependencies, value, variant, formula, assignment, empty } = node
   return {
     operation: true,
-    key, value, variant, namePrefix,
+    key, value, variant, prefix,
     isEmpty: empty,
     unit: (key && KeyMap.unit(key)) || "flat",
     formula, formulas: [...(assignment ? [assignment] : []), ...dependencies]
@@ -322,8 +322,8 @@ function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
 }
 
 //* Comment/uncomment this line to toggle between string formulas and JSX formulas
-function createName({ key, value, namePrefix, variant }: ContextNodeDisplay): Displayable {
-  return <><ColorText color={variant}>{namePrefix}{namePrefix ? ' ' : ''}{KeyMap.getNoUnit(key!)}</ColorText> {valueString(value, KeyMap.unit(key!))}</>
+function createName({ key, value, prefix: subkey, variant }: ContextNodeDisplay): Displayable {
+  return <><ColorText color={variant}>{subkey ? <>{KeyMap.getPrefixStr(subkey)} </> : null}{KeyMap.getNoUnit(key!)}</ColorText> {valueString(value, KeyMap.unit(key!))}</>
 }
 function mergeFormulaComponents(components: Displayable[]): Displayable {
   return <>{components.map((x, i) => <span key={i}>{x}</span>)}</>
@@ -332,8 +332,8 @@ function createAssignFormula(name: Displayable, formula: Displayable) {
   return <>{name} = {formula}</>
 }
 /*/
-function createName({ key, value, namePrefix }: ContextNodeDisplay): Displayable {
-  const prefix = namePrefix ? namePrefix + ' ' : ''
+function createName({ key, value, prefix: _prefix }: ContextNodeDisplay): Displayable {
+  const prefix = _prefix ? KeyMap.getSubKeyStr(_prefix) + ' ' : ''
   return `${prefix + KeyMap.getNoUnit(key!)} ${valueString(value, KeyMap.unit(key!))}`
 }
 function mergeFormulaComponents(components: Displayable[]): Displayable {
@@ -346,7 +346,7 @@ function createAssignFormula(name: Displayable, formula: Displayable) {
 
 interface ContextNodeDisplay<V = number> {
   key?: string
-  namePrefix?: string
+  prefix?: KeyMapPrefix
 
   pivot: boolean
   empty: boolean

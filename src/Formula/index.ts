@@ -59,10 +59,10 @@ function markAccu<T>(accu: ReadNode<number>["accu"], value: T): void {
 /** All read nodes */
 const input = setReadNodeKeys(deepClone({
   charKey: stringRead(), charEle: stringRead(), infusion: stringRead(), weaponType: stringRead(),
-  lvl: read(undefined, { key: "level", subkey: "char" }), constellation: read(), asc: read(), special: read(),
+  lvl: read(undefined, { key: "level", prefix: "char" }), constellation: read(), asc: read(), special: read(),
 
   base: objectFromKeyMap(['atk', 'hp', 'def'], key => read("add", { key })),
-  customBonus: withDefaultInfo({ subkey: "custom", pivot }, {
+  customBonus: withDefaultInfo({ prefix: "custom", pivot }, {
     ...mainSubStatNodes,
     ...suffixedDmgBonusNodes,
     ...suffixedResBonusNodes,
@@ -72,7 +72,7 @@ const input = setReadNodeKeys(deepClone({
   }),
   bonus: { talent },
   premod: { talent, misc, ...suffixedDmgBonusNodes, ...mainSubStatNodes },
-  total: withDefaultInfo({ subkey: "total", pivot }, {
+  total: withDefaultInfo({ prefix: "total", pivot }, {
     talent,
     ...suffixedDmgBonusNodes,
     ...mainSubStatNodes,
@@ -86,13 +86,13 @@ const input = setReadNodeKeys(deepClone({
     ...misc,
   }),
 
-  art: withDefaultInfo({ subkey: "art", asConst }, {
+  art: withDefaultInfo({ prefix: "art", asConst }, {
     ...mainSubStatNodes,
     ...objectFromKeyMap(allSlotKeys, _ => ({ id: stringRead(), set: stringRead() })),
   }),
   artSet: objectFromKeyMap(allArtifactSets, set => read("add", { key: set })),
 
-  weapon: withDefaultInfo({ subkey: "weapon", asConst }, {
+  weapon: withDefaultInfo({ prefix: "weapon", asConst }, {
     key: stringRead(), type: stringRead(),
 
     lvl: read(), asc: read(), refinement: read(), refineIndex: read(),
@@ -128,9 +128,9 @@ markAccu(undefined, {
   a: total.talent, b: total.cappedCritRate,
   c: Object.fromEntries(Object.keys(suffixedDmgBonusNodes).map(key => [key, total[key]]))
 })
-base.atk.info = { key: "atk", subkey: "base", pivot }
+base.atk.info = { key: "atk", prefix: "base", pivot }
 delete total.critRate_.info!.pivot
-total.critRate_.info!.subkey = "uncapped"
+total.critRate_.info!.prefix = "uncapped"
 
 // Nodes that are not used anywhere else but `common` below
 
@@ -159,12 +159,12 @@ const common: Data = {
           operands.push(prod(base[stat], premod[`${stat}_` as const]), base[stat])
           break
         case "critRate_":
-          operands.push(percent(0.05, { key: "critRate_", subkey: "default" }),
+          operands.push(percent(0.05, { key: "critRate_", prefix: "default" }),
             lookup(hit.move, objectFromKeyMap(allMoves, move => customBonus[`${move}_critRate_`]), 0)
           )
           break
         case "critDMG_":
-          operands.push(percent(0.5, { key: "critDMG_", subkey: "default" }))
+          operands.push(percent(0.5, { key: "critDMG_", prefix: "default" }))
           break
       }
       return sum(...operands, art[stat], customBonus[stat])

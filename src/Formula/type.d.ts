@@ -1,4 +1,4 @@
-import type { SubKey } from "../KeyMap"
+import type { KeyMapPrefix } from "../KeyMap"
 import type { AmplifyingReactionsKey, TransformativeReactionsKey } from "../StatConstants"
 import type { ElementKeyWithPhy } from "../Types/consts"
 import type { input } from "./index"
@@ -21,7 +21,7 @@ export type AnyNode = NumNode | StrNode | {
 
 interface Info {
   key?: string
-  subkey?: SubKey
+  prefix?: KeyMapPrefix
   variant?: Variant
   asConst?: true
   pivot?: true
