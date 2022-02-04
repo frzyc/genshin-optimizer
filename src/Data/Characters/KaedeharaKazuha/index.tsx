@@ -280,7 +280,9 @@ const sheet: ICharacterSheet = {
           },
         }, {
           conditional: { // C2
-            canShow: c2EleMas,
+            canShow: threshold_add(input.constellation, 2,
+              1, { key: `eleMas` }
+            ),
             value: condC2,
             path: condC2Path,
             name: <Translate ns="char_KaedeharaKazuha" key18="c2" />,
@@ -294,7 +296,8 @@ const sheet: ICharacterSheet = {
           },
         }, {
           conditional: { // C2 Party
-            canShow: c2PEleMas,
+            canShow: threshold_add(input.constellation, 2,
+              unmatch(target.charKey, characterKey, 1), { key: `eleMas` }),
             value: condC2P,
             path: condC2PPath,
             teamBuff: true,
