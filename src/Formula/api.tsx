@@ -147,6 +147,7 @@ export function dataObjForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Chara
     const final = mergeData([data, ...Object.values(buffs)])
     Object.entries(final).forEach(([key, value]) =>
       target[key] = value as any)
+    target["target"] = target
   })
   const origin = new UIData(undefined as any, undefined)
   const uiDataResult = Object.fromEntries(Object.entries(result).map(([key, value]) =>
