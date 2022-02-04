@@ -1,21 +1,26 @@
 import { Box, CardContent, CardHeader, Divider, ListItem } from "@mui/material"
 import { useContext } from "react"
 import ConditionalSelector from "../Conditional/ConditionalSelector"
-import { DataContext } from "../DataContext"
+import { DataContext, dataContextObj } from "../DataContext"
 import IConditional from "../Types/IConditional_WR"
 import { evalIfFunc } from "../Util/Util"
 import CardDark from "./Card/CardDark"
 import FieldDisplay, { FieldDisplayList } from "./FieldDisplay"
+import { data as dataNode } from '../Formula/utils'
+import { Data } from "../Formula/type"
 
 type ConditionalDisplayProps = {
   conditional: IConditional,
   hideHeader?: boolean,
   hideDesc?: boolean,
+  fieldContext?: dataContextObj
 }
 
-export default function ConditionalDisplay({ conditional, hideHeader = false, hideDesc = false }: ConditionalDisplayProps) {
-  const { data } = useContext(DataContext)
-  const canShow = conditional.canShow ? !data.get(conditional.canShow).isEmpty : true
+export default function ConditionalDisplay({ conditional, hideHeader = false, hideDesc = false, fieldContext }: ConditionalDisplayProps) {
+  const dataContext = useContext(DataContext)
+  const { data } = dataContext
+  // TODO: as any and as Data
+  const canShow = conditional.canShow ? !(fieldContext ? data.get(dataNode(conditional.canShow as any, { target: fieldContext.data.data[0] } as Data)).isEmpty : data.get(conditional.canShow).isEmpty) : true
   if (!canShow) return null
   const condVal = data.get(conditional.value).value
 
@@ -33,8 +38,10 @@ export default function ConditionalDisplay({ conditional, hideHeader = false, hi
         conditional={conditional}
         conditionalValue={condVal} />
     </CardContent>}
-    {fields && <FieldDisplayList sx={{ m: 0 }}>
-      {fields.map((field, i) => <ListItem key={i}><FieldDisplay field={field} /></ListItem>)}
-    </FieldDisplayList>}
+    {fields &&
+      <FieldDisplayList sx={{ m: 0 }}>
+        {fields.map((field, i) => <ListItem key={i}><FieldDisplay field={field} fieldContext={fieldContext} /></ListItem>)}
+      </FieldDisplayList>
+    }
   </CardDark>
 }

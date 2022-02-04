@@ -29,9 +29,10 @@ type CharacterCardProps = {
   onClickHeader?: (characterKey: CharacterKey) => void,
   artifactChildren?: Displayable,
   weaponChildren?: Displayable,
+  characterChildren?: Displayable,
   footer?: Displayable,
 }
-export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, onClick, onClickHeader, footer }: CharacterCardProps) {
+export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, characterChildren, onClick, onClickHeader, footer }: CharacterCardProps) {
   const { teamData: teamDataContext } = useContext(DataContext)
   const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
   const { character, characterSheet, target: data } = teamData?.[characterKey] ?? {}
@@ -65,6 +66,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
               {artifactChildren}
             </Box>
             <Stats />
+            {characterChildren}
           </CardContent>
         </ConditionalWrapper>
         {footer}

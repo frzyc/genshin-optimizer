@@ -51,7 +51,9 @@ interface ascension {
     [key: string]: number //TODO: [key: CharacterSpecializedStatKey]: number
   }
 }
-
+/**
+ * @deprecated
+ */
 export interface ICharacter {
   key: CharacterKey
   level: number
@@ -88,19 +90,26 @@ export type TalentSheet = {
   formula: IFormulaSheet
   sheets: Dict<TalentSheetElementKey, TalentSheetElement>
 }
-
+/**
+ * @deprecated
+ */
 export interface TalentSheetElement {
   name: Displayable //talentName
   img: string
   sections: DocumentSection[]
 }
+/**
+ * @deprecated
+ */
 export interface DocumentSection {
   canShow?: (stats: BasicStats) => boolean
   text?: Displayable | ((stats: BasicStats) => Displayable)
   fields?: IFieldDisplay[]
   conditional?: IConditional
 }
-
+/**
+ * @deprecated
+ */
 export interface IFormulaSheet {
   normal: ISubFormula
   charged: ISubFormula
@@ -109,9 +118,13 @@ export interface IFormulaSheet {
   burst: ISubFormula
   [name: string]: ISubFormula
 }
-
+/**
+ * @deprecated
+ */
 interface ISubFormula {
   [name: string]: (stats: BasicStats) => FormulaItem
 }
-
+/**
+ * @deprecated
+ */
 export type FormulaItem = [(s: ICalculatedStats) => number, string[]]

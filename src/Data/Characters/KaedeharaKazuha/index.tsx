@@ -79,6 +79,7 @@ const condSwirls = Object.fromEntries(absorbableEle.map(e => [e, customStringRea
 const asc4 = Object.fromEntries(absorbableEle.map(ele =>
   [`${ele}_dmg_`, threshold_add(input.asc, 4,
     match("swirl", condSwirls[ele],
+      // TODO: this percent of 0.04% is displayed as 0.0%
       prod(percent(datamine.passive2.elemas_dmg_), input.premod.eleMas)
     ), { key: `${ele}_dmg_`, variant: ele })]))
 

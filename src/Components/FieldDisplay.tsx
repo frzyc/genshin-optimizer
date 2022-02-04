@@ -2,7 +2,7 @@ import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, List, styled, Typography } from "@mui/material";
 import React, { useContext, useMemo } from 'react';
-import { DataContext } from "../DataContext";
+import { DataContext, dataContextObj } from "../DataContext";
 import { NodeDisplay, valueString } from "../Formula/api";
 import KeyMap from "../KeyMap";
 import { IBasicFieldDisplay, IFieldDisplay } from "../Types/IFieldDisplay_WR";
@@ -10,16 +10,19 @@ import { evalIfFunc } from "../Util/Util";
 import BootstrapTooltip from "./BootstrapTooltip";
 import ColorText from "./ColoredText";
 import StatIcon from "./StatIcon";
+import { data as dataNode } from '../Formula/utils'
+import { Data } from "../Formula/type";
 
-export default function FieldDisplay({ field }: { field: IFieldDisplay }) {
+export default function FieldDisplay({ field, fieldContext }: { field: IFieldDisplay, fieldContext?: dataContextObj }) {
   const { data, oldData } = useContext(DataContext)
   const canShow = useMemo(() => !field?.canShow || field?.canShow?.(data), [field, data])
   if (!canShow) return null
   if ("node" in field) {
-    const node = data.get(field.node)
+    // TODO: remove as Data
+    const node = fieldContext ? data.get(dataNode(field.node, { target: fieldContext.data.data[0] } as Data)) : data.get(field.node)
     if (node.isEmpty) return null
     if (oldData) {
-      const oldNode = oldData.get(field.node)
+      const oldNode = fieldContext ? oldData.get(dataNode(field.node, { target: fieldContext.oldData!.data[0] } as Data)) : oldData.get(field.node)
       const oldValue = oldNode.isEmpty ? 0 : oldNode.value
       return <NodeFieldDisplay node={node} oldValue={oldValue} suffix={field.textSuffix} />
     }

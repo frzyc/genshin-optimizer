@@ -72,7 +72,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
     characterSheet,
     mainStatAssumptionLevel,
     data: (newteamData ? newteamData[characterKey]!.target : charUIData),
-    teamData,
+    teamData: (newteamData ? newteamData : teamData),
     oldData: (compareData && newteamData) ? charUIData : undefined,
     characterDispatch
   }
