@@ -1,7 +1,6 @@
-import { AmplifyingReactionsKey, TransformativeReactionsKey } from "../StatConstants"
-import type { MainStatKey, SubstatKey } from "../Types/artifact"
-import type { ArtifactSetKey, CharacterKey, ElementKey, ElementKeyWithPhy, ReactionModeKey, WeaponKey } from "../Types/consts"
-import type { Path } from "../Util/KeyPathUtil"
+import type { SubKey } from "../KeyMap"
+import type { AmplifyingReactionsKey, TransformativeReactionsKey } from "../StatConstants"
+import type { ElementKeyWithPhy } from "../Types/consts"
 import type { input } from "./index"
 
 export type NumNode = ComputeNode | ThresholdNode |
@@ -22,7 +21,7 @@ export type AnyNode = NumNode | StrNode | {
 
 interface Info {
   key?: string
-  namePrefix?: string
+  subkey?: SubKey
   variant?: Variant
   asConst?: true
   pivot?: true

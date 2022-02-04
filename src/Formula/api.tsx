@@ -10,6 +10,7 @@ import { Data, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
 import { constant, customRead, frac, infoMut, percent, prod, resetData, subscript, sum, unit } from "./utils";
 
+const asConst = true
 
 function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel: number = 0): Data {
   const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level))
@@ -182,15 +183,15 @@ const trans = {
   ...objectFromKeyMap(["overloaded", "electrocharged", "superconduct", "shattered"] as const, reaction => {
     const { multi, variants: [ele] } = transformativeReactions[reaction]
     return infoMut(prod(
-      infoMut(prod(multi, transMulti1), { asConst: true }),
-      sum(unit, prod(transMulti2, input.total[`${reaction}_dmg_`])),
+      infoMut(prod(multi, transMulti1), { asConst }),
+      sum(unit, transMulti2, input.total[`${reaction}_dmg_`]),
       input.enemy.resMulti[ele]),
       { key: `${reaction}_hit`, variant: reaction })
   }),
   swirl: objectFromKeyMap(transformativeReactions.swirl.variants, ele => infoMut(
     prod(
-      infoMut(prod(transformativeReactions.swirl.multi, transMulti1), { asConst: true }),
-      sum(unit, prod(transMulti2, input.total.swirl_dmg_)),
+      infoMut(prod(transformativeReactions.swirl.multi, transMulti1), { asConst }),
+      sum(unit, transMulti2, input.total.swirl_dmg_),
       input.enemy.resMulti[ele]),
     { key: `${ele}_swirl_hit`, variant: ele }))
 }
