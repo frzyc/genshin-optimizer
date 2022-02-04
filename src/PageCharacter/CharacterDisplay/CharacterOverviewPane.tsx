@@ -180,9 +180,9 @@ function MainStatsCards() {
             <StatInput
               name={<span>{StatIcon[statKey]} {statName}</span>}
               placeholder={KeyMap.getStr(statKey)}
-              value={character.bonusStats[statKey] ?? (statKey === "stamina" ? 100 : 0)}
+              value={character.bonusStats[statKey] ?? 0}
               percent={KeyMap.unit(statKey) === "%"}
-              defaultValue={statKey === "stamina" ? 100 : undefined}
+              defaultValue={undefined}
               onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
             />
           </Grid>

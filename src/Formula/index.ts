@@ -5,44 +5,43 @@ import { crawlObject, deepClone, objectFromKeyMap } from "../Util/Util"
 import { Data, Info, Input, NumNode, ReadNode, StrNode } from "./type"
 import { constant, frac, lookup, matchStr, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, sum, unit } from "./utils"
 
+const asConst = true as const, pivot = true as const
+
 const allElements = allElementsWithPhy
 const allTalents = ["auto", "skill", "burst"] as const
 const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
 const allMainSubStats = [...new Set([...allMainStatKeys, ...allSubstats] as const)]
 const allTransformative = ["overloaded", "shattered", "electrocharged", "superconduct", "swirl"] as const
 const allAmplifying = ["vaporize", "melt"] as const
-const allDmgBonuses = ["all", ...allTransformative, ...allAmplifying, ...allMoves] as const
-const allSuffixedDmgBonuses = allDmgBonuses.map(x => `${x}_dmg_` as const)
-const allSuffixedEnemyResBonuses = allEleEnemyResKeys
 const allMisc = [
   "stamina", "staminaDec_", "staminaSprintDec_", "staminaGlidingDec_", "staminaChargedDec_",
   "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_"
 ] as const
 
-const asConst = true as const, pivot = true as const
+const allModStats = [
+  ...allMainSubStats,
+  ...(["all", ...allTransformative, ...allAmplifying, ...allMoves] as const).map(x => `${x}_dmg_` as const),
+]
+const allNonModStats = [
+  ...allElements.map(x => `${x}_res_` as const),
+  ...allMoves.map(x => `${x}_critRate_` as const),
+  ...allEleEnemyResKeys,
+  ...allMisc,
+]
 
 const talent = objectFromKeyMap(allTalents, _ => read())
-const misc = objectFromKeyMap(allMisc, key => read(undefined, { key }))
-
-const mainSubStatNodes = objectFromKeyMap(allMainSubStats, key => read(undefined, { key }))
-
-const dmgBonus = objectFromKeyMap(allDmgBonuses, key =>
-  read(undefined, { key: `${key}_dmg_` as const }))
-const suffixedDmgBonusNodes = objectFromKeyMap(allSuffixedDmgBonuses, key =>
-  read(undefined, { key }))
-const suffixedResBonusNodes = objectFromKeyMap(allElements.map(x => `${x}_res_` as const), key =>
-  read(undefined, { key, variant: key.slice(0, -5) as any }))
-const suffixedCritRateBonusNodes = objectFromKeyMap(allMoves.map(x => `${x}_critRate_` as const), key =>
-  read(undefined, { key }))
-const suffixedEnemyResNodes = objectFromKeyMap(allSuffixedEnemyResBonuses, key => read(undefined, { key, variant: key.slice(0, -10) as any }))
+const allMainSubStatNodes = objectFromKeyMap(allMainSubStats, key => read(undefined, { key }))
+const allModStatNodes = objectFromKeyMap(allModStats, key => read(undefined, { key }))
+const allNonModStatNodes = objectFromKeyMap(allNonModStats, key => read(undefined, { key }))
 
 for (const ele of allElements) {
-  mainSubStatNodes[`${ele}_dmg_`].info!.variant = ele
-  suffixedResBonusNodes[`${ele}_res_`].info!.variant = ele
+  allMainSubStatNodes[`${ele}_dmg_`].info!.variant = ele
+  allNonModStatNodes[`${ele}_res_`].info!.variant = ele
+  allNonModStatNodes[`${ele}_enemyRes_`].info!.variant = ele
+  allModStatNodes[`${ele}_dmg_`].info!.variant = ele
 }
 for (const reaction of [...allTransformative, ...allAmplifying]) {
-  dmgBonus[reaction].info!.variant = reaction
-  suffixedDmgBonusNodes[`${reaction}_dmg_`].info!.variant = reaction
+  allModStatNodes[`${reaction}_dmg_`].info!.variant = reaction
 }
 
 function withDefaultInfo<T>(info: Info, value: T): T {
@@ -63,31 +62,19 @@ const input = setReadNodeKeys(deepClone({
 
   base: objectFromKeyMap(['atk', 'hp', 'def'], key => read("add", { key })),
   customBonus: withDefaultInfo({ prefix: "custom", pivot }, {
-    ...mainSubStatNodes,
-    ...suffixedDmgBonusNodes,
-    ...suffixedResBonusNodes,
-    ...suffixedCritRateBonusNodes,
-    ...suffixedEnemyResNodes,
-    ...misc,
+    ...allModStatNodes, ...allNonModStatNodes,
   }),
   bonus: { talent },
-  premod: { talent, misc, ...suffixedDmgBonusNodes, ...mainSubStatNodes },
+  premod: { talent, ...allModStatNodes },
   total: withDefaultInfo({ prefix: "total", pivot }, {
     talent,
-    ...suffixedDmgBonusNodes,
-    ...mainSubStatNodes,
+    ...allModStatNodes, ...allNonModStatNodes,
     /** Total Crit Rate capped to [0%, 100%] */
     cappedCritRate: read(undefined, { key: "critRate_" }),
-
-    ...suffixedEnemyResNodes,
-    ...suffixedResBonusNodes,
-    ...suffixedCritRateBonusNodes,
-
-    ...misc,
   }),
 
   art: withDefaultInfo({ prefix: "art", asConst }, {
-    ...mainSubStatNodes,
+    ...allMainSubStatNodes,
     ...objectFromKeyMap(allSlotKeys, _ => ({ id: stringRead(), set: stringRead() })),
   }),
   artSet: objectFromKeyMap(allArtifactSets, set => read("add", { key: set })),
@@ -124,10 +111,11 @@ const { base, bonus, customBonus, premod, total, art, hit, enemy } = input
 // Adjust `info` for printing
 markAccu('add', { base, bonus, customBonus, premod, total, art })
 crawlObject(premod, [], (x: any) => x.operation, (x: NumNode | StrNode) => delete x.info)
-markAccu(undefined, {
-  a: total.talent, b: total.cappedCritRate,
-  c: Object.fromEntries(Object.keys(suffixedDmgBonusNodes).map(key => [key, total[key]]))
-})
+markAccu(undefined, { a: total.talent, b: total.cappedCritRate, })
+for (const [key, value] of Object.entries(total)) {
+  if (key.endsWith("_dmg_"))
+    delete (value as ReadNode<number>).accu
+}
 base.atk.info = { key: "atk", prefix: "base", pivot }
 delete total.critRate_.info!.pivot
 total.critRate_.info!.prefix = "uncapped"
@@ -146,40 +134,29 @@ export const effectiveReaction = lookup(hit.ele, {
 const common: Data = {
   premod: {
     talent: objectFromKeyMap(allTalents, talent => bonus.talent[talent]),
-    misc: {
-      ...objectFromKeyMap(allMisc, key => customBonus[key]),
-      stamina: sum(100, customBonus.stamina),
-    },
-    ...objectFromKeyMap(allSuffixedDmgBonuses, key => customBonus[key]),
-    ...objectFromKeyMap(allMainSubStats, stat => {
+    ...objectFromKeyMap(allModStats, key => {
       const operands: NumNode[] = []
-
-      switch (stat) {
+      switch (key) {
         case "atk": case "def": case "hp":
-          operands.push(prod(base[stat], premod[`${stat}_` as const]), base[stat])
+          operands.push(prod(base[key], sum(unit, premod[`${key}_`])))
           break
         case "critRate_":
-          operands.push(percent(0.05, { key: "critRate_", prefix: "default" }),
-            lookup(hit.move, objectFromKeyMap(allMoves, move => customBonus[`${move}_critRate_`]), 0)
-          )
+          operands.push(percent(0.05, { key: "critRate", prefix: "default" }),
+            lookup(hit.move, objectFromKeyMap(allMoves, move => customBonus[`${move}_critRate_`]), 0))
           break
         case "critDMG_":
           operands.push(percent(0.5, { key: "critDMG_", prefix: "default" }))
-          break
       }
-      return sum(...operands, art[stat], customBonus[stat])
+      return sum(...[...operands, art[key], customBonus[key]].filter(x => x))
     }),
   },
   total: {
     talent: objectFromKeyMap(allTalents, talent => premod.talent[talent]),
-    ...objectFromKeyMap(allSuffixedDmgBonuses, key => premod[key]),
-    ...objectFromKeyMap(allMainSubStats, stat => premod[stat]),
-    cappedCritRate: max(min(total.critRate_, unit), naught),
-    ...objectFromKeyMap(allMisc, key => premod.misc[key]),
+    ...objectFromKeyMap(allModStats, key => premod[key]),
+    ...objectFromKeyMap(allNonModStats, key => customBonus[key]),
+    stamina: sum(constant(100, { key: "stamina", prefix: "default" }), customBonus.stamina),
 
-    ...objectFromKeyMap(allElements.map(ele => `${ele}_res_` as const), key => customBonus[key]),
-    ...objectFromKeyMap(allSuffixedEnemyResBonuses, key => customBonus[key]),
-    ...objectFromKeyMap(allMoves.map(x => `${x}_critRate_` as const), key => customBonus[key])
+    cappedCritRate: max(min(total.critRate_, unit), naught),
   },
 
   hit: {
