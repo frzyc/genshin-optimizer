@@ -38,7 +38,7 @@ import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './backgr
 import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import ChartCard from './ChartCard';
-import { dynamicData, filterArts, mergeBuilds, mergePlot, pruneOrder, pruneRange, reaffine } from './common';
+import { filterArts, mergeBuilds, mergePlot, pruneOrder, pruneRange, reaffine } from './common';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
@@ -49,7 +49,7 @@ import HitModeCard from './Components/HitModeCard';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import TeamBuffCard from './Components/TeamBuffCard';
-import { artSetPerm, breakSetPermBySet, compactArtifacts, countBuilds } from './foreground';
+import { artSetPerm, breakSetPermBySet, compactArtifacts, countBuilds, dynamicData } from './foreground';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 

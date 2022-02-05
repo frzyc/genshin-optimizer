@@ -1,10 +1,18 @@
 import Artifact from "../Data/Artifacts/Artifact";
 import { SetFilter } from "../Types/Build";
 import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
-import { objectKeyMap } from "../Util/Util";
+import { deepClone, objectKeyMap, objectMap } from "../Util/Util";
 import { filterArts } from "./common";
 import type { ArtifactBuildData, ArtifactsBySlot, RequestFilter } from "./background";
-import { ICachedArtifact } from "../Types/artifact_WR";
+import { allMainStatKeys, allSubstats, ICachedArtifact } from "../Types/artifact_WR";
+import { setReadNodeKeys } from "../Formula/utils";
+import { input } from "../Formula";
+
+const dynamic = setReadNodeKeys(deepClone({ dyn: { ...input.art, ...input.artSet } }))
+export const dynamicData = {
+  art: objectKeyMap([...allMainStatKeys, ...allSubstats], key => dynamic.dyn[key]),
+  artSet: objectMap(input.artSet, (_, key) => dynamic.dyn[key]),
+}
 
 export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLevel: number): ArtifactsBySlot {
   const result: ArtifactsBySlot = {
