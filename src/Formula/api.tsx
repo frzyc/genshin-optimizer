@@ -91,8 +91,8 @@ export function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Charac
   // enough to attempt for the understanding of this abomination.
 
   const mergedData = Object.entries(teamData).map(([key, data]) => [key, { ...mergeData(data) }] as [CharacterKey, Data])
-  const result = Object.fromEntries(mergedData.map(([key, data]) =>
-    [key, { targetRef: {} as Data, buffs: [data], calcs: {} as Dict<CharacterKey, Data> }]))
+  const result = Object.fromEntries(mergedData.map(([key]) =>
+    [key, { targetRef: {} as Data, buffs: [] as Data[], calcs: {} as Dict<CharacterKey, Data> }]))
 
   const customReadNodes = {}
   function getReadNode(path: readonly string[]): ReadNode<number> {
@@ -146,7 +146,8 @@ export function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Charac
   mergedData.forEach(([targetKey, data]) => {
     delete data.teamBuff
     const { targetRef, buffs } = result[targetKey]
-    Object.assign(targetRef, mergeData(buffs))
+    const buff = mergeData(buffs)
+    Object.assign(targetRef, mergeData([data, buff, { teamBuff: buff }]))
     targetRef["target"] = targetRef
   })
   const origin = new UIData(undefined as any, undefined)
