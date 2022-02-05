@@ -12,7 +12,7 @@ import { input } from '../../Formula';
 import useForceUpdate from '../../ReactHooks/useForceUpdate';
 import usePromise from '../../ReactHooks/usePromise';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
-import { objectFromKeyMap } from '../../Util/Util';
+import { objectKeyMap } from '../../Util/Util';
 import StatDisplayComponent from '../../Components/Character/StatDisplayComponent';
 
 function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
@@ -41,7 +41,7 @@ function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
   const unequipArts = useCallback(() => {
     if (!character) return
     if (!window.confirm("Do you want to move all currently equipped artifacts to inventory?")) return
-    database.equipArtifacts(character.key, objectFromKeyMap(allSlotKeys, () => ""))
+    database.equipArtifacts(character.key, objectKeyMap(allSlotKeys, _ => ""))
   }, [character, database])
   const artIds = allSlotKeys.map(slotKey => data.get(input.art[slotKey].id).value)
   const artSetNums = Object.entries(input.artSet).map(([key, value]) => [key, data.get(value).value]) as [ArtifactSetKey, number][]

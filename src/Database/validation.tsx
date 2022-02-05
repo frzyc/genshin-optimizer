@@ -7,7 +7,7 @@ import { ICachedCharacter, ICharacter } from "../Types/character_WR";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
 import { IWeapon, ICachedWeapon } from "../Types/weapon";
 import Artifact from "../Data/Artifacts/Artifact";
-import { objectFromKeyMap } from "../Util/Util";
+import { objectKeyMap } from "../Util/Util";
 
 // MIGRATION STEP: Always keep validate/parse in sync with the latest format
 
@@ -152,7 +152,7 @@ function parseSubstats(obj: any): ISubstat[] {
 export function validateCharacter(flex: ICharacter): ICachedCharacter {
   // TODO: Add more validations to make sure the returned value is a "valid" character
   return {
-    equippedArtifacts: objectFromKeyMap(allSlotKeys, () => ""),
+    equippedArtifacts: objectKeyMap(allSlotKeys, () => ""),
     equippedWeapon: "",
     ...flex,
   }

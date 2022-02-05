@@ -1,7 +1,7 @@
 import { initialBuildSettings } from "../PageBuild/BuildSetting"
 import { ICachedCharacter } from "../Types/character_WR"
 import { allSlotKeys, CharacterKey } from "../Types/consts"
-import { objectFromKeyMap } from "./Util"
+import { objectKeyMap } from "./Util"
 
 export function initialCharacter(key: CharacterKey): ICachedCharacter {
   return {
@@ -10,7 +10,7 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     ascension: 0,
     hitMode: "avgHit",
     reactionMode: "",
-    equippedArtifacts: objectFromKeyMap(allSlotKeys, () => ""),
+    equippedArtifacts: objectKeyMap(allSlotKeys, () => ""),
     equippedWeapon: "",
     conditional: {},
     bonusStats: {},

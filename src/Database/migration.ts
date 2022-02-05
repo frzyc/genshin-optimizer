@@ -197,7 +197,7 @@ function migrateV7ToV8(storage: DBStorage) {
       if (typeof character.talentLevelKeys === "object") {
         character.talent = Object.fromEntries(
           Object.entries(character.talentLevelKeys)
-            .map(([key, value]: [any, any]) => [key, value + 1]))
+            .map(([key, value]) => [key, value as number + 1]))
       }
 
       //rename buildSettings.useLockedArts to buildSettings.useExcludedArts

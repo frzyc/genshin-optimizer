@@ -1,7 +1,7 @@
 import { ICachedArtifact, IArtifact } from "../Types/artifact_WR";
 import { ICachedCharacter, ICharacter } from "../Types/character_WR";
 import { allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
-import { getRandomInt, objectFromKeyMap } from "../Util/Util";
+import { getRandomInt, objectKeyMap } from "../Util/Util";
 import { DataManager } from "./DataManager";
 import { migrate } from "./migration";
 import { validateArtifact, parseCharacter, parseArtifact, removeArtifactCache, validateCharacter, removeCharacterCache, parseWeapon, validateWeapon, removeWeaponCache } from "./validation";
@@ -40,7 +40,7 @@ export class ArtCharDatabase {
         }
         const character = validateCharacter(flex)
         // Use relations from artifact
-        character.equippedArtifacts = objectFromKeyMap(allSlotKeys, () => "")
+        character.equippedArtifacts = objectKeyMap(allSlotKeys, () => "")
 
         this.chars.set(flex.key, character)
         // Save migrated version back to db

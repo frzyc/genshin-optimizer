@@ -1,5 +1,5 @@
 
-import { objectFromKeyMap } from "../Util/Util"
+import { objectKeyMap } from "../Util/Util"
 import type { AnyNode, Data, DataNode, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode } from "./type"
 
 type Num = number | NumNode
@@ -90,7 +90,7 @@ export function setReadNodeKeys<T extends NodeList>(nodeList: T, prefix: string[
       throw new Error(`Found ${(nodeList as any).operation} node while making reader`)
     return { ...nodeList, path: prefix }
   } else {
-    return objectFromKeyMap(Object.keys(nodeList), key =>
+    return objectKeyMap(Object.keys(nodeList), key =>
       setReadNodeKeys(nodeList[key], [...prefix, key])) as any
   }
 }

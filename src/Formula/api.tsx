@@ -4,7 +4,7 @@ import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character_WR";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import { crawlObject, deepClone, layeredAssignment, objectFromKeyMap, objPathValue } from "../Util/Util";
+import { crawlObject, deepClone, layeredAssignment, objectKeyMap, objPathValue } from "../Util/Util";
 import { input, teamBuff } from "./index";
 import { Data, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
@@ -45,7 +45,7 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     },
     enemy: {
       res: {
-        ...objectFromKeyMap(allElementsWithPhy, ele =>
+        ...objectKeyMap(allElementsWithPhy, ele =>
           percent((char.enemyOverride[`${ele}_enemyRes_`] ?? 10) / 100)),
       },
       level: constant(char.enemyOverride.enemyLevel ?? char.level),
@@ -181,7 +181,7 @@ function computeUIData(data: Data[]): UIData {
 const transMulti1 = subscript(input.lvl, transformativeReactionLevelMultipliers)
 const transMulti2 = prod(16, frac(input.total.eleMas, 2000))
 const trans = {
-  ...objectFromKeyMap(["overloaded", "electrocharged", "superconduct", "shattered"] as const, reaction => {
+  ...objectKeyMap(["overloaded", "electrocharged", "superconduct", "shattered"] as const, reaction => {
     const { multi, variants: [ele] } = transformativeReactions[reaction]
     return infoMut(prod(
       infoMut(prod(multi, transMulti1), { asConst }),
@@ -189,7 +189,7 @@ const trans = {
       input.enemy.resMulti[ele]),
       { key: `${reaction}_hit`, variant: reaction })
   }),
-  swirl: objectFromKeyMap(transformativeReactions.swirl.variants, ele => infoMut(
+  swirl: objectKeyMap(transformativeReactions.swirl.variants, ele => infoMut(
     prod(
       infoMut(prod(transformativeReactions.swirl.multi, transMulti1), { asConst }),
       sum(unit, transMulti2, input.total.swirl_dmg_),

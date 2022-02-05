@@ -5,13 +5,14 @@ import { input } from "../../Formula";
 import { Data, DisplaySub, NumNode, ReadNode } from "../../Formula/type";
 import { constant, data, infoMut, prod, subscript, sum } from "../../Formula/utils";
 import { mergeData, reactions } from "../../Formula/api";
+import { objectKeyMap, objectMap } from "../../Util/Util";
 
 export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[]
 
 // TODO: Remove this conversion after changing the file format
-const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
+const charCurves = objectMap(_charCurves, value => [0, ...Object.values(value)])
 
-const commonBasic = Object.fromEntries([...allSubstats, "def"].map(key => [key, input.total[key]]))
+const commonBasic = objectKeyMap([...allSubstats, "def"], key => input.total[key])
 commonBasic.critRate_ = input.total.cappedCritRate
 
 function getTalentType(move: "normal" | "charged" | "plunging" | "skill" | "burst") {

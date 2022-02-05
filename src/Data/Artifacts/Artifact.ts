@@ -2,7 +2,7 @@ import { ArtifactSlotsData, ArtifactStarsData } from './ArtifactData';
 import { allSubstats, ICachedArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
 import { allRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../../Types/consts';
 import { valueString } from '../../Util/UIUtil';
-import { clampPercent, objectFromKeyMap } from '../../Util/Util';
+import { clampPercent, objectKeyMap } from '../../Util/Util';
 import ArtifactMainStatsData from './artifact_main_gen.json';
 import ArtifactSubstatsData from './artifact_sub_gen.json';
 import ArtifactSubstatLookupTable from './artifact_sub_rolls_gen.json';
@@ -20,7 +20,7 @@ export default class Artifact {
     ArtifactSlotsData[slotKey].stats
 
   static splitArtifactsBySlot = (databaseObj: ICachedArtifact[]) =>
-    objectFromKeyMap(allSlotKeys, slotKey => databaseObj.filter(art => art.slotKey === slotKey))
+    objectKeyMap(allSlotKeys, slotKey => databaseObj.filter(art => art.slotKey === slotKey))
 
   //MAIN STATS
   static mainStatValues = (numStar: Rarity, statKey: MainStatKey): readonly number[] => {
@@ -41,7 +41,7 @@ export default class Artifact {
     return Math.max(...ArtifactSubstatsData[rarity][substatKey])
   }
 
-  static maxSubstatRollEfficiency = objectFromKeyMap(allRarities,
+  static maxSubstatRollEfficiency = objectKeyMap(allRarities,
     rarity => 100 * Math.max(...allSubstats.map(substat =>
       Artifact.maxSubstatValues(substat, rarity) /
       Artifact.maxSubstatValues(substat, maxStar))))

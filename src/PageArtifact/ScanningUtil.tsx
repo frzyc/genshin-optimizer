@@ -5,7 +5,7 @@ import { allMainStatKeys, allSubstats, IArtifact, ICachedArtifact, ISubstat, Mai
 import { allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
 import { BorrowManager } from './BorrowManager';
 import { valueStringWithUnit } from '../Util/UIUtil';
-import { clamp, hammingDistance, objectFromKeyMap } from '../Util/Util';
+import { clamp, hammingDistance, objectKeyMap } from '../Util/Util';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import KeyMap from '../KeyMap';
@@ -147,7 +147,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   }]
 
   // Rate each rarity
-  const rarityRates = objectFromKeyMap(allArtifactRarities, rarity => {
+  const rarityRates = objectKeyMap(allArtifactRarities, rarity => {
     let score = 0
     if (textSetKeys.size) {
       const count = [...textSetKeys].reduce((count, set) => count + (sheets[set].rarity.includes(rarity) ? 1 : 0), 0)

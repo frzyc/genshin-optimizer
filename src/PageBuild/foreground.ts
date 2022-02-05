@@ -1,7 +1,7 @@
 import Artifact from "../Data/Artifacts/Artifact";
 import { SetFilter } from "../Types/Build";
 import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
-import { objectFromKeyMap } from "../Util/Util";
+import { objectKeyMap } from "../Util/Util";
 import { filterArts } from "./common";
 import type { ArtifactBuildData, ArtifactsBySlot, RequestFilter } from "./background";
 import { ICachedArtifact } from "../Types/artifact_WR";
@@ -30,7 +30,7 @@ export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLeve
     result.values[art.slotKey].push(data)
     Object.keys(data.values).forEach(x => keys.add(x))
   }
-  result.base = Object.fromEntries([...keys].map(key => [key, 0]))
+  result.base = objectKeyMap([...keys], _ => 0)
   return result
 }
 export function* artSetPerm(filters: SetFilter[]): Iterable<RequestFilter> {
@@ -62,7 +62,7 @@ export function* artSetPerm(filters: SetFilter[]): Iterable<RequestFilter> {
       yield* check(newRequest, newFilters, remainingSlots - 1)
     }
   }
-  yield* check(objectFromKeyMap(allSlotKeys, _ => noFilter), filters.map(filter => {
+  yield* check(objectKeyMap(allSlotKeys, _ => noFilter), filters.map(filter => {
     const result: Dict<ArtifactSetKey, number> = {}
     filter.forEach(({ key, num }) => key && num && (result[key] = (result[key] ?? 0) + num))
     return result

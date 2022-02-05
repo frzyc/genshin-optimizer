@@ -4,7 +4,7 @@ import { Translate } from '../../../Components/Translate'
 import { input, target } from "../../../Formula/index"
 import { constant, customStringRead, infoMut, match, percent, prod, sum, threshold_add, unmatch } from "../../../Formula/utils"
 import { CharacterKey, Rarity, WeaponTypeKey } from '../../../Types/consts'
-import { objectFromKeyMap } from '../../../Util/Util'
+import { objectKeyMap } from '../../../Util/Util'
 import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
 import { absorbableEle, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { conditionalHeader, normalSrc, sgt, st, talentTemplate } from '../SheetUtil_WR'
@@ -84,7 +84,7 @@ const asc4 = match("hit", condSkillHitOpponent,
       prod(percent(datamine.passive2.eleMas_), input.premod.eleMas))), { key: "eleMas" })
 const c6Base = threshold_add(input.constellation, 6, percent(0.2))
 // TODO: Add to team buff
-const c6Bonus = objectFromKeyMap(absorbableEle.map(ele => `${ele}_dmg_` as const), key =>
+const c6Bonus = objectKeyMap(absorbableEle.map(ele => `${ele}_dmg_` as const), key =>
   match(condAbsorption, key.slice(0, -5), c6Base, { key }))
 
 export const dmgFormulas = {

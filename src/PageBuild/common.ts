@@ -3,7 +3,7 @@ import { allOperations, constantFold } from "../Formula/optimization";
 import { ConstantNode, NumNode } from "../Formula/type";
 import { constant, customRead, max, min } from "../Formula/utils";
 import { allSlotKeys } from "../Types/consts";
-import { assertUnreachable, objectFromKeyMap } from "../Util/Util";
+import { assertUnreachable, objectKeyMap, objectMap } from "../Util/Util";
 import type { ArtifactBuildData, ArtifactsBySlot, Build, DynStat, PlotData, RequestFilter } from "./background";
 
 type DynMinMax = { [key in string]: MinMax }
@@ -62,14 +62,14 @@ export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot): { nodes: NumN
 
   function reaffineArt(stat: DynStat): DynStat {
     const values = constantFold([...affineMap.keys()], {
-      dyn: Object.fromEntries(Object.entries(stat).map(([key, value]) => [key, constant(value)]))
+      dyn: objectMap(stat, (value) => constant(value))
     } as any, _ => true)
     return Object.fromEntries([...affineMap.values()].map((v, i) => [v.path[1], (values[i] as ConstantNode<number>).value]))
   }
   const result = {
     nodes, arts: {
       base: reaffineArt(arts.base),
-      values: objectFromKeyMap(allSlotKeys, slot =>
+      values: objectKeyMap(allSlotKeys, slot =>
         arts.values[slot].map(({ id, set, values }) => ({ id, set, values: reaffineArt(values) })))
     }
   }
@@ -82,7 +82,7 @@ export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot): { nodes: NumN
 /** Remove artifacts that cannot be in top `numTop` builds */
 export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySlot {
   let progress = false
-  const values = objectFromKeyMap(allSlotKeys, slot => {
+  const values = objectKeyMap(allSlotKeys, slot => {
     const list = arts.values[slot]
     const newList = list.filter(art => {
       let count = 0
@@ -103,12 +103,12 @@ export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: num
   const wrap = { nodes, arts }, internalWrap = { anyProgress: false }
   const baseRange = Object.fromEntries(Object.entries(wrap.arts.base).map(([key, x]) => [key, { min: x, max: x }]))
   while (true) {
-    const artRanges = objectFromKeyMap(allSlotKeys, slot => computeArtRange(wrap.arts.values[slot]))
-    const otherArtRanges = objectFromKeyMap(allSlotKeys, key =>
+    const artRanges = objectKeyMap(allSlotKeys, slot => computeArtRange(wrap.arts.values[slot]))
+    const otherArtRanges = objectKeyMap(allSlotKeys, key =>
       addArtRange(Object.entries(artRanges).map(a => a[0] === key ? baseRange : a[1]).filter(x => x)))
 
     let progress = false
-    const values = objectFromKeyMap(allSlotKeys, slot => {
+    const values = objectKeyMap(allSlotKeys, slot => {
       const result = wrap.arts.values[slot].filter(art => {
         const read = addArtRange([computeArtRange([art]), otherArtRanges[slot]])
         const newRange = computeNodeRange(wrap.nodes, read)
@@ -248,7 +248,7 @@ function computeMinMax(values: readonly number[], minMaxes: readonly MinMax[] = 
 export function filterArts(arts: ArtifactsBySlot, filters: RequestFilter): ArtifactsBySlot {
   return {
     base: arts.base,
-    values: objectFromKeyMap(allSlotKeys, slot => {
+    values: objectKeyMap(allSlotKeys, slot => {
       const filter = filters[slot]
       switch (filter.kind) {
         case "id": return arts.values[slot].filter(art => filter.ids.has(art.id))
