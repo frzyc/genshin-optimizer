@@ -110,7 +110,6 @@ const { base, bonus, customBonus, premod, total, art, hit, enemy } = input
 
 // Adjust `info` for printing
 markAccu('add', { base, bonus, customBonus, premod, total, art })
-crawlObject(premod, [], (x: any) => x.operation, (x: NumNode | StrNode) => delete x.info)
 markAccu(undefined, { a: total.auto, b: total.skill, c: total.burst, d: total.cappedCritRate, })
 for (const [key, value] of Object.entries(total)) {
   if (key.endsWith("_dmg_"))
