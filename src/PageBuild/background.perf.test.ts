@@ -5,8 +5,8 @@ import { uiDataForTeam, mergeData } from '../Formula/api';
 import { optimize } from '../Formula/optimization';
 import { customRead } from '../Formula/utils';
 import { getTeamData } from '../ReactHooks/useTeamData';
-import { compactArtifacts } from './foreground';
-import { reaffine, dynamicData } from './common';
+import { compactArtifacts, dynamicData } from './foreground';
+import { reaffine } from './common';
 import { finalize, request, setup } from './background';
 import * as data1 from "./background.perf.test.json"
 
