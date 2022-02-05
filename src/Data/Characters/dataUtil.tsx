@@ -1,11 +1,11 @@
-import _charCurves from "./expCurve_gen.json";
-import { allMainStatKeys, allSubstats, MainStatKey } from "../../Types/artifact";
-import { CharacterKey, ElementKey } from "../../Types/consts";
 import { input } from "../../Formula";
-import { Data, DisplaySub, NumNode, ReadNode } from "../../Formula/type";
-import { constant, data, infoMut, prod, subscript, sum } from "../../Formula/utils";
 import { mergeData, reactions } from "../../Formula/api";
-import { objectKeyMap, objectMap } from "../../Util/Util";
+import { Data, DisplaySub, NumNode } from "../../Formula/type";
+import { constant, data, infoMut, prod, subscript, sum } from "../../Formula/utils";
+import { allMainStatKeys, allSubstats, MainStatKey } from "../../Types/artifact";
+import { CharacterKey, ElementKey, Region } from "../../Types/consts";
+import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
+import _charCurves from "./expCurve_gen.json";
 
 export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[]
 
@@ -44,6 +44,7 @@ export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "norma
 export function dataObjForCharacterSheet(
   key: CharacterKey,
   element: ElementKey | undefined,
+  region: Region | undefined,
   gen: {
     weaponTypeKey: string,
     base: { hp: number, atk: number, def: number },
@@ -66,9 +67,12 @@ export function dataObjForCharacterSheet(
   }
   if (element) {
     data.charEle = constant(element)
+    data.teamBuff = { tally: { [element]: constant(1) } }
     data.display!.basic[`${element}_dmg_`] = input.total[`${element}_dmg_`]
     data.display!.reaction = reactions[element]
   }
+  if (region)
+    layeredAssignment(data, ["teamBuff", "tally", region], constant(1))
   if (gen.weaponTypeKey !== "catalyst") {
     if (!data.display!.basic) data.display!.basic = {}
     data.display!.basic!.physical_dmg_ = input.total.physical_dmg_

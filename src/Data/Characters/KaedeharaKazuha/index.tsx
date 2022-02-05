@@ -144,7 +144,7 @@ const dmgFormulas = {
   }
 }
 
-export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dmgFormulas, {
+export const data = dataObjForCharacterSheet(characterKey, "anemo", "inazuma", data_gen, dmgFormulas, {
   bonus: {
     talent: {
       skill: threshold_add(input.constellation, 3, 3),

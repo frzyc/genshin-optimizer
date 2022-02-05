@@ -1,8 +1,8 @@
 import { allEleEnemyResKeys } from "../KeyMap"
 import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
-import { allArtifactSets, allElementsWithPhy, allSlotKeys } from "../Types/consts"
+import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
 import { crawlObject, deepClone, objectKeyMap } from "../Util/Util"
-import { Data, Info, Input, NumNode, ReadNode, StrNode } from "./type"
+import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
 import { constant, frac, lookup, matchStr, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, sum, unit } from "./utils"
 
 const asConst = true as const, pivot = true as const
@@ -205,9 +205,10 @@ const common: Data = {
 }
 
 const target = setReadNodeKeys(deepClone(input), ["target"])
+const tally = setReadNodeKeys(objectKeyMap([...allElements, ...allRegions], _ => read("add")), ["tally"])
 
 export {
   input, common, customBonus,
 
-  target,
+  target, tally,
 }

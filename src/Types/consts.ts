@@ -4,6 +4,7 @@
 // compress the exported data. Removing an item
 // from this list will shift subsequent entries.
 export const allHitModes = ["hit", "avgHit", "critHit"] as const
+export const allRegions = ["mondstadt", "liyue", "inazuma", "sumeru", "fontaine", "natlan", "snezhnaya", "khaenriah"] as const
 export const allReactionModes = ["hydro_vaporize", "pyro_vaporize", "pyro_melt", "cryo_melt",] as const
 export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
 export const allRarities = [5, 4, 3, 2, 1] as const
@@ -229,6 +230,7 @@ export const allWeaponKeys = [
 export const characterSpecializedStatKeys = ["hp_", "atk_", "def_", "eleMas", "enerRech_", "heal_", "critRate_", "critDMG_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_"] as const
 
 export type HitModeKey = typeof allHitModes[number]
+export type Region = typeof allRegions[number]
 export type ReactionModeKey = typeof allReactionModes[number]
 export type SetNum = typeof allArtifactSetCount[number]
 export type Rarity = typeof allRarities[number]

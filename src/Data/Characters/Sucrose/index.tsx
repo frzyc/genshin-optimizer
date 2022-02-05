@@ -104,7 +104,7 @@ export const dmgFormulas = {
       [key, match(condAbsorption, key, dmgNode("atk", datamine.burst.dmg_, "burst", { hit: { ele: constant(key) } }))]))
   },
 }
-export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dmgFormulas, {
+export const data = dataObjForCharacterSheet(characterKey, "anemo", "mondstadt", data_gen, dmgFormulas, {
   bonus: {
     talent: {
       skill: threshold_add(input.constellation, 3, 3),

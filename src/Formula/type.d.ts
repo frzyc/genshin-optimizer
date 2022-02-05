@@ -91,7 +91,7 @@ interface DynamicNumInput<T = NumNode> {
     [key: string]: DisplaySub
   }
   conditional?: NodeData<T>
-  teamBuff?: Input
+  teamBuff?: Input & { tally?: NodeData }
 }
 export interface NodeData<T = NumNode> {
   [key: string]: typeof key extends "operation" ? never : (NodeData<T> | T)

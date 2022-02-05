@@ -69,6 +69,7 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
       basic: { [`${char.elementKey}_dmg_`]: input.total[`${char.elementKey}_dmg_`] },
       reaction: reactions[char.elementKey]
     }
+    layeredAssignment(result, ["teamBuff", "tally", char.elementKey], constant(1))
   }
 
   crawlObject(char.conditional, ["conditional"], (x: any) => typeof x === "string", (x: string, keys: string[]) =>
@@ -95,8 +96,28 @@ export function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Charac
   const result = Object.fromEntries(mergedData.map(([key, data]) =>
     [key, { targetRef: {} as Data, buffs: [data], calcs: {} as Dict<CharacterKey, Data> }]))
 
+  const customReadNodes = {}
+  function getReadNode(path: readonly string[]): ReadNode<number> {
+    const base = (path[0] === "teamBuff")
+      ? objPathValue(teamBuff, path.slice(1))
+      : objPathValue(input, path)
+    if (base) return base
+    const custom = objPathValue(customReadNodes, path)
+    if (custom) return custom
+    const newNode = customRead(path)
+    if (path[0] === "teamBuff" && path[1] === "tally") newNode.accu = "add"
+    layeredAssignment(customReadNodes, path, newNode)
+    return newNode
+  }
+
   Object.values(result).forEach(({ targetRef, buffs, calcs }) =>
     mergedData.forEach(([sourceKey, source]) => {
+      const sourceBuff = source.teamBuff
+      // Create new copy of `calc` as we're mutating it later
+      const buff: Data = {}, calc: Data = deepClone({ teamBuff: sourceBuff })
+      buffs.push(buff)
+      calcs[sourceKey] = calc
+
       // This construction creates a `Data` representing buff
       // from `source` applying to `target`. It has 3 data:
       // - `target` contains the reference for the final
@@ -105,38 +126,19 @@ export function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Charac
       // - `buff` contains read nodes that point to the
       //   calculation in `calc`.
 
-      if (!source?.teamBuff) return
-      const base = source.teamBuff
-      // Create new copy of `calc` as we're mutating it later
-      const buff: Data = {}, calc: Data = deepClone({ teamBuff: base })
-      buffs.push(buff)
-      calcs[sourceKey] = calc
-
-      const customReadNodes = {}
-
-      crawlObject(base, [], (x: any) => x.operation, (x: NumNode | StrNode, key: string[]) => {
-        {
-          const inputNode = objPathValue(teamBuff, key) as ReadNode<number | string> | undefined
-          if (!inputNode) throw new Error(`Unknown team buff destination ${key}`)
-          layeredAssignment(buff, key, resetData(inputNode, calc))
-          layeredAssignment(buff, ["teamBuff", ...key], resetData(inputNode, calc)) // TODO: Delete this
-        }
+      crawlObject(sourceBuff, [], (x: any) => x.operation, (x: NumNode | StrNode, path: string[]) => {
+        layeredAssignment(buff, path, resetData(getReadNode(["teamBuff", ...path]), calc))
 
         crawlObject(x, [], (x: any) => x?.operation === "read", (x: ReadNode<number | string>) => {
-          if (x.path[0] === "targetBuff") return
-          let readPath: readonly string[], readNode: ReadNode<number | string> | undefined, data: Data
+          if (x.path[0] === "targetBuff") return // Ignore teamBuff access
+
+          let readNode: ReadNode<number | string> | undefined, data: Data
           if (x.path[0] === "target") { // Link the node to target data
-            readPath = x.path.slice(1)
-            readNode = objPathValue(input, readPath) ?? objPathValue(customReadNodes, readPath!)
+            readNode = getReadNode(x.path.slice(1))
             data = targetRef
           } else { // Link the node to source data
-            readPath = x.path
             readNode = x
             data = result[sourceKey].targetRef
-          }
-          if (!readNode) {
-            readNode = customRead(readPath)
-            layeredAssignment(customReadNodes, readPath, readNode)
           }
           layeredAssignment(calc, x.path, resetData(readNode, data))
         })
@@ -162,10 +164,14 @@ function mergeData(data: Data[]): Data {
   function internal(data: any[], input: any, path: string[]): any {
     if (data.length <= 1) return data[0]
     if (data[0].operation) {
-      const accu = (input as ReadNode<number> | undefined)?.accu
+      let accu = (input as ReadNode<number> | undefined)?.accu
       if (accu === undefined) {
-        if (data.length !== 1) throw new Error(`Multiple entries when merging \`unique\` for key ${path}`)
-        return data[0]
+        if (path[0] === "tally") {
+          accu = "add"
+        } else {
+          if (data.length !== 1) throw new Error(`Multiple entries when merging \`unique\` for key ${path}`)
+          return data[0]
+        }
       }
       const result: NumNode = { operation: accu, operands: data, }
       return result
