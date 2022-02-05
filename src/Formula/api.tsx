@@ -5,10 +5,10 @@ import { ICachedCharacter } from "../Types/character_WR";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, deepClone, layeredAssignment, objectKeyMap, objPathValue } from "../Util/Util";
-import { input, teamBuff } from "./index";
+import { input } from "./index";
 import { Data, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
-import { constant, customRead, frac, infoMut, percent, prod, resetData, subscript, sum, unit } from "./utils";
+import { constant, customRead, frac, infoMut, percent, prod, resetData, setReadNodeKeys, subscript, sum, unit } from "./utils";
 
 const asConst = true
 
@@ -85,6 +85,8 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
     },
   }
 }
+/** These read nodes are very context-specific, and cannot be used anywhere else outside of `uiDataForTeam` */
+const teamBuff = setReadNodeKeys(deepClone(input), ["teamBuff"]); // Use ONLY by dataObjForTeam
 export function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<CharacterKey, { target: UIData, buffs: Dict<CharacterKey, UIData> }> {
   // May the goddess of wisdom bless any and all souls courageous
   // enough to attempt for the understanding of this abomination.

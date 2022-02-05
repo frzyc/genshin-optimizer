@@ -205,17 +205,9 @@ const common: Data = {
 }
 
 const target = setReadNodeKeys(deepClone(input), ["target"])
-const teamBuff = setReadNodeKeys(deepClone(input), ["teamBuff"]); // Use ONLY by dataObjForTeam
-(input as any).teamBuff = teamBuff
-const dynamic = setReadNodeKeys(deepClone({ dyn: { ...input.art, ...input.artSet } }))
-const dynamicData: Input = {
-  art: objectKeyMap(allMainSubStats, key => dynamic.dyn[key]),
-  artSet: objectKeyMap(allArtifactSets, key => dynamic.dyn[key])
-}
 
 export {
   input, common, customBonus,
 
-  target, teamBuff,
-  dynamicData,
+  target,
 }

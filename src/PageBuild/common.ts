@@ -1,10 +1,18 @@
+import { input } from "../Formula";
 import { forEachNodes, mapFormulas } from "../Formula/internal";
 import { allOperations, constantFold } from "../Formula/optimization";
-import { ConstantNode, NumNode } from "../Formula/type";
-import { constant, customRead, max, min } from "../Formula/utils";
+import { ConstantNode, Input, NumNode } from "../Formula/type";
+import { constant, customRead, max, min, setReadNodeKeys } from "../Formula/utils";
+import { allMainStatKeys, allSubstats } from "../Types/artifact";
 import { allSlotKeys } from "../Types/consts";
-import { assertUnreachable, objectKeyMap, objectMap } from "../Util/Util";
+import { assertUnreachable, deepClone, objectKeyMap, objectMap } from "../Util/Util";
 import type { ArtifactBuildData, ArtifactsBySlot, Build, DynStat, PlotData, RequestFilter } from "./background";
+
+const dynamic = setReadNodeKeys(deepClone({ dyn: { ...input.art, ...input.artSet } }))
+export const dynamicData = {
+  art: objectKeyMap([...allMainStatKeys, ...allSubstats], key => dynamic.dyn[key]),
+  artSet: objectMap(input.artSet, (_, key) => dynamic.dyn[key]),
+}
 
 type DynMinMax = { [key in string]: MinMax }
 type MinMax = { min: number, max: number }

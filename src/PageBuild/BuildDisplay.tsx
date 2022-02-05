@@ -21,7 +21,7 @@ import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { DataContext, dataContextObj, TeamData } from '../DataContext';
 import { uiDataForTeam, mergeData } from '../Formula/api';
-import { dynamicData, input } from '../Formula/index';
+import { input } from '../Formula/index';
 import { optimize } from '../Formula/optimization';
 import { NumNode } from '../Formula/type';
 import { GlobalSettingsContext } from '../GlobalSettings';
@@ -31,7 +31,6 @@ import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
-import { ICachedArtifact } from '../Types/artifact';
 import { BuildSetting } from '../Types/Build';
 import { CharacterKey } from '../Types/consts';
 import { objectMap, objPathValue } from '../Util/Util';
@@ -39,7 +38,7 @@ import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './backgr
 import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import ChartCard from './ChartCard';
-import { filterArts, mergeBuilds, mergePlot, pruneOrder, pruneRange, reaffine } from './common';
+import { dynamicData, filterArts, mergeBuilds, mergePlot, pruneOrder, pruneRange, reaffine } from './common';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
@@ -85,8 +84,6 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
   }
   return { ...state, ...action }
 }
-
-const plotMaxPoints = 1500
 
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
   const { globalSettings: { tcMode } } = useContext(GlobalSettingsContext)
@@ -185,8 +182,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     if (!teamData) return
     const workerData = uiDataForTeam(teamData.teamData)[characterKey as CharacterKey]?.target.data![0]
     if (!workerData) return
-    Object.entries(mergeData([workerData, dynamicData])).forEach(([key, value]) =>
-      workerData[key] = value as any) // Mark art fields as dynamic
+    Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     const optimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
     if (!optimizationTargetNode) return
     const valueFilter: { value: NumNode, minimum: number }[] = [] // TODO: Connect to statFilter
