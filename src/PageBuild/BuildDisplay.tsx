@@ -20,7 +20,7 @@ import StatFilterCard from '../Components/StatFilterCard';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { DataContext, dataContextObj, TeamData } from '../DataContext';
-import { dataObjForTeam, mergeData } from '../Formula/api';
+import { uiDataForTeam, mergeData } from '../Formula/api';
 import { dynamicData, input } from '../Formula/index';
 import { optimize } from '../Formula/optimization';
 import { NumNode } from '../Formula/type';
@@ -183,7 +183,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     if (!optimizationTarget || !split || !setPerms) return
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
-    const workerData = dataObjForTeam(teamData.teamData)[characterKey as CharacterKey]?.target.data![0]
+    const workerData = uiDataForTeam(teamData.teamData)[characterKey as CharacterKey]?.target.data![0]
     if (!workerData) return
     Object.entries(mergeData([workerData, dynamicData])).forEach(([key, value]) =>
       workerData[key] = value as any) // Mark art fields as dynamic
@@ -296,7 +296,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
       setTeamDataBuilds(await Promise.all(builds.map(async ({ artifactIds: b }) => {
         const { teamData, teamBundle } = (await getTeamData(database, characterKey, mainStatAssumptionLevel, b.filter(a => a).map(a => database._getArt(a)!)))!
-        const calcData = dataObjForTeam(teamData)
+        const calcData = uiDataForTeam(teamData)
         const data = objectMap(calcData, (obj, ck) => {
           const { data: _, ...rest } = teamBundle[ck]!
           return { ...obj, ...rest }

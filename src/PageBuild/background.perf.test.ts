@@ -2,7 +2,7 @@ import { database } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { importGOOD } from '../Database/exim/good';
 import { dynamicData } from '../Formula';
-import { dataObjForTeam, mergeData } from '../Formula/api';
+import { uiDataForTeam, mergeData } from '../Formula/api';
 import { optimize } from '../Formula/optimization';
 import { customRead } from '../Formula/utils';
 import { getTeamData } from '../ReactHooks/useTeamData';
@@ -17,7 +17,7 @@ describe("Worker Perf", () => {
     database.reloadStorage()
 
     const teamData = (await getTeamData(database, "Sucrose"))!.teamData
-    const workerData = dataObjForTeam(teamData).Sucrose!.target.data[0]
+    const workerData = uiDataForTeam(teamData).Sucrose!.target.data[0]
     const optimizationTargetNode = customRead(["display", "charged", "dmg"])
     Object.entries(mergeData([workerData, dynamicData])).forEach(([key, value]) =>
       workerData[key] = value as any) // Mark art fields as dynamic

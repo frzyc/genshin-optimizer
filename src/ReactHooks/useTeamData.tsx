@@ -4,7 +4,7 @@ import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database";
 import { TeamData } from "../DataContext";
 import { common } from "../Formula";
-import { dataObjForArtifact, dataObjForCharacter, dataObjForTeam, dataObjForWeapon } from "../Formula/api";
+import { dataObjForArtifact, dataObjForCharacter, uiDataForTeam, dataObjForWeapon } from "../Formula/api";
 import { Data } from "../Formula/type";
 import { ICachedArtifact } from "../Types/artifact_WR";
 import { ICachedCharacter } from "../Types/character_WR";
@@ -33,7 +33,7 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
     t4 ? database.followChar(t4, setDbDirty) : undefined,
     [t4, setDbDirty, database])
   if (!teamData || !teamBundle) return
-  const calcData = dataObjForTeam(teamData)
+  const calcData = uiDataForTeam(teamData)
   const data = objectMap(calcData, (obj, ck) => {
     const { data: _, ...rest } = teamBundle[ck]!
     return { ...obj, ...rest }

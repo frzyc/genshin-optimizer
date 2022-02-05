@@ -1,4 +1,4 @@
-import { computeUIData, dataObjForArtifact, dataObjForCharacter, dataObjForTeam, dataObjForWeapon } from "./api";
+import { computeUIData, dataObjForArtifact, dataObjForCharacter, uiDataForTeam, dataObjForWeapon } from "./api";
 import { data as sucroseData, dmgFormulas } from "../Data/Characters/Sucrose"
 import { data as moonglowData } from "../Data/Weapons/Catalyst/EverlastingMoonglow"
 import artifact from "../Data/Artifacts"
@@ -44,7 +44,7 @@ describe("API", () => {
       artifact.EmblemOfSeveredFate.data,
       { artSet: { EmblemOfSeveredFate: constant(4) } }
     ]
-    const teamData = dataObjForTeam({ Sucrose: char1Data })
+    const teamData = uiDataForTeam({ Sucrose: char1Data })
     const computed = teamData["Sucrose"]!.target
     console.log(computed.getTeamBuff())
   })

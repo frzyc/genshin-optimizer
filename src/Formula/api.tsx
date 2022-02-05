@@ -85,18 +85,18 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
     },
   }
 }
-export function dataObjForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<CharacterKey, { target: UIData }> {
+export function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<CharacterKey, { target: UIData, buffs: Dict<CharacterKey, UIData> }> {
   // May the goddess of wisdom bless any and all souls courageous
   // enough to attempt for the understanding of this abomination.
 
   const mergedData = Object.entries(teamData).map(([key, data]) => [key, { ...mergeData(data) }] as [CharacterKey, Data])
-  const result = Object.fromEntries(mergedData.map(([key]) =>
-    [key, { target: {} as Data, buffs: {} as Dict<CharacterKey, Data> }]))
+  const result = Object.fromEntries(mergedData.map(([key, data]) =>
+    [key, { targetRef: {} as Data, buffs: [data], calcs: {} as Dict<CharacterKey, Data> }]))
 
-  Object.entries(result).forEach(([targetKey, { target, buffs }]) =>
+  Object.values(result).forEach(({ targetRef, buffs, calcs }) =>
     mergedData.forEach(([sourceKey, source]) => {
       // This construction creates a `Data` representing buff
-      // from j-th member applied to `target`. It has 3 data:
+      // from `source` applying to `target`. It has 3 data:
       // - `target` contains the reference for the final
       //   data. It is not populated at this stage,
       // - `calc` contains the calculation of the buffs,
@@ -107,7 +107,8 @@ export function dataObjForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Chara
       const base = source.teamBuff
       // Create new copy of `calc` as we're mutating it later
       const buff: Data = {}, calc: Data = deepClone({ teamBuff: base })
-      result[targetKey].buffs[sourceKey] = buff
+      buffs.push(buff)
+      calcs[sourceKey] = calc
 
       const customReadNodes = {}
 
@@ -116,7 +117,7 @@ export function dataObjForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Chara
           const inputNode = objPathValue(teamBuff, key) as ReadNode<number | string> | undefined
           if (!inputNode) throw new Error(`Unknown team buff destination ${key}`)
           layeredAssignment(buff, key, resetData(inputNode, calc))
-          layeredAssignment(buff, ["teamBuff", ...key], resetData(inputNode, calc))
+          layeredAssignment(buff, ["teamBuff", ...key], resetData(inputNode, calc)) // TODO: Delete this
         }
 
         crawlObject(x, [], (x: any) => x?.operation === "read", (x: ReadNode<number | string>) => {
@@ -124,13 +125,12 @@ export function dataObjForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Chara
           let readPath: readonly string[], readNode: ReadNode<number | string> | undefined, data: Data
           if (x.path[0] === "target") { // Link the node to target data
             readPath = x.path.slice(1)
-            readNode = objPathValue(input, readPath) as ReadNode<number | string> | undefined ??
-              objPathValue(customReadNodes, readPath!) as ReadNode<number | string> | undefined
-            data = target
+            readNode = objPathValue(input, readPath) ?? objPathValue(customReadNodes, readPath!)
+            data = targetRef
           } else { // Link the node to source data
             readPath = x.path
             readNode = x
-            data = result[sourceKey].target
+            data = result[sourceKey].targetRef
           }
           if (!readNode) {
             readNode = customRead(readPath)
@@ -143,15 +143,17 @@ export function dataObjForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Chara
   )
   mergedData.forEach(([targetKey, data]) => {
     delete data.teamBuff
-    const { target, buffs } = result[targetKey]
-    const final = mergeData([data, ...Object.values(buffs)])
-    Object.entries(final).forEach(([key, value]) =>
-      target[key] = value as any)
-    target["target"] = target
+    const { targetRef, buffs } = result[targetKey]
+    Object.assign(targetRef, mergeData(buffs))
+    targetRef["target"] = targetRef
   })
   const origin = new UIData(undefined as any, undefined)
   const uiDataResult = Object.fromEntries(Object.entries(result).map(([key, value]) =>
-    [key, { target: new UIData(value.target, origin) }]))
+    [key, {
+      target: new UIData(value.targetRef, origin),
+      buff: Object.fromEntries(Object.entries(value.calcs).map(([key, value]) =>
+        [key, new UIData(value, origin)]))
+    }]))
   return uiDataResult
 }
 function mergeData(data: Data[]): Data {

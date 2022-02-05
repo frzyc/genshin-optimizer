@@ -7,6 +7,7 @@ import { ICachedWeapon } from "./Types/weapon_WR"
 import WeaponSheet from "./Data/Weapons/WeaponSheet"
 export type TeamData = Partial<Record<CharacterKey, {
   target: UIData
+  buffs: Dict<CharacterKey, UIData>
   character: ICachedCharacter
   weapon: ICachedWeapon
   characterSheet: CharacterSheet
