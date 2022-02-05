@@ -83,7 +83,7 @@ export function layeredAssignment(obj, keys: readonly string[], value) {
   return obj
 }
 //get the value in a nested object, giving array of path
-export function objPathValue(obj: object, keys: readonly string[]) {
+export function objPathValue(obj: object | undefined, keys: readonly string[]): any {
   return keys.reduce((a, k) => a?.[k], obj)
 }
 //delete the value denoted by the path. Will also delete empty objects as well.
@@ -112,14 +112,17 @@ export function evalIfFunc<T, X>(value: T | ((arg: X) => T), arg: X): T {
   return typeof value === "function" ? (value as any)(arg) : value
 }
 //fromEntries doesn't result in StrictDict, this is just a utility wrapper.
-export function objectFromKeyMap<K extends string | number, V>(keys: readonly K[], map: (key: K, i: number) => V): StrictDict<K, V> {
+export function objectFromKeyMap<K extends string | number, V>(keys: readonly K[], map: (key: K, i: number) => V): StrictDict<`${K}`, V> {
   return Object.fromEntries(keys.map((k, i) => [k, map(k, i)])) as any
 }
 
-export const objectMap = <K extends string, V, T>(obj: Record<K, V>, fn: (value: V, key: `${K}`, index: number) => T) =>
-  Object.fromEntries(Object.entries(obj).map(
+export function objectMap<K extends string, V, T>(obj: Partial<Record<K, V>>, fn: (value: V, key: `${K}`, index: number) => T): Partial<Record<K, T>>
+export function objectMap<K extends string, V, T>(obj: Record<K, V>, fn: (value: V, key: `${K}`, index: number) => T): Record<K, T>
+export function objectMap<K extends string, V, T>(obj: Partial<Record<K, V>>, fn: (value: V, key: `${K}`, index: number) => T): Partial<Record<K, T>> {
+  return Object.fromEntries(Object.entries(obj).map(
     ([k, v], i) => [k, fn(v, k, i)]
-  ))
+  )) as any
+}
 
 const rangeGen = function* (from, to) {
   for (let i = from; i <= to; i++) yield i;

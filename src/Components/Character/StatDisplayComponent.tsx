@@ -35,7 +35,7 @@ function Section({ displayNs, sectionKey }: { displayNs: DisplaySub<NodeDisplay>
     <CardHeader avatar={icon && <ImgIcon size={2} sx={{ m: -1 }} src={icon} />} title={title} action={action} titleTypographyProps={{ variant: "subtitle1" }} />
     <Divider />
     <CardContent>
-      {Object.entries(displayNs).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(displayNsReads[nodeKey]).value : undefined} />)}
+      {Object.entries(displayNs).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(displayNsReads[nodeKey]!).value : undefined} />)}
     </CardContent>
   </CardDark>
 }

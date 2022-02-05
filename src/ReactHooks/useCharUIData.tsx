@@ -28,7 +28,7 @@ export default function useCharUIData(characterKey: CharacterKey | "", mainStatA
   const artifactSheetsData = usePromise(ArtifactSheet.getAllData, [])
 
   const weaponSheet = usePromise(weapon && WeaponSheet.get(weapon.key), [weapon])
-  const artifacts = useMemo(() => character && database && objectMap(character.equippedArtifacts, a => database._getArt(a)), [character, database]) as Record<SlotKey, ICachedArtifact | undefined>
+  const artifacts = useMemo(() => character && database && objectMap(character.equippedArtifacts, a => database._getArt(a)), [character, database])
 
   const [dbDirty, setDbDirty] = useForceUpdate()
   //follow updates from team

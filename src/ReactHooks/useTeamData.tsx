@@ -34,8 +34,8 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
     [t4, setDbDirty, database])
   if (!teamData || !teamBundle) return
   const calcData = dataObjForTeam(teamData)
-  const data = objectMap(calcData as any, (obj: object, ck) => {
-    const { data: _, ...rest } = teamBundle[ck]
+  const data = objectMap(calcData, (obj, ck) => {
+    const { data: _, ...rest } = teamBundle[ck]!
     return { ...obj, ...rest }
   })
 
@@ -45,7 +45,7 @@ export async function getTeamData(database: ArtCharDatabase, characterKey: Chara
   Promise<{
     team: CharacterKey[],
     teamData: Dict<CharacterKey, Data[]>
-    teamBundle: Dict<CharacterKey, object>
+    teamBundle: Dict<CharacterKey, CharBundle>
   } | undefined> {
   if (!characterKey) return
   const char1DataBundle = await getCharDataBundle(database, characterKey, mainStatAssumptionLevel, overrideArt)
