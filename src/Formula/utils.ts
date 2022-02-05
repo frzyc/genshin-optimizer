@@ -96,6 +96,7 @@ export function setReadNodeKeys<T extends NodeList>(nodeList: T, prefix: string[
 }
 export function data(base: NumNode, data: Data): DataNode<NumNode>
 export function data(base: StrNode, data: Data): DataNode<StrNode>
+export function data(base: NumNode | StrNode, data: Data): DataNode<NumNode> | DataNode<StrNode>
 export function data(base: AnyNode, data: Data): DataNode<AnyNode> {
   return { operation: "data", operands: [base], data }
 }

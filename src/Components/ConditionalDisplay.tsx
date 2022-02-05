@@ -19,8 +19,8 @@ type ConditionalDisplayProps = {
 export default function ConditionalDisplay({ conditional, hideHeader = false, hideDesc = false, fieldContext }: ConditionalDisplayProps) {
   const dataContext = useContext(DataContext)
   const { data } = dataContext
-  // TODO: as any and as Data
-  const canShow = conditional.canShow ? !(fieldContext ? data.get(dataNode(conditional.canShow as any, { target: fieldContext.data.data[0] } as Data)).isEmpty : data.get(conditional.canShow).isEmpty) : true
+  // TODO: as Data
+  const canShow = conditional.canShow ? !(fieldContext ? data.get(dataNode(conditional.canShow, { target: fieldContext.data.data[0] } as Data)).isEmpty : data.get(conditional.canShow).isEmpty) : true
   if (!canShow) return null
   const condVal = data.get(conditional.value).value
 
