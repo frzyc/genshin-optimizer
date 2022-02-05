@@ -64,10 +64,10 @@ const input = setReadNodeKeys(deepClone({
   customBonus: withDefaultInfo({ prefix: "custom", pivot }, {
     ...allModStatNodes, ...allNonModStatNodes,
   }),
-  bonus: { talent },
-  premod: { talent, ...allModStatNodes },
+  bonus: { ...talent },
+  premod: { ...talent, ...allModStatNodes },
   total: withDefaultInfo({ prefix: "total", pivot }, {
-    talent,
+    ...talent,
     ...allModStatNodes, ...allNonModStatNodes,
     /** Total Crit Rate capped to [0%, 100%] */
     cappedCritRate: read(undefined, { key: "critRate_" }),
@@ -111,7 +111,7 @@ const { base, bonus, customBonus, premod, total, art, hit, enemy } = input
 // Adjust `info` for printing
 markAccu('add', { base, bonus, customBonus, premod, total, art })
 crawlObject(premod, [], (x: any) => x.operation, (x: NumNode | StrNode) => delete x.info)
-markAccu(undefined, { a: total.talent, b: total.cappedCritRate, })
+markAccu(undefined, { a: total.auto, b: total.skill, c: total.burst, d: total.cappedCritRate, })
 for (const [key, value] of Object.entries(total)) {
   if (key.endsWith("_dmg_"))
     delete (value as ReadNode<number>).accu
@@ -133,7 +133,7 @@ export const effectiveReaction = lookup(hit.ele, {
 
 const common: Data = {
   premod: {
-    talent: objectKeyMap(allTalents, talent => bonus.talent[talent]),
+    ...objectKeyMap(allTalents, talent => bonus[talent]),
     ...objectKeyMap(allModStats, key => {
       const operands: NumNode[] = []
       switch (key) {
@@ -151,7 +151,7 @@ const common: Data = {
     }),
   },
   total: {
-    talent: objectKeyMap(allTalents, talent => premod.talent[talent]),
+    ...objectKeyMap(allTalents, talent => premod[talent]),
     ...objectKeyMap(allModStats, key => premod[key]),
     ...objectKeyMap(allNonModStats, key => customBonus[key]),
     stamina: sum(constant(100, { key: "stamina", prefix: "default" }), customBonus.stamina),

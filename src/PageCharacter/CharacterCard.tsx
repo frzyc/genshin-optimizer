@@ -81,13 +81,13 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
   const characterLevel = data.get(input.lvl).value
   const constellation = data.get(input.constellation).value
   const ascension = data.get(input.asc).value
-  const autoBoost = data.get(input.bonus.talent.auto).value
-  const skillBoost = data.get(input.bonus.talent.skill).value
-  const burstBoost = data.get(input.bonus.talent.burst).value
+  const autoBoost = data.get(input.bonus.auto).value
+  const skillBoost = data.get(input.bonus.skill).value
+  const burstBoost = data.get(input.bonus.burst).value
 
-  const tAuto = data.get(input.total.talent.auto).value
-  const tSkill = data.get(input.total.talent.skill).value
-  const tBurst = data.get(input.total.talent.burst).value
+  const tAuto = data.get(input.total.auto).value
+  const tSkill = data.get(input.total.skill).value
+  const tBurst = data.get(input.total.burst).value
 
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={() => characterKey && onClick?.(characterKey)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,

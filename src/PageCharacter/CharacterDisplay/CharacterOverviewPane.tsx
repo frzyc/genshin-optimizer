@@ -31,14 +31,14 @@ export default function CharacterOverviewPane() {
   const ascension = data.get(input.asc).value
   const constellation = data.get(input.constellation).value
   const tlvl = {
-    auto: data.get(input.total.talent.auto).value,
-    skill: data.get(input.total.talent.skill).value,
-    burst: data.get(input.total.talent.burst).value,
+    auto: data.get(input.total.auto).value,
+    skill: data.get(input.total.skill).value,
+    burst: data.get(input.total.burst).value,
   }
   const tBoost = {
-    auto: data.get(input.bonus.talent.auto).value,
-    skill: data.get(input.bonus.talent.skill).value,
-    burst: data.get(input.bonus.talent.burst).value,
+    auto: data.get(input.bonus.auto).value,
+    skill: data.get(input.bonus.skill).value,
+    burst: data.get(input.bonus.burst).value,
   }
   return <Grid container spacing={1}>
     <Grid item xs={12} md={3}  >

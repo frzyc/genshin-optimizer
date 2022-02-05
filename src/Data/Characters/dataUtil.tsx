@@ -36,7 +36,7 @@ export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "norma
   const talentType = getTalentType(move)
   return data(input.hit.dmg, mergeData([{
     hit: {
-      base: prod(input.total[base], subscript(input.total.talent[talentType], lvlMultiplier, { key: '_' })),
+      base: prod(input.total[base], subscript(input.total[talentType], lvlMultiplier, { key: '_' })),
       move: constant(move), // TODO: element ?: T, reaction ?: T, critType ?: T
     },
   }, additional]))

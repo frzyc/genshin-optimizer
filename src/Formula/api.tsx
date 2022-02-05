@@ -37,11 +37,9 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     asc: constant(char.ascension),
 
     premod: {
-      talent: {
-        auto: constant(char.talent.auto),
-        skill: constant(char.talent.skill),
-        burst: constant(char.talent.burst),
-      },
+      auto: constant(char.talent.auto),
+      skill: constant(char.talent.skill),
+      burst: constant(char.talent.burst),
     },
     enemy: {
       res: {

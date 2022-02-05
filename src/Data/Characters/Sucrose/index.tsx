@@ -106,10 +106,8 @@ export const dmgFormulas = {
 }
 export const data = dataObjForCharacterSheet(characterKey, "anemo", "mondstadt", data_gen, dmgFormulas, {
   bonus: {
-    talent: {
-      skill: threshold_add(input.constellation, 3, 3),
-      burst: threshold_add(input.constellation, 5, 3),
-    }
+    skill: threshold_add(input.constellation, 3, 3),
+    burst: threshold_add(input.constellation, 5, 3),
   },
   premod: c6Bonus,
   teamBuff: {

@@ -181,8 +181,8 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
   let header: Displayable | null = null
 
   if (talentKey in talent) {
-    const levelBoost = data.get(input.bonus.talent[talentKey] as NumNode).value
-    const level = data.get(input.total.talent[talentKey]).value
+    const levelBoost = data.get(input.bonus[talentKey] as NumNode).value
+    const level = data.get(input.total[talentKey]).value
     const asc = data.get(input.asc).value
     const setTalentLevel = (tKey, newTalentLevelKey) => {
       talent[tKey] = newTalentLevelKey
