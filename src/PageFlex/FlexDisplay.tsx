@@ -7,25 +7,26 @@ import CharacterDisplayCard from "../PageCharacter/CharacterDisplayCard";
 import CardDark from "../Components/Card/CardDark";
 import { CustomNumberInputButtonGroupWrapper, StyledInputBase } from "../Components/CustomNumberInput";
 import { DatabaseContext } from "../Database/Database";
-import { exportFlex, importFlex } from "../Database/exim/flex";
+import { CharacterKey } from "pipeline";
 
 export default function FlexDisplay() {
   const location = useLocation()
   const database = useContext(DatabaseContext)
   const sheets = {} as any
   const searchStr = location.search
+  const charKey: CharacterKey = "Sucrose" // TODO: hardcoded character
   if (!sheets) return null
   if (searchStr) {
-    const flexResult = importFlex(searchStr.substring(1))
-    if (!flexResult) return <Redirect to={`/`} />
-    const [database, charKey, version] = flexResult
-    if (version !== 4)
-      return <Redirect to={`/flex?${exportFlex(charKey, database, sheets)}`} />
+    // const flexResult = importFlex(searchStr.substring(1))
+    // if (!flexResult) return <Redirect to={`/`} />
+    // const [database, charKey, version] = flexResult
+    // if (version !== 4)
+    //   return <Redirect to={`/flex?${exportFlex(charKey, database, sheets)}`} />
     return <DatabaseContext.Provider value={database}><Display characterKey={charKey} /></DatabaseContext.Provider>
   } else {
     const characterKey = (location as any).characterKey
     if (!characterKey) return <Redirect to={`/`} />
-    const flexObj = exportFlex(characterKey, database, sheets)
+    const flexObj = undefined// exportFlex(characterKey, database, sheets)
     if (!flexObj) return <Redirect to={`/`} />
     window.scrollTo(0, 0)//sometimes the window isnt scrolled to the top on redirect.
     return <Redirect to={`/flex?${flexObj}`} />
