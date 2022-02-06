@@ -185,44 +185,41 @@ function computeUIData(data: Data[]): UIData {
   return new UIData(mergeData(data), undefined)
 }
 type ComparedNodeDisplay<V = number> = NodeDisplay<V> & { diff: V }
-export function compareUIData(uiData1: UIData, uiData2: UIData): {
-  display: { [key: string]: DisplaySub<ComparedNodeDisplay> },
-  teamBuff: Input<ComparedNodeDisplay, ComparedNodeDisplay<string>>,
-} {
-  const data1 = { display: uiData1.getDisplay(), teamBuff: uiData1.getTeamBuff() }
-  const data2 = { display: uiData2.getDisplay(), teamBuff: uiData2.getTeamBuff() }
+export function compareTeamBuffUIData(uiData1: UIData, uiData2: UIData): Input<ComparedNodeDisplay, ComparedNodeDisplay<string>> {
+  return compareInternal(uiData1.getTeamBuff(), uiData2.getTeamBuff())
+}
+export function compareDisplayUIData(uiData1: UIData, uiData2: UIData): { [key: string]: DisplaySub<ComparedNodeDisplay> } {
+  return compareInternal(uiData1.getDisplay(), uiData2.getDisplay())
+}
+function compareInternal(data1: any | undefined, data2: any | undefined): any {
+  if (data1?.operation || data2?.operation) {
+    const d1 = data1 as NodeDisplay | undefined
+    const d2 = data2 as NodeDisplay | undefined
 
-  function internal(data1: any | undefined, data2: any | undefined): any {
-    if (data1?.operation || data2?.operation) {
-      const d1 = data1 as NodeDisplay | undefined
-      const d2 = data2 as NodeDisplay | undefined
+    if ((d1 && !d1.operation) || (d2 && !d2.operation))
+      throw new Error("Unmatched structure when comparing UIData")
 
-      if ((d1 && !d1.operation) || (d2 && !d2.operation))
-        throw new Error("Unmatched structure when comparing UIData")
-
-      const result: ComparedNodeDisplay = {
-        operation: true,
-        value: 0,
-        isEmpty: true,
-        unit: d2?.unit!,
-        formulas: [],
-        ...d1,
-        diff: (d2?.value ?? 0) - (d1?.value ?? 0)
-      }
-      if (typeof d1?.value === "string" || typeof d2?.value === "string") {
-        // In case `string` got involved, just use the other value
-        result.value = d1?.value ?? "" as any
-        result.diff = d2?.value ?? "" as any
-      }
-      return result
+    const result: ComparedNodeDisplay = {
+      operation: true,
+      value: 0,
+      isEmpty: true,
+      unit: d2?.unit!,
+      formulas: [],
+      ...d1,
+      diff: (d2?.value ?? 0) - (d1?.value ?? 0)
     }
-
-    if (data1 || data2) {
-      const keys = new Set([...Object.keys(data1 ?? {}), ...Object.keys(data2 ?? {})])
-      return Object.fromEntries([...keys].map(key => [key, internal(data1?.[key], data2?.[key])]))
+    if (typeof d1?.value === "string" || typeof d2?.value === "string") {
+      // In case `string` got involved, just use the other value
+      result.value = d1?.value ?? "" as any
+      result.diff = d2?.value ?? "" as any
     }
+    return result
   }
-  return internal(data1, data2)
+
+  if (data1 || data2) {
+    const keys = new Set([...Object.keys(data1 ?? {}), ...Object.keys(data2 ?? {})])
+    return Object.fromEntries([...keys].map(key => [key, compareInternal(data1?.[key], data2?.[key])]))
+  }
 }
 
 const transMulti1 = subscript(input.lvl, transformativeReactionLevelMultipliers)
