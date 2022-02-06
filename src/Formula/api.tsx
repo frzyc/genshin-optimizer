@@ -6,9 +6,9 @@ import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/const
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, deepClone, layeredAssignment, objectKeyMap, objPathValue } from "../Util/Util";
 import { input } from "./index";
-import { Data, NumNode, ReadNode, StrNode } from "./type";
+import { Data, DisplaySub, Input, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
-import { constant, customRead, frac, infoMut, percent, prod, resetData, setReadNodeKeys, subscript, sum, unit } from "./utils";
+import { constant, customRead, data, frac, infoMut, percent, prod, resetData, setReadNodeKeys, subscript, sum, unit } from "./utils";
 
 const asConst = true
 
@@ -183,6 +183,46 @@ function mergeData(data: Data[]): Data {
 
 function computeUIData(data: Data[]): UIData {
   return new UIData(mergeData(data), undefined)
+}
+type ComparedNodeDisplay<V = number> = NodeDisplay<V> & { diff: V }
+export function compareUIData(uiData1: UIData, uiData2: UIData): {
+  display: { [key: string]: DisplaySub<ComparedNodeDisplay> },
+  teamBuff: Input<ComparedNodeDisplay, ComparedNodeDisplay<string>>,
+} {
+  const data1 = { display: uiData1.getDisplay(), teamBuff: uiData1.getTeamBuff() }
+  const data2 = { display: uiData2.getDisplay(), teamBuff: uiData2.getTeamBuff() }
+
+  function internal(data1: any | undefined, data2: any | undefined): any {
+    if (data1?.operation || data2?.operation) {
+      const d1 = data1 as NodeDisplay | undefined
+      const d2 = data2 as NodeDisplay | undefined
+
+      if ((d1 && !d1.operation) || (d2 && !d2.operation))
+        throw new Error("Unmatched structure when comparing UIData")
+
+      const result: ComparedNodeDisplay = {
+        operation: true,
+        value: 0,
+        isEmpty: true,
+        unit: d2?.unit!,
+        formulas: [],
+        ...d1,
+        diff: (d2?.value ?? 0) - (d1?.value ?? 0)
+      }
+      if (typeof d1?.value === "string" || typeof d2?.value === "string") {
+        // In case `string` got involved, just use the other value
+        result.value = d1?.value ?? "" as any
+        result.diff = d2?.value ?? "" as any
+      }
+      return result
+    }
+
+    if (data1 || data2) {
+      const keys = new Set([...Object.keys(data1 ?? {}), ...Object.keys(data2 ?? {})])
+      return Object.fromEntries([...keys].map(key => [key, internal(data1?.[key], data2?.[key])]))
+    }
+  }
+  return internal(data1, data2)
 }
 
 const transMulti1 = subscript(input.lvl, transformativeReactionLevelMultipliers)
