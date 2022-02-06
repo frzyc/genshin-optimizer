@@ -42,10 +42,8 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
       burst: constant(char.talent.burst),
     },
     enemy: {
-      res: {
-        ...objectKeyMap(allElementsWithPhy, ele =>
-          percent((char.enemyOverride[`${ele}_enemyRes_`] ?? 10) / 100)),
-      },
+      ...objectKeyMap(allElementsWithPhy.map(ele => `${ele}_res_`), ele =>
+        percent((char.enemyOverride[`${ele.slice(0, -5)}_enemyRes_`] ?? 10) / 100)),
       level: constant(char.enemyOverride.enemyLevel ?? char.level),
     },
     hit: {
@@ -195,14 +193,14 @@ const trans = {
     return infoMut(prod(
       infoMut(prod(multi, transMulti1), { asConst }),
       sum(unit, transMulti2, input.total[`${reaction}_dmg_`]),
-      input.enemy.resMulti[ele]),
+      input.enemy[`${ele}_resMulti`]),
       { key: `${reaction}_hit`, variant: reaction })
   }),
   swirl: objectKeyMap(transformativeReactions.swirl.variants, ele => infoMut(
     prod(
       infoMut(prod(transformativeReactions.swirl.multi, transMulti1), { asConst }),
       sum(unit, transMulti2, input.total.swirl_dmg_),
-      input.enemy.resMulti[ele]),
+      input.enemy[`${ele}_resMulti`]),
     { key: `${ele}_swirl_hit`, variant: ele }))
 }
 export const reactions = {

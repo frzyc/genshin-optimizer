@@ -64,7 +64,7 @@ export function EnemyExpandCard() {
 
 export function EnemyResText({ element }: { element: ElementKeyWithPhy }) {
   const { data } = useContext(DataContext)
-  const node = data.get(input.enemy.res[element])
+  const node = data.get(input.enemy[`${element}_res_`])
   const immune = !isFinite(node.value)
   const content = immune ? <span >{uncoloredEleIcons[element]} IMMUNE</span> :
     <span >{uncoloredEleIcons[element]}RES <strong>{valueString(node.value, node.unit)}</strong></span>
@@ -97,7 +97,7 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
     </Grid>
     {allElementsWithPhy.map(eleKey => {
       const statKey = `${eleKey}_enemyRes_`
-      const node = data.get(input.enemy.res[eleKey])
+      const node = data.get(input.enemy[`${eleKey}_res_`])
       const elementImmunity = !isFinite(node.value)
       return <Grid item key={eleKey} {...bsProps}>
         <StatInput

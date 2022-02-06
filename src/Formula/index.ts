@@ -90,10 +90,10 @@ const input = setReadNodeKeys(deepClone({
 
   enemy: {
     def: read("add", { key: "enemyDef_multi", pivot }),
-    resMulti: objectKeyMap(allElements, _ => read()),
+    ...objectKeyMap(allElements.map(ele => `${ele}_resMulti` as const), _ => read()),
 
     level: read(undefined, { key: "enemyLevel" }),
-    res: objectKeyMap(allElements, ele => read("add", { key: `${ele}_enemyRes_`, variant: ele })),
+    ...objectKeyMap(allElements.map(ele => `${ele}_res_` as const), ele => read("add", { key: ele, variant: ele.slice(0, -5) } as any)),
     defRed: read("add", { key: "enemyDefRed_", pivot }),
     defIgn: read("add", { key: "enemyDefIgn_", pivot }),
   },
@@ -181,7 +181,7 @@ const common: Data = {
       }, NaN),
       enemy.def,
       lookup(hit.ele,
-        objectKeyMap(allElements, ele => enemy.resMulti[ele]), NaN),
+        objectKeyMap(allElements, ele => enemy[`${ele}_resMulti` as const]), NaN),
       lookup(effectiveReaction, {
         melt: lookup(hit.ele, {
           pyro: prod(2, baseAmpBonus),
@@ -198,8 +198,8 @@ const common: Data = {
   enemy: {
     // TODO: shred cap of 90%
     def: frac(sum(input.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed)), sum(1, prod(-1, enemy.defIgn)))),
-    resMulti: objectKeyMap(allElements, ele => res(enemy.res[ele])),
-    res: objectKeyMap(allElements, ele => total[`${ele}_enemyRes_`])
+    ...objectKeyMap(allElements.map(ele => `${ele}_resMulti` as const), ele => res(enemy[`${ele.slice(0, -9)}_res_`])),
+    ...objectKeyMap(allElements.map(ele => `${ele}_res_` as const), ele => total[`${ele.slice(0, -5)}_enemyRes_`])
   },
 }
 

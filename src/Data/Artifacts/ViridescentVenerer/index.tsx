@@ -24,11 +24,11 @@ const swirl_dmg_ = threshold_add(input.artSet.ViridescentVenerer, 4, percent(0.6
 const condSwirlPaths = Object.fromEntries(absorbableEle.map(e => [e, [key, `swirl${e}`]]))
 const condSwirls = Object.fromEntries(absorbableEle.map(e => [e, customStringRead(["conditional", ...condSwirlPaths[e]])]))
 
-const condSwirlNodes = Object.fromEntries(absorbableEle.map(e => [e,
-  threshold_add(input.artSet.ViridescentVenerer, 4,
-    match("swirl", condSwirls[e], percent(-0.4)),
-    { key: `${e}_enemyRes_`, variant: e }
-  )]))
+const condSwirlNodes = Object.fromEntries(absorbableEle.map(e => [`${e}_res_`,
+threshold_add(input.artSet.ViridescentVenerer, 4,
+  match("swirl", condSwirls[e], percent(-0.4)),
+  { key: `${e}_enemyRes_`, variant: e }
+)]))
 
 const data: Data = dataObjForArtifactSheet(key, {
   premod: {
@@ -36,7 +36,7 @@ const data: Data = dataObjForArtifactSheet(key, {
     swirl_dmg_,
   },
   enemy: {
-    res: condSwirlNodes
+    ...condSwirlNodes
   }
 })
 
@@ -68,7 +68,7 @@ const sheet: IArtifactSheet = {
             swirl: {
               name: <ColorText color={eleKey}>{elementalData[eleKey].name}</ColorText>,
               fields: [{
-                node: condSwirlNodes[eleKey]
+                node: condSwirlNodes[`${eleKey}_res_`]
               }, {
                 text: sgt("duration"),
                 value: 10,

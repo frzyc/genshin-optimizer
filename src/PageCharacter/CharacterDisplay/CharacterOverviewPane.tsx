@@ -114,7 +114,7 @@ const otherStatKeys = otherStatReadNodes.map(x => x.info!.key!)
 
 const miscStatReadNodes = [
   input.total.all_dmg_,
-  ...allElementsWithPhy.map(x => input.enemy.res[x]),
+  ...allElementsWithPhy.map(x => input.enemy[`${x}_res_`]),
   input.total.normal_dmg_, input.total.normal_critRate_,
   input.total.charged_dmg_, input.total.charged_critRate_,
   input.total.plunging_dmg_, input.total.plunging_critRate_,
