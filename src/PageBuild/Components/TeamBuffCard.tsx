@@ -3,14 +3,14 @@ import React, { useContext } from 'react';
 import CardLight from '../../Components/Card/CardLight';
 import { FieldDisplayList, NodeFieldDisplay } from '../../Components/FieldDisplay';
 import { DataContext } from '../../DataContext';
-import { input } from '../../Formula';
-import { NumNode } from '../../Formula/type';
+import { NodeDisplay } from '../../Formula/uiData';
 export default function TeamBuffCard() {
-  const { data, oldData, character } = useContext(DataContext)
-  const bonusStatsKeys = Object.keys(character?.bonusStats)
-  if (!bonusStatsKeys.length) return null
-  const nodes = bonusStatsKeys.map(k => data.get(input.total[k] as NumNode))
-  const oldValues = oldData && bonusStatsKeys.map(k => oldData.get(input.total[k] as NumNode).value)
+  const { data } = useContext(DataContext)
+  const teamBuffs = data.getTeamBuff()
+  const nodes: Array<NodeDisplay<number>> = []
+  Object.values(teamBuffs.total ?? {}).forEach(node => nodes.push(node))
+  Object.values(teamBuffs.premod ?? {}).forEach(node => nodes.push(node))
+  Object.values(teamBuffs.enemy ?? {}).forEach(node => nodes.push(node))
   if (!nodes.length) return null
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
@@ -18,10 +18,10 @@ export default function TeamBuffCard() {
     </CardContent>
     <Divider />
     <CardContent>
-      {/* TODO: */}
-      This isnt team buffs, but bonusStats. so... TODO
       <FieldDisplayList sx={{ my: 0 }} >
-        {nodes.map((n, i) => <ListItem key={i}><NodeFieldDisplay node={n} oldValue={oldValues?.[i]} /></ListItem>)}
+        {nodes.map((n) => n && !n.isEmpty && <ListItem key={n.key} >
+          <NodeFieldDisplay node={n} />
+        </ListItem>)}
       </FieldDisplayList>
     </CardContent>
   </CardLight>

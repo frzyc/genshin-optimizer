@@ -10,12 +10,13 @@ import resonanceSheets from "../../Conditional/Resonance";
 import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
 import { DataContext, dataContextObj } from "../../DataContext";
 import { input } from "../../Formula";
+import { NodeDisplay } from "../../Formula/uiData";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import useCharSelectionCallback from "../../ReactHooks/useCharSelectionCallback";
 import usePromise from "../../ReactHooks/usePromise";
 import { ElementKey } from "../../Types/consts";
 import { DocumentSection } from "../../Types/sheet";
-import { range } from "../../Util/Util";
+import { objPathValue, range } from "../../Util/Util";
 import CharacterCard from "../CharacterCard";
 
 export default function CharacterTeamBuffsPane() {
@@ -33,19 +34,23 @@ const statBreakpoint = {
   xs: 12, sm: 6, md: 6, lg: 4,
 } as const
 export function TeamBuffDisplay() {
-  const { data, oldData, character } = useContext(DataContext)
-  // TODO: this is not flat enough to crawl...
-  const teamBuffs = data.getTeamBuff().total
-  if (!teamBuffs || !Object.keys(teamBuffs).length) return null
+  const { data, oldData } = useContext(DataContext)
+  const teamBuffs = data.getTeamBuff()
+  const nodes: Array<[string[], NodeDisplay<number>]> = []
+  Object.entries(teamBuffs.total ?? {}).forEach(([key, node]) => nodes.push([["total", key], node]))
+  Object.entries(teamBuffs.premod ?? {}).forEach(([key, node]) => nodes.push([["premod", key], node]))
+  Object.entries(teamBuffs.enemy ?? {}).forEach(([key, node]) => nodes.push([["enemy", key], node]))
+  if (!nodes.length) return null
   return <CardLight>
     <CardContent>
       Team Buffs
     </CardContent>
     <Divider />
     <CardContent>
-      {/* TODO: */}
       <Grid container columnSpacing={2} rowSpacing={1}>
-        {/* {Object.values(teamBuffs).map((n, i) => n && <Grid item {...statBreakpoint} key={i} ><NodeFieldDisplay node={n} oldValue={oldData?.get(n)?.value} /></Grid>)} */}
+        {nodes.map(([path, n], i) => n && !n.isEmpty && <Grid item {...statBreakpoint} key={n.key} >
+          <NodeFieldDisplay node={n} oldValue={objPathValue(oldData?.getTeamBuff(), path)?.value} />
+        </Grid>)}
       </Grid>
     </CardContent>
   </CardLight>

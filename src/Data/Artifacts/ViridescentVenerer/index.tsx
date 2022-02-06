@@ -35,8 +35,10 @@ const data: Data = dataObjForArtifactSheet(key, {
     anemo_dmg_,
     swirl_dmg_,
   },
-  enemy: {
-    ...condSwirlNodes
+  teamBuff: {
+    enemy: {
+      ...condSwirlNodes
+    }
   }
 })
 
