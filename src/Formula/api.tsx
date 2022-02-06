@@ -170,7 +170,7 @@ function mergeData(data: Data[]): Data {
           return data[0]
         }
       }
-      const result: NumNode = { operation: accu, operands: data, }
+      const result: NumNode = { operation: accu, operands: data, info: input?.info }
       return result
     } else {
       return Object.fromEntries([...new Set(data.flatMap(x => Object.keys(x) as string[]))]
