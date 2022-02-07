@@ -22,7 +22,7 @@ const allModStats = [
   ...allMainSubStats,
 ]
 const allNonModStats = [
-  ...allMoves.map(x => `${x}_dmg` as const),
+  ...(["all", ...allMoves] as const).map(x => `${x}_dmg` as const),
   ...(["all", ...allTransformative, ...allAmplifying, ...allMoves] as const).map(x => `${x}_dmg_` as const),
   ...allElements.map(x => `${x}_res_` as const),
   ...allMoves.map(x => `${x}_critRate_` as const),
@@ -175,6 +175,7 @@ const common: Data = {
     ),
     dmg: prod(
       sum(hit.base,
+        total.all_dmg,
         lookup(hit.move,
           objectKeyMap(allMoves, move => total[`${move}_dmg`]), NaN)),
       sum(unit, hit.dmgBonus),
