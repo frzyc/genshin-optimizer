@@ -178,27 +178,25 @@ function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<CharacterKey,
   return uiDataResult
 }
 function mergeData(data: Data[]): Data {
-  function internal(data: any[], input: any, path: string[]): any {
+  function internal(data: any[], path: string[]): any {
     if (data.length <= 1) return data[0]
     if (data[0].operation) {
-      let accu = (input as ReadNode<number> | undefined)?.accu
+      if (path[0] === "teamBuff") path = path.slice(1)
+      const accu = path[0] === "tally"
+        ? "add" : (objPathValue(input, path) as ReadNode<number> | undefined)?.accu
       if (accu === undefined) {
-        if (path[0] === "tally") {
-          accu = "add"
-        } else {
-          if (data.length !== 1) throw new Error(`Multiple entries when merging \`unique\` for key ${path}`)
-          return data[0]
-        }
+        if (data.length !== 1)
+          throw new Error(`Multiple entries when merging \`unique\` for key ${path}`)
+        return data[0]
       }
       const result: NumNode = { operation: accu, operands: data }
       return result
     } else {
       return Object.fromEntries([...new Set(data.flatMap(x => Object.keys(x) as string[]))]
-        .map(key => [key, internal(data.map(x => x[key]).filter(x => x), input?.[key], [...path, key])]))
+        .map(key => [key, internal(data.map(x => x[key]).filter(x => x), [...path, key])]))
     }
   }
-
-  return data.length ? internal(data, input, []) : {}
+  return data.length ? internal(data, []) : {}
 }
 
 function computeUIData(data: Data[]): UIData {
