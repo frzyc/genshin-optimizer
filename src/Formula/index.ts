@@ -108,10 +108,9 @@ const input = setReadNodeKeys(deepClone({
 const { base, bonus, customBonus, premod, total, art, hit, enemy } = input
 
 // Adjust `info` for printing
-markAccu('add', { base, bonus, customBonus, premod, total, art })
-markAccu(undefined, {
-  a: total.auto, b: total.skill, c: total.burst, d: total.cappedCritRate,
-  e: objectMap(total, (value, key) => allNonModStats.includes(key as any) ? value : {})
+markAccu('add', {
+  bonus, customBonus, premod, art,
+  total: objectKeyMap(allMainSubStats, stat => stat.endsWith("_dmg_") ? {} : total[stat])
 })
 for (const [key, value] of Object.entries(total)) {
   if (key.endsWith("_dmg_"))
