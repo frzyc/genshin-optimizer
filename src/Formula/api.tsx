@@ -96,7 +96,7 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
 }
 /** These read nodes are very context-specific, and cannot be used anywhere else outside of `uiDataForTeam` */
 const teamBuff = setReadNodeKeys(deepClone(input), ["teamBuff"]); // Use ONLY by dataObjForTeam
-function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<CharacterKey, { target: UIData, buffs: Dict<CharacterKey, UIData> }> {
+function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>, activeCharKey?: CharacterKey): Dict<CharacterKey, { target: UIData, buffs: Dict<CharacterKey, UIData> }> {
   // May the goddess of wisdom bless any and all souls courageous
   // enough to attempt for the understanding of this abomination.
 
@@ -165,7 +165,7 @@ function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<CharacterKey,
       // two functions, so the mutation wont't affect existing nodes.
       x.info = { ...(objPathValue(teamBuff, path) as ReadNode<number> | undefined)?.info, prefix: "teamBuff", pivot }
     })
-    Object.assign(targetRef, mergeData([data, buff, { teamBuff: buff }]))
+    Object.assign(targetRef, mergeData([data, buff, { teamBuff: buff, activeCharKey: constant(activeCharKey) }]))
     targetRef["target"] = targetRef
   })
   const origin = new UIData(undefined as any, undefined)

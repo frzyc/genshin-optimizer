@@ -56,6 +56,7 @@ function markAccu<T>(accu: ReadNode<number>["accu"], value: T): void {
 
 /** All read nodes */
 const input = setReadNodeKeys(deepClone({
+  activeCharKey: stringRead(),
   charKey: stringRead(), charEle: stringRead(), infusion: stringRead(), weaponType: stringRead(),
   lvl: read(undefined, { key: "level", prefix: "char" }), constellation: read(), asc: read(), special: read(),
 
