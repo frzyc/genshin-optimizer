@@ -35,10 +35,10 @@ const content = [{
   to: "/tools",
   value: "tools",
 }, {
-  i18Key: "tabs.database",
+  i18Key: "tabs.setting",
   svg: faCog,
-  to: "/database",
-  value: "database",
+  to: "/setting",
+  value: "setting",
 }, {
   i18Key: "tabs.doc",
   svg: faBook,

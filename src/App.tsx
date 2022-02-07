@@ -71,7 +71,7 @@ function App() {
               <Route path="/build" component={BuildDisplay} />
               <Route path="/tools" component={ToolsDisplay} />
               {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
-              <Route path="/database" component={SettingsDisplay} />
+              <Route path="/setting" component={SettingsDisplay} />
               <Route path="/doc" component={DocumentationDisplay} />
               <Route path="/flex" component={FlexDisplay} />
               <Route path="/scanner" component={ScannerDisplay} />
