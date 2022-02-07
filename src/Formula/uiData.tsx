@@ -335,6 +335,7 @@ function createName({ key, value, prefix, variant, source }: ContextNodeDisplay)
   const prefixDisplay = (prefix && !source)
     ? <>{KeyMap.getPrefixStr(prefix)} </>
     : <></>
+  // TODO: Convert `source` key to actual name
   const sourceDisplay = source ? <> ({source})</> : null
   if (source) console.log(key, value, prefix, variant, source)
   return <><ColorText color={variant}>{prefixDisplay}{KeyMap.getNoUnit(key!)}</ColorText>{sourceDisplay} {valueString(value, KeyMap.unit(key!))}</>
