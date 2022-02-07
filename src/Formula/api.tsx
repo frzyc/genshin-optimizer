@@ -17,7 +17,7 @@ function inferInfoMut(data: Data, source?: Info["source"]): Data {
     if (path[0] === "teamBuff") path = path.slice(1)
     const reference = objPathValue(input, path) as ReadNode<number> | undefined
     if (reference)
-      x.info = { ...reference.info, source }
+      x.info = { ...reference.info, prefix: undefined, source }
     else
       console.log(`Detect ${source} buff into non-existant key path ${path}`)
   })

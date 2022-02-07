@@ -234,7 +234,7 @@ export class UIData {
       case "add": case "mul": case "min": case "max":
         const identity = allOperations[operation]([])
         if (process.env.NODE_ENV !== "development")
-          operands = operands.filter(operand => operand.pivot || operand.value !== identity)
+          operands = operands.filter(operand => operand.value !== identity)
         if (!operands.length)
           return variant ? { ...this._constant(identity), variant } : this._constant(identity)
     }
@@ -337,7 +337,6 @@ function createName({ key, value, prefix, variant, source }: ContextNodeDisplay)
     : <></>
   // TODO: Convert `source` key to actual name
   const sourceDisplay = source ? <> ({source})</> : null
-  if (source) console.log(key, value, prefix, variant, source)
   return <><ColorText color={variant}>{prefixDisplay}{KeyMap.getNoUnit(key!)}</ColorText>{sourceDisplay} {valueString(value, KeyMap.unit(key!))}</>
 }
 function mergeFormulaComponents(components: Displayable[]): Displayable {
