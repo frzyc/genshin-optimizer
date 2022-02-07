@@ -145,6 +145,13 @@ export function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Charac
     delete data.teamBuff
     const { targetRef, buffs } = result[targetKey]
     const buff = mergeData(buffs)
+    crawlObject(buff ?? {}, [], (x => x.operation), (x: NumNode, path: string[]) => {
+      // CAUTION
+      // This is safe only because `buff` is created using only `resetData`
+      // and `mergeData`. So every node here is created from either of the
+      // two functions, so the mutation wont't affect existing nodes.
+      x.info = { ...(objPathValue(teamBuff, path) as ReadNode<number> | undefined)?.info, prefix: "teamBuff", pivot: true }
+    })
     Object.assign(targetRef, mergeData([data, buff, { teamBuff: buff }]))
     targetRef["target"] = targetRef
   })
@@ -170,7 +177,7 @@ function mergeData(data: Data[]): Data {
           return data[0]
         }
       }
-      const result: NumNode = { operation: accu, operands: data, info: input?.info }
+      const result: NumNode = { operation: accu, operands: data }
       return result
     } else {
       return Object.fromEntries([...new Set(data.flatMap(x => Object.keys(x) as string[]))]
