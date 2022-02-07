@@ -90,6 +90,7 @@ export const allCharacterKeys = [
   "KaedeharaKazuha",
   // "KamisatoAyaka",
   // "Sayu",
+  "Shenhe",
   // "Yoimiya",
   // "KujouSara",
   // "Aloy",
@@ -99,6 +100,7 @@ export const allCharacterKeys = [
   // "AratakiItto"
 ] as const
 export const allWeaponKeys = [
+  "CalamityQueller",
   "DullBlade",
   // "SilverSword",
   // "CoolSteel",

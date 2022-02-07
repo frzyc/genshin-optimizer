@@ -65,6 +65,7 @@ export const characterIdMap = {
   10000056: "KujouSara",
   10000057: "AratakiItto",
   10000062: "Aloy",
+  10000063: "Shenhe"
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",
@@ -171,7 +172,7 @@ export const weaponIdMap = {
   13504: "VortexVanquisher",
   13505: "PrimordialJadeWingedSpear",
   // 13506: "Deicide",
-  // 13507: "",
+  13507: "CalamityQueller",
   13509: "EngulfingLightning",
 
   //catalyst

@@ -1,6 +1,7 @@
 // import BeginnersProtector from './BeginnersProtector'
 // import BlackcliffPole from './BlackcliffPole'
 // import BlackTassel from './BlackTassel'
+import CalamityQueller from './CalamityQueller'
 // import CrescentPike from './CrescentPike'
 // import Deathmatch from './Deathmatch'
 // import DragonsBane from './DragonsBane'
@@ -24,6 +25,7 @@ const polearm = {
   // BeginnersProtector,
   // BlackcliffPole,
   // BlackTassel,
+  CalamityQueller,
   // CrescentPike,
   // Deathmatch,
   // DragonsBane,

@@ -87,14 +87,14 @@ const asc4 = Object.fromEntries(absorbableEle.map(ele =>
 const condC2Path = [characterKey, "c2"]
 const condC2 = customStringRead(["conditional", ...condC2Path])
 const c2EleMas = threshold_add(input.constellation, 2,
-  match("c2", condC2, datamine.constellation2.elemas))
+  match("c2", condC2, datamine.constellation2.elemas), { key: `eleMas` })
 
 const condC2PPath = [characterKey, "c2p"]
 const condC2P = customStringRead(["conditional", ...condC2PPath])
 const c2PEleMas = threshold_add(input.constellation, 2,
   match("c2p", condC2P,
     unmatch(target.charKey, characterKey, datamine.constellation2.elemas)
-  ))
+  ), { key: `eleMas` })
 
 const condC6Path = [characterKey, "c6"]
 const condC6 = customStringRead(["conditional", ...condC6Path])
@@ -278,9 +278,7 @@ const sheet: ICharacterSheet = {
           },
         }, {
           conditional: { // C2
-            canShow: threshold_add(input.constellation, 2,
-              1, { key: `eleMas` }
-            ),
+            canShow: threshold_add(input.constellation, 2, 1,),
             value: condC2,
             path: condC2Path,
             name: <Translate ns="char_KaedeharaKazuha" key18="c2" />,
@@ -295,7 +293,7 @@ const sheet: ICharacterSheet = {
         }, {
           conditional: { // C2 Party
             canShow: threshold_add(input.constellation, 2,
-              unmatch(target.charKey, characterKey, 1), { key: `eleMas` }),
+              unmatch(target.charKey, characterKey, 1)),
             value: condC2P,
             path: condC2PPath,
             teamBuff: true,

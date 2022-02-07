@@ -15,7 +15,7 @@ import { Data } from "../Formula/type";
 
 export default function FieldDisplay({ field, fieldContext }: { field: IFieldDisplay, fieldContext?: dataContextObj }) {
   const { data, oldData } = useContext(DataContext)
-  const canShow = useMemo(() => !field?.canShow || field?.canShow?.(data), [field, data])
+  const canShow = useMemo(() => field?.canShow?.(data) ?? true, [field, data])
   if (!canShow) return null
   if ("node" in field) {
     // TODO: remove as Data
