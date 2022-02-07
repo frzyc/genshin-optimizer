@@ -22,7 +22,7 @@ const allModStats = [
   ...allMainSubStats,
 ]
 const allNonModStats = [
-  ...(["all", ...allMoves] as const).map(x => `${x}_dmg` as const),
+  ...(["all", ...allMoves] as const).map(x => `${x}_dmgInc` as const),
   ...(["all", ...allTransformative, ...allAmplifying, ...allMoves] as const).map(x => `${x}_dmg_` as const),
   ...allElements.map(x => `${x}_res_` as const),
   ...allMoves.map(x => `${x}_critRate_` as const),
@@ -101,7 +101,9 @@ const input = setReadNodeKeys(deepClone({
     ele: stringRead(), reaction: stringRead(), move: stringRead(), hitMode: stringRead(),
     base: read("add", { key: "base" }),
 
-    dmgBonus: read(undefined, { key: "dmg_", pivot }), dmg: read(),
+    dmgBonus: read(undefined, { key: "dmg_", pivot }),
+    dmgInc: read(undefined, { key: "dmgInc", pivot }),
+    dmg: read(),
   },
 }))
 
@@ -168,6 +170,10 @@ const common: Data = {
       lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmg_`]), naught),
       lookup(hit.ele, objectKeyMap(allElements, ele => total[`${ele}_dmg_`]), naught)
     ),
+    dmgInc: sum(
+      total.all_dmgInc,
+      lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmgInc`]), NaN)
+    ),
     ele: stringPrio(
       input.infusion,
       input.team.infusion,
@@ -175,10 +181,7 @@ const common: Data = {
       "physical",
     ),
     dmg: prod(
-      sum(hit.base,
-        total.all_dmg,
-        lookup(hit.move,
-          objectKeyMap(allMoves, move => total[`${move}_dmg`]), NaN)),
+      sum(hit.base, hit.dmgInc),
       sum(unit, hit.dmgBonus),
       lookup(hit.hitMode, {
         hit: unit,
