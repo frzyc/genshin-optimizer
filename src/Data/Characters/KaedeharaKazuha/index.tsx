@@ -2,7 +2,7 @@ import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
-import { constant, customStringRead, infoMut, match, matchStr, percent, prod, threshold, threshold_add, unmatch } from '../../../Formula/utils'
+import { constant, customStringRead, infoMut, match, matchFull, percent, prod, threshold, threshold_add, unmatch } from '../../../Formula/utils'
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
 import { absorbableEle, dataObjForCharacterSheet, dmgNode, singleDmgNode } from '../dataUtil'
@@ -99,7 +99,7 @@ const c2PEleMas = threshold_add(input.constellation, 2,
 const condC6Path = [characterKey, "c6"]
 const condC6 = customStringRead(["conditional", ...condC6Path])
 const c6infusion = threshold(input.constellation, 6,
-  matchStr("c6", condC6, "anemo", undefined),
+  matchFull("c6", condC6, "anemo", undefined),
   undefined
 )
 const c6Dmg_ = threshold_add(input.constellation, 6,

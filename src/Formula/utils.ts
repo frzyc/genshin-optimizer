@@ -37,7 +37,11 @@ export function unmatch(v1: Str, v2: Str, unmatch: Num, info?: Info): NumNode {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(0), intoV(unmatch)], info, emptyOn: "match" }
 }
 /** `v1` === `v2` ? `match` : `unmatch` */
-export function matchStr(v1: Str, v2: Str, match: Str, unmatch: Str, info?: Info): MatchNode<StrNode, StrNode> {
+export function matchFull(v1: Num, v2: Num, match: Num, unmatch: Num, info?: Info): MatchNode<NumNode, NumNode>
+export function matchFull(v1: Num, v2: Num, match: Str, unmatch: Str, info?: Info): MatchNode<StrNode, NumNode>
+export function matchFull(v1: Str, v2: Str, match: Num, unmatch: Num, info?: Info): MatchNode<NumNode, StrNode>
+export function matchFull(v1: Str, v2: Str, match: Str, unmatch: Str, info?: Info): MatchNode<StrNode, StrNode>
+export function matchFull(v1: Num | Str, v2: Num | Str, match: Num | Str, unmatch: Num | Str, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(unmatch)], info }
 }
 

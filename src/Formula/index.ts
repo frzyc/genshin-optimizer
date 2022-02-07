@@ -3,7 +3,7 @@ import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
 import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
-import { constant, frac, infoMut, lookup, matchStr, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, sum, unit } from "./utils"
+import { constant, frac, infoMut, lookup, matchFull, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, sum, unit } from "./utils"
 
 const asConst = true as const, pivot = true as const
 
@@ -130,8 +130,8 @@ const baseAmpBonus = sum(unit, prod(25 / 9, frac(total.eleMas, 1400)))
 /** Effective reaction, taking into account the hit's element */
 export const effectiveReaction = lookup(hit.ele, {
   pyro: lookup(hit.reaction, { vaporize: constant("vaporize"), melt: constant("melt") }, undefined),
-  hydro: matchStr(hit.reaction, "vaporize", "vaporize", undefined),
-  cryo: matchStr(hit.reaction, "melt", "melt", undefined),
+  hydro: matchFull(hit.reaction, "vaporize", "vaporize", undefined),
+  cryo: matchFull(hit.reaction, "melt", "melt", undefined),
 }, undefined)
 
 const common: Data = {
@@ -178,7 +178,7 @@ const common: Data = {
     ele: stringPrio(
       input.infusion,
       input.team.infusion,
-      matchStr(input.weaponType, "catalyst", input.charEle, undefined),
+      matchFull(input.weaponType, "catalyst", input.charEle, undefined),
       "physical",
     ),
     dmg: prod(
