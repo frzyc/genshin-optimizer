@@ -1,15 +1,15 @@
 import { WeaponData } from 'pipeline'
+import ImgIcon from '../../../../Components/Image/ImgIcon'
 import { Translate } from '../../../../Components/Translate'
+import { input } from '../../../../Formula'
+import { customStringRead, match, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { sgt } from '../../../Characters/SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
+import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
-import iconAwaken from './AwakenIcon.png'
-import ImgIcon from '../../../../Components/Image/ImgIcon'
-import { sgt } from '../../../Characters/SheetUtil'
-import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
-import { input } from '../../../../Formula'
-import { WeaponKey } from '../../../../Types/consts'
-import { customStringRead, infoMut, match, subscript } from '../../../../Formula/utils'
-import { dataObjForWeaponSheet } from '../../util'
 const key: WeaponKey = "FreedomSworn"
 const data_gen = data_gen_json as WeaponData
 const tr = (strKey: string) => <Translate ns={`weapon_${key}_gen`} key18={strKey} />
@@ -51,13 +51,13 @@ const sheet: IWeaponSheet = {
       states: {
         on: {
           fields: [{
-            node: infoMut(atk_, { key: "atk_" })
+            node: atk_
           }, {
-            node: infoMut(normal_dmg_, { key: "normal_dmg_" })
+            node: normal_dmg_
           }, {
-            node: infoMut(charged_dmg_, { key: "charged_dmg_" })
+            node: charged_dmg_
           }, {
-            node: infoMut(plunging_dmg_, { key: "plunging_dmg_" })
+            node: plunging_dmg_
           }, {
             text: sgt("duration"),
             value: 12,

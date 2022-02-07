@@ -76,14 +76,14 @@ Object.entries(elementalData).forEach(([e, { name }]) => {
 export type HitMoveDmgKey = `${HitMoveKey}_dmg_`
 export const allHitMoveDmgKeys = Object.keys(hitMoves).map(h => `${h}_dmg_`) as HitMoveDmgKey[]
 
-export type HitMoveIncKey = `${HitMoveKey}_dmg_inc`
-export const allHitMoveIncKeys = Object.keys(hitMoves).map(h => `${h}_dmg_inc`) as HitMoveIncKey[]
+export type HitMoveIncKey = `${HitMoveKey}_dmg`
+export const allHitMoveIncKeys = Object.keys(hitMoves).map(h => `${h}_dmg`) as HitMoveIncKey[]
 
 export type HitMoveCritRateKey = `${HitMoveKey}_critRate_`
 export const allHitMoveCritRateKeys = Object.keys(hitMoves).map(h => `${h}_critRate_`) as HitMoveCritRateKey[]
 
 Object.entries(hitMoves).forEach(([move, moveName]) => {
-  statMap[`${move}_dmg_inc`] = `${moveName} DMG Increase`
+  statMap[`${move}_dmg`] = `${moveName} DMG Increase`
   statMap[`${move}_dmg_`] = `${moveName} DMG Bonus`
   statMap[`${move}_critRate_`] = `${moveName} CRIT Rate Bonus`
 })

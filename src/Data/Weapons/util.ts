@@ -1,5 +1,5 @@
 import type { WeaponData } from "pipeline";
-import { mergeData } from "../../Formula/api";
+import { inferInfoMut, mergeData } from "../../Formula/api";
 import { MainStatKey, SubstatKey } from "../../Types/artifact";
 import { WeaponKey } from "../../Types/consts";
 import _weaponCurves from "./expCurve_gen.json";
@@ -53,5 +53,5 @@ export function dataObjForWeaponSheet(
     })
   }
 
-  return mergeData([...merging, additional])
+  return mergeData([...merging, inferInfoMut(additional)])
 }

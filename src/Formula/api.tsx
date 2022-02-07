@@ -6,12 +6,24 @@ import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/const
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, deepClone, layeredAssignment, objectKeyMap, objPathValue } from "../Util/Util";
 import { input } from "./index";
-import { Data, DisplaySub, Input, NumNode, ReadNode, StrNode } from "./type";
+import { Data, DisplaySub, Info, Input, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
-import { constant, customRead, data, frac, infoMut, percent, prod, resetData, setReadNodeKeys, subscript, sum, unit } from "./utils";
+import { constant, customRead, frac, infoMut, percent, prod, resetData, setReadNodeKeys, subscript, sum, unit } from "./utils";
 
-const asConst = true
+const asConst = true as const, pivot = true as const
 
+function inferInfoMut(data: Data, source?: Info["source"]): Data {
+  crawlObject(data, [], (x: any) => x.operation, (x: NumNode, path: string[]) => {
+    if (path[0] === "teamBuff") path = path.slice(1)
+    const reference = objPathValue(input, path) as ReadNode<number> | undefined
+    if (reference)
+      x.info = { ...reference.info, source }
+    else
+      console.log(`Detect ${source} buff into non-existant key path ${path}`)
+  })
+
+  return data
+}
 function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel: number = 0): Data {
   const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level))
   const stats: [ArtifactSetKey | MainStatKey | SubstatKey, number][] = []
@@ -84,7 +96,7 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
 }
 /** These read nodes are very context-specific, and cannot be used anywhere else outside of `uiDataForTeam` */
 const teamBuff = setReadNodeKeys(deepClone(input), ["teamBuff"]); // Use ONLY by dataObjForTeam
-export function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<CharacterKey, { target: UIData, buffs: Dict<CharacterKey, UIData> }> {
+function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<CharacterKey, { target: UIData, buffs: Dict<CharacterKey, UIData> }> {
   // May the goddess of wisdom bless any and all souls courageous
   // enough to attempt for the understanding of this abomination.
 
@@ -123,7 +135,8 @@ export function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Charac
       //   calculation in `calc`.
 
       crawlObject(sourceBuff, [], (x: any) => x.operation, (x: NumNode | StrNode, path: string[]) => {
-        layeredAssignment(buff, path, resetData(getReadNode(["teamBuff", ...path]), calc))
+        const info: Info = { ...objPathValue(input, path), source: sourceKey, prefix: undefined, asConst }
+        layeredAssignment(buff, path, resetData(getReadNode(["teamBuff", ...path]), calc, info))
 
         crawlObject(x, [], (x: any) => x?.operation === "read", (x: ReadNode<number | string>) => {
           if (x.path[0] === "targetBuff") return // Ignore teamBuff access
@@ -150,7 +163,7 @@ export function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Charac
       // This is safe only because `buff` is created using only `resetData`
       // and `mergeData`. So every node here is created from either of the
       // two functions, so the mutation wont't affect existing nodes.
-      x.info = { ...(objPathValue(teamBuff, path) as ReadNode<number> | undefined)?.info, prefix: "teamBuff", asConst: true }
+      x.info = { ...(objPathValue(teamBuff, path) as ReadNode<number> | undefined)?.info, prefix: "teamBuff", pivot }
     })
     Object.assign(targetRef, mergeData([data, buff, { teamBuff: buff }]))
     targetRef["target"] = targetRef
@@ -192,10 +205,10 @@ function computeUIData(data: Data[]): UIData {
   return new UIData(mergeData(data), undefined)
 }
 type ComparedNodeDisplay<V = number> = NodeDisplay<V> & { diff: V }
-export function compareTeamBuffUIData(uiData1: UIData, uiData2: UIData): Input<ComparedNodeDisplay, ComparedNodeDisplay<string>> {
+function compareTeamBuffUIData(uiData1: UIData, uiData2: UIData): Input<ComparedNodeDisplay, ComparedNodeDisplay<string>> {
   return compareInternal(uiData1.getTeamBuff(), uiData2.getTeamBuff())
 }
-export function compareDisplayUIData(uiData1: UIData, uiData2: UIData): { [key: string]: DisplaySub<ComparedNodeDisplay> } {
+function compareDisplayUIData(uiData1: UIData, uiData2: UIData): { [key: string]: DisplaySub<ComparedNodeDisplay> } {
   return compareInternal(uiData1.getDisplay(), uiData2.getDisplay())
 }
 function compareInternal(data1: any | undefined, data2: any | undefined): any {
@@ -282,5 +295,6 @@ export const reactions = {
 export type { NodeDisplay, UIData };
 export {
   dataObjForArtifact, dataObjForCharacter, dataObjForWeapon,
-  mergeData, computeUIData, valueString,
+  mergeData, computeUIData, valueString, inferInfoMut,
+  uiDataForTeam, compareTeamBuffUIData, compareDisplayUIData
 };

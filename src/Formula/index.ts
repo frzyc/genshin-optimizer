@@ -1,7 +1,7 @@
 import { allEleEnemyResKeys } from "../KeyMap"
 import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
-import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap, objectMap } from "../Util/Util"
+import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
 import { constant, frac, infoMut, lookup, matchStr, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, sum, unit } from "./utils"
 

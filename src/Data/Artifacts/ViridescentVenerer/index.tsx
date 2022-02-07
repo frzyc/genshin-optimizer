@@ -18,17 +18,15 @@ import { objectKeyMap, objectKeyValueMap } from '../../../Util/Util'
 const key: ArtifactSetKey = "ViridescentVenerer"
 const tr = (strKey: string) => <Translate ns={`artifact_${key}_gen`} key18={strKey} />
 
-const anemo_dmg_ = threshold_add(input.artSet.ViridescentVenerer, 2, percent(0.15), { key: "anemo_dmg_" })
-
-const swirl_dmg_ = threshold_add(input.artSet.ViridescentVenerer, 4, percent(0.6), { key: "swirl_dmg_" })
+const anemo_dmg_ = threshold_add(input.artSet.ViridescentVenerer, 2, percent(0.15))
+const swirl_dmg_ = threshold_add(input.artSet.ViridescentVenerer, 4, percent(0.6))
 
 const condSwirlPaths = objectKeyMap(absorbableEle, e => [key, `swirl${e}`])
 const condSwirls = objectKeyMap(absorbableEle, e => customStringRead(["conditional", ...condSwirlPaths[e]]))
 
 const condSwirlNodes = objectKeyValueMap(absorbableEle, e => [`${e}_enemyRes_`,
 threshold_add(input.artSet.ViridescentVenerer, 4,
-  match("swirl", condSwirls[e], percent(-0.4)),
-  { key: `${e}_enemyRes_`, variant: e }
+  match("swirl", condSwirls[e], percent(-0.4))
 )])
 
 const data: Data = dataObjForArtifactSheet(key, {

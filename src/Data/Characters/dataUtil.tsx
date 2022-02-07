@@ -1,5 +1,5 @@
 import { input } from "../../Formula";
-import { mergeData, reactions } from "../../Formula/api";
+import { inferInfoMut, mergeData, reactions } from "../../Formula/api";
 import { Data, DisplaySub, NumNode } from "../../Formula/type";
 import { constant, data, infoMut, prod, subscript, sum } from "../../Formula/utils";
 import { allMainStatKeys, allSubstats, MainStatKey } from "../../Types/artifact";
@@ -101,5 +101,5 @@ export function dataObjForCharacterSheet(
     }
   }
 
-  return mergeData([data, additional])
+  return mergeData([data, inferInfoMut(additional)])
 }

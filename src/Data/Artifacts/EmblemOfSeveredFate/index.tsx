@@ -1,6 +1,6 @@
 import icons from './icons'
 import { Data } from '../../../Formula/type'
-import { infoMut, min, percent, prod, threshold_add } from '../../../Formula/utils'
+import { min, percent, prod, threshold_add } from '../../../Formula/utils'
 import { input } from '../../../Formula'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
@@ -28,14 +28,14 @@ const sheet: IArtifactSheet = {
     2: {
       document: [{
         fields: [{
-          node: infoMut(set2, { key: "enerRech_" }),
+          node: set2,
         }]
       }]
     },
     4: {
       document: [{
         fields: [{
-          node: infoMut(burstBonus, { key: "burst_dmg_" }),
+          node: burstBonus,
         }]
       }]
     }

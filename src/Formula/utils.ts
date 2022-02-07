@@ -100,11 +100,11 @@ export function data(base: NumNode | StrNode, data: Data): DataNode<NumNode> | D
 export function data(base: AnyNode, data: Data): DataNode<AnyNode> {
   return { operation: "data", operands: [base], data }
 }
-export function resetData(base: NumNode, data: Data): NumNode
-export function resetData(base: StrNode, data: Data): StrNode
-export function resetData(base: NumNode | StrNode, data: Data): DataNode<NumNode | StrNode>
-export function resetData(base: AnyNode, data: Data): DataNode<any> {
-  return { operation: "data", operands: [base], data, reset: true }
+export function resetData(base: NumNode, data: Data, info?: Info): NumNode
+export function resetData(base: StrNode, data: Data, info?: Info): StrNode
+export function resetData(base: NumNode | StrNode, data: Data, info?: Info): DataNode<NumNode | StrNode>
+export function resetData(base: AnyNode, data: Data, info?: Info): DataNode<any> {
+  return { operation: "data", operands: [base], data, reset: true, info }
 }
 
 

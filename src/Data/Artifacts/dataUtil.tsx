@@ -1,4 +1,4 @@
-import { mergeData } from "../../Formula/api";
+import { inferInfoMut, mergeData } from "../../Formula/api";
 import { Data, DisplaySub } from "../../Formula/type";
 import { ArtifactSetKey } from "../../Types/consts";
 
@@ -7,7 +7,7 @@ export function dataObjForArtifactSheet(
   data: Data = {},
   displayArtifact: DisplaySub = {},
 ): Data {
-  return mergeData([data, {
+  return mergeData([inferInfoMut(data, key), {
     display: {
       [`artifact:${key}`]: displayArtifact
     },

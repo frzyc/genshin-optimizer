@@ -1,6 +1,6 @@
 import type { KeyMapPrefix } from "../KeyMap"
 import type { AmplifyingReactionsKey, TransformativeReactionsKey } from "../StatConstants"
-import type { ElementKeyWithPhy } from "../Types/consts"
+import type { ArtifactSetKey, CharacterKey, ElementKeyWithPhy } from "../Types/consts"
 import type { input, uiInput } from "./index"
 
 export type NumNode = ComputeNode | ThresholdNode |
@@ -22,6 +22,7 @@ export type AnyNode = NumNode | StrNode | {
 interface Info {
   key?: string
   prefix?: KeyMapPrefix
+  source?: CharacterKey | ArtifactSetKey
   variant?: Variant
   asConst?: true
   pivot?: true

@@ -81,21 +81,20 @@ const asc4 = Object.fromEntries(absorbableEle.map(ele =>
     match("swirl", condSwirls[ele],
       // TODO: this percent of 0.04% is displayed as 0.0%
       prod(percent(datamine.passive2.elemas_dmg_), input.premod.eleMas)
-    ), { key: `${ele}_dmg_`, variant: ele })]))
+    ))]))
 
 /** TODO: the C2 actually only applies to "active" character, so the following needs to be changed... */
 const condC2Path = [characterKey, "c2"]
 const condC2 = customStringRead(["conditional", ...condC2Path])
 const c2EleMas = threshold_add(input.constellation, 2,
-  match("c2", condC2, datamine.constellation2.elemas), { key: `eleMas` }
-)
+  match("c2", condC2, datamine.constellation2.elemas))
 
 const condC2PPath = [characterKey, "c2p"]
 const condC2P = customStringRead(["conditional", ...condC2PPath])
 const c2PEleMas = threshold_add(input.constellation, 2,
   match("c2p", condC2P,
     unmatch(target.charKey, characterKey, datamine.constellation2.elemas)
-  ), { key: `eleMas` })
+  ))
 
 const condC6Path = [characterKey, "c6"]
 const condC6 = customStringRead(["conditional", ...condC6Path])
@@ -138,9 +137,9 @@ const dmgFormulas = {
   passive1: Object.fromEntries(absorbableEle.map(key =>
     [key, match(condSkillAbsorption, key, singleDmgNode("atk", datamine.passive1.asorbAdd, "plunging", { hit: { ele: constant(key) } }))])),
   constellation6: {
-    normal_dmg_: { ...c6Dmg_ },
-    charged_dmg_: { ...c6Dmg_ },
-    plunging_dmg_: { ...c6Dmg_ }
+    normal_dmg_: c6NormDmg_,
+    charged_dmg_: c6ChargedDmg_,
+    plunging_dmg_: c6PlungingDmg_,
   }
 }
 
@@ -366,7 +365,7 @@ const sheet: ICharacterSheet = {
           fields: [{ //TODO: put into subsection since this is teambuff
             //   header: conditionalHeader("passive3", tr, passive3),
             //   description: tr("passive3.description"),
-            node: infoMut(passive, { key: "staminaSprintDec_" })
+            node: passive
           }]
         }],
       },
@@ -395,11 +394,11 @@ const sheet: ICharacterSheet = {
                     text: <ColorText color="anemo">Anemo Infusion</ColorText>
                   },
                   {
-                    node: infoMut(dmgFormulas.constellation6.normal_dmg_, { key: "normal_dmg_" })
+                    node: c6NormDmg_
                   }, {
-                    node: infoMut(dmgFormulas.constellation6.charged_dmg_, { key: "charged_dmg_" })
+                    node: c6ChargedDmg_
                   }, {
-                    node: infoMut(dmgFormulas.constellation6.plunging_dmg_, { key: "plunging_dmg_" })
+                    node: c6PlungingDmg_
                   }, {
                     text: sgt("duration"),
                     value: datamine.constellation6.duration,

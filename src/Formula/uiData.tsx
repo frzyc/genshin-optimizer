@@ -3,7 +3,7 @@ import ColorText from "../Components/ColoredText"
 import KeyMap, { KeyMapPrefix } from "../KeyMap"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
-import { ComputeNode, Data, DataNode, DisplaySub, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput, Variant } from "./type"
+import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput, Variant } from "./type"
 
 const shouldWrap = true
 
@@ -132,16 +132,17 @@ export class UIData {
     }
 
     if (info) {
-      const { prefix, variant, key, asConst } = info
+      const { key, prefix, source, variant, asConst } = info
       let { pivot } = info
       result = { ...result }
 
       // Pivot all keyed nodes for debugging
       // if (key) pivot = true
 
-      if (variant) result.variant = variant
-      if (prefix) result.prefix = prefix
       if (key) result.key = key
+      if (prefix) result.prefix = prefix
+      if (source) result.source = source
+      if (variant) result.variant = variant
       if (pivot) result.pivot = pivot
 
       if (asConst) {
@@ -330,8 +331,13 @@ function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
 }
 
 //* Comment/uncomment this line to toggle between string formulas and JSX formulas
-function createName({ key, value, prefix: subkey, variant }: ContextNodeDisplay): Displayable {
-  return <><ColorText color={variant}>{subkey ? <>{KeyMap.getPrefixStr(subkey)} </> : null}{KeyMap.getNoUnit(key!)}</ColorText> {valueString(value, KeyMap.unit(key!))}</>
+function createName({ key, value, prefix, variant, source }: ContextNodeDisplay): Displayable {
+  const prefixDisplay = (prefix && !source)
+    ? <>{KeyMap.getPrefixStr(prefix)} </>
+    : <></>
+  const sourceDisplay = source ? <> ({source})</> : null
+  if (source) console.log(key, value, prefix, variant, source)
+  return <><ColorText color={variant}>{prefixDisplay}{KeyMap.getNoUnit(key!)}</ColorText>{sourceDisplay} {valueString(value, KeyMap.unit(key!))}</>
 }
 function mergeFormulaComponents(components: Displayable[]): Displayable {
   return <>{components.map((x, i) => <span key={i}>{x}</span>)}</>
@@ -353,14 +359,15 @@ function createAssignFormula(name: Displayable, formula: Displayable) {
 //*/
 
 interface ContextNodeDisplay<V = number> {
-  key?: string
-  prefix?: KeyMapPrefix
+  key?: Info["key"]
+  prefix?: Info["prefix"]
+  source?: Info["source"]
+  variant?: Info["variant"]
 
   pivot: boolean
   empty: boolean
 
   value: V
-  variant?: Variant
 
   dependencies: Set<Displayable>
 

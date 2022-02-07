@@ -85,7 +85,7 @@ const asc4 = match("hit", condSkillHitOpponent,
 const c6Base = threshold_add(input.constellation, 6, percent(0.2))
 // TODO: Add to team buff
 const c6Bonus = objectKeyMap(absorbableEle.map(ele => `${ele}_dmg_` as const), key =>
-  match(condAbsorption, key.slice(0, -5), c6Base, { key }))
+  match(condAbsorption, key.slice(0, -5), c6Base))
 
 export const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
