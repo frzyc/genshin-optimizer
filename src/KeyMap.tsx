@@ -13,6 +13,7 @@ const statMap = {
   base: "Base DMG",
   dmg_: "Total DMG Bonus",
   all_dmg_: "Common DMG Bonus",
+  all_dmg: "Common DMG Increase",
   weakspotDMG_: "Weakspot DMG",
   incHeal_: "Incoming Healing Bonus",
   shield_: "Shield Strength",

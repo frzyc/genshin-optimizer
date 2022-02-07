@@ -66,7 +66,7 @@ const input = setReadNodeKeys(deepClone({
   bonus: { ...talent },
   premod: { ...talent, ...allModStatNodes, ...allNonModStatNodes },
   total: withDefaultInfo({ prefix: "total", pivot }, {
-    ...talent,
+    ...talent, ...objectKeyValueMap(allTalents, talent => [`${talent}Index`, read()]),
     ...allModStatNodes, ...allNonModStatNodes,
     /** Total Crit Rate capped to [0%, 100%] */
     cappedCritRate: read(undefined, { key: "critRate_" }),
@@ -155,6 +155,7 @@ const common: Data = {
     ...objectKeyMap(allTalents, talent => premod[talent]),
     ...objectKeyMap(allModStats, key => premod[key]),
     ...objectKeyMap(allNonModStats, key => premod[key]),
+    ...objectKeyValueMap(allTalents, talent => [`${talent}Index`, sum(total[talent], -1)]),
     stamina: sum(constant(100, { key: "stamina", prefix: "default" }), customBonus.stamina),
 
     cappedCritRate: max(min(total.critRate_, unit), naught),
