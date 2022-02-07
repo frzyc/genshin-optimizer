@@ -21,7 +21,7 @@ import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { DataContext, dataContextObj, TeamData } from '../DataContext';
 import { uiDataForTeam, mergeData } from '../Formula/api';
-import { input } from '../Formula/index';
+import { uiInput as input } from '../Formula/index';
 import { optimize } from '../Formula/optimization';
 import { NumNode } from '../Formula/type';
 import { GlobalSettingsContext } from '../GlobalSettings';

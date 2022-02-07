@@ -5,7 +5,7 @@ import { ArtifactSetKey, CharacterKey, WeaponKey } from "./consts";
 import { UIData } from "../Formula/uiData";
 
 export default interface IConditional {
-  path: string[],
+  path: readonly string[],
   value: ReadNode<string>,
   teamBuff?: boolean,
   name: Displayable;
@@ -19,7 +19,7 @@ export default interface IConditional {
   states: {
     [key: string]: {
       name?: Displayable,
-      fields: IFieldDisplay[]
+      fields: readonly IFieldDisplay[]
     }
   }
 }

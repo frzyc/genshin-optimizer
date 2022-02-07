@@ -5,7 +5,7 @@ import { Button, CardContent, Chip, Collapse, Grid, Typography } from "@mui/mate
 import { useCallback, useContext, useState } from 'react';
 import StatInput from "../PageCharacter/StatInput";
 import { DataContext } from "../DataContext";
-import { input } from "../Formula";
+import { uiInput as input } from "../Formula";
 import { valueString } from "../Formula/uiData";
 import KeyMap from '../KeyMap';
 import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";
@@ -97,7 +97,7 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
     </Grid>
     {allElementsWithPhy.map(eleKey => {
       const statKey = `${eleKey}_enemyRes_`
-      const node = data.get(input.enemy[`${eleKey}_res_`])
+      const node = data.get(input.customBonus[`${eleKey}_enemyRes_`])
       const elementImmunity = !isFinite(node.value)
       return <Grid item key={eleKey} {...bsProps}>
         <StatInput

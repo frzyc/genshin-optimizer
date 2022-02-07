@@ -6,7 +6,7 @@ import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import { DataContext } from '../DataContext';
-import { input } from '../Formula';
+import { uiInput as input } from '../Formula';
 import KeyMap from '../KeyMap';
 import { MainStatKey, SubstatKey } from '../Types/artifact_WR';
 type ChartCardProps = {

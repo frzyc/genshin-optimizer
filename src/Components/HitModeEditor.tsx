@@ -1,7 +1,7 @@
 import { CardContent, Grid, MenuItem, ToggleButton, ToggleButtonGroupProps } from "@mui/material";
 import { useContext } from 'react';
 import { DataContext } from "../DataContext";
-import { input } from "../Formula";
+import { uiInput as input } from "../Formula";
 import { ElementKey } from "../Types/consts";
 import CardLight from "./Card/CardLight";
 import ColorText from "./ColoredText";

@@ -3,7 +3,7 @@ import { useContext, useMemo, useState } from "react";
 import Assets from "../../Assets/Assets";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
-import { input } from "../../Formula";
+import { uiInput as input } from "../../Formula";
 import useCharUIData from "../../ReactHooks/useCharUIData";
 import usePromise from "../../ReactHooks/usePromise";
 import { ICachedCharacter } from "../../Types/character_WR";

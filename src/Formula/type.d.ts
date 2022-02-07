@@ -1,7 +1,7 @@
 import type { KeyMapPrefix } from "../KeyMap"
 import type { AmplifyingReactionsKey, TransformativeReactionsKey } from "../StatConstants"
 import type { ElementKeyWithPhy } from "../Types/consts"
-import type { input } from "./index"
+import type { input, uiInput } from "./index"
 
 export type NumNode = ComputeNode | ThresholdNode |
   DataNode<NumNode> |
@@ -83,6 +83,7 @@ type _StrictInput<T, Num, Str> = T extends ReadNode<number> ? Num : T extends Re
 type _Input<T, Num, Str> = T extends ReadNode<number> ? Num : T extends ReadNode<string> ? Str : { [key in keyof T]?: _Input<T[key], Num, Str> }
 export type StrictInput<Num = NumNode, Str = StrNode> = _StrictInput<typeof input, Num, Str>
 export type Input<Num = NumNode, Str = StrNode> = _Input<typeof input, Num, Str>
+export type UIInput<Num = NumNode, Str = StrNode> = _Input<typeof uiInput, Num, Str>
 
 export type Data = Input & DynamicNumInput
 export type DisplaySub<T = NumNode> = { [key in string]?: T }

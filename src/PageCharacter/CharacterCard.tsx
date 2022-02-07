@@ -11,7 +11,7 @@ import StatIcon from '../Components/StatIcon';
 import { ascensionMaxLevel } from '../Data/LevelData';
 import { DatabaseContext } from '../Database/Database';
 import { DataContext, dataContextObj, TeamData } from '../DataContext';
-import { input } from '../Formula';
+import { uiInput as input } from '../Formula';
 import { computeUIData, dataObjForWeapon, valueString } from '../Formula/api';
 import { NumNode } from '../Formula/type';
 import KeyMap from '../KeyMap';

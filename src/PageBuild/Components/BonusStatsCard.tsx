@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import CardLight from '../../Components/Card/CardLight';
 import { FieldDisplayList, NodeFieldDisplay } from '../../Components/FieldDisplay';
 import { DataContext } from '../../DataContext';
-import { input } from '../../Formula';
+import { uiInput as input } from '../../Formula';
 import { NumNode } from '../../Formula/type';
 export default function BonusStatsCard() {
   const { data, character } = useContext(DataContext)

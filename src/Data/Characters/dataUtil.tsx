@@ -12,7 +12,7 @@ export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[
 // TODO: Remove this conversion after changing the file format
 const charCurves = objectMap(_charCurves, value => [0, ...Object.values(value)])
 
-const commonBasic = objectKeyMap([...allSubstats, "def"], key => input.total[key])
+const commonBasic = objectKeyMap([...allSubstats, "heal_"], key => input.total[key])
 commonBasic.critRate_ = input.total.cappedCritRate
 
 function getTalentType(move: "normal" | "charged" | "plunging" | "skill" | "burst") {

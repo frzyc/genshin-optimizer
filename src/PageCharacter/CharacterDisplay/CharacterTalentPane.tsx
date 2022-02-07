@@ -13,7 +13,7 @@ import StatIcon from "../../Components/StatIcon";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import { TalentSheetElementKey } from "../../Types/character";
 import { DataContext } from '../../DataContext';
-import { input } from "../../Formula";
+import { uiInput as input } from "../../Formula";
 import { ElementKey } from "../../Types/consts";
 import KeyMap from '../../KeyMap'
 import { NodeDisplay, valueString } from '../../Formula/uiData'

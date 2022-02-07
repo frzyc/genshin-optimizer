@@ -111,10 +111,11 @@ Object.entries(amplifyingReactions).forEach(([reaction, { name }]) => {
 
 export type StatKey = BaseKeys | EleDmgKey | EleResKey | EleEnemyResKey | HitMoveDmgKey | HitMoveIncKey | HitMoveCritRateKey | TransformativeReactionsDmgKey | AmplifyingReactionsDmgKey
 
-export type KeyMapPrefix = 'default' | 'base' | 'total' | 'uncapped' | 'custom' | 'char' | 'art' | 'weapon'
+export type KeyMapPrefix = 'default' | 'base' | 'total' | 'uncapped' | 'custom' | 'char' | 'art' | 'weapon' | 'teamBuff'
 const subKeyMap: StrictDict<KeyMapPrefix, string> = {
   default: "Default", base: "Base", total: "Total", uncapped: "Uncapped",
-  custom: "Custom", char: "Char.", art: "Art.", weapon: "Weapon"
+  custom: "Custom", char: "Char.", art: "Art.", weapon: "Weapon",
+  teamBuff: "Team"
 }
 
 export const allStatKeys = Object.keys(statMap) as StatKey[]

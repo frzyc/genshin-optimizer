@@ -8,7 +8,7 @@ import CardLight from '../../Components/Card/CardLight';
 import ImgIcon from '../../Components/Image/ImgIcon';
 import { database as localDatabase, DatabaseContext } from '../../Database/Database';
 import { DataContext } from '../../DataContext';
-import { input } from '../../Formula';
+import { uiInput as input } from '../../Formula';
 import useForceUpdate from '../../ReactHooks/useForceUpdate';
 import usePromise from '../../ReactHooks/usePromise';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';

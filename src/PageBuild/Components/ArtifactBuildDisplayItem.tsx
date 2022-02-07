@@ -4,7 +4,7 @@ import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
 import CardLight from '../../Components/Card/CardLight';
 import SqBadge from '../../Components/SqBadge';
 import { DataContext } from '../../DataContext';
-import { input } from '../../Formula';
+import { uiInput as input } from '../../Formula';
 import usePromise from '../../ReactHooks/usePromise';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
 import { artifactSlotIcon } from '../../Components/Artifact/SlotNameWIthIcon';

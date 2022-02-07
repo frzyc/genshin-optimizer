@@ -6,7 +6,7 @@ import CardLight from './Card/CardLight';
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from './CustomNumberInput';
 import DropdownButton from './DropdownMenu/DropdownButton';
 import { DataContext } from '../DataContext';
-import { input } from '../Formula';
+import { uiInput as input } from '../Formula';
 import KeyMap, { StatKey } from '../KeyMap';
 import { ElementKey } from '../Types/consts';
 export default function StatFilterCard({ statFilters = {}, setStatFilters, disabled = false }:

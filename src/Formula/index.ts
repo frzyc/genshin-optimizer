@@ -206,8 +206,21 @@ const common: Data = {
 const target = setReadNodeKeys(deepClone(input), ["target"])
 const tally = setReadNodeKeys(objectKeyMap([...allElements, ...allRegions], _ => read("add")), ["tally"])
 
+
+
+/**
+ * List of `input` nodes, rearranged to conform to the needs of the
+ * UI code. This is a separate list so that the evolution of the UIs
+ * does not rely on the structure of `input`. So the UI code can rearrange
+ * nodes as it sees fit without requiring updates to data sheets, which
+ * pertains ~90% of all `input`-related code, and so are very sensitive
+ * to any changes to `input`. For zero overhead, use the nodes directly
+ * from `input` instead of a copy.
+ */
+const uiInput = input
+
 export {
-  input, common, customBonus,
+  input, uiInput, common, customBonus,
 
   target, tally,
 }

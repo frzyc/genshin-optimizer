@@ -5,7 +5,7 @@ import CardLight from '../../Components/Card/CardLight';
 import { EnemyEditor, EnemyResText } from '../../Components/EnemyEditor';
 import ExpandButton from '../../Components/ExpandButton';
 import { DataContext } from '../../DataContext';
-import { input } from '../../Formula/index';
+import { uiInput as input } from '../../Formula/index';
 import { valueString } from '../../Formula/uiData';
 import KeyMap from '../../KeyMap';
 import { allElementsWithPhy } from '../../Types/consts';

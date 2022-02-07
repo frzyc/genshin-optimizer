@@ -9,7 +9,7 @@ import { NodeFieldDisplay } from "../../Components/FieldDisplay";
 import resonanceSheets from "../../Conditional/Resonance";
 import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
 import { DataContext, dataContextObj } from "../../DataContext";
-import { input } from "../../Formula";
+import { uiInput as input } from "../../Formula";
 import { NodeDisplay } from "../../Formula/uiData";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import useCharSelectionCallback from "../../ReactHooks/useCharSelectionCallback";

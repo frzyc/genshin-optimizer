@@ -1,9 +1,9 @@
-import { Input } from "./type"
+import { uiInput } from "."
 import ColorText from "../Components/ColoredText"
 import KeyMap, { KeyMapPrefix } from "../KeyMap"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
-import { ComputeNode, Data, DataNode, DisplaySub, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, Variant } from "./type"
+import { ComputeNode, Data, DataNode, DisplaySub, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput, Variant } from "./type"
 
 const shouldWrap = true
 
@@ -67,8 +67,16 @@ export class UIData {
     if (!this.display) this.display = this.getAll(["display"])
     return this.display
   }
-  getTeamBuff(): Input<NodeDisplay, NodeDisplay<string>> {
-    if (!this.teamBuff) this.teamBuff = this.getAll(["teamBuff"])
+  getTeamBuff(): UIInput<NodeDisplay, NodeDisplay<string>> {
+    if (!this.teamBuff) {
+      const calculated = this.getAll(["teamBuff"]), result = {} as any
+      // Convert `input` to `uiInput`
+      crawlObject(uiInput, [], (x: any) => x.operation, (x: ReadNode<number> | ReadNode<string>, path: string[]) => {
+        const node = objPathValue(calculated, x.path) as NumNode | undefined
+        if (node) layeredAssignment(result, path, node)
+      })
+      this.teamBuff = result
+    }
     return this.teamBuff
   }
   getAll(prefix: string[]): any {
@@ -333,7 +341,7 @@ function createAssignFormula(name: Displayable, formula: Displayable) {
 }
 /*/
 function createName({ key, value, prefix: _prefix }: ContextNodeDisplay): Displayable {
-  const prefix = _prefix ? KeyMap.getSubKeyStr(_prefix) + ' ' : ''
+  const prefix = _prefix ? KeyMap.getPrefixStr(_prefix) + ' ' : ''
   return `${prefix + KeyMap.getNoUnit(key!)} ${valueString(value, KeyMap.unit(key!))}`
 }
 function mergeFormulaComponents(components: Displayable[]): Displayable {
