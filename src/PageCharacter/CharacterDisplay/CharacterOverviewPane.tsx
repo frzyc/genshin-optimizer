@@ -124,7 +124,6 @@ const miscStatReadNodes = [
   ...Object.keys(amplifyingReactions).map(x => input.total[`${x}_dmg_`]),
   ...(["moveSPD_", "atkSPD_", "weakspotDMG_"] as const).map(x => input.total[x])
 ]
-console.log(miscStatReadNodes, miscStatReadNodes.map(x => x.info))
 const miscStatkeys = miscStatReadNodes.map(x => x.info!.key!)
 
 const statBreakpoint = {
