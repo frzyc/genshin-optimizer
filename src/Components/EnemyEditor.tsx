@@ -97,7 +97,7 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
     </Grid>
     {allElementsWithPhy.map(eleKey => {
       const statKey = `${eleKey}_enemyRes_`
-      const node = data.get(input.customBonus[`${eleKey}_enemyRes_`])
+      const node = data.get(input.enemy[`${eleKey}_res_`])
       const elementImmunity = !isFinite(node.value)
       return <Grid item key={eleKey} {...bsProps}>
         <StatInput

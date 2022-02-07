@@ -13,6 +13,7 @@ import { customStringRead, match, percent, threshold_add } from '../../../Formul
 import { input } from '../../../Formula'
 import { st } from '../../Characters/SheetUtil_WR'
 import elementalData from '../../ElementalData'
+import { objectKeyMap, objectKeyValueMap } from '../../../Util/Util'
 
 const key: ArtifactSetKey = "ViridescentVenerer"
 const tr = (strKey: string) => <Translate ns={`artifact_${key}_gen`} key18={strKey} />
@@ -21,14 +22,14 @@ const anemo_dmg_ = threshold_add(input.artSet.ViridescentVenerer, 2, percent(0.1
 
 const swirl_dmg_ = threshold_add(input.artSet.ViridescentVenerer, 4, percent(0.6), { key: "swirl_dmg_" })
 
-const condSwirlPaths = Object.fromEntries(absorbableEle.map(e => [e, [key, `swirl${e}`]]))
-const condSwirls = Object.fromEntries(absorbableEle.map(e => [e, customStringRead(["conditional", ...condSwirlPaths[e]])]))
+const condSwirlPaths = objectKeyMap(absorbableEle, e => [key, `swirl${e}`])
+const condSwirls = objectKeyMap(absorbableEle, e => customStringRead(["conditional", ...condSwirlPaths[e]]))
 
-const condSwirlNodes = Object.fromEntries(absorbableEle.map(e => [`${e}_res_`,
+const condSwirlNodes = objectKeyValueMap(absorbableEle, e => [`${e}_enemyRes_`,
 threshold_add(input.artSet.ViridescentVenerer, 4,
   match("swirl", condSwirls[e], percent(-0.4)),
   { key: `${e}_enemyRes_`, variant: e }
-)]))
+)])
 
 const data: Data = dataObjForArtifactSheet(key, {
   premod: {
@@ -36,7 +37,7 @@ const data: Data = dataObjForArtifactSheet(key, {
     swirl_dmg_,
   },
   teamBuff: {
-    enemy: {
+    premod: {
       ...condSwirlNodes
     }
   }
@@ -70,7 +71,7 @@ const sheet: IArtifactSheet = {
             swirl: {
               name: <ColorText color={eleKey}>{elementalData[eleKey].name}</ColorText>,
               fields: [{
-                node: condSwirlNodes[`${eleKey}_res_`]
+                node: condSwirlNodes[`${eleKey}_enemyRes_`]
               }, {
                 text: sgt("duration"),
                 value: 10,

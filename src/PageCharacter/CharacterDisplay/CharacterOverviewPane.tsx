@@ -114,7 +114,7 @@ const otherStatKeys = otherStatReadNodes.map(x => x.info!.key!)
 
 const miscStatReadNodes = [
   input.total.all_dmg_,
-  ...allElementsWithPhy.map(x => input.enemy[`${x}_res_`]),
+  ...allElementsWithPhy.map(x => input.total[`${x}_enemyRes_`]),
   input.total.normal_dmg_, input.total.normal_critRate_,
   input.total.charged_dmg_, input.total.charged_critRate_,
   input.total.plunging_dmg_, input.total.plunging_critRate_,
@@ -124,6 +124,7 @@ const miscStatReadNodes = [
   ...Object.keys(amplifyingReactions).map(x => input.total[`${x}_dmg_`]),
   ...(["moveSPD_", "atkSPD_", "weakspotDMG_"] as const).map(x => input.total[x])
 ]
+console.log(miscStatReadNodes, miscStatReadNodes.map(x => x.info))
 const miscStatkeys = miscStatReadNodes.map(x => x.info!.key!)
 
 const statBreakpoint = {

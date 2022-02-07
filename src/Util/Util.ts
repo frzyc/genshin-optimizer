@@ -115,6 +115,10 @@ export function evalIfFunc<T, X>(value: T | ((arg: X) => T), arg: X): T {
 export function objectKeyMap<K extends string | number, V>(keys: readonly K[], map: (key: K, i: number) => V): StrictDict<`${K}`, V> {
   return Object.fromEntries(keys.map((k, i) => [k, map(k, i)])) as any
 }
+//fromEntries doesn't result in StrictDict, this is just a utility wrapper.
+export function objectKeyValueMap<T, K extends string | number, V>(items: readonly T[], map: (item: T) => [K, V]): StrictDict<`${K}`, V> {
+  return Object.fromEntries(items.map(t => map(t))) as any
+}
 
 export function objectMap<K extends string, V, T>(obj: Partial<Record<K, V>>, fn: (value: V, key: `${K}`, index: number) => T): Partial<Record<K, T>>
 export function objectMap<K extends string, V, T>(obj: Record<K, V>, fn: (value: V, key: `${K}`, index: number) => T): Record<K, T>

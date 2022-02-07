@@ -11,11 +11,9 @@ import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 const key = "EverlastingMoonglow"
 const data_gen = data_gen_json as WeaponData
 const hp_conv = [0.01, 0.015, 0.02, 0.025, 0.03]
-const normalDmgInc = infoMut(prod(subscript(input.weapon.refineIndex, hp_conv, { key: '_' }), input.premod.hp), { key: "normal_dmg_inc" })
-export const data = dataObjForWeaponSheet(key, data_gen, "heal_", { normalDmgInc }, {
-  hit: {
-    base: match(input.hit.move, "normal", normalDmgInc)
-  }
+const normal_dmg = infoMut(prod(subscript(input.weapon.refineIndex, hp_conv, { key: '_' }), input.premod.hp), { key: "normal_dmg_inc" })
+export const data = dataObjForWeaponSheet(key, data_gen, "heal_", { normal_dmg }, {
+  premod: { normal_dmg }
 })
 const sheet: IWeaponSheet = {
   icon,
@@ -23,7 +21,7 @@ const sheet: IWeaponSheet = {
   document: [{
     fields: [{
       text: <Translate ns={`"weapon_${key}"`} key18="name" />,
-      node: normalDmgInc,
+      node: normal_dmg,
     }],
   }],
 }

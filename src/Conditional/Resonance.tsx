@@ -1,9 +1,10 @@
 import StatIcon from "../Components/StatIcon"
 import { Translate } from "../Components/Translate"
 import { sgt } from "../Data/Characters/SheetUtil"
-import { allElements } from "../Types/consts"
+import { allElements, allElementsWithPhy } from "../Types/consts"
 import IConditional from "../Types/IConditional"
 import { BasicStats } from "../Types/stats"
+import { objectKeyValueMap } from "../Util/Util"
 const tr = (strKey: string) => <Translate ns="resonance_gen" key18={strKey} />
 
 type resonanceDoc = {
@@ -24,7 +25,7 @@ const resonanceSheets: resonanceDoc[] = [{// Protective Canopy
     partyBuff: "partyAll",
     canShow: stats => (new Set([...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle])).size === 4,
     maxStack: 0,
-    stats: Object.fromEntries([...allElements, "physical"].map(ele => [`${ele}_res_`, 15]))
+    stats: objectKeyValueMap(allElementsWithPhy, ele => [`${ele}_res_`, 15])
   }]
 }, {// Fervent Flames
   header: {

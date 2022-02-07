@@ -152,10 +152,10 @@ export const data = dataObjForCharacterSheet(characterKey, "anemo", "inazuma", d
   teamBuff: {
     premod: {
       ...asc4,
+      staminaSprintDec_: passive,
     },
     total: {
       eleMas: c2PEleMas,
-      staminaSprintDec_: passive,
     },
   },
   infusion: c6infusion,
