@@ -153,7 +153,7 @@ export class UIData {
         result.name = createName(result as ContextNodeDisplay)
       if (result.name && result.formula)
         result.assignment = createAssignFormula(result.name, result.formula)
-      if (result.name && (result.pivot || !result.dependencies.size))
+      if (result.pivot || !result.formula)
         result.mayNeedWrapping = false
     }
 
@@ -294,9 +294,9 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
     if (key) {
       const { operands, shouldWrap, separator = ", " } = key
       operands.forEach((item, i, array) => {
-        let itemFormula: Displayable = valueString(item.value, item.key ? KeyMap.unit(item.key) : "flat")
-        if (item.name && (item.pivot || !item.dependencies.size)) itemFormula = item.name
-        else if (item.formula) itemFormula = item.formula
+        let itemFormula: Displayable
+        if (!item.pivot && item.formula) itemFormula = item.formula
+        else itemFormula = item.name ?? valueString(item.value, item.key ? KeyMap.unit(item.key) : "flat")
 
         if (shouldWrap && item.mayNeedWrapping) {
           predisplay.push("( ")

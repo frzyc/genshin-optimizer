@@ -141,7 +141,7 @@ const common: Data = {
           operands.push(prod(base[key], sum(unit, premod[`${key}_`])))
           break
         case "critRate_":
-          operands.push(percent(0.05, { key: "critRate", prefix: "default" }),
+          operands.push(percent(0.05, { key: "critRate_", prefix: "default" }),
             lookup(hit.move, objectKeyMap(allMoves, move => customBonus[`${move}_critRate_`]), 0))
           break
         case "critDMG_":

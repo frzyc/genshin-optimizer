@@ -150,7 +150,7 @@ export function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>): Dict<Charac
       // This is safe only because `buff` is created using only `resetData`
       // and `mergeData`. So every node here is created from either of the
       // two functions, so the mutation wont't affect existing nodes.
-      x.info = { ...(objPathValue(teamBuff, path) as ReadNode<number> | undefined)?.info, prefix: "teamBuff", pivot: true }
+      x.info = { ...(objPathValue(teamBuff, path) as ReadNode<number> | undefined)?.info, prefix: "teamBuff", asConst: true }
     })
     Object.assign(targetRef, mergeData([data, buff, { teamBuff: buff }]))
     targetRef["target"] = targetRef
