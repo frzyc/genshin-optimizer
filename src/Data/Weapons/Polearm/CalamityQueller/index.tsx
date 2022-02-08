@@ -24,7 +24,9 @@ const atk_ = [0.032, 0.04, 0.048, 0.056, 0.064]
 
 const dmg_Nodes = Object.fromEntries(allElements.map(e => [`${e}_dmg_`, subscript(input.weapon.refineIndex, dmg_)]))
 const atkInc = prod(
-  matchFull(input.activeCharKey, input.charKey, 1, 2), // TODO: Add key for active v inactive
+  matchFull(input.activeCharKey, input.charKey,
+    constant(1, { /* TODO: Add key for active char */ }),
+    constant(2, { /* TODO: Add key for inactive char */ })),
   lookup(condStack, objectKeyMap(range(1, 6), i => constant(i)), 0), // TODO: Add key for stack
   subscript(input.weapon.refineIndex, atk_, { key: '_' }),
 )
@@ -52,19 +54,6 @@ const sheet: IWeaponSheet = {
         name: `Stack ${i}`,
         fields: [{ node: atkInc }]
       }]))
-    }
-  }, {
-    conditional: {
-      value: condActive,
-      path: condActivePath,
-      name: "Not on Field", //TODO: translation
-      states: {
-        off: {
-          fields: [{
-            text: "Double Consummation's ATK" //TODO: translation
-          }]
-        }
-      }
     }
   }],
 }
