@@ -22,7 +22,7 @@ const condActive = customStringRead(["conditional", ...condActivePath])
 const dmg_ = [0.12, 0.15, 0.18, 0.21, 0.24]
 const atk_ = [0.032, 0.04, 0.048, 0.056, 0.064]
 
-const dmg_Nodes = Object.fromEntries(allElements.map(e => [`${e}_dmg_`, subscript(input.weapon.refineIndex, dmg_, { key: `${e}_dmg_` })]))
+const dmg_Nodes = Object.fromEntries(allElements.map(e => [`${e}_dmg_`, subscript(input.weapon.refineIndex, dmg_)]))
 const atkNodes = range(1, 6).map(i => [i, prod(
   match(condStack, i.toString(), subscript(input.weapon.refineIndex, atk_, { key: 'atk_' })),
   // matchStr(condActive, "off", 2, 1) // TODO: set *2 when off field

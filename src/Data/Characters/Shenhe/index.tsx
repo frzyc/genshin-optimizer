@@ -75,8 +75,7 @@ const condQuillPath = [characterKey, "quill"]
 const condQuill = customStringRead(["conditional", ...condQuillPath])
 
 const quillDmg = match("quill", condQuill,
-  prod(input.premod.atk, subscript(input.total.skillIndex, datamine.skill.dmgAtk_, { key: '_' }))
-  , { key: "all_dmgInc" })
+  prod(input.premod.atk, subscript(input.total.skillIndex, datamine.skill.dmgAtk_, { key: '_' })))
 
 
 const condBurstPath = [characterKey, "burst"]
@@ -85,8 +84,8 @@ const condBurst = customStringRead(["conditional", ...condBurstPath])
 const enemyRes_ = match("burst", condBurst,
   prod(-1, subscript(input.total.burstIndex, datamine.burst.res_, { key: '_' })))
 
-const cryo_enemyRes_ = infoMut({ ...enemyRes_ }, { key: "cryo_enemyRes_" })
-const physical_enemyRes_ = infoMut({ ...enemyRes_ }, { key: "physical_enemyRes_" })
+const cryo_enemyRes_ = { ...enemyRes_ }
+const physical_enemyRes_ = { ...enemyRes_ }
 
 
 const dmgFormulas = {
@@ -316,27 +315,27 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("passive2.description"),
         },
-        // ...absorbableEle.map(eleKey => ({
-        //   conditional: { // Poetics of Fuubutsu
-        //     value: condSwirls[eleKey],
-        //     path: condSwirlPaths[eleKey],
-        //     teamBuff: true,
-        //     header: conditionalHeader("passive2", tr, passive2),
-        //     description: tr("passive2.description"),
-        //     name: <Translate ns="char_KaedeharaKazuha" key18={`a4.name_${eleKey}`} />,
-        //     states: {
-        //       swirl: {
-        //         fields: [{
-        //           node: asc4[`${eleKey}_dmg_`]
-        //         }, {
-        //           text: sgt("duration"),
-        //           value: datamine.passive2.duration,
-        //           unit: "s"
-        //         }]
-        //       }
-        //     }
-        //   },
-        // }))
+          // ...absorbableEle.map(eleKey => ({
+          //   conditional: { // Poetics of Fuubutsu
+          //     value: condSwirls[eleKey],
+          //     path: condSwirlPaths[eleKey],
+          //     teamBuff: true,
+          //     header: conditionalHeader("passive2", tr, passive2),
+          //     description: tr("passive2.description"),
+          //     name: <Translate ns="char_KaedeharaKazuha" key18={`a4.name_${eleKey}`} />,
+          //     states: {
+          //       swirl: {
+          //         fields: [{
+          //           node: asc4[`${eleKey}_dmg_`]
+          //         }, {
+          //           text: sgt("duration"),
+          //           value: datamine.passive2.duration,
+          //           unit: "s"
+          //         }]
+          //       }
+          //     }
+          //   },
+          // }))
         ],
       },
       passive3: {
