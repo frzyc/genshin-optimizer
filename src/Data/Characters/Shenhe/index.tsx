@@ -113,7 +113,7 @@ const dmgFormulas = {
   // }
 }
 
-export const data = dataObjForCharacterSheet(characterKey, "anemo", "liyue", data_gen, dmgFormulas, {
+export const data = dataObjForCharacterSheet(characterKey, "cryo", "liyue", data_gen, dmgFormulas, {
   bonus: {
     skill: threshold_add(input.constellation, 3, 3),
     burst: threshold_add(input.constellation, 5, 3),
