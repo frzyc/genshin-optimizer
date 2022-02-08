@@ -180,7 +180,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     if (!optimizationTarget || !split || !setPerms) return
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
-    const workerData = uiDataForTeam(teamData.teamData)[characterKey as CharacterKey]?.target.data![0]
+    const workerData = uiDataForTeam(teamData.teamData, characterKey)[characterKey as CharacterKey]?.target.data![0]
     if (!workerData) return
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     const optimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
@@ -292,7 +292,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
       setTeamDataBuilds(await Promise.all(builds.map(async ({ artifactIds: b }) => {
         const { teamData, teamBundle } = (await getTeamData(database, characterKey, mainStatAssumptionLevel, b.filter(a => a).map(a => database._getArt(a)!)))!
-        const calcData = uiDataForTeam(teamData)
+        const calcData = uiDataForTeam(teamData, characterKey)
         const data = objectMap(calcData, (obj, ck) => {
           const { data: _, ...rest } = teamBundle[ck]!
           return { ...obj, ...rest }

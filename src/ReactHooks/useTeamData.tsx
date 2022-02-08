@@ -33,7 +33,7 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
     t4 ? database.followChar(t4, setDbDirty) : undefined,
     [t4, setDbDirty, database])
   if (!teamData || !teamBundle) return
-  const calcData = uiDataForTeam(teamData)
+  const calcData = uiDataForTeam(teamData, characterKey as CharacterKey)
   const data = objectMap(calcData, (obj, ck) => {
     const { data: _, ...rest } = teamBundle[ck]!
     return { ...obj, ...rest }
