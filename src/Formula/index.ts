@@ -24,6 +24,7 @@ const allModStats = [
 const allNonModStats = [
   ...(["all", ...allMoves] as const).map(x => `${x}_dmgInc` as const),
   ...(["all", ...allTransformative, ...allAmplifying, ...allMoves] as const).map(x => `${x}_dmg_` as const),
+  ...([...allElements] as const).map(x => `${x}_critDMG_` as const),
   ...allElements.map(x => `${x}_res_` as const),
   ...allMoves.map(x => `${x}_critRate_` as const),
   ...allEleEnemyResKeys,
@@ -37,6 +38,7 @@ const allNonModStatNodes = objectKeyMap(allNonModStats, key => read(undefined, {
 for (const ele of allElements) {
   allNonModStatNodes[`${ele}_res_`].info!.variant = ele
   allNonModStatNodes[`${ele}_enemyRes_`].info!.variant = ele
+  allNonModStatNodes[`${ele}_critDMG_`].info!.variant = ele
   allModStatNodes[`${ele}_dmg_`].info!.variant = ele
 }
 for (const reaction of [...allTransformative, ...allAmplifying]) {
@@ -148,7 +150,8 @@ const common: Data = {
             lookup(hit.move, objectKeyMap(allMoves, move => customBonus[`${move}_critRate_`]), 0))
           break
         case "critDMG_":
-          operands.push(percent(0.5, { key: "critDMG_", prefix: "default" }))
+          operands.push(percent(0.5, { key: "critDMG_", prefix: "default" }),
+            lookup(hit.ele, objectKeyMap(allElements, ele => customBonus[`${ele}_critDMG_`]), 0))
       }
       return sum(...[...operands, art[key], customBonus[key]].filter(x => x))
     }),
