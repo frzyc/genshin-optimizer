@@ -181,7 +181,9 @@ const common: Data = {
     ele: stringPrio(
       input.infusion,
       input.team.infusion,
+      // Inferred Element
       matchFull(input.weaponType, "catalyst", input.charEle, undefined),
+      matchFull(hit.move, "skill", input.charEle, undefined),
       "physical",
     ),
     dmg: prod(
