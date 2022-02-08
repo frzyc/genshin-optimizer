@@ -129,9 +129,6 @@ export function stringPrio(...operands: Str[]): StrNode {
 }
 /** list[index] */
 export function subscript<V>(index: NumNode, list: V[], info?: Info): SubscriptNode<V> {
-  if (typeof list[0] === "number" && list.some((value, i, array) => i !== 0 && array[i - 1] > value))
-    // We use this fact primarily for *diffing*
-    throw new Error("Formula Construction Failure: subscription list must be sorted in ascending order")
   return { operation: "subscript", operands: [index], list, info }
 }
 

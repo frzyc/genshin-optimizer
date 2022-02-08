@@ -82,11 +82,10 @@ const condBurstPath = [characterKey, "burst"]
 const condBurst = customStringRead(["conditional", ...condBurstPath])
 
 const enemyRes_ = match("burst", condBurst,
-  prod(-1, subscript(input.total.burstIndex, datamine.burst.res_, { key: '_' })))
+  subscript(input.total.burstIndex, datamine.burst.res_.map(x => -x), { key: '_' }))
 
 const cryo_enemyRes_ = { ...enemyRes_ }
 const physical_enemyRes_ = { ...enemyRes_ }
-
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
