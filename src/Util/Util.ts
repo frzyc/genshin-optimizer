@@ -128,11 +128,11 @@ export function objectMap<K extends string, V, T>(obj: Partial<Record<K, V>>, fn
   )) as any
 }
 
-const rangeGen = function* (from, to) {
+const rangeGen = function* (from: number, to: number): Iterable<number> {
   for (let i = from; i <= to; i++) yield i;
 };
 
-export function range(from, to) {
+export function range(from: number, to: number): number[] {
   return [...rangeGen(from, to)]
 }
 
