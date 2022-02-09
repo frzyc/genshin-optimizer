@@ -18,7 +18,7 @@ function inferInfoMut(data: Data, source?: Info["source"]): Data {
     const reference = objPathValue(input, path) as ReadNode<number> | undefined
     if (reference)
       x.info = { ...reference.info, prefix: undefined, source }
-    else
+    else if (path[0] !== "tally")
       console.log(`Detect ${source} buff into non-existant key path ${path}`)
   })
 
