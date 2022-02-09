@@ -12,6 +12,7 @@
 \DeclareMathOperator{\resNode}{res}
 \DeclareMathOperator{\fracNode}{frac}
 \DeclareMathOperator{\thresholdNode}{thres}
+\DeclareMathOperator{\matchingNode}{match}
 \DeclareMathOperator{\subscriptNode}{lookup}
 \DeclareMathOperator{\readNode}{read}
 \DeclareMathOperator{\dataNode}{data}
@@ -49,6 +50,7 @@ Some formulas rely on the values of another formulas, which we refer to as \emph
 This dependency is indicated using graph edges; edges leaving a node point toward its operands.
 
 In this document, we omit the arrow heads for graph edges, and instead use the convention that the edges point downward, from higher nodes toward lower nodes.
+Furthermore, operands are ordered from left to right; the left-most operand is the first operand of the node, and the right-most operand is the last operand of the node.
 Nodes with no outward edges are \emph{leaf nodes}, representing constants and variables.
 Nodes with no inward edges are \emph{root nodes}.
 They represent the final formulas that the entire graph represents.
@@ -79,7 +81,7 @@ We now discuss different types of available nodes in more details.
 \section{Node Types}
 
 We distinguish nodes into numerical nodes and string nodes, based on the type of values they return.
-That is, numerical nodes represent formulas returning some numerical values, while formulas in string nodes return string values.
+That is, numerical nodes represent formulas returning some numerical values, while formulas in string nodes return string values or~$\emptyset$.
 Numerical nodes are primary nodes in the computational graph as this structure is designed to perform numerical computation.
 The string nodes are used primarily to maintain the states of the graph, such as the element type of the dmg, the type of the weapon that the character uses, etc.
 
@@ -98,6 +100,7 @@ For string nodes, we also use double quotes to distinguish them from variable na
 
 Most of internal nodes are \emph{compute nodes}.
 They are numerical nodes that compute their values using only the values of their numerical operands.
+Some nodes, including threshold nodes and matching nodes below can also be string nodes depending on the type of their operands.
 Supported formulas includes
 %
 \begin{itemize}
@@ -116,6 +119,7 @@ Supported formulas includes
 			      0,   & \text{otherwise},
 		      \end{cases}
 	      \end{equation*}
+	\item Matching~($\matchingNode$):~$y = x1 == x2 ? x3 : x4$
 	\item Summation~($+$):~$y = \sum_i x_i$,
 	\item Production~($*$):~$y = \prod_i x_i$,
 	\item Maximum~($\max$):~$y = \max_i\{ x_i \}$,
@@ -132,6 +136,10 @@ Each subscript node is accompanied by a dictionary.
 It uses the only numerical operand~$x_1$ as an index to lookup the dictionary.
 A subscript node with a dictionary~$X$ is denoted by~$\subscriptNode_X$.
 
+For performance reason, subscript nodes are further subdivided into basic \emph{subscript nodes} and \emph{lookup nodes}.
+The distinction is that each entry in a basic subscript nodes points to a constant value.
+In contrast, entries in a lookup node may contain other nodes, allowing for more flexibility at a cost of higher overhead.
+
 \subsection{Read Nodes and Data Nodes}
 
 For general graph modification, we use \emph{read nodes} and \emph{data nodes}.
@@ -143,20 +151,19 @@ Each read node contains a string array \emph{key} used to identify nodes that it
 The supported aggregation methods includes summation, production, minimum, and maximum.
 Read nodes have no operands, and therefore are leaf nodes.
 We denote each read node with key~$k$ and aggregation method~$a$ by~$\readNode_k^a$.
-
-For some read nodes, the keys are combinations of an array string \emph{prefix} followed by a string computed using a string node called \emph{suffix}.
-We denote such read nodes with prefix~$p$, suffix node~$s$, and an aggregated method~$a$ by~$\readNode_{p+s}^a$.
-Note that the string node~$s$ in this case is not treated as an operand, and the read node~$\readNode_{p+s}^a$ remains a leaf node of the graph.
-
+In scenarios where~$a$ is of no importance, the value may be dropped.
 
 Data nodes specify the mapping that read nodes use to map their keys to appropriate nodes.
 Each data node contains one or more \emph{data objects}, each of which is a dictionary mapping each key into a single node.
 The data node has one operand, which is simply forwarded when evaluating, i.e.,~$y = x_1$.
 We denote the data node with data objects~$X_1, X_2, \dots, X_n$ as~$\dataNode_{X_1, X_2,\dots, X_n}$.
 
+Additionally, a data node may be marked as a \emph{data reset node}, indicating that its operand does not use the data from the ancestors of the reset node.
+We denote the data reset node with data objects~$\dataNode^{*}_{X_1, X_2,\dots, X_n}$
+
 \subsection{Priority Nodes}
 
-Priority nodes are string nodes that uses the value of the first (string) operands that returns a non-empty string.
+Priority nodes are string nodes that uses the value of the first (string) operands that returns anything other than a~$\emptyset$.
 That is,
 
 \begin{itemize}
@@ -172,29 +179,29 @@ There are multiple optimizations one can do to a graph to reduce computation tim
 This section list a few operations available on a graph.
 Note that the graph is designed to be immutable (to avoid \emph{spooky action at a distance}\footnote{
 	\url{https://en.wikipedia.org/wiki/Action_at_a_distance_(computer_programming)}
-}), so most of the \emph{modifications} actually create a new graph that represents the modified formulas.
+}), so most of the \emph{modifications} actually create a new graph representing the modified formulas.
 
 \subsection{Read Operation}
 \label{sec:operation:read}
 
 Read operations update the read nodes by replacing them with the (aggregated) nodes given by data nodes.
-The operation is as followed,
+The operation is as followed, for each read node~$\readNode_k^a$,
 \begin{enumerate}
-	\item\label{enum:operation:read:step:iterate} For each read node~$\readNode_k^a$,
-	\begin{enumerate}
-		\item Finds all data nodes~$\{\dataNode_i\}_i$ among its ancestors,
-		\item Map each data object~$D$ in each data node~$\dataNode_i$ using the key~$k$ to a node~$D[k]$, ignoring any data objects that do not contain the key~$k$,
-		\item Check if there are at least one mapped nodes,
-		      \begin{enumerate}
-			      \item\label{enum:operation:read:step:replace} If there are mapped nodes, aggregate the mapped nodes using the aggregation method~$a$, and replace the read node with the aggregated method,
-			      \item Otherwise, the read node remains unchanged, and the operation proceeds to the next read node,
-		      \end{enumerate}
-		\item If there are unconsidered read nodes, go back to Step~\ref{enum:operation:read:step:iterate},
-	\end{enumerate}
-	\item After all read nodes are considered, replace the data nodes with their operands.
+	\item\label{enum:operation:read:step:iterate} Finds all data nodes~$\{\dataNode_i\}_i$ among its ancestors,
+	\item Map each data object~$D$ in each data node~$\dataNode_i$ using the key~$k$ to a node~$D[k]$, ignoring any data objects that do not contain the key~$k$,
+	\item Check if there are at least one mapped nodes,
+	      \begin{enumerate}
+		      \item\label{enum:operation:read:step:replace} If there are mapped nodes, aggregate the mapped nodes using the aggregation method~$a$, and replace the read node with the aggregated method,
+		      \item\label{enum:operation:read:step:input} Otherwise, the read node remains unchanged, and the operation proceeds to the next read node,
+	      \end{enumerate}
+	\item If there are unconsidered read nodes, go back to Step~\ref{enum:operation:read:step:iterate},
 \end{enumerate}
 %
+After all read nodes are considered, replace all data nodes with their operands.
 In Step~\ref{enum:operation:read:step:replace}, if the replaced node contains read nodes, they are also included in later iterations of Step~\ref{enum:operation:read:step:iterate}.
+In Step~\ref{enum:operation:read:step:iterate}, if the ancestor is a data reset node, all ancestors of the data reset node is ignored.
+Unapplied read nodes in Step~\ref{enum:operation:read:step:input} are considered to be an \emph{input} to the graph.
+That is, during the computation of the graph, these input nodes are replaced with constant nodes with appropriate values.
 
 Figure~\ref{fig:modification:reading} illustrates the reading operation at a single read node.
 In this setup, the operand of a data node~$\dataNode_{X,Y,Z}$ has one read node~$\readNode_k^+$.
@@ -367,7 +374,63 @@ The~$1 + a$ formula is then used to replace a portion of the formula~$1 + a + b$
 	\label{fig:optimization:deduplicate}
 \end{figure}
 
-\section{Optimization}
+\subsection{Re-affining}
+
+As mentioned in Section~\ref{sec:operation:read}, unapplied read nodes are treated as an input to the graph, and are replaced with appropriate values during graph computation.
+These read nodes normally represent an affine computation of some external factors, such as the total ``DEF'' contribution from all artifacts~($\text{DEF}_\text{artifact}$), which is affine w.r.t. individual ``DEF'' contributation of an artifact in each equipment slot~($\text{DEF}_{\text{artifact}[slot]}$).
+In particular, $\text{DEF}_\text{artifact} = \sum_{slot} \text{DEF}_{\text{artifact}[slot]}$.
+
+As such, the graph computation generally includes an \emph{affine combinator}, which is a functionality that combines the values from different factors ($\text{DEF}_{\text{artifact}[slot]}$) into a single value ($\text{DEF}_\text{artifact}$) before replacing the corresponding unapplied read node.
+Therefore, it is useful to offload the affine computation to the affine combinator instead of using generic compute nodes within the graph.
+
+The \emph{re-affining} helps offloading the affine computation in the graph by replacing read nodes that are part of an affine function with a single read node representing that entire computation.
+
+Figure~\ref{fig:optimization:reaffine} shows an example of reaffining~$\max\{4 * (a + b + 2), c\}$ where
+\begin{itemize}
+	\item $a=C_a + \sum_{i=1}^{n_a}a_i'$,
+	\item $b=C_b + \sum_{i=1}^{n_b}b_i'$, and
+	\item $c=C_c + \sum_{i=1}^{n_c}c_i'$
+\end{itemize}
+are affine w.r.t. the inputs~${a_i'}$,~$b_i'$, and~$c_i'$.
+In this figure, the node~$4 * (a + b * 7)$ is affine w.r.t. its non-constant operands~$a$ and~$b$, so reaffining replaces it with a new read node~$read_d$.
+%
+\begin{figure}
+	\centering
+	\begin{tikzpicture}[
+			baseline=(current bounding box.east)
+		]
+		\node {$\max$}
+		child { node {$*$}
+				child[sibling distance=30] { node {$4$} }
+				child[sibling distance=30] { node {$+$}
+						child[sibling distance=35] { node {$\readNode_a$} }
+						child[sibling distance=35] { node {$\readNode_b$}}
+						child[sibling distance=35] { node {$2$}}
+					}
+			}
+		child { node {$\readNode_c$} }
+		;
+	\end{tikzpicture}
+	\quad$\Rightarrow$\quad
+	\begin{tikzpicture}[
+			baseline=(current bounding box.east)
+		]
+		\node {$\max$}
+		child[sibling distance = 30] { node {$\readNode_d$} }
+		child[sibling distance = 30] { node {$\readNode_c$}};
+	\end{tikzpicture}
+	\caption{Reaffining of~$\max\{4 * (a + b + 2), c\}$ into~$\max\{d, c\}$}
+	\label{fig:optimization:reaffine}
+\end{figure}
+
+Prior to reaffining, the affine combinator needs to compute~$a$ and~$b$ before replacing the nodes~$\readNode_a$ and~$\readNode_b$.
+Even then, the graph still needs to compute the addition~$a + b + 2$ as well as the multiplication~$4 * (a + b + 2)$.
+After reaffining, the graph can instead compute~$d'_i = 4 * (a'_i + b'_i)$ and~$C_d = 4 * (C_a + C_b + 2)$ a priori and only compute~$d=C_d + \sum_{i=1}^{n_d}d_i'$ for the left half of the equation.
+
+Not only does re-affining reduce the number of nodes in the graph, it also helps with the pruning process by combining the computation for an accurate estimation of the range of the value of each node.
+The pruning process is further discussed in Section~\ref{sec:pruning}
+
+\section{Graph Optimization}
 
 After constructing the graphs, we can optimize the graph to reduce its size by performing the following operations in this particular order.
 %
@@ -377,5 +440,13 @@ After constructing the graphs, we can optimize the graph to reduce its size by p
 	\item Flatten all formulas, and
 	\item Deduplicating all formulas that are used more than once.
 \end{itemize}
+
+\section{Node Organization}
+
+\section{Team Buff}
+\section{Condiional Nodes}
+\section{Build Optimization}
+\section{Artifact Pruning}
+\label{sec:pruning}
 
 \end{document}
