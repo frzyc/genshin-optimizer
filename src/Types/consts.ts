@@ -30,7 +30,7 @@ export const allArtifactSets = [
   // "LuckyDog",
   // "MaidenBeloved",
   // "MartialArtist",
-  // "NoblesseOblige",
+  "NoblesseOblige",
   // "PrayersForDestiny",
   // "PrayersForIllumination",
   // "PrayersForWisdom",

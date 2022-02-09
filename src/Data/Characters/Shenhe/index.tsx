@@ -5,7 +5,7 @@ import { customStringRead, infoMut, match, prod, subscript, threshold_add } from
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import { normalSrc, talentTemplate } from '../SheetUtil_WR'
+import { conditionalHeader, normalSrc, talentTemplate } from '../SheetUtil_WR'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -56,11 +56,13 @@ const datamine = {
     enerCost: skillParam_gen.burst[b++][0],
   },
   passive1: {
-    asorbAdd: skillParam_gen.passive1[p1++][0],
+    cryo_dmg_: skillParam_gen.passive1[p1++][0],
   },
   passive2: {
-    elemas_dmg_: skillParam_gen.passive2[p2++][0],
-    duration: skillParam_gen.passive2[p2++][0],
+    press_dmg_: skillParam_gen.passive2[p2++][0],
+    durationPress: skillParam_gen.passive2[p2++][0],
+    hold_dmg_: skillParam_gen.passive2[p2++][0],
+    durationHold: skillParam_gen.passive2[p2++][0],
   },
   constellation2: {
     elemas: skillParam_gen.constellation2[0],
@@ -70,6 +72,7 @@ const datamine = {
     duration: skillParam_gen.constellation6[1],
   }
 } as const
+console.log(datamine)
 
 const condQuillPath = [characterKey, "quill"]
 const condQuill = customStringRead(["conditional", ...condQuillPath])
@@ -86,6 +89,43 @@ const enemyRes_ = match("burst", condBurst,
 
 const cryo_enemyRes_ = { ...enemyRes_ }
 const physical_enemyRes_ = { ...enemyRes_ }
+
+const condAsc1Path = [characterKey, "asc1"]
+const condAsc1 = customStringRead(["conditional", ...condAsc1Path])
+const asc1Buff = threshold_add(input.asc, 1,
+  match(condAsc1, "field",
+    match(input.activeCharKey, input.charKey,
+      datamine.passive1.cryo_dmg_
+    )
+  )
+)
+
+const condAsc4Path = [characterKey, "asc4"]
+const condAsc4 = customStringRead(["conditional", ...condAsc4Path])
+const buffAsc4Press = threshold_add(input.asc, 1,
+  match(condAsc4, "press",
+    datamine.passive2.press_dmg_
+  )
+)
+const buffAsc4Press_skill_dmg_ = { ...buffAsc4Press }
+const buffAsc4Press_burst_dmg_ = { ...buffAsc4Press }
+const buffAsc4Hold = threshold_add(input.asc, 1,
+  match(condAsc4, "hold",
+    datamine.passive2.hold_dmg_
+  )
+)
+const buffAsc4Hold_normal_dmg_ = { ...buffAsc4Hold }
+const buffAsc4Hold_charged_dmg_ = { ...buffAsc4Hold }
+const buffAsc4Hold_plunging_dmg_ = { ...buffAsc4Hold }
+
+const con2Buff = threshold_add(input.constellation, 2,
+  match(condAsc1, "field",
+    match(input.activeCharKey, input.charKey,
+      datamine.passive1.cryo_dmg_
+    )
+  )
+)
+
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -122,7 +162,13 @@ export const data = dataObjForCharacterSheet(characterKey, "cryo", "liyue", data
     premod: {
       all_dmgInc: quillDmg,
       cryo_enemyRes_,
-      physical_enemyRes_
+      physical_enemyRes_,
+      cryo_dmg_: asc1Buff,
+      skill_dmg_: buffAsc4Press_skill_dmg_,
+      burst_dmg_: buffAsc4Press_burst_dmg_,
+      normal_dmg_: buffAsc4Hold_normal_dmg_,
+      charged_dmg_: buffAsc4Hold_charged_dmg_,
+      plunging_dmg_: buffAsc4Hold_plunging_dmg_,
     },
   },
 })
@@ -204,6 +250,36 @@ const sheet: ICharacterSheet = {
               }
             }
           }
+        }, {
+          conditional: { // ASC4
+            canShow: threshold_add(input.asc, 4, 1),
+            value: condAsc4,
+            path: condAsc4Path,
+            teamBuff: true,
+            header: conditionalHeader("passive2", tr, passive2),
+            description: tr("passive2.description"),
+            name: <span>After Shenhe uses <strong>Spring Spirit Summoning</strong></span>,
+            states: {
+              press: {
+                name: "Press",
+                fields: [{
+                  node: buffAsc4Press_skill_dmg_
+                }, {
+                  node: buffAsc4Press_burst_dmg_
+                }]
+              },
+              hold: {
+                name: "Hold",
+                fields: [{
+                  node: buffAsc4Hold_normal_dmg_
+                }, {
+                  node: buffAsc4Hold_charged_dmg_
+                }, {
+                  node: buffAsc4Hold_plunging_dmg_
+                }]
+              }
+            }
+          }
         }],
       },
       burst: {
@@ -243,51 +319,25 @@ const sheet: ICharacterSheet = {
               }
             }
           }
-          // conditional: { // Burst Absorption
-          //   value: condBurstAbsorption,
-          //   path: condBurstAbsorptionPath,
-          //   name: st("eleAbsor"),
-          //   states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-          //     name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-          //     fields: [{
-          //       node: infoMut(dmgFormulas.burst[eleKey], { key: `char_${characterKey}_gen:burst.skillParams.2` }),
-          //     }]
-          //   }]))
-          // },
         }, {
-          // conditional: { // C2
-          //   canShow: threshold_add(input.constellation, 2,
-          //     1, { key: `eleMas` }
-          //   ),
-          //   value: condC2,
-          //   path: condC2Path,
-          //   name: <Translate ns="char_KaedeharaKazuha" key18="c2" />,
-          //   states: {
-          //     c2: {
-          //       fields: [{
-          //         node: c2EleMas
-          //       }]
-          //     }
-          //   }
-          // },
-        }, {
-          // conditional: { // C2 Party
-          //   canShow: threshold_add(input.constellation, 2,
-          //     unmatch(target.charKey, characterKey, 1), { key: `eleMas` }),
-          //   value: condC2P,
-          //   path: condC2PPath,
-          //   teamBuff: true,
-          //   header: conditionalHeader("constellation2", tr, c2),
-          //   description: tr("constellation2.description"),
-          //   name: <Translate ns="char_KaedeharaKazuha" key18="c2p" />,
-          //   states: {
-          //     c2p: {
-          //       fields: [{
-          //         node: c2PEleMas
-          //       }]
-          //     }
-          //   }
-          // },
+          conditional: { // ASC1 Party + cond 2
+            canShow: threshold_add(input.asc, 1, match(input.activeCharKey, input.charKey, 1)),
+            value: condAsc1,
+            path: condAsc1Path,
+            teamBuff: true,
+            header: conditionalHeader("passive1", tr, passive1),
+            description: tr("passive1.description"),
+            name: "Active Character in field",
+            states: {
+              field: {
+                fields: [{
+                  node: asc1Buff
+                }, {
+                  node: con2Buff
+                }]
+              }
+            }
+          },
         }],
       },
       passive1: {

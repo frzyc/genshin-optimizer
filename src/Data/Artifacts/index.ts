@@ -19,7 +19,7 @@ import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 // import LuckyDog from './LuckyDog'
 // import MaidenBeloved from './MaidenBeloved'
 // import MartialArtist from './MartialArtist'
-// import NoblesseOblige from './NoblesseOblige'
+import NoblesseOblige from './NoblesseOblige'
 // import OceanHuedClam from './OceanHuedClam'
 // import PaleFlame from './PaleFlame'
 // import PrayersForDestiny from './PrayersForDestiny'
@@ -57,7 +57,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   // LuckyDog,
   // MaidenBeloved,
   // MartialArtist,
-  // NoblesseOblige,
+  NoblesseOblige,
   // OceanHuedClam,
   // PaleFlame,
   // PrayersForDestiny,
