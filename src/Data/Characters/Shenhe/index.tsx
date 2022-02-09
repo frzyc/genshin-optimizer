@@ -72,7 +72,6 @@ const datamine = {
     duration: skillParam_gen.constellation6[1],
   }
 } as const
-console.log(datamine)
 
 const condQuillPath = [characterKey, "quill"]
 const condQuill = customStringRead(["conditional", ...condQuillPath])
