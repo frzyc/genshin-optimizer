@@ -198,11 +198,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
     let nodes = optimize([optimizationTargetNode, ...valueFilter.map(x => x.value)], workerData, ({ path: [p] }) => p !== "dyn")
     let arts = split!
-    const minimum = [-Infinity, ...valueFilter.map(x => x.minimum)];
-    ({ nodes, arts } = reaffine(nodes, arts))
-    const origCount = countBuilds(arts);
-
-    ({ nodes, arts } = pruneRange(nodes, arts, minimum, true))
+    const origCount = countBuilds(arts), minimum = [-Infinity, ...valueFilter.map(x => x.minimum)];
+    ({ nodes, arts } = reaffine(nodes, arts));
+    ({ nodes, arts } = pruneRange(nodes, arts, minimum, true));
+    ({ nodes, arts } = reaffine(nodes, arts));
     arts = pruneOrder(arts, maxBuildsToShow)
 
     let wrap = { buildCount: 0, failedCount: 0, skippedCount: origCount - countBuilds(arts), buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity) }
@@ -280,7 +279,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     clearInterval(buildTimer)
     cancelToken.current = () => { }
 
-    // TODO Check below that the data are sent to the UI & DB properly
     if (!results) {
       setgenerationDuration(0)
       setgenerationProgress(0)
