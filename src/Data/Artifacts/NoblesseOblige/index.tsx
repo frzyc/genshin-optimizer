@@ -5,10 +5,11 @@ import SqBadge from '../../../Components/SqBadge'
 import { sgt } from '../../Characters/SheetUtil'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { ArtifactSetKey } from '../../../Types/consts'
-import { customRead, customStringRead, match, percent, threshold_add } from '../../../Formula/utils'
+import { customRead, match, percent, threshold_add } from '../../../Formula/utils'
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import { cond } from '../../SheetUtil'
 
 const key: ArtifactSetKey = "NoblesseOblige"
 
@@ -16,9 +17,7 @@ const tr = (strKey: string) => <Translate ns={`artifact_${key}_gen`} key18={strK
 
 const set2 = threshold_add(input.artSet.NoblesseOblige, 2, percent(0.2))
 
-const condSet4Path = [key, "set4"]
-const condSet4 = customStringRead(["conditional", ...condSet4Path])
-
+const [condSet4Path, condSet4] = cond(key, "set4")
 const set4TallyWrite = threshold_add(input.artSet.NoblesseOblige, 4, match(condSet4, "on", 1))
 const set4TallyRead = customRead(["tally", "NO4"])
 const set4 = threshold_add(set4TallyRead, 1, percent(0.2))

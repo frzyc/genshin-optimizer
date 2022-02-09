@@ -1,20 +1,20 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
-import { Translate } from '../../../Components/Translate'
 import { input, target } from "../../../Formula/index"
-import { constant, customStringRead, infoMut, match, percent, prod, sum, threshold_add, unmatch } from "../../../Formula/utils"
+import { constant, infoMut, match, percent, prod, sum, threshold_add, unmatch } from "../../../Formula/utils"
 import { CharacterKey, Rarity, WeaponTypeKey } from '../../../Types/consts'
 import { objectKeyMap } from '../../../Util/Util'
+import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
 import { absorbableEle, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import { conditionalHeader, normalSrc, sgt, st, talentTemplate } from '../SheetUtil_WR'
+import { conditionalHeader, normalSrc, talentTemplate } from '../CharacterSheet'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
 const data_gen = data_gen_src as CharacterData
 const characterKey: CharacterKey = "Sucrose"
-const tr = (strKey: string) => <Translate ns={`char_${characterKey}_gen`} key18={strKey} />
+const [tr, trm] = trans("char", characterKey)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
 const datamine = {
@@ -64,14 +64,13 @@ const datamine = {
 
 // Conditional Input
 // Absorption Element
-const condAbsorptionPath = [characterKey, "absorption"]
-const condAbsorption = customStringRead(["conditional", ...condAbsorptionPath])
+
+const [condAbsorptionPath, condAbsorption] = cond(characterKey, "absorption")
+console.log(condAbsorptionPath, condAbsorption)
 // A1 Swirl Reaction Element
-const condSwirlReactionPath = [characterKey, "swirl"]
-const condSwirlReaction = customStringRead(["conditional", ...condSwirlReactionPath])
+const [condSwirlReactionPath, condSwirlReaction] = cond(characterKey, "swirl")
 // Set to "hit" if skill hit opponents
-const condSkillHitOpponentPath = [characterKey, "skillHit"]
-const condSkillHitOpponent = customStringRead(["conditional", ...condSkillHitOpponentPath])
+const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(characterKey, "skillHit")
 
 // Conditional Output
 // TODO: Check if total or premod
@@ -83,7 +82,7 @@ const asc4 = match("hit", condSkillHitOpponent,
     threshold_add(input.asc, 4,
       prod(percent(datamine.passive2.eleMas_), input.premod.eleMas))), { key: "eleMas" })
 const c6Base = threshold_add(input.constellation, 6, percent(0.2))
-// TODO: Add to team buff
+
 const c6Bonus = objectKeyMap(absorbableEle.map(ele => `${ele}_dmg_` as const), key =>
   match(condAbsorption, key.slice(0, -5), c6Base))
 
@@ -109,9 +108,9 @@ export const data = dataObjForCharacterSheet(characterKey, "anemo", "mondstadt",
     skill: threshold_add(input.constellation, 3, 3),
     burst: threshold_add(input.constellation, 5, 3),
   },
-  premod: c6Bonus,
   teamBuff: {
-    total: { eleMas: sum(asc1, asc4) }
+    total: { eleMas: sum(asc1, asc4) },
+    premod: c6Bonus
   }
 })
 
@@ -257,7 +256,7 @@ const sheet: ICharacterSheet = {
             path: condSkillHitOpponentPath,
             header: conditionalHeader("passive1", tr, passive1),
             description: tr("passive1.description"),
-            name: <span>When <strong>Astable Anemohypostasis Creation - 6308 or Forbidden Creation - Isomer 75 / Type II</strong> hits an opponent</span>, // TODO: trans
+            name: trm("asc4"),
             states: {
               hit: {
                 fields: [{

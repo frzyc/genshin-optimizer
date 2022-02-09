@@ -2,19 +2,19 @@ import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
-import { constant, customStringRead, infoMut, match, matchFull, percent, prod, threshold, threshold_add, unmatch } from '../../../Formula/utils'
+import { constant, infoMut, match, matchFull, percent, prod, threshold, threshold_add, unmatch } from '../../../Formula/utils'
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
-import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
+import { cond, condReadNode, sgt, st, trans } from '../../SheetUtil'
+import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { absorbableEle, dataObjForCharacterSheet, dmgNode, singleDmgNode } from '../dataUtil'
-import { conditionalHeader, normalSrc, sgt, st, talentTemplate } from '../SheetUtil_WR'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
 const data_gen = data_gen_src as CharacterData
 
-const characterKey: CharacterKey = "KaedeharaKazuha"
-const tr = (strKey: string) => <Translate ns={`char_${characterKey}_gen`} key18={strKey} />
+const key: CharacterKey = "KaedeharaKazuha"
+const [tr, trm] = trans("char", key)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
 const datamine = {
@@ -68,14 +68,12 @@ const datamine = {
   }
 } as const
 
-const condBurstAbsorptionPath = [characterKey, "burstAbsorption"]
-const condBurstAbsorption = customStringRead(["conditional", ...condBurstAbsorptionPath])
+const [condBurstAbsorptionPath, condBurstAbsorption] = cond(key, "burstAbsorption")
 
-const condSkillAbsorptionPath = [characterKey, "skillAbsorption"]
-const condSkillAbsorption = customStringRead(["conditional", ...condSkillAbsorptionPath])
+const [condSkillAbsorptionPath, condSkillAbsorption] = cond(key, "skillAbsorption")
 
-const condSwirlPaths = Object.fromEntries(absorbableEle.map(e => [e, [characterKey, `swirl${e}`]]))
-const condSwirls = Object.fromEntries(absorbableEle.map(e => [e, customStringRead(["conditional", ...condSwirlPaths[e]])]))
+const condSwirlPaths = Object.fromEntries(absorbableEle.map(e => [e, [key, `swirl${e}`]]))
+const condSwirls = Object.fromEntries(absorbableEle.map(e => [e, condReadNode(condSwirlPaths[e])]))
 const asc4 = Object.fromEntries(absorbableEle.map(ele =>
   [`${ele}_dmg_`, threshold_add(input.asc, 4,
     match("swirl", condSwirls[ele],
@@ -84,20 +82,17 @@ const asc4 = Object.fromEntries(absorbableEle.map(ele =>
     ))]))
 
 /** TODO: the C2 actually only applies to "active" character, so the following needs to be changed... */
-const condC2Path = [characterKey, "c2"]
-const condC2 = customStringRead(["conditional", ...condC2Path])
+const [condC2Path, condC2] = cond(key, "c2")
 const c2EleMas = threshold_add(input.constellation, 2,
   match("c2", condC2, datamine.constellation2.elemas), { key: `eleMas` })
 
-const condC2PPath = [characterKey, "c2p"]
-const condC2P = customStringRead(["conditional", ...condC2PPath])
+const [condC2PPath, condC2P] = cond(key, "c2p")
 const c2PEleMas = threshold_add(input.constellation, 2,
   match("c2p", condC2P,
-    unmatch(target.charKey, characterKey, datamine.constellation2.elemas)
+    unmatch(target.charKey, key, datamine.constellation2.elemas)
   ), { key: `eleMas` })
 
-const condC6Path = [characterKey, "c6"]
-const condC6 = customStringRead(["conditional", ...condC6Path])
+const [condC6Path, condC6] = cond(key, "c6")
 const c6infusion = threshold(input.constellation, 6,
   matchFull("c6", condC6, "anemo", undefined),
   undefined
@@ -143,7 +138,7 @@ const dmgFormulas = {
   }
 }
 
-export const data = dataObjForCharacterSheet(characterKey, "anemo", "inazuma", data_gen, dmgFormulas, {
+export const data = dataObjForCharacterSheet(key, "anemo", "inazuma", data_gen, dmgFormulas, {
   bonus: {
     skill: threshold_add(input.constellation, 3, 3),
     burst: threshold_add(input.constellation, 5, 3),
@@ -188,16 +183,16 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("auto.fields.normal"),
           fields: datamine.normal.hitArr.map((_, i) => ({
-            node: infoMut(dmgFormulas.normal[i], { key: `char_${characterKey}_gen:auto.skillParams.${i + (i < 3 ? 0 : -1)}` }),
+            node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i + (i < 3 ? 0 : -1)}` }),
             textSuffix: i === 2 ? "(1)" : i === 3 ? "(2)" : i === 5 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 3 }} />)</span> : ""
           }))
         }, {
           text: tr("auto.fields.charged"),
           fields: [{
-            node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${characterKey}_gen:auto.skillParams.5` }),
+            node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
             textSuffix: "(1)"
           }, {
-            node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${characterKey}_gen:auto.skillParams.5` }),
+            node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${key}_gen:auto.skillParams.5` }),
             textSuffix: "(2)"
           }, {
             text: tr("auto.skillParams.6"),
@@ -220,18 +215,18 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("skill.description"),
           fields: [{
-            node: infoMut(dmgFormulas.skill.press, { key: `char_${characterKey}_gen:skill.skillParams.0` }),
+            node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` }),
           }, {
             text: tr("skill.skillParams.1"),
             value: data => data.get(input.constellation).value >= 1 ? `${datamine.skill.cd}s - 10%` : `${datamine.skill.cd}s`,
           }, {
-            node: infoMut(dmgFormulas.skill.hold, { key: `char_${characterKey}_gen:skill.skillParams.2` }),
+            node: infoMut(dmgFormulas.skill.hold, { key: `char_${key}_gen:skill.skillParams.2` }),
           }, {
             text: tr("skill.skillParams.1"),
             value: data => data.get(input.constellation).value >= 1 ? `${datamine.skill.cdHold}s - 10%` : `${datamine.skill.cdHold}s`,
           }, {
             canShow: data => data.get(input.constellation).value >= 1,
-            text: <Translate ns="char_KaedeharaKazuha" key18="c1" />,
+            text: trm("c1"),
           }]
         }, {
           fields: [{
@@ -249,9 +244,9 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("burst.description"),
           fields: [{
-            node: infoMut(dmgFormulas.burst.dmg, { key: `char_${characterKey}_gen:burst.skillParams.0` }),
+            node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
           }, {
-            node: infoMut(dmgFormulas.burst.dot, { key: `char_${characterKey}_gen:burst.skillParams.1` }),
+            node: infoMut(dmgFormulas.burst.dot, { key: `char_${key}_gen:burst.skillParams.1` }),
           }, {
             text: tr("burst.skillParams.3"),
             value: datamine.burst.duration,
@@ -272,7 +267,7 @@ const sheet: ICharacterSheet = {
             states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
               name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
               fields: [{
-                node: infoMut(dmgFormulas.burst[eleKey], { key: `char_${characterKey}_gen:burst.skillParams.2` }),
+                node: infoMut(dmgFormulas.burst[eleKey], { key: `char_${key}_gen:burst.skillParams.2` }),
               }]
             }]))
           },
@@ -281,7 +276,7 @@ const sheet: ICharacterSheet = {
             canShow: threshold_add(input.constellation, 2, 1,),
             value: condC2,
             path: condC2Path,
-            name: <Translate ns="char_KaedeharaKazuha" key18="c2" />,
+            name: trm("c2"),
             states: {
               c2: {
                 fields: [{
@@ -293,13 +288,13 @@ const sheet: ICharacterSheet = {
         }, {
           conditional: { // C2 Party
             canShow: threshold_add(input.constellation, 2,
-              unmatch(target.charKey, characterKey, 1)),
+              unmatch(target.charKey, key, 1)),
             value: condC2P,
             path: condC2PPath,
             teamBuff: true,
             header: conditionalHeader("constellation2", tr, c2),
             description: tr("constellation2.description"),
-            name: <Translate ns="char_KaedeharaKazuha" key18="c2p" />,
+            name: trm("c2p"),
             states: {
               c2p: {
                 fields: [{
@@ -340,7 +335,7 @@ const sheet: ICharacterSheet = {
             teamBuff: true,
             header: conditionalHeader("passive2", tr, passive2),
             description: tr("passive2.description"),
-            name: <Translate ns="char_KaedeharaKazuha" key18={`a4.name_${eleKey}`} />,
+            name: trm(`a4.name_${eleKey}`),
             states: {
               swirl: {
                 fields: [{
@@ -380,7 +375,7 @@ const sheet: ICharacterSheet = {
           conditional: {//Crimson Momiji
             value: condC6,
             path: condC6Path,
-            name: <Translate ns="char_KaedeharaKazuha" key18="c6.after" />,
+            name: trm("c6.after"),
             states: {
               c6: {
                 fields: [

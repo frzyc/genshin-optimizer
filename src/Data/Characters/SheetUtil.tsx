@@ -11,6 +11,9 @@ export const st = (strKey: string) => <Translate ns="sheet" key18={strKey} />
 export const sgt = (strKey: string) => <Translate ns="sheet_gen" key18={strKey} />
 
 //this template only works if there is no variation in normal attacks.(no multi hits)
+/**
+ * @deprecated
+ */
 export const normalDocSection = (tr, formula, data) => ({
   text: tr(`auto.fields.normal`),
   fields: data.normal.hitArr.map((percentArr, i) =>
@@ -21,6 +24,9 @@ export const normalDocSection = (tr, formula, data) => ({
     variant: stats => getTalentStatKeyVariant("normal", stats),
   }))
 })
+/**
+ * @deprecated
+ */
 export const chargedDocSection = (tr, formula, data, stamina = 25): DocumentSection => ({
   text: tr(`auto.fields.charged`),
   fields: [{
@@ -33,6 +39,9 @@ export const chargedDocSection = (tr, formula, data, stamina = 25): DocumentSect
     value: stamina,
   }]
 })
+/**
+ * @deprecated
+ */
 export const chargedHitsDocSection = (tr, formula, data, stamina = 20): DocumentSection => ({
   text: tr(`auto.fields.charged`),
   fields: [...data.charged.hitArr.map((percentArr, i) =>
@@ -46,6 +55,9 @@ export const chargedHitsDocSection = (tr, formula, data, stamina = 20): Document
     value: stamina
   }]
 })
+/**
+ * @deprecated
+ */
 export const plungeDocSection = (tr, formula, data): DocumentSection => ({
   text: tr`auto.fields.plunging`,
   fields: [{
@@ -65,7 +77,9 @@ export const plungeDocSection = (tr, formula, data): DocumentSection => ({
     variant: stats => getTalentStatKeyVariant("plunging", stats),
   }]
 })
-
+/**
+ * @deprecated
+ */
 export const claymoreChargedDocSection = (tr, formula, data): DocumentSection => ({
   text: tr("auto.fields.charged"),
   fields: [{
@@ -88,7 +102,9 @@ export const claymoreChargedDocSection = (tr, formula, data): DocumentSection =>
     unit: "s"
   }]
 })
-
+/**
+ * @deprecated
+ */
 export const bowChargedDocSection = (tr, formula, data, elementKey: ElementKey): DocumentSection => ({
   text: tr("auto.fields.charged"),
   fields: [{
@@ -104,6 +120,9 @@ export const bowChargedDocSection = (tr, formula, data, elementKey: ElementKey):
   }]
 })
 type BoostKey = "autoBoost" | "skillBoost" | "burstBoost"
+/**
+ * @deprecated
+ */
 export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, boostKey?: BoostKey, boostAmt: number = 3): TalentSheetElement => ({
   name: tr(`${talentKey}.name`),
   img,
@@ -138,6 +157,9 @@ const talentStrMap: Record<TalentSheetElementKey, string> = {
   constellation5: "C5",
   constellation6: "C6"
 }
+/**
+ * @deprecated
+ */
 export const conditionalHeader = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string): IConditional["header"] => {
   return {
     title: tr(`${talentKey}.name`),
@@ -145,5 +167,7 @@ export const conditionalHeader = (talentKey: TalentSheetElementKey, tr: (string)
     action: <SqBadge color="success">{talentStrMap[talentKey]}</SqBadge>,
   }
 }
-
+/**
+ * @deprecated
+ */
 export const normalSrc = (weaponKey: WeaponTypeKey) => Assets.weaponTypes[weaponKey]

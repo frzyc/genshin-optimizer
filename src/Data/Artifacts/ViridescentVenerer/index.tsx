@@ -1,5 +1,4 @@
 import icons from './icons'
-import { Translate } from '../../../Components/Translate'
 import ImgIcon from '../../../Components/Image/ImgIcon'
 import SqBadge from '../../../Components/SqBadge'
 import { sgt } from '../../Characters/SheetUtil'
@@ -9,20 +8,20 @@ import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import { Data } from '../../../Formula/type'
-import { customStringRead, match, percent, threshold_add } from '../../../Formula/utils'
+import { match, percent, threshold_add } from '../../../Formula/utils'
 import { input } from '../../../Formula'
-import { st } from '../../Characters/SheetUtil_WR'
 import elementalData from '../../ElementalData'
 import { objectKeyMap, objectKeyValueMap } from '../../../Util/Util'
+import { condReadNode, st, trans } from '../../SheetUtil'
 
 const key: ArtifactSetKey = "ViridescentVenerer"
-const tr = (strKey: string) => <Translate ns={`artifact_${key}_gen`} key18={strKey} />
+const [tr] = trans("artifact", key)
 
 const anemo_dmg_ = threshold_add(input.artSet.ViridescentVenerer, 2, percent(0.15))
 const swirl_dmg_ = threshold_add(input.artSet.ViridescentVenerer, 4, percent(0.6))
 
 const condSwirlPaths = objectKeyMap(absorbableEle, e => [key, `swirl${e}`])
-const condSwirls = objectKeyMap(absorbableEle, e => customStringRead(["conditional", ...condSwirlPaths[e]]))
+const condSwirls = objectKeyMap(absorbableEle, e => condReadNode(condSwirlPaths[e]))
 
 const condSwirlNodes = objectKeyValueMap(absorbableEle, e => [`${e}_enemyRes_`,
 threshold_add(input.artSet.ViridescentVenerer, 4,

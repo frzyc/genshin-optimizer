@@ -2,9 +2,10 @@ import { WeaponData } from 'pipeline'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
 import { Translate } from '../../../../Components/Translate'
 import { input } from '../../../../Formula'
-import { customStringRead, match, subscript } from '../../../../Formula/utils'
+import { match, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { sgt } from '../../../Characters/SheetUtil'
+import { cond, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -12,16 +13,15 @@ import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 const key: WeaponKey = "FreedomSworn"
 const data_gen = data_gen_json as WeaponData
-const tr = (strKey: string) => <Translate ns={`weapon_${key}_gen`} key18={strKey} />
+const [tr] = trans("weapon", key)
 const autoSrc = [0.16, 0.20, 0.24, 0.28, 0.32]
 const atk_Src = [0.2, 0.25, 0.3, 0.35, 0.40]
 
-const condPath = [key, "MillennialMovement"]
-const cond = customStringRead(["conditional", ...condPath])
-const atk_ = match("on", cond, subscript(input.weapon.refineIndex, atk_Src))
-const normal_dmg_ = match("on", cond, subscript(input.weapon.refineIndex, autoSrc))
-const charged_dmg_ = match("on", cond, subscript(input.weapon.refineIndex, autoSrc))
-const plunging_dmg_ = match("on", cond, subscript(input.weapon.refineIndex, autoSrc))
+const [condPassivePath, condPassive] = cond(key, "MillennialMovement")
+const atk_ = match("on", condPassive, subscript(input.weapon.refineIndex, atk_Src))
+const normal_dmg_ = match("on", condPassive, subscript(input.weapon.refineIndex, autoSrc))
+const charged_dmg_ = match("on", condPassive, subscript(input.weapon.refineIndex, autoSrc))
+const plunging_dmg_ = match("on", condPassive, subscript(input.weapon.refineIndex, autoSrc))
 
 const data = dataObjForWeaponSheet(key, data_gen, "dmg_", undefined, {
   teamBuff: {
@@ -39,8 +39,8 @@ const sheet: IWeaponSheet = {
   iconAwaken,
   document: [{
     conditional: {
-      value: cond,
-      path: condPath,
+      value: condPassive,
+      path: condPassivePath,
       teamBuff: true,
       header: {
         title: tr(`passiveName`),

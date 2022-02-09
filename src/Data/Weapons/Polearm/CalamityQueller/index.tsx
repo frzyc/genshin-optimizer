@@ -1,8 +1,9 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { constant, customStringRead, lookup, match, matchFull, prod, subscript } from "../../../../Formula/utils"
+import { constant, lookup, matchFull, prod, subscript } from "../../../../Formula/utils"
 import { allElements, WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
+import { cond, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -12,12 +13,10 @@ import icon from './Icon.png'
 const key: WeaponKey = "CalamityQueller"
 const data_gen = data_gen_json as WeaponData
 
-const condStackPath = [key, "stack"]
-const condStack = customStringRead(["conditional", ...condStackPath])
+const [tr] = trans("weapon", key)
 
-const condActivePath = [key, "active"]
-const condActive = customStringRead(["conditional", ...condActivePath])
-
+const [condStackPath, condStack] = cond(key, "stack")
+// const [condActivePath, condActive] = cond(key, "active")
 
 const dmg_ = [0.12, 0.15, 0.18, 0.21, 0.24]
 const atk_ = [0.032, 0.04, 0.048, 0.056, 0.064]
@@ -49,7 +48,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condStack,
       path: condStackPath,
-      name: "Extinguishing Precepty",// TODO: translation
+      name: tr("passiveName"),
       states: Object.fromEntries(range(1, 6).map(i => [i, {
         name: `Stack ${i}`,
         fields: [{ node: atkInc }]

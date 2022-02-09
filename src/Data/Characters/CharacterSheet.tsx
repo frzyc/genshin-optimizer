@@ -1,8 +1,11 @@
 import ImgIcon from "../../Components/Image/ImgIcon";
 import { ascensionMaxLevel } from "../LevelData";
 import { Data } from "../../Formula/type";
-import { TalentSheet, TalentSheetElementKey } from "../../Types/character_WR";
+import { TalentSheet, TalentSheetElement, TalentSheetElementKey } from "../../Types/character_WR";
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "../../Types/consts";
+import SqBadge from "../../Components/SqBadge";
+import Assets from "../../Assets/Assets";
+import IConditional from "../../Types/IConditional_WR";
 
 const characterSheets = import('.').then(imp => imp.default)
 
@@ -64,3 +67,37 @@ export default class CharacterSheet {
   static getLevelString = (level: number, ascension: number): string =>
     `${level}/${ascensionMaxLevel[ascension]}`
 }
+
+export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string): TalentSheetElement => ({
+  name: tr(`${talentKey}.name`),
+  img,
+  sections: [{
+    text: tr(`${talentKey}.description`),
+  }],
+})
+
+const talentStrMap: Record<TalentSheetElementKey, string> = {
+  auto: "Auto",
+  skill: "Skill",
+  burst: "Burst",
+  passive: "Passive",
+  passive1: "Ascension 1",
+  passive2: "Ascension 4",
+  passive3: "Passive",
+  sprint: "Sprint",
+  constellation1: "C1",
+  constellation2: "C2",
+  constellation3: "C3",
+  constellation4: "C4",
+  constellation5: "C5",
+  constellation6: "C6"
+}
+export const conditionalHeader = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string): IConditional["header"] => {
+  return {
+    title: tr(`${talentKey}.name`),
+    icon: <ImgIcon size={2} sx={{ m: -1 }} src={img} />,
+    action: <SqBadge color="success">{talentStrMap[talentKey]}</SqBadge>,
+  }
+}
+
+export const normalSrc = (weaponKey: WeaponTypeKey) => Assets.weaponTypes[weaponKey]
