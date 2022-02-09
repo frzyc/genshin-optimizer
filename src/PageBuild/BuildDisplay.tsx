@@ -114,7 +114,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const buildSettings = character?.buildSettings ?? initialBuildSettings()
   const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSettings
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
-  const { characterSheet, target: data } = teamData?.[characterKey] ?? {}
+  const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
   const [teamDataBuilds, setTeamDataBuilds] = useState([] as TeamData[])
 
@@ -322,11 +322,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     buildSettingsDispatch({ plotBase })
     setchartData(undefined)
   }, [buildSettingsDispatch])
-  const dataContext: dataContextObj | undefined = data && characterSheet && character && {
+  const dataContext: dataContextObj | undefined = data && characterSheet && character && teamData && {
     data,
     characterSheet,
     character,
     mainStatAssumptionLevel,
+    teamData,
     characterDispatch
   }
   return <Box display="flex" flexDirection="column" gap={1} sx={{ my: 1 }}>
@@ -440,7 +441,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
             <Grid item flexGrow={1} >
               <ButtonGroup>
                 <Button
-                  disabled={!characterKey || generatingBuilds || !optimizationTarget || !totBuildNumber || !objPathValue(data.getDisplay(), optimizationTarget)}
+                  disabled={!characterKey || generatingBuilds || !optimizationTarget || !totBuildNumber || !objPathValue(data?.getDisplay(), optimizationTarget)}
                   color={(characterKey && totBuildNumber <= warningBuildNumber) ? "success" : "warning"}
                   onClick={generateBuilds}
                   startIcon={<FontAwesomeIcon icon={faCalculator} />}

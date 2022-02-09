@@ -84,6 +84,8 @@ export function layeredAssignment(obj, keys: readonly string[], value) {
 }
 //get the value in a nested object, giving array of path
 export function objPathValue(obj: object | undefined, keys: readonly string[]): any {
+  if (!obj || !keys) return undefined;
+  !Array.isArray(keys) && console.error(keys)
   return keys.reduce((a, k) => a?.[k], obj)
 }
 //delete the value denoted by the path. Will also delete empty objects as well.

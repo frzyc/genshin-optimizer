@@ -214,7 +214,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
       mainStatKeys = tempmainStatKeys
     }
 
-    if (!optimizationTarget) optimizationTarget = undefined
+    if (!optimizationTarget || !Array.isArray(optimizationTarget)) optimizationTarget = undefined
     if (typeof mainStatAssumptionLevel !== "number" || mainStatAssumptionLevel < 0 || mainStatAssumptionLevel > 20)
       mainStatAssumptionLevel = 0
     useExcludedArts = !!useExcludedArts
