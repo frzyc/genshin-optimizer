@@ -20,7 +20,7 @@ import StatFilterCard from '../Components/StatFilterCard';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { DataContext, dataContextObj, TeamData } from '../DataContext';
-import { uiDataForTeam, mergeData } from '../Formula/api';
+import { mergeData, uiDataForTeam } from '../Formula/api';
 import { uiInput as input } from '../Formula/index';
 import { optimize } from '../Formula/optimization';
 import { NumNode } from '../Formula/type';
@@ -38,7 +38,7 @@ import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './backgr
 import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import ChartCard from './ChartCard';
-import { filterArts, mergeBuilds, mergePlot, pruneOrder, pruneRange, reaffine } from './common';
+import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneOrder, pruneRange, reaffine } from './common';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
@@ -49,7 +49,7 @@ import HitModeCard from './Components/HitModeCard';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import TeamBuffCard from './Components/TeamBuffCard';
-import { artSetPerm, breakSetPermBySet, compactArtifacts, countBuilds, dynamicData } from './foreground';
+import { artSetPerm, breakSetPermBySet, compactArtifacts, dynamicData } from './foreground';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
@@ -202,7 +202,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     ({ nodes, arts } = reaffine(nodes, arts))
     const origCount = countBuilds(arts);
 
-    ({ nodes, arts } = pruneRange(nodes, arts, minimum))
+    ({ nodes, arts } = pruneRange(nodes, arts, minimum, true))
     arts = pruneOrder(arts, maxBuildsToShow)
 
     let wrap = { buildCount: 0, failedCount: 0, skippedCount: origCount - countBuilds(arts), buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity) }
@@ -273,6 +273,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
     const buildTimer = setInterval(() => {
       setgenerationProgress(wrap.buildCount)
+      setgenerationSkipped(wrap.skippedCount)
       setgenerationDuration(performance.now() - t1)
     }, 100)
     const results = await Promise.any([Promise.all(finalizedList), cancelled])
@@ -303,6 +304,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       const totalDuration = performance.now() - t1
 
       setgenerationProgress(wrap.buildCount)
+      setgenerationSkipped(wrap.skippedCount)
       setgenerationDuration(totalDuration)
 
       ReactGA.timing({

@@ -2,7 +2,7 @@ import { optimize, precompute } from '../Formula/optimization';
 import type { NumNode } from '../Formula/type';
 import type { MainStatKey, SubstatKey } from '../Types/artifact';
 import { ArtifactSetKey, SlotKey } from '../Types/consts';
-import { filterArts, mergePlot, pruneOrder, pruneRange } from './common';
+import { countBuilds, filterArts, mergePlot, pruneOrder, pruneRange } from './common';
 
 let id: string
 let builds: Build[]
@@ -42,11 +42,12 @@ export function setup(msg: Setup, callback: WorkerStat["callback"]): RequestResu
 export function request({ threshold: newThreshold, filter: filters }: Request): RequestResult & { total: number } {
   if (threshold > newThreshold) threshold = newThreshold
   let preArts = filterArts(shared.arts, filters)
+  const totalCount = countBuilds(preArts)
 
   let nodes = optimize(shared.nodes, {}, _ => false)
   {
     shared.min.push(threshold);
-    ({ nodes, arts: preArts } = pruneRange(nodes, preArts, shared.min))
+    ({ nodes, arts: preArts } = pruneRange(nodes, preArts, shared.min, false))
     shared.min.pop()
   }
   preArts = pruneOrder(preArts, shared.maxBuilds)
@@ -54,7 +55,7 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
   const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length)
 
   const ids: string[] = Array(arts.length).fill("")
-  let count = { build: 0, failed: 0 }
+  let count = { build: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }
 
   function permute(i: number, stats: Stats) {
     if (i < 0) {
@@ -88,7 +89,6 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
     }
   }
 
-  // TODO: Update to array-based
   permute(arts.length - 1, shared.arts.base)
   interimReport(count)
   return { command: "request", id, total: arts.reduce((count, a) => a.length * count, 1) }
@@ -98,15 +98,16 @@ export function finalize(): FinalizeResult {
   return { command: "finalize", id, builds, plotData }
 }
 
-export let interimReport = (count: { build: number, failed: number }): void => {
+export let interimReport = (count: { build: number, failed: number, skipped: number }): void => {
   refresh(false)
   shared.callback({
     command: "interim", id, buildValues,
-    buildCount: count.build, failedCount: count.failed, skippedCount: 0
+    buildCount: count.build, failedCount: count.failed, skippedCount: count.skipped
   })
   buildValues = undefined
   count.build = 0
   count.failed = 0
+  count.skipped = 0
 }
 function refresh(force: boolean): void {
   if (plotData && Object.keys(plotData).length >= 100000)

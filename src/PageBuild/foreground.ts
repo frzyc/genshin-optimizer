@@ -2,7 +2,7 @@ import Artifact from "../Data/Artifacts/Artifact";
 import { SetFilter } from "../Types/Build";
 import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
 import { deepClone, objectKeyMap, objectMap } from "../Util/Util";
-import { filterArts } from "./common";
+import { countBuilds, filterArts } from "./common";
 import type { ArtifactBuildData, ArtifactsBySlot, RequestFilter } from "./background";
 import { allMainStatKeys, allSubstats, ICachedArtifact } from "../Types/artifact_WR";
 import { setReadNodeKeys } from "../Formula/utils";
@@ -118,7 +118,3 @@ export function* breakSetPermBySet(_arts: ArtifactsBySlot, perms: Iterable<Reque
 }
 
 const noFilter = { kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }
-
-export function countBuilds(arts: ArtifactsBySlot): number {
-  return allSlotKeys.reduce((_count, slot) => _count * arts.values[slot].length, 1)
-}

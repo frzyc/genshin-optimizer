@@ -99,8 +99,8 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySl
   return progress ? { base: arts.base, values } : arts
 }
 /** Remove artifacts that cannot reach `minimum` in any build */
-export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[]): { nodes: NumNode[], arts: ArtifactsBySlot } {
-  const wrap = { nodes, arts }, internalWrap = { anyProgress: false }
+export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[], forced: boolean): { nodes: NumNode[], arts: ArtifactsBySlot } {
+  const wrap = { nodes, arts }, internalWrap = { anyProgress: forced }
   const baseRange = Object.fromEntries(Object.entries(wrap.arts.base).map(([key, x]) => [key, { min: x, max: x }]))
   while (true) {
     const artRanges = objectKeyMap(allSlotKeys, slot => computeArtRange(wrap.arts.values[slot]))
@@ -133,9 +133,13 @@ export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: num
     const operandRanges = f.operands.map(x => nodeRange.get(x)!)
     switch (operation) {
       case "threshold": {
-        const [value, threshold] = operandRanges
+        const [value, threshold, pass, fail] = operandRanges
         if (value.min >= threshold.max) return f.operands[2]
         else if (value.max < threshold.min) return constant(0)
+        if (pass.max === pass.min &&
+          fail.max === fail.min &&
+          pass.min === fail.min && isFinite(pass.min))
+          return constant(pass.max)
         break
       }
       case "min": {
@@ -279,4 +283,8 @@ export function mergePlot(plots: PlotData[]): PlotData {
     }
 
   return result
+}
+
+export function countBuilds(arts: ArtifactsBySlot): number {
+  return allSlotKeys.reduce((_count, slot) => _count * arts.values[slot].length, 1)
 }
