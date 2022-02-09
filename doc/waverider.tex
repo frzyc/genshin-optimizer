@@ -374,7 +374,7 @@ The~$1 + a$ formula is then used to replace a portion of the formula~$1 + a + b$
 	\label{fig:optimization:deduplicate}
 \end{figure}
 
-\subsection{Re-affining}
+\subsection{Reaffining}
 
 As mentioned in Section~\ref{sec:operation:read}, unapplied read nodes are treated as an input to the graph, and are replaced with appropriate values during graph computation.
 These read nodes normally represent an affine computation of some external factors, such as the total ``DEF'' contribution from all artifacts~($\text{DEF}_\text{artifact}$), which is affine w.r.t. individual ``DEF'' contributation of an artifact in each equipment slot~($\text{DEF}_{\text{artifact}[slot]}$).
@@ -383,7 +383,7 @@ In particular, $\text{DEF}_\text{artifact} = \sum_{slot} \text{DEF}_{\text{artif
 As such, the graph computation generally includes an \emph{affine combinator}, which is a functionality that combines the values from different factors ($\text{DEF}_{\text{artifact}[slot]}$) into a single value ($\text{DEF}_\text{artifact}$) before replacing the corresponding unapplied read node.
 Therefore, it is useful to offload the affine computation to the affine combinator instead of using generic compute nodes within the graph.
 
-The \emph{re-affining} helps offloading the affine computation in the graph by replacing read nodes that are part of an affine function with a single read node representing that entire computation.
+The \emph{reaffining} helps offloading the affine computation in the graph by replacing read nodes that are part of an affine function with a single read node representing that entire computation.
 
 Figure~\ref{fig:optimization:reaffine} shows an example of reaffining~$\max\{4 * (a + b + 2), c\}$ where
 \begin{itemize}
@@ -427,8 +427,8 @@ Prior to reaffining, the affine combinator needs to compute~$a$ and~$b$ before r
 Even then, the graph still needs to compute the addition~$a + b + 2$ as well as the multiplication~$4 * (a + b + 2)$.
 After reaffining, the graph can instead compute~$d'_i = 4 * (a'_i + b'_i)$ and~$C_d = 4 * (C_a + C_b + 2)$ a priori and only compute~$d=C_d + \sum_{i=1}^{n_d}d_i'$ for the left half of the equation.
 
-Not only does re-affining reduce the number of nodes in the graph, it also helps with the pruning process by combining the computation for an accurate estimation of the range of the value of each node.
-The pruning process is further discussed in Section~\ref{sec:pruning}
+Not only does reaffining reduce the number of nodes in the graph, it also helps with the pruning process by combining the computation for an accurate estimation of the range of the value of each node.
+The pruning process is further discussed in Section~\ref{sec:pruning}.
 
 \section{Graph Optimization}
 
