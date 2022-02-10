@@ -12,5 +12,5 @@ export interface IFieldDisplay {
   formula?: (stats: BasicStats) => any[];
   formulaText?: JSX.Element | ((stats: BasicStats) => JSX.Element)
   variant?: string | ((stats: BasicStats) => string);
-  unit?: Unit
+  unit?: string
 }
