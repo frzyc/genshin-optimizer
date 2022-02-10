@@ -1,13 +1,13 @@
 import { uiInput } from "."
 import ColorText from "../Components/ColoredText"
-import KeyMap, { KeyMapPrefix } from "../KeyMap"
+import KeyMap, { KeyMapPrefix, Unit } from "../KeyMap"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
 import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput, Variant } from "./type"
 
 const shouldWrap = true
 
-export function valueString(value: number, unit: "%" | "flat", fixed = -1): string {
+export function valueString(value: number, unit: Unit, fixed = -1): string {
   if (!isFinite(value)) {
     if (value > 0) return `\u221E`
     if (value < 0) return `-\u221E`
@@ -30,7 +30,7 @@ export interface NodeDisplay<V = number> {
   value: V
   /** Whether the node fails the conditional test (`threshold_add`, `match`, etc.) or consists solely of empty nodes */
   isEmpty: boolean
-  unit: "%" | "flat"
+  unit: Unit
   variant?: Variant
   formula?: Displayable
   formulas: Displayable[]

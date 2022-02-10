@@ -57,6 +57,8 @@ const statMap = {
   level: "Level",
 } as const
 
+export type Unit = "flat" | "%" | "s"
+
 export type BaseKeys = keyof typeof statMap
 
 export type EleDmgKey = `${ElementKeyWithPhy}_dmg_`
@@ -149,7 +151,7 @@ export default class KeyMap {
       return name.endsWith("%") ? name.slice(0, -1) : name
     return name
   }
-  static unit(key: string = ""): "%" | "flat" {
+  static unit(key: string = ""): Unit {
     if (key.endsWith("_")) return "%"
     return "flat"
   }
