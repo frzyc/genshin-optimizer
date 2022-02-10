@@ -1,7 +1,7 @@
 import { ArtifactSetKey } from '../../Types/consts'
 import { ArtifactSheet } from './ArtifactSheet'
 
-// import Adventurer from './Adventurer'
+import Adventurer from './Adventurer'
 // import ArchaicPetra from './ArchaicPetra'
 // import Berserker from './Berserker'
 // import BlizzardStrayer from './BlizzardStrayer'
@@ -39,7 +39,7 @@ import NoblesseOblige from './NoblesseOblige'
 import ViridescentVenerer from './ViridescentVenerer'
 // import WanderersTroupe from './WanderersTroupe'
 const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
-  // Adventurer,
+  Adventurer,
   // ArchaicPetra,
   // Berserker,
   // BlizzardStrayer,

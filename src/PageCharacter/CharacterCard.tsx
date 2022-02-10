@@ -131,13 +131,13 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
         </Grid>
         <Grid container spacing={1} flexWrap="nowrap">
           <Grid item>
-            <Chip color={autoBoost ? "info" : "secondary"} label={<strong >{tAuto + 1}</strong>} />
+            <Chip color={autoBoost ? "info" : "secondary"} label={<strong >{tAuto}</strong>} />
           </Grid>
           <Grid item>
-            <Chip color={skillBoost ? "info" : "secondary"} label={<strong >{tSkill + 1}</strong>} />
+            <Chip color={skillBoost ? "info" : "secondary"} label={<strong >{tSkill}</strong>} />
           </Grid>
           <Grid item>
-            <Chip color={burstBoost ? "info" : "secondary"} label={<strong >{tBurst + 1}</strong>} />
+            <Chip color={burstBoost ? "info" : "secondary"} label={<strong >{tBurst}</strong>} />
           </Grid>
         </Grid>
         <Typography mt={1} ><Stars stars={characterSheet.rarity} colored /></Typography>

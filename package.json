@@ -1,7 +1,7 @@
 {
-  "homepage": "https://frzyc.github.io/genshin-optimizer-waverider/",
+  "homepage": "https://lantua.github.io/genshin-optimizer-beta/",
   "name": "genshin-optimizer",
-  "version": "8.0.0-beta.2",
+  "version": "8.0.0-beta.3",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.1",
@@ -52,7 +52,7 @@
     "localization-load": "cd ./localization && npx ts-node ./load.ts",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -r https://github.com/frzyc/genshin-optimizer-waverider",
+    "deploy": "gh-pages -d build -r https://github.com/lantua/genshin-optimizer-beta",
     "check-types": "tsc --noEmit"
   },
   "eslintConfig": {
