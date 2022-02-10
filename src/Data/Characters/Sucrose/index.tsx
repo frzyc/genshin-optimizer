@@ -66,7 +66,6 @@ const datamine = {
 // Absorption Element
 
 const [condAbsorptionPath, condAbsorption] = cond(characterKey, "absorption")
-console.log(condAbsorptionPath, condAbsorption)
 // A1 Swirl Reaction Element
 const [condSwirlReactionPath, condSwirlReaction] = cond(characterKey, "swirl")
 // Set to "hit" if skill hit opponents
