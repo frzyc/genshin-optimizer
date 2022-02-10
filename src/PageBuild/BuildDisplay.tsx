@@ -183,7 +183,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     const workerData = uiDataForTeam(teamData.teamData, characterKey)[characterKey as CharacterKey]?.target.data![0]
     if (!workerData) return
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
-    const optimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
+    let optimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
     if (!optimizationTargetNode) return
     const valueFilter: { value: NumNode, minimum: number }[] = [] // TODO: Connect to statFilter
 
@@ -196,15 +196,27 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
     const cancelled = new Promise<void>(r => cancelToken.current = r)
 
-    let nodes = optimize([optimizationTargetNode, ...valueFilter.map(x => x.value)], workerData, ({ path: [p] }) => p !== "dyn")
-    let arts = split!
-    const origCount = countBuilds(arts), minimum = [-Infinity, ...valueFilter.map(x => x.minimum)];
+    let nodes = [...valueFilter.map(x => x.value), optimizationTargetNode], arts = split!
+    const origCount = totBuildNumber, minimum = [...valueFilter.map(x => x.minimum), -Infinity]
+    if (plotBase) {
+      nodes.push(input.total[plotBase])
+      minimum.push(-Infinity)
+    }
+
+    nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     ({ nodes, arts } = reaffine(nodes, arts));
     ({ nodes, arts } = pruneRange(nodes, arts, minimum, true));
-    ({ nodes, arts } = reaffine(nodes, arts));
+    ({ nodes, arts } = reaffine(nodes, arts))
     arts = pruneOrder(arts, maxBuildsToShow)
 
-    let wrap = { buildCount: 0, failedCount: 0, skippedCount: origCount - countBuilds(arts), buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity) }
+    const plotBaseNode = plotBase ? nodes.pop() : undefined
+    optimizationTargetNode = nodes.pop()!
+
+    let wrap = {
+      buildCount: 0, failedCount: 0, skippedCount: origCount,
+      buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity)
+    }
+    setPerms.forEach(filter => wrap.skippedCount -= countBuilds(filterArts(arts, filter)))
 
     const maxWorkers = navigator.hardwareConcurrency || 4
 
@@ -231,8 +243,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         command: "setup",
         id: `${i}`,
         arts,
-        optimizationTarget: nodes[0],
-        plotBase: input.total[plotBase],
+        optimizationTarget: optimizationTargetNode,
+        plotBase: plotBaseNode,
         maxBuilds: maxBuildsToShow,
         filters: nodes
           .map((value, i) => ({ value, min: minimum[i] }))

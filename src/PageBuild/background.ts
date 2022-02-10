@@ -39,7 +39,7 @@ export function setup(msg: Setup, callback: WorkerStat["callback"]): RequestResu
   return { command: "request", id }
 }
 
-export function request({ threshold: newThreshold, filter: filters }: Request): RequestResult & { total: number } {
+export function request({ threshold: newThreshold, filter: filters }: Request): RequestResult {
   if (threshold > newThreshold) threshold = newThreshold
   let preArts = filterArts(shared.arts, filters)
   const totalCount = countBuilds(preArts)
@@ -91,7 +91,7 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
 
   permute(arts.length - 1, shared.arts.base)
   interimReport(count)
-  return { command: "request", id, total: arts.reduce((count, a) => a.length * count, 1) }
+  return { command: "request", id }
 }
 export function finalize(): FinalizeResult {
   refresh(true)

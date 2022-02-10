@@ -73,9 +73,10 @@ export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot): { nodes: NumN
         arts.values[slot].map(({ id, set, values }) => ({ id, set, values: reaffineArt(values) })))
     }
   }
+  const offsets = Object.entries(reaffineArt({}))
   for (const arts of Object.values(result.arts.values))
     for (const { values } of arts)
-      for (const [key, baseValue] of Object.entries(result.arts.base))
+      for (const [key, baseValue] of offsets)
         values[key] -= baseValue
   return result
 }
