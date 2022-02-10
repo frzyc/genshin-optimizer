@@ -53,5 +53,5 @@ export function dataObjForWeaponSheet(
     })
   }
 
-  return mergeData([...merging, inferInfoMut(additional)])
+  return mergeData([...merging, inferInfoMut(additional, key)])
 }
