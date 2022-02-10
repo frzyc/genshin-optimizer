@@ -150,13 +150,10 @@ export class UIData {
         delete result.assignment
         result.dependencies = new Set()
       }
-      if (result.key && result.key !== '_' && typeof result.value === "number")
-        result.name = createName(result as ContextNodeDisplay)
-      if (result.name && result.formula)
-        result.assignment = createAssignFormula(result.name, result.formula)
       if (result.pivot || !result.formula)
         result.mayNeedWrapping = false
     }
+    createDisplay(result)
 
     this.nodes.set(node, result)
     return result
@@ -297,7 +294,7 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
       operands.forEach((item, i, array) => {
         let itemFormula: Displayable
         if (!item.pivot && item.formula) itemFormula = item.formula
-        else itemFormula = item.name ?? valueString(item.value, item.key ? KeyMap.unit(item.key) : "flat")
+        else itemFormula = createFormulaComponent(item)
 
         if (shouldWrap && item.mayNeedWrapping) {
           predisplay.push("( ")
@@ -331,30 +328,48 @@ function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
 }
 
 //* Comment/uncomment this line to toggle between string formulas and JSX formulas
-function createName({ key, value, prefix, variant, source }: ContextNodeDisplay): Displayable {
-  const prefixDisplay = (prefix && !source)
-    ? <>{KeyMap.getPrefixStr(prefix)} </>
-    : <></>
-  // TODO: Convert `source` key to actual name
-  const sourceDisplay = source ? <> ({source})</> : null
-  return <><ColorText color={variant}>{prefixDisplay}{KeyMap.getNoUnit(key!)}</ColorText>{sourceDisplay} {valueString(value, KeyMap.unit(key!))}</>
+function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
+  const { key, value, formula, prefix, source, variant } = node
+  if (typeof value !== "number") return
+  node.valueDisplay = <ColorText color="info">{valueString(value, key ? KeyMap.unit(key) : "flat")}</ColorText>
+  if (key && key !== '_') {
+    const prefixDisplay = (prefix && !source) ? <>{KeyMap.getPrefixStr(prefix)} </> : <></>
+    // TODO: Convert `source` key to actual name
+    const sourceDisplay = source ? <ColorText color="secondary"> ({source})</ColorText> : null
+    node.name = <><ColorText color={variant}>{prefixDisplay}{KeyMap.getNoUnit(key!)}</ColorText>{sourceDisplay}</>
+
+    if (formula)
+      node.assignment = <div id="formula">{node.name} {node.valueDisplay} = {formula}</div>
+  }
+}
+function createFormulaComponent(node: ContextNodeDisplay): Displayable {
+  const { name, valueDisplay } = node
+  return name ? <><span style={{ fontSize: "85%" }}>{name}</span> {valueDisplay}</> : valueDisplay!
 }
 function mergeFormulaComponents(components: Displayable[]): Displayable {
   return <>{components.map((x, i) => <span key={i}>{x}</span>)}</>
 }
-function createAssignFormula(name: Displayable, formula: Displayable) {
-  return <>{name} = {formula}</>
-}
 /*/
-function createName({ key, value, prefix: _prefix }: ContextNodeDisplay): Displayable {
-  const prefix = _prefix ? KeyMap.getPrefixStr(_prefix) + ' ' : ''
-  return `${prefix + KeyMap.getNoUnit(key!)} ${valueString(value, KeyMap.unit(key!))}`
+function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
+  const { key, value, formula, prefix, source, variant } = node
+  if (typeof value !== "number") return
+  node.valueDisplay = valueString(value, key ? KeyMap.unit(key) : "flat")
+  if (key && key !== '_') {
+    const prefixDisplay = (prefix && !source) ? `${KeyMap.getPrefixStr(prefix)} ` : ""
+    // TODO: Convert `source` key to actual name
+    const sourceDisplay = source ? ` ${source}` : ""
+    node.name = `${prefixDisplay}${KeyMap.getNoUnit(key!)}${sourceDisplay}`
+
+    if (formula)
+      node.assignment = `${node.name} ${node.valueDisplay} = ${formula}`
+  }
+}
+function createFormulaComponent(node: ContextNodeDisplay): Displayable {
+  const { name, valueDisplay } = node
+  return name ? `${name} ${valueDisplay}` : valueDisplay!
 }
 function mergeFormulaComponents(components: Displayable[]): Displayable {
   return (components as string[]).join("")
-}
-function createAssignFormula(name: Displayable, formula: Displayable) {
-  return `${name} = ${formula}`
 }
 //*/
 
@@ -375,6 +390,7 @@ interface ContextNodeDisplay<V = number> {
 
   // Don't set these manually outside of `UIData.computeNode`
   name?: Displayable
+  valueDisplay?: Displayable
   formula?: Displayable
   assignment?: Displayable
 }
