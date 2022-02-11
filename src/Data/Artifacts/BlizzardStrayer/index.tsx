@@ -5,14 +5,16 @@ import { input } from '../../../Formula'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import { cond } from '../../SheetUtil'
+import { cond, trans } from '../../SheetUtil'
 
 const key: ArtifactSetKey = "BlizzardStrayer"
+
+const [, trm] = trans("artifact", key)
 
 const [condStatePath, condState] = cond(key, "state")
 
 const set2 = threshold_add(input.artSet.BlizzardStrayer, 2, percent(0.15))
-const set4 = threshold_add(input.artSet.BlizzardStrayer, 4, lookup(condState, {"cryo": percent(0.20), "frozen": percent(0.40) }, naught))
+const set4 = threshold_add(input.artSet.BlizzardStrayer, 4, lookup(condState, { "cryo": percent(0.20), "frozen": percent(0.40) }, naught))
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
@@ -39,14 +41,14 @@ const sheet: IArtifactSheet = {//Icebreaker
         conditional: {
           value: condState,
           path: condStatePath,
-          name: "Attack enemy",
+          name: trm("condName"),
           states: {
             cryo: {
-              name: "Affected By Cryo",
+              name: trm("condCryo"),
               fields: [{ node: set4 }]
             },
             frozen: {
-              name: "Frozen",
+              name: trm("condFrozen"),
               fields: [{ node: set4 }]
             }
           }
