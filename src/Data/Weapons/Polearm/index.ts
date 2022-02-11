@@ -1,4 +1,4 @@
-// import BeginnersProtector from './BeginnersProtector'
+import BeginnersProtector from './BeginnersProtector'
 // import BlackcliffPole from './BlackcliffPole'
 // import BlackTassel from './BlackTassel'
 import CalamityQueller from './CalamityQueller'
@@ -22,7 +22,7 @@ import CalamityQueller from './CalamityQueller'
 // import WavebreakersFin from './WavebreakersFin'
 // import WhiteTassel from './WhiteTassel'
 const polearm = {
-  // BeginnersProtector,
+  BeginnersProtector,
   // BlackcliffPole,
   // BlackTassel,
   CalamityQueller,
