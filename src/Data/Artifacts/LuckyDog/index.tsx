@@ -1,24 +1,40 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-const artifact: IArtifactSheet = {
-  name: "Lucky Dog", rarity: [3],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
+import icons from './icons'
+import { Data } from '../../../Formula/type'
+import { infoMut, threshold_add } from '../../../Formula/utils'
+import { input } from '../../../Formula'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+const key: ArtifactSetKey = "LuckyDog"
+const set2 = threshold_add(input.artSet.LuckyDog, 2, 100)
+const heal = threshold_add(input.artSet.LuckyDog, 4, 300)
+
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    def: set2
   },
+}, {
+  heal,
+})
+
+const sheet: IArtifactSheet = {
+  name: "Lucky Dog", rarity: [3],
+  icons,
   setEffects: {
     2: {
-      stats: { def: 100 }
+      document: [{
+        fields: [{
+          node: set2,
+        }]
+      }]
     },
     4: {
+      document: [{
+        fields: [{
+          node: infoMut(heal, { key: "sheet_gen:healing", variant: "success" })
+        }]
+      }]
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

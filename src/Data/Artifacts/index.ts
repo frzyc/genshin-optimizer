@@ -16,7 +16,7 @@ import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 // import HuskOfOpulentDreams from './HuskOfOpulentDreams'
 // import Instructor from './Instructor'
 // import Lavawalker from './Lavawalker'
-// import LuckyDog from './LuckyDog'
+import LuckyDog from './LuckyDog'
 // import MaidenBeloved from './MaidenBeloved'
 // import MartialArtist from './MartialArtist'
 import NoblesseOblige from './NoblesseOblige'
@@ -54,7 +54,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   // HuskOfOpulentDreams,
   // Instructor,
   // Lavawalker,
-  // LuckyDog,
+  LuckyDog,
   // MaidenBeloved,
   // MartialArtist,
   NoblesseOblige,

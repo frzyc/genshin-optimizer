@@ -27,7 +27,7 @@ export const allArtifactSets = [
   // "HeartOfDepth",
   // "Instructor",
   // "Lavawalker",
-  // "LuckyDog",
+  "LuckyDog",
   // "MaidenBeloved",
   // "MartialArtist",
   "NoblesseOblige",
