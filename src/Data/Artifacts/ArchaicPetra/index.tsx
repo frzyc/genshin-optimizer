@@ -1,80 +1,73 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-import { Translate } from '../../../Components/Translate'
 import ImgIcon from '../../../Components/Image/ImgIcon'
 import SqBadge from '../../../Components/SqBadge'
-import { sgt } from '../../Characters/SheetUtil'
-const tr = (strKey: string) => <Translate ns="artifact_ArchaicPetra_gen" key18={strKey} />
-const artifact: IArtifactSheet = {
-  name: "Archaic Petra", rarity: [4, 5],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
+import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { match, percent, threshold_add } from '../../../Formula/utils'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { IFieldDisplay } from '../../../Types/IFieldDisplay_WR'
+import { absorbableEle } from '../../Characters/dataUtil'
+import { cond, sgt, trans } from '../../SheetUtil'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import icons from './icons'
+const key: ArtifactSetKey = "ArchaicPetra"
+const [tr, trm] = trans("artifact", key)
+
+const set2 = threshold_add(input.artSet.EmblemOfSeveredFate, 2, percent(0.2))
+const [condPath, condNode] = cond(key, "element")
+const set4Nodes = Object.fromEntries(absorbableEle.map(e => [`${e}_dmg_`,
+threshold_add(input.artSet.EmblemOfSeveredFate, 4,
+  match(e, condNode, percent(0.35))
+)
+]))
+
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    geo_dmg_: set2,
   },
+  teamBuff: {
+    premod: set4Nodes
+  }
+}, undefined)
+const durationfield: IFieldDisplay = {
+  text: sgt("duration"),
+  value: 10,
+  unit: "s"
+}
+
+const sheet: IArtifactSheet = {
+  name: "Archaic Petra", rarity: [4, 5],
+  icons,
   setEffects: {
     2: {
-      stats: { geo_dmg_: 15 }
+      document: [{
+        fields: [{
+          node: set2,
+        }]
+      }]
     },
     4: {
       document: [{
         conditional: {
-          key: "4",
-          partyBuff: "partyAll",
+          path: condPath,
+          value: condNode,
+          teamBuff: true,
           header: {
             title: tr("setName"),
-            icon: <ImgIcon size={2} sx={{ m: -1 }} src={flower} />,
+            icon: <ImgIcon size={2} sx={{ m: -1 }} src={icons.flower} />,
             action: <SqBadge color="success">4-set</SqBadge>
           },
           description: tr(`setEffects.4`),
-          name: <Translate ns="artifact_ArchaicPetra" key18="condName" />,
-          states: {
-            pyro: {
-              name: "Pyro",
-              stats: { pyro_dmg_: 35 },
-              fields: [{
-                text: sgt("duration"),
-                value: 10,
-                unit: "s"
-              }]
-            },
-            electro: {
-              name: "Electro",
-              stats: { electro_dmg_: 35 },
-              fields: [{
-                text: sgt("duration"),
-                value: 10,
-                unit: "s"
-              }]
-            },
-            hydro: {
-              name: "Hydro",
-              stats: { hydro_dmg_: 35 },
-              fields: [{
-                text: sgt("duration"),
-                value: 10,
-                unit: "s"
-              }]
-            },
-            cryo: {
-              name: "Cryo",
-              stats: { cryo_dmg_: 35 },
-              fields: [{
-                text: sgt("duration"),
-                value: 10,
-                unit: "s"
-              }]
-            }
-          }
+          name: trm("condName"),
+          states: Object.fromEntries(absorbableEle.map(e => [e, {
+            name: sgt(`element.${e}`),
+            fields: [{
+              node: set4Nodes[`${e}_dmg_`]
+            }, durationfield]
+          }])),
         }
       }]
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

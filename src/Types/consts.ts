@@ -15,7 +15,7 @@ export const allElementsWithPhy = ["physical", ...allElements] as const
 export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'] as const
 export const allArtifactSets = [
   "Adventurer",
-  // "ArchaicPetra",
+  "ArchaicPetra",
   // "Berserker",
   // "BlizzardStrayer",
   // "BloodstainedChivalry",
