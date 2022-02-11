@@ -1,35 +1,49 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-import { st } from '../../Characters/SheetUtil'
-const artifact: IArtifactSheet = {//Ocean Conqueror
-  name: "Heart of Depth", rarity: [4, 5],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
+import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { match, percent, threshold_add } from '../../../Formula/utils'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { cond, st } from '../../SheetUtil'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import icons from './icons'
+const key: ArtifactSetKey = "HeartOfDepth"
+const set2 = threshold_add(input.artSet.HeartOfDepth, 2, percent(0.15))
+const [condPath, condNode] = cond(key, "skill")
+const set4Norm = threshold_add(input.artSet.HeartOfDepth, 4,
+  match("cast", condNode, percent(0.3)))
+const set4Charged = { ...set4Norm }
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    hydro_dmg_: set2,
+    normal_dmg_: set4Norm,
+    charged_dmg_: set4Charged,
   },
+}, undefined)
+const sheet: IArtifactSheet = {//Ocean Conqueror
+  name: "Heart of Depth", rarity: [4, 5],
+  icons,
   setEffects: {
     2: {
-      stats: { hydro_dmg_: 15 }
+      document: [{ fields: [{ node: set2 }] }]
     },
     4: {
       document: [{
         conditional: {
-          key: "4",
+          path: condPath,
+          value: condNode,
           name: st("afterUse.skill"),
-          stats: {
-            normal_dmg_: 30,
-            charged_dmg_: 30
+          states: {
+            cast: {
+              fields: [{
+                node: set4Norm,
+              }, {
+                node: set4Charged,
+              }]
+            }
           }
         }
       }]
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

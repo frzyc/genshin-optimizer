@@ -1,35 +1,33 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-const artifact: IArtifactSheet = {
+import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { percent, threshold_add } from '../../../Formula/utils'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import icons from './icons'
+
+const key: ArtifactSetKey = "Gambler"
+
+const set2 = threshold_add(input.artSet.Gambler, 2, percent(0.2))
+
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    skill_dmg_: set2
+  }
+})
+
+const sheet: IArtifactSheet = {
   name: "Gambler", rarity: [3, 4],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
-  },
+  icons,
   setEffects: {
     2: {
-      stats: { skill_dmg_: 20 }
-    },
-    4: {
       document: [{
-        conditional: {
-          key: "4",
-          name: "Defeating an enemy",
-          stats: { skillCDRed_: 100 },
-          fields: [{
-            text: "CD",
-            value: "15s"
-          }]
-        }
+        fields: [{
+          node: set2
+        }]
       }]
-    }
+    },
+    4: {}
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

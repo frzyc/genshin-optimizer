@@ -1,35 +1,45 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-import formula from './data'
-import Stat from '../../../Stat'
+import icons from './icons'
+import { Data } from '../../../Formula/type'
+import { data as dataUtil, constant, percent, prod, threshold_add, infoMut } from '../../../Formula/utils'
+import { input } from '../../../Formula'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import { mergeData } from '../../../Formula/api'
+const key: ArtifactSetKey = "OceanHuedClam"
+const set2 = threshold_add(input.artSet.OceanHuedClam, 2, 1000)
+const heal = threshold_add(input.artSet.OceanHuedClam, 4,
+  dataUtil(input.hit.dmg, mergeData([{
+    hit: {
+      base: prod(percent(0.9), constant(30000)),
+      move: constant("elemental"),
+      ele: constant("physical")
+    }
+  }]))
+)
 
-const artifact: IArtifactSheet = {
-  name: "Ocean-Hued Clam", rarity: [4, 5],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    heal_: set2
   },
+}, {
+  heal,
+})
+
+const sheet: IArtifactSheet = {
+  name: "Ocean-Hued Clam", rarity: [4, 5],
+  icons,
   setEffects: {
     2: {
-      stats: { heal_: 15 }
+      document: [{ fields: [{ node: set2 }] }]
     },
     4: {
       document: [{
         fields: [{
-          text: "Max Sea-Dyed Foam DMG",
-          formulaText: stats => <span>90% * 30000 * {Stat.printStat("physical_enemyRes_multi", stats)}</span>,
-          formula: formula.dmg,
-          variant: "physical"
+          node: infoMut(heal, { key: `${key}:condName`, variant: "physical" })
         }]
       }]
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

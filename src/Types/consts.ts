@@ -22,9 +22,9 @@ export const allArtifactSets = [
   "BraveHeart",
   "CrimsonWitchOfFlames",
   // "DefendersWill",
-  // "Gambler",
+  "Gambler",
   "GladiatorsFinale",
-  // "HeartOfDepth",
+  "HeartOfDepth",
   // "Instructor",
   // "Lavawalker",
   "LuckyDog",
@@ -50,7 +50,7 @@ export const allArtifactSets = [
   "EmblemOfSeveredFate",
   // "ShimenawasReminiscence",
   // "HuskOfOpulentDreams",
-  // "OceanHuedClam"
+  "OceanHuedClam"
 ] as const
 export const allCharacterKeys = [
   // "Albedo",
