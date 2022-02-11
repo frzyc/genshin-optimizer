@@ -17,7 +17,7 @@ export const allArtifactSets = [
   "Adventurer",
   // "ArchaicPetra",
   // "Berserker",
-  // "BlizzardStrayer",
+  "BlizzardStrayer",
   // "BloodstainedChivalry",
   // "BraveHeart",
   // "CrimsonWitchOfFlames",

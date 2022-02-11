@@ -4,7 +4,7 @@ import { ArtifactSheet } from './ArtifactSheet'
 import Adventurer from './Adventurer'
 // import ArchaicPetra from './ArchaicPetra'
 // import Berserker from './Berserker'
-// import BlizzardStrayer from './BlizzardStrayer'
+import BlizzardStrayer from './BlizzardStrayer'
 // import BloodstainedChivalry from './BloodstainedChivalry'
 // import BraveHeart from './BraveHeart'
 // import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
@@ -42,7 +42,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   Adventurer,
   // ArchaicPetra,
   // Berserker,
-  // BlizzardStrayer,
+  BlizzardStrayer,
   // BloodstainedChivalry,
   // BraveHeart,
   // CrimsonWitchOfFlames,
