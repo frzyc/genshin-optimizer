@@ -36,8 +36,6 @@ const sheet: IArtifactSheet = {//Icebreaker
     },
     4: {
       document: [{
-      },
-      {
         conditional: {
           value: condState,
           path: condStatePath,
