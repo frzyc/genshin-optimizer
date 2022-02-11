@@ -16,9 +16,9 @@ export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'cataly
 export const allArtifactSets = [
   "Adventurer",
   "ArchaicPetra",
-  // "Berserker",
+  "Berserker",
   "BlizzardStrayer",
-  // "BloodstainedChivalry",
+  "BloodstainedChivalry",
   // "BraveHeart",
   // "CrimsonWitchOfFlames",
   // "DefendersWill",
