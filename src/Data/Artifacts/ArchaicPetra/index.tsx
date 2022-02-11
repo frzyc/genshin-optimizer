@@ -13,10 +13,10 @@ import icons from './icons'
 const key: ArtifactSetKey = "ArchaicPetra"
 const [tr, trm] = trans("artifact", key)
 
-const set2 = threshold_add(input.artSet.EmblemOfSeveredFate, 2, percent(0.2))
+const set2 = threshold_add(input.artSet.ArchaicPetra, 2, percent(0.2))
 const [condPath, condNode] = cond(key, "element")
 const set4Nodes = Object.fromEntries(absorbableEle.map(e => [`${e}_dmg_`,
-threshold_add(input.artSet.EmblemOfSeveredFate, 4,
+threshold_add(input.artSet.ArchaicPetra, 4,
   match(e, condNode, percent(0.35))
 )
 ]))
