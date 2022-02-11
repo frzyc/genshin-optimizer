@@ -11,7 +11,7 @@ import Adventurer from './Adventurer'
 // import DefendersWill from './DefendersWill'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 // import Gambler from './Gambler'
-// import GladiatorsFinale from './GladiatorsFinale'
+import GladiatorsFinale from './GladiatorsFinale'
 // import HeartOfDepth from './HeartOfDepth'
 // import HuskOfOpulentDreams from './HuskOfOpulentDreams'
 // import Instructor from './Instructor'
@@ -49,7 +49,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   // DefendersWill,
   EmblemOfSeveredFate,
   // Gambler,
-  // GladiatorsFinale,
+  GladiatorsFinale,
   // HeartOfDepth,
   // HuskOfOpulentDreams,
   // Instructor,

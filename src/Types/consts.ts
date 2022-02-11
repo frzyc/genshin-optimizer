@@ -23,7 +23,7 @@ export const allArtifactSets = [
   // "CrimsonWitchOfFlames",
   // "DefendersWill",
   // "Gambler",
-  // "GladiatorsFinale",
+  "GladiatorsFinale",
   // "HeartOfDepth",
   // "Instructor",
   // "Lavawalker",
