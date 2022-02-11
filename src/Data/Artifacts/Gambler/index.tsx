@@ -20,13 +20,7 @@ const sheet: IArtifactSheet = {
   name: "Gambler", rarity: [3, 4],
   icons,
   setEffects: {
-    2: {
-      document: [{
-        fields: [{
-          node: set2
-        }]
-      }]
-    },
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {}
   }
 }

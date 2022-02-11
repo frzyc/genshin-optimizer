@@ -7,15 +7,9 @@ import { IArtifactSheet } from '../../../Types/artifact'
 import { Translate } from '../../../Components/Translate'
 import formula from './data'
 import Stat from '../../../Stat'
-const artifact: IArtifactSheet = {
+const sheet: IArtifactSheet = {
   name: "Traveling Doctor", rarity: [3],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
-  },
+  icons,
   setEffects: {
     2: {
       stats: { incHeal_: 20 }
@@ -36,4 +30,4 @@ const artifact: IArtifactSheet = {
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

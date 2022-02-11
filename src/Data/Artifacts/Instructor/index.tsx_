@@ -9,15 +9,9 @@ import { Translate } from '../../../Components/Translate'
 import SqBadge from '../../../Components/SqBadge'
 import ImgIcon from '../../../Components/Image/ImgIcon'
 const tr = (strKey: string) => <Translate ns="artifact_Instructor_gen" key18={strKey} />
-const artifact: IArtifactSheet = {
+const sheet: IArtifactSheet = {
   name: "Instructor", rarity: [3, 4],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
-  },
+  icons,
   setEffects: {
     2: {
       stats: { eleMas: 80 }
@@ -45,4 +39,4 @@ const artifact: IArtifactSheet = {
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

@@ -49,7 +49,7 @@ export const allArtifactSets = [
   // "PaleFlame",
   "EmblemOfSeveredFate",
   // "ShimenawasReminiscence",
-  // "HuskOfOpulentDreams",
+  "HuskOfOpulentDreams",
   "OceanHuedClam"
 ] as const
 export const allCharacterKeys = [

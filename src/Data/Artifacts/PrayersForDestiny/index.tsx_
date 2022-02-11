@@ -1,6 +1,6 @@
 import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
-const artifact: IArtifactSheet = {
+const sheet: IArtifactSheet = {
   name: "Prayers for Destiny", rarity: [3, 4],
   icons: {
     circlet
@@ -11,4 +11,4 @@ const artifact: IArtifactSheet = {
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

@@ -26,13 +26,11 @@ const sheet: IArtifactSheet = {
   name: "Ocean-Hued Clam", rarity: [4, 5],
   icons,
   setEffects: {
-    2: {
-      document: [{ fields: [{ node: set2 }] }]
-    },
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
       document: [{
         fields: [{
-          node: infoMut(heal, { key: `${key}:condName`, variant: "physical" })
+          node: infoMut(heal, { key: `artifact_${key}:condName`, variant: "physical" })
         }]
       }]
     }

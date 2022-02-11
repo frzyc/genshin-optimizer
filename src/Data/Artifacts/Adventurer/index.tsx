@@ -22,9 +22,7 @@ const sheet: IArtifactSheet = {
   name: "Adventurer", rarity: [3],
   icons,
   setEffects: {
-    2: {
-      document: [{ fields: [{ node: set2 }] }]
-    },
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
       document: [{
         fields: [{
