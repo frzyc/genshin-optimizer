@@ -49,7 +49,7 @@ import HitModeCard from './Components/HitModeCard';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import TeamBuffCard from './Components/TeamBuffCard';
-import { artSetPerm, breakSetPermBySet, compactArtifacts, dynamicData } from './foreground';
+import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
@@ -220,7 +220,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
     const maxWorkers = navigator.hardwareConcurrency || 4
 
-    const setPerm = breakSetPermBySet(arts, setPerms,
+    const setPerm = splitFiltersBySet(arts, setPerms,
       maxWorkers === 1
         // Don't split for single worker
         ? Infinity
