@@ -9,7 +9,7 @@ const asConst = true as const, pivot = true as const
 
 const allElements = allElementsWithPhy
 const allTalents = ["auto", "skill", "burst"] as const
-const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
+const allMoves = ["normal", "charged", "plunging", "skill", "burst", "elemental"] as const
 const allMainSubStats = [...new Set([...allMainStatKeys, ...allSubstats] as const)]
 const allTransformative = ["overloaded", "shattered", "electrocharged", "superconduct", "swirl"] as const
 const allAmplifying = ["vaporize", "melt"] as const
