@@ -1,21 +1,17 @@
-import icons from './icons'
-import { Data } from '../../../Formula/type'
-import { data as dataUtil, constant, percent, prod, threshold_add, infoMut } from '../../../Formula/utils'
 import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { constant, infoMut, percent, prod, threshold_add } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
+import { customDmgNode } from '../../Characters/dataUtil'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import { mergeData } from '../../../Formula/api'
+import icons from './icons'
 const key: ArtifactSetKey = "OceanHuedClam"
 const set2 = threshold_add(input.artSet.OceanHuedClam, 2, 1000)
 const heal = threshold_add(input.artSet.OceanHuedClam, 4,
-  dataUtil(input.hit.dmg, mergeData([{
-    hit: {
-      base: prod(percent(0.9), constant(30000)),
-      move: constant("elemental"),
-      ele: constant("physical")
-    }
-  }]))
+  customDmgNode(prod(percent(0.9), 30000), "elemental", {
+    hit: { ele: constant("physical") }
+  })
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

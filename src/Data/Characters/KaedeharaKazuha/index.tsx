@@ -6,7 +6,7 @@ import { constant, infoMut, match, matchFull, percent, prod, threshold, threshol
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import { cond, condReadNode, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
-import { absorbableEle, dataObjForCharacterSheet, dmgNode, singleDmgNode } from '../dataUtil'
+import { absorbableEle, customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -130,7 +130,7 @@ const dmgFormulas = {
       [key, match(condBurstAbsorption, key, dmgNode("atk", datamine.burst.add, "burst", { hit: { ele: constant(key) } }))]))
   },
   passive1: Object.fromEntries(absorbableEle.map(key =>
-    [key, match(condSkillAbsorption, key, singleDmgNode("atk", datamine.passive1.asorbAdd, "plunging", { hit: { ele: constant(key) } }))])),
+    [key, match(condSkillAbsorption, key, customDmgNode(prod(input.total.atk, datamine.passive1.asorbAdd), "plunging", { hit: { ele: constant(key) } }))])),
   constellation6: {
     normal_dmg_: c6NormDmg_,
     charged_dmg_: c6ChargedDmg_,
