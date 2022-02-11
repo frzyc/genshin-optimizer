@@ -1,26 +1,40 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
+import icons from './icons'
+import { Data } from '../../../Formula/type'
+import { lookup, naught, percent, threshold_add } from '../../../Formula/utils'
+import { input } from '../../../Formula'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+const key: ArtifactSetKey = "GladiatorsFinale"
 
-const artifact: IArtifactSheet = {
+const set2 = threshold_add(input.artSet.GladiatorsFinale, 2, percent(0.18))
+const set4 = threshold_add(input.artSet.GladiatorsFinale, 4, lookup(input.weaponType, { "sword": percent(0.35), "polearm": percent(0.35), "claymore": percent(0.35) }, naught))
+
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    atk_: set2,
+    normal_dmg_: set4
+  }
+})
+
+const sheet: IArtifactSheet = {
   name: "Gladiator's Finale", rarity: [4, 5],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
-  },
+  icons,
   setEffects: {
     2: {
-      stats: { atk_: 18 }
+      document: [{
+        fields: [{
+          node: set2,
+        }]
+      }]
     },
     4: {
-      stats: stats => (stats.weaponType === "sword" || stats.weaponType === "polearm" || stats.weaponType === "claymore") ? { normal_dmg_: 35 } : {}
+      document: [{
+        fields: [{
+          node: set4,
+        }]
+      }]
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

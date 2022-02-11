@@ -5,6 +5,7 @@
   "lessPercentHP": "< {{percent}}% HP",
   "stack": "{{count}} Stack",
   "stack_plural": "{{count}} Stacks",
+  "afterDefeatEnemy": "After defeating an opponent",
   "hitOp": {
     "normal": "Normal Attack hits on oppoents",
     "charged": "Charged Attack hits on oppoents",

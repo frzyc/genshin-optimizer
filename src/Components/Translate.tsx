@@ -11,11 +11,19 @@ const components = {
   electro: <ColorText color="electro" />,
 }
 
+/**
+ * Note: Trans.values & Trans.components wont work together...
+ */
 export function Translate({ ns, key18, values, children }: { ns: string, key18: string, values?: any, children?: any }) {
   const { t } = useTranslation(ns)
   const textKey = `${ns}:${key18}`
   const textObj = values ? t(textKey, values, { returnObjects: true }) as any : t(textKey, { returnObjects: true }) as any
-  if (typeof textObj === "string") return <span>{children ? <Trans i18nKey={textKey} t={t} components={components} values={values} >{children}</Trans> : <Trans i18nKey={textKey} t={t} components={components} values={values} />}</span>
+  if (typeof textObj === "string")
+    return <span>
+      {children ? <Trans i18nKey={textKey} t={t} components={components} values={values} >{children}</Trans> :
+        values ? <Trans i18nKey={textKey} t={t} values={values} /> :
+          <Trans i18nKey={textKey} t={t} components={components} />}
+    </span>
   return <Suspense fallback={<Skeleton >{children}</Skeleton>}>
     <T key18={textKey} obj={textObj} t={t} values={values} />
   </Suspense>
