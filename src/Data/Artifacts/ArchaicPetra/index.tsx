@@ -39,9 +39,7 @@ const sheet: IArtifactSheet = {
   name: "Archaic Petra", rarity: [4, 5],
   icons,
   setEffects: {
-    2: {
-      document: [{ fields: [{ node: set2 }] }]
-    },
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
       document: [{
         conditional: {

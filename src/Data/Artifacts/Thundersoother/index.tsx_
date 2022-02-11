@@ -5,15 +5,9 @@ import goblet from './goblet.png'
 import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 import ColorText from '../../../Components/ColoredText'
-const artifact: IArtifactSheet = {
+const sheet: IArtifactSheet = {
   name: "Thundersoother", rarity: [4, 5],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
-  },
+  icons,
   setEffects: {
     2: {
       stats: { electro_res_: 40 }
@@ -29,4 +23,4 @@ const artifact: IArtifactSheet = {
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

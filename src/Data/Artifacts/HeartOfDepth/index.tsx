@@ -23,9 +23,7 @@ const sheet: IArtifactSheet = {//Ocean Conqueror
   name: "Heart of Depth", rarity: [4, 5],
   icons,
   setEffects: {
-    2: {
-      document: [{ fields: [{ node: set2 }] }]
-    },
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
       document: [{
         conditional: {

@@ -13,7 +13,7 @@ import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import Gambler from './Gambler'
 import GladiatorsFinale from './GladiatorsFinale'
 import HeartOfDepth from './HeartOfDepth'
-// import HuskOfOpulentDreams from './HuskOfOpulentDreams'
+import HuskOfOpulentDreams from './HuskOfOpulentDreams'
 // import Instructor from './Instructor'
 // import Lavawalker from './Lavawalker'
 import LuckyDog from './LuckyDog'
@@ -51,7 +51,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   Gambler,
   GladiatorsFinale,
   HeartOfDepth,
-  // HuskOfOpulentDreams,
+  HuskOfOpulentDreams,
   // Instructor,
   // Lavawalker,
   LuckyDog,

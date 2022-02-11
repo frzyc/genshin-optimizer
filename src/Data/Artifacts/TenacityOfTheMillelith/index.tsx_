@@ -9,15 +9,9 @@ import ImgIcon from '../../../Components/Image/ImgIcon'
 import SqBadge from '../../../Components/SqBadge'
 import { sgt } from '../../Characters/SheetUtil'
 const tr = (strKey: string) => <Translate ns="artifact_TenacityOfTheMillelith_gen" key18={strKey} />
-const artifact: IArtifactSheet = {
+const sheet: IArtifactSheet = {
   name: "Tenacity of the Millelith", rarity: [4, 5],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
-  },
+  icons,
   setEffects: {
     2: {
       stats: { hp_: 20 }
@@ -45,4 +39,4 @@ const artifact: IArtifactSheet = {
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)
