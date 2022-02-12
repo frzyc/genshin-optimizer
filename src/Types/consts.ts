@@ -81,7 +81,7 @@ export const allCharacterKeys = [
   // "Venti",
   // "Xiao",
   // "Xiangling",
-  // "Xingqiu",
+  "Xingqiu",
   // "Xinyan",
   // "Zhongli",
   // "Rosaria",
