@@ -147,7 +147,7 @@ export const allWeaponKeys = [
   // "SkywardPride",
   // "WolfsGravestone",
   // "TheUnforged",
-  // "BeginnersProtector",
+  "BeginnersProtector",
   // "IronPoint",
   // "BlackTassel",
   // "Halberd",
