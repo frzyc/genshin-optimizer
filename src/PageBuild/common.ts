@@ -2,7 +2,7 @@ import { forEachNodes, mapFormulas } from "../Formula/internal";
 import { allOperations, constantFold } from "../Formula/optimization";
 import { ConstantNode, NumNode } from "../Formula/type";
 import { constant, customRead, max, min } from "../Formula/utils";
-import { allSlotKeys } from "../Types/consts";
+import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
 import { assertUnreachable, objectKeyMap, objectMap } from "../Util/Util";
 import type { ArtifactBuildData, ArtifactsBySlot, Build, DynStat, PlotData, RequestFilter } from "./background";
 
@@ -84,7 +84,7 @@ export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: b
   return result
 }
 /** Remove artifacts that cannot be in top `numTop` builds */
-export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySlot {
+export function pruneOrder(arts: ArtifactsBySlot, numTop: number, keepArtifacts: Set<ArtifactSetKey>): ArtifactsBySlot {
   let progress = false
   const values = objectKeyMap(allSlotKeys, slot => {
     const list = arts.values[slot]
@@ -93,7 +93,9 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySl
       return list.every(other => {
         const greaterEqual = Object.entries(other.values).every(([k, o]) => o >= art.values[k])
         const greater = Object.entries(other.values).some(([k, o]) => o > art.values[k])
-        if (greaterEqual && (greater || other.id > art.id)) count++
+        if (greaterEqual && (greater || other.id > art.id) &&
+          (!keepArtifacts.has(art.set) || keepArtifacts.has(other.set)))
+          count++
         return count < numTop
       })
     })

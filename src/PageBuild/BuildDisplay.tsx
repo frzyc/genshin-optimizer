@@ -32,7 +32,7 @@ import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
 import { BuildSetting } from '../Types/Build';
-import { CharacterKey } from '../Types/consts';
+import { ArtifactSetKey, CharacterKey } from '../Types/consts';
 import { objectMap, objPathValue } from '../Util/Util';
 import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
@@ -210,7 +210,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     ({ nodes, arts } = reaffine(nodes, arts));
     ({ nodes, arts } = pruneRange(nodes, arts, minimum, true));
     ({ nodes, arts } = reaffine(nodes, arts))
-    arts = pruneOrder(arts, maxBuildsToShow)
+    arts = pruneOrder(arts, maxBuildsToShow, new Set(setFilters.map(x => x.key as ArtifactSetKey)))
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
