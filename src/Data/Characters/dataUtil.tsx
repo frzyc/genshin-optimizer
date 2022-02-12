@@ -24,23 +24,14 @@ function getTalentType(move: "normal" | "charged" | "plunging" | "skill" | "burs
   }
 }
 
-export function singleDmgNode(base: MainStatKey, multiplier: number, move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
+export function customDmgNode(base: NumNode, move: "normal" | "charged" | "plunging" | "skill" | "burst" | "elemental", additional: Data = {}): NumNode {
   return data(input.hit.dmg, mergeData([{
-    hit: {
-      base: prod(input.total[base], multiplier,),
-      move: constant(move), // TODO: element ?: T, reaction ?: T, critType ?: T
-    },
+    hit: { base, move: constant(move) },
   }, additional]))
 }
-
 export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
   const talentType = getTalentType(move)
-  return data(input.hit.dmg, mergeData([{
-    hit: {
-      base: prod(subscript(input.total[`${talentType}Index`], lvlMultiplier, { key: '_' }), input.total[base]),
-      move: constant(move), // TODO: element ?: T, reaction ?: T, critType ?: T
-    },
-  }, additional]))
+  return customDmgNode(prod(subscript(input.total[`${talentType}Index`], lvlMultiplier, { key: '_' }), input.total[base]), move, additional)
 }
 export function dataObjForCharacterSheet(
   key: CharacterKey,

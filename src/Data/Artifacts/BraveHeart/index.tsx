@@ -26,13 +26,7 @@ const sheet: IArtifactSheet = {
   name: "Brave Heart", rarity: [3, 4],
   icons,
   setEffects: {
-    2: {
-      document: [{
-        fields: [{
-          node: set2,
-        }]
-      }]
-    },
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
       document: [{
         conditional: {

@@ -11,15 +11,9 @@ import { allElements } from '../../../Types/consts'
 import { sgt } from '../../Characters/SheetUtil'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="artifact_DefendersWill_gen" key18={strKey} />
-const artifact: IArtifactSheet = {
+const sheet: IArtifactSheet = {
   name: "Defender's Will", rarity: [3, 4],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
-  },
+  icons,
   setEffects: {
     2: {
       stats: { def_: 30 }
@@ -44,4 +38,4 @@ const artifact: IArtifactSheet = {
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

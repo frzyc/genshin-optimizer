@@ -185,7 +185,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     let optimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
     if (!optimizationTargetNode) return
-    const valueFilter: { value: NumNode, minimum: number }[] = [] // TODO: Connect to statFilter
+    const valueFilter: { value: NumNode, minimum: number }[] = Object.entries(statFilters).map(([key, value]) => {
+      if (key.endsWith("_")) value = value / 100 // TODO: Conversion
+      return { value: input.total[key], minimum: value }
+    }).filter(x => x.value && x.minimum > -Infinity)
 
     const t1 = performance.now()
     setgeneratingBuilds(true)
@@ -235,6 +238,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       }
     }
 
+    const filters = nodes
+      .map((value, i) => ({ value, min: minimum[i] }))
+      .filter(x => x.min > -Infinity)
+
     const finalizedList: Promise<FinalizeResult>[] = []
     for (let i = 0; i < maxWorkers; i++) {
       const worker = new Worker()
@@ -246,9 +253,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         optimizationTarget: optimizationTargetNode,
         plotBase: plotBaseNode,
         maxBuilds: maxBuildsToShow,
-        filters: nodes
-          .map((value, i) => ({ value, min: minimum[i] }))
-          .filter(x => x.min > -Infinity)
+        filters
       }
       worker.postMessage(setup, undefined)
       let finalize: (_: FinalizeResult) => void
