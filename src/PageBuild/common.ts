@@ -9,7 +9,7 @@ import type { ArtifactBuildData, ArtifactsBySlot, Build, DynStat, PlotData, Requ
 type DynMinMax = { [key in string]: MinMax }
 type MinMax = { min: number, max: number }
 
-export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot): { nodes: NumNode[], arts: ArtifactsBySlot } {
+export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean = false): { nodes: NumNode[], arts: ArtifactsBySlot } {
   const affineNodes = new Set<NumNode>(), topLevelAffine = new Set<NumNode>()
 
   function visit(node: NumNode, isAffine: boolean) {
@@ -57,7 +57,10 @@ export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot): { nodes: NumN
 
   nodes.forEach(node => affineNodes.has(node) && topLevelAffine.add(node))
   const affine = [...topLevelAffine].filter(f => f.operation !== "const")
-  const affineMap = new Map(affine.map(node => [node, { ...customRead(["dyn", `${nextDynKey()}`]), accu: "add" as const }]))
+  const affineMap = new Map(affine.map(node => [node,
+    !forceRename && node.operation === "read" && node.path[0] === "dyn"
+      ? node
+      : { ...customRead(["dyn", `${nextDynKey()}`]), accu: "add" as const }]))
   nodes = mapFormulas(nodes, f => affineMap.get(f as NumNode) ?? f, f => f)
 
   function reaffineArt(stat: DynStat): DynStat {

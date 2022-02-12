@@ -2,7 +2,7 @@ import { optimize, precompute } from '../Formula/optimization';
 import type { NumNode } from '../Formula/type';
 import type { MainStatKey, SubstatKey } from '../Types/artifact';
 import { ArtifactSetKey, SlotKey } from '../Types/consts';
-import { countBuilds, filterArts, mergePlot, pruneOrder, pruneRange } from './common';
+import { countBuilds, filterArts, mergePlot, pruneOrder, pruneRange, reaffine } from './common';
 
 let id: string
 let builds: Build[]
@@ -50,7 +50,8 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
     ({ nodes, arts: preArts } = pruneRange(nodes, preArts, shared.min, false))
     shared.min.pop()
   }
-  preArts = pruneOrder(preArts, shared.maxBuilds)
+  preArts = pruneOrder(preArts, shared.maxBuilds);
+  ({ nodes, arts: preArts } = reaffine(nodes, preArts, true))
   const compute = precompute(nodes, f => f.path[1])
   const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length)
 
