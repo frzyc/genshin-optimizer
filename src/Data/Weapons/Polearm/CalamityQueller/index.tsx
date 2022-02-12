@@ -29,7 +29,7 @@ const atkInc = prod(
   lookup(condStack, objectKeyMap(range(1, 6), i => constant(i)), 0), // TODO: Add key for stack
   subscript(input.weapon.refineIndex, atk_, { key: '_' }),
 )
-export const data = dataObjForWeaponSheet(key, data_gen, "heal_", undefined, {
+export const data = dataObjForWeaponSheet(key, data_gen, "atk_", undefined, {
   premod: {
     ...dmg_Nodes,
     // TODO: Check if add to `premod` or `total`
