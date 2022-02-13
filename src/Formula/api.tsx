@@ -28,7 +28,7 @@ function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel: numbe
   const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level))
   const stats: [ArtifactSetKey | MainStatKey | SubstatKey, number][] = []
   stats.push([art.mainStatKey, mainStatVal])
-  art.substats.forEach(({ key, value }) => key && stats.push([key, value]))
+  art.substats.forEach(({ key, accurateValue }) => key && stats.push([key, accurateValue]))
   return {
     art: {
       ...Object.fromEntries(stats.map(([key, value]) =>
