@@ -13,9 +13,8 @@ const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key,
 export function dataObjForWeaponSheet(
   key: WeaponKey,
   gen: WeaponData,
-  subStat2: MainStatKey | SubstatKey | "dmg_" | undefined = undefined,
+  additional: Data = {},
   displayWeapon: DisplaySub = {},
-  additional: Data = {}
 ): Data {
   const result: Data = {
     base: {},
@@ -44,14 +43,5 @@ export function dataObjForWeaponSheet(
       weapon: { sub: substatNode },
     })
   }
-  if (subStat2) {
-    if (subStat2 === "atk" || subStat2 === "def" || subStat2 === "hp") throw new Error("SubStat 2 cannot be `atk`, `def`, or `hp`")
-    const substat2Node = subscript(input.weapon.refineIndex, gen.addProps.map(x => x[subStat2] ?? NaN), { key: subStat2 })
-    merging.push({
-      premod: { [subStat2]: input.weapon.sub },
-      weapon: { sub2: substat2Node },
-    })
-  }
-
   return mergeData([...merging, inferInfoMut(additional, key)])
 }
