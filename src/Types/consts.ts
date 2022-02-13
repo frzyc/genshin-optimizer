@@ -77,7 +77,7 @@ export const allCharacterKeys = [
   "Sucrose",
   // "Tartaglia",
   // "Traveler",
-  // "RaidenShogun",
+  "RaidenShogun",
   // "Venti",
   // "Xiao",
   // "Xiangling",
