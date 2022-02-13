@@ -1,13 +1,10 @@
 import { useContext, useEffect, useMemo } from "react";
 import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
-import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../Database/Database";
 import { common } from "../Formula";
 import { computeUIData, dataObjForArtifact, dataObjForCharacter, dataObjForWeapon } from "../Formula/api";
-import { ICachedArtifact } from "../Types/artifact_WR";
-import { CharacterKey, SlotKey } from "../Types/consts";
+import { CharacterKey } from "../Types/consts";
 import { objectMap } from "../Util/Util";
-import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import useCharacter from "./useCharacter";
 import useForceUpdate from "./useForceUpdate";
 import usePromise from "./usePromise";
@@ -19,15 +16,13 @@ import useWeapon from "./useWeapon";
  * @param mainStatAssumptionLevel
  * @returns
  */
-export default function useCharUIData(characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0) {
+export default function useCharUIData(characterKey: CharacterKey, mainStatAssumptionLevel: number = 0) {
   const database = useContext(DatabaseContext)
-  const character = useCharacter(characterKey)
-  const weapon = useWeapon(character?.equippedWeapon)
+  const { character, characterSheet } = useCharacter(characterKey)
+  const { weapon, weaponSheet } = useWeapon(character?.equippedWeapon)
 
-  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
   const artifactSheetsData = usePromise(ArtifactSheet.getAllData, [])
 
-  const weaponSheet = usePromise(weapon && WeaponSheet.get(weapon.key), [weapon])
   const artifacts = useMemo(() => character && database && objectMap(character.equippedArtifacts, a => database._getArt(a)), [character, database])
 
   const [dbDirty, setDbDirty] = useForceUpdate()

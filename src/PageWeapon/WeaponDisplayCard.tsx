@@ -2,7 +2,6 @@ import { Lock, LockOpen, SwapHoriz } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, ListItem, MenuItem, Typography } from "@mui/material"
 import { useCallback, useContext, useMemo, useState } from "react"
 import Assets from "../Assets/Assets"
-import CharacterSheet from "../Data/Characters/CharacterSheet"
 import CardDark from "../Components/Card/CardDark"
 import CardLight from "../Components/Card/CardLight"
 import CharacterDropdownButton from "../Components/Character/CharacterDropdownButton"
@@ -17,8 +16,11 @@ import ModalWrapper from "../Components/ModalWrapper"
 import SqBadge from "../Components/SqBadge"
 import { Stars } from "../Components/StarDisplay"
 import WeaponSelectionModal from "../Components/Weapon/WeaponSelectionModal"
+import CharacterSheet from "../Data/Characters/CharacterSheet"
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from "../Data/LevelData"
+import WeaponSheet from "../Data/Weapons/WeaponSheet"
 import { database as localDatabase, DatabaseContext } from "../Database/Database"
+import { DataContext } from "../DataContext"
 import { uiInput as input } from "../Formula"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import usePromise from "../ReactHooks/usePromise"
@@ -27,8 +29,6 @@ import { CharacterKey } from "../Types/consts"
 import { ICachedWeapon } from "../Types/weapon"
 import { clamp } from "../Util/Util"
 import WeaponCard from "./WeaponCard"
-import WeaponSheet from "../Data/Weapons/WeaponSheet"
-import { DataContext } from "../DataContext"
 
 type WeaponStatsEditorCardProps = {
   weaponId: string
@@ -43,9 +43,8 @@ export default function WeaponDisplayCard({
   const { data } = useContext(DataContext)
 
   const database = useContext(DatabaseContext)
-  const weapon = useWeapon(propWeaponId)
-  const { key = "", level, refinement = 0, ascension = 0, lock, location = "", id } = weapon ?? {}
-  const weaponSheet = usePromise(WeaponSheet.get(key), [key])
+  const { weapon, weaponSheet } = useWeapon(propWeaponId)
+  const { level, refinement = 0, ascension = 0, lock, location = "", id } = weapon ?? {}
   const weaponTypeKey = weaponSheet?.weaponType
 
   const weaponDispatch = useCallback((newWeapon: Partial<ICachedWeapon>) => {

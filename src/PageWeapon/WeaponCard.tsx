@@ -4,7 +4,6 @@ import { Lock, LockOpen } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, CardHeader, Grid, IconButton, Skeleton, Typography } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import Assets from "../Assets/Assets"
-import CharacterSheet from "../Data/Characters/CharacterSheet"
 import CardLight from "../Components/Card/CardLight"
 import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton_WR'
 import LocationName from "../Components/Character/LocationName"
@@ -12,22 +11,19 @@ import ConditionalWrapper from "../Components/ConditionalWrapper"
 import ImgIcon from "../Components/Image/ImgIcon"
 import { Stars } from "../Components/StarDisplay"
 import StatIcon from "../Components/StatIcon"
+import CharacterSheet from "../Data/Characters/CharacterSheet"
 import { ascensionMaxLevel } from "../Data/LevelData"
 import { DatabaseContext } from "../Database/Database"
 import { uiInput as input } from "../Formula"
-import { computeUIData, valueString, dataObjForWeapon } from "../Formula/api"
-import usePromise from "../ReactHooks/usePromise"
-import useWeapon from "../ReactHooks/useWeapon"
+import { computeUIData, dataObjForWeapon, valueString } from "../Formula/api"
 import KeyMap from "../KeyMap"
+import useWeapon from "../ReactHooks/useWeapon"
 import { CharacterKey } from "../Types/consts"
-import WeaponSheet from "../Data/Weapons/WeaponSheet"
 
 type WeaponCardProps = { weaponId: string, onClick?: (weaponId: string) => void, onEdit?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, canEquip?: boolean }
 export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEquip = false }: WeaponCardProps) {
   const database = useContext(DatabaseContext)
-  const databaseWeapon = useWeapon(weaponId)
-  const weapon = databaseWeapon
-  const weaponSheet = usePromise(weapon?.key ? WeaponSheet.get(weapon.key) : undefined, [weapon?.key])
+  const { weapon, weaponSheet } = useWeapon(weaponId)
 
   const filter = useCallback(
     (cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType,

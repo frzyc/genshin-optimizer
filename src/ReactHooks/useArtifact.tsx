@@ -1,12 +1,15 @@
 import { useContext, useEffect, useState } from "react";
+import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
 import { DatabaseContext } from "../Database/Database";
+import { ICachedArtifact } from "../Types/artifact_WR";
+import { useStablePromise } from "./usePromise";
 
-export default function useArtifact(artifactID: string | undefined = "") {
+export default function useArtifact(id: string | undefined): { artifact?: ICachedArtifact, artifactSheet?: ArtifactSheet } {
   const database = useContext(DatabaseContext)
-  const [artifact, setArtifact] = useState(database._getArt(artifactID))
-  useEffect(() => setArtifact(database._getArt(artifactID)), [database, artifactID])
-  useEffect(() =>
-    artifactID ? database.followArt(artifactID, setArtifact) : undefined,
-    [artifactID, setArtifact, database])
-  return artifact
+  const [artifact, set] = useState(database._getArt(id ?? ""))
+  const artifactSheet = useStablePromise(ArtifactSheet.get(artifact?.setKey))
+
+  useEffect(() => id ? database.followArt(id, set) : undefined, [database, id, set])
+  return { artifact, artifactSheet }
+
 }

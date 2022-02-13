@@ -3,7 +3,7 @@ import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
 import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
-import { constant, frac, infoMut, lookup, matchFull, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, sum, unit } from "./utils"
+import { constant, frac, infoMut, lookup, matchFull, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringRead, sum, unit } from "./utils"
 
 const asConst = true as const, pivot = true as const
 
