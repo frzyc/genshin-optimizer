@@ -38,7 +38,7 @@ import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './backgr
 import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import ChartCard from './ChartCard';
-import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneOrder, pruneRange, reaffine } from './common';
+import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
@@ -207,10 +207,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     }
 
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
-    ({ nodes, arts } = reaffine(nodes, arts));
-    ({ nodes, arts } = pruneRange(nodes, arts, minimum, true));
-    ({ nodes, arts } = reaffine(nodes, arts))
-    arts = pruneOrder(arts, maxBuildsToShow, new Set(setFilters.map(x => x.key as ArtifactSetKey)))
+    ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow,
+      new Set(setFilters.map(x => x.key as ArtifactSetKey)), {
+      reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
+    }))
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!

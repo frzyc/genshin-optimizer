@@ -9,7 +9,55 @@ import type { ArtifactBuildData, ArtifactsBySlot, Build, DynStat, PlotData, Requ
 type DynMinMax = { [key in string]: MinMax }
 type MinMax = { min: number, max: number }
 
-export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean = false): { nodes: NumNode[], arts: ArtifactsBySlot } {
+type MicropassOperation = "reaffine" | "pruneArtRange" | "pruneNodeRange" | "pruneOrder"
+export function pruneAll(nodes: NumNode[], minimum: number[], arts: ArtifactsBySlot, numTop: number, keepArtifacts: Set<ArtifactSetKey>, forced: Dict<MicropassOperation, boolean>): { nodes: NumNode[], arts: ArtifactsBySlot } {
+  let should = forced
+  /** If `key` makes progress, all operations in `value` should be performed */
+  const deps: StrictDict<MicropassOperation, Dict<MicropassOperation, true>> = {
+    pruneOrder: { pruneArtRange: true, pruneNodeRange: true },
+    pruneArtRange: { pruneNodeRange: true },
+    pruneNodeRange: { reaffine: true },
+    reaffine: { pruneOrder: true }
+  }
+  while (Object.values(should).some(x => x)) {
+    if (should.pruneOrder) {
+      delete should.pruneOrder
+      const newArts = pruneOrder(arts, numTop, keepArtifacts)
+      if (arts !== newArts) {
+        arts = newArts
+        should = { ...should, ...deps.pruneOrder }
+      }
+    }
+    if (should.pruneArtRange) {
+      delete should.pruneArtRange
+      const newArts = pruneArtRange(nodes, arts, minimum)
+      if (arts !== newArts) {
+        arts = newArts
+        should = { ...should, ...deps.pruneArtRange }
+      }
+    }
+    if (should.pruneNodeRange) {
+      delete should.pruneNodeRange
+      const newNodes = pruneNodeRange(nodes, arts)
+      if (nodes !== newNodes) {
+        nodes = newNodes
+        should = { ...should, ...deps.pruneNodeRange }
+      }
+    }
+    if (should.reaffine) {
+      delete should.reaffine
+      const { nodes: newNodes, arts: newArts } = reaffine(nodes, arts)
+      if (nodes !== newNodes || arts !== newArts) {
+        nodes = newNodes
+        arts = newArts
+        should = { ...should, ...deps.reaffine }
+      }
+    }
+  }
+  return { nodes, arts }
+}
+
+function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean = false): { nodes: NumNode[], arts: ArtifactsBySlot } {
   const affineNodes = new Set<NumNode>(), topLevelAffine = new Set<NumNode>()
 
   function visit(node: NumNode, isAffine: boolean) {
@@ -48,6 +96,9 @@ export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: b
       default: assertUnreachable(operation)
     }
   })
+
+  if ([...topLevelAffine].every(node => node.operation === "read"))
+    return { nodes, arts }
 
   let current = -1
   function nextDynKey(): string {
@@ -105,9 +156,9 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number, keepArtifacts:
   return progress ? { base: arts.base, values } : arts
 }
 /** Remove artifacts that cannot reach `minimum` in any build */
-export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[], forced: boolean): { nodes: NumNode[], arts: ArtifactsBySlot } {
-  const wrap = { nodes, arts }, internalWrap = { anyProgress: forced }
-  const baseRange = Object.fromEntries(Object.entries(wrap.arts.base).map(([key, x]) => [key, { min: x, max: x }]))
+function pruneArtRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[]): ArtifactsBySlot {
+  const baseRange = Object.fromEntries(Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }]))
+  const wrap = { arts }
   while (true) {
     const artRanges = objectKeyMap(allSlotKeys, slot => computeArtRange(wrap.arts.values[slot]))
     const otherArtRanges = objectKeyMap(allSlotKeys, key =>
@@ -117,23 +168,25 @@ export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: num
     const values = objectKeyMap(allSlotKeys, slot => {
       const result = wrap.arts.values[slot].filter(art => {
         const read = addArtRange([computeArtRange([art]), otherArtRanges[slot]])
-        const newRange = computeNodeRange(wrap.nodes, read)
-        return wrap.nodes.every((node, i) => newRange.get(node)!.max >= (minimum[i] ?? -Infinity))
+        const newRange = computeNodeRange(nodes, read)
+        return nodes.every((node, i) => newRange.get(node)!.max >= (minimum[i] ?? -Infinity))
       })
-      if (result.length !== wrap.arts.values[slot].length) {
-        internalWrap.anyProgress = true
+      if (result.length !== wrap.arts.values[slot].length)
         progress = true
-      }
       return result
     })
     if (!progress) break
     wrap.arts = { base: wrap.arts.base, values }
   }
-  if (!internalWrap.anyProgress) return wrap
+  return wrap.arts
+}
+function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot): NumNode[] {
+  const baseRange = Object.fromEntries(Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }]))
 
   const reads = addArtRange([baseRange, ...Object.values(arts.values).map(values => computeArtRange(values))])
-  const nodeRange = computeNodeRange(wrap.nodes, reads)
+  const nodeRange = computeNodeRange(nodes, reads)
 
+  const wrap = { nodes }
   wrap.nodes = mapFormulas(wrap.nodes, f => {
     const { operation } = f
     const operandRanges = f.operands.map(x => nodeRange.get(x)!)
@@ -168,7 +221,7 @@ export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: num
     return f
   }, f => f)
 
-  return wrap
+  return wrap.nodes
 }
 function addArtRange(ranges: DynMinMax[]): DynMinMax {
   const result: DynMinMax = {}
@@ -195,7 +248,7 @@ function computeArtRange(arts: ArtifactBuildData[]): DynMinMax {
 
   return result
 }
-export function computeNodeRange(nodes: NumNode[], reads: DynMinMax): Map<NumNode, MinMax> {
+function computeNodeRange(nodes: NumNode[], reads: DynMinMax): Map<NumNode, MinMax> {
   const range = new Map<NumNode, MinMax>()
 
   forEachNodes(nodes, _ => { }, _f => {
@@ -207,7 +260,7 @@ export function computeNodeRange(nodes: NumNode[], reads: DynMinMax): Map<NumNod
       case "read":
         if (f.path[0] !== "dyn")
           throw new Error(`Found non-dyn path ${f.path} while computing range`)
-        current = reads[f.path[1] as any as number]
+        current = reads[f.path[1]] ?? { min: 0, max: 0 }
         break
       case "const": current = computeMinMax([f.value]); break
       case "subscript": current = computeMinMax(f.list); break
