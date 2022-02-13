@@ -182,12 +182,10 @@ function pruneArtRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[
 }
 function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot): NumNode[] {
   const baseRange = Object.fromEntries(Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }]))
-
   const reads = addArtRange([baseRange, ...Object.values(arts.values).map(values => computeArtRange(values))])
   const nodeRange = computeNodeRange(nodes, reads)
 
-  const wrap = { nodes }
-  wrap.nodes = mapFormulas(wrap.nodes, f => {
+  return mapFormulas(nodes, f => {
     const { operation } = f
     const operandRanges = f.operands.map(x => nodeRange.get(x)!)
     switch (operation) {
@@ -220,8 +218,6 @@ function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot): NumNode[] {
     }
     return f
   }, f => f)
-
-  return wrap.nodes
 }
 function addArtRange(ranges: DynMinMax[]): DynMinMax {
   const result: DynMinMax = {}
@@ -326,21 +322,19 @@ export function mergeBuilds(builds: Build[][], maxNum: number): Build[] {
   return builds.flatMap(x => x).sort((a, b) => b.value - a.value).slice(0, maxNum)
 }
 export function mergePlot(plots: PlotData[]): PlotData {
-  const wrap = { scale: 0.01 }
-  let reductionScaling = 2, maxCount = 1500
-  let keys = new Set(plots.flatMap(x => Object.values(x).map(v => Math.round(v.value / wrap.scale))))
+  let scale = 0.01, reductionScaling = 2, maxCount = 1500
+  let keys = new Set(plots.flatMap(x => Object.values(x).map(v => Math.round(v.value / scale))))
   while (keys.size > maxCount) {
-    wrap.scale *= reductionScaling
+    scale *= reductionScaling
     keys = new Set([...keys].map(key => Math.round(key / reductionScaling)))
   }
   const result: PlotData = {}
   for (const plot of plots)
     for (const build of Object.values(plot)) {
-      const x = Math.round(build.value / wrap.scale) * wrap.scale
+      const x = Math.round(build.value / scale) * scale
       if (!result[x] || result[x]!.value < build.value)
         result[x] = build
     }
-
   return result
 }
 
