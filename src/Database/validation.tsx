@@ -18,7 +18,7 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
   const mainStatVal = Artifact.mainStatValue(mainStatKey, rarity, level)!
 
   const errors: Displayable[] = []
-  const substats: ICachedSubstat[] = flex.substats.map(substat => ({ ...substat, rolls: [], efficiency: 0 }))
+  const substats: ICachedSubstat[] = flex.substats.map(substat => ({ ...substat, rolls: [], efficiency: 0, accurateValue: substat.value }))
   const validated: ICachedArtifact = { id, setKey, location, slotKey, exclude, lock, mainStatKey, rarity, level, substats, mainStatVal }
 
   const allPossibleRolls: { index: number, substatRolls: number[][] }[] = []
@@ -45,6 +45,7 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
 
       substat.rolls = possibleRolls.reduce((best, current) => best.length < current.length ? best : current)
       substat.efficiency = efficiency(substat.rolls, key)
+      substat.accurateValue = substat.rolls.reduce((a, b) => a + b, 0)
     } else { // Invalid Substat
       substat.rolls = []
       substat.efficiency = 0
@@ -64,6 +65,7 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
         for (const { index, roll } of rolls) {
           const key = substats[index].key as SubstatKey
           substats[index].rolls = roll
+          substats[index].accurateValue = roll.reduce((a, b) => a + b, 0)
           substats[index].efficiency = efficiency(roll, key)
         }
       }

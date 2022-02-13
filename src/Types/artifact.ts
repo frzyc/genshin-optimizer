@@ -42,6 +42,7 @@ export interface ISubstat {
 export interface ICachedSubstat extends ISubstat {
   rolls: number[],
   efficiency: number,
+  accurateValue: number
 }
 /**
  * @deprecated use values in KeyMap
