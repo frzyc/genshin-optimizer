@@ -146,12 +146,16 @@ const common: Data = {
           operands.push(prod(base[key], sum(unit, premod[`${key}_`])))
           break
         case "critRate_":
-          operands.push(percent(0.05, { key: "critRate_", prefix: "default" }),
+          operands.push(percent(0.05, { key, prefix: "default" }),
             lookup(hit.move, objectKeyMap(allMoves, move => customBonus[`${move}_critRate_`]), 0))
           break
         case "critDMG_":
-          operands.push(percent(0.5, { key: "critDMG_", prefix: "default" }),
+          operands.push(percent(0.5, { key, prefix: "default" }),
             lookup(hit.ele, objectKeyMap(allElements, ele => customBonus[`${ele}_critDMG_`]), 0))
+          break
+        case "enerRech_":
+          operands.push(percent(1, { key, prefix: "default" }))
+          break
       }
       return sum(...[...operands, art[key], customBonus[key]].filter(x => x))
     }),
@@ -177,14 +181,6 @@ const common: Data = {
     dmgInc: sum(
       total.all_dmgInc,
       lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmgInc`]), NaN)
-    ),
-    ele: stringPrio(
-      input.infusion,
-      input.team.infusion,
-      // Inferred Element
-      matchFull(input.weaponType, "catalyst", input.charEle, undefined),
-      matchFull(hit.move, "skill", input.charEle, undefined),
-      "physical",
     ),
     dmg: prod(
       sum(hit.base, hit.dmgInc),
