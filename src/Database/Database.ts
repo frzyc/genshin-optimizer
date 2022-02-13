@@ -133,16 +133,14 @@ export class ArtCharDatabase {
 
   followChar(key: CharacterKey, cb: Callback<ICachedCharacter>): (() => void) | undefined { return this.chars.follow(key, cb) }
   followArt(key: string, cb: Callback<ICachedArtifact>): (() => void) | undefined {
-    const art = this.arts.get(key)
-    cb(art)
-    if (art !== undefined)
+    if (this.arts.get(key) !== undefined)
       return this.arts.follow(key, cb)
+    // cb(undefined)
   }
   followWeapon(key: string, cb: Callback<ICachedWeapon>): (() => void) | undefined {
-    const weapon = this.weapons.get(key)
-    cb(weapon)
-    if (weapon !== undefined)
+    if (this.weapons.get(key) !== undefined)
       return this.weapons.follow(key, cb)
+    // cb(undefined)
   }
 
   followAnyChar(cb: (key: CharacterKey | {}) => void): (() => void) | undefined { return this.chars.followAny(cb) }

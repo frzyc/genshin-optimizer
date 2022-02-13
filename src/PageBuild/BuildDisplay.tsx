@@ -110,11 +110,11 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   const setCharacter = useCharSelectionCallback()
   const characterDispatch = useCharacterReducer(characterKey)
-  const { character, characterSheet } = useCharacter(characterKey)
+  const character = useCharacter(characterKey)
   const buildSettings = character?.buildSettings ?? initialBuildSettings()
   const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSettings
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
-  const data = teamData?.[characterKey as CharacterKey]?.target
+  const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
   const [teamDataBuilds, setTeamDataBuilds] = useState([] as TeamData[])
 

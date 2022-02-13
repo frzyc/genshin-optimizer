@@ -4,7 +4,6 @@ import { Lock, LockOpen } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardActions, CardContent, CardMedia, Chip, Grid, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
 import React, { Suspense, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardLight from '../Components/Card/CardLight';
 import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton';
@@ -12,18 +11,19 @@ import LocationName from '../Components/Character/LocationName';
 import ColorText from '../Components/ColoredText';
 import SqBadge from '../Components/SqBadge';
 import { Stars } from '../Components/StarDisplay';
-import Artifact from '../Data/Artifacts/Artifact';
-import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import { database as localDatabase, DatabaseContext } from '../Database/Database';
-import KeyMap from '../KeyMap';
 import useArtifact from '../ReactHooks/useArtifact';
-import { useStablePromise } from '../ReactHooks/usePromise';
+import usePromise from '../ReactHooks/usePromise';
 import { allSubstats, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
 import { CharacterKey } from '../Types/consts';
 import { valueStringWithUnit } from '../Util/UIUtil';
 import { clamp } from '../Util/Util';
+import Artifact from '../Data/Artifacts/Artifact';
+import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
+import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
 import { probability } from './RollProbability';
+import KeyMap from '../KeyMap';
 
 type Data = {
   artifactId?: string,
@@ -38,9 +38,8 @@ const allSubstatFilter = new Set(allSubstats)
 export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact"]);
   const database = useContext(DatabaseContext)
-  const { artifact: databaseArtifact, artifactSheet: databaseSheet } = useArtifact(artifactId)
-  const objSheet = useStablePromise(ArtifactSheet.get(artifactObj?.setKey))
-  const sheet = objSheet ?? databaseSheet
+  const databaseArtifact = useArtifact(artifactId)
+  const sheet = usePromise(ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
   const equipOnChar = (charKey: CharacterKey | "") => database.setArtLocation(artifactId!, charKey)
 
   const editable = !artifactObj && database === localDatabase // dont allow edit for flex artifacts
