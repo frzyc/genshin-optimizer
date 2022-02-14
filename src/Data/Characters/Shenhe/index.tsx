@@ -1,8 +1,9 @@
 import { CharacterData } from 'pipeline'
 import { Translate } from '../../../Components/Translate'
 import { input } from '../../../Formula'
-import { infoMut, match, prod, subscript, threshold_add } from '../../../Formula/utils'
-import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
+import { infoMut, lookup, match, percent, prod, subscript, threshold_add } from '../../../Formula/utils'
+import { CharacterKey, ElementKey, WeaponTypeKey } from '../../../Types/consts'
+import { objectKeyMap, range } from '../../../Util/Util'
 import { cond, st, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
@@ -13,6 +14,7 @@ import skillParam_gen from './skillParam_gen.json'
 const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "Shenhe"
+const elementKey: ElementKey = "cryo"
 const [tr, trm] = trans("char", key)
 
 let s = 0, b = 0, p1 = 0, p2 = 0
@@ -66,6 +68,10 @@ const datamine = {
   constellation2: {
     durationInc: skillParam_gen.constellation2[0],
   },
+  constellation4: {
+    dmg_: skillParam_gen.constellation4[0],
+    maxStacks: skillParam_gen.constellation4[1],
+  },
   constellation6: {
     auto_: skillParam_gen.constellation6[0],
     duration: skillParam_gen.constellation6[1],
@@ -118,7 +124,12 @@ const con2Buff = threshold_add(input.constellation, 2,
   )
 )
 
-
+const [condC4Path, condC4] = cond(key, "c4")
+const c4Inc = threshold_add(input.constellation, 4,
+  lookup(condC4,
+    objectKeyMap(range(1, datamine.constellation4.maxStacks), i => percent(i * datamine.constellation4.dmg_)),
+    0),
+  { key: "char_Shenhe:c4Bonus_" })
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
@@ -128,8 +139,8 @@ const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    press: dmgNode("atk", datamine.skill.press, "skill"),
-    hold: dmgNode("atk", datamine.skill.hold, "skill"),
+    press: dmgNode("atk", datamine.skill.press, "skill", { hit: { dmgBonus: c4Inc } }),
+    hold: dmgNode("atk", datamine.skill.hold, "skill", { hit: { dmgBonus: c4Inc } }),
     quillDmg
   },
   burst: {
@@ -137,11 +148,12 @@ const dmgFormulas = {
     dot: dmgNode("atk", datamine.burst.dot, "burst"),
   },
 }
-
-export const data = dataObjForCharacterSheet(key, "cryo", "liyue", data_gen, dmgFormulas, {
+const const3 = threshold_add(input.constellation, 3, 3)
+const const5 = threshold_add(input.constellation, 5, 3)
+export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
   bonus: {
-    skill: threshold_add(input.constellation, 3, 3),
-    burst: threshold_add(input.constellation, 5, 3),
+    skill: const3,
+    burst: const5
   },
   teamBuff: {
     premod: {
@@ -165,9 +177,9 @@ const sheet: ICharacterSheet = {
   thumbImgSide: thumbSide,
   bannerImg: banner,
   rarity: data_gen.star,
-  elementKey: "anemo",
+  elementKey,
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
-  gender: "M",
+  gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),
   talent: {
@@ -246,7 +258,7 @@ const sheet: ICharacterSheet = {
             teamBuff: true,
             header: conditionalHeader("passive2", tr, passive2),
             description: tr("passive2.description"),
-            name: <span>After Shenhe uses <strong>Spring Spirit Summoning</strong></span>,
+            name: trm("asc4Cond"),
             states: {
               press: {
                 name: "Press",
@@ -267,6 +279,19 @@ const sheet: ICharacterSheet = {
                 }]
               }
             }
+          }
+        }, {
+          conditional: { // CONSTELLATION4
+            canShow: threshold_add(input.constellation, 4, 1),
+            value: condC4,
+            path: condC4Path,
+            header: conditionalHeader("constellation4", tr, passive2),
+            description: tr("constellation4.description"),
+            name: trm("c4"),
+            states: objectKeyMap(range(1, 50).map(i => i.toString()), i => ({
+              name: i.toString(),
+              fields: [{ node: c4Inc }]
+            }))
           }
         }],
       },
@@ -333,16 +358,9 @@ const sheet: ICharacterSheet = {
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3),
-      constellation4: {
-        name: tr("constellation4.name"),
-        img: c4,
-        sections: [{
-          text: tr("constellation4.description"),
-        }],
-        // TODO: stacking boost to E
-      },
-      constellation5: talentTemplate("constellation5", tr, c5),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: const3 }]),
+      constellation4: talentTemplate("constellation4", tr, c4),
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5 }]),
       constellation6: talentTemplate("constellation6", tr, c6),
     }
   },

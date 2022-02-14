@@ -60,7 +60,8 @@ export function mapFormulas(formulas: (NumNode | StrNode)[], topDownMap: (formul
     return arrayEqual(operands, formula.operands) ? formula : { ...formula, operands } as any
   }
 
-  return formulas.map(check)
+  const result = formulas.map(check)
+  return arrayEqual(result, formulas) ? formulas : result
 }
 
 export function mapContextualFormulas(formulas: NumNode[], baseContextId: number, topDownMap: (formula: AnyNode, contextId: ContextID) => [AnyNode, ContextID], bottomUpMap: (formula: AnyNode, orig: AnyNode, contextId: ContextID, origContextId: ContextID) => AnyNode): NumNode[]
@@ -109,7 +110,8 @@ export function mapContextualFormulas(formulas: AnyNode[], baseContextId: number
     return arrayEqual(operands, formula.operands) ? formula : { ...formula, operands }
   }
 
-  return formulas.map(f => check(f, baseContextId))
+  const result = formulas.map(f => check(f, baseContextId))
+  return arrayEqual(formulas, result) ? formulas : result
 }
 
 type ContextID = number

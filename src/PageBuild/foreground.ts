@@ -76,43 +76,60 @@ export function* artSetPerm(filters: SetFilter[]): Iterable<RequestFilter> {
     return result
   }), 5)
 }
-export function* breakSetPermBySet(_arts: ArtifactsBySlot, perms: Iterable<RequestFilter>, limit: number): Iterable<RequestFilter> {
-  if (limit < 100) limit = 100
+export function* splitFiltersBySet(_arts: ArtifactsBySlot, filters: Iterable<RequestFilter>, limit: number): Iterable<RequestFilter> {
+  if (limit < 10000) limit = 10000
 
-  for (const perm of perms) {
-    const list = [perm]
+  for (const filter of filters) {
+    const filters = [filter]
 
-    while (list.length) {
-      const currentFilter = list.pop()!
-      const arts = filterArts(_arts, currentFilter)
+    while (filters.length) {
+      const filter = filters.pop()!
+      const arts = filterArts(_arts, filter)
       const count = countBuilds(arts)
       if (count <= limit) {
-        if (count)
-          yield currentFilter
+        if (count) yield filter
         continue
       }
 
-      const canSplitBySet = allSlotKeys
+      const candidates = allSlotKeys
         // TODO: Cache this loop
         .map(slot => ({ slot, sets: new Set(arts.values[slot].map(x => x.set)) }))
         .filter(({ sets }) => sets.size > 1)
-        .sort((a, b) => a.sets.size - b.sets.size)[0]
-      if (canSplitBySet) {
-        const { sets, slot } = canSplitBySet
-        list.push(...[...sets].map(set => ({
-          ...currentFilter, [slot]: { kind: "required", sets: new Set([set]) }
-        })))
+      if (!candidates.length) {
+        yield* splitFilterByIds(arts, filter, limit)
         continue
       }
-      const counts = allSlotKeys
-        .map(slot => ({ slot, length: arts.values[slot].length }))
-        .filter(x => x.length > 1)
-      const minSlot = counts.reduce((a, b) => a.length < b.length ? a : b)
-      const numPerSlot = Math.max(Math.floor(limit * minSlot.length / count), 1)
-      const ids = arts.values[minSlot.slot].map(x => x.id)
-      const chunk = Array(Math.ceil(ids.length / numPerSlot)).fill(0).map(_ => new Set<string>())
-      ids.forEach((id, i) => chunk[Math.floor(i / numPerSlot)].add(id))
-      list.push(...chunk.map(ids => ({ ...currentFilter, [minSlot.slot]: { kind: "id", ids } })))
+      const { sets, slot } = candidates.reduce((a, b) => a.sets.size < b.sets.size ? a : b)
+      sets.forEach(set => filters.push({ ...filter, [slot]: { kind: "required", sets: new Set([set]) } }))
+    }
+  }
+}
+function* splitFilterByIds(_arts: ArtifactsBySlot, filter: RequestFilter, limit: number): Iterable<RequestFilter> {
+  const filters = [filter]
+
+  while (filters.length) {
+    const filter = filters.pop()!
+    const arts = filterArts(_arts, filter)
+    const count = countBuilds(arts)
+    if (count <= limit) {
+      if (count) yield filter
+      continue
+    }
+
+    const candidates = allSlotKeys
+      .map(slot => ({ slot, length: arts.values[slot].length }))
+      .filter(x => x.length > 1)
+    const { slot, length } = candidates.reduce((a, b) => a.length < b.length ? a : b)
+
+    const numChunks = Math.ceil(count / limit)
+    const boundedNumChunks = Math.min(numChunks, length)
+    const chunk = Array(boundedNumChunks).fill(0).map(_ => new Set<string>())
+    arts.values[slot].forEach(({ id }, i) => chunk[i % boundedNumChunks].add(id))
+    if (numChunks > length) {
+      chunk.forEach(ids => filters.push({ ...filter, [slot]: { kind: "id", ids } }))
+    } else {
+      for (const ids of chunk)
+        yield { ...filter, [slot]: { kind: "id", ids } }
     }
   }
 }

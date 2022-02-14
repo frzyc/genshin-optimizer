@@ -1,14 +1,14 @@
 import { database } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { importGOOD } from '../Database/exim/good';
-import { uiDataForTeam, mergeData } from '../Formula/api';
+import { mergeData, uiDataForTeam } from '../Formula/api';
 import { optimize } from '../Formula/optimization';
 import { customRead } from '../Formula/utils';
 import { getTeamData } from '../ReactHooks/useTeamData';
-import { compactArtifacts, dynamicData } from './foreground';
-import { reaffine } from './common';
 import { finalize, request, setup } from './background';
-import * as data1 from "./background.perf.test.json"
+import * as data1 from "./background.perf.test.json";
+import { pruneAll } from './common';
+import { compactArtifacts, dynamicData } from './foreground';
 
 describe("Worker Perf", () => {
   test("Test", async () => {
@@ -24,7 +24,7 @@ describe("Worker Perf", () => {
     let nodes = optimize([optimizationTargetNode], workerData, ({ path: [p] }) => p !== "dyn")
     let arts = compactArtifacts(database._getArts(), 0)
     const minimum = [-Infinity];
-    ({ nodes, arts } = reaffine(nodes, arts))
+    ({ nodes, arts } = pruneAll(nodes, minimum, arts, 10, new Set(), { reaffine: true }))
 
     setup({
       command: "setup",

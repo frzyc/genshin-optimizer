@@ -2,14 +2,63 @@ import { forEachNodes, mapFormulas } from "../Formula/internal";
 import { allOperations, constantFold } from "../Formula/optimization";
 import { ConstantNode, NumNode } from "../Formula/type";
 import { constant, customRead, max, min } from "../Formula/utils";
-import { allSlotKeys } from "../Types/consts";
+import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
 import { assertUnreachable, objectKeyMap, objectMap } from "../Util/Util";
 import type { ArtifactBuildData, ArtifactsBySlot, Build, DynStat, PlotData, RequestFilter } from "./background";
 
 type DynMinMax = { [key in string]: MinMax }
 type MinMax = { min: number, max: number }
 
-export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot): { nodes: NumNode[], arts: ArtifactsBySlot } {
+type MicropassOperation = "reaffine" | "pruneArtRange" | "pruneNodeRange" | "pruneOrder"
+export function pruneAll(nodes: NumNode[], minimum: number[], arts: ArtifactsBySlot, numTop: number, keepArtifacts: Set<ArtifactSetKey>, forced: Dict<MicropassOperation, boolean>): { nodes: NumNode[], arts: ArtifactsBySlot } {
+  let should = forced
+  /** If `key` makes progress, all operations in `value` should be performed */
+  const deps: StrictDict<MicropassOperation, Dict<MicropassOperation, true>> = {
+    pruneOrder: { pruneNodeRange: true },
+    pruneArtRange: { pruneNodeRange: true },
+    pruneNodeRange: { reaffine: true },
+    reaffine: { pruneOrder: true, pruneArtRange: true, pruneNodeRange: true }
+  }
+  let count = 0
+  while (Object.values(should).some(x => x) && count++ < 20) {
+    if (should.pruneOrder) {
+      delete should.pruneOrder
+      const newArts = pruneOrder(arts, numTop, keepArtifacts)
+      if (arts !== newArts) {
+        arts = newArts
+        should = { ...should, ...deps.pruneOrder }
+      }
+    }
+    if (should.pruneArtRange) {
+      delete should.pruneArtRange
+      const newArts = pruneArtRange(nodes, arts, minimum)
+      if (arts !== newArts) {
+        arts = newArts
+        should = { ...should, ...deps.pruneArtRange }
+      }
+    }
+    if (should.pruneNodeRange) {
+      delete should.pruneNodeRange
+      const newNodes = pruneNodeRange(nodes, arts)
+      if (nodes !== newNodes) {
+        nodes = newNodes
+        should = { ...should, ...deps.pruneNodeRange }
+      }
+    }
+    if (should.reaffine) {
+      delete should.reaffine
+      const { nodes: newNodes, arts: newArts } = reaffine(nodes, arts)
+      if (nodes !== newNodes || arts !== newArts) {
+        nodes = newNodes
+        arts = newArts
+        should = { ...should, ...deps.reaffine }
+      }
+    }
+  }
+  return { nodes, arts }
+}
+
+function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean = false): { nodes: NumNode[], arts: ArtifactsBySlot } {
   const affineNodes = new Set<NumNode>(), topLevelAffine = new Set<NumNode>()
 
   function visit(node: NumNode, isAffine: boolean) {
@@ -49,6 +98,9 @@ export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot): { nodes: NumN
     }
   })
 
+  if ([...topLevelAffine].every(({ operation }) => operation === "read" || operation === "const"))
+    return { nodes, arts }
+
   let current = -1
   function nextDynKey(): string {
     while (dynKeys.has(`${++current}`));
@@ -57,7 +109,10 @@ export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot): { nodes: NumN
 
   nodes.forEach(node => affineNodes.has(node) && topLevelAffine.add(node))
   const affine = [...topLevelAffine].filter(f => f.operation !== "const")
-  const affineMap = new Map(affine.map(node => [node, { ...customRead(["dyn", `${nextDynKey()}`]), accu: "add" as const }]))
+  const affineMap = new Map(affine.map(node => [node,
+    !forceRename && node.operation === "read" && node.path[0] === "dyn"
+      ? node
+      : { ...customRead(["dyn", `${nextDynKey()}`]), accu: "add" as const }]))
   nodes = mapFormulas(nodes, f => affineMap.get(f as NumNode) ?? f, f => f)
 
   function reaffineArt(stat: DynStat): DynStat {
@@ -81,7 +136,7 @@ export function reaffine(nodes: NumNode[], arts: ArtifactsBySlot): { nodes: NumN
   return result
 }
 /** Remove artifacts that cannot be in top `numTop` builds */
-export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySlot {
+export function pruneOrder(arts: ArtifactsBySlot, numTop: number, keepArtifacts: Set<ArtifactSetKey>): ArtifactsBySlot {
   let progress = false
   const values = objectKeyMap(allSlotKeys, slot => {
     const list = arts.values[slot]
@@ -90,7 +145,9 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySl
       return list.every(other => {
         const greaterEqual = Object.entries(other.values).every(([k, o]) => o >= art.values[k])
         const greater = Object.entries(other.values).some(([k, o]) => o > art.values[k])
-        if (greaterEqual && (greater || other.id > art.id)) count++
+        if (greaterEqual && (greater || other.id > art.id) &&
+          (!keepArtifacts.has(art.set) || keepArtifacts.has(other.set)))
+          count++
         return count < numTop
       })
     })
@@ -100,9 +157,9 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySl
   return progress ? { base: arts.base, values } : arts
 }
 /** Remove artifacts that cannot reach `minimum` in any build */
-export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[], forced: boolean): { nodes: NumNode[], arts: ArtifactsBySlot } {
-  const wrap = { nodes, arts }, internalWrap = { anyProgress: forced }
-  const baseRange = Object.fromEntries(Object.entries(wrap.arts.base).map(([key, x]) => [key, { min: x, max: x }]))
+function pruneArtRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[]): ArtifactsBySlot {
+  const baseRange = Object.fromEntries(Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }]))
+  const wrap = { arts }
   while (true) {
     const artRanges = objectKeyMap(allSlotKeys, slot => computeArtRange(wrap.arts.values[slot]))
     const otherArtRanges = objectKeyMap(allSlotKeys, key =>
@@ -112,24 +169,24 @@ export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: num
     const values = objectKeyMap(allSlotKeys, slot => {
       const result = wrap.arts.values[slot].filter(art => {
         const read = addArtRange([computeArtRange([art]), otherArtRanges[slot]])
-        const newRange = computeNodeRange(wrap.nodes, read)
-        return wrap.nodes.every((node, i) => newRange.get(node)!.min >= (minimum[i] ?? -Infinity))
+        const newRange = computeNodeRange(nodes, read)
+        return nodes.every((node, i) => newRange.get(node)!.max >= (minimum[i] ?? -Infinity))
       })
-      if (result.length !== wrap.arts.values[slot].length) {
-        internalWrap.anyProgress = true
+      if (result.length !== wrap.arts.values[slot].length)
         progress = true
-      }
       return result
     })
     if (!progress) break
     wrap.arts = { base: wrap.arts.base, values }
   }
-  if (!internalWrap.anyProgress) return { nodes, arts }
-
+  return wrap.arts
+}
+function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot): NumNode[] {
+  const baseRange = Object.fromEntries(Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }]))
   const reads = addArtRange([baseRange, ...Object.values(arts.values).map(values => computeArtRange(values))])
-  const nodeRange = computeNodeRange(wrap.nodes, reads)
+  const nodeRange = computeNodeRange(nodes, reads)
 
-  wrap.nodes = mapFormulas(wrap.nodes, f => {
+  return mapFormulas(nodes, f => {
     const { operation } = f
     const operandRanges = f.operands.map(x => nodeRange.get(x)!)
     switch (operation) {
@@ -162,8 +219,6 @@ export function pruneRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: num
     }
     return f
   }, f => f)
-
-  return wrap
 }
 function addArtRange(ranges: DynMinMax[]): DynMinMax {
   const result: DynMinMax = {}
@@ -190,7 +245,7 @@ function computeArtRange(arts: ArtifactBuildData[]): DynMinMax {
 
   return result
 }
-export function computeNodeRange(nodes: NumNode[], reads: DynMinMax): Map<NumNode, MinMax> {
+function computeNodeRange(nodes: NumNode[], reads: DynMinMax): Map<NumNode, MinMax> {
   const range = new Map<NumNode, MinMax>()
 
   forEachNodes(nodes, _ => { }, _f => {
@@ -202,7 +257,7 @@ export function computeNodeRange(nodes: NumNode[], reads: DynMinMax): Map<NumNod
       case "read":
         if (f.path[0] !== "dyn")
           throw new Error(`Found non-dyn path ${f.path} while computing range`)
-        current = reads[f.path[1] as any as number]
+        current = reads[f.path[1]] ?? { min: 0, max: 0 }
         break
       case "const": current = computeMinMax([f.value]); break
       case "subscript": current = computeMinMax(f.list); break
@@ -268,21 +323,19 @@ export function mergeBuilds(builds: Build[][], maxNum: number): Build[] {
   return builds.flatMap(x => x).sort((a, b) => b.value - a.value).slice(0, maxNum)
 }
 export function mergePlot(plots: PlotData[]): PlotData {
-  const wrap = { scale: 0.01 }
-  let reductionScaling = 2, maxCount = 1500
-  let keys = new Set(plots.flatMap(x => Object.values(x).map(v => Math.round(v.value / wrap.scale))))
+  let scale = 0.01, reductionScaling = 2, maxCount = 1500
+  let keys = new Set(plots.flatMap(x => Object.values(x).map(v => Math.round(v.value / scale))))
   while (keys.size > maxCount) {
-    wrap.scale *= reductionScaling
+    scale *= reductionScaling
     keys = new Set([...keys].map(key => Math.round(key / reductionScaling)))
   }
   const result: PlotData = {}
   for (const plot of plots)
     for (const build of Object.values(plot)) {
-      const x = Math.round(build.value / wrap.scale) * wrap.scale
+      const x = Math.round(build.value / scale) * scale
       if (!result[x] || result[x]!.value < build.value)
         result[x] = build
     }
-
   return result
 }
 

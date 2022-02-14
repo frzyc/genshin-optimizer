@@ -16,15 +16,15 @@ export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'cataly
 export const allArtifactSets = [
   "Adventurer",
   "ArchaicPetra",
-  // "Berserker",
+  "Berserker",
   "BlizzardStrayer",
-  // "BloodstainedChivalry",
-  // "BraveHeart",
-  // "CrimsonWitchOfFlames",
+  "BloodstainedChivalry",
+  "BraveHeart",
+  "CrimsonWitchOfFlames",
   // "DefendersWill",
-  // "Gambler",
+  "Gambler",
   "GladiatorsFinale",
-  // "HeartOfDepth",
+  "HeartOfDepth",
   // "Instructor",
   // "Lavawalker",
   "LuckyDog",
@@ -49,8 +49,8 @@ export const allArtifactSets = [
   // "PaleFlame",
   "EmblemOfSeveredFate",
   // "ShimenawasReminiscence",
-  // "HuskOfOpulentDreams",
-  // "OceanHuedClam"
+  "HuskOfOpulentDreams",
+  "OceanHuedClam"
 ] as const
 export const allCharacterKeys = [
   // "Albedo",
@@ -147,7 +147,7 @@ export const allWeaponKeys = [
   // "SkywardPride",
   // "WolfsGravestone",
   // "TheUnforged",
-  // "BeginnersProtector",
+  "BeginnersProtector",
   // "IronPoint",
   // "BlackTassel",
   // "Halberd",

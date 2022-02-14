@@ -27,17 +27,9 @@ const sheet: IArtifactSheet = {//Icebreaker
   name: "Blizzard Strayer", rarity: [4, 5],
   icons,
   setEffects: {
-    2: {
-      document: [{
-        fields: [{
-          node: set2
-        }]
-      }]
-    },
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
       document: [{
-      },
-      {
         conditional: {
           value: condState,
           path: condStatePath,

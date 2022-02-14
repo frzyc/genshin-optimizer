@@ -3,10 +3,10 @@ import ColorText from '../../../Components/ColoredText'
 import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
 import { constant, infoMut, match, matchFull, percent, prod, threshold, threshold_add, unmatch } from '../../../Formula/utils'
-import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
+import { CharacterKey, ElementKey, WeaponTypeKey } from '../../../Types/consts'
 import { cond, condReadNode, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
-import { absorbableEle, dataObjForCharacterSheet, dmgNode, singleDmgNode } from '../dataUtil'
+import { absorbableEle, customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -14,6 +14,7 @@ import skillParam_gen from './skillParam_gen.json'
 const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "KaedeharaKazuha"
+const elementKey: ElementKey = "anemo"
 const [tr, trm] = trans("char", key)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
@@ -130,18 +131,19 @@ const dmgFormulas = {
       [key, match(condBurstAbsorption, key, dmgNode("atk", datamine.burst.add, "burst", { hit: { ele: constant(key) } }))]))
   },
   passive1: Object.fromEntries(absorbableEle.map(key =>
-    [key, match(condSkillAbsorption, key, singleDmgNode("atk", datamine.passive1.asorbAdd, "plunging", { hit: { ele: constant(key) } }))])),
+    [key, match(condSkillAbsorption, key, customDmgNode(prod(input.total.atk, datamine.passive1.asorbAdd), "plunging", { hit: { ele: constant(key) } }))])),
   constellation6: {
     normal_dmg_: c6NormDmg_,
     charged_dmg_: c6ChargedDmg_,
     plunging_dmg_: c6PlungingDmg_,
   }
 }
-
+const const3 = threshold_add(input.constellation, 3, 3)
+const const5 = threshold_add(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, "anemo", "inazuma", data_gen, dmgFormulas, {
   bonus: {
-    skill: threshold_add(input.constellation, 3, 3),
-    burst: threshold_add(input.constellation, 5, 3),
+    skill: const3,
+    burst: const5,
   },
   teamBuff: {
     premod: {
@@ -170,7 +172,7 @@ const sheet: ICharacterSheet = {
   thumbImgSide: thumbSide,
   bannerImg: banner,
   rarity: data_gen.star,
-  elementKey: "anemo",
+  elementKey,
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
   constellationName: tr("constellationName"),
@@ -364,9 +366,9 @@ const sheet: ICharacterSheet = {
       },
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: const3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5),
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5 }]),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,

@@ -6,6 +6,7 @@ import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "../../Types/con
 import SqBadge from "../../Components/SqBadge";
 import Assets from "../../Assets/Assets";
 import IConditional from "../../Types/IConditional_WR";
+import { IFieldDisplay } from "../../Types/IFieldDisplay_WR";
 
 const characterSheets = import('.').then(imp => imp.default)
 
@@ -68,11 +69,12 @@ export default class CharacterSheet {
     `${level}/${ascensionMaxLevel[ascension]}`
 }
 
-export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string): TalentSheetElement => ({
+export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[]): TalentSheetElement => ({
   name: tr(`${talentKey}.name`),
   img,
   sections: [{
     text: tr(`${talentKey}.description`),
+    fields
   }],
 })
 

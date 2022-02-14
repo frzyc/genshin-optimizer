@@ -29,10 +29,9 @@ const atkInc = prod(
   lookup(condStack, objectKeyMap(range(1, 6), i => constant(i)), 0), // TODO: Add key for stack
   subscript(input.weapon.refineIndex, atk_, { key: '_' }),
 )
-export const data = dataObjForWeaponSheet(key, data_gen, "heal_", undefined, {
+export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     ...dmg_Nodes,
-    // TODO: Check if add to `premod` or `total`
     atk_: atkInc,
   },
 })
@@ -40,11 +39,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fields: [
-      ...Object.values(dmg_Nodes).map(n => ({
-        node: n
-      })),
-    ],
+    fields: Object.values(dmg_Nodes).map(node => ({ node })),
     conditional: {
       value: condStack,
       path: condStackPath,
