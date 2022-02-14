@@ -26,13 +26,15 @@ const plunging_dmg_ = match("on", condPassive, subscript(input.weapon.refineInde
 const dmg_ = subscript(input.weapon.refineIndex, data_gen.addProps.map(x => x.dmg_ ?? NaN))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    all_dmg_: dmg_
+  },
   teamBuff: {
     premod: {
       atk_,
       normal_dmg_,
       charged_dmg_,
       plunging_dmg_,
-      all_dmg_: dmg_
     }
   }
 })

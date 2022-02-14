@@ -40,7 +40,7 @@ export default function ConditionalDisplay({ conditional, hideHeader = false, hi
     </CardContent>}
     {fields &&
       <FieldDisplayList sx={{ m: 0 }}>
-        {fields.map((field, i) => <ListItem key={i}><FieldDisplay field={field} fieldContext={fieldContext} /></ListItem>)}
+        {fields.map((field, i) => <FieldDisplay key={i} field={field} fieldContext={fieldContext} component={ListItem} />)}
       </FieldDisplayList>
     }
   </CardDark>
