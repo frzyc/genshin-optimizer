@@ -184,7 +184,7 @@ const weaponDataDump = Object.fromEntries(Object.entries(weaponExcelConfigData).
     } : undefined,
     addProps: refData ? refData.map(asc =>
       Object.fromEntries(asc.AddProps.filter(ap => ap.Value).map(ap =>
-        [propTypeMap[ap.PropType], extrapolateFloat(ap.Value)]))
+        [propTypeMap[ap.PropType] ?? ap.PropType, extrapolateFloat(ap.Value)]))
     ) : undefined,
     ascension: ascData.map(asd => {
       if (!asd) return { addStats: {} }
