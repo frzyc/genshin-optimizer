@@ -46,7 +46,7 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
 
   let nodes = optimize(shared.nodes, {}, _ => false);
   ({ nodes, arts: preArts } = pruneAll(nodes, shared.min, preArts, shared.maxBuilds, new Set(), {
-    pruneOrder: true, pruneArtRange: true
+    pruneArtRange: true, pruneNodeRange: true,
   }))
   const compute = precompute(nodes, f => f.path[1])
   const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length)

@@ -14,10 +14,10 @@ export function pruneAll(nodes: NumNode[], minimum: number[], arts: ArtifactsByS
   let should = forced
   /** If `key` makes progress, all operations in `value` should be performed */
   const deps: StrictDict<MicropassOperation, Dict<MicropassOperation, true>> = {
-    pruneOrder: { pruneArtRange: true, pruneNodeRange: true },
+    pruneOrder: { pruneNodeRange: true },
     pruneArtRange: { pruneNodeRange: true },
     pruneNodeRange: { reaffine: true },
-    reaffine: { pruneOrder: true }
+    reaffine: { pruneOrder: true, pruneArtRange: true, pruneNodeRange: true }
   }
   let count = 0
   while (Object.values(should).some(x => x) && count++ < 20) {
