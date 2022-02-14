@@ -19,7 +19,7 @@ export default interface IConditional {
   states: {
     [key: string]: {
       name?: Displayable,
-      fields: readonly IFieldDisplay[]
+      fields?: readonly IFieldDisplay[]
     }
   }
 }

@@ -2,7 +2,7 @@ import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from "../../../Formula/index"
 import { constant, infoMut, match, percent, prod, sum, threshold_add, unmatch } from "../../../Formula/utils"
-import { CharacterKey, Rarity, WeaponTypeKey } from '../../../Types/consts'
+import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from '../../../Types/consts'
 import { objectKeyMap } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
@@ -14,6 +14,7 @@ import skillParam_gen from './skillParam_gen.json'
 
 const data_gen = data_gen_src as CharacterData
 const characterKey: CharacterKey = "Sucrose"
+const elementKey: ElementKey = "anemo"
 const [tr, trm] = trans("char", characterKey)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
@@ -102,10 +103,13 @@ export const dmgFormulas = {
       [key, match(condAbsorption, key, dmgNode("atk", datamine.burst.dmg_, "burst", { hit: { ele: constant(key) } }))]))
   },
 }
-export const data = dataObjForCharacterSheet(characterKey, "anemo", "mondstadt", data_gen, dmgFormulas, {
+
+const const3 = threshold_add(input.constellation, 3, 3)
+const const5 = threshold_add(input.constellation, 5, 3)
+export const data = dataObjForCharacterSheet(characterKey, elementKey, "mondstadt", data_gen, dmgFormulas, {
   bonus: {
-    skill: threshold_add(input.constellation, 3, 3),
-    burst: threshold_add(input.constellation, 5, 3),
+    skill: const3,
+    burst: const5,
   },
   teamBuff: {
     total: { eleMas: sum(asc1, asc4) },
@@ -120,7 +124,7 @@ const sheet: ICharacterSheet = {
   thumbImgSide: thumbSide,
   bannerImg: banner,
   rarity: data_gen.star as Rarity,
-  elementKey: "anemo",
+  elementKey,
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
@@ -273,9 +277,9 @@ const sheet: ICharacterSheet = {
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: const3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5),
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5 }]),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
