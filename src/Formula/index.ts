@@ -121,9 +121,9 @@ for (const [key, value] of Object.entries(total)) {
   if (key.endsWith("_dmg_"))
     delete (value as ReadNode<number>).accu
 }
-bonus.auto.info = { key: "autoBonus" }
-bonus.skill.info = { key: "skillBonus" }
-bonus.burst.info = { key: "burstBonus" }
+bonus.auto.info = { key: "autoBoost" }
+bonus.skill.info = { key: "skillBoost" }
+bonus.burst.info = { key: "burstBoost" }
 base.atk.info = { key: "atk", prefix: "base", pivot }
 delete total.critRate_.info!.pivot
 total.critRate_.info!.prefix = "uncapped"
