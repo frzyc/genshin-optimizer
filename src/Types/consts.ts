@@ -189,7 +189,7 @@ export const allWeaponKeys = [
   // "WindblumeOde",
   // "ApprenticesNotes",
   // "PocketGrimoire",
-  // "EngulfingLightning",
+  "EngulfingLightning",
   // "EmeraldOrb",
   // "MagicGuide",
   // "OtherworldlyStory",
