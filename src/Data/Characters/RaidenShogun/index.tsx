@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { constant, infoMut, lookup, match, percent, prod, subscript, sum, threshold_add } from '../../../Formula/utils'
+import { constant, infoMut, lookup, match, matchFull, percent, prod, subscript, sum, threshold, threshold_add, unmatch } from '../../../Formula/utils'
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import { objectKeyMap } from '../../../Util/Util'
 import { cond, trans } from '../../SheetUtil'
@@ -15,7 +15,7 @@ const data_gen = data_gen_src as CharacterData
 const key: CharacterKey = "RaidenShogun"
 const [tr, trm] = trans("char", key)
 
-let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
+let a = 0, s = 0, b = 0, p2 = 0
 const datamine = {
   normal: {
     hitArr: [
@@ -65,18 +65,10 @@ const datamine = {
     cd: skillParam_gen.burst[b++][0],
     enerCost: skillParam_gen.burst[b++][0],
   },
-  passive1: {
-    resolveGain: skillParam_gen.passive1[p1++][0],
-    cd: skillParam_gen.passive1[p1++][0],
-  },
   passive2: {
     er: skillParam_gen.passive2[p2++][0],
     energyGen: skillParam_gen.passive2[p2++][0],
     electroDmg_bonus: skillParam_gen.passive2[p2++][0],
-  },
-  constellation1: {
-    resolveGained: skillParam_gen.constellation1[0],
-    resolveGained_other: skillParam_gen.constellation1[1],
   },
   constellation2: {
     def_ignore: skillParam_gen.constellation2[0],
@@ -85,31 +77,50 @@ const datamine = {
     atk_bonus: skillParam_gen.constellation4[0],
     duration: skillParam_gen.constellation4[1],
   },
-  constellation6: {
-    cd: skillParam_gen.constellation6[0],
-    chargedBonus: skillParam_gen.constellation6[1],
-  }
 } as const
+
+// Used to bool whether Raiden is C2 and above; 1: yes, 0: no
+const c2Above = threshold(input.constellation, 2, 1, 0)
 
 const [condSkillEyePath, condSkillEye] = cond(key, "skillEye")
 const skillEye_ = match("skillEye", condSkillEye,
   prod(datamine.burst.enerCost, subscript(input.total.skillIndex, datamine.skill.burstDmg_bonus.map(x => x), { key: '_' })))
 
+function skillDmg(atkType: number[]) {
+  // if Raiden is above or equal to C2, then account for DEF Ignore else not
+  return matchFull(c2Above, 1,
+    customDmgNode(prod(subscript(input.total.skillIndex, atkType, { key: '_' }), input.total.atk), 'skill', { enemy: { defIgn: constant(datamine.constellation2.def_ignore) } }),
+    customDmgNode(prod(subscript(input.total.skillIndex, atkType, { key: '_' }), input.total.atk), 'skill', {}),
+  )
+}
+
+const energyCosts = [40, 50, 60, 70, 80, 90]
+const [condSkillEyeTeamPath, condSkillEyeTeam] = cond(key, "skillEyeTeam")
+const skillEyeTeamBurstDmgInc = unmatch(input.activeCharKey, input.charKey,
+  prod(lookup(condSkillEyeTeam, objectKeyMap(energyCosts, i => constant(i)), 0),
+    subscript(input.total.skillIndex, datamine.skill.burstDmg_bonus.map(x => x), { key: '_' })))
+
 const resolveStacks = [10, 20, 30, 40, 50, 60]
 const [condResolveStackPath, condResolveStack] = cond(key, "burstResolve")
+
 function burstResolve(atkType: number[], initial = false) {
   let resolveBonus = initial ? datamine.burst.resolveBonus1 : datamine.burst.resolveBonus2
-  // TODO: To account for her C2 ignoring 60% opponents' DEF
-  return customDmgNode(prod(sum(subscript(input.total.burstIndex, atkType, { key: '_' }),
-    prod(subscript(input.total.burstIndex, resolveBonus.map(x => x), { key: '_' }),
-      lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0))), input.total.atk), 'burst', { hit: { ele: constant('electro') } })
+
+  // if Raiden is above or equal to C2, then account for DEF Ignore else not
+  return matchFull(c2Above, 1,
+    customDmgNode(prod(sum(subscript(input.total.burstIndex, atkType, { key: '_' }),
+      prod(subscript(input.total.burstIndex, resolveBonus.map(x => x), { key: '_' }),
+        lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0))), input.total.atk), 'burst', { hit: { ele: constant('electro') }, enemy: { defIgn: constant(datamine.constellation2.def_ignore) } }),
+    customDmgNode(prod(sum(subscript(input.total.burstIndex, atkType, { key: '_' }),
+      prod(subscript(input.total.burstIndex, resolveBonus.map(x => x), { key: '_' }),
+        lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0))), input.total.atk), 'burst', { hit: { ele: constant('electro') } }))
 }
 
 const passive2ElecDmgBonus = threshold_add(input.asc, 4, prod(sum(input.total.enerRech_, percent(-1)), (datamine.passive2.electroDmg_bonus * 100)))
 
 const [condC4Path, condC4] = cond(key, "c4")
 const c4AtkBonus_ = threshold_add(input.constellation, 4,
-  match("c4", condC4, datamine.constellation4.atk_bonus)
+  match("c4", condC4, unmatch(input.activeCharKey, input.charKey, datamine.constellation4.atk_bonus))
 )
 
 const dmgFormulas = {
@@ -121,8 +132,8 @@ const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.skillDmg, "skill"),
-    coorDmg: dmgNode("atk", datamine.skill.coorDmg, "skill"),
+    dmg: skillDmg(datamine.skill.skillDmg),
+    coorDmg: skillDmg(datamine.skill.coorDmg),
     skillEye_
   },
   burst: {
@@ -152,7 +163,8 @@ export const data = dataObjForCharacterSheet(key, "electro", "inazuma", data_gen
   },
   teamBuff: {
     premod: {
-      atk_: c4AtkBonus_
+      atk_: c4AtkBonus_,
+      burst_dmg_: skillEyeTeamBurstDmgInc
     }
   }
 })
@@ -230,8 +242,23 @@ const sheet: ICharacterSheet = {
               }
             }
           },
-        }],
-        // TODO: Add party buff when character has Eye of Judgement
+        }, {
+          conditional: {
+            value: condSkillEyeTeam,
+            path: condSkillEyeTeamPath,
+            header: conditionalHeader("skill", tr, skill),
+            description: tr("skill.description"),
+            teamBuff: true,
+            canShow: unmatch(input.activeCharKey, input.charKey, 1),
+            name: trm("skill.partyCost"),
+            states: Object.fromEntries(energyCosts.map(c => [c, {
+              name: `${c}`,
+              fields: [{
+                node: skillEyeTeamBurstDmgInc,
+              }]
+            }]))
+          }
+        }]
       },
       burst: {
         name: tr("burst.name"),
@@ -308,15 +335,14 @@ const sheet: ICharacterSheet = {
             unit: "%"
           }, {
             node: passive2ElecDmgBonus,
-          }],
-        }],
+          }]
+        }]
       },
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
       constellation3: talentTemplate("constellation3", tr, c3),
       constellation4: {
-        // TODO: to make this exclude Raiden Shogun herself
         name: tr("constellation4.name"),
         img: c4,
         sections: [{
@@ -325,6 +351,7 @@ const sheet: ICharacterSheet = {
             value: condC4,
             path: condC4Path,
             teamBuff: true,
+            canShow: threshold_add(input.constellation, 4, unmatch(input.activeCharKey, input.charKey, 1)),
             header: conditionalHeader("constellation4", tr, c4),
             description: tr("constellation4.description"),
             name: trm("c4.expires"),
@@ -332,6 +359,9 @@ const sheet: ICharacterSheet = {
               c4: {
                 fields: [{
                   node: c4AtkBonus_,
+                }, {
+                  text: tr("skill.skillParams.2"),
+                  value: `${datamine.constellation4.duration}s`
                 }]
               }
             }
