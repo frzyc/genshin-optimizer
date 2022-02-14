@@ -19,7 +19,8 @@ export function pruneAll(nodes: NumNode[], minimum: number[], arts: ArtifactsByS
     pruneNodeRange: { reaffine: true },
     reaffine: { pruneOrder: true }
   }
-  while (Object.values(should).some(x => x)) {
+  let count = 0
+  while (Object.values(should).some(x => x) && count++ < 20) {
     if (should.pruneOrder) {
       delete should.pruneOrder
       const newArts = pruneOrder(arts, numTop, keepArtifacts)
@@ -97,7 +98,7 @@ function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean 
     }
   })
 
-  if ([...topLevelAffine].every(node => node.operation === "read"))
+  if ([...topLevelAffine].every(({ operation }) => operation === "read" || operation === "const"))
     return { nodes, arts }
 
   let current = -1
