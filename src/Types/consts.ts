@@ -88,7 +88,7 @@ export const allCharacterKeys = [
   // "Yanfei",
   // "Eula",
   "KaedeharaKazuha",
-  // "KamisatoAyaka",
+  "KamisatoAyaka",
   // "Sayu",
   "Shenhe",
   // "Yoimiya",
