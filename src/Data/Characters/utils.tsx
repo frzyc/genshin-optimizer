@@ -4,33 +4,7 @@ import { infoMut } from "../../Formula/utils";
 import { CharacterKey } from "../../Types/consts";
 import { trans } from "../SheetUtil";
 import { dmgNode } from "./dataUtil";
-import set from 'lodash/set'
-import get from 'lodash/get'
 
-
-type Generated = {
-  auto: number[][]
-  skill: number[][]
-  burst: number[][]
-  passive1: unknown[],
-  passive2: unknown[],
-  passive3: unknown[],
-  constellation1: unknown[],
-  constellation2: unknown[],
-  constellation3: unknown[],
-  constellation4: unknown[],
-  constellation5: unknown[],
-  constellation6: unknown[]
-}
-
-export function mapSkillParams(gen: Generated, mappings: [string, string][]) {
-  const mapped = {}
-  for (const mapping of mappings) {
-    const [from, to] = mapping
-    set(mapped, to, get(gen, from))
-  }
-  return mapped
-} 
 
 /**
  * Normal hit array

@@ -2,7 +2,7 @@ import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from "../../../Formula/index"
 import { constant, infoMut, match, percent, prod, sum, threshold_add, unmatch } from "../../../Formula/utils"
-import { CharacterKey, Rarity, WeaponTypeKey } from '../../../Types/consts'
+import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from '../../../Types/consts'
 import { objectKeyMap } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
@@ -11,59 +11,17 @@ import { conditionalHeader, normalSrc, talentTemplate } from '../CharacterSheet'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
-import { mapSkillParams } from '../utils'
+import { mapNormals } from '../utils'
+import {data as datamine} from './data'
 
 const data_gen = data_gen_src as CharacterData
 const characterKey: CharacterKey = "Xingqiu"
+const elementKey: ElementKey = "hydro"
 const [tr, trm] = trans("char", characterKey)
-
-let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
-const datamine = {
-  normal: {
-    hitArr: [
-      skillParam_gen.auto[a], // 1
-      skillParam_gen.auto[a++], // 2
-      skillParam_gen.auto[a++], // 3a
-      skillParam_gen.auto[a++], // 3b
-      skillParam_gen.auto[a++], // 4
-      skillParam_gen.auto[a++], // 5a
-      skillParam_gen.auto[a++], // 5b
-    ]
-  },
-  charged: {
-    dmg1: skillParam_gen.auto[a++],
-    dmg2: skillParam_gen.auto[a++],
-    stamina: skillParam_gen.auto[a++][0],
-  },
-  plunging: {
-    dmg: skillParam_gen.auto[a++],
-    low: skillParam_gen.auto[a++],
-    high: skillParam_gen.auto[a++],
-  },
-  skill: {
-    press1: skillParam_gen.skill[s++],
-    press2: skillParam_gen.skill[s++],
-    dmg_res: skillParam_gen.skill[s++], 
-    duration: skillParam_gen.skill[s++][0],
-    cd: skillParam_gen.skill[s++][0],
-  },
-  burst: {
-    dmg: skillParam_gen.burst[b++],
-    duration: skillParam_gen.burst[b++][0],
-    cd: skillParam_gen.burst[b++][0],
-    enerCost: skillParam_gen.burst[b++][0],
-  },
-  passive2: {
-    hydro_dmg_: 0.20,
-  },
-  constellation2: {
-    durationInc: 4,
-  },
-}
-
+const { formula: normalDmg, section: normalSection } = mapNormals(datamine.normal.hitArr, [[2, 3], [5, 6]], characterKey)
 // Conditional Input
 // const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(characterKey, "skillHit")
-const [condNormalHitOpponentPath, condNormalHitOpponent] = cond(characterKey, "normalHit")
+// const [condNormalHitOpponentPath, condNormalHitOpponent] = cond(characterKey, "normalHit")
 
 // Conditional Output
 // const asc1 = threshold_add(input.asc, 1,
@@ -71,25 +29,25 @@ const [condNormalHitOpponentPath, condNormalHitOpponent] = cond(characterKey, "n
 //     match(target.charEle, condSwirlReaction, datamine.passive1.eleMas)), { key: "eleMas" })
 
 export const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
-    [i, dmgNode("atk", arr, "normal")])),
+  normal: normalDmg,
   charged: {
-    dmg1: dmgNode("atk", datamine.charged.dmg1, "charged"),
-    dmg2: dmgNode("atk", datamine.charged.dmg2, "charged")
+    dmg1: dmgNode("atk", datamine.charged.hit1, "charged"),
+    dmg2: dmgNode("atk", datamine.charged.hit2, "charged")
   },
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    press1: dmgNode("atk", datamine.skill.press1, "skill"),
-    press2: dmgNode("atk", datamine.skill.press2, "skill")
+    press1: dmgNode("atk", datamine.skill.hit1, "skill", { hit: { ele: constant(elementKey) } }),
+    press2: dmgNode("atk", datamine.skill.hit2, "skill", { hit: { ele: constant(elementKey) } })
+    dmgRed: data(, { key: "defRed_", pivot })
   },
   burst: {
     // TODO: burst dmg based on normal attacks?
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
+    dmg: dmgNode("atk", datamine.burst.dmg, "burst", { hit: { ele: constant(elementKey) } }),
   }
 }
 
-export const data = dataObjForCharacterSheet(characterKey, "hydro", "liyue", data_gen, dmgFormulas, {
+export const data = dataObjForCharacterSheet(characterKey, elementKey, "liyue", data_gen, dmgFormulas, {
   bonus: {
     skill: threshold_add(input.constellation, 3, 3),
     burst: threshold_add(input.constellation, 5, 3),
@@ -106,9 +64,9 @@ const sheet: ICharacterSheet = {
   thumbImgSide: thumbSide,
   bannerImg: banner,
   rarity: data_gen.star as Rarity,
-  elementKey: "hydro",
+  elementKey,
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
-  gender: "Trap",
+  gender: "M",
   constellationName: tr("constellationName"),
   title: tr("title"),
   talent: {
@@ -117,12 +75,7 @@ const sheet: ICharacterSheet = {
         name: tr("auto.name"),
         img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
-          {
-            text: tr(`auto.fields.normal`),
-            fields: datamine.normal.hitArr.map((percentArr, i) => ({
-              node: infoMut(dmgFormulas.normal[i], { key: `char_${characterKey}_gen:auto.skillParams.${i}` }),
-            }))
-          },
+          normalSection,
           {
             text: tr(`auto.fields.charged`),
             fields: [{
@@ -132,8 +85,8 @@ const sheet: ICharacterSheet = {
               node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${characterKey}_gen:auto.skillParams.5` }),
               textSuffix: "(2)"
             }, {
-              text: tr("auto.skillParams.5"),
-              value: datamine.charged.stamina,
+              text: tr("auto.skillParams.6"),
+              value: datamine.charged.stam,
             }]
           }, {
             text: tr(`auto.fields.plunging`),
@@ -153,15 +106,19 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("skill.description"),
           fields: [{
-            node: infoMut(dmgFormulas.skill.press, { key: `char_${characterKey}_gen:skill.skillParams.0` }),
+            node: infoMut(dmgFormulas.skill.press1, { key: `char_${characterKey}_gen:skill.skillParams.0` }),
           }, {
-            text: tr("skill.skillParams.1"),
+            node: infoMut(dmgFormulas.skill.press2, { key: `char_${characterKey}_gen:skill.skillParams.0` }),
+          },{
+            node: infoMut(dmgFormulas.skill.dmgRed, { key: `char_${characterKey}_gen:skill.skillParams.1` }),
+          }, {
+            text: tr("skill.skillParams.3"),
             value: datamine.skill.cd,
             unit: "s"
           }, {
-            canShow: (data) => data.get(input.constellation).value >= 1,
-            text: st("charges"),
-            value: 2
+            text: tr("skill.skillParams.2"),
+            value: datamine.skill.duration,
+            unit: "s"
           }]
         }]
       },
