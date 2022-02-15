@@ -11,7 +11,7 @@ export default function TeamBuffCard() {
   Object.values(teamBuffs.total ?? {}).forEach(node => nodes.push(node))
   Object.values(teamBuffs.premod ?? {}).forEach(node => nodes.push(node))
   Object.values(teamBuffs.enemy ?? {}).forEach(node => nodes.push(node))
-  if (!nodes.length) return null
+  if (!nodes.length || nodes.every(n => !n || n.isEmpty)) return null
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
       <Typography>Team buff Stats</Typography>
@@ -19,9 +19,7 @@ export default function TeamBuffCard() {
     <Divider />
     <CardContent>
       <FieldDisplayList sx={{ my: 0 }} >
-        {nodes.map((n) => n && !n.isEmpty && <ListItem key={n.key} >
-          <NodeFieldDisplay node={n} />
-        </ListItem>)}
+        {nodes.map((n) => n && <NodeFieldDisplay key={n.key} node={n} component={ListItem} />)}
       </FieldDisplayList>
     </CardContent>
   </CardLight>

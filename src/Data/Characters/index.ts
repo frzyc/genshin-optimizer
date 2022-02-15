@@ -19,7 +19,7 @@ import CharacterSheet from './CharacterSheet'
 // import Jean from './Jean'
 import KaedeharaKazuha from './KaedeharaKazuha'
 // import Kaeya from './Kaeya'
-// import KamisatoAyaka from './KamisatoAyaka'
+import KamisatoAyaka from './KamisatoAyaka'
 // import Keqing from './Keqing'
 // import Klee from './Klee'
 // import KujouSara from './KujouSara'
@@ -66,7 +66,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Jean,
   KaedeharaKazuha,
   // Kaeya,
-  // KamisatoAyaka,
+  KamisatoAyaka,
   // Keqing,
   // Klee,
   // KujouSara,

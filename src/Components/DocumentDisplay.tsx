@@ -15,7 +15,7 @@ export default function DocumentDisplay({ sections }: { sections: DocumentSectio
     return <Box key={"section" + i} display="flex" flexDirection="column" gap={1}>
       {talentText && <div>{talentText}</div>}
       {fields.length > 0 && <FieldDisplayList>
-        {fields?.map?.((field, i) => <ListItem key={i}><FieldDisplay field={field} /></ListItem>)}
+        {fields?.map?.((field, i) => <FieldDisplay key={i} field={field} component={ListItem} />)}
       </FieldDisplayList>}
       {!!section.conditional && <ConditionalDisplay conditional={section.conditional} hideDesc />}
     </Box>
