@@ -39,7 +39,7 @@ export const dmgFormulas = {
   skill: {
     press1: dmgNode("atk", datamine.skill.hit1, "skill", { hit: { ele: constant(elementKey) } }),
     press2: dmgNode("atk", datamine.skill.hit2, "skill", { hit: { ele: constant(elementKey) } })
-    dmgRed: data(, { key: "defRed_", pivot })
+    dmgRed: data(, { key: "dmgRed_", pivot })
   },
   burst: {
     // TODO: burst dmg based on normal attacks?
@@ -128,44 +128,19 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("burst.description"),
           fields: [{
-            node: infoMut(dmgFormulas.burst.dot, { key: `char_${characterKey}_gen:burst.skillParams.0` }),
+            node: infoMut(dmgFormulas.burst.dmg, { key: `char_${characterKey}_gen:burst.skillParams.0` }),
           }, {
-            text: tr("burst.skillParams.2"),
-            value: data => data.get(input.constellation).value >= 2 ? `${datamine.burst.duration}s + 2` : datamine.burst.duration,
+            text: tr("burst.skillParams.1"),
+            value: datamine.burst.duration,
             unit: "s"
           }, {
-            text: tr("burst.skillParams.3"),
+            text: tr("burst.skillParams.2"),
             value: datamine.burst.cd,
             unit: "s"
           }, {
-            text: tr("burst.skillParams.4"),
-            value: datamine.burst.enerCost,
+            text: tr("burst.skillParams.3"),
+            value: datamine.burst.cost,
           }],
-          conditional: { // Absorption
-            value: condAbsorption,
-            path: condAbsorptionPath,
-            name: st("eleAbsor"),
-            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-              fields: [{
-                node: infoMut(dmgFormulas.burst[eleKey], { key: `char_${characterKey}_gen:burst.skillParams.1` }),
-              }]
-            }]))
-          },
-        }, {
-          conditional: { // Absorption
-            value: condAbsorption,
-            path: condAbsorptionPath,
-            header: conditionalHeader("constellation6", tr, c6),
-            description: tr("constellation6.description"),
-            name: st("eleAbsor"),
-            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-              fields: [{
-                node: c6Bonus[`${eleKey}_dmg_`],
-              }],
-            }]))
-          },
         }]
       },
       passive1: {
