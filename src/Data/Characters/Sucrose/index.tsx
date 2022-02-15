@@ -111,7 +111,7 @@ export const data = dataObjForCharacterSheet(characterKey, elementKey, "mondstad
     burst: const5,
   },
   teamBuff: {
-    total: { eleMas: asc1 },
+    total: { eleMas: asc4 },
     premod: { ...c6Bonus, eleMas: asc1 },
   }
 })
