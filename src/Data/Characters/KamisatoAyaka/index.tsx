@@ -86,15 +86,13 @@ const [condAfterApplySprintPath, condAfterApplySprint] = cond(key, "afterApplySp
 const afterApplySprintCryo = match("afterApplySprint", condAfterApplySprint, percent(datamine.passive2.cryo))
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, "afterBurst")
-// TODO figure out how to do enemy defense reduction
 const afterBurst = threshold_add(input.constellation, 4,
-  match("afterBurst", condAfterBurst, datamine.constellation4.def_red), { key: `enemyDefRed_` })
+  match("c4", condAfterBurst, datamine.constellation4.def_red))
 
 const [condC6Path, condC6] = cond(key, "C6")
 const c6ChargedDmg_ = threshold_add(input.constellation, 6,
   match("c6", condC6, datamine.constellation6.charged_bonus), { key: `charged_dmg_` })
 
-const chargedDmg = sum(a1ChargedDmg_, c6ChargedDmg_)
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -123,12 +121,14 @@ export const adata = dataObjForCharacterSheet(key, elementKey, "inazuma", data_g
     burst: const3,
   },
   teamBuff: {
-    //TODO C4
+    premod: {
+      enemyDefRed_: afterBurst
+    }
   },
   infusion: afterSprintInfusion,
   premod: {
     normal_dmg_: a1NormDmg_,
-    charged_dmg_: chargedDmg,
+    charged_dmg_: sum(a1ChargedDmg_, c6ChargedDmg_),
     cryo_dmg_: afterApplySprintCryo,
   },
   total: {
@@ -235,19 +235,14 @@ const sheet: ICharacterSheet = {
             name: trm("afterSprint"),
             states: {
               afterSprint: {
-                fields: [
-                  // { // TODO (copied from Kazuha):
-                  //   node: afterSprintInfusion
-                  // },
-                  {
-                    canShow: data => data.get(afterSprintInfusion).value === "cryo",
-                    text: <ColorText color="cryo">Cryo Infusion</ColorText>
-                  },
-                  {
-                    text: sgt("duration"),
-                    value: datamine.sprint.duration,
-                    unit: "s",
-                  }]
+                fields: [{
+                  canShow: data => data.get(afterSprintInfusion).value === "cryo",
+                  text: <ColorText color="cryo">Cryo Infusion</ColorText>
+                }, {
+                  text: sgt("duration"),
+                  value: datamine.sprint.duration,
+                  unit: "s",
+                }]
               }
             }
           },
@@ -294,7 +289,7 @@ const sheet: ICharacterSheet = {
             states: {
               afterApplySprint: {
                 fields: [{
-                  text: trm("staminaRestore"), // TODO: should update this label to say "Stamina Restored"
+                  text: trm("staminaRestore"),
                   value: datamine.passive2.stamina,
                 },
                 {
@@ -328,17 +323,15 @@ const sheet: ICharacterSheet = {
             canShow: threshold_add(input.constellation, 4, 1),
             value: condAfterBurst,
             path: condAfterBurstPath,
-            name: trm("afterBurst"),
+            name: trm("dmgBySnowflake"),
             states: {
               c4: {
-                fields: [
-                  {
-                    node: afterBurst
-                  },
-                  {
-                    text: sgt("duration"),
-                    value: "6s"
-                  }]
+                fields: [{
+                  node: afterBurst
+                }, {
+                  text: sgt("duration"),
+                  value: "6s"
+                }]
               }
             }
           },
@@ -357,16 +350,14 @@ const sheet: ICharacterSheet = {
             name: trm("afterSkill"),
             states: {
               c6: {
-                fields: [
-                  {
-                    text: sgt("cd"),
-                    value: datamine.constellation6.cd,
-                    unit: "s"
-                  },
-                  {
-                    node: c6ChargedDmg_,
-                  },
-                ]
+                fields: [{
+                  text: sgt("cd"),
+                  value: datamine.constellation6.cd,
+                  unit: "s"
+                },
+                {
+                  node: c6ChargedDmg_,
+                },]
               }
             }
           }
