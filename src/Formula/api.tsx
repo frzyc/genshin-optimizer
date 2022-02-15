@@ -19,7 +19,7 @@ function inferInfoMut(data: Data, source?: Info["source"]): Data {
     if (reference)
       x.info = { ...reference.info, prefix: undefined, source }
     else if (path[0] !== "tally")
-      console.log(`Detect ${source} buff into non-existant key path ${path}`)
+      console.error(`Detect ${source} buff into non-existant key path ${path}`)
   })
 
   return data
@@ -68,7 +68,7 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     result.customBonus![key] = key.endsWith('_') ? percent(value / 100) : constant(value)
 
   if (char.enemyOverride.enemyDefRed_)
-    result.enemy!.defRed = percent(char.enemyOverride.enemyDefRed_)
+    result.premod!.enemyDefRed_ = percent(char.enemyOverride.enemyDefRed_)
   if (char.enemyOverride.enemyDefIgn_)
     result.enemy!.defIgn = percent(char.enemyOverride.enemyDefIgn_)
   if (char.elementKey) {

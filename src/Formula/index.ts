@@ -28,6 +28,7 @@ const allNonModStats = [
   ...allElements.map(x => `${x}_res_` as const),
   ...allMoves.map(x => `${x}_critRate_` as const),
   ...allEleEnemyResKeys,
+  "enemyDefRed_" as const,
   ...allMisc,
 ]
 
@@ -96,7 +97,7 @@ const input = setReadNodeKeys(deepClone({
 
     level: read(undefined, { key: "enemyLevel" }),
     ...objectKeyValueMap(allElements, ele => [`${ele}_res_`, read(undefined)]),
-    defRed: read("add", { key: "enemyDefRed_", pivot }),
+    defRed: read(undefined),
     defIgn: read("add", { key: "enemyDefIgn_", pivot }),
   },
 
@@ -212,6 +213,7 @@ const common: Data = {
   enemy: {
     // TODO: shred cap of 90%
     def: frac(sum(input.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed)), sum(1, prod(-1, enemy.defIgn)))),
+    defRed: total.enemyDefRed_,
     ...objectKeyValueMap(allElements, ele =>
       [`${ele}_resMulti`, res(infoMut(sum(enemy[`${ele}_res_`], total[`${ele}_enemyRes_`]), { key: `${ele}_res_`, variant: ele }))]),
   },
