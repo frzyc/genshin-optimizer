@@ -73,14 +73,13 @@ const [condSwirlReactionPath, condSwirlReaction] = cond(characterKey, "swirl")
 const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(characterKey, "skillHit")
 
 // Conditional Output
-// TODO: Check if total or premod
 const asc1 = threshold_add(input.asc, 1,
   unmatch(target.charKey, characterKey,
-    match(target.charEle, condSwirlReaction, datamine.passive1.eleMas)), { key: "eleMas" })
+    match(target.charEle, condSwirlReaction, datamine.passive1.eleMas)))
 const asc4 = match("hit", condSkillHitOpponent,
   unmatch(target.charKey, characterKey,
     threshold_add(input.asc, 4,
-      prod(percent(datamine.passive2.eleMas_), input.premod.eleMas))), { key: "eleMas" })
+      prod(percent(datamine.passive2.eleMas_), input.premod.eleMas))))
 const c6Base = threshold_add(input.constellation, 6, percent(0.2))
 
 const c6Bonus = objectKeyMap(absorbableEle.map(ele => `${ele}_dmg_` as const), key =>
@@ -112,8 +111,8 @@ export const data = dataObjForCharacterSheet(characterKey, elementKey, "mondstad
     burst: const5,
   },
   teamBuff: {
-    total: { eleMas: sum(asc1, asc4) },
-    premod: c6Bonus
+    total: { eleMas: asc1 },
+    premod: { ...c6Bonus, eleMas: asc1 },
   }
 })
 
