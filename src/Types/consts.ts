@@ -149,7 +149,7 @@ export const allWeaponKeys = [
   // "TheUnforged",
   "BeginnersProtector",
   // "IronPoint",
-  // "BlackTassel",
+  "BlackTassel",
   // "Halberd",
   // "WhiteTassel",
   "BlackcliffPole",
