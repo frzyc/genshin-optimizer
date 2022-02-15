@@ -153,7 +153,7 @@ export const allWeaponKeys = [
   // "Halberd",
   // "WhiteTassel",
   "BlackcliffPole",
-  // "CrescentPike",
+  "CrescentPike",
   // "Deathmatch",
   // "DragonsBane",
   // "LithicSpear",
