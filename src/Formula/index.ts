@@ -2,7 +2,7 @@ import { allEleEnemyResKeys } from "../KeyMap"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
 import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
-import { constant, frac, infoMut, lookup, matchFull, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, sum, unit } from "./utils"
+import { constant, equalStr, frac, infoMut, lookup, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringRead, sum, unit } from "./utils"
 
 const asConst = true as const, pivot = true as const
 
@@ -134,8 +134,8 @@ const baseAmpBonus = sum(unit, prod(25 / 9, frac(total.eleMas, 1400)))
 /** Effective reaction, taking into account the hit's element */
 export const effectiveReaction = lookup(hit.ele, {
   pyro: lookup(hit.reaction, { vaporize: constant("vaporize"), melt: constant("melt") }, undefined),
-  hydro: matchFull(hit.reaction, "vaporize", "vaporize", undefined),
-  cryo: matchFull(hit.reaction, "melt", "melt", undefined),
+  hydro: equalStr(hit.reaction, "vaporize", "vaporize"),
+  cryo: equalStr(hit.reaction, "melt", "melt"),
 }, undefined)
 
 const common: Data = {

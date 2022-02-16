@@ -1,18 +1,18 @@
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
-import { match, percent, sum, threshold_add } from '../../../Formula/utils'
+import { equal, percent, greaterEq } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
 const key: ArtifactSetKey = "BloodstainedChivalry"
-const set2 = threshold_add(input.artSet.BloodstainedChivalry, 2, percent(0.25))
+const set2 = greaterEq(input.artSet.BloodstainedChivalry, 2, percent(0.25))
 const [condPath, condNode] = cond(key, "defeat")
-const set4Charged = threshold_add(input.artSet.BloodstainedChivalry, 4,
-  match("hit", condNode, percent(0.5)))
-const set4StamDec = threshold_add(input.artSet.BloodstainedChivalry, 4,
-  match("hit", condNode, percent(1)))
+const set4Charged = greaterEq(input.artSet.BloodstainedChivalry, 4,
+  equal("hit", condNode, percent(0.5)))
+const set4StamDec = greaterEq(input.artSet.BloodstainedChivalry, 4,
+  equal("hit", condNode, percent(1)))
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {

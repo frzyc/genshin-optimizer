@@ -1,6 +1,6 @@
 import icons from './icons'
 import { Data } from '../../../Formula/type'
-import { lookup, naught, percent, threshold_add } from '../../../Formula/utils'
+import { lookup, naught, percent, greaterEq } from '../../../Formula/utils'
 import { input } from '../../../Formula'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
@@ -13,8 +13,8 @@ const [, trm] = trans("artifact", key)
 
 const [condStatePath, condState] = cond(key, "state")
 
-const set2 = threshold_add(input.artSet.BlizzardStrayer, 2, percent(0.15))
-const set4 = threshold_add(input.artSet.BlizzardStrayer, 4, lookup(condState, { "cryo": percent(0.20), "frozen": percent(0.40) }, naught))
+const set2 = greaterEq(input.artSet.BlizzardStrayer, 2, percent(0.15))
+const set4 = greaterEq(input.artSet.BlizzardStrayer, 4, lookup(condState, { "cryo": percent(0.20), "frozen": percent(0.40) }, naught))
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {

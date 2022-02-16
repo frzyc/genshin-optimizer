@@ -1,6 +1,6 @@
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
-import { percent, threshold_add } from '../../../Formula/utils'
+import { percent, greaterEq } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
@@ -8,7 +8,7 @@ import icons from './icons'
 
 const key: ArtifactSetKey = "Gambler"
 
-const set2 = threshold_add(input.artSet.Gambler, 2, percent(0.2))
+const set2 = greaterEq(input.artSet.Gambler, 2, percent(0.2))
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {

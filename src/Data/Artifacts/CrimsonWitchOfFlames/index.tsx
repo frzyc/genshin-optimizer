@@ -1,6 +1,6 @@
 import { input } from '../../../Formula'
 import { Data, Info } from '../../../Formula/type'
-import { lookup, naught, percent, sum, threshold_add } from '../../../Formula/utils'
+import { lookup, naught, percent, sum, greaterEq } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { st } from '../../Characters/SheetUtil'
@@ -12,13 +12,13 @@ import icons from './icons'
 const key: ArtifactSetKey = "CrimsonWitchOfFlames"
 const [condStackPath, condStack] = cond(key, "stack")
 const pyro_dmg_info: Info = { key: "pyro_dmg_", variant: "pyro" }
-const set2 = threshold_add(input.artSet.CrimsonWitchOfFlames, 2, percent(0.15), pyro_dmg_info)
-const set4Overload = threshold_add(input.artSet.CrimsonWitchOfFlames, 4, percent(0.4))
+const set2 = greaterEq(input.artSet.CrimsonWitchOfFlames, 2, percent(0.15), pyro_dmg_info)
+const set4Overload = greaterEq(input.artSet.CrimsonWitchOfFlames, 4, percent(0.4))
 const set4Burning = { ...set4Overload }
-const set4Vape = threshold_add(input.artSet.CrimsonWitchOfFlames, 4, percent(0.15))
+const set4Vape = greaterEq(input.artSet.CrimsonWitchOfFlames, 4, percent(0.15))
 const set4Melt = { ...set4Vape }
 const stackArr = range(1, 3)
-const set4Pyro_dmg_ = threshold_add(input.artSet.CrimsonWitchOfFlames, 4,
+const set4Pyro_dmg_ = greaterEq(input.artSet.CrimsonWitchOfFlames, 4,
   lookup(condStack,
     Object.fromEntries(stackArr.map(i => [i, percent(0.15 * i / 2)]))
     , naught),

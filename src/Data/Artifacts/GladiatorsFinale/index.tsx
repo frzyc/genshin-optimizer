@@ -1,14 +1,14 @@
 import icons from './icons'
 import { Data } from '../../../Formula/type'
-import { lookup, naught, percent, threshold_add } from '../../../Formula/utils'
+import { lookup, naught, percent, greaterEq } from '../../../Formula/utils'
 import { input } from '../../../Formula'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 const key: ArtifactSetKey = "GladiatorsFinale"
 
-const set2 = threshold_add(input.artSet.GladiatorsFinale, 2, percent(0.18))
-const set4 = threshold_add(input.artSet.GladiatorsFinale, 4, lookup(input.weaponType, { "sword": percent(0.35), "polearm": percent(0.35), "claymore": percent(0.35) }, naught))
+const set2 = greaterEq(input.artSet.GladiatorsFinale, 2, percent(0.18))
+const set4 = greaterEq(input.artSet.GladiatorsFinale, 4, lookup(input.weaponType, { "sword": percent(0.35), "polearm": percent(0.35), "claymore": percent(0.35) }, naught))
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {

@@ -1,13 +1,12 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from "../../../Formula/index"
-import { constant, infoMut, match, percent, prod, threshold_add, unmatch } from "../../../Formula/utils"
+import { constant, equal, greaterEq, infoMut, percent, prod, unequal } from "../../../Formula/utils"
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { objectKeyMap } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
-import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
+import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { absorbableEle, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import { conditionalHeader, normalSrc, talentTemplate } from '../CharacterSheet'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -73,17 +72,17 @@ const [condSwirlReactionPath, condSwirlReaction] = cond(characterKey, "swirl")
 const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(characterKey, "skillHit")
 
 // Conditional Output
-const asc1 = threshold_add(input.asc, 1,
-  unmatch(target.charKey, characterKey,
-    match(target.charEle, condSwirlReaction, datamine.passive1.eleMas)))
-const asc4 = match("hit", condSkillHitOpponent,
-  unmatch(target.charKey, characterKey,
-    threshold_add(input.asc, 4,
+const asc1 = greaterEq(input.asc, 1,
+  unequal(target.charKey, characterKey,
+    equal(target.charEle, condSwirlReaction, datamine.passive1.eleMas)))
+const asc4 = equal("hit", condSkillHitOpponent,
+  unequal(target.charKey, characterKey,
+    greaterEq(input.asc, 4,
       prod(percent(datamine.passive2.eleMas_), input.premod.eleMas))))
-const c6Base = threshold_add(input.constellation, 6, percent(0.2))
+const c6Base = greaterEq(input.constellation, 6, percent(0.2))
 
 const c6Bonus = objectKeyMap(absorbableEle.map(ele => `${ele}_dmg_` as const), key =>
-  match(condAbsorption, key.slice(0, -5), c6Base))
+  equal(condAbsorption, key.slice(0, -5), c6Base))
 
 export const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -99,12 +98,12 @@ export const dmgFormulas = {
   burst: {
     dot: dmgNode("atk", datamine.burst.dot, "burst"),
     ...Object.fromEntries(absorbableEle.map(key =>
-      [key, match(condAbsorption, key, dmgNode("atk", datamine.burst.dmg_, "burst", { hit: { ele: constant(key) } }))]))
+      [key, equal(condAbsorption, key, dmgNode("atk", datamine.burst.dmg_, "burst", { hit: { ele: constant(key) } }))]))
   },
 }
 
-const nodeC3 = threshold_add(input.constellation, 3, 3)
-const nodeC5 = threshold_add(input.constellation, 5, 3)
+const nodeC3 = greaterEq(input.constellation, 3, 3)
+const nodeC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(characterKey, elementKey, "mondstadt", data_gen, dmgFormulas, {
   bonus: {
     skill: nodeC3,

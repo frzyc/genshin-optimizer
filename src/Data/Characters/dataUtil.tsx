@@ -2,7 +2,7 @@ import { input } from "../../Formula";
 import { inferInfoMut, mergeData } from "../../Formula/api";
 import { reactions } from "../../Formula/reaction";
 import { Data, DisplaySub, NumNode } from "../../Formula/type";
-import { constant, data, infoMut, matchFull, prod, stringPrio, subscript, sum } from "../../Formula/utils";
+import { constant, data, equalStr, infoMut, prod, stringPrio, subscript, sum } from "../../Formula/utils";
 import { allMainStatKeys, allSubstats, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey, Region } from "../../Types/consts";
 import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
@@ -20,8 +20,8 @@ const inferredHitEle = stringPrio(
   input.infusion,
   input.team.infusion,
   // Inferred Element
-  matchFull(input.weaponType, "catalyst", input.charEle, undefined),
-  matchFull(input.hit.move, "skill", input.charEle, undefined),
+  equalStr(input.weaponType, "catalyst", input.charEle),
+  equalStr(input.hit.move, "skill", input.charEle),
   "physical",
 )
 

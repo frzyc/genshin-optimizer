@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
 import { Translate } from '../../../Components/Translate'
 import { input } from '../../../Formula'
-import { infoMut, lookup, match, percent, prod, subscript, threshold_add } from '../../../Formula/utils'
+import { infoMut, lookup, equal, percent, prod, subscript, greaterEq } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { objectKeyMap, range } from '../../../Util/Util'
 import { cond, st, trans } from '../../SheetUtil'
@@ -79,36 +79,36 @@ const datamine = {
 } as const
 
 const [condQuillPath, condQuill] = cond(key, "quill")
-const nodeSkill = match("quill", condQuill,
+const nodeSkill = equal("quill", condQuill,
   prod(input.premod.atk, subscript(input.total.skillIndex, datamine.skill.dmgAtk_, { key: '_' })))
 
 
 const [condBurstPath, condBurst] = cond(key, "burst")
-const enemyRes_ = match("burst", condBurst,
+const enemyRes_ = equal("burst", condBurst,
   subscript(input.total.burstIndex, datamine.burst.res_.map(x => -x), { key: '_' }))
 
 const nodeBurstCryo_enemyRes_ = { ...enemyRes_ }
 const nodeBurstPhysical_enemyRes_ = { ...enemyRes_ }
 
 const [condAsc1Path, condAsc1] = cond(key, "asc1")
-const nodeAsc1 = threshold_add(input.asc, 1,
-  match(condAsc1, "field",
-    match(input.activeCharKey, input.charKey,
+const nodeAsc1 = greaterEq(input.asc, 1,
+  equal(condAsc1, "field",
+    equal(input.activeCharKey, input.charKey,
       datamine.passive1.cryo_dmg_
     )
   )
 )
 
 const [condAsc4Path, condAsc4] = cond(key, "asc4")
-const nodeAsc4 = threshold_add(input.asc, 1,
-  match(condAsc4, "press",
+const nodeAsc4 = greaterEq(input.asc, 1,
+  equal(condAsc4, "press",
     datamine.passive2.press_dmg_
   )
 )
 const nodeAsc4Press_skill_dmg_ = { ...nodeAsc4 }
 const nodeAsc4Press_burst_dmg_ = { ...nodeAsc4 }
-const nodeAsc4Hold = threshold_add(input.asc, 1,
-  match(condAsc4, "hold",
+const nodeAsc4Hold = greaterEq(input.asc, 1,
+  equal(condAsc4, "hold",
     datamine.passive2.hold_dmg_
   )
 )
@@ -116,16 +116,16 @@ const nodeAsc4Hold_normal_dmg_ = { ...nodeAsc4Hold }
 const nodeAsc4Hold_charged_dmg_ = { ...nodeAsc4Hold }
 const nodeAsc4Hold_plunging_dmg_ = { ...nodeAsc4Hold }
 
-const nodeC2 = threshold_add(input.constellation, 2,
-  match(condAsc1, "field",
-    match(input.activeCharKey, input.charKey,
+const nodeC2 = greaterEq(input.constellation, 2,
+  equal(condAsc1, "field",
+    equal(input.activeCharKey, input.charKey,
       datamine.passive1.cryo_dmg_
     )
   )
 )
 
 const [condC4Path, condC4] = cond(key, "c4")
-const c4Inc = threshold_add(input.constellation, 4,
+const c4Inc = greaterEq(input.constellation, 4,
   lookup(condC4,
     objectKeyMap(range(1, datamine.constellation4.maxStacks), i => percent(i * datamine.constellation4.dmg_)),
     0),
@@ -148,8 +148,8 @@ const dmgFormulas = {
     dot: dmgNode("atk", datamine.burst.dot, "burst"),
   },
 }
-const nodeC3 = threshold_add(input.constellation, 3, 3)
-const nodeC5 = threshold_add(input.constellation, 5, 3)
+const nodeC3 = greaterEq(input.constellation, 3, 3)
+const nodeC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
   bonus: {
     skill: nodeC3,
@@ -253,7 +253,7 @@ const sheet: ICharacterSheet = {
           }
         }, {
           conditional: { // ASC4
-            canShow: threshold_add(input.asc, 4, 1),
+            canShow: greaterEq(input.asc, 4, 1),
             value: condAsc4,
             path: condAsc4Path,
             teamBuff: true,
@@ -283,7 +283,7 @@ const sheet: ICharacterSheet = {
           }
         }, {
           conditional: { // CONSTELLATION4
-            canShow: threshold_add(input.constellation, 4, 1),
+            canShow: greaterEq(input.constellation, 4, 1),
             value: condC4,
             path: condC4Path,
             header: conditionalHeader("constellation4", tr, passive2),
@@ -335,7 +335,7 @@ const sheet: ICharacterSheet = {
           }
         }, {
           conditional: { // ASC1 Party + cond 2
-            canShow: threshold_add(input.asc, 1, match(input.activeCharKey, input.charKey, 1)),
+            canShow: greaterEq(input.asc, 1, equal(input.activeCharKey, input.charKey, 1)),
             value: condAsc1,
             path: condAsc1Path,
             teamBuff: true,

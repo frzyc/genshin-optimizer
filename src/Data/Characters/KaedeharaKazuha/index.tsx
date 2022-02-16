@@ -2,7 +2,7 @@ import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
-import { constant, infoMut, match, matchFull, percent, prod, threshold, threshold_add, unmatch } from '../../../Formula/utils'
+import { constant, equal, equalStr, greaterEq, greaterEqStr, infoMut, percent, prod, unequal } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, condReadNode, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
@@ -76,30 +76,27 @@ const [condSkillAbsorptionPath, condSkillAbsorption] = cond(key, "skillAbsorptio
 const condSwirlPaths = Object.fromEntries(absorbableEle.map(e => [e, [key, `swirl${e}`]]))
 const condSwirls = Object.fromEntries(absorbableEle.map(e => [e, condReadNode(condSwirlPaths[e])]))
 const asc4 = Object.fromEntries(absorbableEle.map(ele =>
-  [`${ele}_dmg_`, threshold_add(input.asc, 4,
-    match("swirl", condSwirls[ele],
+  [`${ele}_dmg_`, greaterEq(input.asc, 4,
+    equal("swirl", condSwirls[ele],
       // TODO: this percent of 0.04% is displayed as 0.0%
       prod(percent(datamine.passive2.elemas_dmg_), input.premod.eleMas)
     ))]))
 
 /** TODO: the C2 actually only applies to "active" character, so the following needs to be changed... */
 const [condC2Path, condC2] = cond(key, "c2")
-const c2EleMas = threshold_add(input.constellation, 2,
-  match("c2", condC2, datamine.constellation2.elemas), { key: `eleMas` })
+const c2EleMas = greaterEq(input.constellation, 2,
+  equal("c2", condC2, datamine.constellation2.elemas))
 
 const [condC2PPath, condC2P] = cond(key, "c2p")
-const c2PEleMas = threshold_add(input.constellation, 2,
-  match("c2p", condC2P,
-    unmatch(target.charKey, key, datamine.constellation2.elemas)
-  ), { key: `eleMas` })
+const c2PEleMas = greaterEq(input.constellation, 2,
+  equal("c2p", condC2P,
+    unequal(target.charKey, key, datamine.constellation2.elemas)))
 
 const [condC6Path, condC6] = cond(key, "c6")
-const c6infusion = threshold(input.constellation, 6,
-  matchFull("c6", condC6, "anemo", undefined),
-  undefined
-)
-const c6Dmg_ = threshold_add(input.constellation, 6,
-  match("c6", condC6, prod(percent(datamine.constellation6.auto_), input.premod.eleMas))
+const c6infusion = greaterEqStr(input.constellation, 6,
+  equalStr("c6", condC6, "anemo"))
+const c6Dmg_ = greaterEq(input.constellation, 6,
+  equal("c6", condC6, prod(percent(datamine.constellation6.auto_), input.premod.eleMas))
 )
 // Share `match` and `prod` between the three nodes
 const c6NormDmg_ = { ...c6Dmg_ }
@@ -128,18 +125,18 @@ const dmgFormulas = {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
     dot: dmgNode("atk", datamine.burst.dot, "burst"),
     ...Object.fromEntries(absorbableEle.map(key =>
-      [key, match(condBurstAbsorption, key, dmgNode("atk", datamine.burst.add, "burst", { hit: { ele: constant(key) } }))]))
+      [key, equal(condBurstAbsorption, key, dmgNode("atk", datamine.burst.add, "burst", { hit: { ele: constant(key) } }))]))
   },
   passive1: Object.fromEntries(absorbableEle.map(key =>
-    [key, match(condSkillAbsorption, key, customDmgNode(prod(input.total.atk, datamine.passive1.asorbAdd), "plunging", { hit: { ele: constant(key) } }))])),
+    [key, equal(condSkillAbsorption, key, customDmgNode(prod(input.total.atk, datamine.passive1.asorbAdd), "plunging", { hit: { ele: constant(key) } }))])),
   constellation6: {
     normal_dmg_: c6NormDmg_,
     charged_dmg_: c6ChargedDmg_,
     plunging_dmg_: c6PlungingDmg_,
   }
 }
-const nodeC3 = threshold_add(input.constellation, 3, 3)
-const nodeC5 = threshold_add(input.constellation, 5, 3)
+const nodeC3 = greaterEq(input.constellation, 3, 3)
+const nodeC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, "anemo", "inazuma", data_gen, dmgFormulas, {
   bonus: {
     skill: nodeC3,
@@ -275,7 +272,7 @@ const sheet: ICharacterSheet = {
           },
         }, {
           conditional: { // C2
-            canShow: threshold_add(input.constellation, 2, 1,),
+            canShow: greaterEq(input.constellation, 2, 1,),
             value: condC2,
             path: condC2Path,
             name: trm("c2"),
@@ -289,8 +286,7 @@ const sheet: ICharacterSheet = {
           },
         }, {
           conditional: { // C2 Party
-            canShow: threshold_add(input.constellation, 2,
-              unmatch(target.charKey, key, 1)),
+            canShow: c2PEleMas,
             value: condC2P,
             path: condC2PPath,
             teamBuff: true,

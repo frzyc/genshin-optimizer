@@ -193,7 +193,9 @@ export class UIData {
     const [valueNode, thresholdNode, pass, fail] = node.operands
     const value = this.computeNode(valueNode), threshold = this.computeNode(thresholdNode)
     const result = value.value >= threshold.value ? this.computeNode(pass) : this.computeNode(fail)
-    return (value.value >= threshold.value) === (node.emptyOn === "l") ? result : makeEmpty(result.value)
+    return (value.value >= threshold.value)
+      ? (node.emptyOn === "ge" ? makeEmpty(result.value) : result)
+      : (node.emptyOn === "l" ? makeEmpty(result.value) : result)
   }
   private _data(node: DataNode<NumNode | StrNode>): ContextNodeDisplay<number | string | undefined> {
     let child = this.children.get(node.data)

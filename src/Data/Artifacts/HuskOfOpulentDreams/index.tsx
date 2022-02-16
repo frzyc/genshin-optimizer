@@ -1,6 +1,6 @@
 import { input } from '../../../Formula'
 import { Data, Info } from '../../../Formula/type'
-import { lookup, naught, percent, sum, threshold_add } from '../../../Formula/utils'
+import { lookup, naught, percent, sum, greaterEq } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, trans } from '../../SheetUtil'
@@ -12,15 +12,15 @@ const key: ArtifactSetKey = "HuskOfOpulentDreams"
 const [, trm] = trans("artifact", key)
 const [condStackPath, condStack] = cond(key, "stack")
 const def_info: Info = { key: "def_" }
-const set2 = threshold_add(input.artSet.HuskOfOpulentDreams, 2, percent(0.3), def_info)
+const set2 = greaterEq(input.artSet.HuskOfOpulentDreams, 2, percent(0.3), def_info)
 const stackArr = range(1, 4)
 
-const set4Def = threshold_add(input.artSet.HuskOfOpulentDreams, 4,
+const set4Def = greaterEq(input.artSet.HuskOfOpulentDreams, 4,
   lookup(condStack,
     Object.fromEntries(stackArr.map(i => [i, percent(0.06 * i)]))
     , naught),
   def_info)
-const set4Geo = threshold_add(input.artSet.HuskOfOpulentDreams, 4,
+const set4Geo = greaterEq(input.artSet.HuskOfOpulentDreams, 4,
   lookup(condStack,
     Object.fromEntries(stackArr.map(i => [i, percent(0.06 * i)]))
     , naught))

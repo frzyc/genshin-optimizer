@@ -8,7 +8,7 @@ import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import { Data } from '../../../Formula/type'
-import { match, percent, threshold_add } from '../../../Formula/utils'
+import { equal, percent, greaterEq } from '../../../Formula/utils'
 import { input } from '../../../Formula'
 import elementalData from '../../ElementalData'
 import { objectKeyMap, objectKeyValueMap } from '../../../Util/Util'
@@ -17,15 +17,15 @@ import { condReadNode, st, trans } from '../../SheetUtil'
 const key: ArtifactSetKey = "ViridescentVenerer"
 const [tr] = trans("artifact", key)
 
-const anemo_dmg_ = threshold_add(input.artSet.ViridescentVenerer, 2, percent(0.15))
-const swirl_dmg_ = threshold_add(input.artSet.ViridescentVenerer, 4, percent(0.6))
+const anemo_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 2, percent(0.15))
+const swirl_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 4, percent(0.6))
 
 const condSwirlPaths = objectKeyMap(absorbableEle, e => [key, `swirl${e}`])
 const condSwirls = objectKeyMap(absorbableEle, e => condReadNode(condSwirlPaths[e]))
 
 const condSwirlNodes = objectKeyValueMap(absorbableEle, e => [`${e}_enemyRes_`,
-threshold_add(input.artSet.ViridescentVenerer, 4,
-  match("swirl", condSwirls[e], percent(-0.4))
+greaterEq(input.artSet.ViridescentVenerer, 4,
+  equal("swirl", condSwirls[e], percent(-0.4))
 )])
 
 const data: Data = dataObjForArtifactSheet(key, {

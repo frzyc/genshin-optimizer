@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { constant, infoMut, lookup, match, matchFull, percent, prod, subscript, sum, threshold, threshold_add, unmatch } from '../../../Formula/utils'
+import { constant, equal, greaterEq, infoMut, lookup, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
 import { CharacterKey } from '../../../Types/consts'
 import { objectKeyMap } from '../../../Util/Util'
 import { cond, trans } from '../../SheetUtil'
@@ -79,24 +79,20 @@ const datamine = {
   },
 } as const
 
-// Used to bool whether Raiden is C2 and above; 1: yes, 0: no
-const c2Above = threshold(input.constellation, 2, 1, 0)
-
 const [condSkillEyePath, condSkillEye] = cond(key, "skillEye")
-const skillEye_ = match("skillEye", condSkillEye,
+const skillEye_ = equal("skillEye", condSkillEye,
   prod(datamine.burst.enerCost, subscript(input.total.skillIndex, datamine.skill.burstDmg_bonus.map(x => x), { key: '_' })))
 
 function skillDmg(atkType: number[]) {
   // if Raiden is above or equal to C2, then account for DEF Ignore else not
-  return matchFull(c2Above, 1,
-    customDmgNode(prod(subscript(input.total.skillIndex, atkType, { key: '_' }), input.total.atk), 'skill', { enemy: { defIgn: constant(datamine.constellation2.def_ignore) } }),
-    customDmgNode(prod(subscript(input.total.skillIndex, atkType, { key: '_' }), input.total.atk), 'skill', {}),
-  )
+  return dmgNode('atk', atkType, 'skill', {
+    enemy: { defIgn: greaterEq(input.constellation, 2, datamine.constellation2.def_ignore) }
+  })
 }
 
 const energyCosts = [40, 50, 60, 70, 80, 90]
 const [condSkillEyeTeamPath, condSkillEyeTeam] = cond(key, "skillEyeTeam")
-const skillEyeTeamBurstDmgInc = unmatch(input.activeCharKey, input.charKey,
+const skillEyeTeamBurstDmgInc = unequal(input.activeCharKey, input.charKey,
   prod(lookup(condSkillEyeTeam, objectKeyMap(energyCosts, i => constant(i)), 0),
     subscript(input.total.skillIndex, datamine.skill.burstDmg_bonus.map(x => x), { key: '_' })))
 
@@ -107,20 +103,22 @@ function burstResolve(atkType: number[], initial = false) {
   let resolveBonus = initial ? datamine.burst.resolveBonus1 : datamine.burst.resolveBonus2
 
   // if Raiden is above or equal to C2, then account for DEF Ignore else not
-  return matchFull(c2Above, 1,
-    customDmgNode(prod(sum(subscript(input.total.burstIndex, atkType, { key: '_' }),
-      prod(subscript(input.total.burstIndex, resolveBonus.map(x => x), { key: '_' }),
-        lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0))), input.total.atk), 'burst', { hit: { ele: constant('electro') }, enemy: { defIgn: constant(datamine.constellation2.def_ignore) } }),
-    customDmgNode(prod(sum(subscript(input.total.burstIndex, atkType, { key: '_' }),
-      prod(subscript(input.total.burstIndex, resolveBonus.map(x => x), { key: '_' }),
-        lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0))), input.total.atk), 'burst', { hit: { ele: constant('electro') } }))
+  return customDmgNode(prod(sum(subscript(input.total.burstIndex, atkType, { key: '_' }),
+    prod(subscript(input.total.burstIndex, resolveBonus.map(x => x), { key: '_' }),
+      lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0))), input.total.atk), 'burst', {
+    hit: {
+      ele: constant('electro')
+    }, enemy: {
+      defIgn: greaterEq(input.constellation, 2, datamine.constellation2.def_ignore)
+    }
+  })
 }
 
-const passive2ElecDmgBonus = threshold_add(input.asc, 4, prod(sum(input.total.enerRech_, percent(-1)), (datamine.passive2.electroDmg_bonus * 100)))
+const passive2ElecDmgBonus = greaterEq(input.asc, 4, prod(sum(input.total.enerRech_, percent(-1)), (datamine.passive2.electroDmg_bonus * 100)))
 
 const [condC4Path, condC4] = cond(key, "c4")
-const c4AtkBonus_ = threshold_add(input.constellation, 4,
-  match("c4", condC4, unmatch(input.activeCharKey, input.charKey, datamine.constellation4.atk_bonus))
+const c4AtkBonus_ = greaterEq(input.constellation, 4,
+  equal("c4", condC4, unequal(input.activeCharKey, input.charKey, datamine.constellation4.atk_bonus))
 )
 
 const dmgFormulas = {
@@ -154,8 +152,8 @@ const dmgFormulas = {
 
 export const data = dataObjForCharacterSheet(key, "electro", "inazuma", data_gen, dmgFormulas, {
   bonus: {
-    skill: threshold_add(input.constellation, 5, 3),
-    burst: threshold_add(input.constellation, 3, 3),
+    skill: greaterEq(input.constellation, 5, 3),
+    burst: greaterEq(input.constellation, 3, 3),
   },
   premod: {
     burst_dmg_: skillEye_,
@@ -249,7 +247,7 @@ const sheet: ICharacterSheet = {
             header: conditionalHeader("skill", tr, skill),
             description: tr("skill.description"),
             teamBuff: true,
-            canShow: unmatch(input.activeCharKey, input.charKey, 1),
+            canShow: unequal(input.activeCharKey, input.charKey, 1),
             name: trm("skill.partyCost"),
             states: Object.fromEntries(energyCosts.map(c => [c, {
               name: `${c}`,
@@ -351,7 +349,7 @@ const sheet: ICharacterSheet = {
             value: condC4,
             path: condC4Path,
             teamBuff: true,
-            canShow: threshold_add(input.constellation, 4, unmatch(input.activeCharKey, input.charKey, 1)),
+            canShow: greaterEq(input.constellation, 4, unequal(input.activeCharKey, input.charKey, 1)),
             header: conditionalHeader("constellation4", tr, c4),
             description: tr("constellation4.description"),
             name: trm("c4.expires"),

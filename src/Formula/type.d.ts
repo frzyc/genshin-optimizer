@@ -8,6 +8,7 @@ export type NumNode = ComputeNode | ThresholdNode |
   LookupNode<NumNode> | MatchNode<NumNode, StrNode> | MatchNode<NumNode, NumNode> |
   SubscriptNode<number> |
   ReadNode<number> | ConstantNode<number>
+// TODO: Add `ThresholdNode<StrNode>`
 export type StrNode = StrPrioNode |
   DataNode<StrNode> |
   LookupNode<StrNode> |
@@ -55,7 +56,7 @@ export interface ComputeNode extends Base {
 export interface ThresholdNode<M = NumNode> extends Base {
   operation: "threshold"
   operands: readonly [NumNode, NumNode, M, M]
-  emptyOn: "ge" | "l"
+  emptyOn?: "ge" | "l"
 }
 export interface MatchNode<N, M = StrNode> extends Base {
   operation: "match"
