@@ -208,6 +208,7 @@ export const weaponIdMap = {
   // 14505: "Primordial Jade Regalia",
   // 14506: "Diamond Visage",
   // 14508: "",
+  14509: "KagurasVerity",
 
   //bow
   15101: "HuntersBow",

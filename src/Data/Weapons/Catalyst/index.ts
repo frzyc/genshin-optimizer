@@ -7,6 +7,7 @@ import EverlastingMoonglow from './EverlastingMoonglow'
 // import FavoniusCodex from './FavoniusCodex'
 // import Frostbearer from './Frostbearer'
 // import HakushinRing from './HakushinRing'
+import KagurasVerity from './KagurasVerity'
 // import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
 // import MagicGuide from './MagicGuide'
 // import MappaMare from './MappaMare'
@@ -32,6 +33,7 @@ const catalyst = {
   // FavoniusCodex,
   // Frostbearer,
   // HakushinRing,
+  KagurasVerity,
   // LostPrayerToTheSacredWinds,
   // MagicGuide,
   // MappaMare,

@@ -229,6 +229,7 @@ export const allWeaponKeys = [
   // "WavebreakersFin",
   // "CinnabarSpindle",
   // "RedhornStonethresher",
+  "KagurasVerity"
 ] as const
 export const characterSpecializedStatKeys = ["hp_", "atk_", "def_", "eleMas", "enerRech_", "heal_", "critRate_", "critDMG_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_"] as const
 

@@ -19,10 +19,10 @@ export default class WeaponSheet {
   readonly data: Data;
   readonly rarity: Rarity;
   readonly weaponType: WeaponTypeKey;
-  constructor(key: string, weaponSheet: IWeaponSheet, weaponData: WeaponData, data: Data) {
+  constructor(key: WeaponKey, weaponSheet: IWeaponSheet, weaponData: WeaponData, data: Data) {
     this.rarity = weaponData.rarity
     this.weaponType = weaponData.weaponType
-    this.key = key as WeaponKey
+    this.key = key
     this.sheet = weaponSheet
     this.data = data
   }
