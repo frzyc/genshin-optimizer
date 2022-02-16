@@ -43,7 +43,7 @@ for (const ele of allElements) {
   allModStatNodes[`${ele}_dmg_`].info!.variant = ele
 }
 for (const reaction of [...allTransformative, ...allAmplifying]) {
-  allNonModStatNodes[`${reaction}_dmg_`].info!.variant = reaction
+  allModStatNodes[`${reaction}_dmg_`].info!.variant = reaction
 }
 
 function withDefaultInfo<T>(info: Info, value: T): T {
