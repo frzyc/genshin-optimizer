@@ -32,7 +32,7 @@ import OceanHuedClam from './OceanHuedClam'
 // import ShimenawasReminiscence from './ShimenawasReminiscence'
 // import TenacityOfTheMillelith from './TenacityOfTheMillelith'
 // import TheExile from './TheExile'
-// import ThunderingFury from './ThunderingFury'
+import ThunderingFury from './ThunderingFury'
 // import Thundersoother from './Thundersoother'
 // import TinyMiracle from './TinyMiracle'
 // import TravelingDoctor from './TravelingDoctor'
@@ -70,7 +70,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   // ShimenawasReminiscence,
   // TenacityOfTheMillelith,
   // TheExile,
-  // ThunderingFury,
+  ThunderingFury,
   // Thundersoother,
   // TinyMiracle,
   // TravelingDoctor,
