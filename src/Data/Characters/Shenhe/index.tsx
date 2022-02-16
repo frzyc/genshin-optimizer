@@ -2,7 +2,7 @@ import { CharacterData } from 'pipeline'
 import { Translate } from '../../../Components/Translate'
 import { input } from '../../../Formula'
 import { infoMut, lookup, match, percent, prod, subscript, threshold_add } from '../../../Formula/utils'
-import { CharacterKey, ElementKey, WeaponTypeKey } from '../../../Types/consts'
+import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { objectKeyMap, range } from '../../../Util/Util'
 import { cond, st, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
@@ -178,7 +178,7 @@ const sheet: ICharacterSheet = {
   bannerImg: banner,
   rarity: data_gen.star,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
+  weaponTypeKey: data_gen.weaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),
@@ -186,7 +186,7 @@ const sheet: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
+        img: normalSrc(data_gen.weaponTypeKey),
         sections: [{
           text: tr("auto.fields.normal"),
           fields: datamine.normal.hitArr.map((_, i) => ({

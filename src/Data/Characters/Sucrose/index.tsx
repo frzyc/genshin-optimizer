@@ -1,8 +1,8 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from "../../../Formula/index"
-import { constant, infoMut, match, percent, prod, sum, threshold_add, unmatch } from "../../../Formula/utils"
-import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from '../../../Types/consts'
+import { constant, infoMut, match, percent, prod, threshold_add, unmatch } from "../../../Formula/utils"
+import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { objectKeyMap } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
@@ -122,9 +122,9 @@ const sheet: ICharacterSheet = {
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  rarity: data_gen.star as Rarity,
+  rarity: data_gen.star,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
+  weaponTypeKey: data_gen.weaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),
@@ -132,7 +132,7 @@ const sheet: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
+        img: normalSrc(data_gen.weaponTypeKey),
         sections: [
           {
             text: tr(`auto.fields.normal`),

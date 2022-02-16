@@ -3,7 +3,7 @@ import ColorText from '../../../Components/ColoredText'
 import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
 import { constant, infoMut, match, matchFull, percent, prod, threshold, threshold_add, unmatch } from '../../../Formula/utils'
-import { CharacterKey, ElementKey, WeaponTypeKey } from '../../../Types/consts'
+import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, condReadNode, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { absorbableEle, customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
@@ -173,7 +173,7 @@ const sheet: ICharacterSheet = {
   bannerImg: banner,
   rarity: data_gen.star,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
+  weaponTypeKey: data_gen.weaponTypeKey,
   gender: "M",
   constellationName: tr("constellationName"),
   title: tr("title"),
@@ -181,7 +181,7 @@ const sheet: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
+        img: normalSrc(data_gen.weaponTypeKey),
         sections: [{
           text: tr("auto.fields.normal"),
           fields: datamine.normal.hitArr.map((_, i) => ({

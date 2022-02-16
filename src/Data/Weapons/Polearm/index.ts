@@ -6,7 +6,7 @@ import CalamityQueller from './CalamityQueller'
 // import Deathmatch from './Deathmatch'
 // import DragonsBane from './DragonsBane'
 // import DragonspineSpear from './DragonspineSpear'
-// import EngulfingLightning from './EngulfingLightning'
+import EngulfingLightning from './EngulfingLightning'
 // import FavoniusLance from './FavoniusLance'
 // import Halberd from './Halberd'
 // import IronPoint from './IronPoint'
@@ -30,7 +30,7 @@ const polearm = {
   // Deathmatch,
   // DragonsBane,
   // DragonspineSpear,
-  // EngulfingLightning,
+  EngulfingLightning,
   // FavoniusLance,
   // Halberd,
   // IronPoint,
