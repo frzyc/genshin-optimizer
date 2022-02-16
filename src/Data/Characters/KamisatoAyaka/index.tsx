@@ -3,11 +3,11 @@ import ColorText from '../../../Components/ColoredText'
 import { Translate } from '../../../Components/Translate'
 import { input } from '../../../Formula'
 import { constant, infoMut, match, matchFull, percent, prod, sum, threshold_add } from '../../../Formula/utils'
-import { CharacterKey, ElementKey, WeaponTypeKey } from '../../../Types/consts'
+import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
-import { dataObjForCharacterSheet, dmgNode, customDmgNode } from '../dataUtil'
-import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide, sprint } from './assets'
+import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, sprint, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -143,7 +143,7 @@ const sheet: ICharacterSheet = {
   bannerImg: banner,
   rarity: data_gen.star,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
+  weaponTypeKey: data_gen.weaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),
@@ -151,7 +151,7 @@ const sheet: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
+        img: normalSrc(data_gen.weaponTypeKey),
         sections: [{
           text: tr("auto.fields.normal"),
           fields: datamine.normal.hitArr.map((percentArr, i) =>

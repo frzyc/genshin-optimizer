@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
 import { constant, infoMut, lookup, match, matchFull, percent, prod, subscript, sum, threshold, threshold_add, unmatch } from '../../../Formula/utils'
-import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
+import { CharacterKey } from '../../../Types/consts'
 import { objectKeyMap } from '../../../Util/Util'
 import { cond, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
@@ -177,7 +177,7 @@ const sheet: ICharacterSheet = {
   bannerImg: banner,
   rarity: data_gen.star,
   elementKey: "electro",
-  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
+  weaponTypeKey: data_gen.weaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),
@@ -185,7 +185,7 @@ const sheet: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
+        img: normalSrc(data_gen.weaponTypeKey),
         sections: [
           {
             text: tr("auto.fields.normal"),

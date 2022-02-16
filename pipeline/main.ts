@@ -1,30 +1,30 @@
-import { artifactIdMap, artifactSlotMap, characterIdMap, CharacterKey, DWeaponTypeKey, Language, propTypeMap, QualityTypeMap, StatKey, weaponIdMap, WeaponKey, weaponMap, WeaponTypeKey } from '.'
+import { artifactIdMap, artifactSlotMap, characterIdMap, CharacterKey, Language, propTypeMap, QualityTypeMap, StatKey, weaponIdMap, WeaponKey, weaponMap, WeaponTypeKey } from '.'
 import { mapHashData } from './Data'
 import artifactMainstatData from './DataminedModules/artifact/artifactMainstat'
-import artifactPiecesData from './DataminedModules/artifact/ReliquaryExcelConfigData'
-import reliquarySetExcelConfigData from './DataminedModules/artifact/ReliquarySetExcelConfigData'
 import artifactSubstatData from './DataminedModules/artifact/artifactSubstat'
 import { artifactSubstatRollCorrection, artifactSubstatRollData } from './DataminedModules/artifact/artifactSubstatRolls'
+import artifactPiecesData from './DataminedModules/artifact/ReliquaryExcelConfigData'
+import reliquarySetExcelConfigData from './DataminedModules/artifact/ReliquarySetExcelConfigData'
 import ascensionData from './DataminedModules/character/ascension'
 import avatarExcelConfigData from './DataminedModules/character/AvatarExcelConfigData'
 import characterExpCurve, { CharacterGrowCurveKey } from './DataminedModules/character/characterExpCurve'
 import characterInfo from './DataminedModules/character/characterInfo'
 import constellations from './DataminedModules/character/constellations'
+// import './DataminedModules/food/CookRecipeExcelConfigData'
+import materialExcelConfigData from './DataminedModules/character/MaterialExcelConfigData'
 import skillGroups, { ProudSkillExcelConfigData } from './DataminedModules/character/passives'
 import skillDepot, { AvatarSkillDepotExcelConfigData } from './DataminedModules/character/skillDepot'
 import talents from './DataminedModules/character/talents'
 import equipAffixExcelConfigData from './DataminedModules/common/EquipAffixExcelConfigData'
+import weaponCurveExcelConfigData, { WeaponGrowCurveKey } from './DataminedModules/weapon/WeaponCurveExcelConfigData'
 import weaponExcelConfigData from './DataminedModules/weapon/WeaponExcelConfigData'
 import weaponPromoteExcelConfigData from './DataminedModules/weapon/WeaponPromoteExcelConfigData'
-import weaponCurveExcelConfigData, { WeaponGrowCurveKey } from './DataminedModules/weapon/WeaponCurveExcelConfigData'
 import { extrapolateFloat } from './extrapolateFloat'
 import loadImages from './loadImages'
 import { parsingFunctions, preprocess } from './parseUtil'
 import { languageMap, nameToKey, TextMapEN } from './TextMapUtil'
 import { crawlObject, dumpFile, layeredAssignment } from './Util'
 
-// import './DataminedModules/food/CookRecipeExcelConfigData'
-import materialExcelConfigData from './DataminedModules/character/MaterialExcelConfigData'
 const fs = require('fs')
 
 loadImages();
@@ -33,7 +33,7 @@ loadImages();
  * # Importing data from datamined files.
  */
 export type CharacterData = {
-  weaponTypeKey: DWeaponTypeKey
+  weaponTypeKey: WeaponTypeKey
   base: {
     hp: number,
     atk: number,
