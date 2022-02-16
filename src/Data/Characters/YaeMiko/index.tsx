@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { infoMut, match, percent, prod, threshold_add } from '../../../Formula/utils'
+import { infoMut, equal, percent, prod, greaterEq } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
@@ -60,12 +60,12 @@ const datamine = {
 
 } as const
 
-const nodeAsc4 = threshold_add(input.asc, 4, prod(input.premod.eleMas, percent(datamine.passive2.eleMas_dmg_)))
+const nodeAsc4 = greaterEq(input.asc, 4, prod(input.premod.eleMas, percent(datamine.passive2.eleMas_dmg_)))
 
 const [condC4Path, condC4] = cond(key, "c4")
-const nodeC4 = threshold_add(input.constellation, 4, match("hit", condC4, datamine.constellation4.ele_dmg_))
+const nodeC4 = greaterEq(input.constellation, 4, equal("hit", condC4, datamine.constellation4.ele_dmg_))
 
-const nodeC6 = threshold_add(input.constellation, 6, datamine.constellation6.defIgn_)
+const nodeC6 = greaterEq(input.constellation, 6, datamine.constellation6.defIgn_)
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -76,24 +76,23 @@ const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg1: threshold_add(2 - 1, input.constellation, dmgNode("atk", datamine.skill.dmg1, "skill")),
+    dmg1: greaterEq(2 - 1, input.constellation, dmgNode("atk", datamine.skill.dmg1, "skill")),
     dmg2: dmgNode("atk", datamine.skill.dmg2, "skill", { enemy: { defIgn: nodeC6 } }),
     dmg3: dmgNode("atk", datamine.skill.dmg3, "skill", { enemy: { defIgn: nodeC6 } }),
-    dmg4: threshold_add(input.constellation, 2, dmgNode("atk", datamine.skill.dmg4, "skill", { enemy: { defIgn: nodeC6 } })),
+    dmg4: greaterEq(input.constellation, 2, dmgNode("atk", datamine.skill.dmg4, "skill", { enemy: { defIgn: nodeC6 } })),
   },
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
     tenkoDmg: dmgNode("atk", datamine.burst.tenkoDmg, "burst"),
   },
 }
-const nodeC3 = threshold_add(input.constellation, 3, 3)
-const nodeC5 = threshold_add(input.constellation, 5, 3)
+const nodeC3 = greaterEq(input.constellation, 3, 3)
+const nodeC5 = greaterEq(input.constellation, 5, 3)
 const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
   bonus: {
     skill: nodeC3,
     burst: nodeC5
   },
-
   total: {
     skill_dmg_: nodeAsc4,
   },
