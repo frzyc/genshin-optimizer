@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { infoMut, equal, percent, prod, greaterEq } from '../../../Formula/utils'
+import { infoMut, equal, percent, prod, greaterEq, lessThan } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
@@ -76,7 +76,7 @@ const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg1: greaterEq(2 - 1, input.constellation, dmgNode("atk", datamine.skill.dmg1, "skill")),
+    dmg1: lessThan(input.constellation, 2, dmgNode("atk", datamine.skill.dmg1, "skill")),
     dmg2: dmgNode("atk", datamine.skill.dmg2, "skill", { enemy: { defIgn: nodeC6 } }),
     dmg3: dmgNode("atk", datamine.skill.dmg3, "skill", { enemy: { defIgn: nodeC6 } }),
     dmg4: greaterEq(input.constellation, 2, dmgNode("atk", datamine.skill.dmg4, "skill", { enemy: { defIgn: nodeC6 } })),
