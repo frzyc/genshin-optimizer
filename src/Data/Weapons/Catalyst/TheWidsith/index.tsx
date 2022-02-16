@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
 import { Translate } from '../../../../Components/Translate'
 import { input } from '../../../../Formula'
-import { match, subscript } from '../../../../Formula/utils'
+import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { sgt } from '../../../Characters/SheetUtil'
 import { cond, trans } from '../../../SheetUtil'
@@ -20,14 +20,14 @@ const refinementEleDmgVals = [0.48, 0.6, 0.72, 0.84, 0.96]
 const refinementEleMasVals = [240, 300, 360, 420, 480]
 
 const [condPassivePath, condPassive] = cond(key, "Debut")
-const atk_ = match("recitative", condPassive, subscript(input.weapon.refineIndex, refinementAtkVals))
-const anemo_dmg_ = match("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
-const cryo_dmg_ = match("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
-const electro_dmg_ = match("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
-const geo_dmg_ = match("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
-const hydro_dmg_ = match("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
-const pyro_dmg_ = match("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
-const eleMas = match("interlude", condPassive, subscript(input.weapon.refineIndex, refinementEleMasVals))
+const atk_ = equal("recitative", condPassive, subscript(input.weapon.refineIndex, refinementAtkVals), 0)
+const anemo_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals), 0)
+const cryo_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals), 0)
+const electro_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals), 0)
+const geo_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals), 0)
+const hydro_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals), 0)
+const pyro_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals), 0)
+const eleMas = equal("interlude", condPassive, subscript(input.weapon.refineIndex, refinementEleMasVals), 0)
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

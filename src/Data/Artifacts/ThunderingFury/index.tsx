@@ -1,14 +1,14 @@
 import icons from './icons'
 import { Data } from '../../../Formula/type'
-import { lookup, naught, percent, threshold_add } from '../../../Formula/utils'
+import { greaterEq, lookup, naught, percent, threshold_add } from '../../../Formula/utils'
 import { input } from '../../../Formula'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 const key: ArtifactSetKey = "ThunderingFury"
 
-const set2 = threshold_add(input.artSet.ThunderingFury, 2, percent(0.15))
-const set4 = threshold_add(input.artSet.ThunderingFury, 4, percent(0.40))
+const set2 = greaterEq(input.artSet.ThunderingFury, 2, percent(0.15), 0)
+const set4 = greaterEq(input.artSet.ThunderingFury, 4, percent(0.40), 0)
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {

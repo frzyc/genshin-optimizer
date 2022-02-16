@@ -39,7 +39,7 @@ export const allArtifactSets = [
   // "RetracingBolide",
   // "Scholar",
   // "TheExile",
-  // "ThunderingFury",
+  "ThunderingFury",
   // "Thundersoother",
   // "TinyMiracle",
   // "TravelingDoctor",
