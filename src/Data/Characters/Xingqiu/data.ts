@@ -37,6 +37,9 @@ export const data = {
     cd: skillParam_gen.burst[2][0],
     cost: skillParam_gen.burst[3][0],
   },
+  passive2: {
+    hydro_dmg_: 0.2
+  }
 }
 
 const formula: IFormulaSheet = {

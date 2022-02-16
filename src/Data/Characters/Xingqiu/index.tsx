@@ -1,18 +1,14 @@
 import { CharacterData } from 'pipeline'
-import ColorText from '../../../Components/ColoredText'
-import { input, target } from "../../../Formula/index"
-import { constant, infoMut, match, percent, prod, sum, threshold_add, unmatch } from "../../../Formula/utils"
+import { input } from "../../../Formula/index"
+import { constant, data, infoMut, match, percent, subscript, threshold_add } from "../../../Formula/utils"
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from '../../../Types/consts'
-import { objectKeyMap } from '../../../Util/Util'
-import { cond, sgt, st, trans } from '../../SheetUtil'
-import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
-import { absorbableEle, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import { conditionalHeader, normalSrc, talentTemplate } from '../CharacterSheet'
-import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
+import { cond, trans } from '../../SheetUtil'
+import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { mapNormals } from '../utils'
-import {data as datamine} from './data'
+import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
+import { data as datamine } from './data'
+import data_gen_src from './data_gen.json'
 
 const data_gen = data_gen_src as CharacterData
 const characterKey: CharacterKey = "Xingqiu"
@@ -20,6 +16,12 @@ const elementKey: ElementKey = "hydro"
 const [tr, trm] = trans("char", characterKey)
 const { formula: normalDmg, section: normalSection } = mapNormals(datamine.normal.hitArr, [[2, 3], [5, 6]], characterKey)
 // Conditional Input
+const [condAsc4Path, condAsc4] = cond(characterKey, "asc4")
+const asc4 = threshold_add(input.asc, 1,
+  match(condAsc4, "hydroDmg_",
+    datamine.passive2.hydro_dmg_
+  )
+)
 // const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(characterKey, "skillHit")
 // const [condNormalHitOpponentPath, condNormalHitOpponent] = cond(characterKey, "normalHit")
 
@@ -38,8 +40,9 @@ export const dmgFormulas = {
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
     press1: dmgNode("atk", datamine.skill.hit1, "skill", { hit: { ele: constant(elementKey) } }),
-    press2: dmgNode("atk", datamine.skill.hit2, "skill", { hit: { ele: constant(elementKey) } })
-    dmgRed: data(, { key: "dmgRed_", pivot })
+    press2: dmgNode("atk", datamine.skill.hit2, "skill", { hit: { ele: constant(elementKey) } }),
+    // TODO: dmg reduction based on sword count?
+    dmgRed: subscript(input.total.skillIndex, datamine.skill.dmgRed, { key: '_' })
   },
   burst: {
     // TODO: burst dmg based on normal attacks?
@@ -47,7 +50,7 @@ export const dmgFormulas = {
   }
 }
 
-export const data = dataObjForCharacterSheet(characterKey, elementKey, "liyue", data_gen, dmgFormulas, {
+export const dataObj = dataObjForCharacterSheet(characterKey, elementKey, "liyue", data_gen, dmgFormulas, {
   bonus: {
     skill: threshold_add(input.constellation, 3, 3),
     burst: threshold_add(input.constellation, 5, 3),
@@ -109,7 +112,7 @@ const sheet: ICharacterSheet = {
             node: infoMut(dmgFormulas.skill.press1, { key: `char_${characterKey}_gen:skill.skillParams.0` }),
           }, {
             node: infoMut(dmgFormulas.skill.press2, { key: `char_${characterKey}_gen:skill.skillParams.0` }),
-          },{
+          }, {
             node: infoMut(dmgFormulas.skill.dmgRed, { key: `char_${characterKey}_gen:skill.skillParams.1` }),
           }, {
             text: tr("skill.skillParams.3"),
@@ -143,50 +146,21 @@ const sheet: ICharacterSheet = {
           }],
         }]
       },
-      passive1: {
-        name: tr("passive1.name"),
-        img: passive1,
-        sections: [{
-          text: tr("passive1.description"),
-          conditional: { // Swirl Element
-            value: condSwirlReaction,
-            path: condSwirlReactionPath,
-            header: conditionalHeader("passive1", tr, passive1),
-            description: tr("passive1.description"),
-            name: st("eleSwirled"),
-            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-              fields: [{
-                node: asc1,
-              }, {
-                text: sgt("duration"),
-                value: datamine.passive1.duration,
-                unit: "s"
-              }],
-            }]))
-          },
-        }]
-      },
+      passive1: talentTemplate("passive1", tr, passive1),
       passive2: {
-        name: tr("passive2.name"),
+        name: tr(`passive2.name`),
         img: passive2,
         sections: [{
-          text: tr("passive2.description"),
-          conditional: { // Swirl Element
-            value: condSkillHitOpponent,
-            path: condSkillHitOpponentPath,
-            header: conditionalHeader("passive1", tr, passive1),
-            description: tr("passive1.description"),
-            name: trm("asc4"),
+          text: tr(`passive2.description`),
+          conditional: {
+            value: condAsc4,
+            path: condAsc4Path,
+            name: 'asc4',
             states: {
-              hit: {
+              field: {
                 fields: [{
-                  node: asc4,
-                }, {
-                  text: sgt("duration"),
-                  value: datamine.passive2.duration,
-                  unit: "s"
-                }],
+                  node: asc4
+                }]
               }
             }
           },
@@ -202,4 +176,4 @@ const sheet: ICharacterSheet = {
     },
   },
 };
-export default new CharacterSheet(sheet, data);
+export default new CharacterSheet(sheet, dataObj);
