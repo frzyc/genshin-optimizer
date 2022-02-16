@@ -1,9 +1,9 @@
 import { CharacterData } from 'pipeline'
 import { input } from "../../../Formula/index"
-import { constant, data, infoMut, match, percent, subscript, threshold_add } from "../../../Formula/utils"
+import { constant, data, infoMut, match, min, percent, prod, subscript, sum, threshold_add } from "../../../Formula/utils"
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
-import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { mapNormals } from '../utils'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
@@ -14,18 +14,27 @@ const data_gen = data_gen_src as CharacterData
 const characterKey: CharacterKey = "Xingqiu"
 const elementKey: ElementKey = "hydro"
 const [tr, trm] = trans("char", characterKey)
+
 const { formula: normalDmg, section: normalSection } = mapNormals(datamine.normal.hitArr, [[2, 3], [5, 6]], characterKey)
-// Conditional Input
-// const passive2HydroDmg = constant(datamine.passive2.hydro_dmg_, { key: 'hydro_dmg_', variant: 'hydro' })
-const asc4HydroDmg = threshold_add(input.asc, 4, datamine.passive2.hydro_dmg_)
 
-// const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(characterKey, "skillHit")
-// const [condNormalHitOpponentPath, condNormalHitOpponent] = cond(characterKey, "normalHit")
+const const3TalentInc = threshold_add(input.constellation, 3, 3)
+const const5TalentInc = threshold_add(input.constellation, 5, 3)
+const hydro_dmg_ = threshold_add(input.asc, 4, datamine.passive2.hydro_dmg_)
+const [condC2Path, condC2] = cond(characterKey, "c2")
+const [condC4Path, condC4] = cond(characterKey, "c4")
+const hydro_enemyRes_ = threshold_add(input.constellation, 2,
+  match(condC2, "c2", datamine.constellation2.hydro_enemyRes_))
+// NOTE: This does not show the same value as the old one?
+const skill_dmg_ = threshold_add(input.constellation, 4,
+  match(condC4, "c4", datamine.constellation4.skill_dmg_))
+// TODO: Doesn't display well in the UI
+const skillDuration = sum(datamine.skill.duration,
+  threshold_add(input.constellation, 2, datamine.constellation2.skill_duration))
 
-// Conditional Output
-// const asc1 = threshold_add(input.asc, 1,
-//   unmatch(target.charKey, characterKey,
-//     match(target.charEle, condSwirlReaction, datamine.passive1.eleMas)), { key: "eleMas" })
+const dmgRed = sum(
+  subscript(input.total.skillIndex, datamine.skill.dmgRed),
+  min(0.24, prod(input.total.hydro_dmg_, 0.20))
+)
 
 export const dmgFormulas = {
   normal: normalDmg,
@@ -36,10 +45,10 @@ export const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    press1: dmgNode("atk", datamine.skill.hit1, "skill", { hit: { ele: constant(elementKey) } }),
-    press2: dmgNode("atk", datamine.skill.hit2, "skill", { hit: { ele: constant(elementKey) } }),
+    press1: dmgNode("atk", datamine.skill.hit1, "skill"),
+    press2: dmgNode("atk", datamine.skill.hit2, "skill"),
     // TODO: dmg reduction based on sword count?
-    dmgRed: subscript(input.total.skillIndex, datamine.skill.dmgRed, { key: '_' })
+    dmgRed
   },
   burst: {
     // TODO: burst dmg based on normal attacks?
@@ -49,14 +58,18 @@ export const dmgFormulas = {
 
 export const dataObj = dataObjForCharacterSheet(characterKey, elementKey, "liyue", data_gen, dmgFormulas, {
   bonus: {
-    skill: threshold_add(input.constellation, 3, 3),
-    burst: threshold_add(input.constellation, 5, 3),
+    skill: const5TalentInc,
+    burst: const3TalentInc,
   },
   teamBuff: {
-    // 
+    premod: {
+      hydro_enemyRes_,
+      dmgRed,
+    }
   },
   premod: {
-    hydro_dmg_: asc4HydroDmg
+    hydro_dmg_: hydro_dmg_,
+    skill_dmg_: skill_dmg_
   }
 })
 
@@ -66,9 +79,9 @@ const sheet: ICharacterSheet = {
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  rarity: data_gen.star as Rarity,
+  rarity: data_gen.star,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
+  weaponTypeKey: data_gen.weaponTypeKey,
   gender: "M",
   constellationName: tr("constellationName"),
   title: tr("title"),
@@ -76,17 +89,17 @@ const sheet: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
+        img: normalSrc(data_gen.weaponTypeKey),
         sections: [
           normalSection,
           {
             text: tr(`auto.fields.charged`),
             fields: [{
               node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${characterKey}_gen:auto.skillParams.5` }),
-              textSuffix: "(1)"
+              textSuffix: "(1-Hit)"
             }, {
               node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${characterKey}_gen:auto.skillParams.5` }),
-              textSuffix: "(2)"
+              textSuffix: "(2-Hit)"
             }, {
               text: tr("auto.skillParams.6"),
               value: datamine.charged.stam,
@@ -110,17 +123,17 @@ const sheet: ICharacterSheet = {
           text: tr("skill.description"),
           fields: [{
             node: infoMut(dmgFormulas.skill.press1, { key: `char_${characterKey}_gen:skill.skillParams.0` }),
+            textSuffix: "(1-Hit)"
           }, {
             node: infoMut(dmgFormulas.skill.press2, { key: `char_${characterKey}_gen:skill.skillParams.0` }),
+            textSuffix: "(2-Hit)"
           }, {
             node: infoMut(dmgFormulas.skill.dmgRed, { key: `char_${characterKey}_gen:skill.skillParams.1` }),
           }, {
+            node: infoMut(skillDuration, { key: `char_${characterKey}_gen:skill.skillParams.2` }),
+          }, {
             text: tr("skill.skillParams.3"),
             value: datamine.skill.cd,
-            unit: "s"
-          }, {
-            text: tr("skill.skillParams.2"),
-            value: datamine.skill.duration,
             unit: "s"
           }]
         }]
@@ -147,22 +160,62 @@ const sheet: ICharacterSheet = {
         }]
       },
       passive1: talentTemplate("passive1", tr, passive1),
-      passive2: {
-        name: tr(`passive2.name`),
-        img: passive2,
-        sections: [{
-          text: tr(`passive2.description`),
-          fields: [{
-            node: asc4HydroDmg
-          }]
-        }]
-      },
+      passive2: talentTemplate("passive2", tr, passive2, [{
+        node: hydro_dmg_
+      }]),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
-      constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3),
-      constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5),
+      constellation2: {
+        name: tr("constellation2.name"),
+        img: c2,
+        sections: [{
+          text: tr("constellation2.description"),
+          conditional: {
+            canShow: threshold_add(input.constellation, 2, 1),
+            value: condC2,
+            path: condC2Path,
+            teamBuff: true,
+            name: "Opponent hit by sword rain",
+            header: conditionalHeader("constellation2", tr, c2),
+            description: tr("constellation2.description"),
+            states: {
+              c2: {
+                fields: [
+                  {
+                    node: hydro_enemyRes_
+                  }
+                ]
+              }
+            }
+          },
+        }],
+      },
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: const3TalentInc }]),
+      constellation4:  {
+        name: tr("constellation4.name"),
+        img: c4,
+        sections: [{
+          text: tr("constellation4.description"),
+          conditional: {
+            canShow: threshold_add(input.constellation, 4, 1),
+            value: condC4,
+            path: condC4Path,
+            name: "Elemental Skill DMG Increase",
+            header: conditionalHeader("constellation4", tr, c4),
+            description: tr("constellation4.description"),
+            states: {
+              c4: {
+                fields: [
+                  {
+                    node: skill_dmg_
+                  }
+                ]
+              }
+            }
+          },
+        }],
+      },
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5TalentInc }]),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

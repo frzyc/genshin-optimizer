@@ -37,31 +37,21 @@ export const data = {
     cd: skillParam_gen.burst[2][0],
     cost: skillParam_gen.burst[3][0],
   },
+  passive1: {},
   passive2: {
-    hydro_dmg_: 0.2
-  }
+    hydro_dmg_: 0.20
+  },
+  passive3: {},
+  constellation1: {},
+  constellation2: {
+    hydro_enemyRes_: -0.15,
+    skill_duration: 3
+  },
+  constellation3: {},
+  constellation4: {
+    skill_dmg_: 0.50
+  },
+  constellation5: {},
+  constellation6: {},
 }
 
-const formula: IFormulaSheet = {
-  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) =>
-    [i, stats => basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
-  charged: {
-    hit1: stats => basicDMGFormula(data.charged.hit1[stats.tlvl.auto], stats, "charged"),
-    hit2: stats => basicDMGFormula(data.charged.hit2[stats.tlvl.auto], stats, "charged"),
-  },
-  plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
-    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
-  skill: Object.fromEntries([
-    ...["hit1", "hit2"].map(name =>
-      [name, stats => basicDMGFormula(data.skill[name][stats.tlvl.skill], stats, "skill")]),
-    ...["hit1", "hit2"].map(name =>
-      [`${name}RainCutter`, stats => basicDMGFormula(1.5 * data.skill[name][stats.tlvl.skill], stats, "skill")]),
-    ["dmgRed", stats => {
-      const flat = data.skill.dmgRed[stats.tlvl.skill]
-      return [s => (flat + Math.min(24, 0.2 * s.hydro_dmg_)), ["hydro_dmg_"]]
-    }],
-  ]),
-  burst: {
-    dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
-  },
-} as const
