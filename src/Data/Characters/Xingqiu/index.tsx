@@ -131,10 +131,11 @@ const sheet: ICharacterSheet = {
             node: infoMut(dmgFormulas.skill.press2, { key: `char_${characterKey}_gen:skill.skillParams.0` }),
             textSuffix: "(2-Hit)"
           }, {
-            node: infoMut(dmgFormulas.skill.dmgRed, { key: `char_${characterKey}_gen:skill.skillParams.1` }),
+            // NOTE: We need variant keys for healing and unstyled colors
+            node: infoMut(dmgFormulas.skill.dmgRed, { key: `char_${characterKey}_gen:skill.skillParams.1`, variant: "physical" }),
           }, {
             canShow: uiData => uiData.get(input.asc).value >= 1,
-            node: infoMut(dmgFormulas.skill.healing, { key: `sheet_gen:healing` }),
+            node: infoMut(dmgFormulas.skill.healing, { key: `sheet_gen:healing`, variant: "success" }),
           }, {
             node: infoMut(skillDuration, { key: `char_${characterKey}_gen:skill.skillParams.2` }),
           }, {

@@ -7,11 +7,13 @@ import skillParam_gen from './skillParam_gen.json'
 export const data = {
   normal: {
     hitArr: [
-      (skillParam_gen.auto[0]),
-      (skillParam_gen.auto[1]),
-      (skillParam_gen.auto[2]),//x2
-      (skillParam_gen.auto[4]),
-      (skillParam_gen.auto[5]),//x2
+      (skillParam_gen.auto[0]),//1
+      (skillParam_gen.auto[1]),//2
+      (skillParam_gen.auto[2]),//3
+      (skillParam_gen.auto[3]),//3
+      (skillParam_gen.auto[4]),//4
+      (skillParam_gen.auto[5]),//5
+      (skillParam_gen.auto[6]),//5
     ]
   },
   charged: {
