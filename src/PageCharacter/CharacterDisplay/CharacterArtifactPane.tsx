@@ -1,5 +1,5 @@
 import { Button, Card, CardContent, CardHeader, Divider, Grid, Typography } from '@mui/material';
-import { useCallback, useContext, useEffect } from 'react';
+import { useCallback, useContext, useEffect, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 import ArtifactCard from '../../PageArtifact/ArtifactCard';
 import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
@@ -11,7 +11,7 @@ import { DataContext } from '../../DataContext';
 import { uiInput as input } from '../../Formula';
 import useForceUpdate from '../../ReactHooks/useForceUpdate';
 import usePromise from '../../ReactHooks/usePromise';
-import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
+import { allSlotKeys, SlotKey } from '../../Types/consts';
 import { objectKeyMap } from '../../Util/Util';
 import StatDisplayComponent from '../../Components/Character/StatDisplayComponent';
 
@@ -44,7 +44,7 @@ function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
     database.equipArtifacts(character.key, objectKeyMap(allSlotKeys, _ => ""))
   }, [character, database])
   const artIds = allSlotKeys.map(slotKey => data.get(input.art[slotKey].id).value)
-  const artSetNums = Object.entries(input.artSet).map(([key, value]) => [key, data.get(value).value]) as [ArtifactSetKey, number][]
+  const setEffects = useMemo(() => artifactSheets && ArtifactSheet.setEffects(artifactSheets, data), [artifactSheets, data])
   return <>
     <CardLight sx={{ mb: 1 }}>
       <CardContent>
@@ -63,7 +63,7 @@ function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
     </CardLight>
     <Grid container spacing={1}>
       <Grid item xs={12} sm={6} md={4} display="flex" flexDirection="column" gap={1}>
-        {artifactSheets && ArtifactSheet.setEffects(artifactSheets, artSetNums).map(([setKey, setNumKeyArr]) =>
+        {artifactSheets && setEffects && Object.entries(setEffects).map(([setKey, setNumKeyArr]) =>
           <CardLight key={setKey} sx={{ flexGrow: 1, }} >
             <CardHeader avatar={<ImgIcon size={2} sx={{ m: -1 }} src={artifactSheets[setKey].defIconSrc} />} title={artifactSheets[setKey].name} titleTypographyProps={{ variant: "subtitle1" }} />
             <Divider />

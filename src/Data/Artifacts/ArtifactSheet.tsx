@@ -4,6 +4,8 @@ import { mergeData } from "../../Formula/api";
 import { Data } from "../../Formula/type";
 import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey } from "../../Types/consts";
 import { DocumentSection } from "../../Types/sheet";
+import { UIData } from "../../Formula/uiData"
+import { input } from "../../Formula"
 
 // TODO: remove typecasting once all sheets populated
 const artifactSheets = import(".").then(imp => imp.default)
@@ -78,16 +80,13 @@ export class ArtifactSheet {
     return grouped
   }
 
-  static setEffects(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, setToSlots: [ArtifactSetKey, number][]) {
-    let artifactSetEffect: [ArtifactSetKey, SetNum[]][] = []
-    setToSlots.forEach(([set, slots]) => {
-      if (!slots) return
-      let setNum = Object.keys(sheets[set]?.setEffects ?? {})
-        .map(setNum => parseInt(setNum) as SetNum)
-        .filter(setNum => setNum <= slots)
-      if (setNum.length)
-        artifactSetEffect.push([set, setNum])
+  static setEffects(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, data: UIData) {
+    const artifactSetEffect: Partial<Record<ArtifactSetKey, SetNum[]>> = {}
+    Object.entries(sheets).forEach(([setKey, sheet]) => {
+      const setNums = (Object.keys(sheet.setEffects).map(k => parseInt(k)) as SetNum[]).filter(sn => sheet.hasEnough(sn, data))
+      if (setNums.length) artifactSetEffect[setKey] = setNums
     })
     return artifactSetEffect
   }
+  hasEnough = (setNum: SetNum, data: UIData) => (data.get(input.artSet[this.key]).value ?? 0) >= setNum
 }

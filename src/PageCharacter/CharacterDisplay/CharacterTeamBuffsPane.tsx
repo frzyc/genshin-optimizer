@@ -1,7 +1,7 @@
 import { PersonAdd } from "@mui/icons-material";
 import { CardContent, Divider, Grid } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import CardLight from "../../Components/Card/CardLight";
 import CharacterDropdownButton from "../../Components/Character/CharacterDropdownButton";
 import ConditionalDisplay from "../../Components/ConditionalDisplay";
@@ -118,9 +118,14 @@ function TeammateDisplay({ index }: { index: number }) {
 
 }
 function CharArtifactCondDisplay({ dataContext }: { dataContext: dataContextObj }) {
+  const { data, } = useContext(DataContext)
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
-  if (!artifactSheets) return null
-  const sections = Object.values(artifactSheets).flatMap(s => Object.values(s.setEffects).flatMap(se => se?.document)).filter(d => d) as DocumentSection[]
+  const sections = useMemo(() => artifactSheets &&
+    Object.entries(ArtifactSheet.setEffects(artifactSheets, data))
+      .flatMap(([setKey, setNums]) =>
+        setNums.flatMap(sn => artifactSheets[setKey]!.setEffectDocument(sn)!))
+    , [artifactSheets, data])
+  if (!sections) return null
   return <DisplaySectionsTeamCond sections={sections} dataContext={dataContext} />
 }
 function CharWeaponCondDisplay({ dataContext }: { dataContext: dataContextObj }) {
