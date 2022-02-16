@@ -20,10 +20,10 @@ const allMisc = [
 
 const allModStats = [
   ...allMainSubStats,
+  ...(["all", "burning", ...allTransformative, ...allAmplifying, ...allMoves] as const).map(x => `${x}_dmg_` as const),
 ]
 const allNonModStats = [
   ...(["all", ...allMoves] as const).map(x => `${x}_dmgInc` as const),
-  ...(["all", "burning", ...allTransformative, ...allAmplifying, ...allMoves] as const).map(x => `${x}_dmg_` as const),
   ...([...allElements] as const).map(x => `${x}_critDMG_` as const),
   ...allElements.map(x => `${x}_res_` as const),
   ...allMoves.map(x => `${x}_critRate_` as const),
