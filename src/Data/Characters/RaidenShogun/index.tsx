@@ -1,58 +1,175 @@
-import card from './Character_Raiden_Shogun_Card.png'
-import thumb from './Icon.png'
-import thumbSide from './IconSide.png'
-import banner from './Banner.png'
-import c1 from './constellation1.png'
-import c2 from './constellation2.png'
-import c3 from './constellation3.png'
-import c4 from './constellation4.png'
-import c5 from './constellation5.png'
-import c6 from './constellation6.png'
-import skill from './skill.png'
-import burst from './burst.png'
-import passive1 from './passive1.png'
-import passive2 from './passive2.png'
-import passive3 from './passive3.png'
-import Stat from '../../../Stat'
-import formula, { data, energyCosts, getResolve, resolveStacks } from './data'
-import data_gen from './data_gen.json'
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../PageBuild/Build'
-import { ICharacterSheet } from '../../../Types/character'
-import { Translate } from '../../../Components/Translate'
-import { chargedDocSection, conditionalHeader, normalSrc, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
-import { WeaponTypeKey } from '../../../Types/consts'
-import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
-import { FormulaPathBase } from '../../formula'
-import { KeyPath } from '../../../Util/KeyPathUtil'
-const path = KeyPath<FormulaPathBase, any>().character.RaidenShogun
-const tr = (strKey: string) => <Translate ns="char_RaidenShogun_gen" key18={strKey} />
-const charTr = (strKey: string) => <Translate ns="char_RaidenShogun" key18={strKey} />
+import { CharacterData } from 'pipeline'
+import { input } from '../../../Formula'
+import { constant, infoMut, lookup, match, matchFull, percent, prod, subscript, sum, threshold, threshold_add, unmatch } from '../../../Formula/utils'
+import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
+import { objectKeyMap } from '../../../Util/Util'
+import { cond, trans } from '../../SheetUtil'
+import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
+import data_gen_src from './data_gen.json'
+import skillParam_gen from './skillParam_gen.json'
 
-function burstDMGFormulaText(percent, stats, intial = false) {
-  const resolveStack = getResolve(stats)
+const data_gen = data_gen_src as CharacterData
 
-  const resolve = (intial ? data.burst.resolve[stats.tlvl.burst] : data.burst.resolve_[stats.tlvl.burst])
-  let ratioText = <span>{percent}%</span>
-  if (resolveStack)
-    ratioText = <span>( {percent}% + {resolve}% * {resolveStack} ) * </span>
-  if (stats.constellation < 2)
-    return <span>{ratioText} {Stat.printStat(getTalentStatKey("burst", stats), stats)} </span>
+const key: CharacterKey = "RaidenShogun"
+const [tr, trm] = trans("char", key)
 
-  const hitModeMultiKey = stats.hitMode === "avgHit" ? "burst_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
-  return <span>{ratioText} {Stat.printStat("finalATK", stats)} * {(hitModeMultiKey ? <span>{Stat.printStat(hitModeMultiKey, stats)} * </span> : null)}{Stat.printStat("electro_burst_hit_base_multi", stats)} * {enemyLevelMultiC2(stats)} * {Stat.printStat("electro_enemyRes_multi", stats)}</span>
+let a = 0, s = 0, b = 0, p2 = 0
+const datamine = {
+  normal: {
+    hitArr: [
+      skillParam_gen.auto[a++], // 1
+      skillParam_gen.auto[a++], // 2
+      skillParam_gen.auto[a++], // 3
+      skillParam_gen.auto[a++], // 4.1
+      skillParam_gen.auto[a++], // 4.2
+      skillParam_gen.auto[a++], // 5
+    ]
+  },
+  charged: {
+    dmg: skillParam_gen.auto[a++],
+    stamina: skillParam_gen.auto[a++][0],
+  },
+  plunging: {
+    dmg: skillParam_gen.auto[a++],
+    low: skillParam_gen.auto[a++],
+    high: skillParam_gen.auto[a++],
+  },
+  skill: {
+    skillDmg: skillParam_gen.skill[s++],
+    coorDmg: skillParam_gen.skill[s++],
+    duration: skillParam_gen.skill[s++][0],
+    burstDmg_bonus: skillParam_gen.skill[s++],
+    cd: skillParam_gen.skill[s++][0],
+  },
+  burst: {
+    dmg: skillParam_gen.burst[b++],
+    resolveBonus1: skillParam_gen.burst[b++],
+    resolveBonus2: skillParam_gen.burst[b++],
+    resolveGained: skillParam_gen.burst[b++],
+    hit1: skillParam_gen.burst[b++],
+    hit2: skillParam_gen.burst[b++],
+    hit3: skillParam_gen.burst[b++],
+    hit41: skillParam_gen.burst[b++],
+    hit42: skillParam_gen.burst[b++],
+    hit5: skillParam_gen.burst[b++],
+    charged1: skillParam_gen.burst[b++],
+    charged2: skillParam_gen.burst[b++],
+    stam: skillParam_gen.burst[b++][0],
+    plunge: skillParam_gen.burst[b++],
+    plungeLow: skillParam_gen.burst[b++],
+    plungeHigh: skillParam_gen.burst[b++],
+    enerGen: skillParam_gen.burst[b++],
+    duration: skillParam_gen.burst[b++][0],
+    cd: skillParam_gen.burst[b++][0],
+    enerCost: skillParam_gen.burst[b++][0],
+  },
+  passive2: {
+    er: skillParam_gen.passive2[p2++][0],
+    energyGen: skillParam_gen.passive2[p2++][0],
+    electroDmg_bonus: skillParam_gen.passive2[p2++][0],
+  },
+  constellation2: {
+    def_ignore: skillParam_gen.constellation2[0],
+  },
+  constellation4: {
+    atk_bonus: skillParam_gen.constellation4[0],
+    duration: skillParam_gen.constellation4[1],
+  },
+} as const
+
+// Used to bool whether Raiden is C2 and above; 1: yes, 0: no
+const c2Above = threshold(input.constellation, 2, 1, 0)
+
+const [condSkillEyePath, condSkillEye] = cond(key, "skillEye")
+const skillEye_ = match("skillEye", condSkillEye,
+  prod(datamine.burst.enerCost, subscript(input.total.skillIndex, datamine.skill.burstDmg_bonus.map(x => x), { key: '_' })))
+
+function skillDmg(atkType: number[]) {
+  // if Raiden is above or equal to C2, then account for DEF Ignore else not
+  return matchFull(c2Above, 1,
+    customDmgNode(prod(subscript(input.total.skillIndex, atkType, { key: '_' }), input.total.atk), 'skill', { enemy: { defIgn: constant(datamine.constellation2.def_ignore) } }),
+    customDmgNode(prod(subscript(input.total.skillIndex, atkType, { key: '_' }), input.total.atk), 'skill', {}),
+  )
 }
 
-function skillDMGFormulaText(percent, stats) {
-  if (stats.constellation < 2)
-    return basicDMGFormulaText(percent, stats, "skill")
+const energyCosts = [40, 50, 60, 70, 80, 90]
+const [condSkillEyeTeamPath, condSkillEyeTeam] = cond(key, "skillEyeTeam")
+const skillEyeTeamBurstDmgInc = unmatch(input.activeCharKey, input.charKey,
+  prod(lookup(condSkillEyeTeam, objectKeyMap(energyCosts, i => constant(i)), 0),
+    subscript(input.total.skillIndex, datamine.skill.burstDmg_bonus.map(x => x), { key: '_' })))
 
-  const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
-  return <span>{percent}% {Stat.printStat("finalATK", stats)} * {(hitModeMultiKey ? <span>{Stat.printStat(hitModeMultiKey, stats)} * </span> : null)}{Stat.printStat("electro_skill_hit_base_multi", stats)} * {enemyLevelMultiC2(stats)} * {Stat.printStat("electro_enemyRes_multi", stats)}</span>
+const resolveStacks = [10, 20, 30, 40, 50, 60]
+const [condResolveStackPath, condResolveStack] = cond(key, "burstResolve")
+
+function burstResolve(atkType: number[], initial = false) {
+  let resolveBonus = initial ? datamine.burst.resolveBonus1 : datamine.burst.resolveBonus2
+
+  // if Raiden is above or equal to C2, then account for DEF Ignore else not
+  return matchFull(c2Above, 1,
+    customDmgNode(prod(sum(subscript(input.total.burstIndex, atkType, { key: '_' }),
+      prod(subscript(input.total.burstIndex, resolveBonus.map(x => x), { key: '_' }),
+        lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0))), input.total.atk), 'burst', { hit: { ele: constant('electro') }, enemy: { defIgn: constant(datamine.constellation2.def_ignore) } }),
+    customDmgNode(prod(sum(subscript(input.total.burstIndex, atkType, { key: '_' }),
+      prod(subscript(input.total.burstIndex, resolveBonus.map(x => x), { key: '_' }),
+        lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0))), input.total.atk), 'burst', { hit: { ele: constant('electro') } }))
 }
-function enemyLevelMultiC2(stats) {
-  return <span>( ( 100 + {Stat.printStat("characterLevel", stats)} ) / ( 100 + {Stat.printStat("characterLevel", stats)} + ( 100 + {Stat.printStat("enemyLevel", stats)} ) * Max( ( 100% - {Stat.printStat("enemyDEFRed_", stats)} ) * ( 100% - 60% ) , 10% ) ) )</span>
+
+const passive2ElecDmgBonus = threshold_add(input.asc, 4, prod(sum(input.total.enerRech_, percent(-1)), (datamine.passive2.electroDmg_bonus * 100)))
+
+const [condC4Path, condC4] = cond(key, "c4")
+const c4AtkBonus_ = threshold_add(input.constellation, 4,
+  match("c4", condC4, unmatch(input.activeCharKey, input.charKey, datamine.constellation4.atk_bonus))
+)
+
+const dmgFormulas = {
+  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+    [i, dmgNode("atk", arr, "normal")])),
+  charged: {
+    dmg: dmgNode("atk", datamine.charged.dmg, "charged"),
+  },
+  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+    [key, dmgNode("atk", value, "plunging")])),
+  skill: {
+    dmg: skillDmg(datamine.skill.skillDmg),
+    coorDmg: skillDmg(datamine.skill.coorDmg),
+    skillEye_
+  },
+  burst: {
+    dmg: burstResolve(datamine.burst.dmg, true),
+    hit1: burstResolve(datamine.burst.hit1),
+    hit2: burstResolve(datamine.burst.hit2),
+    hit3: burstResolve(datamine.burst.hit3),
+    hit41: burstResolve(datamine.burst.hit41),
+    hit42: burstResolve(datamine.burst.hit42),
+    hit5: burstResolve(datamine.burst.hit5),
+    charged1: burstResolve(datamine.burst.charged1),
+    charged2: burstResolve(datamine.burst.charged2),
+    plunge: burstResolve(datamine.burst.plunge),
+    plungeLow: burstResolve(datamine.burst.plungeLow),
+    plungeHigh: burstResolve(datamine.burst.plungeHigh),
+  },
 }
-const char: ICharacterSheet = {
+
+export const data = dataObjForCharacterSheet(key, "electro", "inazuma", data_gen, dmgFormulas, {
+  bonus: {
+    skill: threshold_add(input.constellation, 5, 3),
+    burst: threshold_add(input.constellation, 3, 3),
+  },
+  premod: {
+    burst_dmg_: skillEye_,
+    electro_dmg_: passive2ElecDmgBonus,
+  },
+  teamBuff: {
+    premod: {
+      atk_: c4AtkBonus_,
+      burst_dmg_: skillEyeTeamBurstDmgInc
+    }
+  }
+})
+
+const sheet: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
@@ -64,11 +181,7 @@ const char: ICharacterSheet = {
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),
-  baseStat: data_gen.base,
-  baseStatCurve: data_gen.curves,
-  ascensions: data_gen.ascensions,
   talent: {
-    formula,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -76,16 +189,29 @@ const char: ICharacterSheet = {
         sections: [
           {
             text: tr("auto.fields.normal"),
-            fields: data.normal.hitArr.map((percentArr, i) =>
+            fields: datamine.normal.hitArr.map((_, i) =>
             ({
-              text: <span>{sgt(`normal.hit${i + 1}`)} {i === 2 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
-              formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-              formula: formula.normal[i],
-              variant: stats => getTalentStatKeyVariant("normal", stats),
+              node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i + (i < 4 ? 0 : -1)}` }),
+              textSuffix: i === 3 ? "(1)" : i === 4 ? "(2)" : ""
             }))
-          },
-          chargedDocSection(tr, formula, data, data.charged.stam),
-          plungeDocSection(tr, formula, data)
+          }, {
+            text: tr("auto.fields.charged"),
+            fields: [{
+              node: infoMut(dmgFormulas.charged.dmg, { key: `char_${key}_gen:auto.skillParams.5` }),
+            }, {
+              text: tr("auto.skillParams.6"),
+              value: datamine.charged.stamina,
+            }]
+          }, {
+            text: tr("auto.fields.plunging"),
+            fields: [{
+              node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+            }, {
+              node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+            }, {
+              node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+            }]
+          }
         ],
       },
       skill: {
@@ -94,57 +220,44 @@ const char: ICharacterSheet = {
         sections: [{
           text: tr("skill.description"),
           fields: [{
-            text: tr("skill.skillParams.0"),
-            formulaText: stats => skillDMGFormulaText(data.skill.skillDMG[stats.tlvl.skill], stats),
-            formula: formula.skill.skillDMG,
-            variant: stats => getTalentStatKeyVariant("skill", stats),
+            node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
           }, {
-            text: tr("skill.skillParams.1"),
-            formulaText: stats => skillDMGFormulaText(data.skill.coorDMG[stats.tlvl.skill], stats),
-            formula: formula.skill.coorDMG,
-            variant: stats => getTalentStatKeyVariant("skill", stats),
+            node: infoMut(dmgFormulas.skill.coorDmg, { key: `char_${key}_gen:skill.skillParams.1` }),
           }, {
             text: tr("skill.skillParams.2"),
-            value: data.skill.duration
+            value: `${datamine.skill.duration}s`,
           }, {
             text: tr("skill.skillParams.4"),
-            value: data.skill.cd
+            value: `${datamine.skill.cd}s`,
           }],
           conditional: {
-            key: "e",
-            name: charTr("skill.eye"),
-            stats: {
-              modifiers: { burst_dmg_: [path.skill.eleBurConv()] },
-            },
-            fields: [{
-              text: tr("skill.skillParams.3"),
-              formulaText: stats => <span>{data.skill.eleBurConv[stats.tlvl.skill] * 100}% * {data.burst.enerCost}</span>,
-              formula: formula.skill.eleBurConv,
-              fixed: 1,
-              unit: "%"
-            },]
+            value: condSkillEye,
+            path: condSkillEyePath,
+            name: trm("skill.eye"),
+            states: {
+              skillEye: {
+                fields: [{
+                  node: skillEye_
+                }]
+              }
+            }
           },
         }, {
           conditional: {
-            key: "ep",
-            partyBuff: "partyOnly",
+            value: condSkillEyeTeam,
+            path: condSkillEyeTeamPath,
             header: conditionalHeader("skill", tr, skill),
             description: tr("skill.description"),
-            name: charTr("skill.partyCost"),
+            teamBuff: true,
+            canShow: unmatch(input.activeCharKey, input.charKey, 1),
+            name: trm("skill.partyCost"),
             states: Object.fromEntries(energyCosts.map(c => [c, {
               name: `${c}`,
               fields: [{
-                text: tr("skill.skillParams.3"),
-                formulaText: stats => <span>{data.skill.eleBurConv[stats.tlvl.skill] * 100}% * {c}</span>,
-                formula: formula.skill[c],
-                fixed: 1,
-                unit: "%"
-              }],
-              stats: {
-                modifiers: { burst_dmg_: [[...path.skill(), `${c}`]] },
-              },
+                node: skillEyeTeamBurstDmgInc,
+              }]
             }]))
-          },
+          }
         }]
       },
       burst: {
@@ -153,90 +266,56 @@ const char: ICharacterSheet = {
         sections: [{
           text: tr("burst.description"),
           fields: [{
-            text: tr("burst.skillParams.0"),
-            formulaText: stats => burstDMGFormulaText(data.burst.dmg[stats.tlvl.burst], stats, true),
-            formula: formula.burst.dmg,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
+            node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
           }, {
-            text: tr("burst.skillParams.3"),
-            formulaText: stats => burstDMGFormulaText(data.burst.hit1[stats.tlvl.burst], stats),
-            formula: formula.burst.hit1,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
+            node: infoMut(dmgFormulas.burst.hit1, { key: `char_${key}_gen:burst.skillParams.3` }),
           }, {
-            text: tr("burst.skillParams.4"),
-            formulaText: stats => burstDMGFormulaText(data.burst.hit2[stats.tlvl.burst], stats),
-            formula: formula.burst.hit2,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
+            node: infoMut(dmgFormulas.burst.hit2, { key: `char_${key}_gen:burst.skillParams.4` }),
           }, {
-            text: tr("burst.skillParams.5"),
-            formulaText: stats => burstDMGFormulaText(data.burst.hit3[stats.tlvl.burst], stats),
-            formula: formula.burst.hit3,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
+            node: infoMut(dmgFormulas.burst.hit3, { key: `char_${key}_gen:burst.skillParams.5` }),
           }, {
-            text: tr("burst.skillParams.6"),
-            formulaText: stats => burstDMGFormulaText(data.burst.hit41[stats.tlvl.burst], stats),
-            formula: formula.burst.hit41,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
+            node: infoMut(dmgFormulas.burst.hit41, { key: `char_${key}_gen:burst.skillParams.6` }),
+            textSuffix: "(1)"
           }, {
-            text: tr("burst.skillParams.6"),
-            formulaText: stats => burstDMGFormulaText(data.burst.hit42[stats.tlvl.burst], stats),
-            formula: formula.burst.hit42,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
+            node: infoMut(dmgFormulas.burst.hit42, { key: `char_${key}_gen:burst.skillParams.6` }),
+            textSuffix: "(2)"
           }, {
-            text: tr("burst.skillParams.7"),
-            formulaText: stats => burstDMGFormulaText(data.burst.hit5[stats.tlvl.burst], stats),
-            formula: formula.burst.hit5,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
+            node: infoMut(dmgFormulas.burst.hit5, { key: `char_${key}_gen:burst.skillParams.7` }),
           }, {
-            text: tr("burst.skillParams.8"),
-            formulaText: stats => burstDMGFormulaText(data.burst.charged1[stats.tlvl.burst], stats),
-            formula: formula.burst.charged1,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
+            node: infoMut(dmgFormulas.burst.charged1, { key: `char_${key}_gen:burst.skillParams.8` }),
+            textSuffix: "(1)"
           }, {
-            text: tr("burst.skillParams.8"),
-            formulaText: stats => burstDMGFormulaText(data.burst.charged2[stats.tlvl.burst], stats),
-            formula: formula.burst.charged2,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
+            node: infoMut(dmgFormulas.burst.charged2, { key: `char_${key}_gen:burst.skillParams.8` }),
+            textSuffix: "(2)"
           }, {
             text: tr("burst.skillParams.9"),
-            value: data.burst.stam,
+            value: `${datamine.burst.stam}`,
           }, {
-            text: tr("burst.skillParams.10"),
-            formulaText: stats => burstDMGFormulaText(data.burst.plunge[stats.tlvl.burst], stats),
-            formula: formula.burst.plunge,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
+            node: infoMut(dmgFormulas.burst.plunge, { key: `char_${key}_gen:burst.skillParams.10` }),
           }, {
-            text: tr("burst.skillParams.11"),
-            formulaText: stats => burstDMGFormulaText(data.burst.plungeLow[stats.tlvl.burst], stats),
-            formula: formula.burst.plungeLow,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
+            node: infoMut(dmgFormulas.burst.plungeLow, { key: `char_${key}_gen:burst.skillParams.11` }),
           }, {
-            text: tr("burst.skillParams.11"),
-            formulaText: stats => burstDMGFormulaText(data.burst.plungeHigh[stats.tlvl.burst], stats),
-            formula: formula.burst.plungeHigh,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
-          },
-          {
+            node: infoMut(dmgFormulas.burst.plungeHigh, { key: `char_${key}_gen:burst.skillParams.11` }),
+          }, {
             text: tr("burst.skillParams.12"),
-            value: stats => data.burst.enerGen[stats.tlvl.burst],
-            fixed: 1
+            value: (data) => `${datamine.burst.enerGen[data.get(input.total.burstIndex).value]}`,
           }, {
             text: tr("burst.skillParams.13"),
-            value: data.burst.duration,
-            unit: "s"
+            value: `${datamine.burst.duration}s`,
           }, {
             text: tr("burst.skillParams.14"),
-            value: data.burst.cd,
-            unit: "s"
+            value: `${datamine.burst.cd}s`,
           }, {
             text: tr("burst.skillParams.15"),
-            value: data.burst.enerCost,
+            value: `${datamine.burst.enerCost}`,
           }],
           conditional: {
-            key: "q",
-            name: charTr("burst.resolves"),
+            value: condResolveStack,
+            path: condResolveStackPath,
+            name: trm("burst.resolves"),
             states: Object.fromEntries(resolveStacks.map(c => [c, {
               name: `${c}`,
+              fields: []
             }]))
           }
         }],
@@ -248,52 +327,50 @@ const char: ICharacterSheet = {
         sections: [{
           text: tr("passive2.description"),
           fields: [{
-            canShow: stats => stats.ascension >= 4,
-            text: charTr("a4.enerRest"),
-            value: stats => {
-              return (stats.enerRech_ - 100) * 0.6
+            canShow: data => data.get(input.asc).value >= 4,
+            text: trm("a4.enerRest"),
+            value: (data) => {
+              return (data.get(input.total.enerRech_).value * 100 - 100) * (datamine.passive2.energyGen * 100)
             },
             unit: "%"
           }, {
-            text: charTr("a4.eleDMG"),
-            formulaText: stats => <span>( {Stat.printStat("enerRech_", stats)} - 100% ) * 0.4</span>,
-            formula: formula.a4.eleDMG,
-            fixed: 1,
-            unit: "%"
-          }],
-          conditional: {
-            key: "a4",
-            canShow: stats => stats.ascension >= 4,
-            maxStack: 0,
-            stats: {
-              modifiers: { electro_dmg_: [path.a4.eleDMG()] },
-            }
-          }
-        }],
+            node: passive2ElecDmgBonus,
+          }]
+        }]
       },
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
+      constellation3: talentTemplate("constellation3", tr, c3),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
         sections: [{
           text: tr("constellation4.description"),
           conditional: {
-            key: "c4",
-            canShow: stats => stats.constellation >= 4,
-            partyBuff: "partyOnly",
+            value: condC4,
+            path: condC4Path,
+            teamBuff: true,
+            canShow: threshold_add(input.constellation, 4, unmatch(input.activeCharKey, input.charKey, 1)),
             header: conditionalHeader("constellation4", tr, c4),
             description: tr("constellation4.description"),
-            name: charTr("c4.expires"),
-            stats: { atk_: 30 }
+            name: trm("c4.expires"),
+            states: {
+              c4: {
+                fields: [{
+                  node: c4AtkBonus_,
+                }, {
+                  text: tr("skill.skillParams.2"),
+                  value: `${datamine.constellation4.duration}s`
+                }]
+              }
+            }
           }
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
+      constellation5: talentTemplate("constellation5", tr, c5),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };
-export default char;
+export default new CharacterSheet(sheet, data);
