@@ -98,6 +98,7 @@ export const allCharacterKeys = [
   // "Thoma",
   // "Gorou",
   // "AratakiItto"
+  "YaeMiko"
 ] as const
 export const allWeaponKeys = [
   "CalamityQueller",

@@ -61,34 +61,28 @@ export function res(base: Num): NumNode {
   return { operation: "res", operands: intoOps([base]) }
 }
 
-/** v1 == v2 ? pass : fail */
-export function equal(v1: Num, v2: Num, pass: Num, fail: 0, info?: Info): MatchNode<NumNode, NumNode>
-export function equal(v1: Num, v2: Num, pass: Str, fail: undefined, info?: Info): MatchNode<StrNode, NumNode>
-export function equal(v1: Str, v2: Str, pass: Num, fail: 0, info?: Info): MatchNode<NumNode, NumNode>
-export function equal(v1: Str, v2: Str, pass: Str, fail: undefined, info?: Info): MatchNode<StrNode, NumNode>
-export function equal(v1: Num | Str, v2: Num | Str, pass: Num | Str, fail: Num | Str, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(pass), intoV(fail)], info, emptyOn: "unmatch" }
+/** v1 == v2 ? pass : 0 */
+export function equal(v1: Num, v2: Num, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
+export function equal(v1: Str, v2: Str, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
+export function equal(v1: Num | Str, v2: Num | Str, pass: Num, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(pass), intoV(0)], info, emptyOn: "unmatch" }
 }
-/** v1 != v2 ? pass : fail */
-export function unequal(v1: Num, v2: Num, pass: Num, fail: 0, info?: Info): MatchNode<NumNode, NumNode>
-export function unequal(v1: Num, v2: Num, pass: Str, fail: undefined, info?: Info): MatchNode<StrNode, NumNode>
-export function unequal(v1: Str, v2: Str, pass: Num, fail: 0, info?: Info): MatchNode<NumNode, NumNode>
-export function unequal(v1: Str, v2: Str, pass: Str, fail: undefined, info?: Info): MatchNode<StrNode, NumNode>
-export function unequal(v1: Num | Str, v2: Num | Str, pass: Num | Str, fail: Num | Str, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(fail), intoV(pass)], info, emptyOn: "match" }
+/** v1 != v2 ? pass : 0 */
+export function unequal(v1: Num, v2: Num, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
+export function unequal(v1: Str, v2: Str, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
+export function unequal(v1: Num | Str, v2: Num | Str, pass: Num | Str, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(0), intoV(pass)], info, emptyOn: "match" }
 }
-/** v1 >= v2 ? pass : fail */
-export function greaterEq(v1: Num, v2: Num, pass: Str, fail: undefined, info?: Info): StrNode
-export function greaterEq(v1: Num, v2: Num, pass: Num, fail: 0, info?: Info): NumNode
-export function greaterEq(v1: Num, v2: Num, pass: Num | Str, fail: Num | Str, info?: Info): NumNode | StrNode {
-  const operands = [intoV(v1), intoV(v2), intoV(pass), intoV(fail)] as any
+/** v1 >= v2 ? pass : 0 */
+export function greaterEq(v1: Num, v2: Num, pass: Num, info?: Info): NumNode
+export function greaterEq(v1: Num, v2: Num, pass: Num, info?: Info): NumNode | StrNode {
+  const operands = [intoV(v1), intoV(v2), intoV(pass), intoV(0)] as any
   return { operation: "threshold", operands, info, emptyOn: "l" }
 }
-/** v1 < v2 ? pass : fail */
-export function lessThan(v1: Num, v2: Num, pass: Str, fail: undefined, info?: Info): StrNode
-export function lessThan(v1: Num, v2: Num, pass: Num, fail: 0, info?: Info): NumNode
-export function lessThan(v1: Num, v2: Num, pass: Num | Str, fail: Num | Str, info?: Info): NumNode | StrNode {
-  const operands = [intoV(v1), intoV(v2), intoV(fail), intoV(pass)] as any
+/** v1 < v2 ? pass : 0 */
+export function lessThan(v1: Num, v2: Num, pass: Num, info?: Info): NumNode
+export function lessThan(v1: Num, v2: Num, pass: Num | Str, info?: Info): NumNode | StrNode {
+  const operands = [intoV(v1), intoV(v2), intoV(0), intoV(pass)] as any
   return { operation: "threshold", operands, info, emptyOn: "ge" }
 }
 
