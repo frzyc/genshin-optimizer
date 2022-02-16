@@ -16,11 +16,9 @@ const elementKey: ElementKey = "hydro"
 const [tr, trm] = trans("char", characterKey)
 const { formula: normalDmg, section: normalSection } = mapNormals(datamine.normal.hitArr, [[2, 3], [5, 6]], characterKey)
 // Conditional Input
-const [condAsc4Path, condAsc4] = cond(characterKey, "asc4")
-const passive2HydroDmg = constant(datamine.passive2.hydro_dmg_, { key: 'hydro_dmg_', variant: 'hydro' })
-const asc4HydroDmg = threshold_add(input.asc, 4,
-  match("asc4", condAsc4, passive2HydroDmg)
-)
+// const passive2HydroDmg = constant(datamine.passive2.hydro_dmg_, { key: 'hydro_dmg_', variant: 'hydro' })
+const asc4HydroDmg = threshold_add(input.asc, 4, datamine.passive2.hydro_dmg_)
+
 // const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(characterKey, "skillHit")
 // const [condNormalHitOpponentPath, condNormalHitOpponent] = cond(characterKey, "normalHit")
 
@@ -155,7 +153,7 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr(`passive2.description`),
           fields: [{
-            node: passive2HydroDmg
+            node: asc4HydroDmg
           }]
         }]
       },
