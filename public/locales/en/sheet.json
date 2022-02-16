@@ -30,5 +30,6 @@
   "eleSwirled": "Swirled Element",
   "absorDot": "Absorption DoT",
   "incInterRes": "Increase resistance to interruption",
-  "charges": "Charges"
+  "charges": "Charges",
+  "activeCharField": "Active Character in field"
 }

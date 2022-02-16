@@ -28,22 +28,6 @@ export function infoMut(node: NumNode | StrNode, info: Info): NumNode | StrNode 
   if (info) node.info = { ...node.info, ...info }
   return node
 }
-/** `v1` === `v2` ? `match` : 0 */
-export function match(v1: Str, v2: Str, match: Num, info?: Info): NumNode {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(0)], info, emptyOn: "unmatch" }
-}
-/** `v1` === `v2` ? 0 : `unmatch` */
-export function unmatch(v1: Str, v2: Str, unmatch: Num, info?: Info): NumNode {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(0), intoV(unmatch)], info, emptyOn: "match" }
-}
-/** `v1` === `v2` ? `match` : `unmatch` */
-export function matchFull(v1: Num, v2: Num, match: Num, unmatch: Num, info?: Info): MatchNode<NumNode, NumNode>
-export function matchFull(v1: Num, v2: Num, match: Str, unmatch: Str, info?: Info): MatchNode<StrNode, NumNode>
-export function matchFull(v1: Str, v2: Str, match: Num, unmatch: Num, info?: Info): MatchNode<NumNode, StrNode>
-export function matchFull(v1: Str, v2: Str, match: Str, unmatch: Str, info?: Info): MatchNode<StrNode, StrNode>
-export function matchFull(v1: Num | Str, v2: Num | Str, match: Num | Str, unmatch: Num | Str, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(unmatch)], info }
-}
 
 /** `table[string] ?? defaultNode` */
 export function lookup(index: StrNode, table: Dict<string, NumNode>, defaultV: Num | "none", info?: Info): NumNode
@@ -73,19 +57,33 @@ export function prod(...values: Num[]): NumNode {
 export function frac(x: Num, c: Num): NumNode {
   return { operation: "sum_frac", operands: intoOps([x, c]) }
 }
-/** value >= threshold ? addition : 0 */
-export function threshold_add(value: Num, thres: Num, addition: Num, info?: Info): NumNode {
-  return threshold(value, thres, addition, 0, info)
-}
-/** value >= threshold ? value : emptyValue */
-export function threshold(value: Num, threshold: Num, pass: Str, fail: Str, info?: Info): StrNode
-export function threshold(value: Num, threshold: Num, pass: Num, fail: Num, info?: Info): NumNode
-export function threshold(value: Num, threshold: Num, pass: Num | Str, fail: Num | Str, info?: Info): NumNode | StrNode {
-  const operands = [intoV(value), intoV(threshold), intoV(pass), intoV(fail)] as any
-  return { operation: "threshold", operands, info }
-}
 export function res(base: Num): NumNode {
   return { operation: "res", operands: intoOps([base]) }
+}
+
+/** v1 == v2 ? pass : 0 */
+export function equal(v1: Num, v2: Num, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
+export function equal(v1: Str, v2: Str, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
+export function equal(v1: Num | Str, v2: Num | Str, pass: Num, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(pass), intoV(0)], info, emptyOn: "unmatch" }
+}
+/** v1 != v2 ? pass : 0 */
+export function unequal(v1: Num, v2: Num, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
+export function unequal(v1: Str, v2: Str, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
+export function unequal(v1: Num | Str, v2: Num | Str, pass: Num | Str, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(0), intoV(pass)], info, emptyOn: "match" }
+}
+/** v1 >= v2 ? pass : 0 */
+export function greaterEq(v1: Num, v2: Num, pass: Num, info?: Info): NumNode
+export function greaterEq(v1: Num, v2: Num, pass: Num, info?: Info): NumNode | StrNode {
+  const operands = [intoV(v1), intoV(v2), intoV(pass), intoV(0)] as any
+  return { operation: "threshold", operands, info, emptyOn: "l" }
+}
+/** v1 < v2 ? pass : 0 */
+export function lessThan(v1: Num, v2: Num, pass: Num, info?: Info): NumNode
+export function lessThan(v1: Num, v2: Num, pass: Num | Str, info?: Info): NumNode | StrNode {
+  const operands = [intoV(v1), intoV(v2), intoV(0), intoV(pass)] as any
+  return { operation: "threshold", operands, info, emptyOn: "ge" }
 }
 
 export function setReadNodeKeys<T extends NodeList>(nodeList: T, prefix: string[] = []): T {
@@ -151,3 +149,51 @@ type _NodeList = {
   operation?: never
 }
 type NodeList = _NodeList | ReadNode<number> | ReadNode<string>
+
+/*
+ * Deprecated
+ */
+
+/**
+ * value >= threshold ? value : emptyValue
+ * @deprecated Use `greaterEq` or `lessEq` instead
+ */
+export function threshold(value: Num, threshold: Num, pass: Str, fail: Str, info?: Info): StrNode
+export function threshold(value: Num, threshold: Num, pass: Num, fail: Num, info?: Info): NumNode
+export function threshold(value: Num, threshold: Num, pass: Num | Str, fail: Num | Str, info?: Info): NumNode | StrNode {
+  const operands = [intoV(value), intoV(threshold), intoV(pass), intoV(fail)] as any
+  return { operation: "threshold", operands, info, emptyOn: "l" }
+}
+/**
+ * value >= threshold ? addition : 0
+ * @deprecated Use `greaterEq` instead
+ */
+export function threshold_add(value: Num, thres: Num, addition: Num, info?: Info): NumNode {
+  return threshold(value, thres, addition, 0, info)
+}
+
+/**
+ * `v1` === `v2` ? `match` : 0
+ * @deprecated Use `equal` instead
+ */
+export function match(v1: Str, v2: Str, match: Num, info?: Info): NumNode {
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(0)], info, emptyOn: "unmatch" }
+}
+/**
+ * `v1` === `v2` ? 0 : `unmatch`
+ * @deprecated Use `unequal` instead
+ */
+export function unmatch(v1: Str, v2: Str, unmatch: Num, info?: Info): NumNode {
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(0), intoV(unmatch)], info, emptyOn: "match" }
+}
+/**
+ * `v1` === `v2` ? `match` : `unmatch`
+ * @deprecated Use `equal` or `unequal` instead
+ */
+export function matchFull(v1: Num, v2: Num, match: Num, unmatch: Num, info?: Info): MatchNode<NumNode, NumNode>
+export function matchFull(v1: Num, v2: Num, match: Str, unmatch: Str, info?: Info): MatchNode<StrNode, NumNode>
+export function matchFull(v1: Str, v2: Str, match: Num, unmatch: Num, info?: Info): MatchNode<NumNode, StrNode>
+export function matchFull(v1: Str, v2: Str, match: Str, unmatch: Str, info?: Info): MatchNode<StrNode, StrNode>
+export function matchFull(v1: Num | Str, v2: Num | Str, match: Num | Str, unmatch: Num | Str, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(unmatch)], info }
+}

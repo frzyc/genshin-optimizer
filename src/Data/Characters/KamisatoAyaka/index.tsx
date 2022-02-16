@@ -113,12 +113,12 @@ const dmgFormulas = {
     dmg: customDmgNode(prod(input.total.atk, datamine.constellation2.snowflake), "burst", { hit: { ele: constant("cryo") } })
   }
 }
-const const3 = threshold_add(input.constellation, 3, 3)
-const const5 = threshold_add(input.constellation, 5, 3)
+const nodeC3 = threshold_add(input.constellation, 3, 3)
+const nodeC5 = threshold_add(input.constellation, 5, 3)
 export const adata = dataObjForCharacterSheet(key, elementKey, "inazuma", data_gen, dmgFormulas, {
   bonus: {
-    skill: const5,
-    burst: const3,
+    skill: nodeC5,
+    burst: nodeC3,
   },
   teamBuff: {
     premod: {
@@ -313,7 +313,7 @@ const sheet: ICharacterSheet = {
         value: datamine.constellation2.snowflake,
         node: infoMut(dmgFormulas.constellation2.dmg, { key: `char_${key}:snowflakeDMG` }),
       },]),
-      constellation3: talentTemplate("constellation3", tr, c3, [{ node: const3 }]),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
@@ -337,7 +337,7 @@ const sheet: ICharacterSheet = {
           },
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5 }]),
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,

@@ -138,12 +138,12 @@ const dmgFormulas = {
     plunging_dmg_: c6PlungingDmg_,
   }
 }
-const const3 = threshold_add(input.constellation, 3, 3)
-const const5 = threshold_add(input.constellation, 5, 3)
+const nodeC3 = threshold_add(input.constellation, 3, 3)
+const nodeC5 = threshold_add(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, "anemo", "inazuma", data_gen, dmgFormulas, {
   bonus: {
-    skill: const3,
-    burst: const5,
+    skill: nodeC3,
+    burst: nodeC5,
   },
   teamBuff: {
     premod: {
@@ -366,9 +366,9 @@ const sheet: ICharacterSheet = {
       },
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, [{ node: const3 }]),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5 }]),
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,

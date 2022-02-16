@@ -4,8 +4,8 @@ import Assets from "../../Assets/Assets";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
 import { uiInput as input } from "../../Formula";
-import useCharUIData from "../../ReactHooks/useCharUIData";
 import usePromise from "../../ReactHooks/usePromise";
+import useTeamData from "../../ReactHooks/useTeamData";
 import { ICachedCharacter } from "../../Types/character_WR";
 import { allCharacterKeys, CharacterKey, ElementKey, WeaponTypeKey } from "../../Types/consts";
 import { characterFilterConfigs, characterSortConfigs } from "../../Util/CharacterSort";
@@ -89,7 +89,8 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
 
 function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characterKey: CharacterKey }) {
   const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
-  const UIDataBundle = useCharUIData(characterKey)
+  const teamData = useTeamData(characterKey)
+  const { target: data } = teamData?.[characterKey] ?? {}
   if (!characterSheet) return null
   const rarity = characterSheet.rarity
   return <CardActionArea onClick={onClick} >
@@ -97,13 +98,13 @@ function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characte
       <Box component="img" src={characterSheet.thumbImg} sx={{ width: 130, height: "auto" }} className={`grad-${rarity}star`} />
       <Box sx={{ pl: 1 }}>
         <Typography><strong>{characterSheet.name}</strong></Typography>
-        {UIDataBundle ? <>
-          <Typography variant="h6"> {characterSheet.elementKey && StatIcon[characterSheet.elementKey]} <ImgIcon src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} />{` `}{CharacterSheet.getLevelString(UIDataBundle.data.get(input.lvl).value, UIDataBundle.data.get(input.asc).value)}</Typography>
+        {data ? <>
+          <Typography variant="h6"> {characterSheet.elementKey && StatIcon[characterSheet.elementKey]} <ImgIcon src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} />{` `}{CharacterSheet.getLevelString(data.get(input.lvl).value, data.get(input.asc).value)}</Typography>
           <Typography >
-            <SqBadge color="success">{`C${UIDataBundle.data.get(input.constellation).value}`}</SqBadge>{` `}
-            <SqBadge color={UIDataBundle.data.get(input.bonus.auto).value ? "info" : "secondary"}><strong >{UIDataBundle.data.get(input.total.auto).value}</strong></SqBadge>{` `}
-            <SqBadge color={UIDataBundle.data.get(input.bonus.skill).value ? "info" : "secondary"}><strong >{UIDataBundle.data.get(input.total.skill).value}</strong></SqBadge>{` `}
-            <SqBadge color={UIDataBundle.data.get(input.bonus.burst).value ? "info" : "secondary"}><strong >{UIDataBundle.data.get(input.total.burst).value}</strong></SqBadge>
+            <SqBadge color="success">{`C${data.get(input.constellation).value}`}</SqBadge>{` `}
+            <SqBadge color={data.get(input.bonus.auto).value ? "info" : "secondary"}><strong >{data.get(input.total.auto).value}</strong></SqBadge>{` `}
+            <SqBadge color={data.get(input.bonus.skill).value ? "info" : "secondary"}><strong >{data.get(input.total.skill).value}</strong></SqBadge>{` `}
+            <SqBadge color={data.get(input.bonus.burst).value ? "info" : "secondary"}><strong >{data.get(input.total.burst).value}</strong></SqBadge>
           </Typography>
         </> : <>
           <Typography variant="h6"><SqBadge color="primary">NEW</SqBadge></Typography>
