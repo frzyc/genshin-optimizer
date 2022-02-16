@@ -13,7 +13,7 @@ import StatIcon from "./StatIcon";
 import { data as dataNode } from '../Formula/utils'
 import { Data } from "../Formula/type";
 
-export default function FieldDisplay({ field, fieldContext }: { field: IFieldDisplay, fieldContext?: dataContextObj }) {
+export default function FieldDisplay({ field, fieldContext, component }: { field: IFieldDisplay, fieldContext?: dataContextObj, component?: React.ElementType }) {
   const { data, oldData } = useContext(DataContext)
   const canShow = useMemo(() => field?.canShow?.(data) ?? true, [field, data])
   if (!canShow) return null
@@ -24,24 +24,24 @@ export default function FieldDisplay({ field, fieldContext }: { field: IFieldDis
     if (oldData) {
       const oldNode = fieldContext ? oldData.get(dataNode(field.node, { target: fieldContext.oldData!.data[0] } as Data)) : oldData.get(field.node)
       const oldValue = oldNode.isEmpty ? 0 : oldNode.value
-      return <NodeFieldDisplay node={node} oldValue={oldValue} suffix={field.textSuffix} />
+      return <NodeFieldDisplay node={node} oldValue={oldValue} suffix={field.textSuffix} component={component} />
     }
-    else return <NodeFieldDisplay node={node} suffix={field.textSuffix} />
+    else return <NodeFieldDisplay node={node} suffix={field.textSuffix} component={component} />
   }
-  return <BasicFieldDisplay field={field} />
+  return <BasicFieldDisplay field={field} component={component} />
 }
 
-function BasicFieldDisplay({ field }: { field: IBasicFieldDisplay }) {
+function BasicFieldDisplay({ field, component }: { field: IBasicFieldDisplay, component?: React.ElementType }) {
   const { data } = useContext(DataContext)
   const v = evalIfFunc(field.value, data)
   const variant = evalIfFunc(field.variant, data)
-  return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between" }}  >
+  return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between" }} component={component} >
     <ColorText color={variant}><b>{field.text}</b></ColorText>
     <Typography >{typeof v === "number" ? v.toFixed?.(field.fixed) : v}{field.unit}</Typography>
   </Box>
 }
 
-export function NodeFieldDisplay({ node, oldValue, suffix }: { node: NodeDisplay, oldValue?: number, suffix?: Displayable }) {
+export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: NodeDisplay, oldValue?: number, suffix?: Displayable, component?: React.ElementType }) {
   if (node.isEmpty) return null
 
   suffix = suffix && <span> {suffix}</span>
@@ -55,7 +55,7 @@ export function NodeFieldDisplay({ node, oldValue, suffix }: { node: NodeDisplay
   const formulaTextOverlay = !!node.formula && <BootstrapTooltip placement="top" title={<Typography>{fieldFormulaText}</Typography>}>
     <Box component="span" sx={{ cursor: "help", ml: 1 }}><FontAwesomeIcon icon={faQuestionCircle} /></Box>
   </BootstrapTooltip>
-  return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between" }}  >
+  return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between" }} component={component} >
     <ColorText color={node.variant}>{node.key && (<span>{StatIcon[node.key]} </span>)}<b>{fieldText}</b>{suffix}{formulaTextOverlay}</ColorText>
     <Typography >{fieldVal}</Typography>
   </Box>

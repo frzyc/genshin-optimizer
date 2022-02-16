@@ -9,7 +9,7 @@ const asConst = true as const, pivot = true as const
 
 const allElements = allElementsWithPhy
 const allTalents = ["auto", "skill", "burst"] as const
-const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
+const allMoves = ["normal", "charged", "plunging", "skill", "burst", "elemental"] as const
 const allMainSubStats = [...new Set([...allMainStatKeys, ...allSubstats] as const)]
 const allTransformative = ["overloaded", "shattered", "electrocharged", "superconduct", "swirl"] as const
 const allAmplifying = ["vaporize", "melt"] as const
@@ -23,11 +23,12 @@ const allModStats = [
 ]
 const allNonModStats = [
   ...(["all", ...allMoves] as const).map(x => `${x}_dmgInc` as const),
-  ...(["all", ...allTransformative, ...allAmplifying, ...allMoves] as const).map(x => `${x}_dmg_` as const),
+  ...(["all", "burning", ...allTransformative, ...allAmplifying, ...allMoves] as const).map(x => `${x}_dmg_` as const),
   ...([...allElements] as const).map(x => `${x}_critDMG_` as const),
   ...allElements.map(x => `${x}_res_` as const),
   ...allMoves.map(x => `${x}_critRate_` as const),
   ...allEleEnemyResKeys,
+  "enemyDefRed_" as const,
   ...allMisc,
 ]
 
@@ -96,7 +97,7 @@ const input = setReadNodeKeys(deepClone({
 
     level: read(undefined, { key: "enemyLevel" }),
     ...objectKeyValueMap(allElements, ele => [`${ele}_res_`, read(undefined)]),
-    defRed: read("add", { key: "enemyDefRed_", pivot }),
+    defRed: read(undefined),
     defIgn: read("add", { key: "enemyDefIgn_", pivot }),
   },
 
@@ -121,6 +122,9 @@ for (const [key, value] of Object.entries(total)) {
   if (key.endsWith("_dmg_"))
     delete (value as ReadNode<number>).accu
 }
+bonus.auto.info = { key: "autoBoost" }
+bonus.skill.info = { key: "skillBoost" }
+bonus.burst.info = { key: "burstBoost" }
 base.atk.info = { key: "atk", prefix: "base", pivot }
 delete total.critRate_.info!.pivot
 total.critRate_.info!.prefix = "uncapped"
@@ -146,12 +150,16 @@ const common: Data = {
           operands.push(prod(base[key], sum(unit, premod[`${key}_`])))
           break
         case "critRate_":
-          operands.push(percent(0.05, { key: "critRate_", prefix: "default" }),
+          operands.push(percent(0.05, { key, prefix: "default" }),
             lookup(hit.move, objectKeyMap(allMoves, move => customBonus[`${move}_critRate_`]), 0))
           break
         case "critDMG_":
-          operands.push(percent(0.5, { key: "critDMG_", prefix: "default" }),
+          operands.push(percent(0.5, { key, prefix: "default" }),
             lookup(hit.ele, objectKeyMap(allElements, ele => customBonus[`${ele}_critDMG_`]), 0))
+          break
+        case "enerRech_":
+          operands.push(percent(1, { key, prefix: "default" }))
+          break
       }
       return sum(...[...operands, art[key], customBonus[key]].filter(x => x))
     }),
@@ -177,14 +185,6 @@ const common: Data = {
     dmgInc: sum(
       total.all_dmgInc,
       lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmgInc`]), NaN)
-    ),
-    ele: stringPrio(
-      input.infusion,
-      input.team.infusion,
-      // Inferred Element
-      matchFull(input.weaponType, "catalyst", input.charEle, undefined),
-      matchFull(hit.move, "skill", input.charEle, undefined),
-      "physical",
     ),
     dmg: prod(
       sum(hit.base, hit.dmgInc),
@@ -213,6 +213,7 @@ const common: Data = {
   enemy: {
     // TODO: shred cap of 90%
     def: frac(sum(input.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed)), sum(1, prod(-1, enemy.defIgn)))),
+    defRed: total.enemyDefRed_,
     ...objectKeyValueMap(allElements, ele =>
       [`${ele}_resMulti`, res(infoMut(sum(enemy[`${ele}_res_`], total[`${ele}_enemyRes_`]), { key: `${ele}_res_`, variant: ele }))]),
   },

@@ -2,7 +2,7 @@ import { input } from "../../Formula";
 import { inferInfoMut, mergeData } from "../../Formula/api";
 import { reactions } from "../../Formula/reaction";
 import { Data, DisplaySub, NumNode } from "../../Formula/type";
-import { constant, data, infoMut, prod, subscript, sum } from "../../Formula/utils";
+import { constant, data, infoMut, matchFull, prod, stringPrio, subscript, sum } from "../../Formula/utils";
 import { allMainStatKeys, allSubstats, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey, Region } from "../../Types/consts";
 import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
@@ -16,6 +16,15 @@ const charCurves = objectMap(_charCurves, value => [0, ...Object.values(value)])
 const commonBasic = objectKeyMap([...allSubstats, "heal_"], key => input.total[key])
 commonBasic.critRate_ = input.total.cappedCritRate
 
+const inferredHitEle = stringPrio(
+  input.infusion,
+  input.team.infusion,
+  // Inferred Element
+  matchFull(input.weaponType, "catalyst", input.charEle, undefined),
+  matchFull(input.hit.move, "skill", input.charEle, undefined),
+  "physical",
+)
+
 function getTalentType(move: "normal" | "charged" | "plunging" | "skill" | "burst") {
   switch (move) {
     case "normal": case "charged": case "plunging": return "auto";
@@ -24,23 +33,14 @@ function getTalentType(move: "normal" | "charged" | "plunging" | "skill" | "burs
   }
 }
 
-export function singleDmgNode(base: MainStatKey, multiplier: number, move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
+export function customDmgNode(base: NumNode, move: "normal" | "charged" | "plunging" | "skill" | "burst" | "elemental", additional: Data = {}): NumNode {
   return data(input.hit.dmg, mergeData([{
-    hit: {
-      base: prod(input.total[base], multiplier,),
-      move: constant(move), // TODO: element ?: T, reaction ?: T, critType ?: T
-    },
+    hit: { base, move: constant(move), ele: additional?.hit?.ele ? undefined : inferredHitEle },
   }, additional]))
 }
-
 export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
   const talentType = getTalentType(move)
-  return data(input.hit.dmg, mergeData([{
-    hit: {
-      base: prod(subscript(input.total[`${talentType}Index`], lvlMultiplier, { key: '_' }), input.total[base]),
-      move: constant(move), // TODO: element ?: T, reaction ?: T, critType ?: T
-    },
-  }, additional]))
+  return customDmgNode(prod(subscript(input.total[`${talentType}Index`], lvlMultiplier, { key: '_' }), input.total[base]), move, additional)
 }
 export function dataObjForCharacterSheet(
   key: CharacterKey,

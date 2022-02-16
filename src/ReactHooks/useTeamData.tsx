@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database";
@@ -13,12 +13,23 @@ import { ICachedWeapon } from "../Types/weapon_WR";
 import { objectMap } from "../Util/Util";
 import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import useForceUpdate from "./useForceUpdate";
-import usePromise from "./usePromise";
+
+type TeamDataBundle = {
+  team: CharacterKey[],
+  teamData: Dict<CharacterKey, Data[]>
+  teamBundle: Dict<CharacterKey, CharBundle>
+}
 
 export default function useTeamData(characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0): TeamData | undefined {
   const database = useContext(DatabaseContext)
   const [dbDirty, setDbDirty] = useForceUpdate()
-  const { team = [], teamData, teamBundle } = usePromise(getTeamData(database, characterKey, mainStatAssumptionLevel), [dbDirty, characterKey, database]) ?? {}
+  const [teamDataBundle, setTeamdataBundle] = useState(undefined as TeamDataBundle | undefined)
+  useEffect(() => {
+    getTeamData(database, characterKey, mainStatAssumptionLevel).then(r => setTeamdataBundle(r))
+  }, [dbDirty, characterKey, database, mainStatAssumptionLevel])
+
+  const { team = [], teamData, teamBundle } = teamDataBundle ?? {}
+
   const [t1, t2, t3, t4] = team
   useEffect(() =>
     t1 ? database.followChar(t1, setDbDirty) : undefined,
@@ -41,12 +52,9 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
 
   return data
 }
+
 export async function getTeamData(database: ArtCharDatabase, characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[]):
-  Promise<{
-    team: CharacterKey[],
-    teamData: Dict<CharacterKey, Data[]>
-    teamBundle: Dict<CharacterKey, CharBundle>
-  } | undefined> {
+  Promise<TeamDataBundle | undefined> {
   if (!characterKey) return
   const char1DataBundle = await getCharDataBundle(database, characterKey, mainStatAssumptionLevel, overrideArt)
   if (!char1DataBundle) return

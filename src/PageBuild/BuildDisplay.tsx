@@ -32,13 +32,13 @@ import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
 import { BuildSetting } from '../Types/Build';
-import { CharacterKey } from '../Types/consts';
+import { ArtifactSetKey, CharacterKey } from '../Types/consts';
 import { objectMap, objPathValue } from '../Util/Util';
 import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import ChartCard from './ChartCard';
-import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneOrder, pruneRange, reaffine } from './common';
+import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
@@ -49,7 +49,7 @@ import HitModeCard from './Components/HitModeCard';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import TeamBuffCard from './Components/TeamBuffCard';
-import { artSetPerm, breakSetPermBySet, compactArtifacts, dynamicData } from './foreground';
+import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
@@ -185,7 +185,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     let optimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
     if (!optimizationTargetNode) return
-    const valueFilter: { value: NumNode, minimum: number }[] = [] // TODO: Connect to statFilter
+    const valueFilter: { value: NumNode, minimum: number }[] = Object.entries(statFilters).map(([key, value]) => {
+      if (key.endsWith("_")) value = value / 100 // TODO: Conversion
+      return { value: input.total[key], minimum: value }
+    }).filter(x => x.value && x.minimum > -Infinity)
 
     const t1 = performance.now()
     setgeneratingBuilds(true)
@@ -204,10 +207,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     }
 
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
-    ({ nodes, arts } = reaffine(nodes, arts));
-    ({ nodes, arts } = pruneRange(nodes, arts, minimum, true));
-    ({ nodes, arts } = reaffine(nodes, arts))
-    arts = pruneOrder(arts, maxBuildsToShow)
+    ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow,
+      new Set(setFilters.map(x => x.key as ArtifactSetKey)), {
+      reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
+    }))
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
@@ -220,7 +223,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
     const maxWorkers = navigator.hardwareConcurrency || 4
 
-    const setPerm = breakSetPermBySet(arts, setPerms,
+    const setPerm = splitFiltersBySet(arts, setPerms,
       maxWorkers === 1
         // Don't split for single worker
         ? Infinity
@@ -235,6 +238,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       }
     }
 
+    const filters = nodes
+      .map((value, i) => ({ value, min: minimum[i] }))
+      .filter(x => x.min > -Infinity)
+
     const finalizedList: Promise<FinalizeResult>[] = []
     for (let i = 0; i < maxWorkers; i++) {
       const worker = new Worker()
@@ -246,9 +253,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         optimizationTarget: optimizationTargetNode,
         plotBase: plotBaseNode,
         maxBuilds: maxBuildsToShow,
-        filters: nodes
-          .map((value, i) => ({ value, min: minimum[i] }))
-          .filter(x => x.min > -Infinity)
+        filters
       }
       worker.postMessage(setup, undefined)
       let finalize: (_: FinalizeResult) => void

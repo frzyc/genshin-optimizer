@@ -3,7 +3,7 @@ import { ReadNode } from "../Formula/type"
 import { customStringRead } from "../Formula/utils"
 import { ArtifactSetKey, CharacterKey, WeaponKey } from "../Types/consts"
 
-export const st = (strKey: string) => <Translate ns="sheet" key18={strKey} />
+export const st = (strKey: string, values?: object) => <Translate ns="sheet" key18={strKey} values={values} />
 export const sgt = (strKey: string) => <Translate ns="sheet_gen" key18={strKey} />
 
 export const condReadNode = (path: string[]) => customStringRead(["conditional", ...path])
@@ -20,6 +20,6 @@ export function trans(typeKey: "artifact", key: ArtifactSetKey): Translated
 export function trans(typeKey: "char" | "weapon" | "artifact", key: CharacterKey | WeaponKey | ArtifactSetKey): Translated {
   return [
     (strKey: string) => <Translate ns={`${typeKey}_${key}_gen`} key18={strKey} />,
-    (strKey: string) => <Translate ns={`${typeKey}_${key}`} key18={strKey} />
+    (strKey: string, values?: object) => <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />
   ]
 }

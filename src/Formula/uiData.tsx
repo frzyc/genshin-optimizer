@@ -344,6 +344,7 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
 }
 function createFormulaComponent(node: ContextNodeDisplay): Displayable {
   const { name, valueDisplay } = node
+  //TODO: change formula size in the formula display element instead
   return name ? <><span style={{ fontSize: "85%" }}>{name}</span> {valueDisplay}</> : valueDisplay!
 }
 function mergeFormulaComponents(components: Displayable[]): Displayable {

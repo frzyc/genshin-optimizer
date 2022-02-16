@@ -23,7 +23,12 @@ const normal_dmg_ = match("on", condPassive, subscript(input.weapon.refineIndex,
 const charged_dmg_ = match("on", condPassive, subscript(input.weapon.refineIndex, autoSrc))
 const plunging_dmg_ = match("on", condPassive, subscript(input.weapon.refineIndex, autoSrc))
 
-const data = dataObjForWeaponSheet(key, data_gen, "dmg_", undefined, {
+const dmg_ = subscript(input.weapon.refineIndex, data_gen.addProps.map(x => x.dmg_ ?? NaN))
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    all_dmg_: dmg_
+  },
   teamBuff: {
     premod: {
       atk_,
@@ -38,6 +43,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
+    fields: [{ node: dmg_ }],
     conditional: {
       value: condPassive,
       path: condPassivePath,

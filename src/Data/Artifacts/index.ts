@@ -2,25 +2,25 @@ import { ArtifactSetKey } from '../../Types/consts'
 import { ArtifactSheet } from './ArtifactSheet'
 
 import Adventurer from './Adventurer'
-// import ArchaicPetra from './ArchaicPetra'
-// import Berserker from './Berserker'
-// import BlizzardStrayer from './BlizzardStrayer'
-// import BloodstainedChivalry from './BloodstainedChivalry'
-// import BraveHeart from './BraveHeart'
-// import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
+import ArchaicPetra from './ArchaicPetra'
+import Berserker from './Berserker'
+import BlizzardStrayer from './BlizzardStrayer'
+import BloodstainedChivalry from './BloodstainedChivalry'
+import BraveHeart from './BraveHeart'
+import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
 // import DefendersWill from './DefendersWill'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
-// import Gambler from './Gambler'
-// import GladiatorsFinale from './GladiatorsFinale'
-// import HeartOfDepth from './HeartOfDepth'
-// import HuskOfOpulentDreams from './HuskOfOpulentDreams'
+import Gambler from './Gambler'
+import GladiatorsFinale from './GladiatorsFinale'
+import HeartOfDepth from './HeartOfDepth'
+import HuskOfOpulentDreams from './HuskOfOpulentDreams'
 // import Instructor from './Instructor'
 // import Lavawalker from './Lavawalker'
-// import LuckyDog from './LuckyDog'
+import LuckyDog from './LuckyDog'
 // import MaidenBeloved from './MaidenBeloved'
 // import MartialArtist from './MartialArtist'
 import NoblesseOblige from './NoblesseOblige'
-// import OceanHuedClam from './OceanHuedClam'
+import OceanHuedClam from './OceanHuedClam'
 // import PaleFlame from './PaleFlame'
 // import PrayersForDestiny from './PrayersForDestiny'
 // import PrayersForIllumination from './PrayersForIllumination'
@@ -40,25 +40,25 @@ import ViridescentVenerer from './ViridescentVenerer'
 // import WanderersTroupe from './WanderersTroupe'
 const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   Adventurer,
-  // ArchaicPetra,
-  // Berserker,
-  // BlizzardStrayer,
-  // BloodstainedChivalry,
-  // BraveHeart,
-  // CrimsonWitchOfFlames,
+  ArchaicPetra,
+  Berserker,
+  BlizzardStrayer,
+  BloodstainedChivalry,
+  BraveHeart,
+  CrimsonWitchOfFlames,
   // DefendersWill,
   EmblemOfSeveredFate,
-  // Gambler,
-  // GladiatorsFinale,
-  // HeartOfDepth,
-  // HuskOfOpulentDreams,
+  Gambler,
+  GladiatorsFinale,
+  HeartOfDepth,
+  HuskOfOpulentDreams,
   // Instructor,
   // Lavawalker,
-  // LuckyDog,
+  LuckyDog,
   // MaidenBeloved,
   // MartialArtist,
   NoblesseOblige,
-  // OceanHuedClam,
+  OceanHuedClam,
   // PaleFlame,
   // PrayersForDestiny,
   // PrayersForIllumination,
