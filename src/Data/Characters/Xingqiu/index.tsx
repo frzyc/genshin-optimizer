@@ -36,6 +36,8 @@ const dmgRed = sum(
   min(0.24, prod(input.total.hydro_dmg_, 0.20))
 )
 
+const healing = threshold_add(input.asc, 1, prod(input.total.hp, 0.06))
+
 export const dmgFormulas = {
   normal: normalDmg,
   charged: {
@@ -48,7 +50,8 @@ export const dmgFormulas = {
     press1: dmgNode("atk", datamine.skill.hit1, "skill"),
     press2: dmgNode("atk", datamine.skill.hit2, "skill"),
     // TODO: dmg reduction based on sword count?
-    dmgRed
+    dmgRed,
+    healing
   },
   burst: {
     // TODO: burst dmg based on normal attacks?
@@ -129,6 +132,9 @@ const sheet: ICharacterSheet = {
             textSuffix: "(2-Hit)"
           }, {
             node: infoMut(dmgFormulas.skill.dmgRed, { key: `char_${characterKey}_gen:skill.skillParams.1` }),
+          }, {
+            canShow: uiData => uiData.get(input.asc).value >= 1,
+            node: infoMut(dmgFormulas.skill.healing, { key: `sheet_gen:healing` }),
           }, {
             node: infoMut(skillDuration, { key: `char_${characterKey}_gen:skill.skillParams.2` }),
           }, {
