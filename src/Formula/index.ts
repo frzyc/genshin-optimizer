@@ -141,7 +141,8 @@ export const effectiveReaction = lookup(hit.ele, {
 const common: Data = {
   premod: {
     ...objectKeyMap(allTalents, talent => bonus[talent]),
-    ...objectKeyMap(allModStats, key => {
+    ...objectKeyMap(allNonModStats, key => customBonus[key]),
+    ...objectKeyMap([...allModStats, ...allArtNonModStats] as const, key => {
       const operands: NumNode[] = []
       switch (key) {
         case "atk": case "def": case "hp":
@@ -161,7 +162,6 @@ const common: Data = {
       }
       return sum(...[...operands, art[key], customBonus[key]].filter(x => x))
     }),
-    ...objectKeyMap(allNonModStats, key => customBonus[key]),
   },
   total: {
     ...objectKeyMap(allTalents, talent => premod[talent]),
