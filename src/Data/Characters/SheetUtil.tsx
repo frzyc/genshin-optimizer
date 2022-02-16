@@ -136,7 +136,7 @@ export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) =>
         stats: {
           [boostKey]: boostAmt
         }
-      } as IConditional
+      }
     } : {})
   }],
 })
