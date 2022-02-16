@@ -79,7 +79,7 @@ const datamine = {
 } as const
 
 const [condQuillPath, condQuill] = cond(key, "quill")
-const quillDmg = match("quill", condQuill,
+const nodeSkill = match("quill", condQuill,
   prod(input.premod.atk, subscript(input.total.skillIndex, datamine.skill.dmgAtk_, { key: '_' })))
 
 
@@ -87,11 +87,11 @@ const [condBurstPath, condBurst] = cond(key, "burst")
 const enemyRes_ = match("burst", condBurst,
   subscript(input.total.burstIndex, datamine.burst.res_.map(x => -x), { key: '_' }))
 
-const cryo_enemyRes_ = { ...enemyRes_ }
-const physical_enemyRes_ = { ...enemyRes_ }
+const nodeBurstCryo_enemyRes_ = { ...enemyRes_ }
+const nodeBurstPhysical_enemyRes_ = { ...enemyRes_ }
 
 const [condAsc1Path, condAsc1] = cond(key, "asc1")
-const asc1Buff = threshold_add(input.asc, 1,
+const nodeAsc1 = threshold_add(input.asc, 1,
   match(condAsc1, "field",
     match(input.activeCharKey, input.charKey,
       datamine.passive1.cryo_dmg_
@@ -100,23 +100,23 @@ const asc1Buff = threshold_add(input.asc, 1,
 )
 
 const [condAsc4Path, condAsc4] = cond(key, "asc4")
-const buffAsc4Press = threshold_add(input.asc, 1,
+const nodeAsc4 = threshold_add(input.asc, 1,
   match(condAsc4, "press",
     datamine.passive2.press_dmg_
   )
 )
-const buffAsc4Press_skill_dmg_ = { ...buffAsc4Press }
-const buffAsc4Press_burst_dmg_ = { ...buffAsc4Press }
-const buffAsc4Hold = threshold_add(input.asc, 1,
+const nodeAsc4Press_skill_dmg_ = { ...nodeAsc4 }
+const nodeAsc4Press_burst_dmg_ = { ...nodeAsc4 }
+const nodeAsc4Hold = threshold_add(input.asc, 1,
   match(condAsc4, "hold",
     datamine.passive2.hold_dmg_
   )
 )
-const buffAsc4Hold_normal_dmg_ = { ...buffAsc4Hold }
-const buffAsc4Hold_charged_dmg_ = { ...buffAsc4Hold }
-const buffAsc4Hold_plunging_dmg_ = { ...buffAsc4Hold }
+const nodeAsc4Hold_normal_dmg_ = { ...nodeAsc4Hold }
+const nodeAsc4Hold_charged_dmg_ = { ...nodeAsc4Hold }
+const nodeAsc4Hold_plunging_dmg_ = { ...nodeAsc4Hold }
 
-const con2Buff = threshold_add(input.constellation, 2,
+const nodeC2 = threshold_add(input.constellation, 2,
   match(condAsc1, "field",
     match(input.activeCharKey, input.charKey,
       datamine.passive1.cryo_dmg_
@@ -141,31 +141,32 @@ const dmgFormulas = {
   skill: {
     press: dmgNode("atk", datamine.skill.press, "skill", { hit: { dmgBonus: c4Inc } }),
     hold: dmgNode("atk", datamine.skill.hold, "skill", { hit: { dmgBonus: c4Inc } }),
-    quillDmg
+    quillDmg: nodeSkill
   },
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
     dot: dmgNode("atk", datamine.burst.dot, "burst"),
   },
 }
-const const3 = threshold_add(input.constellation, 3, 3)
-const const5 = threshold_add(input.constellation, 5, 3)
+const nodeC3 = threshold_add(input.constellation, 3, 3)
+const nodeC5 = threshold_add(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
   bonus: {
-    skill: const3,
-    burst: const5
+    skill: nodeC3,
+    burst: nodeC5
   },
   teamBuff: {
     premod: {
-      all_dmgInc: quillDmg,
-      cryo_enemyRes_,
-      physical_enemyRes_,
-      cryo_dmg_: asc1Buff,
-      skill_dmg_: buffAsc4Press_skill_dmg_,
-      burst_dmg_: buffAsc4Press_burst_dmg_,
-      normal_dmg_: buffAsc4Hold_normal_dmg_,
-      charged_dmg_: buffAsc4Hold_charged_dmg_,
-      plunging_dmg_: buffAsc4Hold_plunging_dmg_,
+      all_dmgInc: nodeSkill,
+      cryo_enemyRes_: nodeBurstCryo_enemyRes_,
+      physical_enemyRes_: nodeBurstPhysical_enemyRes_,
+      cryo_dmg_: nodeAsc1,
+      skill_dmg_: nodeAsc4Press_skill_dmg_,
+      burst_dmg_: nodeAsc4Press_burst_dmg_,
+      normal_dmg_: nodeAsc4Hold_normal_dmg_,
+      charged_dmg_: nodeAsc4Hold_charged_dmg_,
+      plunging_dmg_: nodeAsc4Hold_plunging_dmg_,
+      cryo_critDMG_: nodeC2
     },
   },
 })
@@ -245,7 +246,7 @@ const sheet: ICharacterSheet = {
             states: {
               quill: {
                 fields: [{
-                  node: quillDmg
+                  node: nodeSkill
                 }]
               }
             }
@@ -263,19 +264,19 @@ const sheet: ICharacterSheet = {
               press: {
                 name: "Press",
                 fields: [{
-                  node: buffAsc4Press_skill_dmg_
+                  node: nodeAsc4Press_skill_dmg_
                 }, {
-                  node: buffAsc4Press_burst_dmg_
+                  node: nodeAsc4Press_burst_dmg_
                 }]
               },
               hold: {
                 name: "Hold",
                 fields: [{
-                  node: buffAsc4Hold_normal_dmg_
+                  node: nodeAsc4Hold_normal_dmg_
                 }, {
-                  node: buffAsc4Hold_charged_dmg_
+                  node: nodeAsc4Hold_charged_dmg_
                 }, {
-                  node: buffAsc4Hold_plunging_dmg_
+                  node: nodeAsc4Hold_plunging_dmg_
                 }]
               }
             }
@@ -325,9 +326,9 @@ const sheet: ICharacterSheet = {
             states: {
               burst: {
                 fields: [{
-                  node: cryo_enemyRes_
+                  node: nodeBurstCryo_enemyRes_
                 }, {
-                  node: physical_enemyRes_
+                  node: nodeBurstPhysical_enemyRes_
                 }]
               }
             }
@@ -340,13 +341,13 @@ const sheet: ICharacterSheet = {
             teamBuff: true,
             header: conditionalHeader("passive1", tr, passive1),
             description: tr("passive1.description"),
-            name: "Active Character in field",
+            name: st("activeCharField"),
             states: {
               field: {
                 fields: [{
-                  node: asc1Buff
+                  node: nodeAsc1
                 }, {
-                  node: con2Buff
+                  node: nodeC2
                 }]
               }
             }
@@ -358,9 +359,9 @@ const sheet: ICharacterSheet = {
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, [{ node: const3 }]),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5 }]),
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: talentTemplate("constellation6", tr, c6),
     }
   },
