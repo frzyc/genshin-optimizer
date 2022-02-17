@@ -21,7 +21,7 @@ export function formulaString(formula: NumNode | StrNode): string {
       const [value, threshold, pass, fail] = formula.operands.map(formulaString)
       return `( ${value} >= ${threshold} ? ${pass} : ${fail} )`
     case "res":
-      return `Res${formulaString(formula.operands[0])}`
+      return `Res(${formulaString(formula.operands[0])})`
     case "match":
       return `Match(${formula.operands.map(formulaString).join(", ")})`
     case "lookup":

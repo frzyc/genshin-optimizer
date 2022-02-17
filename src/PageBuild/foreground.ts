@@ -31,7 +31,7 @@ export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLeve
         [art.mainStatKey]: art.mainStatKey.endsWith('_') ? mainStatVal / 100 : mainStatVal,
         /* TODO: Use accurate value */
         ...Object.fromEntries(art.substats.map(substat =>
-          [substat.key, substat.key.endsWith('_') ? substat.value / 100 : substat.value]))
+          [substat.key, substat.key.endsWith('_') ? substat.accurateValue / 100 : substat.accurateValue]))
       },
     }
     delete data.values[""]

@@ -233,14 +233,17 @@ function addArtRange(ranges: DynMinMax[]): DynMinMax {
   return result
 }
 function computeArtRange(arts: ArtifactBuildData[]): DynMinMax {
-  const result: DynMinMax = {}
+  const result: DynMinMax = {}, keys = new Set<string>()
   arts.forEach(({ values }) => {
-    Object.entries(values).forEach(([key, value]) => {
-      if (result[key]) {
+    Object.keys(values).forEach(key => keys.add(key))
+    for (const key of keys) {
+      const value = values[key] ?? 0
+      if (!result[key]) result[key] = { min: value, max: value }
+      else {
         if (result[key].max < value) result[key].max = value
         if (result[key].min > value) result[key].min = value
-      } else result[key] = { min: value, max: value }
-    })
+      }
+    }
   })
 
   return result
