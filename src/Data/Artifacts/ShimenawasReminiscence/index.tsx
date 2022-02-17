@@ -1,20 +1,19 @@
-import icons from './icons'
-import { Data } from '../../../Formula/type'
-import { percent, greaterEq, equal } from '../../../Formula/utils'
 import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
+import { cond, trans } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import { cond, trans } from '../../SheetUtil'
+import icons from './icons'
 
 const key: ArtifactSetKey = "ShimenawasReminiscence"
-
 const [, trm] = trans("artifact", key)
 
 const [usedEnergyStatePath, usedEnergyState] = cond(key, "usedEnergy")
 
 const set2 = greaterEq(input.artSet.ShimenawasReminiscence, 2, percent(0.18))
-const set4Norm = greaterEq(input.artSet.ShimenawasReminiscence, 4, 
+const set4Norm = greaterEq(input.artSet.ShimenawasReminiscence, 4,
   equal("used", usedEnergyState, percent(0.5)))
 const set4Charged = { ...set4Norm }
 const set4Plunge = { ...set4Norm }
@@ -31,7 +30,7 @@ export const data: Data = dataObjForArtifactSheet(key, {
 const sheet: IArtifactSheet = {
   name: "Shimenawa's Reminiscence", rarity: [4, 5],
   icons,
-    setEffects: {
+  setEffects: {
     2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
       document: [{
@@ -43,11 +42,11 @@ const sheet: IArtifactSheet = {
             used: {
               fields: [{
                 node: set4Norm,
-             }, {
-               node: set4Charged,
-             }, {
-               node: set4Plunge,
-             }]
+              }, {
+                node: set4Charged,
+              }, {
+                node: set4Plunge,
+              }]
             }
           }
         }

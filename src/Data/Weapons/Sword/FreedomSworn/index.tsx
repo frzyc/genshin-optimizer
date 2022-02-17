@@ -1,5 +1,4 @@
 import { WeaponData } from 'pipeline'
-import ImgIcon from '../../../../Components/Image/ImgIcon'
 import { Translate } from '../../../../Components/Translate'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
@@ -7,7 +6,7 @@ import { WeaponKey } from '../../../../Types/consts'
 import { sgt } from '../../../Characters/SheetUtil'
 import { cond, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
@@ -48,11 +47,8 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       teamBuff: true,
-      header: {
-        title: tr(`passiveName`),
-        icon: data => <ImgIcon size={2} sx={{ m: -1 }} src={data.get(input.weapon.asc).value < 2 ? icon : iconAwaken} />,
-      },
-      description: data => tr(`passiveDescription.${data.get(input.weapon.refineIndex).value}`),
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
       name: <Translate ns="weapon_FreedomSworn" key18="name" />,
       states: {
         on: {
