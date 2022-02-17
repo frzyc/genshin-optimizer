@@ -86,7 +86,7 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
     }
   }
 
-  permute(arts.length - 1, shared.arts.base)
+  permute(arts.length - 1, preArts.base)
   interimReport(count)
   return { command: "request", id, total: totalCount }
 }
