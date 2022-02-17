@@ -48,7 +48,7 @@ export const allArtifactSets = [
   // "TenacityOfTheMillelith",
   "PaleFlame",
   "EmblemOfSeveredFate",
-  // "ShimenawasReminiscence",
+  "ShimenawasReminiscence",
   "HuskOfOpulentDreams",
   "OceanHuedClam"
 ] as const

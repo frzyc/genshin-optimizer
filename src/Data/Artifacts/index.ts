@@ -29,7 +29,7 @@ import PaleFlame from './PaleFlame'
 // import ResolutionOfSojourner from './ResolutionOfSojourner'
 // import RetracingBolide from './RetracingBolide'
 // import Scholar from './Scholar'
-// import ShimenawasReminiscence from './ShimenawasReminiscence'
+import ShimenawasReminiscence from './ShimenawasReminiscence'
 // import TenacityOfTheMillelith from './TenacityOfTheMillelith'
 // import TheExile from './TheExile'
 import ThunderingFury from './ThunderingFury'
@@ -67,7 +67,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   // ResolutionOfSojourner,
   // RetracingBolide,
   // Scholar,
-  // ShimenawasReminiscence,
+  ShimenawasReminiscence,
   // TenacityOfTheMillelith,
   // TheExile,
   ThunderingFury,
