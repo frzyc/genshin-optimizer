@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from "../../../Formula/index"
-import { constant, data, infoMut, match, min, percent, prod, subscript, sum, threshold_add } from "../../../Formula/utils"
+import { constant, data, greaterEq, infoMut, match, min, percent, prod, subscript, sum } from "../../../Formula/utils"
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
@@ -17,26 +17,26 @@ const [tr, trm] = trans("char", characterKey)
 
 const { formula: normalDmg, section: normalSection } = mapNormals(datamine.normal.hitArr, [[2, 3], [5, 6]], characterKey)
 
-const const3TalentInc = threshold_add(input.constellation, 3, 3)
-const const5TalentInc = threshold_add(input.constellation, 5, 3)
-const hydro_dmg_ = threshold_add(input.asc, 4, datamine.passive2.hydro_dmg_)
+const const3TalentInc = greaterEq(input.constellation, 3, 3)
+const const5TalentInc = greaterEq(input.constellation, 5, 3)
+const hydro_dmg_ = greaterEq(input.asc, 4, datamine.passive2.hydro_dmg_)
 const [condC2Path, condC2] = cond(characterKey, "c2")
 const [condC4Path, condC4] = cond(characterKey, "c4")
-const hydro_enemyRes_ = threshold_add(input.constellation, 2,
+const hydro_enemyRes_ = greaterEq(input.constellation, 2,
   match(condC2, "c2", datamine.constellation2.hydro_enemyRes_))
 // NOTE: This does not show the same value as the old one?
-const skill_dmg_ = threshold_add(input.constellation, 4,
+const skill_dmg_ = greaterEq(input.constellation, 4,
   match(condC4, "c4", datamine.constellation4.skill_dmg_))
 // TODO: Doesn't display well in the UI
 const skillDuration = sum(datamine.skill.duration,
-  threshold_add(input.constellation, 2, datamine.constellation2.skill_duration))
+  greaterEq(input.constellation, 2, datamine.constellation2.skill_duration))
 
 const dmgRed = sum(
   subscript(input.total.skillIndex, datamine.skill.dmgRed),
   min(0.24, prod(input.total.hydro_dmg_, 0.20))
 )
 
-const healing = threshold_add(input.asc, 1, prod(input.total.hp, 0.06))
+const healing = greaterEq(input.asc, 1, prod(input.total.hp, 0.06))
 
 export const dmgFormulas = {
   normal: normalDmg,
@@ -178,7 +178,7 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("constellation2.description"),
           conditional: {
-            canShow: threshold_add(input.constellation, 2, 1),
+            canShow: greaterEq(input.constellation, 2, 1),
             value: condC2,
             path: condC2Path,
             teamBuff: true,
@@ -204,7 +204,7 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("constellation4.description"),
           conditional: {
-            canShow: threshold_add(input.constellation, 4, 1),
+            canShow: greaterEq(input.constellation, 4, 1),
             value: condC4,
             path: condC4Path,
             name: "Elemental Skill DMG Increase",
