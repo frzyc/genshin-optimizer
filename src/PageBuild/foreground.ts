@@ -1,12 +1,15 @@
 import Artifact from "../Data/Artifacts/Artifact";
+import { input } from "../Formula";
+import { computeUIData } from "../Formula/api";
+import { formulaString } from "../Formula/debug";
+import { Data, NumNode } from "../Formula/type";
+import { constant, setReadNodeKeys } from "../Formula/utils";
+import { allMainStatKeys, allSubstats, ICachedArtifact } from "../Types/artifact_WR";
 import { SetFilter } from "../Types/Build";
 import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
 import { deepClone, objectKeyMap, objectMap } from "../Util/Util";
+import type { ArtifactBuildData, ArtifactsBySlot, DynStat, RequestFilter } from "./background";
 import { countBuilds, filterArts } from "./common";
-import type { ArtifactBuildData, ArtifactsBySlot, RequestFilter } from "./background";
-import { allMainStatKeys, allSubstats, ICachedArtifact } from "../Types/artifact_WR";
-import { setReadNodeKeys } from "../Formula/utils";
-import { input } from "../Formula";
 
 const dynamic = setReadNodeKeys(deepClone({ dyn: { ...input.art, ...input.artSet } }))
 export const dynamicData = {
@@ -29,7 +32,6 @@ export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLeve
       values: {
         [art.setKey]: 1,
         [art.mainStatKey]: art.mainStatKey.endsWith('_') ? mainStatVal / 100 : mainStatVal,
-        /* TODO: Use accurate value */
         ...Object.fromEntries(art.substats.map(substat =>
           [substat.key, substat.key.endsWith('_') ? substat.accurateValue / 100 : substat.accurateValue]))
       },
@@ -135,3 +137,20 @@ function* splitFilterByIds(_arts: ArtifactsBySlot, filter: RequestFilter, limit:
 }
 
 const noFilter = { kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }
+
+export function debugCompute(nodes: NumNode[], base: DynStat, arts: ArtifactBuildData[]) {
+  const stats = { ...base }
+  for (const art of arts) {
+    for (const [key, value] of Object.entries(art.values)) {
+      stats[key] = (stats[key] ?? 0) + value
+    }
+  }
+  const data = { dyn: Object.fromEntries(Object.entries(stats).map(([key, value]) => [key, constant(value)])) } as Data
+  const uiData = computeUIData([data])
+  return {
+    base, arts, stats,
+    data, uiData,
+    nodes: nodes.map(formulaString),
+    results: nodes.map(node => uiData.get(node)),
+  }
+}
