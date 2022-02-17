@@ -327,7 +327,7 @@ export function mergeBuilds(builds: Build[][], maxNum: number): Build[] {
 }
 export function mergePlot(plots: PlotData[]): PlotData {
   let scale = 0.01, reductionScaling = 2, maxCount = 1500
-  let keys = new Set(plots.flatMap(x => Object.values(x).map(v => Math.round(v.value / scale))))
+  let keys = new Set(plots.flatMap(x => Object.values(x).map(v => Math.round(v.plot! / scale))))
   while (keys.size > maxCount) {
     scale *= reductionScaling
     keys = new Set([...keys].map(key => Math.round(key / reductionScaling)))
@@ -335,7 +335,7 @@ export function mergePlot(plots: PlotData[]): PlotData {
   const result: PlotData = {}
   for (const plot of plots)
     for (const build of Object.values(plot)) {
-      const x = Math.round(build.value / scale) * scale
+      const x = Math.round(build.plot! / scale) * scale
       if (!result[x] || result[x]!.value < build.value)
         result[x] = build
     }
