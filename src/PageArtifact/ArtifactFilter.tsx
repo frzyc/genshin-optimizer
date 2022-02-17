@@ -125,7 +125,7 @@ export default function ArtifactFilter({ artifactIds, filterOption, sortType, as
               {/* Artifact Slot */}
               <ArtifactSlotDropdown fullWidth hasUnselect slotKey={slotKey} onChange={slotKey => filterOptionDispatch({ slotKey })} />
               {/* Main Stat filter */}
-              <DropdownButton fullWidth title={KeyMap.get(mainStatKey) ?? t(`mainStat`)} color={mainStatKey ? "success" : "primary"}  >
+              <DropdownButton fullWidth title={KeyMap.get(mainStatKey) ? KeyMap.get(mainStatKey) : t(`mainStat`)} color={mainStatKey ? "success" : "primary"}  >
                 <MenuItem selected={mainStatKey === ""} disabled={mainStatKey === ""} onClick={() => filterOptionDispatch({ mainStatKey: "" })}>
                   <ListItemIcon><Replay /></ListItemIcon>
                   <ListItemText>
