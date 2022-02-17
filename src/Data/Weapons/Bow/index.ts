@@ -5,7 +5,7 @@
 // import ElegyForTheEnd from './ElegyForTheEnd'
 // import FavoniusWarbow from './FavoniusWarbow'
 // import Hamayumi from './Hamayumi'
-// import HuntersBow from './HuntersBow'
+import HuntersBow from './HuntersBow'
 // import Messenger from './Messenger'
 // import MitternachtsWaltz from './MitternachtsWaltz'
 // import MouunsMoon from './MouunsMoon'
@@ -33,7 +33,7 @@ const bow = {
   // ElegyForTheEnd,
   // FavoniusWarbow,
   // Hamayumi,
-  // HuntersBow,
+  HuntersBow,
   // Messenger,
   // MitternachtsWaltz,
   // MouunsMoon,

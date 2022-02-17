@@ -15,7 +15,7 @@ const key: CharacterKey = "YaeMiko"
 const elementKey: ElementKey = "electro"
 const [tr, trm] = trans("char", key)
 
-let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
+let a = 0, s = 0, b = 0, p2 = 0
 const datamine = {
   normal: {
     hitArr: [

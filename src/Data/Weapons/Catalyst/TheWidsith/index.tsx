@@ -1,5 +1,4 @@
 import { WeaponData } from 'pipeline'
-import ImgIcon from '../../../../Components/Image/ImgIcon'
 import { Translate } from '../../../../Components/Translate'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
@@ -13,21 +12,21 @@ import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 const key: WeaponKey = "TheWidsith"
 const data_gen = data_gen_json as WeaponData
-const [tr] = trans("weapon", key)
+const [, trm] = trans("weapon", key)
 
 const refinementAtkVals = [0.6, 0.75, 0.9, 1.05, 1.2]
 const refinementEleDmgVals = [0.48, 0.6, 0.72, 0.84, 0.96]
 const refinementEleMasVals = [240, 300, 360, 420, 480]
 
 const [condPassivePath, condPassive] = cond(key, "Debut")
-const atk_ = equal("recitative", condPassive, subscript(input.weapon.refineIndex, refinementAtkVals), 0)
-const anemo_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals), 0)
-const cryo_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals), 0)
-const electro_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals), 0)
-const geo_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals), 0)
-const hydro_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals), 0)
-const pyro_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals), 0)
-const eleMas = equal("interlude", condPassive, subscript(input.weapon.refineIndex, refinementEleMasVals), 0)
+const atk_ = equal("recitative", condPassive, subscript(input.weapon.refineIndex, refinementAtkVals))
+const anemo_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
+const cryo_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
+const electro_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
+const geo_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
+const hydro_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
+const pyro_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
+const eleMas = equal("interlude", condPassive, subscript(input.weapon.refineIndex, refinementEleMasVals))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
@@ -49,16 +48,10 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
-      teamBuff: true,
-      header: {
-        title: tr(`passiveName`),
-        icon: data => <ImgIcon size={2} sx={{ m: -1 }} src={data.get(input.weapon.asc).value < 2 ? icon : iconAwaken} />,
-      },
-      description: data => tr(`passiveDescription.${data.get(input.weapon.refineIndex).value}`),
       name: <Translate ns="weapon_TheWidsith_gen" key18="passiveName" />,
       states: {
         aria: {
-          name: "Aria",
+          name: trm("aria"),
           fields: [{
             node: anemo_dmg_
           }, {
@@ -78,7 +71,7 @@ const sheet: IWeaponSheet = {
           }]
         },
         interlude: {
-          name: "Interlude",
+          name: trm("interlude"),
           fields: [{
             node: eleMas
           }, {
@@ -88,7 +81,7 @@ const sheet: IWeaponSheet = {
           }]
         },
         recitative: {
-          name: "Recitative",
+          name: trm("recitative"),
           fields: [{
             node: atk_
           }, {

@@ -20,7 +20,7 @@
 // import SongOfBrokenPines from './SongOfBrokenPines'
 // import TheBell from './TheBell'
 // import TheUnforged from './TheUnforged'
-// import WasterGreatsword from './WasterGreatsword'
+import WasterGreatsword from './WasterGreatsword'
 // import Whiteblind from './Whiteblind'
 // import WhiteIronGreatsword from './WhiteIronGreatsword'
 // import WolfsGravestone from './WolfsGravestone'
@@ -47,7 +47,7 @@ const claymore = {
   // SongOfBrokenPines,
   // TheBell,
   // TheUnforged,
-  // WasterGreatsword,
+  WasterGreatsword,
   // Whiteblind,
   // WhiteIronGreatsword,
   // WolfsGravestone,
