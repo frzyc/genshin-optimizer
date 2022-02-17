@@ -1,8 +1,8 @@
 import { input } from "../../Formula";
 import { inferInfoMut, mergeData } from "../../Formula/api";
 import { reactions } from "../../Formula/reaction";
-import { Data, DisplaySub, NumNode } from "../../Formula/type";
-import { constant, data, equalStr, infoMut, percent, prod, stringPrio, subscript, sum, unit } from "../../Formula/utils";
+import { Data, DisplaySub, NumNode, Variant } from "../../Formula/type";
+import { constant, data, equalStr, infoMut, prod, stringPrio, subscript, sum, unit } from "../../Formula/utils";
 import { allMainStatKeys, allSubstats, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey, Region } from "../../Types/consts";
 import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
@@ -52,6 +52,15 @@ export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "norma
 /** Note: `additional` applies only to this formula */
 export function shieldNode(base: MainStatKey, percent: NumNode | number, flat: NumNode | number, additional?: Data): NumNode {
   return customShieldNode(sum(prod(percent, input.total[base]), flat), additional)
+}
+/** Note: `additional` applies only to this formula */
+export function shieldNodeTalent(base: MainStatKey, baseMultiplier: number[], flat: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional?: Data): NumNode {
+  const talentType = getTalentType(move)
+  const talentIndex = input.total[`${talentType}Index`]
+  return customShieldNode(sum(
+    prod(subscript(talentIndex, baseMultiplier, { key: '_' }), input.total[base]),
+    subscript(talentIndex, flat)
+  ), additional)
 }
 export function dataObjForCharacterSheet(
   key: CharacterKey,

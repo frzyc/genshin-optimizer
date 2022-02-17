@@ -230,16 +230,20 @@ const sheet: ICharacterSheet = {
             value: `${datamine.skill.trigger}s / ${datamine.skill.triggerHold}s`,
           }, {
             text: tr("skill.skillParams.5"),
-            value: datamine.skill.cd
+            value: datamine.skill.cd,
+            unit: "s"
           }, {
             text: tr("skill.skillParams.6"),
-            value: datamine.skill.cd
+            value: datamine.skill.cd,
+            unit: "s"
           }, {
             text: st("charges"),
             value: (data) => data.get(input.constellation).value >= 1 ? 3 : 2
           }],
           conditional: {
             teamBuff: true,
+            header: conditionalHeader("skill", tr, skill),
+            description: tr("skill.description"),
             value: condQuill,
             path: condQuillPath,
             name: trm("quill"),
