@@ -33,19 +33,23 @@ function getTalentType(move: "normal" | "charged" | "plunging" | "skill" | "burs
   }
 }
 
+/** Note: `additional` applies only to this formula */
 export function customDmgNode(base: NumNode, move: "normal" | "charged" | "plunging" | "skill" | "burst" | "elemental", additional: Data = {}): NumNode {
   return data(input.hit.dmg, mergeData([{
     hit: { base, move: constant(move), ele: additional?.hit?.ele ? undefined : inferredHitEle },
   }, additional]))
 }
+/** Note: `additional` applies only to this formula */
 export function customShieldNode(base: NumNode, additional?: Data): NumNode {
   const shieldNode = prod(base, sum(unit, input.total.shield_))
   return additional ? data(shieldNode, additional) : shieldNode
 }
+/** Note: `additional` applies only to this formula */
 export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
   const talentType = getTalentType(move)
   return customDmgNode(prod(subscript(input.total[`${talentType}Index`], lvlMultiplier, { key: '_' }), input.total[base]), move, additional)
 }
+/** Note: `additional` applies only to this formula */
 export function shieldNode(base: MainStatKey, percent: NumNode | number, flat: NumNode | number, additional?: Data): NumNode {
   return customShieldNode(sum(prod(percent, input.total[base]), flat), additional)
 }
