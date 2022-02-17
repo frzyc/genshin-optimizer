@@ -210,7 +210,7 @@ const common: Data = {
 
   enemy: {
     // TODO: shred cap of 90%
-    def: frac(sum(input.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed)), sum(1, prod(-1, enemy.defIgn)))),
+    def: frac(sum(input.lvl, 100), prod(sum(enemy.level, 100), sum(unit, prod(-1, enemy.defRed)), sum(unit, prod(-1, enemy.defIgn)))),
     defRed: total.enemyDefRed_,
     ...objectKeyValueMap(allElements, ele =>
       [`${ele}_resMulti`, res(infoMut(sum(enemy[`${ele}_res_`], total[`${ele}_enemyRes_`]), { key: `${ele}_res_`, variant: ele }))]),
