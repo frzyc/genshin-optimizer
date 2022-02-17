@@ -22,6 +22,7 @@ import WeaponDisplayCard from "../../PageWeapon/WeaponDisplayCard";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import StatInput from "../StatInput";
 import { TeamBuffDisplay } from "./CharacterTeamBuffsPane";
+import { range } from "../../Util/Util";
 export default function CharacterOverviewPane() {
   const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
@@ -75,15 +76,15 @@ export default function CharacterOverviewPane() {
           </Grid>
           <Typography sx={{ textAlign: "center", mt: 1 }} variant="h6">{characterSheet.constellationName}</Typography>
           <Grid container spacing={1}>
-            {[...Array(6).keys()].map(i =>
+            {range(1, 6).map(i =>
               <Grid item xs={4} key={i}>
-                <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i + 1}` as TalentSheetElementKey, charEle)?.img}
+                <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i}` as TalentSheetElementKey, charEle)?.img}
                   sx={{
                     cursor: "pointer",
-                    ...(constellation > i ? {} : { filter: "brightness(50%)" })
+                    ...(constellation >= i ? {} : { filter: "brightness(50%)" })
                   }}
                   width="100%" height="auto"
-                  onClick={() => characterDispatch({ constellation: (i + 1) === constellation ? i : i + 1 })} />
+                  onClick={() => characterDispatch({ constellation: i === constellation ? i - 1 : i })} />
               </Grid>)}
           </Grid>
         </CardContent>
@@ -133,7 +134,7 @@ const statBreakpoint = {
 function StatDisplayContent({ nodes, statBreakpoint, extra }: { nodes: ReadNode<number>[], statBreakpoint: object, extra?: Displayable }) {
   const { data, oldData } = useContext(DataContext)
   return <Grid container columnSpacing={{ xs: 2, lg: 3 }} rowSpacing={1}>
-    {nodes.map((rn, i) => <Grid item key={i} {...statBreakpoint} >
+    {nodes.map(rn => <Grid item key={rn.info?.key} {...statBreakpoint} >
       {<NodeFieldDisplay node={data.get(rn)} oldValue={oldData?.get(rn)?.value} />}
     </Grid>)}
     {extra}

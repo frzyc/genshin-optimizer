@@ -206,7 +206,7 @@ const sheet: ICharacterSheet = {
         }
       }),
       passive1: talentTemplate("passive1", tr, passive1),
-      passive2: talentTemplate("passive2", tr, passive2),
+      passive2: talentTemplate("passive2", tr, passive2, [{ text: "TODO" }]),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),

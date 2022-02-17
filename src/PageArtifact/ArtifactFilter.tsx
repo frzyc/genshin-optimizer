@@ -168,7 +168,7 @@ export default function ArtifactFilter({ artifactIds, filterOption, sortType, as
             }} >
               {/* substat filter */}
               {substats.map((substatKey, index) =>
-                <DropdownButton fullWidth key={index} title={substatKey ? KeyMap.get(substatKey) : t('editor.substat.substatFormat', { value: index + 1 })} color={substatKey ? "success" : "primary"}>
+                <DropdownButton fullWidth key={substatKey} title={substatKey ? KeyMap.get(substatKey) : t('editor.substat.substatFormat', { value: index + 1 })} color={substatKey ? "success" : "primary"}>
                   <MenuItem
                     selected={substatKey === ""}
                     disabled={substatKey === ""}

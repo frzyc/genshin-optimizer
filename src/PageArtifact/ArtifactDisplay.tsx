@@ -159,10 +159,10 @@ export default function ArtifactDisplay(props) {
     <PaginationCard count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
     <Grid container spacing={1} >
       <Suspense fallback={<Grid item xs={12}><Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} /></Grid>}>
-        {artifactIdsToShow.map((art, i) =>
-          <Grid item key={i} xs={12} sm={6} md={4} lg={4} xl={3} >
+        {artifactIdsToShow.map(artId =>
+          <Grid item key={artId} xs={12} sm={6} md={4} lg={4} xl={3} >
             <ArtifactCard
-              artifactId={art}
+              artifactId={artId}
               effFilter={effFilterSet}
               onDelete={deleteArtifact}
               onEdit={editArtifact}

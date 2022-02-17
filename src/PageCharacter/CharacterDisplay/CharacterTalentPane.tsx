@@ -18,6 +18,7 @@ import { ElementKey } from "../../Types/consts";
 import KeyMap from '../../KeyMap'
 import { NodeDisplay, valueString } from '../../Formula/uiData'
 import { NumNode } from "../../Formula/type";
+import { range } from "../../Util/Util";
 export default function CharacterTalentPane() {
   const { data, character, characterSheet } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(character.key)
@@ -66,14 +67,14 @@ export default function CharacterTalentPane() {
     <Typography variant="h6" sx={{ textAlign: "center" }}>Constellation Lv. {constellation}</Typography>
     <Grid container spacing={1}>
       {/* constellations */}
-      {[...Array(6).keys()].map(i => {
-        let tKey = `constellation${i + 1}` as TalentSheetElementKey
+      {range(1, 6).map(i => {
+        let tKey = `constellation${i}` as TalentSheetElementKey
         return <Grid item key={i} xs={12} md={4}
-          sx={{ opacity: constellation > i ? 1 : 0.5 }}>
+          sx={{ opacity: constellation >= i ? 1 : 0.5 }}>
           <SkillDisplayCard
             talentKey={tKey}
-            subtitle={`Contellation Lv. ${i + 1}`}
-            onClickTitle={() => characterDispatch({ constellation: (i + 1) === constellation ? i : i + 1 })}
+            subtitle={`Contellation Lv. ${i}`}
+            onClickTitle={() => characterDispatch({ constellation: i === constellation ? i - 1 : i })}
           />
         </Grid>
       })}
@@ -191,8 +192,8 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
     header = <>
       <CardContent sx={{ py: 1 }}>
         <DropdownButton fullWidth title={`Talent Lv. ${level}`} color={levelBoost ? "info" : "primary"}>
-          {[...Array(talentLimits[asc]).keys()].map(i =>
-            <MenuItem key={i} selected={talent[talentKey] === (i + 1)} disabled={talent[talentKey] === (i + 1)} onClick={() => setTalentLevel(talentKey, i + 1)}>Talent Lv. {i + levelBoost + 1}</MenuItem>)}
+          {range(1, talentLimits[asc]).map(i =>
+            <MenuItem key={i} selected={talent[talentKey] === (i)} disabled={talent[talentKey] === (i)} onClick={() => setTalentLevel(talentKey, i)}>Talent Lv. {i + levelBoost}</MenuItem>)}
         </DropdownButton>
       </CardContent>
       <Divider />
