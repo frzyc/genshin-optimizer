@@ -7,7 +7,13 @@ import Stat from "../../Stat";
 import { DocumentSection, TalentSheetElement, TalentSheetElementKey } from "../../Types/character";
 import { ElementKey, WeaponTypeKey } from "../../Types/consts";
 import IConditional from "../../Types/IConditional";
+/**
+ * @deprecated
+ */
 export const st = (strKey: string) => <Translate ns="sheet" key18={strKey} />
+/**
+ * @deprecated
+ */
 export const sgt = (strKey: string) => <Translate ns="sheet_gen" key18={strKey} />
 
 //this template only works if there is no variation in normal attacks.(no multi hits)

@@ -1,21 +1,19 @@
-import icons from './icons'
-import { Data } from '../../../Formula/type'
-import { percent, greaterEq, equal } from '../../../Formula/utils'
 import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
+import { cond, trans } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import { cond } from '../../SheetUtil'
-import ColorText from '../../../Components/ColoredText'
+import icons from './icons'
 
 const key: ArtifactSetKey = "Lavawalker"
-
+const [, trm] = trans("artifact", key)
 const [condStatePath, condState] = cond(key, "state")
 
 const set2 = greaterEq(input.artSet.Lavawalker, 2, percent(0.40))
 const set4 = greaterEq(input.artSet.Lavawalker, 4, equal("on", condState, percent(0.35)))
 
-// TODO: Is it all_dmg_?
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     pyro_res_: set2,
@@ -33,7 +31,7 @@ const sheet: IArtifactSheet = {
         conditional: {
           value: condState,
           path: condStatePath,
-          name: <span>Enemies that are <ColorText color="burning">Burning</ColorText> or affected by <ColorText color="pyro">Pyro</ColorText></span>,
+          name: trm("condName"),
           states: {
             on: {
               fields: [{

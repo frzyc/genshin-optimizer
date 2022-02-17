@@ -1,10 +1,9 @@
 import { WeaponData } from 'pipeline'
-import { Translate } from '../../../../Components/Translate'
 import { input } from '../../../../Formula'
 import { constant, lookup, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
-import { cond } from '../../../SheetUtil'
+import { cond, sgt, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -12,8 +11,6 @@ import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 const key: WeaponKey = "BlackcliffPole"
 const data_gen = data_gen_json as WeaponData
-export const st = (strKey: string) => <Translate ns="sheet" key18={strKey} />
-export const sgt = (strKey: string) => <Translate ns="sheet_gen" key18={strKey} />
 
 const [condPassivePath, condPassive] = cond(key, "PressTheAdvantage")
 const opponentsDefeated = range(1, 3)

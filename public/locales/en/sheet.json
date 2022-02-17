@@ -1,10 +1,10 @@
 {
   "dmg": "DMG",
-  "hits": "{{count}} Hit",
-  "hits_plural": "{{count}} Hits",
+  "hits_one": "{{count}} Hit",
+  "hits_other": "{{count}} Hits",
   "lessPercentHP": "< {{percent}}% HP",
-  "stack": "{{count}} Stack",
-  "stack_plural": "{{count}} Stacks",
+  "stack_one": "{{count}} Stack",
+  "stack_other": "{{count}} Stacks",
   "afterDefeatEnemy": "After defeating an opponent",
   "hitOp": {
     "normal": "Normal Attack hits on oppoents",

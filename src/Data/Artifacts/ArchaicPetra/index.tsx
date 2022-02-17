@@ -1,13 +1,11 @@
-import ImgIcon from '../../../Components/Image/ImgIcon'
-import SqBadge from '../../../Components/SqBadge'
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
-import { equal, percent, greaterEq } from '../../../Formula/utils'
+import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { IFieldDisplay } from '../../../Types/IFieldDisplay_WR'
 import { absorbableEle } from '../../Characters/dataUtil'
 import { cond, sgt, trans } from '../../SheetUtil'
-import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { ArtifactSheet, conditionalHeader, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
 const key: ArtifactSetKey = "ArchaicPetra"
@@ -46,11 +44,7 @@ const sheet: IArtifactSheet = {
           path: condPath,
           value: condNode,
           teamBuff: true,
-          header: {
-            title: tr("setName"),
-            icon: <ImgIcon size={2} sx={{ m: -1 }} src={icons.flower} />,
-            action: <SqBadge color="success">4-set</SqBadge>
-          },
+          header: conditionalHeader(tr, icons.flower),
           description: tr(`setEffects.4`),
           name: trm("condName"),
           states: Object.fromEntries(absorbableEle.map(e => [e, {

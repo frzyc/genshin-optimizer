@@ -5,13 +5,12 @@ import { input } from '../../../Formula'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import { cond } from '../../SheetUtil'
+import { cond, sgt, st } from '../../SheetUtil'
 
 const key: ArtifactSetKey = "PaleFlame"
 
 const [condStatePath, condState] = cond(key, "state")
 
-// TODO: Is this the correct implementation for the 4 set effect?
 const set2 = greaterEq(input.artSet.PaleFlame, 2, lookup(condState, { "twostacks": percent(0.5) }, percent(0.25)))
 const set4 = greaterEq(input.artSet.PaleFlame, 4, lookup(condState, { "onestack": percent(0.09), "twostacks": percent(0.18) }, naught))
 
@@ -32,15 +31,15 @@ const sheet: IArtifactSheet = {
         conditional: {
           value: condState,
           path: condStatePath,
-          name: "Elemental Skill hits an opponent",
+          name: st("hitOp.skill"),
           states: {
             onestack: {
-              name: "1 Stack",
-              fields: [{ node: set4 }, { text: "Duration", value: 7, unit: 's' }]
+              name: st("stack", { count: 1 }),
+              fields: [{ node: set4 }, { text: sgt("duration"), value: 7, unit: 's' }]
             },
             twostacks: {
-              name: "2 Stacks",
-              fields: [{ node: set4 }, { text: "Duration", value: 7, unit: 's' }]
+              name: st("stack", { count: 2 }),
+              fields: [{ node: set4 }, { text: sgt("duration"), value: 7, unit: 's' }]
             }
           }
         }

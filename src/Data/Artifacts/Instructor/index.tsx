@@ -1,22 +1,20 @@
-import icons from './icons'
+import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq } from '../../../Formula/utils'
-import { input } from '../../../Formula'
 import { ArtifactSetKey } from '../../../Types/consts'
-import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { cond, trans } from '../../SheetUtil'
+import { ArtifactSheet, conditionalHeader, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import { cond } from '../../SheetUtil'
-import { Translate } from '../../../Components/Translate'
+import icons from './icons'
 
 const key: ArtifactSetKey = "Instructor"
-const trm = (strKey: string) => <Translate ns="artifact_Instructor" key18={strKey} />
+const [tr, trm] = trans("artifact", key)
 
-const [condStatePath, condState] = cond(key, "state")
+const [condStatePath, condState] = cond(key, "set4")
 
 const set2 = greaterEq(input.artSet.Instructor, 2, 80)
 const set4 = greaterEq(input.artSet.Instructor, 4, equal("on", condState, 120))
 
-// TODO: Is it premod? Or is it total
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     eleMas: set2
@@ -36,9 +34,11 @@ const sheet: IArtifactSheet = {
     4: {
       document: [{
         conditional: {
+          teamBuff: true,
           value: condState,
           path: condStatePath,
-          teamBuff: true, // TODO: Should this be set to true?
+          header: conditionalHeader(tr, icons.flower),
+          description: tr(`setEffects.4`),
           name: trm("condName"),
           states: {
             on: {
