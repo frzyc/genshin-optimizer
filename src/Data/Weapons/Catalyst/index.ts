@@ -1,4 +1,4 @@
-// import ApprenticesNotes from './ApprenticesNotes'
+import ApprenticesNotes from './ApprenticesNotes'
 // import BlackcliffAgate from './BlackcliffAgate'
 // import DodocoTales from './DodocoTales'
 // import EmeraldOrb from './EmeraldOrb'
@@ -19,12 +19,12 @@ import KagurasVerity from './KagurasVerity'
 // import SacrificialFragments from './SacrificialFragments'
 // import SkywardAtlas from './SkywardAtlas'
 // import SolarPearl from './SolarPearl'
-// import TheWidsith from './TheWidsith'
+import TheWidsith from './TheWidsith'
 // import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
 // import TwinNephrite from './TwinNephrite'
 // import WineAndSong from './WineAndSong'
 const catalyst = {
-  // ApprenticesNotes,
+  ApprenticesNotes,
   // BlackcliffAgate,
   // DodocoTales,
   // EmeraldOrb,
@@ -45,7 +45,7 @@ const catalyst = {
   // SacrificialFragments,
   // SkywardAtlas,
   // SolarPearl,
-  // TheWidsith,
+  TheWidsith,
   // ThrillingTalesOfDragonSlayers,
   // TwinNephrite,
   // WineAndSong,
