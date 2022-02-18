@@ -9,8 +9,9 @@ import { DataContext } from '../DataContext';
 import { uiInput as input } from '../Formula';
 import KeyMap from '../KeyMap';
 import { MainStatKey, SubstatKey } from '../Types/artifact_WR';
+import { PlotData } from './background';
 type ChartCardProps = {
-  plotData: { plotBase: number, optimizationTarget: number }[]
+  plotData?: PlotData
   plotBase: MainStatKey | SubstatKey | "",
   setPlotBase: (key: MainStatKey | SubstatKey | "") => void
   disabled?: boolean
@@ -19,7 +20,6 @@ export default function ChartCard({ plotData, plotBase, setPlotBase, disabled = 
   const [showDownload, setshowDownload] = useState(false)
   const [showMin, setshowMin] = useState(true)
   const { data } = useContext(DataContext)
-
   const statKeys = ["atk", "hp", "def", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_"]
   if (data.get(input.weaponType).value !== "catalyst") statKeys.push("physical_dmg_")
   statKeys.push(`${data.get(input.charEle).value}_dmg_`)
@@ -27,9 +27,9 @@ export default function ChartCard({ plotData, plotBase, setPlotBase, disabled = 
   const { displayData, downloadData } = useMemo(() => {
     type Point = { x: number, y: number, min?: number }
 
-    if (!plotData?.length) return { displayData: null, downloadData: null }
-
-    const increasingX: Point[] = plotData.map(x => ({ x: x.plotBase, y: x.optimizationTarget })).sort((a, b) => a.x - b.x)
+    if (!plotData) return { displayData: null, downloadData: null }
+    const points = Object.values(plotData).map(({ value: y, plot: x }) => ({ x, y })) as Point[]
+    const increasingX: Point[] = points.sort((a, b) => a.x - b.x)
     const minimumData: Point[] = []
     for (const point of increasingX) {
       let last: Point | undefined
