@@ -70,12 +70,13 @@ export default class CharacterSheet {
     `${level}/${ascensionMaxLevel[ascension]}`
 }
 
-export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[]): TalentSheetElement => ({
+export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[], conditional?: IConditional): TalentSheetElement => ({
   name: tr(`${talentKey}.name`),
   img,
   sections: [{
     text: tr(`${talentKey}.description`),
-    fields
+    fields,
+    conditional,
   }],
 })
 

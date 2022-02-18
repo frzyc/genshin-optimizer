@@ -1,31 +1,29 @@
-import icons from './icons'
-import ImgIcon from '../../../Components/Image/ImgIcon'
-import SqBadge from '../../../Components/SqBadge'
-import { sgt } from '../../Characters/SheetUtil'
-import { absorbableEle } from '../../Characters/dataUtil'
 import ColorText from '../../../Components/ColoredText'
-import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
-import { ArtifactSetKey } from '../../../Types/consts'
-import { dataObjForArtifactSheet } from '../dataUtil'
-import { Data } from '../../../Formula/type'
-import { match, percent, threshold_add } from '../../../Formula/utils'
 import { input } from '../../../Formula'
-import elementalData from '../../ElementalData'
+import { Data } from '../../../Formula/type'
+import { equal, greaterEq, percent } from '../../../Formula/utils'
+import { ArtifactSetKey } from '../../../Types/consts'
 import { objectKeyMap, objectKeyValueMap } from '../../../Util/Util'
+import { absorbableEle } from '../../Characters/dataUtil'
+import { sgt } from '../../Characters/SheetUtil'
+import elementalData from '../../ElementalData'
 import { condReadNode, st, trans } from '../../SheetUtil'
+import { ArtifactSheet, conditionalHeader, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import icons from './icons'
 
 const key: ArtifactSetKey = "ViridescentVenerer"
 const [tr] = trans("artifact", key)
 
-const anemo_dmg_ = threshold_add(input.artSet.ViridescentVenerer, 2, percent(0.15))
-const swirl_dmg_ = threshold_add(input.artSet.ViridescentVenerer, 4, percent(0.6))
+const anemo_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 2, percent(0.15))
+const swirl_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 4, percent(0.6))
 
 const condSwirlPaths = objectKeyMap(absorbableEle, e => [key, `swirl${e}`])
 const condSwirls = objectKeyMap(absorbableEle, e => condReadNode(condSwirlPaths[e]))
 
 const condSwirlNodes = objectKeyValueMap(absorbableEle, e => [`${e}_enemyRes_`,
-threshold_add(input.artSet.ViridescentVenerer, 4,
-  match("swirl", condSwirls[e], percent(-0.4))
+greaterEq(input.artSet.ViridescentVenerer, 4,
+  equal("swirl", condSwirls[e], percent(-0.4))
 )])
 
 const data: Data = dataObjForArtifactSheet(key, {
@@ -53,15 +51,11 @@ const sheet: IArtifactSheet = {
         fields: [{ node: swirl_dmg_ }],
       },
       ...absorbableEle.map(eleKey => ({
-        conditional: { // Poetics of Fuubutsu
+        conditional: {
           value: condSwirls[eleKey],
           path: condSwirlPaths[eleKey],
           teamBuff: true,
-          header: {
-            title: tr("setName"),
-            icon: <ImgIcon size={2} sx={{ m: -1 }} src={icons.flower} />,
-            action: <SqBadge color="success">4-set</SqBadge>
-          },
+          header: conditionalHeader(tr, icons.flower),
           description: tr(`setEffects.4`),
           name: st("eleSwirled"),
           states: {

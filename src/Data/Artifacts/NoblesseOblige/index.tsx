@@ -1,26 +1,23 @@
-import icons from './icons'
 import { Translate } from '../../../Components/Translate'
-import ImgIcon from '../../../Components/Image/ImgIcon'
-import SqBadge from '../../../Components/SqBadge'
-import { sgt } from '../../Characters/SheetUtil'
-import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
-import { ArtifactSetKey } from '../../../Types/consts'
-import { customRead, match, percent, threshold_add } from '../../../Formula/utils'
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
+import { customRead, equal, greaterEq, percent } from '../../../Formula/utils'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { cond, sgt } from '../../SheetUtil'
+import { ArtifactSheet, conditionalHeader, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import { cond } from '../../SheetUtil'
+import icons from './icons'
 
 const key: ArtifactSetKey = "NoblesseOblige"
 
 const tr = (strKey: string) => <Translate ns={`artifact_${key}_gen`} key18={strKey} />
 
-const set2 = threshold_add(input.artSet.NoblesseOblige, 2, percent(0.2))
+const set2 = greaterEq(input.artSet.NoblesseOblige, 2, percent(0.2))
 
 const [condSet4Path, condSet4] = cond(key, "set4")
-const set4TallyWrite = threshold_add(input.artSet.NoblesseOblige, 4, match(condSet4, "on", 1))
+const set4TallyWrite = greaterEq(input.artSet.NoblesseOblige, 4, equal(condSet4, "on", 1))
 const set4TallyRead = customRead(["tally", "NO4"])
-const set4 = threshold_add(set4TallyRead, 1, percent(0.2))
+const set4 = greaterEq(set4TallyRead, 1, percent(0.2))
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
@@ -45,11 +42,7 @@ const sheet: IArtifactSheet = {
           teamBuff: true,
           value: condSet4,
           path: condSet4Path,
-          header: {
-            title: tr("setName"),
-            icon: <ImgIcon size={2} sx={{ m: -1 }} src={icons.flower} />,
-            action: <SqBadge color="success">4-set</SqBadge>
-          },
+          header: conditionalHeader(tr, icons.flower),
           description: tr(`setEffects.4`),
           name: <Translate ns="artifact_NoblesseOblige" key18="condName" />,
           states: {

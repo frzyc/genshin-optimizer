@@ -2,7 +2,7 @@ import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { Translate } from '../../../Components/Translate'
 import { input } from '../../../Formula'
-import { constant, infoMut, match, matchFull, percent, prod, sum, threshold_add } from '../../../Formula/utils'
+import { constant, equal, equalStr, greaterEq, infoMut, percent, prod, sum } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
@@ -76,23 +76,22 @@ const datamine = {
 } as const
 
 const [condAfterSprintPath, condAfterSprint] = cond(key, "afterSprint")
-const afterSprintInfusion = matchFull("afterSprint", condAfterSprint, "cryo", undefined)
+const afterSprintInfusion = equalStr("afterSprint", condAfterSprint, "cryo")
 
 const [condAfterSkillA1Path, condAfterSkillA1] = cond(key, "afterSkillA1")
-const a1NormDmg_ = match("afterSkill", condAfterSkillA1, percent(datamine.passive1.dmg_bonus))
-const a1ChargedDmg_ = match("afterSkill", condAfterSkillA1, percent(datamine.passive1.dmg_bonus), { key: "charged_dmg_" })
+const a1NormDmg_ = equal("afterSkill", condAfterSkillA1, percent(datamine.passive1.dmg_bonus))
+const a1ChargedDmg_ = equal("afterSkill", condAfterSkillA1, percent(datamine.passive1.dmg_bonus), { key: "charged_dmg_" })
 
 const [condAfterApplySprintPath, condAfterApplySprint] = cond(key, "afterApplySprint")
-const afterApplySprintCryo = match("afterApplySprint", condAfterApplySprint, percent(datamine.passive2.cryo))
+const afterApplySprintCryo = equal("afterApplySprint", condAfterApplySprint, percent(datamine.passive2.cryo))
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, "afterBurst")
-const afterBurst = threshold_add(input.constellation, 4,
-  match("c4", condAfterBurst, datamine.constellation4.def_red))
+const afterBurst = greaterEq(input.constellation, 4,
+  equal("c4", condAfterBurst, datamine.constellation4.def_red))
 
 const [condC6Path, condC6] = cond(key, "C6")
-const c6ChargedDmg_ = threshold_add(input.constellation, 6,
-  match("c6", condC6, datamine.constellation6.charged_bonus), { key: `charged_dmg_` })
-
+const c6ChargedDmg_ = greaterEq(input.constellation, 6,
+  equal("c6", condC6, datamine.constellation6.charged_bonus), { key: `charged_dmg_` })
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -113,8 +112,8 @@ const dmgFormulas = {
     dmg: customDmgNode(prod(input.total.atk, datamine.constellation2.snowflake), "burst", { hit: { ele: constant("cryo") } })
   }
 }
-const nodeC3 = threshold_add(input.constellation, 3, 3)
-const nodeC5 = threshold_add(input.constellation, 5, 3)
+const nodeC3 = greaterEq(input.constellation, 3, 3)
+const nodeC5 = greaterEq(input.constellation, 5, 3)
 export const adata = dataObjForCharacterSheet(key, elementKey, "inazuma", data_gen, dmgFormulas, {
   bonus: {
     skill: nodeC5,
@@ -131,8 +130,6 @@ export const adata = dataObjForCharacterSheet(key, elementKey, "inazuma", data_g
     charged_dmg_: sum(a1ChargedDmg_, c6ChargedDmg_),
     cryo_dmg_: afterApplySprintCryo,
   },
-  total: {
-  }
 })
 
 const sheet: ICharacterSheet = {
@@ -254,7 +251,7 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("passive1.description"),
           conditional: {//After using Kamisato Art: Hyouka
-            canShow: threshold_add(input.asc, 1, 1),
+            canShow: greaterEq(input.asc, 1, 1),
             value: condAfterSkillA1,
             path: condAfterSkillA1Path,
             name: trm("afterSkill"),
@@ -282,7 +279,7 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("passive2.description"),
           conditional: { //sprint
-            canShow: threshold_add(input.asc, 4, 1),
+            canShow: greaterEq(input.asc, 4, 1),
             value: condAfterApplySprint,
             path: condAfterApplySprintPath,
             name: trm("afterSprintCryo"),
@@ -320,7 +317,7 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("constellation4.description"),
           conditional: {
-            canShow: threshold_add(input.constellation, 4, 1),
+            canShow: greaterEq(input.constellation, 4, 1),
             value: condAfterBurst,
             path: condAfterBurstPath,
             name: trm("dmgBySnowflake"),
@@ -344,7 +341,7 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("constellation6.description"),
           conditional: {
-            canShow: threshold_add(input.constellation, 6, 1),
+            canShow: greaterEq(input.constellation, 6, 1),
             value: condC6,
             path: condC6Path,
             name: trm("afterSkill"),

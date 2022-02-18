@@ -30,11 +30,12 @@ import useCharacter from '../ReactHooks/useCharacter';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
+import usePromise from '../ReactHooks/usePromise';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
 import { BuildSetting } from '../Types/Build';
 import { ArtifactSetKey, CharacterKey } from '../Types/consts';
 import { objectMap, objPathValue } from '../Util/Util';
-import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
+import { Finalize, FinalizeResult, PlotData, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import ChartCard from './ChartCard';
@@ -104,7 +105,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const [generationDuration, setgenerationDuration] = useState(0)//in ms
   const [generationSkipped, setgenerationSkipped] = useState(0)
 
-  const [chartData, setchartData] = useState(undefined as any)
+  const [chartData, setchartData] = useState(undefined as PlotData | undefined)
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
@@ -116,7 +117,15 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
-  const [teamDataBuilds, setTeamDataBuilds] = useState([] as TeamData[])
+  const teamDataBuilds = usePromise(Promise.all(builds.map(async (b) => {
+    const { teamData, teamBundle } = (await getTeamData(database, characterKey, mainStatAssumptionLevel, b.filter(a => a).map(a => database._getArt(a)!)))!
+    const calcData = uiDataForTeam(teamData, characterKey)
+    const data = objectMap(calcData, (obj, ck) => {
+      const { data: _, ...rest } = teamBundle[ck]!
+      return { ...obj, ...rest }
+    })
+    return data
+  })), [builds, database, characterKey, mainStatAssumptionLevel]) ?? []
 
   const compareData = character?.compareData ?? false
 
@@ -152,13 +161,14 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     const arts = database._getArts().filter(art => {
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
+      const mainStats = mainStatKeys[art.slotKey]
+      if (mainStats?.length && !mainStats.includes(art.mainStatKey)) return false
+
       // If its equipped on the selected character, bypass the check
       if (art.location === characterKey) return true
 
       if (art.exclude && !useExcludedArts) return false
       if (art.location && !useEquippedArts) return false
-      const mainStats = mainStatKeys[art.slotKey]
-      if (mainStats?.length && !mainStats.includes(art.mainStatKey)) return false
       return true
     })
     const split = compactArtifacts(arts, mainStatAssumptionLevel)
@@ -306,15 +316,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         setchartData(plotData)
       }
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
-      setTeamDataBuilds(await Promise.all(builds.map(async ({ artifactIds: b }) => {
-        const { teamData, teamBundle } = (await getTeamData(database, characterKey, mainStatAssumptionLevel, b.filter(a => a).map(a => database._getArt(a)!)))!
-        const calcData = uiDataForTeam(teamData, characterKey)
-        const data = objectMap(calcData, (obj, ck) => {
-          const { data: _, ...rest } = teamBundle[ck]!
-          return { ...obj, ...rest }
-        })
-        return data
-      })))
       buildSettingsDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
       const totalDuration = performance.now() - t1
 
@@ -330,7 +331,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       })
     }
     setgeneratingBuilds(false)
-  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingsDispatch])
+  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingsDispatch, setFilters, statFilters])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
@@ -523,7 +524,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
         {/* Build List */}
         {teamDataBuilds?.map((teamData, index) => <DataContext.Provider key={index} value={{ ...dataContext, data: teamData[characterKey].target, teamData, oldData: data }}>
-          <ArtifactBuildDisplayItem index={index} key={index} onClick={() => setmodalBuildIndex(index)} compareBuild={compareData} disabled={!!generatingBuilds} />
+          <ArtifactBuildDisplayItem index={index} onClick={() => setmodalBuildIndex(index)} compareBuild={compareData} disabled={!!generatingBuilds} />
         </DataContext.Provider>
         )}
       </Suspense>

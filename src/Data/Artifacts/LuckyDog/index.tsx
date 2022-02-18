@@ -1,13 +1,13 @@
 import icons from './icons'
 import { Data } from '../../../Formula/type'
-import { infoMut, threshold_add } from '../../../Formula/utils'
+import { infoMut, greaterEq } from '../../../Formula/utils'
 import { input } from '../../../Formula'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 const key: ArtifactSetKey = "LuckyDog"
-const set2 = threshold_add(input.artSet.LuckyDog, 2, 100)
-const heal = threshold_add(input.artSet.LuckyDog, 4, 300)
+const set2 = greaterEq(input.artSet.LuckyDog, 2, 100)
+const heal = greaterEq(input.artSet.LuckyDog, 4, 300)
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {

@@ -149,6 +149,19 @@ export default function HomeDisplay() {
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
     <CardDark>
       <CardContent>
+        <Typography variant="h5" gutterBottom color="warning.main" >
+          Welcome to Genshin Optimizer Waverider Beta!
+        </Typography>
+        <Typography variant="body1" color="text.secondary" gutterBottom >
+          Ever since version 2.0, MHY has released characters/weapons with kits that seem to defy the original design considerations of the Optimizer. The system implemented here is designed with these mechanisms in mind, and provide some future-proofing for future MHY feature-creeping.
+        </Typography>
+        <Typography variant="body1" color="text.secondary" gutterBottom>
+          Since this is a beta, a lot of thing might be broken. Please funnel bugreports towards our discord.
+        </Typography>
+      </CardContent>
+    </CardDark>
+    <CardDark>
+      <CardContent>
         <Trans i18nKey="intro" t={t}>
           <Typography variant="h5" gutterBottom >
             What is Genshin Optimizer?
@@ -183,19 +196,6 @@ export default function HomeDisplay() {
             GO does NOT generally take consideration of Energy Recharge, or team rotations. Please keep those mechanics in mind when you use this tool.
           </Typography>
         </Trans>
-      </CardContent>
-    </CardDark>
-    <CardDark>
-      <CardContent>
-        <Typography variant="h5" gutterBottom color="warning.main" >
-          Where are Version 2.4 Characters/Weapons in GO?
-        </Typography>
-        <Typography variant="body1" color="text.secondary" gutterBottom >
-          Ever since version 2.0, MHY has released characters/weapons with kits that seem to defy the original design considerations of the Optimizer. Unfortunately, to design a hyper optimized system, GO is designed with a lot of assumptions to what "general" forms the formulas in Genshin will take. These assumptions have been feature crept to obsoletion. Weapons like Moonglow and Spindle, characters like Kujou Sara and Gurou, are no longer able to fit into the Optimizer ecosystem. As 2.4 has been released, we've seen MHY double down on these "incompatible" game mechanics, which makes implementing the new characters almost pointless.
-        </Typography>
-        <Typography variant="body1" color="text.secondary" gutterBottom>
-          The good news is that we've been anticipating this feature creep, and we've designed a new system to accommodate the new changes. However, we will need a lot more time putting vision into code, and even more time migrating all the existing characters/artifact/weapons to the new system. We cannot promise any concrete ETAs, since such an undertaking can have many perilous setbacks, and quite a lot of unanticipated issues. There will be somewhat minimal updates to the implementation process of this system for the same reason, so the only thing you can do for now is to please keep in mind that we are presently working on a solution.
-        </Typography>
       </CardContent>
     </CardDark>
     <CardDark sx={{ width: "100%" }}  >

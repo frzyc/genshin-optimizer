@@ -18,6 +18,7 @@ import { ElementKey } from "../../Types/consts";
 import KeyMap from '../../KeyMap'
 import { NodeDisplay, valueString } from '../../Formula/uiData'
 import { NumNode } from "../../Formula/type";
+import { range } from "../../Util/Util";
 export default function CharacterTalentPane() {
   const { data, character, characterSheet } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(character.key)
@@ -66,14 +67,14 @@ export default function CharacterTalentPane() {
     <Typography variant="h6" sx={{ textAlign: "center" }}>Constellation Lv. {constellation}</Typography>
     <Grid container spacing={1}>
       {/* constellations */}
-      {[...Array(6).keys()].map(i => {
-        let tKey = `constellation${i + 1}` as TalentSheetElementKey
+      {range(1, 6).map(i => {
+        let tKey = `constellation${i}` as TalentSheetElementKey
         return <Grid item key={i} xs={12} md={4}
-          sx={{ opacity: constellation > i ? 1 : 0.5 }}>
+          sx={{ opacity: constellation >= i ? 1 : 0.5 }}>
           <SkillDisplayCard
             talentKey={tKey}
-            subtitle={`Contellation Lv. ${i + 1}`}
-            onClickTitle={() => characterDispatch({ constellation: (i + 1) === constellation ? i : i + 1 })}
+            subtitle={`Contellation Lv. ${i}`}
+            onClickTitle={() => characterDispatch({ constellation: i === constellation ? i - 1 : i })}
           />
         </Grid>
       })}
@@ -86,7 +87,7 @@ const ReactionComponents = {
   overloaded: OverloadedCard,
   pyroSwirl: SwirlCard,// TODO: Assumes if character can pyro swirl, it can swirl every element. This behaviour will need to be changed for characters that can only swirl specific elements.
   shattered: ShatteredCard,
-  // crystalize_hit: CrystalizeCard, // TODO: crystallize
+  crystallize: CrystallizeCard,
 }
 function ReactionDisplay() {
   const { data } = useContext(DataContext)
@@ -125,6 +126,7 @@ const swirlEleToDisplay = {
   "cryo": <span><ColorText color="cryo">{KeyMap.get("cryo_swirl_hit")}</ColorText> {StatIcon.cryo} + {StatIcon.anemo}</span>,
   "hydro": <span><ColorText color="hydro">{KeyMap.get("hydro_swirl_hit")}</ColorText> {StatIcon.hydro} + {StatIcon.anemo}</span>
 } as const
+
 function SwirlCard() {
   const [ele, setele] = useState(Object.keys(swirlEleToDisplay)[0])
   const { data } = useContext(DataContext)
@@ -136,6 +138,7 @@ function SwirlCard() {
     <Box sx={{ color: `${ele}.main`, p: 1 }}><strong>{valueString(node.value, node.unit)}</strong></Box>
   </CardDark>
 }
+
 function ShatteredCard({ node }: { node: NodeDisplay }) {
   const information = <BootstrapTooltip placement="top" title={<Typography>Claymores, Plunging Attacks and <ColorText color="geo">Geo DMG</ColorText></Typography>}>
     <Box component="span" sx={{ cursor: "help" }}><FontAwesomeIcon icon={faQuestionCircle} /></Box>
@@ -145,22 +148,24 @@ function ShatteredCard({ node }: { node: NodeDisplay }) {
     <ColorText color="shattered">{KeyMap.get(node.key!)} {StatIcon.hydro}+{StatIcon.cryo}+ <ColorText color="physical"><small>Heavy Attack{information} </small></ColorText> <strong>{valueString(node.value, node.unit)}</strong></ColorText>
   </CardContent></CardDark>
 }
-// TODO: crystallize
-const crystalizeEleToDisplay = {
-  "default": <ColorText color="crystalize">{KeyMap.get("crystalize_hit")} {StatIcon.electro}/{StatIcon.hydro}/{StatIcon.pyro}/{StatIcon.cryo}+{StatIcon.geo}</ColorText>,
-  "pyro": <span>{KeyMap.get("pyro_crystalize_hit")} {StatIcon.pyro}+{StatIcon.geo}</span>,
-  "electro": <span>{KeyMap.get("electro_crystalize_hit")} {StatIcon.electro}+{StatIcon.geo}</span>,
-  "cryo": <span>{KeyMap.get("cryo_crystalize_hit")} {StatIcon.cryo}+{StatIcon.geo}</span>,
-  "hydro": <span>{KeyMap.get("hydro_crystalize_hit")} {StatIcon.hydro}+{StatIcon.geo}</span>
+
+const crystallizeEleToDisplay = {
+  "geo": <ColorText color="crystallize">{KeyMap.get("crystallize")} {StatIcon.electro}/{StatIcon.hydro}/{StatIcon.pyro}/{StatIcon.cryo}+{StatIcon.geo}</ColorText>,
+  "pyro": <span><ColorText color="pyro">{KeyMap.get("pyro_crystallize")}</ColorText> {StatIcon.pyro}+{StatIcon.geo}</span>,
+  "electro": <span><ColorText color="electro">{KeyMap.get("electro_crystallize")}</ColorText> {StatIcon.electro}+{StatIcon.geo}</span>,
+  "cryo": <span><ColorText color="cryo">{KeyMap.get("cryo_crystallize")}</ColorText> {StatIcon.cryo}+{StatIcon.geo}</span>,
+  "hydro": <span><ColorText color="hydro">{KeyMap.get("hydro_crystallize")}</ColorText> {StatIcon.hydro}+{StatIcon.geo}</span>
 } as const
-function CrystalizeCard() {
-  const [ele, setele] = useState(Object.keys(crystalizeEleToDisplay)[0])
-  const sKey = ele === "default" ? "crystalize_hit" : `${ele}_crystalize_hit`
+
+function CrystallizeCard() {
+  const [ele, setele] = useState(Object.keys(crystallizeEleToDisplay)[0])
+  const { data } = useContext(DataContext)
+  const node = ele === "geo" ? data.getDisplay().reaction!.crystallize! : data.getDisplay().reaction![`${ele}Crystallize`]!
   return <CardDark sx={{ display: "flex" }}>
-    <DropdownButton size="small" title={crystalizeEleToDisplay[ele]} color="success">
-      {Object.entries(crystalizeEleToDisplay).map(([key, element]) => <MenuItem key={key} selected={ele === key} disabled={ele === key} onClick={() => setele(key)}>{element}</MenuItem>)}
+    <DropdownButton size="small" title={crystallizeEleToDisplay[ele]} color="success">
+      {Object.entries(crystallizeEleToDisplay).map(([key, element]) => <MenuItem key={key} selected={ele === key} disabled={ele === key} onClick={() => setele(key)}>{element}</MenuItem>)}
     </DropdownButton>
-    {/* <Box sx={{ color: `${ele}.main`, p: 1 }}><strong>{stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</strong></Box> */}
+    <Box sx={{ color: `${ele}.main`, p: 1 }}><strong>{valueString(node.value, node.unit)}</strong></Box>
   </CardDark>
 }
 
@@ -191,8 +196,8 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
     header = <>
       <CardContent sx={{ py: 1 }}>
         <DropdownButton fullWidth title={`Talent Lv. ${level}`} color={levelBoost ? "info" : "primary"}>
-          {[...Array(talentLimits[asc]).keys()].map(i =>
-            <MenuItem key={i} selected={talent[talentKey] === (i + 1)} disabled={talent[talentKey] === (i + 1)} onClick={() => setTalentLevel(talentKey, i + 1)}>Talent Lv. {i + levelBoost + 1}</MenuItem>)}
+          {range(1, talentLimits[asc]).map(i =>
+            <MenuItem key={i} selected={talent[talentKey] === (i)} disabled={talent[talentKey] === (i)} onClick={() => setTalentLevel(talentKey, i)}>Talent Lv. {i + levelBoost}</MenuItem>)}
         </DropdownButton>
       </CardContent>
       <Divider />

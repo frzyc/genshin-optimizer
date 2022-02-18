@@ -21,6 +21,8 @@ import ProbabilityFilter from './ProbabilityFilter';
 import { GlobalSettingsContext } from '../GlobalSettings';
 import { probability } from './RollProbability';
 import KeyMap from '../KeyMap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 function intialState() {
@@ -58,15 +60,11 @@ export default function ArtifactDisplay(props) {
 
   const [artToEditId, setartToEditId] = useState(props?.location?.artToEditId)
   const [pageIdex, setpageIdex] = useState(0)
-  const scrollRef = useRef<HTMLDivElement>(null)
   const invScrollRef = useRef<HTMLDivElement>(null)
   const [dbDirty, forceUpdate] = useForceUpdate()
   const effFilterSet = useMemo(() => new Set(effFilter), [effFilter]) as Set<SubstatKey>
   const deleteArtifact = useCallback((id: string) => database.removeArt(id), [database])
-  const editArtifact = useCallback(id => {
-    scrollRef?.current?.scrollIntoView({ behavior: "smooth" })
-    setartToEditId(id);
-  }, [])
+  const editArtifact = useCallback(id => setartToEditId(id), [])
   const cancelEditArtifact = useCallback(() => setartToEditId(null), [])
 
   useEffect(() => {
@@ -137,12 +135,10 @@ export default function ArtifactDisplay(props) {
 
     {noArtifact && <Alert severity="info" variant="filled">Looks like you haven't added any artifacts yet. If you want, there are <Link color="warning.main" component={RouterLink} to="/scanner">automatic scanners</Link> that can speed up the import process!</Alert>}
 
-    <Box ref={scrollRef} >
-      <ArtifactEditor
-        artifactIdToEdit={artToEditId}
-        cancelEdit={cancelEditArtifact}
-      />
-    </Box>
+    <ArtifactEditor
+      artifactIdToEdit={artToEditId}
+      cancelEdit={cancelEditArtifact}
+    />
     <ArtifactFilter artifactIds={artifactIds} filterOption={filterOption} filterOptionDispatch={filterOptionDispatch} filterDispatch={stateDispatch} sortType={sortType} ascending={ascending} />
     {showProbability && <ProbabilityFilter probabilityFilter={probabilityFilter} setProbabilityFilter={setProbabilityFilter} />}
     <CardDark ref={invScrollRef}>
@@ -157,12 +153,32 @@ export default function ArtifactDisplay(props) {
       </CardContent>
     </CardDark>
     <PaginationCard count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
-    <Grid container spacing={1} >
-      <Suspense fallback={<Grid item xs={12}><Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} /></Grid>}>
-        {artifactIdsToShow.map((art, i) =>
-          <Grid item key={i} xs={12} sm={6} md={4} lg={4} xl={3} >
+    <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
+      <Grid container spacing={1} >
+        <Grid item xs={12} sm={6} md={4} lg={4} xl={3}>
+          <CardDark sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
+            <CardContent>
+              <Typography sx={{ textAlign: "center" }}>Add New Artifact</Typography>
+            </CardContent>
+            <Box sx={{
+              flexGrow: 1,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+            >
+              <Button onClick={() => editArtifact("new")} sx={{
+                borderRadius: "1em"
+              }}>
+                <Typography variant="h1"><FontAwesomeIcon icon={faPlus} className="fa-fw" /></Typography>
+              </Button>
+            </Box>
+          </CardDark>
+        </Grid>
+        {artifactIdsToShow.map(artId =>
+          <Grid item key={artId} xs={12} sm={6} md={4} lg={4} xl={3} >
             <ArtifactCard
-              artifactId={art}
+              artifactId={artId}
               effFilter={effFilterSet}
               onDelete={deleteArtifact}
               onEdit={editArtifact}
@@ -170,8 +186,8 @@ export default function ArtifactDisplay(props) {
             />
           </Grid>
         )}
-      </Suspense>
-    </Grid>
+      </Grid>
+    </Suspense>
     {numPages > 1 && <PaginationCard count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />}
   </Box >
 }

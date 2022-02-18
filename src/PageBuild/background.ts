@@ -59,12 +59,18 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
       const result = compute(stats)
       if (shared.min.every((m, i) => (m <= result[i]))) {
         const value = result[shared.min.length]
-        if (value >= threshold)
-          builds.push({ value, plot: result[shared.min.length + 1], artifactIds: [...ids] })
+        let build: Build | undefined
+        if (value >= threshold) {
+          build = { value, artifactIds: [...ids] }
+          builds.push(build)
+        }
         if (plotData) {
           const x = result[shared.min.length + 1]
-          if (!plotData[x] || plotData[x]!.value < value)
-            plotData[x] = { value, artifactIds: [...ids] }
+          if (!plotData[x] || plotData[x]!.value < value) {
+            if (!build) build = { value, artifactIds: [...ids] }
+            build.plot = x
+            plotData[x] = build
+          }
         }
       }
       else count.failed += 1
@@ -86,7 +92,7 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
     }
   }
 
-  permute(arts.length - 1, shared.arts.base)
+  permute(arts.length - 1, preArts.base)
   interimReport(count)
   return { command: "request", id, total: totalCount }
 }

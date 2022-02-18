@@ -2,7 +2,7 @@ import { allEleEnemyResKeys } from "../KeyMap"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
 import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
-import { constant, frac, infoMut, lookup, matchFull, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, sum, unit } from "./utils"
+import { constant, equalStr, frac, infoMut, lookup, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringRead, sum, unit } from "./utils"
 
 const asConst = true as const, pivot = true as const
 
@@ -134,14 +134,15 @@ const baseAmpBonus = sum(unit, prod(25 / 9, frac(total.eleMas, 1400)))
 /** Effective reaction, taking into account the hit's element */
 export const effectiveReaction = lookup(hit.ele, {
   pyro: lookup(hit.reaction, { vaporize: constant("vaporize"), melt: constant("melt") }, undefined),
-  hydro: matchFull(hit.reaction, "vaporize", "vaporize", undefined),
-  cryo: matchFull(hit.reaction, "melt", "melt", undefined),
+  hydro: equalStr(hit.reaction, "vaporize", "vaporize"),
+  cryo: equalStr(hit.reaction, "melt", "melt"),
 }, undefined)
 
 const common: Data = {
   premod: {
     ...objectKeyMap(allTalents, talent => bonus[talent]),
-    ...objectKeyMap(allModStats, key => {
+    ...objectKeyMap(allNonModStats, key => customBonus[key]),
+    ...objectKeyMap([...allModStats, ...allArtNonModStats] as const, key => {
       const operands: NumNode[] = []
       switch (key) {
         case "atk": case "def": case "hp":
@@ -161,7 +162,6 @@ const common: Data = {
       }
       return sum(...[...operands, art[key], customBonus[key]].filter(x => x))
     }),
-    ...objectKeyMap(allNonModStats, key => customBonus[key]),
   },
   total: {
     ...objectKeyMap(allTalents, talent => premod[talent]),
@@ -210,7 +210,7 @@ const common: Data = {
 
   enemy: {
     // TODO: shred cap of 90%
-    def: frac(sum(input.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed)), sum(1, prod(-1, enemy.defIgn)))),
+    def: frac(sum(input.lvl, 100), prod(sum(enemy.level, 100), sum(unit, prod(-1, enemy.defRed)), sum(unit, prod(-1, enemy.defIgn)))),
     defRed: total.enemyDefRed_,
     ...objectKeyValueMap(allElements, ele =>
       [`${ele}_resMulti`, res(infoMut(sum(enemy[`${ele}_res_`], total[`${ele}_enemyRes_`]), { key: `${ele}_res_`, variant: ele }))]),

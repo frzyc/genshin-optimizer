@@ -1,13 +1,12 @@
 import { WeaponData } from 'pipeline'
-import ImgIcon from '../../../../Components/Image/ImgIcon'
 import { Translate } from '../../../../Components/Translate'
 import { input } from '../../../../Formula'
-import { match, subscript } from '../../../../Formula/utils'
+import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { sgt } from '../../../Characters/SheetUtil'
 import { cond, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
@@ -18,10 +17,10 @@ const autoSrc = [0.16, 0.20, 0.24, 0.28, 0.32]
 const atk_Src = [0.2, 0.25, 0.3, 0.35, 0.40]
 
 const [condPassivePath, condPassive] = cond(key, "MillennialMovement")
-const atk_ = match("on", condPassive, subscript(input.weapon.refineIndex, atk_Src))
-const normal_dmg_ = match("on", condPassive, subscript(input.weapon.refineIndex, autoSrc))
-const charged_dmg_ = match("on", condPassive, subscript(input.weapon.refineIndex, autoSrc))
-const plunging_dmg_ = match("on", condPassive, subscript(input.weapon.refineIndex, autoSrc))
+const atk_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atk_Src))
+const normal_dmg_ = equal("on", condPassive, subscript(input.weapon.refineIndex, autoSrc))
+const charged_dmg_ = equal("on", condPassive, subscript(input.weapon.refineIndex, autoSrc))
+const plunging_dmg_ = equal("on", condPassive, subscript(input.weapon.refineIndex, autoSrc))
 
 const dmg_ = subscript(input.weapon.refineIndex, data_gen.addProps.map(x => x.dmg_ ?? NaN))
 
@@ -48,11 +47,8 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       teamBuff: true,
-      header: {
-        title: tr(`passiveName`),
-        icon: data => <ImgIcon size={2} sx={{ m: -1 }} src={data.get(input.weapon.asc).value < 2 ? icon : iconAwaken} />,
-      },
-      description: data => tr(`passiveDescription.${data.get(input.weapon.refineIndex).value}`),
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
       name: <Translate ns="weapon_FreedomSworn" key18="name" />,
       states: {
         on: {

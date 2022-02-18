@@ -35,8 +35,9 @@ const statMap = {
   transformative_level_multi: "Reaction Level Multiplier",
   amplificative_dmg_: "Amplificative Reaction DMG Bonus",
   transformative_dmg_: "Transformative Reaction DMG Bonus",
-  crystalize_dmg_: "Crystalize Bonus",
+  crystallize_dmg_: "Crystallize Bonus",
   burning_dmg_: "Burning DMG Bonus",
+  crystallize: `Crystallize`, // for displaying general crystallize
 
   // Enemy
   enemyLevel: "Enemy Level",
@@ -104,7 +105,13 @@ Object.entries(transformativeReactions).forEach(([reaction, { name, variants }])
     statMap[`${v}_${reaction}_hit`] = `${elementalData[v].name} ${name} DMG`
   })
   else statMap[`${reaction}_hit`] = `${name} DMG`
+});
+
+//Crystallize
+(["cryo", "hydro", "pyro", "electro"]).forEach(e => {
+  statMap[`${e}_crystallize`] = `${elementalData[e].name} Crystallize`
 })
+
 
 export type AmplifyingReactionsDmgKey = `${AmplifyingReactionsKey}_dmg_`
 export const allAmplifyingReactionsDmgKey = Object.keys(amplifyingReactions).map(e => `${e}_dmg_`) as AmplifyingReactionsDmgKey[]

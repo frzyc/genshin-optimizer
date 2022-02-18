@@ -20,8 +20,8 @@
         "noOverRoll": "Substat cannot be rolled more than {{value}} times."
       },
       "noRoll": "No Rolls",
-      "RollCount": "{{count}} Roll",
-      "RollCount_plural": "{{count}} Rolls",
+      "RollCount_one": "{{count}} Roll",
+      "RollCount_other": "{{count}} Rolls",
       "noStat": "No Value",
       "eff": "Efficiency: <1></1>",
       "noSubstat": "No Substat",
@@ -94,8 +94,8 @@
     "mefficiency": "Maximum Substat Eff."
   },
   "mainStat": "Main Stat",
-  "showingNum": "Showing <1>{{count}}</1> out of {{value}} Artifact",
-  "showingNum_plural": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
   "resetFilters": "Reset Filters",
   "excludeArtifactTip": "Excluding an artifact will prevent the build generator from picking it for builds."
 }

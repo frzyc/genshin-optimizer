@@ -5,6 +5,9 @@ import { DocumentSection } from '../../Types/sheet';
 import { ICachedWeapon } from '../../Types/weapon_WR';
 import { ascensionMaxLevel } from '../LevelData';
 import type { WeaponData } from 'pipeline';
+import IConditional from '../../Types/IConditional_WR';
+import ImgIcon from '../../Components/Image/ImgIcon';
+import { input } from '../../Formula';
 const weaponSheets = import('.').then(imp => imp.default)
 
 export interface IWeaponSheet {
@@ -19,10 +22,10 @@ export default class WeaponSheet {
   readonly data: Data;
   readonly rarity: Rarity;
   readonly weaponType: WeaponTypeKey;
-  constructor(key: string, weaponSheet: IWeaponSheet, weaponData: WeaponData, data: Data) {
+  constructor(key: WeaponKey, weaponSheet: IWeaponSheet, weaponData: WeaponData, data: Data) {
     this.rarity = weaponData.rarity
     this.weaponType = weaponData.weaponType
-    this.key = key as WeaponKey
+    this.key = key
     this.sheet = weaponSheet
     this.data = data
   }
@@ -40,3 +43,10 @@ export default class WeaponSheet {
   get imgAwaken() { return this.sheet.iconAwaken }
   get document() { return this.sheet.document }
 }
+export const conditionalHeader = (tr: (string) => Displayable, img: string, imgAwaken: string): IConditional["header"] => ({
+  title: tr(`passiveName`),
+  icon: data => <ImgIcon size={2} sx={{ m: -1 }} src={data.get(input.weapon.asc).value < 2 ? img : imgAwaken} />,
+})
+
+export const conditionaldesc = (tr: (string) => Displayable) =>
+  data => tr(`passiveDescription.${data.get(input.weapon.refineIndex).value}`)

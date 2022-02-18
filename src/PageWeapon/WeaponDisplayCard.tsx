@@ -152,7 +152,7 @@ export default function WeaponDisplayCard({
                 {[input.weapon.main, input.weapon.sub, input.weapon.sub2].map((node, i) => {
                   const n = weaponUIData.get(node)
                   if (n.isEmpty || !n.value) return null
-                  return <NodeFieldDisplay key={i} node={n} component={ListItem} />
+                  return <NodeFieldDisplay key={n.key} node={n} component={ListItem} />
                 })}
               </FieldDisplayList>
             </CardDark>

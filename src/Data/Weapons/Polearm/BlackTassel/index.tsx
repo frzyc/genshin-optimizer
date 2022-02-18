@@ -1,21 +1,43 @@
 import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { equal, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { cond, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-const dmg_s = [40, 50, 60, 70, 80]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "BlackTassel"
+const data_gen = data_gen_json as WeaponData
+const [, trm] = trans("weapon", key)
+
+const dmgInc = [0.4, 0.5, 0.6, 0.7, 0.8]
+const [condPassivePath, condPassive] = cond(key, "PressTheAdvantage")
+const all_dmg_ = equal("on", condPassive, subscript(input.weapon.refineIndex, dmgInc))
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    all_dmg_
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
     conditional: {
-      key: "s",
-      name: "Against Slimes",
-      stats: stats => ({
-        dmg_: dmg_s[stats.weapon.refineIndex],
-      }),
+      value: condPassive,
+      path: condPassivePath,
+      name: trm("condName"),
+      states: {
+        on: {
+          fields: [{
+            node: all_dmg_,
+          }]
+        }
+      }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

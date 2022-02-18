@@ -1,16 +1,16 @@
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
-import { match, percent, threshold_add } from '../../../Formula/utils'
+import { equal, percent, greaterEq } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
 const key: ArtifactSetKey = "HeartOfDepth"
-const set2 = threshold_add(input.artSet.HeartOfDepth, 2, percent(0.15))
+const set2 = greaterEq(input.artSet.HeartOfDepth, 2, percent(0.15))
 const [condPath, condNode] = cond(key, "skill")
-const set4Norm = threshold_add(input.artSet.HeartOfDepth, 4,
-  match("cast", condNode, percent(0.3)))
+const set4Norm = greaterEq(input.artSet.HeartOfDepth, 4,
+  equal("cast", condNode, percent(0.3)))
 const set4Charged = { ...set4Norm }
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {

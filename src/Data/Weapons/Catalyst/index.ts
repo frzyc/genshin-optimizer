@@ -1,4 +1,4 @@
-// import ApprenticesNotes from './ApprenticesNotes'
+import ApprenticesNotes from './ApprenticesNotes'
 // import BlackcliffAgate from './BlackcliffAgate'
 // import DodocoTales from './DodocoTales'
 // import EmeraldOrb from './EmeraldOrb'
@@ -7,6 +7,7 @@ import EverlastingMoonglow from './EverlastingMoonglow'
 // import FavoniusCodex from './FavoniusCodex'
 // import Frostbearer from './Frostbearer'
 // import HakushinRing from './HakushinRing'
+import KagurasVerity from './KagurasVerity'
 // import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
 // import MagicGuide from './MagicGuide'
 // import MappaMare from './MappaMare'
@@ -17,13 +18,13 @@ import EverlastingMoonglow from './EverlastingMoonglow'
 // import RoyalGrimoire from './RoyalGrimoire'
 // import SacrificialFragments from './SacrificialFragments'
 // import SkywardAtlas from './SkywardAtlas'
-// import SolarPearl from './SolarPearl'
-// import TheWidsith from './TheWidsith'
+import SolarPearl from './SolarPearl'
+import TheWidsith from './TheWidsith'
 // import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
 // import TwinNephrite from './TwinNephrite'
 // import WineAndSong from './WineAndSong'
 const catalyst = {
-  // ApprenticesNotes,
+  ApprenticesNotes,
   // BlackcliffAgate,
   // DodocoTales,
   // EmeraldOrb,
@@ -32,6 +33,7 @@ const catalyst = {
   // FavoniusCodex,
   // Frostbearer,
   // HakushinRing,
+  KagurasVerity,
   // LostPrayerToTheSacredWinds,
   // MagicGuide,
   // MappaMare,
@@ -42,8 +44,8 @@ const catalyst = {
   // RoyalGrimoire,
   // SacrificialFragments,
   // SkywardAtlas,
-  // SolarPearl,
-  // TheWidsith,
+  SolarPearl,
+  TheWidsith,
   // ThrillingTalesOfDragonSlayers,
   // TwinNephrite,
   // WineAndSong,

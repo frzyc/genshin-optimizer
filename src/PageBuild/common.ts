@@ -233,14 +233,17 @@ function addArtRange(ranges: DynMinMax[]): DynMinMax {
   return result
 }
 function computeArtRange(arts: ArtifactBuildData[]): DynMinMax {
-  const result: DynMinMax = {}
+  const result: DynMinMax = {}, keys = new Set<string>()
   arts.forEach(({ values }) => {
-    Object.entries(values).forEach(([key, value]) => {
-      if (result[key]) {
+    Object.keys(values).forEach(key => keys.add(key))
+    for (const key of keys) {
+      const value = values[key] ?? 0
+      if (!result[key]) result[key] = { min: value, max: value }
+      else {
         if (result[key].max < value) result[key].max = value
         if (result[key].min > value) result[key].min = value
-      } else result[key] = { min: value, max: value }
-    })
+      }
+    }
   })
 
   return result
@@ -324,7 +327,7 @@ export function mergeBuilds(builds: Build[][], maxNum: number): Build[] {
 }
 export function mergePlot(plots: PlotData[]): PlotData {
   let scale = 0.01, reductionScaling = 2, maxCount = 1500
-  let keys = new Set(plots.flatMap(x => Object.values(x).map(v => Math.round(v.value / scale))))
+  let keys = new Set(plots.flatMap(x => Object.values(x).map(v => Math.round(v.plot! / scale))))
   while (keys.size > maxCount) {
     scale *= reductionScaling
     keys = new Set([...keys].map(key => Math.round(key / reductionScaling)))
@@ -332,7 +335,7 @@ export function mergePlot(plots: PlotData[]): PlotData {
   const result: PlotData = {}
   for (const plot of plots)
     for (const build of Object.values(plot)) {
-      const x = Math.round(build.value / scale) * scale
+      const x = Math.round(build.plot! / scale) * scale
       if (!result[x] || result[x]!.value < build.value)
         result[x] = build
     }

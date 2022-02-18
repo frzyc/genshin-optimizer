@@ -66,8 +66,8 @@ export const characterIdMap = {
   10000057: "AratakiItto",
   10000058: "YaeMiko",
   10000062: "Aloy",
-  10000063: "Shenhe"
-  //10000064: "YunJin"
+  10000063: "Shenhe",
+  10000064: "YunJin",
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",
@@ -208,6 +208,7 @@ export const weaponIdMap = {
   // 14505: "Primordial Jade Regalia",
   // 14506: "Diamond Visage",
   // 14508: "",
+  14509: "KagurasVerity",
 
   //bow
   15101: "HuntersBow",

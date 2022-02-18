@@ -1,13 +1,14 @@
-import { crystalizeLevelMultipliers, transformativeReactionLevelMultipliers, transformativeReactions } from "../StatConstants";
+import { absorbableEle } from "../Data/Characters/dataUtil";
+import { crystallizeLevelMultipliers, transformativeReactionLevelMultipliers, transformativeReactions } from "../StatConstants";
 import { objectKeyMap } from "../Util/Util";
 import { input } from "./index";
-import { frac, infoMut, prod, subscript, sum, unit } from "./utils";
+import { frac, infoMut, percent, prod, subscript, sum, unit } from "./utils";
 
 const asConst = true as const
 
-const crystalizeMulti1 = subscript(input.lvl, crystalizeLevelMultipliers)
-const crystalizeElemas = prod(4000 / 9, frac(input.total.eleMas, 1400))
-const crystalizeHit = infoMut(prod(sum(unit, /** + Crystalize bonus */ crystalizeElemas), crystalizeMulti1), { /** Crystalize Shield HP */ })
+const crystallizeMulti1 = subscript(input.lvl, crystallizeLevelMultipliers)
+const crystallizeElemas = prod(4000 / 9, frac(input.total.eleMas, 1400))
+const crystallizeHit = infoMut(prod(sum(unit, /** + Crystallize bonus */ crystallizeElemas), crystallizeMulti1), { key: "crystallize", variant: "geo" })
 
 const transMulti1 = subscript(input.lvl, transformativeReactionLevelMultipliers)
 const transMulti2 = prod(16, frac(input.total.eleMas, 2000))
@@ -36,8 +37,9 @@ export const reactions = {
     shattered: trans.shattered,
   },
   geo: {
-    ...objectKeyMap(["pyro", "electro", "cryo", "hydro"] as const, _ =>
-      prod(2.5, crystalizeHit)),
+    crystallize: crystallizeHit,
+    ...Object.fromEntries(absorbableEle.map(e => [`${e}Crystallize`,
+    infoMut(prod(percent(2.5), crystallizeHit), { key: `${e}_crystallize`, variant: e })])),
     shattered: trans.shattered,
   },
   electro: {

@@ -1,14 +1,14 @@
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
-import { constant, infoMut, percent, prod, threshold_add } from '../../../Formula/utils'
+import { constant, infoMut, percent, prod, greaterEq } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { customDmgNode } from '../../Characters/dataUtil'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
 const key: ArtifactSetKey = "OceanHuedClam"
-const set2 = threshold_add(input.artSet.OceanHuedClam, 2, 1000)
-const heal = threshold_add(input.artSet.OceanHuedClam, 4,
+const set2 = greaterEq(input.artSet.OceanHuedClam, 2, 1000)
+const heal = greaterEq(input.artSet.OceanHuedClam, 4,
   customDmgNode(prod(percent(0.9), 30000), "elemental", {
     hit: { ele: constant("physical") }
   })

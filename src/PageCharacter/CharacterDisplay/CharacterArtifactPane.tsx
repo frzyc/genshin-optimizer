@@ -16,7 +16,7 @@ import { objectKeyMap } from '../../Util/Util';
 import StatDisplayComponent from '../../Components/Character/StatDisplayComponent';
 
 function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
-  const { data, oldData, character, mainStatAssumptionLevel } = useContext(DataContext)
+  const { data, character, mainStatAssumptionLevel } = useContext(DataContext)
 
   const database = useContext(DatabaseContext)
   const history = useHistory()
@@ -33,10 +33,9 @@ function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
 
   const equipArts = useCallback(() => {
     if (!window.confirm("Do you want to equip this artifact build to this character?")) return
-    if (!oldData) return
     const newBuild = Object.fromEntries(allSlotKeys.map(s => [s, data.get(input.art[s].id).value])) as Record<SlotKey, string>
     database.equipArtifacts(character.key, newBuild)
-  }, [character, data, oldData, database])
+  }, [character, data, database])
 
   const unequipArts = useCallback(() => {
     if (!character) return
@@ -77,11 +76,9 @@ function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
           </CardLight>
         )}
       </Grid>
-      {artIds.map((id, i) =>
-        !!id && <Grid item xs={6} md={4} key={i} >
-          <ArtifactCard artifactId={id} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={() => edit(id)} />
-        </Grid>
-      )}
+      {artIds.map(id => !!id && <Grid item xs={6} md={4} key={id} >
+        <ArtifactCard artifactId={id} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={() => edit(id)} />
+      </Grid>)}
     </Grid>
   </>
 }

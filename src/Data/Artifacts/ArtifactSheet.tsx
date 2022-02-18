@@ -6,6 +6,8 @@ import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey } from "..
 import { DocumentSection } from "../../Types/sheet";
 import { UIData } from "../../Formula/uiData"
 import { input } from "../../Formula"
+import SqBadge from "../../Components/SqBadge";
+import IConditional from "../../Types/IConditional_WR";
 
 // TODO: remove typecasting once all sheets populated
 const artifactSheets = import(".").then(imp => imp.default)
@@ -89,4 +91,11 @@ export class ArtifactSheet {
     return artifactSetEffect
   }
   hasEnough = (setNum: SetNum, data: UIData) => (data.get(input.artSet[this.key]).value ?? 0) >= setNum
+}
+export const conditionalHeader = (tr: (string) => Displayable, img: string): IConditional["header"] => {
+  return {
+    title: tr("setName"),
+    icon: <ImgIcon size={2} sx={{ m: -1 }} src={img} />,
+    action: <SqBadge color="success">4-set</SqBadge>
+  }
 }

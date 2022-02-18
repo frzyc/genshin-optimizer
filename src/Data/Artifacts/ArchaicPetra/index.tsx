@@ -1,23 +1,21 @@
-import ImgIcon from '../../../Components/Image/ImgIcon'
-import SqBadge from '../../../Components/SqBadge'
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
-import { match, percent, threshold_add } from '../../../Formula/utils'
+import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { IFieldDisplay } from '../../../Types/IFieldDisplay_WR'
 import { absorbableEle } from '../../Characters/dataUtil'
 import { cond, sgt, trans } from '../../SheetUtil'
-import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { ArtifactSheet, conditionalHeader, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
 const key: ArtifactSetKey = "ArchaicPetra"
 const [tr, trm] = trans("artifact", key)
 
-const set2 = threshold_add(input.artSet.ArchaicPetra, 2, percent(0.2))
+const set2 = greaterEq(input.artSet.ArchaicPetra, 2, percent(0.2))
 const [condPath, condNode] = cond(key, "element")
 const set4Nodes = Object.fromEntries(absorbableEle.map(e => [`${e}_dmg_`,
-threshold_add(input.artSet.ArchaicPetra, 4,
-  match(e, condNode, percent(0.35))
+greaterEq(input.artSet.ArchaicPetra, 4,
+  equal(e, condNode, percent(0.35))
 )
 ]))
 
@@ -46,11 +44,7 @@ const sheet: IArtifactSheet = {
           path: condPath,
           value: condNode,
           teamBuff: true,
-          header: {
-            title: tr("setName"),
-            icon: <ImgIcon size={2} sx={{ m: -1 }} src={icons.flower} />,
-            action: <SqBadge color="success">4-set</SqBadge>
-          },
+          header: conditionalHeader(tr, icons.flower),
           description: tr(`setEffects.4`),
           name: trm("condName"),
           states: Object.fromEntries(absorbableEle.map(e => [e, {

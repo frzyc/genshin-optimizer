@@ -1,8 +1,8 @@
 import BeginnersProtector from './BeginnersProtector'
-// import BlackcliffPole from './BlackcliffPole'
-// import BlackTassel from './BlackTassel'
+import BlackcliffPole from './BlackcliffPole'
+import BlackTassel from './BlackTassel'
 import CalamityQueller from './CalamityQueller'
-// import CrescentPike from './CrescentPike'
+import CrescentPike from './CrescentPike'
 // import Deathmatch from './Deathmatch'
 // import DragonsBane from './DragonsBane'
 // import DragonspineSpear from './DragonspineSpear'
@@ -23,10 +23,10 @@ import EngulfingLightning from './EngulfingLightning'
 // import WhiteTassel from './WhiteTassel'
 const polearm = {
   BeginnersProtector,
-  // BlackcliffPole,
-  // BlackTassel,
+  BlackcliffPole,
+  BlackTassel,
   CalamityQueller,
-  // CrescentPike,
+  CrescentPike,
   // Deathmatch,
   // DragonsBane,
   // DragonspineSpear,

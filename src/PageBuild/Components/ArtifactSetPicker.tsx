@@ -33,7 +33,7 @@ export default function ArtifactSetPicker({ index, setFilters, onChange, disable
 
   const artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
 
-  return <CardLight key={index}>
+  return <CardLight>
     <CardContent>
       <ButtonGroup>
         {/* Artifact set */}
