@@ -62,9 +62,6 @@ const datamine = {
   }
 } as const
 
-// Conditional Input
-// Absorption Element
-
 const [condAbsorptionPath, condAbsorption] = cond(characterKey, "absorption")
 // A1 Swirl Reaction Element
 const [condSwirlReactionPath, condSwirlReaction] = cond(characterKey, "swirl")
