@@ -33,11 +33,11 @@ import ShimenawasReminiscence from './ShimenawasReminiscence'
 // import TenacityOfTheMillelith from './TenacityOfTheMillelith'
 // import TheExile from './TheExile'
 import ThunderingFury from './ThunderingFury'
-// import Thundersoother from './Thundersoother'
-// import TinyMiracle from './TinyMiracle'
-// import TravelingDoctor from './TravelingDoctor'
+import Thundersoother from './Thundersoother'
+//import TinyMiracle from './TinyMiracle'
+import TravelingDoctor from './TravelingDoctor'
 import ViridescentVenerer from './ViridescentVenerer'
-// import WanderersTroupe from './WanderersTroupe'
+import WanderersTroupe from './WanderersTroupe'
 const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   Adventurer,
   ArchaicPetra,
@@ -71,11 +71,11 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   // TenacityOfTheMillelith,
   // TheExile,
   ThunderingFury,
-  // Thundersoother,
+  Thundersoother,
   // TinyMiracle,
-  // TravelingDoctor,
+  TravelingDoctor,
   ViridescentVenerer,
-  // WanderersTroupe,
+  WanderersTroupe,
 } as const
 
 export default artifacts
