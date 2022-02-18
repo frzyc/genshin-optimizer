@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from "../../../Formula/index"
-import { constant, equal, greaterEq, infoMut, min, prod, subscript, sum } from "../../../Formula/utils"
+import { constant, equal, greaterEq, infoMut, min, percent, prod, subscript, sum } from "../../../Formula/utils"
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, damageTemplate, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
@@ -24,17 +24,16 @@ const const5TalentInc = greaterEq(input.constellation, 5, 3)
 const hydro_dmg_ = greaterEq(input.asc, 4, datamine.passive2.hydro_dmg_)
 const hydro_enemyRes_ = greaterEq(input.constellation, 2,
   equal(condC2, "c2", datamine.constellation2.hydro_enemyRes_))
-// NOTE: This does not show the same value as the old one?
 const skill_dmg_ = greaterEq(input.constellation, 4,
-  equal(condC4, "c4", datamine.constellation4.skill_dmg_))
+  equal(condC4, "c4", datamine.constellation4.skill_dmg_, {key: "skill_dmg_"}))
 // TODO: Doesn't display well in the UI
 const skillDuration = sum(datamine.skill.duration,
   greaterEq(input.constellation, 2, datamine.constellation2.skill_duration))
 const dmgRed = sum(
-  subscript(input.total.skillIndex, datamine.skill.dmgRed),
-  min(0.24, prod(input.total.hydro_dmg_, 0.20))
+  subscript(input.total.skillIndex, datamine.skill.dmgRed, { key: "_"}),
+  min(percent(0.24), prod(input.total.hydro_dmg_, percent(0.20)))
 )
-const healing = greaterEq(input.asc, 1, prod(input.total.hp, 0.06))
+const healing = greaterEq(input.asc, 1, prod(input.total.hp, percent(0.06)))
 
 export const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -47,7 +46,7 @@ export const dmgFormulas = {
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
     press1: dmgNode("atk", datamine.skill.hit1, "skill"),
-    press2: dmgNode("atk", datamine.skill.hit2, "skill"),
+    press2: sum(dmgNode("atk", datamine.skill.hit2, "skill"), skill_dmg_),
     // TODO: dmg reduction based on sword count?
     dmgRed,
     healing
@@ -71,7 +70,6 @@ export const dataObj = dataObjForCharacterSheet(characterKey, elementKey, "liyue
   },
   premod: {
     hydro_dmg_: hydro_dmg_,
-    skill_dmg_: skill_dmg_
   }
 })
 
@@ -117,7 +115,7 @@ const sheet: ICharacterSheet = {
             fields: [
               damageTemplate(dmgFormulas.plunging.dmg, sheet_gen, "plunging.dmg" ),
               damageTemplate(dmgFormulas.plunging.low, sheet_gen, "plunging.low" ),
-              damageTemplate(dmgFormulas.plunging.high, sheet_gen, "sheet_gen:plunging.high"),
+              damageTemplate(dmgFormulas.plunging.high, sheet_gen, "plunging.high"),
             ]
           },
         ],
