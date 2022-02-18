@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
 import { input } from "../../../Formula/index"
-import { constant, data, equal, greaterEq, infoMut, match, min, percent, prod, subscript, sum } from "../../../Formula/utils"
-import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from '../../../Types/consts'
+import { constant, equal, greaterEq, infoMut, min, prod, subscript, sum } from "../../../Formula/utils"
+import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, damageTemplate, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
