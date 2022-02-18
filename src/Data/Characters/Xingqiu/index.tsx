@@ -130,7 +130,7 @@ const sheet: ICharacterSheet = {
             damageTemplate(dmgFormulas.skill.press1, char_Xingqiu_gen, "skill.skillParams.0", {comboHit: 1}),
             damageTemplate(dmgFormulas.skill.press2, char_Xingqiu_gen, "skill.skillParams.0", {comboHit: 2}),
             {
-            // NOTE: We need variant keys for healing and unstyled colors
+            // TODO: We need variant keys for healing and unstyled colors
             node: infoMut(dmgFormulas.skill.dmgRed_, { key: `char_${characterKey}_gen:skill.skillParams.1`, variant: "physical" }),
           }, {
             canShow: uiData => uiData.get(input.asc).value >= 1,
