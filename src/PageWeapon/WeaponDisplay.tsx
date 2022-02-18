@@ -124,7 +124,7 @@ export default function WeaponDisplay(props) {
     if (!editWeaponId) return
     if (!database._getWeapon(editWeaponId))
       resetEditWeapon()
-  }, [editWeaponId, resetEditWeapon])
+  }, [database, editWeaponId, resetEditWeapon])
 
   return <Box sx={{
     mt: 1,
@@ -171,7 +171,7 @@ export default function WeaponDisplay(props) {
     </CardDark>
     <Grid container spacing={1}>
       <Suspense fallback={<Grid item xs={12}><Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 500 }} /></Grid>}>
-        {!editWeaponId && <Grid item xs={6} md={4} lg={4} xl={3}>
+        <Grid item xs={6} md={4} lg={4} xl={3}>
           <CardDark sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
             <CardContent>
               <Typography sx={{ textAlign: "center" }}>Add New Weapon</Typography>
@@ -191,7 +191,7 @@ export default function WeaponDisplay(props) {
               </Button>
             </Box>
           </CardDark>
-        </Grid>}
+        </Grid>
         {weaponIdsToShow.map(weaponId =>
           <Grid item key={weaponId} xs={12} sm={6} md={4} lg={4} xl={3} >
             <WeaponCard
