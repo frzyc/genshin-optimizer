@@ -161,13 +161,14 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     const arts = database._getArts().filter(art => {
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
+      const mainStats = mainStatKeys[art.slotKey]
+      if (mainStats?.length && !mainStats.includes(art.mainStatKey)) return false
+
       // If its equipped on the selected character, bypass the check
       if (art.location === characterKey) return true
 
       if (art.exclude && !useExcludedArts) return false
       if (art.location && !useEquippedArts) return false
-      const mainStats = mainStatKeys[art.slotKey]
-      if (mainStats?.length && !mainStats.includes(art.mainStatKey)) return false
       return true
     })
     const split = compactArtifacts(arts, mainStatAssumptionLevel)
