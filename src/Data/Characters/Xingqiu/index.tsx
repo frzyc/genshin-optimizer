@@ -26,7 +26,7 @@ const hydro_enemyRes_ = greaterEq(input.constellation, 2,
   equal(condC2, "c2", datamine.constellation2.hydro_enemyRes_))
 const skill_dmg_ = greaterEq(input.constellation, 4,
   equal(condC4, "c4", datamine.constellation4.skill_dmg_, {key: "skill_dmg_"}))
-// TODO: Doesn't display well in the UI
+// TODO: Doesn't display well in the UI (lacking unit)
 const skillDuration = sum(datamine.skill.duration,
   greaterEq(input.constellation, 2, datamine.constellation2.skill_duration))
 const dmgRed_ = sum(
