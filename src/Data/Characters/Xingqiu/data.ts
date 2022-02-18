@@ -29,7 +29,7 @@ export const data = {
   skill: {
     hit1: (skillParam_gen.skill[0]),
     hit2: (skillParam_gen.skill[1]),
-    dmgRed: (skillParam_gen.skill[2]),
+    dmgRed_: (skillParam_gen.skill[2]),
     duration: skillParam_gen.skill[3][0],
     cd: skillParam_gen.skill[4][0],
   },

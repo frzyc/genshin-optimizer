@@ -29,8 +29,8 @@ const skill_dmg_ = greaterEq(input.constellation, 4,
 // TODO: Doesn't display well in the UI
 const skillDuration = sum(datamine.skill.duration,
   greaterEq(input.constellation, 2, datamine.constellation2.skill_duration))
-const dmgRed = sum(
-  subscript(input.total.skillIndex, datamine.skill.dmgRed, { key: "_"}),
+const dmgRed_ = sum(
+  subscript(input.total.skillIndex, datamine.skill.dmgRed_, { key: "_"}),
   min(percent(0.24), prod(input.total.hydro_dmg_, percent(0.20)))
 )
 const healing = greaterEq(input.asc, 1, prod(input.total.hp, percent(0.06)))
@@ -45,10 +45,11 @@ export const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    press1: dmgNode("atk", datamine.skill.hit1, "skill"),
-    press2: sum(dmgNode("atk", datamine.skill.hit2, "skill"), skill_dmg_),
+    // TODO: Provide premod multiplicative damage bonuses e.g. skill_dmgMult
+    press1: prod(infoMut(sum(skill_dmg_, 1), { key: 'skill_dmg_', pivot: true }), dmgNode("atk", datamine.skill.hit1, "skill")),
+    press2: prod(infoMut(sum(skill_dmg_, 1), { key: 'skill_dmg_', pivot: true }), dmgNode("atk", datamine.skill.hit2, "skill")),
     // TODO: dmg reduction based on sword count?
-    dmgRed,
+    dmgRed_,
     healing
   },
   burst: {
@@ -65,11 +66,11 @@ export const dataObj = dataObjForCharacterSheet(characterKey, elementKey, "liyue
   teamBuff: {
     premod: {
       hydro_enemyRes_,
-      dmgRed,
+      dmgRed_,
     }
   },
   premod: {
-    hydro_dmg_: hydro_dmg_,
+    hydro_dmg_,
   }
 })
 
@@ -130,7 +131,7 @@ const sheet: ICharacterSheet = {
             damageTemplate(dmgFormulas.skill.press2, char_Xingqiu_gen, "skill.skillParams.0", {comboHit: 2}),
             {
             // NOTE: We need variant keys for healing and unstyled colors
-            node: infoMut(dmgFormulas.skill.dmgRed, { key: `char_${characterKey}_gen:skill.skillParams.1`, variant: "physical" }),
+            node: infoMut(dmgFormulas.skill.dmgRed_, { key: `char_${characterKey}_gen:skill.skillParams.1`, variant: "physical" }),
           }, {
             canShow: uiData => uiData.get(input.asc).value >= 1,
             node: infoMut(dmgFormulas.skill.healing, { key: `sheet_gen:healing`, variant: "success" }),
