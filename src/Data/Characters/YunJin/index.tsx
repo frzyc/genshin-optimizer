@@ -15,7 +15,7 @@ const key: CharacterKey = "YunJin"
 const elementKey: ElementKey = "geo"
 const [tr, trm] = trans("char", key)
 
-let a = 0, s = 0, b = 0, p2 = 0
+let a = 0, s = 0, b = 0
 const datamine = {
   normal: {
     hitArr: [
@@ -69,7 +69,7 @@ const datamine = {
 } as const
 
 const nodeA4 = greaterEq(input.asc, 4,
-  subscript(sum(-1, ...allElements.map(ele => greaterEq(tally[ele], 1, 1))), datamine.passive2.dmgInc, { key: '_' }))
+  subscript(sum(...allElements.map(ele => greaterEq(tally[ele], 1, 1))), [0, ...datamine.passive2.dmgInc], { key: '_' }))
 
 const [condBurstPath, condBurst] = cond(key, "skill")
 const nodeSkill = equal("on", condBurst, sum(
