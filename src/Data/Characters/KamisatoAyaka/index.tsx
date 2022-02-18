@@ -93,7 +93,6 @@ const [condC6Path, condC6] = cond(key, "C6")
 const c6ChargedDmg_ = greaterEq(input.constellation, 6,
   equal("c6", condC6, datamine.constellation6.charged_bonus), { key: `charged_dmg_` })
 
-
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
@@ -131,8 +130,6 @@ export const adata = dataObjForCharacterSheet(key, elementKey, "inazuma", data_g
     charged_dmg_: sum(a1ChargedDmg_, c6ChargedDmg_),
     cryo_dmg_: afterApplySprintCryo,
   },
-  total: {
-  }
 })
 
 const sheet: ICharacterSheet = {

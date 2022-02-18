@@ -94,7 +94,7 @@ const energyCosts = [40, 50, 60, 70, 80, 90]
 const [condSkillEyeTeamPath, condSkillEyeTeam] = cond(key, "skillEyeTeam")
 const skillEyeTeamBurstDmgInc = unequal(input.activeCharKey, input.charKey,
   prod(lookup(condSkillEyeTeam, objectKeyMap(energyCosts, i => constant(i)), 0),
-    subscript(input.total.skillIndex, datamine.skill.burstDmg_bonus.map(x => x), { key: '_' })))
+    subscript(input.total.skillIndex, datamine.skill.burstDmg_bonus, { key: '_' })))
 
 const resolveStacks = [10, 20, 30, 40, 50, 60]
 const [condResolveStackPath, condResolveStack] = cond(key, "burstResolve")
@@ -102,13 +102,13 @@ const [condResolveStackPath, condResolveStack] = cond(key, "burstResolve")
 function burstResolve(atkType: number[], initial = false) {
   let resolveBonus = initial ? datamine.burst.resolveBonus1 : datamine.burst.resolveBonus2
 
-  // if Raiden is above or equal to C2, then account for DEF Ignore else not
   return customDmgNode(prod(sum(subscript(input.total.burstIndex, atkType, { key: '_' }),
     prod(subscript(input.total.burstIndex, resolveBonus.map(x => x), { key: '_' }),
       lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0))), input.total.atk), 'burst', {
     hit: {
       ele: constant('electro')
     }, enemy: {
+      // if Raiden is above or equal to C2, then account for DEF Ignore else not
       defIgn: greaterEq(input.constellation, 2, datamine.constellation2.def_ignore)
     }
   })
