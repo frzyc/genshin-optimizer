@@ -18,7 +18,7 @@ import KagurasVerity from './KagurasVerity'
 // import RoyalGrimoire from './RoyalGrimoire'
 // import SacrificialFragments from './SacrificialFragments'
 // import SkywardAtlas from './SkywardAtlas'
-// import SolarPearl from './SolarPearl'
+import SolarPearl from './SolarPearl'
 import TheWidsith from './TheWidsith'
 // import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
 // import TwinNephrite from './TwinNephrite'
@@ -44,7 +44,7 @@ const catalyst = {
   // RoyalGrimoire,
   // SacrificialFragments,
   // SkywardAtlas,
-  // SolarPearl,
+  SolarPearl,
   TheWidsith,
   // ThrillingTalesOfDragonSlayers,
   // TwinNephrite,

@@ -203,7 +203,7 @@ export const allWeaponKeys = [
   // "PrototypeAmber",
   // "RoyalGrimoire",
   // "SacrificialFragments",
-  // "SolarPearl",
+  "SolarPearl",
   "TheWidsith",
   // "WineAndSong",
   // "EyeOfPerception",
