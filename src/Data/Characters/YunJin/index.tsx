@@ -95,6 +95,7 @@ const dmgFormulas = {
   },
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
+    dmgInc: nodeSkill
   },
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
