@@ -3,19 +3,18 @@ import { input } from "../../../Formula/index"
 import { constant, data, greaterEq, infoMut, match, min, percent, prod, subscript, sum } from "../../../Formula/utils"
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
-import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { conditionalHeader, damageTemplate, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import { mapNormals } from '../utils'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import { data as datamine } from './data'
 import data_gen_src from './data_gen.json'
 
-const data_gen = data_gen_src as CharacterData
 const characterKey: CharacterKey = "Xingqiu"
 const elementKey: ElementKey = "hydro"
+const data_gen = data_gen_src as CharacterData
+const char_Xingqiu_gen = `char_${characterKey}_gen`
+const sheet_gen = "sheet_gen"
 const [tr, trm] = trans("char", characterKey)
-
-const { formula: normalDmg, section: normalSection } = mapNormals(datamine.normal.hitArr, [[2, 3], [5, 6]], characterKey)
 
 const const3TalentInc = greaterEq(input.constellation, 3, 3)
 const const5TalentInc = greaterEq(input.constellation, 5, 3)
@@ -39,7 +38,8 @@ const dmgRed = sum(
 const healing = greaterEq(input.asc, 1, prod(input.total.hp, 0.06))
 
 export const dmgFormulas = {
-  normal: normalDmg,
+  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+    [i, dmgNode("atk", arr, "normal")])),
   charged: {
     dmg1: dmgNode("atk", datamine.charged.hit1, "charged"),
     dmg2: dmgNode("atk", datamine.charged.hit2, "charged")
@@ -94,28 +94,32 @@ const sheet: ICharacterSheet = {
         name: tr("auto.name"),
         img: normalSrc(data_gen.weaponTypeKey),
         sections: [
-          normalSection,
+          {
+            text: tr("auto.fields.normal"),
+            fields: [
+              damageTemplate(dmgFormulas.normal[0], char_Xingqiu_gen, "auto.skillParams.0"),
+              damageTemplate(dmgFormulas.normal[1], char_Xingqiu_gen, "auto.skillParams.1"),
+              damageTemplate(dmgFormulas.normal[2], char_Xingqiu_gen, "auto.skillParams.2", {comboMultiplier: 2}),
+              damageTemplate(dmgFormulas.normal[4], char_Xingqiu_gen, "auto.skillParams.3"),
+              damageTemplate(dmgFormulas.normal[5], char_Xingqiu_gen, "auto.skillParams.4", {comboMultiplier: 2}),
+            ]
+          },
           {
             text: tr(`auto.fields.charged`),
-            fields: [{
-              node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${characterKey}_gen:auto.skillParams.5` }),
-              textSuffix: "(1-Hit)"
-            }, {
-              node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${characterKey}_gen:auto.skillParams.5` }),
-              textSuffix: "(2-Hit)"
-            }, {
+            fields: [
+              damageTemplate(dmgFormulas.charged.dmg1, char_Xingqiu_gen, "auto.skillParams.5", {comboHit: 1}),
+              damageTemplate(dmgFormulas.charged.dmg2, char_Xingqiu_gen, "auto.skillParams.5", {comboHit: 2}),          
+              {
               text: tr("auto.skillParams.6"),
               value: datamine.charged.stam,
             }]
           }, {
             text: tr(`auto.fields.plunging`),
-            fields: [{
-              node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
-            }, {
-              node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
-            }, {
-              node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
-            }]
+            fields: [
+              damageTemplate(dmgFormulas.plunging.dmg, sheet_gen, "plunging.dmg" ),
+              damageTemplate(dmgFormulas.plunging.low, sheet_gen, "plunging.low" ),
+              damageTemplate(dmgFormulas.plunging.high, sheet_gen, "sheet_gen:plunging.high"),
+            ]
           },
         ],
       },
@@ -124,13 +128,10 @@ const sheet: ICharacterSheet = {
         img: skill,
         sections: [{
           text: tr("skill.description"),
-          fields: [{
-            node: infoMut(dmgFormulas.skill.press1, { key: `char_${characterKey}_gen:skill.skillParams.0` }),
-            textSuffix: "(1-Hit)"
-          }, {
-            node: infoMut(dmgFormulas.skill.press2, { key: `char_${characterKey}_gen:skill.skillParams.0` }),
-            textSuffix: "(2-Hit)"
-          }, {
+          fields: [
+            damageTemplate(dmgFormulas.skill.press1, char_Xingqiu_gen, "skill.skillParams.0", {comboHit: 1}),
+            damageTemplate(dmgFormulas.skill.press2, char_Xingqiu_gen, "skill.skillParams.1", {comboHit: 2}),
+            {
             // NOTE: We need variant keys for healing and unstyled colors
             node: infoMut(dmgFormulas.skill.dmgRed, { key: `char_${characterKey}_gen:skill.skillParams.1`, variant: "physical" }),
           }, {
@@ -150,9 +151,9 @@ const sheet: ICharacterSheet = {
         img: burst,
         sections: [{
           text: tr("burst.description"),
-          fields: [{
-            node: infoMut(dmgFormulas.burst.dmg, { key: `char_${characterKey}_gen:burst.skillParams.0` }),
-          }, {
+          fields: [
+            damageTemplate(dmgFormulas.burst.dmg, char_Xingqiu_gen, "burst.skillParams.0"),
+{
             text: tr("burst.skillParams.1"),
             value: datamine.burst.duration,
             unit: "s"

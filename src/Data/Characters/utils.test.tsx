@@ -1,13 +1,16 @@
-import { mapNormals } from "./utils"
+import { normalSection } from "./utils"
 import Xingqiu_gen from "./Xingqiu/skillParam_gen.json"
 import KaedeharaKazuha_gen from "./KaedeharaKazuha/skillParam_gen.json"
+import { constant } from "../../Formula/utils"
 
 describe('Character composition utils', () => {
-  describe('mapNormals', () => {
+  describe('normalSection', () => {
     test("Xingqiu", () => {
       const characterKey = "Xingqiu"
       const normals = Xingqiu_gen.auto.slice(0, 7)
-      const { section } = mapNormals(characterKey, normals, [[2, 4], [5, 7]])
+      const formula = Object.fromEntries(Object.entries(normals).map(([key, value]) =>
+      [key, constant(0)]))
+      const section  = normalSection(characterKey, normals, formula, [[2, 4], [5, 7]])
       expect(section.fields.map(o => o.textSuffix)).toEqual([
         "", "", "(2 Hits)", "", "(2 Hits)"
       ])
@@ -19,10 +22,12 @@ describe('Character composition utils', () => {
         `char_${characterKey}_gen:auto.skillParams.${4}`
       ])
     })
-    test.only("KaedeharaKazuha", () => {
+    test("KaedeharaKazuha", () => {
       const characterKey = "KaedeharaKazuha"
       const normals = KaedeharaKazuha_gen.auto.slice(0, 6)
-      const { section } = mapNormals(characterKey, normals, [[2, 4]], [[5, 3]])
+      const formula = Object.fromEntries(Object.entries(normals).map(([key, value]) =>
+      [key, constant(0)]))
+      const section = normalSection(characterKey, normals, formula, [[2, 4]], [[5, 3]])
       expect(section.fields.map(o => o.textSuffix)).toEqual([
         "", "", "(1)", "(2)", "", "(3 Hits)"
       ])

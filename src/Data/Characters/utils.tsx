@@ -1,9 +1,10 @@
-import { Translate } from "../../Components/Translate";
 import { NumNode } from "../../Formula/type";
 import { infoMut } from "../../Formula/utils";
 import { CharacterKey } from "../../Types/consts";
+import { IFieldDisplay } from "../../Types/IFieldDisplay_WR";
 import { trans } from "../SheetUtil";
-import { dmgNode } from "./dataUtil";
+import { damageTemplate } from "./CharacterSheet";
+
 
 type ComboRange = [number, number]
 type Multiplier = [number, number]
@@ -13,14 +14,12 @@ type Multiplier = [number, number]
  * @param normals The aray of hit dmg arrays for normal attacks
  * @param combo Indices to be grouped as part of a multihit combo
  */
-export function mapNormals(characterKey: CharacterKey, normals: number[][], combos?: ComboRange[], multipliers?: Multiplier[]) {
+export function normalSection(characterKey: CharacterKey, normals: number[][], formula: Record<number, NumNode>, combos?: ComboRange[], multipliers?: Multiplier[]) {
   const [tr] = trans("char", characterKey)
-  const formula: Record<number, NumNode> = Object.fromEntries(normals.map((arr, i) =>
-    [i, dmgNode("atk", arr, "normal")]))
-  const display:{
+  const display: {
     normalIndex: number,
-    autoNumber: number, 
-    comboNumber?: number, 
+    autoNumber: number,
+    comboNumber?: number,
     comboMultiplier?: number
   }[] = []
 
@@ -41,13 +40,11 @@ export function mapNormals(characterKey: CharacterKey, normals: number[][], comb
       const [start, end] = combo
       if (normalIndex === start) {
         const comboNormals = normals.slice(start, end)
-        console.log(comboNormals)
         const areAllDuplicates = comboNormals.every((arr, i) => arr.every((v, j) => v === comboNormals[0][j]))
         if (areAllDuplicates) {
           // skip duplicates, set multiplier on current entry
           entry.comboMultiplier = end - start
           normalIndex = end - 1
-          autoNumber++
           combo = null
         }
       }
@@ -69,24 +66,13 @@ export function mapNormals(characterKey: CharacterKey, normals: number[][], comb
 
     display.push(entry)
   }
-  console.log(...display)
 
   const section = {
     text: tr("auto.fields.normal"),
-    fields: display.map(({normalIndex, autoNumber, comboMultiplier, comboNumber}) => {
-      let textSuffix = ''
-      if (comboMultiplier) {
-        textSuffix = `(${comboMultiplier} Hits)`
-      } else if (comboNumber) {
-        textSuffix = `(${comboNumber})`
-      }
-
-      return ({
-        node: infoMut(formula[normalIndex], { key: `char_${characterKey}_gen:auto.skillParams.${autoNumber}` }),
-        textSuffix
-      })
-    })
+    fields: display.map(({ normalIndex, autoNumber, comboMultiplier, comboNumber }) => 
+      damageTemplate(formula[normalIndex], `char_${characterKey}_gen`, `auto.skillParams.${autoNumber}`, { comboMultiplier, comboNumber })
+    )
   }
 
-  return {formula, section}
+  return section
 }
