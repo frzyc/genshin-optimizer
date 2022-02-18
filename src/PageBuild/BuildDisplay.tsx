@@ -35,7 +35,7 @@ import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
 import { BuildSetting } from '../Types/Build';
 import { ArtifactSetKey, CharacterKey } from '../Types/consts';
 import { objectMap, objPathValue } from '../Util/Util';
-import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
+import { Finalize, FinalizeResult, PlotData, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import ChartCard from './ChartCard';
@@ -105,7 +105,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const [generationDuration, setgenerationDuration] = useState(0)//in ms
   const [generationSkipped, setgenerationSkipped] = useState(0)
 
-  const [chartData, setchartData] = useState(undefined as any)
+  const [chartData, setchartData] = useState(undefined as PlotData | undefined)
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
