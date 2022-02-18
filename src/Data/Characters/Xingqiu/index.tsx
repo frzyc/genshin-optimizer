@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from "../../../Formula/index"
-import { constant, data, greaterEq, infoMut, match, min, percent, prod, subscript, sum } from "../../../Formula/utils"
+import { constant, data, equal, greaterEq, infoMut, match, min, percent, prod, subscript, sum } from "../../../Formula/utils"
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, damageTemplate, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
@@ -9,32 +9,31 @@ import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passiv
 import { data as datamine } from './data'
 import data_gen_src from './data_gen.json'
 
+
 const characterKey: CharacterKey = "Xingqiu"
 const elementKey: ElementKey = "hydro"
 const data_gen = data_gen_src as CharacterData
 const char_Xingqiu_gen = `char_${characterKey}_gen`
 const sheet_gen = "sheet_gen"
-const [tr, trm] = trans("char", characterKey)
+const [tr] = trans("char", characterKey)
 
+const [condC2Path, condC2] = cond(characterKey, "c2")
+const [condC4Path, condC4] = cond(characterKey, "c4")
 const const3TalentInc = greaterEq(input.constellation, 3, 3)
 const const5TalentInc = greaterEq(input.constellation, 5, 3)
 const hydro_dmg_ = greaterEq(input.asc, 4, datamine.passive2.hydro_dmg_)
-const [condC2Path, condC2] = cond(characterKey, "c2")
-const [condC4Path, condC4] = cond(characterKey, "c4")
 const hydro_enemyRes_ = greaterEq(input.constellation, 2,
-  match(condC2, "c2", datamine.constellation2.hydro_enemyRes_))
+  equal(condC2, "c2", datamine.constellation2.hydro_enemyRes_))
 // NOTE: This does not show the same value as the old one?
 const skill_dmg_ = greaterEq(input.constellation, 4,
-  match(condC4, "c4", datamine.constellation4.skill_dmg_))
+  equal(condC4, "c4", datamine.constellation4.skill_dmg_))
 // TODO: Doesn't display well in the UI
 const skillDuration = sum(datamine.skill.duration,
   greaterEq(input.constellation, 2, datamine.constellation2.skill_duration))
-
 const dmgRed = sum(
   subscript(input.total.skillIndex, datamine.skill.dmgRed),
   min(0.24, prod(input.total.hydro_dmg_, 0.20))
 )
-
 const healing = greaterEq(input.asc, 1, prod(input.total.hp, 0.06))
 
 export const dmgFormulas = {
@@ -228,4 +227,5 @@ const sheet: ICharacterSheet = {
     },
   },
 };
+
 export default new CharacterSheet(sheet, dataObj);
