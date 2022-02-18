@@ -10,10 +10,10 @@ export const data = {
       (skillParam_gen.auto[0]),//1
       (skillParam_gen.auto[1]),//2
       (skillParam_gen.auto[2]),//3
-      (skillParam_gen.auto[3]),//3
+      // (skillParam_gen.auto[3]),
       (skillParam_gen.auto[4]),//4
       (skillParam_gen.auto[5]),//5
-      (skillParam_gen.auto[6]),//5
+      // (skillParam_gen.auto[6]),
     ]
   },
   charged: {

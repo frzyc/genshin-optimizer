@@ -97,8 +97,8 @@ const sheet: ICharacterSheet = {
               damageTemplate(dmgFormulas.normal[0], char_Xingqiu_gen, "auto.skillParams.0"),
               damageTemplate(dmgFormulas.normal[1], char_Xingqiu_gen, "auto.skillParams.1"),
               damageTemplate(dmgFormulas.normal[2], char_Xingqiu_gen, "auto.skillParams.2", {comboMultiplier: 2}),
-              damageTemplate(dmgFormulas.normal[4], char_Xingqiu_gen, "auto.skillParams.3"),
-              damageTemplate(dmgFormulas.normal[5], char_Xingqiu_gen, "auto.skillParams.4", {comboMultiplier: 2}),
+              damageTemplate(dmgFormulas.normal[3], char_Xingqiu_gen, "auto.skillParams.3"),
+              damageTemplate(dmgFormulas.normal[4], char_Xingqiu_gen, "auto.skillParams.4", {comboMultiplier: 2}),
             ]
           },
           {
