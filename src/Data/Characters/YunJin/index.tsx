@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
-import { input } from '../../../Formula'
-import { equal, greaterEq, infoMut, prod, subscript } from '../../../Formula/utils'
-import { CharacterKey, ElementKey } from '../../../Types/consts'
+import { input, tally } from '../../../Formula'
+import { equal, greaterEq, infoMut, prod, subscript, sum } from '../../../Formula/utils'
+import { allElements, CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode, shieldNodeTalent } from '../dataUtil'
@@ -53,7 +53,7 @@ const datamine = {
     enerCost: skillParam_gen.burst[b++][0],
     triggerNum: skillParam_gen.burst[b++][0],
   },
-  passive2: { // TODO: how the hell do we implement this?
+  passive2: {
     dmgInc: skillParam_gen.passive2[p2++],
   },
   constellation2: {
@@ -68,9 +68,13 @@ const datamine = {
   }
 } as const
 
+/** TODO: Hook this to UI */
+const nodeA4 = greaterEq(input.asc, 4,
+  subscript(sum(-1, ...allElements.map(ele => greaterEq(tally[ele], 1, 1))), [0.025, 0.05, 0.075, 0.115]/* TODO: datamine.passive2.dmgInc*/, { key: '_' }))
+
 const [condBurstPath, condBurst] = cond(key, "skill")
-const nodeSkill = equal("on", condBurst,
-  prod(input.premod.def, subscript(input.total.burstIndex, datamine.burst.dmgInc, { key: '_' })))
+const nodeSkill = equal("on", condBurst, sum(
+  prod(input.premod.def, sum(subscript(input.total.burstIndex, datamine.burst.dmgInc, { key: '_' }), nodeA4))))
 
 const nodeC2 = greaterEq(input.constellation, 2, equal("on", condBurst, datamine.constellation2.normalInc))
 
