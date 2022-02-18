@@ -118,6 +118,14 @@ export default function WeaponDisplay(props) {
   const resetEditWeapon = useCallback(() => stateDisplatch({ editWeaponId: "" }), [stateDisplatch])
 
   const { editWeaponId } = state
+
+  // Validate weaponId to be an actual weapon
+  useEffect(() => {
+    if (!editWeaponId) return
+    if (!database._getWeapon(editWeaponId))
+      resetEditWeapon()
+  }, [editWeaponId, resetEditWeapon])
+
   return <Box sx={{
     mt: 1,
     // select all excluding last
