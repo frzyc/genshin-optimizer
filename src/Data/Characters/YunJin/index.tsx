@@ -54,7 +54,7 @@ const datamine = {
     triggerNum: skillParam_gen.burst[b++][0],
   },
   passive2: {
-    dmgInc: skillParam_gen.passive2[p2++],
+    dmgInc: skillParam_gen.passive2.map(a => a[0]),
   },
   constellation2: {
     normalInc: skillParam_gen.constellation2[0],
@@ -68,9 +68,8 @@ const datamine = {
   }
 } as const
 
-/** TODO: Hook this to UI */
 const nodeA4 = greaterEq(input.asc, 4,
-  subscript(sum(-1, ...allElements.map(ele => greaterEq(tally[ele], 1, 1))), [0.025, 0.05, 0.075, 0.115]/* TODO: datamine.passive2.dmgInc*/, { key: '_' }))
+  subscript(sum(-1, ...allElements.map(ele => greaterEq(tally[ele], 1, 1))), datamine.passive2.dmgInc, { key: '_' }))
 
 const [condBurstPath, condBurst] = cond(key, "skill")
 const nodeSkill = equal("on", condBurst, sum(
@@ -211,7 +210,7 @@ const sheet: ICharacterSheet = {
         }
       }),
       passive1: talentTemplate("passive1", tr, passive1),
-      passive2: talentTemplate("passive2", tr, passive2, [{ text: "TODO" }]),
+      passive2: talentTemplate("passive2", tr, passive2, [{ node: infoMut(nodeA4, { key: `char_${key}:a4Inc_` }) }]),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
