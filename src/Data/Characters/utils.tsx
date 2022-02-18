@@ -6,13 +6,14 @@ import { trans } from "../SheetUtil";
 import { dmgNode } from "./dataUtil";
 
 type ComboRange = [number, number]
+type Multiplier = [number, number]
 
 /**
  * Normal hit array
  * @param normals The aray of hit dmg arrays for normal attacks
  * @param combo Indices to be grouped as part of a multihit combo
  */
-export function mapNormals(normals: number[][], combos: ComboRange[], characterKey: CharacterKey) {
+export function mapNormals(characterKey: CharacterKey, normals: number[][], combos?: ComboRange[], multipliers?: Multiplier[]) {
   const [tr] = trans("char", characterKey)
   const formula: Record<number, NumNode> = Object.fromEntries(normals.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")]))
@@ -26,37 +27,49 @@ export function mapNormals(normals: number[][], combos: ComboRange[], characterK
   let autoNumber = 0
   let combo: ComboRange | null = null
   for (let normalIndex = 0; normalIndex < normals.length; normalIndex++) {
-    const comboStart = combos.find(([start, _]) => start === normalIndex)
-    const comboEnd = combos.find(([_, end]) => end === normalIndex)
+    const comboStart = combos?.find(([start, _]) => start === normalIndex)
+    const comboEnd = combos?.find(([_, end]) => end === normalIndex)
     if (comboStart) combo = comboStart
     if (comboEnd) combo = null
 
-    let comboMultiplier: number | undefined = undefined
-    let comboNumber: number | undefined = undefined
+    let entry: typeof display[number] = {
+      normalIndex,
+      autoNumber
+    }
+
     if (combo !== null) {
       const [start, end] = combo
       if (normalIndex === start) {
         const comboNormals = normals.slice(start, end)
+        console.log(comboNormals)
         const areAllDuplicates = comboNormals.every((arr, i) => arr.every((v, j) => v === comboNormals[0][j]))
         if (areAllDuplicates) {
           // skip duplicates, set multiplier on current entry
-          // console.log({areAllDuplicates, combo, comboNormals})
-          comboMultiplier = end - start
-          normalIndex = end
+          entry.comboMultiplier = end - start
+          normalIndex = end - 1
+          autoNumber++
           combo = null
         }
       }
-      if (!comboMultiplier) {
-        comboNumber = normalIndex - start + 1
+      if (!entry.comboMultiplier) {
+        entry.comboNumber = normalIndex - start + 1
       }
-    } 
-    display.push({ normalIndex, autoNumber, comboMultiplier, comboNumber })
-    if (combo === null) autoNumber++
-    // else if (comboMultiplier) {
-    //   normalIndex = combo[1]
-    //   combo = null
-    // }
+      if (normalIndex === end - 1) {
+        autoNumber++
+      }
+    } else {
+      autoNumber++
+    }
+
+    const multiplier = multipliers?.find(([index, _]) => index === normalIndex)
+    if (multiplier) {
+      const [_, comboMultiplier] = multiplier
+      entry.comboMultiplier = comboMultiplier
+    }
+
+    display.push(entry)
   }
+  console.log(...display)
 
   const section = {
     text: tr("auto.fields.normal"),
