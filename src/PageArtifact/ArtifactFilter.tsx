@@ -44,7 +44,7 @@ export default function ArtifactFilter({ filterOption, filterOptionDispatch, fil
   return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={300} />}>
     <CardDark  >
       <CardContent>
-        <Grid container sx={{ mb: 1 }}>
+        <Grid container>
           <Grid item >
             <Typography variant="h6"><Trans t={t} i18nKey="artifactFilter">Artifact Filter</Trans></Typography>
           </Grid>
@@ -57,7 +57,7 @@ export default function ArtifactFilter({ filterOption, filterOptionDispatch, fil
             </Button>
           </Grid>
         </Grid>
-        <Grid container spacing={1} sx={{ mb: 1 }}>
+        <Grid container spacing={1} mt={1}>
           {/* left */}
           <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
             {/* Artifact stars filter */}

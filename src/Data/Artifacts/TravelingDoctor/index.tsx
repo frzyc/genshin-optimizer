@@ -1,6 +1,6 @@
 import icons from './icons'
 import { Data } from '../../../Formula/type'
-import { percent, greaterEq, prod } from '../../../Formula/utils'
+import { percent, greaterEq, prod, infoMut } from '../../../Formula/utils'
 import { input } from '../../../Formula'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
@@ -11,11 +11,15 @@ const key: ArtifactSetKey = "TravelingDoctor"
 const [condStatePath, condState] = cond(key, "state")
 
 const set2 = greaterEq(input.artSet.TravelingDoctor, 2, percent(0.2))
+const heal = greaterEq(input.artSet.TravelingDoctor, 4,
+  prod(percent(0.2), input.total.hp))
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     incHeal_: set2,
   }
+}, {
+  heal,
 })
 
 const sheet: IArtifactSheet = {
@@ -32,11 +36,7 @@ const sheet: IArtifactSheet = {
           states: {
             on: {
               fields: [{
-                text: sgt("healing"),
-                value: (data) => {
-                  return (data.get(input.total.hp).value) * 0.2
-                },
-                unit: " HP"
+                node: infoMut(heal, { key: "sheet_gen:healing", variant: "success" })
               }]
             }
           }
