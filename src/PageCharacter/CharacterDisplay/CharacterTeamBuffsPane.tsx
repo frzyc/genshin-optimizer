@@ -6,7 +6,6 @@ import CardLight from "../../Components/Card/CardLight";
 import CharacterDropdownButton from "../../Components/Character/CharacterDropdownButton";
 import ConditionalDisplay from "../../Components/ConditionalDisplay";
 import { NodeFieldDisplay } from "../../Components/FieldDisplay";
-import resonanceSheets from "../../Conditional/Resonance";
 import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
 import { DataContext, dataContextObj } from "../../DataContext";
 import { uiInput as input } from "../../Formula";
@@ -55,33 +54,33 @@ export function TeamBuffDisplay() {
     </CardContent>
   </CardLight>
 }
-function ResonanceDisplay() {
-  const { data, characterDispatch } = useContext(DataContext)
-  return <CardLight>
-    <CardContent>
-      Team Resonance
-    </CardContent>
-    <Divider />
-    <CardContent>
-      <Grid container spacing={1}>
-        {/* {resonanceSheets.map((doc, i) =>
-          <Grid item key={i} xs={12} md={6} lg={4} >
-            <CardDark sx={{ opacity: doc.canShow(build) ? 1 : 0.5, height: "100%" }}>
-              <CardHeader avatar={doc?.header?.icon} title={doc?.header?.title} action={doc?.header?.action} titleTypographyProps={{ variant: "subtitle2" }} />
-              <Divider />
-              <CardContent>
-                {doc.description}
-              </CardContent>
-              {doc.conditionals.map(cond =>
-                <ConditionalDisplay key={cond.key} conditional={cond} stats={build} onChange={val => characterDispatch({ conditionalValues: val })} />
-              )}
-            </CardDark>
-          </Grid>
-        )} */}
-      </Grid>
-    </CardContent>
-  </CardLight>
-}
+// function ResonanceDisplay() {
+//   const { data, characterDispatch } = useContext(DataContext)
+//   return <CardLight>
+//     <CardContent>
+//       Team Resonance
+//     </CardContent>
+//     <Divider />
+//     <CardContent>
+//       <Grid container spacing={1}>
+//         {resonanceSheets.map((doc, i) =>
+//           <Grid item key={i} xs={12} md={6} lg={4} >
+//             <CardDark sx={{ opacity: doc.canShow(build) ? 1 : 0.5, height: "100%" }}>
+//               <CardHeader avatar={doc?.header?.icon} title={doc?.header?.title} action={doc?.header?.action} titleTypographyProps={{ variant: "subtitle2" }} />
+//               <Divider />
+//               <CardContent>
+//                 {doc.description}
+//               </CardContent>
+//               {doc.conditionals.map(cond =>
+//                 <ConditionalDisplay key={cond.key} conditional={cond} stats={build} onChange={val => characterDispatch({ conditionalValues: val })} />
+//               )}
+//             </CardDark>
+//           </Grid>
+//         )}
+//       </Grid>
+//     </CardContent>
+//   </CardLight>
+// }
 function TeammateDisplay({ index }: { index: number }) {
   const dataContext = useContext(DataContext)
   const { character: active, teamData, characterDispatch: activeCharacterDispatch } = dataContext
@@ -129,7 +128,7 @@ function CharArtifactCondDisplay({ dataContext }: { dataContext: dataContextObj 
   return <DisplaySectionsTeamCond sections={sections} dataContext={dataContext} />
 }
 function CharWeaponCondDisplay({ dataContext }: { dataContext: dataContextObj }) {
-  const { data, teamData, character: { key: charKey } } = useContext(DataContext)
+  const { teamData, character: { key: charKey } } = useContext(DataContext)
   const weaponSheet = teamData[charKey]!.weaponSheet
 
   return <DisplaySectionsTeamCond sections={weaponSheet.document} dataContext={dataContext} />

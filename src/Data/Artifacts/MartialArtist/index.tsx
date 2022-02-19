@@ -2,13 +2,12 @@ import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent, sum } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
-import { cond, sgt, trans } from '../../SheetUtil'
+import { cond, sgt, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
 
 const key: ArtifactSetKey = "MartialArtist"
-const [, trm] = trans("artifact", key)
 const [condStatePath, condState] = cond(key, "state")
 
 const set2NA = greaterEq(input.artSet.MartialArtist, 2, percent(0.15), { key: "normal_dmg_" })
@@ -33,7 +32,7 @@ const sheet: IArtifactSheet = {
         conditional: {
           value: condState,
           path: condStatePath,
-          name: trm("condName"),
+          name: st("afterUse.skill"),
           states: {
             on: {
               fields: [{
