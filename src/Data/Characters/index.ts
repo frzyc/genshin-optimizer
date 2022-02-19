@@ -41,7 +41,7 @@ import Sucrose from "./Sucrose"
 // import Venti from './Venti'
 // import Xiao from './Xiao'
 // import Xiangling from './Xiangling'
-// import Xingqiu from './Xingqiu'
+import Xingqiu from './Xingqiu'
 // import Xinyan from './Xinyan'
 import YaeMiko from './YaeMiko'
 // import Yanfei from './Yanfei'
@@ -90,7 +90,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Venti,
   // Xiao,
   // Xiangling,
-  // Xingqiu,
+  Xingqiu,
   // Xinyan,
   YaeMiko,
   // Yanfei,
