@@ -28,5 +28,5 @@ export function sortFunction<Keys extends string, T>(sortby: string, ascending: 
 type FilterConfig<T> = (obj: T, filter: any) => boolean
 export type FilterConfigs<Keys extends string, T> = Record<Keys, FilterConfig<T>>
 export function filterFunction<Keys extends string, T>(filterOptions: Record<Keys, any>, filterConfigs: FilterConfigs<Keys, T>) {
-  return (obj: T) => Object.entries(filterOptions).every(([optionKey, optionVal]) => filterConfigs[optionKey as any](obj, optionVal))
+  return (obj: T) => Object.entries(filterOptions).every(([optionKey, optionVal]) => filterConfigs[optionKey as any] && filterConfigs[optionKey as any](obj, optionVal))
 }

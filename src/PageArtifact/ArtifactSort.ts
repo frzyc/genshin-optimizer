@@ -1,19 +1,20 @@
-import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
-import { allArtifactRarities, ArtifactRarity, ArtifactSetKey, CharacterKey, SlotKey } from "../Types/consts";
+import { ICachedArtifact, MainStatKey } from "../Types/artifact";
+import { allArtifactRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, CharacterKey, SlotKey } from "../Types/consts";
 import { FilterConfigs, SortConfigs } from "../Util/SortByFilters";
 import Artifact from "../Data/Artifacts/Artifact";
 import { probability } from "./RollProbability";
+import { SubstatKey } from "../Types/artifact_WR";
 export const artifactSortKeys = ["rarity", "level", "artsetkey", "efficiency", "mefficiency", "probability"] as const
 export const artifactSortKeysTC = ["probability"] as const
 export type ArtifactSortKey = typeof artifactSortKeys[number]
 export type FilterOption = {
-  artSetKey: ArtifactSetKey | "",
+  artSetKeys: ArtifactSetKey[],
   rarity: ArtifactRarity[],
   levelLow: number,
   levelHigh: number,
-  slotKey: SlotKey | "",
-  mainStatKey: MainStatKey | ""
-  substats: (SubstatKey | "")[]
+  slotKeys: SlotKey[],
+  mainStatKeys: MainStatKey[],
+  substats: SubstatKey[]
   location: CharacterKey | "Inventory" | "Equipped" | ""
   excluded: "excluded" | "included" | "",
 }
@@ -25,13 +26,13 @@ type ArtifactSortFilter = {
 }
 export const initialArtifactSortFilter = (): ArtifactSortFilter => ({
   filterOption: {
-    artSetKey: "",
+    artSetKeys: [],
     rarity: [...allArtifactRarities],
     levelLow: 0,
     levelHigh: 20,
-    slotKey: "",
-    mainStatKey: "",
-    substats: ["", "", "", ""],
+    slotKeys: [...allSlotKeys],
+    mainStatKeys: [],
+    substats: [],
     location: "",
     excluded: "",
   },
@@ -83,9 +84,9 @@ export function artifactFilterConfigs(): FilterConfigs<keyof FilterOption, ICach
       if (filter === art.location) return true
       return false
     },
-    artSetKey: (art, filter) => !filter || filter === art.setKey,
-    slotKey: (art, filter) => !filter || filter === art.slotKey,
-    mainStatKey: (art, filter) => !filter || filter === art.mainStatKey,
+    artSetKeys: (art, filter) => filter.length ? filter.includes(art.setKey) : true,
+    slotKeys: (art, filter) => filter.length ? filter.includes(art.slotKey) : true,
+    mainStatKeys: (art, filter) => filter.length ? filter.includes(art.mainStatKey) : true,
     levelLow: (art, filter) => filter <= art.level,
     levelHigh: (art, filter) => filter >= art.level,
     rarity: (art, filter) => filter.includes(art.rarity),
