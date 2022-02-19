@@ -1,13 +1,12 @@
 import ImgIcon from "../../Components/Image/ImgIcon";
 import { ascensionMaxLevel } from "../LevelData";
-import { Data, NumNode } from "../../Formula/type";
+import { Data } from "../../Formula/type";
 import { TalentSheet, TalentSheetElement, TalentSheetElementKey } from "../../Types/character_WR";
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "../../Types/consts";
 import SqBadge from "../../Components/SqBadge";
 import Assets from "../../Assets/Assets";
 import IConditional from "../../Types/IConditional_WR";
 import { IFieldDisplay } from "../../Types/IFieldDisplay_WR";
-import { infoMut } from "../../Formula/utils";
 
 const characterSheets = import('.').then(imp => imp.default)
 
@@ -79,28 +78,6 @@ export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) =>
     conditional,
   }],
 })
-
-export function damageTemplate(node: NumNode, langSheet: string, langPath: string, options: {
-  comboMultiplier?: number,
-  comboNumber?: number,
-  comboHit?: number,
-} = {}): IFieldDisplay {
-  const { comboMultiplier, comboNumber, comboHit } = options
-
-  let textSuffix = ''
-  if (comboMultiplier) {
-    textSuffix = `(${comboMultiplier} Hits)`
-  } else if (comboNumber) {
-    textSuffix = `(${comboNumber})`
-  } else if (comboHit) {
-    textSuffix = `(${comboHit}-Hit)`
-  }
-
-  return ({
-    node: infoMut(node, { key: `${langSheet}:${langPath}` }),
-    textSuffix
-  })
-}
 
 const talentStrMap: Record<TalentSheetElementKey, string> = {
   auto: "Auto",

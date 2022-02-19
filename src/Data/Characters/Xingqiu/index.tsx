@@ -2,38 +2,79 @@ import { CharacterData } from 'pipeline'
 import { input } from "../../../Formula/index"
 import { constant, equal, greaterEq, infoMut, min, percent, prod, subscript, sum } from "../../../Formula/utils"
 import { CharacterKey, ElementKey } from '../../../Types/consts'
-import { cond, trans } from '../../SheetUtil'
-import CharacterSheet, { conditionalHeader, damageTemplate, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import { cond, st, trans } from '../../SheetUtil'
+import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
-import { data as datamine } from './data'
 import data_gen_src from './data_gen.json'
+import skillParam_gen from './skillParam_gen.json'
 
-
-const characterKey: CharacterKey = "Xingqiu"
+const key: CharacterKey = "Xingqiu"
 const elementKey: ElementKey = "hydro"
 const data_gen = data_gen_src as CharacterData
-const char_Xingqiu_gen = `char_${characterKey}_gen`
-const sheet_gen = "sheet_gen"
-const [tr] = trans("char", characterKey)
+const [tr, trm] = trans("char", key)
 
-const [condC2Path, condC2] = cond(characterKey, "c2")
-const [condC4Path, condC4] = cond(characterKey, "c4")
-const const3TalentInc = greaterEq(input.constellation, 3, 3)
-const const5TalentInc = greaterEq(input.constellation, 5, 3)
-const hydro_dmg_ = greaterEq(input.asc, 4, datamine.passive2.hydro_dmg_)
-const hydro_enemyRes_ = greaterEq(input.constellation, 2,
-  equal(condC2, "c2", datamine.constellation2.hydro_enemyRes_))
-const skill_dmg_ = greaterEq(input.constellation, 4,
-  equal(condC4, "c4", datamine.constellation4.skill_dmg_, {key: "skill_dmg_"}))
-// TODO: Doesn't display well in the UI (lacking unit)
-const skillDuration = sum(datamine.skill.duration,
-  greaterEq(input.constellation, 2, datamine.constellation2.skill_duration))
-const dmgRed_ = sum(
-  subscript(input.total.skillIndex, datamine.skill.dmgRed_, { key: "_"}),
-  min(percent(0.24), prod(input.total.hydro_dmg_, percent(0.20)))
-)
-const healing = greaterEq(input.asc, 1, prod(input.total.hp, percent(0.06)))
+let s = 0, b = 0
+export const datamine = {
+  normal: {
+    hitArr: [
+      (skillParam_gen.auto[0]),//1
+      (skillParam_gen.auto[1]),//2
+      (skillParam_gen.auto[2]),//3
+      // (skillParam_gen.auto[3]),
+      (skillParam_gen.auto[4]),//4
+      (skillParam_gen.auto[5]),//5
+      // (skillParam_gen.auto[6]),
+    ]
+  },
+  charged: {
+    hit1: (skillParam_gen.auto[7]),
+    hit2: (skillParam_gen.auto[8]),
+    stamina: skillParam_gen.auto[9][0]
+  },
+  plunging: {
+    dmg: (skillParam_gen.auto[10]),
+    low: (skillParam_gen.auto[11]),
+    high: (skillParam_gen.auto[12]),
+  },
+  skill: {
+    hit1: (skillParam_gen.skill[s++]),
+    hit2: (skillParam_gen.skill[s++]),
+    dmgRed_: (skillParam_gen.skill[s++]),
+    duration: skillParam_gen.skill[s++][0],
+    cd: skillParam_gen.skill[s++][0],
+  },
+  burst: {
+    dmg: (skillParam_gen.burst[b++]),
+    duration: skillParam_gen.burst[b++][0],
+    cd: skillParam_gen.burst[b++][0],
+    cost: skillParam_gen.burst[b++][0],
+  },
+  passive2: {
+    hydro_dmg_: 0.20
+  },
+  constellation2: {
+    hydro_enemyRes_: -0.15,
+    skill_duration: 3
+  },
+  constellation4: {
+    dmg_: 0.50
+  },
+} as const
+
+const nodeA4 = greaterEq(input.asc, 4, datamine.passive2.hydro_dmg_)
+
+const [condC2Path, condC2] = cond(key, "c2")
+const nodeC2 = greaterEq(input.constellation, 2,
+  equal(condC2, "on", datamine.constellation2.hydro_enemyRes_))
+
+const [condBurstPath, condBurst] = cond(key, "burst")
+const nodeC4 = greaterEq(input.constellation, 4,
+  equal(condBurst, "on", datamine.constellation4.dmg_), { key: `char_${key}:c4dmg_` })
+
+const nodeSkillDmgRed_ = sum(subscript(input.total.skillIndex, datamine.skill.dmgRed_, { key: "_" }), min(percent(0.24), prod(percent(0.2), input.total.hydro_dmg_)))
+
+const nodeA4Heal = greaterEq(input.asc, 1, prod(input.total.hp, percent(0.06)))
 
 export const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -45,32 +86,32 @@ export const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    // TODO: Provide premod multiplicative damage bonuses e.g. skill_dmgMult
-    press1: prod(infoMut(sum(skill_dmg_, 1), { key: 'skill_dmg_', pivot: true }), dmgNode("atk", datamine.skill.hit1, "skill")),
-    press2: prod(infoMut(sum(skill_dmg_, 1), { key: 'skill_dmg_', pivot: true }), dmgNode("atk", datamine.skill.hit2, "skill")),
-    // TODO: dmg reduction based on sword count?
-    dmgRed_,
-    healing
+    press1: prod(sum(percent(1), nodeC4), dmgNode("atk", datamine.skill.hit1, "skill")),
+    press2: prod(sum(percent(1), nodeC4), dmgNode("atk", datamine.skill.hit2, "skill")),
+    dmgRed_: nodeSkillDmgRed_,
+  },
+  passive1: {
+    healing: nodeA4Heal
   },
   burst: {
-    // TODO: burst dmg based on normal attacks?
     dmg: dmgNode("atk", datamine.burst.dmg, "burst", { hit: { ele: constant(elementKey) } }),
   }
 }
-
-export const dataObj = dataObjForCharacterSheet(characterKey, elementKey, "liyue", data_gen, dmgFormulas, {
+const nodeC3 = greaterEq(input.constellation, 3, 3)
+const nodeC5 = greaterEq(input.constellation, 5, 3)
+export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
   bonus: {
-    skill: const5TalentInc,
-    burst: const3TalentInc,
+    skill: nodeC5,
+    burst: nodeC3,
   },
   teamBuff: {
     premod: {
-      hydro_enemyRes_,
-      dmgRed_,
+      hydro_enemyRes_: nodeC2,
+      dmgRed_: infoMut(nodeSkillDmgRed_, { key: "dmgRed_" }), // TODO: nonexistant path
     }
   },
   premod: {
-    hydro_dmg_,
+    hydro_dmg_: nodeA4,
   }
 })
 
@@ -91,52 +132,54 @@ const sheet: ICharacterSheet = {
       auto: {
         name: tr("auto.name"),
         img: normalSrc(data_gen.weaponTypeKey),
-        sections: [
-          {
-            text: tr("auto.fields.normal"),
-            fields: [
-              damageTemplate(dmgFormulas.normal[0], char_Xingqiu_gen, "auto.skillParams.0"),
-              damageTemplate(dmgFormulas.normal[1], char_Xingqiu_gen, "auto.skillParams.1"),
-              damageTemplate(dmgFormulas.normal[2], char_Xingqiu_gen, "auto.skillParams.2", {comboMultiplier: 2}),
-              damageTemplate(dmgFormulas.normal[3], char_Xingqiu_gen, "auto.skillParams.3"),
-              damageTemplate(dmgFormulas.normal[4], char_Xingqiu_gen, "auto.skillParams.4", {comboMultiplier: 2}),
-            ]
-          },
-          {
-            text: tr(`auto.fields.charged`),
-            fields: [
-              damageTemplate(dmgFormulas.charged.dmg1, char_Xingqiu_gen, "auto.skillParams.5", {comboHit: 1}),
-              damageTemplate(dmgFormulas.charged.dmg2, char_Xingqiu_gen, "auto.skillParams.5", {comboHit: 2}),          
-              {
-              text: tr("auto.skillParams.6"),
-              value: datamine.charged.stam,
-            }]
+        sections: [{
+          text: tr("auto.fields.normal"),
+          fields: datamine.normal.hitArr.map((_, i) => ({
+            node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
+            textSuffix: (i === 2 || i === 4) ? <span>({st("hits", { count: 2 })})</span> : ""
+          }))
+        }, {
+          text: tr("auto.fields.charged"),
+          fields: [{
+            node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
+            textSuffix: "(1)"
           }, {
-            text: tr(`auto.fields.plunging`),
-            fields: [
-              damageTemplate(dmgFormulas.plunging.dmg, sheet_gen, "plunging.dmg" ),
-              damageTemplate(dmgFormulas.plunging.low, sheet_gen, "plunging.low" ),
-              damageTemplate(dmgFormulas.plunging.high, sheet_gen, "plunging.high"),
-            ]
-          },
-        ],
+            node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${key}_gen:auto.skillParams.5` }),
+            textSuffix: "(2)"
+          }, {
+            text: tr("auto.skillParams.6"),
+            value: datamine.charged.stamina,
+          }]
+        }, {
+          text: tr(`auto.fields.plunging`),
+          fields: [{
+            node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+          }, {
+            node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+          }, {
+            node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+          }]
+        }],
       },
       skill: {
         name: tr("skill.name"),
         img: skill,
         sections: [{
           text: tr("skill.description"),
-          fields: [
-            damageTemplate(dmgFormulas.skill.press1, char_Xingqiu_gen, "skill.skillParams.0", {comboHit: 1}),
-            damageTemplate(dmgFormulas.skill.press2, char_Xingqiu_gen, "skill.skillParams.0", {comboHit: 2}),
-            {
-            // TODO: We need variant keys for healing and unstyled colors
-            node: infoMut(dmgFormulas.skill.dmgRed_, { key: `char_${characterKey}_gen:skill.skillParams.1`, variant: "physical" }),
+          fields: [{
+            node: infoMut(dmgFormulas.skill.press1, { key: `char_${key}_gen:skill.skillParams.0` }),
+            textSuffix: "(1)"
           }, {
-            canShow: uiData => uiData.get(input.asc).value >= 1,
-            node: infoMut(dmgFormulas.skill.healing, { key: `sheet_gen:healing`, variant: "success" }),
+            node: infoMut(dmgFormulas.skill.press2, { key: `char_${key}_gen:skill.skillParams.0` }),
+            textSuffix: "(2)"
           }, {
-            node: infoMut(skillDuration, { key: `char_${characterKey}_gen:skill.skillParams.2` }),
+            node: infoMut(dmgFormulas.skill.dmgRed_, { key: `dmgRed_` }),
+          }, {
+            text: tr("skill.skillParams.2"),
+            value: data => data.get(input.constellation).value >= 2
+              ? `${datamine.skill.duration}s + ${datamine.constellation2.skill_duration}`
+              : `${datamine.skill.duration}`,
+            unit: "s"
           }, {
             text: tr("skill.skillParams.3"),
             value: datamine.skill.cd,
@@ -149,13 +192,7 @@ const sheet: ICharacterSheet = {
         img: burst,
         sections: [{
           text: tr("burst.description"),
-          fields: [
-            damageTemplate(dmgFormulas.burst.dmg, char_Xingqiu_gen, "burst.skillParams.0"),
-{
-            text: tr("burst.skillParams.1"),
-            value: datamine.burst.duration,
-            unit: "s"
-          }, {
+          fields: [{
             text: tr("burst.skillParams.2"),
             value: datamine.burst.cd,
             unit: "s"
@@ -163,68 +200,56 @@ const sheet: ICharacterSheet = {
             text: tr("burst.skillParams.3"),
             value: datamine.burst.cost,
           }],
+          conditional: {
+            value: condBurst,
+            path: condBurstPath,
+            name: trm("burstCond"),
+            states: {
+              on: {
+                fields: [{
+                  node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
+                }, {
+                  text: tr("burst.skillParams.1"),
+                  value: datamine.burst.duration,
+                  unit: "s"
+                }, {
+                  node: nodeC4
+                }]
+              }
+            }
+          },
         }]
       },
-      passive1: talentTemplate("passive1", tr, passive1),
+      passive1: talentTemplate("passive1", tr, passive1, [{
+        node: infoMut(dmgFormulas.passive1.healing, { key: `sheet_gen:healing`, variant: "success" }),
+      },]),
       passive2: talentTemplate("passive2", tr, passive2, [{
-        node: hydro_dmg_
+        node: nodeA4
       }]),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
-      constellation2: {
-        name: tr("constellation2.name"),
-        img: c2,
-        sections: [{
-          text: tr("constellation2.description"),
-          conditional: {
-            canShow: greaterEq(input.constellation, 2, 1),
-            value: condC2,
-            path: condC2Path,
-            teamBuff: true,
-            name: "Opponent hit by sword rain",
-            header: conditionalHeader("constellation2", tr, c2),
-            description: tr("constellation2.description"),
-            states: {
-              c2: {
-                fields: [
-                  {
-                    node: hydro_enemyRes_
-                  }
-                ]
-              }
-            }
-          },
-        }],
-      },
-      constellation3: talentTemplate("constellation3", tr, c3, [{ node: const3TalentInc }]),
-      constellation4:  {
-        name: tr("constellation4.name"),
-        img: c4,
-        sections: [{
-          text: tr("constellation4.description"),
-          conditional: {
-            canShow: greaterEq(input.constellation, 4, 1),
-            value: condC4,
-            path: condC4Path,
-            name: "Elemental Skill DMG Increase",
-            header: conditionalHeader("constellation4", tr, c4),
-            description: tr("constellation4.description"),
-            states: {
-              c4: {
-                fields: [
-                  {
-                    node: skill_dmg_
-                  }
-                ]
-              }
-            }
-          },
-        }],
-      },
-      constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5TalentInc }]),
+      constellation2: talentTemplate("constellation2", tr, c2, undefined, {
+        canShow: greaterEq(input.constellation, 2, 1),
+        value: condC2,
+        path: condC2Path,
+        teamBuff: true,
+        name: trm("c2Cond"),
+        header: conditionalHeader("constellation2", tr, c2),
+        description: tr("constellation2.description"),
+        states: {
+          on: {
+            fields: [{
+              node: nodeC2
+            }]
+          }
+        }
+      }),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
+      constellation4: talentTemplate("constellation4", tr, c4),
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };
 
-export default new CharacterSheet(sheet, dataObj);
+export default new CharacterSheet(sheet, data);
