@@ -3,12 +3,12 @@ import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
-import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { ArtifactSheet, conditionalHeader, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
 
 const key: ArtifactSetKey = "MaidenBeloved"
-const [, trm] = trans("artifact", key)
+const [tr, trm] = trans("artifact", key)
 const [condStatePath, condState] = cond(key, "state")
 
 const set2 = greaterEq(input.artSet.MaidenBeloved, 2, percent(0.15))
@@ -33,8 +33,11 @@ const sheet: IArtifactSheet = {
     4: {
       document: [{
         conditional: {
+          teamBuff: true,
           value: condState,
           path: condStatePath,
+          header: conditionalHeader(tr, icons.flower),
+          description: tr(`setEffects.4`),
           name: trm("condName"),
           states: {
             on: {

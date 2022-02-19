@@ -12,7 +12,6 @@ const key: ArtifactSetKey = "TinyMiracle"
 const [tr, trm] = trans("artifact", key)
 const [condElePath, condEle] = cond(key, "element")
 
-// There's probably a cleaner way to do this?
 const set2Anemo = greaterEq(input.artSet.TinyMiracle, 2, percent(0.2), { key: "anemo_res_" })
 const set2Geo = greaterEq(input.artSet.TinyMiracle, 2, percent(0.2), { key: "geo_res_" })
 const set2Cryo = greaterEq(input.artSet.TinyMiracle, 2, percent(0.2), { key: "cryo_res_" })
