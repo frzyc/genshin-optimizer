@@ -44,16 +44,21 @@ export const data = {
     duration: skillParam_gen.passive2[2][0],
   },
   constellation1: {
-    burst_durationInc: skillParam_gen.constellation1[0][0],
-    atk_: skillParam_gen.constellation1[1][0],
-    duration: skillParam_gen.constellation1[2][0]
+    burst_durationInc: skillParam_gen.constellation1[0],
+    atk_: skillParam_gen.constellation1[1],
+    duration: skillParam_gen.constellation1[2]
   },
   constellation2: {
-    pyro_dmg_: skillParam_gen.constellation2[0][0],
-    duration: skillParam_gen.constellation2[1][0],
+    pyro_dmg_: skillParam_gen.constellation2[0],
+    duration: skillParam_gen.constellation2[1],
   },
   constellation3: {},
-  constellation4: {},
+  constellation4: {
+    cdRed: skillParam_gen.constellation4[0]
+  },
   constellation5: {},
-  constellation6: {},
+  constellation6: {
+    chance: skillParam_gen.constellation6[0],
+    dmg_: skillParam_gen.constellation6[1],
+  },
 } 

@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { constant, greaterEq, infoMut, lookup, percent, prod, sum } from "../../../Formula/utils"
+import { constant, equal, equalStr, greaterEq, infoMut, lookup, matchFull, percent, prod, subscript, sum, unequal } from "../../../Formula/utils"
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { IFieldDisplay } from '../../../Types/IFieldDisplay_WR'
 import { cond, sgt, trans } from '../../SheetUtil'
@@ -23,6 +23,7 @@ import passive1 from './passive1.png'
 import passive2 from './passive2.png'
 import passive3 from './passive3.png'
 import skill from './skill.png'
+import { range } from '../../../Util/Util'
 
 
 const characterKey: CharacterKey = "Yoimiya"
@@ -40,17 +41,22 @@ const [condC1Path, condC1] = cond(characterKey, "c1")
 const [condC2Path, condC2] = cond(characterKey, "c2")
 const const3TalentInc = greaterEq(input.constellation, 3, 3)
 const const5TalentInc = greaterEq(input.constellation, 5, 3)
-const normal_dmg_ = constant(0)
-const atk_ = sum(percent(datamine.passive2.fixed_atk_), prod(percent(datamine.passive2.var_atk_), lookup(condA1, {
-  1:constant(1),
-  2:constant(2)
-}, 0)))
+const normal_dmgMult = matchFull(condSkill, "skill", subscript(input.total.skillIndex, datamine.skill.dmg_), 1, { key: 'normal_dmg_' })
+const a1Stacks = lookup(condA1, Object.fromEntries(range(1, datamine.passive1.maxStacks).map(i => [i, constant(i)])), 0)
+const pyro_dmg_ = infoMut(prod(percent(datamine.passive1.pyro_dmg_), a1Stacks), { key: 'pyro_dmg_' })
+const atk_ = unequal(input.activeCharKey, characterKey, sum(percent(datamine.passive2.fixed_atk_), prod(percent(datamine.passive2.var_atk_), a1Stacks)))
+const c1atk_ = equal(condC1, 'c1', percent(datamine.constellation1.atk_))
+const c2pyro_dmg_ = equal(condC2, 'c2', percent(datamine.constellation2.pyro_dmg_), { key: 'pyro_dmg_' })
+
+const normalEntries = datamine.normal.hitArr.map((arr, i) =>
+[i, prod(normal_dmgMult, dmgNode("atk", arr, "normal", { hit: { ele: matchFull(condSkill, "skill", constant(elementKey), constant("physical")) } }))])
+
+const kindlingEntries = normalEntries.map(([_, node], i, arr) => [i + arr.length, (prod(prod(percent(datamine.constellation6.dmg_), percent(datamine.constellation6.chance)), node))])
+
 
 export const dmgFormulas = {
   // TODO: Provide premod multiplicative damage bonuses e.g. normal_dmgMult
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
-    [i, prod(infoMut(sum(normal_dmg_, 1), { key: 'normal_dmg_', pivot: true }), dmgNode("atk", arr, "normal")),
-    ])),
+  normal: Object.fromEntries([...normalEntries, ...kindlingEntries]),
   charged: {
     hit: dmgNode("atk", datamine.charged.hit, "charged"),
     full: dmgNode("atk", datamine.charged.full, "charged", { hit: { ele: constant(elementKey) } }),
@@ -58,8 +64,7 @@ export const dmgFormulas = {
   },
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
-  skill: {
-  },
+  skill: {},
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst", { hit: { ele: constant(elementKey) } }),
     exp: dmgNode("atk", datamine.burst.exp, "burst", { hit: { ele: constant(elementKey) } }),
@@ -77,6 +82,8 @@ export const dataObj = dataObjForCharacterSheet(characterKey, elementKey, "inazu
     }
   },
   premod: {
+    atk_: c1atk_,
+    pyro_dmg_: sum(pyro_dmg_, c2pyro_dmg_),
   }
 })
 
@@ -145,7 +152,7 @@ const sheet: ICharacterSheet = {
             path: condSkillPath,
             value: condSkill,
             states: {
-              skill: { }
+              skill: {}
             }
           }
         }],
@@ -160,7 +167,7 @@ const sheet: ICharacterSheet = {
             damageTemplate(dmgFormulas.burst.exp, char_Yoimiya_gen, "burst.skillParams.1"),
             {
               text: tr("burst.skillParams.2"),
-              value: stats => datamine.burst.duration + (stats.constellation >= 1 ? datamine.constellation1.burst_durationInc : 0),
+              value: uiData => datamine.burst.duration + (uiData.get(input.constellation).value >= 1 ? datamine.constellation1.burst_durationInc : 0),
               unit: "s"
             }, {
               text: tr("burst.skillParams.3"),
@@ -178,10 +185,13 @@ const sheet: ICharacterSheet = {
           value: condA1,
           path: condA1Path,
           name: tr("passive1.name"),
-          states: {
-            1: {
-              name: `${1} stack`,
+          states: Object.fromEntries(range(1, datamine.passive1.maxStacks).map(i =>
+            [i, {
+              name: `${i} stack`,
               fields: [
+                {
+                  node: pyro_dmg_
+                },
                 {
                   text: sgt("duration"),
                   value: datamine.passive1.duration,
@@ -189,41 +199,18 @@ const sheet: ICharacterSheet = {
                 }
               ]
 
-            }
-          },
+            }]))
         }
       ),
       passive2: talentTemplate("passive2", tr, passive2, [{
-        canShow: stats => stats.ascension >= 4,
+        canShow: uiData => uiData.get(input.asc).value >= 4,
         node: infoMut(atk_, { key: `${char_Yoimiya_gen}:passive2.name` })
       }, {
-        canShow: stats => stats.ascension >= 4,
+        canShow: uiData => uiData.get(input.asc).value >= 4,
         text: sgt("duration"),
         value: datamine.passive2.duration,
         unit: "s"
-      }],
-        {
-          canShow: greaterEq(input.asc, 4, 1),
-          header: conditionalHeader("passive2", tr, passive2),
-          description: tr("passive2.description"),
-          name: charTr("p2p"),
-          value: condA4,
-          path: condA4Path,
-          states: Object.fromEntries([...Array(11).keys()].map(t => [t, {
-            name: `${t}`,
-            fields: [
-              // {
-              //   text: sgt("duration"),
-              //   value: datamine.passive2.duration,
-              //   unit: "s"
-              // },
-              {
-                text: sgt("duration"),
-                value: datamine.passive2.duration,
-                unit: "s"
-              }]
-          }]))
-        }),
+      }]),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1, [], {
         canShow: greaterEq(input.constellation, 1, 1),
@@ -234,7 +221,7 @@ const sheet: ICharacterSheet = {
           c1: {
             fields: [{
               node: constant(datamine.constellation1.atk_, { key: "atk_" })
-            },{
+            }, {
               text: sgt("duration"),
               value: datamine.constellation1.duration,
               unit: 's'
@@ -256,7 +243,8 @@ const sheet: ICharacterSheet = {
               c2: {
                 fields: [
                   {
-                    node: constant(datamine.constellation2.pyro_dmg_, { key: 'pyro_dmg_' }),
+                    node: c2pyro_dmg_
+                    // node: constant(datamine.constellation2.pyro_dmg_, { key: 'pyro_dmg_' }),
                   }, {
                     text: sgt("duration"),
                     value: datamine.constellation2.duration,
@@ -267,17 +255,16 @@ const sheet: ICharacterSheet = {
           }
         }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, [{node: const3TalentInc}]),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: const3TalentInc }]),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, [{node: const5TalentInc}]),
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5TalentInc }]),
       constellation6: talentTemplate("constellation6", tr, c6, [
-            ...Object.entries(dmgFormulas.normal).map(([_, node]): IFieldDisplay =>
-            ({
-              canShow: stats => stats.constellation >= 6,
-              node: node,
-              variant: elementKey,
-            }))
-          ])
+        damageTemplate(dmgFormulas.normal[5], char_Yoimiya_gen, "auto.skillParams.0", { comboMultiplier: 2 }),
+        damageTemplate(dmgFormulas.normal[6], char_Yoimiya_gen, "auto.skillParams.1"),
+        damageTemplate(dmgFormulas.normal[7], char_Yoimiya_gen, "auto.skillParams.2"),
+        damageTemplate(dmgFormulas.normal[8], char_Yoimiya_gen, "auto.skillParams.3", { comboMultiplier: 2 }),
+        damageTemplate(dmgFormulas.normal[9], char_Yoimiya_gen, "auto.skillParams.4"),
+      ])
     },
   },
 };
