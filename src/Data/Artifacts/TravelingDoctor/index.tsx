@@ -1,11 +1,11 @@
-import icons from './icons'
-import { Data } from '../../../Formula/type'
-import { percent, greaterEq, prod, infoMut } from '../../../Formula/utils'
 import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
+import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import { cond, sgt, st } from '../../SheetUtil'
+import icons from './icons'
 const key: ArtifactSetKey = "TravelingDoctor"
 
 const [condStatePath, condState] = cond(key, "state")

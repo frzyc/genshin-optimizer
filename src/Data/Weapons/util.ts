@@ -1,6 +1,5 @@
 import type { WeaponData } from "pipeline";
 import { inferInfoMut, mergeData } from "../../Formula/api";
-import { MainStatKey, SubstatKey } from "../../Types/artifact";
 import { WeaponKey } from "../../Types/consts";
 import _weaponCurves from "./expCurve_gen.json";
 import { input } from "../../Formula";
