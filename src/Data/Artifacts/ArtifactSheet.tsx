@@ -41,6 +41,7 @@ export class ArtifactSheet {
     if (!this.slotIcons[slotKey]) return undefined
     return this.slotIcons[slotKey]
   }
+  get defIcon() { return <ImgIcon src={this.defIconSrc} sx={{ fontSize: "1.5em" }} /> }
   /**
    * @deprecated use src directly
    */
