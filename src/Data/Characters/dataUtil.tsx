@@ -22,6 +22,7 @@ const inferredHitEle = stringPrio(
   // Inferred Element
   equalStr(input.weaponType, "catalyst", input.charEle),
   equalStr(input.hit.move, "skill", input.charEle),
+  equalStr(input.hit.move, "burst", input.charEle),
   "physical",
 )
 
