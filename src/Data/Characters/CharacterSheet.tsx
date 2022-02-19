@@ -6,7 +6,7 @@ import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "../../Types/con
 import SqBadge from "../../Components/SqBadge";
 import Assets from "../../Assets/Assets";
 import IConditional from "../../Types/IConditional_WR";
-import { IFieldDisplay } from "../../Types/IFieldDisplay_WR";
+import { IFieldDisplay, INodeFieldDisplay } from "../../Types/IFieldDisplay_WR";
 import { infoMut } from "../../Formula/utils";
 
 const characterSheets = import('.').then(imp => imp.default)
@@ -84,8 +84,9 @@ export function damageTemplate(node: NumNode, langSheet: string, langPath: strin
   comboMultiplier?: number,
   comboNumber?: number,
   comboHit?: number,
-} = {}): IFieldDisplay {
-  const { comboMultiplier, comboNumber, comboHit } = options
+  canShow?: INodeFieldDisplay["canShow"],
+} = {}): INodeFieldDisplay {
+  const { comboMultiplier, comboNumber, comboHit, canShow } = options
 
   let textSuffix = ''
   if (comboMultiplier) {
@@ -97,8 +98,9 @@ export function damageTemplate(node: NumNode, langSheet: string, langPath: strin
   }
 
   return ({
+    canShow,
     node: infoMut(node, { key: `${langSheet}:${langPath}` }),
-    textSuffix
+    textSuffix,
   })
 }
 

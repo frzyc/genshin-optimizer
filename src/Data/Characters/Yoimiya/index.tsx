@@ -1,10 +1,10 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { constant, equal, equalStr, greaterEq, infoMut, lookup, matchFull, percent, prod, subscript, sum, unequal } from "../../../Formula/utils"
+import { constant, equal, greaterEq, infoMut, lookup, matchFull, percent, prod, subscript, sum, unequal } from "../../../Formula/utils"
 import { CharacterKey, ElementKey } from '../../../Types/consts'
-import { IFieldDisplay } from '../../../Types/IFieldDisplay_WR'
+import { range } from '../../../Util/Util'
 import { cond, sgt, trans } from '../../SheetUtil'
-import CharacterSheet, { conditionalHeader, damageTemplate, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { damageTemplate, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import banner from './Banner.png'
 import burst from './burst.png'
@@ -23,7 +23,6 @@ import passive1 from './passive1.png'
 import passive2 from './passive2.png'
 import passive3 from './passive3.png'
 import skill from './skill.png'
-import { range } from '../../../Util/Util'
 
 
 const characterKey: CharacterKey = "Yoimiya"
@@ -36,7 +35,6 @@ const [tr, charTr] = trans("char", characterKey)
 
 const [condSkillPath, condSkill] = cond(characterKey, "skill")
 const [condA1Path, condA1] = cond(characterKey, "a1")
-const [condA4Path, condA4] = cond(characterKey, "a4")
 const [condC1Path, condC1] = cond(characterKey, "c1")
 const [condC2Path, condC2] = cond(characterKey, "c2")
 const const3TalentInc = greaterEq(input.constellation, 3, 3)
@@ -47,6 +45,8 @@ const pyro_dmg_ = infoMut(prod(percent(datamine.passive1.pyro_dmg_), a1Stacks), 
 const atk_ = unequal(input.activeCharKey, characterKey, sum(percent(datamine.passive2.fixed_atk_), prod(percent(datamine.passive2.var_atk_), a1Stacks)))
 const c1atk_ = equal(condC1, 'c1', percent(datamine.constellation1.atk_))
 const c2pyro_dmg_ = equal(condC2, 'c2', percent(datamine.constellation2.pyro_dmg_), { key: 'pyro_dmg_' })
+
+const canShowC6 = uiData => uiData.get(input.constellation).value >= 6 && uiData.get(condSkill).value === 'skill'
 
 const normalEntries = datamine.normal.hitArr.map((arr, i) =>
 [i, prod(normal_dmgMult, dmgNode("atk", arr, "normal", { hit: { ele: matchFull(condSkill, "skill", constant(elementKey), constant("physical")) } }))])
@@ -259,11 +259,11 @@ const sheet: ICharacterSheet = {
       constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5TalentInc }]),
       constellation6: talentTemplate("constellation6", tr, c6, [
-        damageTemplate(dmgFormulas.normal[5], char_Yoimiya_gen, "auto.skillParams.0", { comboMultiplier: 2 }),
-        damageTemplate(dmgFormulas.normal[6], char_Yoimiya_gen, "auto.skillParams.1"),
-        damageTemplate(dmgFormulas.normal[7], char_Yoimiya_gen, "auto.skillParams.2"),
-        damageTemplate(dmgFormulas.normal[8], char_Yoimiya_gen, "auto.skillParams.3", { comboMultiplier: 2 }),
-        damageTemplate(dmgFormulas.normal[9], char_Yoimiya_gen, "auto.skillParams.4"),
+        damageTemplate(dmgFormulas.normal[5], char_Yoimiya_gen, "auto.skillParams.0", { canShow: canShowC6, comboMultiplier: 2 }),
+        damageTemplate(dmgFormulas.normal[6], char_Yoimiya_gen, "auto.skillParams.1", { canShow: canShowC6, }),
+        damageTemplate(dmgFormulas.normal[7], char_Yoimiya_gen, "auto.skillParams.2", { canShow: canShowC6, }),
+        damageTemplate(dmgFormulas.normal[8], char_Yoimiya_gen, "auto.skillParams.3", { canShow: canShowC6, comboMultiplier: 2 }),
+        damageTemplate(dmgFormulas.normal[9], char_Yoimiya_gen, "auto.skillParams.4", { canShow: canShowC6, }),
       ])
     },
   },
