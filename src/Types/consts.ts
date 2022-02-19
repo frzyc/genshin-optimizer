@@ -43,14 +43,14 @@ export const allArtifactSets = [
   "RetracingBolide",
   "Scholar",
   "ShimenawasReminiscence",
+  // "TenacityOfTheMillelith"
   // "TheExile",
   "ThunderingFury",
-  // "Thundersoother",
+  "Thundersoother",
   "TinyMiracle",
-  // "TravelingDoctor",
+  "TravelingDoctor",
   "ViridescentVenerer",
-  // "WanderersTroupe",
-  // "TenacityOfTheMillelith"
+  "WanderersTroupe",
 ] as const
 export const allCharacterKeys = [
   // "Albedo",
