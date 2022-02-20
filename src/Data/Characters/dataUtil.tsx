@@ -46,6 +46,11 @@ export function customShieldNode(base: NumNode, additional?: Data): NumNode {
   return additional ? data(shieldNode, additional) : shieldNode
 }
 /** Note: `additional` applies only to this formula */
+export function customHealNode(base: NumNode, additional?: Data): NumNode {
+  const healNode = prod(base, sum(unit, input.total.heal_))
+  return additional ? data(healNode, additional) : healNode
+}
+/** Note: `additional` applies only to this formula */
 export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
   const talentType = getTalentType(move)
   return customDmgNode(prod(subscript(input.total[`${talentType}Index`], lvlMultiplier, { key: '_' }), input.total[base]), move, additional)
@@ -55,10 +60,23 @@ export function shieldNode(base: MainStatKey, percent: NumNode | number, flat: N
   return customShieldNode(sum(prod(percent, input.total[base]), flat), additional)
 }
 /** Note: `additional` applies only to this formula */
+export function healNode(base: MainStatKey, percent: NumNode | number, flat: NumNode | number, additional?: Data): NumNode {
+  return customHealNode(sum(prod(percent, input.total[base]), flat), additional)
+}
+/** Note: `additional` applies only to this formula */
 export function shieldNodeTalent(base: MainStatKey, baseMultiplier: number[], flat: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional?: Data): NumNode {
   const talentType = getTalentType(move)
   const talentIndex = input.total[`${talentType}Index`]
   return customShieldNode(sum(
+    prod(subscript(talentIndex, baseMultiplier, { key: '_' }), input.total[base]),
+    subscript(talentIndex, flat)
+  ), additional)
+}
+/** Note: `additional` applies only to this formula */
+export function healNodeTalent(base: MainStatKey, baseMultiplier: number[], flat: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional?: Data): NumNode {
+  const talentType = getTalentType(move)
+  const talentIndex = input.total[`${talentType}Index`]
+  return customHealNode(sum(
     prod(subscript(talentIndex, baseMultiplier, { key: '_' }), input.total[base]),
     subscript(talentIndex, flat)
   ), additional)
