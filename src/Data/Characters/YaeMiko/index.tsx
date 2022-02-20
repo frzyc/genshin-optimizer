@@ -197,7 +197,7 @@ const sheet: ICharacterSheet = {
         value: condC4,
         path: condC4Path,
         teamBuff: true,
-        header: conditionalHeader("constellation4", tr, passive1),
+        header: conditionalHeader("constellation4", tr, c4),
         description: tr("constellation4.description"),
         name: trm("c4"),
         states: {
