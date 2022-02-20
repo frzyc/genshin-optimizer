@@ -1,11 +1,11 @@
-import { ArtifactSlotsData, ArtifactStarsData } from './ArtifactData';
+import KeyMap, { cacheValueString } from '../../KeyMap';
 import { allSubstats, ICachedArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
 import { allRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../../Types/consts';
 import { clampPercent, objectKeyMap } from '../../Util/Util';
+import { ArtifactSlotsData, ArtifactStarsData } from './ArtifactData';
 import ArtifactMainStatsData from './artifact_main_gen.json';
 import ArtifactSubstatsData from './artifact_sub_gen.json';
 import ArtifactSubstatLookupTable from './artifact_sub_rolls_gen.json';
-import KeyMap, { valueString } from '../../KeyMap';
 
 const maxStar: Rarity = 5
 
@@ -59,7 +59,7 @@ export default class Artifact {
   static getSubstatRolls = (substatKey: SubstatKey, substatValue: number, rarity: ArtifactRarity): number[][] => {
     const rollData = Artifact.getSubstatRollData(substatKey, rarity)
     const table = ArtifactSubstatLookupTable[rarity][substatKey]
-    const lookupValue = valueString(substatValue, KeyMap.unit(substatKey))
+    const lookupValue = cacheValueString(substatValue, KeyMap.unit(substatKey))
     return table[lookupValue]?.map(roll => roll.map(i => rollData[i])) ?? []
   }
   static getSubstatEfficiency = (substatKey: SubstatKey | "", rolls: number[]): number => {

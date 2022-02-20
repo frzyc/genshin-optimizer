@@ -180,3 +180,10 @@ export function valueString(value: number, unit: Unit, fixed = -1): string {
   }
   return `${value.toFixed(fixed)}${unit}`
 }
+
+export function cacheValueString(value: number, unit: Unit): string {
+  switch (unit as any) {
+    case "%": return (Math.round(value * 10) / 10).toFixed(1) // TODO: % conversion
+    default: return Math.round(value).toFixed(0)
+  }
+}

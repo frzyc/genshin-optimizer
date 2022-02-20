@@ -15,7 +15,7 @@ import { Stars } from '../Components/StarDisplay';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import { database as localDatabase, DatabaseContext } from '../Database/Database';
-import KeyMap, { valueString } from '../KeyMap';
+import KeyMap, { cacheValueString } from '../KeyMap';
 import useArtifact from '../ReactHooks/useArtifact';
 import usePromise from '../ReactHooks/usePromise';
 import { allSubstats, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
@@ -48,7 +48,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   const { id, lock, slotKey, rarity, level, mainStatKey, substats, exclude, location = "" } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
   const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
-  const mainStatVal = <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{valueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}</ColorText>
+  const mainStatVal = <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}</ColorText>
   const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
   const artifactValid = maxEfficiency !== 0
   const slotName = sheet?.getSlotName(slotKey) || "Unknown Piece Name"
@@ -113,7 +113,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           return (<Box key={i} sx={{ display: "flex" }}>
             <Box sx={{ flexGrow: 1 }}>
               <SqBadge color={(numRolls ? rollColor : "error") as any} sx={{ mr: 1 }}><strong>{numRolls ? numRolls : "?"}</strong></SqBadge>
-              <Typography color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{statName}{`+${valueString(stat.value, KeyMap.unit(stat.key))}`}</Typography>
+              <Typography color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{statName}{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}`}</Typography>
             </Box>
             <Typography sx={{ opacity: effOpacity }}>{stat.key && effFilter.has(stat.key) ? `${efficiency.toFixed()}%` : "-"}</Typography>
           </Box>)

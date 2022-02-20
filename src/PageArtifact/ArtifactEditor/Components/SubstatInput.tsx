@@ -6,12 +6,12 @@ import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../../..
 import DropdownButton from '../../../Components/DropdownMenu/DropdownButton';
 import SqBadge from '../../../Components/SqBadge';
 import TextButton from '../../../Components/TextButton';
-import { allSubstats, ICachedArtifact, ISubstat } from '../../../Types/artifact';
-import { clamp } from '../../../Util/Util';
 import Artifact from '../../../Data/Artifacts/Artifact';
 import artifactSubstatRollCorrection from '../../../Data/Artifacts/artifact_sub_rolls_correction_gen.json';
+import KeyMap, { cacheValueString } from '../../../KeyMap';
+import { allSubstats, ICachedArtifact, ISubstat } from '../../../Types/artifact';
+import { clamp } from '../../../Util/Util';
 import PercentBadge from '../../PercentBadge';
-import KeyMap, { valueString } from '../../../KeyMap';
 export default function SubstatInput({ index, artifact, setSubstat }: { index: number, artifact: ICachedArtifact | undefined, setSubstat: (index: number, substat: ISubstat) => void, }) {
   const { t } = useTranslation("artifact")
   const { mainStatKey = "", rarity = 5 } = artifact ?? {}
@@ -63,7 +63,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
         </CustomNumberInputButtonGroupWrapper>
         {!!rollData.length && <TextButton>{t`editor.substat.nextRolls`}</TextButton>}
         {rollData.map((v, i) => {
-          let newValue = valueString(accurateValue + v, unit)
+          let newValue = cacheValueString(accurateValue + v, unit)
           newValue = artifactSubstatRollCorrection[rarity]?.[key]?.[newValue] ?? newValue
           return <Button key={i} color={`roll${clamp(rollOffset + i, 1, 6)}` as any} disabled={(value && !rollNum) || allowedRolls <= 0} onClick={() => setSubstat(index, { key, value: parseFloat(newValue) })}>{newValue}</Button>
         })}
@@ -78,7 +78,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
         </Grid>
         <Grid item flexGrow={1}>
           {!!rolls.length && [...rolls].sort().map(val =>
-            <Typography component="span" key={val} color={`roll${clamp(rollOffset + rollData.indexOf(val), 1, 6)}.main`} sx={{ ml: 1 }} >{valueString(val, unit)}</Typography>)}
+            <Typography component="span" key={val} color={`roll${clamp(rollOffset + rollData.indexOf(val), 1, 6)}.main`} sx={{ ml: 1 }} >{cacheValueString(val, unit)}</Typography>)}
         </Grid>
         <Grid item xs="auto" flexShrink={1}>
           <Typography>
