@@ -152,13 +152,13 @@ const sheet: ICharacterSheet = {
           text: tr("auto.fields.normal"),
           fields: datamine.normal.hitArr.map((_, i) => ({
             node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
-            textSuffix: i === 3 ? <span>({st("hits", { count: 3 })})</span> : ""
+            textSuffix: i === 3 ? st("brHits", { count: 3 }) : ""
           }))
         }, {
           text: tr("auto.fields.charged"),
           fields: [{
             node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
-            textSuffix: <span>({st("hits", { count: 3 })})</span>
+            textSuffix: st("brHits", { count: 3 })
           }, {
             text: tr("auto.skillParams.6"),
             value: datamine.charged.stamina,
@@ -175,55 +175,52 @@ const sheet: ICharacterSheet = {
         }],
       },
       skill: talentTemplate("skill", tr, skill, [{
-          node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` }),
-        }, {
-          text: tr("skill.skillParams.1"),
-          value: datamine.skill.cd,
-          unit: "s",
-        }]
-      ),
+        node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` }),
+      }, {
+        text: tr("skill.skillParams.1"),
+        value: datamine.skill.cd,
+        unit: "s",
+      }]),
       burst: talentTemplate("burst", tr, burst, [{
-          node: infoMut(dmgFormulas.burst.cutting, { key: `char_${key}_gen:burst.skillParams.0` }),
-        }, {
-          node: infoMut(dmgFormulas.burst.bloom, { key: `char_${key}_gen:burst.skillParams.1` }),
-        }, {
-          text: sgt("duration"),
-          value: datamine.burst.duration,
-          unit: "s",
-        }, {
-          text: sgt("cd"),
-          value: datamine.burst.cd,
-          unit: "s",
-        }, {
-          text: sgt("energyCost"),
-          value: datamine.burst.enerCost,
-        }]
-      ),
+        node: infoMut(dmgFormulas.burst.cutting, { key: `char_${key}_gen:burst.skillParams.0` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.bloom, { key: `char_${key}_gen:burst.skillParams.1` }),
+      }, {
+        text: sgt("duration"),
+        value: datamine.burst.duration,
+        unit: "s",
+      }, {
+        text: sgt("cd"),
+        value: datamine.burst.cd,
+        unit: "s",
+      }, {
+        text: sgt("energyCost"),
+        value: datamine.burst.enerCost,
+      }]),
       sprint: talentTemplate("sprint", tr, sprint, [{
-          text: "Activation Stamina Consumption",
-          value: datamine.sprint.active_stam,
-        }, {
-          text: "Stamina Drain",
-          value: datamine.sprint.drain_stam,
-          unit: "/s",
-        }], { //sprint
-          value: condAfterSprint,
-          path: condAfterSprintPath,
-          name: trm("afterSprint"),
-          states: {
-            afterSprint: {
-              fields: [{
-                canShow: data => data.get(afterSprintInfusion).value === elementKey,
-                text: <ColorText color="cryo">Cryo Infusion</ColorText>
-              }, {
-                text: sgt("duration"),
-                value: datamine.sprint.duration,
-                unit: "s",
-              }]
-            }
+        text: "Activation Stamina Consumption",
+        value: datamine.sprint.active_stam,
+      }, {
+        text: "Stamina Drain",
+        value: datamine.sprint.drain_stam,
+        unit: "/s",
+      }], { //sprint
+        value: condAfterSprint,
+        path: condAfterSprintPath,
+        name: trm("afterSprint"),
+        states: {
+          afterSprint: {
+            fields: [{
+              canShow: data => data.get(afterSprintInfusion).value === elementKey,
+              text: <ColorText color="cryo">Cryo Infusion</ColorText>
+            }, {
+              text: sgt("duration"),
+              value: datamine.sprint.duration,
+              unit: "s",
+            }]
           }
         }
-      ),
+      }),
       passive1: talentTemplate("passive1", tr, passive1, undefined, {
         //After using Kamisato Art: Hyouka
         canShow: greaterEq(input.asc, 1, 1),
@@ -242,8 +239,8 @@ const sheet: ICharacterSheet = {
               unit: "s",
             }]
           }
-        }}
-      ),
+        }
+      }),
       passive2: talentTemplate("passive2", tr, passive2, undefined, {
         //sprint
         canShow: greaterEq(input.asc, 4, 1),
@@ -263,8 +260,8 @@ const sheet: ICharacterSheet = {
               unit: "s",
             }]
           }
-        }}
-      ),
+        }
+      }),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2, [{
@@ -289,8 +286,8 @@ const sheet: ICharacterSheet = {
               value: "6s"
             }]
           }
-        }}
-      ),
+        }
+      }),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: talentTemplate("constellation6", tr, c6, undefined, {
         canShow: greaterEq(input.constellation, 6, 1),
@@ -307,7 +304,8 @@ const sheet: ICharacterSheet = {
               node: c6ChargedDmg_,
             },]
           }
-        }}
+        }
+      }
       ),
     },
   },

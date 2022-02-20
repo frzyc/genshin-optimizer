@@ -1,9 +1,8 @@
 import { CharacterData } from 'pipeline'
-import { Translate } from '../../../Components/Translate'
 import { input } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
-import { cond, sgt, trans } from '../../SheetUtil'
+import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
@@ -74,7 +73,7 @@ const afterChili = greaterEq(input.asc, 4,
 
 // C1
 const [condAfterGuobaHitPath, condAfterGuobaHit] = cond(key, "afterGuobaHit")
-const afterGuobaHit = greaterEq(input.constellation, 1, 
+const afterGuobaHit = greaterEq(input.constellation, 1,
   equal("afterGuobaHit", condAfterGuobaHit, percent(-datamine.constellation1.pyroRes)))
 
 // C6
@@ -100,7 +99,7 @@ const dmgFormulas = {
     dmgNado: dmgNode("atk", datamine.burst.dmgNado, "burst"),
   },
   constellation2: {
-    dmg: customDmgNode(prod(input.total.atk, datamine.constellation2.dmg), "elemental",
+    dmg: customDmgNode(prod(input.total.atk, percent(datamine.constellation2.dmg)), "elemental",
       { hit: { ele: constant(elementKey) } })
   }
 }
@@ -142,11 +141,7 @@ const sheet: ICharacterSheet = {
           text: tr("auto.fields.normal"),
           fields: datamine.normal.hitArr.map((_, i) => ({
             node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
-            textSuffix: i === 2
-              ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span>
-              : i === 3
-                ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 4 }} />)</span>
-                : ""
+            textSuffix: i === 2 ? st("brHits", { count: 2 }) : i === 3 ? st("brHits", { count: 4 }) : ""
           }))
         }, {
           text: tr("auto.fields.charged"),
@@ -168,51 +163,51 @@ const sheet: ICharacterSheet = {
         }],
       },
       skill: talentTemplate("skill", tr, skill, [{
-          node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` },)
-        }, {
-          text: tr("skill.skillParams.1"),
-          value: datamine.skill.cd,
-          unit: "s",
-        }]
+        node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` },)
+      }, {
+        text: tr("skill.skillParams.1"),
+        value: datamine.skill.cd,
+        unit: "s",
+      }]
       ),
       burst: talentTemplate("burst", tr, burst, [{
-          node: infoMut(dmgFormulas.burst.dmg1, { key: `char_${key}_gen:burst.skillParams.0` })
-        }, {
-          node: infoMut(dmgFormulas.burst.dmg2, { key: `char_${key}_gen:burst.skillParams.1` },)
-        }, {
-          node: infoMut(dmgFormulas.burst.dmg3, { key: `char_${key}_gen:burst.skillParams.2` },)
-        }, {
-          node: infoMut(dmgFormulas.burst.dmgNado, { key: `char_${key}_gen:burst.skillParams.3` },)
-        }, {
-          text: sgt("duration"),
-          value: datamine.burst.duration,
-          unit: "s",
-        }, {
-          text: sgt("cd"),
-          value: datamine.burst.cd,
-          unit: "s",
-        }, {
-          text: sgt("energyCost"),
-          value: datamine.burst.enerCost,
-        }]
+        node: infoMut(dmgFormulas.burst.dmg1, { key: `char_${key}_gen:burst.skillParams.0` })
+      }, {
+        node: infoMut(dmgFormulas.burst.dmg2, { key: `char_${key}_gen:burst.skillParams.1` },)
+      }, {
+        node: infoMut(dmgFormulas.burst.dmg3, { key: `char_${key}_gen:burst.skillParams.2` },)
+      }, {
+        node: infoMut(dmgFormulas.burst.dmgNado, { key: `char_${key}_gen:burst.skillParams.3` },)
+      }, {
+        text: sgt("duration"),
+        value: datamine.burst.duration,
+        unit: "s",
+      }, {
+        text: sgt("cd"),
+        value: datamine.burst.cd,
+        unit: "s",
+      }, {
+        text: sgt("energyCost"),
+        value: datamine.burst.enerCost,
+      }]
       ),
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: talentTemplate("passive2", tr, passive2, undefined, {
-            canShow: greaterEq(input.asc, 2, 1),
-            value: condAfterChili,
-            path: condAfterChiliPath,
-            name: trm("afterChili"),
-            states: {
-              afterChili: {
-                fields: [{
-                  node: afterChili,
-                }, {
-                  text: sgt("duration"),
-                  value: datamine.passive2.duration,
-                  unit: "s",
-                }]
-              }
-            }
+        canShow: greaterEq(input.asc, 2, 1),
+        value: condAfterChili,
+        path: condAfterChiliPath,
+        name: trm("afterChili"),
+        states: {
+          afterChili: {
+            fields: [{
+              node: afterChili,
+            }, {
+              text: sgt("duration"),
+              value: datamine.passive2.duration,
+              unit: "s",
+            }]
+          }
+        }
       }),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1, undefined, {

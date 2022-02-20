@@ -136,7 +136,7 @@ const sheet: ICharacterSheet = {
           text: tr("auto.fields.normal"),
           fields: datamine.normal.hitArr.map((_, i) => ({
             node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
-            textSuffix: (i === 2 || i === 4) ? <span>({st("hits", { count: 2 })})</span> : ""
+            textSuffix: (i === 2 || i === 4) ? st("brHits", { count: 2 }) : ""
           }))
         }, {
           text: tr("auto.fields.charged"),
