@@ -15,7 +15,7 @@ const allTransformative = ["overloaded", "shattered", "electrocharged", "superco
 const allAmplifying = ["vaporize", "melt"] as const
 const allMisc = [
   "stamina", "staminaDec_", "staminaSprintDec_", "staminaGlidingDec_", "staminaChargedDec_",
-  "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_"
+  "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_", "dmgRed_"
 ] as const
 
 const allModStats = [

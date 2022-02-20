@@ -123,7 +123,8 @@ const miscStatReadNodes = [
   input.total.burst_dmg_, input.total.burst_critRate_,
   ...Object.keys(transformativeReactions).map(x => input.total[`${x}_dmg_`]),
   ...Object.keys(amplifyingReactions).map(x => input.total[`${x}_dmg_`]),
-  ...(["moveSPD_", "atkSPD_", "weakspotDMG_"] as const).map(x => input.total[x])
+  ...(["moveSPD_", "atkSPD_", "weakspotDMG_"] as const).map(x => input.total[x]),
+  input.total.dmgRed_
 ]
 const miscStatkeys = miscStatReadNodes.map(x => x.info!.key!)
 

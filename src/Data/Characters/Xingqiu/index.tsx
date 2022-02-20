@@ -68,11 +68,14 @@ const [condC2Path, condC2] = cond(key, "c2")
 const nodeC2 = greaterEq(input.constellation, 2,
   equal(condC2, "on", datamine.constellation2.hydro_enemyRes_))
 
+const [condSkillPath, condSkill] = cond(key, "skill")
+
 const [condBurstPath, condBurst] = cond(key, "burst")
 const nodeC4 = greaterEq(input.constellation, 4,
   equal(condBurst, "on", datamine.constellation4.dmg_), { key: `char_${key}:c4dmg_` })
 
-const nodeSkillDmgRed_ = sum(subscript(input.total.skillIndex, datamine.skill.dmgRed_, { key: "_" }), min(percent(0.24), prod(percent(0.2), input.total.hydro_dmg_)))
+const nodeSkillDmgRed_ = equal(condSkill, "on",
+  sum(subscript(input.total.skillIndex, datamine.skill.dmgRed_, { key: "_" }), min(percent(0.24), prod(percent(0.2), input.total.hydro_dmg_))))
 
 const nodeA4Heal = greaterEq(input.asc, 1, prod(input.total.hp, percent(0.06)))
 
@@ -173,8 +176,6 @@ const sheet: ICharacterSheet = {
             node: infoMut(dmgFormulas.skill.press2, { key: `char_${key}_gen:skill.skillParams.0` }),
             textSuffix: "(2)"
           }, {
-            node: infoMut(dmgFormulas.skill.dmgRed_, { key: `dmgRed_` }),
-          }, {
             text: tr("skill.skillParams.2"),
             value: data => data.get(input.constellation).value >= 2
               ? `${datamine.skill.duration}s + ${datamine.constellation2.skill_duration}`
@@ -184,7 +185,22 @@ const sheet: ICharacterSheet = {
             text: tr("skill.skillParams.3"),
             value: datamine.skill.cd,
             unit: "s"
-          }]
+          }],
+          conditional: {
+            teamBuff: true,
+            value: condSkill,
+            path: condSkillPath,
+            header: conditionalHeader("skill", tr, skill),
+            description: tr("skill.description"),
+            name: trm("skillCond"),
+            states: {
+              on: {
+                fields: [{
+                  node: dmgFormulas.skill.dmgRed_,
+                }]
+              }
+            }
+          }
         }]
       },
       burst: {
