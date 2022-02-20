@@ -29,10 +29,19 @@
   "increase": {
     "atk": "ATK Increase"
   },
+  "skillCDRed": "Ele. Skill CD Reduction",
   "eleAbsor": "Elemental Absorption",
   "eleSwirled": "Swirled Element",
   "absorDot": "Absorption DoT",
   "incInterRes": "Increase resistance to interruption",
   "charges": "Charges",
-  "activeCharField": "Active Character in field"
+  "activeCharField": "Active Character in field",
+  "infusion": {
+    "pyro": "Pyro Infusion",
+    "cryo": "Cryo Infusion",
+    "anemo": "Anemo Infusion",
+    "hydro": "Hydro Infusion",
+    "electro": "Electro Infusion",
+    "dendro": "Dendro Infusion"
+  }
 }

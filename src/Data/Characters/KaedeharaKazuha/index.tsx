@@ -216,12 +216,18 @@ const sheet: ICharacterSheet = {
             node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` }),
           }, {
             text: tr("skill.skillParams.1"),
-            value: data => data.get(input.constellation).value >= 1 ? `${datamine.skill.cd}s - 10%` : `${datamine.skill.cd}s`,
+            value: data => data.get(input.constellation).value >= 1 
+              ? `${datamine.skill.cd*(1-0.10)}` 
+              : `${datamine.skill.cd}`,
+            unit: "s"
           }, {
             node: infoMut(dmgFormulas.skill.hold, { key: `char_${key}_gen:skill.skillParams.2` }),
           }, {
-            text: tr("skill.skillParams.1"),
-            value: data => data.get(input.constellation).value >= 1 ? `${datamine.skill.cdHold}s - 10%` : `${datamine.skill.cdHold}s`,
+            text: tr("skill.skillParams.3"),
+            value: data => data.get(input.constellation).value >= 1
+              ? `${datamine.skill.cdHold*(1-0.10)}`
+              : `${datamine.skill.cdHold}`,
+            unit: "s"
           }, {
             canShow: data => data.get(input.constellation).value >= 1,
             text: trm("c1"),
@@ -364,41 +370,36 @@ const sheet: ICharacterSheet = {
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
-      constellation6: {
-        name: tr("constellation6.name"),
-        img: c6,
-        sections: [{
-          text: tr("constellation6.description"),
-          conditional: {//Crimson Momiji
-            value: condC6,
-            path: condC6Path,
-            name: trm("c6.after"),
-            states: {
-              c6: {
-                fields: [
-                  // { // TODO:
-                  //   node: c6infusion
-                  // },
-                  {
-                    canShow: data => data.get(c6infusion).value === "anemo",
-                    text: <ColorText color="anemo">Anemo Infusion</ColorText>
-                  },
-                  {
-                    node: c6NormDmg_
-                  }, {
-                    node: c6ChargedDmg_
-                  }, {
-                    node: c6PlungingDmg_
-                  }, {
-                    text: sgt("duration"),
-                    value: datamine.constellation6.duration,
-                    unit: "s",
-                  }]
-              }
-            }
+      constellation6: talentTemplate("constellation6", tr, c6, undefined, {
+        // Crimson Momiji
+        canShow: greaterEq(input.constellation, 6, 1),
+        value: condC6,
+        path: condC6Path,
+        name: trm("c6.after"),
+        states: {
+          c6: {
+            fields: [
+              // { // TODO:
+              //   node: c6infusion
+              // },
+              {
+                canShow: data => data.get(c6infusion).value === elementKey,
+                text: <ColorText color={elementKey}>{st("infusion.anemo")}</ColorText>
+              },
+              {
+                node: c6NormDmg_
+              }, {
+                node: c6ChargedDmg_
+              }, {
+                node: c6PlungingDmg_
+              }, {
+                text: sgt("duration"),
+                value: datamine.constellation6.duration,
+                unit: "s",
+              }]
           }
-        }]
-      }
+        }
+      })
     }
   },
 };
