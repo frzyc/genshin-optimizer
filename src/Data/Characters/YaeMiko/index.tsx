@@ -192,28 +192,22 @@ const sheet: ICharacterSheet = {
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
-      constellation4: {
-        name: tr("constellation4.name"),
-        img: c4,
-        sections: [{
-          text: tr("constellation4.description"),
-          conditional: {
-            value: condC4,
-            path: condC4Path,
-            teamBuff: true,
-            header: conditionalHeader("constellation4", tr, passive1),
-            description: tr("constellation4.description"),
-            name: trm("c4"),
-            states: {
-              hit: {
-                fields: [{
-                  node: nodeC4,
-                },]
-              }
-            }
+      constellation4: talentTemplate("constellation4", tr, c4, undefined, {
+        canShow: greaterEq(input.constellation, 4, 1),
+        value: condC4,
+        path: condC4Path,
+        teamBuff: true,
+        header: conditionalHeader("constellation4", tr, passive1),
+        description: tr("constellation4.description"),
+        name: trm("c4"),
+        states: {
+          hit: {
+            fields: [{
+              node: nodeC4,
+            }]
           }
-        }],
-      },
+        }
+      }),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: talentTemplate("constellation6", tr, c6),
     }
