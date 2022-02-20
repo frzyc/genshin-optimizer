@@ -7,12 +7,11 @@ import DropdownButton from '../../../Components/DropdownMenu/DropdownButton';
 import SqBadge from '../../../Components/SqBadge';
 import TextButton from '../../../Components/TextButton';
 import { allSubstats, ICachedArtifact, ISubstat } from '../../../Types/artifact';
-import { valueString } from '../../../Util/UIUtil';
 import { clamp } from '../../../Util/Util';
 import Artifact from '../../../Data/Artifacts/Artifact';
 import artifactSubstatRollCorrection from '../../../Data/Artifacts/artifact_sub_rolls_correction_gen.json';
 import PercentBadge from '../../PercentBadge';
-import KeyMap from '../../../KeyMap';
+import KeyMap, { valueString } from '../../../KeyMap';
 export default function SubstatInput({ index, artifact, setSubstat }: { index: number, artifact: ICachedArtifact | undefined, setSubstat: (index: number, substat: ISubstat) => void, }) {
   const { t } = useTranslation("artifact")
   const { mainStatKey = "", rarity = 5 } = artifact ?? {}
@@ -84,7 +83,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
         <Grid item xs="auto" flexShrink={1}>
           <Typography>
             <Trans t={t} i18nKey="editor.substat.eff" color="text.secondary">
-              Efficiency: <PercentBadge valid={true} value={efficiency ? efficiency : t`editor.substat.noStat` as string} />
+              Efficiency: <PercentBadge valid={true} max={rollNum * 100} value={efficiency ? efficiency : t`editor.substat.noStat` as string} />
             </Trans>
           </Typography>
         </Grid>

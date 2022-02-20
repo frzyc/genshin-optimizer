@@ -21,7 +21,7 @@ export default function SubstatEfficiencyDisplayCard({ efficiency, max = false, 
         </BootstrapTooltip>
       </Grid>
       <Grid item xs="auto">
-        <PercentBadge valid={valid} value={valid ? efficiency : "ERR"} />
+        <PercentBadge valid={valid} max={900} value={valid ? efficiency : "ERR"} />
       </Grid>
     </Grid>
   </CardLight>

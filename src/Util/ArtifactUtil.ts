@@ -2,10 +2,9 @@ import Artifact from "../Data/Artifacts/Artifact"
 import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet"
 import { allSubstats, IArtifact, ISubstat, SubstatKey } from "../Types/artifact"
 import { allArtifactSets } from "../Types/consts"
-import { valueString } from "./UIUtil"
 import { getRandomElementFromArray, getRandomIntInclusive } from "./Util"
 import artifactSubstatRollCorrection from '../Data/Artifacts/artifact_sub_rolls_correction_gen.json'
-import KeyMap from "../KeyMap"
+import KeyMap, { valueString } from "../KeyMap"
 
 export async function randomizeArtifact(): Promise<IArtifact> {
   const setKey = getRandomElementFromArray(allArtifactSets)

@@ -1,27 +1,11 @@
 import { uiInput } from "."
 import ColorText from "../Components/ColoredText"
-import KeyMap, { KeyMapPrefix, Unit } from "../KeyMap"
+import KeyMap, { KeyMapPrefix, Unit, valueString } from "../KeyMap"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
 import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput, Variant } from "./type"
 
 const shouldWrap = true
-
-export function valueString(value: number, unit: Unit, fixed = -1): string {
-  if (!isFinite(value)) {
-    if (value > 0) return `\u221E`
-    if (value < 0) return `-\u221E`
-    return 'NaN'
-  }
-  if (unit === "%") value *= 100
-  else unit = '' as any
-  if (Number.isInteger(value)) fixed = 0
-  else if (fixed === -1) {
-    if (unit === "%") fixed = 1
-    else fixed = Math.abs(value) < 10 ? 3 : Math.abs(value) < 1000 ? 2 : Math.abs(value) < 10000 ? 1 : 0
-  }
-  return `${value.toFixed(fixed)}${unit}`
-}
 export interface NodeDisplay<V = number> {
   /** Leave this here to make sure one can use `crawlObject` on hierarchy of `NodeDisplay` */
   operation: true
