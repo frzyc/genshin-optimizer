@@ -38,8 +38,8 @@ function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel: numbe
       },
     },
     artSet: {
-      [art.setKey]: constant(1)
-    }
+      [art.setKey]: constant(1),
+    },
   }
 }
 function dataObjForCharacter(char: ICachedCharacter): Data {
@@ -59,7 +59,8 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
       level: constant(char.enemyOverride.enemyLevel ?? char.level),
     },
     hit: {
-      hitMode: constant(char.hitMode)
+      hitMode: constant(char.hitMode),
+      reaction: constant(char.reactionMode),
     },
     customBonus: {},
   }
