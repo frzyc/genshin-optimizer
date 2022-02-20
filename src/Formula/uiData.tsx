@@ -122,12 +122,7 @@ export class UIData {
       case "data": result = this._data(node); break
       case "match": result = this._match(node); break
       case "lookup": result = this._lookup(node); break
-      case "prio": {
-        const first = node.operands.find(x => this.computeNode(x).value !== undefined)
-        if (first) result = this.computeNode(first)
-        else result = illformed
-        break
-      }
+      case "prio": result = this._prio(node.operands); break
       default: assertUnreachable(operation)
     }
 
@@ -159,19 +154,28 @@ export class UIData {
     return result
   }
 
+  private prereadAll(path: readonly string[]): (NumNode | StrNode)[] {
+    return this.data.map(x => objPathValue(x, path) as NumNode | StrNode).filter(x => x)
+  }
   private readAll(path: readonly string[]): ContextNodeDisplay<number | string | undefined>[] {
-    return this.data.map(x => objPathValue(x, path) as NumNode | StrNode).filter(x => x).map(x => this.computeNode(x))
+    return this.prereadAll(path).map(x => this.computeNode(x))
   }
   private readFirst(path: readonly string[]): ContextNodeDisplay<number | string | undefined> | undefined {
     const data = this.data.map(x => objPathValue(x, path) as NumNode | StrNode).find(x => x)
     return data && this.computeNode(data)
   }
 
+  private _prio(nodes: readonly StrNode[]): ContextNodeDisplay<string | undefined> {
+    const first = nodes.find(node => this.computeNode(node).value !== undefined)
+    return first ? this.computeNode(first) : illformedStr
+  }
   private _read(node: ReadNode<number | string | undefined>): ContextNodeDisplay<number | string | undefined> {
     const { path } = node
     const result = (node.accu === undefined)
-      ? this.readFirst(path) ?? (node.type === "string" ? this._constant(undefined) : illformed)
-      : this._accumulate(node.accu, this.readAll(path) as ContextNodeDisplay[])
+      ? this.readFirst(path) ?? (node.type === "string" ? illformedStr : illformed)
+      : node.accu === "prio"
+        ? this._prio(this.prereadAll(path) as StrNode[])
+        : this._accumulate(node.accu, this.readAll(path) as ContextNodeDisplay[])
     return result
   }
   private _lookup(node: LookupNode<NumNode | StrNode>): ContextNodeDisplay<number | string | undefined> {
@@ -401,6 +405,12 @@ interface ContextNodeDisplay<V = number> {
 
 const illformed: ContextNodeDisplay = {
   value: NaN, pivot: true,
+  empty: false,
+  dependencies: new Set(),
+  mayNeedWrapping: false
+}
+const illformedStr: ContextNodeDisplay<string | undefined> = {
+  value: undefined, pivot: true,
   empty: false,
   dependencies: new Set(),
   mayNeedWrapping: false

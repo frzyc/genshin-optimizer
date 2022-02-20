@@ -71,7 +71,7 @@ export interface SubscriptNode<V> extends Base {
 export interface ReadNode<V> extends Base {
   operation: "read"
   operands: readonly []
-  accu?: V extends number ? CommutativeMonoidOperation : undefined
+  accu?: V extends number ? CommutativeMonoidOperation : "prio"
   path: readonly string[]
   type: V extends number ? "number" : V extends string ? "string" : undefined
 }

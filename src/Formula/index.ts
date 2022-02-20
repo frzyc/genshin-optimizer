@@ -91,7 +91,7 @@ const input = setReadNodeKeys(deepClone({
     main: read(), sub: read(), sub2: read(),
   }),
 
-  team: { infusion: stringRead() },
+  team: { infusion: stringRead("prio") },
 
   enemy: {
     def: read("add", { key: "enemyDef_multi", pivot }),
