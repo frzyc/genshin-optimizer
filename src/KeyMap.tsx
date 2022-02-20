@@ -163,6 +163,10 @@ export default class KeyMap {
     if (key.endsWith("_")) return "%"
     return "flat"
   }
+  static unitStr(key: string = ""): string {
+    if (key.endsWith("_")) return "%"
+    return ""
+  }
 }
 
 export function valueString(value: number, unit: Unit, fixed = -1): string {
