@@ -312,12 +312,6 @@ const sheet: ICharacterSheet = {
               node: inAreaC6PyroDmg
             }, {
               text: <ColorText color={elementKey}>{st("infusion.pyro")}</ColorText>
-            }, {
-              text: "target",
-              value: data => data.get(target.weaponType).value
-            }, {
-              text: "target",
-              value: data => data.get(input.weaponType).value
             }]
           }
         }
