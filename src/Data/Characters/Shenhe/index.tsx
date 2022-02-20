@@ -1,5 +1,4 @@
 import { CharacterData } from 'pipeline'
-import { Translate } from '../../../Components/Translate'
 import { input } from '../../../Formula'
 import { infoMut, lookup, equal, percent, prod, subscript, greaterEq } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
@@ -192,7 +191,7 @@ const sheet: ICharacterSheet = {
           text: tr("auto.fields.normal"),
           fields: datamine.normal.hitArr.map((_, i) => ({
             node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
-            textSuffix: i === 3 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""
+            textSuffix: i === 3 ? <span>({st("hits", { count: 2 })})</span> : ""
           }))
         }, {
           text: tr("auto.fields.charged"),
