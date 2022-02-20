@@ -28,6 +28,7 @@ const statMap = {
   staminaSprintDec_: "Sprinting Stamina Consumption Dec.",
   staminaGlidingDec_: "Gliding Stamina Consumption Dec.",
   staminaChargedDec_: "Charged Attack Stamina Consumption Dec.",
+  dmgRed_: "Damage Reduction",
 
   heal_multi: "Heal multiplier",
 

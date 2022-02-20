@@ -1,10 +1,9 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
-import { Translate } from '../../../Components/Translate'
 import { input } from '../../../Formula'
 import { constant, equal, equalStr, greaterEq, infoMut, percent, prod, sum } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
-import { cond, sgt, trans } from '../../SheetUtil'
+import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, sprint, thumb, thumbSide } from './assets'
@@ -151,16 +150,15 @@ const sheet: ICharacterSheet = {
         img: normalSrc(data_gen.weaponTypeKey),
         sections: [{
           text: tr("auto.fields.normal"),
-          fields: datamine.normal.hitArr.map((percentArr, i) =>
-          ({
+          fields: datamine.normal.hitArr.map((_, i) => ({
             node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
-            textSuffix: i === 3 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 3 }} />)</span> : ""
+            textSuffix: i === 3 ? <span>({st("hits", { count: 3 })})</span> : ""
           }))
         }, {
           text: tr("auto.fields.charged"),
           fields: [{
             node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
-            textSuffix: <span>(<Translate ns="sheet" key18="hits" values={{ count: 3 }} />)</span>
+            textSuffix: <span>({st("hits", { count: 3 })})</span>
           }, {
             text: tr("auto.skillParams.6"),
             value: datamine.charged.stamina,
@@ -174,8 +172,7 @@ const sheet: ICharacterSheet = {
           }, {
             node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
           }]
-        }
-        ],
+        }],
       },
       skill: talentTemplate("skill", tr, skill, [{
           node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` }),
@@ -258,11 +255,9 @@ const sheet: ICharacterSheet = {
             fields: [{
               text: trm("staminaRestore"),
               value: datamine.passive2.stamina,
-            },
-            {
+            }, {
               node: afterApplySprintCryo
-            },
-            {
+            }, {
               text: sgt("duration"),
               value: datamine.passive2.duration,
               unit: "s",
@@ -308,8 +303,7 @@ const sheet: ICharacterSheet = {
               text: sgt("cd"),
               value: datamine.constellation6.cd,
               unit: "s"
-            },
-            {
+            }, {
               node: c6ChargedDmg_,
             },]
           }
