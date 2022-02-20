@@ -15,8 +15,8 @@ import { TalentSheetElementKey } from "../../Types/character";
 import { DataContext } from '../../DataContext';
 import { uiInput as input } from "../../Formula";
 import { ElementKey } from "../../Types/consts";
-import KeyMap from '../../KeyMap'
-import { NodeDisplay, valueString } from '../../Formula/uiData'
+import KeyMap, { valueString } from '../../KeyMap'
+import { NodeDisplay } from '../../Formula/uiData'
 import { NumNode } from "../../Formula/type";
 import { range } from "../../Util/Util";
 export default function CharacterTalentPane() {

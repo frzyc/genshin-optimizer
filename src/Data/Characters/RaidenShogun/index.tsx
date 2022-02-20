@@ -149,11 +149,13 @@ const dmgFormulas = {
     plungeHigh: burstResolve(datamine.burst.plungeHigh),
   },
 }
+const nodeC3 = greaterEq(input.constellation, 3, 3)
+const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, "electro", "inazuma", data_gen, dmgFormulas, {
   bonus: {
-    skill: greaterEq(input.constellation, 5, 3),
-    burst: greaterEq(input.constellation, 3, 3),
+    skill: nodeC5,
+    burst: nodeC3,
   },
   premod: {
     burst_dmg_: skillEye_,
@@ -339,7 +341,7 @@ const sheet: ICharacterSheet = {
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
@@ -366,7 +368,7 @@ const sheet: ICharacterSheet = {
           }
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5),
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

@@ -41,6 +41,7 @@ export class ArtifactSheet {
     if (!this.slotIcons[slotKey]) return undefined
     return this.slotIcons[slotKey]
   }
+  get defIcon() { return <ImgIcon src={this.defIconSrc} sx={{ fontSize: "1.5em" }} /> }
   /**
    * @deprecated use src directly
    */
@@ -54,11 +55,10 @@ export class ArtifactSheet {
   get rarity(): readonly ArtifactRarity[] { return this.sheet.rarity }
   get slots(): SlotKey[] {
     switch (this.key) {
-      // TODO: Prayer sets
-      // case "PrayersForDestiny":
-      // case "PrayersForIllumination":
-      // case "PrayersForWisdom":
-      // case "PrayersToSpringtime": return ["circlet"]
+      case "PrayersForDestiny":
+      case "PrayersForIllumination":
+      case "PrayersForWisdom":
+      case "PrayersToSpringtime": return ["circlet"]
       default: return [...allSlotKeys]
     }
   }

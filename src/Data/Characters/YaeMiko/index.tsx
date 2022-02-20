@@ -128,7 +128,7 @@ const sheet: ICharacterSheet = {
         }, {
           text: tr("auto.fields.charged"),
           fields: [{
-            node: infoMut(dmgFormulas.charged.dmg, { key: `char_${key}_gen:auto.skillParams.5` }),
+            node: infoMut(dmgFormulas.charged.dmg, { key: `char_${key}_gen:auto.skillParams.3` }),
           }, {
             text: tr("auto.skillParams.6"),
             value: datamine.charged.stamina,
@@ -201,6 +201,7 @@ const sheet: ICharacterSheet = {
             value: condC4,
             path: condC4Path,
             teamBuff: true,
+            canShow: greaterEq(input.constellation, 4, 1),
             header: conditionalHeader("constellation4", tr, passive1),
             description: tr("constellation4.description"),
             name: trm("c4"),

@@ -17,11 +17,12 @@ const commonBasic = objectKeyMap([...allSubstats, "heal_"], key => input.total[k
 commonBasic.critRate_ = input.total.cappedCritRate
 
 const inferredHitEle = stringPrio(
-  input.infusion,
-  input.team.infusion,
   // Inferred Element
   equalStr(input.weaponType, "catalyst", input.charEle),
   equalStr(input.hit.move, "skill", input.charEle),
+  equalStr(input.hit.move, "burst", input.charEle),
+  input.infusion,
+  input.team.infusion,
   "physical",
 )
 

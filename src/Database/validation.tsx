@@ -25,7 +25,7 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
   let totalUnambiguousRolls = 0
 
   function efficiency(rolls: number[], key: SubstatKey): number {
-    return rolls.reduce((a, b) => a + b, 0) / Artifact.maxSubstatValues(key) * 100 / rolls.length
+    return rolls.reduce((a, b) => a + b, 0) / Artifact.maxSubstatValues(key) * 100
   }
 
   substats.forEach((substat, index) => {

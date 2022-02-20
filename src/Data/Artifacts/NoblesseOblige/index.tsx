@@ -1,16 +1,15 @@
-import { Translate } from '../../../Components/Translate'
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { customRead, equal, greaterEq, percent } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
-import { cond, sgt } from '../../SheetUtil'
+import { cond, sgt, trans } from '../../SheetUtil'
 import { ArtifactSheet, conditionalHeader, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
 
 const key: ArtifactSetKey = "NoblesseOblige"
 
-const tr = (strKey: string) => <Translate ns={`artifact_${key}_gen`} key18={strKey} />
+const [tr, trm] = trans("artifact", key)
 
 const set2 = greaterEq(input.artSet.NoblesseOblige, 2, percent(0.2))
 
@@ -44,7 +43,7 @@ const sheet: IArtifactSheet = {
           path: condSet4Path,
           header: conditionalHeader(tr, icons.flower),
           description: tr(`setEffects.4`),
-          name: <Translate ns="artifact_NoblesseOblige" key18="condName" />,
+          name: trm("condName"),
           states: {
             on: {
               fields: [{

@@ -10,10 +10,9 @@ import ImgIcon from "../../Components/Image/ImgIcon";
 import { Stars } from "../../Components/StarDisplay";
 import StatIcon from "../../Components/StatIcon";
 import { DataContext } from "../../DataContext";
-import { valueString } from "../../Formula/api";
 import { uiInput as input } from "../../Formula";
 import { ReadNode } from "../../Formula/type";
-import KeyMap from "../../KeyMap";
+import KeyMap, { valueString } from "../../KeyMap";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import { amplifyingReactions, transformativeReactions } from "../../StatConstants";
 import { TalentSheetElementKey } from "../../Types/character";
@@ -123,7 +122,8 @@ const miscStatReadNodes = [
   input.total.burst_dmg_, input.total.burst_critRate_,
   ...Object.keys(transformativeReactions).map(x => input.total[`${x}_dmg_`]),
   ...Object.keys(amplifyingReactions).map(x => input.total[`${x}_dmg_`]),
-  ...(["moveSPD_", "atkSPD_", "weakspotDMG_"] as const).map(x => input.total[x])
+  ...(["moveSPD_", "atkSPD_", "weakspotDMG_"] as const).map(x => input.total[x]),
+  input.total.dmgRed_
 ]
 const miscStatkeys = miscStatReadNodes.map(x => x.info!.key!)
 

@@ -131,8 +131,11 @@ export function customStringRead(path: readonly string[]): ReadNode<string> {
 export function read(accu?: ReadNode<number>["accu"], info?: Info): ReadNode<number> {
   return { operation: "read", operands: [], path: [], accu, info, type: "number" }
 }
-export function stringRead(): ReadNode<string | undefined> {
-  return { operation: "read", operands: [], path: [], type: "string" }
+/**
+ * CAUTION: Use `prio` accumulation sparingly. WR don't assume the reading order, so the result may be unstable
+ */
+export function stringRead(accu?: ReadNode<string | undefined>["accu"]): ReadNode<string | undefined> {
+  return { operation: "read", operands: [], path: [], accu, type: "string" }
 }
 export function stringPrio(...operands: Str[]): StrNode {
   return { operation: "prio", operands: intoOps(operands) }

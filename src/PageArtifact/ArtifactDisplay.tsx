@@ -11,18 +11,19 @@ import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import { allSubstats, SubstatKey } from '../Types/artifact';
-import { artifactFilterConfigs, artifactSortConfigs, initialArtifactSortFilter, artifactSortKeys } from './ArtifactSort';
+import { artifactFilterConfigs, artifactSortConfigs, initialArtifactSortFilter, artifactSortKeys, artifactSortKeysTC } from './ArtifactSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
 import ArtifactEditor from './ArtifactEditor';
-import ArtifactFilter from './ArtifactFilter';
+import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter';
 import ProbabilityFilter from './ProbabilityFilter';
 import { GlobalSettingsContext } from '../GlobalSettings';
 import { probability } from './RollProbability';
 import KeyMap from '../KeyMap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import SortByButton from '../Components/SortByButton';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 function intialState() {
@@ -121,10 +122,7 @@ export default function ArtifactDisplay(props) {
     [setpageIdex, invScrollRef],
   )
 
-  return <Box sx={{
-    mt: 1,
-    "> div": { mb: 1 },
-  }}>
+  return <Box display="flex" flexDirection="column" gap={1} my={1}>
     <InfoComponent
       pageKey="artifactPage"
       modalTitle={t`info.title`}
@@ -139,7 +137,8 @@ export default function ArtifactDisplay(props) {
       artifactIdToEdit={artToEditId}
       cancelEdit={cancelEditArtifact}
     />
-    <ArtifactFilter artifactIds={artifactIds} filterOption={filterOption} filterOptionDispatch={filterOptionDispatch} filterDispatch={stateDispatch} sortType={sortType} ascending={ascending} />
+    <ArtifactFilter filterOption={filterOption} filterOptionDispatch={filterOptionDispatch} filterDispatch={stateDispatch}
+      numShowing={artifactIdsToShow.length} total={totalArtNum} />
     {showProbability && <ProbabilityFilter probabilityFilter={probabilityFilter} setProbabilityFilter={setProbabilityFilter} />}
     <CardDark ref={invScrollRef}>
       <CardContent>
@@ -152,7 +151,24 @@ export default function ArtifactDisplay(props) {
         <EfficiencyFilter selectedKeys={effFilter} onChange={n => stateDispatch({ effFilter: n })} />
       </CardContent>
     </CardDark>
-    <PaginationCard count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
+    <CardDark ><CardContent>
+      <Grid container alignItems="center" sx={{ pb: 2 }}>
+        <Grid item flexGrow={1}>
+          <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
+        </Grid>
+        <Grid item flexGrow={1}>
+          <ShowingArt count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={4} xl={3}>
+          <SortByButton fullWidth sortKeys={[...artifactSortKeys.filter(key => (artifactSortKeysTC as unknown as string[]).includes(key) ? tcMode : true)]}
+            value={sortType} onChange={sortType => stateDispatch({ sortType })}
+            ascending={ascending} onChangeAsc={ascending => stateDispatch({ ascending })}
+          />
+        </Grid>
+      </Grid>
+      <ArtifactRedButtons artifactIds={artifactIds} filterOption={filterOption} />
+    </CardContent></CardDark>
+
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
       <Grid container spacing={1} >
         <Grid item xs={12} sm={6} md={4} lg={4} xl={3}>
@@ -188,27 +204,25 @@ export default function ArtifactDisplay(props) {
         )}
       </Grid>
     </Suspense>
-    {numPages > 1 && <PaginationCard count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />}
+    {numPages > 1 && <CardDark ><CardContent>
+      <Grid container>
+        <Grid item flexGrow={1}>
+          <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
+        </Grid>
+        <Grid item>
+          <ShowingArt count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
+        </Grid>
+      </Grid>
+    </CardContent></CardDark>}
   </Box >
 }
 
-function PaginationCard({ count, page, onChange, numShowing, total, t }) {
-  return <CardDark >
-    <CardContent>
-      <Grid container sx={{ alignItems: "center" }}>
-        <Grid item flexGrow={1}>
-          <Pagination count={count} page={page} onChange={onChange} />
-        </Grid>
-        <Grid item>
-          <Typography color="text.secondary">
-            <Trans t={t} i18nKey="showingNum" count={numShowing} value={total} >
-              Showing <b>{{ count: numShowing }}</b> out of {{ value: total }} Artifacts
-            </Trans>
-          </Typography>
-        </Grid>
-      </Grid>
-    </CardContent>
-  </CardDark>
+function ShowingArt({ count, page, onChange, numShowing, total, t }) {
+  return <Typography color="text.secondary">
+    <Trans t={t} i18nKey="showingNum" count={numShowing} value={total} >
+      Showing <b>{{ count: numShowing }}</b> out of {{ value: total }} Artifacts
+    </Trans>
+  </Typography>
 }
 
 function EfficiencyFilter({ selectedKeys, onChange }) {

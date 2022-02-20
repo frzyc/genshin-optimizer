@@ -17,27 +17,27 @@ import HuskOfOpulentDreams from './HuskOfOpulentDreams'
 import Instructor from './Instructor'
 import Lavawalker from './Lavawalker'
 import LuckyDog from './LuckyDog'
-// import MaidenBeloved from './MaidenBeloved'
-// import MartialArtist from './MartialArtist'
+import MaidenBeloved from './MaidenBeloved'
+import MartialArtist from './MartialArtist'
 import NoblesseOblige from './NoblesseOblige'
 import OceanHuedClam from './OceanHuedClam'
 import PaleFlame from './PaleFlame'
-// import PrayersForDestiny from './PrayersForDestiny'
-// import PrayersForIllumination from './PrayersForIllumination'
-// import PrayersForWisdom from './PrayersForWisdom'
-// import PrayersToSpringtime from './PrayersToSpringtime'
-// import ResolutionOfSojourner from './ResolutionOfSojourner'
-// import RetracingBolide from './RetracingBolide'
-// import Scholar from './Scholar'
+import PrayersForDestiny from './PrayersForDestiny'
+import PrayersForIllumination from './PrayersForIllumination'
+import PrayersForWisdom from './PrayersForWisdom'
+import PrayersToSpringtime from './PrayersToSpringtime'
+import ResolutionOfSojourner from './ResolutionOfSojourner'
+import RetracingBolide from './RetracingBolide'
+import Scholar from './Scholar'
 import ShimenawasReminiscence from './ShimenawasReminiscence'
-// import TenacityOfTheMillelith from './TenacityOfTheMillelith'
-// import TheExile from './TheExile'
+import TenacityOfTheMillelith from './TenacityOfTheMillelith'
+import TheExile from './TheExile'
 import ThunderingFury from './ThunderingFury'
-// import Thundersoother from './Thundersoother'
-// import TinyMiracle from './TinyMiracle'
-// import TravelingDoctor from './TravelingDoctor'
+import Thundersoother from './Thundersoother'
+import TinyMiracle from './TinyMiracle'
+import TravelingDoctor from './TravelingDoctor'
 import ViridescentVenerer from './ViridescentVenerer'
-// import WanderersTroupe from './WanderersTroupe'
+import WanderersTroupe from './WanderersTroupe'
 const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   Adventurer,
   ArchaicPetra,
@@ -55,27 +55,27 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   Instructor,
   Lavawalker,
   LuckyDog,
-  // MaidenBeloved,
-  // MartialArtist,
+  MaidenBeloved,
+  MartialArtist,
   NoblesseOblige,
   OceanHuedClam,
   PaleFlame,
-  // PrayersForDestiny,
-  // PrayersForIllumination,
-  // PrayersForWisdom,
-  // PrayersToSpringtime,
-  // ResolutionOfSojourner,
-  // RetracingBolide,
-  // Scholar,
+  PrayersForDestiny,
+  PrayersForIllumination,
+  PrayersForWisdom,
+  PrayersToSpringtime,
+  ResolutionOfSojourner,
+  RetracingBolide,
+  Scholar,
   ShimenawasReminiscence,
-  // TenacityOfTheMillelith,
-  // TheExile,
+  TenacityOfTheMillelith,
+  TheExile,
   ThunderingFury,
-  // Thundersoother,
-  // TinyMiracle,
-  // TravelingDoctor,
+  Thundersoother,
+  TinyMiracle,
+  TravelingDoctor,
   ViridescentVenerer,
-  // WanderersTroupe,
+  WanderersTroupe,
 } as const
 
 export default artifacts

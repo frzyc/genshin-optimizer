@@ -7,7 +7,7 @@ import { crawlObject, deepClone, layeredAssignment, objectKeyMap, objPathValue }
 import { input } from "./index";
 import { reactions } from "./reaction";
 import { Data, DisplaySub, Info, Input, NumNode, ReadNode, StrNode } from "./type";
-import { NodeDisplay, UIData, valueString } from "./uiData";
+import { NodeDisplay, UIData } from "./uiData";
 import { constant, customRead, percent, resetData, setReadNodeKeys } from "./utils";
 
 const asConst = true as const, pivot = true as const
@@ -243,6 +243,6 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
 export type { NodeDisplay, UIData };
 export {
   dataObjForArtifact, dataObjForCharacter, dataObjForWeapon,
-  mergeData, computeUIData, valueString, inferInfoMut,
+  mergeData, computeUIData, inferInfoMut,
   uiDataForTeam, compareTeamBuffUIData, compareDisplayUIData
 };
