@@ -32,7 +32,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condNode,
       path: condPath,
-      name: "KaguraDance",
+      name: "Kagura Dance",
       states: {
         1: {
           name: "1",

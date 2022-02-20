@@ -201,6 +201,7 @@ const sheet: ICharacterSheet = {
             value: condC4,
             path: condC4Path,
             teamBuff: true,
+            canShow: greaterEq(input.constellation, 4, 1),
             header: conditionalHeader("constellation4", tr, passive1),
             description: tr("constellation4.description"),
             name: trm("c4"),

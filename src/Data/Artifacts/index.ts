@@ -22,16 +22,16 @@ import MartialArtist from './MartialArtist'
 import NoblesseOblige from './NoblesseOblige'
 import OceanHuedClam from './OceanHuedClam'
 import PaleFlame from './PaleFlame'
-// import PrayersForDestiny from './PrayersForDestiny'
-// import PrayersForIllumination from './PrayersForIllumination'
-// import PrayersForWisdom from './PrayersForWisdom'
-// import PrayersToSpringtime from './PrayersToSpringtime'
-// import ResolutionOfSojourner from './ResolutionOfSojourner'
+import PrayersForDestiny from './PrayersForDestiny'
+import PrayersForIllumination from './PrayersForIllumination'
+import PrayersForWisdom from './PrayersForWisdom'
+import PrayersToSpringtime from './PrayersToSpringtime'
+import ResolutionOfSojourner from './ResolutionOfSojourner'
 import RetracingBolide from './RetracingBolide'
 import Scholar from './Scholar'
 import ShimenawasReminiscence from './ShimenawasReminiscence'
-// import TenacityOfTheMillelith from './TenacityOfTheMillelith'
-// import TheExile from './TheExile'
+import TenacityOfTheMillelith from './TenacityOfTheMillelith'
+import TheExile from './TheExile'
 import ThunderingFury from './ThunderingFury'
 import Thundersoother from './Thundersoother'
 import TinyMiracle from './TinyMiracle'
@@ -60,16 +60,16 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   NoblesseOblige,
   OceanHuedClam,
   PaleFlame,
-  // PrayersForDestiny,
-  // PrayersForIllumination,
-  // PrayersForWisdom,
-  // PrayersToSpringtime,
-  // ResolutionOfSojourner,
+  PrayersForDestiny,
+  PrayersForIllumination,
+  PrayersForWisdom,
+  PrayersToSpringtime,
+  ResolutionOfSojourner,
   RetracingBolide,
   Scholar,
   ShimenawasReminiscence,
-  // TenacityOfTheMillelith,
-  // TheExile,
+  TenacityOfTheMillelith,
+  TheExile,
   ThunderingFury,
   Thundersoother,
   TinyMiracle,
