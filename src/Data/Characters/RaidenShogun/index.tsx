@@ -114,7 +114,7 @@ function burstResolve(atkType: number[], initial = false) {
   })
 }
 
-const passive2ElecDmgBonus = greaterEq(input.asc, 4, prod(sum(input.total.enerRech_, percent(-1)), (datamine.passive2.electroDmg_bonus * 100)))
+const passive2ElecDmgBonus = greaterEq(input.asc, 4, prod(sum(input.premod.enerRech_, percent(-1)), (datamine.passive2.electroDmg_bonus * 100)))
 
 const [condC4Path, condC4] = cond(key, "c4")
 const c4AtkBonus_ = greaterEq(input.constellation, 4,
@@ -214,7 +214,7 @@ const sheet: ICharacterSheet = {
           }
         ],
       },
-      skill: {
+      skill: { // Cannot use talentTemplate because this has multiple sections.
         name: tr("skill.name"),
         img: skill,
         sections: [{
@@ -234,6 +234,7 @@ const sheet: ICharacterSheet = {
             value: condSkillEye,
             path: condSkillEyePath,
             name: trm("skill.eye"),
+            header: conditionalHeader("skill", tr, skill),
             states: {
               skillEye: {
                 fields: [{
@@ -246,11 +247,11 @@ const sheet: ICharacterSheet = {
           conditional: {
             value: condSkillEyeTeam,
             path: condSkillEyeTeamPath,
-            header: conditionalHeader("skill", tr, skill),
             description: tr("skill.description"),
             teamBuff: true,
             canShow: unequal(input.activeCharKey, input.charKey, 1),
             name: trm("skill.partyCost"),
+            header: conditionalHeader("skill", tr, skill),
             states: Object.fromEntries(energyCosts.map(c => [c, {
               name: `${c}`,
               fields: [{
@@ -260,114 +261,90 @@ const sheet: ICharacterSheet = {
           }
         }]
       },
-      burst: {
-        name: tr("burst.name"),
-        img: burst,
-        sections: [{
-          text: tr("burst.description"),
-          fields: [{
-            node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
-          }, {
-            node: infoMut(dmgFormulas.burst.hit1, { key: `char_${key}_gen:burst.skillParams.3` }),
-          }, {
-            node: infoMut(dmgFormulas.burst.hit2, { key: `char_${key}_gen:burst.skillParams.4` }),
-          }, {
-            node: infoMut(dmgFormulas.burst.hit3, { key: `char_${key}_gen:burst.skillParams.5` }),
-          }, {
-            node: infoMut(dmgFormulas.burst.hit41, { key: `char_${key}_gen:burst.skillParams.6` }),
-            textSuffix: "(1)"
-          }, {
-            node: infoMut(dmgFormulas.burst.hit42, { key: `char_${key}_gen:burst.skillParams.6` }),
-            textSuffix: "(2)"
-          }, {
-            node: infoMut(dmgFormulas.burst.hit5, { key: `char_${key}_gen:burst.skillParams.7` }),
-          }, {
-            node: infoMut(dmgFormulas.burst.charged1, { key: `char_${key}_gen:burst.skillParams.8` }),
-            textSuffix: "(1)"
-          }, {
-            node: infoMut(dmgFormulas.burst.charged2, { key: `char_${key}_gen:burst.skillParams.8` }),
-            textSuffix: "(2)"
-          }, {
-            text: tr("burst.skillParams.9"),
-            value: `${datamine.burst.stam}`,
-          }, {
-            node: infoMut(dmgFormulas.burst.plunge, { key: `char_${key}_gen:burst.skillParams.10` }),
-          }, {
-            node: infoMut(dmgFormulas.burst.plungeLow, { key: `char_${key}_gen:burst.skillParams.11` }),
-          }, {
-            node: infoMut(dmgFormulas.burst.plungeHigh, { key: `char_${key}_gen:burst.skillParams.11` }),
-          }, {
-            text: tr("burst.skillParams.12"),
-            value: (data) => `${datamine.burst.enerGen[data.get(input.total.burstIndex).value]}`,
-          }, {
-            text: tr("burst.skillParams.13"),
-            value: `${datamine.burst.duration}s`,
-          }, {
-            text: tr("burst.skillParams.14"),
-            value: `${datamine.burst.cd}s`,
-          }, {
-            text: tr("burst.skillParams.15"),
-            value: `${datamine.burst.enerCost}`,
-          }],
-          conditional: {
-            value: condResolveStack,
-            path: condResolveStackPath,
-            name: trm("burst.resolves"),
-            states: Object.fromEntries(resolveStacks.map(c => [c, {
-              name: `${c}`,
-              fields: []
-            }]))
-          }
-        }],
-      },
+      burst: talentTemplate("burst", tr, burst, [{
+        node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.hit1, { key: `char_${key}_gen:burst.skillParams.3` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.hit2, { key: `char_${key}_gen:burst.skillParams.4` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.hit3, { key: `char_${key}_gen:burst.skillParams.5` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.hit41, { key: `char_${key}_gen:burst.skillParams.6` }),
+        textSuffix: "(1)"
+      }, {
+        node: infoMut(dmgFormulas.burst.hit42, { key: `char_${key}_gen:burst.skillParams.6` }),
+        textSuffix: "(2)"
+      }, {
+        node: infoMut(dmgFormulas.burst.hit5, { key: `char_${key}_gen:burst.skillParams.7` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.charged1, { key: `char_${key}_gen:burst.skillParams.8` }),
+        textSuffix: "(1)"
+      }, {
+        node: infoMut(dmgFormulas.burst.charged2, { key: `char_${key}_gen:burst.skillParams.8` }),
+        textSuffix: "(2)"
+      }, {
+        text: tr("burst.skillParams.9"),
+        value: `${datamine.burst.stam}`,
+      }, {
+        node: infoMut(dmgFormulas.burst.plunge, { key: `char_${key}_gen:burst.skillParams.10` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.plungeLow, { key: `char_${key}_gen:burst.skillParams.11` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.plungeHigh, { key: `char_${key}_gen:burst.skillParams.11` }),
+      }, {
+        text: tr("burst.skillParams.12"),
+        value: (data) => `${datamine.burst.enerGen[data.get(input.total.burstIndex).value]}`,
+      }, {
+        text: tr("burst.skillParams.13"),
+        value: `${datamine.burst.duration}s`,
+      }, {
+        text: tr("burst.skillParams.14"),
+        value: `${datamine.burst.cd}s`,
+      }, {
+        text: tr("burst.skillParams.15"),
+        value: `${datamine.burst.enerCost}`,
+      }], {
+        value: condResolveStack,
+        path: condResolveStackPath,
+        name: trm("burst.resolves"),
+        states: Object.fromEntries(resolveStacks.map(c => [c, {
+          name: `${c}`,
+          fields: []
+        }]))
+      }),
       passive1: talentTemplate("passive1", tr, passive1),
-      passive2: {
-        name: tr("passive2.name"),
-        img: passive2,
-        sections: [{
-          text: tr("passive2.description"),
-          fields: [{
-            canShow: data => data.get(input.asc).value >= 4,
-            text: trm("a4.enerRest"),
-            value: (data) => {
-              return (data.get(input.total.enerRech_).value * 100 - 100) * (datamine.passive2.energyGen * 100)
-            },
-            unit: "%"
-          }, {
-            node: passive2ElecDmgBonus,
-          }]
-        }]
-      },
+      passive2: talentTemplate("passive2", tr, passive2, [{
+        canShow: data => data.get(input.asc).value >= 4,
+        text: trm("a4.enerRest"),
+        value: (data) => {
+          return (data.get(input.total.enerRech_).value * 100 - 100) * (datamine.passive2.energyGen * 100)
+        },
+        unit: "%"
+      }, {
+          node: passive2ElecDmgBonus,
+      }]),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
-      constellation4: {
-        name: tr("constellation4.name"),
-        img: c4,
-        sections: [{
-          text: tr("constellation4.description"),
-          conditional: {
-            value: condC4,
-            path: condC4Path,
-            teamBuff: true,
-            canShow: greaterEq(input.constellation, 4, unequal(input.activeCharKey, input.charKey, 1)),
-            header: conditionalHeader("constellation4", tr, c4),
-            description: tr("constellation4.description"),
-            name: trm("c4.expires"),
-            states: {
-              c4: {
-                fields: [{
-                  node: c4AtkBonus_,
-                }, {
-                  text: tr("skill.skillParams.2"),
-                  value: `${datamine.constellation4.duration}s`
-                }]
-              }
-            }
+      constellation4: talentTemplate("constellation4", tr, c4, undefined, {
+        value: condC4,
+        path: condC4Path,
+        teamBuff: true,
+        canShow: greaterEq(input.constellation, 4, unequal(input.activeCharKey, input.charKey, 1)),
+        name: trm("c4.expires"),
+        states: {
+          c4: {
+            fields: [{
+              node: c4AtkBonus_,
+            }, {
+              text: tr("skill.skillParams.2"),
+              value: `${datamine.constellation4.duration}s`
+            }]
           }
-        }],
-      },
+        }
+      }),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: talentTemplate("constellation6", tr, c6),
     },

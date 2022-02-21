@@ -6,8 +6,8 @@
     "name_cryo": "Upon triggering a <cryo>Cryo</cryo> Swirl reaction"
   },
   "c1": "Using <strong>Kazuha Slash</strong> resets CD",
-  "c2": "In Autumn Whilelwind field",
-  "c2p": "Character within Autumn Whilelwind field",
+  "c2": "In Autumn Whirlwind field",
+  "c2p": "Character in Autumn Whirlwind field",
   "c6": {
     "after": "After using <strong>Chihayaburu</strong> or <strong>Kazuha Slash</strong>",
     "bonus": "Normal, Charged and Plunging DMG Bonus"

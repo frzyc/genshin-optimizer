@@ -197,6 +197,7 @@ const sheet: ICharacterSheet = {
         value: condAfterChili,
         path: condAfterChiliPath,
         name: trm("afterChili"),
+        teamBuff: true,
         states: {
           afterChili: {
             fields: [{
@@ -215,6 +216,7 @@ const sheet: ICharacterSheet = {
         value: condAfterGuobaHit,
         path: condAfterGuobaHitPath,
         name: trm("afterGuobaHit"),
+        teamBuff: true,
         states: {
           afterGuobaHit: {
             fields: [{
@@ -240,6 +242,7 @@ const sheet: ICharacterSheet = {
         value: condDuringPyronado,
         path: condDuringPyronadoPath,
         name: trm("duringPyronado"),
+        teamBuff: true,
         states: {
           duringPyronado: {
             fields: [{

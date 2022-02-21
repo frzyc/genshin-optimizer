@@ -236,7 +236,7 @@ const sheet: ICharacterSheet = {
           }]
         }],
       },
-      burst: {
+      burst: { // Cannot use talentTemplate because this has multiple conditionals
         name: tr("burst.name"),
         img: burst,
         sections: [{
@@ -262,6 +262,7 @@ const sheet: ICharacterSheet = {
             value: condBurstAbsorption,
             path: condBurstAbsorptionPath,
             name: st("eleAbsor"),
+            header: conditionalHeader("burst", tr, burst),
             states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
               name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
               fields: [{
@@ -271,10 +272,11 @@ const sheet: ICharacterSheet = {
           },
         }, {
           conditional: { // C2
-            canShow: greaterEq(input.constellation, 2, 1,),
+            canShow: greaterEq(input.constellation, 2, 1),
             value: condC2,
             path: condC2Path,
             name: trm("c2"),
+            header: conditionalHeader("constellation2", tr, c2),
             states: {
               c2: {
                 fields: [{
@@ -285,13 +287,13 @@ const sheet: ICharacterSheet = {
           },
         }, {
           conditional: { // C2 Party
-            canShow: c2PEleMas,
+            canShow: greaterEq(input.constellation, 2, unequal(target.charKey, key, 1)),
             value: condC2P,
             path: condC2PPath,
             teamBuff: true,
-            header: conditionalHeader("constellation2", tr, c2),
             description: tr("constellation2.description"),
             name: trm("c2p"),
+            header: conditionalHeader("constellation2", tr, c2),
             states: {
               c2p: {
                 fields: [{
@@ -302,25 +304,20 @@ const sheet: ICharacterSheet = {
           },
         }],
       },
-      passive1: {
-        name: tr("passive1.name"),
-        img: passive1,
-        sections: [{
-          text: tr("passive1.description"),
-          conditional: { // Skill Absorption
-            value: condSkillAbsorption,
-            path: condSkillAbsorptionPath,
-            name: st("eleAbsor"),
-            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-              fields: [{
-                node: infoMut(dmgFormulas.passive1[eleKey], { key: `sheet_gen:addEleDMG` }),
-              }]
-            }]))
-          },
-        }],
-      },
-      passive2: {
+      passive1: talentTemplate("passive1", tr, passive1, undefined, {
+        // Skill Absorption
+        value: condSkillAbsorption,
+        path: condSkillAbsorptionPath,
+        name: st("eleAbsor"),
+        canShow: greaterEq(input.asc, 1, 1),
+        states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+          name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+          fields: [{
+            node: infoMut(dmgFormulas.passive1[eleKey], { key: `sheet_gen:addEleDMG` }),
+          }]
+        }]))
+      }),
+      passive2: { // Cannot use talentTemplate because this has multiple conditionals
         name: tr("passive2.name"),
         img: passive2,
         sections: [{
@@ -330,9 +327,11 @@ const sheet: ICharacterSheet = {
             value: condSwirls[eleKey],
             path: condSwirlPaths[eleKey],
             teamBuff: true,
-            header: conditionalHeader("passive2", tr, passive2),
-            description: tr("passive2.description"),
+            // Only show the description once
+            description: eleKey === "hydro" ? tr("passive2.description"): "",
             name: trm(`a4.name_${eleKey}`),
+            header: conditionalHeader("passive2", tr, passive2),
+            canShow: greaterEq(input.asc, 4, 1),
             states: {
               swirl: {
                 fields: [{
@@ -347,18 +346,11 @@ const sheet: ICharacterSheet = {
           },
         }))],
       },
-      passive3: {
-        name: tr("passive3.name"),
-        img: passive3,
-        sections: [{
-          text: tr("passive3.description"),
-          fields: [{ //TODO: put into subsection since this is teambuff
-            //   header: conditionalHeader("passive3", tr, passive3),
-            //   description: tr("passive3.description"),
-            node: passive
-          }]
-        }],
-      },
+      passive3: talentTemplate("passive3", tr, passive3, [{
+        //TODO: put into subsection since this is teambuff
+        //   description: tr("passive3.description"),
+        node: passive
+      }]),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
@@ -369,7 +361,7 @@ const sheet: ICharacterSheet = {
         img: c6,
         sections: [{
           text: tr("constellation6.description"),
-          conditional: {//Crimson Momiji
+          conditional: { //Crimson Momiji
             value: condC6,
             path: condC6Path,
             name: trm("c6.after"),
