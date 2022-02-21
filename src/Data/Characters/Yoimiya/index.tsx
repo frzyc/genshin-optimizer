@@ -2,35 +2,18 @@ import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, lookup, matchFull, percent, prod, subscript, sum, unequal } from "../../../Formula/utils"
 import { CharacterKey, ElementKey } from '../../../Types/consts'
+import { INodeFieldDisplay } from '../../../Types/IFieldDisplay_WR'
 import { range } from '../../../Util/Util'
-import { cond, sgt, trans } from '../../SheetUtil'
-import CharacterSheet, { damageTemplate, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import { cond, sgt, st, trans } from '../../SheetUtil'
+import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import banner from './Banner.png'
-import burst from './burst.png'
-import card from './Character_Yoimiya_Card.png'
-import c1 from './constellation1.png'
-import c2 from './constellation2.png'
-import c3 from './constellation3.png'
-import c4 from './constellation4.png'
-import c5 from './constellation5.png'
-import c6 from './constellation6.png'
+import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import { data as datamine } from './data'
 import data_gen_src from './data_gen.json'
-import thumb from './Icon.png'
-import thumbSide from './IconSide.png'
-import passive1 from './passive1.png'
-import passive2 from './passive2.png'
-import passive3 from './passive3.png'
-import skill from './skill.png'
-
 
 const characterKey: CharacterKey = "Yoimiya"
 const elementKey: ElementKey = "pyro"
 const data_gen = data_gen_src as CharacterData
-const char_Yoimiya_gen = `char_${characterKey}_gen`
-const char_Yoimiya = `char_${characterKey}`
-const sheet_gen = "sheet_gen"
 const [tr, charTr] = trans("char", characterKey)
 
 const [condSkillPath, condSkill] = cond(characterKey, "skill")
@@ -49,7 +32,7 @@ const c2pyro_dmg_ = equal(condC2, 'c2', percent(datamine.constellation2.pyro_dmg
 const canShowC6 = uiData => uiData.get(input.constellation).value >= 6 && uiData.get(condSkill).value === 'skill'
 
 const normalEntries = datamine.normal.hitArr.map((arr, i) =>
-[i, prod(normal_dmgMult, dmgNode("atk", arr, "normal", { hit: { ele: matchFull(condSkill, "skill", constant(elementKey), constant("physical")) } }))])
+  [i, prod(normal_dmgMult, dmgNode("atk", arr, "normal", { hit: { ele: matchFull(condSkill, "skill", constant(elementKey), constant("physical")) } }))])
 
 const kindlingEntries = normalEntries.map(([_, node], i, arr) => [i + arr.length, (prod(prod(percent(datamine.constellation6.dmg_), percent(datamine.constellation6.chance)), node))])
 
@@ -107,28 +90,28 @@ const sheet: ICharacterSheet = {
         sections: [
           {
             text: tr("auto.fields.normal"),
-            fields: [
-              damageTemplate(dmgFormulas.normal[0], char_Yoimiya_gen, "auto.skillParams.0", { comboMultiplier: 2 }),
-              damageTemplate(dmgFormulas.normal[1], char_Yoimiya_gen, "auto.skillParams.1"),
-              damageTemplate(dmgFormulas.normal[2], char_Yoimiya_gen, "auto.skillParams.2"),
-              damageTemplate(dmgFormulas.normal[3], char_Yoimiya_gen, "auto.skillParams.3", { comboMultiplier: 2 }),
-              damageTemplate(dmgFormulas.normal[4], char_Yoimiya_gen, "auto.skillParams.4"),
-            ]
+            fields: datamine.normal.hitArr.map((_, i) => ({
+              node: infoMut(dmgFormulas.normal[i], { key: `char_${characterKey}_gen:auto.skillParams.${i}` }),
+              textSuffix: ([0, 3].includes(i)) ? st("brHits", { count: 2 }) : ""
+            }))
           }, {
             text: tr("auto.fields.charged"),
-            fields: [
-              damageTemplate(dmgFormulas.charged.hit, char_Yoimiya_gen, "auto.skillParams.5"),
-              damageTemplate(dmgFormulas.charged.full, char_Yoimiya_gen, "auto.skillParams.6"),
-              damageTemplate(dmgFormulas.charged.kindling, char_Yoimiya_gen, "auto.skillParams.7"),
-            ]
-          },
-          {
-            text: tr("auto.fields.plunging"),
-            fields: [
-              damageTemplate(dmgFormulas.plunging.dmg, sheet_gen, "plunging.dmg"),
-              damageTemplate(dmgFormulas.plunging.low, sheet_gen, "plunging.low"),
-              damageTemplate(dmgFormulas.plunging.high, sheet_gen, "plunging.high"),
-            ]
+            fields: [{
+              node: infoMut(dmgFormulas.charged.hit, { key: `char_${characterKey}_gen:auto.skillParams.5` }),
+            }, {
+              node: infoMut(dmgFormulas.charged.full, { key: `char_${characterKey}_gen:auto.skillParams.6` }),
+            }, {
+              node: infoMut(dmgFormulas.charged.kindling, { key: `char_${characterKey}_gen:auto.skillParams.7` }),
+            }]
+          }, {
+            text: tr(`auto.fields.plunging`),
+            fields: [{
+              node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+            }, {
+              node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+            }, {
+              node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+            }]
           },
         ],
       },
@@ -163,8 +146,12 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("burst.description"),
           fields: [
-            damageTemplate(dmgFormulas.burst.dmg, char_Yoimiya_gen, "burst.skillParams.0"),
-            damageTemplate(dmgFormulas.burst.exp, char_Yoimiya_gen, "burst.skillParams.1"),
+            {
+              node: infoMut(dmgFormulas.burst.dmg, { key: `char_${characterKey}_gen:burst.skillParams.0` }),
+            },
+            {
+              node: infoMut(dmgFormulas.burst.exp, { key: `char_${characterKey}_gen:burst.skillParams.1` }),
+            },
             {
               text: tr("burst.skillParams.2"),
               value: uiData => datamine.burst.duration + (uiData.get(input.constellation).value >= 1 ? datamine.constellation1.burst_durationInc : 0),
@@ -204,7 +191,7 @@ const sheet: ICharacterSheet = {
       ),
       passive2: talentTemplate("passive2", tr, passive2, [{
         canShow: uiData => uiData.get(input.asc).value >= 4,
-        node: infoMut(atk_, { key: `${char_Yoimiya_gen}:passive2.name` })
+        node: infoMut(atk_, { key: `char_${characterKey}_gen:passive2.name` })
       }, {
         canShow: uiData => uiData.get(input.asc).value >= 4,
         text: sgt("duration"),
@@ -244,7 +231,6 @@ const sheet: ICharacterSheet = {
                 fields: [
                   {
                     node: c2pyro_dmg_
-                    // node: constant(datamine.constellation2.pyro_dmg_, { key: 'pyro_dmg_' }),
                   }, {
                     text: sgt("duration"),
                     value: datamine.constellation2.duration,
@@ -258,13 +244,13 @@ const sheet: ICharacterSheet = {
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: const3TalentInc }]),
       constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5TalentInc }]),
-      constellation6: talentTemplate("constellation6", tr, c6, [
-        damageTemplate(dmgFormulas.normal[5], char_Yoimiya_gen, "auto.skillParams.0", { canShow: canShowC6, comboMultiplier: 2 }),
-        damageTemplate(dmgFormulas.normal[6], char_Yoimiya_gen, "auto.skillParams.1", { canShow: canShowC6, }),
-        damageTemplate(dmgFormulas.normal[7], char_Yoimiya_gen, "auto.skillParams.2", { canShow: canShowC6, }),
-        damageTemplate(dmgFormulas.normal[8], char_Yoimiya_gen, "auto.skillParams.3", { canShow: canShowC6, comboMultiplier: 2 }),
-        damageTemplate(dmgFormulas.normal[9], char_Yoimiya_gen, "auto.skillParams.4", { canShow: canShowC6, }),
-      ])
+      constellation6: talentTemplate("constellation6", tr, c6, 
+        datamine.normal.hitArr.map((_, i, a): INodeFieldDisplay => ({
+            canShow: canShowC6,
+            node: infoMut(dmgFormulas.normal[i + a.length], { key: `char_${characterKey}_gen:auto.skillParams.${i}` }),
+            textSuffix: ([0, 3].includes(i)) ? st("brHits", { count: 2 }) : ""
+          }))
+      )
     },
   },
 };

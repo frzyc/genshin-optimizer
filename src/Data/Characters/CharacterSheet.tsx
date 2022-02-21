@@ -80,30 +80,6 @@ export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) =>
   }],
 })
 
-export function damageTemplate(node: NumNode, langSheet: string, langPath: string, options: {
-  comboMultiplier?: number,
-  comboNumber?: number,
-  comboHit?: number,
-  canShow?: INodeFieldDisplay["canShow"],
-} = {}): INodeFieldDisplay {
-  const { comboMultiplier, comboNumber, comboHit, canShow } = options
-
-  let textSuffix = ''
-  if (comboMultiplier) {
-    textSuffix = `(${comboMultiplier} Hits)`
-  } else if (comboNumber) {
-    textSuffix = `(${comboNumber})`
-  } else if (comboHit) {
-    textSuffix = `(${comboHit}-Hit)`
-  }
-
-  return ({
-    canShow,
-    node: infoMut(node, { key: `${langSheet}:${langPath}` }),
-    textSuffix,
-  })
-}
-
 const talentStrMap: Record<TalentSheetElementKey, string> = {
   auto: "Auto",
   skill: "Skill",

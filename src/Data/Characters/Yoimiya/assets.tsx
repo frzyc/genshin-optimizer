@@ -1,4 +1,4 @@
-import card from './Character_Xingqiu_Card.jpg'
+import card from './Character_Yoimiya_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
