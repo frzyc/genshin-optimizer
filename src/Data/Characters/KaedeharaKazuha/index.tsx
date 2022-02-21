@@ -287,9 +287,7 @@ const sheet: ICharacterSheet = {
           },
         }, {
           conditional: { // C2 Party
-            // TODO: uncomment after `target` bug is fixed
-            // canShow: c2PEleMas,
-            canShow: greaterEq(input.constellation, 2, 1),
+            canShow: greaterEq(input.constellation, 2, unequal(target.charKey, key, 1)),
             value: condC2P,
             path: condC2PPath,
             teamBuff: true,
