@@ -1,7 +1,7 @@
 import { assertUnreachable, objPathValue } from "../Util/Util"
 import { forEachNodes, mapFormulas } from "./internal"
 import { constant } from "./utils"
-import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode } from "./type"
+import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode, StrPrioNode } from "./type"
 
 const allCommutativeMonoidOperations: StrictDict<CommutativeMonoidOperation, (_: number[]) => number> = {
   min: (x: number[]): number => Math.min(...x),
@@ -374,14 +374,14 @@ export function constantFold(formulas: NumNode[], topLevelData: Data, shouldFold
         if (operands.length === 0) {
           if (shouldFold(formula)) {
             const { accu } = formula
-            if (accu === undefined)
+            if (accu === undefined || accu === "prio")
               result = formula.type === "string" ? constant(undefined) : constant(NaN)
             else result = constant(allOperations[accu]([]))
           } else result = formula
         } else if (formula.accu === undefined)
           result = fold(operands[0], context)
         else
-          result = fold({ operation: formula.accu, operands } as ComputeNode, context)
+          result = fold({ operation: formula.accu, operands } as ComputeNode | StrPrioNode, context)
         break
       }
       case "data":

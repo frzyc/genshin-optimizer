@@ -7,7 +7,7 @@ import { crawlObject, deepClone, layeredAssignment, objectKeyMap, objPathValue }
 import { input } from "./index";
 import { reactions } from "./reaction";
 import { Data, DisplaySub, Info, Input, NumNode, ReadNode, StrNode } from "./type";
-import { NodeDisplay, UIData, valueString } from "./uiData";
+import { NodeDisplay, UIData } from "./uiData";
 import { constant, customRead, percent, resetData, setReadNodeKeys } from "./utils";
 
 const asConst = true as const, pivot = true as const
@@ -38,8 +38,8 @@ function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel: numbe
       },
     },
     artSet: {
-      [art.setKey]: constant(1)
-    }
+      [art.setKey]: constant(1),
+    },
   }
 }
 function dataObjForCharacter(char: ICachedCharacter): Data {
@@ -59,7 +59,8 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
       level: constant(char.enemyOverride.enemyLevel ?? char.level),
     },
     hit: {
-      hitMode: constant(char.hitMode)
+      hitMode: constant(char.hitMode),
+      reaction: constant(char.reactionMode),
     },
     customBonus: {},
   }
@@ -169,13 +170,12 @@ function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>, activeCharKey?: Cha
     targetRef["target"] = targetRef
   })
   const origin = new UIData(undefined as any, undefined)
-  const uiDataResult = Object.fromEntries(Object.entries(result).map(([key, value]) =>
+  return Object.fromEntries(Object.entries(result).map(([key, value]) =>
     [key, {
       target: new UIData(value.targetRef, origin),
-      buff: Object.fromEntries(Object.entries(value.calcs).map(([key, value]) =>
+      buffs: Object.fromEntries(Object.entries(value.calcs).map(([key, value]) =>
         [key, new UIData(value, origin)]))
     }]))
-  return uiDataResult
 }
 function mergeData(data: Data[]): Data {
   function internal(data: any[], path: string[]): any {
@@ -243,6 +243,6 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
 export type { NodeDisplay, UIData };
 export {
   dataObjForArtifact, dataObjForCharacter, dataObjForWeapon,
-  mergeData, computeUIData, valueString, inferInfoMut,
+  mergeData, computeUIData, inferInfoMut,
   uiDataForTeam, compareTeamBuffUIData, compareDisplayUIData
 };

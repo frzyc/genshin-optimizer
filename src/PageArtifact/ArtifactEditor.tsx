@@ -19,13 +19,12 @@ import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../Database/Database';
 import { parseArtifact, validateArtifact } from '../Database/validation';
-import KeyMap from '../KeyMap';
+import KeyMap, { cacheValueString } from '../KeyMap';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
 import { allSubstats, IArtifact, ICachedArtifact, ISubstat, MainStatKey } from '../Types/artifact';
 import { ArtifactRarity, ArtifactSetKey, SlotKey } from '../Types/consts';
 import { randomizeArtifact } from '../Util/ArtifactUtil';
-import { valueString } from '../Util/UIUtil';
 import { clamp, deepClone } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
 import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard';
@@ -269,7 +268,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: { artif
               </DropdownButton>
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                 <Typography color="text.secondary">
-                  {artifact ? `${valueString(Artifact.mainStatValue(artifact.mainStatKey, rarity, level), KeyMap.unit(artifact.mainStatKey))}${KeyMap.unit(artifact.mainStatKey)}` : t`mainStat`}
+                  {artifact ? `${cacheValueString(Artifact.mainStatValue(artifact.mainStatKey, rarity, level), KeyMap.unit(artifact.mainStatKey))}${KeyMap.unitStr(artifact.mainStatKey)}` : t`mainStat`}
                 </Typography>
               </CardLight>
             </Box>

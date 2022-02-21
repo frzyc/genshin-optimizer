@@ -91,7 +91,7 @@ const input = setReadNodeKeys(deepClone({
     main: read(), sub: read(), sub2: read(),
   }),
 
-  team: { infusion: stringRead() },
+  team: { infusion: stringRead("prio") },
 
   enemy: {
     def: read("add", { key: "enemyDef_multi", pivot }),
@@ -133,9 +133,9 @@ total.critRate_.info!.prefix = "uncapped"
 const baseAmpBonus = sum(unit, prod(25 / 9, frac(total.eleMas, 1400)))
 /** Effective reaction, taking into account the hit's element */
 export const effectiveReaction = lookup(hit.ele, {
-  pyro: lookup(hit.reaction, { vaporize: constant("vaporize"), melt: constant("melt") }, undefined),
-  hydro: equalStr(hit.reaction, "vaporize", "vaporize"),
-  cryo: equalStr(hit.reaction, "melt", "melt"),
+  pyro: lookup(hit.reaction, { pyro_vaporize: constant("vaporize"), pyro_melt: constant("melt") }, undefined),
+  hydro: equalStr(hit.reaction, "hydro_vaporize", "vaporize"),
+  cryo: equalStr(hit.reaction, "cryo_melt", "melt"),
 }, undefined)
 
 const common: Data = {

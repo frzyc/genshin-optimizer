@@ -110,7 +110,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
   teamBuff: {
     premod: {
       hydro_enemyRes_: nodeC2,
-      dmgRed_: infoMut(nodeSkillDmgRed_, { key: "dmgRed_" }), // TODO: nonexistant path
+      dmgRed_: infoMut(nodeSkillDmgRed_, { key: "dmgRed_" }),
     }
   },
   premod: {

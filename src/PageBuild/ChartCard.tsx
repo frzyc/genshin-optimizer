@@ -120,7 +120,7 @@ function Chart({ displayData, plotBase, showMin }) {
   return <ResponsiveContainer width="100%" height={600}>
     <ComposedChart data={displayData}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="x" scale="linear" unit={KeyMap.unit(plotBase)} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)} />
+      <XAxis dataKey="x" scale="linear" unit={KeyMap.unitStr(plotBase)} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)} />
       <YAxis name="DMG" domain={["auto", "auto"]} allowDecimals={false} tick={{ fill: 'white' }} type="number" />
       <ZAxis dataKey="y" range={[3, 25]} />
       <Legend />
