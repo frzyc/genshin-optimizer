@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
-import { equal, equalStr, greaterEq, greaterEqStr, infoMut, prod, subscript, sum } from '../../../Formula/utils'
+import { constant, equal, equalStr, greaterEq, greaterEqStr, infoMut, lookup, prod, subscript, sum, unequal } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
@@ -89,11 +89,13 @@ const inAreaAtk = equal(inArea, 1,
 const inAreaA4 = greaterEq(input.asc, 4,
     equal(inArea, 1, datamine.passive2.cd_red))
 
-const [condCorrectWepPath, condCorrectWep] = cond(key, "correctWep")
-const inAreaC6PyroDmg = greaterEq(input.constellation, 6,
-  equal("correctWep", condCorrectWep, datamine.constellation6.pyro_dmg))
-const inAreaC6Infusion = greaterEqStr(input.constellation, 6,
-  equalStr("correctWep", condCorrectWep, elementKey))
+const c6AndCorrectWep = greaterEq(input.constellation, 6,
+  lookup(target.weaponType,
+    { "sword": constant(1), "claymore": constant(1), "polearm": constant(1) }, constant(0)))
+const inAreaC6PyroDmg = equal(inArea, 1,
+  equal(c6AndCorrectWep, 1, datamine.constellation6.pyro_dmg))
+const inAreaC6Infusion = equalStr(inArea, 1,
+  equalStr(c6AndCorrectWep, 1, elementKey))
 
 const [condUnderHPPath, condUnderHP] = cond(key, "underHP")
 const underHP = greaterEq(input.constellation, 2,
@@ -197,7 +199,6 @@ const sheet: ICharacterSheet = {
       }, {
         text: sgt("press.cd"),
         value: data => calculateSkillCD(data, datamine.skill.cd_press),
-        unit: "s",
       }, {
         // Lvl 1
         node: infoMut(dmgFormulas.skill.hold1_1, { key: `char_${key}:skill.lvl1_1DMG` }),
@@ -206,7 +207,6 @@ const sheet: ICharacterSheet = {
       }, {
         text: trm("skill.lvl1CD"),
         value: data => calculateSkillCD(data, datamine.skill.cd_hold1),
-        unit: "s",
       }, {
         // Lvl 2
         node: infoMut(dmgFormulas.skill.hold2_1, { key: `char_${key}:skill.lvl2_1DMG` }),
@@ -217,7 +217,6 @@ const sheet: ICharacterSheet = {
       }, {
         text: trm("skill.lvl2CD"),
         value: data => calculateSkillCD(data, datamine.skill.cd_hold2),
-        unit: "s",
       }]),
       burst: talentTemplate("burst", tr, burst, [{
         node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` })
@@ -301,13 +300,13 @@ const sheet: ICharacterSheet = {
       }]),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: talentTemplate("constellation6", tr, c6, undefined, {
-        canShow: equal(inArea, 1, greaterEq(input.constellation, 6, 1)),
-        value: condCorrectWep,
-        path: condCorrectWepPath,
-        name: trm("swClPoChar"),
+        canShow: c6AndCorrectWep,
+        value: condInArea,
+        path: condInAreaPath,
+        name: trm("withinArea"),
         teamBuff: true,
         states: {
-          correctWep: {
+          inArea: {
             fields: [{
               node: inAreaC6PyroDmg
             }, {
@@ -321,11 +320,15 @@ const sheet: ICharacterSheet = {
 };
 export default new CharacterSheet(sheet, data);
 
-function calculateSkillCD(data: UIData, skillCD: number): number {
+function calculateSkillCD(data: UIData, skillCD: number): string {
   let cdFactor: number = 1.00;
+  let result: string = skillCD + "s"
   if (data.get(input.asc).value >= 1) {
-    cdFactor *= 0.80;
+    cdFactor = 0.80;
   }
-  cdFactor *= (1.00 - data.get(inAreaA4).value/100);
-  return skillCD*cdFactor;
+  cdFactor *= (1 - data.get(inAreaA4).value/100);
+  if (cdFactor !== 1.00) {
+    result += " - " + (100 - cdFactor*100) + "% = " + skillCD*cdFactor;
+  }
+  return result;
 }

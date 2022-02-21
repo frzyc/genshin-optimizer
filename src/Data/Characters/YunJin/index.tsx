@@ -173,7 +173,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: tr("skill.skillParams.4"),
         value: data => data.get(input.constellation).value >= 1
-          ? `${datamine.skill.cd*(1-0.18)}`
+          ? `${datamine.skill.cd} - 18% = ${(datamine.skill.cd*(1-0.18)).toFixed(2)}`
           : `${datamine.skill.cd}`,
         unit: "s"
       }]),

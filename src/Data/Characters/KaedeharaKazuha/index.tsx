@@ -217,7 +217,7 @@ const sheet: ICharacterSheet = {
           }, {
             text: tr("skill.skillParams.1"),
             value: data => data.get(input.constellation).value >= 1 
-              ? `${datamine.skill.cd*(1-0.10)}` 
+              ? `${datamine.skill.cd} - 10% = ${datamine.skill.cd*(1-0.10)}` 
               : `${datamine.skill.cd}`,
             unit: "s"
           }, {
@@ -225,7 +225,7 @@ const sheet: ICharacterSheet = {
           }, {
             text: tr("skill.skillParams.3"),
             value: data => data.get(input.constellation).value >= 1
-              ? `${datamine.skill.cdHold*(1-0.10)}`
+              ? `${datamine.skill.cd} - 10% = ${datamine.skill.cd*(1-0.10)}` 
               : `${datamine.skill.cdHold}`,
             unit: "s"
           }, {
