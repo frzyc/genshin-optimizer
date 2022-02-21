@@ -170,13 +170,12 @@ function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>, activeCharKey?: Cha
     targetRef["target"] = targetRef
   })
   const origin = new UIData(undefined as any, undefined)
-  const uiDataResult = Object.fromEntries(Object.entries(result).map(([key, value]) =>
+  return Object.fromEntries(Object.entries(result).map(([key, value]) =>
     [key, {
       target: new UIData(value.targetRef, origin),
-      buff: Object.fromEntries(Object.entries(value.calcs).map(([key, value]) =>
+      buffs: Object.fromEntries(Object.entries(value.calcs).map(([key, value]) =>
         [key, new UIData(value, origin)]))
     }]))
-  return uiDataResult
 }
 function mergeData(data: Data[]): Data {
   function internal(data: any[], path: string[]): any {
