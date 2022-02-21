@@ -4,7 +4,7 @@ import { computeUIData } from "../Formula/api";
 import { formulaString } from "../Formula/debug";
 import { Data, NumNode } from "../Formula/type";
 import { constant, setReadNodeKeys } from "../Formula/utils";
-import { allMainStatKeys, allSubstats, ICachedArtifact } from "../Types/artifact_WR";
+import { allMainStatKeys, allSubstats, ICachedArtifact } from "../Types/artifact";
 import { SetFilter } from "../Types/Build";
 import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
 import { deepClone, objectKeyMap, objectMap } from "../Util/Util";

@@ -8,7 +8,7 @@ import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import { DataContext } from '../DataContext';
 import { uiInput as input } from '../Formula';
 import KeyMap from '../KeyMap';
-import { MainStatKey, SubstatKey } from '../Types/artifact_WR';
+import { MainStatKey, SubstatKey } from '../Types/artifact';
 import { PlotData } from './background';
 type ChartCardProps = {
   plotData?: PlotData

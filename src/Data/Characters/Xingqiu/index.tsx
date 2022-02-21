@@ -3,7 +3,7 @@ import { input } from "../../../Formula/index"
 import { constant, equal, greaterEq, infoMut, min, percent, prod, subscript, sum } from "../../../Formula/utils"
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, st, trans } from '../../SheetUtil'
-import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
@@ -198,9 +198,9 @@ const sheet: ICharacterSheet = {
         value: datamine.burst.cd,
         unit: "s"
       }, {
-          text: tr("burst.skillParams.3"),
-          value: datamine.burst.cost,
-        }], {
+        text: tr("burst.skillParams.3"),
+        value: datamine.burst.cost,
+      }], {
         value: condBurst,
         path: condBurstPath,
         name: trm("burstCond"),

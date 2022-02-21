@@ -8,7 +8,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Theme, useTheme } from '@mui/material/styles';
 import KeyMap from '../../KeyMap';
-import { allMainStatKeys, MainStatKey } from '../../Types/artifact_WR';
+import { allMainStatKeys, MainStatKey } from '../../Types/artifact';
 import StatIcon from '../StatIcon';
 
 
