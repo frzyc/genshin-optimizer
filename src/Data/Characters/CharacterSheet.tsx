@@ -1,13 +1,12 @@
 import ImgIcon from "../../Components/Image/ImgIcon";
 import { ascensionMaxLevel } from "../LevelData";
-import { Data, NumNode } from "../../Formula/type";
+import { Data } from "../../Formula/type";
 import { TalentSheet, TalentSheetElement, TalentSheetElementKey } from "../../Types/character_WR";
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "../../Types/consts";
 import SqBadge from "../../Components/SqBadge";
 import Assets from "../../Assets/Assets";
 import IConditional from "../../Types/IConditional_WR";
-import { IFieldDisplay, INodeFieldDisplay } from "../../Types/IFieldDisplay_WR";
-import { infoMut } from "../../Formula/utils";
+import { IFieldDisplay } from "../../Types/IFieldDisplay_WR";
 
 const characterSheets = import('.').then(imp => imp.default)
 
