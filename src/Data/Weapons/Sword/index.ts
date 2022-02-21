@@ -1,5 +1,5 @@
 // import AmenomaKageuchi from './AmenomaKageuchi'
-// import AquilaFavonia from './AquilaFavonia'
+import AquilaFavonia from './AquilaFavonia'
 // import BlackcliffLongsword from './BlackcliffLongsword'
 // import CinnabarSpindle from './CinnabarSpindle'
 // import CoolSteel from './CoolSteel'
@@ -12,11 +12,11 @@ import FreedomSworn from './FreedomSworn'
 // import HarbingerOfDawn from './HarbingerOfDawn'
 // import IronSting from './IronSting'
 // import LionsRoar from './LionsRoar'
-// import MistsplitterReforged from './MistsplitterReforged'
+import MistsplitterReforged from './MistsplitterReforged'
 // import PrimordialJadeCutter from './PrimordialJadeCutter'
 // import PrototypeRancour from './PrototypeRancour'
 // import RoyalLongsword from './RoyalLongsword'
-// import SacrificialSword from './SacrificialSword'
+import SacrificialSword from './SacrificialSword'
 // import SilverSword from './SilverSword'
 // import SkyriderSword from './SkyriderSword'
 // import SkywardBlade from './SkywardBlade'
@@ -28,7 +28,7 @@ import FreedomSworn from './FreedomSworn'
 // import TravelersHandySword from './TravelersHandySword'
 const sword = {
   // AmenomaKageuchi,
-  // AquilaFavonia,
+  AquilaFavonia,
   // BlackcliffLongsword,
   // CinnabarSpindle,
   // CoolSteel,
@@ -41,11 +41,11 @@ const sword = {
   // HarbingerOfDawn,
   // IronSting,
   // LionsRoar,
-  // MistsplitterReforged,
+  MistsplitterReforged,
   // PrimordialJadeCutter,
   // PrototypeRancour,
   // RoyalLongsword,
-  // SacrificialSword,
+  SacrificialSword,
   // SilverSword,
   // SkyriderSword,
   // SkywardBlade,

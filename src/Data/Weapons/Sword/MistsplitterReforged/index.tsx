@@ -1,36 +1,63 @@
-import { IWeaponSheet } from '../../../../Types/weapon'
-import icon from './Icon.png'
+import type { WeaponData } from 'pipeline'
+import { input } from '../../../../Formula'
+import { constant, equal, percent, read, stringRead, subscript, sum } from "../../../../Formula/utils"
+import { allElements, WeaponKey } from '../../../../Types/consts'
+import { range } from '../../../../Util/Util'
+import { cond, condReadNode } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
 
-import data_gen from './data_gen.json'
-import { WeaponData } from 'pipeline'
-import { allElements } from '../../../../Types/consts'
-import { Translate } from '../../../../Components/Translate'
-const ele_dmg_s = [12, 15, 18, 21, 24]
-const ele_dmg_ss = [
-  [8, 16, 28],
-  [10, 20, 35],
-  [12, 24, 42],
-  [14, 28, 49],
-  [16, 32, 56]
+const key: WeaponKey = "MistsplitterReforged"
+const data_gen = data_gen_json as WeaponData
+const eleDmg = [0.12, 0.15, 0.18, 0.21, 0.24]
+const eleDmg2 = [
+  [0.08, 0.16, 0.28],
+  [0.1, 0.2, 0.35],
+  [0.12, 0.24, 0.42],
+  [0.14, 0.28, 0.49],
+  [0.16, 0.32, 0.56]
 ]
 
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const [condPath, condNode] = cond(key, "MistsplittersEdge")
+const ele_dmg_ = Object.fromEntries(allElements.map(ele => [ele, subscript(input.weapon.refineIndex, eleDmg, { key: `${ele}_dmg_` })]))
+
+export const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    ...Object.fromEntries(allElements.map(ele => [`${ele}_dmg_`, ele_dmg_[ele]]))
+  },
+})
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => Object.fromEntries(allElements.map(ele => [`${ele}_dmg_`, ele_dmg_s[stats.weapon.refineIndex]])),
   document: [{
-    conditional: {//Emblem
-      key: "em",
-      name: <Translate ns="weapon_MistsplitterReforged" key18="emblem" />,
-      states: Object.fromEntries([1, 2, 3].map(stacks => [stacks, {
-        name: <Translate ns="sheet" key18="stack" values={{ count: stacks }} />,
-        stats: stats => ({
-          [`${stats.characterEle}_dmg_`]: ele_dmg_ss[stats.weapon.refineIndex][stacks - 1]
-        })
-      }]))
+    fields: [
+      ...allElements.map(ele => ({ node: ele_dmg_[ele] }))
+    ],
+    conditional: {
+      value: condNode,
+      path: condPath,
+      name: "Misplitter's Emblem",
+      states: {
+        1: {
+          name: "1",
+          fields: [
+          ]
+        },
+        2: {
+          name: "2",
+          fields: [
+          ]
+        },
+        3: {
+          name: "3",
+          fields: [
+          ]
+        }
+      }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

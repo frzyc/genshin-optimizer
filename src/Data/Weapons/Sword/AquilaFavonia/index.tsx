@@ -1,32 +1,56 @@
-import { WeaponData } from 'pipeline'
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../PageBuild/Build'
-import Stat from '../../../../Stat'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import type { WeaponData } from 'pipeline'
+import { input } from '../../../../Formula'
+import { equal, infoMut, prod, subscript } from "../../../../Formula/utils"
+import { WeaponKey } from '../../../../Types/consts'
+import { customDmgNode } from '../../../Characters/dataUtil'
+import { cond, st } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-import { sgt, st } from '../../../Characters/SheetUtil'
-const atk_ = [20, 25, 30, 35, 40]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "AquilaFavonia"
+const data_gen = data_gen_json as WeaponData
+const atkInc = [0.2, 0.25, 0.3, 0.35, 0.4]
+const atkDealt = [2, 2.3, 2.6, 2.9, 3.2]
+const hpRegen = [1, 1.15, 1.3, 1.45, 1.6]
+const [condPath, condNode] = cond(key, "FalconOfTheWest")
+
+const atk_ = subscript(input.weapon.refineIndex, atkInc)
+const heal = equal(condNode, 'on', prod(subscript(input.weapon.refineIndex, hpRegen), input.total.atk))
+// TODO: Is this the correct calculation for the passive DMG?
+// Currently set to 'normal' because I don't have Aquila and can't test if the damage can be elemental or whatever
+const dmg = equal(condNode, 'on', customDmgNode(prod(subscript(input.weapon.refineIndex, atkDealt), input.total.atk), 'normal'))
+
+export const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    atk_,
+  },
+}, {
+  heal, dmg
+})
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    atk_: atk_[stats.weapon.refineIndex]
-  }),
   document: [{
     fields: [{
-      text: sgt("healing"),
-      formulaText: stats => <span>{data.heal[stats.weapon.refineIndex]}% {Stat.printStat("finalATK", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
-      formula: formula.heal,
-      variant: "success"
-    }, {
-      text: st("dmg"),
-      formulaText: stats => <span>{data.dmg[stats.weapon.refineIndex]}% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
-      formula: formula.dmg,
-      variant: stats => getTalentStatKeyVariant("physical", stats),
-    }]
-  }]
+      node: atk_,
+    }],
+    conditional: {
+      value: condNode,
+      path: condPath,
+      name: st('takeDmg'),
+      states: {
+        on: {
+          fields: [{
+            node: infoMut(heal, { key: "sheet_gen:healing", variant: "success" })
+          }, {
+            node: infoMut(dmg, { key: "sheet:dmg" })
+          }]
+        }
+      }
+    }
+  }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

@@ -34,5 +34,6 @@
   "absorDot": "Absorption DoT",
   "incInterRes": "Increase resistance to interruption",
   "charges": "Charges",
-  "activeCharField": "Active Character in field"
+  "activeCharField": "Active Character in field",
+  "takeDmg": "On taking DMG"
 }
