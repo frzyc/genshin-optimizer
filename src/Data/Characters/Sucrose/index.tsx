@@ -69,9 +69,10 @@ const [condSwirlReactionPath, condSwirlReaction] = cond(characterKey, "swirl")
 const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(characterKey, "skillHit")
 
 // Conditional Output
-const asc1 = greaterEq(input.asc, 1,
+const asc1Condition = greaterEq(input.asc, 1,
   unequal(target.charKey, characterKey,
-    equal(target.charEle, condSwirlReaction, datamine.passive1.eleMas)))
+    equal(target.charEle, condSwirlReaction, 1)))
+const asc1 = equal(asc1Condition, 1, datamine.passive1.eleMas)
 const asc4 = equal("hit", condSkillHitOpponent,
   unequal(target.charKey, characterKey,
     greaterEq(input.asc, 4,
@@ -132,7 +133,7 @@ const sheet: ICharacterSheet = {
         sections: [
           {
             text: tr(`auto.fields.normal`),
-            fields: datamine.normal.hitArr.map((percentArr, i) => ({
+            fields: datamine.normal.hitArr.map((_, i) => ({
               node: infoMut(dmgFormulas.normal[i], { key: `char_${characterKey}_gen:auto.skillParams.${i}` }),
             }))
           },
@@ -197,6 +198,7 @@ const sheet: ICharacterSheet = {
             value: condAbsorption,
             path: condAbsorptionPath,
             name: st("eleAbsor"),
+            header: conditionalHeader("burst", tr, burst),
             states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
               name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
               fields: [{
@@ -211,6 +213,8 @@ const sheet: ICharacterSheet = {
             header: conditionalHeader("constellation6", tr, c6),
             description: tr("constellation6.description"),
             name: st("eleAbsor"),
+            teamBuff: true,
+            canShow: greaterEq(input.constellation, 6, 1),
             states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
               name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
               fields: [{
@@ -220,55 +224,45 @@ const sheet: ICharacterSheet = {
           },
         }]
       },
-      passive1: {
-        name: tr("passive1.name"),
-        img: passive1,
-        sections: [{
-          text: tr("passive1.description"),
-          conditional: { // Swirl Element
-            value: condSwirlReaction,
-            path: condSwirlReactionPath,
-            header: conditionalHeader("passive1", tr, passive1),
-            description: tr("passive1.description"),
-            name: st("eleSwirled"),
-            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-              fields: [{
-                node: asc1,
-              }, {
-                text: sgt("duration"),
-                value: datamine.passive1.duration,
-                unit: "s"
-              }],
-            }]))
-          },
-        }]
-      },
-      passive2: {
-        name: tr("passive2.name"),
-        img: passive2,
-        sections: [{
-          text: tr("passive2.description"),
-          conditional: { // Swirl Element
-            value: condSkillHitOpponent,
-            path: condSkillHitOpponentPath,
-            header: conditionalHeader("passive1", tr, passive1),
-            description: tr("passive1.description"),
-            name: trm("asc4"),
-            states: {
-              hit: {
-                fields: [{
-                  node: asc4,
-                }, {
-                  text: sgt("duration"),
-                  value: datamine.passive2.duration,
-                  unit: "s"
-                }],
-              }
-            }
-          },
-        }]
-      },
+      passive1: talentTemplate("passive1", tr, passive1, undefined, {
+        // Swirl Element
+        teamBuff: true,
+        value: condSwirlReaction,
+        path: condSwirlReactionPath,
+        name: st("eleSwirled"),
+        canShow: greaterEq(input.asc, 1, unequal(target.charKey, characterKey, 1)),
+        states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+          name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+          fields: [{
+            node: asc1,
+          }, {
+            // TODO: uncomment after `target` bug is fixed
+            // canShow: data => data.get(asc1Condition).value,
+            text: sgt("duration"),
+            value: datamine.passive1.duration,
+            unit: "s",
+          }],
+        }]))
+      }),
+      passive2: talentTemplate("passive2", tr, passive2, undefined, {
+        // Swirl element
+        teamBuff: true,
+        value: condSkillHitOpponent,
+        path: condSkillHitOpponentPath,
+        name: trm("asc4"),
+        canShow: greaterEq(input.asc, 4, unequal(target.charKey, characterKey, 1)),
+        states: {
+          hit: {
+            fields: [{
+              node: asc4,
+            }, {
+              text: sgt("duration"),
+              value: datamine.passive2.duration,
+              unit: "s"
+            }],
+          }
+        }
+      }),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),

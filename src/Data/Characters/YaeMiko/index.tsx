@@ -144,77 +144,54 @@ const sheet: ICharacterSheet = {
           }]
         }],
       },
-      skill: {
-        name: tr("skill.name"),
-        img: skill,
-        sections: [{
-          text: tr("skill.description"),
-          fields: [{
-            node: infoMut(dmgFormulas.skill.dmg1, { key: `char_${key}_gen:skill.skillParams.0` }),
-          }, {
-            node: infoMut(dmgFormulas.skill.dmg2, { key: `char_${key}_gen:skill.skillParams.1` }),
-          }, {
-            node: infoMut(dmgFormulas.skill.dmg3, { key: `char_${key}_gen:skill.skillParams.2` }),
-          }, {
-            node: infoMut(dmgFormulas.skill.dmg4, { key: `char_${key}_gen:skill.skillParams.3` }),
-          }, {
-            text: tr("skill.skillParams.4"),
-            value: datamine.skill.duration,
-            unit: "s"
-          }, {
-            text: tr("skill.skillParams.5"),
-            value: datamine.skill.cd,
-          }],
-        },],
-      },
-      burst: {
-        name: tr("burst.name"),
-        img: burst,
-        sections: [{
-          text: tr("burst.description"),
-          fields: [{
-            node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
-          }, {
-            node: infoMut(dmgFormulas.burst.tenkoDmg, { key: `char_${key}_gen:burst.skillParams.1` }),
-          }, {
-            text: tr("burst.skillParams.2"),
-            value: datamine.burst.cd,
-            unit: "s"
-          }, {
-            text: tr("burst.skillParams.3"),
-            value: datamine.burst.enerCost,
-          }]
-        }],
-      },
+      skill: talentTemplate("skill", tr, skill, [{
+        node: infoMut(dmgFormulas.skill.dmg1, { key: `char_${key}_gen:skill.skillParams.0` }),
+      }, {
+        node: infoMut(dmgFormulas.skill.dmg2, { key: `char_${key}_gen:skill.skillParams.1` }),
+      }, {
+        node: infoMut(dmgFormulas.skill.dmg3, { key: `char_${key}_gen:skill.skillParams.2` }),
+      }, {
+        node: infoMut(dmgFormulas.skill.dmg4, { key: `char_${key}_gen:skill.skillParams.3` }),
+      }, {
+        text: tr("skill.skillParams.4"),
+        value: datamine.skill.duration,
+        unit: "s"
+      }, {
+        text: tr("skill.skillParams.5"),
+        value: datamine.skill.cd,
+      }]),
+      burst: talentTemplate("burst", tr, burst, [{
+        node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.tenkoDmg, { key: `char_${key}_gen:burst.skillParams.1` }),
+      }, {
+        text: tr("burst.skillParams.2"),
+        value: datamine.burst.cd,
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.3"),
+        value: datamine.burst.enerCost,
+      }]),
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: talentTemplate("passive2", tr, passive2, [{ node: nodeAsc4 }]),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
-      constellation4: {
-        name: tr("constellation4.name"),
-        img: c4,
-        sections: [{
-          text: tr("constellation4.description"),
-          conditional: {
-            value: condC4,
-            path: condC4Path,
-            teamBuff: true,
-            canShow: greaterEq(input.constellation, 4, 1),
-            header: conditionalHeader("constellation4", tr, passive1),
-            description: tr("constellation4.description"),
-            name: trm("c4"),
-            states: {
-              hit: {
-                fields: [{
-                  node: nodeC4,
-                },]
-              }
-            }
+      constellation4: talentTemplate("constellation4", tr, c4, undefined, {
+        value: condC4,
+        path: condC4Path,
+        teamBuff: true,
+        canShow: greaterEq(input.constellation, 4, 1),
+        name: trm("c4"),
+        states: {
+          hit: {
+            fields: [{
+              node: nodeC4,
+            },]
           }
-        }],
-      },
+        }
+      }),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: talentTemplate("constellation6", tr, c6),
     }

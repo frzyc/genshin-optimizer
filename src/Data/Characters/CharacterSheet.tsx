@@ -75,7 +75,9 @@ export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) =>
   sections: [{
     text: tr(`${talentKey}.description`),
     fields,
-    conditional,
+    conditional: conditional 
+      ? { ...conditional, header: conditionalHeader(talentKey, tr, img), description: tr(`${talentKey}.description`) }
+      : undefined,
   }],
 })
 
