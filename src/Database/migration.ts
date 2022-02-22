@@ -4,6 +4,7 @@ import { allCharacterKeys } from "../Types/consts"
 import { crawlObject, layeredAssignment } from "../Util/Util"
 import { DBStorage } from "./DBStorage"
 import { getDBVersion, setDBVersion } from "./utils"
+import { initialArtifactSortFilter } from "../PageArtifact/ArtifactSort"
 
 // MIGRATION STEP
 // 0. DO NOT change old `migrateV<x>ToV<x+1>` code
@@ -11,7 +12,7 @@ import { getDBVersion, setDBVersion } from "./utils"
 // 2. Call the added `migrateV<x>ToV<x+1>` from `migrate`
 // 3. Update `currentDBVersion`
 
-export const currentDBVersion = 14
+export const currentDBVersion = 15
 
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
@@ -30,6 +31,7 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 12) { migrateV11ToV12(storage); setDBVersion(storage, 12) }
   if (version < 13) { migrateV12ToV13(storage); setDBVersion(storage, 13) }
   if (version < 14) { migrateV13ToV14(storage); setDBVersion(storage, 14) }
+  if (version < 15) { migrateV14ToV15(storage); setDBVersion(storage, 15) }
 
   if (version > currentDBVersion) throw new Error(`Database version ${version} is not supported`)
 
@@ -306,7 +308,7 @@ function migrateV12ToV13(storage: DBStorage) {
   storage.remove("ArtifactDisplay.state")
 }
 
-// 7.5.0 - Present
+// 7.5.0 - 7.8.5
 function migrateV13ToV14(storage: DBStorage) {
   // Migrate conditionalValues due to keys changes
   for (const key of storage.keys) {
@@ -378,5 +380,13 @@ function migrateV13ToV14(storage: DBStorage) {
       character.team = ["", "", ""]
       storage.set(key, character)
     }
+  }
+}
+// 8.0.0 - Present
+function migrateV14ToV15(storage: DBStorage) {
+  const artDisplayState = storage.get("ArtifactDisplay.state")
+  if (artDisplayState) {
+    artDisplayState.filterOption = initialArtifactSortFilter().filterOption
+    storage.set("ArtifactDisplay.state", artDisplayState)
   }
 }

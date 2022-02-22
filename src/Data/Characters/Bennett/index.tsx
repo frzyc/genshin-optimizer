@@ -84,10 +84,10 @@ const atkIncRatio = sum(subscript(input.total.burstIndex, datamine.burst.atkBonu
 const [condInAreaPath, condInArea] = cond(key, "inArea")
 const inArea = equal("inArea", condInArea, 1)
 const inAreaAtk = equal(inArea, 1,
-    prod(atkIncRatio, input.base.atk))
+  prod(atkIncRatio, input.base.atk))
 
 const inAreaA4 = greaterEq(input.asc, 4,
-    equal(inArea, 1, datamine.passive2.cd_red))
+  equal(inArea, 1, datamine.passive2.cd_red))
 
 const c6AndCorrectWep = greaterEq(input.constellation, 6,
   lookup(target.weaponType,
@@ -99,7 +99,7 @@ const inAreaC6Infusion = equalStr(inArea, 1,
 
 const [condUnderHPPath, condUnderHP] = cond(key, "underHP")
 const underHP = greaterEq(input.constellation, 2,
-    equal("underHP", condUnderHP, datamine.constellation2.er_inc))
+  equal("underHP", condUnderHP, datamine.constellation2.er_inc))
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -123,7 +123,7 @@ const dmgFormulas = {
     atkInc: inAreaAtk,
   },
   constellation1: {
-      addlATK: prod(c1Atk, input.base.atk)
+    addlATK: prod(c1Atk, input.base.atk)
   },
   constellation4: {
     dmg: prod(dmgNode("atk", datamine.skill.hold1_2, "skill"), datamine.constellation4.dmg)
@@ -133,22 +133,23 @@ const dmgFormulas = {
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {
-    bonus: {
-        skill: nodeC5,
-        burst: nodeC3,
-    },
-    teamBuff: {
-        premod: {
-            pyro_dmg_: inAreaC6PyroDmg,
-            atk: inAreaAtk,
-        },
-      team: {
-        infusion: inAreaC6Infusion,
-      },
-    },
+  bonus: {
+    skill: nodeC5,
+    burst: nodeC3,
+  },
+  teamBuff: {
     premod: {
-        enerRech_: underHP,
-    }
+      pyro_dmg_: inAreaC6PyroDmg,
+      atk: inAreaAtk,
+    },
+    team: {
+      infusion: inAreaC6Infusion,
+    },
+  },
+  premod: {
+    enerRech_: underHP,
+
+  }
 })
 
 const sheet: ICharacterSheet = {
@@ -198,6 +199,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.press, { key: `char_${key}:skill.pressDMG` }),
       }, {
         text: sgt("press.cd"),
+        unit: "s",
         value: data => calculateSkillCD(data, datamine.skill.cd_press),
       }, {
         // Lvl 1
@@ -206,6 +208,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.hold1_2, { key: `char_${key}:skill.lvl1_2DMG` }),
       }, {
         text: trm("skill.lvl1CD"),
+        unit: "s",
         value: data => calculateSkillCD(data, datamine.skill.cd_hold1),
       }, {
         // Lvl 2
@@ -216,6 +219,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.explosion, { key: `char_${key}:skill.explDMG` }),
       }, {
         text: trm("skill.lvl2CD"),
+        unit: "s",
         value: data => calculateSkillCD(data, datamine.skill.cd_hold2),
       }]),
       burst: talentTemplate("burst", tr, burst, [{
@@ -242,7 +246,7 @@ const sheet: ICharacterSheet = {
           inArea: {
             fields: [{
               text: tr("burst.skillParams.2"),
-              value: data => data.get(atkIncRatio).value*100,
+              value: data => data.get(atkIncRatio).value * 100,
               unit: "%"
             }, {
               node: infoMut(inAreaAtk, { key: `sheet:increase.atk` })
@@ -274,7 +278,7 @@ const sheet: ICharacterSheet = {
       constellation1: talentTemplate("constellation1", tr, c1, [{
         canShow: data => data.get(input.constellation).value >= 1,
         text: trm("additionalATKRatio"),
-        value: datamine.constellation1.atk_inc*100,
+        value: datamine.constellation1.atk_inc * 100,
         unit: "%"
       }, {
         canShow: data => data.get(input.constellation).value >= 1,
@@ -326,9 +330,9 @@ function calculateSkillCD(data: UIData, skillCD: number): string {
   if (data.get(input.asc).value >= 1) {
     cdFactor = 0.80;
   }
-  cdFactor *= (1 - data.get(inAreaA4).value/100);
+  cdFactor *= (1 - data.get(inAreaA4).value / 100);
   if (cdFactor !== 1.00) {
-    result += " - " + (100 - cdFactor*100) + "% = " + skillCD*cdFactor;
+    result += " - " + (100 - cdFactor * 100) + "% = " + skillCD * cdFactor;
   }
   return result;
 }

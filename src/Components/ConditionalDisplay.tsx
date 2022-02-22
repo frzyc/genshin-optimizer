@@ -2,12 +2,12 @@ import { Box, CardContent, CardHeader, Divider, ListItem } from "@mui/material"
 import { useContext } from "react"
 import ConditionalSelector from "../Conditional/ConditionalSelector"
 import { DataContext, dataContextObj } from "../DataContext"
+import { Data } from "../Formula/type"
+import { data as dataNode } from '../Formula/utils'
 import IConditional from "../Types/IConditional_WR"
 import { evalIfFunc } from "../Util/Util"
 import CardDark from "./Card/CardDark"
 import FieldDisplay, { FieldDisplayList } from "./FieldDisplay"
-import { data as dataNode } from '../Formula/utils'
-import { Data } from "../Formula/type"
 
 type ConditionalDisplayProps = {
   conditional: IConditional,
@@ -20,7 +20,7 @@ export default function ConditionalDisplay({ conditional, hideHeader = false, hi
   const dataContext = useContext(DataContext)
   const { data } = dataContext
   // TODO: as Data
-  const canShow = conditional.canShow ? !(fieldContext ? data.get(dataNode(conditional.canShow, { target: fieldContext.data.data[0] } as Data)).isEmpty : data.get(conditional.canShow).isEmpty) : true
+  const canShow = conditional.canShow ? !!(fieldContext ? data.get(dataNode(conditional.canShow, { target: fieldContext.data.data[0] } as Data)).value : data.get(conditional.canShow).value) : true
   if (!canShow) return null
   const condVal = data.get(conditional.value).value
 
