@@ -60,7 +60,7 @@ const datamine = {
 
 } as const
 
-const nodeAsc4 = greaterEq(input.asc, 4, prod(input.premod.eleMas, percent(datamine.passive2.eleMas_dmg_)))
+const nodeAsc4 = greaterEq(input.asc, 4, prod(input.total.eleMas, percent(datamine.passive2.eleMas_dmg_)))
 
 const [condC4Path, condC4] = cond(key, "c4")
 const nodeC4 = greaterEq(input.constellation, 4, equal("hit", condC4, datamine.constellation4.ele_dmg_))
@@ -188,7 +188,7 @@ const sheet: ICharacterSheet = {
           hit: {
             fields: [{
               node: nodeC4,
-            },]
+            }]
           }
         }
       }),
