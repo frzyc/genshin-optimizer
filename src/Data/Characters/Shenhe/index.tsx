@@ -249,7 +249,7 @@ const sheet: ICharacterSheet = {
             states: {
               quill: {
                 fields: [{
-                  node: nodeSkill
+                  node: infoMut(nodeSkill, { variant: "cryo" })
                 }]
               }
             }
