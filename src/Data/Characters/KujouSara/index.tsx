@@ -1,11 +1,10 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { constant, equal, greaterEq, infoMut, lookup, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
+import { constant, equal, greaterEq, infoMut, percent, prod, subscript } from '../../../Formula/utils'
 import { CharacterKey } from '../../../Types/consts'
-import { objectKeyMap } from '../../../Util/Util'
 import { cond, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
-import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -19,11 +18,11 @@ let a = 0, s = 0, b = 0, p2 = 0
 const datamine = {
   normal: {
     hitArr: [
-      skillParam_gen.auto[a++], // 1
-      skillParam_gen.auto[a++], // 2
-      skillParam_gen.auto[a++], // 3
-      skillParam_gen.auto[a++], // 4
-      skillParam_gen.auto[a++], // 5
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
     ]
   },
   charged: {
@@ -59,6 +58,13 @@ const datamine = {
   },
 } as const
 
+const [condSkillTenguAmbushPath, condSkillTenguAmbush] = cond(key, "TenguJuuraiAmbush")
+const skillTenguAmbush_ = equal("TenguJuuraiAmbush", condSkillTenguAmbush,
+  prod(input.base.atk, subscript(input.total.skillIndex, datamine.skill.atkBonus.map(x => x), { key: '_' })))
+
+const [condC6Path, condC6] = cond(key, "c6")
+const c6ElectroCritDmg_ = equal("c6", condC6, percent(datamine.constellation6.atkInc))
+
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
@@ -70,6 +76,8 @@ const dmgFormulas = {
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
     dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+    dmgC2: prod(dmgNode("atk", datamine.skill.dmg, "skill"), percent(datamine.constellation2.crowfeatherDmg)),
+    skillTenguAmbush_
   },
   burst: {
     titanbreaker: dmgNode("atk", datamine.burst.titanBreakerDmg, "burst"),
@@ -83,6 +91,16 @@ export const data = dataObjForCharacterSheet(key, "electro", "inazuma", data_gen
   bonus: {
     skill: nodeC3,
     burst: nodeC5,
+  },
+  teamBuff: {
+    // should this be in premod or total?
+    premod: {
+      electro_critDMG_: c6ElectroCritDmg_
+    },
+    // should this be in premod or total?
+    total: {
+      atk: skillTenguAmbush_
+    }
   }
 })
 
@@ -142,7 +160,22 @@ const sheet: ICharacterSheet = {
           }, {
             text: tr("skill.skillParams.3"),
             value: `${datamine.skill.cd}s`,
-          }]
+          }],
+          conditional: {
+            value: condSkillTenguAmbush,
+            path: condSkillTenguAmbushPath,
+            name: trm("skill.ambush"),
+            header: conditionalHeader("skill", tr, skill),
+            description: tr("skill.description"),
+            teamBuff: true,
+            states: {
+              TenguJuuraiAmbush: {
+                fields: [{
+                  node: skillTenguAmbush_
+                }]
+              }
+            }
+          },
         }]
       },
       burst: talentTemplate("burst", tr, burst, [{
@@ -157,14 +190,36 @@ const sheet: ICharacterSheet = {
         value: `${datamine.burst.enerCost}`,
       }]),
       passive1: talentTemplate("passive1", tr, passive1),
-      passive2: talentTemplate("passive2", tr, passive2),
+      passive2: talentTemplate("passive2", tr, passive2, [{
+        canShow: data => data.get(input.asc).value >= 4,
+        text: trm("a4.enerRest"),
+        value: (data) => {
+          return `${~~((data.get(input.total.enerRech_).value * 100 / (datamine.passive2.energyGen * 100))) * (datamine.passive2.energyGen)}`
+        }
+      }]),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
-      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation2: talentTemplate("constellation2", tr, c2, [{
+        canShow: data => data.get(input.constellation).value >= 2,
+        node: infoMut(dmgFormulas.skill.dmgC2, { key: `char_${key}_gen:skill.skillParams.0` }),
+      }]),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
-      constellation6: talentTemplate("constellation6", tr, c6),
+      constellation6: talentTemplate("constellation6", tr, c6, undefined, {
+        value: condC6,
+        path: condC6Path,
+        teamBuff: true,
+        canShow: greaterEq(input.constellation, 6, 1),
+        name: trm("c6.electroCritDmg"),
+        states: {
+          c6: {
+            fields: [{
+              node: c6ElectroCritDmg_,
+            }]
+          }
+        }
+      }),
     },
   },
 };
