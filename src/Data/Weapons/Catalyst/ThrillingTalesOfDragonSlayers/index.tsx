@@ -1,6 +1,4 @@
 import { WeaponData } from 'pipeline'
-import ColorText from '../../../../Components/ColoredText'
-import { Translate } from '../../../../Components/Translate'
 import { input } from '../../../../Formula'
 import { equal, subscript, unequal } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'

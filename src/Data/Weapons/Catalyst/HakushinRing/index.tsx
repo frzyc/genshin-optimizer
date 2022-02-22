@@ -13,7 +13,7 @@ import icon from './Icon.png'
 
 const key: WeaponKey = "HakushinRing"
 const data_gen = data_gen_json as WeaponData
-const [tr, trm] = trans("weapon", key)
+const [tr] = trans("weapon", key)
 
 const refinementEleBonusSrc = [0.1, 0.125, 0.15, 0.175, 0.2]
 
