@@ -12,16 +12,15 @@ import icon from './Icon.png'
 
 const key: WeaponKey = "AquilaFavonia"
 const data_gen = data_gen_json as WeaponData
-const atkInc = [0.2, 0.25, 0.3, 0.35, 0.4]
 const atkDealt = [2, 2.3, 2.6, 2.9, 3.2]
 const hpRegen = [1, 1.15, 1.3, 1.45, 1.6]
 const [condPath, condNode] = cond(key, "FalconOfTheWest")
 
-const atk_ = subscript(input.weapon.refineIndex, atkInc)
-const heal = equal(condNode, 'on', prod(subscript(input.weapon.refineIndex, hpRegen), input.total.atk))
+const atk_ = subscript(input.weapon.refineIndex, data_gen.addProps.map(x => x.atk_ ?? NaN))
+const heal = equal(condNode, 'on', prod(subscript(input.weapon.refineIndex, hpRegen), input.premod.atk))
 // TODO: Is this the correct calculation for the passive DMG?
 // Currently set to 'normal' because I don't have Aquila and can't test if the damage can be elemental or whatever
-const dmg = equal(condNode, 'on', customDmgNode(prod(subscript(input.weapon.refineIndex, atkDealt), input.total.atk), 'normal'))
+const dmg = equal(condNode, 'on', customDmgNode(prod(subscript(input.weapon.refineIndex, atkDealt), input.premod.atk), 'normal'))
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
