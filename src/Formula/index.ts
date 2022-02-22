@@ -24,7 +24,9 @@ const allModStats = [
 ]
 const allNonModStats = [
   ...allArtNonModStats,
-  ...(["all", ...allMoves] as const).map(x => `${x}_dmgInc` as const),
+  ...(["allElements", ...allElements] as const).flatMap(ele => 
+    ([...allMoves] as const).map(move => `${ele}_${move}_dmgInc` as const)
+  ),
   ...([...allElements] as const).map(x => `${x}_critDMG_` as const),
   ...allElements.map(x => `${x}_res_` as const),
   ...allMoves.map(x => `${x}_critRate_` as const),
@@ -181,8 +183,11 @@ const common: Data = {
       lookup(hit.ele, objectKeyMap(allElements, ele => total[`${ele}_dmg_`]), naught)
     ),
     dmgInc: sum(
-      total.all_dmgInc,
-      lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmgInc`]), NaN)
+      total.allElements_elemental_dmgInc,
+      lookup(hit.ele, objectKeyMap(allElements, element => sum(
+        total[`${element}_allMoves_dmgInc`],
+        lookup(hit.move, objectKeyMap(allMoves, move => total[`${element}_${move}_dmgInc`]), NaN)
+      )), NaN)
     ),
     dmg: prod(
       sum(hit.base, hit.dmgInc),
