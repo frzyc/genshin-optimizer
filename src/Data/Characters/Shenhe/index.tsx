@@ -212,7 +212,7 @@ const sheet: ICharacterSheet = {
           }]
         }],
       },
-      skill: {
+      skill: { // Cannot use talentTemplate because this has multiple sections.
         name: tr("skill.name"),
         img: skill,
         sections: [{
@@ -299,7 +299,7 @@ const sheet: ICharacterSheet = {
           }
         }],
       },
-      burst: {
+      burst: { // Cannot use talentTemplate because this has multiple sections
         name: tr("burst.name"),
         img: burst,
         sections: [{
@@ -326,6 +326,8 @@ const sheet: ICharacterSheet = {
             value: condBurst,
             path: condBurstPath,
             name: tr("burst.name"),
+            header: conditionalHeader("burst", tr, burst),
+            description: tr("burst.description"),
             states: {
               burst: {
                 fields: [{

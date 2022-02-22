@@ -3,7 +3,7 @@ import { input, tally } from '../../../Formula'
 import { equal, greaterEq, infoMut, prod, subscript, sum } from '../../../Formula/utils'
 import { allElements, CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, trans } from '../../SheetUtil'
-import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode, shieldNodeTalent } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
@@ -188,8 +188,6 @@ const sheet: ICharacterSheet = {
         value: datamine.burst.enerCost,
       }], {
         teamBuff: true,
-        header: conditionalHeader("burst", tr, burst),
-        description: tr("burst.description"),
         value: condBurst,
         path: condBurstPath,
         name: trm("burst"),
@@ -216,7 +214,7 @@ const sheet: ICharacterSheet = {
       passive2: talentTemplate("passive2", tr, passive2, [{ node: infoMut(nodeA4, { key: `char_${key}:a4Inc_` }) }]),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
-      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation2: talentTemplate("constellation2", tr, c2, [{ node: nodeC2 }]),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4, undefined, {
         canShow: greaterEq(input.constellation, 4, 1),

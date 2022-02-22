@@ -18,7 +18,7 @@ import KeyMap, { valueString } from '../KeyMap';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import usePromise from '../ReactHooks/usePromise';
 import useTeamData from '../ReactHooks/useTeamData';
-import { ICachedArtifact } from '../Types/artifact_WR';
+import { ICachedArtifact } from '../Types/artifact';
 import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '../Types/consts';
 import { ICachedWeapon } from '../Types/weapon_WR';
 import WeaponSheet from '../Data/Weapons/WeaponSheet';

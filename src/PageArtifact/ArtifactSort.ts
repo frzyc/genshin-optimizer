@@ -3,7 +3,7 @@ import { allArtifactRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, Chara
 import { FilterConfigs, SortConfigs } from "../Util/SortByFilters";
 import Artifact from "../Data/Artifacts/Artifact";
 import { probability } from "./RollProbability";
-import { SubstatKey } from "../Types/artifact_WR";
+import { SubstatKey } from "../Types/artifact";
 export const artifactSortKeys = ["rarity", "level", "artsetkey", "efficiency", "mefficiency", "probability"] as const
 export const artifactSortKeysTC = ["probability"] as const
 export type ArtifactSortKey = typeof artifactSortKeys[number]

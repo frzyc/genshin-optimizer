@@ -3,7 +3,7 @@ import { input } from "../../../Formula/index"
 import { constant, equal, greaterEq, infoMut, min, percent, prod, subscript, sum } from "../../../Formula/utils"
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, st, trans } from '../../SheetUtil'
-import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
@@ -164,78 +164,60 @@ const sheet: ICharacterSheet = {
           }]
         }],
       },
-      skill: {
-        name: tr("skill.name"),
-        img: skill,
-        sections: [{
-          text: tr("skill.description"),
-          fields: [{
-            node: infoMut(dmgFormulas.skill.press1, { key: `char_${key}_gen:skill.skillParams.0` }),
-            textSuffix: "(1)"
-          }, {
-            node: infoMut(dmgFormulas.skill.press2, { key: `char_${key}_gen:skill.skillParams.0` }),
-            textSuffix: "(2)"
-          }, {
-            text: tr("skill.skillParams.2"),
-            value: data => data.get(input.constellation).value >= 2
-              ? `${datamine.skill.duration}s + ${datamine.constellation2.skill_duration}`
-              : `${datamine.skill.duration}`,
-            unit: "s"
-          }, {
-            text: tr("skill.skillParams.3"),
-            value: datamine.skill.cd,
-            unit: "s"
-          }],
-          conditional: {
-            teamBuff: true,
-            value: condSkill,
-            path: condSkillPath,
-            header: conditionalHeader("skill", tr, skill),
-            description: tr("skill.description"),
-            name: trm("skillCond"),
-            states: {
-              on: {
-                fields: [{
-                  node: dmgFormulas.skill.dmgRed_,
-                }]
-              }
-            }
+      skill: talentTemplate("skill", tr, skill, [{
+        node: infoMut(dmgFormulas.skill.press1, { key: `char_${key}_gen:skill.skillParams.0` }),
+        textSuffix: "(1)"
+      }, {
+        node: infoMut(dmgFormulas.skill.press2, { key: `char_${key}_gen:skill.skillParams.0` }),
+        textSuffix: "(2)"
+      }, {
+        text: tr("skill.skillParams.2"),
+        value: data => data.get(input.constellation).value >= 2
+          ? `${datamine.skill.duration}s + ${datamine.constellation2.skill_duration}`
+          : `${datamine.skill.duration}`,
+        unit: "s"
+      }, {
+        text: tr("skill.skillParams.3"),
+        value: datamine.skill.cd,
+        unit: "s"
+      }], {
+        teamBuff: true,
+        value: condSkill,
+        path: condSkillPath,
+        name: trm("skillCond"),
+        states: {
+          on: {
+            fields: [{
+              node: dmgFormulas.skill.dmgRed_,
+            }]
           }
-        }]
-      },
-      burst: {
-        name: tr("burst.name"),
-        img: burst,
-        sections: [{
-          text: tr("burst.description"),
-          fields: [{
-            text: tr("burst.skillParams.2"),
-            value: datamine.burst.cd,
-            unit: "s"
-          }, {
-            text: tr("burst.skillParams.3"),
-            value: datamine.burst.cost,
-          }],
-          conditional: {
-            value: condBurst,
-            path: condBurstPath,
-            name: trm("burstCond"),
-            states: {
-              on: {
-                fields: [{
-                  node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
-                }, {
-                  text: tr("burst.skillParams.1"),
-                  value: datamine.burst.duration,
-                  unit: "s"
-                }, {
-                  node: nodeC4
-                }]
-              }
-            }
-          },
-        }]
-      },
+        }
+      }),
+      burst: talentTemplate("burst", tr, burst, [{
+        text: tr("burst.skillParams.2"),
+        value: datamine.burst.cd,
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.3"),
+        value: datamine.burst.cost,
+      }], {
+        value: condBurst,
+        path: condBurstPath,
+        name: trm("burstCond"),
+        states: {
+          on: {
+            fields: [{
+              node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
+            }, {
+              text: tr("burst.skillParams.1"),
+              value: datamine.burst.duration,
+              unit: "s"
+            }, {
+              node: nodeC4
+            }]
+          }
+        }
+      }),
       passive1: talentTemplate("passive1", tr, passive1, [{
         node: infoMut(dmgFormulas.passive1.healing, { key: `sheet_gen:healing`, variant: "success" }),
       },]),
@@ -250,8 +232,6 @@ const sheet: ICharacterSheet = {
         path: condC2Path,
         teamBuff: true,
         name: trm("c2Cond"),
-        header: conditionalHeader("constellation2", tr, c2),
-        description: tr("constellation2.description"),
         states: {
           on: {
             fields: [{

@@ -124,29 +124,20 @@ export const faElementalMastery = {
 	]
 } as const
 
-// Max-HP stacked SVG (primary = base shape, secondary = flair)
-export const faHpPrimary = {
+// Max-HP stacked SVG
+export const faHp = {
 	prefix: 'faga',
-	iconName: "hp_primary",
+	iconName: "hp",
 	icon: [
 		11.104, 14,
 		[],
 		null,
-		"M2.052,7.654A.978.978,0,0,1,2.5,7.083c1.511-.85,3.586,2.117,6.544.548C10.971,13.714.151,13.878,2.052,7.654ZM5.552,14C2.177,14-1.2,11.579.416,6.74A18.543,18.543,0,0,1,5.121.213.748.748,0,0,1,5.552,0a.751.751,0,0,1,.431.212A18.543,18.543,0,0,1,10.688,6.74C12.3,11.579,8.927,14,5.552,14Zm.22-12.19a.639.639,0,0,0-.22-.075h0a.649.649,0,0,0-.221.075c-1.71,1.324-4.08,5.282-3.941,7.4a4.019,4.019,0,0,0,4.162,3.543h0A4.019,4.019,0,0,0,9.714,9.215C9.853,7.092,7.483,3.134,5.772,1.81Z"
+		[
+			"M6.534,8.03A12.566,12.566,0,0,1,8.107,6.521c.569-.413.94,1.11.94,1.11A3.731,3.731,0,0,1,6.534,8.03Z",
+			"M2.052,7.654A.978.978,0,0,1,2.5,7.083c1.511-.85,3.586,2.117,6.544.548C10.971,13.714.151,13.878,2.052,7.654ZM5.552,14C2.177,14-1.2,11.579.416,6.74A18.543,18.543,0,0,1,5.121.213.748.748,0,0,1,5.552,0a.751.751,0,0,1,.431.212A18.543,18.543,0,0,1,10.688,6.74C12.3,11.579,8.927,14,5.552,14Zm.22-12.19a.639.639,0,0,0-.22-.075h0a.649.649,0,0,0-.221.075c-1.71,1.324-4.08,5.282-3.941,7.4a4.019,4.019,0,0,0,4.162,3.543h0A4.019,4.019,0,0,0,9.714,9.215C9.853,7.092,7.483,3.134,5.772,1.81Z",//primary
+		]
 	]
 } as const
-
-export const faHpSecondary = {
-	prefix: 'faga',
-	iconName: "hp_secondary",
-	icon: [
-		11.104, 14,
-		[],
-		null,
-		"M6.534,8.03A12.566,12.566,0,0,1,8.107,6.521c.569-.413.94,1.11.94,1.11A3.731,3.731,0,0,1,6.534,8.03Z"
-	]
-} as const
-// Max-HP stacked End
 
 export const faMaxStamina = {
 	prefix: 'faga',
@@ -163,29 +154,22 @@ export const faMaxStamina = {
 
 // Advanced Stats
 
-// CD Reducation stacked SVG (primary = base shape, secondary = flair)
-export const faCdReductionPrimary = {
+// CD Reducation stacked SVG
+export const faCdReduction = {
 	prefix: 'faga',
-	iconName: "CdReduction_primary",
+	iconName: "CdReduction",
 	icon: [
 		14, 14,
 		[],
 		null,
-		"M14,7A7,7,0,0,1,2.986,12.733L5.333,9.381A2.907,2.907,0,1,0,7,4.092V0a7,7,0,0,1,7,7"
+		[
+			"M5.333,9.381,2.986,12.733A7,7,0,0,1,.356,4.8l4.054.881a2.905,2.905,0,0,0,.923,3.7Z",
+			"M14,7A7,7,0,0,1,2.986,12.733L5.333,9.381A2.907,2.907,0,1,0,7,4.092V0a7,7,0,0,1,7,7",//primary
+		]
+
 	]
 } as const
 
-export const faCdReductionSecondary = {
-	prefix: 'faga',
-	iconName: "CdReduction_secondary",
-	icon: [
-		14, 14,
-		[],
-		null,
-		"M5.333,9.381,2.986,12.733A7,7,0,0,1,.356,4.8l4.054.881a2.905,2.905,0,0,0,.923,3.7Z"
-	]
-} as const
-// CD Reduction stacked end
 
 export const faCritRate = {
 	prefix: 'faga',
@@ -198,29 +182,22 @@ export const faCritRate = {
 	]
 } as const
 
-// Energy Recharge stacked SVG (primary = base shape, secondary = flair) 
-export const faEnergyRechargePrimary = {
+// Energy Recharge stacked SVG
+export const faEnergyRecharge = {
 	prefix: 'faga',
-	iconName: "EnergyRecharge_primary",
+	iconName: "EnergyRecharge",
 	icon: [
 		14, 13.282,
 		[],
 		null,
-		"M14,6.641A6.642,6.642,0,0,1,.928,8.3h0L0,8.737.961,4.8l.012.012L2.392,6.3l1.37,1.433-1.23.143A4.981,4.981,0,1,0,7.359,1.66V0A6.641,6.641,0,0,1,14,6.641Z"
-	]
-} as const
+		[
+			"M2.392,6.3.973,4.813A6.643,6.643,0,0,1,7.359,0V1.66A4.98,4.98,0,0,0,2.392,6.3Z",
+			"M14,6.641A6.642,6.642,0,0,1,.928,8.3h0L0,8.737.961,4.8l.012.012L2.392,6.3l1.37,1.433-1.23.143A4.981,4.981,0,1,0,7.359,1.66V0A6.641,6.641,0,0,1,14,6.641Z",//primary
 
-export const faEnergyRechargeSecondary = {
-	prefix: 'faga',
-	iconName: "EnergyRecharge_secondary",
-	icon: [
-		14, 13.282,
-		[],
-		null,
-		"M2.392,6.3.973,4.813A6.643,6.643,0,0,1,7.359,0V1.66A4.98,4.98,0,0,0,2.392,6.3Z"
+		]
+
 	]
 } as const
-// Energy Recharge stacked end
 
 export const faHealingBonus = {
 	prefix: 'faga',

@@ -1,4 +1,4 @@
-import { ICachedArtifact, MainStatKey, StatKey, SubstatKey } from "./artifact_WR"
+import { ICachedArtifact, MainStatKey, StatKey, SubstatKey } from "./artifact"
 import { ArtifactSetKey, SetNum, SlotKey } from "./consts"
 import { BonusStats, ICalculatedStats } from "./stats"
 

@@ -273,6 +273,7 @@ const sheet: ICharacterSheet = {
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4, undefined, {
         // Hit by burst
+        teamBuff: true,
         canShow: greaterEq(input.constellation, 4, 1),
         value: condAfterBurst,
         path: condAfterBurstPath,
