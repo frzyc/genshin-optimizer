@@ -1,31 +1,51 @@
 import { WeaponData } from 'pipeline'
-import { getTalentStatKey } from '../../../../PageBuild/Build'
-import ColorText from '../../../../Components/ColoredText'
 import { Translate } from '../../../../Components/Translate'
-import Stat from '../../../../Stat'
-import { IWeaponSheet } from '../../../../Types/weapon'
+import { input } from '../../../../Formula'
+import { equal, prod, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { cond, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
+import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const key: WeaponKey = "CinnabarSpindle"
+const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
+const eleDmgIncSrc = [0.4, 0.5, 0.6, 0.7, 0.8]
+
+const [condPassivePath, condPassive] = cond(key, "SpotlessHeart")
+
+// Is this the right formula? Previous version also takes in elemental modifiers it seems
+// Should it be input.total or should it be input.premod?
+const skill_dmgInc = equal("on", condPassive, prod(subscript(input.weapon.refineIndex, eleDmgIncSrc), input.premod.def))
+
+// Should this be in premod or total?
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    skill_dmgInc
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
     conditional: {
-      key: "e",
-      name: <Translate ns="weapon_CinnabarSpindle_gen" key18="passiveName" />,
-      fields: [{
-        text: <Translate ns="weapon_CinnabarSpindle" key18="name" />,
-        formulaText: stats => <span>{data.defConv[stats.weapon.refineIndex]}% {Stat.printStat("finalDEF", stats, true)} * {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
-        formula: formula.skill,
-        variant: stats => stats.characterEle
-      }, {
-        text: <ColorText color="warning">The Elemental Skill DMG increase is not currently being added to the character's skill damage as a singular damage number, pending future implemention.</ColorText>
-      }],
+      value: condPassive,
+      path: condPassivePath,
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
+      name: <Translate ns="weapon_CinnabarSpindle" key18="name" />,
+      states: {
+        on: {
+          fields: [{
+            node: skill_dmgInc
+          }]
+        }
+      }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)
