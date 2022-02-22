@@ -185,7 +185,7 @@ const common: Data = {
     dmgInc: sum(
       total.allElements_elemental_dmgInc,
       lookup(hit.ele, objectKeyMap(allElements, element => sum(
-        total[`${element}_allMoves_dmgInc`],
+        total[`${element}_elemental_dmgInc`],
         lookup(hit.move, objectKeyMap(allMoves, move => total[`${element}_${move}_dmgInc`]), NaN)
       )), NaN)
     ),
