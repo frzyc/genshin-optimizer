@@ -15,59 +15,6 @@ const statMap = {
   dmgInc: "Total DMG Increase",
   all_dmg_: "Common DMG Bonus",
   allElements_elemental_dmgInc: "Common DMG Increase",
-  cryo_elemental_dmgInc: "Cryo Move DMG Increase",
-  pyro_elemental_dmgInc: "Pyro Move DMG Increase",
-  hydro_elemental_dmgInc: "Hydro Move DMG Increase",
-  dendro_elemental_dmgInc: "Dendro Move DMG Increase",
-  electro_elemental_dmgInc: "Electro Move DMG Increase",
-  anemo_elemental_dmgInc: "Anemo Move DMG Increase",
-  geo_elemental_dmgInc: "Geo Move DMG Increase",
-  physical_elemental_dmgInc: "Physical Move DMG Increase",
-  cryo_normal_dmgInc: "Cryo Normal DMG Increase",
-  pyro_normal_dmgInc: "Pyro Normal DMG Increase",
-  hydro_normal_dmgInc: "Hydro Normal DMG Increase",
-  dendro_normal_dmgInc: "Dendro Normal DMG Increase",
-  electro_normal_dmgInc: "Electro Normal DMG Increase",
-  anemo_normal_dmgInc: "Anemo Normal DMG Increase",
-  geo_normal_dmgInc: "Geo Normal DMG Increase",
-  physical_normal_dmgInc: "Physical Normal DMG Increase",
-  allElements_normal_dmgInc: "Normal DMG Increase",
-  cryo_charged_dmgInc: "Cryo Charged DMG Increase",
-  pyro_charged_dmgInc: "Pyro Charged DMG Increase",
-  hydro_charged_dmgInc: "Hydro Charged DMG Increase",
-  dendro_charged_dmgInc: "Dendro Charged DMG Increase",
-  electro_charged_dmgInc: "Electro Charged DMG Increase",
-  anemo_charged_dmgInc: "Anemo Charged DMG Increase",
-  geo_charged_dmgInc: "Geo Charged DMG Increase",
-  physical_charged_dmgInc: "Physical Charged DMG Increase",
-  allElements_charged_dmgInc: "Charged DMG Increase",
-  cryo_plunging_dmgInc: "Cryo Plunging DMG Increase",
-  pyro_plunging_dmgInc: "Pyro Plunging DMG Increase",
-  hydro_plunging_dmgInc: "Hydro Plunging DMG Increase",
-  dendro_plunging_dmgInc: "Dendro Plunging DMG Increase",
-  electro_plunging_dmgInc: "Electro Plunging DMG Increase",
-  anemo_plunging_dmgInc: "Anemo Plunging DMG Increase",
-  geo_plunging_dmgInc: "Geo Plunging DMG Increase",
-  physical_plunging_dmgInc: "Physical Plunging DMG Increase",
-  allElements_plunging_dmgInc: "Plunging DMG Increase",
-  cryo_skill_dmgInc: "Cryo Skill DMG Increase",
-  pyro_skill_dmgInc: "Pyro Skill DMG Increase",
-  hydro_skill_dmgInc: "Hydro Skill DMG Increase",
-  dendro_skill_dmgInc: "Dendro Skill DMG Increase",
-  electro_skill_dmgInc: "Electro Skill DMG Increase",
-  anemo_skill_dmgInc: "Anemo Skill DMG Increase",
-  geo_skill_dmgInc: "Geo Skill DMG Increase",
-  physical_skill_dmgInc: "Physical Skill DMG Increase",
-  allElements_skill_dmgInc: "Skill DMG Increase",
-  cryo_burst_dmgInc: "Cryo Burst DMG Increase",
-  pyro_burst_dmgInc: "Pyro Burst DMG Increase",
-  hydro_burst_dmgInc: "Hydro Burst DMG Increase",
-  dendro_burst_dmgInc: "Dendro Burst DMG Increase",
-  electro_burst_dmgInc: "Electro Burst DMG Increase",
-  anemo_burst_dmgInc: "Anemo Burst DMG Increase",
-  geo_burst_dmgInc: "Geo Burst DMG Increase",
-  physical_burst_dmgInc: "Geo Burst DMG Increase",
-  allElements_burst_dmgInc: "Geo Burst DMG Increase",
   weakspotDMG_: "Weakspot DMG",
   incHeal_: "Incoming Healing Bonus",
   shield_: "Shield Strength",
@@ -130,7 +77,13 @@ Object.entries(elementalData).forEach(([e, { name }]) => {
   statMap[`${e}_res_`] = `${name} DMG RES`
 
   statMap[`${e}_enemyRes_`] = `Enemy ${name} DMG RES`
+  for (const move in hitMoves) {
+    statMap[`${e}_${move}_dmgInc`] = `${name} ${hitMoves[move]} DMG Increase`
+  }
 })
+for (const move in hitMoves) {
+  statMap[`allElements_${move}_dmgInc`] = `${hitMoves[move]} DMG Increase`
+}
 
 export type HitMoveDmgKey = `${HitMoveKey}_dmg_`
 export const allHitMoveDmgKeys = Object.keys(hitMoves).map(h => `${h}_dmg_`) as HitMoveDmgKey[]
