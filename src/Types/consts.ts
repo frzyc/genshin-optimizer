@@ -92,7 +92,7 @@ export const allCharacterKeys = [
   // "Sayu",
   "Shenhe",
   // "Yoimiya",
-  // "KujouSara",
+  "KujouSara",
   // "Aloy",
   // "SangonomiyaKokomi",
   // "Thoma",
