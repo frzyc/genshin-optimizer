@@ -138,7 +138,7 @@ export default function ArtifactDisplay(props) {
       cancelEdit={cancelEditArtifact}
     />
     <ArtifactFilter filterOption={filterOption} filterOptionDispatch={filterOptionDispatch} filterDispatch={stateDispatch}
-      numShowing={artifactIdsToShow.length} total={totalArtNum} />
+      numShowing={artifactIds.length} total={totalArtNum} />
     {showProbability && <ProbabilityFilter probabilityFilter={probabilityFilter} setProbabilityFilter={setProbabilityFilter} />}
     <CardDark ref={invScrollRef}>
       <CardContent>

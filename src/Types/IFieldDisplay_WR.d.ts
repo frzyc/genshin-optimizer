@@ -1,4 +1,5 @@
 import { NumNode } from "../Formula/type";
+import { UIData } from "../Formula/uiData";
 import { BasicStats, ICalculatedStats } from "./stats";
 
 export interface IBasicFieldDisplay {
