@@ -1,5 +1,3 @@
-import { arch } from "os";
-import { arrayBuffer } from "stream/consumers";
 import { Translate } from "./Components/Translate";
 import elementalData from "./Data/ElementalData";
 import { amplifyingReactions, AmplifyingReactionsKey, HitMoveKey, hitMoves, transformativeReactions, TransformativeReactionsKey } from "./StatConstants";
