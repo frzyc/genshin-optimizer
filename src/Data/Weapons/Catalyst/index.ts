@@ -6,7 +6,7 @@ import EverlastingMoonglow from './EverlastingMoonglow'
 // import EyeOfPerception from './EyeOfPerception'
 // import FavoniusCodex from './FavoniusCodex'
 // import Frostbearer from './Frostbearer'
-// import HakushinRing from './HakushinRing'
+import HakushinRing from './HakushinRing'
 import KagurasVerity from './KagurasVerity'
 // import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
 // import MagicGuide from './MagicGuide'
@@ -20,7 +20,7 @@ import KagurasVerity from './KagurasVerity'
 // import SkywardAtlas from './SkywardAtlas'
 import SolarPearl from './SolarPearl'
 import TheWidsith from './TheWidsith'
-// import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
+import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
 // import TwinNephrite from './TwinNephrite'
 // import WineAndSong from './WineAndSong'
 const catalyst = {
@@ -32,7 +32,7 @@ const catalyst = {
   // EyeOfPerception,
   // FavoniusCodex,
   // Frostbearer,
-  // HakushinRing,
+  HakushinRing,
   KagurasVerity,
   // LostPrayerToTheSacredWinds,
   // MagicGuide,
@@ -46,7 +46,7 @@ const catalyst = {
   // SkywardAtlas,
   SolarPearl,
   TheWidsith,
-  // ThrillingTalesOfDragonSlayers,
+  ThrillingTalesOfDragonSlayers,
   // TwinNephrite,
   // WineAndSong,
 } as const

@@ -7,7 +7,7 @@ import CrescentPike from './CrescentPike'
 // import DragonsBane from './DragonsBane'
 // import DragonspineSpear from './DragonspineSpear'
 import EngulfingLightning from './EngulfingLightning'
-// import FavoniusLance from './FavoniusLance'
+import FavoniusLance from './FavoniusLance'
 // import Halberd from './Halberd'
 // import IronPoint from './IronPoint'
 // import KitainCrossSpear from './KitainCrossSpear'
@@ -17,7 +17,7 @@ import EngulfingLightning from './EngulfingLightning'
 // import RoyalSpear from './RoyalSpear'
 // import SkywardSpine from './SkywardSpine'
 // import StaffOfHoma from './StaffOfHoma'
-// import TheCatch from './TheCatch'
+import TheCatch from './TheCatch'
 // import VortexVanquisher from './VortexVanquisher'
 // import WavebreakersFin from './WavebreakersFin'
 // import WhiteTassel from './WhiteTassel'
@@ -31,7 +31,7 @@ const polearm = {
   // DragonsBane,
   // DragonspineSpear,
   EngulfingLightning,
-  // FavoniusLance,
+  FavoniusLance,
   // Halberd,
   // IronPoint,
   // KitainCrossSpear,
@@ -41,7 +41,7 @@ const polearm = {
   // RoyalSpear,
   // SkywardSpine,
   // StaffOfHoma,
-  // TheCatch,
+  TheCatch,
   // VortexVanquisher,
   // WavebreakersFin,
   // WhiteTassel,
