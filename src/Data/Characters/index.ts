@@ -4,7 +4,7 @@ import CharacterSheet from './CharacterSheet'
 // import Albedo from './Albedo'
 // import Aloy from './Aloy'
 // import Amber from './Amber'
-// import AratakiItto from './AratakiItto'
+import AratakiItto from './AratakiItto'
 // import Barbara from './Barbara'
 // import Beidou from './Beidou'
 import Bennett from './Bennett'
@@ -53,7 +53,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Albedo,
   // Aloy,
   // Amber,
-  // AratakiItto,
+  AratakiItto,
   // Barbara,
   // Beidou,
   Bennett,
