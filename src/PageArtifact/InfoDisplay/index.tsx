@@ -23,11 +23,11 @@ export default function ArtifactInfoDisplay() {
         <Typography variant="h5">Substat rolls</Typography>
         <Typography gutterBottom>The <b>number of rolls</b> a substat has is shown to the left of the substat. As the number gets higher, the substat is more colorful:<Colors />.</Typography>
 
-        <Typography variant="h5">Substat Efficiency</Typography>
-        <Typography gutterBottom>The Efficiency of an subtat is a percentage of the current value over the highest potential 5<Stars stars={1} /> value. From the Image, the maximum roll value of CRIT DMG is 7.8%. In efficiency: <b>5.8/7.8 = 69.2%.</b></Typography>
+        <Typography variant="h5">Substat Roll Value</Typography>
+        <Typography gutterBottom>The Roll Value(RV) of an subtat is a percentage of the current value over the highest potential 5<Stars stars={1} /> value. From the Image, the maximum roll value of CRIT DMG is 7.8%. In RV: <b>5.8/7.8 = 69.2%.</b></Typography>
 
-        <Typography variant="h5">Current substats Efficiency vs. Maximum Substats Efficiency</Typography>
-        <Typography gutterBottom>When a 5<Stars stars={1} /> have 9(4+5) total rolls, with each of the rolls having the highest value, that is defined as a 100% efficient artifact. However, most of the artifacts are not this lucky. The <b>Current substats Efficiency</b> of an artifact is a percentage over that 100% artifact. The <b>Maximum Substats Efficiency</b> is the maximum possible efficiency an artifact can achieve, if the remaining artifact rolls from upgrades are the hightest possible value.</Typography>
+        <Typography variant="h5">Current Roll Value vs. Maximum Roll Value</Typography>
+        <Typography gutterBottom>When a 5<Stars stars={1} /> have 9(4+5) total rolls, with each of the rolls having the highest value, that is defined as a 900% RV artifact. However, most of the artifacts are not this lucky. The <b>Current RV</b> of an artifact is a percentage over that 100% artifact. The <b>Maximum RV</b> is the maximum possible RV an artifact can achieve, if the remaining artifact rolls from upgrades are the hightest possible value.</Typography>
 
         <Typography variant="h5">Locking an artifact</Typography>
         <Typography>By locking an artifact <FontAwesomeIcon icon={faBan} />, This artifact will not be picked up by the build generator for optimization. An equipped artifact is locked by default.</Typography>
@@ -36,7 +36,7 @@ export default function ArtifactInfoDisplay() {
     <Grid item xs={12} lg={6} xl={7} >
       <Trans t={t} i18nKey="info.section2">
         <Typography variant="h5">Artifact Editor</Typography>
-        <Typography gutterBottom>A fully featured artifact editor, that can accept any 3<Stars stars={1} /> to 5<Stars stars={1} /> Artifact. When a substat is inputted, it can calculate the exact roll values, and from it, the efficiency. It will also make sure that you have the correct number of rolls in the artifact according to the level, along with other metrics of validation.</Typography>
+        <Typography gutterBottom>A fully featured artifact editor, that can accept any 3<Stars stars={1} /> to 5<Stars stars={1} /> Artifact. When a substat is inputted, it can calculate the exact roll values. It will also make sure that you have the correct number of rolls in the artifact according to the level, along with other metrics of validation.</Typography>
 
         <Typography variant="h5">Scan screenshots</Typography>
         <Typography gutterBottom>Manual input is not your cup of tea? You can scan in your artifacts with screenshots! On the Artifact Editor, click the <SqBadge color="info">Show Me How!</SqBadge> button to learn more.</Typography>
@@ -59,17 +59,17 @@ export default function ArtifactInfoDisplay() {
         <Typography variant="h5">Artifact Inventory</Typography>
         <Typography gutterBottom>All your artifacts that you've added to GO is displayed here. The filters here allow you to further refine your view of your artifacts. </Typography>
         <Typography variant="h5">Example: Finding Fodder Artifacts</Typography>
-        <Typography>By utilizing the artifact filter, and the artifact efficiency calculations, you can quickly find artifacts to feed as food.</Typography>
+        <Typography>By utilizing the artifact filter, and the artifact RV, you can quickly find artifacts to feed as food.</Typography>
         <Typography>In this example, the filters are set thusly: </Typography>
         <Typography component="div" >
           <ul>
             <li>Limit level to 0-8.</li>
             <li>Unlocked artifacts in Inventory.</li>
-            <li>Removing the contribution of flat HP, flat DEF and Energy Recharge to efficiency calculations.</li>
-            <li>Sorted by Ascending Max Efficiency.</li>
+            <li>Removing the contribution of flat HP, flat DEF and Energy Recharge to RV calculations.</li>
+            <li>Sorted by Ascending Max Roll Value.</li>
           </ul>
         </Typography>
-        <Typography>This will filter the artifact Inventory by the lowest efficiency artifacts, for desired substats.</Typography>
+        <Typography>This will filter the artifact Inventory by the lowest RV artifacts, for desired substats.</Typography>
       </Trans>
     </Grid>
   </Grid>
