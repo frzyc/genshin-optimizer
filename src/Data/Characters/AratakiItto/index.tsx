@@ -106,7 +106,6 @@ const dmgFormulas = {
   },
   burst: {
     defConv: nodeBurstAtk,
-    atkSpd_: sum(nodeBurstAtkSpd, nodeP1AtkSpd)
   },
 }
 
@@ -126,7 +125,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "inazuma", data_ge
   premod: {
     critDMG_: nodeC6CritDMG,
     atk: nodeBurstAtk,
-    atkSPD_: nodeBurstAtkSpd,
+    atkSPD_: sum(nodeBurstAtkSpd, nodeP1AtkSpd),
     ...allNodeBurstRes
   },
   infusion: nodeBurstInfusion
