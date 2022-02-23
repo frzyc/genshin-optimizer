@@ -27,6 +27,7 @@ interface Info {
   variant?: Variant
   asConst?: true
   pivot?: true
+  fixed?: number
 }
 export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "success"
 
