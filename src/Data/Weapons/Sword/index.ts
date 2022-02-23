@@ -1,36 +1,36 @@
-// import AmenomaKageuchi from './AmenomaKageuchi'
-// import AquilaFavonia from './AquilaFavonia'
+import AmenomaKageuchi from "./AmenomaKageuchi";
+import AquilaFavonia from "./AquilaFavonia";
 // import BlackcliffLongsword from './BlackcliffLongsword'
-// import CinnabarSpindle from './CinnabarSpindle'
+import CinnabarSpindle from "./CinnabarSpindle";
 // import CoolSteel from './CoolSteel'
 // import DarkIronSword from './DarkIronSword'
-import DullBlade from './DullBlade'
+import DullBlade from "./DullBlade";
 // import FavoniusSword from './FavoniusSword'
 // import FesteringDesire from './FesteringDesire'
 // import FilletBlade from './FilletBlade'
-import FreedomSworn from './FreedomSworn'
-// import HarbingerOfDawn from './HarbingerOfDawn'
+import FreedomSworn from "./FreedomSworn";
+import HarbingerOfDawn from "./HarbingerOfDawn";
 // import IronSting from './IronSting'
 // import LionsRoar from './LionsRoar'
-// import MistsplitterReforged from './MistsplitterReforged'
-// import PrimordialJadeCutter from './PrimordialJadeCutter'
+import MistsplitterReforged from "./MistsplitterReforged";
+import PrimordialJadeCutter from "./PrimordialJadeCutter";
 // import PrototypeRancour from './PrototypeRancour'
 // import RoyalLongsword from './RoyalLongsword'
-// import SacrificialSword from './SacrificialSword'
+import SacrificialSword from "./SacrificialSword";
 // import SilverSword from './SilverSword'
 // import SkyriderSword from './SkyriderSword'
-// import SkywardBlade from './SkywardBlade'
-// import SummitShaper from './SummitShaper'
+import SkywardBlade from "./SkywardBlade";
+import SummitShaper from "./SummitShaper";
 // import SwordOfDescension from './SwordOfDescension'
 // import TheAlleyFlash from './TheAlleyFlash'
-// import TheBlackSword from './TheBlackSword'
+import TheBlackSword from "./TheBlackSword";
 // import TheFlute from './TheFlute'
-// import TravelersHandySword from './TravelersHandySword'
+import TravelersHandySword from "./TravelersHandySword";
 const sword = {
-  // AmenomaKageuchi,
-  // AquilaFavonia,
+  AmenomaKageuchi,
+  AquilaFavonia,
   // BlackcliffLongsword,
-  // CinnabarSpindle,
+  CinnabarSpindle,
   // CoolSteel,
   // DarkIronSword,
   DullBlade,
@@ -38,22 +38,22 @@ const sword = {
   // FesteringDesire,
   // FilletBlade,
   FreedomSworn,
-  // HarbingerOfDawn,
+  HarbingerOfDawn,
   // IronSting,
   // LionsRoar,
-  // MistsplitterReforged,
-  // PrimordialJadeCutter,
+  MistsplitterReforged,
+  PrimordialJadeCutter,
   // PrototypeRancour,
   // RoyalLongsword,
-  // SacrificialSword,
+  SacrificialSword,
   // SilverSword,
   // SkyriderSword,
-  // SkywardBlade,
-  // SummitShaper,
+  SkywardBlade,
+  SummitShaper,
   // SwordOfDescension,
   // TheAlleyFlash,
-  // TheBlackSword,
+  TheBlackSword,
   // TheFlute,
-  // TravelersHandySword,
-} as const
-export default sword
+  TravelersHandySword,
+} as const;
+export default sword;

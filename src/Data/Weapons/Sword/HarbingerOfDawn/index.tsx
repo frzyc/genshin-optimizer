@@ -1,22 +1,47 @@
 import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { Translate } from '../../../../Components/Translate'
+import { input } from '../../../../Formula'
+import { equal, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { cond, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-const refinementVals = [14, 17.5, 21, 24.5, 28]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "HarbingerOfDawn"
+const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
+const critRateSrc_ = [0.14, 0.175, 0.21, 0.245, 0.28]
+
+const [condPassivePath, condPassive] = cond(key, "SkyPiercingMight")
+const critRate_ = equal("on", condPassive, subscript(input.weapon.refineIndex, critRateSrc_))
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    critRate_,
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
     conditional: {
-      key: "v",
-      name: "HP > 90%",
-      maxStack: 1,
-      stats: stats => ({
-        critRate_: refinementVals[stats.weapon.refineIndex]
-      })
+      value: condPassive,
+      path: condPassivePath,
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
+      name: <Translate ns="sheet" key18="morePercentHP" values={{ percent: 90 }} />,
+      states: {
+        on: {
+          fields: [{
+            node: critRate_
+          }]
+        }
+      }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

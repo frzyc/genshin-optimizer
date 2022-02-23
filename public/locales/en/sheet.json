@@ -5,6 +5,7 @@
   "brHits_one": "({{count}} Hit)",
   "brHits_other": "({{count}} Hits)",
   "lessPercentHP": "< {{percent}}% HP",
+  "morePercentHP": "> {{percent}}% HP",
   "stack_one": "{{count}} Stack",
   "stack_other": "{{count}} Stacks",
   "afterDefeatEnemy": "After defeating an opponent",
@@ -36,6 +37,7 @@
   "incInterRes": "Increase resistance to interruption",
   "charges": "Charges",
   "activeCharField": "Active Character in field",
+  "takeDmg": "On taking DMG",
   "infusion": {
     "pyro": "Pyro Infusion",
     "cryo": "Cryo Infusion",

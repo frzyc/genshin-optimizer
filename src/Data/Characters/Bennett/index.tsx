@@ -1,7 +1,8 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
-import { constant, equal, equalStr, greaterEq, greaterEqStr, infoMut, lookup, prod, subscript, sum, unequal } from '../../../Formula/utils'
+import { UIData } from '../../../Formula/uiData'
+import { constant, equal, equalStr, greaterEq, infoMut, lookup, prod, subscript, sum } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
@@ -9,7 +10,6 @@ import { dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
-import { UIData } from '../../../Formula/uiData'
 
 const data_gen = data_gen_src as CharacterData
 
