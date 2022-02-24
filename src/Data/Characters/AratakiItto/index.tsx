@@ -77,7 +77,7 @@ const [condC4Path, condC4] = cond(key, "constellation4")
 
 const nodeSkillHP = prod(subscript(input.total.skillIndex, datamine.skill.hp, { key: 'hp_' }), input.total.hp)
 const nodeBurstAtk = equal(condBurst, "on", prod(subscript(input.total.burstIndex, datamine.burst.defConv, { key: 'def_' }), input.total.def))
-const nodeBurstAtkSpd = equal(condBurst, "on", datamine.burst.atkSpd)
+const nodeBurstAtkSpd = equal(condBurst, "on", datamine.burst.atkSpd, { key: 'atkSPD_' })
 const allNodeBurstRes = Object.fromEntries(allElementsWithPhy.map(ele => [`${ele}_res_`, equal(condBurst, "on", -datamine.burst.resDec)]))
 const nodeBurstInfusion = equalStr(condBurst, "on", "geo")
 const nodeA4Bonus = greaterEq(input.asc, 4, prod(percent(datamine.passive2.def_), input.total.def))
