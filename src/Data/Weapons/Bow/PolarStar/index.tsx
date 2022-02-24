@@ -1,31 +1,72 @@
 import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { lookup, naught, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { objectKeyMap, range } from '../../../../Util/Util'
+import { cond, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-import { Translate } from '../../../../Components/Translate'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
 
-const ele_dmg = [12, 15, 18, 21, 24]
-const ashen = [[10, 20, 30, 48], [12.5, 25, 37.5, 60], [15, 30, 45, 72], [17.5, 35, 52.8, 84], [20, 40, 60, 96]]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const key: WeaponKey = "PolarStar"
+const data_gen = data_gen_json as WeaponData
+const [tr, trm] = trans("weapon", key)
+const eleSrc = [0.12, 0.15, 0.18, 0.21, 0.24]
+const ashenStack1 = [0.1, 0.125, 0.15, 0.175, 0.2]
+const ashenStack2 = [0.2, 0.25, 0.3, 0.35, 0.4]
+const ashenStack3 = [0.3, 0.375, 0.45, 0.528, 0.6]
+const ashenStack4 = [0.48, 0.6, 0.72, 0.84, 0.96]
+
+const [condPassivePath, condPassive] = cond(key, "GoldenMajesty")
+
+const skill_dmg_ = subscript(input.weapon.refineIndex, eleSrc)
+const burst_dmg_ = subscript(input.weapon.refineIndex, eleSrc)
+const atk_ = lookup(condPassive, {
+  "1": subscript(input.weapon.refineIndex, ashenStack1), "2": subscript(input.weapon.refineIndex, ashenStack2),
+  "3": subscript(input.weapon.refineIndex, ashenStack3), "4": subscript(input.weapon.refineIndex, ashenStack4),
+}, naught)
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    skill_dmg_,
+    burst_dmg_,
+    atk_
+  },
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    skill_dmg_: ele_dmg[stats.weapon.refineIndex],
-    burst_dmg_: ele_dmg[stats.weapon.refineIndex]
-  }),
   document: [{
+    fields: [{
+      node: skill_dmg_,
+    }, {
+      node: burst_dmg_,
+    }],
     conditional: {
-      key: "a",
-      name: <Translate ns="weapon_PolarStar" key18="ashen" />,
-      states: Object.fromEntries([1, 2, 3, 4].map(stacks => [stacks, {
-        name: <Translate ns="sheet" key18="stack" values={{ count: stacks }} />,
-        stats: stats => ({
-          atk_: ashen[stats.weapon.refineIndex][stacks - 1]
-        })
-      }]))
+      value: condPassive,
+      path: condPassivePath,
+      teamBuff: true,
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
+      name: trm("condName"),
+      states: {
+        1: {
+          name: `1 Stack`,
+          fields: [{
+            node: atk_
+          }]
+        },
+        ...objectKeyMap(range(2, 4), i => ({
+          name: `${i} Stacks`,
+          fields: [{
+            node: atk_
+          }]
+        }))
+      }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)
