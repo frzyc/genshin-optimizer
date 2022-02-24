@@ -101,7 +101,7 @@ const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([name, arr]) =>
     [name, dmgNode("atk", arr, "plunging")])),
   skill: {
-    dmg: dmgNode("def" as any, datamine.skill.dmg, "skill"),
+    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
     hp: nodeSkillHP
   },
   burst: {
