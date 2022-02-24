@@ -1,5 +1,4 @@
 import { WeaponData } from 'pipeline'
-import { Translate } from '../../../../Components/Translate'
 import { input } from '../../../../Formula'
 import { equal, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
@@ -12,18 +11,14 @@ import icon from './Icon.png'
 
 const key: WeaponKey = "CinnabarSpindle"
 const data_gen = data_gen_json as WeaponData
-const [tr] = trans("weapon", key)
+const [tr, trm] = trans("weapon", key)
 const eleDmgIncSrc = [0.4, 0.5, 0.6, 0.7, 0.8]
 
 const [condPassivePath, condPassive] = cond(key, "SpotlessHeart")
+const skill_dmgInc = equal("on", condPassive, prod(subscript(input.weapon.refineIndex, eleDmgIncSrc, { key: "_" }), input.premod.def))
 
-// Is this the right formula? Previous version also takes in elemental modifiers it seems
-// Should it be input.total or should it be input.premod?
-const skill_dmgInc = equal("on", condPassive, prod(subscript(input.weapon.refineIndex, eleDmgIncSrc), input.premod.def))
-
-// Should this be in premod or total?
 const data = dataObjForWeaponSheet(key, data_gen, {
-  premod: {
+  premod: { // TODO: should be total
     skill_dmgInc
   }
 })
@@ -37,7 +32,7 @@ const sheet: IWeaponSheet = {
       path: condPassivePath,
       header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
-      name: <Translate ns="weapon_CinnabarSpindle" key18="name" />,
+      name: trm("name"),
       states: {
         on: {
           fields: [{

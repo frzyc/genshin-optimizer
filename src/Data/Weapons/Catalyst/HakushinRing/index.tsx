@@ -27,7 +27,6 @@ const pyro_dmg_ = unequal(input.activeCharKey, input.charKey, equal("pyro", cond
 
 const electro_dmg_ = unequal(input.activeCharKey, input.charKey, lookup(condPassive, { "anemo": eleDmg, "cryo": eleDmg, "geo": eleDmg, "hydro": eleDmg, "pyro": eleDmg }, naught))
 
-// This should be in teambuff: premod right?
 const data = dataObjForWeaponSheet(key, data_gen, {
   teamBuff: {
     premod: {

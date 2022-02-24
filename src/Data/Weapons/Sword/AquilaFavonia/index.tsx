@@ -1,6 +1,6 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { equal, infoMut, prod, subscript } from "../../../../Formula/utils"
+import { constant, equal, infoMut, prod, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { cond, st } from '../../../SheetUtil'
@@ -17,10 +17,10 @@ const hpRegen = [1, 1.15, 1.3, 1.45, 1.6]
 const [condPath, condNode] = cond(key, "FalconOfTheWest")
 
 const atk_ = subscript(input.weapon.refineIndex, data_gen.addProps.map(x => x.atk_ ?? NaN))
-const heal = equal(condNode, 'on', prod(subscript(input.weapon.refineIndex, hpRegen), input.premod.atk))
-// TODO: Is this the correct calculation for the passive DMG?
-// Currently set to 'normal' because I don't have Aquila and can't test if the damage can be elemental or whatever
-const dmg = equal(condNode, 'on', customDmgNode(prod(subscript(input.weapon.refineIndex, atkDealt), input.premod.atk), 'normal'))
+const heal = equal(condNode, 'on', prod(subscript(input.weapon.refineIndex, hpRegen, { key: "_" }), input.premod.atk))
+const dmg = equal(condNode, 'on', customDmgNode(prod(subscript(input.weapon.refineIndex, atkDealt, { key: "_" }), input.premod.atk), "elemental", {
+  hit: { ele: constant("physical") }
+}))
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

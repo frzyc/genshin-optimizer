@@ -2,6 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { infoMut, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
+import { customHealNode } from '../../../Characters/dataUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -15,9 +16,7 @@ const hpRegenSrc = [0.6, 0.7, 0.8, 0.9, 1]
 
 const normal_dmg_ = subscript(input.weapon.refineIndex, autoSrc)
 const charged_dmg_ = subscript(input.weapon.refineIndex, autoSrc)
-// Should this be input.total.atk or input.premod.atk
-// And should this take into account of healing bonuses and whatnot?
-const heal = prod(subscript(input.weapon.refineIndex, hpRegenSrc), input.total.atk)
+const heal = customHealNode(prod(subscript(input.weapon.refineIndex, hpRegenSrc, { key: "_" }), input.total.atk))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

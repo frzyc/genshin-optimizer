@@ -1,9 +1,8 @@
 import { WeaponData } from 'pipeline'
-import { Translate } from '../../../../Components/Translate'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, trans } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -33,7 +32,7 @@ const sheet: IWeaponSheet = {
       path: condPassivePath,
       header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
-      name: <Translate ns="sheet" key18="morePercentHP" values={{ percent: 90 }} />,
+      name: st("morePercentHP", { percent: 90 }),
       states: {
         on: {
           fields: [{
