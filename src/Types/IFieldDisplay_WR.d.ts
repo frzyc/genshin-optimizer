@@ -1,6 +1,7 @@
 import { NumNode } from "../Formula/type";
 import { UIData } from "../Formula/uiData";
 import { BasicStats, ICalculatedStats } from "./stats";
+import { UIData } from "../Formula/uiData"
 
 export interface IBasicFieldDisplay {
   canShow?: (data: UIData) => boolean;

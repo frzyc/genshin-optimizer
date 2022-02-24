@@ -45,7 +45,7 @@ import Xingqiu from './Xingqiu'
 // import Xinyan from './Xinyan'
 import YaeMiko from './YaeMiko'
 // import Yanfei from './Yanfei'
-// import Yoimiya from './Yoimiya'
+import Yoimiya from './Yoimiya'
 import YunJin from './YunJin'
 // import Zhongli from './Zhongli'
 
@@ -94,7 +94,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Xinyan,
   YaeMiko,
   // Yanfei,
-  // Yoimiya,
+  Yoimiya,
   YunJin,
   // Zhongli
 } as const
