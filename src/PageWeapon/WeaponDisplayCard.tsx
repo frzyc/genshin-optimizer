@@ -1,8 +1,7 @@
 import { Lock, LockOpen, SwapHoriz } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, ListItem, MenuItem, Typography } from "@mui/material"
-import { useCallback, useContext, useMemo, useState } from "react"
+import { useCallback, useContext, useEffect, useMemo, useState } from "react"
 import Assets from "../Assets/Assets"
-import CharacterSheet from "../Data/Characters/CharacterSheet"
 import CardDark from "../Components/Card/CardDark"
 import CardLight from "../Components/Card/CardLight"
 import CharacterDropdownButton from "../Components/Character/CharacterDropdownButton"
@@ -17,8 +16,11 @@ import ModalWrapper from "../Components/ModalWrapper"
 import SqBadge from "../Components/SqBadge"
 import { Stars } from "../Components/StarDisplay"
 import WeaponSelectionModal from "../Components/Weapon/WeaponSelectionModal"
-import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from "../Data/LevelData"
+import CharacterSheet from "../Data/Characters/CharacterSheet"
+import { ascensionMaxLevel, lowRarityMilestoneLevels } from "../Data/LevelData"
+import WeaponSheet from "../Data/Weapons/WeaponSheet"
 import { database as localDatabase, DatabaseContext } from "../Database/Database"
+import { DataContext } from "../DataContext"
 import { uiInput as input } from "../Formula"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import usePromise from "../ReactHooks/usePromise"
@@ -27,8 +29,6 @@ import { CharacterKey } from "../Types/consts"
 import { ICachedWeapon } from "../Types/weapon"
 import { clamp } from "../Util/Util"
 import WeaponCard from "./WeaponCard"
-import WeaponSheet from "../Data/Weapons/WeaponSheet"
-import { DataContext } from "../DataContext"
 
 type WeaponStatsEditorCardProps = {
   weaponId: string
@@ -44,7 +44,7 @@ export default function WeaponDisplayCard({
 
   const database = useContext(DatabaseContext)
   const weapon = useWeapon(propWeaponId)
-  const { key = "", level, refinement = 0, ascension = 0, lock, location = "", id } = weapon ?? {}
+  const { key = "", level = 0, refinement = 0, ascension = 0, lock, location = "", id } = weapon ?? {}
   const weaponSheet = usePromise(WeaponSheet.get(key), [key])
   const weaponTypeKey = weaponSheet?.weaponType
 
@@ -73,8 +73,19 @@ export default function WeaponDisplayCard({
     (cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType,
     [weaponSheet],
   )
+
   const [showModal, setshowModal] = useState(false)
   const img = ascension < 2 ? weaponSheet?.img : weaponSheet?.imgAwaken
+
+  //check the levels when switching from a 5* to a 1*, for example.
+  useEffect(() => {
+    if (!weaponSheet || !weaponDispatch) return
+    if (weaponSheet.rarity <= 2 && (level > 70 || ascension > 4)) {
+      const [level, ascension] = lowRarityMilestoneLevels[0]
+      weaponDispatch({ level, ascension })
+    }
+  }, [weaponSheet, weaponDispatch, level, ascension])
+
 
   const weaponUIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   return <CardLight>
@@ -86,14 +97,14 @@ export default function WeaponDisplayCard({
               <WeaponSelectionModal show={showModal} onHide={() => setshowModal(false)} onSelect={k => weaponDispatch({ key: k })} filter={weaponFilter} weaponFilter={initialWeaponFilter} />
               <ButtonGroup>
                 <Button onClick={() => setshowModal(true)} >{weaponSheet?.name ?? "Select a Weapon"}</Button>
-                <DropdownButton title={`Refinement ${refinement}`}>
+                {weaponSheet?.hasRefinement && <DropdownButton title={`Refinement ${refinement}`}>
                   <MenuItem>Select Weapon Refinement</MenuItem>
                   <Divider />
                   {[...Array(5).keys()].map(key =>
                     <MenuItem key={key} onClick={() => weaponDispatch({ refinement: key + 1 })} selected={refinement === (key + 1)} disabled={refinement === (key + 1)}>
                       {`Refinement ${key + 1}`}
                     </MenuItem>)}
-                </DropdownButton>
+                </DropdownButton>}
               </ButtonGroup>
             </Grid>
             <Grid item >
@@ -105,15 +116,15 @@ export default function WeaponDisplayCard({
                     sx={{ width: "100%", height: "100%", pl: 2 }}
                   />
                 </CustomNumberInputButtonGroupWrapper>
-                <Button sx={{ pl: 1 }} disabled={!ambiguousLevel(level)} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
-                <DropdownButton title={"Select Level"} >
-                  {milestoneLevels.map(([lv, as]) => {
+                {weaponSheet && <Button sx={{ pl: 1 }} disabled={!weaponSheet.ambiguousLevel(level)} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>}
+                {weaponSheet && <DropdownButton title={"Select Level"} >
+                  {weaponSheet.milestoneLevels.map(([lv, as]) => {
                     const sameLevel = lv === ascensionMaxLevel[as]
                     const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
                     const selected = lv === level && as === ascension
                     return <MenuItem key={`${lv}/${as}`} selected={selected} disabled={selected} onClick={() => weaponDispatch({ level: lv, ascension: as })}>{lvlstr}</MenuItem>
                   })}
-                </DropdownButton>
+                </DropdownButton>}
               </ButtonGroup>
             </Grid>
             <Grid item>

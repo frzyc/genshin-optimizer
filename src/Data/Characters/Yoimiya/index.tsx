@@ -77,7 +77,7 @@ const datamine = {
     chance: skillParam_gen.constellation6[0],
     dmg_: skillParam_gen.constellation6[1],
   },
-} 
+}
 
 const [condSkillPath, condSkill] = cond(characterKey, "skill")
 const [condA1Path, condA1] = cond(characterKey, "a1")
@@ -105,7 +105,7 @@ export const dmgFormulas = {
   charged: {
     hit: dmgNode("atk", datamine.charged.hit, "charged"),
     full: dmgNode("atk", datamine.charged.full, "charged", { hit: { ele: constant(elementKey) } }),
-    kindling: dmgNode("atk", datamine.charged.kindling, "charged", { hit: { ele: constant(elementKey) } })
+    kindling: unequal(condSkill, "skill", dmgNode("atk", datamine.charged.kindling, "charged", { hit: { ele: constant(elementKey) } }))
   },
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
@@ -182,22 +182,23 @@ const sheet: ICharacterSheet = {
         img: skill,
         sections: [{
           text: tr("skill.description"),
-          fields: [
-            {
-              text: tr("skill.skillParams.1"),
-              value: datamine.skill.duration,
-              unit: 's'
-            }, {
-              text: tr("skill.skillParams.2"),
-              value: datamine.skill.cd,
-              unit: 's'
-            }],
+          fields: [{
+            text: tr("skill.skillParams.2"),
+            value: datamine.skill.cd,
+            unit: 's'
+          }],
           conditional: {
             name: tr("skill.name"),
             path: condSkillPath,
             value: condSkill,
             states: {
-              skill: {}
+              skill: {
+                fields: [{
+                  text: tr("skill.skillParams.1"),
+                  value: datamine.skill.duration,
+                  unit: 's'
+                }]
+              }
             }
           }
         }],
@@ -306,12 +307,12 @@ const sheet: ICharacterSheet = {
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: const3TalentInc }]),
       constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5TalentInc }]),
-      constellation6: talentTemplate("constellation6", tr, c6, 
+      constellation6: talentTemplate("constellation6", tr, c6,
         datamine.normal.hitArr.map((_, i, a): INodeFieldDisplay => ({
-            canShow: canShowC6,
-            node: infoMut(dmgFormulas.normal[i + a.length], { key: `char_${characterKey}_gen:auto.skillParams.${i}` }),
-            textSuffix: ([0, 3].includes(i)) ? st("brHits", { count: 2 }) : ""
-          }))
+          canShow: canShowC6,
+          node: infoMut(dmgFormulas.normal[i + a.length], { key: `char_${characterKey}_gen:auto.skillParams.${i}` }),
+          textSuffix: ([0, 3].includes(i)) ? st("brHits", { count: 2 }) : ""
+        }))
       )
     },
   },
