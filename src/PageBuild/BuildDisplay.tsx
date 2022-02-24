@@ -125,7 +125,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       return { ...obj, ...rest }
     })
     return data
-  })), [builds, database, characterKey, mainStatAssumptionLevel]) ?? []
+  })), [teamData, builds, database, characterKey, mainStatAssumptionLevel]) ?? []
 
   const compareData = character?.compareData ?? false
 

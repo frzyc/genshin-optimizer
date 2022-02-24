@@ -8,10 +8,11 @@ export default function TeamBuffCard() {
   const { data } = useContext(DataContext)
   const teamBuffs = data.getTeamBuff()
   const nodes: Array<NodeDisplay<number>> = []
-  Object.values(teamBuffs.total ?? {}).forEach(node => nodes.push(node))
-  Object.values(teamBuffs.premod ?? {}).forEach(node => nodes.push(node))
-  Object.values(teamBuffs.enemy ?? {}).forEach(node => nodes.push(node))
-  if (!nodes.length || nodes.every(n => !n || n.isEmpty)) return null
+  Object.values(teamBuffs.total ?? {}).forEach(node => !node.isEmpty && nodes.push(node))
+  Object.values(teamBuffs.premod ?? {}).forEach(node => !node.isEmpty && nodes.push(node))
+  Object.values(teamBuffs.enemy ?? {}).forEach(node => !node.isEmpty && nodes.push(node))
+  if (!nodes.length) return null
+
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
       <Typography>Team buff Stats</Typography>
@@ -19,7 +20,7 @@ export default function TeamBuffCard() {
     <Divider />
     <CardContent>
       <FieldDisplayList sx={{ my: 0 }} >
-        {nodes.map((n) => n && <NodeFieldDisplay key={n.key} node={n} component={ListItem} />)}
+        {nodes.map((n, i) => n && <NodeFieldDisplay key={i.toString() + (n.key ?? "")} node={n} component={ListItem} />)}
       </FieldDisplayList>
     </CardContent>
   </CardLight>

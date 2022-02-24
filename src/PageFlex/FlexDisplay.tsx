@@ -64,6 +64,6 @@ function Display({ characterKey }) {
       </ButtonGroup>
       {!!isUpToDate && <Alert variant="outlined" sx={{ m: 1, mt: 2 }} severity="warning" >This URL is generated on an older database version of Genshin Optimizer. The character data below might not be displayed as intended.</Alert>}
     </CardDark>
-    <CharacterDisplayCard characterKey={characterKey} isFlex />
+    <CharacterDisplayCard characterKey={characterKey} />
   </Box>
 }

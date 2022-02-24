@@ -1,5 +1,5 @@
 import { Button, ButtonGroup, Card, CardContent, Divider, Grid, MenuItem, Skeleton, Tab, Tabs, ToggleButton, Typography } from '@mui/material';
-import { Suspense, useCallback, useContext, useState } from 'react';
+import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
@@ -53,9 +53,8 @@ type CharacterDisplayCardProps = {
   mainStatAssumptionLevel?: number,
   onClose?: (any) => void,
   tabName?: string,
-  isFlex?: boolean,
 }
-export default function CharacterDisplayCard({ characterKey, footer, newteamData, mainStatAssumptionLevel = 0, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
+export default function CharacterDisplayCard({ characterKey, footer, newteamData, mainStatAssumptionLevel = 0, onClose, tabName }: CharacterDisplayCardProps) {
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { character, characterSheet, target: charUIData } = teamData?.[characterKey] ?? {}
 
@@ -64,18 +63,23 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
   const onTab = useCallback((e, v) => settab(v), [settab])
 
   const characterDispatch = useCharacterReducer(character?.key ?? "")
-  if (!teamData || !character || !characterSheet || !charUIData) return <></>
-  const { compareData } = character
-  // main CharacterDisplayCard
-  const dataContextValue: dataContextObj = {
-    character,
-    characterSheet,
-    mainStatAssumptionLevel,
-    data: (newteamData ? newteamData[characterKey]!.target : charUIData),
-    teamData: (newteamData ? newteamData : teamData),
-    oldData: (compareData && newteamData) ? charUIData : undefined,
-    characterDispatch
-  }
+  const { compareData } = character ?? {}
+
+  const dataContextValue: dataContextObj | undefined = useMemo(() => {
+    if (!teamData || !character || !characterSheet || !charUIData) return undefined
+    return {
+      character,
+      characterSheet,
+      mainStatAssumptionLevel,
+      data: (newteamData ? newteamData[characterKey]!.target : charUIData),
+      teamData: (newteamData ? newteamData : teamData),
+      oldData: (compareData && newteamData) ? charUIData : undefined,
+      characterDispatch
+    }
+  }, [character, characterSheet, mainStatAssumptionLevel, newteamData, charUIData, teamData, characterDispatch, characterKey, compareData])
+
+  if (!teamData || !character || !characterSheet || !charUIData || !dataContextValue) return <></>
+
   return <CardDark >
     <DataContext.Provider value={dataContextValue}>
       <CardContent sx={{
@@ -111,7 +115,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
             <Tab value="character" label="Character" />
             {!!newteamData && <Tab value="newartifacts" label="New Artifacts" />}
             <Tab value="artifacts" label={newteamData ? "Current Artifacts" : "Artifacts"} />
-            {!isFlex && <Tab value="buffs" label="Team Buffs" />}
+            <Tab value="buffs" label="Team Buffs" />
             <Tab value="talent" label="Talents" />
           </Tabs>
         </CardLight>
