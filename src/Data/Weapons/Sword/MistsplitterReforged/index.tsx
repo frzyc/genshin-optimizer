@@ -14,7 +14,7 @@ const data_gen = data_gen_json as WeaponData
 const eleDmg = [0.12, 0.15, 0.18, 0.21, 0.24]
 const eleDmgStack1 = [0.08, 0.1, 0.12, 0.14, 0.16]
 const eleDmgStack2 = [0.16, 0.2, 0.24, 0.28, 0.32]
-const eleDmgStack3 = [0.28, 0.2, 0.42, 0.49, 0.56]
+const eleDmgStack3 = [0.28, 0.35, 0.42, 0.49, 0.56]
 
 // TODO: Can someone please fix this atrocity lmao
 const [condPath, condNode] = cond(key, "MistsplittersEmblem")
