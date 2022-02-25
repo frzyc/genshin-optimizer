@@ -8,7 +8,7 @@ import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
 
 const key: ArtifactSetKey = "TenacityOfTheMillelith"
-const set2 = greaterEq(input.artSet.TenacityOfTheMillelith, 2, percent(0.2))
+const hp_ = greaterEq(input.artSet.TenacityOfTheMillelith, 2, percent(0.2))
 const [condPath, condNode] = cond(key, "skill")
 const set4Atk = greaterEq(input.artSet.TenacityOfTheMillelith, 4,
   equal("cast", condNode, percent(0.2)))
@@ -17,7 +17,7 @@ const set4Shield = greaterEq(input.artSet.TenacityOfTheMillelith, 4,
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
-    hydro_dmg_: set2,
+    hp_,
   },
   teamBuff: {
     premod: {
@@ -31,7 +31,7 @@ const sheet: IArtifactSheet = {
   name: "Tenacity of the Millelith", rarity: [4, 5],
   icons,
   setEffects: {
-    2: { document: [{ fields: [{ node: set2 }] }] },
+    2: { document: [{ fields: [{ node: hp_ }] }] },
     4: {
       document: [{
         conditional: {
