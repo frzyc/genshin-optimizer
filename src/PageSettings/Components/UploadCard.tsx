@@ -6,8 +6,7 @@ import { useContext, useMemo, useState } from "react"
 import { Trans, useTranslation } from "react-i18next"
 import CardDark from '../../Components/Card/CardDark'
 import CardLight from '../../Components/Card/CardLight'
-import { DatabaseContext } from "../../Database/Database"
-import { dbStorage } from '../../Database/DBStorage'
+import { ArtCharDatabase, DatabaseContext } from "../../Database/Database"
 import { importGO, ImportResult as GOImportResult } from '../../Database/exim/go'
 import { importGOOD, ImportResult as GOODImportResult, ImportResultCounter } from '../../Database/exim/good'
 import { importMona } from '../../Database/exim/mona'
@@ -16,8 +15,8 @@ const InvisInput = styled('input')({
   display: 'none',
 });
 
-export default function UploadCard({ forceUpdate }) {
-  const database = useContext(DatabaseContext)
+export default function UploadCard() {
+  const { database } = useContext(DatabaseContext)
   const { t } = useTranslation("settings");
   const [data, setdata] = useState("")
   const [filename, setfilename] = useState("")
@@ -68,7 +67,6 @@ export default function UploadCard({ forceUpdate }) {
   const reset = () => {
     setdata("")
     setfilename("")
-    forceUpdate()
   }
   const onUpload = async e => {
     const file = e.target.files[0]
@@ -177,13 +175,12 @@ function GOUploadInfo({ data: { charCount, artCount } }: { data: GOImportResult 
 }
 
 function GOUploadAction({ data: { storage }, data, reset }: { data: GOImportResult | GOODImportResult, reset: () => void }) {
-  const database = useContext(DatabaseContext)
+  const { database, setDatabase } = useContext(DatabaseContext)
   const { t } = useTranslation("settings")
   const dataValid = data.type === "GO" ? data.charCount || data.artCount : (data.characters?.total || data.artifacts?.total || data.weapons?.total)
   const replaceDB = () => {
-    dbStorage.removeForKeys(k => k.startsWith("artifact_") || k.startsWith("char_") || k.startsWith("weapon_"))
-    dbStorage.copyFrom(storage)
-    database.reloadStorage()
+    database.storage.copyFrom(storage)
+    setDatabase(new ArtCharDatabase(database.storage))
     reset()
   }
 

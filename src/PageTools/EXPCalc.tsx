@@ -1,7 +1,7 @@
 
 import { Check } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Typography } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Assets from '../Assets/Assets';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
@@ -10,9 +10,9 @@ import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../Compo
 import ImgFullwidth from '../Components/Image/ImgFullwidth';
 import ImgIcon from '../Components/Image/ImgIcon';
 import TextButton from '../Components/TextButton';
-import { dbStorage } from '../Database/DBStorage';
-import { clamp } from "../Util/Util";
-const books = {
+import useDBState from '../ReactHooks/useDBState';
+import { clamp, objectMap } from "../Util/Util";
+const booksData = {
   advice: {
     name: "Wanderer's Advice",
     exp: 1000,
@@ -34,47 +34,19 @@ const books = {
 }
 const levelExp = [0, 1000, 1325, 1700, 2150, 2625, 3150, 3725, 4350, 5000, 5700, 6450, 7225, 8050, 8925, 9825, 10750, 11725, 12725, 13775, 14875, 16800, 18000, 19250, 20550, 21875, 23250, 24650, 26100, 27575, 29100, 30650, 32250, 33875, 35550, 37250, 38975, 40750, 42575, 44425, 46300, 50625, 52700, 54775, 56900, 59075, 61275, 63525, 65800, 68125, 70475, 76500, 79050, 81650, 84275, 86950, 89650, 92400, 95175, 98000, 100875, 108950, 112050, 115175, 118325, 121525, 124775, 128075, 131400, 134775, 138175, 148700, 152375, 156075, 159825, 163600, 167425, 171300, 175225, 179175, 183175, 216225, 243025, 273100, 306800, 344600, 386950, 434425, 487625, 547200]
 const milestone = [20, 40, 50, 60, 70, 80, 90]
-export default function EXPCalc(props) {
-  let [advice, setAdvice] = useState(0)
-  let [experience, setExperience] = useState(0)
-  let [wit, setWit] = useState(0)
-  let bookState = { advice, experience, wit }
-  let setBookState = { advice: setAdvice, experience: setExperience, wit: setWit }
-  let [goUnder, setGoUnder] = useState(false)
-  let [level, setLevel] = useState(1)
-  let [curExp, setCurExp] = useState(0)
-  let [mora, setMora] = useState(0)
 
-  //load mora from localStorage
-  useEffect(() => setMora(dbStorage.get("mora") || 0), [])
-  //save mora to localStorage
-  useEffect(() => {
-    dbStorage.set("mora", mora)
-  }, [mora])
+function initExpCalc() {
+  return {
+    mora: 0,
+    level: 1,
+    curExp: 0,
+    goUnder: false,
+    books: { advice: 0, experience: 0, wit: 0 }
+  }
+}
 
-  //load mora from localStorage
-  useEffect(() => setLevel(dbStorage.get("exp_calc_level") || 1), [])
-  //save mora to localStorage
-  useEffect(() => {
-    dbStorage.set("exp_calc_level", level)
-  }, [level])
-
-  //load mora from localStorage
-  useEffect(() => setCurExp(dbStorage.get("exp_calc_cur_exp") || 0), [])
-  //save mora to localStorage
-  useEffect(() => {
-    dbStorage.set("exp_calc_cur_exp", curExp)
-  }, [curExp])
-
-  //load exp_books from localStorage
-  useEffect(() => {
-    let lsBookState = dbStorage.get("exp_books") || {}
-    let setBookStates = { advice: setAdvice, experience: setExperience, wit: setWit }
-    Object.entries(lsBookState).forEach(([key, val]: any) => setBookStates[key]?.(val))
-  }, [])
-  //save exp_books to localStorage
-  useEffect(() =>
-    dbStorage.set("exp_books", { advice, experience, wit }), [advice, experience, wit])
+export default function EXPCalc() {
+  const [{ mora, level, curExp, goUnder, books, books: { advice, experience, wit } }, setState] = useDBState("ToolDisplayExpCalc", initExpCalc)
 
   let milestoneLvl = milestone.find(lvl => lvl > level)!
   let expReq = -curExp
@@ -105,15 +77,15 @@ export default function EXPCalc(props) {
   return <CardDark>
     <Grid container sx={{ px: 2, py: 1 }} spacing={2} >
       <Grid item>
-        <ImgIcon src={books.wit.img} sx={{ fontSize: "2em" }} />
+        <ImgIcon src={booksData.wit.img} sx={{ fontSize: "2em" }} />
       </Grid>
       <Grid item flexGrow={1}>
         <Typography variant="h6">Experience Calculator</Typography>
       </Grid>
       <Grid item>
         <ButtonGroup>
-          <Button color="primary" disabled={!goUnder} onClick={() => setGoUnder(false)}>Full Level</Button>
-          <Button color="primary" disabled={goUnder} onClick={() => setGoUnder(true)}>Don't fully level</Button>
+          <Button color="primary" disabled={!goUnder} onClick={() => setState({ goUnder: false })}>Full Level</Button>
+          <Button color="primary" disabled={goUnder} onClick={() => setState({ goUnder: true })}>Don't fully level</Button>
         </ButtonGroup>
       </Grid>
     </Grid>
@@ -134,7 +106,7 @@ export default function EXPCalc(props) {
             <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }}>
               <CustomNumberInput
                 value={level}
-                onChange={(val) => setLevel(clamp(val, 0, 90))}
+                onChange={(val) => setState({ level: clamp(val, 0, 90) })}
                 sx={{ px: 2 }}
               />
             </CustomNumberInputButtonGroupWrapper >
@@ -146,7 +118,7 @@ export default function EXPCalc(props) {
             <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }}>
               <CustomNumberInput
                 value={curExp}
-                onChange={(val) => setCurExp(clamp(val, 0, (levelExp[level] || 1) - 1))}
+                onChange={(val) => setState({ curExp: clamp(val, 0, (levelExp[level] || 1) - 1) })}
                 endAdornment={`/${levelExp[level] || 0}`}
                 sx={{ px: 2 }}
               />
@@ -175,7 +147,7 @@ export default function EXPCalc(props) {
         </CardLight></Grid>
         {Object.entries(books).map(([bookKey, bookObj]) => {
           return <Grid item xs={12} md={4} key={bookKey}>
-            <BookDisplay bookObj={bookObj} value={bookState[bookKey]} setValue={setBookState[bookKey]} required={bookResultObj[bookKey]} />
+            <BookDisplay bookObj={bookObj} value={books[bookKey]} setValue={b => setState({ books: { ...books, [bookKey]: b } })} required={bookResultObj[bookKey]} />
           </Grid>
         })}
         <Grid item xs={12} md={4} >
@@ -184,7 +156,7 @@ export default function EXPCalc(props) {
             <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }}>
               <CustomNumberInput
                 value={mora}
-                onChange={(val) => setMora(Math.max(val ?? 0, 0))}
+                onChange={(val) => setState({ mora: Math.max(val ?? 0, 0) })}
                 sx={{ px: 2 }}
               />
             </CustomNumberInputButtonGroupWrapper>
@@ -229,12 +201,12 @@ export default function EXPCalc(props) {
           {!!invalidText && <Alert variant="filled" severity="error" >{invalidText}</Alert>}
         </Grid>
         <Grid item xs="auto"><Button disabled={!!invalidText}
-          onClick={() => {
-            setLevel(finalLvl)
-            setCurExp(finalExp)
-            Object.entries(bookResultObj).forEach(([bookKey, val]) => setBookState[bookKey]?.(bookState[bookKey] - val))
-            setMora(finalMora)
-          }}
+          onClick={() => setState({
+            level: finalLvl,
+            curExp: finalExp,
+            books: objectMap(bookResultObj, (val, bookKey) => books[bookKey] - val) as any,
+            mora: finalMora
+          })}
           color="success"
           startIcon={<Check />}
           sx={{ height: "100%" }}
@@ -242,7 +214,7 @@ export default function EXPCalc(props) {
         </Grid>
       </Grid>
     </CardContent>
-  </CardDark>
+  </CardDark >
 }
 function BookDisplay(props) {
   let { bookObj: { name, img }, value = 0, setValue, required = 0 } = props

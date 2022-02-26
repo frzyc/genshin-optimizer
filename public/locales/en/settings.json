@@ -17,7 +17,6 @@
   },
   "downloadCard": {
     "databaseDownload": "Database Download",
-    "databaseDisclaimer": "Note: any data within the \"Tools\" page, e.g. Resin amount/timer, are not part of the downloaded database.",
     "button": {
       "download": "Download",
       "copy": "Copy to Clipboard",

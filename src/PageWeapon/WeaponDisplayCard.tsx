@@ -19,7 +19,7 @@ import WeaponSelectionModal from "../Components/Weapon/WeaponSelectionModal"
 import CharacterSheet from "../Data/Characters/CharacterSheet"
 import { ascensionMaxLevel, lowRarityMilestoneLevels } from "../Data/LevelData"
 import WeaponSheet from "../Data/Weapons/WeaponSheet"
-import { database as localDatabase, DatabaseContext } from "../Database/Database"
+import { DatabaseContext } from "../Database/Database"
 import { DataContext } from "../DataContext"
 import { uiInput as input } from "../Formula"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
@@ -42,7 +42,7 @@ export default function WeaponDisplayCard({
 }: WeaponStatsEditorCardProps) {
   const { data } = useContext(DataContext)
 
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const weapon = useWeapon(propWeaponId)
   const { key = "", level = 0, refinement = 0, ascension = 0, lock, location = "", id } = weapon ?? {}
   const weaponSheet = usePromise(WeaponSheet.get(key), [key])
@@ -137,9 +137,9 @@ export default function WeaponDisplayCard({
         {!!onClose && <Grid item  >
           <CloseButton onClick={onClose} />
         </Grid>}
-        {database === localDatabase && <Grid item >
+        <Grid item >
           <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, data.get(input.charKey).value as CharacterKey)} />
-        </Grid>}
+        </Grid>
       </Grid>
     </CardContent>
     <Divider />
@@ -183,7 +183,7 @@ export default function WeaponDisplayCard({
   </CardLight>
 }
 function SwapBtn({ onChangeId, weaponTypeKey }) {
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const [show, setShow] = useState(false)
   const open = () => setShow(true)
   const close = () => setShow(false)

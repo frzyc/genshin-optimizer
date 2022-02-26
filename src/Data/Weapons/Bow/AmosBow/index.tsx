@@ -1,29 +1,65 @@
 import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { lookup, naught, prod, subscript, sum } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { objectKeyMap, range } from '../../../../Util/Util'
+import { cond, st, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
 
-const refinementVals = [12, 15, 18, 21, 24]
-const refinementDmgVals = [8, 10, 12, 14, 16]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const key: WeaponKey = "AmosBow"
+const data_gen = data_gen_json as WeaponData
+const [tr, trm] = trans("weapon", key)
+const autoDmgInc = [0.12, 0.15, 0.18, 0.21, 0.24]
+const arrowDmgInc = [0.08, 0.10, 0.12, 0.14, 0.16]
+
+const [condPassivePath, condPassive] = cond(key, "StrongWilled")
+const normal_dmg_ = subscript(input.weapon.refineIndex, autoDmgInc, { key: "normal_dmg_" })
+const charged_dmg_ = subscript(input.weapon.refineIndex, autoDmgInc, { key: "charged_dmg_" })
+
+const dmgInc = subscript(input.weapon.refineIndex, arrowDmgInc)
+const normal_dmg_arrow_ = lookup(condPassive, {
+  ...objectKeyMap(range(1, 5), i => prod(dmgInc, i)),
+}, naught, { key: "normal_dmg_" })
+const charged_dmg_arrow_ = lookup(condPassive, {
+  ...objectKeyMap(range(1, 5), i => prod(dmgInc, i)),
+}, naught, { key: "charged_dmg_" })
+
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    normal_dmg_: sum(normal_dmg_, normal_dmg_arrow_),
+    charged_dmg_: sum(charged_dmg_, charged_dmg_arrow_),
+  },
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    normal_dmg_: refinementVals[stats.weapon.refineIndex],
-    charged_dmg_: refinementVals[stats.weapon.refineIndex]
-  }),
   document: [{
+    fields: [
+      { node: normal_dmg_ },
+      { node: charged_dmg_ },
+    ],
     conditional: {
-      key: "sw",
-      name: "Arrow Flight Duration (0.1s / stack)",
-      maxStack: 5,
-      stats: stats => ({
-        normal_dmg_: refinementDmgVals[stats.weapon.refineIndex],
-        charged_dmg_: refinementDmgVals[stats.weapon.refineIndex]
-      }),
+      value: condPassive,
+      path: condPassivePath,
+      teamBuff: true,
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
+      name: trm("condName"),
+      states: objectKeyMap(range(1, 5), i => ({
+        name: st("stack", { count: i }),
+        fields: [{
+          node: normal_dmg_arrow_
+        }, {
+          node: charged_dmg_arrow_
+        }]
+      })),
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

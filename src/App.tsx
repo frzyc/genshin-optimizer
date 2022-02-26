@@ -1,11 +1,12 @@
 import { KeyboardArrowUp } from '@mui/icons-material';
 import { Box, Container, Fab, Grid, Skeleton, useScrollTrigger, Zoom } from '@mui/material';
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useMemo, useState } from 'react';
 import { HashRouter, Route, Switch } from "react-router-dom";
 import './App.scss';
 import './Database/Database';
+import { ArtCharDatabase, DatabaseContext } from './Database/Database';
+import { DBLocalStorage } from './Database/DBStorage';
 import Footer from './Footer';
-import { GlobalSettingsContext, useGlobalSettings } from './GlobalSettings';
 import Header from './Header';
 import './i18n';
 
@@ -55,9 +56,10 @@ function ScrollTop({ children }: { children: React.ReactElement }) {
 }
 
 function App() {
-  const [globalSettings, globalSettingsDispatch] = useGlobalSettings()
-  return <HashRouter basename="/">
-    <GlobalSettingsContext.Provider value={{ globalSettings, globalSettingsDispatch }}>
+  const [database, setDatabase] = useState(() => new ArtCharDatabase(new DBLocalStorage(localStorage)))
+  const dbContextObj = useMemo(() => ({ database, setDatabase }), [database, setDatabase])
+  return <DatabaseContext.Provider value={dbContextObj}>
+    <HashRouter basename="/">
       <Grid container direction="column" minHeight="100vh">
         <Grid item >
           <Header anchor="back-to-top-anchor" />
@@ -90,7 +92,7 @@ function App() {
           <KeyboardArrowUp />
         </Fab>
       </ScrollTop>
-    </GlobalSettingsContext.Provider>
-  </HashRouter>
+    </HashRouter>
+  </DatabaseContext.Provider>
 }
 export default App;

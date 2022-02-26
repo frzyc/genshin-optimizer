@@ -24,7 +24,7 @@ import WeaponSheet from "../Data/Weapons/WeaponSheet"
 
 type WeaponCardProps = { weaponId: string, onClick?: (weaponId: string) => void, onEdit?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, canEquip?: boolean }
 export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEquip = false }: WeaponCardProps) {
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const databaseWeapon = useWeapon(weaponId)
   const weapon = databaseWeapon
   const weaponSheet = usePromise(weapon?.key ? WeaponSheet.get(weapon.key) : undefined, [weapon?.key])
