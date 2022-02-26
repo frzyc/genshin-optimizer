@@ -35,7 +35,7 @@ const initialState = () => ({
 })
 
 export default function WeaponDisplay() {
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const [state, stateDisplatch] = useDBState("WeaponDisplay", initialState)
   const [newWeaponModalShow, setnewWeaponModalShow] = useState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()

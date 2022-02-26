@@ -31,7 +31,7 @@ function initialState() {
 }
 
 export default function CharacterInventory(props) {
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const [state, stateDisplatch] = useDBState("CharacterDisplay", initialState)
 
   const [newCharacter, setnewCharacter] = useState(false)

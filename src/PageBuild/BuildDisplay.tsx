@@ -95,7 +95,7 @@ function initialBuildDisplayState(): {
 
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const [{ characterKey: dbCharacterKey }, setBuildSettings] = useDBState("BuildDisplay", initialBuildDisplayState)
   const setcharacterKey = useCallback(characterKey => setBuildSettings({ characterKey }), [setBuildSettings])
 

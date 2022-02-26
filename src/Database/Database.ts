@@ -5,7 +5,7 @@ import { getRandomInt, objectKeyMap } from "../Util/Util";
 import { DataManager } from "./DataManager";
 import { migrate } from "./migration";
 import { validateArtifact, parseCharacter, parseArtifact, removeArtifactCache, validateCharacter, removeCharacterCache, parseWeapon, validateWeapon, removeWeaponCache } from "./validation";
-import { DBStorage, dbStorage } from "./DBStorage";
+import { DBStorage } from "./DBStorage";
 import { ICachedWeapon, IWeapon } from "../Types/weapon";
 import { createContext } from "react";
 import { defaultInitialWeapon } from "../Util/WeaponUtil";
@@ -20,15 +20,10 @@ export class ArtCharDatabase {
 
   constructor(storage: DBStorage) {
     this.storage = storage
-    this.reloadStorage()
+    this.loadStorage()
   }
 
-  /// Call this function when the underlying data changes without this instance's knowledge
-  reloadStorage() {
-    this.arts.removeAll()
-    this.chars.removeAll()
-    this.weapons.removeAll()
-    this.states.removeAll()
+  protected loadStorage() {
     const storage = this.storage
     const { migrated } = migrate(storage)
 
@@ -414,5 +409,8 @@ function generateRandomWeaponID(keys: Set<string>): string {
 
 type Callback<Arg> = (arg: Arg | undefined) => void
 
-export const database = new ArtCharDatabase(dbStorage)
-export const DatabaseContext = createContext(database)
+export type DatabaseContextObj = {
+  database: ArtCharDatabase,
+  setDatabase: (db: ArtCharDatabase) => void
+}
+export const DatabaseContext = createContext({} as DatabaseContextObj)

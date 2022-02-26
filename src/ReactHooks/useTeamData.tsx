@@ -21,7 +21,7 @@ type TeamDataBundle = {
 }
 
 export default function useTeamData(characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0): TeamData | undefined {
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const [dbDirty, setDbDirty] = useForceUpdate()
   const [teamDataBundle, setTeamdataBundle] = useState(undefined as TeamDataBundle | undefined)
   useEffect(() => {

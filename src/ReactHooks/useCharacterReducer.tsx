@@ -29,7 +29,7 @@ type characterTeamAction = {
 export type characterReducerAction = characterEquipWeapon | characterReducerBonusStatsAction | characterReducerenemyOverrideAction | characterReducerResetStatsAction | characterTeamAction | Partial<ICachedCharacter>
 
 export default function useCharacterReducer(characterKey: CharacterKey | "") {
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
 
   return useCallback((action: characterReducerAction): void => {
     if (!characterKey) return

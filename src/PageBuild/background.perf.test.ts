@@ -1,5 +1,5 @@
-import { database } from '../Database/Database';
-import { dbStorage } from '../Database/DBStorage';
+import { ArtCharDatabase } from '../Database/Database';
+import { DBLocalStorage } from '../Database/DBStorage';
 import { importGOOD } from '../Database/exim/good';
 import { mergeData, uiDataForTeam } from '../Formula/api';
 import { optimize } from '../Formula/optimization';
@@ -12,8 +12,14 @@ import { compactArtifacts, dynamicData } from './foreground';
 
 describe("Worker Perf", () => {
   test("Test", async () => {
+
+    /**
+     * TODO: have a import api that directly result in a database, without this faff of making 2 differnt databases
+     */
+    const dbStorage = new DBLocalStorage(localStorage)
+    const database = new ArtCharDatabase(dbStorage)
     dbStorage.copyFrom(importGOOD(data1 as any, database)!.storage)
-    database.reloadStorage()
+    new ArtCharDatabase(dbStorage)
 
     const teamData = (await getTeamData(database, "Sucrose"))!.teamData
     // Get a new `Data` for `workerData` (and not reuse the old ones) because we are mutating it later

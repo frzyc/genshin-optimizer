@@ -11,7 +11,7 @@ import { defaultInitialWeapon } from "../Util/WeaponUtil";
  * @returns
  */
 export default function useCharSelectionCallback() {
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const history = useHistory()
   const cb = useCallback(
     async (characterKey: CharacterKey) => {

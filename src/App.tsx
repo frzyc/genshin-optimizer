@@ -1,9 +1,11 @@
 import { KeyboardArrowUp } from '@mui/icons-material';
 import { Box, Container, Fab, Grid, Skeleton, useScrollTrigger, Zoom } from '@mui/material';
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useMemo, useState } from 'react';
 import { HashRouter, Route, Switch } from "react-router-dom";
 import './App.scss';
 import './Database/Database';
+import { ArtCharDatabase, DatabaseContext } from './Database/Database';
+import { DBLocalStorage } from './Database/DBStorage';
 import Footer from './Footer';
 import Header from './Header';
 import './i18n';
@@ -54,39 +56,43 @@ function ScrollTop({ children }: { children: React.ReactElement }) {
 }
 
 function App() {
-  return <HashRouter basename="/">
-    <Grid container direction="column" minHeight="100vh">
-      <Grid item >
-        <Header anchor="back-to-top-anchor" />
+  const [database, setDatabase] = useState(() => new ArtCharDatabase(new DBLocalStorage(localStorage)))
+  const dbContextObj = useMemo(() => ({ database, setDatabase }), [database, setDatabase])
+  return <DatabaseContext.Provider value={dbContextObj}>
+    <HashRouter basename="/">
+      <Grid container direction="column" minHeight="100vh">
+        <Grid item >
+          <Header anchor="back-to-top-anchor" />
+        </Grid>
+        <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1, md: 2 } }}>
+          <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%" }} />}>
+            <Switch>
+              <Route path="/artifact" component={ArtifactDisplay} />
+              <Route path="/weapon" component={WeaponDisplay} />
+              <Route path="/character" component={CharacterRouter} />
+              <Route path="/build" component={BuildDisplay} />
+              <Route path="/tools" component={ToolsDisplay} />
+              {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
+              <Route path="/setting" component={SettingsDisplay} />
+              <Route path="/doc" component={DocumentationDisplay} />
+              <Route path="/flex" component={FlexDisplay} />
+              <Route path="/scanner" component={ScannerDisplay} />
+              <Route path="/" component={Home} />
+            </Switch>
+          </Suspense>
+        </Container>
+        {/* make sure footer is always at bottom */}
+        <Grid item flexGrow={1} />
+        <Grid item >
+          <Footer />
+        </Grid>
       </Grid>
-      <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1, md: 2 } }}>
-        <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%" }} />}>
-          <Switch>
-            <Route path="/artifact" component={ArtifactDisplay} />
-            <Route path="/weapon" component={WeaponDisplay} />
-            <Route path="/character" component={CharacterRouter} />
-            <Route path="/build" component={BuildDisplay} />
-            <Route path="/tools" component={ToolsDisplay} />
-            {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
-            <Route path="/setting" component={SettingsDisplay} />
-            <Route path="/doc" component={DocumentationDisplay} />
-            <Route path="/flex" component={FlexDisplay} />
-            <Route path="/scanner" component={ScannerDisplay} />
-            <Route path="/" component={Home} />
-          </Switch>
-        </Suspense>
-      </Container>
-      {/* make sure footer is always at bottom */}
-      <Grid item flexGrow={1} />
-      <Grid item >
-        <Footer />
-      </Grid>
-    </Grid>
-    <ScrollTop >
-      <Fab color="secondary" size="small" aria-label="scroll back to top">
-        <KeyboardArrowUp />
-      </Fab>
-    </ScrollTop>
-  </HashRouter>
+      <ScrollTop >
+        <Fab color="secondary" size="small" aria-label="scroll back to top">
+          <KeyboardArrowUp />
+        </Fab>
+      </ScrollTop>
+    </HashRouter>
+  </DatabaseContext.Provider>
 }
 export default App;

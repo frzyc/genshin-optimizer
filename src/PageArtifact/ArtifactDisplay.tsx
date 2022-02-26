@@ -37,7 +37,7 @@ function initialState() {
 export default function ArtifactDisplay(props) {
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { t } = useTranslation(["artifact", "ui"]);
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const [state, setState] = useDBState("ArtifactDisplay", initialState)
   const stateDispatch = useCallback(
     action => {

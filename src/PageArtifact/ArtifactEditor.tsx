@@ -74,7 +74,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: { artif
 
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
 
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
 
   const [show, setShow] = useState(false)
 
