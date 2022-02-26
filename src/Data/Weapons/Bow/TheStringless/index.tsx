@@ -1,18 +1,35 @@
-import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import type { WeaponData } from 'pipeline'
+import { input } from '../../../../Formula'
+import { subscript } from "../../../../Formula/utils"
+import { WeaponKey } from '../../../../Types/consts'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
 
-const refinementVals = [24, 30, 36, 42, 48]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const key: WeaponKey = "TheStringless"
+const data_gen = data_gen_json as WeaponData
+const refinementVals = [0.24, 0.30, 0.36, 0.42, 0.48]
+
+const skill_dmg_ = subscript(input.weapon.refineIndex, refinementVals)
+const burst_dmg_ = subscript(input.weapon.refineIndex, refinementVals)
+
+export const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    skill_dmg_,
+    burst_dmg_
+  },
+})
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    skill_dmg_: refinementVals[stats.weapon.refineIndex],
-    burst_dmg_: refinementVals[stats.weapon.refineIndex]
-  }),
-  document: [],
+  document: [{
+    fields: [{
+      node: skill_dmg_,
+    }, {
+      node: burst_dmg_,
+    }],
+  }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)
