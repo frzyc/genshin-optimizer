@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript, sum } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
-import { cond, trans } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -51,24 +51,14 @@ const sheet: IWeaponSheet = {
       header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
       name: trm("condName"),
-      states: {
-        1: {
-          name: `1 Stack`,
-          fields: [{
-            node: normal_dmg_arrow_
-          }, {
-            node: charged_dmg_arrow_
-          }]
-        },
-        ...objectKeyMap(range(2, 5), i => ({
-          name: `${i} Stacks`,
-          fields: [{
-            node: normal_dmg_arrow_
-          }, {
-            node: charged_dmg_arrow_
-          }]
-        })),
-      }
+      states: objectKeyMap(range(1, 5), i => ({
+        name: st("stack", { count: i }),
+        fields: [{
+          node: normal_dmg_arrow_
+        }, {
+          node: charged_dmg_arrow_
+        }]
+      })),
     }
   }],
 }
