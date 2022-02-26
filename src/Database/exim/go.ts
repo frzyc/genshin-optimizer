@@ -1,34 +1,37 @@
 import { IArtifact } from "../../Types/artifact";
 import { ICharacter } from "../../Types/character_WR";
 import { CharacterKey } from "../../Types/consts";
-import { IWeapon } from "../../Types/weapon_WR";
 import { ArtCharDatabase } from "../Database";
 import { DBStorage, SandboxStorage } from "../DBStorage";
 import { setDBVersion } from "../utils";
-
+/**
+ * NOTE: this is the "old" GO format, before GOOD is introduced. might not be a good idea to eventually deprecate this format.
+ */
 export function importGO(data: any): ImportResult | undefined {
   const storage = new SandboxStorage()
-  const { version, characterDatabase, artifactDatabase, weaponDatabase, stateDatabase } = data as Partial<DatabaseObj>
-  if (!version)
+  const { version, characterDatabase, artifactDatabase, artifactDisplay, characterDisplay, buildsDisplay } = data as Partial<DatabaseObj>
+  if (!version || !characterDatabase || !artifactDatabase)
     return
 
   characterDatabase && Object.entries(characterDatabase).forEach(([charKey, char]) => storage.set(`char_${charKey}`, char))
   artifactDatabase && Object.entries(artifactDatabase).forEach(([id, art]) => storage.set(id, art))
-  weaponDatabase && Object.entries(weaponDatabase).forEach(([id, weapon]) => storage.set(id, weapon))
-  stateDatabase && Object.entries(stateDatabase).forEach(([id, state]) => storage.set(id, state))
   //override version
   version && setDBVersion(storage, version)
+  artifactDisplay && storage.set("ArtifactDisplay.state", artifactDisplay)
+  characterDisplay && storage.set("CharacterDisplay.state", characterDisplay)
+  buildsDisplay && storage.set("BuildsDisplay.state", buildsDisplay)
 
   const database = new ArtCharDatabase(storage) // validate storage entries
   //TODO: figure out the # of dups/upgrades/new/foddered, not just total char/art count below.
-  return { type: "GO", storage, charCount: database.chars.keys.length, artCount: database.arts.keys.length, weaponCount: database.weapons.keys.length }
+  return { type: "GO", storage, charCount: database.chars.keys.length, artCount: database.arts.keys.length }
 }
 
 type DatabaseObj = {
   version: number,
   characterDatabase: Dict<CharacterKey, ICharacter>
   artifactDatabase: Dict<string, IArtifact>
-  weaponDatabase: Dict<string, IWeapon>
-  stateDatabase: Dict<string, object>
+  artifactDisplay: any
+  characterDisplay: any
+  buildsDisplay: any
 }
-export type ImportResult = { type: "GO", storage: DBStorage, charCount: number, artCount: number, weaponCount: number }
+export type ImportResult = { type: "GO", storage: DBStorage, charCount: number, artCount: number }
