@@ -2,7 +2,7 @@ import { faCalculator, faLink, faPlus, faTrash } from '@fortawesome/free-solid-s
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Button, CardContent, Divider, Grid, Skeleton, Typography } from '@mui/material';
 import i18next from 'i18next';
-import React, { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
+import React, { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Link } from 'react-router-dom';
 import CardDark from '../Components/Card/CardDark';
@@ -10,35 +10,30 @@ import { CharacterSelectionModal } from '../Components/Character/CharacterSelect
 import SortByButton from '../Components/SortByButton';
 import ElementToggle from '../Components/ToggleButton/ElementToggle';
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
+import CharacterSheet from '../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../Database/Database';
-import { dbStorage } from '../Database/DBStorage';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
+import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
 import { CharacterKey, ElementKey, WeaponTypeKey } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import CharacterCard from './CharacterCard';
-import CharacterSheet from '../Data/Characters/CharacterSheet';
 
-const initialState = () => ({
-  sortType: characterSortKeys[0],
-  ascending: false,
-  weaponType: "" as WeaponTypeKey | "",
-  element: "" as ElementKey | "",
-})
-export type stateType = ReturnType<typeof initialState>
-
-function filterReducer(state: stateType, action): stateType {
-  return { ...state, ...action }
-}
-function filterInit(initial = initialState()): stateType {
-  return { ...initial, ...(dbStorage.get("CharacterDisplay.state") ?? {}) }
+function initialState() {
+  return {
+    sortType: characterSortKeys[0],
+    ascending: false,
+    weaponType: "" as WeaponTypeKey | "",
+    element: "" as ElementKey | "",
+  }
 }
 
 export default function CharacterInventory(props) {
   const database = useContext(DatabaseContext)
-  const [state, stateDisplatch] = useReducer(filterReducer, initialState(), filterInit)
+  const [state, stateDisplatch] = useDBState("CharacterDisplay", initialState)
+
   const [newCharacter, setnewCharacter] = useState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
   //set follow, should run only once
@@ -48,10 +43,6 @@ export default function CharacterInventory(props) {
   }, [forceUpdate, database])
 
   const characterSheets = usePromise(CharacterSheet.getAll, [])
-  //save to db
-  useEffect(() => {
-    dbStorage.set("CharacterDisplay.state", state)
-  }, [state])
 
   const deleteCharacter = useCallback(async (cKey: CharacterKey) => {
     const chararcterSheet = await CharacterSheet.get(cKey)

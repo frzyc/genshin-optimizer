@@ -12,9 +12,11 @@ import { defaultInitialWeapon } from "../Util/WeaponUtil";
 
 export class ArtCharDatabase {
   storage: DBStorage
+
   arts = new DataManager<string, ICachedArtifact>()
   chars = new DataManager<CharacterKey, ICachedCharacter>()
   weapons = new DataManager<string, ICachedWeapon>()
+  states = new DataManager<string, object>()
 
   constructor(storage: DBStorage) {
     this.storage = storage
@@ -26,6 +28,7 @@ export class ArtCharDatabase {
     this.arts.removeAll()
     this.chars.removeAll()
     this.weapons.removeAll()
+    this.states.removeAll()
     const storage = this.storage
     const { migrated } = migrate(storage)
 
@@ -108,6 +111,21 @@ export class ArtCharDatabase {
         // No need to set anything on character side.
       }
     }
+
+    for (const key of storage.keys) {
+      if (key.startsWith("state_")) {
+        const [, stateKey] = key.split("state_")
+        const stateObj = storage.get(key)
+        if (!stateObj) {
+          // Non-recoverable
+          storage.remove(key)
+          continue
+        }
+        this.states.set(stateKey, stateObj)
+        // Save migrated version back to db
+        if (migrated) this.storage.set(key, stateObj)
+      }
+    }
   }
 
   private saveArt(key: string, art: ICachedArtifact) {
@@ -122,6 +140,10 @@ export class ArtCharDatabase {
     this.storage.set(key, removeWeaponCache(weapon))
     this.weapons.set(key, weapon)
   }
+  private saveState(key: string, obj: object) {
+    this.storage.set(`state_${key}`, obj)
+    this.states.set(key, obj)
+  }
   // TODO: Make theses `_` functions private once we migrate to use `followXXX`,
   // or de-underscore it if we decide that these are to stay
   _getArt(key: string) { return this.arts.get(key) }
@@ -130,18 +152,18 @@ export class ArtCharDatabase {
   _getCharKeys(): CharacterKey[] { return this.chars.keys }
   _getWeapon(key: string) { return this.weapons.get(key) }
   _getWeapons() { return this.weapons.values }
+  _getState<O extends object>(key: string, init: () => O) {
+    const state = this.states.get(key) as O | undefined
+    if (state) return state
+    const newState = init()
+    this.saveState(key, newState)
+    return this.states.get(key) as O
+  }
 
-  followChar(key: CharacterKey, cb: Callback<ICachedCharacter>): (() => void) | undefined { return this.chars.follow(key, cb) }
-  followArt(key: string, cb: Callback<ICachedArtifact>): (() => void) | undefined {
-    if (this.arts.get(key) !== undefined)
-      return this.arts.follow(key, cb)
-    // cb(undefined)
-  }
-  followWeapon(key: string, cb: Callback<ICachedWeapon>): (() => void) | undefined {
-    if (this.weapons.get(key) !== undefined)
-      return this.weapons.follow(key, cb)
-    // cb(undefined)
-  }
+  followChar(key: CharacterKey, cb: Callback<ICachedCharacter>) { return this.chars.follow(key, cb) }
+  followArt(key: string, cb: Callback<ICachedArtifact>) { return this.arts.follow(key, cb) }
+  followWeapon(key: string, cb: Callback<ICachedWeapon>) { return this.weapons.follow(key, cb) }
+  followState<O extends object>(key: string, cb: (arg: O) => void) { return this.states.follow(key, cb as any) }
 
   followAnyChar(cb: (key: CharacterKey | {}) => void): (() => void) | undefined { return this.chars.followAny(cb) }
   followAnyArt(cb: (key: string | {}) => void): (() => void) | undefined { return this.arts.followAny(cb) }
@@ -150,6 +172,7 @@ export class ArtCharDatabase {
   /**
    * **Caution**: This does not update `equippedArtifacts`, use `equipArtifacts` instead
    * **Caution**: This does not update `equipedWeapon`, use `setWeaponLocation` instead
+   * TODO: why are the options here (value, key), instead of (key, value) like everywhere else?
    */
   updateChar(value: Partial<ICharacter>): void {
     const key = value.key!
@@ -167,6 +190,7 @@ export class ArtCharDatabase {
 
   /**
    * **Caution** This does not update `location`, use `setLocation` instead
+   * TODO: why are the options here (value, key), instead of (key, value) like everywhere else?
    */
   updateArt(value: Partial<IArtifact>, id: string) {
     const oldArt = this.arts.get(id)
@@ -183,6 +207,7 @@ export class ArtCharDatabase {
   }
   /**
    * **Caution** This does not update `location` use `setWeaponLocation` instead
+   * TODO: why are the options here (value, key), instead of (key, value) like everywhere else?
    */
   updateWeapon(value: Partial<IWeapon>, id: string) {
     const oldWeapon = this.weapons.get(id)
@@ -193,6 +218,10 @@ export class ArtCharDatabase {
     this.saveWeapon(id, newWeapon)
     if (newWeapon.location)
       this.chars.trigger(newWeapon.location)
+  }
+  updateState<O extends object>(id: string, value: Partial<O>) {
+    const oldState = this.states.get(id) as O
+    this.saveState(id, { ...oldState, ...value })
   }
 
   createArt(value: IArtifact): string {

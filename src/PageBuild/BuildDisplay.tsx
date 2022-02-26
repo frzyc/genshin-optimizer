@@ -18,17 +18,17 @@ import ModalWrapper from '../Components/ModalWrapper';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import StatFilterCard from '../Components/StatFilterCard';
 import { DatabaseContext } from '../Database/Database';
-import { dbStorage } from '../Database/DBStorage';
 import { DataContext, dataContextObj, TeamData } from '../DataContext';
 import { mergeData, uiDataForTeam } from '../Formula/api';
 import { uiInput as input } from '../Formula/index';
 import { optimize } from '../Formula/optimization';
 import { NumNode } from '../Formula/type';
-import { GlobalSettingsContext } from '../GlobalSettings';
+import { initGlobalSettings } from '../GlobalSettings';
 import CharacterCard from '../PageCharacter/CharacterCard';
 import useCharacter from '../ReactHooks/useCharacter';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
+import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
@@ -85,18 +85,24 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
   }
   return { ...state, ...action }
 }
+function initialBuildDisplayState(): {
+  characterKey: CharacterKey | ""
+} {
+  return {
+    characterKey: ""
+  }
+}
 
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
-  const { globalSettings: { tcMode } } = useContext(GlobalSettingsContext)
+  const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const database = useContext(DatabaseContext)
-  const [characterKey, setcharacterKey] = useState(() => {
-    let { characterKey = "" } = dbStorage.get("BuildsDisplay.state") ?? {}
-    //NOTE that propCharacterKey can override the selected character.
-    characterKey = propCharacterKey ?? characterKey
-    if (characterKey && !database._getChar(characterKey))
-      characterKey = ""
-    return characterKey
-  })
+  const [{ characterKey: dbCharacterKey }, setBuildSettings] = useDBState("BuildDisplay", initialBuildDisplayState)
+  const setcharacterKey = useCallback(characterKey => setBuildSettings({ characterKey }), [setBuildSettings])
+
+  //NOTE that propCharacterKey can override the selected character.
+  let characterKey = propCharacterKey ?? dbCharacterKey
+  if (characterKey && !database._getChar(characterKey)) characterKey = ""
+
 
   const [modalBuildIndex, setmodalBuildIndex] = useState(-1) // the index of the newBuild that is being displayed in the character modal,
 
@@ -118,14 +124,17 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
   const teamDataBuilds = usePromise(Promise.all(builds.map(async (b) => {
-    const { teamData, teamBundle } = (await getTeamData(database, characterKey, mainStatAssumptionLevel, b.filter(a => a).map(a => database._getArt(a)!)))!
+    const result = await getTeamData(database, characterKey, mainStatAssumptionLevel, b.filter(a => a).map(a => database._getArt(a)!))
+    if (!result) return null
+    const { teamData, teamBundle } = result
+
     const calcData = uiDataForTeam(teamData, characterKey)
     const data = objectMap(calcData, (obj, ck) => {
       const { data: _, ...rest } = teamBundle[ck]!
       return { ...obj, ...rest }
     })
     return data
-  })), [teamData, builds, database, characterKey, mainStatAssumptionLevel]) ?? []
+  })).then(arr => arr.map(a => a)), [teamData, builds, database, characterKey, mainStatAssumptionLevel]) ?? []
 
   const compareData = character?.compareData ?? false
 
@@ -149,11 +158,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   useEffect(() =>
     database.followAnyArt(setArtsDirty),
     [setArtsDirty, database])
-
-  //save to BuildsDisplay.state on change
-  useEffect(() => {
-    dbStorage.set("BuildsDisplay.state", { characterKey })
-  }, [characterKey])
 
   const { split, setPerms, totBuildNumber } = useMemo(() => {
     if (!characterKey) // Make sure we have all slotKeys
@@ -348,6 +352,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     teamData,
     characterDispatch
   }
+  const selectedBuild = teamDataBuilds[modalBuildIndex]
   return <Box display="flex" flexDirection="column" gap={1} sx={{ my: 1 }}>
     <InfoComponent
       pageKey="buildPage"
@@ -357,7 +362,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         "Rainbow builds can sometimes be \"optimal\". Good substat combinations can sometimes surpass set effects.",
         "The more complex the formula, the longer the generation time.",]}
     ><InfoDisplay /></InfoComponent>
-    <BuildModal teamData={teamDataBuilds[modalBuildIndex]} characterKey={characterKey} onClose={closeBuildModal} />
+    {selectedBuild && <BuildModal teamData={selectedBuild} characterKey={characterKey} onClose={closeBuildModal} />}
     {noCharacter && <Alert severity="error" variant="filled"> Opps! It looks like you haven't added a character to GO yet! You should go to the <Link component={RouterLink} to="/character">Characters</Link> page and add some!</Alert>}
     {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
     {/* Build Generator Editor */}
@@ -523,7 +528,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       </CardDark>
       <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
         {/* Build List */}
-        {teamDataBuilds?.map((teamData, index) => <DataContext.Provider key={index} value={{ ...dataContext, data: teamData[characterKey].target, teamData, oldData: data }}>
+        {teamDataBuilds?.map((teamData, index) => teamData && <DataContext.Provider key={index} value={{ ...dataContext, data: teamData[characterKey].target, teamData, oldData: data }}>
           <ArtifactBuildDisplayItem index={index} onClick={() => setmodalBuildIndex(index)} compareBuild={compareData} disabled={!!generatingBuilds} />
         </DataContext.Provider>
         )}

@@ -1,32 +1,32 @@
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Replay } from '@mui/icons-material';
 import { Alert, Box, Button, CardContent, Grid, Link, Pagination, Skeleton, ToggleButton, Typography } from '@mui/material';
-import React, { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import CardDark from '../Components/Card/CardDark';
 import InfoComponent from '../Components/InfoComponent';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
+import SortByButton from '../Components/SortByButton';
 import { DatabaseContext } from '../Database/Database';
-import { dbStorage } from '../Database/DBStorage';
+import { initGlobalSettings } from '../GlobalSettings';
+import KeyMap from '../KeyMap';
+import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import { allSubstats, SubstatKey } from '../Types/artifact';
-import { artifactFilterConfigs, artifactSortConfigs, initialArtifactSortFilter, artifactSortKeys, artifactSortKeysTC } from './ArtifactSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
 import ArtifactEditor from './ArtifactEditor';
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter';
+import { artifactFilterConfigs, artifactSortConfigs, artifactSortKeys, artifactSortKeysTC, initialArtifactSortFilter } from './ArtifactSort';
 import ProbabilityFilter from './ProbabilityFilter';
-import { GlobalSettingsContext } from '../GlobalSettings';
 import { probability } from './RollProbability';
-import KeyMap from '../KeyMap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import SortByButton from '../Components/SortByButton';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
-function intialState() {
+function initialState() {
   return {
     ...initialArtifactSortFilter(),
     maxNumArtifactsToDisplay: 50,
@@ -34,24 +34,18 @@ function intialState() {
     probabilityFilter: {} as Dict<SubstatKey, number>,
   }
 }
-
-type State = ReturnType<typeof intialState>
-type ResetAction = {
-  type: "reset"
-}
-function filterReducer(state: State, action: Partial<State> | ResetAction): State {
-  if ((action as any).type === "reset")
-    return { ...state, ...initialArtifactSortFilter() }
-  return { ...state, ...action }
-}
-function filterInit(): State {
-  return { ...intialState(), ...(dbStorage.get("ArtifactDisplay.state") ?? {}) }
-}
 export default function ArtifactDisplay(props) {
-  const { globalSettings: { tcMode } } = useContext(GlobalSettingsContext)
+  const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { t } = useTranslation(["artifact", "ui"]);
   const database = useContext(DatabaseContext)
-  const [state, stateDispatch] = useReducer(filterReducer, undefined, filterInit)
+  const [state, setState] = useDBState("ArtifactDisplay", initialState)
+  const stateDispatch = useCallback(
+    action => {
+      if (action.type === "reset") setState(initialArtifactSortFilter())
+      else setState(action)
+    },
+    [setState],
+  )
 
   const { effFilter, filterOption, ascending, probabilityFilter, maxNumArtifactsToDisplay } = state
   let { sortType } = state
@@ -72,10 +66,6 @@ export default function ArtifactDisplay(props) {
     ReactGA.pageview('/artifact')
     return database.followAnyArt(forceUpdate)
   }, [database, forceUpdate])
-
-  useEffect(() => {
-    dbStorage.set("ArtifactDisplay.state", state)
-  }, [state])
 
   const filterOptionDispatch = useCallback((action) => {
     stateDispatch({

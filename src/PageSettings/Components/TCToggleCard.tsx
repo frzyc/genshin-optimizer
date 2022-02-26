@@ -1,16 +1,17 @@
 import { CheckBox, CheckBoxOutlineBlank } from "@mui/icons-material";
 import { Button, CardContent, Typography } from "@mui/material";
-import { useContext } from "react";
 import CardLight from "../../Components/Card/CardLight";
-import { GlobalSettingsContext } from "../../GlobalSettings";
+import { initGlobalSettings } from "../../GlobalSettings";
+import useDBState from "../../ReactHooks/useDBState";
 
 export default function TCToggleCard() {
-  const { globalSettings: { tcMode }, globalSettingsDispatch } = useContext(GlobalSettingsContext)
+  const [{ tcMode }, setGlobalSettings] = useDBState("GlobalSettings", initGlobalSettings)
+
   return <CardLight>
     <CardContent>
       <Typography gutterBottom color="warning.main">Enabling this toggle will show some features that might be too complex for the average user.</Typography>
       <Button fullWidth
-        onClick={() => globalSettingsDispatch({ tcMode: !tcMode })}
+        onClick={() => setGlobalSettings({ tcMode: !tcMode })}
         color={tcMode ? "success" : "primary"}
         startIcon={tcMode ? <CheckBox /> : <CheckBoxOutlineBlank />}>
         Theorycrafting Mode
