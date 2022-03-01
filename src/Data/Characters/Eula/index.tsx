@@ -296,6 +296,7 @@ const sheet: ICharacterSheet = {
             path: condLightfallSwordC4Path,
             name: trm("c4C.name"),
             header: conditionalHeader("constellation4", tr, c4),
+            canShow: greaterEq(input.constellation, 4, 1),
             states: {
               on: {
                 fields: [{
@@ -319,6 +320,7 @@ const sheet: ICharacterSheet = {
             path: condRollingRimeC4Path,
             name: trm("c4C.name"),
             header: conditionalHeader("constellation4", tr, c4),
+            canShow: greaterEq(input.constellation, 4, 1),
             states: {
               on: {
                 fields: [{
