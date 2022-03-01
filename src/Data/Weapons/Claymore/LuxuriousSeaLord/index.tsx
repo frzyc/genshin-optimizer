@@ -3,14 +3,14 @@ import { input } from '../../../../Formula'
 import { constant, equal, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
-import { cond, sgt, trans } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
-const key: WeaponKey = "SongOfBrokenPines"
+const key: WeaponKey = "LuxuriousSeaLord"
 const data_gen = data_gen_json as WeaponData
 const [tr] = trans("weapon", key)
 const burst_dmg_Src = [0.12, 0.15, 0.18, 0.21, 0.24]
@@ -40,7 +40,7 @@ const sheet: IWeaponSheet = {
       teamBuff: true,
       header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
-      name: sgt('hitOp.burst'),
+      name: st('hitOp.burst'),
       states: {
         on: {
           fields: [{

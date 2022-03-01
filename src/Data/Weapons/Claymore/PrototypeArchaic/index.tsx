@@ -1,6 +1,6 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { constant, prod, subscript } from '../../../../Formula/utils'
+import { constant, infoMut, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { dataObjForWeaponSheet } from '../../util'
@@ -24,7 +24,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fields: [{ node: dmg_ }],
+    fields: [{ node: infoMut(dmg_, { key: "sheet:dmg" }) }],
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)
