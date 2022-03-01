@@ -18,7 +18,7 @@ const atkTeam_Src = [0.20, 0.25, 0.30, 0.35, 0.40]
 const atkSPD_Src = [0.12, 0.15, 0.18, 0.21, 0.24]
 
 const [condPassivePath, condPassive] = cond(key, "RebelsBannerHymn")
-const atk_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atk_Src))
+const atk_ = subscript(input.weapon.refineIndex, atk_Src, { key: "_" })
 const atkTeam_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkTeam_Src, { key: "atk_" }))
 const atkSPD_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkSPD_Src))
 

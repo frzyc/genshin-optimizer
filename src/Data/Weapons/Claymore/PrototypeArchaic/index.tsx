@@ -11,7 +11,7 @@ import icon from './Icon.png'
 
 const key: WeaponKey = "PrototypeArchaic"
 const data_gen = data_gen_json as WeaponData
-const dmg_Src = [1, 1.25, 1.5, 1.75, 2]
+const dmg_Src = [2.4, 3, 3.6, 4.2, 4.8]
 
 // TODO: Is this the correct formula for the dmg dealt?
 const dmg_ = customDmgNode(prod(subscript(input.weapon.refineIndex, dmg_Src, { key: "_" }), input.premod.atk), "elemental", {
