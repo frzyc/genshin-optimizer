@@ -338,6 +338,7 @@ const sheet: ICharacterSheet = {
         path: condTidalIllusionPath,
         name: trm("c1C.name"),
         header: conditionalHeader("constellation1", tr, c1),
+        canShow: greaterEq(input.constellation, 1, 1),
         states: {
           on: {
             fields: [{
