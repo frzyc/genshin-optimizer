@@ -15,7 +15,7 @@ import Bennett from './Bennett'
 // import Fischl from './Fischl'
 // import Ganyu from './Ganyu'
 // import Gorou from './Gorou'
-// import HuTao from './HuTao'
+import HuTao from './HuTao'
 // import Jean from './Jean'
 import KaedeharaKazuha from './KaedeharaKazuha'
 // import Kaeya from './Kaeya'
@@ -64,7 +64,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Fischl,
   // Ganyu,
   // Gorou,
-  // HuTao,
+  HuTao,
   // Jean,
   KaedeharaKazuha,
   // Kaeya,
