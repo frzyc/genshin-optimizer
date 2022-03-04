@@ -67,7 +67,7 @@ const datamine = {
     duration: skillParam_gen.constellation4[2],
   },
   constellation6: {
-    charged_critDMG_: 0.70
+    charged_critDMG_: skillParam_gen.constellation6[0],
   }
 }
 
@@ -84,7 +84,7 @@ const nodeA4Bonus = greaterEq(input.asc, 4, prod(percent(datamine.passive2.def_)
 const nodeP1AtkSpd = greaterEq(input.asc, 4, lookup(condP1, Object.fromEntries(range(1, datamine.passive1.maxStacks).map(i => [i, constant(datamine.passive1.atkSPD_ * i)])), 0, { key: 'atkSPD_' }))
 const nodeC4Atk = equal(condC4, "on", greaterEq(input.constellation, 4, datamine.constellation4.atk_))
 const nodeC4Def = equal(condC4, "on", greaterEq(input.constellation, 4, datamine.constellation4.def_))
-const nodeC6CritDMG = greaterEq(input.constellation, 6, equal(input.hit.move, "charged", datamine.constellation6.charged_critDMG_))
+const nodeC6CritDMG = greaterEq(input.constellation, 6, datamine.constellation6.charged_critDMG_)
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -123,7 +123,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "inazuma", data_ge
     }
   },
   premod: {
-    critDMG_: nodeC6CritDMG,
+    charged_critDMG_: nodeC6CritDMG,
     atk: nodeBurstAtk,
     atkSPD_: sum(nodeBurstAtkSpd, nodeP1AtkSpd),
     ...allNodeBurstRes
@@ -305,7 +305,7 @@ const sheet: ICharacterSheet = {
         }]
       },
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
-      constellation6: talentTemplate("constellation6", tr, c6)
+      constellation6: talentTemplate("constellation6", tr, c6, [{ node: nodeC6CritDMG }])
     },
   },
 };

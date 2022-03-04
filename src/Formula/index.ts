@@ -26,6 +26,7 @@ const allNonModStats = [
   ...allArtNonModStats,
   ...(["all", ...allMoves] as const).map(x => `${x}_dmgInc` as const),
   ...([...allElements] as const).map(x => `${x}_critDMG_` as const),
+  ...([...allMoves] as const).map(x => `${x}_critDMG_` as const),
   ...allElements.map(x => `${x}_res_` as const),
   ...allMoves.map(x => `${x}_critRate_` as const),
   ...allEleEnemyResKeys,
@@ -154,7 +155,8 @@ const common: Data = {
           break
         case "critDMG_":
           operands.push(percent(0.5, { key, prefix: "default" }),
-            lookup(hit.ele, objectKeyMap(allElements, ele => premod[`${ele}_critDMG_`]), 0))
+            lookup(hit.ele, objectKeyMap(allElements, ele => premod[`${ele}_critDMG_`]), 0),
+            lookup(hit.move, objectKeyMap(allMoves, ele => premod[`${ele}_critDMG_`]), 0))
           break
         case "enerRech_":
           operands.push(percent(1, { key, prefix: "default" }))
