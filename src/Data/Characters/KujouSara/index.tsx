@@ -1,34 +1,110 @@
-import card from './Character_Kujou_Sara_Card.jpg'
-import thumb from './Icon.png'
-import thumbSide from './IconSide.png'
-import banner from './Banner.png'
-import c1 from './constellation1.png'
-import c2 from './constellation2.png'
-import c3 from './constellation3.png'
-import c4 from './constellation4.png'
-import c5 from './constellation5.png'
-import c6 from './constellation6.png'
-import skill from './skill.png'
-import burst from './burst.png'
-import passive1 from './passive1.png'
-import passive2 from './passive2.png'
-import passive3 from './passive3.png'
-import Stat from '../../../Stat'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../PageBuild/Build'
-import { ICharacterSheet } from '../../../Types/character'
-import { Translate } from '../../../Components/Translate'
-import { bowChargedDocSection, conditionalHeader, normalDocSection, normalSrc, plungeDocSection, st, talentTemplate } from '../SheetUtil'
-import { WeaponTypeKey } from '../../../Types/consts'
-import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
-import { KeyPath } from '../../../Util/KeyPathUtil'
-import { FormulaPathBase } from '../../formula'
-import { Typography } from '@mui/material'
-const path = KeyPath<FormulaPathBase, any>().character.KujouSara
-const tr = (strKey: string) => <Translate ns="char_KujouSara_gen" key18={strKey} />
-const charTr = (strKey: string) => <Translate ns="char_KujouSara" key18={strKey} />
-const char: ICharacterSheet = {
+import { CharacterData } from 'pipeline'
+import { input } from '../../../Formula'
+import { constant, equal, greaterEq, infoMut, percent, prod, subscript } from '../../../Formula/utils'
+import { CharacterKey } from '../../../Types/consts'
+import { cond, trans } from '../../SheetUtil'
+import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
+import data_gen_src from './data_gen.json'
+import skillParam_gen from './skillParam_gen.json'
+
+const data_gen = data_gen_src as CharacterData
+
+const key: CharacterKey = "KujouSara"
+const [tr, trm] = trans("char", key)
+
+let a = 0, s = 0, b = 0, p2 = 0
+const datamine = {
+  normal: {
+    hitArr: [
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+    ]
+  },
+  charged: {
+    aimed: skillParam_gen.auto[a++],
+    fullyAimed: skillParam_gen.auto[a++],
+  },
+  plunging: {
+    dmg: skillParam_gen.auto[a++],
+    low: skillParam_gen.auto[a++],
+    high: skillParam_gen.auto[a++],
+  },
+  skill: {
+    dmg: skillParam_gen.skill[s++],
+    atkBonus: skillParam_gen.skill[s++],
+    duration: skillParam_gen.skill[s++][0],
+    cd: skillParam_gen.skill[s++][0],
+  },
+  burst: {
+    titanBreakerDmg: skillParam_gen.burst[b++],
+    stormClusterDmg: skillParam_gen.burst[b++],
+    cd: skillParam_gen.burst[b++][0],
+    enerCost: skillParam_gen.burst[b++][0],
+  },
+  passive2: {
+    energyGen: skillParam_gen.passive2[p2++][0],
+    er: skillParam_gen.passive2[p2++][0]
+  },
+  constellation2: {
+    crowfeatherDmg: skillParam_gen.constellation2[0],
+  },
+  constellation6: {
+    atkInc: skillParam_gen.constellation6[0],
+  },
+} as const
+
+const [condSkillTenguAmbushPath, condSkillTenguAmbush] = cond(key, "TenguJuuraiAmbush")
+const skillTenguAmbush_ = equal("TenguJuuraiAmbush", condSkillTenguAmbush,
+  prod(input.base.atk, subscript(input.total.skillIndex, datamine.skill.atkBonus.map(x => x), { key: '_' })))
+
+const [condC6Path, condC6] = cond(key, "c6")
+const c6ElectroCritDmg_ = equal("c6", condC6, percent(datamine.constellation6.atkInc))
+
+const dmgFormulas = {
+  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+    [i, dmgNode("atk", arr, "normal")])),
+  charged: {
+    aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
+    fullyAimed: dmgNode("atk", datamine.charged.fullyAimed, "charged", { hit: { ele: constant('electro') } }),
+  },
+  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+    [key, dmgNode("atk", value, "plunging")])),
+  skill: {
+    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+    dmgC2: prod(dmgNode("atk", datamine.skill.dmg, "skill"), percent(datamine.constellation2.crowfeatherDmg)),
+    skillTenguAmbush_
+  },
+  burst: {
+    titanbreaker: dmgNode("atk", datamine.burst.titanBreakerDmg, "burst"),
+    stormcluster: dmgNode("atk", datamine.burst.stormClusterDmg, "burst"),
+  },
+}
+const nodeC3 = greaterEq(input.constellation, 3, 3)
+const nodeC5 = greaterEq(input.constellation, 5, 3)
+
+export const data = dataObjForCharacterSheet(key, "electro", "inazuma", data_gen, dmgFormulas, {
+  bonus: {
+    skill: nodeC3,
+    burst: nodeC5,
+  },
+  teamBuff: {
+    // should this be in premod or total?
+    premod: {
+      electro_critDMG_: c6ElectroCritDmg_
+    },
+    // should this be in premod or total?
+    total: {
+      atk: skillTenguAmbush_
+    }
+  }
+})
+
+const sheet: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
@@ -36,120 +112,115 @@ const char: ICharacterSheet = {
   bannerImg: banner,
   rarity: data_gen.star,
   elementKey: "electro",
-  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
+  weaponTypeKey: data_gen.weaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),
-  baseStat: data_gen.base,
-  baseStatCurve: data_gen.curves,
-  ascensions: data_gen.ascensions,
   talent: {
-    formula,
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
+        img: normalSrc(data_gen.weaponTypeKey),
         sections: [
-          normalDocSection(tr, formula, data),
-          bowChargedDocSection(tr, formula, data, "electro"),
-          plungeDocSection(tr, formula, data)
+          {
+            text: tr("auto.fields.normal"),
+            fields: datamine.normal.hitArr.map((_, i) =>
+            ({
+              node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` })
+            }))
+          }, {
+            text: tr("auto.fields.charged"),
+            fields: [{
+              node: infoMut(dmgFormulas.charged.aimed, { key: `char_${key}_gen:auto.skillParams.5` }),
+            }, {
+              node: infoMut(dmgFormulas.charged.fullyAimed, { key: `char_${key}_gen:auto.skillParams.6` }),
+            }]
+          }, {
+            text: tr("auto.fields.plunging"),
+            fields: [{
+              node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+            }, {
+              node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+            }, {
+              node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+            }]
+          }
         ],
       },
-      skill: {
+      skill: { // Cannot use talentTemplate because this has multiple sections.
         name: tr("skill.name"),
         img: skill,
         sections: [{
           text: tr("skill.description"),
-          fields: [
-            {
-              text: tr("skill.skillParams.0"),
-              formulaText: stats => basicDMGFormulaText(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
-              formula: formula.skill.dmg,
-              variant: stats => getTalentStatKeyVariant("skill", stats),
-            }, {
-              text: tr("skill.skillParams.2"),
-              value: data.skill.duration,
-              unit: "s"
-            }, {
-              text: tr("skill.skillParams.3"),
-              value: data.skill.cd,
-              unit: "s"
-            }],
-          conditional: { //Gengu StormCall
-            key: "e",
-            partyBuff: "partyActive",
+          fields: [{
+            node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
+          }, {
+            text: tr("skill.skillParams.2"),
+            value: `${datamine.skill.duration}s`,
+          }, {
+            text: tr("skill.skillParams.3"),
+            value: `${datamine.skill.cd}s`,
+          }],
+          conditional: {
+            value: condSkillTenguAmbush,
+            path: condSkillTenguAmbushPath,
+            name: trm("skill.ambush"),
             header: conditionalHeader("skill", tr, skill),
             description: tr("skill.description"),
-            name: charTr("skill.ambush"),
-            stats: {
-              modifiers: { atk: [path.skill.atkBonus()] },
-            },
-            fields: [{
-              text: st("increase.atk"),
-              formulaText: stats => <span>{data.skill.atkRatio[stats.tlvl.skill]}% {Stat.printStat("baseATK", stats, true)}</span>,
-              formula: formula.skill.atkBonus
-            },]
-          }
-        }],
+            teamBuff: true,
+            states: {
+              TenguJuuraiAmbush: {
+                fields: [{
+                  node: skillTenguAmbush_
+                }]
+              }
+            }
+          },
+        }]
       },
-      burst: {
-        name: tr("burst.name"),
-        img: burst,
-        sections: [{
-          text: tr("burst.description"),
-          fields: [{
-            text: tr("burst.skillParams.0"),
-            formulaText: stats => basicDMGFormulaText(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
-            formula: formula.burst.dmg,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
-          }, {
-            text: tr("burst.skillParams.1"),
-            formulaText: stats => basicDMGFormulaText(data.burst.cluster[stats.tlvl.burst], stats, "burst"),
-            formula: formula.burst.cluster,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
-          }, {
-            text: tr("burst.skillParams.2"),
-            value: data.burst.cd,
-            unit: "s"
-          }, {
-            text: tr("burst.skillParams.3"),
-            value: data.burst.cost,
-          }]
-        }],
-      },
+      burst: talentTemplate("burst", tr, burst, [{
+        node: infoMut(dmgFormulas.burst.titanbreaker, { key: `char_${key}_gen:burst.skillParams.0` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.stormcluster, { key: `char_${key}_gen:burst.skillParams.1` }),
+      }, {
+        text: tr("burst.skillParams.2"),
+        value: `${datamine.burst.cd}s`,
+      }, {
+        text: tr("burst.skillParams.3"),
+        value: `${datamine.burst.enerCost}`,
+      }]),
       passive1: talentTemplate("passive1", tr, passive1),
-      passive2: talentTemplate("passive2", tr, passive2),
+      passive2: talentTemplate("passive2", tr, passive2, [{
+        canShow: data => data.get(input.asc).value >= 4,
+        text: trm("a4.enerRest"),
+        value: (data) => {
+          return `${~~((data.get(input.total.enerRech_).value * 100 / (datamine.passive2.energyGen * 100))) * (datamine.passive2.energyGen)}`
+        }
+      }]),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
-      constellation2: {
-        name: tr("constellation2.name"),
-        img: c2,
-        sections: [{
-          text: tr("constellation2.description"),
-          fields: [{
-            canShow: stats => stats.constellation >= 2,
-            text: tr("skill.skillParams.0"),
-            formulaText: stats => <span>0.3 * {data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)} </span>,
-            formula: formula.c2.dmg,
-            variant: stats => getTalentStatKeyVariant("skill", stats),
-          }]
-        }],
-      },
-      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
+      constellation2: talentTemplate("constellation2", tr, c2, [{
+        canShow: data => data.get(input.constellation).value >= 2,
+        node: infoMut(dmgFormulas.skill.dmgC2, { key: `char_${key}_gen:skill.skillParams.0` }),
+      }]),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
-      constellation6: {
-        name: tr("constellation6.name"),
-        img: c6,
-        sections: [{
-          text: stats => stats.constellation < 6 ? tr("constellation6.description") :
-            <span>
-              {tr("constellation6.description")}
-              <Typography color="warning.main">This skill needs more system changes before it can be implemented.</Typography>
-            </span>,
-        }],
-      },
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
+      constellation6: talentTemplate("constellation6", tr, c6, undefined, {
+        value: condC6,
+        path: condC6Path,
+        teamBuff: true,
+        canShow: greaterEq(input.constellation, 6, 1),
+        name: trm("c6.electroCritDmg"),
+        states: {
+          c6: {
+            fields: [{
+              node: c6ElectroCritDmg_,
+            }]
+          }
+        }
+      }),
     },
   },
 };
-export default char;
+export default new CharacterSheet(sheet, data);
