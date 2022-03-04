@@ -13,7 +13,6 @@ const key: WeaponKey = "PrototypeArchaic"
 const data_gen = data_gen_json as WeaponData
 const dmg_Src = [2.4, 3, 3.6, 4.2, 4.8]
 
-// TODO: Is this the correct formula for the dmg dealt?
 const dmg_ = customDmgNode(prod(subscript(input.weapon.refineIndex, dmg_Src, { key: "_" }), input.premod.atk), "elemental", {
   hit: { ele: constant("physical") }
 })

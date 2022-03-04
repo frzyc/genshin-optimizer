@@ -18,7 +18,6 @@ const dmg_Src = [1, 1.25, 1.5, 1.75, 2]
 
 const burst_dmg_ = subscript(input.weapon.refineIndex, burst_dmg_Src)
 const [condPassivePath, condPassive] = cond(key, "OceanicVictory")
-// TODO: Is this the correct formula for the dmg dealt from the fishes?
 const dmg_ = equal(condPassive, 'on', customDmgNode(prod(subscript(input.weapon.refineIndex, dmg_Src, { key: "_" }), input.premod.atk), "elemental", {
   hit: { ele: constant("physical") }
 }))

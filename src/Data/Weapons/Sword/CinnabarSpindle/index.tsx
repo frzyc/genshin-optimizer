@@ -21,6 +21,8 @@ const data = dataObjForWeaponSheet(key, data_gen, {
   premod: { // TODO: should be total
     skill_dmgInc
   }
+}, {
+  skill_dmgInc
 })
 
 const sheet: IWeaponSheet = {

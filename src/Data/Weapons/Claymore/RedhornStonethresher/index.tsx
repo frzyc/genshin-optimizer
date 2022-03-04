@@ -15,18 +15,18 @@ const def_Src = [0.28, 0.35, 0.42, 0.49, 0.56]
 const normal_dmg_Src = [0.4, 0.5, 0.6, 0.7, 0.8]
 const charged_dmg_Src = [0.4, 0.5, 0.6, 0.7, 0.8]
 const def_ = subscript(input.weapon.refineIndex, def_Src)
-// TODO: Should these be premod or total
-// TODO: Is this the correct formula?
-const normal_dmgInc = prod(subscript(input.weapon.refineIndex, normal_dmg_Src, { key: "_" }), input.total.def)
-const charged_dmgInc = prod(subscript(input.weapon.refineIndex, charged_dmg_Src, { key: "_" }), input.total.def)
+const normal_dmgInc = prod(subscript(input.weapon.refineIndex, normal_dmg_Src, { key: "_" }), input.premod.def)
+const charged_dmgInc = prod(subscript(input.weapon.refineIndex, charged_dmg_Src, { key: "_" }), input.premod.def)
 
 const data = dataObjForWeaponSheet(key, data_gen, {
-  premod: {
+  premod: { //
     def_,
-    // TODO: Should these in premod or total
-    normal_dmgInc,
-    charged_dmgInc
+    normal_dmgInc, // TODO: technically should be in "total", but should be fine as premod
+    charged_dmgInc, // TODO: technically should be in "total", but should be fine as premod
   }
+}, {
+  normal_dmgInc,
+  charged_dmgInc,
 })
 
 const sheet: IWeaponSheet = {
