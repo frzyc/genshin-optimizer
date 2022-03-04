@@ -1,39 +1,45 @@
 import { WeaponData } from 'pipeline'
-import { getTalentStatKey } from '../../../../PageBuild/Build'
-import ColorText from '../../../../Components/ColoredText'
-import { Translate } from '../../../../Components/Translate'
-import Stat from '../../../../Stat'
-import { IWeaponSheet } from '../../../../Types/weapon'
+import { input } from '../../../../Formula'
+import { prod, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
+import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
-const def_ = [28, 35, 42, 49, 56]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+
+const key: WeaponKey = "RedhornStonethresher"
+const data_gen = data_gen_json as WeaponData
+
+const def_Src = [0.28, 0.35, 0.42, 0.49, 0.56]
+const normal_dmg_Src = [0.4, 0.5, 0.6, 0.7, 0.8]
+const charged_dmg_Src = [0.4, 0.5, 0.6, 0.7, 0.8]
+const def_ = subscript(input.weapon.refineIndex, def_Src)
+// TODO: Should these be premod or total
+// TODO: Is this the correct formula?
+const normal_dmgInc = prod(subscript(input.weapon.refineIndex, normal_dmg_Src, { key: "_" }), input.total.def)
+const charged_dmgInc = prod(subscript(input.weapon.refineIndex, charged_dmg_Src, { key: "_" }), input.total.def)
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    def_,
+    // TODO: Should these in premod or total
+    normal_dmgInc,
+    charged_dmgInc
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    def_: def_[stats.weapon.refineIndex]
-  }),
   document: [{
-    conditional: {
-      key: "e",
-      name: <Translate ns="weapon_RedhornStonethresher_gen" key18="passiveName" />,
-      fields: [{
-        text: <Translate ns="weapon_RedhornStonethresher" key18="nameNormal" />,
-        formulaText: stats => <span>{data.defConv[stats.weapon.refineIndex]}% {Stat.printStat("finalDEF", stats, true)} * {Stat.printStat(getTalentStatKey("normal", stats) + "_multi", stats)}</span>,
-        formula: formula.normal,
-        variant: stats => stats.characterEle
-      }, {
-        text: <Translate ns="weapon_RedhornStonethresher" key18="nameCharged" />,
-        formulaText: stats => <span>{data.defConv[stats.weapon.refineIndex]}% {Stat.printStat("finalDEF", stats, true)} * {Stat.printStat(getTalentStatKey("charged", stats) + "_multi", stats)}</span>,
-        formula: formula.charged,
-        variant: stats => stats.characterEle
-      }, {
-        text: <ColorText color="warning">The normal and charged DMG increase is not currently being added to the character's skill damage as a singular damage number, pending future implemention.</ColorText>
-      }],
-    }
+    fields: [{
+      node: def_
+    }, {
+      node: normal_dmgInc
+    }, {
+      node: charged_dmgInc
+    }]
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

@@ -1,42 +1,65 @@
 import { WeaponData } from 'pipeline'
 import { Translate } from '../../../../Components/Translate'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { equal, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { cond, sgt, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-import ImgIcon from '../../../../Components/Image/ImgIcon'
-import { sgt } from '../../../Characters/SheetUtil'
-const tr = (strKey: string) => <Translate ns="weapon_SongOfBrokenPines_gen" key18={strKey} />
-const atk_ = [16, 20, 24, 28, 32]
-const atkSPD_ = [12, 15, 18, 21, 24]
-const condAtk_ = [20, 25, 30, 35, 40]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "SongOfBrokenPines"
+const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
+const atk_Src = [0.16, 0.20, 0.24, 0.28, 0.32]
+const atkTeam_Src = [0.20, 0.25, 0.30, 0.35, 0.40]
+const atkSPD_Src = [0.12, 0.15, 0.18, 0.21, 0.24]
+
+const [condPassivePath, condPassive] = cond(key, "RebelsBannerHymn")
+const atk_ = subscript(input.weapon.refineIndex, atk_Src, { key: "_" })
+const atkTeam_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkTeam_Src, { key: "atk_" }))
+const atkSPD_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkSPD_Src))
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    atk_
+  },
+  teamBuff: {
+    premod: {
+      atk_: atkTeam_,
+      atkSPD_,
+    }
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    atk_: atk_[stats.weapon.refineIndex]
-  }),
   document: [{
+    fields: [{ node: atk_ }],
     conditional: {
-      key: "r",
-      partyBuff: "partyAll",
-      header: {
-        title: tr(`passiveName`),
-        icon: stats => <ImgIcon size={2} sx={{ m: -1 }} src={stats.ascension < 2 ? icon : iconAwaken} />,
-      },
-      description: stats => tr(`passiveDescription.${stats.weapon.refineIndex}`),
+      value: condPassive,
+      path: condPassivePath,
+      teamBuff: true,
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
       name: <Translate ns="weapon_SongOfBrokenPines" key18="name" />,
-      stats: stats => ({
-        atk_: condAtk_[stats.weapon.refineIndex],
-        atkSPD_: atkSPD_[stats.weapon.refineIndex],
-      }),
-      fields: [{
-        text: sgt("duration"),
-        value: 12,
-        unit: "s"
-      }]
+      states: {
+        on: {
+          fields: [{
+            node: atkTeam_
+          }, {
+            node: atkSPD_
+          }, {
+            text: sgt("duration"),
+            value: 12,
+            unit: "s"
+          }]
+        }
+      }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

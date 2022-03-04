@@ -4,26 +4,26 @@
 // import DebateClub from './DebateClub'
 // import FavoniusGreatsword from './FavoniusGreatsword'
 // import FerrousShadow from './FerrousShadow'
-// import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
+import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
 // import LithicBlade from './LithicBlade'
-// import LuxuriousSeaLord from './LuxuriousSeaLord'
+import LuxuriousSeaLord from './LuxuriousSeaLord'
 // import OldMercsPal from './OldMercsPal'
-// import PrototypeArchaic from './PrototypeArchaic'
+import PrototypeArchaic from './PrototypeArchaic'
 // import Rainslasher from './Rainslasher'
-// import RedhornStonethresher from './RedhornStonethresher'
+import RedhornStonethresher from "./RedhornStonethresher";
 // import RoyalGreatsword from './RoyalGreatsword'
-// import SacrificialGreatsword from './SacrificialGreatsword'
-// import SerpentSpine from './SerpentSpine'
+import SacrificialGreatsword from "./SacrificialGreatsword";
+ import SerpentSpine from './SerpentSpine'
 // import SkyriderGreatsword from './SkyriderGreatsword'
 // import SkywardPride from './SkywardPride'
 // import SnowTombedStarsilver from './SnowTombedStarsilver'
-// import SongOfBrokenPines from './SongOfBrokenPines'
+import SongOfBrokenPines from "./SongOfBrokenPines";
 // import TheBell from './TheBell'
 // import TheUnforged from './TheUnforged'
-import WasterGreatsword from './WasterGreatsword'
+import WasterGreatsword from "./WasterGreatsword";
 // import Whiteblind from './Whiteblind'
 // import WhiteIronGreatsword from './WhiteIronGreatsword'
-// import WolfsGravestone from './WolfsGravestone'
+import WolfsGravestone from "./WolfsGravestone";
 const claymore = {
   // Akuoumaru,
   // BlackcliffSlasher,
@@ -31,25 +31,25 @@ const claymore = {
   // DebateClub,
   // FavoniusGreatsword,
   // FerrousShadow,
-  // KatsuragikiriNagamasa,
+  KatsuragikiriNagamasa,
   // LithicBlade,
-  // LuxuriousSeaLord,
+  LuxuriousSeaLord,
   // OldMercsPal,
-  // PrototypeArchaic,
+  PrototypeArchaic,
   // Rainslasher,
-  // RedhornStonethresher,
+  RedhornStonethresher,
   // RoyalGreatsword,
-  // SacrificialGreatsword,
-  // SerpentSpine,
+  SacrificialGreatsword,
+  SerpentSpine,
   // SkyriderGreatsword,
   // SkywardPride,
   // SnowTombedStarsilver,
-  // SongOfBrokenPines,
+  SongOfBrokenPines,
   // TheBell,
   // TheUnforged,
   WasterGreatsword,
   // Whiteblind,
   // WhiteIronGreatsword,
-  // WolfsGravestone,
-} as const
-export default claymore
+  WolfsGravestone,
+} as const;
+export default claymore;
