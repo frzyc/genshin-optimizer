@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
-import { input } from '../../../Formula'
-import { constant, equal, greaterEq, infoMut, percent, prod, subscript } from '../../../Formula/utils'
+import { input, target } from '../../../Formula'
+import { constant, equal, equalStr, greaterEq, infoMut, percent, prod, subscript } from '../../../Formula/utils'
 import { CharacterKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
@@ -59,8 +59,8 @@ const datamine = {
 } as const
 
 const [condSkillTenguAmbushPath, condSkillTenguAmbush] = cond(key, "TenguJuuraiAmbush")
-const skillTenguAmbush_ = equal("TenguJuuraiAmbush", condSkillTenguAmbush,
-  prod(input.base.atk, subscript(input.total.skillIndex, datamine.skill.atkBonus.map(x => x), { key: '_' })))
+const skillTenguAmbush_ = equal(target.activeCharKey, target.charKey, equal("TenguJuuraiAmbush", condSkillTenguAmbush,
+  prod(input.base.atk, subscript(input.total.skillIndex, datamine.skill.atkBonus.map(x => x), { key: '_' }))))
 
 const [condC6Path, condC6] = cond(key, "c6")
 const c6ElectroCritDmg_ = equal("c6", condC6, percent(datamine.constellation6.atkInc))
@@ -76,13 +76,15 @@ const dmgFormulas = {
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
     dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
-    dmgC2: prod(dmgNode("atk", datamine.skill.dmg, "skill"), percent(datamine.constellation2.crowfeatherDmg)),
     skillTenguAmbush_
   },
   burst: {
     titanbreaker: dmgNode("atk", datamine.burst.titanBreakerDmg, "burst"),
     stormcluster: dmgNode("atk", datamine.burst.stormClusterDmg, "burst"),
   },
+  constellation2: {
+    dmg: greaterEq(input.constellation, 2, prod(dmgNode("atk", datamine.skill.dmg, "skill"), percent(datamine.constellation2.crowfeatherDmg))),
+  }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
@@ -93,11 +95,9 @@ export const data = dataObjForCharacterSheet(key, "electro", "inazuma", data_gen
     burst: nodeC5,
   },
   teamBuff: {
-    // should this be in premod or total?
     premod: {
       electro_critDMG_: c6ElectroCritDmg_
     },
-    // should this be in premod or total?
     total: {
       atk: skillTenguAmbush_
     }
@@ -147,37 +147,27 @@ const sheet: ICharacterSheet = {
           }
         ],
       },
-      skill: { // Cannot use talentTemplate because this has multiple sections.
-        name: tr("skill.name"),
-        img: skill,
-        sections: [{
-          text: tr("skill.description"),
-          fields: [{
-            node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
-          }, {
-            text: tr("skill.skillParams.2"),
-            value: `${datamine.skill.duration}s`,
-          }, {
-            text: tr("skill.skillParams.3"),
-            value: `${datamine.skill.cd}s`,
-          }],
-          conditional: {
-            value: condSkillTenguAmbush,
-            path: condSkillTenguAmbushPath,
-            name: trm("skill.ambush"),
-            header: conditionalHeader("skill", tr, skill),
-            description: tr("skill.description"),
-            teamBuff: true,
-            states: {
-              TenguJuuraiAmbush: {
-                fields: [{
-                  node: skillTenguAmbush_
-                }]
-              }
-            }
-          },
-        }]
-      },
+      skill: talentTemplate("skill", tr, skill, [{
+        node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
+      }, {
+        text: tr("skill.skillParams.2"),
+        value: `${datamine.skill.duration}s`,
+      }, {
+        text: tr("skill.skillParams.3"),
+        value: `${datamine.skill.cd}s`,
+      }], {
+        value: condSkillTenguAmbush,
+        path: condSkillTenguAmbushPath,
+        name: trm("skill.ambush"),
+        teamBuff: true,
+        states: {
+          TenguJuuraiAmbush: {
+            fields: [{
+              node: skillTenguAmbush_
+            }]
+          }
+        }
+      }),
       burst: talentTemplate("burst", tr, burst, [{
         node: infoMut(dmgFormulas.burst.titanbreaker, { key: `char_${key}_gen:burst.skillParams.0` }),
       }, {
@@ -193,15 +183,12 @@ const sheet: ICharacterSheet = {
       passive2: talentTemplate("passive2", tr, passive2, [{
         canShow: data => data.get(input.asc).value >= 4,
         text: trm("a4.enerRest"),
-        value: (data) => {
-          return `${~~((data.get(input.total.enerRech_).value * 100 / (datamine.passive2.energyGen * 100))) * (datamine.passive2.energyGen)}`
-        }
+        value: data => data.get(input.total.enerRech_).value * datamine.passive2.energyGen
       }]),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2, [{
-        canShow: data => data.get(input.constellation).value >= 2,
-        node: infoMut(dmgFormulas.skill.dmgC2, { key: `char_${key}_gen:skill.skillParams.0` }),
+        node: infoMut(dmgFormulas.constellation2.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
       }]),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),

@@ -56,9 +56,6 @@ const statMap = {
   skillBoost: "Ele. Skill Level Boost",
   burstBoost: "Ele. Burst Level Boost",
 
-  // Elemental DMG
-  electro_critDMG_: "Electro Crit DMG",
-
   level: "Level",
 } as const
 
