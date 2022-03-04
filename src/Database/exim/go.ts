@@ -4,7 +4,9 @@ import { CharacterKey } from "../../Types/consts";
 import { ArtCharDatabase } from "../Database";
 import { DBStorage, SandboxStorage } from "../DBStorage";
 import { setDBVersion } from "../utils";
-
+/**
+ * NOTE: this is the "old" GO format, before GOOD is introduced. might not be a good idea to eventually deprecate this format.
+ */
 export function importGO(data: any): ImportResult | undefined {
   const storage = new SandboxStorage()
   const { version, characterDatabase, artifactDatabase, artifactDisplay, characterDisplay, buildsDisplay } = data as Partial<DatabaseObj>

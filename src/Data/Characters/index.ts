@@ -4,7 +4,7 @@ import CharacterSheet from './CharacterSheet'
 // import Albedo from './Albedo'
 // import Aloy from './Aloy'
 // import Amber from './Amber'
-// import AratakiItto from './AratakiItto'
+import AratakiItto from './AratakiItto'
 // import Barbara from './Barbara'
 // import Beidou from './Beidou'
 import Bennett from './Bennett'
@@ -45,7 +45,7 @@ import Xingqiu from './Xingqiu'
 // import Xinyan from './Xinyan'
 import YaeMiko from './YaeMiko'
 // import Yanfei from './Yanfei'
-// import Yoimiya from './Yoimiya'
+import Yoimiya from './Yoimiya'
 import YunJin from './YunJin'
 // import Zhongli from './Zhongli'
 
@@ -53,7 +53,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Albedo,
   // Aloy,
   // Amber,
-  // AratakiItto,
+  AratakiItto,
   // Barbara,
   // Beidou,
   Bennett,
@@ -94,7 +94,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Xinyan,
   YaeMiko,
   // Yanfei,
-  // Yoimiya,
+  Yoimiya,
   YunJin,
   // Zhongli
 } as const

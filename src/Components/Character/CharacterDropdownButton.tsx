@@ -21,7 +21,7 @@ export type CharacterDropdownButtonProps = Omit<DropdownButtonProps, "title" | "
 
 export default function CharacterDropdownButton({ value, onChange, unSelectText, unSelectIcon, inventory = false, noUnselect = false, filter = () => true, ...props }: CharacterDropdownButtonProps) {
   const { t } = useTranslation("ui");
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const characterSheets = usePromise(CharacterSheet.getAll, [])
   const characterSheet = usePromise(CharacterSheet.get(value), [value])
   const characterKeys = database._getCharKeys().filter(ck => characterSheets?.[ck] && filter(characterSheets[ck], ck)).sort()

@@ -12,8 +12,6 @@ const key: WeaponKey = "SacrificialSword"
 const data_gen = data_gen_json as WeaponData
 const [, trm] = trans("weapon", key)
 
-// TODO: Should this be in: premod { cdRed_ }? Previous sheet uses cdRed_ instead 
-// Or this doesn't even affect cdRed considering the passive resets the skill cooldown instead of reduction
 const [condPassivePath, condPassive] = cond(key, "Composed")
 const cdRed_ = equal(condPassive, 'on', percent(1))
 

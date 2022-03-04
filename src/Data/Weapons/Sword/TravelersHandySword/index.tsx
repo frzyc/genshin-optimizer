@@ -2,6 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { infoMut, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
+import { customHealNode } from '../../../Characters/dataUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -12,10 +13,7 @@ const key: WeaponKey = "TravelersHandySword"
 const data_gen = data_gen_json as WeaponData
 const hpRegenSrc = [0.01, 0.0125, 0.015, 0.0175, 0.02]
 
-// Should this be input.total.hp or input.premod.hp
-// And should this take into account of healing bonuses and whatnot?
-const heal = prod(subscript(input.weapon.refineIndex, hpRegenSrc), input.total.hp)
-
+const heal = customHealNode(prod(subscript(input.weapon.refineIndex, hpRegenSrc), input.total.hp))
 const data = dataObjForWeaponSheet(key, data_gen, undefined, { heal })
 
 const sheet: IWeaponSheet = {

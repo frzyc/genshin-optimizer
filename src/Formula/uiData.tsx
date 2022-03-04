@@ -111,7 +111,7 @@ export class UIData {
     }
 
     if (info) {
-      const { key, prefix, source, variant, asConst } = info
+      const { key, prefix, source, variant, asConst, fixed } = info
       let { pivot } = info
       result = { ...result }
 
@@ -123,6 +123,7 @@ export class UIData {
       if (source) result.source = source
       if (variant) result.variant = variant
       if (pivot) result.pivot = pivot
+      if (fixed) result.fixed = fixed
 
       if (asConst) {
         delete result.formula
@@ -320,9 +321,9 @@ function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
 
 //* Comment/uncomment this line to toggle between string formulas and JSX formulas
 function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
-  const { key, value, formula, prefix, source, variant } = node
+  const { key, value, formula, prefix, source, variant, fixed } = node
   if (typeof value !== "number") return
-  node.valueDisplay = <ColorText color="info">{valueString(value, key ? KeyMap.unit(key) : "flat")}</ColorText>
+  node.valueDisplay = <ColorText color="info">{valueString(value, key ? KeyMap.unit(key) : "flat", fixed)}</ColorText>
   if (key && key !== '_') {
     const prefixDisplay = (prefix && !source) ? <>{KeyMap.getPrefixStr(prefix)} </> : <></>
     // TODO: Convert `source` key to actual name
@@ -343,9 +344,9 @@ function mergeFormulaComponents(components: Displayable[]): Displayable {
 }
 /*/
 function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
-  const { key, value, formula, prefix, source, variant } = node
+  const { key, value, formula, prefix, source, variant, fixed } = node
   if (typeof value !== "number") return
-  node.valueDisplay = valueString(value, key ? KeyMap.unit(key) : "flat")
+  node.valueDisplay = valueString(value, key ? KeyMap.unit(key) : "flat", fixed)
   if (key && key !== '_') {
     const prefixDisplay = (prefix && !source) ? `${KeyMap.getPrefixStr(prefix)} ` : ""
     // TODO: Convert `source` key to actual name
@@ -370,6 +371,7 @@ interface ContextNodeDisplay<V = number> {
   prefix?: Info["prefix"]
   source?: Info["source"]
   variant?: Info["variant"]
+  fixed?: Info["fixed"]
 
   pivot: boolean
   empty: boolean

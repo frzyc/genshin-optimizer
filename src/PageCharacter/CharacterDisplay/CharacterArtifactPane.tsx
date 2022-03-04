@@ -6,7 +6,7 @@ import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
 import SetEffectDisplay from '../../Components/Artifact/SetEffectDisplay';
 import CardLight from '../../Components/Card/CardLight';
 import ImgIcon from '../../Components/Image/ImgIcon';
-import { database as localDatabase, DatabaseContext } from '../../Database/Database';
+import { DatabaseContext } from '../../Database/Database';
 import { DataContext } from '../../DataContext';
 import { uiInput as input } from '../../Formula';
 import useForceUpdate from '../../ReactHooks/useForceUpdate';
@@ -14,16 +14,19 @@ import usePromise from '../../ReactHooks/usePromise';
 import { allSlotKeys, SlotKey } from '../../Types/consts';
 import { objectKeyMap } from '../../Util/Util';
 import StatDisplayComponent from '../../Components/Character/StatDisplayComponent';
+import { ArtifactDisplayLocationState } from '../../Types/LocationState';
 
 function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
   const { data, character, mainStatAssumptionLevel } = useContext(DataContext)
 
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const history = useHistory()
   const edit = useCallback(
     artid => history.push({
       pathname: "/artifact",
-      artToEditId: artid
+      state: {
+        artToEditId: artid
+      } as ArtifactDisplayLocationState
     } as any), [history])
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
 
@@ -53,7 +56,7 @@ function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
       <CardContent sx={{ py: 1 }}>
         <Grid container spacing={1}>
           <Grid item>
-            {newBuild ? <Button onClick={equipArts} className="mr-2">Equip artifacts</Button> : (database === localDatabase && <Button color="error" onClick={unequipArts}>Unequip all artifacts</Button>)}
+            {newBuild ? <Button onClick={equipArts} className="mr-2">Equip artifacts</Button> : <Button color="error" onClick={unequipArts}>Unequip all artifacts</Button>}
           </Grid>
           <Grid item flexGrow={1}></Grid>
           <Grid item>{!!mainStatAssumptionLevel && <Card sx={{ p: 1, bgcolor: t => t.palette.warning.dark }}><Typography><strong>Assume Main Stats are Level {mainStatAssumptionLevel}</strong></Typography></Card>}</Grid>
@@ -77,7 +80,7 @@ function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
         )}
       </Grid>
       {artIds.map(id => !!id && <Grid item xs={6} md={4} key={id} >
-        <ArtifactCard artifactId={id} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={() => edit(id)} />
+        <ArtifactCard artifactId={id} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={edit} />
       </Grid>)}
     </Grid>
   </>

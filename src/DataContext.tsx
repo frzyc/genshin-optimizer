@@ -11,7 +11,7 @@ export type TeamData = Partial<Record<CharacterKey, {
   character: ICachedCharacter
   weapon: ICachedWeapon
   characterSheet: CharacterSheet
-  weaponSheet: WeaponSheet
+  weaponSheet: WeaponSheet,
 }>>
 export type dataContextObj = {
   character: ICachedCharacter

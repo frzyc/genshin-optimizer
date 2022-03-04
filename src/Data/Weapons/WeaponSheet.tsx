@@ -3,7 +3,7 @@ import { Data } from '../../Formula/type';
 import { Rarity, WeaponKey, WeaponTypeKey } from '../../Types/consts';
 import { DocumentSection } from '../../Types/sheet';
 import { ICachedWeapon } from '../../Types/weapon_WR';
-import { ascensionMaxLevel } from '../LevelData';
+import { ambiguousLevel, ambiguousLevelLow, ascensionMaxLevel, lowRarityMilestoneLevels, milestoneLevels } from '../LevelData';
 import type { WeaponData } from 'pipeline';
 import IConditional from '../../Types/IConditional_WR';
 import ImgIcon from '../../Components/Image/ImgIcon';
@@ -35,13 +35,21 @@ export default class WeaponSheet {
   static getLevelString = (weapon: ICachedWeapon): string => `${weapon.level}/${ascensionMaxLevel[weapon.ascension]}`
   tr = (strKey: string) => <Translate ns={`weapon_${this.key}_gen`} key18={strKey} />
   get name() { return this.tr("name") }
-  //when there is no substat, assume there is no passive.
-  get passiveName() { return this.rarity > 2 ? this.tr("passiveName") : "" }
+  get hasRefinement() { return this.rarity > 2 }
+  get passiveName() { return this.hasRefinement ? this.tr("passiveName") : "" }
   get description() { return this.tr("description") }
-  passiveDescription = (refineIndex: number) => this.rarity > 2 ? this.tr(`passiveDescription.${refineIndex}`) : ""
+  passiveDescription = (refineIndex: number) => this.hasRefinement ? this.tr(`passiveDescription.${refineIndex}`) : ""
   get img() { return this.sheet.icon }
   get imgAwaken() { return this.sheet.iconAwaken }
   get document() { return this.sheet.document }
+  get milestoneLevels(): Array<[number, number]> {
+    if (this.hasRefinement) return milestoneLevels as any
+    else return lowRarityMilestoneLevels as any
+  }
+  ambiguousLevel(level: number) {
+    if (this.hasRefinement) return ambiguousLevel(level)
+    else return ambiguousLevelLow(level)
+  }
 }
 export const conditionalHeader = (tr: (string) => Displayable, img: string, imgAwaken: string): IConditional["header"] => ({
   title: tr(`passiveName`),

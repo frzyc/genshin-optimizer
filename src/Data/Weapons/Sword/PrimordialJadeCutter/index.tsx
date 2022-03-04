@@ -14,15 +14,15 @@ const hpSrc = [0.2, 0.25, 0.3, 0.35, 0.4]
 const atkSrc = [0.012, 0.015, 0.018, 0.021, 0.024]
 
 const hp_ = subscript(input.weapon.refineIndex, hpSrc)
-// Should this be total.hp or premod.hp
-const atk = prod(subscript(input.weapon.refineIndex, atkSrc), input.total.hp)
+const atk = prod(subscript(input.weapon.refineIndex, atkSrc, { key: "_" }), input.premod.hp)
 
-// Is it atk or is it atk_? And should it be in premod or should it be in total?
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     hp_,
-    atk
   },
+  total: {
+    atk
+  }
 })
 
 const sheet: IWeaponSheet = {

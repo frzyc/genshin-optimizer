@@ -1,5 +1,5 @@
 import { WeaponData } from 'pipeline'
-import { input } from '../../../../Formula'
+import { input, target } from '../../../../Formula'
 import { equal, subscript, unequal } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { cond, sgt, trans } from '../../../SheetUtil'
@@ -16,9 +16,8 @@ const [tr, trm] = trans("weapon", key)
 const atkSrc = [0.24, 0.3, 0.36, 0.42, 0.48]
 
 const [condPassivePath, condPassive] = cond(key, "Heritage")
-const atk_ = unequal(input.activeCharKey, input.charKey, equal("on", condPassive, subscript(input.weapon.refineIndex, atkSrc)))
+const atk_ = equal(input.activeCharKey, target.charKey, equal("on", condPassive, subscript(input.weapon.refineIndex, atkSrc)))
 
-// This should be in teambuff: premod right?
 const data = dataObjForWeaponSheet(key, data_gen, {
   teamBuff: {
     premod: {

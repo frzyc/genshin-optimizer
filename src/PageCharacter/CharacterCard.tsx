@@ -146,7 +146,7 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
   </ConditionalWrapper>
 }
 function Weapon({ weaponId }: { weaponId: string }) {
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const weapon = database._getWeapon(weaponId)
   const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
@@ -180,7 +180,7 @@ function Weapon({ weaponId }: { weaponId: string }) {
   </CardDark>
 }
 function ArtifactDisplay() {
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const { data } = useContext(DataContext)
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const artifacts = useMemo(() =>

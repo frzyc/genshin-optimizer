@@ -14,7 +14,7 @@ import SqBadge from '../Components/SqBadge';
 import { Stars } from '../Components/StarDisplay';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
-import { database as localDatabase, DatabaseContext } from '../Database/Database';
+import { DatabaseContext } from '../Database/Database';
 import KeyMap, { cacheValueString } from '../KeyMap';
 import useArtifact from '../ReactHooks/useArtifact';
 import usePromise from '../ReactHooks/usePromise';
@@ -27,8 +27,8 @@ import { probability } from './RollProbability';
 type Data = {
   artifactId?: string,
   artifactObj?: ICachedArtifact,
-  onEdit?: (string) => void,
-  onDelete?: (string) => void, mainStatAssumptionLevel?: number,
+  onEdit?: (id: string) => void,
+  onDelete?: (id: string) => void, mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
   probabilityFilter?: Dict<SubstatKey, number>
 }
@@ -36,12 +36,12 @@ const allSubstatFilter = new Set(allSubstats)
 
 export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact"]);
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
   const sheet = usePromise(ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
   const equipOnChar = (charKey: CharacterKey | "") => database.setArtLocation(artifactId!, charKey)
 
-  const editable = !artifactObj && database === localDatabase // dont allow edit for flex artifacts
+  const editable = !artifactObj
   const art = artifactObj ?? databaseArtifact
   if (!art) return null
 
