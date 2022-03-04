@@ -150,11 +150,11 @@ const common: Data = {
           break
         case "critRate_":
           operands.push(percent(0.05, { key, prefix: "default" }),
-            lookup(hit.move, objectKeyMap(allMoves, move => customBonus[`${move}_critRate_`]), 0))
+            lookup(hit.move, objectKeyMap(allMoves, move => premod[`${move}_critRate_`]), 0))
           break
         case "critDMG_":
           operands.push(percent(0.5, { key, prefix: "default" }),
-            lookup(hit.ele, objectKeyMap(allElements, ele => customBonus[`${ele}_critDMG_`]), 0))
+            lookup(hit.ele, objectKeyMap(allElements, ele => premod[`${ele}_critDMG_`]), 0))
           break
         case "enerRech_":
           operands.push(percent(1, { key, prefix: "default" }))
