@@ -1,4 +1,4 @@
-import { faCalculator, faLink, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faCalculator, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Button, CardContent, Divider, Grid, Skeleton, Typography } from '@mui/material';
 import i18next from 'i18next';
@@ -115,10 +115,7 @@ export default function CharacterInventory(props) {
                     characterKey: charKey
                   } as any} startIcon={<FontAwesomeIcon icon={faCalculator} />}>Build</Button>
                 </Grid>
-                <Grid item flexGrow={1}>
-                  <Button size="small" color="info" component={Link} to={{ pathname: "/flex", characterKey: charKey } as any}
-                    startIcon={<FontAwesomeIcon icon={faLink} />}>Share</Button>
-                </Grid>
+                <Grid item flexGrow={1} />
                 <Grid item>
                   <Button size="small" color="error" startIcon={<FontAwesomeIcon icon={faTrash} />} onClick={() => deleteCharacter(charKey)}>Delete</Button>
                 </Grid>

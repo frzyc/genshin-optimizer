@@ -147,7 +147,7 @@ function importGOOD1(data: IGOOD, oldDatabase: ArtCharDatabase): ImportResult | 
     states && states.forEach(s => {
       const { key, ...state } = s as any
       if (!key) return
-      storage.set(key, state)
+      storage.set(`state_${key}`, state)
     });
   } else {
     // DO NOT CHANGE THE DB VERSION
@@ -185,11 +185,11 @@ export function exportGOOD(storage: DBStorage): IGOOD & IGO {
 
     states: storage.entries
       .filter(([key]) => key.startsWith("state_"))
-      .map(([key, value]) => ({ ...JSON.parse(value), key })),
+      .map(([key, value]) => ({ ...JSON.parse(value), key: key.split("state_")[1] })),
   }
 }
 
-type IGOOD = {
+export type IGOOD = {
   format: "GOOD"
   source: string
   version: 1

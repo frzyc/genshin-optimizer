@@ -69,7 +69,7 @@ const InputInvis = styled('input')({
   display: 'none',
 });
 
-export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: { artifactIdToEdit: string, cancelEdit: () => void }) {
+export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: { artifactIdToEdit?: string, cancelEdit: () => void }) {
   const { t } = useTranslation("artifact")
 
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
@@ -139,7 +139,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: { artif
   )
 
   const { old, oldType }: { old: ICachedArtifact | undefined, oldType: "edit" | "duplicate" | "upgrade" | "" } = useMemo(() => {
-    const databaseArtifact = dirtyDatabase && database._getArt(artifactIdToEdit)
+    const databaseArtifact = dirtyDatabase && artifactIdToEdit && database._getArt(artifactIdToEdit)
     if (databaseArtifact) return { old: databaseArtifact, oldType: "edit" }
     if (artifact === undefined) return { old: undefined, oldType: "" }
     const { duplicated, upgraded } = dirtyDatabase && database.findDuplicates(artifact)
@@ -147,7 +147,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: { artif
   }, [artifact, artifactIdToEdit, database, dirtyDatabase])
 
   const { artifact: cachedArtifact, errors } = useMemo(() => {
-    if (!artifact) return { artifact: undefined, errors: [] as Displayable[] }
+    if (!artifact || !artifactIdToEdit) return { artifact: undefined, errors: [] as Displayable[] }
     const validated = validateArtifact(artifact, artifactIdToEdit)
     if (old) {
       validated.artifact.location = old.location
@@ -163,7 +163,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: { artif
       setShow(true)
       artifactDispatch({ type: "reset" })
     }
-    const databaseArtifact = dirtyDatabase && database._getArt(artifactIdToEdit)
+    const databaseArtifact = artifactIdToEdit && dirtyDatabase && database._getArt(artifactIdToEdit)
     if (databaseArtifact) {
       setShow(true)
       artifactDispatch({ type: "overwrite", artifact: deepClone(databaseArtifact) })

@@ -1,4 +1,4 @@
-import { faCalculator, faLink } from '@fortawesome/free-solid-svg-icons';
+import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Button, Grid, Skeleton } from '@mui/material';
 import React, { lazy } from 'react';
@@ -44,11 +44,7 @@ function CharDisplayFooter({ onClose, characterKey }) {
         startIcon={<FontAwesomeIcon icon={faCalculator} />}
       >Generate Builds</Button>
     </Grid>
-    <Grid item flexGrow={1}>
-      <Button color="info" component={Link} to={{ pathname: "/flex", characterKey } as any}
-        startIcon={<FontAwesomeIcon icon={faLink} />}
-      >Share Character</Button>
-    </Grid>
+    <Grid item flexGrow={1} />
     <Grid item xs="auto">
       <CloseButton large onClick={onClose} />
     </Grid>
