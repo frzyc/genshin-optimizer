@@ -11,7 +11,7 @@ import Bennett from './Bennett'
 // import Chongyun from './Chongyun'
 // import Diluc from './Diluc'
 // import Diona from './Diona'
-// import Eula from './Eula'
+import Eula from './Eula'
 // import Fischl from './Fischl'
 // import Ganyu from './Ganyu'
 // import Gorou from './Gorou'
@@ -60,7 +60,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Chongyun,
   // Diluc,
   // Diona,
-  // Eula,
+  Eula,
   // Fischl,
   // Ganyu,
   // Gorou,
