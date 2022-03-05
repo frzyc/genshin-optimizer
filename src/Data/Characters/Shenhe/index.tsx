@@ -156,7 +156,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
   },
   teamBuff: {
     premod: {
-      cryo_elemental_dmgInc: nodeSkill,
+      cryo_dmgInc: nodeSkill,
       cryo_enemyRes_: nodeBurstCryo_enemyRes_,
       physical_enemyRes_: nodeBurstPhysical_enemyRes_,
       cryo_dmg_: nodeAsc1,
@@ -249,7 +249,7 @@ const sheet: ICharacterSheet = {
             states: {
               quill: {
                 fields: [{
-                  node: infoMut(nodeSkill, { variant: "cryo" })
+                  node: nodeSkill
                 }]
               }
             }

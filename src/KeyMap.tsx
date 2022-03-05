@@ -14,7 +14,7 @@ const statMap = {
   dmg_: "Total DMG Bonus",
   dmgInc: "Total DMG Increase",
   all_dmg_: "Common DMG Bonus",
-  allElements_elemental_dmgInc: "Common DMG Increase",
+  all_dmgInc: "Common DMG Increase",
   weakspotDMG_: "Weakspot DMG",
   incHeal_: "Incoming Healing Bonus",
   shield_: "Shield Strength",
@@ -77,20 +77,21 @@ Object.entries(elementalData).forEach(([e, { name }]) => {
   statMap[`${e}_res_`] = `${name} DMG RES`
 
   statMap[`${e}_enemyRes_`] = `Enemy ${name} DMG RES`
-  for (const move in hitMoves) {
-    statMap[`${e}_${move}_dmgInc`] = `${name} ${hitMoves[move]} DMG Increase`
-  }
+  statMap[`${e}_dmgInc`] = `${name} DMG Increase`
   statMap[`${e}_critDMG_`] = `${name} CRIT DMG Bonus`
 })
 for (const move in hitMoves) {
-  statMap[`allElements_${move}_dmgInc`] = `${hitMoves[move]} DMG Increase`
+  statMap[`${move}_dmgInc`] = `${hitMoves[move]} DMG Increase`
 }
 
 export type HitMoveDmgKey = `${HitMoveKey}_dmg_`
 export const allHitMoveDmgKeys = Object.keys(hitMoves).map(h => `${h}_dmg_`) as HitMoveDmgKey[]
 
-export type EleHitMoveIncKey = `${ElementKeyWithPhy}_${HitMoveKey}_dmgInc`
-export const allEleHitMoveIncKeys = allElementsWithPhy.flatMap(ele => Object.keys(hitMoves).map(move => `${ele}_${move}_dmgInc` as const)) as EleHitMoveIncKey[]
+export type EleDmgIncKey = `${ElementKeyWithPhy}_dmgInc`
+export const allEleDmgIncKeys = allElementsWithPhy.map(ele => `${ele}_dmgInc` as const) as EleDmgIncKey[]
+
+export type HitMoveDmgIncKey = `${HitMoveKey}_dmgInc`
+export const allHitMoveDmgIncKeys = Object.keys(hitMoves).map(ele => `${ele}_dmgInc` as const) as HitMoveDmgIncKey[]
 
 export type HitMoveCritRateKey = `${HitMoveKey}_critRate_`
 export const allHitMoveCritRateKeys = Object.keys(hitMoves).map(h => `${h}_critRate_`) as HitMoveCritRateKey[]
@@ -129,7 +130,7 @@ Object.entries(amplifyingReactions).forEach(([reaction, { name }]) => {
   statMap[`${reaction}_dmg_`] = `${name} DMG Bonus`
 })
 
-export type StatKey = BaseKeys | EleDmgKey | EleResKey | EleEnemyResKey | HitMoveDmgKey | HitMoveCritRateKey | EleHitMoveIncKey | TransformativeReactionsDmgKey | AmplifyingReactionsDmgKey
+export type StatKey = BaseKeys | EleDmgKey | EleResKey | EleEnemyResKey | HitMoveDmgKey | HitMoveCritRateKey | EleDmgIncKey | HitMoveDmgIncKey | TransformativeReactionsDmgKey | AmplifyingReactionsDmgKey
 
 export type KeyMapPrefix = 'default' | 'base' | 'total' | 'uncapped' | 'custom' | 'char' | 'art' | 'weapon' | 'teamBuff'
 const subKeyMap: StrictDict<KeyMapPrefix, string> = {

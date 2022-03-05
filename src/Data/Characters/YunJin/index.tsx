@@ -114,7 +114,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
   },
   teamBuff: {
     premod: {
-      allElements_normal_dmgInc: nodeSkill,
+      normal_dmgInc: nodeSkill,
       normal_dmg_: nodeC2,
     }
   }

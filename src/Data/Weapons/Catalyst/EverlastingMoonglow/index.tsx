@@ -13,11 +13,16 @@ const key: WeaponKey = "EverlastingMoonglow"
 const data_gen = data_gen_json as WeaponData
 const hp_conv = [0.01, 0.015, 0.02, 0.025, 0.03]
 const [, trm] = trans("weapon", key)
-const allElements_normal_dmgInc = prod(subscript(input.weapon.refineIndex, hp_conv, { key: '_' }), input.premod.hp)
+const normal_dmgInc = prod(subscript(input.weapon.refineIndex, hp_conv, { key: '_' }), input.premod.hp)
 const heal_ = subscript(input.weapon.refineIndex, data_gen.addProps.map(x => x.heal_ ?? NaN))
 export const data = dataObjForWeaponSheet(key, data_gen, {
-  premod: { allElements_normal_dmgInc, heal_ }
-}, { allElements_normal_dmgInc })
+  premod: { 
+    normal_dmgInc, // TODO: technically should be in "total", but should be fine as premod
+    heal_
+  }
+}, { 
+  normal_dmgInc 
+})
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
@@ -26,7 +31,7 @@ const sheet: IWeaponSheet = {
       node: heal_
     }, {
       text: trm("name"),
-      node: allElements_normal_dmgInc,
+      node: normal_dmgInc,
     }],
   }],
 }
