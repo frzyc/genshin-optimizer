@@ -229,8 +229,10 @@ const sheet: ICharacterSheet = {
         unit: "/s",
       }]),
       passive1: talentTemplate("passive1", tr, passive1, [{
+        canShow: data => data.get(input.asc).value >= 1,
         node: infoMut(dmgFormulas.passive1.dmg, { key: `char_${key}_gen:skill.skillParams.1` })
       }, {
+        canShow: data => data.get(input.asc).value >= 1,
         text: trm("phantomDuration"),
         value: datamine.passive1.phantomDuration,
         unit: "s"
