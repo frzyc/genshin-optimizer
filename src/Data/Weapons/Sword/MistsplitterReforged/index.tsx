@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { equal, lookup, naught, subscript, sum } from "../../../../Formula/utils"
 import { allElements, WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap } from '../../../../Util/Util'
-import { cond } from '../../../SheetUtil'
+import { cond, trans, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -11,6 +11,7 @@ import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "MistsplitterReforged"
+const [_, trm] = trans("weapon", key)
 const data_gen = data_gen_json as WeaponData
 const stacks = ["1", "2", "3"] as const
 const passiveRefine = [0.12, 0.15, 0.18, 0.21, 0.24]
@@ -55,10 +56,10 @@ const sheet: IWeaponSheet = {
     conditional: { // Stacks - Mistsplitter's Emblem
       value: condNode,
       path: condPath,
-      name: "Mistsplitter's Emblem",
+      name: trm("emblem"),
       states: Object.fromEntries(
         stacks.map(stack => [stack, {
-          name: stack,
+          name: st("stack", { count: parseInt(stack) }),
           fields: allElements.map(ele => ({
             node: stacks_dmg_[`${ele}_dmg_`]
           }))
