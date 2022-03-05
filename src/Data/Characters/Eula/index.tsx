@@ -314,6 +314,7 @@ const sheet: ICharacterSheet = {
         }]
       },
       passive1: talentTemplate("passive1", tr, passive1, [{
+        canShow: data => data.get(input.asc).value >= 1,
         node: infoMut(dmgFormulas.passive1.shatteredLightfallSword, { key: `char_${key}:passive1` }),
       }]),
       passive2: talentTemplate("passive2", tr, passive2),
