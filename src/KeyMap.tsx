@@ -77,6 +77,7 @@ Object.entries(elementalData).forEach(([e, { name }]) => {
   statMap[`${e}_res_`] = `${name} DMG RES`
 
   statMap[`${e}_enemyRes_`] = `Enemy ${name} DMG RES`
+  statMap[`${e}_critDMG_`] = `${name} CRIT DMG Bonus`
 })
 
 export type HitMoveDmgKey = `${HitMoveKey}_dmg_`
@@ -92,6 +93,7 @@ Object.entries(hitMoves).forEach(([move, moveName]) => {
   statMap[`${move}_dmgInc`] = `${moveName} DMG Increase`
   statMap[`${move}_dmg_`] = `${moveName} DMG Bonus`
   statMap[`${move}_critRate_`] = `${moveName} CRIT Rate Bonus`
+  statMap[`${move}_critDMG_`] = `${moveName} CRIT DMG Bonus`
 })
 
 export type TransformativeReactionsDmgKey = `${TransformativeReactionsKey}_dmg_`

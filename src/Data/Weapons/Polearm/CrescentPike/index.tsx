@@ -1,6 +1,6 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { constant, infoMut, prod, subscript } from '../../../../Formula/utils'
+import { constant, equal, infoMut, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { cond, trans } from '../../../SheetUtil'
@@ -16,9 +16,9 @@ const [, trm] = trans("weapon", key)
 
 const atkInc = [0.2, 0.25, 0.3, 0.35, 0.4]
 const [condPassivePath, condPassive] = cond(key, "InfusionNeedle")
-const hit = customDmgNode(prod(input.total.atk, subscript(input.weapon.refineIndex, atkInc)), "elemental", {
+const hit = equal(condPassive, 'on', customDmgNode(prod(input.total.atk, subscript(input.weapon.refineIndex, atkInc)), "elemental", {
   hit: { ele: constant("physical") }
-})
+}))
 const data = dataObjForWeaponSheet(key, data_gen, undefined, {
   hit
 })

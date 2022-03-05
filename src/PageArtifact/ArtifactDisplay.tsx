@@ -5,7 +5,7 @@ import { Alert, Box, Button, CardContent, Grid, Link, Pagination, Skeleton, Togg
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import CardDark from '../Components/Card/CardDark';
 import InfoComponent from '../Components/InfoComponent';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
@@ -16,6 +16,7 @@ import KeyMap from '../KeyMap';
 import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import { allSubstats, SubstatKey } from '../Types/artifact';
+import { ArtifactDisplayLocationState } from '../Types/LocationState';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
@@ -34,9 +35,10 @@ function initialState() {
     probabilityFilter: {} as Dict<SubstatKey, number>,
   }
 }
-export default function ArtifactDisplay(props) {
+export default function ArtifactDisplay() {
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { t } = useTranslation(["artifact", "ui"]);
+  const { state: locationState } = useLocation<ArtifactDisplayLocationState | undefined>()
   const { database } = useContext(DatabaseContext)
   const [state, setState] = useDBState("ArtifactDisplay", initialState)
   const stateDispatch = useCallback(
@@ -53,14 +55,14 @@ export default function ArtifactDisplay(props) {
   //force the sortType back to a normal value after exiting TC mode
   if (sortType === "probability" && !tcMode) stateDispatch({ sortType: artifactSortKeys[0] })
 
-  const [artToEditId, setartToEditId] = useState(props?.location?.artToEditId)
+  const [artToEditId, setartToEditId] = useState(locationState?.artToEditId)
   const [pageIdex, setpageIdex] = useState(0)
   const invScrollRef = useRef<HTMLDivElement>(null)
   const [dbDirty, forceUpdate] = useForceUpdate()
   const effFilterSet = useMemo(() => new Set(effFilter), [effFilter]) as Set<SubstatKey>
   const deleteArtifact = useCallback((id: string) => database.removeArt(id), [database])
   const editArtifact = useCallback(id => setartToEditId(id), [])
-  const cancelEditArtifact = useCallback(() => setartToEditId(null), [])
+  const cancelEditArtifact = useCallback(() => setartToEditId(undefined), [])
 
   useEffect(() => {
     ReactGA.pageview('/artifact')

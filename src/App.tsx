@@ -16,7 +16,6 @@ const CharacterRouter = lazy(() => import('./PageCharacter/CharacterRouter'))
 const BuildDisplay = lazy(() => import('./PageBuild/BuildDisplay'))
 const ToolsDisplay = lazy(() => import('./PageTools/ToolsDisplay'))
 const TestDisplay = lazy(() => import('./PageTest/TestDisplay'))
-const FlexDisplay = lazy(() => import('./PageFlex/FlexDisplay'))
 const SettingsDisplay = lazy(() => import('./PageSettings/SettingsDisplay'))
 const WeaponDisplay = lazy(() => import('./PageWeapon/WeaponDisplay'))
 const DocumentationDisplay = lazy(() => import('./PageDocumentation/DocumentationDisplay'))
@@ -75,7 +74,6 @@ function App() {
               {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
               <Route path="/setting" component={SettingsDisplay} />
               <Route path="/doc" component={DocumentationDisplay} />
-              <Route path="/flex" component={FlexDisplay} />
               <Route path="/scanner" component={ScannerDisplay} />
               <Route path="/" component={Home} />
             </Switch>

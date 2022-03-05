@@ -4,27 +4,27 @@ import CharacterSheet from './CharacterSheet'
 // import Albedo from './Albedo'
 // import Aloy from './Aloy'
 // import Amber from './Amber'
-// import AratakiItto from './AratakiItto'
+import AratakiItto from './AratakiItto'
 // import Barbara from './Barbara'
 // import Beidou from './Beidou'
 import Bennett from './Bennett'
 // import Chongyun from './Chongyun'
 // import Diluc from './Diluc'
 // import Diona from './Diona'
-// import Eula from './Eula'
+import Eula from './Eula'
 // import Fischl from './Fischl'
 // import Ganyu from './Ganyu'
 // import Gorou from './Gorou'
-// import HuTao from './HuTao'
+import HuTao from './HuTao'
 // import Jean from './Jean'
 import KaedeharaKazuha from './KaedeharaKazuha'
 // import Kaeya from './Kaeya'
 import KamisatoAyaka from './KamisatoAyaka'
 // import Keqing from './Keqing'
 // import Klee from './Klee'
-// import KujouSara from './KujouSara'
+import KujouSara from './KujouSara'
 // import Lisa from './Lisa'
-// import Mona from './Mona'
+import Mona from './Mona'
 // import Ningguang from './Ningguang'
 // import Noelle from './Noelle'
 // import Qiqi from './Qiqi'
@@ -53,27 +53,27 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Albedo,
   // Aloy,
   // Amber,
-  // AratakiItto,
+  AratakiItto,
   // Barbara,
   // Beidou,
   Bennett,
   // Chongyun,
   // Diluc,
   // Diona,
-  // Eula,
+  Eula,
   // Fischl,
   // Ganyu,
   // Gorou,
-  // HuTao,
+  HuTao,
   // Jean,
   KaedeharaKazuha,
   // Kaeya,
   KamisatoAyaka,
   // Keqing,
   // Klee,
-  // KujouSara,
+  KujouSara,
   // Lisa,
-  // Mona,
+  Mona,
   // Ningguang,
   // Noelle,
   // Qiqi,

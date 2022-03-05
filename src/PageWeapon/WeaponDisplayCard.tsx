@@ -79,12 +79,12 @@ export default function WeaponDisplayCard({
 
   //check the levels when switching from a 5* to a 1*, for example.
   useEffect(() => {
-    if (!weaponSheet || !weaponDispatch) return
+    if (!weaponSheet || !weaponDispatch || weaponSheet.key !== weapon?.key) return
     if (weaponSheet.rarity <= 2 && (level > 70 || ascension > 4)) {
       const [level, ascension] = lowRarityMilestoneLevels[0]
       weaponDispatch({ level, ascension })
     }
-  }, [weaponSheet, weaponDispatch, level, ascension])
+  }, [weaponSheet, weapon, weaponDispatch, level, ascension])
 
 
   const weaponUIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])

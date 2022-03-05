@@ -27,8 +27,8 @@ import { probability } from './RollProbability';
 type Data = {
   artifactId?: string,
   artifactObj?: ICachedArtifact,
-  onEdit?: (string) => void,
-  onDelete?: (string) => void, mainStatAssumptionLevel?: number,
+  onEdit?: (id: string) => void,
+  onDelete?: (id: string) => void, mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
   probabilityFilter?: Dict<SubstatKey, number>
 }

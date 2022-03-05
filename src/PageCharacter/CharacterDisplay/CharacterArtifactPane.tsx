@@ -14,6 +14,7 @@ import usePromise from '../../ReactHooks/usePromise';
 import { allSlotKeys, SlotKey } from '../../Types/consts';
 import { objectKeyMap } from '../../Util/Util';
 import StatDisplayComponent from '../../Components/Character/StatDisplayComponent';
+import { ArtifactDisplayLocationState } from '../../Types/LocationState';
 
 function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
   const { data, character, mainStatAssumptionLevel } = useContext(DataContext)
@@ -23,7 +24,9 @@ function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
   const edit = useCallback(
     artid => history.push({
       pathname: "/artifact",
-      artToEditId: artid
+      state: {
+        artToEditId: artid
+      } as ArtifactDisplayLocationState
     } as any), [history])
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
 
@@ -77,7 +80,7 @@ function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
         )}
       </Grid>
       {artIds.map(id => !!id && <Grid item xs={6} md={4} key={id} >
-        <ArtifactCard artifactId={id} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={() => edit(id)} />
+        <ArtifactCard artifactId={id} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={edit} />
       </Grid>)}
     </Grid>
   </>
