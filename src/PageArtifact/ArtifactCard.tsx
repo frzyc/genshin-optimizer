@@ -12,6 +12,7 @@ import LocationName from '../Components/Character/LocationName';
 import ColorText from '../Components/ColoredText';
 import SqBadge from '../Components/SqBadge';
 import { Stars } from '../Components/StarDisplay';
+import StatIcon from '../Components/StatIcon';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../Database/Database';
@@ -47,6 +48,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
 
   const { id, lock, slotKey, rarity, level, mainStatKey, substats, exclude, location = "" } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
+  const mainStatUnit = KeyMap.unit(mainStatKey) === "flat" ? null : KeyMap.unit(mainStatKey)
   const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
   const mainStatVal = <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}</ColorText>
   const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
@@ -67,7 +69,6 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   }>
     <span><FontAwesomeIcon icon={faInfoCircle} /></span>
   </BootstrapTooltip>
-
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <CardContent className={`grad-${rarity}star`} sx={{ pt: 1, pb: 0, pr: 0 }}>
@@ -83,11 +84,11 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
             <Typography color="text.secondary" variant="body2">
               <SlotNameWithIcon slotKey={slotKey} />
             </Typography>
-            <Typography variant="h6">
-              {KeyMap.get(mainStatKey)}
+            <Typography variant="h6" color={`${KeyMap.getVariant(mainStatKey)}.main`}>
+              <span>{StatIcon[mainStatKey]} {KeyMap.get(mainStatKey)}</span>
             </Typography>
             <Typography variant="h5">
-              <strong>{mainStatVal}</strong>
+              <strong>{mainStatVal}{mainStatUnit}</strong>
             </Typography>
             <Stars stars={rarity} colored />
             {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
@@ -113,7 +114,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           return (<Box key={i} sx={{ display: "flex" }}>
             <Box sx={{ flexGrow: 1 }}>
               <SqBadge color={(numRolls ? rollColor : "error") as any} sx={{ mr: 1 }}><strong>{numRolls ? numRolls : "?"}</strong></SqBadge>
-              <Typography color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{statName}{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}`}</Typography>
+
+              <Typography color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{StatIcon[stat.key]} {statName}{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}`}</Typography>
             </Box>
             <Typography sx={{ opacity: effOpacity }}>{stat.key && effFilter.has(stat.key) ? `${efficiency.toFixed()}%` : "-"}</Typography>
           </Box>)

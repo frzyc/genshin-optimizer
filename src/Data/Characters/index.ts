@@ -15,7 +15,7 @@ import Eula from './Eula'
 // import Fischl from './Fischl'
 // import Ganyu from './Ganyu'
 // import Gorou from './Gorou'
-// import HuTao from './HuTao'
+import HuTao from './HuTao'
 // import Jean from './Jean'
 import KaedeharaKazuha from './KaedeharaKazuha'
 // import Kaeya from './Kaeya'
@@ -24,7 +24,7 @@ import KamisatoAyaka from './KamisatoAyaka'
 // import Klee from './Klee'
 import KujouSara from './KujouSara'
 // import Lisa from './Lisa'
-// import Mona from './Mona'
+import Mona from './Mona'
 // import Ningguang from './Ningguang'
 // import Noelle from './Noelle'
 // import Qiqi from './Qiqi'
@@ -64,7 +64,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Fischl,
   // Ganyu,
   // Gorou,
-  // HuTao,
+  HuTao,
   // Jean,
   KaedeharaKazuha,
   // Kaeya,
@@ -73,7 +73,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Klee,
   KujouSara,
   // Lisa,
-  // Mona,
+  Mona,
   // Ningguang,
   // Noelle,
   // Qiqi,

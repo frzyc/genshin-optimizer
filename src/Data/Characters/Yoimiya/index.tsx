@@ -97,11 +97,11 @@ const canShowA4 = uiData => uiData.get(input.asc).value >= 4
 
 const normalEntries = datamine.normal.hitArr.map((arr, i) =>
   [i, prod(normal_dmgMult, dmgNode("atk", arr, "normal", { hit: { ele: matchFull(condSkill, "skill", constant(elementKey), constant("physical")) } }))])
-const kindlingEntries = normalEntries.map(([_, node], i, arr) => [i + arr.length, (prod(prod(percent(datamine.constellation6.dmg_), percent(datamine.constellation6.chance)), node))])
+const kindlingEntries = normalEntries.map(([_, node], i) => [i, greaterEq(input.constellation, 6, prod(percent(datamine.constellation6.dmg_), node))])
 
 
 export const dmgFormulas = {
-  normal: Object.fromEntries([...normalEntries, ...kindlingEntries]),
+  normal: Object.fromEntries(normalEntries),
   charged: {
     hit: dmgNode("atk", datamine.charged.hit, "charged"),
     full: dmgNode("atk", datamine.charged.full, "charged", { hit: { ele: constant(elementKey) } }),
@@ -113,7 +113,8 @@ export const dmgFormulas = {
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst", { hit: { ele: constant(elementKey) } }),
     exp: dmgNode("atk", datamine.burst.exp, "burst", { hit: { ele: constant(elementKey) } }),
-  }
+  },
+  constellation6: Object.fromEntries(kindlingEntries)
 }
 
 export const dataObj = dataObjForCharacterSheet(characterKey, elementKey, "inazuma", data_gen, dmgFormulas, {
@@ -282,9 +283,9 @@ const sheet: ICharacterSheet = {
       constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5TalentInc }]),
       constellation6: talentTemplate("constellation6", tr, c6,
-        datamine.normal.hitArr.map((_, i, a): INodeFieldDisplay => ({
+        datamine.normal.hitArr.map((_, i): INodeFieldDisplay => ({
           canShow: canShowC6,
-          node: infoMut(dmgFormulas.normal[i + a.length], { key: `char_${characterKey}_gen:auto.skillParams.${i}` }),
+          node: infoMut(dmgFormulas.constellation6[i], { key: `char_${characterKey}_gen:auto.skillParams.${i}` }),
           textSuffix: ([0, 3].includes(i)) ? st("brHits", { count: 2 }) : ""
         }))
       )

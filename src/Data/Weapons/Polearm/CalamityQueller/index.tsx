@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { constant, lookup, matchFull, prod, subscript } from "../../../../Formula/utils"
 import { allElements, WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
-import { cond, trans } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -45,7 +45,7 @@ const sheet: IWeaponSheet = {
       path: condStackPath,
       name: tr("passiveName"),
       states: Object.fromEntries(range(1, 6).map(i => [i, {
-        name: `Stack ${i}`,
+        name: st("stack", { count: i }),
         fields: [{ node: atkInc }]
       }]))
     }

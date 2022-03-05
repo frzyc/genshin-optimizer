@@ -10,6 +10,7 @@ import CardDark from '../Components/Card/CardDark';
 import InfoComponent from '../Components/InfoComponent';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import SortByButton from '../Components/SortByButton';
+import StatIcon from '../Components/StatIcon';
 import { DatabaseContext } from '../Database/Database';
 import { initGlobalSettings } from '../GlobalSettings';
 import KeyMap from '../KeyMap';
@@ -226,14 +227,20 @@ function EfficiencyFilter({ selectedKeys, onChange }) {
     <Grid item xs={12} md={6}>
       <SolidToggleButtonGroup fullWidth value={selKeys1} onChange={(e, arr) => onChange([...selKeys2, ...arr])} sx={{ height: "100%" }}>
         {keys1.map(key => <ToggleButton size="small" key={key} value={key}>
-          {KeyMap.get(key)}
+          <Box display="flex" gap={1} alignItems="center">
+            {StatIcon[key]}
+            {KeyMap.get(key)}
+          </Box>
         </ToggleButton>)}
       </SolidToggleButtonGroup>
     </Grid>
     <Grid item xs={12} md={6}>
       <SolidToggleButtonGroup fullWidth value={selKeys2} onChange={(e, arr) => onChange([...selKeys1, ...arr])} sx={{ height: "100%" }}>
         {keys2.map(key => <ToggleButton size="small" key={key} value={key}>
-          {KeyMap.get(key)}
+          <Box display="flex" gap={1} alignItems="center">
+            {StatIcon[key]}
+            {KeyMap.get(key)}
+          </Box>
         </ToggleButton>)}
       </SolidToggleButtonGroup>
     </Grid>
