@@ -24,7 +24,7 @@ import KamisatoAyaka from './KamisatoAyaka'
 // import Klee from './Klee'
 import KujouSara from './KujouSara'
 // import Lisa from './Lisa'
-// import Mona from './Mona'
+import Mona from './Mona'
 // import Ningguang from './Ningguang'
 // import Noelle from './Noelle'
 // import Qiqi from './Qiqi'
@@ -73,7 +73,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Klee,
   KujouSara,
   // Lisa,
-  // Mona,
+  Mona,
   // Ningguang,
   // Noelle,
   // Qiqi,
