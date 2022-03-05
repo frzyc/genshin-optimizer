@@ -18,7 +18,8 @@
     "durationStack": "6s + 6s per stack, up to 18s"
   },
   "c4C": {
-    "name": "Opponents have less than 50% HP"
+    "name": "Opponents have less than 50% HP",
+    "desc": "Lightfall Swords deal 25% increased DMG"
   },
   "passive1": "Shattered Lightfall Sword DMG"
 }

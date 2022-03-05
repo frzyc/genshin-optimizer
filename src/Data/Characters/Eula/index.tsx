@@ -308,7 +308,11 @@ const sheet: ICharacterSheet = {
             header: conditionalHeader("constellation4", tr, c4),
             canShow: greaterEq(input.constellation, 4, 1),
             states: {
-              on: {}
+              on: {
+                fields: [{
+                  text: trm("c4C.desc")
+                }]
+              }
             }
           }
         }]
