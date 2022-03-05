@@ -113,8 +113,7 @@ const dmgFormulas = {
     }, naught))
   },
   passive1: {
-    // TODO: Is this correct? Is the move supposed to be normal or burst??
-    // Should it be premod or total for C4?
+    // TODO: Should it be premod or total for C4?
     shatteredLightfallSword: customDmgNode(prod(percent(datamine.passive1.percentage),
       subscript(input.total.burstIndex, datamine.burst.lightfallDmg, { key: '_' }), input.total.atk), "burst",
       { hit: { ele: constant("physical") } }),
@@ -307,30 +306,24 @@ const sheet: ICharacterSheet = {
           }
         }]
       },
-      passive1: { // Cannot use talentTemplate because this has multiple sections.
-        name: tr("passive1.name"),
-        img: passive1,
-        sections: [{
-          text: tr("passive1.description"),
-          fields: [{
-            node: infoMut(dmgFormulas.passive1.shatteredLightfallSword, { key: `char_${key}:passive1` }),
-          }],
-          conditional: { // Shattered Lightfall Sword (C4)
-            value: condRollingRimeC4,
-            path: condRollingRimeC4Path,
-            name: trm("c4C.name"),
-            header: conditionalHeader("constellation4", tr, c4),
-            canShow: greaterEq(input.constellation, 4, 1),
-            states: {
-              on: {
-                fields: [{
-                  node: infoMut(dmgFormulas.passive1.shatteredLightfallSwordC4, { key: `char_${key}:passive1` }),
-                }]
-              }
-            }
+      passive1: talentTemplate("passive1", tr, passive1, [{
+        canShow: data => data.get(input.asc).value > 1,
+        node: infoMut(dmgFormulas.passive1.shatteredLightfallSword, { key: `char_${key}:passive1` }),
+      }], {
+        // Shattered Lightfall Sword (C4)
+        value: condRollingRimeC4,
+        path: condRollingRimeC4Path,
+        name: trm("c4C.name"),
+        header: conditionalHeader("constellation4", tr, c4),
+        canShow: greaterEq(input.constellation, 4, 1),
+        states: {
+          on: {
+            fields: [{
+              node: infoMut(dmgFormulas.passive1.shatteredLightfallSwordC4, { key: `char_${key}:passive1` }),
+            }]
           }
-        }]
-      },
+        }
+      }),
       passive2: talentTemplate("passive2", tr, passive2),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1, undefined, {
