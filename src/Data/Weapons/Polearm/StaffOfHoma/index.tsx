@@ -1,42 +1,57 @@
 import { WeaponData } from 'pipeline'
-import Stat from '../../../../Stat'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import { KeyPath } from '../../../../Util/KeyPathUtil'
-import { FormulaPathBase } from '../../../formula'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { equal, infoMut, prod, subscript, sum } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { cond, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-import formula, { data } from './data'
-import { st } from '../../../Characters/SheetUtil'
-const path = KeyPath<FormulaPathBase>().weapon.StaffOfHoma
-const refinementVals_hp = [20, 25, 30, 35, 40]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "StaffOfHoma"
+const data_gen = data_gen_json as WeaponData
+const [, trm] = trans("weapon", key)
+
+const hpInc = [0.2, 0.25, 0.3, 0.35, 0.4]
+const atkInc = [0.008, 0.01, 0.012, 0.014, 0.016]
+const lowHpAtkInc = [0.01, 0.012, 0.014, 0.016, 0.018]
+const hp_ = subscript(input.weapon.refineIndex, hpInc, { key: "_" })
+const [condPassivePath, condPassive] = cond(key, "RecklessCinnabar")
+// TODO: Should these be input.total or input.premod?
+const atk1_ = prod(subscript(input.weapon.refineIndex, atkInc, { key: "_" }), input.total.hp)
+const atk2_ = equal("on", condPassive, prod(subscript(input.weapon.refineIndex, lowHpAtkInc, { key: "_" }), input.total.hp), { key: "atk" })
+// TODO: Should atk be in premod or total?
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    hp_,
+  },
+  total: {
+    atk: sum(atk1_, atk2_)
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    hp_: refinementVals_hp[stats.weapon.refineIndex],
-    modifiers: { atk: [path.esj()] }
-  }),
   document: [{
     fields: [{
-      text: st("increase.atk"),
-      formulaText: stats => <span>{data.hp_atk[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats, true)}</span>,
-      formula: formula.esj,
+      node: hp_
+    }, {
+      node: infoMut(atk1_, { key: "atk" })
     }],
     conditional: {
-      key: "hp",
-      name: "HP < 50%",
-      maxStack: 1,
-      stats: {
-        modifiers: { atk: [path.esjadd()] }
-      },
-      fields: [{
-        text: st("increase.atk"),
-        formulaText: stats => <span>{data.hp_atk_add[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats, true)}</span>,
-        formula: formula.esjadd,
-      }],
+      value: condPassive,
+      path: condPassivePath,
+      name: trm("condName"),
+      states: {
+        on: {
+          fields: [{
+            node: atk2_,
+          }]
+        }
+      }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)
