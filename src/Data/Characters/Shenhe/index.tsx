@@ -220,24 +220,33 @@ const sheet: ICharacterSheet = {
           fields: [{
             node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` }),
           }, {
+            text: trm("pressDuration"),
+            value: datamine.skill.duration,
+            unit: "s"
+          }, {
+            text: trm("pressQuota"),
+            value: datamine.skill.trigger,
+          }, {
+            text: st("pressCD"),
+            value: datamine.skill.cd,
+            unit: "s"
+          }, {
             node: infoMut(dmgFormulas.skill.hold, { key: `char_${key}_gen:skill.skillParams.1` }),
           }, {
-            text: tr("skill.skillParams.3"),
-            value: `${datamine.skill.duration}s / ${datamine.skill.durationHold}s`,
-          }, {
-            text: tr("skill.skillParams.4"),
-            value: `${datamine.skill.trigger}s / ${datamine.skill.triggerHold}s`,
-          }, {
-            text: tr("skill.skillParams.5"),
-            value: datamine.skill.cd,
+            text: trm("holdDuration"),
+            value: datamine.skill.durationHold,
             unit: "s"
           }, {
-            text: tr("skill.skillParams.6"),
-            value: datamine.skill.cd,
+            text: trm("holdQuota"),
+            value: datamine.skill.triggerHold,
+          }, {
+            text: st("holdCD"),
+            value: datamine.skill.cdHold,
             unit: "s"
           }, {
+            canShow: (data) => data.get(input.constellation).value >= 1,
             text: st("charges"),
-            value: (data) => data.get(input.constellation).value >= 1 ? 3 : 2
+            value: 2
           }],
           conditional: {
             teamBuff: true,
@@ -310,7 +319,10 @@ const sheet: ICharacterSheet = {
             node: infoMut(dmgFormulas.burst.dot, { key: `char_${key}_gen:burst.skillParams.2` }),
           }, {
             text: tr("burst.skillParams.3"),
-            value: (data) => `${datamine.burst.duration}` + (data.get(input.constellation).value >= 2 ? `s + ${datamine.constellation2.durationInc}` : ""),
+            // value: (data) => `${datamine.burst.duration}` + (data.get(input.constellation).value >= 2 ? `s + ${datamine.constellation2.durationInc}` : ""),
+            value: (data) => data.get(input.constellation).value >=2
+              ? `${datamine.burst.duration} + ${datamine.constellation2.durationInc} = ${datamine.burst.duration + datamine.constellation2.durationInc}`
+              : datamine.burst.duration,
             unit: "s"
           }, {
             text: tr("burst.skillParams.4"),
