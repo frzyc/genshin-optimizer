@@ -155,6 +155,9 @@ export default class KeyMap {
     }
     return key
   }
+  static getVariant(key: string = ""): ElementKeyWithPhy | undefined {
+    return allElementsWithPhy.find(e => key.startsWith(e))
+  }
   static getNoUnit(key: string): Displayable {
     const name = KeyMap.get(key) ?? ""
     if (typeof name === "string")

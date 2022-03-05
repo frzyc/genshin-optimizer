@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
-import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum } from '../../../Formula/utils'
+import { constant, equal, greaterEq, infoMut, lookup, percent, prod, subscript, sum } from '../../../Formula/utils'
 import { CharacterKey } from '../../../Types/consts'
 import { objectKeyMap, range } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
