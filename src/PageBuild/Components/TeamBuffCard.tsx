@@ -15,7 +15,7 @@ export default function TeamBuffCard() {
 
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
-      <Typography>Team buff Stats</Typography>
+      <Typography>Team Buff Stats</Typography>
     </CardContent>
     <Divider />
     <CardContent>
