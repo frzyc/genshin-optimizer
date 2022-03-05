@@ -3,8 +3,7 @@ import { Data, Info } from '../../../Formula/type'
 import { lookup, naught, percent, sum, greaterEq } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
-import { st } from '../../Characters/SheetUtil'
-import { cond } from '../../SheetUtil'
+import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
@@ -55,7 +54,7 @@ const sheet: IArtifactSheet = {
           path: condStackPath,
           name: st("afterUse.skill"),
           states: Object.fromEntries(stackArr.map(i => [i, {
-            name: i.toString(),
+            name: st("stack", { count: i }),
             fields: [{ node: set4Pyro_dmg_ }]
           }]))
         }
