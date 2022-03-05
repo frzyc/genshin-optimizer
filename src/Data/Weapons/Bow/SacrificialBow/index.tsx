@@ -1,23 +1,42 @@
 import { WeaponData } from 'pipeline'
-// import { IConditionals } from '../../../../Types/IConditional'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { equal, percent } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { cond, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
 
-// const refinementVals = [40, 50, 60, 70, 80]
-// const refinementCdVals = [30, 26, 22, 19, 16]
-// const conditionals: IConditionals = {
-//   c: {
-//     name: "Elemental Skill Ends CD",
-//     stats: { cdRed_: 100 }),
-//   }
-// }
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const key: WeaponKey = "SacrificialBow"
+const data_gen = data_gen_json as WeaponData
+const [, trm] = trans("weapon", key)
+
+const [condPassivePath, condPassive] = cond(key, "Composed")
+const cdRed_ = equal(condPassive, 'on', percent(1))
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    cdRed_,
+  },
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  // conditionals,
-  document: [],
+  document: [{
+    conditional: {
+      value: condPassive,
+      path: condPassivePath,
+      name: trm("condName"),
+      states: {
+        on: {
+          fields: [{
+            node: cdRed_
+          },]
+        }
+      }
+    }
+  }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

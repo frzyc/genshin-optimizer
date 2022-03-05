@@ -4,7 +4,7 @@ import { constant, equal, greaterEq, infoMut, min, percent, prod, subscript, sum
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -77,7 +77,7 @@ const nodeC4 = greaterEq(input.constellation, 4,
 const nodeSkillDmgRed_ = equal(condSkill, "on",
   sum(subscript(input.total.skillIndex, datamine.skill.dmgRed_, { key: "_" }), min(percent(0.24), prod(percent(0.2), input.total.hydro_dmg_))))
 
-const nodeA4Heal = greaterEq(input.asc, 1, prod(input.total.hp, percent(0.06)))
+const nodeA4Heal = customHealNode(greaterEq(input.asc, 1, prod(input.total.hp, percent(0.06))))
 
 export const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>

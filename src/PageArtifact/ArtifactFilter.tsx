@@ -113,7 +113,7 @@ export default function ArtifactFilter({ filterOption, filterOptionDispatch, fil
 
 
 function LocationDropdown({ title, onChange, selectedCharacterKey, dropdownProps }) {
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const characterSheets = usePromise(CharacterSheet.getAll, [])
   const { t } = useTranslation(["artifact", "ui"]);
 
@@ -150,7 +150,7 @@ function LocationDropdown({ title, onChange, selectedCharacterKey, dropdownProps
 export function ArtifactRedButtons({ artifactIds, filterOption }:
   { artifactIds: string[], filterOption: FilterOption }) {
   const { t } = useTranslation(["artifact", "ui"]);
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const { numDelete, numUnequip, numExclude, numInclude, numUnlock, numLock } = useMemo(() => {
     const artifacts = artifactIds.map(id => database._getArt(id)) as ICachedArtifact[]
     const numUnlock = artifacts.reduce((a, art) => a + (art.lock ? 0 : 1), 0)

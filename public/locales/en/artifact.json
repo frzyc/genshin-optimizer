@@ -9,10 +9,10 @@
     "level": "Level",
     "unknownPieceName": "Unknown Piece Name",
     "mainSelect": "Select a Main Stat",
-    "curSubEff": "Current Substats Efficiency",
-    "curSubEffDesc": "Every 4 artifact upgrades, you get a substat roll. <strong>Substat Efficiency</strong> calculates how high the substat rolled as a percentage.",
-    "maxSubEff": "Maximum Substats Efficiency",
-    "maxSubEffDesc": "The <strong>Maximum Substats Efficiency</strong> of an artifact calculates the efficiency if the remaining upgrades rolled their maximum values.",
+    "curSubEff": "Current Roll Value",
+    "curSubEffDesc": "Every 4 artifact upgrades, you get a substat roll. <strong>Roll Value</strong> calculates how high the substat rolled as a percentage.",
+    "maxSubEff": "Max. Roll Value",
+    "maxSubEffDesc": "The <strong>Maximum Substats Roll Value</strong> of an artifact calculates the RV if the remaining upgrades rolled their maximum values.",
     "substat": {
       "selectSub": "Select a Substat",
       "error": {
@@ -23,7 +23,7 @@
       "RollCount_one": "{{count}} Roll",
       "RollCount_other": "{{count}} Rolls",
       "noStat": "No Value",
-      "eff": "Efficiency: <1></1>",
+      "eff": "RV: <1></1>",
       "noSubstat": "No Substat",
       "substatFormat": "Substat {{value}}",
       "nextRolls": "Next rolls:"
@@ -50,13 +50,13 @@
   },
   "info": {
     "title": "Artifact Editing/Management Guide",
-    "section1": "<0>Substat rolls</0><1>The <1>number of rolls</1> a substat has is shown to the left of the substat. As the number gets higher, the substat is more colorful:<3></3>.</1><2>Substat Efficiency</2><3>The Efficiency of an subtat is a percentage of the current value over the highest potential 5<1></1> value. From the Image, the maximum roll value of CRIT DMG is 7.8%. In efficiency: <3>5.8/7.8 = 69.2%.</3></3><4>Current substats Efficiency vs. Maximum Substats Efficiency</4><5>When a 5<1></1> have 9(4+5) total rolls, with each of the rolls having the highest value, that is defined as a 100% efficient artifact. However, most of the artifacts are not this lucky. The <3>Current substats Efficiency</3> of an artifact is a percentage over that 100% artifact. The <5>Maximum Substats Efficiency</5> is the maximum possible efficiency an artifact can achieve, if the remaining artifact rolls from upgrades are the hightest possible value.</5><6>Locking an artifact</6><7>By locking an artifact <1></1>, This artifact will not be picked up by the build generator for optimization. An equipped artifact is locked by default.</7>",
-    "section2": "<0>Artifact Editor</0><1>A fully featured artifact editor, that can accept any 3<1></1> to 5<3></3> Artifact. When a substat is inputted, it can calculate the exact roll values, and from it, the efficiency. It will also make sure that you have the correct number of rolls in the artifact according to the level, along with other metrics of validation.</1><2>Scan screenshots</2><3>Manual input is not your cup of tea? You can scan in your artifacts with screenshots! On the Artifact Editor, click the <1>Show Me How!</1> button to learn more.</3><4>Automatic Artifact Scanner</4><5>If you are playing Genshin on PC, you can download a tool that automatically scans all your artifacts for you, and you can then import that data in <1></1> Database. <3>Click here</3> for a list of scanners that are compatible with GO.</5><6>Duplicate/Upgrade artifact detection</6><7>Did you know GO can detect if you are adding a <1>duplicate</1> artifact that exists in the system? It can also detect if the current artifact in editor is an <3>upgrade</3> of an existing artifact as well. Once a duplicate/upgrade is detected, a preview will allow you to compare the two artifacts in question(See Image).</7>",
-    "section3": "<0>Artifact Inventory</0><1>All your artifacts that you've added to GO is displayed here. The filters here allow you to further refine your view of your artifacts. </1><2>Example: Finding Fodder Artifacts</2><3>By utilizing the artifact filter, and the artifact efficiency calculations, you can quickly find artifacts to feed as food.</3><4>In this example, the filters are set thusly: </4><5><0><0>Limit level to 0-8.</0><1>Unlocked artifacts in Inventory.</1><2>Removing the contribution of flat HP, flat DEF and Energy Recharge to efficiency calculations.</2><3>Sorted by Ascending Max Efficiency.</3></0></5><6>This will filter the artifact Inventory by the lowest efficiency artifacts, for desired substats.</6>"
+    "section1": "<0>Substat rolls</0><1>The <1>number of rolls</1> a substat has is shown to the left of the substat. As the number gets higher, the substat is more colorful:<3></3>.</1><2>Substat Roll Value</2><3>The Roll Value(RV) of an subtat is a percentage of the current value over the highest potential 5<1></1> value. From the Image, the maximum roll value of CRIT DMG is 7.8%. In RV: <3>5.8/7.8 = 69.2%.</3></3><4>Current Roll Value vs. Maximum Roll Value</4><5>When a 5<1></1> have 9(4+5) total rolls, with each of the rolls having the highest value, that is defined as a 900% RV artifact. However, most of the artifacts are not this lucky. The <3>Current RV</3> of an artifact is a percentage over that 100% artifact. The <5>Maximum RV</5> is the maximum possible RV an artifact can achieve, if the remaining artifact rolls from upgrades are the hightest possible value.</5><6>Locking an artifact</6><7>By locking an artifact <1></1>, This artifact will not be picked up by the build generator for optimization. An equipped artifact is locked by default.</7>",
+    "section2": "<0>Artifact Editor</0><1>A fully featured artifact editor, that can accept any 3<1></1> to 5<3></3> Artifact. When a substat is inputted, it can calculate the exact roll values. It will also make sure that you have the correct number of rolls in the artifact according to the level, along with other metrics of validation.</1><2>Scan screenshots</2><3>Manual input is not your cup of tea? You can scan in your artifacts with screenshots! On the Artifact Editor, click the <1>Show Me How!</1> button to learn more.</3><4>Automatic Artifact Scanner</4><5>If you are playing Genshin on PC, you can download a tool that automatically scans all your artifacts for you, and you can then import that data in <1></1> Database. <3>Click here</3> for a list of scanners that are compatible with GO.</5><6>Duplicate/Upgrade artifact detection</6><7>Did you know GO can detect if you are adding a <1>duplicate</1> artifact that exists in the system? It can also detect if the current artifact in editor is an <3>upgrade</3> of an existing artifact as well. Once a duplicate/upgrade is detected, a preview will allow you to compare the two artifacts in question(See Image).</7>",
+    "section3": "<0>Artifact Inventory</0><1>All your artifacts that you've added to GO is displayed here. The filters here allow you to further refine your view of your artifacts. </1><2>Example: Finding Fodder Artifacts</2><3>By utilizing the artifact filter, and the artifact RV, you can quickly find artifacts to feed as food.</3><4>In this example, the filters are set thusly: </4><5><0><0>Limit level to 0-8.</0><1>Unlocked artifacts in Inventory.</1><2>Removing the contribution of flat HP, flat DEF and Energy Recharge to RV calculations.</2><3>Sorted by Ascending Max Roll Value.</3></0></5><6>This will filter the artifact Inventory by the lowest RV artifacts, for desired substats.</6>"
   },
   "artifactFilter": "Artifact Filter",
   "efficiencyFilter": {
-    "title": "Substats to use in efficiency calculation"
+    "title": "Substats to use in Roll Value calculation"
   },
   "filterLocation": {
     "any": "Location: Any",
@@ -74,8 +74,8 @@
   "filterLevelFormat": "Level <1>Low</1>/<3>High</3> (Inclusive)",
   "buttonHint": "Note: the red buttons above only applies to <1>filtered artifacts</1>",
   "tipsOfTheDay": [
-    "The maximum efficiency of a 4 star artifact is around 60%.",
-    "The maximum efficiency of an artifact will usually decrease as you upgrade. It's perfectly normal!",
+    "The maximum RV of a 4 star artifact is around 540%.",
+    "The maximum RV of an artifact will usually decrease as you upgrade. It's perfectly normal!",
     "Substats with \"1\"s are the hardest to scan in screenshots.",
     "If all your rolls(6) went into a single substat, it will be purple!",
     "Click on \"Details\" when you are upgrading your artifacts in game to scan as you upgrade.",
@@ -90,8 +90,8 @@
   "sortMap": {
     "quality": "Quality",
     "level": "Level",
-    "efficiency": "Current Substat Eff.",
-    "mefficiency": "Maximum Substat Eff."
+    "efficiency": "Current Roll Value",
+    "mefficiency": "Maximum Roll Value"
   },
   "mainStat": "Main Stat",
   "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",

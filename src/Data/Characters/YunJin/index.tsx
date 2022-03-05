@@ -172,7 +172,10 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.shield, { key: `char_${key}_gen:skill.skillParams.3` }),
       }, {
         text: tr("skill.skillParams.4"),
-        value: data => data.get(input.constellation).value < 1 ? `${datamine.skill.cd}s` : `${datamine.skill.cd}s - 18%`,
+        value: data => data.get(input.constellation).value >= 1
+          ? `${datamine.skill.cd} - 18% = ${(datamine.skill.cd*(1-0.18)).toFixed(2)}`
+          : `${datamine.skill.cd}`,
+        unit: "s"
       }]),
       burst: talentTemplate("burst", tr, burst, [{
         node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),

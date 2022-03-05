@@ -43,8 +43,8 @@
     "level": "Level",
     "rarity": "Rarity",
     "artsetkey": "Artifact Set",
-    "efficiency": "Current Substat Eff.",
-    "mefficiency": "Maximum Substat Eff.",
+    "efficiency": "Current RV",
+    "mefficiency": "Maximum RV",
     "probability": "Roll Probability"
   },
   "updatedfor": "Updated for {{version}}"

@@ -2,7 +2,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Button, CardContent, Grid, Pagination, Skeleton, ToggleButton, Typography } from '@mui/material';
 import i18next from 'i18next';
-import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
 import CardDark from '../Components/Card/CardDark';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
@@ -10,17 +10,17 @@ import SortByButton from '../Components/SortByButton';
 import { Stars } from '../Components/StarDisplay';
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
 import WeaponSelectionModal from '../Components/Weapon/WeaponSelectionModal';
+import WeaponSheet from '../Data/Weapons/WeaponSheet';
 import { DatabaseContext } from '../Database/Database';
-import { dbStorage } from '../Database/DBStorage';
+import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
 import { allRarities, WeaponKey, WeaponTypeKey } from '../Types/consts';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import { weaponFilterConfigs, weaponSortConfigs, weaponSortKeys } from '../Util/WeaponSort';
-import WeaponCard from './WeaponCard';
-import WeaponSheet from '../Data/Weapons/WeaponSheet';
 import { initialWeapon } from '../Util/WeaponUtil';
+import WeaponCard from './WeaponCard';
 
 //lazy load the weapon display
 const WeaponDisplayCard = lazy(() => import('./WeaponDisplayCard'))
@@ -33,18 +33,10 @@ const initialState = () => ({
   weaponType: "" as WeaponTypeKey | "",
   maxNumToDisplay: 30,
 })
-export type stateType = ReturnType<typeof initialState>
 
-function filterReducer(state: stateType, action): stateType {
-  return { ...state, ...action }
-}
-function filterInit(initial = initialState()): stateType {
-  return { ...initial, ...(dbStorage.get("WeaponDisplay.state") ?? {}) }
-}
-
-export default function WeaponDisplay(props) {
-  const database = useContext(DatabaseContext)
-  const [state, stateDisplatch] = useReducer(filterReducer, initialState(), filterInit)
+export default function WeaponDisplay() {
+  const { database } = useContext(DatabaseContext)
+  const [state, stateDisplatch] = useDBState("WeaponDisplay", initialState)
   const [newWeaponModalShow, setnewWeaponModalShow] = useState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -55,11 +47,6 @@ export default function WeaponDisplay(props) {
     ReactGA.pageview('/weapon')
     return database.followAnyWeapon(forceUpdate)
   }, [forceUpdate, database])
-
-  //save to db
-  useEffect(() => {
-    dbStorage.set("WeaponDisplay.state", state)
-  }, [state])
 
   const weaponSheets = usePromise(WeaponSheet.getAll, [])
 

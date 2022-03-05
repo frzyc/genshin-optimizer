@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database";
@@ -21,7 +21,7 @@ type TeamDataBundle = {
 }
 
 export default function useTeamData(characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0): TeamData | undefined {
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const [dbDirty, setDbDirty] = useForceUpdate()
   const [teamDataBundle, setTeamdataBundle] = useState(undefined as TeamDataBundle | undefined)
   useEffect(() => {
@@ -29,6 +29,10 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
   }, [dbDirty, characterKey, database, mainStatAssumptionLevel])
 
   const { team = [], teamData, teamBundle } = teamDataBundle ?? {}
+
+  useEffect(() =>
+    characterKey ? database.followChar(characterKey, setDbDirty) : undefined,
+    [characterKey, setDbDirty, database])
 
   const [t1, t2, t3, t4] = team
   useEffect(() =>
@@ -43,12 +47,17 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
   useEffect(() =>
     t4 ? database.followChar(t4, setDbDirty) : undefined,
     [t4, setDbDirty, database])
-  if (!teamData || !teamBundle) return
-  const calcData = uiDataForTeam(teamData, characterKey as CharacterKey)
-  const data = objectMap(calcData, (obj, ck) => {
-    const { data: _, ...rest } = teamBundle[ck]!
-    return { ...obj, ...rest }
-  })
+
+  const calcData = useMemo(() => {
+    return teamData && uiDataForTeam(teamData, characterKey as CharacterKey)
+  }, [teamData, characterKey])
+  const data = useMemo(() => {
+    if (!calcData || !teamBundle) return
+    return objectMap(calcData, (obj, ck) => {
+      const { data: _, ...rest } = teamBundle[ck]!
+      return { ...obj, ...rest }
+    })
+  }, [calcData, teamBundle])
 
   return data
 }

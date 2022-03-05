@@ -61,6 +61,7 @@ export default function CustomNumberInput({ value = 0, onChange, disabled = fals
     value={(focused && !number) ? "" : number}
     aria-label="custom-input"
     type="number"
+    inputProps={{ step: float ? 0.1 : 1 }}
     onChange={onInputChange}
     onBlur={onBlur}
     onFocus={onFocus}

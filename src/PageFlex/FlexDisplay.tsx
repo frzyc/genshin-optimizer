@@ -11,7 +11,7 @@ import { CharacterKey } from "pipeline";
 
 export default function FlexDisplay() {
   const location = useLocation()
-  const database = useContext(DatabaseContext)
+  const { database, setDatabase } = useContext(DatabaseContext)
   const sheets = {} as any
   const searchStr = location.search
   const charKey: CharacterKey = "Sucrose" // TODO: hardcoded character
@@ -22,7 +22,7 @@ export default function FlexDisplay() {
     // const [database, charKey, version] = flexResult
     // if (version !== 4)
     //   return <Redirect to={`/flex?${exportFlex(charKey, database, sheets)}`} />
-    return <DatabaseContext.Provider value={database}><Display characterKey={charKey} /></DatabaseContext.Provider>
+    return <DatabaseContext.Provider value={{ database, setDatabase }}><Display characterKey={charKey} /></DatabaseContext.Provider>
   } else {
     const characterKey = (location as any).characterKey
     if (!characterKey) return <Redirect to={`/`} />
@@ -64,6 +64,6 @@ function Display({ characterKey }) {
       </ButtonGroup>
       {!!isUpToDate && <Alert variant="outlined" sx={{ m: 1, mt: 2 }} severity="warning" >This URL is generated on an older database version of Genshin Optimizer. The character data below might not be displayed as intended.</Alert>}
     </CardDark>
-    <CharacterDisplayCard characterKey={characterKey} isFlex />
+    <CharacterDisplayCard characterKey={characterKey} />
   </Box>
 }

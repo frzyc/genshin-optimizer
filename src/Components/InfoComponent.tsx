@@ -1,23 +1,31 @@
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Button, CardContent, Divider, Grid, Skeleton, Typography } from "@mui/material"
-import { Suspense, useState } from "react"
-import { dbStorage } from "../Database/DBStorage"
+import { Suspense, useCallback, useState } from "react"
+import useDBState from "../ReactHooks/useDBState"
 import { getRandomElementFromArray } from "../Util/Util"
 import CardDark from "./Card/CardDark"
 import CloseButton from "./CloseButton"
 import ModalWrapper from "./ModalWrapper"
 import { Translate } from "./Translate"
-
-export default function InfoComponent({ pageKey = "", text = "", modalTitle = "", children }: { pageKey: string, text: Displayable | Displayable[], modalTitle: Displayable, children: JSX.Element }) {
-  const [showInfoModal, setshowInfoModal] = useState(dbStorage.get("infoShown")?.[pageKey] ?? true)
-  const [displayText,] = useState(Array.isArray(text) ? getRandomElementFromArray(text) : text)
-  const closeModal = () => {
-    const infoShown = dbStorage.get("infoShown") ?? {}
-    infoShown[pageKey] = false
-    dbStorage.set("infoShown", infoShown)
-    setshowInfoModal(false)
+export function initialInfoShownState() {
+  return {
+    artifactPage: true,
+    buildPage: true,
+    characterPage: true,
   }
+}
+type StateInfoShown = ReturnType<typeof initialInfoShownState>
+type InfoShownPageKey = keyof StateInfoShown
+
+export default function InfoComponent({ pageKey, text = "", modalTitle = "", children }: { pageKey: InfoShownPageKey, text: Displayable | Displayable[], modalTitle: Displayable, children: JSX.Element }) {
+  const [stateInfoShown, setStateInfoShown] = useDBState("InfoShown", initialInfoShownState)
+  const showInfoModal = stateInfoShown[pageKey]
+  const setshowInfoModal = useCallback((value: boolean) => setStateInfoShown({ [pageKey]: value }), [setStateInfoShown, pageKey])
+
+  const [displayText,] = useState(Array.isArray(text) ? getRandomElementFromArray(text) : text)
+  const closeModal = () => setshowInfoModal(false)
+
   return <CardDark >
     <Grid container>
       <Grid item flexGrow={1}>

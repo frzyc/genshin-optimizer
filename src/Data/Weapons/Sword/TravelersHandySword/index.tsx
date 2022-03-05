@@ -1,22 +1,28 @@
-import { IWeaponSheet } from '../../../../Types/weapon'
-import icon from './Icon.png'
-import iconAwaken from './AwakenIcon.png'
-import formula, { data } from './data'
-import Stat from '../../../../Stat'
-import data_gen from './data_gen.json'
 import { WeaponData } from 'pipeline'
-import { sgt } from '../../../Characters/SheetUtil'
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import { input } from '../../../../Formula'
+import { infoMut, prod, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { customHealNode } from '../../../Characters/dataUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
+import iconAwaken from './AwakenIcon.png'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "TravelersHandySword"
+const data_gen = data_gen_json as WeaponData
+const hpRegenSrc = [0.01, 0.0125, 0.015, 0.0175, 0.02]
+
+const heal = customHealNode(prod(subscript(input.weapon.refineIndex, hpRegenSrc), input.total.hp))
+const data = dataObjForWeaponSheet(key, data_gen, undefined, { heal })
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fields: [{
-      text: sgt("healing"),
-      formulaText: stats => <span>{data.heal[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
-      formula: formula.heal,
-      variant: "success"
-    }]
-  }]
+    fields: [
+      { node: infoMut(heal, { key: "sheet_gen:healing", variant: "success" }) }
+    ]
+  }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

@@ -141,12 +141,14 @@ function importGOOD1(data: IGOOD, oldDatabase: ArtCharDatabase): ImportResult | 
   }
 
   if (source === GOSource) {
-    const { dbVersion, artifactDisplay, characterDisplay, buildsDisplay } = data as unknown as IGO
+    const { dbVersion, states } = data as unknown as IGO
     if (dbVersion < 8) return // Something doesn't look right here
     setDBVersion(storage, dbVersion)
-    artifactDisplay && storage.set("ArtifactDisplay.state", artifactDisplay)
-    characterDisplay && storage.set("CharacterDisplay.state", characterDisplay)
-    buildsDisplay && storage.set("BuildsDisplay.state", buildsDisplay)
+    states && states.forEach(s => {
+      const { key, ...state } = s as any
+      if (!key) return
+      storage.set(`state_${key}`, state)
+    });
   } else {
     // DO NOT CHANGE THE DB VERSION
     // Standard GOODv1 matches dbv8.
@@ -181,13 +183,13 @@ export function exportGOOD(storage: DBStorage): IGOOD & IGO {
       .filter(([key]) => key.startsWith("weapon_"))
       .map(([_, value]) => JSON.parse(value)),
 
-    artifactDisplay: storage.get("ArtifactDisplay.state") ?? {},
-    characterDisplay: storage.get("CharacterDisplay.state") ?? {},
-    buildsDisplay: storage.get("BuildsDisplay.state") ?? {},
+    states: storage.entries
+      .filter(([key]) => key.startsWith("state_"))
+      .map(([key, value]) => ({ ...JSON.parse(value), key: key.split("state_")[1] })),
   }
 }
 
-type IGOOD = {
+export type IGOOD = {
   format: "GOOD"
   source: string
   version: 1
@@ -198,9 +200,7 @@ type IGOOD = {
 type IGO = {
   dbVersion: number
   source: typeof GOSource
-  artifactDisplay: any
-  characterDisplay: any
-  buildsDisplay: any
+  states?: object[]
 }
 
 export type ImportResultCounter = {

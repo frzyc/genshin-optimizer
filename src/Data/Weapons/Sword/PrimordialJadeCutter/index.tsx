@@ -1,30 +1,35 @@
 import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import { KeyPath } from '../../../../Util/KeyPathUtil'
-import { FormulaPathBase } from '../../../formula'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { prod, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-import formula, { data } from './data'
-import Stat from '../../../../Stat'
-import { st } from '../../../Characters/SheetUtil'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
 
-const path = KeyPath<FormulaPathBase>().weapon.PrimordialJadeCutter
-const refinementVals_hp = [20, 25, 30, 35, 40]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const key: WeaponKey = "PrimordialJadeCutter"
+const data_gen = data_gen_json as WeaponData
+const hpSrc = [0.2, 0.25, 0.3, 0.35, 0.4]
+const atkSrc = [0.012, 0.015, 0.018, 0.021, 0.024]
+
+const hp_ = subscript(input.weapon.refineIndex, hpSrc)
+const atk = prod(subscript(input.weapon.refineIndex, atkSrc, { key: "_" }), input.premod.hp)
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    hp_,
+  },
+  total: {
+    atk
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    hp_: refinementVals_hp[stats.weapon.refineIndex],
-    modifiers: { atk: [path.bonus()] }
-  }),
   document: [{
-    fields: [{
-      text: st("increase.atk"),
-      formulaText: stats => <span>{data.hp_atk[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats, true)}</span>,
-      formula: formula.bonus,
-    }]
-  }]
+    fields: [{ node: hp_ }, { node: atk }]
+  }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)
