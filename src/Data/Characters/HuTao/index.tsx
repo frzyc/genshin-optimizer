@@ -80,8 +80,8 @@ const datamine = {
 } as const
 
 const [condAfterlifePath, condAfterlife] = cond(key, "GuideToAfterlifeVoyage")
-// TODO: Should these be input.total or input.premod?
-const atk = equal("on", condAfterlife, min(prod(subscript(input.total.skillIndex, datamine.skill.atkInc), input.total.hp),
+const atk = equal("on", condAfterlife, min(
+  prod(subscript(input.total.skillIndex, datamine.skill.atkInc), input.premod.hp),
   prod(percent(datamine.skill.maxAtkInc), input.base.atk)))
 const infusion = equalStr("on", condAfterlife, elementKey)
 
@@ -112,8 +112,6 @@ const dmgFormulas = {
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
     lowHpDmg: dmgNode("atk", datamine.burst.lowHpDmg, "burst"),
-    // TODO: Is the customHealNode here correct?
-    // Should it be input.total or input.premod?
     regen: customHealNode(prod(input.total.hp, subscript(input.total.burstIndex, datamine.burst.regen, { key: "_" }))),
     lowHpRegen: customHealNode(prod(input.total.hp, subscript(input.total.burstIndex, datamine.burst.lowHpRegen, { key: "_" }))),
   }
@@ -131,7 +129,6 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
     ...Object.fromEntries(allElementsWithPhy.map(ele => [`${ele}_res_`, ele_res_s[ele]])),
     critRate_
   },
-  // TODO: Should atk be in total or premod?
   total: {
     atk
   },
