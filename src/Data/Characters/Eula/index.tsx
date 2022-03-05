@@ -1,5 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum } from '../../../Formula/utils'
 import { CharacterKey } from '../../../Types/consts'
 import { objectKeyMap, range } from '../../../Util/Util'
@@ -73,14 +74,18 @@ const datamine = {
 
 const [condGrimheartPath, condGrimheart] = cond(key, "Grimheart")
 const [condLightfallSwordPath, condLightfallSword] = cond(key, "LightfallSword")
-const [condLightfallSwordC4Path, condLightfallSwordC4] = cond(key, "LightfallSwordC4")
+const [condC4Path, condC4] = cond(key, "LightfallSwordC4")
 const [condTidalIllusionPath, condTidalIllusion] = cond(key, "TidalIllusion")
-const [condRollingRimeC4Path, condRollingRimeC4] = cond(key, "RollingRimeC4")
 
-const def_ = equal("stacks", condGrimheart, percent(datamine.skill.defBonus))
+const def_ = sum(equal("stack1", condGrimheart, percent(datamine.skill.defBonus)), equal("stack2", condGrimheart, percent(2 * datamine.skill.defBonus)))
 const cryo_enemyRes_ = equal("consumed", condGrimheart, subscript(input.total.skillIndex, datamine.skill.cryoResDecNegative))
 const physical_enemyRes_ = equal("consumed", condGrimheart, subscript(input.total.skillIndex, datamine.skill.physResDecNegative))
 const physical_dmg_ = equal("on", condTidalIllusion, percent(datamine.constellation1.physInc))
+
+const lightSwordAdditional: Data = {
+  premod: { burst_dmg_: equal(condC4, "on", constant(datamine.constellation4.dmgInc)) },
+  hit: { ele: constant("physical") }
+}
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -98,29 +103,22 @@ const dmgFormulas = {
   },
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
-    // TODO: Is this correct?
-    // Should it be premod or total for C4?
-    // 0: Base DMG, >=1: Stacks
-    lightfallSword: lookup(condLightfallSword, {
-      ...objectKeyMap(range(0, 30), i => customDmgNode(prod(sum(subscript(input.total.burstIndex, datamine.burst.lightfallDmg, { key: '_' }),
-        prod(i, subscript(input.total.burstIndex, datamine.burst.dmgPerStack, { key: '_' }))), input.total.atk), "burst",
-        { hit: { ele: constant("physical") } }))
-    }, naught),
-    lightfallSwordC4: greaterEq(input.constellation, 4, lookup(condLightfallSword, {
-      ...objectKeyMap(range(0, 30), i => customDmgNode(prod(sum(subscript(input.total.burstIndex, datamine.burst.lightfallDmg, { key: '_' }),
-        prod(i, subscript(input.total.burstIndex, datamine.burst.dmgPerStack, { key: '_' }))), input.total.atk), "burst",
-        { hit: { ele: constant("physical") }, premod: { burst_dmg_: percent(datamine.constellation4.dmgInc) } })),
-    }, naught))
+    lightFallSwordNew: customDmgNode(
+      prod(
+        sum(
+          subscript(input.total.burstIndex, datamine.burst.lightfallDmg, { key: '_' }),
+          prod(
+            lookup(condLightfallSword, objectKeyMap(range(1, 30), i => constant(i)), constant(0)),
+            subscript(input.total.burstIndex, datamine.burst.dmgPerStack, { key: '_' })
+          ),
+        ),
+        input.total.atk
+      ), "burst", lightSwordAdditional),
   },
   passive1: {
-    // TODO: Is this correct? Is the move supposed to be normal or burst??
-    // Should it be premod or total for C4?
-    shatteredLightfallSword: customDmgNode(prod(percent(datamine.passive1.percentage),
-      subscript(input.total.burstIndex, datamine.burst.lightfallDmg, { key: '_' }), input.total.atk), "burst",
-      { hit: { ele: constant("physical") } }),
-    shatteredLightfallSwordC4: greaterEq(input.constellation, 4, customDmgNode(prod(percent(datamine.passive1.percentage),
-      subscript(input.total.burstIndex, datamine.burst.lightfallDmg, { key: '_' }), input.total.atk), "burst",
-      { hit: { ele: constant("physical") }, premod: { burst_dmg_: percent(datamine.constellation4.dmgInc) } }))
+    shatteredLightfallSword: prod(
+      percent(datamine.passive1.percentage),
+      dmgNode("atk", datamine.burst.lightfallDmg, "burst", lightSwordAdditional))
   }
 }
 
@@ -209,15 +207,18 @@ const sheet: ICharacterSheet = {
             text: tr("skill.skillParams.9"),
             value: `${datamine.skill.holdCd}`,
             unit: 's'
-          }],
+          }, {
+            text: tr("burst.skillParams.3"),
+            value: 2,
+          },],
           conditional: { // Grimheart
             value: condGrimheart,
             path: condGrimheartPath,
             name: trm("skillC.name"),
             header: conditionalHeader("skill", tr, skill),
             states: {
-              "stacks": {
-                name: "Stacks",
+              "stack1": {
+                name: st("stack", { count: 1 }),
                 fields: [{
                   node: def_,
                 }, {
@@ -226,9 +227,18 @@ const sheet: ICharacterSheet = {
                   text: tr("skill.skillParams.4"),
                   value: `${datamine.skill.grimheartDuration}`,
                   unit: 's'
+                },]
+              },
+              "stack2": {
+                name: st("stack", { count: 2 }),
+                fields: [{
+                  node: def_,
                 }, {
-                  text: tr("burst.skillParams.3"),
-                  value: 2,
+                  text: trm("skillC.grimheart.int")
+                }, {
+                  text: tr("skill.skillParams.4"),
+                  value: `${datamine.skill.grimheartDuration}`,
+                  unit: 's'
                 },]
               },
               "consumed": {
@@ -259,6 +269,8 @@ const sheet: ICharacterSheet = {
           fields: [{
             node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
           }, {
+            node: infoMut(dmgFormulas.burst.lightFallSwordNew, { key: `char_${key}:burstC.dmg` }),
+          }, {
             text: tr("burst.skillParams.4"),
             value: `${datamine.burst.cd}`,
             unit: 's'
@@ -276,11 +288,9 @@ const sheet: ICharacterSheet = {
             name: trm("burstC.name"),
             header: conditionalHeader("burst", tr, burst),
             states: {
-              ...objectKeyMap(range(0, 30), i => ({
-                name: i === 0 ? sgt("baseDMG") : st("stack", { count: i }),
+              ...objectKeyMap(range(1, 30), i => ({
+                name: st("stack", { count: i }),
                 fields: [{
-                  node: infoMut(dmgFormulas.burst.lightfallSword, { key: `char_${key}:burstC.dmg` }),
-                }, {
                   canShow: data => data.get(input.constellation).value >= 6,
                   text: trm("burstC.start5"),
                 }, {
@@ -292,45 +302,20 @@ const sheet: ICharacterSheet = {
           }
         }, {
           conditional: { // Lightfall Sword (C4)
-            value: condLightfallSwordC4,
-            path: condLightfallSwordC4Path,
+            value: condC4,
+            path: condC4Path,
             name: trm("c4C.name"),
             header: conditionalHeader("constellation4", tr, c4),
             canShow: greaterEq(input.constellation, 4, 1),
             states: {
-              on: {
-                fields: [{
-                  node: infoMut(dmgFormulas.burst.lightfallSwordC4, { key: `char_${key}:burstC.dmg` }),
-                }]
-              }
+              on: {}
             }
           }
         }]
       },
-      passive1: { // Cannot use talentTemplate because this has multiple sections.
-        name: tr("passive1.name"),
-        img: passive1,
-        sections: [{
-          text: tr("passive1.description"),
-          fields: [{
-            node: infoMut(dmgFormulas.passive1.shatteredLightfallSword, { key: `char_${key}:passive1` }),
-          }],
-          conditional: { // Shattered Lightfall Sword (C4)
-            value: condRollingRimeC4,
-            path: condRollingRimeC4Path,
-            name: trm("c4C.name"),
-            header: conditionalHeader("constellation4", tr, c4),
-            canShow: greaterEq(input.constellation, 4, 1),
-            states: {
-              on: {
-                fields: [{
-                  node: infoMut(dmgFormulas.passive1.shatteredLightfallSwordC4, { key: `char_${key}:passive1` }),
-                }]
-              }
-            }
-          }
-        }]
-      },
+      passive1: talentTemplate("passive1", tr, passive1, [{
+        node: infoMut(dmgFormulas.passive1.shatteredLightfallSword, { key: `char_${key}:passive1` }),
+      }]),
       passive2: talentTemplate("passive2", tr, passive2),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1, undefined, {
