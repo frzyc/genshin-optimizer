@@ -207,7 +207,7 @@ const sheet: ICharacterSheet = {
           }]
         }],
       },
-      skill: {
+      skill: { // Cannot use talentTemplate because this has multiple sections
         name: tr("skill.name"),
         img: skill,
         sections: [{
@@ -223,7 +223,7 @@ const sheet: ICharacterSheet = {
           }, {
             node: infoMut(dmgFormulas.skill.hold, { key: `char_${key}_gen:skill.skillParams.2` }),
           }, {
-            text: tr("skill.skillParams.3"),
+            text: st("holdCD"),
             value: data => data.get(input.constellation).value >= 1
               ? `${datamine.skill.cd} - 10% = ${datamine.skill.cd*(1-0.10)}` 
               : `${datamine.skill.cdHold}`,

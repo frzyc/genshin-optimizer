@@ -205,7 +205,7 @@ const sheet: ICharacterSheet = {
           }, {
             node: infoMut(dmgFormulas.skill.hold, { key: `char_${key}_gen:skill.skillParams.1` }),
           }, {
-            text: tr("skill.skillParams.9"),
+            text: st("holdCD"),
             value: `${datamine.skill.holdCd}`,
             unit: 's'
           }],
