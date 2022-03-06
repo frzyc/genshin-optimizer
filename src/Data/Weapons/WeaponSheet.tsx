@@ -8,6 +8,7 @@ import type { WeaponData } from 'pipeline';
 import IConditional from '../../Types/IConditional_WR';
 import ImgIcon from '../../Components/Image/ImgIcon';
 import { input } from '../../Formula';
+import SqBadge from '../../Components/SqBadge';
 const weaponSheets = import('.').then(imp => imp.default)
 
 export interface IWeaponSheet {
@@ -51,9 +52,10 @@ export default class WeaponSheet {
     else return ambiguousLevelLow(level)
   }
 }
-export const conditionalHeader = (tr: (string) => Displayable, img: string, imgAwaken: string): IConditional["header"] => ({
+export const conditionalHeader = (tr: (string) => Displayable, img: string, imgAwaken: string, action?: string): IConditional["header"] => ({
   title: tr(`passiveName`),
   icon: data => <ImgIcon size={2} sx={{ m: -1 }} src={data.get(input.weapon.asc).value < 2 ? img : imgAwaken} />,
+  action: action && <SqBadge color="success">{action}</SqBadge>,
 })
 
 export const conditionaldesc = (tr: (string) => Displayable) =>
