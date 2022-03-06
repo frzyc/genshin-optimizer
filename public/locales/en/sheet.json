@@ -51,5 +51,9 @@
     "electro": "Electro Infusion",
     "dendro": "Dendro Infusion",
     "geo": "Geo Infusion"
-  }
+  },
+  "base": "Base",
+  "stacks": "Stacks",
+  "hits": "Hits",
+  "protectedByShield": "Protected by a shield"
 }
