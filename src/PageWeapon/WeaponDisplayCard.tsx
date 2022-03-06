@@ -1,5 +1,5 @@
 import { Lock, LockOpen, SwapHoriz } from "@mui/icons-material"
-import { Box, Button, ButtonGroup, CardContent, Divider, Grid, ListItem, MenuItem, Typography } from "@mui/material"
+import { Box, Button, ButtonGroup, CardContent, CardHeader, Divider, Grid, ListItem, MenuItem, Typography } from "@mui/material"
 import { useCallback, useContext, useEffect, useMemo, useState } from "react"
 import Assets from "../Assets/Assets"
 import CardDark from "../Components/Card/CardDark"
@@ -156,9 +156,8 @@ export default function WeaponDisplayCard({
           <Typography gutterBottom>{weaponSheet.passiveName && weaponSheet.passiveDescription(weaponUIData.get(input.weapon.refineIndex).value)}</Typography>
           <Box display="flex" flexDirection="column" gap={1}>
             <CardDark >
-              <CardContent>
-                <Typography>Main Stats</Typography>
-              </CardContent>
+              <CardHeader title={"Main Stats"} titleTypographyProps={{ variant: "subtitle2" }}/>
+              <Divider />
               <FieldDisplayList>
                 {[input.weapon.main, input.weapon.sub, input.weapon.sub2].map((node, i) => {
                   const n = weaponUIData.get(node)
