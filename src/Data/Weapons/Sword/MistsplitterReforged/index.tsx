@@ -11,7 +11,7 @@ import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "MistsplitterReforged"
-const [_, trm] = trans("weapon", key)
+const [, trm] = trans("weapon", key)
 const data_gen = data_gen_json as WeaponData
 const stacks = ["1", "2", "3"] as const
 const passiveRefine = [0.12, 0.15, 0.18, 0.21, 0.24]
