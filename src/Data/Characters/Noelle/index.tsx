@@ -76,27 +76,22 @@ const datamine = {
 } as const
 
 const [condBurstPath, condBurst] = cond(key, "SweepingTime")
+const nodeBurstInfusion = equalStr(condBurst, "on", "geo")
 const nodeBurstAtk = equal("on", condBurst, prod(
     input.total.def, 
     sum( 
-        subscript(input.total.burstIndex, datamine.burst.defToAtk, {key:'_'}),
+        subscript(input.total.burstIndex, datamine.burst.defToAtk, {key:"_"} ),
         greaterEq(input.constellation, 6, percent(datamine.constellation6.burstAtkBonus))
-        )
-    ),
-) 
-
-const nodeBurstInfusion = equalStr(condBurst, "on", "geo")
-
-
+       )
+    )
+)
 
 const nodeSkillHealChanceBase = subscript(input.total.skillIndex, datamine.skill.healChance, { key:`char_${key}:skillHeal_` })
 const nodeSkillHealChanceC1BurstOn = equal("on", condBurst, percent(datamine.constellation1.healingChance), { key: `char_${key}:skillHeal_` }) 
 const nodeSkillHealChanceC1BurstOff = unequal("on", condBurst, nodeSkillHealChanceBase) 
 
 const nodeC2ChargeDMG = greaterEq(input.constellation, 2, percent(datamine.constellation2.chargeDmg_))
-
-const nodeC4dmg = customDmgNode(prod(input.total.def, percent(datamine.constellation4.skillDmg)), "elemental",
-{ hit: { ele: constant(elementKey) } })
+const nodeC4dmg = customDmgNode(prod(input.total.def, percent(datamine.constellation4.skillDmg)), "elemental", { hit: { ele: constant(elementKey) } })
 
 const geoShieldStrength = { "customBonus": { "shield_": percent(0.5) } }
 
@@ -111,11 +106,8 @@ const dmgFormulas = {
       [key, dmgNode("atk", value, "plunging")])),
     skill: {
       dmg: dmgNode("def", datamine.skill.skillDmg, "skill"),
-      //dmg: customDmgNode( prod(input.total.def , subscript(input.total.skillIndex,datamine.skill.skillDmg)), "elemental" ),
       shield: shieldNodeTalent("def", datamine.skill.shieldDef, datamine.skill.shieldFlat, "skill", geoShieldStrength),
-      //shield: customShieldNode( sum( subscript(input.total.skillIndex,datamine.skill.shieldFlat), prod(input.total.def , subscript(input.total.skillIndex,datamine.skill.shieldDef))) ),
       heal: healNodeTalent("def", datamine.skill.healDef, datamine.skill.healFlat, "skill"),
-      //heal: customHealNode( sum( subscript(input.total.skillIndex,datamine.skill.healFlat), prod(input.total.def , subscript(input.total.skillIndex,datamine.skill.healDef))) ),
     },
     burst: {
         defConv: nodeBurstAtk,
@@ -183,104 +175,78 @@ const sheet: ICharacterSheet = {
           }
           ],
         },
-        skill: {
-          name: tr("skill.name"),
-          img: skill,
-          sections: [{
-            text: tr("skill.description"),
-            fields: [
-              {
-                node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
-              }, {
-                node: infoMut(dmgFormulas.skill.shield, { key: `char_${key}_gen:skill.skillParams.1`}),
-              }, {
-                node: infoMut(dmgFormulas.skill.heal, { key: `char_${key}_gen:skill.skillParams.2`, variant: "success"  }),
-              }, 
-              //Heal trigger chance 
-              {
-                canShow: data => data.get(input.constellation).value === 0,
-                node: nodeSkillHealChanceBase,
-              },
-              {
-                canShow: data => data.get(input.constellation).value >= 1,
-                node: nodeSkillHealChanceC1BurstOff,
-              }, 
-              {
-                canShow: data => data.get(input.constellation).value >= 1,
-                node: nodeSkillHealChanceC1BurstOn,
-              }, 
-              //Shield Duration
-              {
-                text: tr("skill.skillParams.4"), 
-                value: datamine.skill.shieldDuration,
-                unit: "s"
-              },
-              //Cooldown
-              {
-                canShow: data => data.get(input.asc).value < 4,
-                text: tr("skill.skillParams.5"), 
-                value: datamine.skill.cd,
-                unit: "s"
-              },
-              {
-                canShow: data => data.get(input.asc).value >= 4,
-                text: tr("skill.skillParams.5"), 
-                value: trm(`p4cd`),
-              }
-            ],
-          }],
-        },
-        burst: {
+        skill: talentTemplate("skill", tr, skill, [
+          {
+            node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
+          }, {
+            node: infoMut(dmgFormulas.skill.shield, { key: `char_${key}_gen:skill.skillParams.1`}),
+          }, {
+            node: infoMut(dmgFormulas.skill.heal, { key: `char_${key}_gen:skill.skillParams.2`, variant: "success"  }),
+          }, { //Heal trigger chance 
+            canShow: data => data.get(input.constellation).value === 0,
+            node: nodeSkillHealChanceBase,
+          }, {
+            canShow: data => data.get(input.constellation).value >= 1,
+            node: nodeSkillHealChanceC1BurstOff,
+          }, {
+            canShow: data => data.get(input.constellation).value >= 1,
+            node: nodeSkillHealChanceC1BurstOn,
+          }, { //Shield Duration
+            text: tr("skill.skillParams.4"), 
+            value: datamine.skill.shieldDuration,
+            unit: "s"
+          }, { //Cooldown
+            canShow: data => data.get(input.asc).value < 4,
+            text: tr("skill.skillParams.5"), 
+            value: datamine.skill.cd,
+            unit: "s"
+          }, {
+            canShow: data => data.get(input.asc).value >= 4,
+            text: tr("skill.skillParams.5"), 
+            value: trm(`p4cd`),
+          }
+        ]),
+        burst: talentTemplate("burst", tr, burst, [
+          { node: infoMut(dmgFormulas.burst.burstDmg, { key: `char_${key}_gen:burst.skillParams.0` }), },
+          { node: infoMut(dmgFormulas.burst.skillDmg, { key: `char_${key}_gen:burst.skillParams.1` }), },
+          {
+            canShow: data => data.get(input.constellation).value < 6,
+            text: tr("burst.skillParams.3"),
+            value: datamine.burst.duration,
+            unit: "s"
+          }, {
+            canShow: data => data.get(input.constellation).value >= 6,
+            text: tr("burst.skillParams.3"),
+            value: trm(`c6duration`),
+          }, {
+            text: tr("burst.skillParams.4"),
+            value: datamine.burst.cd,
+          }, {
+            text: tr("burst.skillParams.5"),
+            value: datamine.burst.enerCost,
+          }
+        ], {
           name: tr("burst.name"),
-          img: burst,
-          sections: [{
-            text: tr("burst.description"),
-            fields: [
-              { node: infoMut(dmgFormulas.burst.burstDmg, { key: `char_${key}_gen:burst.skillParams.0` }), },
-              { node: infoMut(dmgFormulas.burst.skillDmg, { key: `char_${key}_gen:burst.skillParams.1` }), },
-              {
-                canShow: data => data.get(input.constellation).value < 6,
-                text: tr("burst.skillParams.3"),
-                value: datamine.burst.duration,
-                unit: "s"
-              }, 
-              {
-                canShow: data => data.get(input.constellation).value >= 6,
-                text: tr("burst.skillParams.3"),
-                value: trm(`c6duration`),
-              }, 
-              {
-                text: tr("burst.skillParams.4"),
-                value: datamine.burst.cd,
-              }, 
-              {
-                text: tr("burst.skillParams.5"),
-                value: datamine.burst.enerCost,
-              }
-            ],
-            conditional: {
-              name: tr("burst.name"),
-              value: condBurst,
-              path: condBurstPath,
-              states: {
-                on: {
-                  fields: [
-                    {
-                      text: st("infusion.geo"),
-                      variant: "geo",
-                    },
-                    {
-                        text:trm("qlarger")
-                    },
-                    {
-                      node: infoMut(nodeBurstAtk, { key: `char_${key}_gen:burst.skillParams.2`})
-                    }
-                  ]
+          value: condBurst,
+          path: condBurstPath,
+          states: {
+            on: {
+              fields: [
+                {
+                  text: st("infusion.geo"),
+                  variant: "geo",
+                },
+                {
+                  text:trm("qlarger")
+                },
+                {
+                  //TODO: premod.atk assignment is overriding the infoMut key
+                  node: infoMut(nodeBurstAtk, {key:`char_${key}_gen:burst.skillParams.2`})
                 }
-              }
+              ]
             }
-          }],
-        },
+          }
+        }),
         passive1: talentTemplate("passive1", tr, passive1, [
           {
             node:infoMut(dmgFormulas.passive1.devotionShield, {key: `char_${key}_gen:skill.skillParams.1`})
