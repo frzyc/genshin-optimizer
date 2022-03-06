@@ -154,14 +154,14 @@ function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, eff
   const efficiency = stat.efficiency ?? 0
   const effOpacity = clamp01(0.5 + (efficiency / (100 * 5)) * 0.5) //divide by 6 because an substat can have max 6 rolls
   const statName = KeyMap.get(stat.key)
+  const inFilter = stat.key && effFilter.has(stat.key)
   return (<Box display="flex" gap={1} alignContent="center">
     <Typography sx={{ flexGrow: 1 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{StatIcon[stat.key]} {statName}{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}`}</Typography>
-
-    <Box display="flex" gap={0.25} height="90%">
+    {inFilter && <Box display="flex" gap={0.25} height="90%">
       {stat.rolls.sort().map(v => <SmolProgress value={100 * v / maxRoll} color={`roll${clamp(rollOffset + rollData.indexOf(v), 1, 6)}.main`} />)}
-    </Box>
+    </Box>}
     {/* <SmolProgress /> */}
-    <Typography sx={{ opacity: effOpacity, minWidth: 40, textAlign: "right" }}>{stat.key && effFilter.has(stat.key) ? `${efficiency.toFixed()}%` : "-"}</Typography>
+    <Typography sx={{ opacity: effOpacity, minWidth: 40, textAlign: "right" }}>{inFilter ? `${efficiency.toFixed()}%` : "-"}</Typography>
   </Box>)
 }
 function SmolProgress({ color = "red", value = 50 }) {
