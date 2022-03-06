@@ -1,3 +1,4 @@
+import { SubstatKey } from "pipeline";
 import { input } from "../../Formula";
 import { inferInfoMut, mergeData } from "../../Formula/api";
 import { reactions } from "../../Formula/reaction";
@@ -51,20 +52,20 @@ export function customHealNode(base: NumNode, additional?: Data): NumNode {
   return additional ? data(healNode, additional) : healNode
 }
 /** Note: `additional` applies only to this formula */
-export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
+export function dmgNode(base: MainStatKey | SubstatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
   const talentType = getTalentType(move)
   return customDmgNode(prod(subscript(input.total[`${talentType}Index`], lvlMultiplier, { key: '_' }), input.total[base]), move, additional)
 }
 /** Note: `additional` applies only to this formula */
-export function shieldNode(base: MainStatKey, percent: NumNode | number, flat: NumNode | number, additional?: Data): NumNode {
+export function shieldNode(base: MainStatKey | SubstatKey, percent: NumNode | number, flat: NumNode | number, additional?: Data): NumNode {
   return customShieldNode(sum(prod(percent, input.total[base]), flat), additional)
 }
 /** Note: `additional` applies only to this formula */
-export function healNode(base: MainStatKey, percent: NumNode | number, flat: NumNode | number, additional?: Data): NumNode {
+export function healNode(base: MainStatKey | SubstatKey, percent: NumNode | number, flat: NumNode | number, additional?: Data): NumNode {
   return customHealNode(sum(prod(percent, input.total[base]), flat), additional)
 }
 /** Note: `additional` applies only to this formula */
-export function shieldNodeTalent(base: MainStatKey, baseMultiplier: number[], flat: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional?: Data): NumNode {
+export function shieldNodeTalent(base: MainStatKey | SubstatKey, baseMultiplier: number[], flat: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional?: Data): NumNode {
   const talentType = getTalentType(move)
   const talentIndex = input.total[`${talentType}Index`]
   return customShieldNode(sum(
@@ -73,7 +74,7 @@ export function shieldNodeTalent(base: MainStatKey, baseMultiplier: number[], fl
   ), additional)
 }
 /** Note: `additional` applies only to this formula */
-export function healNodeTalent(base: MainStatKey, baseMultiplier: number[], flat: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional?: Data): NumNode {
+export function healNodeTalent(base: MainStatKey | SubstatKey, baseMultiplier: number[], flat: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional?: Data): NumNode {
   const talentType = getTalentType(move)
   const talentIndex = input.total[`${talentType}Index`]
   return customHealNode(sum(
