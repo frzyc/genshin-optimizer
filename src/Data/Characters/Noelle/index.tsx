@@ -276,7 +276,7 @@ const sheet: ICharacterSheet = {
     },
   };
 
-export const data = dataObjForCharacterSheet(key, "geo", "mondstadt", data_gen, dmgFormulas, {
+export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {
     bonus: {
       skill: nodeC5,
       burst: nodeC3,
