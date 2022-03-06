@@ -13,13 +13,13 @@ export default function DocumentDisplay({ sections }: { sections: DocumentSectio
     if (section.canShow && !section.canShow(data)) return null
     const talentText = evalIfFunc(section.text, data)
     const fields = section.fields ?? []
-    let { icon, title, action } = section.header ?? {}
+    let { icon, title, action } = section.fieldsHeader ?? {}
     icon = evalIfFunc(icon, data)
     return <Box key={"section" + i} display="flex" flexDirection="column" gap={1}>
         {talentText && <div>{talentText}</div>}
       <CardDark>
-        {section.header && <CardHeader avatar={icon} title={title} action={action} titleTypographyProps={{ variant: "subtitle2" }} />}
-        {section.header && <Divider />}
+        {section.fieldsHeader && <CardHeader avatar={icon} title={title} action={action} titleTypographyProps={{ variant: "subtitle2" }} />}
+        {section.fieldsHeader && <Divider />}
         {fields.length > 0 && <FieldDisplayList>
           {fields?.map?.((field, i) => <FieldDisplay key={i} field={field} component={ListItem} />)}
         </FieldDisplayList>}
