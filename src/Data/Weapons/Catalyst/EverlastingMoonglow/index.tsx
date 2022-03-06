@@ -16,11 +16,13 @@ const [, trm] = trans("weapon", key)
 const normal_dmgInc = prod(subscript(input.weapon.refineIndex, hp_conv, { key: '_' }), input.premod.hp)
 const heal_ = subscript(input.weapon.refineIndex, data_gen.addProps.map(x => x.heal_ ?? NaN))
 export const data = dataObjForWeaponSheet(key, data_gen, {
-  premod: {
-    normal_dmgInc, // TODO: technically should go into total
+  premod: { 
+    normal_dmgInc, // TODO: technically should be in "total", but should be fine as premod
     heal_
   }
-}, { normal_dmgInc })
+}, { 
+  normal_dmgInc 
+})
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,

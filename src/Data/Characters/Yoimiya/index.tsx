@@ -87,10 +87,10 @@ const const3TalentInc = greaterEq(input.constellation, 3, 3)
 const const5TalentInc = greaterEq(input.constellation, 5, 3)
 const normal_dmgMult = matchFull(condSkill, "skill", subscript(input.total.skillIndex, datamine.skill.dmg_), 1, { key: 'normal_dmg_' })
 const a1Stacks = lookup(condA1, Object.fromEntries(range(1, datamine.passive1.maxStacks).map(i => [i, constant(i)])), 0)
-const pyro_dmg_ = infoMut(prod(percent(datamine.passive1.pyro_dmg_), a1Stacks), { key: 'pyro_dmg_' })
+const pyro_dmg_ = infoMut(prod(percent(datamine.passive1.pyro_dmg_), a1Stacks), { key: 'pyro_dmg_', variant: elementKey })
 const atk_ = unequal(input.activeCharKey, characterKey, sum(percent(datamine.passive2.fixed_atk_), prod(percent(datamine.passive2.var_atk_), a1Stacks)))
 const c1atk_ = equal(condC1, 'c1', percent(datamine.constellation1.atk_))
-const c2pyro_dmg_ = equal(condC2, 'c2', percent(datamine.constellation2.pyro_dmg_), { key: 'pyro_dmg_' })
+const c2pyro_dmg_ = equal(condC2, 'c2', percent(datamine.constellation2.pyro_dmg_), { key: 'pyro_dmg_', variant: elementKey })
 
 const canShowC6 = uiData => uiData.get(input.constellation).value >= 6 && uiData.get(condSkill).value === 'skill'
 const canShowA4 = uiData => uiData.get(input.asc).value >= 4
@@ -178,60 +178,41 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      skill: {
+      skill: talentTemplate("skill", tr, skill, [{
+        text: tr("skill.skillParams.2"),
+        value: datamine.skill.cd,
+        unit: 's'
+      }], {
         name: tr("skill.name"),
-        img: skill,
-        sections: [{
-          text: tr("skill.description"),
-          fields: [{
-            text: tr("skill.skillParams.2"),
-            value: datamine.skill.cd,
-            unit: 's'
-          }],
-          conditional: {
-            name: tr("skill.name"),
-            path: condSkillPath,
-            value: condSkill,
-            states: {
-              skill: {
-                fields: [{
-                  text: tr("skill.skillParams.1"),
-                  value: datamine.skill.duration,
-                  unit: 's'
-                }]
-              }
-            }
-          }
-        }],
-      },
-      burst: {
-        name: tr("burst.name"),
-        img: burst,
-        sections: [{
-          text: tr("burst.description"),
-          fields: [
-            {
-              node: infoMut(dmgFormulas.burst.dmg, { key: `char_${characterKey}_gen:burst.skillParams.0` }),
-            },
-            {
-              node: infoMut(dmgFormulas.burst.exp, { key: `char_${characterKey}_gen:burst.skillParams.1` }),
-            },
-            {
-              text: tr("burst.skillParams.2"),
-              value: uiData => datamine.burst.duration + (uiData.get(input.constellation).value >= 1 ? datamine.constellation1.burst_durationInc : 0),
-              unit: "s"
-            }, {
-              text: tr("burst.skillParams.3"),
-              value: datamine.burst.cd,
-              unit: "s"
-            }, {
-              text: tr("burst.skillParams.4"),
-              value: 60,
+        path: condSkillPath,
+        value: condSkill,
+        states: {
+          skill: {
+            fields: [{
+              text: tr("skill.skillParams.1"),
+              value: datamine.skill.duration,
+              unit: 's'
             }]
-        }],
-      },
-      passive1: talentTemplate("passive1", tr, passive1, [],
-        {
+          }
+        }
+      }),
+      burst: talentTemplate("burst", tr, burst, [{
+        node: infoMut(dmgFormulas.burst.dmg, { key: `char_${characterKey}_gen:burst.skillParams.0` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.exp, { key: `char_${characterKey}_gen:burst.skillParams.1` }),
+      }, {
+        text: tr("burst.skillParams.2"),
+        value: uiData => datamine.burst.duration + (uiData.get(input.constellation).value >= 1 ? datamine.constellation1.burst_durationInc : 0),
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.3"),
+        value: datamine.burst.cd,
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.4"),
+        value: 60,
+      }]),
+      passive1: talentTemplate("passive1", tr, passive1, undefined, {
           canShow: greaterEq(input.asc, 1, 1),
           value: condA1,
           path: condA1Path,
@@ -280,31 +261,24 @@ const sheet: ICharacterSheet = {
           }
         }
       }),
-      constellation2: {
-        name: tr("constellation2.name"),
-        img: c2,
-        sections: [{
-          text: tr("constellation2.description"),
-          conditional: {
-            canShow: greaterEq(input.constellation, 2, 1),
-            name: charTr("c2"),
-            value: condC2,
-            path: condC2Path,
-            states: {
-              c2: {
-                fields: [
-                  {
-                    node: c2pyro_dmg_
-                  }, {
-                    text: sgt("duration"),
-                    value: datamine.constellation2.duration,
-                    unit: "s"
-                  }]
-              }
-            }
+      constellation2: talentTemplate("constellation2", tr, c2, undefined, {
+        canShow: greaterEq(input.constellation, 2, 1),
+        name: charTr("c2"),
+        value: condC2,
+        path: condC2Path,
+        states: {
+          c2: {
+            fields: [
+              {
+                node: c2pyro_dmg_
+              }, {
+                text: sgt("duration"),
+                value: datamine.constellation2.duration,
+                unit: "s"
+              }]
           }
-        }],
-      },
+        }
+      }),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: const3TalentInc }]),
       constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5TalentInc }]),

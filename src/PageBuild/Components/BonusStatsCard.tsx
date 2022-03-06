@@ -9,7 +9,7 @@ export default function BonusStatsCard() {
   const { data, character } = useContext(DataContext)
   const bonusStatsKeys = Object.keys(character?.bonusStats)
   if (!bonusStatsKeys.length) return null
-  const nodes = bonusStatsKeys.map(k => data.get(input.total[k] as NumNode))
+  const nodes = bonusStatsKeys.map(k => data.get(input.customBonus[k] as NumNode))
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
       <Typography>Bonus Stats</Typography>

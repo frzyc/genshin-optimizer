@@ -24,11 +24,15 @@ const allModStats = [
 ]
 const allNonModStats = [
   ...allArtNonModStats,
-  ...(["all", ...allMoves] as const).map(x => `${x}_dmgInc` as const),
-  ...([...allElements] as const).map(x => `${x}_critDMG_` as const),
-  ...([...allMoves] as const).map(x => `${x}_critDMG_` as const),
-  ...allElements.map(x => `${x}_res_` as const),
-  ...allMoves.map(x => `${x}_critRate_` as const),
+  ...allElements.flatMap(x => [
+    `${x}_dmgInc` as const,
+    `${x}_critDMG_` as const,
+    `${x}_res_` as const]),
+  ...allMoves.flatMap(x => [
+    `${x}_dmgInc` as const,
+    `${x}_critDMG_` as const,
+    `${x}_critRate_` as const]),
+  "all_dmgInc" as const,
   ...allEleEnemyResKeys,
   "enemyDefRed_" as const,
   ...allMisc,
@@ -43,6 +47,7 @@ for (const ele of allElements) {
   allNonModStatNodes[`${ele}_enemyRes_`].info!.variant = ele
   allNonModStatNodes[`${ele}_critDMG_`].info!.variant = ele
   allNonModStatNodes[`${ele}_dmg_`].info!.variant = ele
+  allNonModStatNodes[`${ele}_dmgInc`].info!.variant = ele
 }
 for (const reaction of [...allTransformative, ...allAmplifying]) {
   allModStatNodes[`${reaction}_dmg_`].info!.variant = reaction
@@ -184,6 +189,7 @@ const common: Data = {
     ),
     dmgInc: sum(
       total.all_dmgInc,
+      lookup(hit.ele, objectKeyMap(allElements, element => total[`${element}_dmgInc`]), NaN),
       lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmgInc`]), NaN)
     ),
     dmg: prod(

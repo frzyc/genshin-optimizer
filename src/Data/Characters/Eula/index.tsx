@@ -204,7 +204,7 @@ const sheet: ICharacterSheet = {
           }, {
             node: infoMut(dmgFormulas.skill.hold, { key: `char_${key}_gen:skill.skillParams.1` }),
           }, {
-            text: tr("skill.skillParams.9"),
+            text: st("holdCD"),
             value: `${datamine.skill.holdCd}`,
             unit: 's'
           }, {
@@ -308,7 +308,11 @@ const sheet: ICharacterSheet = {
             header: conditionalHeader("constellation4", tr, c4),
             canShow: greaterEq(input.constellation, 4, 1),
             states: {
-              on: {}
+              on: {
+                fields: [{
+                  text: trm("c4C.desc")
+                }]
+              }
             }
           }
         }]

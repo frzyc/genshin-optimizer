@@ -204,106 +204,80 @@ const sheet: ICharacterSheet = {
           ],
         }],
       },
-      burst: {
+      burst: talentTemplate("burst", tr, burst, [{
+        text: tr("burst.skillParams.3"),
+        value: datamine.burst.cd,
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.4"),
+        value: datamine.burst.cost,
+      }], {
         name: tr("burst.name"),
-        img: burst,
-        sections: [{
-          text: tr("burst.description"),
-          fields: [{
-            text: tr("burst.skillParams.3"),
-            value: datamine.burst.cd,
-            unit: "s"
-          }, {
-            text: tr("burst.skillParams.4"),
-            value: datamine.burst.cost,
-          }],
-          conditional: {
-            name: tr("burst.name"),
-            value: condBurst,
-            path: condBurstPath,
-            states: {
-              on: {
-                fields: [
-                  {
-                    text: st("infusion.geo"),
-                    variant: "geo",
-                  },
-                  {
-                    node: nodeBurstAtkSpd,
-                  },
-                  ...Object.values(allNodeBurstRes).map(node => ({ node })),
-                  {
-                    node: infoMut(nodeBurstAtk, { key: `char_${key}_gen:burst.skillParams.0` })
-                  },
-                  {
-                    text: tr("burst.skillParams.2"),
-                    value: datamine.burst.duration,
-                    unit: "s"
-                  }]
-              }
-            }
-
+        value: condBurst,
+        path: condBurstPath,
+        states: {
+          on: {
+            fields: [{
+                text: st("infusion.geo"),
+                variant: "geo",
+              }, {
+                node: nodeBurstAtkSpd,
+              },
+              ...Object.values(allNodeBurstRes).map(node => ({ node })),
+              {
+                node: infoMut(nodeBurstAtk, { key: `char_${key}_gen:burst.skillParams.0` })
+              }, {
+                text: tr("burst.skillParams.2"),
+                value: datamine.burst.duration,
+                unit: "s"
+              }]
           }
-        }],
-      },
-      passive1: {
-        name: tr("passive1.name"),
-        img: passive1,
-        sections: [{
-          text: tr("passive1.description"),
-          conditional: {
-            name: trm("a1.name"),
-            canShow: greaterEq(input.asc, 1, 1),
-            value: condP1,
-            path: condP1Path,
-            states: Object.fromEntries(range(1, datamine.passive1.maxStacks).map(i =>
-              [i, {
-                name: st("stack_one", { count: i }),
-                fields: [
-                  {
-                    node: nodeP1AtkSpd
-                  },
-                ]
-              }]))
-          },
-        }],
-      },
+        }
+      }),
+      passive1: talentTemplate("passive1", tr, passive1, undefined, {
+        name: trm("a1.name"),
+        canShow: greaterEq(input.asc, 1, 1),
+        value: condP1,
+        path: condP1Path,
+        states: Object.fromEntries(range(1, datamine.passive1.maxStacks).map(i =>
+          [i, {
+            name: st("stack_one", { count: i }),
+            fields: [
+              {
+                node: nodeP1AtkSpd
+              },
+            ]
+          }]))
+      }),
       passive2: talentTemplate("passive2", tr, passive2),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
-      constellation4: {
-        name: tr("constellation4.name"),
-        img: c4,
-        sections: [{
-          text: tr("constellation4.description"),
-          conditional: {
-            canShow: greaterEq(input.constellation, 4, 1),
-            header: conditionalHeader("constellation4", tr, c4),
-            description: tr("constellation4.description"),
-            name: trm("c4.name"),
-            teamBuff: true,
-            value: condC4,
-            path: condC4Path,
-            states: {
-              on: {
-                fields: [
-                  {
-                    node: nodeC4Atk
-                  }, {
-                    node: nodeC4Def
-                  },
-                  {
-                    text: sgt("duration"),
-                    value: datamine.constellation4.duration,
-                    unit: "s"
-                  }]
-              }
-            }
+      constellation4: talentTemplate("constellation4", tr, c4, undefined, {
+        canShow: greaterEq(input.constellation, 4, 1),
+        header: conditionalHeader("constellation4", tr, c4),
+        description: tr("constellation4.description"),
+        name: trm("c4.name"),
+        teamBuff: true,
+        value: condC4,
+        path: condC4Path,
+        states: {
+          on: {
+            fields: [
+              {
+                node: nodeC4Atk
+              }, {
+                node: nodeC4Def
+              },
+              {
+                text: sgt("duration"),
+                value: datamine.constellation4.duration,
+                unit: "s"
+              }]
           }
-        }]
-      },
+        }
+      }),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: talentTemplate("constellation6", tr, c6, [{ node: nodeC6CritDMG }])
     },

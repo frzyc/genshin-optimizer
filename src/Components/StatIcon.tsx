@@ -38,7 +38,13 @@ const StatIcon = {
   stamina: <FontAwesomeIcon icon={faMaxStamina as any} />,
 
   ...coloredEleIcon,
-  ...Object.fromEntries(Object.keys(coloredEleIcon).flatMap(ele => [[`${ele}_dmg_`, coloredEleIcon[ele]], [`${ele}_res_`, coloredEleIcon[ele]]]))
+  ...Object.fromEntries(Object.keys(coloredEleIcon).flatMap(ele => [
+    [`${ele}_dmg_`, coloredEleIcon[ele]],
+    [`${ele}_res_`, coloredEleIcon[ele]],
+    [`${ele}_critDMG_`, coloredEleIcon[ele]],
+    [`${ele}_dmgInc`, coloredEleIcon[ele]],
+    [`${ele}_enemyRes_`, coloredEleIcon[ele]]
+  ]))
 }
 
 export default StatIcon
