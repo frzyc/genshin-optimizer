@@ -160,7 +160,6 @@ function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, eff
     {inFilter && <Box display="flex" gap={0.25} height="90%">
       {stat.rolls.sort().map(v => <SmolProgress value={100 * v / maxRoll} color={`roll${clamp(rollOffset + rollData.indexOf(v), 1, 6)}.main`} />)}
     </Box>}
-    {/* <SmolProgress /> */}
     <Typography sx={{ opacity: effOpacity, minWidth: 40, textAlign: "right" }}>{inFilter ? `${efficiency.toFixed()}%` : "-"}</Typography>
   </Box>)
 }
