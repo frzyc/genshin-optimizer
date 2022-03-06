@@ -133,7 +133,7 @@ export default function WeaponDisplay() {
         </Grid>
         <Grid item flexGrow={1}>
           <SolidToggleButtonGroup sx={{ height: "100%" }} onChange={(e, newVal) => stateDisplatch({ rarity: newVal })} value={rarity} size="small">
-            {allRarities.map(star => <ToggleButton key={star} value={star}><strong>{star}{' '}</strong><Stars stars={1} /></ToggleButton>)}
+            {allRarities.map(star => <ToggleButton key={star} value={star}><Box display="flex" gap={1}><strong>{star}</strong><Stars stars={1} /></Box></ToggleButton>)}
           </SolidToggleButtonGroup>
         </Grid>
         <Grid item >

@@ -9,14 +9,14 @@ import { DataContext } from '../DataContext';
 import { uiInput as input } from '../Formula';
 import KeyMap from '../KeyMap';
 import { MainStatKey, SubstatKey } from '../Types/artifact';
-import { PlotData } from './background';
+import { ChartData } from './background';
 type ChartCardProps = {
-  plotData?: PlotData
+  chartData?: ChartData
   plotBase: MainStatKey | SubstatKey | "",
   setPlotBase: (key: MainStatKey | SubstatKey | "") => void
   disabled?: boolean
 }
-export default function ChartCard({ plotData, plotBase, setPlotBase, disabled = false }: ChartCardProps) {
+export default function ChartCard({ chartData, plotBase, setPlotBase, disabled = false }: ChartCardProps) {
   const [showDownload, setshowDownload] = useState(false)
   const [showMin, setshowMin] = useState(true)
   const { data } = useContext(DataContext)
@@ -27,8 +27,8 @@ export default function ChartCard({ plotData, plotBase, setPlotBase, disabled = 
   const { displayData, downloadData } = useMemo(() => {
     type Point = { x: number, y: number, min?: number }
 
-    if (!plotData) return { displayData: null, downloadData: null }
-    const points = Object.values(plotData).map(({ value: y, plot: x }) => ({ x, y })) as Point[]
+    if (!chartData) return { displayData: null, downloadData: null }
+    const points = chartData.map(({ value: y, plot: x }) => ({ x, y })) as Point[]
     const increasingX: Point[] = points.sort((a, b) => a.x - b.x)
     const minimumData: Point[] = []
     for (const point of increasingX) {
@@ -54,7 +54,7 @@ export default function ChartCard({ plotData, plotBase, setPlotBase, disabled = 
       allData: increasingX.map(({ x, y }) => [x, y]),
     }
     return { displayData: increasingX, downloadData }
-  }, [plotData])
+  }, [chartData])
 
   return <CardLight>
     <CardContent>
@@ -117,10 +117,11 @@ function DataDisplay({ data, }: { data?: object }) {
   }} />
 }
 function Chart({ displayData, plotBase, showMin }) {
+  const unit = KeyMap.unitStr(plotBase)
   return <ResponsiveContainer width="100%" height={600}>
     <ComposedChart data={displayData}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="x" scale="linear" unit={KeyMap.unitStr(plotBase)} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)} />
+      <XAxis dataKey="x" scale="linear" unit={unit === "flat" ? undefined : unit} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)} />
       <YAxis name="DMG" domain={["auto", "auto"]} allowDecimals={false} tick={{ fill: 'white' }} type="number" />
       <ZAxis dataKey="y" range={[3, 25]} />
       <Legend />

@@ -24,6 +24,7 @@ import { uiInput as input } from '../Formula/index';
 import { optimize } from '../Formula/optimization';
 import { NumNode } from '../Formula/type';
 import { initGlobalSettings } from '../GlobalSettings';
+import KeyMap from '../KeyMap';
 import CharacterCard from '../PageCharacter/CharacterCard';
 import useCharacter from '../ReactHooks/useCharacter';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
@@ -35,7 +36,7 @@ import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
 import { BuildSetting } from '../Types/Build';
 import { ArtifactSetKey, CharacterKey } from '../Types/consts';
 import { objectMap, objPathValue } from '../Util/Util';
-import { Finalize, FinalizeResult, PlotData, Request, Setup, WorkerResult } from './background';
+import { ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import ChartCard from './ChartCard';
@@ -111,7 +112,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const [generationDuration, setgenerationDuration] = useState(0)//in ms
   const [generationSkipped, setgenerationSkipped] = useState(0)
 
-  const [chartData, setchartData] = useState(undefined as PlotData | undefined)
+  const [chartData, setchartData] = useState(undefined as ChartData | undefined)
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
@@ -317,7 +318,14 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     } else {
       if (plotBase) {
         const plotData = mergePlot(results.map(x => x.plotData!))
-        setchartData(plotData)
+        let chartData = Object.values(plotData)
+        // TODO: convert the optimizationTarget value to percent, instead of decimal
+        if (KeyMap.unit(optimizationTargetNode.info?.key) === "%")
+          chartData = chartData.map(({ value, plot }) => ({ value: value * 100, plot })) as ChartData
+        // TODO: convert the plotBase value to percent, instead of decimal
+        if (KeyMap.unit(plotBaseNode!.info?.key) === "%")
+          chartData = chartData.map(({ value, plot }) => ({ value, plot: (plot ?? 0) * 100 })) as ChartData
+        setchartData(chartData)
       }
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
       buildSettingsDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
@@ -504,7 +512,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
             <BuildAlert {...{ totBuildNumber, generatingBuilds, generationSkipped, generationProgress, generationDuration, characterName, maxBuildsToShow }} />
           </Box>}
           {tcMode && <Box >
-            <ChartCard disabled={generatingBuilds} plotData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} />
+            <ChartCard disabled={generatingBuilds} chartData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} />
           </Box>}
         </CardContent>
       </CardDark>

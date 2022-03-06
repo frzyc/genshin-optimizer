@@ -20,7 +20,7 @@ import KeyMap, { cacheValueString } from '../KeyMap';
 import useArtifact from '../ReactHooks/useArtifact';
 import usePromise from '../ReactHooks/usePromise';
 import { allSubstats, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
-import { CharacterKey } from '../Types/consts';
+import { CharacterKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
 import PercentBadge from './PercentBadge';
 import { probability } from './RollProbability';
@@ -104,22 +104,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         </Grid>
       </CardContent>
       <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", pt: 1, pb: 0 }}>
-        {substats.map((stat: ICachedSubstat, i) => {
-          if (!stat.value) return null
-          const numRolls = stat.rolls?.length ?? 0
-          const rollColor = `roll${clamp(numRolls, 1, 6)}`
-          const efficiency = stat.efficiency ?? 0
-          const effOpacity = clamp01(0.5 + (efficiency / (100 * 5)) * 0.5) //divide by 6 because an substat can have max 6 rolls
-          const statName = KeyMap.get(stat.key)
-          return (<Box key={i} sx={{ display: "flex" }}>
-            <Box sx={{ flexGrow: 1 }}>
-              <SqBadge color={(numRolls ? rollColor : "error") as any} sx={{ mr: 1 }}><strong>{numRolls ? numRolls : "?"}</strong></SqBadge>
-
-              <Typography color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{StatIcon[stat.key]} {statName}{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}`}</Typography>
-            </Box>
-            <Typography sx={{ opacity: effOpacity }}>{stat.key && effFilter.has(stat.key) ? `${efficiency.toFixed()}%` : "-"}</Typography>
-          </Box>)
-        })}
+        {substats.map((stat: ICachedSubstat) => <SubstatDisplay key={stat.key} stat={stat} effFilter={effFilter} rarity={rarity} />)}
         <Box sx={{ display: "flex", my: 1 }}>
           <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.curSubEff`}</Typography>
           <PercentBadge value={currentEfficiency} max={900} valid={artifactValid} />
@@ -158,4 +143,29 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
       </CardActions>
     </CardLight >
   </Suspense>
+}
+function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, effFilter: Set<SubstatKey>, rarity: Rarity }) {
+  if (!stat.value) return null
+  const numRolls = stat.rolls?.length ?? 0
+  const maxRoll = stat.key ? Artifact.maxSubstatValues(stat.key) : 0
+  const rollData = stat.key ? Artifact.getSubstatRollData(stat.key, rarity) : []
+  const rollOffset = 7 - rollData.length
+  const rollColor = `roll${clamp(numRolls, 1, 6)}`
+  const efficiency = stat.efficiency ?? 0
+  const effOpacity = clamp01(0.5 + (efficiency / (100 * 5)) * 0.5) //divide by 6 because an substat can have max 6 rolls
+  const statName = KeyMap.get(stat.key)
+  return (<Box display="flex" gap={1} alignContent="center">
+    <Typography sx={{ flexGrow: 1 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{StatIcon[stat.key]} {statName}{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}`}</Typography>
+
+    <Box display="flex" gap={0.25} height="90%">
+      {stat.rolls.sort().map(v => <SmolProgress value={100 * v / maxRoll} color={`roll${clamp(rollOffset + rollData.indexOf(v), 1, 6)}.main`} />)}
+    </Box>
+    {/* <SmolProgress /> */}
+    <Typography sx={{ opacity: effOpacity, minWidth: 40, textAlign: "right" }}>{stat.key && effFilter.has(stat.key) ? `${efficiency.toFixed()}%` : "-"}</Typography>
+  </Box>)
+}
+function SmolProgress({ color = "red", value = 50 }) {
+  return <Box sx={{ width: 7, height: "100%", bgcolor: color, overflow: "hidden", borderRadius: 1, display: "inline-block" }}>
+    <Box sx={{ width: 10, height: `${100 - clamp(value, 0, 100)}%`, bgcolor: "gray" }} />
+  </Box>
 }
