@@ -97,13 +97,18 @@ function initialBuildDisplayState(): {
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { database } = useContext(DatabaseContext)
-  const [{ characterKey: dbCharacterKey }, setBuildSettings] = useDBState("BuildDisplay", initialBuildDisplayState)
-  const setcharacterKey = useCallback(characterKey => setBuildSettings({ characterKey }), [setBuildSettings])
+  const [{ characterKey }, setBuildSettings] = useDBState("BuildDisplay", initialBuildDisplayState)
+  const setcharacterKey = useCallback(characterKey => {
+    if (characterKey && database._getChar(characterKey)) setBuildSettings({ characterKey })
+    else setBuildSettings({ characterKey: "" })
+  }, [setBuildSettings, database])
 
-  //NOTE that propCharacterKey can override the selected character.
-  let characterKey = propCharacterKey ?? dbCharacterKey
-  if (characterKey && !database._getChar(characterKey)) characterKey = ""
-
+  // propCharacterKey can override the selected character, on initial load. This is intended to run on component startup.
+  useEffect(() => {
+    if (propCharacterKey && propCharacterKey !== characterKey)
+      setcharacterKey(propCharacterKey)
+    // eslint-disable-next-line
+  }, [])
 
   const [modalBuildIndex, setmodalBuildIndex] = useState(-1) // the index of the newBuild that is being displayed in the character modal,
 
@@ -125,6 +130,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
   const teamDataBuilds = usePromise(Promise.all(builds.map(async (b) => {
+    if (!characterKey) return undefined
     const result = await getTeamData(database, characterKey, mainStatAssumptionLevel, b.filter(a => a).map(a => database._getArt(a)!))
     if (!result) return null
     const { teamData, teamBundle } = result
@@ -192,7 +198,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
   const generateBuilds = useCallback(async () => {
-    if (!optimizationTarget || !split || !setPerms) return
+    if (!characterKey || !optimizationTarget || !split || !setPerms) return
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
     const workerData = uiDataForTeam(teamData.teamData, characterKey)[characterKey as CharacterKey]?.target.data![0]
@@ -370,7 +376,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         "Rainbow builds can sometimes be \"optimal\". Good substat combinations can sometimes surpass set effects.",
         "The more complex the formula, the longer the generation time.",]}
     ><InfoDisplay /></InfoComponent>
-    {selectedBuild && <BuildModal teamData={selectedBuild} characterKey={characterKey} onClose={closeBuildModal} />}
+    {characterKey && selectedBuild && <BuildModal teamData={selectedBuild} characterKey={characterKey} onClose={closeBuildModal} />}
     {noCharacter && <Alert severity="error" variant="filled"> Opps! It looks like you haven't added a character to GO yet! You should go to the <Link component={RouterLink} to="/character">Characters</Link> page and add some!</Alert>}
     {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
     {/* Build Generator Editor */}
