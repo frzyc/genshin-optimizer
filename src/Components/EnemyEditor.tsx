@@ -71,12 +71,12 @@ export function EnemyResText({ element }: { element: ElementKeyWithPhy }) {
 }
 
 export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object }) {
-  const { data, characterDispatch } = useContext(DataContext)
+  const { data, character: { enemyOverride }, characterDispatch } = useContext(DataContext)
   const defaultVal = 10
 
-  const eLvlNode = data.get(input.enemy.level)
-  const eDefRed = data.get(input.enemy.defRed)
-  const eDefIgn = data.get(input.enemy.defIgn)
+  const eLvl = enemyOverride.enemyLevel ?? data.get(input.lvl).value
+  const eDefRed = enemyOverride.enemyDefIgn_ ?? 0
+  const eDefIgn = enemyOverride.enemyDefRed_ ?? 0
   return <Grid container spacing={1}>
     <Grid item {...bsProps}>
       <Button fullWidth sx={{ height: "100%" }} size="small" component="a" color="warning" href="https://genshin-impact.fandom.com/wiki/Resistance#Base_Enemy_Resistances" target="_blank" rel="noreferrer">
@@ -86,9 +86,9 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
     <Grid item {...bsProps}>
       <StatInput
         sx={{ bgcolor: t => t.palette.contentLight.main, width: "100%" }}
-        name={<b>{KeyMap.get(eLvlNode.key)}</b>}
-        value={eLvlNode.value}
-        placeholder={KeyMap.getStr(eLvlNode.key)}
+        name={<b>{KeyMap.get("enemyLevel")}</b>}
+        value={eLvl}
+        placeholder={KeyMap.getStr("enemyLevel")}
         defaultValue={data.get(input.lvl).value}
         onValueChange={value => characterDispatch({ type: "enemyOverride", statKey: "enemyLevel", value })}
         onReset={() => characterDispatch({ type: "enemyOverride", statKey: "enemyLevel", value: undefined })}
@@ -96,14 +96,14 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
     </Grid>
     {allElementsWithPhy.map(eleKey => {
       const statKey = `${eleKey}_enemyRes_`
-      const node = data.get(input.enemy[`${eleKey}_res_`])
-      const elementImmunity = !isFinite(node.value)
+      const val = enemyOverride[statKey]
+      const elementImmunity = val === Number.MAX_VALUE
       return <Grid item key={eleKey} {...bsProps}>
         <StatInput
           sx={{ bgcolor: t => t.palette.contentLight.main, width: "100%" }}
-          name={<b>{KeyMap.get(node.key)}</b>}
-          value={node.value * 100}
-          placeholder={KeyMap.getStr(node.key)}
+          name={<ColorText color={eleKey}><b>{KeyMap.get(statKey)}</b></ColorText>}
+          value={val ? (elementImmunity ? Infinity : val) : 10}
+          placeholder={elementImmunity ? "Immune " : KeyMap.getStr(statKey)}
           defaultValue={defaultVal}
           onValueChange={value => characterDispatch({ type: "enemyOverride", statKey, value })}
           disabled={elementImmunity}
@@ -118,22 +118,22 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
     <Grid item {...bsProps}>
       <StatInput
         sx={{ bgcolor: t => t.palette.contentLight.main, width: "100%" }}
-        name={<b>{KeyMap.get(eDefRed.key)}</b>}
-        value={eDefRed.value}
-        placeholder={KeyMap.getStr(eDefRed.key)}
+        name={<b>{KeyMap.get("enemyDefIgn_")}</b>}
+        value={eDefRed}
+        placeholder={KeyMap.getStr("enemyDefIgn_")}
         defaultValue={0}
-        onValueChange={value => characterDispatch({ type: "enemyOverride", statKey: "enemyDefRed_", value })}
+        onValueChange={value => characterDispatch({ type: "enemyOverride", statKey: "enemyDefIgn_", value })}
         percent
       />
     </Grid>
     <Grid item {...bsProps}>
       <StatInput
         sx={{ bgcolor: t => t.palette.contentLight.main, width: "100%" }}
-        name={<b>{KeyMap.get(eDefIgn.key)}</b>}
-        value={eDefIgn.value}
-        placeholder={KeyMap.getStr(eDefIgn.key)}
+        name={<b>{KeyMap.get("enemyDefRed_")}</b>}
+        value={eDefIgn}
+        placeholder={KeyMap.getStr("enemyDefRed_")}
         defaultValue={0}
-        onValueChange={value => characterDispatch({ type: "enemyOverride", statKey: "enemyDefIgn_", value })}
+        onValueChange={value => characterDispatch({ type: "enemyOverride", statKey: "enemyDefRed_", value })}
         percent
       />
     </Grid>

@@ -69,9 +69,9 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     result.customBonus![key] = key.endsWith('_') ? percent(value / 100) : constant(value)
 
   if (char.enemyOverride.enemyDefRed_)
-    result.premod!.enemyDefRed_ = percent(char.enemyOverride.enemyDefRed_)
+    result.premod!.enemyDefRed_ = percent(char.enemyOverride.enemyDefRed_ / 100)
   if (char.enemyOverride.enemyDefIgn_)
-    result.enemy!.defIgn = percent(char.enemyOverride.enemyDefIgn_)
+    result.enemy!.defIgn = percent(char.enemyOverride.enemyDefIgn_ / 100)
   if (char.elementKey) {
     result.charEle = constant(char.elementKey)
     result.display = {
