@@ -3,6 +3,7 @@
   "c1chance": "(100% while <strong>Sweeping Time</strong> and <strong>Breastplate</strong> are both in effect)",
   "c6duration": "15s, +1s per kill, up to 10s",
   "qlarger": "Larger attack AOE",
-  "c4dmg" : "Breastplate Shatter DMG",
-  "skillHeal_" : "Healing Triggering Chance"
+  "c4dmg": "Breastplate Shatter DMG",
+  "skillHeal_": "Healing Triggering Chance",
+  "c2Stam": "Changed Attack Stamina Consumption"
 }
