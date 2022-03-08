@@ -158,7 +158,6 @@ export type RequestFilter = StrictDict<SlotKey,
 >
 export type PlotData = Dict<number, Build>
 
-// TODO: should make this encapsulate more data, like the axis information, and axis unit.
 export type ChartData = {
   valueNode: NumNode,
   plotNode: NumNode,
