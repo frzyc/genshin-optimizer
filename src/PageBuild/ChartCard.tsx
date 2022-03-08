@@ -7,6 +7,7 @@ import CardLight from '../Components/Card/CardLight';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import { DataContext } from '../DataContext';
 import { uiInput as input } from '../Formula';
+import { NumNode } from '../Formula/type';
 import KeyMap from '../KeyMap';
 import { MainStatKey, SubstatKey } from '../Types/artifact';
 import { ChartData } from './background';
@@ -16,6 +17,7 @@ type ChartCardProps = {
   setPlotBase: (key: MainStatKey | SubstatKey | "") => void
   disabled?: boolean
 }
+type Point = { x: number, y: number, min?: number }
 export default function ChartCard({ chartData, plotBase, setPlotBase, disabled = false }: ChartCardProps) {
   const [showDownload, setshowDownload] = useState(false)
   const [showMin, setshowMin] = useState(true)
@@ -25,10 +27,8 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
   statKeys.push(`${data.get(input.charEle).value}_dmg_`)
 
   const { displayData, downloadData } = useMemo(() => {
-    type Point = { x: number, y: number, min?: number }
-
     if (!chartData) return { displayData: null, downloadData: null }
-    const points = chartData.map(({ value: y, plot: x }) => ({ x, y })) as Point[]
+    const points = chartData.data.map(({ value: y, plot: x }) => ({ x, y })) as Point[]
     const increasingX: Point[] = points.sort((a, b) => a.x - b.x)
     const minimumData: Point[] = []
     for (const point of increasingX) {
@@ -88,7 +88,7 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
       </Grid>
     </CardContent>
     {!!displayData && <Divider />}
-    {!!displayData && <CardContent>
+    {chartData && !!displayData && <CardContent>
       <Collapse in={!!downloadData && showDownload}>
         <CardDark sx={{ mb: 2 }}>
           <CardContent>
@@ -99,7 +99,7 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
           </CardContent>
         </CardDark>
       </Collapse>
-      <Chart displayData={displayData} plotBase={plotBase} showMin={showMin} />
+      <Chart displayData={displayData} plotNode={chartData.plotNode} valueNode={chartData.valueNode} showMin={showMin} />
     </CardContent>}
   </CardLight >
 }
@@ -116,13 +116,19 @@ function DataDisplay({ data, }: { data?: object }) {
     target.selectionEnd = target.value.length;
   }} />
 }
-function Chart({ displayData, plotBase, showMin }) {
-  const unit = KeyMap.unitStr(plotBase)
+function Chart({ displayData, plotNode, valueNode, showMin }: {
+  displayData: Point[],
+  plotNode: NumNode,
+  valueNode: NumNode,
+  showMin: boolean
+}) {
+  const plotBaseUnit = KeyMap.unitStr(plotNode.info?.key)
+  const valueUnit = KeyMap.unitStr(valueNode.info?.key)
   return <ResponsiveContainer width="100%" height={600}>
     <ComposedChart data={displayData}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="x" scale="linear" unit={unit === "flat" ? undefined : unit} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)} />
-      <YAxis name="DMG" domain={["auto", "auto"]} allowDecimals={false} tick={{ fill: 'white' }} type="number" />
+      <XAxis dataKey="x" scale="linear" unit={plotBaseUnit} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)} />
+      <YAxis name="DMG" domain={["auto", "auto"]} unit={valueUnit} allowDecimals={false} tick={{ fill: 'white' }} type="number" />
       <ZAxis dataKey="y" range={[3, 25]} />
       <Legend />
       <Scatter name="Optimization Target" dataKey="y" fill="#8884d8" line lineType="fitting" isAnimationActive={false} />

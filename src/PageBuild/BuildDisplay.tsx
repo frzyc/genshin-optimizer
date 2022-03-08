@@ -36,7 +36,7 @@ import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
 import { BuildSetting } from '../Types/Build';
 import { ArtifactSetKey, CharacterKey } from '../Types/consts';
 import { objectMap, objPathValue } from '../Util/Util';
-import { ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
+import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import ChartCard from './ChartCard';
@@ -206,6 +206,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     let optimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
     if (!optimizationTargetNode) return
+    const targetNode = optimizationTargetNode
     const valueFilter: { value: NumNode, minimum: number }[] = Object.entries(statFilters).map(([key, value]) => {
       if (key.endsWith("_")) value = value / 100 // TODO: Conversion
       return { value: input.total[key], minimum: value }
@@ -324,14 +325,17 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     } else {
       if (plotBase) {
         const plotData = mergePlot(results.map(x => x.plotData!))
-        let chartData = Object.values(plotData)
-        // TODO: convert the optimizationTarget value to percent, instead of decimal
-        if (KeyMap.unit(optimizationTargetNode.info?.key) === "%")
-          chartData = chartData.map(({ value, plot }) => ({ value: value * 100, plot })) as ChartData
-        // TODO: convert the plotBase value to percent, instead of decimal
+        const plotBaseNode = input.total[plotBase] as NumNode
+        let data = Object.values(plotData)
+        if (KeyMap.unit(targetNode.info?.key) === "%")
+          data = data.map(({ value, plot }) => ({ value: value * 100, plot })) as Build[]
         if (KeyMap.unit(plotBaseNode!.info?.key) === "%")
-          chartData = chartData.map(({ value, plot }) => ({ value, plot: (plot ?? 0) * 100 })) as ChartData
-        setchartData(chartData)
+          data = data.map(({ value, plot }) => ({ value, plot: (plot ?? 0) * 100 })) as Build[]
+        setchartData({
+          valueNode: targetNode,
+          plotNode: plotBaseNode,
+          data
+        })
       }
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
       buildSettingsDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
