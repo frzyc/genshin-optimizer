@@ -84,7 +84,6 @@ export const allCharacterKeys = [
   // "Xiao",
   "Xingqiu",
   // "Xinyan",
-  // "Zhongli",
   // "Rosaria",
   // "Yanfei",
   "Eula",
@@ -100,6 +99,7 @@ export const allCharacterKeys = [
   "AratakiItto",
   "YaeMiko",
   "YunJin",
+  "Zhongli",
 ] as const
 export const allWeaponKeys = [
   "CalamityQueller",

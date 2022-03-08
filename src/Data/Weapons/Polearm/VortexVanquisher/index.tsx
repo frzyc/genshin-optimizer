@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, objectKeyValueMap, range } from '../../../../Util/Util'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, sgt, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -45,7 +45,7 @@ const sheet: IWeaponSheet = {
       name: trm("condName"),
       states: {
         ...objectKeyMap(range(1, 5), i => ({
-          name: st("stackWithoutShield", { count: i }),
+          name: trm("stackWithoutShield", { count: i }),
           fields: [{
             node: atkStacks
           }, {
@@ -55,7 +55,7 @@ const sheet: IWeaponSheet = {
           }]
         })),
         ...objectKeyValueMap(range(1, 5), i => [`w${i}`, {
-          name: st("stackWithShield", { count: i }),
+          name: trm("stackWithShield", { count: i }),
           fields: [{
             node: atkStacks
           }, {

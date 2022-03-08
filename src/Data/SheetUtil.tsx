@@ -13,7 +13,7 @@ export function cond(key: CharacterKey | WeaponKey | ArtifactSetKey, subKey: str
   return [path, node]
 }
 
-type Translated = [tr: ((i18key: string) => Displayable), tran: ((i18key: string) => Displayable)]
+type Translated = [tr: ((i18key: string) => Displayable), tran: ((i18key: string, values?: object) => Displayable)]
 export function trans(typeKey: "char", key: CharacterKey): Translated
 export function trans(typeKey: "weapon", key: WeaponKey): Translated
 export function trans(typeKey: "artifact", key: ArtifactSetKey): Translated

@@ -90,7 +90,7 @@ const nodeSkillHealChanceC1BurstOn = equal("on", condBurst, percent(datamine.con
 const nodeSkillHealChanceC1BurstOff = unequal("on", condBurst, nodeSkillHealChanceBase)
 
 const nodeC2ChargeDMG = greaterEq(input.constellation, 2, percent(datamine.constellation2.chargeDmg_))
-const nodeC4dmg = customDmgNode(prod(input.total.def, percent(datamine.constellation4.skillDmg)), "elemental", { hit: { ele: constant(elementKey) } })
+const nodeC4dmg = customDmgNode(prod(input.total.atk, percent(datamine.constellation4.skillDmg)), "elemental", { hit: { ele: constant(elementKey) } })
 
 const geoShieldStrength = { "customBonus": { "shield_": percent(0.5) } }
 

@@ -47,7 +47,7 @@ import YaeMiko from './YaeMiko'
 // import Yanfei from './Yanfei'
 import Yoimiya from './Yoimiya'
 import YunJin from './YunJin'
-// import Zhongli from './Zhongli'
+import Zhongli from './Zhongli'
 
 const characters: Record<CharacterKey, CharacterSheet> = {
   // Albedo,
@@ -96,6 +96,6 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Yanfei,
   Yoimiya,
   YunJin,
-  // Zhongli
+  Zhongli
 } as const
 export default characters
