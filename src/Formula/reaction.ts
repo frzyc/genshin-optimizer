@@ -7,7 +7,7 @@ import { frac, infoMut, percent, prod, subscript, sum, unit } from "./utils";
 const asConst = true as const
 
 const crystallizeMulti1 = subscript(input.lvl, crystallizeLevelMultipliers)
-const crystallizeElemas = prod(4000 / 9, frac(input.total.eleMas, 1400))
+const crystallizeElemas = prod(40 / 9, frac(input.total.eleMas, 1400))
 const crystallizeHit = infoMut(prod(sum(unit, /** + Crystallize bonus */ crystallizeElemas), crystallizeMulti1), { key: "crystallize", variant: "geo" })
 
 const transMulti1 = subscript(input.lvl, transformativeReactionLevelMultipliers)
