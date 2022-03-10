@@ -59,7 +59,7 @@ export const allCharacterKeys = [
   // "Beidou",
   "Bennett",
   // "Chongyun",
-  // "Diluc",
+  "Diluc",
   // "Diona",
   // "Fischl",
   // "Ganyu",
