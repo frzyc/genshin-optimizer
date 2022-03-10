@@ -81,22 +81,15 @@ const dmgFormulas = {
   charged: {
     aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
     aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('cryo') } }),
-    // TODO: I used lookup here in order to let it default back to the dmgNode without A1 critRate_ applied
-    // There's probably a cleaner way to do this.. or not..
-    frostflake: lookup(condA1, {
-      "on": dmgNode("atk", datamine.charged.frostflake, "charged",
-        { premod: { critRate_: percent(datamine.passive1.critRateInc) }, hit: { ele: constant('cryo') } })
-    }, dmgNode("atk", datamine.charged.frostflake, "charged", { hit: { ele: constant('cryo') } })),
-    frostflakeBloom: lookup(condA1, {
-      "on": dmgNode("atk", datamine.charged.frostflakeBloom, "charged",
-        { premod: { critRate_: percent(datamine.passive1.critRateInc) }, hit: { ele: constant('cryo') } })
-    }, dmgNode("atk", datamine.charged.frostflakeBloom, "charged", { hit: { ele: constant('cryo') } }))
+    frostflake: dmgNode("atk", datamine.charged.frostflake, "charged",
+      { premod: { critRate_: greaterEq(input.asc, 1, equal(condA1, "on", percent(datamine.passive1.critRateInc))) }, hit: { ele: constant('cryo') } }),
+    frostflakeBloom: dmgNode("atk", datamine.charged.frostflakeBloom, "charged",
+      { premod: { critRate_: greaterEq(input.asc, 1, equal(condA1, "on", percent(datamine.passive1.critRateInc))) }, hit: { ele: constant('cryo') } }),
   },
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    // TODO: Should this be input.premod? Or input.total?
-    inheritedHp: prod(subscript(input.total.skillIndex, datamine.skill.inheritedHp), input.premod.hp),
+    inheritedHp: prod(subscript(input.total.skillIndex, datamine.skill.inheritedHp), input.total.hp),
     dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
   },
   burst: {
@@ -117,7 +110,6 @@ export const data = dataObjForCharacterSheet(key, elementKey, region, data_gen, 
   teamBuff: {
     premod: {
       cryo_dmg_,
-      // TODO: Should the C4 be all_dmg_?
       all_dmg_
     },
   }
