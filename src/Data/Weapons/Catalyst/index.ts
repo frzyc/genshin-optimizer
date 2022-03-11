@@ -1,6 +1,6 @@
 import ApprenticesNotes from './ApprenticesNotes'
-// import BlackcliffAgate from './BlackcliffAgate'
-// import DodocoTales from './DodocoTales'
+import BlackcliffAgate from './BlackcliffAgate'
+import DodocoTales from './DodocoTales'
 // import EmeraldOrb from './EmeraldOrb'
 import EverlastingMoonglow from './EverlastingMoonglow'
 // import EyeOfPerception from './EyeOfPerception'
@@ -25,8 +25,8 @@ import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
 // import WineAndSong from './WineAndSong'
 const catalyst = {
   ApprenticesNotes,
-  // BlackcliffAgate,
-  // DodocoTales,
+  BlackcliffAgate,
+  DodocoTales,
   // EmeraldOrb,
   EverlastingMoonglow,
   // EyeOfPerception,
