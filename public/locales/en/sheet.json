@@ -29,6 +29,7 @@
     "skill": "After using Elemental Skill",
     "burst": "After using Elemental Burst"
   },
+  "afterSprint": "After Sprint",
   "increase": {
     "atk": "ATK Increase"
   },

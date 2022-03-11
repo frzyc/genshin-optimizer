@@ -1,6 +1,6 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { infoMut, prod, subscript } from '../../../../Formula/utils'
+import { constant, infoMut, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { dataObjForWeaponSheet } from '../../util'
@@ -14,8 +14,14 @@ const data_gen = data_gen_json as WeaponData
 
 const dmgAoePerc = [0.8, 0.95, 1.1, 1.25, 1.4]
 const dmgCryoPerc = [2, 2.4, 2.8, 3.2, 3.6]
-const dmgAoe = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgAoePerc, { key: "_" }), input.total.atk), "elemental")
-const dmgOnCryoOp = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgCryoPerc, { key: "_" }), input.total.atk), "elemental")
+// TODO: Current GO has the DMG as physical so changed this accordingly
+// Not sure if it truly should be physical or not though
+const dmgAoe = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgAoePerc, { key: "_" }), input.total.atk), "elemental", {
+  hit: { ele: constant("physical") }
+})
+const dmgOnCryoOp = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgCryoPerc, { key: "_" }), input.total.atk), "elemental", {
+  hit: { ele: constant("physical") }
+})
 const data = dataObjForWeaponSheet(key, data_gen)
 
 const sheet: IWeaponSheet = {

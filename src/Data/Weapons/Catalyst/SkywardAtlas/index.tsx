@@ -1,33 +1,39 @@
 import { WeaponData } from 'pipeline'
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../PageBuild/Build'
-import Stat from '../../../../Stat'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { constant, infoMut, prod, subscript } from '../../../../Formula/utils'
+import { allElements, WeaponKey } from '../../../../Types/consts'
+import { customDmgNode } from '../../../Characters/dataUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-import { st } from '../../../Characters/SheetUtil'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
 
-const dmg_s = [12, 15, 18, 21, 24]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const key: WeaponKey = "SkywardAtlas"
+const data_gen = data_gen_json as WeaponData
+
+const dmgBonus = [0.12, 0.15, 0.18, 0.21, 0.24]
+const eleBonus_ = Object.fromEntries(allElements.map(ele => [ele, subscript(input.weapon.refineIndex, dmgBonus)]))
+const dmgPerc = [1.6, 2, 2.4, 2.8, 3.2]
+// TODO: Is the customDmgNode correct?
+const dmg = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgPerc, { key: "_" }), input.total.atk), "elemental", {
+  hit: { ele: constant("physical") }
+})
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    ...Object.fromEntries(allElements.map(ele => [`${ele}_dmg_`, eleBonus_[ele]])),
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    anemo_dmg_: dmg_s[stats.weapon.refineIndex],
-    geo_dmg_: dmg_s[stats.weapon.refineIndex],
-    electro_dmg_: dmg_s[stats.weapon.refineIndex],
-    hydro_dmg_: dmg_s[stats.weapon.refineIndex],
-    pyro_dmg_: dmg_s[stats.weapon.refineIndex],
-    cryo_dmg_: dmg_s[stats.weapon.refineIndex],
-  }),
   document: [{
-    fields: [{
-      text: st("dmg"),
-      formulaText: stats => <span>{data.dmg[stats.weapon.refineIndex]}% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
-      formula: formula.dmg,
-      variant: stats => getTalentStatKeyVariant("physical", stats),
-    }]
-  }]
+    fields: [
+      ...allElements.map(ele => ({ node: eleBonus_[ele] })),
+      {
+        node: infoMut(dmg, { key: "sheet:dmg" }),
+      }]
+  }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)
