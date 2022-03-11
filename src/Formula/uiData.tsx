@@ -306,6 +306,9 @@ function mergeVariants<V>(operands: ContextNodeDisplay<V>[]): ContextNodeDisplay
   const unique = new Set(operands.map(x => x.variant))
   if (unique.size > 1) unique.delete(undefined)
   if (unique.size > 1) unique.delete("physical")
+  // Prefer reactions
+  if (unique.has("melt")) return "melt"
+  if (unique.has("vaporize")) return "vaporize"
   return unique.values().next().value
 }
 function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
