@@ -1,29 +1,37 @@
 import { WeaponData } from 'pipeline'
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../PageBuild/Build'
-import Stat from '../../../../Stat'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { constant, infoMut, prod, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { customDmgNode } from '../../../Characters/dataUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-import { st } from '../../../Characters/SheetUtil'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
 
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const key: WeaponKey = "Frostbearer"
+const data_gen = data_gen_json as WeaponData
+
+const dmgAoePerc = [0.8, 0.95, 1.1, 1.25, 1.4]
+const dmgCryoPerc = [2, 2.4, 2.8, 3.2, 3.6]
+// TODO: Is the customDmgNode correct?
+const dmgAoe = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgAoePerc, { key: "_" }), input.total.atk), "elemental", {
+  hit: { ele: constant("physical") }
+})
+const dmgOnCryoOp = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgCryoPerc, { key: "_" }), input.total.atk), "elemental", {
+  hit: { ele: constant("physical") }
+})
+const data = dataObjForWeaponSheet(key, data_gen)
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
     fields: [{
-      text: st("dmg"),
-      formulaText: stats => <span>{data.dmg[stats.weapon.refineIndex]}% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
-      formula: formula.dmg,
-      variant: stats => getTalentStatKeyVariant("physical", stats),
+      node: infoMut(dmgAoe, { key: `weapon_${key}:aoeDmg` }),
     }, {
-      text: "Opponents affected by Cryo",
-      formulaText: stats => <span>{data.dmgc[stats.weapon.refineIndex]}% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
-      formula: formula.dmgc,
-      variant: stats => getTalentStatKeyVariant("physical", stats),
+      node: infoMut(dmgOnCryoOp, { key: `weapon_${key}:cryoAffectedDmg` }),
     }]
-  }]
+  }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

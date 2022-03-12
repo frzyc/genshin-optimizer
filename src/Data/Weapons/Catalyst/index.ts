@@ -1,53 +1,53 @@
 import ApprenticesNotes from './ApprenticesNotes'
-// import BlackcliffAgate from './BlackcliffAgate'
-// import DodocoTales from './DodocoTales'
-// import EmeraldOrb from './EmeraldOrb'
+import BlackcliffAgate from './BlackcliffAgate'
+import DodocoTales from './DodocoTales'
+import EmeraldOrb from './EmeraldOrb'
 import EverlastingMoonglow from './EverlastingMoonglow'
-// import EyeOfPerception from './EyeOfPerception'
-// import FavoniusCodex from './FavoniusCodex'
-// import Frostbearer from './Frostbearer'
+import EyeOfPerception from './EyeOfPerception'
+import FavoniusCodex from './FavoniusCodex'
+import Frostbearer from './Frostbearer'
 import HakushinRing from './HakushinRing'
 import KagurasVerity from './KagurasVerity'
-// import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
-// import MagicGuide from './MagicGuide'
-// import MappaMare from './MappaMare'
-// import MemoryOfDust from './MemoryOfDust'
-// import OtherworldlyStory from './OtherworldlyStory'
-// import PocketGrimoire from './PocketGrimoire'
-// import PrototypeAmber from './PrototypeAmber'
-// import RoyalGrimoire from './RoyalGrimoire'
-// import SacrificialFragments from './SacrificialFragments'
-// import SkywardAtlas from './SkywardAtlas'
+import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
+import MagicGuide from './MagicGuide'
+import MappaMare from './MappaMare'
+import MemoryOfDust from './MemoryOfDust'
+import OtherworldlyStory from './OtherworldlyStory'
+import PocketGrimoire from './PocketGrimoire'
+import PrototypeAmber from './PrototypeAmber'
+import RoyalGrimoire from './RoyalGrimoire'
+import SacrificialFragments from './SacrificialFragments'
+import SkywardAtlas from './SkywardAtlas'
 import SolarPearl from './SolarPearl'
 import TheWidsith from './TheWidsith'
 import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
-// import TwinNephrite from './TwinNephrite'
-// import WineAndSong from './WineAndSong'
+import TwinNephrite from './TwinNephrite'
+import WineAndSong from './WineAndSong'
 const catalyst = {
   ApprenticesNotes,
-  // BlackcliffAgate,
-  // DodocoTales,
-  // EmeraldOrb,
+  BlackcliffAgate,
+  DodocoTales,
+  EmeraldOrb,
   EverlastingMoonglow,
-  // EyeOfPerception,
-  // FavoniusCodex,
-  // Frostbearer,
+  EyeOfPerception,
+  FavoniusCodex,
+  Frostbearer,
   HakushinRing,
   KagurasVerity,
-  // LostPrayerToTheSacredWinds,
-  // MagicGuide,
-  // MappaMare,
-  // MemoryOfDust,
-  // OtherworldlyStory,
-  // PocketGrimoire,
-  // PrototypeAmber,
-  // RoyalGrimoire,
-  // SacrificialFragments,
-  // SkywardAtlas,
+  LostPrayerToTheSacredWinds,
+  MagicGuide,
+  MappaMare,
+  MemoryOfDust,
+  OtherworldlyStory,
+  PocketGrimoire,
+  PrototypeAmber,
+  RoyalGrimoire,
+  SacrificialFragments,
+  SkywardAtlas,
   SolarPearl,
   TheWidsith,
   ThrillingTalesOfDragonSlayers,
-  // TwinNephrite,
-  // WineAndSong,
+  TwinNephrite,
+  WineAndSong,
 } as const
 export default catalyst

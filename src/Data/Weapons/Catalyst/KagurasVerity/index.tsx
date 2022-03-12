@@ -3,15 +3,16 @@ import { input } from '../../../../Formula'
 import { equal, subscript, sum } from "../../../../Formula/utils"
 import { allElements, WeaponKey } from '../../../../Types/consts'
 import { range } from '../../../../Util/Util'
-import { cond } from '../../../SheetUtil'
+import { cond, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "KagurasVerity"
 const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
 const dmg_ = [0.12, 0.15, 0.18, 0.21, 0.24]
 const [condPath, condNode] = cond(key, "KaguraDance")
 
@@ -32,6 +33,8 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condNode,
       path: condPath,
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
       name: "Kagura Dance",
       states: {
         1: {

@@ -1,31 +1,76 @@
 import { WeaponData } from 'pipeline'
-import { Translate } from '../../../../Components/Translate'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { equal, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-const cdmg_ = [16, 20, 24, 28, 32]
-const atk_ = [8, 10, 12, 14, 16]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "DodocoTales"
+const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
+
+const chargedDmgInc = [0.16, 0.2, 0.24, 0.28, 0.32]
+const atkInc = [0.8, 0.10, 0.12, 0.14, 0.16]
+
+const [condNormalPath, condNormal] = cond(key, "DodoventureNormal")
+const [condChargedPath, condCharged] = cond(key, "DodoventureCharged")
+const charged_dmg_ = equal("on", condNormal, subscript(input.weapon.refineIndex, chargedDmgInc))
+const atk_ = equal("on", condCharged, subscript(input.weapon.refineIndex, atkInc))
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  teamBuff: {
+    premod: {
+      charged_dmg_,
+      atk_
+    }
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
     conditional: {
-      key: "a",
-      name: <Translate ns="sheet" key18="hitOp.normal" />,
-      stats: stats => ({
-        charged_dmg_: cdmg_[stats.weapon.refineIndex],
-      })
-    },
+      value: condNormal,
+      path: condNormalPath,
+      name: st("hitOp.normal"),
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
+      states: {
+        on: {
+          fields: [{
+            node: charged_dmg_
+          }, {
+            text: sgt("duration"),
+            value: 6,
+            unit: "s"
+          }]
+        }
+      }
+    }
   }, {
     conditional: {
-      key: "c",
-      name: <Translate ns="sheet" key18="hitOp.charged" />,
-      stats: stats => ({
-        atk_: atk_[stats.weapon.refineIndex],
-      })
+      value: condCharged,
+      path: condChargedPath,
+      name: st("hitOp.charged"),
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
+      states: {
+        on: {
+          fields: [{
+            node: atk_
+          }, {
+            text: sgt("duration"),
+            value: 6,
+            unit: "s"
+          }]
+        }
+      }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

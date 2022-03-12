@@ -2,16 +2,16 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, st } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "SolarPearl"
-
 const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
 
 const refinementVals = [0.20, 0.25, 0.30, 0.35, 0.40]
 
@@ -37,6 +37,8 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condNormal,
       path: condNormalPath,
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
       name: st("hitOp.normal"),
       states: {
         normal: {
@@ -52,6 +54,8 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condSkillBurst,
       path: condSkillBurstPath,
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
       name: st("hitOp.skillOrBurst"),
       states: {
         skillBurst: {

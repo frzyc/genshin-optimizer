@@ -1,0 +1,7 @@
+{
+  "condName": "Hits",
+  "stackWithShield_one": "With Shield: {{count}} Stack",
+  "stackWithShield_other": "With Shield: {{count}} Stacks",
+  "stackWithoutShield_one": "Without Shield: {{count}} Stack",
+  "stackWithoutShield_other": "Without Shield: {{count}} Stacks"
+}
