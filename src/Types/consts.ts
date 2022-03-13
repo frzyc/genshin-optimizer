@@ -211,6 +211,7 @@ export const allWeaponKeys = [
   "LostPrayerToTheSacredWinds",
   "SkywardAtlas",
   "MemoryOfDust",
+  "OathswornEye",
   "SongOfBrokenPines",
   "DodocoTales",
   // "MitternachtsWaltz",

@@ -14,14 +14,17 @@ const data_gen = data_gen_json as WeaponData
 
 const dmgAoePerc = [0.8, 0.95, 1.1, 1.25, 1.4]
 const dmgCryoPerc = [2, 2.4, 2.8, 3.2, 3.6]
-// TODO: Is the customDmgNode correct?
+
 const dmgAoe = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgAoePerc, { key: "_" }), input.total.atk), "elemental", {
   hit: { ele: constant("physical") }
 })
 const dmgOnCryoOp = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgCryoPerc, { key: "_" }), input.total.atk), "elemental", {
   hit: { ele: constant("physical") }
 })
-const data = dataObjForWeaponSheet(key, data_gen)
+const data = dataObjForWeaponSheet(key, data_gen, undefined, {
+  dmgAoe,
+  dmgOnCryoOp
+})
 
 const sheet: IWeaponSheet = {
   icon,

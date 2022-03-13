@@ -40,14 +40,10 @@ const sheet: IWeaponSheet = {
       header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
       name: trm("condName"),
-      states: {
-        ...objectKeyMap(range(1, 4), i => ({
-          name: st("stack", { count: i }),
-          fields: [
-            ...allElements.map(ele => ({ node: eleDmgStacks[ele] }))
-          ]
-        }))
-      }
+      states: objectKeyMap(range(1, 4), i => ({
+        name: st("stack", { count: i }),
+        fields: allElements.map(ele => ({ node: eleDmgStacks[ele] }))
+      }))
     }
   }],
 }

@@ -1,8 +1,7 @@
-import type { WeaponData } from 'pipeline'
+import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { infoMut, prod, subscript } from "../../../../Formula/utils"
+import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { customHealNode } from '../../../Characters/dataUtil'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
@@ -10,31 +9,40 @@ import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
-const key: WeaponKey = "PrototypeAmber"
+const key: WeaponKey = "OathswornEye"
 const data_gen = data_gen_json as WeaponData
 const [tr] = trans("weapon", key)
 
-const [condPassivePath, condPassive] = cond(key, "Gliding")
-const healPerc = [0.04, 0.045, 0.05, 0.055, 0.06]
+const refinementVals = [0.24, 0.30, 0.36, 0.42, 0.48]
 
-const heal = customHealNode(prod(subscript(input.weapon.refineIndex, healPerc, { key: "_" }), input.total.hp))
-export const data = dataObjForWeaponSheet(key, data_gen, undefined, { heal })
+const [condSkillBurstPath, condSkillBurst] = cond(key, "faLight")
+const refineVal = subscript(input.weapon.refineIndex, refinementVals)
+const enerRech_ = equal("skillBurst", condSkillBurst, refineVal)
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    enerRech_,
+  }
+})
+
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
     conditional: {
-      value: condPassive,
-      path: condPassivePath,
-      name: st("afterUse.burst"),
+      value: condSkillBurst,
+      path: condSkillBurstPath,
       header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
+      name: st("afterUse.skill"),
       states: {
-        on: {
-          fields: [{ node: infoMut(heal, { key: "sheet_gen:healing", variant: "success" }) }]
-        }
+        skillBurst: {
+          fields: [{
+            node: enerRech_
+          }]
+        },
       }
     }
-  }]
+  }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

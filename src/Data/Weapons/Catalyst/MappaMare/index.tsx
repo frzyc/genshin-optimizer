@@ -1,8 +1,8 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
-import { WeaponKey } from '../../../../Types/consts'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { allElements, WeaponKey } from '../../../../Types/consts'
+import { objectKeyMap, objectKeyValueMap, range } from '../../../../Util/Util'
 import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
@@ -18,14 +18,12 @@ const [condPassivePath, condPassive] = cond(key, "InfusionScroll")
 
 const dmgBonus = [0.08, 0.1, 0.12, 0.14, 0.16]
 const allDmgInc = subscript(input.weapon.refineIndex, dmgBonus)
-const allDmgStacks = lookup(condPassive, {
+const eleDmgs = objectKeyValueMap(allElements, e => [`${e}_dmg_`, lookup(condPassive, {
   ...objectKeyMap(range(1, 2), i => prod(allDmgInc, i))
-}, naught)
+}, naught)])
 
 const data = dataObjForWeaponSheet(key, data_gen, {
-  premod: {
-    all_dmg_: allDmgStacks
-  }
+  premod: eleDmgs
 })
 
 const sheet: IWeaponSheet = {
@@ -38,18 +36,14 @@ const sheet: IWeaponSheet = {
       header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
       name: trm("condName"),
-      states: {
-        ...objectKeyMap(range(1, 2), i => ({
-          name: st("stack", { count: i }),
-          fields: [{
-            node: allDmgStacks
-          }, {
-            text: sgt("duration"),
-            value: 10,
-            unit: "s"
-          }]
-        }))
-      }
+      states: objectKeyMap(range(1, 2), i => ({
+        name: st("stack", { count: i }),
+        fields: [...Object.values(eleDmgs).map(node => ({ node })), {
+          text: sgt("duration"),
+          value: 10,
+          unit: "s"
+        }]
+      }))
     }
   }]
 }

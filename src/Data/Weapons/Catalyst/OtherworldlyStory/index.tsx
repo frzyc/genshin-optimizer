@@ -13,9 +13,8 @@ const key: WeaponKey = "OtherworldlyStory"
 const data_gen = data_gen_json as WeaponData
 
 const healPerc = [0.01, 0.0125, 0.015, 0.0175, 0.02]
-// TODO: Is the customHealNode correct?
-const heal = customHealNode(prod(subscript(input.weapon.refineIndex, healPerc), input.total.hp))
-export const data = dataObjForWeaponSheet(key, data_gen)
+const heal = customHealNode(prod(subscript(input.weapon.refineIndex, healPerc, { key: "_" }), input.total.hp))
+export const data = dataObjForWeaponSheet(key, data_gen, undefined, { heal })
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,

@@ -14,13 +14,13 @@ const data_gen = data_gen_json as WeaponData
 
 const dmg_Src = [2.4, 2.7, 3, 3.3, 3.6]
 
-// TODO: Is this customDmgNode correct?
-// Should the element be physical?
 const dmg_ = customDmgNode(prod(subscript(input.weapon.refineIndex, dmg_Src, { key: "_" }), input.premod.atk), "elemental", {
   hit: { ele: constant("physical") }
 })
 
-const data = dataObjForWeaponSheet(key, data_gen)
+const data = dataObjForWeaponSheet(key, data_gen, undefined, {
+  dmg_
+})
 
 const sheet: IWeaponSheet = {
   icon,

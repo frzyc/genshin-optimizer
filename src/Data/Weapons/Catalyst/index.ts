@@ -12,6 +12,7 @@ import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
 import MagicGuide from './MagicGuide'
 import MappaMare from './MappaMare'
 import MemoryOfDust from './MemoryOfDust'
+import OathswornEye from './OathswornEye'
 import OtherworldlyStory from './OtherworldlyStory'
 import PocketGrimoire from './PocketGrimoire'
 import PrototypeAmber from './PrototypeAmber'
@@ -38,6 +39,7 @@ const catalyst = {
   MagicGuide,
   MappaMare,
   MemoryOfDust,
+  OathswornEye,
   OtherworldlyStory,
   PocketGrimoire,
   PrototypeAmber,

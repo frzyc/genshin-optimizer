@@ -200,6 +200,7 @@ export const weaponIdMap = {
   14412: "Frostbearer",
   14413: "DodocoTales",
   14414: "HakushinRing",
+  14415: "OathswornEye",
   14501: "SkywardAtlas",
   14502: "LostPrayerToTheSacredWinds",
   // 14503: "Lost Ballade",
