@@ -6,7 +6,7 @@ export function formulaString(formula: NumNode | StrNode): string {
   switch (operation) {
     case "const": return `${formula.value}`
     case "read": return `Read[${formula.path}]`
-    case "data": return `Context${formulaString(formula.operands[0])}`
+    case "data": return `Context(${formulaString(formula.operands[0])})`
     case "subscript": return `Lookup${formulaString(formula.operands[0])}`
     case "min": case "max": case "prio":
       return `${operation}( ${formula.operands.map(formulaString).join(", ")} )`
@@ -25,7 +25,7 @@ export function formulaString(formula: NumNode | StrNode): string {
     case "match":
       return `Match(${formula.operands.map(formulaString).join(", ")})`
     case "lookup":
-      return `Lookup${formulaString(formula.operands[0])}`
+      return `Lookup(${formulaString(formula.operands[0])})`
     default: assertUnreachable(operation)
   }
 }
