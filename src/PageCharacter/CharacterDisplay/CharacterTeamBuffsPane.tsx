@@ -36,9 +36,12 @@ export function TeamBuffDisplay() {
   const { data, oldData } = useContext(DataContext)
   const teamBuffs = data.getTeamBuff()
   const nodes: Array<[string[], NodeDisplay<number>]> = []
-  Object.entries(teamBuffs.total ?? {}).forEach(([key, node]) => nodes.push([["total", key], node]))
-  Object.entries(teamBuffs.premod ?? {}).forEach(([key, node]) => nodes.push([["premod", key], node]))
-  Object.entries(teamBuffs.enemy ?? {}).forEach(([key, node]) => nodes.push([["enemy", key], node]))
+  Object.entries(teamBuffs.total ?? {}).forEach(([key, node]) =>
+    !node.isEmpty && node.value != 0 && nodes.push([["total", key], node]))
+  Object.entries(teamBuffs.premod ?? {}).forEach(([key, node]) =>
+    !node.isEmpty && node.value != 0 && nodes.push([["premod", key], node]))
+  Object.entries(teamBuffs.enemy ?? {}).forEach(([key, node]) =>
+    !node.isEmpty && node.value != 0 && nodes.push([["enemy", key], node]))
   if (!nodes.length) return null
   return <CardLight>
     <CardContent>
@@ -47,7 +50,7 @@ export function TeamBuffDisplay() {
     <Divider />
     <CardContent>
       <Grid container columnSpacing={2} rowSpacing={1}>
-        {nodes.map(([path, n], i) => n && !n.isEmpty && <Grid item {...statBreakpoint} key={n.key} >
+        {nodes.map(([path, n], i) => n && <Grid item {...statBreakpoint} key={n.key} >
           <NodeFieldDisplay node={n} oldValue={objPathValue(oldData?.getTeamBuff(), path)?.value} />
         </Grid>)}
       </Grid>

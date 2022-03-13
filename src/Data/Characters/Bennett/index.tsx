@@ -255,12 +255,13 @@ const sheet: ICharacterSheet = {
         }
       }),
       passive1: talentTemplate("passive1", tr, passive1, [{
+        canShow: data => data.get(input.asc).value > 1,
         text: st("skillCDRed"),
         value: datamine.passive1.cd_red,
         unit: "%"
       }]),
       passive2: talentTemplate("passive2", tr, passive2, undefined, {
-        canShow: greaterEq(input.asc, 4, 1),
+        canShow: greaterEq(input.asc, 4, 4),
         value: condInArea,
         path: condInAreaPath,
         name: trm("withinArea"),

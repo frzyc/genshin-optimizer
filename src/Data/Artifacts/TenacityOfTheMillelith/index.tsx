@@ -2,12 +2,13 @@ import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { equal, percent, greaterEq } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
-import { cond, st } from '../../SheetUtil'
-import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { cond, st, trans } from '../../SheetUtil'
+import { ArtifactSheet, conditionalHeader, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
 
 const key: ArtifactSetKey = "TenacityOfTheMillelith"
+const [tr] = trans("artifact", key)
 const hp_ = greaterEq(input.artSet.TenacityOfTheMillelith, 2, percent(0.2))
 const [condPath, condNode] = cond(key, "skill")
 const set4Atk = greaterEq(input.artSet.TenacityOfTheMillelith, 4,
@@ -35,9 +36,12 @@ const sheet: IArtifactSheet = {
     4: {
       document: [{
         conditional: {
+          teamBuff: true,
+          header: conditionalHeader(tr, icons.flower),
+          description: tr(`setEffects.4`),
           path: condPath,
           value: condNode,
-          name: st("afterUse.skill"),
+          name: st("hitOp.skill"),
           states: {
             cast: {
               fields: [{
