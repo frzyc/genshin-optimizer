@@ -113,8 +113,8 @@ const input = setReadNodeKeys(deepClone({
     ele: stringRead(), reaction: stringRead(), move: stringRead(), hitMode: stringRead(),
     base: read("add", { key: "base" }),
 
-    dmgBonus: read(undefined, { key: "dmg_", pivot }),
-    dmgInc: read(undefined, { key: "dmgInc", pivot }),
+    dmgBonus: read("add", { key: "dmg_", pivot }),
+    dmgInc: read("add", { key: "dmgInc", pivot }),
     dmg: read(),
   },
 }))
