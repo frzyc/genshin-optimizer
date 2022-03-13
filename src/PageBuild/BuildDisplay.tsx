@@ -338,6 +338,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         })
       }
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
+      if (process.env.NODE_ENV === "development") console.log("Build Result", builds)
       buildSettingsDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
       const totalDuration = performance.now() - t1
 
