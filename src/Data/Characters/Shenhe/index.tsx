@@ -320,7 +320,7 @@ const sheet: ICharacterSheet = {
           }, {
             text: tr("burst.skillParams.3"),
             // value: (data) => `${datamine.burst.duration}` + (data.get(input.constellation).value >= 2 ? `s + ${datamine.constellation2.durationInc}` : ""),
-            value: (data) => data.get(input.constellation).value >=2
+            value: (data) => data.get(input.constellation).value >= 2
               ? `${datamine.burst.duration} + ${datamine.constellation2.durationInc} = ${datamine.burst.duration + datamine.constellation2.durationInc}`
               : datamine.burst.duration,
             unit: "s"
