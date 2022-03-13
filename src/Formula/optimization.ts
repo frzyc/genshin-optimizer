@@ -379,7 +379,7 @@ export function constantFold(formulas: NumNode[], topLevelData: Data, shouldFold
             else result = constant(allOperations[accu]([]))
           } else result = formula
         } else if (formula.accu === undefined)
-          result = fold(operands[0], context)
+          result = fold(operands[operands.length - 1], context)
         else
           result = fold({ operation: formula.accu, operands } as ComputeNode | StrPrioNode, context)
         break
