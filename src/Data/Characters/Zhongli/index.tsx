@@ -129,9 +129,6 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
     burst: nodeC5,
   },
   premod: {
-    shield_: nodeP1,
-    ...nodesSkill,
-
     // TODO: below should be for `total`
     normal_dmgInc: p4normalDmgInc,
     charged_dmgInc: p4ChargedDmgInc,
@@ -139,6 +136,12 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
     skill_dmgInc: p4SKillDmgInc,
     burst_dmgInc: p4BurstDmgInc,
   },
+  teamBuff: {
+    premod: {
+      shield_: nodeP1,
+      ...nodesSkill,
+    }
+  }
 })
 
 const sheet: ICharacterSheet = {
