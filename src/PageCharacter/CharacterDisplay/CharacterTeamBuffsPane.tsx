@@ -37,11 +37,11 @@ export function TeamBuffDisplay() {
   const teamBuffs = data.getTeamBuff()
   const nodes: Array<[string[], NodeDisplay<number>]> = []
   Object.entries(teamBuffs.total ?? {}).forEach(([key, node]) =>
-    !node.isEmpty && node.value != 0 && nodes.push([["total", key], node]))
+    !node.isEmpty && node.value !== 0 && nodes.push([["total", key], node]))
   Object.entries(teamBuffs.premod ?? {}).forEach(([key, node]) =>
-    !node.isEmpty && node.value != 0 && nodes.push([["premod", key], node]))
+    !node.isEmpty && node.value !== 0 && nodes.push([["premod", key], node]))
   Object.entries(teamBuffs.enemy ?? {}).forEach(([key, node]) =>
-    !node.isEmpty && node.value != 0 && nodes.push([["enemy", key], node]))
+    !node.isEmpty && node.value !== 0 && nodes.push([["enemy", key], node]))
   if (!nodes.length) return null
   return <CardLight>
     <CardContent>
