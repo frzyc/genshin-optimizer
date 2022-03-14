@@ -1,8 +1,3 @@
-// DO NOT REMOVE ITEMS FROM THESE LISTS
-//        ONLY APPEND NEW ENTRIES
-// The index of items in this list is used to
-// compress the exported data. Removing an item
-// from this list will shift subsequent entries.
 export const allHitModes = ["hit", "avgHit", "critHit"] as const
 export const allRegions = ["mondstadt", "liyue", "inazuma", "sumeru", "fontaine", "natlan", "snezhnaya", "khaenriah"] as const
 export const allReactionModes = ["hydro_vaporize", "pyro_vaporize", "pyro_melt", "cryo_melt",] as const

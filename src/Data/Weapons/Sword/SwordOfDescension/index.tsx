@@ -12,8 +12,7 @@ import icon from './Icon.png'
 const key: WeaponKey = "SwordOfDescension"
 const data_gen = data_gen_json as WeaponData
 
-// TODO: This is correct, right?
-const atk = equal("Traveler", input.activeCharKey, constant(66))
+const atk = equal("Traveler", input.charKey, constant(66))
 const dmg_ = customDmgNode(prod(percent(2), input.premod.atk), "elemental", {
   hit: { ele: constant("physical") }
 })
