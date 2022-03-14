@@ -66,7 +66,7 @@ export const allCharacterKeys = [
   "HuTao",
   // "Jean",
   // "Kaeya",
-  // "Keqing",
+  "Keqing",
   // "Klee",
   "KujouSara",
   // "Lisa",
