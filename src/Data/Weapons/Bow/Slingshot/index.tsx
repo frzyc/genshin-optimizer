@@ -1,28 +1,59 @@
 import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { equal, percent, subscript, sum } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { cond, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-const refinementVals = [36, 42, 48, 54, 60]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "Slingshot"
+const data_gen = data_gen_json as WeaponData
+const [tr, trm] = trans("weapon", key)
+
+const normal_atk_increase_s = [.46, .52, .58, .64, .70] // Increased by 10% to counteract the decrease
+const charged_atk_increase_s = [.46, .52, .58, .64, .70]
+
+const [condPassivePath, condPassive] = cond(key, "Slingshot")
+const normal_atk_increase = equal(condPassive, "on", subscript(input.weapon.refineIndex, normal_atk_increase_s), { key: "normal_dmg_" })
+const charged_atk_increase = equal(condPassive, "on", subscript(input.weapon.refineIndex, charged_atk_increase_s), { key: "charged_dmg_" })
+const normal_atk_decrease = percent(.1, { key: "normal_dmg_" })
+const charged_atk_decrease = percent(.1, { key: "charged_dmg_" })
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    normal_dmg_: sum(normal_atk_increase, normal_atk_decrease),
+    charged_dmg_: sum(charged_atk_increase, normal_atk_decrease)
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: () => ({
-    normal_dmg_: -10,
-    charged_dmg_: -10
-  }),
   document: [{
+    fields: [{
+      node: normal_atk_decrease
+    }, {
+      node: charged_atk_decrease
+    }],
     conditional: {
-      key: "s",
-      name: "Normal/Charged Attack Hits within 0.3s",
-      maxStack: 1,
-      stats: stats => ({
-        // +10 to neutralize the -10
-        normal_dmg_: refinementVals[stats.weapon.refineIndex] + 10,
-        charged_dmg_: refinementVals[stats.weapon.refineIndex] + 10
-      })
+      value: condPassive,
+      path: condPassivePath,
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
+      name: trm("condName"),
+      states: {
+        on: {
+          fields: [{
+            node: normal_atk_increase
+          }, {
+            node: charged_atk_increase
+          }]
+        }
+      }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

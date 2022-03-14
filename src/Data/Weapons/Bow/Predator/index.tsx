@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { lookup, prod, naught, constant, percent, equal } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
-import { cond, st } from '../../../SheetUtil'
+import { cond, sgt, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -47,6 +47,10 @@ const sheet: IWeaponSheet = {
           node: normal_dmg_
         }, {
           node: charged_dmg_
+        }, {
+          text: sgt("duration"),
+          value: 6,
+          unit: 's'
         }], 
       }]))
     }

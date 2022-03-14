@@ -6,21 +6,21 @@ import ElegyForTheEnd from "./ElegyForTheEnd";
 import FavoniusWarbow from './FavoniusWarbow'
 import Hamayumi from './Hamayumi'
 import HuntersBow from "./HuntersBow";
-// import Messenger from './Messenger'
+import Messenger from './Messenger'
 import MitternachtsWaltz from './MitternachtsWaltz'
 import MouunsMoon from './MouunsMoon'
 import PolarStar from './PolarStar'
 import Predator from './Predator'
 import PrototypeCrescent from './PrototypeCrescent'
-// import RavenBow from './RavenBow'
-// import RecurveBow from './RecurveBow'
+import RavenBow from './RavenBow'
+import RecurveBow from './RecurveBow'
 import RoyalBow from './RoyalBow'
 import Rust from './Rust'
 import SacrificialBow from "./SacrificialBow";
-// import SeasonedHuntersBow from './SeasonedHuntersBow'
-// import SharpshootersOath from './SharpshootersOath'
+import SeasonedHuntersBow from './SeasonedHuntersBow'
+import SharpshootersOath from './SharpshootersOath'
 import SkywardHarp from './SkywardHarp'
-// import Slingshot from './Slingshot'
+import Slingshot from './Slingshot'
 import TheStringless from './TheStringless'
 import TheViridescentHunt from './TheViridescentHunt'
 import ThunderingPulse from './ThunderingPulse'
@@ -34,21 +34,21 @@ const bow = {
   FavoniusWarbow,
   Hamayumi,
   HuntersBow,
-  // Messenger,
+  Messenger,
   MitternachtsWaltz,
   MouunsMoon,
   PolarStar,
   Predator,
   PrototypeCrescent,
-  // RavenBow,
-  // RecurveBow,
+  RavenBow,
+  RecurveBow,
   RoyalBow,
   Rust,
   SacrificialBow,
-  // SeasonedHuntersBow,
-  // SharpshootersOath,
+  SeasonedHuntersBow,
+  SharpshootersOath,
   SkywardHarp,
-  // Slingshot,
+  Slingshot,
   TheStringless,
   TheViridescentHunt,
   ThunderingPulse,

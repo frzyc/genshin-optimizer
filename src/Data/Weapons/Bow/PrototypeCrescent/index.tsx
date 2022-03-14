@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, percent, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, trans } from '../../../SheetUtil'
+import { cond, sgt, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -41,6 +41,10 @@ const sheet: IWeaponSheet = {
             node: atk_
           }, {
             node: moveSPD_
+          }, {
+            text: sgt("duration"),
+            value: 10,
+            unit: 's'
           }]
         }
       }

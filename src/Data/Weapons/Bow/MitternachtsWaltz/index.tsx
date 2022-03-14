@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, st, trans } from '../../../SheetUtil'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -43,6 +43,10 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [{
             node: normal_dmg_
+          }, {
+            text: sgt("duration"),
+            value: 5,
+            unit: 's'
           }]
         }
       }
@@ -58,6 +62,10 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [{
             node: skill_dmg_
+          }, {
+            text: sgt("duration"),
+            value: 5,
+            unit: 's'
           }]
         }
       }

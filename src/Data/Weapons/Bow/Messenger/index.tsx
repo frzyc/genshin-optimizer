@@ -1,24 +1,30 @@
-import { WeaponData } from 'pipeline'
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../PageBuild/Build'
-import { Translate } from '../../../../Components/Translate'
-import Stat from '../../../../Stat'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import type { WeaponData } from 'pipeline'
+import { input } from '../../../../Formula'
+import { constant, subscript, prod, infoMut } from "../../../../Formula/utils"
+import { WeaponKey } from '../../../../Types/consts'
+import { customDmgNode } from '../../../Characters/dataUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
 
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const key: WeaponKey = "Messenger"
+const data_gen = data_gen_json as WeaponData
+const dmg_s = [1, 1.25, 1.5, 1.75, 2]
+
+const dmg = customDmgNode(prod(subscript(input.weapon.refineIndex, dmg_s), input.total.atk), "elemental", { hit: { ele: constant("physical") }})
+
+const data = dataObjForWeaponSheet(key, data_gen)
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
     fields: [{
-      text: <Translate ns="sheet" key18="dmg" />,
-      formulaText: stats => <span>{data.dmg[stats.weapon.refineIndex]}% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
-      formula: formula.dmg,
-      variant: stats => getTalentStatKeyVariant("physical", stats),
+      node: infoMut(dmg, { key: "sheet:dmg" })
     }]
   }]
 }
-export default weapon
+
+export default new WeaponSheet(key, sheet, data_gen, data)
