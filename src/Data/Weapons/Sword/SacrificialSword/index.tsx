@@ -3,14 +3,14 @@ import { equal, percent } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { cond, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "SacrificialSword"
 const data_gen = data_gen_json as WeaponData
-const [, trm] = trans("weapon", key)
+const [tr, trm] = trans("weapon", key)
 
 const [condPassivePath, condPassive] = cond(key, "Composed")
 const cdRed_ = equal(condPassive, 'on', percent(1))
@@ -29,6 +29,7 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       name: trm("condName"),
+      header: conditionalHeader(tr, icon, iconAwaken),
       states: {
         on: {
           fields: [{

@@ -4,7 +4,7 @@ import { equal, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { cond, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
@@ -33,7 +33,6 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       header: conditionalHeader(tr, icon, iconAwaken),
-      description: conditionaldesc(tr),
       name: trm("name"),
       states: {
         on: {

@@ -3,14 +3,15 @@ import { input } from '../../../../Formula'
 import { constant, equal, infoMut, prod, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
-import { cond, st } from '../../../SheetUtil'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "AquilaFavonia"
+const [tr, trm] = trans("weapon", key)
 const data_gen = data_gen_json as WeaponData
 const atkDealt = [2, 2.3, 2.6, 2.9, 3.2]
 const hpRegen = [1, 1.15, 1.3, 1.45, 1.6]
@@ -33,6 +34,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
     fields: [{
       node: atk_,
     }],
@@ -40,12 +42,17 @@ const sheet: IWeaponSheet = {
       value: condNode,
       path: condPath,
       name: st('takeDmg'),
+      header: conditionalHeader(tr, icon, iconAwaken, trm("soul")),
       states: {
         on: {
           fields: [{
             node: infoMut(heal, { key: "sheet_gen:healing", variant: "success" })
           }, {
             node: infoMut(dmg, { key: "sheet:dmg" })
+          }, {
+            text: sgt("cd"),
+            value: 15,
+            unit: "s"
           }]
         }
       }
