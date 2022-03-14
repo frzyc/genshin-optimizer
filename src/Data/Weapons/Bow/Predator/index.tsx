@@ -1,28 +1,35 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { lookup, subscript, prod, naught } from "../../../../Formula/utils"
+import { lookup, prod, naught, constant, percent, equal } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
-import { cond, st, sgt } from '../../../SheetUtil'
+import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
-const key: WeaponKey = "BlackcliffWarbow"
+const key: WeaponKey = "Predator"
 const data_gen = data_gen_json as WeaponData
-const atkInc = [.12, .15, .18, .21, .24]
+const normalInc = percent(.1)
+const chargedInc = percent(.1)
 
 const [condPassivePath, condPassive] = cond(key, "PressTheAdvantage")
-const atk_ = lookup(condPassive, {
-  ...objectKeyMap(range(1, 3), i => prod(subscript(input.weapon.refineIndex, atkInc), i)) 
+const normal_dmg_ = lookup(condPassive, {
+  ...objectKeyMap(range(1, 2), i => prod(normalInc, i)) 
 }, naught)
+const charged_dmg_ = lookup(condPassive, {
+  ...objectKeyMap(range(1, 2), i => prod(chargedInc, i)) 
+}, naught)
+const atk = equal(input.activeCharKey, "Aloy", constant(66))
 
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
-    atk_
+    normal_dmg_,
+    charged_dmg_,
+    atk
   }
 })
 
@@ -33,15 +40,13 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
-      name: st("afterDefeatEnemy"),
-      states: Object.fromEntries(range(1, 3).map(c => [c, {
+      name: st("hitOp.cryo"),
+      states: Object.fromEntries(range(1, 2).map(c => [c, {
         name: `${c}`,
         fields: [{
-          node: atk_
+          node: normal_dmg_
         }, {
-          text: sgt("duration"),
-          value: 30,
-          unit: 's'
+          node: charged_dmg_
         }], 
       }]))
     }
