@@ -1,23 +1,50 @@
 import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { equal, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { cond, sgt, st } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-const refinementVals = [12, 15, 18, 21, 24]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "SkyriderSword"
+const data_gen = data_gen_json as WeaponData
+
+const [condPassivePath, condPassive] = cond(key, "Determination")
+const bonusInc = [0.12, 0.15, 0.18, 0.21, 0.24]
+const atk_ = equal(condPassive, 'on', subscript(input.weapon.refineIndex, bonusInc, { key: "_" }))
+const moveSPD_ = equal(condPassive, 'on', subscript(input.weapon.refineIndex, bonusInc, { key: "_" }))
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    atk_,
+    moveSPD_
+  },
+})
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
     conditional: {
-      key: "d",
-      name: "After Elemental Burst",
-      maxStack: 1,
-      stats: stats => ({
-        atk_: refinementVals[stats.weapon.refineIndex],
-        moveSPD_: refinementVals[stats.weapon.refineIndex],
-      })
+      value: condPassive,
+      path: condPassivePath,
+      name: st("afterUse.burst"),
+      states: {
+        on: {
+          fields: [{
+            node: atk_
+          }, {
+            node: moveSPD_
+          }, {
+            text: sgt("duration"),
+            value: 15,
+            unit: "s"
+          }]
+        }
+      }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

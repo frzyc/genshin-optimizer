@@ -43,6 +43,7 @@
   "charges": "Charges",
   "activeCharField": "Active Character in field",
   "takeDmg": "On taking DMG",
+  "onHit": "On Hit",
   "infusion": {
     "pyro": "Pyro Infusion",
     "cryo": "Cryo Infusion",
