@@ -183,7 +183,6 @@ const common: Data = {
   hit: {
     dmgBonus: sum(
       total.all_dmg_,
-      lookup(effectiveReaction, objectKeyMap(allAmplifying, reaction => total[`${reaction}_dmg_`]), naught),
       lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmg_`]), naught),
       lookup(hit.ele, objectKeyMap(allElements, ele => total[`${ele}_dmg_`]), naught)
     ),
@@ -205,12 +204,12 @@ const common: Data = {
         objectKeyMap(allElements, ele => enemy[`${ele}_resMulti` as const]), NaN),
       lookup(effectiveReaction, {
         melt: lookup(hit.ele, {
-          pyro: prod(2, baseAmpBonus),
-          cryo: prod(1.5, baseAmpBonus),
+          pyro: prod(2, sum(baseAmpBonus, total.melt_dmg_)),
+          cryo: prod(1.5, sum(baseAmpBonus, total.melt_dmg_)),
         }, 1, { key: "melt_dmg_" }),
         vaporize: lookup(hit.ele, {
-          hydro: prod(2, baseAmpBonus),
-          pyro: prod(1.5, baseAmpBonus),
+          hydro: prod(2, sum(baseAmpBonus, total.vaporize_dmg_)),
+          pyro: prod(1.5, sum(baseAmpBonus, total.vaporize_dmg_)),
         }, 1, { key: "vaporize_dmg_" }),
       }, 1),
     ),
