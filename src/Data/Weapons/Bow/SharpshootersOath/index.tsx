@@ -1,17 +1,32 @@
 import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
 
-const refinementVals = [24, 30, 36, 42, 48]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const key: WeaponKey = "SharpshootersOath"
+const data_gen = data_gen_json as WeaponData
+
+const weakspotDMG_s = [.24, .30, .36, .42, .48]
+const weakspotDMG_ = subscript(input.weapon.refineIndex, weakspotDMG_s)
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    weakspotDMG_
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    weakspotDMG_: refinementVals[stats.weapon.refineIndex]
-  }),
-  document: [],
+  document: [{
+    fields: [{
+      node: weakspotDMG_
+    }]
+  }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

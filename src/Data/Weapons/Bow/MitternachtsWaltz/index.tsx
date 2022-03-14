@@ -1,31 +1,75 @@
 import { WeaponData } from 'pipeline'
-import { Translate } from '../../../../Components/Translate'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { equal, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-const skill_ = [20, 25, 30, 35, 40]
-const normal_ = [20, 25, 30, 35, 40]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "MitternachtsWaltz"
+const [tr] = trans("weapon", key)
+const data_gen = data_gen_json as WeaponData
+
+const skill_dmg_s = [.20, .25, .30, .35, .40]
+const normal_dmg_s = [.20, .25, .30, .35, .40]
+
+const [condSkillPath, condSkill] = cond(key, "EvernightDuetSkill")
+const [condNormalPath, condNormal] = cond(key, "EvernightDuetNormal")
+
+const skill_dmg_ = equal(condSkill, "on", subscript(input.weapon.refineIndex, skill_dmg_s))
+const normal_dmg_ = equal(condNormal, "on", subscript(input.weapon.refineIndex, normal_dmg_s))
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    skill_dmg_,
+    normal_dmg_
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
     conditional: {
-      key: "a",
-      name: <Translate ns="sheet" key18="hitOp.normal" />,
-      stats: stats => ({
-        skill_dmg_: skill_[stats.weapon.refineIndex],
-      })
-    },
+      value: condNormal,
+      path: condNormalPath,
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
+      name: st("hitOp.skill"),
+      states: {
+        on: {
+          fields: [{
+            node: normal_dmg_
+          }, {
+            text: sgt("duration"),
+            value: 5,
+            unit: 's'
+          }]
+        }
+      }
+    }
   }, {
     conditional: {
-      key: "s",
-      name: <Translate ns="sheet" key18="hitOp.skill" />,
-      stats: stats => ({
-        normal_dmg_: normal_[stats.weapon.refineIndex],
-      })
+      value: condSkill,
+      path: condSkillPath,
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
+      name: st("hitOp.normal"),
+      states: {
+        on: {
+          fields: [{
+            node: skill_dmg_
+          }, {
+            text: sgt("duration"),
+            value: 5,
+            unit: 's'
+          }]
+        }
+      }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)
