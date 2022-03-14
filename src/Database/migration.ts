@@ -384,9 +384,12 @@ function migrateV13ToV14(storage: DBStorage) {
 }
 // 8.0.0 - Present
 function migrateV14ToV15(storage: DBStorage) {
-  const artDisplayState = storage.get("ArtifactDisplay.state")
-  if (artDisplayState) {
-    artDisplayState.filterOption = initialArtifactSortFilter().filterOption
-    storage.set("ArtifactDisplay.state", artDisplayState)
+  for (const key of storage.keys) {
+    if (key.startsWith("char_")) {
+      const character = storage.get(key)
+      delete character.buildSettings
+      delete character.bonusStats
+      storage.set(key, character)
+    }
   }
 }
