@@ -1,26 +1,42 @@
 import { WeaponData } from 'pipeline'
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../PageBuild/Build'
-import Stat from '../../../../Stat'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import formula from './data'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { constant, equal, infoMut, percent, prod } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { customDmgNode } from '../../../Characters/dataUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-import { st } from '../../../Characters/SheetUtil'
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "SwordOfDescension"
+const data_gen = data_gen_json as WeaponData
+
+// TODO: This is correct, right?
+const atk = equal("Traveler", input.activeCharKey, constant(66))
+const dmg_ = customDmgNode(prod(percent(2), input.premod.atk), "elemental", {
+  hit: { ele: constant("physical") }
+})
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    atk
+  }
+}, {
+  dmg_
+})
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => stats.characterKey?.startsWith("Traveler") ? {
-    atk: 66
-  } : {},
   document: [{
-    fields: [{
-      text: st("dmg"),
-      formulaText: stats => <span>200% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
-      formula: formula.dmg,
-      variant: stats => getTalentStatKeyVariant("physical", stats),
-    }]
+    fields: [
+      {
+        node: atk
+      },
+      {
+        node: infoMut(dmg_, { key: "sheet:dmg" })
+      }
+    ]
   }]
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

@@ -1,27 +1,39 @@
 import { WeaponData } from 'pipeline'
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../PageBuild/Build'
-import Stat from '../../../../Stat'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { constant, infoMut, prod, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { customDmgNode } from '../../../Characters/dataUtil'
+import { sgt } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-import { st } from '../../../Characters/SheetUtil'
-const cds = [15, 14, 13, 12, 11]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "FilletBlade"
+const data_gen = data_gen_json as WeaponData
+
+const dmg_Src = [2.4, 2.8, 3.2, 3.6, 4]
+const cd_Src = [15, 14, 13, 12, 11]
+const dmg_ = customDmgNode(prod(subscript(input.weapon.refineIndex, dmg_Src, { key: "_" }), input.premod.atk), "elemental", {
+  hit: { ele: constant("physical") }
+})
+
+const data = dataObjForWeaponSheet(key, data_gen, undefined, {
+  dmg_
+})
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fields: [{
-      text: st("dmg"),
-      formulaText: stats => <span>{data.dmg[stats.weapon.refineIndex]}% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
-      formula: formula.dmg,
-      variant: stats => getTalentStatKeyVariant("physical", stats),
-    }, {
-      text: "CD",
-      value: stats => `${cds[stats.weapon.refineIndex]}s`
-    }]
+    fields: [
+      { node: infoMut(dmg_, { key: "sheet:dmg" }) },
+      {
+        text: sgt("cd"),
+        value: (data) => cd_Src[data.get(input.weapon.refineIndex).value],
+        unit: "s"
+      }
+    ]
   }]
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)
