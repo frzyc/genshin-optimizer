@@ -7,7 +7,7 @@ import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
 const key: ArtifactSetKey = "OceanHuedClam"
-const set2 = greaterEq(input.artSet.OceanHuedClam, 2, 1000)
+const set2 = greaterEq(input.artSet.OceanHuedClam, 2, percent(0.15))
 const heal = greaterEq(input.artSet.OceanHuedClam, 4,
   customDmgNode(prod(percent(0.9), 30000), "elemental", {
     hit: { ele: constant("physical") }
