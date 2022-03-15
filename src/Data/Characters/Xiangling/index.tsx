@@ -3,7 +3,7 @@ import { input } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
-import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
@@ -168,8 +168,26 @@ const sheet: ICharacterSheet = {
         text: tr("skill.skillParams.1"),
         value: datamine.skill.cd,
         unit: "s",
-      }]
-      ),
+      }], {
+        canShow: greaterEq(input.constellation, 1, 1),
+        value: condAfterGuobaHit,
+        path: condAfterGuobaHitPath,
+        name: trm("afterGuobaHit"),
+        header: conditionalHeader("constellation1", tr, c1),
+        description: tr("constellation1.description"),
+        teamBuff: true,
+        states: {
+          afterGuobaHit: {
+            fields: [{
+              node: afterGuobaHit
+            }, {
+              text: sgt("duration"),
+              value: datamine.constellation1.duration,
+              unit: "s",
+            }],
+          }
+        }
+      }),
       burst: talentTemplate("burst", tr, burst, [{
         node: infoMut(dmgFormulas.burst.dmg1, { key: `char_${key}_gen:burst.skillParams.0` })
       }, {
@@ -189,8 +207,26 @@ const sheet: ICharacterSheet = {
       }, {
         text: sgt("energyCost"),
         value: datamine.burst.enerCost,
-      }]
-      ),
+      }], {
+        canShow: greaterEq(input.constellation, 6, 1),
+        value: condDuringPyronado,
+        path: condDuringPyronadoPath,
+        name: trm("duringPyronado"),
+        header: conditionalHeader("constellation6", tr, c6),
+        description: tr("constellation6.description"),
+        teamBuff: true,
+        states: {
+          duringPyronado: {
+            fields: [{
+              node: duringPyronado
+            }, {
+              text: sgt("duration"),
+              value: datamine.constellation1.duration,
+              unit: "s",
+            }],
+          }
+        }
+      }),
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: talentTemplate("passive2", tr, passive2, undefined, {
         canShow: greaterEq(input.asc, 2, 1),
@@ -211,24 +247,7 @@ const sheet: ICharacterSheet = {
         }
       }),
       passive3: talentTemplate("passive3", tr, passive3),
-      constellation1: talentTemplate("constellation1", tr, c1, undefined, {
-        canShow: greaterEq(input.constellation, 1, 1),
-        value: condAfterGuobaHit,
-        path: condAfterGuobaHitPath,
-        name: trm("afterGuobaHit"),
-        teamBuff: true,
-        states: {
-          afterGuobaHit: {
-            fields: [{
-              node: afterGuobaHit
-            }, {
-              text: sgt("duration"),
-              value: datamine.constellation1.duration,
-              unit: "s",
-            }],
-          }
-        }
-      }),
+      constellation1: talentTemplate("constellation1", tr, c1, undefined),
       constellation2: talentTemplate("constellation2", tr, c2, [{
         canShow: data => data.get(input.constellation).value >= 2,
         value: datamine.constellation2.dmg,
@@ -237,24 +256,7 @@ const sheet: ICharacterSheet = {
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
-      constellation6: talentTemplate("constellation6", tr, c6, undefined, {
-        canShow: greaterEq(input.constellation, 6, 1),
-        value: condDuringPyronado,
-        path: condDuringPyronadoPath,
-        name: trm("duringPyronado"),
-        teamBuff: true,
-        states: {
-          duringPyronado: {
-            fields: [{
-              node: duringPyronado
-            }, {
-              text: sgt("duration"),
-              value: datamine.constellation1.duration,
-              unit: "s",
-            }],
-          }
-        }
-      }),
+      constellation6: talentTemplate("constellation6", tr, c6, undefined),
     }
   }
 };
