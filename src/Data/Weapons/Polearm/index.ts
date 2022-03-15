@@ -1,3 +1,5 @@
+import { WeaponPoleArmKey } from '../../../Types/consts'
+import WeaponSheet from '../WeaponSheet'
 import BeginnersProtector from './BeginnersProtector'
 import BlackcliffPole from './BlackcliffPole'
 import BlackTassel from './BlackTassel'
@@ -21,7 +23,7 @@ import TheCatch from './TheCatch'
 import VortexVanquisher from './VortexVanquisher'
 import WavebreakersFin from './WavebreakersFin'
 import WhiteTassel from './WhiteTassel'
-const polearm = {
+const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   BeginnersProtector,
   BlackcliffPole,
   BlackTassel,

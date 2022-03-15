@@ -1,3 +1,5 @@
+import { WeaponCatalystKey } from '../../../Types/consts'
+import WeaponSheet from '../WeaponSheet'
 import ApprenticesNotes from './ApprenticesNotes'
 import BlackcliffAgate from './BlackcliffAgate'
 import DodocoTales from './DodocoTales'
@@ -24,7 +26,7 @@ import TheWidsith from './TheWidsith'
 import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
 import TwinNephrite from './TwinNephrite'
 import WineAndSong from './WineAndSong'
-const catalyst = {
+const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   ApprenticesNotes,
   BlackcliffAgate,
   DodocoTales,

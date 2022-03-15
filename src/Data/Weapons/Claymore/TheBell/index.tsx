@@ -1,8 +1,8 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { infoMut, naught, subscript } from '../../../../Formula/utils'
+import { infoMut, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { shieldNode } from '../../../Characters/dataUtil'
+import { customShieldNode } from '../../../Characters/dataUtil'
 import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
@@ -15,9 +15,8 @@ const data_gen = data_gen_json as WeaponData
 const [tr, trm] = trans("weapon", key)
 const shieldSrc = [0.2, 0.23, 0.26, 0.29, 0.32]
 const allDmgSrc = [0.12, 0.15, 0.18, 0.21, 0.24]
-// TODO: Might wanna double check this sheet
 const [condPassivePath, condPassive] = cond(key, "RebelliousGuardian")
-const shield = shieldNode("hp", subscript(input.weapon.refineIndex, shieldSrc, { key: "_" }), naught)
+const shield = customShieldNode(prod(subscript(input.weapon.refineIndex, shieldSrc, { key: "_" }), input.total.hp))
 
 const [condWithShieldPath, condWithShield] = cond(key, "WithShield")
 const all_dmg_ = subscript(input.weapon.refineIndex, allDmgSrc, { key: "_" })
