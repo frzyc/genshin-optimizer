@@ -9,11 +9,11 @@ export default function TeamBuffCard() {
   const teamBuffs = data.getTeamBuff()
   const nodes: Array<NodeDisplay<number>> = []
   Object.values(teamBuffs.total ?? {}).forEach(node =>
-    !node.isEmpty && node.value != 0 && nodes.push(node))
+    !node.isEmpty && node.value !== 0 && nodes.push(node))
   Object.values(teamBuffs.premod ?? {}).forEach(node =>
-    !node.isEmpty && node.value != 0 && nodes.push(node))
+    !node.isEmpty && node.value !== 0 && nodes.push(node))
   Object.values(teamBuffs.enemy ?? {}).forEach(node =>
-    !node.isEmpty && node.value != 0 && nodes.push(node))
+    !node.isEmpty && node.value !== 0 && nodes.push(node))
   if (!nodes.length) return null
 
   return <CardLight>
