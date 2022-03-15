@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
-import { constant, equal, equalStr, greaterEq, greaterEqStr, infoMut, lookup, percent, prod, sum } from '../../../Formula/utils'
+import { constant, equal, equalStr, greaterEq, greaterEqStr, infoMut, lookup, percent, prod } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { objectKeyMap, range } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
