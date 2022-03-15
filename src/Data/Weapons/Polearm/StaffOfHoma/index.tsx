@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, infoMut, prod, subscript, sum } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, trans } from '../../../SheetUtil'
+import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -11,7 +11,6 @@ import icon from './Icon.png'
 
 const key: WeaponKey = "StaffOfHoma"
 const data_gen = data_gen_json as WeaponData
-const [, trm] = trans("weapon", key)
 
 const hpInc = [0.2, 0.25, 0.3, 0.35, 0.4]
 const atkInc = [0.008, 0.01, 0.012, 0.014, 0.016]
@@ -41,7 +40,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
-      name: trm("condName"),
+      name: st("lessPercentHP", { percent: 50 }),
       states: {
         on: {
           fields: [{

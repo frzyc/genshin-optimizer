@@ -3,9 +3,6 @@
     "enter": "Enter the Paramita Papilio state",
     "end": "When a Paramita Papilio state activated by Guide to Afterlife ends"
   },
-  "passive2": {
-    "condName": "HP is equal to or less than 50%"
-  },
   "constellation2": {
     "applyBloodBlossom": "Applies Blood Blossom effect (C2)",
     "skillParams": {
