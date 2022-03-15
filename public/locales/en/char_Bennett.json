@@ -11,8 +11,7 @@
     },
     "withinArea": "Within area of Fantastic Voyage",
     "additionalATK": "Additional ATK Increase",
-    "additionalATKRatio": "Additional ATK Bonus Ratio",
-    "belowHP": "HP below 70%",
+    "additionalATKRatio_": "Additional ATK Bonus Ratio",
     "c4DMG": "Unexpected Odyssey DMG",
     "swClPoChar": "Sword Claymore, or Polearm-wielding character"
 }
