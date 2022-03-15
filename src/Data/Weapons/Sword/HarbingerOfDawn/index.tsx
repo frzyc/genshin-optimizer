@@ -31,7 +31,7 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       header: conditionalHeader(tr, icon, iconAwaken),
-      name: st("morePercentHP", { percent: 90 }),
+      name: st("greaterPercentHP", { percent: 90 }),
       states: {
         on: {
           fields: [{

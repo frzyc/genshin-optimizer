@@ -5,7 +5,7 @@ import { UIData } from '../../../Formula/uiData'
 import { constant, equal, equalStr, greaterEq, infoMut, lookup, prod, subscript, sum } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
-import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
@@ -78,13 +78,13 @@ const datamine = {
   }
 } as const
 
-const c1Atk = greaterEq(input.constellation, 1, datamine.constellation1.atk_inc)
+const c1Atk = greaterEq(input.constellation, 1, datamine.constellation1.atk_inc, { key: `char_${key}:additionalATKRatio_`})
 
-const atkIncRatio = sum(subscript(input.total.burstIndex, datamine.burst.atkBonus), c1Atk)
+const atkIncRatio = sum(subscript(input.total.burstIndex, datamine.burst.atkBonus, { key: "_" }), c1Atk)
 const [condInAreaPath, condInArea] = cond(key, "inArea")
 const inArea = equal("inArea", condInArea, 1)
-const inAreaAtk = equal(inArea, 1,
-  prod(atkIncRatio, input.base.atk))
+const c1AddlAtk = greaterEq(input.constellation, 1, prod(c1Atk, input.base.atk))
+const inAreaAtk = equal(inArea, 1, prod(atkIncRatio, input.base.atk))
 
 const inAreaA4 = greaterEq(input.asc, 4,
   equal(inArea, 1, datamine.passive2.cd_red))
@@ -122,11 +122,8 @@ const dmgFormulas = {
     regen: healNodeTalent("hp", datamine.burst.regen_, datamine.burst.regenFlat, "burst"),
     atkInc: inAreaAtk,
   },
-  constellation1: {
-    addlATK: prod(c1Atk, input.base.atk)
-  },
   constellation4: {
-    dmg: prod(dmgNode("atk", datamine.skill.hold1_2, "skill"), datamine.constellation4.dmg)
+    dmg: greaterEq(input.constellation, 4, prod(dmgNode("atk", datamine.skill.hold1_2, "skill"), datamine.constellation4.dmg))
   }
 }
 
@@ -222,74 +219,103 @@ const sheet: ICharacterSheet = {
         unit: "s",
         value: data => calculateSkillCD(data, datamine.skill.cd_hold2),
       }]),
-      burst: talentTemplate("burst", tr, burst, [{
-        node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` })
-      }, {
-        node: infoMut(dmgFormulas.burst.regen, { key: `char_${key}_gen:burst.skillParams.1`, variant: "success" })
-      }, {
-        text: tr("burst.skillParams.3"),
-        value: datamine.burst.duration,
-        unit: "s",
-      }, {
-        text: tr("burst.skillParams.4"),
-        value: datamine.burst.cd,
-        unit: "s",
-      }, {
-        text: tr("burst.skillParams.5"),
-        value: datamine.burst.enerCost,
-      }], {
-        value: condInArea,
-        path: condInAreaPath,
-        name: trm("withinArea"),
-        teamBuff: true,
-        states: {
-          inArea: {
-            fields: [{
-              text: tr("burst.skillParams.2"),
-              value: data => data.get(atkIncRatio).value * 100,
-              unit: "%"
-            }, {
-              node: infoMut(inAreaAtk, { key: `sheet:increase.atk` })
-            }]
+      burst: { // Cannot use talentTemplate because this has multiple sections.
+        name: tr("burst.name"),
+        img: burst,
+        sections: [{
+          text: tr("burst.description"),
+          fields: [{
+            node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` })
+          }, {
+            node: infoMut(dmgFormulas.burst.regen, { key: `char_${key}_gen:burst.skillParams.1`, variant: "success" })
+          }, {
+            text: tr("burst.skillParams.3"),
+            value: datamine.burst.duration,
+            unit: "s",
+          }, {
+            text: tr("burst.skillParams.4"),
+            value: datamine.burst.cd,
+            unit: "s",
+          }, {
+            text: tr("burst.skillParams.5"),
+            value: datamine.burst.enerCost,
+          }],
+          conditional: {
+            value: condInArea,
+            path: condInAreaPath,
+            header: conditionalHeader("burst", tr, burst),
+            description: tr("burst.description"),
+            name: st("activeCharField"),
+            teamBuff: true,
+            states: {
+              inArea: {
+                fields: [{
+                  text: tr("burst.skillParams.2"),
+                  value: data => data.get(atkIncRatio).value * 100,
+                  unit: "%",
+                }, {
+                  node: infoMut(inAreaAtk, { key: `sheet:increase.atk` })
+                }]
+              }
+            }
           }
-        }
-      }),
+        }, {
+          conditional: {
+            canShow: greaterEq(input.asc, 4, 4),
+            value: condInArea,
+            path: condInAreaPath,
+            header: conditionalHeader("passive2", tr, passive2),
+            name: st("activeCharField"),
+            states: {
+              inArea: {
+                fields: [{ // Node will not show CD reduction, have to use value instead
+                  text: st("skillCDRed"),
+                  value: datamine.passive2.cd_red,
+                  unit: "%",
+                }]
+              }
+            }
+          }
+        }, {
+          conditional: {  
+            canShow: c6AndCorrectWep,
+            value: condInArea,
+            path: condInAreaPath,
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
+            name: st("activeCharField"),
+            teamBuff: true,
+            states: {
+              inArea: {
+                fields: [{
+                  node: inAreaC6PyroDmg
+                }, {
+                  text: <ColorText color={elementKey}>{st("infusion.pyro")}</ColorText>
+                }]
+              }
+            }
+          }
+        }]
+      },
       passive1: talentTemplate("passive1", tr, passive1, [{
         canShow: data => data.get(input.asc).value > 1,
         text: st("skillCDRed"),
         value: datamine.passive1.cd_red,
         unit: "%"
       }]),
-      passive2: talentTemplate("passive2", tr, passive2, undefined, {
-        canShow: greaterEq(input.asc, 4, 4),
-        value: condInArea,
-        path: condInAreaPath,
-        name: trm("withinArea"),
-        states: {
-          inArea: {
-            fields: [{ // Node will not show CD reduction, have to use value instead
-              text: st("skillCDRed"),
-              value: datamine.passive2.cd_red,
-              unit: "%",
-            }]
-          }
-        }
-      }),
+      passive2: talentTemplate("passive2", tr, passive2, undefined),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1, [{
-        canShow: data => data.get(input.constellation).value >= 1,
         text: trm("additionalATKRatio"),
-        value: datamine.constellation1.atk_inc * 100,
-        unit: "%"
+        node: c1Atk
       }, {
-        canShow: data => data.get(input.constellation).value >= 1,
-        node: infoMut(dmgFormulas.constellation1.addlATK, { key: `char_${key}:additionalATK` })
+        node: infoMut(c1AddlAtk, { key: `char_${key}:additionalATK` })
       }]),
       constellation2: talentTemplate("constellation2", tr, c2, undefined, {
         canShow: greaterEq(input.constellation, 2, 1),
         value: condUnderHP,
         path: condUnderHPPath,
-        name: trm("belowHP"),
+        name: st("lessPercentHP", { percent: datamine.constellation2.hp_thresh * 100 }),
         states: {
           underHP: {
             fields: [{
@@ -300,26 +326,10 @@ const sheet: ICharacterSheet = {
       }),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4, [{
-        canShow: data => data.get(input.constellation).value >= 4,
         node: infoMut(dmgFormulas.constellation4.dmg, { key: `char_${key}:c4DMG` })
       }]),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
-      constellation6: talentTemplate("constellation6", tr, c6, undefined, {
-        canShow: c6AndCorrectWep,
-        value: condInArea,
-        path: condInAreaPath,
-        name: trm("withinArea"),
-        teamBuff: true,
-        states: {
-          inArea: {
-            fields: [{
-              node: inAreaC6PyroDmg
-            }, {
-              text: <ColorText color={elementKey}>{st("infusion.pyro")}</ColorText>
-            }]
-          }
-        }
-      }),
+      constellation6: talentTemplate("constellation6", tr, c6, undefined),
     }
   }
 };

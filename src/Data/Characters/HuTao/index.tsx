@@ -3,7 +3,7 @@ import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import { equal, equalStr, greaterEq, infoMut, lessThan, min, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
 import { allElementsWithPhy, CharacterKey, ElementKey } from '../../../Types/consts'
-import { cond, sgt, trans } from '../../SheetUtil'
+import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode, customHealNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
@@ -260,7 +260,7 @@ const sheet: ICharacterSheet = {
         value: condA2,
         path: condA2Path,
         canShow: greaterEq(input.asc, 4, 1),
-        name: trm("passive2.condName"),
+        name: st("lessEqPercentHP", { percent: datamine.passive2.minHp * 100 }),
         states: {
           on: {
             fields: [{

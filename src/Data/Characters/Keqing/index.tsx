@@ -197,11 +197,12 @@ const sheet: ICharacterSheet = {
         path: condAfterRecastPath,
         name: trm("recast"),
         canShow: greaterEq(input.asc, 1, 1),
+        header: conditionalHeader("passive1", tr, passive1),
         states: {
           afterRecast: {
             fields: [{
               canShow: data => data.get(afterRecastInfusion).value === elementKey,
-              text: <ColorText color="electro">Electro Infusion</ColorText>
+              text: <ColorText color="electro">{st("infusion.electro")}</ColorText>
             }, {
               text: sgt("duration"),
               value: datamine.passive1.duration,
