@@ -1,6 +1,6 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { equal, infoMut, naught, prod, subscript } from "../../../../Formula/utils"
+import { equal, infoMut, naught, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { healNode } from '../../../Characters/dataUtil'
 import { cond, sgt, st, trans } from '../../../SheetUtil'
@@ -11,7 +11,7 @@ import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "WhiteIronGreatsword"
-const [tr, trm] = trans("weapon", key)
+const [tr] = trans("weapon", key)
 const data_gen = data_gen_json as WeaponData
 const hpRegen = [0.08, 0.1, 0.12, 0.14, 0.16]
 const [condPath, condNode] = cond(key, "CullTheWeak")

@@ -13,7 +13,7 @@ import icon from './Icon.png'
 const key: WeaponKey = "Whiteblind"
 const data_gen = data_gen_json as WeaponData
 
-const [tr, trm] = trans("weapon", key)
+const [tr] = trans("weapon", key)
 
 const [condStackPath, condStack] = cond(key, "stack")
 const bonusInc = [0.06, 0.075, 0.09, 0.105, 0.12]
