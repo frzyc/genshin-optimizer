@@ -14,8 +14,6 @@ const data_gen = data_gen_json as WeaponData
 
 const dmgAoePerc = [0.8, 0.95, 1.1, 1.25, 1.4]
 const dmgCryoPerc = [2, 2.4, 2.8, 3.2, 3.6]
-// TODO: Current GO has the DMG as physical so changed this accordingly
-// Not sure if it truly should be physical or not though
 const dmgAoe = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgAoePerc, { key: "_" }), input.total.atk), "elemental", {
   hit: { ele: constant("physical") }
 })

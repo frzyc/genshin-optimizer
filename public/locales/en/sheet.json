@@ -14,6 +14,7 @@
   "hitOp": {
     "normal": "Normal Attack hits on opponents",
     "charged": "Charged Attack hits on opponents",
+    "normalOrCharged": "Normal / Charged Attack hits on opponents",
     "plunging": "Plunging Attack hits on opponents",
     "skill": "Elemental Skill hits on opponents",
     "burst": "Elemental Burst hits on opponents",

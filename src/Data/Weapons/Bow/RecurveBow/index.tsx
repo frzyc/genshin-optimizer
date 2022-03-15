@@ -1,6 +1,6 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { constant, subscript, prod, infoMut } from "../../../../Formula/utils"
+import { subscript, prod, infoMut } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { customHealNode } from '../../../Characters/dataUtil'
 import { dataObjForWeaponSheet } from '../../util'

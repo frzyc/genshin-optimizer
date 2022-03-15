@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
-import { constant, equal, equalStr, greaterEq, greaterEqStr, infoMut, lookup, percent, prod, sum } from '../../../Formula/utils'
+import { constant, equal, equalStr, greaterEq, greaterEqStr, infoMut, lookup, percent, prod } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { objectKeyMap, range } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
@@ -93,7 +93,7 @@ const dmgFormulas = {
     final: dmgNode("atk", datamine.burst.final, "burst"),
   },
   constellation1: {
-    dmg: greaterEq(input.constellation, 1, customDmgNode(prod(input.total.atk, datamine.constellation1.dmg), "elemental", { hit: {ele: constant(elementKey) }}))
+    dmg: greaterEq(input.constellation, 1, customDmgNode(prod(input.total.atk, datamine.constellation1.dmg), "elemental", { hit: { ele: constant(elementKey) } }))
   }
 }
 
@@ -107,13 +107,13 @@ const afterRecastInfusion = equalStr("afterRecast", condAfterRecast,
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, "afterBurst")
 const afterBurstCritRate_ = greaterEq(input.asc, 4, equal("afterBurst", condAfterBurst, percent(datamine.passive2.critInc_)))
-const afterBurstEnerRech_ = {...afterBurstCritRate_}
+const afterBurstEnerRech_ = { ...afterBurstCritRate_ }
 
 const [condAfterReactPath, condAfterReact] = cond(key, "afterReact")
 const afterReactAtk_ = greaterEq(input.constellation, 4, equal("afterReact", condAfterReact, percent(datamine.constellation4.atkInc)))
 
 const [condC6StackPath, condC6Stack] = cond(key, "c6Stack")
-const c6Electro_dmg_ = greaterEq(input.constellation, 6, 
+const c6Electro_dmg_ = greaterEq(input.constellation, 6,
   prod(
     lookup(condC6Stack, objectKeyMap(range(1, 4), i => constant(i)), constant(0)),
     datamine.constellation6.electroInc
@@ -214,7 +214,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.initial, { key: `char_${key}_gen:burst.skillParams.0` }),
       }, {
         node: infoMut(dmgFormulas.burst.slash, { key: `char_${key}_gen:burst.skillParams.1` }),
-        textSuffix: st("brHits", {count: 8 })
+        textSuffix: st("brHits", { count: 8 })
       }, {
         node: infoMut(dmgFormulas.burst.final, { key: `char_${key}_gen:burst.skillParams.2` })
       }, {

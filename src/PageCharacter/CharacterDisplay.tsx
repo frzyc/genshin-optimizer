@@ -21,7 +21,7 @@ export default function CharacterDisplay() {
       modalTitle="Character Page Guide"
       text={["Every character will be tested with in-game numbers for maximum accuracy.",
         "You can see the details of the calculations of every number.",
-        "You need to manually enable auto infusion for characters like Choungyun or Noelle.",
+        "You need to manually enable auto infusion for characters like Chongyun or Noelle.",
         "You can change character constellations in both \"Character\" tab and in \"Talents\" tab.",
         "Modified character Stats are bolded."]}
     >
