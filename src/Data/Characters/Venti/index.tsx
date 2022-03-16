@@ -228,8 +228,8 @@ const sheet: ICharacterSheet = {
           }], 
         }, { // A1 - upcurrent
           fieldsHeader: conditionalHeader("passive1", tr, passive1),
+          canShow: data => data.get(input.asc).value >= 1,
           fields: [{
-            canShow: data => data.get(input.asc).value >= 1,
             text: trm("upcurrentDuration"),
             value: datamine.passive1.duration,
             unit: "s"
@@ -313,6 +313,7 @@ const sheet: ICharacterSheet = {
             description: tr("constellation6.description.0"),
             teamBuff: true,
             name: trm("c6"),
+            canShow: greaterEq(input.constellation, 6, 1),
             states: {
               takeDmg: {
                 fields: [{
@@ -329,6 +330,7 @@ const sheet: ICharacterSheet = {
             description: tr("constellation6.description.1"),
             name: st("eleAbsor"),
             teamBuff: true,
+            canShow: greaterEq(input.constellation, 6, 1),
             states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
               name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
               fields: [{
