@@ -58,7 +58,7 @@ const datamine = {
   },
   // No real p3/constellation datamine values :(
   passive3: {
-    stam_: 20,
+    stam_: 0.20,
   },
   constellation1: {
     dmgRatio: 0.33,
@@ -79,6 +79,7 @@ const datamine = {
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
+const p3_staminaGlidingDec_ = constant(datamine.passive3.stam_)
 
 const [condBurstAbsorptionPath, condBurstAbsorption] = cond(key, "burstAbsorption")
 
@@ -102,8 +103,6 @@ const c6_ele_enemyRes_arr = Object.fromEntries(absorbableEle.map(ele => [
   `${ele}_enemyRes_`,
   greaterEq(input.asc, 4, equal(ele, condBurstAbsorption, constant(datamine.constellation6.res_)))
 ]))
-
-const anemo_enemyRes_ = sum(c2Hit_anemo_enemyRes_, c6_anemo_enemyRes_)
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -153,6 +152,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
   },
   premod: {
     anemo_dmg_: c4_anemo_dmg_,
+    staminaGlidingDec_: p3_staminaGlidingDec_,
   },
   teamBuff: {
     premod: {
@@ -352,7 +352,7 @@ const sheet: ICharacterSheet = {
       },
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: talentTemplate("passive2", tr, passive2),
-      passive3: talentTemplate("passive3", tr, passive3),
+      passive3: talentTemplate("passive3", tr, passive3, [{ node: p3_staminaGlidingDec_ }]),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
