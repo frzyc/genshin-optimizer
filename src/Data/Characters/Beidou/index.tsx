@@ -103,14 +103,10 @@ const dmgFormulas = {
     baseDmg: dmgNode("atk", datamine.skill.dmgBase, "skill"),
     dmgOneHit: dmgNode("atk", skillDmgOneHit, "skill"),
     dmgTwoHits: dmgNode("atk", skillDmgTwoHits, "skill"),
-    a4normalDmg_: nodeSkillNormalDmg_,
-    a4chargeDmg_: nodeSkillChargeDmg_,
-    a4attackSpeed_: nodeSkillAttackSpeed_,
   },
   burst: {
     burstDmg: dmgNode("atk", datamine.burst.burstDmg, "burst"),
     lightningDmg: dmgNode("atk", datamine.burst.lightningDmg, "burst"),
-    electroResRed_: nodeBurstElectroResRed_,
   },
   constellation1: {
     shield: shieldNode("hp", percent(datamine.constellation1.shieldHp_), 0),
@@ -207,11 +203,11 @@ const sheet: ICharacterSheet = {
         states: {
           on: {
             fields: [{
-              node: dmgFormulas.skill.a4normalDmg_,
+              node: nodeSkillNormalDmg_,
             }, {
-              node: dmgFormulas.skill.a4chargeDmg_,
+              node: nodeSkillChargeDmg_,
             }, {
-              node: dmgFormulas.skill.a4attackSpeed_,
+              node: nodeSkillAttackSpeed_,
             }, {
               text: trm("a4duration"),
               value: 10,
@@ -248,7 +244,7 @@ const sheet: ICharacterSheet = {
         states: {
           on: {
             fields: [{
-              node: dmgFormulas.burst.electroResRed_,
+              node: nodeBurstElectroResRed_,
             }]
           }
         }
