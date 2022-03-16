@@ -82,7 +82,8 @@ const nodeC5 = greaterEq(input.constellation, 5, 3)
 const skillDmgOneHit = datamine.skill.dmgBase.map((dmg,i) => dmg + datamine.skill.onHitDmgBonus[i])
 const skillDmgTwoHits = datamine.skill.dmgBase.map((dmg,i) => dmg + 2 * datamine.skill.onHitDmgBonus[i])
 
-const electroShieldStr_ = { "customBonus": { "shield_": percent(1.5) }, hit: { ele: constant(elementKey) } }
+const electroShieldStr_ = { "customBonus": { "shield_": percent(1.5) } }
+
 const nodeBurstElectroResRed_ = equal(condC6, "on", percent(datamine.constellation6.electroResShred_), { key: `char_${key}:baneOfEvil_` })
 const nodeSkillNormalDmg_ = equal(condA4, "on", percent(datamine.ascension4.normalDmg_), { key: `char_${key}:a4normalDmg_` })
 const nodeSkillChargeDmg_ = equal(condA4, "on", percent(datamine.ascension4.chargeDmg_), { key: `char_${key}:a4chargeDmg_` })
@@ -183,8 +184,8 @@ const sheet: ICharacterSheet = {
         ],
       },
       skill: talentTemplate("skill", tr, skill, [
-        { node: infoMut(dmgFormulas.skill.electroShield, { key: `char_${key}_gen:skill.skillParams.0` }), },
-        { node: infoMut(dmgFormulas.skill.shield, { key: `char_${key}_gen:skill.skillParams.0` }), },     
+        { node: infoMut(dmgFormulas.skill.electroShield, { key: `char_${key}_gen:skill.skillParams.0`, "variant":"electro" }), },
+        { node: infoMut(dmgFormulas.skill.shield, { key: `char_${key}_gen:skill.skillParams.0` }), },
         { node: infoMut(dmgFormulas.skill.baseDmg, { key: `char_${key}_gen:skill.skillParams.1` }), },
         { node: infoMut(dmgFormulas.skill.dmgOneHit, { key: `char_${key}:skillOneHit` }), },
         { node: infoMut(dmgFormulas.skill.dmgTwoHits, { key: `char_${key}:skillTwoHit` }), },
@@ -253,7 +254,7 @@ const sheet: ICharacterSheet = {
       passive2: talentTemplate("passive2", tr, passive2, []),
       passive3: talentTemplate("passive3", tr, passive3, []),
       constellation1: talentTemplate("constellation1", tr, c1, [
-        { node: infoMut(dmgFormulas.constellation1.electroShield, { key: `char_${key}_gen:skill.skillParams.0` }) },
+        { node: infoMut(dmgFormulas.constellation1.electroShield, { key: `char_${key}_gen:skill.skillParams.0`, "variant":"electro" }) },
         { node: infoMut(dmgFormulas.constellation1.shield, { key: `char_${key}_gen:skill.skillParams.0` }) }, 
       ]),
       constellation2: talentTemplate("constellation2", tr, c2, []),
