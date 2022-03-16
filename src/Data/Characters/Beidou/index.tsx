@@ -99,8 +99,8 @@ const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    shield: shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill"),
     electroShield: shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill", electroShieldStr_),
+    shield: shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill"),
     baseDmg: dmgNode("atk", datamine.skill.dmgBase, "skill"),
     dmgOneHit: dmgNode("atk", skillDmgOneHit, "skill"),
     dmgTwoHits: dmgNode("atk", skillDmgTwoHits, "skill"),
@@ -110,8 +110,8 @@ const dmgFormulas = {
     lightningDmg: dmgNode("atk", datamine.burst.lightningDmg, "burst"),
   },
   constellation1: {
-    shield: shieldNode("hp", percent(datamine.constellation1.shieldHp_), 0),
     electroShield: shieldNode("hp", percent(datamine.constellation1.shieldHp_), 0, electroShieldStr_),
+    shield: shieldNode("hp", percent(datamine.constellation1.shieldHp_), 0),
   },
   constellation4: {
     skillDmg: customDmgNode(prod(input.total.atk, percent(datamine.constellation4.skillDmg)), "elemental", { hit: { ele: constant(elementKey) } })
