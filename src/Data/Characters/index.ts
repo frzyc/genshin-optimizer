@@ -16,7 +16,7 @@ import Eula from './Eula'
 import Ganyu from './Ganyu'
 // import Gorou from './Gorou'
 import HuTao from './HuTao'
-// import Jean from './Jean'
+import Jean from './Jean'
 import KaedeharaKazuha from './KaedeharaKazuha'
 // import Kaeya from './Kaeya'
 import KamisatoAyaka from './KamisatoAyaka'
@@ -65,7 +65,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Ganyu,
   // Gorou,
   HuTao,
-  // Jean,
+  Jean,
   KaedeharaKazuha,
   // Kaeya,
   KamisatoAyaka,
