@@ -74,7 +74,7 @@ export const allCharacterKeys = [
   // "Tartaglia",
   // "Traveler",
   "RaidenShogun",
-  // "Venti",
+  "Venti",
   "Xiangling",
   // "Xiao",
   "Xingqiu",
