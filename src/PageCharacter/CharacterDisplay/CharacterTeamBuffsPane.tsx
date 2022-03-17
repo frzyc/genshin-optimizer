@@ -2,9 +2,11 @@ import { PersonAdd } from "@mui/icons-material";
 import { CardContent, Divider, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useContext, useMemo } from 'react';
+import CardDark from "../../Components/Card/CardDark";
 import CardLight from "../../Components/Card/CardLight";
 import CharacterDropdownButton from "../../Components/Character/CharacterDropdownButton";
 import ConditionalDisplay from "../../Components/ConditionalDisplay";
+import DocumentDisplay from "../../Components/DocumentDisplay";
 import { NodeFieldDisplay } from "../../Components/FieldDisplay";
 import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
 import { DataContext, dataContextObj } from "../../DataContext";
@@ -111,15 +113,15 @@ function TeammateDisplay({ index }: { index: number }) {
     {teamMateDataContext && <DataContext.Provider value={teamMateDataContext}>
       <CharacterCard characterKey={characterKey}
         onClickHeader={onClickHandler}
-        artifactChildren={<CharArtifactCondDisplay dataContext={dataContext} />}
-        weaponChildren={<CharWeaponCondDisplay dataContext={dataContext} />}
-        characterChildren={<CharTalentCondDisplay dataContext={dataContext} />}
+        artifactChildren={<CharArtifactCondDisplay />}
+        weaponChildren={<CharWeaponCondDisplay />}
+        characterChildren={<CharTalentCondDisplay />}
       />
     </DataContext.Provider>}
   </CardLight>
 
 }
-function CharArtifactCondDisplay({ dataContext }: { dataContext: dataContextObj }) {
+function CharArtifactCondDisplay() {
   const { data, } = useContext(DataContext)
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const sections = useMemo(() => artifactSheets &&
@@ -128,24 +130,17 @@ function CharArtifactCondDisplay({ dataContext }: { dataContext: dataContextObj 
         setNums.flatMap(sn => artifactSheets[setKey]!.setEffectDocument(sn)!))
     , [artifactSheets, data])
   if (!sections) return null
-  return <DisplaySectionsTeamCond sections={sections} dataContext={dataContext} />
+  return <DocumentDisplay sections={sections} teamBuffOnly={true} />
 }
-function CharWeaponCondDisplay({ dataContext }: { dataContext: dataContextObj }) {
+function CharWeaponCondDisplay() {
   const { teamData, character: { key: charKey } } = useContext(DataContext)
   const weaponSheet = teamData[charKey]!.weaponSheet
-
-  return <DisplaySectionsTeamCond sections={weaponSheet.document} dataContext={dataContext} />
+  return <DocumentDisplay sections={weaponSheet.document} teamBuffOnly={true} />
 }
-function CharTalentCondDisplay({ dataContext }: { dataContext: dataContextObj }) {
+function CharTalentCondDisplay() {
   const { data, teamData, character: { key: charKey } } = useContext(DataContext)
   const characterSheet = teamData[charKey]!.characterSheet
   const talent = characterSheet.getTalent(data.get(input.charEle).value as ElementKey)!
   const sections = Object.values(talent.sheets).flatMap(sts => sts.sections)
-  return <DisplaySectionsTeamCond sections={sections} dataContext={dataContext} />
-}
-
-function DisplaySectionsTeamCond({ sections, dataContext }: { sections: DocumentSection[], dataContext: dataContextObj }) {
-  return <Box display="flex" flexDirection="column" gap={1} pt={0} >
-    {sections.map(section => section.conditional?.teamBuff && <ConditionalDisplay conditional={section.conditional} fieldContext={dataContext} />)}
-  </Box >
+  return <DocumentDisplay sections={sections} teamBuffOnly={true} />
 }
