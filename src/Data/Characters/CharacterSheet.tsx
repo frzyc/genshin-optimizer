@@ -7,6 +7,7 @@ import SqBadge from "../../Components/SqBadge";
 import Assets from "../../Assets/Assets";
 import IConditional from "../../Types/IConditional_WR";
 import { IFieldDisplay } from "../../Types/IFieldDisplay_WR";
+import { DocumentSection } from "../../Types/sheet";
 
 const characterSheets = import('.').then(imp => imp.default)
 
@@ -69,7 +70,7 @@ export default class CharacterSheet {
     `${level}/${ascensionMaxLevel[ascension]}`
 }
 
-export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[], conditional?: IConditional): TalentSheetElement => ({
+export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[], conditional?: IConditional, additionalSections?: DocumentSection[]): TalentSheetElement => ({
   name: tr(`${talentKey}.name`),
   img,
   sections: [{
@@ -80,7 +81,8 @@ export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) =>
         ? { ...conditional, header: conditionalHeader(talentKey, tr, img), description: tr(`${talentKey}.description`) }
         : conditional
       : undefined,
-  }],
+  },
+  ...(additionalSections || [])],
 })
 
 const talentStrMap: Record<TalentSheetElementKey, string> = {
