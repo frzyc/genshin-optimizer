@@ -298,7 +298,7 @@ const sheet: ICharacterSheet = {
             canShow: greaterEq(input.constellation, 4, 1),
             value: condC4,
             path: condC4Path,
-            header: conditionalHeader("constellation4", tr, passive2),
+            header: conditionalHeader("constellation4", tr, c4),
             description: tr("constellation4.description"),
             name: trm("c4"),
             states: objectKeyMap(range(1, 50).map(i => i.toString()), i => ({
