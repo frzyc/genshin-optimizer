@@ -1,6 +1,6 @@
 import { UIData } from "../Formula/uiData";
-import IConditional from "./IConditional_WR";
-import { IFieldDisplay } from "./IFieldDisplay_WR";
+import IConditional from "./IConditional";
+import { IFieldDisplay } from "./IFieldDisplay";
 
 export interface DocumentSection {
   canShow?: (data: UIData) => boolean
@@ -10,6 +10,8 @@ export interface DocumentSection {
     icon?: Displayable | ((data: UIData) => Displayable);
     action?: Displayable;
   }
+  fieldsDescription?: Displayable | ((data: UIData) => Displayable);
   fields?: IFieldDisplay[]
   conditional?: IConditional
+  teamBuff?: boolean
 }

@@ -81,20 +81,21 @@ const datamine = {
 const c1Atk = greaterEq(input.constellation, 1, datamine.constellation1.atk_inc, { key: `char_${key}:additionalATKRatio_`})
 
 const atkIncRatio = sum(subscript(input.total.burstIndex, datamine.burst.atkBonus, { key: "_" }), c1Atk)
-const [condInAreaPath, condInArea] = cond(key, "inArea")
-const inArea = equal("inArea", condInArea, 1)
+const [condInAreaPath, condInArea] = cond(key, "activeInArea")
+const activeInArea = equal("activeInArea", condInArea, equal(input.activeCharKey, target.charKey, 1))
 const c1AddlAtk = greaterEq(input.constellation, 1, prod(c1Atk, input.base.atk))
-const inAreaAtk = equal(inArea, 1, prod(atkIncRatio, input.base.atk))
+const activeInAreaAtk = equal(activeInArea, 1, prod(atkIncRatio, input.base.atk))
 
-const inAreaA4 = greaterEq(input.asc, 4,
-  equal(inArea, 1, datamine.passive2.cd_red))
+const activeInAreaA4 = greaterEq(input.asc, 4,
+  equal(activeInArea, 1, datamine.passive2.cd_red)
+)
 
 const c6AndCorrectWep = greaterEq(input.constellation, 6,
   lookup(target.weaponType,
     { "sword": constant(1), "claymore": constant(1), "polearm": constant(1) }, constant(0)))
-const inAreaC6PyroDmg = equal(inArea, 1,
+const activeInAreaC6PyroDmg = equal(activeInArea, 1,
   equal(c6AndCorrectWep, 1, datamine.constellation6.pyro_dmg))
-const inAreaC6Infusion = equalStr(inArea, 1,
+const activeInAreaC6Infusion = equalStr(activeInArea, 1,
   equalStr(c6AndCorrectWep, 1, elementKey))
 
 const [condUnderHPPath, condUnderHP] = cond(key, "underHP")
@@ -120,7 +121,7 @@ const dmgFormulas = {
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
     regen: healNodeTalent("hp", datamine.burst.regen_, datamine.burst.regenFlat, "burst"),
-    atkInc: inAreaAtk,
+    atkInc: activeInAreaAtk,
   },
   constellation4: {
     dmg: greaterEq(input.constellation, 4, prod(dmgNode("atk", datamine.skill.hold1_2, "skill"), datamine.constellation4.dmg))
@@ -136,11 +137,11 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
   },
   teamBuff: {
     premod: {
-      pyro_dmg_: inAreaC6PyroDmg,
-      atk: inAreaAtk,
+      pyro_dmg_: activeInAreaC6PyroDmg,
+      atk: activeInAreaAtk,
     },
     team: {
-      infusion: inAreaC6Infusion,
+      infusion: activeInAreaC6Infusion,
     },
   },
   premod: {
@@ -248,13 +249,13 @@ const sheet: ICharacterSheet = {
             name: st("activeCharField"),
             teamBuff: true,
             states: {
-              inArea: {
+              activeInArea: {
                 fields: [{
                   text: tr("burst.skillParams.2"),
                   value: data => data.get(atkIncRatio).value * 100,
                   unit: "%",
                 }, {
-                  node: infoMut(inAreaAtk, { key: `sheet:increase.atk` })
+                  node: infoMut(activeInAreaAtk, { key: `sheet:increase.atk` })
                 }]
               }
             }
@@ -267,7 +268,7 @@ const sheet: ICharacterSheet = {
             header: conditionalHeader("passive2", tr, passive2),
             name: st("activeCharField"),
             states: {
-              inArea: {
+              activeInArea: {
                 fields: [{ // Node will not show CD reduction, have to use value instead
                   text: st("skillCDRed"),
                   value: datamine.passive2.cd_red,
@@ -286,9 +287,9 @@ const sheet: ICharacterSheet = {
             name: st("activeCharField"),
             teamBuff: true,
             states: {
-              inArea: {
+              activeInArea: {
                 fields: [{
-                  node: inAreaC6PyroDmg
+                  node: activeInAreaC6PyroDmg
                 }, {
                   text: <ColorText color={elementKey}>{st("infusion.pyro")}</ColorText>
                 }]
@@ -341,7 +342,7 @@ function calculateSkillCD(data: UIData, skillCD: number): string {
   if (data.get(input.asc).value >= 1) {
     cdFactor = 0.80;
   }
-  cdFactor *= (1 - data.get(inAreaA4).value / 100);
+  cdFactor *= (1 - data.get(activeInAreaA4).value / 100);
   if (cdFactor !== 1.00) {
     result += " - " + (100 - cdFactor * 100) + "% = " + skillCD * cdFactor;
   }
