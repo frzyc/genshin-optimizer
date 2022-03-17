@@ -1,11 +1,11 @@
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material';
 import { Button, Divider, MenuItem } from '@mui/material';
 import React, { useCallback, useContext } from 'react';
-import DropdownButton from '../Components/DropdownMenu/DropdownButton';
-import SqBadge from '../Components/SqBadge';
-import { DataContext } from '../DataContext';
-import IConditional from '../Types/IConditional_WR';
-import { deepClone, layeredAssignment } from '../Util/Util';
+import DropdownButton from '../DropdownMenu/DropdownButton';
+import SqBadge from '../SqBadge';
+import { DataContext } from '../../DataContext';
+import IConditional from '../../Types/IConditional';
+import { deepClone, layeredAssignment } from '../../Util/Util';
 
 export default function ConditionalSelector({ conditional, conditionalValue, disabled = false, }:
   { conditional: IConditional, conditionalValue?: string, disabled?: boolean }) {

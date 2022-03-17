@@ -1,6 +1,6 @@
 import { UIData } from "../Formula/uiData";
-import IConditional from "./IConditional_WR";
-import { IFieldDisplay } from "./IFieldDisplay_WR";
+import IConditional from "./IConditional";
+import { IFieldDisplay } from "./IFieldDisplay";
 
 export interface DocumentSection {
   canShow?: (data: UIData) => boolean

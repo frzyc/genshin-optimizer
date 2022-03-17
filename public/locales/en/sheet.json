@@ -56,6 +56,15 @@
     "dendro": "Dendro Infusion",
     "geo": "Geo Infusion"
   },
+  "affectDuration":{
+    "pyro": "Pyro affect duration",
+    "cryo": "Cryo affect duration",
+    "anemo": "Anemo affect duration",
+    "hydro": "Hydro affect duration",
+    "electro": "Electro affect duration",
+    "dendro": "Dendro affect duration",
+    "geo": "Geo affect duration"
+  },
   "base": "Base",
   "stacks": "Stacks",
   "hits": "Hits",

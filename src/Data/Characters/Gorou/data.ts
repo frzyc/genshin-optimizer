@@ -1,6 +1,5 @@
 import { getTalentStatKey } from "../../../PageBuild/Build"
 import { FormulaItem, IFormulaSheet } from "../../../Types/character"
-import { BasicStats } from "../../../Types/stats"
 import { singleToTalentPercent, toTalentInt, toTalentPercent } from "../../../Util/DataminedUtil"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 import skillParam_gen_pre from './skillParam_gen.json'
@@ -57,7 +56,7 @@ export const data = {
   }
 } as const
 
-function defDMGFormula(percent: number, defPercent: number, stats: BasicStats, skillKey: string): FormulaItem {
+function defDMGFormula(percent: number, defPercent: number, stats: any, skillKey: string): FormulaItem {
   const val = percent / 100
   const defMulti = defPercent / 100
   const statKey = getTalentStatKey(skillKey, stats) + "_multi"

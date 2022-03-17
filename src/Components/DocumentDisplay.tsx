@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { DataContext } from "../DataContext"
 import { DocumentSection } from "../Types/sheet"
 import { evalIfFunc } from "../Util/Util"
-import ConditionalDisplay from "./ConditionalDisplay"
+import ConditionalDisplay from "./Conditional/ConditionalDisplay"
 import CardDark from "./Card/CardDark"
 import FieldDisplay, { FieldDisplayList } from "./FieldDisplay"
 

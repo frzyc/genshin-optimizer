@@ -2,7 +2,7 @@ import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, lookup, matchFull, percent, prod, subscript, sum, unequal } from "../../../Formula/utils"
 import { CharacterKey, ElementKey } from '../../../Types/consts'
-import { INodeFieldDisplay } from '../../../Types/IFieldDisplay_WR'
+import { INodeFieldDisplay } from '../../../Types/IFieldDisplay'
 import { range } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'

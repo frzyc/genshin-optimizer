@@ -1,14 +1,14 @@
 import { PersonAdd } from "@mui/icons-material";
-import { CardContent, Divider, Grid } from "@mui/material";
+import { CardContent, CardHeader, Divider, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useContext, useMemo } from 'react';
 import CardDark from "../../Components/Card/CardDark";
 import CardLight from "../../Components/Card/CardLight";
 import CharacterDropdownButton from "../../Components/Character/CharacterDropdownButton";
-import ConditionalDisplay from "../../Components/ConditionalDisplay";
 import DocumentDisplay from "../../Components/DocumentDisplay";
 import { NodeFieldDisplay } from "../../Components/FieldDisplay";
 import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
+import { resonanceSheets } from "../../Data/Resonance";
 import { DataContext, dataContextObj } from "../../DataContext";
 import { uiInput as input } from "../../Formula";
 import { NodeDisplay } from "../../Formula/uiData";
@@ -16,14 +16,13 @@ import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import useCharSelectionCallback from "../../ReactHooks/useCharSelectionCallback";
 import usePromise from "../../ReactHooks/usePromise";
 import { ElementKey } from "../../Types/consts";
-import { DocumentSection } from "../../Types/sheet";
 import { objPathValue, range } from "../../Util/Util";
 import CharacterCard from "../CharacterCard";
 
 export default function CharacterTeamBuffsPane() {
   return <Box display="flex" flexDirection="column" gap={1} alignItems="stretch">
     <TeamBuffDisplay />
-    {/* <ResonanceDisplay characterKey={characterKey} build={build} /> */}
+    <ResonanceDisplay />
     <Grid container spacing={1}>
       {range(0, 2).map(i => <Grid item xs={12} md={6} lg={4} key={i}>
         <TeammateDisplay index={i} />
@@ -59,33 +58,29 @@ export function TeamBuffDisplay() {
     </CardContent>
   </CardLight>
 }
-// function ResonanceDisplay() {
-//   const { data, characterDispatch } = useContext(DataContext)
-//   return <CardLight>
-//     <CardContent>
-//       Team Resonance
-//     </CardContent>
-//     <Divider />
-//     <CardContent>
-//       <Grid container spacing={1}>
-//         {resonanceSheets.map((doc, i) =>
-//           <Grid item key={i} xs={12} md={6} lg={4} >
-//             <CardDark sx={{ opacity: doc.canShow(build) ? 1 : 0.5, height: "100%" }}>
-//               <CardHeader avatar={doc?.header?.icon} title={doc?.header?.title} action={doc?.header?.action} titleTypographyProps={{ variant: "subtitle2" }} />
-//               <Divider />
-//               <CardContent>
-//                 {doc.description}
-//               </CardContent>
-//               {doc.conditionals.map(cond =>
-//                 <ConditionalDisplay key={cond.key} conditional={cond} stats={build} onChange={val => characterDispatch({ conditionalValues: val })} />
-//               )}
-//             </CardDark>
-//           </Grid>
-//         )}
-//       </Grid>
-//     </CardContent>
-//   </CardLight>
-// }
+function ResonanceDisplay() {
+  const { data } = useContext(DataContext)
+  return <CardLight>
+    <CardContent>
+      Team Resonance
+    </CardContent>
+    <Divider />
+    <CardContent>
+      <Grid container spacing={1}>
+        {resonanceSheets.map((res, i) =>
+          <Grid item key={i} xs={12} md={6} lg={4} >
+            <CardDark sx={{ opacity: res.canShow(data) ? 1 : 0.5, height: "100%" }}>
+              <CardHeader title={res.name} action={res.icon} titleTypographyProps={{ variant: "subtitle2" }} />
+              {res.canShow(data) && <CardContent>
+                <DocumentDisplay sections={res.sections} teamBuffOnly={true} />
+              </CardContent>}
+            </CardDark>
+          </Grid>
+        )}
+      </Grid>
+    </CardContent>
+  </CardLight>
+}
 function TeammateDisplay({ index }: { index: number }) {
   const dataContext = useContext(DataContext)
   const { character: active, teamData, characterDispatch: activeCharacterDispatch } = dataContext
