@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { trans } from '../../../SheetUtil'
+import { st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -10,11 +10,11 @@ import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "PrimordialJadeCutter"
-const [tr, ] = trans("weapon", key)
 const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
+
 const hpSrc = [0.2, 0.25, 0.3, 0.35, 0.4]
 const atkSrc = [0.012, 0.015, 0.018, 0.021, 0.024]
-
 const hp_ = subscript(input.weapon.refineIndex, hpSrc)
 const atk = prod(subscript(input.weapon.refineIndex, atkSrc, { key: "_" }), input.premod.hp)
 
@@ -26,12 +26,11 @@ const data = dataObjForWeaponSheet(key, data_gen, {
     atk
   }
 })
-
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fieldsHeader: conditionalHeader(tr, icon, iconAwaken),
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
     fields: [{ node: hp_ }, { node: atk }]
   }],
 }

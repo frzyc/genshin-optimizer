@@ -11,12 +11,12 @@ import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "AquilaFavonia"
-const [tr, trm] = trans("weapon", key)
 const data_gen = data_gen_json as WeaponData
+const [tr, trm] = trans("weapon", key)
+
 const atkDealt = [2, 2.3, 2.6, 2.9, 3.2]
 const hpRegen = [1, 1.15, 1.3, 1.45, 1.6]
 const [condPath, condNode] = cond(key, "FalconOfTheWest")
-
 const atk_ = subscript(input.weapon.refineIndex, data_gen.addProps.map(x => x.atk_ ?? NaN))
 const heal = equal(condNode, 'on', prod(subscript(input.weapon.refineIndex, hpRegen, { key: "_" }), input.premod.atk))
 const dmg = equal(condNode, 'on', customDmgNode(prod(subscript(input.weapon.refineIndex, atkDealt, { key: "_" }), input.premod.atk), "elemental", {

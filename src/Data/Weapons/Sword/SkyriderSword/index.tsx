@@ -2,15 +2,16 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "SkyriderSword"
 const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
 
 const [condPassivePath, condPassive] = cond(key, "Determination")
 const bonusInc = [0.12, 0.15, 0.18, 0.21, 0.24]
@@ -30,6 +31,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       name: st("afterUse.burst"),
       states: {
         on: {

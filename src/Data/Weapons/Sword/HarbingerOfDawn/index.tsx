@@ -12,9 +12,9 @@ import icon from './Icon.png'
 const key: WeaponKey = "HarbingerOfDawn"
 const data_gen = data_gen_json as WeaponData
 const [tr] = trans("weapon", key)
-const critRateSrc_ = [0.14, 0.175, 0.21, 0.245, 0.28]
 
 const [condPassivePath, condPassive] = cond(key, "SkyPiercingMight")
+const critRateSrc_ = [0.14, 0.175, 0.21, 0.245, 0.28]
 const critRate_ = equal("on", condPassive, subscript(input.weapon.refineIndex, critRateSrc_))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
@@ -22,7 +22,6 @@ const data = dataObjForWeaponSheet(key, data_gen, {
     critRate_,
   }
 })
-
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
@@ -30,7 +29,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       name: st("greaterPercentHP", { percent: 90 }),
       states: {
         on: {

@@ -16,12 +16,12 @@ const [tr, trm] = trans("weapon", key)
 const atkInc = [0.2, 0.25, 0.3, 0.35, 0.5]
 const [condPassivePath, condPassive] = cond(key, "Overloaded")
 const atk_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkInc, { key: "_" }))
+
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_
   }
 })
-
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
@@ -30,7 +30,7 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       name: trm("condName"),
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       description: conditionaldesc(tr),
       states: {
         on: {

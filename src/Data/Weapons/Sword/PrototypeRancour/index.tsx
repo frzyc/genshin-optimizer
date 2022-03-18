@@ -3,20 +3,22 @@ import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "PrototypeRancour"
 const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
 
 const [condStackPath, condStack] = cond(key, "stack")
 const bonusInc = [0.04, 0.05, 0.06, 0.07, 0.08]
 const atk_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(input.weapon.refineIndex, bonusInc, { key: "_" }), i)), naught)
 const def_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(input.weapon.refineIndex, bonusInc, { key: "_" }), i)), naught)
+
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_,
@@ -30,6 +32,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condStack,
       path: condStackPath,
+      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
       name: st("onHit"),
       states: Object.fromEntries(range(1, 4).map(i => [i, {
         name: st("stack", { count: i }),
