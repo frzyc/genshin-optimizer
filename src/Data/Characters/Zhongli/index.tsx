@@ -71,6 +71,7 @@ const datamine = {
 const [condSkillPath, condSkill] = cond(key, "skill")
 const nodesSkill = objectKeyValueMap(allElementsWithPhy, k => [`${k}_enemyRes_`,
 equal("on", condSkill, percent(datamine.skill.enemyRes_))])
+const shieldDmgAbsorb = percent(0.5)
 
 const [condP1Path, condP1] = cond(key, "p1")
 const nodeP1 = greaterEq(
@@ -103,7 +104,8 @@ const dmgFormulas = {
     stele: dmgNode("atk", datamine.skill.stele, "skill"),
     resonance: dmgNode("atk", datamine.skill.resonance, "skill"),
     holdDMG: dmgNode("atk", datamine.skill.holdDMG, "skill"),
-    shield: shieldNodeTalent("hp", datamine.skill.shield_, datamine.skill.shield, "skill")
+    shield: shieldNodeTalent("hp", datamine.skill.shield_, datamine.skill.shield, "skill", 
+      { customBonus: { shield_: shieldDmgAbsorb }})
   },
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
