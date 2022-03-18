@@ -5,7 +5,7 @@ import { allElementsWithPhy, CharacterKey, ElementKey } from '../../../Types/con
 import { range } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
-import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -80,7 +80,7 @@ const nodeBurstAtk = equal(condBurst, "on", prod(subscript(input.total.burstInde
 const nodeBurstAtkSpd = equal(condBurst, "on", datamine.burst.atkSpd, { key: 'atkSPD_' })
 const allNodeBurstRes = Object.fromEntries(allElementsWithPhy.map(ele => [`${ele}_res_`, equal(condBurst, "on", -datamine.burst.resDec)]))
 const nodeBurstInfusion = equalStr(condBurst, "on", "geo")
-const nodeA4Bonus = greaterEq(input.asc, 4, prod(percent(datamine.passive2.def_), input.total.def))
+const nodeA4Bonus = greaterEq(input.asc, 4, prod(percent(datamine.passive2.def_), input.premod.def))
 const nodeP1AtkSpd = greaterEq(input.asc, 4, lookup(condP1, Object.fromEntries(range(1, datamine.passive1.maxStacks).map(i => [i, constant(datamine.passive1.atkSPD_ * i)])), 0, { key: 'atkSPD_' }))
 const nodeC4Atk = equal(condC4, "on", greaterEq(input.constellation, 4, datamine.constellation4.atk_))
 const nodeC4Def = equal(condC4, "on", greaterEq(input.constellation, 4, datamine.constellation4.def_))
@@ -91,12 +91,8 @@ const dmgFormulas = {
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
     sSlash: dmgNode("atk", datamine.charged.sSlash, "charged"),
-    akSlash: customDmgNode(sum(
-      prod(subscript(input.total.autoIndex, datamine.charged.akSlash, { key: '_' }), input.total.atk),
-      nodeA4Bonus), "charged"),
-    akFinal: customDmgNode(sum(
-      prod(subscript(input.total.autoIndex, datamine.charged.akFinal, { key: '_' }), input.total.atk),
-      nodeA4Bonus), "charged"),
+    akSlash: dmgNode("atk", datamine.charged.akSlash, "charged", { total: { charged_dmgInc: nodeA4Bonus } }),
+    akFinal: dmgNode("atk", datamine.charged.akFinal, "charged", { total: { charged_dmgInc: nodeA4Bonus } }),
   },
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([name, arr]) =>
     [name, dmgNode("atk", arr, "plunging")])),
@@ -218,19 +214,19 @@ const sheet: ICharacterSheet = {
         states: {
           on: {
             fields: [{
-                text: st("infusion.geo"),
-                variant: "geo",
-              }, {
-                node: nodeBurstAtkSpd,
-              },
-              ...Object.values(allNodeBurstRes).map(node => ({ node })),
-              {
-                node: infoMut(nodeBurstAtk, { key: `char_${key}_gen:burst.skillParams.0` })
-              }, {
-                text: tr("burst.skillParams.2"),
-                value: datamine.burst.duration,
-                unit: "s"
-              }]
+              text: st("infusion.geo"),
+              variant: "geo",
+            }, {
+              node: nodeBurstAtkSpd,
+            },
+            ...Object.values(allNodeBurstRes).map(node => ({ node })),
+            {
+              node: infoMut(nodeBurstAtk, { key: `char_${key}_gen:burst.skillParams.0` })
+            }, {
+              text: tr("burst.skillParams.2"),
+              value: datamine.burst.duration,
+              unit: "s"
+            }]
           }
         }
       }),
@@ -249,7 +245,7 @@ const sheet: ICharacterSheet = {
             ]
           }]))
       }),
-      passive2: talentTemplate("passive2", tr, passive2),
+      passive2: talentTemplate("passive2", tr, passive2, [{ node: infoMut(nodeA4Bonus, { key: `char_${key}:a4:dmgInc` }) }]),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
