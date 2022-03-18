@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, trans } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -33,7 +33,7 @@ const sheet: IWeaponSheet = {
       // TODO: need st("lessPercentHP", { percent: xx }) to change depending on the weapon refine index.
       // Probably need to change IConditional.name to have (data:Data)=>Displayable as well.
       name: trm("condName"),
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       description: conditionaldesc(tr),
       states: {
         on: {

@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, trans } from '../../../SheetUtil'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -12,11 +12,11 @@ import icon from './Icon.png'
 const key: WeaponKey = "WolfsGravestone"
 const data_gen = data_gen_json as WeaponData
 const [tr, trm] = trans("weapon", key)
+
 const atk_Src = [0.2, 0.25, 0.3, 0.35, 0.4]
 const atkTeam_Src = [0.4, 0.5, 0.6, 0.7, 0.8]
-
-const atk_ = subscript(input.weapon.refineIndex, atk_Src)
 const [condPassivePath, condPassive] = cond(key, "WolfishTracker")
+const atk_ = subscript(input.weapon.refineIndex, atk_Src)
 const atkTeam_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkTeam_Src, { key: "atk_" }))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
@@ -29,7 +29,6 @@ const data = dataObjForWeaponSheet(key, data_gen, {
     }
   }
 })
-
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
@@ -39,7 +38,7 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       teamBuff: true,
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       description: conditionaldesc(tr),
       name: trm('condName'),
       states: {

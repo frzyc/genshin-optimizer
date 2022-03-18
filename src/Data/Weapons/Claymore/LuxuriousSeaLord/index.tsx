@@ -13,9 +13,9 @@ import icon from './Icon.png'
 const key: WeaponKey = "LuxuriousSeaLord"
 const data_gen = data_gen_json as WeaponData
 const [tr] = trans("weapon", key)
+
 const burst_dmg_Src = [0.12, 0.15, 0.18, 0.21, 0.24]
 const dmg_Src = [1, 1.25, 1.5, 1.75, 2]
-
 const burst_dmg_ = subscript(input.weapon.refineIndex, burst_dmg_Src)
 const [condPassivePath, condPassive] = cond(key, "OceanicVictory")
 const dmg_ = equal(condPassive, 'on', customDmgNode(prod(subscript(input.weapon.refineIndex, dmg_Src, { key: "_" }), input.premod.atk), "elemental", {
@@ -27,7 +27,6 @@ const data = dataObjForWeaponSheet(key, data_gen, {
     burst_dmg_
   },
 })
-
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
@@ -37,7 +36,7 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       teamBuff: true,
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       description: conditionaldesc(tr),
       name: st('hitOp.burst'),
       states: {
