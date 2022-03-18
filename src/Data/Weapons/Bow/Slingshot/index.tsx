@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, percent, subscript, sum } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, trans } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -33,6 +33,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
     fields: [{
       node: normal_atk_decrease
     }, {
@@ -41,7 +42,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       description: conditionaldesc(tr),
       name: trm("condName"),
       states: {

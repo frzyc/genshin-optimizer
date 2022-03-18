@@ -40,6 +40,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
     fields: [{
       node: skill_dmg_,
     }, {
@@ -48,8 +49,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
-      teamBuff: true,
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
       description: conditionaldesc(tr),
       name: trm("condName"),
       states: objectKeyMap(range(1, 4), i => ({
