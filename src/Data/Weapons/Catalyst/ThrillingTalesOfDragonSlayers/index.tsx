@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input, target } from '../../../../Formula'
 import { equal, subscript, unequal } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, trans } from '../../../SheetUtil'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -36,7 +36,7 @@ const sheet: IWeaponSheet = {
       name: trm('condName'),
       canShow: unequal(input.activeCharKey, input.charKey, 1),
       teamBuff: true,
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       description: conditionaldesc(tr),
       states: {
         on: {
