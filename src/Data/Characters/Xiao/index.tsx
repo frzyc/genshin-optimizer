@@ -5,7 +5,7 @@ import { equal, equalStr, greaterEq, infoMut, lookup, naught, prod, subscript, u
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
-import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
@@ -190,19 +190,20 @@ const sheet: ICharacterSheet = {
       }, {
         text: st("charges"),
         value: data => data.get(input.constellation).value >= 1 ? 3 : 2,
-      }], {
-        // A4
-        path: condA4SkillStackPath,
-        value: condA4SkillStack,
-        header: conditionalHeader("passive2", tr, passive2),
-        description: tr("passive2.description"),
-        name: trm("skillStack"),
-        canShow: greaterEq(input.asc, 4, 1),
-        states: Object.fromEntries(a4SkillStackArr.map(i => [i, {
-          name: st("uses", { count: i }),
-          fields: [{ node: skill_dmg_ }]
-        }]))
-      }),
+      }], undefined, [ // A4
+        sectionTemplate("passive2", tr, passive2, undefined, {
+          path: condA4SkillStackPath,
+          value: condA4SkillStack,
+          header: conditionalHeader("passive2", tr, passive2),
+          description: tr("passive2.description"),
+          name: trm("skillStack"),
+          canShow: greaterEq(input.asc, 4, 1),
+          states: Object.fromEntries(a4SkillStackArr.map(i => [i, {
+            name: st("uses", { count: i }),
+            fields: [{ node: skill_dmg_ }]
+          }]))
+        })
+      ]),
       burst: talentTemplate("burst", tr, burst, [{
         node: infoMut(auto_dmg_, { key: `char_${key}:burst.autoAtkDmgBonus_` }),
       }, {
@@ -241,35 +242,29 @@ const sheet: ICharacterSheet = {
             }]
           }
         }
-      }, [{
-        // A1
-        conditional: {
+      }, [ // A1
+        sectionTemplate("passive1", tr, passive1, undefined, {
           path: condA1BurstStackPath,
           value: condA1BurstStack,
-          header: conditionalHeader("passive1", tr, passive1),
-          description: tr("passive1.description"),
           name: trm("burst.stack"),
           canShow: greaterEq(input.asc, 1, equal("inBurst", condInBurst, 1)),
           states: Object.fromEntries(a1BurstStackArr.map(i => [i, {
             name: st("seconds", { count: i * 3 }),
             fields: [{ node: all_dmg_ }]
           }]))
-        }
-      }]),
+        })
+      ]),
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: talentTemplate("passive2", tr, passive2),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
-      constellation2: talentTemplate("constellation2", tr, c2, undefined, undefined, [{
-        fieldsHeader: conditionalHeader("constellation2", tr, c2),
-        // TODO: Uncomment this, assuming PR #149 is approved
-        //fieldsDescription: tr("constellation2.description"),
-        //teamBuff: true,
-        canShow: data => data.get(c2Inactive).value === 1,
-        fields: [{
-          node: c2Inactive_enerRech_
-        }]
-      }]),
+      constellation2: talentTemplate("constellation2", tr, c2, undefined, undefined, [
+        sectionTemplate("constellation2", tr, c2, [{ node: c2Inactive_enerRech_ }], undefined,
+          data => data.get(c2Inactive).value === 1,
+          true,
+          true
+        )
+      ]),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4, undefined, {
         path: condC4BelowHPPath,
