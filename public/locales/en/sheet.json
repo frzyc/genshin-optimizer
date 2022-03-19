@@ -12,6 +12,10 @@
   "stack_other": "{{count}} Stacks",
   "member_one": "{{count}} Member",
   "member_other": "{{count}} Members",
+  "seconds_one": "{{count}} Second",
+  "seconds_other": "{{count}} Seconds",
+  "uses_one": "{{count}} Use",
+  "uses_other": "{{count}} Uses",
   "afterDefeatEnemy": "After defeating an opponent",
   "hitOp": {
     "normal": "Normal Attack hits on opponents",
