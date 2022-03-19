@@ -1,6 +1,6 @@
 import { useCallback, useContext } from "react";
 import { DatabaseContext } from "../Database/Database";
-import { ICachedCharacter } from "../Types/character";
+import { ICachedCharacter } from "../Types/character_WR";
 import { CharacterKey } from "../Types/consts";
 import { deepClone } from "../Util/Util";
 

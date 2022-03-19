@@ -9,7 +9,7 @@ import { Data } from "../Formula/type";
 import { ICachedArtifact } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character_WR";
 import { CharacterKey } from "../Types/consts";
-import { ICachedWeapon } from "../Types/weapon_WR";
+import { ICachedWeapon } from "../Types/weapon";
 import { objectMap } from "../Util/Util";
 import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import useForceUpdate from "./useForceUpdate";

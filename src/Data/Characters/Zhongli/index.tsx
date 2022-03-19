@@ -5,7 +5,7 @@ import { allElementsWithPhy, CharacterKey, ElementKey } from '../../../Types/con
 import { objectKeyMap, objectKeyValueMap, range } from '../../../Util/Util'
 import { cond, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
-import { customHealNode, dataObjForCharacterSheet, dmgNode, shieldNodeTalent } from '../dataUtil'
+import { customHealNode, dataObjForCharacterSheet, dmgNode, shieldElement, shieldNodeTalent } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -103,7 +103,7 @@ const dmgFormulas = {
     stele: dmgNode("atk", datamine.skill.stele, "skill"),
     resonance: dmgNode("atk", datamine.skill.resonance, "skill"),
     holdDMG: dmgNode("atk", datamine.skill.holdDMG, "skill"),
-    shield: shieldNodeTalent("hp", datamine.skill.shield_, datamine.skill.shield, "skill")
+    shield: shieldElement("geo", shieldNodeTalent("hp", datamine.skill.shield_, datamine.skill.shield, "skill"))
   },
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),

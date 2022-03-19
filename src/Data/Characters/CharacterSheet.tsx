@@ -5,8 +5,8 @@ import { TalentSheet, TalentSheetElement, TalentSheetElementKey } from "../../Ty
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "../../Types/consts";
 import SqBadge from "../../Components/SqBadge";
 import Assets from "../../Assets/Assets";
-import IConditional from "../../Types/IConditional_WR";
-import { IFieldDisplay } from "../../Types/IFieldDisplay_WR";
+import IConditional from "../../Types/IConditional";
+import { IFieldDisplay } from "../../Types/IFieldDisplay";
 
 const characterSheets = import('.').then(imp => imp.default)
 

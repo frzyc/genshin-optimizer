@@ -1,9 +1,7 @@
 import { ICachedArtifact, MainStatKey, StatKey, SubstatKey } from "./artifact_WR"
-import { ArtifactSetKey, SetNum, SlotKey } from "./consts"
-import { BonusStats, ICalculatedStats } from "./stats"
+import { ArtifactSetKey, SlotKey } from "./consts"
 
 export type ArtifactsBySlot = Dict<SlotKey, ICachedArtifact[]>
-export type ArtifactSetEffects = Dict<ArtifactSetKey, Dict<SetNum, BonusStats>>
 export type SetFilter = { key: ArtifactSetKey | "", num: number }[]
 export interface BuildSetting {
   setFilters: SetFilter,

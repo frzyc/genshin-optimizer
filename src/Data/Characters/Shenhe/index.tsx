@@ -1,5 +1,5 @@
 import { CharacterData } from 'pipeline'
-import { input } from '../../../Formula'
+import { input, target } from '../../../Formula'
 import { infoMut, lookup, equal, percent, prod, subscript, greaterEq } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { objectKeyMap, range } from '../../../Util/Util'
@@ -92,7 +92,7 @@ const nodeBurstPhysical_enemyRes_ = { ...enemyRes_ }
 const [condAsc1Path, condAsc1] = cond(key, "asc1")
 const nodeAsc1 = greaterEq(input.asc, 1,
   equal(condAsc1, "field",
-    equal(input.activeCharKey, input.charKey,
+    equal(input.activeCharKey, target.charKey,
       datamine.passive1.cryo_dmg_
     )
   )
@@ -117,7 +117,7 @@ const nodeAsc4Hold_plunging_dmg_ = { ...nodeAsc4Hold }
 
 const nodeC2 = greaterEq(input.constellation, 2,
   equal(condAsc1, "field",
-    equal(input.activeCharKey, input.charKey,
+    equal(input.activeCharKey, target.charKey,
       datamine.passive1.cryo_dmg_
     )
   )
@@ -298,7 +298,7 @@ const sheet: ICharacterSheet = {
             canShow: greaterEq(input.constellation, 4, 1),
             value: condC4,
             path: condC4Path,
-            header: conditionalHeader("constellation4", tr, passive2),
+            header: conditionalHeader("constellation4", tr, c4),
             description: tr("constellation4.description"),
             name: trm("c4"),
             states: objectKeyMap(range(1, 50).map(i => i.toString()), i => ({
@@ -352,7 +352,7 @@ const sheet: ICharacterSheet = {
           }
         }, {
           conditional: { // ASC1 Party + cond 2
-            canShow: greaterEq(input.asc, 1, equal(input.activeCharKey, input.charKey, 1)),
+            canShow: greaterEq(input.asc, 1, equal(input.activeCharKey, target.charKey, 1)),
             value: condAsc1,
             path: condAsc1Path,
             teamBuff: true,

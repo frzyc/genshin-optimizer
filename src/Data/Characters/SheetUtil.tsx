@@ -6,7 +6,6 @@ import { Translate } from "../../Components/Translate";
 import Stat from "../../Stat";
 import { DocumentSection, TalentSheetElement, TalentSheetElementKey } from "../../Types/character";
 import { ElementKey, WeaponTypeKey } from "../../Types/consts";
-import IConditional from "../../Types/IConditional";
 /**
  * @deprecated
  */
@@ -166,7 +165,7 @@ const talentStrMap: Record<TalentSheetElementKey, string> = {
 /**
  * @deprecated
  */
-export const conditionalHeader = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string): IConditional["header"] => {
+export const conditionalHeader = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string) => {
   return {
     title: tr(`${talentKey}.name`),
     icon: <ImgIcon size={2} sx={{ m: -1 }} src={img} />,

@@ -1,23 +1,4 @@
-import { WeaponData } from "../../pipeline";
-import { SubstatKey } from "./artifact";
-import { DocumentSection } from "./character";
-import { CharacterKey, Rarity, WeaponKey, WeaponTypeKey } from "./consts";
-import { BasicStats, BonusStats } from "./stats";
-
-/**
- * @deprecated
- */
-export type IWeaponSheets = Record<WeaponKey, IWeaponSheet>
-
-/**
- * @deprecated
- */
-export interface IWeaponSheet extends WeaponData {
-  icon: string,
-  iconAwaken: string,
-  stats?: BonusStats | ((stats: BasicStats) => BonusStats | undefined)
-  document: DocumentSection[],
-}
+import { CharacterKey, WeaponKey } from "./consts";
 
 export interface IWeapon {
   key: WeaponKey // "CrescentPike"

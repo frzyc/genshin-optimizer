@@ -5,7 +5,7 @@ import React, { useContext, useMemo } from 'react';
 import { DataContext, dataContextObj } from "../DataContext";
 import { NodeDisplay } from "../Formula/api";
 import KeyMap, { valueString } from "../KeyMap";
-import { IBasicFieldDisplay, IFieldDisplay } from "../Types/IFieldDisplay_WR";
+import { IBasicFieldDisplay, IFieldDisplay } from "../Types/IFieldDisplay";
 import { evalIfFunc } from "../Util/Util";
 import BootstrapTooltip from "./BootstrapTooltip";
 import ColorText from "./ColoredText";

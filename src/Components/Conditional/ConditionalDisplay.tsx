@@ -1,13 +1,13 @@
 import { Box, CardContent, CardHeader, Divider, ListItem } from "@mui/material"
 import { useContext } from "react"
-import ConditionalSelector from "../Conditional/ConditionalSelector"
-import { DataContext, dataContextObj } from "../DataContext"
-import { Data } from "../Formula/type"
-import { data as dataNode } from '../Formula/utils'
-import IConditional from "../Types/IConditional_WR"
-import { evalIfFunc } from "../Util/Util"
-import CardDark from "./Card/CardDark"
-import FieldDisplay, { FieldDisplayList } from "./FieldDisplay"
+import ConditionalSelector from "./ConditionalSelector"
+import { DataContext, dataContextObj } from "../../DataContext"
+import { Data } from "../../Formula/type"
+import { data as dataNode } from '../../Formula/utils'
+import IConditional from "../../Types/IConditional"
+import { evalIfFunc } from "../../Util/Util"
+import CardDark from "../Card/CardDark"
+import FieldDisplay, { FieldDisplayList } from "../FieldDisplay"
 
 type ConditionalDisplayProps = {
   conditional: IConditional,
