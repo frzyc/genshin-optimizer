@@ -88,9 +88,9 @@ export const sectionTemplate = (talentKey: TalentSheetElementKey, tr: (string) =
   canShow: fieldsCanShow,
   teamBuff,
   conditional: conditional
-    ? !conditional.header
-      ? { ...conditional, header: conditionalHeader(talentKey, tr, img), description: tr(`${talentKey}.description`) }
-      : conditional
+    ? { ...conditional,
+      header: conditional.header ? conditional.header : conditionalHeader(talentKey, tr, img),
+      description: conditional.description ? conditional.description : tr(`${talentKey}.description`) }
     : undefined,
 })
 
