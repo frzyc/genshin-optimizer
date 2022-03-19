@@ -56,6 +56,7 @@
     "dendro": "Dendro Infusion",
     "geo": "Geo Infusion"
   },
+  "energyRegen": "Energy Regeneration",
   "affectDuration":{
     "pyro": "Pyro affect duration",
     "cryo": "Cryo affect duration",
