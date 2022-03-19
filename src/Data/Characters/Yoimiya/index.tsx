@@ -39,15 +39,15 @@ const datamine = {
   },
   skill: {
     dmg_: skillParam_gen.skill[3],
-    duration: 10,
-    cd: 18
+    duration: skillParam_gen.skill[2][0],
+    cd: skillParam_gen.skill[1][0]
   },
   burst: {
     dmg: skillParam_gen.burst[0],
     exp: skillParam_gen.burst[1],
-    duration: 10,
-    cd: 15,
-    cost: 60
+    duration: skillParam_gen.burst[3][0],
+    cd: skillParam_gen.burst[4][0],
+    cost: skillParam_gen.burst[5][0]
   },
   passive1: {
     pyro_dmg_: skillParam_gen.passive1[0][0],
@@ -85,7 +85,7 @@ const [condC1Path, condC1] = cond(characterKey, "c1")
 const [condC2Path, condC2] = cond(characterKey, "c2")
 const const3TalentInc = greaterEq(input.constellation, 3, 3)
 const const5TalentInc = greaterEq(input.constellation, 5, 3)
-const normal_dmgMult = matchFull(condSkill, "skill", subscript(input.total.skillIndex, datamine.skill.dmg_), 1, { key: 'normal_dmg_' })
+const normal_dmgMult = matchFull(condSkill, "skill", subscript(input.total.skillIndex, datamine.skill.dmg_), 1)
 const a1Stacks = lookup(condA1, Object.fromEntries(range(1, datamine.passive1.maxStacks).map(i => [i, constant(i)])), 0)
 const pyro_dmg_ = infoMut(prod(percent(datamine.passive1.pyro_dmg_), a1Stacks), { key: 'pyro_dmg_', variant: elementKey })
 const atk_ = unequal(input.activeCharKey, characterKey, sum(percent(datamine.passive2.fixed_atk_), prod(percent(datamine.passive2.var_atk_), a1Stacks)))
@@ -183,12 +183,19 @@ const sheet: ICharacterSheet = {
         value: datamine.skill.cd,
         unit: 's'
       }], {
-        name: tr("skill.name"),
+        name: charTr("skillState"),
         path: condSkillPath,
         value: condSkill,
         states: {
           skill: {
             fields: [{
+              text: charTr("normMult"),
+              value: data => data.get(normal_dmgMult).value * 100,
+              fixed: 1,
+              unit: "%",
+            }, {
+              text: charTr("normPyroInfus"),
+            }, {
               text: tr("skill.skillParams.1"),
               value: datamine.skill.duration,
               unit: 's'
