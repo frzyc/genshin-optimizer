@@ -1,11 +1,10 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
-import { input } from '../../../Formula'
-import { constant, equal, equalStr, greaterEq, greaterEqStr, infoMut, lookup, naught, percent, prod, subscript, sum } from '../../../Formula/utils'
+import { input, target } from '../../../Formula'
+import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
-import { objectKeyMap, range } from '../../../Util/Util'
-import { cond, condReadNode, sgt, st, trans } from '../../SheetUtil'
-import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import { cond, sgt, st, trans } from '../../SheetUtil'
+import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
 import { absorbableEle, customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
@@ -101,7 +100,7 @@ const [condC6Path, condC6] = cond(key, "c6")
 const c6_anemo_enemyRes_ = equal(condC6, "takeDmg", datamine.constellation6.res_)
 const c6_ele_enemyRes_arr = Object.fromEntries(absorbableEle.map(ele => [
   `${ele}_enemyRes_`,
-  greaterEq(input.asc, 4, equal(ele, condBurstAbsorption, constant(datamine.constellation6.res_)))
+  greaterEq(input.constellation, 6, equal(ele, condBurstAbsorption, constant(datamine.constellation6.res_)))
 ]))
 
 const dmgFormulas = {
@@ -305,7 +304,17 @@ const sheet: ICharacterSheet = {
           }, {
             text: trm("q"),
           }],
-        }, { // C6 Pt 1
+        // C6 Pt 2 self
+        }, sectionTemplate("constellation6", tr, c6, absorbableEle.map(eleKey => (
+            { node: c6_ele_enemyRes_arr[`${eleKey}_enemyRes_`] }
+          )),
+          undefined,
+          data => data.get(input.constellation).value >= 6 
+            && data.get(condBurstAbsorption).value !== undefined
+            && data.get(equal(target.charKey, key, 1)).value === 1,
+          false,
+          true
+        ), { // C6 Pt 1
           conditional: {
             value: condC6,
             path: condC6Path,
@@ -322,7 +331,7 @@ const sheet: ICharacterSheet = {
               }
             }
           }
-        }, { // C6 Pt 2
+        }, { // C6 Pt 2 teambuff
           conditional: {
             value: condBurstAbsorption,
             path: condBurstAbsorptionPath,
@@ -330,7 +339,7 @@ const sheet: ICharacterSheet = {
             description: tr("constellation6.description.1"),
             name: st("eleAbsor"),
             teamBuff: true,
-            canShow: greaterEq(input.constellation, 6, 1),
+            canShow: greaterEq(input.constellation, 6, unequal(input.activeCharKey, key, 1)),
             states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
               name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
               fields: [{
@@ -338,16 +347,6 @@ const sheet: ICharacterSheet = {
               }]
             }]))
           }
-        // TODO: Can't do this unless we have support for `DocumentSection` in team buff panel
-        //   fieldsHeader: conditionalHeader("constellation6", tr, c6),
-        //   canShow: data => data.get(input.constellation).value >= 6 
-        //     && data.get(condBurstAbsorption).value !== undefined,
-        //   teamBuff: true,
-        //   fields: [
-        //     ...absorbableEle.map(eleKey => {
-        //       return { node: c6_ele_enemyRes_arr[`${eleKey}_enemyRes_`] }
-        //     })
-        //   ]
         }]
       },
       passive1: talentTemplate("passive1", tr, passive1),
