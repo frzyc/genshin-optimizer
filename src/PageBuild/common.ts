@@ -98,7 +98,8 @@ function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean 
     }
   })
 
-  if ([...topLevelAffine].every(({ operation }) => operation === "read" || operation === "const"))
+  if ([...topLevelAffine].every(({ operation }) => operation === "read" || operation === "const") &&
+    Object.keys(arts.base).length === dynKeys.size)
     return { nodes, arts }
 
   let current = -1
