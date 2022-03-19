@@ -4,7 +4,7 @@ import { input, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
-import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
 import { absorbableEle, customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
@@ -176,18 +176,16 @@ const sheet: ICharacterSheet = {
   title: tr("title"),
   talent: {
     sheets: {
-      auto: {
-        name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey),
-        sections: [{
-          text: tr("auto.fields.normal"),
-          fields: datamine.normal.hitArr.map((_, i) => ({
+      auto: talentTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey), undefined, undefined, [{
+        ...sectionTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey), 
+          datamine.normal.hitArr.map((_, i) => ({
             node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
             textSuffix: (i === 0 || i === 3) ? st("brHits", { count: 2 }) : ""
           }))
-        }, {
-          text: tr("auto.fields.charged"),
-          fields: [{
+        ),
+        text: tr("auto.fields.normal")
+      }, {
+        ...sectionTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey), [{
             node: infoMut(dmgFormulas.charged.aimed, { key: `char_${key}_gen:auto.skillParams.6` }),
           }, {
             node: infoMut(dmgFormulas.constellation1.aimed, { key: `char_${key}:addAimed` })
@@ -196,116 +194,96 @@ const sheet: ICharacterSheet = {
           }, {
             node: infoMut(dmgFormulas.constellation1.fully, { key: `char_${key}:addFullAimed` })
           }]
-        }, {
-          text: tr("auto.fields.plunging"),
-          fields: [{
+        ),
+        text: tr("auto.fields.charged"),
+      }, {
+        ...sectionTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey), [{
             node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
           }, {
             node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
           }, {
             node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
           }]
-        }],
-      },
-      skill: { // Cannot use talentTemplate because this has multiple sections
-        name: tr("skill.name"),
-        img: skill,
-        sections: [{
-          text: tr("skill.description"),
-          fields: [{
-            node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` })
-          }, {
-            text: tr("skill.skillParams.1"),
-            value: datamine.skill.pressCD,
-            unit: "s"
-          }, {
-            node: infoMut(dmgFormulas.skill.hold, { key: `char_${key}_gen:skill.skillParams.2` })
-          }, {
-            text: st("holdCD"),
-            value: datamine.skill.holdCD,
-            unit: "s"
-          }], 
-        }, { // A1 - upcurrent
-          fieldsHeader: conditionalHeader("passive1", tr, passive1),
-          canShow: data => data.get(input.asc).value >= 1,
-          fields: [{
-            text: trm("upcurrentDuration"),
-            value: datamine.passive1.duration,
-            unit: "s"
-          }]
-        }, { // C2
-          conditional: {
-            value: condC2,
-            path: condC2Path,
-            teamBuff: true,
-            canShow: greaterEq(input.constellation, 2, 1),
-            name: tr("constellation2.name"),
-            header: conditionalHeader("constellation2", tr, c2),
-            description: tr("constellation2.description"),
-            states: {
-              hit: {
-                name: trm("c2.hit"),
-                fields: [{
-                  node: infoMut(c2Hit_anemo_enemyRes_, { key: "anemo_enemyRes_", variant: "anemo" })
-                }, {
-                  node: c2Hit_phys_enemyRes__
-                }]
-              },
-              launched: {
-                name: trm("c2.launched"),
-                fields: [{
-                  node: infoMut(c2Hit_anemo_enemyRes_, { key: "anemo_enemyRes_", variant: "anemo" })
-                }, {
-                  node: c2Hit_phys_enemyRes__
-                }]
-              }
+        ),
+        text: tr("auto.fields.plunging"),
+      }]),
+      skill: talentTemplate("skill", tr, skill, [{
+        node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` })
+      }, {
+        text: tr("skill.skillParams.1"),
+        value: datamine.skill.pressCD,
+        unit: "s"
+      }, {
+        node: infoMut(dmgFormulas.skill.hold, { key: `char_${key}_gen:skill.skillParams.2` })
+      }, {
+        text: st("holdCD"),
+        value: datamine.skill.holdCD,
+        unit: "s"
+      }],
+      undefined, [
+        sectionTemplate("passive1", tr, passive1, [{
+          text: trm("upcurrentDuration"),
+          value: datamine.passive1.duration,
+          unit: "s"
+        }], undefined, data => data.get(input.asc).value >= 1, false, true
+        ), sectionTemplate("constellation2", tr, c2, undefined, {
+          value: condC2,
+          path: condC2Path,
+          teamBuff: true,
+          canShow: greaterEq(input.constellation, 2, 1),
+          name: tr("constellation2.name"),
+          states: {
+            hit: {
+              name: trm("c2.hit"),
+              fields: [{
+                node: infoMut(c2Hit_anemo_enemyRes_, { key: "anemo_enemyRes_", variant: "anemo" })
+              }, {
+                node: c2Hit_phys_enemyRes__
+              }]
+            },
+            launched: {
+              name: trm("c2.launched"),
+              fields: [{
+                node: infoMut(c2Hit_anemo_enemyRes_, { key: "anemo_enemyRes_", variant: "anemo" })
+              }, {
+                node: c2Hit_phys_enemyRes__
+              }]
             }
           }
-        }]
-      },
-      burst: { // Cannot use talentTemplate because this has multiple sections
-        name: tr("burst.name"),
-        img: burst,
-        sections: [{
-          text: tr("burst.description"),
+        })
+      ]),
+      burst: talentTemplate("burst", tr, burst, [{
+        node: infoMut(dmgFormulas.burst.base, { key: `char_${key}_gen:burst.skillParams.0` }),
+        textSuffix: st("brHits", { count: datamine.burst.baseTicks })
+      }, {
+        text: tr("burst.skillParams.2"),
+        value: datamine.burst.duration,
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.3"),
+        value: datamine.burst.cd,
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.4"),
+        value: datamine.burst.enerCost,
+      }], {
+        value: condBurstAbsorption,
+        path: condBurstAbsorptionPath,
+        name: st("eleAbsor"),
+        states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+          name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
           fields: [{
-            node: infoMut(dmgFormulas.burst.base, { key: `char_${key}_gen:burst.skillParams.0` }),
-            textSuffix: st("brHits", { count: datamine.burst.baseTicks })
-          }, {
-            text: tr("burst.skillParams.2"),
-            value: datamine.burst.duration,
-            unit: "s"
-          }, {
-            text: tr("burst.skillParams.3"),
-            value: datamine.burst.cd,
-            unit: "s"
-          }, {
-            text: tr("burst.skillParams.4"),
-            value: datamine.burst.enerCost,
-          }],
-          conditional: { // Absorption
-            value: condBurstAbsorption,
-            path: condBurstAbsorptionPath,
-            header: conditionalHeader("burst", tr, burst),
-            name: st("eleAbsor"),
-            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-              fields: [{
-                node: infoMut(dmgFormulas.burst.absorb, { key: `char_${key}_gen:burst.skillParams.1` }),
-                textSuffix: st("brHits", { count: datamine.burst.absorbTicks })
-              }]
-            }]))
-          }
-        }, { // A4
-          fieldsHeader: conditionalHeader("passive2", tr, passive2),
-          canShow: data => data.get(input.asc).value >= 4,
-          fields: [{
-            text: trm("regenEner"),
-          }, {
-            text: trm("q"),
-          }],
-        // C6 Pt 2 self
-        }, sectionTemplate("constellation6", tr, c6, absorbableEle.map(eleKey => (
+            node: infoMut(dmgFormulas.burst.absorb, { key: `char_${key}_gen:burst.skillParams.1` }),
+            textSuffix: st("brHits", { count: datamine.burst.absorbTicks })
+          }]
+        }]))
+      }, [
+        sectionTemplate("passive2", tr, passive2, [{
+          text: trm("regenEner"),
+        }, {
+          text: trm("q"),
+        }], undefined, data => data.get(input.asc).value >= 4, false, true
+        ), sectionTemplate("constellation6", tr, c6, absorbableEle.map(eleKey => (
             { node: c6_ele_enemyRes_arr[`${eleKey}_enemyRes_`] }
           )),
           undefined,
@@ -314,41 +292,35 @@ const sheet: ICharacterSheet = {
             && data.get(equal(target.charKey, key, 1)).value === 1,
           false,
           true
-        ), { // C6 Pt 1
-          conditional: {
-            value: condC6,
-            path: condC6Path,
-            header: conditionalHeader("constellation6", tr, c6),
-            description: tr("constellation6.description.0"),
-            teamBuff: true,
-            name: trm("c6"),
-            canShow: greaterEq(input.constellation, 6, 1),
-            states: {
-              takeDmg: {
-                fields: [{
-                  node: infoMut(c6_anemo_enemyRes_, { key: "anemo_enemyRes_", variant: "anemo" })
-                }]
-              }
+        ), sectionTemplate("constellation6", tr, c6, undefined, {
+          value: condC6,
+          path: condC6Path,
+          description: tr("constellation6.description.0"),
+          teamBuff: true,
+          name: trm("c6"),
+          canShow: greaterEq(input.constellation, 6, 1),
+          states: {
+            takeDmg: {
+              fields: [{
+                node: infoMut(c6_anemo_enemyRes_, { key: "anemo_enemyRes_", variant: "anemo" })
+              }]
             }
           }
-        }, { // C6 Pt 2 teambuff
-          conditional: {
-            value: condBurstAbsorption,
-            path: condBurstAbsorptionPath,
-            header: conditionalHeader("constellation6", tr, c6),
-            description: tr("constellation6.description.1"),
-            name: st("eleAbsor"),
-            teamBuff: true,
-            canShow: greaterEq(input.constellation, 6, unequal(input.activeCharKey, key, 1)),
-            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-              fields: [{
-                node: c6_ele_enemyRes_arr[`${eleKey}_enemyRes_`]
-              }]
-            }]))
-          }
-        }]
-      },
+        }), sectionTemplate("constellation6", tr, c6, undefined, {
+          value: condBurstAbsorption,
+          path: condBurstAbsorptionPath,
+          description: tr("constellation6.description.1"),
+          name: st("eleAbsor"),
+          teamBuff: true,
+          canShow: greaterEq(input.constellation, 6, unequal(input.activeCharKey, key, 1)),
+          states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+            name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+            fields: [{
+              node: c6_ele_enemyRes_arr[`${eleKey}_enemyRes_`]
+            }]
+          }]))
+        })
+      ]),
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: talentTemplate("passive2", tr, passive2),
       passive3: talentTemplate("passive3", tr, passive3, [{ node: p3_staminaGlidingDec_ }]),
