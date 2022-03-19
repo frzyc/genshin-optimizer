@@ -12,7 +12,7 @@ import Bennett from './Bennett'
 import Diluc from './Diluc'
 // import Diona from './Diona'
 import Eula from './Eula'
-// import Fischl from './Fischl'
+import Fischl from './Fischl'
 import Ganyu from './Ganyu'
 // import Gorou from './Gorou'
 import HuTao from './HuTao'
@@ -61,7 +61,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Diluc,
   // Diona,
   Eula,
-  // Fischl,
+  Fischl,
   Ganyu,
   // Gorou,
   HuTao,
