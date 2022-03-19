@@ -32,6 +32,8 @@ const statMap = {
 
   heal_multi: "Heal multiplier",
 
+  bonus_critRate_: "Bonus Crit Rate",
+
   // Reaction
   transformative_level_multi: "Reaction Level Multiplier",
   amplificative_dmg_: "Amplificative Reaction DMG Bonus",

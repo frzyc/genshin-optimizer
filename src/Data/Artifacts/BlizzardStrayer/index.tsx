@@ -19,8 +19,8 @@ const set4 = greaterEq(input.artSet.BlizzardStrayer, 4, lookup(condState, { "cry
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     cryo_dmg_: set2,
-    critRate_: set4
-  }
+    bonus_critRate_: set4,
+  },
 })
 
 const sheet: IArtifactSheet = {//Icebreaker

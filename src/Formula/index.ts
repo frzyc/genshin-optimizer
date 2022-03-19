@@ -21,6 +21,7 @@ const allMisc = [
 const allModStats = [
   ...allArtModStats,
   ...(["all", "burning", ...allTransformative, ...allAmplifying, ...allMoves] as const).map(x => `${x}_dmg_` as const),
+  "bonus_critRate_" as const,
 ]
 const allNonModStats = [
   ...allArtNonModStats,
@@ -155,8 +156,7 @@ const common: Data = {
           operands.push(prod(base[key], sum(unit, premod[`${key}_`])))
           break
         case "critRate_":
-          operands.push(percent(0.05, { key, prefix: "default" }),
-            lookup(hit.move, objectKeyMap(allMoves, move => premod[`${move}_critRate_`]), 0))
+          operands.push(percent(0.05, { key, prefix: "default" }))
           break
         case "critDMG_":
           operands.push(percent(0.5, { key, prefix: "default" }),
@@ -166,6 +166,8 @@ const common: Data = {
         case "enerRech_":
           operands.push(percent(1, { key, prefix: "default" }))
           break
+        case "bonus_critRate_":
+          operands.push(lookup(hit.move, objectKeyMap(allMoves, move => premod[`${move}_critRate_`]), 0))
       }
       return sum(...[...operands, art[key], customBonus[key]].filter(x => x))
     }),
@@ -177,7 +179,7 @@ const common: Data = {
     ...objectKeyValueMap(allTalents, talent => [`${talent}Index`, sum(total[talent], -1)]),
     stamina: sum(constant(100, { key: "stamina", prefix: "default" }), customBonus.stamina),
 
-    cappedCritRate: max(min(total.critRate_, unit), naught),
+    cappedCritRate: max(min(sum(total.critRate_, total.bonus_critRate_), unit), naught),
   },
 
   hit: {

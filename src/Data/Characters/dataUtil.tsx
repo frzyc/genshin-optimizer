@@ -15,7 +15,6 @@ export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[
 const charCurves = objectMap(_charCurves, value => [0, ...Object.values(value)])
 
 const commonBasic = objectKeyMap([...allSubstats, "heal_"], key => input.total[key])
-commonBasic.critRate_ = input.total.cappedCritRate
 
 const inferredHitEle = stringPrio(
   // Inferred Element
