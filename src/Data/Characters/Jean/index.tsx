@@ -75,7 +75,6 @@ const datamine = {
   },
 } as const
 
-// TODO: These healing nodes are correct right?
 const regen = healNodeTalent("atk", datamine.burst.burstActivationAtkModifier, datamine.burst.burstActionFlatModifier, "burst")
 const contRegen = healNodeTalent("atk", datamine.burst.burstRegenAtkModifier, datamine.burst.burstRegenFlatModifier, "burst")
 const a1Regen = greaterEq(input.asc, 1, customHealNode(prod(percent(datamine.passive1.atkPercentage), input.total.atk)))
@@ -86,11 +85,9 @@ const [condC2Path, condC2] = cond(key, "c2")
 const atkSPD_ = equal(condC2, "on", greaterEq(input.constellation, 2, percent(datamine.constellation2.atkSpd)))
 const moveSPD_ = equal(condC2, "on", greaterEq(input.constellation, 2, percent(datamine.constellation2.moveSpd)))
 
-// TODO: The C4 should technically be in teamBuff right?
 const [condC4Path, condC4] = cond(key, "c4")
 const anemo_enemyRes_ = equal(condC4, "on", greaterEq(input.constellation, 4, percent(-Math.abs(datamine.constellation4.anemoRes))))
 
-// TODO: The C6 should technically be in teamBuff right?
 const [condC6Path, condC6] = cond(key, "c6")
 const dmgRed_ = equal(condC6, "on", greaterEq(input.constellation, 6, percent(datamine.constellation6.dmgReduction)))
 
@@ -128,7 +125,6 @@ export const data = dataObjForCharacterSheet(key, elementKey, regionKey, data_ge
     skill: nodeC5,
     burst: nodeC3,
   },
-  // TODO: Are these correct?
   teamBuff: {
     premod: {
       atkSPD_,

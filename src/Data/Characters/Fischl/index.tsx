@@ -74,15 +74,10 @@ const dmgFormulas = {
   charged: {
     aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
     aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('electro') } }),
-    // TODO: Is this correct? 
-    // One is multiplying the whole dmgNode while the commented out one is multiplying the atk and charged dmg modifier first
-    // Not sure which is more accurate, or maybe it doesn't even matter
-    aimedChargedOz: greaterEq(input.asc, 1, prod(dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('electro') } }), percent(datamine.passive1.dmg)))
-    //aimedChargedOz: greaterEq(input.asc, 1, customDmgNode(prod(prod(subscript(input.total.autoIndex, datamine.charged.aimedCharged, { key: '_' }), input.total.atk), percent(datamine.passive1.dmg)), "charged", { hit: { ele: constant('electro') } }))
+    aimedChargedOz: greaterEq(input.asc, 1, prod(percent(datamine.passive1.dmg), dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('electro') } })))
   },
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
-  // TODO: Is this correct?
   skill: {
     ozDmg: dmgNode("atk", datamine.skill.ozDmg, "skill"),
     summonDmg: lessThan(input.constellation, 2, dmgNode("atk", datamine.skill.summonDmg, "skill")),
@@ -93,12 +88,10 @@ const dmgFormulas = {
   },
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
-    // TODO: Is this correct?
     additionalDmg: greaterEq(input.constellation, 4, customDmgNode(prod(input.total.atk, percent(datamine.constellation4.dmg)), "burst", { hit: { ele: constant('electro') } })),
     regen: greaterEq(input.constellation, 4, customHealNode(prod(input.total.hp, percent(datamine.constellation4.regen))))
   },
   passive2: {
-    // TODO: Is this correct?
     dmg: greaterEq(input.asc, 4, customDmgNode(prod(input.total.atk, percent(datamine.passive2.dmg)), "skill", { hit: { ele: constant('electro') } }))
   },
   constellation1: {
