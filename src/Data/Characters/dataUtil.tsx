@@ -3,7 +3,7 @@ import { input } from "../../Formula";
 import { inferInfoMut, mergeData } from "../../Formula/api";
 import { reactions } from "../../Formula/reaction";
 import { Data, DisplaySub, NumNode } from "../../Formula/type";
-import { constant, data, equalStr, infoMut, max, min, naught, percent, prod, stringPrio, subscript, sum, unit } from "../../Formula/utils";
+import { constant, data, equalStr, infoMut, percent, prod, stringPrio, subscript, sum, unit } from "../../Formula/utils";
 import { allMainStatKeys, allSubstats, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey, Region } from "../../Types/consts";
 import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
