@@ -77,7 +77,7 @@ export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) =>
   sections: [
     {
       ...sectionTemplate(talentKey, tr, img, fields, conditional, undefined, false, false),
-      text: tr(`${talentKey}.description`)
+      text: talentKey !== "auto" ? tr(`${talentKey}.description`) : undefined
     },
     ...(additionalSections || [])],
 })
