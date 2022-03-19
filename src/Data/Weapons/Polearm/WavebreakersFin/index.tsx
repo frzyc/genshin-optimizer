@@ -3,16 +3,16 @@ import { input } from '../../../../Formula'
 import { lookup, min, naught, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { range } from '../../../../Util/Util'
-import { cond, trans } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "WavebreakersFin"
 const data_gen = data_gen_json as WeaponData
-const [, trm] = trans("weapon", key)
+const [tr, trm] = trans("weapon", key)
 
 const [condPassivePath, condPassive] = cond(key, "WatatsumiWavewalker")
 const energyRange = range(4, 36).map(i => i * 10)
@@ -32,6 +32,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       name: trm("party"),
       states: Object.fromEntries(energyRange.map(i => [i, {
         name: i.toString(),

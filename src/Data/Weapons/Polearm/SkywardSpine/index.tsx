@@ -3,14 +3,16 @@ import { input } from '../../../../Formula'
 import { constant, infoMut, percent, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
+import { st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "SkywardSpine"
 const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
 
 const critRateInc = [0.08, 0.1, 0.12, 0.14, 0.16]
 const dmgPerc = [0.4, 0.55, 0.7, 0.85, 1]
@@ -30,6 +32,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
     fields: [{
       node: critRate_,
     }, {

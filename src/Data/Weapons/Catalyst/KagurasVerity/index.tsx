@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { equal, subscript, sum } from "../../../../Formula/utils"
 import { allElements, WeaponKey } from '../../../../Types/consts'
 import { range } from '../../../../Util/Util'
-import { cond, trans } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -13,11 +13,11 @@ import icon from './Icon.png'
 const key: WeaponKey = "KagurasVerity"
 const data_gen = data_gen_json as WeaponData
 const [tr] = trans("weapon", key)
-const dmg_ = [0.12, 0.15, 0.18, 0.21, 0.24]
+
 const [condPath, condNode] = cond(key, "KaguraDance")
-
-const skill_dmg_s = range(1, 3).map(i => equal(condNode, i.toString(), subscript(input.weapon.refineIndex, dmg_.map(d => d * i)), { key: "skill_dmg_" }))
-
+const totems = range(1, 3)
+const dmg_ = [0.12, 0.15, 0.18, 0.21, 0.24]
+const skill_dmg_s = totems.map(i => equal(condNode, i.toString(), subscript(input.weapon.refineIndex, dmg_.map(d => d * i)), { key: "skill_dmg_" }))
 const ele_dmg_s = Object.fromEntries(allElements.map(ele => [ele, equal(condNode, "3", subscript(input.weapon.refineIndex, dmg_))]))
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
@@ -33,25 +33,17 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condNode,
       path: condPath,
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
       description: conditionaldesc(tr),
-      name: "Kagura Dance",
-      states: {
-        1: {
-          name: "1",
-          fields: [{ node: skill_dmg_s[0] }]
-        },
-        2: {
-          name: "2",
-          fields: [{ node: skill_dmg_s[1] }]
-        },
-        3: {
-          name: "3",
-          fields: [{ node: skill_dmg_s[2], },
-          ...allElements.map(ele => ({ node: ele_dmg_s[ele] }))
-          ]
-        }
-      }
+      name: st("afterUse.skill"),
+      states:
+        Object.fromEntries(totems.map(i => [i, {
+          name: st("stack", { count: i }),
+          fields: [{
+            node: skill_dmg_s[i - 1]
+          },
+          ...allElements.map(ele => ({ node: ele_dmg_s[ele] }))]
+        }]))
     }
   }],
 }

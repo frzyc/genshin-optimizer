@@ -4,7 +4,6 @@ import { allCharacterKeys } from "../Types/consts"
 import { crawlObject, layeredAssignment } from "../Util/Util"
 import { DBStorage } from "./DBStorage"
 import { getDBVersion, setDBVersion } from "./utils"
-import { initialArtifactSortFilter } from "../PageArtifact/ArtifactSort"
 
 // MIGRATION STEP
 // 0. DO NOT change old `migrateV<x>ToV<x+1>` code

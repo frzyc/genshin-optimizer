@@ -1,12 +1,8 @@
-import { UIData } from "../Formula/api";
 import { EleEnemyResKey, StatKey } from "../KeyMap";
 import { BuildSetting } from "./Build";
-import { ICachedCharacter } from "./character";
-import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponTypeKey } from "./consts";
-import IConditional, { IConditionalValues } from "./IConditional_WR";
-import { IFieldDisplay } from "./IFieldDisplay_WR";
+import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey } from "./consts";
+import { IConditionalValues } from "./IConditional";
 import { DocumentSection } from "./sheet";
-import { BasicStats, ICalculatedStats } from "./stats";
 export interface ICharacter {
   key: CharacterKey
   level: number
@@ -45,18 +41,3 @@ export interface TalentSheetElement {
   img: string
   sections: DocumentSection[]
 }
-
-export interface IFormulaSheet {
-  normal: ISubFormula
-  charged: ISubFormula
-  plunging: ISubFormula
-  skill: ISubFormula
-  burst: ISubFormula
-  [name: string]: ISubFormula
-}
-
-interface ISubFormula {
-  [name: string]: (stats: BasicStats) => FormulaItem
-}
-
-export type FormulaItem = [(s: ICalculatedStats) => number, string[]]

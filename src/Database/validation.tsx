@@ -24,13 +24,14 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
   const allPossibleRolls: { index: number, substatRolls: number[][] }[] = []
   let totalUnambiguousRolls = 0
 
-  function efficiency(rolls: number[], key: SubstatKey): number {
-    return rolls.reduce((a, b) => a + b, 0) / Artifact.maxSubstatValues(key) * 100
+  function efficiency(value: number, key: SubstatKey): number {
+    return value / Artifact.maxSubstatValues(key) * 100
   }
 
   substats.forEach((substat, index) => {
     const { key, value } = substat
     if (!key) return substat.value = 0
+    substat.efficiency = efficiency(value, key)
 
     const possibleRolls = Artifact.getSubstatRolls(key, value, rarity)
 
@@ -44,11 +45,10 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
       }
 
       substat.rolls = possibleRolls.reduce((best, current) => best.length < current.length ? best : current)
-      substat.efficiency = efficiency(substat.rolls, key)
+      substat.efficiency = efficiency(substat.rolls.reduce((a, b) => a + b, 0), key)
       substat.accurateValue = substat.rolls.reduce((a, b) => a + b, 0)
     } else { // Invalid Substat
       substat.rolls = []
-      substat.efficiency = 0
       errors.push(<>Invalid substat {KeyMap.get(substat.key)}</>)
     }
   })
@@ -64,9 +64,10 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
         highestScore = currentScore
         for (const { index, roll } of rolls) {
           const key = substats[index].key as SubstatKey
+          const accurateValue = roll.reduce((a, b) => a + b, 0)
           substats[index].rolls = roll
-          substats[index].accurateValue = roll.reduce((a, b) => a + b, 0)
-          substats[index].efficiency = efficiency(roll, key)
+          substats[index].accurateValue = accurateValue
+          substats[index].efficiency = efficiency(accurateValue, key)
         }
       }
 
@@ -142,7 +143,7 @@ function parseSubstats(obj: any): ISubstat[] {
   const substats = obj.slice(0, 4).map(({ key = undefined, value = undefined }) => {
     if (!allSubstats.includes(key) || typeof value !== "number" || !isFinite(value))
       return { key: "", value: 0 }
-    value = key.endsWith("_") ? parseFloat(value.toFixed(1)) : parseInt(value.toFixed())
+    value = key.endsWith("_") ? Math.round(value * 10) / 10 : Math.round(value)
     return { key, value }
   })
   while (substats.length < 4)

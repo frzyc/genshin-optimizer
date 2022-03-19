@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
-import { cond, trans } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -17,7 +17,7 @@ const data_gen = data_gen_json as WeaponData
 const critRate_s = [.08, .10, .12, .14, .16]
 const [condPassivePath, condPassive] = cond(key, "Focus")
 const critRate_ = lookup(condPassive, {
-  ...objectKeyMap(range(1, 5), i => prod(subscript(input.weapon.refineIndex, critRate_s), i)) 
+  ...objectKeyMap(range(1, 5), i => prod(subscript(input.weapon.refineIndex, critRate_s), i))
 }, naught)
 
 const data = dataObjForWeaponSheet(key, data_gen, {
@@ -33,11 +33,11 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
       description: conditionaldesc(tr),
       name: trm("condName"),
       states: Object.fromEntries(range(1, 5).map(i => [i, {
-        name: `${i}`,
+        name: st("stack", { count: i }),
         fields: [{
           node: critRate_
         }]

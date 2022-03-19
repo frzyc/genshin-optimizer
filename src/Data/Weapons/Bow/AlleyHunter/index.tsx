@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { lookup, subscript, prod, naught } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
-import { cond, trans } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { IWeaponSheet, conditionalHeader, conditionaldesc } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -17,7 +17,7 @@ const dmgInc = [.02, .025, .03, .035, .04]
 
 const [condPassivePath, condPassive] = cond(key, "OppidanAmbush")
 const all_dmg_ = lookup(condPassive, {
-  ...objectKeyMap(range(1, 10), i => prod(subscript(input.weapon.refineIndex, dmgInc), i)) 
+  ...objectKeyMap(range(1, 10), i => prod(subscript(input.weapon.refineIndex, dmgInc), i))
 }, naught)
 
 
@@ -34,14 +34,14 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       description: conditionaldesc(tr),
       name: trm("condName"),
       states: Object.fromEntries(range(1, 10).map(c => [c, {
         name: `${c}s`,
         fields: [{
           node: all_dmg_
-        }], 
+        }],
       }]))
     }
   }]

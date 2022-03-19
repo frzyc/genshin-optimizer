@@ -1,11 +1,11 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
+import { equal, lookup, naught, prod, subscript, sum } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { objectKeyMap, objectKeyValueMap, range } from '../../../../Util/Util'
-import { cond, sgt, trans } from '../../../SheetUtil'
+import { range } from '../../../../Util/Util'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
@@ -19,11 +19,14 @@ const atkSrc = [0.04, 0.05, 0.06, 0.07, 0.08]
 const [condPassivePath, condPassive] = cond(key, "GoldenMajesty")
 const shield_ = subscript(input.weapon.refineIndex, shieldSrc)
 
+const [condWithShieldPath, condWithShield] = cond(key, "WithShield")
+
 const atkInc = subscript(input.weapon.refineIndex, atkSrc)
-const atkStacks = lookup(condPassive, {
-  ...objectKeyMap(range(1, 5), i => prod(atkInc, i)),
-  ...objectKeyValueMap(range(1, 5), i => [`w${i}`, prod(atkInc, i, 2)]),
-}, naught)
+const atkStacks = prod(
+  sum(1, equal(condWithShield, "protected", 1)),
+  lookup(condPassive, Object.fromEntries(range(1, 5).map(i =>
+    [i, prod(atkInc, i)])), naught)
+)
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
@@ -36,34 +39,42 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    fields: [{
+      node: shield_
+    }],
     conditional: {
       value: condPassive,
       path: condPassivePath,
-      teamBuff: true,
-      header: conditionalHeader(tr, icon, iconAwaken),
-      description: conditionaldesc(tr),
-      name: trm("condName"),
+      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
+      name: st("hits"),
+      states: Object.fromEntries(range(1, 5).map(i => 
+        [i, {
+          name: st("stack", { count: i }),
+          fields: [{
+            node: atkStacks
+          }, {
+            text: sgt("duration"),
+            value: 8,
+            unit: "s"
+          }]
+        }]
+      )),
+    }
+  }, {
+    conditional: {
+      value: condWithShield,
+      path: condWithShieldPath,
+      header: conditionalHeader(tr, icon, iconAwaken, trm("shield")),
+      name: st("protectedByShield"),
       states: {
-        ...objectKeyMap(range(1, 5), i => ({
-          name: trm("stackWithoutShield", { count: i }),
+        protected: {
           fields: [{
-            node: atkStacks
-          }, {
-            text: sgt("duration"),
-            value: 8,
-            unit: "s"
+            text: trm("atkEffInc"),
+            value: 100,
+            unit: "%"
           }]
-        })),
-        ...objectKeyValueMap(range(1, 5), i => [`w${i}`, {
-          name: trm("stackWithShield", { count: i }),
-          fields: [{
-            node: atkStacks
-          }, {
-            text: sgt("duration"),
-            value: 8,
-            unit: "s"
-          }]
-        }]),
+        }
       }
     }
   }],

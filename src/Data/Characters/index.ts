@@ -6,17 +6,17 @@ import CharacterSheet from './CharacterSheet'
 // import Amber from './Amber'
 import AratakiItto from './AratakiItto'
 // import Barbara from './Barbara'
-// import Beidou from './Beidou'
+import Beidou from './Beidou'
 import Bennett from './Bennett'
 // import Chongyun from './Chongyun'
 import Diluc from './Diluc'
 // import Diona from './Diona'
 import Eula from './Eula'
-// import Fischl from './Fischl'
+import Fischl from './Fischl'
 import Ganyu from './Ganyu'
 // import Gorou from './Gorou'
 import HuTao from './HuTao'
-// import Jean from './Jean'
+import Jean from './Jean'
 import KaedeharaKazuha from './KaedeharaKazuha'
 // import Kaeya from './Kaeya'
 import KamisatoAyaka from './KamisatoAyaka'
@@ -25,7 +25,7 @@ import Keqing from './Keqing'
 import KujouSara from './KujouSara'
 // import Lisa from './Lisa'
 import Mona from './Mona'
-// import Ningguang from './Ningguang'
+import Ningguang from './Ningguang'
 import Noelle from './Noelle'
 // import Qiqi from './Qiqi'
 import RaidenShogun from './RaidenShogun'
@@ -40,7 +40,7 @@ import Sucrose from "./Sucrose"
 // import Traveler from './Traveler'
 import Venti from './Venti'
 import Xiangling from './Xiangling'
-// import Xiao from './Xiao'
+import Xiao from './Xiao'
 import Xingqiu from './Xingqiu'
 // import Xinyan from './Xinyan'
 import YaeMiko from './YaeMiko'
@@ -55,17 +55,17 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Amber,
   AratakiItto,
   // Barbara,
-  // Beidou,
+  Beidou,
   Bennett,
   // Chongyun,
   Diluc,
   // Diona,
   Eula,
-  // Fischl,
+  Fischl,
   Ganyu,
   // Gorou,
   HuTao,
-  // Jean,
+  Jean,
   KaedeharaKazuha,
   // Kaeya,
   KamisatoAyaka,
@@ -74,7 +74,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   KujouSara,
   // Lisa,
   Mona,
-  // Ningguang,
+  Ningguang,
   Noelle,
   // Qiqi,
   RaidenShogun,
@@ -89,7 +89,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Traveler,
   Venti,
   Xiangling,
-  // Xiao,
+  Xiao,
   Xingqiu,
   // Xinyan,
   YaeMiko,

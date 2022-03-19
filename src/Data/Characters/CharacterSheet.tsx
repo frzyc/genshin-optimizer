@@ -5,8 +5,10 @@ import { TalentSheet, TalentSheetElement, TalentSheetElementKey } from "../../Ty
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "../../Types/consts";
 import SqBadge from "../../Components/SqBadge";
 import Assets from "../../Assets/Assets";
-import IConditional from "../../Types/IConditional_WR";
-import { IFieldDisplay } from "../../Types/IFieldDisplay_WR";
+import IConditional from "../../Types/IConditional";
+import { IFieldDisplay } from "../../Types/IFieldDisplay";
+import { DocumentSection } from "../../Types/sheet";
+import { UIData } from "../../Formula/uiData";
 
 const characterSheets = import('.').then(imp => imp.default)
 
@@ -69,18 +71,27 @@ export default class CharacterSheet {
     `${level}/${ascensionMaxLevel[ascension]}`
 }
 
-export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[], conditional?: IConditional): TalentSheetElement => ({
+export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[], conditional?: IConditional, additionalSections?: DocumentSection[]): TalentSheetElement => ({
   name: tr(`${talentKey}.name`),
   img,
-  sections: [{
-    text: tr(`${talentKey}.description`),
-    fields,
-    conditional: conditional
-      ? !conditional.header
-        ? { ...conditional, header: conditionalHeader(talentKey, tr, img), description: tr(`${talentKey}.description`) }
-        : conditional
-      : undefined,
-  }],
+  sections: [
+    {
+      ...sectionTemplate(talentKey, tr, img, fields, conditional, undefined, false, false),
+      text: tr(`${talentKey}.description`)
+    },
+    ...(additionalSections || [])],
+})
+export const sectionTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[], conditional?: IConditional, fieldsCanShow?: (data: UIData) => boolean, teamBuff?: boolean, showFieldsHeaderDesc?: boolean): DocumentSection => ({
+  fieldsHeader: showFieldsHeaderDesc ? conditionalHeader(talentKey, tr, img): undefined,
+  fieldsDescription: showFieldsHeaderDesc ? tr(`${talentKey}.description`) : undefined,
+  fields,
+  canShow: fieldsCanShow,
+  teamBuff,
+  conditional: conditional
+    ? !conditional.header
+      ? { ...conditional, header: conditionalHeader(talentKey, tr, img), description: tr(`${talentKey}.description`) }
+      : conditional
+    : undefined,
 })
 
 const talentStrMap: Record<TalentSheetElementKey, string> = {

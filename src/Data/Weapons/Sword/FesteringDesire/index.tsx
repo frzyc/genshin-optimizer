@@ -5,11 +5,14 @@ import { subscript } from "../../../../Formula/utils"
 import { dataObjForWeaponSheet } from '../../util'
 import { input } from '../../../../Formula'
 import data_gen_json from './data_gen.json'
-import WeaponSheet, { IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import { WeaponKey } from '../../../../Types/consts'
+import { st, trans } from '../../../SheetUtil'
 
 const key: WeaponKey = "FesteringDesire"
 const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
+
 const skill_dmgInc = [0.16, 0.2, 0.24, 0.28, 0.32]
 const skill_critInc = [0.06, 0.075, 0.09, 0.105, 0.12]
 const skill_dmg_ = subscript(input.weapon.refineIndex, skill_dmgInc, { key: '_' })
@@ -25,6 +28,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
     fields: [{
       node: skill_dmg_
     }, {

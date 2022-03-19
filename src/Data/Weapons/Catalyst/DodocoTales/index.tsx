@@ -22,11 +22,9 @@ const charged_dmg_ = equal("on", condNormal, subscript(input.weapon.refineIndex,
 const atk_ = equal("on", condCharged, subscript(input.weapon.refineIndex, atkInc))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
-  teamBuff: {
-    premod: {
-      charged_dmg_,
-      atk_
-    }
+  premod: {
+    charged_dmg_,
+    atk_
   }
 })
 
@@ -38,7 +36,7 @@ const sheet: IWeaponSheet = {
       value: condNormal,
       path: condNormalPath,
       name: st("hitOp.normal"),
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       description: conditionaldesc(tr),
       states: {
         on: {

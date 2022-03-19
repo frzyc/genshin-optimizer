@@ -1,0 +1,6 @@
+{
+  "c1CondName": "Skill DMG (Hold > 1s)",
+  "c2CondName": "Jean picks up an Elemental Orb/Particle",
+  "c4CondName": "Opponents are within the field created by Dandelion Breeze",
+  "c6CondName": "Active Character is within the field created by Dandelion Breeze"
+}

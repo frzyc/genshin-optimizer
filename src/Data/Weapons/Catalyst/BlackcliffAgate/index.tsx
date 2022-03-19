@@ -33,12 +33,12 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
       description: conditionaldesc(tr),
       name: st("afterDefeatEnemy"),
       states:
         Object.fromEntries(opponentsDefeated.map(c => [c, {
-          name: `${c}`,
+          name: st("stack", { count: c }),
           fields: [{
             node: atk_,
           }, {

@@ -7,7 +7,7 @@ import { DocumentSection } from "../../Types/sheet";
 import { UIData } from "../../Formula/uiData"
 import { input } from "../../Formula"
 import SqBadge from "../../Components/SqBadge";
-import IConditional from "../../Types/IConditional_WR";
+import IConditional from "../../Types/IConditional";
 
 // TODO: remove typecasting once all sheets populated
 const artifactSheets = import(".").then(imp => imp.default)

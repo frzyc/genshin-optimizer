@@ -12,6 +12,10 @@
   "stack_other": "{{count}} Stacks",
   "member_one": "{{count}} Member",
   "member_other": "{{count}} Members",
+  "seconds_one": "{{count}} Second",
+  "seconds_other": "{{count}} Seconds",
+  "uses_one": "{{count}} Use",
+  "uses_other": "{{count}} Uses",
   "afterDefeatEnemy": "After defeating an opponent",
   "hitOp": {
     "normal": "Normal Attack hits on opponents",
@@ -56,8 +60,20 @@
     "dendro": "Dendro Infusion",
     "geo": "Geo Infusion"
   },
+  "energyRegen": "Energy Regeneration",
+  "affectDuration":{
+    "pyro": "Pyro affect duration",
+    "cryo": "Cryo affect duration",
+    "anemo": "Anemo affect duration",
+    "hydro": "Hydro affect duration",
+    "electro": "Electro affect duration",
+    "dendro": "Dendro affect duration",
+    "geo": "Geo affect duration"
+  },
   "base": "Base",
+  "conditional": "Conditional",
   "stacks": "Stacks",
+  "members": "Members",
   "hits": "Hits",
   "protectedByShield": "Protected by a shield"
 }
