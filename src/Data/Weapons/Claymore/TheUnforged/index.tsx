@@ -13,14 +13,12 @@ import icon from './Icon.png'
 const key: WeaponKey = "TheUnforged"
 const data_gen = data_gen_json as WeaponData
 const [tr, trm] = trans("weapon", key)
+
 const shieldSrc = [0.2, 0.25, 0.3, 0.35, 0.40]
 const atkSrc = [0.04, 0.05, 0.06, 0.07, 0.08]
-
 const [condPassivePath, condPassive] = cond(key, "GoldenMajesty")
 const shield_ = subscript(input.weapon.refineIndex, shieldSrc)
-
 const [condWithShieldPath, condWithShield] = cond(key, "WithShield")
-
 const atkInc = subscript(input.weapon.refineIndex, atkSrc)
 const atkStacks = prod(
   sum(1, equal(condWithShield, "protected", 1)),
@@ -34,7 +32,6 @@ const data = dataObjForWeaponSheet(key, data_gen, {
     atk_: atkStacks
   },
 })
-
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,

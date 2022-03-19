@@ -12,15 +12,14 @@ import icon from './Icon.png'
 const key: WeaponKey = "FreedomSworn"
 const data_gen = data_gen_json as WeaponData
 const [tr, trm] = trans("weapon", key)
-const autoSrc = [0.16, 0.20, 0.24, 0.28, 0.32]
-const atk_Src = [0.2, 0.25, 0.3, 0.35, 0.40]
 
 const [condPassivePath, condPassive] = cond(key, "MillennialMovement")
+const autoSrc = [0.16, 0.20, 0.24, 0.28, 0.32]
+const atk_Src = [0.2, 0.25, 0.3, 0.35, 0.40]
 const atk_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atk_Src))
 const normal_dmg_ = equal("on", condPassive, subscript(input.weapon.refineIndex, autoSrc))
 const charged_dmg_ = { ...normal_dmg_ }
 const plunging_dmg_ = { ...normal_dmg_ }
-
 const dmg_ = subscript(input.weapon.refineIndex, data_gen.addProps.map(x => x.dmg_ ?? NaN))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
@@ -36,7 +35,6 @@ const data = dataObjForWeaponSheet(key, data_gen, {
     }
   }
 })
-
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,

@@ -71,7 +71,9 @@
     "geo": "Geo affect duration"
   },
   "base": "Base",
+  "conditional": "Conditional",
   "stacks": "Stacks",
+  "members": "Members",
   "hits": "Hits",
   "protectedByShield": "Protected by a shield"
 }

@@ -12,8 +12,8 @@ import icon from './Icon.png'
 const key: WeaponKey = "WindblumeOde"
 const data_gen = data_gen_json as WeaponData
 const [tr] = trans("weapon", key)
-const atk_s = [.16, .20, .24, .28, .32]
 
+const atk_s = [.16, .20, .24, .28, .32]
 const [condPassivePath, condPassive] = cond(key, "WindblumeWish")
 const atk_ = equal(condPassive, "on", subscript(input.weapon.refineIndex, atk_s))
 
@@ -31,7 +31,7 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       name: st("afterUse.skill"),
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       description: conditionaldesc(tr),
       states: {
         on: {

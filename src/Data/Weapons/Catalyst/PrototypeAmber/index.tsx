@@ -27,7 +27,7 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       name: st("afterUse.burst"),
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       description: conditionaldesc(tr),
       states: {
         on: {

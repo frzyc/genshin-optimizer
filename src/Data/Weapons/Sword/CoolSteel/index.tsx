@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, trans } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -16,12 +16,12 @@ const [tr, trm] = trans("weapon", key)
 const dmgInc = [0.12, 0.15, 0.18, 0.21, 0.24]
 const [condPassivePath, condPassive] = cond(key, "BaneOfWaterAndIce")
 const all_dmg_ = equal("on", condPassive, subscript(input.weapon.refineIndex, dmgInc))
+
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     all_dmg_
   }
 })
-
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
@@ -30,7 +30,7 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       name: trm("condName"),
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       description: conditionaldesc(tr),
       states: {
         on: {
