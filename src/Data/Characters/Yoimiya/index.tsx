@@ -39,8 +39,8 @@ const datamine = {
   },
   skill: {
     dmg_: skillParam_gen.skill[3],
-    duration: skillParam_gen.skill[2][0],
-    cd: skillParam_gen.skill[1][0]
+    duration: skillParam_gen.skill[1][0],
+    cd: skillParam_gen.skill[2][0]
   },
   burst: {
     dmg: skillParam_gen.burst[0],
