@@ -3,7 +3,7 @@ import { createScheduler, createWorker, RecognizeResult, Scheduler } from 'tesse
 import ColorText from '../Components/ColoredText';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
-import KeyMap, { valueString } from '../KeyMap';
+import KeyMap, { cacheValueString, valueString } from '../KeyMap';
 import { allMainStatKeys, allSubstats, IArtifact, ICachedArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
 import { allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
 import { clamp, hammingDistance, objectKeyMap } from '../Util/Util';
@@ -259,21 +259,21 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   addText("slotKey", slotKeys, "Slot", (value) => <>{Artifact.slotName(value)}</>)
   addText("mainStatKey", mainStatKeys, "Main Stat", (value) => <>{KeyMap.getStr(value)}</>)
   texts.substats = <>{result.substats.filter(substat => substat.key !== "").map((substat, i) =>
-    <div key={i}>{detectedText(substat, "Sub Stat", (value) => <>{KeyMap.getStr(value.key)}+{valueString(value.value, KeyMap.unit(value.key))}</>)}</div>)
+    <div key={i}>{detectedText(substat, "Sub Stat", (value) => <>{KeyMap.getStr(value.key)}+{cacheValueString(value.value, KeyMap.unit(value.key))}</>)}</div>)
   }</>
 
   const unit = KeyMap.unit(result.mainStatKey)
   if (mainStatValues.find(value => value.mainStatValue === resultMainStatVal)) {
     if (mainStatKeys.has(result.mainStatKey)) {
       texts.level = detectedText(result.level, "Level", (value) => "+" + value)
-      texts.mainStatVal = detectedText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}</>)
+      texts.mainStatVal = detectedText(resultMainStatVal, "Main Stat value", (value) => <>{cacheValueString(value, unit)}</>)
     } else {
       texts.level = inferredText(result.level, "Level", (value) => "+" + value)
-      texts.mainStatVal = inferredText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}</>)
+      texts.mainStatVal = inferredText(resultMainStatVal, "Main Stat value", (value) => <>{cacheValueString(value, unit)}</>)
     }
   } else {
     texts.level = unknownText(result.level, "Level", (value) => "+" + value)
-    texts.mainStatVal = unknownText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}</>)
+    texts.mainStatVal = unknownText(resultMainStatVal, "Main Stat value", (value) => <>{cacheValueString(value, unit)}</>)
   }
 
   return [result, texts]
