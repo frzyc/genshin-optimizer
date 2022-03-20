@@ -1,0 +1,8 @@
+{
+  "skillDuration" : "Duration per Paw",
+  "pressShield" : "Shield DMG Absorption",
+  "holdShield" : "Hold Shield DMG Absorption",
+  "a1shielded" : "Character Shielded",
+  "c6low" : "Characters within radius below or equal 50% HP",
+  "c6high" : "Characters within radius above 50% HP"
+}
