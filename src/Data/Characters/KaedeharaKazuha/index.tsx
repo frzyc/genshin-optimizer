@@ -224,12 +224,9 @@ const sheet: ICharacterSheet = {
       }, {
         text: st("holdCD"),
         value: data => data.get(input.constellation).value >= 1
-          ? `${datamine.skill.cd} - 10% = ${datamine.skill.cd*(1-0.10)}` 
+          ? `${datamine.skill.cdHold} - 10% = ${datamine.skill.cdHold*(1-0.10)}` 
           : `${datamine.skill.cdHold}`,
         unit: "s"
-      }, {
-        canShow: data => data.get(input.constellation).value >= 1,
-        text: trm("c1"),
       }], undefined, [
         {...sectionTemplate("skill", tr, skill, [{
             node: infoMut(dmgFormulas.skill.pdmg, { key: "sheet_gen:plunging.dmg" }),
@@ -239,7 +236,12 @@ const sheet: ICharacterSheet = {
             node: infoMut(dmgFormulas.skill.phigh, { key: "sheet_gen:plunging.high" }),
           }]),
           fieldsHeader: { ...conditionalHeader("skill", tr, skill), title: trm("skillPlunge") }
-        }
+        },
+        sectionTemplate("constellation1", tr, c1, [{
+          node: infoMut(greaterEq(input.constellation, 1, percent(0.1)), { key: "skillCDRed_" })
+        }, {
+          text: trm("c1"),
+        }], undefined, data => data.get(input.constellation).value >= 1, false, true),
       ]),
       burst: talentTemplate("burst", tr, burst, [{
         node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
