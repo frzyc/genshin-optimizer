@@ -29,7 +29,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
+      header: conditionalHeader(tr, icon, iconAwaken),
       name: trm("condName"),
       states: {
         on: {
