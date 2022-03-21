@@ -36,8 +36,8 @@ export type ICharacterSheet = ICharacterSheetTalent | ICharacterSheetTalents
 
 export default class CharacterSheet {
   sheet: ICharacterSheet;
-  data: Data;
-  constructor(charSheet: ICharacterSheet, data: Data) {
+  private data: Data | Partial<Record<ElementKey, Data>>;
+  constructor(charSheet: ICharacterSheet, data: Data | Partial<Record<ElementKey, Data>>) {
     this.sheet = charSheet
     this.data = data
   }
@@ -61,6 +61,11 @@ export default class CharacterSheet {
   get isTraveler() {
     return "talents" in this.sheet
   }
+  getData = (ele: ElementKey = "anemo"): Data => {
+    if ("charKey" in this.data)
+      return this.data
+    return this.data[ele]!
+  }
   getTalent = (eleKey: ElementKey = "anemo"): TalentSheet | undefined => {
     if ("talent" in this.sheet) return this.sheet.talent
     else return this.sheet.talents[eleKey]
@@ -82,15 +87,17 @@ export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) =>
     ...(additionalSections || [])],
 })
 export const sectionTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[], conditional?: IConditional, fieldsCanShow?: (data: UIData) => boolean, teamBuff?: boolean, showFieldsHeaderDesc?: boolean): DocumentSection => ({
-  fieldsHeader: showFieldsHeaderDesc ? conditionalHeader(talentKey, tr, img): undefined,
+  fieldsHeader: showFieldsHeaderDesc ? conditionalHeader(talentKey, tr, img) : undefined,
   fieldsDescription: showFieldsHeaderDesc ? tr(`${talentKey}.description`) : undefined,
   fields,
   canShow: fieldsCanShow,
   teamBuff,
   conditional: conditional
-    ? { ...conditional,
+    ? {
+      ...conditional,
       header: conditional.header ? conditional.header : conditionalHeader(talentKey, tr, img),
-      description: conditional.description ? conditional.description : tr(`${talentKey}.description`) }
+      description: conditional.description ? conditional.description : tr(`${talentKey}.description`)
+    }
     : undefined,
 })
 

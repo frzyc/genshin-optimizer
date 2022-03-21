@@ -72,7 +72,7 @@ export const allCharacterKeys = [
   // "Razor",
   "Sucrose",
   // "Tartaglia",
-  // "Traveler",
+  "Traveler",
   "RaidenShogun",
   "Venti",
   "Xiangling",
@@ -271,3 +271,4 @@ export type ArtifactSetKey = typeof allArtifactSets[number]
 export type CharacterKey = typeof allCharacterKeys[number]
 export type WeaponTypeKey = typeof allWeaponTypeKeys[number]
 export type CharacterSpecializedStatKey = typeof characterSpecializedStatKeys[number]
+export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[]

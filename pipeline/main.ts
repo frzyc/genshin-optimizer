@@ -49,8 +49,8 @@ export type CharacterData = {
     props: { [key: string]: number }
   }[],
   birthday: {
-    month: number,
-    day: number
+    month?: number,
+    day?: number
   }
 }
 //parse baseStat/ascension/basic data
@@ -141,9 +141,10 @@ const characterSkillParamDump = Object.fromEntries(Object.entries(avatarExcelCon
 
 //dump data file to respective character directory.
 Object.entries(characterSkillParamDump).forEach(([characterKey, data]) => {
-  if (characterKey.includes('_')) {//Traveler, for multi element support
-    const [charKey, eleKey] = characterKey.split("_")
-    dumpFile(`${__dirname}/../src/Data/Characters/${charKey}/${eleKey}/skillParam_gen.json`, data)
+  if (characterKey === "Traveler") {//Traveler, for multi element support
+    Object.entries(data as any).forEach(([eleKey, eData]) => {
+      dumpFile(`${__dirname}/../src/Data/Characters/${characterKey}/${eleKey}/skillParam_gen.json`, eData)
+    });
   } else
     dumpFile(`${__dirname}/../src/Data/Characters/${characterKey}/skillParam_gen.json`, data)
 })

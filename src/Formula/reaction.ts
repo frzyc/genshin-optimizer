@@ -1,5 +1,5 @@
-import { absorbableEle } from "../Data/Characters/dataUtil";
 import { crystallizeLevelMultipliers, transformativeReactionLevelMultipliers, transformativeReactions } from "../StatConstants";
+import { absorbableEle } from "../Types/consts";
 import { objectKeyMap } from "../Util/Util";
 import { input } from "./index";
 import { frac, infoMut, percent, prod, subscript, sum, unit } from "./utils";

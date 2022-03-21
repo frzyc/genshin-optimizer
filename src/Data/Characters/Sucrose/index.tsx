@@ -2,11 +2,11 @@ import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from "../../../Formula/index"
 import { constant, equal, greaterEq, infoMut, percent, prod, unequal } from "../../../Formula/utils"
-import { CharacterKey, ElementKey } from '../../../Types/consts'
+import { absorbableEle, CharacterKey, ElementKey } from '../../../Types/consts'
 import { objectKeyMap } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
-import { absorbableEle, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'

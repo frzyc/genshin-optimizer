@@ -5,7 +5,6 @@ import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/const
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, deepClone, layeredAssignment, objectKeyMap, objPathValue } from "../Util/Util";
 import { input } from "./index";
-import { reactions } from "./reaction";
 import { Data, DisplaySub, Info, Input, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData } from "./uiData";
 import { constant, customRead, percent, resetData, setReadNodeKeys } from "./utils";
@@ -72,14 +71,6 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     result.premod!.enemyDefRed_ = percent(char.enemyOverride.enemyDefRed_ / 100)
   if (char.enemyOverride.enemyDefIgn_)
     result.enemy!.defIgn = percent(char.enemyOverride.enemyDefIgn_ / 100)
-  if (char.elementKey) {
-    result.charEle = constant(char.elementKey)
-    result.display = {
-      basic: { [`${char.elementKey}_dmg_`]: input.total[`${char.elementKey}_dmg_`] },
-      reaction: reactions[char.elementKey]
-    }
-    layeredAssignment(result, ["teamBuff", "tally", char.elementKey], constant(1))
-  }
 
   crawlObject(char.conditional, ["conditional"], (x: any) => typeof x === "string", (x: string, keys: string[]) =>
     layeredAssignment(result, keys, constant(x)))

@@ -1,4 +1,9 @@
 {
+  "anemo": {
+    "p1": "Wind Blade DMG",
+    "c1": "Reduce DMG taken while casting",
+    "c6": "Targets who take DMG from <strong>Gust Surge</strong>"
+  },
   "electro": {
     "skill": {
       "absorb": "Absorbing an Abundance Amulet"

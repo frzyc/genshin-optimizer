@@ -2,10 +2,10 @@ import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import { constant, equal, equalStr, greaterEq, greaterEqStr, infoMut, percent, prod, unequal } from '../../../Formula/utils'
-import { CharacterKey, ElementKey } from '../../../Types/consts'
+import { absorbableEle, CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, condReadNode, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
-import { absorbableEle, customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -179,7 +179,7 @@ const sheet: ICharacterSheet = {
   talent: {
     sheets: {
       auto: talentTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey), undefined, undefined, [{
-        ...sectionTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey), 
+        ...sectionTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey),
           datamine.normal.hitArr.map((_, i) => ({
             node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i + (i < 3 ? 0 : -1)}` }),
             textSuffix: i === 2 ? "(1)" : i === 3 ? "(2)" : i === 5 ? st("brHits", { count: 3 }) : ""
@@ -188,25 +188,25 @@ const sheet: ICharacterSheet = {
         text: tr("auto.fields.normal")
       }, {
         ...sectionTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey), [{
-            node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
-            textSuffix: "(1)"
-          }, {
-            node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${key}_gen:auto.skillParams.5` }),
-            textSuffix: "(2)"
-          }, {
-            text: tr("auto.skillParams.6"),
-            value: datamine.charged.stamina,
-          }]
+          node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
+          textSuffix: "(1)"
+        }, {
+          node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${key}_gen:auto.skillParams.5` }),
+          textSuffix: "(2)"
+        }, {
+          text: tr("auto.skillParams.6"),
+          value: datamine.charged.stamina,
+        }]
         ),
         text: tr("auto.fields.charged"),
       }, {
         ...sectionTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey), [{
-            node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
-          }, {
-            node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
-          }, {
-            node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
-          }]
+          node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+        }, {
+          node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        }, {
+          node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        }]
         ),
         text: tr("auto.fields.plunging"),
       }]),
@@ -214,8 +214,8 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` }),
       }, {
         text: tr("skill.skillParams.1"),
-        value: data => data.get(input.constellation).value >= 1 
-          ? `${datamine.skill.cd} - 10% = ${datamine.skill.cd*(1-0.10)}` 
+        value: data => data.get(input.constellation).value >= 1
+          ? `${datamine.skill.cd} - 10% = ${datamine.skill.cd * (1 - 0.10)}`
           : `${datamine.skill.cd}`,
         unit: "s"
       }, {
@@ -223,11 +223,12 @@ const sheet: ICharacterSheet = {
       }, {
         text: st("holdCD"),
         value: data => data.get(input.constellation).value >= 1
-          ? `${datamine.skill.cdHold} - 10% = ${datamine.skill.cdHold*(1-0.10)}` 
+          ? `${datamine.skill.cdHold} - 10% = ${datamine.skill.cdHold * (1 - 0.10)}`
           : `${datamine.skill.cdHold}`,
         unit: "s"
       }], undefined, [
-        {...sectionTemplate("skill", tr, skill, [{
+        {
+          ...sectionTemplate("skill", tr, skill, [{
             node: infoMut(dmgFormulas.skill.pdmg, { key: "sheet_gen:plunging.dmg" }),
           }, {
             node: infoMut(dmgFormulas.skill.plow, { key: "sheet_gen:plunging.low" }),
@@ -312,13 +313,13 @@ const sheet: ICharacterSheet = {
           }]
         }]))
       }),
-      passive2: talentTemplate("passive2", tr, passive2, undefined, undefined, absorbableEle.map(eleKey => 
+      passive2: talentTemplate("passive2", tr, passive2, undefined, undefined, absorbableEle.map(eleKey =>
         sectionTemplate("passive2", tr, passive2, undefined, { // Poetics of Fuubutsu
           value: condSwirls[eleKey],
           path: condSwirlPaths[eleKey],
           teamBuff: true,
           // Only show the description once. Can't be truly blank or it will be filled in with a default.
-          description: eleKey === "hydro" ? tr("passive2.description"): " ",
+          description: eleKey === "hydro" ? tr("passive2.description") : " ",
           name: trm(`a4.name_${eleKey}`),
           header: conditionalHeader("passive2", tr, passive2),
           canShow: greaterEq(input.asc, 4, 1),

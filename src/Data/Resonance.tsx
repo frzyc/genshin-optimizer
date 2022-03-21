@@ -1,7 +1,7 @@
 import StatIcon from "../Components/StatIcon";
 import { Translate } from "../Components/Translate";
 import { tally } from "../Formula";
-import { Data } from "../Formula/type";
+import { inferInfoMut } from "../Formula/api";
 import { UIData } from "../Formula/uiData";
 import { equal, greaterEq, min, percent, sum } from "../Formula/utils";
 import { allElements, allElementsWithPhy } from "../Types/consts";
@@ -190,7 +190,7 @@ export const resonanceSheets: IResonance[] = [
   enduringRock,
 ]
 
-export const resonanceData: Data = {
+export const resonanceData = inferInfoMut({
   premod: {
     ...pcNodes,
     atk_: ffNode,
@@ -206,4 +206,4 @@ export const resonanceData: Data = {
     // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.
     critRate_: siNode
   }
-}
+})

@@ -2,7 +2,6 @@ import { PersonAdd } from "@mui/icons-material";
 import { CardContent, CardHeader, Divider, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useContext, useMemo } from 'react';
-import CardDark from "../../Components/Card/CardDark";
 import CardLight from "../../Components/Card/CardLight";
 import CharacterDropdownButton from "../../Components/Character/CharacterDropdownButton";
 import DocumentDisplay from "../../Components/DocumentDisplay";
@@ -22,7 +21,7 @@ import CharacterCard from "../CharacterCard";
 export default function CharacterTeamBuffsPane() {
   return <Box display="flex" flexDirection="column" gap={1} alignItems="stretch">
     <TeamBuffDisplay />
-    {/* <ResonanceDisplay /> */}
+    <ResonanceDisplay />
     <Grid container spacing={1}>
       {range(0, 2).map(i => <Grid item xs={12} md={6} lg={4} key={i}>
         <TeammateDisplay index={i} />
@@ -60,26 +59,19 @@ export function TeamBuffDisplay() {
 }
 function ResonanceDisplay() {
   const { data } = useContext(DataContext)
-  return <CardLight>
-    <CardContent>
-      Team Resonance
-    </CardContent>
-    <Divider />
-    <CardContent>
-      <Grid container spacing={1}>
-        {resonanceSheets.map((res, i) =>
-          <Grid item key={i} xs={12} md={6} lg={4} >
-            <CardDark sx={{ opacity: res.canShow(data) ? 1 : 0.5, height: "100%" }}>
-              <CardHeader title={res.name} action={res.icon} titleTypographyProps={{ variant: "subtitle2" }} />
-              {res.canShow(data) && <CardContent>
-                <DocumentDisplay sections={res.sections} teamBuffOnly={true} />
-              </CardContent>}
-            </CardDark>
-          </Grid>
-        )}
+  return <Grid container spacing={1}>
+    {resonanceSheets.map((res, i) =>
+      <Grid item key={i} xs={12} md={6} lg={4} >
+        <CardLight sx={{ opacity: res.canShow(data) ? 1 : 0.5, height: "100%" }}>
+          <CardHeader title={res.name} action={res.icon} titleTypographyProps={{ variant: "subtitle2" }} />
+          {res.canShow(data) && <Divider />}
+          {res.canShow(data) && <CardContent>
+            <DocumentDisplay sections={res.sections} teamBuffOnly={true} />
+          </CardContent>}
+        </CardLight>
       </Grid>
-    </CardContent>
-  </CardLight>
+    )}
+  </Grid>
 }
 function TeammateDisplay({ index }: { index: number }) {
   const dataContext = useContext(DataContext)

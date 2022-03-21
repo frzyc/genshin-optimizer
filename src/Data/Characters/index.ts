@@ -37,7 +37,7 @@ import Shenhe from "./Shenhe"
 import Sucrose from "./Sucrose"
 // import Tartaglia from './Tartaglia'
 // import Thoma from './Thoma'
-// import Traveler from './Traveler'
+import Traveler from './Traveler'
 import Venti from './Venti'
 import Xiangling from './Xiangling'
 import Xiao from './Xiao'
@@ -86,7 +86,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Sucrose,
   // Tartaglia,
   // Thoma,
-  // Traveler,
+  Traveler,
   Venti,
   Xiangling,
   Xiao,

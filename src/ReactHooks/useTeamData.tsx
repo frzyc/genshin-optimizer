@@ -13,6 +13,7 @@ import { ICachedWeapon } from "../Types/weapon";
 import { objectMap } from "../Util/Util";
 import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import useForceUpdate from "./useForceUpdate";
+import { resonanceData } from "../Data/Resonance";
 
 type TeamDataBundle = {
   team: CharacterKey[],
@@ -104,11 +105,12 @@ async function getCharDataBundle(database: ArtCharDatabase, characterKey: Charac
   const data = [
     ...artifacts.map(a => dataObjForArtifact(a, mainStatAssumptionLevel)),
     dataObjForCharacter(character),
-    characterSheet.data,
+    characterSheet.getData(character.elementKey),
     dataObjForWeapon(weapon),
     weaponSheet.data,
     artifactSheetsData,
     common, // NEED TO PUT THIS AT THE END
+    resonanceData,
   ]
   return { character, weapon, characterSheet, weaponSheet, data }
 }

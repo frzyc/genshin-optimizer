@@ -21,8 +21,7 @@ import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { claymoreChargedDocSection, normalSrc, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
-import { WeaponTypeKey } from '../../../Types/consts'
-import { absorbableEle } from '../dataUtil'
+import { absorbableEle, WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Sayu_gen" key18={strKey} />
 const char: ICharacterSheet = {

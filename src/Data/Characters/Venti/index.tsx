@@ -2,10 +2,10 @@ import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
-import { CharacterKey, ElementKey } from '../../../Types/consts'
+import { absorbableEle, CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
-import { absorbableEle, customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import {  customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -177,7 +177,7 @@ const sheet: ICharacterSheet = {
   talent: {
     sheets: {
       auto: talentTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey), undefined, undefined, [{
-        ...sectionTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey), 
+        ...sectionTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey),
           datamine.normal.hitArr.map((_, i) => ({
             node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
             textSuffix: (i === 0 || i === 3) ? st("brHits", { count: 2 }) : ""
@@ -287,7 +287,7 @@ const sheet: ICharacterSheet = {
             { node: c6_ele_enemyRes_arr[`${eleKey}_enemyRes_`] }
           )),
           undefined,
-          data => data.get(input.constellation).value >= 6 
+          data => data.get(input.constellation).value >= 6
             && data.get(condBurstAbsorption).value !== undefined
             && data.get(equal(target.charKey, key, 1)).value === 1,
           false,

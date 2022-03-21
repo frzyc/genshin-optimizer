@@ -9,8 +9,6 @@ import { CharacterKey, ElementKey, Region } from "../../Types/consts";
 import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
 import _charCurves from "./expCurve_gen.json";
 
-export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[]
-
 // TODO: Remove this conversion after changing the file format
 const charCurves = objectMap(_charCurves, value => [0, ...Object.values(value)])
 

@@ -1,8 +1,8 @@
 import { getTalentStatKey } from "../../../PageBuild/Build"
 import { IFormulaSheet } from "../../../Types/character"
+import { absorbableEle } from "../../../Types/consts"
 import { toTalentInt, toTalentPercent } from "../../../Util/DataminedUtil"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
-import { absorbableEle } from "../dataUtil"
 import skillParam_gen_pre from './skillParam_gen.json'
 const skillParam_gen = skillParam_gen_pre as any
 export const data = {

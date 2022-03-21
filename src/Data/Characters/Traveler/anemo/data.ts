@@ -1,6 +1,6 @@
 import { IFormulaSheet } from "../../../../Types/character"
+import { absorbableEle } from "../../../../Types/consts"
 import { basicDMGFormula } from "../../../../Util/FormulaUtil"
-import { absorbableEle } from "../../dataUtil"
 export const data = {
   normal: {
     hitArr: [
