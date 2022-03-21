@@ -79,7 +79,7 @@ export const allCharacterKeys = [
   "Xiao",
   "Xingqiu",
   // "Xinyan",
-  // "Rosaria",
+  "Rosaria",
   // "Yanfei",
   "Eula",
   "KaedeharaKazuha",

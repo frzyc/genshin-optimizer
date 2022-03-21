@@ -5,5 +5,6 @@
     "text": "Party CRIT Rate increase"
   },
   "c1": "After CRIT Hit",
-  "c6":"<strong>Rites of Termination</strong> Attack on enemy"
+  "c6":"<strong>Rites of Termination</strong> Attack on enemy",
+  "4pBSWarning": "Make sure the 4p Blizzard Strayer set is turned off."
 }
