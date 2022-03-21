@@ -57,7 +57,7 @@ const sheet: IWeaponSheet = {
       value: condNode,
       path: condPath,
       name: trm("emblem"),
-      header: conditionalHeader(tr, icon, iconAwaken, trm("emblem")),
+      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
       states: Object.fromEntries(
         stacks.map(stack => [stack, {
           name: st("stack", { count: parseInt(stack) }),
