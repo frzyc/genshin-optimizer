@@ -1,10 +1,10 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
-import { input } from '../../../Formula'
+import { input, target } from '../../../Formula'
 import { constant, equal, equalStr, greaterEq, greaterEqStr, infoMut, percent, prod, unequal } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, condReadNode, sgt, st, trans } from '../../SheetUtil'
-import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
 import { absorbableEle, customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
@@ -81,7 +81,6 @@ const asc4 = Object.fromEntries(absorbableEle.map(ele =>
       prod(percent(datamine.passive2.elemas_dmg_), input.premod.eleMas)
     ))]))
 
-/** TODO: the C2 actually only applies to "active" character, so the following needs to be changed... */
 const [condC2Path, condC2] = cond(key, "c2")
 const c2EleMas = greaterEq(input.constellation, 2,
   equal("c2", condC2, datamine.constellation2.elemas))
@@ -89,7 +88,11 @@ const c2EleMas = greaterEq(input.constellation, 2,
 const [condC2PPath, condC2P] = cond(key, "c2p")
 const c2PEleMas = greaterEq(input.constellation, 2,
   equal("c2p", condC2P,
-    unequal(input.activeCharKey, key, datamine.constellation2.elemas)))
+    equal(input.activeCharKey, target.charKey, // Apply to active character
+      unequal(target.charKey, key, datamine.constellation2.elemas) // But not to Kazuha
+    )
+  )
+)
 
 const [condC6Path, condC6] = cond(key, "c6")
 const c6infusion = greaterEqStr(input.constellation, 6,
@@ -175,18 +178,16 @@ const sheet: ICharacterSheet = {
   title: tr("title"),
   talent: {
     sheets: {
-      auto: {
-        name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey),
-        sections: [{
-          text: tr("auto.fields.normal"),
-          fields: datamine.normal.hitArr.map((_, i) => ({
+      auto: talentTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey), undefined, undefined, [{
+        ...sectionTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey), 
+          datamine.normal.hitArr.map((_, i) => ({
             node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i + (i < 3 ? 0 : -1)}` }),
             textSuffix: i === 2 ? "(1)" : i === 3 ? "(2)" : i === 5 ? st("brHits", { count: 3 }) : ""
           }))
-        }, {
-          text: tr("auto.fields.charged"),
-          fields: [{
+        ),
+        text: tr("auto.fields.normal")
+      }, {
+        ...sectionTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey), [{
             node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
             textSuffix: "(1)"
           }, {
@@ -196,120 +197,108 @@ const sheet: ICharacterSheet = {
             text: tr("auto.skillParams.6"),
             value: datamine.charged.stamina,
           }]
-        }, {
-          text: tr(`auto.fields.plunging`),
-          fields: [{
+        ),
+        text: tr("auto.fields.charged"),
+      }, {
+        ...sectionTemplate("auto", tr, normalSrc(data_gen.weaponTypeKey), [{
             node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
           }, {
             node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
           }, {
             node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
           }]
-        }],
-      },
-      skill: { // Cannot use talentTemplate because this has multiple sections
-        name: tr("skill.name"),
-        img: skill,
-        sections: [{
-          text: tr("skill.description"),
-          fields: [{
-            node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` }),
-          }, {
-            text: tr("skill.skillParams.1"),
-            value: data => data.get(input.constellation).value >= 1 
-              ? `${datamine.skill.cd} - 10% = ${datamine.skill.cd*(1-0.10)}` 
-              : `${datamine.skill.cd}`,
-            unit: "s"
-          }, {
-            node: infoMut(dmgFormulas.skill.hold, { key: `char_${key}_gen:skill.skillParams.2` }),
-          }, {
-            text: st("holdCD"),
-            value: data => data.get(input.constellation).value >= 1
-              ? `${datamine.skill.cd} - 10% = ${datamine.skill.cd*(1-0.10)}` 
-              : `${datamine.skill.cdHold}`,
-            unit: "s"
-          }, {
-            canShow: data => data.get(input.constellation).value >= 1,
-            text: trm("c1"),
-          }]
-        }, {
-          fields: [{
+        ),
+        text: tr("auto.fields.plunging"),
+      }]),
+      skill: talentTemplate("skill", tr, skill, [{
+        node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` }),
+      }, {
+        text: tr("skill.skillParams.1"),
+        value: data => data.get(input.constellation).value >= 1 
+          ? `${datamine.skill.cd} - 10% = ${datamine.skill.cd*(1-0.10)}` 
+          : `${datamine.skill.cd}`,
+        unit: "s"
+      }, {
+        node: infoMut(dmgFormulas.skill.hold, { key: `char_${key}_gen:skill.skillParams.2` }),
+      }, {
+        text: st("holdCD"),
+        value: data => data.get(input.constellation).value >= 1
+          ? `${datamine.skill.cdHold} - 10% = ${datamine.skill.cdHold*(1-0.10)}` 
+          : `${datamine.skill.cdHold}`,
+        unit: "s"
+      }], undefined, [
+        {...sectionTemplate("skill", tr, skill, [{
             node: infoMut(dmgFormulas.skill.pdmg, { key: "sheet_gen:plunging.dmg" }),
           }, {
             node: infoMut(dmgFormulas.skill.plow, { key: "sheet_gen:plunging.low" }),
           }, {
             node: infoMut(dmgFormulas.skill.phigh, { key: "sheet_gen:plunging.high" }),
-          }]
-        }],
-      },
-      burst: { // Cannot use talentTemplate because this has multiple conditionals
-        name: tr("burst.name"),
-        img: burst,
-        sections: [{
-          text: tr("burst.description"),
+          }]),
+          fieldsHeader: { ...conditionalHeader("skill", tr, skill), title: trm("skillPlunge") }
+        },
+        sectionTemplate("constellation1", tr, c1, [{
+          node: infoMut(greaterEq(input.constellation, 1, percent(0.1)), { key: "skillCDRed_" })
+        }, {
+          text: trm("c1"),
+        }], undefined, data => data.get(input.constellation).value >= 1, false, true),
+      ]),
+      burst: talentTemplate("burst", tr, burst, [{
+        node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.dot, { key: `char_${key}_gen:burst.skillParams.1` }),
+      }, {
+        text: tr("burst.skillParams.3"),
+        value: datamine.burst.duration,
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.4"),
+        value: datamine.burst.cd,
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.5"),
+        value: datamine.burst.enerCost,
+      }], { // Burst absorption
+        value: condBurstAbsorption,
+        path: condBurstAbsorptionPath,
+        name: st("eleAbsor"),
+        header: conditionalHeader("burst", tr, burst),
+        states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+          name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
           fields: [{
-            node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
-          }, {
-            node: infoMut(dmgFormulas.burst.dot, { key: `char_${key}_gen:burst.skillParams.1` }),
-          }, {
-            text: tr("burst.skillParams.3"),
-            value: datamine.burst.duration,
-            unit: "s"
-          }, {
-            text: tr("burst.skillParams.4"),
-            value: datamine.burst.cd,
-            unit: "s"
-          }, {
-            text: tr("burst.skillParams.5"),
-            value: datamine.burst.enerCost,
+            node: infoMut(dmgFormulas.burst[eleKey], { key: `char_${key}_gen:burst.skillParams.2` }),
           }]
-        }, {
-          conditional: { // Burst Absorption
-            value: condBurstAbsorption,
-            path: condBurstAbsorptionPath,
-            name: st("eleAbsor"),
-            header: conditionalHeader("burst", tr, burst),
-            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+        }]))
+      }, [
+        sectionTemplate("constellation2", tr, c2, undefined, {
+          canShow: greaterEq(input.constellation, 2, 1),
+          value: condC2,
+          path: condC2Path,
+          name: trm("c2"),
+          header: conditionalHeader("constellation2", tr, c2),
+          states: {
+            c2: {
               fields: [{
-                node: infoMut(dmgFormulas.burst[eleKey], { key: `char_${key}_gen:burst.skillParams.2` }),
+                node: c2EleMas
               }]
-            }]))
-          },
-        }, {
-          conditional: { // C2
-            canShow: greaterEq(input.constellation, 2, 1),
-            value: condC2,
-            path: condC2Path,
-            name: trm("c2"),
-            header: conditionalHeader("constellation2", tr, c2),
-            states: {
-              c2: {
-                fields: [{
-                  node: c2EleMas
-                }]
-              }
             }
-          },
-        }, {
-          conditional: { // C2 Party
-            canShow: greaterEq(input.constellation, 2, unequal(input.activeCharKey, key, 1)),
-            value: condC2P,
-            path: condC2PPath,
-            teamBuff: true,
-            description: tr("constellation2.description"),
-            name: trm("c2p"),
-            header: conditionalHeader("constellation2", tr, c2),
-            states: {
-              c2p: {
-                fields: [{
-                  node: c2PEleMas
-                }]
-              }
+          }
+        }), sectionTemplate("constellation2", tr, c2, undefined, { // C2 Party
+          canShow: greaterEq(input.constellation, 2, unequal(input.activeCharKey, key, 1)),
+          value: condC2P,
+          path: condC2PPath,
+          teamBuff: true,
+          description: tr("constellation2.description"),
+          name: trm("c2p"),
+          header: conditionalHeader("constellation2", tr, c2),
+          states: {
+            c2p: {
+              fields: [{
+                node: c2PEleMas
+              }]
             }
-          },
-        }],
-      },
+          }
+        }),
+      ]),
       passive1: talentTemplate("passive1", tr, passive1, undefined, {
         // Skill Absorption
         value: condSkillAbsorption,
@@ -323,40 +312,34 @@ const sheet: ICharacterSheet = {
           }]
         }]))
       }),
-      passive2: { // Cannot use talentTemplate because this has multiple conditionals
-        name: tr("passive2.name"),
-        img: passive2,
-        sections: [{
-          text: tr("passive2.description"),
-        }, ...absorbableEle.map(eleKey => ({
-          conditional: { // Poetics of Fuubutsu
-            value: condSwirls[eleKey],
-            path: condSwirlPaths[eleKey],
-            teamBuff: true,
-            // Only show the description once
-            description: eleKey === "hydro" ? tr("passive2.description"): "",
-            name: trm(`a4.name_${eleKey}`),
-            header: conditionalHeader("passive2", tr, passive2),
-            canShow: greaterEq(input.asc, 4, 1),
-            states: {
-              swirl: {
-                fields: [{
-                  node: asc4[`${eleKey}_dmg_`]
-                }, {
-                  text: sgt("duration"),
-                  value: datamine.passive2.duration,
-                  unit: "s"
-                }]
-              }
+      passive2: talentTemplate("passive2", tr, passive2, undefined, undefined, absorbableEle.map(eleKey => 
+        sectionTemplate("passive2", tr, passive2, undefined, { // Poetics of Fuubutsu
+          value: condSwirls[eleKey],
+          path: condSwirlPaths[eleKey],
+          teamBuff: true,
+          // Only show the description once. Can't be truly blank or it will be filled in with a default.
+          description: eleKey === "hydro" ? tr("passive2.description"): " ",
+          name: trm(`a4.name_${eleKey}`),
+          header: conditionalHeader("passive2", tr, passive2),
+          canShow: greaterEq(input.asc, 4, 1),
+          states: {
+            swirl: {
+              fields: [{
+                node: asc4[`${eleKey}_dmg_`]
+              }, {
+                text: sgt("duration"),
+                value: datamine.passive2.duration,
+                unit: "s"
+              }]
             }
-          },
-        }))],
-      },
-      passive3: talentTemplate("passive3", tr, passive3, [{
-        //TODO: put into subsection since this is teambuff
-        //   description: tr("passive3.description"),
-        node: passive
-      }]),
+          }
+        }),
+      )),
+      passive3: talentTemplate("passive3", tr, passive3, undefined, undefined, [
+        sectionTemplate("passive3", tr, passive3, [{
+          node: passive
+        }], undefined, undefined, true, true),
+      ]),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
