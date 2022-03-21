@@ -44,7 +44,7 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       name: trm("condName"),
-      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
+      header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
       states: {
         on: {

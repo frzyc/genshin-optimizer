@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { lookup, min, naught, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { range } from '../../../../Util/Util'
-import { cond, st, trans } from '../../../SheetUtil'
+import { cond, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -32,7 +32,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
+      header: conditionalHeader(tr, icon, iconAwaken),
       name: trm("party"),
       states: Object.fromEntries(energyRange.map(i => [i, {
         name: i.toString(),
