@@ -48,7 +48,7 @@ export const allArtifactSets = [
   "WanderersTroupe",
 ] as const
 export const allCharacterKeys = [
-  // "Albedo",
+  "Albedo",
   // "Amber",
   // "Barbara",
   "Beidou",

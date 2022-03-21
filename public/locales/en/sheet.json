@@ -8,6 +8,10 @@
   "lessEqPercentHP": "HP less than or equal to {{percent}}%",
   "greaterPercentHP": "HP greater than {{percent}}%",
   "greaterEqPercentHP": "HP greater than or equal to {{percent}}%",
+  "enemyLessPercentHP": "Enemy HP less than {{percent}}%",
+  "enemyLessEqPercentHP": "Enemy HP less than or equal to {{percent}}%",
+  "enemyGreaterPercentHP": "Enemy HP greater than {{percent}}%",
+  "enemyGreaterEqPercentHP": "Enemy HP greater than or equal to {{percent}}%",
   "stack_one": "{{count}} Stack",
   "stack_other": "{{count}} Stacks",
   "member_one": "{{count}} Member",
@@ -75,5 +79,6 @@
   "stacks": "Stacks",
   "members": "Members",
   "hits": "Hits",
-  "protectedByShield": "Protected by a shield"
+  "protectedByShield": "Protected by a shield",
+  "protectedByShieldCrystal": "Protected by a shield created by Crystallize"
 }
