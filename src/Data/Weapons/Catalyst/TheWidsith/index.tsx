@@ -47,7 +47,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
+      header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
       name: <Translate ns="weapon_TheWidsith_gen" key18="passiveName" />,
       states: {

@@ -36,7 +36,7 @@ const sheet: IWeaponSheet = {
       name: trm('condName'),
       canShow: unequal(input.activeCharKey, input.charKey, 1),
       teamBuff: true,
-      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
+      header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
       states: {
         on: {
