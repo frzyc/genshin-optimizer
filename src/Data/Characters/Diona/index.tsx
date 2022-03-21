@@ -15,7 +15,7 @@ const key: CharacterKey = "Diona"
 const elementKey: ElementKey = "cryo"
 const [tr, trm] = trans("char", key)
 
-let a = 0, s = 0, b = 0, p1 = 0, p2=0
+let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
 const datamine = {
   normal: {
     hitArr: [
@@ -52,20 +52,20 @@ const datamine = {
     enerCost: skillParam_gen.burst[b++][0],
     duration: skillParam_gen.burst[b++][0],
   },
-  passive1: { 
+  passive1: {
     moveSpeed_: skillParam_gen.passive1[p1++][0], //+10% move speed
     stamRed_: skillParam_gen.passive1[p1++][0], //Stamina consumption reduced by 10%
   },
-  passive2: { 
+  passive2: {
     atkRed_: skillParam_gen.passive1[p2++][0], //Opponents inside burst -10% attack
-    duration: skillParam_gen.passive1[p2++][0], 
+    duration: skillParam_gen.passive1[p2++][0],
   },
   constellation1: {
     energyRegen: skillParam_gen.constellation1[0],
   },
   constellation2: {
     icyPawDmg_: skillParam_gen.constellation2[0], //Icy Paws +15% dmg
-    icyPawShield_: skillParam_gen.constellation2[1], //Icy paws +15% shield 
+    icyPawShield_: skillParam_gen.constellation2[1], //Icy paws +15% shield
     coopShield_: skillParam_gen.constellation2[2], //Coop shield 50% of total shield
     coopShieldDuration_: skillParam_gen.constellation2[3], //Coop shield lasts for 5s
   },
@@ -83,12 +83,12 @@ const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 const nodeC2skillDmg_ = greaterEq(input.constellation, 2, percent(datamine.constellation2.icyPawDmg_))
 
-const holdSkillShieldStr_ =  { "customBonus": { "shield_": percent(0.75) } }
+const holdSkillShieldStr_ = { "customBonus": { "shield_": percent(0.75) } }
 //C2 Shield bonus modifies everything at the very end, it's not a shield strength bonus
 //100% if not C2, 175% if C2 or higher
-const nodeC2shieldStr_ = sum(percent(1),greaterEq(input.constellation, 2, percent(datamine.constellation2.icyPawShield_)))
-const nodeSkillShieldPress = prod(nodeC2shieldStr_,shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill", ))
-const nodeSkillShieldHold = prod(nodeC2shieldStr_,shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill", holdSkillShieldStr_))
+const nodeC2shieldStr_ = sum(percent(1), greaterEq(input.constellation, 2, percent(datamine.constellation2.icyPawShield_)))
+const nodeSkillShieldPress = prod(nodeC2shieldStr_, shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill",))
+const nodeSkillShieldHold = prod(nodeC2shieldStr_, shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill", holdSkillShieldStr_))
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -113,16 +113,16 @@ const dmgFormulas = {
   },
 }
 
-const nodeA1MoveSpeed = equal(condA1, "on", percent(datamine.passive1.moveSpeed_), )
-const nodeA1Stamina = equal(condA1, "on", percent(datamine.passive1.stamRed_), )
+const nodeA1MoveSpeed = equal(condA1, "on", percent(datamine.passive1.moveSpeed_),)
+const nodeA1Stamina = equal(condA1, "on", percent(datamine.passive1.stamRed_),)
 
-const nodeC6healing_ = equal(condC6Below, "on", percent(datamine.constellation6.healingBonus_), )
-const nodeC6em = equal(condC6Above, "on", datamine.constellation6.emBonus, )
+const nodeC6healing_ = equal(condC6Below, "on", percent(datamine.constellation6.healingBonus_),)
+const nodeC6em = equal(condC6Above, "on", datamine.constellation6.emBonus,)
 
 export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {
   bonus: {
-    skill: nodeC3,
-    burst: nodeC5,
+    skill: nodeC5,
+    burst: nodeC3,
   }, premod: {
     skill_dmg_: nodeC2skillDmg_,
   }, teamBuff: {
@@ -205,7 +205,7 @@ const sheet: ICharacterSheet = {
           value: datamine.skill.cdHold,
           unit: "s",
         },
-      ], 
+      ],
         //Cat's Tail Secret Menu (A1)
         {
           teamBuff: true,
@@ -228,7 +228,7 @@ const sheet: ICharacterSheet = {
       burst: talentTemplate("burst", tr, burst, [
         { node: infoMut(dmgFormulas.burst.skillDmg, { key: `char_${key}_gen:burst.skillParams.0` }), },
         { node: infoMut(dmgFormulas.burst.fieldDmg, { key: `char_${key}_gen:burst.skillParams.1` }), },
-        { node: infoMut(dmgFormulas.burst.healDot, { key: `char_${key}_gen:burst.skillParams.2`, variant:"success" }), },
+        { node: infoMut(dmgFormulas.burst.healDot, { key: `char_${key}_gen:burst.skillParams.2`, variant: "success" }), },
         {
           text: tr("burst.skillParams.3"),
           value: datamine.burst.duration,
@@ -240,8 +240,7 @@ const sheet: ICharacterSheet = {
           text: tr("burst.skillParams.5"),
           value: datamine.burst.enerCost,
         }
-      ],
-      {
+      ], {
         teamBuff: true,
         value: condC6Below,
         path: condC6BelowPath,
@@ -255,8 +254,8 @@ const sheet: ICharacterSheet = {
             }]
           }
         }
-      }, [
-        {conditional: {
+      }, [{
+        conditional: {
           teamBuff: true,
           value: condC6Above,
           path: condC6AbovePath,
@@ -270,14 +269,13 @@ const sheet: ICharacterSheet = {
               }]
             }
           }
-        }}
-      ]
-      ),
+        }
+      }]),
       passive1: talentTemplate("passive1", tr, passive1, []),
       passive2: talentTemplate("passive2", tr, passive2, []),
       passive3: talentTemplate("passive3", tr, passive3, []),
       constellation1: talentTemplate("constellation1", tr, c1, []),
-      constellation2: talentTemplate("constellation2", tr, c2, [{node:nodeC2skillDmg_}]),
+      constellation2: talentTemplate("constellation2", tr, c2, [{ node: nodeC2skillDmg_ }]),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4, []),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
