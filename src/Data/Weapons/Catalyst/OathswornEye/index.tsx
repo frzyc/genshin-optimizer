@@ -32,7 +32,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condSkillBurst,
       path: condSkillBurstPath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
+      header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
       name: st("afterUse.skill"),
       states: {

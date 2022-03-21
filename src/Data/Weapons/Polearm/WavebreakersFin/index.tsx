@@ -32,7 +32,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condPassive,
       path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
+      header: conditionalHeader(tr, icon, iconAwaken),
       name: trm("party"),
       states: Object.fromEntries(energyRange.map(i => [i, {
         name: i.toString(),

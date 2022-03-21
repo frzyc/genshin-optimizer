@@ -36,7 +36,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condNormal,
       path: condNormalPath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
+      header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
       name: st("hitOp.skill"),
       states: {
@@ -55,7 +55,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condSkill,
       path: condSkillPath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
+      header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
       name: st("hitOp.normal"),
       states: {

@@ -32,7 +32,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condStack,
       path: condStackPath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
+      header: conditionalHeader(tr, icon, iconAwaken, st("members")),
       name: trm("condName"),
       states: Object.fromEntries(range(1, 4).map(i => [i, {
         name: st("member", { count: i }),

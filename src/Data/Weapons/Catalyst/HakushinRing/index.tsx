@@ -4,7 +4,7 @@ import { Translate } from '../../../../Components/Translate'
 import { input } from '../../../../Formula'
 import { equal, lookup, naught, subscript, unequal } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, sgt, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -50,7 +50,7 @@ const sheet: IWeaponSheet = {
       name: <Translate ns="weapon_HakushinRing" key18="afterElectroReaction" />,
       canShow: unequal(input.activeCharKey, input.charKey, 1),
       teamBuff: true,
-      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
+      header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
       states: {
         anemo: {

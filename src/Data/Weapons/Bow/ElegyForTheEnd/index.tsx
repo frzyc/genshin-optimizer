@@ -38,7 +38,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condNode,
       path: condPath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
+      header: conditionalHeader(tr, icon, iconAwaken, trm("milMove")),
       description: conditionaldesc(tr),
       name: trm("condName"),
       states: {
