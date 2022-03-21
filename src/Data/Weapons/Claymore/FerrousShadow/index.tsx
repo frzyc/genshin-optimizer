@@ -33,7 +33,7 @@ const sheet: IWeaponSheet = {
       // TODO: need st("lessPercentHP", { percent: xx }) to change depending on the weapon refine index.
       // Probably need to change IConditional.name to have (data:Data)=>Displayable as well.
       name: trm("condName"),
-      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
+      header: conditionalHeader(tr, icon, iconAwaken),
       description: conditionaldesc(tr),
       states: {
         on: {
