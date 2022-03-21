@@ -244,7 +244,7 @@ const sheet: ICharacterSheet = {
         teamBuff: true,
         value: condC6Below,
         path: condC6BelowPath,
-        name: trm(`c6low`),
+        name: trm(`c6below`),
         canShow: greaterEq(input.constellation, 6, 1),
         header: conditionalHeader("constellation6", tr, c6), description: tr(`constellation6.description`),
         states: {
@@ -259,7 +259,7 @@ const sheet: ICharacterSheet = {
           teamBuff: true,
           value: condC6Above,
           path: condC6AbovePath,
-          name: trm(`c6low`),
+          name: trm(`c6above`),
           canShow: greaterEq(input.constellation, 6, 1),
           header: conditionalHeader("constellation6", tr, c6), description: tr(`constellation6.description`),
           states: {
