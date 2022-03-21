@@ -90,6 +90,7 @@ const shatteringIce: IResonance = {
       unit: "%"
     }],
     conditional: {
+      teamBuff: true,
       path: condSIPath,
       value: condSI,
       name: trm("ShatteringIce.cond"),
@@ -121,9 +122,9 @@ const highVoltage: IResonance = {
 }
 
 // Impetuous Winds
-const swNodeStam = greaterEq(2, tally.anemo, percent(-0.15))
-const swNodeMove = greaterEq(2, tally.anemo, percent(0.1))
-const swNodeCD = greaterEq(2, tally.anemo, percent(-0.05))
+const iwNodeStam = greaterEq(2, tally.anemo, percent(-0.15))
+const iwNodeMove = greaterEq(2, tally.anemo, percent(0.1))
+const iwNodeCD = greaterEq(2, tally.anemo, percent(-0.05))
 const impetuousWinds: IResonance = {
   name: tr("ImpetuousWinds.name"),
   icon: <span>{StatIcon.hydro} {StatIcon.hydro}</span>,
@@ -132,11 +133,11 @@ const impetuousWinds: IResonance = {
     teamBuff: true,
     text: tr("ImpetuousWinds.desc"),
     fields: [{
-      node: swNodeStam
+      node: iwNodeStam
     }, {
-      node: swNodeMove
+      node: iwNodeMove
     }, {
-      node: swNodeCD
+      node: iwNodeCD
     }]
   }]
 }
@@ -144,9 +145,9 @@ const impetuousWinds: IResonance = {
 // Enduring Rock
 const condERPath = ["resonance", "EnduringRock"]
 const condER = condReadNode(condSIPath)
-const erNodeshield_ = greaterEq(2, tally.anemo, percent(0.15))
-const erNodeDMG_ = greaterEq(2, tally.anemo, percent(0.15))
-const erNodeRes_ = greaterEq(2, tally.anemo, percent(0.2))
+const erNodeshield_ = greaterEq(2, tally.anemo, equal(condER, "on", percent(0.15)))
+const erNodeDMG_ = greaterEq(2, tally.anemo, equal(condER, "on", percent(0.15)))
+const erNodeRes_ = greaterEq(2, tally.anemo, equal(condER, "on", percent(0.2)))
 const enduringRock: IResonance = {
   name: tr("EnduringRock.name"),
   icon: <span>{StatIcon.geo} {StatIcon.geo}</span>,
@@ -158,6 +159,7 @@ const enduringRock: IResonance = {
       node: erNodeshield_
     }],
     conditional: {
+      teamBuff: true,
       path: condERPath,
       value: condER,
       name: st("protectedByShield"),
@@ -193,14 +195,15 @@ export const resonanceData: Data = {
     ...pcNodes,
     atk_: ffNode,
     incHeal_: swNode,
-    staminaDec_: swNodeStam,
-    moveSPD_: swNodeMove,
-    cdRed_: swNodeCD,
+    staminaDec_: iwNodeStam,
+    moveSPD_: iwNodeMove,
+    cdRed_: iwNodeCD,
     shield_: erNodeshield_,
     all_dmg_: erNodeDMG_,
     geo_enemyRes_: erNodeRes_,
   },
   total: {
+    // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.
     critRate_: siNode
   }
 }

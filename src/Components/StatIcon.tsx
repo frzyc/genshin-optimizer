@@ -1,8 +1,7 @@
-import { faDiceD20 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { objectKeyMap } from '../Util/Util'
 import ColorText from './ColoredText'
-import { faAnemo, faAtk, faCdReduction, faCritRate, faCryo, faDef, faDendro, faElectro, faElementalMastery, faEnergyRecharge, faGeo, faHealingBonus, faHp, faHydro, faMaxStamina, faPhysicalDmgBonus, faPyro, faShieldStrength } from './faIcons'
+import { faAnemo, faAtk, faCdReduction, faCritDmg, faCritRate, faCryo, faDef, faDendro, faElectro, faElementalMastery, faEnergyRecharge, faGeo, faHealingBonus, faHp, faHydro, faMaxStamina, faPhysicalDmgBonus, faPyro, faShieldStrength } from './faIcons'
 
 export const uncoloredEleIcons = {
   anemo: <FontAwesomeIcon icon={faAnemo as any} />,
@@ -28,7 +27,7 @@ const StatIcon = {
 
   eleMas: <FontAwesomeIcon icon={faElementalMastery as any} />,
   critRate_: <FontAwesomeIcon icon={faCritRate as any} />,
-  critDMG_: <FontAwesomeIcon icon={faDiceD20 as any} />,
+  critDMG_: <FontAwesomeIcon icon={faCritDmg as any} />,
   enerRech_: <FontAwesomeIcon icon={faEnergyRecharge as any} />,
   heal_: <FontAwesomeIcon icon={faHealingBonus as any} />,
 

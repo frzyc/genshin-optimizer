@@ -47,17 +47,32 @@ const datamine = {
     enerCost: skillParam_gen.burst[b++][0],
     unknown: skillParam_gen.burst[b++], // what is this??
     duration: skillParam_gen.burst[b++][0],
+  },
+  passive1: {
+    charged_dmg_: 0.5
+  },
+  constellation1: {
+    dmg_: 1.2
+  },
+  constellation2: {
+    enemyDefRed_: 0.23
+  },
+  constellation4: {
+    dmg: 5.55
+  },
+  constellation6: {
+    pyro_dmg_: 0.1
   }
 } as const
 
 const [condA1Path, condA1] = cond(key, "PoundingSurprise")
-const charged_dmg_ = equal("on", condA1, greaterEq(input.asc, 1, percent(0.5))) // The datamine does not hold this value unfortunately
+const charged_dmg_ = equal("on", condA1, greaterEq(input.asc, 1, percent(datamine.passive1.charged_dmg_)))
 
 const [condC2Path, condC2] = cond(key, "ExplosiveFrags")
-const enemyDefRed_ = equal("on", condC2, greaterEq(input.constellation, 2, percent(0.23))) // The datamine does not hold this value unfortunately
+const enemyDefRed_ = equal("on", condC2, greaterEq(input.constellation, 2, percent(datamine.constellation2.enemyDefRed_)))
 
 const [condC6Path, condC6] = cond(key, "BlazingDelight")
-const pyro_dmg_ = equal("on", condC6, greaterEq(input.constellation, 6, percent(0.1))) // The datamine does not hold this value unfortunately
+const pyro_dmg_ = equal("on", condC6, greaterEq(input.constellation, 6, percent(datamine.constellation6.pyro_dmg_)))
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -75,12 +90,10 @@ const dmgFormulas = {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
   },
   constellation1: {
-    // TODO: Is this correct?
-    chainedReactionsDmg: prod(dmgNode("atk", datamine.burst.dmg, "burst"), percent(1.2)) // The datamine does not hold this value unfortunately
+    chainedReactionsDmg: greaterEq(input.constellation, 1, prod(percent(datamine.constellation1.dmg_), dmgNode("atk", datamine.burst.dmg, "burst")))
   },
   constellation4: {
-    // TODO: Is this correct?
-    sparklyExplosionDmg: customDmgNode(prod(percent(5.55), input.total.atk), "elemental", { hit: { ele: constant('pyro') } }) // The datamine does not hold this value unfortunately
+    sparklyExplosionDmg: greaterEq(input.constellation, 4, customDmgNode(prod(percent(datamine.constellation4.dmg), input.total.atk), "elemental", { hit: { ele: constant('pyro') } }))
   }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -97,7 +110,6 @@ export const data = dataObjForCharacterSheet(key, elementKey, regionKey, data_ge
   teamBuff: {
     premod: {
       pyro_dmg_,
-      // TODO: Enemy def reduction should technically be in teambuff right?
       enemyDefRed_
     }
   }

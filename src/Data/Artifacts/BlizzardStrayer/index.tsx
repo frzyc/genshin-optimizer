@@ -19,6 +19,9 @@ const set4 = greaterEq(input.artSet.BlizzardStrayer, 4, lookup(condState, { "cry
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     cryo_dmg_: set2,
+  },
+  total: {
+    // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.
     critRate_: set4
   }
 })
