@@ -45,7 +45,7 @@ export type CharacterExpCurveData = {
 const characterExpCurve = {} as CharacterExpCurveData
 characterExpCurveSrc.forEach(({ Level, CurveInfos }) =>
   CurveInfos.forEach(({ Type, Value }) => {
-    if (!characterExpCurve[Type]) characterExpCurve[Type] = {} // TODO: [0]
+    if (!characterExpCurve[Type]) characterExpCurve[Type] = []
     characterExpCurve[Type][Level] = extrapolateFloat(Value)
   }))
 
