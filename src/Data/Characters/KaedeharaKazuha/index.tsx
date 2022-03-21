@@ -81,7 +81,6 @@ const asc4 = Object.fromEntries(absorbableEle.map(ele =>
       prod(percent(datamine.passive2.elemas_dmg_), input.premod.eleMas)
     ))]))
 
-/** TODO: the C2 actually only applies to "active" character, so the following needs to be changed... */
 const [condC2Path, condC2] = cond(key, "c2")
 const c2EleMas = greaterEq(input.constellation, 2,
   equal("c2", condC2, datamine.constellation2.elemas))
