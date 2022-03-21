@@ -55,7 +55,7 @@ const sheet: IWeaponSheet = {
       value: condCharged,
       path: condChargedPath,
       name: st("hitOp.charged"),
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       description: conditionaldesc(tr),
       states: {
         on: {

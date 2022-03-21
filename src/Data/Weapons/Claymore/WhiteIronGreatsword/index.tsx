@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { equal, infoMut, prod, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { customHealNode } from '../../../Characters/dataUtil'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -27,7 +27,7 @@ const sheet: IWeaponSheet = {
       value: condNode,
       path: condPath,
       name: st('afterDefeatEnemy'),
-      header: conditionalHeader(tr, icon, iconAwaken, sgt("healing")),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       states: {
         on: {
           fields: [{

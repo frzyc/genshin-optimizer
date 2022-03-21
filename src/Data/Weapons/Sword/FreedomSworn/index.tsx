@@ -45,7 +45,7 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       teamBuff: true,
-      header: conditionalHeader(tr, icon, iconAwaken, trm("milMove")),
+      header: conditionalHeader(tr, icon, iconAwaken, st("conditional")),
       description: conditionaldesc(tr),
       name: trm("sigilsConsumed"),
       states: {
