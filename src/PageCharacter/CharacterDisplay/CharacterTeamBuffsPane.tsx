@@ -22,7 +22,7 @@ import CharacterCard from "../CharacterCard";
 export default function CharacterTeamBuffsPane() {
   return <Box display="flex" flexDirection="column" gap={1} alignItems="stretch">
     <TeamBuffDisplay />
-    <ResonanceDisplay />
+    {/* <ResonanceDisplay /> */}
     <Grid container spacing={1}>
       {range(0, 2).map(i => <Grid item xs={12} md={6} lg={4} key={i}>
         <TeammateDisplay index={i} />

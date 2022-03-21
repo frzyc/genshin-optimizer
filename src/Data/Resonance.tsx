@@ -1,6 +1,7 @@
 import StatIcon from "../Components/StatIcon";
 import { Translate } from "../Components/Translate";
 import { tally } from "../Formula";
+import { Data } from "../Formula/type";
 import { UIData } from "../Formula/uiData";
 import { equal, greaterEq, min, percent, sum } from "../Formula/utils";
 import { allElements, allElementsWithPhy } from "../Types/consts";
@@ -28,7 +29,7 @@ const protectiveCanopy: IResonance = {
   icon: <span>{StatIcon.anemo} {StatIcon.geo} {StatIcon.pyro} {StatIcon.hydro} {StatIcon.cryo} {StatIcon.electro} x4</span>,
   canShow: (data: UIData) => allElements.filter(e => data.get(tally[e]).value >= 1).length === 4,
   sections: [{
-    teamBuff:true,
+    teamBuff: true,
     text: tr("ProtectiveCanopy.desc"),
     fields: Object.values(pcNodes).map(node => ({ node }))
   }]
@@ -41,7 +42,7 @@ const ferventFlames: IResonance = {
   icon: <span>{StatIcon.pyro} {StatIcon.pyro}</span>,
   canShow: (data: UIData) => data.get(tally.pyro).value >= 2,
   sections: [{
-    teamBuff:true,
+    teamBuff: true,
     text: tr("FerventFlames.desc"),
     fields: [{
       node: ffNode
@@ -60,7 +61,7 @@ const soothingWaters: IResonance = {
   icon: <span>{StatIcon.hydro} {StatIcon.hydro}</span>,
   canShow: (data: UIData) => data.get(tally.hydro).value >= 2,
   sections: [{
-    teamBuff:true,
+    teamBuff: true,
     text: tr("SoothingWater.desc"),
     fields: [{
       node: swNode
@@ -81,7 +82,7 @@ const shatteringIce: IResonance = {
   icon: <span>{StatIcon.cryo} {StatIcon.cryo}</span>,
   canShow: (data: UIData) => data.get(tally.cryo).value >= 2,
   sections: [{
-    teamBuff:true,
+    teamBuff: true,
     text: tr("ShatteringIce.desc"),
     fields: [{
       text: st("affectDuration.electro"),
@@ -109,7 +110,7 @@ const highVoltage: IResonance = {
   icon: <span>{StatIcon.electro} {StatIcon.electro}</span>,
   canShow: (data: UIData) => data.get(tally.electro).value >= 2,
   sections: [{
-    teamBuff:true,
+    teamBuff: true,
     text: tr("HighVoltage.desc"),
     fields: [{
       text: st("affectDuration.hydro"),
@@ -120,15 +121,15 @@ const highVoltage: IResonance = {
 }
 
 // Impetuous Winds
-const swNodeStam = greaterEq(2, tally.anemo, percent(0.15))
+const swNodeStam = greaterEq(2, tally.anemo, percent(-0.15))
 const swNodeMove = greaterEq(2, tally.anemo, percent(0.1))
-const swNodeCD = greaterEq(2, tally.anemo, percent(0.5))
+const swNodeCD = greaterEq(2, tally.anemo, percent(-0.05))
 const impetuousWinds: IResonance = {
   name: tr("ImpetuousWinds.name"),
   icon: <span>{StatIcon.hydro} {StatIcon.hydro}</span>,
   canShow: (data: UIData) => data.get(tally.hydro).value >= 2,
   sections: [{
-    teamBuff:true,
+    teamBuff: true,
     text: tr("ImpetuousWinds.desc"),
     fields: [{
       node: swNodeStam
@@ -151,7 +152,7 @@ const enduringRock: IResonance = {
   icon: <span>{StatIcon.geo} {StatIcon.geo}</span>,
   canShow: (data: UIData) => data.get(tally.geo).value >= 2,
   sections: [{
-    teamBuff:true,
+    teamBuff: true,
     text: tr("EnduringRock.desc"),
     fields: [{
       node: erNodeshield_
@@ -186,3 +187,20 @@ export const resonanceSheets: IResonance[] = [
   impetuousWinds,
   enduringRock,
 ]
+
+export const resonanceData: Data = {
+  premod: {
+    ...pcNodes,
+    atk_: ffNode,
+    incHeal_: swNode,
+    staminaDec_: swNodeStam,
+    moveSPD_: swNodeMove,
+    cdRed_: swNodeCD,
+    shield_: erNodeshield_,
+    all_dmg_: erNodeDMG_,
+    geo_enemyRes_: erNodeRes_,
+  },
+  total: {
+    critRate_: siNode
+  }
+}
