@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
-import { input } from '../../../Formula'
+import { input, target } from '../../../Formula'
 import { constant, equal, equalStr, greaterEq, greaterEqStr, infoMut, percent, prod, unequal } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, condReadNode, sgt, st, trans } from '../../SheetUtil'
@@ -89,7 +89,11 @@ const c2EleMas = greaterEq(input.constellation, 2,
 const [condC2PPath, condC2P] = cond(key, "c2p")
 const c2PEleMas = greaterEq(input.constellation, 2,
   equal("c2p", condC2P,
-    unequal(input.activeCharKey, key, datamine.constellation2.elemas)))
+    equal(input.activeCharKey, target.charKey, // Apply to active character
+      unequal(target.charKey, key, datamine.constellation2.elemas) // But not to Kazuha
+    )
+  )
+)
 
 const [condC6Path, condC6] = cond(key, "c6")
 const c6infusion = greaterEqStr(input.constellation, 6,
