@@ -86,12 +86,11 @@ const c2EleMas = greaterEq(input.constellation, 2,
   equal("c2", condC2, datamine.constellation2.elemas))
 
 const [condC2PPath, condC2P] = cond(key, "c2p")
-const c2PEleMas = greaterEq(input.constellation, 2,
-  equal("c2p", condC2P,
-    equal(input.activeCharKey, target.charKey, // Apply to active character
-      unequal(target.charKey, key, datamine.constellation2.elemas) // But not to Kazuha
-    )
-  )
+const c2PEleMasDisp = greaterEq(input.constellation, 2,
+  equal("c2p", condC2P, datamine.constellation2.elemas)
+)
+const c2PEleMas = equal(input.activeCharKey, target.charKey, // Apply to active character
+  unequal(target.charKey, key, c2PEleMasDisp) // But not to Kazuha
 )
 
 const [condC6Path, condC6] = cond(key, "c6")
@@ -289,12 +288,12 @@ const sheet: ICharacterSheet = {
           path: condC2PPath,
           teamBuff: true,
           description: tr("constellation2.description"),
-          name: trm("c2p"),
+          name: st("activeCharField"),
           header: conditionalHeader("constellation2", tr, c2),
           states: {
             c2p: {
               fields: [{
-                node: c2PEleMas
+                node: infoMut(c2PEleMasDisp, { key: "eleMas" })
               }]
             }
           }

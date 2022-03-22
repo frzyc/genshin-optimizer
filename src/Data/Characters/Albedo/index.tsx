@@ -100,22 +100,20 @@ const c2_burst_dmgInc = greaterEq(input.constellation, 2,
 )
 
 const [condSkillInFieldPath, condSkillInField] = cond(key, "skillInField")
-const c4_plunging_dmg_ = greaterEq(input.constellation, 4,
-  equal(condSkillInField, "skillInField",
-    equal(input.activeCharKey, target.charKey, datamine.constellation4.plunging_dmg_)
-  )
+const c4_plunging_dmg_disp = greaterEq(input.constellation, 4,
+  equal(condSkillInField, "skillInField", datamine.constellation4.plunging_dmg_)
 )
+const c4_plunging_dmg_ = equal(input.activeCharKey, target.charKey, c4_plunging_dmg_disp)
 
 // Maybe we should just have a single conditional for "in field AND crystallize shield"?
 // This is technically a nested conditional
 const [condC6CrystallizePath, condC6Crystallize] = cond(key, "c6Crystallize")
-const c6_Crystal_all_dmg_ = greaterEq(input.constellation, 6,
+const c6_Crystal_all_dmg_disp = greaterEq(input.constellation, 6,
   equal(condSkillInField, "skillInField",
-    equal(condC6Crystallize, "c6Crystallize",
-      equal(input.activeCharKey, target.charKey, datamine.constellation6.bonus_dmg_)
-    )
+    equal(condC6Crystallize, "c6Crystallize", datamine.constellation6.bonus_dmg_)
   )
 )
+const c6_Crystal_all_dmg_ = equal(input.activeCharKey, target.charKey, c6_Crystal_all_dmg_disp)
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -179,26 +177,24 @@ const sheet: ICharacterSheet = {
         text: tr("auto.fields.normal")
       }, {
         ...sectionTemplate("auto", tr, auto, [{
-            node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
-            textSuffix: "(1)"
-          }, {
-            node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${key}_gen:auto.skillParams.5` }),
-            textSuffix: "(2)"
-          }, {
-            text: tr("auto.skillParams.6"),
-            value: datamine.charged.stamina,
-          }]
-        ),
+          node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
+          textSuffix: "(1)"
+        }, {
+          node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${key}_gen:auto.skillParams.5` }),
+          textSuffix: "(2)"
+        }, {
+          text: tr("auto.skillParams.6"),
+          value: datamine.charged.stamina,
+        }]),
         text: tr("auto.fields.charged"),
       }, {
         ...sectionTemplate("auto", tr, auto, [{
-            node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
-          }, {
-            node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
-          }, {
-            node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
-          }]
-        ),
+          node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+        }, {
+          node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        }, {
+          node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        }]),
         text: tr("auto.fields.plunging"),
       }]),
       skill: talentTemplate("skill", tr, skill, [{
@@ -245,7 +241,7 @@ const sheet: ICharacterSheet = {
           states: {
             skillInField: {
               fields: [{
-                node: c4_plunging_dmg_
+                node: infoMut(c4_plunging_dmg_disp, { key: "plunging_dmg_" })
               }]
             }
           }
@@ -259,7 +255,7 @@ const sheet: ICharacterSheet = {
           states: {
             c6Crystallize: {
               fields: [{
-                node: c6_Crystal_all_dmg_,
+                node: infoMut(c6_Crystal_all_dmg_disp, { key: "all_dmg_"}),
               }]
             }
           }

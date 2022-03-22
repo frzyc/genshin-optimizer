@@ -54,6 +54,7 @@
   "charges": "Charges",
   "addlCharges": "Additional charges",
   "activeCharField": "Active Character in field",
+  "opponentsField": "Opponents in field",
   "takeDmg": "On taking DMG",
   "onHit": "On Hit",
   "infusion": {

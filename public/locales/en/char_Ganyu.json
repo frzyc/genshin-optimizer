@@ -1,19 +1,12 @@
 {
   "a1": {
     "condName": "After firing a Frostflake Arrow",
-    "critRateInc": "Frostflake CRIT Rate"
-  },
-  "a4": {
-    "condName": "Active party members within AoE of Celestial Shower"
+    "critRateInc": "Frostflake CRIT Rate Increase"
   },
   "c1": {
     "condName": "Opponent takes DMG from a Charge Level 2 Frostflake Arrow or Frostflake Arrow Bloom"
   },
-  "c2": {
-    "charges": "Charges"
-  },
   "c4": {
-    "condName": "Opponents standing within the AoE of Celestial Shower",
     "lingerDuration": "Effect Linger Duration"
   }
 }
