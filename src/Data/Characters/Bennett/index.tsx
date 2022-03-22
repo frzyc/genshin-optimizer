@@ -5,13 +5,14 @@ import { UIData } from '../../../Formula/uiData'
 import { constant, equal, equalStr, greaterEq, infoMut, lookup, prod, subscript, sum } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
-import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
 const data_gen = data_gen_src as CharacterData
+const auto = normalSrc(data_gen.weaponTypeKey)
 
 const key: CharacterKey = "Bennett"
 const elementKey: ElementKey = "pyro"
@@ -164,34 +165,33 @@ const sheet: ICharacterSheet = {
   title: tr("title"),
   talent: {
     sheets: {
-      auto: {
-        name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey),
-        sections: [{
-          text: tr("auto.fields.normal"),
-          fields: datamine.normal.hitArr.map((percentArr, i) =>
+      auto: talentTemplate("auto", tr, auto, undefined, undefined, [{
+        ...sectionTemplate("auto", tr, auto, 
+          datamine.normal.hitArr.map((percentArr, i) =>
           ({
             node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
           }))
-        }, {
-          text: tr("auto.fields.charged"),
-          fields: [{
+        ),
+          text: tr("auto.fields.normal"),
+      }, {
+        ...sectionTemplate("auto", tr, auto, [{
             node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
           }, {
             text: tr("auto.skillParams.6"),
             value: datamine.charged.stamina,
           }]
+        ),
+        text: tr("auto.fields.charged"),
+      }, {
+        ...sectionTemplate("auto", tr, auto, [{
+          node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
         }, {
-          text: tr("auto.fields.plunging"),
-          fields: [{
-            node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
-          }, {
-            node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
-          }, {
-            node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
-          }]
-        }],
-      },
+          node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        }, {
+          node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        }]),
+        text: tr("auto.fields.plunging"),
+      }]),
       skill: talentTemplate("skill", tr, skill, [{
         // Press
         node: infoMut(dmgFormulas.skill.press, { key: `char_${key}:skill.pressDMG` }),
@@ -220,84 +220,74 @@ const sheet: ICharacterSheet = {
         unit: "s",
         value: data => calculateSkillCD(data, datamine.skill.cd_hold2),
       }]),
-      burst: { // Cannot use talentTemplate because this has multiple sections.
-        name: tr("burst.name"),
-        img: burst,
-        sections: [{
-          text: tr("burst.description"),
-          fields: [{
-            node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` })
-          }, {
-            node: infoMut(dmgFormulas.burst.regen, { key: `char_${key}_gen:burst.skillParams.1`, variant: "success" })
-          }, {
-            text: tr("burst.skillParams.3"),
-            value: datamine.burst.duration,
-            unit: "s",
-          }, {
-            text: tr("burst.skillParams.4"),
-            value: datamine.burst.cd,
-            unit: "s",
-          }, {
-            text: tr("burst.skillParams.5"),
-            value: datamine.burst.enerCost,
-          }],
-          conditional: {
-            value: condInArea,
-            path: condInAreaPath,
-            header: conditionalHeader("burst", tr, burst),
-            description: tr("burst.description"),
-            name: st("activeCharField"),
-            teamBuff: true,
-            states: {
-              activeInArea: {
-                fields: [{
-                  text: tr("burst.skillParams.2"),
-                  value: data => data.get(atkIncRatio).value * 100,
-                  unit: "%",
-                }, {
-                  node: infoMut(activeInAreaAtkDisp, { key: `sheet:increase.atk` })
-                }]
-              }
+      burst: talentTemplate("burst", tr, burst, [{
+        node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` })
+      }, {
+        node: infoMut(dmgFormulas.burst.regen, { key: `char_${key}_gen:burst.skillParams.1`, variant: "success" })
+      }, {
+        text: tr("burst.skillParams.3"),
+        value: datamine.burst.duration,
+        unit: "s",
+      }, {
+        text: tr("burst.skillParams.4"),
+        value: datamine.burst.cd,
+        unit: "s",
+      }, {
+        text: tr("burst.skillParams.5"),
+        value: datamine.burst.enerCost,
+      }], {
+        value: condInArea,
+        path: condInAreaPath,
+        header: conditionalHeader("burst", tr, burst),
+        description: tr("burst.description"),
+        name: st("activeCharField"),
+        teamBuff: true,
+        states: {
+          activeInArea: {
+            fields: [{
+              text: tr("burst.skillParams.2"),
+              value: data => data.get(atkIncRatio).value * 100,
+              unit: "%",
+            }, {
+              node: infoMut(activeInAreaAtkDisp, { key: `sheet:increase.atk` })
+            }]
+          }
+        }
+      }, [
+        sectionTemplate("passive2", tr, passive2, undefined, {
+          canShow: greaterEq(input.asc, 4, 4),
+          value: condInArea,
+          path: condInAreaPath,
+          header: conditionalHeader("passive2", tr, passive2),
+          name: st("activeCharField"),
+          states: {
+            activeInArea: {
+              fields: [{ // Node will not show CD reduction, have to use value instead
+                text: st("skillCDRed"),
+                value: datamine.passive2.cd_red,
+                unit: "%",
+              }]
             }
           }
-        }, {
-          conditional: {
-            canShow: greaterEq(input.asc, 4, 4),
-            value: condInArea,
-            path: condInAreaPath,
-            header: conditionalHeader("passive2", tr, passive2),
-            name: st("activeCharField"),
-            states: {
-              activeInArea: {
-                fields: [{ // Node will not show CD reduction, have to use value instead
-                  text: st("skillCDRed"),
-                  value: datamine.passive2.cd_red,
-                  unit: "%",
-                }]
-              }
+        }), sectionTemplate("constellation6", tr, c6, undefined, {
+          canShow: c6AndCorrectWep,
+          value: condInArea,
+          path: condInAreaPath,
+          header: conditionalHeader("constellation6", tr, c6),
+          description: tr("constellation6.description"),
+          name: st("activeCharField"),
+          teamBuff: true,
+          states: {
+            activeInArea: {
+              fields: [{
+                node: infoMut(activeInAreaC6PyroDmgDisp, { key: "pyro_dmg_", variant: "pyro" })
+              }, {
+                text: <ColorText color={elementKey}>{st("infusion.pyro")}</ColorText>
+              }]
             }
           }
-        }, {
-          conditional: {  
-            canShow: c6AndCorrectWep,
-            value: condInArea,
-            path: condInAreaPath,
-            header: conditionalHeader("constellation6", tr, c6),
-            description: tr("constellation6.description"),
-            name: st("activeCharField"),
-            teamBuff: true,
-            states: {
-              activeInArea: {
-                fields: [{
-                  node: infoMut(activeInAreaC6PyroDmgDisp, { key: "pyro_dmg_", variant: "pyro" })
-                }, {
-                  text: <ColorText color={elementKey}>{st("infusion.pyro")}</ColorText>
-                }]
-              }
-            }
-          }
-        }]
-      },
+        }),
+      ]),
       passive1: talentTemplate("passive1", tr, passive1, [{
         canShow: data => data.get(input.asc).value > 1,
         text: st("skillCDRed"),
