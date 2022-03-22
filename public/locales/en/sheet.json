@@ -52,6 +52,7 @@
   "absorDot": "Absorption DoT",
   "incInterRes": "Increase resistance to interruption",
   "charges": "Charges",
+  "addlCharges": "Additional charges",
   "activeCharField": "Active Character in field",
   "takeDmg": "On taking DMG",
   "onHit": "On Hit",
@@ -74,6 +75,7 @@
     "dendro": "Dendro effect duration",
     "geo": "Geo effect duration"
   },
+  "durationInc": "Duration increase",
   "base": "Base",
   "stacks": "Stacks",
   "members": "Members",
