@@ -17,26 +17,26 @@ const key: CharacterKey = "Xiao"
 const elementKey: ElementKey = "anemo"
 const [tr, trm] = trans("char", key)
 
-let a = 0, s = 0, b = 0
+let s = 0, b = 0
 const datamine = {
   normal: {
     hitArr: [
-      skillParam_gen.auto[a++], // 1
-      skillParam_gen.auto[a++], // 2
-      skillParam_gen.auto[a++], // 3
-      skillParam_gen.auto[a++], // 4
-      skillParam_gen.auto[a++], // 5
-      skillParam_gen.auto[a++], // 6
+      skillParam_gen.auto[0], // 1
+      skillParam_gen.auto[2], // 2
+      skillParam_gen.auto[3], // 3
+      skillParam_gen.auto[4], // 4
+      skillParam_gen.auto[6], // 5
+      skillParam_gen.auto[7], // 6
     ]
   },
   charged: {
-    dmg1: skillParam_gen.auto[a++], // 1
-    stamina: skillParam_gen.auto[a++][0],
+    dmg1: skillParam_gen.auto[8], // 1
+    stamina: skillParam_gen.auto[9][0],
   },
   plunging: {
-    dmg: skillParam_gen.auto[a++],
-    low: skillParam_gen.auto[a++],
-    high: skillParam_gen.auto[a++],
+    dmg: skillParam_gen.auto[10],
+    low: skillParam_gen.auto[11],
+    high: skillParam_gen.auto[12],
   },
   skill: {
     press: skillParam_gen.skill[s++],
@@ -91,14 +91,14 @@ const nodeC5 = greaterEq(input.constellation, 5, 3)
 const [condInBurstPath, condInBurst] = cond(key, "inBurst")
 const auto_dmg_ = subscript(input.total.burstIndex, datamine.burst.dmgBonus, { key: "_" })
 const normal_dmg_ = equal("inBurst", condInBurst, auto_dmg_, { key: "_" })
-const charged_dmg_ = {...normal_dmg_}
-const plunging_dmg_ = {...normal_dmg_}
+const charged_dmg_ = { ...normal_dmg_ }
+const plunging_dmg_ = { ...normal_dmg_ }
 const lifeDrain = subscript(input.total.burstIndex, datamine.burst.drain)
 const infusion = equalStr("inBurst", condInBurst, elementKey)
 
 const [condA1BurstStackPath, condA1BurstStack] = cond(key, "a1BurstStack")
 const a1BurstStackArr = range(0, 4)
-const all_dmg_ = equal("inBurst", condInBurst, 
+const all_dmg_ = equal("inBurst", condInBurst,
   lookup(condA1BurstStack,
     Object.fromEntries(a1BurstStackArr.map(i => [i, prod(datamine.passive1.dmgBonus, i + 1)])),
     naught
@@ -107,14 +107,14 @@ const all_dmg_ = equal("inBurst", condInBurst,
 
 const [condA4SkillStackPath, condA4SkillStack] = cond(key, "a4SkillStack")
 const a4SkillStackArr = range(1, datamine.passive2.maxStacks)
-const skill_dmg_ = greaterEq(input.asc, 4, 
+const skill_dmg_ = greaterEq(input.asc, 4,
   lookup(condA4SkillStack,
     Object.fromEntries(a4SkillStackArr.map(i => [i, prod(datamine.passive2.skillDmgBonus, i)])),
     naught
   )
 )
 
-const c2Inactive = greaterEq(input.constellation, 2, 
+const c2Inactive = greaterEq(input.constellation, 2,
   unequal(input.activeCharKey, key, 1)
 )
 const c2Inactive_enerRech_ = equal(c2Inactive, 1, datamine.constellation2.enerRech_)
@@ -128,7 +128,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
     skill: nodeC3,
     burst: nodeC5,
   },
-  premod : {
+  premod: {
     normal_dmg_,
     charged_dmg_,
     plunging_dmg_,
