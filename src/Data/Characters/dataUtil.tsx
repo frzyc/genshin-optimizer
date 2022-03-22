@@ -4,7 +4,7 @@ import { inferInfoMut, mergeData } from "../../Formula/api";
 import { reactions } from "../../Formula/reaction";
 import { Data, DisplaySub, NumNode } from "../../Formula/type";
 import { constant, data, equalStr, infoMut, percent, prod, stringPrio, subscript, sum, unit } from "../../Formula/utils";
-import { allMainStatKeys, allSubstats, MainStatKey } from "../../Types/artifact";
+import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey, Region } from "../../Types/consts";
 import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
 import _charCurves from "./expCurve_gen.json";
@@ -12,7 +12,7 @@ import _charCurves from "./expCurve_gen.json";
 // TODO: Remove this conversion after changing the file format
 const charCurves = objectMap(_charCurves, value => [0, ...Object.values(value)])
 
-const commonBasic = objectKeyMap([...allSubstats, "heal_"], key => input.total[key])
+const commonBasic = objectKeyMap(["hp", "atk", "def", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_"], key => input.total[key])
 commonBasic.critRate_ = input.total.cappedCritRate
 
 const inferredHitEle = stringPrio(
