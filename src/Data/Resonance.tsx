@@ -18,11 +18,9 @@ type IResonance = {
   sections: DocumentSection[]
 }
 
-// TODO: need to create data object of all the resonance, and hook it up
-
 // Protective Canopy
 const pcNodes = objectKeyValueMap(allElementsWithPhy, e => [`${e}_res_`,
-greaterEq(4, sum(...allElementsWithPhy.map(i => min(1, tally[i]))), percent(0.15))])
+greaterEq(sum(...allElementsWithPhy.map(i => min(1, tally[i]))), 4, percent(0.15))])
 
 const protectiveCanopy: IResonance = {
   name: tr("ProtectiveCanopy.name"),
@@ -36,7 +34,7 @@ const protectiveCanopy: IResonance = {
 }
 
 // Fervent Flames
-const ffNode = greaterEq(2, tally.pyro, percent(0.25))
+const ffNode = greaterEq(tally.pyro, 2, percent(0.25))
 const ferventFlames: IResonance = {
   name: tr("FerventFlames.name"),
   icon: <span>{StatIcon.pyro} {StatIcon.pyro}</span>,
@@ -55,7 +53,7 @@ const ferventFlames: IResonance = {
 }
 
 // Soothing Waters
-const swNode = greaterEq(2, tally.hydro, percent(0.25))
+const swNode = greaterEq(tally.hydro, 2, percent(0.25))
 const soothingWaters: IResonance = {
   name: tr("SoothingWater.name"),
   icon: <span>{StatIcon.hydro} {StatIcon.hydro}</span>,
@@ -76,7 +74,7 @@ const soothingWaters: IResonance = {
 //ShatteringIce
 const condSIPath = ["resonance", "ShatteringIce"]
 const condSI = condReadNode(condSIPath)
-const siNode = greaterEq(2, tally.cryo, equal(condSI, "on", percent(0.15)))
+const siNode = greaterEq(tally.cryo, 2, equal(condSI, "on", percent(0.15)))
 const shatteringIce: IResonance = {
   name: tr("ShatteringIce.name"),
   icon: <span>{StatIcon.cryo} {StatIcon.cryo}</span>,
@@ -122,9 +120,9 @@ const highVoltage: IResonance = {
 }
 
 // Impetuous Winds
-const iwNodeStam = greaterEq(2, tally.anemo, percent(-0.15))
-const iwNodeMove = greaterEq(2, tally.anemo, percent(0.1))
-const iwNodeCD = greaterEq(2, tally.anemo, percent(-0.05))
+const iwNodeStam = greaterEq(tally.anemo, 2, percent(-0.15))
+const iwNodeMove = greaterEq(tally.anemo, 2, percent(0.1))
+const iwNodeCD = greaterEq(tally.anemo, 2, percent(-0.05))
 const impetuousWinds: IResonance = {
   name: tr("ImpetuousWinds.name"),
   icon: <span>{StatIcon.hydro} {StatIcon.hydro}</span>,
@@ -145,9 +143,9 @@ const impetuousWinds: IResonance = {
 // Enduring Rock
 const condERPath = ["resonance", "EnduringRock"]
 const condER = condReadNode(condSIPath)
-const erNodeshield_ = greaterEq(2, tally.anemo, equal(condER, "on", percent(0.15)))
-const erNodeDMG_ = greaterEq(2, tally.anemo, equal(condER, "on", percent(0.15)))
-const erNodeRes_ = greaterEq(2, tally.anemo, equal(condER, "on", percent(0.2)))
+const erNodeshield_ = greaterEq(tally.geo, 2, equal(condER, "on", percent(0.15)))
+const erNodeDMG_ = greaterEq(tally.geo, 2, equal(condER, "on", percent(0.15)))
+const erNodeRes_ = greaterEq(tally.geo, 2, equal(condER, "on", percent(0.2)))
 const enduringRock: IResonance = {
   name: tr("EnduringRock.name"),
   icon: <span>{StatIcon.geo} {StatIcon.geo}</span>,
