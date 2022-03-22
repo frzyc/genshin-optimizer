@@ -3,13 +3,14 @@ import { input, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, percent, prod, subscript } from '../../../Formula/utils'
 import { CharacterKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
-import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
 const data_gen = data_gen_src as CharacterData
+const auto = normalSrc(data_gen.weaponTypeKey)
 
 const key: CharacterKey = "KujouSara"
 const [tr, trm] = trans("char", key)
@@ -59,8 +60,11 @@ const datamine = {
 } as const
 
 const [condSkillTenguAmbushPath, condSkillTenguAmbush] = cond(key, "TenguJuuraiAmbush")
-const skillTenguAmbush_ = equal(target.activeCharKey, target.charKey, equal("TenguJuuraiAmbush", condSkillTenguAmbush,
-  prod(input.base.atk, subscript(input.total.skillIndex, datamine.skill.atkBonus.map(x => x), { key: '_' }))))
+const atkIncRatio = subscript(input.total.skillIndex, datamine.skill.atkBonus.map(x => x), { key: '_' })
+const skillTenguAmbush_disp = equal("TenguJuuraiAmbush", condSkillTenguAmbush,
+  prod(input.base.atk, atkIncRatio)
+)
+const skillTenguAmbush_ = equal(input.activeCharKey, target.charKey, skillTenguAmbush_disp)
 
 const [condC6Path, condC6] = cond(key, "c6")
 const c6ElectroCritDmg_ = equal("c6", condC6, percent(datamine.constellation6.atkInc))
@@ -118,35 +122,30 @@ const sheet: ICharacterSheet = {
   title: tr("title"),
   talent: {
     sheets: {
-      auto: {
-        name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey),
-        sections: [
-          {
-            text: tr("auto.fields.normal"),
-            fields: datamine.normal.hitArr.map((_, i) =>
-            ({
-              node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` })
-            }))
-          }, {
-            text: tr("auto.fields.charged"),
-            fields: [{
-              node: infoMut(dmgFormulas.charged.aimed, { key: `char_${key}_gen:auto.skillParams.5` }),
-            }, {
-              node: infoMut(dmgFormulas.charged.fullyAimed, { key: `char_${key}_gen:auto.skillParams.6` }),
-            }]
-          }, {
-            text: tr("auto.fields.plunging"),
-            fields: [{
-              node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
-            }, {
-              node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
-            }, {
-              node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
-            }]
-          }
-        ],
-      },
+      auto: talentTemplate("auto", tr, auto, undefined, undefined, [{
+        ...sectionTemplate("auto", tr, auto,
+          datamine.normal.hitArr.map((_, i) => ({
+            node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` })
+          }))
+        ),
+        text: tr("auto.fields.normal"),
+      }, {
+        ...sectionTemplate("auto", tr, auto, [{
+          node: infoMut(dmgFormulas.charged.aimed, { key: `char_${key}_gen:auto.skillParams.5` }),
+        }, {
+          node: infoMut(dmgFormulas.charged.fullyAimed, { key: `char_${key}_gen:auto.skillParams.6` }),
+        }]),
+        text: tr("auto.fields.charged"),
+      }, {
+        ...sectionTemplate("auto", tr, auto, [{
+          node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+        }, {
+          node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        }, {
+          node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        }]),
+        text: tr("auto.fields.plunging"),
+      }]),
       skill: talentTemplate("skill", tr, skill, [{
         node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
       }, {
@@ -163,7 +162,11 @@ const sheet: ICharacterSheet = {
         states: {
           TenguJuuraiAmbush: {
             fields: [{
-              node: skillTenguAmbush_
+              text: tr("skill.skillParams.1"),
+              value: data => data.get(atkIncRatio).value * 100,
+              unit: "%",
+            }, {
+              node: infoMut(skillTenguAmbush_disp, { key: `sheet:increase.atk` })
             }]
           }
         }
