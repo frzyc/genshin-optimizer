@@ -177,26 +177,24 @@ const sheet: ICharacterSheet = {
         text: tr("auto.fields.normal")
       }, {
         ...sectionTemplate("auto", tr, auto, [{
-            node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
-            textSuffix: "(1)"
-          }, {
-            node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${key}_gen:auto.skillParams.5` }),
-            textSuffix: "(2)"
-          }, {
-            text: tr("auto.skillParams.6"),
-            value: datamine.charged.stamina,
-          }]
-        ),
+          node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
+          textSuffix: "(1)"
+        }, {
+          node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${key}_gen:auto.skillParams.5` }),
+          textSuffix: "(2)"
+        }, {
+          text: tr("auto.skillParams.6"),
+          value: datamine.charged.stamina,
+        }]),
         text: tr("auto.fields.charged"),
       }, {
         ...sectionTemplate("auto", tr, auto, [{
-            node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
-          }, {
-            node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
-          }, {
-            node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
-          }]
-        ),
+          node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+        }, {
+          node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        }, {
+          node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        }]),
         text: tr("auto.fields.plunging"),
       }]),
       skill: talentTemplate("skill", tr, skill, [{
