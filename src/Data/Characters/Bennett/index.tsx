@@ -167,20 +167,18 @@ const sheet: ICharacterSheet = {
     sheets: {
       auto: talentTemplate("auto", tr, auto, undefined, undefined, [{
         ...sectionTemplate("auto", tr, auto, 
-          datamine.normal.hitArr.map((percentArr, i) =>
-          ({
+          datamine.normal.hitArr.map((percentArr, i) => ({
             node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
           }))
         ),
-          text: tr("auto.fields.normal"),
+        text: tr("auto.fields.normal"),
       }, {
         ...sectionTemplate("auto", tr, auto, [{
-            node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
-          }, {
-            text: tr("auto.skillParams.6"),
-            value: datamine.charged.stamina,
-          }]
-        ),
+          node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
+        }, {
+          text: tr("auto.skillParams.6"),
+          value: datamine.charged.stamina,
+        }]),
         text: tr("auto.fields.charged"),
       }, {
         ...sectionTemplate("auto", tr, auto, [{
