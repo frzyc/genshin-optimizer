@@ -84,7 +84,8 @@ const atkIncRatio = sum(subscript(input.total.burstIndex, datamine.burst.atkBonu
 const [condInAreaPath, condInArea] = cond(key, "activeInArea")
 const activeInArea = equal("activeInArea", condInArea, equal(input.activeCharKey, target.charKey, 1))
 const c1AddlAtk = greaterEq(input.constellation, 1, prod(c1Atk, input.base.atk))
-const activeInAreaAtk = equal(activeInArea, 1, prod(atkIncRatio, input.base.atk))
+const activeInAreaAtkDisp = prod(atkIncRatio, input.base.atk)
+const activeInAreaAtk = equal(activeInArea, 1, activeInAreaAtkDisp)
 
 const activeInAreaA4 = greaterEq(input.asc, 4,
   equal(activeInArea, 1, datamine.passive2.cd_red)
@@ -93,10 +94,9 @@ const activeInAreaA4 = greaterEq(input.asc, 4,
 const c6AndCorrectWep = greaterEq(input.constellation, 6,
   lookup(target.weaponType,
     { "sword": constant(1), "claymore": constant(1), "polearm": constant(1) }, constant(0)))
-const activeInAreaC6PyroDmg = equal(activeInArea, 1,
-  equal(c6AndCorrectWep, 1, datamine.constellation6.pyro_dmg))
-const activeInAreaC6Infusion = equalStr(activeInArea, 1,
-  equalStr(c6AndCorrectWep, 1, elementKey))
+const activeInAreaC6PyroDmgDisp = equal(c6AndCorrectWep, 1, datamine.constellation6.pyro_dmg)
+const activeInAreaC6PyroDmg = equal(activeInArea, 1, activeInAreaC6PyroDmgDisp)
+const activeInAreaC6Infusion = equalStr(c6AndCorrectWep, 1, elementKey)
 
 const [condUnderHPPath, condUnderHP] = cond(key, "underHP")
 const underHP = greaterEq(input.constellation, 2,
@@ -255,7 +255,7 @@ const sheet: ICharacterSheet = {
                   value: data => data.get(atkIncRatio).value * 100,
                   unit: "%",
                 }, {
-                  node: infoMut(activeInAreaAtk, { key: `sheet:increase.atk` })
+                  node: infoMut(activeInAreaAtkDisp, { key: `sheet:increase.atk` })
                 }]
               }
             }
@@ -289,7 +289,7 @@ const sheet: ICharacterSheet = {
             states: {
               activeInArea: {
                 fields: [{
-                  node: activeInAreaC6PyroDmg
+                  node: infoMut(activeInAreaC6PyroDmgDisp, { key: "pyro_dmg_", variant: "pyro" })
                 }, {
                   text: <ColorText color={elementKey}>{st("infusion.pyro")}</ColorText>
                 }]
