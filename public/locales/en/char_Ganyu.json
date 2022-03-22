@@ -7,7 +7,6 @@
     "condName": "Opponent takes DMG from a Charge Level 2 Frostflake Arrow or Frostflake Arrow Bloom"
   },
   "c4": {
-    "condName": "Opponents standing within the AoE of Celestial Shower",
     "lingerDuration": "Effect Linger Duration"
   }
 }

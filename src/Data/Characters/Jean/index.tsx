@@ -1,5 +1,5 @@
 import { CharacterData } from 'pipeline'
-import { input } from '../../../Formula'
+import { input, target } from '../../../Formula'
 import { equal, greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
 import { CharacterKey, ElementKey, Region } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
@@ -80,7 +80,8 @@ const regen = healNodeTalent("atk", datamine.burst.burstActivationAtkModifier, d
 const contRegen = healNodeTalent("atk", datamine.burst.burstRegenAtkModifier, datamine.burst.burstRegenFlatModifier, "burst")
 const a1Regen = greaterEq(input.asc, 1, customHealNode(prod(percent(datamine.passive1.atkPercentage), input.total.atk)))
 
-const skill_dmg_ = greaterEq(input.constellation, 1, percent(datamine.constellation1.increaseDmg))
+const [condC1Path, condC1] = cond(key, "c1")
+const skill_dmg_ = equal(condC1, "on", greaterEq(input.constellation, 1, datamine.constellation1.increaseDmg))
 
 const [condC2Path, condC2] = cond(key, "c2")
 const atkSPD_ = equal(condC2, "on", greaterEq(input.constellation, 2, percent(datamine.constellation2.atkSpd)))
@@ -90,7 +91,8 @@ const [condC4Path, condC4] = cond(key, "c4")
 const anemo_enemyRes_ = equal(condC4, "on", greaterEq(input.constellation, 4, percent(-Math.abs(datamine.constellation4.anemoRes))))
 
 const [condC6Path, condC6] = cond(key, "c6")
-const dmgRed_ = equal(condC6, "on", greaterEq(input.constellation, 6, percent(datamine.constellation6.dmgReduction)))
+const dmgRed_disp = equal(condC6, "on", greaterEq(input.constellation, 6, percent(datamine.constellation6.dmgReduction)))
+const dmgRed_ = equal(input.activeCharKey, target.charKey, dmgRed_disp)
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -102,7 +104,6 @@ const dmgFormulas = {
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
     dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
-    c1Dmg: dmgNode("atk", datamine.skill.dmg, "skill", { premod: { skill_dmg_ } }),
   },
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
@@ -125,6 +126,9 @@ export const data = dataObjForCharacterSheet(key, elementKey, regionKey, data_ge
   bonus: {
     skill: nodeC5,
     burst: nodeC3,
+  },
+  premod: {
+    skill_dmg_
   },
   teamBuff: {
     premod: {
@@ -178,10 +182,6 @@ const sheet: ICharacterSheet = {
       skill: talentTemplate("skill", tr, burst, [{
         node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
       }, {
-        canShow: (data) => data.get(input.constellation).value >= 1,
-        node: infoMut(dmgFormulas.skill.c1Dmg, { key: `char_${key}:c1CondName` }),
-        textSuffix: "(C1)"
-      }, {
         text: tr("skill.skillParams.1"),
         value: `${datamine.skill.stamina}`,
         unit: "/s"
@@ -193,7 +193,23 @@ const sheet: ICharacterSheet = {
         text: tr("skill.skillParams.3"),
         value: `${datamine.skill.cd}`,
         unit: "s"
-      }]),
+      }], undefined, [
+        sectionTemplate("constellation1", tr, c1, undefined, {
+          canShow: greaterEq(input.constellation, 1, 1),
+          value: condC1,
+          path: condC1Path,
+          name: trm("c1CondName"),
+          states: {
+            on: {
+              fields: [{
+                text: trm("c1PullSpeed")
+              }, {
+                node: skill_dmg_
+              }]
+            }
+          }
+        })
+      ]),
       burst: talentTemplate("burst", tr, burst, [{
         node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
       }, {
@@ -213,7 +229,36 @@ const sheet: ICharacterSheet = {
       }, {
         text: tr("burst.skillParams.5"),
         value: `${datamine.burst.enerCost}`,
-      }]),
+      }], undefined, [
+        sectionTemplate("constellation4", tr, c4, undefined, {
+          canShow: greaterEq(input.constellation, 4, 1),
+          value: condC4,
+          path: condC4Path,
+          teamBuff: true,
+          name: st("opponentsField"),
+          states: {
+            on: {
+              fields: [{
+                node: anemo_enemyRes_
+              }]
+            }
+          }
+        }),
+        sectionTemplate("constellation6", tr, c6, undefined, {
+          canShow: greaterEq(input.constellation, 6, 1),
+          value: condC6,
+          path: condC6Path,
+          teamBuff: true,
+          name: st("activeCharField"),
+          states: {
+            on: {
+              fields: [{
+                node: infoMut(dmgRed_disp, {key: "dmgRed_" })
+              }]
+            }
+          }
+        })
+      ]),
       passive1: talentTemplate("passive1", tr, passive1, [{
         canShow: (data) => data.get(input.asc).value >= 1,
         node: infoMut(dmgFormulas.passive1.a1Regen, { key: `sheet_gen:healing`, variant: "success" }),
@@ -246,35 +291,9 @@ const sheet: ICharacterSheet = {
         }
       }),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
-      constellation4: talentTemplate("constellation4", tr, c4, undefined, {
-        canShow: greaterEq(input.constellation, 4, 1),
-        value: condC4,
-        path: condC4Path,
-        teamBuff: true,
-        name: trm("c4CondName"),
-        states: {
-          on: {
-            fields: [{
-              node: anemo_enemyRes_
-            }]
-          }
-        }
-      }),
+      constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
-      constellation6: talentTemplate("constellation6", tr, c6, undefined, {
-        canShow: greaterEq(input.constellation, 6, 1),
-        value: condC6,
-        path: condC6Path,
-        teamBuff: true,
-        name: trm("c6CondName"),
-        states: {
-          on: {
-            fields: [{
-              node: dmgRed_
-            }]
-          }
-        }
-      }),
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 }

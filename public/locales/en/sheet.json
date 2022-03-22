@@ -52,7 +52,8 @@
   "absorDot": "Absorption DoT",
   "incInterRes": "Increase resistance to interruption",
   "charges": "Charges",
-  "activeCharField": "Active Character in field",
+  "activeCharField": "Active character in field",
+  "opponentsField": "Opponents in field",
   "takeDmg": "On taking DMG",
   "onHit": "On Hit",
   "infusion": {

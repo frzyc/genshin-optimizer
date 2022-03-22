@@ -234,7 +234,7 @@ const sheet: ICharacterSheet = {
           path: condC4Path,
           canShow: greaterEq(input.constellation, 4, 1),
           teamBuff: true,
-          name: trm("c4.condName"),
+          name: st("opponentsField"),
           states: Object.fromEntries(range(1, 5).map(i => [i, {
           name: st("seconds", { count: (i - 1) * 3 }),
             fields: [{ node: all_dmg_ }, { text: trm("c4.lingerDuration"), value: 3, unit: "s" }]
