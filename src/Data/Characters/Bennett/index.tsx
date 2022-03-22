@@ -5,7 +5,7 @@ import { UIData } from '../../../Formula/uiData'
 import { constant, equal, equalStr, greaterEq, infoMut, lookup, prod, subscript, sum } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
-import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
@@ -238,8 +238,6 @@ const sheet: ICharacterSheet = {
       }], {
         value: condInArea,
         path: condInAreaPath,
-        header: conditionalHeader("burst", tr, burst),
-        description: tr("burst.description"),
         name: st("activeCharField"),
         teamBuff: true,
         states: {
@@ -258,7 +256,6 @@ const sheet: ICharacterSheet = {
           canShow: greaterEq(input.asc, 4, 4),
           value: condInArea,
           path: condInAreaPath,
-          header: conditionalHeader("passive2", tr, passive2),
           name: st("activeCharField"),
           states: {
             activeInArea: {
@@ -273,8 +270,6 @@ const sheet: ICharacterSheet = {
           canShow: c6AndCorrectWep,
           value: condInArea,
           path: condInAreaPath,
-          header: conditionalHeader("constellation6", tr, c6),
-          description: tr("constellation6.description"),
           name: st("activeCharField"),
           teamBuff: true,
           states: {
