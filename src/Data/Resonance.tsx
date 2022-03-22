@@ -47,7 +47,7 @@ const ferventFlames: IResonance = {
     fields: [{
       node: ffNode
     }, {
-      text: st("affectDuration.cryo"),
+      text: st("effectDuration.cryo"),
       value: -40,
       unit: "%"
     }]
@@ -66,7 +66,7 @@ const soothingWaters: IResonance = {
     fields: [{
       node: swNode
     }, {
-      text: st("affectDuration.pyro"),
+      text: st("effectDuration.pyro"),
       value: -40,
       unit: "%"
     }]
@@ -85,7 +85,7 @@ const shatteringIce: IResonance = {
     teamBuff: true,
     text: tr("ShatteringIce.desc"),
     fields: [{
-      text: st("affectDuration.electro"),
+      text: st("effectDuration.electro"),
       value: -40,
       unit: "%"
     }],
@@ -114,7 +114,7 @@ const highVoltage: IResonance = {
     teamBuff: true,
     text: tr("HighVoltage.desc"),
     fields: [{
-      text: st("affectDuration.hydro"),
+      text: st("effectDuration.hydro"),
       value: -40,
       unit: "%"
     }]

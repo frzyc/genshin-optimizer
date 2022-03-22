@@ -65,14 +65,14 @@
     "geo": "Geo Infusion"
   },
   "energyRegen": "Energy Regeneration",
-  "affectDuration":{
-    "pyro": "Pyro affect duration",
-    "cryo": "Cryo affect duration",
-    "anemo": "Anemo affect duration",
-    "hydro": "Hydro affect duration",
-    "electro": "Electro affect duration",
-    "dendro": "Dendro affect duration",
-    "geo": "Geo affect duration"
+  "effectDuration":{
+    "pyro": "Pyro effect duration",
+    "cryo": "Cryo effect duration",
+    "anemo": "Anemo effect duration",
+    "hydro": "Hydro effect duration",
+    "electro": "Electro effect duration",
+    "dendro": "Dendro effect duration",
+    "geo": "Geo effect duration"
   },
   "base": "Base",
   "stacks": "Stacks",
