@@ -43,11 +43,11 @@ const ferventFlames: IResonance = {
     teamBuff: true,
     text: tr("FerventFlames.desc"),
     fields: [{
-      node: ffNode
-    }, {
       text: st("effectDuration.cryo"),
       value: -40,
       unit: "%"
+    }, {
+      node: ffNode
     }]
   }]
 }
@@ -62,11 +62,11 @@ const soothingWaters: IResonance = {
     teamBuff: true,
     text: tr("SoothingWater.desc"),
     fields: [{
-      node: swNode
-    }, {
       text: st("effectDuration.pyro"),
       value: -40,
       unit: "%"
+    }, {
+      node: swNode
     }]
   }]
 }
@@ -92,6 +92,10 @@ const shatteringIce: IResonance = {
       path: condSIPath,
       value: condSI,
       name: trm("ShatteringIce.cond"),
+      header: {
+        title: tr("ShatteringIce.name"),
+        icon: StatIcon.cryo,
+      },
       states: {
         on: {
           fields: [{
@@ -125,8 +129,8 @@ const iwNodeMove = greaterEq(tally.anemo, 2, percent(0.1))
 const iwNodeCD = greaterEq(tally.anemo, 2, percent(-0.05))
 const impetuousWinds: IResonance = {
   name: tr("ImpetuousWinds.name"),
-  icon: <span>{StatIcon.hydro} {StatIcon.hydro}</span>,
-  canShow: (data: UIData) => data.get(tally.hydro).value >= 2,
+  icon: <span>{StatIcon.anemo} {StatIcon.anemo}</span>,
+  canShow: (data: UIData) => data.get(tally.anemo).value >= 2,
   sections: [{
     teamBuff: true,
     text: tr("ImpetuousWinds.desc"),
@@ -142,8 +146,8 @@ const impetuousWinds: IResonance = {
 
 // Enduring Rock
 const condERPath = ["resonance", "EnduringRock"]
-const condER = condReadNode(condSIPath)
-const erNodeshield_ = greaterEq(tally.geo, 2, equal(condER, "on", percent(0.15)))
+const condER = condReadNode(condERPath)
+const erNodeshield_ = greaterEq(tally.geo, 2, percent(0.15))
 const erNodeDMG_ = greaterEq(tally.geo, 2, equal(condER, "on", percent(0.15)))
 const erNodeRes_ = greaterEq(tally.geo, 2, equal(condER, "on", percent(0.2)))
 const enduringRock: IResonance = {
@@ -160,6 +164,10 @@ const enduringRock: IResonance = {
       teamBuff: true,
       path: condERPath,
       value: condER,
+      header: {
+        title: tr("EnduringRock.name"),
+        icon: StatIcon.geo,
+      },
       name: st("protectedByShield"),
       states: {
         on: {

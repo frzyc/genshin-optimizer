@@ -55,7 +55,8 @@ const sheet: IArtifactSheet = {
           path: condSwirlPaths[eleKey],
           teamBuff: true,
           header: conditionalHeader(tr, icons.flower),
-          description: tr(`setEffects.4`),
+          // Only show description once.
+          description: eleKey === "hydro" ? tr(`setEffects.4`) : "",
           name: st("eleSwirled"),
           states: {
             swirl: {
