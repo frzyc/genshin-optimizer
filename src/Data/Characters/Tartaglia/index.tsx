@@ -1,170 +1,251 @@
-import card from './Character_Tartaglia_Card.png'
-import thumb from './Icon.png'
-import thumbSide from './IconSide.png'
-import banner from './Banner.png'
-import c1 from './constellation1.png'
-import c2 from './constellation2.png'
-import c3 from './constellation3.png'
-import c4 from './constellation4.png'
-import c5 from './constellation5.png'
-import c6 from './constellation6.png'
-import skill from './skill.png'
-import burst from './burst.png'
-import passive1 from './passive1.png'
-import passive2 from './passive2.png'
-import passive3 from './passive3.png'
-import Stat from '../../../Stat'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../PageBuild/Build'
-import { ICharacterSheet } from '../../../Types/character'
-import { Translate } from '../../../Components/Translate'
-import { bowChargedDocSection, conditionalHeader, normalDocSection, normalSrc, plungeDocSection, talentTemplate } from '../SheetUtil'
-import { WeaponTypeKey } from '../../../Types/consts'
-const tr = (strKey: string) => <Translate ns="char_Tartaglia_gen" key18={strKey} />
-const char: ICharacterSheet = {
+import { CharacterData } from 'pipeline'
+import { input } from '../../../Formula'
+import { constant, greaterEq, infoMut, prod, subscript } from '../../../Formula/utils'
+import { CharacterKey, ElementKey, Region } from '../../../Types/consts'
+import { st, trans } from '../../SheetUtil'
+import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
+import data_gen_src from './data_gen.json'
+import skillParam_gen from './skillParam_gen.json'
+
+const data_gen = data_gen_src as CharacterData
+
+const key: CharacterKey = "Tartaglia"
+const elementKey: ElementKey = "hydro"
+const region: Region = "snezhnaya" // TODO: should his region be set to snezhnaya or liyue?
+const [tr] = trans("char", key)
+
+let a = 0, s = 0, b = 0, p1 = 0
+const datamine = {
+  normal: {
+    hitArr: [
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+      skillParam_gen.auto[a++],
+    ]
+  },
+  charged: {
+    aimed: skillParam_gen.auto[a++],
+    aimedCharged: skillParam_gen.auto[a++],
+  },
+  riptide: {
+    flashDmg: skillParam_gen.auto[a++],
+    burstDmg: skillParam_gen.auto[a++],
+  },
+  plunging: {
+    dmg: skillParam_gen.auto[a++],
+    low: skillParam_gen.auto[a++],
+    high: skillParam_gen.auto[a++],
+  },
+  riptideDuration: skillParam_gen.auto[a++][0],
+  skill: {
+    stanceDmg: skillParam_gen.skill[s++],
+    normal1: skillParam_gen.skill[s++],
+    normal2: skillParam_gen.skill[s++],
+    normal3: skillParam_gen.skill[s++],
+    normal4: skillParam_gen.skill[s++],
+    normal5: skillParam_gen.skill[s++],
+    normal61: skillParam_gen.skill[s++], // 6.1
+    normal62: skillParam_gen.skill[s++], // 6.2
+    charged1: skillParam_gen.skill[s++],
+    charged2: skillParam_gen.skill[s++],
+    riptideSlash: skillParam_gen.skill[s++],
+    chargedStamina: skillParam_gen.skill[s++][0],
+    duration: skillParam_gen.skill[s++][0],
+    preemptiveCd1: skillParam_gen.skill[s++][0],
+    preemptiveCd2: skillParam_gen.skill[s++][0],
+    maxCd: skillParam_gen.skill[s++][0],
+  },
+  burst: {
+    meleeDmg: skillParam_gen.burst[b++],
+    riptideBlastDmg: skillParam_gen.burst[b++],
+    rangedDmg: skillParam_gen.burst[b++],
+    enerReturned: skillParam_gen.burst[b++][0],
+    cd: skillParam_gen.burst[b++][0],
+    enerCost: skillParam_gen.burst[b++][0],
+  },
+  passive1: {
+    durationExt: skillParam_gen.passive1[p1++][0],
+  },
+  constellation1: {
+    cdRed: 0.2
+  }
+} as const
+
+const dmgFormulas = {
+  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+    [i, dmgNode("atk", arr, "normal")])),
+  charged: {
+    aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
+    aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('hydro') } })
+  },
+  riptide: {
+    flashDmg: dmgNode("atk", datamine.riptide.flashDmg, "normal", { hit: { ele: constant('hydro') } }),
+    burstDmg: dmgNode("atk", datamine.riptide.burstDmg, "normal", { hit: { ele: constant('hydro') } })
+  },
+  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+    [key, dmgNode("atk", value, "plunging")])),
+  skill: {
+    stanceDmg: dmgNode("atk", datamine.skill.stanceDmg, "skill"),
+    // TODO: there's probably a cleaner way to do this?
+    normal1: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal1), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal2: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal2), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal3: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal3), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal4: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal4), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal5: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal5), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal61: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal61), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal62: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal62), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    charged1: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.charged1), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    charged2: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.charged2), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    riptideSlash: dmgNode("atk", datamine.skill.riptideSlash, "skill")
+  },
+  burst: {
+    meleeDmg: dmgNode("atk", datamine.burst.meleeDmg, "burst"),
+    rangedDmg: dmgNode("atk", datamine.burst.rangedDmg, "burst"),
+    riptideBlastDmg: dmgNode("atk", datamine.burst.riptideBlastDmg, "burst")
+  }
+}
+const nodeC3 = greaterEq(input.constellation, 3, 3)
+const nodeC5 = greaterEq(input.constellation, 5, 3)
+
+export const data = dataObjForCharacterSheet(key, elementKey, region, data_gen, dmgFormulas, {
+  bonus: {
+    skill: nodeC3,
+    burst: nodeC5,
+  }
+})
+
+const sheet: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
   rarity: data_gen.star,
-  elementKey: "hydro",
-  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
+  elementKey,
+  weaponTypeKey: data_gen.weaponTypeKey,
   gender: "M",
   constellationName: tr("constellationName"),
   title: tr("title"),
-  baseStat: data_gen.base,
-  baseStatCurve: data_gen.curves,
-  ascensions: data_gen.ascensions,
   talent: {
-    formula,
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
+        img: normalSrc(data_gen.weaponTypeKey),
         sections: [
-          normalDocSection(tr, formula, data),
-          bowChargedDocSection(tr, formula, data, "hydro"),
           {
-            text: tr(`auto.fields.riptide`),
+            text: tr("auto.fields.normal"),
+            fields: datamine.normal.hitArr.map((_, i) =>
+            ({
+              node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
+            }))
+          }, {
+            text: tr("auto.fields.charged"),
             fields: [{
-              text: `Riptide Flash DMG (3 Hits)`,
-              formulaText: stats => <span>{data.riptide.flash[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, "hydro"), stats)}</span>,
-              formula: formula.normal.flash,
-              variant: stats => getTalentStatKeyVariant("normal", stats, "hydro"),
+              node: infoMut(dmgFormulas.charged.aimed, { key: `char_${key}_gen:auto.skillParams.6` }),
             }, {
-              text: `Riptide Burst DMG`,
-              formulaText: stats => <span>{data.riptide.burst[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, "hydro"), stats)}</span>,
-              formula: formula.normal.burst,
-              variant: stats => getTalentStatKeyVariant("normal", stats, "hydro"),
+              node: infoMut(dmgFormulas.charged.aimedCharged, { key: `char_${key}_gen:auto.skillParams.7` }),
             }]
-          },
-          plungeDocSection(tr, formula, data)
+          }, {
+            text: tr("auto.fields.riptide"),
+            fields: [{
+              node: infoMut(dmgFormulas.riptide.flashDmg, { key: `char_${key}_gen:auto.skillParams.8` }),
+              textSuffix: st("brHits", { count: 3 })
+            }, {
+              node: infoMut(dmgFormulas.riptide.burstDmg, { key: `char_${key}_gen:auto.skillParams.9` }),
+            }, {
+              text: tr("auto.skillParams.10"),
+              value: (data) => data.get(input.asc).value >= 1 ? datamine.passive1.durationExt + datamine.riptideDuration : datamine.riptideDuration,
+              unit: "s"
+            }]
+          }, {
+            text: tr("auto.fields.plunging"),
+            fields: [{
+              node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+            }, {
+              node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+            }, {
+              node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+            }]
+          }
         ],
       },
-      skill: {
-        name: tr("skill.name"),
-        img: skill,
-        sections: [{
-          text: tr("skill.description"),
-          fields: [{
-            text: "Stance Change DMG",
-            formulaText: stats => <span>{data.skill.skillDmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-            formula: formula.skill.skillDmg,
-            variant: stats => getTalentStatKeyVariant("skill", stats),
-          },
-          ...data.skill.hitArr.map((percentArr, i) => ({
-            text: `${i + (i < 6 ? 1 : 0)}${i > 4 ? `.${i - 4}` : ""}-Hit DMG`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("normal", stats, "hydro"), stats)}</span>,
-            formula: formula.skill[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats, "hydro"),
-          })), {
-            text: `Charged 1-Hit DMG`,
-            formulaText: stats => <span>{data.skill.charged1[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("charged", stats, "hydro"), stats)}</span>,
-            formula: formula.skill.charged1,
-            variant: stats => getTalentStatKeyVariant("charged", stats, "hydro"),
-          }, {
-            text: `Charged 2-Hit DMG`,
-            formulaText: stats => <span>{data.skill.charged2[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("charged", stats, "hydro"), stats)}</span>,
-            formula: formula.skill.charged2,
-            variant: stats => getTalentStatKeyVariant("charged", stats, "hydro"),
-          }, {
-            text: `Charged Attack Stamina Cost`,
-            value: 20,
-          }, {
-            text: `Riptide Slash DMG`,
-            formulaText: stats => <span>{data.riptide.slash[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-            formula: formula.skill.slash,
-            variant: stats => getTalentStatKeyVariant("skill", stats),
-          }, {
-            text: `Duration`,
-            value: `30s`,
-          }, {
-            text: `Preemptive End CD`,
-            value: stats => stats.constellation < 1 ? `6-36s` : `6-36s - 20%`,
-          }, {
-            text: `CD`,
-            value: stats => stats.constellation < 1 ? `45s` : `45s - 20%`,
-          }],
-        }],
-      },
-      burst: {
-        name: tr("burst.name"),
-        img: burst,
-        sections: [{
-          text: tr("burst.description"),
-          fields: [{
-            text: "Skill DMG: Melee",
-            formulaText: stats => <span>{data.burst.melee[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-            formula: formula.burst.melee,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
-          }, {
-            text: "Skill DMG: Ranged",
-            formulaText: stats => <span>{data.burst.ranged[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-            formula: formula.burst.ranged,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
-          }, {
-            text: `Riptide Blast DMG`,
-            formulaText: stats => <span>{data.riptide.blast[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-            formula: formula.burst.blast,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
-          }, {
-            text: "CD",
-            value: "15s"
-          }, {
-            text: "Energy Cost",
-            value: 60,
-          }, {
-            text: "Energy Return (Ranged)",
-            value: 20,
-          }],
-        }],
-      },
+      skill: talentTemplate("skill", tr, skill, [{
+        node: infoMut(dmgFormulas.skill.stanceDmg, { key: `char_${key}_gen:skill.skillParams.0` }),
+      }, {
+        node: infoMut(dmgFormulas.skill.normal1, { key: `char_${key}_gen:skill.skillParams.1` }),
+      }, {
+        node: infoMut(dmgFormulas.skill.normal2, { key: `char_${key}_gen:skill.skillParams.2` }),
+      }, {
+        node: infoMut(dmgFormulas.skill.normal3, { key: `char_${key}_gen:skill.skillParams.3` }),
+      }, {
+        node: infoMut(dmgFormulas.skill.normal4, { key: `char_${key}_gen:skill.skillParams.4` }),
+      }, {
+        node: infoMut(dmgFormulas.skill.normal5, { key: `char_${key}_gen:skill.skillParams.5` }),
+      }, {
+        node: infoMut(dmgFormulas.skill.normal61, { key: `char_${key}_gen:skill.skillParams.6` }),
+        textSuffix: "(1)"
+      }, {
+        node: infoMut(dmgFormulas.skill.normal62, { key: `char_${key}_gen:skill.skillParams.6` }),
+        textSuffix: "(2)"
+      }, {
+        node: infoMut(dmgFormulas.skill.charged1, { key: `char_${key}_gen:skill.skillParams.7` }),
+        textSuffix: "(1)"
+      }, {
+        node: infoMut(dmgFormulas.skill.charged2, { key: `char_${key}_gen:skill.skillParams.7` }),
+        textSuffix: "(2)"
+      }, {
+        node: infoMut(constant(datamine.skill.chargedStamina), { key: `char_${key}_gen:skill.skillParams.8` }),
+      }, {
+        node: infoMut(dmgFormulas.skill.riptideSlash, { key: `char_${key}_gen:skill.skillParams.9` }),
+      }, {
+        text: tr("skill.skillParams.10"),
+        value: datamine.skill.duration,
+        unit: "s"
+      }, {
+        text: tr("skill.skillParams.11"),
+        value: (data) => data.get(input.constellation).value >= 1 ? `${datamine.skill.preemptiveCd1 -
+          (datamine.skill.preemptiveCd1 * datamine.constellation1.cdRed)} - ${datamine.skill.preemptiveCd2 -
+          (datamine.skill.preemptiveCd2 * datamine.constellation1.cdRed)}` : `${datamine.skill.preemptiveCd1} - 
+          ${datamine.skill.preemptiveCd2}`,
+        unit: "s"
+      }, {
+        text: tr("skill.skillParams.12"),
+        value: (data) => data.get(input.constellation).value >= 1 ? `${datamine.skill.maxCd - (datamine.skill.maxCd *
+          datamine.constellation1.cdRed)}` : `${datamine.skill.maxCd}`,
+        unit: "s"
+      }]),
+      burst: talentTemplate("burst", tr, burst, [{
+        node: infoMut(dmgFormulas.burst.meleeDmg, { key: `char_${key}_gen:burst.skillParams.0` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.rangedDmg, { key: `char_${key}_gen:burst.skillParams.1` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.riptideBlastDmg, { key: `char_${key}_gen:burst.skillParams.2` }),
+      }, {
+        text: tr("burst.skillParams.4"),
+        value: `${datamine.burst.cd}`,
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.5"),
+        value: `${datamine.burst.enerCost}`,
+      }, {
+        text: tr("burst.skillParams.3"),
+        value: `${datamine.burst.enerReturned}`,
+      }]),
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: talentTemplate("passive2", tr, passive2),
-      passive3: {
-        name: tr("passive3.name"),
-        img: passive3,
-        sections: [{
-          conditional: {
-            key: "pas",
-            partyBuff: "partyOnly",
-            maxStack: 0,
-            header: conditionalHeader("passive3", tr, passive3),
-            description: tr("passive3.description"),
-            name: tr("passive3.name"),
-            stats: { autoBoost: 1 }
-          }
-        }],
-      },
+      passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };
-export default char;
+export default new CharacterSheet(sheet, data);
