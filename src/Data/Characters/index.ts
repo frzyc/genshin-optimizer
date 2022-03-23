@@ -35,7 +35,7 @@ import SangonomiyaKokomi from './SangonomiyaKokomi'
 // import Sayu from './Sayu'
 import Shenhe from "./Shenhe"
 import Sucrose from "./Sucrose"
-// import Tartaglia from './Tartaglia'
+import Tartaglia from './Tartaglia'
 // import Thoma from './Thoma'
 import Traveler from './Traveler'
 import Venti from './Venti'
@@ -84,7 +84,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Sayu,
   Shenhe,
   Sucrose,
-  // Tartaglia,
+  Tartaglia,
   // Thoma,
   Traveler,
   Venti,
