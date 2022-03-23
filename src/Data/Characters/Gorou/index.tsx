@@ -190,6 +190,7 @@ const sheet: ICharacterSheet = {
         value: condInField,
         path: condInFieldPath,
         name: st("activeCharField"),
+        teamBuff: true,
         states: {
           inField: {
             fields: [{
@@ -232,6 +233,7 @@ const sheet: ICharacterSheet = {
           path: condAfterBurstPath,
           canShow: greaterEq(input.asc, 1, 1),
           name: st("afterUse.burst"),
+          teamBuff: true,
           states: {
             afterBurst: {
               fields: [{
@@ -260,6 +262,7 @@ const sheet: ICharacterSheet = {
         path: condAfterSkillBurstPath,
         canShow: greaterEq(input.constellation, 6, 1),
         name: st("afterUse.skillOrBurst"),
+        teamBuff: true,
         states: {
           afterSkillBurst: {
             fields: [{
