@@ -38,7 +38,8 @@
   },
   "afterUse": {
     "skill": "After using Elemental Skill",
-    "burst": "After using Elemental Burst"
+    "burst": "After using Elemental Burst",
+    "skillOrBurst": "After using Ele. Skill or Ele. Burst"
   },
   "afterSprint": "After Sprint",
   "increase": {
