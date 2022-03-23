@@ -1,10 +1,10 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { constant, greaterEq, infoMut, prod, subscript } from '../../../Formula/utils'
+import { constant, greaterEq, infoMut } from '../../../Formula/utils'
 import { CharacterKey, ElementKey, Region } from '../../../Types/consts'
 import { st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
-import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -13,7 +13,7 @@ const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "Tartaglia"
 const elementKey: ElementKey = "hydro"
-const region: Region = "snezhnaya" // TODO: should his region be set to snezhnaya or liyue?
+const region: Region = "snezhnaya"
 const [tr] = trans("char", key)
 
 let a = 0, s = 0, b = 0, p1 = 0
@@ -71,6 +71,9 @@ const datamine = {
   passive1: {
     durationExt: skillParam_gen.passive1[p1++][0],
   },
+  passive: {
+    auto_boost: 1,
+  },
   constellation1: {
     cdRed: 0.2
   }
@@ -81,9 +84,7 @@ const dmgFormulas = {
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
     aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
-    aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('hydro') } })
-  },
-  riptide: {
+    aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('hydro') } }),
     flashDmg: dmgNode("atk", datamine.riptide.flashDmg, "normal", { hit: { ele: constant('hydro') } }),
     burstDmg: dmgNode("atk", datamine.riptide.burstDmg, "normal", { hit: { ele: constant('hydro') } })
   },
@@ -91,16 +92,15 @@ const dmgFormulas = {
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
     stanceDmg: dmgNode("atk", datamine.skill.stanceDmg, "skill"),
-    // TODO: there's probably a cleaner way to do this?
-    normal1: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal1), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    normal2: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal2), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    normal3: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal3), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    normal4: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal4), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    normal5: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal5), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    normal61: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal61), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    normal62: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal62), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    charged1: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.charged1), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    charged2: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.charged2), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal1: dmgNode("atk", datamine.skill.normal1, "normal", { hit: { ele: constant('hydro') } }),
+    normal2: dmgNode("atk", datamine.skill.normal2, "normal", { hit: { ele: constant('hydro') } }),
+    normal3: dmgNode("atk", datamine.skill.normal3, "normal", { hit: { ele: constant('hydro') } }),
+    normal4: dmgNode("atk", datamine.skill.normal4, "normal", { hit: { ele: constant('hydro') } }),
+    normal5: dmgNode("atk", datamine.skill.normal5, "normal", { hit: { ele: constant('hydro') } }),
+    normal61: dmgNode("atk", datamine.skill.normal61, "normal", { hit: { ele: constant('hydro') } }),
+    normal62: dmgNode("atk", datamine.skill.normal62, "normal", { hit: { ele: constant('hydro') } }),
+    charged1: dmgNode("atk", datamine.skill.charged1, "normal", { hit: { ele: constant('hydro') } }),
+    charged2: dmgNode("atk", datamine.skill.charged2, "normal", { hit: { ele: constant('hydro') } }),
     riptideSlash: dmgNode("atk", datamine.skill.riptideSlash, "skill")
   },
   burst: {
@@ -109,6 +109,9 @@ const dmgFormulas = {
     riptideBlastDmg: dmgNode("atk", datamine.burst.riptideBlastDmg, "burst")
   }
 }
+
+const nodePassive = constant(1)
+
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
@@ -116,6 +119,11 @@ export const data = dataObjForCharacterSheet(key, elementKey, region, data_gen, 
   bonus: {
     skill: nodeC3,
     burst: nodeC5,
+  },
+  teamBuff: {
+    bonus: {
+      auto: nodePassive,
+    }
   }
 })
 
@@ -153,10 +161,10 @@ const sheet: ICharacterSheet = {
           }, {
             text: tr("auto.fields.riptide"),
             fields: [{
-              node: infoMut(dmgFormulas.riptide.flashDmg, { key: `char_${key}_gen:auto.skillParams.8` }),
+              node: infoMut(dmgFormulas.charged.flashDmg, { key: `char_${key}_gen:auto.skillParams.8` }),
               textSuffix: st("brHits", { count: 3 })
             }, {
-              node: infoMut(dmgFormulas.riptide.burstDmg, { key: `char_${key}_gen:auto.skillParams.9` }),
+              node: infoMut(dmgFormulas.charged.burstDmg, { key: `char_${key}_gen:auto.skillParams.9` }),
             }, {
               text: tr("auto.skillParams.10"),
               value: (data) => data.get(input.asc).value >= 1 ? datamine.passive1.durationExt + datamine.riptideDuration : datamine.riptideDuration,
@@ -210,7 +218,7 @@ const sheet: ICharacterSheet = {
         text: tr("skill.skillParams.11"),
         value: (data) => data.get(input.constellation).value >= 1 ? `${datamine.skill.preemptiveCd1 -
           (datamine.skill.preemptiveCd1 * datamine.constellation1.cdRed)} - ${datamine.skill.preemptiveCd2 -
-          (datamine.skill.preemptiveCd2 * datamine.constellation1.cdRed)}` : `${datamine.skill.preemptiveCd1} - 
+          (datamine.skill.preemptiveCd2 * datamine.constellation1.cdRed)}` : `${datamine.skill.preemptiveCd1} -
           ${datamine.skill.preemptiveCd2}`,
         unit: "s"
       }, {
@@ -238,7 +246,7 @@ const sheet: ICharacterSheet = {
       }]),
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: talentTemplate("passive2", tr, passive2),
-      passive3: talentTemplate("passive3", tr, passive3),
+      passive3: talentTemplate("passive3", tr, passive3, [{ node: nodePassive }]),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
