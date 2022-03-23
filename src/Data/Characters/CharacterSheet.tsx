@@ -75,7 +75,10 @@ export default class CharacterSheet {
   static getLevelString = (level: number, ascension: number): string =>
     `${level}/${ascensionMaxLevel[ascension]}`
 }
-
+/*
+TODO: refactor stage 1 this function to be
+talentTemplate(talentKey, tr, img, docsection:DocumentSection[]): TalentSheetElement
+*/
 export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[], conditional?: IConditional, additionalSections?: DocumentSection[]): TalentSheetElement => ({
   name: tr(`${talentKey}.name`),
   img,
@@ -86,6 +89,11 @@ export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) =>
     },
     ...(additionalSections || [])],
 })
+
+/*
+TODO: refactor stage 1 this function to be
+sectionTemplate(docSection:DocumentSection): DocumentSection
+*/
 export const sectionTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[], conditional?: IConditional, fieldsCanShow?: (data: UIData) => boolean, teamBuff?: boolean, showFieldsHeaderDesc?: boolean): DocumentSection => ({
   fieldsHeader: showFieldsHeaderDesc ? conditionalHeader(talentKey, tr, img) : undefined,
   fieldsDescription: showFieldsHeaderDesc ? tr(`${talentKey}.description`) : undefined,
@@ -100,6 +108,17 @@ export const sectionTemplate = (talentKey: TalentSheetElementKey, tr: (string) =
     }
     : undefined,
 })
+
+/*
+TODO: refactor stage 2: merge the above stage 1 functions by creating a templategenerator function:
+charTemplates(cKey:CharacterKey, assets:Partial<Record<TalentSheetElementKey,string>>):{
+  tr: (key:string) => Displayable
+  trm: (key:string, value?:object) => Displayable
+  talentTemplate: (talentKey, docsection:DocumentSection[]) => TalentSheetElement
+  sectionTemplate: (Partial<DocumentSection>) => DocumentSection
+  conditionalTemplate:(talentKey,conditional:Partial<Iconditional>) => Iconditional
+}
+*/
 
 const talentStrMap: Record<TalentSheetElementKey, string> = {
   auto: "Auto",
