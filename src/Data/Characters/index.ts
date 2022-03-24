@@ -2,7 +2,7 @@ import { CharacterKey } from '../../Types/consts'
 import CharacterSheet from './CharacterSheet'
 
 import Albedo from './Albedo'
-// import Aloy from './Aloy'
+import Aloy from './Aloy'
 // import Amber from './Amber'
 import AratakiItto from './AratakiItto'
 // import Barbara from './Barbara'
@@ -51,7 +51,7 @@ import Zhongli from './Zhongli'
 
 const characters: Record<CharacterKey, CharacterSheet> = {
   Albedo,
-  // Aloy,
+  Aloy,
   // Amber,
   AratakiItto,
   // Barbara,
