@@ -1,10 +1,10 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { constant, greaterEq, infoMut } from '../../../Formula/utils'
+import { constant, greaterEq, infoMut, prod, subscript } from '../../../Formula/utils'
 import { CharacterKey, ElementKey, Region } from '../../../Types/consts'
 import { st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -92,15 +92,15 @@ const dmgFormulas = {
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
     stanceDmg: dmgNode("atk", datamine.skill.stanceDmg, "skill"),
-    normal1: dmgNode("atk", datamine.skill.normal1, "normal", { hit: { ele: constant('hydro') } }),
-    normal2: dmgNode("atk", datamine.skill.normal2, "normal", { hit: { ele: constant('hydro') } }),
-    normal3: dmgNode("atk", datamine.skill.normal3, "normal", { hit: { ele: constant('hydro') } }),
-    normal4: dmgNode("atk", datamine.skill.normal4, "normal", { hit: { ele: constant('hydro') } }),
-    normal5: dmgNode("atk", datamine.skill.normal5, "normal", { hit: { ele: constant('hydro') } }),
-    normal61: dmgNode("atk", datamine.skill.normal61, "normal", { hit: { ele: constant('hydro') } }),
-    normal62: dmgNode("atk", datamine.skill.normal62, "normal", { hit: { ele: constant('hydro') } }),
-    charged1: dmgNode("atk", datamine.skill.charged1, "normal", { hit: { ele: constant('hydro') } }),
-    charged2: dmgNode("atk", datamine.skill.charged2, "normal", { hit: { ele: constant('hydro') } }),
+    normal1: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal1), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal2: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal2), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal3: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal3), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal4: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal4), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal5: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal5), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal61: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal61), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal62: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal62), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    charged1: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.charged1), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    charged2: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.charged2), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
     riptideSlash: dmgNode("atk", datamine.skill.riptideSlash, "skill")
   },
   burst: {
