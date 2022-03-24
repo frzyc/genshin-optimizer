@@ -40,7 +40,7 @@ const datamine = {
   skill: {
     freezeBombDmg: skillParam_gen.skill[s++],
     chillWaterBomblets: skillParam_gen.skill[s++],
-    atkDecrease: skillParam_gen.skill[s++], // TODO: I don't think 
+    atkDecrease: skillParam_gen.skill[s++],
     atkDecreaseDuration: skillParam_gen.skill[s++][0],
     coilNormalDmgBonus1: skillParam_gen.skill[s++],
     coilNormalDmgBonus2: skillParam_gen.skill[s++],
