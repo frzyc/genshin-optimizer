@@ -91,7 +91,11 @@ const p2_skill_dmgInc = greaterEq(input.asc, 4, prod(input.total.def, datamine.p
 const p2_burst_dmgInc = greaterEq(input.asc, 4, prod(input.total.def, datamine.passive2.burst_dmgInc))
 
 const [condAfterSkillBurstPath, condAfterSkillBurst] = cond(key, "afterSkillBurst")
-const c6_geo_critDMG_ = subscript(sum(tally["geo"], -1), datamine.constellation6.geo_critDMG_)
+const c6_geo_critDMG_ = greaterEq(input.constellation, 6, 
+  equal(condAfterSkillBurst, "afterSkillBurst", 
+    subscript(sum(tally["geo"], -1), datamine.constellation6.geo_critDMG_)
+  )
+)
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
