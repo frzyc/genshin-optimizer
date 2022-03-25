@@ -8,6 +8,7 @@
   "lessEqPercentHP": "HP less than or equal to {{percent}}%",
   "greaterPercentHP": "HP greater than {{percent}}%",
   "greaterEqPercentHP": "HP greater than or equal to {{percent}}%",
+  "lessPercentEnergy": "Energy less than {{percent}}%",
   "enemyLessPercentHP": "Enemy HP less than {{percent}}%",
   "enemyLessEqPercentHP": "Enemy HP less than or equal to {{percent}}%",
   "enemyGreaterPercentHP": "Enemy HP greater than {{percent}}%",
@@ -53,6 +54,7 @@
   "absorDot": "Absorption DoT",
   "incInterRes": "Increase resistance to interruption",
   "charges": "Charges",
+  "cooldown": "Cooldown",
   "addlCharges": "Additional charges",
   "activeCharField": "Active Character in field",
   "opponentsField": "Opponents in field",
@@ -68,7 +70,7 @@
     "geo": "Geo Infusion"
   },
   "energyRegen": "Energy Regeneration",
-  "effectDuration":{
+  "effectDuration": {
     "pyro": "Pyro effect duration",
     "cryo": "Cryo effect duration",
     "anemo": "Anemo effect duration",
