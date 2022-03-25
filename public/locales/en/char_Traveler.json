@@ -23,5 +23,13 @@
       "fallingThunder3": "3rd <strong>Falling Thunder</strong> attack",
       "fallingThunderBonus_": "<strong>Falling Thunder</strong> DMG bonus"
     }
+  },
+  "geo": {
+    "passive2": {
+      "key": "Frenzied Rockslide DMG"
+    },
+    "c2": {
+      "key": "Rockcore Meltdown DMG"
+    }
   }
 }
