@@ -96,10 +96,10 @@ const enerRechElectroSigil_ = lookup(condElectroSigil, objectKeyMap(range(1, 3),
   naught, { key: "enerRech_" })
 const electro_res_ = equal("on", condTheWolfWithin, percent(datamine.burst.electroResBonus))
 const atkSPD_ = equal("on", condTheWolfWithin, subscript(input.total.burstIndex, datamine.burst.atkSpdBonus, { key: "_" }))
-const enerRechA4_ = equal("on", condA4, percent(datamine.passive2.erInc, { key: "enerRech_" }))
-const all_dmg_ = equal("on", condC1, percent(datamine.constellation1.allDmgInc))
-const critRate_ = equal("on", condC2, percent(datamine.constellation2.critRateInc))
-const enemyDefRed_ = equal("on", condC4, percent(datamine.constellation4.defDec))
+const enerRechA4_ = greaterEq(input.asc, 4, equal("on", condA4, percent(datamine.passive2.erInc, { key: "enerRech_" })))
+const all_dmg_ = greaterEq(input.constellation, 1, equal("on", condC1, percent(datamine.constellation1.allDmgInc)))
+const critRate_ = greaterEq(input.constellation, 2, equal("on", condC2, percent(datamine.constellation2.critRateInc)))
+const enemyDefRed_ = greaterEq(input.constellation, 4, equal("on", condC4, percent(datamine.constellation4.defDec)))
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -124,8 +124,8 @@ const dmgFormulas = {
       subscript(input.total.burstIndex, datamine.burst.companionDmg)), input.total.atk), "burst"),
     companionDmg4: customDmgNode(prod(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[3]),
       subscript(input.total.burstIndex, datamine.burst.companionDmg)), input.total.atk), "burst"),
-    // TODO: this is for the additional section, to calculate the full burst dmg: sum of normal dmg and burst companion dmg
-    // However, the dmg then defaults to Electro text color which is sort of incorrect
+    // TODO: this is for the additional section to calculate the full burst dmg where the full burst dmg = sum of normal dmg and burst companion dmg
+    // However, the final dmg then defaults to Electro text color which is sort of incorrect?
     // Is there a way to disable the electro text color and default it to just normal color instead?
     fullBurstDmg1: sum(customDmgNode(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[0]), input.total.atk), "normal"),
       customDmgNode(prod(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[0]),
@@ -141,7 +141,8 @@ const dmgFormulas = {
         subscript(input.total.burstIndex, datamine.burst.companionDmg)), input.total.atk), "burst"))
   },
   constellation6: {
-    dmg: customDmgNode(prod(percent(datamine.constellation6.dmg), input.total.atk), "elemental", { hit: { ele: constant(elementKey) } })
+    dmg: greaterEq(input.constellation, 6, customDmgNode(prod(percent(datamine.constellation6.dmg), input.total.atk), "elemental",
+      { hit: { ele: constant(elementKey) } }))
   }
 }
 
@@ -158,8 +159,13 @@ export const data = dataObjForCharacterSheet(key, elementKey, regionKey, data_ge
     electro_res_,
     atkSPD_,
     all_dmg_,
-    critRate_,
-    enemyDefRed_
+    critRate_
+  },
+  teamBuff: {
+    premod: {
+      // TODO: this should technically be in teamBuff right?
+      enemyDefRed_
+    }
   }
 })
 
@@ -306,6 +312,7 @@ const sheet: ICharacterSheet = {
       passive2: talentTemplate("passive2", tr, passive2, undefined, {
         value: condA4,
         path: condA4Path,
+        canShow: greaterEq(input.asc, 4, 1),
         name: st("lessPercentEnergy", { percent: datamine.passive2.enerThreshold * 100 }),
         header: conditionalHeader("passive2", tr, passive2),
         states: {
@@ -320,6 +327,7 @@ const sheet: ICharacterSheet = {
       constellation1: talentTemplate("constellation1", tr, c1, undefined, {
         value: condC1,
         path: condC1Path,
+        canShow: greaterEq(input.constellation, 1, 1),
         name: trm("pickUpElementalOrbParticle"),
         header: conditionalHeader("constellation1", tr, c1),
         states: {
@@ -337,6 +345,7 @@ const sheet: ICharacterSheet = {
       constellation2: talentTemplate("constellation2", tr, c2, undefined, {
         value: condC2,
         path: condC2Path,
+        canShow: greaterEq(input.constellation, 2, 1),
         name: st("enemyLessPercentHP", { percent: datamine.constellation2.hpThreshold * 100 }),
         header: conditionalHeader("constellation2", tr, c2),
         states: {
@@ -351,6 +360,8 @@ const sheet: ICharacterSheet = {
       constellation4: talentTemplate("constellation4", tr, c4, undefined, {
         value: condC4,
         path: condC4Path,
+        teamBuff: true,
+        canShow: greaterEq(input.constellation, 4, 1),
         name: trm("opHitWithClawAndThunder"),
         header: conditionalHeader("constellation4", tr, c4),
         states: {
@@ -367,11 +378,14 @@ const sheet: ICharacterSheet = {
       }),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: talentTemplate("constellation6", tr, c6, [{
+        canShow: (data) => data.get(input.constellation).value >= 6,
         node: infoMut(dmgFormulas.constellation6.dmg, { key: "sheet:dmg" })
       }, {
         text: trm("electroSigilPerProc"),
+        canShow: (data) => data.get(input.constellation).value >= 6,
         value: datamine.constellation6.electroSigilGenerated
       }, {
+        canShow: (data) => data.get(input.constellation).value >= 6,
         text: st("cooldown"),
         value: datamine.constellation6.cd,
         unit: "s"
