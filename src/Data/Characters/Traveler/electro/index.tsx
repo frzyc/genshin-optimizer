@@ -1,17 +1,15 @@
 import { CharacterData } from 'pipeline'
 import { Translate } from '../../../../Components/Translate'
 import { TalentSheet } from '../../../../Types/character_WR'
-import { absorbableEle, CharacterKey, ElementKey } from '../../../../Types/consts'
-import { customDmgNode, customHealNode, dataObjForCharacterSheet, dmgNode } from '../../dataUtil'
+import { CharacterKey, ElementKey } from '../../../../Types/consts'
+import { dataObjForCharacterSheet, dmgNode } from '../../dataUtil'
 import { burst, c1, c2, c3, c4, c5, c6, passive1, passive2, skill } from './assets'
 import data_gen_src from '../data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
-import { constant, equal, greaterEq, infoMut, percent, prod, subscript, sum } from '../../../../Formula/utils'
+import { equal, greaterEq, infoMut, percent, prod, subscript, sum } from '../../../../Formula/utils'
 import { input, target } from '../../../../Formula'
 import { normalSrc, talentTemplate, sectionTemplate } from '../../CharacterSheet'
 import { cond, sgt, st } from '../../../SheetUtil'
-import ColorText from '../../../../Components/ColoredText'
-import { objectKeyValueMap } from '../../../../Util/Util'
 
 const data_gen = data_gen_src as CharacterData
 const auto = normalSrc(data_gen.weaponTypeKey)
