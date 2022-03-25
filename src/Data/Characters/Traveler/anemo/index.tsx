@@ -100,7 +100,7 @@ const dmgFormulas = {
     dmg: greaterEq(input.asc, 1, customDmgNode(prod(input.total.atk, datamine.passive1.dmg), "elemental", { hit: { ele: constant(elementKey) } })),
   },
   passive2: {
-    heal: customHealNode(prod(percent(datamine.passive2.heal_), input.total.hp)),
+    heal: greaterEq(input.asc, 2, customHealNode(prod(percent(datamine.passive2.heal_), input.total.hp))),
   }
 } as const
 
