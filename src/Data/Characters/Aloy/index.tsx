@@ -121,7 +121,7 @@ const sheet: ICharacterSheet = {
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  rarity: 5,//data_gen.star, TODO: not in datamine
+  rarity: data_gen.star,
   elementKey,
   weaponTypeKey: data_gen.weaponTypeKey,
   gender: "F",

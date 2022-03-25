@@ -63,7 +63,7 @@ const characterDataDump = Object.fromEntries(Object.entries(avatarExcelConfigDat
     base: { hp: HpBase, atk: AttackBase, def: DefenseBase },
     curves,
     birthday: { month: InfoBirthMonth, day: InfoBirthDay },
-    star: QualityTypeMap[QualityType],
+    star: QualityTypeMap[QualityType] ?? 5,
     ascensions: ascensionData[AvatarPromoteId]
   }
 
