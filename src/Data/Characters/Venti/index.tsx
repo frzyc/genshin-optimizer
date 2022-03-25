@@ -290,27 +290,21 @@ const sheet: ICharacterSheet = {
           }]
         }]))
       }, [{
+        // Custom burst formula
         ...sectionTemplate("burst", tr, burst, [{
           node: infoMut(dmgFormulas.burst.full7, { key: `char_${key}:fullBurstDMG.dmg7`, variant: "physical" }),
         }, {
           node: infoMut(dmgFormulas.burst.full14, { key: `char_${key}:fullBurstDMG.dmg14`, variant: "physical" }),
         }], undefined, data => data.get(condBurstAbsorption).value !== undefined, undefined, true),
         text: trm("fullBurstDMG.description"),
-      }, sectionTemplate("passive2", tr, passive2, [{
-          text: trm("regenEner"),
-        }, {
-          text: trm("q"),
-        }], undefined, data => data.get(input.asc).value >= 4, false, true
-        ), sectionTemplate("constellation6", tr, c6, absorbableEle.map(eleKey => (
-            { node: c6_ele_enemyRes_arr[`${eleKey}_enemyRes_`] }
-          )),
-          undefined,
-          data => data.get(input.constellation).value >= 6
-            && data.get(condBurstAbsorption).value !== undefined
-            && data.get(equal(target.charKey, key, 1)).value === 1,
-          false,
-          true
-        ), sectionTemplate("constellation6", tr, c6, undefined, {
+        }, sectionTemplate("passive2", tr, passive2, [{
+            text: trm("regenEner"),
+          }, {
+            text: trm("q"),
+          }], undefined, data => data.get(input.asc).value >= 4, false, true
+        ), 
+        // C6 anemo team-display
+        sectionTemplate("constellation6", tr, c6, undefined, {
           value: condC6,
           path: condC6Path,
           description: tr("constellation6.description.0"),
@@ -324,7 +318,20 @@ const sheet: ICharacterSheet = {
               }]
             }
           }
-        }), sectionTemplate("constellation6", tr, c6, undefined, {
+        }), 
+        // C6 elemental self-display
+        sectionTemplate("constellation6", tr, c6, absorbableEle.map(eleKey => (
+            { node: c6_ele_enemyRes_arr[`${eleKey}_enemyRes_`] }
+          )),
+          undefined,
+          data => data.get(input.constellation).value >= 6
+            && data.get(condBurstAbsorption).value !== undefined
+            && data.get(equal(target.charKey, key, 1)).value === 1,
+          false,
+          true
+        ),
+        // C6 elemental team-display
+        sectionTemplate("constellation6", tr, c6, undefined, {
           value: condBurstAbsorption,
           path: condBurstAbsorptionPath,
           description: tr("constellation6.description.1"),
