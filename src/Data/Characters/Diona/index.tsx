@@ -1,5 +1,5 @@
 import { CharacterData } from 'pipeline'
-import { input } from '../../../Formula'
+import { input, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, percent, prod, sum } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
@@ -116,8 +116,10 @@ const dmgFormulas = {
 const nodeA1MoveSpeed = equal(condA1, "on", percent(datamine.passive1.moveSpeed_),)
 const nodeA1Stamina = equal(condA1, "on", percent(datamine.passive1.stamRed_),)
 
-const nodeC6healing_ = equal(condC6Below, "on", percent(datamine.constellation6.healingBonus_),)
-const nodeC6em = equal(condC6Above, "on", datamine.constellation6.emBonus,)
+const nodeC6healing_Disp = equal(condC6Below, "on", percent(datamine.constellation6.healingBonus_),)
+const nodeC6healing_ = equal(input.activeCharKey, target.charKey, nodeC6healing_Disp)
+const nodeC6emDisp = equal(condC6Above, "on", datamine.constellation6.emBonus,)
+const nodeC6em = equal(input.activeCharKey, target.charKey, nodeC6emDisp)
 
 export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {
   bonus: {
@@ -250,7 +252,7 @@ const sheet: ICharacterSheet = {
         states: {
           on: {
             fields: [{
-              node: nodeC6healing_,
+              node: infoMut(nodeC6healing_Disp, { key: "heal_" }),
             }]
           }
         }
@@ -265,7 +267,7 @@ const sheet: ICharacterSheet = {
           states: {
             on: {
               fields: [{
-                node: nodeC6em,
+                node: infoMut(nodeC6emDisp, { key: "eleMas" }),
               }]
             }
           }
