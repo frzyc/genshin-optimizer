@@ -49,7 +49,7 @@ export const allArtifactSets = [
 ] as const
 export const allCharacterKeys = [
   "Albedo",
-  // "Amber",
+  "Amber",
   // "Barbara",
   "Beidou",
   "Bennett",
