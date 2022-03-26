@@ -1,8 +1,7 @@
 import { CharacterData } from 'pipeline'
-import { input, target } from '../../../Formula'
-import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum } from '../../../Formula/utils'
+import { input } from '../../../Formula'
+import { constant, equal, greaterEq, infoMut, percent, prod, subscript, sum } from '../../../Formula/utils'
 import { CharacterKey, ElementKey, Region } from '../../../Types/consts'
-import { range } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
@@ -71,10 +70,7 @@ const datamine = {
   }
 } as const
 
-// TODO: We can technically use burst_critRate for her passive1 right? 
-// const burst_critRate_ = greaterEq(input.asc, 1, percent(datamine.passive1.critRateInc))
-// Currently I've set her burst dmg to account for Amber's ascension level and add critRate_ accordingly
-// Check dmgFormulas to see what I did
+const burst_critRate_ = greaterEq(input.asc, 1, percent(datamine.passive1.critRateInc))
 const [condA4Path, condA4] = cond(key, "A4")
 const atk_ = equal("on", condA4, percent(datamine.passive2.atkInc))
 
@@ -88,8 +84,7 @@ const dmgFormulas = {
   charged: {
     aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
     aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('pyro') } }),
-    // TODO: The calculation for the second arrow is correct right?
-    secondAimed: greaterEq(input.constellation, 1, prod(dmgNode("atk", datamine.charged.aimed, "charged"), percent(datamine.constellation1.secArrowDmg))),
+    secondAimed: greaterEq(input.constellation, 1, prod(percent(datamine.constellation1.secArrowDmg), dmgNode("atk", datamine.charged.aimed, "charged"))),
     secondAimedCharged: greaterEq(input.constellation, 1, prod(dmgNode("atk", datamine.charged.aimedCharged, "charged",
       { hit: { ele: constant('pyro') } }), percent(datamine.constellation1.secArrowDmg))),
   },
@@ -100,8 +95,8 @@ const dmgFormulas = {
     dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
   },
   burst: {
-    rainDmg: dmgNode("atk", datamine.burst.rainDmg, "burst", { premod: { critRate_: greaterEq(input.asc, 1, percent(datamine.passive1.critRateInc)) } }),
-    dmgPerWave: dmgNode("atk", datamine.burst.dmgPerWave, "burst", { premod: { critRate_: greaterEq(input.asc, 1, percent(datamine.passive1.critRateInc)) } }),
+    rainDmg: dmgNode("atk", datamine.burst.rainDmg, "burst"),
+    dmgPerWave: dmgNode("atk", datamine.burst.dmgPerWave, "burst"),
   },
   constellation2: {
     manualDetonationDmg: customDmgNode(prod(sum(subscript(input.total.skillIndex, datamine.skill.dmg, { key: "_" }),
@@ -117,7 +112,8 @@ export const data = dataObjForCharacterSheet(key, elementKey, region, data_gen, 
     burst: nodeC3,
   },
   premod: {
-    atk_
+    atk_,
+    burst_critRate_,
   },
   teamBuff: {
     premod: {
@@ -231,8 +227,9 @@ const sheet: ICharacterSheet = {
         text: trm("aoeRangeBonus"),
         value: datamine.passive1.aoeInc * 100,
         unit: "%"
-      }, //{ node: burst_critRate_ },
-      ]),
+      }, {
+        node: burst_critRate_
+      },]),
       passive2: talentTemplate("passive2", tr, passive2, undefined, {
         value: condA4,
         path: condA4Path,
