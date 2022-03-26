@@ -8,8 +8,8 @@ import { allElements, allElementsWithPhy } from "../Types/consts";
 import { DocumentSection } from "../Types/sheet";
 import { objectKeyValueMap } from "../Util/Util";
 import { condReadNode, sgt, st } from "./SheetUtil";
-const tr = (strKey: string) => <Translate ns="resonance_gen" key18={strKey} />
-const trm = (strKey: string) => <Translate ns="resonance" key18={strKey} />
+const tr = (strKey: string) => <Translate ns="elementalResonance_gen" key18={strKey} />
+const trm = (strKey: string) => <Translate ns="elementalResonance" key18={strKey} />
 
 type IResonance = {
   name: Displayable,

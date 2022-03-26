@@ -13,7 +13,7 @@ export const mapHashData = {
     claymore: 2037297130,
     catalyst: 43479985
   },
-  resonance: {
+  elementalResonance: {
     ProtectiveCanopy: {
       name: 2109006394,
       desc: 3556079627

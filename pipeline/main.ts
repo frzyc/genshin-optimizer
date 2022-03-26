@@ -63,7 +63,7 @@ const characterDataDump = Object.fromEntries(Object.entries(avatarExcelConfigDat
     base: { hp: HpBase, atk: AttackBase, def: DefenseBase },
     curves,
     birthday: { month: InfoBirthMonth, day: InfoBirthDay },
-    star: QualityTypeMap[QualityType],
+    star: QualityTypeMap[QualityType] ?? 5,
     ascensions: ascensionData[AvatarPromoteId]
   }
 
@@ -365,7 +365,7 @@ Object.entries(languageData).forEach(([lang, data]) => {
 
   Object.entries(data).forEach(([type, typeData]) => {
     //general manual localiation namespaces
-    if (["sheet", "weaponKey", "resonance", "material"].includes(type))
+    if (["sheet", "weaponKey", "elementalResonance", "material"].includes(type))
       return dumpFile(`${fileDir}/${type}_gen.json`, typeData)
 
     //weapons/characters/artifacts

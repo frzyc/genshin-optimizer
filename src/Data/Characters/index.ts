@@ -2,7 +2,7 @@ import { CharacterKey } from '../../Types/consts'
 import CharacterSheet from './CharacterSheet'
 
 import Albedo from './Albedo'
-// import Aloy from './Aloy'
+import Aloy from './Aloy'
 import Amber from './Amber'
 import AratakiItto from './AratakiItto'
 // import Barbara from './Barbara'
@@ -32,7 +32,7 @@ import RaidenShogun from './RaidenShogun'
 // import Razor from './Razor'
 import Rosaria from './Rosaria'
 import SangonomiyaKokomi from './SangonomiyaKokomi'
-// import Sayu from './Sayu'
+import Sayu from './Sayu'
 import Shenhe from "./Shenhe"
 import Sucrose from "./Sucrose"
 import Tartaglia from './Tartaglia'
@@ -51,7 +51,7 @@ import Zhongli from './Zhongli'
 
 const characters: Record<CharacterKey, CharacterSheet> = {
   Albedo,
-  // Aloy,
+  Aloy,
   Amber,
   AratakiItto,
   // Barbara,
@@ -81,7 +81,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   // Razor,
   Rosaria,
   SangonomiyaKokomi,
-  // Sayu,
+  Sayu,
   Shenhe,
   Sucrose,
   Tartaglia,
