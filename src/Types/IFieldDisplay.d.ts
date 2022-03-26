@@ -8,6 +8,7 @@ export interface IBasicFieldDisplay {
   fixed?: number;
   variant?: string | ((data: UIData) => string);
   unit?: Displayable
+  textSuffix?: Displayable,
 }
 
 export interface INodeFieldDisplay {

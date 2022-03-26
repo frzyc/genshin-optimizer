@@ -35,8 +35,9 @@ function BasicFieldDisplay({ field, component }: { field: IBasicFieldDisplay, co
   const { data } = useContext(DataContext)
   const v = evalIfFunc(field.value, data)
   const variant = evalIfFunc(field.variant, data)
+  const suffix = field.textSuffix && <span> {field.textSuffix}</span>
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between" }} component={component} >
-    <ColorText color={variant}><b>{field.text}</b></ColorText>
+    <ColorText color={variant}><b>{field.text}</b>{suffix}</ColorText>
     <Typography >{typeof v === "number" ? v.toFixed?.(field.fixed) : v}{field.unit}</Typography>
   </Box>
 }
