@@ -71,7 +71,7 @@ const normal_dmg_ = lookup(condCoil, {
   "coil3": subscript(input.total.skillIndex, datamine.skill.coilNormalDmgBonus3, { key: "_" }),
   "rush": subscript(input.total.skillIndex, datamine.skill.rushingNormalDmgBonus, { key: "_" })
 }, naught)
-const atk_ = unequal(condCoil, undefined, percent(datamine.passive1.atkInc))
+const atk_ = greaterEq(input.asc, 1, unequal(condCoil, undefined, percent(datamine.passive1.atkInc)))
 const afterRushingIce = equalStr("rush", condCoil, elementKey)
 
 const [condA1Path, condA1] = cond(key, "A1")
@@ -220,7 +220,7 @@ const sheet: ICharacterSheet = {
       passive1: talentTemplate("passive1", tr, passive1, [{
         node: atk_
       }, {
-        canShow: (data) => data.get(condCoil).value !== undefined,
+        canShow: (data) => data.get(condCoil).value !== undefined && data.get(input.asc).value >= 1,
         text: sgt("duration"),
         value: datamine.passive1.duration,
         unit: "s"
