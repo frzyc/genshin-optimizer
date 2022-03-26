@@ -130,7 +130,7 @@ const sheet: ICharacterSheet = {
           fields: [{
             node: infoMut(dmgFormulas.charged.dmg, { key: `char_${key}_gen:auto.skillParams.3` }),
           }, {
-            text: tr("auto.skillParams.6"),
+            text: tr("auto.skillParams.4"),
             value: datamine.charged.stamina,
           }]
         }, {
