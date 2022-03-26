@@ -85,5 +85,15 @@
   "members": "Members",
   "hits": "Hits",
   "protectedByShield": "Protected by a shield",
-  "protectedByShieldCrystal": "Protected by a shield created by Crystallize"
+  "protectedByShieldCrystal": "Protected by a shield created by Crystallize",
+  "staminaDec_": "Stamina Consumption Decrease",
+  "dmgAbsorption": {
+    "pyro": "Pyro DMG Absorption",
+    "cryo": "Cryo DMG Absorption",
+    "anemo": "Anemo DMG Absorption",
+    "hydro": "Hydro DMG Absorption",
+    "electro": "Electro DMG Absorption",
+    "dendro": "Dendro DMG Absorption",
+    "geo": "Geo DMG Absorption"
+  }
 }
