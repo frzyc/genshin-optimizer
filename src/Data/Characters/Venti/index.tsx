@@ -120,7 +120,7 @@ const dmgFormulas = {
   },
   burst: {
     base: dmgNode("atk", datamine.burst.baseDmg, "burst"),
-    absorb: unequal(condBurstAbsorption, "", dmgNode("atk", datamine.burst.absorbDmg, "burst", { hit: { ele: condBurstAbsorption }})),
+    absorb: unequal(condBurstAbsorption, undefined, dmgNode("atk", datamine.burst.absorbDmg, "burst", { hit: { ele: condBurstAbsorption }})),
     full7: unequal(condBurstAbsorption, undefined, sum(
       prod(dmgNode("atk", datamine.burst.baseDmg, "burst"), 20),
       prod(dmgNode("atk", datamine.burst.absorbDmg, "burst", { hit: { ele: condBurstAbsorption }}), 15),
