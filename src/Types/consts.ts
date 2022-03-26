@@ -84,7 +84,7 @@ export const allCharacterKeys = [
   "Eula",
   "KaedeharaKazuha",
   "KamisatoAyaka",
-  // "Sayu",
+  "Sayu",
   "Shenhe",
   "Yoimiya",
   "Aloy",

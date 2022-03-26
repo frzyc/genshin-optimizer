@@ -1,0 +1,13 @@
+{
+  "burstHits": "Muji-Muji Daruma Number of Activations",
+  "p1Swirl": "Sayu triggers a Swirl reaction while active",
+  "p2Heal": "Nearby character healing",
+  "p2Aoe": "Increased attack AoE",
+  "c1Text": "Muji-Muji Daruma will ignore HP limits and can simultaneously attack nearby opponents and heal characters",
+  "c2KickPressDmg_": "Fuufuu Whirlwind Kick Press DMG Bonus",
+  "c2KickDmg_": "Fuufuu Whirlwind Kick DMG Bonus",
+  "c2Cond": "Time spent in <strong>Fuufuu Windwheel</strong> state",
+  "c4Ener": "Energy recovered when triggering a Swirl reaction",
+  "c6DarumaDmgInc": "Muji-Muji Daruma DMG Inc.",
+  "c6DarumaHealInc": "Muji-Muji Daruma Heal Inc."
+}
