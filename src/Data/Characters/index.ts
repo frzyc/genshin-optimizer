@@ -23,7 +23,7 @@ import KamisatoAyaka from './KamisatoAyaka'
 import Keqing from './Keqing'
 import Klee from './Klee'
 import KujouSara from './KujouSara'
-// import Lisa from './Lisa'
+import Lisa from './Lisa'
 import Mona from './Mona'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
@@ -72,7 +72,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Keqing,
   Klee,
   KujouSara,
-  // Lisa,
+  Lisa,
   Mona,
   Ningguang,
   Noelle,
