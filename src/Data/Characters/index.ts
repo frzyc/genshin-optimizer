@@ -29,7 +29,7 @@ import Ningguang from './Ningguang'
 import Noelle from './Noelle'
 // import Qiqi from './Qiqi'
 import RaidenShogun from './RaidenShogun'
-// import Razor from './Razor'
+import Razor from './Razor'
 import Rosaria from './Rosaria'
 import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
@@ -78,7 +78,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Noelle,
   // Qiqi,
   RaidenShogun,
-  // Razor,
+  Razor,
   Rosaria,
   SangonomiyaKokomi,
   Sayu,
