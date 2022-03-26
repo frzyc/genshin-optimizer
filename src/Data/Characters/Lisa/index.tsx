@@ -84,8 +84,6 @@ const dmgFormulas = {
   },
 }
 
-console.log(dmgFormulas.skill)
-
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {
