@@ -41,9 +41,9 @@ const datamine = {
   },
   skill: {
     wheelDmg: skillParam_gen.skill[s++],
+    eleWheelDmg: skillParam_gen.skill[s++],
     kickPressDmg: skillParam_gen.skill[s++],
     kickHoldDmg: skillParam_gen.skill[s++],
-    eleWheelDmg: skillParam_gen.skill[s++],
     eleKickDmg: skillParam_gen.skill[s++],
     duration: skillParam_gen.skill[s++][0],
     cdMin: skillParam_gen.skill[s++][0],
@@ -91,23 +91,23 @@ const [condActiveSwirlPath, condActiveSwirl] = cond(key, "activeSwirl")
 const [condC2SkillStackPath, condC2SkillStack] = cond(key, "c2SkillStack")
 const c2_kickPressDmg_ = greaterEq(input.constellation, 2, percent(datamine.constellation2.dmgInc))
 const c2_kickDmg_ = greaterEq(input.constellation, 2,
-  lookup(condC2SkillStack, 
+  lookup(condC2SkillStack,
     Object.fromEntries(range(1, datamine.constellation2.maxStacks).map(stack => [
-      stack, 
+      stack,
       prod(stack, percent(datamine.constellation2.dmgInc))
     ])),
     naught
   )
 )
 
-const c6_daruma_dmg_inc = greaterEq(input.constellation, 6, 
+const c6_daruma_dmg_inc = greaterEq(input.constellation, 6,
   prod(
     min(input.total.eleMas, datamine.constellation6.maxStacks),
     datamine.constellation6.darumaDmgInc,
     input.total.atk
   )
 )
-const c6_daruma_heal_inc = greaterEq(input.constellation, 6, 
+const c6_daruma_heal_inc = greaterEq(input.constellation, 6,
   prod(min(input.total.eleMas, datamine.constellation6.maxStacks), datamine.constellation6.darumaHealInc)
 )
 // Using customHealNode so I can have healInc
@@ -134,13 +134,13 @@ const dmgFormulas = {
     kickPressDmg: dmgNode("atk", datamine.skill.kickPressDmg, "skill",
       { premod: { skill_dmg_: sum(c2_kickDmg_, c2_kickPressDmg_) } }),
     kickHoldDmg: dmgNode("atk", datamine.skill.kickHoldDmg, "skill",
-      { premod: { skill_dmg_: c2_kickDmg_ }}),
+      { premod: { skill_dmg_: c2_kickDmg_ } }),
     eleWheelDmg: lookup(condSkillAbsorption, Object.fromEntries(absorbableEle.map(eleKey => [
-      eleKey, 
+      eleKey,
       dmgNode("atk", datamine.skill.eleWheelDmg, "skill", { hit: { ele: constant(eleKey) } })
     ])), naught),
     eleKickDmg: lookup(condSkillAbsorption, Object.fromEntries(absorbableEle.map(eleKey => [
-      eleKey, 
+      eleKey,
       dmgNode("atk", datamine.skill.eleKickDmg, "skill",
         { hit: { ele: constant(eleKey) }, premod: { skill_dmg_: c2_kickDmg_ } })
     ])), naught)
@@ -153,10 +153,10 @@ const dmgFormulas = {
     darumaHeal
   },
   passive1: {
-    heal: sum(datamine.passive1.baseHeal, prod(datamine.passive1.emHeal, input.total.eleMas))
+    heal: greaterEq(input.asc, 1, sum(datamine.passive1.baseHeal, prod(datamine.passive1.emHeal, input.total.eleMas)))
   },
   passive2: {
-    extraHeal: prod(darumaHeal, percent(datamine.passive2.nearHeal))
+    extraHeal: greaterEq(input.asc, 4, prod(darumaHeal, percent(datamine.passive2.nearHeal)))
   }
 }
 
@@ -216,7 +216,7 @@ const sheet: ICharacterSheet = {
       }]),
       skill: talentTemplate("skill", tr, skill, [{
         node: infoMut(dmgFormulas.skill.wheelDmg, { key: `char_${key}_gen:skill.skillParams.0` })
-      },{
+      }, {
         node: infoMut(dmgFormulas.skill.kickPressDmg, { key: `char_${key}_gen:skill.skillParams.1` })
       }, {
         node: infoMut(dmgFormulas.skill.kickHoldDmg, { key: `char_${key}_gen:skill.skillParams.2` })
@@ -232,7 +232,7 @@ const sheet: ICharacterSheet = {
         value: condSkillAbsorption,
         path: condSkillAbsorptionPath,
         name: st("eleAbsor"),
-        states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey , {
+        states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
           name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
           fields: [{
             node: infoMut(dmgFormulas.skill.eleWheelDmg, { key: `char_${key}_gen:skill.skillParams.3` })
@@ -250,7 +250,7 @@ const sheet: ICharacterSheet = {
           states: Object.fromEntries(range(1, datamine.constellation2.maxStacks).map(stack => [stack, {
             name: st("seconds", { count: stack * 0.5 }),
             fields: [{
-              node: infoMut(c2_kickDmg_, { key: `char_${key}:c2KickDmg_`})
+              node: infoMut(c2_kickDmg_, { key: `char_${key}:c2KickDmg_` })
             }]
           }]))
         }, data => data.get(input.constellation).value >= 2, false, true),
@@ -284,6 +284,7 @@ const sheet: ICharacterSheet = {
         }], undefined, data => data.get(input.constellation).value >= 6, false, true),
       ]),
       passive1: talentTemplate("passive1", tr, passive1, undefined, {
+        canShow: greaterEq(input.asc, 1, 1),
         value: condActiveSwirl,
         path: condActiveSwirlPath,
         name: trm("p1Swirl"),
