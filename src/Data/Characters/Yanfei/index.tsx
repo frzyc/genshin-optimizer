@@ -1,211 +1,330 @@
-import card from './Character_Yanfei_Card.png'
-import thumb from './Icon.png'
-import thumbSide from './IconSide.png'
-import banner from './Banner.png'
-import c1 from './constellation1.png'
-import c2 from './constellation2.png'
-import c3 from './constellation3.png'
-import c4 from './constellation4.png'
-import c5 from './constellation5.png'
-import c6 from './constellation6.png'
-import skill from './skill.png'
-import burst from './burst.png'
-import passive1 from './passive1.png'
-import passive2 from './passive2.png'
-import passive3 from './passive3.png'
-import Stat from '../../../Stat'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../PageBuild/Build'
-import { ICharacterSheet } from '../../../Types/character'
-import { Translate } from '../../../Components/Translate'
-import { normalSrc, plungeDocSection, talentTemplate } from '../SheetUtil'
-import { WeaponTypeKey } from '../../../Types/consts'
-import ColorText from '../../../Components/ColoredText'
-const tr = (strKey: string) => <Translate ns="char_Yanfei_gen" key18={strKey} />
-const char: ICharacterSheet = {
+import { CharacterData } from 'pipeline'
+import { input } from '../../../Formula'
+import { equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript } from '../../../Formula/utils'
+import { CharacterKey, ElementKey } from '../../../Types/consts'
+import { range } from '../../../Util/Util'
+import { cond, sgt, st, trans } from '../../SheetUtil'
+import CharacterSheet, { ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
+import { customDmgNode, customShieldNode, dataObjForCharacterSheet, dmgNode, shieldElement } from '../dataUtil'
+import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
+import data_gen_src from './data_gen.json'
+import skillParam_gen from './skillParam_gen.json'
+
+const data_gen = data_gen_src as CharacterData
+const auto = normalSrc(data_gen.weaponTypeKey)
+
+const key: CharacterKey = "Yanfei"
+const elementKey: ElementKey = "pyro"
+const [tr, trm] = trans("char", key)
+
+let a = 0, b = 0
+const datamine = {
+  normal: {
+    hitArr: [
+      skillParam_gen.auto[a++], // 1
+      skillParam_gen.auto[a++], // 2
+      skillParam_gen.auto[a++], // 3
+    ]
+  },
+  charged: {
+    dmgArr: [
+      skillParam_gen.auto[a++], // 0 seals
+      skillParam_gen.auto[a++], // 1 seal
+      skillParam_gen.auto[a++], // 2 seals
+      skillParam_gen.auto[a++], // 3 seals
+      skillParam_gen.auto[a++], // 4 seals
+    ],
+    unknown: {
+      arr: [
+        skillParam_gen.auto[a++][0],
+        skillParam_gen.auto[a++][0],
+        skillParam_gen.auto[a++][0],
+        skillParam_gen.auto[a++][0],
+        skillParam_gen.auto[a++][0],
+      ]
+    },
+    stamina: skillParam_gen.auto[a++][0],
+    sealStaminaRed_: skillParam_gen.auto[a++][0],
+    maxSeals: 3,
+  },
+  plunging: {
+    dmg: skillParam_gen.auto[a++],
+    low: skillParam_gen.auto[a++],
+    high: skillParam_gen.auto[a++],
+  },
+  sealDuration: skillParam_gen.auto[a++][0],
+  // There is another unknown here for auto
+  skill: {
+    dmg: skillParam_gen.skill[0],
+    cd: skillParam_gen.skill[1][0],
+  },
+  burst: {
+    dmg: skillParam_gen.burst[b++],
+    charged_dmg_: skillParam_gen.burst[b++],
+    duration: skillParam_gen.burst[b++][0],
+    sealInterval: skillParam_gen.burst[b++][0],
+    cd: skillParam_gen.burst[b++][0],
+    enerCost: skillParam_gen.burst[b++][0],
+  },
+  passive1: {
+    seal_pyro_dmg_: skillParam_gen.passive1[0][0],
+    duration: skillParam_gen.passive1[1][0],
+  },
+  passive2: {
+    dmg: percent(skillParam_gen.passive2[0][0])
+  },
+  c1: {
+    sealStaminaRed_: skillParam_gen.constellation1[0]
+  },
+  c2: {
+    hpThresh: skillParam_gen.constellation2[0],
+    charged_critRate_: skillParam_gen.constellation2[1]
+  },
+  c4: {
+    hpShield_: skillParam_gen.constellation4[0],
+    duration: 15,
+  },
+  c6: {
+    extraSeals: skillParam_gen.constellation6[0]
+  }
+} as const
+
+const [condAfterBurstPath, condAfterBurst] = cond(key, "afterBurst")
+const afterBurst_charged_dmg_ = equal(condAfterBurst, "on",
+  subscript(input.total.burstIndex, datamine.burst.charged_dmg_)
+)
+
+const [condP1SealsPath, condP1Seals] = cond(key, "p1Seals")
+const p1_pyro_dmg_ = greaterEq(input.asc, 1,
+  // TODO: Should be changing number of seals shown based on C6
+  lookup(condP1Seals, Object.fromEntries(range(1, 4).map(seals => [
+    seals,
+    prod(seals, datamine.passive1.seal_pyro_dmg_)
+  ])), naught)
+)
+
+const [condP2ChargedCritPath, condP2ChargedCrit] = cond(key, "p2ChargedCrit")
+
+const [condC2EnemyHpPath, condC2EnemyHp] = cond(key, "c2EnemyHp")
+const c2EnemyHp_critRate_ = greaterEq(input.constellation, 2,
+  equal(condC2EnemyHp, "on", datamine.c2.charged_critRate_)
+)
+
+const dmgFormulas = {
+  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+    [i, dmgNode("atk", arr, "normal")])),
+  charged: Object.fromEntries(datamine.charged.dmgArr.map((arr, i) =>
+    [i, i < 4
+      ? dmgNode("atk", arr, "charged")
+      : greaterEq(input.constellation, 6, dmgNode("atk", arr, "charged"))
+    ])),
+  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+    [key, dmgNode("atk", value, "plunging")])),
+  skill: {
+    dmg: dmgNode("atk", datamine.skill.dmg, "skill")
+  },
+  burst: {
+    dmg: dmgNode("atk", datamine.burst.dmg, "burst")
+  },
+  passive2: {
+    dmg: greaterEq(input.asc, 4, equal(condP2ChargedCrit, "on",
+      customDmgNode(prod(input.total.atk, datamine.passive2.dmg), "charged")
+    ))
+  },
+  constellation4: {
+    pyro_shield: greaterEq(input.constellation, 4,
+      shieldElement(elementKey, customShieldNode(prod(input.total.hp, datamine.c4.hpShield_)))
+    ),
+    norm_shield: greaterEq(input.constellation, 4,
+      customShieldNode(prod(input.total.hp, datamine.c4.hpShield_))
+    ),
+  },
+} as const
+
+const skillC3 = greaterEq(input.constellation, 3, 3)
+const burstC5 = greaterEq(input.constellation, 5, 3)
+
+export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
+  bonus: {
+    skill: skillC3,
+    burst: burstC5,
+  },
+  premod: {
+    charged_dmg_: afterBurst_charged_dmg_,
+    charged_critRate_: c2EnemyHp_critRate_,
+    pyro_dmg_: p1_pyro_dmg_,
+  }
+})
+
+const sheet: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
   rarity: data_gen.star,
-  elementKey: "pyro",
-  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
+  elementKey,
+  weaponTypeKey: data_gen.weaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),
-  baseStat: data_gen.base,
-  baseStatCurve: data_gen.curves,
-  ascensions: data_gen.ascensions,
   talent: {
-    formula,
     sheets: {
-      auto: {
-        name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
-        sections: [{
-          text: tr(`auto.fields.normal`),
-          fields: [...data.normal.hitArr.map((percentArr, i) =>
-          ({
-            text: `${i + 1}-Hit DMG`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.auto]} % {Stat.printStat(getTalentStatKey("normal", stats), stats)} </span>,
-            formula: formula.normal[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats),
+      auto: talentTemplate("auto", tr, auto, undefined, undefined, [{
+        ...sectionTemplate("auto", tr, auto,
+          datamine.normal.hitArr.map((_, i) => ({
+            node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
+          }))
+        ),
+        text: tr("auto.fields.normal"),
+      }, {
+        ...sectionTemplate("auto", tr, auto, [
+          // TODO: Would probably be better as a conditional,
+          // but can't make conditional states based on constellation value
+          ...datamine.charged.dmgArr.map((_, i) => ({
+            node: infoMut(dmgFormulas.charged[i], { key: `char_${key}:charged.${i}` }),
           })), {
-            text: "Scarlet Seal Duration",
-            value: "10s"
+            text: tr("auto.skillParams.4"),
+            // TODO: Should change this value based on how many seals, but can't do without conditional
+            // charged attack. And its a bit execssive.
+            value: datamine.charged.stamina,
           }, {
-            text: <span>Max number of <b>Scarlet Seals</b></span>,
-            value: stats => stats.constellation >= 6 ? 4 : 3
-          }]
+            text: st("staminaDec_"),
+            value: datamine.charged.sealStaminaRed_ * 100,
+            textSuffix: trm("perSeal"),
+            unit: "%",
+          }, {
+            text: trm("maxSeals"),
+            value: data => data.get(input.constellation).value >= 6
+              ? datamine.charged.maxSeals + datamine.c6.extraSeals
+              : datamine.charged.maxSeals,
+          }, {
+            text: tr("auto.skillParams.6"),
+            value: datamine.sealDuration,
+            unit: "s"
+        }]),
+        text: tr("auto.fields.charged"),
+      },
+        sectionTemplate("passive1", tr, passive1, undefined, {
+          value: condP1Seals,
+          path: condP1SealsPath,
+          name: trm("passive1.sealsConsumed"),
+          canShow: greaterEq(input.asc, 1, 1),
+          // TODO: Should be changing number of seals shown based on C6
+          states: Object.fromEntries(range(1, 4).map(seals => [
+            seals, {
+              name: trm(`seals.${seals}`),
+              fields: [{
+                node: p1_pyro_dmg_,
+              }, {
+                text: sgt("duration"),
+                value: datamine.passive1.duration,
+                unit: "s"
+              }]
+            }
+          ]))
+        }),
+        sectionTemplate("passive2", tr, passive2, undefined, {
+          value: condP2ChargedCrit,
+          path: condP2ChargedCritPath,
+          name: trm("passive2.chargedCrit"),
+          canShow: greaterEq(input.asc, 4, 1),
+          states: {
+            on: {
+              fields: [{
+                node: infoMut(dmgFormulas.passive2.dmg, { key: `char_${key}:passive2.key` })
+              }]
+            }
+          }
+        }),
+        sectionTemplate("constellation1", tr, c1, [{
+          text: trm("c1.sealChargedStam_"),
+          value: datamine.c1.sealStaminaRed_ * -100,
+          textSuffix: trm("perSeal"),
+          unit: "%"
         }, {
-          text: tr(`auto.fields.charged`),
-          fields: [...data.charged.hitArr.map((percentArr, i) => ({
-            canShow: stats => i < 4 || stats.constellation >= 6,
-            text: `${i}-Seal DMG`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.auto]} % {Stat.printStat(getTalentStatKey("normal", stats), stats)} </span>,
-            formula: formula.charged[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats),
-          })), {
-            text: `Stamina Cost`,
-            value: 50,
-          }, {
-            text: "Scarlet Seal Stamina Consumption Decrease",
-            value: stats => stats.constellation >= 1 ? "15% + 10% per Seal" : "15% per Seal"
-          }, {
-            canShow: stats => stats.constellation >= 1,
-            text: "Increases resistance against interruption during release."
-          }]
-        },
-        plungeDocSection(tr, formula, data),
-        ],
-      },
-      skill: {
-        name: tr("skill.name"),
-        img: skill,
-        sections: [{
-          text: tr("skill.description"),
-          fields: [{
-            text: "Skill DMG",
-            formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-            formula: formula.skill.dmg,
-            variant: stats => getTalentStatKeyVariant("skill", stats),
-          }, {
-            text: "CD",
-            value: "9s",
-          },]
-        }],
-      },
-      burst: {
-        name: tr("burst.name"),
-        img: burst,
-        sections: [{
-          text: tr("burst.description"),
-          fields: [{
-            text: "Skill DMG",
-            formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-            formula: formula.burst.dmg,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
-          }, {
-            canShow: stats => stats.constellation >= 4,
-            text: "Shield on Cast",
-            formulaText: stats => <span>45% {Stat.printStat("finalHP", stats)}</span>,
-            formula: formula.constellation4.dmg,
-          }, {
-            text: "CD",
-            value: "20s",
-          }, {
-            text: "Energy Cost",
-            value: 80,
-          }]
-          , conditional: {
-            key: "q",
-            name: <span>Brilliance</span>,
-            stats: stats => ({ charged_dmg_: data.burst.dmg_[stats.tlvl.burst] }),
+          text: st("incInterRes")
+        }], undefined, data => data.get(input.constellation).value >= 1, false, true),
+        sectionTemplate("constellation2", tr, c2, undefined, {
+          value: condC2EnemyHp,
+          path: condC2EnemyHpPath,
+          name: st("enemyLessPercentHP", { percent: datamine.c2.hpThresh * 100 }),
+          canShow: greaterEq(input.constellation, 2, 1),
+          states: {
+            on: {
+              fields: [{
+                node: c2EnemyHp_critRate_
+              }]
+            }
+          }
+        }),
+        sectionTemplate("constellation6", tr, c6, [{
+          text: trm("c6.maxSealInc"),
+          value: datamine.c6.extraSeals
+        }], undefined, data => data.get(input.constellation).value >= 6, false, true), {
+        ...sectionTemplate("auto", tr, auto, [{
+          node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+        }, {
+          node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        }, {
+          node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        }]),
+        text: tr("auto.fields.plunging"),
+      }]),
+      skill: talentTemplate("skill", tr, skill, [{
+        node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
+      }, {
+        text: sgt("cd"),
+        value: datamine.skill.cd,
+        unit: "s",
+      }]),
+      burst: talentTemplate("burst", tr, burst, [{
+        node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
+      }, {
+        text: trm("burst.grantMax")
+      }, {
+        text: sgt("cd"),
+        value: datamine.burst.cd,
+        unit: "s",
+      }, {
+        text: sgt("energyCost"),
+        value: datamine.burst.enerCost,
+      }], {
+        value: condAfterBurst,
+        path: condAfterBurstPath,
+        name: st("afterUse.burst"),
+        states: {
+          on: {
             fields: [{
-              text: "Duration",
-              value: "15s",
+              text: tr("burst.skillParams.2"),
+              value: datamine.burst.sealInterval,
+              unit: "s"
             }, {
-              text: "Scarlet Seal Grant Interval",
-              value: "1s"
+              node: afterBurst_charged_dmg_
             }]
-          },
-        }],
-      },
-      passive1: {
-        name: tr("passive1.name"),
-        img: passive1,
-        sections: [{
-          text: tr("passive1.description"),
-          conditional: {
-            key: "a1",
-            canShow: stats => stats.ascension >= 1,
-            name: <span>Consumes <b>Scarlet Seals</b> by using a Charged Attack</span>,
-            stats: { pyro_dmg_: 5 },
-            maxStack: stats => stats.constellation >= 6 ? 4 : 3,
-            fields: [{
-              text: "Duration",
-              value: "6s",
-            }]
-          },
-        }],
-      },
-      passive2: {
-        name: tr("passive2.name"),
-        img: passive2,
-        sections: [{
-          text: tr("passive2.description"),
-          fields: [{
-            text: "Crit Hit on Opponent",
-            formulaText: stats => <span>80% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.passive2.dmg,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }]
-        }],
-      },
+          }
+        }
+      }, [
+        sectionTemplate("constellation4", tr, c4, [{
+          node: infoMut(dmgFormulas.constellation4.norm_shield, { key: "sheet_gen:dmgAbsorption" })
+        }, {
+          node: infoMut(dmgFormulas.constellation4.pyro_shield, { key: `sheet:dmgAbsorption.${elementKey}` })
+        }, {
+          text: sgt("duration"),
+          value: datamine.c4.duration,
+          unit: "s"
+        }], undefined, data => data.get(input.constellation).value >= 4, false, true)
+      ]),
+      passive1: talentTemplate("passive1", tr, passive1),
+      passive2: talentTemplate("passive2", tr, passive2),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
-      constellation2: {
-        name: tr("constellation2.name"),
-        img: c2,
-        sections: [{
-          text: tr("constellation2.description"),
-          conditional: {
-            key: "c2",
-            canShow: stats => stats.constellation >= 2,
-            name: "Against enemies below 50% HP",
-            stats: { charged_critRate_: 20 }
-          }
-        }],
-      },
-      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
-      constellation4: {
-        name: tr("constellation4.name"),
-        img: c4,
-        sections: [{
-          text: tr("constellation4.description"),
-          fields: [{
-            canShow: stats => stats.constellation >= 4,
-            text: <ColorText color="pyro">Shield DMG Absorption</ColorText>,
-            formulaText: stats => <span>45% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("shield_", stats)}) * (250% <ColorText color="pyro">Pyro Absorption</ColorText>)</span>,
-            formula: formula.constellation4.shieldCryo,
-            variant: "pyro"
-          }, {
-            canShow: stats => stats.constellation >= 4,
-            text: "Shield DMG Absorption",
-            formulaText: stats => <span>45% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("shield_", stats)})</span>,
-            formula: formula.constellation4.shield,
-          }, {
-            canShow: stats => stats.constellation >= 4,
-            text: "Duration",
-            value: "20s",
-          },]
-        }],
-      },
-      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: skillC3 }]),
+      constellation4: talentTemplate("constellation4", tr, c4),
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: burstC5 }]),
       constellation6: talentTemplate("constellation6", tr, c6),
-    },
-  },
-};
-export default char;
+    }
+  }
+}
+export default new CharacterSheet(sheet, data)
