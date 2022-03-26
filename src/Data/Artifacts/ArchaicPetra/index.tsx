@@ -10,7 +10,7 @@ import icons from './icons'
 const key: ArtifactSetKey = "ArchaicPetra"
 const [tr, trm] = trans("artifact", key)
 
-const set2 = greaterEq(input.artSet.ArchaicPetra, 2, percent(0.2))
+const set2 = greaterEq(input.artSet.ArchaicPetra, 2, percent(0.15))
 const [condPath, condNode] = cond(key, "element")
 const set4Nodes = Object.fromEntries(absorbableEle.map(e => [`${e}_dmg_`,
 greaterEq(input.artSet.ArchaicPetra, 4,
