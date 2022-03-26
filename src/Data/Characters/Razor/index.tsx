@@ -163,7 +163,6 @@ export const data = dataObjForCharacterSheet(key, elementKey, regionKey, data_ge
   },
   teamBuff: {
     premod: {
-      // TODO: this should technically be in teamBuff right?
       enemyDefRed_
     }
   }
