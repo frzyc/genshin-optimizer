@@ -2,8 +2,8 @@ import card from './Traveler_Female_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import anemo, { data as anemoData } from './anemo'
-// import geo, { data as geoData } from './geo'
-// import electro from './electro'
+import geo, { data as geoData } from './geo'
+import electro, { data as electroData} from './electro'
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts';
 import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
 import data_gen_src from './data_gen.json'
@@ -25,12 +25,12 @@ const sheet: ICharacterSheet = {
   title: tr("title"),
   talents: {
     anemo,
-    // geo,
-    // electro,
+    geo,
+    electro,
   }
 };
 export default new CharacterSheet(sheet, {
   anemo: anemoData,
-  // geo: geoData,
-  // electro: electroData,
+  geo: geoData,
+  electro: electroData,
 });
