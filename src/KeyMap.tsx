@@ -150,9 +150,15 @@ export default class KeyMap {
   static getPrefixStr(prefix: KeyMapPrefix): string {
     return subKeyMap[prefix]
   }
+  /**
+   * TODO: Should return just the String, and no unit. unit should be separate.
+   */
   static getStr(key: string = ""): string | undefined {
     return statMap[key]
   }
+  /**
+   * TODO: this should return purely a HTML, so the string values need to be wrapped in <span>?
+   */
   static get(key: string = ""): Displayable | undefined {
     const name = KeyMap.getStr(key)
     if (name) return name
@@ -171,6 +177,9 @@ export default class KeyMap {
       return name.endsWith("%") ? name.slice(0, -1) : name
     return name
   }
+  /**
+   * TODO: Do we really need the "flat" here? can we remove "flat" and combine unit() and unitStr()?
+   */
   static unit(key: string = ""): Unit {
     if (key.endsWith("_")) return "%"
     return "flat"

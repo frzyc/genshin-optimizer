@@ -35,9 +35,10 @@ function BasicFieldDisplay({ field, component }: { field: IBasicFieldDisplay, co
   const { data } = useContext(DataContext)
   const v = evalIfFunc(field.value, data)
   const variant = evalIfFunc(field.variant, data)
-  const suffix = field.textSuffix && <span> {field.textSuffix}</span>
+  const text = field.text && <span>{field.text}</span>
+  const suffix = field.textSuffix && <span>{field.textSuffix}</span>
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between" }} component={component} >
-    <ColorText color={variant}><b>{field.text}</b>{suffix}</ColorText>
+    <ColorText color={variant} sx={{ display: "flex", gap: 1 }}>{text}{suffix}</ColorText>
     <Typography >{typeof v === "number" ? v.toFixed?.(field.fixed) : v}{field.unit}</Typography>
   </Box>
 }
@@ -45,7 +46,8 @@ function BasicFieldDisplay({ field, component }: { field: IBasicFieldDisplay, co
 export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: NodeDisplay, oldValue?: number, suffix?: Displayable, component?: React.ElementType }) {
   if (node.isEmpty) return null
 
-  suffix = suffix && <span> {suffix}</span>
+  suffix = suffix && <span>{suffix}</span>
+  const icon = node.key && StatIcon[node.key]
   const fieldText = node.key ? KeyMap.get(node.key) : ""
   const fieldFormulaText = node.formula
   let fieldVal = "" as Displayable
@@ -54,10 +56,10 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: 
     fieldVal = <span>{valueString(oldValue, node.unit)}{diff ? <ColorText color={diff > 0 ? "success" : "error"}> {diff > 0 ? "+" : ""}{valueString(diff, node.unit)}</ColorText> : ""}</span>
   } else fieldVal = valueString(node.value, node.unit)
   const formulaTextOverlay = !!node.formula && <BootstrapTooltip placement="top" title={<Typography>{fieldFormulaText}</Typography>}>
-    <Box component="span" sx={{ cursor: "help", ml: 1 }}><FontAwesomeIcon icon={faQuestionCircle} /></Box>
+    <Box component="span" sx={{ cursor: "help" }}><FontAwesomeIcon icon={faQuestionCircle} /></Box>
   </BootstrapTooltip>
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between" }} component={component} >
-    <ColorText color={node.variant}>{node.key && (<span>{StatIcon[node.key]} </span>)}<b>{fieldText}</b>{suffix}{formulaTextOverlay}</ColorText>
+    <ColorText color={node.variant} sx={{ display: "flex", gap: 1 }}>{icon}{fieldText}{suffix}{formulaTextOverlay}</ColorText>
     <Typography >{fieldVal}</Typography>
   </Box>
 }
