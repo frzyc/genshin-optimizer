@@ -13,7 +13,7 @@ import icon from './Icon.png'
 const key: WeaponKey = "PrimordialJadeWingedSpear"
 const data_gen = data_gen_json as WeaponData
 
-const [tr, trm] = trans("weapon", key)
+const [tr] = trans("weapon", key)
 
 const [condStackPath, condStack] = cond(key, "stack")
 const atkInc = [0.032, 0.039, 0.046, 0.053, 0.06]
@@ -34,9 +34,9 @@ const sheet: IWeaponSheet = {
       value: condStack,
       path: condStackPath,
       header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
-      name: trm("condName"),
+      name: st("hitOp.none"),
       states: Object.fromEntries(range(1, 7).map(i => [i, {
-        name: st("stack", { count: i }),
+        name: st("hits", { count: i }),
         fields: [{ node: atk_ }, { node: all_dmg_ }]
       }]))
     }
