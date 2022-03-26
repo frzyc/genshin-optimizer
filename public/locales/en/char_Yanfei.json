@@ -6,15 +6,15 @@
     "3 seals",
     "4 seals"
   ],
-  "sealsParen": [
-    "(0 seals)",
-    "(1 seal)",
-    "(2 seals)",
-    "(3 seals)",
-    "(4 seals)"
-  ],
   "perSeal": "(per seal)",
   "maxSeals": "Maximum number of Scarlet Seals",
+  "charged": {
+    "0": "0-Seal DMG",
+    "1": "1-Seal DMG",
+    "2": "2-Seal DMG",
+    "3": "3-Seal DMG",
+    "4": "4-Seal DMG"
+  },
   "burst": {
     "grantMax": "Grant the maximum number of Scarlet Seals"
   },

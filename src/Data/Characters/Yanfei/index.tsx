@@ -182,8 +182,7 @@ const sheet: ICharacterSheet = {
           // TODO: Would probably be better as a conditional,
           // but can't make conditional states based on constellation value
           ...datamine.charged.dmgArr.map((_, i) => ({
-            node: infoMut(dmgFormulas.charged[i], { key: "sheet_gen:charged.dmg" }),
-            textSuffix: trm(`sealsParen.${i}`)
+            node: infoMut(dmgFormulas.charged[i], { key: `char_${key}:charged.${i}` }),
           })), {
             text: tr("auto.skillParams.4"),
             // TODO: Should change this value based on how many seals, but can't do without conditional
