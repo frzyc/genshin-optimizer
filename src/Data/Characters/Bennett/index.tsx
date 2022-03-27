@@ -31,6 +31,7 @@ const datamine = {
   },
   charged: {
     dmg1: skillParam_gen.auto[a++], // 1
+    dmg2: skillParam_gen.auto[a++], // 2
     stamina: skillParam_gen.auto[a++][0],
   },
   plunging: {
@@ -59,10 +60,10 @@ const datamine = {
     enerCost: skillParam_gen.burst[b++][0],
   },
   passive1: {
-    cd_red: 20, // Not in the datamine for some reason
+    cd_red: 0.2, // Not in the datamine for some reason
   },
   passive2: {
-    cd_red: 50, // Not in the datamine for some reason
+    cd_red: 0.5, // Not in the datamine for some reason
   },
   constellation1: {
     atk_inc: skillParam_gen.constellation1[0],
@@ -78,6 +79,8 @@ const datamine = {
     pyro_dmg: skillParam_gen.constellation6[0],
   }
 } as const
+
+const a1SkillCd = greaterEq(input.asc, 1, datamine.passive1.cd_red)
 
 const c1Atk = greaterEq(input.constellation, 1, datamine.constellation1.atk_inc, { key: `char_${key}:additionalATKRatio_`})
 
@@ -95,9 +98,10 @@ const activeInAreaA4 = greaterEq(input.asc, 4,
 const c6AndCorrectWep = greaterEq(input.constellation, 6,
   lookup(target.weaponType,
     { "sword": constant(1), "claymore": constant(1), "polearm": constant(1) }, constant(0)))
-const activeInAreaC6PyroDmgDisp = equal(c6AndCorrectWep, 1, datamine.constellation6.pyro_dmg)
-const activeInAreaC6PyroDmg = equal(activeInArea, 1, activeInAreaC6PyroDmgDisp)
-const activeInAreaC6Infusion = equalStr(c6AndCorrectWep, 1, elementKey)
+const activeInAreaC6PyroDmg = equal(activeInArea, 1,
+  greaterEq(input.constellation, 6, datamine.constellation6.pyro_dmg)
+)
+const activeInAreaC6Infusion = equalStr(c6AndCorrectWep, 1, equalStr(activeInArea, 1, elementKey))
 
 const [condUnderHPPath, condUnderHP] = cond(key, "underHP")
 const underHP = greaterEq(input.constellation, 2,
@@ -108,6 +112,7 @@ const dmgFormulas = {
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
     dmg1: dmgNode("atk", datamine.charged.dmg1, "charged"),
+    dmg2: dmgNode("atk", datamine.charged.dmg2, "charged"),
   },
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
@@ -166,7 +171,7 @@ const sheet: ICharacterSheet = {
   talent: {
     sheets: {
       auto: talentTemplate("auto", tr, auto, undefined, undefined, [{
-        ...sectionTemplate("auto", tr, auto, 
+        ...sectionTemplate("auto", tr, auto,
           datamine.normal.hitArr.map((_, i) => ({
             node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
           }))
@@ -175,6 +180,10 @@ const sheet: ICharacterSheet = {
       }, {
         ...sectionTemplate("auto", tr, auto, [{
           node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
+          textSuffix: "(1)"
+        }, {
+          node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${key}_gen:auto.skillParams.5` }),
+          textSuffix: "(2)"
         }, {
           text: tr("auto.skillParams.6"),
           value: datamine.charged.stamina,
@@ -217,7 +226,11 @@ const sheet: ICharacterSheet = {
         text: trm("skill.lvl2CD"),
         unit: "s",
         value: data => calculateSkillCD(data, datamine.skill.cd_hold2),
-      }]),
+      }], undefined, [
+        sectionTemplate("passive1", tr, passive1, [{
+          node: infoMut(a1SkillCd, { key: "skillCDRed_" })
+        }], undefined, data => data.get(input.asc).value >= 1, false, true),
+      ]),
       burst: talentTemplate("burst", tr, burst, [{
         node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` })
       }, {
@@ -250,51 +263,29 @@ const sheet: ICharacterSheet = {
           }
         }
       }, [
-        sectionTemplate("passive2", tr, passive2, undefined, {
-          canShow: greaterEq(input.asc, 4, 4),
-          value: condInArea,
-          path: condInAreaPath,
-          name: st("activeCharField"),
-          states: {
-            activeInArea: {
-              fields: [{ // Node will not show CD reduction, have to use value instead
-                text: st("skillCDRed"),
-                value: datamine.passive2.cd_red,
-                unit: "%",
-              }]
-            }
-          }
-        }), sectionTemplate("constellation6", tr, c6, undefined, {
-          canShow: c6AndCorrectWep,
-          value: condInArea,
-          path: condInAreaPath,
-          name: st("activeCharField"),
-          teamBuff: true,
-          states: {
-            activeInArea: {
-              fields: [{
-                node: infoMut(activeInAreaC6PyroDmgDisp, { key: "pyro_dmg_", variant: "pyro" })
-              }, {
-                text: <ColorText color={elementKey}>{st("infusion.pyro")}</ColorText>
-              }]
-            }
-          }
-        }),
+        sectionTemplate("passive2", tr, passive2, [{
+          node: infoMut(activeInAreaA4, { key: "skillCDRed_" })
+        }], undefined,
+        data => data.get(input.asc).value >= 4 && data.get(condInArea).value === "activeInArea",
+        false, true),
+        sectionTemplate("constellation1", tr, c1, [{
+          text: trm("additionalATKRatio"),
+          node: c1Atk
+        }, {
+          node: infoMut(c1AddlAtk, { key: `char_${key}:additionalATK` })
+        }], undefined, data => data.get(input.constellation).value >= 2, true, true),
+        sectionTemplate("constellation6", tr, c6, [{
+          node: constant(datamine.constellation6.pyro_dmg, { key: "pyro_dmg_", variant: "pyro" })
+        }, {
+          text: trm("c6PyroInfusion")
+        }], undefined,
+        data => data.get(input.constellation).value >= 6 && data.get(condInArea).value === "activeInArea",
+        true, true)
       ]),
-      passive1: talentTemplate("passive1", tr, passive1, [{
-        canShow: data => data.get(input.asc).value > 1,
-        text: st("skillCDRed"),
-        value: datamine.passive1.cd_red,
-        unit: "%"
-      }]),
+      passive1: talentTemplate("passive1", tr, passive1),
       passive2: talentTemplate("passive2", tr, passive2, undefined),
       passive3: talentTemplate("passive3", tr, passive3),
-      constellation1: talentTemplate("constellation1", tr, c1, [{
-        text: trm("additionalATKRatio"),
-        node: c1Atk
-      }, {
-        node: infoMut(c1AddlAtk, { key: `char_${key}:additionalATK` })
-      }]),
+      constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2, undefined, {
         canShow: greaterEq(input.constellation, 2, 1),
         value: condUnderHP,
@@ -325,7 +316,7 @@ function calculateSkillCD(data: UIData, skillCD: number): string {
   if (data.get(input.asc).value >= 1) {
     cdFactor = 0.80;
   }
-  cdFactor *= (1 - data.get(activeInAreaA4).value / 100);
+  cdFactor *= (1 - data.get(activeInAreaA4).value);
   if (cdFactor !== 1.00) {
     result += " - " + (100 - cdFactor * 100) + "% = " + skillCD * cdFactor;
   }
