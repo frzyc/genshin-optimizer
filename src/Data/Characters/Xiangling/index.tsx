@@ -79,7 +79,9 @@ const afterGuobaHit = greaterEq(input.constellation, 1,
 // C6
 const [condDuringPyronadoPath, condDuringPyronado] = cond(key, "afterPyronado")
 const duringPyronado = greaterEq(input.constellation, 6,
-  equal("duringPyronado", condDuringPyronado, percent(datamine.constellation6.pyroDmg)))
+  equal("duringPyronado", condDuringPyronado, percent(datamine.constellation6.pyroDmg))
+)
+const antiC6 = prod(duringPyronado, -1)
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -93,10 +95,10 @@ const dmgFormulas = {
     press: dmgNode("atk", datamine.skill.press, "skill"),
   },
   burst: {
-    dmg1: dmgNode("atk", datamine.burst.dmg1, "burst"),
-    dmg2: dmgNode("atk", datamine.burst.dmg2, "burst"),
+    dmg1: dmgNode("atk", datamine.burst.dmg1, "burst", { premod: { pyro_dmg_: antiC6 } }),
+    dmg2: dmgNode("atk", datamine.burst.dmg2, "burst", { premod: { pyro_dmg_: antiC6 } }),
     dmg3: dmgNode("atk", datamine.burst.dmg3, "burst"),
-    dmgNado: dmgNode("atk", datamine.burst.dmgNado, "burst"),
+    dmgNado: dmgNode("atk", datamine.burst.dmgNado, "burst", { premod: { pyro_dmg_: antiC6 } }),
   },
   constellation2: {
     dmg: customDmgNode(prod(input.total.atk, percent(datamine.constellation2.dmg)), "elemental",
@@ -218,6 +220,10 @@ const sheet: ICharacterSheet = {
         states: {
           duringPyronado: {
             fields: [{
+              text: trm("c6Exception"),
+              canShow: data => data.get(input.constellation).value >= 6
+                && data.get(condDuringPyronado).value === "duringPyronado"
+            }, {
               node: duringPyronado
             }, {
               text: sgt("duration"),
@@ -256,7 +262,7 @@ const sheet: ICharacterSheet = {
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
-      constellation6: talentTemplate("constellation6", tr, c6, undefined),
+      constellation6: talentTemplate("constellation6", tr, c6),
     }
   }
 };
