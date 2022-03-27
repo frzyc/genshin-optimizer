@@ -132,7 +132,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
       staminaDec_: nodeA1Stamina,
       moveSPD_: nodeA1MoveSpeed,
       eleMas: nodeC6em,
-      heal_: nodeC6healing_,
+      incHeal_: nodeC6healing_,
     }
   }
 })
@@ -252,7 +252,7 @@ const sheet: ICharacterSheet = {
         states: {
           on: {
             fields: [{
-              node: infoMut(nodeC6healing_Disp, { key: "heal_" }),
+              node: infoMut(nodeC6healing_Disp, { key: "incHeal_" }),
             }]
           }
         }

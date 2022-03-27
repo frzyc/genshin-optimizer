@@ -29,6 +29,7 @@ const StatIcon = {
   critRate_: <FontAwesomeIcon icon={faCritRate as any} />,
   critDMG_: <FontAwesomeIcon icon={faCritDmg as any} />,
   enerRech_: <FontAwesomeIcon icon={faEnergyRecharge as any} />,
+  incHeal_: <FontAwesomeIcon icon={faHealingBonus as any} />,
   heal_: <FontAwesomeIcon icon={faHealingBonus as any} />,
 
   cdRed_: <FontAwesomeIcon icon={faCdReduction as any} />,

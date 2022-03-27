@@ -46,7 +46,7 @@ export function customShieldNode(base: NumNode, additional?: Data): NumNode {
 }
 /** Note: `additional` applies only to this formula */
 export function customHealNode(base: NumNode, additional?: Data): NumNode {
-  const healNode = prod(base, sum(unit, input.total.heal_))
+  const healNode = prod(base, sum(unit, input.total.heal_, input.total.incHeal_))
   return additional ? data(healNode, additional) : healNode
 }
 /** Note: `additional` applies only to this formula */
