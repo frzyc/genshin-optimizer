@@ -38,10 +38,10 @@ const sheet: IWeaponSheet = {
       path: condPassivePath,
       header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
       description: conditionaldesc(tr),
-      name: trm("condName"),
+      name: st("activeCharField"),
       states: {
         ...objectKeyMap(range(1, 5), i => ({
-          name: st("stack", { count: i }),
+          name: st("seconds", { count: i * 4 }),
           fields: [{
             node: all_dmg_stack
           }, {

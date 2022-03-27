@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { constant, equal, infoMut, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
-import { cond, st, trans } from '../../../SheetUtil'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -31,6 +31,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
     fields: [{ node: burst_dmg_ }],
     conditional: {
       value: condPassive,
@@ -42,6 +43,10 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [{
             node: infoMut(dmg_, { key: "sheet:dmg" })
+          }, {
+            text: sgt("cd"),
+            value: 15,
+            unit: "s"
           }]
         }
       }

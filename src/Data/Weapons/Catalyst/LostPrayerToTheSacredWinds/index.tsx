@@ -11,9 +11,9 @@ import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "LostPrayerToTheSacredWinds"
-const [tr, trm] = trans("weapon", key)
+const [tr] = trans("weapon", key)
 const data_gen = data_gen_json as WeaponData
-const ele_dmg_s = [0.12, 0.15, 0.18, 0.21, 0.24]
+const ele_dmg_s = [0.8, 0.10, 0.12, 0.14, 0.16]
 
 const [condPassivePath, condPassive] = cond(key, "BoundlessBlessing")
 
@@ -40,9 +40,9 @@ const sheet: IWeaponSheet = {
       path: condPassivePath,
       header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
       description: conditionaldesc(tr),
-      name: trm("condName"),
+      name: st("activeCharField"),
       states: objectKeyMap(range(1, 4), i => ({
-        name: st("stack", { count: i }),
+        name: st("seconds", { count: i * 4 }),
         fields: allElements.map(ele => ({ node: eleDmgStacks[ele] }))
       }))
     }
