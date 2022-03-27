@@ -27,7 +27,7 @@ import Lisa from './Lisa'
 import Mona from './Mona'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
-// import Qiqi from './Qiqi'
+import Qiqi from './Qiqi'
 import RaidenShogun from './RaidenShogun'
 import Razor from './Razor'
 import Rosaria from './Rosaria'
@@ -76,7 +76,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Mona,
   Ningguang,
   Noelle,
-  // Qiqi,
+  Qiqi,
   RaidenShogun,
   Razor,
   Rosaria,
