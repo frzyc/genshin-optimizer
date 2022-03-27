@@ -220,6 +220,10 @@ const sheet: ICharacterSheet = {
         states: {
           duringPyronado: {
             fields: [{
+              text: trm("c6Exception"),
+              canShow: data => data.get(input.constellation).value >= 6
+                && data.get(condDuringPyronado).value === "duringPyronado"
+            }, {
               node: duringPyronado
             }, {
               text: sgt("duration"),
@@ -258,7 +262,7 @@ const sheet: ICharacterSheet = {
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
-      constellation6: talentTemplate("constellation6", tr, c6, undefined),
+      constellation6: talentTemplate("constellation6", tr, c6),
     }
   }
 };
