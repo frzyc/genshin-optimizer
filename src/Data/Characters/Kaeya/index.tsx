@@ -175,7 +175,10 @@ const sheet: ICharacterSheet = {
       ],
       ),
       passive1: talentTemplate("passive1", tr, passive1, [
-        { node: infoMut(dmgFormulas.passive1.heal, { key: `char_${key}:p1heal`, variant:"success" }), },
+        { 
+          canShow: data => data.get(input.asc).value >= 1,
+          node: infoMut(dmgFormulas.passive1.heal, { key: `char_${key}:p1heal`, variant:"success" }), 
+        },
       ]),
       passive2: talentTemplate("passive2", tr, passive2, []),
       passive3: talentTemplate("passive3", tr, passive3, []),
