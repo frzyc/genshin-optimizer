@@ -78,7 +78,7 @@ export const allCharacterKeys = [
   "Xiangling",
   "Xiao",
   "Xingqiu",
-  // "Xinyan",
+  "Xinyan",
   "Rosaria",
   "Yanfei",
   "Eula",

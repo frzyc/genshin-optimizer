@@ -36,7 +36,8 @@
     "hydro": "Hydro DMG hits on opponents",
     "cryo": "Cryo DMG hits on opponents",
     "pyro": "Pyro DMG hits on opponents",
-    "electro": "Electro DMG hits on opponents"
+    "electro": "Electro DMG hits on opponents",
+    "crit": "Crit hits on opponents"
   },
   "afterUse": {
     "skill": "After using Elemental Skill",

@@ -42,7 +42,7 @@ import Venti from './Venti'
 import Xiangling from './Xiangling'
 import Xiao from './Xiao'
 import Xingqiu from './Xingqiu'
-// import Xinyan from './Xinyan'
+import Xinyan from './Xinyan'
 import YaeMiko from './YaeMiko'
 import Yanfei from './Yanfei'
 import Yoimiya from './Yoimiya'
@@ -91,7 +91,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Xiangling,
   Xiao,
   Xingqiu,
-  // Xinyan,
+  Xinyan,
   YaeMiko,
   Yanfei,
   Yoimiya,
