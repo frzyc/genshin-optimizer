@@ -49,6 +49,7 @@
     "atk": "ATK Increase"
   },
   "skillCDRed": "Ele. Skill CD Reduction",
+  "burstCDRed": "Ele. Burst CD Reduction",
   "pressCD": "Press CD",
   "holdCD": "Hold CD",
   "triggerCD": "Trigger CD",
