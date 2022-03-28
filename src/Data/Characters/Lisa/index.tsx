@@ -15,7 +15,7 @@ const elementKey: ElementKey = "electro"
 const data_gen = data_gen_src as CharacterData
 const [tr, trm] = trans("char", key)
 
-let a = 0, s = 0, b = 0, p2 = 0, c1i = 0, c6i = 0
+let a = 0, s = 0, b = 0, p2 = 0
 const datamine = {
   normal: {
     hitArr: [
@@ -150,7 +150,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` }),
         },
         ...range(0, 3).map(i => ({
-          node: infoMut(dmgFormulas.skill[`stack${i}`], { key: `char_${key}_gen:skill.skillParams.${2+i}`})
+          node: infoMut(dmgFormulas.skill[`stack${i}`], { key: `char_${key}_gen:skill.skillParams.${2 + i}` })
         })), {
           text: sgt("press.cd"),
           value: datamine.skill.pressCD,

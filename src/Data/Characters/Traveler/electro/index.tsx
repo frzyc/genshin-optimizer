@@ -1,15 +1,15 @@
 import { CharacterData } from 'pipeline'
 import { Translate } from '../../../../Components/Translate'
+import { input, target } from '../../../../Formula'
+import { equal, greaterEq, infoMut, percent, prod, subscript, sum } from '../../../../Formula/utils'
 import { TalentSheet } from '../../../../Types/character_WR'
 import { CharacterKey, ElementKey } from '../../../../Types/consts'
+import { cond, sgt } from '../../../SheetUtil'
+import { normalSrc, sectionTemplate, talentTemplate } from '../../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../../dataUtil'
-import { burst, c1, c2, c3, c4, c5, c6, passive1, passive2, skill } from './assets'
 import data_gen_src from '../data_gen.json'
+import { burst, c1, c2, c3, c4, c5, c6, passive1, passive2, skill } from './assets'
 import skillParam_gen from './skillParam_gen.json'
-import { equal, greaterEq, infoMut, percent, prod, subscript, sum } from '../../../../Formula/utils'
-import { input, target } from '../../../../Formula'
-import { normalSrc, talentTemplate, sectionTemplate } from '../../CharacterSheet'
-import { cond, sgt, st } from '../../../SheetUtil'
 
 const data_gen = data_gen_src as CharacterData
 const auto = normalSrc(data_gen.weaponTypeKey)
@@ -96,7 +96,7 @@ const burstEnergyRestore = subscript(input.total.burstIndex, datamine.burst.ener
 )
 
 const [condC2ThunderPath, condC2Thunder] = cond(key, `${elementKey}C2Thunder`)
-const c2Thunder_electro_enemyRes_ = greaterEq(input.constellation, 2, 
+const c2Thunder_electro_enemyRes_ = greaterEq(input.constellation, 2,
   equal(condC2Thunder, "on", datamine.constellation2.electro_enemyRes)
 )
 
