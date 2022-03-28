@@ -145,9 +145,9 @@ export default function EXPCalc() {
             </Typography>
           </Box>
         </CardLight></Grid>
-        {Object.entries(books).map(([bookKey, bookObj]) => {
+        {Object.entries(books).map(([bookKey]) => {
           return <Grid item xs={12} md={4} key={bookKey}>
-            <BookDisplay bookObj={bookObj} value={books[bookKey]} setValue={b => setState({ books: { ...books, [bookKey]: b } })} required={bookResultObj[bookKey]} />
+            <BookDisplay bookKey={bookKey} value={books[bookKey]} setValue={b => setState({ books: { ...books, [bookKey]: b } })} required={bookResultObj[bookKey]} />
           </Grid>
         })}
         <Grid item xs={12} md={4} >
@@ -217,15 +217,15 @@ export default function EXPCalc() {
   </CardDark >
 }
 function BookDisplay(props) {
-  let { bookObj: { name, img }, value = 0, setValue, required = 0 } = props
+  let { bookKey, value = 0, setValue, required = 0 } = props
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
-      <Typography>{name}</Typography>
+      <Typography>{booksData[bookKey].name}</Typography>
     </CardContent>
     <Divider />
     <CardContent>
       <Grid container>
-        <Grid item xs={3}><ImgFullwidth src={img} /></Grid>
+        <Grid item xs={3}><ImgFullwidth src={booksData[bookKey].img} /></Grid>
         <Grid item xs={9}>
           <ButtonGroup sx={{ display: "flex" }}>
             <TextButton>Amount</TextButton>
