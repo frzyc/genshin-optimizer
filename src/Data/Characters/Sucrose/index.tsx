@@ -70,8 +70,6 @@ const [condSwirlReactionPath, condSwirlReaction] = cond(key, "swirl")
 const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(key, "skillHit")
 
 // Conditional Output
-// It would be nice for this node to display only if the current
-// character's element matches, but I don't think that is possible
 const asc1Disp = greaterEq(input.asc, 1, datamine.passive1.eleMas)
 const asc1 = unequal(target.charKey, key, // Not applying to Sucrose
     equal(target.charEle, condSwirlReaction, asc1Disp)) // And element matches the swirl
