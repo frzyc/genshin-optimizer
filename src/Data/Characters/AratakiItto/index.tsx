@@ -91,8 +91,8 @@ const dmgFormulas = {
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
     sSlash: dmgNode("atk", datamine.charged.sSlash, "charged"),
-    akSlash: dmgNode("atk", datamine.charged.akSlash, "charged", { total: { charged_dmgInc: nodeA4Bonus } }),
-    akFinal: dmgNode("atk", datamine.charged.akFinal, "charged", { total: { charged_dmgInc: nodeA4Bonus } }),
+    akSlash: dmgNode("atk", datamine.charged.akSlash, "charged", { premod: { charged_dmgInc: nodeA4Bonus } }),
+    akFinal: dmgNode("atk", datamine.charged.akFinal, "charged", { premod: { charged_dmgInc: nodeA4Bonus } }),
   },
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([name, arr]) =>
     [name, dmgNode("atk", arr, "plunging")])),
