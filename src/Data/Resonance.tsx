@@ -149,7 +149,7 @@ const condERPath = ["resonance", "EnduringRock"]
 const condER = condReadNode(condERPath)
 const erNodeshield_ = greaterEq(tally.geo, 2, percent(0.15))
 const erNodeDMG_ = greaterEq(tally.geo, 2, equal(condER, "on", percent(0.15)))
-const erNodeRes_ = greaterEq(tally.geo, 2, equal(condER, "on", percent(0.2)))
+const erNodeRes_ = greaterEq(tally.geo, 2, equal(condER, "on", percent(-0.2)))
 const enduringRock: IResonance = {
   name: tr("EnduringRock.name"),
   icon: <span>{StatIcon.geo} {StatIcon.geo}</span>,
