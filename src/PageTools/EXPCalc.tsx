@@ -217,7 +217,6 @@ export default function EXPCalc() {
   </CardDark >
 }
 function BookDisplay(props) {
-  console.log(props)
   let { bookKey, value = 0, setValue, required = 0 } = props
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
