@@ -235,7 +235,7 @@ const sheet: ICharacterSheet = {
               unit: "s",
             },
             // Level 3 damage
-            ... lvl === 3 ? [{node: infoMut(dmgFormulas.skill.lvl3Dmg, { key: `char_${key}_gen:skill.skillParams.4` })}] : [],
+            ...lvl === 3 ? [{node: infoMut(dmgFormulas.skill.lvl3Dmg, { key: `char_${key}_gen:skill.skillParams.4` })}] : [],
           ]}
         ]))
       }, [
