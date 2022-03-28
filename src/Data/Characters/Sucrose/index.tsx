@@ -73,10 +73,10 @@ const asc1Condition = greaterEq(input.asc, 1,
   unequal(target.charKey, characterKey,
     equal(target.charEle, condSwirlReaction, 1)))
 const asc1 = equal(asc1Condition, 1, datamine.passive1.eleMas)
-const asc4 = equal("hit", condSkillHitOpponent,
-  unequal(target.charKey, characterKey,
+const asc4Disp = equal("hit", condSkillHitOpponent,
     greaterEq(input.asc, 4,
-      prod(percent(datamine.passive2.eleMas_), input.premod.eleMas))))
+      prod(percent(datamine.passive2.eleMas_), input.premod.eleMas)))
+const asc4 = unequal(target.charKey, characterKey, asc4Disp)
 const c6Base = greaterEq(input.constellation, 6, percent(0.2))
 
 const c6Bonus = objectKeyMap(absorbableEle.map(ele => `${ele}_dmg_` as const), key =>
@@ -250,11 +250,11 @@ const sheet: ICharacterSheet = {
         value: condSkillHitOpponent,
         path: condSkillHitOpponentPath,
         name: trm("asc4"),
-        canShow: greaterEq(input.asc, 4, unequal(target.charKey, characterKey, 1)),
+        canShow: greaterEq(input.asc, 4, unequal(input.activeCharKey, characterKey, 1)),
         states: {
           hit: {
             fields: [{
-              node: asc4,
+              node: infoMut(asc4Disp, { key: "eleMas" }),
             }, {
               text: sgt("duration"),
               value: datamine.passive2.duration,
