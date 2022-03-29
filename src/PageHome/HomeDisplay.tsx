@@ -149,19 +149,6 @@ export default function HomeDisplay() {
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
     <CardDark>
       <CardContent>
-        <Typography variant="h5" gutterBottom color="warning.main" >
-          Welcome to Genshin Optimizer Waverider Beta!
-        </Typography>
-        <Typography variant="body1" color="text.secondary" gutterBottom >
-          Ever since version 2.0, MHY has released characters/weapons with kits that seem to defy the original design considerations of the Optimizer. The system implemented here is designed with these mechanisms in mind, and provide some future-proofing for future MHY feature-creeping.
-        </Typography>
-        <Typography variant="body1" color="text.secondary" gutterBottom>
-          Since this is a beta, a lot of thing might be broken. Please funnel bugreports towards our discord.
-        </Typography>
-      </CardContent>
-    </CardDark>
-    <CardDark>
-      <CardContent>
         <Trans i18nKey="intro" t={t}>
           <Typography variant="h5" gutterBottom >
             What is Genshin Optimizer?
