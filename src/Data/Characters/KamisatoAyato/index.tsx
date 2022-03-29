@@ -39,9 +39,11 @@ const datamine = {
     high: skillParam_gen.auto[a++],
   },
   skill: {
-    dmg1: skillParam_gen.skill[s++],
-    dmg2: skillParam_gen.skill[s++],
-    dmg3: skillParam_gen.skill[s++],
+    dmgArr:[
+      skillParam_gen.skill[s++],
+      skillParam_gen.skill[s++],
+      skillParam_gen.skill[s++],
+    ],
     stateDuration: skillParam_gen.skill[s++][0],
     stackHpDmgInc: skillParam_gen.skill[s++],
     maxStacks: 4,
@@ -136,18 +138,23 @@ const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg1: equal(condInSkill, "on", customDmgNode(prod(
-      subscript(input.total.skillIndex, datamine.skill.dmg1, { key: "_" }),
+    ...Object.fromEntries(datamine.skill.dmgArr.map((arr, i) =>
+      [`dmg${i}`, equal(condInSkill, "on", customDmgNode(prod(
+      subscript(input.total.skillIndex, arr, { key: "_" }),
       input.total.atk,
-    ), "normal", shunAddl)),
-    dmg2: equal(condInSkill, "on", customDmgNode(prod(
-      subscript(input.total.skillIndex, datamine.skill.dmg2, { key: "_" }),
-      input.total.atk,
-    ), "normal", shunAddl)),
-    dmg3: equal(condInSkill, "on", customDmgNode(prod(
-      subscript(input.total.skillIndex, datamine.skill.dmg3, { key: "_" }),
-      input.total.atk,
-    ), "normal", shunAddl)),
+    ), "normal", shunAddl))])),
+    // dmg1: equal(condInSkill, "on", customDmgNode(prod(
+    //   subscript(input.total.skillIndex, datamine.skill.dmg1, { key: "_" }),
+    //   input.total.atk,
+    // ), "normal", shunAddl)),
+    // dmg2: equal(condInSkill, "on", customDmgNode(prod(
+    //   subscript(input.total.skillIndex, datamine.skill.dmg2, { key: "_" }),
+    //   input.total.atk,
+    // ), "normal", shunAddl)),
+    // dmg3: equal(condInSkill, "on", customDmgNode(prod(
+    //   subscript(input.total.skillIndex, datamine.skill.dmg3, { key: "_" }),
+    //   input.total.atk,
+    // ), "normal", shunAddl)),
     illusionDmg: dmgNode("atk", datamine.skill.illusionDmg, "skill"),
   },
   burst: {
@@ -234,13 +241,10 @@ const sheet: ICharacterSheet = {
         name: st("afterUse.skill"),
         states: {
           on: {
-            fields: [{
-              node: infoMut(dmgFormulas.skill.dmg1, { key: `char_${key}_gen:skill.skillParams.0` }),
-            }, {
-              node: infoMut(dmgFormulas.skill.dmg2, { key: `char_${key}_gen:skill.skillParams.1` }),
-            }, {
-              node: infoMut(dmgFormulas.skill.dmg3, { key: `char_${key}_gen:skill.skillParams.2` }),
-            }, {
+            fields: [
+            ...datamine.skill.dmgArr.map((_, i) => ({
+              node: infoMut(dmgFormulas.skill[`dmg${i}`], { key: `char_${key}_gen:skill.skillParams.${i}` })
+            })), {
               text: st("incInterRes"),
             }, {
               text: trm("skill.unableToAuto"),
