@@ -84,7 +84,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
           </SqBadge>
         </Grid>
         <Grid item flexGrow={1}>
-          {!!rolls.length && [...rolls].sort().map((val,i) =>
+          {!!rolls.length && [...rolls].sort().map((val, i) =>
             <Typography component="span" key={`${i}.${val}`} color={`roll${clamp(rollOffset + rollData.indexOf(val), 1, 6)}.main`} sx={{ ml: 1 }} >{cacheValueString(val, unit)}</Typography>)}
         </Grid>
         <Grid item xs="auto" flexShrink={1}>

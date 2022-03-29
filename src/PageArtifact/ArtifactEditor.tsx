@@ -70,7 +70,7 @@ const InputInvis = styled('input')({
   display: 'none',
 });
 
-export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: { artifactIdToEdit?: string, cancelEdit: () => void }) {
+export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { artifactIdToEdit?: string, cancelEdit: () => void }) {
   const { t } = useTranslation("artifact")
 
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
@@ -148,7 +148,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: { artif
   }, [artifact, artifactIdToEdit, database, dirtyDatabase])
 
   const { artifact: cachedArtifact, errors } = useMemo(() => {
-    if (!artifact || !artifactIdToEdit) return { artifact: undefined, errors: [] as Displayable[] }
+    if (!artifact) return { artifact: undefined, errors: [] as Displayable[] }
     const validated = validateArtifact(artifact, artifactIdToEdit)
     if (old) {
       validated.artifact.location = old.location
