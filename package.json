@@ -1,7 +1,7 @@
 {
   "homepage": "https://frzyc.github.io/genshin-optimizer/",
   "name": "genshin-optimizer",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.1",
@@ -52,7 +52,7 @@
     "localization-load": "cd ./localization && npx ts-node ./load.ts",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -r https://github.com/lantua/genshin-optimizer-beta",
+    "deploy": "gh-pages -d build",
     "check-types": "tsc --noEmit"
   },
   "eslintConfig": {

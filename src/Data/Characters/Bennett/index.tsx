@@ -1,5 +1,4 @@
 import { CharacterData } from 'pipeline'
-import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import { UIData } from '../../../Formula/uiData'
 import { constant, equal, equalStr, greaterEq, infoMut, lookup, prod, subscript, sum } from '../../../Formula/utils'

@@ -3,7 +3,7 @@ import { createScheduler, createWorker, RecognizeResult, Scheduler } from 'tesse
 import ColorText from '../Components/ColoredText';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
-import KeyMap, { cacheValueString, valueString } from '../KeyMap';
+import KeyMap, { cacheValueString } from '../KeyMap';
 import { allMainStatKeys, allSubstats, IArtifact, ICachedArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
 import { allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
 import { clamp, hammingDistance, objectKeyMap } from '../Util/Util';
