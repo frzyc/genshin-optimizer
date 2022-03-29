@@ -143,18 +143,6 @@ const dmgFormulas = {
       subscript(input.total.skillIndex, arr, { key: "_" }),
       input.total.atk,
     ), "normal", shunAddl))])),
-    // dmg1: equal(condInSkill, "on", customDmgNode(prod(
-    //   subscript(input.total.skillIndex, datamine.skill.dmg1, { key: "_" }),
-    //   input.total.atk,
-    // ), "normal", shunAddl)),
-    // dmg2: equal(condInSkill, "on", customDmgNode(prod(
-    //   subscript(input.total.skillIndex, datamine.skill.dmg2, { key: "_" }),
-    //   input.total.atk,
-    // ), "normal", shunAddl)),
-    // dmg3: equal(condInSkill, "on", customDmgNode(prod(
-    //   subscript(input.total.skillIndex, datamine.skill.dmg3, { key: "_" }),
-    //   input.total.atk,
-    // ), "normal", shunAddl)),
     illusionDmg: dmgNode("atk", datamine.skill.illusionDmg, "skill"),
   },
   burst: {
