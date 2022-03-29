@@ -1,30 +1,30 @@
-import { artifactIdMap, artifactSlotMap, characterIdMap, CharacterKey, DWeaponTypeKey, Language, propTypeMap, QualityTypeMap, StatKey, weaponIdMap, WeaponKey, weaponMap, WeaponTypeKey } from '.'
+import { artifactIdMap, artifactSlotMap, characterIdMap, CharacterKey, Language, propTypeMap, QualityTypeMap, StatKey, weaponIdMap, WeaponKey, weaponMap, WeaponTypeKey } from '.'
 import { mapHashData } from './Data'
 import artifactMainstatData from './DataminedModules/artifact/artifactMainstat'
-import artifactPiecesData from './DataminedModules/artifact/ReliquaryExcelConfigData'
-import reliquarySetExcelConfigData from './DataminedModules/artifact/ReliquarySetExcelConfigData'
 import artifactSubstatData from './DataminedModules/artifact/artifactSubstat'
 import { artifactSubstatRollCorrection, artifactSubstatRollData } from './DataminedModules/artifact/artifactSubstatRolls'
+import artifactPiecesData from './DataminedModules/artifact/ReliquaryExcelConfigData'
+import reliquarySetExcelConfigData from './DataminedModules/artifact/ReliquarySetExcelConfigData'
 import ascensionData from './DataminedModules/character/ascension'
 import avatarExcelConfigData from './DataminedModules/character/AvatarExcelConfigData'
 import characterExpCurve, { CharacterGrowCurveKey } from './DataminedModules/character/characterExpCurve'
 import characterInfo from './DataminedModules/character/characterInfo'
 import constellations from './DataminedModules/character/constellations'
+// import './DataminedModules/food/CookRecipeExcelConfigData'
+import materialExcelConfigData from './DataminedModules/character/MaterialExcelConfigData'
 import skillGroups, { ProudSkillExcelConfigData } from './DataminedModules/character/passives'
 import skillDepot, { AvatarSkillDepotExcelConfigData } from './DataminedModules/character/skillDepot'
 import talents from './DataminedModules/character/talents'
 import equipAffixExcelConfigData from './DataminedModules/common/EquipAffixExcelConfigData'
+import weaponCurveExcelConfigData, { WeaponGrowCurveKey } from './DataminedModules/weapon/WeaponCurveExcelConfigData'
 import weaponExcelConfigData from './DataminedModules/weapon/WeaponExcelConfigData'
 import weaponPromoteExcelConfigData from './DataminedModules/weapon/WeaponPromoteExcelConfigData'
-import weaponCurveExcelConfigData, { WeaponGrowCurveKey } from './DataminedModules/weapon/WeaponCurveExcelConfigData'
 import { extrapolateFloat } from './extrapolateFloat'
 import loadImages from './loadImages'
 import { parsingFunctions, preprocess } from './parseUtil'
 import { languageMap, nameToKey, TextMapEN } from './TextMapUtil'
 import { crawlObject, dumpFile, layeredAssignment } from './Util'
 
-// import './DataminedModules/food/CookRecipeExcelConfigData'
-import materialExcelConfigData from './DataminedModules/character/MaterialExcelConfigData'
 const fs = require('fs')
 
 loadImages();
@@ -33,7 +33,7 @@ loadImages();
  * # Importing data from datamined files.
  */
 export type CharacterData = {
-  weaponTypeKey: DWeaponTypeKey
+  weaponTypeKey: WeaponTypeKey
   base: {
     hp: number,
     atk: number,
@@ -44,13 +44,13 @@ export type CharacterData = {
     atk: CharacterGrowCurveKey,
     def: CharacterGrowCurveKey,
   },
-  star: number,
+  star: 1 | 2 | 3 | 4 | 5,
   ascensions: {
     props: { [key: string]: number }
   }[],
   birthday: {
-    month: number,
-    day: number
+    month?: number,
+    day?: number
   }
 }
 //parse baseStat/ascension/basic data
@@ -63,7 +63,7 @@ const characterDataDump = Object.fromEntries(Object.entries(avatarExcelConfigDat
     base: { hp: HpBase, atk: AttackBase, def: DefenseBase },
     curves,
     birthday: { month: InfoBirthMonth, day: InfoBirthDay },
-    star: QualityTypeMap[QualityType],
+    star: QualityTypeMap[QualityType] ?? 5,
     ascensions: ascensionData[AvatarPromoteId]
   }
 
@@ -141,9 +141,10 @@ const characterSkillParamDump = Object.fromEntries(Object.entries(avatarExcelCon
 
 //dump data file to respective character directory.
 Object.entries(characterSkillParamDump).forEach(([characterKey, data]) => {
-  if (characterKey.includes('_')) {//Traveler, for multi element support
-    const [charKey, eleKey] = characterKey.split("_")
-    dumpFile(`${__dirname}/../src/Data/Characters/${charKey}/${eleKey}/skillParam_gen.json`, data)
+  if (characterKey === "Traveler") {//Traveler, for multi element support
+    Object.entries(data as any).forEach(([eleKey, eData]) => {
+      dumpFile(`${__dirname}/../src/Data/Characters/${characterKey}/${eleKey}/skillParam_gen.json`, eData)
+    });
   } else
     dumpFile(`${__dirname}/../src/Data/Characters/${characterKey}/skillParam_gen.json`, data)
 })
@@ -184,7 +185,7 @@ const weaponDataDump = Object.fromEntries(Object.entries(weaponExcelConfigData).
     } : undefined,
     addProps: refData ? refData.map(asc =>
       Object.fromEntries(asc.AddProps.filter(ap => ap.Value).map(ap =>
-        [propTypeMap[ap.PropType], extrapolateFloat(ap.Value)]))
+        [propTypeMap[ap.PropType] ?? ap.PropType, extrapolateFloat(ap.Value)]))
     ) : undefined,
     ascension: ascData.map(asd => {
       if (!asd) return { addStats: {} }
@@ -203,14 +204,14 @@ Object.entries(weaponDataDump).forEach(([weaponKey, data]) =>
   dumpFile(`${__dirname}/../src/Data/Weapons/${data.weaponType[0].toUpperCase() + data.weaponType.slice(1)}/${weaponKey}/data_gen.json`, data))
 
 //exp curve to generate  stats at every level
-dumpFile(`${__dirname}/../src/Weapon/expCurve_gen.json`, weaponCurveExcelConfigData)
-dumpFile(`${__dirname}/../src/Character/expCurve_gen.json`, characterExpCurve)
+dumpFile(`${__dirname}/../src/Data/Weapons/expCurve_gen.json`, weaponCurveExcelConfigData)
+dumpFile(`${__dirname}/../src/Data/Characters/expCurve_gen.json`, characterExpCurve)
 
 //dump artifact data
-dumpFile(`${__dirname}/../src/Artifact/artifact_sub_gen.json`, artifactSubstatData)
-dumpFile(`${__dirname}/../src/Artifact/artifact_main_gen.json`, artifactMainstatData)
-dumpFile(`${__dirname}/../src/Artifact/artifact_sub_rolls_gen.json`, artifactSubstatRollData)
-dumpFile(`${__dirname}/../src/Artifact/artifact_sub_rolls_correction_gen.json`, artifactSubstatRollCorrection)
+dumpFile(`${__dirname}/../src/Data/Artifacts/artifact_sub_gen.json`, artifactSubstatData)
+dumpFile(`${__dirname}/../src/Data/Artifacts/artifact_main_gen.json`, artifactMainstatData)
+dumpFile(`${__dirname}/../src/Data/Artifacts/artifact_sub_rolls_gen.json`, artifactSubstatRollData)
+dumpFile(`${__dirname}/../src/Data/Artifacts/artifact_sub_rolls_correction_gen.json`, artifactSubstatRollCorrection)
 
 //generate the MapHashes for localization for artifacts
 Object.entries(reliquarySetExcelConfigData).filter(([SetId, data]) => SetId in artifactIdMap).forEach(([SetId, data]) => {
@@ -364,7 +365,7 @@ Object.entries(languageData).forEach(([lang, data]) => {
 
   Object.entries(data).forEach(([type, typeData]) => {
     //general manual localiation namespaces
-    if (["sheet", "weaponKey", "resonance", "material"].includes(type))
+    if (["sheet", "weaponKey", "elementalResonance", "material"].includes(type))
       return dumpFile(`${fileDir}/${type}_gen.json`, typeData)
 
     //weapons/characters/artifacts

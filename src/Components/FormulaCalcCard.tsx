@@ -1,23 +1,19 @@
 import { ExpandMore } from "@mui/icons-material"
 import { Accordion, AccordionDetails, AccordionSummary, Box, CardContent, CardHeader, Collapse, Divider, Grid, Skeleton, Typography } from "@mui/material"
-import { Suspense, useCallback, useContext, useMemo, useState } from "react"
-import { buildContext } from "../Build/Build"
-import Character from "../Character/Character"
-import { getFormulaTargetsDisplayHeading } from "../Character/CharacterUtil"
-import Formula from "../Formula"
+import { Suspense, useCallback, useContext, useState } from "react"
+import { DataContext } from "../DataContext"
+import { getDisplayHeader, getDisplaySections } from "../Formula/DisplayUtil"
+import { DisplaySub } from "../Formula/type"
+import { NodeDisplay } from "../Formula/uiData"
+import KeyMap, { valueString } from "../KeyMap"
 import usePromise from "../ReactHooks/usePromise"
-import { Sheets } from "../ReactHooks/useSheets"
-import Stat, { FormulaDisplay } from "../Stat"
-import { GetDependencies } from "../StatDependency"
-import { IFieldDisplay } from "../Types/IFieldDisplay"
-import { ICalculatedStats } from "../Types/stats"
 import CardDark from "./Card/CardDark"
 import CardLight from "./Card/CardLight"
 import ColorText from "./ColoredText"
 import ExpandButton from "./ExpandButton"
 import ImgIcon from "./Image/ImgIcon"
 
-export default function FormulaCalcCard({ sheets }: { sheets: Sheets }) {
+export default function FormulaCalcCard() {
   const [expanded, setexpanded] = useState(false)
   const toggle = useCallback(() => setexpanded(!expanded), [setexpanded, expanded])
   return <CardLight>
@@ -41,71 +37,40 @@ export default function FormulaCalcCard({ sheets }: { sheets: Sheets }) {
     </CardContent>
     <Collapse in={expanded} timeout="auto" unmountOnExit>
       <CardContent sx={{ pt: 0 }}>
-        <CalculationDisplay sheets={sheets} />
+        <CalculationDisplay />
       </CardContent>
     </Collapse>
   </CardLight>
 }
 
-function CalculationDisplay({ sheets }: { sheets: Sheets }) {
-  const { newBuild, equippedBuild } = useContext(buildContext)
-  //choose which one to display stats for
-  const build = (newBuild ? newBuild : equippedBuild)!
-  const displayStatKeys = useMemo(() => Character.getDisplayStatKeys(build, sheets), [build, sheets])
-  if (!build || !displayStatKeys) return null
+function CalculationDisplay() {
+  const { data } = useContext(DataContext)
+  const sections = getDisplaySections(data)
   return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={1000} />} >
-    {Object.entries(displayStatKeys).map(([sectionKey, fields]: [string, any]) => {
-      const header = getFormulaTargetsDisplayHeading(sectionKey, sheets, build)
-      return <CardDark key={sectionKey} sx={{ mb: 1 }}>
-        <CardHeader avatar={header.icon && <ImgIcon size={2} sx={{ m: -1 }} src={header.icon} />} title={header.title} titleTypographyProps={{ variant: "subtitle1" }} />
-        <Divider />
-        <CardContent>
-          {fields.map((field, fieldIndex) => {
-            if (Array.isArray(field))
-              return <FormulaCalculationField key={fieldIndex} fieldKeys={field} build={build} />
-            else if (typeof field === "string") {//simple statKey field
-              const subFormulaKeys: any[] = Stat.getPrintableFormulaStatKeyList(GetDependencies(build, build?.modifiers, [field]), build?.modifiers).reverse()
-              return Boolean(subFormulaKeys.length) && <Accordion sx={{ bgcolor: "contentLight.main" }} key={fieldIndex}>
-                <AccordionSummary expandIcon={<ExpandMore />}>
-                  <Typography>{Stat.printStat(field, build)}</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  {subFormulaKeys.map(subKey =>
-                    <Typography key={subKey}>{Stat.printStat(subKey, build)} = <small><FormulaDisplay statKey={subKey} stats={build} modifiers={build.modifiers} expand={false} /></small></Typography>
-                  )}
-                </AccordionDetails>
-              </Accordion>
-            }
-            return null
-          })}
-        </CardContent>
-      </CardDark>
-    })}
+    <Box sx={{ mr: -1, mb: -1 }}>
+      {sections.map(([key, Nodes]) =>
+        <FormulaCalc key={key} displayNs={Nodes} sectionKey={key} />)}
+    </Box>
   </Suspense>
 }
-
-function FormulaCalculationField({ fieldKeys, build }: { fieldKeys: string[], build: ICalculatedStats }) {
-  const formula = usePromise(Formula.get(fieldKeys), [fieldKeys])
-  if (!formula) return null
-  const formulaField = (formula as any).field as IFieldDisplay
-  const fieldText = Character.getTalentFieldValue(formulaField, "text", build)
-  const fieldVariant = Character.getTalentFieldValue(formulaField, "variant", build)
-  const fieldFormulaText = Character.getTalentFieldValue(formulaField, "formulaText", build)
-  const fieldFixed = Character.getTalentFieldValue(formulaField, "fixed", build) ?? 0
-  const fieldUnit = Character.getTalentFieldValue(formulaField, "unit", build) ?? ""
-  const [fieldFormula, fieldFormulaDependency] = Character.getTalentFieldValue(formulaField, "formula", build, [] as any)
-  if (!fieldFormula || !fieldFormulaDependency) return null
-  const fieldValue = fieldFormula?.(build)?.toFixed?.(fieldFixed)
-  const subFormulaKeys = Stat.getPrintableFormulaStatKeyList(GetDependencies(build, build?.modifiers, fieldFormulaDependency), build?.modifiers).reverse()
-  return <Accordion sx={{ bgcolor: "contentLight.main" }}>
-    <AccordionSummary expandIcon={<ExpandMore />}>
-      <Typography><Box color={`${fieldVariant}.main`} component="strong">{fieldText}</Box> <ColorText color="info">{fieldValue}{fieldUnit}</ColorText></Typography>
-    </AccordionSummary>
-    <AccordionDetails>
-      <Typography><Box color={`${fieldVariant}.main`} component="strong">{fieldText}</Box> <ColorText color="info">{fieldValue}</ColorText> = <small>{fieldFormulaText}</small></Typography>
-      {subFormulaKeys.map(subKey =>
-        <Typography key={subKey}>{Stat.printStat(subKey, build)} = <small><FormulaDisplay statKey={subKey} stats={build} modifiers={build.modifiers} expand={false} /></small></Typography>
-      )}
-    </AccordionDetails>
-  </Accordion>
+function FormulaCalc({ sectionKey, displayNs }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string }) {
+  const { data } = useContext(DataContext)
+  const header = usePromise(getDisplayHeader(data, sectionKey), [data, sectionKey])
+  if (!header) return null
+  const { title, icon, action } = header
+  return <CardDark sx={{ mb: 1 }}>
+    <CardHeader avatar={icon && <ImgIcon size={2} sx={{ m: -1 }} src={icon} />} title={title} action={action} titleTypographyProps={{ variant: "subtitle1" }} />
+    <Divider />
+    <CardContent>
+      {Object.entries(displayNs).map(([key, node]) =>
+        !node.isEmpty && <Accordion sx={{ bgcolor: "contentLight.main" }} key={key}>
+          <AccordionSummary expandIcon={<ExpandMore />}>
+            <Typography><ColorText color={node.variant}>{KeyMap.get(node.key ?? "")}</ColorText> <strong>{valueString(node.value, node.unit)}</strong></Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            {node.formulas.map((subform, i) => <Typography key={i}>{subform}</Typography>)}
+          </AccordionDetails>
+        </Accordion>)}
+    </CardContent>
+  </CardDark>
 }

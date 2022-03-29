@@ -1,23 +1,32 @@
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../Build/Build'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import icon from './Icon.png'
-import iconAwaken from './AwakenIcon.png'
-import formula, { data } from './data'
-import Stat from '../../../../Stat'
-import data_gen from './data_gen.json'
 import { WeaponData } from 'pipeline'
-import { st } from '../../../Characters/SheetUtil'
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import { input } from '../../../../Formula'
+import { constant, infoMut, percent, prod } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { customDmgNode } from '../../../Characters/dataUtil'
+import { st, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import iconAwaken from './AwakenIcon.png'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "TheFlute"
+const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
+
+const dmg_ = customDmgNode(prod(percent(2), input.premod.atk), "elemental", {
+  hit: { ele: constant("physical") }
+})
+
+const data = dataObjForWeaponSheet(key, data_gen, undefined, {
+  dmg_
+})
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fields: [{
-      text: st("dmg"),
-      formulaText: stats => <span>{data.vals[stats.weapon.refineIndex]}% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
-      formula: formula.dmg,
-      variant: stats => getTalentStatKeyVariant("physical", stats),
-    }]
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    fields: [{ node: infoMut(dmg_, { key: "sheet:dmg" }) }]
   }]
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

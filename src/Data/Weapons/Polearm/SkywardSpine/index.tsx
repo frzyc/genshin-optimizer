@@ -1,29 +1,45 @@
 import { WeaponData } from 'pipeline'
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../Build/Build'
-import { Translate } from '../../../../Components/Translate'
-import Stat from '../../../../Stat'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { constant, infoMut, percent, prod, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { customDmgNode } from '../../../Characters/dataUtil'
+import { st, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
 
-const crit_ = [8, 10, 12, 14, 16]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const key: WeaponKey = "SkywardSpine"
+const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
+
+const critRateInc = [0.08, 0.1, 0.12, 0.14, 0.16]
+const dmgPerc = [0.4, 0.55, 0.7, 0.85, 1]
+const atkSPD_ = percent(0.12)
+const critRate_ = subscript(input.weapon.refineIndex, critRateInc)
+const dmg = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgPerc, { key: "_" }), input.total.atk), "elemental", {
+  hit: { ele: constant("physical") }
+})
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    critRate_,
+    atkSPD_
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    critRate_: crit_[stats.weapon.refineIndex],
-    atkSPD_: 12
-  }),
   document: [{
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
     fields: [{
-      text: <Translate ns="sheet" key18="dmg" />,
-      formulaText: stats => <span>{data.dmg[stats.weapon.refineIndex]}% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
-      formula: formula.dmg,
-      variant: stats => getTalentStatKeyVariant("physical", stats),
+      node: critRate_,
+    }, {
+      node: atkSPD_,
+    }, {
+      node: infoMut(dmg, { key: "sheet:dmg" }),
     }]
-  }]
+  }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

@@ -44,3 +44,12 @@ input[type="number"] {
 .grad-5star {
   background-image: linear-gradient(to bottom right, #695453, #e6ac54);
 }
+
+div#formula {
+  padding-left: 2em;
+  text-indent: -2em;
+}
+div#formula>* {
+  padding-left: 0;
+  text-indent: 0;
+}

@@ -1,7 +1,7 @@
 import { CharacterExpCurveData } from "./DataminedModules/character/characterExpCurve";
 import { WeaponExpCurveData } from "./DataminedModules/weapon/WeaponCurveExcelConfigData";
-import { WeaponData } from './main'
-export { CharacterExpCurveData, WeaponExpCurveData, WeaponData }
+import { WeaponData, CharacterData } from './main'
+export { CharacterExpCurveData, WeaponExpCurveData, WeaponData, CharacterData }
 
 export const tagColor = {
   "FFD780FF": "strong",
@@ -64,7 +64,10 @@ export const characterIdMap = {
   10000055: "Gorou",
   10000056: "KujouSara",
   10000057: "AratakiItto",
+  10000058: "YaeMiko",
   10000062: "Aloy",
+  10000063: "Shenhe",
+  10000064: "YunJin",
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",
@@ -73,7 +76,7 @@ export const characterIdMap = {
   // 11000026: "TEMPLATE", Yaoyao
   // 11000028: "TEMPLATE", Shiro Maiden
   // 11000030: "TEMPLATE", Greatsword Maiden
-  // 11000035: "TEMPLATE", Lance Warrioress  
+  // 11000035: "TEMPLATE", Lance Warrioress
 } as const
 export type CharacterId = keyof typeof characterIdMap
 export type CharacterKey = typeof characterIdMap[keyof typeof characterIdMap]
@@ -171,7 +174,7 @@ export const weaponIdMap = {
   13504: "VortexVanquisher",
   13505: "PrimordialJadeWingedSpear",
   // 13506: "Deicide",
-  // 13507: "",
+  13507: "CalamityQueller",
   13509: "EngulfingLightning",
 
   //catalyst
@@ -197,6 +200,7 @@ export const weaponIdMap = {
   14412: "Frostbearer",
   14413: "DodocoTales",
   14414: "HakushinRing",
+  14415: "OathswornEye",
   14501: "SkywardAtlas",
   14502: "LostPrayerToTheSacredWinds",
   // 14503: "Lost Ballade",
@@ -205,6 +209,7 @@ export const weaponIdMap = {
   // 14505: "Primordial Jade Regalia",
   // 14506: "Diamond Visage",
   // 14508: "",
+  14509: "KagurasVerity",
 
   //bow
   15101: "HuntersBow",
@@ -338,6 +343,7 @@ export type MainStatKey = typeof MainPropMap[keyof typeof MainPropMap]
 export const propTypeMap = {
   ...SubStatPropTypeMap,
   ...MainPropMap,
+  FIGHT_PROP_ADD_HURT: "dmg_",
   FIGHT_PROP_BASE_HP: "hp",
   FIGHT_PROP_BASE_ATTACK: "atk",
   FIGHT_PROP_BASE_DEFENSE: "def",

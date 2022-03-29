@@ -1,36 +1,51 @@
-import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import type { WeaponData } from 'pipeline'
+import { input } from '../../../../Formula'
+import { lookup, naught, equal, subscript } from "../../../../Formula/utils"
+import { WeaponKey } from '../../../../Types/consts'
+import { cond, st, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-import { Translate } from '../../../../Components/Translate'
-const tr = (strKey: string) => <Translate ns="weapon_Deathmatch_gen" key18={strKey} />
-const refinementVals = [16, 20, 24, 28, 32]
-const refinementSoloVals = [24, 30, 36, 42, 48]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "Deathmatch"
+const data_gen = data_gen_json as WeaponData
+
+const [tr, trm] = trans("weapon", key)
+
+const [condStackPath, condStack] = cond(key, "stack")
+const atkDefInc = [0.16, 0.2, 0.24, 0.28, 0.32]
+const atkInc = [0.24, 0.3, 0.36, 0.42, 0.48]
+const atk_ = lookup(condStack, { "oneOrNone": subscript(input.weapon.refineIndex, atkInc, { key: "_" }), "moreThanOne": subscript(input.weapon.refineIndex, atkDefInc, { key: "_" }) }, naught)
+const def_ = equal(condStack, "moreThanOne", subscript(input.weapon.refineIndex, atkDefInc, { key: "_" }))
+
+export const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    atk_,
+    def_
+  },
+})
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
     conditional: {
-      key: "g",
-      name: tr(`passiveName`),
+      value: condStack,
+      path: condStackPath,
+      header: conditionalHeader(tr, icon, iconAwaken),
+      name: trm("condName"),
       states: {
-        o2: {
-          name: "At least 2 opponents",
-          stats: stats => ({
-            atk_: refinementVals[stats.weapon.refineIndex],
-            def_: refinementVals[stats.weapon.refineIndex]
-          })
+        "oneOrNone": {
+          name: trm("opponents.oneOrNone"),
+          fields: [{ node: atk_ }, { node: def_ }]
         },
-        o1: {
-          name: "Less than 2 opponents",
-          stats: stats => ({
-            atk_: refinementSoloVals[stats.weapon.refineIndex]
-          })
-        }
+        "moreThanOne": {
+          name: trm("opponents.moreThanOne"),
+          fields: [{ node: atk_ }, { node: def_ }]
+        },
       }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

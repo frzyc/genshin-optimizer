@@ -1,22 +1,51 @@
 import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { equal, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { cond, sgt, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-const refinementVals = [20, 25, 30, 35, 40]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "EmeraldOrb"
+const data_gen = data_gen_json as WeaponData
+const [tr, trm] = trans("weapon", key)
+
+const atkInc = [0.2, 0.25, 0.3, 0.35, 0.4]
+
+const [condPassivePath, condPassive] = cond(key, "Rapids")
+const atk_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkInc))
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    atk_
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
     conditional: {
-      key: "r",
-      name: "After Hydro-Related Reactions",
-      maxStack: 1,
-      stats: stats => ({
-        atk_: refinementVals[stats.weapon.refineIndex]
-      })
+      value: condPassive,
+      path: condPassivePath,
+      name: trm("condName"),
+      header: conditionalHeader(tr, icon, iconAwaken),
+      description: conditionaldesc(tr),
+      states: {
+        on: {
+          fields: [{
+            node: atk_
+          }, {
+            text: sgt("duration"),
+            value: 12,
+            unit: "s"
+          }]
+        }
+      }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

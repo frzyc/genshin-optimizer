@@ -1,52 +1,69 @@
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Box, List, ListItem, styled, Typography } from "@mui/material";
+import { Box, List, styled, Typography } from "@mui/material";
 import React, { useContext, useMemo } from 'react';
-import { buildContext } from "../Build/Build";
-import Character from "../Character/Character";
-import { IFieldDisplay } from "../Types/IFieldDisplay";
+import { DataContext, dataContextObj } from "../DataContext";
+import { NodeDisplay } from "../Formula/api";
+import KeyMap, { valueString } from "../KeyMap";
+import { IBasicFieldDisplay, IFieldDisplay } from "../Types/IFieldDisplay";
+import { evalIfFunc } from "../Util/Util";
 import BootstrapTooltip from "./BootstrapTooltip";
 import ColorText from "./ColoredText";
+import StatIcon from "./StatIcon";
+import { data as dataNode } from '../Formula/utils'
+import { Data } from "../Formula/type";
 
-export default function FieldDisplay({ field }: { field: IFieldDisplay }) {
-  const { newBuild, equippedBuild, compareBuild } = useContext(buildContext)
-  const build = (newBuild ? newBuild : equippedBuild)
-  const canShow = useMemo(() => build ? field?.canShow?.(build) : false, [field, build])
-  const fixedVal = field?.fixed || 0
-  const fieldVal = useMemo(() => {
-    if (field.value) return Character.getTalentFieldValue(field, "value", build)
-    else if (field.formula) {
-      let retVal = Character.getTalentFieldValue(field, "formula", build)?.[0]?.(build)
-      //compareAgainstEquipped
-      if (compareBuild && equippedBuild && typeof retVal === "number") {
-        let fieldEquippedVal = field.value ? field.value : field.formula?.(equippedBuild)?.[0]?.(equippedBuild)
-        if (typeof fieldEquippedVal === "function")
-          fieldEquippedVal = parseInt(fieldEquippedVal?.(equippedBuild)?.toFixed?.(fixedVal))
-        let diff = retVal - fieldEquippedVal
-        retVal = <span>{fieldEquippedVal?.toFixed(fixedVal) ?? fieldEquippedVal}{diff ? <ColorText color={diff > 0 ? "success" : "error"}> ({diff > 0 ? "+" : ""}{diff?.toFixed?.(fixedVal) || diff})</ColorText> : ""}</span>
-      }
-      return retVal
-    }
-  }, [compareBuild, fixedVal, equippedBuild, field, build])
-
-  const fieldText = useMemo(() => Character.getTalentFieldValue(field, "text", build), [field, build])
-  const fieldVariant = useMemo(() => Character.getTalentFieldValue(field, "variant", build), [field, build])
-
-  const formulaTextOverlay = useMemo(() => {
-    const fieldFormulaText = Character.getTalentFieldValue(field, "formulaText", build)
-    return fieldFormulaText ? <BootstrapTooltip placement="top" title={<Typography>{fieldFormulaText}</Typography>}>
-      <Box component="span" sx={{ cursor: "help", ml: 1 }}><FontAwesomeIcon icon={faQuestionCircle} /></Box>
-    </BootstrapTooltip> : null
-  }, [field, build])
-
-  const unit = useMemo(() => Character.getTalentFieldValue(field, "unit", build), [field, build])
-
+export default function FieldDisplay({ field, fieldContext, component }: { field: IFieldDisplay, fieldContext?: dataContextObj, component?: React.ElementType }) {
+  const { data, oldData } = useContext(DataContext)
+  const canShow = useMemo(() => field?.canShow?.(data) ?? true, [field, data])
   if (!canShow) return null
-  return <ListItem sx={{ display: "flex", justifyContent: "space-between" }}  >
-    <span><b>{fieldText}</b>{formulaTextOverlay}</span>
-    <Typography color={`${fieldVariant}.main`}>{fieldVal?.toFixed?.(fixedVal) ?? fieldVal}{unit}</Typography>
-  </ListItem>
+  if ("node" in field) {
+    // TODO: remove as Data
+    const node = fieldContext ? data.get(dataNode(field.node, { target: fieldContext.data.data[0] } as Data)) : data.get(field.node)
+    if (node.isEmpty) return null
+    if (oldData) {
+      const oldNode = fieldContext ? oldData.get(dataNode(field.node, { target: fieldContext.oldData!.data[0] } as Data)) : oldData.get(field.node)
+      const oldValue = oldNode.isEmpty ? 0 : oldNode.value
+      return <NodeFieldDisplay node={node} oldValue={oldValue} suffix={field.textSuffix} component={component} />
+    }
+    else return <NodeFieldDisplay node={node} suffix={field.textSuffix} component={component} />
+  }
+  return <BasicFieldDisplay field={field} component={component} />
 }
+
+function BasicFieldDisplay({ field, component }: { field: IBasicFieldDisplay, component?: React.ElementType }) {
+  const { data } = useContext(DataContext)
+  const v = evalIfFunc(field.value, data)
+  const variant = evalIfFunc(field.variant, data)
+  const text = field.text && <span>{field.text}</span>
+  const suffix = field.textSuffix && <span>{field.textSuffix}</span>
+  return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between" }} component={component} >
+    <ColorText color={variant} sx={{ display: "flex", gap: 1 }}>{text}{suffix}</ColorText>
+    <Typography >{typeof v === "number" ? v.toFixed?.(field.fixed) : v}{field.unit}</Typography>
+  </Box>
+}
+
+export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: NodeDisplay, oldValue?: number, suffix?: Displayable, component?: React.ElementType }) {
+  if (node.isEmpty) return null
+
+  suffix = suffix && <span>{suffix}</span>
+  const icon = node.key && StatIcon[node.key]
+  const fieldText = node.key ? KeyMap.get(node.key) : ""
+  const fieldFormulaText = node.formula
+  let fieldVal = "" as Displayable
+  if (oldValue) {
+    const diff = node.value - oldValue
+    fieldVal = <span>{valueString(oldValue, node.unit)}{diff ? <ColorText color={diff > 0 ? "success" : "error"}> {diff > 0 ? "+" : ""}{valueString(diff, node.unit)}</ColorText> : ""}</span>
+  } else fieldVal = valueString(node.value, node.unit)
+  const formulaTextOverlay = !!node.formula && <BootstrapTooltip placement="top" title={<Typography>{fieldFormulaText}</Typography>}>
+    <Box component="span" sx={{ cursor: "help" }}><FontAwesomeIcon icon={faQuestionCircle} /></Box>
+  </BootstrapTooltip>
+  return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between" }} component={component} >
+    <ColorText color={node.variant} sx={{ display: "flex", gap: 1 }}>{icon}{fieldText}{suffix}{formulaTextOverlay}</ColorText>
+    <Typography >{fieldVal}</Typography>
+  </Box>
+}
+
 export const FieldDisplayList = styled(List)(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   overflow: "hidden",

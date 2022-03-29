@@ -1,32 +1,47 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-import ColorText from '../../../Components/ColoredText'
-const artifact: IArtifactSheet = {
-  name: "Lavawalker", rarity: [4, 5],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
+import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { equal, greaterEq, percent } from '../../../Formula/utils'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { cond, trans } from '../../SheetUtil'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import icons from './icons'
+
+const key: ArtifactSetKey = "Lavawalker"
+const [, trm] = trans("artifact", key)
+const [condStatePath, condState] = cond(key, "state")
+
+const set2 = greaterEq(input.artSet.Lavawalker, 2, percent(0.40))
+const set4 = greaterEq(input.artSet.Lavawalker, 4, equal("on", condState, percent(0.35)))
+
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    pyro_res_: set2,
+    all_dmg_: set4
   },
+})
+
+const sheet: IArtifactSheet = {
+  name: "Lavawalker", rarity: [4, 5],
+  icons,
   setEffects: {
-    2: {
-      stats: { pyro_res_: 40 }
-    },
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
       document: [{
         conditional: {
-          key: "4",
-          name: <span>Enemies that are <ColorText color="burning">Burning</ColorText> or affected by <ColorText color="pyro">Pyro</ColorText></span>,
-          stats: { dmg_: 35 }
+          value: condState,
+          path: condStatePath,
+          name: trm("condName"),
+          states: {
+            on: {
+              fields: [{
+                node: set4,
+              }]
+            },
+          }
         }
       }]
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

@@ -1,28 +1,36 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-const artifact: IArtifactSheet = {
-  name: "Thundering Fury", rarity: [4, 5],   icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
+import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { greaterEq, percent } from '../../../Formula/utils'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import icons from './icons'
+const key: ArtifactSetKey = "ThunderingFury"
+
+const set2 = greaterEq(input.artSet.ThunderingFury, 2, percent(0.15))
+const set4 = greaterEq(input.artSet.ThunderingFury, 4, percent(0.40))
+
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    electro_dmg_: set2,
+    overloaded_dmg_: set4,
+    electrocharged_dmg_: set4,
+    superconduct_dmg_: set4
   },
+})
+
+const sheet: IArtifactSheet = {
+  name: "Thundering Fury", rarity: [4, 5],
+  icons,
   setEffects: {
-    2: {
-            stats: { electro_dmg_: 15 }
-    },
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
-            stats: {
-        overloaded_dmg_: 40,
-        electrocharged_dmg_: 40,
-        superconduct_dmg_: 40
-      }
+      document: [{
+        fields: [{
+          node: set4,
+        }]
+      }]
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

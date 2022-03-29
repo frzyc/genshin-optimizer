@@ -1,48 +1,59 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-import { sgt } from '../../Characters/SheetUtil'
-import { Translate } from '../../../Components/Translate'
-import SqBadge from '../../../Components/SqBadge'
-import ImgIcon from '../../../Components/Image/ImgIcon'
-const tr = (strKey: string) => <Translate ns="artifact_Instructor_gen" key18={strKey} />
-const artifact: IArtifactSheet = {
-  name: "Instructor", rarity: [3, 4],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
+import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { equal, greaterEq } from '../../../Formula/utils'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { cond, trans } from '../../SheetUtil'
+import { ArtifactSheet, conditionalHeader, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import icons from './icons'
+
+const key: ArtifactSetKey = "Instructor"
+const [tr, trm] = trans("artifact", key)
+
+const [condStatePath, condState] = cond(key, "set4")
+
+const set2 = greaterEq(input.artSet.Instructor, 2, 80)
+const set4 = greaterEq(input.artSet.Instructor, 4, equal("on", condState, 120))
+
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    eleMas: set2
   },
+  teamBuff: {
+    premod: {
+      eleMas: set4
+    }
+  }
+})
+
+const sheet: IArtifactSheet = {
+  name: "Instructor", rarity: [3, 4],
+  icons,
   setEffects: {
-    2: {
-      stats: { eleMas: 80 }
-    },
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
       document: [{
         conditional: {
-          key: "4",
-          partyBuff: "partyAll",
-          header: {
-            title: tr("setName"),
-            icon: <ImgIcon size={2} sx={{ m: -1 }} src={flower} />,
-            action: <SqBadge color="success">4-set</SqBadge>
-          },
+          teamBuff: true,
+          value: condState,
+          path: condStatePath,
+          header: conditionalHeader(tr, icons.flower),
           description: tr(`setEffects.4`),
-          name: <Translate ns="artifact_Instructor" key18="condName" />,
-          stats: { eleMas: 120 },
-          fields: [{
-            text: sgt("duration"),
-            value: 8,
-            unit: "s"
-          }]
+          name: trm("condName"),
+          states: {
+            on: {
+              fields: [{
+                node: set4,
+              }, {
+                text: "Duration",
+                value: "8",
+                unit: "s"
+              }]
+            },
+          }
         }
-      }]
+      }],
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

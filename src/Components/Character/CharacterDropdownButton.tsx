@@ -2,7 +2,7 @@ import { BusinessCenter, Replay } from "@mui/icons-material";
 import { Divider, ListItemIcon, MenuItem, Typography } from "@mui/material";
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
-import CharacterSheet from "../../Character/CharacterSheet";
+import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
 import usePromise from "../../ReactHooks/usePromise";
 import { CharacterKey } from "../../Types/consts";
@@ -21,8 +21,8 @@ export type CharacterDropdownButtonProps = Omit<DropdownButtonProps, "title" | "
 
 export default function CharacterDropdownButton({ value, onChange, unSelectText, unSelectIcon, inventory = false, noUnselect = false, filter = () => true, ...props }: CharacterDropdownButtonProps) {
   const { t } = useTranslation("ui");
-  const database = useContext(DatabaseContext)
-  const characterSheets = usePromise(CharacterSheet.getAll(), [])
+  const { database } = useContext(DatabaseContext)
+  const characterSheets = usePromise(CharacterSheet.getAll, [])
   const characterSheet = usePromise(CharacterSheet.get(value), [value])
   const characterKeys = database._getCharKeys().filter(ck => characterSheets?.[ck] && filter(characterSheets[ck], ck)).sort()
   return <DropdownButton
@@ -55,7 +55,7 @@ export function CharacterMenuItemArray(characterSheets: StrictDict<CharacterKey,
   return characterKeys.map(characterKey =>
     <MenuItem onClick={() => onChange(characterKey)} key={characterKey} selected={selectedCharacterKey === characterKey} disabled={selectedCharacterKey === characterKey} >
       <ListItemIcon>
-        <ThumbSide src={characterSheets[characterKey].thumbImgSide} />
+        <ThumbSide src={characterSheets[characterKey]?.thumbImgSide} />
       </ListItemIcon>
       <Typography variant="inherit" noWrap>
         {characterSheets?.[characterKey]?.name}

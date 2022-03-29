@@ -1,14 +1,18 @@
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-const artifact: IArtifactSheet = {
+import icons from './icons'
+import { Data } from '../../../Formula/type'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+
+const key: ArtifactSetKey = "PrayersForIllumination"
+
+export const data: Data = dataObjForArtifactSheet(key)
+
+const sheet: IArtifactSheet = {
   name: "Prayers for Illumination", rarity: [3, 4],
-  icons: {
-    circlet
-  },
+  icons,
   setEffects: {
-    1: {
-      stats: {}//TODO element affect reduction stat
-    }
+    1: {}
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

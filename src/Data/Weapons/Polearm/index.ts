@@ -1,6 +1,9 @@
+import { WeaponPoleArmKey } from '../../../Types/consts'
+import WeaponSheet from '../WeaponSheet'
 import BeginnersProtector from './BeginnersProtector'
 import BlackcliffPole from './BlackcliffPole'
 import BlackTassel from './BlackTassel'
+import CalamityQueller from './CalamityQueller'
 import CrescentPike from './CrescentPike'
 import Deathmatch from './Deathmatch'
 import DragonsBane from './DragonsBane'
@@ -20,10 +23,11 @@ import TheCatch from './TheCatch'
 import VortexVanquisher from './VortexVanquisher'
 import WavebreakersFin from './WavebreakersFin'
 import WhiteTassel from './WhiteTassel'
-const polearm = {
+const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   BeginnersProtector,
   BlackcliffPole,
   BlackTassel,
+  CalamityQueller,
   CrescentPike,
   Deathmatch,
   DragonsBane,

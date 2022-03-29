@@ -1,234 +1,307 @@
-import card from './Character_Yoimiya_Card.png'
-import thumb from './Icon.png'
-import thumbSide from './IconSide.png'
-import banner from './Banner.png'
-import c1 from './constellation1.png'
-import c2 from './constellation2.png'
-import c3 from './constellation3.png'
-import c4 from './constellation4.png'
-import c5 from './constellation5.png'
-import c6 from './constellation6.png'
-import skill from './skill.png'
-import burst from './burst.png'
-import passive1 from './passive1.png'
-import passive2 from './passive2.png'
-import passive3 from './passive3.png'
-import Stat from '../../../Stat'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { ICharacterSheet } from '../../../Types/character'
-import { Translate } from '../../../Components/Translate'
-import { conditionalHeader, normalSrc, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
-import { WeaponTypeKey } from '../../../Types/consts'
-import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
-const tr = (strKey: string) => <Translate ns="char_Yoimiya_gen" key18={strKey} />
-const charTr = (strKey: string) => <Translate ns="char_Yoimiya" key18={strKey} />
-const char: ICharacterSheet = {
+import { CharacterData } from 'pipeline'
+import { input } from '../../../Formula'
+import { constant, equal, greaterEq, infoMut, lookup, matchFull, percent, prod, subscript, sum, unequal } from "../../../Formula/utils"
+import { CharacterKey, ElementKey } from '../../../Types/consts'
+import { INodeFieldDisplay } from '../../../Types/IFieldDisplay'
+import { range } from '../../../Util/Util'
+import { cond, sgt, st, trans } from '../../SheetUtil'
+import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
+import data_gen_src from './data_gen.json'
+import skillParam_gen from './skillParam_gen.json'
+
+const characterKey: CharacterKey = "Yoimiya"
+const elementKey: ElementKey = "pyro"
+const data_gen = data_gen_src as CharacterData
+const [tr, charTr] = trans("char", characterKey)
+
+const datamine = {
+  normal: {
+    hitArr: [
+      skillParam_gen.auto[0],//x2
+      skillParam_gen.auto[1],
+      skillParam_gen.auto[2],
+      skillParam_gen.auto[3],//x2
+      skillParam_gen.auto[4],
+    ]
+  },
+  charged: {
+    hit: skillParam_gen.auto[5],
+    full: skillParam_gen.auto[6],
+    kindling: skillParam_gen.auto[7],
+  },
+  plunging: {
+    dmg: skillParam_gen.auto[8],
+    low: skillParam_gen.auto[9],
+    high: skillParam_gen.auto[10],
+  },
+  skill: {
+    dmg_: skillParam_gen.skill[3],
+    duration: skillParam_gen.skill[1][0],
+    cd: skillParam_gen.skill[2][0]
+  },
+  burst: {
+    dmg: skillParam_gen.burst[0],
+    exp: skillParam_gen.burst[1],
+    duration: skillParam_gen.burst[3][0],
+    cd: skillParam_gen.burst[4][0],
+    cost: skillParam_gen.burst[5][0]
+  },
+  passive1: {
+    pyro_dmg_: skillParam_gen.passive1[0][0],
+    duration: skillParam_gen.passive1[1][0],
+    maxStacks: 10,
+  },
+  passive2: {
+    fixed_atk_: skillParam_gen.passive2[0][0],
+    var_atk_: skillParam_gen.passive2[1][0],
+    duration: skillParam_gen.passive2[2][0],
+  },
+  constellation1: {
+    burst_durationInc: skillParam_gen.constellation1[0],
+    atk_: skillParam_gen.constellation1[1],
+    duration: skillParam_gen.constellation1[2]
+  },
+  constellation2: {
+    pyro_dmg_: skillParam_gen.constellation2[0],
+    duration: skillParam_gen.constellation2[1],
+  },
+  constellation3: {},
+  constellation4: {
+    cdRed: skillParam_gen.constellation4[0]
+  },
+  constellation5: {},
+  constellation6: {
+    chance: skillParam_gen.constellation6[0],
+    dmg_: skillParam_gen.constellation6[1],
+  },
+}
+
+const [condSkillPath, condSkill] = cond(characterKey, "skill")
+const [condBurstPath, condBurst] = cond(characterKey, "burst")
+const [condA1Path, condA1] = cond(characterKey, "a1")
+const [condC1Path, condC1] = cond(characterKey, "c1")
+const [condC2Path, condC2] = cond(characterKey, "c2")
+const const3TalentInc = greaterEq(input.constellation, 3, 3)
+const const5TalentInc = greaterEq(input.constellation, 5, 3)
+const normal_dmgMult = matchFull(condSkill, "skill", subscript(input.total.skillIndex, datamine.skill.dmg_), 1)
+const a1Stacks = lookup(condA1, Object.fromEntries(range(1, datamine.passive1.maxStacks).map(i => [i, constant(i)])), 0)
+const pyro_dmg_ = infoMut(prod(percent(datamine.passive1.pyro_dmg_), a1Stacks), { key: 'pyro_dmg_', variant: elementKey })
+const atk_ = greaterEq(input.asc, 4, equal(condBurst, "on", unequal(input.activeCharKey, characterKey,
+  sum(percent(datamine.passive2.fixed_atk_), prod(percent(datamine.passive2.var_atk_), a1Stacks)))))
+const c1atk_ = equal(condC1, 'c1', percent(datamine.constellation1.atk_))
+const c2pyro_dmg_ = equal(condC2, 'c2', percent(datamine.constellation2.pyro_dmg_), { key: 'pyro_dmg_', variant: elementKey })
+
+const canShowC6 = data => data.get(input.constellation).value >= 6 && data.get(condSkill).value === 'skill'
+
+const normalEntries = datamine.normal.hitArr.map((arr, i) =>
+  [i, prod(normal_dmgMult, dmgNode("atk", arr, "normal", { hit: { ele: matchFull(condSkill, "skill", constant(elementKey), constant("physical")) } }))])
+const kindlingEntries = normalEntries.map(([_, node], i) => [i, greaterEq(input.constellation, 6, prod(percent(datamine.constellation6.dmg_), node))])
+
+
+export const dmgFormulas = {
+  normal: Object.fromEntries(normalEntries),
+  charged: {
+    hit: dmgNode("atk", datamine.charged.hit, "charged"),
+    full: dmgNode("atk", datamine.charged.full, "charged", { hit: { ele: constant(elementKey) } }),
+    kindling: unequal(condSkill, "skill", dmgNode("atk", datamine.charged.kindling, "charged", { hit: { ele: constant(elementKey) } }))
+  },
+  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+    [key, dmgNode("atk", value, "plunging")])),
+  skill: {},
+  burst: {
+    dmg: dmgNode("atk", datamine.burst.dmg, "burst", { hit: { ele: constant(elementKey) } }),
+    exp: dmgNode("atk", datamine.burst.exp, "burst", { hit: { ele: constant(elementKey) } }),
+  },
+  constellation6: Object.fromEntries(kindlingEntries)
+}
+
+export const dataObj = dataObjForCharacterSheet(characterKey, elementKey, "inazuma", data_gen, dmgFormulas, {
+  bonus: {
+    skill: const3TalentInc,
+    burst: const5TalentInc,
+  },
+  teamBuff: {
+    premod: {
+      atk_,
+    }
+  },
+  premod: {
+    atk_: c1atk_,
+    pyro_dmg_: sum(pyro_dmg_, c2pyro_dmg_),
+  }
+})
+
+const sheet: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
   rarity: data_gen.star,
-  elementKey: "pyro",
-  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
+  elementKey,
+  weaponTypeKey: data_gen.weaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),
-  baseStat: data_gen.base,
-  baseStatCurve: data_gen.curves,
-  ascensions: data_gen.ascensions,
   talent: {
-    formula,
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
+        img: normalSrc(data_gen.weaponTypeKey),
         sections: [
           {
             text: tr("auto.fields.normal"),
-            fields: data.normal.hitArr.map((percentArr, i) =>
-            ({
-              text: <span>{sgt(`normal.hit${i + 1}`)} {(i === 0 || i === 3) ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
-              formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-              formula: formula.normal[i],
-              variant: stats => getTalentStatKeyVariant("normal", stats),
+            fields: datamine.normal.hitArr.map((_, i) => ({
+              node: infoMut(dmgFormulas.normal[i], { key: `char_${characterKey}_gen:auto.skillParams.${i}` }),
+              textSuffix: ([0, 3].includes(i)) ? st("brHits", { count: 2 }) : ""
             }))
           }, {
             text: tr("auto.fields.charged"),
             fields: [{
-              text: tr("auto.skillParams.5"),
-              formulaText: stats => <span>{data.charged.hit[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-              formula: formula.charged.hit,
-              variant: stats => getTalentStatKeyVariant("charged", stats),
+              node: infoMut(dmgFormulas.charged.hit, { key: `char_${characterKey}_gen:auto.skillParams.5` }),
             }, {
-              text: tr("auto.skillParams.6"),
-              formulaText: stats => <span>{data.charged.full[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, "pyro"), stats)}</span>,
-              formula: formula.charged.full,
-              variant: stats => getTalentStatKeyVariant("charged", stats, "pyro"),
+              node: infoMut(dmgFormulas.charged.full, { key: `char_${characterKey}_gen:auto.skillParams.6` }),
             }, {
-              text: tr("auto.skillParams.7"),
-              formulaText: stats => <span>{data.charged.kindling[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, "pyro"), stats)}</span>,
-              formula: formula.charged.kindling,
-              variant: stats => getTalentStatKeyVariant("charged", stats, "pyro"),
+              node: infoMut(dmgFormulas.charged.kindling, { key: `char_${characterKey}_gen:auto.skillParams.7` }),
+            }]
+          }, {
+            text: tr(`auto.fields.plunging`),
+            fields: [{
+              node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+            }, {
+              node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+            }, {
+              node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
             }]
           },
-          plungeDocSection(tr, formula, data)
         ],
       },
-      skill: {
-        name: tr("skill.name"),
-        img: skill,
-        sections: [{
-          text: tr("skill.description"),
-          fields: [
-            ...data.normal.hitArr.map((percentArr, i) =>
-            ({
-              text: <span>{sgt(`normal.hit${i + 1}`)} {(i === 0 || i === 3) ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
-              formulaText: stats => <span>{data.skill.dmg_[stats.tlvl.skill]}% * {percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, "pyro"), stats)}</span>,
-              formula: formula.skill[i],
-              variant: stats => getTalentStatKeyVariant("normal", stats, "pyro"),
-            })), {
-              text: tr("skill.skillParams.1"),
-              value: "10s"
+      skill: talentTemplate("skill", tr, skill, [{
+        text: tr("skill.skillParams.2"),
+        value: datamine.skill.cd,
+        unit: 's'
+      }], {
+        name: charTr("skillState"),
+        path: condSkillPath,
+        value: condSkill,
+        states: {
+          skill: {
+            fields: [{
+              text: charTr("normMult"),
+              value: data => data.get(normal_dmgMult).value * 100,
+              fixed: 1,
+              unit: "%",
             }, {
-              text: tr("skill.skillParams.2"),
-              value: "18s",
-            }],
-          conditional: {
-            key: "a1",
-            canShow: stats => stats.ascension >= 1,
-            name: tr("passive1.name"),
-            maxStack: 10,
-            stats: { pyro_dmg_: 2 },
-          },
-        }],
-      },
-      burst: {
+              text: charTr("normPyroInfus"),
+            }, {
+              text: tr("skill.skillParams.1"),
+              value: datamine.skill.duration,
+              unit: 's'
+            }]
+          }
+        }
+      }),
+      burst: talentTemplate("burst", tr, burst, [{
+        node: infoMut(dmgFormulas.burst.dmg, { key: `char_${characterKey}_gen:burst.skillParams.0` }),
+      }, {
+        node: infoMut(dmgFormulas.burst.exp, { key: `char_${characterKey}_gen:burst.skillParams.1` }),
+      }, {
+        text: tr("burst.skillParams.2"),
+        value: uiData => datamine.burst.duration + (uiData.get(input.constellation).value >= 1 ? datamine.constellation1.burst_durationInc : 0),
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.3"),
+        value: datamine.burst.cd,
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.4"),
+        value: 60,
+      }]),
+      passive1: talentTemplate("passive1", tr, passive1, undefined, {
+        canShow: greaterEq(input.asc, 1, 1),
+        value: condA1,
+        path: condA1Path,
+        name: tr("passive1.name"),
+        states: Object.fromEntries(range(1, datamine.passive1.maxStacks).map(i =>
+          [i, {
+            name: `${i} stack`,
+            fields: [{
+              node: pyro_dmg_
+            }, {
+              text: sgt("duration"),
+              value: datamine.passive1.duration,
+              unit: "s"
+            }]
+          }]))
+      }
+      ),
+      passive2: talentTemplate("passive2", tr, passive2, undefined, {
+        teamBuff: true,
+        canShow: atk_,
+        path: condBurstPath,
+        value: condBurst,
         name: tr("burst.name"),
-        img: burst,
-        sections: [{
-          text: tr("burst.description"),
-          fields: [{
-            text: tr("burst.skillParams.0"),
-            formulaText: stats => basicDMGFormulaText(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
-            formula: formula.burst.dmg,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
-          }, {
-            text: tr("burst.skillParams.1"),
-            formulaText: stats => basicDMGFormulaText(data.burst.exp[stats.tlvl.burst], stats, "burst"),
-            formula: formula.burst.exp,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
-          }, {
-            text: tr("burst.skillParams.2"),
-            value: stats => 10 + (stats.constellation < 1 ? 0 : 4),
-            unit: "s"
-          }, {
-            text: tr("burst.skillParams.3"),
-            value: "15s",
-          }, {
-            text: tr("burst.skillParams.4"),
-            value: 60,
-          }]
-        }],
-      },
-      passive1: talentTemplate("passive1", tr, passive1),
-      passive2: {
-        name: tr("passive2.name"),
-        img: passive2,
-        sections: [{
-          text: tr("passive2.description"),
-          fields: [{
-            canShow: stats => stats.ascension >= 4,
-            text: charTr("p2"),
-            value: stats => {
-              const [num] = stats.conditionalValues?.character?.Yoimiya?.a1 ?? [0]
-              return data.passive2.fixed_atk_ + num * data.passive2.var_atk_
-            },
-            unit: "%"
-          }, {
-            canShow: stats => stats.ascension >= 4,
-            text: sgt("duration"),
-            value: data.passive2.duration,
-            unit: "s"
-          }],
-          conditional: {
-            key: "p2p",
-            canShow: stats => stats.ascension >= 4,
-            partyBuff: "partyOnly",
-            header: conditionalHeader("passive2", tr, passive2),
-            description: tr("passive2.description"),
-            name: charTr("p2p"),
-            states: Object.fromEntries([...Array(11).keys()].map(t => [t, {
-              name: `${t}`,
-              stats: {
-                atk_: data.passive2.fixed_atk_ + data.passive2.var_atk_ * t
-              },
-              fields: [{
-                text: sgt("duration"),
-                value: data.passive2.duration,
-                unit: "s"
-              }]
-            }]))
+        states: {
+          on: {
+            fields: [{
+              node: atk_
+            }, {
+              text: sgt("duration"),
+              value: datamine.passive2.duration,
+              unit: "s"
+            }]
           }
-        }],
-      },
+        }
+      }),
       passive3: talentTemplate("passive3", tr, passive3),
-      constellation1: {
-        name: tr("constellation1.name"),
-        img: c1,
-        sections: [{
-          text: tr("constellation1.description"),
-          conditional: {
-            key: "c1",
-            canShow: stats => stats.constellation >= 1,
-            name: charTr("c1"),
-            stats: { atk_: 20, },
+      constellation1: talentTemplate("constellation1", tr, c1, [], {
+        canShow: greaterEq(input.constellation, 1, 1),
+        name: charTr("c1"),
+        value: condC1,
+        path: condC1Path,
+        states: {
+          c1: {
             fields: [{
+              node: constant(datamine.constellation1.atk_, { key: "atk_" })
+            }, {
               text: sgt("duration"),
-              value: "20s"
-            }]
-          },
-        }],
-      },
-      constellation2: {
-        name: tr("constellation2.name"),
-        img: c2,
-        sections: [{
-          text: tr("constellation2.description"),
-          conditional: {
-            key: "c2",
-            canShow: stats => stats.constellation >= 2,
-            name: charTr("c2"),
-            stats: { pyro_dmg_: 25, },
-            fields: [{
-              text: sgt("duration"),
-              value: "6s"
+              value: datamine.constellation1.duration,
+              unit: 's'
             }]
           }
-        }],
-      },
-      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
+        }
+      }),
+      constellation2: talentTemplate("constellation2", tr, c2, undefined, {
+        canShow: greaterEq(input.constellation, 2, 1),
+        name: charTr("c2"),
+        value: condC2,
+        path: condC2Path,
+        states: {
+          c2: {
+            fields: [{
+              node: c2pyro_dmg_
+            }, {
+              text: sgt("duration"),
+              value: datamine.constellation2.duration,
+              unit: "s"
+            }]
+          }
+        }
+      }),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: const3TalentInc }]),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
-      constellation6: {
-        name: tr("constellation6.name"),
-        img: c6,
-        sections: [{
-          text: tr("constellation6.description"),
-          fields: [
-            ...data.normal.hitArr.map((percentArr, i) =>
-            ({
-              canShow: stats => stats.constellation >= 6,
-              text: <span>{sgt(`normal.hit${i + 1}`)} {(i === 0 || i === 2) ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
-              formulaText: stats => <span>60% * {data.skill.dmg_[stats.tlvl.skill]}% * {percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, "pyro"), stats)}</span>,
-              formula: formula.c6[i],
-              variant: stats => getTalentStatKeyVariant("normal", stats, "pyro"),
-            }))]
-        }],
-      },
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: const5TalentInc }]),
+      constellation6: talentTemplate("constellation6", tr, c6,
+        datamine.normal.hitArr.map((_, i): INodeFieldDisplay => ({
+          canShow: canShowC6,
+          node: infoMut(dmgFormulas.constellation6[i], { key: `char_${characterKey}_gen:auto.skillParams.${i}` }),
+          textSuffix: ([0, 3].includes(i)) ? st("brHits", { count: 2 }) : ""
+        }))
+      )
     },
   },
 };
-export default char;
+
+export default new CharacterSheet(sheet, dataObj);

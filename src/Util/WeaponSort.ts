@@ -1,6 +1,6 @@
 import { WeaponKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import WeaponSheet from "../Weapon/WeaponSheet";
+import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import { FilterConfigs, SortConfigs } from "./SortByFilters";
 export const weaponSortKeys = ["level", "rarity"]
 export type WeaponSortKey = typeof weaponSortKeys[number]

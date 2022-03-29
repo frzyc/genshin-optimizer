@@ -5,6 +5,7 @@
     "coil2": "Coil Stack 2",
     "coil3": "Coil Stack 3",
     "rush": "Rushing Ice",
-    "rushDur": "Rushing Ice Duration"
-  }
+    "rushState": "During Rushing Ice state (1 stack / s)"
+  },
+  "a1CondName": "When Aloy receives the Coil effect from <strong>Frozen Wilds</strong>"
 }

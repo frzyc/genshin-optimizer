@@ -1,3 +1,5 @@
+import { WeaponCatalystKey } from '../../../Types/consts'
+import WeaponSheet from '../WeaponSheet'
 import ApprenticesNotes from './ApprenticesNotes'
 import BlackcliffAgate from './BlackcliffAgate'
 import DodocoTales from './DodocoTales'
@@ -7,10 +9,12 @@ import EyeOfPerception from './EyeOfPerception'
 import FavoniusCodex from './FavoniusCodex'
 import Frostbearer from './Frostbearer'
 import HakushinRing from './HakushinRing'
+import KagurasVerity from './KagurasVerity'
 import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
 import MagicGuide from './MagicGuide'
 import MappaMare from './MappaMare'
 import MemoryOfDust from './MemoryOfDust'
+import OathswornEye from './OathswornEye'
 import OtherworldlyStory from './OtherworldlyStory'
 import PocketGrimoire from './PocketGrimoire'
 import PrototypeAmber from './PrototypeAmber'
@@ -22,7 +26,7 @@ import TheWidsith from './TheWidsith'
 import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
 import TwinNephrite from './TwinNephrite'
 import WineAndSong from './WineAndSong'
-const catalyst = {
+const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   ApprenticesNotes,
   BlackcliffAgate,
   DodocoTales,
@@ -32,10 +36,12 @@ const catalyst = {
   FavoniusCodex,
   Frostbearer,
   HakushinRing,
+  KagurasVerity,
   LostPrayerToTheSacredWinds,
   MagicGuide,
   MappaMare,
   MemoryOfDust,
+  OathswornEye,
   OtherworldlyStory,
   PocketGrimoire,
   PrototypeAmber,

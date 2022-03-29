@@ -1,0 +1,10 @@
+{
+    "aoeGems" : "Gems do AoE Geo DMG",
+    "starJadeStaminaCost" : "50; With Star Jade: 0",
+    "skillReset" : "Resets CD on shatter, every 6s",
+    "a4toggle" : "Passing through Jade Screen",
+    "a4bonus_" : "Geo DMG Bonus",
+    "a4duration" : "Duration",
+    "c4toggle" : "Allies within 10m of Jade Screen",
+    "c6bonus" : "Star Jade gained"
+}

@@ -118,5 +118,3 @@ export class SandboxStorage implements DBStorage {
     this.storage = Object.fromEntries(Object.entries(this.storage).filter(([key]) => !shouldRemove(key)))
   }
 }
-
-export const dbStorage = new DBLocalStorage(localStorage)

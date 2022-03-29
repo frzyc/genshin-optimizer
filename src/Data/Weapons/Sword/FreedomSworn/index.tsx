@@ -1,44 +1,71 @@
 import { WeaponData } from 'pipeline'
-import { Translate } from '../../../../Components/Translate'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { equal, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-import ImgIcon from '../../../../Components/Image/ImgIcon'
-import { sgt } from '../../../Characters/SheetUtil'
-const tr = (strKey: string) => <Translate ns="weapon_FreedomSworn_gen" key18={strKey} />
-const dmg_ = [10, 12.5, 15, 17.5, 20]
-const auto = [16, 20, 24, 28, 32]
-const atk_ = [20, 25, 30, 35, 40]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "FreedomSworn"
+const data_gen = data_gen_json as WeaponData
+const [tr, trm] = trans("weapon", key)
+
+const [condPassivePath, condPassive] = cond(key, "MillennialMovement")
+const autoSrc = [0.16, 0.20, 0.24, 0.28, 0.32]
+const atk_Src = [0.2, 0.25, 0.3, 0.35, 0.40]
+const atk_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atk_Src))
+const normal_dmg_ = equal("on", condPassive, subscript(input.weapon.refineIndex, autoSrc))
+const charged_dmg_ = { ...normal_dmg_ }
+const plunging_dmg_ = { ...normal_dmg_ }
+const dmg_ = subscript(input.weapon.refineIndex, data_gen.addProps.map(x => x.dmg_ ?? NaN))
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    all_dmg_: dmg_
+  },
+  teamBuff: {
+    premod: {
+      atk_,
+      normal_dmg_,
+      charged_dmg_,
+      plunging_dmg_,
+    }
+  }
+})
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    dmg_: dmg_[stats.weapon.refineIndex]
-  }),
   document: [{
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    fields: [{ node: dmg_ }],
     conditional: {
-      key: "r",
-      partyBuff: "partyAll",
-      header: {
-        title: tr(`passiveName`),
-        icon: stats => <ImgIcon size={2} sx={{ m: -1 }} src={stats.ascension < 2 ? icon : iconAwaken} />,
-      },
-      description: stats => tr(`passiveDescription.${stats.weapon.refineIndex}`),
-      name: <Translate ns="weapon_FreedomSworn" key18="name" />,
-      stats: stats => ({
-        atk_: atk_[stats.weapon.refineIndex],
-        normal_dmg_: auto[stats.weapon.refineIndex],
-        charged_dmg_: auto[stats.weapon.refineIndex],
-        plunging_dmg_: auto[stats.weapon.refineIndex],
-      }),
-      fields: [{
-        text: sgt("duration"),
-        value: 12,
-        unit: "s"
-      }]
+      value: condPassive,
+      path: condPassivePath,
+      teamBuff: true,
+      header: conditionalHeader(tr, icon, iconAwaken, trm("milMove")),
+      description: conditionaldesc(tr),
+      name: trm("sigilsConsumed"),
+      states: {
+        on: {
+          fields: [{
+            node: atk_
+          }, {
+            node: normal_dmg_
+          }, {
+            node: charged_dmg_
+          }, {
+            node: plunging_dmg_
+          }, {
+            text: sgt("duration"),
+            value: 12,
+            unit: "s"
+          }]
+        }
+      }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

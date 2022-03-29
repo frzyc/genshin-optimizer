@@ -1,11 +1,13 @@
+import { WeaponBowKey } from '../../../Types/consts'
+import WeaponSheet from '../WeaponSheet'
 import AlleyHunter from './AlleyHunter'
-import AmosBow from './AmosBow'
+import AmosBow from "./AmosBow"
 import BlackcliffWarbow from './BlackcliffWarbow'
 import CompoundBow from './CompoundBow'
-import ElegyForTheEnd from './ElegyForTheEnd'
+import ElegyForTheEnd from "./ElegyForTheEnd"
 import FavoniusWarbow from './FavoniusWarbow'
 import Hamayumi from './Hamayumi'
-import HuntersBow from './HuntersBow'
+import HuntersBow from "./HuntersBow"
 import Messenger from './Messenger'
 import MitternachtsWaltz from './MitternachtsWaltz'
 import MouunsMoon from './MouunsMoon'
@@ -16,7 +18,7 @@ import RavenBow from './RavenBow'
 import RecurveBow from './RecurveBow'
 import RoyalBow from './RoyalBow'
 import Rust from './Rust'
-import SacrificialBow from './SacrificialBow'
+import SacrificialBow from "./SacrificialBow"
 import SeasonedHuntersBow from './SeasonedHuntersBow'
 import SharpshootersOath from './SharpshootersOath'
 import SkywardHarp from './SkywardHarp'
@@ -25,7 +27,7 @@ import TheStringless from './TheStringless'
 import TheViridescentHunt from './TheViridescentHunt'
 import ThunderingPulse from './ThunderingPulse'
 import WindblumeOde from './WindblumeOde'
-const bow = {
+const bow: Record<WeaponBowKey, WeaponSheet> = {
   AlleyHunter,
   AmosBow,
   BlackcliffWarbow,

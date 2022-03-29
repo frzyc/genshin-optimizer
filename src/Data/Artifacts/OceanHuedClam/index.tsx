@@ -1,35 +1,39 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-import formula from './data'
-import Stat from '../../../Stat'
+import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { constant, infoMut, percent, prod, greaterEq } from '../../../Formula/utils'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { customDmgNode } from '../../Characters/dataUtil'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import icons from './icons'
+const key: ArtifactSetKey = "OceanHuedClam"
+const set2 = greaterEq(input.artSet.OceanHuedClam, 2, percent(0.15))
+const heal = greaterEq(input.artSet.OceanHuedClam, 4,
+  customDmgNode(prod(percent(0.9), 30000), "elemental", {
+    hit: { ele: constant("physical") }
+  })
+)
 
-const artifact: IArtifactSheet = {
-  name: "Ocean-Hued Clam", rarity: [4, 5],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    heal_: set2
   },
+}, {
+  heal,
+})
+
+const sheet: IArtifactSheet = {
+  name: "Ocean-Hued Clam", rarity: [4, 5],
+  icons,
   setEffects: {
-    2: {
-      stats: { heal_: 15 }
-    },
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
       document: [{
         fields: [{
-          text: "Max Sea-Dyed Foam DMG",
-          formulaText: stats => <span>90% * 30000 * {Stat.printStat("physical_enemyRes_multi", stats)}</span>,
-          formula: formula.dmg,
-          variant: "physical"
+          node: infoMut(heal, { key: `artifact_${key}:condName`, variant: "physical" })
         }]
       }]
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

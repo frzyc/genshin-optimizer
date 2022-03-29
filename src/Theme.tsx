@@ -29,7 +29,7 @@ declare module '@mui/material/styles' {
     shattered: Palette['primary'];
     swirl: Palette['primary'];
     burning: Palette['primary'];
-    crystalize: Palette['primary'];
+    crystallize: Palette['primary'];
   }
   interface PaletteOptions {
     warning?: PaletteOptions['primary'];
@@ -58,7 +58,7 @@ declare module '@mui/material/styles' {
     shattered?: PaletteOptions['primary'];
     swirl?: PaletteOptions['primary'];
     burning?: PaletteOptions['primary'];
-    crystalize?: PaletteOptions['primary'];
+    crystallize?: PaletteOptions['primary'];
   }
 }
 
@@ -242,9 +242,9 @@ export const theme = createTheme({
       color: { main: "#bf2818", },
       name: "burning"
     }),
-    crystalize: defaultTheme.palette.augmentColor({
+    crystallize: defaultTheme.palette.augmentColor({
       color: { main: "#f8ba4e", },
-      name: "crystalize"
+      name: "crystallize"
     }),
   },
   typography: {

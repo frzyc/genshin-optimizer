@@ -1,47 +1,36 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-import { Translate } from '../../../Components/Translate'
-import ImgIcon from '../../../Components/Image/ImgIcon'
-import SqBadge from '../../../Components/SqBadge'
-import { allElements } from '../../../Types/consts'
-import { sgt } from '../../Characters/SheetUtil'
-import ColorText from '../../../Components/ColoredText'
-const tr = (strKey: string) => <Translate ns="artifact_DefendersWill_gen" key18={strKey} />
-const artifact: IArtifactSheet = {
-  name: "Defender's Will", rarity: [3, 4],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
+import icons from './icons'
+import { Data } from '../../../Formula/type'
+import { percent, greaterEq } from '../../../Formula/utils'
+import { input, tally } from "../../../Formula/index"
+import { allElements, ArtifactSetKey } from '../../../Types/consts'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import { objectKeyValueMap } from '../../../Util/Util'
+
+const key: ArtifactSetKey = "DefendersWill"
+
+const set2 = greaterEq(input.artSet.DefendersWill, 2, percent(0.3))
+
+const res_ = objectKeyValueMap(allElements, (ele) => [`${ele}_res_`,
+  greaterEq(input.artSet.DefendersWill, 4, greaterEq(tally[ele], 1, percent(0.3)))])
+
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    def_: set2,
+    ...res_
   },
+})
+
+const sheet: IArtifactSheet = {
+  name: "Defender's Will", rarity: [3, 4],
+  icons,
   setEffects: {
-    2: {
-      stats: { def_: 30 }
-    },
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
-      document: allElements.map(ele => ({
-        conditional: {
-          key: ele,
-          partyBuff: "partyAll",
-          header: {
-            title: tr("setName"),
-            icon: <ImgIcon size={2} sx={{ m: -1 }} src={flower} />,
-            action: <SqBadge color="success">4-set</SqBadge>
-          },
-          description: tr(`setEffects.4`),
-          canShow: stats => [stats.characterEle, ...stats.teamStats.map(t => t?.characterEle ?? "")].includes(ele),
-          maxStack: 0,
-          name: <span><ColorText color={ele}>{sgt(`element.${ele}`)}</ColorText> character in party</span>,
-          stats: { [`${ele}_res_`]: 30 }
-        }
-      }))
+      document: [{
+        fields: Object.values(res_).map(node => ({ node }))
+      }]
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

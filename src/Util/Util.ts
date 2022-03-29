@@ -63,7 +63,7 @@ export function hammingDistance(str1, str2) {
   return dist;
 }
 
-//multiplies every numberical value in the obj by a multiplier.
+//multiplies every numerical value in the obj by a multiplier.
 export function objMultiplication(obj, multi) {
   if (multi === 1) return obj
   Object.keys(obj).forEach((prop: any) => {
@@ -74,7 +74,7 @@ export function objMultiplication(obj, multi) {
 }
 
 //assign obj.[keys...] = value
-export function layeredAssignment(obj, keys: string[], value) {
+export function layeredAssignment(obj, keys: readonly string[], value) {
   keys.reduce((accu, key, i, arr) => {
     if (i === arr.length - 1) return (accu[key] = value)
     if (!accu[key]) accu[key] = {}
@@ -83,7 +83,9 @@ export function layeredAssignment(obj, keys: string[], value) {
   return obj
 }
 //get the value in a nested object, giving array of path
-export function objPathValue(obj: object, keys: string[]) {
+export function objPathValue(obj: object | undefined, keys: readonly string[]): any {
+  if (!obj || !keys) return undefined;
+  !Array.isArray(keys) && console.error(keys)
   return keys.reduce((a, k) => a?.[k], obj)
 }
 //delete the value denoted by the path. Will also delete empty objects as well.
@@ -112,14 +114,30 @@ export function evalIfFunc<T, X>(value: T | ((arg: X) => T), arg: X): T {
   return typeof value === "function" ? (value as any)(arg) : value
 }
 //fromEntries doesn't result in StrictDict, this is just a utility wrapper.
-export function objectFromKeyMap<K extends string | number, V>(keys: readonly K[], map: (key: K) => V): StrictDict<K, V> {
-  return Object.fromEntries(keys.map(k => [k, map(k)])) as any
+export function objectKeyMap<K extends string | number, V>(keys: readonly K[], map: (key: K, i: number) => V): StrictDict<`${K}`, V> {
+  return Object.fromEntries(keys.map((k, i) => [k, map(k, i)])) as any
+}
+//fromEntries doesn't result in StrictDict, this is just a utility wrapper.
+export function objectKeyValueMap<T, K extends string | number, V>(items: readonly T[], map: (item: T) => [K, V]): StrictDict<`${K}`, V> {
+  return Object.fromEntries(items.map(t => map(t))) as any
 }
 
-const rangeGen = function* (from, to) {
+export function objectMap<K extends string, V, T>(obj: Partial<Record<K, V>>, fn: (value: V, key: `${K}`, index: number) => T): Partial<Record<K, T>>
+export function objectMap<K extends string, V, T>(obj: Record<K, V>, fn: (value: V, key: `${K}`, index: number) => T): Record<K, T>
+export function objectMap<K extends string, V, T>(obj: Partial<Record<K, V>>, fn: (value: V, key: `${K}`, index: number) => T): Partial<Record<K, T>> {
+  return Object.fromEntries(Object.entries(obj).map(
+    ([k, v], i) => [k, fn(v, k, i)]
+  )) as any
+}
+
+const rangeGen = function* (from: number, to: number): Iterable<number> {
   for (let i = from; i <= to; i++) yield i;
 };
 
-export function range(from, to) {
+export function range(from: number, to: number): number[] {
   return [...rangeGen(from, to)]
+}
+
+export function assertUnreachable(value: never): never {
+  throw new Error(`Should not reach this with value ${value}`)
 }

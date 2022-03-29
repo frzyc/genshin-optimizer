@@ -1,38 +1,82 @@
 import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { equal, lookup, naught, prod, subscript, sum } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { range } from '../../../../Util/Util'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-const shield_ = [20, 25, 30, 35, 40]
-const atk_ = [4, 5, 6, 7, 8]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "VortexVanquisher"
+const data_gen = data_gen_json as WeaponData
+const [tr, trm] = trans("weapon", key)
+const shieldSrc = [0.2, 0.25, 0.3, 0.35, 0.40]
+const atkSrc = [0.04, 0.05, 0.06, 0.07, 0.08]
+
+const [condPassivePath, condPassive] = cond(key, "GoldenMajesty")
+const shield_ = subscript(input.weapon.refineIndex, shieldSrc)
+
+const [condWithShieldPath, condWithShield] = cond(key, "WithShield")
+
+const atkInc = subscript(input.weapon.refineIndex, atkSrc)
+const atkStacks = prod(
+  sum(1, equal(condWithShield, "protected", 1)),
+  lookup(condPassive, Object.fromEntries(range(1, 5).map(i =>
+    [i, prod(atkInc, i)])), naught)
+)
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    shield_,
+    atk_: atkStacks
+  },
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    shield_: shield_[stats.weapon.refineIndex]
-  }),
   document: [{
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    fields: [{
+      node: shield_
+    }],
     conditional: {
-      key: "gm",
-      name: "Hits",
+      value: condPassive,
+      path: condPassivePath,
+      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
+      name: st("hits"),
+      states: Object.fromEntries(range(1, 5).map(i => 
+        [i, {
+          name: st("stack", { count: i }),
+          fields: [{
+            node: atkStacks
+          }, {
+            text: sgt("duration"),
+            value: 8,
+            unit: "s"
+          }]
+        }]
+      )),
+    }
+  }, {
+    conditional: {
+      value: condWithShield,
+      path: condWithShieldPath,
+      header: conditionalHeader(tr, icon, iconAwaken, trm("shield")),
+      name: st("protectedByShield"),
       states: {
-        wo: {
-          name: "Without shield",
-          maxStack: 5,
-          stats: stats => ({
-            atk_: atk_[stats.weapon.refineIndex]
-          })
-        },
-        w: {
-          name: "With shield",
-          maxStack: 5,
-          stats: stats => ({
-            atk_: 2 * atk_[stats.weapon.refineIndex]
-          })
+        protected: {
+          fields: [{
+            text: trm("atkEffInc"),
+            value: 100,
+            unit: "%"
+          }]
         }
       }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

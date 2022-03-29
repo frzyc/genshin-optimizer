@@ -1,0 +1,2452 @@
+{
+  "format": "GOOD",
+  "dbVersion": 14,
+  "source": "Genshin Optimizer",
+  "version": 1,
+  "characters": [
+    {
+      "key": "Sucrose",
+      "level": 90,
+      "ascension": 6,
+      "hitMode": "avgHit",
+      "reactionMode": "",
+      "conditional": {},
+      "bonusStats": {},
+      "enemyOverride": {},
+      "talent": {
+        "auto": 1,
+        "skill": 1,
+        "burst": 1
+      },
+      "infusionAura": "",
+      "constellation": 0,
+      "team": [
+        "",
+        "",
+        ""
+      ],
+      "compareData": false,
+      "buildSettings": {
+        "setFilters": [
+          {
+            "key": "",
+            "num": 0
+          },
+          {
+            "key": "",
+            "num": 0
+          },
+          {
+            "key": "",
+            "num": 0
+          }
+        ],
+        "statFilters": {},
+        "mainStatKeys": {
+          "sands": [],
+          "goblet": [],
+          "circlet": []
+        },
+        "optimizationTarget": [
+          "character",
+          "Sucrose",
+          "charged",
+          "dmg"
+        ],
+        "mainStatAssumptionLevel": 0,
+        "useExcludedArts": false,
+        "useEquippedArts": false,
+        "builds": [],
+        "buildDate": 0,
+        "maxBuildsToShow": 2,
+        "plotBase": "",
+        "compareBuild": true,
+        "levelLow": 0,
+        "levelHigh": 20
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "sands",
+      "mainStatKey": "hp_",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 17.9
+        },
+        {
+          "key": "critRate_",
+          "value": 7
+        },
+        {
+          "key": "enerRech_",
+          "value": 5.2
+        },
+        {
+          "key": "atk_",
+          "value": 10.5
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "sands",
+      "mainStatKey": "hp_",
+      "substats": [
+        {
+          "key": "atk",
+          "value": 18
+        },
+        {
+          "key": "def",
+          "value": 16
+        },
+        {
+          "key": "critDMG_",
+          "value": 21.8
+        },
+        {
+          "key": "critRate_",
+          "value": 10.1
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "sands",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "def_",
+          "value": 19.7
+        },
+        {
+          "key": "eleMas",
+          "value": 19
+        },
+        {
+          "key": "critRate_",
+          "value": 7
+        },
+        {
+          "key": "atk",
+          "value": 37
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 7.8
+        },
+        {
+          "key": "atk_",
+          "value": 10.5
+        },
+        {
+          "key": "critRate_",
+          "value": 10.9
+        },
+        {
+          "key": "hp",
+          "value": 508
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "goblet",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "hp_",
+          "value": 5.3
+        },
+        {
+          "key": "critDMG_",
+          "value": 14.8
+        },
+        {
+          "key": "critRate_",
+          "value": 6.6
+        },
+        {
+          "key": "hp",
+          "value": 598
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "goblet",
+      "mainStatKey": "hp_",
+      "substats": [
+        {
+          "key": "critRate_",
+          "value": 7.8
+        },
+        {
+          "key": "atk_",
+          "value": 10.5
+        },
+        {
+          "key": "critDMG_",
+          "value": 7
+        },
+        {
+          "key": "atk",
+          "value": 33
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 7
+        },
+        {
+          "key": "atk_",
+          "value": 14
+        },
+        {
+          "key": "critRate_",
+          "value": 10.1
+        },
+        {
+          "key": "eleMas",
+          "value": 37
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "sands",
+      "mainStatKey": "eleMas",
+      "substats": [
+        {
+          "key": "atk_",
+          "value": 4.1
+        },
+        {
+          "key": "atk",
+          "value": 33
+        },
+        {
+          "key": "def",
+          "value": 16
+        },
+        {
+          "key": "critDMG_",
+          "value": 26.4
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {
+          "key": "hp",
+          "value": 269
+        },
+        {
+          "key": "critRate_",
+          "value": 13.2
+        },
+        {
+          "key": "enerRech_",
+          "value": 11.7
+        },
+        {
+          "key": "critDMG_",
+          "value": 15.5
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "critDMG_",
+      "substats": [
+        {
+          "key": "hp_",
+          "value": 10.5
+        },
+        {
+          "key": "enerRech_",
+          "value": 5.2
+        },
+        {
+          "key": "atk_",
+          "value": 14
+        },
+        {
+          "key": "critRate_",
+          "value": 7
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 7
+        },
+        {
+          "key": "atk_",
+          "value": 8.7
+        },
+        {
+          "key": "critRate_",
+          "value": 14.4
+        },
+        {
+          "key": "def",
+          "value": 21
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {
+          "key": "def",
+          "value": 35
+        },
+        {
+          "key": "atk_",
+          "value": 21
+        },
+        {
+          "key": "critRate_",
+          "value": 3.1
+        },
+        {
+          "key": "critDMG_",
+          "value": 11.7
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "goblet",
+      "mainStatKey": "hydro_dmg_",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 5.4
+        },
+        {
+          "key": "atk_",
+          "value": 9.3
+        },
+        {
+          "key": "critRate_",
+          "value": 14.8
+        },
+        {
+          "key": "eleMas",
+          "value": 42
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 12,
+      "slotKey": "circlet",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "critRate_",
+          "value": 5.8
+        },
+        {
+          "key": "def_",
+          "value": 5.8
+        },
+        {
+          "key": "enerRech_",
+          "value": 17.5
+        },
+        {
+          "key": "atk",
+          "value": 18
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "enerRech_",
+          "value": 10.4
+        },
+        {
+          "key": "critRate_",
+          "value": 9.3
+        },
+        {
+          "key": "atk_",
+          "value": 5.8
+        },
+        {
+          "key": "atk",
+          "value": 49
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "hp_",
+          "value": 11.1
+        },
+        {
+          "key": "critDMG_",
+          "value": 18.7
+        },
+        {
+          "key": "eleMas",
+          "value": 61
+        },
+        {
+          "key": "critRate_",
+          "value": 3.1
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {
+          "key": "critRate_",
+          "value": 6.6
+        },
+        {
+          "key": "critDMG_",
+          "value": 14
+        },
+        {
+          "key": "hp_",
+          "value": 14
+        },
+        {
+          "key": "atk_",
+          "value": 9.3
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 12,
+      "slotKey": "goblet",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "hp_",
+          "value": 10.5
+        },
+        {
+          "key": "hp",
+          "value": 299
+        },
+        {
+          "key": "critDMG_",
+          "value": 20.2
+        },
+        {
+          "key": "def_",
+          "value": 6.6
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "goblet",
+      "mainStatKey": "hydro_dmg_",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 13.2
+        },
+        {
+          "key": "atk",
+          "value": 33
+        },
+        {
+          "key": "critRate_",
+          "value": 6.6
+        },
+        {
+          "key": "atk_",
+          "value": 5.3
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 14.8
+        },
+        {
+          "key": "def_",
+          "value": 13.9
+        },
+        {
+          "key": "critRate_",
+          "value": 11.3
+        },
+        {
+          "key": "def",
+          "value": 16
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "critDMG_",
+      "substats": [
+        {
+          "key": "enerRech_",
+          "value": 15.5
+        },
+        {
+          "key": "critRate_",
+          "value": 7.4
+        },
+        {
+          "key": "hp",
+          "value": 568
+        },
+        {
+          "key": "atk_",
+          "value": 4.7
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "goblet",
+      "mainStatKey": "cryo_dmg_",
+      "substats": [
+        {
+          "key": "def",
+          "value": 23
+        },
+        {
+          "key": "critDMG_",
+          "value": 21.8
+        },
+        {
+          "key": "critRate_",
+          "value": 3.1
+        },
+        {
+          "key": "def_",
+          "value": 13.9
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "goblet",
+      "mainStatKey": "anemo_dmg_",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 7.8
+        },
+        {
+          "key": "enerRech_",
+          "value": 6.5
+        },
+        {
+          "key": "hp_",
+          "value": 15.7
+        },
+        {
+          "key": "eleMas",
+          "value": 82
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "goblet",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "enerRech_",
+          "value": 13
+        },
+        {
+          "key": "def_",
+          "value": 11.7
+        },
+        {
+          "key": "critDMG_",
+          "value": 14.8
+        },
+        {
+          "key": "atk",
+          "value": 35
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "goblet",
+      "mainStatKey": "physical_dmg_",
+      "substats": [
+        {
+          "key": "critRate_",
+          "value": 14.4
+        },
+        {
+          "key": "critDMG_",
+          "value": 13.2
+        },
+        {
+          "key": "def_",
+          "value": 13.9
+        },
+        {
+          "key": "def",
+          "value": 23
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 19.4
+        },
+        {
+          "key": "critRate_",
+          "value": 5.8
+        },
+        {
+          "key": "atk_",
+          "value": 11.7
+        },
+        {
+          "key": "hp_",
+          "value": 11.7
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "critRate_",
+      "substats": [
+        {
+          "key": "def_",
+          "value": 11.7
+        },
+        {
+          "key": "critDMG_",
+          "value": 7.8
+        },
+        {
+          "key": "atk_",
+          "value": 8.2
+        },
+        {
+          "key": "atk",
+          "value": 51
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "sands",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 13.2
+        },
+        {
+          "key": "hp",
+          "value": 299
+        },
+        {
+          "key": "enerRech_",
+          "value": 16.8
+        },
+        {
+          "key": "atk",
+          "value": 18
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "atk",
+          "value": 51
+        },
+        {
+          "key": "atk_",
+          "value": 5.3
+        },
+        {
+          "key": "critRate_",
+          "value": 7.4
+        },
+        {
+          "key": "critDMG_",
+          "value": 19.4
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "sands",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 7.8
+        },
+        {
+          "key": "enerRech_",
+          "value": 9.7
+        },
+        {
+          "key": "critRate_",
+          "value": 7
+        },
+        {
+          "key": "eleMas",
+          "value": 61
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "critRate_",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 14
+        },
+        {
+          "key": "atk_",
+          "value": 15.2
+        },
+        {
+          "key": "hp_",
+          "value": 5.3
+        },
+        {
+          "key": "def",
+          "value": 46
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "goblet",
+      "mainStatKey": "anemo_dmg_",
+      "substats": [
+        {
+          "key": "atk",
+          "value": 56
+        },
+        {
+          "key": "critDMG_",
+          "value": 11.7
+        },
+        {
+          "key": "critRate_",
+          "value": 3.1
+        },
+        {
+          "key": "def",
+          "value": 23
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "goblet",
+      "mainStatKey": "cryo_dmg_",
+      "substats": [
+        {
+          "key": "atk_",
+          "value": 15.8
+        },
+        {
+          "key": "critDMG_",
+          "value": 20.2
+        },
+        {
+          "key": "def_",
+          "value": 10.2
+        },
+        {
+          "key": "enerRech_",
+          "value": 5.2
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "goblet",
+      "mainStatKey": "anemo_dmg_",
+      "substats": [
+        {
+          "key": "critRate_",
+          "value": 7.4
+        },
+        {
+          "key": "enerRech_",
+          "value": 15.5
+        },
+        {
+          "key": "atk_",
+          "value": 5.8
+        },
+        {
+          "key": "critDMG_",
+          "value": 6.2
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "atk",
+          "value": 19
+        },
+        {
+          "key": "atk_",
+          "value": 4.7
+        },
+        {
+          "key": "critDMG_",
+          "value": 20.2
+        },
+        {
+          "key": "critRate_",
+          "value": 9.7
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "circlet",
+      "mainStatKey": "critDMG_",
+      "substats": [
+        {
+          "key": "atk",
+          "value": 35
+        },
+        {
+          "key": "critRate_",
+          "value": 8.9
+        },
+        {
+          "key": "hp",
+          "value": 269
+        },
+        {
+          "key": "hp_",
+          "value": 4.1
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 20.2
+        },
+        {
+          "key": "eleMas",
+          "value": 19
+        },
+        {
+          "key": "critRate_",
+          "value": 9.3
+        },
+        {
+          "key": "atk_",
+          "value": 4.7
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "sands",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "critRate_",
+          "value": 14.8
+        },
+        {
+          "key": "enerRech_",
+          "value": 5.2
+        },
+        {
+          "key": "eleMas",
+          "value": 21
+        },
+        {
+          "key": "atk",
+          "value": 31
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "enerRech_",
+          "value": 5.2
+        },
+        {
+          "key": "def",
+          "value": 39
+        },
+        {
+          "key": "critDMG_",
+          "value": 26.4
+        },
+        {
+          "key": "critRate_",
+          "value": 6.6
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "sands",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "def_",
+          "value": 7.3
+        },
+        {
+          "key": "critDMG_",
+          "value": 20.2
+        },
+        {
+          "key": "enerRech_",
+          "value": 11.7
+        },
+        {
+          "key": "critRate_",
+          "value": 3.5
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "atk",
+          "value": 37
+        },
+        {
+          "key": "critRate_",
+          "value": 8.9
+        },
+        {
+          "key": "critDMG_",
+          "value": 7
+        },
+        {
+          "key": "eleMas",
+          "value": 47
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "def",
+          "value": 39
+        },
+        {
+          "key": "atk_",
+          "value": 4.7
+        },
+        {
+          "key": "critRate_",
+          "value": 11.3
+        },
+        {
+          "key": "critDMG_",
+          "value": 13.2
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "goblet",
+      "mainStatKey": "anemo_dmg_",
+      "substats": [
+        {
+          "key": "enerRech_",
+          "value": 5.2
+        },
+        {
+          "key": "eleMas",
+          "value": 42
+        },
+        {
+          "key": "def_",
+          "value": 24.8
+        },
+        {
+          "key": "atk",
+          "value": 16
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "atk",
+          "value": 29
+        },
+        {
+          "key": "atk_",
+          "value": 5.8
+        },
+        {
+          "key": "critRate_",
+          "value": 10.9
+        },
+        {
+          "key": "def",
+          "value": 23
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "critDMG_",
+      "substats": [
+        {
+          "key": "hp_",
+          "value": 8.2
+        },
+        {
+          "key": "critRate_",
+          "value": 5.8
+        },
+        {
+          "key": "atk_",
+          "value": 16.9
+        },
+        {
+          "key": "def",
+          "value": 16
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "sands",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "def",
+          "value": 16
+        },
+        {
+          "key": "critDMG_",
+          "value": 5.4
+        },
+        {
+          "key": "critRate_",
+          "value": 14.4
+        },
+        {
+          "key": "atk",
+          "value": 27
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "sands",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 13.2
+        },
+        {
+          "key": "enerRech_",
+          "value": 6.5
+        },
+        {
+          "key": "critRate_",
+          "value": 11.7
+        },
+        {
+          "key": "def",
+          "value": 21
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "critRate_",
+      "substats": [
+        {
+          "key": "enerRech_",
+          "value": 16.2
+        },
+        {
+          "key": "atk",
+          "value": 33
+        },
+        {
+          "key": "eleMas",
+          "value": 16
+        },
+        {
+          "key": "def_",
+          "value": 10.9
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 7.8
+        },
+        {
+          "key": "def",
+          "value": 67
+        },
+        {
+          "key": "critRate_",
+          "value": 9.7
+        },
+        {
+          "key": "atk_",
+          "value": 10.5
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "critRate_",
+      "substats": [
+        {
+          "key": "def",
+          "value": 67
+        },
+        {
+          "key": "critDMG_",
+          "value": 14.8
+        },
+        {
+          "key": "hp_",
+          "value": 5.8
+        },
+        {
+          "key": "atk_",
+          "value": 14
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "circlet",
+      "mainStatKey": "critRate_",
+      "substats": [
+        {
+          "key": "atk_",
+          "value": 9.3
+        },
+        {
+          "key": "def_",
+          "value": 13.9
+        },
+        {
+          "key": "critDMG_",
+          "value": 15.5
+        },
+        {
+          "key": "hp",
+          "value": 299
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "critRate_",
+      "substats": [
+        {
+          "key": "hp_",
+          "value": 11.1
+        },
+        {
+          "key": "critDMG_",
+          "value": 19.4
+        },
+        {
+          "key": "def_",
+          "value": 12.4
+        },
+        {
+          "key": "atk",
+          "value": 31
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "critRate_",
+      "substats": [
+        {
+          "key": "def",
+          "value": 19
+        },
+        {
+          "key": "critDMG_",
+          "value": 24.1
+        },
+        {
+          "key": "hp",
+          "value": 508
+        },
+        {
+          "key": "def_",
+          "value": 12.4
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "sands",
+      "mainStatKey": "def_",
+      "substats": [
+        {
+          "key": "critRate_",
+          "value": 9.3
+        },
+        {
+          "key": "eleMas",
+          "value": 16
+        },
+        {
+          "key": "critDMG_",
+          "value": 17.1
+        },
+        {
+          "key": "enerRech_",
+          "value": 12.3
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 17,
+      "slotKey": "goblet",
+      "mainStatKey": "hp_",
+      "substats": [
+        {
+          "key": "atk_",
+          "value": 5.3
+        },
+        {
+          "key": "enerRech_",
+          "value": 11.7
+        },
+        {
+          "key": "critRate_",
+          "value": 3.5
+        },
+        {
+          "key": "critDMG_",
+          "value": 19.4
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 14.8
+        },
+        {
+          "key": "atk_",
+          "value": 9.9
+        },
+        {
+          "key": "atk",
+          "value": 47
+        },
+        {
+          "key": "critRate_",
+          "value": 5.8
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "goblet",
+      "mainStatKey": "geo_dmg_",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 13.2
+        },
+        {
+          "key": "atk",
+          "value": 35
+        },
+        {
+          "key": "critRate_",
+          "value": 7
+        },
+        {
+          "key": "hp_",
+          "value": 15.2
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "circlet",
+      "mainStatKey": "eleMas",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 11.7
+        },
+        {
+          "key": "critRate_",
+          "value": 7.4
+        },
+        {
+          "key": "def",
+          "value": 21
+        },
+        {
+          "key": "atk",
+          "value": 35
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {
+          "key": "hp",
+          "value": 538
+        },
+        {
+          "key": "critDMG_",
+          "value": 29.5
+        },
+        {
+          "key": "hp_",
+          "value": 4.1
+        },
+        {
+          "key": "eleMas",
+          "value": 21
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {
+          "key": "atk_",
+          "value": 9.9
+        },
+        {
+          "key": "critRate_",
+          "value": 12.4
+        },
+        {
+          "key": "hp_",
+          "value": 5.8
+        },
+        {
+          "key": "def_",
+          "value": 6.6
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "goblet",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "critRate_",
+          "value": 5.8
+        },
+        {
+          "key": "enerRech_",
+          "value": 4.5
+        },
+        {
+          "key": "def_",
+          "value": 6.6
+        },
+        {
+          "key": "critDMG_",
+          "value": 19.4
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 20.2
+        },
+        {
+          "key": "critRate_",
+          "value": 3.5
+        },
+        {
+          "key": "atk",
+          "value": 14
+        },
+        {
+          "key": "enerRech_",
+          "value": 18.8
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 18.7
+        },
+        {
+          "key": "eleMas",
+          "value": 19
+        },
+        {
+          "key": "critRate_",
+          "value": 6.2
+        },
+        {
+          "key": "atk_",
+          "value": 15.8
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "critDMG_",
+      "substats": [
+        {
+          "key": "eleMas",
+          "value": 40
+        },
+        {
+          "key": "critRate_",
+          "value": 3.9
+        },
+        {
+          "key": "atk",
+          "value": 37
+        },
+        {
+          "key": "hp_",
+          "value": 14.6
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 21
+        },
+        {
+          "key": "atk_",
+          "value": 11.1
+        },
+        {
+          "key": "def",
+          "value": 42
+        },
+        {
+          "key": "critRate_",
+          "value": 3.9
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "critRate_",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 23.3
+        },
+        {
+          "key": "hp",
+          "value": 299
+        },
+        {
+          "key": "def_",
+          "value": 23.3
+        },
+        {
+          "key": "atk",
+          "value": 16
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 0,
+      "slotKey": "goblet",
+      "mainStatKey": "anemo_dmg_",
+      "substats": [
+        {
+          "key": "def_",
+          "value": 5.8
+        },
+        {
+          "key": "atk",
+          "value": 19
+        },
+        {
+          "key": "critRate_",
+          "value": 3.9
+        },
+        {
+          "key": "",
+          "value": 0
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 28.7
+        },
+        {
+          "key": "atk",
+          "value": 33
+        },
+        {
+          "key": "critRate_",
+          "value": 3.5
+        },
+        {
+          "key": "def",
+          "value": 19
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "critDMG_",
+      "substats": [
+        {
+          "key": "def_",
+          "value": 19
+        },
+        {
+          "key": "atk",
+          "value": 33
+        },
+        {
+          "key": "critRate_",
+          "value": 3.1
+        },
+        {
+          "key": "atk_",
+          "value": 14.6
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 12,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "def_",
+          "value": 6.6
+        },
+        {
+          "key": "atk",
+          "value": 29
+        },
+        {
+          "key": "critDMG_",
+          "value": 22.5
+        },
+        {
+          "key": "eleMas",
+          "value": 23
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "goblet",
+      "mainStatKey": "pyro_dmg_",
+      "substats": [
+        {
+          "key": "critRate_",
+          "value": 7.4
+        },
+        {
+          "key": "critDMG_",
+          "value": 15.5
+        },
+        {
+          "key": "atk",
+          "value": 29
+        },
+        {
+          "key": "hp",
+          "value": 807
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "goblet",
+      "mainStatKey": "def_",
+      "substats": [
+        {
+          "key": "def",
+          "value": 23
+        },
+        {
+          "key": "critDMG_",
+          "value": 18.7
+        },
+        {
+          "key": "critRate_",
+          "value": 9.3
+        },
+        {
+          "key": "hp",
+          "value": 239
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 0,
+      "slotKey": "goblet",
+      "mainStatKey": "anemo_dmg_",
+      "substats": [
+        {
+          "key": "atk_",
+          "value": 5.3
+        },
+        {
+          "key": "critDMG_",
+          "value": 7
+        },
+        {
+          "key": "def_",
+          "value": 7.3
+        },
+        {
+          "key": "",
+          "value": 0
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "enerRech_",
+          "value": 5.8
+        },
+        {
+          "key": "hp_",
+          "value": 8.7
+        },
+        {
+          "key": "critRate_",
+          "value": 7.8
+        },
+        {
+          "key": "critDMG_",
+          "value": 28.8
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "sands",
+      "mainStatKey": "def_",
+      "substats": [
+        {
+          "key": "critRate_",
+          "value": 10.5
+        },
+        {
+          "key": "critDMG_",
+          "value": 15.5
+        },
+        {
+          "key": "def",
+          "value": 21
+        },
+        {
+          "key": "eleMas",
+          "value": 33
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 18.7
+        },
+        {
+          "key": "critRate_",
+          "value": 6.6
+        },
+        {
+          "key": "atk",
+          "value": 35
+        },
+        {
+          "key": "def_",
+          "value": 11.7
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {
+          "key": "def",
+          "value": 16
+        },
+        {
+          "key": "enerRech_",
+          "value": 11.7
+        },
+        {
+          "key": "critRate_",
+          "value": 12.8
+        },
+        {
+          "key": "critDMG_",
+          "value": 14
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "sands",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "def_",
+          "value": 10.9
+        },
+        {
+          "key": "hp",
+          "value": 269
+        },
+        {
+          "key": "critDMG_",
+          "value": 26.4
+        },
+        {
+          "key": "eleMas",
+          "value": 40
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {
+          "key": "critDMG_",
+          "value": 20.2
+        },
+        {
+          "key": "critRate_",
+          "value": 2.7
+        },
+        {
+          "key": "enerRech_",
+          "value": 11
+        },
+        {
+          "key": "def",
+          "value": 32
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 12,
+      "slotKey": "sands",
+      "mainStatKey": "hp_",
+      "substats": [
+        {
+          "key": "critRate_",
+          "value": 10.1
+        },
+        {
+          "key": "atk_",
+          "value": 4.7
+        },
+        {
+          "key": "atk",
+          "value": 33
+        },
+        {
+          "key": "critDMG_",
+          "value": 7.8
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 16,
+      "slotKey": "sands",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "def_",
+          "value": 12.4
+        },
+        {
+          "key": "critDMG_",
+          "value": 18.7
+        },
+        {
+          "key": "hp",
+          "value": 239
+        },
+        {
+          "key": "atk",
+          "value": 37
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "sands",
+      "mainStatKey": "atk_",
+      "substats": [
+        {
+          "key": "hp_",
+          "value": 4.7
+        },
+        {
+          "key": "critDMG_",
+          "value": 24.9
+        },
+        {
+          "key": "def",
+          "value": 60
+        },
+        {
+          "key": "eleMas",
+          "value": 19
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    },
+    {
+      "setKey": "EmblemOfSeveredFate",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "goblet",
+      "mainStatKey": "hydro_dmg_",
+      "substats": [
+        {
+          "key": "eleMas",
+          "value": 65
+        },
+        {
+          "key": "critRate_",
+          "value": 10.1
+        },
+        {
+          "key": "enerRech_",
+          "value": 5.8
+        },
+        {
+          "key": "critDMG_",
+          "value": 12.4
+        }
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": true
+    }
+  ],
+  "weapons": [
+    {
+      "key": "EverlastingMoonglow",
+      "level": 1,
+      "ascension": 0,
+      "refinement": 1,
+      "location": "Sucrose",
+      "lock": false
+    }
+  ],
+  "artifactDisplay": {
+    "filterOption": {
+      "artSetKey": "",
+      "rarity": [
+        5,
+        4,
+        3
+      ],
+      "levelLow": 0,
+      "levelHigh": 20,
+      "slotKey": "",
+      "mainStatKey": "",
+      "substats": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "location": "",
+      "excluded": ""
+    },
+    "ascending": false,
+    "sortType": "rarity",
+    "maxNumArtifactsToDisplay": 50,
+    "effFilter": [
+      "hp",
+      "hp_",
+      "atk",
+      "atk_",
+      "def_",
+      "def",
+      "eleMas",
+      "enerRech_",
+      "critRate_",
+      "critDMG_"
+    ],
+    "probabilityFilter": {}
+  },
+  "characterDisplay": {
+    "sortType": "level",
+    "ascending": false,
+    "weaponType": "",
+    "element": ""
+  },
+  "buildsDisplay": {
+    "characterKey": "Sucrose"
+  }
+}

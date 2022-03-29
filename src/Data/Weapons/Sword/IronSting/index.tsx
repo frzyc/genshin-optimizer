@@ -1,22 +1,51 @@
 import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { constant, lookup, naught, prod, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { objectKeyMap, range } from '../../../../Util/Util'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-const refinementVals = [6, 7.5, 9, 10.5, 12]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "IronSting"
+const data_gen = data_gen_json as WeaponData
+const [tr, trm] = trans("weapon", key)
+
+const [condPassivePath, condPassive] = cond(key, "InfusionStinger")
+const eleDmgDealtStack = range(1, 2)
+const allDmgInc = [0.06, 0.075, 0.09, 0.105, 0.12]
+const all_dmg_ = prod(lookup(condPassive, objectKeyMap(eleDmgDealtStack, i => constant(i)), naught),
+  subscript(input.weapon.refineIndex, allDmgInc))
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    all_dmg_
+  }
+})
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
     conditional: {
-      key: "is",
-      name: "Elemental Hits",
-      maxStack: 2,
-      stats: stats => ({
-        dmg_: refinementVals[stats.weapon.refineIndex]
-      })
+      value: condPassive,
+      path: condPassivePath,
+      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
+      name: trm("condName"),
+      states:
+        Object.fromEntries(eleDmgDealtStack.map(c => [c, {
+          name: st("stack", { count: c }),
+          fields: [{
+            node: all_dmg_,
+          }, {
+            text: sgt("duration"),
+            value: 6,
+            unit: "s"
+          }]
+        }]))
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

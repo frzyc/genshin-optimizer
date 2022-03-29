@@ -2,16 +2,15 @@ import claymore from './Claymore'
 import sword from './Sword'
 import polearm from './Polearm'
 import bow from './Bow'
+import { WeaponKey } from '../../Types/consts'
 import catalyst from './Catalyst'
-import { IWeaponSheets } from '../../Types/weapon'
-import { documentSectionsProcessing } from '../../Util/DocumentUtil'
+import WeaponSheet from './WeaponSheet'
 
-const WeaponData: IWeaponSheets = {
+const WeaponData: Record<WeaponKey, WeaponSheet> = {
   ...sword,
   ...claymore,
   ...polearm,
   ...bow,
   ...catalyst
 } as const
-Object.values(WeaponData).forEach(weapon => weapon.document && documentSectionsProcessing(weapon.document))
 export default WeaponData

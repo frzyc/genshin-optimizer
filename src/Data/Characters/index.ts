@@ -1,3 +1,6 @@
+import { CharacterKey } from '../../Types/consts'
+import CharacterSheet from './CharacterSheet'
+
 import Albedo from './Albedo'
 import Aloy from './Aloy'
 import Amber from './Amber'
@@ -30,22 +33,23 @@ import Razor from './Razor'
 import Rosaria from './Rosaria'
 import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
-import Sucrose from './Sucrose'
+import Shenhe from "./Shenhe"
+import Sucrose from "./Sucrose"
 import Tartaglia from './Tartaglia'
 import Thoma from './Thoma'
 import Traveler from './Traveler'
 import Venti from './Venti'
-import Xiao from './Xiao'
 import Xiangling from './Xiangling'
+import Xiao from './Xiao'
 import Xingqiu from './Xingqiu'
 import Xinyan from './Xinyan'
+import YaeMiko from './YaeMiko'
 import Yanfei from './Yanfei'
 import Yoimiya from './Yoimiya'
+import YunJin from './YunJin'
 import Zhongli from './Zhongli'
-import { CharacterKey } from '../../Types/consts'
-import { ICharacterSheet } from '../../Types/character'
-import { documentSectionsProcessing } from '../../Util/DocumentUtil'
-const characters: StrictDict<CharacterKey, ICharacterSheet> = {
+
+const characters: Record<CharacterKey, CharacterSheet> = {
   Albedo,
   Aloy,
   Amber,
@@ -78,27 +82,20 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   Rosaria,
   SangonomiyaKokomi,
   Sayu,
+  Shenhe,
   Sucrose,
   Tartaglia,
   Thoma,
   Traveler,
   Venti,
-  Xiao,
   Xiangling,
+  Xiao,
   Xingqiu,
   Xinyan,
+  YaeMiko,
   Yanfei,
   Yoimiya,
+  YunJin,
   Zhongli
 } as const
-
-Object.values(characters).forEach(char => {
-  if ("talent" in char)
-    Object.values(char.talent.sheets).forEach(talentSheetElement =>
-      documentSectionsProcessing(talentSheetElement.sections))
-  else //char.talents -> Traveler
-    Object.values(char.talents).forEach(talentSheet =>
-      Object.values(talentSheet.sheets).forEach(talentSheetElement =>
-        documentSectionsProcessing(talentSheetElement.sections)))
-})
 export default characters

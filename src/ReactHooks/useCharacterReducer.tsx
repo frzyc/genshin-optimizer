@@ -2,13 +2,18 @@ import { useCallback, useContext } from "react";
 import { DatabaseContext } from "../Database/Database";
 import { ICachedCharacter } from "../Types/character";
 import { CharacterKey } from "../Types/consts";
-import { characterBaseStats, overrideStatKeys } from "../Util/StatUtil";
+import { deepClone } from "../Util/Util";
 
 type characterEquipWeapon = {
   type: "weapon", id: string
 }
 type characterReducerBonusStatsAction = {
   type: "editStats",
+  statKey: string
+  value: any | undefined
+}
+type characterReducerenemyOverrideAction = {
+  type: "enemyOverride",
   statKey: string
   value: any | undefined
 }
@@ -21,10 +26,10 @@ type characterTeamAction = {
   index: number,
   charKey: CharacterKey | ""
 }
-export type characterReducerAction = characterEquipWeapon | characterReducerBonusStatsAction | characterReducerResetStatsAction | characterTeamAction | Partial<ICachedCharacter>
+export type characterReducerAction = characterEquipWeapon | characterReducerBonusStatsAction | characterReducerenemyOverrideAction | characterReducerResetStatsAction | characterTeamAction | Partial<ICachedCharacter>
 
 export default function useCharacterReducer(characterKey: CharacterKey | "") {
-  const database = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
 
   return useCallback((action: characterReducerAction): void => {
     if (!characterKey) return
@@ -33,24 +38,24 @@ export default function useCharacterReducer(characterKey: CharacterKey | "") {
       case "weapon":
         database.setWeaponLocation(action.id, characterKey)
         break
+      case "enemyOverride": {
+        const character = database._getChar(characterKey)!
+        const enemyOverride = character.enemyOverride
+        const { statKey, value } = action
+        if (enemyOverride[statKey] === value) break
+        database.updateChar({ ...character, enemyOverride: { ...enemyOverride, [statKey]: value } })
+        break
+      }
       case "editStats": {
         const character = database._getChar(characterKey)!
         const { statKey, value } = action
 
-        const bonusStats = character.bonusStats
+        const bonusStats = deepClone(character.bonusStats)
 
-        if (bonusStats[statKey] === value) return
-        if (overrideStatKeys.includes(statKey)) {
-          if ((characterBaseStats(character)[statKey] ?? 0) === value)
-            delete bonusStats[statKey]
-          else
-            bonusStats[statKey] = value
-        } else {
-          if (value)
-            bonusStats[statKey] = value
-          else
-            delete bonusStats[statKey]
-        }
+        if (bonusStats[statKey] === value) break
+        if (!value) delete bonusStats[statKey]
+        else bonusStats[statKey] = value
+
         database.updateChar({ ...character, bonusStats })
         break
       }

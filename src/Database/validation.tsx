@@ -1,13 +1,13 @@
-import Artifact from "../Artifact/Artifact";
-import { maxBuildsToShowDefault, maxBuildsToShowList } from "../Build/Build";
-import { initialBuildSettings } from "../Build/BuildSetting";
 import { ascensionMaxLevel } from "../Data/LevelData";
-import Stat from "../Stat";
+import KeyMap from "../KeyMap";
+import { maxBuildsToShowDefault, maxBuildsToShowList } from "../PageBuild/Build";
+import { initialBuildSettings } from "../PageBuild/BuildSetting";
 import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter, ICharacter } from "../Types/character";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
 import { IWeapon, ICachedWeapon } from "../Types/weapon";
-import { objectFromKeyMap } from "../Util/Util";
+import Artifact from "../Data/Artifacts/Artifact";
+import { objectKeyMap } from "../Util/Util";
 
 // MIGRATION STEP: Always keep validate/parse in sync with the latest format
 
@@ -18,19 +18,20 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
   const mainStatVal = Artifact.mainStatValue(mainStatKey, rarity, level)!
 
   const errors: Displayable[] = []
-  const substats: ICachedSubstat[] = flex.substats.map(substat => ({ ...substat, rolls: [], efficiency: 0 }))
+  const substats: ICachedSubstat[] = flex.substats.map(substat => ({ ...substat, rolls: [], efficiency: 0, accurateValue: substat.value }))
   const validated: ICachedArtifact = { id, setKey, location, slotKey, exclude, lock, mainStatKey, rarity, level, substats, mainStatVal }
 
   const allPossibleRolls: { index: number, substatRolls: number[][] }[] = []
   let totalUnambiguousRolls = 0
 
-  function efficiency(rolls: number[], key: SubstatKey): number {
-    return rolls.reduce((a, b) => a + b, 0) / Artifact.maxSubstatValues(key) * 100 / rolls.length
+  function efficiency(value: number, key: SubstatKey): number {
+    return value / Artifact.maxSubstatValues(key) * 100
   }
 
   substats.forEach((substat, index) => {
     const { key, value } = substat
     if (!key) return substat.value = 0
+    substat.efficiency = efficiency(value, key)
 
     const possibleRolls = Artifact.getSubstatRolls(key, value, rarity)
 
@@ -44,11 +45,11 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
       }
 
       substat.rolls = possibleRolls.reduce((best, current) => best.length < current.length ? best : current)
-      substat.efficiency = efficiency(substat.rolls, key)
+      substat.efficiency = efficiency(substat.rolls.reduce((a, b) => a + b, 0), key)
+      substat.accurateValue = substat.rolls.reduce((a, b) => a + b, 0)
     } else { // Invalid Substat
       substat.rolls = []
-      substat.efficiency = 0
-      errors.push(<>Invalid substat {Stat.getStatNameWithPercent(substat.key)}</>)
+      errors.push(<>Invalid substat {KeyMap.get(substat.key)}</>)
     }
   })
 
@@ -63,8 +64,10 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
         highestScore = currentScore
         for (const { index, roll } of rolls) {
           const key = substats[index].key as SubstatKey
+          const accurateValue = roll.reduce((a, b) => a + b, 0)
           substats[index].rolls = roll
-          substats[index].efficiency = efficiency(roll, key)
+          substats[index].accurateValue = accurateValue
+          substats[index].efficiency = efficiency(accurateValue, key)
         }
       }
 
@@ -93,7 +96,7 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
   if (substats.some((substat) => !substat.key)) {
     let substat = substats.find(substat => (substat.rolls?.length ?? 0) > 1)
     if (substat)
-      errors.push(<>Substat {Stat.getStatNameWithPercent(substat.key)} has {'>'} 1 roll, but not all substats are unlocked.</>)
+      errors.push(<>Substat {KeyMap.get(substat.key)} has {'>'} 1 roll, but not all substats are unlocked.</>)
   }
 
   return { artifact: validated, errors }
@@ -113,10 +116,19 @@ export function parseArtifact(obj: any): IArtifact | undefined {
     typeof level !== "number" || level < 0 || level > 20)
     return // non-recoverable
 
+  // TODO:
+  // These two requires information from artifact sheet,
+  // which normally isn't loaded at this point yet.
+  // - Validate artifact set vs slot
+  // - Validate artifact set vs rarity
   substats = parseSubstats(substats)
   lock = !!lock
   exclude = !!exclude
   level = Math.round(level)
+  const plausibleMainStats = Artifact.slotMainStats(slotKey)
+  if (!plausibleMainStats.includes(mainStatKey))
+    if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
+    else return // ambiguous mainstat
   if (!allCharacterKeys.includes(location)) location = ""
   return { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock }
 }
@@ -131,7 +143,7 @@ function parseSubstats(obj: any): ISubstat[] {
   const substats = obj.slice(0, 4).map(({ key = undefined, value = undefined }) => {
     if (!allSubstats.includes(key) || typeof value !== "number" || !isFinite(value))
       return { key: "", value: 0 }
-    value = key.endsWith("_") ? parseFloat(value.toFixed(1)) : parseInt(value.toFixed())
+    value = key.endsWith("_") ? Math.round(value * 10) / 10 : Math.round(value)
     return { key, value }
   })
   while (substats.length < 4)
@@ -143,7 +155,7 @@ function parseSubstats(obj: any): ISubstat[] {
 export function validateCharacter(flex: ICharacter): ICachedCharacter {
   // TODO: Add more validations to make sure the returned value is a "valid" character
   return {
-    equippedArtifacts: objectFromKeyMap(allSlotKeys, () => ""),
+    equippedArtifacts: objectKeyMap(allSlotKeys, () => ""),
     equippedWeapon: "",
     ...flex,
   }
@@ -153,8 +165,8 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   if (typeof obj !== "object") return
 
   let {
-    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, buildSettings, team
+    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditional,
+    bonusStats, enemyOverride, talent, infusionAura, constellation, buildSettings, team, compareData
   } = obj
 
   if (!allCharacterKeys.includes(characterKey) ||
@@ -205,7 +217,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
       mainStatKeys = tempmainStatKeys
     }
 
-    if (!optimizationTarget) optimizationTarget = ""
+    if (!optimizationTarget || !Array.isArray(optimizationTarget)) optimizationTarget = undefined
     if (typeof mainStatAssumptionLevel !== "number" || mainStatAssumptionLevel < 0 || mainStatAssumptionLevel > 20)
       mainStatAssumptionLevel = 0
     useExcludedArts = !!useExcludedArts
@@ -223,14 +235,19 @@ export function parseCharacter(obj: any): ICharacter | undefined {
     buildSettings = { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
   }
 
-  if (!conditionalValues)
-    conditionalValues = {}
+  if (!conditional)
+    conditional = {}
   if (!team)
     team = ["", "", ""]
+
+  if (typeof compareData !== "boolean") compareData = false
+
   // TODO: validate bonusStats
+  if (typeof bonusStats !== "object" || !Object.entries(bonusStats).map(([_, num]) => typeof num === "number")) bonusStats = {}
+  if (typeof enemyOverride !== "object" || !Object.entries(enemyOverride).map(([_, num]) => typeof num === "number")) enemyOverride = {}
   const result: ICharacter = {
-    key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, team,
+    key: characterKey, level, ascension, hitMode, reactionMode, conditional,
+    bonusStats, enemyOverride, talent, infusionAura, constellation, team, compareData
   }
   if (buildSettings) result.buildSettings = buildSettings
   if (elementKey) result.elementKey = elementKey
@@ -239,12 +256,12 @@ export function parseCharacter(obj: any): ICharacter | undefined {
 /// Return a new flex character from given character. All extra keys are removed
 export function removeCharacterCache(char: ICachedCharacter): ICharacter {
   const {
-    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, buildSettings, team
+    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditional,
+    bonusStats, enemyOverride, talent, infusionAura, constellation, buildSettings, team, compareData
   } = char
   const result: ICharacter = {
-    key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, buildSettings, team
+    key: characterKey, level, ascension, hitMode, reactionMode, conditional,
+    bonusStats, enemyOverride, talent, infusionAura, constellation, buildSettings, team, compareData
   }
   if (elementKey) result.elementKey = elementKey
   return result

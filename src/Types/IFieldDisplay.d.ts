@@ -1,12 +1,20 @@
-import { BasicStats, ICalculatedStats } from "./stats";
+import { NumNode } from "../Formula/type";
+import { UIData } from "../Formula/uiData";
 
-export interface IFieldDisplay {
-  canShow?: (stats: BasicStats) => boolean;
+export interface IBasicFieldDisplay {
+  canShow?: (data: UIData) => boolean;
   text: Displayable;
-  value?: number | Displayable | ((stats: ICalculatedStats) => number | Displayable);
+  value?: number | Displayable | ((data: UIData) => number | Displayable);
   fixed?: number;
-  formula?: (stats: BasicStats) => any[];
-  formulaText?: JSX.Element | ((stats: BasicStats) => JSX.Element)
-  variant?: string | ((stats: BasicStats) => string);
+  variant?: string | ((data: UIData) => string);
   unit?: Displayable
+  textSuffix?: Displayable,
 }
+
+export interface INodeFieldDisplay {
+  canShow?: (data: UIData) => boolean;
+  textSuffix?: Displayable,
+  node: NumNode;
+}
+
+export type IFieldDisplay = INodeFieldDisplay | IBasicFieldDisplay

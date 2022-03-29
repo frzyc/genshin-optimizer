@@ -1,19 +1,39 @@
-import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
+import type { WeaponData } from 'pipeline'
 import icon from './Icon.png'
 import iconAwaken from './AwakenIcon.png'
+import { subscript } from "../../../../Formula/utils"
+import { dataObjForWeaponSheet } from '../../util'
+import { input } from '../../../../Formula'
+import data_gen_json from './data_gen.json'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import { WeaponKey } from '../../../../Types/consts'
+import { st, trans } from '../../../SheetUtil'
 
-const refinementVals = [16, 20, 24, 28, 32]
-const refinementVals2 = [6, 7.5, 9, 10.5, 12]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const key: WeaponKey = "FesteringDesire"
+const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
+
+const skill_dmgInc = [0.16, 0.2, 0.24, 0.28, 0.32]
+const skill_critInc = [0.06, 0.075, 0.09, 0.105, 0.12]
+const skill_dmg_ = subscript(input.weapon.refineIndex, skill_dmgInc, { key: '_' })
+const skill_critRate_ = subscript(input.weapon.refineIndex, skill_critInc, { key: '_' })
+
+export const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    skill_dmg_,
+    skill_critRate_
+  }
+})
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    skill_dmg_: refinementVals[stats.weapon.refineIndex],
-    skill_critRate_: refinementVals2[stats.weapon.refineIndex]
-  }),
-  document: []
+  document: [{
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    fields: [{
+      node: skill_dmg_
+    }, {
+      node: skill_critRate_
+    }],
+  }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

@@ -1,5 +1,6 @@
-import { IArtifactSheets } from '../../Types/artifact'
-import { documentSectionsProcessing } from '../../Util/DocumentUtil'
+import { ArtifactSetKey } from '../../Types/consts'
+import { ArtifactSheet } from './ArtifactSheet'
+
 import Adventurer from './Adventurer'
 import ArchaicPetra from './ArchaicPetra'
 import Berserker from './Berserker'
@@ -37,7 +38,7 @@ import TinyMiracle from './TinyMiracle'
 import TravelingDoctor from './TravelingDoctor'
 import ViridescentVenerer from './ViridescentVenerer'
 import WanderersTroupe from './WanderersTroupe'
-const artifacts: IArtifactSheets = {
+const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   Adventurer,
   ArchaicPetra,
   Berserker,
@@ -77,9 +78,4 @@ const artifacts: IArtifactSheets = {
   WanderersTroupe,
 } as const
 
-
-Object.values(artifacts).forEach(art =>
-  Object.values(art.setEffects).forEach(setEffect => {
-    setEffect.document && documentSectionsProcessing(setEffect.document)
-  }))
 export default artifacts

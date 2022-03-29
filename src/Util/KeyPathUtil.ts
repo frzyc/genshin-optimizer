@@ -1,3 +1,8 @@
+/**
+ * @deprecated
+ * @param prefix
+ * @returns
+ */
 export function KeyPath<Base, Value = Base>(prefix: string[] = []): PartialPath<Base, Value> {
   const path = () => path.keys
   path.keys = prefix
@@ -21,4 +26,4 @@ type PartialPath<Base, Value> = {
   [key in keyof Value]: PartialPath<Base, Value[key]> & (() => Path<Base, Value>)
 }
 // eslint-disable-next-line
-export type Path<Base, Value> = string[]
+export type Path<Base, Value> = readonly string[]

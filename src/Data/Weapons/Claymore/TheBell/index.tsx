@@ -1,29 +1,70 @@
 import { WeaponData } from 'pipeline'
-import Stat from '../../../../Stat'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { infoMut, prod, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { customShieldNode } from '../../../Characters/dataUtil'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-const dmg_s = [12, 15, 18, 21, 24]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "TheBell"
+const data_gen = data_gen_json as WeaponData
+const [tr, trm] = trans("weapon", key)
+
+const shieldSrc = [0.2, 0.23, 0.26, 0.29, 0.32]
+const allDmgSrc = [0.12, 0.15, 0.18, 0.21, 0.24]
+const [condPassivePath, condPassive] = cond(key, "RebelliousGuardian")
+const shield = customShieldNode(prod(subscript(input.weapon.refineIndex, shieldSrc, { key: "_" }), input.total.hp))
+const [condWithShieldPath, condWithShield] = cond(key, "WithShield")
+const all_dmg_ = subscript(input.weapon.refineIndex, allDmgSrc, { key: "_" })
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    all_dmg_
+  }
+}, {
+  shield
+})
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fields: [{
-      text: "Shield Absorption",
-      formulaText: stats => <span>{data.shield[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("shield_", stats)})</span>,
-      formula: formula.shield,
-    }],
     conditional: {
-      key: "rg",
-      name: "Taking DMG",
-      maxStack: 1,
-      stats: stats => ({
-        dmg_: dmg_s[stats.weapon.refineIndex]
-      })
+      value: condPassive,
+      path: condPassivePath,
+      header: conditionalHeader(tr, icon, iconAwaken),
+      name: st("takeDmg"),
+      states: {
+        on: {
+          fields: [{
+            text: trm("generateShield")
+          }, {
+            node: infoMut(shield, { key: `sheet_gen:dmgAbsorption` })
+          }, {
+            text: sgt("cd"),
+            value: 45,
+            unit: "s"
+          }]
+        }
+      }
     }
-  }]
+  }, {
+    conditional: {
+      value: condWithShield,
+      path: condWithShieldPath,
+      header: conditionalHeader(tr, icon, iconAwaken),
+      name: st("protectedByShield"),
+      states: {
+        protected: {
+          fields: [{
+            node: all_dmg_
+          }]
+        }
+      }
+    }
+  }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

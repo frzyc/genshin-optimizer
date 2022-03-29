@@ -1,17 +1,32 @@
-import { IWeaponSheet } from '../../../../Types/weapon'
-import icon from './Icon.png'
-import iconAwaken from './AwakenIcon.png'
-
-import data_gen from './data_gen.json'
 import { WeaponData } from 'pipeline'
-const skill_dmg_s = [6, 7.5, 9, 10.5, 12]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+import { input } from '../../../../Formula'
+import { subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { st, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import iconAwaken from './AwakenIcon.png'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "KatsuragikiriNagamasa"
+const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
+
+const skill_dmg_Src = [0.06, 0.075, 0.09, 0.105, 0.12]
+const skill_dmg_ = subscript(input.weapon.refineIndex, skill_dmg_Src)
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    skill_dmg_
+  },
+})
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    skill_dmg_: skill_dmg_s[stats.weapon.refineIndex]
-  }),
-  document: [],
+  document: [{
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    fields: [{ node: skill_dmg_ }],
+  }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

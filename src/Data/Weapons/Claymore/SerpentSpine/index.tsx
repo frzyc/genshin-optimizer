@@ -1,31 +1,57 @@
 import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { objectKeyMap, range } from '../../../../Util/Util'
+import { cond, st, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
-const dmg_s = [6, 7, 8, 9, 10]
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
+
+const key: WeaponKey = "SerpentSpine"
+const data_gen = data_gen_json as WeaponData
+const [tr, trm] = trans("weapon", key)
+
+const all_dmg_s = [0.06, 0.07, 0.08, 0.09, 0.1]
 const takeDMG_s = [3, 2.7, 2.4, 2.2, 2]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+
+const [condPassivePath, condPassive] = cond(key, "Wavesplitter")
+const all_dmg_ = subscript(input.weapon.refineIndex, all_dmg_s, { key: "_" })
+const all_dmg_stack = lookup(condPassive, {
+  ...objectKeyMap(range(1, 5), i => prod(all_dmg_, i)),
+}, naught)
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    all_dmg_: all_dmg_stack
+  },
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
     conditional: {
-      key: "w",
-      name: "Duration on Field (4s / stack)",
-      maxStack: 5,
-      stats: stats => ({
-        dmg_: dmg_s[stats.weapon.refineIndex]
-      }),
-      fields: [{
-        text: "Take more DMG",
-        value: stats => {
-          const [num,] = stats.conditionalValues?.weapon?.SerpentSpine?.w ?? [0]
-          return takeDMG_s[stats.weapon.refineIndex] * num
-        },
-        unit: "%"
-      }]
+      value: condPassive,
+      path: condPassivePath,
+      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
+      description: conditionaldesc(tr),
+      name: st("activeCharField"),
+      states: {
+        ...objectKeyMap(range(1, 5), i => ({
+          name: st("seconds", { count: i * 4 }),
+          fields: [{
+            node: all_dmg_stack
+          }, {
+            text: trm("takeMoreDmg"),
+            value: data => takeDMG_s[data.get(input.weapon.refineIndex).value] * i,
+            unit: "%"
+          }]
+        })),
+      }
     }
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

@@ -1,35 +1,41 @@
-import { WeaponData } from 'pipeline'
-import { getTalentStatKey } from '../../../../Build/Build'
-import ColorText from '../../../../Components/ColoredText'
-import { Translate } from '../../../../Components/Translate'
-import Stat from '../../../../Stat'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
+import type { WeaponData } from 'pipeline'
 import icon from './Icon.png'
 import iconAwaken from './AwakenIcon.png'
+import { prod, subscript } from "../../../../Formula/utils"
+import { dataObjForWeaponSheet } from '../../util'
+import { input } from '../../../../Formula'
+import data_gen_json from './data_gen.json'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import { WeaponKey } from '../../../../Types/consts'
+import { st, trans } from '../../../SheetUtil'
 
-const heal_ = [10, 12.5, 15, 17.5, 20]
+const key: WeaponKey = "EverlastingMoonglow"
+const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
 
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const hp_conv = [0.01, 0.015, 0.02, 0.025, 0.03]
+const [, trm] = trans("weapon", key)
+const normal_dmgInc = prod(subscript(input.weapon.refineIndex, hp_conv, { key: '_' }), input.premod.hp)
+const heal_ = subscript(input.weapon.refineIndex, data_gen.addProps.map(x => x.heal_ ?? NaN))
+export const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    normal_dmgInc, // TODO: technically should be in "total", but should be fine as premod
+    heal_
+  }
+}, {
+  normal_dmgInc
+})
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    heal_: heal_[stats.weapon.refineIndex],
-  }),
   document: [{
-    fields: [
-      {
-        text: <Translate ns="weapon_EverlastingMoonglow" key18="name" />,
-        formulaText: stats => <span>{data.hp_conv[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats, true)} * {Stat.printStat(getTalentStatKey("elemental", stats) + "_multi", stats)}</span>,
-        formula: formula.norm,
-        variant: stats => stats.characterEle
-      },
-      {
-        text: <ColorText color="warning">The normal damage increase is not currently being added to the character's normal damage as a singular damage number, pending future implemention.</ColorText>
-      }
-    ],
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    fields: [{
+      node: heal_
+    }, {
+      text: trm("name"),
+      node: normal_dmgInc,
+    }],
   }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

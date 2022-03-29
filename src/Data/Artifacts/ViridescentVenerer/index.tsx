@@ -1,53 +1,78 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-import { Translate } from '../../../Components/Translate'
-import ImgIcon from '../../../Components/Image/ImgIcon'
-import SqBadge from '../../../Components/SqBadge'
-import { sgt } from '../../Characters/SheetUtil'
-import { absorbableEle } from '../../Characters/dataUtil'
 import ColorText from '../../../Components/ColoredText'
-const tr = (strKey: string) => <Translate ns="artifact_ViridescentVenerer_gen" key18={strKey} />
-const artifact: IArtifactSheet = {
-  name: "Viridescent Venerer", rarity: [4, 5], icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
+import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { equal, greaterEq, percent } from '../../../Formula/utils'
+import { absorbableEle, ArtifactSetKey } from '../../../Types/consts'
+import { objectKeyMap, objectKeyValueMap } from '../../../Util/Util'
+import elementalData from '../../ElementalData'
+import { condReadNode, sgt, st, trans } from '../../SheetUtil'
+import { ArtifactSheet, conditionalHeader, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import icons from './icons'
+
+const key: ArtifactSetKey = "ViridescentVenerer"
+const [tr] = trans("artifact", key)
+
+const anemo_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 2, percent(0.15))
+const swirl_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 4, percent(0.6))
+
+const condSwirlPaths = objectKeyMap(absorbableEle, e => [key, `swirl${e}`])
+const condSwirls = objectKeyMap(absorbableEle, e => condReadNode(condSwirlPaths[e]))
+
+const condSwirlNodes = objectKeyValueMap(absorbableEle, e => [`${e}_enemyRes_`,
+greaterEq(input.artSet.ViridescentVenerer, 4,
+  equal("swirl", condSwirls[e], percent(-0.4))
+)])
+
+const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    anemo_dmg_,
+    swirl_dmg_,
   },
+  teamBuff: {
+    premod: {
+      ...condSwirlNodes
+    }
+  }
+})
+
+const sheet: IArtifactSheet = {
+  name: "Viridescent Venerer", rarity: [4, 5], icons,
   setEffects: {
     2: {
-      stats: { anemo_dmg_: 15 }
+      document: [{
+        fields: [{ node: anemo_dmg_ }]
+      }]
     },
     4: {
-      stats: { swirl_dmg_: 60 },
       document: [{
+        fields: [{ node: swirl_dmg_ }],
+      },
+      ...absorbableEle.map(eleKey => ({
         conditional: {
-          key: "4",
-          partyBuff: "partyAll",
-          header: {
-            title: tr("setName"),
-            icon: <ImgIcon size={2} sx={{ m: -1 }} src={flower} />,
-            action: <SqBadge color="success">4-set</SqBadge>
-          },
-          description: tr(`setEffects.4`),
-          name: <Translate ns="artifact_ViridescentVenerer" key18="condName" />,
-          states: Object.fromEntries(absorbableEle.map(ele => [ele, {
-            name: <ColorText color={ele}>{sgt(`element.${ele}`)}</ColorText>,
-            stats: { [`${ele}_enemyRes_`]: -40 },
-            fields: [{
-              text: sgt("duration"),
-              value: 10,
-              unit: "s"
-            }]
-          }]))
-        }
-      }]
+          value: condSwirls[eleKey],
+          path: condSwirlPaths[eleKey],
+          teamBuff: true,
+          header: conditionalHeader(tr, icons.flower),
+          // Only show description once.
+          description: eleKey === "hydro" ? tr(`setEffects.4`) : "",
+          name: st("eleSwirled"),
+          states: {
+            swirl: {
+              name: <ColorText color={eleKey}>{elementalData[eleKey].name}</ColorText>,
+              fields: [{
+                node: condSwirlNodes[`${eleKey}_enemyRes_`]
+              }, {
+                text: sgt("duration"),
+                value: 10,
+                unit: "s"
+              }]
+            }
+          }
+        },
+      }))
+      ]
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

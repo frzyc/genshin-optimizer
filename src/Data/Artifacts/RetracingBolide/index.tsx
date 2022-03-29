@@ -1,35 +1,51 @@
+import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { equal, greaterEq, percent } from '../../../Formula/utils'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { cond, trans } from '../../SheetUtil'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import icons from './icons'
 
-import flower from './flower.png'
-import plume from './plume.png'
-import circlet from './circlet.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-const artifact: IArtifactSheet = {
-  name: "Retracing Bolide", rarity: [4, 5],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
+const key: ArtifactSetKey = "RetracingBolide"
+const [, trm] = trans("artifact", key)
+const [condStatePath, condState] = cond(key, "state")
+
+const set2 = greaterEq(input.artSet.RetracingBolide, 2, percent(0.35))
+const set4NA = greaterEq(input.artSet.RetracingBolide, 4, equal("on", condState, percent(0.4)))
+const set4CA = greaterEq(input.artSet.RetracingBolide, 4, equal("on", condState, percent(0.4)))
+
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    shield_: set2,
+    normal_dmg_: set4NA,
+    charged_dmg_: set4CA,
   },
-    setEffects: {
-    2: {
-      stats: { shield_: 35 }
-    },
+})
+
+const sheet: IArtifactSheet = {
+  name: "Retracing Bolide", rarity: [4, 5],
+  icons,
+  setEffects: {
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
       document: [{
         conditional: {
-          key:"4",
-          name: "With Shield",
-          stats: {
-            normal_dmg_: 40,
-            charged_dmg_: 40
+          value: condState,
+          path: condStatePath,
+          name: trm("condName"),
+          states: {
+            on: {
+              fields: [{
+                node: set4NA,
+              }, {
+                node: set4CA,
+              }]
+            },
           }
         }
       }]
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

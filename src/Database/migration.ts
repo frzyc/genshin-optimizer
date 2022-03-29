@@ -1,4 +1,4 @@
-import { initialBuildSettings } from "../Build/BuildSetting"
+import { initialBuildSettings } from "../PageBuild/BuildSetting"
 import { ascensionMaxLevel } from "../Data/LevelData"
 import { allCharacterKeys } from "../Types/consts"
 import { crawlObject, layeredAssignment } from "../Util/Util"
@@ -11,7 +11,7 @@ import { getDBVersion, setDBVersion } from "./utils"
 // 2. Call the added `migrateV<x>ToV<x+1>` from `migrate`
 // 3. Update `currentDBVersion`
 
-export const currentDBVersion = 14
+export const currentDBVersion = 15
 
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
@@ -30,6 +30,7 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 12) { migrateV11ToV12(storage); setDBVersion(storage, 12) }
   if (version < 13) { migrateV12ToV13(storage); setDBVersion(storage, 13) }
   if (version < 14) { migrateV13ToV14(storage); setDBVersion(storage, 14) }
+  if (version < 15) { migrateV14ToV15(storage); setDBVersion(storage, 15) }
 
   if (version > currentDBVersion) throw new Error(`Database version ${version} is not supported`)
 
@@ -60,7 +61,7 @@ function migrateV2ToV3(storage: DBStorage) {
 }
 
 /// v5.0.0 - v5.7.15
-function migrateV3ToV4(storage: DBStorage) { // 
+function migrateV3ToV4(storage: DBStorage) { //
   // Convert anemo traveler to traveler, and remove geo traveler
   const traveler = storage.get("char_traveler_anemo")
   // Deletion of old travelers are handled during validation
@@ -197,7 +198,7 @@ function migrateV7ToV8(storage: DBStorage) {
       if (typeof character.talentLevelKeys === "object") {
         character.talent = Object.fromEntries(
           Object.entries(character.talentLevelKeys)
-            .map(([key, value]: [any, any]) => [key, value + 1]))
+            .map(([key, value]) => [key, value as number + 1]))
       }
 
       //rename buildSettings.useLockedArts to buildSettings.useExcludedArts
@@ -306,7 +307,7 @@ function migrateV12ToV13(storage: DBStorage) {
   storage.remove("ArtifactDisplay.state")
 }
 
-// 7.5.0 - Present
+// 7.5.0 - 7.8.5
 function migrateV13ToV14(storage: DBStorage) {
   // Migrate conditionalValues due to keys changes
   for (const key of storage.keys) {
@@ -376,6 +377,17 @@ function migrateV13ToV14(storage: DBStorage) {
       })
       character.conditionalValues = newCondValues
       character.team = ["", "", ""]
+      storage.set(key, character)
+    }
+  }
+}
+// 8.0.0 - Present
+function migrateV14ToV15(storage: DBStorage) {
+  for (const key of storage.keys) {
+    if (key.startsWith("char_")) {
+      const character = storage.get(key)
+      delete character.buildSettings
+      delete character.bonusStats
       storage.set(key, character)
     }
   }

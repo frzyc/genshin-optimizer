@@ -1,35 +1,57 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-const artifact: IArtifactSheet = {
+import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { equal, greaterEq, percent } from '../../../Formula/utils'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { cond, trans } from '../../SheetUtil'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import icons from './icons'
+
+const key: ArtifactSetKey = "ShimenawasReminiscence"
+const [, trm] = trans("artifact", key)
+
+const [usedEnergyStatePath, usedEnergyState] = cond(key, "usedEnergy")
+
+const set2 = greaterEq(input.artSet.ShimenawasReminiscence, 2, percent(0.18))
+const set4Norm = greaterEq(input.artSet.ShimenawasReminiscence, 4,
+  equal("used", usedEnergyState, percent(0.5)))
+const set4Charged = { ...set4Norm }
+const set4Plunge = { ...set4Norm }
+
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    atk_: set2,
+    normal_dmg_: set4Norm,
+    charged_dmg_: set4Charged,
+    plunging_dmg_: set4Plunge
+  }
+})
+
+const sheet: IArtifactSheet = {
   name: "Shimenawa's Reminiscence", rarity: [4, 5],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
-  },
-    setEffects: {
-    2: {
-      stats: { atk_: 18 }
-    },
+  icons,
+  setEffects: {
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
       document: [{
         conditional: {
-          key:"4",
-          name: "After using 15 energy",
-          stats: {
-            normal_dmg_: 50,
-            charged_dmg_: 50,
-            plunging_dmg_: 50,
+          value: usedEnergyState,
+          path: usedEnergyStatePath,
+          name: trm("afterUseEnergy"),
+          states: {
+            used: {
+              fields: [{
+                node: set4Norm,
+              }, {
+                node: set4Charged,
+              }, {
+                node: set4Plunge,
+              }]
+            }
           }
         }
       }]
     }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

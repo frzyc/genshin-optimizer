@@ -1,28 +1,29 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
+import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { greaterEq, lookup, naught, percent } from '../../../Formula/utils'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import icons from './icons'
 
-const artifact: IArtifactSheet = {
-  name: "Wanderer's Troupe", rarity: [4, 5],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
+const key: ArtifactSetKey = "WanderersTroupe"
+
+const set2 = greaterEq(input.artSet.WanderersTroupe, 2, 80)
+const set4 = greaterEq(input.artSet.WanderersTroupe, 4, lookup(input.weaponType, { "catalyst": percent(0.35), "bow": percent(0.35) }, naught))
+
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    eleMas: set2,
+    charged_dmg_: set4
   },
+})
+
+const sheet: IArtifactSheet = {
+  name: "Wanderer's Troupe", rarity: [4, 5],
+  icons,
   setEffects: {
-    2: {
-      stats: {
-        eleMas: 80
-      }
-    },
-    4: {
-      stats: stats => (stats.weaponType === "catalyst" || stats.weaponType === "bow") ? { charged_dmg_: 35 } : {}
-    }
+    2: { document: [{ fields: [{ node: set2 }] }] },
+    4: { document: [{ fields: [{ node: set4 }] }] }
   }
 }
-export default artifact
+export default new ArtifactSheet(key, sheet, data)

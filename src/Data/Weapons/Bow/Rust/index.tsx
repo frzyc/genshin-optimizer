@@ -1,18 +1,40 @@
 import { WeaponData } from 'pipeline'
-import { IWeaponSheet } from '../../../../Types/weapon'
-import data_gen from './data_gen.json'
-import icon from './Icon.png'
+import { input } from '../../../../Formula'
+import { constant, subscript } from '../../../../Formula/utils'
+import { WeaponKey } from '../../../../Types/consts'
+import { st, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
 
-const refinementVals = [40, 50, 60, 70, 80]
-const weapon: IWeaponSheet = {
-  ...data_gen as WeaponData,
+const key: WeaponKey = "Rust"
+const data_gen = data_gen_json as WeaponData
+const [tr] = trans("weapon", key)
+
+const normal_dmg_s = [.4, .5, .6, .7, .8]
+
+const normal_dmg_ = subscript(input.weapon.refineIndex, normal_dmg_s)
+const charged_dmg_ = constant(-0.1)
+
+const data = dataObjForWeaponSheet(key, data_gen, {
+  premod: {
+    normal_dmg_,
+    charged_dmg_
+  }
+})
+
+const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  stats: stats => ({
-    normal_dmg_: refinementVals[stats.weapon.refineIndex],
-    charged_dmg_: -10
-  }),
-  document: [],
+  document: [{
+    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    fields: [{
+      node: normal_dmg_
+    }, {
+      node: charged_dmg_
+    }]
+  }],
 }
-export default weapon
+export default new WeaponSheet(key, sheet, data_gen, data)

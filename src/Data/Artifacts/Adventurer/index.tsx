@@ -1,34 +1,35 @@
-import flower from './flower.png'
-import plume from './plume.png'
-import sands from './sands.png'
-import goblet from './goblet.png'
-import circlet from './circlet.png'
-import { IArtifactSheet } from '../../../Types/artifact'
-import { Translate } from '../../../Components/Translate'
-import formula from './data'
-import Stat from '../../../Stat'
-const artifact: IArtifactSheet = {
-  name: "Adventurer", rarity: [3],
-  icons: {
-    flower,
-    plume,
-    sands,
-    goblet,
-    circlet
+import icons from './icons'
+import { Data } from '../../../Formula/type'
+import { infoMut, percent, prod, greaterEq } from '../../../Formula/utils'
+import { input } from '../../../Formula'
+import { ArtifactSetKey } from '../../../Types/consts'
+import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+const key: ArtifactSetKey = "Adventurer"
+const set2 = greaterEq(input.artSet.Adventurer, 2, 1000)
+const heal = greaterEq(input.artSet.Adventurer, 4,
+  prod(percent(0.3), input.total.hp))
+
+export const data: Data = dataObjForArtifactSheet(key, {
+  premod: {
+    hp: set2
   },
+}, {
+  heal,
+})
+
+const sheet: IArtifactSheet = {
+  name: "Adventurer", rarity: [3],
+  icons,
   setEffects: {
-    2: { stats: { hp: 1000 } },
+    2: { document: [{ fields: [{ node: set2 }] }] },
     4: {
       document: [{
         fields: [{
-          text: <Translate ns="sheet_gen" key18="healing" />,
-          formulaText: stats => <span>30% {Stat.printStat("finalHP", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
-          formula: formula.regen,
-          variant: "success"
+          node: infoMut(heal, { key: "sheet_gen:healing", variant: "success" })
         }]
       }]
     }
   }
 }
-export default artifact
-
+export default new ArtifactSheet(key, sheet, data)

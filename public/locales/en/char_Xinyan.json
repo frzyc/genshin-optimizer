@@ -1,0 +1,31 @@
+{
+  "skill": {
+    "pyroShield": {
+      "1": "Shield Level 1 Pyro DMG Absorption",
+      "2": "Shield Level 2 Pyro DMG Absorption",
+      "3": "Shield Level 3 Pyro DMG Absorption"
+    },
+    "shieldLevel": "Shield level",
+    "shieldLevels": {
+      "1": "1: Ad Lib",
+      "2": "2: Lead-In",
+      "3": "3: Rave"
+    }
+  },
+  "p1": {
+    "desc": "Decrease hit trigger for <strong>Sweeping Fervor</strong> by 1"
+  },
+  "p2": {
+    "activeShield": "Active character shielded by <strong>Sweeping Fervor</strong>"
+  },
+  "c2": {
+    "key_": "<strong>Riff Revolution</strong> Physical DMG CRIT Rate Bonus",
+    "shield": "Form a Level 3: Rave Shield when cast"
+  },
+  "c4": {
+    "swingHit": "<pyro>Swing DMG</pyro> hits on opponents"
+  },
+  "c6": {
+    "duringCharge": "While performing a Charged Attack"
+  }
+}

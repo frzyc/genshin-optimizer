@@ -1,180 +1,252 @@
-import card from './Character_Sucrose_Card.jpg'
-import thumb from './Icon.png'
-import thumbSide from './IconSide.png'
-import banner from './Banner.png'
-import c1 from './constellation1.png'
-import c2 from './constellation2.png'
-import c3 from './constellation3.png'
-import c4 from './constellation4.png'
-import c5 from './constellation5.png'
-import c6 from './constellation6.png'
-import skill from './skill.png'
-import burst from './burst.png'
-import passive1 from './passive1.png'
-import passive2 from './passive2.png'
-import passive3 from './passive3.png'
-import Stat from '../../../Stat'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
-import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
-import { ICharacterSheet } from '../../../Types/character'
-import { absorbableEle } from '../dataUtil'
-import { Translate } from '../../../Components/Translate'
-import { chargedDocSection, conditionalHeader, normalDocSection, normalSrc, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
-import { WeaponTypeKey } from '../../../Types/consts'
+import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
-import { KeyPath } from '../../../Util/KeyPathUtil'
-import { FormulaPathBase } from '../../formula'
-const path = KeyPath<FormulaPathBase, any>().character.Sucrose
-const tr = (strKey: string) => <Translate ns="char_Sucrose_gen" key18={strKey} />
-const char: ICharacterSheet = {
+import { input, target } from "../../../Formula/index"
+import { constant, equal, greaterEq, infoMut, percent, prod, unequal } from "../../../Formula/utils"
+import { absorbableEle, CharacterKey, ElementKey } from '../../../Types/consts'
+import { objectKeyMap } from '../../../Util/Util'
+import { cond, sgt, st, trans } from '../../SheetUtil'
+import CharacterSheet, { ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
+import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
+import data_gen_src from './data_gen.json'
+import skillParam_gen from './skillParam_gen.json'
+
+const data_gen = data_gen_src as CharacterData
+const auto = normalSrc(data_gen.weaponTypeKey)
+const key: CharacterKey = "Sucrose"
+const elementKey: ElementKey = "anemo"
+const [tr, trm] = trans("char", key)
+
+let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
+const datamine = {
+  normal: {
+    hitArr: [
+      skillParam_gen.auto[a++], // 1
+      skillParam_gen.auto[a++], // 2
+      skillParam_gen.auto[a++], // 3
+      skillParam_gen.auto[a++], // 4
+    ]
+  },
+  charged: {
+    dmg: skillParam_gen.auto[a++],
+    stamina: skillParam_gen.auto[a++][0],
+  },
+  plunging: {
+    dmg: skillParam_gen.auto[a++],
+    low: skillParam_gen.auto[a++],
+    high: skillParam_gen.auto[a++],
+  },
+  skill: {
+    press: skillParam_gen.skill[s++],
+    cd: skillParam_gen.skill[s++][0],
+  },
+  burst: {
+    dot: skillParam_gen.burst[b++],
+    dmg_: skillParam_gen.burst[b++],
+    duration: skillParam_gen.burst[b++][0],
+    cd: skillParam_gen.burst[b++][0],
+    enerCost: skillParam_gen.burst[b++][0],
+  },
+  passive1: {
+    eleMas: skillParam_gen.passive1[p1++][0],
+    duration: skillParam_gen.passive1[p1++][0],
+  },
+  passive2: {
+    eleMas_: skillParam_gen.passive2[p2++][0],
+    duration: skillParam_gen.passive2[p2++][0],
+  },
+  constellation2: {
+    durationInc: skillParam_gen.constellation2[0],
+  },
+  constellation6: {
+    ele_dmg_: skillParam_gen.constellation6[0],
+  }
+} as const
+
+const [condAbsorptionPath, condAbsorption] = cond(key, "absorption")
+// A1 Swirl Reaction Element
+const [condSwirlReactionPath, condSwirlReaction] = cond(key, "swirl")
+// Set to "hit" if skill hit opponents
+const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(key, "skillHit")
+
+// Conditional Output
+const asc1Disp = greaterEq(input.asc, 1, datamine.passive1.eleMas)
+const asc1 = unequal(target.charKey, key, // Not applying to Sucrose
+    equal(target.charEle, condSwirlReaction, asc1Disp)) // And element matches the swirl
+const asc4Disp = equal("hit", condSkillHitOpponent,
+    greaterEq(input.asc, 4,
+      prod(percent(datamine.passive2.eleMas_), input.premod.eleMas)))
+const asc4 = unequal(target.charKey, key, asc4Disp)
+const c6Base = greaterEq(input.constellation, 6, percent(0.2))
+
+const c6Bonus = objectKeyMap(absorbableEle.map(ele => `${ele}_dmg_` as const), key =>
+  equal(condAbsorption, key.slice(0, -5), c6Base))
+
+export const dmgFormulas = {
+  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+    [i, dmgNode("atk", arr, "normal")])),
+  charged: {
+    dmg: dmgNode("atk", datamine.charged.dmg, "charged")
+  },
+  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+    [key, dmgNode("atk", value, "plunging")])),
+  skill: {
+    press: dmgNode("atk", datamine.skill.press, "skill")
+  },
+  burst: {
+    dot: dmgNode("atk", datamine.burst.dot, "burst"),
+    ...Object.fromEntries(absorbableEle.map(key =>
+      [key, equal(condAbsorption, key, dmgNode("atk", datamine.burst.dmg_, "burst", { hit: { ele: constant(key) } }))]))
+  },
+}
+
+const nodeC3 = greaterEq(input.constellation, 3, 3)
+const nodeC5 = greaterEq(input.constellation, 5, 3)
+export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {
+  bonus: {
+    skill: nodeC3,
+    burst: nodeC5,
+  },
+  teamBuff: {
+    total: { eleMas: asc4 },
+    premod: { ...c6Bonus, eleMas: asc1 },
+  }
+})
+
+const sheet: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
   rarity: data_gen.star,
-  elementKey: "anemo",
-  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
+  elementKey,
+  weaponTypeKey: data_gen.weaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),
-  baseStat: data_gen.base,
-  baseStatCurve: data_gen.curves,
-  ascensions: data_gen.ascensions,
   talent: {
-    formula,
     sheets: {
-      auto: {
-        name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
-        sections: [
-          normalDocSection(tr, formula, data),
-          chargedDocSection(tr, formula, data, 50),
-          plungeDocSection(tr, formula, data),
-        ],
-      },
-      skill: {
-        name: tr("skill.name"),
-        img: skill,
-        sections: [{
-          text: tr("skill.description"),
-          fields: [{
-            text: "Skill DMG",
-            formulaText: stats => <span>{data.skill.press[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-            formula: formula.skill.press,
-            variant: stats => getTalentStatKeyVariant("skill", stats),
-          }, {
-            text: "CD",
-            value: "15s"
-          }]
-        }]
-      },
-      burst: {
-        name: tr("burst.name"),
-        img: burst,
-        sections: [{
-          text: tr("burst.description"),
-          fields: [{
-            text: "DoT",
-            formulaText: stats => <span>{data.burst.dot[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-            formula: formula.burst.dot,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
-          }, {
-            text: "Duration",
-            value: "6s"
-          }, {
-            text: "CD",
-            value: "20s"
-          }, {
-            text: "Energy Cost",
-            value: "80"
-          }],
-          conditional: { // Absorption
-            key: "q",
-            name: "Elemental Absorption",
-            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-              fields: [{
-                canShow: stats => {
-                  const [num, condEleKey] = stats.conditionalValues?.character?.Sucrose?.q ?? []
-                  return !!num && condEleKey === eleKey
-                },
-                text: "Absorption DoT",
-                formulaText: stats => <span>{data.burst.dmg_[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats, eleKey), stats)}</span>,
-                formula: formula.burst[eleKey],
-                variant: eleKey
-              }]
-            }]))
-          },
+      auto: talentTemplate("auto", tr, auto, undefined, undefined, [{
+        ...sectionTemplate("auto", tr, auto,
+          datamine.normal.hitArr.map((_, i) => ({
+            node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
+          }))
+        ),
+        text: tr("auto.fields.normal")
+      }, {
+        ...sectionTemplate("auto", tr, auto, [{
+          node: infoMut(dmgFormulas.charged.dmg, { key: `char_${key}_gen:auto.skillParams.4` }),
         }, {
-          conditional: { // Absorption
-            key: "c6",
-            partyBuff: "partyAll",
-            header: conditionalHeader("constellation6", tr, c6),
-            description: tr("constellation6.description"),
-            name: "Elemental Absorption",
-            canShow: stats => stats.constellation >= 6,
-            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-              stats: { [`${eleKey}_dmg_`]: 20 }
-            }]))
-          },
-        }]
-      },
-      passive1: {
-        name: tr("passive1.name"),
-        img: passive1,
-        sections: [{
-          text: tr("passive1.description"),
-          conditional: {
-            key: "a1",
-            canShow: stats => stats.ascension >= 4,
-            partyBuff: "partyOnly",
-            header: conditionalHeader("passive1", tr, passive1),
-            description: tr("passive1.description"),
-            name: "When Sucrose triggers a Swirl reaction",
+          text: tr("auto.skillParams.5"),
+          value: datamine.charged.stamina,
+        }]),
+        text: tr("auto.fields.charged"),
+      }, {
+        ...sectionTemplate("auto", tr, auto, [{
+          node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+        }, {
+          node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        }, {
+          node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        }]),
+        text: tr("auto.fields.plunging"),
+      }]),
+      skill: talentTemplate("skill", tr, skill, [{
+        node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` }),
+      }, {
+        text: tr("skill.skillParams.1"),
+        value: datamine.skill.cd,
+        unit: "s"
+      }, {
+        canShow: (data) => data.get(input.constellation).value >= 1,
+        text: st("charges"),
+        value: 2
+      }]),
+      burst: talentTemplate("burst", tr, burst, [{
+        node: infoMut(dmgFormulas.burst.dot, { key: `char_${key}_gen:burst.skillParams.0` }),
+      }, {
+        text: tr("burst.skillParams.2"),
+        value: data => data.get(input.constellation).value >= 2 ? `${datamine.burst.duration}s + 2` : datamine.burst.duration,
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.3"),
+        value: datamine.burst.cd,
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.4"),
+        value: datamine.burst.enerCost,
+      }], { // Absorption
+        value: condAbsorption,
+        path: condAbsorptionPath,
+        name: st("eleAbsor"),
+        states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+          name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+          fields: [{
+            node: infoMut(dmgFormulas.burst[eleKey], { key: `char_${key}_gen:burst.skillParams.1` }),
+          }]
+        }]))
+      }, [
+        sectionTemplate("constellation6", tr, c6, undefined, {
+          value: condAbsorption,
+          path: condAbsorptionPath,
+          name: st("eleAbsor"),
+          teamBuff: true,
+          canShow: greaterEq(input.constellation, 6, 1),
+          states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+            name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
             fields: [{
-              text: <ColorText color="warning">This Team buff currently does not work. please add the EM manually to the characer.</ColorText>
-            }]
-          }
-        }]
-      },
-      passive2: {
-        name: tr("passive2.name"),
-        img: passive2,
-        sections: [{
-          text: tr("passive2.description"),
-          conditional: {
-            key: "a4",
-            canShow: stats => stats.ascension >= 4,
-            partyBuff: "partyOnly",
-            header: conditionalHeader("passive2", tr, passive2),
-            description: tr("passive2.description"),
-            name: "When Skill hits opponent",
-            stats: {
-              modifiers: { eleMas: [path.passive2.em()] },
-            },
+              node: c6Bonus[`${eleKey}_dmg_`],
+            }],
+          }]))
+        }),
+      ]),
+      passive1: talentTemplate("passive1", tr, passive1, undefined, {
+        // Swirl Element
+        teamBuff: true,
+        value: condSwirlReaction,
+        path: condSwirlReactionPath,
+        name: st("eleSwirled"),
+        // Hide for Sucrose
+        canShow: greaterEq(input.asc, 1, unequal(input.activeCharKey, key, 1)),
+        states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+          name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+          fields: [{
+            node: infoMut(asc1Disp, { key: "eleMas" })
+          }, {
+            text: sgt("duration"),
+            value: datamine.passive1.duration,
+            unit: "s",
+          }],
+        }]))
+      }),
+      passive2: talentTemplate("passive2", tr, passive2, undefined, {
+        // Swirl element
+        teamBuff: true,
+        value: condSkillHitOpponent,
+        path: condSkillHitOpponentPath,
+        name: trm("asc4"),
+        canShow: greaterEq(input.asc, 4, unequal(input.activeCharKey, key, 1)),
+        states: {
+          hit: {
             fields: [{
-              text: "Elemental Mastery Bonus",
-              formulaText: stats => <span>20% {Stat.printStat("eleMas", stats, true)}</span>,
-              formula: formula.passive2.em
+              node: infoMut(asc4Disp, { key: "eleMas" }),
             }, {
               text: sgt("duration"),
-              value: 8,
+              value: datamine.passive2.duration,
               unit: "s"
-            }]
+            }],
           }
-        }]
-      },
+        }
+      }),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };
-export default char;
+export default new CharacterSheet(sheet, data);

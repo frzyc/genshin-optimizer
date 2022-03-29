@@ -1,25 +1,25 @@
 import { KeyboardArrowUp } from '@mui/icons-material';
 import { Box, Container, Fab, Grid, Skeleton, useScrollTrigger, Zoom } from '@mui/material';
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useMemo, useState } from 'react';
 import { HashRouter, Route, Switch } from "react-router-dom";
 import './App.scss';
 import './Database/Database';
+import { ArtCharDatabase, DatabaseContext } from './Database/Database';
+import { DBLocalStorage } from './Database/DBStorage';
 import Footer from './Footer';
-import { GlobalSettingsContext, useGlobalSettings } from './GlobalSettings';
 import Header from './Header';
 import './i18n';
 
 const Home = lazy(() => import('./PageHome/HomeDisplay'))
-const ArtifactDisplay = lazy(() => import('./Artifact/ArtifactDisplay'))
-const CharacterRouter = lazy(() => import('./Character/CharacterRouter'))
-const BuildDisplay = lazy(() => import('./Build/BuildDisplay'))
-const ToolsDisplay = lazy(() => import('./Tools/ToolsDisplay'))
-const TestDisplay = lazy(() => import('./TestPage/TestDisplay'))
-const FlexDisplay = lazy(() => import('./FlexPage/FlexDisplay'))
-const SettingsDisplay = lazy(() => import('./Settings/SettingsDisplay'))
-const WeaponDisplay = lazy(() => import('./Weapon/WeaponDisplay'))
-const DocumentationDisplay = lazy(() => import('./DocumentationPage/DocumentationDisplay'))
-const ScannerDisplay = lazy(() => import('./ScannerPage/ScannerDisplay'))
+const ArtifactDisplay = lazy(() => import('./PageArtifact/ArtifactDisplay'))
+const CharacterRouter = lazy(() => import('./PageCharacter/CharacterRouter'))
+const BuildDisplay = lazy(() => import('./PageBuild/BuildDisplay'))
+const ToolsDisplay = lazy(() => import('./PageTools/ToolsDisplay'))
+const TestDisplay = lazy(() => import('./PageTest/TestDisplay'))
+const SettingsDisplay = lazy(() => import('./PageSettings/SettingsDisplay'))
+const WeaponDisplay = lazy(() => import('./PageWeapon/WeaponDisplay'))
+const DocumentationDisplay = lazy(() => import('./PageDocumentation/DocumentationDisplay'))
+const ScannerDisplay = lazy(() => import('./PageScanner/ScannerDisplay'))
 
 function ScrollTop({ children }: { children: React.ReactElement }) {
   const trigger = useScrollTrigger({
@@ -55,9 +55,10 @@ function ScrollTop({ children }: { children: React.ReactElement }) {
 }
 
 function App() {
-  const [globalSettings, globalSettingsDispatch] = useGlobalSettings()
-  return <HashRouter basename="/">
-    <GlobalSettingsContext.Provider value={{ globalSettings, globalSettingsDispatch }}>
+  const [database, setDatabase] = useState(() => new ArtCharDatabase(new DBLocalStorage(localStorage)))
+  const dbContextObj = useMemo(() => ({ database, setDatabase }), [database, setDatabase])
+  return <DatabaseContext.Provider value={dbContextObj}>
+    <HashRouter basename="/">
       <Grid container direction="column" minHeight="100vh">
         <Grid item >
           <Header anchor="back-to-top-anchor" />
@@ -71,9 +72,8 @@ function App() {
               <Route path="/build" component={BuildDisplay} />
               <Route path="/tools" component={ToolsDisplay} />
               {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
-              <Route path="/database" component={SettingsDisplay} />
+              <Route path="/setting" component={SettingsDisplay} />
               <Route path="/doc" component={DocumentationDisplay} />
-              <Route path="/flex" component={FlexDisplay} />
               <Route path="/scanner" component={ScannerDisplay} />
               <Route path="/" component={Home} />
             </Switch>
@@ -90,7 +90,7 @@ function App() {
           <KeyboardArrowUp />
         </Fab>
       </ScrollTop>
-    </GlobalSettingsContext.Provider>
-  </HashRouter>
+    </HashRouter>
+  </DatabaseContext.Provider>
 }
 export default App;

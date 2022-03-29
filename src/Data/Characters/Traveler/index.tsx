@@ -1,15 +1,19 @@
 import card from './Traveler_Female_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
-import data_gen from './data_gen.json'
-import { ICharacterSheet } from '../../../Types/character';
-import anemo from './anemo'
-import geo from './geo'
-import electro from './electro'
-import { Translate } from '../../../Components/Translate'
-import { WeaponTypeKey } from '../../../Types/consts';
-const tr = (strKey: string) => <Translate ns="char_Traveler_gen" key18={strKey} />
-const char: ICharacterSheet = {
+import anemo, { data as anemoData } from './anemo'
+import geo, { data as geoData } from './geo'
+import electro, { data as electroData} from './electro'
+import { CharacterKey, WeaponTypeKey } from '../../../Types/consts';
+import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
+import data_gen_src from './data_gen.json'
+import { CharacterData } from 'pipeline'
+import { trans } from '../../SheetUtil'
+const data_gen = data_gen_src as CharacterData
+const key: CharacterKey = "Traveler"
+const [tr] = trans("char", key)
+
+const sheet: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
@@ -19,9 +23,14 @@ const char: ICharacterSheet = {
   gender: "F/M",
   constellationName: tr("constellationName"),
   title: tr("title"),
-  baseStat: data_gen.base,
-  baseStatCurve: data_gen.curves,
-  ascensions: data_gen.ascensions,
-  talents: { anemo, geo, electro }
+  talents: {
+    anemo,
+    geo,
+    electro,
+  }
 };
-export default char;
+export default new CharacterSheet(sheet, {
+  anemo: anemoData,
+  geo: geoData,
+  electro: electroData,
+});

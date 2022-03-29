@@ -59,7 +59,7 @@ i18n
 
     backend: process.env.NODE_ENV === "development" ? {
       // Path to load localization data from.
-      loadPath: 'genshin-optimizer/locales/{{lng}}/{{ns}}.json',
+      loadPath: 'genshin-optimizer-beta/locales/{{lng}}/{{ns}}.json',
     } : {
       // Path to load localization data from.
       loadPath: 'locales/{{lng}}/{{ns}}.json',
