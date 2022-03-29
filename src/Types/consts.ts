@@ -53,7 +53,7 @@ export const allCharacterKeys = [
   "Barbara",
   "Beidou",
   "Bennett",
-  // "Chongyun",
+  "Chongyun",
   "Diluc",
   "Diona",
   "Fischl",
