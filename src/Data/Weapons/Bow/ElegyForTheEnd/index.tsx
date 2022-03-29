@@ -18,14 +18,22 @@ const atk_s = [0.20, 0.25, 0.30, 0.35, 0.40]
 
 const [condPath, condNode] = cond(key, "ThePartingRefrain")
 const eleMas = subscript(input.weapon.refineIndex, eleMasInc, { key: "eleMas" })
+// TODO: These should not stack, similar to NO. But I don't want to copy NO's
+// solution, since then these nodes won't show in the team buff panel. And it's
+// a bit unlikely people will try to stack this buff
 const eleMas2 = equal(condNode, 'on', subscript(input.weapon.refineIndex, eleMasInc2, { key: "eleMas" }))
 const atk_ = equal(condNode, 'on', subscript(input.weapon.refineIndex, atk_s,))
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
-    eleMas: sum(eleMas, eleMas2),
-    atk_
+    eleMas,
   },
+  teamBuff: {
+    premod: {
+      atk_,
+      eleMas: eleMas2
+    }
+  }
 })
 const sheet: IWeaponSheet = {
   icon,
@@ -38,6 +46,7 @@ const sheet: IWeaponSheet = {
     conditional: {
       value: condNode,
       path: condPath,
+      teamBuff: true,
       header: conditionalHeader(tr, icon, iconAwaken, trm("milMove")),
       description: conditionaldesc(tr),
       name: trm("condName"),
