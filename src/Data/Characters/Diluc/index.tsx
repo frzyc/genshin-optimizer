@@ -113,14 +113,16 @@ const dmgFormulas = {
     firstHit: dmgNode("atk", datamine.skill.firstHit, "skill"),
     secondHit: dmgNode("atk", datamine.skill.secondHit, "skill"),
     thirdHit: dmgNode("atk", datamine.skill.thridHit, "skill"),
-    secondHitBoost: dmgNode("atk", datamine.skill.secondHit, "skill", skillAdditional),
-    thirdHitBoost: dmgNode("atk", datamine.skill.thridHit, "skill", skillAdditional)
   },
   burst: {
     slashDmg: dmgNode("atk", datamine.burst.slashDmg, "burst"),
     dotDmg: dmgNode("atk", datamine.burst.dotDmg, "burst"),
     explosionDmg: dmgNode("atk", datamine.burst.explosionDmg, "burst"),
   },
+  constellation4: {
+    secondHitBoost: greaterEq(input.constellation, 4, dmgNode("atk", datamine.skill.secondHit, "skill", skillAdditional)),
+    thirdHitBoost: greaterEq(input.constellation, 4, dmgNode("atk", datamine.skill.thridHit, "skill", skillAdditional)),
+  }
 }
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -202,12 +204,10 @@ const sheet: ICharacterSheet = {
             node: infoMut(dmgFormulas.skill.thirdHit, { key: `char_${key}_gen:skill.skillParams.2` }),
           },
           {
-            canShow: data => data.get(input.constellation).value >= 4,
-            node: infoMut(dmgFormulas.skill.secondHitBoost, { key: `char_${key}:skillB.0` }),
+            node: infoMut(dmgFormulas.constellation4.secondHitBoost, { key: `char_${key}:skillB.0` }),
           },
           {
-            canShow: data => data.get(input.constellation).value >= 4,
-            node: infoMut(dmgFormulas.skill.thirdHitBoost, { key: `char_${key}:skillB.1` }),
+            node: infoMut(dmgFormulas.constellation4.thirdHitBoost, { key: `char_${key}:skillB.1` }),
           },
           {
             text: tr("burst.skillParams.3"),

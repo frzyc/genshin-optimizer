@@ -3,13 +3,14 @@ import { useCallback, useEffect, useState } from "react"
 import { clamp } from "../../Util/Util"
 import CustomNumberInput from "../CustomNumberInput"
 
-export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHigh, setBoth, dark = false }: {
+export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHigh, setBoth, dark = false, disabled = false }: {
   levelLow: number,
   levelHigh: number,
   setLow: (low: number) => void,
   setHigh: (high: number) => void,
   setBoth: (low: number, high: number) => void,
-  dark?: boolean
+  dark?: boolean,
+  disabled?: boolean,
 }) {
   const [sliderLow, setsliderLow] = useState(levelLow)
   const [sliderHigh, setsliderHigh] = useState(levelHigh)
@@ -29,6 +30,7 @@ export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHi
       sx={{ pl: 2, width: 100, }}
       inputProps={{ sx: { textAlign: "center" } }}
       startAdornment={"Level: "}
+      disabled={disabled}
     />
     <Slider sx={{ width: 100, flexGrow: 1, mx: 2 }}
       getAriaLabel={() => 'Arifact Level Range'}
@@ -37,12 +39,14 @@ export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHi
       onChangeCommitted={(e, value) => setBoth(value[0], value[1])}
       valueLabelDisplay="auto"
       min={0} max={20} step={1} marks
+      disabled={disabled}
     />
     <CustomNumberInput
       value={sliderHigh}
       onChange={val => setHigh(clamp(val, levelLow, 20))}
       sx={{ px: 1, width: 50, }}
       inputProps={{ sx: { textAlign: "center" } }}
+      disabled={disabled}
     />
   </Card>
 }

@@ -460,7 +460,9 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                   <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh} dark
                     setLow={levelLow => buildSettingsDispatch({ levelLow })}
                     setHigh={levelHigh => buildSettingsDispatch({ levelHigh })}
-                    setBoth={(levelLow, levelHigh) => buildSettingsDispatch({ levelLow, levelHigh })} />
+                    setBoth={(levelLow, levelHigh) => buildSettingsDispatch({ levelLow, levelHigh })}
+                    disabled={generatingBuilds}
+                  />
                 </CardContent>
               </CardLight>}
               {/* main stat selector */}
