@@ -1,18 +1,18 @@
 {
   "name": "Xiao",
   "title": "Vigilant Yaksha",
-  "description": "Yaksha, sesosok makhluk abadi yang juga memiliki julukan \"Conqueror of Demons\" atau \"Guardian Yaksha\".",
+  "description": "Yaksha, sesosok Adeptus yang melindungi Liyue. Juga memiliki julukan \"Conqueror of Demons\" atau \"Vigilant Yaksha\".",
   "constellationName": "Alatus Nemeseos",
   "auto": {
     "name": "Whirlwind Thrust",
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
-        "1": "Melancarkan hingga 6 serangan berturut-turut."
+        "1": "Melancarkan hingga 6 serangan tombak berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Mengonsumsi sejumlah Stamina untuk melakukan serangan melompat."
+        "1": "Mengonsumsi sejumlah Stamina untuk melakukan serangan ke arah atas."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
@@ -42,11 +42,11 @@
   "skill": {
     "name": "Lemniscatic Wind Cycling",
     "description": {
-      "0": "Xiao menerjang ke depan dan mengakibatkan <anemo>Anemo DMG</anemo> pada musuh di jalur terjangan.",
-      "1": "Dapat digunakan di tengah udara.",
-      "2": "Dimulai dengan 2 kali penggunaan.",
+      "0": "Xiao menerjang ke depan dan mengakibatkan <anemo>Anemo DMG</anemo> pada musuh di jalurnya.",
+      "1": "Dapat digunakan di udara.",
+      "2": "Memiliki 2 kali penggunaan (charge) dari awal.",
       "3": "<br/>",
-      "4": "<i>Menurut legenda dari negara lain, dunia ini suatu hari akan dihancurkan oleh dua roda angin raksasa. Keahlian Xiao dalam menggunakan tombak tiada duanya dan dapat menebas musuh seperti dua roda angin raksasa dalam legenda.</i>"
+      "4": "<i>Menurut legenda dari dataran lain, dunia ini suatu hari akan dihancurkan oleh dua roda angin raksasa. Keahlian Xiao dalam menggunakan tombak tiada duanya, dan dapat menebas musuh seperti dua roda angin raksasa di legenda tersebut.</i>"
     },
     "skillParams": {
       "0": "DMG Skill",
@@ -70,22 +70,22 @@
   "burst": {
     "name": "Bane of All Evil",
     "description": {
-      "0": "Menjelma menjadi wujud Yaksha yang ditakuti oleh para iblis dan juga Archon sejak ribuan tahun lalu.",
+      "0": "Xiao mengenakan Yaksha Mask yang ditakuti oleh para iblis dan juga Archon pada ribuan tahun lalu.",
       "1": "<br/>",
-      "2": "<strong>Yaksha's Mask</strong>",
+      "2": "<strong>Yaksha Mask</strong>",
       "3": [
-        "Meningkatkan kekuatan loncatan Xiao secara drastis.",
+        "Meningkatkan kekuatan melompat Xiao secara drastis.",
         "Meningkatkan DMG dan area serangan.",
-        "Mengonversi DMG serangan menjadi <anemo>Anemo DMG</anemo>, konversi ini tidak dapat ditimpa oleh Elemental Infusion lainnya."
+        "Mengonversi DMG serangan menjadi <anemo>Anemo DMG</anemo> yang tidak dapat ditimpa oleh Elemental Infusion lainnya."
       ],
       "4": "<br/>",
-      "5": "Dalam kondisi ini, Xiao akan terus kehilangan HP.",
-      "6": "Efek dari skill berakhir saat Xiao keluar dari medan pertempuran.",
+      "5": "Dalam status ini, Xiao akan terus kehilangan HP.",
+      "6": "Efek ini akan hilang saat Xiao keluar dari medan pertempuran.",
       "7": "<br/>",
-      "8": "<i>Saat mengenakan topeng Yaksha, Xiao mengambil bentuk Vigilant Yaksha — sang penakluk iblis yang mengerikan. Dia memperoleh kekuatan yang sangat besar, namun peningkatan kekuatan tersebut harus dibayar dengan rasa sakit yang sama besarnya. Dia juga disebut \"The Bane of All Evil.\"</i>"
+      "8": "<i>Saat mengenakan topeng Yaksha-nya, Xiao berubah wujud menjadi Vigilant Yaksha — sang penakluk iblis yang ditakuti. Kekuatan yang sangat besar harus dibayar dengan rasa sakit yang sama besarnya. Dia juga disebut sebagai \"The Bane of All Evil.\"</i>"
     },
     "skillParams": {
-      "0": "Bonus Normal/Charged/Plunging Attack",
+      "0": "Bonus DMG Normal/Charged/Plunging Attack",
       "1": "Pengurangan HP",
       "2": "Durasi",
       "3": "Cooldown",
@@ -106,15 +106,15 @@
   "passive1": {
     "name": "Conqueror of Evil: Tamer of Demons",
     "description": {
-      "0": "Meningkatkan 5% DMG Xiao saat berada dalam kondisi <strong>Bane of All Evil</strong>. Selama durasi skill, DMG Xiao akan terus meningkat sebesar 5% setiap 3 detik.",
-      "1": "Batas peningkatan DMG Talenta: 25%."
+      "0": "Meningkatkan 5% DMG Xiao saat berada dalam status <strong>Bane of All Evil</strong>. Selama durasi skill, DMG Xiao akan terus meningkat sebesar 5% setiap 3 detik.",
+      "1": "Batas maksimum peningkatan DMG adalah 25%."
     }
   },
   "passive2": {
     "name": "Dissolution Eon: Heaven Fall",
     "description": {
-      "0": "Menggunakan skill <strong>Lemniscatic Wind Cycling</strong> akan meningkatkan 15% DMG Lemniscatic Wind Cycling selanjutnya selama 7 detik.",
-      "1": "Maksimum ditumpuk 3 lapis. Durasi terulang setiap tumpukan baru ditambahkan."
+      "0": "Menggunakan <strong>Lemniscatic Wind Cycling</strong> akan meningkatkan 15% DMG Lemniscatic Wind Cycling selanjutnya selama 7 detik.",
+      "1": "Efek dapat ditumpuk hingga 3 lapis. Durasi akan diperbarui setiap mendapat tumpukan baru."
     }
   },
   "passive3": {
@@ -146,7 +146,7 @@
   "constellation4": {
     "name": "Transcension: Extinction of Suffering",
     "description": {
-      "0": "Saat HP Xiao kurang dari 50%, mendapatkan 100% Bonus DEF."
+      "0": "Saat HP Xiao kurang dari 50%, DEF Xiao meningkat 100%."
     }
   },
   "constellation5": {
@@ -159,7 +159,7 @@
   "constellation6": {
     "name": "Conqueror of Evil: Guardian Yaksha",
     "description": {
-      "0": "Saat berada dalam kondisi <strong>Bane of All Evil</strong>, Xiao akan mendapatkan 1 charge <strong>Lemniscatic Wind Cycling</strong> bila menyerang 2 musuh atau lebih dengan menggunakan Plunging Attack. Selain itu, Xiao bisa menggunakan Lemniscatic Wind Cycling terus-menerus tanpa mempedulikan waktu CD selama 1 detik berikutnya."
+      "0": "Selama berada dalam status <strong>Bane of All Evil</strong>, Xiao akan mendapatkan 1 charge <strong>Lemniscatic Wind Cycling</strong> saat menyerang 2 musuh atau lebih dengan Plunging Attack. Selain itu, Xiao bisa menggunakan Lemniscatic Wind Cycling terus-menerus tanpa memedulikan waktu CD selama 1 detik berikutnya."
     }
   }
 }

@@ -53,8 +53,8 @@
     "skillParams": {
       "0": "DMG Serangan Oz",
       "1": "Summoning DMG",
-      "2": "Durasi OZ",
-      "3": "CD",
+      "2": "Durasi Oz",
+      "3": "Cooldown",
       "4": "",
       "5": "",
       "6": "",
@@ -85,7 +85,7 @@
     },
     "skillParams": {
       "0": "DMG Falling Thunder",
-      "1": "CD",
+      "1": "Cooldown",
       "2": "Konsumsi Energy",
       "3": "",
       "4": "",

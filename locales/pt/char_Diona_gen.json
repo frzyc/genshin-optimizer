@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Ataque Carregado</strong>",
         "1": "Realiza um ataque <strong>Disparo com Mira</strong> mais preciso e com mais dano.",
-        "2": "Enquanto mira, gelo será acumulado na flecha. Uma flecha totalmente carregada causará <cryo>Dano Cryo</cryo>"
+        "2": "Enquanto mira, gelo será acumulado na flecha. Uma flecha totalmente carregada causará <cryo>Dano Cryo</cryo>."
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong> Dispara uma chuva de flechas no ar antes de cair e impactar o chão, causando Dano AdE no impacto."
@@ -42,7 +42,7 @@
     "name": "Garra de Gato Gelada",
     "description": {
       "0": "Dispara uma Garra de Gato Gelada que causa <cryo>Dano Cryo</cryo> e cria um escudo.",
-      "1": " A Absorção de Dano do escudo é baseada na Vida Máxima de Diona, e sua duração depende do número de garras que atingem seu objetivo.",
+      "1": "A Absorção de Dano do escudo é baseada na Vida Máxima de Diona, e sua duração depende do número de garras que atingem seu objetivo.",
       "2": "<br/>",
       "3": "<strong>Tocar</strong>",
       "4": "Dispara rapidamente 2 Garras de Gato Gelada.",
@@ -112,7 +112,7 @@
   "passive2": {
     "name": "Diversão dos Bêbados",
     "description": {
-      "0": "Inimigos que entram na AdE do <strong>Coquetel Assassino</strong> causam 10% a menos de ATQ por 15s."
+      "0": "Inimigos que entram na AdE do <strong>Coquetel Assassino</strong> tem seu ATQ reduzido em 10% por 15s."
     }
   },
   "passive3": {

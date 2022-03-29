@@ -4,7 +4,7 @@
   "description": "Tiên nhân bảo vệ Liyue - Dạ Xoa. Hiệu là \"Hàng Ma Đại Thánh\", biệt danh \"Hộ Pháp Dạ Xoa Đại Tướng\".",
   "constellationName": "Cung Kim Sí Bằng Vương",
   "auto": {
-    "name": "Quyển Sách Phủ Bụi",
+    "name": "Cuốn Quét Bụi Trần",
     "fields": {
       "normal": {
         "0": "<strong><strong>Tấn Công Thường</strong>",
@@ -42,11 +42,11 @@
   "skill": {
     "name": "Đôi Bánh Xe Gió",
     "description": {
-      "0": "Tấn công cực nhanh, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> cho địch trên đường.",
-      "1": "Có thể kích hoạt trên không trung.",
+      "0": "Lao đến cực nhanh, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> cho kẻ địch trên đường.",
+      "1": "Có thể thi triển trên không trung.",
       "2": "Ban đầu có 2 lần sử dụng.",
       "3": "<br/>",
-      "4": "<i>Trong truyền thuyết của quê hương, thế giới sẽ bị nghiền nát bởi 2 bánh xe gió. Thương pháp của Xiao đã đạt trình độ siêu phàm, đi lại giống như 2 cỗ bánh xe gió xé nát địch.</i>"
+      "4": "<i>Theo truyền thuyết của nơi nào đó, thế giới sẽ bị nghiền nát bởi hai bánh xe gió. Thương pháp của Xiao đã đạt trình độ xuất thần nhập quỷ, đi lại giống như hai cỗ bánh xe gió xé nát phe địch.</i>"
     },
     "skillParams": {
       "0": "Sát Thương Kỹ Năng",
@@ -85,7 +85,7 @@
       "8": "<i>Đeo lên mặt nạ Hàng Ma, Hộ Pháp Dạ Xoa xuất hiện khiến tất cả yêu ma run sợ, hàng ma diệt quái. Nhận được sức mạnh to lớn, cũng đem đến đau đớn cùng cực. Tên gọi là Vũ Điệu Trừ Yêu.</i>"
     },
     "skillParams": {
-      "0": "Tấn Công Thường/Trọng Kích/Sát thương tấn công khi đáp tăng",
+      "0": "Tăng ST Tấn Công Thường/Trọng Kích/Tấn Công Khi Đáp",
       "1": "Mất HP",
       "2": "Thời Gian Kéo Dài",
       "3": "CD",
@@ -133,7 +133,7 @@
   "constellation2": {
     "name": "Không Kiếp - Hư Không Hoa Khai",
     "description": {
-      "0": "Khi ở trong đội nhưng không ra trận, hiệu quả nạp Nguyên Tố của Xiao sẽ tăng 25%."
+      "0": "Khi ở trong đội nhưng không ra trận, hiệu quả nạp nguyên tố của Xiao sẽ tăng 25%."
     }
   },
   "constellation3": {

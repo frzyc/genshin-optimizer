@@ -54,7 +54,7 @@
       "9": "Tem 250% de eficiência em absorção de <electro>Dano Electro</electro>",
       "10": "Aplica o <electro>Elemento Electro</electro> para a Beidou ao ativar.",
       "11": "<br/>",
-      "12": "<i>Conquistar o alto mar! Seguir as ondas e perseguir a tempestade!</i>"
+      "12": "<i>Conquistar o alto-mar! Seguir as ondas e perseguir a tempestade!</i>"
     },
     "skillParams": {
       "0": "Absorção de Dano de Escudo",
@@ -82,7 +82,7 @@
       "1": "<br/>",
       "2": "<strong>Escudo do Trovão</strong>",
       "3": "Quando Ataques Normais e Carregados atingem, eles criam uma descarga elétrica que pode saltar entre os inimigos, infligindo <electro>Dano Electro</electro>.",
-      "4": " Aumenta a resistência do personagem a interrupções e diminui o Dano recebido.",
+      "4": "Aumenta a resistência do personagem a interrupções e diminui o Dano recebido.",
       "5": "<br/>",
       "6": "No máximo 1 descarga de relâmpago pode ser desencadeada por segundo.",
       "7": "<br/>",
@@ -118,7 +118,7 @@
     "description": {
       "0": "Obtém os seguintes efeitos por 10s após lançar a <strong>Invocadora da Maré</strong> com seu bônus máximo de Dano:",
       "1": "O Dano causado pelos Ataques Normais e Carregados aumentam em 15%. A VEL de Ataque dos Ataques Normais ou Carregados são aumentados em 15%.",
-      "2": "Reduz grandemente o delay antes de lançar Ataques Carregados."
+      "2": "Reduz grandemente o atraso antes de lançar Ataques Carregados."
     }
   },
   "passive3": {

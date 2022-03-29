@@ -6,16 +6,16 @@
   },
   "pieces": {
     "flower": {
-      "name": "Misericórdia do Pássaro do Trovão",
+      "name": "Misericórdia da Pássaro do Trovão",
       "desc": "Não foi afetada pelas chamas ardentes de uma catástrofe destrutiva no passado. É uma flor remanescente de dias passados."
     },
     "plume": {
       "name": "Sobreviventes da Catástrofe",
-      "desc": "Uma pena carregada de trovão deixada pelo pássaro do trovão como vingança. Mesmo agora, ainda emite luzes de trovão cheia de fúria."
+      "desc": "Uma pena carregada de trovão deixada pela pássaro do trovão como vingança. Mesmo agora, ainda emite luzes de trovão cheia de fúria."
     },
     "sands": {
       "name": "Relógio do Trovão",
-      "desc": "Uma ampulheta usada pelo tribo que acreditavam no Pássaro do Trovão para prever a chegada do Deus do Trovão. Como resultado, a existência desse povo terminou abruptamente."
+      "desc": "Uma ampulheta usada pelo tribo que acreditavam na Pássaro do Trovão para prever a chegada do Deus do Trovão. Como resultado, a existência desse povo terminou abruptamente."
     },
     "goblet": {
       "name": "Profecia do Trovão",
@@ -23,7 +23,7 @@
     },
     "circlet": {
       "name": "Coroa do Invocador do Trovão",
-      "desc": "Uma coroa usada antigamente pelos xamas que adoravam o pássaro do trovão. No entanto, nem mesmo a fé devota é capaz de impressionar a besta temperamental."
+      "desc": "Uma coroa usada antigamente pelos xamas que adoravam a pássaro do trovão. No entanto, nem mesmo a fé devota é capaz de impressionar a besta temperamental."
     }
   }
 }

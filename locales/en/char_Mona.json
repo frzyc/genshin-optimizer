@@ -1,0 +1,11 @@
+{
+  "omen": "Omen",
+  "omenDuration": "Omen Duration",
+  "bubbleDuration": "Illusory Bubble Duration",
+  "phantomDuration": "Phantom Duration",
+  "hitOp": {
+    "affectedByOmen": "Any party members hit an opponent affected by an Omen"
+  },
+  "frozenDuration": "<cryo>Frozen</cryo> duration extended by",
+  "uponSprint": "Upon entering Illusory Torrent"
+}

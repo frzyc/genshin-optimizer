@@ -88,7 +88,7 @@
       "8": "<br/>",
       "9": "<strong>Attaque plongeante : Contrôle du chaos</strong>",
       "10": "Lorsqu'une attaque plongeante est déclenchée en utilisant les effets de la compétence élémentaire « Véhémence divine », ses DGT sont convertis en <anemo>DGT Anémo</anemo> et un petit tunnel venteux est créé à l'atterrissage à l'aide d'une technique d'épée secrète pour attirer les objets et les ennemis proches.",
-      "11": "Les dégâts infligés par Contrôle du chaos sont considérés comme étant des DGT d'attaque plongeante.",
+      "11": "Les DGT infligés par Contrôle du chaos sont considérés comme étant des DGT d'attaque plongeante.",
       "12": "<br/>",
       "13": "<i>« Les vents dans les érables pleurent, pour les dieux et les hommes du passé, comme des montagnes rouges d'automne. »</i>"
     },
@@ -114,7 +114,7 @@
   "passive1": {
     "name": "Lame d'érosion",
     "description": {
-      "0": "Si <strong>Véhémence divine</strong> entre en contact avec l'élément <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> ou <electro>Électro</electro> lors de son utilisation, l'attaque plongeante « Contrôle du chaos » déclenchée après cette <strong>Véhémence divine</strong> bénéficie d'une absorption élémentaire, ajoutant ensuite des DGT de l'élément correspondant pour 200 % de l'attaque, dégâts considérés comme étant des DGT d'attaque plongeante.",
+      "0": "Si <strong>Véhémence divine</strong> entre en contact avec l'élément <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> ou <electro>Électro</electro> lors de son utilisation, l'attaque plongeante « Contrôle du chaos » déclenchée après cette <strong>Véhémence divine</strong> bénéficie d'une absorption élémentaire, ajoutant ensuite des DGT de l'élément correspondant pour 200 % de l'attaque, DGT considérés comme étant des DGT d'attaque plongeante.",
       "1": "Un seul élément peut être absorbé à chaque utilisation de <strong>Véhémence divine</strong>."
     }
   },

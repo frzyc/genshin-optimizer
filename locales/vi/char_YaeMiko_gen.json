@@ -1,0 +1,161 @@
+{
+  "name": "Yae Miko",
+  "title": "Tiếu Ngạo Thế Gian",
+  "description": "Đại nhân Guuji của Đền Narukami, kiêm tổng biên tập của Nhà Xuất Bản Yae. Phía sau vẻ ngoài xinh đẹp kiều diễm là sự thông minh và xảo quyệt mà khó ai ngờ đến.",
+  "constellationName": "Cung Tiên Hồ",
+  "auto": {
+    "name": "Hồ Linh Thực Tội Thức",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Triệu hồi linh hồn hồ ly, thực hiện tối đa 3 lần tấn công, gây <electro>Sát Thương Nguyên Tố Lôi</electro>."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, tụ lực và gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Ngưng tụ sức mạnh lôi đình, từ trên không lao xuống mặt đất, tấn công kẻ địch trên đường, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Trọng Kích",
+      "4": "Thể lực Trọng Kích tiêu hao",
+      "5": "Sát Thương Khi Rơi",
+      "6": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Thần Chú Yakan - Sesshou Sakura",
+    "description": {
+      "0": "Đối với Yae mà nói, những phiền phức mà chỉ cần triệu hồi tinh linh là đã giải quyết được, thì đương nhiên sẽ không cần tự mình nhúng tay vào.",
+      "1": "Di chuyển nhanh và để lại một \"Sesshou Sakura\".",
+      "2": "<br/>",
+      "3": "<strong>Sesshou Sakura</strong>",
+      "4": "Có đặc tính sau:",
+      "5": [
+        "Cứ cách một thời gian sẽ giáng sét xuống 1 kẻ địch ở xung quanh, gây <electro>Sát Thương Nguyên Tố Lôi</electro>;",
+        "Khi gần đó có Sesshou Sakura khác, sẽ tăng bậc cho chúng để tăng sát thương của đòn tấn công nêu trên."
+      ],
+      "6": "<br/>",
+      "7": "Có thể sử dụng 3 lần.",
+      "8": "Tối đa tồn tại cùng lúc 3 Sesshou Sakura, Sesshou Sakura khi vừa khởi tạo sẽ có bậc 1, tối đa tăng đến bậc 3. Nếu vị trí khởi tạo có cự ly quá gần với Sesshou Sakura đã có, sẽ tiêu hủy Sesshou Sakura đã có.",
+      "9": "<br/>",
+      "10": "<i>\"Các tinh linh hồ ly bị phong ấn trong cành cây đều là những yakan chuyên làm hại con người. Yakan thấp hơn thiên hồ chúng tôi hai bậc, vì vậy, tôi có thể ra lệnh cho chúng thoải mái. Hồ ly tuy chia thành ba sáu chín bậc, nhưng con người đừng nên học theo nhé, còn về việc con người và hồ ly ai có cấp bậc cao hơn sao? Hờ hờ...\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Sesshou Sakura Bậc 1",
+      "1": "Sát Thương Sesshou Sakura Bậc 2",
+      "2": "Sát Thương Sesshou Sakura Bậc 3",
+      "3": "Sát Thương Sesshou Sakura Bậc 4",
+      "4": "Thời Gian Kéo Dài",
+      "5": "CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Đại Bí Pháp - Tenko Kenshin",
+    "description": {
+      "0": "Trong dân gian Inazuma có nhắc đến khái niệm \"kitsunetsuki\", hay có thể hiểu là chứng nhận của hồ ly. Trong đó, của \"Thiên Hồ\" là tương đối đặc biệt, có thể dùng lôi đình để giáng xuống người kẻ địch của Đền Narukami. Giáng sấm sét xuống, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>.",
+      "1": "Khi thi triển, Yae Miko sẽ giải phóng Sesshou Sakura ở gần đó, phá hủy hình thái của chúng và hóa thành Thiên Hồ Lôi Đình giáng xuống, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>. Mỗi lần phá hủy 1 Sesshou Sakura bằng cách này sẽ giáng xuống 1 tia Thiên Hồ Lôi Đình.",
+      "2": "<br/>",
+      "3": "<i>Vào lúc này, Yae cần để lộ ra chứng nhận thiên hồ để hiệu lệnh lôi đình. Nhưng những kẻ đã nhìn thấy đại nhân Guuji để lộ chiếc đuôi đều đã tan biến không còn lại gì dù chỉ là hạt bụi. Cho nên, hãy nhớ cho kỹ nhé - Yae đại nhân không hề có đuôi.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Thiên Hồ Lôi Đình",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Bóng Râm Đền Thần",
+    "description": {
+      "0": "Khi thi triển <strong>Đại Bí Pháp - Tenko Kenshin</strong>, mỗi lần phá hủy một Sesshou Sakura sẽ làm mới một lần CD kỹ năng <strong>Thần Chú Yakan - Sesshou Sakura</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Lời Cầu Phúc Giác Ngộ",
+    "description": {
+      "0": "Mỗi 1 điểm Tinh Thông Nguyên Tố của Yae Miko có thể tăng 0.15% sát thương do <strong>Sesshou Sakura</strong> gây ra."
+    }
+  },
+  "passive3": {
+    "name": "Hồ Ly Thiền Định",
+    "description": {
+      "0": "Khi ghép nguyên liệu thiên phú nhân vật, có tỷ lệ 25% sản sinh thêm 1 nguyên liệu thiên phú ngẫu nhiên khác của cùng khu vực, cấp bậc giống với nguyên liệu khi ghép."
+    }
+  },
+  "constellation1": {
+    "name": "Biên Niên Sử Hồ Ly",
+    "description": {
+      "0": "<strong>Đại Bí Pháp - Tenko Kenshin</strong> mỗi khi kích hoạt 1 lần Thiên Hồ Lôi Đình, đều sẽ hồi 8 điểm năng lượng nguyên tố cho bản thân Yae Miko."
+    }
+  },
+  "constellation2": {
+    "name": "Tiếng Gọi Đêm Trăng",
+    "description": {
+      "0": "Cấp bậc ban đầu của <strong>Sesshou Sakura</strong> khi vừa được tạo ra sẽ tăng ngay đến bậc 2, tối đa có thể tăng đến bậc 4, phạm vi tấn công tăng 60%."
+    }
+  },
+  "constellation3": {
+    "name": "Thất Diệu Biến Hóa",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Thần Chú Yakan - Sesshou Sakura</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Anh Đào Dẫn Lôi Chương",
+    "description": {
+      "0": "Sau khi sấm sét của <strong>Sesshou Sakura</strong> đánh trúng kẻ địch, tất cả nhân vật trong đội ở gần sẽ nhận được 20% <electro>Buff Sát Thương Nguyên Tố Lôi</electro>, duy trì 5s."
+    }
+  },
+  "constellation5": {
+    "name": "Giễu Cợt Nham Hiểm",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Đại Bí Pháp - Tenko Kenshin</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Cấm Thuật Daisesshou",
+    "description": {
+      "0": "<strong>Sesshou Sakura</strong> khi tấn công sẽ bỏ qua 60% phòng ngự của kẻ địch."
+    }
+  }
+}

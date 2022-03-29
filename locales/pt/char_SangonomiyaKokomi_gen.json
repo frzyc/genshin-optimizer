@@ -116,7 +116,7 @@
   "passive3": {
     "name": "Princesa de Watatsumi",
     "description": {
-      "0": "Diminui o consumo de Stamina ao Nadar de todos os seus personagens em 20%.",
+      "0": "Diminui o consumo de Stamina ao Nadar de todos os membros da equipe em 20%.",
       "1": "Não acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos."
     }
   },

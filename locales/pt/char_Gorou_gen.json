@@ -1,7 +1,7 @@
 {
   "name": "Gorou",
   "title": "Guerreiro Canino",
-  "description": "O grande general das tropas da Ilha Watatsumi. Ele é extremamente confiado por seus subordinados.",
+  "description": "O grande general das tropas da Ilha Watatsumi. Seus subordinados acreditam profundamente nele.",
   "constellationName": "Canis Bellatoris",
   "auto": {
     "name": "Flechas de Garras Dilacerantes",
@@ -47,8 +47,8 @@
       "2": "<strong>Estandarte do General</strong>",
       "3": "Fornece os seguintes bônus com base no número de membros da equipe que são do Elemento <geo>Geo</geo>:",
       "4": "Ter 1 membro da equipe do Elemento Geo concede o efeito \"Robusto\": Bônus de DEF.",
-      "5": "Ter 2 membros da equipe do Elemento Geo concede o efeito \"Inquebrável\": Resistência a interrupção.",
-      "6": "Ter 3 membros da equipe do Elemento Geo concede o efeito \"Destruidor\": concede um <geo>Bônus de Dano GEO</geo>.",
+      "5": "Ter 2 membros da equipe do Elemento Geo concede o efeito \"Inquebrável\": Resistência a interrupção, além do efeito do mencionado anteriormente.",
+      "6": "Ter 3 membros da equipe do Elemento Geo concede o efeito \"Destruidor\": concede um <geo>Bônus de Dano GEO</geo>, além dos efeitos mencionados anteriormente.",
       "7": "<br/>",
       "8": "Apenas 1 Estandarte do General que Gorou criou pode existir no campo a qualquer momento. Os personagens só podem se beneficiar de 1 Estandarte do General por vez. Quando os membros da equipe deixam o campo, os efeitos do campo duram por 2s.",
       "9": "<br/>",
@@ -135,7 +135,7 @@
   "constellation1": {
     "name": "Pegureiro Veloz: Rápido como o Vento",
     "description": {
-      "0": "Quando um personagem (que não seja o Gorou) causar dano dentro da AdE do <strong>Estandarte do General</strong> ou da <strong>Glória do General</strong> criado por Gorou, causa Dano Geo aos oponentes e o Tempo de Recarga da <strong>Defesa Concentrada Inuzaka</strong> de Gorou é reduzido em 2s.",
+      "0": "Quando um personagem (que não seja o Gorou) causar Dano Geo dentro da AdE do <strong>Estandarte do General</strong> ou da <strong>Glória do General</strong> criado por Gorou, o Tempo de Recarga da <strong>Defesa Concentrada Inuzaka</strong> de Gorou é reduzido em 2s.",
       "1": "Este efeito pode ocorrer uma vez a cada 10s."
     }
   },
@@ -169,7 +169,7 @@
   "constellation6": {
     "name": "Pegureiro Valente: Lealdade Montanhosa",
     "description": {
-      "0": "Dentro de 12 segundos após lançar a <strong>Defesa Concentrada Inuzaka</strong> ou <strong>Juuga: Para a Vitória</strong>, de acordo com o nível da área no momento do lançamento, o CRIT de <geo>Dano Geo</geo> de todos os personagens da equipe que se encontrarem próximos, será aumentado: ",
+      "0": "Dentro de 12 segundos após lançar a <strong>Defesa Concentrada Inuzaka</strong> ou <strong>Juuga: Para a Vitória</strong>, de acordo com o nível da área no momento do lançamento, o Dano CRIT de <geo>Dano Geo</geo> de todos os personagens da equipe que se encontrarem próximos, será aumentado: ",
       "1": "Robusto: aumentado em 10%; Inquebrável: aumentado em 20%; Destruidor: aumentado em 40%.",
       "2": "<br/>",
       "3": "Esse efeito não pode ser acumulado, mas será determinado com base no último efeito desencadeado."

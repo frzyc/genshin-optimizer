@@ -41,7 +41,7 @@
   "skill": {
     "name": "Ataque de Guoba",
     "description": {
-      "0": "Invoca Guoba, o Panda. Guoba continua exalando fogo contra o inimigo ,causando <pyro>Dano Pyro de AdE</pyro>.",
+      "0": "Invoca Guoba, o Panda. Guoba continua exalando fogo contra o inimigo, causando <pyro>Dano Pyro de AdE</pyro>.",
       "1": "<br/>",
       "2": "<i>Guoba ama comidas picantes. O problema é que seu estômago não suporta comida tão picante.</i>"
     },

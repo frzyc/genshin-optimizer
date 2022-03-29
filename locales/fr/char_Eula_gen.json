@@ -82,7 +82,7 @@
   "burst": {
     "name": "Lame de fond",
     "description": {
-      "0": "Eula brandit son épée avec fureur, infligeant des <cryo>DGT Cryo</cryo> aux ennemis proches, et créé une épée de lumière qui la suit pendant 7 s max.",
+      "0": "Eula brandit son épée avec fureur, infligeant des <cryo>DGT Cryo</cryo> aux ennemis proches, et crée une épée de lumière qui la suit pendant 7 s max.",
       "1": "Tant qu'elle est active, l'épée de lumière augmente la RÉS à l'interruption d'Eula. Lorsqu'Eula inflige des DGT à des ennemis avec son attaque normale, sa compétence ou son déchaînement élémentaire, elle accumule des charges d'énergie pour l'épée de lumière. Une charge d'énergie peut être cumulée toutes les 0,1 s.",
       "2": "Lorsque la durée de l'épée de lumière est écoulée, elle explose violemment, infligeant des DGT physiques aux ennemis proches.",
       "3": "Ces DGT augmentent en fonction du nombre de charges d'énergie accumulées.",
@@ -92,7 +92,7 @@
     },
     "skillParams": {
       "0": "DGT compétence",
-      "1": "DGT de base épée de lumière",
+      "1": "DGT de base Épée de lumière",
       "2": "DGT élémentaires par charge d'énergie",
       "3": "Limite de charges d'énergie",
       "4": "Temps de recharge",

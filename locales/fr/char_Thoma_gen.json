@@ -42,7 +42,7 @@
     "name": "Bénédiction flamboyante",
     "description": {
       "0": "Thomas utilise la pointe de sa lance comme point d'appui pour canaliser les flammes et effectuer un coup de pied qui inflige des <pyro>DGT Pyro de zone</pyro> et libère une barrière défensive brûlante. Au moment où elle se déclenche, la barrière applique <pyro>l'élément Pyro</pyro> à Thomas.",
-      "1": "L'absorption des DGT de la barrière est fonction des PV max de Thomas.",
+      "1": "L'absorption de DGT de la barrière est fonction des PV max de Thomas.",
       "2": "La barrière brûlante possède les caractéristiques suivantes :",
       "3": [
         " Elle absorbe les <pyro>DGT Pyro</pyro> avec 250 % d'efficacité.",
@@ -116,7 +116,7 @@
     "name": "Superposition d'armures",
     "description": {
       "0": "Lorsque le personnage déployé obtient ou actualise une <strong>barrière brûlante</strong>, la force de son bouclier augmente de 5 % pendant 6 s.",
-      "1": "Cet effet peut être déclenché une fois toutes les 0,3 s et cumulé jusqu'à 5 fois."
+      "1": "Cet effet peut être déclenché une fois toutes les 0,3 s et cumulé 5 fois maximum."
     }
   },
   "passive2": {

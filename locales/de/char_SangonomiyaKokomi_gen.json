@@ -131,7 +131,7 @@
   "constellation1": {
     "name": "Am Rande des Flusses",
     "description": {
-      "0": "Entfesselt im Zustand Rituelles Federkleid von <strong>Nereidenaufstieg</strong> mit dem letzten Angriff der Standardangriffe von Sangonomiya Kokomi einen schwimmenden Fisch, der Schaden in Höhe von 30 % der max. LP von Sangonomiya Kokomi verursacht.",
+      "0": "Entfesselt im Zustand Rituelles Federkleid von <strong>Nereidenaufstieg</strong> mit dem letzten Angriff der Standardangriffe von Sangonomiya Kokomi einen schwimmenden Fisch, der <hydro>Hydro-Schaden</hydro> in Höhe von 30 % der max. LP von Sangonomiya Kokomi verursacht.",
       "1": "Dieser Schaden gilt nicht als Schaden von Standardangriffen."
     }
   },

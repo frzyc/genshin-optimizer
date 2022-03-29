@@ -49,10 +49,11 @@
       "4": "A vida do Barão Coelho aumenta com a Vida máxima de Amber.",
       "5": "Quando destruído ou quando o tempo expirar, Barão Coelho explode, infligindo <pyro>Dano Pyro em uma AdE</pyro>.",
       "6": "<br/>",
-      "7": "<strong>Manter pressionado</strong>Ajusta a direção do lançamento do Barão Coelho.",
-      "8": "Quanto mais tempo o botão for pressionado, mais distante é o lançamento.",
-      "9": "<br/>",
-      "10": "<i>Barão Coelho provém de uma histórica linhagem, mas Amber decidiu parar de contar desde o Barão Coelho 893.</i>"
+      "7": "<strong>Manter pressionado</strong>",
+      "8": "Ajusta a direção do lançamento do Barão Coelho.",
+      "9": "Quanto mais tempo o botão for pressionado, mais distante é o lançamento.",
+      "10": "<br/>",
+      "11": "<i>Barão Coelho provém de uma histórica linhagem, mas Amber decidiu parar de contar desde o Barão Coelho 893.</i>"
     },
     "skillParams": {
       "0": "Vida Recebida",
@@ -154,7 +155,7 @@
   "constellation6": {
     "name": "Fogo Vivo",
     "description": {
-      "0": "A <strong>Chuvar Ardente</strong> aumenta a Veloc. Mov. da equipe toda em 15% e o ATQ em 15% por 10s."
+      "0": "A <strong>Chuva Ardente</strong> aumenta a Veloc. Mov. da equipe toda em 15% e o ATQ em 15% por 10s."
     }
   }
 }

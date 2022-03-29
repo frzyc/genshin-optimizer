@@ -144,7 +144,7 @@
     "description": {
       "0": "Effekte bei Anwendung von <strong>Pakt des flammenden Infernos</strong>:",
       "1": "Erstellt einen Schutzschild, der Schaden in Höhe von 45 % der max. LP abhält, hält 15 s.",
-      "2": "Hält bei <electro>Pyro-Schaden</electro> 250 % ab."
+      "2": "Hält bei <pyro>Pyro-Schaden</pyro> 250 % ab."
     }
   },
   "constellation5": {

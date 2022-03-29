@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Ataque Carregado</strong>",
         "1": "Realiza um ataque <strong>Disparo com Mira</strong> mais preciso e com mais dano.",
-        "2": "Enquanto mira, gelo será acumulado na flecha. Uma flecha totalmente carregada causará <cryo>Dano Cryo</cryo>"
+        "2": "Enquanto mira, gelo será acumulado na flecha. Uma flecha totalmente carregada causará <cryo>Dano Cryo</cryo>."
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",

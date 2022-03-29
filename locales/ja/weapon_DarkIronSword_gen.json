@@ -1,6 +1,6 @@
 {
   "name": "暗鉄剣",
-  "description": "実はただちょっと黒いだけの鋼剣。",
+  "description": "実はただちょっと黒いだけの鉄剣。",
   "passiveName": "オーバーロード",
   "passiveDescription": {
     "0": "過負荷、超電導、感電または雷元素拡散反応が発生した12秒間、攻撃力+<cryo>20%</cryo>。",

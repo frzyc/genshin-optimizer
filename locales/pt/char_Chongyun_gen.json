@@ -40,7 +40,7 @@
     }
   },
   "skill": {
-    "name": "Lâmina do Espírito - Geada de Chongyun",
+    "name": "Lâmina Espiritual - Geada de Chongyun",
     "description": {
       "0": "Chongyun golpeia o chão com seu Espadão, causando uma explosão Cryo em uma AdE circular na sua frente que inflige <cryo>Dano Cryo</cryo>.",
       "1": "Depois de um curto intervalo, o ar frio criado pela explosão Cryo se coalescerá em um Campo Gelado Chonghua, em que todos os personagens que usem Espada, Espadão ou Lança serão imbuídos com <cryo>Cryo</cryo>.",
@@ -67,7 +67,7 @@
     }
   },
   "burst": {
-    "name": "Lâmina do Espírito - Corta-Nuvens",
+    "name": "Lâmina Espiritual - Estrela Cadente",
     "description": {
       "0": "Criando os secretos selos artesanais, Chongyun evoca 3 lâminas espirituais em pleno ar que caem à terra uma por uma depois de um curto período de tempo, explodindo assim que encostam ao chão.",
       "1": "Quando as lâminas espirituais explodem, elas infligem <cryo>Dano Cryo em uma AdE</cryo> e lançam inimigos.",
@@ -96,13 +96,13 @@
   "passive1": {
     "name": "Respiração Constante",
     "description": {
-      "0": "Os personagens que usam Espada, Espadão e Lança dentro do campo criado pela <strong>Lâmina do Espírito - Geada de Chongyun</strong> terão a Vel. de ATQ aumentada em 8%."
+      "0": "Os personagens que usam Espada, Espadão e Lança dentro do campo criado pela <strong>Lâmina do Espírito - Geada de Chongyun</strong> terão a Vel. de ATQ Normal aumentada em 8%."
     }
   },
   "passive2": {
     "name": "Lâmina do Caçador de Gelo",
     "description": {
-      "0": "Quando a área criada pela <strong>Lâmina do Espírito - Geada de Chongyun</strong> dissipa, outra lâmina do espírito será evocada para atacar inimigos próximos, infligindo 100% de Dano da habilidade Geada de Chongyun como <cryo>Dano Cryo em uma AdE</cryo>. Inimigos golpeados por essa lâmina terá sua <cryo>RES Cryo</cryo> diminuída em 10% por 8 segundos."
+      "0": "Quando a área criada pela <strong>Lâmina Espiritual - Geada de Chongyun</strong> dissipa, outra lâmina do espírito será evocada para atacar inimigos próximos, infligindo 100% de Dano da habilidade Geada de Chongyun como <cryo>Dano Cryo em uma AdE</cryo>. Inimigos golpeados por essa lâmina terá sua <cryo>RES Cryo</cryo> diminuída em 10% por 8 segundos."
     }
   },
   "passive3": {
@@ -120,13 +120,13 @@
   "constellation2": {
     "name": "Revolução Atmosférica",
     "description": {
-      "0": "Habilidades Elementais e Explosões Elementais lançadas dentro do Campo criado pela <strong>Lâmina do Espírito - Geada de Chongyun</strong> têm seu Tempo de Recarga reduzido em 15%."
+      "0": "Habilidades Elementais e Supremos lançados dentro do Campo criado pela <strong>Lâmina Espiritual - Geada de Chongyun</strong> têm seu Tempo de Recarga reduzido em 15%."
     }
   },
   "constellation3": {
     "name": "Explosão de Nuvens",
     "description": {
-      "0": "Aumenta o nível da <strong>Lâmina Espiritual: Estrelas Cadente</strong> em 3.",
+      "0": "Aumenta o nível da <strong>Lâmina Espiritual - Estrela Cadente</strong> em 3.",
       "1": "O nível máximo de elevação é 15."
     }
   },
@@ -140,14 +140,14 @@
   "constellation5": {
     "name": "O Verdadeiro Caminho",
     "description": {
-      "0": "Aumenta o nível da <strong>Lâmina do Espírito - Geada de Chongyun</strong> em 3.",
+      "0": "Aumenta o nível da <strong>Lâmina Espiritual - Geada de Chongyun</strong> em 3.",
       "1": "O nível máximo de elevação é Nv.15."
     }
   },
   "constellation6": {
     "name": "Reforço das Quatro Lâminas",
     "description": {
-      "0": "A <strong>Lâmina Espiritual - Estrela divisora de Nuvens</strong> inflige 15% a mais de Dano em inimigos com uma baixa porcentagem de sua Vida Máxima restante menor que a de Chongyun.",
+      "0": "A <strong>Lâmina Espiritual - Estrela Cadente</strong> inflige 15% a mais de Dano em inimigos com uma baixa porcentagem de sua Vida Máxima restante menor que a de Chongyun.",
       "1": "Essa Habilidade também irá evocar uma lâmina espiritual adicional."
     }
   }

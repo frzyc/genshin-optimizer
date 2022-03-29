@@ -157,7 +157,7 @@
   "constellation2": {
     "name": "Chaîne lunaire",
     "description": {
-      "0": "Les attaques normales ont 20 % de chances d'être suivies par une attaquée chargée.",
+      "0": "Les attaques normales ont 20 % de chances d'être suivies par une attaque chargée.",
       "1": "Cet effet peut être déclenché une fois toutes les 5 s."
     }
   },
@@ -185,7 +185,7 @@
     "name": "Rhétorique de l'adversité",
     "description": {
       "0": "Dans l'état <strong>Vicissitude</strong>, Mona obtient un bonus de 60 % DGT pour sa prochaine attaque chargée à chaque seconde passée à se déplacer.",
-      "1": "Cet effet est cumulable 3 fois max (bonus de 180 %) et dure 8 s."
+      "1": "Cet effet peut être cumulé 3 fois maximum (bonus de 180 %) et dure 8 s."
     }
   }
 }

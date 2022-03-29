@@ -135,9 +135,21 @@
     "name": "Huy Hiệu Tuyết",
     "description": "Huy hiệu chứng nhận năng lực sau khi hoàn thành huấn luyện của Hiệp Hội Nhà Mạo Hiểm."
   },
-  "FellflowerSeal": {
-    "name": "Huy Hiệu Hoa Quỷ",
+  "VanquishersEmblem": {
+    "name": "Huy Hiệu Chiến Thắng",
     "description": "Huy hiệu sau khi đánh bại Hoa Quỷ, hy vọng huy hiệu này sẽ không biến thành thứ gì đó..."
+  },
+  "AffluenceTalisman": {
+    "name": "Bùa Chúc Phúc",
+    "description": "Tương truyền đây là bùa ngọc mang phúc khí đến cho con người. Nhiều đứa trẻ ở Cảng Liyue thường hay bị phụ huynh bắt mang theo loại bùa này."
+  },
+  "ImmaculateTalisman": {
+    "name": "Bùa Hoàn Hảo",
+    "description": "Xem ra rất có giá trị, có lẽ có thể dùng để đổi lấy một vật nào đó..."
+  },
+  "ConquestTalisman": {
+    "name": "Bùa Hàng Ma",
+    "description": "Loại bùa kỳ lạ không biết xuất hiện từ khi nào. Bản thân vẫn có thể cảm nhận được những cảm xúc mạnh mẽ phát ra một cách mơ hồ từ lá bùa này mỗi khi nắm chặt nó..."
   },
   "Primogem": {
     "name": "Nguyên Thạch",
@@ -193,7 +205,7 @@
   },
   "ElectroSigil": {
     "name": "Ấn Lôi",
-    "description": "Được công nhận bởi sấm sét của quần đảo Inazuma và trao tặng danh hiệu. \\nCó thể giao nộp Anh Đào Thần cho đền Narukami, để tăng cấp độ của \"Anh Đào Thần Bảo Vệ\"."
+    "description": "Được công nhận bởi sấm sét của quần đảo Inazuma và trao tặng danh hiệu. \\nCó thể giao nộp cho Anh Đào Thần trong Đền Narukami, để tăng cấp độ của \"Anh Đào Thần Bảo Vệ\"."
   },
   "AnemoSigil": {
     "name": "Ấn Phong",
@@ -423,9 +435,21 @@
     "name": "Arataki Itto",
     "description": "Thủ lĩnh đời đầu của \"Bang Arataki\" địa bàn Hanamizaka. Sao, chưa nghe qua Bang Arataki à, đùa ta sao?"
   },
+  "YaeMiko": {
+    "name": "Yae Miko",
+    "description": "Đại nhân Guuji của Đền Narukami, kiêm tổng biên tập của Nhà Xuất Bản Yae. Phía sau vẻ ngoài xinh đẹp kiều diễm là sự thông minh và xảo quyệt mà khó ai ngờ đến."
+  },
   "Aloy": {
     "name": "Aloy",
     "description": "Từng là kẻ lưu đày, nay đã trở thành một thợ săn vô cùng nhạy bén. Luôn trong tư thế sẵn sàng giương cung vì chính nghĩa."
+  },
+  "Shenhe": {
+    "name": "Shenhe",
+    "description": "Đệ tử tiên gia, khí chất thoát tục, ẩn cư tại núi rừng Liyue, tính cách lãnh đạm như tiên nhân."
+  },
+  "YunJin": {
+    "name": "Yun Jin",
+    "description": "Diễn viên hát kịch nổi tiếng Liyue, hội tụ cả tài viết kịch và ca xướng. Phong cách riêng biệt, thanh lịch xinh đẹp, thần thái ngút trời."
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Chòm Sao Của Kamisato Ayaka",
@@ -603,9 +627,21 @@
     "name": "Chòm Sao Của Arataki Itto",
     "description": "Nguyên liệu kích hoạt cung mệnh Arataki Itto"
   },
+  "YaeMikosStellaFortuna": {
+    "name": "Chòm Sao Của Yae Miko",
+    "description": "Nguyên liệu kích hoạt cung mệnh Yae Miko"
+  },
   "AloysStellaFortuna": {
     "name": "Chòm Sao Của Aloy",
     "description": "Nguyên liệu kích hoạt cung mệnh Aloy"
+  },
+  "ShenhesStellaFortuna": {
+    "name": "Chòm Sao Của Shenhe",
+    "description": "Nguyên liệu kích hoạt cung mệnh Shenhe"
+  },
+  "YunJinsStellaFortuna": {
+    "name": "Chòm Sao Của Yun Jin",
+    "description": "Nguyên liệu kích hoạt cung mệnh Yun Jin"
   },
   "GnosticHymnOldNotes": {
     "name": "Nhật Ký Hành Trình Trân Châu - Khởi Đầu",
@@ -1466,6 +1502,10 @@
   "OfMountainsAndSeas": {
     "name": "Cuốn Sơn Hải",
     "description": "Bút kí có phần cũ nát thuộc về Nhà Mạo Hiểm cổ đại Leonard. Do ảnh hưởng của thời gian, phần lớn nội dung đã bị mất, chỉ còn sót lại một vài câu từ."
+  },
+  "DraftManuscriptOfHyakuninIkkiTheGreatestBattle": {
+    "name": "Bản Thảo \"Hyakunin Ikki: Tuyệt Đỉnh Giác Đấu\"",
+    "description": ""
   },
   "WyattsRedKey": {
     "name": "Chìa Khóa Đỏ Của Wyatt",
@@ -2373,7 +2413,7 @@
   },
   "ClerkZhaosInvoiceForNervousAn": {
     "name": "Hóa đơn Zhao viết cho Tiểu An",
-    "description": "Biên lai Zhao viết cho Tiểu An. Những con chữ dày đặc trên trang giấy đủ cho ta thấy bảng thông kế thuyền trên bến cảng do Tiểu An làm đã bị trì hoãn trong một khoảng thời gian dài..."
+    "description": "Biên lai Zhao viết cho Tiểu An. Những con chữ dày đặc trên trang giấy đủ cho ta thấy bảng thống kê thuyền trên bến cảng do Tiểu An làm đã bị trì hoãn trong một khoảng thời gian dài..."
   },
   "CuiersLetterToChaoxi": {
     "name": "Thư Cui'er viết cho Chaoxi",
@@ -3251,9 +3291,89 @@
     "name": "Hộp Điểm Tâm",
     "description": "Điểm tâm của Kujou Kamaji nhờ gửi cho Hiiragi Chisato, bên trong được sắp xếp rất ngăn nắp..."
   },
-  "TheSerpentDrakeOfTokoyoNoKuni": {
-    "name": "Truyền Thuyết Long Xà Của Tokoyo no Kuni",
+  "DullGoldenBridle": {
+    "name": "Dây Cương Ảm Đạm",
+    "description": "Báu vật truyền thế của Vương Quốc Đêm Trắng, nhưng nó đã mất đi sức mạnh vốn có. Mục đích của việc này là để ngăn chặn những tên trộm dùng bàng môn tả đạo xông vào có thể nhìn thấu giá trị của nó."
+  },
+  "GoldenBridle": {
+    "name": "Dây Cương",
+    "description": "Báu vật truyền thế của Vương Quốc Đêm Trắng, biểu tượng cho quyền lực, mang đến cho kẻ sở hữu khả năng chi phối \"Đêm Trắng\" và \"Đêm Đen\"."
+  },
+  "ReinsOfRevivalFragmentTheNarrows": {
+    "name": "Mảnh Dây Cương Hồi Sinh Lối Mòn Khe Núi",
+    "description": "Mảnh vỡ của Dây Cương Hồi Sinh, được chế tạo bởi những nguyên liệu đặc biệt."
+  },
+  "ReinsOfRevivalFragmentTemple": {
+    "name": "Mảnh Dây Cương Hồi Sinh Trước Đền",
+    "description": "Mảnh vỡ của Dây Cương Hồi Sinh, có sức mạnh đặc biệt."
+  },
+  "ReinsOfRevivalFragmentSerpentsHeart": {
+    "name": "Mảnh Dây Cương Hồi Sinh Trái Tim Mãng Xà",
+    "description": "Mảnh vỡ của Dây Cương Hồi Sinh, ba mảnh vỡ tuân theo \"quy tắc của ba\"."
+  },
+  "ReinsOfRevival": {
+    "name": "Dây Cương Hồi Sinh",
+    "description": "Báu vật truyền thế của Vương Quốc Đêm Trắng, ngoài năng lực khống chế ngày đêm ra, sẽ còn cung cấp cho chủ sở hữu năng lực chi phối địa ngục và trần thế."
+  },
+  "OfferingsOfTheNarrows": {
+    "name": "Cống Phẩm Trong Lối Mòn Khe Núi",
+    "description": "Cống phẩm hiến tế tại Lối Mòn Khe Núi, chứa đựng một phần ý niệm của Aberaku."
+  },
+  "OfferingsOfTheTemple": {
+    "name": "Cống Phẩm Trước Đền",
+    "description": "Cống phẩm hiến tế trước ngôi đền, chứa đựng một phần ý niệm của Aberaku."
+  },
+  "OfferingsOfTheSerpentsHeart": {
+    "name": "Cống Phẩm Trái Tim Mãng Xà",
+    "description": "Cống phẩm hiến tế tại Trái Tim Mãng Xà, chứa đựng một phần ý niệm của Aberaku."
+  },
+  "TheSerpentAndDrakesOfTokoyokoku": {
+    "name": "Truyền Thuyết Long Xà Của Vương Quốc Tokoyo",
     "description": "Một quyển tiểu thuyết dựa trên câu chuyện dân gian của Đảo Watatsumi. Phiên bản gốc của quyển tiểu thuyết này được chép lại trên đảo Watatsumi và được một thương gia mang đến đảo Narukami trong thời kỳ vị thần rắn vẫn còn sống. Ngày nay không còn ai đọc quyển sách cổ này nữa, vai trò của nó đã bị thay thế bởi vô số quyển tiểu thuyết trên thị trường. Quyển sách này mô tả lại quan điểm độc đáo của những người Watatsumi trước khi họ tiếp nhận các khía cạnh văn hóa của Narukami. Gần đây do phong trào tái bản tiểu thuyết truyền thống nổi lên nên quyển sách này đã có cơ hội được tiếp cận lại với công chúng."
+  },
+  "BathysmalVishapExperimentalRecords": {
+    "name": "Ghi Chép Thí Nghiệm Rồng Biển Sâu",
+    "description": "Ghi chép thí nghiệm về Rồng Biển Sâu, trong thí nghiệm không có con rồng nào tử vong."
+  },
+  "BeforeSunAndMoon": {
+    "name": "Nhật Nguyệt Tiền Truyện",
+    "description": "Một biên niên sử cấm người thường đọc. Văn bản là sự kết hợp giữa truyện ngụ ngôn và lịch sử từ khi bắt đầu thế giới cho đến khi tạo ra Dainichi Mikoshi."
+  },
+  "HydrologicalStudiesInByakuyakoku": {
+    "name": "Địa Lý Thủy Văn Học Vương Quốc Đêm Trắng",
+    "description": "Quyển sách ghi lại địa lý và thủy văn của Vương Quốc Đêm Trắng. Dưới sự di cư của người dân Watatsumi, cánh cửa phong ấn cũng như những năm dài trôi qua, quyển sách này giờ đây đã trở nên vô dụng."
+  },
+  "InTheLightBeneathTheShadow": {
+    "name": "Trong Ánh Sáng, Dưới Bóng Tối",
+    "description": "Một cuốn sách câu đố trí tuệ dành cho trẻ em từ chín đến mười hai tuổi. Là một phiên bản trong thời kỳ quá độ đặc biệt, nên đã đính kèm thêm phần chú thích cách sửa tên từ kiểu Vương Quốc Đêm Trắng cổ đại sang kiểu Narukami."
+  },
+  "KeySigil": {
+    "name": "Ấn Khóa",
+    "description": "Ấn Khóa được lưu truyền tại Đảo Watatsumi và Enkanomiya, dùng để mở khóa hình vẽ."
+  },
+  "BloodbranchCoral": {
+    "name": "San Hô Máu",
+    "description": "San hô ngưng tụ sinh mệnh của Watatsumi Omikami, là đạo cụ không thể thiếu khi tổ chức Tế Lễ Linh Hồn Watatsumi."
+  },
+  "DivineBridle": {
+    "name": "Dây Cương Thánh Thần",
+    "description": "Được chế tác dựa theo hình dạng của Dây Cương, tượng trưng cho quyền lực \"Người Con Của Mặt Trời\" trong Vương Quốc Đêm Trắng, ẩn chứa sức mạnh đặc biệt."
+  },
+  "DatesMedalOfRecognition": {
+    "name": "Chứng Nhận Của Date",
+    "description": "Chứng nhận của Date, thủ công rất tinh tế."
+  },
+  "SecretRoomKey": {
+    "name": "Chìa Khóa Mật Thất",
+    "description": "Chìa khóa có thể dùng để mở mật thất ở nơi nào đó trong Lối Mòn Khe Núi. Có thể là một nơi ẩn thân khác mà Adonis bọn họ đã bỏ đi."
+  },
+  "WatersOfLethe": {
+    "name": "Nước Vong Xuyên",
+    "description": "Nước lấy từ dòng sông ở gần Đền Đêm Đen, tỏa ra ánh sáng nhẹ trong bóng tối. Uống trực tiếp sẽ không làm cho người ta quên đi điều gì, nhưng Ngọc Long Cốt được nó nuôi dưỡng lại có tác dụng tương tự."
+  },
+  "DragonboneOrb": {
+    "name": "Ngọc Long Cốt",
+    "description": "Quả do Hoa Long Cốt được tưới bằng Nước Vong Xuyên kết thành, nghe nói có công dụng diệu kỳ giúp quét sạch phiền não, đem lại bình yên. Buông bỏ mục tiêu, vứt bỏ dục vọng, trong lòng thỏa mãn, đây chính là chân tướng của hạnh phúc, đúng chứ?"
   },
   "KeyToSomePlace": {
     "name": "Chìa Khóa Đến Một Nơi Nào Đó",
@@ -3442,6 +3562,10 @@
   "Key": {
     "name": "Chìa Khóa",
     "description": "Chìa khóa tạo hình đặc biệt, có thể mở chiếc lồng nhốt Bennett."
+  },
+  "BoxOfClothes": {
+    "name": "Hộp Trang Phục",
+    "description": "Bên trong đựng trang phục của Ningguang, theo cách nói của cô ấy, \"đổi trang phục, đổi tâm trạng\"."
   },
   "IronChunk": {
     "name": "Mảnh Sắt",
@@ -3701,23 +3825,23 @@
   },
   "NewChroniclesOfTheSixKitsunePrologue": {
     "name": "Tân Lục Hồ Truyện - Mở Đầu",
-    "description": "Những câu chuyện gắn liền với việc được rồi lại mất. Quyển sách này không phải sáng tác mới mà được cải biên từ tác phẩm nổi tiếng \"Lục Hồ Truyện Yuurakusai\""
+    "description": "Những câu chuyện gắn liền với việc được rồi lại mất. Quyển sách này không phải sáng tác mới mà được cải biên từ tác phẩm nổi tiếng \"Lục Hồ Truyện Urakusai\""
   },
   "NewChroniclesOfTheSixKitsuneI": {
     "name": "Tân Lục Hồ Truyện I",
-    "description": "\"Hắc Hồ\" Itaru Và Những Truyền Thuyết vốn dĩ là chương thứ 3 của \"Lục Hồ Truyện Yuurakusai\". Nhưng do tác giả dành cho nó một sự ưu ái đặc biệt, nên đã được nhắc đến đầu tiên"
+    "description": "\"Hắc Hồ\" Itaru Và Những Truyền Thuyết vốn dĩ là chương thứ 3 của \"Lục Hồ Truyện Urakusai\". Nhưng do tác giả dành cho nó một sự ưu ái đặc biệt, nên đã được nhắc đến đầu tiên"
   },
   "NewChroniclesOfTheSixKitsuneII": {
     "name": "Tân Lục Hồ Truyện II",
-    "description": "Quyển này kể lại cuộc đối chiến giữa \"Hắc Hồ Itaru\" và \"Song Quỷ Tokaku\". Câu chuyện này không may đã bị thất lạc trong \"Lục Hồ Truyện Yuurakusai\", ngày nay may mắn tìm lại được và chỉnh sửa đôi chút."
+    "description": "Quyển này kể lại cuộc đối chiến giữa \"Hắc Hồ Itaru\" và \"Song Quỷ Tokaku\". Câu chuyện này không may đã bị thất lạc trong \"Lục Hồ Truyện Urakusai\", ngày nay may mắn tìm lại được và chỉnh sửa đôi chút."
   },
   "NewChroniclesOfTheSixKitsuneIII": {
     "name": "Tân Lục Hồ Truyện III",
-    "description": "Trong \"Lục Hồ Truyện Yuurakusai\" 500 năm trước, Youzan và Yui đều có những câu chuyện của riêng mình. Nhưng vào lúc đó hai mẹ con vẫn phải dựa vào sự cứu giúp của Itaru."
+    "description": "Trong \"Lục Hồ Truyện Urakusai\" 500 năm trước, Youzan và Yui đều có những câu chuyện của riêng mình. Nhưng vào lúc đó hai mẹ con vẫn phải dựa vào sự cứu giúp của Itaru."
   },
   "NewChroniclesOfTheSixKitsuneIV": {
     "name": "Tân Lục Hồ Truyện IV",
-    "description": "Chương truyện dài nhất trong \"Lục Hồ Truyện Yuurakusai\", nghe nói vẫn được viết bởi đại nhân Yuurakusai từ Liyue trở về, và được thể hiện đầy đủ trong bản cải biên của nhà văn."
+    "description": "Chương truyện dài nhất trong \"Lục Hồ Truyện Urakusai\", nghe nói vẫn được viết bởi đại nhân Urakusai từ Liyue trở về, và được thể hiện đầy đủ trong bản cải biên của nhà văn."
   },
   "SangonomiyaChronicles": {
     "name": "Ký Sự Sangonomiya",
@@ -3939,17 +4063,217 @@
     "name": "Thịt Gia Cầm Tươi",
     "description": "Thức ăn Thoma chuẩn bị cho những chú chó hoang, chắc chúng sẽ rất thích."
   },
+  "BagOfRetrievedItems": {
+    "name": "Túi Đồ Thu Hồi",
+    "description": "Một lô vật phẩm bỏ đi ở phía nam bến cảng, có vẻ như không có giá trị gì."
+  },
+  "RepairedComb": {
+    "name": "Chiếc Lược Đã Sửa",
+    "description": "Chiếc lược mà Ningguang ủy thác cho \"Minh Tinh Trai\" sửa chữa, nó thuộc về một người cung cấp thông tin đặc biệt. Nghe nói chiếc lược này đã bị hư tổn nghiêm trọng, sửa được như thế này thật không dễ dàng gì."
+  },
   "MysteriousFlyer": {
     "name": "Truyền Đơn Huyền Bí",
     "description": "Truyền đơn nhận được từ câu lạc bộ người hâm mộ tiểu thư Hina, hình ảnh trên đó hình như hơi quen quen..."
+  },
+  "RigorousSchedule": {
+    "name": "Thời Gian Biểu Dày Đặc",
+    "description": "Thời gian biểu mà bạn sắp xếp cho Ningguang, các hạng mục công việc đều đã được liệt kê trên đó, rất rõ ràng và dễ đọc."
+  },
+  "SimpleSchedule": {
+    "name": "Thời Gian Biểu Đơn Giản",
+    "description": "Thời gian biểu mà bạn sắp xếp cho Ningguang, ngắn gọn súc tích."
+  },
+  "StarsplinterIron": {
+    "name": "Quặng Sắt Sao Vỡ",
+    "description": "Một trong các khoáng thạch cần thiết để chế tạo \"Lõi Thần Kỳ\", có sức mạnh cộng hưởng với Vision."
+  },
+  "Subrosium": {
+    "name": "Bí Hoa Thạch",
+    "description": "Một trong các khoáng thạch cần thiết để chế tạo \"Lõi Thần Kỳ\", thường xuất hiện ở nơi ngày và đêm giao thoa."
+  },
+  "WonderCore": {
+    "name": "Lõi Thần Kỳ",
+    "description": "Lõi của kết cấu máy móc trong Quần Ngọc Các, sau khi kết hợp với Bùa Chú Tiên Gia có thể dùng làm trung tâm điều khiển Quần Ngọc Các."
+  },
+  "AdeptiSigil": {
+    "name": "Bùa Chú Tiên Gia",
+    "description": "Bùa Chú Tiên Gia do Shenhe chế tạo, chứa đựng trong đó rất nhiều sức mạnh tiên gia."
+  },
+  "RecordsOfAChangingVillage": {
+    "name": "Ghi Chép Của Thôn Làng",
+    "description": "Văn thư thông báo về việc di cư, ghi chép lại chuyện thôn làng phải dời đi vì tàn dư của Ma Thần."
+  },
+  "MountainousMiscellany": {
+    "name": "Chuyện Về Sơn Thạch",
+    "description": "Ghi chép truyền thuyết về các loại đá thần kỳ ở Thiên Hoành Sơn, trong đó bao gồm rất nhiều khoáng thạch quý. Nghe nói vào lúc hoàng hôn, đứng ở giữa hồ ở phía Nam của Thiên Hoành Sơn, đi theo hướng mặt trời lặn sẽ có thể tìm thấy Bí Hoa Thạch trong truyền thuyết."
   },
   "NeatlyWrittenNote": {
     "name": "Thư Tay Nắn Nót",
     "description": "Giấy của bức thư này hơi giòn và mực cũng hơi nhòe, có vẻ như cả nó và chủ nhân của nó đều đã phải trải qua nhiều sóng gió. Thật không may, cùng chịu chung hoạn nạn nhưng số mệnh lại khác nhau."
   },
+  "LittleMengsDriftingBottle": {
+    "name": "Bình Trôi Của A Meng",
+    "description": "Bình trôi chứa đựng phiền não của A Meng, không biết trong đó viết cái gì nhỉ..."
+  },
+  "YueChuansDriftingBottle": {
+    "name": "Bình Trôi Của Yue Chuan",
+    "description": "Bình trôi chứa hồi âm của Yue Chuan, không biết có thể đến được tay A Meng không..."
+  },
+  "CellKey": {
+    "name": "Chìa Khóa Phòng Giam",
+    "description": "Chìa khóa kim loại tìm được trên người Fatui, có lẽ sẽ mở được cửa phòng nào đó."
+  },
+  "FreshlyPickedCallaLily": {
+    "name": "Hoa Calla Lily Vừa Hái",
+    "description": "Hoa Calla Lily vừa mới hái, rất thích hợp để làm tiêu bản."
+  },
+  "FreshlyPickedSmallLampGrass": {
+    "name": "Tiểu Đăng Thảo Vừa Hái",
+    "description": "Tiểu Đăng Thảo vừa mới hái, rất thích hợp để làm tiêu bản."
+  },
+  "FreshlyPickedCecilia": {
+    "name": "Hoa Cecilia Vừa Hái",
+    "description": "Hoa Cecilia vừa mới hái, vẫn còn lan tỏa hương hoa."
+  },
+  "RuinMachineCore": {
+    "name": "Lõi Cơ Quan Di Tích",
+    "description": "Lõi của Thủ Vệ Di Tích. Các phiên bản cũ và mới của thiết bị này không tương thích, cho nên không thể mang đi cường hóa vật dụng. Tuy nhiên, năng lượng còn sót lại cũng đủ để khởi động Thủ Vệ Di Tích."
+  },
+  "DatesKey": {
+    "name": "Chìa Khóa Của Date",
+    "description": "Chìa khóa của Date, tiếc rằng không thể mở cửa kho vàng hoàng gia ở Enkanomiya, mà chỉ có thể mở con đường đến mê cung Heterodoxa."
+  },
   "PileOfLavenderMelons": {
     "name": "Đống Dưa Tím",
     "description": "Dưa tím chất đống trên đất, có thể do loài động vật nào đó tha đến đây, nhìn xa xa trông giống Onikabuto."
+  },
+  "FineIncense": {
+    "name": "Hương Cao Cấp",
+    "description": "Loại hương lấy được từ chỗ Wang Ping'an, nghe nói là hàng cao cấp."
+  },
+  "ANoteSomeoneStuffedYou": {
+    "name": "Mẩu Giấy Bị Nhét Vào Người",
+    "description": "Mẩu giấy bị người lạ nhét vào người trong lúc đi dạo trong Thành Inazuma, trên đó vẽ hai ký hiệu kỳ lạ."
+  },
+  "SpecialBambooSlip": {
+    "name": "\"Thẻ Trúc\" Đặc Biệt",
+    "description": "Thẻ trúc có chứa bột nguyên tố đặc biệt của Momoyo, cần bảo quản cẩn thận. Dù sao bột nguyên tố cũng có độc tính, lóng ngóng sẽ bị người ta chửi thẳng vào mặt."
+  },
+  "FinalInstructions": {
+    "name": "\"Mệnh Lệnh Cuối Cùng\"",
+    "description": "Mệnh lệnh của Fatui, lấy được từ tay Lyudochka, ghi lại chi tiết các nhiệm vụ cần làm tiếp theo tại Đảo Watatsumi. Vì sự an toàn của dân chúng, tình báo trong mảnh giấy này là cực kỳ quan trọng."
+  },
+  "BagOfClothes": {
+    "name": "Túi Đựng Trang Phục",
+    "description": "Túi giấy chứa bộ đồng phục Fatui của Lyudochka. Vì thân phận Fatui khá nhạy cảm, tốt nhất không nên để người ta thấy được bộ đồ này."
+  },
+  "SpecialFortuneSlip": {
+    "name": "\"Thẻ Ngự Thần\" Đặc Biệt",
+    "description": "Mẩu giấy dùng để bói vận mệnh hôm nay, về bản chất không khác gì với các \"Thẻ Ngự Thần\" khác, chỉ là thẻ này được đổi bằng một thẻ trúc giả.\\nNhững gì viết trên \"Thẻ Ngự Thần\" này không biết là dự báo cho vận mệnh của ai đây?"
+  },
+  "LightMoraPurse": {
+    "name": "Túi Mora Nhẹ Tênh",
+    "description": "Túi Mora tìm được trong rương, khi cảm nhận được trọng lượng của nó thì bản thân cũng cảm thấy thất vọng."
+  },
+  "FullMoraPurse": {
+    "name": "Túi Mora Đầy Tràn",
+    "description": "Túi Mora tìm được trong rương, so với túi Mora tìm được trước đó thì trọng lượng của thứ này khiến người ta cảm thấy an tâm hơn."
+  },
+  "PlumpFish": {
+    "name": "Thịt Cá Tươi",
+    "description": "Thịt cá vừa lấy được trong hồ, món quà của tự nhiên. Loại nguyên liệu tươi ngon thế này chỉ cần nướng sơ qua thôi là đã thơm ngon vô cùng."
+  },
+  "BeautifullyWrittenNote": {
+    "name": "Lời Nhắn Với Nét Chữ Đẹp",
+    "description": "Lời Nhắn Với Nét Chữ Đẹp"
+  },
+  "YunJinsPersonalLetter": {
+    "name": "Thư Tay Của Yun Jin",
+    "description": "Bức thư của Yun Jin viết cho Shiyun, có lẽ là chìa khóa để xoay chuyển cục diện chăng?"
+  },
+  "LyudochkasLetter": {
+    "name": "Thư Của Lyudochka",
+    "description": "Thư của Lyudochka nhờ nhân viên Nhà Xuất Bản Yae đưa cho bạn. Từ trong thư bạn tìm ra được lý do cô ấy bỏ đi. Nhưng có thể chấp nhận lý do này hay không thì lại là chuyện khác.\\nLà bạn đã phát hiện ra sự tồn tại và thay đổi vận mệnh của cô ấy... Có lẽ bạn còn có thể làm được nhiều thứ hơn, ví dụ như tạo ra một kết cục có hậu cho tất cả mọi người?"
+  },
+  "LyudochkasMoraPurse": {
+    "name": "Túi Mora Của Lyudochka",
+    "description": "Túi Mora của Lyudochka để lại, bên trong có không ít tiền, nhưng đến cả Paimon cũng không có ý định nhận nó."
+  },
+  "FatuiCodeSheet": {
+    "name": "\"Bảng Ám Ngữ Fatui\"",
+    "description": "\"Bảng Ám Ngữ Fatui\" được thành viên mơ ngủ nào đó của Shuumatsuban ghi lại.\\nKhi đọc nó, ngoài việc bạn có thể nhận biết được \"Fatui nói chuyện thật kỳ lạ\", thì nhìn dấu tích nước dãi thấm xuyên qua trang giấy, bạn còn có thể cảm nhận được mức độ ngon giấc của người viết."
+  },
+  "LightPurse": {
+    "name": "Túi Tiền Nhẹ Tênh",
+    "description": "Túi tiền nhận được từ chỗ Mona, cô ấy dùng nó để trả tiền thuê phòng."
+  },
+  "MarjoriesGift": {
+    "name": "Món Quà Của Marjorie",
+    "description": "Món quà nhận được từ chỗ Marjorie, nghe nói các bạn nhỏ sẽ rất thích..."
+  },
+  "ViktorsGift": {
+    "name": "Món Quà Của Viktor",
+    "description": "Món quà nhận được từ chỗ Viktor. Hình như dưới đáy hộp quà còn có một bức thư..."
+  },
+  "FreshWolfhooks": {
+    "name": "Quả Móc Câu Tươi",
+    "description": "Quả Móc Câu tươi mới, may mà không bị ma vật làm hư."
+  },
+  "LyudochkasFortuneSlip": {
+    "name": "Giấy Giải Quẻ Lyudochka",
+    "description": "Mẩu giấy dùng để bói vận mệnh, bản chất không khác gì với các \"Thẻ Ngự Thần\" khác, nhưng đây có lẽ là chìa khóa để mở cửa trái tim của Lyudochka.\\nMẩu giấy này khi trở về tay bạn, đã bao hàm cả sự chúc phúc chân thành của cô ấy. Nếu như có thời gian hãy đến Đền Narukami thăm cô ấy nhé."
+  },
+  "TheMiraculousAdventuresOfTheTraveler": {
+    "name": "Chuyến Phiêu Lưu Kỳ Thú",
+    "description": "\"Cuốn tiểu thuyết rất chính thống, là chuyển thể dựa trên thế giới thực ở Teyvat. Đáng ngạc nhiên là tác giả có vẻ hiểu biết rất rõ Đảo Watatsumi, rất nhiều mô tả sinh động như thật.\" - Tiểu thư Hina"
+  },
+  "LightRealmSigil": {
+    "name": "Ấn Ánh Sáng",
+    "description": "Dấu ấn tượng trưng cho sự công nhận của Tokoyo Ookami - Enkanomiya. \\nHiến tế cho Tượng Ngự Sử để nâng cấp Hộp Bokuso."
+  },
+  "LightRealmCore": {
+    "name": "Hạt Nhân Ánh Sáng",
+    "description": "Hòn đá kỳ lạ đã tìm thấy được khi thám hiểm Enkanomiya đang bị sương đen bao phủ.\\nĐể chiến đấu với Vực Sâu, Lãnh Địa Ánh Sáng đã cung cấp thêm sự trợ giúp cho con người."
+  },
+  "AFirsthandGuideToSummoningSpirits": {
+    "name": "Ký Sự Gọi Hồn",
+    "description": "Cuốn tiểu thuyết đang thịnh hành ở Inazuma, kể về những giai thoại của nhiều loại youkai cổ đại khác nhau."
+  },
+  "DreamSakura": {
+    "name": "Anh Đào Mơ Mộng",
+    "description": "Trước khi rời khỏi không gian ý thức của Raiden Makoto, một cánh hoa anh đào nằm gọn trong tay bạn. \\nSự tồn tại của nó là một bí ẩn, mặc dù trông không khác gì những cánh hoa anh đào thông thường, nằm yên lặng trong túi của bạn giống như mọi đồ vật khác. Nhưng bạn lại không thể chạm vào, cũng như không thể cảm nhận được trọng lượng hay nhiệt độ của nó. Khi một vật mất đi các thuộc tính cơ bản mà người ta quen thuộc, làm thế nào để chứng minh rằng nó \"tồn tại\"? \\nNhớ lại những điều đã diễn ra trước khi nó xuất hiện, một suy đoán bất chợt hiện lên trong đầu: Sức mạnh để duy trì sự tồn tại của cánh hoa anh đào này chắc chắn là ý chí của một ai đó, nhưng người này rốt cuộc là ai, là vô tình hay cố ý giữ cho cánh hoa này tồn tại, thật sự không thể biết được; Phần ý thức này là hoài niệm, tin tưởng hay là cảm kích cũng không thể nào kiểm chứng.\\nCó thể cánh hoa anh đào này sẽ biến mất vào lúc \"ý muốn của người nào đó\" thay đổi.\\nVì vậy thỉnh thoảng nên xác nhận lại xem cánh hoa có còn ở đó hay không."
+  },
+  "AphotiumOre": {
+    "name": "Quặng Biển Sâu",
+    "description": "Một loại khoáng sản đặc biệt được tạo ra bởi Tế Lễ Linh Hồn Watatsumi. Do môi trường của Enkanomiya đã có những thay đổi lớn, những ký ức và nỗi nhớ rải rác khắp Watatsumi đã kết tụ lại thành tủy, sau đó chuyển hóa thành khoáng vật."
+  },
+  "TokoyoLegume": {
+    "name": "Nhánh Tokoyo",
+    "description": "Một loại thực vật đặc biệt được sinh ra thông qua Tế Lễ Linh Hồn Watatsumi. Bởi sự thức tỉnh của Sangacorex, năng lượng nguyên tố trong Enkanomiya đã trở nên ôn hòa. Đây là một loại hoa màu sinh trưởng tự nhiên, sau khi mục nát sẽ biến thành mùn giúp đất tơi xốp."
+  },
+  "HuskGem": {
+    "name": "Bảo Thạch Rỗng",
+    "description": "Một viên đá quý đã rơi ra sau khi Vỏ Rỗng Ảm Đạm đặc biệt bị đánh bại. Có thể cảm nhận được ý chí trào dâng trong đó. Có lẽ không thể nói rằng ý chí này đã điều khiển chiếc vỏ rỗng, mà là ý chí này thể hiện chính nó thông qua bộ áo giáp."
+  },
+  "FragmentedAccessory": {
+    "name": "Trang Sức Vỡ Nát",
+    "description": "Món trang sức nhận được từ Kokomi, trông giống như mảnh vỡ của một thứ gì đó. Theo Kokomi, nó có thể sẽ có ích."
+  },
+  "TsumisMap": {
+    "name": "Bản Đồ Của Tsumi",
+    "description": "Bản đồ do Tsumi vẽ. Có một số đánh dấu trên đó."
+  },
+  "HakuenMichimitsuAmenoma": {
+    "name": "Hakuen Michimitsu Amenoma",
+    "description": "Bảo đao được lưu truyền qua nhiều đời của gia đình Iwakura.\\nTuy rằng tay nghề của những người thợ vô cùng xuất sắc, cũng đã trải qua nhiều năm va chạm với kiếm thật, nhưng bản thân thanh đao thật ra không có bất cứ sức mạnh đặc biệt nào. Suốt bao đời thừa kế Iwakura đều chưa từng có được Vision, niềm kiêu hãnh về kiếm thuật của họ chỉ đến từ sự rèn luyện thân, tâm, kỹ thuật trong suốt nhiều năm.\\nThanh đao này đã ngâm trong nước được một thời gian. Đến nay đã hoàn toàn gỉ sét."
+  },
+  "DamagedStoneSlate": {
+    "name": "Phiến Đá Vỡ",
+    "description": "Phiến đá trông rất bình thường. Không biết ẩn chứa bí mật gì trong đó."
+  },
+  "MysteriousStoneSlate": {
+    "name": "Phiến Đá Thần Bí",
+    "description": "Phiến đá cuối cùng lấy được. Bên trong bí mật vẫn còn bí mật khác."
   },
   "PyroShard": {
     "name": "Mảnh Nguyên Tố Hỏa",
@@ -4140,7 +4464,7 @@
     "description": "Nguyên Liệu Đột Phá Nhân Vật"
   },
   "ShivadaJadeFragment": {
-    "name": "Miếng Ngọc Băng Vỡ",
+    "name": "Mảnh Ngọc Băng Vỡ",
     "description": "Nguyên liệu đột phá nhân vật.\\n\"...xin lỗi...\""
   },
   "ShivadaJadeChunk": {
@@ -5807,6 +6131,66 @@
     "name": "Thường Thắng Truyền Thuyết",
     "description": "Món ăn đặc sắc của Gorou. Món ăn kèm chất cao và đầy ắp, cũng giống như tâm ý của Gorou khiến cho người khác phải cảm động. Ăn hết mì, húp hết nước, xoa xoa bụng, rồi ngẩng đầu nhìn Gorou đứng bên cạnh...Chỉ thấy Gorou đang cười rạng rỡ, chiếc đuôi phía sau còn đang ngoe nguẩy, chắc bản thân Gorou cũng không phát hiện ra..."
   },
+  "SuspiciousBountifulYear": {
+    "name": "Phúc Lộc Tràn Đầy Kỳ Lạ",
+    "description": "Món Sashimi sang trọng tinh tế. Nhưng những loại gia vị lởm chởm và thịt cá như mới chạm trán sóng thần, gục đầu ủ rũ trong đĩa, không thể khơi dậy một chút cảm giác thèm ăn nào. Chỉ là nguyên liệu quá phong phú nên nếu bạn không ăn thì sẽ rất lãng phí. Thực sự không biết nên bắt đầu từ đâu..."
+  },
+  "BountifulYear": {
+    "name": "Phúc Lộc Tràn Đầy",
+    "description": "Món Sashimi sang trọng tinh tế. Cắt cá thành từng lát mỏng và xếp thành hình những bông hoa đang nở, sau đó xếp những phần thức ăn kèm phong phú xung quanh. Trước khi ăn, các món ăn kèm và sashimi cá thường được trộn theo ý thích, ngụ ý là những ngày tháng sau này sẽ khấm khá hơn."
+  },
+  "DeliciousBountifulYear": {
+    "name": "Phúc Lộc Tràn Đầy Ngon",
+    "description": "Món Sashimi sang trọng tinh tế. Lớp thịt cá mỏng nhẹ như cánh ve và có màu trắng mờ, giống như dấu vết của sương giá rơi trên mặt đất. Khi đưa miếng sashimi vào miệng, thịt cá mềm mịn hòa với các món ăn kèm đầy màu sắc hương vị, tất cả quyện vào nhau trên đầu lưỡi."
+  },
+  "SuspiciousDragonBeardNoodles": {
+    "name": "Mì Râu Rồng Kỳ Lạ",
+    "description": "Sợi mì mảnh như râu rồng. Do quá chú trọng vào độ mỏng của sợi mì nên khi nấu lên đã bị nhừ nát. Nhìn thì dễ nhưng làm mới khó, xem ra cần phải luyện tập thêm..."
+  },
+  "DragonBeardNoodles": {
+    "name": "Mì Râu Rồng",
+    "description": "Sợi mì mảnh như râu rồng. Cho hành đã thái, rồi đến nước dùng và các món ăn kèm vào nồi xong, cuối cùng mới cho mì vào, nấu chín vớt ra cho vào đĩa. Bột phải được kéo căng nhiều lần mới có thể trở nên mỏng như sợi mì râu rồng, là một trong những món ăn yêu cầu tay nghề bậc nhất trong các món mì ở Liyue."
+  },
+  "DeliciousDragonBeardNoodles": {
+    "name": "Mì Râu Rồng Ngon",
+    "description": "Sợi mì mảnh như râu rồng. Sợi mì căng tràn như dòng thác chảy thẳng xuống, hòa vào thứ nước dùng cô đọng tinh hoa núi rừng. Những sợi mì râu rồng có kết cấu mềm và dai hơn so với sợi mì thông thường, khiến người ta không muốn dừng đũa chút nào."
+  },
+  "HeartstringNoodles": {
+    "name": "Mì Liên Tâm",
+    "description": "Món ăn đặc sắc của Shenhe. Có lẽ do muốn thưởng thức lại hương vị trong trí nhớ của mình, cho nên Shenhe đã dành rất nhiều thời gian vào việc sắp xếp và trang trí món ăn. Sợi mì mịn và nước súp ngon, thực sự rất ấn tượng. Nhưng điều đáng nhớ nhất chính là sự cống hiến hết mình của cô ấy..."
+  },
+  "CloudShroudedJade": {
+    "name": "Vân Già Ngọc",
+    "description": "Món ăn đặc sắc của Yun Jin. Món tráng miệng thơm ngọt và sẽ không gây hại đến cổ họng mình. Dư vị thanh tao khiến cho bản thân không bị ngán dù đã ăn quá nhiều. Có vẻ như... lượng thức ăn thực sự nhiều hơn so với khẩu phần ăn thường ngày của cô ấy, có lẽ đây cũng là lòng tốt của Yun Jin."
+  },
+  "SuspiciousSangayaki": {
+    "name": "Sangayaki Kỳ Lạ",
+    "description": "Món ăn đơn giản mộc mạc của ngư dân. Vị mặn chát của muối do nêm quá tay hòa với mùi tanh của thịt cá, như một cơn bão quét qua vị giác, lần sau thêm muối hãy cẩn thận đừng quá tay nữa nhé..."
+  },
+  "Sangayaki": {
+    "name": "Sangayaki",
+    "description": "Món ăn đơn giản mộc mạc của ngư dân. Cá bỏ da, băm nhuyễn cùng với Cỏ Kim Ngư, cho thêm Miso và muối vừa ăn, rồi nặn thành hình chả cá và mang đi nướng. Chưa ăn mà đã ngửi thấy mùi thơm nức mũi, ăn hết 3 cái mà vẫn thòm thèm."
+  },
+  "DeliciousSangayaki": {
+    "name": "Sangayaki Ngon",
+    "description": "Món ăn đơn giản mộc mạc của ngư dân. Đầy đủ dinh dưỡng và hương vị. Bên ngoài vàng ruộm, bên trong mềm mịn, chỉ cần cắn một miếng là hạnh phúc nhân đôi. Chả cá có ăn sống cũng không hề kém cạnh, nướng qua than hồng lại càng tăng thêm hương vị tươi ngon."
+  },
+  "SuspiciousUdonNoodles": {
+    "name": "Mì Udon Kỳ Lạ",
+    "description": "Món mì sợi dai. Sợi mì và nước súp quá nhạt nhẽo khiến khi ăn có cảm giác nhàm chán. Xem ra lần sau khi nêm gia vị cần phải chú ý hơn một chút."
+  },
+  "UdonNoodles": {
+    "name": "Mì Udon",
+    "description": "Món mì sợi dai. Sau khi lên men và kéo căng nhiều lần, bột sẽ trở thành sợi mì mềm mại và có tính đàn hồi. Không giống như Ramen hương vị đậm đà, mì udon lại làm say lòng người dân Inazuma với hương vị nhẹ nhàng."
+  },
+  "DeliciousUdonNoodles": {
+    "name": "Mì Udon Ngon",
+    "description": "Món mì sợi dai. Sợi mì udon trắng, dẻo dai hòa quyện với nước dùng được chế biến cẩn thận, giản dị mà ngon đến nao lòng. Hương thơm thoang thoảng của lúa mì len vào trong dạ dày cùng với sợi mì mềm ngọt, nhưng dư vị ấm áp vẫn tràn ngập trong lòng."
+  },
+  "FukuuchiUdon": {
+    "name": "Mì Udon Fukuuchi",
+    "description": "Món ăn đặc biệt của Yae Miko. Món đậu phụ béo ngậy ở giữa là món đặc biệt do \"tiểu thư hồ ly\" làm, tương truyền rằng nếu bạn thành tâm và ăn hết một lượt, bạn sẽ được \"tiên hồ\" phù hộ gặp nhiều may mắn, hạnh phúc ngập tràn."
+  },
   "RecipeItem": {
     "name": "Đạo Cụ Công Thức",
     "description": "Mở Đạo Cụ Công Thức"
@@ -6223,6 +6607,22 @@
     "name": "Công Thức: Senbei Tôm Anh Đào",
     "description": "Công thức món ăn, ghi lại cách làm món \"Senbei Tôm Anh Đào\"."
   },
+  "RecipeBountifulYear": {
+    "name": "Công Thức: Phúc Lộc Tràn Đầy",
+    "description": "Công thức món ăn, ghi lại cách làm món \"Phúc Lộc Tràn Đầy\"."
+  },
+  "RecipeDragonBeardNoodles": {
+    "name": "Công Thức: Mì Râu Rồng",
+    "description": "Công thức món ăn, ghi lại cách làm món \"Mì Râu Rồng\""
+  },
+  "RecipeSangayaki": {
+    "name": "Công Thức: Sangayaki",
+    "description": "Công thức món ăn, ghi lại cách làm món \"Sangayaki\"."
+  },
+  "RecipeUdonNoodles": {
+    "name": "Công Thức: Mì Udon",
+    "description": "Công thức món ăn, ghi lại cách làm món \"Mì Udon\""
+  },
   "CraftedItems": {
     "name": "Sản Phẩm Ghép",
     "description": "Vật phẩm từ hệ thống Ghép"
@@ -6237,7 +6637,7 @@
   },
   "SmokedFowl": {
     "name": "Thịt Gia Cầm Xông Khói",
-    "description": "Thịt gia cầm được hun khói. Thịt săn chắc đem lại cảm khác mới lạ."
+    "description": "Thịt gia cầm được hun khói. Thịt săn chắc đem lại cảm giác mới lạ."
   },
   "Butter": {
     "name": "Bơ",
@@ -6357,7 +6757,7 @@
   },
   "FakeFlyBait": {
     "name": "Mồi Ruồi Giả",
-    "description": "Mồi câu mô phỏng theo hình thù ruồi nhặng, được làm từ các nguyên liệu có màu sắc sặc sỡ, không mùi, là mồi câu đặc biệt dành cho các loại cá lớn có thị giác linh hoạt, thông thường sẽ phối hợp với cách câu cá tương đối khó hơn. Hội Câu Cá ở một số nơi còn dùng Mồi Ruồi Giả để làm một trong các tiêu chuẩn tăng cấp cán bộ.\\n\\nLoại cá thích hợp: Cá Rồng, Cá Pháo."
+    "description": "Mồi câu mô phỏng theo hình thù ruồi nhặng, được làm từ các nguyên liệu có màu sắc sặc sỡ, không mùi, là mồi câu đặc biệt dành cho các loại cá lớn có thị giác linh hoạt, thông thường sẽ phối hợp với cách câu cá tương đối khó hơn. Hội Câu Cá ở một số nơi còn dùng Mồi Ruồi Giả để làm một trong các tiêu chuẩn tăng cấp cán bộ.\\n\\nLoại cá thích hợp: Cá Rồng, Cá Pháo, Cá Đuối."
   },
   "GlowgrassBait": {
     "name": "Mồi Óng Ánh",
@@ -6401,7 +6801,7 @@
   },
   "ForbiddenCurseScroll": {
     "name": "Bản Vẽ Cấm Chú",
-    "description": "Bản vẽ các hình tượng cổ đại. Rất ít người có thể hiểu hàm ý trên đó, nghe nói những học giả có thể hiểu được cuối cùng đều bị điên."
+    "description": "Bản vẽ các hình tượng cổ đại. Rất ít người có thể hiểu hàm ý trên đó, nghe nói những học giả có thể hiểu được đều bị điên."
   },
   "FirmArrowhead": {
     "name": "Mũi Tên Chắc Chắn",
@@ -6715,6 +7115,22 @@
     "name": "Sừng Vua Quái Cảnh",
     "description": "Một chiếc sừng gãy có được sau khi chiến thắng Vua Thú. Đáng lẽ nó không nên để lại bất kỳ tàn dư gì sau khi bị trục xuất mới đúng.\\nNgay cả một vua thú giữa bầy sói trong Quái Cảnh cũng chẳng là gì trước những ma thú thuộc hệ cao hơn.\\n\"Gold\" sau khi dồn nén vô số bầy sói ma vật giống như nén mớ tranh bỏ đi, đã vô tình sản sinh ra ma thú với hình thù kỳ lạ, và thứ chất chứa bên trong chiếc sừng của nó chính là quyền năng hiệu lệnh cho bầy sói đen làm xói mòn không gian cho nó."
   },
+  "DragonheirsFalseFin": {
+    "name": "Vảy Giả Tộc Rồng",
+    "description": "Loại mô sinh học nhận được khi tiêu diệt Rồng Biển Sâu.\\nTuy trông như vảy cá, nhưng thực ra lại không có công dụng gì.\\nCư dân Vương Quốc Đêm Trắng cũng từng có nghiên cứu chuyên sâu về Rồng Biển Sâu. Điểm đặc biệt nhất của chúng là khả năng lựa chọn đặc điểm mà nó muốn truyền lại cho con cái. Vì căm ghét ánh sáng của loài người nên Rồng Biển Sâu khi trưởng thành sẽ mất đi phần lớn thị lực, đồng thời chúng cũng sẽ tiến hóa thành các loại nguyên tố khác nhau để thích nghi với chiến đấu."
+  },
+  "MudraOfTheMaleficGeneral": {
+    "name": "Thủ Ấn Hung Tướng",
+    "description": "Bộ phận của con rối mang về từ Tịnh Thổ, phần này là hình bàn tay và mắt tượng trưng cho \"mắt thấy tay làm\".\\nNgay cả khi đã biến thành vị thần tai ương, \"cô ấy\" vẫn có thể cưỡi trên đôi bàn tay này. Khoảnh khắc đôi mắt nhìn thấy, đã vung ra một nhát đao.\\nThế nhưng vạn kiếp quá dài, cốt tủy của hung tướng cũng đã mang bộ dạng mới."
+  },
+  "TearsOfTheCalamitousGod": {
+    "name": "Nước Mắt Tai Ương",
+    "description": "Bộ phận của con rối mang về từ Tịnh Thổ, phần này có hình dạng \"Con Mắt Ác Ma\".\\nChỉ cần dựa vào ánh mắt cũng có thể giáng xuống tai họa và lời nguyền, vì vậy khi cuộc sống không được suôn sẻ, việc đổ lỗi cho \"vị thần tai ương\" là lẽ đương nhiên. Nhưng hãy nghĩ kỹ lại xem, nếu ý chí đủ kiên định và niềm tin đủ mạnh...\\nVạn kiếp quá dài, ngay cả hung tinh tà ác cũng có thể tự rửa sạch mình bằng nước mắt."
+  },
+  "TheMeaningOfAeons": {
+    "name": "Chân Ý Vạn Kiếp",
+    "description": "Trang sức được mang về từ Tịnh Thổ sau khi mọi chuyện đã lắng xuống.\\nNhất niệm vạn kiếp tận, sẽ luôn có những suy nghĩ có thể vượt qua thời gian.\\nMuôn vạn kiếp nạn, liệu ý nghĩ thực sự của Makoto đã được truyền đạt thành công hay chưa."
+  },
   "TileOfDecarabiansTower": {
     "name": "Ngói Vỡ Tháp Cô Vương",
     "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\\nGần đây nơi được mệnh danh là Phế Tích Phong Long, từng là vương đô được kiến tạo bởi \"Decarabian\" - Ma thần của gió. Vì giấc mơ phồn hoa này được tạo ra bởi sức mạnh ma thần, nên khi giấc mơ tan vỡ, những mảnh vụn của nó cũng mang sức mạnh to lớn."
@@ -6873,7 +7289,7 @@
   },
   "ExoticShareBundle": {
     "name": "Gói Chia Sẻ Kỳ Trân",
-    "description": "Một số loại đá hiếm và kỳ lạ được hiệp hội chia sẻ thường xuyên, một vài trong số đó chứa sức mạnh nguyên tố.\\n\\nSau khi sử dụng, bạn có thể chọn một trong các tùy chọn sau:\\n·Mảnh Mã Não Cháy\\n·Mảnh Thanh Kim Sạch\\n·Mảnh Tử Tinh Thắng Lợi\\n·Mảnh Tùng Thạch Tự Tại\\n·Miếng Ngọc Băng Vỡ\\n·Mảnh Hoàng Ngọc Cứng"
+    "description": "Một số loại đá hiếm và kỳ lạ được hiệp hội chia sẻ thường xuyên, một vài trong số đó chứa sức mạnh nguyên tố.\\n\\nSau khi sử dụng, bạn có thể chọn một trong các tùy chọn sau:\\n·Mảnh Mã Não Cháy\\n·Mảnh Thanh Kim Sạch\\n·Mảnh Tử Tinh Thắng Lợi\\n·Mảnh Tùng Thạch Tự Tại\\n·Mảnh Ngọc Băng Vỡ\\n·Mảnh Hoàng Ngọc Cứng"
   },
   "CharacterAscensionBundleHigh": {
     "name": "Tự Chọn Đột Phá Nhân Vật-Cao",
@@ -7191,6 +7607,14 @@
     "name": "Cá Pháo Cay Đắng",
     "description": "Loài cá hiếm gặp trong họ Cá Pháo, danh bất hư truyền, chúng là loài cá lan truyền sự cay đắng trong nước. So với loài Cá Pháo bình thường, viên đạn nước mà chúng bắn ra khá nhỏ và chậm, nhưng lại mang mùi vị cay đắng. Trong thời kỳ giao phối, người ta thường hay thấy cảnh con trống và mái liên tục bắn đạn qua lại để lan truyền sự cay đắng, có thể đây là một cách để thể hiện tình yêu chăng."
   },
+  "DivdaRay": {
+    "name": "Cá Đuối Divda",
+    "description": "Một con cá kỳ lạ từng được cho là sinh vật huyền bí, chỉ được ghi lại trong một số tác phẩm nghệ thuật cổ trên đảo Watatsumi. Khi phong ấn của Enkanomiya được mở ra, nó đã bắt đầu lộ diện trước mắt mọi người.\\nNgười ta nói rằng màu sắc cơ thể của những sinh vật kỳ lạ này sẽ thay đổi theo thời gian. Khi còn nhỏ, chúng có màu vàng như ánh sáng mặt trời. Trong những bức họa cổ, thời kỳ này chúng được gọi là \"Divda\", có nghĩa là \"Chiếc Đuôi Hồn Nhiên\"."
+  },
+  "FormaloRay": {
+    "name": "Cá Đuối Formalo",
+    "description": "Một con cá kỳ lạ từng được cho là sinh vật huyền bí, chỉ được ghi lại trong một số tác phẩm nghệ thuật cổ trên đảo Watatsumi. Khi phong ấn của Enkanomiya được mở ra, nó đã bắt đầu lộ diện trước mắt mọi người.\\nNgười ta nói rằng màu sắc cơ thể của những sinh vật kỳ lạ này sẽ thay đổi theo thời gian. Khi còn nhỏ, chúng có màu vàng như ánh sáng mặt trời, khi trưởng thành sẽ có màu đậm, hai vây được phủ bởi màu tím trông như màn đêm buông xuống. Trong những bức họa cổ, thời kỳ này chúng được gọi là \"Formalo\", có nghĩa là \"Cái Miệng Tham Lam\"."
+  },
   "WingsOfFirstFlight": {
     "name": "Đôi Cánh Sơ Khai",
     "description": "Kiểu dáng của Phong Chi Dực. Chứa đựng sự kỳ vọng cháy bỏng của Kỵ Sĩ Trinh Thám."
@@ -7226,6 +7650,10 @@
   "WingsOfShimmeringGalaxy": {
     "name": "Cánh Rực Rỡ",
     "description": "Kiểu dáng của Phong Chi Dực. Món quà cho bản giao hưởng giữa những vì sao."
+  },
+  "RadiantSpincrystal": {
+    "name": "Ngọc Thạch Âm Vang 1",
+    "description": "Kết tinh ẩn chứa vần điệu kỳ diệu, như một viên ngọc bích tuyệt đẹp dệt từ dải lụa mỏng manh. Chúng được phân bổ ở khắp nơi trên vùng đất này hoặc ở trong tay những thương nhân bảo vật. Có thể vào trong \"Ấm Trần Ca\", dùng \"Âm Vang Vạn Dặm - Phiêu Dương\" hoặc \"Âm Vang Vạn Dặm - Mậu Nhiễu\" để khôi phục lại giai điệu bên trong. Giai điệu ẩn chứa trong \"Ngọc Thạch Âm Vang\" này là \"Tửu Trang Dawn\""
   },
   "LanternFiber": {
     "name": "Giấy Đèn",
@@ -7274,6 +7702,10 @@
   "Alkahest": {
     "name": "Alkahest",
     "description": "Đạo cụ tinh luyện dùng cho \"Con Thoi Chu Sa\".\\nChất lỏng màu bạc lấp lánh ánh sáng bên ngoài thế giới có lẽ là chất kịch độc ăn mòn xương tủy đối với bất kỳ thứ gì trên mặt đất. Nhưng cũng sở hữu sức mạnh khiến vật chất thăng hoa."
+  },
+  "OintmentOfSight": {
+    "name": "Dầu Cá Thị Lực",
+    "description": "Đạo cụ dành riêng cho \"Con Ngươi Tuyên Thệ\".\\nDầu cá tinh luyện từ loài cá chình biển sâu đặc biệt, từng được dùng để bảo dưỡng các thần khí của Enkanomiya, khiến nó trở nên sáng chói."
   },
   "FalconsDance": {
     "name": "Vũ Điệu Chim Ưng",
@@ -7860,16 +8292,44 @@
     "description": "Hoa văn danh thiếp.\\nPirka chikappo! Kapatcir kamuy!"
   },
   "GorouLeisurelyHound": {
-    "name": "Gorou: Chó Nhàn Nhã",
+    "name": "Gorou - Chó Nhàn Nhã",
     "description": "Hoa văn danh thiếp.\\nChỉ cần tin tưởng vào con đường mình chọn, thì mọi sự việc chúng ta gặp phải trên con đường dài đó đều sẽ khiến ta vui vẻ."
   },
   "IttoOniFace": {
-    "name": "Itto: Mặt Quỷ",
+    "name": "Itto - Mặt Quỷ",
     "description": "Hoa văn danh thiếp.\\nLà đàn ông thì nên bỏ đau khổ và phẫn nộ lại phía sau, sau đó nở một nụ cười sảng khoái!"
   },
   "TravelNotesLyratum": {
     "name": "Nhật Ký Hành Trình - Lyratum",
     "description": "Hoa văn danh thiếp.\\nTrên núi cao cây cỏ tàn lụi, chỉ còn lại duy nhất đóa hoa này."
+  },
+  "ShenheComb": {
+    "name": "Shenhe - Tiết Lược",
+    "description": "Hoa văn danh thiếp.\\nTảo sinh bạch phát, đa duyên sầu khổ. Bởi vì \"lược (chải tóc)\" đồng âm với \"lược (giản lược)\". Cho nên người dân Liyue cho rằng, dùng lược chải tóc, giản lược khổ sầu."
+  },
+  "YunJinRhyme": {
+    "name": "Yun Jin - Đối Âm",
+    "description": "Hoa văn danh thiếp.\\nYun tiên sinh có hai kiểu sư phụ. Một là ở bên ngoài, khi trên sân khấu, \"người chê tôi cũng là sư phụ của tôi\"; một loại ở bên trong, sáng tác lời kịch, đối chiếu vần thơ."
+  },
+  "InazumaTokoyo": {
+    "name": "Inazuma - Tokoyo",
+    "description": "Hoa văn danh thiếp.\\n\"Ôi, mặt trời vĩ đại! Nếu như ngài không có thứ mà ngài soi rọi, vậy thì ánh sáng của ngài còn có ý nghĩa gì chứ?\""
+  },
+  "TravelNotesFlowingHues": {
+    "name": "Nhật Ký Hành Trình - Sắc Màu",
+    "description": "Hoa văn danh thiếp.\\nTháng năm muôn vạn sắc màu."
+  },
+  "CelebrationBingeVessel": {
+    "name": "Tiệc Mừng - Linh Đình",
+    "description": "Hoa văn danh thiếp.\\nBên trong có rất nhiều rất nhiều câu chuyện, mà lại không có cồn. Paimon cũng có thể uống."
+  },
+  "YaeMikoKitsuneDreaming": {
+    "name": "Yae Miko - Hồ Ly Mơ Mộng",
+    "description": "Hoa văn danh thiếp.\\nCó thể nhìn thấy Yae Miko trong hình dạng hồ ly ở đâu? Mơ đi sẽ thấy."
+  },
+  "TravelNotesAwakening": {
+    "name": "Nhật Ký Hành Trình - Thức Tỉnh",
+    "description": "Hoa văn danh thiếp.\\nTam giới chấn động, thiên địa xoay vần. Sangacorex cũng đã thức tỉnh sau giấc ngủ vĩnh hằng."
   },
   "AnemoculusResonanceStone": {
     "name": "Đá Cộng Hưởng Phong Thần Đồng",
@@ -8027,6 +8487,14 @@
     "name": "\"Lưới Bắt Thú\"",
     "description": "Bạn của Sango sau khi nhận được gợi ý, đã dùng \"Kamuna Onmyoudou\" chế tạo ra đạo cụ tiện lợi này. Nó không đủ mạnh để bắt tội phạm, nhưng chỉ cần nhắm chuẩn, thì việc bắt những động vật nhỏ cũng không phải vấn đề gì to tát."
   },
+  "LaunchTube": {
+    "name": "\"Ống Pháo Hoa\"",
+    "description": "Cơ quan kỳ diệu được phát minh bởi Pengyi, có công dụng dung luyện pháo hoa và tự động đốt pháo hoa. Nếu ở trong tay người có sáng kiến phong phú, nhất định sẽ phát huy triệt để khả năng, tạo ra một màn pháo hoa hoành tráng."
+  },
+  "BokusoBox": {
+    "name": "Hộp Bokuso",
+    "description": "Sau khi dùng, có thể xóa bỏ ảnh hưởng của màn sương đen ở Enkanomiya trong một phạm vi nhất định.\\nCái tên Bokuso được hình thành từ \"boku\" có nghĩa là \"đến gần những thứ đẹp đẽ\", và \"so\" có nghĩa là \"tránh xa những thứ bẩn thỉu\"."
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Giải Thích: Đá Cộng Hưởng Phong Thần Đồng",
     "description": "Nói rõ từng bước thực hiện, ghi lại cách làm \"Đá Cộng Hưởng Phong Thần Đồng\". Có thể dùng để chế tạo đạo cụ tìm \"Phong Thần Đồng\"."
@@ -8123,6 +8591,54 @@
     "name": "\"Dấu Ấn Sắc Màu\"",
     "description": "Thẻ cầu nguyện được trang trí bằng tranh, điêu khắc từ Gỗ Mơ Mộng thượng hạng, mô tả phong cảnh tươi đẹp của Inazuma.\\nMượn \"sức mạnh ngoại cảnh\" để đưa cảnh sắc tao nhã trong tranh vào trong Ấm Trần Ca..."
   },
+  "TheMountainCloudsLetDownGoldenRain": {
+    "name": "Mây Trôi Nghìn Trùng Đón Tiếng Mưa",
+    "description": "Pháo hoa kinh điển có màu Vân Sơn Lam, sau khi bay lên trời cao và nổ tung, sẽ tạo ra kết cấu hai tầng, trông như một đóa hoa đang độ rực rỡ."
+  },
+  "TheSilverNightIsFullOfStars": {
+    "name": "Ánh Sao Tô Điểm Khắp Đêm Bạc",
+    "description": "Pháo hoa kinh điển có màu Mãn Thiên Tinh, màu sắc tươi đẹp làm người ta nhớ mãi."
+  },
+  "TheGloomPaintsTheColdBlooms": {
+    "name": "Tễ Thanh Yểu Mạn Nhiễm Hàn Anh",
+    "description": "Pháo hoa kinh điển có màu Tễ Thanh (trong xanh), luồng sáng khi pháo hoa bùng nổ, tạo ra hình dáng cánh hoa vô cùng độc đáo."
+  },
+  "FireworksDanceAmidstASnowySky": {
+    "name": "Tuyết Tán Yên Hỏa Thứ Đệ Huyền",
+    "description": "Pháo hoa kinh điển có màu vàng rực rỡ, sau khi bay lên trời sẽ bung nở nhẹ nhàng, tương đối yên tĩnh nhưng không mất đi nét diễm lệ."
+  },
+  "GoldenCalendulaSwirl": {
+    "name": "Kim Trản Huỳnh Hoa Tự Quyển Toàn",
+    "description": "Pháo hoa kinh điển có màu vàng, khi bung nở trông như cối xay gió xoay chuyển, vô cùng đẹp mắt."
+  },
+  "KindledTreesByTheMoonlitWindow": {
+    "name": "Thụy Nguyệt Hỏa Thụ Lạc Bạch Gian",
+    "description": "Pháo hoa kinh điển sau khi bung nở sẽ trông như cành liễu rũ xuống, nghe nói đốm lửa tàn của nó có thể chạm được đến khung cửa sổ của tòa lầu cao, đem lại một trải nghiệm tuyệt vời cho người chiêm ngưỡng."
+  },
+  "MischievousVillosas": {
+    "name": "Tinh Ngịch Ngây Thơ Bánh Ngô Đồng",
+    "description": "Pháo hoa sáng tạo có hình dạng Slime Phong. Do tên Slime Phong đọc lên không thuận miệng lắm, nên người sáng tạo ra nó đã dùng tên của một món ăn dân gian \"Bánh Ngô Đồng\" có màu giống như vậy để thay thế."
+  },
+  "SparklyShinyDodoco": {
+    "name": "Ánh Lửa Lấp Lánh Dodoco",
+    "description": "Một người thợ làm pháo hoa nào đó của Liyue sau khi ghé thăm nước láng giềng đã gặp được \"Kỵ Sĩ Tia Lửa\" nhiệt tình hiếu khách, đồng thời tham khảo người bạn đồng hành Dodoco của kỵ sĩ ấy, để phát minh ra loại pháo hoa đầy tính sáng tạo này."
+  },
+  "FameAndFortuneForASeason": {
+    "name": "Tài Vận Hanh Thông Suốt Cả Năm",
+    "description": "Pháo hoa sáng tạo có hình dạng Mora. Tương truyền rằng sau khi ngắm nhìn loại pháo hoa này từ một góc độ đứng đắn nhất, thì cả năm sẽ được bảo hộ về mặt tài vận."
+  },
+  "UnyieldingSpirit": {
+    "name": "Ý Chí Bất Khuất Không Bỏ Cuộc",
+    "description": "Một người thợ làm pháo hoa nào đó của Liyue sau khi ghé thăm nước láng giềng, đã cùng đội trưởng đoàn mạo hiểm nào đó trải qua một hành trình khó quên, và đã tham khảo động tác đặc trưng mà người đó thường dùng để chế tạo ra loại pháo hoa này."
+  },
+  "FestivalSpotlight": {
+    "name": "Đèn Tiêu Muôn Sắc Kết Nhân Duyên",
+    "description": "Pháo hoa sáng tạo có hình dạng trái tim. Tương truyền rằng sau khi ngắm nhìn loại pháo hoa này từ một góc độ đứng đắn nhất, thì sẽ nhanh chóng gặp được tình duyên tuyệt vời."
+  },
+  "WanminFeast": {
+    "name": "Nhà Nhà Tề Tựu Dùng Bữa Ngon",
+    "description": "Pháo hoa được lấy ý tưởng từ trợ lý bé nhỏ của một đầu bếp lừng danh nào đó ở Vạn Dân Đường. Chỉ cần nhìn thấy người trợ lý này, người dân Liyue đều sẽ nhớ về những món ăn thơm ngon. Đối với những ngày lễ tết, thì bữa ăn sum họp gia đình là điều không thể thiếu."
+  },
   "SummertimeSparkle": {
     "name": "Mùa Hè Rực Rỡ",
     "description": "Phong cách bãi biển của Barbara. Váy ngắn tràn đầy sức sống, dường như toát ra hơi thở tươi mát của đại dương."
@@ -8130,6 +8646,30 @@
   "SeaBreezeDandelion": {
     "name": "Giấc Mộng Gió Biển",
     "description": "Trang phục mùa hè của Jean. Mát mẻ nhưng vẫn tao nhã, rất thích hợp cho du lịch bãi biển."
+  },
+  "OrchidsEveningGown": {
+    "name": "U Lan Tinh Diệu",
+    "description": "Lễ phục của Ningguang. Bộ váy dài màu xanh lam tôn lên đường nét xinh đẹp trang nhã, cánh bướm ở phần chân càng làm tăng phần thanh thoát."
+  },
+  "OpulentSplendor": {
+    "name": "Vũ Điệu Nghê Thường",
+    "description": "Lễ phục của Keqing. Trong khoảnh khắc tươi đẹp của Tết Hải Đăng, từng đường nét được vẽ bằng sự vất vả trong quá khứ, đã kết nên dung mạo xinh tươi nhẹ nhàng của hôm nay."
+  },
+  "GunnhildrsLegacy": {
+    "name": "Thừa Kế Của Gunnhildr",
+    "description": "Phong cách của Jean. Lễ phục kỵ sĩ gọn gàng mà trang nhã, thích hợp cho mọi hoàn cảnh."
+  },
+  "Outrider": {
+    "name": "Kỵ Sĩ Trinh Thám 100%",
+    "description": "Phong cách của Amber. Lần này xuất hiện, sẽ là một Kỵ Sĩ Trinh Thám càng chính thức hơn, càng anh dũng hơn đó nhé!"
+  },
+  "PactOfStarsAndMoon": {
+    "name": "Ước Hẹn Trăng Sao",
+    "description": "Phong cách của Mona. Bộ trang phục được đặt mua để nghênh đón \"thời khắc định mệnh\" trong khái niệm chiêm tinh, cảm ơn phiếu ưu đãi 30% được tặng sau khi mua dụng cụ thiên văn."
+  },
+  "ToTheChurchsFreeSpirit": {
+    "name": "Tu Nữ Tự Do",
+    "description": "Phong cách của Rosaria. Bộ trang phục này dường như là món quà mà Giáo Hội đã đặc biệt làm riêng cho cô ấy."
   },
   "AdventurerCamp": {
     "name": "Doanh trại tạm thời của Nhà Mạo Hiểm",
@@ -8261,7 +8801,7 @@
   },
   "FeiyunStudyRoom": {
     "name": "Phòng Sách Phi Vân",
-    "description": "Bản vẽ chi tiết từng bước, ghi lại cách bày trí \"Phòng Sách Phi Vân\".\\nThư phòng của Liyue với nhiều cửa, nhưng không nhất thiết phải \"sang trọng\", những người yêu văn chương xem trọng \"ý vị\" và \"tao nhã\" hơn cả. Đặt một chậu cây tươi tốt để cân bằng độ sáng trong phòng, gỗ của bàn và kệ sách sẽ có thể tỏa ra hương thơm dịu nhẹ, phối hợp với cách bày trí nhiều khoảng trống có chủ đích, ánh sáng rực của ngọn đèn sẽ giúp tinh thần hưng phấn, ý tưởng dạt dào.\\nTương truyền nhiều năm trước, một vị mặc khách nào đó lưu trú ở Dốc Phi Vân đã vô tình cắm nhành liễu và bố trí nên thư phòng dạng này, sau đó được ông chủ đời trước của Vạn Văn Tập đề cao và quảng bá. Kể từ đó, nó được mệnh danh là \"Phòng Sách Phi Vân\", trở nên ngày càng quen thuộc với người dân Liyue.\\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Xingqiu, Zhongli, Ningguang"
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách bày trí \"Phòng Sách Phi Vân\".\\nThư phòng của Liyue với nhiều cửa, nhưng không nhất thiết phải \"sang trọng\", những người yêu văn chương xem trọng \"ý vị\" và \"tao nhã\" hơn cả. Đặt một chậu cây tươi tốt để cân bằng độ sáng trong phòng, gỗ của bàn và kệ sách sẽ có thể tỏa ra hương thơm dịu nhẹ, phối hợp với cách bày trí nhiều khoảng trống có chủ đích, ánh sáng rực của ngọn đèn sẽ giúp tinh thần hưng phấn, ý tưởng dạt dào.\\nTương truyền nhiều năm trước, một vị mặc khách nào đó lưu trú ở Dốc Phi Vân đã vô tình cắm nhành liễu và bố trí nên thư phòng dạng này, sau đó được ông chủ đời trước của Vạn Văn Tập đề cao và quảng bá. Kể từ đó, nó được mệnh danh là \"Phòng Sách Phi Vân\", trở nên ngày càng quen thuộc với người dân Liyue.\\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Xingqiu, Zhongli, Ningguang, Yun Jin"
   },
   "CloudyHazeDreamCourt": {
     "name": "Yên Hà Nhập Mộng Các",
@@ -8293,11 +8833,11 @@
   },
   "GlitteringStreet": {
     "name": "Phố Rực Rỡ",
-    "description": "Bản vẽ chi tiết từng bước, ghi lại cách bày trí \"Phố Rực Rỡ\".\\nDãy phố với đủ loại hàng hóa từ quý giá đến hàng tiêu dùng, tái hiện cảnh tượng nhộn nhịp của chợ Liyue trong dịp lễ.\\nLiyue là nơi tụ tập của hàng ngàn thương gia và đủ loại hàng hóa lưu thông. Vì vậy, hầu hết mọi người đều có thể mua được thứ mình cần. Nhưng nếu thiếu thứ gì, thì có thể chờ đến cuối tháng trao đổi với thiếu nữ tóc tím thường tuần tra qua khu vực đó. Tuy không rõ thân phận của cô ấy, nhưng hầu hết những loại hàng hóa từng phản hồi với cô ấy, sẽ xuất hiện trong chợ không lâu sau đó.\\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Ningguang, Keqing, Yanfei, Xingqiu, Zhongli"
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách bày trí \"Phố Rực Rỡ\".\\nDãy phố với đủ loại hàng hóa từ quý giá đến hàng tiêu dùng, tái hiện cảnh tượng nhộn nhịp của chợ Liyue trong dịp lễ.\\nLiyue là nơi tụ tập của hàng ngàn thương gia và đủ loại hàng hóa lưu thông. Vì vậy, hầu hết mọi người đều có thể mua được thứ mình cần. Nhưng nếu thiếu thứ gì, thì có thể chờ đến cuối tháng trao đổi với thiếu nữ tóc tím thường tuần tra qua khu vực đó. Tuy không rõ thân phận của cô ấy, nhưng hầu hết những loại hàng hóa từng phản hồi với cô ấy, sẽ xuất hiện trong chợ không lâu sau đó.\\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Ningguang, Keqing, Yanfei, Xingqiu, Zhongli, Yun Jin, Shenhe"
   },
   "QingceCloudResidence": {
     "name": "Khinh Sách Nhàn Vân Cư",
-    "description": "Bản vẽ chi tiết từng bước, ghi lại cách bày trí \"Khinh Sách Nhàn Vân Cư\".\\nThôn trang giữa núi được mô phỏng theo Khinh Sách Trang. Nghe nói khi bước chân vào nơi này, bầu không khí thân thiện sẽ khiến du khách cảm thấy tĩnh tâm, và nhận ra những nét đẹp giản đơn mà bình thường không mấy chú ý đến.\\nKhi còn trẻ phải theo đuổi lý tưởng, trải qua những năm tháng hào hùng là điều đúng đắn. Nhưng bôn ba mãi cũng sẽ có lúc mệt mỏi. Lúc này, cuộc sống yên bình nơi thôn quê, cùng hàng xóm hòa nhã, cũng là một lựa chọn không tồi. Đối với những người trẻ tuổi rong ruổi xa nhà, thì Khinh Sách Trang mãi luôn là sự bao dung, luôn chào đón họ trở về.\\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Xinyan, Xiao, Hu Tao, Qiqi"
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách bày trí \"Khinh Sách Nhàn Vân Cư\".\\nThôn trang giữa núi được mô phỏng theo Khinh Sách Trang. Nghe nói khi bước chân vào nơi này, bầu không khí thân thiện sẽ khiến du khách cảm thấy tĩnh tâm, và nhận ra những nét đẹp giản đơn mà bình thường không mấy chú ý đến.\\nKhi còn trẻ phải theo đuổi lý tưởng, trải qua những năm tháng hào hùng là điều đúng đắn. Nhưng bôn ba mãi cũng sẽ có lúc mệt mỏi. Lúc này, cuộc sống yên bình nơi thôn quê, cùng hàng xóm hòa nhã, cũng là một lựa chọn không tồi. Đối với những người trẻ tuổi rong ruổi xa nhà, thì Khinh Sách Trang mãi luôn là sự bao dung, luôn chào đón họ trở về.\\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Xinyan, Xiao, Hu Tao, Qiqi, Shenhe"
   },
   "OfHuntingAndDancing": {
     "name": "Doanh Trại Săn Bắn Và Múa Ca",
@@ -8317,7 +8857,7 @@
   },
   "WakefulSpring": {
     "name": "Suối Nước Nóng Bừng Tỉnh",
-    "description": "Bản vẽ chi tiết từng bước, ghi lại cách bố trí \"Suối Nước Nóng Bừng Tỉnh\".\\nSuối nước nóng lộ thiên đầy đủ trang thiết bị. Tuy nói rằng nhiệt độ và nguyên tố khoáng chất trong nước có hơi kém so với \"Phòng Tắm Hơi Aisa\", nhưng bầu không khí tổng thể ở đây lại thoải mái hơn, không có quá nhiều quy tắc.\\nNgâm mình trong suối nước nóng nửa giờ, là có thể tiêu tan mọi mệt mỏi sau một ngày làm việc, sức sống như được thức tỉnh lần nữa. Nếu dư dả thời gian, có thể tựa vào tảng đá trắng bên hồ, thưởng thức trà và đàm đạo với bạn bè.\\nĐương nhiên, trước khi vào hồ cần chú ý những lễ nghi cơ bản; khi ngâm suối cùng bạn bè phải lưu ý thời gian. Nếu trò chuyện khi tắm suối nước nóng với một người bạn thích nói chuyện giống như \"nữ hoàng lễ hội mùa hè\", trò chuyện quá lâu có thể sẽ bị hoa mắt chóng mặt đó.\\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Yoimiya, Gorou"
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách bố trí \"Suối Nước Nóng Bừng Tỉnh\".\\nSuối nước nóng lộ thiên đầy đủ trang thiết bị. Tuy nói rằng nhiệt độ và nguyên tố khoáng chất trong nước có hơi kém so với \"Phòng Tắm Hơi Aisa\", nhưng bầu không khí tổng thể ở đây lại thoải mái hơn, không có quá nhiều quy tắc.\\nNgâm mình trong suối nước nóng nửa giờ, là có thể tiêu tan mọi mệt mỏi sau một ngày làm việc, sức sống như được thức tỉnh lần nữa. Nếu dư dả thời gian, có thể tựa vào tảng đá trắng bên hồ, thưởng thức trà và đàm đạo với bạn bè.\\nĐương nhiên, trước khi vào hồ cần chú ý những lễ nghi cơ bản; khi ngâm suối cùng bạn bè phải lưu ý thời gian. Nếu trò chuyện khi tắm suối nước nóng với một người bạn thích nói chuyện giống như \"nữ hoàng lễ hội mùa hè\", trò chuyện quá lâu có thể sẽ bị hoa mắt chóng mặt đó.\\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Yoimiya, Gorou, Yae Miko"
   },
   "RuralConcealment": {
     "name": "Hình Bóng Thôn Làng",
@@ -8325,7 +8865,7 @@
   },
   "AncientBranchShrine": {
     "name": "Cảnh Cổ Đền Xưa",
-    "description": "Bản vẽ chi tiết từng bước, ghi lại cách bố trí \"Cảnh Cổ Đền Xưa\".\\nNgôi đền thanh tịnh có phong cách kiến trúc, màu sơn đỏ và bố cục tổng thể gần giống với Đền Narukami ngày nay. Đối với thế nhân mà nói, đây là một nơi lý tưởng để đầu óc thanh tịnh, còn đối với Ogosho đại nhân mà nói, những cảnh sắc nhìn thấy từ nơi này, dường như đủ để ghép thành một bức tranh mơ hồ, đánh thức hồi ức xa xưa...\\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Raiden Shogun"
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách bố trí \"Cảnh Cổ Đền Xưa\".\\nNgôi đền thanh tịnh có phong cách kiến trúc, màu sơn đỏ và bố cục tổng thể gần giống với Đền Narukami ngày nay. Đối với thế nhân mà nói, đây là một nơi lý tưởng để đầu óc thanh tịnh, còn đối với Ogosho đại nhân mà nói, những cảnh sắc nhìn thấy từ nơi này, dường như đủ để ghép thành một bức tranh mơ hồ, đánh thức hồi ức xa xưa...\\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Raiden Shogun, Yae Miko"
   },
   "MilitaryExerciseGrounds": {
     "name": "Sân Tập Thiên Quân",
@@ -8450,6 +8990,14 @@
   "MapleWoodChandelierIllume": {
     "name": "Đèn Treo Gỗ Phong - Rực Sáng",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đèn Treo Gỗ Phong - Rực Sáng\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "BloomingCandlePureAsALotus": {
+    "name": "Ngọn Nến Bung Tỏa - \"Trong Trẻo Như Sen\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Ngọn Nến Bung Tỏa - \"Trong Trẻo Như Sen\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "RainbowLightsAtDawnWeCelebrate": {
+    "name": "Đèn Cầu Vồng - Nguyên Thần Cát Khánh",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Đèn Cầu Vồng - Nguyên Thần Cát Khánh.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "NorthernBirchFoldingCounter": {
     "name": "Quầy Hàng Chữ L Gỗ Hoa Cực Bắc",
@@ -8686,6 +9234,14 @@
   "YumemiruJukakuFoldingScreen": {
     "name": "Bình Phong \"Jukaku\" Gỗ Mơ Mộng",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Bình Phong \"Jukaku\" Gỗ Mơ Mộng.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "FestiveFragranceGoodsPiledHigh": {
+    "name": "Hương Thơm Lễ Hội - \"Đoàn Thuyền Ra Khơi\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Hương Thơm Lễ Hội - \"Đoàn Thuyền Ra Khơi\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "FestiveFragranceOfGoldAndJade": {
+    "name": "Hương Thơm Lễ Hội - \"Kim Tương Ngọc Chất\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Hương Thơm Lễ Hội - \"Kim Tương Ngọc Chất\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "MondstadtRugCrimsonArdor": {
     "name": "Thảm Mondstadt - Ngọn Lửa Nhiệt Tình",
@@ -9091,6 +9647,18 @@
     "name": "Giá Mặt Nạ Gỗ Khổng Tước \"Kouki\"",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Giá Mặt Nạ Gỗ Khổng Tước \"Kouki\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "FineStallSplashOfColor": {
+    "name": "Sạp Quà Tặng - Sắc Màu",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Sạp Quà Tặng - Sắc Màu.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "RainbowStallUltramarine": {
+    "name": "Sạp Cầu Vồng - Xanh Thẫm",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Sạp Cầu Vồng - Xanh Thẫm.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "RainbowStallRubyRed": {
+    "name": "Sạp Cầu Vồng - Đỏ Ngọc",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Sạp Cầu Vồng - Đỏ Ngọc.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "RitualShrine": {
     "name": "Đền Vĩnh Hằng",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đền Vĩnh Hằng\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -9195,6 +9763,18 @@
     "name": "Nhà Kho - Mọi Thứ Đủ Đầy",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Nhà Kho - Mọi Thứ Đủ Đầy\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "InazumanHomeWatatsumiReminiscence": {
+    "name": "Nhà Dân Inazuma - Ký Ức Watatsumi",
+    "description": "Bản vẽ chi tiết từng bước cách làm Nhà Dân Inazuma - Ký Ức Watatsumi.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "InazumanHomeHouseOfCoral": {
+    "name": "Nhà Dân Inazuma - Ngôi Nhà San Hô",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Nhà Dân Inazuma - Ngôi Nhà San Hô\". \\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "InazumanHomeStormhouse": {
+    "name": "Nhà Dân Inazuma - Ngôi Nhà Sóng Gió",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Nhà Dân Inazuma - Ngôi Nhà Sóng Gió\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Đài Phun Nước Hoa Và Chim",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đài Phun Nước Hoa Và Chim\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -9246,6 +9826,10 @@
   "OfFieldsGreenClearSpringFountain": {
     "name": "Khu Vườn Xanh Ngát - Thác Băng Thanh",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Thác Băng Thanh\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "SubSpaceCabochonInSoaringFlight": {
+    "name": "Kỳ Thạch - Phi Thăng Đằng Thực",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Kỳ Thạch - Phi Thăng Đằng Thực.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "AdeptusGate": {
     "name": "Tam Nhãn Thủ Tiên Bài",
@@ -9366,6 +9950,10 @@
   "HotSpringFoyerShelterFromTheCold": {
     "name": "Cổng Suối Nước Nóng - Trốn Lạnh",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Cổng Suối Nước Nóng - Trốn Lạnh.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "FoundationsOfStoneFortunateTimes": {
+    "name": "Nền Đá - \"Thời Đại May Mắn\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Nền Đá - \"Thời Đại May Mắn\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "MessyPileOfFirCrates": {
     "name": "Rương Hàng Gỗ Sam Chất Chồng",
@@ -9498,6 +10086,10 @@
   "ReplicaAncientOtogiCrate": {
     "name": "Bản Sao Thùng Hàng Otogi Cổ",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Bản Sao Thùng Hàng Otogi Cổ.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "MountainOfFestiveGifts": {
+    "name": "Núi Quà Mừng Lễ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Núi Quà Mừng Lễ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "PottedPlantVerdantVastness": {
     "name": "Chậu Cây Xanh - Xanh Ngắt Mát Mẻ",
@@ -9642,6 +10234,18 @@
   "VillageWellSubterraneanSecrets": {
     "name": "Giếng Nước Thôn Quê - Kho Báu Chôn Giấu",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Giếng Nước Thôn Quê - Kho Báu Chôn Giấu\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "RainbowLightsLovelyNightView": {
+    "name": "Đèn Cầu Vồng - Cảnh Đêm Yên Bình",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Đèn Cầu Vồng - Cảnh Đêm Yên Bình.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "RainbowCloudFlyingSatinPole": {
+    "name": "Tường Vân Uyển Hồng Phi Đoạn Trụ Y",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tường Vân Uyển Hồng Phi Đoạn Trụ Y\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "GoldInscribedEvilCleansingBanner": {
+    "name": "Kim Văn Vũ Tiết Trừ Túy Đan Kỳ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Kim Văn Vũ Tiết Trừ Túy Đan Kỳ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Đèn Đường Khắc Hoa",

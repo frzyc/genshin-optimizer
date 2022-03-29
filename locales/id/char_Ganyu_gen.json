@@ -1,7 +1,7 @@
 {
   "name": "Ganyu",
   "title": "Plenilune Gaze",
-  "description": "Seorang sekretaris di Yuehai Pavillion. Darah hewan pusaka Qilin mengalir di dalam tubuhnya.",
+  "description": "Seorang sekretaris di Yuehai Pavilion. Darah hewan pusaka Qilin mengalir di dalam tubuhnya.",
   "constellationName": "Sinae Unicornis",
   "auto": {
     "name": "Liutian Archery",
@@ -35,7 +35,7 @@
       "7": "Serangan Membidik Tahap 1",
       "8": "DMG Frostflake Arrow",
       "9": "DMG Frostflake Arrow Bloom",
-      "10": "DMG Selama Pluging",
+      "10": "DMG Selama Plunging",
       "11": "DMG Plunging Attack Min./Maks.",
       "12": "",
       "13": "",
@@ -46,13 +46,13 @@
   "skill": {
     "name": "Trail of the Qilin",
     "description": {
-      "0": "Dengan meninggalkan sebuah Ice Lotus, Ganyu meloncat mundur, membuang semua ketidakmurnian dan mengakibatkan <cryo>Cryo DMG area</cryo>.",
+      "0": "Dengan meninggalkan sebuah Ice Lotus, Ganyu meloncat mundur dengan cepat, membuang semua ketidakmurnian dan mengakibatkan <cryo>Cryo DMG area</cryo>.",
       "1": "<br/>",
       "2": "<strong>Ice Lotus</strong>",
       "3": [
         "Terus menarik perhatian musuh di sekitar untuk menyerangnya.",
         "HP Ice Lotus mewarisi Max HP Ganyu berdasarkan persentase tertentu.",
-        "Mengembang dengan cepat saat dihancurkan atau setelah durasinya berakhir, mengakibatkan <cryo>Cryo DMG area</cryo>."
+        "Saat dihancurkan atau durasinya berakhir, Ice Lotus akan mengembang dengan hebat dan mengakibatkan <cryo>Cryo DMG area</cryo>."
       ],
       "4": "<br/>",
       "5": "<i>\"Kamu melihatku? Pasti salah, aku sedang lembur saat itu.\"</i>"

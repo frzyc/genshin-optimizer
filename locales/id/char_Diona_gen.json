@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Charged Attack</strong>",
         "1": "Mengerahkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
-        "2": "Saat membidik, es akan berkumpul di ujung anak panah. Panah dengan es yang terkumpul penuh akan mengakibatkan <anemo>Cryo DMG</anemo>."
+        "2": "Saat membidik, es akan berkumpul di ujung anak panah. Panah dengan es yang terkumpul penuh akan mengakibatkan <cryo>Cryo DMG</cryo>."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
@@ -60,8 +60,8 @@
       "0": "DMG Per Ice Paw",
       "1": "Ketahanan Dasar Perisai",
       "2": "Durasi Per Claw",
-      "3": "Cooldown One-tap",
-      "4": "Cooldown Menahan",
+      "3": "Cooldown (Mode Tekan)",
+      "4": "Cooldown (Mode Tahan)",
       "5": "",
       "6": "",
       "7": "",
@@ -93,7 +93,7 @@
       "1": "DMG Berkelanjutan di Area",
       "2": "Regenerasi HP",
       "3": "Durasi",
-      "4": "CD",
+      "4": "Cooldown",
       "5": "Konsumsi Energy",
       "6": "",
       "7": "",

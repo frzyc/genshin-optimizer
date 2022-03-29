@@ -8,15 +8,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
-        "1": "Melempar benda yang akan meledak saat mengenai sesuatu! Melancarkan hingga 3 serangan ledakan yang mengakibatkan <pyro>Pyro DMG area</pyro>."
+        "1": "Melempar benda yang akan meledak saat mengenai sesuatu! Melancarkan hingga 3 serangan ledakan yang mengakibatkan <pyro>Pyro DMG Area</pyro>."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Mengonsumsi sejumlah Stamina dan mengakibatkan <pyro>Pyro DMG area</pyro> kepada musuh setelah jeda singkat."
+        "1": "Mengonsumsi sejumlah Stamina dan mengakibatkan <pyro>Pyro DMG Area</pyro> kepada musuh setelah jeda singkat."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Mengumpulkan kekuatan Pyro dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <electro>Pyro DMG area</electro> saat mendarat."
+        "1": "Mengumpulkan kekuatan Pyro dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <pyro>Pyro DMG Area</pyro> saat mendarat."
       }
     },
     "skillParams": {
@@ -42,19 +42,19 @@
     "name": "Jumpy Dumpty",
     "description": {
       "0": "Melemparkan bom Jumpty Dumpty yang membawa kesenangan tidak terbatas!",
-      "1": "Saat dilempar, Jumpty Dumpty meloncat tiga kali, setiap loncatannya mengakibatkan ledakan <pyro>Pyro DMG area</pyro>.",
+      "1": "Saat dilempar, Jumpty Dumpty dapat memantul tiga kali, setiap pantulannya akan meledak dan mengakibatkan <pyro>Pyro DMG Area</pyro>.",
       "2": "<br/>",
-      "3": "Pada loncatan ke-3, bomnya akan terbagi menjadi banyak ranjau.",
-      "4": "Ranjau akan meledak saat mengenai musuh, atau setelah jeda waktu yang singkat, mengakibatkan <pyro>Pyro DMG area</pyro>.",
+      "3": "Pada pantulan ke-3, bomnya akan terbagi menjadi banyak ranjau.",
+      "4": "Ranjau-ranjau ini akan meledak saat menyentuh musuh, atau setelah jeda waktu yang singkat, kemudian mengakibatkan <pyro>Pyro DMG Area</pyro>.",
       "5": "<br/>",
-      "6": "Mulai dengan 2 jumlah penggunaan.",
+      "6": "Dimulai dengan 2 kali jumlah penggunaan.",
       "7": "<br/>",
       "8": "<i>Jumpty Dumpty adalah teman baik Klee! Klee selalu tidak sabar untuk memperkenalkannya ke semua orang.</i>"
     },
     "skillParams": {
       "0": "DMG Jumpy Dumpty",
-      "1": "DMG Mine",
-      "2": "Durasi Mine",
+      "1": "DMG Ranjau",
+      "2": "Durasi Ranjau",
       "3": "Cooldown",
       "4": "",
       "5": "",
@@ -73,9 +73,9 @@
   "burst": {
     "name": "Sparks 'n' Splash",
     "description": {
-      "0": "Kekuatan maksimum Klee! Selama durasi skill, Sparks 'n' Splash akan terus menyerang musuh-musuh di sekitar dan mengakibatkan <pyro>Pyro DMG area</pyro>.",
+      "0": "Kegembiraan Klee yang membara! Selama durasi skill, Sparks 'n' Splash yang muncul akan terus menyerang musuh-musuh di sekitar dan mengakibatkan <pyro>Pyro DMG Area</pyro>.",
       "1": "<br/>",
-      "2": "<i>Para Knight meyakini kalau Klee pasti memiliki sebuah bintang keberuntungan yang melindunginya karena dia tidak pernah terluka oleh bom miliknya sendiri...</i>"
+      "2": "<i>Para Knight meyakini kalau Klee pasti dilindungi sebuah bintang keberuntungan karena dia tidak pernah terluka karena bomnya sendiri ...</i>"
     },
     "skillParams": {
       "0": "DMG Sparks 'n' Splash",
@@ -100,13 +100,13 @@
     "name": "Pounding Surprise",
     "description": {
       "0": "Saat <strong>Jumpy Dumpty</strong> atau Normal Attack Klee mengakibatkan DMG, Klee memiliki 50% kemungkinan untuk mendapatkan Explosive Spark.",
-      "1": "Explosive Spark akan terkonsumsi saat Klee melancarkan Charged Attack berikutnya, yang tidak akan mengonsumsi stamina dan mengakibatkan 50% DMG tambahan."
+      "1": "Explosive Spark akan terkonsumsi saat Klee melancarkan Charged Attack dan membuatnya tidak mengonsumsi Stamina serta mengakibatkan 50% DMG lebih besar."
     }
   },
   "passive2": {
     "name": "Sparkling Burst",
     "description": {
-      "0": "Seluruh anggota party akan mendapatkan 2 Energy saat Charged Attack Klee menghasilkan CRIT."
+      "0": "Seluruh anggota party akan mendapatkan 2 Energy saat Charged Attack Klee mengakibatkan CRIT."
     }
   },
   "passive3": {
@@ -118,13 +118,13 @@
   "constellation1": {
     "name": "Chained Reaction",
     "description": {
-      "0": "Serangan dan skill Klee memiliki kemungkinan untuk menimbulkan percikan api yang menyerang musuh dan mengakibatkan DMG sebesar 120% dari DMG <strong>Sparks 'n' Splash</strong>."
+      "0": "Saat melancarkan serangan atau skill, Klee memiliki kemungkinan untuk menimbulkan percikan api yang mengakibatkan DMG sebesar 120% dari DMG <strong>Sparks 'n' Splash</strong> pada musuh."
     }
   },
   "constellation2": {
     "name": "Explosive Frags",
     "description": {
-      "0": "DEF musuh berkurang 23% selama 10 detik saat diserang oleh <strong>Jumpy Dumpty</strong>."
+      "0": "DEF musuh berkurang 23% selama 10 detik saat terkena ranjau dari <strong>Jumpy Dumpty</strong>."
     }
   },
   "constellation3": {
@@ -137,7 +137,7 @@
   "constellation4": {
     "name": "Sparkly Explosion",
     "description": {
-      "0": "Jika Klee meninggalkan medan tempur saat dalam durasi <strong>Sparks 'n' Splash</strong>, kepergiannya memicu ledakan yang mengakibatkan <pyro>Pyro DMG area</pyro> sebesar 555% ATK."
+      "0": "Jika Klee meninggalkan medan pertempuran saat <strong>Sparks 'n' Splash</strong> sedang berlangsung, kepergian Klee akan memicu ledakan yang mengakibatkan <pyro>Pyro DMG Area</pyro> sebesar 555% ATK."
     }
   },
   "constellation5": {
@@ -150,8 +150,8 @@
   "constellation6": {
     "name": "Blazing Delight",
     "description": {
-      "0": "Saat <strong>Sparks 'n' Splash</strong> aktif, Klee akan memulihkan 3 Energy setiap 3 detik untuk semua anggota party.",
-      "1": "Saat <strong>Sparks 'n' Splash</strong> digunakan, seluruh anggota party menerima 10% <pyro>Pyro DMG Bonus</pyro> selama 25 detik."
+      "0": "Saat <strong>Sparks 'n' Splash</strong> aktif, Klee akan memulihkan 3 Energy setiap 3 detik untuk semua anggota party (tidak termasuk Klee sendiri).",
+      "1": "Setelah melancarkan <strong>Sparks 'n' Splash</strong>, seluruh anggota party mendapatkan 10% <pyro>Pyro DMG Bonus</pyro> selama 25 detik."
     }
   }
 }

@@ -48,7 +48,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",
-        "1": "Mergulha do ar para atingir o chão abaixo, causando Dano aos inimigos ao longo do caminho e causando Dano de AdE no impacto."
+        "1": "Mergulha do ar para atingir o chão abaixo, causando Dano aos inimigos ao longo do caminho e causando Dano em uma AdE no impacto."
       }
     },
     "skillParams": {

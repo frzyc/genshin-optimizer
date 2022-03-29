@@ -49,7 +49,7 @@
       "0": "Yoimiya brandit un cierge magique, s'entourant d'un champ de salpêtres.",
       "1": "<br/>",
       "2": "<strong>Niwabi Enshou</strong>",
-      "3": "Pendant la durée de cette aptitude, les flèches tirées lors de l'attaque normale de Yoimiya sont des flèches enflammées, infligeant davantage de DGT, et dont les DGT sont convertis en <pyro>DGT Pyro</pyro>. Durant cette période, le second niveau de charge de son attaque normale Flambée pyrotechnique ne génère pas de flèches chercheuses.",
+      "3": "Pendant la durée de cette aptitude, les flèches tirées lors de l'attaque normale de Yoimiya sont des flèches enflammées, infligeant davantage de DGT, et dont les DGT sont convertis en <pyro>DGT Pyro</pyro>. Pendant cette période, le second niveau de charge de son attaque normale Flambée pyrotechnique ne génère pas de flèches chercheuses.",
       "4": "<br/>",
       "5": "L'effet s'arrête lorsque Yoimiya quitte le champ de bataille.",
       "6": "<br/>",
@@ -109,7 +109,7 @@
   "passive1": {
     "name": "Tour de passe-passe",
     "description": {
-      "0": "Tant que <strong>Danse du feu « Niwabi »</strong> est active, les attaques normales de Yoimiya augmentent son <pyro>bonus de DGT Pyro</pyro> de 2 %. Cet effet dure 3 s et peut être cumulé jusqu'à 10 fois."
+      "0": "Tant que <strong>Danse du feu « Niwabi »</strong> est active, les attaques normales de Yoimiya augmentent son <pyro>bonus de DGT Pyro</pyro> de 2 %. Cet effet dure 3 s et peut être cumulé 10 fois maximum."
     }
   },
   "passive2": {
@@ -159,9 +159,9 @@
     }
   },
   "constellation6": {
-    "name": "Pluie de météores de Nagonahara",
+    "name": "Pluie de météores de Naganohara",
     "description": {
-      "0": "Tant que <strong>Danse du feu « Niwabi »</strong> est active, les attaques normales de Yoimiya ont 50 % de chances de libérer une flèche enflammée supplémentaire qui inflige 60 % des DGT d'origine. Ces DGT sont considérés comme des DGT d'attaque normale."
+      "0": "Tant que <strong>Danse du feu «{NON_BREAK_SPACE}Niwabi »</strong> est active, les attaques normales de Yoimiya ont 50 % de chances de libérer une flèche enflammée supplémentaire qui inflige 60 % des DGT d'origine. Ces DGT sont considérés comme des DGT d'attaque normale."
     }
   }
 }

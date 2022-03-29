@@ -127,7 +127,7 @@
     "name": "Éclat de vitalité",
     "description": {
       "0": "Réduit le TdR de <strong>C'est parti pour le show ♪</strong> de 15 %.",
-      "1": "Confère un <hydro>bonus de 15 % aux DGT Hydro</hydro> pour le personnage déployé tant que la compétence est active."
+      "1": "Confère un <hydro>bonus de DGT Hydro de 15 %</hydro> au personnage déployé tant que la compétence est active."
     }
   },
   "constellation3": {

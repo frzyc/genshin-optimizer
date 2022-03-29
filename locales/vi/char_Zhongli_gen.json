@@ -1,7 +1,7 @@
 {
   "name": "Zhongli",
   "title": "Du Ngoạn Trần Thế",
-  "description": "Là người khách thần bí được \"Vãng Sinh Đường\" mời đến, kiến thức uyên bác, có sự hiểu biết với nhiều sự vật sự việc.",
+  "description": "Là vị khách thần bí được \"Vãng Sinh Đường\" mời đến, kiến thức uyên bác, có sự hiểu biết sâu rộng đối với nhiều sự vật sự việc.",
   "constellationName": "???",
   "auto": {
     "name": "Mưa Đá",
@@ -41,29 +41,29 @@
   "skill": {
     "name": "Tâm Trái Đất",
     "description": {
-      "0": "Trong núi, trên mặt đất, giữa những tảng đá đều có sức mạnh của nham. Rất ít người có thể điều khiển được sức mạnh này.",
+      "0": "Trong rặng núi, trên mặt đất, giữa những tảng đá đều chất chứa sức mạnh của nham. Nhưng rất ít người có thể điều khiển được sức mạnh này.",
       "1": "<br/>",
       "2": "<strong>Nhấn</strong>",
-      "3": "Ra lệnh cho các nguyên tố Nham tụ hợp lại, kết thành vách đá.",
+      "3": "Ra lệnh cho các nguyên tố Nham trên mặt đất tụ hợp lại, kết thành vách đá.",
       "4": "<br/>",
       "5": "<strong>Nhấn Giữ</strong>",
       "6": "Lệnh cho nguyên tố Nham xung quanh phát nổ, gây hiệu quả như sau:",
       "7": [
         "Nếu số lượng vách đá chưa đạt giới hạn, thì sẽ tạo ra vách đá;",
-        "Tạo ra khiên ngọc, lượng sát thương hấp thu phụ thuộc vào giới hạn HP của Zhongli;",
+        "Tạo ra Khiên Ngọc, lượng hấp thu sát thương phụ thuộc vào giới hạn HP của Zhongli;",
         "Gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo>;",
         "Nếu bên cạnh có mục tiêu <geo>Nguyên Tố Nham</geo>, sẽ tiêu hao lượng lớn <geo>Nguyên Tố Nham</geo> của tối đa 2 mục tiêu. Hiệu quả này sẽ không gây sát thương."
       ],
       "8": "<br/>",
-      "9": "Khi tạo <strong>vách đá</strong>",
-      "10": " sẽ gây <geo>sát thương phạm vi Nguyên Tố Nham</geo>.",
-      "11": "Ngoài ra, trong thời gian vách đá tồn tại sẽ tạo thành cộng hưởng với <geo>những vật tạo ra Nguyên Tố Nham xung quanh</geo>, gây <geo>sát thương Nguyên Tố Nham</geo> cho kẻ địch xung quanh.",
-      "12": "Vách đá được xem là <geo>vật tạo ra Nguyên Tố Nham</geo>, có thể ngăn chặn tấn công, có thể leo trèo.",
-      "13": "Cùng lúc chỉ có thể tồn tại 1 vách đá do Zhongli tạo ra.",
+      "9": "<strong>Vách Đá</strong>",
+      "10": "Khi tạo vách đá sẽ gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo>.",
+      "11": "Ngoài ra, trong thời gian vách đá tồn tại, thỉnh thoảng sẽ tạo thành cộng hưởng với <geo>tạo vật Nguyên Tố Nham</geo> khác ở xung quanh, gây <geo>sát thương Nguyên Tố Nham</geo> cho kẻ địch xung quanh.",
+      "12": "Vách đá được xem là <geo>tạo vật Nguyên Tố Nham</geo>, có thể ngăn chặn tấn công, có thể leo trèo.",
+      "13": "Ban đầu chỉ được tồn tại đồng thời 1 vách đá duy nhất do Zhongli tạo ra.",
       "14": "<br/>",
       "15": "<strong>Khiên Ngọc</strong>",
       "16": "Có hiệu quả hấp thu 150% tất cả sát thương nguyên tố và sát thương vật lý.",
-      "17": "Nhân vật đang được Khiên Ngọc bảo vệ, sẽ giảm 20% tất cả kháng nguyên tố và kháng vật lý của kẻ địch trong phạm vi nhỏ, hiệu quả này không được cộng dồn.",
+      "17": "Nhân vật đang được Khiên Ngọc bảo vệ, sẽ khiến cho kẻ địch trong phạm vi nhỏ bị giảm 20% tất cả kháng nguyên tố và kháng vật lý, hiệu quả này không được cộng dồn.",
       "18": "<br/>",
       "19": "<i>Đá kiên cố có thể đánh ngọc khắc vàng.</i>"
     },
@@ -89,10 +89,10 @@
   "burst": {
     "name": "Thiên Tinh",
     "description": {
-      "0": "Thiên thạch cực lớn rơi xuống, gây <geo>Sát Thương Nguyên Tố Nham</geo> cực lớn cho địch trong phạm vi rơi, và khiến địch <geo>Hóa Thạch</geo>.",
+      "0": "Thiên thạch cực lớn rơi xuống, gây <geo>Sát Thương Nguyên Tố Nham</geo> cực lớn cho kẻ địch trong phạm vi rơi, và khiến địch <geo>Hóa Thạch</geo>.",
       "1": "<br/>",
       "2": "<strong>Hóa Thạch</strong>",
-      "3": "Địch ở trạng thái <geo>Hóa Thạch</geo> không thể chuyển động. ",
+      "3": "Kẻ địch trong trạng thái <geo>Hóa Thạch</geo> không thể chuyển động.",
       "4": "<br/>",
       "5": "<i>Dùng ngôi sao trên cao soi sáng cho người đang mê muội.</i>"
     },
@@ -116,12 +116,12 @@
     }
   },
   "passive1": {
-    "name": "Đá Treo",
+    "name": "Huyền Nham Thần Đoạn",
     "description": {
-      "0": "Khi Khiên Ngọc nhận sát thương sẽ tạo ra hiệu quả kiên cố: ",
+      "0": "Khi Khiên Ngọc chịu sát thương sẽ tạo ra hiệu quả kiên cố:",
       "1": [
-        "Nhân vật khi được Khiên Ngọc bảo vệ, khả năng khiên bảo vệ +5%.",
-        "Hiệu quả tối đa cộng dồn 5 lần, duy trì đến khi mất Khiên Ngọc."
+        "Nhân vật khi đang được Khiên Ngọc bảo vệ, hiệu quả khiên +5%.",
+        "Hiệu quả này tối đa cộng dồn 5 lần, duy trì đến khi Khiên Ngọc mất đi."
       ]
     }
   },
@@ -130,9 +130,9 @@
     "description": {
       "0": "Sát thương gây ra bởi những đòn tấn công dưới đây của Zhongli sẽ tăng tùy theo giới hạn HP:",
       "1": [
-        "Giá trị tăng sát thương của tấn công thường, trọng kích và tấn công khi đáp: 1.39% giới hạn HP",
-        "Giá trị tăng sát thương của Vách Đá <strong>tâm trái đất</strong>, sát thương cộng hưởng và nhấn giữ: 1.9% giới hạn HP",
-        "Giá trị tăng sát thương của <strong>Thiên Tinh</strong>: 33% giới hạn HP"
+        "Lượng tăng sát thương của tấn công thường, trọng kích và tấn công khi đáp: 1.39% giới hạn HP",
+        "Lượng tăng sát thương của nhấn giữ, sát thương cộng hưởng và Vách Đá của <strong>Tâm Trái Đất</strong>: 1.9% giới hạn HP",
+        "Lượng tăng sát thương của <strong>Thiên Tinh</strong>: 33% giới hạn HP"
       ]
     }
   },
@@ -151,11 +151,11 @@
   "constellation2": {
     "name": "Thạch, Bát Hoang Ngọc Minh",
     "description": {
-      "0": "Khi <strong>Thiên Tinh</strong> rơi xuống, các nhân vật xung quanh trong trận hiện tại sẽ nhận được khiên ngọc bảo vệ."
+      "0": "Khi <strong>Thiên Tinh</strong> rơi xuống, các nhân vật trong trận hiện tại ở lân cận sẽ nhận được Khiên Ngọc bảo vệ."
     }
   },
   "constellation3": {
-    "name": "Khó Khăn Không Lùi Bước",
+    "name": "Khuê Chương, Khó Khăn Không Lùi Bước",
     "description": {
       "0": "Cấp kỹ năng <strong>Tâm Trái Đất</strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
@@ -178,8 +178,8 @@
   "constellation6": {
     "name": "Thiên Ngọc, Lễ Thiên Địa Tứ Phương",
     "description": {
-      "0": "Khi Khiên Ngọc nhận sát thương, hồi HP cho nhân vật hiện tại bằng 40% sát thương.",
-      "1": "Lượng hồi phục 1 lần không vượt quá 8% HP tối đa của nhân vật."
+      "0": "Khi Khiên Ngọc chịu sát thương, sẽ hồi HP cho nhân vật hiện tại, lượng hồi phục bằng 40% sát thương.",
+      "1": "Lượng hồi phục của 1 lần không vượt quá 8% HP tối đa của nhân vật."
     }
   }
 }

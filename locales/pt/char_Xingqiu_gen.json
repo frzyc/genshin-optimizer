@@ -107,7 +107,7 @@
   "passive1": {
     "name": "Hidropático",
     "description": {
-      "0": "Quando a Chuva de Espadas é quebrada ou quando sua duração acabar, regenera a Vida do personagem atual em 6% da Vida Máxima de Xingqiu."
+      "0": "Quando uma espada da Chuva de Espadas é quebrada ou quando sua duração acabar, regenera a Vida do personagem atual em 6% da Vida Máxima de Xingqiu."
     }
   },
   "passive2": {
@@ -125,7 +125,7 @@
   "constellation1": {
     "name": "O Aroma Remanescente",
     "description": {
-      "0": "Aumenta o número Máximo de Espadas em 1."
+      "0": "Aumenta o número máximo de Chuva das Espadas em 1."
     }
   },
   "constellation2": {
@@ -158,7 +158,7 @@
   "constellation6": {
     "name": "Coleção de Poemas",
     "description": {
-      "0": "A cada 2 ataques da <strong>Espada de Guhua - Retalhador de Chuva</strong> o ataque da chuva de espadas aumenta drasticamente o Dano do terceiro, e ao atingir um inimigo, o terceiro golpe  de chuva de espadas de Xingqiu regenerará 3 de Energia."
+      "0": "A cada 2 golpes da <strong>Espada de Guhua - Retalhador de Chuva</strong> o ataque da chuva de espadas aumenta drasticamente o Dano do terceiro golpe, e ao atingir um inimigo, o terceiro golpe de chuva de espadas de Xingqiu regenerará 3 de Energia."
     }
   }
 }

@@ -45,7 +45,7 @@
       "1": "<br/>",
       "2": "<strong>Aura solaire</strong>",
       "3": [
-        " Un Germe éphémère est créé lorsque les ennemis se trouvant dans la zone subissent des dégâts, infligeant des <geo>DGT Géo de zone</geo> proportionnels à la DÉF d'Albedo.",
+        " Un Germe éphémère est créé lorsque les ennemis se trouvant dans la zone subissent des DGT, infligeant des <geo>DGT Géo de zone</geo> proportionnels à la DÉF d'Albedo.",
         " Un Germe éphémère peut être généré toutes les 2 s.",
         " Lorsqu'un personnage rejoint le centre de l'Aura solaire, l'énergie Géo présente se concentre pour générer un podium ascendant lui permettant de dominer le champ de bataille. Il ne peut exister qu'un seul podium à la fois.",
         " L'Aura solaire est considérée comme une <geo>construction Géo</geo>."

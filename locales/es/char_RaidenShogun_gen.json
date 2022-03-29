@@ -20,9 +20,9 @@
       }
     },
     "skillParams": {
-      "0": "Daño de 1.er golpe",
+      "0": "Daño de 1er golpe",
       "1": "Daño de 2.º golpe",
-      "2": "Daño de 3.er golpe",
+      "2": "Daño de 3er golpe",
       "3": "Daño de 4.º golpe",
       "4": "Daño de 5.º golpe",
       "5": "Daño de ATQ Cargado",
@@ -97,9 +97,9 @@
       "0": "Daño básico de corte onírico",
       "1": "Bono de daño de ambición por carga",
       "2": "Cargas de ambición obtenidas",
-      "3": "Daño de 1.er golpe",
+      "3": "Daño de 1er golpe",
       "4": "Daño de 2.º golpe",
-      "5": "Daño de 3.er golpe",
+      "5": "Daño de 3er golpe",
       "6": "Daño de 4.º golpe",
       "7": "Daño de 5.º golpe",
       "8": "Daño de ATQ Cargado",
@@ -130,7 +130,7 @@
     }
   },
   "passive3": {
-    "name": "La protectora",
+    "name": "Colectora suprema",
     "description": {
       "0": "Reduce en un 50% el Mora necesario para ascender espadas ligeras y lanzas."
     }

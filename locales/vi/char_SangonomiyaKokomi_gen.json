@@ -45,7 +45,7 @@
       "1": "Khi thi triển sẽ khiến Sangonomiya Kokomi vào trạng thái <hydro>Ẩm Ướt</hydro>.",
       "2": "<br/>",
       "3": "<strong>Vầng Trăng Biển</strong>",
-      "4": "Cứ cách một khoảng thời gian sẽ gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho kẻ địch xung quanh và hồi HP cho nhân vật đang trong trận, lượng hồi phục dựa vào giới hạn HP của Sangonomiya Kokomi.",
+      "4": "Cứ cách một khoảng thời gian sẽ gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho kẻ địch xung quanh và hồi HP cho nhân vật đang trong trận ở xung quanh, lượng hồi phục dựa vào giới hạn HP của Sangonomiya Kokomi.",
       "5": "<br/>",
       "6": "<i>Để đảm bảo trạng thái tốt nhất cho công việc, Kokomi cần bổ sung \"năng lượng\" kịp thời.</i>"
     },
@@ -71,7 +71,7 @@
   "burst": {
     "name": "Nghi Lễ Nereid",
     "description": {
-      "0": "Triệu hồi sức mạnh của Watatsumi, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho kẻ địch xung quanh, đồng thời tạo ra \"Lễ Phục Nghi Thức\" cho Kokomi.",
+      "0": "Triệu hồi sức mạnh của Watatsumi, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho kẻ địch xung quanh, đồng thời giúp Kokomi khoác lên \"Lễ Phục Nghi Thức\" được ngưng tụ từ nước của Sangonomiya.",
       "1": "<br/>",
       "2": "<strong>Lễ Phục Nghi Thức</strong>",
       "3": [

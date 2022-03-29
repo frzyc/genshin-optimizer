@@ -117,7 +117,7 @@
   "constellation1": {
     "name": "積み上げ真空域",
     "description": {
-      "0": "<strong>風霊作成·六三〇八</strong>の発動可能回数+1。"
+      "0": "<strong>風霊作成·六三〇八</strong>の使用可能回数+1。"
     }
   },
   "constellation2": {

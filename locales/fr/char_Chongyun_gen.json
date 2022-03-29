@@ -96,7 +96,7 @@
   "passive1": {
     "name": "Respiration stable",
     "description": {
-      "0": "Dans le champ de <strong>Lame de l'esprit : Givre superposé</strong>, la VIT d'attaque normale des personnages maniant une épée à une ou deux mains ou une arme d'hast augmente de 8 %."
+      "0": "Dans le champ de <strong>Lame de l'esprit : Givre superposé</strong>, la VIT d'attaque des attaques normales des personnages maniant une épée à une ou deux mains ou une arme d'hast augmente de 8 %."
     }
   },
   "passive2": {

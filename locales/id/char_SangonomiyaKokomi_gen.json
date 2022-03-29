@@ -1,7 +1,7 @@
 {
   "name": "Sangonomiya Kokomi",
   "title": "Pearl of Wisdom",
-  "description": "Sang Pemimpin Suci di Pulau Watatsumi. Semua permasalahan di pulau tersebut ada dalam genggaman nona muda ini.",
+  "description": "Sang Pemimpin Suci di Pulau Watatsumi. Segala urusan yang terjadi di pulau tersebut ada dalam genggaman nona muda ini.",
   "constellationName": "Dracaena Somnolenta",
   "auto": {
     "name": "The Shape of Water",
@@ -41,13 +41,13 @@
   "skill": {
     "name": "Kurage's Oath",
     "description": {
-      "0": "Memanggil \"Bake-Kurage\" yang tercipta dari air untuk menyembuhkan rekannya.",
-      "1": "Melancarkan skill ini akan memberikan efek <hydro>Wet</hydro> yang berlangsung sekejap saja pada Sangonomiya Kokomi.",
+      "0": "Memanggil \"Bake-Kurage\" yang tercipta dari air untuk menyembuhkan rekan.",
+      "1": "Ketika melancarkan skill ini, Sangonomiya Kokomi akan terkena status <hydro>Wet</hydro>.",
       "2": "<br/>",
       "3": "<strong>Bake-Kurage</strong>",
       "4": "Setiap beberapa saat, Bake-Kurage akan mengakibatkan <hydro>Hydro DMG</hydro> pada musuh di sekitar dan memulihkan HP Karakter yang berada di medan pertempuran. Jumlah HP yang dipulihkan dihitung berdasarkan Max HP Sangonomiya Kokomi.",
       "5": "<br/>",
-      "6": "<i>Demi mempertahankan kondisi kerja yang sempurna, Kokomi sewaktu-waktu perlu mengisi \"energinya\".</i>"
+      "6": "<i>Kokomi sewaktu-waktu perlu mengisi ulang \"energi\" demi mempertahankan kinerja yang sempurna.</i>"
     },
     "skillParams": {
       "0": "Pemulihan HP",
@@ -71,18 +71,18 @@
   "burst": {
     "name": "Nereid's Ascension",
     "description": {
-      "0": "Membawa turun kekuatan Watatsumi dan mengakibatkan <hydro>Hydro DMG</hydro> pada musuh di sekitar, kemudian menyelimuti Kokomi dengan Ceremonial Garment yang tercipta dari aliran air Sangonomiya.",
+      "0": "Memanggil kekuatan Watatsumi dan mengakibatkan <hydro>Hydro DMG</hydro> pada musuh di sekitar, kemudian menyelimuti Kokomi dengan Ceremonial Garment yang tercipta dari aliran air Sangonomiya.",
       "1": "<br/>",
       "2": "<strong>Ceremonial Garment</strong>",
       "3": [
         "Meningkatkan DMG Normal dan Charged Attack, serta DMG Bake-Kurage berdasarkan Max HP Sangonomiya Kokomi.",
-        "Saat Normal dan Charged Attack mengenai musuh, Sangonomiya Kokomi akan memulihkan HP seluruh anggota party yang berada di sekitar berdasarkan Max HP Sangonomiya Kokomi.",
-        "Meningkatkan ketahanan Sangonomiya Kokomi terhadap interupsi dan membuat Kokomi dapat bergerak di atas permukaan air."
+        "Saat Normal dan Charged Attack mengenai musuh, Sangonomiya Kokomi akan memulihkan HP seluruh anggota party yang berada di sekitar berdasarkan Max HP miliknya.",
+        "Meningkatkan ketahanan Sangonomiya Kokomi terhadap interupsi dan membuat Kokomi dapat berjalan di atas permukaan air."
       ],
       "4": "<br/>",
       "5": "Efek ini akan hilang jika Kokomi meninggalkan medan pertempuran.",
       "6": "<br/>",
-      "7": "<i>Kilauan cahaya berkumpul menyatu, membentuk jubah yang merefleksikan keagungan Yang Mulia Sangonomiya Kokomi.</i>"
+      "7": "<i>Kilauan cahaya berkumpul membentuk jubah, yang menunjukkan keagungan rupa Yang Mulia, Sangonomiya Kokomi.</i>"
     },
     "skillParams": {
       "0": "DMG Skill",

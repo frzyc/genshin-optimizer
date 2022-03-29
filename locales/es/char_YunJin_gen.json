@@ -1,0 +1,164 @@
+{
+  "name": "Yun Jin",
+  "title": "La Prima Donna del Escenario",
+  "description": "Una renombrada cantante de ópera de Liyue que es experta tanto en la composición de obras como en el canto. Su estilo es único, exquisito y delicado, como su propia persona.",
+  "constellationName": "Opera Grandis",
+  "auto": {
+    "name": "Caricia de las nubes",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para lanzarse al frente, infligiendo daño a los enemigos en el camino."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Disipadora de nimbos",
+    "description": {
+      "0": "A pesar de que la maestra Yun maneja la lanza para coreografías en escena, sus habilidades de combate son muy reales.",
+      "1": "<br/>",
+      "2": "<strong>Pulsar una vez</strong>",
+      "3": "Empuña su lanza para disipar las nubes e infligir <geo>Daño Geo</geo>.",
+      "4": "<br/>",
+      "5": "<strong>Mantener pulsado</strong>",
+      "6": "Entra en su posición de disipadora de nimbos para acumular fuerza y crear un escudo que absorbe daño en proporción a la Vida Máx. de Yun Jin. El escudo tiene un 150% de efectividad de absorción de Daño Elemental y Físico, y dura hasta que Yun Jin termine de lanzar la Habilidad Elemental.",
+      "7": "Al dejar de pulsar la habilidad, cuando termine su duración o cuando el escudo se rompa, libera un ataque con todo el poder acumulado que inflige <geo>Daño Geo</geo>.",
+      "8": "Según el tiempo de carga, el poder acumulado podrá ser de una o dos cargas.",
+      "9": "<br/>",
+      "10": "<i>Un momento brillante en el escenario equivale a diez años de duro trabajo.</i>"
+    },
+    "skillParams": {
+      "0": "Daño al pulsar una vez",
+      "1": "Daño de 1 carga",
+      "2": "Daño de 2 cargas",
+      "3": "Absorción de daño del escudo",
+      "4": "TdE",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Estandarte romperrocas",
+    "description": {
+      "0": "Inflige <geo>Daño Geo en el AdE</geo> y otorga a todos los miembros del equipo cercanos los banderines de las nubes.",
+      "1": "<br/>",
+      "2": "<strong>Banderines de las nubes</strong>",
+      "3": "El daño que infligen los miembros del equipo con sus Ataques Normales aumenta en proporción a la DEF actual de Yun Jin.",
+      "4": "<br/>",
+      "5": "Los efectos de los banderines desaparecerán cuando termine su duración o tras activar un número determinado de cargas.",
+      "6": "Al golpear a varios enemigos a la vez con un Ataque Normal, se consumirán cargas en función del número de enemigos golpeados. Los efectos y las cargas de los banderines de las nubes se calculan de manera independiente para cada personaje.",
+      "7": "<br/>",
+      "8": "<i>Entre el golpeteo de los tambores y el repiqueteo de las lanzas, una bella mujer general porta un estandarte.</i>",
+      "9": "<i>La música converge en el escenario, donde la general purga el mal con suma serenidad.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Aumento de daño",
+      "2": "Duración",
+      "3": "Cargas",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Fiel a sí misma",
+    "description": {
+      "0": "Si Yun Jin usa <strong>Disipadora de nimbos</strong> en el momento justo en el que recibe un ataque, la habilidad se liberará con la fuerza de dos cargas."
+    }
+  },
+  "passive2": {
+    "name": "Rechazo de la convención",
+    "description": {
+      "0": "Cuando en el equipo hay 1/2/3/4 personajes con tipos elementales distintos, el aumento de daño de Ataque Normal otorgado por los <strong>banderines de las nubes</strong> incrementa en un 2.5/5/7.5/11.5% adicional en proporción a la DEF de Yun Jin."
+    }
+  },
+  "passive3": {
+    "name": "Alimentación ligera",
+    "description": {
+      "0": "Al lograr un “Perfecto” en un plato con efectos de ayuda a la aventura, hay una probabilidad del 12% de obtener el doble."
+    }
+  },
+  "constellation1": {
+    "name": "Galope dramático",
+    "description": {
+      "0": "El TdE de <strong>Disipadora de nimbos</strong> se reduce en un 18%."
+    }
+  },
+  "constellation2": {
+    "name": "Atrezo",
+    "description": {
+      "0": "Después de usar <strong>Estandarte romperrocas</strong>, el daño de los Ataques Normales de todos los miembros del equipo cercanos aumenta en un 15% durante 12 s."
+    }
+  },
+  "constellation3": {
+    "name": "Bandera marítima",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Estandarte romperrocas</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Pose bélica",
+    "description": {
+      "0": "Cuando Yun Jin causa una reacción de Cristalización, su DEF aumenta en un 20% durante 12 s."
+    }
+  },
+  "constellation5": {
+    "name": "Fama internacional",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Disipadora de nimbos</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Armonía y decoro",
+    "description": {
+      "0": "Aumenta en un 12% la Vel. de Ataque Normal de los personajes bajo los efectos de los <strong>banderines de las nubes</strong>."
+    }
+  }
+}

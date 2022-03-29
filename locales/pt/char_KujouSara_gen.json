@@ -69,7 +69,7 @@
     }
   },
   "burst": {
-    "name": "Subjugação: Koukou Sentou",
+    "name": "Subjugação: Koukou Sendou",
     "description": {
       "0": "Lança um Tengu Juurai: Destruidor de Titãs, causando <electro>Dano Electro em uma AdE</electro>. Depois disso, Tengu Juurai: Destruidor de Titãs irá se espalhar em 4 Tengu Juurai: Aglomerado de Tempestades consecutivos, causando <electro>Dano Electro em uma AdE</electro>.",
       "1": "Tengu Juurai: Destruidor de Titãs e Tengu Juurai: Aglomerado de Tempestades permitirá que o personagem ativo receba o mesmo Bônus de ATQ que receberia durante a Habilidade Elemental dentro da AdE do campo atual, Invocação da Tempestade Tengu.",
@@ -131,14 +131,14 @@
   "constellation3": {
     "name": "Guerra Interna",
     "description": {
-      "0": "Aumenta o Nível de <strong>Subjugação: Koukou Sentou</strong> em 3.",
+      "0": "Aumenta o Nível de <strong>Subjugação: Koukou Sendou</strong> em 3.",
       "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation4": {
     "name": "Prova Conclusiva",
     "description": {
-      "0": "O número de Tengu Juurai: Aglomerados de Tempestades liberados pela <strong>Subjugação: Koukou Sentou</strong> é aumentada para 6."
+      "0": "O número de Tengu Juurai: Aglomerados de Tempestades liberados pela <strong>Subjugação: Koukou Sendou</strong> é aumentada para 6."
     }
   },
   "constellation5": {

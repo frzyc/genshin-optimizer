@@ -1,6 +1,6 @@
 {
   "name": "Skyward Blade",
-  "description": "Pedang Knight yang melambangkan kemuliaan Dvalin yang sudah terpulihkan. Berkat Archon Anemo berinar di atas mata pedangnya, memberikan kekuatan langit dan angin.",
+  "description": "Pedang Knight yang melambangkan kemuliaan Dvalin yang sudah terpulihkan. Berkat Archon Anemo bersinar di atas mata pedangnya, memberikan kekuatan langit dan angin.",
   "passiveName": "Sky-Piercing Fang",
   "passiveDescription": {
     "0": "CRIT Rate meningkat sebesar <cryo>4%</cryo>. Saat menggunakan Elemental Burst akan mendapatkan Skypiercing Might dengan efek: Meningkatkan <cryo>10%</cryo> Movement SPD, dan <cryo>10%</cryo> ATK SPD. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG sebesar <cryo>20%</cryo> ATK. Skypiercing Might bertahan selama 12 detik.",

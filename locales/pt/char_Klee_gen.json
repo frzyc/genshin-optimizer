@@ -137,7 +137,7 @@
   "constellation4": {
     "name": "Coelho Ativado",
     "description": {
-      "0": "Se Klee deixa o campo de batalha durante as <strong>Faíscas Explosivas</strong>, a sua partida ativa uma explosão que causa 555% do seu ATQ como <pyro>Dano AdE Pyro</pyro>."
+      "0": "Se Klee deixa o campo de batalha durante as <strong>Faíscas Explosivas</strong>, a sua partida ativa uma explosão que causa 555% do seu ATQ como <pyro>Dano Pyro em uma AdE</pyro>."
     }
   },
   "constellation5": {

@@ -1,7 +1,7 @@
 {
   "name": "Zhongli",
   "title": "Andarilho do Reino Mortal",
-  "description": "Um convidado misterioso da Funerária Wangsheng. É um erudito que tem um profundo conhecimento sobre todos os tipos de coisa.",
+  "description": "Um convidado misterioso da Funerária de Wangsheng. É um erudito que tem um profundo conhecimento sobre todos os tipos de coisa.",
   "constellationName": "???",
   "auto": {
     "name": "Chuva de Pedras",
@@ -51,30 +51,30 @@
       "7": [
         "Se o número de Estelas de Pedra não alcançou o máximo, cria outra Estela de Pedra;",
         "Forma um Escudo de Jade, que absorve o Dano com base na Vida Máxima de Zhongli;",
-        "Causa <geo>Dano Geo AdE</geo>;",
+        "Causa <geo>Dano Geo em uma AdE</geo>;",
         "Se houver alvos com <geo>Elemento Geo</geo> nas proximidades, absorverá o <geo>Elemento Geo</geo> de até dois alvos. Esse efeito não causa dano."
       ],
       "8": "<br/>",
       "9": "<strong>Estela de Pedra</strong>",
-      "10": "Ao ser criada, causa <geo>Dano Geo AdE</geo>.",
+      "10": "Ao ser criada, causa <geo>Dano Geo em uma AdE</geo>.",
       "11": "Além disso, enquanto existir, ressoará com <geo>Construções Geo</geo> próximas, causando <geo>Dano Geo</geo> aos inimigos próximos.",
       "12": "A Estela de Pedra é considerada uma <geo>Construção Geo</geo>, pode parar ataques, e pode ser escalada.",
-      "13": "Só é possível existir uma Estela de Pedra ao mesmo tempo.",
+      "13": "Inicialmente só é possível existir uma Estela de Pedra, criada pelo próprio Zhongli, ao mesmo tempo.",
       "14": "<br/>",
       "15": "<strong>Escudo de Jade</strong>",
       "16": "Absorve 150% de todos os Danos Elementais e Danos Físicos.",
-      "17": "Os personagens sob a proteção do Escudo de Jade, diminuem a RES Elemental e RES Física de todos os inimigos em uma pequena área em redor.",
+      "17": "Os personagens sob a proteção do Escudo de Jade, diminuem a RES Elemental e RES Física de todos os inimigos em 20% numa pequena AdE.",
       "18": "<br/>",
       "19": "<i>Um verdadeiro mestre da pedra pode entalhar jade e dar forma ao ouro. </i>"
     },
     "skillParams": {
-      "0": "Dano de Cume da Pedra/Ressonância",
-      "1": "Recarga de Toque",
+      "0": "Dano da Estela de Pedra/Ressonância",
+      "1": "Recarga de Pressionar",
       "2": "Dano ao Manter Pressionado",
       "3": "Absorção Básica do Escudo",
       "4": "Absorção Adicional de Escudo",
       "5": "Duração do Escudo",
-      "6": "Tempo de Recarga ao Manter Pressionado",
+      "6": "Tempo de Recarga de Manter Pressionado",
       "7": "",
       "8": "",
       "9": "",
@@ -130,8 +130,8 @@
     "description": {
       "0": "Os ataques de Zhongli terão os seguintes aumentos de Dano de acordo com sua Vida Máxima:",
       "1": [
-        "Ataque Normal, Ataque Carregado e Ataque Imersivo terão seu dano aumentado para 1.39% da Vida Máxima",
-        "O Dano da Estela de Pedra, Dano de ressonância Geo e Dano de Manter Pressionado de <strong>Dominis Lapidis</strong> aumentarão para 1.9% da Vida Máxima",
+        "Ataque Normal, Ataque Carregado e Ataque Imersivo terão seu dano aumentado em 1,39% da Vida Máxima",
+        "O Dano da Estela de Pedra, Dano de ressonância Geo e Dano de Manter Pressionado de <strong>Dominus Lapidis</strong> aumentarão para 1.9% da Vida Máxima",
         "O Dano de <strong>Chuva Estelar</strong> aumentará para 33% da Vida Máxima"
       ]
     }
@@ -145,7 +145,7 @@
   "constellation1": {
     "name": "Pedra, a Espinha Vertebral da Terra",
     "description": {
-      "0": "Aumenta o número máximo de Espirais de Pedra criados pelo <strong>Dominus Lapidis</strong> que podem existir simultaneamente para 2."
+      "0": "Aumenta o número máximo de Estelas de Pedra criadas pelo <strong>Dominus Lapidis</strong> que podem existir simultaneamente para 2."
     }
   },
   "constellation2": {

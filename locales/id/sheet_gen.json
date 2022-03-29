@@ -34,11 +34,11 @@
   "addEleDMG": "Tambahan Elemental DMG",
   "press": {
     "dmg": "DMG Tekan",
-    "cd": "CD (Tekan)"
+    "cd": "Cooldown (Mode Tekan)"
   },
   "hold": {
     "dmg": "DMG Menahan",
-    "cd": "Cooldown Menahan"
+    "cd": "Cooldown (Mode Tahan)"
   },
   "element": {
     "anemo": "Anemo",

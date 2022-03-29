@@ -108,7 +108,7 @@
   "passive3": {
     "name": "Balade nocturne",
     "description": {
-      "0": "Augmente la VIT de déplacement des personnages de votre équipe pendant la nuit (de 18 h à 6 h) de 10 %.",
+      "0": "Augmente la VIT de déplacement des personnages de votre équipe pendant la nuit (18 h 00 - 06 h 00) de 10 %.",
       "1": "Cet effet ne s'applique ni dans les donjons, ni dans les Donjons de la conquête, ni dans les Profondeurs spiralées, et ne peut être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },

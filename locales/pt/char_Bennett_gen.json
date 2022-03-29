@@ -81,7 +81,7 @@
       "2": "<strong>Campo de Inspiração</strong>",
       "3": [
         "Se a Vida dos personagens dentro da AdE for igual ou cair para menos de 70%, regenerará Vida continuamente. A regeneração de Vida se baseia na Vida Máxima de Bennett.",
-        "Se a Vida dos personagens dentro da AdE for maior que 70%, receberão um dano adicional proporcional ao Ataque Básico de Bennett.",
+        "Se a Vida dos personagens dentro da AdE for maior que 70%, receberão um Bônus de ATQ proporcional ao Ataque Básico de Bennett.",
         "Aplica-se aos personagens dentro da AdE <pyro>Elemento Pyro</pyro>."
       ],
       "4": "<br/>",
@@ -162,7 +162,7 @@
   "constellation6": {
     "name": "Fogo e Coragem",
     "description": {
-      "0": "Personagens que usam Espadas, Espadões e Lanças dentro da área da <strong>Viagem Fantástica</strong> ganham 15% de <pyro>Bônus de Dano Pyro</pyro> e recebem um <pyro>Encantamento Pyro</pyro>."
+      "0": "<strong>Viagem Fantástica</strong> concede 15% de <pyro>Bônus de Dano Pyro</pyro> aos membros do grupo dentro da AdE. Além disso, personagens que usam Espadas, Espadões e Lanças recebem um <pyro>Encantamento Pyro</pyro>."
     }
   }
 }

@@ -15,11 +15,11 @@
         "1": "Realiza um <strong>Disparo com Mira</strong> mais preciso com Dano aumentado.",
         "2": "Ao mirar, uma aura congelante acumulará na ponta da flecha antes de ser disparada. Tem diferentes efeitos baseados em quanto tempo a energia foi carregada:",
         "3": "Carga Nível 1: Dispara uma Flecha Congelante que causa <cryo>Dano Cryo</cryo>",
-        "4": "Carga Nível 2: Dispara uma Flecha Congelante que causa <cryo>Dano Cryo</cryo>. A Flecha Congelante floresce após acertar seu alvo, causando <cryo>Dano Cryo em AdE</cryo>."
+        "4": "Carga Nível 2: Dispara uma Flecha Congelante que causa <cryo>Dano Cryo</cryo>. A Flecha Congelante floresce após acertar seu alvo, causando <cryo>Dano Cryo em uma AdE</cryo>."
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",
-        "1": "Dispara uma chuva de flechas durante o ar antes de cair e atingir o chão, causando Dano em AdE no impacto."
+        "1": "Dispara uma chuva de flechas durante o ar antes de cair e atingir o chão, causando Dano em uma AdE no impacto."
       }
     },
     "skillParams": {
@@ -44,13 +44,13 @@
   "skill": {
     "name": "Rastros de Qilin",
     "description": {
-      "0": "Lançando uma Lótus de Gelo, Ganyu salta para trás, causando <cryo>Dano AdE Cryo</cryo>.",
+      "0": "Lançando uma Lótus de Gelo, Ganyu salta para trás, causando <cryo>Dano em uma AdE Cryo</cryo>.",
       "1": "<br/>",
       "2": "<strong>Lótus de Gelo</strong>",
       "3": [
         "Provoca inimigos ao seu redor, atraindo-os para a atacar.",
         "Sua resistência aumenta de acordo a Vida Máxima de Ganyu.",
-        "Floresce quando destruída ou quando sua duração acaba, causando <cryo>Dano Cryo AdE</cryo>."
+        "Floresce quando destruída ou quando sua duração acaba, causando <cryo>Dano Cryo em uma AdE</cryo>."
       ],
       "4": "<br/>",
       "5": "<i>\"Você disse que me viu? Acho que você está enganad{F#a}{M#o}. Eu estava trabalhando horas extras\".</i>"
@@ -116,7 +116,7 @@
   "passive3": {
     "name": "Preservado para a Caça",
     "description": {
-      "0": "Retorna 15% dos minérios usados ao criar armas de Arco."
+      "0": "Retorna 15% dos minérios usados ao criar armas do tipo Arco."
     }
   },
   "constellation1": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "O Clemente",
     "description": {
-      "0": "Usando o <strong>Rastros de Qilin</strong> faz com que durante 30s a próxima Flecha Congelante não precise ser carregada."
+      "0": "Usando o <strong>Rastros de Qilin</strong> faz com que durante 30s seguintes a primeira Flecha Congelante não precise ser carregada."
     }
   }
 }

@@ -124,8 +124,8 @@
   "constellation1": {
     "name": "Dew-Drinker",
     "description": {
-      "0": "Taking DMG from a Charge Level 2 Frostflake Arrow or Frostflake Arrow Bloom decreases opponents' <cryo>Cryo RES</cryo> by 15% for 6s.",
-      "1": "A hit regenerates 2 Energy for Ganyu. This effect can only occur once per Charge Level 2 Frostflake Arrow, regardless if Frostflake Arrow itself or its Bloom hit the target."
+      "0": "Charge Level 2 Frostflake Arrows or Frostflake Arrow Blooms decrease opponents' <cryo>Cryo RES</cryo> by 15% for 6s upon hit.",
+      "1": "A hit also regenerates 2 Energy for Ganyu. This effect can only occur once per Charge Level 2 Frostflake Arrow, regardless if Frostflake Arrow itself or its Bloom hits the target."
     }
   },
   "constellation2": {

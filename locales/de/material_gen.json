@@ -135,9 +135,21 @@
     "name": "Schneegleitabzeichen",
     "description": "Ein Abzeichen, das denjenigen verliehen wird, die die spezielle Ausbildung der Abenteurergilde absolvieren. Es kann als Symbol für die eigene Stärke betrachtet werden."
   },
-  "FellflowerSeal": {
-    "name": "Teufelsblumenabzeichen",
-    "description": "Ein Abzeichen, das man erhält, wenn man die Teufelsblume besiegt. Diese Abzeichen können sich in nichts anderes verwandeln ... oder?"
+  "VanquishersEmblem": {
+    "name": "Bewältigungsabzeichen",
+    "description": "Ein seltenes Abzeichen, das man erhält, nachdem man enorme Schwierigkeiten bewältigt hat. Dieses Abzeichen kann sich in nichts anderes verwandeln ... oder?"
+  },
+  "AffluenceTalisman": {
+    "name": "Wohlstandstalisman",
+    "description": "Ein wundersamer Talisman, von dem gesagt wird, dass er Menschen mit „Glück“ verbinden kann. In Liyue werden viele Kinder von ihren Eltern gebeten, diesen Talisman immer bei sich zu tragen."
+  },
+  "ImmaculateTalisman": {
+    "name": "Makelloser Talisman",
+    "description": "Ein kunstvoller Talisman, der ziemlich teuer aussieht und gegen bestimmte Gegenstände eingetauscht werden kann ..."
+  },
+  "ConquestTalisman": {
+    "name": "Eroberungstalisman",
+    "description": "Ein seltsamer Talisman, der wie aus dem Nichts auftauchte. Du kannst immer noch spüren, wie starke Emotionen von diesem Talisman ausgehen, wenn du ihn festhältst ..."
   },
   "Primogem": {
     "name": "Urgestein",
@@ -193,7 +205,7 @@
   },
   "ElectroSigil": {
     "name": "Elektro-Siegel",
-    "description": "Ein Zeichen für die Anerkennung des Donenrs von Inazuma.\\nBring es der Heiligen Sakura vom Großer Narukami-Schrein dar, um deine Stufe der „Gunst der heiligen Sakura“ zu erhöhen."
+    "description": "Ein Zeichen für die Anerkennung des Donners von Inazuma.\\nBring es der Heiligen Sakura vom Großer Narukami-Schrein dar, um deine Stufe der „Gunst der heiligen Sakura“ zu erhöhen."
   },
   "AnemoSigil": {
     "name": "Anemo-Siegel",
@@ -423,9 +435,21 @@
     "name": "Arataki Itto",
     "description": "Der erste und größte Anführer der Arataki-Bande, berühmt in ganz Hanamizaka im Gebiet von Inazuma ... Wie bitte? Du hast noch nie von der Arataki-Bande gehört? Ernsthaft?"
   },
+  "YaeMiko": {
+    "name": "Yae Miko",
+    "description": "Die Guuji des Großen Narukami-Schreins und Chefredakteurin des „Verlagshauses Yae“. Hinter ihrem schönen Aussehen verbergen sich unerwartete Intelligenz und Gerissenheit."
+  },
   "Aloy": {
     "name": "Aloy",
     "description": "Sie war früher eine Ausgestoßene. Jetzt ist sie eine Jägerin mit durchdringendem Scharfsinn. Jederzeit ist sie bereit, mit Pfeil und Bogen das Richtige zu tun."
+  },
+  "Shenhe": {
+    "name": "Shenhe",
+    "description": "Eine adeptische Schülerin mit einer übernatürlichen Aura, die ihr das langjährige eremitenhafte Leben in den Bergen von Liyue verleiht. Ihr Charakter ist von dem Gleichmut und der Distanzierung der Adepten zutiefst geprägt."
+  },
+  "YunJin": {
+    "name": "Yun Jin",
+    "description": "Eine berühmte Opernsängerin in Liyue, die sowohl im Schreiben als auch im Gesang erfahren ist. Ihr Stil ist einzigartig, exquisit und sanft, genauso wie sie selbst."
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna von Kamisato Ayaka",
@@ -600,12 +624,24 @@
     "description": "Kujou Saras Material zum Aktivieren von Sternbildern"
   },
   "AratakiIttosStellaFortuna": {
-    "name": "Arataki Ittos Stella Fortuna",
+    "name": "Stella Fortuna von Arataki Itto",
     "description": "Material zum Aktivieren von Arataki Ittos Sternbild"
+  },
+  "YaeMikosStellaFortuna": {
+    "name": "Stella Fortuna von Yae Miko",
+    "description": "Material zum Aktivieren von Yae Mikos Sternbild"
   },
   "AloysStellaFortuna": {
     "name": "Stella Fortuna von Aloy",
     "description": "Aloys Material zum Aktivieren von Sternbildern"
+  },
+  "ShenhesStellaFortuna": {
+    "name": "Stella Fortuna von Shenhe",
+    "description": "Material zum Aktivieren von Shenhes Sternbild"
+  },
+  "YunJinsStellaFortuna": {
+    "name": "Stella Fortuna von Yun Jin",
+    "description": "Material zum Aktivieren von Yun Jins Sternbild"
   },
   "GnosticHymnOldNotes": {
     "name": "Gnostiker-Erlebnispass – Erste Aufzeichnungen",
@@ -1466,6 +1502,10 @@
   "OfMountainsAndSeas": {
     "name": "Von den Bergen und der See",
     "description": "Die Aufzeichnungen des Abenteurers Leonard aus alter Zeit. Man sieht ihnen ihr Alter an. Die meisten Inhalte sind längst verloren und nur noch einzelne Teile sind verblieben."
+  },
+  "DraftManuscriptOfHyakuninIkkiTheGreatestBattle": {
+    "name": "Entwurf von „Hyakunin Ikki – Das größte Kampfturnier“",
+    "description": ""
   },
   "WyattsRedKey": {
     "name": "Wyatts roter Schlüssel",
@@ -3251,9 +3291,89 @@
     "name": "Snackdose",
     "description": "Eine Dose mit Snacks, die du auf Wunsch von Kujou Kamaji zu Hiiragi Chisato bringen sollst. Sie scheint in der Tat sehr voll zu sein ..."
   },
-  "TheSerpentDrakeOfTokoyoNoKuni": {
+  "DullGoldenBridle": {
+    "name": "Stumpfes Goldenes Zaumzeug",
+    "description": "Der vererbte Nationalschatz von Byakuyakoku, aber er hat seine eigene Kraft verloren. Dies geschah, um zu verhindern, dass Diebe, die auf anderem Wege eingedrungen sind, seinen Wert erkennen."
+  },
+  "GoldenBridle": {
+    "name": "Goldenes Zaumzeug",
+    "description": "Der vererbte Nationalschatz von Byakuyakoku. Er repräsentiert die höchste Autorität im Land und verleiht seinem Träger die Macht, die Ewige Nacht und die Helle Nacht zu kontrollieren."
+  },
+  "ReinsOfRevivalFragmentTheNarrows": {
+    "name": "Fragment der Zügel der Auferstehung in der Schlucht",
+    "description": "Ein Fragment der Zügel der Auferstehung. Es ist aus einem besonderen Material gefertigt."
+  },
+  "ReinsOfRevivalFragmentTemple": {
+    "name": "Fragment der Zügel der Auferstehung vor dem Tempel",
+    "description": "Ein Fragment der Zügel der Auferstehung. Es hat eine besondere Kraft."
+  },
+  "ReinsOfRevivalFragmentSerpentsHeart": {
+    "name": "Fragment der Zügel der Auferstehung in dem Schlangenherzen",
+    "description": "Ein Fragment der Zügel der Auferstehung. Auch die drei Fragmente folgen der „Regel der Drei“."
+  },
+  "ReinsOfRevival": {
+    "name": "Zügel der Auferstehung",
+    "description": "Der vererbte Nationalschatz von Byakuyakoku. Er repräsentiert nicht nur die höchste Autorität im Land, sondern verleiht auch die Fähigkeit, Seelen und dieses Reich zu kontrollieren."
+  },
+  "OfferingsOfTheNarrows": {
+    "name": "Opfergabe in der Schlucht",
+    "description": "Ein Opfer in der Schmalen Schlucht, das einen Bruchteil von Aberakus Gedankenresten enthält."
+  },
+  "OfferingsOfTheTemple": {
+    "name": "Opfergabe vor dem Tempel",
+    "description": "Ein Opfer vor dem Tempel, das einen Bruchteil von Aberakus Gedankenresten enthält."
+  },
+  "OfferingsOfTheSerpentsHeart": {
+    "name": "Opfergabe im Schlangenherzen",
+    "description": "Ein Opfer vom Schlangenherzen, das einen Bruchteil von Aberakus Gedankenresten enthält."
+  },
+  "TheSerpentAndDrakesOfTokoyokoku": {
     "name": "Die Drachenschlange von Tokoyo no Kuni",
     "description": "Ein Roman, der auf den Volkserzählungen der Insel Watatsumi basiert. Die Originalausgabe dieses Textes wurde auf der Insel Watatsumi abgeschrieben und von einem Händler auf die Insel Narukami gebracht, als der dortige Schlangengott noch lebte. Heutzutage liest niemand mehr diesen alten Folianten, da seine Bedeutung durch die vielen kurzen Erzählungen auf dem Markt verdrängt wurde. Dieses Buch beschreibt die einzigartige kosmologische Weltanschauung des Watatsumi-Volkes, bevor es Aspekte der Narukami-Kultur übernahm. Ein neuerliches Aufleben der traditionellen Romanveröffentlichung hat es ermöglicht, dass es wieder das Licht der Welt erblickt."
+  },
+  "BathysmalVishapExperimentalRecords": {
+    "name": "Aufzeichnungen zu Experimenten mit Tiefsee-Drachenechsen",
+    "description": "Aufzeichnungen zu Experimenten mit Tiefsee-Drachenechsen. Bei der Erstellung dieser Aufzeichnungen wurden keine Drachenechsen getötet."
+  },
+  "BeforeSunAndMoon": {
+    "name": "Vor Sonne und Mond",
+    "description": "Eine Chronik, deren Lektüre dem einfachen Volk verboten wurde. Die Schrift ist eine Mischung aus Fabeln und Geschichten vom Beginn der Welt bis zur Erschaffung des Dainichi Mikoshi."
+  },
+  "HydrologicalStudiesInByakuyakoku": {
+    "name": "Geografie und Hydrologie von Byakuyakoku",
+    "description": "Dieser Text beschreibt die Geografie und Hydrologie von Byakuyakoku. Mit der Versiegelung der Tiefen und der Auswanderung der Menschen von Watatsumi sowie dem Verstreichen langer Jahre ist dieses Buch nun nutzlos."
+  },
+  "InTheLightBeneathTheShadow": {
+    "name": "Im Licht, unter dem Schatten",
+    "description": "Ein Rätselbuch für Kinder im Alter von neun bis zwölf Jahren. Da es sich um ein Buch aus einer Übergangszeit handelt, werden Namen von dem alten Byakuyakoku im Narukami-Stil als Verständnishilfe hinzugefügt."
+  },
+  "KeySigil": {
+    "name": "Schlüsselmuster",
+    "description": "Ein Siegel, das von Watatsumi und Enkanoiya weitergegeben wird. Solche Bilder werden beim Aufschließen verwendet und deshalb „Schlüsselmuster“ genannt."
+  },
+  "BloodbranchCoral": {
+    "name": "Blutzweigkoralle",
+    "description": "Eine Koralle, in der die Lebenskraft von Watatsumi Omikami wohnt. Sie ist ein wichtiger Teil des „Watatsumi Goryou Matsuri“."
+  },
+  "DivineBridle": {
+    "name": "Göttliches Zaumzeug",
+    "description": "Ein Symbol der Autorität des Sonnenkinds, das dem Goldenes Zaumzeug nachempfunden ist. Es besitzt selbst keine besondere Macht."
+  },
+  "DatesMedalOfRecognition": {
+    "name": "Anerkennungsmedaille von Date",
+    "description": "Eine Anerkennungsmedaille von Date. Sie wurde sehr gut angefertigt."
+  },
+  "SecretRoomKey": {
+    "name": "Schlüssel zur Geheimkammer",
+    "description": "Ein Schlüssel, mit dem man eine gewisse Geheimkammer in der Schmalen Schlucht betreten kann. Diese Geheimkammer könnte der andere Versteck sein, den Adonis und seine Leute aufgegeben haben."
+  },
+  "WatersOfLethe": {
+    "name": "Wasser von Lethe",
+    "description": "Wasser aus dem Fluss in der Nähe des Tempels der Ewigen Nacht, das in der Dunkelheit schwach schimmert. Obwohl es das Wasser von Lethe, bezeichnet als Vergessenheitstrank, ist, kann man es ruhig trinken, ohne sich sorgen zu müssen, irgendetwas zu vergessen. Aber die Perlen der Drachenknochenblume, die es zum Entstehen bringt, besitzen eine ähnliche Funktion."
+  },
+  "DragonboneOrb": {
+    "name": "Perle der Drachenknochenblume",
+    "description": "Die Frucht der Drachenknochenblume, die sich mit dem Wasser von Lethe auf der Blume kondensieren. Der Legende nach kann diese sonderbare Frucht denjenigen, der sie gegessen haben, dabei helfen, Sorgen zu beseitigen und innere Ruhe zu erlangen. Vielleicht liegt in dieser scheinbar absurden Legende doch tatsächlich der Schlüssel zum Glück, und zwar, wenn man auf das übermäßige Begehren verzichtet, findet man leichter den Weg zum wahren Glück."
   },
   "KeyToSomePlace": {
     "name": "Schlüssel zu einem Ort",
@@ -3281,7 +3401,7 @@
   },
   "FuneraryMask": {
     "name": "Bestattungsmaske",
-    "description": "Eine Beute, die man erhält, wenn man La Signora, die achte der Elf der Fatui, besiegt.\\nMan sagt, dass die Fatui der Welt oft hinter ihren Masken gegenübertreten, weil alles, was sie einst waren, nichts mehr bedeutet, wenn sie erst einmal Fatui geworden sind, und sie deshalb ihren wahren Namen und ihr wahres Gesicht aufgeben müssen.\\n\\nDoch der Akt, alles aufzugeben, was das „Ich“ ausmacht, und zwar die eigene Vergangenheit und die damit verbundenen Bindungen, ist keine leichte Aufgabe.\\nVielleicht kann man sagen, dass nur diejenigen, die eine Besessenheit besitzen, die dem Wahn nahe kommt oder ihn sogar übertrifft, bereit sein könnten, sich dieser Gruppe anzuschließen, die so sehr gegen die himmlischen Ordnung auflehnt, ihre verbleibenden Tage an ihre teuflichen Augen bindet und so hell wie Sterne brennt.\\n... Natürlich sind viele innerhalb der Fatui einfach nur machtbesessen oder einfache Sadisten. Sie hegen aber keine starke Abneigung gegeneinander. Für sie gilt wohl der Spruch: „Gleich und Gleich gesellt sich gern“.\\n\\nDie Frau, deren richtiger Name Rosalyne-Kruzchka Lohefalter war, mag einst ein unschuldiges, naives Mädchen gewesen sein.\\nAber das war, bevor ihre Augen von einem wütenden Feuer erfüllt wurden und ihre unschuldigen Tage weggebrannt wurden ... bevor das eisige teufliche Auge die flammenden Zungen auslöschte, die jemals an ihr nagten ... bevor die gefrorene Macht, die sie schützte, von dem ewigen Fremden zerbrochen wurde, der ungebunden, aber nicht weniger entschlossen war als sie selbst ... Und dann wurden die Flammen erneut zum Ausbruch gebracht ..."
+    "description": "Eine Beute, die man erhält, wenn man La Signora, die achte der Elf der Fatui, besiegt.\\nMan sagt, dass die Fatui der Welt oft hinter ihren Masken gegenübertreten, weil alles, was sie einst waren, nichts mehr bedeutet, wenn sie erst einmal Fatui geworden sind, und sie deshalb ihren wahren Namen und ihr wahres Gesicht aufgeben müssen.\\n\\nDoch der Akt, alles aufzugeben, was das „Ich“ ausmacht, und zwar die eigene Vergangenheit und die damit verbundenen Bindungen, ist keine leichte Aufgabe.\\nVielleicht kann man sagen, dass nur diejenigen, die eine Besessenheit besitzen, die dem Wahn nahe kommt oder ihn sogar übertrifft, bereit sein könnten, sich dieser Gruppe anzuschließen, die so sehr gegen die himmlischen Ordnung auflehnt, ihre verbleibenden Tage an ihre Teuflischen Augen bindet und so hell wie Sterne brennt.\\n... Natürlich sind viele innerhalb der Fatui einfach nur machtbesessen oder einfache Sadisten. Sie hegen aber keine starke Abneigung gegeneinander. Für sie gilt wohl der Spruch: „Gleich und Gleich gesellt sich gern“.\\n\\nDie Frau, deren richtiger Name Rosalyne-Kruzchka Lohefalter war, mag einst ein unschuldiges, naives Mädchen gewesen sein.\\nAber das war, bevor ihre Augen von einem wütenden Feuer erfüllt wurden und ihre unschuldigen Tage weggebrannt wurden ... bevor das eisige Teuflische Auge die flammenden Zungen auslöschte, die jemals an ihr nagten ... bevor die gefrorene Macht, die sie schützte, von dem ewigen Fremden zerbrochen wurde, der ungebunden, aber nicht weniger entschlossen war als sie selbst ... Und dann wurden die Flammen erneut zum Ausbruch gebracht ..."
   },
   "MusoujinGorgeRockPillarPearl": {
     "name": "Felssäulenperle (Musoujin-Schlucht)",
@@ -3442,6 +3562,10 @@
   "Key": {
     "name": "Schlüssel",
     "description": "Ein einzigartig aussehender Schlüssel. Mit ihm kannst du den Käfig von Bennett öffnen."
+  },
+  "BoxOfClothes": {
+    "name": "Kiste mit Kleidung",
+    "description": "Diese Kiste enthält die Kleidung, die zu holen Ningguang dich gebeten hat. Wie sie sagte: „Ich brauche einen Stimmungswechsel und ein Kleiderwechsel erleichtert das.“"
   },
   "IronChunk": {
     "name": "Brocken Eisen",
@@ -3701,11 +3825,11 @@
   },
   "NewChroniclesOfTheSixKitsunePrologue": {
     "name": "Neue Chroniken der Sechs Füchse – Prolog",
-    "description": "Geschichten über Erinnerungen sind immer eng mit der Vergänglichkeit verflochten. Dieses Buch ist nicht komplett neu, sondern eine Adaption von „Chroniken der Sechs Füchse“."
+    "description": "Geschichten über Erinnerungen sind immer eng mit der Vergänglichkeit verflochten. Dieses Buch ist nicht komplett neu, sondern eine Adaption von „Urakusais Chroniken der Sechs Füchse“."
   },
   "NewChroniclesOfTheSixKitsuneI": {
     "name": "Neue Chroniken der Sechs Füchse – I",
-    "description": "Die Geschichte über den „Schwarzen Fuchs“ Itaru war ursprünglich das dritte Kapitel der „Chroniken der Sechs Füchse“, ist jetzt aber wegen der Vorliebe des Autors die erste Geschichte des neuen Buchs geworden."
+    "description": "Die Geschichte über den „Schwarzen Fuchs“ Itaru war ursprünglich das dritte Kapitel von „Urakusais Chroniken der Sechs Füchse“, ist jetzt aber wegen der Vorliebe des Autors die erste Geschichte des neuen Buchs geworden."
   },
   "NewChroniclesOfTheSixKitsuneII": {
     "name": "Neue Chroniken der Sechs Füchse – II",
@@ -3713,15 +3837,15 @@
   },
   "NewChroniclesOfTheSixKitsuneIII": {
     "name": "Neue Chroniken der Sechs Füchse – III",
-    "description": "In „Chroniken der Sechs Füchse“, die vor fünfhundert Jahren geschrieben wurden, hatten Youzan und Yui auch ihre eigenen Kapitel. Aber zu dieser Zeit sind die Mutter und ihre Tochter immer noch auf Itarus Hilfe angewiesen."
+    "description": "In „Urakusais Chroniken der Sechs Füchse“, die vor fünfhundert Jahren geschrieben wurden, hatten Youzan und Yui auch ihre eigenen Kapitel. Aber zu dieser Zeit sind die Mutter und ihre Tochter immer noch auf Itarus Hilfe angewiesen."
   },
   "NewChroniclesOfTheSixKitsuneIV": {
     "name": "Neue Chroniken der Sechs Füchse – IV",
-    "description": "Dies ist die spannendste Geschichte der ganzen „Chroniken der Sechs Füchse“ und soll von Yuurakusai nach seiner Rückkehr aus Liyue selbst geschrieben worden sein. Sie wurde auch vom Autor vollständig in diesem Buch aufgenommen."
+    "description": "Dies ist die spannendste Geschichte von allen „Urukusais Chroniken der Sechs Füchse“ und soll von Urukusai nach seiner Rückkehr aus Liyue selbst geschrieben worden sein. Sie wurde auch vom Autor vollständig in diesem Buch aufgenommen."
   },
   "SangonomiyaChronicles": {
     "name": "Chroniken von Sangonomiya",
-    "description": "Annalen, geschrieben von dem berühmten Bakufu-Historiker Kujou Michizane, der als „Kujou Sanpitsu-Tou“ oder „Der große Gelehrte“ bekannt war. Sie beschreiben die Geschichte der Insel Watatsumi in groben Zügen."
+    "description": "Annalen, geschrieben von dem berühmten Bakufu-Historiker Kujou Michizane, der als einer der „drei Kujou-Würdenträger“ oder „Der große Gelehrte“ bekannt war. Sie beschreiben die Geschichte der Insel Watatsumi in groben Zügen."
   },
   "TheSagaOfHamavaranPreface": {
     "name": "Hamavarans Kriege – Vorwort",
@@ -3939,17 +4063,217 @@
     "name": "Frisches rohes Geflügel",
     "description": "Das Essen, das Thoma für die streunenden Hunde vorbereitet hat."
   },
+  "BagOfRetrievedItems": {
+    "name": "Tasche mit zurückgeholten Gegenständen",
+    "description": "Ein Stapel zurückgelassener Waren, den du in einem Lagerhaus am Südhafen gefunden hast. Diese Waren haben im Grunde keinen Wert."
+  },
+  "RepairedComb": {
+    "name": "Reparierter Kamm",
+    "description": "Der Kamm, den Ningguang beim Warenhaus Mingxing in Auftrag gegeben hat, wurde repariert. Er gehört einem besonderen Informanten. Der Kamm war ursprünglich ziemlich stark beschädigt. Die Tatsache, dass er in diesem Ausmaß repariert werden konnte, ist schon ziemlich beeindruckend."
+  },
   "MysteriousFlyer": {
     "name": "Geheimnisvolles Flugblatt",
     "description": "Ein Flugblatt vom Hina-Fanclub. Das Bild da oben kommt dir irgendwie bekannt vor ..."
+  },
+  "RigorousSchedule": {
+    "name": "Strenger Zeitplan",
+    "description": "Ein Zeitplan, den du für Ningguang erstellt hast. Die verschiedenen Punkte sind alle übersichtlich und leicht zu lesen."
+  },
+  "SimpleSchedule": {
+    "name": "Einfacher Zeitplan",
+    "description": "Ein Zeitplan, den du für Ningguang erstellt hast. Einfach, stichhaltig und auf den Punkt gebracht."
+  },
+  "StarsplinterIron": {
+    "name": "Sternsplittererz",
+    "description": "Eines der Erzen, die zur Herstellung von „Wunderkernen“ erforderlich sind. Es zeigt Reaktionen, wenn ein Göttliches Auge in seiner Nähe ist."
+  },
+  "Subrosium": {
+    "name": "Geheimessenzerz",
+    "description": "Eines der Erzen, die zur Herstellung von „Wunderkernen“ erforderlich sind. Man kann es meistens in der Scheide zwischen Tag und Nach finden."
+  },
+  "WonderCore": {
+    "name": "Wunderkern",
+    "description": "Der Kern der mechanischen Struktur vom Jadegemach. Sobald man ihn mit den Adeptentalismanen versieht, kann er als Kontrollzentrum des Jadegemachs dienen."
+  },
+  "AdeptiSigil": {
+    "name": "Adeptentalisman",
+    "description": "Adeptentalisman, der von Shenhe angefertigt wurde. In ihm stecken sehr starke Adeptenkräfte."
+  },
+  "RecordsOfAChangingVillage": {
+    "name": "Protokoll zum Dorfumzug",
+    "description": "Dokumente, die den Umzug der Dorfbewohner ankündigen. Darin steht, dass das Dorf aufgrund der Überreste eines Gottes gezwungen war, umzuziehen."
+  },
+  "MountainousMiscellany": {
+    "name": "Verschiedenes über Steine und Felsen",
+    "description": "Dieses Buch enthält alle möglichen Legenden der sonderbaren Steine und Felsen auf dem Tianheng-Berg, einschließlich Geschichten über viele seltene Erze. In einer dieser seltsamen Geschichten wird geschrieben, dass, wenn man in der Mitte des Sees steht, der im Süden des Tianheng-Bergs liegt, und bei Abenddämmerung in die Richtung des Sonnenuntergangs geht, man das mysteriöse Geheimessenzerz finden kann."
   },
   "NeatlyWrittenNote": {
     "name": "Schön geschriebener Brief",
     "description": "Das Papier dieses Briefes ist leicht brüchig und auch die Tinte ist ein wenig verschmiert. Es scheint, dass sowohl er als auch sein Besitzer dem Ansturm der Wellen standgehalten haben. Leider haben sie zwar dieselben Schwierigkeiten, aber nicht dasselbe Schicksal erlitten."
   },
+  "LittleMengsDriftingBottle": {
+    "name": "Flaschenpost des kleinen Meng",
+    "description": "Eine Flasche vollgestopft mit den verschiedenen Problemen des kleinen Meng. Du fragst dich, was da drin ist ..."
+  },
+  "YueChuansDriftingBottle": {
+    "name": "Flaschenpost von Yue Chuan",
+    "description": "Eine Flaschenpost, die Yue Chuans Antwort an den kleine Meng enthält. Du fragst dich, ob sie ihn erreichen wird ..."
+  },
+  "CellKey": {
+    "name": "Zellenschlüssel",
+    "description": "Ein Metallschlüssel, den du von den Fatui erhalten hast. Mit ihm sollte sich irgendeine Tür öffnen lassen."
+  },
+  "FreshlyPickedCallaLily": {
+    "name": "Frisch gepflückte Wasserlilie",
+    "description": "Eine frisch gepflückte Wasserlilie. Geeignet für die Verwendung als Exemplar."
+  },
+  "FreshlyPickedSmallLampGrass": {
+    "name": "Frisch gepflücktes Lampenkraut",
+    "description": "Ein frisch gepflücktes Lampenkraut. Geeignet für die Verwendung als Exemplar."
+  },
+  "FreshlyPickedCecilia": {
+    "name": "Frisch gepflückte Cecilia",
+    "description": "Eine frisch gepflückte Cecilia. Geeignet für die Verwendung als Exemplar."
+  },
+  "RuinMachineCore": {
+    "name": "Kern von Ruinenmaschinen",
+    "description": "Kern der Ruinenmaschinen. Alte und neue Versionen dieses Geräts sind inkompatibel miteinander und können daher nicht verwendet werden, um andere Objekte zu stärken. Die verbleibende Energie sollte jedoch ausreichen, um eine Ruinenmaschine in Betrieb zu nehmen."
+  },
+  "DatesKey": {
+    "name": "Dates Schlüssel",
+    "description": "Dates Schlüssel. Leider wird er nicht die Schatzkammer einer angesehenen Enkanomiya-Familie öffnen. Er wird nur den Weg zum Heterodoxa-Labyrinth öffnen."
+  },
   "PileOfLavenderMelons": {
     "name": "Ein Haufen Lavendelmelonen",
     "description": "Ein Haufen Lavendelmelonen. Vielleicht hat ein Tier sie hierher gesammelt. Aus der Ferne sieht es ein bisschen wie ein Onikabuto aus."
+  },
+  "FineIncense": {
+    "name": "Edler Weihrauch",
+    "description": "Weihrauch, den du von Wang Ping’an bekommen hast. Sieht aus, als wäre er von hoher Qualität."
+  },
+  "ANoteSomeoneStuffedYou": {
+    "name": "Notiz, die jemand dir zugesteckt hat",
+    "description": "Als du durch die Straßen von Inazuma gelaufen bist, hat dir jemand diesen Zettel zugesteckt. Darauf sind zwei seltsame Symbole gezeichnet."
+  },
+  "SpecialBambooSlip": {
+    "name": "Besonderes Bambusstäbchen",
+    "description": "Ein Bambusstäbchen, auf den Momoyo ein speziell hergestelltes Elementarpulver aufgetragen hat. Bewahre es auf und behandle es mit Vorsicht! Das Pulver enthält ein gewisses Maß an Gift. Natürlich wirst du bei unsachgemäßer Handhabung angeschrien."
+  },
+  "FinalInstructions": {
+    "name": "„Letzte Anweisungen“",
+    "description": "Fatui-Einsatzbefehle, die du von Lyudochka erhalten hast. Sie beschreiben eine Operation, die in der Zukunft auf der Insel Watatsumi stattfinden wird. Diese Informationen sind sehr wichtig: Hier stehen Menschenleben auf dem Spiel!"
+  },
+  "BagOfClothes": {
+    "name": "Tasche mit Kleidung",
+    "description": "Eine Tasche, die Lyudochkas Fatui-Uniform enthält. Da die Fatui-Uniformen sehr umstritten sind, ist es am besten, wenn du sie nicht anderen Menschen zeigst."
+  },
+  "SpecialFortuneSlip": {
+    "name": "Besonderer „Orakelzettel“",
+    "description": "Ein speziell angefertigter Orakelzettel, der beschreibt, wie dein Glück heute sein wird. An diesem Orakelzettel ist nichts Außergewöhnliches, außer der Tatsache, dass du ihn gegen das gefälschte Bambusstäbchen eingetauscht hast.\\nWessen Glück beschreibt dieser Orakelzettel?"
+  },
+  "LightMoraPurse": {
+    "name": "Leichter Mora-Geldbeutel",
+    "description": "Ein Mora-Geldbeutel, den du in einer Schatztruhe gefunden hast. Das Gefühl, das du beim Wiegen hattest, war ein Gefühl der großen Enttäuschung."
+  },
+  "FullMoraPurse": {
+    "name": "Gefüllter Mora-Geldbeutel",
+    "description": "Ein Mora-Geldbeutel, den du in einer Schatztruhe gefunden hast. Im Vergleich zum vorherigen Geldbeutel, den du gefunden hast, fühlt sich dieser deutlich komfortabler an."
+  },
+  "PlumpFish": {
+    "name": "Molliger Fisch",
+    "description": "Ein Fisch, den du gerade aus dem Fluss geholt hast. Man könnte ihn als ein Geschenk der Natur bezeichnen. Er ist so ausgezeichnet, dass er nur ein wenig gegrillt werden muss, um köstlich zu sein."
+  },
+  "BeautifullyWrittenNote": {
+    "name": "Sehr schön geschriebene Notiz",
+    "description": "Sehr schön geschriebene Notiz"
+  },
+  "YunJinsPersonalLetter": {
+    "name": "Persönlicher Brief von Yun Jin",
+    "description": "Ein Brief, den Yun Jin persönlich an Shiyun geschrieben hat. Er scheint der Schlüssel zu sein, um die Situation zu ändern."
+  },
+  "LyudochkasLetter": {
+    "name": "Lyudochkas Brief",
+    "description": "Der Brief, den Lyudochka jemanden vom Verlagshaus Yae gebeten hat, an dich weiterzuleiten. Er enthält ihre Gründe für ihre Abreise, ohne zu sagen, warum. Ob du ihre Gründe akzeptierst oder nicht, steht auf einem anderen Blatt.\\nDu warst es, {F#die}{M#der} ihre Anwesenheit entdeckt und ihr Schicksal verändert hat. Kannst du vielleicht noch mehr tun, um dieses Ende zum Besseren zu wenden?"
+  },
+  "LyudochkasMoraPurse": {
+    "name": "Lyudochkas Morabörse",
+    "description": "Der Mora-Geldbeutel, den Lyudochka zurückgelassen hat. Er enthält eine anständige Summe Mora, aber selbst Paimon will sie nicht einstecken."
+  },
+  "FatuiCodeSheet": {
+    "name": "„Schlüsseltabelle der Fatui“",
+    "description": "Ein gewisses, stets schläfriges Mitglied des Shuumatsuban hat diese Schlüsseltabelle der Fatui geschrieben.\\nWenn du sie liest, erfährst du nicht nur, dass die „Fatui seltsam sprechen“, du kannst auch die intensive Schläfrigkeit des Schreibers spüren, die in Form von Speichel in das Papier eindringt."
+  },
+  "LightPurse": {
+    "name": "Leichter Geldbeutel",
+    "description": "Ein Geldbeutel, den du von Mona bekommen hast. Er enthält den Betrag, den sie für ihre Miete braucht."
+  },
+  "MarjoriesGift": {
+    "name": "Marjories Geschenk",
+    "description": "Ein Geschenk, das du von Marjorie bekommen hast. Du hast gehört, dass Kinder es mögen ..."
+  },
+  "ViktorsGift": {
+    "name": "Viktors Geschenk",
+    "description": "Ein Geschenk, das du von Viktor bekommen hast. Er scheint auch einen Brief unten in die Geschenkschachtel gelegt zu haben."
+  },
+  "FreshWolfhooks": {
+    "name": "Frische Wolfshaken",
+    "description": "Frische Wolfshaken, die Schuster gepflückt hat. Zum Glück sind sie noch nicht von Monstern beschädigt worden."
+  },
+  "LyudochkasFortuneSlip": {
+    "name": "Lyudochkas Unterschrift",
+    "description": "Ein speziell angefertigter Orakelzettel, der beschreibt, wie dein Glück heute sein wird. An diesem Orakelzettel ist nichts Außergewöhnliches, außer der Tatsache, dass du ihn verwendet hast, um Lyudochkas Herz zu öffnen.\\Nun ist dieser Orakelzettel in deine Hände zurückgekehrt, zusammen mit ihren herzlichen Segenswünschen. Wenn du Zeit hast, solltest du zum Großen Narukami-Schrein gehen, um sie zu treffen."
+  },
+  "TheMiraculousAdventuresOfTheTraveler": {
+    "name": "„Die wundersamen Abenteuer {F#der}{M#des} Reisenden“",
+    "description": "„Dies ist eine eher konventionelle kurze Erzählung, deren Inhalt im Wesentlichen eine bearbeitete Version des wahren Lebens in Teyvat ist. Überraschend ist jedoch, dass der Autor die Insel Watatsumi sehr gut zu kennen scheint und viele lebendige, fast lebensechte Beschreibungen liefert.“ – Fräulein Hina"
+  },
+  "LightRealmSigil": {
+    "name": "Siegel der Lichtwelt",
+    "description": "Ein Zeichen, das die Anerkennung von Tokoyo Ookami von Enkanomiya symbolisiert.\\nEs kann der Statue der Boten geopfert werden, wodurch die Stufe des Bokuso-Kastens erhöht wird."
+  },
+  "LightRealmCore": {
+    "name": "Kern der Lichtwelt",
+    "description": "Du hast diesen geheimnisvollen Stein entdeckt, als du die Dunkelheit von Enkanomiya erforscht hast.\\nDie Lichtwelt gab den Menschen zusätzliche Mittel, um dem Abgrund zu widerstehen."
+  },
+  "AFirsthandGuideToSummoningSpirits": {
+    "name": "„Ein Leitfaden zur Geisterbeschwörung aus erster Hand“",
+    "description": "Eine kurze Erzählung, die in letzter Zeit in Inazuma sehr beliebt ist. Sie enthält alle möglichen bizarren Geschichten über alte Youkai."
+  },
+  "DreamSakura": {
+    "name": "Traum-Sakura",
+    "description": "Du hieltest ein einzelnes Sakura-Blütenblatt in der Hand, bevor du Raiden Makotos Bewusstseinsbereich verlassen hast.\\nObwohl es sich auf den ersten Blick nicht von gewöhnlichen Sakura-Blättern unterscheidet und es still und leise in deinem Inventar liegt, wie alle anderen Objekte auch. Aber du kannst es nicht mehr anfassen und auch sein Gewicht oder seine Wärme nicht mehr spüren. Wenn ein Gegenstand alle Eigenschaften verliert, die man ihm normalerweise zuschreiben würde, wie kann man dann seine „Existenz“ sicher beweisen?\\nWenn du an die vielen Anblicke zurückdenkst, die das Blütenblatt in der Vergangenheit erlebt haben muss, kommt dir eine Vermutung in den Sinn: Das, was die Existenz dieses Sakura-Blattes aufrechterhält, muss der Wille von jemandem sein. Aber wer diese Person ist und ob sie dieses Blütenblatt absichtlich oder unabsichtlich am Leben erhält, kann man nicht wissen. Du kannst auch nicht beweisen, ob diese Willenskraft aus Sehnsucht, Vertrauen oder Dankbarkeit entsteht.\\nWenn sich der Wille dieser Person ändert, wird vielleicht auch das Sakura-Blatt verschwinden.\\nUm sicherzugehen, solltest du von Zeit zu Zeit nachsehen, ob es noch da ist."
+  },
+  "AphotiumOre": {
+    "name": "Meerestiefenerz",
+    "description": "Ein besonderes Erz, das durch das Watatsumi Goryou Matsuri entstanden ist. Da sich die Umgebung von Enkanomiya extrem verändert hat, sind die Erinnerungen und Gedanken, die in Watatsumi verstreut sind, zu Mark zusammenkristallisiert, das sich dann in Erz verwandelt hat."
+  },
+  "TokoyoLegume": {
+    "name": "Tokoyo-Schote",
+    "description": "Eine besondere Pflanze, die durch das Watatsumi Goryou Matsuri entstanden ist. Mit dem Erwachen der Korallenkönigswürmer wurde die Elementarkraft in Enkanomiya besänftigt. Dies ist eine natürlich wachsende Düngepflanze, die sich im Boden in Lehm verwandelt, sobald sie verrottet."
+  },
+  "HuskGem": {
+    "name": "Hüllenedelstein",
+    "description": "Ein Edelstein, der von der Rüstung einer besonderen Hülle der Finsternis fiel, nachdem du sie besiegt hast. Du kannst spüren, wie ein Wille in ihr aufsteigt. Vielleicht wäre es richtiger zu sagen, dass dieser Wille sich durch die Rüstung zeigt, anstatt sie zu manipulieren."
+  },
+  "FragmentedAccessory": {
+    "name": "Zersplittertes Schmuckstück",
+    "description": "Ein kleines Schmuckstück, das du von Kokomi bekommen hast. Es scheint das Fragment eines anderen Gegenstandes zu sein. Kokomi sagte, dass es irgendwann einmal nützlich sein könnte."
+  },
+  "TsumisMap": {
+    "name": "Tsumis Karte",
+    "description": "Eine von Tsumi gezeichnete Karte. Sie ist mit einigen Markierungen versehen."
+  },
+  "HakuenMichimitsuAmenoma": {
+    "name": "Hakuen Michimitsu Amenoma",
+    "description": "Ein Schwert, das in der Familie Iwakura von Generation zu Generation weitergegeben wird.\\nTrotz der extrem ausgezeichneten Techniken der Schmiede und des vielen Blutes, das es in vielen Kämpfen getrunken hat, gibt es eigentlich nichts Besonderes an dem Schwert selbst. Keiner der Iwakura-Nachkommen bekam jemals den Segen eines Göttlichen Augen. Ihre ausgesprochen starke Schwertkampftechniken sind lediglich ein Resultat des langjährigen körperlichen und seelischen Trainings.\\nDas Schwert liegt seit langem im Wasser und ist jetzt schon vollständig verrostet."
+  },
+  "DamagedStoneSlate": {
+    "name": "Beschädigte Steintafel",
+    "description": "Wer weiß, was für Geheimnisse eigentlich hinter dieser im ersten Augenblick überhaupt nicht auffälligen Steintafel steckt."
+  },
+  "MysteriousStoneSlate": {
+    "name": "Geheimnisvolle Steintafel",
+    "description": "Eine Steintafel, die du am Ende von allem bekommen hast. Hinter den Geheimnissen scheinen noch weitere Geheimnisse versteckt zu sein."
   },
   "PyroShard": {
     "name": "Pyro-Kristallsplitter",
@@ -5261,7 +5585,7 @@
   },
   "SuspiciousMintSalad": {
     "name": "Misslungener Minzsalat",
-    "description": "Ein duftendes Salatgericht. Die Minze und die Jueyun-Peperoni sind weder aufeinander abgestimmt noch gut eingearbeitet, was zu einem Gericht führt, das so scharf ist, dass jeder, der es isst, eine Zeitlang ratlos sein wird."
+    "description": "Ein duftendes Salatgericht. Die Minze und die Jueyun-Peperoni sind weder aufeinander abgestimmt noch gut eingearbeitet, was zu einem Gericht führt, das so scharf ist, dass jeder, der es isst, eine Zeit lang ratlos sein wird."
   },
   "MintSalad": {
     "name": "Minzsalat",
@@ -5807,6 +6131,66 @@
     "name": "Legende der Unbesiegbarkeit",
     "description": "Gorous Spezialzubereitung. Die Beilagen sind so aufgetürmt, dass sie einen Anblick bieten, der so beeindruckend ist wie Gorous eigene Bemühungen. Als du die Nudeln und die Suppe in einem Zug aufisst und dir zufrieden auf den Bauch klopfst, schaust du auf und siehst Gorou ... strahlend lächelnd, während sein Schwanz hin- und herwedelt, was er selbst wahrscheinlich gar nicht bemerkt."
   },
+  "SuspiciousBountifulYear": {
+    "name": "Misslungener Jahresfisch",
+    "description": "Luxuriöses und exquisites Fisch-Sashimi. Der ungleichmäßig gemischte Fisch und die Gewürze liegen so unordentlich auf dem Teller wie ein niedergeschlagener Seemann, der von den aufgewühlten Wellen an Land gespült wird, und sie wecken nicht gerade deinen Appetit. Dabei wäre es eine weitere Verschwendung dieser Zutaten, wenn du sie nicht essen würdest. Ach, was für ein morbides Dilemma."
+  },
+  "BountifulYear": {
+    "name": "Jahresfisch",
+    "description": "Luxuriöses und exquisites Fisch-Sashimi. Das Fischfleisch wird in dünne Scheiben geschnitten und in Form blühender Blumen angerichtet, die dann von einem Kreis aus reichhaltigen Beilagen umgeben sind. Vor dem Essen werden die Beilagen in der Regel mit dem Sashimi vermischt, was den Wunsch ausdrückt, dass man später eine üppige Ernte haben könnte."
+  },
+  "DeliciousBountifulYear": {
+    "name": "Leckerer Jahresfisch",
+    "description": "Luxuriöses und exquisites Fisch-Sashimi. Das gestapelte rohe Fischfleisch ist so dünn geschnitten wie Zikadenflügel. Und sein Geschmack ist so leicht wie Nebel, seine Musterlinien opalweiß, wie Schnee, der die Erde küsst. Man kann es kaum erwarten, es zu schmausen. Das weiche, geschmeidige Fleisch und die unzähligen Aromen der Gewürze vereinen sich auf der Zunge, zum Lob aller. Das ist wahrlich ein Geschmackserlebnis, das alle anderen übertrifft!"
+  },
+  "SuspiciousDragonBeardNoodles": {
+    "name": "Misslungene Drachenbartnudeln",
+    "description": "Nudeln, die so dünn sind wie die Haare eines Drachenbarts. Der verzweifelte Versuch, die Nudeln so dünn wie möglich zu machen, hat dazu geführt, dass die Stücke während des Kochvorgangs zerbrochen sind. Die Zubereitung ist schwieriger, als sie aussieht. Und man braucht auf jeden Fall mehr Übung."
+  },
+  "DragonBeardNoodles": {
+    "name": "Drachenbartnudeln",
+    "description": "Nudeln, die so dünn sind wie die Haare eines Drachenbarts. Die Nudeln werden mit Frühlingszwiebeln unter Rühren gebraten, mit der Suppe und dem Gemüse vermischt und schließlich angerichtet. Der Teig muss mehrmals gedehnt und gefaltet werden, bevor er so fein wie Drachenbärte wird. Dies ist eines der kunstvollsten Nudelgerichte von Liyue."
+  },
+  "DeliciousDragonBeardNoodles": {
+    "name": "Leckere Drachenbartnudeln",
+    "description": "Nudeln, die so dünn sind wie die Haare eines Drachenbarts. Die schlanken Nudeln sind wie ein Wasserfall, der sich in eine Suppe ergießt, die die kulinarische Essenz der Berge eingefangen hat. Das weiche Mundgefühl im Vergleich zu einem durchschnittlichen Nudelgericht macht es fast unmöglich, mit dem Essen aufzuhören, wenn man einmal angefangen hat."
+  },
+  "HeartstringNoodles": {
+    "name": "Herznudeln",
+    "description": "Shenhes Spezialzubereitung. Vielleicht kommt das von ihrem Wunsch, einen Geschmack nachzubilden, der nur in ihren Erinnerungen lebt, aber Shenhe hat viel Zeit und Mühe in die Zubereitung und Anrichtung dieses Gerichts gesteckt. Die weichen Nudeln und die köstliche Suppe machen in der Tat einen großartigen Eindruck, aber das Beste sind die Hingabe und das Engagement, die in dieses Gericht gesteckt werden ..."
+  },
+  "CloudShroudedJade": {
+    "name": "Wolkenumhüllte Jade",
+    "description": "Yun Jins Spezialzubereitung. Dieser süße und klebrige Snack wirkt sich in keiner Weise negativ auf den Hals aus, weshalb er Yun Jins Lieblingsspeise ist. Der Nachgeschmack ist sehr elegant, nichts, wovon man schnell satt wird. Wenn ich es mir recht überlege ... Das ist ziemlich viel mehr, als sie normalerweise für sich selbst zubereitet. Aber warum sollte man ihre Freundlichkeit in Frage stellen?"
+  },
+  "SuspiciousSangayaki": {
+    "name": "Misslungenes Sangayaki",
+    "description": "Eine einfache Fischer-Vorspeise. Übersalzen und mit einem merkwürdigen Geruch nach abgestandenem Fisch schmeckt sie wie ein Sturm im Mund, der über die Geschmacksknospen fegt. Guck das nächste Mal beim Salzstreuen bitte nicht einfach weg ..."
+  },
+  "Sangayaki": {
+    "name": "Sangayaki",
+    "description": "Eine einfache Fischer-Vorspeise. Fangfrischer Fisch aus dem Meer wird geschuppt und in Stücke geschnitten. Anschließend wird er mit Goldfischkraut püriert, mit Salz und Miso vermischt und zu Fladen geformt. Danach wird alles gebacken. Der Duft steigt einem direkt in die Nase und lässt das Wasser im Munde zusammenlaufen. Selbst wenn man schon drei davon gegessen hat, will man immer noch weiter essen!"
+  },
+  "DeliciousSangayaki": {
+    "name": "Leckeres Sangayaki",
+    "description": "Eine einfache Fischer-Vorspeise, voller Nährstoffe und Geschmack. Außen leicht gebräunt und knusprig und innen sehr saftig. Jeder Bissen ist ein doppeltes Vergnügen. Das zerkleinerte rohe Fischfleisch an sich ist schon eine Delikatesse. Und mit dem Rösten über dem Holzkohlefeuer wird sein frischer und köstlicher Geschmack noch viel intensiver."
+  },
+  "SuspiciousUdonNoodles": {
+    "name": "Misslungene Udon-Nudeln",
+    "description": "Elastische Nudeln. Leider geschmacklos. Hier ist mehr Wasser als Suppe, sodass man das Gefühl hat, direkt aus einer Pfütze zu trinken. Es scheint, dass man nie zu sorglos mit dem Würzen umgehen sollte."
+  },
+  "UdonNoodles": {
+    "name": "Udon-Nudeln",
+    "description": "Elastische Nudeln. Nach der Gärung und mehrmaligem Dehnen des Teigs sind die Nudeln von schöner Konsistenz. Udon unterscheidet sich von Ramen dadurch, dass es trotz seines milden Geschmacks in der Lage ist, die Sorgen der Einwohner von Inazuma zu lindern."
+  },
+  "DeliciousUdonNoodles": {
+    "name": "Leckere Udon-Nudeln",
+    "description": "Elastische Nudeln. Die weißen, zähen Udon-Nudeln und ihre sorgfältig zubereitete Brühe sorgen mit ihrem exquisiten Geschmack für gute Laune. Wenn der leichte Weizengeschmack und das milde Aroma der Nudeln in den Magen gelangen, verspürt man ein warmes und berauschendes Gefühl."
+  },
+  "FukuuchiUdon": {
+    "name": "Fukuuchi-Udon",
+    "description": "Yae Mikos Spezialzubereitung. Der frittierte Tofu in der Mitte ist ganz besonders, höchstpersönlich zubereitet von dem „Fräulein Kitsune“. Es heißt, wenn man großen Respekt im Herzen vor dem Fräulein Kitsune hegt, reicht es, die ganze Schüssel auf einmal leerzuessen, schon aus, um einen ganzen Tag lang gesegnet zu sein. Alles Unglück wird abgewehrt und allerlei Glück wird hergebracht."
+  },
   "RecipeItem": {
     "name": "Objekt für Rezepte",
     "description": "Objekt zum Freischalten von Rezepten"
@@ -6223,6 +6607,22 @@
     "name": "Rezept: Sakura-Garnelen-Kekse",
     "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Sakura-Garnelen-Kekse“."
   },
+  "RecipeBountifulYear": {
+    "name": "Rezept: Jahresfisch",
+    "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Jahresfisch“."
+  },
+  "RecipeDragonBeardNoodles": {
+    "name": "Rezept: Drachenbartnudeln",
+    "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Drachenbartnudeln“."
+  },
+  "RecipeSangayaki": {
+    "name": "Rezept: Sangayaki",
+    "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Sangayaki“."
+  },
+  "RecipeUdonNoodles": {
+    "name": "Rezept: Udon-Nudeln",
+    "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Udon-Nudeln“."
+  },
   "CraftedItems": {
     "name": "Hergestelltes Produkt",
     "description": "Selbst aus verschiedenen Stoffen hergestellte Produkte"
@@ -6357,7 +6757,7 @@
   },
   "FakeFlyBait": {
     "name": "Falscher Fliegenköder",
-    "description": "Nachahmender Fliegenköder aus leuchtend bunten Materialien. Er hat keinen Geruch und ist darauf spezialisiert, große Fische mit Scharfsichtigkeit anzulocken. Er ist oft gut für fortgeschrittene Angeltechniken geeignet. Die Angelvereine verschiedener Regionen betrachten den geschickten Einsatz solcher Köder als eine der Bedingungen für den Aufstieg ihrer Mitglieder im Rang.\\n\\nZum Fangen von Koi und Kugelfischen geeignet."
+    "description": "Nachahmender Fliegenköder aus leuchtend bunten Materialien. Er hat keinen Geruch und ist darauf spezialisiert, große Fische mit Scharfsichtigkeit anzulocken. Er ist oft gut für fortgeschrittene Angeltechniken geeignet. Die Angelvereine verschiedener Regionen betrachten den geschickten Einsatz solcher Köder als eine der Bedingungen für den Aufstieg ihrer Mitglieder im Rang.\\n\\nZum Fangen von Koi, Kugelfischen und Rochen geeignet."
   },
   "GlowgrassBait": {
     "name": "Leuchtender Grasköder",
@@ -6715,6 +7115,22 @@
     "name": "Gehörn des Wolfskönigs",
     "description": "Ein zerbrochenes Horn, das du beim Besiegen des Garmfürsten erhalten hast. Allerdings sollte es nach deiner Jagd eigentlich überhaupt nicht weiter auf der Welt existieren.\\nSelbst ein Fürst unter den Garmwölfen ist nichts vor Monstern mit höherem Stammbaum.\\n„Gold“ entwarf diese missgebildeten Wolfsrudel schon fast zufällig in Massen. Sie waren damals nichts mehr als Gekritzel auf ein paar weggeworfenen, geschrumpften Papierbögen. Die Hörner auf diesem hier repräsentieren seine Autorität, seiner dunklen Brut zu befehlen, den Raum aufzulösen."
   },
+  "DragonheirsFalseFin": {
+    "name": "Falsche Flosse der Drachennachfahren",
+    "description": "Ein Stück biologisches Gewebe, das du gefunden hast, nachdem du die Tiefsee-Drachenechsen besiegt hattest. Obwohl es wie eine Art Flosse aussieht, hat es eigentlich gar keine Funktion.\\nDas Volk von Byakuyakoku hat die Tiefsee-Drachenechsen einst sehr gründlich untersucht. Ihr auffälligstes Merkmal war die Fähigkeit zu wählen, welche Eigenschaften sie an ihre Nachkommen weitergeben wollten. Wegen ihres großen Hasses auf die Menschheit verlieren diese Drachenechsen jede Sehkraft, wenn sie ausgewachsen sind. Gleichzeitig haben sie zu Kampfzwecken einen gewissen Polymorphismus der Elemente entwickelt."
+  },
+  "MudraOfTheMaleficGeneral": {
+    "name": "Mudra des grimmigen Generals",
+    "description": "Ein Puppengelenk, das du in den utopischen Gefilden erhalten hast. Die Geste symbolisiert das Konzept „man sieht und man handelt“.\\nSelbst jetzt, da „sie“ eine Gottheit des Unheils geworden ist, kann sie immer noch solche transzendenten Gesten einsetzen. Und ihr Schwert blitzt so schnell auf, wie ihre Augen sehen können.\\nJedoch, als die zahllosen Katastrophen viel zu lange andauerten, konnte die Hülle des grimmigen Generals nicht anders, als einen neuen Frühling zu umarmen."
+  },
+  "TearsOfTheCalamitousGod": {
+    "name": "Tränen des unheilvollen Gottes",
+    "description": "Ein Puppengelenk in Form des unheilvollen Auges der Blitzstrafe, das du in den utopischen Gefilden erhalten hast.\\nDa sie in der Lage sind, mit einem bloßen Blick Fluch und Katastrophe gleichermaßen herbeizuführen, mag es natürlich erscheinen, das Unglück des Lebens auf die Gottheit des Unheils zu schieben. Aber denk mal etwas genauer darüber nach: Wenn dein Wille stark genug und deine Überzeugungen fest genug sind ...\\nDie Katastrophen dauern zu lange an. Selbst ein unheilvoller Blick muss sich mit Tränen waschen."
+  },
+  "TheMeaningOfAeons": {
+    "name": "Sinn der Äonen",
+    "description": "Ein kleines Stück Kopfbedeckung, das du erhalten hast, als sich der Staub in den utopischen Gefilden gelegt hatte.\\nEin einziger Gedanke kann alles Unheil beenden und es wird immer Gedanken geben, die die Zeit überstehen können.\\nInmitten all dieser Katastrophen fragt man sich, ob Makotos wahre Absicht erfolgreich herübergebracht wurde oder nicht."
+  },
   "TileOfDecarabiansTower": {
     "name": "Decabarians zerbrochener Ziegel",
     "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\\nDvalins Ruinen, wie sie in letzter Zeit genannt werden, waren ursprünglich die Palastanlagen des Archons des Windes „Decabarian“. Da dieser majestätische Traum von einem Archon geschaffen wurde, ist die Macht dieses Bruchstücks auch nach dem Untergang des Traums enorm."
@@ -6921,7 +7337,7 @@
   },
   "EminentShareBundle": {
     "name": "Teilpaket mit nützlichen Materialien",
-    "description": "Nützliche Materialien, die die Gilde regelmäßig herausgibt. Einige davon enthalten sogar Elementarkräfte.\\n\\nWähle beim Anwenden eins der folgenden Objekte:\\n· Decabarians zerbröckelter Wall\\n· Zersplitterter Zahn des borealischen Wolfs\\n· Ketten des Löwenzahnkämpfers\\n· Glänzender Stein von Guyun\\n - Quecksilberkugeln des Nebelschleiers\\n· Stückchen pechschwarzer Aerosiderit\\n· Juwelenzweig eines fernen Meeres\\n· Narukamis Freude\\n· Die Maske des Tigerbisses"
+    "description": "Nützliche Materialien, die die Gilde regelmäßig herausgibt. Einige davon enthalten sogar Elementarkräfte.\\n\\nWähle beim Anwenden eins der folgenden Objekte:\\n· Decabarians zerbröckelter Wall\\n· Zersplitterter Zahn des borealischen Wolfs\\n· Ketten des Löwenzahnkämpfers\\n· Glänzender Stein von Guyun\\n· Quecksilberkugeln des Nebelschleiers\\n· Stückchen pechschwarzer Aerosiderit\\n· Juwelenzweig eines fernen Meeres\\n· Narukamis Freude\\n· Die Maske des Tigerbisses"
   },
   "WeaponAscensionBundleHigh": {
     "name": "Höheres Wahlpaket für Waffenaufstieg",
@@ -7191,6 +7607,14 @@
     "name": "Bitterer Kugelfisch",
     "description": "Eine seltene Kugelfisch-Variante. Wie der Name schon sagt, verbreitet diese Kreatur Bitterkeit, wo immer sie sich in der Unterwasserwelt aufhält. Seine Wasserkanonen-Geschosse sind langsamer und kleiner als die seiner gewöhnlichen Artgenossen, aber die Kraft solcher Angriffe wird durch die unglaublich bitteren Pheromone im Inneren nicht gemindert. Während ihrer Balzphase kann ein Beobachter Zeuge des kuriosen Anblicks werden, wie sich Männchen und Weibchen dieser Spezies mit diesen Wasserkanonen gegenseitig beschießen. Vielleicht ist die Weitergabe der Bitterkeit des Lebens auch eine Manifestation der Liebe."
   },
+  "DivdaRay": {
+    "name": "Divda-Rochen",
+    "description": "Ein seltsamer Rochen, von dem man einst dachte, er sei eine fantastische Kreatur, die nur in einigen alten Kunstrollen auf der Insel Watatsumi festgehalten wurde. Als das Siegel über Enkanomiya geöffnet wurde, kam seine wahre Gestalt vor aller Augen zum Vorschein.\\nEs heißt, dass die Körperformen dieser seltsamen Kreaturen im Laufe der Zeit ihre Farbe ändern. Wenn sie jung sind, sind sie so golden wie das Sonnenlicht. Rochen in diesem Lebensstadium erhielten in den alten Schriftrollen den Namen „Divda“, was „das Ende der Unschuld“ bedeutet."
+  },
+  "FormaloRay": {
+    "name": "Formalo-Rochen",
+    "description": "Ein seltsamer Rochen, von dem man einst dachte, er sei eine fantastische Kreatur, die nur in einigen alten Kunstrollen auf der Insel Watatsumi festgehalten wurde. Als das Siegel über Enkanomiya geöffnet wurde, kam seine wahre Gestalt vor aller Augen zum Vorschein.\\nEs heißt, dass die Körperformen dieser seltsamen Kreaturen im Laufe der Zeit ihre Farbe ändern. Wenn sie jung sind, sind sie so golden wie das Sonnenlicht. Später im Leben werden ihre Farben jedoch intensiver und ihre beiden „Flügel“ werden mit einem Violett gefärbt, das so tief wie die Nacht ist. Rochen in diesem Lebensstadium haben in den alten Schriftrollen den Namen „Formalo“ erhalten, was so viel bedeutet wie „der Schlund der Gier“."
+  },
   "WingsOfFirstFlight": {
     "name": "Anfängerschwingen",
     "description": "Die Ausgabe eines Windgleiters, der perfekt zur enthusiastischen Haltung von Kundschaftern passt."
@@ -7226,6 +7650,10 @@
   "WingsOfShimmeringGalaxy": {
     "name": "Flügel des galaktischen Scheins",
     "description": "Die Ausgabe eines Windgleiters. Ein Geschenk der Sinfonie, die zwischen den Sternen hallt."
+  },
+  "RadiantSpincrystal": {
+    "name": "Strahlender Drehkristall I",
+    "description": "Dieser wundersame Kristall hat einen gewissen Rhythmus, wie etwas Schönes, das aus zarter Seide gewebt ist. Diese Gegenstände kannst du überall auf dem Festland oder bei Händlern finden, die Einzigartiges sammeln. Die Melodie, die in diesem Kristall enthalten ist, kann in deiner Kanne der Vergänglichkeit durch „Höchste Euphonie – Musik in der Luft“ oder „Höchste Euphonie – Verflochtene Klänge“ wieder zum Leben erweckt werden. Die Melodie, die in diesem strahlenden Drehkristall enthalten ist, lautet „Dawn Winery Theme“."
   },
   "LanternFiber": {
     "name": "Laternenpapierfasern",
@@ -7274,6 +7702,10 @@
   "Alkahest": {
     "name": "Alkahest",
     "description": "Spezielles Verfeinerungsmaterial für die „Zinnoberspindel“.\\nEine silberne Substanz, die mit einem jenseitigen Licht glänzt und ein tödliches, ätzendes Gift für Dinge dieser Welt enthält. Und doch hat sie auch die Macht, Materie zu sublimieren."
+  },
+  "OintmentOfSight": {
+    "name": "Salbe des Augenlichts",
+    "description": "Spezielles Verfeinerungsmaterial für das „Auge des Gelöbnisses“.\\nDas spezielle Tiefsee-Unagi-Öl, das einst zur Pflege von heiligen Artefakten von Enkanomiya verwendet wurde, wurde sorgfältig verarbeitet, um dieses leuchtende Auge wirklich zum Strahlen zu bringen."
   },
   "FalconsDance": {
     "name": "Falkentanz",
@@ -7453,7 +7885,7 @@
   },
   "Wishmaker": {
     "name": "Wunscherfüller",
-    "description": "Wenn du die Spannung beim Angeln gut genug kontrollieren kannst, wird diese Angelute die Zeit verkürzen, in der die Fische zappeln und deine Erfolgschancen erhöhen. Dieser Effekt funktioniert nur in Liyue.\\n\\nEin langer Stab, der wie eleganter Bambus steht. Es wird gesagt, dass er von einem geschickten Einsiedler aus Liyue konstruiert und aufbewahrt wurde. Er wurde zuerst auf einer Steintafel entdeckt, auf der die folgenden Worte eingemeißelt waren: „Oh du, der du strebst, nimm diesen Stab auf wie ein legendäres Schwert, das darauf wartet, dass ein Held es herauszieht.“ Natürlich hört man diese glorreiche Entstehungsgeschichte nur aus dem Mund von Händlern, also ist es vielleicht nur eine Rhetorik, um den Wert des Gegenstandes zu steigern ... Aber diejenigen, die das wissen und diese Rute trotzdem benutzen, können nur diejenigen sein, die bereit und willens sind, diesen Pakt zu akzeptieren."
+    "description": "Wenn du die Spannung beim Angeln gut genug kontrollieren kannst, wird diese Angelrute die Zeit verkürzen, in der die Fische zappeln und deine Erfolgschancen erhöhen. Dieser Effekt funktioniert nur in Liyue.\\n\\nEin langer Stab, der wie eleganter Bambus steht. Es wird gesagt, dass er von einem geschickten Einsiedler aus Liyue konstruiert und aufbewahrt wurde. Er wurde zuerst auf einer Steintafel entdeckt, auf der die folgenden Worte eingemeißelt waren: „Oh du, der du strebst, nimm diesen Stab auf wie ein legendäres Schwert, das darauf wartet, dass ein Held es herauszieht.“ Natürlich hört man diese glorreiche Entstehungsgeschichte nur aus dem Mund von Händlern, also ist es vielleicht nur eine Rhetorik, um den Wert des Gegenstandes zu steigern ... Aber diejenigen, die das wissen und diese Rute trotzdem benutzen, können nur diejenigen sein, die bereit und willens sind, diesen Pakt zu akzeptieren."
   },
   "NarukawaUkai": {
     "name": "Narukawa Ukai",
@@ -7871,6 +8303,34 @@
     "name": "Erlebnispass – Lyratum",
     "description": "Ein Motiv für Namenskärtchen.\\nNur diese Blume steht auf dem hohen Gipfel, wo alle Bäume verdorrt sind."
   },
+  "ShenheComb": {
+    "name": "Shenhe – Kamm",
+    "description": "Ein Motiv für Namenskärtchen.\\nDas frühe Auftreten von weißem Haar wird oft mit den Sorgen des Menschen in Verbindung gebracht. Da „Kämmen“ und „Zerstreuen“ in der Sprache von Liyue ähnlich ausgesprochen werden, glauben die Menschen dort, dass das Kämmen der Haare gleichbedeutend mit dem Zerstreuen der Sorgen ist."
+  },
+  "YunJinRhyme": {
+    "name": "Yun Jin – Reim",
+    "description": "Ein Motiv für Namenskärtchen.\\nFräulein Yun hat zwei Arten von Lehrern. Die Zuschauer, die ihre Bühnenauftritte kritisieren, sind die eine, während die Bücher über Reime, die sie beim Schreiben der Theaterstücke liest, sind die andere."
+  },
+  "InazumaTokoyo": {
+    "name": "Inazuma – Tokoyo",
+    "description": "Ein Motiv für Namenskärtchen.\\n„O mächtige Sonne! Was nützen dir deine Hitze und dein Licht, wenn du nicht alles besitzen kannst, was sie erreichen?“"
+  },
+  "TravelNotesFlowingHues": {
+    "name": "Erlebnispass – Flüchtige Farben",
+    "description": "Ein Motiv für Namenskärtchen.\\nDie üppigen Farben fließen vorbei, während alle Dinge erneuert werden."
+  },
+  "CelebrationBingeVessel": {
+    "name": "Feierlichkeit – Trinkgelage",
+    "description": "Ein Motiv für Namenskärtchen.\\nHier werden jede Menge Geschichten erzählt. Aber kein einziger Tropfen Alkohol wird geboten. Paimon kann auch mittrinken, ohne sich Sorgen zu machen."
+  },
+  "YaeMikoKitsuneDreaming": {
+    "name": "Yae Miko – Fuchs im Traum",
+    "description": "Ein Motiv für Namenskärtchen.\\nWo in aller Welt könnte man eigentlich Yae Mikos Fuchsgestalt sehen? Vielleicht nur im Traum."
+  },
+  "TravelNotesAwakening": {
+    "name": "Erlebnispass – Frühlingserwachen",
+    "description": "Ein Motiv für Namenskärtchen.\\nDie drei Welten erbebten und alle schlummernden Lebewesen wurden aufgerüttelt. So erwachten auch die Korallenkönigswürmer aus ihrem scheinbar unendlich langen Schlaf."
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus-Resonanzstein",
     "description": "Im Gebiet von Mondstadt angewendet kannst du hiermit verlorene Anemoculi in der Nähe aufspüren.\\nDiese künstliche Steinplatte besitzt eine gewisse Charakteristik, die der der Anemo-Statuen der Sieben ähnelt und ihr die Kraft verleiht, mit den Anemoculi zu interagieren.\\nOculus-Resonanzsteine sind grobe Imitationen der Statuen der Sieben, die von den Menschen des Altertums gebaut wurden. Gerade die Rohheit solcher Steine ist es, was sie dazu bringt, nach der Kraft der Oculi zu verlangen, um Anhängern der Götter und Abenteurern die Möglichkeit zu geben, Oculi zu finden."
@@ -7997,7 +8457,7 @@
   },
   "RedFeatherFan": {
     "name": "Roter Federfächer",
-    "description": "Benutze dies, um die Bewegungs-GSW für 30 s um 30 % zu erhöhen.\\n\\nDieses Objekt besitzt eine Art mysteriöse Kraft. In den Händen der Tengu-Krieger kann es verschiedene Effekte haben, aber in den Händen einer normalen Person kann es immer noch genug Kraft haben, um den eigenen Körper „leichter“ zu machen, während man in der Luft ist."
+    "description": "Benutze dies, um die Bewegungs-GSW beim Gleiten 30 s lang um 30 % zu erhöhen.\\n\\nDieses Objekt besitzt eine Art mysteriöse Kraft. In den Händen der Tengu-Krieger kann es verschiedene Effekte haben, aber in den Händen einer normalen Person kann es immer noch genug Kraft haben, um den eigenen Körper „leichter“ zu machen, während man in der Luft ist."
   },
   "MementoLens": {
     "name": "Souvenirlinse",
@@ -8026,6 +8486,14 @@
   "UbiquityNet": {
     "name": "Netz der Ubiquität",
     "description": "Ein Freund von Sango wurde von anderen inspiriert und hat mithilfe von „Kamuna-Onmyoudou“ dieses praktische Ding entwickelt. Es ist nicht stark genug, um Verbrecher zu fangen, aber mit ein wenig Zielsicherheit sollte es ein Kinderspiel sein, kleine Tiere zu fangen."
+  },
+  "LaunchTube": {
+    "name": "„Abschussrohr“",
+    "description": "Eine wundersame Vorrichtung, die von dem Handwerker Pengyi entwickelt wurde. Mit ihr kann man Feuerwerk nicht nur schmelzen und herstellen, sondern auch automatisch zünden. Nur besonders geistreiche Menschen können ihre zauberhafte Funktionalität voll zur Geltung bringen und damit eine atemberaubende Feuerwerksschau erschaffen."
+  },
+  "BokusoBox": {
+    "name": "Bokuso-Kasten",
+    "description": "Benutze dies, um ein bestimmtes Gebiet in Enkanomiya von dem schwarzen Nebel zu befreien.\\nDer Name „Bokuso“ setzt sich zusammen aus „boku“, was „sich dem Guten nähern“ bedeutet, und „so“, was „das Verdorbene meiden“ bedeutet."
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Erläuterung: Anemoculus-Resonanzstein",
@@ -8123,6 +8591,54 @@
     "name": "Seidendruck",
     "description": "Eine Gebetstafel mit farbiger Malerei, die die liebliche Landschaft von Inazuman zeigt, geschnitzt auf exquisitem Yumemiru-Holz.\\nDu kannst die Raumschaffung verwenden, um diese elegante Landschaft auf der Tafel in deine Kanne der Vergänglichkeit zu übertragen ..."
   },
+  "TheMountainCloudsLetDownGoldenRain": {
+    "name": "Von Bergwolken fällt der goldene Regen",
+    "description": "Ein klassisches „wolkenblaues“ Feuerwerk, das nach der Explosion in der Luft wie eine üppig blühende Blume seine innere und äußere Form zeigt."
+  },
+  "TheSilverNightIsFullOfStars": {
+    "name": "Die silberne Nacht ist voll von Sternen",
+    "description": "Ein klassisches Feuerwerk in den Farben der „Sternennacht“. Sicherlich ein prächtiger, unvergesslicher Anblick."
+  },
+  "TheGloomPaintsTheColdBlooms": {
+    "name": "Kalte Blüten leuchten im Winterschnee",
+    "description": "Ein klassisches Feuerwerk in der Farbe des Himmels kurz nach dem Regen. Seine flammende Blüte leuchtet beim Aufblühen und zeigt einzigartige Blütenblattmorphologien."
+  },
+  "FireworksDanceAmidstASnowySky": {
+    "name": "Feuerwerk verzaubert alle unter dem Schneehimmel",
+    "description": "Diese prächtigen goldenen Feuerwerkskörper folgen einer besonders anmutigen Flugbahn, nachdem sie aufgestiegen sind, und sind ganz leise, aber deswegen nicht weniger schön."
+  },
+  "GoldenCalendulaSwirl": {
+    "name": "Wirbel der goldenen Funken",
+    "description": "Diese Klassiker mit Farben der Ringelblumen werden sich beim Explodieren im Himmel wie Windmühlen drehen und sind wirklich wunderschön."
+  },
+  "KindledTreesByTheMoonlitWindow": {
+    "name": "Bunte Flammen tanzen im reinen Mondschein",
+    "description": "Nach dem Abschuss regnen diese Feuerwerkskörper Flammen wie Weidenblätter und -zweige herab. Es heißt, dass die Flammen an den Rändern die Fensterrahmen der höchsten Gebäude berühren können, was ein einzigartiges Seherlebnis bietet."
+  },
+  "MischievousVillosas": {
+    "name": "Lustiger Villenball",
+    "description": "Ein Feuerwerk in Form eines Anemo-Schleims. Der ursprüngliche Schöpfer dieses Feuerwerks fand die Bezeichnung „Anemo-Schleim“ etwas seltsam und benutzte stattdessen den Namen eines ähnlich gefärbten lokalen Snacks, „Villenball“."
+  },
+  "SparklyShinyDodoco": {
+    "name": "Glitzernder Dodoco!",
+    "description": "Nach einem Besuch in einer Nachbarstadt traf ein bestimmter Feuerwerkskünstler aus Liyue einen gewissen sehr gastfreundlichen Funkenritter und schuf so ein Feuerwerk, das ihrem besten Freund, Dodoco, gewidmet war."
+  },
+  "FameAndFortuneForASeason": {
+    "name": "Ruhm und Reichtum für ein ganzes Jahr",
+    "description": "Ein Feuerwerk, das in Form von Mora explodiert. Manche sagen, falls man es aus dem richtigen Winkel betrachtet, ist das Glück für das Jahr gesichert."
+  },
+  "UnyieldingSpirit": {
+    "name": "Unbeugsamer Geist",
+    "description": "Nach einem Besuch in einer benachbarten Stadt unternahm ein bestimmter Feuerwerker aus Liyue eine so unvergessliche Reise mit einem bestimmten Anführer einer gewissen Abenteurertruppe, dass er ein Feuerwerk schuf, dessen Gestaltung auf der bevorzugten Geste dieses Anführers beruht."
+  },
+  "FestivalSpotlight": {
+    "name": "Höhepunkt des Festes",
+    "description": "Ein Feuerwerk, das in Form eines Herzens explodiert. Manche sagen, wenn man es aus dem richtigen Blickwinkel betrachtet, soll das Liebesleben in diesem Jahr gesegnet sein."
+  },
+  "WanminFeast": {
+    "name": "Wanmin-Bankett",
+    "description": "Ein Feuerwerk, das dem kleinen Helfer des berühmten Kochs des Restaurants Wanmin gewidmet ist. Wenn jemand aus Liyue dieses kleine Helferlein sieht, denkt man sofort an gutes Essen. Und wo es ein Fest gibt, muss es auch gutes Essen geben!"
+  },
   "SummertimeSparkle": {
     "name": "Glänzende Darbietung",
     "description": "Barbaras Strandkleidung. Der hübsche kurze Rock strahlt fröhliche Sommerstimmung aus und trägt die frische Meeresluft mit sich."
@@ -8130,6 +8646,30 @@
   "SeaBreezeDandelion": {
     "name": "Traum von der Meeresbrise",
     "description": "Jeans Sommerkleidung. Leicht und frisch, büßt dadurch aber nicht an Eleganz ein. Perfekt für einen Ausflug ans Meer."
+  },
+  "OrchidsEveningGown": {
+    "name": "Orchideen-Abendkleid",
+    "description": "Ningguangs formelle Kleidung. Der lange türkisfarbene Rock zeichnet ihre eleganten Kurven nach und die Schmetterlingsflügel an ihren Knöcheln verleihen der Kleidung einen Hauch von leichter Anmut."
+  },
+  "OpulentSplendor": {
+    "name": "Üppige Pracht",
+    "description": "Keqings formelle Kleidung. Die Fäden, die in tagelanger harter Arbeit gewebt wurden, verflechten sich inmitten der schönen Morgenstunden des Laternenrituals zu einem leichten und doch prächtigen Erscheinungsbild."
+  },
+  "GunnhildrsLegacy": {
+    "name": "Gunnhildrs Erbe",
+    "description": "Jeans Kleidung. Die elegante Ritterkleidung passt perfekt zu allen möglichen Anlässen."
+  },
+  "Outrider": {
+    "name": "Kundschafter durch und durch",
+    "description": "Ambers Kleidung. Mit dieser Kleidung sieht die Kundschafterin umso schicker und prächtiger aus!"
+  },
+  "PactOfStarsAndMoon": {
+    "name": "Rendezvous von Mond und Sternen",
+    "description": "Monas Kleidung. Diese Kleidung wurde spezifisch für die astrologische „Stunde des Schicksals“ erstanden. Ohne den Rabattgutschein von 30 % für die Nachzahlung der Planetenmaschinen hätte Mona sich diese Kleidung nicht kaufen können."
+  },
+  "ToTheChurchsFreeSpirit": {
+    "name": "Auf die Freiheit der Kathedrale",
+    "description": "Rosarias Kleidung. Diese maßgeschneiderte Kleidung scheint ein besonderes Geschenk von der Kathedrale für Rosaria zu sein."
   },
   "AdventurerCamp": {
     "name": "Provisorisches Abenteurerlager",
@@ -8260,8 +8800,8 @@
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Inmitten der flüsternden Winde“.\\nEin Schlafzimmer, das die Idee eines „umsorgenden Herzens“ verkörpert. Für Vielbeschäftigte mag ein Schlafzimmer nur ein Raum sein, in dem ein Bett steht und in dem man mal die Augen zumachen kann, das aber ansonsten nicht viel Aufmerksamkeit benötigt. Aber für diejenigen mit einem Auge fürs Detail ist jeder Bereich ihres Wohnraums ihre Zeit und Pflege wert.\\nOb es nun die Winde der Freiheit oder des Widerstandes sind, sie haben alle mal als kleine Brise angefangen. Jemand, der weit reisen will, muss gut auf sich Acht geben und jegliche Anzeichen von Erschöpfung werden im Nu verschwunden sein, wenn man sich mit solcher Wärme und Komfort umgibt.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Barbara, Eula und Noelle"
   },
   "FeiyunStudyRoom": {
-    "name": "Feiyun-Studierzimmer",
-    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Feiyun-Studierzimmer“.\\nEs gibt viele Möglichkeiten, ein Arbeitszimmer in Liyue einzurichten, Luxus ist optional, denn die Gelehrten bevorzugen „Geist“ und „Eleganz“. Eine Topfpflanze hier balanciert die Luftfeuchtigkeit aus und der Tisch und die Regale geben einen leicht holzigen Duft ab, der mit dem schlichten Layout und dem dämmrigen Licht der Lampen das Genie inspiriert und zum Schreiben anregt.\\nEs heißt, dass ein bestimmter Gast am Feiyun-Hang vor vielen Jahren ein genau solches Arbeitszimmer einrichtete und die Gestaltung wurde dann vom vorherigen Leiter der Buhhandlung Wanwen übernommen. So war es dann seither als Feiyun-Arbeitszimmer bekannt und erlangte in ganz Liyue Bekanntheit.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Xingqiu, Zhongli und Ningguang"
+    "name": "Feiyun-Arbeitszimmer",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Feiyun-Arbeitszimmer“.\\nEs gibt viele Möglichkeiten, ein Arbeitszimmer in Liyue einzurichten, Luxus ist optional, denn die Gelehrten bevorzugen „Geist“ und „Eleganz“. Eine Topfpflanze hier balanciert die Luftfeuchtigkeit aus und der Tisch und die Regale geben einen leicht holzigen Duft ab, der mit dem schlichten Layout und dem dämmrigen Licht der Lampen das Genie inspiriert und zum Schreiben anregt.\\nEs heißt, dass ein bestimmter Gast am Feiyun-Hang vor vielen Jahren ein genau solches Arbeitszimmer einrichtete und die Gestaltung wurde dann vom vorherigen Leiter der Buchhandlung Wanwen übernommen. So war es dann seither als Feiyun-Arbeitszimmer bekannt und erlangte in ganz Liyue Bekanntheit.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Xingqiu, Zhongli, Ningguang und Yun Jin."
   },
   "CloudyHazeDreamCourt": {
     "name": "Wolkendunst-Traumzimmer",
@@ -8273,11 +8813,11 @@
   },
   "CottageKitchen": {
     "name": "Landhausküche",
-    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Landhausküche“.\\nEine voll ausgestatte Küche mit einem Schrank voller sorgfältig vorbereiteter Gewürze.\\nKöche, die Perfektion anstreben, kaufen ihre Zutaten täglich auf dem Markt, und wahre Künstler der Kulinarik widmen sogar dem Feuerholz in ihrem Ofen besondere Aufmerksamkeit. Der junge Küchenchef des Restaurant Wanmin teilte einst dieses Wissen, um das traditionelle Gericht des Qingce-Dorfs zuzubereiten: Man muss trockene Bambus-Schnipsel in den Ofen geben und die Flamme behutsam kontrollieren. Hat man die Gelegenheit, Holz von Büschen in der Nähe von Wolfshaken zu verarbeiten, kann man dem Ganzen einen Hauch Mondstadt-Flair verleihen.\\nUnterschiedliche Arten von Feuerholz haben sehr unterschiedliche Effekte und die meisten Köche werden dies niemals wirklich meistern. Das Restaurant Wanmin hat, was diese spezielle Technik angeht, eine Monopolstellung inne.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Tartaglia, Mona, Xiao, Xiangling und Razor"
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Landhausküche“.\\nEine voll ausgestattete Küche mit einem Schrank voller sorgfältig vorbereiteter Gewürze.\\nKöche, die Perfektion anstreben, kaufen ihre Zutaten täglich auf dem Markt, und wahre Künstler der Kulinarik widmen sogar dem Feuerholz in ihrem Ofen besondere Aufmerksamkeit. Der junge Küchenchef des Restaurant Wanmin teilte einst dieses Wissen, um das traditionelle Gericht des Qingce-Dorfs zuzubereiten: Man muss trockene Bambus-Schnipsel in den Ofen geben und die Flamme behutsam kontrollieren. Hat man die Gelegenheit, Holz von Büschen in der Nähe von Wolfshaken zu verarbeiten, kann man dem Ganzen einen Hauch Mondstadt-Flair verleihen.\\nUnterschiedliche Arten von Feuerholz haben sehr unterschiedliche Effekte und die meisten Köche werden dies niemals wirklich meistern. Das Restaurant Wanmin hat, was diese spezielle Technik angeht, eine Monopolstellung inne.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Tartaglia, Mona, Xiao, Xiangling und Razor"
   },
   "WeaponForgingStation": {
     "name": "Waffenschmiede",
-    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Waffenschmiede“.\\nEine voll ausgestatte Schmiede, die die Arbeit von vielen Schmieden gleichzeitig aufnehmen kann, um die größtmögliche Zahl qualitativ hochwertiger Waffen herzustellen oder sie mit höchster Effizienz zu reparieren.\\nSolange Monster auf diesem Kontinent existieren und die reiselustigen Fußspuren der Abenteurer nicht abreißen, so werden Waffen und Ausrüstung immer eine hohe Nachfrage haben. Um dieser Nachfrage gerecht zu werden, müssen Schmiede über viele lange Jahre ausgebildet werden. Während dieser Zeit gelingt natürlich nicht jede Arbeit und so ist dies ein nicht unerheblicher Kostenaufwand. Hin und wieder kann Schmieden also das Geld ausgehen, doch der Ordo Favonius wird dann immer versuchen, Bestellungen für sie zu sichern, um ihnen ihre Lebensqualität zu gewähren. Es heißt, dass auch ein bestimmter weitsichtiger Weingutbesitzer hin und wieder einiges an Kapital investiert hat.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Noelle, Bennett, Diluc und Diona"
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Waffenschmiede“.\\nEine voll ausgestattete Schmiede, die die Arbeit von vielen Schmieden gleichzeitig aufnehmen kann, um die größtmögliche Zahl qualitativ hochwertiger Waffen herzustellen oder sie mit höchster Effizienz zu reparieren.\\nSolange Monster auf diesem Kontinent existieren und die reiselustigen Fußspuren der Abenteurer nicht abreißen, so werden Waffen und Ausrüstung immer eine hohe Nachfrage haben. Um dieser Nachfrage gerecht zu werden, müssen Schmiede über viele lange Jahre ausgebildet werden. Während dieser Zeit gelingt natürlich nicht jede Arbeit und so ist dies ein nicht unerheblicher Kostenaufwand. Hin und wieder kann Schmieden also das Geld ausgehen, doch der Ordo Favonius wird dann immer versuchen, Bestellungen für sie zu sichern, um ihnen ihre Lebensqualität zu gewähren. Es heißt, dass auch ein bestimmter weitsichtiger Weingutbesitzer hin und wieder einiges an Kapital investiert hat.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Noelle, Bennett, Diluc und Diona"
   },
   "IdyllicTown": {
     "name": "Idyllische Kleinstadt",
@@ -8293,11 +8833,11 @@
   },
   "GlitteringStreet": {
     "name": "Glitzerstraße",
-    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Glitzerstraße“.\\nEin Stadtbezirk voll mit verschiedenen Waren, von seltsamen und kostbaren Schätzen bis hin zu alltäglichen Dingen, die die Geschäftigkeit von Liyues Märkten anfeuern.\\nDies eine „rauschende“ Straße zu nennen, ist kein Akt der Bescheidenheit, denn Liyue ist der Ort, an dem alle Schiffe anlegen und wo alle Fracht entladen wird. Dem Großteil der Bevölkerung mangelt es nicht an lebensnotwendigen Gütern. Doch sollte tatsächlich mal ein Mangel auftreten, so kann man der jungen Frau mit violettem Haar, die sich am Ende des Monats oft auf dem Markt herumtreibt, Rückmeldung geben. Ihre wahre Identität ist unbekannt, doch eines ist sicher: Die meisten Waren, auf die man sie aufmerksam macht, werden schon bald auf den Märkten auftauchen.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Ningguang, Keqing, Yanfei, Xingqiu und Zhongli"
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Glitzerstraße“.\\nEin Stadtbezirk voll mit verschiedenen Waren, von seltsamen und kostbaren Schätzen bis hin zu alltäglichen Dingen, die die Geschäftigkeit von Liyues Märkten anfeuern.\\nDies eine „rauschende“ Straße zu nennen, ist kein Akt der Bescheidenheit, denn Liyue ist der Ort, an dem alle Schiffe anlegen und wo alle Fracht entladen wird. Dem Großteil der Bevölkerung mangelt es nicht an lebensnotwendigen Gütern. Doch sollte tatsächlich mal ein Mangel auftreten, so kann man der jungen Frau mit violettem Haar, die sich am Ende des Monats oft auf dem Markt herumtreibt, Rückmeldung geben. Ihre wahre Identität ist unbekannt, doch eines ist sicher: Die meisten Waren, auf die man sie aufmerksam macht, werden schon bald auf den Märkten auftauchen.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Ningguang, Keqing, Yanfei, Xingqiu, Zhongli, Yun Jin und Shenhe."
   },
   "QingceCloudResidence": {
     "name": "Qingce-Wolkenlandhaus",
-    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Qingce-Wolkenlandhaus“.\\nEin Bergdorf, das dem Qingce-Dorf nachempfunden wurde. Man sagt, dass die freundliche Atmosphäre dort ansteckend ist und dass Besucher, die eintreten, sich viel ruhiger fühlen und ihre Freude für die einfachen Dinge des Lebens, die sie einst verloren haben, wiederentdecken.\\nSich auf die Jagd nach den eigenen Idealen zu machen und jahrelang einer Karriere nachzujagen ist sicherlich rühmlich. Doch nachdem man lange Zeit damit verbracht hat, wird man irgendwann müde, und wenn das passiert, dann ist ein friedliches Leben auf dem Land vielleicht eine gute Idee. Das Qingce-Dorf hat es immer akzeptiert, dass die jungen Menschen auf der Suche nach ihrem Glück aufgebrochen sind, und es ist stets bereit, sie jederzeit mit offenen Armen wieder zu begrüßen.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Xinyan, Xiao, Hu Tao und Qiqi"
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Qingce-Wolkenlandhaus“.\\nEin Bergdorf, das dem Qingce-Dorf nachempfunden wurde. Man sagt, dass die freundliche Atmosphäre dort ansteckend ist und dass Besucher, die eintreten, sich viel ruhiger fühlen und ihre Freude für die einfachen Dinge des Lebens, die sie einst verloren haben, wiederentdecken.\\nSich auf die Jagd nach den eigenen Idealen zu machen und jahrelang einer Karriere nachzujagen ist sicherlich rühmlich. Doch nachdem man lange Zeit damit verbracht hat, wird man irgendwann müde, und wenn das passiert, dann ist ein friedliches Leben auf dem Land vielleicht eine gute Idee. Das Qingce-Dorf hat es immer akzeptiert, dass die jungen Menschen auf der Suche nach ihrem Glück aufgebrochen sind, und es ist stets bereit, sie jederzeit mit offenen Armen wieder zu begrüßen.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt:Xinyan, Xiao, Hu Tao, Qiqi und Shenhe."
   },
   "OfHuntingAndDancing": {
     "name": "Von Jagd und Tanz",
@@ -8317,7 +8857,7 @@
   },
   "WakefulSpring": {
     "name": "Thermalbad der Wachsamkeit",
-    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Thermalbad der Wachsamkeit“.\\nEine komplett ausgestattete heiße Quelle im Freien. Die Mineralien und Elemente, die hier vorhanden sind, sind vielleicht nicht mit denen des Badehauses Aisa vergleichbar, aber heiße Quellen dieser Art bieten eine viel freundlichere und ungezwungenere Atmosphäre.\\nNur ein halbstündiges Bad hier und all die Müdigkeit, die du von der Arbeit angesammelt hast, wird sich in Nichts auflösen und durch eine wiedererwachte Vitalität ersetzt werden, und wenn du Zeit hast, kannst du dich an einen nahegelegenen weißen Stein lehnen und einen Tee trinken und mit deinen Freunden plaudern.\\nNatürlich solltest du die grundsätzlichen Anstandsregeln beachten, bevor du eintrittst: Es ist in Ordnung, die heiße Quelle mit Freunden zu genießen, aber bleib nicht zu lange. Wenn du zu viel Zeit mit schwatzhaften Leuten wie der Königin des Sommerfestes verbringst, könnte dir schwindelig werden.\\nNach der Anwendung im Platzierungsbildschirm zu finden.\\nDieses Set wird von folgenden Kameraden bevorzugt: Yoimiya und Gorou."
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Thermalbad der Wachsamkeit“.\\nEine komplett ausgestattete heiße Quelle im Freien. Die Mineralien und Elemente, die hier vorhanden sind, sind vielleicht nicht mit denen des Badehauses Aisa vergleichbar, aber heiße Quellen dieser Art bieten eine viel freundlichere und ungezwungenere Atmosphäre.\\nNur ein halbstündiges Bad hier und all die Müdigkeit, die du von der Arbeit angesammelt hast, wird sich in Nichts auflösen und durch eine wiedererwachte Vitalität ersetzt werden, und wenn du Zeit hast, kannst du dich an einen nahegelegenen weißen Stein lehnen und einen Tee trinken und mit deinen Freunden plaudern.\\nNatürlich solltest du die grundsätzlichen Anstandsregeln beachten, bevor du eintrittst: Es ist in Ordnung, die heiße Quelle mit Freunden zu genießen, aber bleib nicht zu lange. Wenn du zu viel Zeit mit schwatzhaften Leuten wie der Königin des Sommerfestes verbringst, könnte dir schwindelig werden.\\nNach der Anwendung im Platzierungsbildschirm zu finden.\\nDieses Set wird von folgenden Kameraden bevorzugt: Yoimiya, Gorou und Yae Miko."
   },
   "RuralConcealment": {
     "name": "Ländlicher Rückzugsort",
@@ -8325,7 +8865,7 @@
   },
   "AncientBranchShrine": {
     "name": "Schrein des Alten Zweiges",
-    "description": "Bauplan mit detaillierten Schritten zur Platzierung von „Schrein des Alten Zweiges“.\\nDie architektonische Gestaltung, der leuchtend rote Anstrich und die Gesamtgestaltung des ruhigen und schönen Schreins sind im gleichen Stil wie der Große Narukami-Schrein. Für die Sterblichen dient er als Ort der Meditation, aber für Seine Exzellenz, den Shougun, reichte sein Anblick aus, um eine verschwommene, aber lebendige Erinnerung an eine vergangene Ära zu wecken ...\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Shougun Raiden."
+    "description": "Bauplan mit detaillierten Schritten zur Platzierung von „Schrein des Alten Zweiges“.\\nDie architektonische Gestaltung, der leuchtend rote Anstrich und die Gesamtgestaltung des ruhigen und schönen Schreins sind im gleichen Stil wie der Große Narukami-Schrein. Für die Sterblichen dient er als Ort der Meditation, aber für Ihre Exzellenz, den Shougun, reichte sein Anblick aus, um eine verschwommene, aber lebendige Erinnerung an eine vergangene Ära zu wecken ...\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Shougun Raiden und Yae Miko."
   },
   "MilitaryExerciseGrounds": {
     "name": "Truppenübungsplatz",
@@ -8450,6 +8990,14 @@
   "MapleWoodChandelierIllume": {
     "name": "Deckenlampe aus Ahornholz – „Grelles Licht“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Deckenlampe aus Ahornholz – Grelles Licht“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "BloomingCandlePureAsALotus": {
+    "name": "Blühende Kerze – „Rein wie Lotos“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Blühende Kerze – Rein wie Lotos“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "RainbowLightsAtDawnWeCelebrate": {
+    "name": "Regenbogenlichter – „Bei Sonnenaufgang feiern wir“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Regenbogenlichter – Bei Sonnenaufgang feiern wir“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "NorthernBirchFoldingCounter": {
     "name": "Klappbare Theke aus nordischer Birke",
@@ -8686,6 +9234,14 @@
   "YumemiruJukakuFoldingScreen": {
     "name": "Faltschirm „Jukaku“ aus Yumemiru-Holz",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Faltschirm Jukaku aus Yumemiru-Holz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "FestiveFragranceGoodsPiledHigh": {
+    "name": "Festliche Düfte – „Hoch aufgetürmte Waren“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Festliche Düfte – Hoch aufgetürmte Waren“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "FestiveFragranceOfGoldAndJade": {
+    "name": "Festliche Düfte – „Von Gold und Jade“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Festliche Düfte – Von Gold und Jade“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "MondstadtRugCrimsonArdor": {
     "name": "Teppich (Mondstadt) – „Rotglühende Begeisterung“",
@@ -9091,6 +9647,18 @@
     "name": "Maskengestell „Kouki“ aus Aralia-Holz",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Maskengestell Kouki aus Aralia-Holz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "FineStallSplashOfColor": {
+    "name": "„Feiner Stand – Ein Spritzer Farbe“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Feiner Stand – Ein Spritzer Farbe“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "RainbowStallUltramarine": {
+    "name": "„Regenbogenstand – Tiefblau“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Regenbogenstand – Tiefblau“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "RainbowStallRubyRed": {
+    "name": "„Regenbogenstand – Rubinrot“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Regenbogenstand – Rubinrot“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "RitualShrine": {
     "name": "„Schrein des Rituals“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Schrein des Rituals“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -9195,6 +9763,18 @@
     "name": "Warenlager der Residenz – „Allerlei Reserven“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Warenlager der Residenz – Allerlei Reserven“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "InazumanHomeWatatsumiReminiscence": {
+    "name": "Wohnhaus (Inazuma) – „Watatsumi-Reminiszenz“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wohnhaus (Inazuma) – Watatsumi-Reminiszenz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "InazumanHomeHouseOfCoral": {
+    "name": "Wohnhaus (Inazuma) – „Haus der Korallen“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wohnhaus (Inazuma) – Haus der Korallen“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "InazumanHomeStormhouse": {
+    "name": "Wohnhaus (Inazuma) – „Sturmhaus“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wohnhaus (Inazuma) – Sturmhaus“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Springbrunnen mit Blumen- und Vogelmuster",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Springbrunnen mit Blumen- und Vogelmuster“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -9246,6 +9826,10 @@
   "OfFieldsGreenClearSpringFountain": {
     "name": "Grüne Felder – „Klarer Quellbrunnen“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Grüne Felder – Klarer Quellbrunnen“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "SubSpaceCabochonInSoaringFlight": {
+    "name": "Monolith der Raumschaffung – „Segelflug“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Monolith der Raumschaffung – Segelflug“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "AdeptusGate": {
     "name": "Adeptentor",
@@ -9366,6 +9950,10 @@
   "HotSpringFoyerShelterFromTheCold": {
     "name": "Quellen-Foyer – „Schutz vor der Kälte“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Quellen-Foyer – Schutz vor der Kälte“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "FoundationsOfStoneFortunateTimes": {
+    "name": "Steinbodenbelag – „Glückliche Zeiten“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Steinbodenbelag – Glückliche Zeiten“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "MessyPileOfFirCrates": {
     "name": "Durcheinander gestapelte Tannen-Frachtkisten",
@@ -9498,6 +10086,10 @@
   "ReplicaAncientOtogiCrate": {
     "name": "Repliken alter Warenkisten aus Otogi-Holz",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Repliken alter Warenkisten aus Otogi-Holz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "MountainOfFestiveGifts": {
+    "name": "„Berg der Festtagsgeschenke“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Berg der Festtagsgeschenke“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "PottedPlantVerdantVastness": {
     "name": "Topfpflanze – „Kleine Oase“",
@@ -9642,6 +10234,18 @@
   "VillageWellSubterraneanSecrets": {
     "name": "Brunnen auf dem Land – „Schatz im Verborgenen“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Brunnen auf dem Land – Schatz im Verborgenen“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "RainbowLightsLovelyNightView": {
+    "name": "Regenbogenlichter – „Wunderschöne Nachtansicht“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Regenbogenlichter – Wunderschöne Nachtansicht“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "RainbowCloudFlyingSatinPole": {
+    "name": "Regenbogenwolke wie fliegender Satin",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Regenbogenwolke wie fliegender Satin“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "GoldInscribedEvilCleansingBanner": {
+    "name": "Goldbeschriftetes Bannertuch zur Säuberung des Bösen",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Goldbeschriftetes Bannertuch zur Säuberung des Bösen“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Eiserne Straßenlaterne mit Gravur",

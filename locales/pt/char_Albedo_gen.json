@@ -46,13 +46,13 @@
       "2": "<strong>Radiação Solar</strong>",
       "3": "Tem as seguintes propriedades:",
       "4": "Quando inimigos dentro da área da Radiação Solar são atingidos, a Radiação Solar gerará Flores Transitórias que causam <geo>Dano Geo em uma AdE</geo>. Dano causado escala conforme a DEF de Albedo.",
-      "5": "Flores Transitórias só podem ser geradas uma vez a cada 2s.",
-      "6": "Quando um personagem ficar em cima da Radiação Solar, ela irá acumular o poder Geo, erguendo-os em um pódio cristalizado. Apenas um pódio cristalizado pode existir por vez.",
-      "7": "Somente é possível existir uma Radiação Solar por vez feita pelo próprio Albedo, e é considerada como uma <geo>Construção Geo</geo>.",
+      "5": "Flores Transitórias só podem ser gerada uma vez a cada 2s.",
+      "6": "Quando um personagem está localizado no local da Radiação Solar, a Radiação Solar irá acumular o poder Geo, erguendo-os em um pódio cristalizado. Apenas um pódio cristalizado pode existir por vez.",
+      "7": "Somente é possível existir uma Radiação Solar por vez feita por Albedo, e é considerada como uma <geo>Construção Geo</geo>.",
       "8": "<br/>",
-      "9": "Use o <strong>Manter pressionado</strong> para designar a localização da habilidade.",
+      "9": "<strong>Manter pressionado</strong> para designar a localização da habilidade.",
       "10": "<br/>",
-      "11": "<i>Esta espécie de flor Geo tem uma propriedade incomum espelhada na mesma da alquimia. De levantar-se da terra, elevar-se ao céu e tornar-se o sol.</i>"
+      "11": "<i>Esta espécie de flor Geo tem uma propriedade incomum espelhada na mesma da alquimia. Para levantar-se da terra, elevar-se para o céu e tornar-se o sol.</i>"
     },
     "skillParams": {
       "0": "Dano de Habilidade",

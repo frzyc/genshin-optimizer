@@ -1,7 +1,7 @@
 {
   "name": "Xiao",
   "title": "Guardião Yaksha",
-  "description": "Um Yaksha, um ser imortal que protege Liyue. Também chamado de \"O Caçador de Demônios\" ou \"Guardião Yaksha\".",
+  "description": "Um Yaksha, um ser imortal que protege Liyue. Também chamado de \"Conquistador de Demônios\" ou \"Guardião Yaksha\".",
   "constellationName": "Alatus Nemeseos",
   "auto": {
     "name": "Impulso do Redemoinho",
@@ -27,7 +27,7 @@
       "3": "Dano do 4° Golpe",
       "4": "Dano do 5° Golpe",
       "5": "Dano do 6° Golpe",
-      "6": "Ataque Carregado",
+      "6": "Dano de Ataque Carregado",
       "7": "Consumo de Stamina de Ataque Carregado",
       "8": "Dano Durante a Queda",
       "9": "Dano de Queda de Baixa/Alta Altitude",
@@ -70,12 +70,12 @@
   "burst": {
     "name": "Dança Nuo da Conquista do Mal",
     "description": {
-      "0": "Xiao veste a Máscara Yaksha, que há milênios atrás, pôs deuses e demônios a tremer.",
+      "0": "Xiao veste a Máscara Yaksha, que há milênios, pôs deuses e demônios a tremer.",
       "1": "<br/>",
       "2": "<strong>Máscara Yaksha</strong>",
       "3": [
         "Aumenta consideravelmente a capacidade de salto de Xiao.",
-        "Aumenta a AdE  de seu Ataque e aumenta seu Dano.",
+        "Aumenta a AdE de seu Ataque e aumenta seu Dano.",
         "Converte o Dano do seu Ataque em <anemo>Dano Anemo</anemo>, que não pode ser anulado por nenhuma outra infusão elemental."
       ],
       "4": "<br/>",
@@ -85,7 +85,7 @@
       "8": "<i>Colocando a máscara Yaksha, Xiao se transforma no Conquistador de Demônios. Mas esse grande poder também lhe trouxe grande sofrimento. Alguns lhe chamam de \"A Ruína de Todos os Males\".</i>"
     },
     "skillParams": {
-      "0": "Aumento de Ataque Normal/Ataque Carregado/Ataque Imersivo",
+      "0": "Aumento de Dano do Ataque Normal/Ataque Carregado/Ataque Imersivo",
       "1": "Vida consumida",
       "2": "Duração",
       "3": "Tempo de Recarga",
@@ -120,7 +120,7 @@
   "passive3": {
     "name": "Transcensão - Transgressão Gravitacional",
     "description": {
-      "0": "Diminui o consumo de Stamina ao Escalar de todos os seus personagens em 20%.",
+      "0": "Diminui o consumo de Stamina ao Escalar de todos os personagens da equipe em 20%.",
       "1": "Não acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos."
     }
   },

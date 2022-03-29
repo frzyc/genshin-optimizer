@@ -28,7 +28,7 @@
       "5": "Dano de Ataque Carregado",
       "6": "Consumo de Stamina de Ataque Carregado",
       "7": "Dano Durante a Queda",
-      "8": "Dano de Queda de Alta/Baixa Altitude",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
       "9": "",
       "10": "",
       "11": "",
@@ -41,17 +41,17 @@
   "skill": {
     "name": "Milagre: Luz Maligna",
     "description": {
-      "0": "A Shogun Raiden revela um fragmento de sua Utopia, causando <electro>Dano Electro</electro> a inimigos próximos, e concedendo a membros da equipe próximos o Olho do Julgamento Tempestuoso.",
+      "0": "A Shogun Raiden revela um fragmento de sua Eutimia, causando <electro>Dano Electro</electro> a inimigos próximos, e concedendo a membros da equipe próximos o Olho do Julgamento Tempestuoso.",
       "1": "<strong>Olho do Julgamento Tempestuoso</strong>",
       "2": [
-        "Quando personagens com esse bônus atacam e causam Dano aos inimigos, o Olho lançará um Ataque Coordenado, causando <electro>Dano Electro AdE</electro> na localização dos inimigos.",
+        "Quando personagens com esse bônus atacam e causam Dano aos inimigos, o Olho lançará um Ataque Coordenado, causando <electro>Dano Electro em uma AdE</electro> na localização dos inimigos.",
         "Personagens que ganham o Olho do Julgamento Tempestuoso terão o Dano de seus Supremos aumentado baseado no custo de Energia Elemental do Supremo durante a duração do Olho."
       ],
       "3": "<br/>",
       "4": "O Olho pode iniciar um Ataque Coordenado a cada 0.9s por cada equipe.",
-      "5": "Ataques Coordenados gerados por personagens na equipe, que não são controlados por você, causam 20% do Dano normal.",
+      "5": "Ataques Coordenados gerados por personagens na equipe que não são controlados por você causam 20% do Dano normal.",
       "6": "<br/>",
-      "7": "<i>Seres de grande divindade podem afetar tudo que veem, e a Arconte Electro pode manipular as estrelas inauspiciosas para defender seus Retentores e trazer uma sentença trovejante em seus inimigos.</i>"
+      "7": "<i>Seres de grande divindade podem afetar tudo que veem, e a Arconte Electro pode manipular as estrelas inauspiciosas para defender seus Retentores e trazer uma sentença trovejante a seus inimigos.</i>"
     },
     "skillParams": {
       "0": "Dano de Habilidade",
@@ -75,17 +75,17 @@
   "burst": {
     "name": "Arte Secreta: Musou Shinsetsu",
     "description": {
-      "0": "Reunindo verdades não numeradas e desejos incontados, a Shogun Raiden liberta o Musou no Hitotachi e causa <electro>Dano Electro em uma AdE</electro>, usando Musou Isshin em combate por um certo tempo depois. De acordo com o número de acúmulos da Determinação consumida pelo Shogan Byakugen no Rin quando esta habilidade é utilizada, aumenta Musou no Hitotachi e o dano causado pelos ataques do Musou Isshin.",
+      "0": "Reunindo verdades não numeradas e desejos incontados, a Shogun Raiden liberta o Musou no Hitotachi e causa <electro>Dano Electro em uma AdE</electro>, usando Musou Isshin em combate por um certo tempo depois. O dano de Musou no Hitotachi e dos ataques causados por Musou Isshin aumentam de acordo com o número de acúmulos de Determinação consumidos pelo Shogan Byakugen no Rin quando esta habilidade é utilizada.",
       "1": "<br/>",
       "2": "<strong>Musou Isshin</strong>",
-      "3": "Enquanto estiver neste estado, a Shogun Raiden usará sua tachi em batalha, enquanto seus ataques Normais, Carregados e Imersivos serão infundidos com <electro>Dano Electro</electro>, que não pode ser substituído. Quando tais ataques atingem os oponentes, ela irá regenerar a energia para todos os membros da equipe mais próxima. A energia pode ser restaurada desta forma a cada 1s, e este efeito pode ser acionado 5 vezes durante toda a duração desta habilidade.",
+      "3": "Enquanto estiver neste estado, a Shogun Raiden usará sua tachi em batalha, enquanto seus ataques Normais, Carregados e Imersivos serão infundidos com <electro>Dano Electro</electro>, que não pode ser substituído. Quando tais ataques atingem os oponentes, ela irá regenerar energia para todos os membros da equipe mais próxima. A energia pode ser restaurada desta forma a cada 1s, e este efeito pode ser acionado 5 vezes durante toda a duração desta habilidade.",
       "4": "Enquanto neste estado, a resistência da Shogun Raiden à interrupção é aumentada, e ela fica imune a Dano de reações de <electro>Eletricamente Carregado</electro>.",
-      "5": "No estado de Musou Isshin, os danos do Ataque Normal, Ataque Carregado e Ataque Imersivo é visto como Dano de Supremo.",
+      "5": "No estado de Musou Isshin, os danos do Ataque Normal, Ataque Carregado e Ataque Imersivo são considerados como Dano de Supremo.",
       "6": "<br/>",
-      "7": "O efeito do Musou Isshin será removido quando a Shogun Raiden sair de campo",
+      "7": "O efeito do Musou Isshin será removido quando a Shogun Raiden sair de campo.",
       "8": "<br/>",
       "9": "<strong>Shogan Byakugen no Rin</strong>",
-      "10": "Quando os membros próximos (excluindo a própria Shogun Raiden) da equipe usam seus Supremos, a Shogun Raiden irá acumular acúmulos de Determinação com base na Energia Elemental do Supremo.",
+      "10": "Quando os membros próximos (excluindo a própria Shogun Raiden) da equipe usam seus Supremos, a Shogun Raiden irá acumular Determinação com base na Energia Elemental do Supremo.",
       "11": "O máximo de acúmulos é de 60.",
       "12": "<br/>",
       "13": "A Determinação acumulada em Shogan Byakugen no Rin será excluída 300 segundos após sair da batalha.",
@@ -95,7 +95,7 @@
     "skillParams": {
       "0": "Dano Básico do Musou no Hitotachi",
       "1": "Bônus de Determinação",
-      "2": "Acúmulos de Determinação Ganhos por Energia Consumida {param4:F2}",
+      "2": "Acúmulos de Determinação Ganhos",
       "3": "Dano do 1° Golpe",
       "4": "Dano do 2° Golpe",
       "5": "Dano do 3° Golpe",
@@ -104,7 +104,7 @@
       "8": "Dano do Ataque Carregado",
       "9": "Consumo de Stamina de Ataque Carregado",
       "10": "Dano Durante a Queda",
-      "11": "Dano de Queda de Alta/Baixa Altitude",
+      "11": "Dano de Queda de Baixa/Alta Altitude",
       "12": "Recuperação de Energia do Musou Isshin",
       "13": "Duração do Musou Isshin",
       "14": "Tempo de Recarga",
@@ -121,7 +121,7 @@
   "passive2": {
     "name": "Transcendência",
     "description": {
-      "0": "Cada 1% acima de 100% de Recarga de Energia que o Shogun Raiden possui lhe dá:",
+      "0": "Cada 1% acima de 100% de Recarga de Energia que a Shogun Raiden possui lhe dá:",
       "1": [
         "0.6% a mais de restauração de Energia Elemental de <strong>Musou Isshin</strong>.",
         "0.4% de <electro>Bônus de Dano Electro</electro>."
@@ -141,7 +141,7 @@
     }
   },
   "constellation2": {
-    "name": "Quebra-aço",
+    "name": "Quebra-Aço",
     "description": {
       "0": "Sob o estado de Musou no Hitotachi e Musou Isshin, os ataques da Shogun Raiden, aplicados pela <strong>Arte Secreta: Musou Shinsetsu</strong>, ignoram 60% da DEF dos oponentes."
     }
@@ -167,9 +167,9 @@
     }
   },
   "constellation6": {
-    "name": "Portador de Desejos",
+    "name": "Portadora de Desejos",
     "description": {
-      "0": "Durante o estado de <strong>Musou Isshin</strong> aplicado pela <strong>Arte Secreta: Musou Shinsetsu</strong>, quando o Supremo da Shogun Raiden atinge um inimigo irá reduzir o Tempo de Recarga do Supremo de todos os membros da equipe próximo em 1s.",
+      "0": "Durante o estado de <strong>Musou Isshin</strong> aplicado pela <strong>Arte Secreta: Musou Shinsetsu</strong>, quando o Supremo da Shogun Raiden atinge um inimigo irá reduzir o Tempo de Recarga do Supremo de todos os membros de equipe próximos em 1s (exceto pela Raiden Shogun em si).",
       "1": "Este efeito pode ser desencadeado uma vez a cada 1s, e pode ser desencadeado em um total de 5 vezes durante a duração deste estado."
     }
   }

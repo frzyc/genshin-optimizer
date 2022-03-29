@@ -100,7 +100,8 @@
   "passive2": {
     "name": "Glacial Heart",
     "description": {
-      "0": "Musuh yang terkena efek <cryo>Frozen</cryo> dari skill <strong>Frostgnaw</strong> akan menjatuhkan Elemental Particle tambahan. Maksimum menjatuhkan 2 Elemental Particle tambahan setiap kalinya."
+      "0": "Musuh yang terkena efek <cryo>Frozen</cryo> dari skill <strong>Frostgnaw</strong> akan menjatuhkan Elemental Particle tambahan.",
+      "1": "Maksimum menjatuhkan 2 Elemental Particle tambahan setiap kalinya."
     }
   },
   "passive3": {

@@ -1,7 +1,7 @@
 {
   "name": "Zhongli",
   "title": "Vago Mundo",
-  "description": "Seorang tamu misterius yang diundang Wangsheng Funeral Parlor, memiliki pengetahuan mendalam akan banyak hal.",
+  "description": "Seorang konsultan misterius yang terikat kontrak dengan Wangsheng Funeral Parlor. Dia memiliki pengetahuan yang mendalam tentang segala sesuatu.",
   "constellationName": "???",
   "auto": {
     "name": "Rain of Stone",
@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Mengonsumsi Stamina dalam jumlah tertentu untuk menyerang maju, menyebabkan tombak batu yang berjatuhan pada jalurnya."
+        "1": "Mengonsumsi sejumlah Stamina untuk menyerang maju, dan menyebabkan tombak batu berjatuhan di sepanjang jalur serangan."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
@@ -41,7 +41,7 @@
   "skill": {
     "name": "Dominus Lapidis",
     "description": {
-      "0": "Gunung, tanah, batu, semuanya berisi kekuatan Geo. Namun sedikit sekali orang yang bisa menggunakan kekuatannya dengan bebas.",
+      "0": "Gunung, tanah, batu, semuanya mengandung kekuatan Geo. Namun, cuma sedikit saja yang bisa mengerahkan kekuatan itu sesuai kehendaknya.",
       "1": "<br/>",
       "2": "<strong>Tekan</strong>",
       "3": "Memerintahkan elemen Geo di permukaan tanah untuk berkumpul dan membentuk sebuah Stone Stele.",
@@ -49,32 +49,32 @@
       "5": "<strong>Tahan</strong>",
       "6": "Mengakibatkan elemen Geo di sekitar meledak, menyebabkan efek berikut:",
       "7": [
-        "Bila jumlah Stone Stele yang terbentuk belum mencapai batas maksimum, Stone Stele dapat tercipta.",
+        "Bila jumlah Stone Stele yang terbentuk belum mencapai batas maksimum, Stone Stele akan terbentuk.",
         "Menciptakan sebuah Jade Shield yang dapat menyerap DMG sesuai dengan Max HP Zhongli.",
         "Mengakibatkan <geo>Geo DMG Area.</geo>",
         "Bila di sekeliling karakter terdapat musuh dengan <geo>elemen Geo</geo>, maka Zhongli dapat mengonsumsi sejumlah besar <geo>elemen Geo</geo>, maksimum dari 2 musuh. Efek ini tidak mengakibatkan DMG."
       ],
       "8": "<br/>",
       "9": "<strong>Stone Stele</strong>",
-      "10": "yang tercipta akan mengakibatkan <geo>Geo DMG Area</geo>.",
+      "10": "Ketika terbentuk, pilar ini akan mengakibatkan <geo>Geo DMG Area</geo>.",
       "11": "Selain itu, Stone Stele akan beresonansi dengan <geo>Geo Construct</geo> di sekitarnya, mengakibatkan <geo>Geo DMG</geo> ke musuh di sekitar.",
-      "12": "Stone Stele dianggap sebagai sebuah <geo>Geo Construct</geo>, dapat digunakan untuk menghalangi serangan dan juga dapat dipanjat.",
+      "12": "Stone Stele terhitung sebagai <geo>Geo Construct</geo>, yang dapat digunakan untuk menghalangi serangan dan juga dapat dipanjat.",
       "13": "Awalnya, Stone Stele yang diciptakan oleh Zhongli, hanya bisa ada satu dalam satu waktu.",
       "14": "<br/>",
       "15": "<strong>Jade Shield</strong>",
-      "16": "Memiliki bonus 150% efek penyerapan terhadap semua Elemental DMG dan Pysical DMG.",
+      "16": "Memiliki bonus 150% efek penyerapan terhadap semua Elemental DMG dan Physical DMG.",
       "17": "Karakter yang berada dalam perlindungan Jade Shield akan menyebabkan semua Elemental RES dan Physical RES musuh di area kecil sekitarnya berkurang 20%. Efek tersebut tidak dapat ditumpuk.",
       "18": "<br/>",
-      "19": "<i>Seorang ahli batu sejati dapat mengukir batu dan membentuk emas.</i>"
+      "19": "<i>Seorang ahli batu sejati akan mampu mengukir giok dan membentuk emas.</i>"
     },
     "skillParams": {
       "0": "DMG Batu/DMG Resonansi",
-      "1": "Cooldown One-tap",
+      "1": "Cooldown Tekan",
       "2": "DMG Menahan",
       "3": "Ketahanan Dasar Perisai",
       "4": "Bonus Ketahanan Perisai",
       "5": "Durasi Perisai",
-      "6": "CD (Tahan)",
+      "6": "Cooldown (Mode Tahan)",
       "7": "",
       "8": "",
       "9": "",
@@ -89,12 +89,12 @@
   "burst": {
     "name": "Planet Befall",
     "description": {
-      "0": "Menjatuhkan sebuah meteor ke bumi untuk mengakibatkan <geo>Geo DMG</geo> yang besar serta menyebabkan efek <geo>Petrification</geo> kepada musuh di dalam area skill.",
+      "0": "Menjatuhkan sebuah meteor ke bumi, mengakibatkan <geo>Geo DMG</geo> yang besar serta menyebabkan efek <geo>Petrification</geo> kepada musuh di dalam area skill.",
       "1": "<br/>",
       "2": "<strong>Petrification</strong>",
       "3": "Musuh yang terkena efek <geo>Petrification</geo> tidak dapat bergerak.",
       "4": "<br/>",
-      "5": "<i>Meteor yang jatuh untuk menghukum ketidakadilan.</i>"
+      "5": "<i>Bintang jatuh menghukum para pelaku yang berbuat curang dan tidak adil.</i>"
     },
     "skillParams": {
       "0": "DMG Skill",

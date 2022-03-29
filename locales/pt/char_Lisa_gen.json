@@ -74,7 +74,7 @@
   "burst": {
     "name": "Rosa do Relãmpago",
     "description": {
-      "0": "Evoca uma Rosa Elétrica que desfere poderosos relâmpagos, lançando inimigos próximos e infligindo <electro>Dano Electro</electro>",
+      "0": "Evoca uma Rosa Elétrica que desfere poderosos relâmpagos, lançando inimigos próximos e infligindo <electro>Dano Electro</electro>.",
       "1": "A Rosa Elétrica irá continuamente emitir raios que empurram os inimigos e infligem <electro>Dano Electro</electro> enquanto ela permanecer.",
       "2": "<br/>",
       "3": "<i>Essa rosa é linda, mas tenha cuidado com seus espinhos mortais.</i>"
@@ -101,13 +101,13 @@
   "passive1": {
     "name": "Indução Pós-Choque",
     "description": {
-      "0": "Ao ser atingido por Ataques aplica o estado de Condutividade de <strong>Arco Violeta</strong> aos inimigos."
+      "0": "Ao ser atingida por Ataques aplica o estado de Condutividade de <strong>Arco Violeta</strong> aos inimigos."
     }
   },
   "passive2": {
     "name": "Campo de Eletricidade Estática",
     "description": {
-      "0": "Inimigos acertados por <strong>Rosa Relâmpago</strong> têm sua DEF diminuída em 15% por 10 segundos."
+      "0": "Inimigos acertados por <strong>Rosa do Relâmpago</strong> têm sua DEF diminuída em 15% por 10 segundos."
     }
   },
   "passive3": {
@@ -141,7 +141,7 @@
   "constellation4": {
     "name": "Erupção de Plasma",
     "description": {
-      "0": "Aumenta o número de raios lançados pela <strong>Rosa Relâmpago</strong> em 1 a 3."
+      "0": "Aumenta o número de raios lançados pela <strong>Rosa do Relâmpago</strong> em 1 a 3."
     }
   },
   "constellation5": {

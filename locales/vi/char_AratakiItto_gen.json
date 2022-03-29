@@ -151,7 +151,7 @@
   "constellation2": {
     "name": "Gọi Anh Em, Đánh Hội Đồng",
     "description": {
-      "0": "Sau khi thi triển <strong>Siêu Cấp Quỷ Vương - Itto Giáng Lâm!</strong>, CD kỹ năng của mỗi nhân vật <geo>Nguyên Tố Nham</geo> trong đội sẽ giảm đi 1.5s và khiến Arataki Itto hồi phục 6 điểm năng lượng nguyên tố.",
+      "0": "Sau khi thi triển <strong>Siêu Cấp Quỷ Vương - Itto Giáng Lâm!</strong>, trong đội cứ mỗi nhân vật có thuộc tính nguyên tố là <geo>Nham</geo>, đều sẽ khiến Itto giảm 1.5s CD kỹ năng nộ, đồng thời khiến Arataki Itto hồi phục 6 điểm năng lượng nguyên tố.",
       "1": "Thông qua cách này, tối đa giảm 4.5s CD và hồi phục 18 điểm năng lượng nguyên tố."
     }
   },

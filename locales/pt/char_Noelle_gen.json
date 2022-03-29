@@ -38,7 +38,7 @@
       "0": "Reunindo a força da pedra em sua arma, Noelle ataca os inimigos ao seu redor com uma grande AdE, causando <geo>Dano Geo</geo>.",
       "1": "Em seguida, Noelle ganha os seguintes efeitos:",
       "2": [
-        "Aumenta o Ataque AdE de Noelle.",
+        "Aumenta a AdE do Ataque da Noelle.",
         "Converte o Dano ATQ para <geo>Dano Geo</geo>. O efeito dessa conversão elemental não pode ser anulado por nenhuma outra conversão elemental. ",
         "Seu ATQ aumenta com base na sua DEF."
       ],

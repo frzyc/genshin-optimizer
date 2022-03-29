@@ -1,7 +1,7 @@
 {
   "name": "Klee",
   "title": "Mặt Trời Chạy Trốn",
-  "description": "Khách quen của phòng giam Đội Kỵ Sĩ Tây Phong, bậc thầy thuốc nổ Mondstadt. Mọi người gọi là \"Mặt Trời Chạy Trốn\".",
+  "description": "Khách quen của phòng giam Đội Kỵ Sĩ Tây Phong, bậc thầy thuốc nổ tại Mondstadt. Mọi người gọi là \"Mặt Trời Chạy Trốn\".",
   "constellationName": "Tứ Diệp Thảo",
   "auto": {
     "name": "Bằng Bằng",
@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Tấn Công Khi Đáp</strong>",
-        "1": "Ngưng tụ sức mạnh của lửa, tấn công từ trên không xuống đất, gây <pyro>sát thương phạm vi Nguyên Tố Hỏa</pyro> khi chạm đất."
+        "1": "Ngưng tụ sức mạnh của lửa, lao xuống mặt đất từ trên không, tấn công kẻ địch trên đường và gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> khi chạm đất."
       }
     },
     "skillParams": {
@@ -42,14 +42,14 @@
     "name": "Bom Nảy",
     "description": {
       "0": "Ném Bom Nảy mang đến niềm vui bất tận!",
-      "1": "Bom Nảy sẽ nảy liên tiếp 3 lần, mỗi lần sẽ kích hoạt nổ, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>.",
+      "1": "Bom Nảy sẽ nảy liên tiếp 3 lần, mỗi lần đều sẽ kích hoạt nổ, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>.",
       "2": "<br/>",
       "3": "Sau khi nảy lần 3, sẽ tách thành nhiều Quỷ Lôi.",
       "4": "Quỷ Lôi sẽ nổ sau một khoảng thời gian hoặc sau khi tiếp xúc kẻ địch, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>.",
       "5": "<br/>",
       "6": "Ban đầu có 2 lần sử dụng.",
       "7": "<br/>",
-      "8": "<i>Bom nảy là \"người bạn thân\" với Klee... Klee luôn muốn giới thiệu chúng với mọi người xung quanh.</i>"
+      "8": "<i>Bom nảy là \"người bạn thân\" của Klee... Klee luôn muốn giới thiệu chúng với mọi người xung quanh.</i>"
     },
     "skillParams": {
       "0": "Sát Thương Bom Nảy",
@@ -73,9 +73,9 @@
   "burst": {
     "name": "Tia Lửa Mãnh Liệt",
     "description": {
-      "0": "Klee phát huy toàn bộ hỏa lực! Trong thời gian duy trì, liên tục triệu hồi tia lửa mãnh liệt gây sát thương cho kẻ địch xung quanh, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>.",
+      "0": "Klee phát huy toàn bộ hỏa lực! Trong thời gian duy trì, liên tục triệu hồi Tia Lửa Mãnh Liệt tấn công kẻ địch lân cận, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>.",
       "1": "<br/>",
-      "2": "<i>Đội Kỵ Sĩ tin rằng, Klee xưa nay chưa từng bị đả thương bởi đạn dược của mình là do ngôi sao may mắn luôn bảo vệ cô...</i>"
+      "2": "<i>Người trong Đội Kỵ Sĩ tin rằng, Klee xưa nay chưa từng bị thương bởi thuốc nổ của mình nhất định là do ngôi sao may mắn nào đó luôn chiếu cố cô bé...</i>"
     },
     "skillParams": {
       "0": "Sát thương Tia Lửa Mãnh Liệt",
@@ -112,7 +112,7 @@
   "passive3": {
     "name": "Toàn Là Báu Vật",
     "description": {
-      "0": "Hiển thị vị trí <strong>đặc sản xung quanh khu vực Mondstadt</strong> trên bản đồ nhỏ."
+      "0": "Hiển thị vị trí <strong>đặc sản khu vực Mondstadt</strong> ở xung quanh trên bản đồ nhỏ."
     }
   },
   "constellation1": {
@@ -124,7 +124,7 @@
   "constellation2": {
     "name": "Mảnh Đạn Vỡ Vụn",
     "description": {
-      "0": "Quỷ Lôi của <strong>Bom Nảy</strong> sẽ làm cho phòng ngự của địch giảm 23%, kéo dài 10s."
+      "0": "Quỷ Lôi của <strong>Bom Nảy</strong> sẽ làm giảm 23% phòng ngự của kẻ địch, kéo dài 10s."
     }
   },
   "constellation3": {
@@ -137,7 +137,7 @@
   "constellation4": {
     "name": "Thỏ Xông Lên",
     "description": {
-      "0": "Nếu trong thời gian <strong>Tia Lửa Mãnh Liệt</strong> tồn tại rời khỏi trận, sẽ tạo ra vụ nổ, gây <pyro>sát thương phạm vi Nguyên Tố Hoả</pyro> với lực tấn công 555%"
+      "0": "Nếu rời khỏi trận trong thời gian <strong>Tia Lửa Mãnh Liệt</strong> đang tồn tại, sẽ tạo ra vụ nổ, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> với 555% lực tấn công."
     }
   },
   "constellation5": {
@@ -150,8 +150,8 @@
   "constellation6": {
     "name": "Toàn Bộ Hỏa Lực",
     "description": {
-      "0": "Trong trạng thái <strong>Tia Lửa Mãnh Liệt</strong>, cứ mỗi 3s Klee sẽ liên tục hồi phục 3 điểm năng lượng Nguyên Tố cho tất cả nhân vật trong đội (Không bao gồm bản thân Klee);",
-      "1": "25s sau khi phóng <strong>Tia Lửa Mãnh Liệt</strong>, tất cả nhân vật trong đội nhận thêm 10%<pyro> sát thương Nguyên Tố Hỏa</pyro>."
+      "0": "Trong trạng thái <strong>Tia Lửa Mãnh Liệt</strong>, cứ mỗi 3s Klee sẽ hồi phục 3 điểm Năng Lượng Nguyên Tố cho tất cả nhân vật trong đội (Không bao gồm bản thân Klee);",
+      "1": "Trong 25s sau khi phóng <strong>Tia Lửa Mãnh Liệt</strong>, tất cả nhân vật trong đội nhận được 10% <pyro>Buff Sát Thương Nguyên Tố Hỏa</pyro>."
     }
   }
 }

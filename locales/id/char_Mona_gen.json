@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Mengumpulkan kekuatan Hydro dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <electro>Hydro DMG area</electro> saat mendarat."
+        "1": "Mengumpulkan kekuatan Hydro dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <hydro>Hydro DMG area</hydro> saat mendarat."
       }
     },
     "skillParams": {
@@ -62,7 +62,7 @@
     "skillParams": {
       "0": "DMG Berkelanjutan",
       "1": "DMG Ledakan",
-      "2": "CD",
+      "2": "Cooldown",
       "3": "",
       "4": "",
       "5": "",
@@ -101,7 +101,7 @@
       "1": "DMG Ledakan Illusory Bubble",
       "2": "Bonus DMG",
       "3": "Durasi Omen",
-      "4": "CD",
+      "4": "Cooldown",
       "5": "Konsumsi Energy",
       "6": "",
       "7": "",

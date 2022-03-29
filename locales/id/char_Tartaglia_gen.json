@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Charged Attack</strong>",
         "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar. ",
-        "2": "Saat membidik, air akan berkumpul di ujung anak panah. Panah dengan air yang terkumpul penuh akan mengakibatkan <anemo>Hydro DMG</anemo> dan menyebabkan efek Riptide."
+        "2": "Saat membidik, air akan berkumpul di ujung anak panah. Panah dengan air yang terkumpul penuh akan mengakibatkan <hydro>Hydro DMG</hydro> dan menyebabkan efek Riptide."
       },
       "riptide": {
         "0": "<strong>Riptide</strong>",
@@ -41,7 +41,7 @@
       "8": "DMG Riptide Flash",
       "9": "DMG Riptide Burst",
       "10": "Durasi Riptide",
-      "11": "DMG Selama Pluging",
+      "11": "DMG Selama Plunging",
       "12": "DMG Plunging Attack Min./Maks.",
       "13": "",
       "14": "",
@@ -81,7 +81,7 @@
       "9": "Riptide Slash",
       "10": "Durasi Maksimum",
       "11": "Cooldown",
-      "12": "Cooldown Maks.",
+      "12": "Cooldown Maksimum",
       "13": "",
       "14": "",
       "15": ""
@@ -109,7 +109,7 @@
       "1": "Skill DMG: Ranged",
       "2": "Riptide Blast DMG",
       "3": "Pengembalian Energy (Mode Jarak Jauh)",
-      "4": "CD",
+      "4": "Cooldown",
       "5": "Konsumsi Energy",
       "6": "",
       "7": "",

@@ -178,7 +178,7 @@
   "constellation6": {
     "name": "Spezialangriff – Komplette Auslöschung",
     "description": {
-      "0": "Überspringt die Abklingzeit von <strong>Spezialangriff – Stürmische Gezeiten</strong> bei Anwendung von <strong>Spezialangriff – Totale Vernichtung</strong> im Nahkampf.",
+      "0": "Überspringt die Abklingzeit von <strong>Dämonengewand – Stürmische Gezeiten</strong> bei Anwendung von <strong>Spezialangriff – Totale Vernichtung</strong> im Nahkampf.",
       "1": "Dieser Effekt wird nach dem Wechsel in den Fernkampf aktiv."
     }
   }

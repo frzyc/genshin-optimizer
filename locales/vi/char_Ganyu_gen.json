@@ -13,15 +13,15 @@
       "charged": {
         "0": "<strong>Trọng kích</strong>",
         "1": "Có thể <strong>ngắm bắn</strong> chính xác hơn, sát thương cao hơn.",
-        "2": "Khi nhắm, dòng không khí lạnh sẽ ngưng tụ liên tục trên mũi tên và bắn ra cùng với tấn công. Thời gian tụ lực dài hay ngắn sẽ gây ra hiệu quả khác nhau:",
+        "2": "Khi ngắm bắn, dòng không khí lạnh sẽ ngưng tụ liên tục trên mũi tên và bắn ra cùng lúc tấn công. Căn cứ thời gian tụ lực dài hay ngắn sẽ gây ra hiệu quả khác nhau:",
         "3": [
-          "Tụ lực lần 1: Bắn mũi tên có khí lạnh gây <cryo>sát thương nguyên tố băng</cryo>;",
-          "Tụ lực lần 2: Bắn Cung Sương Hoa gây <cryo>sát thương nguyên tố băng</cryo>; Sau khi trúng, sương giá tung bay, gây thêm <cryo>sát thương phạm vi nguyên tố băng</cryo>."
+          "Tụ lực lần 1: Bắn mũi tên có khí lạnh gây <cryo>sát thương Nguyên Tố Băng</cryo>;",
+          "Tụ lực lần 2: Bắn Cung Sương Hoa gây <cryo>sát thương Nguyên Tố Băng</cryo>; sau khi bắn trúng, sương giá tung bay, gây thêm <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>."
         ]
       },
       "plunging": {
         "0": "<strong>Tấn Công Khi Đáp</strong>",
-        "1": "Bắn mưa tên liên tiếp xuống mặt đất, gây sát thương phạm vi khi chạm đất."
+        "1": "Bắn mưa tên từ trên không, đồng thời lao nhanh xuống mặt đất, gây sát thương phạm vi khi chạm đất."
       }
     },
     "skillParams": {
@@ -46,13 +46,13 @@
   "skill": {
     "name": "Sơn Trạch Lân Tích",
     "description": {
-      "0": "Ganyu để lại một đóa sen băng rồi lùi nhanh về phía sau, tránh xa tất cả yêu ma, gây <cryo>sát thương phạm vi nguyên tố băng</cryo>.",
+      "0": "Ganyu để lại một đóa sen băng rồi lùi nhanh về phía sau, tránh xa tất cả yêu ma, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>.",
       "1": "<br/>",
       "2": "<strong>Băng Liên</strong>",
       "3": [
-        "Liên tục khiêu khích địch xung quanh, thu hút địch tấn công;",
+        "Liên tục khiêu khích kẻ địch xung quanh, thu hút địch tấn công;",
         "Độ bền sẽ kế thừa căn cứ theo tỷ lệ giới hạn HP của Ganyu;",
-        "Khi bị hủy diệt hoặc hết thời gian sẽ bung nở mạnh mẽ, gây <cryo>sát thương phạm vi nguyên tố băng</cryo>."
+        "Khi bị phá hủy hoặc hết thời gian sẽ nở rộ, gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>."
       ],
       "4": "<br/>",
       "5": "<i>\"Bạn nhìn thấy tôi à? Chắc chỉ là ảo giác thôi, lúc đó tôi đang tăng ca mà.\"</i>"
@@ -79,8 +79,8 @@
   "burst": {
     "name": "Thiên Hoa Hạ Phàm",
     "description": {
-      "0": "Ngưng tụ sương tuyết trong không khí, triệu hồi linh châu băng diệt ma.",
-      "1": "Trong thời gian tồn tại, linh châu băng sẽ không ngừng giáng trụ băng xuống, tấn công kẻ địch trong phạm vi, gây <cryo>sát thương nguyên tố băng</cryo>.",
+      "0": "Ngưng tụ sương tuyết trong không khí, triệu hồi Linh Châu Băng diệt ma.",
+      "1": "Trong thời gian tồn tại, Linh Châu Băng sẽ không ngừng giáng Nhũ Băng xuống, tấn công kẻ địch trong phạm vi, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
       "2": "<br/>",
       "3": "<i>Đương nhiên Ganyu có thể giáng cơn mưa mát lành xuống, nhưng đối với tà ma ngoại đạo, những thứ này đều sẽ hóa thành bông tuyết khổ đau.</i>"
     },
@@ -106,7 +106,7 @@
   "passive1": {
     "name": "Duy Thử Nhất Tâm",
     "description": {
-      "0": "Trong vòng 5s sau khi Cung Sương Hoa bắn ra, sẽ khiến tỷ lệ bạo kích của Cung Sương Hoa ở phát tiếp theo và Sương Giá Tung Bay được tạo ra tăng 20%."
+      "0": "Trong vòng 5s sau khi Cung Sương Hoa bắn ra, sẽ khiến cho Cung Sương Hoa được bắn ra tiếp theo và Sương Giá Tung Bay được tạo ra từ những Cung Sương Hoa này tăng 20% tỷ lệ bạo kích."
     }
   },
   "passive2": {
@@ -144,8 +144,8 @@
   "constellation4": {
     "name": "Tây Thú",
     "description": {
-      "0": "Trong khu vực của <strong>Thiên Hoa Hạ Phàm</strong>, tăng sát thương địch nhận phải, hiệu quả này sẽ dần mạnh hơn theo thời gian.",
-      "1": "Sát thương tăng thêm nhận phải ban đầu là 5%, mỗi 3s tăng 5%, tăng nhiều nhất đến 25%.",
+      "0": "Trong khu vực của <strong>Thiên Hoa Hạ Phàm</strong>, tăng sát thương kẻ địch phải chịu, hiệu quả này sẽ dần mạnh hơn theo thời gian.",
+      "1": "Ban đầu lượng tăng sát thương phải chịu là 5%, mỗi 3s tăng 5%, tăng nhiều nhất đến 25%.",
       "2": "Sau khi rời khỏi khu vực, hiệu quả kéo dài nhiều nhất 3s."
     }
   },

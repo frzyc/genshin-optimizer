@@ -118,7 +118,7 @@
   "constellation1": {
     "name": "Explosión en cadena",
     "description": {
-      "0": "Al atacar o usar una habilidad, hay una probabilidad de invocar chispas que atacan al enemigo, las cuales infligen daño equivalente a 120% del daño de <strong>Chispas explosivas</strong>."
+      "0": "Al atacar o usar una habilidad, hay una probabilidad de invocar chispas que atacan al enemigo, las cuales infligen daño equivalente al 120% del daño de <strong>Chispas explosivas</strong>."
     }
   },
   "constellation2": {

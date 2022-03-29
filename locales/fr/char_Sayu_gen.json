@@ -178,7 +178,7 @@
   "constellation6": {
     "name": "C'est l'heure d'un bon dodo",
     "description": {
-      "0": "Les attaques et les soins du Daruma Muji-muji invoqué par Sayu lors d'<strong>École Yoohoo : Bourrasque du mujina</strong> augmentent avec le niv. de maîtrise élémentaire de Sayu. Chaque pt de maîtrise élémentaire de Sayu confère les effets suivants :",
+      "0": "Les attaques et les soins du Daruma Muji-muji invoqué par Sayu lors d'<strong>École Yoohoo : Bourrasque du mujina</strong> augmentent avec le Niv. de maîtrise élémentaire de Sayu. Chaque pt de maîtrise élémentaire de Sayu confère les effets suivants :",
       "1": [
         " Augmente les DGT infligés par les attaques du Daruma Muji-muji de 0,2 % de l'ATQ, jusqu'à 400 % de l'ATQ max ;",
         " Augmente de 3 les PV soignés par le Daruma Muji-muji, jusqu'à 6 000 PV max."

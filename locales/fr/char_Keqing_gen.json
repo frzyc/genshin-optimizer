@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Étoile tenace",
     "description": {
-      "0": "Les attaques normales, attaques chargées, compétences élémentaires et déchaînements élémentaires de Keqing lui confèrent un <electro>bonus de 6 % de DGT Électro pendant 8 s.</electro> Les effets déclenchés sont différents selon le type d'attaque."
+      "0": "Les attaques normales, attaques chargées, compétences élémentaires et déchaînements élémentaires de Keqing lui confèrent un <electro>bonus de DGT Électro de 6 % pendant 8 s.</electro> Les effets déclenchés sont différents selon le type d'attaque."
     }
   }
 }

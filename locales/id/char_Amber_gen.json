@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Charged Attack</strong>",
         "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
-        "2": "Saat membidik, api akan berkumpul di ujung anak panah. Panah dengan api yang terkumpul penuh akan mengakibatkan <anemo>Pyro DMG</anemo>."
+        "2": "Saat membidik, api akan berkumpul di ujung anak panah. Panah dengan api yang terkumpul penuh akan mengakibatkan <pyro>Pyro DMG</pyro>."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",

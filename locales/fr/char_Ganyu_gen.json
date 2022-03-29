@@ -32,7 +32,7 @@
       "4": "DGT 5e coup",
       "5": "DGT 6e coup",
       "6": "DGT tir visé",
-      "7": "DGT 1ère charge",
+      "7": "DGT 1e charge",
       "8": "DGT flèche de givre",
       "9": "DGT zone de givre",
       "10": "DGT durant la chute",
@@ -112,7 +112,7 @@
   "passive2": {
     "name": "Harmonie du ciel et de la terre",
     "description": {
-      "0": "Les personnages déployés se trouvant dans la zone de <strong>Baptême céleste</strong> obtiennent un <cryo>bonus de 20 % de DGT Cryo</cryo> supplémentaires."
+      "0": "Les personnages déployés se trouvant dans la zone de <strong>Baptême céleste</strong> obtiennent un <cryo>bonus de DGT Cryo de 20 %</cryo> supplémentaires."
     }
   },
   "passive3": {

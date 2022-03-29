@@ -1,0 +1,14 @@
+{
+    "skillOneHit": "One hit taken",
+    "skillTwoHit": "Two hits taken",
+    "duringBurst": "During the duration of Stormbreaker",
+    "baneOfEvil_" : "Enemy Electro DMG RES",
+    "tidecallerMaxDmg": "Unleashing Tidecaller with its maximum DMG bonus",
+    "a4normalDmg_" : "Normal Att. DMG Bonus",
+    "a4chargeDmg_" : "Charge Att. DMG Bonus",
+    "a4atkSpeed_" : "Att. Speed Bonus",
+    "a4duration" : "Duration",
+    "a4charge" : "Reduced delay before Charged Attacks",
+    "c4dmg" : "Electro DMG",
+    "burstDmgRed_" : "DMG Reduction"
+}

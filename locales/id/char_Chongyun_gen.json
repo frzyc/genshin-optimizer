@@ -27,7 +27,7 @@
       "4": "DMG Berputar Charged Attack",
       "5": "DMG Akhir Charged Attack",
       "6": "Konsumsi Stamina Charged Attack",
-      "7": "Durasi Maks.",
+      "7": "Durasi Maksimum",
       "8": "DMG Selama Plunging",
       "9": "DMG Plunging Attack Min./Maks.",
       "10": "",
@@ -49,7 +49,7 @@
     "skillParams": {
       "0": "DMG Skill",
       "1": "Durasi Infusion",
-      "2": "Durasi Field",
+      "2": "Durasi Area",
       "3": "Cooldown",
       "4": "",
       "5": "",
