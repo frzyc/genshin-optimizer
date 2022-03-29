@@ -1,11 +1,10 @@
 import { CharacterData } from 'pipeline'
-import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
-import { constant, infoMut, prod, subscript, greaterEq, percent,lookup, equal, equalStr } from '../../../Formula/utils'
-import { CharacterKey, WeaponTypeKey, ElementKey } from '../../../Types/consts'
-import { cond, st, trans } from '../../SheetUtil'
+import { constant, equal, equalStr, greaterEq, infoMut, lookup, percent, prod } from '../../../Formula/utils'
+import { CharacterKey, ElementKey, WeaponTypeKey } from '../../../Types/consts'
+import { cond, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -15,8 +14,6 @@ const data_gen = data_gen_src as CharacterData
 const key: CharacterKey = "Chongyun"
 const elementKey: ElementKey = "cryo"
 const [tr, trm] = trans("char", key)
-const [condAsc4Path, condAsc4] = cond(key, "asc4")
-const [condInAreaPath, condInArea] = cond(key, "activeInArea")
 
 let s = 0, b = 0, p1 = 0, p2 = 0
 const datamine = {
@@ -42,8 +39,8 @@ const datamine = {
   skill: {
     dmg: skillParam_gen.skill[s++],
     infusionDuration: skillParam_gen.skill[s++][0],
-    fieldDuration: skillParam_gen.skill[s++][0],
     cd: skillParam_gen.skill[s++][0],
+    fieldDuration: skillParam_gen.skill[s++][0],
   },
   burst: {
     dmg: skillParam_gen.burst[b++],
@@ -69,11 +66,15 @@ const datamine = {
     cd: skillParam_gen.constellation4[1],
   },
   constellation6: {
-    dmg_increase: skillParam_gen.constellation6[0],
+    burst_dmg_: skillParam_gen.constellation6[0],
   }
 } as const
 
+const [condAsc4Path, condAsc4] = cond(key, "asc4")
+const [condSkillPath, condSkill] = cond(key, "skill")
+const [condC6Path, condC6] = cond(key, "c6")
 
+const skillDmg = dmgNode("atk", datamine.skill.dmg, "skill")
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -85,34 +86,45 @@ const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+    dmg: skillDmg,
   },
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
   },
+  passive2: {
+    dmg: skillDmg
+  },
+  constellation1: {
+    dmg: greaterEq(input.constellation, 1, customDmgNode(prod(percent(datamine.constellation1.dmg), input.total.atk), "elemental", { hit: { ele: constant(elementKey) } }))
+  }
 }
 
 const nodeAsc1 = greaterEq(input.asc, 1, percent(0.08))
 const nodeAsc4 = greaterEq(input.asc, 4,
-  equal(condAsc4, "spirtBlade",
+  equal(condAsc4, "hit",
     -0.10
   )
 )
-const activeInArea = equal("activeInArea", condInArea, equal(input.activeCharKey, target.charKey, 1))
+const activeInArea = equal("activeInArea", condSkill, equal(input.activeCharKey, target.charKey, 1))
 
-const correctWep = 
+const correctWep =
   lookup(target.weaponType,
     { "sword": constant(1), "claymore": constant(1), "polearm": constant(1) }, constant(0));
 
 const activeInAreaInfusion = equalStr(correctWep, 1, equalStr(activeInArea, 1, elementKey))
+
+const nodeC6 = greaterEq(input.constellation, 6, equal(condC6, "on", datamine.constellation6.burst_dmg_))
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
   bonus: {
-    skill: nodeC3,
-    burst: nodeC5
+    skill: nodeC5,
+    burst: nodeC3,
+  },
+  premod: {
+    burst_dmg_: nodeC6,
   },
   teamBuff: {
     premod: {
@@ -173,65 +185,37 @@ const sheet: ICharacterSheet = {
           }]
         }],
       },
-      skill:{
-        name: tr("skill.name"),
-        img: skill,
-        sections: [{
-          text: tr("skill.description"),
-          fields: [{
-            node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
-          }, {
-            text: tr("skill.skillParams.1"),
-            value: datamine.skill.infusionDuration,
-            unit: "s"
-          }, {
-            text: tr("skill.skillParams.2"),
-            value: datamine.skill.fieldDuration,
-            unit: "s"
-          }, {
-            text: tr("skill.skillParams.3"),
-            value: datamine.skill.cd,
-            unit: "s"
-          }],
-          conditional: {
-            teamBuff: true,
-            canShow: greaterEq(input.asc, 4, 1),
-            value: condAsc4,
-            path: condAsc4Path,
-            header: conditionalHeader("passive2", tr, passive2),
-            description: tr("passive2.description"),
-            name: trm("asc4Cond"),
-            states: {
-              spirtBlade: {
-                name: "Spirit Blade",
-                fields: [{
-                  node: nodeAsc4
-                }]
-              },
-            }
-          }
-        }, {
-          conditional: {
-            teamBuff: true,
-            value: condInArea,
-            path: condInAreaPath,
-            header: conditionalHeader("passive2", tr, passive2),
-            description: tr("passive2.description"),
-            name: trm("activeCharField"),
-            states: {
-              frostField: {
-                name: "Frost Field",
-                fields: [{
-                  node: activeInArea
-                },
-                {
-                  node: nodeAsc1
-                }]
-              },
-            }
-          }
-       }]
-      },
+      skill: talentTemplate("skill", tr, skill, [{
+        node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
+      }, {
+        text: tr("skill.skillParams.2"),
+        value: datamine.skill.fieldDuration,
+        unit: "s"
+      }, {
+        text: tr("skill.skillParams.3"),
+        value: datamine.skill.cd,
+        unit: "s"
+      }], {
+        teamBuff: true,
+        value: condSkill,
+        path: condSkillPath,
+        name: trm("activeCharField"),
+        states: {
+          activeInArea: {
+            name: "Frost Field",
+            fields: [{
+              text: trm("infusion"),
+              variant: elementKey
+            }, {
+              text: tr("skill.skillParams.1"),
+              value: datamine.skill.infusionDuration,
+              unit: "s"
+            }, {
+              node: nodeAsc1
+            }]
+          },
+        }
+      }),
       burst: {
         name: tr("burst.name"),
         img: burst,
@@ -253,14 +237,46 @@ const sheet: ICharacterSheet = {
         }]
       },
       passive1: talentTemplate("passive1", tr, passive1),
-      passive2: talentTemplate("passive2", tr, passive2),
+      passive2: talentTemplate("passive2", tr, passive2, [{
+        node: infoMut(dmgFormulas.passive2.dmg, { key: `char_${key}:passive2` })
+      }], {
+        teamBuff: true,
+        canShow: greaterEq(input.asc, 4, 1),
+        value: condAsc4,
+        path: condAsc4Path,
+        header: conditionalHeader("passive2", tr, passive2),
+        description: tr("passive2.description"),
+        name: trm("asc4Cond"),
+        states: {
+          hit: {
+            fields: [{
+              node: nodeAsc4
+            }]
+          },
+        }
+      }
+      ),
       passive3: talentTemplate("passive3", tr, passive3),
-      constellation1: talentTemplate("constellation1", tr, c1),
+      constellation1: talentTemplate("constellation1", tr, c1, [{
+        node: infoMut(dmgFormulas.constellation1.dmg, { key: `char_${key}:constellation1` })
+      }]),
       constellation2: talentTemplate("constellation2", tr, c2),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
-      constellation6: talentTemplate("constellation6", tr, c6),
+      constellation6: talentTemplate("constellation6", tr, c6, undefined, {
+        value: condC6,
+        path: condC6Path,
+        canShow: greaterEq(input.constellation, 6, 1),
+        name: trm("constellation6"),
+        states: {
+          on: {
+            fields: [{
+              node: nodeC6
+            }]
+          }
+        }
+      }),
     },
   },
 };
