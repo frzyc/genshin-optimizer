@@ -8,7 +8,7 @@ import AratakiItto from './AratakiItto'
 import Barbara from './Barbara'
 import Beidou from './Beidou'
 import Bennett from './Bennett'
-// import Chongyun from './Chongyun'
+import Chongyun from './Chongyun'
 import Diluc from './Diluc'
 import Diona from './Diona'
 import Eula from './Eula'
@@ -57,7 +57,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Barbara,
   Beidou,
   Bennett,
-  // Chongyun,
+  Chongyun,
   Diluc,
   Diona,
   Eula,

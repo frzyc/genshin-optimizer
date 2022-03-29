@@ -1,28 +1,131 @@
-import card from './Character_Chongyun_Card.jpg'
-import thumb from './Icon.png'
-import thumbSide from './IconSide.png'
-import banner from './Banner.png'
-import c1 from './constellation1.png'
-import c2 from './constellation2.png'
-import c3 from './constellation3.png'
-import c4 from './constellation4.png'
-import c5 from './constellation5.png'
-import c6 from './constellation6.png'
-import skill from './skill.png'
-import burst from './burst.png'
-import passive1 from './passive1.png'
-import passive2 from './passive2.png'
-import passive3 from './passive3.png'
-import Stat from '../../../Stat'
-import formula, { data } from './data'
-import data_gen from './data_gen.json'
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../PageBuild/Build'
-import { ICharacterSheet } from '../../../Types/character'
+import { CharacterData } from 'pipeline'
 import { Translate } from '../../../Components/Translate'
-import { claymoreChargedDocSection, conditionalHeader, normalDocSection, normalSrc, plungeDocSection, talentTemplate } from '../SheetUtil'
-import { WeaponTypeKey } from '../../../Types/consts'
-const tr = (strKey: string) => <Translate ns="char_Chongyun_gen" key18={strKey} />
-const char: ICharacterSheet = {
+import { input, target } from '../../../Formula'
+import { constant, infoMut, prod, subscript, greaterEq, percent,lookup, equal, equalStr } from '../../../Formula/utils'
+import { CharacterKey, WeaponTypeKey, ElementKey } from '../../../Types/consts'
+import { cond, st, trans } from '../../SheetUtil'
+import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
+import data_gen_src from './data_gen.json'
+import skillParam_gen from './skillParam_gen.json'
+
+const data_gen = data_gen_src as CharacterData
+
+const key: CharacterKey = "Chongyun"
+const elementKey: ElementKey = "cryo"
+const [tr, trm] = trans("char", key)
+const [condAsc4Path, condAsc4] = cond(key, "asc4")
+const [condInAreaPath, condInArea] = cond(key, "activeInArea")
+
+let s = 0, b = 0, p1 = 0, p2 = 0
+const datamine = {
+  normal: {
+    hitArr: [
+      skillParam_gen.auto[0], // 1
+      skillParam_gen.auto[1], // 2
+      skillParam_gen.auto[2], // 3
+      skillParam_gen.auto[3], // 4
+    ]
+  },
+  charged: {
+    spin_dmg: skillParam_gen.auto[4],
+    final_dmg: skillParam_gen.auto[5],
+    stamina: skillParam_gen.auto[6][0],
+    duration: skillParam_gen.auto[7][0],
+  },
+  plunging: {
+    dmg: skillParam_gen.auto[8],
+    low: skillParam_gen.auto[9],
+    high: skillParam_gen.auto[10],
+  },
+  skill: {
+    dmg: skillParam_gen.skill[s++],
+    infusionDuration: skillParam_gen.skill[s++][0],
+    fieldDuration: skillParam_gen.skill[s++][0],
+    cd: skillParam_gen.skill[s++][0],
+  },
+  burst: {
+    dmg: skillParam_gen.burst[b++],
+    cd: skillParam_gen.burst[b++][0],
+    enerCost: skillParam_gen.burst[b++][0],
+  },
+  passive1: {
+    atk_spd: skillParam_gen.passive1[p1++][0],
+  },
+  passive2: {
+    dmg: skillParam_gen.passive2[p2++][0],
+    res: skillParam_gen.passive2[p2++][0],
+    duration: skillParam_gen.passive2[p2++][0],
+  },
+  constellation1: {
+    dmg: skillParam_gen.constellation1[0],
+  },
+  constellation2: {
+    cdr: skillParam_gen.constellation2[0],
+  },
+  constellation4: {
+    energy_regen: skillParam_gen.constellation4[0],
+    cd: skillParam_gen.constellation4[1],
+  },
+  constellation6: {
+    dmg_increase: skillParam_gen.constellation6[0],
+  }
+} as const
+
+
+
+const dmgFormulas = {
+  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+    [i, dmgNode("atk", arr, "normal")])),
+  charged: {
+    spinningDmg: dmgNode("atk", datamine.charged.spin_dmg, "charged"),
+    finalDmg: dmgNode("atk", datamine.charged.final_dmg, "charged"),
+  },
+  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+    [key, dmgNode("atk", value, "plunging")])),
+  skill: {
+    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+  },
+  burst: {
+    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
+  },
+}
+
+const nodeAsc1 = greaterEq(input.asc, 1, percent(0.08))
+const nodeAsc4 = greaterEq(input.asc, 4,
+  equal(condAsc4, "spirtBlade",
+    -0.10
+  )
+)
+const activeInArea = equal("activeInArea", condInArea, equal(input.activeCharKey, target.charKey, 1))
+
+const correctWep = 
+  lookup(target.weaponType,
+    { "sword": constant(1), "claymore": constant(1), "polearm": constant(1) }, constant(0));
+
+const activeInAreaInfusion = equalStr(correctWep, 1, equalStr(activeInArea, 1, elementKey))
+
+const nodeC3 = greaterEq(input.constellation, 3, 3)
+const nodeC5 = greaterEq(input.constellation, 5, 3)
+
+export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
+  bonus: {
+    skill: nodeC3,
+    burst: nodeC5
+  },
+  teamBuff: {
+    premod: {
+      cryo_enemyRes_: nodeAsc4,
+      atkSPD_: nodeAsc1
+    },
+    team: {
+      infusion: activeInAreaInfusion,
+    },
+  },
+})
+
+const sheet: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
@@ -34,64 +137,100 @@ const char: ICharacterSheet = {
   gender: "M",
   constellationName: tr("constellationName"),
   title: tr("title"),
-  baseStat: data_gen.base,
-  baseStatCurve: data_gen.curves,
-  ascensions: data_gen.ascensions,
   talent: {
-    formula,
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
-        sections: [
-          normalDocSection(tr, formula, data),
-          claymoreChargedDocSection(tr, formula, data),
-          plungeDocSection(tr, formula, data)
-        ],
+        img: normalSrc(data_gen.weaponTypeKey),
+        sections: [{
+          text: tr("auto.fields.normal"),
+          fields: datamine.normal.hitArr.map((_, i) => ({
+            node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
+          }))
+        }, {
+          text: tr("auto.fields.charged"),
+          fields: [{
+            node: infoMut(dmgFormulas.charged.spinningDmg, { key: `char_${key}_gen:auto.skillParams.4` }),
+          }, {
+            node: infoMut(dmgFormulas.charged.finalDmg, { key: `char_${key}_gen:auto.skillParams.5` }),
+          }, {
+            text: tr("auto.skillParams.6"),
+            value: datamine.charged.stamina,
+            unit: '/s'
+          }, {
+            text: tr("auto.skillParams.7"),
+            value: datamine.charged.duration,
+            unit: 's'
+          }]
+        }, {
+          text: tr(`auto.fields.plunging`),
+          fields: [{
+            node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+          }, {
+            node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+          }, {
+            node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+          }]
+        }],
       },
-      skill: {
+      skill:{
         name: tr("skill.name"),
         img: skill,
         sections: [{
           text: tr("skill.description"),
           fields: [{
-            text: "Skill DMG",
-            formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-            formula: formula.skill.dmg,
-            variant: stats => getTalentStatKeyVariant("skill", stats),
+            node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
           }, {
-            text: "Infusion Duration",
-            value: stats => `${data.skill.infusionDuration[stats.tlvl.skill]}s`,
+            text: tr("skill.skillParams.1"),
+            value: datamine.skill.infusionDuration,
+            unit: "s"
           }, {
-            text: "Field Duration",
-            value: "10s",
+            text: tr("skill.skillParams.2"),
+            value: datamine.skill.fieldDuration,
+            unit: "s"
           }, {
-            text: "CD",
-            value: "15s",
+            text: tr("skill.skillParams.3"),
+            value: datamine.skill.cd,
+            unit: "s"
           }],
           conditional: {
-            key: "e",
-            partyBuff: "partyAll",
-            header: conditionalHeader("skill", tr, skill),
-            description: tr("skill.description"),
-            name: "All Sword, Claymore and Polearm-wielding characters within Frost Field",
-            stats: stats => ({
-              infusionAura: "cryo",
-              ...(stats.ascension >= 1 ? { atkSPD_: 8 } : {})
-            })
+            teamBuff: true,
+            canShow: greaterEq(input.asc, 4, 1),
+            value: condAsc4,
+            path: condAsc4Path,
+            header: conditionalHeader("passive2", tr, passive2),
+            description: tr("passive2.description"),
+            name: trm("asc4Cond"),
+            states: {
+              spirtBlade: {
+                name: "Spirit Blade",
+                fields: [{
+                  node: nodeAsc4
+                }]
+              },
+            }
           }
         }, {
-          conditional: { // Rimechaser Blade
-            key: "a4",
-            canShow: stats => stats.ascension >= 4,
-            name: "Opponents hit by Rimechase Blade",
-            stats: { cryo_enemyRes_: -10 },
-            fields: [{
-              text: "Duration",
-              value: "8s",
-            }]
-          },
-        }],
+          conditional: {
+            teamBuff: true,
+            value: condInArea,
+            path: condInAreaPath,
+            header: conditionalHeader("passive2", tr, passive2),
+            description: tr("passive2.description"),
+            name: trm("activeCharField"),
+            states: {
+              frostField: {
+                name: "Frost Field",
+                fields: [{
+                  node: activeInArea
+                },
+                {
+                  node: nodeAsc1
+                }]
+              },
+            }
+          }
+       }]
       },
       burst: {
         name: tr("burst.name"),
@@ -99,64 +238,30 @@ const char: ICharacterSheet = {
         sections: [{
           text: tr("burst.description"),
           fields: [{
-            text: "Skill DMG",
-            formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-            formula: formula.burst.dmg,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
+            node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
           }, {
-            text: "CD",
-            value: "12s",
+            text: tr("burst.skillParams.1"),
+            value: datamine.burst.cd,
+            unit: "s"
           }, {
-            text: "Energy Cost",
-            value: 40,
+            text: tr("burst.skillParams.2"),
+            value: datamine.burst.enerCost,
           }, {
             text: "Spirit Blades Summoned",
-            value: stats => stats.constellation < 6 ? 3 : 4
-          }],
-          conditional: { // Rally of Four Blades
-            key: "c6",
-            canShow: stats => stats.constellation >= 6,
-            name: "Enemy with lower MaxHP% than Chongyun",
-            stats: { burst_dmg_: 15 }
-          }
-        }],
-      },
-      passive1: talentTemplate("passive1", tr, passive1),
-      passive2: {
-        name: tr("passive2.name"),
-        img: passive2,
-        sections: [{
-          text: tr("passive2.description"),
-          fields: [{
-            canShow: stats => stats.ascension >= 4,
-            text: "Summoned Sword DMG",
-            formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-            formula: formula.passive2.dmg,
-            variant: stats => getTalentStatKeyVariant("skill", stats),
-          }]
-        }],
-      },
-      passive3: talentTemplate("passive3", tr, passive3),
-      constellation1: {
-        name: tr("constellation1.name"),
-        img: c1,
-        sections: [{
-          text: tr("constellation1.description"),
-          fields: [{
-            canShow: stats => stats.constellation >= 1,
-            text: "Ice Blade DMG",
-            formulaText: stats => <span>50% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-            formula: formula.constellation1.dmg,
-            variant: stats => getTalentStatKeyVariant("elemental", stats),
+            value: data => data.get(input.constellation).value < 6 ? 3 : 4
           }]
         }]
       },
+      passive1: talentTemplate("passive1", tr, passive1),
+      passive2: talentTemplate("passive2", tr, passive2),
+      passive3: talentTemplate("passive3", tr, passive3),
+      constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
+      constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
+      constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };
-export default char;
+export default new CharacterSheet(sheet, data);
