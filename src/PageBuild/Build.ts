@@ -64,17 +64,3 @@ export function calculateTotalBuildNumber(artifactsBySlot: ArtifactsBySlot, setF
     accu + Object.entries(artifactsBySlot).reduce((accu, artifacts) => accu * artifacts[1]!.length, 1)
     , 0)
 }
-
-/**
- * @deprecated
- */
-export function getTalentStatKey(skillKey: string, stats: any, overwriteElement?: any) {
-  return "" as any
-}
-
-/**
- * @deprecated
- */
-export function getTalentStatKeyVariant(skillKey: string, stats: any, overwriteElement = "") {
-  return "" as any
-}

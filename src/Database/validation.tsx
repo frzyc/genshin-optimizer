@@ -3,7 +3,7 @@ import KeyMap from "../KeyMap";
 import { maxBuildsToShowDefault, maxBuildsToShowList } from "../PageBuild/Build";
 import { initialBuildSettings } from "../PageBuild/BuildSetting";
 import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../Types/artifact";
-import { ICachedCharacter, ICharacter } from "../Types/character_WR";
+import { ICachedCharacter, ICharacter } from "../Types/character";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
 import { IWeapon, ICachedWeapon } from "../Types/weapon";
 import Artifact from "../Data/Artifacts/Artifact";

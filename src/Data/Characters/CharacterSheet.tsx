@@ -1,7 +1,7 @@
 import ImgIcon from "../../Components/Image/ImgIcon";
 import { ascensionMaxLevel } from "../LevelData";
 import { Data } from "../../Formula/type";
-import { TalentSheet, TalentSheetElement, TalentSheetElementKey } from "../../Types/character_WR";
+import { TalentSheet, TalentSheetElement, TalentSheetElementKey } from "../../Types/character";
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "../../Types/consts";
 import SqBadge from "../../Components/SqBadge";
 import Assets from "../../Assets/Assets";

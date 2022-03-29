@@ -7,7 +7,7 @@ import { common } from "../Formula";
 import { dataObjForArtifact, dataObjForCharacter, uiDataForTeam, dataObjForWeapon } from "../Formula/api";
 import { Data } from "../Formula/type";
 import { ICachedArtifact } from "../Types/artifact";
-import { ICachedCharacter } from "../Types/character_WR";
+import { ICachedCharacter } from "../Types/character";
 import { CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { objectMap } from "../Util/Util";

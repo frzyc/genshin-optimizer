@@ -6,7 +6,7 @@ import { DatabaseContext } from "../../Database/Database";
 import { uiInput as input } from "../../Formula";
 import usePromise from "../../ReactHooks/usePromise";
 import useTeamData from "../../ReactHooks/useTeamData";
-import { ICachedCharacter } from "../../Types/character_WR";
+import { ICachedCharacter } from "../../Types/character";
 import { allCharacterKeys, CharacterKey, ElementKey, WeaponTypeKey } from "../../Types/consts";
 import { characterFilterConfigs, characterSortConfigs } from "../../Util/CharacterSort";
 import { filterFunction, sortFunction } from "../../Util/SortByFilters";

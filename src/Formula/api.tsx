@@ -1,6 +1,6 @@
 import Artifact from "../Data/Artifacts/Artifact";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
-import { ICachedCharacter } from "../Types/character_WR";
+import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, deepClone, layeredAssignment, objectKeyMap, objPathValue } from "../Util/Util";

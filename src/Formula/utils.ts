@@ -165,42 +165,6 @@ type _NodeList = {
 }
 type NodeList = _NodeList | ReadNode<number> | ReadNode<string>
 
-/*
- * Deprecated
- */
-
-/**
- * value >= threshold ? value : emptyValue
- * @deprecated Use `greaterEq`, `lessEq`, or `greaterEqStr` instead
- */
-export function threshold(value: Num, threshold: Num, pass: Str, fail: Str, info?: Info): StrNode
-export function threshold(value: Num, threshold: Num, pass: Num, fail: Num, info?: Info): NumNode
-export function threshold(value: Num, threshold: Num, pass: Num | Str, fail: Num | Str, info?: Info): NumNode | StrNode {
-  const operands = [intoV(value), intoV(threshold), intoV(pass), intoV(fail)] as any
-  return { operation: "threshold", operands, info }
-}
-/**
- * value >= threshold ? addition : 0
- * @deprecated Use `greaterEq` or `lessEq` instead
- */
-export function threshold_add(value: Num, thres: Num, addition: Num, info?: Info): NumNode {
-  return threshold(value, thres, addition, 0, info)
-}
-
-/**
- * `v1` === `v2` ? `match` : 0
- * @deprecated Use `equal` instead
- */
-export function match(v1: Str, v2: Str, match: Num, info?: Info): NumNode {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(0)], info, emptyOn: "unmatch" }
-}
-/**
- * `v1` === `v2` ? 0 : `unmatch`
- * @deprecated Use `unequal` instead
- */
-export function unmatch(v1: Str, v2: Str, unmatch: Num, info?: Info): NumNode {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(0), intoV(unmatch)], info, emptyOn: "match" }
-}
 /**
  * `v1` === `v2` ? `match` : `unmatch`
  * @deprecated Use `equal`, `unequal`, or `equalStr` instead

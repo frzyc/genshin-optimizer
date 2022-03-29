@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { Translate } from '../../../../Components/Translate'
-import { TalentSheet } from '../../../../Types/character_WR'
+import { TalentSheet } from '../../../../Types/character'
 import { absorbableEle, CharacterKey, ElementKey } from '../../../../Types/consts'
 import { customDmgNode, customHealNode, dataObjForCharacterSheet, dmgNode } from '../../dataUtil'
 import { burst, c1, c2, c3, c4, c5, c6, passive1, passive2, skill } from './assets'
@@ -212,7 +212,7 @@ const talentSheet: TalentSheet = {
             }]
           }
         }
-      }), 
+      }),
       // C6 elemental self-display
       sectionTemplate("constellation6", tr, c6, absorbableEle.map(eleKey => (
           { node: nodesC6[`${eleKey}_enemyRes_`] }
@@ -241,10 +241,10 @@ const talentSheet: TalentSheet = {
       })
     ]),
     passive1: talentTemplate("passive1", tr, passive1, [{
-      node: infoMut(dmgFormulas.passive1.dmg, { key: `char_${key}:${elementKey}.p1` }) 
+      node: infoMut(dmgFormulas.passive1.dmg, { key: `char_${key}:${elementKey}.p1` })
     }]),
     passive2: talentTemplate("passive2", tr, passive2, [{
-      node: infoMut(dmgFormulas.passive2.heal, { key: `sheet_gen:healing`, variant: "success" }) 
+      node: infoMut(dmgFormulas.passive2.heal, { key: `sheet_gen:healing`, variant: "success" })
     }]),
     constellation1: talentTemplate("constellation1", tr, c1),
     constellation2: talentTemplate("constellation2", tr, c2, [{ node: nodeC2 }]),

@@ -15,13 +15,13 @@ import { ReadNode } from "../../Formula/type";
 import KeyMap, { valueString } from "../../KeyMap";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import { amplifyingReactions, transformativeReactions } from "../../StatConstants";
-import { TalentSheetElementKey } from "../../Types/character";
 import { allElementsWithPhy, ElementKey } from "../../Types/consts";
 import WeaponDisplayCard from "../../PageWeapon/WeaponDisplayCard";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import StatInput from "../StatInput";
 import { TeamBuffDisplay } from "./CharacterTeamBuffsPane";
 import { range } from "../../Util/Util";
+import { TalentSheetElementKey } from "../../Types/character";
 export default function CharacterOverviewPane() {
   const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)

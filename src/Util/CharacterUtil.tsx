@@ -1,5 +1,5 @@
 import { initialBuildSettings } from "../PageBuild/BuildSetting"
-import { ICachedCharacter } from "../Types/character_WR"
+import { ICachedCharacter } from "../Types/character"
 import { allSlotKeys, CharacterKey } from "../Types/consts"
 import { objectKeyMap } from "./Util"
 

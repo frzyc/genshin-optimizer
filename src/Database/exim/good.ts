@@ -1,5 +1,5 @@
 import { IArtifact, ICachedArtifact } from "../../Types/artifact";
-import { ICharacter } from "../../Types/character_WR";
+import { ICharacter } from "../../Types/character";
 import { ICachedWeapon, IWeapon } from "../../Types/weapon";
 import { ArtCharDatabase } from "../Database";
 import { DBStorage, SandboxStorage } from "../DBStorage";

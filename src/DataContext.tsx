@@ -1,7 +1,7 @@
 import { createContext } from "react"
 import CharacterSheet from "./Data/Characters/CharacterSheet"
 import { UIData } from "./Formula/uiData"
-import { ICachedCharacter } from "./Types/character_WR"
+import { ICachedCharacter } from "./Types/character"
 import { CharacterKey } from "./Types/consts"
 import { ICachedWeapon } from "./Types/weapon"
 import WeaponSheet from "./Data/Weapons/WeaponSheet"

@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { Translate } from '../../../../Components/Translate'
-import { TalentSheet } from '../../../../Types/character_WR'
+import { TalentSheet } from '../../../../Types/character'
 import { CharacterKey, ElementKey } from '../../../../Types/consts'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../../dataUtil'
 import { burst, c1, c2, c3, c4, c5, c6, passive1, passive2, skill } from './assets'
@@ -73,7 +73,7 @@ const datamine = {
 } as const
 
 const [condC1BurstAreaPath, condC1BurstArea] = cond(key, `${elementKey}C1BurstArea`)
-const c1BurstArea_critRate_Disp = greaterEq(input.constellation, 1, 
+const c1BurstArea_critRate_Disp = greaterEq(input.constellation, 1,
   equal(condC1BurstArea, "on", datamine.constellation1.critRate_)
 )
 const c1BurstArea_critRate_ = equal(input.activeCharKey, target.charKey, c1BurstArea_critRate_Disp)
