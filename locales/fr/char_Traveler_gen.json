@@ -75,7 +75,7 @@
         },
         "charged": {
           "0": "<strong>Attaque chargée</strong>",
-          "1": "Consomme de l'endurance pour exécuter deux coups d'épée rapides."
+          "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
         },
         "plunging": {
           "0": "<strong>Attaque plongeante</strong>",

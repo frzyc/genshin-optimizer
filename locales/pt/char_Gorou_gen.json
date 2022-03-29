@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Ataque Carregado</strong>",
         "1": "Dispara um <strong>Tiro com Mira</strong> mais preciso e com Dano aumentado.",
-        "2": "Ao mirar, Pedras Cristalizadas irão se acumular na ponta da flecha. Uma flecha em Pedras Cristalizadas completamente carregada inflinge <geo>Dano Geo</geo>."
+        "2": "Ao mirar, Pedras Cristalizadas irão se acumular na ponta da flecha. Uma flecha em Pedras Cristalizadas completamente carregada inflige <geo>Dano Geo</geo>."
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",
@@ -154,7 +154,7 @@
     }
   },
   "constellation4": {
-    "name": "Pegureiro Bebedor: Quente como a àgua",
+    "name": "Pegureiro Bebedor: Quente como a água",
     "description": {
       "0": "Quando <strong>Glória do General</strong> está nos estados de \"Robusto\" ou \"Inquebrável\", ela também curará o personagem ativo dentro de sua AdE a cada 1,5s por 50% da DEF de Gorou."
     }

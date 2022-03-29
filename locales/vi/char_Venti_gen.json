@@ -2,7 +2,7 @@
   "name": "Venti",
   "title": "Nhà Thơ Có Màu Của Gió",
   "description": "Một trong các nhà thơ thành Mondstadt, tự do tự tại đi khắp hang cùng ngõ hẻm.",
-  "constellationName": "Ca Tiên",
+  "constellationName": "Cung Ca Tiên",
   "auto": {
     "name": "Xạ Thuật Của Thần",
     "fields": {
@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Trọng Kích</strong>",
-        "1": "Sát thương càng cao, <strong>ngắm bắn</strong> càng chuẩn.",
+        "1": "Tiến hành <strong>ngắm bắn</strong> chuẩn hơn, có sát thương cao hơn.",
         "2": "Khi ngắm bắn, gió sẽ tích tụ trên mũi tên. Mũi tên đầy gió sẽ gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
       },
       "plunging": {
@@ -147,7 +147,7 @@
   "constellation4": {
     "name": "Cơn Gió Tự Do",
     "description": {
-      "0": "Sau khi Venti nhận Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, <anemo>tăng sát thương Nguyên Tố Phong</anemo> 25%, kéo dài 10s."
+      "0": "Sau khi Venti nhận Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, sẽ nhận được 25% <anemo>Buff Sát Thương Nguyên Tố Phong</anemo>, kéo dài 10s."
     }
   },
   "constellation5": {

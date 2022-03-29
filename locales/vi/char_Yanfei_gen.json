@@ -14,7 +14,7 @@
       },
       "charged": {
         "0": "<strong>Trọng Kích</strong>",
-        "1": "Tiêu hao thể lực, sau tiếng ngân, tiêu hao tất cả Đan Hỏa Ấn để gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> về phía trước.",
+        "1": "Tiêu hao thể lực, sau khi tụ lực, tiêu hao tất cả Đan Hỏa Ấn để gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> về phía trước.",
         "2": "Dựa vào số lượng Đan Hỏa Ấn tiêu hao để cường hóa phạm vi và sát thương của trọng kích lần này."
       },
       "plunging": {
@@ -123,7 +123,7 @@
   "constellation1": {
     "name": "Được Nước Làm Tới",
     "description": {
-      "0": "Khi Yanfei thực hiện trọng kích, mỗi khi sở hữu 1 Đan Hỏa Ấn sẽ tăng khả năng kháng gián đoạn trong thời gian tồn tại tiếng ngân, đồng thời giảm thêm thể lực tiêu hao bằng với 10% Trọng Kích của lần này."
+      "0": "Khi Yanfei thực hiện trọng kích, mỗi khi sở hữu 1 Đan Hỏa Ấn sẽ tăng khả năng kháng gián đoạn trong thời gian tụ lực, đồng thời giảm thêm thể lực tiêu hao bằng với 10% Trọng Kích của lần này."
     }
   },
   "constellation2": {

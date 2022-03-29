@@ -44,14 +44,14 @@
   "skill": {
     "name": "Dança de Fogo Niwabi",
     "description": {
-      "0": "Com o fogo de artíficio de incenso explodindo no ar, um anel de salitre rodeia Yoimiya.",
+      "0": "Com o fogo de artifício de incenso explodindo no ar, um anel de salitre rodeia Yoimiya.",
       "1": "<br/>",
       "2": "<strong>Niwabi Enshou</strong>",
       "3": "Durante o intervalo de tempo, as flechas disparadas pelo Ataque Normal de Yoimiya serão Flechas Ardentes, causando <pyro>Dano Pyro</pyro>, e aumentando o dano causado pelo Ataque Normal. A Carga Nível 2 do Ataque Normal: Pirotecnia não irá causar Flechas Ardentes durante este tempo.",
       "4": "<br/>",
       "5": "O efeito será desativado quando Yoimiya sair do campo.",
       "6": "<br/>",
-      "7": "<i>\"Niwabi\" é uma forma de fogo de artíficio de incenso criada por Yoimiya. Sua capacidade de poder ser acendido sem qualquer treinamento ou preparação fez dela muito popular. Depois de vários acidentes relacionados com o fogo, a Comissão Tenryou baniu o uso de \"Niwabi\", mas pequenas e brilhantes explosões ainda são frequentemente vistas durante a noite. Se vistas de cima, parecem até estrelas brilhando.</i>"
+      "7": "<i>\"Niwabi\" é uma forma de fogo de artifício de incenso criada por Yoimiya. Sua capacidade de poder ser acendido sem qualquer treinamento ou preparação fez dela muito popular. Depois de vários acidentes relacionados com o fogo, a Comissão Tenryou baniu o uso de \"Niwabi\", mas pequenas e brilhantes explosões ainda são frequentemente vistas durante a noite. Se vistas de cima, parecem até estrelas brilhando.</i>"
     },
     "skillParams": {
       "0": "Dano da Flecha Abrasadora",
@@ -83,7 +83,7 @@
       "5": "<br/>",
       "6": "A Flama Dourada pode ser ativada uma vez a cada 2s. Quando Yoimiya for derrotada, os efeitos da Flama Dourada criados através das suas habilidades serão desativados.",
       "7": "<br/>",
-      "8": "<i>Os fogos de artíficio são a luz estelar feitas pelo homem, cometas disparados no céu. Apesar deles durarem apenas um instante, a memória do seu brilho certamente perdura eternamente.</i>"
+      "8": "<i>Os fogos de artifício são a luz estelar feitas pelo homem, cometas disparados no céu. Apesar deles durarem apenas um instante, a memória do seu brilho certamente perdura eternamente.</i>"
     },
     "skillParams": {
       "0": "Dano de Habilidade",

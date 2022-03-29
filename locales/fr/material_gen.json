@@ -451,6 +451,10 @@
     "name": "Yun Jin",
     "description": "Une talentueuse chanteuse d'opéra et une dramaturge très célèbre à Liyue. Son style unique, doux et élégant, lui ressemble beaucoup."
   },
+  "KamisatoAyato": {
+    "name": "Kamisato Ayato",
+    "description": "Le jeune, mais néanmoins très talentueux, chef du Clan Kamisato de la Commission culturelle. Cultivé et poli, c'est un homme aux multiples facettes."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka.",
     "description": "Matériau d'activation de la constellation d'Ayaka."
@@ -642,6 +646,10 @@
   "YunJinsStellaFortuna": {
     "name": "Stella Fortuna de Yun Jin",
     "description": "Matériau d'activation de la constellation de Yun Jin."
+  },
+  "KamisatoAyatosStellaFortuna": {
+    "name": "Stella Fortuna de Kamisato Ayato.",
+    "description": "Matériau d'activation de la constellation d'Ayato."
   },
   "GnosticHymnOldNotes": {
     "name": "Pass de bataille « Gnostique » - Ébauche",
@@ -1877,7 +1885,7 @@
   },
   "LegendOfTheShatteredHalberdII": {
     "name": "Le Bris de l'arme divine - Tome II",
-    "description": "Mi'er, qui était à présent en chasse des épées par accident, dut affronter une crise majeure avant même de pouvoir commencer. Les guerriers de la Garde Impériale et de l'Escorte Impériale furent tués par des bandits avec l'une des épées maudites. Au plus grave de l'action, Mi'er se remémora l'incantation que son père lui avait enseignée. La légende raconte que l'Empereur Céleste avait une fille, au nom inconnu du monde ; et cette fille se révéla, prenant possession du corps de Weiyang. Qui, des bandits déjà corrompus par l'épée maudite et de Mi'er, remportera le combat ?"
+    "description": "Mi'er, qui était à présent en chasse des épées par accident, dut affronter une crise majeure avant même de pouvoir commencer. Les guerriers de la garde impériale et de l'escorte impériale furent tués par des bandits avec l'une des épées maudites. Au plus grave de l'action, Mi'er se remémora l'incantation que son père lui avait enseignée. La légende raconte que l'Empereur Céleste avait une fille, au nom inconnu du monde ; et cette fille se révéla, prenant possession du corps de Weiyang. Qui, des bandits déjà corrompus par l'épée maudite et de Mi'er, remportera le combat ?"
   },
   "LegendOfTheShatteredHalberdIII": {
     "name": "Le Bris de l'arme divine - Tome III",
@@ -1885,7 +1893,7 @@
   },
   "LegendOfTheShatteredHalberdIV": {
     "name": "Le Bris de l'arme divine - Tome IV",
-    "description": "« D'abord écoute-moi, mon fils. Écoute... Je ne suis pas ton vrai père. » « Non, c'est impossible ! »\\nL'ancien Ministre des Divertissements Impériaux était Khan, un Asura de Jotunheim ; quitter la capitale n'était qu'une comédie, dont étaient complices le Ministre des Cérémonies ainsi que le Grand Secrétaire, et dont le but était de mettre la fille de l'Empereur Céleste en sûreté.\\n« L'Empereur Céleste compte parmi mes amis. Tu as réussi à invoquer sa fille ; je mourrai sans regrets. »"
+    "description": "« D'abord écoute-moi, mon fils. Écoute... Je ne suis pas ton vrai père. » « Non, c'est impossible ! »\\nL'ancien Ministre des banquets impériaux était Khan, un Asura de Jotunheim ; quitter la capitale n'était qu'une comédie, dont étaient complices le Ministre des Cérémonies ainsi que le Grand Secrétaire, et dont le but était de mettre la fille de l'Empereur Céleste en sûreté.\\n« L'Empereur Céleste compte parmi mes amis. Tu as réussi à invoquer sa fille ; je mourrai sans regrets. »"
   },
   "LegendOfTheShatteredHalberdV": {
     "name": "Le Bris de l'arme divine - Tome V",
@@ -2524,7 +2532,7 @@
     "description": "Une sacoche en tissu faite de matériaux ordinaires. Elle contient des objets légèrement humides. Elle pourrait être tombée d'un navire marchand."
   },
   "MysteriousStoneTablet": {
-    "name": "Plaque de pierre mystérieuse",
+    "name": "Stèle mystérieuse",
     "description": "Une plaque de pierre portant de mystérieuses marques. Son origine ne peut être déterminée, mais son analyse présente quelque valeur."
   },
   "TreasureHoarderScoutingReport": {
@@ -2776,7 +2784,7 @@
     "description": "« Malédiction ! La sorcière a entendu mes insultes ! ». « Oh, quel mauvais petit chien. Mais c'est l'obligation du propriétaire d'éduquer son chien, donc je n'ai pas le choix... ». La sorcière est sur le point de révéler ses cruels secrets !"
   },
   "AuntQiaosAlmondTofu": {
-    "name": "Tofu aux amandes pour Tante Qiao",
+    "name": "Tofu aux amandes pour tante Qiao",
     "description": "Cette boîte contient du tofu aux amandes préparé à l'Auberge Wangshu. Il est bien emballé. On peut sentir que le chef y a mis tout son cœur."
   },
   "ZhuyusGoldenShrimpBalls": {
@@ -3040,8 +3048,8 @@
     "description": "Une bourse trouvée à côté du puits asséché dans le Village de Konda.\\nElle semble avoir été oubliée à la hâte, et il y a un symbole spécial imprimé dessus."
   },
   "ArchaicStone": {
-    "name": "Pierre ancienne",
-    "description": "Un minerai rare extrait d'un endroit reculé de la montagne.\\nCe type de minerai ne peut être trouvé que dans les veines des montagnes les plus anciennes. Cela est peut-être dû à son extrême rareté, mais de nombreux marchands n'ont même jamais entendu parler de ce type de pierre.\\nLe minerai lui-même est d'une clarté incroyable et ses couleurs sont éblouissantes, semblant presque briller d'une lumière intérieure faisant ressortir sa beauté bleutée, comme un ciel lointain et charmant à l'heure du coucher du soleil.\\nLes quelques érudits qui comprennent sa valeur lui ont donné le nom très simple de « Pierre ancienne ».\\nSi vous avez l'intention d'en faire cadeau, il serait préférable de l'offrir à quelqu'un qui pourra en comprendre sa valeur."
+    "name": "Pierre séculaire",
+    "description": "Un minerai rare extrait d'un endroit reculé de la montagne.\\nCe type de minerai ne peut être trouvé que dans les veines des montagnes les plus anciennes. Cela est peut-être dû à son extrême rareté, mais de nombreux marchands n'ont même jamais entendu parler de ce type de pierre.\\nLe minerai lui-même est d'une clarté incroyable et ses couleurs sont éblouissantes, semblant presque briller d'une lumière intérieure faisant ressortir sa beauté bleutée, comme un ciel lointain et charmant à l'heure du coucher du soleil.\\nLes quelques érudits qui comprennent sa valeur lui ont donné le nom très simple de « Pierre séculaire ».\\nSi vous avez l'intention d'en faire cadeau, il serait préférable de l'offrir à quelqu'un qui pourra en comprendre sa valeur."
   },
   "SlightlyDamagedWoodenPlank": {
     "name": "Planche en bois fissurée",
@@ -3149,7 +3157,7 @@
   },
   "TheHonestCatsLittleLie": {
     "name": "Le petit mensonge du chat honnête",
-    "description": "Un roman à suspense. La conveture suggère que de nombreux lecteurs ont été attirés par les rebondissements inattendus de l'intrigue."
+    "description": "Un roman à suspense. La couveture suggère que de nombreux lecteurs ont été attirés par les rebondissements inattendus de l'intrigue."
   },
   "LiteratureClub": {
     "name": "Club de littérature",
@@ -3625,7 +3633,7 @@
   },
   "NorthlanderClaymore": {
     "name": "Épée à deux mains du nord",
-    "description": "Épée à deux mains du nord"
+    "description": "Une épée à deux mains inconnue venue du nord."
   },
   "NorthlanderCatalyst": {
     "name": "Catalyseur du nord",
@@ -3678,6 +3686,10 @@
   "LavenderMelon": {
     "name": "Melon lavande",
     "description": "Un fruit à la couleur vive, dont la chair à l'intérieur offre une sensation en bouche unique lorsqu'elle est cuite."
+  },
+  "Starshroom": {
+    "name": "Champitoile",
+    "description": "Un champignon dont le chapeau ressemble à une étoile à cinq branches. Il est doté d'une très forte vitalité. Une fois qu'il a atteint sa maturité, son chapeau se fend et s'ouvre en son centre."
   },
   "BirchWood": {
     "name": "Bois de bouleau",
@@ -4037,7 +4049,7 @@
   },
   "APreliminaryStudyOfSangonomiyaFolkBelief": {
     "name": "Étude préliminaire des croyances populaires de Sangonomiya",
-    "description": "Un texte écrit par Shihab Purbini, un historien moderne de Sumeru, deux ans avant la guerre civile d'Inazuma. Il décrit en détail les croyances populaires de l'Île de Watatsumi et des habitants de Sangonomiya, en plus de proposer des positions novatrices d'un point de vue académique."
+    "description": "Un texte écrit par Shihab Purbiruni, un historien moderne de Sumeru, deux ans avant la guerre civile d'Inazuma. Il décrit en détail les croyances populaires de l'Île de Watatsumi et des habitants de Sangonomiya, en plus de proposer des positions novatrices d'un point de vue académique."
   },
   "TheLifeOfMouunTheShrineMaiden": {
     "name": "La vie de la prêtresse Mouun",
@@ -4115,9 +4127,105 @@
     "name": "Bouteille de Petit Meng",
     "description": "Une bouteille qui contient les divers problèmes de Petit Meng. Vous vous demandez ce qu'il y a à l'intérieur..."
   },
+  "Lumenstone": {
+    "name": "Pierre de lumen",
+    "description": "Un minerai précieux extrait des profondeurs du Gouffre. On dit que cette pierre a des propriétés catalytiques.\\nDans l'obscurité des mines, elle paraît projeter une lumière éblouissante. Mais une fois sortie des tunnels du Gouffre, elle cesse de fonctionner.\\nCette pierre semble avoir d'autres propriétés uniques qui n'ont pas encore été découvertes."
+  },
+  "MuningsNote": {
+    "name": "Note de Muning",
+    "description": "Muning, le représentant spécial du Bureau des affaires civiles, vous a remis cette note. Bien qu'elle soit brève, le mot « interdit » apparaît huit fois. Vous obtiendrez l'aide dont vous avez besoin si vous donnez ceci à une aventurière nommée Zhiqiong."
+  },
+  "TreasureHoardersTreasureMap": {
+    "name": "Carte au trésor des Pilleurs de trésors",
+    "description": "Une carte au trésor déchirée en deux, puis éparpillée par les Pilleurs de trésors qui est désormais entière.\\nPeut-être est-il possible de trouver un trésor en suivant les indications qui figurent dessus ?"
+  },
+  "StorehouseSecurityKeyNo": {
+    "name": "Clé de sécurité de l'entrepôt 1",
+    "description": "La clé d'un entrepôt. Elle a été cachée dans un endroit facile à trouver, mais les Pilleurs de trésors n'ont pas réussi à mettre la main dessus. Ces gens manquent vraiment de professionnalisme..."
+  },
+  "ASetOfCannonballs": {
+    "name": "Lot de boulets de canon",
+    "description": "Des boulets de canon pour le démontagnateur, aussi connu sous le nom de « Dispositif de démolition à distance de sécurité - modèle 2156 ». Bien qu'ils aient été nettoyés de la substance inconnue qui les salissait grâce à l'Adjuvant, il en émane encore une odeur nauséabonde à laquelle on ne peut échapper, même en se bouchant le nez.\\nÇa ne donne pas du tout envie d'y toucher !"
+  },
+  "SpecialUnmovingEssentialOil": {
+    "name": "Huile essentielle Géo spéciale",
+    "description": "Un onguent dangereux confectionné selon la recette de Clitopho. L'extrait de concentré de deux huiles essentielles Géo qui entre dans sa composition lui confère les propriétés de cet élément.\\nRéputé pour son caractère instable, seuls les fous et les mineurs expérimentés osent l'utiliser, ce qui explique pourquoi on en voit rarement. Manipulez-le avec la plus grande précaution !"
+  },
+  "KeyToAStonyHall": {
+    "name": "Clé de la salle pierreuse",
+    "description": "Les observations préliminaires de Khedive indiquent que cet objet pourrait être la clé permettant de déverrouiller l'entrée de certaines ruines."
+  },
+  "PhotoOfAStrangeRock": {
+    "name": "Photo d'un rocher étrange",
+    "description": "Une photo que vous avez prise d'un de ces rochers étranges que l'on peut parfois voir sur les parois du Gouffre. Bien que vous ignoriez ce que signifient les motifs qui figurent dessus, ceux-ci pourraient sans doute être d'une grande utilité pour les travaux des chercheurs."
+  },
+  "AcademiaRecommendationLetter": {
+    "name": "Lettre de recommandation de l'Académie",
+    "description": "Une lettre soigneusement rédigée. Sur le cachet de l'enveloppe figure le sceau de « Khedive Pursina, chercheur en écologie ».\\nVous l'avez reçue de la part de Khedive en guise de remerciement. D'après lui, cette lettre serait encore plus précieuse que de l'or et permettrait d'obtenir l'aide des Purbiruni.\\nKhedive considère que récompenser quelqu'un sous forme pécuniaire est quelque chose d'insultant. Il faut espérer que ce n'est pas une tendance générale chez les gens de Sumeru..."
+  },
+  "OrbOfTheBlueDepths": {
+    "name": "Orbe des profondeurs bleues",
+    "description": "Un orbe étrange laissé par les ennemis de l'Abîme. En le regardant attentivement, c'est comme si l'on pouvait entrevoir les rêves des temps anciens cachés dans la brume."
+  },
+  "MinersKey": {
+    "name": "Clé de mineur",
+    "description": "Une clé que l'on trouve souvent dans les mines. On ignore comment elle a atterri ici."
+  },
+  "BlessingsOfWisdom": {
+    "name": "Bénédiction de sagesse",
+    "description": "Un objet suspect donné par Xamaran. Selon lui, il servirait à éliminer la source de l'énergie néfaste. Il contient des nutriments qui ont été absorbés par ce champignon géant, des agrégats de spores et... une bonne grosse dose d'humour."
+  },
+  "MountainatorCannonballFuseAttached": {
+    "name": "Boulet de démontagnateur avec détonateur",
+    "description": "Un boulet de canon sur lequel un détonateur est délicatement attachée. Il est prêt à être tiré à tout moment."
+  },
+  "ToyDoll": {
+    "name": "Poupée",
+    "description": "Un jouet appartenant à la fille du mineur Qi Ding. Il a l'air assez abîmé et il est difficile d'imaginer qu'un enfant puisse l'aimer. Mais la sophistication de ses coutures montre qu'il s'agissait autrefois d'un objet coûteux."
+  },
+  "FlowerOfFarsight": {
+    "name": "Fleur de clairvoyance",
+    "description": "L'une des six offrandes légendaires dispersées dans le Gouffre... Vraiment ? On dirait une fleur de Qingxin ordinaire qui vient de germer, car ses pétales blancs n'ont jamais été touchés par la rosée du matin.\\nQui sait combien de personnes ont gravi des sommets pour cueillir une fleur aussi fraîche ? Qui sait si cette fleur a été témoin de séparations ou de retrouvailles ?"
+  },
+  "Skyfeather": {
+    "name": "Plume de ciel",
+    "description": "L'une des six offrandes légendaires dispersées dans le Gouffre, une plume tombée d'un aigle qui a survolé le sommet d'une caverne. Les Millelithes aiment collectionner ces plumes solides comme des accessoires.\\nIl est dit que les plumes d'aigle conviennent aux guerriers vaillants et décorent souvent les armures et les armes des plus courageux, afin qu'ils puissent briser les formations ennemies avec la même vitesse que ce grand oiseau de proie."
+  },
+  "SundialOfAges": {
+    "name": "Cadran solaire des âges",
+    "description": "L'une des six offrandes légendaires dispersées dans le Gouffre. Ce cadran semble avoir vieilli, mais ses gravures encore très claires font qu'il peut toujours être utilisé aujourd'hui.\\nLe soleil est rarement visible dans le Gouffre, il est donc facile de perdre la notion du temps. Mais un jour viendra où ce cadran solaire pourra à nouveau mesurer le passage des années."
+  },
+  "CupOfCommons": {
+    "name": "Coupe des partages",
+    "description": "L'une des six offrandes légendaires dispersées dans le Gouffre. Cette relique n'a pas de valeur particulière, mais elle s'est retrouvée dans le butin des Pilleurs de trésors.\\nRemplie tour à tour de vin fin, de trésors et de sang, sa honte passée a désormais été lavée. Elle est prête à accueillir de nouveaux souvenirs."
+  },
+  "HelmOfWarding": {
+    "name": "Heaume de protection",
+    "description": "L'une des six offrandes légendaires dispersées dans le Gouffre. On l'a retrouvé dissimulé dans les quartiers d'habitation des mineurs. Ce casque peut facilement être confondu avec un casque de mineur au premier abord.\\nSa surface étant couverte d'éraflures, il a probablement servi de protection à d'innombrables mineurs."
+  },
+  "WarriorsSpear": {
+    "name": "Lance de guerrier",
+    "description": "L'une des six offrandes légendaires dispersées dans le Gouffre. Elle a été perdue au milieu du champ de bataille d'il y a cinq siècles. Le tranchant et la pointe de cette lance ont été usés par les années, ce qui ne la rend néanmoins pas moins menaçante.\\nOn peut imaginer que par le passé, cette lance a été brandie vaillamment par un guerrier, suscitant les acclamations des jeunes partout où elle passait, même au Gouffre."
+  },
+  "BrassRing": {
+    "name": "Anneau en cuivre",
+    "description": "Un anneau en cuivre obtenu d'une belette voleuse. Il brille et étincelle tellement qu'on peut s'imaginer que les belettes voleuses voulaient s'en servir pour attirer un compagnon. Cet anneau a l'air très précieux ! Son propriétaire doit être vraiment inquiet de l'avoir perdu."
+  },
+  "ShriveledSeed": {
+    "name": "Graine ratatinée",
+    "description": "Une graine flétrie en apparence, qui semble être séchée depuis longtemps. Le bon sens voudrait que cela soit une simple graine, mais elle a l'air d'avoir conservé une vitalité non négligeable.\\nIl est donc préférable de ne pas la manger pour l'instant..."
+  },
+  "LumenstoneOre": {
+    "name": "Minerai de lumen",
+    "description": "Le minerai brut à partir duquel est faite la pierre de lumen. En le travaillant un peu, il est possible de renforcer l'énergie de l'Adjuvant de pierre de lumen que vous possédez. Sans doute faudrait-il s'adresser à Jinwu pour cela..."
+  },
   "YueChuansDriftingBottle": {
     "name": "Bouteille de Yue Chuan",
     "description": "Une bouteille à la dérive qui contient la réponse de Yue Chuan à Petit Meng. Vous vous demandez si elle arrivera à son destinataire..."
+  },
+  "HiraizumisGoods": {
+    "name": "Affaires de Hiraizumi",
+    "description": "Du lait de soja frais. Il se détériorera rapidement s'il n'est pas conservé de manière adaptée."
   },
   "CellKey": {
     "name": "Clé de cellule",
@@ -4151,6 +4259,10 @@
     "name": "Encens exquis",
     "description": "Un encens que vous avez obtenu de Wang Ping'an. Il semble être de bonne qualité."
   },
+  "CuriousCube": {
+    "name": "Cube étrange",
+    "description": "Un objet inconnu que vous avez obtenu dans les profondeurs du Gouffre. Il ressemble à un puzzle à la fois complexe et ingénieux en forme de cube."
+  },
   "ANoteSomeoneStuffedYou": {
     "name": "Note transmise discrètement",
     "description": "Une note qui vous a été transmise discrètement pendant que vous marchiez dans les rues d'Inazuma. Elle comporte deux symboles étranges."
@@ -4170,6 +4282,14 @@
   "SpecialFortuneSlip": {
     "name": "Omikuji spécial",
     "description": "Un omikuji spécial qui parle de ce qui vous attend aujourd'hui. Cet omikuji n'a rien de différent par rapport aux autres omikuji, à part le fait que vous l'ayez obtenu via le faux bâtonnet en bambou.\\nQu'est-ce qu'il réserve ?"
+  },
+  "StrangeObject": {
+    "name": "Objet bizarre",
+    "description": "Un objet étrange que vous avez repêché dans les cours d'eau souterrains du Gouffre. C'est humide, et il est impossible de dire si c'est une chose vivante ou morte."
+  },
+  "BedrockKeyLocationDiagram": {
+    "name": "Schéma de l'emplacement des clés de substratum",
+    "description": "Un schéma simple dessiné par Zhiqiong. Il indique l'emplacement approximatif de plusieurs clés de substratum situées à la surface de la mine."
   },
   "LightMoraPurse": {
     "name": "Bourse de moras légère",
@@ -4227,6 +4347,10 @@
     "name": "« Les extraordinaires aventures {M#du voyageur}{F#de la voyageuse} »",
     "description": "« Il s'agit d'un roman léger plutôt classique, dont le contenu est essentiellement une version éditée de ce qu'est la vie en Teyvat. Ce qui est surprenant, cependant, c'est que l'auteur semble bien connaître l'Île de Watatsumi, avec des descriptions vivantes, presque réalistes. » - Mademoiselle Hina"
   },
+  "FrostglazeCrystal": {
+    "name": "Cristal givrémaillé",
+    "description": "Un morceau de cristal émaillé que l'on trouve dans les profondeurs du Gouffre. Ce cristal émaillé spécial était l'un des nombreux minerais à s'être répandu après la bataille contre une machine mystique appelée serpent kolpique. Bien que les cristaux émaillés proviennent du Gouffre, ce minerai est différent des autres.\\nLorsqu'il est exposé à la fois aux radiations d'autres cristaux azuréens et à la force de l'Abîme, un étrange motif en forme de vortex se forme à son sommet ; celui-ci procure une sensation froide au toucher qui glace le sang.\\nLa rencontre entre la puissance de la voûte céleste et l'énergie empoisonnée qui s'élève au ciel depuis les profondeurs de la terre donne leur forme actuelle à ces cristaux lisses à l'origine. On pourrait voir en cela un avertissement adressé à tous les mortels.\\nPuisque l'interaction entre ces forces a pu tordre la pierre et le métal de la sorte à elle seule, comment une courageuse héroïne ordinaire aurait-elle fait face à cette découverte si elle avait vu l'extrémité des profondeurs ténébreuses ?"
+  },
   "LightRealmSigil": {
     "name": "Sceau du Royaume de la lumière",
     "description": "Une marque qui symbolise la reconnaissance d'Ookami Tokoyo à Enkanomiya.\\nOn peut les donner en offrande à la statue de vassal pour améliorer la Boîte de Bokuso."
@@ -4234,6 +4358,18 @@
   "LightRealmCore": {
     "name": "Noyau du Royaume de la lumière",
     "description": "Vous avez découvert cette pierre mystérieuse en explorant le royaume obscur d'Enkanomiya.\\nLe Royaume de la lumière a donné aux humains des moyens supplémentaires de résister à l'Abîme."
+  },
+  "BloodiedSergeantsInsignia": {
+    "name": "Insigne ensanglanté de sergent",
+    "description": "L'insigne sanglant et boueux d'un sergent des Fatui. On ignore comment il a fini dans les profondeurs du Gouffre."
+  },
+  "CorporalNikolaysDiary": {
+    "name": "Note du caporal Nikolay",
+    "description": "Une lettre laissée par le caporal Nikolay. Elle semble être incomplète."
+  },
+  "MoraPurse": {
+    "name": "Bourse de moras",
+    "description": "Xu, de la Guilde des marchands de Feiyun, vous a demandé de remettre ceci au représentant spécial du Hall Huishan, Muning, qui se trouve au Gouffre. Elle contient une somme assez importante de moras."
   },
   "AFirsthandGuideToSummoningSpirits": {
     "name": "Guide pratique sur le spiritisme",
@@ -4267,6 +4403,10 @@
     "name": "Hakuen Michimitsu d'Amenoma",
     "description": "Une épée transmise de génération en génération au sein du Clan Iwakura.\\nCette arme fut forgée par un artisan au talent exceptionnel et nombreux sont les ennemis qui connurent le trépas sous ses coups. Cependant, elle ne possède aucun pouvoir spécial. Tout comme aucun descendant du Clan Iwakura n'a possédé d'œil divin, leurs prouesses à l'épée ne furent que le résultat d'un perfectionnement du corps, de l'esprit et de la technique.\\nAyant passé une éternité sous l'eau, sa lame est complètement rouillée."
   },
+  "WoodenCageKey": {
+    "name": "Clé de cage en bois",
+    "description": "Quelqu'un de la Commission économique a laissé cette clé. Avec elle, il doit être possible de sauver Shinnojou."
+  },
   "DamagedStoneSlate": {
     "name": "Stèle endommagée",
     "description": "Une ardoise de pierre apparemment ordinaire. Qui sait quels secrets elle pourrait contenir..."
@@ -4274,6 +4414,178 @@
   "MysteriousStoneSlate": {
     "name": "Stèle mystérieuse",
     "description": "La dernière stèle de pierre que vous avez obtenue. Des secrets enfouis dans d'autres secrets..."
+  },
+  "YanbosNote": {
+    "name": "Note de Yanbo",
+    "description": "Une note rédigée soigneusement plus ou moins complète. Il semble s'agir d'une missive destinée à un vieil ami."
+  },
+  "NikolaysLetter": {
+    "name": "Lettre de Nikolay",
+    "description": "Une lettre que vous avez trouvée sur un des Chevaliers des Serpents noirs. Le nom du destinataire de la lettre a été rédigé soigneusement dessus : « Katarina Snezhevna, ma chère sœur aînée ». Celui de l'expéditeur a été écrit de manière quelque peu hâtive, bien qu'il soit tout de même lisible : « Ton frère, Nikolay Snezhevich. »"
+  },
+  "FragrantSeasoning": {
+    "name": "Assaisonnement parfumé",
+    "description": "Un assaisonnement créé à partir d'une recette de Nazafarin. Grâce à son arôme intense, il peut rehausser la saveur de tout plat auquel il est ajouté."
+  },
+  "FragrantVegetarianAbalone": {
+    "name": "Ormeau végétarien (parfumé)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantMintSalad": {
+    "name": "Salade de menthe froide (parfumée)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantTripleLayeredConsomm": {
+    "name": "Pâté aux trois saveurs (parfumé)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "ZhiqiongsLetter": {
+    "name": "Lettre de Zhiqiong",
+    "description": "Une lettre laissée par une jeune aventurière. Elle porte un parfum légèrement amer de fleur de Qingxin."
+  },
+  "ArrivalSchedule": {
+    "name": "Tableau des arrivées",
+    "description": "Un tableau sur lequel sont indiquées les horaires d'arrivées des bateaux qui transportent les invités d'honneur du Festival Irodori.\\nVotre tâche est d'accueillir les invités au port de Ritou selon les informations de ce tableau et de les assister si nécessaire."
+  },
+  "FiveKasenSummary": {
+    "name": "Résumé des Cinq Kasen",
+    "description": "Un document contenant des informations sur les Cinq Kasen compilées par Hirayama, l'éditeur en chef de la Chambre Yae. Celles-ci peuvent aider Calx à réaliser les portraits de ces poètes légendaires.\\nBien que son contenu soit peu fourni, il donne un aperçu de l'apparence et de la galanterie des Cinq Kasen."
+  },
+  "TheFiveKasensSplendorSuikou": {
+    "name": "Splendeur des Cinq Kasen - Suikou",
+    "description": "Un morceau de papier que Venti a trouvé dans une caisse de marchandises dans l'entrepôt du port. Un poème intitulé « Splendeur des Cinq Kasen - Suikou » est écrit dessus."
+  },
+  "TheFiveKasensSplendorAoiNoOkina": {
+    "name": "Splendeur des Cinq Kasen - Aoi no Okina",
+    "description": "Un morceau de papier que Xingqiu a trouvé sous ses bagages. Quelqu'un semble l'avoir posé à cet endroit alors qu'il faisait la sieste. Un poème intitulé « Splendeur des Cinq Kasen - Aoi no Okina. » est écrit dessus."
+  },
+  "TheFiveKasensSplendorAkahito": {
+    "name": "Splendeur des Cinq Kasen - Akahito",
+    "description": "Un morceau de papier laissé par une personne mystérieuse. Celle-ci avait sûrement l'intention de le placer dans les vêtements de Kazuha, avant de se faire repérer par ce dernier et être forcée de fuir en toute hâte. Un poème intitulé « Splendeur des Cinq Kasen - Akahito » est écrit dessus."
+  },
+  "TheFiveKasensSplendorSumizome": {
+    "name": "Splendeur des Cinq Kasen - Sumizome",
+    "description": "Un morceau de papier trouvé par Ayaka sur un présentoir à fleurs au Festival Irodori. Il ne contient qu'une seule ligne de texte."
+  },
+  "AncientForgingBlueprint": {
+    "name": "Ancien plan de forge",
+    "description": "Un plan de forge très ancien. La Shogun a un jour ordonné au Clan Kaedehara de forger un goshintou d'après ce plan.\\nAprès avoir été trempé dans l'eau, une partie de l'encre est devenue trouble. De toute évidence, quelqu'un a trafiqué ce plan pour faire échouer le travail des forgerons du clan, ce qui a déclenché la tragédie qui s'ensuivit..."
+  },
+  "KaedeharaYoshinorisLetter": {
+    "name": "Lettre de Kaedehara Yoshinori",
+    "description": "Un morceau de papier vierge qui a été caché dans un vieux pot de fleurs. Après avoir raconté à tout le monde la vérité qu'elle recelait, Kazuha a affirmé que cette lettre pouvait être encore utile avant de vous la remettre."
+  },
+  "TaliesinsManuscript": {
+    "name": "Manuscrit de Taliesin",
+    "description": "Un manuscrit de poèmes très épais. En étant généreux, on pourrait le qualifier son contenu de tout juste passable. Cependant, un critique plus honnête le décrirait comme un « calvaire à la lecture ». Cet ouvrage se lit davantage comme un livre d'histoire soporifique plutôt qu'un recueil de poèmes."
+  },
+  "FragrantStirFriedShrimp": {
+    "name": "Crevettes sautées (parfumées)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantGoldenShrimpBalls": {
+    "name": "Boulettes de crevettes dorées (parfumées)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantQingceStirFry": {
+    "name": "Délices rustiques de Qingce (parfumés)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantBlackBackPerchStew": {
+    "name": "Marmite de perche à dos noir (parfumée)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantStirFriedFilet": {
+    "name": "Viande sautée (parfumée)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantGrilledTigerFish": {
+    "name": "Poisson chihu grillé (parfumé)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantCrabRoeTofu": {
+    "name": "Crabe au tofu (parfumé)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantGoldenCrab": {
+    "name": "Crabe doré (parfumé)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantJewelrySoup": {
+    "name": "Soupe aux perles et au jade (parfumée)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantBambooShootSoup": {
+    "name": "Soupe de porc aux pousses de bambou (parfumée)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantNoodlesWithMountainDelicacies": {
+    "name": "Nouilles aux délices de la montagne (parfumées)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantMoraMeat": {
+    "name": "Viande-mora (parfumée)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantStirFriedFishNoodles": {
+    "name": "Nouilles sautées au poisson (parfumées)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantUniversalPeace": {
+    "name": "Paix universelle (parfumée)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantRiceBuns": {
+    "name": "Boules de riz gluant (parfumées)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantAlmondTofu": {
+    "name": "Tofu aux amandes (parfumé)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantLotusFlowerCrisp": {
+    "name": "Beignets lotus (parfumés)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "SayusSalary": {
+    "name": "Salaire de Sayu",
+    "description": "Cet argent était initialement destiné à acheter de la literie pour améliorer la qualité du sommeil de Sayu, mais elle n'a pas l'intention envie de sommeiller éternellement ici."
+  },
+  "StatueOfHerExcellencyTheAlmightyNarukamiOgoshoGodOfThunder": {
+    "name": "Statuette de Son Excellence, la toute-puissante Narukami Ogosho",
+    "description": "La statuette de Son Excellence, la toute-puissante Narukami Ogosho, divinité du tonnerre que Sara désire tant. Allez vite la lui offrir."
+  },
+  "KokomisShoppingList": {
+    "name": "Liste de courses de Kokomi",
+    "description": "La liste de livres à acheter de Kokomi. Rédigée dans une belle écriture et clairement numérotée, elle indique toutes les catégories des ouvrages, leurs prix et le nombre d'exemplaires à acquérir."
+  },
+  "ToyFox": {
+    "name": "Jouet renard",
+    "description": "Le cadeau que Gorou a reçu pour avoir aidé Kokomi à acheter des livres pendant le Festival Irodori. Gorou vous l'a ensuite offert pour vous remercier de l'avoir accompagné.\\nChaque fois que l'on regarde ce jouet, on ne peut s'empêcher de penser à la manière dont les poils de Gorou se hérissent lorsqu'il entend le mot « renard »."
+  },
+  "ALegendOfSwordVI": {
+    "name": "Une légende d'épée - VI",
+    "description": "« Une guerre dans l'espace n'est guère différente d'un conflit civil qui a éclaté il y a dix ans sur cette terre stérile... » Le nom de cet homme sera connu de toute la galaxie, au même titre que celui de l'Empereur."
+  },
+  "ShogunAlmightyRebornAsRaidenWithUnlimitedPower": {
+    "name": "Shogun toute-puissante — Comment j'ai été réincarnée en Raiden aux pouvoirs illimités",
+    "description": "Un roman léger qui connaît du succès à Inazuma. Il raconte l'histoire d'un mortel qui se transforme soudainement en Shogun Raiden. Bien accueillie par la critique pour son intrigue novatrice, cette œuvre est devenue une source d'inspiration pour de nombreux autres auteurs de romans."
+  },
+  "PrettyPleaseKitsuneGuuji": {
+    "name": "S'il te plaît, ma Guuji Kitsune ?",
+    "description": "Un roman léger qui connaît du succès à Inazuma. Il raconte l'histoire de la Shogun incapable et de la guuji Kitsune aux talents extraordinaires et se déroule dans le même univers que « Shogun toute-puissante — Comment j'ai été réincarnée en Raiden aux pouvoirs illimités ». Ces œuvres ont des auteurs différents, mais suscitent le même engouement."
+  },
+  "LetsGoDodoco": {
+    "name": "Allez, Dodoco !",
+    "description": "Message de l'éditeur : « Allez, Dodoco ! » est une œuvre née de la collaboration entre deux filles dont l'une est plus jeune que l'autre. Leur gentillesse et leur bienveillance transparaissent dans chaque chapitre, car cette histoire est un cadeau qu'elles offrent aux lecteurs. J'espère que ce livre vous fera sourire après une longue journée de travail."
+  },
+  "JinwusSoup": {
+    "name": "Soupe de Jinwu",
+    "description": "Une soupe épaisse que Jinwu a préparée pour les mineurs malades. Elle est nourrissante, parfumée et vous réchauffe quand vous la buvez.\\nElle l'a cuisinée avec tout son cœur, ne la laissez pas refroidir."
+  },
+  "BagOfOrnaments": {
+    "name": "Sac de bijoux",
+    "description": "Un sac de bijoux que Chou vous a remis pour dédommager Tang Wuchou. Il est rempli de bijoux de facture grossière fabriqués par les Pilleurs de trésors à partir de minerai de contrebande. Ceux-ci, disposant de peu de qualités esthétiques, ne se vendront pas à Liyue. La seule chose positive que l'on puisse dire de ces accessoires est qu'ils ont au moins été fabriqués avec les bons matériaux..."
   },
   "PyroShard": {
     "name": "Fragment Pyro",
@@ -4686,6 +4998,10 @@
   "MoonchaseCharm": {
     "name": "Amulette sélénite",
     "description": "Ce genre d'amulette sculptée à partir d'un fragment de plaustrite présente un éclat chaleureux et une clarté cristalline. Elle contiendrait l'essence de la lune et renfermerait les souvenirs festifs d'une grande importance."
+  },
+  "Lumenspar": {
+    "name": "Cristal de lumen",
+    "description": "Un cristal bleu ciel qui scintille si fort qu'il fait résonner les échos des cieux, inaudibles depuis le sous-sol...\\nSi vous le portez à votre oreille, vous pouvez presque entendre un doux soupir venant de son intérieur.\\nBien que cela puisse sembler étrange, ce cristal dégage également une certaine tiédeur."
   },
   "Dish": {
     "name": "Plat",
@@ -6191,6 +6507,34 @@
     "name": "Udon porte-bonheur",
     "description": "Spécialité culinaire de Yae Miko. Le tofu frit a été spécialement préparé par la solennelle dame Kitsune. Il paraît que si vous mangez tout d'une traite de bon cœur, vous aurez la protection de la grande Kitsune. Le malheur s'enfuira et la fortune vous sourira !"
   },
+  "SuspiciousKatsuSandwich": {
+    "name": "Sandwich à la viande (suspect)",
+    "description": "Un repas équilibré. Un steak plutôt sec accompagné par des feuilles de légumes flétries et des tranches de pain trop épaisses... Mais il faut bien manger..."
+  },
+  "KatsuSandwich": {
+    "name": "Sandwich à la viande",
+    "description": "Un repas équilibré. Une tranche de viande à la coupe épaisse entre deux tranches de pain avec une sauce parfumée, légèrement aigre-douce pour éviter que ce repas ne soit trop riche. Un brillant mélange des saveurs locales et étrangères."
+  },
+  "DeliciousKatsuSandwich": {
+    "name": "Sandwich à la viande (délicieux)",
+    "description": "Un repas équilibré. Le pain parfumé et moelleux vous rassasie, tandis que le steak tendre et juteux titille vos sens. Une seule bouchée suffit pour vous remplir de satisfaction de la langue aux tripes. Qui est la personne qui a eu l'idée de cette brillante combinaison ?"
+  },
+  "SuspiciousRainbowAster": {
+    "name": "Aster arc-en-ciel (suspect)",
+    "description": "Une boisson unique en son genre. Rien qu'à sa couleur, elle n'a pas l'air mauvaise. Son goût est acceptable si l'on peut faire abstraction de l'âpreté apportée par la mauvaise utilisation des melons lavande..."
+  },
+  "RainbowAster": {
+    "name": "Aster arc-en-ciel",
+    "description": "Une boisson unique en son genre. Mentionnée à l'origine dans le célèbre roman léger « S'il te plaît, ma Guuji Kitsune ? », elle est devenue réalité grâce à un partenariat entre Vent du Voyage et la Chambre Yae, qui ont réussi à restituer sa saveur extraordinaire. Cette version ne contient aucun produit à base de haricot, ce qui la rend légèrement différente de l'édition spéciale limitée qui était disponible pendant le Festival Irodori. Au moins, elle ne risque pas de déclencher des allergies aux haricots."
+  },
+  "DeliciousRainbowAster": {
+    "name": "Aster arc-en-ciel (délicieux)",
+    "description": "Une boisson unique en son genre. Le lys calla de Mondstadt et le melon de lavande d'Inazuma se rencontrent par-delà les montagnes et les mers avant de voir leurs saveurs se mélanger à la perfection grâce à un lait onctueux, procurant un plaisir nouveau à celui qui le goûte. Il n'est pas étonnant que la Shogun malade du conte ait été revigorée par une telle boisson !"
+  },
+  "QuietElegance": {
+    "name": "Élégance tranquille",
+    "description": "Spécialité culinaire de Kamisato Ayato. La présentation de ce plat est exquise et élégante, à l'image de la manière dont Ayato gère toutes ses affaires. Rajouter un peu plus d'ingrédients aurait été excessif, mais en enlever aurait donné le sentiment que le plat manquait de quelque chose. En le dégustant, on est surpris de constater que sa saveur est identique à celle des plats de la Pagode Uyou. Alors que vous tendez vos baguettes vers le camélia cristallin posé dans votre assiette pour le manger, Ayato vous arrête... « C'est quelque chose que j'ai fait pendant que je m'entraînais au sabre. Ce n'est qu'une décoration. »"
+  },
   "RecipeItem": {
     "name": "Ingrédient",
     "description": "Objet pour débloquer des recettes"
@@ -6623,6 +6967,14 @@
     "name": "Recette : Udon",
     "description": "Étapes de préparation des udon."
   },
+  "RecipeKatsuSandwich": {
+    "name": "Recette : Sandwich à la viande",
+    "description": "Étapes de préparation du sandwich à la viande."
+  },
+  "RecipeRainbowAster": {
+    "name": "Recette : Aster arc-en-ciel",
+    "description": "Étapes de préparation de l'aster arc-en-ciel."
+  },
   "CraftedItems": {
     "name": "Produit synthétisé",
     "description": "Objet obtenu du système de synthèse"
@@ -6829,15 +7181,15 @@
   },
   "GloomyStatuette": {
     "name": "Statuette sinistre",
-    "description": "Une petite statue à l'effigie d'une personne inconnue. Après tout ce temps, elle est restée en parfait état."
+    "description": "Une statuette sculptée à l'effigie d'une personne inconnue.\\nElle a été témoin du passage du temps, mais demeure intacte. Son précédent propriétaire semble l'avoir chérie comme une icône sainte."
   },
   "DarkStatuette": {
     "name": "Statuette maudite",
-    "description": "Une petite statue à l'effigie d'une personne inconnue. Imprégnée d'un pouvoir obscur et maléfique, la tenir dans vos mains donne la chair de poule."
+    "description": "Une statuette sculptée à l'effigie d'une personne inconnue qui ne possédait qu'un œil.\\nVous sentez une chaleur s'en dégager lorsque vous la tenez, comme si c'était l'épaule d'un ami cher. Peut-être que cette statuette peut donner le courage de persévérer aux gens qui comprennent son importance."
   },
   "DeathlyStatuette": {
     "name": "Statuette maléfique",
-    "description": "Une statuette sculptée dans une matière inconnue qui dégage une énergie maléfique. Ne la contemplez pas trop longtemps ou vous commencerez à entendre des voix inquiétantes vous chuchoter à l'oreille..."
+    "description": "Une statuette à un œil qui émet une certaine énergie et dont la matière première est inconnue.\\nEn la regardant, vous pouvez presque entendre un murmure à peine audible...\\n« Vois, mon enfant. Tout ce qui se trouve sous le trône du ciel finira détruit dans la tourmente. L'obscurité de la sérénité éternelle nous enveloppera tous. »"
   },
   "DeadLeyLineBranch": {
     "name": "Branche morte des lignes énergétiques",
@@ -6995,6 +7347,18 @@
     "name": "Serre dissimulée",
     "description": "La griffe tranchante d'un canidé de faille.\\nToutes les merveilles du monde ne font pas le poids face au Cretaceus, la plus belle création de toutes."
   },
+  "FungalSpores": {
+    "name": "Spores de Fongus",
+    "description": "Une petite quantité de poudre de spores lumineuses laissée par un Fongus. Un éternuement suffit à la faire s'envoler sans aucune trace."
+  },
+  "LuminescentPollen": {
+    "name": "Pollen fluorescent",
+    "description": "Un petit paquet de spores fluorescentes qui provient d'un Fongus. Il s'agit d'un ingrédient médicinal commun dans les pays avec des forêts tropicales. Les marchands en vendent souvent dans des sachets en papier."
+  },
+  "CrystallineCystDust": {
+    "name": "Poussière cristalline de sporange",
+    "description": "Un gros amas de poudre de spores qui a été prélevé d'un kyste complet. Si vous le placez dans un environnement adapté, celui-ci pourrait se remplir de Fongus avec le temps..."
+  },
   "HurricaneSeed": {
     "name": "Graine d'ouragan",
     "description": "La forme effondrée d'une Hypostase Anémo après avoir été vaincue. Elle contient un pouvoir Anémo d'une grande pureté.\\nLa légende raconte qu'un petit papillon fragile possède également le pouvoir de provoquer un ouragan. Ce papillon fait partie du vent pur, attendant avec patience le jour pour invoquer à nouveau l'ouragan."
@@ -7125,11 +7489,15 @@
   },
   "TearsOfTheCalamitousGod": {
     "name": "Larmes de la divinité calamiteuse",
-    "description": "Une articulation de marionnette obtenue dans le plan euthymique. Le geste ici a la forme du funeste œil de jugement orageux.\\nÉtant donné qu'elles sont capables d'abattre la malédiction et de faire pleuvoir les catastrophes d'un simple regard, il peut paraître naturel d'attribuer les malheurs de la vie aux divinités calamiteuses. Cependant, si on y réfléchit d'un peu plus prêt, quand notre volonté est assez forte et nos convictions suffisamment fermes...\\nPeu importe les catastrophes, même un œil maléfique peut se laver de ses larmes."
+    "description": "Une articulation de marionnette obtenue dans le plan euthymique. Le geste ici a la forme du funeste œil de jugement orageux.\\nÉtant donné qu'elles sont capables d'abattre la malédiction et de faire pleuvoir les catastrophes d'un simple regard, il peut paraître naturel d'attribuer les malheurs de la vie aux divinités calamiteuses. Cependant, si on y réfléchit d'un peu plus près, quand notre volonté est assez forte et nos convictions suffisamment fermes...\\nPeu importe les catastrophes, même un œil maléfique peut se laver de ses larmes."
   },
   "TheMeaningOfAeons": {
     "name": "Signification d'une éternité",
     "description": "Un petit couvre-chef que vous avez récupéré quand le calme est revenu dans le plan euthymique.\\nUne seule pensée peut mettre fin à toutes les calamités, et il y aura toujours des pensées pour transcender le temps.\\nMais au milieu de toutes ces catastrophes, on peut se demander si le véritable message de Makoto a pu faire son chemin."
+  },
+  "RunicFang": {
+    "name": "Croc runique",
+    "description": "Un « croc » qui a permis à la mystérieuse machine antique à l'apparence de serpent de creuser dans les profondeurs de la montagne. Il présente des gravures de runes funestes.\\nD'après la légende, des serpents géants se tapissent dans les entrailles du sol. Nourrissant une haine et une malveillance éternelle envers la surface, ils creusent d'immenses tunnels sans que personne ne sache leur but sinistre."
   },
   "TileOfDecarabiansTower": {
     "name": "Tuile cassée de Décabarian",
@@ -7149,7 +7517,7 @@
   },
   "BorealWolfsMilkTooth": {
     "name": "Dent de lait du Loup boréal",
-    "description": "Matériau d'élévation d'arme.\\nFidèles vassaux d'Andros, les loups sont bénis d'une grande vigueur. Une simple dent de lait de louveteau renferme donc des pouvoirs considérables.\\nLes Archons avaient pour devoir d'aimer l'humanité entière, mais le Roi Loup montrait de la considération qu'envers les parias et les nourrissons."
+    "description": "Matériau d'élévation d'arme.\\nFidèles vassaux d'Andros, les loups sont bénis d'une grande vigueur. Une simple dent de lait de louveteau renferme donc des pouvoirs considérables.\\nLes Archons avaient pour devoir d'aimer l'humanité entière, mais le Roi Loup ne montrait de la considération qu'envers les parias et les nourrissons."
   },
   "BorealWolfsCrackedTooth": {
     "name": "Croc brisé du Loup boréal",
@@ -7375,6 +7743,18 @@
     "name": "Paquet de jardinage spécial de Sakuya",
     "description": "Un kit de jardinage que vous avez reçu de Sakuya. Utilisez-le pour obtenir une des trois jardinières proposées."
   },
+  "YashiroCommissionGift": {
+    "name": "Cadeau de la Commission culturelle",
+    "description": "Un cadeau de la part de la Commission culturelle. Il semble que ce soit une décoration des plus raffinées."
+  },
+  "ExquisiteGiftFurnishing": {
+    "name": "Décoration exquise reçue en cadeau",
+    "description": "Un cadeau de la part d'une certaine personne. Il semble que ce soit une décoration des plus raffinées."
+  },
+  "AmazingGiftFurnishing": {
+    "name": "Décoration fantastique reçue en cadeau",
+    "description": "Un objet visant à promouvoir un certain roman léger. Il semble que ce soit une décoration des plus raffinées."
+  },
   "BEP": {
     "name": "EXP PB",
     "description": "Votre carnet de voyage contient tout ce que vous avez vécu au cours de votre périple. Ces expériences deviendront un jour matière à chansons."
@@ -7413,15 +7793,15 @@
   },
   "DomainReliquaryTierIII": {
     "name": "Reliquaire des profondeurs - Catégorie III",
-    "description": "Un reliquaire qui renferme un artéfact. Que son détenteur trouve l'amour."
+    "description": "Un reliquaire utilisé pour ranger des artéfacts. Que celui qui le voit soit aimé.\\n\\nChaque reliquaire vous accordera un artéfact des sets suivants :\\n· Berserker\\n· Instructeur\\n· Exilé"
   },
   "DomainReliquaryTierII": {
     "name": "Reliquaire des profondeurs - Catégorie II",
-    "description": "Un reliquaire qui renferme un artéfact. Que son détenteur soit béni."
+    "description": "Un reliquaire utilisé pour ranger des artéfacts. Que celui qui le voit soit béni.\\n\\nChaque reliquaire vous accordera un artéfact des sets suivants :\\n· Rideau du gladiateur\\n· Bande vagabonde\\n· Berserker\\n· Instructeur\\n· Exilé"
   },
   "DomainReliquaryTierI": {
     "name": "Reliquaire des profondeurs - Catégorie I",
-    "description": "Un reliquaire qui renferme un artéfact. Que son détenteur soit miraculé."
+    "description": "Un reliquaire utilisé pour ranger des artéfacts. Que celui qui le voit soit miraculé.\\n\\nChaque reliquaire vous accordera un artéfact des sets suivants :\\n· Rideau du gladiateur\\n· Bande vagabonde"
   },
   "ReliquaryWanderersTroupeAndGladiator": {
     "name": "Reliquaire : la Compagnie Vagabonde et le Gladiateur",
@@ -7713,7 +8093,7 @@
   },
   "Steelwing": {
     "name": "Ailes d'acier",
-    "description": "Lorsqu'un personnage plane ou se retrouve en l'air suite à un saut, il gagne un cumul d'Ailes d'acier toutes les 0,3 s, jusqu'à un maximum de 3 cumuls. Lorsque le personnage exécute une attaque plongeante, chaque cumul d'Ailes d'acier augmente les DGT de cette attaque de 35 %. Tous les cumuls d'Ailes d'acier de ce personnage sont alors consommés."
+    "description": "Lorsqu'un personnage plane ou se retrouve en l'air suite à un saut, il obtient 1 cumul d'Ailes d'acier toutes les 0,3 s, jusqu'à un maximum de 3 cumuls. Lorsque le personnage exécute une attaque plongeante, chaque cumul d'Ailes d'acier augmente les DGT de cette attaque de 35 %. Tous les cumuls d'Ailes d'acier de ce personnage sont alors consommés."
   },
   "Galespring": {
     "name": "Source du vent",
@@ -7749,7 +8129,7 @@
   },
   "Courageous": {
     "name": "Vaillance",
-    "description": "Lorsqu'un personnage sous la protection d'un bouclier touche un ennemi avec une attaque normale, son ATQ augmente de 10 %. Cet effet peut être cumulé 5 fois et dure 8 s. Cet effet, ses cumuls et sa durée sont calculés indépendamment pour tous les personnages."
+    "description": "Lorsqu'un personnage sous la protection d'un bouclier touche un ennemi avec une attaque normale, son ATQ augmente de 10 %. Cet effet peut être cumulé 5 fois maximum et dure 8 s. Cet effet, ses cumuls et sa durée sont calculés indépendamment pour tous les personnages."
   },
   "Emboldened": {
     "name": "Galvanisé",
@@ -7817,7 +8197,7 @@
   },
   "StarcrystalDance": {
     "name": "Fragment d'étoile",
-    "description": "Lorsqu'un personnage obtient un fragment élémentaire créé par une réaction Géo, il libère une petite onde de choc, infligeant des DGT aux ennemis proches équivalant à 500 % de son ATQ. De plus, tous les personnages de l'équipe obtiennent un bonus de DGT Géo de 40 % pendant 10 s. Cet effet peut être déclenché une fois toutes les 5 s, et son TdR est partagé entre tous les personnages de l'équipe."
+    "description": "Lorsqu'un personnage obtient un fragment élémentaire créé par une réaction Géo, il libère une petite onde de choc, infligeant des DGT aux ennemis proches équivalant à 500 % de son ATQ. De plus, tous les personnages de l'équipe bénéficient d'un bonus de DGT Géo de 40 % pendant 10 s. Cet effet peut être déclenché une fois toutes les 5 s, et son TdR est partagé entre tous les personnages de l'équipe."
   },
   "RefractionCrystals": {
     "name": "Polarisation cristalline",
@@ -8331,6 +8711,26 @@
     "name": "PB - Éveil",
     "description": "Thème.\\nLes Trois Royaumes tremblent, alors que le ciel et la terre s'éveillent. Les sangocorex, eux aussi, se relèvent de leur sommeil éternel."
   },
+  "KamisatoAyatoRipple": {
+    "name": "Kamisato Ayato - Ondulation",
+    "description": "Thème.\\nSur la surface de l'étang le camélia se pose, et mille ondulations à travers les eaux se composent"
+  },
+  "LumensStoneOfLight": {
+    "name": "Lumen - Pierre de lumière",
+    "description": "Thème.\\nQue coule dans ce cristal azuréen sans nom et sans voix ? Les secrets des cieux ? Ou les murmures de l'abîme ?"
+  },
+  "AchievementThunderclap": {
+    "name": "Succès - Coup de tonnerre",
+    "description": "Thème.\\nÉcoutez le son qui vient des nuages. C'est une rage rancunière, et l'expression d'un souhait."
+  },
+  "AchievementChasm": {
+    "name": "Succès - Gouffre",
+    "description": "Thème.\\nLà où autrefois les mineurs creusaient assidûment des tunnels ne reste que le silence. Seuls les cristaux émaillés et les moelles pierreuses, tous deux millénaires, dégagent encore un faible éclat."
+  },
+  "TravelNotesIrodori": {
+    "name": "PB - Irodori",
+    "description": "Thème.\\nCeux qui partagent un loisir sont connus comme un groupe de fans. Dépêchez-vous d'inventer ces histoires avant que la responsable éditoriale Kitsune n'invente une règle sur les droits d'auteur... Ou peut-être qu'elle y a déjà pensé, mais que cela ne le dérange pas du tout ?"
+  },
   "AnemoculusResonanceStone": {
     "name": "Pierre de résonance Anémoculus",
     "description": "Outil permettant de détecter les Anémoculus proches à Mondstadt.\\nUn disque de pierre fabriqué par l'homme, dont les caractéristiques se rapprochent de celles des Statues des Sept et capable de résonner avec les Anémoculus.\\nCe type de pierre résonnant avec les Oculus est un dérivé maladroit des Statues des Sept construites autrefois à travers les terres. C'est précisément cette infériorité qui explique cette soif de résonance vis-à-vis des statues représentant les Archons, en faisant un ustensile prisé des aventuriers et des croyants pour la collecte d'Oculus."
@@ -8404,7 +8804,7 @@
     "description": "Un dispositif qui permet de convertir les matériaux qu'on y place en d'autres matériaux.\\n· Durant le processus de transmutation, vous devez utiliser des <undefined>attaques élémentaires</undefined> pour générer l'énergie nécessaire à la transmutation.\\n· Une fois obtenu le produit d'une transmutation, vous devez attendre 7 jours avant de pouvoir recommencer.\\n\\nL'étrange et ancien appareil que vous avez découvert dans les ruines possède le pouvoir d'accélérer les cycles naturels pour transmuter les objets. De manière générale, toute chose obéit à un certain cycle. Souvenirs et éléments abondent dans les lignes énergétiques, les fruits pourris retournent à la terre, et les arbres nés du sol porteront à leur tour quelque fruit cristallin..."
   },
   "InquisitiveEndora": {
-    "name": "Endora",
+    "name": "Endora la curieuse",
     "description": "Étrange et jeune Océanide, emplie de curiosité à l'égard du monde.\\nLes Océanides sont capables de changer de forme, et peuvent fusionner avec d'autres corps aqueux pour synchroniser émotions et connaissances. Endora est encore jeune, mais est particulièrement curieuse. Elle peut cracher des bulles qui fusionnent avec les autres corps aqueux, ce qui lui permet de parfaire ses connaissances."
   },
   "Endora": {
@@ -8489,7 +8889,11 @@
   },
   "LaunchTube": {
     "name": "Tube de tir",
-    "description": "Un objet créé par Pengyu qui permet la création et le tir automatique de feux d'artifice. Une âme créative pourrait donner naissance à un splendide spectacle grâce aux possibilités infinies qu'il propose."
+    "description": "Un objet créé par Pengyi qui permet la création et le tir automatique de feux d'artifice. Une âme créative pourrait donner naissance à un splendide spectacle grâce aux possibilités infinies qu'il propose."
+  },
+  "LumenstoneAdjuvant": {
+    "name": "Adjuvant de pierre de lumen",
+    "description": "Une pierre précieuse capable d'émettre de la lumière lorsqu'elle est portée dans les Mines souterraines du Gouffre.\\n\\nBien que sa composition partage certaines caractéristiques avec les cristaux émaillés du Gouffre, cette pierre contient un pouvoir encore plus grand.\\nQu'il soit comme un soleil dans votre paume, éclairant le chemin à travers les tunnels sans lumière et apportant du réconfort là où tout est sombre."
   },
   "BokusoBox": {
     "name": "Boîte de Bokuso",
@@ -8665,7 +9069,7 @@
   },
   "PactOfStarsAndMoon": {
     "name": "Pacte des étoiles et de la lune",
-    "description": "Tenue de Mona. Un costume spécialement conçu pour englober le concept astrologique du « moment destiné », obtenu grâce au coupon de remboursement de 30 % après avoir rendu le globe céleste !"
+    "description": "Tenue de Mona. Un costume spécialement conçu pour englober le concept astrologique du «{NON_BREAK_SPACE}moment destiné{NON_BREAK_SPACE}», obtenu grâce au coupon de remboursement de 30{NON_BREAK_SPACE}% après avoir rendu le globe céleste{NON_BREAK_SPACE}!"
   },
   "ToTheChurchsFreeSpirit": {
     "name": "Dévote non-conformiste",
@@ -8761,7 +9165,7 @@
   },
   "CargoTransferStation": {
     "name": "Station de transfert de marchandises",
-    "description": "Étapes de mise en place de la station de transfert de marchandises.\\nUn point de transit pour les marchandises qui sont en déplacement d'un endroit à un autre. Les caisses de chargement empilées et les tonneaux de bois sont entreposés près des boissons des travailleurs.\\nLes bouteilles et les cruches ont beau être solides à l'heure actuelle, elles cassent toujours sous le poids d'un objet très lourd. C'est pourquoi les travailleurs ont toujours eu l'espoir d'obtenir une étagère de la part de leur contremaître pour éviter de laisser les bouteilles à même le sol.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
+    "description": "Étapes de mise en place de la station de transfert de marchandises.\\nUn point de transit pour les marchandises qui sont en déplacement d'un endroit à un autre. Les caisses de chargement empilées et les tonneaux en bois sont entreposés près des boissons des travailleurs.\\nLes bouteilles et les cruches ont beau être solides à l'heure actuelle, elles cassent toujours sous le poids d'un objet très lourd. C'est pourquoi les travailleurs ont toujours eu l'espoir d'obtenir une étagère de la part de leur contremaître pour éviter de laisser les bouteilles à même le sol.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
   },
   "FestivalMarket": {
     "name": "Marché de festival",
@@ -8788,8 +9192,8 @@
     "description": "Étapes de mise en place de « Croisée des climats ».\\nUne étrange zone où différentes conditions météorologiques se mêlent, et où poussent des plantes aux caractéristiques variées. Au départ, certains érudits pensaient que cela pouvait résulter d'anomalies dans les lignes énergétiques, mais des recherches ultérieures ont révélé qu'il s'agissait d'un des nombreux phénomènes extraordinaires de Teyvat.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
   },
   "DialogueTwixtAncientTreeAndRock": {
-    "name": "« Conversation entre un arbre et une roche »",
-    "description": "Étapes de mise en place de « Conversation entre un arbre et une roche ».\\nCet arbre à feuilles vertes et cette roche des montagnes n'ont rien de particulier.\\nUne certaine poétesse des ruelles a dit un jour que tout en ce monde avait une aura, et que cet arbre et cette roche avaient une conversation silencieuse. Beaucoup d'autres après, influencés par ses paroles, en sont venus à penser que ces mots pouvaient être vrais.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
+    "name": "Conversation entre un arbre et une roche",
+    "description": "Étapes de mise en place de la « Conversation entre un arbre et une roche ».\\nCet arbre à feuilles vertes et cette roche des montagnes n'ont rien de particulier.\\nUne certaine poétesse des ruelles a dit un jour que tout en ce monde avait une aura, et que cet arbre et cette roche avaient une conversation silencieuse. Beaucoup d'autres après, influencés par ses paroles, en sont venus à penser que ces mots pouvaient être vrais.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
   },
   "AmidstPoeticPondering": {
     "name": "« Réflexion poétique »",
@@ -8853,7 +9257,7 @@
   },
   "CourtOfTheUpright": {
     "name": "Cour d'intégrité",
-    "description": "Étapes de mise en place de la cour d'intégrité.\\nCette structure majestueuse combine les bâtiments des Trois Commissions et le Poste de police à grand effet, ce qui lui donne à la fois l'aura d'un manoir majestueux et l'air professionnel d'une agence exécutive, tout en conservant une esthétique optimisée. « Approprié » est en effet le mot clé ici.\\nCeux d'origine distinguée et de caractère honnête approuveront sûrement cette disposition de la cour. En effet, vous avez entendu dire qu'un certain général de la Commission administrative a recommandé un jour que les fonctionnaires restent à proximité des domaines de la Commission afin qu'ils puissent se mettre au travail plus rapidement et contribuer plus efficacement au rêve de la toute-puissante Shogun de réaliser l'« éternité ».\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnon préférant ce set : Kujou Sara."
+    "description": "Étapes de mise en place de la cour d'intégrité.\\nCette structure majestueuse combine les bâtiments des Trois Commissions et le Poste de police à grand effet, ce qui lui donne à la fois l'aura d'un manoir majestueux et l'air professionnel d'une agence exécutive, tout en conservant une esthétique optimisée. « Approprié » est en effet le mot clé ici.\\nCeux d'origine distinguée et de caractère honnête approuveront sûrement cette disposition de la cour. En effet, vous avez entendu dire qu'un certain général de la Commission administrative a recommandé un jour que les fonctionnaires restent à proximité des domaines de la Commission afin qu'ils puissent se mettre au travail plus rapidement et contribuer plus efficacement au rêve de la toute-puissante Shogun de réaliser l'« éternité ».\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Kujou Sara, Kamisato Ayato."
   },
   "WakefulSpring": {
     "name": "Source revigorante",
@@ -8877,7 +9281,7 @@
   },
   "SummerNightsRecollection": {
     "name": "Souvenir d'une nuit d'été",
-    "description": "Étapes de mise en place du souvenir d'une nuit d'été.\\nLe paysage recrée parfaitement l'atmosphère animée des festivals d'Inazuma.\\nLa Cité d'Inazuma organise plusieurs festivals chaque année, mais les plus grands et les plus mémorables ont souvent lieu au milieu de l'été. Les stands de nourriture, les jeux et les feux d'artifice dans le ciel nocturne inciteront les badauds à s'attarder un peu plus longtemps. Même si les étals disparaissent après le dernier jour, les bons moments partagés avec vos compagnons dureront éternellement.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Kamisato Ayaka, Arataki Itto."
+    "description": "Étapes de mise en place du souvenir d'une nuit d'été.\\nLe paysage recrée parfaitement l'atmosphère animée des festivals d'Inazuma.\\nLa Cité d'Inazuma organise plusieurs festivals chaque année, mais les plus grands et les plus mémorables ont souvent lieu au milieu de l'été. Les stands de nourriture, les jeux et les feux d'artifice dans le ciel nocturne inciteront les badauds à s'attarder un peu plus longtemps. Même si les étals disparaissent après le dernier jour, les bons moments partagés avec vos compagnons dureront éternellement.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Kamisato Ayaka, Arataki Itto, Kamisato Ayato."
   },
   "SakuraHuedStreet": {
     "name": "Rue de teinte cerise",
@@ -9659,6 +10063,14 @@
     "name": "Étal arc-en-ciel « Rouge rubis »",
     "description": "Étapes de fabrication de l'étal à merveilles « Rouge rubis ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "FestivalBoothStrangeWonders": {
+    "name": "Stand de festival « Étranges merveilles »",
+    "description": "Étapes de fabrication du stand de festival « Étranges merveilles ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "FestivalBoothLiteraryTalent": {
+    "name": "Stand de festival « Talent littéraire »",
+    "description": "Étapes de fabrication du stand de festival « Talent littéraire ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "RitualShrine": {
     "name": "Autel de rituel",
     "description": "Étapes de fabrication de l'autel de rituel.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -10091,6 +10503,14 @@
     "name": "Montagne de cadeaux de fête",
     "description": "Étapes de fabrication de la montagne de cadeaux de fête.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "HeavyDutyRestaurantStove": {
+    "name": "Cuisinière robuste de restaurant",
+    "description": "Étapes de fabrication de la cuisinière robuste de restaurant.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "SereneFlames": {
+    "name": "Flammes sereines",
+    "description": "Étapes de fabrication des flammes sereines.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "PottedPlantVerdantVastness": {
     "name": "Plante en pot « Immensité verdoyante »",
     "description": "Étapes de fabrication de la plante en pot « Immensité verdoyante ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -10197,7 +10617,7 @@
   },
   "MapleWoodWhiteKitsune": {
     "name": "Kitsune blanc en bois d'érable",
-    "description": "Étapes de fabrication du drapé du Kitsune blanc en bois d'érable.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    "description": "Étapes de fabrication du Kitsune blanc en bois d'érable.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "RedIronCoral": {
     "name": "Corail rouge fer",
@@ -10246,6 +10666,14 @@
   "GoldInscribedEvilCleansingBanner": {
     "name": "Bannière d'adjuration avec inscription dorée",
     "description": "Étapes de fabrication de la bannière d'adjuration avec inscription dorée.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "TanukiHugsPhotoBoard": {
+    "name": "Passe-têtes « Étreintes des Tanukis »",
+    "description": "Étapes de fabrication du passe-têtes « Étreintes des Tanukis ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "KitsuneGuujiExclusivePaintedFlagBanner": {
+    "name": "Bannière exclusive « Guuji Kitsune »",
+    "description": "Étapes de fabrication de la bannière exclusive « Guuji Kitsune ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Lampadaire en fer forgé",

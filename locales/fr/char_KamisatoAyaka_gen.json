@@ -101,7 +101,7 @@
   "sprint": {
     "name": "École Kamisato : Sentier de givre",
     "description": {
-      "0": "<strong>Remplace le sprint</strong>",
+      "0": "<strong>Sprint alternatif</strong>",
       "1": "Ayaka consomme de l'endurance pour se déplacer rapidement au milieu d'un brouillard de glace.",
       "2": "<br/>",
       "3": "Sous Sentier de givre, Ayaka peut se déplacer rapidement sur l'eau.",
@@ -111,7 +111,7 @@
         " Le froid se concentre sur son épée : les DGT qu'inflige cette dernière sont momentanément convertis en <cryo>DGT Cryo</cryo>."
       ],
       "6": "<br/>",
-      "7": "<i>« Volent les ailes mouillées / Le héron blanc marche sur l'eau / D'une vision parfaite ».</i>"
+      "7": "<i>« Volent les ailes mouillées / Le héron blanc marche sur l'eau / D'une vision parfaite »</i>"
     }
   },
   "passive1": {

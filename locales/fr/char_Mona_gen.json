@@ -116,7 +116,7 @@
   "sprint": {
     "name": "Vicissitude",
     "description": {
-      "0": "<strong>Remplace le sprint</strong>",
+      "0": "<strong>Sprint alternatif</strong>",
       "1": "Mona se transforme en un courant d'eau, consommant de l'endurance pour se déplacer aussi vite qu'un torrent.",
       "2": "<br/>",
       "3": "Dans l'état Vicissitude, Mona peut se déplacer rapidement sur l'eau.",

@@ -126,7 +126,7 @@
   "constellation1": {
     "name": "Vent violent fractionné",
     "description": {
-      "0": "Le <strong>tir visé</strong> tire 2 flèches supplémentaires, chacune infligent 33 % des DGT de la flèche d'origine."
+      "0": "Le <strong>tir visé</strong> tire 2 flèches supplémentaires, chacune infligeant 33 % des DGT de la flèche d'origine."
     }
   },
   "constellation2": {
@@ -146,7 +146,7 @@
   "constellation4": {
     "name": "Vent glacial de liberté",
     "description": {
-      "0": "Venti inflige 25 % <anemo>DGT Anémo</anemo> supplémentaires pendant 10 s lorsqu'il obtient un orbe ou une particule élémentaire."
+      "0": "Venti inflige 25 % de <anemo>DGT Anémo</anemo> supplémentaires pendant 10 s lorsqu'il obtient un orbe ou une particule élémentaire."
     }
   },
   "constellation5": {

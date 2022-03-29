@@ -4,12 +4,12 @@
     "bloom": "Daño de explosión",
     "name": "Estilo Kamisato: Devastación glacial",
     "description": {
-      "0": "Adopta una magnífica pose para invocar la escarcha y liberar una ráfaga de ventisca",
+      "0": "Adopta una magnífica pose para invocar la escarcha y liberar una ráfaga de ventisca.",
       "1": "<br/>",
       "2": "<strong>Ráfaga de ventisca</strong>",
       "3": [
         "Mediante un viento gélido y cortante como una afilada espada, realiza continuamente cortes contra los enemigos y les inflige <cryo>Daño Cryo</cryo>.",
-        "Al terminar la duración, se provoca una explosión que inflige <cryo>Daño Cryo en el AdE</cryo>."
+        "Al terminar la duración, provoca una explosión que inflige <cryo>Daño Cryo en el AdE</cryo>."
       ],
       "4": "<br/>",
       "5": "<i>La ventisca cubre de escarcha a la garza. Oh, cuánto pesar en su corazón.</i>"
@@ -35,7 +35,7 @@
   },
   "name": "Kamisato Ayaka",
   "title": "La Garza de la Escarcha",
-  "description": "La hija del clan Kamisato, perteneciente a la Comisión Yashiro de Inazuma. Una persona solemne, refinada, inteligente y tenaz.",
+  "description": "La descendiente del clan Kamisato, perteneciente a la Comisión Yashiro de Inazuma. Una persona solemne, refinada, inteligente y tenaz.",
   "constellationName": "Grus Nivis",
   "auto": {
     "name": "Estilo Kamisato - Elegancia",
@@ -104,13 +104,13 @@
     "name": "Estilo Kamisato: Senda de escarcha",
     "description": {
       "0": "<strong>Reemplaza a Esprintar</strong>",
-      "1": "Ayaka se oculta bajo un torrente de hielo, consumiendo su Aguante para moverse rápidamente.",
+      "1": "Ayaka se oculta bajo un torrente de hielo, consumiendo su Aguante, para moverse rápidamente.",
       "2": "<br/>",
       "3": "Cuando está bajo el efecto de Senda de escarcha, puede moverse a gran velocidad sobre el agua.",
       "4": "Al reaparecer, produce los siguientes efectos:",
       "5": [
         "Libera el gélido poder del hielo para aplicar el elemento <cryo>Cryo</cryo> sobre los enemigos cercanos.",
-        "Condensa el frío en su espada, lo que la <cryo>imbuye del elemento Cryo</cryo> durante un breve periodo de tiempo."
+        "Condensa el frío en su espada, lo que la <cryo>imbuye del elemento Cryo </cryo>durante un breve periodo de tiempo."
       ],
       "6": "<br/>",
       "7": "<i>Plumas mojadas",
@@ -162,7 +162,7 @@
   "constellation4": {
     "name": "Retorno preeminente",
     "description": {
-      "0": "La DEF de los enemigos se reduce en un 30% durante 6 s al recibir daño mediante la ráfaga de ventisca creada por medio de <strong>Estilo Kamisato: Devastación glacial</strong>."
+      "0": "La DEF de los enemigos se reduce en un 30% durante 6{NON_BREAK_SPACE}s al recibir Daño mediante la ráfaga de ventisca creada por medio de <strong>Estilo Kamisato: Devastación glacial</strong>."
     }
   },
   "constellation5": {

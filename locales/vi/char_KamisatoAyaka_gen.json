@@ -115,13 +115,13 @@
     }
   },
   "passive1": {
-    "name": "Amatsumi Kunitsumi Ihahigoto",
+    "name": "Lời Phán Amatsumi Kunitsumi",
     "description": {
       "0": "Trong vòng 6s sau khi thi triển <strong>Trường Phái Kamisato - Hyouka</strong>, sát thương gây ra bởi tấn công thường và trọng kích của Kamisato Ayaka tăng 30%."
     }
   },
   "passive2": {
-    "name": "Kanten Senmyou Norito",
+    "name": "Lời Chúc Kanten Senmyou",
     "description": {
       "0": "Khi <strong>Trường Phái Kamisato - Senho</strong> kết thúc sẽ thi triển hàn băng, nếu đánh trúng địch, Kamisato Ayaka sẽ nhận hiệu quả sau:",
       "1": [

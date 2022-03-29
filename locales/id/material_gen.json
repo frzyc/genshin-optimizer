@@ -451,6 +451,10 @@
     "name": "Yun Jin",
     "description": "Seorang penyanyi opera Liyue yang mahir bernyanyi dan pintar menulis sandiwara. Gayanya lain dari yang lain — elegan dan lembut, persis seperti karakternya."
   },
+  "KamisatoAyato": {
+    "name": "Kamisato Ayato",
+    "description": "Kepala Klan Kamisato dari Yashiro Commission yang masih muda namun sangat berprestasi. Sangat berbudaya dan sopan, dia adalah seorang pria yang berbudi luhur dan mempunyai banyak cara."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna",
     "description": "Material aktivasi untuk konstelasi Kamisato Ayaka"
@@ -642,6 +646,10 @@
   "YunJinsStellaFortuna": {
     "name": "Yun Jin's Stella Fortuna",
     "description": "Material aktivasi untuk konstelasi Yun Jin"
+  },
+  "KamisatoAyatosStellaFortuna": {
+    "name": "Kamisato Ayato's Stella Fortuna",
+    "description": "Material aktivasi untuk konstelasi Kamisato Ayato"
   },
   "GnosticHymnOldNotes": {
     "name": "Gnostic Hymn - Old Notes",
@@ -2085,7 +2093,7 @@
   },
   "ARecordOfLittleMengLittleFeiAndLittleLulusConversation": {
     "name": "Catatan Pembicaraan dengan Little Meng, Little Fei, dan Little Lulu",
-    "description": "Riwayat percakapan antara Little Meng, Little Fei dan Little Lulu. Sepintas terliuhat seperti percakapan anak-anak yang polos. Tapi kamu serasa dapat merasakan emosi di dalam hati anak-anak tersebut. Mungkin benih emosi ini akan terus tumbuh hingga cabangnya membentang sampai ke langit dan tidak dapat diabaikan lagi oleh siapa pun..."
+    "description": "Riwayat percakapan antara Little Meng, Little Fei dan Little Lulu. Sepintas terlihat seperti percakapan anak-anak yang polos. Tapi kamu seperti dapat merasakan emosi di dalam hati anak-anak tersebut. Mungkin benih emosi ini akan terus tumbuh hingga cabangnya membentang sampai ke langit dan tidak dapat diabaikan lagi oleh siapa pun..."
   },
   "NormasOrder": {
     "name": "Pesanan Norma",
@@ -2117,7 +2125,7 @@
   },
   "ATornOutPage": {
     "name": "Sobekan Halaman",
-    "description": "Halaman yang dirobek paksa dari sebuah buku. Telah tterendam dalam air sehingga tulisannya menjadi tidak jelas."
+    "description": "Halaman yang dirobek paksa dari sebuah buku. Telah terendam dalam air sehingga tulisannya menjadi tidak jelas."
   },
   "PageOfScribbledWriting": {
     "name": "Halaman Berisi Coretan",
@@ -3333,7 +3341,7 @@
   },
   "BathysmalVishapExperimentalRecords": {
     "name": "Catatan Eksperimen Bathysmal Vishap",
-    "description": "Catatan Eksperimen Vishap Bathysmal. Tidak ada vishap yang terbunuh dalam penulisan catatan eksperimen ini."
+    "description": "Catatan Eksperimen Bathysmal Vishap. Tidak ada vishap yang terbunuh dalam penulisan catatan eksperimen ini."
   },
   "BeforeSunAndMoon": {
     "name": "Sebelum Matahari dan Bulan",
@@ -3678,6 +3686,10 @@
   "LavenderMelon": {
     "name": "Lavender Melon",
     "description": "Buah yang berwarna cerah dan terang. Saat dimasak, dagingnya memberikan rasa unik di dalam mulut."
+  },
+  "Starshroom": {
+    "name": "Starshroom",
+    "description": "Jamur dengan topi yang menyerupai bentuk bintang bersudut lima. Jamur ini memang cukup tangguh. Setelah dewasa, bagian tengah topinya akan terbelah."
   },
   "BirchWood": {
     "name": "Birch Wood",
@@ -4115,9 +4127,105 @@
     "name": "Botol Apung Little Meng",
     "description": "Botol yang berisikan berbagai masalah milik Little Meng. Kira-kira apa ya isinya ...."
   },
+  "Lumenstone": {
+    "name": "Lumenstone",
+    "description": "Batu khusus yang ditambang dari kedalaman Chasm, yang memiliki fungsi sebagai katalis Adjuvant.\\nBatu ini memancarkan cahaya yang menyilaukan saat berada di dalam tambang yang gelap, tapi cahayanya akan menghilang ketika meninggalkan Chasm.\\nSepertinya ia masih punya sifat ajaib lain yang belum diketahui."
+  },
+  "MuningsNote": {
+    "name": "Catatan Muning",
+    "description": "Muning, pegawai khusus Bagian Urusan Sipil, memberimu catatan ini. Isinya tidak panjang, tapi terdapat pengulangan kata \"dilarang\" sebanyak 8 kali. Kalau kamu berikan ini pada seorang petualang bernama Zhiqiong, kamu akan dapat bantuan yang diperlukan."
+  },
+  "TreasureHoardersTreasureMap": {
+    "name": "Peta Harta Karun Treasure Hoarders",
+    "description": "Peta harta karun yang pernah tersobek menjadi dua bagian dan disembunyikan di tempat yang berbeda oleh Treasure Hoarder ini, kini sudah menjadi utuh kembali.\\nIkuti simbol di atasnya, barangkali kamu bisa menemukan harta karun spesial!"
+  },
+  "StorehouseSecurityKeyNo": {
+    "name": "Kunci Keamanan Gudang No. 1",
+    "description": "Kunci gudang tertentu yang tersembunyi di tempat yang mencolok, tapi tidak kunjung ditemukan oleh Treasure Hoarder. Sepertinya kemampuan mereka patut diragukan, ya?"
+  },
+  "ASetOfCannonballs": {
+    "name": "Satu Set Amunisi",
+    "description": "\"Mountainator\", atau \"Alat Peledak Jarak Aman: Model 2156\", meskipun kotoran tak dikenal di atasnya sudah dibersihkan dengan Lumenstone Adjuvant, tapi masih tercium bau tidak sedap biarpun hidung sudah ditutup rapat.\\nIh, enggak mau pegang deh!"
+  },
+  "SpecialUnmovingEssentialOil": {
+    "name": "Unmoving Essential Oil Khusus",
+    "description": "Zat berbahaya yang dibuat menggunakan formula Clitopho, menyatukan dua Unmoving Essential Oil ke dalam satu botol yang sangat padat elemen Geo.\\nSifatnya sangat tidak stabil, maka hanya orang gila atau penambang berpengalaman saja yang berani menggunakannya, sehingga benda ini jadi jarang ditemui di mana-mana.\\nGunakan dengan penuh kehati-hatian!"
+  },
+  "KeyToAStonyHall": {
+    "name": "Kunci Menuju Aula Berbatu",
+    "description": "Menurut spekulasi Khedive, benda ini kemungkinan sebuah \"kunci\" yang dapat membuka pintu masuk ke dalam suatu reruntuhan, entah di mana."
+  },
+  "PhotoOfAStrangeRock": {
+    "name": "Foto Batu Aneh",
+    "description": "Foto batu aneh yang kelihatan di dinding Chasm. Entah apa makna dari pola di atasnya, tapi bisa jadi sangat bernilai bagi para peneliti."
+  },
+  "AcademiaRecommendationLetter": {
+    "name": "Surat Rekomendasi Akademi",
+    "description": "Surat yang dibuat dengan hati-hati, disegel atas nama \"Ahli Ekologi Khedive Pursina.\"\\nHadiah dari Khedive, dia bersikeras bahwa surat ini bahkan lebih berharga daripada emas, dan dapat menjamin datangnya bantuan dari Klan Purbiruni.\\nKhedive pribadi merasa kalau imbalan berbentuk uang sama saja tindakan penghinaan ... Mudah-mudahan orang Sumeru yang lain tidak punya pola pikir seperti itu juga ya!"
+  },
+  "OrbOfTheBlueDepths": {
+    "name": "Permata dari Kedalaman",
+    "description": "Permata aneh yang ditinggalkan oleh musuh dari Abyss. Jika kamu melihatnya dengan saksama, seolah kamu seperti sedang melihat ke dalam mimpi lama yang diselimuti kabut tebal."
+  },
+  "MinersKey": {
+    "name": "Kunci Penambang",
+    "description": "Kunci yang biasa ditemukan di tambang, tapi entah kenapa sekarang bisa muncul di sini."
+  },
+  "BlessingsOfWisdom": {
+    "name": "Berkah Kebijaksanaan",
+    "description": "Objek mencurigakan yang kamu peroleh dari Xamaran. Dikatakan bahwa ini dapat membersihkan hawa jahat. Dipadatkan dari nutrisi yang diserap jamur, gumpalan spora ... dan selera humor yang kental."
+  },
+  "MountainatorCannonballFuseAttached": {
+    "name": "Amunisi Mountainator (Sumbu Terpasang)",
+    "description": "Sebuah bola meriam dengan sekring yang terpasang dengan baik. Siap ditembakkan kapan saja!"
+  },
+  "ToyDoll": {
+    "name": "Boneka Mainan",
+    "description": "Mainan milik putri Qi Ding, si penambang. Benda ini terlihat sangat compang-camping dan sulit dipercaya kalau seorang anak bisa menyukainya. Tapi jahitannya yang rumit menunjukkan bahwa benda ini dulunya pastilah merupakan barang yang cukup mahal."
+  },
+  "FlowerOfFarsight": {
+    "name": "Bunga Berpandangan Jauh",
+    "description": "Salah satu dari enam benda pemberian yang hilang dan tersebar di seluruh Chasm ... mungkin? Tampaknya seperti Qingxin biasa yang baru tumbuh, yang kelopaknya saja belum pernah menampung embun pagi.\\nEntah berapa banyak orang yang pernah naik ke tempat tinggi hanya demi memetik satu bunga segar. Tidak ada yang tahu kapan bunga-bunga ini akan menjadi saksi sebuah perpisahan atau sebuah perjumpaan kembali."
+  },
+  "Skyfeather": {
+    "name": "Bulu Langit",
+    "description": "Satu dari enam benda pemberian yang hilang dan tersebar di seluruh Chasm, bulu yang jatuh dari seekor elang yang terbang di atas gua. Para Millelith tampaknya senang mengumpulkan bulu-bulu kuat ini untuk digunakan sebagai ornamen.\\nBulu elang adalah ornamen yang paling sesuai untuk menghiasi zirah dan senjata para prajurit yang paling gagah berani. Dikatakan bahwa mereka yang mengenakannya akan dapat menghancurkan formasi musuh dengan cepat, layaknya sang burung pemangsa ketika meringkus buruannya."
+  },
+  "SundialOfAges": {
+    "name": "Jam Matahari Penghitung Waktu",
+    "description": "Satu dari enam benda pemberian yang hilang dan tersebar di seluruh Chasm. Benda ini sudah cukup tua, tapi ukiran penandanya masih sangat jelas, sehingga masih bisa digunakan.\\nCahaya mentari adalah pemandangan langka di dalam Chasm, sehingga orang yang hidup di sana mudah lupa waktu. Namun suatu hari nanti, jam ini akan dapat kembali menandakan berlalunya aliran waktu."
+  },
+  "CupOfCommons": {
+    "name": "Cangkir Kebersamaan",
+    "description": "Satu dari enam benda pemberian yang hilang dan tersebar di seluruh Chasm. Bukan batu, bukan permata, tapi entah bagaimana caranya, benda ini tetap berakhir di timbunan jarahan para Treasure Hoarder.\\nCangkir ini pernah berisi arak mahal, harta karun, dan darah. Kini masa lalunya yang kelam telah ditanggalkan, dan cangkir ini telah siap untuk diisi kenangan-kenangan yang baru."
+  },
+  "HelmOfWarding": {
+    "name": "Ketopong Berkah",
+    "description": "Satu dari enam benda pemberian yang hilang dan tersebar di seluruh Chasm. Benda ini tersembunyi di tempat tinggal para penambang. Kalau tidak dilihat secara teliti, benda ini tak ubahnya helm penambang biasa.\\nPermukaannya penuh goresan dan lekukan, yang membuat orang penasaran akan berapa banyak nyawa penambang yang tidak jadi melayang karenanya."
+  },
+  "WarriorsSpear": {
+    "name": "Tombak Prajurit",
+    "description": "Satu dari enam benda pemberian yang hilang dan tersebar di seluruh Chasm. Benda ini hilang di tengah medan perang kuno lima ratus tahun yang lalu. Tahun-tahun panjang yang berlalu telah menumpulkan ujungnya, namun tombak ini masih tetap terlihat berbahaya.\\nOrang yang melihatnya masih dapat membayangkan ketika benda ini digunakan oleh seorang prajurit yang gagah berani pada masanya, setiap tusukan dan tebasan darinya yang selalu diiringi sorak sorai para muda-mudi, bahkan ketika ia terbenam di kedalaman Chasm."
+  },
+  "BrassRing": {
+    "name": "Cincin Kuningan",
+    "description": "Sebuah cincin yang didapatkan dari Golden Weasel Thief. Lihatlah kilauannya, dan lihatlah caranya memancarkan sinar! Golden Weasel Thief pasti berencana menggunakannya untuk menarik pasangan, dan kelihatannya ini memang sangat berharga. Bisa kita bayangkan kalau pemiliknya pasti sangat cemas saat ini."
+  },
+  "ShriveledSeed": {
+    "name": "Benih Kering",
+    "description": "Sebuah objek yang tampaknya layu dan menurut penilaian sekilas kelihatan seperti benih. Namun, masih ada jumlah kehidupan yang mengejutkan di dalamnya.\\nSebaiknya jangan memakannya untuk saat ini ...."
+  },
+  "LumenstoneOre": {
+    "name": "Lumenstone Ore",
+    "description": "Bijih mentah yang mungkin mengandung Lumenstone. Kalau diproses dengan benar, benda ini dapat digunakan untuk memperkuat Lumenstone Adjuvant milikmu. Coba tanya dulu ke Jinwu deh ...."
+  },
   "YueChuansDriftingBottle": {
     "name": "Botol Apung Yue Chuan",
     "description": "Botol yang berisikan balasan Yue Chuan kepada Little Meng. Kira-kira bakal sampai ke dia tidak ya ...."
+  },
+  "HiraizumisGoods": {
+    "name": "Barang-Barang Hiraizumi",
+    "description": "Susu kedelai segar. Ini akan cepat rusak kalau tidak disimpan dengan benar."
   },
   "CellKey": {
     "name": "Kunci Sel",
@@ -4151,6 +4259,10 @@
     "name": "Dupa Kualitas Bagus",
     "description": "Dupa yang didapat dari Wang Ping'an. Sepertinya berkualitas bagus."
   },
+  "CuriousCube": {
+    "name": "Kubus Aneh",
+    "description": "Konstruksi tak dikenal yang ditemukan di kedalaman Chasm. Bentuknya mirip dengan kubus yang dibuat dengan rumit."
+  },
   "ANoteSomeoneStuffedYou": {
     "name": "Catatan yang Diselipkan Seseorang Padamu",
     "description": "Saat kamu berjalan menelusuri jalan di Inazuma, seseorang menyelipkan catatan ini padamu. Terdapat dua simbol aneh di atasnya."
@@ -4170,6 +4282,14 @@
   "SpecialFortuneSlip": {
     "name": "Slip Keberuntungan Spesial",
     "description": "Slip keberuntungan dengan pembuatan khusus yang menggambarkan bagaimana nasibmu hari ini. Tidak ada yang berbeda dari Slip Keberuntungan ini dengan Slip Keberuntungan pada umumnya, kecuali bahan baku pembuatannya yang memang berasal dari bambu palsu.\\nKira-kira keberuntungan siapakah gerangan yang digambarkan oleh Slip Keberuntungan ini?"
+  },
+  "StrangeObject": {
+    "name": "Objek Aneh",
+    "description": "Sesuatu yang kamu pancing dari saluran air bawah tanah Chasm. Tidak dapat dipastikan apakah ini makhluk hidup atau benda mati, yang jelas hanyalah fakta bahwa benda ini ... basah."
+  },
+  "BedrockKeyLocationDiagram": {
+    "name": "Diagram Lokasi Batu Kunci",
+    "description": "Sebuah diagram lokasi sederhana yang dibuat oleh Zhiqiong dengan terburu-buru, menunjukkan perkiraan letak beberapa Batu Kunci."
   },
   "LightMoraPurse": {
     "name": "Dompet Mora yang Ringan",
@@ -4227,6 +4347,10 @@
     "name": "Petualangan Ajaib Sang Pengembara",
     "description": "\"Ini adalah novel ringan yang agak ortodoks, pada dasarnya berisi tentang versi editan dari kehidupan nyata di Teyvat. Bagaimanapun hal yang mengejutkannya adalah fakta bahwa sang penulis tampaknya memiliki pengetahuan yang sangat luas tentang Pulau Watatsumi, dengan banyaknya deskripsi yang jelas dan terasa sangat hidup.\" — Nona Hina"
   },
+  "FrostglazeCrystal": {
+    "name": "Kristal Es Beku",
+    "description": "Sebuah kristal yang diproduksi di kedalaman Chasm, bijih Glaze Sand Crystal spesial ini adalah salah satu dari banyak bijih batu lainnya yang berserakan selama pertempuran melawan mesin ruin raksasa. Bijih Glaze Sand Crystal adalah spesialisasi dari Chasm, tapi yang ini berbeda dari yang lainnya.\\nDi bawah cahaya kristal biru dan kekuatan Abyss, pola spiral aneh akhirnya muncul dari dalam batu ini, batu ini juga terasa dingin saat disentuh.\\nKristal yang tadinya halus ini telah berubah bentuk menjadi seperti ini akibat kekuatan besar yang turun dari langit dan racun yang muncul dari kedalaman bumi — dan mungkin bentuknya ini sudah adalah sebuah peringatan bagi manusia fana.\\nJika interaksi dari kekuatan ini saja dapat merubah batu dan logam menjadi begini, ibarat sama seperti pahlawan biasa yang memiliki kesempatan untuk melihat akhir pada perjalanannya yang penuh kegelapan. Nah sekarang bagaimana dirimu akan menghadapi kenyataan dari apa yang kamu temukan ini?"
+  },
   "LightRealmSigil": {
     "name": "Sigil Dunia Terang",
     "description": "Sebuah tanda yang melambangkan pengakuan Enkanomiya Tokoyo Ookami.\\nBenda ini dapat diberikan ke patung Vassals of Watatsumi untuk meningkatkan level Bokuso Box."
@@ -4234,6 +4358,18 @@
   "LightRealmCore": {
     "name": "Inti Dunia Terang",
     "description": "Kamu menemukan batu misterius ini saat menjelajahi alam gelap Enkanomiya.\\nDunia Terang menyediakan bantuan tambahan kepada manusia untuk melawan Abyss."
+  },
+  "BloodiedSergeantsInsignia": {
+    "name": "Lambang Sersan Berdarah",
+    "description": "Lencana dari seorang sersan Fatui yang berlumuran darah dan berlumpur. Entah bagaimana benda ini bisa berakhir di kedalaman Chasm."
+  },
+  "CorporalNikolaysDiary": {
+    "name": "Catatan Kopral Nikolay",
+    "description": "Sepucuk surat yang ditinggalkan oleh Kopral Nikolay. Isinya sudah tidak utuh lagi sejak lama."
+  },
+  "MoraPurse": {
+    "name": "Dompet Mora",
+    "description": "Kamu diminta oleh Xu dari Feiyun Commerce Guild untuk mengirimkan benda ini ke Muning — perwakilan Huishan Hall yang berada di Chasm. Di dalamnya berisi sejumlah Mora yang cukup banyak."
   },
   "AFirsthandGuideToSummoningSpirits": {
     "name": "Buku Panduan Memanggil Roh",
@@ -4267,6 +4403,10 @@
     "name": "Hakuen Michimitsu Amenoma",
     "description": "Pedang pusaka milik Klan Iwakura.\\nMeskipun orang yang menempa pedang ini memiliki keterampilan yang hebat, dan meskipun pedang ini telah membunuh banyak musuh, pedang ini tidak memiliki kekuatan khusus. Keturunan Klan Iwakura juga tidak pernah memperoleh Vision. Ilmu pedang yang luar biasa milik mereka adalah murni hasil dari mengasah pikiran, tubuh, dan teknik mereka.\\nPedang ini sudah lama terendam air dan tampak begitu berkarat."
   },
+  "WoodenCageKey": {
+    "name": "Kunci Kurungan Kayu",
+    "description": "Kunci yang ditinggalkan oleh seseorang dari Kanjou Commission. Kamu bisa menyelamatkan Shinnojou menggunakan benda ini."
+  },
   "DamagedStoneSlate": {
     "name": "Tablet Batu yang Rusak",
     "description": "Sebuah tablet batu yang tampak biasa saja. Entah apa rahasia yang tersembunyi di dalamnya."
@@ -4274,6 +4414,178 @@
   "MysteriousStoneSlate": {
     "name": "Tablet Batu Misterius",
     "description": "Tablet batu terakhir yang diperoleh. Di atas rahasia masih ada rahasia."
+  },
+  "YanbosNote": {
+    "name": "Catatan Yanbo",
+    "description": "Catatan yang cukup lengkap dan ditulis dengan tulisan tangan yang rapi. Kelihatannya ini adalah surat yang ditinggalkan untuk seorang teman lama."
+  },
+  "NikolaysLetter": {
+    "name": "Surat Nikolay",
+    "description": "Surat yang kamu temukan dari salah satu Black Serpent Knight. Nama penerima surat ditulis dengan rapi: \"Katarina Snezhevna, Kakakku yang Terhormat\", sedangkan nama pengirimnya ditulis dengan agak asal-asalan sampai hampir kalimat \"Saudaramu, Nikolay Snezhevich\"-nya tidak terbaca."
+  },
+  "FragrantSeasoning": {
+    "name": "Fragrant Seasoning",
+    "description": "Bumbu yang dibuat sesuai resep yang diberikan oleh Nazafarin. Aromanya yang tajam dan berfungsi untuk menguatkan rasa pada setiap hidangan yang ditambahkannya."
+  },
+  "FragrantVegetarianAbalone": {
+    "name": "Fragrant Vegetarian Abalone",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantMintSalad": {
+    "name": "Fragrant Mint Salad",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantTripleLayeredConsomm": {
+    "name": "Fragrant Triple-Layered Consommé",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "ZhiqiongsLetter": {
+    "name": "Surat Zhiqiong",
+    "description": "Surat yang ditinggalkan oleh seorang petualang muda. Ada sedikit aroma bunga Qingxin yang tercium pada kertasnya."
+  },
+  "ArrivalSchedule": {
+    "name": "Jadwal Kedatangan",
+    "description": "Daftar tamu dan waktu kedatangan mereka di kapal yang mereka tumpangi untuk ke Festival Irodori.\\nTugasmu adalah menyambut dan memberikan bantuan kepada tamu sesuai dengan informasi yang disajikan dalam jadwal ini."
+  },
+  "FiveKasenSummary": {
+    "name": "Ringkasan Lima Kasen",
+    "description": "Ringkasan informasi tentang Lima Kasen yang kamu dapatkan dari Kepala Editor Hirayama, Yae Publishing House.\\nMeskipun isinya cukup memusingkan, kamu masih bisa memahami inti dari Lima Kasen dan betapa hebatnya mereka pada masa kejayaannya."
+  },
+  "TheFiveKasensSplendorSuikou": {
+    "name": "Kemegahan Lima Kasen: Suikou",
+    "description": "Secarik kertas yang ditemukan Venti di kotak kargo dalam gudang di dermaga. Puisi berjudul \"Kemegahan Lima Kasen: Suikou\" tertulis di atasnya."
+  },
+  "TheFiveKasensSplendorAoiNoOkina": {
+    "name": "Kemegahan Lima Kasen: Aoi no Okina",
+    "description": "Secarik kertas yang ditemukan Xingqiu di bawah kopernya. Sepertinya seseorang meninggalkannya di situ saat Xingqiu sedang tertidur. Puisi berjudul \"Kemegahan Lima Kasen: Aoi no Okina\" tertulis di atasnya."
+  },
+  "TheFiveKasensSplendorAkahito": {
+    "name": "Kemegahan Lima Kasen: Akahito",
+    "description": "Secarik kertas yang ditinggalkan oleh orang misterius. Orang ini pasti awalnya ingin memberikannya pada Kazuha, namun secara tak sengaja ketahuan oleh Kazuha sehingga orang itu langsung lari dengan tergesa-gesa, meninggalkan secarik kertas ini. Puisi yang berjudul \"Kemegahan Lima Kasen: Akahito\" tertulis di atasnya."
+  },
+  "TheFiveKasensSplendorSumizome": {
+    "name": "Kemegahan Lima Kasen: Sumizome",
+    "description": "Ayaka menemukan ini di rak bunga yang ada di festival. Namun secarik kertas ini hanya berisikan satu baris tulisan saja."
+  },
+  "AncientForgingBlueprint": {
+    "name": "Blueprint Kuno untuk Forge",
+    "description": "Blueprint tempa yang sangat tua. Shogun pernah memerintahkan Klan Kaedehara untuk menempa Goshintou sesuai dengan blueprint itu.\\nSetelah direndam dalam air, jelas terlihat bahwa beberapa tulisan sudah tak dapat dibaca lagi — seseorang sepertinya merusak blueprint ini, membuat penempaannya menjadi gagal dan memicu beragam tragedi ...."
+  },
+  "KaedeharaYoshinorisLetter": {
+    "name": "Surat Kaedehara Yoshinori",
+    "description": "Secarik kertas kosong yang disembunyikan di pot bunga tua. Saat dicelupkan ke dalam air, maka rahasianya yang sudah lama tersegel akan terungkap.\\nSetelah memberi tahu semua orang tentang kebenaran yang tersembunyi di dalamnya, Kazuha mengatakan bahwa \"surat ini mungkin masih berguna untukmu,\" dan akhirnya menyerahkannya padamu."
+  },
+  "TaliesinsManuscript": {
+    "name": "Naskah Taliesin",
+    "description": "Sebuah naskah puisi yang sangat tebal. Kalau kamu memberi ulasan yang murah hati, maka mungkin naskah itu bisa dianggap \"biasa saja\", sementara ulasan yang jujur akan menganggapnya sebagai naskah yang \"sulit untuk dibaca.\" Naskah ini lebih menyerupai catatan sejarah yang sudah tua daripada puisi."
+  },
+  "FragrantStirFriedShrimp": {
+    "name": "Fragrant Stir-Fried Shrimp",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantGoldenShrimpBalls": {
+    "name": "Fragrant Golden Shrimp Balls",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantQingceStirFry": {
+    "name": "Fragrant Qingce Stir Fry",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantBlackBackPerchStew": {
+    "name": "Fragrant Black-Back Perch Stew",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantStirFriedFilet": {
+    "name": "Fragrant Stir-Fried Filet",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantGrilledTigerFish": {
+    "name": "Fragrant Grilled Tiger Fish",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantCrabRoeTofu": {
+    "name": "Fragrant Crab Roe Tofu",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantGoldenCrab": {
+    "name": "Fragrant Golden Crab",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantJewelrySoup": {
+    "name": "Fragrant Jewelry Soup",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantBambooShootSoup": {
+    "name": "Fragrant Bamboo Shoot Soup",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantNoodlesWithMountainDelicacies": {
+    "name": "Fragrant Noodles with Mountain Delicacies",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantMoraMeat": {
+    "name": "Fragrant Mora Meat",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantStirFriedFishNoodles": {
+    "name": "Fragrant Stir-Fried Fish Noodles",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantUniversalPeace": {
+    "name": "Fragrant Universal Peace",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantRiceBuns": {
+    "name": "Fragrant Rice Buns",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantAlmondTofu": {
+    "name": "Fragrant Almond Tofu",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "FragrantLotusFlowerCrisp": {
+    "name": "Fragrant Lotus Flower Crisp",
+    "description": "Makanan lezat yang sudah diracik dengan bumbu tambahan menebarkan aroma yang menggugah selera. Kira-kira siapa yang paling cocok dengan cita rasa ini ya? Ayo pergi dan undanglah temanmu untuk mencicipinya!"
+  },
+  "SayusSalary": {
+    "name": "Gaji Sayu",
+    "description": "Gaji ini awalnya dimaksudkan untuk membeli tempat tidur dan bahan lain yang dapat meningkatkan kualitas tidur, tetapi di sisi lain, Sayu juga belum mau \"tidur selamanya\"."
+  },
+  "StatueOfHerExcellencyTheAlmightyNarukamiOgoshoGodOfThunder": {
+    "name": "Patung Yang Mulia, Sang Narukami Ogosho Yang Mahakuasa, Dewi Petir",
+    "description": "\"Patung Yang Mulia, Sang Narukami Ogosho Yang Mahakuasa, Dewi Petir\" yang diinginkan Sara. Ayo kita berikan Sara."
+  },
+  "KokomisShoppingList": {
+    "name": "Daftar Belanjaan Kokomi",
+    "description": "Daftar belanja buku yang disusun oleh Kokomi. Semua genre, harga satuan, jumlah buku yang dia inginkan tertulis dengan elegan."
+  },
+  "ToyFox": {
+    "name": "Mainan Rubah",
+    "description": "Hadiah yang didapat Gorou karena membantu Kokomi membeli buku selama Festival Irodori. Gorou kemudian memberikannya kepadamu sebagai ucapan terima kasih karena telah menemaninya.\\nSetiap kali kamu melihatnya, tak elak kamu selalu teringat akan pemandangan setiap helai rambut di tubuh Gorou yang berdiri tegak saat dia mendengar kata \"rubah.\""
+  },
+  "ALegendOfSwordVI": {
+    "name": "Legenda Pedang (VI)",
+    "description": "\"Pertempuran yang terjadi di lautan bintang sebenarnya sama dengan pertarungan orang-orang rumput di planet tandus sepuluh tahun yang lalu ....\" Tidak lama kemudian ... layaknya nama kaisar, nama pria itu dikenal di seluruh galaksi."
+  },
+  "ShogunAlmightyRebornAsRaidenWithUnlimitedPower": {
+    "name": "Shogun Mahakuasa: Terlahir Kembali Sebagai Raiden Dengan Kekuatan Tak Terbatas",
+    "description": "Sebuah novel ringan yang populer di Inazuma. Isi ceritanya mengisahkan tentang seorang manusia biasa yang tiba-tiba bertransformasi menjadi sesosok Raiden Shogun. Karena isi ceritanya yang menarik, buku ini sangat populer dan telah menginspirasi banyak penulis novel ringan."
+  },
+  "PrettyPleaseKitsuneGuuji": {
+    "name": "Ayo dong Kitsune Guuji, kamu cantik deh.",
+    "description": "Sebuah novel ringan yang populer di Inazuma. Isi ceritanya mengisahkan tentang seorang Shogun yang payah dan Kitsune Guuji yang bisa melakukan segala hal. Cerita ini menjadi kisah pendamping bagi cerita \"Shogun Mahakuasa: Terlahir Kembali Sebagai Raiden Dengan Kekuatan Tak Terbatas\", namun tidak ditulis oleh satu orang penulis yang sama. Karakteristik persamaan terbesar dari keduanya adalah bahwa kedua cerita tersebut sama-sama sangat diminati para pembaca."
+  },
+  "LetsGoDodoco": {
+    "name": "Ayo, Dodoco!",
+    "description": "Catatan editor: \"Ayo, Dodoco!\" adalah cerita yang penulisannya diselesaikan secara bersama-sama oleh seorang wanita dewasa dan seorang gadis cilik, semua potongan kecil dalam cerita mengandung kelembutan dan berkah, sekaligus merupakan hadiah untuk para pembacanya. Mudah-mudahan, buku kecil yang tipis ini dapat melimpahkan sedikit kegembiraan kepada para pembacanya di tengah sibuknya jadwal mereka."
+  },
+  "JinwusSoup": {
+    "name": "Sup Buatan Jinwu",
+    "description": "Sup kental yang dibuat Jinwu untuk penambang yang sakit. Sup ini bergizi, harum, dan membuatmu merasa hangat saat meminumnya.\\nJangan sampai dibiarkan sampai jadi dingin ya."
+  },
+  "BagOfOrnaments": {
+    "name": "Sekantong Ornamen",
+    "description": "Kantong berisi ornamen yang diberikan Old Chou sebagai ganti rugi atas ulah Tang Wuchou. Buatannya sangat kasar, mengingat benda ini diproduksi oleh para Treasure Hoarder di dalam Chasm dengan menggunakan bijih selundupan, dan hampir tidak punya kualitas estetika sama sekali. Benda seperti ini tidak akan laku dijual di Liyue. Tapi setidaknya, material yang dipakai sudah benar ...."
   },
   "PyroShard": {
     "name": "Pyro Shard",
@@ -4686,6 +4998,10 @@
   "MoonchaseCharm": {
     "name": "Moonchase Charm",
     "description": "Jimat tersebut sudah diletakkan di berbagai tempat oleh Adventurers' Guild. Mereka dibuat dari Plaustrite sebening kristal dan berkilau lembut. Dikatakan bahwa jimat tersebut mengandung esensi cahaya bulan putih dan menyimpan kenangan yang dimiliki orang-orang tentang festival di masa lalu."
+  },
+  "Lumenspar": {
+    "name": "Lumenspar",
+    "description": "Kristal berwarna sebiru langit yang berkilauan dengan sangat terang seolah seperti bergema dari atas langit yang jauh dan tidak dapat dijangkau dari bawah tanah ....\\nJika kamu mendekatkannya ke telinga, kamu hampir dapat mendengar desahan lembut yang datang dari dalam.\\nIni mungkin terdengar aneh, tapi kristal ini juga mengeluarkan sedikit rasa hangat."
   },
   "Dish": {
     "name": "Masakan",
@@ -6191,6 +6507,34 @@
     "name": "Fukuuchi Udon",
     "description": "Hidangan andalan Yae Miko. Tahu goreng di sini dibuat khusus oleh Lady Kitsune yang sungguh-sungguh. Dikatakan bahwa kalau kamu memakannya sekaligus dengan ketulusan hatimu, kamu akan mendapatkan perlindungan dari Kitsune yang Agung — kemalangan akan berlalu dan keberuntungan akan berlimpah!"
   },
+  "SuspiciousKatsuSandwich": {
+    "name": "Suspicious Katsu Sandwich",
+    "description": "Makanan dengan gizi seimbang. Yah harusnya sih begitu, tapi sayurnya sudah layu, dagingnya kelihatan kering kerontang, dan irisan rotinya terlalu keras ... Ah sudahlah, tidak masalah. Toh yang penting masih bisa makan ...."
+  },
+  "KatsuSandwich": {
+    "name": "Katsu Sandwich",
+    "description": "Makanan dengan gizi seimbang. Kedua irisan roti menjepit steak yang dipotong tebal. Saus yang harum, sedikit manis dan asam adalah kunci untuk mencegah agar rasanya tidak terlalu berlebihan. Perpaduan brilian gaya dari luar dan cita rasa lokal!"
+  },
+  "DeliciousKatsuSandwich": {
+    "name": "Delicious Katsu Sandwich",
+    "description": "Makanan dengan gizi yang seimbang. Rotinya yang harum dan lembut bisa membuatmu kenyang, sementara daging steak yang empuk dan nikmat bisa menggugah selera. Satu gigitan saja sudah cukup untuk membuatmu puas dari ujung lidah hingga perut. Nah pertanyaannya, siapa ya kira-kira yang pertama kali memikirkan kombinasi brilian ini?"
+  },
+  "SuspiciousRainbowAster": {
+    "name": "Suspicious Rainbow Aster",
+    "description": "Minuman paling unik. Kelihatannya sih biasa saja dan rasanya bisa diterima, itu pun kalau kamu bisa mengabaikan astringen yang disebabkan oleh penanganan yang tidak tepat dari Lavender Melon-nya ...."
+  },
+  "RainbowAster": {
+    "name": "Rainbow Aster",
+    "description": "Minuman unik yang ada di dalam kisah novel terkenal \"Ayo dong Kitsune Guuji, Kamu Cantik Deh!\". Minuman ini akhirnya diciptakan oleh Sailing Breeze yang berkolaborasi dengan Yae Publishing House, dengan rasanya yang tak terlupakan. Versi ini tidak mengandung kacang, sehingga agak sedikit berbeda dari edisi terbatas spesial yang ada di Festival Irodori, tapi ini dimaksudkan agar tidak berbahaya bagi mereka yang alergi terhadap kacang."
+  },
+  "DeliciousRainbowAster": {
+    "name": "Delicious Rainbow Aster",
+    "description": "Minuman yang unik. Calla Lily dari Mondstadt dan Lavender Melon dari Inazuma bertemu dari seberang gunung dan lautan sebelum akhirnya rasanya tercampur dengan sempurna di antara susu yang lembut. Dijamin kamu bisa merasakan kepuasan — memang, sama sekali tidak mengejutkan bahwa Shogun yang sakit dalam kisah itu dipulihkan kembali oleh manfaat dari minuman ini."
+  },
+  "QuietElegance": {
+    "name": "Quiet Elegance",
+    "description": "Makanan spesialis Kamisato Ayato. Ditata dengan sangat mewah dan elegan, sama seperti sikap Ayato saat mengurus masalah politik. Jika kebanyakan, akan dirasa berlebihan. Jika dikurangi, maka terasa seperti hidangan yang disia-siakan. Setelah kamu mencicipinya, kamu menyadari bahwa rasanya sama dengan yang ada di Uyuu Restaurant. Luar biasa. Tapi saat sumpitmu hendak mengambil bunga camellia kristal itu, Ayato menghentikanmu ... \"Itu hanya sesuatu yang kubuat saat latihan ilmu pedang. Hanya sekadar dekorasi saja.\""
+  },
   "RecipeItem": {
     "name": "Bahan Resep",
     "description": "Membuka alat memasak"
@@ -6623,6 +6967,14 @@
     "name": "Resep: Udon Noodles",
     "description": "Resep yang berisi langkah-langkah untuk membuat Udon Noodles."
   },
+  "RecipeKatsuSandwich": {
+    "name": "Resep: Katsu Sandwich",
+    "description": "Resep yang berisi langkah-langkah untuk membuat hidangan Katsu Sandwich."
+  },
+  "RecipeRainbowAster": {
+    "name": "Resep: Rainbow Aster",
+    "description": "Resep yang berisi langkah-langkah untuk membuat hidangan Rainbow Aster."
+  },
   "CraftedItems": {
     "name": "Hasil Craft",
     "description": "Item yang terbentuk dari proses Crafting."
@@ -6829,15 +7181,15 @@
   },
   "GloomyStatuette": {
     "name": "Gloomy Statuette",
-    "description": "Patung kecil yang diukir menyerupai bentuk seseorang yang tak dikenal. Meskipun sudah terlihat tua, tetapi tidak terdapat kerusakan pada bagian manapun."
+    "description": "Patung kecil yang menggambarkan seseorang yang tak dikenal.\\nTidak ada kerusakan yang didapati padanya, bahkan setelah melewati waktu yang lama. Tampaknya, benda ini dirawat oleh pemilik aslinya layaknya sebuah benda suci."
   },
   "DarkStatuette": {
     "name": "Dark Statuette",
-    "description": "Sebuah patung yang diukir berdasarkan seseorang tak dikenal. Memancarkan kekuatan gelap yang misterius, memberikan perasaan tidak tenang saat digenggam."
+    "description": "Patung kecil yang dibuat meniru rupa seseorang bermata satu.\\nSaat berada dalam genggaman, sepertinya terasa ada sebuah kehangatan yang memancar darinya, bagaikan pundak seorang sahabat. Mungkin benda ini dapat memberikan keberanian untuk terus berjalan maju bagi mereka yang paham akan makna di baliknya."
   },
   "DeathlyStatuette": {
     "name": "Deathly Statuette",
-    "description": "Patung ukiran yang perlahan memancarkan aura yang jahat, tidak diketahui dari apa patung ini dibuat. Saat diperhatikan beberapa saat, dapat terdengar bisikan ratapan di telinga."
+    "description": "Patung bermata satu yang memancarkan energi yang tidak diketahui secara samar-samar. Sama sekali tidak diketahui terbuat dari material apakah benda ini.\\nSaat idola ini ditatap, sepertinya terdengar bisikan aneh yang dapat membuat orang merasa damai ....\\n\"Anakku, lihatlah. Segala sesuatu di bawah kolong langit akan mengalami guncangan dan binasa. Dan langit hitam yang selamanya tenang ini akan menampung semuanya.\""
   },
   "DeadLeyLineBranch": {
     "name": "Dead Ley Line Branches",
@@ -6995,6 +7347,18 @@
     "name": "Concealed Talon",
     "description": "Cakar tajam yang ditinggalkan oleh salah satu dari Riftwolves.\\nSemua keajaiban yang ada di dunia harus tunduk kepada \"Cretaceus\", maha karya terbaik yang pernah ada."
   },
+  "FungalSpores": {
+    "name": "Fungal Spore",
+    "description": "Spora berkilauan yang dijatuhkan oleh Floating Fungus. Kecil dan lembut, sepertinya cuma kena bersin saja, spora ini akan lenyap tak bersisa."
+  },
+  "LuminescentPollen": {
+    "name": "Luminescent Pollen",
+    "description": "Sekantong kecil bubuk Fungal Spore bercahaya, sejenis obat yang umum dipakai di tanah hutan hujan. Biasa dijual dalam kemasan kertas."
+  },
+  "CrystallineCystDust": {
+    "name": "Crystalline Cyst Dust",
+    "description": "Spora dalam jumlah besar yang dikumpulkan secara hati-hati dari sporangium utuh. Kalau lingkungannya mendukung, maka spora ini akan menghasilkan koloni Floating Fungus yang bertumbuh pesat ...."
+  },
   "HurricaneSeed": {
     "name": "Hurricane Seed",
     "description": "Bentuk Anemo Hypostasis setelah dikalahkan.\\nBerisi esensi energi Anemo.\\nKonon, tubuhnya yang rapuh ini memiliki kekuatan untuk menciptakan badai. Kupu-kupu yang murni dengan energi Anemo ini pasti sedang menunggu datangnya hari di mana dia bisa menciptakan badai lagi."
@@ -7057,7 +7421,7 @@
   },
   "JuvenileJade": {
     "name": "Juvenile Jade",
-    "description": "Sebuah kristal yang didapatkan dari Primo Geovishap. Berisi potensi untuk menjadi seekor naga.\\nKristal ini muncul sebagai endapan di dalam tubuh Vishap yang bersemayam dalam gunung. Legenda Liyue menceritakan bahwa setelah mengumpulkan energi untuk waktu yang sangat lama, kristal ini akan menggantikan jantung Vishap, sehingga Vishap tersebut akan berubah menjadi seekor naga yang bisa menggetarkan gunung dan membelah bumi."
+    "description": "Sebuah kristal yang didapatkan dari Primo Geovishap. Berisi potensi untuk menjadi seekor naga.\\nKristal ini muncul sebagai endapan di dalam tubuh vishap yang bersemayam dalam gunung. Legenda Liyue menceritakan bahwa setelah mengumpulkan energi untuk waktu yang sangat lama, kristal ini akan menggantikan jantung vishap, sehingga vishap tersebut akan berubah menjadi seekor naga yang bisa menggetarkan gunung dan membelah bumi."
   },
   "DragonLordsCrown": {
     "name": "Dragon Lord's Crown",
@@ -7130,6 +7494,10 @@
   "TheMeaningOfAeons": {
     "name": "The Meaning of Aeons",
     "description": "Hiasan kepala kecil yang didapatkan dari Plane of Euthymia setelah semuanya mereda.\\nSebuah pikiran dapat mengakhiri segala bencana, dan akan selalu ada pikiran yang melampaui waktu.\\nDi tengah semua ini, entah arti sebenarnya yang ingin Makoto sampaikan sudah tersampaikan atau belum."
+  },
+  "RunicFang": {
+    "name": "Runic Fang",
+    "description": "Mesin kuno berbentuk mirip ular misterius yang digunakan untuk menggali \"gigi\" dinding gunung diukir dengan simbol aneh yang tak terpecahkan.\\nMenurut legenda, ada cacing besar yang bersembunyi di celah-celah hitam yang dalam di bumi. Mereka selalu menyimpan dendam dan kebencian terhadap bumi, dan mereka menggali terowongan besar dengan tujuan yang jahat dan tidak diketahui ...."
   },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower",
@@ -7375,6 +7743,18 @@
     "name": "Sakuya's Special Gardening Package",
     "description": "Paket berkebun khusus yang kamu terima dari Sakuya. Gunakan ini untuk menerima salah satu dari tiga rak bunga."
   },
+  "YashiroCommissionGift": {
+    "name": "Hadiah Yashiro Commission",
+    "description": "Hadiah dari Yashiro Commission, sepertinya perabotan ini dibuat dengan sepenuh hati."
+  },
+  "ExquisiteGiftFurnishing": {
+    "name": "Hadiah Perabotan yang Cantik",
+    "description": "Hadiah dari seorang teman, sepertinya perabotan ini dibuat dengan sepenuh hati."
+  },
+  "AmazingGiftFurnishing": {
+    "name": "Hadiah Perabotan yang Fantastis",
+    "description": "Hadiah dari sebuah novel ringan, sepertinya perabotan ini dibuat dengan sepenuh hati."
+  },
   "BEP": {
     "name": "BEP",
     "description": "Buku harian perjalananmu berisi tentang semua hal yang kamu alami selama perjalananmu. Pengalamanmu ini suatu hari nanti akan dituliskan menjadi sebuah lagu nyanyian."
@@ -7413,15 +7793,15 @@
   },
   "DomainReliquaryTierIII": {
     "name": "Domain Reliquary: Tier III",
-    "description": "Tempat yang digunakan untuk menyimpan artefak, semoga berguna oleh yang menemukannya."
+    "description": "Tempat yang digunakan untuk menyimpan Artefak. Semoga mereka yang melihatnya menerima rasa hormat dan cinta.\\n\\nDalam setiap Reliquary, bisa didapatkan salah satu dari set Artefak berikut:\\n· \"Berserker\"\\n· \"Instructor\"\\n· \"The Exile\""
   },
   "DomainReliquaryTierII": {
     "name": "Domain Reliquary: Tier II",
-    "description": "Tempat yang digunakan untuk menyimpan artefak, semoga orang yang menemukannya diberkati."
+    "description": "Tempat yang digunakan untuk menyimpan artefak. Semoga orang yang menemukannya diberkati.\\n\\nDalam setiap Reliquary, bisa didapatkan salah satu dari set Artefak berikut:\\n· \"Gladiator's Finale\"\\n· \"Wanderer's Troupe\"\\n· \"Berserker\"\\n· \"Instructor\"\\n· \"The Exile\""
   },
   "DomainReliquaryTierI": {
     "name": "Domain Reliquary: Tier I",
-    "description": "Tempat yang digunakan untuk menyimpan artefak, semoga keajaiban terjadi kepada orang yang menemukannya."
+    "description": "Tempat yang digunakan untuk menyimpan Artefak. Semoga keajaiban terjadi kepada orang yang menemukannya.\\n\\nDalam setiap Reliquary, bisa didapatkan salah satu dari set Artefak berikut:\\n· \"Gladiator's Finale\"\\n· \"Wanderer's Troupe\""
   },
   "ReliquaryWanderersTroupeAndGladiator": {
     "name": "Reliquary: Wanderer's Troupe & Gladiator",
@@ -8331,6 +8711,26 @@
     "name": "Catatan Perjalanan: Kebangkitan",
     "description": "Style kartu nama.\\nKetiga dunia bergejolak, langit dan bumi bangkit. Sang Sangacorex juga akan bangkit dari tidur abadinya."
   },
+  "KamisatoAyatoRipple": {
+    "name": "Kamisato Ayato: Ripple",
+    "description": "Style kartu nama.\\nBunga kamelia hinggap di atas permukaan kolam cermin, membuat riak menyebar ke segala penjuru kolam."
+  },
+  "LumensStoneOfLight": {
+    "name": "Lumen: Batu Cahaya",
+    "description": "Style kartu nama.\\nSebenarnya apa yang mengalir di dalam kristal biru tanpa nama dan tanpa suara ini? Rahasia langit? Ataukah bisikan dari Abyss?"
+  },
+  "AchievementThunderclap": {
+    "name": "Achievement: Sambaran Petir",
+    "description": "Style kartu nama.\\nDengarlah suara yang bergema melalui awan. Itu suara kemarahannya, sekaligus satu harapan kecilnya."
+  },
+  "AchievementChasm": {
+    "name": "Achievement: Situs Pertambangan",
+    "description": "Style kartu nama.\\nTempat yang dulunya ramai dilalui oleh para penambang sekarang terlelap dalam kesunyian. Kini hanya tersisa Glazed Sand Crystal dan bebatuan yang terus bersinar setelah seribu tahun lamanya."
+  },
+  "TravelNotesIrodori": {
+    "name": "Catatan Perjalanan: Irodori",
+    "description": "Style kartu nama.\\nMereka yang sehobi dikenal sebagai \"penggemar\". Sebaiknya buat cerita sebaik mungkin sebelum pemimpin redaksi kitsune kita memikirkan soal undang-undang hak cipta ... Atau mungkin dia sudah memimpikannya tapi sama sekali tidak keberatan?"
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone",
     "description": "Dapat mencari Anemoculus terdekat saat digunakan di wilayah Mondstadt.\\nPiringan batu buatan manusia yang memiliki beberapa kemiripan dengan Patung The Seven Anemo. Batu ini dapat beresonansi dengan Anemoculus.\\n Merupakan tiruan kasar dari Patung The Seven yang sudah ada di dunia sejak dahulu kala. Batu ini memberikan kesempatan kepada para penjelajah dan petualang untuk mencari Anemoculus yang hilang."
@@ -8490,6 +8890,10 @@
   "LaunchTube": {
     "name": "Launch Tube",
     "description": "Sebuah alat khusus yang diciptakan pengrajin Pengyi. Alat ini berfungsi untuk meleburkan dan meluncurkan kembang api secara otomatis. Di tangan seseorang yang kreatif, alat ini pasti bisa menciptakan pertunjukan kembang api yang unik dan meriah."
+  },
+  "LumenstoneAdjuvant": {
+    "name": "Lumenstone Adjuvant",
+    "description": "Saat digunakan di Chasm: Tambang Bawah Tanah, kristal ini bisa memancarkan cahaya.\\n\\nMemiliki banyak kemiripan dengan Glazed Sand Crystal yang hanya bisa ditemukan di dalam Chasm, tapi punya lebih banyak kekuatan yang terkandung di dalamnya.\\nBiarlah dia menjadi matahari di tanganmu yang bisa menyinari setiap langkahmu melewati terowongan gelap dan membawa kenyamanan di saat semua menjadi gelap."
   },
   "BokusoBox": {
     "name": "Bokuso Box",
@@ -8853,7 +9257,7 @@
   },
   "CourtOfTheUpright": {
     "name": "Aula Keadilan",
-    "description": "Blueprint yang berisi langkah-langkah terperinci untuk membangun Aula Keadilan.\\nBangunan yang megah ini menggabungkan desain Tri-Commission dan Kantor Polisi dengan sempurna. Bangunan ini memberikan kesan rumah mewah dengan sentuhan organisasi eksekutif yang profesional, tapi tetap mempertahankan estetikanya. Sungguh bangunan yang \"layak\".\\nSiapa pun yang memiliki latar belakang terhormat dan jujur pasti akan menyetujui tata letak taman ini. Mungkin kamu pernah mendengar tentang jenderal Tenryou Commission yang menyarankan para pejabatnya untuk tinggal di dekat kantor Commission agar dapat bekerja dengan lebih cepat dan berkontribusi secara lebih efektif untuk mimpi Yang Mulia Shogun mencapai \"Keabadian\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan.\\nRekan yang menyukai set perabot ini: Kujou Sara"
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk membangun Aula Keadilan.\\nBangunan yang megah ini menggabungkan desain Tri-Commission dan Kantor Polisi dengan sempurna. Bangunan ini memberikan kesan rumah mewah dengan sentuhan organisasi eksekutif yang profesional, tapi tetap mempertahankan estetikanya. Sungguh bangunan yang \"layak\".\\nSiapa pun yang memiliki latar belakang terhormat dan jujur pasti akan menyetujui tata letak taman ini. Mungkin kamu pernah mendengar tentang jenderal Tenryou Commission yang menyarankan para pejabatnya untuk tinggal di dekat kantor Commission agar dapat bekerja dengan lebih cepat dan berkontribusi secara lebih efektif untuk mimpi Yang Mulia Shogun mencapai \"Keabadian\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan.\\nRekan yang menyukai set perabot ini: Kujou Sara, Kamisato Ayato"
   },
   "WakefulSpring": {
     "name": "Kolam Pemandian Penyegar",
@@ -8877,7 +9281,7 @@
   },
   "SummerNightsRecollection": {
     "name": "Kenangan Malam Musim Panas",
-    "description": "Blueprint yang berisi langkah-langkah terperinci untuk memasang Kenangan Malam Musim Panas.\\nPemandangannya dengan sempurna menciptakan kembali suasana semarak festival Inazuma.\\nKota Inazuma mengadakan beberapa festival setiap tahun, tetapi Festival Musim Panas adalah yang terbesar dan paling berkesan. Kedai makanan, permainan, dan kembang api di langit malam akan membuat pengunjung betah berlama-lama. Meski festival akan berakhir, namun suara canda tawa serta kemeriahan itu akan tetap tertanam dalam ingatan.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan.\\nRekan yang menyukai set perabot ini: Kamisato Ayaka, Arataki Itto"
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk memasang Kenangan Malam Musim Panas.\\nPemandangannya dengan sempurna menciptakan kembali suasana semarak festival Inazuma.\\nKota Inazuma mengadakan beberapa festival setiap tahun, tetapi Festival Musim Panas adalah yang terbesar dan paling berkesan. Kedai makanan, permainan, dan kembang api di langit malam akan membuat pengunjung betah berlama-lama. Meski festival akan berakhir, namun suara canda tawa serta kemeriahan itu akan tetap tertanam dalam ingatan.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan.\\nRekan yang menyukai set perabot ini: Kamisato Ayaka, Arataki Itto, Kamisato Ayato"
   },
   "SakuraHuedStreet": {
     "name": "Jalan Sakura",
@@ -9659,6 +10063,14 @@
     "name": "Kios Pelangi: Semerah Darahmu",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Kios Pelangi: Semerah Darahmu\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "FestivalBoothStrangeWonders": {
+    "name": "Kios Festival - \"Keajaiban yang Memukau\"",
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat Kios Festival - \"Keajaiban Aneh\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "FestivalBoothLiteraryTalent": {
+    "name": "Kios Festival - \"Bakat Sastra\"",
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat Kios Festival - \"Bakat Sastra\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "RitualShrine": {
     "name": "Kuil Ritual",
     "description": "Resep yang berisi langkah-langkah untuk membuat Kuil Ritual.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -10091,6 +10503,14 @@
     "name": "Tumpukan Hadiah Festival",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Tumpukan Hadiah Festival\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "HeavyDutyRestaurantStove": {
+    "name": "Tungku Jumbo Restoran",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Tungku Jumbo Restoran\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "SereneFlames": {
+    "name": "Api yang Tenang",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Api yang Tenang\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "PottedPlantVerdantVastness": {
     "name": "Pot Tanaman: Hamparan Hijau",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Pot Tanaman: Hamparan Hijau\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -10246,6 +10666,14 @@
   "GoldInscribedEvilCleansingBanner": {
     "name": "Spanduk Pembersih Kejahatan Berukir Emas",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Spanduk Pembersih Kejahatan Berukir Emas\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "TanukiHugsPhotoBoard": {
+    "name": "Papan Foto Tanuki Berpelukan",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Papan Foto Tanuki Berpelukan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "KitsuneGuujiExclusivePaintedFlagBanner": {
+    "name": "Spanduk Bendera Bergambar Eksklusif \"Kitsune Guuji\"",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Spanduk Bendera Bergambar Eksklusif \"Kitsune Guuji\"\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Lampu Jalan dengan Ukiran Besi",

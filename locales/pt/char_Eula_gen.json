@@ -28,7 +28,7 @@
       "5": "Diminuição de RES Física",
       "6": "Diminuição de RES Cryo",
       "7": "Duração de Diminuição de RES",
-      "8": "Recarga ao Tocar",
+      "8": "Recarga ao Pressionar",
       "9": "Tempo de Recarga ao Manter Pressionado",
       "10": "",
       "11": "",
@@ -136,7 +136,7 @@
   "constellation2": {
     "name": "Garota da Espuma do Mar",
     "description": {
-      "0": "Diminui o tempo de recarga ao manter pressionado <strong>Vórtice Gelado</strong>, tornando esse tempo igual ao tempo de recarga de tocar."
+      "0": "Diminui o tempo de recarga ao manter pressionado <strong>Vórtice Gelado</strong>, tornando esse tempo igual ao tempo de recarga de pressionar."
     }
   },
   "constellation3": {

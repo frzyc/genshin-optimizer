@@ -46,11 +46,11 @@
       "2": "<br/>",
       "3": "<strong>Manter pressionado</strong>",
       "4": "Mantenha pressionado para ajustar a direção na qual o Stiletto deve ser lançado.",
-      "5": "Stilettos lançados pelo modo de Manter pressionado podem ser suspensos em pleno ar, permitindo Keqing saltar neles ao usar Estrelas do Regresso uma segunda vez.",
+      "5": "Stilettos lançados pelo modo de Manter pressionado podem ser suspensos em pleno ar, permitindo Keqing saltar neles ao usar Restauração Estelar uma segunda vez.",
       "6": "<br/>",
       "7": "<strong>Relâmpago Stiletto</strong>",
-      "8": " Se Keqing usar Estrelas do Regresso novamente ou usar um Ataque Carregado ainda em sua duração, removerá a Marca de Stiletto e produzirá efeitos diferentes:",
-      "9": " se ela usar Estrelas do Regresso novamente, ela irá teleportar para a localização da Marca e desencadeará um ataque cortante, que causa <electro>Dano Electro em AdE</electro>. Quando teleportando para um Stiletto que foi lançado com um Ataque Pressionado, Keqing pode ignorar obstruções do terreno.",
+      "8": " Se Keqing usar Restauração Estelar novamente ou usar um Ataque Carregado ainda em sua duração, removerá a Marca de Stiletto e produzirá efeitos diferentes:",
+      "9": " se ela usar Restauração Estelar novamente, ela irá teleportar para a localização da Marca e desencadeará um ataque cortante, que causa <electro>Dano Electro em AdE</electro>. Quando teleportando para um Stiletto que foi lançado com um Ataque Pressionado, Keqing pode ignorar obstruções do terreno.",
       "10": " Se Keqing usa um Ataque Carregado, ela provocará uma série de cortes estrondosos na localização da Marca, causando <electro>Dano Electro em AdE</electro>.",
       "11": "<br/>",
       "12": "<i>“Humanos são como mariposas, buscando incessantemente a chama que chamamos de deuses e Adepti. Mas essa luz que tenho aqui é a minha.”</i>"
@@ -122,7 +122,7 @@
   "constellation1": {
     "name": "Poder Trovejante",
     "description": {
-      "0": "Relançar <strong>Estrelas do Regresso</strong> enquanto um Stiletto de Relâmpago está presente faz com que Keqing cause 50% do seu ATQ como <electro>Dano Electro em uma AdE</electro> na localização inicial e final de seu Teleporte."
+      "0": "Relançar <strong>Restauração Estelar</strong> enquanto um Stiletto de Relâmpago está presente faz com que Keqing cause 50% do seu ATQ como <electro>Dano Electro em uma AdE</electro> na localização inicial e final de seu Teleporte."
     }
   },
   "constellation2": {

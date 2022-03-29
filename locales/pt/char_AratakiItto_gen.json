@@ -46,7 +46,7 @@
   "skill": {
     "name": "Masatsu Zetsugi: Explosão Akaushi!",
     "description": {
-      "0": "Lança Ushi, o jovem touro de akaushi e membro auxiliar da Gangue Arataki, causando <geo>Dano Geo</geo> nos oponentes! Quando Ushi atingir os oponentes, concederá a Arataki Itto 1 carga de Superforça Superlativa.",
+      "0": "Lança Ushi, o jovem touro akaushi e membro auxiliar da Gangue Arataki, causando <geo>Dano Geo</geo> nos oponentes! Quando Ushi atingir os oponentes, concederá a Arataki Itto 1 carga de Superforça Superlativa.",
       "1": "<br/>",
       "2": "Ushi permanecerá no campo e fornecerá apoio das seguintes formas:",
       "3": "Chama a atenção dos oponentes ao redor e atrai seus ataques.",
@@ -59,7 +59,7 @@
       "10": "<br/>",
       "11": "Ushi é considerado uma <geo>Construção Geo</geo> e Arataki Itto só pode ter 1 Ushi que ele mesmo tenha colocado em campo por vez.",
       "12": "<br/>",
-      "13": "<i>O nome desta técnica é derivado de Onibudou (um romance literário escrito por Junkichi). Entretanto, chamá-lo de \"Onisatsu Zetsugi\" provavelmente constituiria uma violação de direitos autorais — sem mencionar como o Itto em si é um oni e tal...</i>"
+      "13": "<i>O nome desta técnica é derivado de Onibudou (uma light novel escrita por Junkichi). Entretanto, chamá-lo de \"Onisatsu Zetsugi\" provavelmente constituiria uma violação de direitos autorais — sem mencionar como o Itto em si é um oni e tal...</i>"
     },
     "skillParams": {
       "0": "Dano de Habilidade",
@@ -97,7 +97,7 @@
     },
     "skillParams": {
       "0": "Bônus de ATQ",
-      "1": "Bônus de Vel de Ataque",
+      "1": "Bônus de Vel. de Ataque",
       "2": "Duração",
       "3": "Tempo de Recarga",
       "4": "Energia Elemental",

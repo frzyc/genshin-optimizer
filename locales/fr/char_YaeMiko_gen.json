@@ -54,7 +54,7 @@
       "7": "Cette capacité peut être utilisée 3 fois.",
       "8": "Un maximum de 3 sakura dévastateurs peut exister en même temps. Le niveau initial d'un sakura dévastateur est 1, et le niveau le plus élevé qu'un sakura peut atteindre est 3. Si un sakura dévastateur est créé trop près d'un autre sakura, l'ancien sakura est détruit.",
       "9": "<br/>",
-      "10": "<i>« Les esprits Kitsunes scellés dans les branches sont tous des yakans qui aspirent à chasser les humains. Les yakans sont deux grades plus bas que nous, les Kitsunes célestes, et donc, je vois à peine le problème si je les... mets à mes ordres. Néanmoins, cela ne signifie pas que vous, les humains, devriez copier notre système de grade. Que nenni... Et quant à qui d'entre nous, Kitsunes ou humains, est le plus haut placé dans l'ordre hiérarchique... Héhé... »</i>"
+      "10": "<i>« Les esprits Kitsunes scellés dans les branches sont tous des yakan qui aspirent à chasser les humains. Les yakan sont deux grades plus bas que nous, les Kitsunes célestes, et donc, je vois à peine le problème si je les... mets à mes ordres. Néanmoins, cela ne signifie pas que vous, les humains, devriez copier notre système de grade. Que nenni... Et quant à qui d'entre nous, Kitsunes ou humains, est le plus haut placé dans l'ordre hiérarchique... Héhé... »</i>"
     },
     "skillParams": {
       "0": "DGT sakura dévastateur Niv.1",
@@ -123,7 +123,7 @@
   "constellation1": {
     "name": "Offrande des yakan",
     "description": {
-      "0": "Lorsque <strong>Technique secrète : Incarnation céleste</strong> déclenche un éclair de tenko, Yae Miko récupère 8 pts d'énergie élémentaire."
+      "0": "Lorsque <strong>Technique secrète : Incarnation de tenko</strong> déclenche un éclair de tenko, Yae Miko récupère 8 pts d'énergie élémentaire."
     }
   },
   "constellation2": {

@@ -34,7 +34,7 @@
   "addEleDMG": "Adição de Dano Elemental",
   "press": {
     "dmg": "Dano de Toque",
-    "cd": "Recarga ao Tocar"
+    "cd": "Recarga ao Pressionar"
   },
   "hold": {
     "dmg": "Dano ao Manter Pressionado",

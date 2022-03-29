@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Ataque Carregado</strong>",
         "1": "Dispara um <strong>Tiro com Mira</strong> mais preciso e com Dano aumentado.",
-        "2": "Ao mirar, relâmpagos crepitantes irão se acumular na ponta da flecha. Uma flecha de relâmpago completamente carregada inflinge <electro>Dano Electro</electro>."
+        "2": "Ao mirar, relâmpagos crepitantes irão se acumular na ponta da flecha. Uma flecha de relâmpago completamente carregada inflige <electro>Dano Electro</electro>."
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",

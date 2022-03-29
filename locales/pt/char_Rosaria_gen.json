@@ -42,7 +42,7 @@
     "name": "Confissão Desoladora",
     "description": {
       "0": "Rosaria muda rapidamente de posição e aparece atrás de seu alvo. Ela o perfura e corta com sua arma, infligindo <cryo>Dano Cryo</cryo>.",
-      "1": "Não é possível deslocar-se para trás de inimigos de tamanho maior com esta habilidade.",
+      "1": "Não é possível deslocar-se para trás de inimigos de tamanho grande com esta habilidade.",
       "2": "<br/>",
       "3": "<i>A Freira Rosaria não perdoa os pecados daqueles que não se confessam a ela. Todos os pecadores serão castigados com o frio penetrante de uma punição proporcional à gravidade de seus pecados.</i>"
     },

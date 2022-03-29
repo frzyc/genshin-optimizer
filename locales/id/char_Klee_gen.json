@@ -41,15 +41,15 @@
   "skill": {
     "name": "Jumpy Dumpty",
     "description": {
-      "0": "Melemparkan bom Jumpty Dumpty yang membawa kesenangan tidak terbatas!",
-      "1": "Saat dilempar, Jumpty Dumpty dapat memantul tiga kali, setiap pantulannya akan meledak dan mengakibatkan <pyro>Pyro DMG Area</pyro>.",
+      "0": "Melemparkan bom Jumpy Dumpty yang membawa kesenangan tidak terbatas!",
+      "1": "Saat dilempar, Jumpy Dumpty dapat memantul tiga kali, setiap pantulannya akan meledak dan mengakibatkan <pyro>Pyro DMG Area</pyro>.",
       "2": "<br/>",
       "3": "Pada pantulan ke-3, bomnya akan terbagi menjadi banyak ranjau.",
       "4": "Ranjau-ranjau ini akan meledak saat menyentuh musuh, atau setelah jeda waktu yang singkat, kemudian mengakibatkan <pyro>Pyro DMG Area</pyro>.",
       "5": "<br/>",
       "6": "Dimulai dengan 2 kali jumlah penggunaan.",
       "7": "<br/>",
-      "8": "<i>Jumpty Dumpty adalah teman baik Klee! Klee selalu tidak sabar untuk memperkenalkannya ke semua orang.</i>"
+      "8": "<i>Jumpy Dumpty adalah teman baik Klee! Klee selalu tidak sabar untuk memperkenalkannya ke semua orang.</i>"
     },
     "skillParams": {
       "0": "DMG Jumpy Dumpty",

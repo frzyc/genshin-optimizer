@@ -114,7 +114,7 @@
     "description": {
       "0": "<strong>Arrancada Alternativa</strong>",
       "1": "Mona se envolve dentro do fluxo da água, consumindo Stamina para se mover rapidamente.",
-      "2": "Quando sob o efeito de Vicissitude, Mona pode se movementar em alta velocidade sobre a água.",
+      "2": "Quando sob o efeito de Vicissitude, Mona pode se movimentar em alta velocidade sobre a água.",
       "3": "Aplica o estado de <hydro>Molhado</hydro> para inimigos próximos quando ela ressurge.",
       "4": "<br/>",
       "5": "<i>Isso é algo que a Mona pode fazer, mas seu professor não pode. Bem, não é como se seu professor fosse seguir qualquer coisa relacionada às Visões Hydro de qualquer forma...</i>"
@@ -124,7 +124,7 @@
     "name": "\"Aquela bruxa velha veio atrás de mim!\"",
     "description": {
       "0": "Depois dela usar <strong>Vicissitude</strong> por 2 segundos, se existir algum inimigo próximo, Mona irá automaticamente criar um Fantasma.",
-      "1": "Um Fantasma criado dessa maneira dura por 2 segundos, e o Dano da sua explosão é igual a 50% da <strong>ÁguaIlusória</strong>."
+      "1": "Um Fantasma criado dessa maneira dura por 2 segundos, e o Dano da sua explosão é igual a 50% da <strong>Água Ilusória</strong>."
     }
   },
   "passive2": {
@@ -172,7 +172,7 @@
   "constellation5": {
     "name": "Zombaria da Fortuna",
     "description": {
-      "0": "Aumenta o nível da <strong>ÁguaIlusória</strong> em 3.",
+      "0": "Aumenta o nível da <strong>Água Ilusória</strong> em 3.",
       "1": "O nível máximo de elevação é 15."
     }
   },

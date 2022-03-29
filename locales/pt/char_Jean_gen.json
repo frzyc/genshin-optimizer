@@ -74,7 +74,7 @@
     "name": "Brisa de Dandelion",
     "description": {
       "0": "Invocando a proteção do vento, Jean cria um Campo Dandelion rodopiante, lançando inimigos ao redor e causando <anemo>Dano Anemo</anemo>.",
-      "1": "Ao mesmo tempo, ela regenera instantaneamente uma grande quantidade de Vida para todos os membros da equipe. A Vida restaurada dimensiona o ATQ de Jean.",
+      "1": "Ao mesmo tempo, ela regenera instantaneamente uma grande quantidade de Vida para todos os membros da equipe. A Vida restaurada é baseada no ATQ de Jean.",
       "2": "<br/>",
       "3": "<strong>Campo de Dandelions</strong>",
       "4": "Regenera continuamente a Vida dos personagens dentro da AdE concede o atributo <anemo>Anemo</anemo>.",
@@ -122,7 +122,7 @@
   "constellation1": {
     "name": "Tempestade Espiral",
     "description": {
-      "0": "Aumenta a velocidade da <strong>Espada do Temporal</strong> após manter pressionado por mais de 1s e aumenta o dano causado em 40%."
+      "0": "Aumenta a velocidade da <strong>sucção da Espada do Temporal</strong> após manter pressionado por mais de 1s e aumenta o dano causado em 40%."
     }
   },
   "constellation2": {

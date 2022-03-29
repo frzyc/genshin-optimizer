@@ -96,13 +96,13 @@
   "passive1": {
     "name": "Steady Breathing",
     "description": {
-      "0": "ตัวละครทั้งหมดที่ใช้อาวุธดาบ, ดาบใหญ่และหอกที่อยู่ในพื้นที่ของ <strong>Spirit Blade · Chongyun's Layered Frost</strong> ความเร็วในการโจมตีปกติจะเพิ่มขึ้น 8%"
+      "0": "ตัวละครทั้งหมดที่ใช้อาวุธดาบ, ดาบใหญ่และหอกที่อยู่ในพื้นที่ของ <strong>Spirit Blade - Chonghua's Layered Frost</strong> ความเร็วในการโจมตีปกติจะเพิ่มขึ้น 8%"
     }
   },
   "passive2": {
     "name": "Rimechaser Blade",
     "description": {
-      "0": "เมื่อพื้นที่ <strong>Spirit Blade · Chongyun's Layered Frost</strong> สลายไป จะเรียก Spirit Blade ออกมาเพิ่มหนึ่งเล่ม เพื่อโจมตีศัตรูโดยอัตโนมัติ โดยจะสร้าง<cryo>ความเสียหายน้ำแข็งวงกว้าง</cryo> เป็น 100% ของความเสียหายสกิล Spirit Blade · Chongyun's Layered Frost ซึ่งศัตรูที่ถูกโจมตีจะถูกลด <cryo>ความต้านทานน้ำแข็ง</cryo>ลง 10% เป็นเวลา 8 วินาที"
+      "0": "เมื่อพื้นที่ <strong>Spirit Blade - Chonghua's Layered Frost</strong> สลายไป จะเรียก Spirit Blade ออกมาเพิ่มหนึ่งเล่ม เพื่อโจมตีศัตรูโดยอัตโนมัติ โดยจะสร้าง<cryo>ความเสียหายน้ำแข็งวงกว้าง</cryo> เป็น 100% ของความเสียหายสกิล Spirit Blade - Chonghua's Layered Frost ซึ่งศัตรูที่ถูกโจมตีจะถูกลด <cryo>ความต้านทานน้ำแข็ง</cryo>ลง 10% เป็นเวลา 8 วินาที"
     }
   },
   "passive3": {
@@ -120,13 +120,13 @@
   "constellation2": {
     "name": "Atmospheric Revolution",
     "description": {
-      "0": "ช่วงเวลาคูลดาวน์เมื่อใช้ สกิลต่อสู้ทางธาตุและ ท่าไม้ตายภายในพื้นที่ของ <strong>Spirit Blade · Chonghua's Layered Frost</strong> จะลดลง 15%"
+      "0": "ช่วงเวลาคูลดาวน์เมื่อใช้สกิลธาตุและท่าไม้ตาย ภายในพื้นที่ของ <strong>Spirit Blade - Chonghua's Layered Frost</strong> จะลดลง 15%"
     }
   },
   "constellation3": {
     "name": "Cloudburst",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของ <strong>Spirit Blade · Cloud-parting Star</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของ <strong>Spirit Blade - Cloud-parting Star</strong> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้มากสุด 15 ระดับ"
     }
   },
@@ -140,15 +140,15 @@
   "constellation5": {
     "name": "The True Path",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของ <strong>Spirit Blade · Chongyun's Layered Frost</strong> ขึ้น 3 ระดับ",
+      "0": "เพิ่มเลเวลสกิลของ <strong>Spirit Blade - Chonghua's Layered Frost</strong> ขึ้น 3 ระดับ",
       "1": "เพิ่มได้มากสุด 15 ระดับ"
     }
   },
   "constellation6": {
     "name": "Rally of Four Blades",
     "description": {
-      "0": "เมื่อ <strong>Spirit Blade · Cloud-parting Star</strong> สร้างความเสียหายแก่ศัตรูที่มี เปอร์เซ็นต์พลังชีวิตต่ำกว่า Chongyun ความเสียหาย จะเพิ่มขึ้น 15%;",
-      "1": "นอกจากนี้ในตอนที่ใช้งาน จะเรียกใบมีดวิญญาณเพิ่มขึ้น มาอีกหนึ่งเล่ม"
+      "0": "เมื่อ <strong>Spirit Blade - Cloud-parting Star</strong> สร้างความเสียหายแก่ศัตรูที่มีเปอร์เซ็นต์พลังชีวิตต่ำกว่า Chongyun ความเสียหายจะเพิ่มขึ้น 15%;",
+      "1": "นอกจากนี้ในตอนที่ใช้งาน จะเรียกใบมีดวิญญาณเพิ่มขึ้นมาอีกหนึ่งเล่ม"
     }
   }
 }

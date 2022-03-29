@@ -437,7 +437,7 @@
   },
   "YaeMiko": {
     "name": "Yae Miko",
-    "description": "Lady Guuji of the Grand Narukami Shrine also serves as the editor-in-chief of Yae Publishing House. Unimaginable intelligence and cunning are hidden under her beautiful appearance."
+    "description": "Lady Guuji of the Grand Narukami Shrine. Also serves as the editor-in-chief of Yae Publishing House. Unimaginable intelligence and cunning are hidden under her beautiful appearance."
   },
   "Aloy": {
     "name": "Aloy",
@@ -450,6 +450,10 @@
   "YunJin": {
     "name": "Yun Jin",
     "description": "A renowned Liyue opera singer who is skilled in both playwriting and singing. Her style is one-of-a-kind, exquisite and delicate, much like the person herself."
+  },
+  "KamisatoAyato": {
+    "name": "Kamisato Ayato",
+    "description": "The young but highly accomplished head of the Yashiro Commission's Kamisato Clan. Cultured and polite, he is a man of many ways and means."
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna",
@@ -642,6 +646,10 @@
   "YunJinsStellaFortuna": {
     "name": "Yun Jin's Stella Fortuna",
     "description": "Yun Jin's Constellation Activation Material"
+  },
+  "KamisatoAyatosStellaFortuna": {
+    "name": "Kamisato Ayato's Stella Fortuna",
+    "description": "Kamisato Ayato's Constellation Activation Material"
   },
   "GnosticHymnOldNotes": {
     "name": "Gnostic Hymn - Old Notes",
@@ -3679,6 +3687,10 @@
     "name": "Lavender Melon",
     "description": "A brightly-colored fruit. The flesh within transforms into food with a unique mouthfeel when cooked."
   },
+  "Starshroom": {
+    "name": "Starshroom",
+    "description": "A fungus with a cap that resembles a five-pointed star. It is quite hardy indeed. Once it matures, the center of the cap will split open."
+  },
   "BirchWood": {
     "name": "Birch Wood",
     "description": "Timber obtained from birches. It is easy to work with and produces smooth cuts. Furniture made using such wood is both beautiful and durable.\\nCan be used to create furnishings."
@@ -4115,9 +4127,105 @@
     "name": "Little Meng's Drifting Bottle",
     "description": "A bottle containing Little Meng's various troubles. You wonder what's inside..."
   },
+  "Lumenstone": {
+    "name": "Lumenstone",
+    "description": "A special stone mined from the depths of The Chasm. It is said that it has catalytic properties.\\nIt almost blazes with light in the gloomy mines, but it loses all such effects the moment one leaves The Chasm.\\nIt seems to have other unique properties as well that have yet to be discovered."
+  },
+  "MuningsNote": {
+    "name": "Muning's Note",
+    "description": "The Ministry representative Muning gave you this note. Despite its short length, the word \"prohibited\" appears 8 times. If you give this to an adventure named Zhiqiong, you will receive the aid you need."
+  },
+  "TreasureHoardersTreasureMap": {
+    "name": "Treasure Hoarders' Treasure Map",
+    "description": "This treasure map, once torn in two and kept in different hiding spots by the Treasure Hoarders, is now whole again.\\nIf you follow the symbol on it, you might discover some special treasure!"
+  },
+  "StorehouseSecurityKeyNo": {
+    "name": "Storehouse Security Key No. 1",
+    "description": "A key to a certain storehouse that was hidden in a very obvious place, yet was never found by the Treasure Hoarders. Guess they're not as good at their job as they think, huh?"
+  },
+  "ASetOfCannonballs": {
+    "name": "A Set of Cannonballs",
+    "description": "Cannonballs for the Mountainator, also known as the Safe Blasting Mechanism 2156. Although you used the Lumenstone Adjuvant to clear the unknown pollutants away, there is still a stench about them that can be detected even while covering your nose.\\nUgh. Do you really have to touch it?"
+  },
+  "SpecialUnmovingEssentialOil": {
+    "name": "Special Unmoving Essential Oil",
+    "description": "A dangerous substance made using the formula that Clitopho provided by compressing two Unmoving Essential Oils into one very dense bottle filled with Geo elemental energy.\\nDue to its fame as a highly unstable concoction, only madmen or experienced miners would dare use it, making it an uncommon sight indeed.\\nHandle with utmost care!"
+  },
+  "KeyToAStonyHall": {
+    "name": "Key to a Stony Hall",
+    "description": "According to Khedive's initial speculations, this construct may be a \"key\" that could open the door to some ruin somewhere."
+  },
+  "PhotoOfAStrangeRock": {
+    "name": "Photo of a Strange Rock",
+    "description": "You took this picture of a strange rock that can be seen on the walls of The Chasm. You do not know what the patterns on the rock mean, but perhaps it could be of value to some researchers."
+  },
+  "AcademiaRecommendationLetter": {
+    "name": "Academia Recommendation Letter",
+    "description": "This letter, carefully crafted, and it is sealed in the name of \"Ecologist Khedive Pursina.\"\\nYou got this as a gift from Khedive. He claims that this is even more precious than gold, and can gain you the help of the House of Purbiruni.\\nKhedive himself believes monetary remuneration to be something of an insult... Hopefully, this doesn't prove to be a trend with people from Sumeru."
+  },
+  "OrbOfTheBlueDepths": {
+    "name": "Orb of the Blue Depths",
+    "description": "A strange gem left behind by a foe from the Abyss. If you look into it hard, it is almost as if you are looking into a long-borne dream shrouded by a deep fog."
+  },
+  "MinersKey": {
+    "name": "Miner's Key",
+    "description": "Such keys are commonly found in the mines, but one wonders why it would appear here."
+  },
+  "BlessingsOfWisdom": {
+    "name": "Blessings of Wisdom",
+    "description": "A suspicious object you obtained from Xamaran. It is claimed that this can clear the source of the foul energy. Condensed from the fungus' absorbed nutrients, the agglomeration of spores... and a thick sense of humor."
+  },
+  "MountainatorCannonballFuseAttached": {
+    "name": "Mountainator Cannonball (Fuse Attached)",
+    "description": "A cannonball with a fuse carefully attached. Ready to be fired at any time!"
+  },
+  "ToyDoll": {
+    "name": "Toy Doll",
+    "description": "A toy belonging to miner Qi Ding's daughter. It looks pretty tattered and it's hard to imagine that any kid would like it. But the intricate stitch-work shows that this was once quite the pricey item."
+  },
+  "FlowerOfFarsight": {
+    "name": "Flower of Farsight",
+    "description": "One of the six lost offerings scattered throughout The Chasm... possibly? It seems just like an ordinary Qingxin, and one that has newly sprouted as well, seeing as how its white petals have never been touched by dew.\\nWho knows how many people have once climbed up to high heights to pick one such fresh flower? Who knows if these flowers eventually bore witness to partings or reunions?"
+  },
+  "Skyfeather": {
+    "name": "Skyfeather",
+    "description": "One of the six lost offerings scattered throughout The Chasm, a feather that fell from an eagle that flew over the top of the cavern. The Millelith seem to enjoy collecting these tough feathers to use as ornaments.\\nIt is said that eagle feathers fit valiant warriors best, and so tend to be used to decorate the armor and arms of the bravest, such that they might break the enemy formation with all the swiftness of that great bird of prey."
+  },
+  "SundialOfAges": {
+    "name": "Sundial of Ages",
+    "description": "One of the six lost offerings scattered throughout The Chasm. It seems quite old now, but the etchings are still very clear, and so it can still be used.\\nThe sun is a rare sight down in The Chasm, and it is easy to lose track of time. But someday, this sundial will once again track the passage of years."
+  },
+  "CupOfCommons": {
+    "name": "Cup of Commons",
+    "description": "One of the six lost offerings scattered throughout The Chasm. Neither stone nor gem, it somehow still became part of the Treasure Hoarders' loot hoard.\\nIt has been filled by turns with fine wine, fair treasure, and blood. Now, its previous shame has been washed away, and it is ready to take on new memories."
+  },
+  "HelmOfWarding": {
+    "name": "Helm of Warding",
+    "description": "One of the six lost offerings scattered throughout The Chasm. It was found hidden in the living quarters of the miners. A slightly less discerning eye might have mistaken it for a miner's hat.\\nIt is heavily scarred and pitted, making one wonder how many miners' lives it must have saved."
+  },
+  "WarriorsSpear": {
+    "name": "Warrior's Spear",
+    "description": "One of the six lost offerings scattered throughout The Chasm. It was lost amid the ancient battlefield five hundred years ago. The long years have worn the edge of the spear-point away, but it still looks quite ominous nonetheless.\\nOne can imagine that it was once wielded by a warrior most brave, earning the cheers of the young wherever it swept, even unto The Chasm itself."
+  },
+  "BrassRing": {
+    "name": "Brass Ring",
+    "description": "A ring that you got off a Golden Weasel Thief. See how it glitters, see how it shines! The Weasel Thief must have planned on using it to attract a mate, and it does indeed look quite valuable. One imagines that its owner must be quite distressed at the moment."
+  },
+  "ShriveledSeed": {
+    "name": "Shriveled Seed",
+    "description": "A seemingly withered object that seems to, by normal judgment, be a seed. However, it still has a surprising amount of life in it yet.\\nBest not to eat it for now..."
+  },
+  "LumenstoneOre": {
+    "name": "Lumenstone Ore",
+    "description": "The raw ore from which Lumenstone may be found. If processed properly, it can be used to strengthen the Lumenstone Adjuvant you have. Why not hit Jinwu up and ask her?"
+  },
   "YueChuansDriftingBottle": {
     "name": "Yue Chuan's Drifting Bottle",
     "description": "A drifting bottle that contains Yue Chuan's reply to Little Meng. You wonder if it'll reach him..."
+  },
+  "HiraizumisGoods": {
+    "name": "Hiraizumi's Goods",
+    "description": "Fresh soy milk. It'll go bad quick if improperly stored."
   },
   "CellKey": {
     "name": "Cell Key",
@@ -4151,6 +4259,10 @@
     "name": "Fine Incense",
     "description": "Incense you got from Wang Ping'an. Looks to be of good quality."
   },
+  "CuriousCube": {
+    "name": "Curious Cube",
+    "description": "An unknown construct that you discovered in the depths of The Chasm. It resembles an intricately-made cube."
+  },
   "ANoteSomeoneStuffedYou": {
     "name": "A Note Someone Stuffed You",
     "description": "As you were walking down the streets of Inazuma, someone stuffed this note onto your person. Two strange symbols are drawn on it."
@@ -4170,6 +4282,14 @@
   "SpecialFortuneSlip": {
     "name": "Special Fortune Slip",
     "description": "A specially made fortune slip that describes how your luck will be like today. There is nothing different about this Fortune Slip, save for the fact that you got it for the fake Bamboo Slip.\\nWhose fortune does this Fortune Slip describe?"
+  },
+  "StrangeObject": {
+    "name": "Strange Object",
+    "description": "A strange item that you fished up from the underground waterways in The Chasm. It's wet, and you cannot tell if this is a living or dead thing."
+  },
+  "BedrockKeyLocationDiagram": {
+    "name": "Bedrock Key Location Diagram",
+    "description": "A simple diagram that Jinwu drew in haste. It indicates the general locations of several Bedrock Keys."
   },
   "LightMoraPurse": {
     "name": "Light Mora Purse",
@@ -4227,6 +4347,10 @@
     "name": "The Miraculous Adventures of the Traveler",
     "description": "\"This is a rather orthodox light novel, with its contents essentially being an edited version of real life in Teyvat. What is surprising, however, is that the author seems to be highly knowledgeable about Watatsumi Island, with many vivid, almost lifelike descriptions.\" — Ms. Hina"
   },
+  "FrostglazeCrystal": {
+    "name": "Frostglaze Crystal",
+    "description": "A glaze crystal produced in the depths of The Chasm, this special Glaze Sand Crystal ore was one of many scattered about during the battle against the giant ruin machine. Glaze Sand Crystal ore is a regional specialty of The Chasm, but this one is different from the rest.\\nUnder the radiance of the blue crystal and the power of the Abyss, a strange spiral pattern has emerged within this stone, and it is cold, almost chilling to the touch.\\nThis once smooth crystal has been transformed into this shape by the great might that descended from the heavens and the miasma that arose from the earth's depths — and perhaps the form it has taken is itself a warning unto mortals.\\nIf the interaction of these forces alone could twist stone and metal thus, if that ordinary heroine was truly able to witness the end of the pitch-dark path, how would she have faced the discovery she would make?"
+  },
   "LightRealmSigil": {
     "name": "Light Realm Sigil",
     "description": "A mark symbolizing the recognition of Enkanomiya's Tokoyo Ookami.\\nThey can be offered up to the Statue of the Vassals of Watatsumi, thus upgrading the Bokuso Box."
@@ -4234,6 +4358,18 @@
   "LightRealmCore": {
     "name": "Light Realm Core",
     "description": "You discovered this mysterious stone while exploring the darkened realm of Enkanomiya.\\nThe Light Realm gave humans additional means to resist the Abyss."
+  },
+  "BloodiedSergeantsInsignia": {
+    "name": "Bloodied Sergeant's Insignia",
+    "description": "The bloodied and muddied insignia of a Fatui sergeant. You have no idea how it ended up in the depths of The Chasm."
+  },
+  "CorporalNikolaysDiary": {
+    "name": "Corporal Nikolay's Diary",
+    "description": "A letter left behind by Corporal Nikolay. Its contents have long ceased to be whole."
+  },
+  "MoraPurse": {
+    "name": "Mora Purse",
+    "description": "You were asked by Xu from Feiyun Commerce Guild to deliver this to Huishan Hall's representative Muning, who is at The Chasm. It contains a rather sizable sum of Mora."
   },
   "AFirsthandGuideToSummoningSpirits": {
     "name": "A Firsthand Guide to Summoning Spirits",
@@ -4267,6 +4403,10 @@
     "name": "Hakuen Michimitsu Amenoma",
     "description": "The heirloom blade of the Iwakura Clan.\\nAlthough the one who forged this blade possessed great skills, and though it is true that this sword has slain many a foe, it does not possess any special powers. Nor has the Iwakura Succession ever obtained a Vision. Their excellent swordsmanship was purely a result of their honing of mind, body, and technique.\\nThis blade has been submerged in water for a long time and seems to have completely rusted."
   },
+  "WoodenCageKey": {
+    "name": "Wooden Cage Key",
+    "description": "Someone from the Kanjou Commission left this behind. You should be able to use this to rescue Shinnojou."
+  },
   "DamagedStoneSlate": {
     "name": "Damaged Stone Slate",
     "description": "A seemingly ordinary stone slate. Who knows what secrets it might hold..."
@@ -4274,6 +4414,178 @@
   "MysteriousStoneSlate": {
     "name": "Mysterious Stone Slate",
     "description": "The final stone slate you obtained. Secrets within secrets, eh?"
+  },
+  "YanbosNote": {
+    "name": "Yanbo's Note",
+    "description": "A somewhat complete note, written in a neat hand. It seems to have been a letter left for an old friend."
+  },
+  "NikolaysLetter": {
+    "name": "Nikolay's Letter",
+    "description": "A letter you found off one of the Black Serpent Knights. The name of the letter's recipient is neatly written: \"Katarina Snezhevna, My Dear Elder Sister,\" while the sender's name is written somewhat haphazardly, though you can make out the words \"Your Brother, Nikolay Snezhevich.\""
+  },
+  "FragrantSeasoning": {
+    "name": "Fragrant Seasoning",
+    "description": "Seasoning created using the recipe given to you by Nazafarin. It has a tangy aroma and serves to bring out the flavor in any dish it is added to."
+  },
+  "FragrantVegetarianAbalone": {
+    "name": "Fragrant Vegetarian Abalone",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantMintSalad": {
+    "name": "Fragrant Mint Salad",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantTripleLayeredConsomm": {
+    "name": "Fragrant Triple-Layered Consommé",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "ZhiqiongsLetter": {
+    "name": "Zhiqiong's Letter",
+    "description": "A letter left by a young adventurer. There is a slightly bitter scent of Qingxin on this piece of paper."
+  },
+  "ArrivalSchedule": {
+    "name": "Arrival Schedule",
+    "description": "A list of guests and their time of arrival on ships bound for the Irodori Festival.\\nYour task is to welcome and lend your aid to guests according to the information presented in this schedule."
+  },
+  "FiveKasenSummary": {
+    "name": "Five Kasen Summary",
+    "description": "A summary of the information concerning the Five Kasen, which you got from Yae Publishing House's Hirayama.\\nAlthough the content is quite sparse, you can still get the gist of the Five Kasen and the great flair they had in their heyday."
+  },
+  "TheFiveKasensSplendorSuikou": {
+    "name": "The Five Kasen's Splendor: Suikou",
+    "description": "A sheet of paper Venti found in a cargo crate within the wharf warehouse. A poem entitled \"The Five Kasen's Splendor: Suikou\" is written upon it."
+  },
+  "TheFiveKasensSplendorAoiNoOkina": {
+    "name": "The Five Kasen's Splendor: Aoi no Okina",
+    "description": "A sheet of paper Xingqiu found beneath his luggage. Someone seems to have left it there while he was napping. A poem entitled \"The Five Kasen's Splendor: Aoi no Okina\" is written upon it."
+  },
+  "TheFiveKasensSplendorAkahito": {
+    "name": "The Five Kasen's Splendor: Akahito",
+    "description": "A sheet of paper that some mysterious person left behind. This person must have originally intended to leave it on Kazuha's person, only to be unexpectedly detected by the latter and forced to flee in a hurry, leaving the sheet behind. A poem entitled \"The Five Kasen's Splendor: Akahito\" is written upon it."
+  },
+  "TheFiveKasensSplendorSumizome": {
+    "name": "The Five Kasen's Splendor: Sumizome",
+    "description": "Ayaka found this on a flower stand at the festival venue. This sheet of paper, however, only contains one line of text."
+  },
+  "AncientForgingBlueprint": {
+    "name": "Ancient Forging Blueprint",
+    "description": "An ancient forging blueprint. The Shogun once ordered the Kaedehara Clan to forge a Goshintou according to it.\\nAfter being soaked in water, it becomes clear that some of the text has been blurred — someone tampered with the blueprint, dooming the forging to failure and triggering the tragedy that followed..."
+  },
+  "KaedeharaYoshinorisLetter": {
+    "name": "Kaedehara Yoshinori's Letter",
+    "description": "A blank piece of paper that was hidden in an old flower pot. When dipped in water, it reveals a long-sealed secret.\\nAfter telling everyone about the truth that was concealed within, Kazuha said that \"this letter may still be of use to you,\" before handing it over to you."
+  },
+  "TaliesinsManuscript": {
+    "name": "Taliesin's Manuscript",
+    "description": "A very thick poetic manuscript. If you were to give it a generous review, it would be \"mediocre,\" while an honest review would see it getting a \"hard to read.\" It resembles bone-dry historical records more than it does poetry."
+  },
+  "FragrantStirFriedShrimp": {
+    "name": "Fragrant Stir-Fried Shrimp",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantGoldenShrimpBalls": {
+    "name": "Fragrant Golden Shrimp Balls",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantQingceStirFry": {
+    "name": "Fragrant Qingce Stir Fry",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantBlackBackPerchStew": {
+    "name": "Fragrant Black-Back Perch Stew",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantStirFriedFilet": {
+    "name": "Fragrant Stir-Fried Filet",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantGrilledTigerFish": {
+    "name": "Fragrant Grilled Tiger Fish",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantCrabRoeTofu": {
+    "name": "Fragrant Crab Roe Tofu",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantGoldenCrab": {
+    "name": "Fragrant Golden Crab",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantJewelrySoup": {
+    "name": "Fragrant Jewelry Soup",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantBambooShootSoup": {
+    "name": "Fragrant Bamboo Shoot Soup",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantNoodlesWithMountainDelicacies": {
+    "name": "Fragrant Noodles with Mountain Delicacies",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantMoraMeat": {
+    "name": "Fragrant Mora Meat",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantStirFriedFishNoodles": {
+    "name": "Fragrant Stir-Fried Fish Noodles",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantUniversalPeace": {
+    "name": "Fragrant Universal Peace",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantRiceBuns": {
+    "name": "Fragrant Rice Buns",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantAlmondTofu": {
+    "name": "Fragrant Almond Tofu",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "FragrantLotusFlowerCrisp": {
+    "name": "Fragrant Lotus Flower Crisp",
+    "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
+  },
+  "SayusSalary": {
+    "name": "Sayu's Salary",
+    "description": "This was originally intended to buy bedding and other materials by which sleep quality might be improved, but on the other hand, Sayu has no wish to sleep forever just yet."
+  },
+  "StatueOfHerExcellencyTheAlmightyNarukamiOgoshoGodOfThunder": {
+    "name": "Statue of Her Excellency, the Almighty Narukami Ogosho, God of Thunder",
+    "description": "The Statue of Her Excellency, the Almighty Narukami Ogosho, God of Thunder that Sara has been hankering after. Go on, go give it to her."
+  },
+  "KokomisShoppingList": {
+    "name": "Kokomi's Shopping List",
+    "description": "A shopping list of books compiled by Kokomi. All the genres, unit prices, and amounts of the books she desires have been written down here in her elegant script."
+  },
+  "ToyFox": {
+    "name": "Toy Fox",
+    "description": "The gift that Gorou got when helping Kokomi purchase books during the Irodori Festival. Gorou then gave it to you as thanks for accompanying him.\\nEvery time you look at it, you can't help but remember the sight of every hair on Gorou's body standing on end as he heard the word \"fox.\""
+  },
+  "ALegendOfSwordVI": {
+    "name": "A Legend of Sword (VI)",
+    "description": "\"In essence, the great battle in space is no different from the armed conflict between commoners which took place ten years ago on that barren planet...\" Soon, the name of that man shall be known across the Galaxy, matching that of the Emperor."
+  },
+  "ShogunAlmightyRebornAsRaidenWithUnlimitedPower": {
+    "name": "Shogun Almighty: Reborn as Raiden With Unlimited Power",
+    "description": "A popular light novel in Inazuma which tells the story of a mere mortal suddenly turning into the Raiden Shogun. The story is well-received for its novel plot and has inspired many light novelists."
+  },
+  "PrettyPleaseKitsuneGuuji": {
+    "name": "Pretty Please, Kitsune Guuji?",
+    "description": "A popular light novel in Inazuma which tells the story of the \"good-for-nothing\" Shogun and the \"good-at-everything\" Kitsune Guuji. The novel is in the same collection as \"Shogun Almighty: Reborn as Raiden With Unlimited Power,\" but not by the same author. What they share in common, however, is their popularity."
+  },
+  "LetsGoDodoco": {
+    "name": "Let's Go, Dodoco!",
+    "description": "Message From the Editor: \"Let's Go, Dodoco!\" is the combined work of an older girl and a younger girl. Every chapter brims with their gentleness and good wishes, as the story is intended as a gift to our readers. I hope this book — in spite of its small volume — can bring you some simple joy after a long day of work."
+  },
+  "JinwusSoup": {
+    "name": "Jinwu's Soup",
+    "description": "A thick soup that Jinwu made for sick miners. It's nutritious, fragrant, and makes you feel warm inside when you drink it.\\nDon't let it go cold, now."
+  },
+  "BagOfOrnaments": {
+    "name": "Bag of Ornaments",
+    "description": "A bag of decorations that Old Chou gave you as compensation for Tang Wuchou's misfortunes. They are very roughly made, owing to having been manufactured by the Treasure Hoarders within The Chasm using smuggled ore, and can barely be considered to possess any aesthetic qualities at all. As such, there is no hope at all of them selling well in Liyue. The only thing good you could say about these ornaments is that they are at least made using the right materials..."
   },
   "PyroShard": {
     "name": "Pyro Shard",
@@ -4686,6 +4998,10 @@
   "MoonchaseCharm": {
     "name": "Moonchase Charm",
     "description": "These jade talismans have been placed in various areas by the Adventurers' Guild. They are made from crystal-clear and gently lustrous Plaustrite Shards. It is said that these talismans contain the essence of the bright white moon and store the reminiscences that people have of festivals past."
+  },
+  "Lumenspar": {
+    "name": "Lumenspar",
+    "description": "A sky-blue crystal that glitters so brightly that it brings forth echoes of the heavens above, which cannot be seen from underground...\\nIf you hold it up to your ear, you can almost hear a soft sigh coming from within.\\nThis might sound strange, but this crystal also gives off a faint warmth."
   },
   "Dish": {
     "name": "Dish",
@@ -6191,6 +6507,34 @@
     "name": "Fukuuchi Udon",
     "description": "Yae Miko's specialty. The Fried Tofu in here is specially made by the solemn Lady Kitsune. It is said that if you eat it all at one go with sincerity in your heart, you will have the protection of the Great Kitsune — misfortune shall flee and fortune abound!"
   },
+  "SuspiciousKatsuSandwich": {
+    "name": "Suspicious Katsu Sandwich",
+    "description": "A nutritionally-balanced meal. Well, you say that, but vegetables are withered, the meat is dry and wooden, and the bread slices are way too firm... You know what? It doesn't matter. A person needs to fill their stomach and all..."
+  },
+  "KatsuSandwich": {
+    "name": "Katsu Sandwich",
+    "description": "A nutritionally-balanced meal. The two bread slices clip a thick-cut katsu slab between them. The fragrant, slightly sweet-and-sour sauce is the key to preventing this meal from being too rich. A brilliant mix of outlander style and local flavor!"
+  },
+  "DeliciousKatsuSandwich": {
+    "name": "Delicious Katsu Sandwich",
+    "description": "A nutritionally-balanced meal. The fragrant and fluffy bread fills you right up, while the crispy, juicy katsu titillates the senses. One single bite is all it takes to fill you from tongue to gut with satisfaction. Now then, who was the one who first thought of this brilliant combination?"
+  },
+  "SuspiciousRainbowAster": {
+    "name": "Suspicious Rainbow Aster",
+    "description": "A most unique drink. It certainly looks alright, and it would taste acceptable, if you ignore the astringency caused by improper handling of the Lavender Melons..."
+  },
+  "RainbowAster": {
+    "name": "Rainbow Aster",
+    "description": "A unique drink. Having featured in the famous light novel \"Pretty Please, Kitsune Guuji?\", it has since been brought to life by Sailing Breeze in collaboration with Yae Publishing House, along with its fascinating flavor. As this version does not contain any bean products, it is slightly different from the special limited edition that was available during the Irodori Festival, but this also means that there's no risk of triggering any bean allergies."
+  },
+  "DeliciousRainbowAster": {
+    "name": "Delicious Rainbow Aster",
+    "description": "A unique drink. Calla Lilies from Mondstadt and Lavender Melons from Inazuma meet from across mountains and seas before having their flavors blended together to perfection using smooth milk. Novel satisfaction guaranteed — indeed, it is utterly unsurprising that the ill Shogun in the tale was re-energized by the merits of this drink alone."
+  },
+  "QuietElegance": {
+    "name": "Quiet Elegance",
+    "description": "Kamisato Ayato's specialty. The arrangement is exquisite and elegant, much like the manner in which Ayato handles all his affairs. Any more, and it would have been excessive. Any less, and it would have proved a sight squandered. As you sample the dish, you find that its flavor is identical to that of Uyuu Restaurant's — amazing. But as you reach your chopsticks for that crystalline camellia, Ayato stops you... \"That was something I made during sword practice. It's just a decoration.\""
+  },
   "RecipeItem": {
     "name": "Recipe Item",
     "description": "Item for unlocking recipes"
@@ -6623,6 +6967,14 @@
     "name": "Recipe: Udon Noodles",
     "description": "A detailed step-by-step recipe for making Udon Noodles."
   },
+  "RecipeKatsuSandwich": {
+    "name": "Recipe: Katsu Sandwich",
+    "description": "A detailed step-by-step recipe for making a Katsu Sandwich."
+  },
+  "RecipeRainbowAster": {
+    "name": "Recipe: Rainbow Aster",
+    "description": "A detailed step-by-step recipe for making Rainbow Aster."
+  },
   "CraftedItems": {
     "name": "Crafted Items",
     "description": "Items produced through the Crafting System."
@@ -6829,15 +7181,15 @@
   },
   "GloomyStatuette": {
     "name": "Gloomy Statuette",
-    "description": "A vague portrayal of some unknown person. Even though it has seen many days, it still has not been damaged in any way."
+    "description": "An idol made in the likeness of some unknown person.\\nEven though this carving has seen many years pass, it still has not been damaged in any way. It seems that its previous owner must have cherished it like some holy icon."
   },
   "DarkStatuette": {
     "name": "Dark Statuette",
-    "description": "A carved idol representing an unknown person. Contaminated with a dark and unfathomable power, simply holding it makes you feel uneasy."
+    "description": "An idol made in the likeness of some unknown, one-eyed person.\\nYou can feel a strange warmth emanating from within as you hold onto it, like the shoulder of a dear friend. Perhaps this icon can indeed give people who understand its significance the courage to carry on."
   },
   "DeathlyStatuette": {
     "name": "Deathly Statuette",
-    "description": "A carving that emanates an evil energy, with no indication of what it's truly made of. Simply focusing on it evokes dark whispering inside your very soul."
+    "description": "A one-eyed carving that emanates an ominous energy, with no indication of what it's made of.\\nAs you gaze upon this idol, you can almost hear a strange, comforting whisper...\\n\"See, my child. All that lies under the throne of heaven shall be destroyed by upheaval. The eternal peace of the pitch-dark void shall embrace us all.\""
   },
   "DeadLeyLineBranch": {
     "name": "Dead Ley Line Branch",
@@ -6995,6 +7347,18 @@
     "name": "Concealed Talon",
     "description": "A sharp nail left behind by one of the Riftwolves.\\nAll the marvels in the world must pale before \"Cretaceus,\" the greatest work of them all."
   },
+  "FungalSpores": {
+    "name": "Fungal Spores",
+    "description": "A small amount of glittering spore powder left behind by Floating Fungi. Seems that a sneeze is all it takes for this powder to vanish without a trace."
+  },
+  "LuminescentPollen": {
+    "name": "Luminescent Pollen",
+    "description": "A small parcel of luminescent Fungal Spore powder, a common medical ingredient in the land of rainforests. Merchants usually sell them in paper packets."
+  },
+  "CrystallineCystDust": {
+    "name": "Crystalline Cyst Dust",
+    "description": "A huge lump of spore powder collected from a structurally complete spore cyst. Put it in an appropriate environment, and the area might be filled with a thriving aggregation of Floating Fungi later..."
+  },
   "HurricaneSeed": {
     "name": "Hurricane Seed",
     "description": "The imploded form of an Anemo Hypostasis upon its defeat.\\nContains the essence of Anemo energy.\\nIt is said that the power to create hurricanes resides within its seemingly fragile body. This butterfly of pure Anemo energy must surely be waiting for the day when it can conjure up storms once again."
@@ -7121,7 +7485,7 @@
   },
   "MudraOfTheMaleficGeneral": {
     "name": "Mudra of the Malefic General",
-    "description": "A puppet joint obtained from the Plane of Euthymia. The gesture here symbolizes the concept that \"one sees and one does.\"\\nEven now that \"she\" has become a calamitous deity, she can still utilize such transcendent gestures, her sword flashing forth as swiftly as her eyes may see.\\nAnd yet, as the countless disasters ground on for far too long, the fierce general's shell had to embrace a new spring."
+    "description": "A puppet joint obtained from the Plane of Euthymia. The gesture here symbolizes the concept that \"one sees and one does.\"\\nEven now that \"she\" has become a calamitous deity, she can still utilize such transcendent gestures, her sword flashing forth as swiftly as her eyes may see.\\nAnd yet, as the countless disasters ground on for far too long, the baleful general's shell had to embrace a new spring."
   },
   "TearsOfTheCalamitousGod": {
     "name": "Tears of the Calamitous God",
@@ -7130,6 +7494,10 @@
   "TheMeaningOfAeons": {
     "name": "The Meaning of Aeons",
     "description": "A small piece of headgear obtained once the dust settled in the Plane of Euthymia.\\nOne thought may end all calamity, and there will always be thoughts that may transcend time.\\nAmid all this, one wonders if Makoto's true meaning was successfully communicated or not."
+  },
+  "RunicFang": {
+    "name": "Runic Fang",
+    "description": "A \"fang\" with which the mysterious, snakelike machine of old dug into mountains' depths. There are many ominous runes carved on it.\\nIt is said that giant serpents lurk in the dark fissures deep beneath the ground. Burning with eternal resentment and malice toward the world above, they throw themselves into digging great tunnels, yet none know what their malicious purposes are..."
   },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower",
@@ -7375,6 +7743,18 @@
     "name": "Sakuya's Special Gardening Package",
     "description": "A special gardening package that you received from Sakuya. Use it to receive one out of the three flower stands."
   },
+  "YashiroCommissionGift": {
+    "name": "Yashiro Commission Gift",
+    "description": "A gift from the Yashiro Commission. It appears to be an exquisitely-made furnishing."
+  },
+  "ExquisiteGiftFurnishing": {
+    "name": "Exquisite Gift (Furnishing)",
+    "description": "A gift from a certain someone. It appears to be an exquisitely-made furnishing."
+  },
+  "AmazingGiftFurnishing": {
+    "name": "Amazing Gift (Furnishing)",
+    "description": "A promotional item from a certain light novel. It appears to be an exquisitely-made furnishing."
+  },
   "BEP": {
     "name": "BEP",
     "description": "Your travel diary contains all that you have experienced in your long journey. These experiences shall someday become the stuff of song."
@@ -7413,15 +7793,15 @@
   },
   "DomainReliquaryTierIII": {
     "name": "Domain Reliquary: Tier III",
-    "description": "A reliquary used to store artifacts. May its finder be beloved."
+    "description": "A reliquary used to hold artifacts. May the one who sees it be beloved.\\n\\nEach reliquary will grant an artifact from the following sets:\\n·Berserker\\n·Instructor\\n·The Exile"
   },
   "DomainReliquaryTierII": {
     "name": "Domain Reliquary: Tier II",
-    "description": "A reliquary used to store artifacts. May its finder be blessed."
+    "description": "A reliquary used to hold artifacts. May the one who sees it be blessed.\\n\\nEach reliquary will grant an artifact from the following sets:\\n·Gladiator's Finale\\n·Wanderer's Troupe\\n·Berserker\\n·Instructor\\n·The Exile"
   },
   "DomainReliquaryTierI": {
     "name": "Domain Reliquary: Tier I",
-    "description": "A reliquary used to store artifacts. May its finder experience miracles."
+    "description": "A reliquary used to hold artifacts. May the one who sees it be blessed.\\n\\nEach reliquary will grant an artifact from the following sets:\\n·Gladiator's Finale\\n·Wanderer's Troupe"
   },
   "ReliquaryWanderersTroupeAndGladiator": {
     "name": "Reliquary: Wanderer's Troupe and Gladiator",
@@ -7537,7 +7917,7 @@
   },
   "SweetFlowerMedaka": {
     "name": "Sweet-Flower Medaka",
-    "description": "A lively, energetic fish famous for its petal-shaped tail.\\nIt might be because this fish has a sweet tooth, but every bone in its body seems to serve as an antenna to seek out sweet treats. Following this absolute ideology, they swim through every creek and river in Teyvat in search of tasty sweets. True egalitarians, they will never reject any morsel, and certainly not because there's a hook attached. Have bait, will bite, as they say.\\nBeginner-friendly."
+    "description": "A lively, energetic fish famous for its petal-shaped tail.\\nIt might be because this fish has a sweet tooth, but every bone in its body seems to serve as an antenna to seek out sweet treats. Following this absolute ideology, they swim through every creek and river in Teyvat in search of tasty sweets. True egalitarians, they will never reject any morsel, and certainly not because there's a hook attached. Have bait, will bite, as they say.\\nBeginner friendly."
   },
   "AizenMedaka": {
     "name": "Aizen Medaka",
@@ -8331,6 +8711,26 @@
     "name": "Travel Notes: Awakening",
     "description": "Namecard style.\\nThe three realms quake, heaven and earth awaken. The Sangacorexes, too, rise again from their eternal slumber."
   },
+  "KamisatoAyatoRipple": {
+    "name": "Kamisato Ayato: Ripple",
+    "description": "Namecard style.\\nThe camellia alights upon the mirrored pond, sending ripples throughout the water."
+  },
+  "LumensStoneOfLight": {
+    "name": "Lumens: Stone of Light",
+    "description": "Namecard style.\\nWhat flows within this nameless, voiceless azure crystal? The secrets of the heavens? Or the whispers of the abyss?"
+  },
+  "AchievementThunderclap": {
+    "name": "Achievement: Thunderclap",
+    "description": "Namecard style.\\nListen to the sound that comes from the clouds. That is its resentful rage, and its tiny wish."
+  },
+  "AchievementChasm": {
+    "name": "Achievement: Chasm",
+    "description": "Namecard style.\\nWhere once miners industriously delved and tunneled, now all is silent. Only the Glazed Sand Crystal and marrows of stone, both millennia-old, still give off any brilliance."
+  },
+  "TravelNotesIrodori": {
+    "name": "Travel Notes: Irodori",
+    "description": "Namecard style.\\nThose who share a hobby are known as a group as \"fans.\" Best come up with those stories, everyone, before the kitsune editor-in-chief dreams up copyright law... Or perhaps she has already dreamed it up, but does not altogether mind?"
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone",
     "description": "A stone that can be used in Mondstadt to search for nearby Anemoculi.\\nThis man-made stone plate possesses a certain characteristic similar to that of the Anemo Statues of The Seven, giving it the power to resonate with Anemoculi.\\nOculus Resonance Stones are crude imitations of the Statues of The Seven constructed by the ancients. But it is precisely this crudeness that makes them crave the power of elemental oculi, thus providing devout worshippers and adventurers alike a prime opportunity to collect oculi."
@@ -8490,6 +8890,10 @@
   "LaunchTube": {
     "name": "Launch Tube",
     "description": "A special device created by the artisan Pengyi. It comes with functions that allow for the creation and automated launch of fireworks. In the hands of someone creative, it will surely see great use in the creation of unique and radiant fireworks shows."
+  },
+  "LumenstoneAdjuvant": {
+    "name": "Lumenstone Adjuvant",
+    "description": "When equipped in The Chasm's Underground Mines, this precious crystal can provide illumination.\\n\\nIt has many similarities to the Glazed Sand Crystal that may only be found within The Chasm, but it stores even greater power within it.\\nMay it be as a sun in your palm, lighting the way through the lightless tunnels and bringing comfort where all is dark."
   },
   "BokusoBox": {
     "name": "Bokuso Box",
@@ -8853,7 +9257,7 @@
   },
   "CourtOfTheUpright": {
     "name": "Court of the Upright",
-    "description": "A detailed step-by-step blueprint for making a Court of the Upright.\\nThis majestic structure combines the Tri-Commission buildings and the Police Station to great effect, it has both the aura of a stately mansion and the practiced professional air of an executive agency, all while maintaining an optimized aesthetic. \"Proper\" is the operative word here indeed.\\nThose of distinguished background and honest character will surely approve of this courtyard layout. Indeed, you have heard it said that a certain Tenryou Commission general once recommended that officials should stay close to the commission estates such that they might get to work more quickly and contribute more effectively to the Almighty Shogun's dream of achieving \"eternity.\"\\nAfter using this item, you can view it in the Placement Screen.\\nThis Furnishing Set is favored by the following companions: Kujou Sara"
+    "description": "A detailed step-by-step blueprint for making a Court of the Upright.\\nThis majestic structure combines the Tri-Commission buildings and the Police Station to great effect, it has both the aura of a stately mansion and the practiced professional air of an executive agency, all while maintaining an optimized aesthetic. \"Proper\" is the operative word here indeed.\\nThose of distinguished background and honest character will surely approve of this courtyard layout. Indeed, you have heard it said that a certain Tenryou Commission general once recommended that officials should stay close to the commission estates such that they might get to work more quickly and contribute more effectively to the Almighty Shogun's dream of achieving \"eternity.\"\\nAfter using this item, you can view it in the Placement Screen.\\nThis Furnishing Set is favored by the following companions: Kujou Sara, Kamisato Ayato"
   },
   "WakefulSpring": {
     "name": "Wakeful Spring",
@@ -8877,7 +9281,7 @@
   },
   "SummerNightsRecollection": {
     "name": "Summer Night's Recollection",
-    "description": "A detailed step-by-step blueprint for making a Summer Night's Recollection.\\nThe scenery perfectly recreates the lively atmosphere found in the festivals of Inazuma.\\nInazuma City holds several festivals each year, but the biggest, most memorable ones often fall during the middle of summer. The food stalls, games, and fireworks in the night sky will make visitors linger a little longer. The stalls may disappear after the last day, but the good times shared with companions will last forever.\\nAfter using this item, you can view it in the Placement Screen.\\nThis Furnishing Set is favored by the following companions: Kamisato Ayaka, Arataki Itto"
+    "description": "A detailed step-by-step blueprint for making a Summer Night's Recollection.\\nThe scenery perfectly recreates the lively atmosphere found in the festivals of Inazuma.\\nInazuma City holds several festivals each year, but the biggest, most memorable ones often fall during the middle of summer. The food stalls, games, and fireworks in the night sky will make visitors linger a little longer. The stalls may disappear after the last day, but the good times shared with companions will last forever.\\nAfter using this item, you can view it in the Placement Screen.\\nThis Furnishing Set is favored by the following companions: Kamisato Ayaka, Arataki Itto, Kamisato Ayato"
   },
   "SakuraHuedStreet": {
     "name": "Sakura-Hued Street",
@@ -9659,6 +10063,14 @@
     "name": "Rainbow Stall: Ruby Red",
     "description": "A detailed step-by-step blueprint for making a Rainbow Stall: Ruby Red.\\nAfter using this item, you can view it in the Creation Screen."
   },
+  "FestivalBoothStrangeWonders": {
+    "name": "Festival Booth - \"Strange Wonders\"",
+    "description": "A detailed step-by-step blueprint for making a Festival Booth - \"Strange Wonders.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "FestivalBoothLiteraryTalent": {
+    "name": "Festival Booth - \"Literary Talent\"",
+    "description": "A detailed step-by-step blueprint for making a Festival Booth - \"Literary Talent.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
   "RitualShrine": {
     "name": "Ritual Shrine",
     "description": "A detailed step-by-step blueprint for making a Ritual Shrine.\\nAfter using this item, you can view it in the Creation Screen."
@@ -10091,6 +10503,14 @@
     "name": "Mountain of Festive Gifts",
     "description": "A detailed step-by-step blueprint for making a Mountain of Festive Gifts.\\nAfter using this item, you can view it in the Creation Screen."
   },
+  "HeavyDutyRestaurantStove": {
+    "name": "Heavy-Duty Restaurant Stove",
+    "description": "A detailed step-by-step blueprint for making a Heavy-Duty Restaurant Stove.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "SereneFlames": {
+    "name": "Serene Flames",
+    "description": "A detailed step-by-step blueprint for making Serene Flames.\\nAfter using this item, you can view it in the Creation Screen."
+  },
   "PottedPlantVerdantVastness": {
     "name": "Potted Plant: Verdant Vastness",
     "description": "A detailed step-by-step blueprint for making a Potted Plant: Verdant Vastness.\\nAfter using this item, you can view it in the Creation Screen."
@@ -10246,6 +10666,14 @@
   "GoldInscribedEvilCleansingBanner": {
     "name": "Gold-Inscribed Evil-Cleansing Banner",
     "description": "A detailed step-by-step blueprint for making a Gold-Inscribed Evil-Cleansing Banner.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "TanukiHugsPhotoBoard": {
+    "name": "Tanuki Hugs Photo Board",
+    "description": "A detailed step-by-step blueprint for making a Tanuki Hugs Photo Board.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "KitsuneGuujiExclusivePaintedFlagBanner": {
+    "name": "\"Kitsune Guuji\" Exclusive Painted Flag Banner",
+    "description": "A detailed step-by-step blueprint for making a \"Kitsune Guuji\" Exclusive Painted Flag Banner.\\nAfter using this item, you can view it in the Creation Screen."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Wrought Iron Carved Street Light",

@@ -43,7 +43,7 @@
     "name": "Lâmina Espiritual - Geada de Chongyun",
     "description": {
       "0": "Chongyun golpeia o chão com seu Espadão, causando uma explosão Cryo em uma AdE circular na sua frente que inflige <cryo>Dano Cryo</cryo>.",
-      "1": "Depois de um curto intervalo, o ar frio criado pela explosão Cryo se coalescerá em um Campo Gelado Chonghua, em que todos os personagens que usem Espada, Espadão ou Lança serão imbuídos com <cryo>Cryo</cryo>.",
+      "1": "Depois de um curto intervalo, o ar frio criado pela explosão Cryo se coalescerá em um Campo Gelado Chonghua, em que todos os personagens que usem Espada, Espadão ou Lança receberão encantamento <cryo>Cryo</cryo>.",
       "2": "<br/>",
       "3": "<i>\"Um anel de cristal e tudo que se segue é o silêncio. Os rios não se movem, e as nuvens estão pesadas com o gelo. Os portões do altar se abrem, e o mal é banido.\"</i>"
     },

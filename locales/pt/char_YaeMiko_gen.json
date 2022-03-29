@@ -47,14 +47,14 @@
       "3": "<strong>Sesshou Sakura</strong>",
       "4": "Tem as seguintes propriedades:",
       "5": [
-        " Ataca um inimigo ao redor periodicamente com um relâmpago, causando <electro>Dano Electro</electro>;",
+        " Ataca um inimigo próximo periodicamente com um relâmpago, causando <electro>Dano Electro</electro>;",
         " Quando há outras Sesshou Sakura por perto, seu nível aumenta, aumentando o Dano causado por seus ataques."
       ],
       "6": "<br/>",
-      "7": "O número de Sesshou Sakura disponíveis para uso é 3.",
+      "7": "Esta habilidade pode ser usada até três vezes.",
       "8": "Um máximo de 3 Sesshou Sakura podem existir simultaneamente. Ao ser criada, a Sesshou Sakura iniciará no nível 1, o nível mais alto que cada Sesshou Sakura pode atingir é 3. Criar uma Sesshou Sakura muito próxima de outra já existente fará com que a Sesshou Sakura existente seja destruída.",
       "9": "<br/>",
-      "10": "<i>\"Os espíritos kitsune selados nos ramos são todos yakan que se deterioraram até querer ferir os humanos. Os yakan estão dois níveis abaixo de nós, Kitsunes Celestiais, e por isso não vejo qualquer problema com... pedir-lhes para cumprir minhas ordens. Agora, isso não significa que os humanos devem copiar nossos sistemas de classificação. Afinal de contas, quem é superior? Humanos ou kitsunes? Você quer realmente saber?\"</i>"
+      "10": "<i>\"Os espíritos kitsune selados nos ramos são todos yakan que se deterioraram até quererem ferir os humanos. Os yakan estão dois níveis abaixo de nós, Kitsunes Celestiais, e por isso não vejo qualquer problema com... pedir-lhes para cumprir minhas ordens. Agora, isso não significa que os humanos devem copiar nossos sistemas de classificação. Afinal de contas, quem é superior? Humanos ou kitsunes? Você quer realmente saber?\"</i>"
     },
     "skillParams": {
       "0": "Dano da Sesshou Sakura — Nível 1",
@@ -105,7 +105,7 @@
   "passive1": {
     "name": "Sombra Sagrada",
     "description": {
-      "0": "Ao lançar <strong>Grande Arte Secreta: Tenko Kenshin</strong>, cada Sesshou Sakura destruída redefinirá o Tempo de Recarga uma vez de <strong>Evocação Yakan: Sesshou Sakura</strong>."
+      "0": "Ao lançar <strong>Grande Arte Secreta: Tenko Kenshin</strong>, cada Sesshou Sakura destruída redefinirá o Tempo de Recarga de uma carga de <strong>Evocação Yakan: Sesshou Sakura</strong>."
     }
   },
   "passive2": {

@@ -89,7 +89,7 @@
     }
   },
   "burst": {
-    "name": "Devastação: Obliteracão",
+    "name": "Devastação: Obliteração",
     "description": {
       "0": "Realiza ataques diferentes baseado em qual Posição Tartaglia está quando os lança.",
       "1": "<br/>",
@@ -152,7 +152,7 @@
   "constellation2": {
     "name": "Legado do Mal - Submarino",
     "description": {
-      "0": "Quando os inimigos afetados pela Interceptacão de Fluxo forem derrotados, Tartaglia ganha 4 de Energia Elemental."
+      "0": "Quando os inimigos afetados pela Interceptação de Fluxo forem derrotados, Tartaglia ganha 4 de Energia Elemental."
     }
   },
   "constellation3": {

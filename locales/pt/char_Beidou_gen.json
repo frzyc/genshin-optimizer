@@ -117,7 +117,7 @@
     "name": "Tormenta Elétrica",
     "description": {
       "0": "Obtém os seguintes efeitos por 10s após lançar a <strong>Invocadora da Maré</strong> com seu bônus máximo de Dano:",
-      "1": "O Dano causado pelos Ataques Normais e Carregados aumentam em 15%. A VEL de Ataque dos Ataques Normais ou Carregados são aumentados em 15%.",
+      "1": "O Dano causado pelos Ataques Normais e Carregados aumentam em 15%. A Vel. de Ataque dos Ataques Normais ou Carregados são aumentados em 15%.",
       "2": "Reduz grandemente o atraso antes de lançar Ataques Carregados."
     }
   },

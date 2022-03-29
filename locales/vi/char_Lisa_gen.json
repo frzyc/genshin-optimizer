@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Trọng Kích</strong>",
-        "1": "Tiêu hao thể lực nhất định, sau tiếng ngân, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>."
+        "1": "Tiêu hao thể lực nhất định, sau khi tụ lực, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>."
       },
       "plunging": {
         "0": "<strong>Tấn Công Khi Đáp</strong>",
@@ -48,7 +48,7 @@
       "4": "Sau khi đánh trúng, tạo ra <electro>Sát Thương Nguyên Tố Lôi</electro> cho mục tiêu, có thêm hiệu quả dẫn điện đối với địch trong phạm vi nhỏ, cộng dồn tối đa 3 tầng.",
       "5": "<br/>",
       "6": "<strong>Nhấn Giữ</strong>",
-      "7": "Sau một tiếng ngân, triệu hồi sấm sét từ trên trời xuống, tạo thành <electro>Sát Thương Nguyên Tố Lôi</electro> đối với tất cả địch ở gần.",
+      "7": "Sau khi tụ lực, triệu hồi sấm sét từ trên trời xuống, tạo thành <electro>Sát Thương Nguyên Tố Lôi</electro> đối với tất cả địch ở gần.",
       "8": "Nếu địch đang trong trạng thái dẫn điện, sẽ căn cứ theo số tầng cộng dồn mà gây thêm lượng lớn sát thương, và xóa hiệu quả dẫn điện.",
       "9": "<br/>",
       "10": "<i>Màu sắc của lôi điện là màu sắc đầy mê hoặc của ma nữ tường vi.</i>"

@@ -26,7 +26,7 @@
       "0": "Dano do 1° Golpe",
       "1": "Dano do 2° Golpe",
       "2": "Dano do 3° Golpe",
-      "3": "Dano de ATQ",
+      "3": "Dano de Ataque Carregado",
       "4": "Consumo de Stamina de Ataque Carregado",
       "5": "Redução do Consumo de Stamina da Insígnia de Chamas",
       "6": "Recarga de Insígnia de Chamas",
@@ -45,7 +45,7 @@
     "name": "Édito Assinado",
     "description": {
       "0": "Invoca as chamas, criando <pyro>Dano Pyro na AdE</pyro>.",
-      "1": "Depois de atingir o inimigo, Yanfei obtém uma grande quantidade de Insígnias de Chamas.",
+      "1": "Depois de atingir o inimigo, Yanfei obtém a quantidade máxima de Insígnias de Chamas.",
       "2": "<br/>",
       "3": "<i>Apesar de possuírem vínculo legal, as Insígnias de Chamas de Yanfei também têm suas próprias cláusulas adicionais. No final das contas, o Ministério dos Assuntos Civis não pode modificar as leis naturais sozinho.</i>"
     },

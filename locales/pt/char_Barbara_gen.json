@@ -104,7 +104,7 @@
   "passive2": {
     "name": "Encore",
     "description": {
-      "0": "Quando seu próprio personagem ganha um Orbe/Partícula Elemental, a duração do Loop da Melodia do <strong>Que Comece o Espetáculo ♪</strong> é extendido em 1s.",
+      "0": "Quando seu próprio personagem ganha um Orbe/Partícula Elemental, a duração do Loop da Melodia do <strong>Que Comece o Espetáculo ♪</strong> é estendido em 1s.",
       "1": "A extensão máxima é de 5s."
     }
   },

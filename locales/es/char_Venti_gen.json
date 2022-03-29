@@ -113,7 +113,7 @@
   "passive2": {
     "name": "Ojo del huracán",
     "description": {
-      "0": "Al terminar el efecto de <strong>Gran Oda del Viento</strong>, Venti restaurará 15 pts. de Energía Elemental.",
+      "0": "Al terminar el efecto de <strong>Gran Oda del Viento</strong>, Venti regenera 15 pts. de Energía Elemental.",
       "1": "Si ocurre un cambio elemental, también restaurará 15 pts. de Energía Elemental a todos los personajes con el elemento al que cambió el ciclón."
     }
   },
@@ -160,8 +160,8 @@
   "constellation6": {
     "name": "Tormenta de la rebelión",
     "description": {
-      "0": "<strong>Gran Oda del Viento</strong> reduce la RES Anemo del enemigo en un 20%.",
-      "1": "Si ocurre un cambio elemental durante <anemo>Gran Oda del Viento</anemo>, la RES Elemental del nuevo atributo se reducirá en un 20%."
+      "0": "La RES Anemo de los enemigos se reduce en un 20% cuando reciben daño de <strong>Gran Oda del Viento</strong>.",
+      "1": "Si ocurre un cambio elemental durante <anemo>Gran Oda del Viento</anemo>, su RES Elemental al nuevo elemento se reducirá en un 20%."
     }
   }
 }
