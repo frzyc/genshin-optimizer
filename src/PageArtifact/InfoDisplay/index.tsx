@@ -6,18 +6,14 @@ import { Link as RouterLink } from 'react-router-dom'
 import ImgFullwidth from '../../Components/Image/ImgFullwidth'
 import SqBadge from '../../Components/SqBadge'
 import { Stars } from '../../Components/StarDisplay'
+import { range } from '../../Util/Util'
+import { SmolProgress } from '../ArtifactCard'
 import artifactcard from './artifactcard.png'
 import artifacteditor from './artifacteditor.png'
 import artifactfilter from './artifactfilter.png'
 
-function SmolProgress({ color = "red", value = 50 }) {
-  return <Box sx={{ width: 7, height: "1.5em", bgcolor: color, overflow: "hidden", borderRadius: 1, display: "inline-block", ml: 0.5 }}>
-    <Box sx={{ width: 10, height: `${100 - value}%`, bgcolor: "gray" }} />
-  </Box>
-}
-
 function Colors() {
-  return <span>{[...Array(6).keys()].map(s => <SmolProgress color={`roll${s + 1}.main`} key={s} value={(s + 1) / 6 * 100} />)}</span>
+  return <Box display="inline-flex" gap={0.3} sx={{ height: "1.5em" }}>{range(0, 5).map(s => <SmolProgress color={`roll${s + 1}.main`} key={s} value={(s + 1) / 6 * 100} />)}</Box>
 }
 export default function ArtifactInfoDisplay() {
   const { t } = useTranslation("artifact")

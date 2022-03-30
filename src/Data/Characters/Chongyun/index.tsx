@@ -238,7 +238,6 @@ const sheet: ICharacterSheet = {
       },
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: talentTemplate("passive2", tr, passive2, [{
-        canShow: data => data.get(input.asc).value >= 4,
         node: infoMut(dmgFormulas.passive2.dmg, { key: `char_${key}:passive2` }),
       }], {
         teamBuff: true,

@@ -165,7 +165,7 @@ function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, eff
     <Typography sx={{ opacity: effOpacity, minWidth: 40, textAlign: "right" }}>{inFilter ? `${efficiency.toFixed()}%` : "-"}</Typography>
   </Box>)
 }
-function SmolProgress({ color = "red", value = 50 }) {
+export function SmolProgress({ color = "red", value = 50 }) {
   return <Box sx={{ width: 7, height: "100%", bgcolor: color, overflow: "hidden", borderRadius: 1, display: "inline-block" }}>
     <Box sx={{ width: 10, height: `${100 - clamp(value, 0, 100)}%`, bgcolor: "gray" }} />
   </Box>
