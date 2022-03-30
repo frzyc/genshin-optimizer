@@ -1,6 +1,6 @@
 import { faBan, faCog } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Grid, Link, Typography } from '@mui/material'
+import { Box, Grid, Link, Typography } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
 import ImgFullwidth from '../../Components/Image/ImgFullwidth'
@@ -9,8 +9,15 @@ import { Stars } from '../../Components/StarDisplay'
 import artifactcard from './artifactcard.png'
 import artifacteditor from './artifacteditor.png'
 import artifactfilter from './artifactfilter.png'
+
+function SmolProgress({ color = "red", value = 50 }) {
+  return <Box sx={{ width: 7, height: "1.5em", bgcolor: color, overflow: "hidden", borderRadius: 1, display: "inline-block", ml: 0.5 }}>
+    <Box sx={{ width: 10, height: `${100 - value}%`, bgcolor: "gray" }} />
+  </Box>
+}
+
 function Colors() {
-  return <span>{[...Array(6).keys()].map(s => <SqBadge color={`roll${s + 1}`} key={s} sx={{ ml: 1 }}><b>{s + 1}</b></SqBadge>)}</span>
+  return <span>{[...Array(6).keys()].map(s => <SmolProgress color={`roll${s + 1}.main`} key={s} value={(s + 1) / 6 * 100} />)}</span>
 }
 export default function ArtifactInfoDisplay() {
   const { t } = useTranslation("artifact")
