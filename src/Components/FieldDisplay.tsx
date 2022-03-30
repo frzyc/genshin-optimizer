@@ -37,7 +37,7 @@ function BasicFieldDisplay({ field, component }: { field: IBasicFieldDisplay, co
   const variant = evalIfFunc(field.variant, data)
   const text = field.text && <span>{field.text}</span>
   const suffix = field.textSuffix && <span>{field.textSuffix}</span>
-  return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between" }} component={component} >
+  return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1 }} component={component} >
     <Typography color={`${variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{text}{suffix}</Typography>
     <Typography >{typeof v === "number" ? v.toFixed?.(field.fixed) : v}{field.unit}</Typography>
   </Box>
@@ -58,7 +58,7 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: 
   const formulaTextOverlay = !!node.formula && <BootstrapTooltip placement="top" title={<Typography>{fieldFormulaText}</Typography>}>
     <Box component="span" sx={{ cursor: "help" }}><FontAwesomeIcon icon={faQuestionCircle} /></Box>
   </BootstrapTooltip>
-  return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between" }} component={component} >
+  return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1 }} component={component} >
     <Typography color={`${node.variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{icon}{fieldText}{suffix}{formulaTextOverlay}</Typography>
     <Typography >{fieldVal}</Typography>
   </Box>
