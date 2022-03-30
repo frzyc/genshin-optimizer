@@ -248,7 +248,8 @@ const sheet: ICharacterSheet = {
       ),
       passive2: talentTemplate("passive2", tr, passive2, undefined, {
         teamBuff: true,
-        canShow: atk_,
+        // Hide for Yoimiya
+        canShow: greaterEq(input.asc, 4, unequal(input.activeCharKey, characterKey, 1)),
         path: condBurstPath,
         value: condBurst,
         name: tr("burst.name"),
