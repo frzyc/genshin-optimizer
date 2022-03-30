@@ -95,6 +95,7 @@ export const allCharacterKeys = [
   "YaeMiko",
   "YunJin",
   "Zhongli",
+  "KamisatoAyato"
 ] as const
 
 export const allWeaponSwordKeys = [

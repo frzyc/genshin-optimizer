@@ -31,6 +31,7 @@ const char = {
       bloom: [2543020158, "skillParam"],
     }
   },
+  // KamisatoAyato
   // Keqing,
   // Klee,
   // Lisa,
