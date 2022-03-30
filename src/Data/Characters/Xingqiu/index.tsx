@@ -1,10 +1,10 @@
 import { CharacterData } from 'pipeline'
 import { input } from "../../../Formula/index"
-import { constant, equal, greaterEq, infoMut, min, percent, prod, subscript, sum } from "../../../Formula/utils"
+import { constant, equal, greaterEq, infoMut, min, percent, prod, subscript, sum, unit } from "../../../Formula/utils"
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
-import { customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { customDmgNode, customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -89,8 +89,17 @@ export const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    press1: prod(sum(percent(1), nodeC4), dmgNode("atk", datamine.skill.hit1, "skill")),
-    press2: prod(sum(percent(1), nodeC4), dmgNode("atk", datamine.skill.hit2, "skill")),
+    // Multiplicative DMG increase requires customDmgNode
+    press1: customDmgNode(prod(
+      subscript(input.total.autoIndex, datamine.skill.hit1, { key: "_" }),
+      input.total.atk,
+      sum(unit, nodeC4)
+    ), "skill"),
+    press2: customDmgNode(prod(
+      subscript(input.total.autoIndex, datamine.skill.hit2, { key: "_" }),
+      input.total.atk,
+      sum(unit, nodeC4)
+    ), "skill"),
     dmgRed_: nodeSkillDmgRed_,
   },
   passive1: {

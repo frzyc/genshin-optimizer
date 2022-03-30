@@ -31,6 +31,8 @@ const sheet: IWeaponSheet = {
   document: [{
     fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
     fields: [{
+      node: critDMG_
+    }, {
       node: infoMut(dmg, { key: "sheet:dmg" })
     }]
   }]

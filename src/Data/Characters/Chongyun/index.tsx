@@ -92,7 +92,7 @@ const dmgFormulas = {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
   },
   passive2: {
-    dmg: skillDmg
+    dmg: greaterEq(input.asc, 4, skillDmg),
   },
   constellation1: {
     dmg: greaterEq(input.constellation, 1, customDmgNode(prod(percent(datamine.constellation1.dmg), input.total.atk), "elemental", { hit: { ele: constant(elementKey) } }))
@@ -238,7 +238,7 @@ const sheet: ICharacterSheet = {
       },
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: talentTemplate("passive2", tr, passive2, [{
-        node: infoMut(dmgFormulas.passive2.dmg, { key: `char_${key}:passive2` })
+        node: infoMut(dmgFormulas.passive2.dmg, { key: `char_${key}:passive2` }),
       }], {
         teamBuff: true,
         canShow: greaterEq(input.asc, 4, 1),

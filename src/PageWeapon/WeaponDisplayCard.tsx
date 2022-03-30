@@ -144,19 +144,25 @@ export default function WeaponDisplayCard({
     </CardContent>
     <Divider />
     <CardContent >
-      {weaponSheet && weaponUIData && <Box display="flex" gap={{ xs: 1, md: 1.5, lg: 2 }} >
-        <Box sx={{ maxWidth: 256 }} flexShrink={1} minWidth="25%">
-          <Box component="img" src={img} className={`grad-${weaponSheet.rarity}star`} sx={{ maxWidth: 256, width: "100%", height: "auto", borderRadius: 1 }} />
-          <Typography><small>{weaponSheet.description}</small></Typography>
-        </Box>
-        <Box sx={{ mb: -1 }} flexGrow={1} >
+      {weaponSheet && weaponUIData && <Grid container spacing={1.5}>
+        <Grid item xs={12} sm={3}>
+          <Grid container spacing={1.5}>
+            <Grid item xs={6} sm={12}>
+              <Box component="img" src={img} className={`grad-${weaponSheet.rarity}star`} sx={{ maxWidth: 256, width: "100%", height: "auto", borderRadius: 1 }} />
+            </Grid>
+            <Grid item xs={6} sm={12}>
+              <Typography><small>{weaponSheet.description}</small></Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} sm={9}>
           <Typography variant="h6" >{process.env.NODE_ENV === "development" && <ColorText color="warning">{id || `""`} </ColorText>}{weaponSheet.name} Lv. {weapon && WeaponSheet.getLevelString(weapon)} {weaponSheet.rarity > 2 && <SqBadge color="info">Refinement {refinement}</SqBadge>}</Typography>
           <Typography><Stars stars={weaponSheet.rarity} /></Typography>
           <Typography variant="subtitle1">{weaponSheet.passiveName}</Typography>
           <Typography gutterBottom>{weaponSheet.passiveName && weaponSheet.passiveDescription(weaponUIData.get(input.weapon.refineIndex).value)}</Typography>
           <Box display="flex" flexDirection="column" gap={1}>
             <CardDark >
-              <CardHeader title={"Main Stats"} titleTypographyProps={{ variant: "subtitle2" }}/>
+              <CardHeader title={"Main Stats"} titleTypographyProps={{ variant: "subtitle2" }} />
               <Divider />
               <FieldDisplayList>
                 {[input.weapon.main, input.weapon.sub, input.weapon.sub2].map((node, i) => {
@@ -168,18 +174,20 @@ export default function WeaponDisplayCard({
             </CardDark>
             {data && weaponSheet.document && <DocumentDisplay sections={weaponSheet.document} />}
           </Box>
-        </Box>
-      </Box>}
-    </CardContent>
-    {footer && id && <CardContent sx={{ py: 1 }}>
-      <Grid container>
-        <Grid item flexGrow={1}>
-          <CharacterDropdownButton noUnselect inventory value={location} onChange={equipOnChar} filter={filter} />
         </Grid>
-        {!!onClose && <Grid item><CloseButton large onClick={onClose} /></Grid>}
-      </Grid>
-    </CardContent>}
-  </CardLight>
+      </Grid>}
+    </CardContent>
+    {
+      footer && id && <CardContent sx={{ py: 1 }}>
+        <Grid container>
+          <Grid item flexGrow={1}>
+            <CharacterDropdownButton noUnselect inventory value={location} onChange={equipOnChar} filter={filter} />
+          </Grid>
+          {!!onClose && <Grid item><CloseButton large onClick={onClose} /></Grid>}
+        </Grid>
+      </CardContent>
+    }
+  </CardLight >
 }
 function SwapBtn({ onChangeId, weaponTypeKey }) {
   const { database } = useContext(DatabaseContext)
