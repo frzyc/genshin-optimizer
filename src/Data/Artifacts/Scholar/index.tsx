@@ -20,7 +20,6 @@ const sheet: IArtifactSheet = {
   icons,
   setEffects: {
     2: { document: [{ fields: [{ node: set2 }] }] },
-    4: {}
   }
 }
 export default new ArtifactSheet(key, sheet, data)

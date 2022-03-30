@@ -99,8 +99,8 @@ const dmgFormulas = {
     normal5: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal5), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
     normal61: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal61), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
     normal62: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal62), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    charged1: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.charged1), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    charged2: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.charged2), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    charged1: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.charged1), input.total.atk), "charged", { hit: { ele: constant('hydro') } }),
+    charged2: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.charged2), input.total.atk), "charged", { hit: { ele: constant('hydro') } }),
     riptideSlash: dmgNode("atk", datamine.skill.riptideSlash, "skill")
   },
   burst: {

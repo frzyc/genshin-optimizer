@@ -91,9 +91,9 @@ const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
-    dmg1: dmgNode("atk", datamine.skill.dmg1, "skill"),
-    dmg2: dmgNode("atk", datamine.skill.dmg2, "skill"),
+    dmg: dmgNode("def", datamine.skill.dmg, "skill"),
+    dmg1: dmgNode("def", datamine.skill.dmg1, "skill"),
+    dmg2: dmgNode("def", datamine.skill.dmg2, "skill"),
     shield: shieldNodeTalent("hp", datamine.skill.shield_, datamine.skill.shield, "skill")
   },
   burst: {
