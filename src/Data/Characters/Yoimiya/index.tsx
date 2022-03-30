@@ -1,12 +1,12 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { constant, equal, greaterEq, infoMut, lookup, matchFull, percent, prod, subscript, sum, unequal } from "../../../Formula/utils"
+import { constant, equal, greaterEq, infoMut, lookup, matchFull, percent, prod, subscript, sum, unequal, unit } from "../../../Formula/utils"
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { INodeFieldDisplay } from '../../../Types/IFieldDisplay'
 import { range } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -19,10 +19,10 @@ const [tr, charTr] = trans("char", characterKey)
 const datamine = {
   normal: {
     hitArr: [
-      skillParam_gen.auto[0],//x2
+      skillParam_gen.auto[0], //x2
       skillParam_gen.auto[1],
       skillParam_gen.auto[2],
-      skillParam_gen.auto[3],//x2
+      skillParam_gen.auto[3], //x2
       skillParam_gen.auto[4],
     ]
   },
@@ -85,7 +85,7 @@ const [condC1Path, condC1] = cond(characterKey, "c1")
 const [condC2Path, condC2] = cond(characterKey, "c2")
 const const3TalentInc = greaterEq(input.constellation, 3, 3)
 const const5TalentInc = greaterEq(input.constellation, 5, 3)
-const normal_dmgMult = matchFull(condSkill, "skill", subscript(input.total.skillIndex, datamine.skill.dmg_), 1)
+const normal_dmgMult = matchFull(condSkill, "skill", subscript(input.total.skillIndex, datamine.skill.dmg_, { key: "_" }), unit)
 const a1Stacks = lookup(condA1, Object.fromEntries(range(1, datamine.passive1.maxStacks).map(i => [i, constant(i)])), 0)
 const pyro_dmg_ = infoMut(prod(percent(datamine.passive1.pyro_dmg_), a1Stacks), { key: 'pyro_dmg_', variant: elementKey })
 const atk_ = greaterEq(input.asc, 4, equal(condBurst, "on", unequal(input.activeCharKey, characterKey,
@@ -95,8 +95,17 @@ const c2pyro_dmg_ = equal(condC2, 'c2', percent(datamine.constellation2.pyro_dmg
 
 const canShowC6 = data => data.get(input.constellation).value >= 6 && data.get(condSkill).value === 'skill'
 
-const normalEntries = datamine.normal.hitArr.map((arr, i) =>
-  [i, prod(normal_dmgMult, dmgNode("atk", arr, "normal", { hit: { ele: matchFull(condSkill, "skill", constant(elementKey), constant("physical")) } }))])
+const normalEntries = datamine.normal.hitArr.map((arr, i) => [
+  i,
+  customDmgNode(
+    prod(subscript(input.total.autoIndex, arr, { key: "_" }), input.total.atk, normal_dmgMult),
+    "normal", {
+      hit: {
+        ele: matchFull(condSkill, "skill", constant(elementKey), constant("physical"))
+      }
+    }
+  )
+])
 const kindlingEntries = normalEntries.map(([_, node], i) => [i, greaterEq(input.constellation, 6, prod(percent(datamine.constellation6.dmg_), node))])
 
 
