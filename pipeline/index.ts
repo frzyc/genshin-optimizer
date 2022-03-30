@@ -117,6 +117,7 @@ export const weaponIdMap = {
   // 11507: "One Side",//new weapon?
   // 11508: "",
   11509: "MistsplitterReforged",
+  11510: "HaranGeppakuFutsu",
 
   //claymore
   12101: "WasterGreatsword",
@@ -299,6 +300,8 @@ export const artifactIdMap = {
   15020: "EmblemOfSeveredFate",
   15021: "HuskOfOpulentDreams",
   15022: "OceanHuedClam",
+  15023: "VermillionHereafter",
+  15024: "EchoesOfAnOffering",
 } as const
 
 export const artifactSlotMap = {

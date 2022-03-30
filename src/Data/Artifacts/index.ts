@@ -9,6 +9,7 @@ import BloodstainedChivalry from './BloodstainedChivalry'
 import BraveHeart from './BraveHeart'
 import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
 import DefendersWill from './DefendersWill'
+import EchoesOfAnOffering from './EchoesOfAnOffering'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import Gambler from './Gambler'
 import GladiatorsFinale from './GladiatorsFinale'
@@ -36,6 +37,7 @@ import ThunderingFury from './ThunderingFury'
 import Thundersoother from './Thundersoother'
 import TinyMiracle from './TinyMiracle'
 import TravelingDoctor from './TravelingDoctor'
+import VermillionHereafter from './VermillionHereafter'
 import ViridescentVenerer from './ViridescentVenerer'
 import WanderersTroupe from './WanderersTroupe'
 const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
@@ -47,6 +49,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   BraveHeart,
   CrimsonWitchOfFlames,
   DefendersWill,
+  EchoesOfAnOffering,
   EmblemOfSeveredFate,
   Gambler,
   GladiatorsFinale,
@@ -74,6 +77,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   Thundersoother,
   TinyMiracle,
   TravelingDoctor,
+  VermillionHereafter,
   ViridescentVenerer,
   WanderersTroupe,
 } as const

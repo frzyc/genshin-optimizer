@@ -11,6 +11,7 @@ import FavoniusSword from "./FavoniusSword"
 import FesteringDesire from "./FesteringDesire"
 import FilletBlade from "./FilletBlade"
 import FreedomSworn from "./FreedomSworn"
+import HaranGeppakuFutsu from "./HaranGeppakuFutsu"
 import HarbingerOfDawn from "./HarbingerOfDawn"
 import IronSting from "./IronSting"
 import LionsRoar from "./LionsRoar"
@@ -40,6 +41,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   FesteringDesire,
   FilletBlade,
   FreedomSworn,
+  HaranGeppakuFutsu,
   HarbingerOfDawn,
   IronSting,
   LionsRoar,
