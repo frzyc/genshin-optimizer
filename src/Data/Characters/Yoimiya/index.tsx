@@ -5,7 +5,7 @@ import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { INodeFieldDisplay } from '../../../Types/IFieldDisplay'
 import { range } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
-import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
@@ -229,6 +229,7 @@ const sheet: ICharacterSheet = {
         value: 60,
       }]),
       passive1: talentTemplate("passive1", tr, passive1, undefined, {
+        // Conditional for self display
         canShow: greaterEq(input.asc, 1, 1),
         value: condA1,
         path: condA1Path,
@@ -243,9 +244,9 @@ const sheet: ICharacterSheet = {
               value: datamine.passive1.duration,
               unit: "s"
             }]
-          }]))
-      }
-      ),
+          }]
+        ))
+      }),
       passive2: talentTemplate("passive2", tr, passive2, undefined, {
         teamBuff: true,
         // Hide for Yoimiya
@@ -264,7 +265,28 @@ const sheet: ICharacterSheet = {
             }]
           }
         }
-      }),
+      }, [
+        // Conditional from P1 for team buff display for P2
+        sectionTemplate("passive1", tr, passive1, undefined, {
+          canShow: unequal(input.activeCharKey, characterKey, greaterEq(input.asc, 4, equal(condBurst, "on", 1))),
+          teamBuff: true,
+          value: condA1,
+          path: condA1Path,
+          name: tr("passive1.name"),
+          states: Object.fromEntries(range(1, datamine.passive1.maxStacks).map(i =>
+            [i, {
+              name: `${i} stack`,
+              fields: [{
+                node: pyro_dmg_
+              }, {
+                text: sgt("duration"),
+                value: datamine.passive1.duration,
+                unit: "s"
+              }]
+            }]
+          ))
+        })
+      ]),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1, [], {
         canShow: greaterEq(input.constellation, 1, 1),
