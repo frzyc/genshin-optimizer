@@ -59,8 +59,8 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: 
     <Box component="span" sx={{ cursor: "help" }}><FontAwesomeIcon icon={faQuestionCircle} /></Box>
   </BootstrapTooltip>
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1 }} component={component} >
-    <Typography color={`${node.variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{icon}{fieldText}{suffix}{formulaTextOverlay}</Typography>
-    <Typography >{fieldVal}</Typography>
+    <Typography color={`${node.variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{icon}{fieldText}{suffix}</Typography>
+    <Typography sx={{ display: "flex", gap: 1, alignItems: "center" }} >{fieldVal}{formulaTextOverlay}</Typography>
   </Box>
 }
 
