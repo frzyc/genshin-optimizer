@@ -13,12 +13,12 @@ import icon from './Icon.png'
 const key: WeaponKey = "LostPrayerToTheSacredWinds"
 const [tr] = trans("weapon", key)
 const data_gen = data_gen_json as WeaponData
-const ele_dmg_s = [0.8, 0.10, 0.12, 0.14, 0.16]
+const ele_dmg_s = [0.08, 0.10, 0.12, 0.14, 0.16]
 
 const [condPassivePath, condPassive] = cond(key, "BoundlessBlessing")
 
 const moveSPD_ = percent(0.1)
-const eleDmgInc = subscript(input.weapon.refineIndex, ele_dmg_s)
+const eleDmgInc = subscript(input.weapon.refineIndex, ele_dmg_s, { key: "_" })
 const eleDmgStacks = Object.fromEntries(allElements.map(ele => [ele, lookup(condPassive, {
   ...objectKeyMap(range(1, 4), i => prod(eleDmgInc, i)),
 }, naught)]))

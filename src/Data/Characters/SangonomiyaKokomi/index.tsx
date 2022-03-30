@@ -92,10 +92,7 @@ const burstChargedDmgInc = equal(condBurst, "on", prod(
   ),
   input.premod.hp))
 const burstSkillDmgInc = equal(condBurst, "on", prod(
-  sum(
-    subscript(input.total.burstIndex, datamine.burst.sBonus_, { key: '_' }),
-    greaterEq(input.asc, 4, prod(percent(datamine.p2.heal_ratio_), input.premod.heal_)),
-  ),
+  subscript(input.total.burstIndex, datamine.burst.sBonus_, { key: '_' }),
   input.premod.hp))
 
 const passiveHeal_ = constant(datamine.p.heal_)
