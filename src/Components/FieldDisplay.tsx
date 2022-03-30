@@ -55,11 +55,11 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: 
     const diff = node.value - oldValue
     fieldVal = <span>{valueString(oldValue, node.unit)}{diff ? <ColorText color={diff > 0 ? "success" : "error"}> {diff > 0 ? "+" : ""}{valueString(diff, node.unit)}</ColorText> : ""}</span>
   } else fieldVal = valueString(node.value, node.unit)
-  const formulaTextOverlay = !!node.formula && <BootstrapTooltip placement="top" title={<Typography>{fieldFormulaText}</Typography>}>
-    <Box component="span" sx={{ cursor: "help" }}><FontAwesomeIcon icon={faQuestionCircle} /></Box>
-  </BootstrapTooltip>
+  const formulaTextOverlay = node.formula ? <BootstrapTooltip placement="top" title={<Typography>{fieldFormulaText}</Typography>}>
+    <Box component="span" sx={{ cursor: "help" }}>{fieldText}{suffix} <FontAwesomeIcon icon={faQuestionCircle} /></Box>
+  </BootstrapTooltip> : <span>{fieldText}{suffix}</span>
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between" }} component={component} >
-    <Typography color={`${node.variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{icon}{fieldText}{suffix}{formulaTextOverlay}</Typography>
+    <Typography color={`${node.variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{icon}{formulaTextOverlay}</Typography>
     <Typography >{fieldVal}</Typography>
   </Box>
 }
