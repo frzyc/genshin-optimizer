@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
-import { input } from '../../../Formula'
-import { equal, greaterEq, infoMut, prod, min } from '../../../Formula/utils'
+import { input, target } from '../../../Formula'
+import { equal, greaterEq, infoMut, prod, min, unequal } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
@@ -74,7 +74,13 @@ const [condC1Path, condC1] = cond(key, "RosariaC1")
 const [condC6Path, condC6] = cond(key, "DilucC6")
 
 const nodeA1CritInc = equal(condA1, "on", greaterEq(input.asc, 1, datamine.passive1.crInc))
-const nodeA4CritBonus = equal(condA4, "on", greaterEq(input.asc, 4, min(prod(datamine.passive2.crBonus, input.premod.critRate_), datamine.passive2.maxBonus)))
+const nodeA4CritBonusDisp = equal(condA4, "on",
+  greaterEq(input.asc, 4, min(
+    prod(datamine.passive2.crBonus, input.premod.critRate_),
+    datamine.passive2.maxBonus
+  ))
+)
+const nodeA4CritBonus = unequal(target.charKey, key, nodeA4CritBonusDisp)
 
 const nodeC1AtkSpd = equal(condC1, "on", greaterEq(input.constellation, 1, datamine.constellation1.atkSpdInc))
 const nodeC1NormalInc = equal(condC1, "on", greaterEq(input.constellation, 1, datamine.constellation1.dmgInc))
@@ -240,11 +246,12 @@ const sheet: ICharacterSheet = {
         path: condA4Path,
         teamBuff: true,
         header: conditionalHeader("passive1", tr, passive1),
-        canShow: greaterEq(input.asc, 4, 1),
+        // Hide for Rosaria
+        canShow: greaterEq(input.asc, 4, unequal(input.activeCharKey, key, 1)),
         states: {
           on: {
             fields: [{
-              node: nodeA4CritBonus
+              node: infoMut(nodeA4CritBonusDisp, { key: "critRate_" }),
             }, {
               text: sgt("duration"),
               value: datamine.passive2.duration,
