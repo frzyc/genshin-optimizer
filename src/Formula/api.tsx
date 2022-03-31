@@ -174,14 +174,17 @@ function mergeData(data: Data[]): Data {
     if (data.length <= 1) return data[0]
     if (data[0].operation) {
       if (path[0] === "teamBuff") path = path.slice(1)
-      const accu = path[0] === "tally"
-        ? "add" : (objPathValue(input, path) as ReadNode<number> | undefined)?.accu
+      let { accu, type } = (objPathValue(input, path) as ReadNode<number> | ReadNode<string> | undefined) ?? {}
       if (accu === undefined) {
-        if (data.length !== 1)
-          throw new Error(`Multiple entries when merging \`unique\` for key ${path}`)
-        return data[0]
+        const errMsg = `Multiple entries when merging \`unique\` for key ${path}`
+        if (process.env.NODE_ENV === "development")
+          throw new Error(errMsg)
+        else
+          console.error(errMsg)
+
+        accu = type === "string" ? "prio" : "add" // TODO: Change the default fallback for StrNode to `lex`
       }
-      const result: NumNode = { operation: accu, operands: data }
+      const result: NumNode | StrNode = { operation: accu, operands: data }
       return result
     } else {
       return Object.fromEntries([...new Set(data.flatMap(x => Object.keys(x) as string[]))]
