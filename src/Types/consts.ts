@@ -17,6 +17,7 @@ export const allArtifactSets = [
   "BraveHeart",
   "CrimsonWitchOfFlames",
   "DefendersWill",
+  "EchoesOfAnOffering",
   "EmblemOfSeveredFate",
   "Gambler",
   "GladiatorsFinale",
@@ -44,6 +45,7 @@ export const allArtifactSets = [
   "Thundersoother",
   "TinyMiracle",
   "TravelingDoctor",
+  "VermillionHereafter",
   "ViridescentVenerer",
   "WanderersTroupe",
 ] as const
@@ -95,6 +97,7 @@ export const allCharacterKeys = [
   "YaeMiko",
   "YunJin",
   "Zhongli",
+  "KamisatoAyato"
 ] as const
 
 export const allWeaponSwordKeys = [
@@ -109,6 +112,7 @@ export const allWeaponSwordKeys = [
   "FesteringDesire",
   "FilletBlade",
   "FreedomSworn",
+  "HaranGeppakuFutsu",
   "HarbingerOfDawn",
   "IronSting",
   "LionsRoar",

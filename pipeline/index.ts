@@ -68,6 +68,7 @@ export const characterIdMap = {
   10000062: "Aloy",
   10000063: "Shenhe",
   10000064: "YunJin",
+  10000066: "KamisatoAyato",
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",
@@ -116,6 +117,7 @@ export const weaponIdMap = {
   // 11507: "One Side",//new weapon?
   // 11508: "",
   11509: "MistsplitterReforged",
+  11510: "HaranGeppakuFutsu",
 
   //claymore
   12101: "WasterGreatsword",
@@ -298,6 +300,8 @@ export const artifactIdMap = {
   15020: "EmblemOfSeveredFate",
   15021: "HuskOfOpulentDreams",
   15022: "OceanHuedClam",
+  15023: "VermillionHereafter",
+  15024: "EchoesOfAnOffering",
 } as const
 
 export const artifactSlotMap = {

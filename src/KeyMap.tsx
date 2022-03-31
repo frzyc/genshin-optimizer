@@ -156,6 +156,9 @@ export default class KeyMap {
   static getStr(key: string = ""): string | undefined {
     return statMap[key]
   }
+  static getStrNoUnit(key: string = ""): string | undefined {
+    return statMap[key]?.split("%")?.[0]
+  }
   /**
    * TODO: this should return purely a HTML, so the string values need to be wrapped in <span>?
    */
