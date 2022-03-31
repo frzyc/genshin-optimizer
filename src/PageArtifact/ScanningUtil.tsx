@@ -333,10 +333,10 @@ function parseMainStatKeys(texts: string[]): Set<MainStatKey> {
   const results = new Set<MainStatKey>([])
   for (const text of texts)
     for (const key of allMainStatKeys) {
-      if (text.toLowerCase().includes(KeyMap.getStr(key)?.toLowerCase() ?? ""))
+      if (text.toLowerCase().includes(KeyMap.getStrNoUnit(key)?.toLowerCase() ?? ""))
         results.add(key)
       //use fuzzy compare on the ... Bonus texts. heal_ is included.
-      if (key.includes("_bonu") && hammingDistance(text.replace(/\W/g, ''), (KeyMap.getStr(key) ?? "").replace(/\W/g, '')) <= 1)
+      if (key.includes("_bonu") && hammingDistance(text.replace(/\W/g, ''), (KeyMap.getStrNoUnit(key) ?? "").replace(/\W/g, '')) <= 1)
         results.add(key)
     }
   return results
@@ -359,7 +359,7 @@ function parseSubstats(texts: string[]): ISubstat[] {
     text = text.replace(/^[\W]+/, "").replace(/\n/, "")
     //parse substats
     allSubstats.forEach(key => {
-      const name = KeyMap.getStr(key)
+      const name = KeyMap.getStrNoUnit(key)
       const regex = KeyMap.unit(key) === "%" ?
         new RegExp(name + "\\s*\\+\\s*(\\d+[\\.|,]+\\d)%", "im") :
         new RegExp(name + "\\s*\\+\\s*(\\d+,\\d+|\\d+)($|\\s)", "im")
