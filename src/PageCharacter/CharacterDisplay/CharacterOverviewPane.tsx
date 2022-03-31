@@ -14,7 +14,7 @@ import { uiInput as input } from "../../Formula";
 import { ReadNode } from "../../Formula/type";
 import KeyMap, { valueString } from "../../KeyMap";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
-import { amplifyingReactions, transformativeReactions } from "../../StatConstants";
+import { amplifyingReactions, transformativeReactions } from "../../KeyMap/StatConstants";
 import { allElementsWithPhy, ElementKey } from "../../Types/consts";
 import WeaponDisplayCard from "../../PageWeapon/WeaponDisplayCard";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";

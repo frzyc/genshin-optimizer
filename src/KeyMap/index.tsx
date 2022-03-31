@@ -1,10 +1,11 @@
-import { Translate } from "./Components/Translate";
-import elementalData from "./Data/ElementalData";
+import { Translate } from "../Components/Translate";
+import elementalData from "./ElementalData";
 import { amplifyingReactions, AmplifyingReactionsKey, HitMoveKey, hitMoves, transformativeReactions, TransformativeReactionsKey } from "./StatConstants";
-import { allElementsWithPhy, ElementKeyWithPhy } from "./Types/consts";
+import { MainStatKey, SubstatKey } from "../Types/artifact";
+import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";
 
 const statMap = {
-  hp: "HP", hp_: "HP%", atk: "ATK", atk_: "ATK%", def: "DEF", def_: "DEF%",
+  hp: "HP", hp_: "HP", atk: "ATK", atk_: "ATK", def: "DEF", def_: "DEF",
   eleMas: "Elemental Mastery", enerRech_: "Energy Recharge",
   critRate_: "Crit Rate", critDMG_: "Crit DMG",
   heal_: "Healing Bonus",
@@ -140,7 +141,7 @@ const subKeyMap: StrictDict<KeyMapPrefix, string> = {
 }
 
 export const allStatKeys = Object.keys(statMap) as StatKey[]
-
+const showPercentKeys = ["hp_", "def_", "atk_"]
 export default class KeyMap {
   //do not instantiate.
   constructor() {
@@ -150,26 +151,20 @@ export default class KeyMap {
   static getPrefixStr(prefix: KeyMapPrefix): string {
     return subKeyMap[prefix]
   }
-  /**
-   * TODO: Should return just the String, and no unit. unit should be separate.
-   */
   static getStr(key: string = ""): string | undefined {
     return statMap[key]
   }
-  static getStrNoUnit(key: string = ""): string | undefined {
-    return statMap[key]?.split("%")?.[0]
+  static getArtStr(key: MainStatKey | SubstatKey): string {
+    return statMap[key] + (showPercentKeys.includes(key) ? "%" : "")
   }
-  /**
-   * TODO: this should return purely a HTML, so the string values need to be wrapped in <span>?
-   */
   static get(key: string = ""): Displayable | undefined {
     const name = KeyMap.getStr(key)
-    if (name) return name
+    if (name) return <span>{name}</span>
     if (key.includes(":")) {
       const [ns, key18] = key.split(":")
       return <Translate ns={ns} key18={key18} />
     }
-    return key
+    return <span>{key}</span>
   }
   static getVariant(key: string = ""): ElementKeyWithPhy | undefined {
     return allElementsWithPhy.find(e => key.startsWith(e))

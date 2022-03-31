@@ -41,7 +41,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
       <ButtonGroup size="small" sx={{ width: "100%", display: "flex" }}>
         <DropdownButton
           startIcon={key ? StatIcon[key] : undefined}
-          title={key ? KeyMap.get(key) : t('editor.substat.substatFormat', { value: index + 1 })}
+          title={key ? KeyMap.getArtStr(key) : t('editor.substat.substatFormat', { value: index + 1 })}
           disabled={!artifact}
           color={key ? "success" : "primary"}
           sx={{ whiteSpace: "nowrap" }}>
@@ -49,7 +49,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
           {allSubstats.filter(key => mainStatKey !== key)
             .map(k => <MenuItem key={k} selected={key === k} disabled={key === k} onClick={() => setSubstat(index, { key: k, value: 0 })} >
               <ListItemIcon>{StatIcon[k]}</ListItemIcon>
-              <ListItemText>{KeyMap.get(k)}</ListItemText>
+              <ListItemText>{KeyMap.getArtStr(k)}</ListItemText>
             </MenuItem>)}
         </DropdownButton>
         <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }} >

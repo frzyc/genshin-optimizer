@@ -259,21 +259,21 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   addText("slotKey", slotKeys, "Slot", (value) => <>{Artifact.slotName(value)}</>)
   addText("mainStatKey", mainStatKeys, "Main Stat", (value) => <>{KeyMap.getStr(value)}</>)
   texts.substats = <>{result.substats.filter(substat => substat.key !== "").map((substat, i) =>
-    <div key={i}>{detectedText(substat, "Sub Stat", (value) => <>{KeyMap.getStr(value.key)}+{cacheValueString(value.value, KeyMap.unit(value.key))}</>)}</div>)
+    <div key={i}>{detectedText(substat, "Sub Stat", (value) => <>{KeyMap.getStr(value.key)}+{cacheValueString(value.value, KeyMap.unit(value.key))}{KeyMap.unitStr(value.key)}</>)}</div>)
   }</>
 
-  const unit = KeyMap.unit(result.mainStatKey)
+  const valueStrFunc = (value) => <>{cacheValueString(value, KeyMap.unit(result.mainStatKey))}{KeyMap.unitStr(result.mainStatKey)}</>
   if (mainStatValues.find(value => value.mainStatValue === resultMainStatVal)) {
     if (mainStatKeys.has(result.mainStatKey)) {
       texts.level = detectedText(result.level, "Level", (value) => "+" + value)
-      texts.mainStatVal = detectedText(resultMainStatVal, "Main Stat value", (value) => <>{cacheValueString(value, unit)}</>)
+      texts.mainStatVal = detectedText(resultMainStatVal, "Main Stat value", valueStrFunc)
     } else {
       texts.level = inferredText(result.level, "Level", (value) => "+" + value)
-      texts.mainStatVal = inferredText(resultMainStatVal, "Main Stat value", (value) => <>{cacheValueString(value, unit)}</>)
+      texts.mainStatVal = inferredText(resultMainStatVal, "Main Stat value", valueStrFunc)
     }
   } else {
     texts.level = unknownText(result.level, "Level", (value) => "+" + value)
-    texts.mainStatVal = unknownText(resultMainStatVal, "Main Stat value", (value) => <>{cacheValueString(value, unit)}</>)
+    texts.mainStatVal = unknownText(resultMainStatVal, "Main Stat value", valueStrFunc)
   }
 
   return [result, texts]
@@ -333,10 +333,10 @@ function parseMainStatKeys(texts: string[]): Set<MainStatKey> {
   const results = new Set<MainStatKey>([])
   for (const text of texts)
     for (const key of allMainStatKeys) {
-      if (text.toLowerCase().includes(KeyMap.getStrNoUnit(key)?.toLowerCase() ?? ""))
+      if (text.toLowerCase().includes(KeyMap.getStr(key)?.toLowerCase() ?? ""))
         results.add(key)
       //use fuzzy compare on the ... Bonus texts. heal_ is included.
-      if (key.includes("_bonu") && hammingDistance(text.replace(/\W/g, ''), (KeyMap.getStrNoUnit(key) ?? "").replace(/\W/g, '')) <= 1)
+      if (key.includes("_bonu") && hammingDistance(text.replace(/\W/g, ''), (KeyMap.getStr(key) ?? "").replace(/\W/g, '')) <= 1)
         results.add(key)
     }
   return results
@@ -359,7 +359,7 @@ function parseSubstats(texts: string[]): ISubstat[] {
     text = text.replace(/^[\W]+/, "").replace(/\n/, "")
     //parse substats
     allSubstats.forEach(key => {
-      const name = KeyMap.getStrNoUnit(key)
+      const name = KeyMap.getStr(key)
       const regex = KeyMap.unit(key) === "%" ?
         new RegExp(name + "\\s*\\+\\s*(\\d+[\\.|,]+\\d)%", "im") :
         new RegExp(name + "\\s*\\+\\s*(\\d+,\\d+|\\d+)($|\\s)", "im")

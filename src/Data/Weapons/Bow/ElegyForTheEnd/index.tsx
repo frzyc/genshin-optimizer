@@ -1,6 +1,6 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { equal, subscript, sum } from "../../../../Formula/utils"
+import { equal, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'

@@ -48,9 +48,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
 
   const { id, lock, slotKey, rarity, level, mainStatKey, substats, exclude, location = "" } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
-  const mainStatUnit = KeyMap.unit(mainStatKey) === "flat" ? null : KeyMap.unit(mainStatKey)
+  const mainStatUnit = KeyMap.unitStr(mainStatKey)
   const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
-  const mainStatVal = <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}</ColorText>
   const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
   const artifactValid = maxEfficiency !== 0
   const slotName = sheet?.getSlotName(slotKey) || "Unknown Piece Name"
@@ -88,7 +87,9 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
               <span>{StatIcon[mainStatKey]} {KeyMap.get(mainStatKey)}</span>
             </Typography>
             <Typography variant="h5">
-              <strong>{mainStatVal}{mainStatUnit}</strong>
+              <strong>
+                <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
+              </strong>
             </Typography>
             <Stars stars={rarity} colored />
             {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
@@ -153,9 +154,8 @@ function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, eff
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
   const efficiency = stat.efficiency ?? 0
   const effOpacity = clamp01(0.5 + (efficiency / (100 * 5)) * 0.5) //divide by 6 because an substat can have max 6 rolls
-  // TODO: make the displaying of statname & unit with % less jank
-  const statName = KeyMap.getStr(stat.key)?.split("%")[0]
-  const unit = KeyMap.unit(stat.key) === "flat" ? "" : "%"
+  const statName = KeyMap.getStr(stat.key)
+  const unit = KeyMap.unitStr(stat.key)
   const inFilter = stat.key && effFilter.has(stat.key)
   return (<Box display="flex" gap={1} alignContent="center">
     <Typography sx={{ flexGrow: 1 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{StatIcon[stat.key]} {statName}{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}</Typography>
