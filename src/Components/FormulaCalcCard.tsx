@@ -13,6 +13,8 @@ import ColorText from "./ColoredText"
 import ExpandButton from "./ExpandButton"
 import ImgIcon from "./Image/ImgIcon"
 
+import { diff_debug } from "../Formula/differentiate"
+
 export default function FormulaCalcCard() {
   const [expanded, setexpanded] = useState(false)
   const toggle = useCallback(() => setexpanded(!expanded), [setexpanded, expanded])
@@ -46,6 +48,10 @@ export default function FormulaCalcCard() {
 function CalculationDisplay() {
   const { data } = useContext(DataContext)
   const sections = getDisplaySections(data)
+
+  // console.log('here??', data)
+  diff_debug()
+
   return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={1000} />} >
     <Box sx={{ mr: -1, mb: -1 }}>
       {sections.map(([key, Nodes]) =>
