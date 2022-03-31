@@ -86,6 +86,7 @@
   "durationInc": "Duration increase",
   "base": "Base",
   "stacks": "Stacks",
+  "maxStacks": "Maximum stacks",
   "members": "Members",
   "hits": "Hits",
   "protectedByShield": "Protected by a shield",
