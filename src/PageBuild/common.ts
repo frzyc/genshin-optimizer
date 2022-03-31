@@ -92,7 +92,7 @@ function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean 
         visit(f as NumNode, true); break
       case "res": case "threshold": case "sum_frac":
       case "max": case "min": visit(f, false); break
-      case "data": case "subscript": case "lookup": case "match": case "prio":
+      case "data": case "subscript": case "lookup": case "match": case "prio": case "small":
         throw new Error(`Found unsupported ${operation} node when computing affine nodes`)
       default: assertUnreachable(operation)
     }
