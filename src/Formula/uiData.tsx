@@ -107,6 +107,7 @@ export class UIData {
       case "match": result = this._match(node); break
       case "lookup": result = this._lookup(node); break
       case "prio": result = this._prio(node.operands); break
+      case "small": result = this._small(node.operands); break
       default: assertUnreachable(operation)
     }
 
@@ -154,12 +155,21 @@ export class UIData {
     const first = nodes.find(node => this.computeNode(node).value !== undefined)
     return first ? this.computeNode(first) : illformedStr
   }
+  private _small(nodes: readonly StrNode[]): ContextNodeDisplay<string | undefined> {
+    let smallest: ContextNodeDisplay<string | undefined> | undefined = undefined
+    for (const node of nodes) {
+      const candidate = this.computeNode(node)
+      if (smallest?.value === undefined || (candidate.value && candidate.value < smallest.value))
+        smallest = candidate
+    }
+    return smallest ?? illformedStr
+  }
   private _read(node: ReadNode<number | string | undefined>): ContextNodeDisplay<number | string | undefined> {
     const { path } = node
     const result = (node.accu === undefined)
       ? this.readFirst(path) ?? (node.type === "string" ? illformedStr : illformed)
-      : node.accu === "prio"
-        ? this._prio(this.prereadAll(path) as StrNode[])
+      : node.accu === "small"
+        ? this._small(this.prereadAll(path) as StrNode[])
         : this._accumulate(node.accu, this.readAll(path) as ContextNodeDisplay[])
     return result
   }

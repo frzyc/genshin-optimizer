@@ -8,8 +8,7 @@ export type NumNode = ComputeNode | ThresholdNode |
   LookupNode<NumNode> | MatchNode<NumNode, StrNode> | MatchNode<NumNode, NumNode> |
   SubscriptNode<number> |
   ReadNode<number> | ConstantNode<number>
-// TODO: Add `ThresholdNode<StrNode>`
-export type StrNode = StrPrioNode |
+export type StrNode = StrPrioNode | SmallestNode |
   DataNode<StrNode> |
   LookupNode<StrNode> |
   MatchNode<StrNode, StrNode> | MatchNode<StrNode, NumNode> |
@@ -37,6 +36,11 @@ interface Base {
 }
 export interface StrPrioNode extends Base {
   operation: "prio"
+  operands: readonly StrNode[]
+}
+/** Pick the lexcicographically smallest non-`undefined` value. If all values are `undefined` or there is no value, use `undefined`. */
+export interface SmallestNode extends Base {
+  operation: "small"
   operands: readonly StrNode[]
 }
 export interface LookupNode<N> extends Base {
@@ -72,7 +76,7 @@ export interface SubscriptNode<V> extends Base {
 export interface ReadNode<V> extends Base {
   operation: "read"
   operands: readonly []
-  accu?: V extends number ? CommutativeMonoidOperation : "prio"
+  accu?: V extends number ? CommutativeMonoidOperation : "small"
   path: readonly string[]
   type: V extends number ? "number" : V extends string ? "string" : undefined
 }
