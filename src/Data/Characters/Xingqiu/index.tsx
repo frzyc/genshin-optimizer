@@ -91,12 +91,12 @@ export const dmgFormulas = {
   skill: {
     // Multiplicative DMG increase requires customDmgNode
     press1: customDmgNode(prod(
-      subscript(input.total.autoIndex, datamine.skill.hit1, { key: "_" }),
+      subscript(input.total.skillIndex, datamine.skill.hit1, { key: "_" }),
       input.total.atk,
       sum(unit, nodeC4)
     ), "skill"),
     press2: customDmgNode(prod(
-      subscript(input.total.autoIndex, datamine.skill.hit2, { key: "_" }),
+      subscript(input.total.skillIndex, datamine.skill.hit2, { key: "_" }),
       input.total.atk,
       sum(unit, nodeC4)
     ), "skill"),

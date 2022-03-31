@@ -1,19 +1,20 @@
 import { Box, CardActionArea, CardContent, Chip, Grid, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
-import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import ConditionalWrapper from '../Components/ConditionalWrapper';
+import { NodeFieldDisplay } from '../Components/FieldDisplay';
 import ImgIcon from '../Components/Image/ImgIcon';
 import SqBadge from '../Components/SqBadge';
 import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
+import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import { ascensionMaxLevel } from '../Data/LevelData';
+import WeaponSheet from '../Data/Weapons/WeaponSheet';
 import { DatabaseContext } from '../Database/Database';
 import { DataContext, dataContextObj, TeamData } from '../DataContext';
 import { uiInput as input } from '../Formula';
 import { computeUIData, dataObjForWeapon } from '../Formula/api';
-import { NumNode } from '../Formula/type';
 import KeyMap, { valueString } from '../KeyMap';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import usePromise from '../ReactHooks/usePromise';
@@ -21,7 +22,7 @@ import useTeamData from '../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../Types/artifact';
 import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '../Types/consts';
 import { ICachedWeapon } from '../Types/weapon';
-import WeaponSheet from '../Data/Weapons/WeaponSheet';
+import { NodeDisplay } from '../Formula/uiData'
 
 type CharacterCardProps = {
   characterKey: CharacterKey | "",
@@ -151,11 +152,6 @@ function Weapon({ weaponId }: { weaponId: string }) {
   const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
-  const name = weaponSheet?.name
-  const mainVal = valueString(UIData.get(input.weapon.main).value, UIData.get(input.weapon.main).unit, 0)
-  const subKey = UIData.get(input.weapon.sub).key
-  const subVal = valueString(UIData.get(input.weapon.sub).value, UIData.get(input.weapon.sub).unit, UIData.get(input.weapon.sub).unit === "flat" ? 0 : undefined)
-  const levelName = WeaponSheet.getLevelString(weapon as ICachedWeapon)
   return <CardDark>
     <Box display="flex" >
       <Box flexShrink={1} maxWidth="35%" display="flex" flexDirection="column" alignContent="flex-end" className={`grad-${weaponSheet.rarity}star`} >
@@ -168,16 +164,24 @@ function Weapon({ weaponId }: { weaponId: string }) {
         />
       </Box>
       <Box flexGrow={1} sx={{ p: 1 }}>
-        <Typography variant="body2"><strong>{name}</strong></Typography>
-        <Typography whiteSpace="nowrap" lineHeight={1}>
-          <SqBadge color="primary" sx={{ mr: 1 }}>Lv. {levelName}</SqBadge>
-          {subKey && <SqBadge color="info"> Refinement {weapon.refinement}</SqBadge>}
+        <Typography variant="body2" gutterBottom><strong>{weaponSheet?.name}</strong></Typography>
+        <Typography variant='subtitle1' sx={{ display: "flex", gap: 1 }} gutterBottom>
+          <SqBadge color="primary">Lv. {WeaponSheet.getLevelString(weapon as ICachedWeapon)}</SqBadge>
+          {weaponSheet.hasRefinement && <SqBadge color="info">R{weapon.refinement}</SqBadge>}
         </Typography>
-        <Typography variant="subtitle1">ATK: {mainVal}</Typography>
-        {subKey && <Typography variant="subtitle2" lineHeight={1}>{KeyMap.get(subKey)}: {subVal}</Typography>}
+        <Typography variant='subtitle1' sx={{ display: "flex", gap: 1 }} >
+          <WeaponStat node={UIData.get(input.weapon.main)} />
+          <WeaponStat node={UIData.get(input.weapon.sub)} />
+        </Typography>
+
       </Box>
     </Box>
   </CardDark>
+}
+function WeaponStat({ node }: { node: NodeDisplay }) {
+  if (!node.key) return null
+  const val = valueString(node.value, node.unit, node.unit === "flat" ? 0 : undefined)
+  return <SqBadge color="secondary">{StatIcon[node.key]} {val}</SqBadge>
 }
 function ArtifactDisplay() {
   const { database } = useContext(DatabaseContext)
@@ -193,29 +197,18 @@ function ArtifactDisplay() {
       const { setKey, slotKey, mainStatKey } = art
       return <Grid item key={key} flexGrow={1}>
         <Chip color="secondary" sx={{ width: "100%" }} icon={<ImgIcon src={artifactSheets?.[setKey].slotIcons[slotKey]} size={2.5} />}
-          label={<span>{KeyMap.get(mainStatKey)}</span>} />
+          label={<span>{StatIcon[mainStatKey]} {KeyMap.get(mainStatKey)}</span>} />
       </Grid>
     })}
   </Grid>
 }
 function Stats() {
   const { data } = useContext(DataContext)
-  const statkeys = ["hp", "atk", "def", "eleMas", "critRate_", "critDMG_", "enerRech_",]
-  statkeys.push(`${data.get(input.charEle).value}_dmg_`)
-  if (data.get(input.weaponType).value !== "catalyst")
-    statkeys.push("physical_dmg_")
-
   return <Box sx={{ width: "100%" }} >
-    {statkeys.map(statKey => {
-      const stat = data.get(input.total[statKey] as NumNode)
-      const val = valueString(stat.value, stat.unit, stat.unit === "flat" ? 0 : undefined)
-      return <Box sx={{ display: "flex" }} key={statKey}>
-        <Typography flexGrow={1} color={`${stat.variant}.main`}><strong>{StatIcon[statKey]} {KeyMap.get(stat.key!)}</strong></Typography>
-        <Typography>{val}</Typography>
-      </Box>
-    })}
-    {data.get(input.special).key && <Box sx={{ display: "flex" }} >
+    {Object.values(data.getDisplay().basic).map(n => <NodeFieldDisplay key={n.key} node={n} />)}
+    {data.get(input.special).key && <Box sx={{ display: "flex", gap: 1, alignItems: "center" }} >
       <Typography flexGrow={1}><strong>Specialized:</strong></Typography>
+      {StatIcon[data.get(input.special).key!]}
       <Typography>{KeyMap.get(data.get(input.special).key!)}</Typography>
     </Box>}
   </Box>

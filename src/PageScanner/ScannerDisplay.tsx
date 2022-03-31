@@ -1,17 +1,16 @@
 import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 import { faDownload, faHome } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Alert, Box, Button, CardContent, Grid, Link, Typography } from "@mui/material"
+import { Box, Button, CardContent, Grid, Link, Typography } from "@mui/material"
 import ReactGA from 'react-ga'
 import { Trans, useTranslation } from 'react-i18next'
 import { Link as RouterLink } from "react-router-dom"
 import CardDark from "../Components/Card/CardDark"
 import ImgFullwidth from "../Components/Image/ImgFullwidth"
 import SqBadge from "../Components/SqBadge"
-import Amenoma from './Amenoma.png'
-import cocogoat from './cocogoat.png'
-import GIScanner from './GIScanner.png'
 import AdScanner from './AdeptiScanner.png'
+import Amenoma from './Amenoma.png'
+import GIScanner from './GIScanner.png'
 
 export default function ScannerDisplay(props: any) {
   const { t: ui } = useTranslation('ui')
@@ -38,7 +37,7 @@ export default function ScannerDisplay(props: any) {
     <CardDark><CardContent><Grid container spacing={2} >
       <Grid item xs={12} md={4}><ImgFullwidth src={GIScanner} /></Grid>
       <Grid item xs={12} md={8}>
-        <Typography variant="h5"><Trans t={t} i18nKey="ik.title">Inventory Kamera</Trans><SqBadge color="success" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.4" }} /></SqBadge></Typography>
+        <Typography variant="h5"><Trans t={t} i18nKey="ik.title">Inventory Kamera</Trans><SqBadge color="success" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.5" }} /></SqBadge></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="ik.p1">This light-weight app will scan all your characters + weapons + artifacts in your inventory. Follow the instrutions in the app to set it up.</Trans></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="ik.p2">This scanner can also scan materials for <Link href="https://seelie.me/" target="_blank" rel="noreferrer">Seelie.me</Link></Trans></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="goodeng">This scanner only scans in english, and exports to GOOD format.</Trans></Typography>
@@ -48,7 +47,7 @@ export default function ScannerDisplay(props: any) {
 
     <CardDark><CardContent><Grid container spacing={2} >
       <Grid item xs={12} md={8}>
-        <Typography variant="h5"><Trans t={t} i18nKey="as.title">AdeptiScanner</Trans><SqBadge color="success" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.4+" }} /></SqBadge></Typography>
+        <Typography variant="h5"><Trans t={t} i18nKey="as.title">AdeptiScanner</Trans><SqBadge color="success" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.6+" }} /></SqBadge></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="as.p1">Scans all your artifacts in inventory. Has a manual scanning mode.</Trans></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="as.p2">This scanner can also be configured for new artifacts in new game versions without needing an update.</Trans></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="goodeng">This scanner only scans in english, and exports to GOOD format.</Trans></Typography>
@@ -60,25 +59,13 @@ export default function ScannerDisplay(props: any) {
     <CardDark><CardContent><Grid container spacing={2} >
       <Grid item xs={12} md={4}><ImgFullwidth src={Amenoma} /></Grid>
       <Grid item xs={12} md={8}>
-        <Typography variant="h5"><Trans t={t} i18nKey="am.title">「天目」-- Amenoma</Trans><SqBadge color="success" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.3" }} /></SqBadge></Typography>
+        <Typography variant="h5"><Trans t={t} i18nKey="am.title">「天目」-- Amenoma</Trans><SqBadge color="success" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.5" }} /></SqBadge></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="am.p1">Scans all you artifacts in your inventory. Follow the instruction to capture the window and scan. Has both Chinese and English version. (Download the <code>_EN.exe</code> version to scan in english). Both the <code>mona-uranai</code> and <code>GOOD</code> format is accepted in GO. the <code>GOOD</code> format is recommended.</Trans></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="am.p2">Beta version of this scanner can also scan materials for <Link href="https://seelie.me/" target="_blank" rel="noreferrer">Seelie.me</Link></Trans></Typography>
         <Button sx={{ mb: 2 }} href="https://github.com/daydreaming666/Amenoma" target="_blank" startIcon={<FontAwesomeIcon icon={faDownload} />} ><Trans t={ui} i18nKey="link.download" /></Button>
         <Typography gutterBottom><Trans t={t} i18nKey="am.p3">Please feel free to join their discord if you find any bugs. They are in need of more english testers.</Trans></Typography>
         <Button href="https://discord.gg/BTrCYgVGFP" target="_blank" startIcon={<FontAwesomeIcon icon={faDiscord} />} ><Trans t={ui} i18nKey="link.discord" /></Button>
       </Grid>
-    </Grid></CardContent></CardDark>
-
-    <CardDark><CardContent><Grid container spacing={2} >
-      <Grid item xs={12} md={8}>
-        <Typography variant="h5"><Trans t={t} i18nKey="co.title">椰羊cocogoat</Trans><SqBadge color="error" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.0" }} /></SqBadge></Typography>
-        <Typography gutterBottom><Trans t={t} i18nKey="co.p1">Cocogoat was originally a Chinese scanner that was ported to English. Has an overlay to scan individual artifacts.</Trans></Typography>
-        <Typography gutterBottom><Trans t={t} i18nKey="co.p2">Cocogoat also retains your scanned artifacts, where you can edit them individually, and you can use them in its built-in mona-uranai optimizer.(Currently a Chinese-only optimizer)</Trans></Typography>
-        <Typography gutterBottom><Trans t={t} i18nKey="co.p3">It is recommended to export in its "Mona's Divination Shop" format.</Trans></Typography>
-        <Button sx={{ mb: 2 }} href="https://github.com/YuehaiTeam/cocogoat" target="_blank" startIcon={<FontAwesomeIcon icon={faDownload} />} ><Trans t={ui} i18nKey="link.download" /></Button>
-        <Alert variant="outlined" severity="warning"><Trans t={t} i18nKey="co.warn">WARNING: Do not use the "Genshin Optimizer" export format. importing it will delete your character {"&"} weapon data.</Trans></Alert>
-      </Grid>
-      <Grid item xs={12} md={4}><ImgFullwidth src={cocogoat} /></Grid>
     </Grid></CardContent></CardDark>
 
     <CardDark><CardContent>
