@@ -125,7 +125,9 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
     skill: nodeC5,
     burst: nodeC3,
   },
-  infusion: afterRecastInfusion,
+  infusion: {
+    overridableSelf: afterRecastInfusion,
+  },
   premod: {
     critRate_: afterBurstCritRate_,
     enerRech_: afterBurstEnerRech_,

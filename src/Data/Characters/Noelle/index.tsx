@@ -133,7 +133,9 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
     charged_dmg_: nodeC2ChargeDMG,
     atk: nodeBurstAtk,
   },
-  infusion: nodeBurstInfusion
+  infusion: {
+    nonOverridableSelf: nodeBurstInfusion,
+  },
 })
 
 const sheet: ICharacterSheet = {

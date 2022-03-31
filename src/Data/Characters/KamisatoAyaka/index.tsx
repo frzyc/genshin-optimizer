@@ -123,7 +123,9 @@ export const data = dataObjForCharacterSheet(key, elementKey, "inazuma", data_ge
       enemyDefRed_: afterBurst
     }
   },
-  infusion: afterSprintInfusion,
+  infusion: {
+    overridableSelf: afterSprintInfusion,
+  },
   premod: {
     normal_dmg_: a1NormDmg_,
     charged_dmg_: sum(a1ChargedDmg_, c6ChargedDmg_),

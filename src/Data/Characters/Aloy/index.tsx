@@ -112,7 +112,9 @@ export const data = dataObjForCharacterSheet(key, elementKey, undefined, data_ge
       atk_: teamAtk_
     }
   },
-  infusion: afterRushingIce,
+  infusion: {
+    overridableSelf: afterRushingIce, // TODO: Check if overridable
+  },
 })
 
 const sheet: ICharacterSheet = {

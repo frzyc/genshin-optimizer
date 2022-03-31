@@ -136,7 +136,9 @@ export const data = dataObjForCharacterSheet(key, elementKey, "inazuma", data_ge
     atkSPD_: sum(nodeBurstAtkSpd, nodeP1AtkSpd),
     ...allNodeBurstRes
   },
-  infusion: nodeBurstInfusion
+  infusion: {
+    nonOverridableSelf: nodeBurstInfusion,
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -254,8 +256,8 @@ const sheet: ICharacterSheet = {
           text: trm("c1.timedGain"),
           value: datamine.constellation1.timedStacks
         }], undefined,
-        data => data.get(input.constellation).value >= 1 && data.get(condBurst).value === "on",
-        false, true),
+          data => data.get(input.constellation).value >= 1 && data.get(condBurst).value === "on",
+          false, true),
         sectionTemplate("constellation2", tr, c2, [{
           text: st("burstCDRed"),
           value: data => data.get(nodeC2BurstRed).value,
@@ -265,8 +267,8 @@ const sheet: ICharacterSheet = {
           text: st("energyRegen"),
           value: data => data.get(nodeC2EnergyRegen).value,
         }], undefined,
-        data => data.get(input.constellation).value >= 2 && data.get(condBurst).value === "on",
-        false, true),
+          data => data.get(input.constellation).value >= 2 && data.get(condBurst).value === "on",
+          false, true),
         sectionTemplate("constellation4", tr, c4, undefined, {
           canShow: greaterEq(input.constellation, 4, 1),
           name: trm("c4.name"),
