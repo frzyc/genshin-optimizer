@@ -137,7 +137,9 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
       critRate_: sum(critRateTeam_1, critRateTeam_2)
     }
   },
-  infusion
+  infusion: {
+    nonOverridableSelf: infusion
+  },
 })
 
 const sheet: ICharacterSheet = {

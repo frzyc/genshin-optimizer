@@ -81,7 +81,7 @@ const datamine = {
 
 const a1SkillCd = greaterEq(input.asc, 1, datamine.passive1.cd_red)
 
-const c1Atk = greaterEq(input.constellation, 1, datamine.constellation1.atk_inc, { key: `char_${key}:additionalATKRatio_`})
+const c1Atk = greaterEq(input.constellation, 1, datamine.constellation1.atk_inc, { key: `char_${key}:additionalATKRatio_` })
 
 const atkIncRatio = sum(subscript(input.total.burstIndex, datamine.burst.atkBonus, { key: "_" }), c1Atk)
 const [condInAreaPath, condInArea] = cond(key, "activeInArea")
@@ -145,8 +145,8 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
       pyro_dmg_: activeInAreaC6PyroDmg,
       atk: activeInAreaAtk,
     },
-    team: {
-      infusion: activeInAreaC6Infusion,
+    infusion: {
+      team: activeInAreaC6Infusion,
     },
   },
   premod: {
@@ -265,8 +265,8 @@ const sheet: ICharacterSheet = {
         sectionTemplate("passive2", tr, passive2, [{
           node: infoMut(activeInAreaA4, { key: "skillCDRed_" })
         }], undefined,
-        data => data.get(input.asc).value >= 4 && data.get(condInArea).value === "activeInArea",
-        false, true),
+          data => data.get(input.asc).value >= 4 && data.get(condInArea).value === "activeInArea",
+          false, true),
         sectionTemplate("constellation1", tr, c1, [{
           text: trm("additionalATKRatio"),
           node: c1Atk
@@ -278,8 +278,8 @@ const sheet: ICharacterSheet = {
         }, {
           text: trm("c6PyroInfusion")
         }], undefined,
-        data => data.get(input.constellation).value >= 6 && data.get(condInArea).value === "activeInArea",
-        true, true)
+          data => data.get(input.constellation).value >= 6 && data.get(condInArea).value === "activeInArea",
+          true, true)
       ]),
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: talentTemplate("passive2", tr, passive2, undefined),

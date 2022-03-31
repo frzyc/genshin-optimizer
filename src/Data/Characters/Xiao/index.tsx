@@ -137,7 +137,9 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
     enerRech_: c2Inactive_enerRech_,
     def_: c4BelowHP_def_,
   },
-  infusion,
+  infusion: {
+    nonOverridableSelf: infusion
+  },
 })
 
 const sheet: ICharacterSheet = {

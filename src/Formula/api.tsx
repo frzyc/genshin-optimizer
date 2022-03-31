@@ -46,8 +46,9 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     lvl: constant(char.level),
     constellation: constant(char.constellation),
     asc: constant(char.ascension),
-    // FIXME: causes "multiple unique entry error"
-    // infusion: char.infusionAura ? constant(char.infusionAura) : undefined,
+    infusion: {
+      team: char.infusionAura ? constant(char.infusionAura) : undefined,
+    },
     premod: {
       auto: constant(char.talent.auto),
       skill: constant(char.talent.skill),

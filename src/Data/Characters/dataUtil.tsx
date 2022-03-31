@@ -3,7 +3,7 @@ import { input } from "../../Formula";
 import { inferInfoMut, mergeData } from "../../Formula/api";
 import { reactions } from "../../Formula/reaction";
 import { Data, DisplaySub, NumNode } from "../../Formula/type";
-import { constant, data, equalStr, infoMut, percent, prod, stringPrio, subscript, sum, unit } from "../../Formula/utils";
+import { constant, data, equalStr, infoMut, lookup, percent, prod, stringPrio, subscript, sum, unit } from "../../Formula/utils";
 import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey, Region } from "../../Types/consts";
 import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
@@ -15,13 +15,17 @@ const charCurves = objectMap(_charCurves, value => [0, ...Object.values(value)])
 const commonBasic = objectKeyMap(["hp", "atk", "def", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_"], key => input.total[key])
 commonBasic.critRate_ = input.total.cappedCritRate
 
+const infusion = stringPrio(
+  input.infusion.nonOverridableSelf,
+  input.infusion.team,
+  input.infusion.overridableSelf)
 const inferredHitEle = stringPrio(
   // Inferred Element
   equalStr(input.weaponType, "catalyst", input.charEle),
-  equalStr(input.hit.move, "skill", input.charEle),
-  equalStr(input.hit.move, "burst", input.charEle),
-  input.infusion,
-  input.team.infusion,
+  lookup(input.hit.move, {
+    "normal": infusion, "charged": infusion, "plunging": infusion,
+    "skill": input.charEle, "burst": input.charEle,
+  }, undefined),
   "physical",
 )
 

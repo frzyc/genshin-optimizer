@@ -139,7 +139,12 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
     all_dmg_: nodeC1Bonus,
     normal_dmg_: nodeC6DmgBonus,
   },
-  infusion: nodeBurstInfusion
+  infusion: {
+    // CAUTION: Technically, this infusion is non-overridable,
+    // but it should also be higher prio than `team`. So we put
+    // it here instead.
+    overridableSelf: nodeBurstInfusion,
+  },
 })
 
 const sheet: ICharacterSheet = {
