@@ -273,7 +273,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { 
               </DropdownButton>
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                 <Typography color="text.secondary">
-                  {artifact ? `${cacheValueString(Artifact.mainStatValue(artifact.mainStatKey, rarity, level), KeyMap.unit(artifact.mainStatKey))}${KeyMap.unitStr(artifact.mainStatKey)}` : t`mainStat`}
+                  {artifact ? `${cacheValueString(Artifact.mainStatValue(artifact.mainStatKey, rarity, level), KeyMap.unit(artifact.mainStatKey))}${KeyMap.unit(artifact.mainStatKey)}` : t`mainStat`}
                 </Typography>
               </CardLight>
             </Box>

@@ -259,10 +259,10 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   addText("slotKey", slotKeys, "Slot", (value) => <>{Artifact.slotName(value)}</>)
   addText("mainStatKey", mainStatKeys, "Main Stat", (value) => <>{KeyMap.getStr(value)}</>)
   texts.substats = <>{result.substats.filter(substat => substat.key !== "").map((substat, i) =>
-    <div key={i}>{detectedText(substat, "Sub Stat", (value) => <>{KeyMap.getStr(value.key)}+{cacheValueString(value.value, KeyMap.unit(value.key))}{KeyMap.unitStr(value.key)}</>)}</div>)
+    <div key={i}>{detectedText(substat, "Sub Stat", (value) => <>{KeyMap.getStr(value.key)}+{cacheValueString(value.value, KeyMap.unit(value.key))}{KeyMap.unit(value.key)}</>)}</div>)
   }</>
 
-  const valueStrFunc = (value) => <>{cacheValueString(value, KeyMap.unit(result.mainStatKey))}{KeyMap.unitStr(result.mainStatKey)}</>
+  const valueStrFunc = (value) => <>{cacheValueString(value, KeyMap.unit(result.mainStatKey))}{KeyMap.unit(result.mainStatKey)}</>
   if (mainStatValues.find(value => value.mainStatValue === resultMainStatVal)) {
     if (mainStatKeys.has(result.mainStatKey)) {
       texts.level = detectedText(result.level, "Level", (value) => "+" + value)

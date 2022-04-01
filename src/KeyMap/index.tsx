@@ -60,7 +60,7 @@ const statMap = {
   level: "Level",
 } as const
 
-export type Unit = "flat" | "%" | "s"
+export type Unit = "" | "%" | "s"
 
 export type BaseKeys = keyof typeof statMap
 
@@ -169,20 +169,7 @@ export default class KeyMap {
   static getVariant(key: string = ""): ElementKeyWithPhy | undefined {
     return allElementsWithPhy.find(e => key.startsWith(e))
   }
-  static getNoUnit(key: string): Displayable {
-    const name = KeyMap.get(key) ?? ""
-    if (typeof name === "string")
-      return name.endsWith("%") ? name.slice(0, -1) : name
-    return name
-  }
-  /**
-   * TODO: Do we really need the "flat" here? can we remove "flat" and combine unit() and unitStr()?
-   */
   static unit(key: string = ""): Unit {
-    if (key.endsWith("_")) return "%"
-    return "flat"
-  }
-  static unitStr(key: string = ""): string {
     if (key.endsWith("_")) return "%"
     return ""
   }
@@ -195,7 +182,6 @@ export function valueString(value: number, unit: Unit, fixed = -1): string {
     return 'NaN'
   }
   if (unit === "%") value *= 100
-  else unit = '' as any
   if (Number.isInteger(value)) fixed = 0
   else if (fixed === -1) {
     if (unit === "%") fixed = 1

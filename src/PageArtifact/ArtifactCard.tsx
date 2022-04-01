@@ -48,7 +48,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
 
   const { id, lock, slotKey, rarity, level, mainStatKey, substats, exclude, location = "" } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
-  const mainStatUnit = KeyMap.unitStr(mainStatKey)
+  const mainStatUnit = KeyMap.unit(mainStatKey)
   const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
   const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
   const artifactValid = maxEfficiency !== 0
@@ -155,7 +155,7 @@ function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, eff
   const efficiency = stat.efficiency ?? 0
   const effOpacity = clamp01(0.5 + (efficiency / (100 * 5)) * 0.5) //divide by 6 because an substat can have max 6 rolls
   const statName = KeyMap.getStr(stat.key)
-  const unit = KeyMap.unitStr(stat.key)
+  const unit = KeyMap.unit(stat.key)
   const inFilter = stat.key && effFilter.has(stat.key)
   return (<Box display="flex" gap={1} alignContent="center">
     <Typography sx={{ flexGrow: 1 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{StatIcon[stat.key]} {statName}{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}</Typography>
