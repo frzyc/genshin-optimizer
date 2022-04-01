@@ -16,13 +16,13 @@ const afterBurstAtk_ = greaterEq(input.artSet.VermillionHereafter, 4,
   equal(condAfterBurst, "on", percent(0.08)), { key: "atk_" }
 )
 const [condStacksPath, condStacks] = cond(key, "stacks")
-const stacksAtk_ = equal(condAfterBurst, "on",
+const stacksAtk_ = greaterEq(input.artSet.VermillionHereafter, 4, equal(condAfterBurst, "on",
   lookup(condStacks, Object.fromEntries(range(1, 4).map(stacks => [
     stacks,
     percent(0.10 * stacks)
   ])), naught),
   { key: "atk_" }
-)
+))
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
@@ -34,31 +34,33 @@ const sheet: IArtifactSheet = {
   icons,
   setEffects: {
     2: { document: [{ fields: [{ node: set2 }] }] },
-    4: { document: [{
-      conditional: {
-        value: condAfterBurst,
-        path: condAfterBurstPath,
-        name: st("afterUse.burst"),
-        states: {
-          on: {
-            fields: [{ node: afterBurstAtk_ }]
+    4: {
+      document: [{
+        conditional: {
+          value: condAfterBurst,
+          path: condAfterBurstPath,
+          name: st("afterUse.burst"),
+          states: {
+            on: {
+              fields: [{ node: afterBurstAtk_ }]
+            }
           }
         }
-      }
-    }, {
-      conditional: {
-        value: condStacks,
-        path: condStacksPath,
-        name: st("stacks"),
-        canShow: equal(condAfterBurst, "on", 1),
-        states: Object.fromEntries(range(1, 4).map(stacks => [
-          stacks, {
-            name: st("stack", { count: stacks }),
-            fields: [{ node: stacksAtk_ }]
-          }
-        ]))
-      }
-    }]}
+      }, {
+        conditional: {
+          value: condStacks,
+          path: condStacksPath,
+          name: st("stacks"),
+          canShow: equal(condAfterBurst, "on", 1),
+          states: Object.fromEntries(range(1, 4).map(stacks => [
+            stacks, {
+              name: st("stack", { count: stacks }),
+              fields: [{ node: stacksAtk_ }]
+            }
+          ]))
+        }
+      }]
+    }
   }
 }
 export default new ArtifactSheet(key, sheet, data)
