@@ -19,15 +19,15 @@ const infusion = stringPrio(
   input.infusion.nonOverridableSelf,
   input.infusion.team,
   input.infusion.overridableSelf)
-const inferredHitEle = stringPrio(
-  // Inferred Element
-  equalStr(input.weaponType, "catalyst", input.charEle),
-  lookup(input.hit.move, {
-    "normal": infusion, "charged": infusion, "plunging": infusion,
-    "skill": input.charEle, "burst": input.charEle,
-  }, undefined),
-  "physical",
-)
+const meleeHitEle = lookup(input.hit.move, {
+  "normal": infusion, "charged": infusion, "plunging": infusion,
+  "skill": input.charEle, "burst": input.charEle,
+}, "physical")
+const inferredHitEle = lookup(input.weaponType, {
+  sword: meleeHitEle, claymore: meleeHitEle, polearm: meleeHitEle,
+  catalyst: input.charEle,
+  bow: constant("physical"),
+}, "physical")
 
 function getTalentType(move: "normal" | "charged" | "plunging" | "skill" | "burst") {
   switch (move) {
