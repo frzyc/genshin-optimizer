@@ -52,7 +52,7 @@ const sheet: IArtifactSheet = {
           value: condStacks,
           path: condStacksPath,
           name: st("stacks"),
-          canShow: equal(condAfterBurst, "on", 1),
+          canShow: greaterEq(input.artSet.VermillionHereafter, 4, equal(condAfterBurst, "on", 1)),
           states: Object.fromEntries(range(1, 4).map(stacks => [
             stacks, {
               name: st("stack", { count: stacks }),
