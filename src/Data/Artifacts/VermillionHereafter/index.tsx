@@ -39,7 +39,6 @@ const sheet: IArtifactSheet = {
         value: condAfterBurst,
         path: condAfterBurstPath,
         name: st("afterUse.burst"),
-        canShow: greaterEq(input.artSet.VermillionHereafter, 4, 1),
         states: {
           on: {
             fields: [{ node: afterBurstAtk_ }]
