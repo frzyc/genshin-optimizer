@@ -5,7 +5,7 @@
     "languageFormat": "Language: {{language}}"
   },
   "count": {
-    "chars": "Characters:",
+    "chars": "Champions:",
     "arts": "Artifacts:",
     "weapons": "Weapons:",
     "total": "Total:",
@@ -30,7 +30,7 @@
     "hintPaste": "...or paste your data below.",
     "dbSource": "Data source:",
     "goUpload": {
-      "title": "<strong>Genshin Optimizer</strong> format",
+      "title": "<strong>Dopamine Optimizer</strong> format",
       "migrate": "Database will be migrated to a newer version. Please consider re-downloading the database after import.",
       "deleteDatabasePrompt": "Are you sure you want to replace your database? All existing characters and artifacts will be deleted."
     },
