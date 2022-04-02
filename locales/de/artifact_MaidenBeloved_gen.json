@@ -1,0 +1,29 @@
+{
+  "setName": "Ins Herz geschlossenes Mädchen",
+  "setEffects": {
+    "2": "Erhöht den aktiven Heileffekt der Figur um 15 %.",
+    "4": "Erhöht den passiven Heilungseffekt aller Truppenmitglieder nach Anwendung von Elementarfähigkeiten oder Spezialfähigkeiten 10 s lang um 20 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Kindlichkeit der Maid",
+      "desc": "Eine filigrane Blume, die all der Zeit zum Trotz nicht verwelkt und weiter einen unwiderstehlichen Duft abgibt."
+    },
+    "plume": {
+      "name": "Sehnsucht der Maid",
+      "desc": "Worte an einen ganz bestimmten Menschen, die wie ein Vogel mit dem Wind zu weit entfernten Orten fliegen."
+    },
+    "sands": {
+      "name": "Morgen der Maid",
+      "desc": "Die Bewegung der Zeiger nimmt kein Ende, ganz anders die Art und Weise, wie man mit einer jungen Dame umgeht, wenn sie nicht mehr ganz so jung ist."
+    },
+    "goblet": {
+      "name": "Muße der Maid",
+      "desc": "Ein Becher für Tee, nicht für Wein, für süßen Duft, nicht für Bitterkeit."
+    },
+    "circlet": {
+      "name": "Vergänglichkeit der Maid",
+      "desc": "Ein sehr gepflegter Damenhut. Richtig getragen kann man damit sogar die Krähenfüße an den Augen verdecken."
+    }
+  }
+}

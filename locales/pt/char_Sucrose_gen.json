@@ -1,0 +1,154 @@
+{
+  "name": "Sucrose",
+  "title": "Doçura Inofensiva",
+  "description": "Uma alquimista cheia de curiosidade sobre todas as coisas e que pesquisa Bioalquimia.",
+  "constellationName": "Ampulla",
+  "auto": {
+    "name": "Criação do Espírito do Vento",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 ataques usando os Espíritos dos Ventos, infligindo <anemo>Dano Anemo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina que inflige <anemo>Dano Anemo em uma AdE</anemo> após um curto período de canalização."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Convocando os poderes dos Espíritos do Vento para si, Sucrose mergulha ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <anemo>Dano Anemo em uma AdE</anemo> durante o impacto com o chão."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Ataque Carregado",
+      "5": "Consumo de Stamina de Ataque Carregado",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Criação do Espírito do Vento: Experimento 6308",
+    "description": {
+      "0": "Cria um pequeno Espírito de Vento que puxa inimigos e objetos em direção a sua localização, lançando os inimigos em AdE e causando <anemo>Dano Anemo</anemo> neles.",
+      "1": "<br/>",
+      "2": "<i>Isso é um pouco vergonhoso, mas apesar de as formas de vida elementais nascidas através desse procedimento se dissiparem muito rapidamente, elas são incrivelmente úteis durante aventuras. Até mesmo experimentos falhos podem ter aplicações práticas.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Tempo de Recarga",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Criação Proibida do Espírito do Vento: Isomórfico-75 Tipo II",
+    "description": {
+      "0": "Sucrose libera uma mistura instável que cria um Grande Espírito do Vento.",
+      "1": "Enquanto ela persistir, o Grande Espírito do Vento irá continuamente puxar e lançar inimigos e objetos próximos, causando <anemo>Dano de Anemo em AdE</anemo>.",
+      "2": "<br/>",
+      "3": "<strong>Absorção Elemental</strong>",
+      "4": "Se o Espírito do Vento entrar em contato com os elementos <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, ele irá causar Dano elemental adicional baseado naquele tipo.",
+      "5": "Absorção Elemental pode ocorrer apenas uma vez por uso.",
+      "6": "<i>Sucrose costumava dar nomes ao seu volátil Anemo Hypostases. Mas a sua linha de herdeiros cresceu rapidamente até ultrapassar o Barão Coelho n° 893.</i>"
+    },
+    "skillParams": {
+      "0": "Dano Contínuo",
+      "1": "Adição de Dano Elemental",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Conversão de Catalisador",
+    "description": {
+      "0": "Quando Sucrose ativa um efeito de Redemoinho, todos os personagens na equipe com o elemento correspondente (exceto Sucrose) possuem sua Proficiência Elemental aumentada em 50 por 8s."
+    }
+  },
+  "passive2": {
+    "name": "Mollis Favonius",
+    "description": {
+      "0": "Quando a <strong>Criação do Espírito do Vento: Experimento 6308</strong> ou a <strong>Criação Proibida do Espírito do Vento: Isomórfico-75 Tipo II</strong> acerta um inimigo, aumenta a Proficiência Elemental de todos os membros de equipe (exceto Sucrose) em 20% baseada na Proficiência de Sucrose por 8 segundos."
+    }
+  },
+  "passive3": {
+    "name": "Invenção Instável",
+    "description": {
+      "0": "Quando Sucrose cria Materiais de Elevação de Personagens e de Armas, ela tem 10% de chance de receber o dobro de produção."
+    }
+  },
+  "constellation1": {
+    "name": "Campo de Vácuo Acumulado",
+    "description": {
+      "0": "<strong>Criação do Espírito do Vento: Experimento 6308</strong> ganha 1 carga adicional."
+    }
+  },
+  "constellation2": {
+    "name": "Beth - Forma Não-Consolidada",
+    "description": {
+      "0": "A duração da <strong>Criação Proibida do Espírito do Vento: Isomórfico-75 Tipo II</strong> é aumentada em 2 segundos."
+    }
+  },
+  "constellation3": {
+    "name": "Alquimista Perfeita",
+    "description": {
+      "0": "Aumenta o nível da <strong>Criação do Espírito do Vento: Experimento 6308</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Alquimania",
+    "description": {
+      "0": "Quando os Ataques Normais e Ataques Carregados de Sucrose atingirem o inimigo cumulativamente sete vezes, o Tempo de Recarga de <strong>Criação do Espírito do Vento: Experimento 6308</strong> será reduzido entre 1-7s.",
+      "1": "É possível acumular uma vez a cada 0.1s."
+    }
+  },
+  "constellation5": {
+    "name": "Atenção: Frasco Comum",
+    "description": {
+      "0": "Aumenta o Nível da <strong>Criação Proibida do Espírito do Vento: Isomórfico-75 Tipo II</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Entropia Caótica",
+    "description": {
+      "0": "Se <strong>Criação Proibida do Espírito do Vento: Isomórfico-75 Tipo II</strong> aciona uma Absorção Elemental, todos os membros de equipe ganham 20% de Bônus de Dano Elemental para o elemento correspondente absorvido enquanto a habilidade estiver em duração."
+    }
+  }
+}

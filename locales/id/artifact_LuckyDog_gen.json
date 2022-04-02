@@ -1,0 +1,29 @@
+{
+  "setName": "Lucky Dog",
+  "setEffects": {
+    "2": "DEF +100.",
+    "4": "Mengambil Mora memulihkan 300 HP."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Lucky Dog's Green Flower",
+      "desc": "Bunga berwarna hijau yang memiliki empat kelopak bunga, dapat ditemukan di alam liar, biasanya dipetik karena dipercaya dapat membawa keberuntungan."
+    },
+    "plume": {
+      "name": "Lucky Dog's Eagle Feather",
+      "desc": "Seekor monster pernah memojokkan seorang petualang, tetapi kemudian monster itu diterkam oleh seekor elang pemburu... Bulu elang ini dipercaya dapat membawa keberuntungan."
+    },
+    "sands": {
+      "name": "Lucky Dog's Hourglass",
+      "desc": "Jam pasir yang berlubang dan tidak ada lagi pasir tersisa di dalamnya. Tetapi, jalannya waktu tidak berarti banyak bagi orang yang tidak memiliki beban di hati."
+    },
+    "goblet": {
+      "name": "Lucky Dog's Goblet",
+      "desc": "Piala logam yang pernah digunakan untuk membuat seorang pencuri tidak sadarkan diri."
+    },
+    "circlet": {
+      "name": "Lucky Dog's Silver Circlet",
+      "desc": "Mahkota ini sebelumnya pernah terjatuh ke dalam suatu gua, dan mengantar pemiliknya menemukan harta karun dari bangsawan yang terasingkan. Dan ini adalah kenang-kenangan dari insiden tersebut."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Médica Itinerante",
+  "setEffects": {
+    "2": "Curación recibida +20%.",
+    "4": "Al lanzar una Habilidad Definitiva, restaura un 20% de Vida."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Loto de Plata de la Médica Itinerante",
+      "desc": "Un precioso ingrediente medicinal que ha perdido todas sus propiedades curativas después de tanto tiempo sin ser usado."
+    },
+    "plume": {
+      "name": "Pluma del Búho de la Médica Itinerante",
+      "desc": "La pluma dura de un búho. Se utiliza como método de automotivación cuando se sale a tratar a los pacientes a altas horas de la noche."
+    },
+    "sands": {
+      "name": "Reloj de Bolsillo de la Médica Itinerante",
+      "desc": "Una herramienta para saber la hora exacta. Para cualquier médico, cada segundo es muy importante."
+    },
+    "goblet": {
+      "name": "Frasco de Medicinas de la Médica Itinerante",
+      "desc": "Solía llevar brebajes extremadamente potentes y refinados. El fuerte olor es todo lo que queda."
+    },
+    "circlet": {
+      "name": "Pañuelo de la Médica Itinerante",
+      "desc": "Se utiliza para atar el cabello mientras se trata a los pacientes, pero también se puede utilizar como vendaje para esguinces y fracturas de brazos en casos de emergencia."
+    }
+  }
+}

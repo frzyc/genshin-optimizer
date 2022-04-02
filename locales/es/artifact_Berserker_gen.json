@@ -1,0 +1,29 @@
+{
+  "setName": "Berserker",
+  "setEffects": {
+    "2": "Prob. CRIT +12%.",
+    "4": "Cuando la Vida es inferior al 70%, aumenta la Prob. CRIT en un 24%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Rosa del Berserker",
+      "desc": "Una flor delicada teñida de rojo que va ligeramente acorde con la esencia del Berserker."
+    },
+    "plume": {
+      "name": "Pluma del Berserker",
+      "desc": "La pluma de color añil de un ave que, según la leyenda, presagiaba la muerte. Una parte de ella se ha teñido de rojo."
+    },
+    "sands": {
+      "name": "Reloj del Berserker",
+      "desc": "El líquido en su interior fluye sin piedad, recordando al Berserker el tiempo que le quedaba en el campo de batalla y los días que le quedaban en este mundo..."
+    },
+    "goblet": {
+      "name": "Cáliz de Hueso del Berserker",
+      "desc": "Una copa hecha de los huesos de una bestia desconocida que fueron obtenidos en una cacería."
+    },
+    "circlet": {
+      "name": "Máscara de Batalla del Berserker",
+      "desc": "Una máscara de hierro que se partió por la mitad en feroces batallas."
+    }
+  }
+}

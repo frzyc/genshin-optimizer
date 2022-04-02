@@ -1,0 +1,29 @@
+{
+  "setName": "Chama Pálida",
+  "setEffects": {
+    "2": "Dano Físico causado +25%",
+    "4": "Quando a Habilidade Elemental atinge um inimigo, o Ataque aumenta em 9% por 7s. Esse efeito acumula até 2 vezes e pode ser desencadeado uma vez a cada 0.3s. Quando se possui 2 acúmulos, o efeito do conjunto de 2 Artefatos é aumentado em 100%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor da Purificação",
+      "desc": "Uma flor artificial azul e sólida que nunca murcha e nunca se torna opaca."
+    },
+    "plume": {
+      "name": "Pena do Médico Virtuoso",
+      "desc": "Uma pena ominosa com bordas incomparavelmente afiadas, talvez simbolize alguma forma diferente de indisciplina."
+    },
+    "sands": {
+      "name": "Momento de Cessação",
+      "desc": "Um relógio de bolso com uma tampa que não pode ser aberta. Marca firmemente a passagem do tempo com seu eco de tique-taque."
+    },
+    "goblet": {
+      "name": "Taça da Superação",
+      "desc": "Uma fina taça em que não é possível determinar sua idade por sua aparência exterior."
+    },
+    "circlet": {
+      "name": "Máscara Sorridente",
+      "desc": "Uma máscara que cobre o rosto de quem a usa, impedindo que outras pessoas possam ver suas expressões."
+    }
+  }
+}

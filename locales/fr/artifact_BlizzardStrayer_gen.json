@@ -1,0 +1,29 @@
+{
+  "setName": "Briseur de glace",
+  "setEffects": {
+    "2": "Confère un bonus de DGT Cryo de 15 %.",
+    "4": "Augmente le taux CRIT de 20 % lorsque le personnage attaque un ennemi affecté par l'élément Cryo. Confère un bonus supplémentaire de 20 % de taux CRIT si l'ennemi est gelé."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Mémoires du froid",
+      "desc": "Une fleur légèrement givrée qu'on trouvait autrefois sur les glaciers. Même le plus fier et le plus arrogant des guerriers a dû se baisser pour la cueillir."
+    },
+    "plume": {
+      "name": "Résolution du Briseur de glace",
+      "desc": "Une plume glacée. On peut presque sentir la brise froide venant souffler sur les plaines et les sommets enneigés."
+    },
+    "sands": {
+      "name": "Fin du pays des glaces",
+      "desc": "Un sablier ayant appartenu à un peuple qui attendait le retour de leurs guerriers. Des grains de glace éternelle y remplacent le sable."
+    },
+    "goblet": {
+      "name": "Fierté du Tisseur de givre",
+      "desc": "Une tasse sculptée dans la glace, aussi rude que l'hiver. On y buvait autrefois du vin qui ne gelait pas."
+    },
+    "circlet": {
+      "name": "Écho de l'hiver",
+      "desc": "Le diadème d'un ancien héros qui rêvait de conquérir la neige et la glace. Il représente le courage de son ancien propriétaire face au froid mordant de l'hiver."
+    }
+  }
+}

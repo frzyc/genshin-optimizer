@@ -1,0 +1,17 @@
+{
+  "addAimed": "DGTs tir visé",
+  "addFullAimed": "DGTs tir visé (Pleine charge)",
+  "upcurrentDuration": "Durée",
+  "regenEner": "Régénère 15 Énergie à Venti lorsque l'effet prend fin",
+  "fullBurstDMG": {
+    "text": "<0><0>Total DGTs Déchaînement Élémentaire</0><1>Cela calcule le total des DGTs du Déchaînement Élémentaire, y compris la Dispersion. Ce calcul comprend :</1><2><0>20 ticks de <1>DGTs de Déchaînement</1></0><1>15 ticks de <1>DGTs d'Absorption</1></1><2>7 ticks de <1>Dispersion</1>, pour un ennemi, OU,</2><3>14 ticks de <1>Dispersion</1>, pour plusieurs ennemis, qui Disperse chacun d'entre eux.</3></2></0>",
+    "dmg": "<0>DGTs Total (<1>{{swirlTicks}} ticks de Dispersion</1>)</0>"
+  },
+  "c6": "Cibles qui prennent les DGTs de <strong>Ode au Vent</strong>",
+  "c4": "Venti obtient une orbe ou une particule",
+  "q": "Régénère 15 Énergies à chaque personnage <1>{{elementKey}}</1>.",
+  "c2": {
+    "hit": "Ennemi touché",
+    "launched": "Ennemi projeté"
+  }
+}

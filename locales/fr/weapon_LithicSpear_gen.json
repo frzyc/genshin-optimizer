@@ -1,0 +1,12 @@
+{
+  "name": "Lance des Millelithes",
+  "description": "Une lance forgée à partir des rochers de la Forêt de pierre de Guyun. Sa pointe est d'une solidité sans pareille.",
+  "passiveName": "Axiome de la roche : Unité",
+  "passiveDescription": {
+    "0": "Pour chaque personnage de Liyue présent dans l'équipe, le personnage équipé de cette arme bénéficie de <cryo>7 %</cryo> de bonus d'ATQ et de <cryo>3 %</cryo> de bonus de taux CRIT. Ces bonus peuvent être cumulés 4 fois au maximum.",
+    "1": "Pour chaque personnage de Liyue présent dans l'équipe, le personnage équipé de cette arme bénéficie de <cryo>8 %</cryo> de bonus d'ATQ et de <cryo>4 %</cryo> de bonus de taux CRIT pour chaque personnage de l'équipe provenant de Liyue. Ces bonus peuvent être cumulés 4 fois au maximum.",
+    "2": "Pour chaque personnage de Liyue présent dans l'équipe, le personnage équipé de cette arme bénéficie de <cryo>9 %</cryo> de bonus d'ATQ et de <cryo>5 %</cryo> de bonus de taux CRIT pour chaque personnage de l'équipe provenant de Liyue. Ces bonus peuvent être cumulés 4 fois au maximum.",
+    "3": "Pour chaque personnage de Liyue présent dans l'équipe, le personnage équipé de cette arme bénéficie de <cryo>10 %</cryo> de bonus d'ATQ et de <cryo>6 %</cryo> de bonus de taux CRIT pour chaque personnage de l'équipe provenant de Liyue. Ces bonus peuvent être cumulés 4 fois au maximum.",
+    "4": "Pour chaque personnage de Liyue présent dans l'équipe, le personnage équipé de cette arme bénéficie de <cryo>11 %</cryo> de bonus d'ATQ et de <cryo>7 %</cryo> de bonus de taux CRIT pour chaque personnage de l'équipe provenant de Liyue. Ces bonus peuvent être cumulés 4 fois au maximum."
+  }
+}

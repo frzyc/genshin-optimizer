@@ -1,0 +1,13 @@
+{
+  "electro": {
+    "skill": {
+      "absorb": "Menyerap Abundance Amulet"
+    },
+    "c2": {
+      "thunderHit": "<strong>Falling THunder</strong> mengenai musuh"
+    },
+    "burst": {
+      "3rd": "DMG Falling Thunder ke-3"
+    }
+  }
+}

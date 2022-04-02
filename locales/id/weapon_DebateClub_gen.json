@@ -1,0 +1,12 @@
+{
+  "name": "Debate Club",
+  "description": "Tongkat praktis yang terbuat dari baja berkualitas. Ini adalah perlengkapan dasar yang diperlukan untuk memiliki debat yang rasional.",
+  "passiveName": "Blunt Conclusion",
+  "passiveDescription": {
+    "0": "Setelah mengerahkan Elemental Skill, Normal, atau Charged Attack, serangan mengakibatkan DMG tambahan sebesar <cryo>60%</cryo> ATK di area kecil, efek bertahan selama 15 detik. Dapat terpicu setiap 3 detik.",
+    "1": "Setelah mengerahkan Elemental Skill, Normal, atau Charged Attack, serangan mengakibatkan DMG tambahan sebesar <cryo>75%</cryo> ATK di area kecil, efek bertahan selama 15 detik. Dapat terpicu setiap 3 detik.",
+    "2": "Setelah mengerahkan Elemental Skill, Normal, atau Charged Attack, serangan mengakibatkan DMG tambahan sebesar <cryo>90%</cryo> ATK di area kecil, efek bertahan selama 15 detik. Dapat terpicu setiap 3 detik.",
+    "3": "Setelah mengerahkan Elemental Skill, Normal, atau Charged Attack, serangan mengakibatkan DMG tambahan sebesar <cryo>105%</cryo> ATK di area kecil, efek bertahan selama 15 detik. Dapat terpicu setiap 3 detik.",
+    "4": "Setelah mengerahkan Elemental Skill, Normal, atau Charged Attack, serangan mengakibatkan DMG tambahan sebesar <cryo>120%</cryo> ATK di area kecil, efek bertahan selama 15 detik. Dapat terpicu setiap 3 detik."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "setName": "Prayers for Destiny",
+  "setEffects": {
+    "1": "Mengurangi 40% durasi efek Hydro yang diterima."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Tiara of Torrents",
+      "desc": "Pada zaman kuno, mahkota upacara dikenakan oleh para imam. Karena direndam dalam air sepanjang tahun, ia memiliki daya tahan yang luar biasa"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Pale Flame",
+  "setEffects": {
+    "2": "Meningkatkan 25% Physical DMG.",
+    "4": "Saat Elemental Skill mengenai musuh, meningkatkan 9% ATK selama 7 detik. Efek ini dapat ditumpuk hingga 2 lapis dan dapat terpicu setiap 0,3 detik. Setelah menumpuk 2 lapis, efek dari Set 2 Bagian akan meningkat 100%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Stainless Bloom",
+      "desc": "Bunga buatan yang keras dan berwarna biru. Kelopaknya tidak akan layu dan warnanya tidak akan pernah pudar."
+    },
+    "plume": {
+      "name": "Wise Doctor's Pinion",
+      "desc": "Sayap ketidakberuntungan dengan ketajaman ujungnya yang tak tertandingi. Barangkali itu mewakili sifat yang enggan untuk terkekang."
+    },
+    "sands": {
+      "name": "Moment of Cessation",
+      "desc": "Jam saku dengan penutupnya yang tidak dapat dibuka. Tertutup, namun berdetak kuat seiring dengan derasnya aliran waktu yang tidak dapat dihindarkan."
+    },
+    "goblet": {
+      "name": "Surpassing Cup",
+      "desc": "Cangkir yang dibuat dengan tingkat kerumitan yang tinggi. Penampilannya sama sekali tidak memberikan petunjuk apa pun tentang usianya kepada orang yang hendak mengamatinya."
+    },
+    "circlet": {
+      "name": "Mocking Mask",
+      "desc": "Topeng yang menutupi wajah, menyembunyikan ekspresi terselubung yang ada di baliknya dari pandangan mata orang lain."
+    }
+  }
+}

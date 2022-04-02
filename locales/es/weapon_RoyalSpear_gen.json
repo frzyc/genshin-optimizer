@@ -1,0 +1,12 @@
+{
+  "name": "Lanza de Caza Real",
+  "description": "Una lanza atesorada por un antiguo aristócrata que gobernó Mondstadt. Aunque nunca ha visto la luz del día, su filo no tiene rival.",
+  "passiveName": "Concentración",
+  "passiveDescription": {
+    "0": "Al dañar a un enemigo, aumenta la Prob. CRIT en un <cryo>8%</cryo>. Puede acumularse hasta 5 veces. Una vez asestado un golpe CRIT, las acumulaciones de Concentración se reiniciarán.",
+    "1": "Al dañar a un enemigo, aumenta la Prob. CRIT en un <cryo>10%</cryo>. Puede acumularse hasta 5 veces. Una vez asestado un golpe CRIT, las acumulaciones de Concentración se reiniciarán.",
+    "2": "Al dañar a un enemigo, aumenta la Prob. CRIT en un <cryo>12%</cryo>. Puede acumularse hasta 5 veces. Una vez asestado un golpe CRIT, las acumulaciones de Concentración se reiniciarán.",
+    "3": "Al dañar a un enemigo, aumenta la Prob. CRIT en un <cryo>14%</cryo>. Puede acumularse hasta 5 veces. Una vez asestado un golpe CRIT, las acumulaciones de Concentración se reiniciarán.",
+    "4": "Al dañar a un enemigo, aumenta la Prob. CRIT en un <cryo>16%</cryo>. Puede acumularse hasta 5 veces. Una vez asestado un golpe CRIT, las acumulaciones de Concentración se reiniciarán."
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "name": "Tartaglia",
+  "title": "Childe",
+  "description": "Anggota ke-11 dari Eleven Harbingers, juga dikenal dengan nama \"Childe\". Ketenaran namanya saja dapat menghantar ketakutan di medan perang.",
+  "constellationName": "Monoceros Caeli",
+  "auto": {
+    "name": "Cutting Torrent",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 6 serangan berturut-turut dengan menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar. ",
+        "2": "Saat membidik, air akan berkumpul di ujung anak panah. Panah dengan air yang terkumpul penuh akan mengakibatkan <hydro>Hydro DMG</hydro> dan menyebabkan efek Riptide."
+      },
+      "riptide": {
+        "0": "<strong>Riptide</strong>",
+        "1": "Musuh yang terpengaruh Riptide akan menerima berbagai efek <hydro>Hydro DMG area</hydro> saat diserang oleh Tartaglia. Efek-efek ini dihitung sebagai Normal Attack.",
+        "2": [
+          "Riptide Flash: Serangan Membidik yang terisi penuh dan mengenai musuh yang terpengaruh efek Riptide akan mengakibatkan DMG area berturut-turut. Riptide Flash dapat terpicu setiap 0,7 detik.",
+          "Riptide Burst: Mengalahkan musuh yang terkena efek Riptide akan menciptakan ledakan Hydro yang menyebabkan efek Riptide pada musuh di sekitar."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG area saat mendarat.",
+        "2": "Saat Tartaglia sedang menggunakan mode jarak dekat Foul Legacy: Raging Tide, dia tidak bisa menggunakan Plunging Attack."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Tahap 6",
+      "6": "DMG Membidik",
+      "7": "DMG Membidik Penuh",
+      "8": "DMG Riptide Flash",
+      "9": "DMG Riptide Burst",
+      "10": "Durasi Riptide",
+      "11": "DMG Selama Plunging",
+      "12": "DMG Plunging Attack Min./Maks.",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Foul Legacy: Raging Tide",
+    "description": {
+      "0": "Mengerahkan sejumlah senjata yang terbuat dari air untuk mengakibatkan <hydro>Hydro DMG</hydro> ke musuh di sekitar dan memasuki mode jarak dekat.",
+      "1": "Dalam Mode ini, Normal Attack dan Charged Attack milik Tartaglia berubah menjadi <hydro>Hydro DMG</hydro> yang tidak dapat ditimpa oleh Elemental Infusion lain dan efek berikut akan muncul:",
+      "2": "<br/>",
+      "3": "<strong>Normal Attack</strong>",
+      "4": "Melakukan hingga 6 serangan <hydro>Hydro</hydro> berturut-turut.",
+      "5": "<br/>",
+      "6": "<strong>Charged Attack</strong>",
+      "7": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan silang yang mengakibatkan <hydro>Hydro DMG</hydro>.",
+      "8": "<br/>",
+      "9": "<strong>Riptide Slash</strong>",
+      "10": "Memukul musuh yang terkena efek Riptide dengan serangan jarak dekat akan menimbulkan Riptide Slash yang mengakibatkan <hydro>Hydro DMG area</hydro>. DMG yang diakibatkan oleh Riptide Slash terhitung sebagai DMG Elemental Skill, dapat terpicu setiap 1,5 detik.",
+      "11": "<br/>",
+      "12": "Setelah 30 detik atau saat skill ini digunakan lagi, efek skill ini akan berakhir dan Tartaglia kembali ke mode jarak jauh. Skill ini kemudian akan memasuki cooldown. Semakin lama Tartaglia menggunakan mode jarak dekat, waktu cooldown skill juga akan menjadi semakin panjang.",
+      "13": "Bila Tartaglia kembali menjadi mode jarak jauh secara otomatis dalam waktu 30 detik, waktu cooldown skill akan menjadi semakin panjang lagi.",
+      "14": "<br/>",
+      "15": "<i>Tartaglia sengaja memilih busur sebagai senjatanya untuk mengatasi kelemahannya dalam menggunakan senjata tersebut. Tapi saat harus bertarung sungguh-sungguh, Tartaglia akan mengerahkan kemampuannya yang sebenarnya...</i>"
+    },
+    "skillParams": {
+      "0": "DMG Perubahan Mode Bertarung",
+      "1": "DMG Tahap 1",
+      "2": "DMG Tahap 2",
+      "3": "DMG Tahap 3",
+      "4": "DMG Tahap 4",
+      "5": "DMG Tahap 5",
+      "6": "DMG Tahap 6",
+      "7": "DMG Charged Attack",
+      "8": "Konsumsi Stamina Charged Attack",
+      "9": "Riptide Slash",
+      "10": "Durasi Maksimum",
+      "11": "Cooldown",
+      "12": "Cooldown Maksimum",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Havoc - Obliteration",
+    "description": {
+      "0": "Melancarkan serangan yang berbeda-beda sesuai dengan mode bertarung yang sedang digunakan Targtalia:",
+      "1": "<br/>",
+      "2": "<strong>Mode Jarak Jauh: Flash of Havoc</strong>",
+      "3": "Menembakkan panah sihir yang mengandung elemen Hydro dengan cepat, mengakibatkan <hydro>Hydro DMG area</hydro> dan menyebabkan efek Riptide.",
+      "4": "Mengembalikan sejumlah Energy yang dikonsumsi setelah skill ini digunakan.",
+      "5": "<br/>",
+      "6": "<strong>Mode Jarak Dekat: Light of Obliteration</strong>",
+      "7": "Menebas musuh dalam area yang luas dan mengakibatkan <hydro>Hydro DMG </hydro> yang besar, juga dapat memicu Riptide Blast.",
+      "8": "<br/>",
+      "9": "<strong>Riptide Blast</strong>",
+      "10": "Saat skill Havoc Obliteration mengenai musuh dengan status Riptide, status Riptide tersebut akan dihapuskan dan memicu ledakan Riptide Blast yang mengakibatkan <hydro>Hydro DMG area</hydro>. DMG dari Riptide Blast terhitung sebagai DMG Elemental Burst.",
+      "11": "<br/>",
+      "12": "<i>Aliran air yang deras sangat jarang ditemui di kampung halamannya yang penuh dengan salju. Kemampuan Tartaglia untuk mengendalikan air mungkin muncul dari pemahamannya tentang betapa berharganya air bagi kehidupan.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG: Melee",
+      "1": "Skill DMG: Ranged",
+      "2": "Riptide Blast DMG",
+      "3": "Pengembalian Energy (Mode Jarak Jauh)",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Never Ending",
+    "description": {
+      "0": "Memperpanjang durasi Riptide selama 8 detik."
+    }
+  },
+  "passive2": {
+    "name": "Sword of Torrents",
+    "description": {
+      "0": "Saat Tartaglia berada dalam Mode Jarak Dekat <strong>Foul Legacy: Raging Tide</strong>, Normal atau Charged Attack akan menyebabkan efek Riptide saat CRIT."
+    }
+  },
+  "passive3": {
+    "name": "Master of Weaponry",
+    "description": {
+      "0": "Meningkatkan 1 level <strong>Normal Attack</strong> anggota party sendiri."
+    }
+  },
+  "constellation1": {
+    "name": "Foul Legacy: Tide Withholder",
+    "description": {
+      "0": "Mengurangi 20% CD <strong>Foul Legacy: Raging Tide</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Foul Legacy: Understream",
+    "description": {
+      "0": "Saat musuh yang terkena efek Riptide dikalahkan, Tartaglia memulihkan 4 Energy."
+    }
+  },
+  "constellation3": {
+    "name": "Abyssal Mayhem: Vortex of Turmoil",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Foul Legacy: Raging Tide</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Abyssal Mayhem: Hydrospout",
+    "description": {
+      "0": "Bila ada musuh yang terkena efek Riptide milik Tartaglia dan Tartaglia sedang menggunakan mode jarak dekat dari <strong>Foul Legacy: Raging Tide</strong>, maka Tartaglia akan memicu Riptide Slash setiap 4 detik; bila tidak, akan memicu Riptide Flash.",
+      "1": "Riptide Slash dan Riptide Flash yang terpicu dari Konstelasi ini tidak dibatasi oleh jeda waktu masing-masing skill, juga tidak memengaruhi jeda waktu masing-masing skill."
+    }
+  },
+  "constellation5": {
+    "name": "Havoc: Formless Blade",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Havoc - Obliteration</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Havoc: Annihilation",
+    "description": {
+      "0": "Saat <strong>Havoc: Obliteration</strong> dilancarkan dalam keadaan mode jarak dekat, maka CD dari <strong>Foul Legacy: Raging Tide</strong> akan direset.",
+      "1": "Efek ini hanya akan terjadi begitu Tartaglia kembali ke mode jarak jauh."
+    }
+  }
+}

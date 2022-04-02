@@ -1,0 +1,12 @@
+{
+  "name": "Rugido do Leão",
+  "description": "Uma lâmina afiada com inserções luxuosas que de alguma forma não comprometeu sua durabilidade e nitidez. O som que emite ao fazer cortes pelo ar é como o rugido de leões.",
+  "passiveName": "Destruição de Fogo e Trovão",
+  "passiveDescription": {
+    "0": "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em <cryo>20%</cryo>.",
+    "1": "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em <cryo>24%</cryo>.",
+    "2": "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em <cryo>28%</cryo>.",
+    "3": "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em <cryo>32%</cryo>.",
+    "4": "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em <cryo>36%</cryo>."
+  }
+}

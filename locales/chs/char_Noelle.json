@@ -1,0 +1,6 @@
+{
+  "p4cd": "24秒CD，每4次普通攻击或重击减少1秒CD",
+  "c1chance": "(同时处于<strong>大扫除</strong> and <strong>护心铠</strong> 状态时，几率提升至100%)",
+  "c6duration": "15秒，每打倒1个敌人，延长1秒，不会超过10秒",
+  "qlarger": "提高攻击范围"
+}

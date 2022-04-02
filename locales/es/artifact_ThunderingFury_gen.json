@@ -1,0 +1,29 @@
+{
+  "setName": "Furia del Trueno",
+  "setEffects": {
+    "2": "Bono de Daño Electro +15%.",
+    "4": "Aumenta el daño infligido por Sobrecarga, Electrocargado y Superconductor en un 40%. Al activar alguna de estas reacciones, disminuye en 1 s el TdE de la Habilidad Elemental. Solo puede ocurrir una vez cada 0.8 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Misericordia del Ave del Trueno",
+      "desc": "Una flor del trueno que sobrevivió al furioso pisoteo y a las llamas abrasadoras de una catástrofe destructiva del pasado."
+    },
+    "plume": {
+      "name": "Superviviente de la Catástrofe",
+      "desc": "Una pluma eléctrica dejada por el Ave del Trueno como venganza. Aun hoy en día sigue lanzando rayos y truenos llenos de furia."
+    },
+    "sands": {
+      "name": "Reloj de Arena del Trueno",
+      "desc": "El reloj de arena utilizado por la tribu que adoraba al Ave del Trueno para predecir su llegada. Cuando la tribu dejó de existir, el reloj cayó en el olvido."
+    },
+    "goblet": {
+      "name": "Presagio de la Tormenta",
+      "desc": "Un cáliz que contiene la sangre de gente inocente usada en rituales sagrados. El sonido del trueno que retumba en su interior expresa una furia desbordante."
+    },
+    "circlet": {
+      "name": "Corona del Invocador de Truenos",
+      "desc": "Una corona usada en la antigüedad por los chamanes que adoraban al Ave del Trueno. Por desgracia, ni siquiera la fe más devota podía impresionar a la violenta bestia."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Instrutor",
+  "setEffects": {
+    "2": "Proficiência Elemental +80",
+    "4": "Após uma Reação Elemental aumenta a Proficiência Elemental de todos os membros da Equipe em 120 por 8s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Broche de Instrutor",
+      "desc": "Quando o instrutor estiver usando este broche, significa que não haverá treinamento hoje."
+    },
+    "plume": {
+      "name": "Acessório de Penas de Instrutor",
+      "desc": "Qualquer instrutor que domine as formas de desviar de ataques sabe como manter esse acessório firmemente ao seu alcance o tempo todo."
+    },
+    "sands": {
+      "name": "Relógio de Bolso de Instrutor",
+      "desc": "Um relógio de bolso que não marca a hora atual, mas mede o tempo de uma sessão de treinamento."
+    },
+    "goblet": {
+      "name": "Copo de Chá de Instrutor",
+      "desc": "Pode parecer no máximo um copo comum, mas para os estudantes, é um símbolo de autoridade do instrutor."
+    },
+    "circlet": {
+      "name": "Chapéu de Instrutor",
+      "desc": "Quepe padronizado de instrutor militar. Apenas aqueles que se recusaram a serem promovidos a um cargo maior recebem essa honra."
+    }
+  }
+}

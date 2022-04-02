@@ -1,0 +1,46 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Thánh di vật",
+    "characters": "Nhân vật",
+    "builds": "Builds",
+    "tools": "Công cụ",
+    "database": "Cơ sở dữ liệu",
+    "weapons": "Vũ khí",
+    "doc": "Docs"
+  },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "game": {
+    "minLevel": "Cấp thấp nhất",
+    "maxLevel": "Cấp cao nhất",
+    "rarity": "Độ hiếm",
+    "level": "Cấp"
+  },
+  "unselect": "Bỏ chọn",
+  "ascending": "Tăng dần",
+  "descending": "Giảm dần",
+  "sortByFormat": "Xếp theo: {{value}}",
+  "loading": "Đang tải...",
+  "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc xác nhận bởi miHoyo",
+  "appVersion": "$t(pageTitle) Phiên bản: {{version}}",
+  "underConstruction": "Đang hoàn thiện",
+  "error": "Lỗi",
+  "reset": "Cài lại",
+  "info": "Thông tin",
+  "inventory": "Túi",
+  "close": "Đóng",
+  "sortMap": {
+    "new": "Mới",
+    "name": "Tên",
+    "level": "Cấp độ",
+    "rarity": "Độ hiếm",
+    "efficiency": "Hiệu suất chỉ số phụ hiện tại",
+    "mefficiency": "Hiệu suất chỉ số phụ tối đa",
+    "artsetkey": "Bộ Thánh Di Vật",
+    "probability": "Xác xuất Roll"
+  }
+}

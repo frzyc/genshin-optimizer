@@ -1,0 +1,17 @@
+{
+  "skillC": {
+    "name": "冷酷な心",
+    "consumed": "冷酷な心を消費",
+    "grimheart": {
+      "name": "冷酷の心の数"
+    }
+  },
+  "burstC": {
+    "name": "光臨の剣",
+    "start5": "冷酷の心の直ちにエネルギーは5つから"
+  },
+  "c1C": {
+    "name": "<strong>冷酷な心</strong>を消費",
+    "durationStack": "一つごとに6秒+6秒、最大18秒まで"
+  }
+}

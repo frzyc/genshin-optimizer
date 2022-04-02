@@ -1,0 +1,29 @@
+{
+  "setName": "Ocean-Hued Clam",
+  "setEffects": {
+    "2": "Bonus pemulihan +15%.",
+    "4": "Jika Karakter yang mengenakan set Artefak ini memulihkan HP salah satu Karakter dalam party, akan muncul Sea-Dyed Foam yang berlangsung selama 3 detik yang mencatat dan mengakumulasi jumlah pemulihan yang dilakukan (termasuk pemulihan yang berlebih). Setelah durasinya berakhir, Sea-Dyed Foam akan meledak dan mengakibatkan DMG sebesar 90% dari jumlah pemulihan yang tercatat (Perhitungan DMG ini mirip dengan Reaksi Elemental seperti Electro-Charged, Superconduct, dan lainnya, tetapi tidak dipengaruhi oleh Elemental Mastery, Level Karakter, atau Bonus DMG Reaksi Elemental). Sea-Dyed Foam hanya bisa muncul setiap 3,5 detik. Setiap Sea-Dyed Foam dapat mengakumulasi pemulihan hingga 30.000 HP (termasuk pemulihan yang berlebih). Dalam party sendiri, hanya bisa ada satu Sea-Dyed Foam yang muncul dalam waktu bersamaan. Efek dari set Artefak ini tetap dapat terpicu meskipun Karakter party yang mengenakannya tidak berada di medan pertempuran."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Sea-Dyed Blossom",
+      "desc": "Bunga berkelopak lembut yang memiliki warna lautan yang berubah-ubah. Saat bermandikan cahaya rembulan, bunga ini memancarkan warna yang menakjubkan."
+    },
+    "plume": {
+      "name": "Deep Palace's Plume",
+      "desc": "Bulu halus yang sewarna dengan karang. Dikatakan bahwa bulu ini berasal dari pakaian upacara miko."
+    },
+    "sands": {
+      "name": "Cowry of Parting",
+      "desc": "Kerang yang bersih dan tanpa cacat, berasal dari dasar lautan yang terdalam."
+    },
+    "goblet": {
+      "name": "Pearl Cage",
+      "desc": "Mutiara bersinar yang dipersembahkan para miko Pulau Watatsumi. Mutiara ini terus berkilau dan tidak pernah meredup."
+    },
+    "circlet": {
+      "name": "Crown of Watatsumi",
+      "desc": "Mahkota kuno yang dibuat sangat detail dan pernah digunakan oleh seorang pendeta yang terlupakan. Kini mahkota ini disimpan secara khusus oleh orang-orang Watatsumi."
+    }
+  }
+}

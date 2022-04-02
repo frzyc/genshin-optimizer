@@ -1,0 +1,29 @@
+{
+  "setName": "Trái Tim Dũng Sĩ",
+  "setEffects": {
+    "2": "Tấn công tăng 18%",
+    "4": "Kẻ địch có HP cao hơn 50%, sát thương gây ra tăng 30%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Huy Chương Dũng Sĩ",
+      "desc": "Bông hoa nhỏ đeo trước ngực, là vật kỷ niệm sau một lần mạo hiểm."
+    },
+    "plume": {
+      "name": "Sự Mong Đợi Của Dũng Sĩ",
+      "desc": "Lông vũ của loài chim bay, có thể mang lại chút dũng khí cho người đeo nó."
+    },
+    "sands": {
+      "name": "Sự Kiên Nghị Của Dũng Sĩ",
+      "desc": "Đồng hồ cát nhỏ gọn cũ kỹ, không được hữu dụng cho lắm. Nó cũng khó nắm bắt như năm tháng vậy."
+    },
+    "goblet": {
+      "name": "Hành Trình Của Dũng Sĩ",
+      "desc": "Vật đựng được làm từ gỗ thô sơ, trong đó đựng đầy những ký ức."
+    },
+    "circlet": {
+      "name": "Vương Miện Dũng Sĩ",
+      "desc": "Vòng cỏ được bện vội vã, đối với một số người mà nói thì nó lại quý trọng giống như vương miện của vua."
+    }
+  }
+}

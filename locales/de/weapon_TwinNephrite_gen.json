@@ -1,0 +1,12 @@
+{
+  "name": "Zwillingsnephrit",
+  "description": "Ein feiner, aus zwei Edelsteinen zusammengesetzter Anhänger.",
+  "passiveName": "Überfalltaktik",
+  "passiveDescription": {
+    "0": "Erhöht die Bewegungs-GSW und den ANG beim Besiegen von Gegnern 15 s lang um <cryo>12 %</cryo>.",
+    "1": "Erhöht die Bewegungs-GSW und den ANG beim Besiegen von Gegnern 15 s lang um <cryo>14 %</cryo>.",
+    "2": "Erhöht die Bewegungs-GSW und den ANG beim Besiegen von Gegnern 15 s lang um <cryo>16 %</cryo>.",
+    "3": "Erhöht die Bewegungs-GSW und den ANG beim Besiegen von Gegnern 15 s lang um <cryo>18 %</cryo>.",
+    "4": "Erhöht die Bewegungs-GSW und den ANG beim Besiegen von Gegnern 15 s lang um <cryo>20 %</cryo>."
+  }
+}

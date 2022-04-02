@@ -1,0 +1,12 @@
+{
+  "name": "Weiße Quaste",
+  "description": "Diese Lanze gehört zur Standardausrüstung eines Millelithen. Sie ist stabil und sehr spitz, weswegen man sich auf sie verlassen kann.",
+  "passiveName": "Schärfe",
+  "passiveDescription": {
+    "0": "Erhöht den mit Standardangriffen verursachten Schaden um <cryo>24 %</cryo>.",
+    "1": "Erhöht den mit Standardangriffen verursachten Schaden um <cryo>30 %</cryo>.",
+    "2": "Erhöht den mit Standardangriffen verursachten Schaden um <cryo>36 %</cryo>.",
+    "3": "Erhöht den mit Standardangriffen verursachten Schaden um <cryo>42 %</cryo>.",
+    "4": "Erhöht den mit Standardangriffen verursachten Schaden um <cryo>48 %</cryo>."
+  }
+}

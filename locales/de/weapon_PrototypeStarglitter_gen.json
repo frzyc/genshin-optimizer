@@ -1,0 +1,12 @@
+{
+  "name": "Sternsichel-Prototyp",
+  "description": "Diese alte Sichel war gut in der Schwarzsteinschmiede versteckt. Das Funkeln an der Klinge erinnert an den sternenklaren Nachthimmel.",
+  "passiveName": "Magiesauger",
+  "passiveDescription": {
+    "0": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden nach Anwendung von Elementarfähigkeiten 12 s lang um <cryo>8 %</cryo>, 2-fach stapelbar.",
+    "1": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden nach Anwendung von Elementarfähigkeiten 12 s lang um <cryo>10 %</cryo>, 2-fach stapelbar.",
+    "2": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden nach Anwendung von Elementarfähigkeiten 12 s lang um <cryo>12 %</cryo>, 2-fach stapelbar.",
+    "3": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden nach Anwendung von Elementarfähigkeiten 12 s lang um <cryo>14 %</cryo>, 2-fach stapelbar.",
+    "4": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden nach Anwendung von Elementarfähigkeiten 12 s lang um <cryo>16 %</cryo>, 2-fach stapelbar."
+  }
+}

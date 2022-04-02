@@ -1,0 +1,157 @@
+{
+  "name": "Klee",
+  "title": "Fliehende Sonne",
+  "description": "Ein häufiger Gast der Arrestzelle des Ordo Favonius und ein wahrer Meister der Zerstörung. Man nennt sie auch die „Fliehende Sonne“.",
+  "constellationName": "Trifolium",
+  "auto": {
+    "name": "Bumm-Bumm",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Wirft eine nette, effektvolle Bombe! Führt bis zu 3 Bombenangriffe aus und verursacht <pyro>Pyro-Flächenschaden</pyro>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, bombardiert Gegner nach kurzer Aufladezeit und verursacht <pyro>Pyro-Flächenschaden</pyro>."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft der Flammen, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <pyro>Pyro-Flächenschaden</pyro>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Bimm-Bamm-Bombe",
+    "description": {
+      "0": "Wirft eine Bombe, die dazu bestimmt ist, große Freude zu bringen!",
+      "1": "Die Bimm-Bamm-Bombe kommt dreimal auf dem Boden auf und verursacht jedes Mal eine Explosion sowie <pyro>Pyro-Flächenschaden</pyro>.",
+      "2": "<br/>",
+      "3": "Spaltet sich beim dritten Mal zu vielen kleinen Sprengfallen auf.",
+      "4": "Bei Berührung mit einem Gegner oder nach einer gewissen Zeit explodieren die Sprengfallen und verursachen <pyro>Pyro-Flächenschaden</pyro>.",
+      "5": "<br/>",
+      "6": "Kann anfänglich 2-mal angewendet werden.",
+      "7": "<br/>",
+      "8": "<i>Diese Bombe ist ein „Freund“ von Klee, den sie anderen gern vorstellt.</i>"
+    },
+    "skillParams": {
+      "0": "SCH der Bimm-Bamm-Bombe",
+      "1": "SCH der Sprengfallen",
+      "2": "Dauer der Sprengfallen",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Funkelfunken",
+    "description": {
+      "0": "Und Feuer! Beschwört während der Wirkungsdauer ununterbrochen Funkelfunken, die Gegner in der Nähe angreifen und <pyro>Pyro-Flächenschaden</pyro> verursachen.",
+      "1": "<br/>",
+      "2": "<i>Die Ritter glauben, dass Klee einen Schutzengel haben muss, weil sie sich noch nie mit einer ihrer Bomben selbst verletzt hat.</i>"
+    },
+    "skillParams": {
+      "0": "Funkelfunken-SCH",
+      "1": "Dauer",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Explosives Geschenk",
+    "description": {
+      "0": "Erschafft beim Verursachen von Schaden mit <strong>Bimm-Bamm-Bombe</strong> oder Standardangriffen mit einer Wahrscheinlichkeit von 50 % einen explosiven Funken.",
+      "1": "Verbraucht beim nächsten heftigen Schlag den Funken statt Ausdauer und erhöht den damit verursachten Schaden um 50 %."
+    }
+  },
+  "passive2": {
+    "name": "Unzählige Funken",
+    "description": {
+      "0": "Stellt allen Truppenmitgliedern beim Verursachen von KT mit Klees heftigen Schlägen 2 Punkte Elementarenergie wieder her."
+    }
+  },
+  "passive3": {
+    "name": "Alles voller Schätze",
+    "description": {
+      "0": "Zeigt alle <strong>Besonderheiten Mondstadts</strong> in der Nähe auf der Minikarte an."
+    }
+  },
+  "constellation1": {
+    "name": "Kettenreaktion",
+    "description": {
+      "0": "Erschafft beim Angriff und beim Einsetzen von Fähigkeiten mit gewisser Wahrscheinlichkeit Funken, die Gegner angreifen und Schaden in Höhe von 120 % des Schadens von <strong>Funkelfunken</strong> verursachen."
+    }
+  },
+  "constellation2": {
+    "name": "Splitterbombe",
+    "description": {
+      "0": "Die Sprengfallen von <strong>Bimm-Bamm-Bombe</strong> verringern die VTD von Gegnern 10 s lang um 23 %."
+    }
+  },
+  "constellation3": {
+    "name": "Klees Sonderanfertigung",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Bimm-Bamm-Bombe</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Manuelle Explosion",
+    "description": {
+      "0": "Löst beim Auswechseln der Figur während der Wirkungsdauer von <strong>Funkelfunken</strong> eine Explosion aus, die <pyro>Pyro-Flächenschaden</pyro> in Höhe von 555 % ANG verursacht."
+    }
+  },
+  "constellation5": {
+    "name": "Explodierender Stern",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Funkelfunken</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Feuer frei!",
+    "description": {
+      "0": "Klee stellt allen Truppenmitgliedern (außer sich selbst) während der Wirkungsdauer von <strong>Funkelfunken</strong> alle 3 s 3 Punkte Elementarenergie wieder her.",
+      "1": "Erhöht den <pyro>Pyro-Schaden</pyro> aller Truppenmitglieder nach Anwenden von <strong>Funkelfunken</strong> 25 s lang um 10 %."
+    }
+  }
+}

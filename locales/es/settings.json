@@ -1,0 +1,22 @@
+{
+  "title": "Ajustes",
+  "languageCard": {
+    "selectLanguage": "Seleccionar Idioma",
+    "languageFormat": "Idioma: {{language}}"
+  },
+  "downloadCard": {
+    "databaseDownload": "Descarga Base de Datos",
+    "databaseDisclaimer": "Notas: los datos de la página \"Herramientas\", por ejemplo, la cantidad/temporizador de resina, no forman parte de la base de datos descargada.",
+    "button": {
+      "download": "Descargar",
+      "copy": "Copiar a Portapapeles",
+      "delete": "Eliminar Base de Datos"
+    }
+  },
+  "uploadCard": {
+    "title": "Carga Base de Datos",
+    "replaceDatabase": "Reemplazar Base de Datos",
+    "hint": "Cargue su archivo JSON aquí...",
+    "hintPaste": "... o pegue sus datos a continuación."
+  }
+}

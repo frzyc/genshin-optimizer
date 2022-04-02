@@ -1,0 +1,22 @@
+{
+  "title": "Einstellungen",
+  "languageCard": {
+    "selectLanguage": "Sprache auswählen",
+    "languageFormat": "Sprache: {{language}}"
+  },
+  "downloadCard": {
+    "databaseDownload": "Datenbank exportieren",
+    "databaseDisclaimer": "Hinweis: Alle Daten aus der \"Extras\" Rubrik, wie z.B. Anzahl/Timer für Ursprüngliches Harz, sind nicht teil der exportieren Datenbank.",
+    "button": {
+      "download": "Herunterladen",
+      "copy": "In die Zwischenablage kopieren",
+      "delete": "Datenbank löschen"
+    }
+  },
+  "uploadCard": {
+    "title": "Datenbank importieren",
+    "replaceDatabase": "Datenbank ersetzen",
+    "hint": "Lade die JSON-Datei hier hoch...",
+    "hintPaste": "... oder kopiere den Text hierhin."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Lời Thề Xạ Thủ Thần",
+  "description": "Từng thuộc về người xạ thủ lão luyện, là một cây cung tốt. Vì phát ra hơi thở mạnh mẽ nên khó có thể dùng để săn bắn.",
+  "passiveName": "Tinh Chuẩn",
+  "passiveDescription": {
+    "0": "Tăng <cryo>24%</cryo> sát thương tạo thành với điểm yếu.",
+    "1": "Tăng <cryo>30%</cryo> sát thương tạo thành với điểm yếu.",
+    "2": "Tăng <cryo>36%</cryo> sát thương tạo thành với điểm yếu.",
+    "3": "Tăng <cryo>42%</cryo> sát thương tạo thành với điểm yếu.",
+    "4": "Tăng <cryo>48%</cryo> sát thương tạo thành với điểm yếu."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Instructor",
+  "setEffects": {
+    "2": "Elemental Mastery +80.",
+    "4": "Setelah memicu Reaksi Elemental, akan meningkatkan 120 Elemental Mastery seluruh anggota party selama 8 detik."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Instructor's Brooch",
+      "desc": "Saat bros ini dikenakan oleh instruktur, berarti tidak ada kelas latihan sepanjang hari itu."
+    },
+    "plume": {
+      "name": "Instructor's Feathered Accessory",
+      "desc": "Instruktur yang telah sepenuhnya menguasai keahlian menghindar, tahu bagaimana cara menjaga aksesoris ini agar tidak terjatuh tertiup angin."
+    },
+    "sands": {
+      "name": "Instructor's Pocket Watch",
+      "desc": "Jam saku yang bukan berfungsi untuk menunjukkan waktu, melainkan untuk menghitung durasi dari waktu latihan."
+    },
+    "goblet": {
+      "name": "Instructor's Tea Cup",
+      "desc": "Bagi kebanyakan orang, kelihatannya seperti cangkir teh biasa, tetapi bagi para murid, ini adalah simbol otoritas seorang instruktur."
+    },
+    "circlet": {
+      "name": "Instructor's Cap",
+      "desc": "Topi yang bentuknya biasa saja, tetapi memiliki makna yang mendalam. Hanya diperoleh oleh instruktur yang menolak kenaikan pangkat sebagai lambang kehormatan."
+    }
+  }
+}

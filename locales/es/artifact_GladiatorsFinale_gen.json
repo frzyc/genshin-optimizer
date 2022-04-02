@@ -1,0 +1,29 @@
+{
+  "setName": "Final del Gladiador",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "Aumenta el daño de Ataque Normal en un 35% si el personaje usa una espada ligera, mandoble o lanza."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Nostalgia del Gladiador",
+      "desc": "Nadie sabe por qué el legendario y sanguinario Gladiador siempre llevaba esta flor en el pecho, que era su único punto débil."
+    },
+    "plume": {
+      "name": "Destino del Gladiador",
+      "desc": "Una pluma que sueña con tener la libertad de un halcón. Al final de la legendaria carrera del Gladiador, el pájaro indomable puso esta pluma en su corazón."
+    },
+    "sands": {
+      "name": "Esperanza del Gladiador",
+      "desc": "Un reloj que atestigua los días sangrientos del Gladiador en el coliseo. Para él, contaba los días que le quedaban para ser libre."
+    },
+    "goblet": {
+      "name": "Embriaguez del Gladiador",
+      "desc": "La copa de oro usada por un antiguo gladiador para beber el vino de la victoria. En ella, se acumulan infinitos recuerdos memorables."
+    },
+    "circlet": {
+      "name": "Triunfo del Gladiador",
+      "desc": "Un casco que una vez perteneció a un gladiador. Manchado con la sangre de incontables enemigos, es apreciado por mucha gente."
+    }
+  }
+}

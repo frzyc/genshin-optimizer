@@ -1,0 +1,12 @@
+{
+  "name": "Alabarda",
+  "description": "Un arma de asta con una hoja de hacha montada en la parte superior, capaz de causar mucho daño. El arma predilecta entre los oficiales de la Geoarmada.",
+  "passiveName": "Pesado",
+  "passiveDescription": {
+    "0": "Los Ataques Normales infligen un <cryo>160%</cryo> de daño adicional a los enemigos. Este efecto solo puede ocurrir una vez cada 10 s.",
+    "1": "Los Ataques Normales infligen un <cryo>200%</cryo> de daño adicional a los enemigos. Este efecto solo puede ocurrir una vez cada 10 s.",
+    "2": "Los Ataques Normales infligen un <cryo>240%</cryo> de daño adicional a los enemigos. Este efecto solo puede ocurrir una vez cada 10 s.",
+    "3": "Los Ataques Normales causan un <cryo>280%</cryo> adicional de daño los oponentes. Este efecto puede activarse una vez cada 10 s.",
+    "4": "Los Ataques Normales infligen un <cryo>320%</cryo> de daño adicional a los enemigos. Este efecto solo puede ocurrir una vez cada 10 s."
+  }
+}

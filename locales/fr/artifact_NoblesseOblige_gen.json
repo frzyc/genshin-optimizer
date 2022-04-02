@@ -1,0 +1,29 @@
+{
+  "setName": "Ancien rituel royal",
+  "setEffects": {
+    "2": "Augmente les DGT infligés par le déchaînement élémentaire de 20 %.",
+    "4": "Augmente l'ATQ de tous les personnages de l'équipe de 20 % pendant 12 s après un déchaînement élémentaire. Cet effet est non cumulable."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fleur du Noble",
+      "desc": "Une fleur en soie bleue, souvent portée lors d'événements officiels. Son aspect est resté le même que le jour où elle a été cueillie."
+    },
+    "plume": {
+      "name": "Plume du Noble",
+      "desc": "Une plume décorant autrefois le chapeau des aristocrates de Mondstadt lorsqu'ils partaient à la chasse. Elle se dresse encore fièrement après tout ce temps."
+    },
+    "sands": {
+      "name": "Montre de poche du Noble",
+      "desc": "Une montre de poche ayant appartenu aux nobles de Mondstadt. Transmise de génération en génération, elle a été témoin de nombreuses années d'histoire."
+    },
+    "goblet": {
+      "name": "Urne d'argent du Noble",
+      "desc": "Une urne ornementale qui appartenait autrefois à une famille noble de Mondstadt. L'intérieur semble résonner du chant lugubre des vents éplorés."
+    },
+    "circlet": {
+      "name": "Masque du Noble",
+      "desc": "Un masque porté autrefois par les nobles de Mondstadt lors des bals. Ses yeux aujourd'hui vides semblent fixés sur la gloire d'un passé oublié."
+    }
+  }
+}

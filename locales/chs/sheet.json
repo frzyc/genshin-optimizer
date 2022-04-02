@@ -1,0 +1,30 @@
+{
+  "dmg": "伤害",
+  "hits": "{{count}} 段",
+  "lessPercentHP": "< {{percent}}% 生命值",
+  "stack": "{{count}} 层数",
+  "stack_plural": "{{count}} 层数",
+  "hitOp": {
+    "normal": "普通攻击命中对手",
+    "charged": "重击命中对手",
+    "plunging": "下落攻击命中对手",
+    "skill": "元素技能命中对手",
+    "burst": "元素爆发命中敌人",
+    "geo": "对敌岩元素伤害攻击",
+    "anemo": "对敌风元素伤害攻击",
+    "hydro": "对敌水元素伤害攻击",
+    "cryo": "对敌冰元素伤害攻击",
+    "pyro": "对敌火元素伤害攻击",
+    "electro": "对敌雷元素伤害攻击"
+  },
+  "hits_plural": "{{count}} 段",
+  "eleAbsor": "元素转化",
+  "absorDot": "元素转化持续伤害",
+  "afterUse": {
+    "skill": "使用元素战技后",
+    "burst": "使用元素爆发后"
+  },
+  "increase": {
+    "atk": "攻击加成"
+  }
+}

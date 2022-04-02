@@ -1,0 +1,12 @@
+{
+  "name": "Prototype Crescent",
+  "description": "Sebuah prototipe busur yang ditemukan di Blackcliff Forge. Anak panah yang ditembakkan dari busur ini bercahaya bagaikan cahaya rembulan.",
+  "passiveName": "Unreturning",
+  "passiveDescription": {
+    "0": "Saat Charged Attack mengenai titik kelemahan musuh, akan meningkatkan Movement SPD sebanyak 10% dan ATK sebesar <cryo>36%</cryo> selama 10 detik.",
+    "1": "Saat Charged Attack mengenai titik kelemahan musuh, akan meningkatkan Movement SPD sebanyak 10% dan ATK sebesar <cryo>45%</cryo> selama 10 detik.",
+    "2": "Saat Charged Attack mengenai titik kelemahan musuh, akan meningkatkan Movement SPD sebanyak 10% dan ATK sebesar <cryo>54%</cryo> selama 10 detik.",
+    "3": "Saat Charged Attack mengenai titik kelemahan musuh, akan meningkatkan Movement SPD sebanyak 10% dan ATK sebesar <cryo>63%</cryo> selama 10 detik.",
+    "4": "Saat Charged Attack mengenai titik kelemahan musuh, akan meningkatkan Movement SPD sebanyak 10% dan ATK sebesar <cryo>72%</cryo> selama 10 detik."
+  }
+}

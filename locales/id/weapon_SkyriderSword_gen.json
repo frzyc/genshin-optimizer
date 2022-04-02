@@ -1,0 +1,12 @@
+{
+  "name": "Skyrider Sword",
+  "description": "Pedang baja yang dapat diandalkan. Konon, Skyrider yang terkenal pernah mencoba meminjam kekuatannya untuk terbang...",
+  "passiveName": "Determination",
+  "passiveDescription": {
+    "0": "Menggunakan Elemental Burst meningkatkan <cryo>12%</cryo> ATK dan Movement SPD selama 15 detik.",
+    "1": "Menggunakan Elemental Burst meningkatkan <cryo>15%</cryo> ATK dan Movement SPD selama 15 detik.",
+    "2": "Menggunakan Elemental Burst meningkatkan <cryo>18%</cryo> ATK dan Movement SPD selama 15 detik.",
+    "3": "Menggunakan Elemental Burst meningkatkan <cryo>21%</cryo> ATK dan Movement SPD selama 15 detik.",
+    "4": "Menggunakan Elemental Burst meningkatkan <cryo>24%</cryo> ATK dan Movement SPD selama 15 detik."
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "name": "Lisa",
+  "title": "Witch of Purple Rose",
+  "description": "Pustakawan Knights of Favonius yang sangat malas namun berwawasan sangat luas, pernah dinyatakan oleh Sumeru Academia sebagai siswi kelulusan terbaik 2 abad terakhir.",
+  "constellationName": "Horologium",
+  "auto": {
+    "name": "Lighting Touch",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan listrik yang mengakibatkan <electro>Electro DMG</electro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina dan mengakibatkan <electro>Electro DMG area</electro> setelah jeda singkat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Electro dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <electro>Electro DMG area</electro> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Min./Maks.",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Violet Arc",
+    "description": {
+      "0": "Menyalurkan kekuatan petir untuk menyapu bersih masalah yang merepotkan.",
+      "1": "<br/>",
+      "2": "<strong>Tekan</strong>",
+      "3": "Melancarkan sebuah bola listrik yang mengejar musuh.",
+      "4": "Saat mengenai musuh, mengakibatkan <electro>Electro DMG</electro> dan memberikan satu lapis efek Conductive (hingga 3 lapis) ke musuh di dalam area kecil.",
+      "5": "<br/>",
+      "6": "<strong>Tahan</strong>",
+      "7": "Setelah waktu casting yang diperpanjang, memanggil petir dari langit untuk mengakibatkan <electro>Electro DMG</electro> yang besar ke semua musuh di sekitar.",
+      "8": "Mengakibatkan tambahan DMG yang besar ke musuh berdasarkan jumlah lapisan Conductive yang mereka miliki dan menghapusnya.",
+      "9": "<br/>",
+      "10": "<i>Warna Electro Purple adalah warna sang Rose Witch.</i>"
+    },
+    "skillParams": {
+      "0": "DMG One-tap",
+      "1": "Cooldown (Mode Tekan)",
+      "2": "DMG Menahan Non-Conductive",
+      "3": "DMG Menahan 1 Conductive",
+      "4": "DMG Menahan 2 Conductive",
+      "5": "DMG Menahan 3 Conductive",
+      "6": "Cooldown (Mode Tahan)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Lightning Rose",
+    "description": {
+      "0": "Memanggil Lightning Rose yang mengerahkan sambaran petir dan menghempas musuh di sekitar untuk mengakibatkan <electro>Electro DMG</electro>.",
+      "1": "Lightning Rose akan terus memanggil petir untuk menghempas musuh dan mengakibatkan <electro>Electro DMG</electro> selama ia tetap ada.",
+      "2": "<br/>",
+      "3": "<i>Hati-hati dengan duri mematikan dari mawar yang cantik.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Pelepasan Listrik",
+      "1": "Durasi",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Induced Aftershock",
+    "description": {
+      "0": "Charged Attack yang mengenai musuh akan menyebabkan status Conductive dari <strong>Violet Arc</strong> pada musuh."
+    }
+  },
+  "passive2": {
+    "name": "Static Electricity Field",
+    "description": {
+      "0": "Saat mengenai musuh, <strong>Lightning Rose</strong> akan mengurangi 15% DEF musuh selama 10 detik."
+    }
+  },
+  "passive3": {
+    "name": "General Pharmaceutics",
+    "description": {
+      "0": "Lisa memiliki 20% kemungkinan mendapatkan kembali material yang digunakan saat membuat potion."
+    }
+  },
+  "constellation1": {
+    "name": "Infinite Circuit",
+    "description": {
+      "0": "Saat menahan <strong>Violet Arc</strong>, memulihkan 2 Energy Lisa untuk setiap musuh yang terkena serang.",
+      "1": "Paling banyak dapat memulihkan 10 Energy dengan cara ini setiap kalinya."
+    }
+  },
+  "constellation2": {
+    "name": "Electromagnetic Field",
+    "description": {
+      "0": "Menahan <strong>Violet Arc</strong> memberikan efek berikut:",
+      "1": [
+        "Meningkatkan 25% DEF.",
+        "Meningkatkan daya tahan Lisa terhadap gangguan."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Resonant Thunder",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Lightning Rose</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Plasma Eruption",
+    "description": {
+      "0": "Meningkatkan jumlah petir yang dilepaskan oleh <strong>Lightning Rose</strong> sebanyak 1-3."
+    }
+  },
+  "constellation5": {
+    "name": "Electrocute",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Violet Arc</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Pulsating Witch",
+    "description": {
+      "0": "Saat berganti karakter ke Lisa, Lisa akan memberikan 3 lapis status Conductive dari skill <strong>Violet Arc</strong> kepada musuh di sekitar.",
+      "1": "Efek ini dapat terpicu setiap 5 detik."
+    }
+  }
+}

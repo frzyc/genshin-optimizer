@@ -1,0 +1,177 @@
+{
+  "burst": {
+    "cutting": "SCH beim Schlitzen",
+    "bloom": "SCH beim Erblühen",
+    "name": "Kamisato-Stil – Soumetsu",
+    "description": {
+      "0": "Konzentriert Frost mit eleganter Haltung und beschwört eine sich fortlaufend nach vorn bewegende Frostflocke Seki no To.",
+      "1": "<br/>",
+      "2": "<strong>Frostflocke Seki no To</strong>",
+      "3": [
+        " Schlitzt Gegner mit messerscharfem Frostwind auf und verursacht <cryo>Kryo-Schaden</cryo>.",
+        " Erschafft am Ende der Wirkungsdauer eine Blüte, die <cryo>Kryo-Flächenschaden</cryo> verursacht."
+      ],
+      "4": "<br/>",
+      "5": "<i>„Der Schneesturm bläst und erdrückt den Reiher, dass mein Geist friert und meine Brust mit Mitleid erfüllt wird.“</i>"
+    },
+    "skillParams": {
+      "0": "SCH beim Schlitzen",
+      "1": "SCH beim Erblühen",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Kamisato Ayaka",
+  "title": "Eisnebelreiher",
+  "description": "Die Tochter des Kamisato-Klans der Yashiro-Verwaltung. Sie ist würdevoll und elegant, klug und stark.",
+  "constellationName": "Grus Nivis",
+  "auto": {
+    "name": "Kamisato-Stil – Naname",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und erschafft beim Schwertziehen einen kräftigen Wind."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kamisato-Stil – Hyouka",
+    "description": {
+      "0": "Beschwört eine aufgehende Eisblüte, die Gegner in der Nähe wegschleudert und <cryo>Kryo-Flächenschaden</cryo> verursacht.",
+      "1": "<br/>",
+      "2": "<i>„Bei helle Wolken und in nebligen Mondnächten setzt sich Verlangen nieder wie Dunst und ein einsames Herz wird von der Lust zu wandern beseelt.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "sprint": {
+    "name": "Kamisato-Stil – Senho",
+    "description": {
+      "0": "<strong>Ersetzt Rennen</strong>",
+      "1": "Eine Bewegung so schnell wie eine Strömung unter den Eisschollen, verbraucht aber Ausdauer.",
+      "2": "<br/>",
+      "3": "Kamisato Ayaka kann sich während der Wirkungsdauer von Senho mit hoher Geschwindigkeit auf der Wasseroberfläche fortbewegen.",
+      "4": "Verursacht beim Erscheinen am Ende von Senho folgende Effekte:",
+      "5": [
+        " Nutzt die Kraft der Kälte und fügt Gegnern in der Umgebung das <cryo>Kryo</cryo>-Attribut zu.",
+        " Konzentriert die Kälte auf dem Schwert, sodass Kamisato Ayaka kurzzeitig das <cryo>Kryo</cryo>-Attribut erhält."
+      ],
+      "6": "<br/>",
+      "7": "<i>Die Wassertropfen auf den Federn des Reihers verschwinden in nur einem Augenblick. Wie schafft er es, auf dem Wasser zu laufen?</i>"
+    }
+  },
+  "passive1": {
+    "name": "Amatsumi-Kunitsumi-Weihe",
+    "description": {
+      "0": "Erhöht den von Kamisato Ayaka mit Standardangriffen und heftigen Schlägen verursachten Schaden nach Anwendung von <strong>Kamisato-Stil – Hyouka</strong> 6 s lang um 30 %."
+    }
+  },
+  "passive2": {
+    "name": "Kanten-Senmyou-Segen",
+    "description": {
+      "0": "Gewährt Kamisato Ayaka beim Treffen von Gegnern mit der Kälte, die am Ende von <strong>Kamisato-Stil – Senho</strong> freigesetzt wird, folgende Effekte:",
+      "1": [
+        " Stellt 10 Punkte Ausdauer wieder her.",
+        " Erhöht den <cryo>Kryo-Schaden</cryo> 10 s lang um 18 %."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Shinsa-Früchte",
+    "description": {
+      "0": "Stellt beim Zusammensetzen von Material zum Aufstieg von Waffen mit einer Wahrscheinlichkeit von 10 % den 2-fachen Ertrag her."
+    }
+  },
+  "constellation1": {
+    "name": "Verschneite Sakura",
+    "description": {
+      "0": "Verkürzt beim Verursachen von <cryo>Kryo-Schaden</cryo> gegenüber Gegnern mit Standardangriffen oder heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % die Abklingzeit von <strong>Kamisato-Stil – Hyouka</strong> um 0,3 s. 0,1 s Abklingzeit."
+    }
+  },
+  "constellation2": {
+    "name": "Sturmklinge Seki no To",
+    "description": {
+      "0": "Erschafft bei Anwendung von <strong>Kamisato-Stil – Soumetsu</strong> zwei zusätzliche kleinere Frostflocken Seki no To, die jeweils 20 % des ursprünglichen Schadens verursachen."
+    }
+  },
+  "constellation3": {
+    "name": "Frostblüte Kamifubuki",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Kamisato-Stil – Soumetsu</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Ebbe und Flut",
+    "description": {
+      "0": "Verringert, wenn Gegner durch die Frostflocken Seki no To von <strong>Kamisato-Stil – Soumetsu</strong> Schaden erleiden, die VTD 6 s lang um 30 %."
+    }
+  },
+  "constellation5": {
+    "name": "Blütenwolke Irutsuki",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Kamisato-Stil – Hyouka</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Suigetsu-Tanz",
+    "description": {
+      "0": "Kamisato Ayaka erhält alle 10 s „Usurahi Butou“, das den mit ihren heftigen Schlägen verursachten Schaden um 298 % erhöht. Dieser Effekt wird 0,5 s nach Treffern mit heftigen Schlägen entfernt und die Zeit zum Auslösen wird auch zurückgesetzt."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Reiseschwert",
+  "description": "Ein praktisches Schwert aus Stahl, in dessen Scheide sich unter anderem Schere, Fernglas und Zunder für die Reise befinden.",
+  "passiveName": "Reise",
+  "passiveDescription": {
+    "0": "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen <cryo>1 %</cryo> LP wieder her.",
+    "1": "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen <cryo>1,25 %</cryo> LP wieder her.",
+    "2": "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen <cryo>1,5 %</cryo> LP wieder her.",
+    "3": "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen <cryo>1,75 %</cryo> LP wieder her.",
+    "4": "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen <cryo>2 %</cryo> LP wieder her."
+  }
+}

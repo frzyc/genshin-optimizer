@@ -1,0 +1,29 @@
+{
+  "setName": "Tiny Miracle",
+  "setEffects": {
+    "2": "Elemental RES +20%.",
+    "4": "Saat menerima DMG elemen tertentu, meningkatkan 30% Elemental RES terhadap elemen tersebut selama 10 detik. Dapat terpicu setiap 10 detik."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Tiny Miracle's Flower",
+      "desc": "Bunga yang tumbuh di atas sebuah batu. Tekad di dalamnya memampukannya untuk menembus batu yang keras untuk mencapai secercah cahaya."
+    },
+    "plume": {
+      "name": "Tiny Miracle's Feather",
+      "desc": "Sehelai bulu yang berasal dari seekor unggas agresif yang kecepatannya tidak dapat dilihat oleh mata telanjang."
+    },
+    "sands": {
+      "name": "Tiny Miracle's Hourglass",
+      "desc": "Terlihat seperti jam pasir biasa. Pasir yang kering di dalamnya mengalir bagaikan air saat jam diputar balik."
+    },
+    "goblet": {
+      "name": "Diviner's Goblet",
+      "desc": "Gelas yang biasa digunakan untuk meramal masa depan. Tentunya juga dapat digunakan untuk minum air."
+    },
+    "circlet": {
+      "name": "Tiny Miracle's Earrings",
+      "desc": "Perhiasan yang dijual dengan murah, tetapi sebenarnya anting ini terbuat dari mineral dari meteorit kuno yang sangat langka."
+    }
+  }
+}

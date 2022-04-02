@@ -1,0 +1,29 @@
+{
+  "setName": "Roche ancienne",
+  "setEffects": {
+    "2": "Confère un bonus de DGT Géo de 15 %",
+    "4": "Lorsque vous obtenez un cristal issu d'une Cristallisation, tous les personnages de l'équipe bénéficient d'un bonus de DGT du second élément de la réaction de 35 % pendant 10 s. Cet effet ne peut s'appliquer qu'à un seul élément à la fois."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fleur des crevasses",
+      "desc": "Une fleur qui pousse à travers les fissures d'une falaise. La façon dont le vent souffle sur ses pétales lui donne un semblant de vie."
+    },
+    "plume": {
+      "name": "Plume des sommets escarpés",
+      "desc": "Une plume dure appartenant à un grand faucon des falaises côtières. Des gouttes de rosée se forment parfois à son extrémité noire."
+    },
+    "sands": {
+      "name": "Cadran du jade immuable",
+      "desc": "Un cadran solaire gravé d'un bloc dans le jade. Les veines qu'on voit dans le minerai sont autant de témoins silencieux du temps qui passe."
+    },
+    "goblet": {
+      "name": "Coupe en roche escarpée",
+      "desc": "Une magnifique coupe de vin qui fut remplie à ras bord à une époque lointaine."
+    },
+    "circlet": {
+      "name": "Masque en basalte inerte",
+      "desc": "Un masque majestueux taillé dans de la roche noire. Ses yeux vides regardent toujours devant eux."
+    }
+  }
+}

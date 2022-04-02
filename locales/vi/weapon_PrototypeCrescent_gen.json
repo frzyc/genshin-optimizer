@@ -1,0 +1,12 @@
+{
+  "name": "Mẫu Đạm Nguyệt",
+  "description": "Trường cung của Hắc Nham Xưởng. Thế bắn tên như xuyên qua ánh trăng.",
+  "passiveName": "Rời Khỏi Bầy Đàn",
+  "passiveDescription": {
+    "0": "Nếu trọng kích đánh trúng điểm yếu, sẽ tăng 10% tốc độ di chuyển và <cryo>36%</cryo> tấn công, kéo dài 10s.",
+    "1": "Nếu trọng kích đánh trúng điểm yếu, sẽ tăng 10% tốc độ di chuyển và <cryo>45%</cryo> tấn công, kéo dài 10s.",
+    "2": "Nếu trọng kích đánh trúng điểm yếu, sẽ tăng 10% tốc độ di chuyển và <cryo>54%</cryo> tấn công, kéo dài 10s.",
+    "3": "Nếu trọng kích đánh trúng điểm yếu, sẽ tăng 10% tốc độ di chuyển và <cryo>63%</cryo> tấn công, kéo dài 10s.",
+    "4": "Nếu trọng kích đánh trúng điểm yếu, sẽ tăng 10% tốc độ di chuyển và <cryo>72%</cryo> tấn công, kéo dài 10s."
+  }
+}

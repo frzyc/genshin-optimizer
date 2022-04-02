@@ -1,0 +1,48 @@
+{
+  "title": "设置",
+  "languageCard": {
+    "selectLanguage": "选择语言",
+    "languageFormat": "语言：{{language}}"
+  },
+  "downloadCard": {
+    "databaseDownload": "数据库下载",
+    "databaseDisclaimer": "注意：工具页面所有的数据，例如：树脂数量/计时器，不包含在下载的数据库中。",
+    "button": {
+      "download": "下载",
+      "copy": "复制到剪贴板",
+      "delete": "删除数据库"
+    }
+  },
+  "uploadCard": {
+    "title": "上传数据库",
+    "replaceDatabase": "替换数据库",
+    "hint": "在此上传JSON文件…",
+    "hintPaste": "…或在此粘贴数据",
+    "goUpload": {
+      "title": "<strong>Genshin Optimizer</strong> 格式",
+      "migrate": "数据库将更新为新版本，请考虑在导入后重新下载数据库。",
+      "deleteDatabasePrompt": "确定要替换数据库吗？所有已保存的角色和圣遗物会被删除。"
+    },
+    "error": {
+      "jsonParse": "JSON文件解析失败。",
+      "unknown": "未知的文件格式。",
+      "monaInvalid": "不正确的莫娜占卜铺文件格式。",
+      "goInvalid": "不正确的GO 备份文件格式。"
+    },
+    "dbSource": "数据来源：",
+    "goodUpload": {
+      "title": "<strong>Genshin Open Object Description</strong> (GOOD) 格式"
+    }
+  },
+  "count": {
+    "chars": "角色：",
+    "arts": "圣遗物：",
+    "weapons": "武器：",
+    "total": "总计：",
+    "new": "新的：",
+    "updated": "更新的：",
+    "removed": "移除的：",
+    "unchanged": "未改变的：",
+    "invalid": "无效的："
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "圣遗物",
+    "characters": "角色",
+    "builds": "配装",
+    "tools": "工具",
+    "database": "数据库",
+    "weapons": "武器",
+    "doc": "文档"
+  },
+  "social": {
+    "paypal": "PayPal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "game": {
+    "minLevel": "最小等级",
+    "maxLevel": "最大等级",
+    "rarity": "稀有度",
+    "level": "等级"
+  },
+  "unselect": "取消选择",
+  "ascending": "升序",
+  "descending": "降序",
+  "sortByFormat": "排序方式：{{value}}",
+  "loading": "加载中…",
+  "rightsDisclaimer": "Genshin Optimizer不隶属于miHoYo，无miHoYo背书。",
+  "appVersion": "$t(pageTitle) 版本：{{version}}",
+  "underConstruction": "施工中",
+  "error": "错误",
+  "reset": "重置",
+  "info": "重要提示",
+  "inventory": "背包",
+  "close": "关闭",
+  "sortMap": {
+    "new": "新",
+    "name": "名称",
+    "level": "等级",
+    "rarity": "稀有度",
+    "efficiency": "当前副词条潜能",
+    "mefficiency": "最高副词条潜能"
+  }
+}

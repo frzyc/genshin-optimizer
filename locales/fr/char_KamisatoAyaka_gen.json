@@ -1,0 +1,175 @@
+{
+  "burst": {
+    "cutting": "DGT coupure",
+    "bloom": "DGT floraison",
+    "name": "École Kamisato : Givre mortel",
+    "description": {
+      "0": "Ayaka adopte une posture magnifique pour libérer un tourbillon givré qui avance sans s'arrêter.",
+      "1": "<br/>",
+      "2": "<strong>Tourbillon givré</strong>",
+      "3": [
+        " Le tourbillon givré lacère de façon continue les ennemis qui se trouvent sur sa route, infligeant des <cryo>DGT Cryo</cryo>.",
+        " Le tourbillon finit par exploser, infligeant des <cryo>DGT Cryo de zone</cryo>."
+      ],
+      "4": "<br/>",
+      "5": "<i>« Le blizzard dissimule les pensées du héron, au cœur rempli de pitié. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT coupure",
+      "1": "DGT floraison",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Kamisato Ayaka",
+  "title": "Héron de givre",
+  "description": "Fille du Clan Kamisato de la Commission culturelle. Digne et élégante, mais aussi sage et forte.",
+  "constellationName": "Grus Nivis",
+  "auto": {
+    "name": "École Kamisato - Sveltesse",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux lames du vent rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque descendante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "École Kamisato : Fleur de glace",
+    "description": {
+      "0": "Ayaka invoque une fleur glacée qui projette les ennemis proches, leur infligeant des <cryo>DGT Cryo de zone</cryo>.",
+      "1": "<br/>",
+      "2": "<i>« Les nuages enveloppent la lune, le désir descend tel un brouillard, emplissant le cœur du voyageur. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "sprint": {
+    "name": "École Kamisato : Sentier de givre",
+    "description": {
+      "0": "<strong>Sprint alternatif</strong>",
+      "1": "Ayaka consomme de l'endurance pour se déplacer rapidement au milieu d'un brouillard de glace.",
+      "2": "<br/>",
+      "3": "Sous Sentier de givre, Ayaka peut se déplacer rapidement sur l'eau.",
+      "4": "À la fin de l'état, elle réapparaît ; deux choses se produisent alors simultanément :",
+      "5": [
+        " Elle libère une énergie glacée qui applique aux ennemis proches l'élément <cryo>Cryo</cryo>.",
+        " Le froid se concentre sur son épée : les DGT qu'inflige cette dernière sont momentanément convertis en <cryo>DGT Cryo</cryo>."
+      ],
+      "6": "<br/>",
+      "7": "<i>« Volent les ailes mouillées / Le héron blanc marche sur l'eau / D'une vision parfaite »</i>"
+    }
+  },
+  "passive1": {
+    "name": "Sanctification de l'impur",
+    "description": {
+      "0": "Confère aux attaques normales et chargées d'Ayaka suivant dans les 6 s le lancement d'<strong>École Kamisato : Fleur de glace</strong> un bonus de 30 % de DGT."
+    }
+  },
+  "passive2": {
+    "name": "Bénédiction de Kanten Senmyou",
+    "description": {
+      "0": "L'énergie glacée libérée à la fin du Sentier de givre d'<strong>École Kamisato : Sentier de givre</strong> confère à Ayaka les effets suivants lorsqu'elle touche l'ennemi :",
+      "1": "Régénération de 10 pts d'endurance ;",
+      "2": "<cryo>Bonus de DGT Cryo</cryo> de 18 % pendant 10 s."
+    }
+  },
+  "passive3": {
+    "name": "Fruits de Shinsa",
+    "description": {
+      "0": "10 % de chances d'obtenir le double de produits lors de la synthèse de matériaux d'élévation d'arme."
+    }
+  },
+  "constellation1": {
+    "name": "Cerise givrée",
+    "description": {
+      "0": "Les attaques normales et chargées d'Ayaka ont 50 % de chances de réduire le TdR d'<strong>École Kamisato : Fleur de glace</strong> de 0,3 s lorsqu'elles infligent des <cryo>DGT Cryo</cryo> aux ennemis. Cet effet peut être déclenché une fois toutes les 0,1 s."
+    }
+  },
+  "constellation2": {
+    "name": "Lame de blizzard Seki",
+    "description": {
+      "0": "Deux petits tourbillons givrés supplémentaires sont libérés à l'activation d'<strong>École Kamisato : Givre mortel</strong> ; chacun inflige 20 % des DGT du tourbillon d'origine."
+    }
+  },
+  "constellation3": {
+    "name": "Confettis de fleuraison givrée",
+    "description": {
+      "0": "Niveau de compétence <strong>École Kamisato : Givre mortel</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Retour prééminent",
+    "description": {
+      "0": "La DÉF des ennemis subissant les DGT infligés par le tourbillon givré d'<strong>École Kamisato : Givre mortel</strong> est réduite de 30 % pendant 6 s."
+    }
+  },
+  "constellation5": {
+    "name": "Lune entre les nuages",
+    "description": {
+      "0": "Niveau de compétence <strong>École Kamisato : Fleur de glace</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Danse de la lune",
+    "description": {
+      "0": "Kamisato Ayaka s'illumine d'une gracieuseté gelée toutes les 10 s, augmentant les DGT infligés par son attaque chargée de 298 %. Cet effet s'annule 0,5 s après que l'attaque chargée d'Ayaka touche un ennemi, puis le chronomètre de cette capacité démarre."
+    }
+  }
+}

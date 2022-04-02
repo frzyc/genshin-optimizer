@@ -1,0 +1,12 @@
+{
+  "name": "Magieführer",
+  "description": "Auflage 12. Mit den Inhalten und Korrekturen von Auflage 11 sowie Ergänzungen zu den neusten Entwicklungen der Zeit.",
+  "passiveName": "Bewährtheit von Wasser und Blitz",
+  "passiveDescription": {
+    "0": "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>12 %</cryo>.",
+    "1": "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>15 %</cryo>.",
+    "2": "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>18 %</cryo>.",
+    "3": "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>21 %</cryo>.",
+    "4": "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>24 %</cryo>."
+  }
+}

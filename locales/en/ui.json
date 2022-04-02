@@ -1,9 +1,9 @@
 {
-  "pageTitle": "Dopamine Optimizer",
+  "pageTitle": "Genshin Optimizer",
   "tabs": {
     "weapons": "Weapons",
     "artifacts": "Artifacts",
-    "characters": "Champions",
+    "characters": "Characters",
     "builds": "Builds",
     "tools": "Tools",
     "setting": "Setting",
@@ -12,11 +12,11 @@
   "social": {
     "paypal": "Paypal",
     "patreon": "Patreon",
-    "discord": "MisCord"
+    "discord": "Discord"
   },
   "link": {
     "download": "Download Link",
-    "discord": "MisCord Invite Link"
+    "discord": "Discord Invite Link"
   },
   "game": {
     "minLevel": "Min Level",
@@ -30,7 +30,7 @@
   "descending": "Descending",
   "sortByFormat": "Sort By: {{value}}",
   "loading": "Loading...",
-  "rightsDisclaimer": "dOpAmInE OpTiMiZeR Is nOt aFfIlIaTeD WiTh oR EnDoRsEd bY MiHoYo.",
+  "rightsDisclaimer": "Genshin Optimizer is not affiliated with or endorsed by miHoYo.",
   "appVersion": "$t(pageTitle) Version: <1>{{version}}</1>",
   "underConstruction": "Under Construction",
   "error": "Error",

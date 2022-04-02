@@ -1,0 +1,12 @@
+{
+  "name": "Geschichten einer anderen Welt",
+  "description": "Ein nahezu wertloser Fantasyroman. Auch seine Nutzung als magischer Katalysator entspringt eher der Fantasie.",
+  "passiveName": "Energiebad",
+  "passiveDescription": {
+    "0": "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen <cryo>1 %</cryo> LP wieder her.",
+    "1": "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen <cryo>1,25 %</cryo> LP wieder her.",
+    "2": "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen <cryo>1,5 %</cryo> LP wieder her.",
+    "3": "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen <cryo>1,75 %</cryo> LP wieder her.",
+    "4": "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen <cryo>2 %</cryo> LP wieder her."
+  }
+}

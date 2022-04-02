@@ -1,0 +1,12 @@
+{
+  "name": "Thương Bạch Anh",
+  "description": "Trang bị cho binh sĩ của Thiên Nham Quân, thân thương chắc chắn, mũi sắc nhọn, là vũ khí vô cùng tốt.",
+  "passiveName": "Sắc Bén",
+  "passiveDescription": {
+    "0": "Tấn công thường sát thương tăng <cryo>24%</cryo>.",
+    "1": "Tấn công thường sát thương tăng <cryo>30%</cryo>.",
+    "2": "Tấn công thường sát thương tăng <cryo>36%</cryo>.",
+    "3": "Tấn công thường sát thương tăng <cryo>42%</cryo>.",
+    "4": "Tấn công thường sát thương tăng <cryo>48%</cryo>."
+  }
+}

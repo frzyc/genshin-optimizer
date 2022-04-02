@@ -1,0 +1,27 @@
+{
+  "intro": "<0>Giới thiệu về Genshin Optimizer</0><1>Genshin Optimizer (GO) là một trang web mã nguồn mở do người hâm mộ tạo ra cho trò chơi gacha hành động nhập vai <1><strong>Genshin Impact</strong></1>. Nó chủ yếu nhằm mục đích giúp đỡ người chơi về khía cạnh phức tạp của trò chơi: Tối ưu hoá Thánh Di Vật. Vì Thánh Di Vật là các yếu tố dựa trên RNG (Random Number Generator) góp phần trực tiếp vào mức độ hiệu quả của các nhân vật của bạn trong trò chơi, GO sẽ cố gắng tìm các Thánh Di Vật tốt nhất cho các nhân vật dựa trên Túi chứa Thánh Di Vật hiện tại của bạn.</1><2>GO có thể theo dõi các Thánh Di Vật và cho phép dễ dàng hơn trong việc lọc/so sánh các Thánh Di Vật, nó đóng vai trò như một công cụ giúp người dùng tìm Thánh Di Vật tốt trong túi để tăng cấp và Thánh Di Vật xấu để sử dụng làm nguyên liệu cường hoá.</2><3>Vì GO có thể sao chép các chỉ số chính xác của bất kỳ nhân vật nào, cùng với việc tính toán tất cả các con số sát thương với độ chính xác lên đến 1%, GO cũng có thể tính sát thương và là công cụ tính toán lý thuyết.</3>",
+  "helpDev": "<0>Bạn muốn giúp đỡ Genshin Optimizer?</0><1>Nếu bạn muốn hỗ trợ tài chính cho GO, vui lòng quyên góp qua <1>Paypal</1> hoặc <3>Patreon</3>. GO không lưu trữ quảng cáo và không thu phí bất kỳ tính năng nào.</1><2>Nếu bạn muốn giúp đỡ dịch thuật GO, hãy yêu cầu tính năng hoặc báo cáo lỗi, tham gia <1>Discord</1> của chúng tôi. Đây là nơi bạn sẽ tìm thấy thêm thông tin liên quan đến GO và thông tin các công việc đang thực hiện.</2><3>Bạn cũng có thể tham gia <1>Genshin Dev Discord</1> nếu bạn muốn tạo ứng dụng về Genshin.</3>",
+  "quickLinks": {
+    "title": "Quick Links",
+    "scannerTitle": "Bạn có muốn tự động hóa một số quy trình nhập Thánh Di Vật không?",
+    "scannerText": "Dưới đây là danh sách các phần mềm tự động quét tương thích có thể cung cấp dữ liệu vào GO. Các chương trình này sẽ tự động quét các Thánh Di Vật từ trò chơi của bạn và xuất dữ liệu đó thành một tập tin. Sau đó, tập tin này có thể nhập vào GO.",
+    "scannerBtn": "Danh Sách Phần Mềm",
+    "goGithubText": "GO hoàn toàn là mã nguồn mở, được viết bằng TypeScript, với <1></1>React framework.",
+    "goGithubBtn": "Genshin Optimizer Github"
+  },
+  "features": {
+    "title": "Tính Năng",
+    "artifact": {
+      "title": "Trình chỉnh sửa Thánh Di Vật & Túi"
+    },
+    "characterEditor": {
+      "title": "Trình chỉnh sửa Nhân Vật & Vũ Khí"
+    },
+    "characterCalc": {
+      "title": "Tính toán sát thương của Nhân Vật"
+    },
+    "tools": {
+      "title": "Công cụ & Tiện ích"
+    }
+  }
+}

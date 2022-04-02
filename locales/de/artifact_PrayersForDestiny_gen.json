@@ -1,0 +1,12 @@
+{
+  "setName": "Wasseropfer",
+  "setEffects": {
+    "1": "Verringert die Dauer der Beeinträchtigung durch zusätzliches Hydro-Attribut um 40 %."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Wasseropferdiadem",
+      "desc": "Ein ritueller Kopfschmuck, den Priester in alter Zeit während ihrer Zeremonien trugen. Da er lange Jahre im Wasser versunken lag, hat er eine erstaunliche Widerstandskraft entwickelt."
+    }
+  }
+}

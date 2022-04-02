@@ -1,0 +1,20 @@
+{
+  "skillC": {
+    "name": "冷酷之心",
+    "consumed": "消耗的冷酷之心",
+    "grimheart": {
+      "name": "冷酷之心层数",
+      "int": "提高抗打断能力"
+    }
+  },
+  "burstC": {
+    "name": "光降之剑",
+    "start5": "立刻获得五层能量",
+    "addStacks": "50%概率额外获得一层"
+  },
+  "c1C": {
+    "name": "消耗<strong>冷酷之心</strong>层数",
+    "durationStack": "每层延长6s持续时间，不会超过18秒"
+  },
+  "passive1": "残缺光降之剑伤害"
+}

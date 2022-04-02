@@ -1,0 +1,30 @@
+{
+  "ProtectiveCanopy": {
+    "name": "Dossel Protetora",
+    "desc": "Todas RES Elementais aumenta 15%, e a RES Física aumenta em 15%."
+  },
+  "FerventFlames": {
+    "name": "Paixão de Pyro",
+    "desc": "Reduz a duração dos efeitos Cryo em 40%. Aumenta o ATQ em 25%"
+  },
+  "SoothingWater": {
+    "name": "Cura de Hydro",
+    "desc": "Reduz a duração dos efeitos Pyro em 40%. Aumenta a cura recebida em 30%."
+  },
+  "ShatteringIce": {
+    "name": "Impacto de Cryo",
+    "desc": "Reduz a duração dos Efeitos Electro em 40%. Aumenta a taxa de CRIT contra inimigos congelados ou afetados por Cryo em 15%."
+  },
+  "HighVoltage": {
+    "name": "Energia de Electro",
+    "desc": "Reduz a duração dos Efeitos Hydro em 40%. O Supercondutor, a Sobrecarga, e Eletricamente Carregado possuem 100% de chance de gerar uma Partícula Elemental Electro (Recarga: 5s)."
+  },
+  "ImpetuousWinds": {
+    "name": "Agilidade de Anemo",
+    "desc": "Diminui o consumo de Stamina em 15%. Aumenta a Veloc. Mov. em 10%. Diminui a Recarga da habilidade em 5%."
+  },
+  "EnduringRock": {
+    "name": "Durabilidade de Geo",
+    "desc": "A Força do Escudo aumenta em 15%. Além disso, quando o personagem estiver protegido por um Escudo, possui os seguintes efeitos: Dano causado aumenta em 15%, além disso, ao causar Dano aos inimigos, a Resistência contra o Elemento Geo dos inimigos diminui em 20% por 15s."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "dmg": "Daño",
+  "hits": "{{count}} Golpe",
+  "lessPercentHP": "< {{percent}}% Vida",
+  "stack": "{{count}} Carga",
+  "stack_plural": "{{count}} Cargas",
+  "hitOp": {
+    "normal": "Ataque Normal golpea a los oponentes",
+    "charged": "Ataque Cargado golpea a los oponentes",
+    "plunging": "Ataque Descendente golpea a los oponentes",
+    "skill": "Habilidad Elemental golpea a los oponentes",
+    "burst": "Habilidad Definitiva golpea a los oponentes"
+  },
+  "hits_plural": "{{count}} Golpes",
+  "eleAbsor": "Absorción Elemental",
+  "absorDot": "DoT de Absorción"
+}

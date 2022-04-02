@@ -1,0 +1,29 @@
+{
+  "setName": "Như Sấm Thịnh Nộ",
+  "setEffects": {
+    "2": "Nhận 15% buff sát thương nguyên tố Lôi",
+    "4": "Sát thương phản ứng quá tải, điện cảm, siêu dẫn tăng 40%. Khi kích hoạt những phản ứng nguyên tố này, CD kỹ năng nguyên tố giảm 1s. Hiệu quả này mỗi 0.8s thi triển nhiều nhất một lần."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Sự Thương Hại Của Lôi Điểu",
+      "desc": "Bông hoa có màu của sấm sét, may mắn thoát được trong cuộc tàn sát của lửa tím."
+    },
+    "plume": {
+      "name": "Tai Họa Của Sét",
+      "desc": "Lông mang theo lôi điện, là báo ứng tàn khốc của Lôi Ma Điểu. Vẫn phát ra sấm sét phẫn nộ của nó."
+    },
+    "sands": {
+      "name": "Thời Gian Lôi Đình",
+      "desc": "Đồng hồ cát được bộ tộc thờ cúng lôi điểu dùng để tính thời gian Lôi Chủ giáng lâm. Đã bị dừng lại vĩnh viễn theo sự suy tàn của bộ tộc."
+    },
+    "goblet": {
+      "name": "Sấm Sét Hung Ác",
+      "desc": "Ly nghi thức được đổ đầy bởi máu của người vô tội, cầu nguyện sấm sét trở về. Cuối cùng chỉ tràn đầy sự oán hận như sấm thịnh nộ."
+    },
+    "circlet": {
+      "name": "Vương Miện Gọi Sét",
+      "desc": "Nón của phù thủy cổ đại thờ bái Lôi Ma Điểu, nhưng tín ngưỡng trung thành cũng không thể làm ma thú cảm động."
+    }
+  }
+}

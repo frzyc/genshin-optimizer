@@ -1,0 +1,12 @@
+{
+  "name": "Hắc Nham Trường Kiếm",
+  "description": "Thanh kiếm được rèn từ hắc nham. Thân kiếm đen tuyền thoắt ẩn thoắt hiện màu máu.",
+  "passiveName": "Thừa Thắng Xông Lên",
+  "passiveDescription": {
+    "0": "Sau khi đánh bại kẻ địch, tấn công tăng <cryo>12%</cryo>, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+    "1": "Sau khi đánh bại kẻ địch, tấn công tăng <cryo>15%</cryo>, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+    "2": "Sau khi đánh bại kẻ địch, tấn công tăng <cryo>18%</cryo>, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+    "3": "Sau khi đánh bại kẻ địch, tấn công tăng <cryo>21%</cryo>, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+    "4": "Sau khi đánh bại kẻ địch, tấn công tăng <cryo>24%</cryo>, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+  }
+}

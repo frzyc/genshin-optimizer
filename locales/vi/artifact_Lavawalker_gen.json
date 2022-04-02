@@ -1,0 +1,29 @@
+{
+  "setName": "Hiền Nhân Bốc Lửa",
+  "setEffects": {
+    "2": "Kháng nguyên tố Hỏa tăng 40%.",
+    "4": "Tăng 35% sát thương tạo thành cho kẻ địch bị ảnh hưởng nguyên tố Hỏa."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Sự Từ Chối Của Người Vượt Lửa",
+      "desc": "Đóa hoa nở rộ trong ngọn lửa mãnh liệt, truyền thuyết kể rằng trí giả cổ đại đã đeo nó đi vào biển lửa."
+    },
+    "plume": {
+      "name": "Sự Giải Thoát Của Người Vượt Lửa",
+      "desc": "Lông đuôi của loài chim lửa, dường như có thể nghe được tiếng đập cánh trong biển lửa."
+    },
+    "sands": {
+      "name": "Sự Dằn Vặt Của Người Vượt Lửa",
+      "desc": "Đồng hồ cát đỏ rực. Cát không ngừng chảy, giống như thời gian không để lại dấu vết."
+    },
+    "goblet": {
+      "name": "Sự Tỉnh Ngộ Của Người Vượt Lửa",
+      "desc": "Chiếc ly có thể chịu được lửa lớn trong truyền thuyết, hiện nay chỉ còn sót lại chút hơi ấm."
+    },
+    "circlet": {
+      "name": "Trí Tuệ Người Vượt Lửa",
+      "desc": "Vương miện của người trí giả vượt qua lửa, phản chiếu hình ảnh cổ xưa đã từng chống chọi giữa sóng gió."
+    }
+  }
+}

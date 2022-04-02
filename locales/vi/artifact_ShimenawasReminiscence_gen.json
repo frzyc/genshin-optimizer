@@ -1,0 +1,29 @@
+{
+  "setName": "Dòng Hồi Ức Bất Tận",
+  "setEffects": {
+    "2": "Tấn công tăng 18%",
+    "4": "Khi thi triển Kỹ Năng Nguyên Tố, nhân vật có Năng Lượng Nguyên Tố cao hơn hoặc bằng 15 điểm thì sẽ mất đi 15 điểm để tăng 50% sát thương tấn công thường, trọng kích và tấn công khi đáp trong 10 giây tiếp theo, trong thời gian duy trì, hiệu quả này sẽ không kích hoạt lần nữa."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hoa Vương Vấn",
+      "desc": "Một chiếc bùa hộ mệnh tinh xảo được làm từ Mizuhiki (loại giấy làm từ bột gạo), nghe nói rằng nó chứa đựng sức mạnh có thể biến điều ước thành hiện thực."
+    },
+    "plume": {
+      "name": "Mũi Tên Tưởng Nhớ",
+      "desc": "Mũi tên ma thuật kiểu dáng xưa cũ dường như đã được ai đó giữ gìn cẩn thận."
+    },
+    "sands": {
+      "name": "Khoảnh Khắc Sương Sớm",
+      "desc": "Chiếc đồng hồ bỏ túi bằng đồng được làm từ Mizuhiki và những chiếc chuông nhỏ, thời gian luôn dừng lại vào buổi bình minh của một ngày thu nào đó."
+    },
+    "goblet": {
+      "name": "Trái Tim Cầu Nguyện",
+      "desc": "Ống quẻ dùng để xem bói, cơ quan ở phần đáy có thể giúp người ta dễ dàng rút đi loại quẻ không muốn nhận."
+    },
+    "circlet": {
+      "name": "Mặt Nạ Vô Thường",
+      "desc": "Mặt nạ hồ ly tế lễ được giữ gìn cẩn thận, luôn mang một nụ cười bí ẩn."
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "name": "Amber",
+  "title": "Flugmeister",
+  "description": "Ein Mädchen voller Lebenskraft und gleichzeitig die beste, wenn auch einzig verbliebene, Kundschafterin des Ordo Favonius.",
+  "constellationName": "Lepus",
+  "auto": {
+    "name": "Scharfschütze",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Pfeilschüsse hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
+        "2": "Konzentriert die Flammen während des Zielens an der Pfeilspitze, die voll aufgeladen <pyro>Pyro-Schaden</pyro> verursacht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "Gezielte Schüsse",
+      "6": "Voll aufgeladene gezielte Schüsse",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sprengpuppe",
+    "description": {
+      "0": "Ruft den zuverlässigen Grafen von Hoppel aufs Feld.",
+      "1": "<br/>",
+      "2": "<strong>Graf von Hoppel</strong>",
+      "3": [
+        " Verspottet Gegner in der Umgebung fortlaufend und zieht ihre Angriffe auf sich.",
+        " Beständigkeit hängt von Ambers max. LP ab.",
+        " Explodiert bei Zerstörung oder Ablauf der Dauer und verursacht <pyro>Pyro-Flächenschaden</pyro>."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Gedrückt halten</strong>",
+      "6": "Anpassung der Wurfrichtung.",
+      "7": "Wurfweite erhöht sich mit der Dauer des Gedrückthaltens.",
+      "8": "<br/>",
+      "9": "<i>Graf von Hoppel ist der Abkömmling eines alten Adelsgeschlechts. Nach dem Tod des Grafen von Hoppel DCCCXCIII. hat Amber aber aufgehört zu zählen.</i>"
+    },
+    "skillParams": {
+      "0": "Erhaltene LP",
+      "1": "Explosions-SCH",
+      "2": "Abklingzeit",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Pfeilregen",
+    "description": {
+      "0": "Lässt einen Feuerpfeilregen fallen, der fortlaufend <pyro>Pyro-Flächenschaden</pyro> verursacht.",
+      "1": "<br/>",
+      "2": "<i>Amber ist voller feuriger Leidenschaft bei allem, was sie tut.</i>"
+    },
+    "skillParams": {
+      "0": "Einzel-SCH des Pfeilregens",
+      "1": "Gesamt-SCH des Pfeilregens",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Jeder Schuss ein Treffer!",
+    "description": {
+      "0": "Erhöht die KT von <strong>Pfeilregen</strong> um 10 % und vergrößert den Wirkungsbereich um 30 %."
+    }
+  },
+  "passive2": {
+    "name": "Arbeit unter Druck",
+    "description": {
+      "0": "Erhöht den ANG beim Treffen von Schwachstellen mit gezielten Schüssen 10 s lang um 15 %."
+    }
+  },
+  "passive3": {
+    "name": "Flugmeister",
+    "description": {
+      "0": "Verringert die beim Gleiten verbrauchte Ausdauer aller eigenen Truppenmitglieder um 20 %.",
+      "1": "Nicht mit passiven Talenten mit völlig gleichen Effekten stapelbar."
+    }
+  },
+  "constellation1": {
+    "name": "Zwei auf einen Streich!",
+    "description": {
+      "0": "Schießt nach dem <strong>Zielen</strong> 2 Pfeile ab und verursacht mit dem zweiten Schaden in Höhe von 20 % des ersten Pfeils."
+    }
+  },
+  "constellation2": {
+    "name": "Manuelle Explosion",
+    "description": {
+      "0": "Graf von Hoppel, vollständig überarbeitet! Lässt Graf von Hoppel bei einem Treffer auf die Füße mit einem voll aufgeladenen gezielten Schuss explodieren.",
+      "1": "Verursacht bei manueller Explosion auf diese Weise 200 % zusätzlichen Schaden."
+    }
+  },
+  "constellation3": {
+    "name": "Das wird brennen!",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Pfeilregen</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Nicht einfach nur eine Puppe",
+    "description": {
+      "0": "Verkürzt die Abklingzeit von <strong>Sprengpuppe</strong> um 20 % und ermöglicht 1 weitere Anwendung."
+    }
+  },
+  "constellation5": {
+    "name": "Häschen hüpf!",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Sprengpuppe</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Wildes Feuer",
+    "description": {
+      "0": "Erhöht die Bewegungs-GSW aller Truppenmitglieder bei Anwendung von <strong>Pfeilregen</strong> 10 s lang um 15 % und den ANG um 15 %."
+    }
+  }
+}

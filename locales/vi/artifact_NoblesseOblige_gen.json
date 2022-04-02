@@ -1,0 +1,29 @@
+{
+  "setName": "Nghi Thức Tông Thất Cổ",
+  "setEffects": {
+    "2": "Sát thương Kỹ Năng Nộ tạo thành tăng 20%.",
+    "4": "Sau khi thi triển kỹ năng nộ, tấn công cả đội tăng 20%, kéo dài 12s, hiệu quả này không cộng dồn."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hoa Tông Thất",
+      "desc": "Hoa được làm từ tơ lụa, được dùng trong các dịp lễ hội. Bây giờ vẫn diễm lệ như trước."
+    },
+    "plume": {
+      "name": "Lông Vũ Tông Thất",
+      "desc": "Lông vũ trang sức được giới quý tộc Mondstadt cũ cài lên vành mũ khi săn bắn. Qua năm tháng vẫn ngạo nghễ thẳng đứng."
+    },
+    "sands": {
+      "name": "Đồng Hồ Tông Thất",
+      "desc": "Đồng hồ từng thuộc về quý tộc Mondstadt cũ, được truyền đến ngày nay, là minh chứng của năm tháng."
+    },
+    "goblet": {
+      "name": "Bình Bạc Tông Thất",
+      "desc": "Bình trang sức từng thuộc về giới quý tộc Mondstadt cũ, bên trong trống rỗng như tiếng gió bi ai."
+    },
+    "circlet": {
+      "name": "Mặt Nạ Tông Thất",
+      "desc": "Mặt nạ vũ hội từng thuộc về giới quý tộc Mondstadt cũ, vẫn còn vương vấn chút xa hoa ngày cũ."
+    }
+  }
+}

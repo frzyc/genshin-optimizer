@@ -1,0 +1,29 @@
+{
+  "setName": "Donzela Amada",
+  "setEffects": {
+    "2": "Efeito de Cura do Personagem aumenta em 15%",
+    "4": "Ao usar uma Habilidade Elemental ou Explosão, aumenta a cura recebida por todos os membros da equipe em 20% por 10s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Amor Distante da Donzela",
+      "desc": "Flores eternamente delicadas, mesmo depois de muito tempo, ainda estão perfumadas sem murchar."
+    },
+    "plume": {
+      "name": "Lembranças da Donzela",
+      "desc": "Penas destinadas aos pensamentos de alguém, são como aves migratórias que se afastam com o vento."
+    },
+    "sands": {
+      "name": "Juventude Passageira da Donzela",
+      "desc": "O tempo não espera por ninguém, até mesmo a beleza de uma donzela irá embora um dia."
+    },
+    "goblet": {
+      "name": "Passatempo da Donzela",
+      "desc": "Não é considerado uma bebída alcoólica forte, mas sim chá preto. É mais doce do que amargo."
+    },
+    "circlet": {
+      "name": "Beleza Desvanecida da Donzela",
+      "desc": "Chapéus femininos bem cuidados, até as rugas nos cantos dos olhos podem ser perfeitamente cobertas."
+    }
+  }
+}

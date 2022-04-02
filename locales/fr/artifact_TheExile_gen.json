@@ -1,0 +1,29 @@
+{
+  "setName": "Exilé",
+  "setEffects": {
+    "2": "Augmente la recharge d'énergie de 20 %.",
+    "4": "Le déchaînement élémentaire restaure 2 pts d'énergie élémentaire à tous les personnages de l'équipe (à l'exception du porteur) toutes les 2 s pendant 6 s. Cet effet est non cumulable."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fleur de l'Exilé",
+      "desc": "Une fleur mate portée sur la poitrine. Son ancien propriétaire insistait pour la porter pendant l'exil ; elle doit avoir une signification particulière."
+    },
+    "plume": {
+      "name": "Plume de l'Exilé",
+      "desc": "Une plume qui n'a pas été conçue pour être un accessoire. Elle s'est juste accrochée aux vêtements de son nouveau propriétaire."
+    },
+    "sands": {
+      "name": "Montre de poche de l'Exilé",
+      "desc": "Son cadran en cristal a été brisé et ses aiguilles ont disparu. Même dans cet état, son propriétaire l'a gardée jusqu'à la fin."
+    },
+    "goblet": {
+      "name": "Coupe de l'Exilé",
+      "desc": "Un calice en métal lourd dans lequel des pierres précieuses étaient incrustées. Celles-ci ont été retirées."
+    },
+    "circlet": {
+      "name": "Diadème de l'Exilé",
+      "desc": "Un diadème prestigieux dont l'insigne a été rayé, son propriétaire étant tombé en disgrâce."
+    }
+  }
+}

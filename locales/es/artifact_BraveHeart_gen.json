@@ -1,0 +1,29 @@
+{
+  "setName": "Corazón del Guerrero",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "Aumenta el daño en un 30% contra enemigos con más del 50% de Vida."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Medalla del Guerrero",
+      "desc": "Broche muy sencillo hecho con una flor. Es un recuerdo de la primera gran aventura del Guerrero."
+    },
+    "plume": {
+      "name": "Esperanza del Guerrero",
+      "desc": "La pluma brillante de la cola de un pájaro cantor. Puede inspirar un poco de valor."
+    },
+    "sands": {
+      "name": "Determinación del Guerrero",
+      "desc": "Un antiguo reloj de arena en miniatura sin ningún uso práctico. Es tan incomprensible como el tiempo en sí mismo."
+    },
+    "goblet": {
+      "name": "Gran Despedida del Guerrero",
+      "desc": "Un recipiente tosco de madera. Su interior, ahora vacío, estaba repleto de recuerdos."
+    },
+    "circlet": {
+      "name": "Corona del Guerrero",
+      "desc": "Una corona rudimentaria hecha con plantas. Para algunos, es tan preciada como la corona de un rey."
+    }
+  }
+}

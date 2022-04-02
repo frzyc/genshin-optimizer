@@ -1,0 +1,21 @@
+{
+  "title": "設定",
+  "languageCard": {
+    "selectLanguage": "言語",
+    "languageFormat": "言語: {{language}}"
+  },
+  "downloadCard": {
+    "databaseDownload": "データーベースをダウンロード",
+    "button": {
+      "download": "ダウンロード",
+      "copy": "クリップボードにコピーする",
+      "delete": "データベースを消す"
+    }
+  },
+  "uploadCard": {
+    "title": "データベースをアップロード",
+    "replaceDatabase": "データベースを入れ替え",
+    "hint": "こちらでJSONファイルをアップロードするか...",
+    "hintPaste": "...下記欄に張り付けてください。"
+  }
+}

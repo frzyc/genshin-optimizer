@@ -1,0 +1,29 @@
+{
+  "setName": "A Bruxa das Chamas Carmesim",
+  "setEffects": {
+    "2": "Bônus de Dano Pyro +15%",
+    "4": "Aumenta o dano causado por Sobrecarga e Queimadura em 40%, aumenta o dano causado pela Vaporização e Fusão em 15%. Ao usar a Habilidade Elemental aumenta os efeitos do Conjunto de 2 Peças em 50% por 10s. Pode acumular até 3x."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor de Labareda da Bruxa",
+      "desc": "Uma flor que foi tocada por uma bruxa que desejava queimar o mundo. Aqueles que tentam a tocar são recebidos calorosamente pela língua das chamas."
+    },
+    "plume": {
+      "name": "Pena Ardente da Bruxa",
+      "desc": "Uma pena de pássaro tocada por uma bruxa que desejava queimar o mundo. Com a sua constante queima, exala temperaturas ardentes."
+    },
+    "sands": {
+      "name": "Fim dos Tempos da Bruxa",
+      "desc": "Um relógio que foi usado por uma bruxa que desejava queimar o mundo, cujos momentos de dedicação às chamas ainda flui."
+    },
+    "goblet": {
+      "name": "Chamas do Coração da Bruxa",
+      "desc": "Um jarro de barro em chamas deixado por uma bruxa que desejava queimar o mundo. As chamas deste jarro não se apagam nunca, assim como o desejo da bruxa."
+    },
+    "circlet": {
+      "name": "Chapéu Abrasador da Bruxa",
+      "desc": "Um chapéu que foi usado por uma bruxa que desejava queimar o mundo. Suas abas grandes podem bloquear o seu campo de visão."
+    }
+  }
+}
