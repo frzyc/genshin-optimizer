@@ -27,6 +27,9 @@ const inferredHitEle = stringPrio(
   lookup(input.weaponType, {
     sword: meleeHitEle, claymore: meleeHitEle, polearm: meleeHitEle,
     catalyst: input.charEle,
+    bow: lookup(input.hit.move, {
+      "skill": input.charEle, "burst": input.charEle,
+    }, undefined)
   }, undefined),
   "physical"
 )
