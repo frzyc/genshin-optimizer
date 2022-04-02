@@ -39,7 +39,7 @@ export default function ArtifactCardNano({ artifactId, mainStatAssumptionLevel =
       <Grid item sx={{ textAlign: "right", flexGrow: 1, pr: 1, pt: 1 }}>
         <Box display="flex" justifyContent="flex-end" gap={1}>
           <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
-          <Chip size="small" label={<LocationName location={location} />} color={"info"} />
+          <Chip size="small" label={<LocationIcon location={location} />} color={"info"} />
         </Box>
 
         <Typography variant="h6" sx={{ display: "flex", gap: 1, justifyContent: "flex-end" }}>
@@ -64,7 +64,7 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
     <Typography sx={{ flexGrow: 1 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{StatIcon[stat.key]} {`${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}</Typography>
   </Box>)
 }
-function LocationName({ location }) {
+function LocationIcon({ location }) {
   const characterSheet = usePromise(CharacterSheet.get(location ?? ""), [location])
   return characterSheet ? characterSheet.icon : <BusinessCenter />
 }

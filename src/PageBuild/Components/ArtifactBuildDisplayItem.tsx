@@ -1,5 +1,6 @@
-import { CardActionArea, CardContent, Grid, Skeleton, Typography } from '@mui/material';
-import React, { Suspense, useContext } from 'react';
+import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import React, { Suspense, useCallback, useContext } from 'react';
 import ArtifactCardNano from '../../Components/Artifact/ArtifactCardNano';
 import { artifactSlotIcon } from '../../Components/Artifact/SlotNameWIthIcon';
 import CardLight from '../../Components/Card/CardLight';
@@ -7,6 +8,7 @@ import StatDisplayComponent from '../../Components/Character/StatDisplayComponen
 import SqBadge from '../../Components/SqBadge';
 import WeaponCardNano from '../../Components/Weapon/WeaponCardNano';
 import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
+import { DatabaseContext } from '../../Database/Database';
 import { DataContext } from '../../DataContext';
 import { uiInput as input } from '../../Formula';
 import usePromise from '../../ReactHooks/usePromise';
@@ -14,15 +16,20 @@ import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
 
 type ArtifactBuildDisplayItemProps = {
   index: number,
-  onClick: () => void,
   compareBuild: boolean,
   disabled?: boolean
 }
 //for displaying each artifact build
-export default function ArtifactBuildDisplayItem({ index, onClick, compareBuild, disabled }: ArtifactBuildDisplayItemProps) {
+export default function ArtifactBuildDisplayItem({ index, compareBuild, disabled }: ArtifactBuildDisplayItemProps) {
+  const { database } = useContext(DatabaseContext)
   const dataContext = useContext(DataContext)
   const { character, data, oldData } = dataContext
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const equipArts = useCallback(() => {
+    if (!window.confirm("Do you want to equip this artifact build to this character?")) return
+    const newBuild = Object.fromEntries(allSlotKeys.map(s => [s, data.get(input.art[s].id).value])) as Record<SlotKey, string>
+    database.equipArtifacts(character.key, newBuild)
+  }, [character, data, database])
   if (!character || !artifactSheets || !oldData) return null
   const currentlyEquipped = allSlotKeys.every(slotKey => data.get(input.art[slotKey].id).value === oldData.get(input.art[slotKey].id).value)
   const statProviderContext = { ...dataContext }
@@ -34,34 +41,34 @@ export default function ArtifactBuildDisplayItem({ index, onClick, compareBuild,
     if (setToSlots[set]) setToSlots[set]!.push(slotKey)
     else setToSlots[set] = [slotKey]
   })
+
   return <CardLight>
     <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
-      <CardActionArea onClick={onClick} disabled={disabled}>
-        <CardContent>
-          <Grid container spacing={1} sx={{ pb: 1 }}>
-            <Grid item>
-              <Typography variant="h6"><SqBadge color="info"><strong>#{index + 1}{currentlyEquipped ? " (Equipped)" : ""}</strong></SqBadge></Typography>
-            </Grid>
-            {(Object.entries(setToSlots) as [ArtifactSetKey, SlotKey[]][]).sort(([k1, slotarr1], [k2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
-              <Grid item key={key}><Typography variant="h6"><SqBadge color={currentlyEquipped ? "success" : "primary"} >
-                {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {artifactSheets?.[key].name ?? ""}
-              </SqBadge></Typography></Grid>
-            )}
+      <CardContent>
+        <Box display="flex" gap={1} sx={{ pb: 1 }}>
+          <Typography variant="h6"><SqBadge color="info"><strong>#{index + 1}{currentlyEquipped ? " (Equipped)" : ""}</strong></SqBadge></Typography>
+          {(Object.entries(setToSlots) as [ArtifactSetKey, SlotKey[]][]).sort(([k1, slotarr1], [k2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
+            <Box key={key}><Typography variant="h6"><SqBadge color={currentlyEquipped ? "success" : "primary"} >
+              {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {artifactSheets?.[key].name ?? ""}
+            </SqBadge></Typography></Box>
+          )}
+          <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}>
+            <Button size='small' color="success" onClick={equipArts} disabled={disabled || currentlyEquipped}>Equip Artifacts</Button>
+          </Box>
+        </Box>
+        <Grid container spacing={1} sx={{ pb: 1 }}>
+          {allSlotKeys.map(slotKey =>
+            <Grid item xs={6} sm={4} md={3} lg={2} >
+              <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} />
+            </Grid>)}
+          <Grid item xs={6} sm={4} md={3} lg={2}>
+            <WeaponCardNano weaponId={character.equippedWeapon} />
           </Grid>
-          <Grid container spacing={1} sx={{ pb: 1 }}>
-            {allSlotKeys.map(slotKey =>
-              <Grid item xs={6} sm={4} md={3} lg={2} >
-                <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} />
-              </Grid>)}
-            <Grid item xs={6} sm={4} md={3} lg={2}>
-              <WeaponCardNano weaponId={character.equippedWeapon} />
-            </Grid>
-          </Grid>
-          <DataContext.Provider value={statProviderContext}>
-            <StatDisplayComponent />
-          </DataContext.Provider>
-        </CardContent>
-      </CardActionArea>
+        </Grid>
+        <DataContext.Provider value={statProviderContext}>
+          <StatDisplayComponent />
+        </DataContext.Provider>
+      </CardContent>
     </Suspense>
   </CardLight>
 }
