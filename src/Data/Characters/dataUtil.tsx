@@ -19,13 +19,12 @@ export const infusionNode = stringPrio(
   input.infusion.nonOverridableSelf,
   input.infusion.team,
   input.infusion.overridableSelf)
-const meleeHitEle = lookup(input.hit.move, {
-  "normal": infusionNode, "charged": infusionNode, "plunging": infusionNode,
-  "skill": input.charEle, "burst": input.charEle,
-}, undefined)
 const inferredHitEle = stringPrio(
+  lookup(input.hit.move, {
+    "skill": input.charEle, "burst": input.charEle,
+  }, undefined),
   lookup(input.weaponType, {
-    sword: meleeHitEle, claymore: meleeHitEle, polearm: meleeHitEle,
+    sword: infusionNode, claymore: infusionNode, polearm: infusionNode,
     catalyst: input.charEle,
   }, undefined),
   "physical"
