@@ -19,13 +19,12 @@ const infusion = stringPrio(
   input.infusion.nonOverridableSelf,
   input.infusion.team,
   input.infusion.overridableSelf)
-const meleeHitEle = lookup(input.hit.move, {
-  "normal": infusion, "charged": infusion, "plunging": infusion,
-  "skill": input.charEle, "burst": input.charEle,
-}, undefined)
 const inferredHitEle = stringPrio(
+  lookup(input.hit.move, {
+    "skill": input.charEle, "burst": input.charEle,
+  }, undefined),
   lookup(input.weaponType, {
-    sword: meleeHitEle, claymore: meleeHitEle, polearm: meleeHitEle,
+    sword: infusion, claymore: infusion, polearm: infusion,
     catalyst: input.charEle,
   }, undefined),
   "physical"
