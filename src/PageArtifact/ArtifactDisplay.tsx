@@ -229,7 +229,7 @@ function EfficiencyFilter({ selectedKeys, onChange }) {
         {keys1.map(key => <ToggleButton size="small" key={key} value={key}>
           <Box display="flex" gap={1} alignItems="center">
             {StatIcon[key]}
-            {KeyMap.get(key)}
+            {KeyMap.getArtStr(key)}
           </Box>
         </ToggleButton>)}
       </SolidToggleButtonGroup>
@@ -239,7 +239,7 @@ function EfficiencyFilter({ selectedKeys, onChange }) {
         {keys2.map(key => <ToggleButton size="small" key={key} value={key}>
           <Box display="flex" gap={1} alignItems="center">
             {StatIcon[key]}
-            {KeyMap.get(key)}
+            {KeyMap.getArtStr(key)}
           </Box>
         </ToggleButton>)}
       </SolidToggleButtonGroup>

@@ -263,16 +263,17 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { 
 
             {/* main stat */}
             <Box component="div" display="flex">
-              <DropdownButton startIcon={artifact?.mainStatKey ? StatIcon[artifact.mainStatKey] : undefined} title={<b>{artifact ? KeyMap.get(artifact.mainStatKey) : t`mainStat`}</b>} disabled={!sheet} color={artifact ? "success" : "primary"} >
+              <DropdownButton startIcon={artifact?.mainStatKey ? StatIcon[artifact.mainStatKey] : undefined}
+                title={<b>{artifact ? KeyMap.getArtStr(artifact.mainStatKey) : t`mainStat`}</b>} disabled={!sheet} color={artifact ? "success" : "primary"} >
                 {Artifact.slotMainStats(slotKey).map(mainStatK =>
                   <MenuItem key={mainStatK} selected={artifact?.mainStatKey === mainStatK} disabled={artifact?.mainStatKey === mainStatK} onClick={() => update({ mainStatKey: mainStatK })} >
                     <ListItemIcon>{StatIcon[mainStatK]}</ListItemIcon>
-                    <ListItemText>{KeyMap.get(mainStatK)}</ListItemText>
+                    <ListItemText>{KeyMap.getArtStr(mainStatK)}</ListItemText>
                   </MenuItem>)}
               </DropdownButton>
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                 <Typography color="text.secondary">
-                  {artifact ? `${cacheValueString(Artifact.mainStatValue(artifact.mainStatKey, rarity, level), KeyMap.unit(artifact.mainStatKey))}${KeyMap.unitStr(artifact.mainStatKey)}` : t`mainStat`}
+                  {artifact ? `${cacheValueString(Artifact.mainStatValue(artifact.mainStatKey, rarity, level), KeyMap.unit(artifact.mainStatKey))}${KeyMap.unit(artifact.mainStatKey)}` : t`mainStat`}
                 </Typography>
               </CardLight>
             </Box>

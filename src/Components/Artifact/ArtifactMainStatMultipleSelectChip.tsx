@@ -42,7 +42,7 @@ export default function ArtifactMainStatMultipleSelectChip({ mainStatKeys, setMa
           renderValue={(selected) => (
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
               {selected.map((value) =>
-                <Chip key={value} icon={StatIcon[value]} label={KeyMap.get(value)} />
+                <Chip key={value} icon={StatIcon[value]} label={KeyMap.getArtStr(value)} />
               )}
             </Box>
           )}
@@ -50,7 +50,7 @@ export default function ArtifactMainStatMultipleSelectChip({ mainStatKeys, setMa
           {allMainStatKeys.map(statKey => <MenuItem key={statKey} value={statKey}>
             <ListItemIcon>{StatIcon[statKey]}</ListItemIcon>
             <ListItemText primaryTypographyProps={{ style: getStyles(statKey, mainStatKeys, theme) }}>
-              {KeyMap.get(statKey)}
+              {KeyMap.getArtStr(statKey)}
             </ListItemText>
           </MenuItem>)}
         </Select>

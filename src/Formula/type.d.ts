@@ -1,5 +1,5 @@
 import type { KeyMapPrefix } from "../KeyMap"
-import type { AmplifyingReactionsKey, TransformativeReactionsKey } from "../StatConstants"
+import type { AmplifyingReactionsKey, TransformativeReactionsKey } from "../KeyMap/StatConstants"
 import type { ArtifactSetKey, CharacterKey, ElementKeyWithPhy, WeaponKey } from "../Types/consts"
 import type { input, uiInput } from "./index"
 

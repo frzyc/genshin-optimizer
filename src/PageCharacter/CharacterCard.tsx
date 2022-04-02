@@ -180,7 +180,7 @@ function Weapon({ weaponId }: { weaponId: string }) {
 }
 function WeaponStat({ node }: { node: NodeDisplay }) {
   if (!node.key) return null
-  const val = valueString(node.value, node.unit, node.unit === "flat" ? 0 : undefined)
+  const val = valueString(node.value, node.unit, !node.unit ? 0 : undefined)
   return <SqBadge color="secondary">{StatIcon[node.key]} {val}</SqBadge>
 }
 function ArtifactDisplay() {
