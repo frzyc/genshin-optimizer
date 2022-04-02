@@ -1,14 +1,16 @@
 import { CardActionArea, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import React, { Suspense, useContext } from 'react';
-import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
+import ArtifactCardNano from '../../Components/Artifact/ArtifactCardNano';
+import { artifactSlotIcon } from '../../Components/Artifact/SlotNameWIthIcon';
 import CardLight from '../../Components/Card/CardLight';
+import StatDisplayComponent from '../../Components/Character/StatDisplayComponent';
 import SqBadge from '../../Components/SqBadge';
+import WeaponCardNano from '../../Components/Weapon/WeaponCardNano';
+import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
 import { DataContext } from '../../DataContext';
 import { uiInput as input } from '../../Formula';
 import usePromise from '../../ReactHooks/usePromise';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
-import { artifactSlotIcon } from '../../Components/Artifact/SlotNameWIthIcon';
-import StatDisplayComponent from '../../Components/Character/StatDisplayComponent';
 
 type ArtifactBuildDisplayItemProps = {
   index: number,
@@ -45,6 +47,15 @@ export default function ArtifactBuildDisplayItem({ index, onClick, compareBuild,
                 {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {artifactSheets?.[key].name ?? ""}
               </SqBadge></Typography></Grid>
             )}
+          </Grid>
+          <Grid container spacing={1} sx={{ pb: 1 }}>
+            {allSlotKeys.map(slotKey =>
+              <Grid item xs={6} sm={4} md={3} lg={2} >
+                <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} />
+              </Grid>)}
+            <Grid item xs={6} sm={4} md={3} lg={2}>
+              <WeaponCardNano weaponId={character.equippedWeapon} />
+            </Grid>
           </Grid>
           <DataContext.Provider value={statProviderContext}>
             <StatDisplayComponent />
