@@ -22,12 +22,14 @@ const infusion = stringPrio(
 const meleeHitEle = lookup(input.hit.move, {
   "normal": infusion, "charged": infusion, "plunging": infusion,
   "skill": input.charEle, "burst": input.charEle,
-}, "physical")
-const inferredHitEle = lookup(input.weaponType, {
-  sword: meleeHitEle, claymore: meleeHitEle, polearm: meleeHitEle,
-  catalyst: input.charEle,
-  bow: constant("physical"),
-}, "physical")
+}, undefined)
+const inferredHitEle = stringPrio(
+  lookup(input.weaponType, {
+    sword: meleeHitEle, claymore: meleeHitEle, polearm: meleeHitEle,
+    catalyst: input.charEle,
+  }, undefined),
+  "physical"
+)
 
 function getTalentType(move: "normal" | "charged" | "plunging" | "skill" | "burst") {
   switch (move) {
