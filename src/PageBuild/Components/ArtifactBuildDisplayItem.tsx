@@ -52,6 +52,14 @@ export default function ArtifactBuildDisplayItem({ index, compareBuild, disabled
     const newBuild = Object.fromEntries(allSlotKeys.map(s => [s, data.get(input.art[s].id).value])) as Record<SlotKey, string>
     database.equipArtifacts(character.key, newBuild)
   }, [character, data, database])
+  const excludeArts = useCallback(() => {
+    if (!window.confirm("Do you want to exclude these artifacts from future builds?")) return
+    allSlotKeys.map(s => {
+      let id = data.get(input.art[s].id).value
+      typeof id === "string" && database.updateArt({ exclude: true }, id)
+    })
+  }, [data, database])
+
   if (!character || !artifactSheets || !oldData) return null
   const currentlyEquipped = allSlotKeys.every(slotKey => data.get(input.art[slotKey].id).value === oldData.get(input.art[slotKey].id).value)
   const statProviderContext = { ...dataContext }
@@ -86,6 +94,7 @@ export default function ArtifactBuildDisplayItem({ index, compareBuild, disabled
           </Box>
           <Button size='small' color="info" onClick={openModal} disabled={disabled || currentlyEquipped}>Build Details</Button>
           <Button size='small' color="success" onClick={equipArts} disabled={disabled || currentlyEquipped}>Equip Artifacts</Button>
+          <Button size='small' color="success" onClick={excludeArts} disabled={disabled}>Exclude Artifacts</Button>
         </Box>
         <Grid container spacing={1} sx={{ pb: 1 }}>
           {allSlotKeys.map(slotKey =>

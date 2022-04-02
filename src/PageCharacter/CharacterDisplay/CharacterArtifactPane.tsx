@@ -40,6 +40,14 @@ function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
     database.equipArtifacts(character.key, newBuild)
   }, [character, data, database])
 
+  const excludeArts = useCallback(() => {
+    if (!window.confirm("Do you want to exclude these artifacts from future builds?")) return
+    allSlotKeys.map(s => {
+      let id = data.get(input.art[s].id).value
+      typeof id === "string" && database.updateArt({ exclude: true }, id)
+    })
+  }, [data, database])
+
   const unequipArts = useCallback(() => {
     if (!character) return
     if (!window.confirm("Do you want to move all currently equipped artifacts to inventory?")) return
@@ -57,6 +65,7 @@ function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
         <Grid container spacing={1}>
           <Grid item>
             {newBuild ? <Button onClick={equipArts} className="mr-2">Equip artifacts</Button> : <Button color="error" onClick={unequipArts}>Unequip all artifacts</Button>}
+            <Button onClick={excludeArts} sx={{ ml: 1 }}>Exclude all artifacts</Button>
           </Grid>
           <Grid item flexGrow={1}></Grid>
           <Grid item>{!!mainStatAssumptionLevel && <Card sx={{ p: 1, bgcolor: t => t.palette.warning.dark }}><Typography><strong>Assume Main Stats are Level {mainStatAssumptionLevel}</strong></Typography></Card>}</Grid>
