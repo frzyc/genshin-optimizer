@@ -58,7 +58,7 @@ const sheet: IArtifactSheet = {
           name: st("eleSwirled"),
           states: {
             swirl: {
-              name: <ColorText color={eleKey}>{st(`element.${eleKey}`)}</ColorText>,
+              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
               fields: [{
                 node: condSwirlNodes[`${eleKey}_enemyRes_`]
               }, {
