@@ -1,5 +1,6 @@
 import { BusinessCenter } from "@mui/icons-material";
-import { Box, CardMedia, Chip, Grid, Typography } from "@mui/material";
+import { Box, CardActionArea, CardMedia, Chip, Grid, Typography } from "@mui/material";
+import { useCallback } from "react";
 import Artifact from "../../Data/Artifacts/Artifact";
 import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
@@ -10,23 +11,30 @@ import { ICachedSubstat } from "../../Types/artifact";
 import { clamp } from "../../Util/Util";
 import CardDark from "../Card/CardDark";
 import ColorText from "../ColoredText";
+import ConditionalWrapper from "../ConditionalWrapper";
 import StatIcon from "../StatIcon";
 
 type Data = {
   artifactId?: string,
   mainStatAssumptionLevel?: number,
+  onClick?: () => void,
 }
 
-export default function ArtifactCardNano({ artifactId, mainStatAssumptionLevel = 0 }: Data) {
+export default function ArtifactCardNano({ artifactId, mainStatAssumptionLevel = 0, onClick }: Data) {
   const art = useArtifact(artifactId)
   const sheet = usePromise(ArtifactSheet.get(art?.setKey), [art])
+  const actionWrapperFunc = useCallback(
+    children => <CardActionArea onClick={onClick}>{children}</CardActionArea>,
+    [onClick],
+  )
   if (!art) return null
+
 
   const { slotKey, rarity, level, mainStatKey, substats, location } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
   const mainStatUnit = KeyMap.unit(mainStatKey)
   const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
-  return <CardDark>
+  return <CardDark><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >
     <Grid container sx={{ flexWrap: "nowrap" }} className={`grad-${rarity}star`} >
       <Grid item maxWidth="40%" sx={{ mt: -1, mb: -2 }} >
         <CardMedia
@@ -49,11 +57,11 @@ export default function ArtifactCardNano({ artifactId, mainStatAssumptionLevel =
       </Grid>
     </Grid>
     <Grid container sx={{ p: 1, pl: 2 }}>
-      {substats.map((stat: ICachedSubstat) => <Grid item xs={6}>
+      {substats.map((stat: ICachedSubstat, i: number) => <Grid item key={i + stat.key} xs={6}>
         <SubstatDisplay key={stat.key} stat={stat} />
       </Grid>)}
     </Grid>
-  </CardDark >
+  </ConditionalWrapper></CardDark >
 }
 function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
   if (!stat.value) return null
