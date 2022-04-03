@@ -52,7 +52,7 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: 
   const fieldFormulaText = node.formula
   let fieldVal = "" as Displayable
   if (oldValue) {
-    const diff = node.value - oldValue;
+    const diff = node.value - oldValue
     fieldVal = <span>{valueString(oldValue, node.unit)}{diff > 0.01 || diff < -0.01 ? <ColorText color={diff > 0 ? "success" : "error"}> {diff > 0 ? "+" : ""}{valueString(diff, node.unit)}</ColorText> : ""}</span>
   } else fieldVal = valueString(node.value, node.unit)
   const formulaTextOverlay = !!node.formula && <BootstrapTooltip placement="top" title={<Typography>{fieldFormulaText}</Typography>}>
