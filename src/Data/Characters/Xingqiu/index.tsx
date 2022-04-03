@@ -75,7 +75,7 @@ const nodeC4 = greaterEq(input.constellation, 4,
   equal(condBurst, "on", datamine.constellation4.dmg_), { key: `char_${key}:c4dmg_` })
 
 const nodeSkillDmgRed_ = equal(condSkill, "on",
-  sum(subscript(input.total.skillIndex, datamine.skill.dmgRed_, { key: "_" }), min(percent(0.24), prod(percent(0.2), input.total.hydro_dmg_))))
+  sum(subscript(input.total.skillIndex, datamine.skill.dmgRed_, { key: "_" }), min(percent(0.24), prod(percent(0.2), input.premod.hydro_dmg_))))
 
 const nodeA4Heal = customHealNode(greaterEq(input.asc, 1, prod(input.total.hp, percent(0.06))))
 
