@@ -15,7 +15,7 @@ const charCurves = objectMap(_charCurves, value => [0, ...Object.values(value)])
 const commonBasic = objectKeyMap(["hp", "atk", "def", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_"], key => input.total[key])
 commonBasic.critRate_ = input.total.cappedCritRate
 
-const infusion = stringPrio(
+export const infusionNode = stringPrio(
   input.infusion.nonOverridableSelf,
   input.infusion.team,
   input.infusion.overridableSelf)
@@ -24,7 +24,7 @@ const inferredHitEle = stringPrio(
     "skill": input.charEle, "burst": input.charEle,
   }, undefined),
   lookup(input.weaponType, {
-    sword: infusion, claymore: infusion, polearm: infusion,
+    sword: infusionNode, claymore: infusionNode, polearm: infusionNode,
     catalyst: input.charEle,
   }, undefined),
   "physical"
