@@ -143,6 +143,9 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
   teamBuff: {
     premod: {
       pyro_dmg_: activeInAreaC6PyroDmg,
+    },
+    total: {
+      // Not 100% sure if this should be in premod or total
       atk: activeInAreaAtk,
     },
     infusion: {
