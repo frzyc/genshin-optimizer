@@ -21,13 +21,13 @@ type TeamDataBundle = {
   teamBundle: Dict<CharacterKey, CharBundle>
 }
 
-export default function useTeamData(characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0): TeamData | undefined {
+export default function useTeamData(characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[]): TeamData | undefined {
   const { database } = useContext(DatabaseContext)
   const [dbDirty, setDbDirty] = useForceUpdate()
   const [teamDataBundle, setTeamdataBundle] = useState(undefined as TeamDataBundle | undefined)
   useEffect(() => {
-    getTeamData(database, characterKey, mainStatAssumptionLevel).then(r => setTeamdataBundle(r))
-  }, [dbDirty, characterKey, database, mainStatAssumptionLevel])
+    getTeamData(database, characterKey, mainStatAssumptionLevel, overrideArt).then(r => setTeamdataBundle(r))
+  }, [dbDirty, characterKey, database, mainStatAssumptionLevel, overrideArt])
 
   const { team = [], teamData, teamBundle } = teamDataBundle ?? {}
 
