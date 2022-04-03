@@ -113,7 +113,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, undefined, data_ge
     }
   },
   infusion: {
-    overridableSelf: afterRushingIce, // TODO: Check if overridable
+    nonOverridableSelf: afterRushingIce,
   },
 })
 

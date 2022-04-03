@@ -10,9 +10,9 @@ import DropdownButton, { DropdownButtonProps } from "./DropdownMenu/DropdownButt
 import SolidToggleButtonGroup from "./SolidToggleButtonGroup";
 import StatIcon, { uncoloredEleIcons } from "./StatIcon";
 const infusionVals = {
-  "": <span>No External Infusion</span>,
-  "pyro": <span >{uncoloredEleIcons.pyro} Pyro Infusion</span>,
-  "cryo": <span >{uncoloredEleIcons.cryo} Cryo Infusion</span>,
+  "": <span>No Team Melee Infusion</span>,
+  "pyro": <span >{uncoloredEleIcons.pyro} Pyro Team Melee Infusion</span>,
+  "cryo": <span >{uncoloredEleIcons.cryo} Cryo Team Melee Infusion</span>,
 }
 type InfusionAuraDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" | "children">
 export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {
