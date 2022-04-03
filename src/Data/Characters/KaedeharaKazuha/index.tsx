@@ -77,8 +77,7 @@ const condSwirls = Object.fromEntries(absorbableEle.map(e => [e, condReadNode(co
 const asc4 = Object.fromEntries(absorbableEle.map(ele =>
   [`${ele}_dmg_`, greaterEq(input.asc, 4,
     equal("swirl", condSwirls[ele],
-      // TODO: this percent of 0.04% is displayed as 0.0%
-      prod(percent(datamine.passive2.elemas_dmg_), input.premod.eleMas)
+      prod(percent(datamine.passive2.elemas_dmg_, { fixed: 2 }), input.premod.eleMas)
     ))]))
 
 const [condC2Path, condC2] = cond(key, "c2")
