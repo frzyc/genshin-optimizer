@@ -127,9 +127,9 @@ const sheet: ICharacterSheet = {
         text: tr("auto.fields.normal"),
       }, {
         ...sectionTemplate("auto", tr, auto, [{
-          node: infoMut(dmgFormulas.charged.dmg, { key: `char_${key}_gen:auto.skillParams.5` }),
+          node: infoMut(dmgFormulas.charged.dmg, { key: `char_${key}_gen:auto.skillParams.4` }),
         }, {
-          text: tr("auto.skillParams.6"),
+          text: tr("auto.skillParams.5"),
           value: datamine.charged.stamina,
         }]),
         text: tr("auto.fields.charged"),
