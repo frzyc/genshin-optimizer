@@ -1,19 +1,20 @@
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
+import { resonanceData } from "../Data/Resonance";
+import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database";
 import { TeamData } from "../DataContext";
 import { common } from "../Formula";
-import { dataObjForArtifact, dataObjForCharacter, uiDataForTeam, dataObjForWeapon } from "../Formula/api";
+import { dataObjForArtifact, dataObjForCharacter, dataObjForWeapon, uiDataForTeam } from "../Formula/api";
 import { Data } from "../Formula/type";
 import { ICachedArtifact } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { objectMap } from "../Util/Util";
-import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import useForceUpdate from "./useForceUpdate";
-import { resonanceData } from "../Data/Resonance";
+import usePromise from "./usePromise";
 
 type TeamDataBundle = {
   team: CharacterKey[],
@@ -24,10 +25,7 @@ type TeamDataBundle = {
 export default function useTeamData(characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[]): TeamData | undefined {
   const { database } = useContext(DatabaseContext)
   const [dbDirty, setDbDirty] = useForceUpdate()
-  const [teamDataBundle, setTeamdataBundle] = useState(undefined as TeamDataBundle | undefined)
-  useEffect(() => {
-    getTeamData(database, characterKey, mainStatAssumptionLevel, overrideArt).then(r => setTeamdataBundle(r))
-  }, [dbDirty, characterKey, database, mainStatAssumptionLevel, overrideArt])
+  const teamDataBundle = usePromise(getTeamData(database, characterKey, mainStatAssumptionLevel, overrideArt), [dbDirty, characterKey, database, mainStatAssumptionLevel, overrideArt])
 
   const { team = [], teamData, teamBundle } = teamDataBundle ?? {}
 
