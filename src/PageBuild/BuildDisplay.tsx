@@ -2,7 +2,7 @@ import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CheckBox, CheckBoxOutlineBlank, Close } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
-import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
@@ -11,31 +11,32 @@ import ArtifactLevelSlider from '../Components/Artifact/ArtifactLevelSlider';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton';
-import CloseButton from '../Components/CloseButton';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import InfoComponent from '../Components/InfoComponent';
-import ModalWrapper from '../Components/ModalWrapper';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import StatFilterCard from '../Components/StatFilterCard';
+import CharacterSheet from '../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../Database/Database';
-import { DataContext, dataContextObj, TeamData } from '../DataContext';
+import { DataContext, dataContextObj } from '../DataContext';
 import { mergeData, uiDataForTeam } from '../Formula/api';
 import { uiInput as input } from '../Formula/index';
 import { optimize } from '../Formula/optimization';
 import { NumNode } from '../Formula/type';
+import { UIData } from '../Formula/uiData';
 import { initGlobalSettings } from '../GlobalSettings';
 import KeyMap from '../KeyMap';
 import CharacterCard from '../PageCharacter/CharacterCard';
 import useCharacter from '../ReactHooks/useCharacter';
-import useCharacterReducer from '../ReactHooks/useCharacterReducer';
+import useCharacterReducer, { characterReducerAction } from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
-import usePromise from '../ReactHooks/usePromise';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
+import { ICachedArtifact } from '../Types/artifact';
 import { BuildSetting } from '../Types/Build';
+import { ICachedCharacter } from '../Types/character';
 import { ArtifactSetKey, CharacterKey } from '../Types/consts';
-import { objectMap, objPathValue } from '../Util/Util';
+import { objPathValue } from '../Util/Util';
 import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
@@ -54,9 +55,6 @@ import TeamBuffCard from './Components/TeamBuffCard';
 import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
-
-//lazy load the character display
-const CharacterDisplayCard = lazy(() => import('../PageCharacter/CharacterDisplayCard'))
 
 function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
   switch (action.type) {
@@ -110,8 +108,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     // eslint-disable-next-line
   }, [])
 
-  const [modalBuildIndex, setmodalBuildIndex] = useState(-1) // the index of the newBuild that is being displayed in the character modal,
-
   const [generatingBuilds, setgeneratingBuilds] = useState(false)
   const [generationProgress, setgenerationProgress] = useState(0)
   const [generationDuration, setgenerationDuration] = useState(0)//in ms
@@ -126,23 +122,9 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const character = useCharacter(characterKey)
   const buildSettings = character?.buildSettings ?? initialBuildSettings()
   const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSettings
+  const buildsArts = useMemo(() => builds.map(build => build.map(i => database._getArt(i)!)), [builds, database])
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
-
-  const teamDataBuilds = usePromise(Promise.all(builds.map(async (b) => {
-    if (!characterKey) return undefined
-    const result = await getTeamData(database, characterKey, mainStatAssumptionLevel, b.filter(a => a).map(a => database._getArt(a)!))
-    if (!result) return null
-    const { teamData, teamBundle } = result
-
-    const calcData = uiDataForTeam(teamData, characterKey)
-    const data = objectMap(calcData, (obj, ck) => {
-      const { data: _, ...rest } = teamBundle[ck]!
-      return { ...obj, ...rest }
-    })
-    return data
-  })).then(arr => arr.map(a => a)), [teamData, builds, database, characterKey, mainStatAssumptionLevel]) ?? []
-
   const compareData = character?.compareData ?? false
 
   const noCharacter = useMemo(() => !database._getCharKeys().length, [database])
@@ -358,7 +340,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   const characterName = characterSheet?.name ?? "Character Name"
 
-  const closeBuildModal = useCallback(() => setmodalBuildIndex(-1), [setmodalBuildIndex])
   const setPlotBase = useCallback(plotBase => {
     buildSettingsDispatch({ plotBase })
     setchartData(undefined)
@@ -371,7 +352,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     teamData,
     characterDispatch
   }
-  const selectedBuild = teamDataBuilds[modalBuildIndex]
   return <Box display="flex" flexDirection="column" gap={1} sx={{ my: 1 }}>
     <InfoComponent
       pageKey="buildPage"
@@ -381,7 +361,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         "Rainbow builds can sometimes be \"optimal\". Good substat combinations can sometimes surpass set effects.",
         "The more complex the formula, the longer the generation time.",]}
     ><InfoDisplay /></InfoComponent>
-    {characterKey && selectedBuild && <BuildModal teamData={selectedBuild} characterKey={characterKey} onClose={closeBuildModal} />}
     {noCharacter && <Alert severity="error" variant="filled"> Opps! It looks like you haven't added a character to GO yet! You should go to the <Link component={RouterLink} to="/character">Characters</Link> page and add some!</Alert>}
     {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
     {/* Build Generator Editor */}
@@ -533,7 +512,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         <CardContent>
           <Box display="flex" justifyContent="space-between" alignItems="center" >
             <Typography>
-              {teamDataBuilds ? <span>Showing <strong>{teamDataBuilds.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
+              {builds ? <span>Showing <strong>{builds.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
                 : <span>Select a character to generate builds.</span>}
             </Typography>
             <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
@@ -549,21 +528,27 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       </CardDark>
       <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
         {/* Build List */}
-        {teamDataBuilds?.map((teamData, index) => teamData && <DataContext.Provider key={index} value={{ ...dataContext, data: teamData[characterKey].target, teamData, oldData: data }}>
-          <ArtifactBuildDisplayItem index={index} onDetail={() => setmodalBuildIndex(index)} compareBuild={compareData} disabled={!!generatingBuilds} />
-        </DataContext.Provider>
+        {buildsArts?.map((build, index) => character && characterKey && characterSheet && data && <DataContextWrapper key={index + build.join()} characterKey={characterKey} character={character} build={build} characterSheet={characterSheet} oldData={data} mainStatAssumptionLevel={mainStatAssumptionLevel} characterDispatch={characterDispatch} >
+          <ArtifactBuildDisplayItem index={index} compareBuild={compareData} disabled={!!generatingBuilds} />
+        </DataContextWrapper>
         )}
       </Suspense>
     </DataContext.Provider>}
   </Box>
 }
 
-function BuildModal({ teamData, characterKey, onClose }: { teamData: TeamData, characterKey: CharacterKey, onClose: () => void }) {
-  return <ModalWrapper open={!!teamData} onClose={onClose} containerProps={{ maxWidth: "xl" }}>
-    <CharacterDisplayCard
-      characterKey={characterKey}
-      newteamData={teamData}
-      onClose={onClose}
-      footer={<CloseButton large onClick={onClose} />} />
-  </ModalWrapper>
+type Prop = {
+  children: React.ReactNode
+  characterKey: CharacterKey,
+  character: ICachedCharacter,
+  build: ICachedArtifact[],
+  mainStatAssumptionLevel?: number, characterSheet: CharacterSheet, oldData: UIData,
+  characterDispatch: (action: characterReducerAction) => void
+}
+function DataContextWrapper({ children, characterKey, character, build, characterDispatch, mainStatAssumptionLevel = 0, characterSheet, oldData }: Prop) {
+  const teamData = useTeamData(characterKey, mainStatAssumptionLevel, build)
+  if (!teamData) return null
+  return <DataContext.Provider value={{ characterSheet, character, characterDispatch, mainStatAssumptionLevel, data: teamData[characterKey]!.target, teamData, oldData }}>
+    {children}
+  </DataContext.Provider>
 }

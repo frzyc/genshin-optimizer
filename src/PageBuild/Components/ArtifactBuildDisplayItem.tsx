@@ -1,13 +1,14 @@
 import { ChevronRight } from '@mui/icons-material';
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { Suspense, useCallback, useContext, useState } from 'react';
+import React, { lazy, Suspense, useCallback, useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import ArtifactCardNano from '../../Components/Artifact/ArtifactCardNano';
 import { artifactSlotIcon } from '../../Components/Artifact/SlotNameWIthIcon';
 import CardDark from '../../Components/Card/CardDark';
 import CardLight from '../../Components/Card/CardLight';
 import StatDisplayComponent from '../../Components/Character/StatDisplayComponent';
+import CloseButton from '../../Components/CloseButton';
 import ModalWrapper from '../../Components/ModalWrapper';
 import SqBadge from '../../Components/SqBadge';
 import WeaponCardNano from '../../Components/Weapon/WeaponCardNano';
@@ -20,6 +21,9 @@ import usePromise from '../../ReactHooks/usePromise';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
 import { ArtifactDisplayLocationState } from '../../Types/LocationState';
 
+//lazy load the character display
+const CharacterDisplayCard = lazy(() => import('../../PageCharacter/CharacterDisplayCard'))
+
 type NewOld = {
   newId: string,
   oldId?: string
@@ -29,13 +33,16 @@ type ArtifactBuildDisplayItemProps = {
   index: number,
   compareBuild: boolean,
   disabled?: boolean,
-  onDetail: () => void,
 }
 //for displaying each artifact build
-export default function ArtifactBuildDisplayItem({ index, compareBuild, onDetail, disabled }: ArtifactBuildDisplayItemProps) {
+export default function ArtifactBuildDisplayItem({ index, compareBuild, disabled }: ArtifactBuildDisplayItemProps) {
   const { database } = useContext(DatabaseContext)
   const dataContext = useContext(DataContext)
-  const { character, data, oldData } = dataContext
+  const [showModal, setshowModal] = useState(false)
+  const closeModal = useCallback(() => setshowModal(false), [setshowModal],)
+  const openModal = useCallback(() => setshowModal(true), [setshowModal],)
+
+  const { character, data, oldData, teamData, mainStatAssumptionLevel } = dataContext
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const [newOld, setNewOld] = useState(undefined as NewOld | undefined)
   const close = useCallback(() => setNewOld(undefined), [setNewOld],)
@@ -59,6 +66,13 @@ export default function ArtifactBuildDisplayItem({ index, compareBuild, onDetail
 
   return <CardLight>
     <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
+      <ModalWrapper open={showModal} onClose={closeModal} containerProps={{ maxWidth: "xl" }}>
+        <CharacterDisplayCard
+          characterKey={character.key}
+          newteamData={teamData}
+          onClose={closeModal}
+          footer={<CloseButton large onClick={closeModal} />} />
+      </ModalWrapper>
       {newOld && <CompareArtifactModal newOld={newOld} onClose={close} />}
       <CardContent>
         <Box display="flex" gap={1} sx={{ pb: 1 }}>
@@ -70,13 +84,13 @@ export default function ArtifactBuildDisplayItem({ index, compareBuild, onDetail
           )}
           <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}>
           </Box>
-          <Button size='small' color="info" onClick={onDetail} disabled={disabled || currentlyEquipped}>Build Details</Button>
+          <Button size='small' color="info" onClick={openModal} disabled={disabled || currentlyEquipped}>Build Details</Button>
           <Button size='small' color="success" onClick={equipArts} disabled={disabled || currentlyEquipped}>Equip Artifacts</Button>
         </Box>
         <Grid container spacing={1} sx={{ pb: 1 }}>
           {allSlotKeys.map(slotKey =>
             <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >
-              <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} onClick={() => {
+              <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} onClick={() => {
                 const oldId = character.equippedArtifacts[slotKey]
                 const newId = data.get(input.art[slotKey].id).value!
                 setNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })

@@ -5,6 +5,7 @@ import { ICachedCharacter } from "./Types/character"
 import { CharacterKey } from "./Types/consts"
 import { ICachedWeapon } from "./Types/weapon"
 import WeaponSheet from "./Data/Weapons/WeaponSheet"
+import { characterReducerAction } from "./ReactHooks/useCharacterReducer";
 export type TeamData = Partial<Record<CharacterKey, {
   target: UIData
   buffs: Dict<CharacterKey, UIData>
@@ -20,7 +21,7 @@ export type dataContextObj = {
   oldData?: UIData
   mainStatAssumptionLevel: number
   teamData: TeamData
-  characterDispatch: (_: any) => void
+  characterDispatch: (action: characterReducerAction) => void
 }
 
 // If using this context without a Provider, then stuff will crash...

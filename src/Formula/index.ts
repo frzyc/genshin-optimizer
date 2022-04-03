@@ -67,8 +67,14 @@ function markAccu<T>(accu: ReadNode<number>["accu"], value: T): void {
 /** All read nodes */
 const input = setReadNodeKeys(deepClone({
   activeCharKey: stringRead(),
-  charKey: stringRead(), charEle: stringRead(), infusion: stringRead(), weaponType: stringRead(),
+  charKey: stringRead(), charEle: stringRead(), weaponType: stringRead(),
   lvl: read(undefined, { key: "level", prefix: "char" }), constellation: read(), asc: read(), special: read(),
+
+  infusion: {
+    overridableSelf: stringRead("small"),
+    nonOverridableSelf: stringRead("small"),
+    team: stringRead("small"),
+  },
 
   base: objectKeyMap(['atk', 'hp', 'def'], key => read("add", { key })),
   customBonus: withDefaultInfo({ prefix: "custom", pivot }, {
@@ -96,8 +102,6 @@ const input = setReadNodeKeys(deepClone({
     lvl: read(), asc: read(), refinement: read(), refineIndex: read(),
     main: read(), sub: read(), sub2: read(),
   }),
-
-  team: { infusion: stringRead("prio") },
 
   enemy: {
     def: read("add", { key: "enemyDef_multi", pivot }),

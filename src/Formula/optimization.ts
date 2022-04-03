@@ -58,7 +58,7 @@ export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<num
         mapping.set(f as ConstantNode<number>, value)
         break
       case "match": case "lookup": case "subscript":
-      case "prio":
+      case "prio": case "small":
       case "data": throw new Error(`Unsupported ${operation} node in precompute`)
       default: assertUnreachable(operation)
     }
@@ -339,9 +339,19 @@ export function constantFold(formulas: NumNode[], topLevelData: Data, shouldFold
             throw new Error(`Unsupported ${operation} node while folding`)
           return folded.value !== undefined
         })
-        if (!first)
-          throw new Error(`Unsupported ${operation} node while folding`)
-        result = fold(first, context)
+        result = first ? fold(first, context) : constant(undefined)
+        break
+      }
+      case "small": {
+        let smallest = undefined as ConstantNode<string | undefined> | undefined
+        for (const operand of formula.operands) {
+          const folded = fold(operand, context)
+          if (folded.operation !== "const")
+            throw new Error(`Unsupported ${operation} node while folding`)
+          if (smallest?.value === undefined || (folded.value !== undefined && folded.value < smallest.value))
+            smallest = folded
+        }
+        result = smallest ?? constant(undefined)
         break
       }
       case "match": {
@@ -374,11 +384,11 @@ export function constantFold(formulas: NumNode[], topLevelData: Data, shouldFold
         if (operands.length === 0) {
           if (shouldFold(formula)) {
             const { accu } = formula
-            if (accu === undefined || accu === "prio")
+            if (accu === undefined || accu === "small")
               result = formula.type === "string" ? constant(undefined) : constant(NaN)
             else result = constant(allOperations[accu]([]))
           } else result = formula
-        } else if (formula.accu === undefined)
+        } else if (formula.accu === undefined || operands.length === 1)
           result = fold(operands[operands.length - 1], context)
         else
           result = fold({ operation: formula.accu, operands } as ComputeNode | StrPrioNode, context)

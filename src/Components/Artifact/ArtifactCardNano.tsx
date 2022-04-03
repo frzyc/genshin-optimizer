@@ -12,6 +12,7 @@ import { clamp } from "../../Util/Util";
 import CardDark from "../Card/CardDark";
 import ColorText from "../ColoredText";
 import ConditionalWrapper from "../ConditionalWrapper";
+import ImgIcon from "../Image/ImgIcon";
 import StatIcon from "../StatIcon";
 
 type Data = {
@@ -47,7 +48,7 @@ export default function ArtifactCardNano({ artifactId, mainStatAssumptionLevel =
       <Grid item sx={{ textAlign: "right", flexGrow: 1, pr: 1, pt: 1 }}>
         <Box display="flex" justifyContent="flex-end" gap={1}>
           <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
-          <Chip size="small" label={<LocationIcon location={location} />} color={"info"} />
+          <Chip size="small" label={<LocationIcon location={location} />} color={"secondary"} sx={{ overflow: "visible" }} />
         </Box>
 
         <Typography variant="h6" sx={{ display: "flex", gap: 1, justifyContent: "flex-end" }}>
@@ -74,5 +75,5 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
 }
 function LocationIcon({ location }) {
   const characterSheet = usePromise(CharacterSheet.get(location ?? ""), [location])
-  return characterSheet ? characterSheet.icon : <BusinessCenter />
+  return characterSheet ? <ImgIcon src={characterSheet.thumbImgSide} sx={{ height: "3em", marginTop: "-1.5em", marginLeft: "-0.5em" }} /> : <BusinessCenter />
 }
