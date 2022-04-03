@@ -146,8 +146,6 @@ export const data = dataObjForCharacterSheet(key, "anemo", "inazuma", data_gen, 
     premod: {
       ...asc4,
       staminaSprintDec_: passive,
-    },
-    total: {
       eleMas: c2PEleMas,
     },
   },
@@ -158,8 +156,6 @@ export const data = dataObjForCharacterSheet(key, "anemo", "inazuma", data_gen, 
     normal_dmg_: c6NormDmg_,
     charged_dmg_: c6ChargedDmg_,
     plunging_dmg_: c6PlungingDmg_,
-  },
-  total: {
     eleMas: c2EleMas,
   },
 })
