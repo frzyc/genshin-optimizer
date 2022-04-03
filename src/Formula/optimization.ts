@@ -339,9 +339,7 @@ export function constantFold(formulas: NumNode[], topLevelData: Data, shouldFold
             throw new Error(`Unsupported ${operation} node while folding`)
           return folded.value !== undefined
         })
-        if (!first)
-          throw new Error(`Unsupported ${operation} node while folding`)
-        result = fold(first, context)
+        result = first ? fold(first, context) : constant(undefined)
         break
       }
       case "small": {
@@ -390,7 +388,7 @@ export function constantFold(formulas: NumNode[], topLevelData: Data, shouldFold
               result = formula.type === "string" ? constant(undefined) : constant(NaN)
             else result = constant(allOperations[accu]([]))
           } else result = formula
-        } else if (formula.accu === undefined)
+        } else if (formula.accu === undefined || operands.length === 1)
           result = fold(operands[operands.length - 1], context)
         else
           result = fold({ operation: formula.accu, operands } as ComputeNode | StrPrioNode, context)
