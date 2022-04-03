@@ -77,9 +77,11 @@ const condSwirls = Object.fromEntries(absorbableEle.map(e => [e, condReadNode(co
 const asc4 = Object.fromEntries(absorbableEle.map(ele =>
   [`${ele}_dmg_`, greaterEq(input.asc, 4,
     equal("swirl", condSwirls[ele],
+      // Use premod since this is a percentage-based effect
       prod(percent(datamine.passive2.elemas_dmg_, { fixed: 2 }), input.premod.eleMas)
     ))]))
 
+// 2 C2 conds for the 2 parts of his C2
 const [condC2Path, condC2] = cond(key, "c2")
 const c2EleMas = greaterEq(input.constellation, 2,
   equal("c2", condC2, datamine.constellation2.elemas))
@@ -96,6 +98,7 @@ const [condC6Path, condC6] = cond(key, "c6")
 const c6infusion = greaterEqStr(input.constellation, 6,
   equalStr("c6", condC6, "anemo"))
 const c6Dmg_ = greaterEq(input.constellation, 6,
+  // Not sure if this should be premod or total. I am guessing premod
   equal("c6", condC6, prod(percent(datamine.constellation6.auto_), input.premod.eleMas))
 )
 // Share `match` and `prod` between the three nodes
@@ -144,10 +147,14 @@ export const data = dataObjForCharacterSheet(key, "anemo", "inazuma", data_gen, 
   },
   teamBuff: {
     premod: {
-      ...asc4,
       staminaSprintDec_: passive,
       eleMas: c2PEleMas,
     },
+    total: {
+      // Should be in total, since other character abilities should not scale off this
+      // if those abilities are percentage-based (e.g. XQ skill dmg red.)
+      ...asc4,
+    }
   },
   infusion: {
     overridableSelf: c6infusion,
