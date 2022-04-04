@@ -59,16 +59,3 @@ export function HitModeToggle(props: HitModeToggleProps) {
     <ToggleButton value="critHit">Crit Hit DMG</ToggleButton>
   </SolidToggleButtonGroup>
 }
-
-
-export function DamageOptionsCard() {
-  return <CardLight>
-    <CardContent>
-      <Grid container spacing={1}>
-        <Grid item><HitModeToggle size="small" /></Grid>
-        <Grid item><InfusionAuraDropdown /></Grid>
-        <Grid item><ReactionToggle size="small" /></Grid>
-      </Grid>
-    </CardContent>
-  </CardLight>
-}
