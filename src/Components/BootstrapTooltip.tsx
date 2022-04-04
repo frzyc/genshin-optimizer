@@ -8,6 +8,7 @@ const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
   },
   [`& .${tooltipClasses.tooltip}`]: {
     backgroundColor: theme.palette.common.black,
+    maxWidth: 500,
   },
 }));
 export default BootstrapTooltip
