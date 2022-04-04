@@ -159,10 +159,12 @@ export const data = dataObjForCharacterSheet(key, "anemo", "inazuma", data_gen, 
   infusion: {
     overridableSelf: c6infusion,
   },
-  premod: {
+  total: {
     normal_dmg_: c6NormDmg_,
     charged_dmg_: c6ChargedDmg_,
     plunging_dmg_: c6PlungingDmg_,
+  },
+  premod: {
     eleMas: c2EleMas,
   },
 })
