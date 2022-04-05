@@ -36,7 +36,7 @@ import { ICachedArtifact } from '../Types/artifact';
 import { BuildSetting } from '../Types/Build';
 import { ICachedCharacter } from '../Types/character';
 import { ArtifactSetKey, CharacterKey } from '../Types/consts';
-import { objPathValue } from '../Util/Util';
+import { objPathValue, range } from '../Util/Util';
 import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
@@ -116,6 +116,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const [chartData, setchartData] = useState(undefined as ChartData | undefined)
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
+
+  const [maxWorkers, setMaxWorkers] = useState(navigator.hardwareConcurrency || 4)
 
   const setCharacter = useCharSelectionCallback()
   const characterDispatch = useCharacterReducer(characterKey)
@@ -224,8 +226,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity)
     }
     setPerms.forEach(filter => wrap.skippedCount -= countBuilds(filterArts(arts, filter)))
-
-    const maxWorkers = navigator.hardwareConcurrency || 4
 
     const setPerm = splitFiltersBySet(arts, setPerms,
       maxWorkers === 1
@@ -336,7 +336,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       })
     }
     setgeneratingBuilds(false)
-  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingsDispatch, setFilters, statFilters])
+  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingsDispatch, setFilters, statFilters, maxWorkers])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
@@ -484,6 +484,11 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                   {maxBuildsToShowList.map(v => <MenuItem key={v}
                     onClick={() => buildSettingsDispatch({ maxBuildsToShow: v })}>{v} {v === 1 ? "Build" : "Builds"}</MenuItem>)}
                 </DropdownButton>
+                <DropdownButton disabled={generatingBuilds || !characterKey} color="info"
+                  title={<span><b>{maxWorkers}</b> {maxBuildsToShow === 1 ? "Thread" : "Threads"}</span>}>
+                  {range(1, navigator.hardwareConcurrency || 4).reverse().map(v => <MenuItem key={v}
+                    onClick={() => setMaxWorkers(v)}>{v} {v === 1 ? "Thread" : "Threads"}</MenuItem>)}
+                </DropdownButton>
                 {/* </Tooltip> */}
                 <Button
                   disabled={!generatingBuilds}
@@ -513,11 +518,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       </CardDark>
       <CardDark>
         <CardContent>
-          <Box display="flex" justifyContent="space-between" alignItems="center" >
-            <Typography>
+          <Box display="flex" alignItems="center" gap={1} >
+            <Typography sx={{ flexGrow: 1 }}>
               {builds ? <span>Showing <strong>{builds.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
                 : <span>Select a character to generate builds.</span>}
             </Typography>
+            <Button disabled={!builds.length} color="error" onClick={() => buildSettingsDispatch({ builds: [], buildDate: 0 })} >Clear Builds</Button>
             <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
               <ToggleButton value={false} disabled={!compareData}>
                 <small>Show New artifact Stats</small>
