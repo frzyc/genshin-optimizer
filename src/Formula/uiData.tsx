@@ -375,12 +375,8 @@ function mergeFormulaComponents(components: Displayable[]): Displayable {
 
 function mergeInfo(base: Info, override: Info): Info {
   const result = { ...base }
-  if (override.key) result.key = override.key
-  if (override.prefix) result.prefix = override.prefix
-  if (override.source) result.source = override.source
-  if (override.variant) result.variant = override.variant
-  if (override.pivot) result.pivot = override.pivot
-  if (override.fixed) result.fixed = override.fixed
+  for (const [key, value] of Object.entries(override))
+    if (value) result[key] = value as any
   return result
 }
 
