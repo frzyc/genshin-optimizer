@@ -152,7 +152,7 @@ function MainStatsCards() {
       title="Main Stats"
       content={<StatDisplayContent statBreakpoint={statBreakpoint} nodes={mainReadNodes}
         extra={specialNode && <Grid item {...statBreakpoint} display="flex" flexDirection="row" justifyContent="space-between">
-          <span><b>Special:</b> <ColorText color={specialNode.variant}>{specialNode.key && StatIcon[specialNode.key]} {specialNode.key && KeyMap.get(specialNode.key)}</ColorText></span>
+          <span><b>Special:</b> <ColorText color={specialNode.info.variant}>{specialNode.info.key && StatIcon[specialNode.info.key]} {specialNode.info.key && KeyMap.get(specialNode.info.key)}</ColorText></span>
           <span >{valueString(specialNode.value, specialNode.unit)}</span>
         </Grid>}
       />}

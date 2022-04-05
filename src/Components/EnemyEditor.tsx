@@ -26,7 +26,7 @@ export function EnemyExpandCard() {
         <Grid item flexGrow={1} alignItems="center">
           <Grid container spacing={1}>
             <Grid item>
-              <Chip size="small" color="success" label={<span>{KeyMap.get(eLvlNode.key)} <strong>{eLvlNode.value}</strong></span>} />
+              <Chip size="small" color="success" label={<span>{KeyMap.get(eLvlNode.info.key)} <strong>{eLvlNode.value}</strong></span>} />
             </Grid>
             {allElementsWithPhy.map(element => <Grid item key={element}>
               <Typography key={element} ><EnemyResText element={element} /></Typography>

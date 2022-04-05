@@ -72,10 +72,10 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
         </div>
         <CardContent>
           {stats.map(node => {
-            if (!node.key) return null
+            if (!node.info.key) return null
             const displayVal = valueString(node.value, node.unit, !node.unit ? 0 : undefined)
-            return <Box key={node.key} sx={{ display: "flex" }}>
-              <Typography flexGrow={1}>{StatIcon[node.key]} {KeyMap.get(node.key)}</Typography>
+            return <Box key={node.info.key} sx={{ display: "flex" }}>
+              <Typography flexGrow={1}>{StatIcon[node.info.key!]} {KeyMap.get(node.info.key)}</Typography>
               <Typography>{displayVal}</Typography>
             </Box>
           })}

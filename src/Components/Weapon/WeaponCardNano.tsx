@@ -45,9 +45,9 @@ export default function WeaponCardNano({ weaponId }: Data) {
   </CardDark >
 }
 function WeaponStat({ node }: { node: NodeDisplay }) {
-  if (!node.key) return null
+  if (!node.info.key) return null
   const val = valueString(node.value, node.unit, !node.unit ? 0 : undefined)
   return (<Box display="flex" gap={1} alignContent="center">
-    <Typography sx={{ flexGrow: 1 }} component="span">{StatIcon[node.key]} {val}</Typography>
+    <Typography sx={{ flexGrow: 1 }} component="span">{StatIcon[node.info.key]} {val}</Typography>
   </Box>)
 }

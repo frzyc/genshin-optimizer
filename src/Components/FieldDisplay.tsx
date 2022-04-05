@@ -47,8 +47,8 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: 
   if (node.isEmpty) return null
 
   suffix = suffix && <span>{suffix}</span>
-  const icon = node.key && StatIcon[node.key]
-  const fieldText = node.key ? KeyMap.get(node.key) : ""
+  const icon = node.info.key && StatIcon[node.info.key]
+  const fieldText = node.info.key ? KeyMap.get(node.info.key) : ""
   const fieldFormulaText = node.formula
   let fieldVal = "" as Displayable
   if (oldValue) {
@@ -59,7 +59,7 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: 
     <Box component="span" sx={{ cursor: "help" }}><FontAwesomeIcon icon={faQuestionCircle} /></Box>
   </BootstrapTooltip>
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1 }} component={component} >
-    <Typography color={`${node.variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{icon}{fieldText}{suffix}</Typography>
+    <Typography color={`${node.info.variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{icon}{fieldText}{suffix}</Typography>
     <Typography sx={{ display: "flex", gap: 1, alignItems: "center" }} >{fieldVal}{formulaTextOverlay}</Typography>
   </Box>
 }

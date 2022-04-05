@@ -215,6 +215,7 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
       throw new Error("Unmatched structure when comparing UIData")
 
     const result: ComparedNodeDisplay = {
+      info: {},
       operation: true,
       value: 0,
       isEmpty: true,
