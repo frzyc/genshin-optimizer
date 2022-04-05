@@ -27,6 +27,7 @@ interface Info {
   asConst?: true
   pivot?: true
   fixed?: number
+  isTeamBuff?: boolean
 }
 export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "success"
 
