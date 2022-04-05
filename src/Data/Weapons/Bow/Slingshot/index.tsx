@@ -19,8 +19,8 @@ const charged_atk_increase_s = [.46, .52, .58, .64, .70]
 const [condPassivePath, condPassive] = cond(key, "Slingshot")
 const normal_atk_increase = equal(condPassive, "on", subscript(input.weapon.refineIndex, normal_atk_increase_s), { key: "normal_dmg_" })
 const charged_atk_increase = equal(condPassive, "on", subscript(input.weapon.refineIndex, charged_atk_increase_s), { key: "charged_dmg_" })
-const normal_atk_decrease = percent(.1, { key: "normal_dmg_" })
-const charged_atk_decrease = percent(.1, { key: "charged_dmg_" })
+const normal_atk_decrease = percent(-0.1, { key: "normal_dmg_" })
+const charged_atk_decrease = percent(-0.1, { key: "charged_dmg_" })
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

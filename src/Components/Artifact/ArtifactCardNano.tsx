@@ -9,6 +9,7 @@ import useArtifact from "../../ReactHooks/useArtifact";
 import usePromise from "../../ReactHooks/usePromise";
 import { ICachedSubstat } from "../../Types/artifact";
 import { clamp } from "../../Util/Util";
+import BootstrapTooltip from "../BootstrapTooltip";
 import CardDark from "../Card/CardDark";
 import ColorText from "../ColoredText";
 import ConditionalWrapper from "../ConditionalWrapper";
@@ -48,7 +49,11 @@ export default function ArtifactCardNano({ artifactId, mainStatAssumptionLevel =
       <Grid item sx={{ textAlign: "right", flexGrow: 1, pr: 1, pt: 1 }}>
         <Box display="flex" justifyContent="flex-end" gap={1}>
           <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
-          <Chip size="small" label={<LocationIcon location={location} />} color={"secondary"} sx={{ overflow: "visible" }} />
+          <Chip size="small" label={<LocationIcon location={location} />} color={"secondary"} sx={{
+            overflow: "visible", ".MuiChip-label": {
+              overflow: "visible"
+            }
+          }} />
         </Box>
 
         <Typography variant="h6" sx={{ display: "flex", gap: 1, justifyContent: "flex-end" }}>
@@ -70,7 +75,12 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
   const unit = KeyMap.unit(stat.key)
   return (<Box display="flex" gap={1} alignContent="center">
-    <Typography sx={{ flexGrow: 1 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{StatIcon[stat.key]} {`${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}</Typography>
+    <Typography sx={{ flexGrow: 1, display: "flex", gap: 1 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">
+      <BootstrapTooltip placement="top" title={<Typography>{stat.key && KeyMap.getArtStr(stat.key)}</Typography>}>
+        <span>{StatIcon[stat.key]}</span>
+      </BootstrapTooltip>
+      <span>{`${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}</span>
+    </Typography>
   </Box>)
 }
 function LocationIcon({ location }) {

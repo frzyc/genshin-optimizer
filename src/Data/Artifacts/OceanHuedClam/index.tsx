@@ -10,7 +10,7 @@ const key: ArtifactSetKey = "OceanHuedClam"
 const set2 = greaterEq(input.artSet.OceanHuedClam, 2, percent(0.15))
 const heal = greaterEq(input.artSet.OceanHuedClam, 4,
   customDmgNode(prod(percent(0.9), 30000), "elemental", {
-    hit: { ele: constant("physical") }
+    hit: { ele: constant("physical"), hitMode: constant("hit") }
   })
 )
 

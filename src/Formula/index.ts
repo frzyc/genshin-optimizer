@@ -9,8 +9,7 @@ const asConst = true as const, pivot = true as const
 const allElements = allElementsWithPhy
 const allTalents = ["auto", "skill", "burst"] as const
 const allMoves = ["normal", "charged", "plunging", "skill", "burst", "elemental"] as const
-const allArtModStats = ["hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_"] as const
-const allArtNonModStats = ["physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_", "heal_"] as const
+const allArtModStats = ["hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "heal_"] as const
 const allTransformative = ["overloaded", "shattered", "electrocharged", "superconduct", "swirl"] as const
 const allAmplifying = ["vaporize", "melt"] as const
 const allMisc = [
@@ -23,7 +22,6 @@ const allModStats = [
   ...(["all", "burning", ...allTransformative, ...allAmplifying, ...allMoves] as const).map(x => `${x}_dmg_` as const),
 ]
 const allNonModStats = [
-  ...allArtNonModStats,
   ...allElements.flatMap(x => [
     `${x}_dmgInc` as const,
     `${x}_critDMG_` as const,
@@ -46,8 +44,8 @@ for (const ele of allElements) {
   allNonModStatNodes[`${ele}_res_`].info!.variant = ele
   allNonModStatNodes[`${ele}_enemyRes_`].info!.variant = ele
   allNonModStatNodes[`${ele}_critDMG_`].info!.variant = ele
-  allNonModStatNodes[`${ele}_dmg_`].info!.variant = ele
   allNonModStatNodes[`${ele}_dmgInc`].info!.variant = ele
+  allModStatNodes[`${ele}_dmg_`].info!.variant = ele
 }
 for (const reaction of [...allTransformative, ...allAmplifying]) {
   allModStatNodes[`${reaction}_dmg_`].info!.variant = reaction
@@ -91,7 +89,6 @@ const input = setReadNodeKeys(deepClone({
 
   art: withDefaultInfo({ prefix: "art", asConst }, {
     ...objectKeyMap(allArtModStats, key => allModStatNodes[key]),
-    ...objectKeyMap(allArtNonModStats, key => allNonModStatNodes[key]),
     ...objectKeyMap(allSlotKeys, _ => ({ id: stringRead(), set: stringRead() })),
   }),
   artSet: objectKeyMap(allArtifactSets, set => read("add", { key: set })),
@@ -152,7 +149,7 @@ const common: Data = {
   premod: {
     ...objectKeyMap(allTalents, talent => bonus[talent]),
     ...objectKeyMap(allNonModStats, key => customBonus[key]),
-    ...objectKeyMap([...allModStats, ...allArtNonModStats] as const, key => {
+    ...objectKeyMap(allModStats, key => {
       const operands: NumNode[] = []
       switch (key) {
         case "atk": case "def": case "hp":

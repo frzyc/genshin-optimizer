@@ -1,10 +1,13 @@
-import { Box, CardContent, Typography } from "@mui/material"
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Box, Typography } from "@mui/material"
+import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet"
+import usePromise from "../../ReactHooks/usePromise"
+import { ArtifactSetKey, SetNum } from "../../Types/consts"
+import BootstrapTooltip from "../BootstrapTooltip"
 import CardDark from "../Card/CardDark"
 import DocumentDisplay from "../DocumentDisplay"
 import SqBadge from "../SqBadge"
-import usePromise from "../../ReactHooks/usePromise"
-import { ArtifactSetKey, SetNum } from "../../Types/consts"
-import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet"
 
 type Data = {
   setKey: ArtifactSetKey,
@@ -18,10 +21,13 @@ export default function SetEffectDisplay({ setKey, setNumKey }: Data) {
   const setEffectText = sheet.setEffectDesc(setNumKey)
   const document = sheet.setEffectDocument(setNumKey)
   return <Box display="flex" flexDirection="column" gap={1}>
-    <CardDark>
-      <CardContent>
-        <Typography><SqBadge color="success">{setNumKey}-Set</SqBadge> {setEffectText}</Typography>
-      </CardContent>
+    <CardDark sx={{ p: 2 }}>
+      <Typography variant="h6" sx={{ display: "flex", justifyContent: "space-between" }}>
+        <span><SqBadge color="success">{setNumKey}-Set</SqBadge></span>
+        <BootstrapTooltip placement="top" title={<Typography>{setEffectText}</Typography>}>
+          <span><FontAwesomeIcon icon={faInfoCircle} /></span>
+        </BootstrapTooltip>
+      </Typography>
     </CardDark>
     {document ? <DocumentDisplay sections={document} /> : null}
   </Box>

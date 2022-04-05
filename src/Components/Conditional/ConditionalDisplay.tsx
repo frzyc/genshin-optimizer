@@ -1,13 +1,16 @@
-import { Box, CardContent, CardHeader, Divider, ListItem } from "@mui/material"
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { CardContent, CardHeader, Divider, ListItem, Typography } from "@mui/material"
 import { useContext } from "react"
-import ConditionalSelector from "./ConditionalSelector"
 import { DataContext, dataContextObj } from "../../DataContext"
 import { Data } from "../../Formula/type"
 import { data as dataNode } from '../../Formula/utils'
 import IConditional from "../../Types/IConditional"
 import { evalIfFunc } from "../../Util/Util"
+import BootstrapTooltip from "../BootstrapTooltip"
 import CardDark from "../Card/CardDark"
 import FieldDisplay, { FieldDisplayList } from "../FieldDisplay"
+import ConditionalSelector from "./ConditionalSelector"
 
 type ConditionalDisplayProps = {
   conditional: IConditional,
@@ -28,12 +31,13 @@ export default function ConditionalDisplay({ conditional, hideHeader = false, hi
   let { icon, title, action } = conditional.header ?? {}
   icon = evalIfFunc(icon, data)
   const fields = condVal && conditional.states[condVal]?.fields
-
+  const displayTitle = hideDesc ? title : title && <BootstrapTooltip placement="top" title={<Typography>{description}</Typography>}>
+    <span>{title} <FontAwesomeIcon icon={faInfoCircle} /></span>
+  </BootstrapTooltip>
   return <CardDark>
-    {!hideHeader && conditional.header && <CardHeader avatar={icon} title={title} action={action} titleTypographyProps={{ variant: "subtitle2" }} />}
+    {!hideHeader && conditional.header && <CardHeader avatar={icon} title={displayTitle} action={action} titleTypographyProps={{ variant: "subtitle2" }} />}
     {!hideHeader && conditional.header && <Divider />}
     {!!conditional.name && <CardContent>
-      {description && <Box mb={1}>{description}</Box>}
       <ConditionalSelector
         conditional={conditional}
         conditionalValue={condVal} />
