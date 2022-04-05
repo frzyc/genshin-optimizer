@@ -99,8 +99,7 @@ const dmgFormulas = {
     dmgPerWave: dmgNode("atk", datamine.burst.dmgPerWave, "burst"),
   },
   constellation2: {
-    manualDetonationDmg: customDmgNode(prod(sum(subscript(input.total.skillIndex, datamine.skill.dmg, { key: "_" }),
-      percent(datamine.constellation2.manualDetionationDmg)), input.total.atk), "skill")
+    manualDetonationDmg: greaterEq(input.constellation, 2, dmgNode("atk", datamine.skill.dmg, "skill", { premod: { skill_dmg_: percent(datamine.constellation2.manualDetionationDmg) } })),
   }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
