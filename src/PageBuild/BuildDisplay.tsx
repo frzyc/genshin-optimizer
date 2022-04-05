@@ -282,7 +282,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               worker.postMessage(finalizeCommand)
             }
             break
-          case "finalize": finalize(data); break
+          case "finalize":
+            worker.terminate()
+            finalize(data);
+            break
           default: console.log("DEBUG", data)
         }
       }
