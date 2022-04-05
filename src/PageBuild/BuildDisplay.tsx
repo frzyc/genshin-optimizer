@@ -344,14 +344,17 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     buildSettingsDispatch({ plotBase })
     setchartData(undefined)
   }, [buildSettingsDispatch])
-  const dataContext: dataContextObj | undefined = data && characterSheet && character && teamData && {
-    data,
-    characterSheet,
-    character,
-    mainStatAssumptionLevel,
-    teamData,
-    characterDispatch
-  }
+  const dataContext: dataContextObj | undefined = useMemo(() => {
+    return data && characterSheet && character && teamData && {
+      data,
+      characterSheet,
+      character,
+      mainStatAssumptionLevel,
+      teamData,
+      characterDispatch
+    }
+  }, [data, characterSheet, character, teamData, characterDispatch, mainStatAssumptionLevel])
+
   return <Box display="flex" flexDirection="column" gap={1} sx={{ my: 1 }}>
     <InfoComponent
       pageKey="buildPage"

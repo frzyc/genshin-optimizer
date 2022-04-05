@@ -54,7 +54,7 @@ export default function ArtifactSetPicker({ index, setFilters, onChange, disable
       </ButtonGroup>
     </CardContent>
     {!!setKey && <Divider />}
-    {!!setKey && <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+    {!!setKey && <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       {Object.keys(artifactSheets?.[setKey].setEffects ?? {}).map(setNKey => parseInt(setNKey as string) as SetNum).filter(setNkey => setNkey <= setNum).map(setNumKey =>
         <SetEffectDisplay key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} />)}
     </CardContent>}

@@ -1,10 +1,9 @@
-import { CardContent, Grid, MenuItem, ToggleButton, ToggleButtonGroupProps } from "@mui/material";
+import { MenuItem, ToggleButton, ToggleButtonGroupProps } from "@mui/material";
 import { useContext } from 'react';
+import { infusionNode } from "../Data/Characters/dataUtil";
 import { DataContext } from "../DataContext";
 import { uiInput as input } from "../Formula";
-import { infusionNode } from "../Data/Characters/dataUtil";
 import { ElementKey } from "../Types/consts";
-import CardLight from "./Card/CardLight";
 import ColorText from "./ColoredText";
 import DropdownButton, { DropdownButtonProps } from "./DropdownMenu/DropdownButton";
 import SolidToggleButtonGroup from "./SolidToggleButtonGroup";

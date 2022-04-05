@@ -71,7 +71,7 @@ function CharacterArtifactPane({ newBuild = false }: { newBuild?: boolean }) {
             <Divider />
             <CardContent >
               <Grid container spacing={1} flexDirection="column" height="100%" >
-                <Grid item display="flex" flexDirection="column" gap={1}>
+                <Grid item display="flex" flexDirection="column" gap={2}>
                   {setNumKeyArr.map(setNumKey => <SetEffectDisplay key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} />)}
                 </Grid>
               </Grid>
