@@ -134,9 +134,6 @@ export class UIData {
   private prereadAll(path: readonly string[]): (NumNode | StrNode)[] {
     return this.data.map(x => objPathValue(x, path) as NumNode | StrNode).filter(x => x)
   }
-  private readAll(path: readonly string[]): ContextNodeDisplay<number | string | undefined>[] {
-    return this.prereadAll(path).map(x => this.computeNode(x))
-  }
   private readFirst(path: readonly string[]): ContextNodeDisplay<number | string | undefined> | undefined {
     const data = this.data.map(x => objPathValue(x, path) as NumNode | StrNode).find(x => x)
     return data && this.computeNode(data)
@@ -157,12 +154,15 @@ export class UIData {
   }
   private _read(node: ReadNode<number | string | undefined>): ContextNodeDisplay<number | string | undefined> {
     const { path } = node
-    const result = (node.accu === undefined)
-      ? this.readFirst(path) ?? (node.type === "string" ? illformedStr : illformed)
-      : node.accu === "small"
-        ? this._small(this.prereadAll(path) as StrNode[])
-        : this._accumulate(node.accu, this.readAll(path) as ContextNodeDisplay[])
-    return result
+    if (node.accu === undefined) {
+      return this.readFirst(path) ?? (node.type === "string" ? illformedStr : illformed)
+    } else {
+      const nodes = this.prereadAll(path)
+      if (nodes.length === 1) return this.computeNode(nodes[0])
+      return node.accu === "small"
+        ? this._small(nodes as StrNode[])
+        : this._accumulate(node.accu, nodes.map(x => this.computeNode(x)) as ContextNodeDisplay[])
+    }
   }
   private _lookup(node: LookupNode<NumNode | StrNode>): ContextNodeDisplay<number | string | undefined> {
     const key = this.computeNode(node.operands[0]).value
