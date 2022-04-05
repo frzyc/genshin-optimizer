@@ -50,7 +50,7 @@ export function TeamBuffDisplay() {
     <Divider />
     <CardContent>
       <Grid container columnSpacing={2} rowSpacing={1}>
-        {nodes.map(([path, n], i) => n && <Grid item {...statBreakpoint} key={n.key} >
+        {nodes.map(([path, n], i) => n && <Grid item {...statBreakpoint} key={n.info.key} >
           <NodeFieldDisplay node={n} oldValue={objPathValue(oldData?.getTeamBuff(), path)?.value} />
         </Grid>)}
       </Grid>

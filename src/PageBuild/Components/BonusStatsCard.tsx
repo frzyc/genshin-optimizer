@@ -16,7 +16,7 @@ export default function BonusStatsCard() {
     </CardContent>
     <Divider />
     <CardContent><FieldDisplayList sx={{ my: 0 }} >
-      {nodes.map(n => <ListItem key={n.key}><NodeFieldDisplay node={n} /></ListItem>)}
+      {nodes.map(n => <ListItem key={n.info.key}><NodeFieldDisplay node={n} /></ListItem>)}
     </FieldDisplayList></CardContent>
   </CardLight>
 }

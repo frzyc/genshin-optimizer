@@ -1,6 +1,6 @@
 import { uiInput } from "."
 import ColorText from "../Components/ColoredText"
-import KeyMap, { KeyMapPrefix, Unit, valueString } from "../KeyMap"
+import KeyMap, { Unit, valueString } from "../KeyMap"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
 import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput, Variant } from "./type"
@@ -9,13 +9,11 @@ const shouldWrap = true
 export interface NodeDisplay<V = number> {
   /** Leave this here to make sure one can use `crawlObject` on hierarchy of `NodeDisplay` */
   operation: true
-  prefix?: KeyMapPrefix
-  key?: string
+  info: Info
   value: V
   /** Whether the node fails the conditional test (`threshold_add`, `match`, etc.) or consists solely of empty nodes */
   isEmpty: boolean
   unit: Unit
-  variant?: Variant
   formula?: Displayable
   formulas: Displayable[]
 }
@@ -77,7 +75,7 @@ export class UIData {
   get(node: NumNode | StrNode): NodeDisplay<number | string | undefined> {
     if (node === undefined) {
       console.trace("Please report this bug with this trace")
-      return { operation: true, value: undefined, isEmpty: true, unit: "", formulas: [] }
+      return { info: {}, operation: true, value: undefined, isEmpty: true, unit: "", formulas: [] }
     }
     const old = this.processed.get(node)
     if (old) return old
@@ -112,19 +110,12 @@ export class UIData {
     }
 
     if (info) {
-      const { key, prefix, source, variant, asConst, fixed } = info
-      let { pivot } = info
+      const { asConst } = info
       result = { ...result }
+      result.info = mergeInfo(result.info, info)
 
       // Pivot all keyed nodes for debugging
-      // if (key) pivot = true
-
-      if (key) result.key = key
-      if (prefix) result.prefix = prefix
-      if (source) result.source = source
-      if (variant) result.variant = variant
-      if (pivot) result.pivot = pivot
-      if (fixed) result.fixed = fixed
+      // if (key) result.info.pivot = true
 
       if (asConst) {
         delete result.formula
@@ -215,6 +206,7 @@ export class UIData {
   }
   private _constant<V>(value: V): ContextNodeDisplay<V> {
     return {
+      info: {},
       value, pivot: false,
       empty: false,
       mayNeedWrapping: false,
@@ -235,7 +227,7 @@ export class UIData {
         if (process.env.NODE_ENV !== "development")
           operands = operands.filter(operand => operand.value !== identity)
         if (!operands.length)
-          return variant ? { ...this._constant(identity), variant } : this._constant(identity)
+          return variant ? { ...this._constant(identity), info: { variant } } : this._constant(identity)
     }
 
     let formula: { display: Displayable, dependencies: Displayable[] }
@@ -273,12 +265,12 @@ export class UIData {
         ? [x.assignment, ...x.dependencies]
         : [...x.dependencies])])
     const result: ContextNodeDisplay = {
+      info: { variant },
       formula: formula.display,
       empty: operands.every(x => x.empty),
       value, mayNeedWrapping,
       pivot: false, dependencies,
     }
-    if (variant) result.variant = variant
     return result
   }
 }
@@ -312,8 +304,8 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
   })
   return { display: mergeFormulaComponents(predisplay), dependencies: [...dependencies] }
 }
-function mergeVariants<V>(operands: ContextNodeDisplay<V>[]): ContextNodeDisplay<V>["variant"] {
-  const unique = new Set(operands.map(x => x.variant))
+function mergeVariants<V>(operands: ContextNodeDisplay<V>[]): Info["variant"] {
+  const unique = new Set(operands.map(x => x.info.variant))
   if (unique.size > 1) unique.delete(undefined)
   if (unique.size > 1) unique.delete("physical")
   // Prefer reactions
@@ -322,19 +314,21 @@ function mergeVariants<V>(operands: ContextNodeDisplay<V>[]): ContextNodeDisplay
   return unique.values().next().value
 }
 function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
-  const { key, prefix, dependencies, value, variant, formula, assignment, empty } = node
+  const { info, dependencies, value, formula, assignment, empty } = node
   return {
     operation: true,
-    key, value, variant, prefix,
+    info,
+    value,
     isEmpty: empty,
-    unit: KeyMap.unit(key),
+    unit: KeyMap.unit(info.key),
     formula, formulas: [...(assignment ? [assignment] : []), ...dependencies]
   }
 }
 
 //* Comment/uncomment this line to toggle between string formulas and JSX formulas
 function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
-  const { key, value, formula, prefix, source, variant, fixed } = node
+  const { info, value, formula } = node
+  const { key, prefix, source, variant, fixed } = info
   if (typeof value !== "number") return
   node.valueDisplay = <ColorText color="info">{valueString(value, KeyMap.unit(key), fixed)}</ColorText>
   if (key && key !== '_') {
@@ -379,12 +373,19 @@ function mergeFormulaComponents(components: Displayable[]): Displayable {
 }
 //*/
 
+function mergeInfo(base: Info, override: Info): Info {
+  const result = { ...base }
+  if (override.key) result.key = override.key
+  if (override.prefix) result.prefix = override.prefix
+  if (override.source) result.source = override.source
+  if (override.variant) result.variant = override.variant
+  if (override.pivot) result.pivot = override.pivot
+  if (override.fixed) result.fixed = override.fixed
+  return result
+}
+
 interface ContextNodeDisplay<V = number> {
-  key?: Info["key"]
-  prefix?: Info["prefix"]
-  source?: Info["source"]
-  variant?: Info["variant"]
-  fixed?: Info["fixed"]
+  info: Info
 
   pivot: boolean
   empty: boolean
@@ -403,12 +404,14 @@ interface ContextNodeDisplay<V = number> {
 }
 
 const illformed: ContextNodeDisplay = {
+  info: {},
   value: NaN, pivot: true,
   empty: false,
   dependencies: new Set(),
   mayNeedWrapping: false
 }
 const illformedStr: ContextNodeDisplay<string | undefined> = {
+  info: {},
   value: undefined, pivot: true,
   empty: false,
   dependencies: new Set(),
@@ -419,6 +422,6 @@ function makeEmpty(emptyValue: string | undefined): ContextNodeDisplay<string | 
 function makeEmpty(emptyValue: number | string | undefined): ContextNodeDisplay<number | string | undefined>
 function makeEmpty(emptyValue: number | string | undefined): ContextNodeDisplay<number | string | undefined> {
   return {
-    value: emptyValue, pivot: false, empty: true, dependencies: new Set(), mayNeedWrapping: false
+    info: {}, value: emptyValue, pivot: false, empty: true, dependencies: new Set(), mayNeedWrapping: false
   }
 }
