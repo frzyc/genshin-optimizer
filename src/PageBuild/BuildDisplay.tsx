@@ -535,15 +535,37 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           </Box>
         </CardContent>
       </CardDark>
-      <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
-        {/* Build List */}
-        {buildsArts?.map((build, index) => character && characterKey && characterSheet && data && <DataContextWrapper key={index + build.join()} characterKey={characterKey} character={character} build={build} characterSheet={characterSheet} oldData={data} mainStatAssumptionLevel={mainStatAssumptionLevel} characterDispatch={characterDispatch} >
-          <ArtifactBuildDisplayItem index={index} compareBuild={compareData} disabled={!!generatingBuilds} />
-        </DataContextWrapper>
-        )}
-      </Suspense>
+      <BuildList {...{ buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled: !!generateBuilds }} />
     </DataContext.Provider>}
   </Box>
+}
+function BuildList({ buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled }: {
+  buildsArts: ICachedArtifact[][],
+  character?: ICachedCharacter,
+  characterKey?: "" | CharacterKey,
+  characterSheet?: CharacterSheet,
+  data?: UIData,
+  compareData: boolean,
+  mainStatAssumptionLevel: number,
+  characterDispatch: (action: characterReducerAction) => void
+  disabled: boolean,
+}) {
+  // Memoize the build list because calculating/rendering the build list is actually very expensive, which will cause longer builder times.
+  const list = useMemo(() => <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
+    {buildsArts?.map((build, index) => character && characterKey && characterSheet && data && <DataContextWrapper
+      key={index + build.join()}
+      characterKey={characterKey}
+      character={character}
+      build={build}
+      characterSheet={characterSheet}
+      oldData={data}
+      mainStatAssumptionLevel={mainStatAssumptionLevel}
+      characterDispatch={characterDispatch} >
+      <ArtifactBuildDisplayItem index={index} compareBuild={compareData} disabled={disabled} />
+    </DataContextWrapper>
+    )}
+  </Suspense>, [buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled])
+  return list
 }
 
 type Prop = {
