@@ -538,7 +538,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           </Box>
         </CardContent>
       </CardDark>
-      <BuildList {...{ buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled: !!generateBuilds }} />
+      <BuildList {...{ buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled: !!generatingBuilds }} />
     </DataContext.Provider>}
   </Box>
 }
