@@ -196,11 +196,11 @@ function ArtifactDisplay() {
     [data, database]) as Array<[SlotKey, ICachedArtifact | undefined]>;
   if (!artifactSheets) return null
 
-  return <Grid container spacing={1}>
+  return <Grid container spacing={0.25}>
     {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) => {
       if (!art) return <Grid item key={key} flexGrow={1}>
         <CardDark variant="outlined" sx={{ height: "100%" }}>
-          <Box sx={{ pl: 0.4, pr: 0.4, pt: 1, pb: 1, textAlign: "center" }}>
+          <Box sx={{ pl: 0.3, pr: 0.3, pt: 1, pb: 1, textAlign: "center" }}>
             <FontAwesomeIcon icon={SlotIconSVG[key]} key={key} className="fa-fw" size="3x" />
           </Box>
         </CardDark>
@@ -209,7 +209,7 @@ function ArtifactDisplay() {
       const { setKey, slotKey, mainStatKey, rarity, level, mainStatVal } = art
       return <Grid item key={key} flexGrow={1}>
         <CardDark variant="outlined" sx={{ borderColor: theme.palette[`star${rarity}`].main }}>
-          <Box sx={{ pl: 0.4, pr: 0.4, pt: 0.25, pb: 1, textAlign: "center" }}>
+          <Box sx={{ pl: 0.3, pr: 0.3, pt: 0.25, pb: 1, textAlign: "center" }}>
             <ImgIcon src={artifactSheets?.[setKey].slotIcons[slotKey]} sx={{ height: "3.5em" }} />
             <Typography variant='subtitle1' sx={{ display: "flex", gap: 1, mb: 0.5 }} >
               <SqBadge color="primary">Lv. {level}</SqBadge>
