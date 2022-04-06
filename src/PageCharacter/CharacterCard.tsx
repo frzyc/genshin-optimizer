@@ -1,6 +1,6 @@
 import { Box, CardActionArea, CardContent, Chip, Grid, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
-import { artifactSlotIcon, SlotIconSVG } from '../Components/Artifact/SlotNameWIthIcon';
+import { SlotIconSVG } from '../Components/Artifact/SlotNameWIthIcon';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
