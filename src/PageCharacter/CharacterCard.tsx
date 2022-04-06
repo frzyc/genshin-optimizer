@@ -200,7 +200,7 @@ function ArtifactDisplay() {
     {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) => {
       if (!art) return <Grid item key={key} flexGrow={1}>
         <CardDark variant="outlined" sx={{ height: "100%" }}>
-          <Box sx={{ pl: 0.4, pr: 0.4, pt: 1, pb: 1 }}>
+          <Box sx={{ pl: 0.4, pr: 0.4, pt: 1, pb: 1, textAlign: "center" }}>
             <FontAwesomeIcon icon={SlotIconSVG[key]} key={key} className="fa-fw" size="3x" />
           </Box>
         </CardDark>
