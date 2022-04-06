@@ -98,6 +98,12 @@ export function lessThan(v1: Num, v2: Num, pass: Num | Str, info?: Info): NumNod
   return { operation: "threshold", operands, info, emptyOn: "ge" }
 }
 
+/** v1 >= v2 ? pass : fail */
+export function cmp(v1: Num, v2: Num, pass: Num, fail: Num, info?: Info): NumNode {
+  const operands = [intoV(v1), intoV(v2), intoV(pass), intoV(fail)] as any
+  return { operation: "threshold", operands, info }
+}
+
 export function setReadNodeKeys<T extends NodeList>(nodeList: T, prefix: string[] = []): T {
   if (nodeList.operation) {
     if (nodeList.operation !== "read")
