@@ -30,6 +30,11 @@ declare module '@mui/material/styles' {
     swirl: Palette['primary'];
     burning: Palette['primary'];
     crystallize: Palette['primary'];
+    star1: Palette['primary'];
+    star2: Palette['primary'];
+    star3: Palette['primary'];
+    star4: Palette['primary'];
+    star5: Palette['primary'];
   }
   interface PaletteOptions {
     warning?: PaletteOptions['primary'];
@@ -59,6 +64,11 @@ declare module '@mui/material/styles' {
     swirl?: PaletteOptions['primary'];
     burning?: PaletteOptions['primary'];
     crystallize?: PaletteOptions['primary'];
+    star1?: PaletteOptions['primary'];
+    star2?: PaletteOptions['primary'];
+    star3?: PaletteOptions['primary'];
+    star4?: PaletteOptions['primary'];
+    star5?: PaletteOptions['primary'];
   }
 }
 
@@ -99,6 +109,11 @@ declare module "@mui/material/Chip" {
     electro: true;
     anemo: true;
     physical: true;
+    star1: true;
+    star2: true;
+    star3: true;
+    star4: true;
+    star5: true;
   }
 }
 
@@ -246,6 +261,26 @@ export const theme = createTheme({
       color: { main: "#f8ba4e", },
       name: "crystallize"
     }),
+    star1: defaultTheme.palette.augmentColor({
+      color: { main: "#838f99", },
+      name: "star1"
+    }),
+    star2: defaultTheme.palette.augmentColor({
+      color: { main: "#5e966c", },
+      name: "star2"
+    }),
+    star3: defaultTheme.palette.augmentColor({
+      color: { main: "#499fb3", },
+      name: "star3"
+    }),
+    star4: defaultTheme.palette.augmentColor({
+      color: { main: "#b886ca", },
+      name: "star4"
+    }),
+    star5: defaultTheme.palette.augmentColor({
+      color: { main: "#e6ac54", },
+      name: "star5"
+    })
   },
   typography: {
     button: {

@@ -1,5 +1,7 @@
 import { Box, CardActionArea, CardContent, Chip, Grid, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
+import { artifactSlotIcon, SlotIconSVG } from '../Components/Artifact/SlotNameWIthIcon';
+import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import ConditionalWrapper from '../Components/ConditionalWrapper';
@@ -15,7 +17,7 @@ import { DatabaseContext } from '../Database/Database';
 import { DataContext, dataContextObj, TeamData } from '../DataContext';
 import { uiInput as input } from '../Formula';
 import { computeUIData, dataObjForWeapon } from '../Formula/api';
-import KeyMap, { valueString } from '../KeyMap';
+import KeyMap, { cacheValueString, valueString } from '../KeyMap';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import usePromise from '../ReactHooks/usePromise';
 import useTeamData from '../ReactHooks/useTeamData';
@@ -23,6 +25,8 @@ import { ICachedArtifact } from '../Types/artifact';
 import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '../Types/consts';
 import { ICachedWeapon } from '../Types/weapon';
 import { NodeDisplay } from '../Formula/uiData'
+import { theme } from '../Theme';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type CharacterCardProps = {
   characterKey: CharacterKey | "",
@@ -58,11 +62,11 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
       <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
         <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >
           <Header onClick={!onClick ? onClickHeader : undefined} />
-          <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
+          <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1, pl: 1, pr: 1 }}>
             <Weapon weaponId={character.equippedWeapon} />
             {weaponChildren}
             {/* will grow to fill the 100% height */}
-            <Box flexGrow={1} display="flex" flexDirection="column" gap={1}>
+            <Box flexGrow={1} display="flex" flexDirection="column" gap={0.5}>
               <ArtifactDisplay />
               {artifactChildren}
             </Box>
@@ -191,13 +195,32 @@ function ArtifactDisplay() {
     allSlotKeys.map(k => [k, database._getArt(data.get(input.art[k].id).value ?? "")]),
     [data, database]) as Array<[SlotKey, ICachedArtifact | undefined]>;
   if (!artifactSheets) return null
-  return <Grid container spacing={1} >
-    {artifacts.map(([key, art]) => {
-      if (!art) return null
-      const { setKey, slotKey, mainStatKey } = art
+
+  return <Grid container spacing={1}>
+    {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) => {
+      if (!art) return <Grid item key={key} flexGrow={1}>
+        <CardDark variant="outlined" sx={{ height: "100%" }}>
+          <Box sx={{ pl: 0.4, pr: 0.4, pt: 1, pb: 1 }}>
+            <FontAwesomeIcon icon={SlotIconSVG[key]} key={key} className="fa-fw" size="3x" />
+          </Box>
+        </CardDark>
+      </Grid>
+
+      const { setKey, slotKey, mainStatKey, rarity, level, mainStatVal } = art
       return <Grid item key={key} flexGrow={1}>
-        <Chip color="secondary" sx={{ width: "100%" }} icon={<ImgIcon src={artifactSheets?.[setKey].slotIcons[slotKey]} size={2.5} />}
-          label={<span>{StatIcon[mainStatKey]} {KeyMap.get(mainStatKey)}</span>} />
+        <CardDark variant="outlined" sx={{ borderColor: theme.palette[`star${rarity}`].main }}>
+          <Box sx={{ pl: 0.4, pr: 0.4, pt: 0.25, pb: 1, textAlign: "center" }}>
+            <ImgIcon src={artifactSheets?.[setKey].slotIcons[slotKey]} sx={{ height: "3.5em" }} />
+            <Typography variant='subtitle1' sx={{ display: "flex", gap: 1, mb: 0.5 }} >
+              <SqBadge color="primary">Lv. {level}</SqBadge>
+            </Typography>
+            <Typography variant='subtitle1' sx={{ display: "flex", gap: 1 }} >
+              <BootstrapTooltip placement="top" title={<Typography>{KeyMap.getArtStr(mainStatKey)}</Typography>}>
+                  <SqBadge color="secondary">{StatIcon[mainStatKey]} {cacheValueString(mainStatVal, KeyMap.unit(mainStatKey))}{KeyMap.unit(mainStatKey)}</SqBadge>
+              </BootstrapTooltip>
+            </Typography>
+          </Box>
+        </CardDark>
       </Grid>
     })}
   </Grid>
