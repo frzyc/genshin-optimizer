@@ -84,7 +84,7 @@ export default function ArtifactBuildDisplayItem({ index, compareBuild, disabled
           )}
           <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}>
           </Box>
-          <Button size='small' color="info" onClick={openModal} disabled={disabled || currentlyEquipped}>Build Details</Button>
+          <Button size='small' color="info" onClick={openModal} disabled={disabled}>Build Details</Button>
           <Button size='small' color="success" onClick={equipArts} disabled={disabled || currentlyEquipped}>Equip Artifacts</Button>
         </Box>
         <Grid container spacing={1} sx={{ pb: 1 }}>
