@@ -203,7 +203,7 @@ function ArtifactDisplay() {
       <CardDark variant="outlined" sx={{ height: "100%" }}>
         <Grid container>
           {setEffects && Object.entries(setEffects).map(([setKey, setNumKeyArr]) =>
-            <Grid display="flex" alignItems="center" item xs={12} sx={{ pl: 1, pr: 1 }}>
+            <Grid key={setKey} display="flex" alignItems="center" item xs={12} sx={{ pl: 1, pr: 1 }}>
               <ImgIcon src={artifactSheets[setKey].slotIcons.flower ?? artifactSheets[setKey].slotIcons.circlet} sx={{ height: "2.5em", pt: 0.5 }} />
               <SqBadge color="success">{setNumKeyArr.at(-1)}-Set</SqBadge>
             </Grid>
@@ -212,7 +212,7 @@ function ArtifactDisplay() {
       </CardDark>
     </Grid>
 
-    {/* Artifact piece box */}
+    {/* Artifact 5 piece meal */}
     {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) => {
       if (!art) return <Grid item key={key} xs={4}>
         <CardDark variant="outlined" sx={{ height: "100%" }}>
