@@ -8,6 +8,7 @@ import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BackgroundWorker";
 import ArtifactLevelSlider from '../Components/Artifact/ArtifactLevelSlider';
+import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton';
@@ -487,11 +488,13 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                   {maxBuildsToShowList.map(v => <MenuItem key={v}
                     onClick={() => buildSettingsDispatch({ maxBuildsToShow: v })}>{v} {v === 1 ? "Build" : "Builds"}</MenuItem>)}
                 </DropdownButton>
-                <DropdownButton disabled={generatingBuilds || !characterKey} color="info"
-                  title={<span><b>{maxWorkers}</b> {maxBuildsToShow === 1 ? "Thread" : "Threads"}</span>}>
-                  {range(1, navigator.hardwareConcurrency || 4).reverse().map(v => <MenuItem key={v}
-                    onClick={() => setMaxWorkers(v)}>{v} {v === 1 ? "Thread" : "Threads"}</MenuItem>)}
-                </DropdownButton>
+                <BootstrapTooltip title={<Typography>Increasing the number of threads will speed up build time, but will use more CPU power.</Typography>}>
+                  <DropdownButton disabled={generatingBuilds || !characterKey} color="info"
+                    title={<span><b>{maxWorkers}</b> {maxBuildsToShow === 1 ? "Thread" : "Threads"}</span>}>
+                    {range(1, navigator.hardwareConcurrency || 4).reverse().map(v => <MenuItem key={v}
+                      onClick={() => setMaxWorkers(v)}>{v} {v === 1 ? "Thread" : "Threads"}</MenuItem>)}
+                  </DropdownButton>
+                </BootstrapTooltip>
                 {/* </Tooltip> */}
                 <Button
                   disabled={!generatingBuilds}
