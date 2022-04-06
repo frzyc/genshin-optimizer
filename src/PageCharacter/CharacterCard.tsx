@@ -62,7 +62,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
       <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
         <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >
           <Header onClick={!onClick ? onClickHeader : undefined} />
-          <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
+          <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1, pl: 0.5, pr: 0.5 }}>
             <Weapon weaponId={character.equippedWeapon} />
             {weaponChildren}
             {/* will grow to fill the 100% height */}
@@ -197,24 +197,10 @@ function ArtifactDisplay() {
   const setEffects = useMemo(() => artifactSheets && ArtifactSheet.setEffects(artifactSheets, data), [artifactSheets, data])
   if (!artifactSheets) return null
 
-  return <Grid direction="row" container spacing={1} rowSpacing={0.5}>
-    {/* Set effect box */}
-    <Grid item key={"setEffects"} xs={4}>
-      <CardDark variant="outlined" sx={{ height: "100%" }}>
-        <Grid container>
-          {setEffects && Object.entries(setEffects).map(([setKey, setNumKeyArr]) =>
-            <Grid key={setKey} display="flex" alignItems="center" item xs={12} sx={{ pl: 1, pr: 1 }}>
-              <ImgIcon src={artifactSheets[setKey].slotIcons.flower ?? artifactSheets[setKey].slotIcons.circlet} sx={{ height: "2.5em", pt: 0.5 }} />
-              <SqBadge color="success">{setNumKeyArr.at(-1)}-Set</SqBadge>
-            </Grid>
-          )}
-        </Grid>
-      </CardDark>
-    </Grid>
-
+  return <Grid direction="row" container spacing={0.5} columns={5}>
     {/* Artifact 5 piece meal */}
     {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) => {
-      if (!art) return <Grid item key={key} xs={4}>
+      if (!art) return <Grid item key={key} xs={1}>
         <CardDark variant="outlined" sx={{ height: "100%" }}>
           <Box sx={{ pl: 1, pr: 1, pt: 1, pb: 1, textAlign: "center" }}>
             <FontAwesomeIcon icon={SlotIconSVG[key]} key={key} className="fa-fw" size="3x" />
@@ -223,16 +209,16 @@ function ArtifactDisplay() {
       </Grid>
 
       const { setKey, slotKey, mainStatKey, rarity, level, mainStatVal } = art
-      return <Grid item key={key} xs={4}>
+      return <Grid item key={key} xs={1}>
         <CardDark variant="outlined" sx={{ borderColor: theme.palette[`star${rarity}`].main }}>
-          <Box sx={{ pl: 1, pr: 1, pt: 0.25, pb: 1, textAlign: "center" }}>
-            <ImgIcon src={artifactSheets?.[setKey].slotIcons[slotKey]} sx={{ height: "3.5em" }} />
-            <Typography variant='subtitle1' sx={{ display: "flex", gap: 1, mb: 0.5 }} >
+          <Box sx={{ pl: 0.5, pr: 0.5, pt: 0.25, pb: 1, textAlign: "center" }}>
+            <ImgIcon src={artifactSheets?.[setKey].slotIcons[slotKey]} sx={{ height: "3em" }} />
+            <Typography variant='subtitle1' sx={{ display: "flex", mb: 0.5 }} >
               <SqBadge color="primary">Lv. {level}</SqBadge>
             </Typography>
-            <Typography variant='subtitle1' sx={{ display: "flex", gap: 1 }} >
-              <BootstrapTooltip placement="top" title={<Typography>{KeyMap.getArtStr(mainStatKey)}</Typography>}>
-                  <SqBadge color="secondary">{StatIcon[mainStatKey]} {cacheValueString(mainStatVal, KeyMap.unit(mainStatKey))}{KeyMap.unit(mainStatKey)}</SqBadge>
+            <Typography variant='subtitle1' sx={{ display: "flex" }} >
+              <BootstrapTooltip placement="top" title={<Typography>{cacheValueString(mainStatVal, KeyMap.unit(mainStatKey))}{KeyMap.unit(mainStatKey)} {KeyMap.getStr(mainStatKey)}</Typography>}>
+                  <SqBadge color="secondary" sx={{ width: "100%" }}>{StatIcon[mainStatKey]}</SqBadge>
               </BootstrapTooltip>
             </Typography>
           </Box>
