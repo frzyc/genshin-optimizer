@@ -85,5 +85,5 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
 }
 function LocationIcon({ location }) {
   const characterSheet = usePromise(CharacterSheet.get(location ?? ""), [location])
-  return characterSheet ? <BootstrapTooltip placement="top" title={<Typography>{characterSheet.name}</Typography>}><ImgIcon src={characterSheet.thumbImgSide} sx={{ height: "3em", marginTop: "-1.5em", marginLeft: "-0.5em" }} /></BootstrapTooltip> : <BusinessCenter />
+  return characterSheet ? <BootstrapTooltip placement="right-end" title={<Typography>{characterSheet.name}</Typography>}><ImgIcon src={characterSheet.thumbImgSide} sx={{ height: "3em", marginTop: "-1.5em", marginLeft: "-0.5em" }} /></BootstrapTooltip> : <BusinessCenter />
 }
