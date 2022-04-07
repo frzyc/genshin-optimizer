@@ -1,6 +1,6 @@
 import { Box, CardActionArea, CardContent, Chip, Grid, Skeleton, Stack, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
-import { SlotIconSVG } from '../Components/Artifact/SlotNameWIthIcon';
+import { artifactSlotIcon } from '../Components/Artifact/SlotNameWIthIcon';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
@@ -26,7 +26,6 @@ import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '../Types/consts'
 import { ICachedWeapon } from '../Types/weapon';
 import { NodeDisplay } from '../Formula/uiData'
 import { theme } from '../Theme';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type CharacterCardProps = {
   characterKey: CharacterKey | "",
@@ -203,7 +202,7 @@ function ArtifactDisplay() {
       if (!art) return <Grid item key={key} xs={1}>
         <CardDark variant="outlined" sx={{ height: "100%" }}>
           <Box sx={{ pl: 1, pr: 1, pt: 1, pb: 1, textAlign: "center" }}>
-            <FontAwesomeIcon icon={SlotIconSVG[key]} key={key} className="fa-fw" size="3x" />
+            {artifactSlotIcon(key, "3x")}
           </Box>
         </CardDark>
       </Grid>
