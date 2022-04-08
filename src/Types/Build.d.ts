@@ -1,4 +1,4 @@
-import { ICachedArtifact, MainStatKey, StatKey, SubstatKey } from "./artifact_WR"
+import { ICachedArtifact, MainStatKey, StatKey, SubstatKey } from "./artifact"
 import { ArtifactSetKey, SlotKey } from "./consts"
 
 export type ArtifactsBySlot = Dict<SlotKey, ICachedArtifact[]>

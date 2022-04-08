@@ -18,7 +18,7 @@ function zero_deriv(funct: NumNode, binding: (readNode: ReadNode<number>) => str
   return ret
 }
 
-function ddx(f: NumNode, binding: (readNode: ReadNode<number>) => string, diff: string): NumNode {
+export function ddx(f: NumNode, binding: (readNode: ReadNode<number>) => string, diff: string): NumNode {
   const { operation } = f
   switch (operation) {
     case "read":
@@ -285,61 +285,53 @@ export function diff_debug() {
   const stats: Dict<string, number> = { "0": 0.284294, "1": 0.9462000033378601, "2": 0.1, "3": 1.48, "TenacityOfTheMillelith": 0, "hp_": 0.23249999999999998, "hp": 1159, "ShimenawasReminiscence": 1, "atk_": 0.0933, "atk": 110.58, "EmblemOfSeveredFate": 0, "enerRech_": 0.09709999999999999 }
   // const formula1: NumNode = { "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "TenacityOfTheMillelith"], "accu": "add", "info": { "key": "TenacityOfTheMillelith" }, "type": "number" }, { "operation": "const",'type':'number', "operands": [], "value": 2, "type": "number" }, { "operation": "const",'type':'number', "operands": [], "value": 0.2, "info": { "key": "_" }, "type": "number" }, { "operation": "const",'type':'number', "operands": [], "value": 0, "type": "number" }], "info": { "key": "hp_", "source": "TenacityOfTheMillelith" }, "emptyOn": "l" }, { "operation": "read", "operands": [], "path": ["dyn", "hp_"], "info": { "prefix": "art", "asConst": true, "key": "hp_" }, "type": "number", "accu": "add" }, { "operation": "const",'type':'number', "operands": [], "value": 1, "type": "number" }] }, { "operation": "const",'type':'number', "operands": [], "value": 15552.306844604493, "type": "number" }] }, { "operation": "read", "operands": [], "path": ["dyn", "hp"], "info": { "prefix": "art", "asConst": true, "key": "hp" }, "type": "number", "accu": "add" }] }, { "operation": "const",'type':'number', "operands": [], "value": 0.05957, "type": "number" }] }, { "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "ShimenawasReminiscence"], "accu": "add", "info": { "key": "ShimenawasReminiscence" }, "type": "number" }, { "operation": "const",'type':'number', "operands": [], "value": 2, "type": "number" }, { "operation": "const",'type':'number', "operands": [], "value": 0.18, "info": { "key": "_" }, "type": "number" }, { "operation": "const",'type':'number', "operands": [], "value": 0, "type": "number" }], "info": { "key": "atk_", "source": "ShimenawasReminiscence" }, "emptyOn": "l" }, { "operation": "read", "operands": [], "path": ["dyn", "atk_"], "info": { "prefix": "art", "asConst": true, "key": "atk_" }, "type": "number", "accu": "add" }, { "operation": "const",'type':'number', "operands": [], "value": 1, "type": "number" }] }, { "operation": "const",'type':'number', "operands": [], "value": 507.727969991803, "type": "number" }] }, { "operation": "read", "operands": [], "path": ["dyn", "atk"], "info": { "prefix": "art", "asConst": true, "key": "atk" }, "type": "number", "accu": "add" }] }, { "operation": "read", "operands": [], "path": ["dyn", "3"], "type": "number", "accu": "add" }, { "operation": "add", "operands": [{ "operation": "mul", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "0"], "type": "number", "accu": "add" }, { "operation": "read", "operands": [], "path": ["dyn", "1"], "type": "number", "accu": "add" }] }, { "operation": "const",'type':'number', "operands": [], "value": 1, "type": "number" }] }, { "operation": "res", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "2"], "type": "number", "accu": "add" }] }, { "operation": "const",'type':'number', "operands": [], "value": 1.1433, "type": "number" }] }
   const formula1: NumNode = { "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "TenacityOfTheMillelith"], "accu": "add", "info": { "key": "TenacityOfTheMillelith" }, "type": "number" }, { "operation": "const", 'type': 'number', "operands": [], "value": 2 }, { "operation": "const", 'type': 'number', "operands": [], "value": 0.2, "info": { "key": "_" } }, { "operation": "const", 'type': 'number', "operands": [], "value": 0 }], "info": { "key": "hp_", "source": "TenacityOfTheMillelith" }, "emptyOn": "l" }, { "operation": "read", "operands": [], "path": ["dyn", "hp_"], "info": { "prefix": "art", "asConst": true, "key": "hp_" }, "type": "number", "accu": "add" }, { "operation": "const", 'type': 'number', "operands": [], "value": 1 }] }, { "operation": "const", 'type': 'number', "operands": [], "value": 15552.306844604493 }] }, { "operation": "read", "operands": [], "path": ["dyn", "hp"], "info": { "prefix": "art", "asConst": true, "key": "hp" }, "type": "number", "accu": "add" }] }, { "operation": "const", 'type': 'number', "operands": [], "value": 0.05957 }] }, { "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "ShimenawasReminiscence"], "accu": "add", "info": { "key": "ShimenawasReminiscence" }, "type": "number" }, { "operation": "const", 'type': 'number', "operands": [], "value": 2 }, { "operation": "const", 'type': 'number', "operands": [], "value": 0.18, "info": { "key": "_" } }, { "operation": "const", 'type': 'number', "operands": [], "value": 0 }], "info": { "key": "atk_", "source": "ShimenawasReminiscence" }, "emptyOn": "l" }, { "operation": "read", "operands": [], "path": ["dyn", "atk_"], "info": { "prefix": "art", "asConst": true, "key": "atk_" }, "type": "number", "accu": "add" }, { "operation": "const", 'type': 'number', "operands": [], "value": 1 }] }, { "operation": "const", 'type': 'number', "operands": [], "value": 507.727969991803 }] }, { "operation": "read", "operands": [], "path": ["dyn", "atk"], "info": { "prefix": "art", "asConst": true, "key": "atk" }, "type": "number", "accu": "add" }] }, { "operation": "read", "operands": [], "path": ["dyn", "3"], "type": "number", "accu": "add" }, { "operation": "add", "operands": [{ "operation": "mul", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "0"], "type": "number", "accu": "add" }, { "operation": "read", "operands": [], "path": ["dyn", "1"], "type": "number", "accu": "add" }] }, { "operation": "const", 'type': 'number', "operands": [], "value": 1 }] }, { "operation": "res", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "2"], "type": "number", "accu": "add" }] }, { "operation": "add", "operands": [{ "operation": "mul", "operands": [{ "operation": "sum_frac", "operands": [{ "operation": "add", "operands": [{ "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "WanderersTroupe"], "accu": "add", "info": { "key": "WanderersTroupe" }, "type": "number" }, { "operation": "const", 'type': 'number', "operands": [], "value": 2 }, { "operation": "const", 'type': 'number', "operands": [], "value": 80 }, { "operation": "const", 'type': 'number', "operands": [], "value": 0 }], "info": { "key": "eleMas", "source": "WanderersTroupe" }, "emptyOn": "l" }, { "operation": "read", "operands": [], "path": ["dyn", "eleMas"], "info": { "prefix": "art", "asConst": true, "key": "eleMas" }, "type": "number", "accu": "add" }] }, { "operation": "const", 'type': 'number', "operands": [], "value": 1400 }] }, { "operation": "const", 'type': 'number', "operands": [], "value": 2.7777777777777777 }] }, { "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "CrimsonWitchOfFlames"], "accu": "add", "info": { "key": "CrimsonWitchOfFlames" }, "type": "number" }, { "operation": "const", 'type': 'number', "operands": [], "value": 4 }, { "operation": "const", 'type': 'number', "operands": [], "value": 0.15, "info": { "key": "_" } }, { "operation": "const", 'type': 'number', "operands": [], "value": 0 }], "info": { "key": "vaporize_dmg_", "variant": "vaporize", "source": "CrimsonWitchOfFlames" }, "emptyOn": "l" }, { "operation": "const", 'type': 'number', "operands": [], "value": 1 }] }, { "operation": "const", 'type': 'number', "operands": [], "value": 1.71495 }] }
-  const formula2: NumNode = { "operation": "threshold", "operands": [formula1, { "operation": "const", 'type': 'number', 'value': 10000, 'operands': [] }, { "operation": "const", 'type': 'number', 'value': 0, 'operands': [] }, { "operation": "const", 'type': 'number', 'value': 1, 'operands': [] }] }
-  // const formula2 = formula1
+  // const formula2: NumNode = { "operation": "threshold", "operands": [formula1, { "operation": "const", 'type': 'number', 'value': 10000, 'operands': [] }, { "operation": "const", 'type': 'number', 'value': 0, 'operands': [] }, { "operation": "const", 'type': 'number', 'value': 1, 'operands': [] }] }
+  const formula2 = formula1
 
   var compute = precompute([formula2], f => f.path[1])
   var result = compute(stats)[0]
   // console.log(result)
 
-  console.log(zero_deriv(formula2, f => f.path[1], 'hp_'))
+  // console.log(zero_deriv(formula2, f => f.path[1], 'hp_'))
 
-  var dhp_ = ddx(formula2, f => f.path[1], 'hp_')
-  var c_dhp_ = precompute([dhp_], f => f.path[1])
-  console.log('Symbolic diff hp_', c_dhp_(stats)[0])
-
-
-
-  // var compDiff = precomputeDiff([formula2], f => f.path[1], ['enerRech_'])
-  // var compDiff = precomputeDiff([formula2], f => f.path[1], ['hp_', 'hp', 'atk_', 'eleMas'])
-  // var resdiff = compDiff(stats)[0]
-  // console.log(result, resdiff)
-
-  // Check validity of calculated derivatives
-  // const eps = 1e-5
-  // let stat2 = { ...stats }
-  // stat2['hp_'] = eps + (stat2['hp_'] ?? 0)
-  // var res2 = compute(stat2)[0]
-  // console.log('Numeric diff hp_', (res2 - result) / eps)
-  // console.log('Dual number diff hp_', resdiff.g[0])
   // var dhp_ = ddx(formula2, f => f.path[1], 'hp_')
   // var c_dhp_ = precompute([dhp_], f => f.path[1])
   // console.log('Symbolic diff hp_', c_dhp_(stats)[0])
 
-  // stat2 = { ...stats }
-  // stat2['hp'] = eps + (stat2['hp'] ?? 0)
-  // res2 = compute(stat2)[0]
-  // console.log('Numeric diff hp', (res2 - result) / eps)
-  // console.log('Dual number diff hp', resdiff.g[1])
-  // var dhp = ddx(formula2, f => f.path[1], 'hp')
-  // var c_dhp = precompute([dhp], f => f.path[1])
-  // console.log('Symbolic diff hp', c_dhp(stats)[0])
 
-  // stat2 = { ...stats }
-  // stat2['atk_'] = eps + (stat2['atk_'] ?? 0)
-  // res2 = compute(stat2)[0]
-  // console.log('Numeric diff atk_', (res2 - result) / eps)
-  // console.log('Dual number diff atk_', resdiff.g[2])
-  // var datk_ = ddx(formula2, f => f.path[1], 'atk_')
-  // var c_datk_ = precompute([datk_], f => f.path[1])
-  // console.log('Symbolic diff atk_', c_datk_(stats)[0])
 
-  // stat2 = { ...stats }
-  // stat2['eleMas'] = eps + (stat2['eleMas'] ?? 0)
-  // res2 = compute(stat2)[0]
-  // console.log('Numeric diff eleMas', (res2 - result) / eps)
-  // console.log('Dual number diff eleMas', resdiff.g[3])
-  // var deleMas = ddx(formula2, f => f.path[1], 'eleMas')
-  // var c_deleMas = precompute([deleMas], f => f.path[1])
-  // console.log('Symbolic diff eleMas', c_deleMas(stats)[0])
+  var compDiff = precomputeDiff([formula2], f => f.path[1], ['enerRech_'])
+  var compDiff = precomputeDiff([formula2], f => f.path[1], ['hp_', 'hp', 'atk_', 'eleMas'])
+  var resdiff = compDiff(stats)[0]
+  console.log('raw result:', result)
+
+  // Check validity of calculated derivatives
+  const eps = 1e-5
+  let stat2 = { ...stats }
+  stat2['hp_'] = eps + (stat2['hp_'] ?? 0)
+  var res2 = compute(stat2)[0]
+  var dhp_ = ddx(formula2, f => f.path[1], 'hp_')
+  var c_dhp_ = precompute([dhp_], f => f.path[1])
+  console.log('diff hp_ (numeric/dual/symbolic)', (res2 - result) / eps, resdiff.g[0], c_dhp_(stats)[0])
+
+  stat2 = { ...stats }
+  stat2['hp'] = eps + (stat2['hp'] ?? 0)
+  res2 = compute(stat2)[0]
+  var dhp = ddx(formula2, f => f.path[1], 'hp')
+  var c_dhp = precompute([dhp], f => f.path[1])
+  console.log('diff hp (numeric/dual/symbolic)', (res2 - result) / eps, resdiff.g[1], c_dhp(stats)[0])
+
+  stat2 = { ...stats }
+  stat2['atk_'] = eps + (stat2['atk_'] ?? 0)
+  res2 = compute(stat2)[0]
+  var datk_ = ddx(formula2, f => f.path[1], 'atk_')
+  var c_datk_ = precompute([datk_], f => f.path[1])
+  console.log('diff atk_ (numeric/dual/symbolic)', (res2 - result) / eps, resdiff.g[2], c_datk_(stats)[0])
+
+  stat2 = { ...stats }
+  stat2['eleMas'] = eps + (stat2['eleMas'] ?? 0)
+  res2 = compute(stat2)[0]
+  var deleMas = ddx(formula2, f => f.path[1], 'eleMas')
+  var c_deleMas = precompute([deleMas], f => f.path[1])
+  console.log('diff eleMas (numeric/dual/symbolic)', (res2 - result) / eps, resdiff.g[3], c_deleMas(stats)[0])
 }

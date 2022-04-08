@@ -34,7 +34,8 @@ import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
 import { BuildSetting } from '../Types/Build';
-import { ArtifactSetKey, CharacterKey } from '../Types/consts';
+import { allSlotKeys, ArtifactSetKey, CharacterKey } from '../Types/consts';
+import { SubstatKey } from "../Types/artifact"
 import { objectMap, objPathValue } from '../Util/Util';
 import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
@@ -52,8 +53,11 @@ import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import TeamBuffCard from './Components/TeamBuffCard';
 import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
+import { queryDebug, QueryBuild, QueryArtifact } from '../Formula/artifactQuery'
+import Artifact from "../Data/Artifacts/Artifact";
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
+const doquery = true;
 
 //lazy load the character display
 const CharacterDisplayCard = lazy(() => import('../PageCharacter/CharacterDisplayCard'))
@@ -211,6 +215,57 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       if (key.endsWith("_")) value = value / 100 // TODO: Conversion
       return { value: input.total[key], minimum: value }
     }).filter(x => x.value && x.minimum > -Infinity)
+
+    console.log('generate builds pressed')
+    if (doquery) {
+      const queryArts: QueryArtifact[] = database._getArts().map(art => {
+        const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, 20)
+        const buildData = {
+          id: art.id, slot: art.slotKey, level: art.level, rarity: art.rarity,
+          values: {
+            [art.setKey]: 1,
+            [art.mainStatKey]: art.mainStatKey.endsWith('_') ? mainStatVal / 100 : mainStatVal,
+            ...Object.fromEntries(art.substats.map(substat =>
+              [substat.key, substat.key.endsWith('_') ? substat.accurateValue / 100 : substat.accurateValue]))
+          },
+          substatKeys: art.substats.reduce((sub: SubstatKey[], x) => {
+            if (x.key != "") sub.push(x.key)
+            return sub
+          }, [])
+        }
+        delete buildData.values[""]
+        return buildData
+      })
+
+      let curEquip: QueryBuild = Object.assign({}, ...allSlotKeys.map(slotKey => {
+        const art = database._getArt(data?.get(input.art[slotKey].id).value ?? "")
+        if (!art) return { [slotKey]: {} }
+
+        const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, art.level)
+        const buildData: QueryArtifact = {
+          id: art.id, slot: slotKey, level: art.level, rarity: art.rarity,
+          values: {
+            [art.setKey]: 1,
+            [art.mainStatKey]: art.mainStatKey.endsWith('_') ? mainStatVal / 100 : mainStatVal,
+            ...Object.fromEntries(art.substats.map(substat =>
+              [substat.key, substat.key.endsWith('_') ? substat.accurateValue / 100 : substat.accurateValue]))
+          },
+          substatKeys: art.substats.reduce((sub: SubstatKey[], x) => {
+            if (x.key != "") sub.push(x.key)
+            return sub
+          }, [])
+        }
+        delete buildData.values[""]
+        return { [slotKey]: buildData }
+      }))
+
+      let nodes = [...valueFilter.map(x => x.value), optimizationTargetNode], arts = split!
+      nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
+
+      queryDebug(nodes, curEquip, workerData, queryArts)
+      return
+    }
+
 
     const t1 = performance.now()
     setgeneratingBuilds(true)
