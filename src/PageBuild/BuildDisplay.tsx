@@ -488,7 +488,13 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     onClick={() => buildSettingsDispatch({ maxBuildsToShow: v })}>{v} {v === 1 ? "Build" : "Builds"}</MenuItem>)}
                 </DropdownButton>
                 <DropdownButton disabled={generatingBuilds || !characterKey} color="info"
-                  title={<span><b>{maxWorkers}</b> {maxBuildsToShow === 1 ? "Thread" : "Threads"}</span>}>
+                  title={<span><b>{maxWorkers}</b> {maxWorkers === 1 ? "Thread" : "Threads"}</span>}>
+                  <MenuItem>
+                    <Typography variant="caption" color="info.main">
+                      Increasing the number of threads will speed up build time, but will use more CPU power.
+                    </Typography>
+                  </MenuItem>
+                  <Divider />
                   {range(1, navigator.hardwareConcurrency || 4).reverse().map(v => <MenuItem key={v}
                     onClick={() => setMaxWorkers(v)}>{v} {v === 1 ? "Thread" : "Threads"}</MenuItem>)}
                 </DropdownButton>
