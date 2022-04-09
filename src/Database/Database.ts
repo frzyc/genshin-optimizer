@@ -18,14 +18,15 @@ export class ArtCharDatabase {
   weapons = new DataManager<string, ICachedWeapon>()
   states = new DataManager<string, object>()
 
-  constructor(storage: DBStorage) {
+  constructor(storage: DBStorage, forcedUpdate = false) {
     this.storage = storage
-    this.reloadStorage()
+    this.reloadStorage(forcedUpdate)
   }
 
-  reloadStorage() {
+  reloadStorage(forced = false) {
     const storage = this.storage
-    const { migrated } = migrate(storage)
+    let { migrated } = migrate(storage)
+    if (forced) migrated = true
 
     // Load into memory and verify database integrity
     for (const key of storage.keys) {
