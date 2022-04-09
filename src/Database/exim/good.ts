@@ -80,13 +80,13 @@ function importGOOD1(data: IGOOD, oldDatabase: ArtCharDatabase): ImportResult | 
     setDBVersion(storage, 8)
   }
 
+  migrate(storage)
   mergeImport(result, oldDatabase)
   return result
 }
 
 function mergeImport(result: ImportResult, base: ArtCharDatabase) {
   const { artifacts: artCounter, weapons: weaponCounter, characters: charCounter, storage } = result
-  migrate(storage)
 
   // Match artifacts for counter, metadata, and locations
   if (artCounter) {
