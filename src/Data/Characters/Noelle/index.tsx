@@ -92,7 +92,7 @@ const nodeSkillHealChanceC1BurstOff = unequal("on", condBurst, nodeSkillHealChan
 
 const nodeC2ChargeDMG = greaterEq(input.constellation, 2, percent(datamine.constellation2.chargeDmg_))
 const nodeC2ChargeDec = greaterEq(input.constellation, 2, percent(-datamine.constellation2.chargeStamina))
-const nodeC4dmg = customDmgNode(prod(input.total.atk, percent(datamine.constellation4.skillDmg)), "elemental", { hit: { ele: constant(elementKey) } })
+const nodeC4dmg = greaterEq(input.constellation, 4, customDmgNode(prod(input.total.atk, percent(datamine.constellation4.skillDmg)), "elemental", { hit: { ele: constant(elementKey) } }))
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -114,7 +114,7 @@ const dmgFormulas = {
     skillDmg: dmgNode("atk", datamine.burst.skillDmg, "burst"),
   },
   passive1: {
-    devotionShield: shieldElement("geo", shieldNode("def", percent(datamine.passive1.shield), 0))
+    devotionShield: greaterEq(input.asc, 1, shieldElement("geo", shieldNode("def", percent(datamine.passive1.shield), 0)))
   },
   constellation4: {
     dmg: nodeC4dmg
@@ -254,7 +254,6 @@ const sheet: ICharacterSheet = {
       }),
       passive1: talentTemplate("passive1", tr, passive1, [
         {
-          canShow: data => data.get(input.asc).value >= 1,
           node: infoMut(dmgFormulas.passive1.devotionShield, { key: `char_${key}_gen:skill.skillParams.1` })
         }, {
           canShow: data => data.get(input.asc).value >= 1,
@@ -278,7 +277,6 @@ const sheet: ICharacterSheet = {
       }]),
       constellation3: talentTemplate("constellation3", tr, c3, [{ node: nodeC3 }]),
       constellation4: talentTemplate("constellation4", tr, c4, [{
-        canShow: data => data.get(input.constellation).value >= 4,
         node: infoMut(nodeC4dmg, { key: `char_${key}:c4dmg` })
       }]),
       constellation5: talentTemplate("constellation5", tr, c5, [{ node: nodeC5 }]),
