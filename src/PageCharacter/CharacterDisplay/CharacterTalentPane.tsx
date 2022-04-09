@@ -73,7 +73,7 @@ export default function CharacterTalentPane() {
           sx={{ opacity: constellation >= i ? 1 : 0.5 }}>
           <SkillDisplayCard
             talentKey={tKey}
-            subtitle={`Contellation Lv. ${i}`}
+            subtitle={`Constellation Lv. ${i}`}
             onClickTitle={() => characterDispatch({ constellation: i === constellation ? i - 1 : i })}
           />
         </Grid>
