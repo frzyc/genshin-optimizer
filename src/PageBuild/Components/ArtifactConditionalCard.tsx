@@ -18,8 +18,10 @@ export default function ArtifactConditionalCard({ disabled }: { disabled?: boole
   const [open, setOpen] = useState(false)
   const onOpen = useCallback(() => setOpen(true), [setOpen])
   const onClose = useCallback(() => setOpen(false), [setOpen])
+  console.log(character.conditional)
   const artifactCondCount = useMemo(() =>
-    (Object.keys(character.conditional) as any).filter(k => allArtifactSets.includes(k)).length
+    (Object.keys(character.conditional) as any).filter(k =>
+      allArtifactSets.includes(k) && Object.keys(character.conditional[k]).length !== 0).length
     , [character])
   return <CardLight><CardContent>
     <Button fullWidth onClick={onOpen} disabled={disabled}>
