@@ -74,7 +74,9 @@ function importGOOD1(data: IGOOD, oldDatabase: ArtCharDatabase): ImportResult | 
     });
   } else {
     // DO NOT CHANGE THE DB VERSION
-    // Standard GOODv1 matches dbv8.
+    // Standard GOODv1 matches dbv8. Update this ONLY when it has been verified that
+    // base GOODv1 is a valid GO of that particular version. Any missing/extra keys
+    // could crash the system.
     setDBVersion(storage, 8)
   }
 
