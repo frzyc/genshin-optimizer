@@ -10,7 +10,7 @@ import * as data1 from "./background.perf.test.json";
 import { pruneAll } from './common';
 import { compactArtifacts, dynamicData } from './foreground';
 
-describe("Worker Perf", () => {
+describe.skip("Worker Perf", () => {
   test("Test", async () => {
 
     /**

@@ -20,10 +20,10 @@ export class ArtCharDatabase {
 
   constructor(storage: DBStorage) {
     this.storage = storage
-    this.loadStorage()
+    this.reloadStorage()
   }
 
-  protected loadStorage() {
+  reloadStorage() {
     const storage = this.storage
     const { migrated } = migrate(storage)
 
