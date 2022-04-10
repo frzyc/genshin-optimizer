@@ -1,6 +1,3 @@
-import { initialBuildSettings } from "../../PageBuild/BuildSetting"
-import { ascensionMaxLevel } from "../../Data/LevelData"
-import { allCharacterKeys } from "../../Types/consts"
 import { crawlObject, layeredAssignment } from "../../Util/Util"
 import { DBStorage } from "../DBStorage"
 import { getDBVersion, setDBVersion } from "../utils"
