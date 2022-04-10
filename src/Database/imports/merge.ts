@@ -84,6 +84,8 @@ export function merge(result: ImportResult, base: ArtCharDatabase) {
     charCounter.updated = []
     charCounter.new = []
 
+    const hasTeamData = newCharEntries.some(([_, char]) => char.team.some(x => x))
+
     for (const [key, char] of newCharEntries) {
       const match = base._getChar(key as any)
       if (match) {
@@ -96,6 +98,8 @@ export function merge(result: ImportResult, base: ArtCharDatabase) {
       for (const key in match)
         if (!(key in char))
           char[key] = match[key]
+      if (!hasTeamData)
+        char.team = match.team
 
       storage.set(`char_${key}`, char)
     }
