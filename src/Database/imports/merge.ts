@@ -81,9 +81,26 @@ export function merge(result: ImportResult, base: ArtCharDatabase) {
     const newCharKeys = new Set(newCharEntries.map(([k]) => k))
     const oldCharKeys = new Set(base._getCharKeys() as string[])
 
-    charCounter.updated = [...newCharEntries].filter(([k]) => oldCharKeys.has(k)).map(([_, v]) => v)
+    charCounter.updated = []
+    charCounter.new = []
+
+    for (const [key, char] of newCharEntries) {
+      const match = base._getChar(key as any)
+      if (match) {
+        charCounter.updated.push(char)
+      } else {
+        charCounter.new.push(char)
+        continue
+      }
+
+      for (const key in match)
+        if (!(key in char))
+          char[key] = match[key]
+
+      storage.set(`char_${key}`, char)
+    }
+
     charCounter.removed = [...oldCharKeys].filter(([k]) => newCharKeys.has(k)).map(k => base._getChar(k as any)!)
-    charCounter.new = [...newCharEntries].filter(([k]) => !oldCharKeys.has(k)).map(([_, v]) => v)
     charCounter.unchanged = []
   } else
     base._getCharKeys().forEach(k => storage.set(`char_${k}`, base._getChar(k)))
