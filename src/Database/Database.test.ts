@@ -6,8 +6,9 @@ import { getArrLastElement } from "../Util/Util"
 import { defaultInitialWeapon } from "../Util/WeaponUtil"
 import { ArtCharDatabase } from "./Database"
 import { DBLocalStorage, SandboxStorage } from "./DBStorage"
-import { importGOOD, exportGOOD } from "./exim/good"
-import { validateArtifact } from "./validation"
+import { exportGOOD } from "./exports/good"
+import { importGOOD } from "./imports/good"
+import { validateArtifact } from "./imports/validate"
 
 const dbStorage = new DBLocalStorage(localStorage)
 const database = new ArtCharDatabase(dbStorage)

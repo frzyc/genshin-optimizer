@@ -7,8 +7,9 @@ import { Trans, useTranslation } from "react-i18next"
 import CardDark from '../../Components/Card/CardDark'
 import CardLight from '../../Components/Card/CardLight'
 import { ArtCharDatabase, DatabaseContext } from "../../Database/Database"
-import { importGOOD, ImportResult, ImportResultCounter } from '../../Database/exim/good'
-import { importMona } from '../../Database/exim/mona'
+import { ImportResult, ImportResultCounter } from '../../Database/exim'
+import { importGOOD } from '../../Database/imports/good'
+import { importMona } from '../../Database/imports/mona'
 
 const InvisInput = styled('input')({
   display: 'none',
@@ -126,7 +127,7 @@ function GOODUploadInfo({ data: { source, artifacts, characters, weapons }, data
     </CardContent>
   </CardDark>
 }
-function MergeResult({ result, type }: { result?: ImportResultCounter, type: string }) {
+function MergeResult({ result, type }: { result?: ImportResultCounter<any>, type: string }) {
   const { t } = useTranslation("settings")
   if (!result) return null
   return <CardLight >

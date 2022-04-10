@@ -1,9 +1,9 @@
-import { initialBuildSettings } from "../PageBuild/BuildSetting"
-import { ascensionMaxLevel } from "../Data/LevelData"
-import { allCharacterKeys } from "../Types/consts"
-import { crawlObject, layeredAssignment } from "../Util/Util"
-import { DBStorage } from "./DBStorage"
-import { getDBVersion, setDBVersion } from "./utils"
+import { initialBuildSettings } from "../../PageBuild/BuildSetting"
+import { ascensionMaxLevel } from "../../Data/LevelData"
+import { allCharacterKeys } from "../../Types/consts"
+import { crawlObject, layeredAssignment } from "../../Util/Util"
+import { DBStorage } from "../DBStorage"
+import { getDBVersion, setDBVersion } from "../utils"
 
 // MIGRATION STEP
 // 0. DO NOT change old `migrateV<x>ToV<x+1>` code
@@ -13,6 +13,7 @@ import { getDBVersion, setDBVersion } from "./utils"
 
 export const currentDBVersion = 15
 
+/** old storage -> internal new (prevalidated) storage */
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
 
