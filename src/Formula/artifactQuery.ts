@@ -147,10 +147,14 @@ export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, a
   console.log(query.evalFn(stats)[0])
 
   let evaluated = arts.map(art => {
+    if (art.rarity != 5) return { id: art.id, p: 0, dmg: 0 }
     let [p, d] = evalArtifact(query, art)
     return { id: art.id, p: p, dmg: d }
   })
   evaluated = evaluated.sort((a, b) => b.p * b.dmg - a.p * a.dmg)
   console.log(evaluated)
 
+  arts.forEach(art => {
+    if (art.id == evaluated[0].id) console.log(art)
+  })
 }
