@@ -13,10 +13,14 @@ const asConst = true as const, pivot = true as const
 
 function inferInfoMut(data: Data, source?: Info["source"]): Data {
   crawlObject(data, [], (x: any) => x.operation, (x: NumNode, path: string[]) => {
-    if (path[0] === "teamBuff") path = path.slice(1)
+    if (path[0] === "teamBuff") {
+      path = path.slice(1)
+      if (!x.info) x.info = {}
+      x.info.isTeamBuff = true
+    }
     const reference = objPathValue(input, path) as ReadNode<number> | undefined
     if (reference)
-      x.info = { ...reference.info, prefix: undefined, source }
+      x.info = { ...x.info, ...reference.info, prefix: undefined, source }
     else if (path[0] !== "tally")
       console.error(`Detect ${source} buff into non-existant key path ${path}`)
   })
@@ -215,6 +219,7 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
       throw new Error("Unmatched structure when comparing UIData")
 
     const result: ComparedNodeDisplay = {
+      info: {},
       operation: true,
       value: 0,
       isEmpty: true,

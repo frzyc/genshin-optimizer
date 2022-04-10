@@ -23,7 +23,7 @@ export default function TeamBuffCard() {
     <Divider />
     <CardContent>
       <FieldDisplayList sx={{ my: 0 }} >
-        {nodes.map((n, i) => n && <NodeFieldDisplay key={i.toString() + (n.key ?? "")} node={n} component={ListItem} />)}
+        {nodes.map((n, i) => n && <NodeFieldDisplay key={i.toString() + (n.info.key ?? "")} node={n} component={ListItem} />)}
       </FieldDisplayList>
     </CardContent>
   </CardLight>

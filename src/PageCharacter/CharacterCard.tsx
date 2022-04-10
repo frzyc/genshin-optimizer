@@ -179,9 +179,9 @@ function Weapon({ weaponId }: { weaponId: string }) {
   </CardDark>
 }
 function WeaponStat({ node }: { node: NodeDisplay }) {
-  if (!node.key) return null
+  if (!node.info.key) return null
   const val = valueString(node.value, node.unit, !node.unit ? 0 : undefined)
-  return <SqBadge color="secondary">{StatIcon[node.key]} {val}</SqBadge>
+  return <SqBadge color="secondary">{StatIcon[node.info.key]} {val}</SqBadge>
 }
 function ArtifactDisplay() {
   const { database } = useContext(DatabaseContext)
@@ -205,11 +205,11 @@ function ArtifactDisplay() {
 function Stats() {
   const { data } = useContext(DataContext)
   return <Box sx={{ width: "100%" }} >
-    {Object.values(data.getDisplay().basic).map(n => <NodeFieldDisplay key={n.key} node={n} />)}
-    {data.get(input.special).key && <Box sx={{ display: "flex", gap: 1, alignItems: "center" }} >
+    {Object.values(data.getDisplay().basic).map(n => <NodeFieldDisplay key={n.info.key} node={n} />)}
+    {data.get(input.special).info.key && <Box sx={{ display: "flex", gap: 1, alignItems: "center" }} >
       <Typography flexGrow={1}><strong>Specialized:</strong></Typography>
-      {StatIcon[data.get(input.special).key!]}
-      <Typography>{KeyMap.get(data.get(input.special).key!)}</Typography>
+      {StatIcon[data.get(input.special).info.key!]}
+      <Typography>{KeyMap.get(data.get(input.special).info.key!)}</Typography>
     </Box>}
   </Box>
 }

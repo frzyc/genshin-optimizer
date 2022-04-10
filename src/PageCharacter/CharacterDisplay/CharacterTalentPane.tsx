@@ -73,7 +73,7 @@ export default function CharacterTalentPane() {
           sx={{ opacity: constellation >= i ? 1 : 0.5 }}>
           <SkillDisplayCard
             talentKey={tKey}
-            subtitle={`Contellation Lv. ${i}`}
+            subtitle={`Constellation Lv. ${i}`}
             onClickTitle={() => characterDispatch({ constellation: i === constellation ? i - 1 : i })}
           />
         </Grid>
@@ -106,17 +106,17 @@ function ReactionDisplay() {
 }
 function SuperConductCard({ node }: { node: NodeDisplay }) {
   return <CardDark><CardContent sx={{ p: 1 }}>
-    <Typography color="superconduct.main">{KeyMap.get(node.key!)} {StatIcon.electro}+{StatIcon.cryo} <strong>{valueString(node.value, node.unit)}</strong></Typography>
+    <Typography color="superconduct.main">{KeyMap.get(node.info.key!)} {StatIcon.electro}+{StatIcon.cryo} <strong>{valueString(node.value, node.unit)}</strong></Typography>
   </CardContent></CardDark>
 }
 function ElectroChargedCard({ node }: { node: NodeDisplay }) {
   return <CardDark><CardContent sx={{ p: 1 }}>
-    <Typography color="electrocharged.main">{KeyMap.get(node.key!)} {StatIcon.electro}+{StatIcon.hydro} <strong>{valueString(node.value, node.unit)}</strong></Typography>
+    <Typography color="electrocharged.main">{KeyMap.get(node.info.key!)} {StatIcon.electro}+{StatIcon.hydro} <strong>{valueString(node.value, node.unit)}</strong></Typography>
   </CardContent></CardDark>
 }
 function OverloadedCard({ node }: { node: NodeDisplay }) {
   return <CardDark><CardContent sx={{ p: 1 }}>
-    <Typography color="overloaded.main" >{KeyMap.get(node.key!)} {StatIcon.electro}+{StatIcon.pyro} <strong>{valueString(node.value, node.unit)}</strong></Typography>
+    <Typography color="overloaded.main" >{KeyMap.get(node.info.key!)} {StatIcon.electro}+{StatIcon.pyro} <strong>{valueString(node.value, node.unit)}</strong></Typography>
   </CardContent></CardDark>
 }
 
@@ -145,7 +145,7 @@ function ShatteredCard({ node }: { node: NodeDisplay }) {
   </BootstrapTooltip>
 
   return <CardDark><CardContent sx={{ p: 1 }}>
-    <ColorText color="shattered">{KeyMap.get(node.key!)} {StatIcon.hydro}+{StatIcon.cryo}+ <ColorText color="physical"><small>Heavy Attack{information} </small></ColorText> <strong>{valueString(node.value, node.unit)}</strong></ColorText>
+    <ColorText color="shattered">{KeyMap.get(node.info.key!)} {StatIcon.hydro}+{StatIcon.cryo}+ <ColorText color="physical"><small>Heavy Attack{information} </small></ColorText> <strong>{valueString(node.value, node.unit)}</strong></ColorText>
   </CardContent></CardDark>
 }
 

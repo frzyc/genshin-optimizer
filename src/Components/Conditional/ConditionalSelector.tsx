@@ -5,14 +5,18 @@ import DropdownButton from '../DropdownMenu/DropdownButton';
 import SqBadge from '../SqBadge';
 import { DataContext } from '../../DataContext';
 import IConditional from '../../Types/IConditional';
-import { deepClone, layeredAssignment } from '../../Util/Util';
+import { deepClone, deletePropPath, layeredAssignment } from '../../Util/Util';
 
 export default function ConditionalSelector({ conditional, conditionalValue, disabled = false, }:
   { conditional: IConditional, conditionalValue?: string, disabled?: boolean }) {
   const { character, characterDispatch } = useContext(DataContext)
   const setConditional = useCallback((v?: string) => {
     const conditionalValues = deepClone(character.conditional)
-    layeredAssignment(conditionalValues, conditional.path, v)
+    if (v) {
+      layeredAssignment(conditionalValues, conditional.path, v)
+    } else {
+      deletePropPath(conditionalValues, conditional.path)
+    }
     characterDispatch({ conditional: conditionalValues })
   }, [conditional, character, characterDispatch])
 

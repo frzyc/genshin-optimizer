@@ -262,7 +262,7 @@ function FormulaCalc({ sectionKey, displayNs }: { displayNs: DisplaySub<NodeDisp
       {Object.entries(displayNs).map(([key, node]) =>
         !node.isEmpty && <Accordion sx={{ bgcolor: "contentLight.main" }} key={key}>
           <AccordionSummary expandIcon={<ExpandMore />}>
-            <Typography><ColorText color={node.variant}>{KeyMap.get(node.key ?? "")}</ColorText> <strong>{valueString(node.value, node.unit)}</strong></Typography>
+            <Typography><ColorText color={node.info.variant}>{KeyMap.get(node.info.key ?? "")}</ColorText> <strong>{valueString(node.value, node.unit)}</strong></Typography>
           </AccordionSummary>
           <AccordionDetails>
             {node.formulas.map((subform, i) => <Typography key={i}>{subform}</Typography>)}
