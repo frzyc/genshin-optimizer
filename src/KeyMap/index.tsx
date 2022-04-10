@@ -1,10 +1,11 @@
-import { Translate } from "./Components/Translate";
-import elementalData from "./Data/ElementalData";
+import { Translate } from "../Components/Translate";
+import elementalData from "./ElementalData";
 import { amplifyingReactions, AmplifyingReactionsKey, HitMoveKey, hitMoves, transformativeReactions, TransformativeReactionsKey } from "./StatConstants";
-import { allElementsWithPhy, ElementKeyWithPhy } from "./Types/consts";
+import { MainStatKey, SubstatKey } from "../Types/artifact";
+import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";
 
 const statMap = {
-  hp: "HP", hp_: "HP%", atk: "ATK", atk_: "ATK%", def: "DEF", def_: "DEF%",
+  hp: "HP", hp_: "HP", atk: "ATK", atk_: "ATK", def: "DEF", def_: "DEF",
   eleMas: "Elemental Mastery", enerRech_: "Energy Recharge",
   critRate_: "Crit Rate", critDMG_: "Crit DMG",
   heal_: "Healing Bonus",
@@ -59,7 +60,7 @@ const statMap = {
   level: "Level",
 } as const
 
-export type Unit = "flat" | "%" | "s"
+export type Unit = "" | "%" | "s"
 
 export type BaseKeys = keyof typeof statMap
 
@@ -140,7 +141,7 @@ const subKeyMap: StrictDict<KeyMapPrefix, string> = {
 }
 
 export const allStatKeys = Object.keys(statMap) as StatKey[]
-
+const showPercentKeys = ["hp_", "def_", "atk_"]
 export default class KeyMap {
   //do not instantiate.
   constructor() {
@@ -150,44 +151,25 @@ export default class KeyMap {
   static getPrefixStr(prefix: KeyMapPrefix): string {
     return subKeyMap[prefix]
   }
-  /**
-   * TODO: Should return just the String, and no unit. unit should be separate.
-   */
   static getStr(key: string = ""): string | undefined {
     return statMap[key]
   }
-  static getStrNoUnit(key: string = ""): string | undefined {
-    return statMap[key]?.split("%")?.[0]
+  static getArtStr(key: MainStatKey | SubstatKey): string {
+    return statMap[key] + (showPercentKeys.includes(key) ? "%" : "")
   }
-  /**
-   * TODO: this should return purely a HTML, so the string values need to be wrapped in <span>?
-   */
   static get(key: string = ""): Displayable | undefined {
     const name = KeyMap.getStr(key)
-    if (name) return name
+    if (name) return <span>{name}</span>
     if (key.includes(":")) {
       const [ns, key18] = key.split(":")
       return <Translate ns={ns} key18={key18} />
     }
-    return key
+    return <span>{key}</span>
   }
   static getVariant(key: string = ""): ElementKeyWithPhy | undefined {
     return allElementsWithPhy.find(e => key.startsWith(e))
   }
-  static getNoUnit(key: string): Displayable {
-    const name = KeyMap.get(key) ?? ""
-    if (typeof name === "string")
-      return name.endsWith("%") ? name.slice(0, -1) : name
-    return name
-  }
-  /**
-   * TODO: Do we really need the "flat" here? can we remove "flat" and combine unit() and unitStr()?
-   */
   static unit(key: string = ""): Unit {
-    if (key.endsWith("_")) return "%"
-    return "flat"
-  }
-  static unitStr(key: string = ""): string {
     if (key.endsWith("_")) return "%"
     return ""
   }
@@ -200,7 +182,6 @@ export function valueString(value: number, unit: Unit, fixed = -1): string {
     return 'NaN'
   }
   if (unit === "%") value *= 100
-  else unit = '' as any
   if (Number.isInteger(value)) fixed = 0
   else if (fixed === -1) {
     if (unit === "%") fixed = 1

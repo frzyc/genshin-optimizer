@@ -1,17 +1,17 @@
 import { Replay } from '@mui/icons-material';
 import { Box, Button, CardContent, Divider, Grid, Typography } from '@mui/material';
 import React, { useCallback, useContext, useMemo, useState } from 'react';
-import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
+import SetEffectDisplay from '../../Components/Artifact/SetEffectDisplay';
 import CardDark from '../../Components/Card/CardDark';
 import CardLight from '../../Components/Card/CardLight';
 import CloseButton from '../../Components/CloseButton';
 import ModalWrapper from '../../Components/ModalWrapper';
 import SqBadge from '../../Components/SqBadge';
 import { Stars } from '../../Components/StarDisplay';
+import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
 import { DataContext } from '../../DataContext';
 import usePromise from '../../ReactHooks/usePromise';
 import { allArtifactSets, SetNum } from '../../Types/consts';
-import SetEffectDisplay from '../../Components/Artifact/SetEffectDisplay';
 
 export default function ArtifactConditionalCard({ disabled }: { disabled?: boolean }) {
   const { character } = useContext(DataContext)
@@ -76,9 +76,9 @@ function ArtConditionalModal({ open, onClose, artifactCondCount }: {
                   <Typography variant="subtitle1">{sheet.rarity.map((ns, i) => <span key={ns}>{ns}<Stars stars={1} /> {i < (sheet.rarity.length - 1) ? "/ " : null}</span>)}</Typography>
                 </Box>
               </Box>
-              <CardContent><Grid item display="flex" flexDirection="column" gap={1}>
+              <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
                 {Object.keys(sheet.setEffects).map(setNumKey => <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} />)}
-              </Grid></CardContent>
+              </CardContent>
             </CardLight>
           </Grid>
         })}

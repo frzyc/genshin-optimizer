@@ -2,7 +2,7 @@ import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CheckBox, CheckBoxOutlineBlank, Close } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
-import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
@@ -11,32 +11,33 @@ import ArtifactLevelSlider from '../Components/Artifact/ArtifactLevelSlider';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton';
-import CloseButton from '../Components/CloseButton';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import InfoComponent from '../Components/InfoComponent';
-import ModalWrapper from '../Components/ModalWrapper';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import StatFilterCard from '../Components/StatFilterCard';
+import CharacterSheet from '../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../Database/Database';
-import { DataContext, dataContextObj, TeamData } from '../DataContext';
+import { DataContext, dataContextObj } from '../DataContext';
 import { mergeData, uiDataForTeam } from '../Formula/api';
 import { uiInput as input } from '../Formula/index';
 import { optimize } from '../Formula/optimization';
 import { NumNode } from '../Formula/type';
+import { UIData } from '../Formula/uiData';
 import { initGlobalSettings } from '../GlobalSettings';
 import KeyMap from '../KeyMap';
 import CharacterCard from '../PageCharacter/CharacterCard';
 import useCharacter from '../ReactHooks/useCharacter';
-import useCharacterReducer from '../ReactHooks/useCharacterReducer';
+import useCharacterReducer, { characterReducerAction } from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
-import usePromise from '../ReactHooks/usePromise';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
+import { ICachedArtifact } from '../Types/artifact';
 import { BuildSetting } from '../Types/Build';
 import { allSlotKeys, ArtifactSetKey, CharacterKey } from '../Types/consts';
 import { SubstatKey } from "../Types/artifact"
-import { objectMap, objPathValue } from '../Util/Util';
+import { ICachedCharacter } from '../Types/character';
+import { objPathValue, range } from '../Util/Util';
 import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
@@ -58,9 +59,6 @@ import Artifact from "../Data/Artifacts/Artifact";
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 const doquery = true;
-
-//lazy load the character display
-const CharacterDisplayCard = lazy(() => import('../PageCharacter/CharacterDisplayCard'))
 
 function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
   switch (action.type) {
@@ -114,8 +112,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     // eslint-disable-next-line
   }, [])
 
-  const [modalBuildIndex, setmodalBuildIndex] = useState(-1) // the index of the newBuild that is being displayed in the character modal,
-
   const [generatingBuilds, setgeneratingBuilds] = useState(false)
   const [generationProgress, setgenerationProgress] = useState(0)
   const [generationDuration, setgenerationDuration] = useState(0)//in ms
@@ -125,28 +121,16 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
+  const [maxWorkers, setMaxWorkers] = useState(navigator.hardwareConcurrency || 4)
+
   const setCharacter = useCharSelectionCallback()
   const characterDispatch = useCharacterReducer(characterKey)
   const character = useCharacter(characterKey)
   const buildSettings = character?.buildSettings ?? initialBuildSettings()
   const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSettings
+  const buildsArts = useMemo(() => builds.map(build => build.map(i => database._getArt(i)!)), [builds, database])
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
-
-  const teamDataBuilds = usePromise(Promise.all(builds.map(async (b) => {
-    if (!characterKey) return undefined
-    const result = await getTeamData(database, characterKey, mainStatAssumptionLevel, b.filter(a => a).map(a => database._getArt(a)!))
-    if (!result) return null
-    const { teamData, teamBundle } = result
-
-    const calcData = uiDataForTeam(teamData, characterKey)
-    const data = objectMap(calcData, (obj, ck) => {
-      const { data: _, ...rest } = teamBundle[ck]!
-      return { ...obj, ...rest }
-    })
-    return data
-  })).then(arr => arr.map(a => a)), [teamData, builds, database, characterKey, mainStatAssumptionLevel]) ?? []
-
   const compareData = character?.compareData ?? false
 
   const noCharacter = useMemo(() => !database._getCharKeys().length, [database])
@@ -298,8 +282,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     }
     setPerms.forEach(filter => wrap.skippedCount -= countBuilds(filterArts(arts, filter)))
 
-    const maxWorkers = navigator.hardwareConcurrency || 4
-
     const setPerm = splitFiltersBySet(arts, setPerms,
       maxWorkers === 1
         // Don't split for single worker
@@ -355,7 +337,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               worker.postMessage(finalizeCommand)
             }
             break
-          case "finalize": finalize(data); break
+          case "finalize":
+            worker.terminate()
+            finalize(data);
+            break
           default: console.log("DEBUG", data)
         }
       }
@@ -409,24 +394,25 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       })
     }
     setgeneratingBuilds(false)
-  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingsDispatch, setFilters, statFilters])
+  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingsDispatch, setFilters, statFilters, maxWorkers])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
-  const closeBuildModal = useCallback(() => setmodalBuildIndex(-1), [setmodalBuildIndex])
   const setPlotBase = useCallback(plotBase => {
     buildSettingsDispatch({ plotBase })
     setchartData(undefined)
   }, [buildSettingsDispatch])
-  const dataContext: dataContextObj | undefined = data && characterSheet && character && teamData && {
-    data,
-    characterSheet,
-    character,
-    mainStatAssumptionLevel,
-    teamData,
-    characterDispatch
-  }
-  const selectedBuild = teamDataBuilds[modalBuildIndex]
+  const dataContext: dataContextObj | undefined = useMemo(() => {
+    return data && characterSheet && character && teamData && {
+      data,
+      characterSheet,
+      character,
+      mainStatAssumptionLevel,
+      teamData,
+      characterDispatch
+    }
+  }, [data, characterSheet, character, teamData, characterDispatch, mainStatAssumptionLevel])
+
   return <Box display="flex" flexDirection="column" gap={1} sx={{ my: 1 }}>
     <InfoComponent
       pageKey="buildPage"
@@ -436,7 +422,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         "Rainbow builds can sometimes be \"optimal\". Good substat combinations can sometimes surpass set effects.",
         "The more complex the formula, the longer the generation time.",]}
     ><InfoDisplay /></InfoComponent>
-    {characterKey && selectedBuild && <BuildModal teamData={selectedBuild} characterKey={characterKey} onClose={closeBuildModal} />}
     {noCharacter && <Alert severity="error" variant="filled"> Opps! It looks like you haven't added a character to GO yet! You should go to the <Link component={RouterLink} to="/character">Characters</Link> page and add some!</Alert>}
     {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
     {/* Build Generator Editor */}
@@ -557,6 +542,11 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                   {maxBuildsToShowList.map(v => <MenuItem key={v}
                     onClick={() => buildSettingsDispatch({ maxBuildsToShow: v })}>{v} {v === 1 ? "Build" : "Builds"}</MenuItem>)}
                 </DropdownButton>
+                <DropdownButton disabled={generatingBuilds || !characterKey} color="info"
+                  title={<span><b>{maxWorkers}</b> {maxBuildsToShow === 1 ? "Thread" : "Threads"}</span>}>
+                  {range(1, navigator.hardwareConcurrency || 4).reverse().map(v => <MenuItem key={v}
+                    onClick={() => setMaxWorkers(v)}>{v} {v === 1 ? "Thread" : "Threads"}</MenuItem>)}
+                </DropdownButton>
                 {/* </Tooltip> */}
                 <Button
                   disabled={!generatingBuilds}
@@ -586,11 +576,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       </CardDark>
       <CardDark>
         <CardContent>
-          <Box display="flex" justifyContent="space-between" alignItems="center" >
-            <Typography>
-              {teamDataBuilds ? <span>Showing <strong>{teamDataBuilds.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
+          <Box display="flex" alignItems="center" gap={1} >
+            <Typography sx={{ flexGrow: 1 }}>
+              {builds ? <span>Showing <strong>{builds.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
                 : <span>Select a character to generate builds.</span>}
             </Typography>
+            <Button disabled={!builds.length} color="error" onClick={() => buildSettingsDispatch({ builds: [], buildDate: 0 })} >Clear Builds</Button>
             <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
               <ToggleButton value={false} disabled={!compareData}>
                 <small>Show New artifact Stats</small>
@@ -602,23 +593,51 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           </Box>
         </CardContent>
       </CardDark>
-      <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
-        {/* Build List */}
-        {teamDataBuilds?.map((teamData, index) => teamData && <DataContext.Provider key={index} value={{ ...dataContext, data: teamData[characterKey].target, teamData, oldData: data }}>
-          <ArtifactBuildDisplayItem index={index} onClick={() => setmodalBuildIndex(index)} compareBuild={compareData} disabled={!!generatingBuilds} />
-        </DataContext.Provider>
-        )}
-      </Suspense>
+      <BuildList {...{ buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled: !!generatingBuilds }} />
     </DataContext.Provider>}
   </Box>
 }
-
-function BuildModal({ teamData, characterKey, onClose }: { teamData: TeamData, characterKey: CharacterKey, onClose: () => void }) {
-  return <ModalWrapper open={!!teamData} onClose={onClose} containerProps={{ maxWidth: "xl" }}>
-    <CharacterDisplayCard
+function BuildList({ buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled }: {
+  buildsArts: ICachedArtifact[][],
+  character?: ICachedCharacter,
+  characterKey?: "" | CharacterKey,
+  characterSheet?: CharacterSheet,
+  data?: UIData,
+  compareData: boolean,
+  mainStatAssumptionLevel: number,
+  characterDispatch: (action: characterReducerAction) => void
+  disabled: boolean,
+}) {
+  // Memoize the build list because calculating/rendering the build list is actually very expensive, which will cause longer builder times.
+  const list = useMemo(() => <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
+    {buildsArts?.map((build, index) => character && characterKey && characterSheet && data && <DataContextWrapper
+      key={index + build.join()}
       characterKey={characterKey}
-      newteamData={teamData}
-      onClose={onClose}
-      footer={<CloseButton large onClick={onClose} />} />
-  </ModalWrapper>
+      character={character}
+      build={build}
+      characterSheet={characterSheet}
+      oldData={data}
+      mainStatAssumptionLevel={mainStatAssumptionLevel}
+      characterDispatch={characterDispatch} >
+      <ArtifactBuildDisplayItem index={index} compareBuild={compareData} disabled={disabled} />
+    </DataContextWrapper>
+    )}
+  </Suspense>, [buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled])
+  return list
+}
+
+type Prop = {
+  children: React.ReactNode
+  characterKey: CharacterKey,
+  character: ICachedCharacter,
+  build: ICachedArtifact[],
+  mainStatAssumptionLevel?: number, characterSheet: CharacterSheet, oldData: UIData,
+  characterDispatch: (action: characterReducerAction) => void
+}
+function DataContextWrapper({ children, characterKey, character, build, characterDispatch, mainStatAssumptionLevel = 0, characterSheet, oldData }: Prop) {
+  const teamData = useTeamData(characterKey, mainStatAssumptionLevel, build)
+  if (!teamData) return null
+  return <DataContext.Provider value={{ characterSheet, character, characterDispatch, mainStatAssumptionLevel, data: teamData[characterKey]!.target, teamData, oldData }}>
+    {children}
+  </DataContext.Provider>
 }

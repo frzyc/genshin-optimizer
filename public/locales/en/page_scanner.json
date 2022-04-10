@@ -17,13 +17,6 @@
     "p2": "Beta version of this scanner can also scan materials for <1>Seelie.me</1>",
     "p3": "Please feel free to join their discord if you find any bugs. They are in need of more english testers."
   },
-  "co": {
-    "title": "椰羊cocogoat",
-    "p1": "Cocogoat was originally a Chinese scanner that was ported to English. Has an overlay to scan individual artifacts.",
-    "p2": "Cocogoat also retains your scanned artifacts, where you can edit them individually, and you can use them in its built-in mona-uranai optimizer.(Currently a Chinese-only optimizer)",
-    "p3": "It is recommended to export in its \"Mona's Divination Shop\" format.",
-    "warn": "WARNING: Do not use the \"Genshin Optimizer\" export format. importing it will delete your character & weapon data."
-  },
   "goodeng": "This scanner only scans in english, and exports to GOOD format.",
   "backHome": "Go back to home page"
 }

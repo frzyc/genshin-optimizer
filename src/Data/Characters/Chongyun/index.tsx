@@ -131,8 +131,8 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
       cryo_enemyRes_: nodeAsc4,
       atkSPD_: nodeAsc1
     },
-    team: {
-      infusion: activeInAreaInfusion,
+    infusion: {
+      team: activeInAreaInfusion,
     },
   },
 })

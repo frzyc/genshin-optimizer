@@ -46,8 +46,9 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     lvl: constant(char.level),
     constellation: constant(char.constellation),
     asc: constant(char.ascension),
-    // FIXME: causes "multiple unique entry error"
-    // infusion: char.infusionAura ? constant(char.infusionAura) : undefined,
+    infusion: {
+      team: char.infusionAura ? constant(char.infusionAura) : undefined,
+    },
     premod: {
       auto: constant(char.talent.auto),
       skill: constant(char.talent.skill),
@@ -174,14 +175,18 @@ function mergeData(data: Data[]): Data {
     if (data.length <= 1) return data[0]
     if (data[0].operation) {
       if (path[0] === "teamBuff") path = path.slice(1)
-      const accu = path[0] === "tally"
-        ? "add" : (objPathValue(input, path) as ReadNode<number> | undefined)?.accu
-      if (accu === undefined) {
-        if (data.length !== 1)
-          throw new Error(`Multiple entries when merging \`unique\` for key ${path}`)
-        return data[0]
+      let { accu, type } = (objPathValue(input, path) as ReadNode<number> | ReadNode<string> | undefined) ?? {}
+      if (path[0] === "tally") accu = "add"
+      else if (accu === undefined) {
+        const errMsg = `Multiple entries when merging \`unique\` for key ${path}`
+        if (process.env.NODE_ENV === "development")
+          throw new Error(errMsg)
+        else
+          console.error(errMsg)
+
+        accu = type === "number" ? "max" : "small"
       }
-      const result: NumNode = { operation: accu, operands: data }
+      const result: NumNode | StrNode = { operation: accu, operands: data }
       return result
     } else {
       return Object.fromEntries([...new Set(data.flatMap(x => Object.keys(x) as string[]))]

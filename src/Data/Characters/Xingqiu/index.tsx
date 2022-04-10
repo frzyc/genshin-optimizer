@@ -75,7 +75,7 @@ const nodeC4 = greaterEq(input.constellation, 4,
   equal(condBurst, "on", datamine.constellation4.dmg_), { key: `char_${key}:c4dmg_` })
 
 const nodeSkillDmgRed_ = equal(condSkill, "on",
-  sum(subscript(input.total.skillIndex, datamine.skill.dmgRed_, { key: "_" }), min(percent(0.24), prod(percent(0.2), input.total.hydro_dmg_))))
+  sum(subscript(input.total.skillIndex, datamine.skill.dmgRed_, { key: "_" }), min(percent(0.24), prod(percent(0.2), input.premod.hydro_dmg_))))
 
 const nodeA4Heal = customHealNode(greaterEq(input.asc, 1, prod(input.total.hp, percent(0.06))))
 
@@ -91,12 +91,12 @@ export const dmgFormulas = {
   skill: {
     // Multiplicative DMG increase requires customDmgNode
     press1: customDmgNode(prod(
-      subscript(input.total.autoIndex, datamine.skill.hit1, { key: "_" }),
+      subscript(input.total.skillIndex, datamine.skill.hit1, { key: "_" }),
       input.total.atk,
       sum(unit, nodeC4)
     ), "skill"),
     press2: customDmgNode(prod(
-      subscript(input.total.autoIndex, datamine.skill.hit2, { key: "_" }),
+      subscript(input.total.skillIndex, datamine.skill.hit2, { key: "_" }),
       input.total.atk,
       sum(unit, nodeC4)
     ), "skill"),

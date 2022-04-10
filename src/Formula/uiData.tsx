@@ -77,7 +77,7 @@ export class UIData {
   get(node: NumNode | StrNode): NodeDisplay<number | string | undefined> {
     if (node === undefined) {
       console.trace("Please report this bug with this trace")
-      return { operation: true, value: undefined, isEmpty: true, unit: "flat", formulas: [] }
+      return { operation: true, value: undefined, isEmpty: true, unit: "", formulas: [] }
     }
     const old = this.processed.get(node)
     if (old) return old
@@ -107,6 +107,7 @@ export class UIData {
       case "match": result = this._match(node); break
       case "lookup": result = this._lookup(node); break
       case "prio": result = this._prio(node.operands); break
+      case "small": result = this._small(node.operands); break
       default: assertUnreachable(operation)
     }
 
@@ -154,12 +155,21 @@ export class UIData {
     const first = nodes.find(node => this.computeNode(node).value !== undefined)
     return first ? this.computeNode(first) : illformedStr
   }
+  private _small(nodes: readonly StrNode[]): ContextNodeDisplay<string | undefined> {
+    let smallest: ContextNodeDisplay<string | undefined> | undefined = undefined
+    for (const node of nodes) {
+      const candidate = this.computeNode(node)
+      if (smallest?.value === undefined || (candidate.value && candidate.value < smallest.value))
+        smallest = candidate
+    }
+    return smallest ?? illformedStr
+  }
   private _read(node: ReadNode<number | string | undefined>): ContextNodeDisplay<number | string | undefined> {
     const { path } = node
     const result = (node.accu === undefined)
       ? this.readFirst(path) ?? (node.type === "string" ? illformedStr : illformed)
-      : node.accu === "prio"
-        ? this._prio(this.prereadAll(path) as StrNode[])
+      : node.accu === "small"
+        ? this._small(this.prereadAll(path) as StrNode[])
         : this._accumulate(node.accu, this.readAll(path) as ContextNodeDisplay[])
     return result
   }
@@ -317,7 +327,7 @@ function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
     operation: true,
     key, value, variant, prefix,
     isEmpty: empty,
-    unit: (key && KeyMap.unit(key)) || "flat",
+    unit: KeyMap.unit(key),
     formula, formulas: [...(assignment ? [assignment] : []), ...dependencies]
   }
 }
@@ -326,12 +336,12 @@ function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
 function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
   const { key, value, formula, prefix, source, variant, fixed } = node
   if (typeof value !== "number") return
-  node.valueDisplay = <ColorText color="info">{valueString(value, key ? KeyMap.unit(key) : "flat", fixed)}</ColorText>
+  node.valueDisplay = <ColorText color="info">{valueString(value, KeyMap.unit(key), fixed)}</ColorText>
   if (key && key !== '_') {
     const prefixDisplay = (prefix && !source) ? <>{KeyMap.getPrefixStr(prefix)} </> : <></>
     // TODO: Convert `source` key to actual name
     const sourceDisplay = source ? <ColorText color="secondary"> ({source})</ColorText> : null
-    node.name = <><ColorText color={variant}>{prefixDisplay}{KeyMap.getNoUnit(key!)}</ColorText>{sourceDisplay}</>
+    node.name = <><ColorText color={variant}>{prefixDisplay}{KeyMap.get(key!)}</ColorText>{sourceDisplay}</>
 
     if (formula)
       node.assignment = <div id="formula">{node.name} {node.valueDisplay} = {formula}</div>
@@ -349,7 +359,7 @@ function mergeFormulaComponents(components: Displayable[]): Displayable {
 function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
   const { key, value, formula, prefix, source, variant, fixed } = node
   if (typeof value !== "number") return
-  node.valueDisplay = valueString(value, key ? KeyMap.unit(key) : "flat", fixed)
+  node.valueDisplay = valueString(value, KeyMap.unit(key), fixed)
   if (key && key !== '_') {
     const prefixDisplay = (prefix && !source) ? `${KeyMap.getPrefixStr(prefix)} ` : ""
     // TODO: Convert `source` key to actual name

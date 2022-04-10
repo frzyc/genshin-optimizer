@@ -4,7 +4,6 @@ import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { absorbableEle, ArtifactSetKey } from '../../../Types/consts'
 import { objectKeyMap, objectKeyValueMap } from '../../../Util/Util'
-import elementalData from '../../ElementalData'
 import { condReadNode, sgt, st, trans } from '../../SheetUtil'
 import { ArtifactSheet, conditionalHeader, IArtifactSheet } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
@@ -59,7 +58,7 @@ const sheet: IArtifactSheet = {
           name: st("eleSwirled"),
           states: {
             swirl: {
-              name: <ColorText color={eleKey}>{elementalData[eleKey].name}</ColorText>,
+              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
               fields: [{
                 node: condSwirlNodes[`${eleKey}_enemyRes_`]
               }, {

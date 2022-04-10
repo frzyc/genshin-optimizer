@@ -1,7 +1,6 @@
 import { CharacterData } from 'pipeline'
-import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
-import { constant, equal, equalStr, greaterEq, infoMut, lookup, naught, percent, subscript, unequal } from '../../../Formula/utils'
+import { constant, equal, greaterEq, infoMut, lookup, matchFull, naught, percent, subscript, unequal } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
@@ -72,7 +71,6 @@ const normal_dmg_ = lookup(condCoil, {
   "rush": subscript(input.total.skillIndex, datamine.skill.rushingNormalDmgBonus, { key: "_" })
 }, naught)
 const atk_ = greaterEq(input.asc, 1, unequal(condCoil, undefined, percent(datamine.passive1.atkInc)))
-const afterRushingIce = equalStr("rush", condCoil, elementKey)
 
 const [condA1Path, condA1] = cond(key, "A1")
 const teamAtk_ = greaterEq(input.asc, 1, equal(condA1, "on",
@@ -84,7 +82,11 @@ const cryo_dmg_ = greaterEq(input.asc, 4,
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
-    [i, dmgNode("atk", arr, "normal")])),
+    [i, dmgNode("atk", arr, "normal", {
+      hit: {
+        ele: matchFull("rush", condCoil, constant(elementKey), constant("physical"))
+      }
+    })])),
   charged: {
     aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
     aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('cryo') } }),
@@ -112,7 +114,6 @@ export const data = dataObjForCharacterSheet(key, elementKey, undefined, data_ge
       atk_: teamAtk_
     }
   },
-  infusion: afterRushingIce,
 })
 
 const sheet: ICharacterSheet = {
@@ -198,7 +199,7 @@ const sheet: ICharacterSheet = {
             fields: [{
               node: normal_dmg_
             }, {
-              text: <ColorText color="cryo">{st("infusion.cryo")}</ColorText>
+              text: trm("normCryoInfus"),
             }, {
               text: tr("skill.skillParams.6"),
               value: datamine.skill.rushingDuration,

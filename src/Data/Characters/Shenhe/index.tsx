@@ -79,7 +79,7 @@ const datamine = {
 
 const [condQuillPath, condQuill] = cond(key, "quill")
 const nodeSkill = equal("quill", condQuill,
-  prod(input.premod.atk, subscript(input.total.skillIndex, datamine.skill.dmgAtk_, { key: '_' })))
+  prod(input.total.atk, subscript(input.total.skillIndex, datamine.skill.dmgAtk_, { key: '_' })))
 
 
 const [condBurstPath, condBurst] = cond(key, "burst")

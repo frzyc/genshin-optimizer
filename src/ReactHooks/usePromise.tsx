@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react";
-
-export default function usePromise<T>(promise: Promise<T> | undefined, dependencies: any[]): T | undefined {
+/**
+ *
+ * @param promise
+ * @param dependencies - Reloads the promise when any of the dependencies are changed. (Using useEffect dependency)
+ * @param useOld - When the promises are updated, then there is a period of time before the new promise return. useOld uses the previous value without a undefined gap.
+ * @returns
+ */
+export default function usePromise<T>(promise: Promise<T> | undefined, dependencies: any[], useOld = true): T | undefined {
   const [res, setRes] = useState<T | undefined>(undefined);
   useEffect(() => {
     let pending = true
     promise?.then(res => pending && setRes(() => res), console.error) ?? setRes(undefined)
     return () => {
       pending = false
-      setRes(undefined)
+      !useOld && setRes(undefined)
     }
   }, dependencies)// eslint-disable-line react-hooks/exhaustive-deps
   return res

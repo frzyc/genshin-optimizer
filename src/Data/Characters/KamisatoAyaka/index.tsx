@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
-import { constant, equal, equalStr, greaterEq, infoMut, percent, prod, sum } from '../../../Formula/utils'
+import { constant, equal, equalStr, greaterEq, infoMut, percent, prod, subscript, sum } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
@@ -41,8 +41,8 @@ const datamine = {
     cd: skillParam_gen.skill[s++][0],
   },
   burst: {
-    dmg: skillParam_gen.burst[b++],
-    dot: skillParam_gen.burst[b++],
+    cutDmg: skillParam_gen.burst[b++],
+    bloomDmg: skillParam_gen.burst[b++],
     duration: skillParam_gen.burst[b++][0],
     cd: skillParam_gen.burst[b++][0],
     enerCost: skillParam_gen.burst[b++][0],
@@ -104,11 +104,15 @@ const dmgFormulas = {
     press: dmgNode("atk", datamine.skill.press, "skill"),
   },
   burst: {
-    cutting: dmgNode("atk", datamine.burst.dmg, "burst"),
-    bloom: dmgNode("atk", datamine.burst.dot, "burst"),
+    cutting: dmgNode("atk", datamine.burst.cutDmg, "burst"),
+    bloom: dmgNode("atk", datamine.burst.bloomDmg, "burst"),
   },
   constellation2: {
-    dmg: greaterEq(input.constellation, 2, customDmgNode(prod(input.total.atk, datamine.constellation2.snowflake), "burst", { hit: { ele: constant(elementKey) } }))
+    dmg: greaterEq(input.constellation, 2, customDmgNode(prod(
+      subscript(input.total.burstIndex, datamine.burst.cutDmg, { key: "_" }),
+      percent(datamine.constellation2.snowflake),
+      input.total.atk,
+    ), "burst", { hit: { ele: constant(elementKey) } })),
   }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -123,7 +127,9 @@ export const data = dataObjForCharacterSheet(key, elementKey, "inazuma", data_ge
       enemyDefRed_: afterBurst
     }
   },
-  infusion: afterSprintInfusion,
+  infusion: {
+    overridableSelf: afterSprintInfusion,
+  },
   premod: {
     normal_dmg_: a1NormDmg_,
     charged_dmg_: sum(a1ChargedDmg_, c6ChargedDmg_),

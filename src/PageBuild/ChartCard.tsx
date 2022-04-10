@@ -45,7 +45,7 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
     // Note:
     // We can also just use `minimumData` if the plotter supports multiple data sources.
     // It could be faster too since there're no empty entries in `minimumData`.
-    if (minimumData[0].x !== increasingX[0].x)
+    if (minimumData[0]?.x !== increasingX[0]?.x)
       increasingX[0].min = minimumData[0].y
     minimumData.forEach(x => { x.min = x.y })
 
@@ -122,8 +122,8 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
   valueNode: NumNode,
   showMin: boolean
 }) {
-  const plotBaseUnit = KeyMap.unitStr(plotNode.info?.key)
-  const valueUnit = KeyMap.unitStr(valueNode.info?.key)
+  const plotBaseUnit = KeyMap.unit(plotNode.info?.key)
+  const valueUnit = KeyMap.unit(valueNode.info?.key)
   return <ResponsiveContainer width="100%" height={600}>
     <ComposedChart data={displayData}>
       <CartesianGrid strokeDasharray="3 3" />

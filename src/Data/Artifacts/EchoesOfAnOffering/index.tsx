@@ -39,7 +39,6 @@ const sheet: IArtifactSheet = {
           value: condMode,
           path: condModePath,
           name: trm("mode"),
-          canShow: greaterEq(input.artSet.EchoesOfAnOffering, 4, 1),
           states: {
             on: {
               name: trm("always"),
