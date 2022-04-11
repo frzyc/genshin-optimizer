@@ -1,14 +1,16 @@
-import { ICachedArtifact, IArtifact } from "../Types/artifact";
+import { createContext } from "react";
+import { IArtifact, ICachedArtifact } from "../Types/artifact";
 import { ICachedCharacter, ICharacter } from "../Types/character";
 import { allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
-import { getRandomInt, objectKeyMap } from "../Util/Util";
-import { DataManager } from "./DataManager";
-import { migrate } from "./migration";
-import { validateArtifact, parseCharacter, parseArtifact, removeArtifactCache, validateCharacter, removeCharacterCache, parseWeapon, validateWeapon, removeWeaponCache } from "./validation";
-import { DBStorage } from "./DBStorage";
 import { ICachedWeapon, IWeapon } from "../Types/weapon";
-import { createContext } from "react";
+import { getRandomInt, objectKeyMap } from "../Util/Util";
 import { defaultInitialWeapon } from "../Util/WeaponUtil";
+import { DataManager } from "./DataManager";
+import { DBStorage } from "./DBStorage";
+import { removeArtifactCache, removeCharacterCache, removeWeaponCache } from "./exports/decache";
+import { migrate } from "./imports/migrate";
+import { parseArtifact, parseCharacter, parseWeapon } from "./imports/parse";
+import { validateArtifact, validateCharacter, validateWeapon } from "./imports/validate";
 
 export class ArtCharDatabase {
   storage: DBStorage
@@ -18,14 +20,15 @@ export class ArtCharDatabase {
   weapons = new DataManager<string, ICachedWeapon>()
   states = new DataManager<string, object>()
 
-  constructor(storage: DBStorage) {
+  constructor(storage: DBStorage, forcedUpdate = false) {
     this.storage = storage
-    this.loadStorage()
+    this.reloadStorage(forcedUpdate)
   }
 
-  protected loadStorage() {
+  reloadStorage(forced = false) {
     const storage = this.storage
-    const { migrated } = migrate(storage)
+    let { migrated } = migrate(storage)
+    if (forced) migrated = true
 
     // Load into memory and verify database integrity
     for (const key of storage.keys) {

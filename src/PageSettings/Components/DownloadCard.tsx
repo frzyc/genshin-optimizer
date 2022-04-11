@@ -6,7 +6,7 @@ import { useCallback, useContext } from "react"
 import { Trans, useTranslation } from "react-i18next"
 import CardLight from '../../Components/Card/CardLight'
 import { ArtCharDatabase, DatabaseContext } from "../../Database/Database"
-import { exportGOOD } from '../../Database/exim/good'
+import { exportGOOD } from '../../Database/exports/good'
 
 export default function DownloadCard() {
   const { database, setDatabase } = useContext(DatabaseContext)
