@@ -28,8 +28,9 @@ export default function DownloadCard() {
   const download = useCallback(
     () => {
       const date = new Date()
+      const dateStr = date.toISOString().split(".")[0].replace("T", "_").replaceAll(":", "-")
       const JSONStr = JSON.stringify(exportGOOD(database.storage))
-      const filename = `go-data-${date.getFullYear()}-${date.getMonth()}-${date.getDay()}-${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}.json`
+      const filename = `go-data_${dateStr}.json`
       const contentType = "application/json;charset=utf-8"
       const a = document.createElement('a');
       a.download = filename
