@@ -29,7 +29,7 @@ export default function EnemyEditorCard() {
         </ExpandButton>
       }
       title={<Typography>
-        {KeyMap.get(eLvlNode.key)} <strong>{valueString(eLvlNode.value, eLvlNode.unit, 0)}</strong>
+        {KeyMap.get(eLvlNode.info.key)} <strong>{valueString(eLvlNode.value, eLvlNode.unit, 0)}</strong>
       </Typography>}
     />
     <Divider />

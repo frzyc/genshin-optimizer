@@ -1,6 +1,6 @@
 import { ArtCharDatabase } from '../Database/Database';
 import { DBLocalStorage } from '../Database/DBStorage';
-import { importGOOD } from '../Database/exim/good';
+import { importGOOD } from '../Database/imports/good';
 import { mergeData, uiDataForTeam } from '../Formula/api';
 import { optimize } from '../Formula/optimization';
 import { customRead } from '../Formula/utils';
@@ -10,7 +10,7 @@ import * as data1 from "./background.perf.test.json";
 import { pruneAll } from './common';
 import { compactArtifacts, dynamicData } from './foreground';
 
-describe("Worker Perf", () => {
+describe.skip("Worker Perf", () => {
   test("Test", async () => {
 
     /**
