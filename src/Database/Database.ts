@@ -48,6 +48,22 @@ export class ArtCharDatabase {
         if (migrated) this.storage.set(`char_${flex.key}`, flex)
       }
     }
+    // Briefly verify that each teammate is pointing to a valid character. does not check double linking.
+    Object.entries(this.chars.data).forEach(([charKey, char]) => {
+      let updateTeam = false
+      const team = char.team.map(t => {
+        if (this.chars.get(t))
+          return t
+        else {
+          updateTeam = true
+          return ""
+        }
+      }) as ["" | CharacterKey, "" | CharacterKey, "" | CharacterKey]
+      if (updateTeam) {
+        char.team = team
+        this.chars.set(charKey, char)
+      }
+    })
 
     for (const key of storage.keys) {
       if (key.startsWith("artifact_")) {
