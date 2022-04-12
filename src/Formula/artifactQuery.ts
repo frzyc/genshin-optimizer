@@ -65,7 +65,7 @@ function evalArtifact(objective: Query, art: QueryArtifact) {
   const ksum2 = grad.reduce((a, b) => a + b * b, 0)
   const N = rollsLeft
   const mean = 17 / 8 * N * ksum
-  const variance = (5 / 16 + 289 / 16) * N * ksum2 - N * 289 / 64 * ksum * ksum
+  const variance = (147 / 8) * N * ksum2 - N * 289 / 64 * ksum * ksum
 
   // return prob & dmg
   const x = objective.thresholds[0] - c // target
@@ -94,7 +94,11 @@ function querySetup(objective: NumNode, arts: QueryBuild, data: Data = {}): Quer
   formulas.forEach(f => {
     toEval.push(f, ...allSubstats.map(sub => ddx(f, fo => fo.path[1], sub)))
   })
-  const evalOpt = optimize(toEval, data, ({ path: [p] }) => p !== "dyn")
+  // Opt loop a couple times to ensure all constants folded?
+  let evalOpt = optimize(toEval, data, ({ path: [p] }) => p !== "dyn")
+  evalOpt = optimize(evalOpt, data, ({ path: [p] }) => p !== "dyn")
+  // evalOpt = optimize(evalOpt, data, ({ path: [p] }) => p !== "dyn")
+  // evalOpt = optimize(evalOpt, data, ({ path: [p] }) => p !== "dyn")
   const evalFn = precompute(evalOpt, f => f.path[1])
 
   let stats: DynStat = {}
