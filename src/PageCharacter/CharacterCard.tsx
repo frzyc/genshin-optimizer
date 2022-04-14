@@ -208,7 +208,7 @@ function ArtifactDisplay() {
       return <Grid item key={key} xs={1}>
         <CardDark>
           <Box sx={{ textAlign: "center" }}>
-            <Box mb={-2.75}>
+            <Box mb={-3}>
               <Box
                 component="img"
                 src={artifactSheets?.[setKey].slotIcons[slotKey]}
@@ -219,11 +219,11 @@ function ArtifactDisplay() {
             </Box>
             <Typography variant='subtitle1' sx={{ display: "flex" }} >
               <BootstrapTooltip placement="top" title={<Typography>{cacheValueString(mainStatVal, KeyMap.unit(mainStatKey))}{KeyMap.unit(mainStatKey)} {KeyMap.getStr(mainStatKey)}</Typography>}>
-                <SqBadge color="secondary" sx={{ ml: "auto", mr: 0, mb: -0.2 }}>{StatIcon[mainStatKey]}</SqBadge>
+                <SqBadge color="secondary" sx={{ ml: "auto", mr: 0, mb: -0.1, borderRadius: "0.25em 0.25em 0em 0.25em" }}>{StatIcon[mainStatKey]}</SqBadge>
               </BootstrapTooltip>
             </Typography>
             <Typography variant='subtitle1' sx={{ display: "flex", mb: 0 }} >
-              <SqBadge color={levelVariant as any} sx={{ width: "100%" }}>+{level}</SqBadge>
+              <SqBadge color={levelVariant as any} sx={{ width: "100%", borderRadius: 0 }}>+{level}</SqBadge>
             </Typography>
           </Box>
         </CardDark>
