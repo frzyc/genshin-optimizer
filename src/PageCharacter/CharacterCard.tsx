@@ -254,12 +254,12 @@ function TeammateDisplay({ team }) {
                   className={`grad-${teammateSheet.rarity}star`}
                 />
               </Grid>
-              <Grid item xs={1} pl={0.5} pt={0.25} sx={{ backgroundColor: theme.palette.contentDark.main }}>
-                <Grid container direction="column" columns={2}>
-                  <Typography variant='subtitle1' sx={{ display: "flex", mb: 0.25 }} >
+              <Grid item xs={1} sx={{ backgroundColor: theme.palette.contentDark.main }}>
+                <Grid container direction="column" columns={2} p={1}>
+                  <Typography variant='subtitle1' gutterBottom sx={{ display: "flex", gap: 1 }} >
                     <SqBadge color="primary">Lv. {teammates[i]?.level}</SqBadge>
                   </Typography>
-                  <Typography variant='subtitle1' sx={{ display: "flex" }} >
+                  <Typography variant='subtitle1' sx={{ display: "flex", gap: 1 }} >
                     <SqBadge color="secondary">C{teammates[i]?.constellation}</SqBadge>
                   </Typography>
                 </Grid>
