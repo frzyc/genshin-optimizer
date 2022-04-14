@@ -103,6 +103,7 @@ function TeammateDisplay({ index }: { index: number }) {
         artifactChildren={<CharArtifactCondDisplay />}
         weaponChildren={<CharWeaponCondDisplay />}
         characterChildren={<CharTalentCondDisplay />}
+        hideTeammates
       />
     </DataContext.Provider>}
   </CardLight>

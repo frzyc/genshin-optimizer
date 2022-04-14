@@ -25,7 +25,6 @@ import { ICachedArtifact } from '../Types/artifact';
 import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '../Types/consts';
 import { ICachedWeapon } from '../Types/weapon';
 import { NodeDisplay } from '../Formula/uiData'
-import { theme } from '../Theme';
 
 type CharacterCardProps = {
   characterKey: CharacterKey | "",
@@ -35,8 +34,9 @@ type CharacterCardProps = {
   weaponChildren?: Displayable,
   characterChildren?: Displayable,
   footer?: Displayable,
+  hideTeammates?: boolean,
 }
-export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, characterChildren, onClick, onClickHeader, footer }: CharacterCardProps) {
+export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, characterChildren, onClick, onClickHeader, footer, hideTeammates }: CharacterCardProps) {
   const { teamData: teamDataContext } = useContext(DataContext)
   const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
   const { character, characterSheet, target: data } = teamData?.[characterKey] ?? {}
@@ -66,7 +66,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
             {weaponChildren}
             <ArtifactDisplay />
             {artifactChildren}
-            <TeammateDisplay team={character.team} />
+            {!hideTeammates && <TeammateDisplay team={character.team} />}
             <Stats />
             {characterChildren}
           </CardContent>
@@ -254,7 +254,7 @@ function TeammateDisplay({ team }) {
                   sx={{ transform: "scale(1.5) translate(-5%, 3%)", transformOrigin: "bottom" }}
                 />
               </Grid>
-              <Grid item xs={1} sx={{ backgroundColor: theme.palette.contentDark.main }}>
+              <Grid item xs={1}>
                 <Grid container direction="column" columns={2} pt={0.25} pl={0.25}>
                   <Typography variant='subtitle1' gutterBottom sx={{ display: "flex", gap: 1 }} >
                     <SqBadge color="primary">Lv. {teammates[i]?.level}</SqBadge>
