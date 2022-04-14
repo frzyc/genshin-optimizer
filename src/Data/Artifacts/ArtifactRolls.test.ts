@@ -1,6 +1,6 @@
 import artifactSubstatBaseRoll from './artifact_sub_gen.json';
+import artifactSubstatRoll from './artifact_sub_rolls_gen.json';
 import { SubstatKey } from "../../Types/artifact";
-
 
 // TODO: Add 29.2 hp_
 
@@ -207,23 +207,31 @@ function somePerm(indices: number[], callback: (current: number[]) => boolean): 
   return false
 }
 
-describe.skip("Artifact Roll Model", () => {
+describe("Artifact Roll Model", () => {
   for (const [key, entries] of Object.entries(rolls)) {
     const rolls = artifactSubstatBaseRoll["5"][key]
 
     type Model = (indices: number[]) => string
 
     // TODO: Test different models
-    const model1: Model = indices => {
-      const theoretical = indices.reduce((a, b) => a + rolls[b], 0)
-      return key.endsWith('_')
-        ? (Math.round(theoretical * 1000) / 10).toFixed(1)
-        : Math.round(theoretical).toFixed(0)
+    const model: Model = indices => {
+      if (key.endsWith('_')) {
+        const theoretical = indices.reduce((a, b) => Math.fround(a + Math.fround(rolls[b] * 100)), 0)
+        return (Math.round(Math.fround(theoretical * 10)) / 10).toFixed(1)
+      } else {
+        const theoretical = indices.reduce((a, b) => a + rolls[b], 0)
+        return Math.round(theoretical).toFixed(0)
+      }
     }
 
     for (const [string, ...values] of entries) {
-      it(`should support ${string} ${key} with rolls [${values.map(i => rolls[i])}]`, () => {
-        expect(somePerm(values, i => model1(i) === string)).toBeTruthy()
+      test(`Current system validates ${string} ${key}`, () => {
+        expect(Object.keys(artifactSubstatRoll[5][key])).toContain(string)
+      })
+
+      const v = values.map(i => rolls[i])
+      it(`should support ${string} ${key} with rolls [${v}] (sum to ${v.reduce((a, b) => a + b)})`, () => {
+        expect(somePerm(values, i => model(i) === string)).toBeTruthy()
       })
     }
   }
