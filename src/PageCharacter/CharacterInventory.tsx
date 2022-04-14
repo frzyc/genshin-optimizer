@@ -4,6 +4,7 @@ import { Box, Button, CardContent, Divider, Grid, Skeleton, Typography } from '@
 import i18next from 'i18next';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import ReactGA from 'react-ga';
+import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import CardDark from '../Components/Card/CardDark';
 import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
@@ -31,6 +32,7 @@ function initialState() {
 }
 
 export default function CharacterInventory(props) {
+  const { t } = useTranslation("page_character")
   const { database } = useContext(DatabaseContext)
   const [state, stateDisplatch] = useDBState("CharacterDisplay", initialState)
 
@@ -85,7 +87,7 @@ export default function CharacterInventory(props) {
         <Grid item xs={12} sm={6} md={4} lg={3} >
           <CardDark sx={{ height: "100%", minHeight: 400, width: "100%", display: "flex", flexDirection: "column" }}>
             <CardContent>
-              <Typography sx={{ textAlign: "center" }}>Add New Character</Typography>
+              <Typography sx={{ textAlign: "center" }}><Trans t={t} i18nKey="addNew" /></Typography>
             </CardContent>
             <CharacterSelectionModal newFirst show={newCharacter} onHide={() => setnewCharacter(false)} onSelect={editCharacter} />
             <Box sx={{

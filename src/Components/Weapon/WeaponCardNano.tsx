@@ -12,16 +12,17 @@ import StatIcon from "../StatIcon";
 
 type Data = {
   weaponId?: string,
+  BGComponent?: React.ElementType
 }
 
-export default function WeaponCardNano({ weaponId }: Data) {
+export default function WeaponCardNano({ weaponId, BGComponent = CardDark }: Data) {
   const weapon = useWeapon(weaponId)
   const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
-  return <CardDark sx={{ height: "100%" }}>
+  return <BGComponent sx={{ height: "100%" }}>
     <Grid container sx={{ flexWrap: "nowrap" }} className={`grad-${weaponSheet.rarity}star`} >
-      <Grid item maxWidth="40%" sx={{}} >
+      <Grid item maxWidth="40%" sx={{ mr: -1 }} >
         <CardMedia
           component="img"
           image={weaponSheet.img}
@@ -42,7 +43,7 @@ export default function WeaponCardNano({ weaponId }: Data) {
         <WeaponStat node={UIData.get(input.weapon.sub)} />
       </Grid>
     </Grid>
-  </CardDark >
+  </BGComponent >
 }
 function WeaponStat({ node }: { node: NodeDisplay }) {
   if (!node.info.key) return null

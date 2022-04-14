@@ -69,7 +69,7 @@ export default function ArtifactFilter({ filterOption, filterOptionDispatch, fil
               {allSlotKeys.map(slotKey => <ToggleButton key={slotKey} value={slotKey}>{artifactSlotIcon(slotKey)}</ToggleButton>)}
             </SolidToggleButtonGroup>
             {/* Artiface level filter */}
-            <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh}
+            <ArtifactLevelSlider showLevelText levelLow={levelLow} levelHigh={levelHigh}
               setLow={levelLow => filterOptionDispatch({ levelLow })}
               setHigh={levelHigh => filterOptionDispatch({ levelHigh })}
               setBoth={(levelLow, levelHigh) => filterOptionDispatch({ levelLow, levelHigh })} />

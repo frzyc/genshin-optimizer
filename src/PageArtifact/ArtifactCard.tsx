@@ -70,40 +70,40 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   </BootstrapTooltip>
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
-      <CardContent className={`grad-${rarity}star`} sx={{ pt: 1, pb: 0, pr: 0 }}>
-        <Box component="div" sx={{ display: "flex", alignItems: "center", pr: 1 }}>
-          <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
-          <Typography sx={{ pl: 1, flexGrow: 1 }}>{slotName} {slotDescTooltip}</Typography>
-          <IconButton color="primary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)}>
-            {lock ? <Lock /> : <LockOpen />}
-          </IconButton>
+      <Box className={`grad-${rarity}star`} sx={{ position: "relative" }}>
+        <IconButton color="primary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)} sx={{ position: "absolute", right: 0, bottom: 0, }}>
+          {lock ? <Lock /> : <LockOpen />}
+        </IconButton>
+        <Box sx={{ pt: 2, px: 2, position: "relative", zIndex: 1 }}>
+          {/* header */}
+          <Box component="div" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
+            <Typography sx={{ flexGrow: 1 }}>{slotName} {slotDescTooltip}</Typography>
+          </Box>
+          <Typography color="text.secondary" variant="body2">
+            <SlotNameWithIcon slotKey={slotKey} />
+          </Typography>
+          <Typography variant="h6" color={`${KeyMap.getVariant(mainStatKey)}.main`}>
+            <span>{StatIcon[mainStatKey]} {KeyMap.get(mainStatKey)}</span>
+          </Typography>
+          <Typography variant="h5">
+            <strong>
+              <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
+            </strong>
+          </Typography>
+          <Stars stars={rarity} colored />
+          {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
         </Box>
-        <Grid container sx={{ flexWrap: "nowrap" }}>
-          <Grid item flexGrow={1}>
-            <Typography color="text.secondary" variant="body2">
-              <SlotNameWithIcon slotKey={slotKey} />
-            </Typography>
-            <Typography variant="h6" color={`${KeyMap.getVariant(mainStatKey)}.main`}>
-              <span>{StatIcon[mainStatKey]} {KeyMap.get(mainStatKey)}</span>
-            </Typography>
-            <Typography variant="h5">
-              <strong>
-                <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
-              </strong>
-            </Typography>
-            <Stars stars={rarity} colored />
-            {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
-          </Grid>
-          <Grid item maxWidth="40%" sx={{ mt: -3, mb: -1, pl: -2 }} alignSelf="flex-end">
-            <CardMedia
-              component="img"
-              image={sheet?.slotIcons[slotKey] ?? ""}
-              width="100%"
-              height="auto"
-            />
-          </Grid>
-        </Grid>
-      </CardContent>
+        <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>
+          <CardMedia
+            component="img"
+            image={sheet?.slotIcons[slotKey] ?? ""}
+            width="auto"
+            height="100%"
+            sx={{ float: "right" }}
+          />
+        </Box>
+      </Box>
       <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", pt: 1, pb: 0 }}>
         {substats.map((stat: ICachedSubstat) => <SubstatDisplay key={stat.key} stat={stat} effFilter={effFilter} rarity={rarity} />)}
         <Box sx={{ display: "flex", my: 1 }}>

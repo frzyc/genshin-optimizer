@@ -9,6 +9,8 @@ import { DataContext } from '../DataContext';
 import { uiInput as input } from '../Formula';
 import KeyMap, { StatKey } from '../KeyMap';
 import { ElementKey } from '../Types/consts';
+import { Info } from '@mui/icons-material';
+import BootstrapTooltip from './BootstrapTooltip';
 export default function StatFilterCard({ statFilters = {}, setStatFilters, disabled = false }:
   { statFilters: Dict<StatKey, number>, setStatFilters: (object: Dict<StatKey, number>) => void, disabled?: boolean }) {
   const { data } = useContext(DataContext)
@@ -20,8 +22,12 @@ export default function StatFilterCard({ statFilters = {}, setStatFilters, disab
   const remainingKeys = statKeys.filter(key => !(Object.keys(statFilters) as any).some(k => k === key))
   const setFilter = useCallback((sKey, min) => setStatFilters({ ...statFilters, [sKey]: min }), [statFilters, setStatFilters],)
   return <CardLight>
-    <CardContent sx={{ py: 1 }}>
+    <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
       <Typography>Minimum Final Stat Filter</Typography>
+      <BootstrapTooltip placement="top" title={<Typography>Filter the build generated to conform to some stat requirements, e.g. Generate builds with at least 140% Energy Recharge.</Typography>}>
+        <Info />
+      </BootstrapTooltip>
+
     </CardContent>
     <Divider />
     <CardContent>

@@ -85,7 +85,7 @@ export function artifactFilterConfigs(): FilterConfigs<keyof FilterOption, ICach
       return false
     },
     artSetKeys: (art, filter) => filter.length ? filter.includes(art.setKey) : true,
-    slotKeys: (art, filter) => filter.length ? filter.includes(art.slotKey) : true,
+    slotKeys: (art, filter) => filter.includes(art.slotKey),
     mainStatKeys: (art, filter) => filter.length ? filter.includes(art.mainStatKey) : true,
     levelLow: (art, filter) => filter <= art.level,
     levelHigh: (art, filter) => filter >= art.level,

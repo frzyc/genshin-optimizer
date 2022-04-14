@@ -1,12 +1,12 @@
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Lock, LockOpen } from "@mui/icons-material"
-import { Box, Button, ButtonGroup, CardActionArea, CardContent, CardHeader, Grid, IconButton, Skeleton, Typography } from "@mui/material"
+import { Box, Button, ButtonGroup, CardActionArea, CardContent, CardHeader, CardMedia, Grid, IconButton, Skeleton, Typography } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import Assets from "../Assets/Assets"
 import CharacterSheet from "../Data/Characters/CharacterSheet"
 import CardLight from "../Components/Card/CardLight"
-import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton_WR'
+import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton'
 import LocationName from "../Components/Character/LocationName"
 import ConditionalWrapper from "../Components/ConditionalWrapper"
 import ImgIcon from "../Components/Image/ImgIcon"
@@ -52,24 +52,29 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 300 }} />}>
     <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
       <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
-        <div className={`grad-${weaponSheet.rarity}star`} >
-          <CardHeader title={weaponSheet.name} avatar={<ImgIcon sx={{ fontSize: "2em" }} src={Assets.weaponTypes?.[weaponTypeKey]} />} titleTypographyProps={{ variant: "h6" }}
-            action={!onClick && <IconButton color="primary" onClick={() => database.updateWeapon({ lock: !lock }, id)}>
-              {lock ? <Lock /> : <LockOpen />}
-            </IconButton>} />
-          <Grid container sx={{ flexWrap: "nowrap", pl: 2 }}>
-            <Grid item flexGrow={1}>
-              <Typography component="span" variant="h4">Lv. {level}</Typography>
-              <Typography component="span" variant="h4" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
+        <Box className={`grad-${weaponSheet.rarity}star`} sx={{ position: "relative" }}>
+          {!onClick && <IconButton color="primary" onClick={() => database.updateWeapon({ lock: !lock }, id)} sx={{ position: "absolute", right: 0, bottom: 0, }}>
+            {lock ? <Lock /> : <LockOpen />}
+          </IconButton>}
+          <Box sx={{ position: "relative", zIndex: 1 }}>
+            <CardHeader sx={{ pb: 1 }} title={weaponSheet.name} avatar={<ImgIcon sx={{ fontSize: "1.5em" }} src={Assets.weaponTypes?.[weaponTypeKey]} />} titleTypographyProps={{ variant: "subtitle1" }} />
+            <Box sx={{ px: 2, }}>
+              <Typography component="span" variant="h5">Lv. {level}</Typography>
+              <Typography component="span" variant="h5" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
               <Typography variant="h6">Refinement <strong>{refinement}</strong></Typography>
               <Typography><Stars stars={weaponSheet.rarity} colored /></Typography>
-            </Grid>
-            {/* use flex-end here to align the image to the bottom. */}
-            <Grid item container maxWidth="40%" alignContent="flex-end" sx={{ mt: -3 }}>
-              <Box component="img" src={img} width="100%" height="auto" />
-            </Grid>
-          </Grid>
-        </div>
+            </Box>
+          </Box>
+          <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>
+            <CardMedia
+              component="img"
+              image={img ?? ""}
+              width="auto"
+              height="100%"
+              sx={{ float: "right" }}
+            />
+          </Box>
+        </Box>
         <CardContent>
           {stats.map(node => {
             if (!node.info.key) return null

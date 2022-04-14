@@ -13,7 +13,6 @@ import './i18n';
 const Home = lazy(() => import('./PageHome/HomeDisplay'))
 const ArtifactDisplay = lazy(() => import('./PageArtifact/ArtifactDisplay'))
 const CharacterRouter = lazy(() => import('./PageCharacter/CharacterRouter'))
-const BuildDisplay = lazy(() => import('./PageBuild/BuildDisplay'))
 const ToolsDisplay = lazy(() => import('./PageTools/ToolsDisplay'))
 const TestDisplay = lazy(() => import('./PageTest/TestDisplay'))
 const SettingsDisplay = lazy(() => import('./PageSettings/SettingsDisplay'))
@@ -69,7 +68,6 @@ function App() {
               <Route path="/artifact" component={ArtifactDisplay} />
               <Route path="/weapon" component={WeaponDisplay} />
               <Route path="/character" component={CharacterRouter} />
-              <Route path="/build" component={BuildDisplay} />
               <Route path="/tools" component={ToolsDisplay} />
               {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
               <Route path="/setting" component={SettingsDisplay} />

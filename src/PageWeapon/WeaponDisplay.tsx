@@ -5,6 +5,7 @@ import i18next from 'i18next';
 import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
 import CardDark from '../Components/Card/CardDark';
+import ModalWrapper from '../Components/ModalWrapper';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import SortByButton from '../Components/SortByButton';
 import { Stars } from '../Components/StarDisplay';
@@ -113,19 +114,15 @@ export default function WeaponDisplay() {
       resetEditWeapon()
   }, [database, editWeaponId, resetEditWeapon])
 
-  return <Box sx={{
-    mt: 1,
-    // select all excluding last
-    "> div": { mb: 1 },
-  }}>
+  return <Box mt={1} display="flex" flexDirection="column" gap={1}>
     {/* editor/character detail display */}
-    {!!editWeaponId && <Box ref={scrollRef} >
+    <ModalWrapper open={!!editWeaponId} onClose={resetEditWeapon} containerProps={{ maxWidth: "md" }}>
       <WeaponDisplayCard
         weaponId={editWeaponId}
         footer
         onClose={resetEditWeapon}
       />
-    </Box>}
+    </ModalWrapper>
     <CardDark ref={invScrollRef} sx={{ p: 2, pb: 1 }}>
       <Grid container spacing={1} sx={{ mb: 1 }}>
         <Grid item>

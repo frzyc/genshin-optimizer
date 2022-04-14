@@ -3,25 +3,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Badge, Box, Button, CardContent, CardMedia, Divider, Grid, Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
 import Assets from "../../Assets/Assets";
+import ArtifactCardNano from "../../Components/Artifact/ArtifactCardNano";
 import CardLight from "../../Components/Card/CardLight";
 import ColorText from "../../Components/ColoredText";
 import { NodeFieldDisplay } from "../../Components/FieldDisplay";
 import ImgIcon from "../../Components/Image/ImgIcon";
 import { Stars } from "../../Components/StarDisplay";
 import StatIcon from "../../Components/StatIcon";
+import WeaponCardNano from "../../Components/Weapon/WeaponCardNano";
+import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DataContext } from "../../DataContext";
 import { uiInput as input } from "../../Formula";
 import { ReadNode } from "../../Formula/type";
 import KeyMap, { valueString } from "../../KeyMap";
-import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import { amplifyingReactions, transformativeReactions } from "../../KeyMap/StatConstants";
-import { allElementsWithPhy, ElementKey } from "../../Types/consts";
-import WeaponDisplayCard from "../../PageWeapon/WeaponDisplayCard";
-import CharacterSheet from "../../Data/Characters/CharacterSheet";
-import StatInput from "../StatInput";
-import { TeamBuffDisplay } from "./CharacterTeamBuffsPane";
-import { range } from "../../Util/Util";
+import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import { TalentSheetElementKey } from "../../Types/character";
+import { allElementsWithPhy, allSlotKeys, ElementKey } from "../../Types/consts";
+import { range } from "../../Util/Util";
+import StatInput from "../StatInput";
 export default function CharacterOverviewPane() {
   const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
@@ -40,13 +40,13 @@ export default function CharacterOverviewPane() {
     skill: data.get(input.bonus.skill).value,
     burst: data.get(input.bonus.burst).value,
   }
-  return <Grid container spacing={1}>
-    <Grid item xs={12} md={3}  >
+  return <Grid container spacing={1} sx={{ justifyContent: "center" }}>
+    <Grid item xs={8} md={2.5}  >
       {/* Image card with star and name and level */}
       <CardLight >
         <CardMedia src={characterSheet.cardImg} component="img" width="100%" height="auto" />
         <CardContent>
-          <Typography variant="h4" >{characterSheet.name} <ImgIcon src={Assets.weaponTypes?.[weaponTypeKey]} /> {StatIcon[charEle]} </Typography>
+          <Typography variant="h5" >{characterSheet.name} <ImgIcon src={Assets.weaponTypes?.[weaponTypeKey]} /> {StatIcon[charEle]} </Typography>
           <Typography variant="h6"><Stars stars={characterSheet.rarity} colored /></Typography>
           <Typography variant="h5">Lvl. {CharacterSheet.getLevelString(level, ascension)}</Typography>
           <Grid container spacing={1} mt={1}>
@@ -89,10 +89,21 @@ export default function CharacterOverviewPane() {
         </CardContent>
       </CardLight>
     </Grid>
-    <Grid item xs={12} md={9} sx={{
-      "> div:not(:last-child)": { mb: 1 }
+    <Grid item xs={12} md={9.5} sx={{
+      display: "flex", flexDirection: "column", gap: 1
     }} >
-      <WeaponDisplayCard weaponId={character.equippedWeapon} />
+      <Grid container spacing={1}>
+        <Grid item xs={6} sm={4} md={3} lg={2}>
+          {/* TODO click to go the equipment tab */}
+          <WeaponCardNano weaponId={character.equippedWeapon} BGComponent={CardLight} />
+        </Grid>
+        {allSlotKeys.map(slotKey =>
+          <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >
+            <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} onClick={() => {
+              // TODO go to the equipment tab?
+            }} BGComponent={CardLight} />
+          </Grid>)}
+      </Grid>
       <MainStatsCards />
     </Grid>
   </Grid >
@@ -147,7 +158,6 @@ function MainStatsCards() {
   const specialNode = data.get(input.special)
 
   return <>
-    <TeamBuffDisplay />
     <StatDisplayCard
       title="Main Stats"
       content={<StatDisplayContent statBreakpoint={statBreakpoint} nodes={mainReadNodes}

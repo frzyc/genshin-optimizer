@@ -14,8 +14,9 @@ type props = Omit<ButtonProps, "onChange"> & {
   onChange: (setKey: ArtifactSetKey | "") => void
   hasUnselect?: boolean
   artifactSetsByRarity?: { [rarity in ArtifactRarity]: ArtifactSetKey[] }
+  titleTransKey?: string,
 }
-export default function ArtifactSetDropdown({ selectedSetKey = "", onChange, artifactSetsByRarity, hasUnselect = false, ...props }: props) {
+export default function ArtifactSetDropdown({ selectedSetKey = "", onChange, artifactSetsByRarity, hasUnselect = false, titleTransKey, ...props }: props) {
   const { t } = useTranslation("artifact")
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const sheet = artifactSheets?.[selectedSetKey]
@@ -26,7 +27,7 @@ export default function ArtifactSetDropdown({ selectedSetKey = "", onChange, art
   }, [artifactSheets, artifactSetsByRarity])
   return <DropdownButton
     {...props}
-    title={sheet?.name ?? t`editor.set.artifactSet`}
+    title={sheet?.name ?? (titleTransKey && t(titleTransKey)) ?? t`editor.set.artifactSet`}
     startIcon={sheet?.defIconSrc && <ImgIcon src={sheet?.defIconSrc} />}
     color={sheet ? "success" : "primary"}
   >
