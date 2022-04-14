@@ -255,7 +255,7 @@ function TeammateDisplay({ team }) {
                 />
               </Grid>
               <Grid item xs={1} sx={{ backgroundColor: theme.palette.contentDark.main }}>
-                <Grid container direction="column" columns={2} pt={1} pl={1}>
+                <Grid container direction="column" columns={2} pt={0.25} pl={0.25}>
                   <Typography variant='subtitle1' gutterBottom sx={{ display: "flex", gap: 1 }} >
                     <SqBadge color="primary">Lv. {teammates[i]?.level}</SqBadge>
                   </Typography>
