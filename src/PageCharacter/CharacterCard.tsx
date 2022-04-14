@@ -1,21 +1,23 @@
 import { Box, CardActionArea, CardContent, Chip, Grid, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
+import { artifactSlotIcon } from '../Components/Artifact/SlotNameWIthIcon';
+import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import ConditionalWrapper from '../Components/ConditionalWrapper';
 import { NodeFieldDisplay } from '../Components/FieldDisplay';
-import ImgIcon from '../Components/Image/ImgIcon';
 import SqBadge from '../Components/SqBadge';
 import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
+import CharacterSheet from '../Data/Characters/CharacterSheet';
 import { ascensionMaxLevel } from '../Data/LevelData';
 import WeaponSheet from '../Data/Weapons/WeaponSheet';
 import { DatabaseContext } from '../Database/Database';
 import { DataContext, dataContextObj, TeamData } from '../DataContext';
 import { uiInput as input } from '../Formula';
 import { computeUIData, dataObjForWeapon } from '../Formula/api';
-import KeyMap, { valueString } from '../KeyMap';
+import KeyMap, { cacheValueString, valueString } from '../KeyMap';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import usePromise from '../ReactHooks/usePromise';
 import useTeamData from '../ReactHooks/useTeamData';
@@ -23,6 +25,7 @@ import { ICachedArtifact } from '../Types/artifact';
 import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '../Types/consts';
 import { ICachedWeapon } from '../Types/weapon';
 import { NodeDisplay } from '../Formula/uiData'
+import { theme } from '../Theme';
 
 type CharacterCardProps = {
   characterKey: CharacterKey | "",
@@ -61,11 +64,9 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
           <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
             <Weapon weaponId={character.equippedWeapon} />
             {weaponChildren}
-            {/* will grow to fill the 100% height */}
-            <Box flexGrow={1} display="flex" flexDirection="column" gap={1}>
-              <ArtifactDisplay />
-              {artifactChildren}
-            </Box>
+            <ArtifactDisplay />
+            {artifactChildren}
+            <TeammateDisplay team={character.team} />
             <Stats />
             {characterChildren}
           </CardContent>
@@ -191,14 +192,82 @@ function ArtifactDisplay() {
     allSlotKeys.map(k => [k, database._getArt(data.get(input.art[k].id).value ?? "")]),
     [data, database]) as Array<[SlotKey, ICachedArtifact | undefined]>;
   if (!artifactSheets) return null
-  return <Grid container spacing={1} >
-    {artifacts.map(([key, art]) => {
-      if (!art) return null
-      const { setKey, slotKey, mainStatKey } = art
-      return <Grid item key={key} flexGrow={1}>
-        <Chip color="secondary" sx={{ width: "100%" }} icon={<ImgIcon src={artifactSheets?.[setKey].slotIcons[slotKey]} size={2.5} />}
-          label={<span>{StatIcon[mainStatKey]} {KeyMap.get(mainStatKey)}</span>} />
+
+  return <Grid direction="row" container spacing={0.5} columns={5}>
+    {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) => {
+      if (!art) return <Grid item key={key} xs={1}>
+        <CardDark>
+          <Box sx={{ p: 1, textAlign: "center" }}>
+            {artifactSlotIcon(key, "2x")}
+          </Box>
+        </CardDark>
       </Grid>
+
+      const { setKey, slotKey, mainStatKey, rarity, level, mainStatVal } = art
+      const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
+      return <Grid item key={key} xs={1}>
+        <CardDark>
+          <Box sx={{ textAlign: "center" }}>
+            <Box mb={-2.75}>
+              <Box
+                component="img"
+                src={artifactSheets?.[setKey].slotIcons[slotKey]}
+                width="100%"
+                height="auto"
+                className={`grad-${rarity}star`}
+              />
+            </Box>
+            <Typography variant='subtitle1' sx={{ display: "flex" }} >
+              <BootstrapTooltip placement="top" title={<Typography>{cacheValueString(mainStatVal, KeyMap.unit(mainStatKey))}{KeyMap.unit(mainStatKey)} {KeyMap.getStr(mainStatKey)}</Typography>}>
+                <SqBadge color="secondary" sx={{ ml: "auto", mr: 0, mb: -0.2 }}>{StatIcon[mainStatKey]}</SqBadge>
+              </BootstrapTooltip>
+            </Typography>
+            <Typography variant='subtitle1' sx={{ display: "flex", mb: 0 }} >
+              <SqBadge color={levelVariant as any} sx={{ width: "100%" }}>+{level}</SqBadge>
+            </Typography>
+          </Box>
+        </CardDark>
+      </Grid>
+    })}
+  </Grid>
+}
+function TeammateDisplay({ team }) {
+  const { database } = useContext(DatabaseContext)
+  const teammateSheets = [usePromise(CharacterSheet.get(team[0] ?? ""), [team[0]]),
+  usePromise(CharacterSheet.get(team[1] ?? ""), [team[1]]),
+  usePromise(CharacterSheet.get(team[2] ?? ""), [team[2]])]
+  const teammates = useMemo(() =>
+    team.map(member => database._getChar(member ?? "")),
+    [database])
+  return <Grid container columns={3} spacing={0.25}>
+    {teammateSheets.map((teammateSheet, i) => {
+      if (teammateSheet) {
+        return <Grid item key={team[i]} xs={1}>
+          <CardDark>
+            <Grid container columns={2}>
+              <Grid item xs={1} mb={-0.5} mr={1.25} ml={-2} mt={-2.5}>
+                <Box
+                  component="img"
+                  src={teammateSheet.thumbImgSide}
+                  width="150%"
+                  height="auto"
+                  className={`grad-${teammateSheet.rarity}star`}
+                />
+              </Grid>
+              <Grid item xs={1} pl={0.5} pt={0.25} sx={{ backgroundColor: theme.palette.contentDark.main }}>
+                <Grid container direction="column" columns={2}>
+                  <Typography variant='subtitle1' sx={{ display: "flex", mb: 0.25 }} >
+                    <SqBadge color="primary">Lv. {teammates[i]?.level}</SqBadge>
+                  </Typography>
+                  <Typography variant='subtitle1' sx={{ display: "flex" }} >
+                    <SqBadge color="secondary">C{teammates[i]?.constellation}</SqBadge>
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+          </CardDark>
+        </Grid>
+      } else { return "" }
     })}
   </Grid>
 }
