@@ -116,6 +116,8 @@ const rolls: Dict<SubstatKey, [string, ...number[]][]> = {
 }
 // https://oeis.org/A123400
 const ehrlich = [1, 2, 1, 2, 1, 3, 2, 1, 2, 1, 2, 3, 1, 2, 1, 2, 1, 3, 2, 1, 2, 1, 2, 4, 3, 1, 3, 1, 3, 2, 1, 3, 1, 3, 1, 2, 3, 1, 3, 1, 3, 2, 1, 3, 1, 3, 1, 4, 2, 3, 2, 3, 2, 1, 3, 2, 3, 2, 3, 1, 2, 3, 2, 3, 2, 1, 3, 2, 3, 2, 3, 4, 1, 2, 1, 2, 1, 3, 2, 1, 2, 1, 2, 3, 1, 2, 1, 2, 1, 3, 2, 1, 2, 1, 2, 4, 3, 1, 3, 1, 3, 2, 1, 3, 1, 3, 1, 2, 3, 1, 3, 1, 3, 2, 1, 3, 1, 3, 1, 5, 4, 2, 4, 2, 4, 3, 2, 4, 2, 4, 2, 3, 4, 2, 4, 2, 4, 3, 2, 4, 2, 4, 2, 1, 3, 4, 3, 4, 3, 2, 4, 3, 4, 3, 4, 2, 3, 4, 3, 4, 3, 2, 4, 3, 4, 3, 4, 1, 2, 3, 2, 3, 2, 4, 3, 2, 3, 2, 3, 4, 2, 3, 2, 3, 2, 4, 3, 2, 3, 2, 3, 1, 4, 2, 4, 2, 4, 3, 2, 4, 2, 4, 2, 3, 4, 2, 4, 2, 4, 3, 2, 4, 2, 4, 2, 1, 3, 4, 3, 4, 3, 2, 4, 3, 4, 3, 4, 2, 3, 4, 3, 4, 3, 2, 4, 3, 4, 3, 4, 5, 1, 2, 1, 2, 1, 3, 2, 1, 2, 1, 2, 3, 1, 2, 1, 2, 1, 3, 2, 1, 2, 1, 2, 4, 3, 1, 3, 1, 3, 2, 1, 3, 1, 3, 1, 2, 3, 1, 3, 1, 3, 2, 1, 3, 1, 3, 1, 4, 2, 3, 2, 3, 2, 1, 3, 2, 3, 2, 3, 1, 2, 3, 2, 3, 2, 1, 3, 2, 3, 2, 3, 4, 1, 2, 1, 2, 1, 3, 2, 1, 2, 1, 2, 3, 1, 2, 1, 2, 1, 3, 2, 1, 2, 1, 2, 4, 3, 1, 3, 1, 3, 2, 1, 3, 1, 3, 1, 2, 3, 1, 3, 1, 3, 2, 1, 3, 1, 3, 1, 5, 4, 2, 4, 2, 4, 3, 2, 4, 2, 4, 2, 3, 4, 2, 4, 2, 4, 3, 2, 4, 2, 4, 2, 1, 3, 4, 3, 4, 3, 2, 4, 3, 4, 3, 4, 2, 3, 4, 3, 4, 3, 2, 4, 3, 4, 3, 4, 1, 2, 3, 2, 3, 2, 4, 3, 2, 3, 2, 3, 4, 2, 3, 2, 3, 2, 4, 3, 2, 3, 2, 3, 1, 4, 2, 4, 2, 4, 3, 2, 4, 2, 4, 2, 3, 4, 2, 4, 2, 4, 3, 2, 4, 2, 4, 2, 1, 3, 4, 3, 4, 3, 2, 4, 3, 4, 3, 4, 2, 3, 4, 3, 4, 3, 2, 4, 3, 4, 3, 4, 5, 1, 2, 1, 2, 1, 3, 2, 1, 2, 1, 2, 3, 1, 2, 1, 2, 1, 3, 2, 1, 2, 1, 2, 4, 3, 1, 3, 1, 3, 2, 1, 3, 1, 3, 1, 2, 3, 1, 3, 1, 3, 2, 1, 3, 1, 3, 1, 4, 2, 3, 2, 3, 2, 1, 3, 2, 3, 2, 3, 1, 2, 3, 2, 3, 2, 1, 3, 2, 3, 2, 3, 4, 1, 2, 1, 2, 1, 3, 2, 1, 2, 1, 2, 3, 1, 2, 1, 2, 1, 3, 2, 1, 2, 1, 2, 4, 3, 1, 3, 1, 3, 2, 1, 3, 1, 3, 1, 2, 3, 1, 3, 1, 3, 2, 1, 3, 1, 3, 1, 5, 4, 2, 4, 2, 4, 3, 2, 4, 2, 4, 2, 3, 4, 2, 4, 2, 4, 3, 2, 4, 2, 4, 2, 1, 3, 4, 3, 4, 3, 2, 4, 3, 4, 3, 4, 2, 3, 4, 3, 4, 3, 2, 4, 3, 4, 3, 4, 1, 2, 3, 2, 3, 2, 4, 3, 2, 3, 2, 3, 4, 2, 3, 2, 3, 2, 4, 3, 2, 3, 2, 3, 1, 4, 2, 4, 2, 4, 3, 2, 4, 2, 4, 2, 3, 4, 2, 4, 2, 4, 3, 2, 4, 2, 4, 2, 1, 3, 4, 3, 4, 3, 2, 4, 3, 4, 3, 4, 2, 3, 4, 3, 4, 3, 2, 4, 3, 4, 3, 4, 6, 5]
+
+/** Whether `callback` returns `true` for some permutations of `indices` */
 function somePerm(indices: number[], callback: (current: number[]) => boolean): boolean {
   const base = [...indices]
   const count = indices.reduce((a, _, i) => a * (i + 1), 1)
@@ -123,46 +125,43 @@ function somePerm(indices: number[], callback: (current: number[]) => boolean): 
     throw new Error(`Permutation too large`)
 
   for (let i = 0; i < count; i++) {
-    if (callback(base))
-      return true
+    if (callback(base)) return true
 
-    const x = ehrlich[i]
-    const tmp = base[x]
+    const x = ehrlich[i], tmp = base[x]
     base[x] = base[0]
     base[0] = tmp
   }
   return false
 }
 
-test("Artifact Roll Model", () => {
+describe.skip("Artifact Roll Model", () => {
   for (const [key, entries] of Object.entries(rolls)) {
     const rolls = artifactSubstatBaseRoll["5"][key]
 
-    type Model = (string: string, indices: number[]) => boolean
+    type Model = (indices: number[]) => string
 
-    const model1: Model = (string, indices) => {
-      return somePerm(indices, base => {
-        const theoretical = base.reduce((a, b) => a + rolls[b], 0)
-        const tString = key.endsWith('_')
-          ? (Math.round(theoretical * 1000) / 10).toFixed(1)
-          : Math.round(theoretical).toFixed(0)
-        return tString === string
-      })
+    // TODO: Test different models
+    const model1: Model = indices => {
+      const theoretical = indices.reduce((a, b) => a + rolls[b], 0)
+      return key.endsWith('_')
+        ? (Math.round(theoretical * 1000) / 10).toFixed(1)
+        : Math.round(theoretical).toFixed(0)
     }
-    const model2: Model = (string, indices) => {
-      return somePerm(indices, base => {
-        const theoretical = base.reduce((a, b) => Math.fround(a + rolls[b]), 0)
-        const tString = key.endsWith('_')
-          ? (Math.round(theoretical * 1000) / 10).toFixed(1)
-          : Math.round(theoretical).toFixed(0)
-        return tString === string
-      })
+    const model2: Model = indices => {
+      const theoretical = indices.reduce((a, b) => Math.fround(a + rolls[b]), 0)
+      return key.endsWith('_')
+        ? (Math.round(theoretical * 1000) / 10).toFixed(1)
+        : Math.round(theoretical).toFixed(0)
     }
 
     for (const [string, ...values] of entries) {
-      // TODO: narrow the models down to 1
-      expect(model1(string, values))
-      expect(model2(string, values))
+      // TODO: Remove failed models
+      it(`Model 1 ${key}: ${string} [${values}]`, () => {
+        expect(somePerm(values, i => model1(i) === string)).toBeTruthy()
+      })
+      it(`Model 2 ${key}: ${string} [${values}]`, () => {
+        expect(somePerm(values, i => model2(i) === string)).toBeTruthy()
+      })
     }
   }
 })
