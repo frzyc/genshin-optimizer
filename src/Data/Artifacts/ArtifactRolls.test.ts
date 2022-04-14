@@ -147,20 +147,10 @@ describe.skip("Artifact Roll Model", () => {
         ? (Math.round(theoretical * 1000) / 10).toFixed(1)
         : Math.round(theoretical).toFixed(0)
     }
-    const model2: Model = indices => {
-      const theoretical = indices.reduce((a, b) => Math.fround(a + rolls[b]), 0)
-      return key.endsWith('_')
-        ? (Math.round(theoretical * 1000) / 10).toFixed(1)
-        : Math.round(theoretical).toFixed(0)
-    }
 
     for (const [string, ...values] of entries) {
-      // TODO: Remove failed models
-      it(`Model 1 ${key}: ${string} [${values}]`, () => {
+      it(`should support ${string} ${key} with rolls [${values.map(i => rolls[i])}]`, () => {
         expect(somePerm(values, i => model1(i) === string)).toBeTruthy()
-      })
-      it(`Model 2 ${key}: ${string} [${values}]`, () => {
-        expect(somePerm(values, i => model2(i) === string)).toBeTruthy()
       })
     }
   }
