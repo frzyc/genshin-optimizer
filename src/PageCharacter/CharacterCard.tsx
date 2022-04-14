@@ -245,21 +245,21 @@ function TeammateDisplay({ team }) {
         return <Grid item key={team[i]} xs={1}>
           <CardDark>
             <Grid container columns={2}>
-              <Grid item xs={1} mb={-0.5} mr={1.25} ml={-2} mt={-2.5}>
+              <Grid item xs={1} mb={-0.5} className={`grad-${teammateSheet.rarity}star`}>
                 <Box
                   component="img"
                   src={teammateSheet.thumbImgSide}
-                  width="150%"
+                  width="100%"
                   height="auto"
-                  className={`grad-${teammateSheet.rarity}star`}
+                  sx={{ transform: "scale(1.5) translate(-5%, 3%)", transformOrigin: "bottom" }}
                 />
               </Grid>
               <Grid item xs={1} sx={{ backgroundColor: theme.palette.contentDark.main }}>
-                <Grid container direction="column" columns={2} p={1}>
+                <Grid container direction="column" columns={2} pt={1} pl={1}>
                   <Typography variant='subtitle1' gutterBottom sx={{ display: "flex", gap: 1 }} >
                     <SqBadge color="primary">Lv. {teammates[i]?.level}</SqBadge>
                   </Typography>
-                  <Typography variant='subtitle1' sx={{ display: "flex", gap: 1 }} >
+                  <Typography variant='subtitle1' sx={{ display: "flex" }} >
                     <SqBadge color="secondary">C{teammates[i]?.constellation}</SqBadge>
                   </Typography>
                 </Grid>
