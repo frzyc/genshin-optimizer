@@ -27,6 +27,8 @@ describe('Substat Rolls/efficiency', () => {
     expect(Object.keys(artifactSubstatRoll[5]?.["eleMas"] ?? {}))
       .toEqual(expect.arrayContaining(["23"]))
 
+    expect(Object.keys(artifactSubstatRoll[5]?.["hp_"] ?? {}))
+      .toEqual(expect.arrayContaining(["26.3"]))
   })
   test('should get correct roll base', () => {
     const { low, high } = Artifact.rollInfo(5)

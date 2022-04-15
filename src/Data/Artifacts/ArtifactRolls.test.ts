@@ -1,12 +1,11 @@
 import artifactSubstatBaseRoll from './artifact_sub_gen.json';
 import artifactSubstatRoll from './artifact_sub_rolls_gen.json';
 import { SubstatKey } from "../../Types/artifact";
-
-// TODO: Add 29.2 hp_
+import { extrapolateFloat } from 'pipeline/extrapolateFloat';
 
 /**
  * Known rarity-5 rolls
- * Data from Arkifix#2254
+ * (Most) Data from Arkifix#2254
  * https://discord.com/channels/785153694478893126/795544823804198922/879868973334790154
  */
 const rolls: Dict<SubstatKey, [string, ...number[]][]> = {
@@ -207,16 +206,25 @@ function somePerm(indices: number[], callback: (current: number[]) => boolean): 
   return false
 }
 
-describe("Artifact Roll Model", () => {
+describe.skip("Artifact Roll Model", () => {
   for (const [key, entries] of Object.entries(rolls)) {
     const rolls = artifactSubstatBaseRoll["5"][key]
 
     type Model = (indices: number[]) => string
 
-    // TODO: Test different models
-    const model: Model = indices => {
+    // TODO: Reduce these feasible models down to only one
+    const model1: Model = indices => {
       if (key.endsWith('_')) {
-        const theoretical = indices.reduce((a, b) => Math.fround(a + Math.fround(rolls[b] * 100)), 0)
+        const theoretical = indices.reduce((a, b) => Math.fround(a + Math.fround(Math.fround(rolls[b]) * 100)), 0)
+        return (Math.round(extrapolateFloat(Math.fround(theoretical * 10))) / 10).toFixed(1)
+      } else {
+        const theoretical = indices.reduce((a, b) => a + rolls[b], 0)
+        return Math.round(theoretical).toFixed(0)
+      }
+    }
+    const model2: Model = indices => {
+      if (key.endsWith('_')) {
+        const theoretical = indices.reduce((a, b) => Math.fround(a + Math.fround(Math.fround(rolls[b]) * 100)), 0)
         return (Math.round(Math.fround(theoretical * 10)) / 10).toFixed(1)
       } else {
         const theoretical = indices.reduce((a, b) => a + rolls[b], 0)
@@ -225,13 +233,13 @@ describe("Artifact Roll Model", () => {
     }
 
     for (const [string, ...values] of entries) {
-      test(`Current system validates ${string} ${key}`, () => {
+      const v = values.map(i => rolls[i])
+      test(`Current system should validate ${string} ${key}`, () => {
         expect(Object.keys(artifactSubstatRoll[5][key])).toContain(string)
       })
-
-      const v = values.map(i => rolls[i])
       it(`should support ${string} ${key} with rolls [${v}] (sum to ${v.reduce((a, b) => a + b)})`, () => {
-        expect(somePerm(values, i => model(i) === string)).toBeTruthy()
+        expect(somePerm(values, i => model1(i) === string)).toBeTruthy()
+        expect(somePerm(values, i => model2(i) === string)).toBeTruthy()
       })
     }
   }
