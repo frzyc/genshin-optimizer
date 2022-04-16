@@ -1,10 +1,12 @@
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
-import { Box, CardActionArea, CardContent, Divider, Grid, Typography } from "@mui/material";
+import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, Typography } from "@mui/material";
 import { useContext, useMemo, useState } from "react";
 import Assets from "../../Assets/Assets";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
 import { uiInput as input } from "../../Formula";
+import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
+import useForceUpdate from "../../ReactHooks/useForceUpdate";
 import usePromise from "../../ReactHooks/usePromise";
 import useTeamData from "../../ReactHooks/useTeamData";
 import { ICachedCharacter } from "../../Types/character";
@@ -46,8 +48,10 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
 
   const characterSheets = usePromise(CharacterSheet.getAll, [])
 
+  const [favesDirty, setFavesDirty] = useForceUpdate()
+
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
-  const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
+  const filterConfigs = useMemo(() => characterSheets && favesDirty && characterFilterConfigs(database, characterSheets), [favesDirty, database, characterSheets])
   const ownedCharacterKeyList = useMemo(() => characterSheets ? [...new Set(allCharacterKeys)].filter(cKey => filter(database._getChar(cKey), characterSheets[cKey])) : [], [database, characterSheets])
   const characterKeyList = useMemo(() => (characterSheets && sortConfigs && filterConfigs) ?
     ownedCharacterKeyList
@@ -88,17 +92,18 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
       <Divider />
       <CardContent><Grid container spacing={1}>
         {characterKeyList.map(characterKey => <Grid item key={characterKey} xs={6} md={4} lg={3} >
-          <CharacterBtn key={characterKey} characterKey={characterKey} onClick={() => { onHide(); onSelect?.(characterKey) }} />
+          <CharacterBtn key={characterKey} characterKey={characterKey} onClick={() => { onHide(); onSelect?.(characterKey) }} setFavesDirty={setFavesDirty} />
         </Grid>)}
       </Grid></CardContent>
     </CardDark>
   </ModalWrapper>
 }
 
-function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characterKey: CharacterKey }) {
+function CharacterBtn({ onClick, characterKey, setFavesDirty }: { onClick: () => void, characterKey: CharacterKey, setFavesDirty: () => void }) {
   const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
   const teamData = useTeamData(characterKey)
   const { database } = useContext(DatabaseContext)
+  const characterDispatch = useCharacterReducer(characterKey)
   const favorite = database._getChar(characterKey)?.favorite
   const { target: data } = teamData?.[characterKey] ?? {}
   if (!characterSheet) return null
@@ -123,7 +128,10 @@ function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characte
       </Box>
       <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }} />
       <Box sx={{ display: "flex", alignSelf: "start", pr: 0.25, pt: 0.25 }}>
-        {favorite ? <Favorite /> : <FavoriteBorder />}
+        {/* {favorite ? <Favorite /> : <FavoriteBorder />} */}
+        <IconButton sx={{ mb: 0.25 }} onClick={event => { event.stopPropagation(); characterDispatch({ favorite: !favorite }); setFavesDirty() }} onMouseDown={event => { event.stopPropagation() }}>
+          {favorite ? <Favorite /> : <FavoriteBorder />}
+        </IconButton>
       </Box>
     </CardLight>
   </CardActionArea >

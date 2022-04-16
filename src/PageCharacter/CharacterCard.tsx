@@ -1,5 +1,5 @@
 import { Favorite, FavoriteBorder } from '@mui/icons-material';
-import { Box, CardActionArea, CardContent, Chip, Grid, Skeleton, Typography } from '@mui/material';
+import { Box, CardActionArea, CardContent, Chip, Grid, IconButton, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
@@ -93,6 +93,7 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
   const tBurst = data.get(input.total.burst).value
 
   const favorite = database._getChar(characterKey)?.favorite
+  const characterDispatch = useCharacterReducer(characterKey)
 
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={() => characterKey && onClick?.(characterKey)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
@@ -126,8 +127,10 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
       <Box flexGrow={1} sx={{ py: 1, pr: 1 }} display="flex" flexDirection="column" zIndex={1}>
         <Box display="flex">
           <Chip label={<Typography variant="subtitle1">{characterSheet.name}</Typography>} size="small" color={characterEle} sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: "flex", alignSelf: "start", pl: 0.25, pr: 0.25 }}>
-            {favorite ? <Favorite /> : <FavoriteBorder />}
+          <Box sx={{ display: "flex", alignSelf: "start", mt: -0.5 }}>
+            <IconButton sx={{ p: 0.5 }} onClick={event => { event.stopPropagation(); characterDispatch({ favorite: !favorite }) }} onMouseDown={event => { event.stopPropagation() }} onTouchStart={event => { event.stopPropagation() }}>
+              {favorite ? <Favorite /> : <FavoriteBorder />}
+            </IconButton>
           </Box>
         </Box>
         <Grid container spacing={1} flexWrap="nowrap">
