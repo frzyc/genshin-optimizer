@@ -100,6 +100,7 @@ function TeammateDisplay({ index }: { index: number }) {
         artifactChildren={<CharArtifactCondDisplay />}
         weaponChildren={<CharWeaponCondDisplay />}
         characterChildren={<CharTalentCondDisplay />}
+        isTeammateCard
       />
     </DataContext.Provider>}
   </CardLight>
@@ -119,6 +120,7 @@ function CharArtifactCondDisplay() {
 function CharWeaponCondDisplay() {
   const { teamData, character: { key: charKey } } = useContext(DataContext)
   const weaponSheet = teamData[charKey]!.weaponSheet
+  if (!weaponSheet.document) return null
   return <DocumentDisplay sections={weaponSheet.document} teamBuffOnly={true} />
 }
 function CharTalentCondDisplay() {
@@ -126,5 +128,6 @@ function CharTalentCondDisplay() {
   const characterSheet = teamData[charKey]!.characterSheet
   const talent = characterSheet.getTalent(data.get(input.charEle).value as ElementKey)!
   const sections = Object.values(talent.sheets).flatMap(sts => sts.sections)
+  if (!sections) return null
   return <DocumentDisplay sections={sections} teamBuffOnly={true} />
 }

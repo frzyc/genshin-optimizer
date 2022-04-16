@@ -8,14 +8,26 @@ import CardDark from "./Card/CardDark"
 import FieldDisplay, { FieldDisplayList } from "./FieldDisplay"
 
 export default function DocumentDisplay({ sections, teamBuffOnly }: { sections: DocumentSection[], teamBuffOnly?: boolean }) {
+  const { data } = useContext(DataContext)
   if (!sections.length) return null
-  return <Box display="flex" flexDirection="column" gap={1}>{sections.map((s, i) => <SectionDisplay section={s} key={i} teamBuffOnly={teamBuffOnly} />)}</Box>
+  const sectionDisplays = sections.map((s, i) => {
+    // I hate this
+    // If we can't show this section, return null
+    if (s.canShow && !s.canShow(data)) return null
+    // If we are showing only teambuffs, and this section is not a teambuff,
+    // and does not contain a teambuff conditional, return null
+    if (teamBuffOnly && !s.teamBuff && !s.conditional?.teamBuff
+      // Or there is a teambuff with conditional, but we can't show the conditional, return null
+      || !(!!s.conditional && s.conditional.canShow ? data.get(s.conditional.canShow).value : true)
+    ) return null
+    return <SectionDisplay section={s} key={i} teamBuffOnly={teamBuffOnly} />
+  }).filter(s => s)
+  if (!sectionDisplays.length) return null
+  return <Box display="flex" flexDirection="column" gap={1}>{sectionDisplays}</Box>
 }
 
 function SectionDisplay({ section, teamBuffOnly }: { section: DocumentSection, teamBuffOnly?: boolean }) {
   const { data } = useContext(DataContext)
-  if (section.canShow && !section.canShow(data)) return null
-  if (teamBuffOnly && !section.teamBuff && !section.conditional?.teamBuff) return null
   const talentText = evalIfFunc(section.text, data)
   const description = evalIfFunc(section.fieldsDescription, data)
   const fields = section.fields ?? []
