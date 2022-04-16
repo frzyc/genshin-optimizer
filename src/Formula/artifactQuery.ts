@@ -11,6 +11,11 @@ import { allSlotKeys, ArtifactSetKey, CharacterKey, SlotKey, Rarity } from '../T
 import Artifact from "../Data/Artifacts/Artifact"
 import { query } from "express"
 
+export type UpgradeOpt = {
+  id: string,
+  p: number,
+  dmg: number
+}
 
 // https://hewgill.com/picomath/javascript/erf.js.html
 // very good algebraic approximation of erf function. Maximum deviation below 1.5e-7
@@ -39,6 +44,7 @@ function evalArtifact(objective: Query, art: QueryArtifact): EvalResult {
   let stats: DynStat = {}
   allSlotKeys.forEach(slotKey => {
     let a = (art.slot == slotKey ? art : objective.arts[slotKey])
+    // console.log(a)
     Object.entries(a.values).forEach(([key, value]) => stats[key] = (stats[key] ?? 0) + value)
   })
   let scale = (key: SubstatKey) => key.endsWith('_') ? Artifact.maxSubstatValues(key, art.rarity) / 1000 : Artifact.maxSubstatValues(key, art.rarity) / 10
@@ -106,9 +112,11 @@ function querySetup(objective: NumNode, arts: QueryBuild, data: Data = {}): Quer
 
   let stats: DynStat = {}
   Object.values(arts).forEach(art => {
+    if (art && art.values){
+
     Object.entries(art.values).forEach(([k, v]) => {
       stats[k] = v + (stats[k] ?? 0)
-    })
+    })}
   })
   const dmg0 = evalFn(stats)[0]
 
@@ -146,9 +154,12 @@ export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, a
 
   let stats: DynStat = {}
   Object.values(curEquip).forEach(art => {
-    Object.entries(art.values).forEach(([k, v]) => {
+  if (art && art.values){
+      Object.entries(art.values).forEach(([k, v]) => {
       stats[k] = v + (stats[k] ?? 0)
     })
+  }
+
   })
 
   const query = querySetup(nodes[0], curEquip, data)
@@ -157,7 +168,7 @@ export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, a
   console.log('cureqip stats:', stats)
   console.log(query.evalFn(stats)[0])
 
-  let evaluated = arts.map(art => {
+  let evaluated : UpgradeOpt[] = arts.map(art => {
     if (art.rarity != 5) return { id: art.id, p: 0, dmg: 0 }
     let { prob, Edmg } = evalArtifact(query, art)
     return { id: art.id, p: prob, dmg: Edmg }
@@ -168,4 +179,5 @@ export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, a
   arts.forEach(art => {
     if (art.id == evaluated[0].id) console.log(art)
   })
+  return evaluated;
 }
