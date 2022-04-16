@@ -155,7 +155,7 @@ export default function WeaponDisplay() {
     </CardDark>
     <Grid container spacing={1}>
       <Suspense fallback={<Grid item xs={12}><Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 500 }} /></Grid>}>
-        <Grid item xs={6} md={4} lg={4} xl={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
           <CardDark sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
             <CardContent>
               <Typography sx={{ textAlign: "center" }}>Add New Weapon</Typography>
@@ -177,7 +177,7 @@ export default function WeaponDisplay() {
           </CardDark>
         </Grid>
         {weaponIdsToShow.map(weaponId =>
-          <Grid item key={weaponId} xs={12} sm={6} md={4} lg={4} xl={3} >
+          <Grid item key={weaponId} xs={12} sm={6} md={4} lg={3} xl={3} >
             <WeaponCard
               weaponId={weaponId}
               onDelete={deleteWeapon}

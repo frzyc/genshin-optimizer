@@ -15,6 +15,7 @@ import ColorText from "../ColoredText";
 import ConditionalWrapper from "../ConditionalWrapper";
 import ImgIcon from "../Image/ImgIcon";
 import StatIcon from "../StatIcon";
+import { artifactSlotIcon } from '../Artifact/SlotNameWIthIcon'
 
 type Data = {
   artifactId?: string,
@@ -37,7 +38,7 @@ export default function ArtifactCardNano({ artifactId, mainStatAssumptionLevel =
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
   const mainStatUnit = KeyMap.unit(mainStatKey)
   const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
-  return <BGComponent><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >
+  return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}  >
     <Box className={`grad-${rarity}star`} sx={{ position: "relative" }}>
       <Box>
         <Box sx={{ px: 1, pt: 1 }}>
@@ -50,19 +51,26 @@ export default function ArtifactCardNano({ artifactId, mainStatAssumptionLevel =
             }} />}
           </Box>
           <Typography variant="h6" sx={{ display: "flex", gap: 1, }}>
-            <ColorText color={KeyMap.getVariant(mainStatKey)}>{StatIcon[mainStatKey]}</ColorText>
+            <BootstrapTooltip placement="top" title={<Typography>{KeyMap.getArtStr(mainStatKey)}</Typography>} disableInteractive>
+              <ColorText color={KeyMap.getVariant(mainStatKey)}>{StatIcon[mainStatKey]}</ColorText>
+            </BootstrapTooltip>
             <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
           </Typography>
         </Box>
       </Box>
       <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>
-        <CardMedia
-          component="img"
-          image={sheet?.slotIcons[slotKey] ?? ""}
-          width="auto"
-          height="100%"
-          sx={{ float: "right" }}
-        />
+        <BootstrapTooltip placement="top" title={<Box>
+          <Typography><strong>{sheet?.name}</strong></Typography>
+          <Typography>{artifactSlotIcon(art.slotKey)} {sheet?.getSlotName?.(art.slotKey)}</Typography>
+        </Box>} disableInteractive>
+          <CardMedia
+            component="img"
+            image={sheet?.slotIcons[slotKey] ?? ""}
+            width="auto"
+            height="100%"
+            sx={{ float: "right" }}
+          />
+        </BootstrapTooltip>
       </Box>
     </Box>
     <Grid container sx={{ p: 1 }} spacing={1}>

@@ -1,24 +1,23 @@
 import { Box, Button, Card, CardContent, CardHeader, Divider, Grid, Typography, useMediaQuery } from '@mui/material';
+import { useTheme } from "@mui/system";
 import { useCallback, useContext, useEffect, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
-import ArtifactCard from '../../PageArtifact/ArtifactCard';
-import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
 import SetEffectDisplay from '../../Components/Artifact/SetEffectDisplay';
 import CardLight from '../../Components/Card/CardLight';
+import StatDisplayComponent from '../../Components/Character/StatDisplayComponent';
+import DocumentDisplay from "../../Components/DocumentDisplay";
 import ImgIcon from '../../Components/Image/ImgIcon';
+import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../Database/Database';
 import { DataContext } from '../../DataContext';
 import { uiInput as input } from '../../Formula';
+import ArtifactCard from '../../PageArtifact/ArtifactCard';
+import WeaponCard from '../../PageWeapon/WeaponCard';
 import useForceUpdate from '../../ReactHooks/useForceUpdate';
 import usePromise from '../../ReactHooks/usePromise';
 import { allSlotKeys } from '../../Types/consts';
-import { objectKeyMap } from '../../Util/Util';
-import StatDisplayComponent from '../../Components/Character/StatDisplayComponent';
 import { ArtifactDisplayLocationState } from '../../Types/LocationState';
-import WeaponDisplayCard from '../../PageWeapon/WeaponDisplayCard';
-import { useTheme } from "@mui/system";
-import WeaponCard from '../../PageWeapon/WeaponCard'
-import DocumentDisplay from "../../Components/DocumentDisplay"
+import { objectKeyMap } from '../../Util/Util';
 
 function CharacterArtifactPane() {
   const { teamData, data, character, character: { equippedWeapon, key: characterKey }, mainStatAssumptionLevel } = useContext(DataContext)
@@ -84,7 +83,7 @@ function CharacterArtifactPane() {
         <Grid item xs={12} sm={6} md={4} display="flex" flexDirection="column" gap={1}>
           <WeaponCard weaponId={equippedWeapon} />
         </Grid>
-        {artIds.map(id => !!id && <Grid item xs={6} md={4} key={id} >
+        {artIds.map(id => !!id && <Grid item xs={12} sm={6} md={4} key={id} >
           <ArtifactCard artifactId={id} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={edit} />
         </Grid>)}
       </Grid>
