@@ -48,7 +48,14 @@ export default function CharacterOverviewPane() {
       <CardLight >
         <CardMedia src={characterSheet.cardImg} component="img" width="100%" height="auto" />
         <CardContent>
-          <Typography variant="h5" >{characterSheet.name} <ImgIcon src={Assets.weaponTypes?.[weaponTypeKey]} /> {StatIcon[charEle]}<IconButton sx={{ mb: 0.25 }} onClick={() => characterDispatch({ favorite: !character.favorite })}>{character.favorite ? <Favorite /> : <FavoriteBorder />}</IconButton></Typography>
+          <Typography variant="h5" >
+            {characterSheet.name}&nbsp;
+            <ImgIcon sx={{ pr: 0.5 }} src={Assets.weaponTypes?.[weaponTypeKey]} />
+            {StatIcon[charEle]}
+            <IconButton sx={{ p: 0.5, mt: -0.5 }} onClick={() => characterDispatch({ favorite: !character.favorite })}>
+              {character.favorite ? <Favorite /> : <FavoriteBorder />}
+            </IconButton>
+          </Typography>
           <Typography variant="h6"><Stars stars={characterSheet.rarity} colored /></Typography>
           <Typography variant="h5">Lvl. {CharacterSheet.getLevelString(level, ascension)}</Typography>
           <Grid container spacing={1} mt={1}>
