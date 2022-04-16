@@ -34,9 +34,9 @@ type CharacterCardProps = {
   weaponChildren?: Displayable,
   characterChildren?: Displayable,
   footer?: Displayable,
-  hideTeammates?: boolean,
+  isTeammateCard?: boolean,
 }
-export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, characterChildren, onClick, onClickHeader, footer, hideTeammates }: CharacterCardProps) {
+export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, characterChildren, onClick, onClickHeader, footer, isTeammateCard }: CharacterCardProps) {
   const { teamData: teamDataContext } = useContext(DataContext)
   const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
   const { character, characterSheet, target: data } = teamData?.[characterKey] ?? {}
@@ -63,16 +63,16 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
           <Header onClick={!onClick ? onClickHeader : undefined} />
           <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
             <Artifacts />
-            {artifactChildren}
-            {!hideTeammates && <Grid container columns={4} spacing={0.5}>
+            {!isTeammateCard && <Grid container columns={4} spacing={0.75}>
               <Weapon weaponId={character.equippedWeapon} />
               <Teammate teammate={character.team[0]} />
               <Teammate teammate={character.team[1]} />
               <Teammate teammate={character.team[2]} />
             </Grid>}
-            {hideTeammates && <WeaponFullCard weaponId={character.equippedWeapon} />}
+            {isTeammateCard && <WeaponFullCard weaponId={character.equippedWeapon} />}
+            {!isTeammateCard && <Stats />}
             {weaponChildren}
-            <Stats />
+            {artifactChildren}
             {characterChildren}
           </CardContent>
         </ConditionalWrapper>
@@ -161,7 +161,7 @@ function Artifacts() {
     [data, database]) as Array<[SlotKey, ICachedArtifact | undefined]>;
   if (!artifactSheets) return null
 
-  return <Grid direction="row" container spacing={0.5} columns={5}>
+  return <Grid direction="row" container spacing={0.75} columns={5}>
     {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) => {
       // Blank artifact slot icon
       if (!art) return <Grid item key={key} xs={1}>
