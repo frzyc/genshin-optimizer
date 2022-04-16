@@ -25,7 +25,8 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
   }
 }
 
-export function characterFilterConfigs(database: ArtCharDatabase, characterSheets: Record<CharacterKey, CharacterSheet>): FilterConfigs<"element" | "weaponType" | "favorite", CharacterKey> {
+export type CharacterFilterConfigs = FilterConfigs<"element" | "weaponType" | "favorite", CharacterKey>
+export function characterFilterConfigs(database: ArtCharDatabase, characterSheets: Record<CharacterKey, CharacterSheet>): CharacterFilterConfigs {
   return {
     element: (ck, filter) => !filter || (filter === characterSheets?.[ck]?.elementKey),
     weaponType: (ck, filter) => !filter || (filter === characterSheets?.[ck]?.weaponTypeKey),
