@@ -12,6 +12,8 @@ import Artifact from "../Data/Artifacts/Artifact"
 import { query } from "express"
 
 
+// https://hewgill.com/picomath/javascript/erf.js.html
+// very good algebraic approximation of erf function. Maximum deviation below 1.5e-7
 function erf(x: number) {
   // constants
   const a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741;
@@ -29,7 +31,8 @@ function erf(x: number) {
   return sign * y;
 }
 
-function evalArtifact(objective: Query, art: QueryArtifact) {
+
+function evalArtifact(objective: Query, art: QueryArtifact): EvalResult {
   if (art.rarity != 5) throw new Error('Only works with 5* artifacts')
 
   // Get stats of equipping 'art'
@@ -73,14 +76,14 @@ function evalArtifact(objective: Query, art: QueryArtifact) {
   // variance // var
 
   if (Math.abs(variance) < 1e-5) {
-    if (mean > x) return [1, mean - x]
-    return [0, 0]
+    if (mean > x) return { prob: 1, Edmg: mean - x }
+    return { prob: 0, Edmg: 0 }
   }
   const p = (1 - erf((x - mean) / Math.sqrt(2 * variance))) / 2
-  if (Math.abs(p) < 1e-8) return [p, 0]
+  if (Math.abs(p) < 1e-8) return { prob: p, Edmg: 0 }
 
   const phi = Math.exp((-(x - mean) * (x - mean)) / variance / 2) / Math.sqrt(2 * Math.PI)
-  return [p, mean + Math.sqrt(variance) * phi / p - x]
+  return { prob: p, Edmg: mean + Math.sqrt(variance) * phi / p - x }
 }
 
 
@@ -129,6 +132,10 @@ export type QueryArtifact = {
 export type QueryBuild = {
   [key in SlotKey]: QueryArtifact
 }
+type EvalResult = {
+  prob: number,
+  Edmg: number
+}
 // export type QueryArtifactsBySlot = {
 //   [key in SlotKey]: QueryArtifact
 // }
@@ -152,8 +159,8 @@ export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, a
 
   let evaluated = arts.map(art => {
     if (art.rarity != 5) return { id: art.id, p: 0, dmg: 0 }
-    let [p, d] = evalArtifact(query, art)
-    return { id: art.id, p: p, dmg: d }
+    let { prob, Edmg } = evalArtifact(query, art)
+    return { id: art.id, p: prob, dmg: Edmg }
   })
   evaluated = evaluated.sort((a, b) => b.p * b.dmg - a.p * a.dmg)
   console.log(evaluated)
