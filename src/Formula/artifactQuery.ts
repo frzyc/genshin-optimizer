@@ -11,10 +11,19 @@ import { allSlotKeys, ArtifactSetKey, CharacterKey, SlotKey, Rarity } from '../T
 import Artifact from "../Data/Artifacts/Artifact"
 import { query } from "express"
 
-export type UpgradeOpt = {
+type OptSummary = {
+  c: number,
+  ks: number[],
+  mu: number,
+  std: number,
+  thr: number,
+}
+export type UpgradeOptResult = {
   id: string,
-  p: number,
-  dmg: number
+  prob: number,
+  Edmg: number,
+
+  params: OptSummary
 }
 
 // https://hewgill.com/picomath/javascript/erf.js.html
@@ -37,9 +46,7 @@ function erf(x: number) {
 }
 
 
-function evalArtifact(objective: Query, art: QueryArtifact): EvalResult {
-  if (art.rarity != 5) throw new Error('Only works with 5* artifacts')
-
+function evalArtifact(objective: Query, art: QueryArtifact): UpgradeOptResult {
   // Get stats of equipping 'art'
   let stats: DynStat = {}
   allSlotKeys.forEach(slotKey => {
@@ -64,32 +71,25 @@ function evalArtifact(objective: Query, art: QueryArtifact): EvalResult {
   const c = val - grad.reduce((a, b) => a + b)
   const ks = grad
 
-  // verify gradient
-  // stats['critDMG_'] += .0001 * scale('critDMG_')
-  // console.log(val, grad)
-  // console.log('deriv cmp:', (objective.evalFn(stats)[0] - val) / .0001, grad[2])
-
   // coeff2normal
   const ksum = grad.reduce((a, b) => a + b)
   const ksum2 = grad.reduce((a, b) => a + b * b, 0)
   const N = rollsLeft
-  const mean = 17 / 8 * N * ksum
+  const mean = 17 / 8 * N * ksum + c
   const variance = (147 / 8) * N * ksum2 - N * 289 / 64 * ksum * ksum
+  const x = objective.thresholds[0] // target
 
-  // return prob & dmg
-  const x = objective.thresholds[0] - c // target
-  // mean // mu
-  // variance // var
+  const summ: OptSummary = { c: c, ks: ks, mu: mean, std: Math.sqrt(variance), thr: x }
 
   if (Math.abs(variance) < 1e-5) {
-    if (mean > x) return { prob: 1, Edmg: mean - x }
-    return { prob: 0, Edmg: 0 }
+    if (mean > x) return { id: art.id, prob: 1, Edmg: mean - x, params: summ }
+    return { id: art.id, prob: 0, Edmg: 0, params: summ }
   }
   const p = (1 - erf((x - mean) / Math.sqrt(2 * variance))) / 2
-  if (Math.abs(p) < 1e-8) return { prob: p, Edmg: 0 }
+  if (Math.abs(p) < 1e-8) return { id: art.id, prob: p, Edmg: 0, params: summ }
 
   const phi = Math.exp((-(x - mean) * (x - mean)) / variance / 2) / Math.sqrt(2 * Math.PI)
-  return { prob: p, Edmg: mean + Math.sqrt(variance) * phi / p - x }
+  return { id: art.id, prob: p, Edmg: mean + Math.sqrt(variance) * phi / p - x, params: summ }
 }
 
 
@@ -112,11 +112,12 @@ function querySetup(objective: NumNode, arts: QueryBuild, data: Data = {}): Quer
 
   let stats: DynStat = {}
   Object.values(arts).forEach(art => {
-    if (art && art.values){
+    if (art && art.values) {
 
-    Object.entries(art.values).forEach(([k, v]) => {
-      stats[k] = v + (stats[k] ?? 0)
-    })}
+      Object.entries(art.values).forEach(([k, v]) => {
+        stats[k] = v + (stats[k] ?? 0)
+      })
+    }
   })
   const dmg0 = evalFn(stats)[0]
 
@@ -140,13 +141,6 @@ export type QueryArtifact = {
 export type QueryBuild = {
   [key in SlotKey]: QueryArtifact
 }
-type EvalResult = {
-  prob: number,
-  Edmg: number
-}
-// export type QueryArtifactsBySlot = {
-//   [key in SlotKey]: QueryArtifact
-// }
 
 export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, arts: QueryArtifact[]) {
   console.log('Youve reached query!!!')
@@ -154,11 +148,11 @@ export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, a
 
   let stats: DynStat = {}
   Object.values(curEquip).forEach(art => {
-  if (art && art.values){
+    if (art && art.values) {
       Object.entries(art.values).forEach(([k, v]) => {
-      stats[k] = v + (stats[k] ?? 0)
-    })
-  }
+        stats[k] = v + (stats[k] ?? 0)
+      })
+    }
 
   })
 
@@ -168,12 +162,12 @@ export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, a
   console.log('cureqip stats:', stats)
   console.log(query.evalFn(stats)[0])
 
-  let evaluated : UpgradeOpt[] = arts.map(art => {
-    if (art.rarity != 5) return { id: art.id, p: 0, dmg: 0 }
-    let { prob, Edmg } = evalArtifact(query, art)
-    return { id: art.id, p: prob, dmg: Edmg }
+  let evaluated: UpgradeOptResult[] = arts.map(art => {
+    if (art.rarity != 5) return { id: art.id, prob: 0, Edmg: 0, params: { c: 0, ks: [0, 0, 0, 0], mu: 0, std: 1, thr: query.thresholds[0] } }
+    return evalArtifact(query, art)
+    // return { id: art.id, p: 100 * prob, dmg: Edmg }
   })
-  evaluated = evaluated.sort((a, b) => b.p * b.dmg - a.p * a.dmg)
+  evaluated = evaluated.sort((a, b) => b.prob * b.Edmg - a.prob * a.Edmg)
   console.log(evaluated)
 
   arts.forEach(art => {

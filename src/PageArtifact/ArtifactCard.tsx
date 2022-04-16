@@ -24,7 +24,7 @@ import { CharacterKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
 import PercentBadge from './PercentBadge';
 import { probability } from './RollProbability';
-import {UpgradeOpt} from "../Formula/artifactQuery";
+import {UpgradeOptResult} from "../Formula/artifactQuery";
 
 type Data = {
   artifactId?: string,
@@ -33,7 +33,7 @@ type Data = {
   onDelete?: (id: string) => void, mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
   probabilityFilter?: Dict<SubstatKey, number>,
-  upgradeOpt?: UpgradeOpt
+  upgradeOpt?: UpgradeOptResult
 }
 const allSubstatFilter = new Set(allSubstats)
 
@@ -118,11 +118,11 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         </Box>}
         {upgradeOpt && <Box sx={{ display: "flex", mb: 1 }}>
           <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.upgradeOpt`} P</Typography>
-          <PercentBadge value={upgradeOpt.p} max={100} valid={artifactValid} />
+          <PercentBadge value={upgradeOpt.prob} max={100} valid={artifactValid} />
         </Box>}
         {upgradeOpt && <Box sx={{ display: "flex", mb: 1 }}>
           <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.upgradeOpt`} dmg</Typography>
-          <PercentBadge value={upgradeOpt.dmg} max={100} valid={artifactValid} />
+          <PercentBadge value={upgradeOpt.Edmg} max={100} valid={artifactValid} />
         </Box>}
         <Box flexGrow={1} />
         {probabilityFilter && <strong>Probability: {(probability(art, probabilityFilter) * 100).toFixed(2)}%</strong>}

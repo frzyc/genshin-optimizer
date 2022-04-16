@@ -1,6 +1,6 @@
-import {faCalculator} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {Close} from '@mui/icons-material';
+import { faCalculator } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Close } from '@mui/icons-material';
 import {
   Alert,
   Box,
@@ -15,9 +15,9 @@ import {
   ToggleButton,
   Typography
 } from '@mui/material';
-import React, {Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react';
+import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
-import {Link as RouterLink} from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import Worker from "worker-loader!../PageBuild/BackgroundWorker";
 import CardDark from '../Components/Card/CardDark';
@@ -28,41 +28,42 @@ import InfoComponent from '../Components/InfoComponent';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import StatFilterCard from '../Components/StatFilterCard';
 import CharacterSheet from '../Data/Characters/CharacterSheet';
-import {DatabaseContext} from '../Database/Database';
-import {DataContext, dataContextObj} from '../DataContext';
-import {mergeData, uiDataForTeam} from '../Formula/api';
-import {uiInput as input} from '../Formula/index';
-import {optimize} from '../Formula/optimization';
-import {NumNode} from '../Formula/type';
-import {UIData} from '../Formula/uiData';
-import {initGlobalSettings} from '../GlobalSettings';
+import { DatabaseContext } from '../Database/Database';
+import { DataContext, dataContextObj } from '../DataContext';
+import { mergeData, uiDataForTeam } from '../Formula/api';
+import { uiInput as input } from '../Formula/index';
+import { optimize } from '../Formula/optimization';
+import { NumNode } from '../Formula/type';
+import { UIData } from '../Formula/uiData';
+import { initGlobalSettings } from '../GlobalSettings';
 import KeyMap from '../KeyMap';
 import CharacterCard from '../PageCharacter/CharacterCard';
 import useCharacter from '../ReactHooks/useCharacter';
-import useCharacterReducer, {characterReducerAction} from '../ReactHooks/useCharacterReducer';
+import useCharacterReducer, { characterReducerAction } from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
-import useTeamData, {getTeamData} from '../ReactHooks/useTeamData';
-import {ICachedArtifact, SubstatKey} from '../Types/artifact';
-import {BuildSetting} from '../Types/Build';
-import {allSlotKeys, ArtifactSetKey, CharacterKey} from '../Types/consts';
-import {ICachedCharacter} from '../Types/character';
-import {clamp, objPathValue, range} from '../Util/Util';
-import {Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult} from '../PageBuild/background';
-import {maxBuildsToShowList} from '../PageBuild/Build';
-import {initialBuildSettings} from '../PageBuild/BuildSetting';
+import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
+import { ICachedArtifact, SubstatKey } from '../Types/artifact';
+import { BuildSetting } from '../Types/Build';
+import { allSlotKeys, ArtifactSetKey, CharacterKey } from '../Types/consts';
+import { ICachedCharacter } from '../Types/character';
+import { clamp, objPathValue, range } from '../Util/Util';
+import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from '../PageBuild/background';
+import { maxBuildsToShowList } from '../PageBuild/Build';
+import { initialBuildSettings } from '../PageBuild/BuildSetting';
 import ChartCard from '../PageBuild/ChartCard';
-import {countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll} from '../PageBuild/common';
+import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll } from '../PageBuild/common';
 import ArtifactBuildDisplayItem from '../PageBuild/Components/ArtifactBuildDisplayItem';
-import BuildAlert, {warningBuildNumber} from '../PageBuild/Components/BuildAlert';
+import BuildAlert, { warningBuildNumber } from '../PageBuild/Components/BuildAlert';
 import HitModeCard from '../PageBuild/Components/HitModeCard';
 import OptimizationTargetSelector from '../PageBuild/Components/OptimizationTargetSelector';
-import {artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet} from '../PageBuild/foreground';
-import {QueryArtifact, QueryBuild, queryDebug, UpgradeOpt} from '../Formula/artifactQuery'
+import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from '../PageBuild/foreground';
+import { QueryArtifact, QueryBuild, queryDebug, UpgradeOptResult } from '../Formula/artifactQuery'
 import Artifact from "../Data/Artifacts/Artifact";
 import ArtifactCard from "../PageArtifact/ArtifactCard";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
+import UpgradeOptChartCard from "./UpgradeOptChartCard"
 
 const InfoDisplay = React.lazy(() => import('../PageBuild/InfoDisplay'));
 
@@ -167,9 +168,9 @@ export default function UpgradeOptDisplay({ location: { characterKey: propCharac
 
   const [pageIdex, setpageIdex] = useState(0)
 
-  const [artifactUpgradeOpts, setArtifactUpgradeOpts] = useState<UpgradeOpt[]>([])
+  const [artifactUpgradeOpts, setArtifactUpgradeOpts] = useState<UpgradeOptResult[]>([])
 
-  const maxNumArtifactsToDisplay = 25;
+  const maxNumArtifactsToDisplay = 5;
   const { artifactsToShow: artifactsToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(artifactUpgradeOpts.length / maxNumArtifactsToDisplay)
     const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
@@ -590,9 +591,9 @@ export default function UpgradeOptDisplay({ location: { characterKey: propCharac
                       color={(characterKey && totBuildNumber <= warningBuildNumber) ? "success" : "warning"}
                       onClick={generateBuilds}
                       startIcon={<FontAwesomeIcon icon={faCalculator} />}
-                    >Generate</Button>
+                    >FindToUpgrade</Button>
                     {/* <Tooltip title={<Typography></Typography>} placement="top" arrow> */}
-                    <DropdownButton disabled={generatingBuilds || !characterKey}
+                    {/* <DropdownButton disabled={generatingBuilds || !characterKey}
                       title={<span><b>{maxBuildsToShow}</b> {maxBuildsToShow === 1 ? "Build" : "Builds"}</span>}>
                       <MenuItem>
                         <Typography variant="caption" color="info.main">
@@ -607,7 +608,7 @@ export default function UpgradeOptDisplay({ location: { characterKey: propCharac
                       title={<span><b>{maxWorkers}</b> {maxBuildsToShow === 1 ? "Thread" : "Threads"}</span>}>
                       {range(1, navigator.hardwareConcurrency || 4).reverse().map(v => <MenuItem key={v}
                         onClick={() => setMaxWorkers(v)}>{v} {v === 1 ? "Thread" : "Threads"}</MenuItem>)}
-                    </DropdownButton>
+                    </DropdownButton> */}
                     {/* </Tooltip> */}
                     <Button
                       disabled={!generatingBuilds}
@@ -619,18 +620,18 @@ export default function UpgradeOptDisplay({ location: { characterKey: propCharac
                 </Grid>
               </Grid>
               {/* Builds Alert */}
-              {!!characterKey && <Box >
+              {/* {!!characterKey && <Box >
                 <BuildAlert {...{ totBuildNumber, generatingBuilds, generationSkipped, generationProgress, generationDuration, characterName, maxBuildsToShow }} />
               </Box>}
               {tcMode && <Box >
                 <ChartCard disabled={generatingBuilds} chartData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} />
-              </Box>}
+              </Box>} */}
 
               <Box display="flex" flexDirection="column" gap={1} my={1}>
                 <InfoComponent
-                    pageKey="artifactPage"
-                    modalTitle={t`info.title`}
-                    text={t("tipsOfTheDay", { returnObjects: true }) as string[]}
+                  pageKey="artifactPage"
+                  modalTitle={t`info.title`}
+                  text={t("tipsOfTheDay", { returnObjects: true }) as string[]}
                 >
                   <InfoDisplay />
                 </InfoComponent>
@@ -674,7 +675,7 @@ export default function UpgradeOptDisplay({ location: { characterKey: propCharac
                 {/*</CardContent></CardDark>*/}
 
                 <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
-                  <Grid container spacing={1} >
+                  <Grid container gap={1} >
                     {/*<Grid item xs={12} sm={6} md={4} lg={4} xl={3}>*/}
                     {/*  <CardDark sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>*/}
                     {/*    /!*<CardContent>*!/*x1/}
@@ -696,16 +697,41 @@ export default function UpgradeOptDisplay({ location: { characterKey: propCharac
                     {/*  </CardDark>*/}
                     {/*</Grid>*/}
                     {artifactsToShow.map(art =>
-                        <Grid item key={art.id} xs={12} sm={6} md={6} lg={6} xl={6} >
+                      // <Grid item key={art.id} xs={12} sm={6} md={6} lg={6} xl={6} >
+                      //   <ArtifactCard
+                      //     artifactId={art.id}
+                      //     upgradeOpt={art}
+                      //   // effFilter={effFilterSet}
+                      //   // onDelete={deleteArtifact}
+                      //   // onEdit={editArtifact}
+                      //   // probabilityFilter={showProbability ? probabilityFilter : undefined}
+                      //   />
+                      // </Grid>
+                      <Grid container key={art.id} lg={12} gap={1}>
+                        <Grid item xs={5} sm={4} md={4} lg={4} xl={3} >
                           <ArtifactCard
-                              artifactId={art.id}
-                              upgradeOpt={art}
-                              // effFilter={effFilterSet}
-                              // onDelete={deleteArtifact}
-                              // onEdit={editArtifact}
-                              // probabilityFilter={showProbability ? probabilityFilter : undefined}
+                            artifactId={art.id}
+                            // upgradeOpt={art}
+                          // effFilter={effFilterSet}
+                          // onDelete={deleteArtifact}
+                          // onEdit={editArtifact}
+                          // probabilityFilter={showProbability ? probabilityFilter : undefined}
                           />
                         </Grid>
+                        <Grid item xs={6} sm={7} md={7} lg={7} xl={8}>
+                          <UpgradeOptChartCard upgradeOpt={art} />
+                          <CardContent>
+                            <span>p = {art.prob}</span>
+                            <br/>
+                            <span>Expected (avg) dmg increase = {art.Edmg}</span>
+                            <br/>
+                            <span>COMING SOON (tm): True dmg distribution, working on MinimumStatConstraint</span>
+                          </CardContent>
+                          {/* <HitModeCard disabled={generatingBuilds} /> */}
+
+                        </Grid>
+                      </Grid>
+
                     )}
                   </Grid>
                 </Suspense>
