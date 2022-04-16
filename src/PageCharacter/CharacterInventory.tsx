@@ -61,10 +61,15 @@ export default function CharacterInventory(props) {
 
   const { element, weaponType } = state
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
-  const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(characterSheets), [characterSheets])
+  const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
   const charKeyList = useMemo(() => sortConfigs && filterConfigs && dbDirty &&
-    database._getCharKeys().filter(filterFunction({ element, weaponType }, filterConfigs))
-      .sort(sortFunction(state.sortType, state.ascending, sortConfigs)),
+    database._getCharKeys()
+      .filter(filterFunction({ element, weaponType, favorite: "yes" }, filterConfigs))
+      .sort(sortFunction(state.sortType, state.ascending, sortConfigs))
+      .concat(
+        database._getCharKeys()
+          .filter(filterFunction({ element, weaponType, favorite: "no" }, filterConfigs))
+          .sort(sortFunction(state.sortType, state.ascending, sortConfigs))),
     [dbDirty, database, sortConfigs, state.sortType, state.ascending, element, filterConfigs, weaponType])
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
     <CardDark sx={{ p: 2 }}>

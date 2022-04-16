@@ -1,3 +1,4 @@
+import { Favorite, FavoriteBorder } from '@mui/icons-material';
 import { Box, CardActionArea, CardContent, Chip, Grid, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
 import CardDark from '../Components/Card/CardDark';
@@ -77,6 +78,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
 }
 function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void }) {
   const { data, characterSheet } = useContext(DataContext)
+  const { database } = useContext(DatabaseContext)
   const characterKey = data.get(input.charKey).value as CharacterKey
   const characterEle = data.get(input.charEle).value as ElementKey
   const characterLevel = data.get(input.lvl).value
@@ -89,6 +91,8 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
   const tAuto = data.get(input.total.auto).value
   const tSkill = data.get(input.total.skill).value
   const tBurst = data.get(input.total.burst).value
+
+  const favorite = database._getChar(characterKey)?.favorite
 
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={() => characterKey && onClick?.(characterKey)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
@@ -120,7 +124,12 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
         />
       </Box>
       <Box flexGrow={1} sx={{ py: 1, pr: 1 }} display="flex" flexDirection="column" zIndex={1}>
-        <Chip label={<Typography variant="subtitle1">{characterSheet.name}</Typography>} size="small" color={characterEle} />
+        <Box display="flex">
+          <Chip label={<Typography variant="subtitle1">{characterSheet.name}</Typography>} size="small" color={characterEle} sx={{ flexGrow: 1 }} />
+          <Box sx={{ display: "flex", alignSelf: "start", pl: 0.25, pr: 0.25 }}>
+            {favorite ? <Favorite /> : <FavoriteBorder />}
+          </Box>
+        </Box>
         <Grid container spacing={1} flexWrap="nowrap">
           <Grid item sx={{ textShadow: "0 0 5px gray" }}>
             <Typography component="span" variant="h6" whiteSpace="nowrap" >Lv. {characterLevel}</Typography>

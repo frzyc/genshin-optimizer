@@ -1,3 +1,4 @@
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { Box, CardActionArea, CardContent, Divider, Grid, Typography } from "@mui/material";
 import { useContext, useMemo, useState } from "react";
 import Assets from "../../Assets/Assets";
@@ -46,11 +47,18 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
   const characterSheets = usePromise(CharacterSheet.getAll, [])
 
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
-  const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(characterSheets), [characterSheets])
+  const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
+  const ownedCharacterKeyList = useMemo(() => characterSheets ? [...new Set(allCharacterKeys)].filter(cKey => filter(database._getChar(cKey), characterSheets[cKey])) : [], [database, characterSheets])
   const characterKeyList = useMemo(() => (characterSheets && sortConfigs && filterConfigs) ?
-    [...new Set(allCharacterKeys)].filter(cKey => filter(database._getChar(cKey), characterSheets[cKey]))
-      .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter }, filterConfigs))
-      .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number) : [],
+    ownedCharacterKeyList
+      .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter, favorite: "yes" }, filterConfigs))
+      .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
+      .concat(
+        ownedCharacterKeyList
+          .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter, favorite: "no" }, filterConfigs))
+          .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
+      )
+    : [],
     [database, characterSheets, filter, elementalFilter, weaponFilter, sortBy, ascending, sortConfigs, filterConfigs])
 
   if (!characterSheets) return null
@@ -90,6 +98,8 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
 function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characterKey: CharacterKey }) {
   const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
   const teamData = useTeamData(characterKey)
+  const { database } = useContext(DatabaseContext)
+  const favorite = database._getChar(characterKey)?.favorite
   const { target: data } = teamData?.[characterKey] ?? {}
   if (!characterSheet) return null
   const rarity = characterSheet.rarity
@@ -110,6 +120,10 @@ function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characte
           <Typography variant="h6"><SqBadge color="primary">NEW</SqBadge></Typography>
         </>}
         <small><Stars stars={rarity} colored /></small>
+      </Box>
+      <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }} />
+      <Box sx={{ display: "flex", alignSelf: "start", pr: 0.25, pt: 0.25 }}>
+        {favorite ? <Favorite /> : <FavoriteBorder />}
       </Box>
     </CardLight>
   </CardActionArea >
