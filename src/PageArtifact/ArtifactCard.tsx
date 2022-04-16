@@ -24,6 +24,7 @@ import { CharacterKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
 import PercentBadge from './PercentBadge';
 import { probability } from './RollProbability';
+import {UpgradeOpt} from "../Formula/artifactQuery";
 
 type Data = {
   artifactId?: string,
@@ -31,11 +32,12 @@ type Data = {
   onEdit?: (id: string) => void,
   onDelete?: (id: string) => void, mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
-  probabilityFilter?: Dict<SubstatKey, number>
+  probabilityFilter?: Dict<SubstatKey, number>,
+  upgradeOpt?: UpgradeOpt
 }
 const allSubstatFilter = new Set(allSubstats)
 
-export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter }: Data): JSX.Element | null {
+export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter, upgradeOpt }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
@@ -113,6 +115,14 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         {currentEfficiency !== maxEfficiency && <Box sx={{ display: "flex", mb: 1 }}>
           <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.maxSubEff`}</Typography>
           <PercentBadge value={maxEfficiency} max={900} valid={artifactValid} />
+        </Box>}
+        {upgradeOpt && <Box sx={{ display: "flex", mb: 1 }}>
+          <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.upgradeOpt`} P</Typography>
+          <PercentBadge value={upgradeOpt.p} max={100} valid={artifactValid} />
+        </Box>}
+        {upgradeOpt && <Box sx={{ display: "flex", mb: 1 }}>
+          <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.upgradeOpt`} dmg</Typography>
+          <PercentBadge value={upgradeOpt.dmg} max={100} valid={artifactValid} />
         </Box>}
         <Box flexGrow={1} />
         {probabilityFilter && <strong>Probability: {(probability(art, probabilityFilter) * 100).toFixed(2)}%</strong>}

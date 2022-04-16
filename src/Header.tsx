@@ -29,6 +29,12 @@ const content = [{
   svg: faCalculator,
   to: "/build",
   value: "build",
+},
+   {
+  i18Key: "tabs.upgradeOpt",
+  svg: faCalculator,
+  to: "/UpgradeOpt",
+  value: "UpgradeOpt",
 }, {
   i18Key: "tabs.tools",
   svg: faTools,
