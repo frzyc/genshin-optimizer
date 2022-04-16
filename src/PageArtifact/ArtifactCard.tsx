@@ -119,27 +119,22 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         <Typography color="success.main">{sheet?.name ?? "Artifact Set"} {setDescTooltip}</Typography>
       </CardContent>
       <CardActions>
-        <Grid container sx={{ flexWrap: "nowrap" }}>
-          <Grid item xs="auto" flexShrink={1}>
-            {editable ?
-              <CharacterDropdownButton size="small" inventory value={location} onChange={equipOnChar} /> : <LocationName location={location} />}
-          </Grid>
-          <Grid item flexGrow={1} sx={{ mr: 1 }} />
-          {editable && <Grid item xs="auto">
-            <ButtonGroup sx={{ height: "100%" }}>
-              {!!onEdit && <Button color="info" onClick={() => onEdit(id)} size="small">
-                <FontAwesomeIcon icon={faEdit} className="fa-fw" />
-              </Button>}
-              <Tooltip title={<Typography>{t`excludeArtifactTip`}</Typography>} placement="top" arrow>
-                <Button onClick={() => database.updateArt({ exclude: !exclude }, id)} color={exclude ? "error" : "success"} size="small">
-                  <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
-                </Button>
-              </Tooltip>
-              {!!onDelete && <Button color="error" size="small" onClick={() => onDelete(id)} disabled={lock}>
-                <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
-              </Button>}
-            </ButtonGroup>
-          </Grid>}
+        <Grid container sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
+          {editable ?
+            <CharacterDropdownButton size="small" inventory value={location} onChange={equipOnChar} /> : <LocationName location={location} />}
+          {editable && <ButtonGroup>
+            {!!onEdit && <Button color="info" onClick={() => onEdit(id)} size="small">
+              <FontAwesomeIcon icon={faEdit} className="fa-fw" />
+            </Button>}
+            <Tooltip title={<Typography>{t`excludeArtifactTip`}</Typography>} placement="top" arrow>
+              <Button onClick={() => database.updateArt({ exclude: !exclude }, id)} color={exclude ? "error" : "success"} size="small">
+                <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
+              </Button>
+            </Tooltip>
+            {!!onDelete && <Button color="error" size="small" onClick={() => onDelete(id)} disabled={lock}>
+              <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
+            </Button>}
+          </ButtonGroup>}
         </Grid>
       </CardActions>
     </CardLight >

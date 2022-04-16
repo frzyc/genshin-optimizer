@@ -1,7 +1,6 @@
 import { Box, Button, Card, CardContent, CardHeader, Divider, Grid, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from "@mui/system";
-import { useCallback, useContext, useEffect, useMemo } from 'react';
-import { useHistory } from 'react-router-dom';
+import { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import SetEffectDisplay from '../../Components/Artifact/SetEffectDisplay';
 import CardLight from '../../Components/Card/CardLight';
 import StatDisplayComponent from '../../Components/Character/StatDisplayComponent';
@@ -16,22 +15,29 @@ import WeaponCard from '../../PageWeapon/WeaponCard';
 import useForceUpdate from '../../ReactHooks/useForceUpdate';
 import usePromise from '../../ReactHooks/usePromise';
 import { allSlotKeys } from '../../Types/consts';
-import { ArtifactDisplayLocationState } from '../../Types/LocationState';
 import { objectKeyMap } from '../../Util/Util';
+
+const WeaponDisplayCard = lazy(() => import('../../PageWeapon/WeaponDisplayCard'))
+const ArtifactEditor = lazy(() => import('../../PageArtifact/ArtifactEditor'))
 
 function CharacterArtifactPane() {
   const { teamData, data, character, character: { equippedWeapon, key: characterKey }, mainStatAssumptionLevel } = useContext(DataContext)
   const { weaponSheet } = teamData[characterKey]!
+  const [weaponId, setweaponId] = useState("")
+  const showWeapon = useCallback(() => setweaponId(equippedWeapon), [equippedWeapon],)
+  const hideWeapon = useCallback(() => setweaponId(""), [])
+
+  //triggers when character swap weapons
+  useEffect(() => {
+    if (weaponId && weaponId !== equippedWeapon)
+      setweaponId(equippedWeapon)
+  }, [weaponId, equippedWeapon])
+
+  const [artId, setartId] = useState("")
+  const showArt = useCallback(artId => setartId(artId), [],)
+  const hideArt = useCallback(() => setartId(""), [])
 
   const { database } = useContext(DatabaseContext)
-  const history = useHistory()
-  const edit = useCallback(
-    artid => history.push({
-      pathname: "/artifact",
-      state: {
-        artToEditId: artid
-      } as ArtifactDisplayLocationState
-    } as any), [history])
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
 
   // TODO: We can also listen only to equipped artifacts
@@ -62,13 +68,26 @@ function CharacterArtifactPane() {
     </CardLight>), [artifactSheets, setEffects])
   const weaponDoc = useMemo(() => weaponSheet.document && <CardLight><CardContent><DocumentDisplay sections={weaponSheet.document} /></CardContent></CardLight>, [weaponSheet])
   return <Box display="flex" flexDirection="column" gap={1}>
+    <Suspense fallback={false}>
+      <WeaponDisplayCard
+        weaponId={weaponId}
+        footer
+        onClose={hideWeapon}
+      />
+    </Suspense>
+    <Suspense fallback={false}>
+      <ArtifactEditor
+        artifactIdToEdit={artId}
+        cancelEdit={hideArt}
+      />
+    </Suspense>
     {/* <WeaponDisplayCard weaponId={character.equippedWeapon} /> */}
     <CardLight >
       <CardContent>
         <StatDisplayComponent />
       </CardContent>
       <Divider />
-      <CardContent sx={{ py: 1 }}>
+      <CardContent>
         <Grid container spacing={1}>
           <Grid item>
             <Button color="error" onClick={unequipArts}>Unequip all artifacts</Button>
@@ -79,18 +98,19 @@ function CharacterArtifactPane() {
       </CardContent>
     </CardLight>
     <Grid container spacing={1}>
-      <Grid item xs={12} md={12} xl={9} container spacing={1}>
-        <Grid item xs={12} sm={6} md={4} display="flex" flexDirection="column" gap={1}>
-          <WeaponCard weaponId={equippedWeapon} />
-        </Grid>
-        {artIds.map(id => !!id && <Grid item xs={12} sm={6} md={4} key={id} >
-          <ArtifactCard artifactId={id} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={edit} />
-        </Grid>)}
-      </Grid>
-      {grxl ? <Grid item xs={12} md={12} xl={3} sx={{ display: "flex", flexDirection: "column", gap: 1 }} >
+      {grxl && <Grid item xs={12} md={12} xl={3} sx={{ display: "flex", flexDirection: "column", gap: 1 }} >
         {weaponDoc}
         {artifactFields}
-      </Grid> : <Grid item xs={12} md={12} xl={3} container spacing={1} >
+      </Grid>}
+      <Grid item xs={12} md={12} xl={9} container spacing={1}>
+        <Grid item xs={12} sm={6} md={4} display="flex" flexDirection="column" gap={1}>
+          <WeaponCard weaponId={equippedWeapon} onEdit={showWeapon} canEquip />
+        </Grid>
+        {artIds.map(id => !!id && <Grid item xs={12} sm={6} md={4} key={id} >
+          <ArtifactCard artifactId={id} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={showArt} />
+        </Grid>)}
+      </Grid>
+      {!grxl && <Grid item xs={12} md={12} xl={3} container spacing={1} >
         <Grid item xs={12} md={6} lg={4}>{weaponDoc}</Grid>
         <Grid item xs={12} md={6} lg={4}>{artifactFields}</Grid>
       </Grid>}

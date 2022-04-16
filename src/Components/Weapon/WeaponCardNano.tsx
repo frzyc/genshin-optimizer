@@ -1,5 +1,5 @@
-import { Box, CardMedia, Chip, Grid, Typography } from "@mui/material";
-import { useMemo } from "react";
+import { Box, CardActionArea, CardMedia, Chip, Grid, Typography } from "@mui/material";
+import { useCallback, useMemo } from "react";
 import Assets from "../../Assets/Assets";
 import WeaponSheet from "../../Data/Weapons/WeaponSheet";
 import { input } from "../../Formula";
@@ -11,20 +11,26 @@ import useWeapon from "../../ReactHooks/useWeapon";
 import { MainStatKey, SubstatKey } from "../../Types/artifact";
 import BootstrapTooltip from "../BootstrapTooltip";
 import CardDark from "../Card/CardDark";
+import ConditionalWrapper from "../ConditionalWrapper";
 import ImgIcon from "../Image/ImgIcon";
 import StatIcon from "../StatIcon";
 
 type Data = {
   weaponId?: string,
-  BGComponent?: React.ElementType
+  onClick?: () => void,
+  BGComponent?: React.ElementType,
 }
 
-export default function WeaponCardNano({ weaponId, BGComponent = CardDark }: Data) {
+export default function WeaponCardNano({ weaponId, onClick, BGComponent = CardDark, }: Data) {
   const weapon = useWeapon(weaponId)
   const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
+  const actionWrapperFunc = useCallback(
+    children => <CardActionArea onClick={onClick}>{children}</CardActionArea>,
+    [onClick],
+  )
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
-  return <BGComponent sx={{ height: "100%" }}>
+  return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}  >
     <Grid container sx={{ flexWrap: "nowrap" }} className={`grad-${weaponSheet.rarity}star`} >
       <Grid item maxWidth="40%" sx={{ mr: -1 }} >
         <BootstrapTooltip placement="top" title={<Box>
@@ -51,7 +57,7 @@ export default function WeaponCardNano({ weaponId, BGComponent = CardDark }: Dat
         <WeaponStat node={UIData.get(input.weapon.sub)} />
       </Grid>
     </Grid>
-  </BGComponent >
+    </ConditionalWrapper></BGComponent >
 }
 function WeaponStat({ node }: { node: NodeDisplay }) {
   if (!node.info.key) return null

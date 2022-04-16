@@ -79,6 +79,7 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
   }
   return { ...state, ...action }
 }
+// TODO: use build display state for global settings, like priority list
 // function initialBuildDisplayState(): {
 //   characterKey: CharacterKey | ""
 // } {
@@ -366,27 +367,23 @@ export default function BuildDisplay() {
         </Grid>
 
         {/* 2 */}
-        <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
+        <Grid item xs={12} sm={6} lg={3}>
           <CardLight>
-            <CardContent >
-              <Typography>Artifact Main Stat</Typography>
-            </CardContent>
-          </CardLight>
-          <CardLight>
-            <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }} >
+            <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between", flexWrap: "wrap", alignItems: "center" }} >
+              <Typography>Main Stat</Typography>
               <BootstrapTooltip placement="top" title={<Typography><strong>Level Assumption</strong> changes mainstat value to be at least a specific level. Does not change substats.</Typography>}>
                 <span>
                   <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={mainStatAssumptionLevel => buildSettingsDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
                 </span>
               </BootstrapTooltip>
             </CardContent>
+            {/* main stat selector */}
+            <MainStatSelectionCard
+              mainStatKeys={mainStatKeys}
+              onChangeMainStatKey={onChangeMainStatKey}
+              disabled={generatingBuilds}
+            />
           </CardLight>
-          {/* main stat selector */}
-          {characterKey && <MainStatSelectionCard
-            mainStatKeys={mainStatKeys}
-            onChangeMainStatKey={onChangeMainStatKey}
-            disabled={generatingBuilds}
-          />}
         </Grid>
 
         {/* 3 */}

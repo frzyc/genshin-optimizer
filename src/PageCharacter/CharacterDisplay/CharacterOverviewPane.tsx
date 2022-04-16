@@ -99,9 +99,7 @@ export default function CharacterOverviewPane() {
         </Grid>
         {allSlotKeys.map(slotKey =>
           <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >
-            <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} onClick={() => {
-              // TODO go to the equipment tab?
-            }} BGComponent={CardLight} />
+            <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} BGComponent={CardLight} />
           </Grid>)}
       </Grid>
       <MainStatsCards />
