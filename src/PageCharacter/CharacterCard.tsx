@@ -114,6 +114,11 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
         }
       }}
       width="100%" >
+      <Box sx={{ display: "flex", position: "absolute" }}>
+        <IconButton sx={{ p: 0.5 }} onClick={event => { event.stopPropagation(); characterDispatch({ favorite: !favorite }) }} onMouseDown={event => { event.stopPropagation() }} onTouchStart={event => { event.stopPropagation() }}>
+          {favorite ? <Favorite /> : <FavoriteBorder />}
+        </IconButton>
+      </Box>
       <Box flexShrink={1} sx={{ maxWidth: { xs: "40%", lg: "40%" } }} alignSelf="flex-end" display="flex" flexDirection="column" zIndex={1}>
         <Box
           component="img"
@@ -125,14 +130,7 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
         />
       </Box>
       <Box flexGrow={1} sx={{ py: 1, pr: 1 }} display="flex" flexDirection="column" zIndex={1}>
-        <Box display="flex">
-          <Chip label={<Typography variant="subtitle1">{characterSheet.name}</Typography>} size="small" color={characterEle} sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: "flex", alignSelf: "start", mt: -0.5 }}>
-            <IconButton sx={{ p: 0.5 }} onClick={event => { event.stopPropagation(); characterDispatch({ favorite: !favorite }) }} onMouseDown={event => { event.stopPropagation() }} onTouchStart={event => { event.stopPropagation() }}>
-              {favorite ? <Favorite /> : <FavoriteBorder />}
-            </IconButton>
-          </Box>
-        </Box>
+        <Chip label={<Typography variant="subtitle1">{characterSheet.name}</Typography>} size="small" color={characterEle} />
         <Grid container spacing={1} flexWrap="nowrap">
           <Grid item sx={{ textShadow: "0 0 5px gray" }}>
             <Typography component="span" variant="h6" whiteSpace="nowrap" >Lv. {characterLevel}</Typography>

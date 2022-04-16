@@ -110,6 +110,11 @@ function CharacterBtn({ onClick, characterKey, setFavesDirty }: { onClick: () =>
   const rarity = characterSheet.rarity
   return <CardActionArea onClick={onClick} >
     <CardLight sx={{ display: "flex", alignItems: "center" }}  >
+      <Box sx={{ display: "flex", position: "absolute", alignSelf: "start" }}>
+        <IconButton sx={{ p: 0.5 }} onClick={event => { event.stopPropagation(); characterDispatch({ favorite: !favorite }); setFavesDirty() }} onMouseDown={event => { event.stopPropagation() }}>
+          {favorite ? <Favorite /> : <FavoriteBorder />}
+        </IconButton>
+      </Box>
       <Box component="img" src={characterSheet.thumbImg} sx={{ width: 130, height: "auto" }} className={`grad-${rarity}star`} />
       <Box sx={{ pl: 1 }}>
         <Typography><strong>{characterSheet.name}</strong></Typography>
@@ -125,13 +130,6 @@ function CharacterBtn({ onClick, characterKey, setFavesDirty }: { onClick: () =>
           <Typography variant="h6"><SqBadge color="primary">NEW</SqBadge></Typography>
         </>}
         <small><Stars stars={rarity} colored /></small>
-      </Box>
-      <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }} />
-      <Box sx={{ display: "flex", alignSelf: "start", pr: 0.25, pt: 0.25 }}>
-        {/* {favorite ? <Favorite /> : <FavoriteBorder />} */}
-        <IconButton sx={{ mb: 0.25 }} onClick={event => { event.stopPropagation(); characterDispatch({ favorite: !favorite }); setFavesDirty() }} onMouseDown={event => { event.stopPropagation() }}>
-          {favorite ? <Favorite /> : <FavoriteBorder />}
-        </IconButton>
       </Box>
     </CardLight>
   </CardActionArea >
