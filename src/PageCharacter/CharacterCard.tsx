@@ -82,8 +82,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   </Suspense>
 }
 function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void }) {
-  const { data, characterSheet } = useContext(DataContext)
-  const { database } = useContext(DatabaseContext)
+  const { data, characterSheet, character: { favorite }, characterDispatch } = useContext(DataContext)
   const characterKey = data.get(input.charKey).value as CharacterKey
   const characterEle = data.get(input.charEle).value as ElementKey
   const characterLevel = data.get(input.lvl).value
@@ -96,9 +95,6 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
   const tAuto = data.get(input.total.auto).value
   const tSkill = data.get(input.total.skill).value
   const tBurst = data.get(input.total.burst).value
-
-  const favorite = database._getChar(characterKey)?.favorite
-  const characterDispatch = useCharacterReducer(characterKey)
 
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={() => characterKey && onClick?.(characterKey)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
@@ -119,8 +115,8 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
         }
       }}
       width="100%" >
-      <Box display="flex" position="absolute" zIndex={2}>
-        <IconButton sx={{ p: 0.5 }} onClick={event => { event.stopPropagation(); characterDispatch({ favorite: !favorite }) }} onMouseDown={event => { event.stopPropagation() }} onTouchStart={event => { event.stopPropagation() }}>
+      <Box sx={{ display: "flex", position: "absolute", zIndex: 2, opacity: 0.7 }}>
+        <IconButton sx={{ p: 0.5 }} onClick={event => { event.stopPropagation(); characterDispatch({ favorite: !favorite }) }} onMouseDown={event => event.stopPropagation()} onTouchStart={event => event.stopPropagation()}>
           {favorite ? <Favorite /> : <FavoriteBorder />}
         </IconButton>
       </Box>
