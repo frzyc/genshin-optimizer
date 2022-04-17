@@ -17,7 +17,7 @@ export default function StatDisplayComponent() {
   const { data } = useContext(DataContext)
   const sections = getDisplaySections(data)
   return <Box sx={{ mr: -1, mb: -1 }}>
-    <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={1}>
+    <Masonry columns={{ xs: 1, sm: 2, md: 3, xl: 4 }} spacing={1}>
       {sections.map(([key, Nodes]) =>
         <Section key={key} displayNs={Nodes} sectionKey={key} />)}
     </Masonry >

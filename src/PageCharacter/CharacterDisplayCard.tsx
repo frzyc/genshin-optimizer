@@ -1,4 +1,4 @@
-import { ExpandMore } from '@mui/icons-material';
+import { Calculate, Checkroom, ExpandMore, FactCheck, Groups, Person } from '@mui/icons-material';
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, Card, CardContent, CardHeader, Collapse, Divider, Grid, MenuItem, Skeleton, Tab, Tabs, ToggleButton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import CardDark from '../Components/Card/CardDark';
@@ -21,6 +21,7 @@ import { getDisplayHeader, getDisplaySections } from '../Formula/DisplayUtil';
 import { DisplaySub } from '../Formula/type';
 import { NodeDisplay } from '../Formula/uiData';
 import KeyMap, { valueString } from '../KeyMap';
+import BuildDisplay from '../PageBuild/BuildDisplay';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import usePromise from '../ReactHooks/usePromise';
@@ -89,9 +90,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
 
   return <CardDark >
     <DataContext.Provider value={dataContextValue}>
-      <CardContent sx={{
-        "> div:not(:last-child)": { mb: 1 },
-      }}>
+      <CardContent sx={{ display: "flex", flexDirection:"column", gap: 1 }}>
         <Grid container spacing={1}>
           <Grid item>
             <CharSelectDropdown />
@@ -119,11 +118,11 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
             value={tab}
             variant="fullWidth"
           >
-            <Tab value="character" label="Character" />
-            {!!newteamData && <Tab value="newartifacts" label="New Artifacts" />}
-            <Tab value="artifacts" label={newteamData ? "Current Artifacts" : "Artifacts"} />
-            <Tab value="buffs" label="Team Buffs" />
-            <Tab value="talent" label="Talents" />
+            <Tab value="character" label="Character" icon={<Person />} />
+            <Tab value="talent" label="Talents" icon={<FactCheck />} />
+            <Tab value="equip" label="Equipment" icon={<Checkroom />} />
+            <Tab value="buffs" label="Team Buffs" icon={<Groups />} />
+            <Tab value="build" label="Build" icon={<Calculate />} />
           </Tabs>
         </CardLight>
         <FormulaCalcCard />
@@ -132,17 +131,19 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
         {/* Character Panel */}
         <TabPanel value="character" current={tab}><CharacterOverviewPane /></TabPanel >
         {/* Artifacts Panel */}
-        <DataContext.Provider value={{ ...dataContextValue, data: charUIData, oldData: undefined }}>
+        {/* <DataContext.Provider value={{ ...dataContextValue, data: charUIData, oldData: undefined }}>
           <TabPanel value="artifacts" current={tab} ><CharacterArtifactPane /></TabPanel >
-        </DataContext.Provider>
+        </DataContext.Provider> */}
         {/* new build panel */}
-        <TabPanel value="newartifacts" current={tab} ><CharacterArtifactPane newBuild /></TabPanel >
-        {/* Buffs panel */}
-        <TabPanel value="buffs" current={tab}><CharacterTeamBuffsPane /></TabPanel >
+        <TabPanel value="equip" current={tab} ><CharacterArtifactPane /></TabPanel >
         {/* talent panel */}
         <TabPanel value="talent" current={tab}>
           <CharacterTalentPane />
         </TabPanel >
+        {/* Buffs panel */}
+        <TabPanel value="buffs" current={tab}><CharacterTeamBuffsPane /></TabPanel >
+        {/* Build panel */}
+        <TabPanel value="build" current={tab}><BuildDisplay /></TabPanel >
       </CardContent>
       {!!footer && <Divider />}
       {footer && <CardContent >
@@ -254,6 +255,7 @@ function FormulaCalc({ sectionKey, displayNs }: { displayNs: DisplaySub<NodeDisp
   const { data } = useContext(DataContext)
   const header = usePromise(getDisplayHeader(data, sectionKey), [data, sectionKey])
   if (!header) return null
+  if (Object.entries(displayNs).every(([_, node]) => node.isEmpty)) return null
   const { title, icon, action } = header
   return <CardDark sx={{ mb: 1 }}>
     <CardHeader avatar={icon && <ImgIcon size={2} sx={{ m: -1 }} src={icon} />} title={title} action={action} titleTypographyProps={{ variant: "subtitle1" }} />

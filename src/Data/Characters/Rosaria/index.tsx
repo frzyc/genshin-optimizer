@@ -1,9 +1,9 @@
 import { CharacterData } from 'pipeline'
 import { input, target } from '../../../Formula'
-import { equal, greaterEq, infoMut, prod, min, unequal } from '../../../Formula/utils'
+import { equal, greaterEq, infoMut, prod, min, unequal, percent } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
-import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
+import CharacterSheet, { ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
@@ -76,8 +76,8 @@ const [condC6Path, condC6] = cond(key, "DilucC6")
 const nodeA1CritInc = equal(condA1, "on", greaterEq(input.asc, 1, datamine.passive1.crInc))
 const nodeA4CritBonusDisp = equal(condA4, "on",
   greaterEq(input.asc, 4, min(
-    prod(datamine.passive2.crBonus, input.premod.critRate_),
-    datamine.passive2.maxBonus
+    prod(percent(datamine.passive2.crBonus), input.premod.critRate_),
+    percent(datamine.passive2.maxBonus)
   ))
 )
 const nodeA4CritBonus = unequal(target.charKey, key, nodeA4CritBonusDisp)
@@ -116,9 +116,11 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
     critRate_: nodeA1CritInc,
     atkSPD_: nodeC1AtkSpd,
     normal_dmg_: nodeC1NormalInc,
-    physical_enemyRes_: nodeC6PhysShred
   },
   teamBuff: {
+    premod: {
+      physical_enemyRes_: nodeC6PhysShred
+    },
     total: {
       critRate_: nodeA4CritBonus
     }
@@ -181,52 +183,45 @@ const sheet: ICharacterSheet = {
         value: datamine.skill.cd,
         unit: 's'
       }]),
-      burst: {
-        name: tr("burst.name"),
-        img: burst,
-        sections: [{
-          text: tr("burst.description"),
-          fields: [{
-            node: infoMut(dmgFormulas.burst.hit1, { key: `char_${key}_gen:burst.skillParams.0` }),
-            textSuffix: "(1)"
-          }, {
-            node: infoMut(dmgFormulas.burst.hit2, { key: `char_${key}_gen:burst.skillParams.0` }),
-            textSuffix: "(2)"
-          }, {
-            node: infoMut(dmgFormulas.burst.dotDmg, { key: `char_${key}_gen:burst.skillParams.1` })
-          }, {
-            text: tr("burst.skillParams.3"),
-            value: datamine.burst.cd,
-            unit: "s"
-          }, {
-            text: tr("burst.skillParams.4"),
-            value: datamine.burst.cost,
-          }],
-          conditional: {
-            name: tr("constellation6.name"),
-            header: conditionalHeader("constellation6", tr, c6),
-            value: condC6,
-            path: condC6Path,
-            canShow: greaterEq(input.constellation, 6, 1),
-            states: {
-              on: {
-                fields: [{
-                  node: nodeC6PhysShred
-                }, {
-                  text: sgt("duration"),
-                  value: datamine.constellation6.duration,
-                  unit: 's'
-                }]
-              }
+      burst: talentTemplate("burst", tr, burst, [{
+        node: infoMut(dmgFormulas.burst.hit1, { key: `char_${key}_gen:burst.skillParams.0` }),
+        textSuffix: "(1)"
+      }, {
+        node: infoMut(dmgFormulas.burst.hit2, { key: `char_${key}_gen:burst.skillParams.0` }),
+        textSuffix: "(2)"
+      }, {
+        node: infoMut(dmgFormulas.burst.dotDmg, { key: `char_${key}_gen:burst.skillParams.1` })
+      }, {
+        text: tr("burst.skillParams.3"),
+        value: datamine.burst.cd,
+        unit: "s"
+      }, {
+        text: tr("burst.skillParams.4"),
+        value: datamine.burst.cost,
+      }], undefined, [
+        sectionTemplate("constellation6", tr, c6, undefined, {
+          value: condC6,
+          path: condC6Path,
+          name: st("hitOp.skill"),
+          canShow: greaterEq(input.constellation, 6, 1),
+          teamBuff: true,
+          states: {
+            on: {
+              fields: [{
+                node: nodeC6PhysShred
+              }, {
+                text: sgt("duration"),
+                value: datamine.constellation6.duration,
+                unit: 's'
+              }]
             }
           }
-        }]
-      },
+        })
+      ]),
       passive1: talentTemplate("passive1", tr, passive1, undefined, {
         name: trm("a1"),
         value: condA1,
         path: condA1Path,
-        header: conditionalHeader("passive1", tr, passive1),
         canShow: greaterEq(input.asc, 1, 1),
         states: {
           on: {
@@ -241,17 +236,16 @@ const sheet: ICharacterSheet = {
         }
       }),
       passive2: talentTemplate("passive2", tr, passive2, undefined, {
-        name: trm("a4.name"),
+        name: st("afterUse.skill"),
         value: condA4,
         path: condA4Path,
         teamBuff: true,
-        header: conditionalHeader("passive1", tr, passive1),
         // Hide for Rosaria
         canShow: greaterEq(input.asc, 4, unequal(input.activeCharKey, key, 1)),
         states: {
           on: {
             fields: [{
-              node: infoMut(nodeA4CritBonusDisp, { key: "critRate_" }),
+              node: infoMut(nodeA4CritBonusDisp, { key: "critRate_", isTeamBuff: true }),
             }, {
               text: sgt("duration"),
               value: datamine.passive2.duration,
@@ -264,8 +258,7 @@ const sheet: ICharacterSheet = {
       constellation1: talentTemplate("constellation1", tr, c1, undefined, {
         value: condC1,
         path: condC1Path,
-        name: trm("c1"),
-        header: conditionalHeader("constellation1", tr, c1),
+        name: st("hitOp.crit"),
         canShow: greaterEq(input.constellation, 1, 1),
         states: {
           on: {

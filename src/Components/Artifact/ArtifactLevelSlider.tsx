@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from "react"
 import { clamp } from "../../Util/Util"
 import CustomNumberInput from "../CustomNumberInput"
 
-export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHigh, setBoth, dark = false, disabled = false }: {
+export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHigh, setBoth, dark = false, disabled = false, showLevelText = false }: {
   levelLow: number,
   levelHigh: number,
   setLow: (low: number) => void,
@@ -11,6 +11,7 @@ export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHi
   setBoth: (low: number, high: number) => void,
   dark?: boolean,
   disabled?: boolean,
+  showLevelText?: boolean,
 }) {
   const [sliderLow, setsliderLow] = useState(levelLow)
   const [sliderHigh, setsliderHigh] = useState(levelHigh)
@@ -27,9 +28,9 @@ export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHi
     <CustomNumberInput
       value={sliderLow}
       onChange={val => setLow(clamp(val, 0, levelHigh))}
-      sx={{ pl: 2, width: 100, }}
+      sx={{ pl: 2, width: showLevelText ? 100 : 50, }}
       inputProps={{ sx: { textAlign: "center" } }}
-      startAdornment={"Level: "}
+      startAdornment={showLevelText ? "Level: " : undefined}
       disabled={disabled}
     />
     <Slider sx={{ width: 100, flexGrow: 1, mx: 2 }}

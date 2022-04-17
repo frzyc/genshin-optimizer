@@ -71,7 +71,7 @@ const InputInvis = styled('input')({
   display: 'none',
 });
 
-export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { artifactIdToEdit?: string, cancelEdit: () => void }) {
+export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allowUpload = false, allowEmpty = false }: { artifactIdToEdit?: string, cancelEdit: () => void, allowUpload?: boolean, allowEmpty?: boolean }) {
   const { t } = useTranslation("artifact")
 
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
@@ -127,10 +127,11 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { 
 
   useEffect(() => {
     const pasteFunc = (e: any) => uploadFiles(e.clipboardData.files)
-    window.addEventListener('paste', pasteFunc);
-    return () =>
-      window.removeEventListener('paste', pasteFunc)
-  }, [uploadFiles])
+    allowUpload && window.addEventListener('paste', pasteFunc);
+    return () => {
+      if (allowUpload) window.removeEventListener('paste', pasteFunc)
+    }
+  }, [uploadFiles, allowUpload])
 
   const onUpload = useCallback(
     e => {
@@ -284,7 +285,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { 
             {currentEfficiency !== maxEfficiency && <SubstatEfficiencyDisplayCard max valid={isValid} efficiency={maxEfficiency} t={t} />}
 
             {/* Image OCR */}
-            <CardLight>
+            {allowUpload && <CardLight>
               <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
                 {/* TODO: artifactDispatch not overwrite */}
                 <Suspense fallback={<Skeleton width="100%" height="100" />}>
@@ -325,7 +326,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { 
                   </Grid></CardDark>}
                 </Suspense>
               </CardContent>
-            </CardLight>
+            </CardLight>}
           </Grid>
 
           {/* Right column */}
@@ -363,21 +364,21 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { 
         <Grid container spacing={2}>
           <Grid item>
             {oldType === "edit" ?
-              <Button startIcon={<Add />} onClick={() => { database.updateArt(editorArtifact!, old!.id); reset() }} disabled={!editorArtifact || !isValid} color="primary">
+              <Button startIcon={<Add />} onClick={() => { database.updateArt(editorArtifact!, old!.id); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="primary">
                 {t`editor.btnSave`}
               </Button> :
-              <Button startIcon={<Add />} onClick={() => { database.createArt(artifact!); reset() }} disabled={!artifact || !isValid} color={oldType === "duplicate" ? "warning" : "primary"}>
+              <Button startIcon={<Add />} onClick={() => { database.createArt(artifact!); allowEmpty ? reset() : setShow(false) }} disabled={!artifact || !isValid} color={oldType === "duplicate" ? "warning" : "primary"}>
                 {t`editor.btnAdd`}
               </Button>}
           </Grid>
           <Grid item flexGrow={1}>
-            <Button startIcon={<Replay />} disabled={!artifact} onClick={() => { canClearArtifact() && reset() }} color="error">{t`editor.btnClear`}</Button>
+            {allowEmpty && <Button startIcon={<Replay />} disabled={!artifact} onClick={() => { canClearArtifact() && reset() }} color="error">{t`editor.btnClear`}</Button>}
           </Grid>
           <Grid item>
             {process.env.NODE_ENV === "development" && <Button color="info" startIcon={<Shuffle />} onClick={async () => artifactDispatch({ type: "overwrite", artifact: await randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
           </Grid>
           {old && oldType !== "edit" && <Grid item>
-            <Button startIcon={<Update />} onClick={() => { database.updateArt(editorArtifact!, old.id); reset() }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>
+            <Button startIcon={<Update />} onClick={() => { database.updateArt(editorArtifact!, old.id); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>
           </Grid>}
         </Grid>
       </CardContent>

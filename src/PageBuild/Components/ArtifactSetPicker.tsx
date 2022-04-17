@@ -38,7 +38,9 @@ export default function ArtifactSetPicker({ index, setFilters, onChange, disable
       <ButtonGroup>
         {/* Artifact set */}
         {artifactSheets && <ArtifactSetDropdown hasUnselect selectedSetKey={setKey} artifactSetsByRarity={artifactSetsByRarity as any} disabled={disabled}
-          onChange={setKey => onChange(index, setKey as ArtifactSetKey, parseInt(Object.keys(artifactSheets[setKey]?.setEffects ?? {})[0] as string) ?? 0)} />}
+          onChange={setKey => onChange(index, setKey as ArtifactSetKey, parseInt(Object.keys(artifactSheets[setKey]?.setEffects ?? {})[0] as string) ?? 0)}
+          titleTransKey="page_character:forceSet"
+        />}
         {/* set number */}
         <DropdownButton title={`${setNum}-set`}
           disabled={disabled || !setKey || artsAccounted >= 5}
