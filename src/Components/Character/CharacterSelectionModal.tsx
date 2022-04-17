@@ -53,7 +53,7 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
 
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
   const filterConfigs = useMemo(() => characterSheets && favesDirty && characterFilterConfigs(database, characterSheets), [favesDirty, database, characterSheets])
-  const ownedCharacterKeyList = useMemo(() => characterSheets ? [...new Set(allCharacterKeys)].filter(cKey => filter(database._getChar(cKey), characterSheets[cKey])) : [], [database, characterSheets])
+  const ownedCharacterKeyList = useMemo(() => characterSheets ? [...new Set(allCharacterKeys)].filter(cKey => filter(database._getChar(cKey), characterSheets[cKey])) : [], [database, characterSheets, filter])
   const characterKeyList = useMemo(() => (characterSheets && sortConfigs && filterConfigs) ?
     ownedCharacterKeyList
       .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter, favorite: "yes" }, filterConfigs))
@@ -64,7 +64,7 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
           .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
       )
     : [],
-    [database, characterSheets, filter, elementalFilter, weaponFilter, sortBy, ascending, sortConfigs, filterConfigs])
+    [characterSheets, elementalFilter, weaponFilter, sortBy, ascending, sortConfigs, filterConfigs, ownedCharacterKeyList])
 
   if (!characterSheets) return null
   return <ModalWrapper open={show} onClose={onHide} >

@@ -1,4 +1,4 @@
-import { BusinessCenter, Favorite, FavoriteBorder, Replay } from "@mui/icons-material";
+import { BusinessCenter, Favorite, Replay } from "@mui/icons-material";
 import { Divider, ListItemIcon, MenuItem, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useContext, useMemo } from "react";
@@ -58,29 +58,24 @@ export default function CharacterDropdownButton({ value, onChange, unSelectText,
 export function CharacterMenuItemArray(characterSheets: StrictDict<CharacterKey, CharacterSheet>, characterKeys: CharacterKey[], onChange: (ck: CharacterKey) => void, selectedCharacterKey: CharacterKey | "" = "", filterConfigs: CharacterFilterConfigs | undefined) {
   if (!filterConfigs) return []
   const faves = characterKeys
-  .filter(filterFunction({ element: "", weaponType: "", favorite: "yes" }, filterConfigs))
-    .map(characterKey =>
-    <MenuItem onClick={() => onChange(characterKey)} key={characterKey} selected={selectedCharacterKey === characterKey} disabled={selectedCharacterKey === characterKey} >
-      <ListItemIcon>
-        <ThumbSide src={characterSheets[characterKey]?.thumbImgSide} />
-      </ListItemIcon>
-      <Typography variant="inherit" noWrap>
-        {characterSheets?.[characterKey]?.name}
-      </Typography>
-      <Box display="flex" flexGrow={1} />
-      <Favorite sx={{ ml: 1, mr: -0.5}} />
-    </MenuItem>)
+    .filter(filterFunction({ element: "", weaponType: "", favorite: "yes" }, filterConfigs))
+    .map(characterKey => <CharMenuItem {...{ characterSheets, characterKey, selectedCharacterKey, onChange, favorite: true }} />)
   const nonFaves = characterKeys
-  .filter(filterFunction({ element: "", weaponType: "", favorite: "no" }, filterConfigs))
-    .map(characterKey =>
-    <MenuItem onClick={() => onChange(characterKey)} key={characterKey} selected={selectedCharacterKey === characterKey} disabled={selectedCharacterKey === characterKey} >
-      <ListItemIcon>
-        <ThumbSide src={characterSheets[characterKey]?.thumbImgSide} />
-      </ListItemIcon>
-      <Typography variant="inherit" noWrap>
-        {characterSheets?.[characterKey]?.name}
-      </Typography>
-    </MenuItem>)
+    .filter(filterFunction({ element: "", weaponType: "", favorite: "no" }, filterConfigs))
+    .map(characterKey => <CharMenuItem {...{ characterSheets, characterKey, selectedCharacterKey, onChange, favorite: false }} />)
 
   return faves.concat(nonFaves)
+}
+function CharMenuItem({ characterSheets, characterKey, selectedCharacterKey = "", onChange, favorite }:
+  { characterKey: CharacterKey, selectedCharacterKey: CharacterKey | "", characterSheets: StrictDict<CharacterKey, CharacterSheet>, onChange: (ck: CharacterKey) => void, favorite: boolean }) {
+  return <MenuItem onClick={() => onChange(characterKey)} key={characterKey} selected={selectedCharacterKey === characterKey} disabled={selectedCharacterKey === characterKey} >
+    <ListItemIcon>
+      <ThumbSide src={characterSheets[characterKey]?.thumbImgSide} />
+    </ListItemIcon>
+    <Typography variant="inherit" noWrap>
+      {characterSheets?.[characterKey]?.name}
+    </Typography>
+    {favorite && <Box display="flex" flexGrow={1} />}
+    {favorite && <Favorite sx={{ ml: 1, mr: -0.5 }} />}
+  </MenuItem>
 }
