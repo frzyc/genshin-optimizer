@@ -174,7 +174,7 @@ function Artifacts() {
     {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) => {
       // Blank artifact slot icon
       if (!art) return <Grid item xs={1}>
-        <CardDark sx={{ display: "flex", flexDirection: "column" }}>
+        <CardDark sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
           <Box sx={{ width: "100%", pb: "100%", position: "relative", }}>
             <Box
               sx={{
