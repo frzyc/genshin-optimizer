@@ -1,10 +1,6 @@
 import Artifact from "./Artifact";
 import artifactSubstatRoll from './artifact_sub_rolls_gen.json';
 
-//post-load the artifact data
-// beforeAll(() => Artifact.getDataimport());
-
-
 describe('Substat Rolls/efficiency', () => {
   test('should have valid rolls in substat roll table', () => {
     expect(Object.keys(artifactSubstatRoll[4]?.["critRate_"] ?? {}))
@@ -31,6 +27,8 @@ describe('Substat Rolls/efficiency', () => {
     expect(Object.keys(artifactSubstatRoll[5]?.["eleMas"] ?? {}))
       .toEqual(expect.arrayContaining(["23"]))
 
+    expect(Object.keys(artifactSubstatRoll[5]?.["hp_"] ?? {}))
+      .toEqual(expect.arrayContaining(["26.3"]))
   })
   test('should get correct roll base', () => {
     const { low, high } = Artifact.rollInfo(5)
