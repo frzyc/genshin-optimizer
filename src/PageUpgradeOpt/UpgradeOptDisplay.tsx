@@ -591,7 +591,7 @@ export default function UpgradeOptDisplay({ location: { characterKey: propCharac
                       color={(characterKey && totBuildNumber <= warningBuildNumber) ? "success" : "warning"}
                       onClick={generateBuilds}
                       startIcon={<FontAwesomeIcon icon={faCalculator} />}
-                    >FindToUpgrade</Button>
+                    >Calc Upgrade Priority</Button>
                     {/* <Tooltip title={<Typography></Typography>} placement="top" arrow> */}
                     {/* <DropdownButton disabled={generatingBuilds || !characterKey}
                       title={<span><b>{maxBuildsToShow}</b> {maxBuildsToShow === 1 ? "Build" : "Builds"}</span>}>
@@ -720,13 +720,13 @@ export default function UpgradeOptDisplay({ location: { characterKey: propCharac
                         </Grid>
                         <Grid item xs={6} sm={7} md={7} lg={7} xl={8}>
                           <UpgradeOptChartCard upgradeOpt={art} />
-                          <CardContent>
+                          {/* <CardContent>
                             <span>p = {art.prob}</span>
                             <br/>
                             <span>Expected (avg) dmg increase = {art.Edmg}</span>
                             <br/>
                             <span>COMING SOON (tm): True dmg distribution, working on MinimumStatConstraint</span>
-                          </CardContent>
+                          </CardContent> */}
                           {/* <HitModeCard disabled={generatingBuilds} /> */}
 
                         </Grid>

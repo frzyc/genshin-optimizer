@@ -10,6 +10,7 @@ import { assert } from "console"
 import { allSlotKeys, ArtifactSetKey, CharacterKey, SlotKey, Rarity } from '../Types/consts';
 import Artifact from "../Data/Artifacts/Artifact"
 import { query } from "express"
+import { crawlUpgrades, allUpgradeValues } from "./artifactUpgradeCrawl"
 
 type OptSummary = {
   c: number,
@@ -17,14 +18,35 @@ type OptSummary = {
   mu: number,
   std: number,
   thr: number,
+  evalFn: (values: Dict<string, number>) => number[]
 }
 export type UpgradeOptResult = {
   id: string,
   prob: number,
   Edmg: number,
 
-  params: OptSummary
+  statsBase: DynStat,
+  subs: SubstatKey[],
+  params: OptSummary[]
 }
+type Query = {
+  formulas: NumNode[],
+  thresholds: number[]
+  arts: QueryBuild,
+  evalFn: (values: Dict<string, number>) => number[]
+}
+export type QueryArtifact = {
+  id: string,
+  level: number,
+  rarity: Rarity,
+  slot: SlotKey,
+  values: DynStat,
+  substatKeys: SubstatKey[]
+}
+export type QueryBuild = {
+  [key in SlotKey]: QueryArtifact
+}
+
 
 // https://hewgill.com/picomath/javascript/erf.js.html
 // very good algebraic approximation of erf function. Maximum deviation below 1.5e-7
@@ -54,6 +76,7 @@ function evalArtifact(objective: Query, art: QueryArtifact): UpgradeOptResult {
     // console.log(a)
     Object.entries(a.values).forEach(([key, value]) => stats[key] = (stats[key] ?? 0) + value)
   })
+  const statsBase = { ...stats }
   let scale = (key: SubstatKey) => key.endsWith('_') ? Artifact.maxSubstatValues(key, art.rarity) / 1000 : Artifact.maxSubstatValues(key, art.rarity) / 10
 
   // Increase each stat by their expected increase
@@ -68,28 +91,29 @@ function evalArtifact(objective: Query, art: QueryArtifact): UpgradeOptResult {
   const val = out[0]
   const grad = art.substatKeys.map(key => out[1 + allSubstats.indexOf(key)] * scale(key))
 
-  const c = val - grad.reduce((a, b) => a + b)
+  const c = val - 17 / 8 * rollsLeft * grad.reduce((a, b) => a + b)
   const ks = grad
 
   // coeff2normal
-  const ksum = grad.reduce((a, b) => a + b)
-  const ksum2 = grad.reduce((a, b) => a + b * b, 0)
+  const ksum = ks.reduce((a, b) => a + b)
+  const ksum2 = ks.reduce((a, b) => a + b * b, 0)
   const N = rollsLeft
   const mean = 17 / 8 * N * ksum + c
   const variance = (147 / 8) * N * ksum2 - N * 289 / 64 * ksum * ksum
   const x = objective.thresholds[0] // target
 
-  const summ: OptSummary = { c: c, ks: ks, mu: mean, std: Math.sqrt(variance), thr: x }
+  const summ: OptSummary = { c: c, ks: ks, mu: mean, std: Math.sqrt(variance), thr: x, evalFn: objective.evalFn }
+  let ret = { id: art.id, params: [summ], statsBase: statsBase, subs: art.substatKeys }
 
   if (Math.abs(variance) < 1e-5) {
-    if (mean > x) return { id: art.id, prob: 1, Edmg: mean - x, params: summ }
-    return { id: art.id, prob: 0, Edmg: 0, params: summ }
+    if (mean > x) return { prob: 1, Edmg: mean - x, ...ret }
+    return { prob: 0, Edmg: 0, ...ret }
   }
   const p = (1 - erf((x - mean) / Math.sqrt(2 * variance))) / 2
-  if (Math.abs(p) < 1e-8) return { id: art.id, prob: p, Edmg: 0, params: summ }
+  if (Math.abs(p) < 1e-8) return { prob: p, Edmg: 0, ...ret }
 
   const phi = Math.exp((-(x - mean) * (x - mean)) / variance / 2) / Math.sqrt(2 * Math.PI)
-  return { id: art.id, prob: p, Edmg: mean + Math.sqrt(variance) * phi / p - x, params: summ }
+  return { prob: p, Edmg: mean + Math.sqrt(variance) * phi / p - x, ...ret }
 }
 
 
@@ -124,27 +148,8 @@ function querySetup(objective: NumNode, arts: QueryBuild, data: Data = {}): Quer
   return { formulas: formulas, thresholds: [dmg0], arts: arts, evalFn: evalFn }
 }
 
-type Query = {
-  formulas: NumNode[],
-  thresholds: number[]
-  arts: QueryBuild,
-  evalFn: (values: Dict<string, number>) => number[]
-}
-export type QueryArtifact = {
-  id: string,
-  level: number,
-  rarity: Rarity,
-  slot: SlotKey,
-  values: DynStat,
-  substatKeys: SubstatKey[]
-}
-export type QueryBuild = {
-  [key in SlotKey]: QueryArtifact
-}
-
 export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, arts: QueryArtifact[]) {
   console.log('Youve reached query!!!')
-  console.log(curEquip)
 
   let stats: DynStat = {}
   Object.values(curEquip).forEach(art => {
@@ -153,25 +158,41 @@ export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, a
         stats[k] = v + (stats[k] ?? 0)
       })
     }
-
   })
 
   const query = querySetup(nodes[0], curEquip, data)
 
-  console.log(curEquip)
-  console.log('cureqip stats:', stats)
-  console.log(query.evalFn(stats)[0])
+  // console.log(curEquip)
+  // console.log('cureqip stats:', stats)
+  // console.log('cur Objective', query.evalFn(stats)[0])
 
-  let evaluated: UpgradeOptResult[] = arts.map(art => {
-    if (art.rarity != 5) return { id: art.id, prob: 0, Edmg: 0, params: { c: 0, ks: [0, 0, 0, 0], mu: 0, std: 1, thr: query.thresholds[0] } }
-    return evalArtifact(query, art)
+  let evaluated: UpgradeOptResult[] = []
+  arts.forEach(art => {
+    if (art.rarity == 5)
+      evaluated.push(evalArtifact(query, art))
     // return { id: art.id, p: 100 * prob, dmg: Edmg }
   })
   evaluated = evaluated.sort((a, b) => b.prob * b.Edmg - a.prob * a.Edmg)
-  console.log(evaluated)
+  // console.log(evaluated)
 
-  arts.forEach(art => {
-    if (art.id == evaluated[0].id) console.log(art)
-  })
+  // let fn_evals = 0
+  // crawlUpgrades(5, ([n1, n2, n3, n4], p) => {
+  //   fn_evals += (1 + 3 * n1) * (1 + 3 * n2) * (1 + 3 * n3) * (1 + 3 * n4)
+  // })
+  // console.log('n_evals:', fn_evals)
+
+  // let res0 = monteCarloInfinite(evaluated[0])
+  // let ptot = 0
+  // res0.forEach(a => {
+  //   ptot += a.p
+  // })
+  // console.log(ptot, 'should be 1')
+
+  // let res1 = monteCarloInfinite(evaluated[1])
+  // ptot = 0
+  // res1.forEach(a => {
+  //   ptot += a.p
+  // })
+  // console.log(ptot, 'should be 1')
   return evaluated;
 }

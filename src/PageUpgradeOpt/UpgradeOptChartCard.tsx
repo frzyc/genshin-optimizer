@@ -1,13 +1,20 @@
 import { CheckBox, CheckBoxOutlineBlank, Download, Info } from '@mui/icons-material';
 import { Button, CardContent, Collapse, Divider, Grid, MenuItem, styled, Typography } from '@mui/material';
 import { useContext, useMemo, useState } from 'react';
-import { CartesianGrid, ComposedChart, Legend, Line, Area, LineChart, Tooltip, Scatter, XAxis, YAxis, ZAxis, ReferenceLine } from 'recharts';
+import { CartesianGrid, ComposedChart, Legend, Bar, Line, Area, LineChart, Tooltip, Scatter, XAxis, YAxis, ZAxis, ReferenceLine, RectangleProps } from 'recharts';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import { UpgradeOptResult } from '../Formula/artifactQuery';
+import { allUpgradeValues } from '../Formula/artifactUpgradeCrawl'
 
 type Data = {
-  upgradeOpt: UpgradeOptResult
+  upgradeOpt: UpgradeOptResult,
+  showTrue?: boolean,
+}
+type ChartData = {
+  x: number,
+  est?: number,
+  exact?: number,
 }
 
 function linspace(lower = 0, upper = 1, steps = 50): number[] {
@@ -19,40 +26,66 @@ function linspace(lower = 0, upper = 1, steps = 50): number[] {
   return arr
 }
 
+const nbins = 20
 export default function UpgradeOptChartCard({ upgradeOpt }: Data) {
-  const mu = upgradeOpt.params.mu;
-  const std = upgradeOpt.params.std;
-  const thr = upgradeOpt.params.thr;
+  const exactData = allUpgradeValues(upgradeOpt)
+  const miin = exactData.reduce((prv, cur) => prv < cur.v ? prv : cur.v, exactData[0].v)
+  const maax = exactData.reduce((prv, cur) => prv > cur.v ? prv : cur.v, exactData[0].v)
 
+  const mu = upgradeOpt.params[0].mu;
+  const std = upgradeOpt.params[0].std;
+  const thr = upgradeOpt.params[0].thr;
   const gauss = ((x: number) => Math.exp(-(mu - x) * (mu - x) / std / std / 2) / Math.sqrt(2 * Math.PI) / std);
 
-  const xs = linspace(mu - 3 * std, mu + 3 * std, 100)
-  const data = xs.map(v => {
-    return {
-      x: v,
-      y: gauss(v),
-      area: v > thr ? gauss(v) : 0
+  let true_p = 0
+  let true_d = 0
+
+  let binstep = (maax - miin) / nbins
+  let bins = new Array(nbins).fill(0)
+  let allbins: number[] = []
+  exactData.forEach(({ p, v }) => {
+    let whichBin = Math.min(Math.trunc((v - miin) / binstep), nbins - 1)
+    bins[whichBin] += p
+    allbins.push(whichBin)
+
+    if (v > thr) {
+      true_p += p
+      true_d += p * (v - thr)
     }
   })
-  data.push({ x: upgradeOpt.params.thr, y: gauss(thr), area: gauss(thr) })
-  data.push({ x: upgradeOpt.params.thr, y: gauss(thr), area: 0 })
-  data.sort((a, b) => b.x - a.x)
+  if (true_p > 0) true_d = true_d / true_p
 
-  const xmin = data[0].x;
-  const xmax = data[data.length - 1].x;
-  let xpercent = (xmax - thr) / (xmax - xmin)
-  // if (ww < 0.0001) { ww = .6416067 }
-  // else { ww = ww; }
-  // ww = .4;
-  console.log('ww', xpercent)
+  let dataExact: ChartData[] = bins.map((dens, ix) => ({ x: miin + ix * binstep, exact: dens / binstep }))
+  const dataEst: ChartData[] = linspace(miin, maax, 100).map(v => {
+    return { x: v, est: gauss(v) }
+  })
+  dataEst.push({ x: thr, est: gauss(thr) })
+  dataEst.push({ x: thr + upgradeOpt.Edmg, est: gauss(thr + upgradeOpt.Edmg) })
+  dataEst.sort((a, b) => a.x - b.x)
+
+  const xmin = dataEst[0].x;
+  const xmax = dataEst[dataEst.length - 1].x;
+  let xpercent = (thr - xmin) / (xmax - xmin)
+
+  const data: ChartData[] = dataEst.concat(dataExact)
+
+  // console.log(data)
+  // const data = dataEst;
+  // return <CardLight>
+  //   <CardContent>
+  //     <ComposedChart width={600} height={250} data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+  //       <XAxis dataKey="x" type="number" domain={['auto', 'auto']} allowDecimals={false} />
+  //       <YAxis dataKey="y" type="number" />
+  //     </ComposedChart>
+  //   </CardContent>
+  // </CardLight>
 
   return <CardLight>
     <CardContent>
-      <ComposedChart width={600} height={250} data={data}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+      <ComposedChart width={600} height={250} data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
         {/* <CartesianGrid strokeDasharray="4 4" /> */}
         <XAxis dataKey="x" type="number" domain={['auto', 'auto']} allowDecimals={false} />
-        <YAxis dataKey="y" type="number" />
+        <YAxis type="number" domain={['auto', 'auto']} />
         {/* <Tooltip /> */}
         <Legend verticalAlign='top' height={36} />
 
@@ -63,11 +96,28 @@ export default function UpgradeOptChartCard({ upgradeOpt }: Data) {
           </linearGradient>
         </defs>
 
-        <Area type="monotone" dataKey="y" stroke="#8884d8" dot={false} fill={`url(#splitOpacity${upgradeOpt.id})`} opacity={.4} name='Estimated Damage Distribution' />
-        <ReferenceLine x={upgradeOpt.params.thr} stroke="red" strokeDasharray="3 3" name="Current Damage" />
+        <Area type="stepAfter" dataKey="exact" dot={false} opacity={.4} name='Exact Distribution (Histogram)' />
+
+        <Area type="monotone" dataKey="est" stroke="orange" dot={false} fill={`url(#splitOpacity${upgradeOpt.id})`} opacity={.5} name='Estimated Distribution' />
+        <ReferenceLine x={thr} stroke="red" strokeDasharray="3 3" name="Current Damage" />
+        <ReferenceLine x={thr + upgradeOpt.Edmg} stroke="#ffffff" strokeDasharray="3 3" name="Current Damage" />
+
+
+        {/* <Line type="monotone" dataKey="exact"/> */}
 
         {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
       </ComposedChart>
+
+      <span>p = {upgradeOpt.prob}</span>
+      <br />
+      <span>Expected (avg) dmg increase = {upgradeOpt.Edmg}</span>
+      <br />
+      <span>COMING SOON (tm): MinimumStatConstraint</span>
+      <br />
+      <span>Actual p = {true_p}</span>
+      <br />
+      <span>Actual dmg inc = {true_d}</span>
+
     </CardContent>
   </CardLight>
 }
