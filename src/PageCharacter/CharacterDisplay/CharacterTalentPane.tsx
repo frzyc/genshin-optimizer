@@ -47,6 +47,11 @@ export default function CharacterTalentPane() {
   return <>
     <ReactionDisplay />
     <Grid container spacing={1}>
+      {/* constellations for 4column */}
+      {grlg && <Grid item xs={12} md={12} lg={3} sx={{ display: "flex", flexDirection: "column", gap: 1 }} >
+        <CardLight><CardContent><Typography variant="h6" sx={{ textAlign: "center" }}>Constellation Lv. {constellation}</Typography></CardContent></CardLight>
+        {constellationCards.map((c, i) => <Box key={i} sx={{ opacity: constellation >= (i + 1) ? 1 : 0.5 }} >{c}</Box>)}
+      </Grid>}
       <Grid item xs={12} md={12} lg={9} container spacing={1} >
         {/* auto, skill, burst */}
         {skillBurstList.map(([tKey, tText]) =>
@@ -80,11 +85,8 @@ export default function CharacterTalentPane() {
           </Grid>
         })}
       </Grid>
-      {/* constellations */}
-      {grlg ? <Grid item xs={12} md={12} lg={3} sx={{ display: "flex", flexDirection: "column", gap: 1 }} >
-        <CardLight><CardContent><Typography variant="h6" sx={{ textAlign: "center" }}>Constellation Lv. {constellation}</Typography></CardContent></CardLight>
-        {constellationCards.map((c, i) => <Box key={i} sx={{ opacity: constellation >= (i + 1) ? 1 : 0.5 }} >{c}</Box>)}
-      </Grid> : <Grid item xs={12} md={12} lg={3} container spacing={1} >
+      {/* constellations for < 4 columns */}
+      {!grlg && <Grid item xs={12} md={12} lg={3} container spacing={1} >
         <Grid item xs={12}>
           <CardLight><CardContent><Typography variant="h6" sx={{ textAlign: "center" }}>Constellation Lv. {constellation}</Typography></CardContent></CardLight>
         </Grid>

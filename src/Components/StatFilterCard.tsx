@@ -23,8 +23,8 @@ export default function StatFilterCard({ statFilters = {}, setStatFilters, disab
   const setFilter = useCallback((sKey, min) => setStatFilters({ ...statFilters, [sKey]: min }), [statFilters, setStatFilters],)
   return <CardLight>
     <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
-      <Typography>Minimum Final Stat Filter</Typography>
-      <BootstrapTooltip placement="top" title={<Typography>Filter the build generated to conform to some stat requirements, e.g. Generate builds with at least 140% Energy Recharge.</Typography>}>
+      <Typography>Build Constraints</Typography>
+      <BootstrapTooltip placement="top" title={<Typography>Constraint the generated builds to conform to some requirements, e.g. Generate builds with at least 140% Energy Recharge.</Typography>}>
         <Info />
       </BootstrapTooltip>
 

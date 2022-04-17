@@ -21,11 +21,13 @@ import { ArtifactDisplayLocationState } from '../Types/LocationState';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
-import ArtifactEditor from './ArtifactEditor';
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter';
 import { artifactFilterConfigs, artifactSortConfigs, artifactSortKeys, artifactSortKeysTC, initialArtifactSortFilter } from './ArtifactSort';
 import ProbabilityFilter from './ProbabilityFilter';
 import { probability } from './RollProbability';
+
+//lazy load the weapon display
+const ArtifactEditor = React.lazy(() => import('./ArtifactEditor'))
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 function initialState() {
@@ -126,10 +128,13 @@ export default function ArtifactDisplay() {
 
     {noArtifact && <Alert severity="info" variant="filled">Looks like you haven't added any artifacts yet. If you want, there are <Link color="warning.main" component={RouterLink} to="/scanner">automatic scanners</Link> that can speed up the import process!</Alert>}
 
-    <ArtifactEditor
+    <Suspense fallback={false}><ArtifactEditor
       artifactIdToEdit={artToEditId}
       cancelEdit={cancelEditArtifact}
-    />
+      allowUpload
+      allowEmpty
+    /></Suspense>
+
     <ArtifactFilter filterOption={filterOption} filterOptionDispatch={filterOptionDispatch} filterDispatch={stateDispatch}
       numShowing={artifactIds.length} total={totalArtNum} />
     {showProbability && <ProbabilityFilter probabilityFilter={probabilityFilter} setProbabilityFilter={setProbabilityFilter} />}
@@ -163,8 +168,8 @@ export default function ArtifactDisplay() {
     </CardContent></CardDark>
 
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
-      <Grid container spacing={1} >
-        <Grid item xs={12} sm={6} md={4} lg={4} xl={3}>
+      <Grid container spacing={1} columns={{ xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }} >
+        <Grid item xs={1} >
           <CardDark sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
             <CardContent>
               <Typography sx={{ textAlign: "center" }}>Add New Artifact</Typography>
@@ -185,7 +190,7 @@ export default function ArtifactDisplay() {
           </CardDark>
         </Grid>
         {artifactIdsToShow.map(artId =>
-          <Grid item key={artId} xs={12} sm={6} md={4} lg={4} xl={3} >
+          <Grid item key={artId} xs={1}  >
             <ArtifactCard
               artifactId={artId}
               effFilter={effFilterSet}

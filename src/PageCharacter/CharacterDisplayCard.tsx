@@ -90,9 +90,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
 
   return <CardDark >
     <DataContext.Provider value={dataContextValue}>
-      <CardContent sx={{
-        "> div:not(:last-child)": { mb: 1 },
-      }}>
+      <CardContent sx={{ display: "flex", flexDirection:"column", gap: 1 }}>
         <Grid container spacing={1}>
           <Grid item>
             <CharSelectDropdown />

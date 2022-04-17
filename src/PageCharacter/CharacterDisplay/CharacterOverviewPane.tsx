@@ -19,10 +19,11 @@ import { ReadNode } from "../../Formula/type";
 import KeyMap, { valueString } from "../../KeyMap";
 import { amplifyingReactions, transformativeReactions } from "../../KeyMap/StatConstants";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
-import StatInput from "../StatInput";
 import { TalentSheetElementKey } from "../../Types/character";
 import { allElementsWithPhy, allSlotKeys, ElementKey } from "../../Types/consts";
 import { range } from "../../Util/Util";
+import CharacterCardNano from "../CharacterCardNano";
+import StatInput from "../StatInput";
 
 export default function CharacterOverviewPane() {
   const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
@@ -95,6 +96,10 @@ export default function CharacterOverviewPane() {
                   onClick={() => characterDispatch({ constellation: i === constellation ? i - 1 : i })} />
               </Grid>)}
           </Grid>
+          <Typography sx={{ textAlign: "center", mt: 1 }} variant="h6">Teammates</Typography>
+          <Grid container columns={3} spacing={1}>
+            {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardNano characterKey={character.team[i]} index={i} /></Grid>)}
+          </Grid>
         </CardContent>
       </CardLight>
     </Grid>
@@ -108,9 +113,7 @@ export default function CharacterOverviewPane() {
         </Grid>
         {allSlotKeys.map(slotKey =>
           <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >
-            <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} onClick={() => {
-              // TODO go to the equipment tab?
-            }} BGComponent={CardLight} />
+            <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} slotKey={slotKey} BGComponent={CardLight} />
           </Grid>)}
       </Grid>
       <MainStatsCards />

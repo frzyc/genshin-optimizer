@@ -1,11 +1,10 @@
-import { faCalculator, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Button, CardContent, Divider, Grid, Skeleton, Typography } from '@mui/material';
 import i18next from 'i18next';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import CardDark from '../Components/Card/CardDark';
 import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
 import SortByButton from '../Components/SortByButton';
@@ -115,18 +114,14 @@ export default function CharacterInventory(props) {
             <CharacterCard
               characterKey={charKey}
               onClick={editCharacter}
-              footer={<><Divider /><Grid container spacing={1} sx={{ py: 1, px: 2 }}>
-                <Grid item>
-                  <Button size="small" component={Link} to={{
-                    pathname: "/build",
-                    characterKey: charKey
-                  } as any} startIcon={<FontAwesomeIcon icon={faCalculator} />}>Build</Button>
-                </Grid>
-                <Grid item flexGrow={1} />
-                <Grid item>
-                  <Button size="small" color="error" startIcon={<FontAwesomeIcon icon={faTrash} />} onClick={() => deleteCharacter(charKey)}>Delete</Button>
-                </Grid>
-              </Grid></>}
+              footer={<><Divider /><Box sx={{ py: 1, px: 2, display: "flex", gap: 1, justifyContent: "space-between" }}>
+                <Box></Box>
+                {/* <Button size="small" component={Link} to={{
+                  pathname: "/build",
+                  characterKey: charKey
+                } as any} startIcon={<FontAwesomeIcon icon={faCalculator} />}>Build</Button> */}
+                <Button size="small" color="error" startIcon={<FontAwesomeIcon icon={faTrash} />} onClick={() => deleteCharacter(charKey)}>Delete</Button>
+              </Box></>}
             />
           </Grid>)}
       </Suspense>
