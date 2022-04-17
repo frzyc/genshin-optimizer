@@ -119,7 +119,7 @@ const dmgFormulas = {
     dmg: dmgNode("atk", datamine.skill.dmg, "skill")
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
+    dmg: dmgNode("hp", datamine.burst.dmg, "burst"),
     heal: customHealNode(sum(
       prod(sum(
         subscript(input.total.burstIndex, datamine.burst.heal_, { key: '_' }),
