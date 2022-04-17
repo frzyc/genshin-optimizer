@@ -109,29 +109,31 @@ function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characte
   const { target: data } = teamData?.[characterKey] ?? {}
   if (!characterSheet) return null
   const rarity = characterSheet.rarity
-  return <CardActionArea onClick={onClick} >
-    <CardLight sx={{ display: "flex", alignItems: "center" }}  >
-      {favorite !== undefined && <Box sx={{ display: "flex", position: "absolute", alignSelf: "start" }}>
-        <IconButton sx={{ p: 0.5 }} onClick={event => { event.stopPropagation(); characterDispatch({ favorite: !favorite }); }} onMouseDown={event => event.stopPropagation()}>
-          {favorite ? <Favorite /> : <FavoriteBorder />}
-        </IconButton>
-      </Box>}
-      <Box component="img" src={characterSheet.thumbImg} sx={{ width: 130, height: "auto" }} className={`grad-${rarity}star`} />
-      <Box sx={{ pl: 1 }}>
-        <Typography><strong>{characterSheet.name}</strong></Typography>
-        {data ? <>
-          <Typography variant="h6"> {characterSheet.elementKey && StatIcon[characterSheet.elementKey]} <ImgIcon src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} />{` `}{CharacterSheet.getLevelString(data.get(input.lvl).value, data.get(input.asc).value)}</Typography>
-          <Typography >
-            <SqBadge color="success">{`C${data.get(input.constellation).value}`}</SqBadge>{` `}
-            <SqBadge color={data.get(input.bonus.auto).value ? "info" : "secondary"}><strong >{data.get(input.total.auto).value}</strong></SqBadge>{` `}
-            <SqBadge color={data.get(input.bonus.skill).value ? "info" : "secondary"}><strong >{data.get(input.total.skill).value}</strong></SqBadge>{` `}
-            <SqBadge color={data.get(input.bonus.burst).value ? "info" : "secondary"}><strong >{data.get(input.total.burst).value}</strong></SqBadge>
-          </Typography>
-        </> : <>
-          <Typography variant="h6"><SqBadge color="primary">NEW</SqBadge></Typography>
-        </>}
-        <small><Stars stars={rarity} colored /></small>
-      </Box>
-    </CardLight>
-  </CardActionArea >
+  return <Box>
+    {favorite !== undefined && <Box display="flex" position="absolute" alignSelf="start" zIndex={1}>
+      <IconButton sx={{ p: 0.5 }} onClick={() => characterDispatch({ favorite: !favorite })}>
+        {favorite ? <Favorite /> : <FavoriteBorder />}
+      </IconButton>
+    </Box>}
+    <CardActionArea onClick={onClick} >
+      <CardLight sx={{ display: "flex", alignItems: "center" }}  >
+        <Box component="img" src={characterSheet.thumbImg} sx={{ width: 130, height: "auto" }} className={`grad-${rarity}star`} />
+        <Box sx={{ pl: 1 }}>
+          <Typography><strong>{characterSheet.name}</strong></Typography>
+          {data ? <>
+            <Typography variant="h6"> {characterSheet.elementKey && StatIcon[characterSheet.elementKey]} <ImgIcon src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} />{` `}{CharacterSheet.getLevelString(data.get(input.lvl).value, data.get(input.asc).value)}</Typography>
+            <Typography >
+              <SqBadge color="success">{`C${data.get(input.constellation).value}`}</SqBadge>{` `}
+              <SqBadge color={data.get(input.bonus.auto).value ? "info" : "secondary"}><strong >{data.get(input.total.auto).value}</strong></SqBadge>{` `}
+              <SqBadge color={data.get(input.bonus.skill).value ? "info" : "secondary"}><strong >{data.get(input.total.skill).value}</strong></SqBadge>{` `}
+              <SqBadge color={data.get(input.bonus.burst).value ? "info" : "secondary"}><strong >{data.get(input.total.burst).value}</strong></SqBadge>
+            </Typography>
+          </> : <>
+            <Typography variant="h6"><SqBadge color="primary">NEW</SqBadge></Typography>
+          </>}
+          <small><Stars stars={rarity} colored /></small>
+        </Box>
+      </CardLight>
+    </CardActionArea >
+  </Box>
 }
