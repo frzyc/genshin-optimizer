@@ -1,9 +1,12 @@
-import { Box, CardActionArea, CardContent, Divider, Grid, Typography } from "@mui/material";
-import { useContext, useMemo, useState } from "react";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, Typography } from "@mui/material";
+import { useContext, useEffect, useMemo, useState } from "react";
 import Assets from "../../Assets/Assets";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
 import { uiInput as input } from "../../Formula";
+import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
+import useForceUpdate from "../../ReactHooks/useForceUpdate";
 import usePromise from "../../ReactHooks/usePromise";
 import useTeamData from "../../ReactHooks/useTeamData";
 import { ICachedCharacter } from "../../Types/character";
@@ -45,13 +48,23 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
 
   const characterSheets = usePromise(CharacterSheet.getAll, [])
 
+  const [favesDirty, setFavesDirty] = useForceUpdate()
+  useEffect(() => database.followAnyArt(setFavesDirty), [database, setFavesDirty])
+
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
-  const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(characterSheets), [characterSheets])
+  const filterConfigs = useMemo(() => characterSheets && favesDirty && characterFilterConfigs(database, characterSheets), [favesDirty, database, characterSheets])
+  const ownedCharacterKeyList = useMemo(() => characterSheets ? [...new Set(allCharacterKeys)].filter(cKey => filter(database._getChar(cKey), characterSheets[cKey])) : [], [database, characterSheets, filter])
   const characterKeyList = useMemo(() => (characterSheets && sortConfigs && filterConfigs) ?
-    [...new Set(allCharacterKeys)].filter(cKey => filter(database._getChar(cKey), characterSheets[cKey]))
-      .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter }, filterConfigs))
-      .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number) : [],
-    [database, characterSheets, filter, elementalFilter, weaponFilter, sortBy, ascending, sortConfigs, filterConfigs])
+    ownedCharacterKeyList
+      .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter, favorite: "yes" }, filterConfigs))
+      .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
+      .concat(
+        ownedCharacterKeyList
+          .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter, favorite: "no" }, filterConfigs))
+          .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
+      )
+    : [],
+    [characterSheets, elementalFilter, weaponFilter, sortBy, ascending, sortConfigs, filterConfigs, ownedCharacterKeyList])
 
   if (!characterSheets) return null
   return <ModalWrapper open={show} onClose={onHide} >
@@ -87,14 +100,22 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
   </ModalWrapper>
 }
 
-function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characterKey: CharacterKey }) {
+function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characterKey: CharacterKey, }) {
   const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
   const teamData = useTeamData(characterKey)
+  const { database } = useContext(DatabaseContext)
+  const characterDispatch = useCharacterReducer(characterKey)
+  const favorite = database._getChar(characterKey)?.favorite
   const { target: data } = teamData?.[characterKey] ?? {}
   if (!characterSheet) return null
   const rarity = characterSheet.rarity
   return <CardActionArea onClick={onClick} >
     <CardLight sx={{ display: "flex", alignItems: "center" }}  >
+      {favorite !== undefined && <Box sx={{ display: "flex", position: "absolute", alignSelf: "start" }}>
+        <IconButton sx={{ p: 0.5 }} onClick={event => { event.stopPropagation(); characterDispatch({ favorite: !favorite }); }} onMouseDown={event => event.stopPropagation()}>
+          {favorite ? <Favorite /> : <FavoriteBorder />}
+        </IconButton>
+      </Box>}
       <Box component="img" src={characterSheet.thumbImg} sx={{ width: 130, height: "auto" }} className={`grad-${rarity}star`} />
       <Box sx={{ pl: 1 }}>
         <Typography><strong>{characterSheet.name}</strong></Typography>

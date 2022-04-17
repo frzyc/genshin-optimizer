@@ -1,4 +1,5 @@
-import { Box, CardActionArea, CardContent, Chip, Grid, Skeleton, Typography } from '@mui/material';
+import { Favorite, FavoriteBorder } from '@mui/icons-material';
+import { Box, CardActionArea, CardContent, Chip, Grid, IconButton, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
 import Assets from '../Assets/Assets';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
@@ -81,7 +82,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   </Suspense>
 }
 function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void }) {
-  const { data, characterSheet } = useContext(DataContext)
+  const { data, characterSheet, character: { favorite }, characterDispatch } = useContext(DataContext)
   const characterKey = data.get(input.charKey).value as CharacterKey
   const characterEle = data.get(input.charEle).value as ElementKey
   const characterLevel = data.get(input.lvl).value
@@ -114,6 +115,11 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
         }
       }}
       width="100%" >
+      <Box sx={{ display: "flex", position: "absolute", zIndex: 2, opacity: 0.7 }}>
+        <IconButton sx={{ p: 0.5 }} onClick={event => { event.stopPropagation(); characterDispatch({ favorite: !favorite }) }} onMouseDown={event => event.stopPropagation()} onTouchStart={event => event.stopPropagation()}>
+          {favorite ? <Favorite /> : <FavoriteBorder />}
+        </IconButton>
+      </Box>
       <Box flexShrink={1} sx={{ maxWidth: { xs: "40%", lg: "40%" } }} alignSelf="flex-end" display="flex" flexDirection="column" zIndex={1}>
         <Box
           component="img"
@@ -164,7 +170,7 @@ function Artifacts() {
     {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) => {
       // Blank artifact slot icon
       if (!art) return <Grid item xs={1}>
-        <CardDark sx={{ display: "flex", flexDirection: "column" }}>
+        <CardDark sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
           <Box sx={{ width: "100%", pb: "100%", position: "relative", }}>
             <Box
               sx={{

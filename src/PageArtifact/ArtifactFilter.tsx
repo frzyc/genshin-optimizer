@@ -21,6 +21,7 @@ import { DatabaseContext } from "../Database/Database"
 import usePromise from "../ReactHooks/usePromise"
 import { ICachedArtifact } from "../Types/artifact"
 import { allArtifactRarities, allSlotKeys, CharacterKey } from "../Types/consts"
+import { characterFilterConfigs } from "../Util/CharacterSort";
 import { FilterOption } from "./ArtifactSort"
 
 export default function ArtifactFilter({ filterOption, filterOptionDispatch, filterDispatch, numShowing, total, }:
@@ -115,6 +116,7 @@ export default function ArtifactFilter({ filterOption, filterOptionDispatch, fil
 function LocationDropdown({ title, onChange, selectedCharacterKey, dropdownProps }) {
   const { database } = useContext(DatabaseContext)
   const characterSheets = usePromise(CharacterSheet.getAll, [])
+  const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
   const { t } = useTranslation(["artifact", "ui"]);
 
   return <DropdownButton fullWidth {...dropdownProps} title={title}>
@@ -143,7 +145,7 @@ function LocationDropdown({ title, onChange, selectedCharacterKey, dropdownProps
       </ListItemText>
     </MenuItem>
     <Divider />
-    {!!characterSheets && CharacterMenuItemArray(characterSheets, database._getCharKeys().sort(), onChange, selectedCharacterKey)}
+    {!!characterSheets && CharacterMenuItemArray(characterSheets, database._getCharKeys().sort(), onChange, selectedCharacterKey, filterConfigs)}
   </DropdownButton>
 }
 

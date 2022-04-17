@@ -1,6 +1,7 @@
 import { faEdit, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Badge, Box, Button, CardContent, CardMedia, Divider, Grid, Typography } from "@mui/material";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import { Badge, Box, Button, CardContent, CardMedia, Divider, Grid, IconButton, Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
 import Assets from "../../Assets/Assets";
 import ArtifactCardNano from "../../Components/Artifact/ArtifactCardNano";
@@ -23,6 +24,7 @@ import { allElementsWithPhy, allSlotKeys, ElementKey } from "../../Types/consts"
 import { range } from "../../Util/Util";
 import CharacterCardNano from "../CharacterCardNano";
 import StatInput from "../StatInput";
+
 export default function CharacterOverviewPane() {
   const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
@@ -47,7 +49,14 @@ export default function CharacterOverviewPane() {
       <CardLight >
         <CardMedia src={characterSheet.cardImg} component="img" width="100%" height="auto" />
         <CardContent>
-          <Typography variant="h5" >{characterSheet.name} <ImgIcon src={Assets.weaponTypes?.[weaponTypeKey]} /> {StatIcon[charEle]} </Typography>
+          <Typography variant="h5" >
+            {characterSheet.name}&nbsp;
+            <ImgIcon sx={{ pr: 0.5 }} src={Assets.weaponTypes?.[weaponTypeKey]} />
+            {StatIcon[charEle]}
+            <IconButton sx={{ p: 0.5, mt: -0.5 }} onClick={() => characterDispatch({ favorite: !character.favorite })}>
+              {character.favorite ? <Favorite /> : <FavoriteBorder />}
+            </IconButton>
+          </Typography>
           <Typography variant="h6"><Stars stars={characterSheet.rarity} colored /></Typography>
           <Typography variant="h5">Lvl. {CharacterSheet.getLevelString(level, ascension)}</Typography>
           <Grid container spacing={1} mt={1}>

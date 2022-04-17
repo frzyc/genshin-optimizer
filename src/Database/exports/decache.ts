@@ -11,11 +11,13 @@ export function removeArtifactCache(artifact: ICachedArtifact): IArtifact {
 export function removeCharacterCache(char: ICachedCharacter): ICharacter {
   const {
     key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditional,
-    bonusStats, enemyOverride, talent, infusionAura, constellation, buildSettings, team, compareData
+    bonusStats, enemyOverride, talent, infusionAura, constellation, buildSettings, team,
+    compareData, favorite
   } = char
   const result: ICharacter = {
     key: characterKey, level, ascension, hitMode, reactionMode, conditional,
-    bonusStats, enemyOverride, talent, infusionAura, constellation, buildSettings, team, compareData
+    bonusStats, enemyOverride, talent, infusionAura, constellation, buildSettings, team,
+    compareData, favorite
   }
   if (elementKey) result.elementKey = elementKey
   return result
