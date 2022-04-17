@@ -114,7 +114,7 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
         }
       }}
       width="100%" >
-      <Box sx={{ display: "flex", position: "absolute" }}>
+      <Box display="flex" position="absolute" zIndex={2}>
         <IconButton sx={{ p: 0.5 }} onClick={event => { event.stopPropagation(); characterDispatch({ favorite: !favorite }) }} onMouseDown={event => { event.stopPropagation() }} onTouchStart={event => { event.stopPropagation() }}>
           {favorite ? <Favorite /> : <FavoriteBorder />}
         </IconButton>
