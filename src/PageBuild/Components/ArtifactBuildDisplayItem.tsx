@@ -78,7 +78,7 @@ export default function ArtifactBuildDisplayItem({ index, compareBuild, disabled
           </Grid>
           {allSlotKeys.map(slotKey =>
             <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >
-              <ArtifactCardNano showLocation artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} onClick={() => {
+              <ArtifactCardNano showLocation slotKey={slotKey} artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} onClick={() => {
                 const oldId = character.equippedArtifacts[slotKey]
                 const newId = data.get(input.art[slotKey].id).value!
                 setNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })

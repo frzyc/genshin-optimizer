@@ -1,10 +1,9 @@
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Lock, LockOpen } from "@mui/icons-material"
-import { Box, Button, ButtonGroup, CardActionArea, CardContent, CardHeader, CardMedia, Grid, IconButton, Skeleton, Typography } from "@mui/material"
+import { Box, Button, ButtonGroup, CardActionArea, CardContent, CardHeader, CardMedia, IconButton, Skeleton, Typography } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import Assets from "../Assets/Assets"
-import CharacterSheet from "../Data/Characters/CharacterSheet"
 import CardLight from "../Components/Card/CardLight"
 import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton'
 import LocationName from "../Components/Character/LocationName"
@@ -12,15 +11,16 @@ import ConditionalWrapper from "../Components/ConditionalWrapper"
 import ImgIcon from "../Components/Image/ImgIcon"
 import { Stars } from "../Components/StarDisplay"
 import StatIcon from "../Components/StatIcon"
+import CharacterSheet from "../Data/Characters/CharacterSheet"
 import { ascensionMaxLevel } from "../Data/LevelData"
+import WeaponSheet from "../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../Database/Database"
 import { uiInput as input } from "../Formula"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
+import KeyMap, { valueString } from "../KeyMap"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
-import KeyMap, { valueString } from "../KeyMap"
 import { CharacterKey } from "../Types/consts"
-import WeaponSheet from "../Data/Weapons/WeaponSheet"
 
 type WeaponCardProps = { weaponId: string, onClick?: (weaponId: string) => void, onEdit?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, canEquip?: boolean }
 export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEquip = false }: WeaponCardProps) {
@@ -87,25 +87,17 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
         </CardContent>
         {/* grow to fill the 100% heigh */}
         <Box flexGrow={1} />
-        <CardContent sx={{ py: 1 }}>
-          <Grid container sx={{ flexWrap: "nowrap" }} >
-            <Grid item xs="auto" flexShrink={1}>
-              {canEquip ? <CharacterDropdownButton size="small" noUnselect inventory value={location} onChange={equipOnChar} filter={filter} /> : <LocationName location={location} />}
-            </Grid>
-            <Grid item flexGrow={1} sx={{ mr: 1 }} />
-            <Grid item xs="auto">
-              <ButtonGroup sx={{ height: "100%" }}>
-                {!!onEdit && <Button color="info" size="small" onClick={() => onEdit(id)} >
-                  <FontAwesomeIcon icon={faEdit} className="fa-fw" />
-                </Button>}
-                {!!onDelete && <Button color="error" size="small" onClick={() => onDelete(id)} disabled={!!location || lock} >
-                  <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
-                </Button>}
-              </ButtonGroup>
-            </Grid>
-          </Grid>
-        </CardContent>
-
+        <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between" }}>
+          {canEquip ? <CharacterDropdownButton size="small" noUnselect inventory value={location} onChange={equipOnChar} filter={filter} /> : <LocationName location={location} />}
+          <ButtonGroup>
+            {!!onEdit && <Button color="info" onClick={() => onEdit(id)} >
+              <FontAwesomeIcon icon={faEdit} className="fa-fw" />
+            </Button>}
+            {!!onDelete && <Button color="error" onClick={() => onDelete(id)} disabled={!!location || lock} >
+              <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
+            </Button>}
+          </ButtonGroup>
+        </Box>
       </CardLight>
     </ConditionalWrapper>
   </Suspense>

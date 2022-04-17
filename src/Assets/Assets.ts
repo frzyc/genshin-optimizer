@@ -12,8 +12,26 @@ import advice from './Item_Wanderer\'s_Advice.png'
 import wit from './Item_Hero\'s_Wit.png'
 import experience from './Item_Adventurer\'s_Experience.png'
 
+import team1 from './icon_team_1.png'
+import team2 from './icon_team_2.png'
+import team3 from './icon_team_3.png'
+import team4 from './icon_team_4.png'
+
+import flower from './icon_slot_flower.png'
+import plume from './icon_slot_plume.png'
+import sands from './icon_slot_sands.png'
+import goblet from './icon_slot_goblet.png'
+import circlet from './icon_slot_circlet.png'
+
 const Assets = {
   weaponTypes: { bow, catalyst, claymore, polearm, sword },
+  slot: {
+    flower,
+    plume,
+    sands,
+    goblet,
+    circlet,
+  },
   resin: {
     fragile,
     condensed
@@ -22,6 +40,12 @@ const Assets = {
     advice,
     wit,
     experience,
-  }
+  },
+  team: {
+    team1,
+    team2,
+    team3,
+    team4,
+  },
 };
 export default Assets;

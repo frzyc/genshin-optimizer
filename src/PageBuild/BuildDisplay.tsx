@@ -11,7 +11,6 @@ import ArtifactLevelSlider from '../Components/Artifact/ArtifactLevelSlider';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardLight from '../Components/Card/CardLight';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
-// import InfoComponent from '../Components/InfoComponent';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import StatFilterCard from '../Components/StatFilterCard';
 import CharacterSheet from '../Data/Characters/CharacterSheet';
@@ -49,8 +48,6 @@ import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
 
-// const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
-
 function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
   switch (action.type) {
     case 'mainStatKey': {
@@ -79,6 +76,7 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
   }
   return { ...state, ...action }
 }
+// TODO: use build display state for global settings, like priority list
 // function initialBuildDisplayState(): {
 //   characterKey: CharacterKey | ""
 // } {
@@ -114,7 +112,6 @@ export default function BuildDisplay() {
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
   const compareData = character?.compareData ?? false
 
-  const noCharacter = useMemo(() => !database._getCharKeys().length, [database])
   const noArtifact = useMemo(() => !database._getArts().length, [database])
 
   const buildSettingsDispatch = useCallback((action) =>
@@ -343,17 +340,6 @@ export default function BuildDisplay() {
   }, [data, characterSheet, character, teamData, characterDispatch, mainStatAssumptionLevel])
 
   return <Box display="flex" flexDirection="column" gap={1} sx={{ my: 1 }}>
-    {/* TODO: move the information from the info panel into the UI on tooltips */}
-    {/* <InfoComponent
-      pageKey="buildPage"
-      modalTitle="Character Management Page Guide"
-      text={["For self-infused attacks, like Noelle's Sweeping Time, enable the skill in the character talent page.",
-        "You can compare the difference between equipped artifacts and generated builds.",
-        "Rainbow builds can sometimes be \"optimal\". Good substat combinations can sometimes surpass set effects.",
-        "The more complex the formula, the longer the generation time.",]}
-    ><InfoDisplay /></InfoComponent> */}
-    {/* TODO: REMOVE */}
-    {noCharacter && <Alert severity="error" variant="filled"> Opps! It looks like you haven't added a character to GO yet! You should go to the <Link component={RouterLink} to="/character">Characters</Link> page and add some!</Alert>}
     {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
     {/* Build Generator Editor */}
     {dataContext && <DataContext.Provider value={dataContext}>
@@ -366,6 +352,26 @@ export default function BuildDisplay() {
         </Grid>
 
         {/* 2 */}
+        <Grid item xs={12} sm={6} lg={3}>
+          <CardLight>
+            <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between", flexWrap: "wrap", alignItems: "center" }} >
+              <Typography>Main Stat</Typography>
+              <BootstrapTooltip placement="top" title={<Typography><strong>Level Assumption</strong> changes mainstat value to be at least a specific level. Does not change substats.</Typography>}>
+                <span>
+                  <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={mainStatAssumptionLevel => buildSettingsDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
+                </span>
+              </BootstrapTooltip>
+            </CardContent>
+            {/* main stat selector */}
+            <MainStatSelectionCard
+              mainStatKeys={mainStatKeys}
+              onChangeMainStatKey={onChangeMainStatKey}
+              disabled={generatingBuilds}
+            />
+          </CardLight>
+        </Grid>
+
+        {/* 3 */}
         <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
           <BonusStatsCard />
           {/*Minimum Final Stat Filter */}
@@ -404,38 +410,13 @@ export default function BuildDisplay() {
           </CardLight>
         </Grid>
 
-        {/* 3 */}
+        {/* 4 */}
         <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
           <ArtifactConditionalCard disabled={generatingBuilds} />
 
           {/* Artifact set pickers */}
           {setFilters.map((setFilter, index) => (index <= setFilters.filter(s => s.key).length) && <ArtifactSetPicker key={index} index={index} setFilters={setFilters}
             disabled={generatingBuilds} onChange={(index, key, num) => buildSettingsDispatch({ type: 'setFilter', index, key, num })} />)}
-
-        </Grid>
-
-        {/* 4 */}
-        <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
-          <CardLight>
-            <CardContent >
-              <Typography>Artifact Main Stat</Typography>
-            </CardContent>
-          </CardLight>
-          <CardLight>
-            <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }} >
-              <BootstrapTooltip placement="top" title={<Typography><strong>Level Assumption</strong> changes mainstat value to be at least a specific level. Does not change substats.</Typography>}>
-                <span>
-                  <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={mainStatAssumptionLevel => buildSettingsDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
-                </span>
-              </BootstrapTooltip>
-            </CardContent>
-          </CardLight>
-          {/* main stat selector */}
-          {characterKey && <MainStatSelectionCard
-            mainStatKeys={mainStatKeys}
-            onChangeMainStatKey={onChangeMainStatKey}
-            disabled={generatingBuilds}
-          />}
         </Grid>
 
       </Grid>
