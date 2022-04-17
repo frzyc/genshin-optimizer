@@ -16,23 +16,25 @@ import ConditionalWrapper from "../ConditionalWrapper";
 import ImgIcon from "../Image/ImgIcon";
 import StatIcon from "../StatIcon";
 import { artifactSlotIcon } from '../Artifact/SlotNameWIthIcon'
+import { SlotKey } from "../../Types/consts";
+import Assets from "../../Assets/Assets";
 
 type Data = {
   artifactId?: string,
+  slotKey: SlotKey,
   mainStatAssumptionLevel?: number,
   onClick?: () => void,
   showLocation?: boolean,
   BGComponent?: React.ElementType
 }
 
-export default function ArtifactCardNano({ artifactId, mainStatAssumptionLevel = 0, showLocation = false, onClick, BGComponent = CardDark }: Data) {
+export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainStatAssumptionLevel = 0, showLocation = false, onClick, BGComponent = CardDark }: Data) {
   const art = useArtifact(artifactId)
   const sheet = usePromise(ArtifactSheet.get(art?.setKey), [art])
-  const actionWrapperFunc = useCallback(
-    children => <CardActionArea onClick={onClick}>{children}</CardActionArea>,
-    [onClick],
-  )
-  if (!art) return null
+  const actionWrapperFunc = useCallback(children => <CardActionArea onClick={onClick}>{children}</CardActionArea>, [onClick],)
+  if (!art) return <BGComponent sx={{ display: "flex", height: "100%", alignItems: "center", justifyContent: "center" }}>
+    <Box component="img" src={Assets.slot[pSlotKey]} sx={{ width: "25%", height: "auto", opacity: 0.7 }} />
+  </BGComponent>
 
   const { slotKey, rarity, level, mainStatKey, substats, location } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
