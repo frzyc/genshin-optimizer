@@ -49,7 +49,7 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
   const characterSheets = usePromise(CharacterSheet.getAll, [])
 
   const [favesDirty, setFavesDirty] = useForceUpdate()
-  useEffect(() => database.followAnyArt(setFavesDirty), [database, setFavesDirty])
+  useEffect(() => database.followAnyChar(setFavesDirty), [database, setFavesDirty])
 
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
   const filterConfigs = useMemo(() => characterSheets && favesDirty && characterFilterConfigs(database, characterSheets), [favesDirty, database, characterSheets])
