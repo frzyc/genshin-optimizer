@@ -169,7 +169,7 @@ function Artifacts() {
   return <Grid direction="row" container spacing={0.75} columns={5}>
     {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) => {
       // Blank artifact slot icon
-      if (!art) return <Grid item xs={1}>
+      if (!art) return <Grid item key={key} xs={1}>
         <CardDark sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
           <Box sx={{ width: "100%", pb: "100%", position: "relative", }}>
             <Box
@@ -193,7 +193,7 @@ function Artifacts() {
       // Actual artifact icon + info
       const { setKey, slotKey, mainStatKey, rarity, level, mainStatVal } = art
       const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
-      return <Grid item xs={1}>
+      return <Grid item key={key} xs={1}>
         <CardDark sx={{ display: "flex", flexDirection: "column" }}>
           <Box
             component="img"
