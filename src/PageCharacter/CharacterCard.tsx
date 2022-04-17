@@ -61,6 +61,11 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     <DataContext.Provider value={dataContextObj}>
       <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+        <Box sx={{ display: "flex", position: "absolute", zIndex: 2, opacity: 0.7 }}>
+          <IconButton sx={{ p: 0.5 }} onClick={event => characterDispatch({ favorite: !character.favorite })}>
+            {character.favorite ? <Favorite /> : <FavoriteBorder />}
+          </IconButton>
+        </Box>
         <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >
           <Header onClick={!onClick ? onClickHeader : undefined} />
           <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
@@ -82,7 +87,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   </Suspense>
 }
 function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void }) {
-  const { data, characterSheet, character: { favorite }, characterDispatch } = useContext(DataContext)
+  const { data, characterSheet } = useContext(DataContext)
   const characterKey = data.get(input.charKey).value as CharacterKey
   const characterEle = data.get(input.charEle).value as ElementKey
   const characterLevel = data.get(input.lvl).value
@@ -115,11 +120,6 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
         }
       }}
       width="100%" >
-      <Box sx={{ display: "flex", position: "absolute", zIndex: 2, opacity: 0.7 }}>
-        <IconButton sx={{ p: 0.5 }} onClick={event => { event.stopPropagation(); characterDispatch({ favorite: !favorite }) }} onMouseDown={event => event.stopPropagation()} onTouchStart={event => event.stopPropagation()}>
-          {favorite ? <Favorite /> : <FavoriteBorder />}
-        </IconButton>
-      </Box>
       <Box flexShrink={1} sx={{ maxWidth: { xs: "40%", lg: "40%" } }} alignSelf="flex-end" display="flex" flexDirection="column" zIndex={1}>
         <Box
           component="img"

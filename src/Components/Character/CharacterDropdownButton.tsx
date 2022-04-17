@@ -59,10 +59,10 @@ export function CharacterMenuItemArray(characterSheets: StrictDict<CharacterKey,
   if (!filterConfigs) return []
   const faves = characterKeys
     .filter(filterFunction({ element: "", weaponType: "", favorite: "yes" }, filterConfigs))
-    .map(characterKey => <CharMenuItem {...{ characterSheets, characterKey, selectedCharacterKey, onChange, favorite: true }} />)
+    .map(characterKey => <CharMenuItem key={characterKey} {...{ characterSheets, characterKey, selectedCharacterKey, onChange, favorite: true }} />)
   const nonFaves = characterKeys
     .filter(filterFunction({ element: "", weaponType: "", favorite: "no" }, filterConfigs))
-    .map(characterKey => <CharMenuItem {...{ characterSheets, characterKey, selectedCharacterKey, onChange, favorite: false }} />)
+    .map(characterKey => <CharMenuItem key={characterKey} {...{ characterSheets, characterKey, selectedCharacterKey, onChange, favorite: false }} />)
 
   return faves.concat(nonFaves)
 }
