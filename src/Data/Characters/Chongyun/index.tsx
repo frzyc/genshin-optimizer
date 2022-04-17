@@ -2,7 +2,7 @@ import { CharacterData } from 'pipeline'
 import { input, target } from '../../../Formula'
 import { constant, equal, equalStr, greaterEq, infoMut, lookup, percent, prod } from '../../../Formula/utils'
 import { CharacterKey, ElementKey, WeaponTypeKey } from '../../../Types/consts'
-import { cond, trans } from '../../SheetUtil'
+import { cond, st, trans } from '../../SheetUtil'
 import CharacterSheet, { conditionalHeader, ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
@@ -99,13 +99,15 @@ const dmgFormulas = {
   }
 }
 
-const nodeAsc1 = greaterEq(input.asc, 1, percent(0.08))
 const nodeAsc4 = greaterEq(input.asc, 4,
   equal(condAsc4, "hit",
     -0.10
   )
 )
 const activeInArea = equal("activeInArea", condSkill, equal(input.activeCharKey, target.charKey, 1))
+
+const nodeAsc1Disp = greaterEq(input.asc, 1, percent(0.08))
+const nodeAsc1 = equal(activeInArea, 1, nodeAsc1Disp)
 
 const correctWep =
   lookup(target.weaponType,
@@ -199,10 +201,9 @@ const sheet: ICharacterSheet = {
         teamBuff: true,
         value: condSkill,
         path: condSkillPath,
-        name: trm("activeCharField"),
+        name: st("activeCharField"),
         states: {
           activeInArea: {
-            name: "Frost Field",
             fields: [{
               text: trm("infusion"),
               variant: elementKey
@@ -211,7 +212,7 @@ const sheet: ICharacterSheet = {
               value: datamine.skill.infusionDuration,
               unit: "s"
             }, {
-              node: nodeAsc1
+              node: infoMut(nodeAsc1Disp, { key: "atkSPD_" })
             }]
           },
         }
@@ -231,7 +232,7 @@ const sheet: ICharacterSheet = {
             text: tr("burst.skillParams.2"),
             value: datamine.burst.enerCost,
           }, {
-            text: "Spirit Blades Summoned",
+            text: trm("blades"),
             value: data => data.get(input.constellation).value < 6 ? 3 : 4
           }]
         }]

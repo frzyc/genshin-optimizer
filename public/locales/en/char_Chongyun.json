@@ -1,8 +1,8 @@
 {
-  "activeCharField": "Sword, Claymore, and Polearm wielding characters within the Frost Field",
   "infusion": "Sword, Claymore and Polearm Cryo Infusion",
   "passive2": "Summoned Sword DMG",
-  "asc4Cond": "Opponents hit by Rimechase Blade",
-  "constellation1":"Ice Blade DMG",
-  "constellation6":"Enemy with a lower percentage of their Max HP remaining "
+  "asc4Cond": "Opponents hit by Rimechaser Blade",
+  "constellation1": "Ice Blade DMG",
+  "constellation6": "Enemy with a lower percentage of their Max HP remaining",
+  "blades": "Spirit Blades summoned"
 }
