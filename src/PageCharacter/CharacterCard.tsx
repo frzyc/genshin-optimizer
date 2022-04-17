@@ -270,7 +270,7 @@ function WeaponStat({ node }: { node: NodeDisplay }) {
 function Teammate({ teammate }) {
   const { database } = useContext(DatabaseContext)
   const teammateSheet = usePromise(CharacterSheet.get(teammate ?? ""), [teammate])
-  const character = useMemo(() => database._getChar(teammate ?? ""), [database])
+  const character = useMemo(() => database._getChar(teammate ?? ""), [teammate, database])
   if (teammateSheet && character) {
     return <Grid item key={teammate} xs={1} height="100%">
       <CardDark sx={{ height: "100%", maxWidth: 128 }}>

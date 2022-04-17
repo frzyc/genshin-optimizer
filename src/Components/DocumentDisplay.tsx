@@ -16,7 +16,7 @@ export default function DocumentDisplay({ sections, teamBuffOnly }: { sections: 
     if (s.canShow && !s.canShow(data)) return null
     // If we are showing only teambuffs, and this section is not a teambuff,
     // and does not contain a teambuff conditional, return null
-    if (teamBuffOnly && !s.teamBuff && !s.conditional?.teamBuff
+    if ((teamBuffOnly && !s.teamBuff && !s.conditional?.teamBuff)
       // Or there is a teambuff with conditional, but we can't show the conditional, return null
       || !(!!s.conditional && s.conditional.canShow ? data.get(s.conditional.canShow).value : true)
     ) return null
