@@ -9,6 +9,7 @@ import ColorText from "../../Components/ColoredText";
 import ConditionalWrapper from "../../Components/ConditionalWrapper";
 import DocumentDisplay from "../../Components/DocumentDisplay";
 import DropdownButton from "../../Components/DropdownMenu/DropdownButton";
+import { NodeFieldDisplay } from "../../Components/FieldDisplay";
 import StatIcon from "../../Components/StatIcon";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import { TalentSheetElementKey } from "../../Types/character";
@@ -93,14 +94,6 @@ export default function CharacterTalentPane() {
     </Grid>
   </>
 }
-const ReactionComponents = {
-  superconduct: SuperConductCard,
-  electrocharged: ElectroChargedCard,
-  overloaded: OverloadedCard,
-  pyroSwirl: SwirlCard,// TODO: Assumes if character can pyro swirl, it can swirl every element. This behaviour will need to be changed for characters that can only swirl specific elements.
-  shattered: ShatteredCard,
-  crystallize: CrystallizeCard,
-}
 function ReactionDisplay() {
   const { data } = useContext(DataContext)
   const reaction = data.getDisplay().reaction as { [key: string]: NodeDisplay }
@@ -108,77 +101,15 @@ function ReactionDisplay() {
     <CardContent>
       <Grid container spacing={1}>
         {Object.entries(reaction).map(([key, node]) => {
-          const Ele = ReactionComponents[key]
-          if (!Ele) return null
-          return <Grid item key={key}><Ele node={node} /></Grid>
+          return <Grid item key={key}>
+            <CardDark><CardContent sx={{ p: 1, "&:last-child": { pb: 1 } }}>
+              <NodeFieldDisplay node={node} />
+            </CardContent></CardDark>
+          </Grid>
         })}
       </Grid>
     </CardContent>
   </CardLight>
-}
-function SuperConductCard({ node }: { node: NodeDisplay }) {
-  return <CardDark><CardContent sx={{ p: 1 }}>
-    <Typography color="superconduct.main">{KeyMap.get(node.info.key!)} {StatIcon.electro}+{StatIcon.cryo} <strong>{valueString(node.value, node.unit)}</strong></Typography>
-  </CardContent></CardDark>
-}
-function ElectroChargedCard({ node }: { node: NodeDisplay }) {
-  return <CardDark><CardContent sx={{ p: 1 }}>
-    <Typography color="electrocharged.main">{KeyMap.get(node.info.key!)} {StatIcon.electro}+{StatIcon.hydro} <strong>{valueString(node.value, node.unit)}</strong></Typography>
-  </CardContent></CardDark>
-}
-function OverloadedCard({ node }: { node: NodeDisplay }) {
-  return <CardDark><CardContent sx={{ p: 1 }}>
-    <Typography color="overloaded.main" >{KeyMap.get(node.info.key!)} {StatIcon.electro}+{StatIcon.pyro} <strong>{valueString(node.value, node.unit)}</strong></Typography>
-  </CardContent></CardDark>
-}
-
-const swirlEleToDisplay = {
-  "pyro": <span><ColorText color="pyro">{KeyMap.get("pyro_swirl_hit")}</ColorText> {StatIcon.pyro} + {StatIcon.anemo}</span>,
-  "electro": <span><ColorText color="electro">{KeyMap.get("electro_swirl_hit")}</ColorText> {StatIcon.electro}+{StatIcon.anemo}</span>,
-  "cryo": <span><ColorText color="cryo">{KeyMap.get("cryo_swirl_hit")}</ColorText> {StatIcon.cryo} + {StatIcon.anemo}</span>,
-  "hydro": <span><ColorText color="hydro">{KeyMap.get("hydro_swirl_hit")}</ColorText> {StatIcon.hydro} + {StatIcon.anemo}</span>
-} as const
-
-function SwirlCard() {
-  const [ele, setele] = useState(Object.keys(swirlEleToDisplay)[0])
-  const { data } = useContext(DataContext)
-  const node = data.getDisplay().reaction![`${ele}Swirl`]!
-  return <CardDark sx={{ display: "flex" }}>
-    <DropdownButton size="small" title={swirlEleToDisplay[ele]} color="success">
-      {Object.entries(swirlEleToDisplay).map(([key, element]) => <MenuItem key={key} selected={ele === key} disabled={ele === key} onClick={() => setele(key)}>{element}</MenuItem>)}
-    </DropdownButton>
-    <Box sx={{ color: `${ele}.main`, p: 1 }}><strong>{valueString(node.value, node.unit)}</strong></Box>
-  </CardDark>
-}
-
-function ShatteredCard({ node }: { node: NodeDisplay }) {
-  const information = <BootstrapTooltip placement="top" title={<Typography>Claymores, Plunging Attacks and <ColorText color="geo">Geo DMG</ColorText></Typography>}>
-    <Box component="span" sx={{ cursor: "help" }}><FontAwesomeIcon icon={faQuestionCircle} /></Box>
-  </BootstrapTooltip>
-
-  return <CardDark><CardContent sx={{ p: 1 }}>
-    <ColorText color="shattered">{KeyMap.get(node.info.key!)} {StatIcon.hydro}+{StatIcon.cryo}+ <ColorText color="physical"><small>Heavy Attack{information} </small></ColorText> <strong>{valueString(node.value, node.unit)}</strong></ColorText>
-  </CardContent></CardDark>
-}
-
-const crystallizeEleToDisplay = {
-  "geo": <ColorText color="crystallize">{KeyMap.get("crystallize")} {StatIcon.electro}/{StatIcon.hydro}/{StatIcon.pyro}/{StatIcon.cryo}+{StatIcon.geo}</ColorText>,
-  "pyro": <span><ColorText color="pyro">{KeyMap.get("pyro_crystallize")}</ColorText> {StatIcon.pyro}+{StatIcon.geo}</span>,
-  "electro": <span><ColorText color="electro">{KeyMap.get("electro_crystallize")}</ColorText> {StatIcon.electro}+{StatIcon.geo}</span>,
-  "cryo": <span><ColorText color="cryo">{KeyMap.get("cryo_crystallize")}</ColorText> {StatIcon.cryo}+{StatIcon.geo}</span>,
-  "hydro": <span><ColorText color="hydro">{KeyMap.get("hydro_crystallize")}</ColorText> {StatIcon.hydro}+{StatIcon.geo}</span>
-} as const
-
-function CrystallizeCard() {
-  const [ele, setele] = useState(Object.keys(crystallizeEleToDisplay)[0])
-  const { data } = useContext(DataContext)
-  const node = ele === "geo" ? data.getDisplay().reaction!.crystallize! : data.getDisplay().reaction![`${ele}Crystallize`]!
-  return <CardDark sx={{ display: "flex" }}>
-    <DropdownButton size="small" title={crystallizeEleToDisplay[ele]} color="success">
-      {Object.entries(crystallizeEleToDisplay).map(([key, element]) => <MenuItem key={key} selected={ele === key} disabled={ele === key} onClick={() => setele(key)}>{element}</MenuItem>)}
-    </DropdownButton>
-    <Box sx={{ color: `${ele}.main`, p: 1 }}><strong>{valueString(node.value, node.unit)}</strong></Box>
-  </CardDark>
 }
 
 const talentLimits = [1, 1, 2, 4, 6, 8, 10]
