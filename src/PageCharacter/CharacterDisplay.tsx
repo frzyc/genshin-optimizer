@@ -17,7 +17,7 @@ export default function CharacterDisplay() {
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
     {characterKey && <React.Suspense fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}>
       <CharacterDisplayCard characterKey={characterKey} onClose={() => history.push("/character")}
-        footer={<CharDisplayFooter onClose={() => history.push("/overview")} characterKey={characterKey} />} tabName={tab}
+        footer={<CharDisplayFooter onClose={() => history.push("/character")} characterKey={characterKey} />} tabName={tab}
       />
     </React.Suspense>}
   </Box>
