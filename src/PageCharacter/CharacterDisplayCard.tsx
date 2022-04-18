@@ -92,7 +92,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
 
   return <CardDark >
     <DataContext.Provider value={dataContextValue}>
-      <CardContent sx={{ display: "flex", flexDirection:"column", gap: 1 }}>
+      <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
         <Grid container spacing={1}>
           <Grid item>
             <CharSelectDropdown />
@@ -119,6 +119,12 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
             onChange={onTab}
             value={tab}
             variant="fullWidth"
+            sx={{
+              "& .MuiTab-root:hover": {
+                transition: "background-color 0.5s ease",
+                backgroundColor: "rgba(255,255,255,0.1)"
+              },
+            }}
           >
             <Tab value="character" label="Character" icon={<Person />} />
             <Tab value="talent" label="Talents" icon={<FactCheck />} />
