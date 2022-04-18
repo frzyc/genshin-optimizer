@@ -1,15 +1,15 @@
 import { Box, Grid, Typography } from '@mui/material';
-import Assets from '../../Assets/Assets';
-import BootstrapTooltip from '../BootstrapTooltip';
-import CardDark from '../Card/CardDark';
-import ImgIcon from "../Image/ImgIcon";
-import SqBadge from '../SqBadge';
-import StatIcon from "../StatIcon";
-import CharacterSheet from '../../Data/Characters/CharacterSheet';
-import { ascensionMaxLevel } from '../../Data/LevelData';
-import useCharacter from '../../ReactHooks/useCharacter';
-import usePromise from '../../ReactHooks/usePromise';
-import { CharacterKey, ElementKey } from '../../Types/consts';
+import Assets from '../Assets/Assets';
+import BootstrapTooltip from '../Components/BootstrapTooltip';
+import CardDark from '../Components/Card/CardDark';
+import ImgIcon from "../Components/Image/ImgIcon";
+import SqBadge from '../Components/SqBadge';
+import StatIcon from "../Components/StatIcon";
+import CharacterSheet from '../Data/Characters/CharacterSheet';
+import { ascensionMaxLevel } from '../Data/LevelData';
+import useCharacter from '../ReactHooks/useCharacter';
+import usePromise from '../ReactHooks/usePromise';
+import { CharacterKey, ElementKey } from '../Types/consts';
 
 export default function CharacterCardPico({ characterKey = "", index }: { characterKey: CharacterKey | "", index: number }) {
   const teammateSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])

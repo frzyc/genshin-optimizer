@@ -6,7 +6,7 @@ import { artifactSlotIcon } from '../Components/Artifact/SlotNameWIthIcon';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
-import CharacterCardPico from '../Components/Character/CharacterCardPico';
+import CharacterCardPico from './CharacterCardPico';
 import ConditionalWrapper from '../Components/ConditionalWrapper';
 import { NodeFieldDisplay } from '../Components/FieldDisplay';
 import ImgIcon from '../Components/Image/ImgIcon';

@@ -6,7 +6,7 @@ import React, { useContext, useState } from "react";
 import Assets from "../../Assets/Assets";
 import ArtifactCardNano from "../../Components/Artifact/ArtifactCardNano";
 import CardLight from "../../Components/Card/CardLight";
-import CharacterCardPico from "../../Components/Character/CharacterCardPico";
+import CharacterCardPico from "../CharacterCardPico";
 import ColorText from "../../Components/ColoredText";
 import { NodeFieldDisplay } from "../../Components/FieldDisplay";
 import ImgIcon from "../../Components/Image/ImgIcon";
