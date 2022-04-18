@@ -1,7 +1,7 @@
 import { faEdit, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
-import { Badge, Box, Button, CardContent, CardMedia, Divider, Grid, IconButton, Typography } from "@mui/material";
+import { Badge, Box, Button, CardContent, Divider, Grid, IconButton, Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
 import Assets from "../../Assets/Assets";
 import ArtifactCardNano from "../../Components/Artifact/ArtifactCardNano";
@@ -47,7 +47,7 @@ export default function CharacterOverviewPane() {
     <Grid item xs={8} md={2.5}  >
       {/* Image card with star and name and level */}
       <CardLight >
-        <CardMedia src={characterSheet.cardImg} component="img" width="100%" height="auto" />
+        <Box src={characterSheet.cardImg} component="img" width="100%" height="auto" />
         <CardContent>
           <Typography variant="h5" >
             {characterSheet.name}&nbsp;

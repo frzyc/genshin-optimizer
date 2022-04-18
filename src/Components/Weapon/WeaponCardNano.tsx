@@ -1,4 +1,4 @@
-import { Box, CardActionArea, CardMedia, Chip, Grid, Typography } from "@mui/material";
+import { Box, CardActionArea, Chip, Grid, Typography } from "@mui/material";
 import { useCallback, useMemo } from "react";
 import Assets from "../../Assets/Assets";
 import WeaponSheet from "../../Data/Weapons/WeaponSheet";
@@ -36,9 +36,9 @@ export default function WeaponCardNano({ weaponId, onClick, BGComponent = CardDa
         <BootstrapTooltip placement="top" title={<Box>
           <Typography><ImgIcon src={Assets.weaponTypes?.[weaponSheet.weaponType]} /> {weaponSheet?.name}</Typography>
         </Box>} disableInteractive>
-          <CardMedia
+          <Box
             component="img"
-            image={weaponSheet.img}
+            src={weaponSheet.img}
             width="100%"
             height="auto"
           />

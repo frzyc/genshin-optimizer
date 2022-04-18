@@ -1,26 +1,20 @@
-import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, CardActionArea, CardContent, Divider, Grid, MenuItem, Typography, useMediaQuery } from "@mui/material";
-import React, { useCallback, useContext, useMemo, useState } from 'react';
-import BootstrapTooltip from "../../Components/BootstrapTooltip";
+import { useTheme } from "@mui/system";
+import React, { useCallback, useContext, useMemo } from 'react';
 import CardDark from "../../Components/Card/CardDark";
 import CardLight from "../../Components/Card/CardLight";
-import ColorText from "../../Components/ColoredText";
 import ConditionalWrapper from "../../Components/ConditionalWrapper";
 import DocumentDisplay from "../../Components/DocumentDisplay";
 import DropdownButton from "../../Components/DropdownMenu/DropdownButton";
 import { NodeFieldDisplay } from "../../Components/FieldDisplay";
-import StatIcon from "../../Components/StatIcon";
-import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
-import { TalentSheetElementKey } from "../../Types/character";
 import { DataContext } from '../../DataContext';
 import { uiInput as input } from "../../Formula";
-import { ElementKey } from "../../Types/consts";
-import KeyMap, { valueString } from '../../KeyMap'
-import { NodeDisplay } from '../../Formula/uiData'
 import { NumNode } from "../../Formula/type";
+import { NodeDisplay } from '../../Formula/uiData';
+import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
+import { TalentSheetElementKey } from "../../Types/character";
+import { ElementKey } from "../../Types/consts";
 import { range } from "../../Util/Util";
-import { useTheme } from "@mui/system";
 
 const talentSpacing = {
   xs: 12,

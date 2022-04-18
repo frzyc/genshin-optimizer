@@ -1,7 +1,7 @@
 import { faBan, faChartLine, faEdit, faInfoCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Lock, LockOpen } from '@mui/icons-material';
-import { Box, Button, ButtonGroup, CardActions, CardContent, CardMedia, Chip, Grid, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
+import { Box, Button, ButtonGroup, CardActions, CardContent, Chip, Grid, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
 import React, { Suspense, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
@@ -95,9 +95,9 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
         </Box>
         <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>
-          <CardMedia
+          <Box
             component="img"
-            image={sheet?.slotIcons[slotKey] ?? ""}
+            src={sheet?.slotIcons[slotKey] ?? ""}
             width="auto"
             height="100%"
             sx={{ float: "right" }}

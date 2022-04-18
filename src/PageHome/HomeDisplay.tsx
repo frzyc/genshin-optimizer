@@ -2,7 +2,7 @@ import { faDiscord, faGithub, faPatreon, faPaypal, faReact } from "@fortawesome/
 import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { ExpandMore, Scanner } from "@mui/icons-material"
-import { Box, Button, CardContent, CardHeader, CardMedia, Collapse, Grid, Link, Typography } from "@mui/material"
+import { Box, Button, CardContent, CardHeader, Collapse, Grid, Link, Typography } from "@mui/material"
 import { useState } from "react"
 import ReactGA from 'react-ga'
 import { Trans, useTranslation } from 'react-i18next'
@@ -21,7 +21,7 @@ function FeatureCard({ image, title, content, t }) {
 
   return <CardLight >
     <CardContent sx={{ p: 1, pb: 0 }}>
-      <CardMedia component="img" image={image} alt="test" sx={{ width: "100%", height: "auto" }} />
+      <Box component="img" src={image} alt="test" sx={{ width: "100%", height: "auto" }} />
     </CardContent>
     <CardHeader
       action={

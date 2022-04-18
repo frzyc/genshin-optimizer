@@ -1,6 +1,7 @@
 import { BusinessCenter } from "@mui/icons-material";
-import { Box, CardActionArea, CardMedia, Chip, Grid, Typography } from "@mui/material";
+import { Box, CardActionArea, Chip, Grid, Typography } from "@mui/material";
 import { useCallback } from "react";
+import Assets from "../../Assets/Assets";
 import Artifact from "../../Data/Artifacts/Artifact";
 import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
@@ -8,16 +9,15 @@ import KeyMap, { cacheValueString } from "../../KeyMap";
 import useArtifact from "../../ReactHooks/useArtifact";
 import usePromise from "../../ReactHooks/usePromise";
 import { ICachedSubstat } from "../../Types/artifact";
+import { SlotKey } from "../../Types/consts";
 import { clamp } from "../../Util/Util";
+import { artifactSlotIcon } from '../Artifact/SlotNameWIthIcon';
 import BootstrapTooltip from "../BootstrapTooltip";
 import CardDark from "../Card/CardDark";
 import ColorText from "../ColoredText";
 import ConditionalWrapper from "../ConditionalWrapper";
 import ImgIcon from "../Image/ImgIcon";
 import StatIcon from "../StatIcon";
-import { artifactSlotIcon } from '../Artifact/SlotNameWIthIcon'
-import { SlotKey } from "../../Types/consts";
-import Assets from "../../Assets/Assets";
 
 type Data = {
   artifactId?: string,
@@ -65,9 +65,9 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
           <Typography><strong>{sheet?.name}</strong></Typography>
           <Typography>{artifactSlotIcon(art.slotKey)} {sheet?.getSlotName?.(art.slotKey)}</Typography>
         </Box>} disableInteractive>
-          <CardMedia
+          <Box
             component="img"
-            image={sheet?.slotIcons[slotKey] ?? ""}
+            src={sheet?.slotIcons[slotKey] ?? ""}
             width="auto"
             height="100%"
             sx={{ float: "right" }}

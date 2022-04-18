@@ -1,7 +1,7 @@
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Lock, LockOpen } from "@mui/icons-material"
-import { Box, Button, ButtonGroup, CardActionArea, CardContent, CardHeader, CardMedia, IconButton, Skeleton, Typography } from "@mui/material"
+import { Box, Button, ButtonGroup, CardActionArea, CardContent, CardHeader, IconButton, Skeleton, Typography } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import Assets from "../Assets/Assets"
 import CardLight from "../Components/Card/CardLight"
@@ -66,9 +66,9 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
             </Box>
           </Box>
           <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>
-            <CardMedia
+            <Box
               component="img"
-              image={img ?? ""}
+              src={img ?? ""}
               width="auto"
               height="100%"
               sx={{ float: "right" }}
