@@ -1,7 +1,7 @@
 import { faEdit, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
-import { Badge, Box, Button, CardContent, Divider, Grid, IconButton, Typography } from "@mui/material";
+import { Badge, Box, Button, CardActionArea, CardContent, Divider, Grid, IconButton, Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
 import Assets from "../../Assets/Assets";
 import ArtifactCardNano from "../../Components/Artifact/ArtifactCardNano";
@@ -24,10 +24,12 @@ import { TalentSheetElementKey } from "../../Types/character";
 import { allElementsWithPhy, allSlotKeys, ElementKey } from "../../Types/consts";
 import { range } from "../../Util/Util";
 import StatInput from "../StatInput";
+import { useHistory } from "react-router-dom";
 
 export default function CharacterOverviewPane() {
   const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
+  const history = useHistory()
   const charEle = data.get(input.charEle).value as ElementKey
   const weaponTypeKey = characterSheet.weaponTypeKey
   const level = data.get(input.lvl).value
@@ -59,30 +61,32 @@ export default function CharacterOverviewPane() {
           </Typography>
           <Typography variant="h6"><Stars stars={characterSheet.rarity} colored /></Typography>
           <Typography variant="h5">Lvl. {CharacterSheet.getLevelString(level, ascension)}</Typography>
-          <Grid container spacing={1} mt={1}>
-            {(["auto", "skill", "burst"] as TalentSheetElementKey[]).map(tKey =>
-              <Grid item xs={4} key={tKey}>
-                <Badge badgeContent={tlvl[tKey]} color={tBoost[tKey] ? "info" : "secondary"}
-                  overlap="circular"
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'right',
-                  }}
-                  sx={{
-                    width: "100%",
-                    height: "100%",
-                    "& > .MuiBadge-badge": {
-                      fontSize: "1.25em",
-                      padding: ".25em .4em",
-                      borderRadius: ".5em",
-                      lineHeight: 1,
-                      height: "1.25em"
-                    }
-                  }}>
-                  <Box component="img" src={characterSheet.getTalentOfKey(tKey, charEle)?.img} width="100%" height="auto" />
-                </Badge>
-              </Grid>)}
-          </Grid>
+          <CardActionArea sx={{ pb: 1, mb: -1, pr: 1 }} onClick={() => history.push(`/character/${characterKey}/talent`)}>
+            <Grid container spacing={1} mt={1}>
+              {(["auto", "skill", "burst"] as TalentSheetElementKey[]).map(tKey =>
+                <Grid item xs={4} key={tKey}>
+                  <Badge badgeContent={tlvl[tKey]} color={tBoost[tKey] ? "info" : "secondary"}
+                    overlap="circular"
+                    anchorOrigin={{
+                      vertical: 'bottom',
+                      horizontal: 'right',
+                    }}
+                    sx={{
+                      width: "100%",
+                      height: "100%",
+                      "& > .MuiBadge-badge": {
+                        fontSize: "1.25em",
+                        padding: ".25em .4em",
+                        borderRadius: ".5em",
+                        lineHeight: 1,
+                        height: "1.25em"
+                      },
+                    }}>
+                    <Box component="img" src={characterSheet.getTalentOfKey(tKey, charEle)?.img} width="100%" height="auto" />
+                  </Badge>
+                </Grid>)}
+            </Grid>
+          </CardActionArea>
           <Typography sx={{ textAlign: "center", mt: 1 }} variant="h6">{characterSheet.constellationName}</Typography>
           <Grid container spacing={1}>
             {range(1, 6).map(i =>
