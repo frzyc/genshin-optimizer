@@ -90,6 +90,10 @@ export default function CharacterOverviewPane() {
                 <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i}` as TalentSheetElementKey, charEle)?.img}
                   sx={{
                     cursor: "pointer",
+                    ":hover": {
+                      transition: "background-color 0.5s ease",
+                      backgroundColor: "rgba(255,255,255,0.1)"
+                    },
                     ...(constellation >= i ? {} : { filter: "brightness(50%)" })
                   }}
                   width="100%" height="auto"
