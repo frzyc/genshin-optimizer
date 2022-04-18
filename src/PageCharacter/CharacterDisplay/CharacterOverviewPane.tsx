@@ -6,6 +6,7 @@ import React, { useContext, useState } from "react";
 import Assets from "../../Assets/Assets";
 import ArtifactCardNano from "../../Components/Artifact/ArtifactCardNano";
 import CardLight from "../../Components/Card/CardLight";
+import CharacterCardPico from "../../Components/Character/CharacterCardPico";
 import ColorText from "../../Components/ColoredText";
 import { NodeFieldDisplay } from "../../Components/FieldDisplay";
 import ImgIcon from "../../Components/Image/ImgIcon";
@@ -22,7 +23,6 @@ import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import { TalentSheetElementKey } from "../../Types/character";
 import { allElementsWithPhy, allSlotKeys, ElementKey } from "../../Types/consts";
 import { range } from "../../Util/Util";
-import CharacterCardNano from "../CharacterCardNano";
 import StatInput from "../StatInput";
 
 export default function CharacterOverviewPane() {
@@ -98,7 +98,7 @@ export default function CharacterOverviewPane() {
           </Grid>
           <Typography sx={{ textAlign: "center", mt: 1 }} variant="h6">Teammates</Typography>
           <Grid container columns={3} spacing={1}>
-            {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardNano characterKey={character.team[i]} index={i} /></Grid>)}
+            {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} index={i} /></Grid>)}
           </Grid>
         </CardContent>
       </CardLight>

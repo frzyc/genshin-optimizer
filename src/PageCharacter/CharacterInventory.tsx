@@ -1,10 +1,13 @@
-import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Box, Button, CardContent, Divider, Grid, Skeleton, Typography } from '@mui/material';
+import { Calculate, Checkroom, DeleteForever, FactCheck, Groups } from '@mui/icons-material';
+import { Box, Button, CardContent, Divider, Grid, IconButton, Skeleton, Typography } from '@mui/material';
 import i18next from 'i18next';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
+import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
 import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
 import SortByButton from '../Components/SortByButton';
@@ -70,6 +73,9 @@ export default function CharacterInventory(props) {
           .filter(filterFunction({ element, weaponType, favorite: "no" }, filterConfigs))
           .sort(sortFunction(state.sortType, state.ascending, sortConfigs))),
     [dbDirty, database, sortConfigs, state.sortType, state.ascending, element, filterConfigs, weaponType])
+
+  const history = useHistory()
+
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
     <CardDark sx={{ p: 2 }}>
       <Grid container spacing={1}>
@@ -115,12 +121,32 @@ export default function CharacterInventory(props) {
               characterKey={charKey}
               onClick={editCharacter}
               footer={<><Divider /><Box sx={{ py: 1, px: 2, display: "flex", gap: 1, justifyContent: "space-between" }}>
-                <Box></Box>
-                {/* <Button size="small" component={Link} to={{
-                  pathname: "/build",
-                  characterKey: charKey
-                } as any} startIcon={<FontAwesomeIcon icon={faCalculator} />}>Build</Button> */}
-                <Button size="small" color="error" startIcon={<FontAwesomeIcon icon={faTrash} />} onClick={() => deleteCharacter(charKey)}>Delete</Button>
+                <BootstrapTooltip placement="top" title={"Talents"}>
+                  <IconButton onClick={() => history.push(`/character/${charKey}/talent`)} >
+                    <FactCheck />
+                  </IconButton>
+                </BootstrapTooltip>
+                <BootstrapTooltip placement="top" title={"Equipment"}>
+                  <IconButton onClick={() => history.push(`/character/${charKey}/equip`)} >
+                    <Checkroom />
+                  </IconButton>
+                </BootstrapTooltip>
+                <BootstrapTooltip placement="top" title={"Team Buffs"}>
+                  <IconButton onClick={() => history.push(`/character/${charKey}/buffs`)} >
+                    <Groups />
+                  </IconButton>
+                </BootstrapTooltip>
+                <BootstrapTooltip placement="top" title={"Build"}>
+                  <IconButton onClick={() => history.push(`/character/${charKey}/build`)} >
+                    <Calculate />
+                  </IconButton>
+                </BootstrapTooltip>
+                <Divider orientation="vertical" />
+                <BootstrapTooltip placement="top" title={"Delete Character"}>
+                  <IconButton color="error" onClick={() => deleteCharacter(charKey)}>
+                    <DeleteForever />
+                  </IconButton>
+                </BootstrapTooltip>
               </Box></>}
             />
           </Grid>)}
