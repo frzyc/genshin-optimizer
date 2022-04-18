@@ -71,7 +71,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <Box className={`grad-${rarity}star`} sx={{ position: "relative" }}>
-        <IconButton color="primary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)} sx={{ position: "absolute", right: 0, bottom: 0, }}>
+        <IconButton color="primary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 2}}>
           {lock ? <Lock /> : <LockOpen />}
         </IconButton>
         <Box sx={{ pt: 2, px: 2, position: "relative", zIndex: 1 }}>
