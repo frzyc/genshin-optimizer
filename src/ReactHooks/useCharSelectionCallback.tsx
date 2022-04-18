@@ -27,7 +27,7 @@ export default function useCharSelectionCallback() {
         database.setWeaponLocation(weaponId, characterKey)
       }
       if (!tabName)
-        tabName = "character"
+        tabName = "overview"
       history.push(`/character/${characterKey}/${tabName}`)
     },
     [history, database],

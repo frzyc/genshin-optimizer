@@ -126,7 +126,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
               },
             }}
           >
-            <Tab value="character" label="Character" icon={<Person />} />
+            <Tab value="overview" label="Overview" icon={<Person />} />
             <Tab value="talent" label="Talents" icon={<FactCheck />} />
             <Tab value="equip" label="Equipment" icon={<Checkroom />} />
             <Tab value="buffs" label="Team Buffs" icon={<Groups />} />
@@ -137,7 +137,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
         <EnemyExpandCard />
 
         {/* Character Panel */}
-        <TabPanel value="character" current={tab}><CharacterOverviewPane /></TabPanel >
+        <TabPanel value="overview" current={tab}><CharacterOverviewPane /></TabPanel >
         {/* Artifacts Panel */}
         {/* <DataContext.Provider value={{ ...dataContextValue, data: charUIData, oldData: undefined }}>
           <TabPanel value="artifacts" current={tab} ><CharacterArtifactPane /></TabPanel >
