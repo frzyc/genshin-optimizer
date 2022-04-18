@@ -24,12 +24,14 @@ import { TalentSheetElementKey } from "../../Types/character";
 import { allElementsWithPhy, allSlotKeys, ElementKey } from "../../Types/consts";
 import { range } from "../../Util/Util";
 import StatInput from "../StatInput";
-import { useHistory } from "react-router-dom";
 
-export default function CharacterOverviewPane() {
+type Data = {
+  settab: (any) => void
+}
+
+export default function CharacterOverviewPane({ settab }: Data) {
   const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
-  const history = useHistory()
   const charEle = data.get(input.charEle).value as ElementKey
   const weaponTypeKey = characterSheet.weaponTypeKey
   const level = data.get(input.lvl).value
@@ -61,7 +63,7 @@ export default function CharacterOverviewPane() {
           </Typography>
           <Typography variant="h6"><Stars stars={characterSheet.rarity} colored /></Typography>
           <Typography variant="h5">Lvl. {CharacterSheet.getLevelString(level, ascension)}</Typography>
-          <CardActionArea sx={{ pb: 1, mb: -1, pr: 1 }} onClick={() => history.push(`/character/${characterKey}/talent`)}>
+          <CardActionArea sx={{ pb: 1, mb: -1, pr: 1 }} onClick={() => settab("talent")}>
             <Grid container spacing={1} mt={1}>
               {(["auto", "skill", "burst"] as TalentSheetElementKey[]).map(tKey =>
                 <Grid item xs={4} key={tKey}>
@@ -105,9 +107,14 @@ export default function CharacterOverviewPane() {
               </Grid>)}
           </Grid>
           <Typography sx={{ textAlign: "center", mt: 1 }} variant="h6">Teammates</Typography>
-          <Grid container columns={3} spacing={1}>
-            {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} index={i} /></Grid>)}
-          </Grid>
+          <CardActionArea sx={{ p: 1 }} onClick={() => settab("buffs")}>
+            <Grid container columns={3} spacing={1}>
+              {range(0, 2).map(i =>
+                <Grid key={i} item xs={1} height="100%">
+                  <CharacterCardPico characterKey={character.team[i]} index={i} />
+                </Grid>)}
+            </Grid>
+          </CardActionArea>
         </CardContent>
       </CardLight>
     </Grid>
@@ -116,7 +123,7 @@ export default function CharacterOverviewPane() {
     }} >
       <Grid container spacing={1}>
         <Grid item xs={6} sm={4} md={3} lg={2}>
-          <WeaponCardNano weaponId={character.equippedWeapon} BGComponent={CardLight} onClick={() => history.push(`/character/${characterKey}/equip`)}/>
+          <WeaponCardNano weaponId={character.equippedWeapon} BGComponent={CardLight} onClick={() => settab("equip")}/>
         </Grid>
         {allSlotKeys.map(slotKey =>
           <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >

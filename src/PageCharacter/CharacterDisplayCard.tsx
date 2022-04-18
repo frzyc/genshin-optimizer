@@ -1,6 +1,6 @@
 import { Calculate, Checkroom, ExpandMore, FactCheck, Groups, Person } from '@mui/icons-material';
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, Card, CardContent, CardHeader, Collapse, Divider, Grid, MenuItem, Skeleton, Tab, Tabs, ToggleButton, Typography } from '@mui/material';
-import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
+import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
@@ -70,7 +70,8 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
   // set initial state to false, because it fails to check validity of the tab values on 1st load
   const [tab, settab] = useState<string | boolean>(tabName ? tabName : (newteamData ? "newartifacts" : "character"))
   const history = useHistory()
-  const onTab = useCallback((e, v) => { settab(v); history.push(`/character/${characterKey}/${v}`) }, [settab])
+  const onTab = useCallback((e, v) => settab(v), [settab])
+  useEffect(() => history.push(`/character/${characterKey}/${tab}`), [characterKey, tab])
 
   const characterDispatch = useCharacterReducer(character?.key ?? "")
   const { compareData } = character ?? {}
@@ -138,7 +139,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
         <EnemyExpandCard />
 
         {/* Character Panel */}
-        <TabPanel value="overview" current={tab}><CharacterOverviewPane /></TabPanel >
+        <TabPanel value="overview" current={tab}><CharacterOverviewPane settab={settab} /></TabPanel >
         {/* Artifacts Panel */}
         {/* <DataContext.Provider value={{ ...dataContextValue, data: charUIData, oldData: undefined }}>
           <TabPanel value="artifacts" current={tab} ><CharacterArtifactPane /></TabPanel >
