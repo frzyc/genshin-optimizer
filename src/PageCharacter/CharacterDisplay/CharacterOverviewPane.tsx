@@ -116,8 +116,7 @@ export default function CharacterOverviewPane() {
     }} >
       <Grid container spacing={1}>
         <Grid item xs={6} sm={4} md={3} lg={2}>
-          {/* TODO click to go the equipment tab */}
-          <WeaponCardNano weaponId={character.equippedWeapon} BGComponent={CardLight} />
+          <WeaponCardNano weaponId={character.equippedWeapon} BGComponent={CardLight} onClick={() => history.push(`/character/${characterKey}/equip`)}/>
         </Grid>
         {allSlotKeys.map(slotKey =>
           <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >
