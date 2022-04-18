@@ -45,8 +45,8 @@ export default function WeaponCardNano({ weaponId, onClick, BGComponent = CardDa
         </BootstrapTooltip>
       </Grid>
       <Grid item sx={{ textAlign: "right", flexGrow: 1, pr: 1, pt: 1, display: "flex", flexDirection: "column", gap: 1 }}>
-        <Chip size="small" label={<strong>Lv. {WeaponSheet.getLevelString(weapon)}</strong>} color="primary" />
-        {weaponSheet.hasRefinement && <Chip size="small" color="info" label={<strong>R{weapon.refinement}</strong>} />}
+        <Chip size="small" label={<strong>Lv. {WeaponSheet.getLevelString(weapon)}</strong>} color="primary" sx={ onClick && { cursor: "pointer" }} />
+        {weaponSheet.hasRefinement && <Chip size="small" color="info" label={<strong>R{weapon.refinement}</strong>} sx={ onClick && { cursor: "pointer" }} />}
       </Grid>
     </Grid>
     <Grid container sx={{ p: 1, pl: 2 }}>
