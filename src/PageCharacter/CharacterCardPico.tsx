@@ -1,4 +1,5 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid, Skeleton, Typography } from '@mui/material';
+import { Suspense } from 'react';
 import Assets from '../Assets/Assets';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
@@ -17,9 +18,9 @@ export default function CharacterCardPico({ characterKey = "", index }: { charac
   if (teammateSheet && character) {
     return <CardDark sx={{ height: "100%", maxWidth: 128 }}>
       <Grid container columns={2} direction="row">
-        <BootstrapTooltip placement="top" title={<Box>
+        <BootstrapTooltip placement="top" title={<Suspense fallback={<Skeleton width={150} />}><Box>
           <Typography><ImgIcon src={Assets.weaponTypes?.[teammateSheet.weaponTypeKey]} /> {StatIcon[teammateSheet.elementKey as ElementKey]} {teammateSheet?.name}</Typography>
-        </Box>} disableInteractive>
+        </Box></Suspense>} disableInteractive>
           <Box display="flex" className={`grad-${teammateSheet.rarity}star`}>
             <Box
               component="img"

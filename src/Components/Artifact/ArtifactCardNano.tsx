@@ -1,6 +1,6 @@
 import { BusinessCenter } from "@mui/icons-material";
-import { Box, CardActionArea, Chip, Grid, Typography } from "@mui/material";
-import { useCallback } from "react";
+import { Box, CardActionArea, Chip, Grid, Skeleton, Typography } from "@mui/material";
+import { Suspense, useCallback } from "react";
 import Assets from "../../Assets/Assets";
 import Artifact from "../../Data/Artifacts/Artifact";
 import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
@@ -61,10 +61,10 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
         </Box>
       </Box>
       <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>
-        <BootstrapTooltip placement="top" title={<Box>
+        <BootstrapTooltip placement="top" title={<Suspense fallback={<Skeleton width={150} height={50} />}><Box>
           <Typography><strong>{sheet?.name}</strong></Typography>
           <Typography>{artifactSlotIcon(art.slotKey)} {sheet?.getSlotName?.(art.slotKey)}</Typography>
-        </Box>} disableInteractive>
+        </Box></Suspense>} disableInteractive>
           <Box
             component="img"
             src={sheet?.slotIcons[slotKey] ?? ""}

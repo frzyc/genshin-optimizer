@@ -1,5 +1,5 @@
-import { Box, CardActionArea, Chip, Grid, Typography } from "@mui/material";
-import { useCallback, useMemo } from "react";
+import { Box, CardActionArea, Chip, Grid, Skeleton, Typography } from "@mui/material";
+import { Suspense, useCallback, useMemo } from "react";
 import Assets from "../../Assets/Assets";
 import WeaponSheet from "../../Data/Weapons/WeaponSheet";
 import { input } from "../../Formula";
@@ -30,12 +30,12 @@ export default function WeaponCardNano({ weaponId, onClick, BGComponent = CardDa
   )
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
-  return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}  >
+  return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}><Box height="100%">
     <Grid container sx={{ flexWrap: "nowrap" }} className={`grad-${weaponSheet.rarity}star`} >
       <Grid item maxWidth="40%" sx={{ mr: -1 }} >
         <BootstrapTooltip placement="top" title={<Box>
-          <Typography><ImgIcon src={Assets.weaponTypes?.[weaponSheet.weaponType]} /> {weaponSheet?.name}</Typography>
-        </Box>} disableInteractive>
+          <Suspense fallback={<Skeleton width={150} />} ><Typography><ImgIcon src={Assets.weaponTypes?.[weaponSheet.weaponType]} /> {weaponSheet.name}</Typography></Suspense>
+        </Box>}>
           <Box
             component="img"
             src={weaponSheet.img}
@@ -57,7 +57,7 @@ export default function WeaponCardNano({ weaponId, onClick, BGComponent = CardDa
         <WeaponStat node={UIData.get(input.weapon.sub)} />
       </Grid>
     </Grid>
-    </ConditionalWrapper></BGComponent >
+  </Box></ConditionalWrapper></BGComponent >
 }
 function WeaponStat({ node }: { node: NodeDisplay }) {
   if (!node.info.key) return null
