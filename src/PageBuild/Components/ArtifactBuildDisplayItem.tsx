@@ -105,9 +105,11 @@ function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLeve
     } as any), [history])
   return <ModalWrapper open={!!newId} onClose={onClose} containerProps={{ maxWidth: oldId ? "md" : "xs" }}>
     <CardDark>
-      <CardContent sx={{ display: "flex", justifyContent: "space-between", alignItems: "stretch", gap: 2, height: "100%" }}>
+      <CardContent sx={{ display: "flex", justifyContent: "center", alignItems: "stretch", gap: 2, height: "100%" }}>
         {oldId && <Box><ArtifactCard artifactId={oldId} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={edit} /></Box>}
+        {oldId && <Box display="flex" flexGrow={1} />}
         {oldId && <Box display="flex" alignItems="center"><CardLight sx={{ display: "flex" }}><ChevronRight sx={{ fontSize: 40 }} /></CardLight></Box>}
+        {oldId && <Box display="flex" flexGrow={1} />}
         <Box><ArtifactCard artifactId={newId} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={edit} /></Box>
       </CardContent>
     </CardDark>
