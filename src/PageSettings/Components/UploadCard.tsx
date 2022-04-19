@@ -155,6 +155,7 @@ function GOUploadAction({ data: { storage }, data, reset }: { data: ImportResult
   const { t } = useTranslation("settings")
   const dataValid = data.characters?.total || data.artifacts?.total || data.weapons?.total
   const replaceDB = () => {
+    database.storage.clear()
     database.storage.copyFrom(storage)
     setDatabase(new ArtCharDatabase(database.storage, true))
     reset()
