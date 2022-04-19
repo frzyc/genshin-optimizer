@@ -1,5 +1,5 @@
-import { Box, CardActionArea, Chip, Grid, Typography } from "@mui/material";
-import { useCallback, useMemo } from "react";
+import { Box, CardActionArea, Chip, Grid, Skeleton, Typography } from "@mui/material";
+import { Suspense, useCallback, useMemo } from "react";
 import Assets from "../../Assets/Assets";
 import WeaponSheet from "../../Data/Weapons/WeaponSheet";
 import { input } from "../../Formula";
@@ -25,22 +25,23 @@ export default function WeaponCardNano({ weaponId, onClick, BGComponent = CardDa
   const weapon = useWeapon(weaponId)
   const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
   const actionWrapperFunc = useCallback(
-    children => <CardActionArea onClick={onClick}>{children}</CardActionArea>,
+    children => <CardActionArea sx={{ height: "100%" }} onClick={onClick}>{children}</CardActionArea>,
     [onClick],
   )
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
   return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}  >
     <Grid container sx={{ flexWrap: "nowrap" }} className={`grad-${weaponSheet.rarity}star`} >
-      <Grid item maxWidth="40%" sx={{ mr: -1 }} >
-        <BootstrapTooltip placement="top" title={<Box>
-          <Typography><ImgIcon src={Assets.weaponTypes?.[weaponSheet.weaponType]} /> {weaponSheet?.name}</Typography>
-        </Box>} disableInteractive>
+      <Grid item maxWidth="40%" sx={{ display: "flex", flexDirection: "column", mr: -1 }} >
+        <BootstrapTooltip placement="top" title={<Suspense fallback={<Skeleton variant="text" width={100} />}>
+          <Box>
+            <Typography><ImgIcon src={Assets.weaponTypes?.[weaponSheet.weaponType]} /> {weaponSheet?.name}</Typography>
+          </Box>
+        </Suspense>} disableInteractive>
           <Box
             component="img"
             src={weaponSheet.img}
-            width="100%"
-            height="auto"
+            sx={{ maxHeight: "100%", maxWidth: "100%", mx: -1 }}
           />
         </BootstrapTooltip>
       </Grid>
@@ -57,7 +58,7 @@ export default function WeaponCardNano({ weaponId, onClick, BGComponent = CardDa
         <WeaponStat node={UIData.get(input.weapon.sub)} />
       </Grid>
     </Grid>
-    </ConditionalWrapper></BGComponent >
+  </ConditionalWrapper></BGComponent >
 }
 function WeaponStat({ node }: { node: NodeDisplay }) {
   if (!node.info.key) return null
