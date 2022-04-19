@@ -108,4 +108,10 @@ export function merge(result: ImportResult, base: ArtCharDatabase) {
     charCounter.unchanged = []
   } else
     base._getCharKeys().forEach(k => storage.set(`char_${k}`, base._getChar(k)))
+
+  // Merge misc.
+  const newKeys = new Set(storage.keys)
+  for (const key of base.storage.keys)
+    if (!newKeys.has(key) && !key.startsWith("artifact_") && !key.startsWith("weapon_") && !key.startsWith("char_"))
+      storage.setString(key, base.storage.getString(key)!)
 }

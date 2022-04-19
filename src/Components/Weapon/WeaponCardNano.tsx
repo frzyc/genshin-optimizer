@@ -1,5 +1,5 @@
-import { Box, CardActionArea, Chip, Grid, Typography } from "@mui/material";
-import { useCallback, useMemo } from "react";
+import { Box, CardActionArea, Chip, Skeleton, Typography } from "@mui/material";
+import { Suspense, useCallback, useMemo } from "react";
 import Assets from "../../Assets/Assets";
 import WeaponSheet from "../../Data/Weapons/WeaponSheet";
 import { input } from "../../Formula";
@@ -24,40 +24,35 @@ type Data = {
 export default function WeaponCardNano({ weaponId, onClick, BGComponent = CardDark, }: Data) {
   const weapon = useWeapon(weaponId)
   const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
-  const actionWrapperFunc = useCallback(
-    children => <CardActionArea onClick={onClick}>{children}</CardActionArea>,
-    [onClick],
-  )
+  const actionWrapperFunc = useCallback(children => <CardActionArea sx={{ height: "100%" }} onClick={onClick}>{children}</CardActionArea>, [onClick],)
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
   return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}  >
-    <Grid container sx={{ flexWrap: "nowrap" }} className={`grad-${weaponSheet.rarity}star`} >
-      <Grid item maxWidth="40%" sx={{ mr: -1 }} >
-        <BootstrapTooltip placement="top" title={<Box>
-          <Typography><ImgIcon src={Assets.weaponTypes?.[weaponSheet.weaponType]} /> {weaponSheet?.name}</Typography>
-        </Box>} disableInteractive>
-          <Box
-            component="img"
-            src={weaponSheet.img}
-            width="100%"
-            height="auto"
-          />
-        </BootstrapTooltip>
-      </Grid>
-      <Grid item sx={{ textAlign: "right", flexGrow: 1, pr: 1, pt: 1, display: "flex", flexDirection: "column", gap: 1 }}>
-        <Chip size="small" label={<strong>Lv. {WeaponSheet.getLevelString(weapon)}</strong>} color="primary" />
-        {weaponSheet.hasRefinement && <Chip size="small" color="info" label={<strong>R{weapon.refinement}</strong>} />}
-      </Grid>
-    </Grid>
-    <Grid container sx={{ p: 1, pl: 2 }}>
-      <Grid item xs={6}>
+    <Box display="flex" height="100%">
+      <BootstrapTooltip placement="top" title={<Suspense fallback={<Skeleton variant="text" width={100} />}>
+        <Typography><ImgIcon src={Assets.weaponTypes?.[weaponSheet.weaponType]} /> {weaponSheet?.name}</Typography>
+      </Suspense>} disableInteractive>
+        <Box className={`grad-${weaponSheet.rarity}star`} sx={{ position: "relative", flexGrow: 1, display: "flex", flexDirection: "column" }} >
+          <Box sx={{ position: "absolute", width: "100%", height: "100%", textAlign: "center" }} >
+            <Box
+              component="img"
+              src={weaponSheet.img}
+              sx={{ m: -1, display: "inline", maxHeight: "110%", maxWidth: "110%" }}
+            />
+          </Box>
+          <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, }} >
+            <Chip size="small" label={<strong>{WeaponSheet.getLevelString(weapon)}</strong>} color="primary" />
+          </Box>
+          <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, display: "flex", justifyContent: "flex-end", alignItems: "flex-end" }} >
+            {weaponSheet.hasRefinement && <Chip size="small" color="info" label={<strong>R{weapon.refinement}</strong>} />}
+          </Box>
+        </Box></BootstrapTooltip>
+      <Box display="flex" flexDirection="column" sx={{ p: 1, }}>
         <WeaponStat node={UIData.get(input.weapon.main)} />
-      </Grid>
-      <Grid item xs={6}>
         <WeaponStat node={UIData.get(input.weapon.sub)} />
-      </Grid>
-    </Grid>
-    </ConditionalWrapper></BGComponent >
+      </Box>
+    </Box>
+  </ConditionalWrapper></BGComponent >
 }
 function WeaponStat({ node }: { node: NodeDisplay }) {
   if (!node.info.key) return null

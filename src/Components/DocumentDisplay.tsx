@@ -7,7 +7,7 @@ import ConditionalDisplay from "./Conditional/ConditionalDisplay"
 import CardDark from "./Card/CardDark"
 import FieldDisplay, { FieldDisplayList } from "./FieldDisplay"
 
-export default function DocumentDisplay({ sections, teamBuffOnly }: { sections: DocumentSection[], teamBuffOnly?: boolean }) {
+export default function DocumentDisplay({ sections, teamBuffOnly, hideDesc = false }: { sections: DocumentSection[], teamBuffOnly?: boolean, hideDesc?: boolean, }) {
   const { data } = useContext(DataContext)
   if (!sections.length) return null
   const sectionDisplays = sections.map((s, i) => {
@@ -19,13 +19,13 @@ export default function DocumentDisplay({ sections, teamBuffOnly }: { sections: 
     if (teamBuffOnly && !s.teamBuff && !s.conditional?.teamBuff) return null
     // If we are showing only teambuffs, and there is a conditional, and it is a teambuff, and we can't show the conditional, return null
     if (teamBuffOnly && !!s.conditional && s.conditional.teamBuff && !(s.conditional.canShow ? data.get(s.conditional.canShow).value : true)) return null
-    return <SectionDisplay section={s} key={i} teamBuffOnly={teamBuffOnly} />
+    return <SectionDisplay section={s} key={i} teamBuffOnly={teamBuffOnly} hideDesc={hideDesc} />
   }).filter(s => s)
   if (!sectionDisplays.length) return null
   return <Box display="flex" flexDirection="column" gap={1}>{sectionDisplays}</Box>
 }
 
-function SectionDisplay({ section, teamBuffOnly }: { section: DocumentSection, teamBuffOnly?: boolean }) {
+function SectionDisplay({ section, teamBuffOnly, hideDesc = false }: { section: DocumentSection, teamBuffOnly?: boolean, hideDesc?: boolean, }) {
   const { data } = useContext(DataContext)
   const talentText = evalIfFunc(section.text, data)
   const description = evalIfFunc(section.fieldsDescription, data)
@@ -43,6 +43,6 @@ function SectionDisplay({ section, teamBuffOnly }: { section: DocumentSection, t
         {fields?.map?.((field, i) => <FieldDisplay key={i} field={field} component={ListItem} />)}
       </FieldDisplayList>}
     </CardDark>}
-    {!!section.conditional && (!teamBuffOnly || section.conditional.teamBuff) && <ConditionalDisplay conditional={section.conditional} hideDesc={!teamBuffOnly} />}
+    {!!section.conditional && (!teamBuffOnly || section.conditional.teamBuff) && <ConditionalDisplay conditional={section.conditional} hideDesc={hideDesc} />}
   </>
 }

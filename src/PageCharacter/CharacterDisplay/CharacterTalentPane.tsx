@@ -159,7 +159,7 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
         </Grid>
       </ConditionalWrapper>
       {/* Display document sections */}
-      {talentSheet?.sections ? <DocumentDisplay sections={talentSheet.sections} /> : null}
+      {talentSheet?.sections ? <DocumentDisplay sections={talentSheet.sections} hideDesc /> : null}
     </CardContent>
   </CardLight>
 }

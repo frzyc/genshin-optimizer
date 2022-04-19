@@ -116,13 +116,14 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
           <Tabs
             onChange={onTab}
             value={tab}
-            variant="fullWidth"
+            variant="scrollable"
+            allowScrollButtonsMobile
           >
-            <Tab value="character" label="Character" icon={<Person />} />
-            <Tab value="talent" label="Talents" icon={<FactCheck />} />
-            <Tab value="equip" label="Equipment" icon={<Checkroom />} />
-            <Tab value="buffs" label="Team Buffs" icon={<Groups />} />
-            <Tab value="build" label="Build" icon={<Calculate />} />
+            <Tab sx={{ minWidth: "20%" }} value="character" label="Character" icon={<Person />} />
+            <Tab sx={{ minWidth: "20%" }} value="talent" label="Talents" icon={<FactCheck />} />
+            <Tab sx={{ minWidth: "20%" }} value="equip" label="Equipment" icon={<Checkroom />} />
+            <Tab sx={{ minWidth: "20%" }} value="buffs" label="Team Buffs" icon={<Groups />} />
+            <Tab sx={{ minWidth: "20%" }} value="build" label="Build" icon={<Calculate />} />
           </Tabs>
         </CardLight>
         <FormulaCalcCard />
