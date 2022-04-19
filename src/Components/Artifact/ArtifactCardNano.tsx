@@ -1,5 +1,5 @@
 import { BusinessCenter } from "@mui/icons-material";
-import { Box, CardActionArea, Chip, Grid, Skeleton, Typography } from "@mui/material";
+import { Box, CardActionArea, Chip, Skeleton, Typography } from "@mui/material";
 import { Suspense, useCallback } from "react";
 import Assets from "../../Assets/Assets";
 import Artifact from "../../Data/Artifacts/Artifact";
@@ -74,7 +74,6 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
             </BootstrapTooltip>
             <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
           </Typography>
-
         </Box>
       </BootstrapTooltip>
       {/* substats */}
