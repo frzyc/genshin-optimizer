@@ -157,8 +157,9 @@ export default function ArtifactDisplay() {
         <Grid item flexGrow={1}>
           <ShowingArt count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={4} xl={3}>
-          <SortByButton fullWidth sortKeys={[...artifactSortKeys.filter(key => (artifactSortKeysTC as unknown as string[]).includes(key) ? tcMode : true)]}
+        <Grid item xs={12} sm={6} md={4} lg={4} xl={3} display="flex">
+          <Box flexGrow={1} />
+          <SortByButton sortKeys={[...artifactSortKeys.filter(key => (artifactSortKeysTC as unknown as string[]).includes(key) ? tcMode : true)]}
             value={sortType} onChange={sortType => stateDispatch({ sortType })}
             ascending={ascending} onChangeAsc={ascending => stateDispatch({ ascending })}
           />
