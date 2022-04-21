@@ -2,6 +2,7 @@ import { Favorite, FavoriteBorder } from '@mui/icons-material';
 import { Box, CardActionArea, CardContent, Chip, Grid, IconButton, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
 import Assets from '../Assets/Assets';
+import ArtifactSetSlotTooltip from '../Components/Artifact/ArtifactSetSlotTooltip';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
@@ -199,13 +200,15 @@ function ArtifactCardPico({ artifactObj: art, slotKey: key }: { artifactObj: ICa
   const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
   return <Grid item key={key} xs={1}>
     <CardDark sx={{ display: "flex", flexDirection: "column" }}>
-      <Box
-        component="img"
-        className={`grad-${rarity}star`}
-        src={artifactSheet.slotIcons[key]}
-        width="100%"
-        height="auto"
-      />
+      <ArtifactSetSlotTooltip slotKey={key} sheet={artifactSheet}>
+        <Box
+          component="img"
+          className={`grad-${rarity}star`}
+          src={artifactSheet.slotIcons[key]}
+          width="100%"
+          height="auto"
+        />
+      </ArtifactSetSlotTooltip>
       <Typography component="div" variant='subtitle1' sx={{ display: "flex", height: "100%" }}>
         <SqBadge color={levelVariant as any} sx={{ flexGrow: 1, borderRadius: 0, p: 0.25 }}>+{level}</SqBadge>
         <BootstrapTooltip placement="top" title={<Typography>{cacheValueString(mainStatVal, KeyMap.unit(mainStatKey))}{KeyMap.unit(mainStatKey)} {KeyMap.getStr(mainStatKey)}</Typography>}>
