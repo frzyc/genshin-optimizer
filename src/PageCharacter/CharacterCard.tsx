@@ -32,8 +32,8 @@ import CharacterCardPico from './CharacterCardPico';
 
 type CharacterCardProps = {
   characterKey: CharacterKey | "",
-  onClick?: (characterKey: CharacterKey) => void,
-  onClickHeader?: (characterKey: CharacterKey) => void,
+  onClick?: (characterKey: CharacterKey, tab: string) => void,
+  onClickHeader?: (characterKey: CharacterKey, tab: string) => void,
   artifactChildren?: Displayable,
   weaponChildren?: Displayable,
   characterChildren?: Displayable,
@@ -44,7 +44,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   const { teamData: teamDataContext } = useContext(DataContext)
   const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
   const { character, characterSheet, target: data } = teamData?.[characterKey] ?? {}
-  const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
+  const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey, "overview"), [characterKey, onClick])
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={onClickHandler} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
     [onClickHandler],
@@ -88,7 +88,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
     </DataContext.Provider>
   </Suspense>
 }
-function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void }) {
+function Header({ onClick }: { onClick?: (characterKey: CharacterKey, tab: string) => void }) {
   const { data, characterSheet } = useContext(DataContext)
   const characterKey = data.get(input.charKey).value as CharacterKey
   const characterEle = data.get(input.charEle).value as ElementKey
@@ -104,7 +104,7 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
   const tBurst = data.get(input.total.burst).value
 
   const actionWrapperFunc = useCallback(
-    children => <CardActionArea onClick={() => characterKey && onClick?.(characterKey)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
+    children => <CardActionArea onClick={() => characterKey && onClick?.(characterKey, "overview")} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
     [onClick, characterKey],
   )
   return <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >
