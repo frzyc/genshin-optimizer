@@ -11,5 +11,7 @@
   "selectLevel": "Select Level",
   "formulas": "Formulas",
   "calculations": "Calculations",
-  "selectCharacter": "Select a Character"
+  "selectCharacter": "Select a Character",
+  "removeCharacter": "Are you sure you want to remove {{value}}?",
+  "delete": "Delete Character"
 }
