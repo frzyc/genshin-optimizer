@@ -28,7 +28,6 @@ export default function DocumentDisplay({ sections, teamBuffOnly, hideDesc = fal
 function SectionDisplay({ section, teamBuffOnly, hideDesc = false }: { section: DocumentSection, teamBuffOnly?: boolean, hideDesc?: boolean, }) {
   const { data } = useContext(DataContext)
   const talentText = evalIfFunc(section.text, data)
-  const description = evalIfFunc(section.fieldsDescription, data)
   const fields = section.fields ?? []
   let { icon, title, action } = section.fieldsHeader ?? {}
   icon = evalIfFunc(icon, data)
@@ -38,7 +37,6 @@ function SectionDisplay({ section, teamBuffOnly, hideDesc = false }: { section: 
       {teamBuffOnly && talentText && <CardContent>{talentText}</CardContent>}
       {section.fieldsHeader && <CardHeader avatar={icon} title={title} action={action} titleTypographyProps={{ variant: "subtitle2" }} />}
       {section.fieldsHeader && <Divider />}
-      {teamBuffOnly && description && <CardContent>{description}</CardContent>}
       {fields.length > 0 && <FieldDisplayList>
         {fields?.map?.((field, i) => <FieldDisplay key={i} field={field} component={ListItem} />)}
       </FieldDisplayList>}

@@ -297,7 +297,6 @@ const sheet: ICharacterSheet = {
         ...sectionTemplate("constellation6", tr, c6, [{
           text: tr("constellation6.description")
         }], undefined, data => data.get(input.constellation).value >= 6, true, true),
-        fieldsDescription: ""
       }]),
       burst: talentTemplate("burst", tr, burst, [{
         node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
