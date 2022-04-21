@@ -26,7 +26,7 @@ import { ICachedArtifact } from '../Types/artifact';
 import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '../Types/consts';
 import { ICachedWeapon } from '../Types/weapon';
 import { range } from '../Util/Util';
-import CharacterCardNano from './CharacterCardNano';
+import CharacterCardPico from './CharacterCardPico';
 
 type CharacterCardProps = {
   characterKey: CharacterKey | "",
@@ -71,8 +71,8 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
           <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
             <Artifacts />
             {!isTeammateCard && <Grid container columns={4} spacing={0.75}>
-              <Weapon weaponId={character.equippedWeapon} />
-              {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardNano characterKey={character.team[i]} index={i} /></Grid>)}
+              <WeaponCardPico weaponId={character.equippedWeapon} />
+              {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} index={i} /></Grid>)}
             </Grid>}
             {isTeammateCard && <WeaponFullCard weaponId={character.equippedWeapon} />}
             {!isTeammateCard && <Stats />}
@@ -160,60 +160,62 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
 function Artifacts() {
   const { database } = useContext(DatabaseContext)
   const { data } = useContext(DataContext)
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const artifacts = useMemo(() =>
     allSlotKeys.map(k => [k, database._getArt(data.get(input.art[k].id).value ?? "")]),
     [data, database]) as Array<[SlotKey, ICachedArtifact | undefined]>;
-  if (!artifactSheets) return null
 
   return <Grid direction="row" container spacing={0.75} columns={5}>
-    {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) => {
-      // Blank artifact slot icon
-      if (!art) return <Grid item key={key} xs={1}>
-        <CardDark sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
-          <Box sx={{ width: "100%", pb: "100%", position: "relative", }}>
-            <Box
-              sx={{
-                position: "absolute",
-                width: "70%", height: "70%",
-                left: "50%", top: "50%",
-                transform: "translate(-50%, -50%)",
-                opacity: 0.7
-              }}
-              component="img"
-              src={Assets.slot[key]}
-            />
-          </Box>
-          <Typography component="div" variant='subtitle1' sx={{ display: "flex", height: "100%", opacity: 0.7 }}>
-            <SqBadge color="secondary" sx={{ flexGrow: 1, borderRadius: 0, p: 0.25 }}>+0</SqBadge>
-          </Typography>
-        </CardDark>
-      </Grid>
-
-      // Actual artifact icon + info
-      const { setKey, slotKey, mainStatKey, rarity, level, mainStatVal } = art
-      const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
-      return <Grid item key={key} xs={1}>
-        <CardDark sx={{ display: "flex", flexDirection: "column" }}>
-          <Box
-            component="img"
-            className={`grad-${rarity}star`}
-            src={artifactSheets?.[setKey].slotIcons[slotKey]}
-            width="100%"
-            height="auto"
-          />
-          <Typography component="div" variant='subtitle1' sx={{ display: "flex", height: "100%" }}>
-            <SqBadge color={levelVariant as any} sx={{ flexGrow: 1, borderRadius: 0, p: 0.25 }}>+{level}</SqBadge>
-            <BootstrapTooltip placement="top" title={<Typography>{cacheValueString(mainStatVal, KeyMap.unit(mainStatKey))}{KeyMap.unit(mainStatKey)} {KeyMap.getStr(mainStatKey)}</Typography>}>
-              <SqBadge color="secondary" sx={{ borderRadius: 0, p: 0.25 }}>{StatIcon[mainStatKey]}</SqBadge>
-            </BootstrapTooltip>
-          </Typography>
-        </CardDark>
-      </Grid>
-    })}
+    {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) =>
+      <ArtifactCardPico artifactObj={art} slotKey={key} />
+    )}
   </Grid>
 }
-function Weapon({ weaponId }: { weaponId: string }) {
+function ArtifactCardPico({ artifactObj: art, slotKey: key }: { artifactObj: ICachedArtifact | undefined, slotKey: SlotKey }) {
+  const artifactSheet = usePromise(art?.setKey && ArtifactSheet.get(art.setKey), [art?.setKey])
+  // Blank artifact slot icon
+  if (!art || !artifactSheet) return <Grid item key={key} xs={1}>
+    <CardDark sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+      <Box sx={{ width: "100%", pb: "100%", position: "relative", }}>
+        <Box
+          sx={{
+            position: "absolute",
+            width: "70%", height: "70%",
+            left: "50%", top: "50%",
+            transform: "translate(-50%, -50%)",
+            opacity: 0.7
+          }}
+          component="img"
+          src={Assets.slot[key]}
+        />
+      </Box>
+      <Typography component="div" variant='subtitle1' sx={{ display: "flex", height: "100%", opacity: 0.7 }}>
+        <SqBadge color="secondary" sx={{ flexGrow: 1, borderRadius: 0, p: 0.25 }}>+0</SqBadge>
+      </Typography>
+    </CardDark>
+  </Grid>
+
+  // Actual artifact icon + info
+  const { mainStatKey, rarity, level, mainStatVal } = art
+  const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
+  return <Grid item key={key} xs={1}>
+    <CardDark sx={{ display: "flex", flexDirection: "column" }}>
+      <Box
+        component="img"
+        className={`grad-${rarity}star`}
+        src={artifactSheet.slotIcons[key]}
+        width="100%"
+        height="auto"
+      />
+      <Typography component="div" variant='subtitle1' sx={{ display: "flex", height: "100%" }}>
+        <SqBadge color={levelVariant as any} sx={{ flexGrow: 1, borderRadius: 0, p: 0.25 }}>+{level}</SqBadge>
+        <BootstrapTooltip placement="top" title={<Typography>{cacheValueString(mainStatVal, KeyMap.unit(mainStatKey))}{KeyMap.unit(mainStatKey)} {KeyMap.getStr(mainStatKey)}</Typography>}>
+          <SqBadge color="secondary" sx={{ borderRadius: 0, p: 0.25 }}>{StatIcon[mainStatKey]}</SqBadge>
+        </BootstrapTooltip>
+      </Typography>
+    </CardDark>
+  </Grid>
+}
+function WeaponCardPico({ weaponId }: { weaponId: string }) {
   const { database } = useContext(DatabaseContext)
   const weapon = database._getWeapon(weaponId)
   const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
