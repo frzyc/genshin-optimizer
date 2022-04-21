@@ -1,7 +1,7 @@
 import { faEdit, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
-import { Badge, Box, Button, CardContent, Divider, Grid, IconButton, Typography } from "@mui/material";
+import { Badge, Box, Button, CardActionArea, CardContent, Divider, Grid, IconButton, Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
 import Assets from "../../Assets/Assets";
 import ArtifactCardNano from "../../Components/Artifact/ArtifactCardNano";
@@ -87,13 +87,13 @@ export default function CharacterOverviewPane() {
           <Grid container spacing={1}>
             {range(1, 6).map(i =>
               <Grid item xs={4} key={i}>
+                <CardActionArea onClick={() => characterDispatch({ constellation: i === constellation ? i - 1 : i })}>
                 <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i}` as TalentSheetElementKey, charEle)?.img}
                   sx={{
-                    cursor: "pointer",
                     ...(constellation >= i ? {} : { filter: "brightness(50%)" })
                   }}
-                  width="100%" height="auto"
-                  onClick={() => characterDispatch({ constellation: i === constellation ? i - 1 : i })} />
+                  width="100%" height="auto" />
+                  </CardActionArea>
               </Grid>)}
           </Grid>
           <Typography sx={{ textAlign: "center", mt: 1 }} variant="h6">Teammates</Typography>
