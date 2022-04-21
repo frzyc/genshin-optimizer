@@ -125,6 +125,12 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
             value={tab}
             variant="scrollable"
             allowScrollButtonsMobile
+            sx={{
+              "& .MuiTab-root:hover": {
+                transition: "background-color 0.5s ease",
+                backgroundColor: "rgba(255,255,255,0.1)"
+              },
+            }}
           >
             <Tab sx={{ minWidth: "20%" }} value="overview" label={t("tabs.overview")} icon={<Person />} />
             <Tab sx={{ minWidth: "20%" }} value="talent" label={t("tabs.talent")} icon={<FactCheck />} />
