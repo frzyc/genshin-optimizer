@@ -11,6 +11,7 @@ import { NodeFieldDisplay } from '../Components/FieldDisplay';
 import SqBadge from '../Components/SqBadge';
 import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
+import WeaponNameTooltip from '../Components/Weapon/WeaponNameTooltip';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import { ascensionMaxLevel } from '../Data/LevelData';
 import WeaponSheet from '../Data/Weapons/WeaponSheet';
@@ -229,13 +230,15 @@ function WeaponCardPico({ weaponId }: { weaponId: string }) {
     <CardDark sx={{ height: "100%", maxWidth: 128 }}>
       <Grid container columns={2} direction="row">
         <Box display="flex" flexDirection="column" alignContent="flex-end" className={`grad-${weaponSheet.rarity}star`}>
-          <Box
-            component="img"
-            src={weaponSheet.img}
-            width="100%"
-            height="auto"
-            sx={{ mt: "auto" }}
-          />
+          <WeaponNameTooltip sheet={weaponSheet}>
+            <Box
+              component="img"
+              src={weaponSheet.img}
+              width="100%"
+              height="auto"
+              sx={{ mt: "auto" }}
+            />
+          </WeaponNameTooltip>
         </Box>
         <Box width="100%">
           <Typography variant='subtitle1' sx={{ display: "flex", height: "100%" }}>
