@@ -226,11 +226,16 @@ function WeaponCardPico({ weaponId }: { weaponId: string }) {
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
 
+  const tooltipAddl = <Box>
+    <WeaponStatPico node={UIData.get(input.weapon.main)} />
+    <WeaponStatPico node={UIData.get(input.weapon.sub)} />
+  </Box>
+
   return <Grid item xs={1} height="100%">
     <CardDark sx={{ height: "100%", maxWidth: 128 }}>
       <Grid container columns={2} direction="row">
         <Box display="flex" flexDirection="column" alignContent="flex-end" className={`grad-${weaponSheet.rarity}star`}>
-          <WeaponNameTooltip sheet={weaponSheet}>
+          <WeaponNameTooltip sheet={weaponSheet} addlText={tooltipAddl}>
             <Box
               component="img"
               src={weaponSheet.img}
@@ -250,6 +255,12 @@ function WeaponCardPico({ weaponId }: { weaponId: string }) {
     </CardDark>
   </Grid>
 }
+function WeaponStatPico( {node}: { node: NodeDisplay }) {
+  if (!node.info.key) return null
+  const val = valueString(node.value, node.unit, !node.unit ? 0 : undefined)
+  return <Typography>{StatIcon[node.info.key]} {val}</Typography>
+}
+
 function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const { database } = useContext(DatabaseContext)
   const weapon = database._getWeapon(weaponId)
