@@ -14,7 +14,7 @@ export default function useCharSelectionCallback() {
   const { database } = useContext(DatabaseContext)
   const history = useHistory()
   const cb = useCallback(
-    async (characterKey: CharacterKey) => {
+    async (characterKey: CharacterKey, tabName?: string) => {
       const character = database._getChar(characterKey)
       // Create a new character + weapon, with linking if char isnt in db.
       if (!character) {
@@ -26,7 +26,10 @@ export default function useCharSelectionCallback() {
         const weaponId = database.createWeapon(weapon)
         database.setWeaponLocation(weaponId, characterKey)
       }
-      history.push(`/character/${characterKey}`)
+      if (!tabName) {
+        tabName = "overview"
+      }
+      history.push(`/character/${characterKey}/${tabName}`)
     },
     [history, database],
   )

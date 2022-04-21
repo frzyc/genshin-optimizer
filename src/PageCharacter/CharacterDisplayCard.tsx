@@ -1,6 +1,8 @@
 import { Calculate, Checkroom, ExpandMore, FactCheck, Groups, Person } from '@mui/icons-material';
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, Card, CardContent, CardHeader, Collapse, Divider, Grid, MenuItem, Skeleton, Tab, Tabs, ToggleButton, Typography } from '@mui/material';
-import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
+import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
@@ -69,6 +71,10 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
   // set initial state to false, because it fails to check validity of the tab values on 1st load
   const [tab, settab] = useState<string | boolean>(tabName ? tabName : (newteamData ? "newartifacts" : "character"))
   const onTab = useCallback((e, v) => settab(v), [settab])
+  const history = useHistory()
+  useEffect(() => history.push(`/character/${characterKey}/${tab}`), [characterKey, tab])
+
+  const { t } = useTranslation("page_character")
 
   const characterDispatch = useCharacterReducer(character?.key ?? "")
   const { compareData } = character ?? {}
@@ -97,6 +103,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
           </Grid>
           <Grid item>
             {/* Compare against new build toggle */}
+            {/* TODO: Should this be removed? */}
             {!!newteamData && <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
               <ToggleButton value={false} disabled={!compareData}>
                 <small>Show New artifact Stats</small>
@@ -119,24 +126,24 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
             variant="scrollable"
             allowScrollButtonsMobile
           >
-            <Tab sx={{ minWidth: "20%" }} value="character" label="Character" icon={<Person />} />
-            <Tab sx={{ minWidth: "20%" }} value="talent" label="Talents" icon={<FactCheck />} />
-            <Tab sx={{ minWidth: "20%" }} value="equip" label="Equipment" icon={<Checkroom />} />
-            <Tab sx={{ minWidth: "20%" }} value="buffs" label="Team Buffs" icon={<Groups />} />
-            <Tab sx={{ minWidth: "20%" }} value="build" label="Build" icon={<Calculate />} />
+            <Tab sx={{ minWidth: "20%" }} value="overview" label={t("tabs.overview")} icon={<Person />} />
+            <Tab sx={{ minWidth: "20%" }} value="talent" label={t("tabs.talent")} icon={<FactCheck />} />
+            <Tab sx={{ minWidth: "20%" }} value="equip" label={t("tabs.equip")} icon={<Checkroom />} />
+            <Tab sx={{ minWidth: "20%" }} value="buffs" label={t("tabs.buffs")} icon={<Groups />} />
+            <Tab sx={{ minWidth: "20%" }} value="build" label={t("tabs.build")} icon={<Calculate />} />
           </Tabs>
         </CardLight>
         <FormulaCalcCard />
         <EnemyExpandCard />
 
         {/* Character Panel */}
-        <TabPanel value="character" current={tab}><CharacterOverviewPane /></TabPanel >
+        <TabPanel value="overview" current={tab}><CharacterOverviewPane /></TabPanel >
         {/* Artifacts Panel */}
         {/* <DataContext.Provider value={{ ...dataContextValue, data: charUIData, oldData: undefined }}>
           <TabPanel value="artifacts" current={tab} ><CharacterArtifactPane /></TabPanel >
         </DataContext.Provider> */}
         {/* new build panel */}
-        <TabPanel value="equip" current={tab} ><CharacterArtifactPane /></TabPanel >
+        <TabPanel value="equip" current={tab}><CharacterArtifactPane /></TabPanel >
         {/* talent panel */}
         <TabPanel value="talent" current={tab}>
           <CharacterTalentPane />
@@ -156,6 +163,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
 
 
 function CharSelectDropdown() {
+  const { t } = useTranslation("page_character")
   const { character, characterSheet, characterDispatch } = useContext(DataContext)
   const [showModal, setshowModal] = useState(false)
   const setCharacter = useCharSelectionCallback()
@@ -176,7 +184,7 @@ function CharSelectDropdown() {
     <CharacterSelectionModal show={showModal} onHide={() => setshowModal(false)} onSelect={setCharacter} />
     <Grid container spacing={1}>
       <Grid item>
-        <Button onClick={() => setshowModal(true)} startIcon={<ThumbSide src={characterSheet?.thumbImgSide} />} >{characterSheet?.name ?? "Select a Character"}</Button>
+        <Button onClick={() => setshowModal(true)} startIcon={<ThumbSide src={characterSheet?.thumbImgSide} />} >{characterSheet?.name ?? t("selectCharacter")}</Button>
       </Grid>
       <Grid item>
         <ButtonGroup sx={{ bgcolor: t => t.palette.contentDark.main }} >
@@ -193,10 +201,10 @@ function CharSelectDropdown() {
               disabled={!characterSheet} />
           </CustomNumberInputButtonGroupWrapper>
           <Button sx={{ pl: 1 }} disabled={!ambiguousLevel(level) || !characterSheet} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
-          <DropdownButton title={"Select Level"} disabled={!characterSheet}>
+          <DropdownButton title={t("selectLevel")} disabled={!characterSheet}>
             {milestoneLevels.map(([lv, as]) => {
               const sameLevel = lv === ascensionMaxLevel[as]
-              const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
+              const lvlstr = sameLevel ? `Lvl. ${lv}` : `Lvl. ${lv}/${ascensionMaxLevel[as]}`
               const selected = lv === level && as === ascension
               return <MenuItem key={`${lv}/${as}`} selected={selected} disabled={selected} onClick={() => characterDispatch({ level: lv, ascension: as })}>{lvlstr}</MenuItem>
             })}
@@ -208,6 +216,7 @@ function CharSelectDropdown() {
 }
 
 function FormulaCalcCard() {
+  const { t } = useTranslation("page_character")
   const [expanded, setexpanded] = useState(false)
   const toggle = useCallback(() => setexpanded(!expanded), [setexpanded, expanded])
   return <CardLight>
@@ -219,8 +228,8 @@ function FormulaCalcCard() {
       </Grid>
       <Box display="flex" gap={1} >
         <Box>
-          <Typography variant='subtitle2' >Formulas {"&"}</Typography>
-          <Typography variant='subtitle2' >Calculations</Typography>
+          <Typography variant='subtitle2' >{t("formulas")} {"&"}</Typography>
+          <Typography variant='subtitle2' >{t("calculations")}</Typography>
         </Box>
         <ExpandButton
           expand={expanded}
