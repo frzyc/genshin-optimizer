@@ -101,6 +101,8 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const { artifact: artifactProcessed, texts } = firstProcessed ?? {}
   // const fileName = firstProcessed?.fileName ?? firstOutstanding?.fileName ?? "Click here to upload Artifact screenshot files"
 
+  const isNew = artifactIdToEdit === "new"
+
   useEffect(() => {
     if (!artifact && artifactProcessed)
       artifactDispatch({ type: "overwrite", artifact: artifactProcessed })
@@ -234,9 +236,9 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             {/* set & rarity */}
             <ButtonGroup sx={{ display: "flex", mb: 1 }}>
               {/* Artifact Set */}
-              <ArtifactSetDropdown selectedSetKey={artifact?.setKey} onChange={setKey => update({ setKey: setKey as ArtifactSetKey })} sx={{ flexGrow: 1 }} />
+              <ArtifactSetDropdown selectedSetKey={artifact?.setKey} onChange={setKey => update({ setKey: setKey as ArtifactSetKey })} sx={{ flexGrow: 1 }} disabled={!isNew} />
               {/* rarity dropdown */}
-              <ArtifactRarityDropdown rarity={artifact ? rarity : undefined} onChange={r => update({ rarity: r })} filter={r => !!sheet?.rarity?.includes?.(r)} disabled={!sheet} />
+              <ArtifactRarityDropdown rarity={artifact ? rarity : undefined} onChange={r => update({ rarity: r })} filter={r => !!sheet?.rarity?.includes?.(r)} disabled={!isNew || !sheet} />
             </ButtonGroup>
 
             {/* level */}
@@ -253,7 +255,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
 
             {/* slot */}
             <Box component="div" display="flex">
-              <ArtifactSlotDropdown disabled={!sheet} slotKey={slotKey} onChange={slotKey => update({ slotKey })} />
+              <ArtifactSlotDropdown disabled={!isNew || !sheet} slotKey={slotKey} onChange={slotKey => update({ slotKey })} />
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                 <Suspense fallback={<Skeleton width="60%" />}>
                   <Typography color="text.secondary">
@@ -367,10 +369,24 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
         <Grid container spacing={2}>
           <Grid item>
             {oldType === "edit" ?
-              <Button startIcon={<Add />} onClick={() => { database.updateArt(editorArtifact!, old!.id); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="primary">
+              <Button startIcon={<Add />} onClick={() => {
+                database.updateArt(editorArtifact!, old!.id);
+                if (allowEmpty) reset()
+                else {
+                  setShow(false)
+                  cancelEdit()
+                }
+              }} disabled={!editorArtifact || !isValid} color="primary">
                 {t`editor.btnSave`}
               </Button> :
-              <Button startIcon={<Add />} onClick={() => { database.createArt(artifact!); allowEmpty ? reset() : setShow(false) }} disabled={!artifact || !isValid} color={oldType === "duplicate" ? "warning" : "primary"}>
+              <Button startIcon={<Add />} onClick={() => {
+                database.createArt(artifact!);
+                if (allowEmpty) reset()
+                else {
+                  setShow(false)
+                  cancelEdit()
+                }
+              }} disabled={!artifact || !isValid} color={oldType === "duplicate" ? "warning" : "primary"}>
                 {t`editor.btnAdd`}
               </Button>}
           </Grid>
