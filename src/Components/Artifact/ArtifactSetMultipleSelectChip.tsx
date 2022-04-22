@@ -1,4 +1,4 @@
-import { Divider, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import { Divider, ListItemIcon, ListItemText, Skeleton, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import FormControl from '@mui/material/FormControl';
@@ -7,7 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Theme, useTheme } from '@mui/material/styles';
-import { useMemo } from 'react';
+import { Suspense, useMemo } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
 import usePromise from '../../ReactHooks/usePromise';
@@ -67,7 +67,9 @@ export default function ArtifactSetMultipleSelectChip({ artSetKeys, setArtSetKey
             ...sets.map(setKey => <MenuItem key={setKey} value={setKey}>
               <ListItemIcon>{artifactSheets[setKey]?.defIcon}</ListItemIcon>
               <ListItemText primaryTypographyProps={{ style: getStyles(setKey, artSetKeys, theme) }}>
-                {artifactSheets[setKey]?.name}
+                <Suspense fallback={<Skeleton variant="text" width={100} />}>
+                  {artifactSheets[setKey]?.name}
+                </Suspense>
               </ListItemText>
             </MenuItem >)
           ])}
