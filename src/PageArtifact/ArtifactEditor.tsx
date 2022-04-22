@@ -1,7 +1,7 @@
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Add, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
-import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, ListItemIcon, ListItemText, MenuItem, Skeleton, styled, Typography } from '@mui/material';
+import { Add, ChevronRight, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
+import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, ListItemIcon, ListItemText, MenuItem, Skeleton, styled, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
@@ -217,6 +217,9 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
       setShow(false)
       cancelEdit()
     }, [preventClosing, setShow, cancelEdit])
+
+  const theme = useTheme();
+  const grmd = useMediaQuery(theme.breakpoints.up('md'));
   return <ModalWrapper open={show} onClose={onClose} >
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: show ? "100%" : 64 }} />}><CardDark >
       <UploadExplainationModal modalShow={modalShow} hide={() => setModalShow(false)} />
@@ -224,13 +227,10 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
         title={<Trans t={t} i18nKey="editor.title" >Artifact Editor</Trans>}
         action={<CloseButton disabled={!!preventClosing} onClick={onClose} />}
       />
-      <CardContent sx={{ pt: 0 }}>
-        <Grid container spacing={1} sx={{ mb: 1 }}>
+      <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+        <Grid container spacing={1} columns={{ xs: 1, md: 2 }} >
           {/* Left column */}
-          <Grid item xs={12} md={6} lg={6} sx={{
-            // select all excluding last
-            "> div:nth-last-of-type(n+2)": { mb: 1 }
-          }}>
+          <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
             {/* set & rarity */}
             <ButtonGroup sx={{ display: "flex", mb: 1 }}>
               {/* Artifact Set */}
@@ -330,7 +330,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
           </Grid>
 
           {/* Right column */}
-          <Grid item xs={12} md={6} lg={6} display="flex" flexDirection="column" gap={1}>
+          <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
             {/* substat selections */}
             {[0, 1, 2, 3].map((index) => <SubstatInput key={index} index={index} artifact={cachedArtifact} setSubstat={setSubstat} />)}
             {texts && <CardLight><CardContent>
@@ -346,19 +346,22 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
         </Grid>
 
         {/* Duplicate/Updated/Edit UI */}
-        {old && <Grid container sx={{ justifyContent: "space-around", mb: 1 }} spacing={1} >
-          <Grid item lg={4} md={6} ><CardLight>
-            <Typography sx={{ textAlign: "center" }} py={1} variant="h6" color="text.secondary" >{t`editor.preview`}</Typography>
-            <ArtifactCard artifactObj={cachedArtifact} />
-          </CardLight></Grid>
-          <Grid item lg={4} md={6} ><CardLight>
+        {old && <Grid container sx={{ justifyContent: "space-around" }} spacing={1} >
+          <Grid item xs={12} md={5.5} lg={4} ><CardLight>
             <Typography sx={{ textAlign: "center" }} py={1} variant="h6" color="text.secondary" >{oldType !== "edit" ? (oldType === "duplicate" ? t`editor.dupArt` : t`editor.upArt`) : t`editor.beforeEdit`}</Typography>
             <ArtifactCard artifactObj={old} />
+          </CardLight></Grid>
+          {grmd && <Grid item md={1} display="flex" alignItems="center" justifyContent="center" >
+            <CardLight sx={{ display: "flex" }}><ChevronRight sx={{ fontSize: 40 }} /></CardLight>
+          </Grid>}
+          <Grid item xs={12} md={5.5} lg={4} ><CardLight>
+            <Typography sx={{ textAlign: "center" }} py={1} variant="h6" color="text.secondary" >{t`editor.preview`}</Typography>
+            <ArtifactCard artifactObj={cachedArtifact} />
           </CardLight></Grid>
         </Grid>}
 
         {/* Error alert */}
-        {!isValid && <Alert variant="filled" severity="error" sx={{ mb: 1 }}>{errors.map((e, i) => <div key={i}>{e}</div>)}</Alert>}
+        {!isValid && <Alert variant="filled" severity="error" >{errors.map((e, i) => <div key={i}>{e}</div>)}</Alert>}
 
         {/* Buttons */}
         <Grid container spacing={2}>

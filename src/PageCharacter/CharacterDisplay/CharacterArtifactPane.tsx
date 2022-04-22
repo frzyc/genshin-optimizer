@@ -18,7 +18,6 @@ import { allSlotKeys } from '../../Types/consts';
 import { objectKeyMap } from '../../Util/Util';
 
 const WeaponDisplayCard = lazy(() => import('../../PageWeapon/WeaponDisplayCard'))
-const ArtifactEditor = lazy(() => import('../../PageArtifact/ArtifactEditor'))
 
 function CharacterArtifactPane() {
   const { teamData, data, character, character: { equippedWeapon, key: characterKey }, mainStatAssumptionLevel } = useContext(DataContext)
@@ -32,10 +31,6 @@ function CharacterArtifactPane() {
     if (weaponId && weaponId !== equippedWeapon)
       setweaponId(equippedWeapon)
   }, [weaponId, equippedWeapon])
-
-  const [artId, setartId] = useState("")
-  const showArt = useCallback(artId => setartId(artId), [],)
-  const hideArt = useCallback(() => setartId(""), [])
 
   const { database } = useContext(DatabaseContext)
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
@@ -75,12 +70,6 @@ function CharacterArtifactPane() {
         onClose={hideWeapon}
       />
     </Suspense>
-    <Suspense fallback={false}>
-      <ArtifactEditor
-        artifactIdToEdit={artId}
-        cancelEdit={hideArt}
-      />
-    </Suspense>
     {/* <WeaponDisplayCard weaponId={character.equippedWeapon} /> */}
     <CardLight >
       <CardContent>
@@ -107,7 +96,7 @@ function CharacterArtifactPane() {
           <WeaponCard weaponId={equippedWeapon} onEdit={showWeapon} canEquip />
         </Grid>
         {artIds.map(id => !!id && <Grid item xs={12} sm={6} md={4} key={id} >
-          <ArtifactCard artifactId={id} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={showArt} />
+          <ArtifactCard artifactId={id} mainStatAssumptionLevel={mainStatAssumptionLevel} />
         </Grid>)}
       </Grid>
       {!grxl && <Grid item xs={12} md={12} xl={3} container spacing={1} >

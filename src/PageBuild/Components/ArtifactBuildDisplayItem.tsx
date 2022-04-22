@@ -2,7 +2,6 @@ import { ChevronRight } from '@mui/icons-material';
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { Suspense, useCallback, useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import ArtifactCardNano from '../../Components/Artifact/ArtifactCardNano';
 import { artifactSlotIcon } from '../../Components/Artifact/SlotNameWIthIcon';
 import CardDark from '../../Components/Card/CardDark';
@@ -18,7 +17,6 @@ import { uiInput as input } from '../../Formula';
 import ArtifactCard from '../../PageArtifact/ArtifactCard';
 import usePromise from '../../ReactHooks/usePromise';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
-import { ArtifactDisplayLocationState } from '../../Types/LocationState';
 
 type NewOld = {
   newId: string,
@@ -94,22 +92,14 @@ export default function ArtifactBuildDisplayItem({ index, compareBuild, disabled
 }
 
 function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLevel, onClose }: { newOld: NewOld, mainStatAssumptionLevel: number, onClose: () => void }) {
-  const navigate = useNavigate()
-  // TODO: artifact editor instead of going to artifact page. idealy fold ArtifactEditor to ArtifactCard
-  const edit = useCallback(
-    artid => navigate("/artifact", {
-      state: {
-        artToEditId: artid
-      } as ArtifactDisplayLocationState
-    }), [navigate])
   return <ModalWrapper open={!!newId} onClose={onClose} containerProps={{ maxWidth: oldId ? "md" : "xs" }}>
     <CardDark>
       <CardContent sx={{ display: "flex", justifyContent: "center", alignItems: "stretch", gap: 2, height: "100%" }}>
-        {oldId && <Box><ArtifactCard artifactId={oldId} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={edit} /></Box>}
+        {oldId && <Box><ArtifactCard artifactId={oldId} mainStatAssumptionLevel={mainStatAssumptionLevel} /></Box>}
         {oldId && <Box display="flex" flexGrow={1} />}
-        {oldId && <Box display="flex" alignItems="center"><CardLight sx={{ display: "flex" }}><ChevronRight sx={{ fontSize: 40 }} /></CardLight></Box>}
+        {oldId && <Box display="flex" alignItems="center" justifyContent="center"><CardLight sx={{ display: "flex" }}><ChevronRight sx={{ fontSize: 40 }} /></CardLight></Box>}
         {oldId && <Box display="flex" flexGrow={1} />}
-        <Box><ArtifactCard artifactId={newId} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={edit} /></Box>
+        <Box><ArtifactCard artifactId={newId} mainStatAssumptionLevel={mainStatAssumptionLevel} /></Box>
       </CardContent>
     </CardDark>
   </ModalWrapper>

@@ -2,7 +2,7 @@ import { faBan, faChartLine, faEdit, faInfoCircle, faTrashAlt } from '@fortaweso
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Lock, LockOpen } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardActions, CardContent, Chip, Grid, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
-import React, { Suspense, useContext } from 'react';
+import React, { lazy, Suspense, useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
@@ -25,24 +25,28 @@ import { clamp, clamp01 } from '../Util/Util';
 import PercentBadge from './PercentBadge';
 import { probability } from './RollProbability';
 
+const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
+
 type Data = {
   artifactId?: string,
   artifactObj?: ICachedArtifact,
-  onEdit?: (id: string) => void,
   onDelete?: (id: string) => void, mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
   probabilityFilter?: Dict<SubstatKey, number>
 }
 const allSubstatFilter = new Set(allSubstats)
 
-export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter }: Data): JSX.Element | null {
+export default function ArtifactCard({ artifactId, artifactObj, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
   const sheet = usePromise(ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
   const equipOnChar = (charKey: CharacterKey | "") => database.setArtLocation(artifactId!, charKey)
-
   const editable = !artifactObj
+  const [showEditor, setshowEditor] = useState(false)
+  const onHideEditor = useCallback(() => setshowEditor(false), [setshowEditor])
+  const onShowEditor = useCallback(() => editable && setshowEditor(true), [editable, setshowEditor])
+
   const art = artifactObj ?? databaseArtifact
   if (!art) return null
 
@@ -69,6 +73,12 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
     <span><FontAwesomeIcon icon={faInfoCircle} /></span>
   </BootstrapTooltip>
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
+    <Suspense fallback={false}>
+      <ArtifactEditor
+        artifactIdToEdit={showEditor ? artifactId : ""}
+        cancelEdit={onHideEditor}
+      />
+    </Suspense>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <Box className={`grad-${rarity}star`} sx={{ position: "relative" }}>
         <IconButton color="primary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 2 }}>
@@ -123,9 +133,9 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           {editable ?
             <CharacterDropdownButton size="small" inventory value={location} onChange={equipOnChar} /> : <LocationName location={location} />}
           {editable && <ButtonGroup>
-            {!!onEdit && <Button color="info" onClick={() => onEdit(id)} size="small">
+            <Button color="info" onClick={onShowEditor} size="small">
               <FontAwesomeIcon icon={faEdit} className="fa-fw" />
-            </Button>}
+            </Button>
             <Tooltip title={<Typography>{t`excludeArtifactTip`}</Typography>} placement="top" arrow>
               <Button onClick={() => database.updateArt({ exclude: !exclude }, id)} color={exclude ? "error" : "success"} size="small">
                 <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
