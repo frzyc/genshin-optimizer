@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { Badge, Box, Button, CardActionArea, CardContent, Divider, Grid, IconButton, Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 import Assets from "../../Assets/Assets";
 import ArtifactCardNano from "../../Components/Artifact/ArtifactCardNano";
 import CardLight from "../../Components/Card/CardLight";
@@ -32,6 +33,7 @@ type Data = {
 export default function CharacterOverviewPane({ settab }: Data) {
   const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
+  const { t } = useTranslation("page_character")
   const charEle = data.get(input.charEle).value as ElementKey
   const weaponTypeKey = characterSheet.weaponTypeKey
   const level = data.get(input.lvl).value
@@ -102,7 +104,7 @@ export default function CharacterOverviewPane({ settab }: Data) {
                 </CardActionArea>
               </Grid>)}
           </Grid>
-          <Typography sx={{ textAlign: "center", mt: 1 }} variant="h6">Teammates</Typography>
+          <Typography sx={{ textAlign: "center", mt: 1 }} variant="h6">{t("teammates")}</Typography>
           <CardActionArea sx={{ p: 1 }} onClick={() => settab("buffs")}>
             <Grid container columns={3} spacing={1}>
               {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} index={i} /></Grid>)}

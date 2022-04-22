@@ -13,5 +13,6 @@
   "calculations": "Calculations",
   "selectCharacter": "Select a Character",
   "removeCharacter": "Are you sure you want to remove {{value}}?",
-  "delete": "Delete Character"
+  "delete": "Delete Character",
+  "teammates": "Teammates"
 }
