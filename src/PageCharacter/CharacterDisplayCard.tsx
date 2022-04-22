@@ -168,7 +168,7 @@ function CharSelectDropdown() {
           </DropdownButton>}
           <CustomNumberInputButtonGroupWrapper >
             <CustomNumberInput onChange={setLevel} value={level}
-              startAdornment="Lvl. "
+              startAdornment="Lv. "
               inputProps={{ min: 1, max: 90, sx: { textAlign: "center" } }}
               sx={{ width: "100%", height: "100%", pl: 2 }}
               disabled={!characterSheet} />
@@ -177,7 +177,7 @@ function CharSelectDropdown() {
           <DropdownButton title={t("selectLevel")} disabled={!characterSheet}>
             {milestoneLevels.map(([lv, as]) => {
               const sameLevel = lv === ascensionMaxLevel[as]
-              const lvlstr = sameLevel ? `Lvl. ${lv}` : `Lvl. ${lv}/${ascensionMaxLevel[as]}`
+              const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
               const selected = lv === level && as === ascension
               return <MenuItem key={`${lv}/${as}`} selected={selected} disabled={selected} onClick={() => characterDispatch({ level: lv, ascension: as })}>{lvlstr}</MenuItem>
             })}
