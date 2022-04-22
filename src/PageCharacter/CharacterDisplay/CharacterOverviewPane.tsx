@@ -25,7 +25,11 @@ import { range } from "../../Util/Util";
 import CharacterCardPico from "../CharacterCardPico";
 import StatInput from "../StatInput";
 
-export default function CharacterOverviewPane() {
+type Data = {
+  settab: (any) => void,
+}
+
+export default function CharacterOverviewPane({ settab }: Data) {
   const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
   const charEle = data.get(input.charEle).value as ElementKey
@@ -59,47 +63,51 @@ export default function CharacterOverviewPane() {
           </Typography>
           <Typography variant="h6"><Stars stars={characterSheet.rarity} colored /></Typography>
           <Typography variant="h5">Lvl. {CharacterSheet.getLevelString(level, ascension)}</Typography>
-          <Grid container spacing={1} mt={1}>
-            {(["auto", "skill", "burst"] as TalentSheetElementKey[]).map(tKey =>
-              <Grid item xs={4} key={tKey}>
-                <Badge badgeContent={tlvl[tKey]} color={tBoost[tKey] ? "info" : "secondary"}
-                  overlap="circular"
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'right',
-                  }}
-                  sx={{
-                    width: "100%",
-                    height: "100%",
-                    "& > .MuiBadge-badge": {
-                      fontSize: "1.25em",
-                      padding: ".25em .4em",
-                      borderRadius: ".5em",
-                      lineHeight: 1,
-                      height: "1.25em"
-                    }
-                  }}>
-                  <Box component="img" src={characterSheet.getTalentOfKey(tKey, charEle)?.img} width="100%" height="auto" />
-                </Badge>
-              </Grid>)}
-          </Grid>
+          <CardActionArea sx={{ p: 1 }} onClick={() => settab("talent")}>
+            <Grid container spacing={1} mt={-1}>
+              {(["auto", "skill", "burst"] as TalentSheetElementKey[]).map(tKey =>
+                <Grid item xs={4} key={tKey}>
+                  <Badge badgeContent={tlvl[tKey]} color={tBoost[tKey] ? "info" : "secondary"}
+                    overlap="circular"
+                    anchorOrigin={{
+                      vertical: 'bottom',
+                      horizontal: 'right',
+                    }}
+                    sx={{
+                      width: "100%",
+                      height: "100%",
+                      "& > .MuiBadge-badge": {
+                        fontSize: "1.25em",
+                        padding: ".25em .4em",
+                        borderRadius: ".5em",
+                        lineHeight: 1,
+                        height: "1.25em"
+                      }
+                    }}>
+                    <Box component="img" src={characterSheet.getTalentOfKey(tKey, charEle)?.img} width="100%" height="auto" />
+                  </Badge>
+                </Grid>)}
+            </Grid>
+          </CardActionArea>
           <Typography sx={{ textAlign: "center", mt: 1 }} variant="h6">{characterSheet.constellationName}</Typography>
           <Grid container spacing={1}>
             {range(1, 6).map(i =>
               <Grid item xs={4} key={i}>
                 <CardActionArea onClick={() => characterDispatch({ constellation: i === constellation ? i - 1 : i })}>
-                <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i}` as TalentSheetElementKey, charEle)?.img}
-                  sx={{
-                    ...(constellation >= i ? {} : { filter: "brightness(50%)" })
-                  }}
-                  width="100%" height="auto" />
-                  </CardActionArea>
+                  <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i}` as TalentSheetElementKey, charEle)?.img}
+                    sx={{
+                      ...(constellation >= i ? {} : { filter: "brightness(50%)" })
+                    }}
+                    width="100%" height="auto" />
+                </CardActionArea>
               </Grid>)}
           </Grid>
           <Typography sx={{ textAlign: "center", mt: 1 }} variant="h6">Teammates</Typography>
-          <Grid container columns={3} spacing={1}>
-            {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} index={i} /></Grid>)}
-          </Grid>
+          <CardActionArea sx={{ p: 1 }} onClick={() => settab("buffs")}>
+            <Grid container columns={3} spacing={1}>
+              {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} index={i} /></Grid>)}
+            </Grid>
+          </CardActionArea>
         </CardContent>
       </CardLight>
     </Grid>
@@ -108,12 +116,11 @@ export default function CharacterOverviewPane() {
     }} >
       <Grid container spacing={1}>
         <Grid item xs={6} sm={4} md={3} lg={2}>
-          {/* TODO click to go the equipment tab */}
-          <WeaponCardNano weaponId={character.equippedWeapon} BGComponent={CardLight} />
+          <WeaponCardNano weaponId={character.equippedWeapon} BGComponent={CardLight} onClick={() => settab("equip")} />
         </Grid>
         {allSlotKeys.map(slotKey =>
           <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >
-            <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} slotKey={slotKey} BGComponent={CardLight} />
+            <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} slotKey={slotKey} BGComponent={CardLight} onClick={() => settab("equip")} />
           </Grid>)}
       </Grid>
       <MainStatsCards />
