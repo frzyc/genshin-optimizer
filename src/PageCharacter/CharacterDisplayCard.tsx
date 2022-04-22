@@ -38,17 +38,14 @@ import CharacterTeamBuffsPane from './CharacterDisplay/CharacterTeamBuffsPane';
 
 type CharacterDisplayCardProps = {
   characterKey: CharacterKey,
-  footer?: JSX.Element
   newteamData?: TeamData,
   mainStatAssumptionLevel?: number,
   onClose?: (any) => void,
 }
-export default function CharacterDisplayCard({ characterKey, footer, newteamData, mainStatAssumptionLevel = 0, onClose }: CharacterDisplayCardProps) {
+export default function CharacterDisplayCard({ characterKey, newteamData, mainStatAssumptionLevel = 0, onClose }: CharacterDisplayCardProps) {
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { character, characterSheet, target: charUIData } = teamData?.[characterKey] ?? {}
   let { params: { tab = "overview" } } = useMatch({ path: "/character/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }
-
-  const { t } = useTranslation("page_character")
 
   const characterDispatch = useCharacterReducer(character?.key ?? "")
   const { compareData } = character ?? {}
@@ -94,23 +91,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
           </Grid>}
         </Grid>
         <CardLight>
-          <Tabs
-            value={tab}
-            variant="scrollable"
-            allowScrollButtonsMobile
-            sx={{
-              "& .MuiTab-root:hover": {
-                transition: "background-color 0.5s ease",
-                backgroundColor: "rgba(255,255,255,0.1)"
-              },
-            }}
-          >
-            <Tab sx={{ minWidth: "20%" }} value="overview" label={t("tabs.overview")} icon={<Person />} component={RouterLink} to="" />
-            <Tab sx={{ minWidth: "20%" }} value="talent" label={t("tabs.talent")} icon={<FactCheck />} component={RouterLink} to="talent" />
-            <Tab sx={{ minWidth: "20%" }} value="equip" label={t("tabs.equip")} icon={<Checkroom />} component={RouterLink} to="equip" />
-            <Tab sx={{ minWidth: "20%" }} value="buffs" label={t("tabs.buffs")} icon={<Groups />} component={RouterLink} to="teambuffs" />
-            <Tab sx={{ minWidth: "20%" }} value="build" label={t("tabs.build")} icon={<Calculate />} component={RouterLink} to="build" />
-          </Tabs>
+          <TabNav tab={tab} />
         </CardLight>
         <FormulaCalcCard />
         <EnemyExpandCard />
@@ -125,15 +106,33 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
             <Route path="/build" element={<BuildDisplay />} />
           </Routes>
         </Suspense>
+        <CardLight>
+          <TabNav tab={tab} />
+        </CardLight>
       </CardContent>
-      {!!footer && <Divider />}
-      {footer && <CardContent >
-        {footer}
-      </CardContent>}
     </DataContext.Provider>
   </CardDark>
 }
-
+function TabNav({ tab }: { tab: string }) {
+  const { t } = useTranslation("page_character")
+  return <Tabs
+    value={tab}
+    variant="scrollable"
+    allowScrollButtonsMobile
+    sx={{
+      "& .MuiTab-root:hover": {
+        transition: "background-color 0.5s ease",
+        backgroundColor: "rgba(255,255,255,0.1)"
+      },
+    }}
+  >
+    <Tab sx={{ minWidth: "20%" }} value="overview" label={t("tabs.overview")} icon={<Person />} component={RouterLink} to="" />
+    <Tab sx={{ minWidth: "20%" }} value="talent" label={t("tabs.talent")} icon={<FactCheck />} component={RouterLink} to="talent" />
+    <Tab sx={{ minWidth: "20%" }} value="equip" label={t("tabs.equip")} icon={<Checkroom />} component={RouterLink} to="equip" />
+    <Tab sx={{ minWidth: "20%" }} value="buffs" label={t("tabs.buffs")} icon={<Groups />} component={RouterLink} to="teambuffs" />
+    <Tab sx={{ minWidth: "20%" }} value="build" label={t("tabs.build")} icon={<Calculate />} component={RouterLink} to="build" />
+  </Tabs>
+}
 
 function CharSelectDropdown() {
   const { t } = useTranslation("page_character")

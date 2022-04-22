@@ -81,7 +81,6 @@ function TeammateDisplay({ index }: { index: number }) {
   const activeCharacterKey = active.key
   const characterKey = active.team[index]
   const characterDispatch = useCharacterReducer(characterKey)
-  // TODO: this UIData should be fed from the main CharacterDisplayCard for teams.
   const onClickHandler = useCharSelectionCallback()
 
   const dataBundle = teamData[characterKey]
