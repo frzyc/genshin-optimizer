@@ -1,5 +1,5 @@
 import { useCallback, useContext } from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { initialCharacter } from "../Util/CharacterUtil";
 import { DatabaseContext } from "../Database/Database";
@@ -12,7 +12,7 @@ import { defaultInitialWeapon } from "../Util/WeaponUtil";
  */
 export default function useCharSelectionCallback() {
   const { database } = useContext(DatabaseContext)
-  const history = useHistory()
+  const navigate = useNavigate()
   const cb = useCallback(
     async (characterKey: CharacterKey) => {
       const character = database._getChar(characterKey)
@@ -26,9 +26,9 @@ export default function useCharSelectionCallback() {
         const weaponId = database.createWeapon(weapon)
         database.setWeaponLocation(weaponId, characterKey)
       }
-      history.push(`/character/${characterKey}`)
+      navigate(`/character/${characterKey}`)
     },
-    [history, database],
+    [navigate, database],
   )
   return cb
 }

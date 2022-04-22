@@ -2,7 +2,7 @@ import { ChevronRight } from '@mui/icons-material';
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { Suspense, useCallback, useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ArtifactCardNano from '../../Components/Artifact/ArtifactCardNano';
 import { artifactSlotIcon } from '../../Components/Artifact/SlotNameWIthIcon';
 import CardDark from '../../Components/Card/CardDark';
@@ -94,15 +94,14 @@ export default function ArtifactBuildDisplayItem({ index, compareBuild, disabled
 }
 
 function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLevel, onClose }: { newOld: NewOld, mainStatAssumptionLevel: number, onClose: () => void }) {
-  console.log("newOld", newId, oldId)
-  const history = useHistory()
+  const navigate = useNavigate()
+  // TODO: artifact editor instead of going to artifact page. idealy fold ArtifactEditor to ArtifactCard
   const edit = useCallback(
-    artid => history.push({
-      pathname: "/artifact",
+    artid => navigate("/artifact", {
       state: {
         artToEditId: artid
       } as ArtifactDisplayLocationState
-    } as any), [history])
+    }), [navigate])
   return <ModalWrapper open={!!newId} onClose={onClose} containerProps={{ maxWidth: oldId ? "md" : "xs" }}>
     <CardDark>
       <CardContent sx={{ display: "flex", justifyContent: "center", alignItems: "stretch", gap: 2, height: "100%" }}>

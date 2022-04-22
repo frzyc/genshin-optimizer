@@ -6,7 +6,7 @@ import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItemButton,
 import { Suspense, useState } from "react";
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from "react-i18next";
-import { Link as RouterLink, useRouteMatch } from "react-router-dom";
+import { Link as RouterLink, useMatch } from "react-router-dom";
 import { SlotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
 
 const content = [{
@@ -70,14 +70,7 @@ function HeaderContent({ anchor }) {
 
   const { t } = useTranslation("ui")
 
-  const routeMatch = useRouteMatch({
-    path: "/:slug",
-    strict: true,
-    sensitive: true
-  });
-
-
-  const currentTab = (routeMatch?.params as any)?.slug ?? false
+  const { params: { currentTab } } = useMatch({ path: "/:currentTab", end: false }) ?? { params: { currentTab: "" } };
   if (isMobile) return <MobileHeader anchor={anchor} currentTab={currentTab} />
   return <AppBar position="static" sx={{ bgcolor: "#343a40", display: "flex", flexWrap: "nowrap" }} elevation={0} id={anchor} >
     <Tabs
