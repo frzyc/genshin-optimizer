@@ -1,7 +1,10 @@
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PersonAdd } from "@mui/icons-material";
-import { CardContent, CardHeader, Divider, Grid } from "@mui/material";
+import { CardContent, CardHeader, Divider, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useContext, useMemo } from 'react';
+import BootstrapTooltip from "../../Components/BootstrapTooltip";
 import CardLight from "../../Components/Card/CardLight";
 import CharacterDropdownButton from "../../Components/Character/CharacterDropdownButton";
 import DocumentDisplay from "../../Components/DocumentDisplay";
@@ -59,15 +62,17 @@ export function TeamBuffDisplay() {
 function ResonanceDisplay() {
   const { data } = useContext(DataContext)
   return <>
-    {resonanceSheets.map((res, i) =>
-      <CardLight key={i} sx={{ opacity: res.canShow(data) ? 1 : 0.5, }}>
-        <CardHeader title={res.name} action={res.icon} titleTypographyProps={{ variant: "subtitle2" }} />
+    {resonanceSheets.map((res, i) => {
+      const icon = <BootstrapTooltip placement="top" title={<Typography>{res.desc}</Typography>}>{<Box component="span" sx={{ cursor: "help" }}><FontAwesomeIcon icon={faInfoCircle} /></Box>}</BootstrapTooltip>
+      const title = <span>{res.name} {icon}</span>
+      return <CardLight key={i} sx={{ opacity: res.canShow(data) ? 1 : 0.5, }}>
+        <CardHeader title={title} action={res.icon} titleTypographyProps={{ variant: "subtitle2" }} />
         {res.canShow(data) && <Divider />}
         {res.canShow(data) && <CardContent>
-          <DocumentDisplay sections={res.sections} teamBuffOnly={true} />
+          <DocumentDisplay sections={res.sections} teamBuffOnly hideDesc/>
         </CardContent>}
       </CardLight>
-    )}
+    })}
   </>
 }
 function TeammateDisplay({ index }: { index: number }) {

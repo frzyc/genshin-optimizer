@@ -95,9 +95,8 @@ export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) =>
 TODO: refactor stage 1 this function to be
 sectionTemplate(docSection:DocumentSection): DocumentSection
 */
-export const sectionTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[], conditional?: IConditional, fieldsCanShow?: (data: UIData) => boolean, teamBuff?: boolean, showFieldsHeaderDesc?: boolean): DocumentSection => ({
-  fieldsHeader: showFieldsHeaderDesc ? conditionalHeader(talentKey, tr, img) : undefined,
-  fieldsDescription: showFieldsHeaderDesc ? tr(`${talentKey}.description`) : undefined,
+export const sectionTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[], conditional?: IConditional, fieldsCanShow?: (data: UIData) => boolean, teamBuff?: boolean, showFieldsHeader?: boolean): DocumentSection => ({
+  fieldsHeader: showFieldsHeader ? conditionalHeader(talentKey, tr, img) : undefined,
   fields,
   canShow: fieldsCanShow,
   teamBuff,

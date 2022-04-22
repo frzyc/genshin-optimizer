@@ -13,6 +13,7 @@ const trm = (strKey: string) => <Translate ns="elementalResonance" key18={strKey
 
 type IResonance = {
   name: Displayable,
+  desc: Displayable,
   icon: Displayable,
   canShow: (data: UIData) => boolean
   sections: DocumentSection[]
@@ -24,11 +25,11 @@ greaterEq(sum(...allElementsWithPhy.map(i => min(1, tally[i]))), 4, percent(0.15
 
 const protectiveCanopy: IResonance = {
   name: tr("ProtectiveCanopy.name"),
+  desc: tr("ProtectiveCanopy.desc"),
   icon: <span>{StatIcon.anemo} {StatIcon.geo} {StatIcon.pyro} {StatIcon.hydro} {StatIcon.cryo} {StatIcon.electro} x4</span>,
   canShow: (data: UIData) => allElements.filter(e => data.get(tally[e]).value >= 1).length === 4,
   sections: [{
     teamBuff: true,
-    text: tr("ProtectiveCanopy.desc"),
     fields: Object.values(pcNodes).map(node => ({ node }))
   }]
 }
@@ -37,11 +38,11 @@ const protectiveCanopy: IResonance = {
 const ffNode = greaterEq(tally.pyro, 2, percent(0.25))
 const ferventFlames: IResonance = {
   name: tr("FerventFlames.name"),
+  desc: tr("FerventFlames.desc"),
   icon: <span>{StatIcon.pyro} {StatIcon.pyro}</span>,
   canShow: (data: UIData) => data.get(tally.pyro).value >= 2,
   sections: [{
     teamBuff: true,
-    text: tr("FerventFlames.desc"),
     fields: [{
       text: st("effectDuration.cryo"),
       value: -40,
@@ -56,11 +57,11 @@ const ferventFlames: IResonance = {
 const swNode = greaterEq(tally.hydro, 2, percent(0.25))
 const soothingWaters: IResonance = {
   name: tr("SoothingWater.name"),
+  desc: tr("SoothingWater.desc"),
   icon: <span>{StatIcon.hydro} {StatIcon.hydro}</span>,
   canShow: (data: UIData) => data.get(tally.hydro).value >= 2,
   sections: [{
     teamBuff: true,
-    text: tr("SoothingWater.desc"),
     fields: [{
       text: st("effectDuration.pyro"),
       value: -40,
@@ -77,11 +78,11 @@ const condSI = condReadNode(condSIPath)
 const siNode = greaterEq(tally.cryo, 2, equal(condSI, "on", percent(0.15)))
 const shatteringIce: IResonance = {
   name: tr("ShatteringIce.name"),
+  desc: tr("ShatteringIce.desc"),
   icon: <span>{StatIcon.cryo} {StatIcon.cryo}</span>,
   canShow: (data: UIData) => data.get(tally.cryo).value >= 2,
   sections: [{
     teamBuff: true,
-    text: tr("ShatteringIce.desc"),
     fields: [{
       text: st("effectDuration.electro"),
       value: -40,
@@ -110,11 +111,11 @@ const shatteringIce: IResonance = {
 // High Voltage
 const highVoltage: IResonance = {
   name: tr("HighVoltage.name"),
+  desc: tr("HighVoltage.desc"),
   icon: <span>{StatIcon.electro} {StatIcon.electro}</span>,
   canShow: (data: UIData) => data.get(tally.electro).value >= 2,
   sections: [{
     teamBuff: true,
-    text: tr("HighVoltage.desc"),
     fields: [{
       text: st("effectDuration.hydro"),
       value: -40,
@@ -129,11 +130,11 @@ const iwNodeMove = greaterEq(tally.anemo, 2, percent(0.1))
 const iwNodeCD = greaterEq(tally.anemo, 2, percent(-0.05))
 const impetuousWinds: IResonance = {
   name: tr("ImpetuousWinds.name"),
+  desc: tr("ImpetuousWinds.desc"),
   icon: <span>{StatIcon.anemo} {StatIcon.anemo}</span>,
   canShow: (data: UIData) => data.get(tally.anemo).value >= 2,
   sections: [{
     teamBuff: true,
-    text: tr("ImpetuousWinds.desc"),
     fields: [{
       node: iwNodeStam
     }, {
@@ -152,6 +153,7 @@ const erNodeDMG_ = greaterEq(tally.geo, 2, equal(condER, "on", percent(0.15)))
 const erNodeRes_ = greaterEq(tally.geo, 2, equal(condER, "on", percent(-0.2)))
 const enduringRock: IResonance = {
   name: tr("EnduringRock.name"),
+  desc: tr("EnduringRock.desc"),
   icon: <span>{StatIcon.geo} {StatIcon.geo}</span>,
   canShow: (data: UIData) => data.get(tally.geo).value >= 2,
   sections: [{
