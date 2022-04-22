@@ -1,6 +1,6 @@
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { CardContent, CardHeader, Divider, ListItem, Typography } from "@mui/material"
+import { Box, CardContent, CardHeader, Divider, ListItem, Typography } from "@mui/material"
 import { useContext } from "react"
 import { DataContext, dataContextObj } from "../../DataContext"
 import { Data } from "../../Formula/type"
@@ -31,9 +31,9 @@ export default function ConditionalDisplay({ conditional, hideHeader = false, hi
   let { icon, title, action } = conditional.header ?? {}
   icon = evalIfFunc(icon, data)
   const fields = condVal && conditional.states[condVal]?.fields
-  const displayTitle = hideDesc ? title : title && <BootstrapTooltip placement="top" title={<Typography>{description}</Typography>}>
-    <span>{title} <FontAwesomeIcon icon={faInfoCircle} /></span>
-  </BootstrapTooltip>
+  const displayTitle = hideDesc ? title : title && <span>{title} <BootstrapTooltip placement="top" title={<Typography>{description}</Typography>}>
+    <Box component="span" sx={{ cursor: "help" }}><FontAwesomeIcon icon={faInfoCircle} /></Box>
+  </BootstrapTooltip></span>
   return <CardDark>
     {!hideHeader && conditional.header && <CardHeader avatar={icon} title={displayTitle} action={action} titleTypographyProps={{ variant: "subtitle2" }} />}
     {!hideHeader && conditional.header && <Divider />}

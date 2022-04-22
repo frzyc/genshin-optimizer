@@ -5,7 +5,7 @@ import { Alert, Box, Button, CardContent, Grid, Link, Pagination, Skeleton, Togg
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import CardDark from '../Components/Card/CardDark';
 import InfoComponent from '../Components/InfoComponent';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
@@ -17,7 +17,6 @@ import KeyMap from '../KeyMap';
 import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import { allSubstats, SubstatKey } from '../Types/artifact';
-import { ArtifactDisplayLocationState } from '../Types/LocationState';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
@@ -41,7 +40,6 @@ function initialState() {
 export default function ArtifactDisplay() {
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { t } = useTranslation(["artifact", "ui"]);
-  const { state: locationState } = useLocation<ArtifactDisplayLocationState | undefined>()
   const { database } = useContext(DatabaseContext)
   const [state, setState] = useDBState("ArtifactDisplay", initialState)
   const stateDispatch = useCallback(
@@ -58,14 +56,11 @@ export default function ArtifactDisplay() {
   //force the sortType back to a normal value after exiting TC mode
   if (sortType === "probability" && !tcMode) stateDispatch({ sortType: artifactSortKeys[0] })
 
-  const [artToEditId, setartToEditId] = useState(locationState?.artToEditId)
   const [pageIdex, setpageIdex] = useState(0)
   const invScrollRef = useRef<HTMLDivElement>(null)
   const [dbDirty, forceUpdate] = useForceUpdate()
   const effFilterSet = useMemo(() => new Set(effFilter), [effFilter]) as Set<SubstatKey>
   const deleteArtifact = useCallback((id: string) => database.removeArt(id), [database])
-  const editArtifact = useCallback(id => setartToEditId(id), [])
-  const cancelEditArtifact = useCallback(() => setartToEditId(undefined), [])
 
   useEffect(() => {
     ReactGA.pageview('/artifact')
@@ -128,13 +123,6 @@ export default function ArtifactDisplay() {
 
     {noArtifact && <Alert severity="info" variant="filled">Looks like you haven't added any artifacts yet. If you want, there are <Link color="warning.main" component={RouterLink} to="/scanner">automatic scanners</Link> that can speed up the import process!</Alert>}
 
-    <Suspense fallback={false}><ArtifactEditor
-      artifactIdToEdit={artToEditId}
-      cancelEdit={cancelEditArtifact}
-      allowUpload
-      allowEmpty
-    /></Suspense>
-
     <ArtifactFilter filterOption={filterOption} filterOptionDispatch={filterOptionDispatch} filterDispatch={stateDispatch}
       numShowing={artifactIds.length} total={totalArtNum} />
     {showProbability && <ProbabilityFilter probabilityFilter={probabilityFilter} setProbabilityFilter={setProbabilityFilter} />}
@@ -157,8 +145,9 @@ export default function ArtifactDisplay() {
         <Grid item flexGrow={1}>
           <ShowingArt count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={4} xl={3}>
-          <SortByButton fullWidth sortKeys={[...artifactSortKeys.filter(key => (artifactSortKeysTC as unknown as string[]).includes(key) ? tcMode : true)]}
+        <Grid item xs={12} sm={6} md={4} lg={4} xl={3} display="flex">
+          <Box flexGrow={1} />
+          <SortByButton sortKeys={[...artifactSortKeys.filter(key => (artifactSortKeysTC as unknown as string[]).includes(key) ? tcMode : true)]}
             value={sortType} onChange={sortType => stateDispatch({ sortType })}
             ascending={ascending} onChangeAsc={ascending => stateDispatch({ ascending })}
           />
@@ -170,24 +159,7 @@ export default function ArtifactDisplay() {
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
       <Grid container spacing={1} columns={{ xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }} >
         <Grid item xs={1} >
-          <CardDark sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
-            <CardContent>
-              <Typography sx={{ textAlign: "center" }}>Add New Artifact</Typography>
-            </CardContent>
-            <Box sx={{
-              flexGrow: 1,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-            >
-              <Button onClick={() => editArtifact("new")} sx={{
-                borderRadius: "1em"
-              }}>
-                <Typography variant="h1"><FontAwesomeIcon icon={faPlus} className="fa-fw" /></Typography>
-              </Button>
-            </Box>
-          </CardDark>
+          <NewArtifactCard />
         </Grid>
         {artifactIdsToShow.map(artId =>
           <Grid item key={artId} xs={1}  >
@@ -195,7 +167,6 @@ export default function ArtifactDisplay() {
               artifactId={artId}
               effFilter={effFilterSet}
               onDelete={deleteArtifact}
-              onEdit={editArtifact}
               probabilityFilter={showProbability ? probabilityFilter : undefined}
             />
           </Grid>
@@ -213,6 +184,36 @@ export default function ArtifactDisplay() {
       </Grid>
     </CardContent></CardDark>}
   </Box >
+}
+function NewArtifactCard() {
+  const [show, setshow] = useState(false)
+  const onShow = useCallback(() => setshow(true), [setshow])
+  const onHide = useCallback(() => setshow(false), [setshow])
+
+  return <CardDark sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
+    <Suspense fallback={false}><ArtifactEditor
+      artifactIdToEdit={show ? "new" : ""}
+      cancelEdit={onHide}
+      allowUpload
+      allowEmpty
+    /></Suspense>
+    <CardContent>
+      <Typography sx={{ textAlign: "center" }}>Add New Artifact</Typography>
+    </CardContent>
+    <Box sx={{
+      flexGrow: 1,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }}
+    >
+      <Button onClick={onShow} sx={{
+        borderRadius: "1em"
+      }}>
+        <Typography variant="h1"><FontAwesomeIcon icon={faPlus} className="fa-fw" /></Typography>
+      </Button>
+    </Box>
+  </CardDark>
 }
 
 function ShowingArt({ count, page, onChange, numShowing, total, t }) {

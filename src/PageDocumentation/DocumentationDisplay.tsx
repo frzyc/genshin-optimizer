@@ -3,7 +3,7 @@ import { Box, CardContent, Divider, Grid, Link as MuiLink, Skeleton, styled, Tab
 import React, { Suspense } from "react";
 import ReactGA from 'react-ga';
 import { useTranslation } from 'react-i18next';
-import { HashRouter, Link, Route, Switch, useRouteMatch } from "react-router-dom";
+import { Link, Route, Routes, useMatch } from "react-router-dom";
 import CardDark from "../Components/Card/CardDark";
 import CardLight from "../Components/Card/CardLight";
 import SqBadge from "../Components/SqBadge";
@@ -11,75 +11,68 @@ import material from "../Data/Materials/Material";
 import KeyMap from "../KeyMap";
 import { allArtifactSets, allCharacterKeys, allWeaponKeys } from "../Types/consts";
 
-export default function HomeDisplay(props: any) {
+export default function HomeDisplay() {
   // const { t } = useTranslation("documentation")
   ReactGA.pageview('/doc')
 
-  const routeMatch = useRouteMatch({
-    path: "/doc/:slug",
-    strict: true,
-    sensitive: true
-  });
-  const currentTab = (routeMatch?.params as any)?.slug ?? ""
+  const { params: { currentTab } } = useMatch("/doc/:currentTab") ?? { params: { currentTab: "" } }
 
-  return <HashRouter basename="/doc/">
-    <CardDark sx={{ my: 1 }}>
-      <Grid container sx={{ px: 2, py: 1 }}>
-        <Grid item flexGrow={1}>
-          <Typography variant="h6">
-            Documentation
-          </Typography>
+  return <CardDark sx={{ my: 1 }}>
+    <Grid container sx={{ px: 2, py: 1 }}>
+      <Grid item flexGrow={1}>
+        <Typography variant="h6">
+          Documentation
+        </Typography>
+      </Grid>
+      <Grid item>
+        <Typography variant="h6">
+          <SqBadge color="info">Version. 2</SqBadge>
+        </Typography>
+      </Grid>
+    </Grid>
+    <Divider />
+    <CardContent>
+      <Grid container spacing={1}>
+        <Grid item xs={12} md={2}>
+          <CardLight sx={{ height: "100%" }}>
+            <Tabs
+              orientation="vertical"
+              value={currentTab}
+              aria-label="Documentation Navigation"
+              sx={{ borderRight: 1, borderColor: 'divider' }}
+            >
+              <Tab label="Overview" value="" component={Link} to="" />
+              <Tab label={"Key naming convention"} value="KeyNaming" component={Link} to="KeyNaming" />
+              <Tab label={<code>StatKey</code>} value="StatKey" component={Link} to="StatKey" />
+              <Tab label={<code>ArtifactSetKey</code>} value="ArtifactSetKey" component={Link} to="ArtifactSetKey" />
+              <Tab label={<code>CharacterKey</code>} value="CharacterKey" component={Link} to="CharacterKey" />
+              <Tab label={<code>WeaponKey</code>} value="WeaponKey" component={Link} to="WeaponKey" />
+              <Tab label={<code>MaterialKey</code>} value="MaterialKey" component={Link} to="MaterialKey" />
+              <Tab label={"Version History"} value="VersionHistory" component={Link} to="VersionHistory" />
+            </Tabs>
+          </CardLight>
         </Grid>
-        <Grid item>
-          <Typography variant="h6">
-            <SqBadge color="info">Version. 2</SqBadge>
-          </Typography>
+        <Grid item xs={12} md={10}>
+          <CardLight sx={{ height: "100%" }}>
+            <CardContent>
+              <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
+                <Routes>
+                  <Route index element={<Overview />} />
+                  <Route path="/VersionHistory" element={<VersionHistoryPane />} />
+                  <Route path="/MaterialKey" element={<MaterialKeyPane />} />
+                  <Route path="/ArtifactSetKey" element={<ArtifactSetKeyPane />} />
+                  <Route path="/WeaponKey" element={<WeaponKeyPane />} />
+                  <Route path="/CharacterKey" element={<CharacterKeyPane />} />
+                  <Route path="/StatKey" element={<StatKeyPane />} />
+                  <Route path="/KeyNaming" element={<KeyNamingPane />} />
+                </Routes>
+              </Suspense>
+            </CardContent>
+          </CardLight>
         </Grid>
       </Grid>
-      <Divider />
-      <CardContent>
-        <Grid container spacing={1}>
-          <Grid item xs={12} md={2}>
-            <CardLight sx={{ height: "100%" }}>
-              <Tabs
-                orientation="vertical"
-                value={currentTab}
-                aria-label="Documentation Navigation"
-                sx={{ borderRight: 1, borderColor: 'divider' }}
-              >
-                <Tab label="Overview" value="" component={Link} to="/" />
-                <Tab label={"Key naming convention"} value="KeyNaming" component={Link} to="/KeyNaming" />
-                <Tab label={<code>StatKey</code>} value="StatKey" component={Link} to="/StatKey" />
-                <Tab label={<code>ArtifactSetKey</code>} value="ArtifactSetKey" component={Link} to="/ArtifactSetKey" />
-                <Tab label={<code>CharacterKey</code>} value="CharacterKey" component={Link} to="/CharacterKey" />
-                <Tab label={<code>WeaponKey</code>} value="WeaponKey" component={Link} to="/WeaponKey" />
-                <Tab label={<code>MaterialKey</code>} value="MaterialKey" component={Link} to="/MaterialKey" />
-                <Tab label={"Version History"} value="VersionHistory" component={Link} to="/VersionHistory" />
-              </Tabs>
-            </CardLight>
-          </Grid>
-          <Grid item xs={12} md={10}>
-            <CardLight sx={{ height: "100%" }}>
-              <CardContent>
-                <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
-                  <Switch>
-                    <Route path="/VersionHistory" component={VersionHistoryPane} />
-                    <Route path="/MaterialKey" component={MaterialKeyPane} />
-                    <Route path="/ArtifactSetKey" component={ArtifactSetKeyPane} />
-                    <Route path="/WeaponKey" component={WeaponKeyPane} />
-                    <Route path="/CharacterKey" component={CharacterKeyPane} />
-                    <Route path="/StatKey" component={StatKeyPane} />
-                    <Route path="/KeyNaming" component={KeyNamingPane} />
-                    <Route path="/" component={Overview} />
-                  </Switch>
-                </Suspense>
-              </CardContent>
-            </CardLight>
-          </Grid>
-        </Grid>
-      </CardContent>
-    </CardDark>
-  </HashRouter >
+    </CardContent>
+  </CardDark>
 }
 
 const goodCode = `interface IGOOD {

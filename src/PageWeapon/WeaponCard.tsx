@@ -53,7 +53,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
     <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
       <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
         <Box className={`grad-${weaponSheet.rarity}star`} sx={{ position: "relative" }}>
-          {!onClick && <IconButton color="primary" onClick={() => database.updateWeapon({ lock: !lock }, id)} sx={{ position: "absolute", right: 0, bottom: 0, }}>
+          {!onClick && <IconButton color="primary" onClick={() => database.updateWeapon({ lock: !lock }, id)} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 2 }}>
             {lock ? <Lock /> : <LockOpen />}
           </IconButton>}
           <Box sx={{ position: "relative", zIndex: 1 }}>
