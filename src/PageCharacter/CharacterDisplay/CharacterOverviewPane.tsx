@@ -4,6 +4,7 @@ import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { Badge, Box, Button, CardActionArea, CardContent, Divider, Grid, IconButton, Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import Assets from "../../Assets/Assets";
 import ArtifactCardNano from "../../Components/Artifact/ArtifactCardNano";
 import CardLight from "../../Components/Card/CardLight";
@@ -26,13 +27,10 @@ import { range } from "../../Util/Util";
 import CharacterCardPico from "../CharacterCardPico";
 import StatInput from "../StatInput";
 
-type Data = {
-  settab: (any) => void,
-}
-
-export default function CharacterOverviewPane({ settab }: Data) {
+export default function CharacterOverviewPane() {
   const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
+  const navigate = useNavigate()
   const { t } = useTranslation("page_character")
   const charEle = data.get(input.charEle).value as ElementKey
   const weaponTypeKey = characterSheet.weaponTypeKey
@@ -65,7 +63,7 @@ export default function CharacterOverviewPane({ settab }: Data) {
           </Typography>
           <Typography variant="h6"><Stars stars={characterSheet.rarity} colored /></Typography>
           <Typography variant="h5">Lvl. {CharacterSheet.getLevelString(level, ascension)}</Typography>
-          <CardActionArea sx={{ p: 1 }} onClick={() => settab("talent")}>
+          <CardActionArea sx={{ p: 1 }} onClick={() => navigate("talent")}>
             <Grid container spacing={1} mt={-1}>
               {(["auto", "skill", "burst"] as TalentSheetElementKey[]).map(tKey =>
                 <Grid item xs={4} key={tKey}>
@@ -105,7 +103,7 @@ export default function CharacterOverviewPane({ settab }: Data) {
               </Grid>)}
           </Grid>
           <Typography sx={{ textAlign: "center", mt: 1 }} variant="h6">{t("teammates")}</Typography>
-          <CardActionArea sx={{ p: 1 }} onClick={() => settab("buffs")}>
+          <CardActionArea sx={{ p: 1 }} onClick={() => navigate("teambuffs")}>
             <Grid container columns={3} spacing={1}>
               {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} index={i} /></Grid>)}
             </Grid>
@@ -118,11 +116,11 @@ export default function CharacterOverviewPane({ settab }: Data) {
     }} >
       <Grid container spacing={1}>
         <Grid item xs={6} sm={4} md={3} lg={2}>
-          <WeaponCardNano weaponId={character.equippedWeapon} BGComponent={CardLight} onClick={() => settab("equip")} />
+          <WeaponCardNano weaponId={character.equippedWeapon} BGComponent={CardLight} onClick={() => navigate("equip")} />
         </Grid>
         {allSlotKeys.map(slotKey =>
           <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >
-            <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} slotKey={slotKey} BGComponent={CardLight} onClick={() => settab("equip")} />
+            <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} slotKey={slotKey} BGComponent={CardLight} onClick={() => navigate("equip")} />
           </Grid>)}
       </Grid>
       <MainStatsCards />

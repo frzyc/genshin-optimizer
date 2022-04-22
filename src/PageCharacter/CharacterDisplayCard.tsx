@@ -1,8 +1,8 @@
 import { Calculate, Checkroom, ExpandMore, FactCheck, Groups, Person } from '@mui/icons-material';
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, Card, CardContent, CardHeader, Collapse, Divider, Grid, MenuItem, Skeleton, Tab, Tabs, ToggleButton, Typography } from '@mui/material';
-import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useHistory } from 'react-router-dom';
+import { Link as RouterLink, Route, Routes, useMatch } from 'react-router-dom';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
@@ -35,26 +35,6 @@ import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
 import CharacterTeamBuffsPane from './CharacterDisplay/CharacterTeamBuffsPane';
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  value: string;
-  current: string | boolean;
-}
-
-function TabPanel({ children, current, value, ...other }: TabPanelProps) {
-  if (value !== current) return null
-  return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}>
-    <div
-      role="tabpanel"
-      hidden={value !== current}
-      id={`simple-tabpanel-${value}`}
-      aria-labelledby={`simple-tab-${value}`}
-      {...other}
-    >
-      {children}
-    </div>
-  </Suspense>
-}
 
 type CharacterDisplayCardProps = {
   characterKey: CharacterKey,
@@ -62,17 +42,11 @@ type CharacterDisplayCardProps = {
   newteamData?: TeamData,
   mainStatAssumptionLevel?: number,
   onClose?: (any) => void,
-  tabName?: string,
 }
-export default function CharacterDisplayCard({ characterKey, footer, newteamData, mainStatAssumptionLevel = 0, onClose, tabName }: CharacterDisplayCardProps) {
+export default function CharacterDisplayCard({ characterKey, footer, newteamData, mainStatAssumptionLevel = 0, onClose }: CharacterDisplayCardProps) {
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { character, characterSheet, target: charUIData } = teamData?.[characterKey] ?? {}
-
-  // set initial state to false, because it fails to check validity of the tab values on 1st load
-  const [tab, settab] = useState<string | boolean>(tabName ? tabName : (newteamData ? "newartifacts" : "character"))
-  const onTab = useCallback((e, v) => settab(v), [settab])
-  const history = useHistory()
-  useEffect(() => history.push(`/character/${characterKey}/${tab}`), [characterKey, tab])
+  let { params: { tab = "overview" } } = useMatch({ path: "/character/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }
 
   const { t } = useTranslation("page_character")
 
@@ -96,7 +70,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
 
   return <CardDark >
     <DataContext.Provider value={dataContextValue}>
-      <CardContent sx={{ display: "flex", flexDirection:"column", gap: 1 }}>
+      <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
         <Grid container spacing={1}>
           <Grid item>
             <CharSelectDropdown />
@@ -121,7 +95,6 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
         </Grid>
         <CardLight>
           <Tabs
-            onChange={onTab}
             value={tab}
             variant="scrollable"
             allowScrollButtonsMobile
@@ -132,32 +105,26 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
               },
             }}
           >
-            <Tab sx={{ minWidth: "20%" }} value="overview" label={t("tabs.overview")} icon={<Person />} />
-            <Tab sx={{ minWidth: "20%" }} value="talent" label={t("tabs.talent")} icon={<FactCheck />} />
-            <Tab sx={{ minWidth: "20%" }} value="equip" label={t("tabs.equip")} icon={<Checkroom />} />
-            <Tab sx={{ minWidth: "20%" }} value="buffs" label={t("tabs.buffs")} icon={<Groups />} />
-            <Tab sx={{ minWidth: "20%" }} value="build" label={t("tabs.build")} icon={<Calculate />} />
+            <Tab sx={{ minWidth: "20%" }} value="overview" label={t("tabs.overview")} icon={<Person />} component={RouterLink} to="" />
+            <Tab sx={{ minWidth: "20%" }} value="talent" label={t("tabs.talent")} icon={<FactCheck />} component={RouterLink} to="talent" />
+            <Tab sx={{ minWidth: "20%" }} value="equip" label={t("tabs.equip")} icon={<Checkroom />} component={RouterLink} to="equip" />
+            <Tab sx={{ minWidth: "20%" }} value="buffs" label={t("tabs.buffs")} icon={<Groups />} component={RouterLink} to="teambuffs" />
+            <Tab sx={{ minWidth: "20%" }} value="build" label={t("tabs.build")} icon={<Calculate />} component={RouterLink} to="build" />
           </Tabs>
         </CardLight>
         <FormulaCalcCard />
         <EnemyExpandCard />
-
-        {/* Character Panel */}
-        <TabPanel value="overview" current={tab}><CharacterOverviewPane settab={settab} /></TabPanel >
-        {/* Artifacts Panel */}
-        {/* <DataContext.Provider value={{ ...dataContextValue, data: charUIData, oldData: undefined }}>
-          <TabPanel value="artifacts" current={tab} ><CharacterArtifactPane /></TabPanel >
-        </DataContext.Provider> */}
-        {/* new build panel */}
-        <TabPanel value="equip" current={tab}><CharacterArtifactPane /></TabPanel >
-        {/* talent panel */}
-        <TabPanel value="talent" current={tab}>
-          <CharacterTalentPane />
-        </TabPanel >
-        {/* Buffs panel */}
-        <TabPanel value="buffs" current={tab}><CharacterTeamBuffsPane /></TabPanel >
-        {/* Build panel */}
-        <TabPanel value="build" current={tab}><BuildDisplay /></TabPanel >
+        <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={500} />}>
+          <Routes>
+            {/* Character Panel */}
+            <Route index element={<CharacterOverviewPane />} />
+            <Route path="/talent" element={<CharacterTalentPane />} />
+            <Route path="/equip" element={<CharacterArtifactPane />} />
+            <Route path="/teambuffs" element={<CharacterTeamBuffsPane />} />
+            <Route path="/talent" element={<CharacterTalentPane />} />
+            <Route path="/build" element={<BuildDisplay />} />
+          </Routes>
+        </Suspense>
       </CardContent>
       {!!footer && <Divider />}
       {footer && <CardContent >

@@ -14,7 +14,7 @@ export default function useCharSelectionCallback() {
   const { database } = useContext(DatabaseContext)
   const navigate = useNavigate()
   const cb = useCallback(
-    async (characterKey: CharacterKey, tabName?: string) => {
+    async (characterKey: CharacterKey) => {
       const character = database._getChar(characterKey)
       // Create a new character + weapon, with linking if char isnt in db.
       if (!character) {

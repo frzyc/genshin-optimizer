@@ -4,7 +4,6 @@ import { Navigate, useNavigate, useParams } from 'react-router';
 import CloseButton from '../Components/CloseButton';
 import { allCharacterKeys, CharacterKey } from '../Types/consts';
 const CharacterDisplayCard = lazy(() => import('./CharacterDisplayCard'))
-const validTabs = ["overview", "talent", "equip", "buffs", "build"]
 export default function CharacterDisplay() {
   const navigate = useNavigate();
   let { characterKey } = useParams<{ characterKey?: CharacterKey }>();

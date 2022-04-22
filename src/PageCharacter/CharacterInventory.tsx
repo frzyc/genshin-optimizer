@@ -1,4 +1,4 @@
-import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Calculate, Checkroom, DeleteForever, FactCheck, Groups } from '@mui/icons-material';
 import { Box, Button, CardContent, Divider, Grid, IconButton, Skeleton, Typography } from '@mui/material';
@@ -6,7 +6,7 @@ import i18next from 'i18next';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
 import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
@@ -57,11 +57,11 @@ export default function CharacterInventory(props) {
 
     if (!window.confirm(t("removeCharacter", { value: name }))) return
     database.removeChar(cKey)
-  }, [database])
+  }, [database, t])
 
   const editCharacter = useCharSelectionCallback()
 
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const { element, weaponType } = state
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
@@ -118,25 +118,25 @@ export default function CharacterInventory(props) {
           <Grid item key={charKey} xs={12} sm={6} md={4} lg={3} >
             <CharacterCard
               characterKey={charKey}
-              onClick={editCharacter}
+              onClick={() => navigate(`${charKey}`)}
               footer={<><Divider /><Box sx={{ py: 1, px: 2, display: "flex", gap: 1, justifyContent: "space-between" }}>
                 <BootstrapTooltip placement="top" title={<Typography>{t("tabs.talent")}</Typography>}>
-                  <IconButton onClick={() => history.push(`/character/${charKey}/talent`)}>
+                  <IconButton onClick={() => navigate(`${charKey}/talent`)}>
                     <FactCheck />
                   </IconButton>
                 </BootstrapTooltip>
                 <BootstrapTooltip placement="top" title={<Typography>{t("tabs.equip")}</Typography>}>
-                  <IconButton onClick={() => history.push(`/character/${charKey}/equip`)} >
+                  <IconButton onClick={() => navigate(`${charKey}/equip`)} >
                     <Checkroom />
                   </IconButton>
                 </BootstrapTooltip>
                 <BootstrapTooltip placement="top" title={<Typography>{t("tabs.buffs")}</Typography>}>
-                  <IconButton onClick={() => history.push(`/character/${charKey}/buffs`)} >
+                  <IconButton onClick={() => navigate(`${charKey}/teambuff`)} >
                     <Groups />
                   </IconButton>
                 </BootstrapTooltip>
                 <BootstrapTooltip placement="top" title={<Typography>{t("tabs.build")}</Typography>}>
-                  <IconButton onClick={() => history.push(`/character/${charKey}/build`)} >
+                  <IconButton onClick={() => navigate(`${charKey}/build`)} >
                     <Calculate />
                   </IconButton>
                 </BootstrapTooltip>

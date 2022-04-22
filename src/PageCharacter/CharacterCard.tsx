@@ -168,7 +168,7 @@ function Artifacts() {
 
   return <Grid direction="row" container spacing={0.75} columns={5}>
     {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) =>
-      <ArtifactCardPico artifactObj={art} slotKey={key} />
+      <ArtifactCardPico key={key} artifactObj={art} slotKey={key} />
     )}
   </Grid>
 }
@@ -255,7 +255,7 @@ function WeaponCardPico({ weaponId }: { weaponId: string }) {
     </CardDark>
   </Grid>
 }
-function WeaponStatPico( {node}: { node: NodeDisplay }) {
+function WeaponStatPico({ node }: { node: NodeDisplay }) {
   if (!node.info.key) return null
   const val = valueString(node.value, node.unit, !node.unit ? 0 : undefined)
   return <Typography>{StatIcon[node.info.key]} {val}</Typography>
