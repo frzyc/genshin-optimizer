@@ -119,7 +119,7 @@ export default function WeaponDisplayCard({
             <ButtonGroup sx={{ bgcolor: t => t.palette.contentLight.main }} >
               <CustomNumberInputButtonGroupWrapper >
                 <CustomNumberInput onChange={setLevel} value={level}
-                  startAdornment="Lvl. "
+                  startAdornment="Lv. "
                   inputProps={{ min: 1, max: 90, sx: { textAlign: "center" } }}
                   sx={{ width: "100%", height: "100%", pl: 2 }}
                 />

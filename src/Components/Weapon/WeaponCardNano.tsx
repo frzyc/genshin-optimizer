@@ -1,6 +1,5 @@
-import { Box, CardActionArea, Chip, Skeleton, Typography } from "@mui/material";
-import { Suspense, useCallback, useMemo } from "react";
-import Assets from "../../Assets/Assets";
+import { Box, CardActionArea, Chip, Typography } from "@mui/material";
+import { useCallback, useMemo } from "react";
 import WeaponSheet from "../../Data/Weapons/WeaponSheet";
 import { input } from "../../Formula";
 import { computeUIData, dataObjForWeapon } from "../../Formula/api";
@@ -12,8 +11,8 @@ import { MainStatKey, SubstatKey } from "../../Types/artifact";
 import BootstrapTooltip from "../BootstrapTooltip";
 import CardDark from "../Card/CardDark";
 import ConditionalWrapper from "../ConditionalWrapper";
-import ImgIcon from "../Image/ImgIcon";
 import StatIcon from "../StatIcon";
+import WeaponNameTooltip from "./WeaponNameTooltip";
 
 type Data = {
   weaponId?: string,
@@ -29,9 +28,7 @@ export default function WeaponCardNano({ weaponId, onClick, BGComponent = CardDa
   if (!weapon || !weaponSheet || !UIData) return null;
   return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}  >
     <Box display="flex" height="100%">
-      <BootstrapTooltip placement="top" title={<Suspense fallback={<Skeleton variant="text" width={100} />}>
-        <Typography><ImgIcon src={Assets.weaponTypes?.[weaponSheet.weaponType]} /> {weaponSheet?.name}</Typography>
-      </Suspense>} disableInteractive>
+      <WeaponNameTooltip sheet={weaponSheet}>
         <Box className={`grad-${weaponSheet.rarity}star`} sx={{ position: "relative", flexGrow: 1, display: "flex", flexDirection: "column" }} >
           <Box sx={{ position: "absolute", width: "100%", height: "100%", textAlign: "center" }} >
             <Box
@@ -46,7 +43,8 @@ export default function WeaponCardNano({ weaponId, onClick, BGComponent = CardDa
           <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, display: "flex", justifyContent: "flex-end", alignItems: "flex-end" }} >
             {weaponSheet.hasRefinement && <Chip size="small" color="info" label={<strong>R{weapon.refinement}</strong>} />}
           </Box>
-        </Box></BootstrapTooltip>
+        </Box>
+      </WeaponNameTooltip>
       <Box display="flex" flexDirection="column" sx={{ p: 1, }}>
         <WeaponStat node={UIData.get(input.weapon.main)} />
         <WeaponStat node={UIData.get(input.weapon.sub)} />

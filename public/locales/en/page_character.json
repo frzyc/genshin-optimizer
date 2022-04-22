@@ -1,4 +1,18 @@
 {
   "addNew": "Add New Character",
-  "forceSet": "Force Artifact Set Filter"
+  "forceSet": "Force Artifact Set Filter",
+  "tabs": {
+    "overview": "Overview",
+    "talent": "Talents",
+    "equip": "Equipment",
+    "buffs": "Team Buffs",
+    "build": "Build"
+  },
+  "selectLevel": "Select Level",
+  "formulas": "Formulas",
+  "calculations": "Calculations",
+  "selectCharacter": "Select a Character",
+  "removeCharacter": "Are you sure you want to remove {{value}}?",
+  "delete": "Delete Character",
+  "teammates": "Teammates"
 }

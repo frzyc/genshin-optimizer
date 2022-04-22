@@ -13,7 +13,6 @@ import './i18n';
 const Home = lazy(() => import('./PageHome/HomeDisplay'))
 const ArtifactDisplay = lazy(() => import('./PageArtifact/ArtifactDisplay'))
 const ToolsDisplay = lazy(() => import('./PageTools/ToolsDisplay'))
-const TestDisplay = lazy(() => import('./PageTest/TestDisplay'))
 const SettingsDisplay = lazy(() => import('./PageSettings/SettingsDisplay'))
 const WeaponDisplay = lazy(() => import('./PageWeapon/WeaponDisplay'))
 const DocumentationDisplay = lazy(() => import('./PageDocumentation/DocumentationDisplay'))
@@ -70,11 +69,10 @@ function App() {
               <Route path="/artifact" element={<ArtifactDisplay />} />
               <Route path="/weapon" element={<WeaponDisplay />} />
               <Route path="/character/*"  >
-                <Route path=":characterKey" element={<CharacterDisplay />} />
+                <Route path=":characterKey/*" element={<CharacterDisplay />} />
                 <Route index element={<CharacterInventory />} />
               </Route>
               <Route path="/tools" element={<ToolsDisplay />} />
-              {process.env.NODE_ENV === "development" && <Route path="/test" element={<TestDisplay />} />}
               <Route path="/setting" element={<SettingsDisplay />} />
               <Route path="/doc/*" element={<DocumentationDisplay />} />
               <Route path="/scanner" element={<ScannerDisplay />} />

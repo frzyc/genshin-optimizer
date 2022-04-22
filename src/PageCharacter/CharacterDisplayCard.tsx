@@ -1,6 +1,8 @@
 import { Calculate, Checkroom, ExpandMore, FactCheck, Groups, Person } from '@mui/icons-material';
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, Card, CardContent, CardHeader, Collapse, Divider, Grid, MenuItem, Skeleton, Tab, Tabs, ToggleButton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link as RouterLink, Route, Routes, useMatch } from 'react-router-dom';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
@@ -33,26 +35,6 @@ import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
 import CharacterTeamBuffsPane from './CharacterDisplay/CharacterTeamBuffsPane';
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  value: string;
-  current: string | boolean;
-}
-
-function TabPanel({ children, current, value, ...other }: TabPanelProps) {
-  if (value !== current) return null
-  return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}>
-    <div
-      role="tabpanel"
-      hidden={value !== current}
-      id={`simple-tabpanel-${value}`}
-      aria-labelledby={`simple-tab-${value}`}
-      {...other}
-    >
-      {children}
-    </div>
-  </Suspense>
-}
 
 type CharacterDisplayCardProps = {
   characterKey: CharacterKey,
@@ -60,15 +42,13 @@ type CharacterDisplayCardProps = {
   newteamData?: TeamData,
   mainStatAssumptionLevel?: number,
   onClose?: (any) => void,
-  tabName?: string,
 }
-export default function CharacterDisplayCard({ characterKey, footer, newteamData, mainStatAssumptionLevel = 0, onClose, tabName }: CharacterDisplayCardProps) {
+export default function CharacterDisplayCard({ characterKey, footer, newteamData, mainStatAssumptionLevel = 0, onClose }: CharacterDisplayCardProps) {
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { character, characterSheet, target: charUIData } = teamData?.[characterKey] ?? {}
+  let { params: { tab = "overview" } } = useMatch({ path: "/character/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }
 
-  // set initial state to false, because it fails to check validity of the tab values on 1st load
-  const [tab, settab] = useState<string | boolean>(tabName ? tabName : (newteamData ? "newartifacts" : "character"))
-  const onTab = useCallback((e, v) => settab(v), [settab])
+  const { t } = useTranslation("page_character")
 
   const characterDispatch = useCharacterReducer(character?.key ?? "")
   const { compareData } = character ?? {}
@@ -90,13 +70,14 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
 
   return <CardDark >
     <DataContext.Provider value={dataContextValue}>
-      <CardContent sx={{ display: "flex", flexDirection:"column", gap: 1 }}>
+      <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
         <Grid container spacing={1}>
           <Grid item>
             <CharSelectDropdown />
           </Grid>
           <Grid item>
             {/* Compare against new build toggle */}
+            {/* TODO: Should this be removed? */}
             {!!newteamData && <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
               <ToggleButton value={false} disabled={!compareData}>
                 <small>Show New artifact Stats</small>
@@ -114,37 +95,36 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
         </Grid>
         <CardLight>
           <Tabs
-            onChange={onTab}
             value={tab}
             variant="scrollable"
             allowScrollButtonsMobile
+            sx={{
+              "& .MuiTab-root:hover": {
+                transition: "background-color 0.5s ease",
+                backgroundColor: "rgba(255,255,255,0.1)"
+              },
+            }}
           >
-            <Tab sx={{ minWidth: "20%" }} value="character" label="Character" icon={<Person />} />
-            <Tab sx={{ minWidth: "20%" }} value="talent" label="Talents" icon={<FactCheck />} />
-            <Tab sx={{ minWidth: "20%" }} value="equip" label="Equipment" icon={<Checkroom />} />
-            <Tab sx={{ minWidth: "20%" }} value="buffs" label="Team Buffs" icon={<Groups />} />
-            <Tab sx={{ minWidth: "20%" }} value="build" label="Build" icon={<Calculate />} />
+            <Tab sx={{ minWidth: "20%" }} value="overview" label={t("tabs.overview")} icon={<Person />} component={RouterLink} to="" />
+            <Tab sx={{ minWidth: "20%" }} value="talent" label={t("tabs.talent")} icon={<FactCheck />} component={RouterLink} to="talent" />
+            <Tab sx={{ minWidth: "20%" }} value="equip" label={t("tabs.equip")} icon={<Checkroom />} component={RouterLink} to="equip" />
+            <Tab sx={{ minWidth: "20%" }} value="buffs" label={t("tabs.buffs")} icon={<Groups />} component={RouterLink} to="teambuffs" />
+            <Tab sx={{ minWidth: "20%" }} value="build" label={t("tabs.build")} icon={<Calculate />} component={RouterLink} to="build" />
           </Tabs>
         </CardLight>
         <FormulaCalcCard />
         <EnemyExpandCard />
-
-        {/* Character Panel */}
-        <TabPanel value="character" current={tab}><CharacterOverviewPane /></TabPanel >
-        {/* Artifacts Panel */}
-        {/* <DataContext.Provider value={{ ...dataContextValue, data: charUIData, oldData: undefined }}>
-          <TabPanel value="artifacts" current={tab} ><CharacterArtifactPane /></TabPanel >
-        </DataContext.Provider> */}
-        {/* new build panel */}
-        <TabPanel value="equip" current={tab} ><CharacterArtifactPane /></TabPanel >
-        {/* talent panel */}
-        <TabPanel value="talent" current={tab}>
-          <CharacterTalentPane />
-        </TabPanel >
-        {/* Buffs panel */}
-        <TabPanel value="buffs" current={tab}><CharacterTeamBuffsPane /></TabPanel >
-        {/* Build panel */}
-        <TabPanel value="build" current={tab}><BuildDisplay /></TabPanel >
+        <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={500} />}>
+          <Routes>
+            {/* Character Panel */}
+            <Route index element={<CharacterOverviewPane />} />
+            <Route path="/talent" element={<CharacterTalentPane />} />
+            <Route path="/equip" element={<CharacterArtifactPane />} />
+            <Route path="/teambuffs" element={<CharacterTeamBuffsPane />} />
+            <Route path="/talent" element={<CharacterTalentPane />} />
+            <Route path="/build" element={<BuildDisplay />} />
+          </Routes>
+        </Suspense>
       </CardContent>
       {!!footer && <Divider />}
       {footer && <CardContent >
@@ -156,6 +136,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newteamData
 
 
 function CharSelectDropdown() {
+  const { t } = useTranslation("page_character")
   const { character, characterSheet, characterDispatch } = useContext(DataContext)
   const [showModal, setshowModal] = useState(false)
   const setCharacter = useCharSelectionCallback()
@@ -176,7 +157,7 @@ function CharSelectDropdown() {
     <CharacterSelectionModal show={showModal} onHide={() => setshowModal(false)} onSelect={setCharacter} />
     <Grid container spacing={1}>
       <Grid item>
-        <Button onClick={() => setshowModal(true)} startIcon={<ThumbSide src={characterSheet?.thumbImgSide} />} >{characterSheet?.name ?? "Select a Character"}</Button>
+        <Button onClick={() => setshowModal(true)} startIcon={<ThumbSide src={characterSheet?.thumbImgSide} />} >{characterSheet?.name ?? t("selectCharacter")}</Button>
       </Grid>
       <Grid item>
         <ButtonGroup sx={{ bgcolor: t => t.palette.contentDark.main }} >
@@ -187,13 +168,13 @@ function CharSelectDropdown() {
           </DropdownButton>}
           <CustomNumberInputButtonGroupWrapper >
             <CustomNumberInput onChange={setLevel} value={level}
-              startAdornment="Lvl. "
+              startAdornment="Lv. "
               inputProps={{ min: 1, max: 90, sx: { textAlign: "center" } }}
               sx={{ width: "100%", height: "100%", pl: 2 }}
               disabled={!characterSheet} />
           </CustomNumberInputButtonGroupWrapper>
           <Button sx={{ pl: 1 }} disabled={!ambiguousLevel(level) || !characterSheet} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
-          <DropdownButton title={"Select Level"} disabled={!characterSheet}>
+          <DropdownButton title={t("selectLevel")} disabled={!characterSheet}>
             {milestoneLevels.map(([lv, as]) => {
               const sameLevel = lv === ascensionMaxLevel[as]
               const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
@@ -208,6 +189,7 @@ function CharSelectDropdown() {
 }
 
 function FormulaCalcCard() {
+  const { t } = useTranslation("page_character")
   const [expanded, setexpanded] = useState(false)
   const toggle = useCallback(() => setexpanded(!expanded), [setexpanded, expanded])
   return <CardLight>
@@ -219,8 +201,8 @@ function FormulaCalcCard() {
       </Grid>
       <Box display="flex" gap={1} >
         <Box>
-          <Typography variant='subtitle2' >Formulas {"&"}</Typography>
-          <Typography variant='subtitle2' >Calculations</Typography>
+          <Typography variant='subtitle2' >{t("formulas")} {"&"}</Typography>
+          <Typography variant='subtitle2' >{t("calculations")}</Typography>
         </Box>
         <ExpandButton
           expand={expanded}
