@@ -1,7 +1,7 @@
 import { BusinessCenter, Favorite, Replay } from "@mui/icons-material";
-import { Divider, ListItemIcon, MenuItem, Typography } from "@mui/material";
+import { Divider, ListItemIcon, MenuItem, Skeleton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { useContext, useMemo } from "react";
+import { Suspense, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
@@ -72,9 +72,11 @@ function CharMenuItem({ characterSheets, characterKey, selectedCharacterKey = ""
     <ListItemIcon>
       <ThumbSide src={characterSheets[characterKey]?.thumbImgSide} />
     </ListItemIcon>
-    <Typography variant="inherit" noWrap>
-      {characterSheets?.[characterKey]?.name}
-    </Typography>
+    <Suspense fallback={<Skeleton variant="text" width={100} />}>
+      <Typography variant="inherit" noWrap>
+        {characterSheets[characterKey]?.name}
+      </Typography>
+    </Suspense>
     {favorite && <Box display="flex" flexGrow={1} />}
     {favorite && <Favorite sx={{ ml: 1, mr: -0.5 }} />}
   </MenuItem>
