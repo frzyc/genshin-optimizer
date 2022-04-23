@@ -33,10 +33,11 @@ type Data = {
   onDelete?: (id: string) => void, mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
   probabilityFilter?: Dict<SubstatKey, number>
+  disableEditSetSlot?: boolean
 }
 const allSubstatFilter = new Set(allSubstats)
 
-export default function ArtifactCard({ artifactId, artifactObj, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter }: Data): JSX.Element | null {
+export default function ArtifactCard({ artifactId, artifactObj, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter, disableEditSetSlot = false }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
@@ -77,6 +78,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onDelete, mainSt
       <ArtifactEditor
         artifactIdToEdit={showEditor ? artifactId : ""}
         cancelEdit={onHideEditor}
+        disableEditSetSlot={disableEditSetSlot}
       />
     </Suspense>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>

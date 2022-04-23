@@ -71,7 +71,8 @@ const InputInvis = styled('input')({
   display: 'none',
 });
 
-export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allowUpload = false, allowEmpty = false }: { artifactIdToEdit?: string, cancelEdit: () => void, allowUpload?: boolean, allowEmpty?: boolean }) {
+export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allowUpload = false, allowEmpty = false, disableEditSetSlot: disableEditSlotProp = false }:
+  { artifactIdToEdit?: string, cancelEdit: () => void, allowUpload?: boolean, allowEmpty?: boolean, disableEditSetSlot?: boolean }) {
   const { t } = useTranslation("artifact")
 
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
@@ -101,7 +102,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const { artifact: artifactProcessed, texts } = firstProcessed ?? {}
   // const fileName = firstProcessed?.fileName ?? firstOutstanding?.fileName ?? "Click here to upload Artifact screenshot files"
 
-  const isNew = artifactIdToEdit === "new"
+  const disableEditSetSlot = disableEditSlotProp || !!artifact?.location
 
   useEffect(() => {
     if (!artifact && artifactProcessed)
@@ -236,9 +237,9 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             {/* set & rarity */}
             <ButtonGroup sx={{ display: "flex", mb: 1 }}>
               {/* Artifact Set */}
-              <ArtifactSetDropdown selectedSetKey={artifact?.setKey} onChange={setKey => update({ setKey: setKey as ArtifactSetKey })} sx={{ flexGrow: 1 }} disabled={!isNew} />
+              <ArtifactSetDropdown selectedSetKey={artifact?.setKey} onChange={setKey => update({ setKey: setKey as ArtifactSetKey })} sx={{ flexGrow: 1 }} disabled={disableEditSetSlot} />
               {/* rarity dropdown */}
-              <ArtifactRarityDropdown rarity={artifact ? rarity : undefined} onChange={r => update({ rarity: r })} filter={r => !!sheet?.rarity?.includes?.(r)} disabled={!isNew || !sheet} />
+              <ArtifactRarityDropdown rarity={artifact ? rarity : undefined} onChange={r => update({ rarity: r })} filter={r => !!sheet?.rarity?.includes?.(r)} disabled={disableEditSetSlot || !sheet} />
             </ButtonGroup>
 
             {/* level */}
@@ -255,7 +256,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
 
             {/* slot */}
             <Box component="div" display="flex">
-              <ArtifactSlotDropdown disabled={!isNew || !sheet} slotKey={slotKey} onChange={slotKey => update({ slotKey })} />
+              <ArtifactSlotDropdown disabled={disableEditSetSlot || !sheet} slotKey={slotKey} onChange={slotKey => update({ slotKey })} />
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                 <Suspense fallback={<Skeleton width="60%" />}>
                   <Typography color="text.secondary">

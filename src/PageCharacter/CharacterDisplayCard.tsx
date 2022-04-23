@@ -129,7 +129,7 @@ function TabNav({ tab }: { tab: string }) {
     <Tab sx={{ minWidth: "20%" }} value="overview" label={t("tabs.overview")} icon={<Person />} component={RouterLink} to="" />
     <Tab sx={{ minWidth: "20%" }} value="talent" label={t("tabs.talent")} icon={<FactCheck />} component={RouterLink} to="talent" />
     <Tab sx={{ minWidth: "20%" }} value="equip" label={t("tabs.equip")} icon={<Checkroom />} component={RouterLink} to="equip" />
-    <Tab sx={{ minWidth: "20%" }} value="buffs" label={t("tabs.buffs")} icon={<Groups />} component={RouterLink} to="teambuffs" />
+    <Tab sx={{ minWidth: "20%" }} value="teambuffs" label={t("tabs.buffs")} icon={<Groups />} component={RouterLink} to="teambuffs" />
     <Tab sx={{ minWidth: "20%" }} value="build" label={t("tabs.build")} icon={<Calculate />} component={RouterLink} to="build" />
   </Tabs>
 }

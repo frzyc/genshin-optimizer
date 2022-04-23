@@ -48,7 +48,7 @@ export default function CharacterOverviewPane() {
     burst: data.get(input.bonus.burst).value,
   }
   return <Grid container spacing={1} sx={{ justifyContent: "center" }}>
-    <Grid item xs={8} md={2.5}  >
+    <Grid item xs={8} sm={5} md={4} lg={2.5}  >
       {/* Image card with star and name and level */}
       <CardLight >
         <Box src={characterSheet.cardImg} component="img" width="100%" height="auto" />
@@ -111,15 +111,15 @@ export default function CharacterOverviewPane() {
         </CardContent>
       </CardLight>
     </Grid>
-    <Grid item xs={12} md={9.5} sx={{
+    <Grid item xs={12} sm={7} md={8} lg={9.5} sx={{
       display: "flex", flexDirection: "column", gap: 1
     }} >
-      <Grid container spacing={1}>
-        <Grid item xs={6} sm={4} md={3} lg={2}>
+      <Grid container spacing={1} columns={{ xs: 2, sm: 2, md: 3, lg: 4, xl: 6 }}>
+        <Grid item xs={1}>
           <WeaponCardNano weaponId={character.equippedWeapon} BGComponent={CardLight} onClick={() => navigate("equip")} />
         </Grid>
         {allSlotKeys.map(slotKey =>
-          <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >
+          <Grid item xs={1} >
             <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} slotKey={slotKey} BGComponent={CardLight} onClick={() => navigate("equip")} />
           </Grid>)}
       </Grid>
@@ -158,7 +158,7 @@ const miscStatReadNodes = [
 const miscStatkeys = miscStatReadNodes.map(x => x.info!.key!)
 
 const statBreakpoint = {
-  xs: 12, sm: 6, md: 6, lg: 4,
+  xs: 12, sm: 12, md: 6, lg: 4,
 } as const
 
 function StatDisplayContent({ nodes, statBreakpoint, extra }: { nodes: ReadNode<number>[], statBreakpoint: object, extra?: Displayable }) {
@@ -222,7 +222,7 @@ function MainStatsCards() {
     <StatDisplayCard
       title="Misc Stats"
       content={<StatDisplayContent statBreakpoint={{
-        xs: 12, sm: 6, md: 6,
+        xs: 12, sm: 12, md: 6,
       }} nodes={miscStatReadNodes} />}
       editContent={<Grid container columnSpacing={2} rowSpacing={1}>
         {miscStatkeys.map(statKey => {
