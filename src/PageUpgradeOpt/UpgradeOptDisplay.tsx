@@ -22,7 +22,6 @@ import { Link as RouterLink } from 'react-router-dom';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton';
-import InfoComponent from '../Components/InfoComponent';
 import StatFilterCard from '../Components/StatFilterCard';
 import CharacterSheet from '../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../Database/Database';
@@ -46,9 +45,7 @@ import { allSlotKeys, ArtifactSetKey, CharacterKey } from '../Types/consts';
 import { ICachedCharacter } from '../Types/character';
 import { clamp, objPathValue } from '../Util/Util';
 import { initialBuildSettings } from '../PageBuild/BuildSetting';
-import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll } from '../PageBuild/common';
 import ArtifactBuildDisplayItem from '../PageBuild/Components/ArtifactBuildDisplayItem';
-import HitModeCard from '../PageBuild/Components/HitModeCard';
 import OptimizationTargetSelector from '../PageBuild/Components/OptimizationTargetSelector';
 import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from '../PageBuild/foreground';
 import { QueryArtifact, QueryBuild, queryDebug, UpgradeOptResult } from './artifactQuery'
@@ -56,8 +53,11 @@ import Artifact from "../Data/Artifacts/Artifact";
 import ArtifactCard from "../PageArtifact/ArtifactCard";
 import { useTranslation } from "react-i18next";
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
+import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../Components/HitModeEditor';
 
-const InfoDisplay = React.lazy(() => import('../PageBuild/InfoDisplay'));
+// import HitModeCard from '../PageBuild/Components/HitModeCard';
+
+// const InfoDisplay = React.lazy(() => import('../PageBuild/InfoDisplay'));
 
 
 // const totalShowing = artifactIds.length !== totalArtNum ? `${artifactIds.length}/${totalArtNum}` : `${totalArtNum}`
@@ -111,7 +111,9 @@ function initialBuildDisplayState(): {
 
 
 
-export default function UpgradeOptDisplay({ location: { characterKey: propCharacterKey } }) {
+// { location: { characterKey: propCharacterKey } }
+export default function UpgradeOptDisplay() {
+
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { database } = useContext(DatabaseContext)
   const [{ characterKey }, setBuildSettings] = useDBState("BuildDisplay", initialBuildDisplayState)
@@ -121,11 +123,11 @@ export default function UpgradeOptDisplay({ location: { characterKey: propCharac
   }, [setBuildSettings, database])
 
   // propCharacterKey can override the selected character, on initial load. This is intended to run on component startup.
-  useEffect(() => {
-    if (propCharacterKey && propCharacterKey !== characterKey)
-      setcharacterKey(propCharacterKey)
-    // eslint-disable-next-line
-  }, [])
+  // useEffect(() => {
+  //   if (propCharacterKey && propCharacterKey !== characterKey)
+  //     setcharacterKey(propCharacterKey)
+  //   // eslint-disable-next-line
+  // }, [])
   const { t } = useTranslation(["artifact", "ui"]);
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
@@ -278,14 +280,6 @@ export default function UpgradeOptDisplay({ location: { characterKey: propCharac
   }, [data, characterSheet, character, teamData, characterDispatch, mainStatAssumptionLevel])
 
   return <Box display="flex" flexDirection="column" gap={1} sx={{ my: 1 }}>
-    <InfoComponent
-      pageKey="buildPage"
-      modalTitle="Character Management Page Guide"
-      text={["For self-infused attacks, like Noelle's Sweeping Time, enable the skill in the character talent page.",
-        "You can compare the difference between equipped artifacts and generated builds.",
-        "Rainbow builds can sometimes be \"optimal\". Good substat combinations can sometimes surpass set effects.",
-        "The more complex the formula, the longer the generation time.",]}
-    ><InfoDisplay /></InfoComponent>
     {noCharacter && <Alert severity="error" variant="filled"> Opps! It looks like you haven't added a character to GO yet! You should go to the <Link component={RouterLink} to="/character">Characters</Link> page and add some!</Alert>}
     {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
     {/* Build Generator Editor */}
@@ -337,7 +331,13 @@ export default function UpgradeOptDisplay({ location: { characterKey: propCharac
                   </Grid>
 
                   {/* Hit mode options */}
-                  <HitModeCard disabled={false} />
+                  <Grid container spacing={1}>
+                    <Grid item><HitModeToggle size="small" /></Grid>
+                    {/* <Grid item><InfusionAuraDropdown /></Grid> */}
+                    <Grid item><ReactionToggle size="small" /></Grid>
+                  </Grid>
+
+                  {/* <HitModeCard disabled={false} /> */}
                 </Grid>
                 <Grid container lg={4}>
                   {/*Minimum Final Stat Filter */}
@@ -392,13 +392,13 @@ export default function UpgradeOptDisplay({ location: { characterKey: propCharac
               </Grid>
 
               <Box display="flex" flexDirection="column" gap={1} my={1}>
-                <InfoComponent
+                {/* <InfoComponent
                   pageKey="artifactPage"
                   modalTitle={t`info.title`}
                   text={t("tipsOfTheDay", { returnObjects: true }) as string[]}
                 >
                   <InfoDisplay />
-                </InfoComponent>
+                </InfoComponent> */}
 
                 {noArtifact && <Alert severity="info" variant="filled">Looks like you haven't added any artifacts yet. If you want, there are <Link color="warning.main" component={RouterLink} to="/scanner">automatic scanners</Link> that can speed up the import process!</Alert>}
 

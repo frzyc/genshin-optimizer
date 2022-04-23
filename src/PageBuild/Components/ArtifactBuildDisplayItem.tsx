@@ -1,14 +1,12 @@
 import { ChevronRight } from '@mui/icons-material';
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { lazy, Suspense, useCallback, useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { Suspense, useCallback, useContext, useState } from 'react';
 import ArtifactCardNano from '../../Components/Artifact/ArtifactCardNano';
 import { artifactSlotIcon } from '../../Components/Artifact/SlotNameWIthIcon';
 import CardDark from '../../Components/Card/CardDark';
 import CardLight from '../../Components/Card/CardLight';
 import StatDisplayComponent from '../../Components/Character/StatDisplayComponent';
-import CloseButton from '../../Components/CloseButton';
 import ModalWrapper from '../../Components/ModalWrapper';
 import SqBadge from '../../Components/SqBadge';
 import WeaponCardNano from '../../Components/Weapon/WeaponCardNano';
@@ -19,10 +17,6 @@ import { uiInput as input } from '../../Formula';
 import ArtifactCard from '../../PageArtifact/ArtifactCard';
 import usePromise from '../../ReactHooks/usePromise';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
-import { ArtifactDisplayLocationState } from '../../Types/LocationState';
-
-//lazy load the character display
-const CharacterDisplayCard = lazy(() => import('../../PageCharacter/CharacterDisplayCard'))
 
 type NewOld = {
   newId: string,
@@ -38,11 +32,8 @@ type ArtifactBuildDisplayItemProps = {
 export default function ArtifactBuildDisplayItem({ index, compareBuild, disabled }: ArtifactBuildDisplayItemProps) {
   const { database } = useContext(DatabaseContext)
   const dataContext = useContext(DataContext)
-  const [showModal, setshowModal] = useState(false)
-  const closeModal = useCallback(() => setshowModal(false), [setshowModal],)
-  const openModal = useCallback(() => setshowModal(true), [setshowModal],)
 
-  const { character, data, oldData, teamData, mainStatAssumptionLevel } = dataContext
+  const { character, data, oldData, mainStatAssumptionLevel } = dataContext
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const [newOld, setNewOld] = useState(undefined as NewOld | undefined)
   const close = useCallback(() => setNewOld(undefined), [setNewOld],)
@@ -66,16 +57,9 @@ export default function ArtifactBuildDisplayItem({ index, compareBuild, disabled
 
   return <CardLight>
     <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
-      <ModalWrapper open={showModal} onClose={closeModal} containerProps={{ maxWidth: "xl" }}>
-        <CharacterDisplayCard
-          characterKey={character.key}
-          newteamData={teamData}
-          onClose={closeModal}
-          footer={<CloseButton large onClick={closeModal} />} />
-      </ModalWrapper>
-      {newOld && <CompareArtifactModal newOld={newOld} onClose={close} />}
+      {newOld && <CompareArtifactModal newOld={newOld} mainStatAssumptionLevel={mainStatAssumptionLevel} onClose={close} />}
       <CardContent>
-        <Box display="flex" gap={1} sx={{ pb: 1 }}>
+        <Box display="flex" gap={1} sx={{ pb: 1 }} flexWrap="wrap">
           <Typography variant="h6"><SqBadge color="info"><strong>#{index + 1}{currentlyEquipped ? " (Equipped)" : ""}</strong></SqBadge></Typography>
           {(Object.entries(setToSlots) as [ArtifactSetKey, SlotKey[]][]).sort(([k1, slotarr1], [k2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
             <Box key={key}><Typography variant="h6"><SqBadge color={currentlyEquipped ? "success" : "primary"} >
@@ -84,21 +68,20 @@ export default function ArtifactBuildDisplayItem({ index, compareBuild, disabled
           )}
           <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}>
           </Box>
-          <Button size='small' color="info" onClick={openModal} disabled={disabled || currentlyEquipped}>Build Details</Button>
           <Button size='small' color="success" onClick={equipArts} disabled={disabled || currentlyEquipped}>Equip Artifacts</Button>
         </Box>
         <Grid container spacing={1} sx={{ pb: 1 }}>
+          <Grid item xs={6} sm={4} md={3} lg={2}>
+            <WeaponCardNano weaponId={character.equippedWeapon} />
+          </Grid>
           {allSlotKeys.map(slotKey =>
             <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >
-              <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} onClick={() => {
+              <ArtifactCardNano showLocation slotKey={slotKey} artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} onClick={() => {
                 const oldId = character.equippedArtifacts[slotKey]
                 const newId = data.get(input.art[slotKey].id).value!
                 setNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
               }} />
             </Grid>)}
-          <Grid item xs={6} sm={4} md={3} lg={2}>
-            <WeaponCardNano weaponId={character.equippedWeapon} />
-          </Grid>
         </Grid>
         <DataContext.Provider value={statProviderContext}>
           <StatDisplayComponent />
@@ -108,22 +91,15 @@ export default function ArtifactBuildDisplayItem({ index, compareBuild, disabled
   </CardLight>
 }
 
-function CompareArtifactModal({ newOld: { newId, oldId }, onClose }: { newOld: NewOld, onClose: () => void }) {
-  console.log("newOld", newId, oldId)
-  const history = useHistory()
-  const edit = useCallback(
-    artid => history.push({
-      pathname: "/artifact",
-      state: {
-        artToEditId: artid
-      } as ArtifactDisplayLocationState
-    } as any), [history])
+function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLevel, onClose }: { newOld: NewOld, mainStatAssumptionLevel: number, onClose: () => void }) {
   return <ModalWrapper open={!!newId} onClose={onClose} containerProps={{ maxWidth: oldId ? "md" : "xs" }}>
     <CardDark>
-      <CardContent sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 2 }}>
-        {oldId && <ArtifactCard artifactId={oldId} onEdit={edit} />}
-        {oldId && <CardLight sx={{ display: "flex" }}><ChevronRight sx={{ fontSize: 40 }} /></CardLight>}
-        <ArtifactCard artifactId={newId} onEdit={edit} />
+      <CardContent sx={{ display: "flex", justifyContent: "center", alignItems: "stretch", gap: 2, height: "100%" }}>
+        {oldId && <Box><ArtifactCard artifactId={oldId} mainStatAssumptionLevel={mainStatAssumptionLevel} disableEditSetSlot /></Box>}
+        {oldId && <Box display="flex" flexGrow={1} />}
+        {oldId && <Box display="flex" alignItems="center" justifyContent="center"><CardLight sx={{ display: "flex" }}><ChevronRight sx={{ fontSize: 40 }} /></CardLight></Box>}
+        {oldId && <Box display="flex" flexGrow={1} />}
+        <Box><ArtifactCard artifactId={newId} mainStatAssumptionLevel={mainStatAssumptionLevel} disableEditSetSlot /></Box>
       </CardContent>
     </CardDark>
   </ModalWrapper>

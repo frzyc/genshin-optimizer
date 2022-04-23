@@ -1,7 +1,7 @@
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Add, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
-import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, ListItemIcon, ListItemText, MenuItem, Skeleton, styled, Typography } from '@mui/material';
+import { Add, ChevronRight, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
+import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, ListItemIcon, ListItemText, MenuItem, Skeleton, styled, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
@@ -19,7 +19,8 @@ import StatIcon from '../Components/StatIcon';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../Database/Database';
-import { parseArtifact, validateArtifact } from '../Database/validation';
+import { parseArtifact } from '../Database/imports/parse';
+import { validateArtifact } from '../Database/imports/validate';
 import KeyMap, { cacheValueString } from '../KeyMap';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
@@ -70,7 +71,8 @@ const InputInvis = styled('input')({
   display: 'none',
 });
 
-export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { artifactIdToEdit?: string, cancelEdit: () => void }) {
+export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allowUpload = false, allowEmpty = false, disableEditSetSlot: disableEditSlotProp = false }:
+  { artifactIdToEdit?: string, cancelEdit: () => void, allowUpload?: boolean, allowEmpty?: boolean, disableEditSetSlot?: boolean }) {
   const { t } = useTranslation("artifact")
 
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
@@ -100,6 +102,8 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { 
   const { artifact: artifactProcessed, texts } = firstProcessed ?? {}
   // const fileName = firstProcessed?.fileName ?? firstOutstanding?.fileName ?? "Click here to upload Artifact screenshot files"
 
+  const disableEditSetSlot = disableEditSlotProp || !!artifact?.location
+
   useEffect(() => {
     if (!artifact && artifactProcessed)
       artifactDispatch({ type: "overwrite", artifact: artifactProcessed })
@@ -126,10 +130,11 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { 
 
   useEffect(() => {
     const pasteFunc = (e: any) => uploadFiles(e.clipboardData.files)
-    window.addEventListener('paste', pasteFunc);
-    return () =>
-      window.removeEventListener('paste', pasteFunc)
-  }, [uploadFiles])
+    allowUpload && window.addEventListener('paste', pasteFunc);
+    return () => {
+      if (allowUpload) window.removeEventListener('paste', pasteFunc)
+    }
+  }, [uploadFiles, allowUpload])
 
   const onUpload = useCallback(
     e => {
@@ -215,6 +220,9 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { 
       setShow(false)
       cancelEdit()
     }, [preventClosing, setShow, cancelEdit])
+
+  const theme = useTheme();
+  const grmd = useMediaQuery(theme.breakpoints.up('md'));
   return <ModalWrapper open={show} onClose={onClose} >
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: show ? "100%" : 64 }} />}><CardDark >
       <UploadExplainationModal modalShow={modalShow} hide={() => setModalShow(false)} />
@@ -222,19 +230,16 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { 
         title={<Trans t={t} i18nKey="editor.title" >Artifact Editor</Trans>}
         action={<CloseButton disabled={!!preventClosing} onClick={onClose} />}
       />
-      <CardContent sx={{ pt: 0 }}>
-        <Grid container spacing={1} sx={{ mb: 1 }}>
+      <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+        <Grid container spacing={1} columns={{ xs: 1, md: 2 }} >
           {/* Left column */}
-          <Grid item xs={12} md={6} lg={6} sx={{
-            // select all excluding last
-            "> div:nth-last-of-type(n+2)": { mb: 1 }
-          }}>
+          <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
             {/* set & rarity */}
             <ButtonGroup sx={{ display: "flex", mb: 1 }}>
               {/* Artifact Set */}
-              <ArtifactSetDropdown selectedSetKey={artifact?.setKey} onChange={setKey => update({ setKey: setKey as ArtifactSetKey })} sx={{ flexGrow: 1 }} />
+              <ArtifactSetDropdown selectedSetKey={artifact?.setKey} onChange={setKey => update({ setKey: setKey as ArtifactSetKey })} sx={{ flexGrow: 1 }} disabled={disableEditSetSlot} />
               {/* rarity dropdown */}
-              <ArtifactRarityDropdown rarity={artifact ? rarity : undefined} onChange={r => update({ rarity: r })} filter={r => !!sheet?.rarity?.includes?.(r)} disabled={!sheet} />
+              <ArtifactRarityDropdown rarity={artifact ? rarity : undefined} onChange={r => update({ rarity: r })} filter={r => !!sheet?.rarity?.includes?.(r)} disabled={disableEditSetSlot || !sheet} />
             </ButtonGroup>
 
             {/* level */}
@@ -251,7 +256,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { 
 
             {/* slot */}
             <Box component="div" display="flex">
-              <ArtifactSlotDropdown disabled={!sheet} slotKey={slotKey} onChange={slotKey => update({ slotKey })} />
+              <ArtifactSlotDropdown disabled={disableEditSetSlot || !sheet} slotKey={slotKey} onChange={slotKey => update({ slotKey })} />
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                 <Suspense fallback={<Skeleton width="60%" />}>
                   <Typography color="text.secondary">
@@ -283,7 +288,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { 
             {currentEfficiency !== maxEfficiency && <SubstatEfficiencyDisplayCard max valid={isValid} efficiency={maxEfficiency} t={t} />}
 
             {/* Image OCR */}
-            <CardLight>
+            {allowUpload && <CardLight>
               <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
                 {/* TODO: artifactDispatch not overwrite */}
                 <Suspense fallback={<Skeleton width="100%" height="100" />}>
@@ -324,11 +329,11 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { 
                   </Grid></CardDark>}
                 </Suspense>
               </CardContent>
-            </CardLight>
+            </CardLight>}
           </Grid>
 
           {/* Right column */}
-          <Grid item xs={12} md={6} lg={6} display="flex" flexDirection="column" gap={1}>
+          <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
             {/* substat selections */}
             {[0, 1, 2, 3].map((index) => <SubstatInput key={index} index={index} artifact={cachedArtifact} setSubstat={setSubstat} />)}
             {texts && <CardLight><CardContent>
@@ -344,39 +349,56 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit }: { 
         </Grid>
 
         {/* Duplicate/Updated/Edit UI */}
-        {old && <Grid container sx={{ justifyContent: "space-around", mb: 1 }} spacing={1} >
-          <Grid item lg={4} md={6} ><CardLight>
-            <Typography sx={{ textAlign: "center" }} py={1} variant="h6" color="text.secondary" >{t`editor.preview`}</Typography>
-            <ArtifactCard artifactObj={cachedArtifact} />
-          </CardLight></Grid>
-          <Grid item lg={4} md={6} ><CardLight>
+        {old && <Grid container sx={{ justifyContent: "space-around" }} spacing={1} >
+          <Grid item xs={12} md={5.5} lg={4} ><CardLight>
             <Typography sx={{ textAlign: "center" }} py={1} variant="h6" color="text.secondary" >{oldType !== "edit" ? (oldType === "duplicate" ? t`editor.dupArt` : t`editor.upArt`) : t`editor.beforeEdit`}</Typography>
             <ArtifactCard artifactObj={old} />
+          </CardLight></Grid>
+          {grmd && <Grid item md={1} display="flex" alignItems="center" justifyContent="center" >
+            <CardLight sx={{ display: "flex" }}><ChevronRight sx={{ fontSize: 40 }} /></CardLight>
+          </Grid>}
+          <Grid item xs={12} md={5.5} lg={4} ><CardLight>
+            <Typography sx={{ textAlign: "center" }} py={1} variant="h6" color="text.secondary" >{t`editor.preview`}</Typography>
+            <ArtifactCard artifactObj={cachedArtifact} />
           </CardLight></Grid>
         </Grid>}
 
         {/* Error alert */}
-        {!isValid && <Alert variant="filled" severity="error" sx={{ mb: 1 }}>{errors.map((e, i) => <div key={i}>{e}</div>)}</Alert>}
+        {!isValid && <Alert variant="filled" severity="error" >{errors.map((e, i) => <div key={i}>{e}</div>)}</Alert>}
 
         {/* Buttons */}
         <Grid container spacing={2}>
           <Grid item>
             {oldType === "edit" ?
-              <Button startIcon={<Add />} onClick={() => { database.updateArt(editorArtifact!, old!.id); reset() }} disabled={!editorArtifact || !isValid} color="primary">
+              <Button startIcon={<Add />} onClick={() => {
+                database.updateArt(editorArtifact!, old!.id);
+                if (allowEmpty) reset()
+                else {
+                  setShow(false)
+                  cancelEdit()
+                }
+              }} disabled={!editorArtifact || !isValid} color="primary">
                 {t`editor.btnSave`}
               </Button> :
-              <Button startIcon={<Add />} onClick={() => { database.createArt(artifact!); reset() }} disabled={!artifact || !isValid} color={oldType === "duplicate" ? "warning" : "primary"}>
+              <Button startIcon={<Add />} onClick={() => {
+                database.createArt(artifact!);
+                if (allowEmpty) reset()
+                else {
+                  setShow(false)
+                  cancelEdit()
+                }
+              }} disabled={!artifact || !isValid} color={oldType === "duplicate" ? "warning" : "primary"}>
                 {t`editor.btnAdd`}
               </Button>}
           </Grid>
           <Grid item flexGrow={1}>
-            <Button startIcon={<Replay />} disabled={!artifact} onClick={() => { canClearArtifact() && reset() }} color="error">{t`editor.btnClear`}</Button>
+            {allowEmpty && <Button startIcon={<Replay />} disabled={!artifact} onClick={() => { canClearArtifact() && reset() }} color="error">{t`editor.btnClear`}</Button>}
           </Grid>
           <Grid item>
             {process.env.NODE_ENV === "development" && <Button color="info" startIcon={<Shuffle />} onClick={async () => artifactDispatch({ type: "overwrite", artifact: await randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
           </Grid>
           {old && oldType !== "edit" && <Grid item>
-            <Button startIcon={<Update />} onClick={() => { database.updateArt(editorArtifact!, old.id); reset() }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>
+            <Button startIcon={<Update />} onClick={() => { database.updateArt(editorArtifact!, old.id); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>
           </Grid>}
         </Grid>
       </CardContent>

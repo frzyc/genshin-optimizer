@@ -1,7 +1,10 @@
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PersonAdd } from "@mui/icons-material";
-import { CardContent, CardHeader, Divider, Grid } from "@mui/material";
+import { CardContent, CardHeader, Divider, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useContext, useMemo } from 'react';
+import BootstrapTooltip from "../../Components/BootstrapTooltip";
 import CardLight from "../../Components/Card/CardLight";
 import CharacterDropdownButton from "../../Components/Character/CharacterDropdownButton";
 import DocumentDisplay from "../../Components/DocumentDisplay";
@@ -20,18 +23,17 @@ import CharacterCard from "../CharacterCard";
 
 export default function CharacterTeamBuffsPane() {
   return <Box display="flex" flexDirection="column" gap={1} alignItems="stretch">
-    <TeamBuffDisplay />
-    <ResonanceDisplay />
     <Grid container spacing={1}>
-      {range(0, 2).map(i => <Grid item xs={12} md={6} lg={4} key={i}>
+      <Grid item xs={12} md={6} lg={3} sx={{ display: "flex", flexDirection:"column", gap: 1 }}>
+        <TeamBuffDisplay />
+        <ResonanceDisplay />
+      </Grid>
+      {range(0, 2).map(i => <Grid item xs={12} md={6} lg={3} key={i}>
         <TeammateDisplay index={i} />
       </Grid>)}
     </Grid>
   </Box>
 }
-const statBreakpoint = {
-  xs: 12, sm: 6, md: 6, lg: 4,
-} as const
 export function TeamBuffDisplay() {
   const { data, oldData } = useContext(DataContext)
   const teamBuffs = data.getTeamBuff()
@@ -49,8 +51,8 @@ export function TeamBuffDisplay() {
     </CardContent>
     <Divider />
     <CardContent>
-      <Grid container columnSpacing={2} rowSpacing={1}>
-        {nodes.map(([path, n], i) => n && <Grid item {...statBreakpoint} key={n.key} >
+      <Grid container>
+        {nodes.map(([path, n], i) => n && <Grid item xs={12} key={n.info.key} >
           <NodeFieldDisplay node={n} oldValue={objPathValue(oldData?.getTeamBuff(), path)?.value} />
         </Grid>)}
       </Grid>
@@ -59,19 +61,19 @@ export function TeamBuffDisplay() {
 }
 function ResonanceDisplay() {
   const { data } = useContext(DataContext)
-  return <Grid container spacing={1}>
-    {resonanceSheets.map((res, i) =>
-      <Grid item key={i} xs={12} md={6} lg={4} >
-        <CardLight sx={{ opacity: res.canShow(data) ? 1 : 0.5, height: "100%" }}>
-          <CardHeader title={res.name} action={res.icon} titleTypographyProps={{ variant: "subtitle2" }} />
-          {res.canShow(data) && <Divider />}
-          {res.canShow(data) && <CardContent>
-            <DocumentDisplay sections={res.sections} teamBuffOnly={true} />
-          </CardContent>}
-        </CardLight>
-      </Grid>
-    )}
-  </Grid>
+  return <>
+    {resonanceSheets.map((res, i) => {
+      const icon = <BootstrapTooltip placement="top" title={<Typography>{res.desc}</Typography>}>{<Box component="span" sx={{ cursor: "help" }}><FontAwesomeIcon icon={faInfoCircle} /></Box>}</BootstrapTooltip>
+      const title = <span>{res.name} {icon}</span>
+      return <CardLight key={i} sx={{ opacity: res.canShow(data) ? 1 : 0.5, }}>
+        <CardHeader title={title} action={res.icon} titleTypographyProps={{ variant: "subtitle2" }} />
+        {res.canShow(data) && <Divider />}
+        {res.canShow(data) && <CardContent>
+          <DocumentDisplay sections={res.sections} teamBuffOnly hideDesc/>
+        </CardContent>}
+      </CardLight>
+    })}
+  </>
 }
 function TeammateDisplay({ index }: { index: number }) {
   const dataContext = useContext(DataContext)
@@ -79,7 +81,6 @@ function TeammateDisplay({ index }: { index: number }) {
   const activeCharacterKey = active.key
   const characterKey = active.team[index]
   const characterDispatch = useCharacterReducer(characterKey)
-  // TODO: this UIData should be fed from the main CharacterDisplayCard for teams.
   const onClickHandler = useCharSelectionCallback()
 
   const dataBundle = teamData[characterKey]
@@ -103,6 +104,7 @@ function TeammateDisplay({ index }: { index: number }) {
         artifactChildren={<CharArtifactCondDisplay />}
         weaponChildren={<CharWeaponCondDisplay />}
         characterChildren={<CharTalentCondDisplay />}
+        isTeammateCard
       />
     </DataContext.Provider>}
   </CardLight>
@@ -122,6 +124,7 @@ function CharArtifactCondDisplay() {
 function CharWeaponCondDisplay() {
   const { teamData, character: { key: charKey } } = useContext(DataContext)
   const weaponSheet = teamData[charKey]!.weaponSheet
+  if (!weaponSheet.document) return null
   return <DocumentDisplay sections={weaponSheet.document} teamBuffOnly={true} />
 }
 function CharTalentCondDisplay() {
@@ -129,5 +132,6 @@ function CharTalentCondDisplay() {
   const characterSheet = teamData[charKey]!.characterSheet
   const talent = characterSheet.getTalent(data.get(input.charEle).value as ElementKey)!
   const sections = Object.values(talent.sheets).flatMap(sts => sts.sections)
+  if (!sections) return null
   return <DocumentDisplay sections={sections} teamBuffOnly={true} />
 }

@@ -1,94 +1,59 @@
-import { Info, Replay } from '@mui/icons-material';
-import { Button, CardContent, Divider, Grid, MenuItem, Typography } from '@mui/material';
+import { Replay } from '@mui/icons-material';
+import { Button, CardContent, Divider, Grid, Typography } from '@mui/material';
+import { Box } from '@mui/system';
 import React from 'react';
-import SlotNameWithIcon from '../../Components/Artifact/SlotNameWIthIcon';
+import { useTranslation } from 'react-i18next';
+import { artifactSlotIcon } from '../../Components/Artifact/SlotNameWIthIcon';
 import BootstrapTooltip from '../../Components/BootstrapTooltip';
-import CardDark from '../../Components/Card/CardDark';
-import CardLight from '../../Components/Card/CardLight';
-import DropdownButton from '../../Components/DropdownMenu/DropdownButton';
 import SqBadge from '../../Components/SqBadge';
 import StatIcon from '../../Components/StatIcon';
+import Artifact from '../../Data/Artifacts/Artifact';
 import KeyMap from '../../KeyMap';
 import { MainStatKey } from '../../Types/artifact';
 import { BuildSetting } from '../../Types/Build';
 import { SlotKey } from '../../Types/consts';
-import Artifact from '../../Data/Artifacts/Artifact';
 
 export const artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"] as const
 
-export default function MainStatSelectionCard({ mainStatAssumptionLevel, mainStatKeys, onChangeMainStatKey, onChangeAssLevel, disabled = false, }: {
-  mainStatAssumptionLevel: number
+export default function MainStatSelectionCard({ mainStatKeys, onChangeMainStatKey, disabled = false, }: {
   mainStatKeys: BuildSetting["mainStatKeys"]
   onChangeMainStatKey: (slotKey: SlotKey, mainStatKey?: MainStatKey) => void
-  onChangeAssLevel: (level: number) => void
   disabled?: boolean
 }) {
-  return <CardLight>
-    <CardContent sx={{ py: 1 }} >
-      <Grid container alignItems="center" spacing={2}>
-        <Grid item flexGrow={1}>
-          <Typography>Artifact Main Stat</Typography>
-        </Grid>
-        <Grid item>
-          <BootstrapTooltip placement="top" title={<Typography><strong>Level Assumption</strong> changes mainstat value to be at least a specific level. Does not change substats.</Typography>}>
-            <Info />
-          </BootstrapTooltip>
-        </Grid>
-        <Grid item>
-          <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={v => onChangeAssLevel(v)} disabled={disabled} />
-        </Grid>
-      </Grid>
-    </CardContent>
-    <Divider />
-    <CardContent sx={{
-      // select all excluding last
-      "> div:nth-last-of-type(n+2)": { mb: 1 }
-    }}>
-      {artifactsSlotsToSelectMainStats.map(slotKey => {
-        const numSel = mainStatKeys[slotKey].length
-        return <CardDark key={slotKey}>
-          <CardContent sx={{ py: 1 }}><Grid container spacing={1}>
-            <Grid item ><SlotNameWithIcon slotKey={slotKey} /></Grid>
-            <Grid item flexGrow={1}>
-              <SqBadge color="info">{numSel ? `${numSel} Selected` : `Any`}</SqBadge>
-            </Grid>
-            <Grid item>
-              <Button color="error" size="small" disabled={!mainStatKeys[slotKey].length || disabled}
+  const { t } = useTranslation("artifact")
+  return <Box display="flex" flexDirection="column" gap={1}>
+    {artifactsSlotsToSelectMainStats.map(slotKey => {
+      const numSel = mainStatKeys[slotKey].length
+      return <Box key={slotKey}>
+        <Divider />
+        <CardContent>
+          <Grid container spacing={1}>
+            <Grid item xs={12} sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+              <BootstrapTooltip placement="top" title={<Typography>{t(`slotName.${slotKey}`)}</Typography>}>
+                <span>{artifactSlotIcon(slotKey)}</span>
+              </BootstrapTooltip>
+              <Box flexGrow={1}>
+                <SqBadge color="info">{numSel ? `${numSel} Selected` : `Any`}</SqBadge>
+              </Box>
+              <Button color="error" size="small" disabled={!mainStatKeys[slotKey].length || disabled} sx={{ mt: -1, mb: -1 }}
                 onClick={() => onChangeMainStatKey(slotKey)}>
                 <Replay />
               </Button>
             </Grid>
-          </Grid></CardContent>
-          <Divider />
-          <CardContent>
-            <Grid container spacing={1}>
-              {Artifact.slotMainStats(slotKey).map((mainStatKey, i) => {
-                const selected = mainStatKeys[slotKey].includes(mainStatKey)
-                return <Grid item xs={i < 3 ? 4 : 6} key={mainStatKey} >
+            {Artifact.slotMainStats(slotKey).map((mainStatKey, i) => {
+              const selected = mainStatKeys[slotKey].includes(mainStatKey)
+              return <Grid item xs={i < 3 ? 4 : 6} key={mainStatKey} >
+                <BootstrapTooltip placement="top" title={<Typography><strong>{KeyMap.getArtStr(mainStatKey)}</strong></Typography>} disableInteractive>
                   <Button fullWidth size="small" color={selected ? "success" : "secondary"} disabled={disabled} sx={{ height: "100%" }}
-                    onClick={() => onChangeMainStatKey(slotKey, mainStatKey)} startIcon={StatIcon[mainStatKey]}>
-                    {KeyMap.get(mainStatKey)}
+                    onClick={() => onChangeMainStatKey(slotKey, mainStatKey)}>
+                    {StatIcon[mainStatKey]}
                   </Button>
-                </Grid>
-              })}
-            </Grid>
-          </CardContent>
-        </CardDark>
-      })}
-    </CardContent>
-  </CardLight>
-}
-
-const levels = {
-  0: <span>No level assumption</span>,
-  4: <span>Assume at least level 4</span>,
-  8: <span>Assume at least level 8</span>,
-  12: <span>Assume at least level 12</span>,
-  16: <span>Assume at least level 16</span>,
-  20: <span>Assume at least level 20</span>
-} as const
-function AssumeFullLevelToggle({ mainStatAssumptionLevel = 0, setmainStatAssumptionLevel, disabled }) {
-  return <DropdownButton color={mainStatAssumptionLevel ? "warning" : "primary"} disabled={disabled} title={levels[mainStatAssumptionLevel]}>
-    {Object.entries(levels).map(([key, text]) => <MenuItem key={key} onClick={() => setmainStatAssumptionLevel(parseInt(key))}>{text}</MenuItem>)}
-  </DropdownButton>
+                </BootstrapTooltip>
+              </Grid>
+            })}
+          </Grid>
+        </CardContent>
+      </Box>
+    })}
+  </Box >
 }

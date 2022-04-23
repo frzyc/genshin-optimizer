@@ -3,13 +3,14 @@ import { input, tally } from '../../../Formula'
 import { equal, greaterEq, infoMut, prod, subscript, sum } from '../../../Formula/utils'
 import { allElements, CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, trans } from '../../SheetUtil'
-import CharacterSheet, { ICharacterSheet, normalSrc, talentTemplate } from '../CharacterSheet'
-import { dataObjForCharacterSheet, dmgNode, shieldNodeTalent } from '../dataUtil'
+import CharacterSheet, { ICharacterSheet, normalSrc, sectionTemplate, talentTemplate } from '../CharacterSheet'
+import { dataObjForCharacterSheet, dmgNode, shieldElement, shieldNodeTalent } from '../dataUtil'
 import { banner, burst, c1, c2, c3, c4, c5, c6, card, passive1, passive2, passive3, skill, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
 const data_gen = data_gen_src as CharacterData
+const auto = normalSrc(data_gen.weaponTypeKey)
 
 const key: CharacterKey = "YunJin"
 const elementKey: ElementKey = "geo"
@@ -94,7 +95,8 @@ const dmgFormulas = {
     dmg: dmgNode("def", datamine.skill.dmg, "skill"),
     dmg1: dmgNode("def", datamine.skill.dmg1, "skill"),
     dmg2: dmgNode("def", datamine.skill.dmg2, "skill"),
-    shield: shieldNodeTalent("hp", datamine.skill.shield_, datamine.skill.shield, "skill")
+    shield: shieldElement("geo", shieldNodeTalent("hp", datamine.skill.shield_, datamine.skill.shield, "skill"))
+
   },
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
@@ -134,34 +136,32 @@ const sheet: ICharacterSheet = {
   title: tr("title"),
   talent: {
     sheets: {
-      auto: {
-        name: tr("auto.name"),
-        img: normalSrc(data_gen.weaponTypeKey),
-        sections: [{
-          text: tr("auto.fields.normal"),
-          fields: datamine.normal.hitArr.map((_, i) => ({
+      auto: talentTemplate("auto", tr, auto, undefined, undefined, [{
+        ...sectionTemplate("auto", tr, auto,
+          datamine.normal.hitArr.map((_, i) => ({
             node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i + (i > 2 ? -1 : 0) + (i > 4 ? -1 : 0)}` }),
             textSuffix: (i === 2 || i === 4) ? "(1)" : (i === 3 || i === 5) ? "(2)" : ""
           }))
+        ),
+        text: tr("auto.fields.normal"),
+      }, {
+        ...sectionTemplate("auto", tr, auto, [{
+          node: infoMut(dmgFormulas.charged.dmg, { key: `char_${key}_gen:auto.skillParams.5` }),
         }, {
-          text: tr("auto.fields.charged"),
-          fields: [{
-            node: infoMut(dmgFormulas.charged.dmg, { key: `char_${key}_gen:auto.skillParams.5` }),
-          }, {
-            text: tr("auto.skillParams.6"),
-            value: datamine.charged.stamina,
-          }]
+          text: tr("auto.skillParams.6"),
+          value: datamine.charged.stamina,
+        }]),
+        text: tr("auto.fields.charged"),
+      }, {
+        ...sectionTemplate("auto", tr, auto, [{
+          node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
         }, {
-          text: tr(`auto.fields.plunging`),
-          fields: [{
-            node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
-          }, {
-            node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
-          }, {
-            node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
-          }]
-        }],
-      },
+          node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        }, {
+          node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        }]),
+        text: tr("auto.fields.plunging"),
+      }]),
       skill: talentTemplate("skill", tr, skill, [{
         node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
       }, {
@@ -173,7 +173,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: tr("skill.skillParams.4"),
         value: data => data.get(input.constellation).value >= 1
-          ? `${datamine.skill.cd} - 18% = ${(datamine.skill.cd*(1-0.18)).toFixed(2)}`
+          ? `${datamine.skill.cd} - 18% = ${(datamine.skill.cd * (1 - 0.18)).toFixed(2)}`
           : `${datamine.skill.cd}`,
         unit: "s"
       }]),

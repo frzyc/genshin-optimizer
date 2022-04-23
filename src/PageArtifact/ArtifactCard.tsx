@@ -1,8 +1,8 @@
 import { faBan, faChartLine, faEdit, faInfoCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Lock, LockOpen } from '@mui/icons-material';
-import { Box, Button, ButtonGroup, CardActions, CardContent, CardMedia, Chip, Grid, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
-import React, { Suspense, useContext } from 'react';
+import { Box, Button, ButtonGroup, CardActions, CardContent, Chip, Grid, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
+import React, { lazy, Suspense, useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
@@ -24,27 +24,32 @@ import { CharacterKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
 import PercentBadge from './PercentBadge';
 import { probability } from './RollProbability';
-import {UpgradeOptResult} from "../PageUpgradeOpt/artifactQuery";
+import { UpgradeOptResult } from "../PageUpgradeOpt/artifactQuery";
+
+const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
 
 type Data = {
   artifactId?: string,
   artifactObj?: ICachedArtifact,
-  onEdit?: (id: string) => void,
   onDelete?: (id: string) => void, mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
   probabilityFilter?: Dict<SubstatKey, number>,
+  disableEditSetSlot?: boolean,
   upgradeOpt?: UpgradeOptResult
 }
 const allSubstatFilter = new Set(allSubstats)
 
-export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter, upgradeOpt }: Data): JSX.Element | null {
+export default function ArtifactCard({ artifactId, artifactObj, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter, disableEditSetSlot = false, upgradeOpt }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
   const sheet = usePromise(ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
   const equipOnChar = (charKey: CharacterKey | "") => database.setArtLocation(artifactId!, charKey)
-
   const editable = !artifactObj
+  const [showEditor, setshowEditor] = useState(false)
+  const onHideEditor = useCallback(() => setshowEditor(false), [setshowEditor])
+  const onShowEditor = useCallback(() => editable && setshowEditor(true), [editable, setshowEditor])
+
   const art = artifactObj ?? databaseArtifact
   if (!art) return null
 
@@ -71,41 +76,48 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
     <span><FontAwesomeIcon icon={faInfoCircle} /></span>
   </BootstrapTooltip>
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
+    <Suspense fallback={false}>
+      <ArtifactEditor
+        artifactIdToEdit={showEditor ? artifactId : ""}
+        cancelEdit={onHideEditor}
+        disableEditSetSlot={disableEditSetSlot}
+      />
+    </Suspense>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
-      <CardContent className={`grad-${rarity}star`} sx={{ pt: 1, pb: 0, pr: 0 }}>
-        <Box component="div" sx={{ display: "flex", alignItems: "center", pr: 1 }}>
-          <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
-          <Typography sx={{ pl: 1, flexGrow: 1 }}>{slotName} {slotDescTooltip}</Typography>
-          <IconButton color="primary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)}>
-            {lock ? <Lock /> : <LockOpen />}
-          </IconButton>
+      <Box className={`grad-${rarity}star`} sx={{ position: "relative" }}>
+        <IconButton color="primary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 2 }}>
+          {lock ? <Lock /> : <LockOpen />}
+        </IconButton>
+        <Box sx={{ pt: 2, px: 2, position: "relative", zIndex: 1 }}>
+          {/* header */}
+          <Box component="div" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
+            <Typography sx={{ flexGrow: 1 }}>{slotName} {slotDescTooltip}</Typography>
+          </Box>
+          <Typography color="text.secondary" variant="body2">
+            <SlotNameWithIcon slotKey={slotKey} />
+          </Typography>
+          <Typography variant="h6" color={`${KeyMap.getVariant(mainStatKey)}.main`}>
+            <span>{StatIcon[mainStatKey]} {KeyMap.get(mainStatKey)}</span>
+          </Typography>
+          <Typography variant="h5">
+            <strong>
+              <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
+            </strong>
+          </Typography>
+          <Stars stars={rarity} colored />
+          {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
         </Box>
-        <Grid container sx={{ flexWrap: "nowrap" }}>
-          <Grid item flexGrow={1}>
-            <Typography color="text.secondary" variant="body2">
-              <SlotNameWithIcon slotKey={slotKey} />
-            </Typography>
-            <Typography variant="h6" color={`${KeyMap.getVariant(mainStatKey)}.main`}>
-              <span>{StatIcon[mainStatKey]} {KeyMap.get(mainStatKey)}</span>
-            </Typography>
-            <Typography variant="h5">
-              <strong>
-                <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
-              </strong>
-            </Typography>
-            <Stars stars={rarity} colored />
-            {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
-          </Grid>
-          <Grid item maxWidth="40%" sx={{ mt: -3, mb: -1, pl: -2 }} alignSelf="flex-end">
-            <CardMedia
-              component="img"
-              image={sheet?.slotIcons[slotKey] ?? ""}
-              width="100%"
-              height="auto"
-            />
-          </Grid>
-        </Grid>
-      </CardContent>
+        <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>
+          <Box
+            component="img"
+            src={sheet?.slotIcons[slotKey] ?? ""}
+            width="auto"
+            height="100%"
+            sx={{ float: "right" }}
+          />
+        </Box>
+      </Box>
       <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", pt: 1, pb: 0 }}>
         {substats.map((stat: ICachedSubstat) => <SubstatDisplay key={stat.key} stat={stat} effFilter={effFilter} rarity={rarity} />)}
         <Box sx={{ display: "flex", my: 1 }}>
@@ -129,27 +141,22 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         <Typography color="success.main">{sheet?.name ?? "Artifact Set"} {setDescTooltip}</Typography>
       </CardContent>
       <CardActions>
-        <Grid container sx={{ flexWrap: "nowrap" }}>
-          <Grid item xs="auto" flexShrink={1}>
-            {editable ?
-              <CharacterDropdownButton size="small" inventory value={location} onChange={equipOnChar} /> : <LocationName location={location} />}
-          </Grid>
-          <Grid item flexGrow={1} sx={{ mr: 1 }} />
-          {editable && <Grid item xs="auto">
-            <ButtonGroup sx={{ height: "100%" }}>
-              {!!onEdit && <Button color="info" onClick={() => onEdit(id)} size="small">
-                <FontAwesomeIcon icon={faEdit} className="fa-fw" />
-              </Button>}
-              <Tooltip title={<Typography>{t`excludeArtifactTip`}</Typography>} placement="top" arrow>
-                <Button onClick={() => database.updateArt({ exclude: !exclude }, id)} color={exclude ? "error" : "success"} size="small">
-                  <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
-                </Button>
-              </Tooltip>
-              {!!onDelete && <Button color="error" size="small" onClick={() => onDelete(id)} disabled={lock}>
-                <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
-              </Button>}
-            </ButtonGroup>
-          </Grid>}
+        <Grid container sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
+          {editable ?
+            <CharacterDropdownButton size="small" inventory value={location} onChange={equipOnChar} /> : <LocationName location={location} />}
+          {editable && <ButtonGroup>
+            <Button color="info" onClick={onShowEditor} size="small">
+              <FontAwesomeIcon icon={faEdit} className="fa-fw" />
+            </Button>
+            <Tooltip title={<Typography>{t`excludeArtifactTip`}</Typography>} placement="top" arrow>
+              <Button onClick={() => database.updateArt({ exclude: !exclude }, id)} color={exclude ? "error" : "success"} size="small">
+                <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
+              </Button>
+            </Tooltip>
+            {!!onDelete && <Button color="error" size="small" onClick={() => onDelete(id)} disabled={lock}>
+              <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
+            </Button>}
+          </ButtonGroup>}
         </Grid>
       </CardActions>
     </CardLight >

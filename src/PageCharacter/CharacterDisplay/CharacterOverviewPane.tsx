@@ -1,30 +1,37 @@
 import { faEdit, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Badge, Box, Button, CardContent, CardMedia, Divider, Grid, Typography } from "@mui/material";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import { Badge, Box, Button, CardActionArea, CardContent, Divider, Grid, IconButton, Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import Assets from "../../Assets/Assets";
+import ArtifactCardNano from "../../Components/Artifact/ArtifactCardNano";
 import CardLight from "../../Components/Card/CardLight";
 import ColorText from "../../Components/ColoredText";
 import { NodeFieldDisplay } from "../../Components/FieldDisplay";
 import ImgIcon from "../../Components/Image/ImgIcon";
 import { Stars } from "../../Components/StarDisplay";
 import StatIcon from "../../Components/StatIcon";
+import WeaponCardNano from "../../Components/Weapon/WeaponCardNano";
+import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DataContext } from "../../DataContext";
 import { uiInput as input } from "../../Formula";
 import { ReadNode } from "../../Formula/type";
 import KeyMap, { valueString } from "../../KeyMap";
-import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import { amplifyingReactions, transformativeReactions } from "../../KeyMap/StatConstants";
-import { allElementsWithPhy, ElementKey } from "../../Types/consts";
-import WeaponDisplayCard from "../../PageWeapon/WeaponDisplayCard";
-import CharacterSheet from "../../Data/Characters/CharacterSheet";
-import StatInput from "../StatInput";
-import { TeamBuffDisplay } from "./CharacterTeamBuffsPane";
-import { range } from "../../Util/Util";
+import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import { TalentSheetElementKey } from "../../Types/character";
+import { allElementsWithPhy, allSlotKeys, ElementKey } from "../../Types/consts";
+import { range } from "../../Util/Util";
+import CharacterCardPico from "../CharacterCardPico";
+import StatInput from "../StatInput";
+
 export default function CharacterOverviewPane() {
   const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
+  const navigate = useNavigate()
+  const { t } = useTranslation("page_character")
   const charEle = data.get(input.charEle).value as ElementKey
   const weaponTypeKey = characterSheet.weaponTypeKey
   const level = data.get(input.lvl).value
@@ -40,59 +47,82 @@ export default function CharacterOverviewPane() {
     skill: data.get(input.bonus.skill).value,
     burst: data.get(input.bonus.burst).value,
   }
-  return <Grid container spacing={1}>
-    <Grid item xs={12} md={3}  >
+  return <Grid container spacing={1} sx={{ justifyContent: "center" }}>
+    <Grid item xs={8} sm={5} md={4} lg={2.5}  >
       {/* Image card with star and name and level */}
       <CardLight >
-        <CardMedia src={characterSheet.cardImg} component="img" width="100%" height="auto" />
+        <Box src={characterSheet.cardImg} component="img" width="100%" height="auto" />
         <CardContent>
-          <Typography variant="h4" >{characterSheet.name} <ImgIcon src={Assets.weaponTypes?.[weaponTypeKey]} /> {StatIcon[charEle]} </Typography>
+          <Typography variant="h5" >
+            {characterSheet.name}&nbsp;
+            <ImgIcon sx={{ pr: 0.5 }} src={Assets.weaponTypes?.[weaponTypeKey]} />
+            {StatIcon[charEle]}
+            <IconButton sx={{ p: 0.5, mt: -0.5 }} onClick={() => characterDispatch({ favorite: !character.favorite })}>
+              {character.favorite ? <Favorite /> : <FavoriteBorder />}
+            </IconButton>
+          </Typography>
           <Typography variant="h6"><Stars stars={characterSheet.rarity} colored /></Typography>
           <Typography variant="h5">Lvl. {CharacterSheet.getLevelString(level, ascension)}</Typography>
-          <Grid container spacing={1} mt={1}>
-            {(["auto", "skill", "burst"] as TalentSheetElementKey[]).map(tKey =>
-              <Grid item xs={4} key={tKey}>
-                <Badge badgeContent={tlvl[tKey]} color={tBoost[tKey] ? "info" : "secondary"}
-                  overlap="circular"
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'right',
-                  }}
-                  sx={{
-                    width: "100%",
-                    height: "100%",
-                    "& > .MuiBadge-badge": {
-                      fontSize: "1.25em",
-                      padding: ".25em .4em",
-                      borderRadius: ".5em",
-                      lineHeight: 1,
-                      height: "1.25em"
-                    }
-                  }}>
-                  <Box component="img" src={characterSheet.getTalentOfKey(tKey, charEle)?.img} width="100%" height="auto" />
-                </Badge>
-              </Grid>)}
-          </Grid>
+          <CardActionArea sx={{ p: 1 }} onClick={() => navigate("talent")}>
+            <Grid container spacing={1} mt={-1}>
+              {(["auto", "skill", "burst"] as TalentSheetElementKey[]).map(tKey =>
+                <Grid item xs={4} key={tKey}>
+                  <Badge badgeContent={tlvl[tKey]} color={tBoost[tKey] ? "info" : "secondary"}
+                    overlap="circular"
+                    anchorOrigin={{
+                      vertical: 'bottom',
+                      horizontal: 'right',
+                    }}
+                    sx={{
+                      width: "100%",
+                      height: "100%",
+                      "& > .MuiBadge-badge": {
+                        fontSize: "1.25em",
+                        padding: ".25em .4em",
+                        borderRadius: ".5em",
+                        lineHeight: 1,
+                        height: "1.25em"
+                      }
+                    }}>
+                    <Box component="img" src={characterSheet.getTalentOfKey(tKey, charEle)?.img} width="100%" height="auto" />
+                  </Badge>
+                </Grid>)}
+            </Grid>
+          </CardActionArea>
           <Typography sx={{ textAlign: "center", mt: 1 }} variant="h6">{characterSheet.constellationName}</Typography>
           <Grid container spacing={1}>
             {range(1, 6).map(i =>
               <Grid item xs={4} key={i}>
-                <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i}` as TalentSheetElementKey, charEle)?.img}
-                  sx={{
-                    cursor: "pointer",
-                    ...(constellation >= i ? {} : { filter: "brightness(50%)" })
-                  }}
-                  width="100%" height="auto"
-                  onClick={() => characterDispatch({ constellation: i === constellation ? i - 1 : i })} />
+                <CardActionArea onClick={() => characterDispatch({ constellation: i === constellation ? i - 1 : i })}>
+                  <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i}` as TalentSheetElementKey, charEle)?.img}
+                    sx={{
+                      ...(constellation >= i ? {} : { filter: "brightness(50%)" })
+                    }}
+                    width="100%" height="auto" />
+                </CardActionArea>
               </Grid>)}
           </Grid>
+          <Typography sx={{ textAlign: "center", mt: 1 }} variant="h6">{t("teammates")}</Typography>
+          <CardActionArea sx={{ p: 1 }} onClick={() => navigate("teambuffs")}>
+            <Grid container columns={3} spacing={1}>
+              {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} index={i} /></Grid>)}
+            </Grid>
+          </CardActionArea>
         </CardContent>
       </CardLight>
     </Grid>
-    <Grid item xs={12} md={9} sx={{
-      "> div:not(:last-child)": { mb: 1 }
+    <Grid item xs={12} sm={7} md={8} lg={9.5} sx={{
+      display: "flex", flexDirection: "column", gap: 1
     }} >
-      <WeaponDisplayCard weaponId={character.equippedWeapon} />
+      <Grid container spacing={1} columns={{ xs: 2, sm: 2, md: 3, lg: 4, xl: 6 }}>
+        <Grid item xs={1}>
+          <WeaponCardNano weaponId={character.equippedWeapon} BGComponent={CardLight} onClick={() => navigate("equip")} />
+        </Grid>
+        {allSlotKeys.map(slotKey =>
+          <Grid item xs={1} >
+            <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} slotKey={slotKey} BGComponent={CardLight} onClick={() => navigate("equip")} />
+          </Grid>)}
+      </Grid>
       <MainStatsCards />
     </Grid>
   </Grid >
@@ -128,7 +158,7 @@ const miscStatReadNodes = [
 const miscStatkeys = miscStatReadNodes.map(x => x.info!.key!)
 
 const statBreakpoint = {
-  xs: 12, sm: 6, md: 6, lg: 4,
+  xs: 12, sm: 12, md: 6, lg: 4,
 } as const
 
 function StatDisplayContent({ nodes, statBreakpoint, extra }: { nodes: ReadNode<number>[], statBreakpoint: object, extra?: Displayable }) {
@@ -147,12 +177,11 @@ function MainStatsCards() {
   const specialNode = data.get(input.special)
 
   return <>
-    <TeamBuffDisplay />
     <StatDisplayCard
       title="Main Stats"
       content={<StatDisplayContent statBreakpoint={statBreakpoint} nodes={mainReadNodes}
         extra={specialNode && <Grid item {...statBreakpoint} display="flex" flexDirection="row" justifyContent="space-between">
-          <span><b>Special:</b> <ColorText color={specialNode.variant}>{specialNode.key && StatIcon[specialNode.key]} {specialNode.key && KeyMap.get(specialNode.key)}</ColorText></span>
+          <span><b>Special:</b> <ColorText color={specialNode.info.variant}>{specialNode.info.key && StatIcon[specialNode.info.key]} {specialNode.info.key && KeyMap.get(specialNode.info.key)}</ColorText></span>
           <span >{valueString(specialNode.value, specialNode.unit)}</span>
         </Grid>}
       />}
@@ -193,7 +222,7 @@ function MainStatsCards() {
     <StatDisplayCard
       title="Misc Stats"
       content={<StatDisplayContent statBreakpoint={{
-        xs: 12, sm: 6, md: 6,
+        xs: 12, sm: 12, md: 6,
       }} nodes={miscStatReadNodes} />}
       editContent={<Grid container columnSpacing={2} rowSpacing={1}>
         {miscStatkeys.map(statKey => {

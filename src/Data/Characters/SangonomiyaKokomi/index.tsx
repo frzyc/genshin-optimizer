@@ -119,7 +119,7 @@ const dmgFormulas = {
     dmg: dmgNode("atk", datamine.skill.dmg, "skill")
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
+    dmg: dmgNode("hp", datamine.burst.dmg, "burst"),
     heal: customHealNode(sum(
       prod(sum(
         subscript(input.total.burstIndex, datamine.burst.heal_, { key: '_' }),
@@ -180,9 +180,9 @@ const sheet: ICharacterSheet = {
         }, {
           text: tr("auto.fields.charged"),
           fields: [{
-            node: infoMut(dmgFormulas.charged.dmg, { key: `char_${key}_gen:auto.skillParams.4` })
+            node: infoMut(dmgFormulas.charged.dmg, { key: `char_${key}_gen:auto.skillParams.3` })
           }, {
-            text: tr("auto.skillParams.5"),
+            text: tr("auto.skillParams.4"),
             value: datamine.charged.stamina,
           }]
         }, {

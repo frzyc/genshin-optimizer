@@ -25,6 +25,7 @@ export interface ICharacter {
   infusionAura: ElementKey | ""
   buildSettings?: BuildSetting
   compareData: boolean
+  favorite: boolean
 }
 export interface ICachedCharacter extends ICharacter {
   equippedArtifacts: StrictDict<SlotKey, string>

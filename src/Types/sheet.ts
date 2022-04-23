@@ -10,7 +10,6 @@ export interface DocumentSection {
     icon?: Displayable | ((data: UIData) => Displayable);
     action?: Displayable;
   }
-  fieldsDescription?: Displayable | ((data: UIData) => Displayable);
   fields?: IFieldDisplay[]
   conditional?: IConditional
   teamBuff?: boolean

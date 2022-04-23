@@ -6,14 +6,12 @@ import CardDark from "../Components/Card/CardDark"
 import CardLight from "../Components/Card/CardLight"
 import CharacterDropdownButton from "../Components/Character/CharacterDropdownButton"
 import CloseButton from "../Components/CloseButton"
-import ColorText from "../Components/ColoredText"
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from "../Components/CustomNumberInput"
 import DocumentDisplay from "../Components/DocumentDisplay"
 import DropdownButton from "../Components/DropdownMenu/DropdownButton"
 import { FieldDisplayList, NodeFieldDisplay } from "../Components/FieldDisplay"
 import ImgIcon from "../Components/Image/ImgIcon"
 import ModalWrapper from "../Components/ModalWrapper"
-import SqBadge from "../Components/SqBadge"
 import { Stars } from "../Components/StarDisplay"
 import WeaponSelectionModal from "../Components/Weapon/WeaponSelectionModal"
 import CharacterSheet from "../Data/Characters/CharacterSheet"
@@ -88,61 +86,8 @@ export default function WeaponDisplayCard({
 
 
   const weaponUIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
-  return <CardLight>
-    <CardContent sx={{ py: 1 }}>
-      <Grid container spacing={1}>
-        <Grid item flexGrow={1}>
-          <Grid container spacing={1}>
-            <Grid item >
-              <WeaponSelectionModal show={showModal} onHide={() => setshowModal(false)} onSelect={k => weaponDispatch({ key: k })} filter={weaponFilter} weaponFilter={initialWeaponFilter} />
-              <ButtonGroup>
-                <Button onClick={() => setshowModal(true)} >{weaponSheet?.name ?? "Select a Weapon"}</Button>
-                {weaponSheet?.hasRefinement && <DropdownButton title={`Refinement ${refinement}`}>
-                  <MenuItem>Select Weapon Refinement</MenuItem>
-                  <Divider />
-                  {[...Array(5).keys()].map(key =>
-                    <MenuItem key={key} onClick={() => weaponDispatch({ refinement: key + 1 })} selected={refinement === (key + 1)} disabled={refinement === (key + 1)}>
-                      {`Refinement ${key + 1}`}
-                    </MenuItem>)}
-                </DropdownButton>}
-              </ButtonGroup>
-            </Grid>
-            <Grid item >
-              <ButtonGroup sx={{ bgcolor: t => t.palette.contentLight.main }} >
-                <CustomNumberInputButtonGroupWrapper >
-                  <CustomNumberInput onChange={setLevel} value={level}
-                    startAdornment="Lvl. "
-                    inputProps={{ min: 1, max: 90, sx: { textAlign: "center" } }}
-                    sx={{ width: "100%", height: "100%", pl: 2 }}
-                  />
-                </CustomNumberInputButtonGroupWrapper>
-                {weaponSheet && <Button sx={{ pl: 1 }} disabled={!weaponSheet.ambiguousLevel(level)} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>}
-                {weaponSheet && <DropdownButton title={"Select Level"} >
-                  {weaponSheet.milestoneLevels.map(([lv, as]) => {
-                    const sameLevel = lv === ascensionMaxLevel[as]
-                    const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
-                    const selected = lv === level && as === ascension
-                    return <MenuItem key={`${lv}/${as}`} selected={selected} disabled={selected} onClick={() => weaponDispatch({ level: lv, ascension: as })}>{lvlstr}</MenuItem>
-                  })}
-                </DropdownButton>}
-              </ButtonGroup>
-            </Grid>
-            <Grid item>
-              <Button color="error" onClick={() => id && database.updateWeapon({ lock: !lock }, id)} startIcon={lock ? <Lock /> : <LockOpen />}>
-                {lock ? "Locked" : "Unlocked"}
-              </Button>
-            </Grid>
-          </Grid>
-        </Grid>
-        {!!onClose && <Grid item  >
-          <CloseButton onClick={onClose} />
-        </Grid>}
-        <Grid item >
-          <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, data.get(input.charKey).value as CharacterKey)} />
-        </Grid>
-      </Grid>
-    </CardContent>
-    <Divider />
+  return <ModalWrapper open={!!propWeaponId} onClose={onClose} containerProps={{ maxWidth: "md" }}><CardLight>
+    <WeaponSelectionModal show={showModal} onHide={() => setshowModal(false)} onSelect={k => weaponDispatch({ key: k })} filter={weaponFilter} weaponFilter={initialWeaponFilter} />
     <CardContent >
       {weaponSheet && weaponUIData && <Grid container spacing={1.5}>
         <Grid item xs={12} sm={3}>
@@ -155,10 +100,47 @@ export default function WeaponDisplayCard({
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12} sm={9}>
-          <Typography variant="h6" >{process.env.NODE_ENV === "development" && <ColorText color="warning">{id || `""`} </ColorText>}{weaponSheet.name} Lv. {weapon && WeaponSheet.getLevelString(weapon)} {weaponSheet.rarity > 2 && <SqBadge color="info">Refinement {refinement}</SqBadge>}</Typography>
+        <Grid item xs={12} sm={9} sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+          <Box display="flex" gap={1} flexWrap="wrap" justifyContent="space-between">
+            <ButtonGroup>
+              <Button onClick={() => setshowModal(true)} >{weaponSheet?.name ?? "Select a Weapon"}</Button>
+              {weaponSheet?.hasRefinement && <DropdownButton title={`Refinement ${refinement}`}>
+                <MenuItem>Select Weapon Refinement</MenuItem>
+                <Divider />
+                {[...Array(5).keys()].map(key =>
+                  <MenuItem key={key} onClick={() => weaponDispatch({ refinement: key + 1 })} selected={refinement === (key + 1)} disabled={refinement === (key + 1)}>
+                    {`Refinement ${key + 1}`}
+                  </MenuItem>)}
+              </DropdownButton>}
+            </ButtonGroup>
+            {data?.get(input.charKey)?.value && <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, data.get(input.charKey).value as CharacterKey)} />}
+          </Box>
+          <Box display="flex" gap={1} flexWrap="wrap" justifyContent="space-between">
+            <ButtonGroup sx={{ bgcolor: t => t.palette.contentLight.main }} >
+              <CustomNumberInputButtonGroupWrapper >
+                <CustomNumberInput onChange={setLevel} value={level}
+                  startAdornment="Lv. "
+                  inputProps={{ min: 1, max: 90, sx: { textAlign: "center" } }}
+                  sx={{ width: "100%", height: "100%", pl: 2 }}
+                />
+              </CustomNumberInputButtonGroupWrapper>
+              {weaponSheet && <Button sx={{ pl: 1 }} disabled={!weaponSheet.ambiguousLevel(level)} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>}
+              {weaponSheet && <DropdownButton title={"Select Level"} >
+                {weaponSheet.milestoneLevels.map(([lv, as]) => {
+                  const sameLevel = lv === ascensionMaxLevel[as]
+                  const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
+                  const selected = lv === level && as === ascension
+                  return <MenuItem key={`${lv}/${as}`} selected={selected} disabled={selected} onClick={() => weaponDispatch({ level: lv, ascension: as })}>{lvlstr}</MenuItem>
+                })}
+              </DropdownButton>}
+            </ButtonGroup>
+
+            <Button color="error" onClick={() => id && database.updateWeapon({ lock: !lock }, id)} startIcon={lock ? <Lock /> : <LockOpen />}>
+              {lock ? "Locked" : "Unlocked"}
+            </Button>
+          </Box>
           <Typography><Stars stars={weaponSheet.rarity} /></Typography>
-          <Typography variant="subtitle1">{weaponSheet.passiveName}</Typography>
+          <Typography variant="subtitle1"><strong>{weaponSheet.passiveName}</strong></Typography>
           <Typography gutterBottom>{weaponSheet.passiveName && weaponSheet.passiveDescription(weaponUIData.get(input.weapon.refineIndex).value)}</Typography>
           <Box display="flex" flexDirection="column" gap={1}>
             <CardDark >
@@ -168,7 +150,7 @@ export default function WeaponDisplayCard({
                 {[input.weapon.main, input.weapon.sub, input.weapon.sub2].map((node, i) => {
                   const n = weaponUIData.get(node)
                   if (n.isEmpty || !n.value) return null
-                  return <NodeFieldDisplay key={n.key} node={n} component={ListItem} />
+                  return <NodeFieldDisplay key={n.info.key} node={n} component={ListItem} />
                 })}
               </FieldDisplayList>
             </CardDark>
@@ -177,17 +159,15 @@ export default function WeaponDisplayCard({
         </Grid>
       </Grid>}
     </CardContent>
-    {
-      footer && id && <CardContent sx={{ py: 1 }}>
-        <Grid container>
-          <Grid item flexGrow={1}>
-            <CharacterDropdownButton noUnselect inventory value={location} onChange={equipOnChar} filter={filter} />
-          </Grid>
-          {!!onClose && <Grid item><CloseButton large onClick={onClose} /></Grid>}
+    {footer && id && <CardContent sx={{ py: 1 }}>
+      <Grid container>
+        <Grid item flexGrow={1}>
+          <CharacterDropdownButton noUnselect inventory value={location} onChange={equipOnChar} filter={filter} />
         </Grid>
-      </CardContent>
-    }
-  </CardLight >
+        {!!onClose && <Grid item><CloseButton large onClick={onClose} /></Grid>}
+      </Grid>
+    </CardContent>}
+  </CardLight ></ModalWrapper>
 }
 function SwapBtn({ onChangeId, weaponTypeKey }) {
   const { database } = useContext(DatabaseContext)

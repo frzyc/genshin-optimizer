@@ -1,12 +1,12 @@
 import { faDiscord, faPatreon, faPaypal } from "@fortawesome/free-brands-svg-icons";
-import { faBook, faCalculator, faCog, faGavel, faIdCard, faTools } from "@fortawesome/free-solid-svg-icons";
+import { faBook, faCog, faGavel, faIdCard, faTools, faCalculator } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Suspense, useState } from "react";
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from "react-i18next";
-import { Link as RouterLink, useRouteMatch } from "react-router-dom";
+import { Link as RouterLink, useMatch } from "react-router-dom";
 import { SlotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
 
 const content = [{
@@ -25,12 +25,6 @@ const content = [{
   to: "/character",
   value: "character",
 }, {
-  i18Key: "tabs.builds",
-  svg: faCalculator,
-  to: "/build",
-  value: "build",
-},
-   {
   i18Key: "tabs.upgradeOpt",
   svg: faCalculator,
   to: "/UpgradeOpt",
@@ -81,14 +75,7 @@ function HeaderContent({ anchor }) {
 
   const { t } = useTranslation("ui")
 
-  const routeMatch = useRouteMatch({
-    path: "/:slug",
-    strict: true,
-    sensitive: true
-  });
-
-
-  const currentTab = (routeMatch?.params as any)?.slug ?? false
+  const { params: { currentTab } } = useMatch({ path: "/:currentTab", end: false }) ?? { params: { currentTab: "" } };
   if (isMobile) return <MobileHeader anchor={anchor} currentTab={currentTab} />
   return <AppBar position="static" sx={{ bgcolor: "#343a40", display: "flex", flexWrap: "nowrap" }} elevation={0} id={anchor} >
     <Tabs

@@ -1,38 +1,33 @@
-import { ArtCharDatabase } from '../Database';
-import { IArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
-import { parseArtifact } from '../../Database/validation';
+import { MainStatKey, SubstatKey } from '../../Types/artifact';
 import { ArtifactSetKey, SlotKey } from "../../Types/consts";
-import { importGOOD, ImportResult } from './good';
+import { ArtCharDatabase } from '../Database';
+import { importGOOD } from './good';
 
 const DefaultVersion = "1";
-const GetConvertedArtifactsOfVersion: Dict<string, (data: any) => { artifacts: IArtifact[], invalid: any[] }> = {
+const GetConvertedArtifactsOfVersion: Dict<string, (data: any) => { artifacts: any[] }> = {
   "1": importMona1
 };
 
-export function importMona(dataObj: any, oldDatabase: ArtCharDatabase): ImportResult | undefined {
+export function importMona(dataObj: any, oldDatabase: ArtCharDatabase): ReturnType<typeof importGOOD> {
   const version = dataObj.version ?? DefaultVersion
   const converted = GetConvertedArtifactsOfVersion[version]?.(dataObj)
 
   if (!converted)
     return // TODO: Maybe add failure reason, or throws here
 
-  const { artifacts, invalid } = converted
-
-  const result = importGOOD({
+  return importGOOD({
     format: "GOOD",
     source: "mona-uranai",
     version: 1,
-    artifacts: artifacts
+    artifacts: converted.artifacts
   }, oldDatabase)
-  result?.artifacts!.invalid.push(...invalid)
-  return result
 }
 
 // backup 0: https://github.com/wormtql/genshin_artifact/blob/main/src/assets/artifacts/data/*/index.js
 // backup 1: https://github.com/YuehaiTeam/cocogoat/blob/main/src/App/export/Mona.ts
 
-function importMona1(dataObj: any): { artifacts: IArtifact[], invalid: any[] } {
-  const invalid: any[] = [], artifacts: IArtifact[] = []
+function importMona1(dataObj: any): { artifacts: any[] } {
+  const artifacts: any[] = []
 
   for (const property in dataObj) {
     if (!(property in ArtifactSlotKeyMap))
@@ -56,18 +51,11 @@ function importMona1(dataObj: any): { artifacts: IArtifact[], invalid: any[] } {
           }
         }),
       }
-      const flex = parseArtifact(raw)
-
-      if (!flex) {
-        invalid.push(raw)
-        continue
-      }
-
-      artifacts.push(flex)
+      artifacts.push(raw)
     }
   }
 
-  return { artifacts, invalid }
+  return { artifacts }
 }
 
 // Referencing https://wormtql.gitbook.io/mona-uranai/ (they don't seem to update this anymore...)
@@ -79,44 +67,49 @@ const ArtifactSlotKeyMap: Dict<string, SlotKey> = {
   "cup": "goblet",
   "head": "circlet",
 }
+
+// Referencing https://github.com/daydreaming666/Amenoma/blob/main/ArtScanner/ArtsInfo.py SetNamesGenshinArt
+
 const ArtifactSetKeyMap: Dict<string, ArtifactSetKey> = {
-  // "adventurer": "Adventurer",
-  // "archaicPetra": "ArchaicPetra",
-  // "berserker": "Berserker",
-  // "blizzardStrayer": "BlizzardStrayer",
-  // "bloodstainedChivalry": "BloodstainedChivalry",
-  // "braveHeart": "BraveHeart",
-  // "crimsonWitch": "CrimsonWitchOfFlames",
-  // "defenderWill": "DefendersWill",
-  // "gambler": "Gambler",
-  // "gladiatorFinale": "GladiatorsFinale",
-  // "heartOfDepth": "HeartOfDepth",
-  // "instructor": "Instructor",
-  // "lavaWalker": "Lavawalker",
-  // "luckyDog": "LuckyDog",
-  // "maidenBeloved": "MaidenBeloved",
-  // "martialArtist": "MartialArtist",
-  // "noblesseOblige": "NoblesseOblige",
-  // "prayersForDestiny": "PrayersForDestiny",
-  // "prayersForIllumination": "PrayersForIllumination",
-  // "prayersForWisdom": "PrayersForWisdom",
-  // "prayersToSpringtime": "PrayersToSpringtime",
-  // "resolutionOfSojourner": "ResolutionOfSojourner",
-  // "retracingBolide": "RetracingBolide",
-  // "scholar": "Scholar",
-  // "exile": "TheExile",
-  // "thunderingFury": "ThunderingFury",
-  // "thunderSmoother": "Thundersoother",
-  // "tinyMiracle": "TinyMiracle",
-  // "travelingDoctor": "TravelingDoctor",
+  "adventurer": "Adventurer",
+  "archaicPetra": "ArchaicPetra",
+  "berserker": "Berserker",
+  "blizzardStrayer": "BlizzardStrayer",
+  "bloodstainedChivalry": "BloodstainedChivalry",
+  "braveHeart": "BraveHeart",
+  "crimsonWitch": "CrimsonWitchOfFlames",
+  "defenderWill": "DefendersWill",
+  "gambler": "Gambler",
+  "gladiatorFinale": "GladiatorsFinale",
+  "heartOfDepth": "HeartOfDepth",
+  "instructor": "Instructor",
+  "lavaWalker": "Lavawalker",
+  "luckyDog": "LuckyDog",
+  "maidenBeloved": "MaidenBeloved",
+  "martialArtist": "MartialArtist",
+  "noblesseOblige": "NoblesseOblige",
+  "prayersForDestiny": "PrayersForDestiny",
+  "prayersForIllumination": "PrayersForIllumination",
+  "prayersForWisdom": "PrayersForWisdom",
+  "prayersToSpringtime": "PrayersToSpringtime",
+  "resolutionOfSojourner": "ResolutionOfSojourner",
+  "retracingBolide": "RetracingBolide",
+  "scholar": "Scholar",
+  "exile": "TheExile",
+  "thunderingFury": "ThunderingFury",
+  "thunderSmoother": "Thundersoother",
+  "tinyMiracle": "TinyMiracle",
+  "travelingDoctor": "TravelingDoctor",
   "viridescentVenerer": "ViridescentVenerer",
-  // "wandererTroupe": "WanderersTroupe",
-  // "tenacityOfTheMillelith": "TenacityOfTheMillelith",
-  // "paleFlame": "PaleFlame",
+  "wandererTroupe": "WanderersTroupe",
+  "tenacityOfTheMillelith": "TenacityOfTheMillelith",
+  "paleFlame": "PaleFlame",
   "emblemOfSeveredFate": "EmblemOfSeveredFate",
-  // "shimenawaReminiscence": "ShimenawasReminiscence",
-  // "huskOfOpulentDreams": "HuskOfOpulentDreams",
-  // "oceanHuedClam": "OceanHuedClam",
+  "shimenawaReminiscence": "ShimenawasReminiscence",
+  "huskOfOpulentDreams": "HuskOfOpulentDreams",
+  "oceanHuedClam": "OceanHuedClam",
+  "EchoesOfAnOffering": "EchoesOfAnOffering",
+  "VermillionHereafter": "VermillionHereafter",
 }
 const ArtifactMainStatKeyMap: Dict<string, MainStatKey> = {
   "cureEffect": "heal_",

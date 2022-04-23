@@ -8,14 +8,16 @@ import icons from './icons'
 const key: ArtifactSetKey = "ThunderingFury"
 
 const set2 = greaterEq(input.artSet.ThunderingFury, 2, percent(0.15))
-const set4 = greaterEq(input.artSet.ThunderingFury, 4, percent(0.40))
+const overloaded_dmg_ = greaterEq(input.artSet.ThunderingFury, 4, percent(0.40))
+const electrocharged_dmg_ = { ...overloaded_dmg_ }
+const superconduct_dmg_ = { ...overloaded_dmg_ }
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     electro_dmg_: set2,
-    overloaded_dmg_: set4,
-    electrocharged_dmg_: set4,
-    superconduct_dmg_: set4
+    overloaded_dmg_,
+    electrocharged_dmg_,
+    superconduct_dmg_,
   },
 })
 
@@ -27,7 +29,11 @@ const sheet: IArtifactSheet = {
     4: {
       document: [{
         fields: [{
-          node: set4,
+          node: overloaded_dmg_,
+        }, {
+          node: electrocharged_dmg_,
+        }, {
+          node: superconduct_dmg_,
         }]
       }]
     }

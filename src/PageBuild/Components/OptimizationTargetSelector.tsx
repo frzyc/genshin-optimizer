@@ -77,11 +77,11 @@ function TargetDisplayText({ optimizationTarget }: { optimizationTarget?: string
   const node: NodeDisplay | undefined = objPathValue(data.getDisplay(), optimizationTarget) as any
   if (!node) return <NoTarget />
 
-  return <b>{displayHeader.title} : {<ColorText color={node.variant}>{KeyMap.get(node.key)}</ColorText>}</b>
+  return <b>{displayHeader.title} : {<ColorText color={node.info.variant}>{KeyMap.get(node.info.key)}</ColorText>}</b>
 }
 function TargetSelectorMenuItem({ node, onClick }: { node: NodeDisplay, onClick: () => void }) {
   if (node.isEmpty) return null
   return <MenuItem onClick={onClick} style={{ overflow: "hidden", textOverflow: "ellipsis" }}>
-    <ColorText color={node.variant} >{KeyMap.get(node.key)}</ColorText>
+    <ColorText color={node.info.variant} >{KeyMap.get(node.info.key)}</ColorText>
   </MenuItem>
 }

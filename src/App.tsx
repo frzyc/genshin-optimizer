@@ -1,7 +1,7 @@
 import { KeyboardArrowUp } from '@mui/icons-material';
 import { Box, Container, Fab, Grid, Skeleton, useScrollTrigger, Zoom } from '@mui/material';
 import React, { lazy, Suspense, useMemo, useState } from 'react';
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import './App.scss';
 import './Database/Database';
 import { ArtCharDatabase, DatabaseContext } from './Database/Database';
@@ -12,15 +12,14 @@ import './i18n';
 
 const Home = lazy(() => import('./PageHome/HomeDisplay'))
 const ArtifactDisplay = lazy(() => import('./PageArtifact/ArtifactDisplay'))
-const CharacterRouter = lazy(() => import('./PageCharacter/CharacterRouter'))
-const BuildDisplay = lazy(() => import('./PageBuild/BuildDisplay'))
-const UpgradeOptDisplay = lazy(() => import('./PageUpgradeOpt/UpgradeOptDisplay'))
 const ToolsDisplay = lazy(() => import('./PageTools/ToolsDisplay'))
-const TestDisplay = lazy(() => import('./PageTest/TestDisplay'))
+const UpgradeOptDisplay = lazy(() => import('./PageUpgradeOpt/UpgradeOptDisplay'))
 const SettingsDisplay = lazy(() => import('./PageSettings/SettingsDisplay'))
 const WeaponDisplay = lazy(() => import('./PageWeapon/WeaponDisplay'))
 const DocumentationDisplay = lazy(() => import('./PageDocumentation/DocumentationDisplay'))
 const ScannerDisplay = lazy(() => import('./PageScanner/ScannerDisplay'))
+const CharacterDisplay = lazy(() => import('./PageCharacter/CharacterDisplay'))
+const CharacterInventory = lazy(() => import('./PageCharacter/CharacterInventory'))
 
 function ScrollTop({ children }: { children: React.ReactElement }) {
   const trigger = useScrollTrigger({
@@ -66,19 +65,20 @@ function App() {
         </Grid>
         <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1, md: 2 } }}>
           <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%" }} />}>
-            <Switch>
-              <Route path="/artifact" component={ArtifactDisplay} />
-              <Route path="/weapon" component={WeaponDisplay} />
-              <Route path="/character" component={CharacterRouter} />
-              <Route path="/build" component={BuildDisplay} />
-              <Route path="/UpgradeOpt" component={UpgradeOptDisplay} />
-              <Route path="/tools" component={ToolsDisplay} />
-              {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
-              <Route path="/setting" component={SettingsDisplay} />
-              <Route path="/doc" component={DocumentationDisplay} />
-              <Route path="/scanner" component={ScannerDisplay} />
-              <Route path="/" component={Home} />
-            </Switch>
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path="/artifact" element={<ArtifactDisplay />} />
+              <Route path="/weapon" element={<WeaponDisplay />} />
+              <Route path="/character/*"  >
+                <Route path=":characterKey/*" element={<CharacterDisplay />} />
+                <Route index element={<CharacterInventory />} />
+              </Route>
+              <Route path="/UpgradeOpt" element={<UpgradeOptDisplay />} />
+              <Route path="/tools" element={<ToolsDisplay />} />
+              <Route path="/setting" element={<SettingsDisplay />} />
+              <Route path="/doc/*" element={<DocumentationDisplay />} />
+              <Route path="/scanner" element={<ScannerDisplay />} />
+            </Routes>
           </Suspense>
         </Container>
         {/* make sure footer is always at bottom */}

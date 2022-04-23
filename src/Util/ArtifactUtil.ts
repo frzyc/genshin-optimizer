@@ -6,13 +6,13 @@ import { allSubstats, IArtifact, ISubstat, SubstatKey } from "../Types/artifact"
 import { allArtifactSets } from "../Types/consts"
 import { getRandomElementFromArray, getRandomIntInclusive } from "./Util"
 
-export async function randomizeArtifact(): Promise<IArtifact> {
-  const setKey = getRandomElementFromArray(allArtifactSets)
+export async function randomizeArtifact(base: Partial<IArtifact> = {}): Promise<IArtifact> {
+  const setKey = base.setKey ?? getRandomElementFromArray(allArtifactSets)
   const sheet = await ArtifactSheet.get(setKey)!
-  const rarity = getRandomElementFromArray(sheet.rarity)
-  const slot = getRandomElementFromArray(sheet.slots)
-  const mainStatKey = getRandomElementFromArray(Artifact.slotMainStats(slot))
-  const level = getRandomIntInclusive(0, rarity * 4)
+  const rarity = base.rarity ?? getRandomElementFromArray(sheet.rarity)
+  const slot = base.slotKey ?? getRandomElementFromArray(sheet.slots)
+  const mainStatKey = base.mainStatKey ?? getRandomElementFromArray(Artifact.slotMainStats(slot))
+  const level = base.level ?? getRandomIntInclusive(0, rarity * 4)
   const substats: ISubstat[] = [0, 1, 2, 3].map(i => ({ key: "", value: 0 }))
 
   const { low, high } = Artifact.rollInfo(rarity)

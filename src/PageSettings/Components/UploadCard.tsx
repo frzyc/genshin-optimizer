@@ -1,15 +1,15 @@
 import { faArrowLeft, faFileCode, faFileUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Upload } from '@mui/icons-material'
-import { Alert, Box, Button, CardContent, Divider, Grid, styled, Typography } from '@mui/material'
+import { Box, Button, CardContent, Divider, Grid, styled, Typography } from '@mui/material'
 import { useContext, useMemo, useState } from "react"
 import { Trans, useTranslation } from "react-i18next"
 import CardDark from '../../Components/Card/CardDark'
 import CardLight from '../../Components/Card/CardLight'
 import { ArtCharDatabase, DatabaseContext } from "../../Database/Database"
-import { importGO, ImportResult as GOImportResult } from '../../Database/exim/go'
-import { importGOOD, ImportResult as GOODImportResult, ImportResultCounter } from '../../Database/exim/good'
-import { importMona } from '../../Database/exim/mona'
+import { ImportResult, ImportResultCounter } from '../../Database/exim'
+import { importGOOD } from '../../Database/imports/good'
+import { importMona } from '../../Database/imports/mona'
 
 const InvisInput = styled('input')({
   display: 'none',
@@ -40,14 +40,6 @@ export default function UploadCard() {
       const imported = importMona(parsed, database)
       if (!imported) {
         setErrorMsg("uploadCard.error.monaInvalid")
-        return
-      }
-      return imported
-    } else if ("version" in parsed && "characterDatabase" in parsed && "artifactDatabase" in parsed) {
-      // Parse as GO format
-      const imported = importGO(parsed)
-      if (!imported) {
-        setErrorMsg("uploadCard.error.goInvalid")
         return
       }
       return imported
@@ -102,18 +94,16 @@ export default function UploadCard() {
 
 function UploadInfo(data: UploadData | undefined) {
   switch (data?.type) {
-    case "GO": return <GOUploadInfo data={data} />
     case "GOOD": return <GOODUploadInfo data={data} />
   }
 }
 function UploadAction(data: UploadData | undefined, reset: () => void) {
   switch (data?.type) {
-    case "GO":
     case "GOOD": return <GOUploadAction data={data} reset={reset} />
   }
 }
 
-function GOODUploadInfo({ data: { source, artifacts, characters, weapons }, data }: { data: GOODImportResult }) {
+function GOODUploadInfo({ data: { source, artifacts, characters, weapons }, data }: { data: ImportResult }) {
   const { t } = useTranslation("settings")
   return <CardDark>
     <CardContent sx={{ py: 1 }}>
@@ -137,7 +127,7 @@ function GOODUploadInfo({ data: { source, artifacts, characters, weapons }, data
     </CardContent>
   </CardDark>
 }
-function MergeResult({ result, type }: { result?: ImportResultCounter, type: string }) {
+function MergeResult({ result, type }: { result?: ImportResultCounter<any>, type: string }) {
   const { t } = useTranslation("settings")
   if (!result) return null
   return <CardLight >
@@ -148,10 +138,10 @@ function MergeResult({ result, type }: { result?: ImportResultCounter, type: str
     </CardContent>
     <Divider />
     <CardContent>
-      <Typography><Trans t={t} i18nKey="count.new" /> <strong>{result.new}</strong> / {result.total}</Typography>
-      <Typography><Trans t={t} i18nKey="count.updated" /> <strong>{result.updated}</strong> / {result.total}</Typography>
-      <Typography><Trans t={t} i18nKey="count.unchanged" /> <strong>{result.unchanged}</strong> / {result.total}</Typography>
-      <Typography color="warning.main"><Trans t={t} i18nKey="count.removed" /> <strong>{result.removed}</strong></Typography>
+      <Typography><Trans t={t} i18nKey="count.new" /> <strong>{result.new.length}</strong> / {result.total}</Typography>
+      <Typography><Trans t={t} i18nKey="count.updated" /> <strong>{result.updated.length}</strong> / {result.total}</Typography>
+      <Typography><Trans t={t} i18nKey="count.unchanged" /> <strong>{result.unchanged.length}</strong> / {result.total}</Typography>
+      <Typography color="warning.main"><Trans t={t} i18nKey="count.removed" /> <strong>{result.removed.length}</strong></Typography>
       {!!result.invalid?.length && <div>
         <Typography color="error.main"><Trans t={t} i18nKey="count.invalid" /> <strong>{result.invalid.length}</strong> / {result.total}</Typography>
         <Box component="textarea" sx={{ width: "100%", fontFamily: "monospace", minHeight: "10em", resize: "vertical" }} value={JSON.stringify(result.invalid, undefined, 2)} disabled />
@@ -159,28 +149,15 @@ function MergeResult({ result, type }: { result?: ImportResultCounter, type: str
     </CardContent>
   </CardLight>
 }
-function GOUploadInfo({ data: { charCount, artCount } }: { data: GOImportResult }) {
-  const { t } = useTranslation("settings")
-  return <CardDark>
-    <CardContent sx={{ py: 1 }}>
-      <Trans t={t} i18nKey="uploadCard.goUpload.title" />
-    </CardContent>
-    <Divider />
-    <CardContent><Grid container spacing={1}>
-      <Grid item xs={12} md={6}> <Typography><Trans t={t} i18nKey="count.chars" /> {charCount}</Typography></Grid>
-      <Grid item xs={12} md={6}> <Typography><Trans t={t} i18nKey="count.arts" /> {artCount}</Typography></Grid>
-      {<Grid item xs={12} ><Alert severity="warning" ><Trans t={t} i18nKey="uploadCard.goUpload.migrate" /></Alert></Grid>}
-    </Grid></CardContent>
-  </CardDark>
-}
 
-function GOUploadAction({ data: { storage }, data, reset }: { data: GOImportResult | GOODImportResult, reset: () => void }) {
+function GOUploadAction({ data: { storage }, data, reset }: { data: ImportResult, reset: () => void }) {
   const { database, setDatabase } = useContext(DatabaseContext)
   const { t } = useTranslation("settings")
-  const dataValid = data.type === "GO" ? data.charCount || data.artCount : (data.characters?.total || data.artifacts?.total || data.weapons?.total)
+  const dataValid = data.characters?.total || data.artifacts?.total || data.weapons?.total
   const replaceDB = () => {
+    database.storage.clear()
     database.storage.copyFrom(storage)
-    setDatabase(new ArtCharDatabase(database.storage))
+    setDatabase(new ArtCharDatabase(database.storage, true))
     reset()
   }
 
@@ -189,4 +166,4 @@ function GOUploadAction({ data: { storage }, data, reset }: { data: GOImportResu
   </CardContent></>
 }
 
-type UploadData = GOImportResult | GOODImportResult
+type UploadData = ImportResult

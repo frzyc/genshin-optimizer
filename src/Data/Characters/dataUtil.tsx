@@ -13,7 +13,6 @@ import _charCurves from "./expCurve_gen.json";
 const charCurves = objectMap(_charCurves, value => [0, ...Object.values(value)])
 
 const commonBasic = objectKeyMap(["hp", "atk", "def", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_"], key => input.total[key])
-commonBasic.critRate_ = input.total.cappedCritRate
 
 export const infusionNode = stringPrio(
   input.infusion.nonOverridableSelf,

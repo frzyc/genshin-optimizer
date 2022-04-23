@@ -1,7 +1,4 @@
-import { assertUnreachable, objPathValue } from "../Util/Util"
-import { forEachNodes, mapFormulas } from "../Formula/internal"
-import { constant, sum, prod, cmp } from "../Formula/utils"
-import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode, StrPrioNode } from "../Formula/type"
+import { Data, NumNode } from "../Formula/type"
 import { precompute, optimize } from "../Formula/optimization"
 import { ddx } from "../Formula/differentiate"
 import { ArtifactBuildData, ArtifactsBySlot, DynStat } from "../PageBuild/background"
@@ -9,7 +6,6 @@ import { SubstatKey, allSubstats, IArtifact, MainStatKey } from "../Types/artifa
 import { assert } from "console"
 import { allSlotKeys, ArtifactSetKey, CharacterKey, SlotKey, Rarity } from '../Types/consts';
 import Artifact from "../Data/Artifacts/Artifact"
-import { query } from "express"
 import { crawlUpgrades, allUpgradeValues } from "./artifactUpgradeCrawl"
 import { erf } from "../Util/MathUtil"
 

@@ -1,7 +1,7 @@
 {
   "homepage": "https://frzyc.github.io/genshin-optimizer/",
   "name": "genshin-optimizer",
-  "version": "8.1.8",
+  "version": "8.2.4",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.1",
@@ -13,7 +13,7 @@
     "@fortawesome/react-fontawesome": "^0.1.16",
     "@mui/icons-material": "^5.3.1",
     "@mui/lab": "^5.0.0-alpha.59",
-    "@mui/material": "^5.3.1",
+    "@mui/material": "^5.6.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -30,7 +30,7 @@
     "react-dom": "^17.0.2",
     "react-ga": "^3.3.0",
     "react-i18next": "^11.15.1",
-    "react-router-dom": "^5.3.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.0",
     "recharts": "^2.1.6",
     "source-map-explorer": "^2.5.2",

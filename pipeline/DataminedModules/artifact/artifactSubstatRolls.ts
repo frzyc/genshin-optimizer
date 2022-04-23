@@ -8,7 +8,7 @@ export const artifactSubstatRollCorrection: Record<string, Record<string, Record
 
 function getRolls(key: string, possibleRolls: number[], maxRolls: number, rarity: string): { [value: number]: number[][] } {
   const accurateStrings: Set<string> = new Set()
-  const accuratePossibleRolls = possibleRolls.map(Math.fround)
+  const accuratePossibleRolls = possibleRolls.map(roll => key.endsWith("_") ? Math.fround(Math.fround(roll) * 100) : roll)
   const fastPossibleRolls = possibleRolls.map(roll => key.endsWith("_") ? roll * 100 : roll)
 
   const root: RollValue = { accurateValue: 0, accurateString: "", fastValue: 0, fastString: "", rolls: [], badChildCount: 0 }
@@ -25,7 +25,7 @@ function getRolls(key: string, possibleRolls: number[], maxRolls: number, rarity
       const fastValue = current.fastValue + fastPossibleRolls[i]
 
       const accurateString = key.endsWith("_")
-        ? (Math.round(extrapolateFloat(Math.fround(Math.fround(accurateValue * 100) * 10))) / 10).toFixed(1)
+        ? (Math.round(Math.fround(accurateValue * 10)) / 10).toFixed(1)
         : Math.round(accurateValue).toFixed(0)
       const fastString = key.endsWith("_")
         ? (Math.round(fastValue * 10) / 10).toFixed(1)
