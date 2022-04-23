@@ -160,8 +160,8 @@ export default function UpgradeOptDisplay() {
 
     return {
       artifactsToShow: toShow, numPages, currentPageIndex,
-      minObj0: toShow.reduce((a, b) => Math.min(b.params[0].mu - 4 * b.params[0].std, a), thr),
-      maxObj0: toShow.reduce((a, b) => Math.max(b.params[0].mu + 4 * b.params[0].std, a), thr)
+      minObj0: toShow.reduce((a, b) => Math.min(b.params[0].appxDist.x0, a), thr),
+      maxObj0: toShow.reduce((a, b) => Math.max(b.params[0].appxDist.x1, a), thr)
     }
   }, [artifactUpgradeOpts, pageIdex])
 
@@ -220,7 +220,7 @@ export default function UpgradeOptDisplay() {
     }).filter(x => x.value && x.minimum > -Infinity)
 
     const queryArts: QueryArtifact[] = database._getArts().map(art => {
-      const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, 20)
+      const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, 20)  // 5* only
       const buildData = {
         id: art.id, slot: art.slotKey, level: art.level, rarity: art.rarity,
         values: {
@@ -229,7 +229,7 @@ export default function UpgradeOptDisplay() {
           ...Object.fromEntries(art.substats.map(substat =>
             [substat.key, substat.key.endsWith('_') ? substat.accurateValue / 100 : substat.accurateValue]))
         },
-        substatKeys: art.substats.reduce((sub: SubstatKey[], x) => {
+        subs: art.substats.reduce((sub: SubstatKey[], x) => {
           if (x.key != "") sub.push(x.key)
           return sub
         }, [])
@@ -240,7 +240,7 @@ export default function UpgradeOptDisplay() {
 
     let curEquip: QueryBuild = Object.assign({}, ...allSlotKeys.map(slotKey => {
       const art = database._getArt(data?.get(input.art[slotKey].id).value ?? "")
-      if (!art) return { [slotKey]: {} }
+      if (!art) return { [slotKey]: undefined }
 
       const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, art.level)
       const buildData: QueryArtifact = {
@@ -251,7 +251,7 @@ export default function UpgradeOptDisplay() {
           ...Object.fromEntries(art.substats.map(substat =>
             [substat.key, substat.key.endsWith('_') ? substat.accurateValue / 100 : substat.accurateValue]))
         },
-        substatKeys: art.substats.reduce((sub: SubstatKey[], x) => {
+        subs: art.substats.reduce((sub: SubstatKey[], x) => {
           if (x.key != "") sub.push(x.key)
           return sub
         }, [])

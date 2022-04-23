@@ -172,7 +172,7 @@ function Artifacts() {
     )}
   </Grid>
 }
-function ArtifactCardPico({ artifactObj: art, slotKey: key }: { artifactObj: ICachedArtifact | undefined, slotKey: SlotKey }) {
+export function ArtifactCardPico({ artifactObj: art, slotKey: key }: { artifactObj: ICachedArtifact | undefined, slotKey: SlotKey }) {
   const artifactSheet = usePromise(art?.setKey && ArtifactSheet.get(art.setKey), [art?.setKey])
   // Blank artifact slot icon
   if (!art || !artifactSheet) return <Grid item key={key} xs={1}>

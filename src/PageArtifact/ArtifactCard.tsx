@@ -134,7 +134,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onDelete, mainSt
         </Box>}
         {upgradeOpt && <Box sx={{ display: "flex", mb: 1 }}>
           <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.upgradeOpt`} dmg</Typography>
-          <PercentBadge value={upgradeOpt.Edmg} max={100} valid={artifactValid} />
+          <PercentBadge value={upgradeOpt.upAvg} max={100} valid={artifactValid} />
         </Box>}
         <Box flexGrow={1} />
         {probabilityFilter && <strong>Probability: {(probability(art, probabilityFilter) * 100).toFixed(2)}%</strong>}

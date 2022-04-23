@@ -45,25 +45,19 @@ export function crawlUpgrades(n: number, fn?: (n1234: number[], p: number) => vo
 }
 
 export function allUpgradeValues(upOpt: UpgradeOptResult) {
-  let nsubs = upOpt.subs.length
-
   // TODO: Fixed rarity 5*
   let scale = (key: SubstatKey) => key.endsWith('_') ? Artifact.maxSubstatValues(key, 5) / 1000 : Artifact.maxSubstatValues(key, 5) / 10
-
 
   const base = upOpt.statsBase
   const f = upOpt.params[0].evalFn
 
-  let coeffs = [...upOpt.params[0].ks]
-  while (coeffs.length < 4) coeffs.push(0)
-
-  // console.log(coeffs)
+  // let coeffs = [...upOpt.params[0].ks]
+  // while (coeffs.length < 4) coeffs.push(0)
 
   let results: WeightedPoint[] = []
-  let n = upOpt.rollsLeft
-
-  crawlUpgrades(n, (ns, p) => {
-    const vals = ns.map((ni, i) => coeffs[i] == 0 ? [NaN] : range(7 * ni, 10 * ni))
+  crawlUpgrades(upOpt.rollsLeft, (ns, p) => {
+    // const vals = ns.map((ni, i) => coeffs[i] == 0 ? [NaN] : range(7 * ni, 10 * ni))
+    const vals = ns.map((ni, i) => upOpt.subs[i] ? range(7 * ni, 10 * ni) : [NaN])
 
     // Cartesian product
     const allValues: number[][] = cartesian(...vals)

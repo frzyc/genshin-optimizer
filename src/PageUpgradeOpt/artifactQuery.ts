@@ -10,27 +10,26 @@ import { crawlUpgrades, allUpgradeValues } from "./artifactUpgradeCrawl"
 import { erf } from "../Util/MathUtil"
 
 type OptSummary = {
-  c: number,
-  ks: number[],
-  mu: number,
-  std: number,
+  appxDist: GaussianMixture
   thr: number,
+
   evalFn: (values: Dict<string, number>) => number[]
 }
 export type UpgradeOptResult = {
   id: string,
-  prob: number,
-  Edmg: number,
-  rollsLeft: number,
-
-  statsBase: DynStat,
   subs: SubstatKey[],
+  rollsLeft: number,
+  statsBase: DynStat,
+
+  prob: number,
+  upAvg: number,
   params: OptSummary[]
 }
 type Query = {
   formulas: NumNode[],
-  thresholds: number[]
-  arts: QueryBuild,
+  thresholds: (number | undefined)[]
+  curBuild: QueryBuild,
+
   evalFn: (values: Dict<string, number>) => number[]
 }
 export type QueryArtifact = {
@@ -39,64 +38,117 @@ export type QueryArtifact = {
   rarity: Rarity,
   slot: SlotKey,
   values: DynStat,
-  substatKeys: SubstatKey[]
+  subs: SubstatKey[]
 }
 export type QueryBuild = {
-  [key in SlotKey]: QueryArtifact
+  [key in SlotKey]: QueryArtifact | undefined
 }
 
-function evalArtifact(objective: Query, art: QueryArtifact): UpgradeOptResult {
-  // Get stats of equipping 'art'
+function toStats(build: QueryBuild): DynStat {
   let stats: DynStat = {}
-  allSlotKeys.forEach(slotKey => {
-    let a = (art.slot == slotKey ? art : objective.arts[slotKey])
-    // console.log(a)
-    Object.entries(a.values).forEach(([key, value]) => stats[key] = (stats[key] ?? 0) + value)
+  Object.values(build).forEach(a => {
+    if (a) Object.entries(a.values).forEach(([key, value]) => stats[key] = (stats[key] ?? 0) + value)
   })
+  return stats
+}
+
+export function evalArtifact(objective: Query, art: QueryArtifact): UpgradeOptResult {
+  let newBuild = { ...objective.curBuild }
+  newBuild[art.slot] = art
+
+  let stats = toStats(newBuild)
   const statsBase = { ...stats }
   let scale = (key: SubstatKey) => key.endsWith('_') ? Artifact.maxSubstatValues(key, art.rarity) / 1000 : Artifact.maxSubstatValues(key, art.rarity) / 10
 
   // Increase each stat by their expected increase
-  const rollsLeft = Artifact.rollsRemaining(art.level, art.rarity) - (4 - art.substatKeys.length)
-  art.substatKeys.forEach(key => {
+  const rollsLeft = Artifact.rollsRemaining(art.level, art.rarity) - (4 - art.subs.length)
+
+  const iq: InternalQuery = {
+    rollsLeft: rollsLeft,
+    subs: art.subs,
+    stats: stats,
+    thresholds: objective.thresholds,
+    scale: scale,
+    objectiveEval: (stats) => {
+      const out = objective.evalFn(stats)
+      return [{ value: out[0], grad: art.subs.map(key => out[1 + allSubstats.indexOf(key)] * scale(key)) }]
+    }
+  }
+
+  const out = totalGaussian1d(iq)
+  return {
+    id: art.id,
+    subs: art.subs,
+    rollsLeft: rollsLeft,
+    statsBase: statsBase,
+
+    prob: out.p,
+    upAvg: out.upAvg,
+    params: [
+      { appxDist: out.appxDist, thr: out.x, evalFn: objective.evalFn }
+    ]
+  }
+}
+
+type InternalQuery = {
+  rollsLeft: number,
+  subs: SubstatKey[],
+  stats: DynStat,
+  thresholds: (number | undefined)[],
+  objectiveEval: (values: Dict<string, number>) => { value: number, grad: number[] }[],
+  scale: (key: SubstatKey) => number,
+}
+type GaussianMixture = {
+  gmm: {
+    p: number,
+    mu: number,
+    sig2: number
+  }[],
+  x0: number,
+  x1: number,
+}
+type InternalResult = {
+  x: number,
+  p: number,
+  upAvg: number,
+  appxDist: GaussianMixture
+}
+
+function totalGaussian1d({ rollsLeft, subs, stats, scale, objectiveEval, thresholds }: InternalQuery, ix = 0): InternalResult {
+  // Evaluate derivatives at center of 4-D upgrade distribution
+  subs.forEach(key => {
     // console.log(key, 17 / 8 * rollsLeft * scale(key))
     stats[key] = (stats[key] ?? 0) + 17 / 8 * rollsLeft * scale(key)
   })
 
-  // linearize
-  const out = objective.evalFn(stats)
-  const val = out[0]
-  const grad = art.substatKeys.map(key => out[1 + allSubstats.indexOf(key)] * scale(key))
-
-  const c = val - 17 / 8 * rollsLeft * grad.reduce((a, b) => a + b)
-  const ks = grad
-
-  // coeff2normal
-  const ksum = ks.reduce((a, b) => a + b)
-  const ksum2 = ks.reduce((a, b) => a + b * b, 0)
+  const { value, grad } = objectiveEval(stats)[ix]
+  const ksum = grad.reduce((a, b) => a + b)
+  const ksum2 = grad.reduce((a, b) => a + b * b, 0)
   const N = rollsLeft
-  const mean = 17 / 8 * N * ksum + c
-  const variance = (147 / 8) * N * ksum2 - N * 289 / 64 * ksum * ksum
-  const x = objective.thresholds[0] // target
 
-  const summ: OptSummary = { c: c, ks: ks, mu: mean, std: Math.sqrt(variance), thr: x, evalFn: objective.evalFn }
-  let ret = { id: art.id, params: [summ], statsBase: statsBase, subs: art.substatKeys, rollsLeft: rollsLeft }
+  const mean = value
+  const variance = (147 / 8 * ksum2 - 289 / 64 * ksum * ksum) * N
+  const appx: GaussianMixture = {
+    gmm: [{ p: 1, mu: mean, sig2: variance }], x0: mean - 4 * Math.sqrt(variance), x1: mean + 4 * Math.sqrt(variance)
+  }
+  const x = thresholds[ix]
+  if (x === undefined) return { x: -Infinity, p: 1, upAvg: mean, appxDist: appx }
 
   if (Math.abs(variance) < 1e-5) {
-    if (mean > x) return { prob: 1, Edmg: mean - x, ...ret }
-    return { prob: 0, Edmg: 0, ...ret }
+    if (mean > x) return { x: x, p: 1, upAvg: mean - x, appxDist: appx }
+    return { x: x, p: 0, upAvg: 0, appxDist: appx }
   }
-  const p = (1 - erf((x - mean) / Math.sqrt(2 * variance))) / 2
-  if (Math.abs(p) < 1e-8) return { prob: p, Edmg: 0, ...ret }
+
+  const z = (x - mean) / Math.sqrt(variance)
+  const p = (1 - erf(z / Math.sqrt(2))) / 2
+  if (Math.abs(p) < 1e-8) return { x: x, p: p, upAvg: 0, appxDist: appx }
 
   const phi = Math.exp((-(x - mean) * (x - mean)) / variance / 2) / Math.sqrt(2 * Math.PI)
-  return { prob: p, Edmg: mean + Math.sqrt(variance) * phi / p - x, ...ret }
+  return { x: x, p: p, upAvg: mean + Math.sqrt(variance) * phi / p - x, appxDist: appx }
 }
 
-
-function querySetup(objective: NumNode, curBuild: QueryBuild, data: Data = {}): Query {
+function querySetup(formulas: NumNode[], curBuild: QueryBuild, data: Data = {}): Query {
   // TODO: expand math to multi-objective
-  const formulas = [objective]
   if (formulas.length != 1)
     throw new Error("Implementation only works with one objective formula rn.")
 
@@ -109,36 +161,14 @@ function querySetup(objective: NumNode, curBuild: QueryBuild, data: Data = {}): 
   evalOpt = optimize(evalOpt, data, ({ path: [p] }) => p !== "dyn")
   const evalFn = precompute(evalOpt, f => f.path[1])
 
-  let stats: DynStat = {}
-  Object.values(curBuild).forEach(art => {
-    if (art && art.values) {
-      Object.entries(art.values).forEach(([k, v]) => {
-        stats[k] = v + (stats[k] ?? 0)
-      })
-    }
-  })
+  let stats = toStats(curBuild)
   const dmg0 = evalFn(stats)[0]
 
-  return { formulas: formulas, thresholds: [dmg0], arts: curBuild, evalFn: evalFn }
+  return { formulas: formulas, thresholds: [dmg0], curBuild: curBuild, evalFn: evalFn }
 }
 
 export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, arts: QueryArtifact[]) {
-  console.log('Youve reached query!!!')
-
-  let stats: DynStat = {}
-  Object.values(curEquip).forEach(art => {
-    if (art && art.values) {
-      Object.entries(art.values).forEach(([k, v]) => {
-        stats[k] = v + (stats[k] ?? 0)
-      })
-    }
-  })
-
-  const query = querySetup(nodes[0], curEquip, data)
-
-  // console.log(curEquip)
-  // console.log('cureqip stats:', stats)
-  // console.log('cur Objective', query.evalFn(stats)[0])
+  const query = querySetup(nodes, curEquip, data)
 
   let evaluated: UpgradeOptResult[] = []
   arts.forEach(art => {
@@ -146,27 +176,6 @@ export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, a
       evaluated.push(evalArtifact(query, art))
     // return { id: art.id, p: 100 * prob, dmg: Edmg }
   })
-  evaluated = evaluated.sort((a, b) => b.prob * b.Edmg - a.prob * a.Edmg)
-  // console.log(evaluated)
-
-  // let fn_evals = 0
-  // crawlUpgrades(5, ([n1, n2, n3, n4], p) => {
-  //   fn_evals += (1 + 3 * n1) * (1 + 3 * n2) * (1 + 3 * n3) * (1 + 3 * n4)
-  // })
-  // console.log('n_evals:', fn_evals)
-
-  // let res0 = monteCarloInfinite(evaluated[0])
-  // let ptot = 0
-  // res0.forEach(a => {
-  //   ptot += a.p
-  // })
-  // console.log(ptot, 'should be 1')
-
-  // let res1 = monteCarloInfinite(evaluated[1])
-  // ptot = 0
-  // res1.forEach(a => {
-  //   ptot += a.p
-  // })
-  // console.log(ptot, 'should be 1')
+  evaluated = evaluated.sort((a, b) => b.prob * b.upAvg - a.prob * a.upAvg)
   return evaluated;
 }
