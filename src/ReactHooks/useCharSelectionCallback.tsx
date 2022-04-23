@@ -27,6 +27,10 @@ export default function useCharSelectionCallback() {
         const weapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
         const weaponId = database.createWeapon(weapon)
         database.setWeaponLocation(weaponId, characterKey)
+        // If we are navigating to a new character,
+        // redirect to Overview, regardless of previous tab.
+        // Trying to enforce a certain UI flow when building new characters
+        tab = ""
       }
       navigate(`/character/${characterKey}/${tab}`)
     },
