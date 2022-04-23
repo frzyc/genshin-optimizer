@@ -49,15 +49,20 @@ export function allUpgradeValues(upOpt: UpgradeOptResult) {
   let scale = (key: SubstatKey) => key.endsWith('_') ? Artifact.maxSubstatValues(key, 5) / 1000 : Artifact.maxSubstatValues(key, 5) / 10
 
   const base = upOpt.statsBase
-  const f = upOpt.params[0].evalFn
+  const f = upOpt.evalFn
+  const skip = upOpt.skippableDerivs[0]
 
   // let coeffs = [...upOpt.params[0].ks]
   // while (coeffs.length < 4) coeffs.push(0)
 
   let results: WeightedPoint[] = []
   crawlUpgrades(upOpt.rollsLeft, (ns, p) => {
-    // const vals = ns.map((ni, i) => coeffs[i] == 0 ? [NaN] : range(7 * ni, 10 * ni))
-    const vals = ns.map((ni, i) => upOpt.subs[i] ? range(7 * ni, 10 * ni) : [NaN])
+    const vals = ns.map((ni, i) => {
+      const sub = upOpt.subs[i]
+      if (sub && !skip[allSubstats.indexOf(sub)]) return range(7 * ni, 10 * ni)
+      return [NaN]
+    })
+    // const vals = ns.map((ni, i) => upOpt.subs[i] ? range(7 * ni, 10 * ni) : [NaN])
 
     // Cartesian product
     const allValues: number[][] = cartesian(...vals)
@@ -74,7 +79,7 @@ export function allUpgradeValues(upOpt: UpgradeOptResult) {
         let p_val = (4 ** -ni) * quadrinomial(ni, val - 7 * ni)
         p_upVals *= p_val
       }
-      results.push({ v: f(stats)[0], p: p * p_upVals })
+      results.push({ v: f(stats)[0].v, p: p * p_upVals })
     })
   })
 

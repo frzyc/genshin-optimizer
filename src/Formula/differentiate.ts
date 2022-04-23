@@ -1,10 +1,10 @@
-import { assertUnreachable, objPathValue } from "../Util/Util"
-import { forEachNodes, mapFormulas } from "./internal"
+import { assertUnreachable } from "../Util/Util"
+import { forEachNodes } from "./internal"
 import { constant, sum, prod, cmp } from "./utils"
-import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode, StrPrioNode } from "./type"
-import { precompute, optimize } from "./optimization"
+import { NumNode, ReadNode } from "./type"
+import { precompute } from "./optimization"
 
-function zero_deriv(funct: NumNode, binding: (readNode: ReadNode<number>) => string, diff: string): boolean {
+export function zero_deriv(funct: NumNode, binding: (readNode: ReadNode<number>) => string, diff: string): boolean {
   let ret = true
   forEachNodes([funct], _ => { }, f => {
     const { operation } = f

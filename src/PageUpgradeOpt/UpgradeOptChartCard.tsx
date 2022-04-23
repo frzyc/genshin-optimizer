@@ -37,6 +37,7 @@ type Data = {
   showTrue?: boolean,
   objMin: number,
   objMax: number,
+  ix?: number,
 }
 type ChartData = {
   x: number,
@@ -147,9 +148,6 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
     label,
   }: TooltipProps<string, string>) => {
     if (active) {
-      // console.log({active})
-      // console.log({payload})
-
       return (
         <div className="custom-tooltip">
           <p className="label"></p>
@@ -201,8 +199,8 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
         {artifacts.map(([sk, art]: [SlotKey, ICachedArtifact | undefined]) => {
           if (sk != slot)
             return <ArtifactCardPico slotKey={sk} artifactObj={art} />
-          // return <Grid item key={sk} xs={1}>
-          return <Button
+          return <Grid item key={sk} xs={1}><Button style={{ height: "100%", width: '100%' }}
+            // return <Button
             onClick={() => setCalcExacts(true)}
             // startIcon={<FontAwesomeIcon icon={faCalculator} />}
             startIcon={<Box
@@ -215,10 +213,8 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
               }}
               component="img"
               src={Assets.slot[sk]}
-            />}
-            style={{ alignItems: 'bottom' }}
-          ></Button>
-          // </Grid>
+            />} />
+          </Grid>
         })}
       </Grid>
       {/* <ArtifactCardPico slotKey="flower" artifactObj={undefined} /> */}

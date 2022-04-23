@@ -54,6 +54,7 @@ import ArtifactCard from "../PageArtifact/ArtifactCard";
 import { useTranslation } from "react-i18next";
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
 import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../Components/HitModeEditor';
+import ArtifactConditionalCard from '../PageBuild/Components/ArtifactConditionalCard';
 
 // import HitModeCard from '../PageBuild/Components/HitModeCard';
 
@@ -342,17 +343,18 @@ export default function UpgradeOptDisplay() {
                 <Grid container lg={4}>
                   {/*Minimum Final Stat Filter */}
                   <StatFilterCard statFilters={statFilters} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={false} />
+                  <ArtifactConditionalCard disabled={false} />
                 </Grid>
               </Grid>
 
-              <Grid container gap={1}>
-                {/* <Grid item xs={4} md={4} lg={4} display="flex" flexDirection="column" gap={1}>
+              {/* <Grid container gap={1}> */}
+              {/* <Grid item xs={4} md={4} lg={4} display="flex" flexDirection="column" gap={1}>
                   <TeamBuffCard />
                   <BonusStatsCard />
                   Enemy Editor
                   <EnemyEditorCard />
                 </Grid> */}
-                {/* <Grid item xs={4} md={4} lg={3} display="flex" flexDirection="column" gap={1}>
+              {/* <Grid item xs={4} md={4} lg={3} display="flex" flexDirection="column" gap={1}>
                   <ArtifactConditionalCard disabled={generatingBuilds} />
 
                   Artifact set pickers
@@ -375,7 +377,7 @@ export default function UpgradeOptDisplay() {
                     </Grid>
                   </CardContent></CardLight>}
                 </Grid> */}
-              </Grid>
+              {/* </Grid> */}
 
               {/* Generate Builds button */}
               <Grid container spacing={1}>

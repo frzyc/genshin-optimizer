@@ -1,6 +1,6 @@
 import { Data, NumNode } from "../Formula/type"
 import { precompute, optimize } from "../Formula/optimization"
-import { ddx } from "../Formula/differentiate"
+import { ddx, zero_deriv } from "../Formula/differentiate"
 import { ArtifactBuildData, ArtifactsBySlot, DynStat } from "../PageBuild/background"
 import { SubstatKey, allSubstats, IArtifact, MainStatKey } from "../Types/artifact"
 import { assert } from "console"
@@ -9,11 +9,9 @@ import Artifact from "../Data/Artifacts/Artifact"
 import { crawlUpgrades, allUpgradeValues } from "./artifactUpgradeCrawl"
 import { erf } from "../Util/MathUtil"
 
-type OptSummary = {
-  appxDist: GaussianMixture
-  thr: number,
-
-  evalFn: (values: Dict<string, number>) => number[]
+type StructuredNumber = {
+  v: number,
+  grads: number[],
 }
 export type UpgradeOptResult = {
   id: string,
@@ -23,14 +21,21 @@ export type UpgradeOptResult = {
 
   prob: number,
   upAvg: number,
-  params: OptSummary[]
+  params: OptSummary[],
+  evalFn: (values: Dict<string, number>) => StructuredNumber[],
+  skippableDerivs: boolean[][]
+}
+type OptSummary = {
+  appxDist: GaussianMixture
+  thr: number,
 }
 type Query = {
   formulas: NumNode[],
-  thresholds: (number | undefined)[]
   curBuild: QueryBuild,
 
-  evalFn: (values: Dict<string, number>) => number[]
+  thresholds: (number | undefined)[],
+  evalFn: (values: Dict<string, number>) => StructuredNumber[],
+  skippableDerivs: boolean[][]
 }
 export type QueryArtifact = {
   id: string,
@@ -55,24 +60,18 @@ function toStats(build: QueryBuild): DynStat {
 export function evalArtifact(objective: Query, art: QueryArtifact): UpgradeOptResult {
   let newBuild = { ...objective.curBuild }
   newBuild[art.slot] = art
-
   let stats = toStats(newBuild)
   const statsBase = { ...stats }
   let scale = (key: SubstatKey) => key.endsWith('_') ? Artifact.maxSubstatValues(key, art.rarity) / 1000 : Artifact.maxSubstatValues(key, art.rarity) / 10
 
-  // Increase each stat by their expected increase
   const rollsLeft = Artifact.rollsRemaining(art.level, art.rarity) - (4 - art.subs.length)
-
   const iq: InternalQuery = {
     rollsLeft: rollsLeft,
     subs: art.subs,
     stats: stats,
     thresholds: objective.thresholds,
     scale: scale,
-    objectiveEval: (stats) => {
-      const out = objective.evalFn(stats)
-      return [{ value: out[0], grad: art.subs.map(key => out[1 + allSubstats.indexOf(key)] * scale(key)) }]
-    }
+    objectiveEval: (stats) => objective.evalFn(stats).map(({ v, grads }) => ({ v: v, ks: art.subs.map(key => grads[allSubstats.indexOf(key)] * scale(key)) }))
   }
 
   const out = totalGaussian1d(iq)
@@ -85,8 +84,10 @@ export function evalArtifact(objective: Query, art: QueryArtifact): UpgradeOptRe
     prob: out.p,
     upAvg: out.upAvg,
     params: [
-      { appxDist: out.appxDist, thr: out.x, evalFn: objective.evalFn }
-    ]
+      { appxDist: out.appxDist, thr: out.x }
+    ],
+    evalFn: objective.evalFn,
+    skippableDerivs: objective.skippableDerivs,
   }
 }
 
@@ -95,7 +96,7 @@ type InternalQuery = {
   subs: SubstatKey[],
   stats: DynStat,
   thresholds: (number | undefined)[],
-  objectiveEval: (values: Dict<string, number>) => { value: number, grad: number[] }[],
+  objectiveEval: (values: Dict<string, number>) => { v: number, ks: number[] }[],
   scale: (key: SubstatKey) => number,
 }
 type GaussianMixture = {
@@ -121,12 +122,12 @@ function totalGaussian1d({ rollsLeft, subs, stats, scale, objectiveEval, thresho
     stats[key] = (stats[key] ?? 0) + 17 / 8 * rollsLeft * scale(key)
   })
 
-  const { value, grad } = objectiveEval(stats)[ix]
-  const ksum = grad.reduce((a, b) => a + b)
-  const ksum2 = grad.reduce((a, b) => a + b * b, 0)
+  const { v, ks } = objectiveEval(stats)[ix]
+  const ksum = ks.reduce((a, b) => a + b)
+  const ksum2 = ks.reduce((a, b) => a + b * b, 0)
   const N = rollsLeft
 
-  const mean = value
+  const mean = v
   const variance = (147 / 8 * ksum2 - 289 / 64 * ksum * ksum) * N
   const appx: GaussianMixture = {
     gmm: [{ p: 1, mu: mean, sig2: variance }], x0: mean - 4 * Math.sqrt(variance), x1: mean + 4 * Math.sqrt(variance)
@@ -164,7 +165,15 @@ function querySetup(formulas: NumNode[], curBuild: QueryBuild, data: Data = {}):
   let stats = toStats(curBuild)
   const dmg0 = evalFn(stats)[0]
 
-  return { formulas: formulas, thresholds: [dmg0], curBuild: curBuild, evalFn: evalFn }
+  const skippableDerivs = formulas.map(f => allSubstats.map(sub => zero_deriv(f, f => f.path[1], sub)))
+  const structuredEval = (stats: Dict<string, number>) => {
+    const out = evalFn(stats)
+    return formulas.map((_, i) => {
+      const ix = i * (1 + allSubstats.length)
+      return { v: out[ix], grads: allSubstats.map((sub, si) => out[ix + 1 + si]) }
+    })
+  }
+  return { formulas: formulas, thresholds: [dmg0], curBuild: curBuild, evalFn: structuredEval, skippableDerivs: skippableDerivs }
 }
 
 export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, arts: QueryArtifact[]) {
