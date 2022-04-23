@@ -165,7 +165,6 @@ export default function UpgradeOptDisplay() {
       maxObj0: toShow.reduce((a, b) => Math.max(b.params[0].appxDist.x1, a), thr)
     }
   }, [artifactUpgradeOpts, pageIdex])
-  console.log(minObj0, maxObj0)
 
   useEffect(() => ReactGA.pageview('/build'), [])
 

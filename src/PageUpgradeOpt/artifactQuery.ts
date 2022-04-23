@@ -76,7 +76,7 @@ function gaussianPE(mean: number, variance: number, x: number) {
   return { x: x, p: p, upAvg: mean - x + Math.sqrt(variance) * phi / p }
 }
 
-export function evalArtifact(objective: Query, art: QueryArtifact): UpgradeOptResult {
+export function evalArtifact(objective: Query, art: QueryArtifact, slow = false): UpgradeOptResult {
   let newBuild = { ...objective.curBuild }
   newBuild[art.slot] = art
   let stats = toStats(newBuild)
@@ -93,12 +93,7 @@ export function evalArtifact(objective: Query, art: QueryArtifact): UpgradeOptRe
     objectiveEval: (stats) => objective.evalFn(stats).map(({ v, grads }) => ({ v: v, ks: art.subs.map(key => grads[allSubstats.indexOf(key)] * scale(key)) }))
   }
 
-  // if (art.id == 'artifact_1215') {
-  //   console.log('before return evalArtifact', art, gmm1d(iq))
-  //   console.log('call again?', art, gmm1d(iq))
-  // }
-
-  const out = totalGaussian1d(iq)
+  const out = slow ? gmm1d(iq) : totalGaussian1d(iq)
   return {
     id: art.id,
     subs: art.subs,
@@ -162,8 +157,9 @@ function totalGaussian1d({ rollsLeft, subs, stats, scale, objectiveEval, thresho
   return { ...gaussianPE(mean, variance, thresholds[ix]), appxDist: appx }
 }
 
-function gmm1d({ rollsLeft, stats, subs, thresholds, scale, objectiveEval }: InternalQuery, ix = 0) {
+function gmm1d({ rollsLeft, stats, subs, thresholds, scale, objectiveEval }: InternalQuery, ix = 0): InternalResult {
   const appx: GaussianMixture = { gmm: [], x0: thresholds[0], x1: thresholds[0] }
+  let lpe: { l: number, p: number, upAvg: number }[] = []
   crawlUpgrades(rollsLeft, (ns, p) => {
     let stat2 = { ...stats }
     subs.forEach((sub, i) => {
@@ -176,9 +172,20 @@ function gmm1d({ rollsLeft, stats, subs, thresholds, scale, objectiveEval }: Int
     appx.gmm.push({ p: p, mu: mean, sig2: variance })
     appx.x0 = Math.min(appx.x0, mean - 4 * Math.sqrt(variance))
     appx.x1 = Math.max(appx.x1, mean + 4 * Math.sqrt(variance))
+
+    lpe.push({ l: p, ...gaussianPE(mean, variance, thresholds[ix]) })
   })
 
-  return appx
+  // Aggregate gaussian mixture statistics.
+  let p_ret = 0, upAvg_ret = 0
+  lpe.forEach(({ l, p, upAvg }) => {
+    p_ret += l * p
+    upAvg_ret += l * p * upAvg
+  })
+
+  if (p_ret < 1e-10) return { p: 0, upAvg: 0, x: thresholds[ix], appxDist: appx }
+  upAvg_ret = upAvg_ret / p_ret
+  return { p: p_ret, upAvg: upAvg_ret, x: thresholds[ix], appxDist: appx }
 }
 
 function querySetup(formulas: NumNode[], curBuild: QueryBuild, data: Data = {}): Query {
@@ -217,11 +224,14 @@ export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, a
     if (art.rarity == 5) {
       let toSav = evalArtifact(query, art)
       evaluated.push(toSav)
-      if (art.id == 'artifact_1215')
-        console.log(evaluated)
+      // if (art.id == 'artifact_1215')
+        // console.log(evaluated)
     }
   })
   evaluated = evaluated.sort((a, b) => b.prob * b.upAvg - a.prob * a.upAvg)
-  console.log('change end of query?', evaluated[0].params[0].appxDist)
+
+  // Now iteratively replace the top `toDisplay` of the evaluated artifacts with a slower, more accurate method
+  // evalArtifact(query, art, true)
+
   return evaluated;
 }

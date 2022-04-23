@@ -56,6 +56,7 @@ function linspace(lower = 0, upper = 1, steps = 50): number[] {
 }
 
 const nbins = 50;
+const plotPoints = 500;
 export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data) {
   const [calcExacts, setCalcExacts] = useState(false);
 
@@ -71,8 +72,6 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
     allSlotKeys.map(k => [k, database._getArt(data.get(input.art[k].id).value ?? "")]),
     [data, database]) as Array<[SlotKey, ICachedArtifact | undefined]>;
 
-  // const mu = upgradeOpt.params[0].mu;
-  // const std = upgradeOpt.params[0].std;
   const gauss = (x: number) => upgradeOpt.params[0].appxDist.gmm.reduce((pv, { p, mu, sig2 }) =>
     pv + (sig2 > 0 ? p * Math.exp(-(mu - x) * (mu - x) / sig2 / 2) / Math.sqrt(2 * Math.PI * sig2) : 0), 0)
   const thr = upgradeOpt.params[0].thr;
@@ -82,16 +81,25 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
 
   // let ymax = Math.max(...upgradeOpt.params[0].appxDist.gmm.map(({ mu }) => gauss(mu)))
   // if (ymax <= 0) ymax = 1 / nbins
-  let ymax = 1 / nbins
+  let ymax = 0
+  let dataEst: ChartData[] = linspace(miin, maax, plotPoints).map(v => {
+    const est = gauss(v)
+    ymax = Math.max(ymax, est)
+    return { x: v, est: est }
+  })
+  if (ymax == 0) ymax = 1 / nbins
 
-  let dataEst: ChartData[] = linspace(miin, maax, 300).map(v => ({ x: v, est: gauss(v) }))
+  // go back and add delta distributions.
+  let deltas: { [key: number]: number } = {}
+  upgradeOpt.params[0].appxDist.gmm.forEach(({ p, mu, sig2 }) => {
+    if (sig2 <= 0) deltas[mu] = (deltas[mu] ?? 0) + p
+  })
+  Object.entries(deltas).forEach(([mu, p]) => dataEst.push({ x: parseFloat(mu), est: p * nbins / (maax - miin) }))
 
-  // dataEst.push({ x: thr, est: gauss(thr) })
-  // dataEst.push({ x: thr + upgradeOpt.Edmg, est: gauss(thr + upgradeOpt.Edmg) })
   dataEst.sort((a, b) => a.x - b.x)
-  const xmin = dataEst[0].x;
-  const xmax = dataEst[dataEst.length - 1].x;
-  let xpercent = (thr - xmin) / (xmax - xmin)
+  // const xmin = dataEst[0].x;
+  // const xmax = dataEst[dataEst.length - 1].x;
+  let xpercent = (thr - miin) / (maax - miin)
 
   const [trueData, setTrueData] = useState<ChartData[]>([]);
   const [trueP, setTrueP] = useState(-1);
@@ -166,7 +174,7 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
           {/* <CartesianGrid strokeDasharray="4 4" /> */}
           {/* <XAxis dataKey="x" type="number" domain={[Math.round(miin), Math.round(maax)]} allowDecimals={false} /> */}
           <XAxis dataKey="x" type="number" domain={['auto', 'auto']} allowDecimals={false} />
-          <YAxis type="number" domain={[0, 'auto']} tickFormatter={v => parseFloat(v).toFixed(4)} />
+          <YAxis type="number" domain={[0, ymax]} tickFormatter={v => parseFloat(v).toFixed(4)} />
           {/* <Tooltip /> */}
           <Legend verticalAlign='top' height={36} />
 
