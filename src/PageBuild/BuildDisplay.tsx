@@ -54,7 +54,7 @@ import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import TeamBuffCard from './Components/TeamBuffCard';
 import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
-import { queryDebug, QueryBuild, QueryArtifact } from '../Formula/artifactQuery'
+import { queryDebug, QueryBuild, QueryArtifact } from '../PageUpgradeOpt/artifactQuery'
 import Artifact from "../Data/Artifacts/Artifact";
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));

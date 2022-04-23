@@ -24,7 +24,7 @@ import { CharacterKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
 import PercentBadge from './PercentBadge';
 import { probability } from './RollProbability';
-import {UpgradeOptResult} from "../Formula/artifactQuery";
+import {UpgradeOptResult} from "../PageUpgradeOpt/artifactQuery";
 
 type Data = {
   artifactId?: string,

@@ -27,6 +27,11 @@ function sigma(ss: number[], n: number) {
 }
 
 export function crawlUpgrades(n: number, fn?: (n1234: number[], p: number) => void) {
+  if (n == 0) {
+    fn!([0, 0, 0, 0], 1)
+    return
+  }
+
   // Binomial(n+3, 3) branches to crawl.
   for (let i1 = n; i1 >= 0; i1--) {
     for (let i2 = n - i1; i2 >= 0; i2--) {
@@ -55,9 +60,7 @@ export function allUpgradeValues(upOpt: UpgradeOptResult) {
   // console.log(coeffs)
 
   let results: WeightedPoint[] = []
-  let n = 1 + nsubs; // 5 for 4-sub, 4 for 3-sub
-
-  let first = 1
+  let n = upOpt.rollsLeft
 
   crawlUpgrades(n, (ns, p) => {
     const vals = ns.map((ni, i) => coeffs[i] == 0 ? [NaN] : range(7 * ni, 10 * ni))
@@ -77,10 +80,6 @@ export function allUpgradeValues(upOpt: UpgradeOptResult) {
         let p_val = (4 ** -ni) * quadrinomial(ni, val - 7 * ni)
         p_upVals *= p_val
       }
-      if (first > 0) {
-        first--
-      }
-
       results.push({ v: f(stats)[0], p: p * p_upVals })
     })
   })
