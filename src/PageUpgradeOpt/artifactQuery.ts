@@ -222,7 +222,7 @@ export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, a
   let evaluated: UpgradeOptResult[] = []
   arts.forEach(art => {
     if (art.rarity == 5) {
-      let toSav = evalArtifact(query, art)
+      let toSav = evalArtifact(query, art, true)
       evaluated.push(toSav)
       // if (art.id == 'artifact_1215')
         // console.log(evaluated)
