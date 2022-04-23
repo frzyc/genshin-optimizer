@@ -75,7 +75,6 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
   // const std = upgradeOpt.params[0].std;
   const gauss = (x: number) => upgradeOpt.params[0].appxDist.gmm.reduce((pv, { p, mu, sig2 }) =>
     pv + (sig2 > 0 ? p * Math.exp(-(mu - x) * (mu - x) / sig2 / 2) / Math.sqrt(2 * Math.PI * sig2) : 0), 0)
-  // const gauss = ((x: number) => Math.exp(-(mu - x) * (mu - x) / std / std / 2) / Math.sqrt(2 * Math.PI) / std);
   const thr = upgradeOpt.params[0].thr;
 
   const miin = objMin
@@ -140,7 +139,6 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
   const reportP = (trueP >= 0) ? trueP : upgradeOpt.prob
   const reportD = (trueD >= 0) ? trueD : upgradeOpt.upAvg
   let chartData = dataEst.concat(trueData)
-  // data.push({x: thr + reportD, expInc: ymax / 2})
 
   const CustomTooltip = ({
     active,

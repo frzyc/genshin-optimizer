@@ -3,7 +3,6 @@ import { precompute, optimize } from "../Formula/optimization"
 import { ddx, zero_deriv } from "../Formula/differentiate"
 import { ArtifactBuildData, ArtifactsBySlot, DynStat } from "../PageBuild/background"
 import { SubstatKey, allSubstats, IArtifact, MainStatKey } from "../Types/artifact"
-import { assert } from "console"
 import { allSlotKeys, ArtifactSetKey, CharacterKey, SlotKey, Rarity } from '../Types/consts';
 import Artifact from "../Data/Artifacts/Artifact"
 import { crawlUpgrades, allUpgradeValues } from "./artifactUpgradeCrawl"
@@ -33,7 +32,7 @@ type Query = {
   formulas: NumNode[],
   curBuild: QueryBuild,
 
-  thresholds: (number | undefined)[],
+  thresholds: number[],
   evalFn: (values: Dict<string, number>) => StructuredNumber[],
   skippableDerivs: boolean[][]
 }
@@ -57,6 +56,26 @@ function toStats(build: QueryBuild): DynStat {
   return stats
 }
 
+// From a Gaussian mean & variance, get P(x > mu) and E[x | x > mu]
+function gaussianPE(mean: number, variance: number, x: number) {
+  if (variance < 1e-5) {
+    if (mean > x) return { x: x, p: 1, upAvg: mean - x }
+    return { x: x, p: 0, upAvg: 0 }
+  }
+
+  const z = (x - mean) / Math.sqrt(variance)
+  const p = (1 - erf(z / Math.sqrt(2))) / 2
+  if (z > 5) {
+    // Z-score large means p will be very small.
+    // We can use taylor expansion at infinity to evaluate upAvg.
+    const y = 1 / z, y2 = y * y
+    return { x: x, p: p, upAvg: y * (1 - 2 * y2 * (1 - y2 * (5 + 37 * y2))) }
+  }
+
+  const phi = Math.exp(-z * z / 2) / Math.sqrt(2 * Math.PI)
+  return { x: x, p: p, upAvg: mean - x + Math.sqrt(variance) * phi / p }
+}
+
 export function evalArtifact(objective: Query, art: QueryArtifact): UpgradeOptResult {
   let newBuild = { ...objective.curBuild }
   newBuild[art.slot] = art
@@ -74,6 +93,11 @@ export function evalArtifact(objective: Query, art: QueryArtifact): UpgradeOptRe
     objectiveEval: (stats) => objective.evalFn(stats).map(({ v, grads }) => ({ v: v, ks: art.subs.map(key => grads[allSubstats.indexOf(key)] * scale(key)) }))
   }
 
+  // if (art.id == 'artifact_1215') {
+  //   console.log('before return evalArtifact', art, gmm1d(iq))
+  //   console.log('call again?', art, gmm1d(iq))
+  // }
+
   const out = totalGaussian1d(iq)
   return {
     id: art.id,
@@ -84,6 +108,7 @@ export function evalArtifact(objective: Query, art: QueryArtifact): UpgradeOptRe
     prob: out.p,
     upAvg: out.upAvg,
     params: [
+      // { appxDist: gmm1d(iq), thr: out.x }
       { appxDist: out.appxDist, thr: out.x }
     ],
     evalFn: objective.evalFn,
@@ -95,7 +120,7 @@ type InternalQuery = {
   rollsLeft: number,
   subs: SubstatKey[],
   stats: DynStat,
-  thresholds: (number | undefined)[],
+  thresholds: number[],
   objectiveEval: (values: Dict<string, number>) => { v: number, ks: number[] }[],
   scale: (key: SubstatKey) => number,
 }
@@ -117,12 +142,13 @@ type InternalResult = {
 
 function totalGaussian1d({ rollsLeft, subs, stats, scale, objectiveEval, thresholds }: InternalQuery, ix = 0): InternalResult {
   // Evaluate derivatives at center of 4-D upgrade distribution
+  let stats2 = { ...stats }
   subs.forEach(key => {
     // console.log(key, 17 / 8 * rollsLeft * scale(key))
-    stats[key] = (stats[key] ?? 0) + 17 / 8 * rollsLeft * scale(key)
+    stats2[key] = (stats2[key] ?? 0) + 17 / 8 * rollsLeft * scale(key)
   })
 
-  const { v, ks } = objectiveEval(stats)[ix]
+  const { v, ks } = objectiveEval(stats2)[ix]
   const ksum = ks.reduce((a, b) => a + b)
   const ksum2 = ks.reduce((a, b) => a + b * b, 0)
   const N = rollsLeft
@@ -132,20 +158,27 @@ function totalGaussian1d({ rollsLeft, subs, stats, scale, objectiveEval, thresho
   const appx: GaussianMixture = {
     gmm: [{ p: 1, mu: mean, sig2: variance }], x0: mean - 4 * Math.sqrt(variance), x1: mean + 4 * Math.sqrt(variance)
   }
-  const x = thresholds[ix]
-  if (x === undefined) return { x: -Infinity, p: 1, upAvg: mean, appxDist: appx }
 
-  if (Math.abs(variance) < 1e-5) {
-    if (mean > x) return { x: x, p: 1, upAvg: mean - x, appxDist: appx }
-    return { x: x, p: 0, upAvg: 0, appxDist: appx }
-  }
+  return { ...gaussianPE(mean, variance, thresholds[ix]), appxDist: appx }
+}
 
-  const z = (x - mean) / Math.sqrt(variance)
-  const p = (1 - erf(z / Math.sqrt(2))) / 2
-  if (Math.abs(p) < 1e-8) return { x: x, p: p, upAvg: 0, appxDist: appx }
+function gmm1d({ rollsLeft, stats, subs, thresholds, scale, objectiveEval }: InternalQuery, ix = 0) {
+  const appx: GaussianMixture = { gmm: [], x0: thresholds[0], x1: thresholds[0] }
+  crawlUpgrades(rollsLeft, (ns, p) => {
+    let stat2 = { ...stats }
+    subs.forEach((sub, i) => {
+      stat2[sub] = (stat2[sub] ?? 0) + 17 / 2 * ns[i] * scale(sub)
+    })
 
-  const phi = Math.exp((-(x - mean) * (x - mean)) / variance / 2) / Math.sqrt(2 * Math.PI)
-  return { x: x, p: p, upAvg: mean + Math.sqrt(variance) * phi / p - x, appxDist: appx }
+    const { v, ks } = objectiveEval(stat2)[ix]
+    const mean = v
+    const variance = 5 / 4 * ks.reduce((pv, cv, i) => pv + cv * cv * ns[i], 0)
+    appx.gmm.push({ p: p, mu: mean, sig2: variance })
+    appx.x0 = Math.min(appx.x0, mean - 4 * Math.sqrt(variance))
+    appx.x1 = Math.max(appx.x1, mean + 4 * Math.sqrt(variance))
+  })
+
+  return appx
 }
 
 function querySetup(formulas: NumNode[], curBuild: QueryBuild, data: Data = {}): Query {
@@ -181,10 +214,14 @@ export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, a
 
   let evaluated: UpgradeOptResult[] = []
   arts.forEach(art => {
-    if (art.rarity == 5)
-      evaluated.push(evalArtifact(query, art))
-    // return { id: art.id, p: 100 * prob, dmg: Edmg }
+    if (art.rarity == 5) {
+      let toSav = evalArtifact(query, art)
+      evaluated.push(toSav)
+      if (art.id == 'artifact_1215')
+        console.log(evaluated)
+    }
   })
   evaluated = evaluated.sort((a, b) => b.prob * b.upAvg - a.prob * a.upAvg)
+  console.log('change end of query?', evaluated[0].params[0].appxDist)
   return evaluated;
 }
