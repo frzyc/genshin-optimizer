@@ -1,5 +1,5 @@
 import { useCallback, useContext } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useMatch } from "react-router";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { initialCharacter } from "../Util/CharacterUtil";
 import { DatabaseContext } from "../Database/Database";
@@ -13,6 +13,8 @@ import { defaultInitialWeapon } from "../Util/WeaponUtil";
 export default function useCharSelectionCallback() {
   const { database } = useContext(DatabaseContext)
   const navigate = useNavigate()
+  // Used to maintain the previous tab, if there is one
+  let { params: { tab = "" } } = useMatch({ path: "/character/:charKey/:tab", end: false }) ?? { params: { tab: "" } }
   const cb = useCallback(
     async (characterKey: CharacterKey) => {
       const character = database._getChar(characterKey)
@@ -26,7 +28,7 @@ export default function useCharSelectionCallback() {
         const weaponId = database.createWeapon(weapon)
         database.setWeaponLocation(weaponId, characterKey)
       }
-      navigate(`/character/${characterKey}`)
+      navigate(`/character/${characterKey}/${tab}`)
     },
     [navigate, database],
   )
