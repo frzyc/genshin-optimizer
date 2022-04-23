@@ -35,7 +35,7 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
 
   useEffect(() =>
     characterKey ? database.followAnyArt(setDbDirty) : undefined,
-    [setDbDirty, database])
+    [characterKey, setDbDirty, database])
 
   const [t1, t2, t3, t4] = team
   useEffect(() =>

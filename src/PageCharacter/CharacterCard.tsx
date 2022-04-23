@@ -190,9 +190,6 @@ function ArtifactCardPico({ artifactObj: art, slotKey: key }: { artifactObj: ICa
           src={Assets.slot[key]}
         />
       </Box>
-      <Typography component="div" variant='subtitle1' sx={{ display: "flex", height: "100%", opacity: 0.7 }}>
-        <SqBadge color="secondary" sx={{ flexGrow: 1, borderRadius: 0, p: 0.25 }}>+0</SqBadge>
-      </Typography>
     </CardDark>
   </Grid>
 
@@ -200,20 +197,20 @@ function ArtifactCardPico({ artifactObj: art, slotKey: key }: { artifactObj: ICa
   const { mainStatKey, rarity, level, mainStatVal } = art
   const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
   return <Grid item key={key} xs={1}>
-    <CardDark sx={{ display: "flex", flexDirection: "column" }}>
+    <CardDark sx={{ display: "flex", flexDirection: "column", position: "relative" }}>
       <ArtifactSetSlotTooltip slotKey={key} sheet={artifactSheet}>
         <Box
           component="img"
           className={`grad-${rarity}star`}
           src={artifactSheet.slotIcons[key]}
-          width="100%"
-          height="auto"
+          maxWidth="100%"
+          maxHeight="100%"
         />
       </ArtifactSetSlotTooltip>
-      <Typography component="div" variant='subtitle1' sx={{ display: "flex", height: "100%" }}>
-        <SqBadge color={levelVariant as any} sx={{ flexGrow: 1, borderRadius: 0, p: 0.25 }}>+{level}</SqBadge>
-        <BootstrapTooltip placement="top" title={<Typography>{cacheValueString(mainStatVal, KeyMap.unit(mainStatKey))}{KeyMap.unit(mainStatKey)} {KeyMap.getStr(mainStatKey)}</Typography>}>
-          <SqBadge color="secondary" sx={{ borderRadius: 0, p: 0.25 }}>{StatIcon[mainStatKey]}</SqBadge>
+      <Typography sx={{ position: "absolute", lineHeight: 1, pointerEvents: "none" }} variant="subtitle2"><SqBadge color={levelVariant as any}>+{level}</SqBadge></Typography>
+      <Typography variant='h6' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, }}>
+        <BootstrapTooltip placement="top" title={<Typography>{cacheValueString(mainStatVal, KeyMap.unit(mainStatKey))}{KeyMap.unit(mainStatKey)} {KeyMap.getStr(mainStatKey)}</Typography>} disableInteractive>
+          <SqBadge color="secondary" sx={{ p: 0.25 }}>{StatIcon[mainStatKey]}</SqBadge>
         </BootstrapTooltip>
       </Typography>
     </CardDark>
@@ -232,26 +229,24 @@ function WeaponCardPico({ weaponId }: { weaponId: string }) {
   </Box>
 
   return <Grid item xs={1} height="100%">
-    <CardDark sx={{ height: "100%", maxWidth: 128 }}>
-      <Grid container columns={2} direction="row">
-        <Box display="flex" flexDirection="column" alignContent="flex-end" className={`grad-${weaponSheet.rarity}star`}>
-          <WeaponNameTooltip sheet={weaponSheet} addlText={tooltipAddl}>
-            <Box
-              component="img"
-              src={weaponSheet.img}
-              width="100%"
-              height="auto"
-              sx={{ mt: "auto" }}
-            />
-          </WeaponNameTooltip>
-        </Box>
-        <Box width="100%">
-          <Typography variant='subtitle1' sx={{ display: "flex", height: "100%" }}>
-            <SqBadge color="primary" sx={{ flexGrow: 5, height: "100%", borderRadius: 0, pl: 0.25, pr: 0.25 }}>{WeaponSheet.getLevelString(weapon)}</SqBadge>
-            {weaponSheet.hasRefinement && <SqBadge color="secondary" sx={{ flexGrow: 1, height: "100%", borderRadius: 0, pl: 0.25, pr: 0.25 }}>R{weapon.refinement}</SqBadge>}
-          </Typography>
-        </Box>
-      </Grid>
+    <CardDark sx={{ height: "100%", maxWidth: 128, position: "relative", display: "flex", flexDirection: "column", }}>
+      <Box display="flex" flexDirection="column" alignContent="flex-end" className={`grad-${weaponSheet.rarity}star`}>
+        <WeaponNameTooltip sheet={weaponSheet} addlText={tooltipAddl}>
+          <Box
+            component="img"
+            src={weaponSheet.img}
+            maxWidth="100%"
+            maxHeight="100%"
+            sx={{ mt: "auto" }}
+          />
+        </WeaponNameTooltip>
+      </Box>
+      <Typography variant='subtitle1' sx={{ position: "absolute", lineHeight: 1, pointerEvents: "none" }}>
+        <SqBadge color="primary">{WeaponSheet.getLevelString(weapon)}</SqBadge>
+      </Typography>
+      {weaponSheet.hasRefinement && <Typography variant='subtitle1' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, pointerEvents: "none" }}>
+        <SqBadge color="secondary">R{weapon.refinement}</SqBadge>
+      </Typography>}
     </CardDark>
   </Grid>
 }

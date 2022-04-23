@@ -42,15 +42,15 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
   const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
   return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}  >
     <Box display="flex" height="100%">
-      <Box className={`grad-${rarity}star`} sx={{ position: "relative", flexGrow: 1, display: "flex", flexDirection: "column" }} >
-        <Box sx={{ position: "absolute", width: "100%", height: "80%", textAlign: "center" }} >
+      <Box className={`grad-${rarity}star`} sx={{ position: "relative", flexGrow: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }} >
+        <ArtifactSetSlotTooltip slotKey={slotKey} sheet={sheet}>
           <Box
             component="img"
             src={sheet?.slotIcons[slotKey] ?? ""}
-            sx={{ m: -1, display: "inline", maxHeight: "110%", maxWidth: "110%" }}
+            sx={{ m: -1, maxHeight: "110%", maxWidth: "110%" }}
           />
-        </Box>
-        <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, display: "flex", justifyContent: "space-between" }} >
+        </ArtifactSetSlotTooltip>
+        <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, display: "flex", justifyContent: "space-between", pointerEvents: "none" }} >
           <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
           {showLocation && <Chip size="small" label={<LocationIcon location={location} />} color={"secondary"} sx={{
             overflow: "visible", ".MuiChip-label": {
@@ -58,17 +58,14 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
             }
           }} />}
         </Box>
-        <ArtifactSetSlotTooltip slotKey={slotKey} sheet={sheet}>
-          <Box sx={{ flexGrow: 1, display: "flex", position: "relative", mt: -1, mx: -1 }}>
-          </Box>
-        </ArtifactSetSlotTooltip>
         {/* mainstats */}
-        <Typography variant="h6" sx={{ display: "flex", gap: 1, px: 1, zIndex: 1 }}>
-          <BootstrapTooltip placement="top" title={<Typography>{KeyMap.getArtStr(mainStatKey)}</Typography>} disableInteractive>
-            <ColorText color={KeyMap.getVariant(mainStatKey)}>{StatIcon[mainStatKey]}</ColorText>
-          </BootstrapTooltip>
-          <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
-        </Typography>
+        <Chip size="small" sx={{ position: "absolute", bottom: 0, mb: 1, backgroundColor: "rgba(130, 130, 130, 0.6)" }}
+          label={<Typography variant="h6" sx={{ display: "flex", gap: 1, px: 1, zIndex: 1 }}>
+            <BootstrapTooltip placement="top" title={<Typography>{KeyMap.getArtStr(mainStatKey)}</Typography>} disableInteractive>
+              <ColorText color={KeyMap.getVariant(mainStatKey)}>{StatIcon[mainStatKey]}</ColorText>
+            </BootstrapTooltip>
+            <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
+          </Typography>} />
       </Box>
       {/* substats */}
       <Box display="flex" flexDirection="column" justifyContent="space-between" sx={{ p: 1, }}>

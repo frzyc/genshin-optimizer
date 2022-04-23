@@ -34,7 +34,7 @@ export default function useCharSelectionCallback() {
       }
       navigate(`/character/${characterKey}/${tab}`)
     },
-    [navigate, database],
+    [navigate, database, tab],
   )
   return cb
 }

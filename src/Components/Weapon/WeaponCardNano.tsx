@@ -27,24 +27,22 @@ export default function WeaponCardNano({ weaponId, onClick, BGComponent = CardDa
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
   return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}  >
-    <Box display="flex" height="100%">
-      <WeaponNameTooltip sheet={weaponSheet}>
-        <Box className={`grad-${weaponSheet.rarity}star`} sx={{ position: "relative", flexGrow: 1, display: "flex", flexDirection: "column" }} >
-          <Box sx={{ position: "absolute", width: "100%", height: "100%", textAlign: "center" }} >
-            <Box
-              component="img"
-              src={weaponSheet.img}
-              sx={{ m: -1, display: "inline", maxHeight: "110%", maxWidth: "110%" }}
-            />
-          </Box>
-          <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, }} >
-            <Chip size="small" label={<strong>{WeaponSheet.getLevelString(weapon)}</strong>} color="primary" />
-          </Box>
-          <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, display: "flex", justifyContent: "flex-end", alignItems: "flex-end" }} >
-            {weaponSheet.hasRefinement && <Chip size="small" color="info" label={<strong>R{weapon.refinement}</strong>} />}
-          </Box>
+    <Box display="flex" height="100%" alignItems="stretch" >
+      <Box className={`grad-${weaponSheet.rarity}star`} sx={{ height: "100%", position: "relative", flexGrow: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-end" }} >
+        <WeaponNameTooltip sheet={weaponSheet}>
+          <Box
+            component="img"
+            src={weaponSheet.img}
+            sx={{ mx: -1, maxHeight: "100%", maxWidth: "100%" }}
+          />
+        </WeaponNameTooltip>
+        <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, }} >
+          <Chip size="small" label={<strong>{WeaponSheet.getLevelString(weapon)}</strong>} color="primary" />
         </Box>
-      </WeaponNameTooltip>
+        <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, display: "flex", justifyContent: "flex-end", alignItems: "flex-end" }} >
+          {weaponSheet.hasRefinement && <Chip size="small" color="info" label={<strong>R{weapon.refinement}</strong>} />}
+        </Box>
+      </Box>
       <Box display="flex" flexDirection="column" sx={{ p: 1, }}>
         <WeaponStat node={UIData.get(input.weapon.main)} />
         <WeaponStat node={UIData.get(input.weapon.sub)} />
