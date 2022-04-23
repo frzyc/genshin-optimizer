@@ -1,34 +1,26 @@
 import { Favorite, FavoriteBorder } from '@mui/icons-material';
 import { Box, CardActionArea, CardContent, Chip, Grid, IconButton, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
-import Assets from '../Assets/Assets';
-import ArtifactSetSlotTooltip from '../Components/Artifact/ArtifactSetSlotTooltip';
-import BootstrapTooltip from '../Components/BootstrapTooltip';
-import CardDark from '../Components/Card/CardDark';
-import CardLight from '../Components/Card/CardLight';
-import ConditionalWrapper from '../Components/ConditionalWrapper';
-import { NodeFieldDisplay } from '../Components/FieldDisplay';
-import SqBadge from '../Components/SqBadge';
-import { Stars } from '../Components/StarDisplay';
-import StatIcon from '../Components/StatIcon';
-import WeaponNameTooltip from '../Components/Weapon/WeaponNameTooltip';
-import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
-import { ascensionMaxLevel } from '../Data/LevelData';
-import WeaponSheet from '../Data/Weapons/WeaponSheet';
-import { DatabaseContext } from '../Database/Database';
-import { DataContext, dataContextObj, TeamData } from '../DataContext';
-import { uiInput as input } from '../Formula';
-import { computeUIData, dataObjForWeapon } from '../Formula/api';
-import { NodeDisplay } from '../Formula/uiData';
-import KeyMap, { cacheValueString, valueString } from '../KeyMap';
-import useCharacterReducer from '../ReactHooks/useCharacterReducer';
-import usePromise from '../ReactHooks/usePromise';
-import useTeamData from '../ReactHooks/useTeamData';
-import { ICachedArtifact } from '../Types/artifact';
-import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '../Types/consts';
-import { ICachedWeapon } from '../Types/weapon';
-import { range } from '../Util/Util';
-import CharacterCardPico from './CharacterCardPico';
+import { ascensionMaxLevel } from '../../Data/LevelData';
+import { DatabaseContext } from '../../Database/Database';
+import { DataContext, dataContextObj, TeamData } from '../../DataContext';
+import { uiInput as input } from '../../Formula';
+import KeyMap from '../../KeyMap';
+import CharacterCardPico from '../../PageCharacter/CharacterCardPico';
+import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
+import useTeamData from '../../ReactHooks/useTeamData';
+import { ICachedArtifact } from '../../Types/artifact';
+import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '../../Types/consts';
+import { range } from '../../Util/Util';
+import ArtifactCardPico from '../Artifact/ArtifactCardPico';
+import CardLight from '../Card/CardLight';
+import ConditionalWrapper from '../ConditionalWrapper';
+import { NodeFieldDisplay } from '../FieldDisplay';
+import SqBadge from '../SqBadge';
+import { Stars } from '../StarDisplay';
+import StatIcon from '../StatIcon';
+import WeaponCardPico from '../Weapon/WeaponCardPico';
+import WeaponFullCard from '../Weapon/WeaponFullCard';
 
 type CharacterCardProps = {
   characterKey: CharacterKey | "",
@@ -172,127 +164,7 @@ function Artifacts() {
     )}
   </Grid>
 }
-function ArtifactCardPico({ artifactObj: art, slotKey: key }: { artifactObj: ICachedArtifact | undefined, slotKey: SlotKey }) {
-  const artifactSheet = usePromise(art?.setKey && ArtifactSheet.get(art.setKey), [art?.setKey])
-  // Blank artifact slot icon
-  if (!art || !artifactSheet) return <Grid item key={key} xs={1}>
-    <CardDark sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
-      <Box sx={{ width: "100%", pb: "100%", position: "relative", }}>
-        <Box
-          sx={{
-            position: "absolute",
-            width: "70%", height: "70%",
-            left: "50%", top: "50%",
-            transform: "translate(-50%, -50%)",
-            opacity: 0.7
-          }}
-          component="img"
-          src={Assets.slot[key]}
-        />
-      </Box>
-    </CardDark>
-  </Grid>
 
-  // Actual artifact icon + info
-  const { mainStatKey, rarity, level, mainStatVal } = art
-  const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
-  return <Grid item key={key} xs={1}>
-    <CardDark sx={{ display: "flex", flexDirection: "column", position: "relative" }}>
-      <ArtifactSetSlotTooltip slotKey={key} sheet={artifactSheet}>
-        <Box
-          component="img"
-          className={`grad-${rarity}star`}
-          src={artifactSheet.slotIcons[key]}
-          maxWidth="100%"
-          maxHeight="100%"
-        />
-      </ArtifactSetSlotTooltip>
-      <Typography sx={{ position: "absolute", lineHeight: 1, pointerEvents: "none" }} variant="subtitle2"><SqBadge color={levelVariant as any}>+{level}</SqBadge></Typography>
-      <Typography variant='h6' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, }}>
-        <BootstrapTooltip placement="top" title={<Typography>{cacheValueString(mainStatVal, KeyMap.unit(mainStatKey))}{KeyMap.unit(mainStatKey)} {KeyMap.getStr(mainStatKey)}</Typography>} disableInteractive>
-          <SqBadge color="secondary" sx={{ p: 0.25 }}>{StatIcon[mainStatKey]}</SqBadge>
-        </BootstrapTooltip>
-      </Typography>
-    </CardDark>
-  </Grid>
-}
-function WeaponCardPico({ weaponId }: { weaponId: string }) {
-  const { database } = useContext(DatabaseContext)
-  const weapon = database._getWeapon(weaponId)
-  const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
-  const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
-  if (!weapon || !weaponSheet || !UIData) return null;
-
-  const tooltipAddl = <Box>
-    <WeaponStatPico node={UIData.get(input.weapon.main)} />
-    <WeaponStatPico node={UIData.get(input.weapon.sub)} />
-  </Box>
-
-  return <Grid item xs={1} height="100%">
-    <CardDark sx={{ height: "100%", maxWidth: 128, position: "relative", display: "flex", flexDirection: "column", }}>
-      <Box display="flex" flexDirection="column" alignContent="flex-end" className={`grad-${weaponSheet.rarity}star`}>
-        <WeaponNameTooltip sheet={weaponSheet} addlText={tooltipAddl}>
-          <Box
-            component="img"
-            src={weaponSheet.img}
-            maxWidth="100%"
-            maxHeight="100%"
-            sx={{ mt: "auto" }}
-          />
-        </WeaponNameTooltip>
-      </Box>
-      <Typography variant='subtitle1' sx={{ position: "absolute", lineHeight: 1, pointerEvents: "none" }}>
-        <SqBadge color="primary">{WeaponSheet.getLevelString(weapon)}</SqBadge>
-      </Typography>
-      {weaponSheet.hasRefinement && <Typography variant='subtitle1' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, pointerEvents: "none" }}>
-        <SqBadge color="secondary">R{weapon.refinement}</SqBadge>
-      </Typography>}
-    </CardDark>
-  </Grid>
-}
-function WeaponStatPico({ node }: { node: NodeDisplay }) {
-  if (!node.info.key) return null
-  const val = valueString(node.value, node.unit, !node.unit ? 0 : undefined)
-  return <Typography>{StatIcon[node.info.key]} {val}</Typography>
-}
-
-function WeaponFullCard({ weaponId }: { weaponId: string }) {
-  const { database } = useContext(DatabaseContext)
-  const weapon = database._getWeapon(weaponId)
-  const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
-  const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
-  if (!weapon || !weaponSheet || !UIData) return null;
-  return <CardDark>
-    <Box display="flex" >
-      <Box flexShrink={1} maxWidth="35%" display="flex" flexDirection="column" alignContent="flex-end" className={`grad-${weaponSheet.rarity}star`} >
-        <Box
-          component="img"
-          src={weaponSheet.img}
-          width="100%"
-          height="auto"
-          sx={{ mt: "auto" }}
-        />
-      </Box>
-      <Box flexGrow={1} sx={{ p: 1 }}>
-        <Typography variant="body2" gutterBottom><strong>{weaponSheet?.name}</strong></Typography>
-        <Typography variant='subtitle1' sx={{ display: "flex", gap: 1 }} gutterBottom>
-          <SqBadge color="primary">Lv. {WeaponSheet.getLevelString(weapon as ICachedWeapon)}</SqBadge>
-          {weaponSheet.hasRefinement && <SqBadge color="info">R{weapon.refinement}</SqBadge>}
-        </Typography>
-        <Typography variant='subtitle1' sx={{ display: "flex", gap: 1 }} >
-          <WeaponStat node={UIData.get(input.weapon.main)} />
-          <WeaponStat node={UIData.get(input.weapon.sub)} />
-        </Typography>
-
-      </Box>
-    </Box>
-  </CardDark>
-}
-function WeaponStat({ node }: { node: NodeDisplay }) {
-  if (!node.info.key) return null
-  const val = valueString(node.value, node.unit, !node.unit ? 0 : undefined)
-  return <SqBadge color="secondary">{StatIcon[node.info.key]} {val}</SqBadge>
-}
 function Stats() {
   const { data } = useContext(DataContext)
   return <Box sx={{ width: "100%" }} >

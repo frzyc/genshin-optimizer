@@ -1,4 +1,4 @@
-import { initialBuildSettings } from "../PageBuild/BuildSetting"
+import { initialBuildSettings } from "../PageCharacter/Tabs/TabBuild/BuildSetting"
 import { ICachedCharacter } from "../Types/character"
 import { allSlotKeys, CharacterKey } from "../Types/consts"
 import { objectKeyMap } from "./Util"

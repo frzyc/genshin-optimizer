@@ -12,6 +12,7 @@ import { DataContext } from '../../DataContext';
 import { uiInput as input } from '../../Formula';
 import ArtifactCard from '../../PageArtifact/ArtifactCard';
 import WeaponCard from '../../PageWeapon/WeaponCard';
+import WeaponSwapBtn from '../../PageWeapon/WeaponSwapBtn';
 import useForceUpdate from '../../ReactHooks/useForceUpdate';
 import usePromise from '../../ReactHooks/usePromise';
 import { allSlotKeys } from '../../Types/consts';
@@ -19,7 +20,7 @@ import { objectKeyMap } from '../../Util/Util';
 
 const WeaponDisplayCard = lazy(() => import('../../PageWeapon/WeaponDisplayCard'))
 
-function CharacterArtifactPane() {
+function TabEquip() {
   const { teamData, data, character, character: { equippedWeapon, key: characterKey }, mainStatAssumptionLevel } = useContext(DataContext)
   const { weaponSheet } = teamData[characterKey]!
   const [weaponId, setweaponId] = useState("")
@@ -70,7 +71,6 @@ function CharacterArtifactPane() {
         onClose={hideWeapon}
       />
     </Suspense>
-    {/* <WeaponDisplayCard weaponId={character.equippedWeapon} /> */}
     <CardLight >
       <CardContent>
         <StatDisplayComponent />
@@ -78,6 +78,9 @@ function CharacterArtifactPane() {
       <Divider />
       <CardContent>
         <Grid container spacing={1}>
+          <Grid item>
+            <WeaponSwapBtn weaponTypeKey={weaponSheet.weaponType} onChangeId={id => database.setWeaponLocation(id, characterKey)} />
+          </Grid>
           <Grid item>
             <Button color="error" onClick={unequipArts}>Unequip all artifacts</Button>
           </Grid>
@@ -106,4 +109,4 @@ function CharacterArtifactPane() {
     </Grid>
   </Box>
 }
-export default CharacterArtifactPane
+export default TabEquip

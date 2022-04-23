@@ -27,7 +27,7 @@ import { range } from "../../Util/Util";
 import CharacterCardPico from "../CharacterCardPico";
 import StatInput from "../StatInput";
 
-export default function CharacterOverviewPane() {
+export default function TabOverview() {
   const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
   const navigate = useNavigate()

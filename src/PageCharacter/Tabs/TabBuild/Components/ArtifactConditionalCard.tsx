@@ -1,17 +1,17 @@
 import { Replay } from '@mui/icons-material';
 import { Box, Button, CardContent, Divider, Grid, Typography } from '@mui/material';
 import React, { useCallback, useContext, useMemo, useState } from 'react';
-import SetEffectDisplay from '../../Components/Artifact/SetEffectDisplay';
-import CardDark from '../../Components/Card/CardDark';
-import CardLight from '../../Components/Card/CardLight';
-import CloseButton from '../../Components/CloseButton';
-import ModalWrapper from '../../Components/ModalWrapper';
-import SqBadge from '../../Components/SqBadge';
-import { Stars } from '../../Components/StarDisplay';
-import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
-import { DataContext } from '../../DataContext';
-import usePromise from '../../ReactHooks/usePromise';
-import { allArtifactSets, SetNum } from '../../Types/consts';
+import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay';
+import CardDark from '../../../../Components/Card/CardDark';
+import CardLight from '../../../../Components/Card/CardLight';
+import CloseButton from '../../../../Components/CloseButton';
+import ModalWrapper from '../../../../Components/ModalWrapper';
+import SqBadge from '../../../../Components/SqBadge';
+import { Stars } from '../../../../Components/StarDisplay';
+import { ArtifactSheet } from '../../../../Data/Artifacts/ArtifactSheet';
+import { DataContext } from '../../../../DataContext';
+import usePromise from '../../../../ReactHooks/usePromise';
+import { allArtifactSets, SetNum } from '../../../../Types/consts';
 
 export default function ArtifactConditionalCard({ disabled }: { disabled?: boolean }) {
   const { character } = useContext(DataContext)

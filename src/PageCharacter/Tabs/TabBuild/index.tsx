@@ -7,38 +7,38 @@ import ReactGA from 'react-ga';
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BackgroundWorker";
-import ArtifactLevelSlider from '../Components/Artifact/ArtifactLevelSlider';
-import BootstrapTooltip from '../Components/BootstrapTooltip';
-import CardLight from '../Components/Card/CardLight';
-import DropdownButton from '../Components/DropdownMenu/DropdownButton';
-import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
-import StatFilterCard from '../Components/StatFilterCard';
-import CharacterSheet from '../Data/Characters/CharacterSheet';
-import { DatabaseContext } from '../Database/Database';
-import { DataContext, dataContextObj } from '../DataContext';
-import { mergeData, uiDataForTeam } from '../Formula/api';
-import { uiInput as input } from '../Formula/index';
-import { optimize } from '../Formula/optimization';
-import { NumNode } from '../Formula/type';
-import { UIData } from '../Formula/uiData';
-import { initGlobalSettings } from '../GlobalSettings';
-import KeyMap from '../KeyMap';
-import CharacterCard from '../PageCharacter/CharacterCard';
-import useCharacterReducer, { characterReducerAction } from '../ReactHooks/useCharacterReducer';
-import useDBState from '../ReactHooks/useDBState';
-import useForceUpdate from '../ReactHooks/useForceUpdate';
-import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
-import { ICachedArtifact } from '../Types/artifact';
-import { BuildSetting } from '../Types/Build';
-import { ICachedCharacter } from '../Types/character';
-import { ArtifactSetKey, CharacterKey } from '../Types/consts';
-import { objPathValue, range } from '../Util/Util';
+import ArtifactLevelSlider from '../../../Components/Artifact/ArtifactLevelSlider';
+import BootstrapTooltip from '../../../Components/BootstrapTooltip';
+import CardLight from '../../../Components/Card/CardLight';
+import DropdownButton from '../../../Components/DropdownMenu/DropdownButton';
+import SolidToggleButtonGroup from '../../../Components/SolidToggleButtonGroup';
+import StatFilterCard from '../../../Components/StatFilterCard';
+import CharacterSheet from '../../../Data/Characters/CharacterSheet';
+import { DatabaseContext } from '../../../Database/Database';
+import { DataContext, dataContextObj } from '../../../DataContext';
+import { mergeData, uiDataForTeam } from '../../../Formula/api';
+import { uiInput as input } from '../../../Formula/index';
+import { optimize } from '../../../Formula/optimization';
+import { NumNode } from '../../../Formula/type';
+import { UIData } from '../../../Formula/uiData';
+import { initGlobalSettings } from '../../../GlobalSettings';
+import KeyMap from '../../../KeyMap';
+import CharacterCard from '../../../Components/Character/CharacterCard';
+import useCharacterReducer, { characterReducerAction } from '../../../ReactHooks/useCharacterReducer';
+import useDBState from '../../../ReactHooks/useDBState';
+import useForceUpdate from '../../../ReactHooks/useForceUpdate';
+import useTeamData, { getTeamData } from '../../../ReactHooks/useTeamData';
+import { ICachedArtifact } from '../../../Types/artifact';
+import { BuildSetting } from '../../../Types/Build';
+import { ICachedCharacter } from '../../../Types/character';
+import { ArtifactSetKey, CharacterKey } from '../../../Types/consts';
+import { objPathValue, range } from '../../../Util/Util';
 import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
-import ChartCard from './ChartCard';
+import ChartCard from './Components/ChartCard';
 import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
-import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
+import BuildDisplayItem from './Components/BuildDisplayItem';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
@@ -85,7 +85,7 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
 //   }
 // }
 
-export default function BuildDisplay() {
+export default function TabBuild() {
   const { character, character: { key: characterKey } } = useContext(DataContext)
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { database } = useContext(DatabaseContext)
@@ -523,7 +523,7 @@ function BuildList({ buildsArts, character, characterKey, characterSheet, data, 
       oldData={data}
       mainStatAssumptionLevel={mainStatAssumptionLevel}
       characterDispatch={characterDispatch} >
-      <ArtifactBuildDisplayItem index={index} compareBuild={compareData} disabled={disabled} />
+      <BuildDisplayItem index={index} compareBuild={compareData} disabled={disabled} />
     </DataContextWrapper>
     )}
   </Suspense>, [buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled])

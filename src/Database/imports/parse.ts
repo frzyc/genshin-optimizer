@@ -1,7 +1,7 @@
 import Artifact from "../../Data/Artifacts/Artifact";
 import { ascensionMaxLevel } from "../../Data/LevelData";
-import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageBuild/Build";
-import { initialBuildSettings } from "../../PageBuild/BuildSetting";
+import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageCharacter/Tabs/TabBuild/Build";
+import { initialBuildSettings } from "../../PageCharacter/Tabs/TabBuild/BuildSetting";
 import { allMainStatKeys, allSubstats, IArtifact, ISubstat } from "../../Types/artifact";
 import { ICharacter } from "../../Types/character";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../../Types/consts";

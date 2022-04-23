@@ -22,7 +22,7 @@ import usePromise from '../ReactHooks/usePromise';
 import { CharacterKey, ElementKey, WeaponTypeKey } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
-import CharacterCard from './CharacterCard';
+import CharacterCard from '../Components/Character/CharacterCard';
 
 function initialState() {
   return {
@@ -131,7 +131,7 @@ export default function CharacterInventory(props) {
                   </IconButton>
                 </BootstrapTooltip>
                 <BootstrapTooltip placement="top" title={<Typography>{t("tabs.buffs")}</Typography>}>
-                  <IconButton onClick={() => navigate(`${charKey}/teambuff`)} >
+                  <IconButton onClick={() => navigate(`${charKey}/teambuffs`)} >
                     <Groups />
                   </IconButton>
                 </BootstrapTooltip>

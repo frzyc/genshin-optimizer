@@ -2,15 +2,15 @@ import { CheckBox, CheckBoxOutlineBlank, Download, Info } from '@mui/icons-mater
 import { Button, CardContent, Collapse, Divider, Grid, MenuItem, styled, Tooltip, Typography } from '@mui/material';
 import { useContext, useMemo, useState } from 'react';
 import { CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Scatter, XAxis, YAxis, ZAxis } from 'recharts';
-import CardDark from '../Components/Card/CardDark';
-import CardLight from '../Components/Card/CardLight';
-import DropdownButton from '../Components/DropdownMenu/DropdownButton';
-import { DataContext } from '../DataContext';
-import { uiInput as input } from '../Formula';
-import { NumNode } from '../Formula/type';
-import KeyMap from '../KeyMap';
-import { MainStatKey, SubstatKey } from '../Types/artifact';
-import { ChartData } from './background';
+import CardDark from '../../../../Components/Card/CardDark';
+import CardLight from '../../../../Components/Card/CardLight';
+import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton';
+import { DataContext } from '../../../../DataContext';
+import { uiInput as input } from '../../../../Formula';
+import { NumNode } from '../../../../Formula/type';
+import KeyMap from '../../../../KeyMap';
+import { MainStatKey, SubstatKey } from '../../../../Types/artifact';
+import { ChartData } from '../background';
 type ChartCardProps = {
   chartData?: ChartData
   plotBase: MainStatKey | SubstatKey | "",

@@ -1,6 +1,6 @@
-import { ICachedArtifact } from "../Types/artifact"
-import { ArtifactsBySlot, SetFilter } from "../Types/Build"
-import { ArtifactSetKey } from "../Types/consts"
+import { ICachedArtifact } from "../../../Types/artifact"
+import { ArtifactsBySlot, SetFilter } from "../../../Types/Build"
+import { ArtifactSetKey } from "../../../Types/consts"
 
 export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5

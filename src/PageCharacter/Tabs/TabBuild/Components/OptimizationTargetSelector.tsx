@@ -1,18 +1,18 @@
 import { Masonry } from '@mui/lab';
 import { Button, CardContent, CardHeader, Divider, MenuItem, MenuList, styled } from '@mui/material';
 import React, { useCallback, useContext, useState } from 'react';
-import CardDark from '../../Components/Card/CardDark';
-import CardLight from '../../Components/Card/CardLight';
-import ColorText from '../../Components/ColoredText';
-import ImgIcon from '../../Components/Image/ImgIcon';
-import ModalWrapper from '../../Components/ModalWrapper';
-import { DataContext } from '../../DataContext';
-import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil';
-import { DisplaySub } from '../../Formula/type';
-import { NodeDisplay } from '../../Formula/uiData';
-import KeyMap from '../../KeyMap';
-import usePromise from '../../ReactHooks/usePromise';
-import { objPathValue } from '../../Util/Util';
+import CardDark from '../../../../Components/Card/CardDark';
+import CardLight from '../../../../Components/Card/CardLight';
+import ColorText from '../../../../Components/ColoredText';
+import ImgIcon from '../../../../Components/Image/ImgIcon';
+import ModalWrapper from '../../../../Components/ModalWrapper';
+import { DataContext } from '../../../../DataContext';
+import { getDisplayHeader, getDisplaySections } from '../../../../Formula/DisplayUtil';
+import { DisplaySub } from '../../../../Formula/type';
+import { NodeDisplay } from '../../../../Formula/uiData';
+import KeyMap from '../../../../KeyMap';
+import usePromise from '../../../../ReactHooks/usePromise';
+import { objPathValue } from '../../../../Util/Util';
 
 const WhiteButton = styled(Button)({
   color: "black",

@@ -2,34 +2,34 @@ import { ChevronRight } from '@mui/icons-material';
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { Suspense, useCallback, useContext, useState } from 'react';
-import ArtifactCardNano from '../../Components/Artifact/ArtifactCardNano';
-import { artifactSlotIcon } from '../../Components/Artifact/SlotNameWIthIcon';
-import CardDark from '../../Components/Card/CardDark';
-import CardLight from '../../Components/Card/CardLight';
-import StatDisplayComponent from '../../Components/Character/StatDisplayComponent';
-import ModalWrapper from '../../Components/ModalWrapper';
-import SqBadge from '../../Components/SqBadge';
-import WeaponCardNano from '../../Components/Weapon/WeaponCardNano';
-import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
-import { DatabaseContext } from '../../Database/Database';
-import { DataContext } from '../../DataContext';
-import { uiInput as input } from '../../Formula';
-import ArtifactCard from '../../PageArtifact/ArtifactCard';
-import usePromise from '../../ReactHooks/usePromise';
-import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
+import ArtifactCardNano from '../../../../Components/Artifact/ArtifactCardNano';
+import { artifactSlotIcon } from '../../../../Components/Artifact/SlotNameWIthIcon';
+import CardDark from '../../../../Components/Card/CardDark';
+import CardLight from '../../../../Components/Card/CardLight';
+import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent';
+import ModalWrapper from '../../../../Components/ModalWrapper';
+import SqBadge from '../../../../Components/SqBadge';
+import WeaponCardNano from '../../../../Components/Weapon/WeaponCardNano';
+import { ArtifactSheet } from '../../../../Data/Artifacts/ArtifactSheet';
+import { DatabaseContext } from '../../../../Database/Database';
+import { DataContext } from '../../../../DataContext';
+import { uiInput as input } from '../../../../Formula';
+import ArtifactCard from '../../../../PageArtifact/ArtifactCard';
+import usePromise from '../../../../ReactHooks/usePromise';
+import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../../../Types/consts';
 
 type NewOld = {
   newId: string,
   oldId?: string
 }
 
-type ArtifactBuildDisplayItemProps = {
+type BuildDisplayItemProps = {
   index: number,
   compareBuild: boolean,
   disabled?: boolean,
 }
 //for displaying each artifact build
-export default function ArtifactBuildDisplayItem({ index, compareBuild, disabled }: ArtifactBuildDisplayItemProps) {
+export default function BuildDisplayItem({ index, compareBuild, disabled }: BuildDisplayItemProps) {
   const { database } = useContext(DatabaseContext)
   const dataContext = useContext(DataContext)
 
