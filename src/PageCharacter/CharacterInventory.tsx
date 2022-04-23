@@ -131,7 +131,7 @@ export default function CharacterInventory(props) {
                   </IconButton>
                 </BootstrapTooltip>
                 <BootstrapTooltip placement="top" title={<Typography>{t("tabs.buffs")}</Typography>}>
-                  <IconButton onClick={() => navigate(`${charKey}/teambuff`)} >
+                  <IconButton onClick={() => navigate(`${charKey}/teambuffs`)} >
                     <Groups />
                   </IconButton>
                 </BootstrapTooltip>
