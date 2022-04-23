@@ -105,11 +105,9 @@ const features = [{
   </Typography>
 }, {
   image: build_generator,
-  title: t => <Link component={RouterLink} to="/build" >
-    <Trans i18nKey="features.build.title" t={t}>
-      Build Generator
-    </Trans>
-  </Link>,
+  title: t => <Trans i18nKey="features.build.title" t={t}>
+    Build Generator
+  </Trans>,
   content: t => <Typography component="div" variant="body1" color="text.secondary" >
     <Trans i18nKey="features.build.content" t={t}>
       <ul>
