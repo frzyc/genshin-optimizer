@@ -1,5 +1,5 @@
 import { Command, setup, request, finalize } from "./background"
-import { assertUnreachable } from '../Util/Util';
+import { assertUnreachable } from '../../../Util/Util';
 
 onmessage = ({ data }: { data: Command }) => {
   const command = data.command

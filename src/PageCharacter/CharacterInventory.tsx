@@ -22,7 +22,7 @@ import usePromise from '../ReactHooks/usePromise';
 import { CharacterKey, ElementKey, WeaponTypeKey } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
-import CharacterCard from './CharacterCard';
+import CharacterCard from '../Components/Character/CharacterCard';
 
 function initialState() {
   return {

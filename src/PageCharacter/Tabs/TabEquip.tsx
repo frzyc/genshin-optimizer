@@ -19,7 +19,7 @@ import { objectKeyMap } from '../../Util/Util';
 
 const WeaponDisplayCard = lazy(() => import('../../PageWeapon/WeaponDisplayCard'))
 
-function CharacterArtifactPane() {
+function TabEquip() {
   const { teamData, data, character, character: { equippedWeapon, key: characterKey }, mainStatAssumptionLevel } = useContext(DataContext)
   const { weaponSheet } = teamData[characterKey]!
   const [weaponId, setweaponId] = useState("")
@@ -70,7 +70,6 @@ function CharacterArtifactPane() {
         onClose={hideWeapon}
       />
     </Suspense>
-    {/* <WeaponDisplayCard weaponId={character.equippedWeapon} /> */}
     <CardLight >
       <CardContent>
         <StatDisplayComponent />
@@ -106,4 +105,4 @@ function CharacterArtifactPane() {
     </Grid>
   </Box>
 }
-export default CharacterArtifactPane
+export default TabEquip

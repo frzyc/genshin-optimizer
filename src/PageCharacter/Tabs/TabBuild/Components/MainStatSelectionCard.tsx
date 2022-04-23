@@ -3,15 +3,15 @@ import { Button, CardContent, Divider, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { artifactSlotIcon } from '../../Components/Artifact/SlotNameWIthIcon';
-import BootstrapTooltip from '../../Components/BootstrapTooltip';
-import SqBadge from '../../Components/SqBadge';
-import StatIcon from '../../Components/StatIcon';
-import Artifact from '../../Data/Artifacts/Artifact';
-import KeyMap from '../../KeyMap';
-import { MainStatKey } from '../../Types/artifact';
-import { BuildSetting } from '../../Types/Build';
-import { SlotKey } from '../../Types/consts';
+import { artifactSlotIcon } from '../../../../Components/Artifact/SlotNameWIthIcon';
+import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
+import SqBadge from '../../../../Components/SqBadge';
+import StatIcon from '../../../../Components/StatIcon';
+import Artifact from '../../../../Data/Artifacts/Artifact';
+import KeyMap from '../../../../KeyMap';
+import { MainStatKey } from '../../../../Types/artifact';
+import { BuildSetting } from '../../../../Types/Build';
+import { SlotKey } from '../../../../Types/consts';
 
 export const artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"] as const
 

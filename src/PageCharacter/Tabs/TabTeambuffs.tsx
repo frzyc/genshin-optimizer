@@ -19,9 +19,9 @@ import useCharSelectionCallback from "../../ReactHooks/useCharSelectionCallback"
 import usePromise from "../../ReactHooks/usePromise";
 import { ElementKey } from "../../Types/consts";
 import { objPathValue, range } from "../../Util/Util";
-import CharacterCard from "../CharacterCard";
+import CharacterCard from "../../Components/Character/CharacterCard";
 
-export default function CharacterTeamBuffsPane() {
+export default function TabTeambuffs() {
   return <Box display="flex" flexDirection="column" gap={1} alignItems="stretch">
     <Grid container spacing={1}>
       <Grid item xs={12} md={6} lg={3} sx={{ display: "flex", flexDirection:"column", gap: 1 }}>

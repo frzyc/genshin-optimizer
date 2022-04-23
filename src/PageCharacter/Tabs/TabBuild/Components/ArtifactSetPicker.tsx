@@ -1,13 +1,13 @@
 import { ButtonGroup, CardContent, Divider, MenuItem } from '@mui/material';
 import React, { useMemo } from 'react';
-import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
-import SetEffectDisplay from '../../Components/Artifact/SetEffectDisplay';
-import ArtifactSetDropdown from '../../Components/Artifact/ArtifactSetDropdown';
-import CardLight from '../../Components/Card/CardLight';
-import DropdownButton from '../../Components/DropdownMenu/DropdownButton';
-import usePromise from '../../ReactHooks/usePromise';
-import { BuildSetting } from '../../Types/Build';
-import { ArtifactRarity, ArtifactSetKey, SetNum } from '../../Types/consts';
+import { ArtifactSheet } from '../../../../Data/Artifacts/ArtifactSheet';
+import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay';
+import ArtifactSetDropdown from '../../../../Components/Artifact/ArtifactSetDropdown';
+import CardLight from '../../../../Components/Card/CardLight';
+import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton';
+import usePromise from '../../../../ReactHooks/usePromise';
+import { BuildSetting } from '../../../../Types/Build';
+import { ArtifactRarity, ArtifactSetKey, SetNum } from '../../../../Types/consts';
 
 type PickerProps = {
   index: number

@@ -1,7 +1,7 @@
-import { optimize, precompute } from '../Formula/optimization';
-import type { NumNode } from '../Formula/type';
-import type { MainStatKey, SubstatKey } from '../Types/artifact';
-import { ArtifactSetKey, SlotKey } from '../Types/consts';
+import { optimize, precompute } from '../../../Formula/optimization';
+import type { NumNode } from '../../../Formula/type';
+import type { MainStatKey, SubstatKey } from '../../../Types/artifact';
+import { ArtifactSetKey, SlotKey } from '../../../Types/consts';
 import { countBuilds, filterArts, mergePlot, pruneAll } from './common';
 
 let id: string

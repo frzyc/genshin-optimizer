@@ -1,10 +1,10 @@
-import { ArtCharDatabase } from '../Database/Database';
-import { DBLocalStorage } from '../Database/DBStorage';
-import { importGOOD } from '../Database/imports/good';
-import { mergeData, uiDataForTeam } from '../Formula/api';
-import { optimize } from '../Formula/optimization';
-import { customRead } from '../Formula/utils';
-import { getTeamData } from '../ReactHooks/useTeamData';
+import { ArtCharDatabase } from '../../../Database/Database';
+import { DBLocalStorage } from '../../../Database/DBStorage';
+import { importGOOD } from '../../../Database/imports/good';
+import { mergeData, uiDataForTeam } from '../../../Formula/api';
+import { optimize } from '../../../Formula/optimization';
+import { customRead } from '../../../Formula/utils';
+import { getTeamData } from '../../../ReactHooks/useTeamData';
 import { finalize, request, setup } from './background';
 import * as data1 from "./background.perf.test.json";
 import { pruneAll } from './common';

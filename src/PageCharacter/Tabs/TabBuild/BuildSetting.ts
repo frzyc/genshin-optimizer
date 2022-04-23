@@ -1,4 +1,4 @@
-import { BuildSetting } from "../Types/Build";
+import { BuildSetting } from "../../../Types/Build";
 
 export const initialBuildSettings = (): BuildSetting => ({
   setFilters: [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }],

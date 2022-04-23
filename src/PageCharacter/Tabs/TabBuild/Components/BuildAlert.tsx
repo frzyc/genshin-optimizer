@@ -1,6 +1,6 @@
 import { Alert, Grid, LinearProgress, styled, Typography } from '@mui/material';
 import React, { ReactNode } from 'react';
-import { timeStringMs } from '../../Util/TimeUtil';
+import { timeStringMs } from '../../../../Util/TimeUtil';
 
 export const warningBuildNumber = 10000000
 
@@ -61,4 +61,3 @@ export default function BuildAlert({ totBuildNumber, generatingBuilds, generatio
     </Grid>}
   </Alert>
 }
-

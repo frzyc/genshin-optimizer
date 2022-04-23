@@ -1,13 +1,13 @@
-import Artifact from "../Data/Artifacts/Artifact";
-import { input } from "../Formula";
-import { computeUIData } from "../Formula/api";
-import { formulaString } from "../Formula/debug";
-import { Data, NumNode } from "../Formula/type";
-import { constant, setReadNodeKeys } from "../Formula/utils";
-import { allMainStatKeys, allSubstats, ICachedArtifact } from "../Types/artifact";
-import { SetFilter } from "../Types/Build";
-import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
-import { deepClone, objectKeyMap, objectMap } from "../Util/Util";
+import Artifact from "../../../Data/Artifacts/Artifact";
+import { input } from "../../../Formula";
+import { computeUIData } from "../../../Formula/api";
+import { formulaString } from "../../../Formula/debug";
+import { Data, NumNode } from "../../../Formula/type";
+import { constant, setReadNodeKeys } from "../../../Formula/utils";
+import { allMainStatKeys, allSubstats, ICachedArtifact } from "../../../Types/artifact";
+import { SetFilter } from "../../../Types/Build";
+import { allSlotKeys, ArtifactSetKey } from "../../../Types/consts";
+import { deepClone, objectKeyMap, objectMap } from "../../../Util/Util";
 import type { ArtifactBuildData, ArtifactsBySlot, DynStat, RequestFilter } from "./background";
 import { countBuilds, filterArts } from "./common";
 

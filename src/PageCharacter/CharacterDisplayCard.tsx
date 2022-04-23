@@ -23,17 +23,17 @@ import { getDisplayHeader, getDisplaySections } from '../Formula/DisplayUtil';
 import { DisplaySub } from '../Formula/type';
 import { NodeDisplay } from '../Formula/uiData';
 import KeyMap, { valueString } from '../KeyMap';
-import BuildDisplay from '../PageBuild/BuildDisplay';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import usePromise from '../ReactHooks/usePromise';
 import useTeamData from '../ReactHooks/useTeamData';
 import { CharacterKey } from '../Types/consts';
 import { clamp } from '../Util/Util';
-import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
-import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
-import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
-import CharacterTeamBuffsPane from './CharacterDisplay/CharacterTeamBuffsPane';
+import TabBuild from './Tabs/TabBuild';
+import TabEquip from './Tabs/TabEquip';
+import TabOverview from './Tabs/TabOverview';
+import TabTalent from './Tabs/TabTalent';
+import TabTeambuffs from './Tabs/TabTeambuffs';
 
 
 type CharacterDisplayCardProps = {
@@ -98,12 +98,11 @@ export default function CharacterDisplayCard({ characterKey, newteamData, mainSt
         <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={500} />}>
           <Routes>
             {/* Character Panel */}
-            <Route index element={<CharacterOverviewPane />} />
-            <Route path="/talent" element={<CharacterTalentPane />} />
-            <Route path="/equip" element={<CharacterArtifactPane />} />
-            <Route path="/teambuffs" element={<CharacterTeamBuffsPane />} />
-            <Route path="/talent" element={<CharacterTalentPane />} />
-            <Route path="/build" element={<BuildDisplay />} />
+            <Route index element={<TabOverview />} />
+            <Route path="/talent" element={<TabTalent />} />
+            <Route path="/equip" element={<TabEquip />} />
+            <Route path="/teambuffs" element={<TabTeambuffs />} />
+            <Route path="/build" element={<TabBuild />} />
           </Routes>
         </Suspense>
         <CardLight>
