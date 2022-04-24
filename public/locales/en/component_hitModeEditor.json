@@ -1,0 +1,19 @@
+{
+  "infusionAura": {
+    "": "No Team Melee Infusion",
+    "pyro": "Pyro Team Melee Infusion",
+    "cryo": "Cryo Team Melee Infusion"
+  },
+  "reaction": {
+    "": "No Reaction",
+    "pyro_vaporize": "Vaporize (Pyro)",
+    "pyro_melt": "Melt (Pyro)",
+    "hydro_vaporize": "Vaporize (Hydro)",
+    "cryo_melt": "Melt (Cryo)"
+  },
+  "hitMode": {
+    "avgHit": "Avg. DMG",
+    "hit": "Non-crit DMG",
+    "critHit": "Crit DMG"
+  }
+}

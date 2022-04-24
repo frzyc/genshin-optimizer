@@ -79,6 +79,8 @@ declare module "@mui/material/Button" {
     electro: true;
     anemo: true;
     physical: true;
+    vaporize: true;
+    melt: true;
   }
 }
 

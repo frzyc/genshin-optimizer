@@ -1,60 +1,82 @@
-import { MenuItem, ToggleButton, ToggleButtonGroupProps } from "@mui/material";
+import { MenuItem } from "@mui/material";
 import { useContext } from 'react';
+import { Trans, useTranslation } from "react-i18next";
 import { infusionNode } from "../Data/Characters/dataUtil";
 import { DataContext } from "../DataContext";
 import { uiInput as input } from "../Formula";
 import { ElementKey } from "../Types/consts";
-import ColorText from "./ColoredText";
 import DropdownButton, { DropdownButtonProps } from "./DropdownMenu/DropdownButton";
-import SolidToggleButtonGroup from "./SolidToggleButtonGroup";
 import StatIcon, { uncoloredEleIcons } from "./StatIcon";
-const infusionVals = {
-  "": <span>No Team Melee Infusion</span>,
-  "pyro": <span >{uncoloredEleIcons.pyro} Pyro Team Melee Infusion</span>,
-  "cryo": <span >{uncoloredEleIcons.cryo} Cryo Team Melee Infusion</span>,
+const infusionIcons = {
+  "": "",
+  "pyro": <span>{uncoloredEleIcons.pyro}</span>,
+  "cryo": <span>{uncoloredEleIcons.cryo}</span>,
 }
 type InfusionAuraDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" | "children">
 export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {
   const { characterSheet, character: { infusionAura }, characterDispatch } = useContext(DataContext)
+  const { t } = useTranslation("component_hitModeEditor")
   if (!characterSheet?.isMelee()) return null
-  return <DropdownButton title={infusionVals[infusionAura]} color={infusionAura || "secondary"} {...props}>
-    {Object.entries(infusionVals).map(([key, text]) =>
+  return <DropdownButton title={<span>{infusionIcons[infusionAura]} {t(`infusionAura.${infusionAura}`)}</span>}
+    color={infusionAura || "secondary"} {...props}>
+    {Object.entries(infusionIcons).map(([key]) =>
       <MenuItem key={key} sx={key ? { color: `${key}.main` } : undefined}
         selected={key === infusionAura} disabled={key === infusionAura}
-        onClick={() => characterDispatch({ infusionAura: key })}>{text}</MenuItem>)}
+        onClick={() => characterDispatch({ infusionAura: key })}>
+        <span>{infusionIcons[key]} {t(`infusionAura.${key}`)}</span>
+      </MenuItem>)}
   </DropdownButton>
 }
 
-type ReactionToggleProps = Omit<ToggleButtonGroupProps, "color">
-export function ReactionToggle(props: ReactionToggleProps) {
+const reactionIcons = {
+  "": "",
+  "pyro_vaporize": <span>{StatIcon.hydro}+{StatIcon.pyro}</span>,
+  "pyro_melt": <span>{StatIcon.cryo}+{StatIcon.pyro}</span>,
+  "hydro_vaporize": <span>{StatIcon.pyro}+{StatIcon.hydro}</span>,
+  "cryo_melt": <span>{StatIcon.pyro}+{StatIcon.cryo}</span>
+}
+type ReactionDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" | "children">
+export function ReactionDropdown(props: ReactionDropdownProps) {
   const { data, character: { reactionMode }, characterDispatch } = useContext(DataContext)
+  const { t } = useTranslation("component_hitModeEditor")
   const charEleKey = data.get(input.charEle).value as ElementKey
   const infusion = data.get(infusionNode).value as ElementKey
+  const rawReaction = reactionMode ? reactionMode.split("_")[1] as "vaporize" | "melt" : ""
   if (!["pyro", "hydro", "cryo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusion)) return null
-  return <SolidToggleButtonGroup exclusive baseColor="secondary"
-    value={reactionMode} onChange={(e, reactionMode) => characterDispatch({ reactionMode })} {...props}>
-    <ToggleButton value="" >No Reactions</ToggleButton >
-    {(charEleKey === "pyro" || infusion === "pyro") && <ToggleButton value="pyro_vaporize"  >
-      <ColorText color="vaporize">Vaporize(Pyro){StatIcon.hydro}+{StatIcon.pyro}</ColorText>
-    </ToggleButton >}
-    {(charEleKey === "pyro" || infusion === "pyro") && <ToggleButton value={"pyro_melt"}  >
-      <ColorText color="melt">Melt(Pyro) {StatIcon.cryo}+{StatIcon.pyro}</ColorText>
-    </ToggleButton >}
-    {(charEleKey === "hydro" || infusion === "hydro") && <ToggleButton value={"hydro_vaporize"}  >
-      <ColorText color="vaporize">Vaporize(Hydro) {StatIcon.pyro}+{StatIcon.hydro}</ColorText>
-    </ToggleButton >}
-    {(charEleKey === "cryo" || infusion === "cryo") && <ToggleButton value={"cryo_melt"}  >
-      <ColorText color="melt">Melt(Cryo) {StatIcon.pyro}+{StatIcon.cryo}</ColorText>
-    </ToggleButton >}
-  </SolidToggleButtonGroup>
+  return <DropdownButton title={<span>{reactionIcons[reactionMode]} {t(`reaction.${reactionMode}`)}</span>}
+    color={rawReaction ? rawReaction : "secondary"} {...props}>
+    {Object.entries(reactionIcons).map(([key]) => {
+      const [element, reaction] = key.split("_")
+      if (key === "" || charEleKey === element || infusion === element) {
+        return <MenuItem key={key} sx={key ? { color: `${reaction}.main` } : undefined}
+          selected={reaction === reactionMode} disabled={reaction === reactionMode}
+          onClick={() => characterDispatch({ reactionMode: key })}>
+          <span>{reactionIcons[key]} {t(`reaction.${key}`)}</span>
+        </MenuItem>
+      }
+    })}
+  </DropdownButton>
 }
-type HitModeToggleProps = Omit<ToggleButtonGroupProps, "color">
-export function HitModeToggle(props: HitModeToggleProps) {
+
+type HitModeDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" | "children">
+export function HitModeDropdown(props: HitModeDropdownProps) {
   const { character: { hitMode }, characterDispatch } = useContext(DataContext)
-  return <SolidToggleButtonGroup exclusive baseColor="secondary"
-    value={hitMode} onChange={(e, hitMode) => characterDispatch({ hitMode })} {...props} >
-    <ToggleButton value="avgHit">Avg. DMG</ToggleButton>
-    <ToggleButton value="hit">Non Crit DMG</ToggleButton>
-    <ToggleButton value="critHit">Crit Hit DMG</ToggleButton>
-  </SolidToggleButtonGroup>
+  const { t } = useTranslation("component_hitModeEditor")
+  return <DropdownButton title={<Trans t={t} i18nKey={`hitMode.${hitMode}`} />} color="secondary" {...props}>
+    <MenuItem key="avgHit"
+      selected={"avgHit" === hitMode} disabled={"avgHit" === hitMode}
+      onClick={() => characterDispatch({ hitMode: "avgHit" })}>
+      {t(`hitMode.avgHit`)}
+    </MenuItem>
+    <MenuItem key="hit"
+      selected={"hit" === hitMode} disabled={"hit" === hitMode}
+      onClick={() => characterDispatch({ hitMode: "hit" })}>
+      {t(`hitMode.hit`)}
+    </MenuItem>
+    <MenuItem key="critHit"
+      selected={"critHit" === hitMode} disabled={"critHit" === hitMode}
+      onClick={() => characterDispatch({ hitMode: "critHit" })}>
+      {t(`hitMode.critHit`)}
+    </MenuItem>
+  </DropdownButton>
 }

@@ -13,7 +13,7 @@ import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../Compo
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import { EnemyExpandCard } from '../Components/EnemyEditor';
 import ExpandButton from '../Components/ExpandButton';
-import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../Components/HitModeEditor';
+import { HitModeDropdown, InfusionAuraDropdown, ReactionDropdown } from '../Components/HitModeEditor';
 import ImgIcon from '../Components/Image/ImgIcon';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/LevelData';
@@ -120,7 +120,7 @@ function TabNav({ tab }: { tab: string }) {
     allowScrollButtonsMobile
     sx={{
       "& .MuiTab-root:hover": {
-        transition: "background-color 0.5s ease",
+        transition: "background-color 0.35s ease",
         backgroundColor: "rgba(255,255,255,0.1)"
       },
     }}
@@ -192,15 +192,15 @@ function FormulaCalcCard() {
   const toggle = useCallback(() => setexpanded(!expanded), [setexpanded, expanded])
   return <CardLight>
     <CardContent sx={{ display: "flex", gap: 1 }}>
-      <Grid container spacing={1}>
-        <Grid item><HitModeToggle size="small" /></Grid>
-        <Grid item><InfusionAuraDropdown /></Grid>
-        <Grid item><ReactionToggle size="small" /></Grid>
+      <Grid container spacing={1} width="auto">
+        <Grid item><HitModeDropdown size="small" /></Grid>
+        <Grid item><InfusionAuraDropdown size="small" /></Grid>
+        <Grid item><ReactionDropdown size="small" /></Grid>
       </Grid>
-      <Box display="flex" gap={1} >
-        <Box>
-          <Typography variant='subtitle2' >{t("formulas")} {"&"}</Typography>
-          <Typography variant='subtitle2' >{t("calculations")}</Typography>
+      <Box flexGrow={1} />
+      <Box display="flex" gap={1}>
+        <Box display="flex" alignItems="center">
+          <Typography variant='subtitle2' >{t("formulasCalculations")}</Typography>
         </Box>
         <ExpandButton
           expand={expanded}

@@ -9,8 +9,7 @@
     "build": "Build"
   },
   "selectLevel": "Select Level",
-  "formulas": "Formulas",
-  "calculations": "Calculations",
+  "formulasCalculations": "Formulas & Calculations",
   "selectCharacter": "Select a Character",
   "removeCharacter": "Are you sure you want to remove {{value}}?",
   "delete": "Delete Character",
