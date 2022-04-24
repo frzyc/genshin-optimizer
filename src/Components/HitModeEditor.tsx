@@ -1,6 +1,6 @@
 import { MenuItem } from "@mui/material";
 import { useContext } from 'react';
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { infusionNode } from "../Data/Characters/dataUtil";
 import { DataContext } from "../DataContext";
 import { uiInput as input } from "../Formula";
@@ -62,7 +62,7 @@ type HitModeDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" | "ch
 export function HitModeDropdown(props: HitModeDropdownProps) {
   const { character: { hitMode }, characterDispatch } = useContext(DataContext)
   const { t } = useTranslation("component_hitModeEditor")
-  return <DropdownButton title={<Trans t={t} i18nKey={`hitMode.${hitMode}`} />} color="secondary" {...props}>
+  return <DropdownButton title={t(`hitMode.${hitMode}`)} color="secondary" {...props}>
     <MenuItem key="avgHit"
       selected={"avgHit" === hitMode} disabled={"avgHit" === hitMode}
       onClick={() => characterDispatch({ hitMode: "avgHit" })}>
