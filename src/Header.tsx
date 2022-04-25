@@ -125,11 +125,11 @@ function MobileHeader({ anchor, currentTab }) {
         }}
       >
         <List>
-          <ListItemButton key="home" component={RouterLink} to={'/'} selected={currentTab === ""} disabled={currentTab === ""} onClick={handleDrawerToggle} >
+          <ListItemButton key="home" component={RouterLink} to={'/'} selected={currentTab === ""} onClick={handleDrawerToggle}>
             <ListItemText>{t("pageTitle")}</ListItemText>
           </ListItemButton >
           {content.map(({ i18Key, value, to, svg }) =>
-            <ListItemButton key={value} component={RouterLink} to={to} selected={currentTab === value} disabled={currentTab === value} onClick={handleDrawerToggle} >
+            <ListItemButton key={value} component={RouterLink} to={to} selected={currentTab === value} onClick={handleDrawerToggle} >
               <ListItemIcon><FontAwesomeIcon icon={svg} /></ListItemIcon>
               <ListItemText>{t(i18Key)}</ListItemText>
             </ListItemButton >)}
@@ -137,7 +137,7 @@ function MobileHeader({ anchor, currentTab }) {
         <Divider />
         <List>
           {links.map(({ i18Key, href, svg, label }) =>
-            <ListItemButton key={label} component="a" href={href} target="_blank" onClick={e => ReactGA.outboundLink({ label }, () => { })} >
+            <ListItemButton key={label} component="a" href={href} target="_blank" onClick={_ => ReactGA.outboundLink({ label }, () => { })} >
               <ListItemIcon><FontAwesomeIcon icon={svg} /></ListItemIcon>
               <ListItemText>{t(i18Key)}</ListItemText>
             </ListItemButton >)}
