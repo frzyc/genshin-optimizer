@@ -342,7 +342,8 @@ export default function UpgradeOptDisplay() {
                 </Grid>
                 <Grid container lg={4}>
                   {/*Minimum Final Stat Filter */}
-                  <StatFilterCard statFilters={statFilters} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={false} />
+                  {/* TODO */}
+                  <StatFilterCard statFilters={statFilters} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={true} />
                   <ArtifactConditionalCard disabled={false} />
                 </Grid>
               </Grid>
