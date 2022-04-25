@@ -1,7 +1,7 @@
 import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CheckBox, CheckBoxOutlineBlank, Close } from '@mui/icons-material';
-import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
+import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, Typography, useMediaQuery } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Link as RouterLink } from 'react-router-dom';
@@ -11,7 +11,7 @@ import ArtifactLevelSlider from '../../../Components/Artifact/ArtifactLevelSlide
 import BootstrapTooltip from '../../../Components/BootstrapTooltip';
 import CardLight from '../../../Components/Card/CardLight';
 import DropdownButton from '../../../Components/DropdownMenu/DropdownButton';
-import SolidToggleButtonGroup from '../../../Components/SolidToggleButtonGroup';
+import { HitModeDropdown, ReactionDropdown } from '../../../Components/HitModeEditor';
 import StatFilterCard from '../../../Components/StatFilterCard';
 import CharacterSheet from '../../../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../../../Database/Database';
@@ -47,6 +47,8 @@ import BuildAlert, { warningBuildNumber } from './Components/BuildAlert';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
+import { useTranslation } from 'react-i18next';
+import { theme } from '../../../Theme';
 
 function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
   switch (action.type) {
@@ -89,6 +91,11 @@ export default function TabBuild() {
   const { character, character: { key: characterKey } } = useContext(DataContext)
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { database } = useContext(DatabaseContext)
+
+  const { t } = useTranslation("page_character")
+  const isXs = useMediaQuery(theme.breakpoints.only('xs'))
+  const isMd = useMediaQuery(theme.breakpoints.down('md'))
+
   // TODO: remove the build displayState on migration? or keep it for priority list or something?
   // const [{ characterKey }, setBuildSettings] = useDBState("BuildDisplay", initialBuildDisplayState)
 
@@ -478,22 +485,35 @@ export default function TabBuild() {
       {tcMode && <Box >
         <ChartCard disabled={generatingBuilds} chartData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} />
       </Box>}
-      <CardLight>
+      <CardLight sx={{ position: "sticky", overflow: "visible", top: isXs ? 56 : (isMd ? 64 : 0), zIndex: 999 }}>
         <CardContent>
           <Box display="flex" alignItems="center" gap={1} >
-            <Typography sx={{ flexGrow: 1 }}>
+            {/* <Typography sx={{ flexGrow: 1 }}>
               {builds ? <span>Showing <strong>{builds.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
                 : <span>Select a character to generate builds.</span>}
-            </Typography>
-            <Button disabled={!builds.length} color="error" onClick={() => buildSettingsDispatch({ builds: [], buildDate: 0 })} >Clear Builds</Button>
-            <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
-              <ToggleButton value={false} disabled={!compareData}>
-                <small>Show New artifact Stats</small>
-              </ToggleButton>
-              <ToggleButton value={true} disabled={compareData}>
-                <small>Compare against equipped artifacts</small>
-              </ToggleButton>
-            </SolidToggleButtonGroup>
+            </Typography> */}
+            <Grid container spacing={1} width="auto">
+              <Grid item><HitModeDropdown size="small" /></Grid>
+              {/* <Grid item><InfusionAuraDropdown size="small" /></Grid> */}
+              <Grid item><ReactionDropdown size="small" /></Grid>
+            </Grid>
+            <Box flexGrow={1} />
+            <Grid container spacing={1} width="auto" justifyContent="end">
+              <Grid item><DropdownButton size="small" title={compareData ? t("build.compare") : t("build.showNew")}
+                color="secondary">
+                <MenuItem key="showNew" selected={!compareData} disabled={!compareData}
+                  onClick={() => characterDispatch({ compareData: false })}>
+                  {t("build.showNew")}
+                </MenuItem>
+                <MenuItem key="compare" selected={compareData} disabled={compareData}
+                  onClick={() => characterDispatch({ compareData: true })}>
+                  {t("build.compare")}
+                </MenuItem>
+              </DropdownButton></Grid>
+              <Grid item><Button size="small" disabled={!builds.length} color="error" onClick={() => buildSettingsDispatch({ builds: [], buildDate: 0 })}>
+                {t("build.clear")}
+              </Button></Grid>
+            </Grid>
           </Box>
         </CardContent>
       </CardLight>

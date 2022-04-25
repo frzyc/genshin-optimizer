@@ -13,5 +13,10 @@
   "selectCharacter": "Select a Character",
   "removeCharacter": "Are you sure you want to remove {{value}}?",
   "delete": "Delete Character",
-  "teammates": "Teammates"
+  "teammates": "Teammates",
+  "build": {
+    "showNew": "Show new build values",
+    "compare": "Compare against current build values",
+    "clear": "Clear Builds"
+  }
 }

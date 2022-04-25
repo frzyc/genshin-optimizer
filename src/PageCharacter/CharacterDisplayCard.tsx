@@ -65,7 +65,8 @@ export default function CharacterDisplayCard({ characterKey, newteamData, mainSt
 
   if (!teamData || !character || !characterSheet || !charUIData || !dataContextValue) return <></>
 
-  return <CardDark >
+  // overflow: "visible" used to allow position: "sticky" in child elements
+  return <CardDark sx={{ overflow: "visible" }} >
     <DataContext.Provider value={dataContextValue}>
       <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
         <Grid container spacing={1}>
