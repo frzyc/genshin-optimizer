@@ -44,6 +44,22 @@ export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLeve
 }
 // TODO: Use this as the new set filter
 type _SetFilter = { key: ArtifactSetKey | "", min?: number, max?: number }[]
+/**
+ * Computes a (disjoint) list of all request filters that satisfy `filter`.
+ * `filters` is expressed as a disjunctive normal form, e.g., a request filter
+ * satisfies `filter` of
+ *
+ * ```
+ * [
+ *   [ condition1, condition2 ],
+ *   [ condition3, condition4 ],
+ * ]
+ * ```
+ *
+ * if
+ * - Both `condition1` AND `condition2` are met, or
+ * - Both `condition3` and `condition4` are met.
+ */
 export function* artSetPerm(_filters: _SetFilter[]): Iterable<RequestFilter> {
   type Filters = Dict<ArtifactSetKey, { min: number, max: number }>
 
