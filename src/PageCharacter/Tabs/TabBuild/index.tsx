@@ -10,6 +10,7 @@ import Worker from "worker-loader!./BackgroundWorker";
 import ArtifactLevelSlider from '../../../Components/Artifact/ArtifactLevelSlider';
 import BootstrapTooltip from '../../../Components/BootstrapTooltip';
 import CardLight from '../../../Components/Card/CardLight';
+import CharacterCard from '../../../Components/Character/CharacterCard';
 import DropdownButton from '../../../Components/DropdownMenu/DropdownButton';
 import SolidToggleButtonGroup from '../../../Components/SolidToggleButtonGroup';
 import StatFilterCard from '../../../Components/StatFilterCard';
@@ -23,7 +24,6 @@ import { NumNode } from '../../../Formula/type';
 import { UIData } from '../../../Formula/uiData';
 import { initGlobalSettings } from '../../../GlobalSettings';
 import KeyMap from '../../../KeyMap';
-import CharacterCard from '../../../Components/Character/CharacterCard';
 import useCharacterReducer, { characterReducerAction } from '../../../ReactHooks/useCharacterReducer';
 import useDBState from '../../../ReactHooks/useDBState';
 import useForceUpdate from '../../../ReactHooks/useForceUpdate';
@@ -36,14 +36,14 @@ import { objPathValue, range } from '../../../Util/Util';
 import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
-import ChartCard from './Components/ChartCard';
 import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
-import BuildDisplayItem from './Components/BuildDisplayItem';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
 import BuildAlert, { warningBuildNumber } from './Components/BuildAlert';
+import BuildDisplayItem from './Components/BuildDisplayItem';
+import ChartCard from './Components/ChartCard';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
@@ -148,7 +148,7 @@ export default function TabBuild() {
       return true
     })
     const split = compactArtifacts(arts, mainStatAssumptionLevel)
-    const setPerms = [...artSetPerm([setFilters])]
+    const setPerms = [...artSetPerm([setFilters.map(({ key, num }) => ({ key, min: num }))])]
     const totBuildNumber = [...setPerms].map(perm => countBuilds(filterArts(split, perm))).reduce((a, b) => a + b, 0)
     return artsDirty && { split, setPerms, totBuildNumber }
   }, [characterKey, useExcludedArts, useEquippedArts, mainStatKeys, setFilters, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
