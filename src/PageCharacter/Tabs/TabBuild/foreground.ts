@@ -5,7 +5,6 @@ import { formulaString } from "../../../Formula/debug";
 import { Data, NumNode } from "../../../Formula/type";
 import { constant, setReadNodeKeys } from "../../../Formula/utils";
 import { allMainStatKeys, allSubstats, ICachedArtifact } from "../../../Types/artifact";
-import { SetFilter } from "../../../Types/Build";
 import { allSlotKeys, ArtifactSetKey } from "../../../Types/consts";
 import { deepClone, objectKeyMap, objectMap } from "../../../Util/Util";
 import type { ArtifactBuildData, ArtifactsBySlot, DynStat, RequestFilter } from "./background";
@@ -43,40 +42,84 @@ export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLeve
   result.base = objectKeyMap([...keys], _ => 0)
   return result
 }
-export function* artSetPerm(filters: SetFilter[]): Iterable<RequestFilter> {
-  function* check(request: RequestFilter, filters: Dict<ArtifactSetKey, number>[], remainingSlots: number) {
+// TODO: Use this as the new set filter
+type _SetFilter = { key: ArtifactSetKey | "", min?: number, max?: number }[]
+/**
+ * Computes a (disjoint) list of all request filters that satisfy `filter`.
+ * `filters` is expressed as a disjunctive normal form, e.g., a request filter
+ * satisfies `filter` of
+ *
+ * ```
+ * [
+ *   [ condition1, condition2 ],
+ *   [ condition3, condition4 ],
+ * ]
+ * ```
+ *
+ * if
+ * - Both `condition1` AND `condition2` are met, or
+ * - Both `condition3` and `condition4` are met.
+ */
+export function* artSetPerm(_filters: _SetFilter[]): Iterable<RequestFilter> {
+  type Filters = Dict<ArtifactSetKey, { min: number, max: number }>
+
+  const allFilters: Filters[] = _filters.map(fs => {
+    const result: Dict<ArtifactSetKey, { min: number, max: number }> = {}
+    fs.forEach(({ key, min, max }) => {
+      if (!key) return
+      if (!result[key]) result[key] = { min: 0, max: 5 }
+      const obj = result[key]!
+      obj.min = Math.max(obj.min, min ?? 0)
+      obj.max = Math.min(obj.max, max ?? 5)
+    })
+    return result
+  }).filter(fs => Object.values(fs).every(f => f.min <= f.max))
+
+  // Remove unnecessary or impossible filters
+  function cleanFilters(result: Filters[], remainingSlots: number): Filters[] {
+    return result.map(result => {
+      result = { ...result }
+      for (const [key, value] of Object.entries(result)) {
+        if (value.min === 0 && value.max >= remainingSlots)
+          // Unnecessary filter
+          delete result[key]
+      }
+      return result
+    }).filter(fs =>
+      // Keep only possible filters
+      Object.values(fs).reduce((a, b) => a + b.min, 0) <= remainingSlots
+    )
+  }
+
+  const noFilter = { kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }
+  const result: RequestFilter = objectKeyMap(allSlotKeys, _ => noFilter)
+  function* check(_filters: Filters[], remainingSlots: number) {
+    const filters = cleanFilters(_filters, remainingSlots)
     if (!filters.length) return
-    if (filters.some(filter => !Object.keys(filter).length)) {
-      yield request
+    if (filters.some(fs => !Object.keys(fs).length)) {
+      yield { ...result }
       return
     }
 
     const slot = allSlotKeys[remainingSlots - 1]
-    const keys = new Set(filters.flatMap(filter => Object.keys(filter)))
-    for (const key of keys) {
-      const newRequest = { ...request, [slot]: { kind: "required", sets: new Set([key]) } }
-      const newFilters = filters
-        .filter(filter => filter[key])
-        .map(filter => {
-          const result = { ...filter }
-          result[key]! -= 1
-          if (!result[key]) delete result[key]
-          return result
-        })
-      yield* check(newRequest, newFilters, remainingSlots - 1)
+    const relevantSets = new Set(filters.flatMap(fs => Object.keys(fs)))
+    for (const set of relevantSets) {
+      result[slot] = { kind: "required", sets: new Set([set]) }
+      const newFilters = filters.map(fs => {
+        const obj = fs[set]
+        if (obj)
+          return { ...fs, [set]: { min: obj.min ? obj.min - 1 : 0, max: obj.max - 1 } }
+        return fs
+      })
+      yield* check(newFilters, remainingSlots - 1)
     }
     {
-      const newRequest = { ...request, [slot]: { kind: "exclude", sets: keys } }
-      const newFilters = filters.filter(filter =>
-        Object.values(filter).reduce((a, b) => a + b, 0) < remainingSlots)
-      yield* check(newRequest, newFilters, remainingSlots - 1)
+      result[slot] = { kind: "exclude", sets: relevantSets }
+      yield* check(filters, remainingSlots - 1)
     }
+    result[slot] = noFilter
   }
-  yield* check(objectKeyMap(allSlotKeys, _ => noFilter), filters.map(filter => {
-    const result: Dict<ArtifactSetKey, number> = {}
-    filter.forEach(({ key, num }) => key && num && (result[key] = (result[key] ?? 0) + num))
-    return result
-  }), 5)
+  yield* check(allFilters, 5)
 }
 export function* splitFiltersBySet(_arts: ArtifactsBySlot, filters: Iterable<RequestFilter>, limit: number): Iterable<RequestFilter> {
   if (limit < 10000) limit = 10000
