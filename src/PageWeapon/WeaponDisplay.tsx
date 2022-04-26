@@ -113,7 +113,7 @@ export default function WeaponDisplay() {
       resetEditWeapon()
   }, [database, editWeaponId, resetEditWeapon])
 
-  return <Box mt={1} display="flex" flexDirection="column" gap={1}>
+  return <Box my={1} display="flex" flexDirection="column" gap={1}>
     {/* editor/character detail display */}
     <Suspense fallback={false}>
       <WeaponDisplayCard

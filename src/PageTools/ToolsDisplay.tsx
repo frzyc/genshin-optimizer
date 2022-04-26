@@ -11,7 +11,7 @@ import TeyvatTime from './TeyvatTime';
 
 export default function ToolsDisplay(props) {
   ReactGA.pageview('/tools')
-  return <Box display="flex" flexDirection="column" gap={1}>
+  return <Box display="flex" flexDirection="column" gap={1} my={1}>
     <TeyvatTime />
     <ResinCounter />
     <EXPCalc />
