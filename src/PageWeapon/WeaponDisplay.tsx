@@ -4,6 +4,7 @@ import { Box, Button, CardContent, Grid, Pagination, Skeleton, ToggleButton, Typ
 import i18next from 'i18next';
 import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
+import { Trans, useTranslation } from 'react-i18next';
 import CardDark from '../Components/Card/CardDark';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import SortByButton from '../Components/SortByButton';
@@ -14,6 +15,7 @@ import WeaponSheet from '../Data/Weapons/WeaponSheet';
 import { DatabaseContext } from '../Database/Database';
 import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
+import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
 import { allRarities, WeaponKey, WeaponTypeKey } from '../Types/consts';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
@@ -25,21 +27,23 @@ import WeaponCard from './WeaponCard';
 //lazy load the weapon display
 const WeaponDisplayCard = lazy(() => import('./WeaponDisplayCard'))
 
+const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
+const numToShowMap = { xs: 10 - 1, sm: 12 - 1, md: 24 - 1, lg: 24 - 1, xl: 24 - 1 }
+
 const initialState = () => ({
   editWeaponId: "",
   sortType: weaponSortKeys[0],
   ascending: false,
   rarity: [5, 4],
   weaponType: "" as WeaponTypeKey | "",
-  maxNumToDisplay: 30,
 })
 
 export default function WeaponDisplay() {
+  const { t } = useTranslation(["page_weapon", "ui"]);
   const { database } = useContext(DatabaseContext)
   const [state, stateDisplatch] = useDBState("WeaponDisplay", initialState)
   const [newWeaponModalShow, setnewWeaponModalShow] = useState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
-  const scrollRef = useRef<HTMLDivElement>(null)
   const invScrollRef = useRef<HTMLDivElement>(null)
   const [pageIdex, setpageIdex] = useState(0)
   //set follow, should run only once
@@ -47,6 +51,9 @@ export default function WeaponDisplay() {
     ReactGA.pageview('/weapon')
     return database.followAnyWeapon(forceUpdate)
   }, [forceUpdate, database])
+
+  const brPt = useMediaQueryUp()
+  const maxNumToDisplay = numToShowMap[brPt]
 
   const weaponSheets = usePromise(WeaponSheet.getAll, [])
 
@@ -63,10 +70,7 @@ export default function WeaponDisplay() {
 
   const editWeapon = useCallback(key => {
     stateDisplatch({ editWeaponId: key })
-    setTimeout(() => {
-      scrollRef.current?.scrollIntoView({ behavior: "smooth" })
-    }, 500);
-  }, [stateDisplatch, scrollRef])
+  }, [stateDisplatch])
 
   const newWeapon = useCallback(
     (weaponKey: WeaponKey) => {
@@ -87,10 +91,10 @@ export default function WeaponDisplay() {
   }, [dbDirty, database, sortConfigs, filterConfigs, sortType, ascending, rarity, weaponType])
 
   const { weaponIdsToShow, numPages, currentPageIndex } = useMemo(() => {
-    const numPages = Math.ceil(weaponIdList.length / state.maxNumToDisplay)
+    const numPages = Math.ceil(weaponIdList.length / maxNumToDisplay)
     const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
-    return { weaponIdsToShow: weaponIdList.slice(currentPageIndex * state.maxNumToDisplay, (currentPageIndex + 1) * state.maxNumToDisplay), numPages, currentPageIndex }
-  }, [weaponIdList, pageIdex, state.maxNumToDisplay])
+    return { weaponIdsToShow: weaponIdList.slice(currentPageIndex * maxNumToDisplay, (currentPageIndex + 1) * maxNumToDisplay), numPages, currentPageIndex }
+  }, [weaponIdList, pageIdex, maxNumToDisplay])
 
   //for pagination
   const totalShowing = weaponIdList.length !== totalWeaponNum ? `${weaponIdList.length}/${totalWeaponNum}` : `${totalWeaponNum}`
@@ -145,17 +149,13 @@ export default function WeaponDisplay() {
           <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
         </Grid>
         <Grid item>
-          <Typography color="text.secondary">
-            {/* <Trans t={t} i18nKey="showingNum" count={numShowing} value={total} > */}
-            Showing <b>{weaponIdsToShow.length}</b> out of {totalShowing} Weapons
-            {/* </Trans> */}
-          </Typography>
+          <ShowingWeapon numShowing={weaponIdsToShow.length} total={totalShowing} t={t} />
         </Grid>
       </Grid>
     </CardDark>
-    <Grid container spacing={1}>
-      <Suspense fallback={<Grid item xs={12}><Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 500 }} /></Grid>}>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
+    <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 500 }} />}>
+      <Grid container spacing={1} columns={columns}>
+        <Grid item xs={1}>
           <CardDark sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
             <CardContent>
               <Typography sx={{ textAlign: "center" }}>Add New Weapon</Typography>
@@ -177,7 +177,7 @@ export default function WeaponDisplay() {
           </CardDark>
         </Grid>
         {weaponIdsToShow.map(weaponId =>
-          <Grid item key={weaponId} xs={12} sm={6} md={4} lg={3} xl={3} >
+          <Grid item key={weaponId} xs={1} >
             <WeaponCard
               weaponId={weaponId}
               onDelete={deleteWeapon}
@@ -185,7 +185,24 @@ export default function WeaponDisplay() {
               canEquip
             />
           </Grid>)}
-      </Suspense>
-    </Grid>
+      </Grid>
+    </Suspense>
+    {numPages > 1 && <CardDark><CardContent>
+      <Grid container alignItems="flex-end">
+        <Grid item flexGrow={1}>
+          <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
+        </Grid>
+        <Grid item>
+          <ShowingWeapon numShowing={weaponIdsToShow.length} total={totalShowing} t={t} />
+        </Grid>
+      </Grid>
+    </CardContent></CardDark>}
   </Box>
+}
+function ShowingWeapon({ numShowing, total, t }) {
+  return <Typography color="text.secondary">
+    <Trans t={t} i18nKey="showingNum" count={numShowing} value={total} >
+      Showing <b>{{ count: numShowing }}</b> out of {{ value: total }} Weapons
+    </Trans>
+  </Typography>
 }

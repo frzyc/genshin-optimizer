@@ -113,10 +113,8 @@ export function* artSetPerm(_filters: _SetFilter[]): Iterable<RequestFilter> {
       })
       yield* check(newFilters, remainingSlots - 1)
     }
-    {
-      result[slot] = { kind: "exclude", sets: relevantSets }
-      yield* check(filters, remainingSlots - 1)
-    }
+    result[slot] = { kind: "exclude", sets: relevantSets }
+    yield* check(filters, remainingSlots - 1)
     result[slot] = noFilter
   }
   yield* check(allFilters, 5)
@@ -179,7 +177,7 @@ function* splitFilterByIds(_arts: ArtifactsBySlot, filter: RequestFilter, limit:
   }
 }
 
-const noFilter = { kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }
+// const noFilter = { kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }
 
 export function debugCompute(nodes: NumNode[], base: DynStat, arts: ArtifactBuildData[]) {
   const stats = { ...base }
