@@ -125,7 +125,7 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey, tab: strin
         />
       </Box>
       <Box flexGrow={1} sx={{ py: 1, pr: 1 }} display="flex" flexDirection="column" zIndex={1}>
-        <Chip label={<Typography variant="subtitle1">{characterSheet.name}</Typography>} size="small" color={characterEle} />
+        <Chip label={<Typography variant="subtitle1">{characterSheet.name}</Typography>} size="small" color={characterEle} sx={{ opacity: 0.85 }} />
         <Grid container spacing={1} flexWrap="nowrap">
           <Grid item sx={{ textShadow: "0 0 5px gray" }}>
             <Typography component="span" variant="h6" whiteSpace="nowrap" >Lv. {characterLevel}</Typography>

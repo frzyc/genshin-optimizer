@@ -7,11 +7,12 @@ import { ElementKey } from "../Types/consts";
 import ColorText from "./ColoredText";
 import DropdownButton, { DropdownButtonProps } from "./DropdownMenu/DropdownButton";
 import SolidToggleButtonGroup from "./SolidToggleButtonGroup";
+import SqBadge from "./SqBadge";
 import StatIcon, { uncoloredEleIcons } from "./StatIcon";
 const infusionVals = {
   "": <span>No Team Melee Infusion</span>,
-  "pyro": <span >{uncoloredEleIcons.pyro} Pyro Team Melee Infusion</span>,
-  "cryo": <span >{uncoloredEleIcons.cryo} Cryo Team Melee Infusion</span>,
+  "pyro": <span >{uncoloredEleIcons.pyro} <SqBadge>Bennett C6</SqBadge> Fire Ventures with Me</span>,
+  "cryo": <span >{uncoloredEleIcons.cryo} <SqBadge>Chongyun SKill</SqBadge> Spirit Blade: Chonghua's Layered Frost</span>,
 }
 type InfusionAuraDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" | "children">
 export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {

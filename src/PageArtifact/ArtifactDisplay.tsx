@@ -16,6 +16,7 @@ import { initGlobalSettings } from '../GlobalSettings';
 import KeyMap from '../KeyMap';
 import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
+import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import { allSubstats, SubstatKey } from '../Types/artifact';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
@@ -29,10 +30,12 @@ import { probability } from './RollProbability';
 const ArtifactEditor = React.lazy(() => import('./ArtifactEditor'))
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
+
+const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
+const numToShowMap = { xs: 10 - 1, sm: 12 - 1, md: 24 - 1, lg: 24 - 1, xl: 24 - 1 }
 function initialState() {
   return {
     ...initialArtifactSortFilter(),
-    maxNumArtifactsToDisplay: 50,
     effFilter: [...allSubstats] as SubstatKey[],
     probabilityFilter: {} as Dict<SubstatKey, number>,
   }
@@ -49,8 +52,10 @@ export default function ArtifactDisplay() {
     },
     [setState],
   )
+  const brPt = useMediaQueryUp()
+  const maxNumArtifactsToDisplay = numToShowMap[brPt]
 
-  const { effFilter, filterOption, ascending, probabilityFilter, maxNumArtifactsToDisplay } = state
+  const { effFilter, filterOption, ascending, probabilityFilter } = state
   let { sortType } = state
   const showProbability = tcMode && sortType === "probability"
   //force the sortType back to a normal value after exiting TC mode
@@ -143,7 +148,7 @@ export default function ArtifactDisplay() {
           <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
         </Grid>
         <Grid item flexGrow={1}>
-          <ShowingArt count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
+          <ShowingArt numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={4} xl={3} display="flex">
           <Box flexGrow={1} />
@@ -157,7 +162,7 @@ export default function ArtifactDisplay() {
     </CardContent></CardDark>
 
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
-      <Grid container spacing={1} columns={{ xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }} >
+      <Grid container spacing={1} columns={columns} >
         <Grid item xs={1} >
           <NewArtifactCard />
         </Grid>
@@ -179,7 +184,7 @@ export default function ArtifactDisplay() {
           <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
         </Grid>
         <Grid item>
-          <ShowingArt count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
+          <ShowingArt numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
         </Grid>
       </Grid>
     </CardContent></CardDark>}
@@ -216,7 +221,7 @@ function NewArtifactCard() {
   </CardDark>
 }
 
-function ShowingArt({ count, page, onChange, numShowing, total, t }) {
+function ShowingArt({ numShowing, total, t }) {
   return <Typography color="text.secondary">
     <Trans t={t} i18nKey="showingNum" count={numShowing} value={total} >
       Showing <b>{{ count: numShowing }}</b> out of {{ value: total }} Artifacts

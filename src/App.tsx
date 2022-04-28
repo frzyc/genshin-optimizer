@@ -1,5 +1,5 @@
 import { KeyboardArrowUp } from '@mui/icons-material';
-import { Box, Container, Fab, Grid, Skeleton, useScrollTrigger, Zoom } from '@mui/material';
+import { Box, Container, CssBaseline, Fab, Grid, Skeleton, StyledEngineProvider, ThemeProvider, useScrollTrigger, Zoom } from '@mui/material';
 import React, { lazy, Suspense, useMemo, useState } from 'react';
 import { HashRouter, Route, Routes } from "react-router-dom";
 import './App.scss';
@@ -9,6 +9,8 @@ import { DBLocalStorage } from './Database/DBStorage';
 import Footer from './Footer';
 import Header from './Header';
 import './i18n';
+import './index.css';
+import { theme } from './Theme';
 
 const Home = lazy(() => import('./PageHome/HomeDisplay'))
 const ArtifactDisplay = lazy(() => import('./PageArtifact/ArtifactDisplay'))
@@ -56,41 +58,49 @@ function ScrollTop({ children }: { children: React.ReactElement }) {
 function App() {
   const [database, setDatabase] = useState(() => new ArtCharDatabase(new DBLocalStorage(localStorage)))
   const dbContextObj = useMemo(() => ({ database, setDatabase }), [database, setDatabase])
-  return <DatabaseContext.Provider value={dbContextObj}>
-    <HashRouter basename="/">
-      <Grid container direction="column" minHeight="100vh">
-        <Grid item >
-          <Header anchor="back-to-top-anchor" />
-        </Grid>
-        <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1, md: 2 } }}>
-          <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%" }} />}>
-            <Routes>
-              <Route index element={<Home />} />
-              <Route path="/artifact" element={<ArtifactDisplay />} />
-              <Route path="/weapon" element={<WeaponDisplay />} />
-              <Route path="/character/*"  >
-                <Route path=":characterKey/*" element={<CharacterDisplay />} />
-                <Route index element={<CharacterInventory />} />
-              </Route>
-              <Route path="/tools" element={<ToolsDisplay />} />
-              <Route path="/setting" element={<SettingsDisplay />} />
-              <Route path="/doc/*" element={<DocumentationDisplay />} />
-              <Route path="/scanner" element={<ScannerDisplay />} />
-            </Routes>
-          </Suspense>
-        </Container>
-        {/* make sure footer is always at bottom */}
-        <Grid item flexGrow={1} />
-        <Grid item >
-          <Footer />
-        </Grid>
-      </Grid>
-      <ScrollTop >
-        <Fab color="secondary" size="small" aria-label="scroll back to top">
-          <KeyboardArrowUp />
-        </Fab>
-      </ScrollTop>
-    </HashRouter>
-  </DatabaseContext.Provider>
+  return <React.StrictMode>
+    {/* https://mui.com/guides/interoperability/#css-injection-order-2 */}
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <DatabaseContext.Provider value={dbContextObj}>
+          <HashRouter basename="/">
+            <Grid container direction="column" minHeight="100vh">
+              <Grid item >
+                <Header anchor="back-to-top-anchor" />
+              </Grid>
+              <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1, md: 2 } }}>
+                <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%" }} />}>
+                  <Routes>
+                    <Route index element={<Home />} />
+                    <Route path="/artifact" element={<ArtifactDisplay />} />
+                    <Route path="/weapon" element={<WeaponDisplay />} />
+                    <Route path="/character/*"  >
+                      <Route path=":characterKey/*" element={<CharacterDisplay />} />
+                      <Route index element={<CharacterInventory />} />
+                    </Route>
+                    <Route path="/tools" element={<ToolsDisplay />} />
+                    <Route path="/setting" element={<SettingsDisplay />} />
+                    <Route path="/doc/*" element={<DocumentationDisplay />} />
+                    <Route path="/scanner" element={<ScannerDisplay />} />
+                  </Routes>
+                </Suspense>
+              </Container>
+              {/* make sure footer is always at bottom */}
+              <Grid item flexGrow={1} />
+              <Grid item >
+                <Footer />
+              </Grid>
+            </Grid>
+            <ScrollTop >
+              <Fab color="secondary" size="small" aria-label="scroll back to top">
+                <KeyboardArrowUp />
+              </Fab>
+            </ScrollTop>
+          </HashRouter>
+        </DatabaseContext.Provider>
+      </ThemeProvider>
+    </StyledEngineProvider>
+  </React.StrictMode>
 }
 export default App;

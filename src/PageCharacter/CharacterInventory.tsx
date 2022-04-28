@@ -1,9 +1,9 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Calculate, Checkroom, DeleteForever, FactCheck, Groups } from '@mui/icons-material';
-import { Box, Button, CardContent, Divider, Grid, IconButton, Skeleton, Typography } from '@mui/material';
+import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, Typography } from '@mui/material';
 import i18next from 'i18next';
-import React, { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -23,6 +23,11 @@ import { CharacterKey, ElementKey, WeaponTypeKey } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import CharacterCard from '../Components/Character/CharacterCard';
+import { clamp } from '../Util/Util';
+import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
+
+const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
+const numToShowMap = { xs: 4 - 1, sm: 4 - 1, md: 6 - 1, lg: 8 - 1, xl: 8 - 1 }
 
 function initialState() {
   return {
@@ -37,6 +42,18 @@ export default function CharacterInventory(props) {
   const { t } = useTranslation("page_character")
   const { database } = useContext(DatabaseContext)
   const [state, stateDisplatch] = useDBState("CharacterDisplay", initialState)
+  const [pageIdex, setpageIdex] = useState(0)
+  const invScrollRef = useRef<HTMLDivElement>(null)
+  const setPage = useCallback(
+    (e, value) => {
+      invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
+      setpageIdex(value - 1);
+    },
+    [setpageIdex, invScrollRef],
+  )
+
+  const brPt = useMediaQueryUp()
+  const maxNumToDisplay = numToShowMap[brPt]
 
   const [newCharacter, setnewCharacter] = useState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
@@ -66,17 +83,31 @@ export default function CharacterInventory(props) {
   const { element, weaponType } = state
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
   const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
-  const charKeyList = useMemo(() => sortConfigs && filterConfigs && dbDirty &&
-    database._getCharKeys()
+  const { charKeyList, totalCharNum } = useMemo(() => {
+    const chars = database._getCharKeys()
+    const totalCharNum = chars.length
+    if (!sortConfigs || !filterConfigs) return { charKeyList: [], totalCharNum }
+    const charKeyList = database._getCharKeys()
       .filter(filterFunction({ element, weaponType, favorite: "yes" }, filterConfigs))
       .sort(sortFunction(state.sortType, state.ascending, sortConfigs))
       .concat(
         database._getCharKeys()
           .filter(filterFunction({ element, weaponType, favorite: "no" }, filterConfigs))
-          .sort(sortFunction(state.sortType, state.ascending, sortConfigs))),
+          .sort(sortFunction(state.sortType, state.ascending, sortConfigs)))
+    return dbDirty && { charKeyList, totalCharNum }
+  },
     [dbDirty, database, sortConfigs, state.sortType, state.ascending, element, filterConfigs, weaponType])
+
+  const { charKeyListToShow, numPages, currentPageIndex } = useMemo(() => {
+    const numPages = Math.ceil(charKeyList.length / maxNumToDisplay)
+    const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
+    return { charKeyListToShow: charKeyList.slice(currentPageIndex * maxNumToDisplay, (currentPageIndex + 1) * maxNumToDisplay), numPages, currentPageIndex }
+  }, [charKeyList, pageIdex, maxNumToDisplay])
+
+  const totalShowing = charKeyList.length !== totalCharNum ? `${charKeyList.length}/${totalCharNum}` : `${totalCharNum}`
+
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
-    <CardDark sx={{ p: 2 }}>
+    <CardDark ref={invScrollRef} ><CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
       <Grid container spacing={1}>
         <Grid item>
           <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => stateDisplatch({ weaponType })} value={state.weaponType} size="small" />
@@ -90,10 +121,18 @@ export default function CharacterInventory(props) {
             ascending={state.ascending} onChangeAsc={ascending => stateDisplatch({ ascending })} />
         </Grid>
       </Grid>
-    </CardDark>
-    <Grid container spacing={1}>
-      <Suspense fallback={<Grid item xs={12}><Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} /></Grid>}>
-        <Grid item xs={12} sm={6} md={4} lg={3} >
+      <Grid container alignItems="flex-end">
+        <Grid item flexGrow={1}>
+          <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
+        </Grid>
+        <Grid item>
+          <ShowingCharacter numShowing={charKeyListToShow.length} total={totalShowing} t={t} />
+        </Grid>
+      </Grid>
+    </CardContent></CardDark>
+    <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
+      <Grid container spacing={1} columns={columns}>
+        <Grid item xs={1} >
           <CardDark sx={{ height: "100%", minHeight: 400, width: "100%", display: "flex", flexDirection: "column" }}>
             <CardContent>
               <Typography sx={{ textAlign: "center" }}><Trans t={t} i18nKey="addNew" /></Typography>
@@ -114,8 +153,8 @@ export default function CharacterInventory(props) {
             </Box>
           </CardDark>
         </Grid>
-        {!!charKeyList && charKeyList.map(charKey =>
-          <Grid item key={charKey} xs={12} sm={6} md={4} lg={3} >
+        {charKeyListToShow.map(charKey =>
+          <Grid item key={charKey} xs={1} >
             <CharacterCard
               characterKey={charKey}
               onClick={() => navigate(`${charKey}`)}
@@ -149,7 +188,24 @@ export default function CharacterInventory(props) {
               </Box></>}
             />
           </Grid>)}
-      </Suspense>
-    </Grid>
+      </Grid>
+    </Suspense>
+    {numPages > 1 && <CardDark ><CardContent>
+      <Grid container alignItems="flex-end">
+        <Grid item flexGrow={1}>
+          <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
+        </Grid>
+        <Grid item>
+          <ShowingCharacter numShowing={charKeyListToShow.length} total={totalShowing} t={t} />
+        </Grid>
+      </Grid>
+    </CardContent></CardDark>}
   </Box>
+}
+function ShowingCharacter({ numShowing, total, t }) {
+  return <Typography color="text.secondary">
+    <Trans t={t} i18nKey="showingNum" count={numShowing} value={total} >
+      Showing <b>{{ count: numShowing }}</b> out of {{ value: total }} Characters
+    </Trans>
+  </Typography>
 }
