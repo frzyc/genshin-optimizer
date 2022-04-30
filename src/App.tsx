@@ -12,15 +12,15 @@ import './i18n';
 import './index.css';
 import { theme } from './Theme';
 
-const Home = lazy(() => import('./PageHome/HomeDisplay'))
-const ArtifactDisplay = lazy(() => import('./PageArtifact/ArtifactDisplay'))
-const ToolsDisplay = lazy(() => import('./PageTools/ToolsDisplay'))
-const SettingsDisplay = lazy(() => import('./PageSettings/SettingsDisplay'))
-const WeaponDisplay = lazy(() => import('./PageWeapon/WeaponDisplay'))
-const DocumentationDisplay = lazy(() => import('./PageDocumentation/DocumentationDisplay'))
-const ScannerDisplay = lazy(() => import('./PageScanner/ScannerDisplay'))
+const PageHome = lazy(() => import('./PageHome'))
+const PageArtifact = lazy(() => import('./PageArtifact'))
+const PageTools = lazy(() => import('./PageTools'))
+const PageSettings = lazy(() => import('./PageSettings'))
+const PageWeapon = lazy(() => import('./PageWeapon'))
+const PageDocumentation = lazy(() => import('./PageDocumentation'))
+const PageScanner = lazy(() => import('./PageScanner'))
+const PageCharacter = lazy(() => import('./PageCharacter'))
 const CharacterDisplay = lazy(() => import('./PageCharacter/CharacterDisplay'))
-const CharacterInventory = lazy(() => import('./PageCharacter/CharacterInventory'))
 
 function ScrollTop({ children }: { children: React.ReactElement }) {
   const trigger = useScrollTrigger({
@@ -72,17 +72,17 @@ function App() {
               <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1, md: 2 } }}>
                 <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%" }} />}>
                   <Routes>
-                    <Route index element={<Home />} />
-                    <Route path="/artifact" element={<ArtifactDisplay />} />
-                    <Route path="/weapon" element={<WeaponDisplay />} />
+                    <Route index element={<PageHome />} />
+                    <Route path="/artifact" element={<PageArtifact />} />
+                    <Route path="/weapon" element={<PageWeapon />} />
                     <Route path="/character/*"  >
+                      <Route index element={<PageCharacter />} />
                       <Route path=":characterKey/*" element={<CharacterDisplay />} />
-                      <Route index element={<CharacterInventory />} />
                     </Route>
-                    <Route path="/tools" element={<ToolsDisplay />} />
-                    <Route path="/setting" element={<SettingsDisplay />} />
-                    <Route path="/doc/*" element={<DocumentationDisplay />} />
-                    <Route path="/scanner" element={<ScannerDisplay />} />
+                    <Route path="/tools" element={<PageTools />} />
+                    <Route path="/setting" element={<PageSettings />} />
+                    <Route path="/doc/*" element={<PageDocumentation />} />
+                    <Route path="/scanner" element={<PageScanner />} />
                   </Routes>
                 </Suspense>
               </Container>

@@ -6,7 +6,7 @@ import { DatabaseContext } from '../../Database/Database';
 import { DataContext, dataContextObj, TeamData } from '../../DataContext';
 import { uiInput as input } from '../../Formula';
 import KeyMap from '../../KeyMap';
-import CharacterCardPico from '../../PageCharacter/CharacterCardPico';
+import CharacterCardPico from './CharacterCardPico';
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
 import useTeamData from '../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../Types/artifact';

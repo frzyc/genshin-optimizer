@@ -8,7 +8,7 @@ type SolidToggleButtonGroupPropsPartial = {
 
 const SolidToggleButtonGroup = styled(ToggleButtonGroup, {
   shouldForwardProp: (prop) => prop !== "baseColor" && prop !== "selectedColor"
-})<SolidToggleButtonGroupPropsPartial>(({ theme, baseColor = "primary", selectedColor = "success" }) => ({
+})<SolidToggleButtonGroupPropsPartial>(({ theme, baseColor = "secondary", selectedColor = "success" }) => ({
   '& .MuiToggleButtonGroup-grouped': {
     '&': {
       backgroundColor: theme.palette[baseColor].main,
