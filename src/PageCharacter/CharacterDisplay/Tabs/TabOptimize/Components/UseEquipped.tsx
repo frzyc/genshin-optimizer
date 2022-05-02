@@ -74,8 +74,8 @@ export default function UseEquipped({ useEquippedArts, buildSettingsDispatch, di
       <CardContent>
         <CardLight sx={{ mb: 1 }}>
           <CardContent>
-            <Typography gutterBottom><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.desc1">When generating a build,The Optimizer will only consider equipped artifacts from characters below the selected character or those not on the list.</Trans></Typography>
-            <Typography gutterBottom><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.desc2">If the selected character is not on the list, then the Optimizer will only consider equipped artifacts from others characters that are not on the list.</Trans></Typography>
+            <Typography gutterBottom><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.desc1">When generating a build, the Optimizer will only consider equipped artifacts from characters below the current character or those not on the list.</Trans></Typography>
+            <Typography gutterBottom><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.desc2">If the current character is not on the list, the Optimizer will only consider equipped artifacts from others characters that are not on the list.</Trans></Typography>
           </CardContent>
         </CardLight>
         <Box display="flex" flexDirection="column" gap={2}>
@@ -85,7 +85,7 @@ export default function UseEquipped({ useEquippedArts, buildSettingsDispatch, di
             <NewItem onAdd={addPrio} list={equipmentPriority} />
             <Button color="error" onClick={resetPrio} startIcon={<Replay />}><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.clearList">Clear List</Trans></Button>
           </Box>
-          {numUseEquippedChar && <SqBadge color="success"><Typography><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.usingNum" count={numUnlisted}>Using artifacts from <strong>{{ count: numUnlisted }}</strong> unlisted characters</Trans></Typography></SqBadge>}
+          {!!numUseEquippedChar && <SqBadge color="success"><Typography><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.usingNum" count={numUnlisted}>Using artifacts from <strong>{{ count: numUnlisted }}</strong> unlisted characters</Trans></Typography></SqBadge>}
         </Box>
       </CardContent>
     </CardDark ></ModalWrapper>
@@ -174,5 +174,4 @@ function NewItem({ onAdd, list }: { onAdd: (ck: CharacterKey) => void, list: Cha
       <Trans t={t} i18nKey="tabOptimize.useEquipped.modal.add">Add character to list</Trans>
     </Button>
   </>
-
 }

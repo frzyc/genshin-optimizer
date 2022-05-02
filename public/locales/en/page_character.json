@@ -31,8 +31,8 @@
       "title": "Use Equipped Artifacts",
       "modal": {
         "title": "Character Priority for Equipped Artifacts",
-        "desc1": "When generating a build, The Optimizer will only consider equipped artifacts from characters below the selected character or those not on the list.",
-        "desc2": "If the selected character is not on the list, then the Optimizer will only consider equipped artifacts from others characters that are not on the list.",
+        "desc1": "When generating a build, the Optimizer will only consider equipped artifacts from characters below the current character or those not on the list.",
+        "desc2": "If the current character is not on the list, the Optimizer will only consider equipped artifacts from others characters that are not on the list.",
         "usingNum_one": "Using artifacts from <1>{{count}}</1> character",
         "usingNum_other": "Using artifacts from <1>{{count}}</1> unlisted characters",
         "status": {
