@@ -119,7 +119,7 @@ export default function TabOverview() {
           <WeaponCardNano weaponId={character.equippedWeapon} BGComponent={CardLight} onClick={() => navigate("equip")} />
         </Grid>
         {allSlotKeys.map(slotKey =>
-          <Grid item xs={1} >
+          <Grid item key={slotKey} xs={1} >
             <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} slotKey={slotKey} BGComponent={CardLight} onClick={() => navigate("equip")} />
           </Grid>)}
       </Grid>

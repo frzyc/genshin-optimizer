@@ -1,5 +1,4 @@
-import { useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/system";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 export default function useMediaQueryUp() {
   const theme = useTheme();

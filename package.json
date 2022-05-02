@@ -1,7 +1,7 @@
 {
   "homepage": "https://frzyc.github.io/genshin-optimizer/",
   "name": "genshin-optimizer",
-  "version": "8.2.7",
+  "version": "8.3.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.1",

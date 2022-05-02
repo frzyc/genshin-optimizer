@@ -13,7 +13,7 @@ import { DataContext } from '../../../../../DataContext';
 import usePromise from '../../../../../ReactHooks/usePromise';
 import { allArtifactSets, SetNum } from '../../../../../Types/consts';
 
-export default function ArtifactConditionalCard({ disabled }: { disabled?: boolean }) {
+export default function ArtifactSetConditional({ disabled }: { disabled?: boolean }) {
   const { character } = useContext(DataContext)
   const [open, setOpen] = useState(false)
   const onOpen = useCallback(() => setOpen(true), [setOpen])
@@ -22,12 +22,12 @@ export default function ArtifactConditionalCard({ disabled }: { disabled?: boole
     (Object.keys(character.conditional) as any).filter(k =>
       allArtifactSets.includes(k) && Object.keys(character.conditional[k]).length !== 0).length
     , [character])
-  return <CardLight><CardContent>
+  return <>
     <Button fullWidth onClick={onOpen} disabled={disabled} color="info">
       <span>Default Artifact Set Effects Conditionals {!!artifactCondCount && <SqBadge color="success">{artifactCondCount} Selected</SqBadge>}</span>
     </Button>
     <ArtConditionalModal open={open} onClose={onClose} artifactCondCount={artifactCondCount} />
-  </CardContent></CardLight>
+  </>
 }
 
 function ArtConditionalModal({ open, onClose, artifactCondCount }: {

@@ -1,16 +1,12 @@
 import { MenuItem } from "@mui/material"
+import { useTranslation } from "react-i18next"
 import DropdownButton from "../../../../../Components/DropdownMenu/DropdownButton"
 
-const levels = {
-  0: <span>No Lv. assumption</span>,
-  4: <span>Assume at least Lv. 4</span>,
-  8: <span>Assume at least Lv. 8</span>,
-  12: <span>Assume at least Lv. 12</span>,
-  16: <span>Assume at least Lv. 16</span>,
-  20: <span>Assume at least Lv. 20</span>
-} as const
+const levels = [0, 4, 8, 12, 20] as const
 export default function AssumeFullLevelToggle({ mainStatAssumptionLevel = 0, setmainStatAssumptionLevel, disabled }) {
-  return <DropdownButton color={mainStatAssumptionLevel ? "warning" : "primary"} disabled={disabled} title={levels[mainStatAssumptionLevel]}>
-    {Object.entries(levels).map(([key, text]) => <MenuItem key={key} onClick={() => setmainStatAssumptionLevel(parseInt(key))}>{text}</MenuItem>)}
+  const { t } = useTranslation("page_character")
+  return <DropdownButton fullWidth color={mainStatAssumptionLevel ? "success" : "primary"} disabled={disabled}
+    title={mainStatAssumptionLevel ? t("tabOptimize.assumptionLvl.lvl", { lvl: mainStatAssumptionLevel }) : t("tabOptimize.assumptionLvl.no")}>
+    {levels.map((lvl) => <MenuItem key={lvl} onClick={() => setmainStatAssumptionLevel(lvl)}>{lvl ? t("tabOptimize.assumptionLvl.lvl", { lvl }) : t("tabOptimize.assumptionLvl.no")}</MenuItem>)}
   </DropdownButton>
 }

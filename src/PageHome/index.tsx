@@ -175,7 +175,7 @@ export default function PageHome() {
             GO does NOT tell you how to play the game. The information/calculations are intended to be un-opinionated as possible.
           </Typography>
           <Typography variant="body1" color="text.secondary" gutterBottom>
-            GO does NOT supplement your lack of in-game knowledge, inappropriate configuration of the builder can provide misleading results. Please research your characters, and figure out how you want to use them before configuring them on GO. Think of GO as more of a calculator.
+            GO does NOT supplement your lack of in-game knowledge, inappropriate configuration of the optimizer can provide misleading results. Please research your characters, and figure out how you want to use them before configuring them on GO. Think of GO as more of a calculator.
           </Typography>
           <Typography variant="body1" color="text.secondary">
             GO does NOT generally take consideration of Energy Recharge, or team rotations. Please keep those mechanics in mind when you use this tool.

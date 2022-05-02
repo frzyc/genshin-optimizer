@@ -10,8 +10,8 @@ import StatIcon from '../../../../../Components/StatIcon';
 import Artifact from '../../../../../Data/Artifacts/Artifact';
 import KeyMap from '../../../../../KeyMap';
 import { MainStatKey } from '../../../../../Types/artifact';
-import { BuildSetting } from '../../../../../Types/Build';
 import { SlotKey } from '../../../../../Types/consts';
+import { BuildSetting } from '../BuildSetting';
 
 export const artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"] as const
 
@@ -26,7 +26,7 @@ export default function MainStatSelectionCard({ mainStatKeys, onChangeMainStatKe
       const numSel = mainStatKeys[slotKey].length
       return <Box key={slotKey}>
         <Divider />
-        <CardContent>
+        <CardContent sx={{ pt: 1 }}>
           <Box sx={{ display: "flex", gap: 1, alignItems: "center", pb: 1 }}>
             <BootstrapTooltip placement="top" title={<Typography>{t(`slotName.${slotKey}`)}</Typography>}>
               <span>{artifactSlotIcon(slotKey)}</span>

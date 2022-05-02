@@ -65,7 +65,9 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
           <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
             <Artifacts />
             {!isTeammateCard && <Grid container columns={4} spacing={0.75}>
-              <WeaponCardPico weaponId={character.equippedWeapon} />
+              <Grid item xs={1} height="100%">
+                <WeaponCardPico weaponId={character.equippedWeapon} />
+              </Grid>
               {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} index={i} /></Grid>)}
             </Grid>}
             {isTeammateCard && <WeaponFullCard weaponId={character.equippedWeapon} />}
@@ -160,7 +162,9 @@ function Artifacts() {
 
   return <Grid direction="row" container spacing={0.75} columns={5}>
     {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) =>
-      <ArtifactCardPico key={key} artifactObj={art} slotKey={key} />
+      <Grid item key={key} xs={1}>
+        <ArtifactCardPico artifactObj={art} slotKey={key} />
+      </Grid>
     )}
   </Grid>
 }

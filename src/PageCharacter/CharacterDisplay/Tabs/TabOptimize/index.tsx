@@ -1,6 +1,6 @@
 import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { CheckBox, CheckBoxOutlineBlank, Close } from '@mui/icons-material';
+import { Close } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
@@ -29,15 +29,14 @@ import useDBState from '../../../../ReactHooks/useDBState';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../../../Types/artifact';
-import { BuildSetting } from '../../../../Types/Build';
 import { ICachedCharacter } from '../../../../Types/character';
 import { ArtifactSetKey, CharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
 import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
-import { initialBuildSettings } from './BuildSetting';
+import { buildSettingsReducer, initialBuildSettings } from './BuildSetting';
 import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
-import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
+import ArtifactSetConditional from './Components/ArtifactSetConditional';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
@@ -46,52 +45,16 @@ import BuildDisplayItem from './Components/BuildDisplayItem';
 import ChartCard from './Components/ChartCard';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
+import UseEquipped from './Components/UseEquipped';
+import UseExcluded from './Components/UseExcluded';
+import { useOptimizeDBState } from './DBState';
 import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
-
-function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
-  switch (action.type) {
-    case 'mainStatKey': {
-      const { slotKey, mainStatKey } = action
-      const mainStatKeys = { ...state.mainStatKeys }//create a new object to update react dependencies
-
-      if (state.mainStatKeys[slotKey].includes(mainStatKey))
-        mainStatKeys[slotKey] = mainStatKeys[slotKey].filter(k => k !== mainStatKey)
-      else
-        mainStatKeys[slotKey].push(mainStatKey)
-      return { ...state, mainStatKeys }
-    }
-    case 'mainStatKeyReset': {
-      const { slotKey } = action
-      const mainStatKeys = { ...state.mainStatKeys }//create a new object to update react dependencies
-      mainStatKeys[slotKey] = []
-      return { ...state, mainStatKeys }
-    }
-    case `setFilter`: {
-      const { index, key, num = 0 } = action
-      state.setFilters[index] = { key, num }
-      return { ...state, setFilters: [...state.setFilters] }//do this because this is a dependency, so needs to be a "new" array
-    }
-    default:
-      break;
-  }
-  return { ...state, ...action }
-}
-// TODO: use build display state for global settings, like priority list
-// function initialBuildDisplayState(): {
-//   characterKey: CharacterKey | ""
-// } {
-//   return {
-//     characterKey: ""
-//   }
-// }
 
 export default function TabBuild() {
   const { character, character: { key: characterKey } } = useContext(DataContext)
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
+  const [{ equipmentPriority }] = useOptimizeDBState()
   const { database } = useContext(DatabaseContext)
-  // TODO: remove the build displayState on migration? or keep it for priority list or something?
-  // const [{ characterKey }, setBuildSettings] = useDBState("BuildDisplay", initialBuildDisplayState)
-
 
   const [generatingBuilds, setgeneratingBuilds] = useState(false)
   const [generationProgress, setgenerationProgress] = useState(0)
@@ -131,6 +94,12 @@ export default function TabBuild() {
   const { split, setPerms, totBuildNumber } = useMemo(() => {
     if (!characterKey) // Make sure we have all slotKeys
       return { totBuildNumber: 0 }
+    let cantTakeList: CharacterKey[] = []
+    if (useEquippedArts) {
+      const index = equipmentPriority.indexOf(characterKey)
+      if (index < 0) cantTakeList = [...equipmentPriority]
+      else cantTakeList = equipmentPriority.slice(0, index)
+    }
     const arts = database._getArts().filter(art => {
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
@@ -142,13 +111,14 @@ export default function TabBuild() {
 
       if (art.exclude && !useExcludedArts) return false
       if (art.location && !useEquippedArts) return false
+      if (art.location && useEquippedArts && cantTakeList.includes(art.location)) return false
       return true
     })
     const split = compactArtifacts(arts, mainStatAssumptionLevel)
     const setPerms = [...artSetPerm([setFilters.map(({ key, num }) => ({ key, min: num }))])]
     const totBuildNumber = [...setPerms].map(perm => countBuilds(filterArts(split, perm))).reduce((a, b) => a + b, 0)
     return artsDirty && { split, setPerms, totBuildNumber }
-  }, [characterKey, useExcludedArts, useEquippedArts, mainStatKeys, setFilters, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
+  }, [characterKey, useExcludedArts, useEquippedArts, equipmentPriority, mainStatKeys, setFilters, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
 
   // Reset the Alert by setting progress to zero.
   useEffect(() => {
@@ -351,12 +321,12 @@ export default function TabBuild() {
         {/* 2 */}
         <Grid item xs={12} sm={6} lg={3}>
           <CardLight>
-            <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between", flexWrap: "wrap", alignItems: "center" }} >
-              <Typography>Main Stat</Typography>
+            <CardContent  >
+              <Typography gutterBottom>Main Stat</Typography>
               <BootstrapTooltip placement="top" title={<Typography><strong>Level Assumption</strong> changes mainstat value to be at least a specific level. Does not change substats.</Typography>}>
-                <span>
+                <Box>
                   <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={mainStatAssumptionLevel => buildSettingsDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
-                </span>
+                </Box>
               </BootstrapTooltip>
             </CardContent>
             {/* main stat selector */}
@@ -370,46 +340,35 @@ export default function TabBuild() {
 
         {/* 3 */}
         <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
-          <BonusStatsCard />
+
           {/*Minimum Final Stat Filter */}
           <StatFilterCard statFilters={statFilters} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={generatingBuilds} />
 
-          {/* use equipped/excluded */}
-          <CardLight><CardContent>
-            <Grid container spacing={1}>
-              <Grid item flexGrow={1}>
-                <Button fullWidth onClick={() => buildSettingsDispatch({ useEquippedArts: !useEquippedArts })} disabled={generatingBuilds} startIcon={useEquippedArts ? <CheckBox /> : <CheckBoxOutlineBlank />}>
-                  Use Equipped Artifacts
-                </Button>
-              </Grid>
-              <Grid item flexGrow={1}>
-                <Button fullWidth onClick={() => buildSettingsDispatch({ useExcludedArts: !useExcludedArts })} disabled={generatingBuilds} startIcon={useExcludedArts ? <CheckBox /> : <CheckBoxOutlineBlank />}>
-                  Use Excluded Artifacts
-                </Button>
-              </Grid>
-            </Grid>
-          </CardContent></CardLight>
+          <BonusStatsCard />
+
+          {/* use excluded */}
+          <UseExcluded disabled={generatingBuilds} useExcludedArts={useExcludedArts} buildSettingsDispatch={buildSettingsDispatch} artsDirty={artsDirty} />
+
+          {/* use equipped */}
+          <UseEquipped disabled={generatingBuilds} useEquippedArts={useEquippedArts} buildSettingsDispatch={buildSettingsDispatch} />
 
           { /* Level Filter */}
           <CardLight>
             <CardContent sx={{ py: 1 }}>
               Artifact Level Filter
             </CardContent>
-            <Divider />
-            <CardContent>
-              <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh} dark
-                setLow={levelLow => buildSettingsDispatch({ levelLow })}
-                setHigh={levelHigh => buildSettingsDispatch({ levelHigh })}
-                setBoth={(levelLow, levelHigh) => buildSettingsDispatch({ levelLow, levelHigh })}
-                disabled={generatingBuilds}
-              />
-            </CardContent>
+            <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh}
+              setLow={levelLow => buildSettingsDispatch({ levelLow })}
+              setHigh={levelHigh => buildSettingsDispatch({ levelHigh })}
+              setBoth={(levelLow, levelHigh) => buildSettingsDispatch({ levelLow, levelHigh })}
+              disabled={generatingBuilds}
+            />
           </CardLight>
         </Grid>
 
         {/* 4 */}
         <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
-          <ArtifactConditionalCard disabled={generatingBuilds} />
+          <ArtifactSetConditional disabled={generatingBuilds} />
 
           {/* Artifact set pickers */}
           {setFilters.map((setFilter, index) => (index <= setFilters.filter(s => s.key).length) && <ArtifactSetPicker key={index} index={index} setFilters={setFilters}
@@ -507,7 +466,7 @@ function BuildList({ buildsArts, character, characterKey, characterSheet, data, 
   characterDispatch: (action: characterReducerAction) => void
   disabled: boolean,
 }) {
-  // Memoize the build list because calculating/rendering the build list is actually very expensive, which will cause longer builder times.
+  // Memoize the build list because calculating/rendering the build list is actually very expensive, which will cause longer optimization times.
   const list = useMemo(() => <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
     {buildsArts?.map((build, index) => character && characterKey && characterSheet && data && <DataContextWrapper
       key={index + build.join()}

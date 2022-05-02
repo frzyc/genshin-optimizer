@@ -6,8 +6,8 @@ import ArtifactSetDropdown from '../../../../../Components/Artifact/ArtifactSetD
 import CardLight from '../../../../../Components/Card/CardLight';
 import DropdownButton from '../../../../../Components/DropdownMenu/DropdownButton';
 import usePromise from '../../../../../ReactHooks/usePromise';
-import { BuildSetting } from '../../../../../Types/Build';
 import { ArtifactRarity, ArtifactSetKey, SetNum } from '../../../../../Types/consts';
+import { BuildSetting } from '../BuildSetting';
 
 type PickerProps = {
   index: number
@@ -34,27 +34,25 @@ export default function ArtifactSetPicker({ index, setFilters, onChange, disable
   const artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
 
   return <CardLight>
-    <CardContent>
-      <ButtonGroup>
-        {/* Artifact set */}
-        {artifactSheets && <ArtifactSetDropdown hasUnselect selectedSetKey={setKey} artifactSetsByRarity={artifactSetsByRarity as any} disabled={disabled}
-          onChange={setKey => onChange(index, setKey as ArtifactSetKey, parseInt(Object.keys(artifactSheets[setKey]?.setEffects ?? {})[0] as string) ?? 0)}
-          titleTransKey="page_character:forceSet"
-        />}
-        {/* set number */}
-        <DropdownButton title={`${setNum}-set`}
-          disabled={disabled || !setKey || artsAccounted >= 5}
-        >
-          {Object.keys(artifactSheets?.[setKey]?.setEffects ?? {}).map((num: any) => {
-            let artsAccountedOther = setFilters.reduce((accu, cur) => (cur.key && cur.key !== setKey) ? accu + cur.num : accu, 0)
-            return (parseInt(num) + artsAccountedOther <= 5) &&
-              (<MenuItem key={num} onClick={() => onChange(index, setFilters[index].key, parseInt(num) ?? 0)} >
-                {`${num}-set`}
-              </MenuItem>)
-          })}
-        </DropdownButton>
-      </ButtonGroup>
-    </CardContent>
+    <ButtonGroup>
+      {/* Artifact set */}
+      {artifactSheets && <ArtifactSetDropdown hasUnselect selectedSetKey={setKey} artifactSetsByRarity={artifactSetsByRarity as any} disabled={disabled}
+        onChange={setKey => onChange(index, setKey as ArtifactSetKey, parseInt(Object.keys(artifactSheets[setKey]?.setEffects ?? {})[0] as string) ?? 0)}
+        titleTransKey="page_character:forceSet"
+      />}
+      {/* set number */}
+      <DropdownButton title={`${setNum}-set`}
+        disabled={disabled || !setKey || artsAccounted >= 5}
+      >
+        {Object.keys(artifactSheets?.[setKey]?.setEffects ?? {}).map((num: any) => {
+          let artsAccountedOther = setFilters.reduce((accu, cur) => (cur.key && cur.key !== setKey) ? accu + cur.num : accu, 0)
+          return (parseInt(num) + artsAccountedOther <= 5) &&
+            (<MenuItem key={num} onClick={() => onChange(index, setFilters[index].key, parseInt(num) ?? 0)} >
+              {`${num}-set`}
+            </MenuItem>)
+        })}
+      </DropdownButton>
+    </ButtonGroup>
     {!!setKey && <Divider />}
     {!!setKey && <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       {Object.keys(artifactSheets?.[setKey].setEffects ?? {}).map(setNKey => parseInt(setNKey as string) as SetNum).filter(setNkey => setNkey <= setNum).map(setNumKey =>

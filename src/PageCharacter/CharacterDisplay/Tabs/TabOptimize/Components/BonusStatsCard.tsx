@@ -1,7 +1,7 @@
-import { CardContent, Divider, ListItem, Typography } from '@mui/material';
+import { CardContent, Divider, Typography } from '@mui/material';
 import { useContext } from 'react';
 import CardLight from '../../../../../Components/Card/CardLight';
-import { FieldDisplayList, NodeFieldDisplay } from '../../../../../Components/FieldDisplay';
+import { NodeFieldDisplay } from '../../../../../Components/FieldDisplay';
 import { DataContext } from '../../../../../DataContext';
 import { uiInput as input } from '../../../../../Formula';
 import { NumNode } from '../../../../../Formula/type';
@@ -15,8 +15,8 @@ export default function BonusStatsCard() {
       <Typography>Bonus Stats</Typography>
     </CardContent>
     <Divider />
-    <CardContent><FieldDisplayList sx={{ my: 0 }} >
-      {nodes.map(n => <ListItem key={n.info.key}><NodeFieldDisplay node={n} /></ListItem>)}
-    </FieldDisplayList></CardContent>
+    <CardContent>
+      {nodes.map(n => <NodeFieldDisplay key={n.info.key} node={n} />)}
+    </CardContent>
   </CardLight>
 }

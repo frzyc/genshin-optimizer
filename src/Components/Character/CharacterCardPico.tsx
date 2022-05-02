@@ -11,7 +11,7 @@ import useCharacter from '../../ReactHooks/useCharacter';
 import usePromise from '../../ReactHooks/usePromise';
 import { CharacterKey } from '../../Types/consts';
 
-export default function CharacterCardPico({ characterKey = "", index }: { characterKey: CharacterKey | "", index: number }) {
+export default function CharacterCardPico({ characterKey = "", index = -1 }: { characterKey: CharacterKey | "", index?: number }) {
   const teammateSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
   const character = useCharacter(characterKey)
   if (teammateSheet && character) {
