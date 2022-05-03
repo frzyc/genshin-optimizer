@@ -34,9 +34,9 @@ export default function ArtifactSetPicker({ index, setFilters, onChange, disable
   const artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
 
   return <CardLight>
-    <ButtonGroup>
+    <ButtonGroup sx={{ width: "100%" }}>
       {/* Artifact set */}
-      {artifactSheets && <ArtifactSetDropdown hasUnselect selectedSetKey={setKey} artifactSetsByRarity={artifactSetsByRarity as any} disabled={disabled}
+      {artifactSheets && <ArtifactSetDropdown sx={{ flexGrow: 1 }} hasUnselect selectedSetKey={setKey} artifactSetsByRarity={artifactSetsByRarity as any} disabled={disabled}
         onChange={setKey => onChange(index, setKey as ArtifactSetKey, parseInt(Object.keys(artifactSheets[setKey]?.setEffects ?? {})[0] as string) ?? 0)}
         titleTransKey="page_character:forceSet"
       />}
