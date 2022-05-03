@@ -147,7 +147,7 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number, keepArtifacts:
         const greaterEqual = Object.entries(other.values).every(([k, o]) => o >= art.values[k])
         const greater = Object.entries(other.values).some(([k, o]) => o > art.values[k])
         if (greaterEqual && (greater || other.id > art.id) &&
-          (!keepArtifacts.has(art.set) || keepArtifacts.has(other.set)))
+          (!keepArtifacts.has(art.set) || art.set === other.set))
           count++
         return count < numTop
       })
