@@ -32,13 +32,13 @@ export default function StatFilterCard({ statFilters = {}, setStatFilters, disab
       </CardContent>
     </CardLight>
     <Box display="flex" flexDirection="column" gap={0.5}>
-      <StatFilterItem value={undefined} close={undefined} statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} />
       {Object.entries(statFilters).map(([statKey, min]) => {
         return <StatFilterItem key={statKey} statKey={statKey} statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} value={min} close={() => {
           delete statFilters[statKey]
           setStatFilters({ ...statFilters })
         }} />
       })}
+      <StatFilterItem value={undefined} close={undefined} statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} />
     </Box>
   </Box>
 }
