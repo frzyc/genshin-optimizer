@@ -1,18 +1,17 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { constant, percent, subscript, prod, infoMut } from "../../../../Formula/utils"
+import { constant, infoMut, percent, prod, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
-import { st, trans } from '../../../SheetUtil'
+import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "SkywardHarp"
 const data_gen = data_gen_json as WeaponData
-const [tr] = trans("weapon", key)
 
 const critd_s = [.20, .25, .30, .35, .40]
 const dmgPerc = percent(1.25)
@@ -29,7 +28,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
       node: critDMG_
     }, {

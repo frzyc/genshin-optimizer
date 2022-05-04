@@ -22,6 +22,7 @@
   "uses_one": "{{count}} Use",
   "uses_other": "{{count}} Uses",
   "afterDefeatEnemy": "After defeating an opponent",
+  "opponentsDamaged": "Opponents damaged",
   "hitOp": {
     "none": "Hits on opponents",
     "normal": "Normal Attack hits on opponents",
@@ -53,6 +54,8 @@
   "pressCD": "Press CD",
   "holdCD": "Hold CD",
   "triggerCD": "Trigger CD",
+  "press": "Press",
+  "hold": "Hold",
   "eleAbsor": "Elemental Absorption",
   "eleSwirled": "Swirled Element",
   "absorDot": "Absorption DoT",
@@ -85,6 +88,7 @@
   },
   "durationInc": "Duration increase",
   "base": "Base",
+  "conditional": "Conditional",
   "stacks": "Stacks",
   "maxStacks": "Maximum stacks",
   "members": "Members",
@@ -100,5 +104,9 @@
     "electro": "Electro DMG Absorption",
     "dendro": "Dendro DMG Absorption",
     "geo": "Geo DMG Absorption"
-  }
+  },
+  "2set": "2-Set",
+  "4set": "4-Set",
+  "activationStam": "Activation Stamina Consumption",
+  "stamDrain": "Stamina Drain"
 }

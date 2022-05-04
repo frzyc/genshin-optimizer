@@ -3,9 +3,9 @@ import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
-import { cond, st, trans } from '../../../SheetUtil'
+import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
@@ -13,7 +13,6 @@ import icon from './Icon.png'
 const key: WeaponKey = "RoyalGrimoire"
 const data_gen = data_gen_json as WeaponData
 
-const [tr, trm] = trans("weapon", key)
 
 const [condStackPath, condStack] = cond(key, "stack")
 const crit_ = [0.08, 0.1, 0.12, 0.14, 0.16]
@@ -27,17 +26,14 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    conditional: {
-      value: condStack,
-      path: condStackPath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
-      description: conditionaldesc(tr),
-      name: trm("condName"),
-      states: Object.fromEntries(range(1, 5).map(i => [i, {
-        name: st("stack", { count: i }),
-        fields: [{ node: critRate_ }]
-      }]))
-    }
+    value: condStack,
+    path: condStackPath,
+    header: headerTemplate(key, icon, iconAwaken, st("stacks")),
+    name: st("opponentsDamaged"),
+    states: Object.fromEntries(range(1, 5).map(i => [i, {
+      name: st("stack", { count: i }),
+      fields: [{ node: critRate_ }]
+    }]))
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

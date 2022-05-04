@@ -4,14 +4,14 @@ import { equal, percent, subscript, sum } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "Slingshot"
 const data_gen = data_gen_json as WeaponData
-const [tr, trm] = trans("weapon", key)
+const [, trm] = trans("weapon", key)
 
 const normal_atk_increase_s = [.46, .52, .58, .64, .70] // Increased by 10% to counteract the decrease
 const charged_atk_increase_s = [.46, .52, .58, .64, .70]
@@ -33,26 +33,24 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
       node: normal_atk_decrease
     }, {
       node: charged_atk_decrease
     }],
-    conditional: {
-      value: condPassive,
-      path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken),
-      description: conditionaldesc(tr),
-      name: trm("condName"),
-      states: {
-        on: {
-          fields: [{
-            node: normal_atk_increase
-          }, {
-            node: charged_atk_increase
-          }]
-        }
+  }, {
+    value: condPassive,
+    path: condPassivePath,
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    name: trm("condName"),
+    states: {
+      on: {
+        fields: [{
+          node: normal_atk_increase
+        }, {
+          node: charged_atk_increase
+        }]
       }
     }
   }],

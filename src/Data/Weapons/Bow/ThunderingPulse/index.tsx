@@ -5,14 +5,14 @@ import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "ThunderingPulse"
 const data_gen = data_gen_json as WeaponData
-const [tr, trm] = trans("weapon", key)
+const [, trm] = trans("weapon", key)
 
 const atkSrc = [0.20, 0.25, 0.30, 0.35, 0.40]
 const naStack1 = [0.12, 0.15, 0.18, 0.21, 0.24]
@@ -36,23 +36,21 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
       node: atk_,
-    }],
-    conditional: {
-      value: condPassive,
-      path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
-      description: conditionaldesc(tr),
-      name: trm("condName"),
-      states: objectKeyMap(range(1, 3), i => ({
-        name: st("stack", { count: i }),
-        fields: [{
-          node: normal_dmg_
-        }]
-      })),
-    }
+    }]
+  }, {
+    value: condPassive,
+    path: condPassivePath,
+    header: headerTemplate(key, icon, iconAwaken, st("stacks")),
+    name: trm("condName"),
+    states: objectKeyMap(range(1, 3), i => ({
+      name: st("stack", { count: i }),
+      fields: [{
+        node: normal_dmg_
+      }]
+    })),
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

@@ -2,14 +2,13 @@ import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { customRead, equal, greaterEq, percent } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
-import { cond, sgt, trans } from '../../SheetUtil'
-import { ArtifactSheet, conditionalHeader, IArtifactSheet } from '../ArtifactSheet'
+import { cond, sgt, st } from '../../SheetUtil'
+import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
 
 const key: ArtifactSetKey = "NoblesseOblige"
-
-const [tr, trm] = trans("artifact", key)
+const setHeader = setHeaderTemplate(key, icons)
 
 const set2 = greaterEq(input.artSet.NoblesseOblige, 2, percent(0.2))
 
@@ -34,26 +33,23 @@ const sheet: IArtifactSheet = {
   name: "Noblesse Oblige", rarity: [4, 5],
   icons,
   setEffects: {
-    2: { document: [{ fields: [{ node: set2 }] }] },
+    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
     4: {
       document: [{
-        conditional: {
-          teamBuff: true,
-          value: condSet4,
-          path: condSet4Path,
-          header: conditionalHeader(tr, icons.flower),
-          description: tr(`setEffects.4`),
-          name: trm("condName"),
-          states: {
-            on: {
-              fields: [{
-                node: set4
-              }, {
-                text: sgt("duration"),
-                value: 12,
-                unit: "s"
-              }]
-            }
+        header: setHeader(4),
+        teamBuff: true,
+        value: condSet4,
+        path: condSet4Path,
+        name: st("afterUse.burst"),
+        states: {
+          on: {
+            fields: [{
+              node: set4
+            }, {
+              text: sgt("duration"),
+              value: 12,
+              unit: "s"
+            }]
           }
         }
       }]

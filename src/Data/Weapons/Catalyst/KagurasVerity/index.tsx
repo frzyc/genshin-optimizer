@@ -3,16 +3,15 @@ import { input } from '../../../../Formula'
 import { equal, subscript, sum } from "../../../../Formula/utils"
 import { allElements, WeaponKey } from '../../../../Types/consts'
 import { range } from '../../../../Util/Util'
-import { cond, st, trans } from '../../../SheetUtil'
+import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "KagurasVerity"
 const data_gen = data_gen_json as WeaponData
-const [tr] = trans("weapon", key)
 
 const [condPath, condNode] = cond(key, "KaguraDance")
 const totems = range(1, 3)
@@ -30,21 +29,18 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    conditional: {
-      value: condNode,
-      path: condPath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
-      description: conditionaldesc(tr),
-      name: st("afterUse.skill"),
-      states:
-        Object.fromEntries(totems.map(i => [i, {
-          name: st("stack", { count: i }),
-          fields: [{
-            node: skill_dmg_s[i - 1]
-          },
-          ...allElements.map(ele => ({ node: ele_dmg_s[ele] }))]
-        }]))
-    }
+    value: condNode,
+    path: condPath,
+    header: headerTemplate(key, icon, iconAwaken, st("stacks")),
+    name: st("afterUse.skill"),
+    states:
+      Object.fromEntries(totems.map(i => [i, {
+        name: st("stack", { count: i }),
+        fields: [{
+          node: skill_dmg_s[i - 1]
+        },
+        ...allElements.map(ele => ({ node: ele_dmg_s[ele] }))]
+      }]))
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

@@ -3,15 +3,14 @@ import { input } from '../../../../Formula'
 import { lookup, naught, percent, prod, subscript } from "../../../../Formula/utils"
 import { allElements, WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
-import { cond, trans, st } from '../../../SheetUtil'
+import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "LostPrayerToTheSacredWinds"
-const [tr] = trans("weapon", key)
 const data_gen = data_gen_json as WeaponData
 const ele_dmg_s = [0.08, 0.10, 0.12, 0.14, 0.16]
 
@@ -33,19 +32,17 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{ node: moveSPD_ }],
-    conditional: {
-      value: condPassive,
-      path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
-      description: conditionaldesc(tr),
-      name: st("activeCharField"),
-      states: objectKeyMap(range(1, 4), i => ({
-        name: st("seconds", { count: i * 4 }),
-        fields: allElements.map(ele => ({ node: eleDmgStacks[ele] }))
-      }))
-    }
+  }, {
+    value: condPassive,
+    path: condPassivePath,
+    header: headerTemplate(key, icon, iconAwaken, st("stacks")),
+    name: st("activeCharField"),
+    states: objectKeyMap(range(1, 4), i => ({
+      name: st("seconds", { count: i * 4 }),
+      fields: allElements.map(ele => ({ node: eleDmgStacks[ele] }))
+    }))
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

@@ -158,6 +158,7 @@ export class UIData {
       return this.readFirst(path) ?? (node.type === "string" ? illformedStr : illformed)
     } else {
       const nodes = this.prereadAll(path)
+      console.log(node)
       if (nodes.length === 1) return this.computeNode(nodes[0])
       return node.accu === "small"
         ? this._small(nodes as StrNode[])

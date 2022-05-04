@@ -3,16 +3,16 @@ import { input } from '../../../../Formula'
 import { equal, lookup, naught, subscript, sum } from "../../../../Formula/utils"
 import { allElements, WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap } from '../../../../Util/Util'
-import { cond, trans, st } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "MistsplitterReforged"
 const data_gen = data_gen_json as WeaponData
-const [tr, trm] = trans("weapon", key)
+const [, trm] = trans("weapon", key)
 
 const stacks = ["1", "2", "3"] as const
 const passiveRefine = [0.12, 0.15, 0.18, 0.21, 0.24]
@@ -47,26 +47,23 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
-    fields: [ // Passive
-      ...allElements.map((ele) => {
-        return { node: passive_dmg_[`${ele}_dmg_`] }
-      })
-    ],
-    conditional: { // Stacks - Mistsplitter's Emblem
-      value: condNode,
-      path: condPath,
-      name: trm("emblem"),
-      header: conditionalHeader(tr, icon, iconAwaken, trm("emblem")),
-      states: Object.fromEntries(
-        stacks.map(stack => [stack, {
-          name: st("stack", { count: parseInt(stack) }),
-          fields: allElements.map(ele => ({
-            node: stacks_dmg_[`${ele}_dmg_`]
-          }))
-        }])
-      )
-    }
+    header: headerTemplate(key, icon, iconAwaken, st("base")),
+    fields: allElements.map(ele => (
+      { node: passive_dmg_[`${ele}_dmg_`] }
+    ))
+  }, {
+    value: condNode,
+    path: condPath,
+    name: trm("emblem"),
+    header: headerTemplate(key, icon, iconAwaken, st("stacks")),
+    states: Object.fromEntries(
+      stacks.map(stack => [stack, {
+        name: st("stack", { count: parseInt(stack) }),
+        fields: allElements.map(ele => ({
+          node: stacks_dmg_[`${ele}_dmg_`]
+        }))
+      }])
+    )
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

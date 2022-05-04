@@ -1,13 +1,17 @@
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Replay } from '@mui/icons-material';
 import { Box, Button, CardContent, Divider, Grid, Typography } from '@mui/material';
 import React, { useCallback, useContext, useMemo, useState } from 'react';
 import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay';
+import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../Components/Card/CardDark';
 import CardLight from '../../../../Components/Card/CardLight';
 import CloseButton from '../../../../Components/CloseButton';
 import ModalWrapper from '../../../../Components/ModalWrapper';
 import SqBadge from '../../../../Components/SqBadge';
 import { Stars } from '../../../../Components/StarDisplay';
+import { Translate } from '../../../../Components/Translate';
 import { ArtifactSheet } from '../../../../Data/Artifacts/ArtifactSheet';
 import { DataContext } from '../../../../DataContext';
 import usePromise from '../../../../ReactHooks/usePromise';
@@ -33,7 +37,8 @@ export default function ArtifactConditionalCard({ disabled }: { disabled?: boole
 function ArtConditionalModal({ open, onClose, artifactCondCount }: {
   open: boolean, onClose: () => void, artifactCondCount: number
 }) {
-  const { character, characterDispatch } = useContext(DataContext)
+  const dataContext = useContext(DataContext)
+  const { character, characterDispatch } = dataContext
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const resetArtConds = useCallback(() => {
     const conditional = Object.fromEntries(Object.entries(character.conditional).filter(([k, v]) => !allArtifactSets.includes(k as any)))
@@ -65,20 +70,35 @@ function ArtConditionalModal({ open, onClose, artifactCondCount }: {
       </CardLight>
       <Grid container spacing={1}>
         {artSetKeyList.map(setKey => {
-          const sheet = artifactSheets[setKey]
+          const sheet: ArtifactSheet = artifactSheets[setKey]
           // Don't display if no conditional in artifact
-          if (!Object.values(sheet.setEffects).some(entry => entry.document && entry.document.some(d => d.conditional))) return null
+          if (!Object.values(sheet.setEffects).some(entry => entry.document && entry.document.some(d => "path" in d))) return null
           return <Grid item key={setKey} xs={6} lg={4}>
             <CardLight sx={{ height: "100%" }}>
               <Box className={`grad-${sheet.rarity[0]}star`} width="100%" sx={{ display: "flex" }} >
                 <Box component="img" src={sheet.defIconSrc} sx={{ height: 100, width: "auto" }} />
                 <Box sx={{ flexGrow: 1, px: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                  <Typography variant="h6">{artifactSheets?.[setKey].name ?? ""}</Typography>
-                  <Typography variant="subtitle1">{sheet.rarity.map((ns, i) => <span key={ns}>{ns}<Stars stars={1} /> {i < (sheet.rarity.length - 1) ? "/ " : null}</span>)}</Typography>
+                  <Typography variant="h6">{sheet.name ?? ""}</Typography>
+                  <Box display="flex" gap={1}>
+                    <Typography variant="subtitle1">{sheet.rarity.map((ns, i) => <span key={ns}>{ns} <Stars stars={1} /> {i < (sheet.rarity.length - 1) ? "/ " : null}</span>)}</Typography>
+                    {/* If there is ever a 2-set conditional, we will need to change this */}
+                    <BootstrapTooltip placement="top" title={<Typography><Translate ns={`artifact_${setKey}_gen`} key18={"setEffects.4"} /></Typography>}>
+                      <Box component="span" sx={{ cursor: "help" }}>
+                        <FontAwesomeIcon icon={faInfoCircle} />
+                      </Box>
+                    </BootstrapTooltip>
+                  </Box>
                 </Box>
               </Box>
               <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                {Object.keys(sheet.setEffects).map(setNumKey => <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} />)}
+                {Object.keys(sheet.setEffects)
+                  .filter(setNumKey => sheet.setEffects[setNumKey]?.document
+                    .some(doc => "path" in doc)
+                  )
+                  .map(setNumKey =>
+                    <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} hideHeader />
+                  )
+                }
               </CardContent>
             </CardLight>
           </Grid>
