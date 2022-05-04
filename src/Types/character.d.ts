@@ -1,5 +1,5 @@
 import { EleEnemyResKey, StatKey } from "../KeyMap";
-import { BuildSetting } from "./Build";
+import { BuildSetting } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting";
 import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey } from "./consts";
 import { IConditionalValues } from "./IConditional";
 import { DocumentSection } from "./sheet";

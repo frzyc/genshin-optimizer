@@ -6,7 +6,7 @@
     "talent": "Talents",
     "equip": "Equipment",
     "buffs": "Team Buffs",
-    "build": "Build"
+    "optimize": "Optimize"
   },
   "selectLevel": "Select Level",
   "formulas": "Formulas",
@@ -16,5 +16,35 @@
   "delete": "Delete Character",
   "teammates": "Teammates",
   "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Character",
-  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Characters"
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Characters",
+  "tabOptimize": {
+    "assumptionLvl": {
+      "no": "No Lv. Assumption",
+      "lvl": "Assume at least Lv. {{lvl}}"
+    },
+    "useExcluded": {
+      "title": "Use Excluded Artifacts",
+      "usingNum_one": "Using <1>{{count}}</1> excluded artifacts",
+      "usingNum_other": "Using <1>{{count}}</1> excluded artifacts"
+    },
+    "useEquipped": {
+      "title": "Use Equipped Artifacts",
+      "modal": {
+        "title": "Character Priority for Equipped Artifacts",
+        "desc1": "When generating a build, the Optimizer will only consider equipped artifacts from characters below the current character or those not on the list.",
+        "desc2": "If the current character is not on the list, the Optimizer will only consider equipped artifacts from others characters that are not on the list.",
+        "usingNum_one": "Using artifacts from <1>{{count}}</1> character",
+        "usingNum_other": "Using artifacts from <1>{{count}}</1> unlisted characters",
+        "status": {
+          "use": "Use artifacts",
+          "dont": "Don't use artifacts",
+          "curr": "Current character"
+        },
+        "add": "Add character to list",
+        "clearList": "Clear List"
+      },
+      "usingNum_one": "Using from <1>{{count}}</1> character",
+      "usingNum_other": "Using from <1>{{count}}</1> characters"
+    }
+  }
 }

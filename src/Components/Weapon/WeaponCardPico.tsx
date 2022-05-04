@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { useContext, useMemo } from 'react';
 import WeaponSheet from '../../Data/Weapons/WeaponSheet';
 import { DatabaseContext } from '../../Database/Database';
@@ -24,27 +24,25 @@ export default function WeaponCardPico({ weaponId }: { weaponId: string }) {
     <WeaponStatPico node={UIData.get(input.weapon.sub)} />
   </Box>
 
-  return <Grid item xs={1} height="100%">
-    <CardDark sx={{ height: "100%", maxWidth: 128, position: "relative", display: "flex", flexDirection: "column", }}>
-      <Box display="flex" flexDirection="column" alignContent="flex-end" className={`grad-${weaponSheet.rarity}star`}>
-        <WeaponNameTooltip sheet={weaponSheet} addlText={tooltipAddl}>
-          <Box
-            component="img"
-            src={weaponSheet.img}
-            maxWidth="100%"
-            maxHeight="100%"
-            sx={{ mt: "auto" }}
-          />
-        </WeaponNameTooltip>
-      </Box>
-      <Typography variant='subtitle1' sx={{ position: "absolute", lineHeight: 1, pointerEvents: "none" }}>
-        <SqBadge color="primary">{WeaponSheet.getLevelString(weapon)}</SqBadge>
-      </Typography>
-      {weaponSheet.hasRefinement && <Typography variant='subtitle1' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, pointerEvents: "none" }}>
-        <SqBadge color="secondary">R{weapon.refinement}</SqBadge>
-      </Typography>}
-    </CardDark>
-  </Grid>
+  return <CardDark sx={{ height: "100%", maxWidth: 128, position: "relative", display: "flex", flexDirection: "column", }}>
+    <Box display="flex" flexDirection="column" alignContent="flex-end" className={`grad-${weaponSheet.rarity}star`}>
+      <WeaponNameTooltip sheet={weaponSheet} addlText={tooltipAddl}>
+        <Box
+          component="img"
+          src={weaponSheet.img}
+          maxWidth="100%"
+          maxHeight="100%"
+          sx={{ mt: "auto" }}
+        />
+      </WeaponNameTooltip>
+    </Box>
+    <Typography variant='subtitle1' sx={{ position: "absolute", lineHeight: 1, pointerEvents: "none" }}>
+      <SqBadge color="primary">{WeaponSheet.getLevelString(weapon)}</SqBadge>
+    </Typography>
+    {weaponSheet.hasRefinement && <Typography variant='subtitle1' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, pointerEvents: "none" }}>
+      <SqBadge color="secondary">R{weapon.refinement}</SqBadge>
+    </Typography>}
+  </CardDark>
 }
 function WeaponStatPico({ node }: { node: NodeDisplay }) {
   if (!node.info.key) return null
