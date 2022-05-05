@@ -150,8 +150,8 @@ interface ICharacterTemplate {
 }
 export const charTemplates = (cKey: CharacterKey, wKey: WeaponTypeKey, assets: Partial<Record<TalentSheetElementKey, string>>, travelerEle?: ElementKey): ICharacterTemplate => {
   const [tr] = cKey === "Traveler"
-  ? [(key: string) => <Translate  ns="char_Traveler_gen" key18={`${travelerEle}.${key}`} />]
-  : trans("char", cKey)
+    ? [(key: string) => <Translate  ns="char_Traveler_gen" key18={`${travelerEle}.${key}`} />]
+    : trans("char", cKey)
   assets.auto = Assets.weaponTypes[wKey]
   return {
     talentTemplate: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => talentTemplate(talentKey, tr, assets[talentKey] ?? "", docSections),
