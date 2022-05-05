@@ -1,7 +1,7 @@
 import { WeaponData } from 'pipeline'
 import { WeaponKey } from '../../../../Types/consts'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
+import WeaponSheet, { IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
@@ -15,6 +15,6 @@ const sheet: IWeaponSheet = {
   ...data_gen as WeaponData,
   icon,
   iconAwaken,
-  document: [{ header: headerTemplate(key, icon, iconAwaken), fields: [] }],
+  document: [],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)
