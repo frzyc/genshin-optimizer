@@ -23,9 +23,7 @@ function FieldDisplay({ field, component }: { field: IFieldDisplay, component?: 
   const canShow = useMemo(() => field?.canShow?.(data) ?? true, [field, data])
   if (!canShow) return null
   if ("node" in field) {
-    console.log(field.node)
     const node = data.get(field.node)
-    console.log(node)
     if (node.isEmpty) return null
     if (oldData) {
       const oldNode = oldData.get(field.node)
