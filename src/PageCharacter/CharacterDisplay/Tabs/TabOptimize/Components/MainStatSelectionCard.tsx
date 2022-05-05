@@ -6,11 +6,11 @@ import { useTranslation } from 'react-i18next';
 import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import SqBadge from '../../../../../Components/SqBadge';
-import StatIcon from '../../../../../Components/StatIcon';
+import StatIcon, { uncoloredEleIcons } from '../../../../../Components/StatIcon';
 import Artifact from '../../../../../Data/Artifacts/Artifact';
 import KeyMap from '../../../../../KeyMap';
 import { MainStatKey } from '../../../../../Types/artifact';
-import { SlotKey } from '../../../../../Types/consts';
+import { allElementsWithPhy, SlotKey } from '../../../../../Types/consts';
 import { BuildSetting } from '../BuildSetting';
 
 export const artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"] as const
@@ -41,12 +41,15 @@ export default function MainStatSelectionCard({ mainStatKeys, onChangeMainStatKe
           </Box>
           <Grid container spacing={1}>
             {Artifact.slotMainStats(slotKey).map((mainStatKey, i) => {
-              const selected = mainStatKeys[slotKey].includes(mainStatKey)
+              const element = allElementsWithPhy.find(ele => mainStatKey.includes(ele))
+              const color = mainStatKeys[slotKey].includes(mainStatKey)
+                ? element ?? "success"
+                : "secondary"
               return <Grid item key={mainStatKey} flexGrow={1} xs={i < 3 ? 4 : undefined} >
                 <BootstrapTooltip placement="top" title={<Typography><strong>{KeyMap.getArtStr(mainStatKey)}</strong></Typography>} disableInteractive>
-                  <Button fullWidth size="small" color={selected ? "success" : "secondary"} sx={{ fontSize: "1.2em", height: "100%", pointerEvents: disabled ? "none" : undefined, cursor: disabled ? "none" : undefined }}
+                  <Button fullWidth size="small" color={color} sx={{ fontSize: "1.2em", height: "100%", pointerEvents: disabled ? "none" : undefined, cursor: disabled ? "none" : undefined }}
                     onClick={() => onChangeMainStatKey(slotKey, mainStatKey)}>
-                    {StatIcon[mainStatKey]}
+                    {element ? uncoloredEleIcons[element] : StatIcon[mainStatKey]}
                   </Button>
                 </BootstrapTooltip>
               </Grid>
