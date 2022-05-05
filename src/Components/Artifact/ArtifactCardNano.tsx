@@ -1,5 +1,5 @@
 import { BusinessCenter } from "@mui/icons-material";
-import { Box, CardActionArea, Chip, Typography } from "@mui/material";
+import { alpha, Box, CardActionArea, Chip, Typography, useTheme } from "@mui/material";
 import { useCallback } from "react";
 import Assets from "../../Assets/Assets";
 import Artifact from "../../Data/Artifacts/Artifact";
@@ -9,14 +9,14 @@ import KeyMap, { cacheValueString } from "../../KeyMap";
 import useArtifact from "../../ReactHooks/useArtifact";
 import usePromise from "../../ReactHooks/usePromise";
 import { ICachedSubstat } from "../../Types/artifact";
-import { SlotKey } from "../../Types/consts";
+import { allElementsWithPhy, SlotKey } from "../../Types/consts";
 import { clamp } from "../../Util/Util";
 import BootstrapTooltip from "../BootstrapTooltip";
 import CardDark from "../Card/CardDark";
 import ColorText from "../ColoredText";
 import ConditionalWrapper from "../ConditionalWrapper";
 import ImgIcon from "../Image/ImgIcon";
-import StatIcon from "../StatIcon";
+import StatIcon, { uncoloredEleIcons } from "../StatIcon";
 import ArtifactSetSlotTooltip from "./ArtifactSetSlotTooltip";
 
 type Data = {
@@ -32,6 +32,7 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
   const art = useArtifact(artifactId)
   const sheet = usePromise(ArtifactSheet.get(art?.setKey), [art])
   const actionWrapperFunc = useCallback(children => <CardActionArea onClick={onClick} sx={{ height: "100%" }}>{children}</CardActionArea>, [onClick],)
+  const theme = useTheme()
   if (!art) return <BGComponent sx={{ display: "flex", height: "100%", alignItems: "center", justifyContent: "center" }}>
     <Box component="img" src={Assets.slot[pSlotKey]} sx={{ width: "25%", height: "auto", opacity: 0.7 }} />
   </BGComponent>
@@ -40,6 +41,8 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
   const mainStatUnit = KeyMap.unit(mainStatKey)
   const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
+  const element = allElementsWithPhy.find(ele => art.mainStatKey.includes(ele))
+  const color = element ? alpha(theme.palette[element].main, 0.6) : alpha(theme.palette.secondary.main, 0.6)
   return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}  >
     <Box display="flex" height="100%">
       <Box className={`grad-${rarity}star`} sx={{ position: "relative", flexGrow: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }} >
@@ -59,10 +62,10 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
           }} />}
         </Box>
         {/* mainstats */}
-        <Chip size="small" sx={{ position: "absolute", bottom: 0, mb: 1, backgroundColor: "rgba(130, 130, 130, 0.6)" }}
+        <Chip size="small" sx={{ position: "absolute", bottom: 0, mb: 1, backgroundColor: color }}
           label={<Typography variant="h6" sx={{ display: "flex", gap: 1, px: 1, zIndex: 1 }}>
             <BootstrapTooltip placement="top" title={<Typography>{KeyMap.getArtStr(mainStatKey)}</Typography>} disableInteractive>
-              <ColorText color={KeyMap.getVariant(mainStatKey)}>{StatIcon[mainStatKey]}</ColorText>
+              <span>{element ? uncoloredEleIcons[element] : StatIcon[mainStatKey]}</span>
             </BootstrapTooltip>
             <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
           </Typography>} />

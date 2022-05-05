@@ -9,6 +9,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Theme, useTheme } from '@mui/material/styles';
 import KeyMap from '../../KeyMap';
 import { allMainStatKeys, MainStatKey } from '../../Types/artifact';
+import { allElementsWithPhy } from '../../Types/consts';
 import StatIcon from '../StatIcon';
 
 
@@ -28,6 +29,7 @@ export default function ArtifactMainStatMultipleSelectChip({ mainStatKeys, setMa
     const { target: { value }, } = event
     setMainStatKeys((typeof value === 'string' ? value.split(',') : value) as MainStatKey[]);// On autofill we get a stringified value.
   };
+
   return (
     <div>
       <FormControl fullWidth>
@@ -41,9 +43,12 @@ export default function ArtifactMainStatMultipleSelectChip({ mainStatKeys, setMa
           input={<OutlinedInput id="main-stat-select-multiple-chip" label="Main Stats" />}
           renderValue={(selected) => (
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-              {selected.map((value) =>
-                <Chip key={value} icon={StatIcon[value]} label={KeyMap.getArtStr(value)} />
-              )}
+              {selected.map((value) => {
+                const element = allElementsWithPhy.find(ele => value.includes(ele))
+                const color = element ? element : undefined
+
+                return <Chip key={value} icon={StatIcon[value]} label={KeyMap.getArtStr(value)} color={color}/>
+              })}
             </Box>
           )}
         >
