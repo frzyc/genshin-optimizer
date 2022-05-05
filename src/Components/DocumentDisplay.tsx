@@ -1,14 +1,12 @@
-import { faInfoCircle } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Box, CardHeader, Divider, Typography } from "@mui/material"
 import { useContext } from "react"
 import { DataContext } from "../DataContext"
 import { DocumentSection, IDocumentFields, IDocumentHeader, IDocumentText } from "../Types/sheet"
 import { evalIfFunc } from "../Util/Util"
-import BootstrapTooltip from "./BootstrapTooltip"
 import CardDark from "./Card/CardDark"
 import ConditionalDisplay from "./Conditional/ConditionalDisplay"
 import FieldsDisplay from "./FieldDisplay"
+import InfoTooltip from "./InfoTooltip"
 
 type DocumentDisplayProps = {
   sections: DocumentSection[],
@@ -62,11 +60,7 @@ export function HeaderDisplay({ header, hideDesc, hideDivider }: { header: IDocu
   let { icon, title, action } = header
   icon = evalIfFunc(icon, data)
   const description = !hideDesc && evalIfFunc(header.description, data)
-  const displayTitle = hideDesc ? title : <span>{title} <BootstrapTooltip placement="top" title={<Typography>{description}</Typography>}>
-    <Box component="span" sx={{ cursor: "help" }}>
-      <FontAwesomeIcon icon={faInfoCircle} />
-    </Box>
-  </BootstrapTooltip></span>
+  const displayTitle = hideDesc ? title : <span>{title} <InfoTooltip title={<Typography>{description}</Typography>} /></span>
   return <>
     <CardHeader avatar={icon} title={displayTitle} action={action} titleTypographyProps={{ variant: "subtitle2" }} />
     {!hideDivider && <Divider />}

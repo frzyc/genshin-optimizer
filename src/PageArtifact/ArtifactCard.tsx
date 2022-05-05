@@ -1,15 +1,15 @@
-import { faBan, faChartLine, faEdit, faInfoCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBan, faChartLine, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Lock, LockOpen } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardActions, CardContent, Chip, Grid, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
 import React, { lazy, Suspense, useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
-import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardLight from '../Components/Card/CardLight';
 import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton';
 import LocationName from '../Components/Character/LocationName';
 import ColorText from '../Components/ColoredText';
+import InfoTooltip from '../Components/InfoTooltip';
 import SqBadge from '../Components/SqBadge';
 import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
@@ -59,20 +59,16 @@ export default function ArtifactCard({ artifactId, artifactObj, onDelete, mainSt
   const artifactValid = maxEfficiency !== 0
   const slotName = sheet?.getSlotName(slotKey) || "Unknown Piece Name"
   const slotDesc = sheet?.getSlotDesc(slotKey)
-  const slotDescTooltip = slotDesc && <BootstrapTooltip placement="top" title={<Typography>{slotDesc}</Typography>}>
-    <span><FontAwesomeIcon icon={faInfoCircle} /></span>
-  </BootstrapTooltip>
+  const slotDescTooltip = slotDesc && <InfoTooltip title={<Typography>{slotDesc}</Typography>} />
   const setEffects = sheet?.setEffects
-  const setDescTooltip = sheet && setEffects && <BootstrapTooltip placement="top" title={
+  const setDescTooltip = sheet && setEffects && <InfoTooltip title={
     <span>
       {Object.keys(setEffects).map(setNumKey => <span key={setNumKey}>
         <Typography variant="h6"><SqBadge color="success">{t(`setEffectNum`, { setNum: setNumKey })}</SqBadge></Typography>
         <Typography>{sheet.setEffectDesc(setNumKey as any)}</Typography>
       </span>)}
     </span>
-  }>
-    <span><FontAwesomeIcon icon={faInfoCircle} /></span>
-  </BootstrapTooltip>
+  } />
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     <Suspense fallback={false}>
       <ArtifactEditor

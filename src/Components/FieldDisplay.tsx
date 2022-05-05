@@ -1,5 +1,3 @@
-import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Groups } from "@mui/icons-material";
 import { Box, List, ListItem, styled, Typography } from "@mui/material";
 import React, { useContext, useMemo } from 'react';
@@ -8,8 +6,8 @@ import { NodeDisplay } from "../Formula/api";
 import KeyMap, { valueString } from "../KeyMap";
 import { IBasicFieldDisplay, IFieldDisplay } from "../Types/IFieldDisplay";
 import { evalIfFunc } from "../Util/Util";
-import BootstrapTooltip from "./BootstrapTooltip";
 import ColorText from "./ColoredText";
+import QuestionTooltip from "./QuestionTooltip";
 import StatIcon from "./StatIcon";
 
 export default function FieldsDisplay({ fields }: { fields: IFieldDisplay[] }) {
@@ -60,9 +58,7 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: 
     const diff = node.value - oldValue
     fieldVal = <span>{valueString(oldValue, node.unit)}{diff > 0.0001 || diff < -0.0001 ? <ColorText color={diff > 0 ? "success" : "error"}> {diff > 0 ? "+" : ""}{valueString(diff, node.unit)}</ColorText> : ""}</span>
   } else fieldVal = valueString(node.value, node.unit)
-  const formulaTextOverlay = !!node.formula && <BootstrapTooltip placement="top" title={<Typography>{fieldFormulaText}</Typography>}>
-    <Box component="span" sx={{ cursor: "help" }}><FontAwesomeIcon icon={faQuestionCircle} /></Box>
-  </BootstrapTooltip>
+  const formulaTextOverlay = !!node.formula && <QuestionTooltip title={<Typography>{fieldFormulaText}</Typography>} />
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1 }} component={component} >
     <Typography color={`${node.info.variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{!!isTeamBuff && <Groups />}{icon}{fieldText}{suffix}</Typography>
     <Typography sx={{ display: "flex", gap: 1, alignItems: "center" }} >{fieldVal}{formulaTextOverlay}</Typography>

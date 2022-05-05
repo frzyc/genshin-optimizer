@@ -1,13 +1,11 @@
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Replay } from '@mui/icons-material';
 import { Box, Button, CardContent, Divider, Grid, Typography } from '@mui/material';
 import React, { useCallback, useContext, useMemo, useState } from 'react';
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay';
-import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import CloseButton from '../../../../../Components/CloseButton';
+import InfoTooltip from '../../../../../Components/InfoTooltip';
 import ModalWrapper from '../../../../../Components/ModalWrapper';
 import SqBadge from '../../../../../Components/SqBadge';
 import { Stars } from '../../../../../Components/StarDisplay';
@@ -82,11 +80,7 @@ function ArtConditionalModal({ open, onClose, artifactCondCount }: {
                   <Box display="flex" gap={1}>
                     <Typography variant="subtitle1">{sheet.rarity.map((ns, i) => <span key={ns}>{ns} <Stars stars={1} /> {i < (sheet.rarity.length - 1) ? "/ " : null}</span>)}</Typography>
                     {/* If there is ever a 2-set conditional, we will need to change this */}
-                    <BootstrapTooltip placement="top" title={<Typography><Translate ns={`artifact_${setKey}_gen`} key18={"setEffects.4"} /></Typography>}>
-                      <Box component="span" sx={{ cursor: "help" }}>
-                        <FontAwesomeIcon icon={faInfoCircle} />
-                      </Box>
-                    </BootstrapTooltip>
+                    <InfoTooltip title={<Typography><Translate ns={`artifact_${setKey}_gen`} key18={"setEffects.4"} /></Typography>} />
                   </Box>
                 </Box>
               </Box>
