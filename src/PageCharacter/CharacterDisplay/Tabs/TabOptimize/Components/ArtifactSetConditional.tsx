@@ -12,10 +12,10 @@ import { Stars } from '../../../../../Components/StarDisplay';
 import { Translate } from '../../../../../Components/Translate';
 import { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
 import { DataContext, dataContextObj } from '../../../../../DataContext';
+import { UIData } from '../../../../../Formula/uiData';
+import { constant } from '../../../../../Formula/utils';
 import usePromise from '../../../../../ReactHooks/usePromise';
 import { allArtifactSets, SetNum } from '../../../../../Types/consts';
-import { constant } from '../../../../../Formula/utils';
-import { UIData } from '../../../../../Formula/uiData';
 import { objectKeyMap } from '../../../../../Util/Util';
 
 export default function ArtifactSetConditional({ disabled }: { disabled?: boolean }) {
@@ -94,7 +94,7 @@ function ArtConditionalModal({ open, onClose, artifactCondCount }: {
                       .some(doc => "path" in doc)
                     )
                     .map(setNumKey =>
-                      <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} hideHeader />
+                      <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} hideHeader conditionalsOnly />
                     )
                   }
                 </CardContent>

@@ -8,13 +8,14 @@ type Data = {
   setKey: ArtifactSetKey,
   setNumKey: SetNum,
   hideHeader?: boolean,
+  conditionalsOnly?: boolean
 }
 
-export default function SetEffectDisplay({ setKey, setNumKey, hideHeader = false }: Data) {
+export default function SetEffectDisplay({ setKey, setNumKey, hideHeader = false, conditionalsOnly = false }: Data) {
   const sheet = usePromise(ArtifactSheet.get(setKey), [setKey])
   if (!sheet) return null
 
-  const document = sheet.setEffectDocument(setNumKey)
+  const document = conditionalsOnly ? sheet.setEffectDocument(setNumKey)?.filter(section => "path" in section) : sheet.setEffectDocument(setNumKey)
   return <Box display="flex" flexDirection="column">
     {document ? <DocumentDisplay sections={document} hideHeader={hideHeader} /> : null}
   </Box>
