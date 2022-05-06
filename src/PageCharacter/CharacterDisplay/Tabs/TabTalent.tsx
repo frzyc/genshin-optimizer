@@ -145,10 +145,11 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
   }
   const talentSheet = characterSheet.getTalentOfKey(talentKey, data.get(input.charEle).value as ElementKey | undefined)
 
-  const hideHeader = (conditional: DocumentSection): boolean => {
-    let condAction = conditional.header?.action
-    if (condAction && (typeof condAction !== "string")) {
-      const key: string = condAction.props.children.props.key18
+  // Hide header if the header matches the current talent
+  const hideHeader = (section: DocumentSection): boolean => {
+    let headerAction = section.header?.action
+    if (headerAction && (typeof headerAction !== "string")) {
+      const key: string = headerAction.props.children.props.key18
       return key.includes(talentKey)
     }
     return false
