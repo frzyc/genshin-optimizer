@@ -11,9 +11,12 @@ import SqBadge from '../../../../../Components/SqBadge';
 import { Stars } from '../../../../../Components/StarDisplay';
 import { Translate } from '../../../../../Components/Translate';
 import { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
-import { DataContext } from '../../../../../DataContext';
+import { DataContext, dataContextObj } from '../../../../../DataContext';
 import usePromise from '../../../../../ReactHooks/usePromise';
 import { allArtifactSets, SetNum } from '../../../../../Types/consts';
+import { constant } from '../../../../../Formula/utils';
+import { UIData } from '../../../../../Formula/uiData';
+import { objectKeyMap } from '../../../../../Util/Util';
 
 export default function ArtifactSetConditional({ disabled }: { disabled?: boolean }) {
   const { character } = useContext(DataContext)
@@ -84,16 +87,18 @@ function ArtConditionalModal({ open, onClose, artifactCondCount }: {
                   </Box>
                 </Box>
               </Box>
-              <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                {Object.keys(sheet.setEffects)
-                  .filter(setNumKey => sheet.setEffects[setNumKey]?.document
-                    .some(doc => "path" in doc)
-                  )
-                  .map(setNumKey =>
-                    <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} hideHeader />
-                  )
-                }
-              </CardContent>
+              <DataContext.Provider value={fakeData(dataContext) /* TODO: Do we need to Memo this? */}>
+                <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                  {Object.keys(sheet.setEffects)
+                    .filter(setNumKey => sheet.setEffects[setNumKey]?.document
+                      .some(doc => "path" in doc)
+                    )
+                    .map(setNumKey =>
+                      <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} hideHeader />
+                    )
+                  }
+                </CardContent>
+              </DataContext.Provider>
             </CardLight>
           </Grid>
         })}
@@ -104,4 +109,11 @@ function ArtConditionalModal({ open, onClose, artifactCondCount }: {
       <CloseButton large onClick={onClose} />
     </CardContent>
   </CardDark></ModalWrapper>
+}
+
+function fakeData(currentContext: dataContextObj): dataContextObj {
+  return {
+    ...currentContext,
+    data: new UIData({ ...currentContext.data.data[0], artSet: objectKeyMap(allArtifactSets, _ => constant(4)) }, undefined)
+  }
 }
