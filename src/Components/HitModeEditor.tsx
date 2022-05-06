@@ -12,7 +12,7 @@ import { uncoloredEleIcons } from "./StatIcon";
 const infusionVals = {
   "": <span>No Team Melee Infusion</span>,
   "pyro": <span >{uncoloredEleIcons.pyro} <SqBadge>Bennett C6</SqBadge> Fire Ventures with Me</span>,
-  "cryo": <span >{uncoloredEleIcons.cryo} <SqBadge>Chongyun SKill</SqBadge> Spirit Blade: Chonghua's Layered Frost</span>,
+  "cryo": <span >{uncoloredEleIcons.cryo} <SqBadge>Chongyun Skill</SqBadge> Spirit Blade: Chonghua's Layered Frost</span>,
 }
 type InfusionAuraDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" | "children">
 export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {
@@ -38,25 +38,25 @@ export function ReactionToggle(props: ReactionToggleProps) {
     {(charEleKey === "pyro" || infusion === "pyro") && <ToggleButton value="pyro_vaporize"  >
       <ColorText color="vaporize">
         Vaporize(Pyro)
-        {<Chip sx={{ ml: 0.5 }} size="small" color="vaporize" label={<span>{uncoloredEleIcons.hydro}+{uncoloredEleIcons.pyro}</span>} />}
+        {<Chip sx={{ ml: 0.5, cursor: "pointer" }} size="small" color="vaporize" label={<span>{uncoloredEleIcons.hydro}+{uncoloredEleIcons.pyro}</span>} />}
       </ColorText>
     </ToggleButton >}
     {(charEleKey === "pyro" || infusion === "pyro") && <ToggleButton value={"pyro_melt"}  >
       <ColorText color="melt">
         Melt(Pyro)
-        {<Chip sx={{ ml: 0.5 }} size="small" color="melt" label={<span>{uncoloredEleIcons.cryo}+{uncoloredEleIcons.pyro}</span>} />}
+        {<Chip sx={{ ml: 0.5, cursor: "pointer" }} size="small" color="melt" label={<span>{uncoloredEleIcons.cryo}+{uncoloredEleIcons.pyro}</span>} />}
       </ColorText>
     </ToggleButton >}
     {(charEleKey === "hydro" || infusion === "hydro") && <ToggleButton value={"hydro_vaporize"}  >
       <ColorText color="vaporize">
         Vaporize(Hydro)
-        {<Chip sx={{ ml: 0.5 }} size="small" color="vaporize" label={<span>{uncoloredEleIcons.pyro}+{uncoloredEleIcons.hydro}</span>} />}
+        {<Chip sx={{ ml: 0.5, cursor: "pointer" }} size="small" color="vaporize" label={<span>{uncoloredEleIcons.pyro}+{uncoloredEleIcons.hydro}</span>} />}
         </ColorText>
     </ToggleButton >}
     {(charEleKey === "cryo" || infusion === "cryo") && <ToggleButton value={"cryo_melt"}  >
       <ColorText color="melt">
         Melt(Cryo)
-        {<Chip sx={{ ml: 0.5 }} size="small" color="melt" label={<span>{uncoloredEleIcons.pyro}+{uncoloredEleIcons.cryo}</span>} />}
+        {<Chip sx={{ ml: 0.5, cursor: "pointer" }} size="small" color="melt" label={<span>{uncoloredEleIcons.pyro}+{uncoloredEleIcons.cryo}</span>} />}
         </ColorText>
     </ToggleButton >}
   </SolidToggleButtonGroup>
