@@ -108,5 +108,21 @@
   "2set": "2-Set",
   "4set": "4-Set",
   "activationStam": "Activation Stamina Consumption",
-  "stamDrain": "Stamina Drain"
+  "stamDrain": "Stamina Drain",
+  "talents": {
+    "auto": "Auto",
+    "skill": "Skill",
+    "burst": "Burst",
+    "passive": "Passive",
+    "passive1": "Ascension 1",
+    "passive2": "Ascension 4",
+    "passive3": "Passive",
+    "sprint": "Sprint",
+    "constellation1": "C1",
+    "constellation2": "C2",
+    "constellation3": "C3",
+    "constellation4": "C4",
+    "constellation5": "C5",
+    "constellation6": "C6"
+  }
 }

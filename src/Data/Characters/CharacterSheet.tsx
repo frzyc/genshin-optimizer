@@ -9,7 +9,7 @@ import { TalentSheet, TalentSheetElement, TalentSheetElementKey } from "../../Ty
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "../../Types/consts";
 import { DocumentSection, IDocumentConditional, IDocumentConditionalBase, IDocumentFields, IDocumentHeader } from "../../Types/sheet";
 import { ascensionMaxLevel } from "../LevelData";
-import { trans } from "../SheetUtil";
+import { st, trans } from "../SheetUtil";
 
 const characterSheets = import('.').then(imp => imp.default)
 
@@ -91,7 +91,7 @@ const talentHeader = (talentKey: TalentSheetElementKey, tr: (string) => Displaya
   return {
     title: tr(`${talentKey}.name`),
     icon: <ImgIcon size={2} sx={{ m: -1 }} src={img} />,
-    action: <SqBadge color="success">{talentStrMap[talentKey]}</SqBadge>,
+    action: <SqBadge color="success">{st(`talents.${talentKey}`)}</SqBadge>,
     description: tr(`${talentKey}.description`),
   }
 }
@@ -159,22 +159,4 @@ export const charTemplates = (cKey: CharacterKey, wKey: WeaponTypeKey, assets: P
     fieldsTemplate: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => fieldsTemplate(talentKey, partialFields),
     conditionalTemplate: (talentKey: TalentSheetElementKey, partialCond: IDocumentConditionalBase) => conditionalTemplate(talentKey, partialCond, tr, assets[talentKey] ?? "")
   }
-}
-
-
-const talentStrMap: Record<TalentSheetElementKey, string> = {
-  auto: "Auto",
-  skill: "Skill",
-  burst: "Burst",
-  passive: "Passive",
-  passive1: "Ascension 1",
-  passive2: "Ascension 4",
-  passive3: "Passive",
-  sprint: "Sprint",
-  constellation1: "C1",
-  constellation2: "C2",
-  constellation3: "C3",
-  constellation4: "C4",
-  constellation5: "C5",
-  constellation6: "C6"
 }

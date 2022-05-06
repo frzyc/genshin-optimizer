@@ -12,7 +12,7 @@ type DocumentDisplayProps = {
   sections: DocumentSection[],
   teamBuffOnly?: boolean,
   hideDesc?: boolean,
-  hideHeader?: boolean,
+  hideHeader?: boolean | ((section: DocumentSection) => boolean),
 }
 
 export default function DocumentDisplay({ sections, teamBuffOnly, hideDesc = false, hideHeader = false }: DocumentDisplayProps) {
@@ -29,7 +29,7 @@ export default function DocumentDisplay({ sections, teamBuffOnly, hideDesc = fal
   return <Box display="flex" flexDirection="column" gap={1}>{sectionDisplays}</Box>
 }
 
-function SectionDisplay({ section, hideDesc = false, hideHeader = false }: { section: DocumentSection, hideDesc?: boolean, hideHeader?: boolean }) {
+function SectionDisplay({ section, hideDesc = false, hideHeader = false }: { section: DocumentSection, hideDesc?: boolean, hideHeader?: boolean | ((section: DocumentSection) => boolean) }) {
   if ("fields" in section) {
     return <FieldsSectionDisplay section={section} hideDesc={hideDesc} hideHeader={hideHeader} />
   } else if ("path" in section) {
@@ -39,9 +39,9 @@ function SectionDisplay({ section, hideDesc = false, hideHeader = false }: { sec
   }
 }
 
-function FieldsSectionDisplay({ section, hideDesc, hideHeader }: { section: IDocumentFields, hideDesc?: boolean, hideHeader?: boolean }) {
+function FieldsSectionDisplay({ section, hideDesc, hideHeader }: { section: IDocumentFields, hideDesc?: boolean, hideHeader?: boolean | ((section: DocumentSection) => boolean) }) {
   return <CardDark>
-    {!hideHeader && section.header &&
+    {!evalIfFunc(hideHeader, section) && section.header &&
       <HeaderDisplay header={section.header} hideDesc={hideDesc} hideDivider={section.fields.length === 0} />
     }
     <FieldsDisplay fields={section.fields} />
@@ -55,7 +55,7 @@ function TextSectionDisplay({ section }: { section: IDocumentText }) {
   </div>
 }
 
-export function HeaderDisplay({ header, hideDesc, hideDivider }: { header: IDocumentHeader, hideDesc?: boolean, hideDivider?: boolean }) {
+export function HeaderDisplay({ header, hideDesc, hideDivider }: { header: IDocumentHeader, hideDesc?: boolean, hideDivider?: boolean | ((section: DocumentSection) => boolean) }) {
   const { data } = useContext(DataContext)
   let { icon, title, action } = header
   icon = evalIfFunc(icon, data)

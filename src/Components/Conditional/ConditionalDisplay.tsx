@@ -1,7 +1,8 @@
 import { CardContent } from "@mui/material"
 import { useContext } from "react"
 import { DataContext } from "../../DataContext"
-import { IDocumentConditional } from "../../Types/sheet"
+import { DocumentSection, IDocumentConditional } from "../../Types/sheet"
+import { evalIfFunc } from "../../Util/Util"
 import CardDark from "../Card/CardDark"
 import { HeaderDisplay } from "../DocumentDisplay"
 import FieldsDisplay from "../FieldDisplay"
@@ -9,7 +10,7 @@ import ConditionalSelector from "./ConditionalSelector"
 
 type ConditionalDisplayProps = {
   conditional: IDocumentConditional,
-  hideHeader?: boolean,
+  hideHeader?: boolean | ((section: DocumentSection) => boolean),
   hideDesc?: boolean,
 }
 
@@ -19,7 +20,7 @@ export default function ConditionalDisplay({ conditional, hideHeader = false, hi
 
   const fields = condVal && conditional.states[condVal]?.fields
   return <CardDark>
-    {!hideHeader && <HeaderDisplay header={conditional.header} hideDesc={hideDesc} />}
+    {!evalIfFunc(hideHeader, conditional) && <HeaderDisplay header={conditional.header} hideDesc={hideDesc} />}
     {!!conditional.name && <CardContent>
       <ConditionalSelector
         conditional={conditional}
