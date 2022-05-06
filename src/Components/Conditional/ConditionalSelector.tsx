@@ -33,13 +33,13 @@ export default function ConditionalSelector({ conditional, conditionalValue, dis
   if (Object.keys(conditional.states).length === 1) {
     const [stateKey, st] = Object.entries(conditional.states)[0]
     const badge = getStateBadge(st.name)
-    return <Button fullWidth size="small" color={conditionalValue ? "success" : "primary"} onClick={() => setConditional(conditionalValue ? undefined : stateKey)} disabled={disabled} startIcon={conditionalValue ? <CheckBox /> : <CheckBoxOutlineBlank />}>
+    return <Button fullWidth size="small" sx={{ borderRadius: 0 }} color={conditionalValue ? "success" : "primary"} onClick={() => setConditional(conditionalValue ? undefined : stateKey)} disabled={disabled} startIcon={conditionalValue ? <CheckBox /> : <CheckBoxOutlineBlank />}>
       {condName} {badge}
     </Button>
   } else {//complex conditional
     const state = conditionalValue ? conditional.states[conditionalValue] : undefined
     const badge = state ? getStateBadge(state.name) : <SqBadge color="secondary">Not Active</SqBadge>
-    return <DropdownButton fullWidth size="small" color={conditionalValue ? "success" : "primary"} title={<span>{condName} {badge}</span>} disabled={disabled}>
+    return <DropdownButton fullWidth size="small" sx={{ borderRadius: 0 }} color={conditionalValue ? "success" : "primary"} title={<span>{condName} {badge}</span>} disabled={disabled}>
       <MenuItem onClick={() => setConditional()} selected={!state} disabled={!state}>
         <span>Not Active</span>
       </MenuItem>

@@ -21,7 +21,7 @@ export default function ConditionalDisplay({ conditional, hideHeader = false, hi
   const fields = condVal && conditional.states[condVal]?.fields
   return <CardDark>
     {!evalIfFunc(hideHeader, conditional) && <HeaderDisplay header={conditional.header} hideDesc={hideDesc} />}
-    {!!conditional.name && <CardContent>
+    {!!conditional.name && <CardContent sx={{ p: 0, "&:last-child": { pb: 0 } }}>
       <ConditionalSelector
         conditional={conditional}
         conditionalValue={condVal} />
