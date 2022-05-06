@@ -1,5 +1,7 @@
 {
   "burst": "Ceremonial Garment",
   "c2": "Characters with 50% or less HP",
+  "c2SkillHeal_": "<strong>Kurage's Oath</strong> Healing Bonus",
+  "c2BurstHeal_": "<strong>Nereid's Ascension</strong> Healing Bonus",
   "c6": "After Normal and Charged Attacks heal a character with 80% or more HP"
 }

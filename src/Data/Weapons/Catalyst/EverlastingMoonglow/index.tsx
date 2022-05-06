@@ -1,17 +1,16 @@
 import type { WeaponData } from 'pipeline'
-import icon from './Icon.png'
-import iconAwaken from './AwakenIcon.png'
-import { prod, subscript } from "../../../../Formula/utils"
-import { dataObjForWeaponSheet } from '../../util'
 import { input } from '../../../../Formula'
-import data_gen_json from './data_gen.json'
-import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import { prod, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { st, trans } from '../../../SheetUtil'
+import { dataObjForWeaponSheet } from '../../util'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
+import iconAwaken from './AwakenIcon.png'
+import data_gen_json from './data_gen.json'
+import icon from './Icon.png'
 
 const key: WeaponKey = "EverlastingMoonglow"
 const data_gen = data_gen_json as WeaponData
-const [tr] = trans("weapon", key)
 
 const hp_conv = [0.01, 0.015, 0.02, 0.025, 0.03]
 const [, trm] = trans("weapon", key)
@@ -29,7 +28,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
       node: heal_
     }, {

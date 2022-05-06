@@ -1,11 +1,10 @@
-import { Box, Button, Card, CardContent, CardHeader, Divider, Grid, Typography, useMediaQuery } from '@mui/material';
+import { Box, Button, Card, CardContent, Divider, Grid, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from "@mui/system";
 import { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import SetEffectDisplay from '../../../Components/Artifact/SetEffectDisplay';
 import CardLight from '../../../Components/Card/CardLight';
 import StatDisplayComponent from '../../../Components/Character/StatDisplayComponent';
 import DocumentDisplay from "../../../Components/DocumentDisplay";
-import ImgIcon from '../../../Components/Image/ImgIcon';
 import { ArtifactSheet } from '../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../Database/Database';
 import { DataContext } from '../../../DataContext';
@@ -52,8 +51,6 @@ function TabEquip() {
   const grxl = useMediaQuery(theme.breakpoints.up('xl'));
   const artifactFields = useMemo(() => artifactSheets && setEffects && Object.entries(setEffects).map(([setKey, setNumKeyArr]) =>
     <CardLight key={setKey} sx={{ flexGrow: 1, }} >
-      <CardHeader avatar={<ImgIcon size={2} sx={{ m: -1 }} src={artifactSheets[setKey].defIconSrc} />} title={artifactSheets[setKey].name} titleTypographyProps={{ variant: "subtitle1" }} />
-      <Divider />
       <CardContent >
         <Grid container spacing={1} flexDirection="column" height="100%" >
           <Grid item display="flex" flexDirection="column" gap={2}>
@@ -62,7 +59,7 @@ function TabEquip() {
         </Grid>
       </CardContent>
     </CardLight>), [artifactSheets, setEffects])
-  const weaponDoc = useMemo(() => weaponSheet.document && <CardLight><CardContent><DocumentDisplay sections={weaponSheet.document} /></CardContent></CardLight>, [weaponSheet])
+  const weaponDoc = useMemo(() => weaponSheet.document.length > 0 && <CardLight><CardContent><DocumentDisplay sections={weaponSheet.document} /></CardContent></CardLight>, [weaponSheet])
   return <Box display="flex" flexDirection="column" gap={1}>
     <Suspense fallback={false}>
       <WeaponDisplayCard

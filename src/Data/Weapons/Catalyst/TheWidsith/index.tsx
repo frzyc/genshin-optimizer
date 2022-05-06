@@ -1,11 +1,10 @@
 import { WeaponData } from 'pipeline'
-import { Translate } from '../../../../Components/Translate'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, trans } from '../../../SheetUtil'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
@@ -44,53 +43,50 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    conditional: {
-      value: condPassive,
-      path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken),
-      description: conditionaldesc(tr),
-      name: <Translate ns="weapon_TheWidsith_gen" key18="passiveName" />,
-      states: {
-        aria: {
-          name: trm("aria"),
-          fields: [{
-            node: anemo_dmg_
-          }, {
-            node: cryo_dmg_
-          }, {
-            node: electro_dmg_
-          }, {
-            node: geo_dmg_
-          }, {
-            node: hydro_dmg_
-          }, {
-            node: pyro_dmg_
-          }, {
-            text: sgt("duration"),
-            value: 10,
-            unit: "s"
-          }]
-        },
-        interlude: {
-          name: trm("interlude"),
-          fields: [{
-            node: eleMas
-          }, {
-            text: sgt("duration"),
-            value: 10,
-            unit: "s"
-          }]
-        },
-        recitative: {
-          name: trm("recitative"),
-          fields: [{
-            node: atk_
-          }, {
-            text: sgt("duration"),
-            value: 10,
-            unit: "s"
-          }]
-        }
+    value: condPassive,
+    path: condPassivePath,
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    name: tr("passiveName"),
+    states: {
+      aria: {
+        name: trm("aria"),
+        fields: [{
+          node: anemo_dmg_
+        }, {
+          node: cryo_dmg_
+        }, {
+          node: electro_dmg_
+        }, {
+          node: geo_dmg_
+        }, {
+          node: hydro_dmg_
+        }, {
+          node: pyro_dmg_
+        }, {
+          text: sgt("duration"),
+          value: 10,
+          unit: "s"
+        }]
+      },
+      interlude: {
+        name: trm("interlude"),
+        fields: [{
+          node: eleMas
+        }, {
+          text: sgt("duration"),
+          value: 10,
+          unit: "s"
+        }]
+      },
+      recitative: {
+        name: trm("recitative"),
+        fields: [{
+          node: atk_
+        }, {
+          text: sgt("duration"),
+          value: 10,
+          unit: "s"
+        }]
       }
     }
   }],

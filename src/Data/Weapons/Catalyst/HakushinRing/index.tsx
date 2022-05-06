@@ -1,19 +1,18 @@
 import { WeaponData } from 'pipeline'
 import ColorText from '../../../../Components/ColoredText'
-import { Translate } from '../../../../Components/Translate'
 import { input } from '../../../../Formula'
 import { equal, lookup, naught, subscript, unequal } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, trans } from '../../../SheetUtil'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "HakushinRing"
 const data_gen = data_gen_json as WeaponData
-const [tr] = trans("weapon", key)
+const [, trm] = trans("weapon", key)
 
 const refinementEleBonusSrc = [0.1, 0.125, 0.15, 0.175, 0.2]
 
@@ -44,17 +43,15 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    conditional: {
-      value: condPassive,
+    value: condPassive,
       path: condPassivePath,
-      name: <Translate ns="weapon_HakushinRing" key18="afterElectroReaction" />,
+      name: trm("afterElectroReaction"),
       canShow: unequal(input.activeCharKey, input.charKey, 1),
       teamBuff: true,
-      header: conditionalHeader(tr, icon, iconAwaken),
-      description: conditionaldesc(tr),
+      header: headerTemplate(key, icon, iconAwaken, st("conditional")),
       states: {
         anemo: {
-          name: <ColorText color="anemo">{sgt("reaction.swirl")}</ColorText>,
+          name: <ColorText color="swirl">{sgt("reaction.swirl")}</ColorText>,
           fields: [{
             node: anemo_dmg_
           }, {
@@ -67,7 +64,7 @@ const sheet: IWeaponSheet = {
           }]
         },
         cryo: {
-          name: <ColorText color="cryo">{sgt("reaction.Superconduct")}</ColorText>,
+          name: <ColorText color="superconduct">{sgt("reaction.Superconduct")}</ColorText>,
           fields: [{
             node: cryo_dmg_
           }, {
@@ -80,7 +77,7 @@ const sheet: IWeaponSheet = {
           }]
         },
         geo: {
-          name: <ColorText color="geo">{sgt("reaction.crystallize")}</ColorText>,
+          name: <ColorText color="crystallize">{sgt("reaction.crystallize")}</ColorText>,
           fields: [{
             node: geo_dmg_
           }, {
@@ -93,7 +90,7 @@ const sheet: IWeaponSheet = {
           }]
         },
         pyro: {
-          name: <ColorText color="pyro">{sgt("reaction.overloaded")}</ColorText>,
+          name: <ColorText color="overload">{sgt("reaction.overloaded")}</ColorText>,
           fields: [{
             node: pyro_dmg_
           }, {
@@ -106,7 +103,7 @@ const sheet: IWeaponSheet = {
           }]
         },
         hydro: {
-          name: <ColorText color="hydro">{sgt("reaction.electrocharged")}</ColorText>,
+          name: <ColorText color="electrocharged">{sgt("reaction.electrocharged")}</ColorText>,
           fields: [{
             node: hydro_dmg_
           }, {
@@ -119,7 +116,6 @@ const sheet: IWeaponSheet = {
           }]
         }
       }
-    }
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

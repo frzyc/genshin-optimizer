@@ -14,6 +14,7 @@ import { NodeDisplay } from '../../../Formula/uiData';
 import useCharacterReducer from "../../../ReactHooks/useCharacterReducer";
 import { TalentSheetElementKey } from "../../../Types/character";
 import { ElementKey } from "../../../Types/consts";
+import { DocumentSection } from "../../../Types/sheet";
 import { range } from "../../../Util/Util";
 
 const talentSpacing = {
@@ -144,6 +145,16 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
   }
   const talentSheet = characterSheet.getTalentOfKey(talentKey, data.get(input.charEle).value as ElementKey | undefined)
 
+  // Hide header if the header matches the current talent
+  const hideHeader = (section: DocumentSection): boolean => {
+    let headerAction = section.header?.action
+    if (headerAction && (typeof headerAction !== "string")) {
+      const key: string = headerAction.props.children.props.key18
+      return key.includes(talentKey)
+    }
+    return false
+  }
+
   return <CardLight sx={{ height: "100%" }}>
     {header}
     <CardContent>
@@ -159,7 +170,7 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
         </Grid>
       </ConditionalWrapper>
       {/* Display document sections */}
-      {talentSheet?.sections ? <DocumentDisplay sections={talentSheet.sections} hideDesc /> : null}
+      {talentSheet?.sections ? <DocumentDisplay sections={talentSheet.sections} hideDesc hideHeader={hideHeader} /> : null}
     </CardContent>
   </CardLight>
 }

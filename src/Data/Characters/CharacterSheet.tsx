@@ -1,14 +1,15 @@
+import Assets from "../../Assets/Assets";
 import ImgIcon from "../../Components/Image/ImgIcon";
-import { ascensionMaxLevel } from "../LevelData";
-import { Data } from "../../Formula/type";
+import SqBadge from "../../Components/SqBadge";
+import { Translate } from "../../Components/Translate";
+import { input } from "../../Formula";
+import { Data, NumNode } from "../../Formula/type";
+import { greaterEq } from "../../Formula/utils";
 import { TalentSheet, TalentSheetElement, TalentSheetElementKey } from "../../Types/character";
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "../../Types/consts";
-import SqBadge from "../../Components/SqBadge";
-import Assets from "../../Assets/Assets";
-import IConditional from "../../Types/IConditional";
-import { IFieldDisplay } from "../../Types/IFieldDisplay";
-import { DocumentSection } from "../../Types/sheet";
-import { UIData } from "../../Formula/uiData";
+import { DocumentConditional, DocumentConditionalBase, DocumentSection, IDocumentFields, IDocumentHeader } from "../../Types/sheet";
+import { ascensionMaxLevel } from "../LevelData";
+import { st, trans } from "../SheetUtil";
 
 const characterSheets = import('.').then(imp => imp.default)
 
@@ -76,72 +77,86 @@ export default class CharacterSheet {
   static getLevelString = (level: number, ascension: number): string =>
     `${level}/${ascensionMaxLevel[ascension]}`
 }
-/*
-TODO: refactor stage 1 this function to be
-talentTemplate(talentKey, tr, img, docsection:DocumentSection[]): TalentSheetElement
-*/
-export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[], conditional?: IConditional, additionalSections?: DocumentSection[]): TalentSheetElement => ({
+
+const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, docSections?: DocumentSection[]): TalentSheetElement => ({
   name: tr(`${talentKey}.name`),
   img,
   sections: [
-    {
-      ...sectionTemplate(talentKey, tr, img, fields, conditional, undefined, false, false),
-      text: talentKey !== "auto" ? tr(`${talentKey}.description`) : undefined
-    },
-    ...(additionalSections || [])],
+    ...(talentKey !== "auto" ? [{ text: tr(`${talentKey}.description`) }] : []),
+    ...(docSections || []),
+  ],
 })
 
-/*
-TODO: refactor stage 1 this function to be
-sectionTemplate(docSection:DocumentSection): DocumentSection
-*/
-export const sectionTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, fields?: IFieldDisplay[], conditional?: IConditional, fieldsCanShow?: (data: UIData) => boolean, teamBuff?: boolean, showFieldsHeader?: boolean): DocumentSection => ({
-  fieldsHeader: showFieldsHeader ? conditionalHeader(talentKey, tr, img) : undefined,
-  fields,
-  canShow: fieldsCanShow,
-  teamBuff,
-  conditional: conditional
-    ? {
-      ...conditional,
-      header: conditional.header ? conditional.header : conditionalHeader(talentKey, tr, img),
-      description: conditional.description ? conditional.description : tr(`${talentKey}.description`)
-    }
-    : undefined,
-})
-
-/*
-TODO: refactor stage 2: merge the above stage 1 functions by creating a templategenerator function:
-charTemplates(cKey:CharacterKey, assets:Partial<Record<TalentSheetElementKey,string>>):{
-  tr: (key:string) => Displayable
-  trm: (key:string, value?:object) => Displayable
-  talentTemplate: (talentKey, docsection:DocumentSection[]) => TalentSheetElement
-  sectionTemplate: (Partial<DocumentSection>) => DocumentSection
-  conditionalTemplate:(talentKey,conditional:Partial<Iconditional>) => Iconditional
-}
-*/
-
-const talentStrMap: Record<TalentSheetElementKey, string> = {
-  auto: "Auto",
-  skill: "Skill",
-  burst: "Burst",
-  passive: "Passive",
-  passive1: "Ascension 1",
-  passive2: "Ascension 4",
-  passive3: "Passive",
-  sprint: "Sprint",
-  constellation1: "C1",
-  constellation2: "C2",
-  constellation3: "C3",
-  constellation4: "C4",
-  constellation5: "C5",
-  constellation6: "C6"
-}
-export const conditionalHeader = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string): IConditional["header"] => {
+const talentHeader = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string): IDocumentHeader => {
   return {
     title: tr(`${talentKey}.name`),
     icon: <ImgIcon size={2} sx={{ m: -1 }} src={img} />,
-    action: <SqBadge color="success">{talentStrMap[talentKey]}</SqBadge>,
+    action: <SqBadge color="success">{st(`talents.${talentKey}`)}</SqBadge>,
+    description: tr(`${talentKey}.description`),
   }
 }
 
-export const normalSrc = (weaponKey: WeaponTypeKey) => Assets.weaponTypes[weaponKey]
+const headerTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, partialSection: DocumentSection): DocumentSection => ({
+  ...partialSection,
+  header: talentHeader(talentKey, tr, img),
+  canShow: canShowTemplate(talentKey, partialSection.canShow),
+})
+
+const fieldsTemplate = (talentKey: TalentSheetElementKey, partialFields: IDocumentFields): IDocumentFields => ({
+  ...partialFields,
+  canShow: canShowTemplate(talentKey, partialFields.canShow),
+})
+
+const conditionalTemplate = (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase, tr: (string) => Displayable, img: string): DocumentConditional => ({
+  ...partialCond,
+  header: { ...talentHeader(talentKey, tr, img), ...partialCond.header },
+  canShow: canShowTemplate(talentKey, partialCond.canShow),
+})
+
+const canShowTalentsNodes: Partial<Record<TalentSheetElementKey, NumNode>> = {
+  "passive1": greaterEq(input.asc, 1, 1),
+  "passive2": greaterEq(input.asc, 4, 1),
+  "constellation1": greaterEq(input.constellation, 1, 1),
+  "constellation2": greaterEq(input.constellation, 2, 1),
+  "constellation3": greaterEq(input.constellation, 3, 1),
+  "constellation4": greaterEq(input.constellation, 4, 1),
+  "constellation5": greaterEq(input.constellation, 5, 1),
+  "constellation6": greaterEq(input.constellation, 6, 1),
+}
+function canShowTemplate(talentKey: TalentSheetElementKey, canShow: NumNode | undefined): NumNode | undefined {
+  if (!canShowTalentsNodes[talentKey]) {
+    return canShow
+  }
+  let compareVal
+  let val
+  if (["passive1", "passive2"].includes(talentKey)) {
+    compareVal = input.asc
+    val = +talentKey.slice(-1) === 1 ? 1 : 4
+  } else {
+    compareVal = input.constellation
+    val = +talentKey.slice(-1)
+  }
+  // Try to reuse the base canShow node when possible for caching performance
+  return canShow
+    ? greaterEq(compareVal, val, canShow ? canShow : 1)
+    : canShowTalentsNodes[talentKey]
+}
+
+interface ICharacterTemplate {
+  talentTemplate: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => TalentSheetElement
+  headerTemplate: (talentKey: TalentSheetElementKey, partialSection: DocumentSection) => DocumentSection
+  fieldsTemplate: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => IDocumentFields
+  conditionalTemplate: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => DocumentConditional
+}
+export const charTemplates = (cKey: CharacterKey, wKey: WeaponTypeKey, assets: Partial<Record<TalentSheetElementKey, string>>, travelerEle?: ElementKey): ICharacterTemplate => {
+  const [tr] = cKey === "Traveler"
+    ? [(key: string) => <Translate ns="char_Traveler_gen" key18={`${travelerEle}.${key}`} />]
+    : trans("char", cKey)
+  assets.auto = Assets.weaponTypes[wKey]
+  return {
+    talentTemplate: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => talentTemplate(talentKey, tr, assets[talentKey] ?? "", docSections),
+    headerTemplate: (talentKey: TalentSheetElementKey, partialSection: DocumentSection) => headerTemplate(talentKey, tr, assets[talentKey] ?? "", partialSection),
+    fieldsTemplate: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => fieldsTemplate(talentKey, partialFields),
+    conditionalTemplate: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => conditionalTemplate(talentKey, partialCond, tr, assets[talentKey] ?? "")
+  }
+}

@@ -5,13 +5,18 @@ import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDispla
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import CloseButton from '../../../../../Components/CloseButton';
+import InfoTooltip from '../../../../../Components/InfoTooltip';
 import ModalWrapper from '../../../../../Components/ModalWrapper';
 import SqBadge from '../../../../../Components/SqBadge';
 import { Stars } from '../../../../../Components/StarDisplay';
+import { Translate } from '../../../../../Components/Translate';
 import { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
-import { DataContext } from '../../../../../DataContext';
+import { DataContext, dataContextObj } from '../../../../../DataContext';
+import { UIData } from '../../../../../Formula/uiData';
+import { constant } from '../../../../../Formula/utils';
 import usePromise from '../../../../../ReactHooks/usePromise';
 import { allArtifactSets, SetNum } from '../../../../../Types/consts';
+import { objectKeyMap } from '../../../../../Util/Util';
 
 export default function ArtifactSetConditional({ disabled }: { disabled?: boolean }) {
   const { character } = useContext(DataContext)
@@ -33,7 +38,8 @@ export default function ArtifactSetConditional({ disabled }: { disabled?: boolea
 function ArtConditionalModal({ open, onClose, artifactCondCount }: {
   open: boolean, onClose: () => void, artifactCondCount: number
 }) {
-  const { character, characterDispatch } = useContext(DataContext)
+  const dataContext = useContext(DataContext)
+  const { character, characterDispatch } = dataContext
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const resetArtConds = useCallback(() => {
     const conditional = Object.fromEntries(Object.entries(character.conditional).filter(([k, v]) => !allArtifactSets.includes(k as any)))
@@ -65,21 +71,34 @@ function ArtConditionalModal({ open, onClose, artifactCondCount }: {
       </CardLight>
       <Grid container spacing={1}>
         {artSetKeyList.map(setKey => {
-          const sheet = artifactSheets[setKey]
+          const sheet: ArtifactSheet = artifactSheets[setKey]
           // Don't display if no conditional in artifact
-          if (!Object.values(sheet.setEffects).some(entry => entry.document && entry.document.some(d => d.conditional))) return null
+          if (!Object.values(sheet.setEffects).some(entry => entry.document && entry.document.some(d => "states" in d))) return null
           return <Grid item key={setKey} xs={6} lg={4}>
             <CardLight sx={{ height: "100%" }}>
               <Box className={`grad-${sheet.rarity[0]}star`} width="100%" sx={{ display: "flex" }} >
                 <Box component="img" src={sheet.defIconSrc} sx={{ height: 100, width: "auto" }} />
                 <Box sx={{ flexGrow: 1, px: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                  <Typography variant="h6">{artifactSheets?.[setKey].name ?? ""}</Typography>
-                  <Typography variant="subtitle1">{sheet.rarity.map((ns, i) => <span key={ns}>{ns}<Stars stars={1} /> {i < (sheet.rarity.length - 1) ? "/ " : null}</span>)}</Typography>
+                  <Typography variant="h6">{sheet.name ?? ""}</Typography>
+                  <Box display="flex" gap={1}>
+                    <Typography variant="subtitle1">{sheet.rarity.map((ns, i) => <span key={ns}>{ns} <Stars stars={1} /> {i < (sheet.rarity.length - 1) ? "/ " : null}</span>)}</Typography>
+                    {/* If there is ever a 2-set conditional, we will need to change this */}
+                    <InfoTooltip title={<Typography><Translate ns={`artifact_${setKey}_gen`} key18={"setEffects.4"} /></Typography>} />
+                  </Box>
                 </Box>
               </Box>
-              <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                {Object.keys(sheet.setEffects).map(setNumKey => <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} />)}
-              </CardContent>
+              <DataContext.Provider value={fakeData(dataContext) /* TODO: Do we need to Memo this? */}>
+                <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                  {Object.keys(sheet.setEffects)
+                    .filter(setNumKey => sheet.setEffects[setNumKey]?.document
+                      .some(doc => "states" in doc)
+                    )
+                    .map(setNumKey =>
+                      <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} hideHeader conditionalsOnly />
+                    )
+                  }
+                </CardContent>
+              </DataContext.Provider>
             </CardLight>
           </Grid>
         })}
@@ -90,4 +109,11 @@ function ArtConditionalModal({ open, onClose, artifactCondCount }: {
       <CloseButton large onClick={onClose} />
     </CardContent>
   </CardDark></ModalWrapper>
+}
+
+function fakeData(currentContext: dataContextObj): dataContextObj {
+  return {
+    ...currentContext,
+    data: new UIData({ ...currentContext.data.data[0], artSet: objectKeyMap(allArtifactSets, _ => constant(4)) }, undefined)
+  }
 }

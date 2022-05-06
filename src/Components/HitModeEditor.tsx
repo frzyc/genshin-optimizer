@@ -1,4 +1,4 @@
-import { MenuItem, ToggleButton, ToggleButtonGroupProps } from "@mui/material";
+import { Chip, MenuItem, ToggleButton, ToggleButtonGroupProps } from "@mui/material";
 import { useContext } from 'react';
 import { infusionNode } from "../Data/Characters/dataUtil";
 import { DataContext } from "../DataContext";
@@ -8,7 +8,7 @@ import ColorText from "./ColoredText";
 import DropdownButton, { DropdownButtonProps } from "./DropdownMenu/DropdownButton";
 import SolidToggleButtonGroup from "./SolidToggleButtonGroup";
 import SqBadge from "./SqBadge";
-import StatIcon, { uncoloredEleIcons } from "./StatIcon";
+import { uncoloredEleIcons } from "./StatIcon";
 const infusionVals = {
   "": <span>No Team Melee Infusion</span>,
   "pyro": <span >{uncoloredEleIcons.pyro} <SqBadge>Bennett C6</SqBadge> Fire Ventures with Me</span>,
@@ -18,7 +18,7 @@ type InfusionAuraDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" 
 export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {
   const { characterSheet, character: { infusionAura }, characterDispatch } = useContext(DataContext)
   if (!characterSheet?.isMelee()) return null
-  return <DropdownButton title={infusionVals[infusionAura]} color={infusionAura || "secondary"} {...props}>
+  return <DropdownButton title={infusionVals[infusionAura]} color={infusionAura || "secondary"} disableElevation {...props}>
     {Object.entries(infusionVals).map(([key, text]) =>
       <MenuItem key={key} sx={key ? { color: `${key}.main` } : undefined}
         selected={key === infusionAura} disabled={key === infusionAura}
@@ -36,16 +36,28 @@ export function ReactionToggle(props: ReactionToggleProps) {
     value={reactionMode} onChange={(e, reactionMode) => characterDispatch({ reactionMode })} {...props}>
     <ToggleButton value="" >No Reactions</ToggleButton >
     {(charEleKey === "pyro" || infusion === "pyro") && <ToggleButton value="pyro_vaporize"  >
-      <ColorText color="vaporize">Vaporize(Pyro){StatIcon.hydro}+{StatIcon.pyro}</ColorText>
+      <ColorText color="vaporize">
+        Vaporize(Pyro)
+        {<Chip sx={{ ml: 0.5 }} size="small" color="vaporize" label={<span>{uncoloredEleIcons.hydro}+{uncoloredEleIcons.pyro}</span>} />}
+      </ColorText>
     </ToggleButton >}
     {(charEleKey === "pyro" || infusion === "pyro") && <ToggleButton value={"pyro_melt"}  >
-      <ColorText color="melt">Melt(Pyro) {StatIcon.cryo}+{StatIcon.pyro}</ColorText>
+      <ColorText color="melt">
+        Melt(Pyro)
+        {<Chip sx={{ ml: 0.5 }} size="small" color="melt" label={<span>{uncoloredEleIcons.cryo}+{uncoloredEleIcons.pyro}</span>} />}
+      </ColorText>
     </ToggleButton >}
     {(charEleKey === "hydro" || infusion === "hydro") && <ToggleButton value={"hydro_vaporize"}  >
-      <ColorText color="vaporize">Vaporize(Hydro) {StatIcon.pyro}+{StatIcon.hydro}</ColorText>
+      <ColorText color="vaporize">
+        Vaporize(Hydro)
+        {<Chip sx={{ ml: 0.5 }} size="small" color="vaporize" label={<span>{uncoloredEleIcons.pyro}+{uncoloredEleIcons.hydro}</span>} />}
+        </ColorText>
     </ToggleButton >}
     {(charEleKey === "cryo" || infusion === "cryo") && <ToggleButton value={"cryo_melt"}  >
-      <ColorText color="melt">Melt(Cryo) {StatIcon.pyro}+{StatIcon.cryo}</ColorText>
+      <ColorText color="melt">
+        Melt(Cryo)
+        {<Chip sx={{ ml: 0.5 }} size="small" color="melt" label={<span>{uncoloredEleIcons.pyro}+{uncoloredEleIcons.cryo}</span>} />}
+        </ColorText>
     </ToggleButton >}
   </SolidToggleButtonGroup>
 }

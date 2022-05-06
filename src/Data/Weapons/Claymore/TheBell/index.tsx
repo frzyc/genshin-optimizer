@@ -3,16 +3,15 @@ import { input } from '../../../../Formula'
 import { infoMut, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { customShieldNode } from '../../../Characters/dataUtil'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, sgt, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "TheBell"
 const data_gen = data_gen_json as WeaponData
-const [tr, trm] = trans("weapon", key)
 
 const shieldSrc = [0.2, 0.23, 0.26, 0.29, 0.32]
 const allDmgSrc = [0.12, 0.15, 0.18, 0.21, 0.24]
@@ -32,37 +31,31 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    conditional: {
-      value: condPassive,
-      path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken),
-      name: st("takeDmg"),
-      states: {
-        on: {
-          fields: [{
-            text: trm("generateShield")
-          }, {
-            node: infoMut(shield, { key: `sheet_gen:dmgAbsorption` })
-          }, {
-            text: sgt("cd"),
-            value: 45,
-            unit: "s"
-          }]
-        }
+    value: condPassive,
+    path: condPassivePath,
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    name: st("takeDmg"),
+    states: {
+      on: {
+        fields: [{
+          node: infoMut(shield, { key: `sheet_gen:dmgAbsorption` })
+        }, {
+          text: sgt("cd"),
+          value: 45,
+          unit: "s"
+        }]
       }
     }
   }, {
-    conditional: {
-      value: condWithShield,
-      path: condWithShieldPath,
-      header: conditionalHeader(tr, icon, iconAwaken),
-      name: st("protectedByShield"),
-      states: {
-        protected: {
-          fields: [{
-            node: all_dmg_
-          }]
-        }
+    value: condWithShield,
+    path: condWithShieldPath,
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    name: st("protectedByShield"),
+    states: {
+      protected: {
+        fields: [{
+          node: all_dmg_
+        }]
       }
     }
   }],

@@ -5,14 +5,14 @@ import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "IronSting"
 const data_gen = data_gen_json as WeaponData
-const [tr, trm] = trans("weapon", key)
+const [, trm] = trans("weapon", key)
 
 const [condPassivePath, condPassive] = cond(key, "InfusionStinger")
 const eleDmgDealtStack = range(1, 2)
@@ -29,23 +29,20 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    conditional: {
-      value: condPassive,
-      path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
-      name: trm("condName"),
-      states:
-        Object.fromEntries(eleDmgDealtStack.map(c => [c, {
-          name: st("stack", { count: c }),
-          fields: [{
-            node: all_dmg_,
-          }, {
-            text: sgt("duration"),
-            value: 6,
-            unit: "s"
-          }]
-        }]))
-    }
+    value: condPassive,
+    path: condPassivePath,
+    header: headerTemplate(key, icon, iconAwaken, st("stacks")),
+    name: trm("condName"),
+    states: Object.fromEntries(eleDmgDealtStack.map(c => [c, {
+      name: st("stack", { count: c }),
+      fields: [{
+        node: all_dmg_,
+      }, {
+        text: sgt("duration"),
+        value: 6,
+        unit: "s"
+      }]
+    }]))
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

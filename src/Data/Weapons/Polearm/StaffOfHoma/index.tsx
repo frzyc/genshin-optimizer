@@ -2,16 +2,15 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, infoMut, prod, subscript, sum } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, st, trans } from '../../../SheetUtil'
+import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "StaffOfHoma"
 const data_gen = data_gen_json as WeaponData
-const [tr] = trans("weapon", key)
 
 const hpInc = [0.2, 0.25, 0.3, 0.35, 0.4]
 const atkInc = [0.008, 0.01, 0.012, 0.014, 0.016]
@@ -33,23 +32,22 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
       node: hp_
     }, {
       node: infoMut(atk1_, { key: "atk" })
     }],
-    conditional: {
-      value: condPassive,
-      path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken),
-      name: st("lessPercentHP", { percent: 50 }),
-      states: {
-        on: {
-          fields: [{
-            node: atk2_,
-          }]
-        }
+  }, {
+    value: condPassive,
+    path: condPassivePath,
+    header: headerTemplate(key, icon, iconAwaken),
+    name: st("lessPercentHP", { percent: 50 }),
+    states: {
+      on: {
+        fields: [{
+          node: atk2_,
+        }]
       }
     }
   }],

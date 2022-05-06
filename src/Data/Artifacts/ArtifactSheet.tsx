@@ -1,13 +1,14 @@
+import { ArtifactSlotKey } from "pipeline";
 import ImgIcon from "../../Components/Image/ImgIcon";
+import SqBadge from "../../Components/SqBadge";
 import { Translate } from "../../Components/Translate";
+import { input } from "../../Formula";
 import { mergeData } from "../../Formula/api";
 import { Data } from "../../Formula/type";
+import { UIData } from "../../Formula/uiData";
 import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey } from "../../Types/consts";
-import { DocumentSection } from "../../Types/sheet";
-import { UIData } from "../../Formula/uiData"
-import { input } from "../../Formula"
-import SqBadge from "../../Components/SqBadge";
-import IConditional from "../../Types/IConditional";
+import { DocumentSection, IDocumentHeader } from "../../Types/sheet";
+import { st } from "../SheetUtil";
 
 // TODO: remove typecasting once all sheets populated
 const artifactSheets = import(".").then(imp => imp.default)
@@ -19,7 +20,7 @@ export interface IArtifactSheet {
   setEffects: Dict<SetNum, SetEffectEntry>
 }
 export interface SetEffectEntry {
-  document?: DocumentSection[],
+  document: DocumentSection[],
 }
 
 
@@ -92,10 +93,12 @@ export class ArtifactSheet {
   }
   hasEnough = (setNum: SetNum, data: UIData) => (data.get(input.artSet[this.key]).value ?? 0) >= setNum
 }
-export const conditionalHeader = (tr: (string) => Displayable, img: string): IConditional["header"] => {
-  return {
+export const setHeaderTemplate = (setKey: ArtifactSetKey, icons: Partial<Record<ArtifactSlotKey, string>>): ((setNum: SetNum) => IDocumentHeader) => {
+  const tr = (strKey: string) => <Translate ns={`artifact_${setKey}_gen`} key18={strKey} />
+  return (setNum: SetNum) => ({
     title: tr("setName"),
-    icon: <ImgIcon size={2} sx={{ m: -1 }} src={img} />,
-    action: <SqBadge color="success">4-set</SqBadge>
-  }
+    icon: <ImgIcon size={2} sx={{ m: -1 }} src={icons.flower ?? icons.circlet ?? ""} />,
+    action: <SqBadge color="success">{st(`${setNum}set`)}</SqBadge>,
+    description: tr(`setEffects.${setNum}`)
+  })
 }

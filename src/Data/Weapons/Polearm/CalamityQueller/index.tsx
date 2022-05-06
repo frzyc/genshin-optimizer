@@ -5,7 +5,7 @@ import { allElements, WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
@@ -39,18 +39,17 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: Object.values(dmg_Nodes).map(node => ({ node })),
-    conditional: {
-      value: condStack,
-      path: condStackPath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
-      name: tr("passiveName"),
-      states: Object.fromEntries(range(1, 6).map(i => [i, {
-        name: st("stack", { count: i }),
-        fields: [{ node: atkInc }]
-      }]))
-    }
+  }, {
+    value: condStack,
+    path: condStackPath,
+    header: headerTemplate(key, icon, iconAwaken, st("stacks")),
+    name: tr("passiveName"),
+    states: Object.fromEntries(range(1, 6).map(i => [i, {
+      name: st("stack", { count: i }),
+      fields: [{ node: atkInc }]
+    }]))
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

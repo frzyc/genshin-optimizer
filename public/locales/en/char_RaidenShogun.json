@@ -4,7 +4,9 @@
     "partyCost": "Energy Cost"
   },
   "burst": {
-    "resolves": "Resolve Stacks"
+    "resolves": "Resolve Stacks",
+    "resolveInitial_": "<electro>Musou no Hitotachi Base DMG Bonus</electro",
+    "resolveInfused_": "<electro>Musou Isshin DMG Bonus</electro>"
   },
   "a4": {
     "enerRest": "Energy restoration from <strong>Musou Isshin</strong>",
