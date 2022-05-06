@@ -73,7 +73,7 @@ function ArtConditionalModal({ open, onClose, artifactCondCount }: {
         {artSetKeyList.map(setKey => {
           const sheet: ArtifactSheet = artifactSheets[setKey]
           // Don't display if no conditional in artifact
-          if (!Object.values(sheet.setEffects).some(entry => entry.document && entry.document.some(d => "path" in d))) return null
+          if (!Object.values(sheet.setEffects).some(entry => entry.document && entry.document.some(d => "states" in d))) return null
           return <Grid item key={setKey} xs={6} lg={4}>
             <CardLight sx={{ height: "100%" }}>
               <Box className={`grad-${sheet.rarity[0]}star`} width="100%" sx={{ display: "flex" }} >
@@ -91,7 +91,7 @@ function ArtConditionalModal({ open, onClose, artifactCondCount }: {
                 <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
                   {Object.keys(sheet.setEffects)
                     .filter(setNumKey => sheet.setEffects[setNumKey]?.document
-                      .some(doc => "path" in doc)
+                      .some(doc => "states" in doc)
                     )
                     .map(setNumKey =>
                       <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} hideHeader conditionalsOnly />

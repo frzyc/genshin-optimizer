@@ -124,5 +124,11 @@
     "constellation4": "C4",
     "constellation5": "C5",
     "constellation6": "C6"
+  },
+  "swirlReaction": {
+    "hydro": "Upon triggering a <hydro>Hydro</hydro> Swirl reaction",
+    "pyro": "Upon triggering a <pyro>Pyro</pyro> Swirl reaction",
+    "electro": "Upon triggering an <electro>Electro</electro> Swirl reaction",
+    "cryo": "Upon triggering a <cryo>Cryo</cryo> Swirl reaction"
   }
 }

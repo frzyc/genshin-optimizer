@@ -7,7 +7,7 @@ import { Data, NumNode } from "../../Formula/type";
 import { greaterEq } from "../../Formula/utils";
 import { TalentSheet, TalentSheetElement, TalentSheetElementKey } from "../../Types/character";
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "../../Types/consts";
-import { DocumentSection, IDocumentConditional, IDocumentConditionalBase, IDocumentFields, IDocumentHeader } from "../../Types/sheet";
+import { DocumentConditional, DocumentConditionalBase, DocumentSection, IDocumentFields, IDocumentHeader } from "../../Types/sheet";
 import { ascensionMaxLevel } from "../LevelData";
 import { st, trans } from "../SheetUtil";
 
@@ -107,9 +107,9 @@ const fieldsTemplate = (talentKey: TalentSheetElementKey, partialFields: IDocume
   canShow: canShowTemplate(talentKey, partialFields.canShow),
 })
 
-const conditionalTemplate = (talentKey: TalentSheetElementKey, partialCond: IDocumentConditionalBase, tr: (string) => Displayable, img: string): IDocumentConditional => ({
+const conditionalTemplate = (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase, tr: (string) => Displayable, img: string): DocumentConditional => ({
   ...partialCond,
-  header: {...talentHeader(talentKey, tr, img), ...partialCond.header},
+  header: { ...talentHeader(talentKey, tr, img), ...partialCond.header },
   canShow: canShowTemplate(talentKey, partialCond.canShow),
 })
 
@@ -146,17 +146,17 @@ interface ICharacterTemplate {
   talentTemplate: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => TalentSheetElement
   headerTemplate: (talentKey: TalentSheetElementKey, partialSection: DocumentSection) => DocumentSection
   fieldsTemplate: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => IDocumentFields
-  conditionalTemplate:(talentKey: TalentSheetElementKey, partialCond: IDocumentConditionalBase) => IDocumentConditional
+  conditionalTemplate: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => DocumentConditional
 }
 export const charTemplates = (cKey: CharacterKey, wKey: WeaponTypeKey, assets: Partial<Record<TalentSheetElementKey, string>>, travelerEle?: ElementKey): ICharacterTemplate => {
   const [tr] = cKey === "Traveler"
-    ? [(key: string) => <Translate  ns="char_Traveler_gen" key18={`${travelerEle}.${key}`} />]
+    ? [(key: string) => <Translate ns="char_Traveler_gen" key18={`${travelerEle}.${key}`} />]
     : trans("char", cKey)
   assets.auto = Assets.weaponTypes[wKey]
   return {
     talentTemplate: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => talentTemplate(talentKey, tr, assets[talentKey] ?? "", docSections),
     headerTemplate: (talentKey: TalentSheetElementKey, partialSection: DocumentSection) => headerTemplate(talentKey, tr, assets[talentKey] ?? "", partialSection),
     fieldsTemplate: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => fieldsTemplate(talentKey, partialFields),
-    conditionalTemplate: (talentKey: TalentSheetElementKey, partialCond: IDocumentConditionalBase) => conditionalTemplate(talentKey, partialCond, tr, assets[talentKey] ?? "")
+    conditionalTemplate: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => conditionalTemplate(talentKey, partialCond, tr, assets[talentKey] ?? "")
   }
 }

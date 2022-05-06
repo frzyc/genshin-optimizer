@@ -1,4 +1,3 @@
-import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
@@ -20,7 +19,7 @@ const condSwirls = objectKeyMap(absorbableEle, e => condReadNode(condSwirlPaths[
 
 const condSwirlNodes = objectKeyValueMap(absorbableEle, e => [`${e}_enemyRes_`,
 greaterEq(input.artSet.ViridescentVenerer, 4,
-  equal("swirl", condSwirls[e], percent(-0.4))
+  equal(e, condSwirls[e], percent(-0.4))
 )])
 
 const data: Data = dataObjForArtifactSheet(key, {
@@ -48,26 +47,22 @@ const sheet: IArtifactSheet = {
       document: [{
         header: setHeader(4),
         fields: [{ node: swirl_dmg_ }],
-      },
-      ...absorbableEle.map(eleKey => ({
+      }, {
         header: setHeader(4),
-        value: condSwirls[eleKey],
-        path: condSwirlPaths[eleKey],
         teamBuff: true,
-        name: st("eleSwirled"),
-        states: {
-          swirl: {
-            name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-            fields: [{
-              node: condSwirlNodes[`${eleKey}_enemyRes_`]
-            }, {
-              text: sgt("duration"),
-              value: 10,
-              unit: "s"
-            }]
-          }
-        }
-      }))]
+        states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+          value: condSwirls[eleKey],
+          path: condSwirlPaths[eleKey],
+          name: st(`swirlReaction.${eleKey}`),
+          fields: [{
+            node: condSwirlNodes[`${eleKey}_enemyRes_`]
+          }, {
+            text: sgt("duration"),
+            value: 10,
+            unit: "s"
+          }]
+        }]))
+      }]
     }
   }
 }

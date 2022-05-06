@@ -77,7 +77,7 @@ const condSwirlPaths = Object.fromEntries(absorbableEle.map(e => [e, [key, `swir
 const condSwirls = Object.fromEntries(absorbableEle.map(e => [e, condReadNode(condSwirlPaths[e])]))
 const asc4 = Object.fromEntries(absorbableEle.map(ele =>
   [`${ele}_dmg_`, greaterEq(input.asc, 4,
-    equal("swirl", condSwirls[ele],
+    equal(ele, condSwirls[ele],
       // Use premod since this is a percentage-based effect
       prod(percent(datamine.passive2.elemas_dmg_, { fixed: 2 }), input.premod.eleMas)
     ))]))
@@ -315,25 +315,22 @@ const sheet: ICharacterSheet = {
           }]
         }]))
       })]),
-      passive2: ct.talentTemplate("passive2", absorbableEle.map(eleKey =>
-        ct.conditionalTemplate("passive2", { // Poetics of Fuubutsu
-          value: condSwirls[eleKey],
-          path: condSwirlPaths[eleKey],
-          teamBuff: true,
-          name: trm(`a4.name_${eleKey}`),
-          states: {
-            swirl: {
-              fields: [{
-                node: asc4[`${eleKey}_dmg_`]
-              }, {
-                text: sgt("duration"),
-                value: datamine.passive2.duration,
-                unit: "s"
-              }]
-            }
-          }
+      passive2: ct.talentTemplate("passive2", [ct.conditionalTemplate("passive2", { // Poetics of Fuubutsu
+        teamBuff: true,
+        states: Object.fromEntries(absorbableEle.map(ele => [ele, {
+          value: condSwirls[ele],
+          path: condSwirlPaths[ele],
+          name: st(`swirlReaction.${ele}`),
+          fields: [{
+            node: asc4[`${ele}_dmg_`]
+          }, {
+            text: sgt("duration"),
+            value: datamine.passive2.duration,
+            unit: "s"
+          }]
+        }]))
         }),
-      )),
+      ]),
       passive3: ct.talentTemplate("passive3", [ct.headerTemplate("passive3", {
         teamBuff: true,
         fields: [{

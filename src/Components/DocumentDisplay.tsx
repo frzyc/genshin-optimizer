@@ -32,7 +32,7 @@ export default function DocumentDisplay({ sections, teamBuffOnly, hideDesc = fal
 function SectionDisplay({ section, hideDesc = false, hideHeader = false }: { section: DocumentSection, hideDesc?: boolean, hideHeader?: boolean | ((section: DocumentSection) => boolean) }) {
   if ("fields" in section) {
     return <FieldsSectionDisplay section={section} hideDesc={hideDesc} hideHeader={hideHeader} />
-  } else if ("path" in section) {
+  } else if ("states" in section) {
     return <ConditionalDisplay conditional={section} hideDesc={hideDesc} hideHeader={hideHeader} />
   } else /* if ("text" in section) */ {
     return <TextSectionDisplay section={section} />
