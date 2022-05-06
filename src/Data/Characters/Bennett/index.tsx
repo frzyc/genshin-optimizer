@@ -81,13 +81,15 @@ const datamine = {
 
 const a1SkillCd = greaterEq(input.asc, 1, datamine.passive1.cd_red)
 
-const c1Atk = greaterEq(input.constellation, 1, datamine.constellation1.atk_inc, { key: `char_${key}:additionalATKRatio_` })
+const burstAtkRatio = subscript(input.total.burstIndex, datamine.burst.atkBonus, { key: "_" })
+const burstAddlAtk = prod(burstAtkRatio, input.base.atk)
+const c1AtkRatio = greaterEq(input.constellation, 1, datamine.constellation1.atk_inc, { key: `char_${key}:additionalATKRatio_` })
+const c1AddlAtk = greaterEq(input.constellation, 1, prod(c1AtkRatio, input.base.atk))
+const atkIncRatio = sum(burstAtkRatio, c1AtkRatio)
+const activeInAreaAtkDisp = prod(atkIncRatio, input.base.atk)
 
-const atkIncRatio = sum(subscript(input.total.burstIndex, datamine.burst.atkBonus, { key: "_" }), c1Atk)
 const [condInAreaPath, condInArea] = cond(key, "activeInArea")
 const activeInArea = equal("activeInArea", condInArea, equal(input.activeCharKey, target.charKey, 1))
-const c1AddlAtk = greaterEq(input.constellation, 1, prod(c1Atk, input.base.atk))
-const activeInAreaAtkDisp = prod(atkIncRatio, input.base.atk)
 const activeInAreaAtk = equal(activeInArea, 1, activeInAreaAtkDisp)
 
 const activeInAreaA4 = greaterEq(input.asc, 4,
@@ -264,10 +266,11 @@ const sheet: ICharacterSheet = {
           activeInArea: {
             fields: [{
               text: tr("burst.skillParams.2"),
-              value: data => data.get(atkIncRatio).value * 100,
+              value: data => data.get(burstAtkRatio).value * 100,
               unit: "%",
+              fixed: 1
             }, {
-              node: infoMut(activeInAreaAtkDisp, { key: `sheet:increase.atk` })
+              node: infoMut(burstAddlAtk, { key: `sheet:increase.atk` })
             }]
           }
         }
@@ -279,7 +282,7 @@ const sheet: ICharacterSheet = {
       }), ct.headerTemplate("constellation1", {
         fields: [{
           text: trm("additionalATKRatio"),
-          node: c1Atk
+          node: c1AtkRatio
         }, {
           node: infoMut(c1AddlAtk, { key: `char_${key}:additionalATK` })
         }],
