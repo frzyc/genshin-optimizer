@@ -2,7 +2,7 @@ import { CharacterData } from 'pipeline'
 import { input, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, percent, prod, sum } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
-import { cond, trans } from '../../SheetUtil'
+import { cond, st, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode, healNodeTalent, shieldElement, shieldNodeTalent } from '../dataUtil'
 import { banner, card, talentAssets, thumb, thumbSide } from './assets'
@@ -76,8 +76,7 @@ const datamine = {
   },
 } as const
 
-const [condC6BelowPath, condC6Below] = cond(key, "Constellation6Low")
-const [condC6AbovePath, condC6Above] = cond(key, "Constellation6High")
+const [condC6Path, condC6] = cond(key, "Constellation6")
 const [condA1Path, condA1] = cond(key, "Ascension1")
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -117,9 +116,9 @@ const dmgFormulas = {
 const nodeA1MoveSpeed = equal(condA1, "on", percent(datamine.passive1.moveSpeed_),)
 const nodeA1Stamina = equal(condA1, "on", percent(datamine.passive1.stamRed_),)
 
-const nodeC6healing_Disp = equal(condC6Below, "on", percent(datamine.constellation6.healingBonus_),)
+const nodeC6healing_Disp = equal(condC6, "lower", percent(datamine.constellation6.healingBonus_),)
 const nodeC6healing_ = equal(input.activeCharKey, target.charKey, nodeC6healing_Disp)
-const nodeC6emDisp = equal(condC6Above, "on", datamine.constellation6.emBonus,)
+const nodeC6emDisp = equal(condC6, "higher", datamine.constellation6.emBonus,)
 const nodeC6em = equal(input.activeCharKey, target.charKey, nodeC6emDisp)
 
 export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {
@@ -239,23 +238,18 @@ const sheet: ICharacterSheet = {
         }]
       }, ct.conditionalTemplate("constellation6", {
         teamBuff: true,
-        value: condC6Below,
-        path: condC6BelowPath,
-        name: trm(`c6below`),
+        value: condC6,
+        path: condC6Path,
+        name: st("activeCharField"),
         states: {
-          on: {
+          lower: {
+            name: st("lessEqPercentHP", { percent: 50 }),
             fields: [{
               node: infoMut(nodeC6healing_Disp, { key: "incHeal_" }),
             }]
-          }
-        }
-      }), ct.conditionalTemplate("constellation6", {
-        teamBuff: true,
-        value: condC6Above,
-        path: condC6AbovePath,
-        name: trm(`c6above`),
-        states: {
-          on: {
+          },
+          higher: {
+            name: st("greaterPercentHP", { percent: 50 }),
             fields: [{
               node: infoMut(nodeC6emDisp, { key: "eleMas" }),
             }]
