@@ -1,15 +1,15 @@
 import { Box, Skeleton, Typography } from '@mui/material';
 import { Suspense } from 'react';
 import Assets from '../../Assets/Assets';
-import BootstrapTooltip from '../BootstrapTooltip';
-import CardDark from '../Card/CardDark';
-import SqBadge from '../SqBadge';
-import StatIcon from '../StatIcon';
 import CharacterSheet from '../../Data/Characters/CharacterSheet';
 import { ascensionMaxLevel } from '../../Data/LevelData';
 import useCharacter from '../../ReactHooks/useCharacter';
 import usePromise from '../../ReactHooks/usePromise';
 import { CharacterKey } from '../../Types/consts';
+import BootstrapTooltip from '../BootstrapTooltip';
+import CardDark from '../Card/CardDark';
+import SqBadge from '../SqBadge';
+import StatIcon from '../StatIcon';
 
 export default function CharacterCardPico({ characterKey = "", index = -1 }: { characterKey: CharacterKey | "", index?: number }) {
   const teammateSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
@@ -31,7 +31,7 @@ export default function CharacterCardPico({ characterKey = "", index = -1 }: { c
           />
         </Box>
       </BootstrapTooltip>
-      <Typography variant='subtitle1' sx={{ position: "absolute", lineHeight: 1, pointerEvents: "none" }}>
+      <Typography variant='subtitle1' sx={{ position: "absolute", mt: -0.2, lineHeight: 1, pointerEvents: "none" }}>
         <SqBadge color="primary" >{character.level}/{ascensionMaxLevel[character.ascension]}</SqBadge>
       </Typography>
       <Typography variant='subtitle1' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, pointerEvents: "none" }}>

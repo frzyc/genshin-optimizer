@@ -36,7 +36,7 @@ export default function WeaponCardPico({ weaponId }: { weaponId: string }) {
         />
       </WeaponNameTooltip>
     </Box>
-    <Typography variant='subtitle1' sx={{ position: "absolute", lineHeight: 1, pointerEvents: "none" }}>
+    <Typography variant='subtitle1' sx={{ position: "absolute", mt: -0.2, lineHeight: 1, pointerEvents: "none" }}>
       <SqBadge color="primary">{WeaponSheet.getLevelString(weapon)}</SqBadge>
     </Typography>
     {weaponSheet.hasRefinement && <Typography variant='subtitle1' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, pointerEvents: "none" }}>
