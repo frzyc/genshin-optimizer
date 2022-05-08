@@ -34,9 +34,9 @@ export function ReactionToggle(props: ReactionToggleProps) {
   const infusion = data.get(infusionNode).value as ElementKey
   if (!["pyro", "hydro", "cryo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusion)) return null
   return <SolidToggleButtonGroup exclusive baseColor="secondary"
-    value={reactionMode} onChange={(e, reactionMode) => characterDispatch({ reactionMode })} {...props}>
-    <ToggleButton value="" >No Reactions</ToggleButton >
-    {(charEleKey === "pyro" || infusion === "pyro") && <ToggleButton value="pyro_vaporize"  >
+    value={reactionMode} onChange={(_, reactionMode) => characterDispatch({ reactionMode })} {...props}>
+    <ToggleButton value="" disabled={reactionMode === ""} >No Reactions</ToggleButton >
+    {(charEleKey === "pyro" || infusion === "pyro") && <ToggleButton value="pyro_vaporize" disabled={reactionMode === "pyro_vaporize"}>
       <ColorText color="vaporize">
         Vaporize(Pyro)
       </ColorText>
@@ -46,7 +46,7 @@ export function ReactionToggle(props: ReactionToggleProps) {
         <SqBadge sx={sqBadgeStyle} color="pyro">{uncoloredEleIcons.pyro}</SqBadge>
       </Box>
     </ToggleButton >}
-    {(charEleKey === "pyro" || infusion === "pyro") && <ToggleButton value={"pyro_melt"}  >
+    {(charEleKey === "pyro" || infusion === "pyro") && <ToggleButton value={"pyro_melt"} disabled={reactionMode === "pyro_melt"}>
       <ColorText color="melt">
         Melt(Pyro)
       </ColorText>
@@ -56,7 +56,7 @@ export function ReactionToggle(props: ReactionToggleProps) {
         <SqBadge sx={sqBadgeStyle} color="pyro">{uncoloredEleIcons.pyro}</SqBadge>
       </Box>
     </ToggleButton >}
-    {(charEleKey === "hydro" || infusion === "hydro") && <ToggleButton value={"hydro_vaporize"}  >
+    {(charEleKey === "hydro" || infusion === "hydro") && <ToggleButton value={"hydro_vaporize"} disabled={reactionMode === "hydro_vaporize"}>
       <ColorText color="vaporize">
         Vaporize(Hydro)
       </ColorText>
@@ -66,7 +66,7 @@ export function ReactionToggle(props: ReactionToggleProps) {
         <SqBadge sx={sqBadgeStyle} color="hydro">{uncoloredEleIcons.hydro}</SqBadge>
       </Box>
     </ToggleButton >}
-    {(charEleKey === "cryo" || infusion === "cryo") && <ToggleButton value={"cryo_melt"}  >
+    {(charEleKey === "cryo" || infusion === "cryo") && <ToggleButton value={"cryo_melt"} disabled={reactionMode === "cryo_melt"}>
       <ColorText color="melt">
         Melt(Cryo)
       </ColorText>
@@ -82,9 +82,9 @@ type HitModeToggleProps = Omit<ToggleButtonGroupProps, "color">
 export function HitModeToggle(props: HitModeToggleProps) {
   const { character: { hitMode }, characterDispatch } = useContext(DataContext)
   return <SolidToggleButtonGroup exclusive baseColor="secondary"
-    value={hitMode} onChange={(e, hitMode) => characterDispatch({ hitMode })} {...props} >
-    <ToggleButton value="avgHit">Avg. DMG</ToggleButton>
-    <ToggleButton value="hit">Non Crit DMG</ToggleButton>
-    <ToggleButton value="critHit">Crit Hit DMG</ToggleButton>
+    value={hitMode} onChange={(_, hitMode) => characterDispatch({ hitMode })} {...props} >
+    <ToggleButton value="avgHit" disabled={hitMode === "avgHit"}>Avg. DMG</ToggleButton>
+    <ToggleButton value="hit" disabled={hitMode === "hit"}>Non Crit DMG</ToggleButton>
+    <ToggleButton value="critHit" disabled={hitMode === "critHit"}>Crit Hit DMG</ToggleButton>
   </SolidToggleButtonGroup>
 }
