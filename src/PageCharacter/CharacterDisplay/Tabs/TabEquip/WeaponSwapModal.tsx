@@ -1,4 +1,4 @@
-import { CardContent, Divider, Grid, Typography, Box, ToggleButton } from "@mui/material"
+import { Box, CardContent, Divider, Grid, ToggleButton, Typography } from "@mui/material"
 import { useCallback, useContext, useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 import Assets from "../../../../Assets/Assets"
@@ -12,13 +12,11 @@ import WeaponSheet from "../../../../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../../../../Database/Database"
 import WeaponCard from "../../../../PageWeapon/WeaponCard"
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
-import useMediaQueryUp from "../../../../ReactHooks/useMediaQueryUp"
 import usePromise from "../../../../ReactHooks/usePromise"
-import { WeaponTypeKey, allRarities } from "../../../../Types/consts"
-import { filterFunction } from '../../../../Util/SortByFilters'
-import { weaponFilterConfigs } from '../../../../Util/WeaponSort'
+import { allRarities, WeaponTypeKey } from "../../../../Types/consts"
+import { filterFunction, sortFunction } from '../../../../Util/SortByFilters'
+import { weaponFilterConfigs, weaponSortConfigs } from '../../../../Util/WeaponSort'
 import CompareBuildButton from "./CompareBuildButton"
-const numToShowMap = { xs: 6, sm: 6, md: 9, lg: 12, xl: 12 }
 export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClose }: { onChangeId: (id: string) => void, weaponTypeKey: WeaponTypeKey, show: boolean, onClose: () => void }) {
   const { t } = useTranslation("page_character")
   const { database } = useContext(DatabaseContext)
@@ -33,13 +31,15 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
   const weaponSheets = usePromise(WeaponSheet.getAll, [])
 
   const filterConfigs = useMemo(() => weaponSheets && weaponFilterConfigs(weaponSheets), [weaponSheets])
+  const sortConfigs = useMemo(() => weaponSheets && weaponSortConfigs(weaponSheets), [weaponSheets])
 
-  const [rarity, setRarity] = useState([...allRarities])
+  const [rarity, setRarity] = useState([5, 4, 3])
 
-  const brPt = useMediaQueryUp()
-
-  const weaponIdList = useMemo(() => (filterConfigs && dbDirty && database._getWeapons().filter(filterFunction({ weaponType: weaponTypeKey, rarity }, filterConfigs)).map(weapon => weapon.id).slice(0, numToShowMap[brPt])) ?? []
-    , [dbDirty, database, filterConfigs, rarity, weaponTypeKey, brPt])
+  const weaponIdList = useMemo(() => (filterConfigs && sortConfigs && dbDirty && database._getWeapons()
+    .filter(filterFunction({ weaponType: weaponTypeKey, rarity }, filterConfigs))
+    .sort(sortFunction("level", false, sortConfigs))
+    .map(weapon => weapon.id)) ?? []
+    , [dbDirty, database, filterConfigs, rarity, weaponTypeKey])
 
   return <ModalWrapper open={show} onClose={onClose} >
     <CardDark>
