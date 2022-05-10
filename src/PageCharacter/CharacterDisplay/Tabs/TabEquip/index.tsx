@@ -1,8 +1,9 @@
 import { SwapHoriz } from '@mui/icons-material';
-import { Box, Button, CardContent, Grid, useMediaQuery } from '@mui/material';
+import { Box, Button, CardContent, Divider, Grid, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from "@mui/system";
 import { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay';
+import SlotNameWithIcon from '../../../../Components/Artifact/SlotNameWIthIcon';
 import CardLight from '../../../../Components/Card/CardLight';
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent';
 import DocumentDisplay from "../../../../Components/DocumentDisplay";
@@ -107,6 +108,10 @@ function ArtSwapCard({ slotKey }: { slotKey: SlotKey }) {
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState()
   return <CardLight sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
+    <CardContent>
+      <Typography><SlotNameWithIcon slotKey={slotKey} /></Typography>
+    </CardContent>
+    <Divider />
     <Box sx={{
       flexGrow: 1,
       display: "flex",
