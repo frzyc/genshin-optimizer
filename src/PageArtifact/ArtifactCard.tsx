@@ -1,7 +1,7 @@
 import { faBan, faChartLine, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Lock, LockOpen } from '@mui/icons-material';
-import { Box, Button, ButtonGroup, CardActions, CardContent, Chip, Grid, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
+import { Box, Button, ButtonGroup, CardActionArea, CardContent, Chip, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
 import React, { lazy, Suspense, useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
@@ -9,6 +9,7 @@ import CardLight from '../Components/Card/CardLight';
 import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton';
 import LocationName from '../Components/Character/LocationName';
 import ColorText from '../Components/ColoredText';
+import ConditionalWrapper from '../Components/ConditionalWrapper';
 import InfoTooltip from '../Components/InfoTooltip';
 import SqBadge from '../Components/SqBadge';
 import { Stars } from '../Components/StarDisplay';
@@ -30,14 +31,18 @@ const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
 type Data = {
   artifactId?: string,
   artifactObj?: ICachedArtifact,
+  onClick?: (id: string) => void,
   onDelete?: (id: string) => void, mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
   probabilityFilter?: Dict<SubstatKey, number>
   disableEditSetSlot?: boolean
+  editor?: boolean,
+  canEquip?: boolean,
+  extraButtons?: JSX.Element
 }
 const allSubstatFilter = new Set(allSubstats)
 
-export default function ArtifactCard({ artifactId, artifactObj, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter, disableEditSetSlot = false }: Data): JSX.Element | null {
+export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter, disableEditSetSlot = false, editor = false, canEquip = false, extraButtons }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
@@ -47,6 +52,9 @@ export default function ArtifactCard({ artifactId, artifactObj, onDelete, mainSt
   const [showEditor, setshowEditor] = useState(false)
   const onHideEditor = useCallback(() => setshowEditor(false), [setshowEditor])
   const onShowEditor = useCallback(() => editable && setshowEditor(true), [editable, setshowEditor])
+
+  const wrapperFunc = useCallback(children => <CardActionArea onClick={() => artifactId && onClick?.(artifactId)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }} >{children}</CardActionArea>, [onClick, artifactId],)
+  const falseWrapperFunc = useCallback(children => <Box sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }} >{children}</Box>, [])
 
   const art = artifactObj ?? databaseArtifact
   if (!art) return null
@@ -70,81 +78,82 @@ export default function ArtifactCard({ artifactId, artifactObj, onDelete, mainSt
     </span>
   } />
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
-    <Suspense fallback={false}>
+    {editor && <Suspense fallback={false}>
       <ArtifactEditor
         artifactIdToEdit={showEditor ? artifactId : ""}
         cancelEdit={onHideEditor}
         disableEditSetSlot={disableEditSetSlot}
       />
-    </Suspense>
+    </Suspense>}
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
-      <Box className={`grad-${rarity}star`} sx={{ position: "relative" }}>
-        <IconButton color="primary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 2 }}>
-          {lock ? <Lock /> : <LockOpen />}
-        </IconButton>
-        <Box sx={{ pt: 2, px: 2, position: "relative", zIndex: 1 }}>
-          {/* header */}
-          <Box component="div" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
-            <Typography sx={{ flexGrow: 1 }}>{slotName} {slotDescTooltip}</Typography>
+      <ConditionalWrapper condition={!!onClick} wrapper={wrapperFunc} falseWrapper={falseWrapperFunc}>
+        <Box className={`grad-${rarity}star`} sx={{ position: "relative", width: "100%" }}>
+          {!onClick && <IconButton color="primary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 2 }}>
+            {lock ? <Lock /> : <LockOpen />}
+          </IconButton>}
+          <Box sx={{ pt: 2, px: 2, position: "relative", zIndex: 1 }}>
+            {/* header */}
+            <Box component="div" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
+              <Typography sx={{ flexGrow: 1 }}>{slotName} {slotDescTooltip}</Typography>
+            </Box>
+            <Typography color="text.secondary" variant="body2">
+              <SlotNameWithIcon slotKey={slotKey} />
+            </Typography>
+            <Typography variant="h6" color={`${KeyMap.getVariant(mainStatKey)}.main`}>
+              <span>{StatIcon[mainStatKey]} {KeyMap.get(mainStatKey)}</span>
+            </Typography>
+            <Typography variant="h5">
+              <strong>
+                <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
+              </strong>
+            </Typography>
+            <Stars stars={rarity} colored />
+            {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
           </Box>
-          <Typography color="text.secondary" variant="body2">
-            <SlotNameWithIcon slotKey={slotKey} />
-          </Typography>
-          <Typography variant="h6" color={`${KeyMap.getVariant(mainStatKey)}.main`}>
-            <span>{StatIcon[mainStatKey]} {KeyMap.get(mainStatKey)}</span>
-          </Typography>
-          <Typography variant="h5">
-            <strong>
-              <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
-            </strong>
-          </Typography>
-          <Stars stars={rarity} colored />
-          {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
+          <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>
+            <Box
+              component="img"
+              src={sheet?.slotIcons[slotKey] ?? ""}
+              width="auto"
+              height="100%"
+              sx={{ float: "right" }}
+            />
+          </Box>
         </Box>
-        <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>
-          <Box
-            component="img"
-            src={sheet?.slotIcons[slotKey] ?? ""}
-            width="auto"
-            height="100%"
-            sx={{ float: "right" }}
-          />
-        </Box>
-      </Box>
-      <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", pt: 1, pb: 0 }}>
-        {substats.map((stat: ICachedSubstat) => <SubstatDisplay key={stat.key} stat={stat} effFilter={effFilter} rarity={rarity} />)}
-        <Box sx={{ display: "flex", my: 1 }}>
-          <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.curSubEff`}</Typography>
-          <PercentBadge value={currentEfficiency} max={900} valid={artifactValid} />
-        </Box>
-        {currentEfficiency !== maxEfficiency && <Box sx={{ display: "flex", mb: 1 }}>
-          <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.maxSubEff`}</Typography>
-          <PercentBadge value={maxEfficiency} max={900} valid={artifactValid} />
-        </Box>}
-        <Box flexGrow={1} />
-        {probabilityFilter && <strong>Probability: {(probability(art, probabilityFilter) * 100).toFixed(2)}%</strong>}
-        <Typography color="success.main">{sheet?.name ?? "Artifact Set"} {setDescTooltip}</Typography>
-      </CardContent>
-      <CardActions>
-        <Grid container sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
-          {editable ?
-            <CharacterDropdownButton size="small" inventory value={location} onChange={equipOnChar} /> : <LocationName location={location} />}
-          {editable && <ButtonGroup>
-            <Button color="info" onClick={onShowEditor} size="small">
-              <FontAwesomeIcon icon={faEdit} className="fa-fw" />
+        <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", pt: 1, pb: 0, width: "100%" }}>
+          {substats.map((stat: ICachedSubstat) => <SubstatDisplay key={stat.key} stat={stat} effFilter={effFilter} rarity={rarity} />)}
+          <Box sx={{ display: "flex", my: 1 }}>
+            <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.curSubEff`}</Typography>
+            <PercentBadge value={currentEfficiency} max={900} valid={artifactValid} />
+          </Box>
+          {currentEfficiency !== maxEfficiency && <Box sx={{ display: "flex", mb: 1 }}>
+            <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.maxSubEff`}</Typography>
+            <PercentBadge value={maxEfficiency} max={900} valid={artifactValid} />
+          </Box>}
+          <Box flexGrow={1} />
+          {probabilityFilter && <strong>Probability: {(probability(art, probabilityFilter) * 100).toFixed(2)}%</strong>}
+          <Typography color="success.main">{sheet?.name ?? "Artifact Set"} {setDescTooltip}</Typography>
+        </CardContent>
+      </ConditionalWrapper>
+      <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }}>
+        {editable && canEquip ?
+          <CharacterDropdownButton size="small" inventory value={location} onChange={equipOnChar} /> : <LocationName location={location} />}
+        {editable && <ButtonGroup sx={{ height: "100%" }}>
+          {editor && <Button color="info" size="small" onClick={onShowEditor} >
+            <FontAwesomeIcon icon={faEdit} className="fa-fw" />
+          </Button>}
+          {editor && <Tooltip title={<Typography>{t`excludeArtifactTip`}</Typography>} placement="top" arrow>
+            <Button onClick={() => database.updateArt({ exclude: !exclude }, id)} color={exclude ? "error" : "success"} size="small" >
+              <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
             </Button>
-            <Tooltip title={<Typography>{t`excludeArtifactTip`}</Typography>} placement="top" arrow>
-              <Button onClick={() => database.updateArt({ exclude: !exclude }, id)} color={exclude ? "error" : "success"} size="small">
-                <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
-              </Button>
-            </Tooltip>
-            {!!onDelete && <Button color="error" size="small" onClick={() => onDelete(id)} disabled={lock}>
-              <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
-            </Button>}
-          </ButtonGroup>}
-        </Grid>
-      </CardActions>
+          </Tooltip>}
+          {!!onDelete && <Button color="error" size="small" onClick={() => onDelete(id)} disabled={lock}>
+            <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
+          </Button>}
+          {extraButtons}
+        </ButtonGroup>}
+      </Box>
     </CardLight >
   </Suspense>
 }
