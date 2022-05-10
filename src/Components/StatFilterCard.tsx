@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, ButtonGroup, CardContent, MenuItem, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useCallback, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { DataContext } from '../DataContext';
 import { uiInput as input } from '../Formula';
 import KeyMap, { StatKey } from '../KeyMap';
@@ -13,6 +14,7 @@ import DropdownButton from './DropdownMenu/DropdownButton';
 import InfoTooltip from './InfoTooltip';
 export default function StatFilterCard({ statFilters = {}, setStatFilters, disabled = false }:
   { statFilters: Dict<StatKey, number>, setStatFilters: (object: Dict<StatKey, number>) => void, disabled?: boolean }) {
+  const { t } = useTranslation("page_character")
   const { data } = useContext(DataContext)
   const statKeys: StatKey[] = ["atk", "hp", "def", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_"]
   if (data.get(input.weaponType).value !== "catalyst") statKeys.push("physical_dmg_")
@@ -24,8 +26,8 @@ export default function StatFilterCard({ statFilters = {}, setStatFilters, disab
   return <Box>
     <CardLight>
       <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
-        <Typography>Build Constraints</Typography>
-        <InfoTooltip title={<Typography>Constraint the generated builds to conform to some requirements, e.g. Generate builds with at least 140% Energy Recharge.</Typography>} />
+        <Typography>{t`tabOptimize.constraintFilter.title`}</Typography>
+        <InfoTooltip title={<Typography>{t`tabOptimize.constraintFilter.tooltip`}</Typography>} />
       </CardContent>
     </CardLight>
     <Box display="flex" flexDirection="column" gap={0.5}>
