@@ -24,17 +24,18 @@ import useWeapon from "../ReactHooks/useWeapon"
 import { CharacterKey } from "../Types/consts"
 import { ICachedWeapon } from "../Types/weapon"
 import { clamp } from "../Util/Util"
-import WeaponSwapBtn from "./WeaponSwapBtn"
 
 type WeaponStatsEditorCardProps = {
   weaponId: string
   footer?: boolean
   onClose?: () => void
+  extraButtons?: JSX.Element
 }
 export default function WeaponEditor({
   weaponId: propWeaponId,
   footer = false,
-  onClose
+  onClose,
+  extraButtons
 }: WeaponStatsEditorCardProps) {
   const { data } = useContext(DataContext)
 
@@ -109,8 +110,8 @@ export default function WeaponEditor({
                     {`Refinement ${key + 1}`}
                   </MenuItem>)}
               </DropdownButton>}
+              {extraButtons}
             </ButtonGroup>
-            {data?.get(input.charKey)?.value && <WeaponSwapBtn weaponTypeKey={weaponSheet.weaponType} onChangeId={id => database.setWeaponLocation(id, data.get(input.charKey).value as CharacterKey)} />}
           </Box>
           <Box display="flex" gap={1} flexWrap="wrap" justifyContent="space-between">
             <ButtonGroup sx={{ bgcolor: t => t.palette.contentLight.main }} >

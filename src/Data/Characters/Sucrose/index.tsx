@@ -195,17 +195,19 @@ const sheet: ICharacterSheet = {
             node: infoMut(dmgFormulas.burst[eleKey], { key: `char_${key}_gen:burst.skillParams.1` }),
           }]
         }]))
-      }), ct.conditionalTemplate("constellation6", {
+      }), ct.conditionalTemplate("constellation6", { // Absorption teambuff for C6
+        teamBuff: true,
+        canShow: unequal(target.charKey, input.activeCharKey, 1),
         value: condAbsorption,
         path: condAbsorptionPath,
         name: st("eleAbsor"),
-        teamBuff: true,
         states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
           name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-          fields: [{
-            node: c6Bonus[`${eleKey}_dmg_`],
-          }],
+          fields: Object.values(c6Bonus).map(n => ({ node: n }))
         }]))
+      }), ct.headerTemplate("constellation6", {
+        canShow: unequal(condAbsorption, undefined, 1),
+        fields: Object.values(c6Bonus).map(n => ({ node: n }))
       })]),
 
       passive1: ct.talentTemplate("passive1", [ct.conditionalTemplate("passive1", {

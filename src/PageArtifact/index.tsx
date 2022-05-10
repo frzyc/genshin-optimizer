@@ -101,10 +101,10 @@ export default function PageArtifact() {
   }, [state, dbDirty, database, sortConfigs, filterConfigs, probabilityFilter, showProbability])
 
 
-  const { artifactsToShow: artifactIdsToShow, numPages, currentPageIndex } = useMemo(() => {
+  const { artifactIdsToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(artifactIds.length / maxNumArtifactsToDisplay)
     const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
-    return { artifactsToShow: artifactIds.slice(currentPageIndex * maxNumArtifactsToDisplay, (currentPageIndex + 1) * maxNumArtifactsToDisplay), numPages, currentPageIndex }
+    return { artifactIdsToShow: artifactIds.slice(currentPageIndex * maxNumArtifactsToDisplay, (currentPageIndex + 1) * maxNumArtifactsToDisplay), numPages, currentPageIndex }
   }, [artifactIds, pageIdex, maxNumArtifactsToDisplay])
 
   //for pagination
@@ -173,6 +173,8 @@ export default function PageArtifact() {
               effFilter={effFilterSet}
               onDelete={deleteArtifact}
               probabilityFilter={showProbability ? probabilityFilter : undefined}
+              editor
+              canEquip
             />
           </Grid>
         )}

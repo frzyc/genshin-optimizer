@@ -47,7 +47,7 @@ export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { a
         maxHeight="100%"
       />
     </ArtifactSetSlotTooltip>
-    <Typography sx={{ position: "absolute", lineHeight: 1, pointerEvents: "none" }} variant="subtitle2"><SqBadge color={levelVariant as any}>+{level}</SqBadge></Typography>
+    <Typography sx={{ position: "absolute", m: -0.2, lineHeight: 1, pointerEvents: "none" }} variant="subtitle2"><SqBadge color={levelVariant as any}>+{level}</SqBadge></Typography>
     <Typography variant='h6' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, }}>
       <BootstrapTooltip placement="top" title={<Typography>{cacheValueString(mainStatVal, KeyMap.unit(mainStatKey))}{KeyMap.unit(mainStatKey)} {KeyMap.getStr(mainStatKey)}</Typography>} disableInteractive>
         <SqBadge color={color} sx={{ p: 0.25 }}>{element ? uncoloredEleIcons[element] : StatIcon[mainStatKey]}</SqBadge>

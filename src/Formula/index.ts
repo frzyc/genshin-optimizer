@@ -94,6 +94,7 @@ const input = setReadNodeKeys(deepClone({
   artSet: objectKeyMap(allArtifactSets, set => read("add", { key: set })),
 
   weapon: withDefaultInfo({ prefix: "weapon", asConst }, {
+    id: stringRead(),
     key: stringRead(), type: stringRead(),
 
     lvl: read(), asc: read(), refinement: read(), refineIndex: read(),

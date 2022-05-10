@@ -85,6 +85,7 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
 function dataObjForWeapon(weapon: ICachedWeapon): Data {
   return {
     weapon: {
+      id: constant(weapon.id),
       lvl: constant(weapon.level),
       asc: constant(weapon.ascension),
       refinement: constant(weapon.refinement),

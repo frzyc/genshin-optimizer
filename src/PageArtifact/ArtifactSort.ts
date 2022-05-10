@@ -24,8 +24,8 @@ type ArtifactSortFilter = {
   ascending: boolean
   sortType: ArtifactSortKey
 }
-export const initialArtifactSortFilter = (): ArtifactSortFilter => ({
-  filterOption: {
+export function initialFilterOption(): FilterOption {
+  return {
     artSetKeys: [],
     rarity: [...allArtifactRarities],
     levelLow: 0,
@@ -35,7 +35,10 @@ export const initialArtifactSortFilter = (): ArtifactSortFilter => ({
     substats: [],
     location: "",
     excluded: "",
-  },
+  }
+}
+export const initialArtifactSortFilter = (): ArtifactSortFilter => ({
+  filterOption: initialFilterOption(),
   ascending: false,
   sortType: artifactSortKeys[0],
 })
