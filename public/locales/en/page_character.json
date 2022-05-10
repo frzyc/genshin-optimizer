@@ -20,7 +20,8 @@
   "tabEquip": {
     "swapWeapon": "Swap Weapon",
     "swapArt": "Swap Artifact",
-    "compare": "Compare with current Build"
+    "compare": "Compare with current Build",
+    "unequipArts": "Unequip all artifacts"
   },
   "tabOptimize": {
     "assumptionLvl": {

@@ -26,7 +26,8 @@ import WeaponSwapModal from './WeaponSwapModal';
 const WeaponEditor = lazy(() => import('../../../../PageWeapon/WeaponEditor'))
 
 function TabEquip() {
-  const { teamData, data, character, character: { equippedWeapon, key: characterKey }, mainStatAssumptionLevel } = useContext(DataContext)
+  const { t } = useTranslation("page_character")
+  const { teamData, data, character, character: { equippedWeapon, key: characterKey, equippedArtifacts }, mainStatAssumptionLevel } = useContext(DataContext)
   const { weaponSheet } = teamData[characterKey]!
   const [weaponId, setweaponId] = useState("")
   const showWeapon = useCallback(() => setweaponId(equippedWeapon), [equippedWeapon],)
@@ -45,6 +46,7 @@ function TabEquip() {
   const [, updateArt] = useForceUpdate()
   useEffect(() => database.followAnyArt(updateArt))
 
+  const hasEquipped = useMemo(() => !!Object.values(equippedArtifacts).filter(i => i).length, [equippedArtifacts])
   const unequipArts = useCallback(() => {
     if (!character) return
     if (!window.confirm("Do you want to move all currently equipped artifacts to inventory?")) return
@@ -56,7 +58,6 @@ function TabEquip() {
   const grxl = useMediaQuery(theme.breakpoints.up('xl'));
   const artifactFields = useMemo(() => artifactSheets && setEffects && Object.entries(setEffects).map(([setKey, setNumKeyArr]) =>
     <CardLight key={setKey} sx={{ flexGrow: 1, }} >
-      <Button color="error" onClick={unequipArts} fullWidth sx={{ borderRadius: 0 }}>Unequip all artifacts</Button>
       <CardContent >
         <Grid container spacing={1} flexDirection="column" height="100%" >
           <Grid item display="flex" flexDirection="column" gap={2}>
@@ -83,6 +84,7 @@ function TabEquip() {
     <Grid container spacing={1}>
       {grxl && <Grid item xs={12} md={12} xl={3} sx={{ display: "flex", flexDirection: "column", gap: 1 }} >
         {weaponDoc}
+        {hasEquipped && <Button color="error" onClick={unequipArts} fullWidth>{t`tabEquip.unequipArts`}</Button>}
         {artifactFields}
       </Grid>}
       <Grid item xs={12} md={12} xl={9} container spacing={1}>
