@@ -52,7 +52,7 @@ const sheet: IWeaponSheet = {
     header: headerTemplate(key, icon, iconAwaken, st("stacks")),
     name: trm("condName"),
     states: objectKeyMap(range(1, 5), i => ({
-      name: st("seconds", { count: parseFloat((i * 0.1).toFixed(1)) }),
+      name: st("seconds", { count: i / 10 }),
       fields: [{
         node: normal_dmg_arrow_
       }, {
