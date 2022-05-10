@@ -12,7 +12,7 @@ type StructuredNumber = {
   v: number,
   grads: number[],
 }
-export type UpgradeOptResult = {
+export type QueryResult = {
   id: string,
   subs: SubstatKey[],
   rollsLeft: number,
@@ -22,13 +22,14 @@ export type UpgradeOptResult = {
   upAvg: number,
   params: OptSummary[],
   evalFn: (values: Dict<string, number>) => StructuredNumber[],
-  skippableDerivs: boolean[][]
+  skippableDerivs: boolean[][],
+  thresholds: number[],
 }
 type OptSummary = {
   appxDist: GaussianMixture
   thr: number,
 }
-type Query = {
+export type Query = {
   formulas: NumNode[],
   curBuild: QueryBuild,
 
@@ -76,7 +77,7 @@ function gaussianPE(mean: number, variance: number, x: number) {
   return { x: x, p: p, upAvg: mean - x + Math.sqrt(variance) * phi / p }
 }
 
-export function evalArtifact(objective: Query, art: QueryArtifact, slow = false): UpgradeOptResult {
+export function evalArtifact(objective: Query, art: QueryArtifact, slow = false): QueryResult {
   let newBuild = { ...objective.curBuild }
   newBuild[art.slot] = art
   let stats = toStats(newBuild)
@@ -93,7 +94,8 @@ export function evalArtifact(objective: Query, art: QueryArtifact, slow = false)
     objectiveEval: (stats) => objective.evalFn(stats).map(({ v, grads }) => ({ v: v, ks: art.subs.map(key => grads[allSubstats.indexOf(key)] * scale(key)) }))
   }
 
-  const out = slow ? gmm1d(iq) : totalGaussian1d(iq)
+  // const out = slow ? gmm1d(iq) : totalGaussian1d(iq)
+  const out = fastUB(iq);
   return {
     id: art.id,
     subs: art.subs,
@@ -108,6 +110,7 @@ export function evalArtifact(objective: Query, art: QueryArtifact, slow = false)
     ],
     evalFn: objective.evalFn,
     skippableDerivs: objective.skippableDerivs,
+    thresholds: objective.thresholds,
   }
 }
 
@@ -157,6 +160,38 @@ function totalGaussian1d({ rollsLeft, subs, stats, scale, objectiveEval, thresho
   return { ...gaussianPE(mean, variance, thresholds[ix]), appxDist: appx }
 }
 
+function fastUB({ rollsLeft, subs, stats, scale, objectiveEval, thresholds }: InternalQuery): InternalResult {
+  // Evaluate derivatives at center of 4-D upgrade distribution
+  let stats2 = { ...stats }
+  subs.forEach(key => {
+    stats2[key] = (stats2[key] ?? 0) + 17 / 8 * rollsLeft * scale(key)
+  })
+
+  const N = rollsLeft
+  const obj = objectiveEval(stats2);
+  let p_min = 1;
+  let upAvgUB = -1;
+  let apxDist: GaussianMixture = { gmm: [], x0: obj[0].v, x1: obj[0].v };
+
+  for (let ix = 0; ix < obj.length; ix++) {
+    const { v, ks } = obj[ix];
+    const ksum = ks.reduce((a, b) => a + b)
+    const ksum2 = ks.reduce((a, b) => a + b * b, 0)
+
+    const mean = v
+    const variance = (147 / 8 * ksum2 - 289 / 64 * ksum * ksum) * N
+
+    const { x, p, upAvg } = gaussianPE(mean, variance, thresholds[ix])
+    if (ix == 0) {
+      upAvgUB = upAvg
+      apxDist = { gmm: [{ p: 1, mu: mean, sig2: variance }], x0: mean - 4 * Math.sqrt(variance), x1: mean + 4 * Math.sqrt(variance) }
+    }
+    p_min = Math.min(p, p_min)
+  }
+
+  return { x: thresholds[0], p: p_min, upAvg: upAvgUB, appxDist: apxDist }
+}
+
 function gmm1d({ rollsLeft, stats, subs, thresholds, scale, objectiveEval }: InternalQuery, ix = 0): InternalResult {
   const appx: GaussianMixture = { gmm: [], x0: thresholds[0], x1: thresholds[0] }
   let lpe: { l: number, p: number, upAvg: number }[] = []
@@ -188,10 +223,43 @@ function gmm1d({ rollsLeft, stats, subs, thresholds, scale, objectiveEval }: Int
   return { p: p_ret, upAvg: upAvg_ret, x: thresholds[ix], appxDist: appx }
 }
 
-function querySetup(formulas: NumNode[], curBuild: QueryBuild, data: Data = {}): Query {
+function gmmNd({ rollsLeft, stats, subs, thresholds, scale, objectiveEval }: InternalQuery, ix = 0): InternalResult {
+  const appx: GaussianMixture = { gmm: [], x0: thresholds[0], x1: thresholds[0] }
+
+  let lpe: { l: number, p: number, upAvg: number }[] = []
+  crawlUpgrades(rollsLeft, (ns, p) => {
+    let stat2 = { ...stats }
+    subs.forEach((sub, i) => {
+      stat2[sub] = (stat2[sub] ?? 0) + 17 / 2 * ns[i] * scale(sub)
+    })
+
+    // Loop things here
+    const { v, ks } = objectiveEval(stat2)[ix]
+    const mean = v
+    const variance = 5 / 4 * ks.reduce((pv, cv, i) => pv + cv * cv * ns[i], 0)
+    appx.gmm.push({ p: p, mu: mean, sig2: variance })
+    appx.x0 = Math.min(appx.x0, mean - 4 * Math.sqrt(variance))
+    appx.x1 = Math.max(appx.x1, mean + 4 * Math.sqrt(variance))
+
+    lpe.push({ l: p, ...gaussianPE(mean, variance, thresholds[ix]) })
+  })
+
+  // Aggregate gaussian mixture statistics.
+  let p_ret = 0, upAvg_ret = 0
+  lpe.forEach(({ l, p, upAvg }) => {
+    p_ret += l * p
+    upAvg_ret += l * p * upAvg
+  })
+
+  if (p_ret < 1e-10) return { p: 0, upAvg: 0, x: thresholds[ix], appxDist: appx }
+  upAvg_ret = upAvg_ret / p_ret
+  return { p: p_ret, upAvg: upAvg_ret, x: thresholds[ix], appxDist: appx }
+}
+
+export function querySetup(formulas: NumNode[], thresholds: number[], curBuild: QueryBuild, data: Data = {}): Query {
   // TODO: expand math to multi-objective
-  if (formulas.length != 1)
-    throw new Error("Implementation only works with one objective formula rn.")
+  // if (formulas.length != 1)
+  // throw new Error("Implementation only works with one objective formula rn.")
 
   let toEval: NumNode[] = []
   formulas.forEach(f => {
@@ -213,19 +281,20 @@ function querySetup(formulas: NumNode[], curBuild: QueryBuild, data: Data = {}):
       return { v: out[ix], grads: allSubstats.map((sub, si) => out[ix + 1 + si]) }
     })
   }
-  return { formulas: formulas, thresholds: [dmg0], curBuild: curBuild, evalFn: structuredEval, skippableDerivs: skippableDerivs }
+  return { formulas: formulas, thresholds: [dmg0, ...thresholds], curBuild: curBuild, evalFn: structuredEval, skippableDerivs: skippableDerivs }
 }
 
 export function queryDebug(nodes: NumNode[], curEquip: QueryBuild, data: Data, arts: QueryArtifact[]) {
-  const query = querySetup(nodes, curEquip, data)
+  const query = querySetup(nodes, [], curEquip, data)
+  console.log(nodes)
 
-  let evaluated: UpgradeOptResult[] = []
+  let evaluated: QueryResult[] = []
   arts.forEach(art => {
     if (art.rarity == 5) {
       let toSav = evalArtifact(query, art, true)
       evaluated.push(toSav)
       // if (art.id == 'artifact_1215')
-        // console.log(evaluated)
+      // console.log(evaluated)
     }
   })
   evaluated = evaluated.sort((a, b) => b.prob * b.upAvg - a.prob * a.upAvg)

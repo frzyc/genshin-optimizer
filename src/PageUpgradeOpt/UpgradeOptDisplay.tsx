@@ -48,13 +48,15 @@ import { initialBuildSettings } from '../PageBuild/BuildSetting';
 import ArtifactBuildDisplayItem from '../PageBuild/Components/ArtifactBuildDisplayItem';
 import OptimizationTargetSelector from '../PageBuild/Components/OptimizationTargetSelector';
 import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from '../PageBuild/foreground';
-import { QueryArtifact, QueryBuild, queryDebug, UpgradeOptResult } from './artifactQuery'
+import { QueryArtifact, QueryBuild, Query, querySetup, queryDebug, evalArtifact, QueryResult } from './artifactQuery'
 import Artifact from "../Data/Artifacts/Artifact";
 import ArtifactCard from "../PageArtifact/ArtifactCard";
 import { useTranslation } from "react-i18next";
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
 import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../Components/HitModeEditor';
 import ArtifactConditionalCard from '../PageBuild/Components/ArtifactConditionalCard';
+import { mvnDebug } from './mvncdf'
+
 
 // import HitModeCard from '../PageBuild/Components/HitModeCard';
 
@@ -150,7 +152,7 @@ export default function UpgradeOptDisplay() {
 
   const [pageIdex, setpageIdex] = useState(0)
 
-  const [artifactUpgradeOpts, setArtifactUpgradeOpts] = useState([] as UpgradeOptResult[])
+  const [artifactUpgradeOpts, setArtifactUpgradeOpts] = useState([] as QueryResult[])
 
   const maxNumArtifactsToDisplay = 5;
   const { artifactsToShow: artifactsToShow, numPages, currentPageIndex, minObj0, maxObj0 } = useMemo(() => {
@@ -206,6 +208,8 @@ export default function UpgradeOptDisplay() {
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
   const generateBuilds = useCallback(async () => {
+    mvnDebug();
+
     if (!characterKey || !optimizationTarget) return
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
@@ -261,9 +265,19 @@ export default function UpgradeOptDisplay() {
       return { [slotKey]: buildData }
     }))
 
-    let nodes = [...valueFilter.map(x => x.value), optimizationTargetNode]
+    // CTRL-F: asdfasdf
+    let nodes = [optimizationTargetNode, ...valueFilter.map(x => x.value)]
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
-    let artUpOpt = queryDebug(nodes, curEquip, workerData, queryArts);
+    const query = querySetup(nodes, valueFilter.map(x => x.minimum), curEquip, data);
+    let artUpOpt: QueryResult[] = []
+    queryArts.forEach(art => {
+      if (art.rarity == 5) {
+        let toSav = evalArtifact(query, art, true)
+        artUpOpt.push(toSav)
+      }
+    })
+    artUpOpt = artUpOpt.sort((a, b) => b.prob * b.upAvg - a.prob * a.upAvg)
+
     setArtifactUpgradeOpts(artUpOpt);
   }, [characterKey, database, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, buildSettingsDispatch, setFilters, statFilters])
 
@@ -343,7 +357,7 @@ export default function UpgradeOptDisplay() {
                 <Grid container lg={4}>
                   {/*Minimum Final Stat Filter */}
                   {/* TODO */}
-                  <StatFilterCard statFilters={statFilters} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={true} />
+                  <StatFilterCard statFilters={statFilters} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={false} />
                   <ArtifactConditionalCard disabled={false} />
                 </Grid>
               </Grid>

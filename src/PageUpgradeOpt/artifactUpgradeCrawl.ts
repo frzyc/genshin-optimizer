@@ -1,4 +1,4 @@
-import { QueryArtifact, UpgradeOptResult } from "./artifactQuery"
+import { QueryArtifact, QueryResult } from "./artifactQuery"
 import { SubstatKey, allSubstats, IArtifact, MainStatKey } from "../Types/artifact"
 import Artifact from "../Data/Artifacts/Artifact"
 import { range } from "../Util/Util"
@@ -44,7 +44,7 @@ export function crawlUpgrades(n: number, fn?: (n1234: number[], p: number) => vo
   }
 }
 
-export function allUpgradeValues(upOpt: UpgradeOptResult) {
+export function allUpgradeValues(upOpt: QueryResult) {
   // TODO: Fixed rarity 5*
   let scale = (key: SubstatKey) => key.endsWith('_') ? Artifact.maxSubstatValues(key, 5) / 1000 : Artifact.maxSubstatValues(key, 5) / 10
 
@@ -79,7 +79,7 @@ export function allUpgradeValues(upOpt: UpgradeOptResult) {
         let p_val = (4 ** -ni) * quadrinomial(ni, val - 7 * ni)
         p_upVals *= p_val
       }
-      results.push({ v: f(stats)[0].v, p: p * p_upVals })
+      results.push({ v: f(stats).map(n => n.v), p: p * p_upVals })
     })
   })
 
@@ -87,6 +87,6 @@ export function allUpgradeValues(upOpt: UpgradeOptResult) {
 }
 
 type WeightedPoint = {
-  v: number,
+  v: number[],
   p: number
 }

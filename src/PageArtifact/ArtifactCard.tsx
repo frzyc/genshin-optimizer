@@ -24,7 +24,7 @@ import { CharacterKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
 import PercentBadge from './PercentBadge';
 import { probability } from './RollProbability';
-import { UpgradeOptResult } from "../PageUpgradeOpt/artifactQuery";
+import { QueryResult } from "../PageUpgradeOpt/artifactQuery";
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
 
@@ -35,7 +35,7 @@ type Data = {
   effFilter?: Set<SubstatKey>,
   probabilityFilter?: Dict<SubstatKey, number>,
   disableEditSetSlot?: boolean,
-  upgradeOpt?: UpgradeOptResult
+  upgradeOpt?: QueryResult
 }
 const allSubstatFilter = new Set(allSubstats)
 

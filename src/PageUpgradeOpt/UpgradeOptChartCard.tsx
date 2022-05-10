@@ -18,12 +18,13 @@ import {
   TooltipProps,
   XAxis,
   YAxis,
+  Label,
   Cross,
   Dot,
   Polygon
 } from 'recharts';
 import CardLight from '../Components/Card/CardLight';
-import { UpgradeOptResult } from './artifactQuery';
+import { QueryResult } from './artifactQuery';
 import { allUpgradeValues } from './artifactUpgradeCrawl'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalculator } from "@fortawesome/free-solid-svg-icons";
@@ -33,7 +34,7 @@ import { allSlotKeys, SlotKey } from '../Types/consts';
 import { ICachedArtifact } from '../Types/artifact';
 
 type Data = {
-  upgradeOpt: UpgradeOptResult,
+  upgradeOpt: QueryResult,
   showTrue?: boolean,
   objMin: number,
   objMax: number,
@@ -43,7 +44,8 @@ type ChartData = {
   x: number,
   est?: number,
   exact?: number,
-  expInc?: number
+  exactCons?: number,
+  expInc?: number,
 }
 
 function linspace(lower = 0, upper = 1, steps = 50): number[] {
@@ -66,6 +68,8 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
     throw new Error(`artifact ${upgradeOpt.id} not found.`)
   }
 
+  const constrained = (upgradeOpt.thresholds.length > 1)
+
   const slot = bla.slotKey;
   const { data } = useContext(DataContext)
   const artifacts = useMemo(() =>
@@ -74,32 +78,30 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
 
   const gauss = (x: number) => upgradeOpt.params[0].appxDist.gmm.reduce((pv, { p, mu, sig2 }) =>
     pv + (sig2 > 0 ? p * Math.exp(-(mu - x) * (mu - x) / sig2 / 2) / Math.sqrt(2 * Math.PI * sig2) : 0), 0)
-  const thr = upgradeOpt.params[0].thr;
+  const thresh = upgradeOpt.thresholds;
+  const thr0 = thresh[0];
+  const perc = (x: number) => 100 * (x - thr0) / thr0;
 
   const miin = objMin
   const maax = objMax
 
-  // let ymax = Math.max(...upgradeOpt.params[0].appxDist.gmm.map(({ mu }) => gauss(mu)))
-  // if (ymax <= 0) ymax = 1 / nbins
   let ymax = 0
   let dataEst: ChartData[] = linspace(miin, maax, plotPoints).map(v => {
     const est = gauss(v)
     ymax = Math.max(ymax, est)
-    return { x: v, est: est }
+    return { x: perc(v), est: est }
   })
-  if (ymax == 0) ymax = 1 / nbins
+  if (ymax == 0) ymax = nbins / (maax - miin)
 
   // go back and add delta distributions.
   let deltas: { [key: number]: number } = {}
   upgradeOpt.params[0].appxDist.gmm.forEach(({ p, mu, sig2 }) => {
     if (sig2 <= 0) deltas[mu] = (deltas[mu] ?? 0) + p
   })
-  Object.entries(deltas).forEach(([mu, p]) => dataEst.push({ x: parseFloat(mu), est: p * nbins / (maax - miin) }))
+  Object.entries(deltas).forEach(([mu, p]) => dataEst.push({ x: perc(parseFloat(mu)), est: p * nbins / (maax - miin) }))
 
   dataEst.sort((a, b) => a.x - b.x)
-  // const xmin = dataEst[0].x;
-  // const xmax = dataEst[dataEst.length - 1].x;
-  let xpercent = (thr - miin) / (maax - miin)
+  let xpercent = (thr0 - miin) / (maax - miin)
 
   const [trueData, setTrueData] = useState<ChartData[]>([]);
   const [trueP, setTrueP] = useState(-1);
@@ -108,30 +110,28 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
   useEffect(() => {
     if (!calcExacts) return;
     const exactData = allUpgradeValues(upgradeOpt)
-    // console.log(exactData, exactData.reduce((pv, cv) => cv.p + pv, 0))
     let true_p = 0
     let true_d = 0
 
-    // const exactMax = exactData.reduce((pv, cv) => Math.max(pv, cv.v), exactData[0].v)
-    // const exactMin = exactData.reduce((pv, cv) => Math.min(pv, cv.v), exactData[0].v)
     let bins = new Array(nbins).fill(0)
+    let binsConstrained = new Array(nbins).fill(0)
     let binstep = (maax - miin) / nbins
-    let allbins: number[] = []
 
     exactData.forEach(({ p, v }) => {
-      let whichBin = Math.min(Math.trunc((v - miin) / binstep), nbins - 1)
+      let whichBin = Math.min(Math.trunc((v[0] - miin) / binstep), nbins - 1)
       bins[whichBin] += p
-      allbins.push(whichBin)
 
-      if (v > thr) {
-        true_p += p
-        true_d += p * (v - thr)
+      if (v.every((val, ix) => ix == 0 || val > thresh[ix])) {
+        binsConstrained[whichBin] += p
+        if (v[0] > thr0) {
+          true_p += p
+          true_d += p * (v[0] - thr0)
+        }
       }
     })
     if (true_p > 0) true_d = true_d / true_p
 
-
-    let dataExact: ChartData[] = bins.map((dens, ix) => ({ x: miin + ix * binstep, exact: dens / binstep }))
+    let dataExact: ChartData[] = bins.map((dens, ix) => ({ x: perc(miin + ix * binstep), exact: dens / binstep, exactCons: binsConstrained[ix] / binstep }))
     setTrueP(true_p)
     setTrueD(true_d)
     setTrueData(dataExact)
@@ -140,7 +140,7 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
   if (trueData.length == 0) {
     let binstep = (maax - miin) / nbins
     for (let i = 0; i < nbins; i++) {
-      trueData.push({ x: miin + i * binstep, exact: 0 })
+      trueData.push({ x: perc(miin + i * binstep), exact: 0, exactCons:0 })
     }
   }
 
@@ -157,8 +157,8 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
       return (
         <div className="custom-tooltip">
           <p className="label"></p>
-          <p className="desc">prob. upgrade{trueP >= 0 ? '' : ' (est.):'}: {(100 * reportP).toFixed(1)}%</p>
-          <p className="desc">average increase{trueD >= 0 ? '' : ' (est.)'}: {(reportD).toFixed(3)}</p>
+          <p className="desc">prob. upgrade{trueP >= 0 ? '' : ' (est.)'}: {(100 * reportP).toFixed(1)}%</p>
+          <p className="desc">average increase{trueD >= 0 ? '' : ' (est.)'}: {reportD <= 0 ? "" : "+"}{(100 * reportD / thr0).toFixed(1)}%</p>
         </div>
       )
     }
@@ -170,11 +170,15 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
     <CardContent>
       <ResponsiveContainer height="99%" aspect={3}>
         {/* <ComposedChart width={600} height={250} data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}> */}
-        <ComposedChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+        <ComposedChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 15 }}>
           {/* <CartesianGrid strokeDasharray="4 4" /> */}
           {/* <XAxis dataKey="x" type="number" domain={[Math.round(miin), Math.round(maax)]} allowDecimals={false} /> */}
-          <XAxis dataKey="x" type="number" domain={['auto', 'auto']} allowDecimals={false} />
-          <YAxis type="number" domain={[0, ymax]} tickFormatter={v => parseFloat(v).toFixed(4)} />
+          <XAxis dataKey="x" type="number" domain={['auto', 'auto']} allowDecimals={false} tickFormatter={v => `${v <= 0 ? "" : "+"}${v}%`} >
+            <Label value='Relative Damage Potential' position='insideBottom' style={{ fill: '#eaebed' }} offset={-10} />
+          </XAxis>
+          <YAxis type="number" domain={[0, ymax]} tick={false} >
+            <Label value='Probability' position='insideLeft' angle={-90} style={{ fill: '#eaebed' }} />
+          </YAxis>
           {/* <Tooltip /> */}
           <Legend verticalAlign='top' height={36} />
 
@@ -188,13 +192,14 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
           <Line dataKey="dne" stroke='red' name='Current Damage' />
           <Area type="monotone" dataKey="est" stroke="orange" dot={false} fill={`url(#splitOpacity${upgradeOpt.id})`}
             opacity={.5} name='Estimated Distribution' activeDot={false} />
-          {calcExacts && <Area type="stepAfter" dataKey="exact" dot={false} opacity={.7} name='Exact Distribution (Histogram)' activeDot={false} />}
+          {constrained && calcExacts && <Area type="stepAfter" dataKey="exact" dot={false} legendType="none" tooltipType='none' opacity={.7} activeDot={false} fill='grey' stroke='grey' />}
+          {calcExacts && <Area type="stepAfter" dataKey="exactCons" dot={false} opacity={.7} name={`Exact${constrained ? ' Constrained' : ''} Distribution (Histogram)`} activeDot={false} />}
 
-          <ReferenceLine x={thr} stroke="red" strokeDasharray="3 3" name="Current Damage" />
+          <ReferenceLine x={perc(thr0)} stroke="red" strokeDasharray="3 3" name="Current Damage" />
           {/* <ReferenceLine x={thr + upgradeOpt.Edmg} stroke="#ffffff" strokeDasharray="3 3" name="Current Damage" /> */}
           {/* <Scatter dataKey="expInc" /> */}
           {/* <ReferenceArea x1={thr} stroke="gray" strokeOpacity={0.05}/> */}
-          <ReferenceDot x={thr + reportD} y={(gauss(thr + reportD) || ymax) / 2} shape={<circle radius={1} opacity={.5} />} />
+          <ReferenceDot x={perc(thr0 + reportD)} y={(gauss(thr0 + reportD) || ymax) / 2} shape={<circle radius={1} opacity={.5} />} />
           {/* <ReferenceDot x={thr + reportD} y={(gauss(thr + reportD) || ymax) / 2} shape={<Cross x={100} y={100} width={70} height={150}/>} /> */}
 
           <Tooltip content={<CustomTooltip />} cursor={false} />
