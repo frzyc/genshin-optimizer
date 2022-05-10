@@ -435,17 +435,13 @@ export default function TabBuild() {
       </Box>}
       <CardLight>
         <CardContent>
-          <Box display="flex" alignItems="center" gap={1} >
+          <Box display="flex" alignItems="center" gap={1} mb={1} >
             <Typography sx={{ flexGrow: 1 }}>
               {builds ? <span>Showing <strong>{builds.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
                 : <span>Select a character to generate builds.</span>}
             </Typography>
             <Button disabled={!builds.length} color="error" onClick={() => buildSettingsDispatch({ builds: [], buildDate: 0 })} >Clear Builds</Button>
           </Box>
-        </CardContent>
-      </CardLight>
-      <CardLight>
-        <CardContent>
           <Grid container display="flex" spacing={1}>
             <Grid item><HitModeToggle size="small" /></Grid>
             <Grid item><ReactionToggle size="small" /></Grid>

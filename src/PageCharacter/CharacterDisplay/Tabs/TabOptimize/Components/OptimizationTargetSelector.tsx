@@ -67,7 +67,7 @@ function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: Disp
   </CardLight>
 }
 function NoTarget() {
-  return <b>Please select an Optimization Target</b>
+  return <b>Select an Optimization Target</b>
 }
 function TargetDisplayText({ optimizationTarget }: { optimizationTarget?: string[] }) {
   const { data } = useContext(DataContext)
