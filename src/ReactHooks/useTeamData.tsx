@@ -99,9 +99,11 @@ async function getCharDataBundle(database: ArtCharDatabase, characterKey: Charac
   if (!character) return
   const weapon = overrideWeapon ?? database._getWeapon(character.equippedWeapon)
   if (!weapon) return
-  const characterSheet = await CharacterSheet.get(characterKey)
-  const weaponSheet = await WeaponSheet.get(weapon.key)
-  const artifactSheetsData = await ArtifactSheet.getAllData
+  const [characterSheet, weaponSheet, artifactSheetsData] = await Promise.all([
+    CharacterSheet.get(characterKey),
+    WeaponSheet.get(weapon.key),
+    ArtifactSheet.getAllData
+  ])
   if (!characterSheet || !weaponSheet || !artifactSheetsData) return
   const artifacts = (overrideArt ?? Object.values(character.equippedArtifacts).map(a => database._getArt(a))).filter(a => a) as ICachedArtifact[]
   const data = [

@@ -16,6 +16,7 @@ const SolidToggleButtonGroup = styled(ToggleButtonGroup, {
     },
     '&:hover': {
       backgroundColor: theme.palette[baseColor].dark,
+      transition: "background-color 0.25s ease",
     },
     '&.Mui-selected': {
       backgroundColor: theme.palette[selectedColor].main,
