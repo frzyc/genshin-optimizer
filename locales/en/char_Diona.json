@@ -2,7 +2,5 @@
   "skillDuration" : "Duration per Paw",
   "pressShield" : "Shield DMG Absorption",
   "holdShield" : "Hold Shield DMG Absorption",
-  "a1shielded" : "Character shielded by <strong>Icy Paws</strong>",
-  "c6below" : "Active character within radius below or equal to 50% HP",
-  "c6above" : "Active character within radius above 50% HP"
+  "a1shielded" : "Character shielded by <strong>Icy Paws</strong>"
 }
