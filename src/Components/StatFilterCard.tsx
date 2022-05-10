@@ -49,6 +49,7 @@ export function StatFilterItem({ statKey, statKeys = [], value = 0, close, setFi
     <DropdownButton
       title={statKey ? KeyMap.get(statKey) : "New Stat"}
       disabled={disabled}
+      color={statKey ? "success" : "secondary"}
     >
       {statKeys.map(sKey => <MenuItem key={sKey} onClick={() => { close?.(); setFilter(sKey, value) }}>{KeyMap.get(sKey)}</MenuItem>)}
     </DropdownButton>
