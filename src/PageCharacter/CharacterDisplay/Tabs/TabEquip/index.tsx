@@ -1,7 +1,8 @@
 import { SwapHoriz } from '@mui/icons-material';
-import { Box, Button, CardContent, Divider, Grid, Typography, useMediaQuery } from '@mui/material';
+import { Box, Button, CardContent, Divider, Grid, Tooltip, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from "@mui/system";
 import { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay';
 import SlotNameWithIcon from '../../../../Components/Artifact/SlotNameWIthIcon';
 import CardLight from '../../../../Components/Card/CardLight';
@@ -127,29 +128,36 @@ function ArtSwapCard({ slotKey }: { slotKey: SlotKey }) {
   </CardLight>
 }
 function WeaponSwapButton({ weaponSheet }: { weaponSheet: WeaponSheet }) {
+  const { t } = useTranslation("page_character")
   const { character: { key: characterKey } } = useContext(DataContext)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState()
   return <>
-    <Button color="info" size="small" onClick={onOpen} ><SwapHoriz /></Button>
+    <Tooltip title={<Typography>{t`tabEquip.swapWeapon`}</Typography>} placement="top" arrow>
+      <Button color="info" size="small" onClick={onOpen} ><SwapHoriz /></Button>
+    </Tooltip>
     <WeaponSwapModal weaponTypeKey={weaponSheet.weaponType} onChangeId={id => database.setWeaponLocation(id, characterKey)} show={show} onClose={onClose} />
   </>
 }
 function LargeWeaponSwapButton({ weaponSheet }: { weaponSheet: WeaponSheet }) {
+  const { t } = useTranslation("page_character")
   const { character: { key: characterKey } } = useContext(DataContext)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState()
   return <>
-    <Button color="info" onClick={onOpen} startIcon={<SwapHoriz />} >SWAP WEAPON</Button>
+    <Button color="info" onClick={onOpen} startIcon={<SwapHoriz />} >{t`tabEquip.swapWeapon`}</Button>
     <WeaponSwapModal weaponTypeKey={weaponSheet.weaponType} onChangeId={id => database.setWeaponLocation(id, characterKey)} show={show} onClose={onClose} />
   </>
 }
 function ArtifactSwapButton({ slotKey }: { slotKey: SlotKey }) {
+  const { t } = useTranslation("page_character")
   const { character: { key: characterKey } } = useContext(DataContext)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState()
   return <>
-    <Button color="info" size="small" onClick={onOpen} ><SwapHoriz /></Button>
+    <Tooltip title={<Typography>{t`tabEquip.swapArt`}</Typography>} placement="top" arrow>
+      <Button color="info" size="small" onClick={onOpen} ><SwapHoriz /></Button>
+    </Tooltip>
     <ArtifactSwapModal slotKey={slotKey} show={show} onClose={onClose} onChangeId={id => database.setArtLocation(id, characterKey)} />
   </>
 }

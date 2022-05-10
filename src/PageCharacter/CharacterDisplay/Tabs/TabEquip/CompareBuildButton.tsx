@@ -1,6 +1,7 @@
 import { Close, Difference } from "@mui/icons-material"
-import { Button, Skeleton } from "@mui/material"
+import { Button, Skeleton, Tooltip, Typography } from "@mui/material"
 import { Suspense, useContext, useMemo } from "react"
+import { useTranslation } from "react-i18next"
 import ModalWrapper from "../../../../Components/ModalWrapper"
 import { DatabaseContext } from "../../../../Database/Database"
 import { DataContext } from "../../../../DataContext"
@@ -10,6 +11,7 @@ import { objectMap } from "../../../../Util/Util"
 import BuildDisplayItem from "../TabOptimize/Components/BuildDisplayItem"
 
 export default function CompareBuildButton({ artId, weaponId }: { artId?: string, weaponId?: string }) {
+  const { t } = useTranslation("page_character")
   const [show, onShow, onHide] = useBoolState(false)
   const { database } = useContext(DatabaseContext)
   const { character, character: { key: characterKey, equippedArtifacts }, characterSheet, data: oldData, mainStatAssumptionLevel, characterDispatch } = useContext(DataContext)
@@ -28,6 +30,8 @@ export default function CompareBuildButton({ artId, weaponId }: { artId?: string
         </DataContext.Provider>
       </Suspense>
     </ModalWrapper>
-    <Button color="info" size="small" onClick={onShow} ><Difference /></Button>
+    <Tooltip title={<Typography>{t`tabEquip.compare`}</Typography>} placement="top" arrow>
+      <Button color="info" size="small" onClick={onShow} ><Difference /></Button>
+    </Tooltip>
   </>
 }

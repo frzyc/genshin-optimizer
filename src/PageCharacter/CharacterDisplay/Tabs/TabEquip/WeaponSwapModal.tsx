@@ -1,5 +1,6 @@
 import { CardContent, Divider, Grid, Typography, Box, ToggleButton } from "@mui/material"
 import { useCallback, useContext, useEffect, useMemo, useState } from "react"
+import { useTranslation } from "react-i18next"
 import Assets from "../../../../Assets/Assets"
 import CardDark from "../../../../Components/Card/CardDark"
 import CloseButton from "../../../../Components/CloseButton"
@@ -19,6 +20,7 @@ import { weaponFilterConfigs } from '../../../../Util/WeaponSort'
 import CompareBuildButton from "./CompareBuildButton"
 const numToShowMap = { xs: 6, sm: 6, md: 9, lg: 12, xl: 12 }
 export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClose }: { onChangeId: (id: string) => void, weaponTypeKey: WeaponTypeKey, show: boolean, onClose: () => void }) {
+  const { t } = useTranslation("page_character")
   const { database } = useContext(DatabaseContext)
   const clickHandler = useCallback((id) => {
     onChangeId(id)
@@ -44,7 +46,7 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
       <CardContent sx={{ py: 1 }}>
         <Grid container>
           <Grid item flexGrow={1}>
-            <Typography variant="h6">{weaponTypeKey ? <ImgIcon src={Assets.weaponTypes[weaponTypeKey]} /> : null} Swap Weapon</Typography>
+            <Typography variant="h6">{weaponTypeKey ? <ImgIcon src={Assets.weaponTypes[weaponTypeKey]} /> : null} {t`tabEquip.swapWeapon`}</Typography>
           </Grid>
           <Grid item>
             <CloseButton onClick={onClose} />

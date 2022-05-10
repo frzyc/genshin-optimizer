@@ -1,4 +1,5 @@
 {
   "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Weapon",
-  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Weapons"
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Weapons",
+  "edit": "Edit Weapon"
 }
