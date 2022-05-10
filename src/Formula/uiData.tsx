@@ -228,6 +228,7 @@ export class UIData {
           operands = operands.filter(operand => operand.value !== identity)
         if (!operands.length)
           return variant ? { ...this._constant(identity), info: { variant } } : this._constant(identity)
+        if (operands.length === 1) return operands[0]
     }
 
     let formula: { display: Displayable, dependencies: Displayable[] }
