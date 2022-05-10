@@ -54,7 +54,7 @@ const ferventFlames: IResonance = {
 }
 
 // Soothing Waters
-const swNode = greaterEq(tally.hydro, 2, percent(0.25))
+const swNode = greaterEq(tally.hydro, 2, percent(0.30))
 const soothingWaters: IResonance = {
   name: tr("SoothingWater.name"),
   desc: tr("SoothingWater.desc"),

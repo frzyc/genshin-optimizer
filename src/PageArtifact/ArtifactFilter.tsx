@@ -1,30 +1,20 @@
-import { faBan, faChartLine, faTrash, faUserShield, faUserSlash } from "@fortawesome/free-solid-svg-icons"
+import { faBan, faChartLine, faTrash, faUserSlash } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Lock, LockOpen, Replay } from "@mui/icons-material"
-import { Autocomplete, Button, CardContent, Grid, Skeleton, TextField, ToggleButton, Typography, useTheme } from "@mui/material"
-import { Suspense, useContext, useMemo } from "react"
+import { Button, CardContent, Grid, Skeleton, Typography } from "@mui/material"
+import { lazy, Suspense, useContext, useMemo } from "react"
 import { Trans, useTranslation } from "react-i18next"
-import { ArtifactMainStatAutocomplete, ArtifactSetAutocomplete, ArtifactSubstatAutocomplete } from "../Components/Artifact/ArtifactAutocomplete"
-import ArtifactLevelSlider from "../Components/Artifact/ArtifactLevelSlider"
-import { artifactSlotIcon } from "../Components/Artifact/SlotNameWIthIcon"
 import CardDark from "../Components/Card/CardDark"
-import CharacterAutocomplete from "../Components/Character/CharacterAutocomplete"
-import SolidToggleButtonGroup from "../Components/SolidToggleButtonGroup"
 import SqBadge from "../Components/SqBadge"
-import { Stars } from "../Components/StarDisplay"
 import { DatabaseContext } from "../Database/Database"
-import usePromise from "../ReactHooks/usePromise"
 import { ICachedArtifact } from "../Types/artifact"
-import { allArtifactRarities, allSlotKeys } from "../Types/consts"
-import MenuItemWithImage from "../Components/MenuItemWithImage"
 import { FilterOption } from "./ArtifactSort"
+
+const ArtifactFilterDisplay = lazy(() => import('../Components/Artifact/ArtifactFilterDisplay'))
 
 export default function ArtifactFilter({ filterOption, filterOptionDispatch, filterDispatch, numShowing, total, }:
   { filterOption: FilterOption, filterOptionDispatch: (any) => void, filterDispatch: (any) => void, numShowing: number, total: number }) {
-  const { t } = useTranslation(["artifact", "ui"])
-  const theme = useTheme()
-  const { artSetKeys = [], mainStatKeys = [], rarity = [], slotKeys = [], levelLow, levelHigh, substats = [],
-    location = "", excluded = "" } = filterOption
+  const { t } = useTranslation(["artifact", "ui"]);
 
   return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={300} />}>
     <CardDark  >
@@ -42,132 +32,12 @@ export default function ArtifactFilter({ filterOption, filterOptionDispatch, fil
             </Button>
           </Grid>
         </Grid>
-        <Grid container spacing={1} mt={1}>
-          {/* left */}
-          <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
-            {/* Artifact stars filter */}
-            <SolidToggleButtonGroup fullWidth onChange={(e, newVal) => filterOptionDispatch({ rarity: newVal })} value={rarity} size="small">
-              {allArtifactRarities.map(star => <ToggleButton key={star} value={star}><Stars stars={star} /></ToggleButton>)}
-            </SolidToggleButtonGroup>
-            {/* Artifact Slot */}
-            <SolidToggleButtonGroup fullWidth onChange={(e, newVal) => filterOptionDispatch({ slotKeys: newVal })} value={slotKeys} size="small">
-              {allSlotKeys.map(slotKey => <ToggleButton key={slotKey} value={slotKey}>{artifactSlotIcon(slotKey)}</ToggleButton>)}
-            </SolidToggleButtonGroup>
-            {/* Artiface level filter */}
-            <ArtifactLevelSlider showLevelText levelLow={levelLow} levelHigh={levelHigh}
-              setLow={levelLow => filterOptionDispatch({ levelLow })}
-              setHigh={levelHigh => filterOptionDispatch({ levelHigh })}
-              setBoth={(levelLow, levelHigh) => filterOptionDispatch({ levelLow, levelHigh })} />
-            <Grid container display="flex" gap={1}>
-              <Grid item flexGrow={1}>
-                {/* location */}
-                <CharacterAutocomplete
-                  value={location}
-                  onChange={location => filterOptionDispatch({ location })}
-                  placeholderText={t("artifact:filterLocation.any")}
-                  defaultText={t("artifact:filterLocation.any")}
-                  labelText={t("artifact:filterLocation.location")}
-                  showDefault
-                  showInventory
-                  showEquipped
-                />
-              </Grid>
-              {/* exclusion state */}
-              <Grid item flexGrow={1}>
-                <Autocomplete
-                  autoHighlight
-                  options={[{ label: "" }, { label: "excluded" }, { label: "included" }]}
-                  value={{ label: excluded }}
-                  onChange={(_, value) => filterOptionDispatch({ excluded: value ? value.label : "" })}
-                  isOptionEqualToValue={(option, value) => option.label === value.label}
-                  getOptionLabel={(option) => t(`artifact:exclusion.${option.label ? option.label : "any"}`)}
-                  renderInput={(params) => <TextField
-                    {...params}
-                    multiline
-                    label={t("artifact:exclusion.exclusion")}
-                    variant="filled"
-                    focused
-                    type="search"
-                    color={excluded ? "success" : "primary"}
-                    InputProps={{
-                      ...params.InputProps,
-                      startAdornment: excluded === "excluded"
-                        ? <FontAwesomeIcon icon={faBan} />
-                        : excluded === "included"
-                          ? <FontAwesomeIcon icon={faChartLine} />
-                          : undefined
-                    }}
-                    InputLabelProps={{ style: { color: theme.palette.text.primary } }}
-                    sx={{
-                      "& .MuiFilledInput-root.Mui-focused": { "padding-right": 0, "background-color": excluded ? theme.palette.success.main : theme.palette.primary.main },
-                      "& .MuiFilledInput-root:hover": { "background-color": excluded ? theme.palette.success.dark : theme.palette.primary.dark }
-                    }}
-                  />}
-                  renderOption={(props, option) => <MenuItemWithImage
-                    key={option.label ? option.label : "default"}
-                    image={option.label === "excluded"
-                      ? <FontAwesomeIcon icon={faBan} />
-                      : option.label === "included"
-                        ? <FontAwesomeIcon icon={faChartLine} />
-                        : undefined
-                    }
-                    text={<Trans t={t} i18nKey={`exclusion.${option.label ? option.label : "any"}`}>{option.label}</Trans>}
-                    theme={theme}
-                    isSelected={excluded === option.label}
-                    props={props}
-                  />}
-                />
-              </Grid>
-            </Grid>
-          </Grid>
-          {/* right */}
-          <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
-            {/* Artifact Set */}
-            <ArtifactSetAutocomplete artSetKeys={artSetKeys} setArtSetKeys={artSetKeys => filterOptionDispatch({ artSetKeys })} />
-            <ArtifactMainStatAutocomplete mainStatKeys={mainStatKeys} setMainStatKeys={mainStatKeys => filterOptionDispatch({ mainStatKeys })} />
-            <ArtifactSubstatAutocomplete substatKeys={substats} setSubstatKeys={substats => filterOptionDispatch({ substats })} />
-          </Grid>
-        </Grid>
+        <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={200} />}>
+          <ArtifactFilterDisplay filterOption={filterOption} filterOptionDispatch={filterOptionDispatch} />
+        </Suspense>
       </CardContent>
     </CardDark>
   </Suspense>
-}
-
-
-function LocationDropdown({ title, onChange, selectedCharacterKey, dropdownProps }) {
-  const { database } = useContext(DatabaseContext)
-  const characterSheets = usePromise(CharacterSheet.getAll, [])
-  const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
-  const { t } = useTranslation(["artifact", "ui"]);
-
-  return <DropdownButton fullWidth {...dropdownProps} title={title}>
-    <MenuItem key="unselect" selected={selectedCharacterKey === ""} disabled={selectedCharacterKey === ""} onClick={() => onChange("")}>
-      <ListItemIcon>
-        <Replay />
-      </ListItemIcon>
-      <ListItemText>
-        <Trans t={t} i18nKey="ui:unselect" >Unselect</Trans>
-      </ListItemText>
-    </MenuItem>
-    <MenuItem key="inventory" selected={selectedCharacterKey === "Inventory"} disabled={selectedCharacterKey === "Inventory"} onClick={() => onChange("Inventory")}>
-      <ListItemIcon>
-        <BusinessCenter />
-      </ListItemIcon>
-      <ListItemText>
-        <Trans t={t} i18nKey="filterLocation.inventory" >Inventory</Trans>
-      </ListItemText>
-    </MenuItem>
-    <MenuItem key="equipped" selected={selectedCharacterKey === "Equipped"} disabled={selectedCharacterKey === "Equipped"} onClick={() => onChange("Equipped")}>
-      <ListItemIcon>
-        <FontAwesomeIcon icon={faUserShield} />
-      </ListItemIcon>
-      <ListItemText>
-        <Trans t={t} i18nKey="filterLocation.currentlyEquipped" >Currently Equipped</Trans>
-      </ListItemText>
-    </MenuItem>
-    <Divider />
-    {!!characterSheets && CharacterMenuItemArray(characterSheets, database._getCharKeys().sort(), onChange, selectedCharacterKey, filterConfigs)}
-  </DropdownButton>
 }
 
 export function ArtifactRedButtons({ artifactIds, filterOption }:

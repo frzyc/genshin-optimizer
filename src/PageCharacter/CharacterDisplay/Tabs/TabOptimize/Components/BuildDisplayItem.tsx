@@ -24,12 +24,13 @@ type NewOld = {
 }
 
 type BuildDisplayItemProps = {
-  index: number,
+  index?: number,
   compareBuild: boolean,
   disabled?: boolean,
+  extraButtons?: JSX.Element
 }
 //for displaying each artifact build
-export default function BuildDisplayItem({ index, compareBuild, disabled }: BuildDisplayItemProps) {
+export default function BuildDisplayItem({ index, compareBuild, extraButtons, disabled }: BuildDisplayItemProps) {
   const { database } = useContext(DatabaseContext)
   const dataContext = useContext(DataContext)
 
@@ -44,7 +45,7 @@ export default function BuildDisplayItem({ index, compareBuild, disabled }: Buil
     database.equipArtifacts(character.key, newBuild)
   }, [character, data, database])
   if (!character || !artifactSheets || !oldData) return null
-  const currentlyEquipped = allSlotKeys.every(slotKey => data.get(input.art[slotKey].id).value === oldData.get(input.art[slotKey].id).value)
+  const currentlyEquipped = allSlotKeys.every(slotKey => data.get(input.art[slotKey].id).value === oldData.get(input.art[slotKey].id).value) && data.get(input.weapon.id).value === oldData.get(input.weapon.id).value
   const statProviderContext = { ...dataContext }
   if (!compareBuild) statProviderContext.oldData = undefined
   const setToSlots: Partial<Record<ArtifactSetKey, SlotKey[]>> = {}
@@ -60,7 +61,7 @@ export default function BuildDisplayItem({ index, compareBuild, disabled }: Buil
       {newOld && <CompareArtifactModal newOld={newOld} mainStatAssumptionLevel={mainStatAssumptionLevel} onClose={close} />}
       <CardContent>
         <Box display="flex" gap={1} sx={{ pb: 1 }} flexWrap="wrap">
-          <SqBadge color="info"><Typography><strong>#{index + 1}{currentlyEquipped ? " (Equipped)" : ""}</strong></Typography></SqBadge>
+          {index !== undefined && <SqBadge color="info"><Typography><strong>#{index + 1}{currentlyEquipped ? " (Equipped)" : ""}</strong></Typography></SqBadge>}
           {(Object.entries(setToSlots) as [ArtifactSetKey, SlotKey[]][]).sort(([k1, slotarr1], [k2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
             <Box key={key}><SqBadge color={currentlyEquipped ? "success" : "primary"} ><Typography >
               {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {artifactSheets?.[key].name ?? ""}
@@ -68,11 +69,12 @@ export default function BuildDisplayItem({ index, compareBuild, disabled }: Buil
           )}
           <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}>
           </Box>
-          <Button size='small' color="success" onClick={equipArts} disabled={disabled || currentlyEquipped}>Equip Artifacts</Button>
+          <Button size='small' color="success" onClick={equipArts} disabled={disabled || currentlyEquipped}>Equip Build</Button>
+          {extraButtons}
         </Box>
         <Grid container spacing={1} sx={{ pb: 1 }}>
           <Grid item xs={6} sm={4} md={3} lg={2}>
-            <WeaponCardNano weaponId={character.equippedWeapon} />
+            <WeaponCardNano showLocation weaponId={data.get(input.weapon.id).value} />
           </Grid>
           {allSlotKeys.map(slotKey =>
             <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >

@@ -12,6 +12,7 @@ import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
 import CardLight from '../../../../Components/Card/CardLight';
 import CharacterCard from '../../../../Components/Character/CharacterCard';
 import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton';
+import { HitModeToggle, ReactionToggle } from '../../../../Components/HitModeEditor';
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup';
 import StatFilterCard from '../../../../Components/StatFilterCard';
 import CharacterSheet from '../../../../Data/Characters/CharacterSheet';
@@ -434,21 +435,26 @@ export default function TabBuild() {
       </Box>}
       <CardLight>
         <CardContent>
-          <Box display="flex" alignItems="center" gap={1} >
+          <Box display="flex" alignItems="center" gap={1} mb={1} >
             <Typography sx={{ flexGrow: 1 }}>
               {builds ? <span>Showing <strong>{builds.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
                 : <span>Select a character to generate builds.</span>}
             </Typography>
             <Button disabled={!builds.length} color="error" onClick={() => buildSettingsDispatch({ builds: [], buildDate: 0 })} >Clear Builds</Button>
-            <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
+          </Box>
+          <Grid container display="flex" spacing={1}>
+            <Grid item><HitModeToggle size="small" /></Grid>
+            <Grid item><ReactionToggle size="small" /></Grid>
+            <Grid item flexGrow={1} />
+            <Grid item><SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
               <ToggleButton value={false} disabled={!compareData}>
                 <small>Show New artifact Stats</small>
               </ToggleButton>
               <ToggleButton value={true} disabled={compareData}>
                 <small>Compare against equipped artifacts</small>
               </ToggleButton>
-            </SolidToggleButtonGroup>
-          </Box>
+            </SolidToggleButtonGroup></Grid>
+          </Grid>
         </CardContent>
       </CardLight>
       <BuildList {...{ buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled: !!generatingBuilds }} />

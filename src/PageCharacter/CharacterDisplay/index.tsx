@@ -28,8 +28,8 @@ import usePromise from '../../ReactHooks/usePromise';
 import useTeamData from '../../ReactHooks/useTeamData';
 import { allCharacterKeys, CharacterKey } from '../../Types/consts';
 import { clamp } from '../../Util/Util';
-import TabBuild from './Tabs/TabOptimize';
 import TabEquip from './Tabs/TabEquip';
+import TabBuild from './Tabs/TabOptimize';
 import TabOverview from './Tabs/TabOverview';
 import TabTalent from './Tabs/TabTalent';
 import TabTeambuffs from './Tabs/TabTeambuffs';
@@ -119,7 +119,7 @@ function TabNav({ tab }: { tab: string }) {
     allowScrollButtonsMobile
     sx={{
       "& .MuiTab-root:hover": {
-        transition: "background-color 0.5s ease",
+        transition: "background-color 0.25s ease",
         backgroundColor: "rgba(255,255,255,0.1)"
       },
     }}

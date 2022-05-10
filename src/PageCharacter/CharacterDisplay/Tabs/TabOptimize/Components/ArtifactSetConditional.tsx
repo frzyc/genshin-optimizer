@@ -55,7 +55,7 @@ function ArtConditionalModal({ open, onClose, artifactCondCount }: {
           <Typography variant="h6">Default Artifact Set Effects {!!artifactCondCount && <SqBadge color="success">{artifactCondCount} Selected</SqBadge>}</Typography>
         </Grid>
         <Grid item>
-          <Button onClick={resetArtConds} startIcon={<Replay />}>Reset All</Button>
+          <Button onClick={resetArtConds} color="error" startIcon={<Replay />}>Reset All</Button>
         </Grid>
         <Grid item>
           <CloseButton onClick={onClose} />
