@@ -174,6 +174,7 @@ export default function PageArtifact() {
               onDelete={deleteArtifact}
               probabilityFilter={showProbability ? probabilityFilter : undefined}
               editor
+              canExclude
               canEquip
             />
           </Grid>

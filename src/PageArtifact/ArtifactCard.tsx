@@ -37,12 +37,13 @@ type Data = {
   probabilityFilter?: Dict<SubstatKey, number>
   disableEditSetSlot?: boolean
   editor?: boolean,
+  canExclude?: boolean
   canEquip?: boolean,
   extraButtons?: JSX.Element
 }
 const allSubstatFilter = new Set(allSubstats)
 
-export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter, disableEditSetSlot = false, editor = false, canEquip = false, extraButtons }: Data): JSX.Element | null {
+export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter, disableEditSetSlot = false, editor = false, canExclude = false, canEquip = false, extraButtons }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
@@ -145,7 +146,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
               <FontAwesomeIcon icon={faEdit} className="fa-fw" />
             </Button>
           </Tooltip>}
-          {editor && <Tooltip title={<Typography>{t`excludeArtifactTip`}</Typography>} placement="top" arrow>
+          {canExclude && <Tooltip title={<Typography>{t`excludeArtifactTip`}</Typography>} placement="top" arrow>
             <Button onClick={() => database.updateArt({ exclude: !exclude }, id)} color={exclude ? "error" : "success"} size="small" >
               <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
             </Button>

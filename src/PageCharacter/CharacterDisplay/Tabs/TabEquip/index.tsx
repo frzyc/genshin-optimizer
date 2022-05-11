@@ -94,7 +94,7 @@ function TabEquip() {
         {allSlotKeys.map(slotKey => <Grid item xs={12} sm={6} md={4} key={slotKey} >
           {!!data.get(input.art[slotKey].id).value ?
             <ArtifactCard artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel}
-              extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editor canEquip /> :
+              extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editor canExclude canEquip /> :
             <ArtSwapCard slotKey={slotKey} />}
         </Grid>)}
       </Grid>
