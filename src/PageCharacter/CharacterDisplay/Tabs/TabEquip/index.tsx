@@ -65,7 +65,7 @@ function TabEquip() {
           </Grid>
         </Grid>
       </CardContent>
-    </CardLight>), [artifactSheets, setEffects, unequipArts])
+    </CardLight>), [artifactSheets, setEffects])
   const weaponDoc = useMemo(() => weaponSheet.document.length > 0 && <CardLight><CardContent><DocumentDisplay sections={weaponSheet.document} /></CardContent></CardLight>, [weaponSheet])
   return <Box display="flex" flexDirection="column" gap={1}>
     <Suspense fallback={false}>
