@@ -51,9 +51,6 @@ export function allUpgradeValues(upOpt: QueryResult) {
   const base = upOpt.statsBase
   const f = upOpt.evalFn
 
-  // let coeffs = [...upOpt.params[0].ks]
-  // while (coeffs.length < 4) coeffs.push(0)
-
   let results: WeightedPoint[] = []
   crawlUpgrades(upOpt.rollsLeft, (ns, p) => {
     const vals = ns.map((ni, i) => {
@@ -61,7 +58,6 @@ export function allUpgradeValues(upOpt: QueryResult) {
       if (sub && !upOpt.skippableDerivs[allSubstats.indexOf(sub)]) return range(7 * ni, 10 * ni)
       return [NaN]
     })
-    // const vals = ns.map((ni, i) => upOpt.subs[i] ? range(7 * ni, 10 * ni) : [NaN])
 
     // Cartesian product
     const allValues: number[][] = cartesian(...vals)

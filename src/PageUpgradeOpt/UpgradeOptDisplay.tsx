@@ -1,6 +1,5 @@
 import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Close } from '@mui/icons-material';
 import {
   Alert,
   Box,
@@ -10,9 +9,7 @@ import {
   Divider,
   Grid,
   Link,
-  MenuItem,
   Skeleton,
-  ToggleButton,
   Typography
 } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
@@ -23,58 +20,33 @@ import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton';
 import StatFilterCard from '../Components/StatFilterCard';
-import CharacterSheet from '../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../Database/Database';
 import { DataContext, dataContextObj } from '../DataContext';
 import { mergeData, uiDataForTeam } from '../Formula/api';
 import { uiInput as input } from '../Formula/index';
 import { optimize } from '../Formula/optimization';
 import { NumNode } from '../Formula/type';
-import { UIData } from '../Formula/uiData';
 import { initGlobalSettings } from '../GlobalSettings';
 import CharacterCard from '../PageCharacter/CharacterCard';
 import useCharacter from '../ReactHooks/useCharacter';
 import useCharacterReducer, { characterReducerAction } from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useDBState from '../ReactHooks/useDBState';
-import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
 import { ICachedArtifact, SubstatKey } from '../Types/artifact';
 import { BuildSetting } from '../Types/Build';
-import { allSlotKeys, ArtifactSetKey, CharacterKey } from '../Types/consts';
-import { ICachedCharacter } from '../Types/character';
+import { allSlotKeys, CharacterKey } from '../Types/consts';
 import { clamp, objPathValue } from '../Util/Util';
 import { initialBuildSettings } from '../PageBuild/BuildSetting';
-import ArtifactBuildDisplayItem from '../PageBuild/Components/ArtifactBuildDisplayItem';
 import OptimizationTargetSelector from '../PageBuild/Components/OptimizationTargetSelector';
-import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from '../PageBuild/foreground';
-import { QueryArtifact, QueryBuild, Query, querySetup, evalArtifact, QueryResult } from './artifactQuery'
+import { dynamicData } from '../PageBuild/foreground';
+import { QueryArtifact, QueryBuild, querySetup, evalArtifact, QueryResult } from './artifactQuery'
 import Artifact from "../Data/Artifacts/Artifact";
 import ArtifactCard from "../PageArtifact/ArtifactCard";
 import { useTranslation } from "react-i18next";
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
-import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../Components/HitModeEditor';
+import { HitModeToggle, ReactionToggle } from '../Components/HitModeEditor';
 import ArtifactConditionalCard from '../PageBuild/Components/ArtifactConditionalCard';
-// import { debug } from './help'
-
-
-// import HitModeCard from '../PageBuild/Components/HitModeCard';
-
-// const InfoDisplay = React.lazy(() => import('../PageBuild/InfoDisplay'));
-
-
-// const totalShowing = artifactIds.length !== totalArtNum ? `${artifactIds.length}/${totalArtNum}` : `${totalArtNum}`
-// const setPage = useCallback(
-//     (e, value) => {
-//       invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
-//       setpageIdex(value - 1);
-//     },
-//     [setpageIdex, invScrollRef],
-// )
-
-
-
-
 
 function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
   switch (action.type) {
@@ -112,11 +84,7 @@ function initialBuildDisplayState(): {
   }
 }
 
-
-
-// { location: { characterKey: propCharacterKey } }
 export default function UpgradeOptDisplay() {
-
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { database } = useContext(DatabaseContext)
   const [{ characterKey }, setBuildSettings] = useDBState("BuildDisplay", initialBuildDisplayState)
@@ -125,15 +93,7 @@ export default function UpgradeOptDisplay() {
     else setBuildSettings({ characterKey: "" })
   }, [setBuildSettings, database])
 
-  // propCharacterKey can override the selected character, on initial load. This is intended to run on component startup.
-  // useEffect(() => {
-  //   if (propCharacterKey && propCharacterKey !== characterKey)
-  //     setcharacterKey(propCharacterKey)
-  //   // eslint-disable-next-line
-  // }, [])
   const { t } = useTranslation(["artifact", "ui"]);
-
-  const [artsDirty, setArtsDirty] = useForceUpdate()
 
   const setCharacter = useCharSelectionCallback()
   const characterDispatch = useCharacterReducer(characterKey)
@@ -142,7 +102,6 @@ export default function UpgradeOptDisplay() {
   const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSettings
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
-  const compareData = character?.compareData ?? false
 
   const noCharacter = useMemo(() => !database._getCharKeys().length, [database])
   const noArtifact = useMemo(() => !database._getArts().length, [database])
@@ -168,45 +127,12 @@ export default function UpgradeOptDisplay() {
     }
   }, [artifactUpgradeOpts, pageIdex])
 
-  useEffect(() => ReactGA.pageview('/build'), [])
-
   //select a new character Key
   const selectCharacter = useCallback((cKey = "") => {
     if (characterKey === cKey) return
     setcharacterKey(cKey)
   }, [setcharacterKey, characterKey])
 
-  //register changes in artifact database
-  useEffect(() =>
-    database.followAnyArt(setArtsDirty),
-    [setArtsDirty, database])
-
-  // const { split, setPerms, totBuildNumber } = useMemo(() => {
-  //   if (!characterKey) // Make sure we have all slotKeys
-  //     return { totBuildNumber: 0 }
-  //   // const arts = database._getArts().filter(art => {
-  //   //   if (art.level < levelLow) return false
-  //   //   if (art.level > levelHigh) return false
-  //   //   const mainStats = mainStatKeys[art.slotKey]
-  //   //   if (mainStats?.length && !mainStats.includes(art.mainStatKey)) return false
-
-  //   //   // If its equipped on the selected character, bypass the check
-  //   //   if (art.location === characterKey) return true
-
-  //   //   if (art.exclude && !useExcludedArts) return false
-  //   //   if (art.location && !useEquippedArts) return false
-  //   //   return true
-  //   // })
-  //   // const split = compactArtifacts(arts, mainStatAssumptionLevel)
-  //   const setPerms = [...artSetPerm([setFilters])]
-  //   // const totBuildNumber = [...setPerms].map(perm => countBuilds(filterArts(split, perm))).reduce((a, b) => a + b, 0)
-  //   return artsDirty && { split, setPerms, totBuildNumber }
-  // }, [characterKey, useExcludedArts, useEquippedArts, mainStatKeys, setFilters, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
-
-  // Provides a function to cancel the work
-  const cancelToken = useRef(() => { })
-  //terminate worker when component unmounts
-  useEffect(() => () => cancelToken.current(), [])
   const generateBuilds = useCallback(async () => {
     if (!characterKey || !optimizationTarget) return
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
@@ -340,117 +266,47 @@ export default function UpgradeOptDisplay() {
 
             {/* Right half */}
             <Grid item xs={12} md={8} lg={9} display="flex" flexDirection="column" gap={1}>
-              {/* Block 1 */}
-              <Grid container>
-                <Grid container lg={8}>
-                  {/* Optimization Target Selector */}
-                  <Grid item>
+              <Grid container spacing={1}>
+                {/* Optimization Target Selector */}
+                <Grid item lg={8}>
+                  <CardLight><CardContent>
                     <span>Optimization Target: </span>
                     {<OptimizationTargetSelector
                       optimizationTarget={optimizationTarget}
                       setTarget={target => buildSettingsDispatch({ optimizationTarget: target })}
                       disabled={false}
                     />}
-                  </Grid>
-
-                  {/* Hit mode options */}
-                  <Grid container spacing={1}>
-                    <Grid item><HitModeToggle size="small" /></Grid>
-                    {/* <Grid item><InfusionAuraDropdown /></Grid> */}
-                    <Grid item><ReactionToggle size="small" /></Grid>
-                  </Grid>
-
-                  {/* <HitModeCard disabled={false} /> */}
+                    <br />
+                    {/* Hit mode options */}
+                    <HitModeToggle size="small" />
+                    <br />
+                    <ReactionToggle size="small" />
+                  </CardContent></CardLight>
                 </Grid>
-                <Grid container lg={4}>
+                <Grid item lg={4}>
                   {/*Minimum Final Stat Filter */}
-                  {/* TODO */}
                   <StatFilterCard statFilters={statFilters} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={false} />
+
                   <ArtifactConditionalCard disabled={false} />
                 </Grid>
               </Grid>
 
-              {/* <Grid container gap={1}> */}
-              {/* <Grid item xs={4} md={4} lg={4} display="flex" flexDirection="column" gap={1}>
-                  <TeamBuffCard />
-                  <BonusStatsCard />
-                  Enemy Editor
-                  <EnemyEditorCard />
-                </Grid> */}
-              {/* <Grid item xs={4} md={4} lg={3} display="flex" flexDirection="column" gap={1}>
-                  <ArtifactConditionalCard disabled={generatingBuilds} />
-
-                  Artifact set pickers
-                  {setFilters.map((setFilter, index) => (index <= setFilters.filter(s => s.key).length) && <ArtifactSetPicker key={index} index={index} setFilters={setFilters}
-                    disabled={generatingBuilds} onChange={(index, key, num) => buildSettingsDispatch({ type: 'setFilter', index, key, num })} />)}
-
-                  use equipped/excluded
-                  {characterKey && <CardLight><CardContent>
-                    <Grid container spacing={1}>
-                      <Grid item flexGrow={1}>
-                        <Button fullWidth onClick={() => buildSettingsDispatch({ useEquippedArts: !useEquippedArts })} disabled={generatingBuilds} startIcon={useEquippedArts ? <CheckBox /> : <CheckBoxOutlineBlank />}>
-                          Use Equipped Artifacts
-                        </Button>
-                      </Grid>
-                      <Grid item flexGrow={1}>
-                        <Button fullWidth onClick={() => buildSettingsDispatch({ useExcludedArts: !useExcludedArts })} disabled={generatingBuilds} startIcon={useExcludedArts ? <CheckBox /> : <CheckBoxOutlineBlank />}>
-                          Use Excluded Artifacts
-                        </Button>
-                      </Grid>
-                    </Grid>
-                  </CardContent></CardLight>}
-                </Grid> */}
-              {/* </Grid> */}
-
               {/* Generate Builds button */}
-              <Grid container spacing={1}>
-                <Grid item flexGrow={1} >
-                  <ButtonGroup>
-                    <Button
-                      disabled={!characterKey || !optimizationTarget || !objPathValue(data?.getDisplay(), optimizationTarget)}
-                      color={(characterKey) ? "success" : "warning"}
-                      onClick={generateBuilds}
-                      startIcon={<FontAwesomeIcon icon={faCalculator} />}
-                    >Calc Upgrade Priority</Button>
-                  </ButtonGroup>
-                </Grid>
-              </Grid>
+              <ButtonGroup>
+                <Button
+                  disabled={!characterKey || !optimizationTarget || !objPathValue(data?.getDisplay(), optimizationTarget)}
+                  color={(characterKey) ? "success" : "warning"}
+                  onClick={generateBuilds}
+                  startIcon={<FontAwesomeIcon icon={faCalculator} />}
+                >Calc Upgrade Priority</Button>
+              </ButtonGroup>
 
               <Box display="flex" flexDirection="column" gap={1} my={1}>
-                {/* <InfoComponent
-                  pageKey="artifactPage"
-                  modalTitle={t`info.title`}
-                  text={t("tipsOfTheDay", { returnObjects: true }) as string[]}
-                >
-                  <InfoDisplay />
-                </InfoComponent> */}
-
                 {noArtifact && <Alert severity="info" variant="filled">Looks like you haven't added any artifacts yet. If you want, there are <Link color="warning.main" component={RouterLink} to="/scanner">automatic scanners</Link> that can speed up the import process!</Alert>}
 
                 <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
-                  {/* <Grid container gap={1} > */}
-                  {/*<Grid item xs={12} sm={6} md={4} lg={4} xl={3}>*/}
-                  {/*  <CardDark sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>*/}
-                  {/*    /!*<CardContent>*!/*x1/}
-                    {/*    /!*  <Typography sx={{ textAlign: "center" }}>Add New Artifact</Typography>*!/*/}
-                  {/*    /!*</CardContent>*!/*/}
-                  {/*    <Box sx={{*/}
-                  {/*      flexGrow: 1,*/}
-                  {/*      display: "flex",*/}
-                  {/*      justifyContent: "center",*/}
-                  {/*      alignItems: "center"*/}
-                  {/*    }}*/}
-                  {/*    >*/}
-                  {/*      /!*<Button onClick={() => editArtifact("new")} sx={{*!/*/}
-                  {/*      /!*  borderRadius: "1em"*!/*/}
-                  {/*      /!*}}>*!/*/}
-                  {/*      /!*  <Typography variant="h1"><FontAwesomeIcon icon={faPlus} className="fa-fw" /></Typography>*!/*/}
-                  {/*      /!*</Button>*!/*/}
-                  {/*    </Box>*/}
-                  {/*  </CardDark>*/}
-                  {/*</Grid>*/}
                   {artifactsToShow.map(art =>
-                    <Grid container key={art.id} gap={1} wrap="nowrap">
+                    <Grid container key={art.id + 'asdfsf'} gap={1} wrap="nowrap">
                       <Grid item xs={5} sm={4} md={4} lg={3} xl={3} >
                         <ArtifactCard artifactId={art.id} />
                       </Grid>
@@ -459,41 +315,18 @@ export default function UpgradeOptDisplay() {
                       </Grid>
                     </Grid>
                   )}
-                  {/* </Grid> */}
                 </Suspense>
-                {numPages > 1 && <CardDark ><CardContent>
+                {/* {numPages > 1 && <CardDark ><CardContent>
                   <Grid container>
-                    {/*<Grid item flexGrow={1}>*/}
-                    {/*  <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />*/}
-                    {/*</Grid>*/}
-                    {/*<Grid item>*/}
-                    {/*  <ShowingArt count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />*/}
-                    {/*</Grid>*/}
+                    <Grid item flexGrow={1}>
+                      <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
+                    </Grid>
+                    <Grid item>
+                      <ShowingArt count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
+                    </Grid>
                   </Grid>
-                </CardContent></CardDark>}
+                </CardContent></CardDark>} */}
               </Box >
-
-              {/* Builds display */}
-              {/* <CardDark>
-                <CardContent>
-                  <Box display="flex" alignItems="center" gap={1} >
-                    <Typography sx={{ flexGrow: 1 }}>
-                      {builds ? <span>Showing <strong>{builds.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
-                        : <span>Select a character to generate builds.</span>}
-                    </Typography>
-                    <Button disabled={!builds.length} color="error" onClick={() => buildSettingsDispatch({ builds: [], buildDate: 0 })} >Clear Builds</Button>
-                    <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
-                      <ToggleButton value={false} disabled={!compareData}>
-                        <small>Show New artifact Stats</small>
-                      </ToggleButton>
-                      <ToggleButton value={true} disabled={compareData}>
-                        <small>Compare against equipped artifacts</small>
-                      </ToggleButton>
-                    </SolidToggleButtonGroup>
-                  </Box>
-                </CardContent>
-              </CardDark>
-              <BuildList {...{ buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled: false }} /> */}
 
             </Grid>
           </Grid>
@@ -503,48 +336,4 @@ export default function UpgradeOptDisplay() {
 
     </DataContext.Provider>}
   </Box>
-}
-function BuildList({ buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled }: {
-  buildsArts: ICachedArtifact[][],
-  character?: ICachedCharacter,
-  characterKey?: "" | CharacterKey,
-  characterSheet?: CharacterSheet,
-  data?: UIData,
-  compareData: boolean,
-  mainStatAssumptionLevel: number,
-  characterDispatch: (action: characterReducerAction) => void
-  disabled: boolean,
-}) {
-  // Memoize the build list because calculating/rendering the build list is actually very expensive, which will cause longer builder times.
-  const list = useMemo(() => <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
-    {buildsArts?.map((build, index) => character && characterKey && characterSheet && data && <DataContextWrapper
-      key={index + build.join()}
-      characterKey={characterKey}
-      character={character}
-      build={build}
-      characterSheet={characterSheet}
-      oldData={data}
-      mainStatAssumptionLevel={mainStatAssumptionLevel}
-      characterDispatch={characterDispatch} >
-      <ArtifactBuildDisplayItem index={index} compareBuild={compareData} disabled={disabled} />
-    </DataContextWrapper>
-    )}
-  </Suspense>, [buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled])
-  return list
-}
-
-type Prop = {
-  children: React.ReactNode
-  characterKey: CharacterKey,
-  character: ICachedCharacter,
-  build: ICachedArtifact[],
-  mainStatAssumptionLevel?: number, characterSheet: CharacterSheet, oldData: UIData,
-  characterDispatch: (action: characterReducerAction) => void
-}
-function DataContextWrapper({ children, characterKey, character, build, characterDispatch, mainStatAssumptionLevel = 0, characterSheet, oldData }: Prop) {
-  const teamData = useTeamData(characterKey, mainStatAssumptionLevel, build)
-  if (!teamData) return null
-  return <DataContext.Provider value={{ characterSheet, character, characterDispatch, mainStatAssumptionLevel, data: teamData[characterKey]!.target, teamData, oldData }}>
-    {children}
-  </DataContext.Provider>
 }

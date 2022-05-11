@@ -8,6 +8,7 @@ export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
   for (let i = 0; i < mu.length; ++i) {
     if (cov[i][i] < 1e-5) {
       if (mu[i] < x[i]) return { p: 0, upAvg: 0, cp: 0 }
+      continue;
     }
 
     const z = (x[i] - mu[i]) / Math.sqrt(cov[i][i]);
