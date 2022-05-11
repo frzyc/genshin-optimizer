@@ -228,8 +228,6 @@ export class UIData {
           operands = operands.filter(operand => operand.value !== identity)
         if (!operands.length)
           return variant ? { ...this._constant(identity), info: { variant } } : this._constant(identity)
-        // Oh, the bounds of human hubris, for we must suffer knowing that some parenthesis are optional...
-        // if (operands.length === 1) return operands[0]
     }
 
     let formula: { display: Displayable, dependencies: Displayable[] }
@@ -292,7 +290,7 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
         if (!item.pivot && item.formula) itemFormula = item.formula
         else itemFormula = createFormulaComponent(item)
 
-        if (shouldWrap && item.mayNeedWrapping) {
+        if (shouldWrap && item.mayNeedWrapping && array.length > 1) {
           predisplay.push("( ")
           predisplay.push(itemFormula)
           predisplay.push(" )")
