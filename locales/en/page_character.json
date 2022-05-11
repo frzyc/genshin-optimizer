@@ -17,6 +17,12 @@
   "teammates": "Teammates",
   "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Character",
   "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Characters",
+  "tabEquip": {
+    "swapWeapon": "Swap Weapon",
+    "swapArt": "Swap Artifact",
+    "compare": "Compare with current Build",
+    "unequipArts": "Unequip all artifacts"
+  },
   "tabOptimize": {
     "assumptionLvl": {
       "no": "No Lv. Assumption",
@@ -45,6 +51,10 @@
       },
       "usingNum_one": "Using from <1>{{count}}</1> character",
       "usingNum_other": "Using from <1>{{count}}</1> characters"
+    },
+    "constraintFilter": {
+      "title": "Build Constraints",
+      "tooltip": "Set certain requirements that generated builds must confirm to. e.g. Generated builds must have at least 140% Energy Recharge."
     }
   }
 }
