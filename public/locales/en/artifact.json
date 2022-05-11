@@ -97,5 +97,6 @@
   "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
   "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
   "resetFilters": "Reset Filters",
+  "edit": "Edit Artifact",
   "excludeArtifactTip": "Excluding an artifact will prevent the build generator from picking it for builds."
 }

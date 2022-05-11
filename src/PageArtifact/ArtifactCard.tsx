@@ -140,9 +140,11 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
         {editable && canEquip ?
           <CharacterDropdownButton size="small" inventory value={location} onChange={equipOnChar} /> : <LocationName location={location} />}
         {editable && <ButtonGroup sx={{ height: "100%" }}>
-          {editor && <Button color="info" size="small" onClick={onShowEditor} >
-            <FontAwesomeIcon icon={faEdit} className="fa-fw" />
-          </Button>}
+          {editor && <Tooltip title={<Typography>{t`edit`}</Typography>} placement="top" arrow>
+            <Button color="info" size="small" onClick={onShowEditor} >
+              <FontAwesomeIcon icon={faEdit} className="fa-fw" />
+            </Button>
+          </Tooltip>}
           {editor && <Tooltip title={<Typography>{t`excludeArtifactTip`}</Typography>} placement="top" arrow>
             <Button onClick={() => database.updateArt({ exclude: !exclude }, id)} color={exclude ? "error" : "success"} size="small" >
               <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
