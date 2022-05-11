@@ -43,6 +43,7 @@ type Data = {
 type ChartData = {
   x: number,
   est?: number,
+  estCons?: number,
   exact?: number,
   exactCons?: number,
   expInc?: number,
@@ -76,8 +77,10 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
     allSlotKeys.map(k => [k, database._getArt(data.get(input.art[k].id).value ?? "")]),
     [data, database]) as Array<[SlotKey, ICachedArtifact | undefined]>;
 
-  const gauss = (x: number) => upgradeOpt.params[0].appxDist.gmm.reduce((pv, { p, mu, sig2 }) =>
+  const gauss = (x: number) => upgradeOpt.distr.gmm.reduce((pv, { phi: p, mu, sig2 }) =>
     pv + (sig2 > 0 ? p * Math.exp(-(mu - x) * (mu - x) / sig2 / 2) / Math.sqrt(2 * Math.PI * sig2) : 0), 0)
+  const gaussConstrained = (x: number) => upgradeOpt.distr.gmm.reduce((pv, { phi, mu, sig2, cp }) =>
+    pv + (sig2 > 0 ? phi * cp * Math.exp(-(mu - x) * (mu - x) / sig2 / 2) / Math.sqrt(2 * Math.PI * sig2) : 0), 0)
   const thresh = upgradeOpt.thresholds;
   const thr0 = thresh[0];
   const perc = (x: number) => 100 * (x - thr0) / thr0;
@@ -89,16 +92,21 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
   let dataEst: ChartData[] = linspace(miin, maax, plotPoints).map(v => {
     const est = gauss(v)
     ymax = Math.max(ymax, est)
-    return { x: perc(v), est: est }
+    return { x: perc(v), est: est, estCons: gaussConstrained(v) }
   })
   if (ymax == 0) ymax = nbins / (maax - miin)
 
   // go back and add delta distributions.
   let deltas: { [key: number]: number } = {}
-  upgradeOpt.params[0].appxDist.gmm.forEach(({ p, mu, sig2 }) => {
-    if (sig2 <= 0) deltas[mu] = (deltas[mu] ?? 0) + p
+  let deltasConstrained: { [key: number]: number } = {}
+  upgradeOpt.distr.gmm.forEach(({ phi, mu, sig2, cp }) => {
+    if (sig2 <= 0) {
+      deltas[mu] = (deltas[mu] ?? 0) + phi
+      deltasConstrained[mu] = (deltasConstrained[mu] ?? 0) + phi * cp
+    }
   })
   Object.entries(deltas).forEach(([mu, p]) => dataEst.push({ x: perc(parseFloat(mu)), est: p * nbins / (maax - miin) }))
+  Object.entries(deltasConstrained).forEach(([mu, p]) => dataEst.push({ x: perc(parseFloat(mu)), estCons: p * nbins / (maax - miin) }))
 
   dataEst.sort((a, b) => a.x - b.x)
   let xpercent = (thr0 - miin) / (maax - miin)
@@ -108,6 +116,7 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
   const [trueD, setTrueD] = useState(-1);
 
   useEffect(() => {
+    // when `calcExacts` is pressed, we should sink/swim this artifact to its proper spot. Or not b/c people only really need a fuzzy ordering anyways.
     if (!calcExacts) return;
     const exactData = allUpgradeValues(upgradeOpt)
     let true_p = 0
@@ -140,7 +149,7 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
   if (trueData.length == 0) {
     let binstep = (maax - miin) / nbins
     for (let i = 0; i < nbins; i++) {
-      trueData.push({ x: perc(miin + i * binstep), exact: 0, exactCons:0 })
+      trueData.push({ x: perc(miin + i * binstep), exact: 0, exactCons: 0 })
     }
   }
 
@@ -170,7 +179,7 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
     <CardContent>
       <ResponsiveContainer height="99%" aspect={3}>
         {/* <ComposedChart width={600} height={250} data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}> */}
-        <ComposedChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 15 }}>
+        <ComposedChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 20 }}>
           {/* <CartesianGrid strokeDasharray="4 4" /> */}
           {/* <XAxis dataKey="x" type="number" domain={[Math.round(miin), Math.round(maax)]} allowDecimals={false} /> */}
           <XAxis dataKey="x" type="number" domain={['auto', 'auto']} allowDecimals={false} tickFormatter={v => `${v <= 0 ? "" : "+"}${v}%`} >
@@ -190,16 +199,16 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
           </defs>
 
           <Line dataKey="dne" stroke='red' name='Current Damage' />
-          <Area type="monotone" dataKey="est" stroke="orange" dot={false} fill={`url(#splitOpacity${upgradeOpt.id})`}
-            opacity={.5} name='Estimated Distribution' activeDot={false} />
+          {constrained && !calcExacts && <Area type="monotone" dataKey="est" stroke="grey" dot={false} fill='grey' legendType="none" tooltipType='none' opacity={.5} activeDot={false} />}
           {constrained && calcExacts && <Area type="stepAfter" dataKey="exact" dot={false} legendType="none" tooltipType='none' opacity={.7} activeDot={false} fill='grey' stroke='grey' />}
+          <Area type="monotone" dataKey="estCons" stroke="orange" dot={false} fill={`url(#splitOpacity${upgradeOpt.id})`} opacity={.5} name={`Estimated Distribution`} activeDot={false} />
           {calcExacts && <Area type="stepAfter" dataKey="exactCons" dot={false} opacity={.7} name={`Exact${constrained ? ' Constrained' : ''} Distribution (Histogram)`} activeDot={false} />}
 
           <ReferenceLine x={perc(thr0)} stroke="red" strokeDasharray="3 3" name="Current Damage" />
           {/* <ReferenceLine x={thr + upgradeOpt.Edmg} stroke="#ffffff" strokeDasharray="3 3" name="Current Damage" /> */}
           {/* <Scatter dataKey="expInc" /> */}
           {/* <ReferenceArea x1={thr} stroke="gray" strokeOpacity={0.05}/> */}
-          <ReferenceDot x={perc(thr0 + reportD)} y={(gauss(thr0 + reportD) || ymax) / 2} shape={<circle radius={1} opacity={.5} />} />
+          <ReferenceDot x={perc(thr0 + reportD)} y={(gaussConstrained(thr0 + reportD) || ymax) / 2} shape={<circle radius={1} opacity={.5} />} />
           {/* <ReferenceDot x={thr + reportD} y={(gauss(thr + reportD) || ymax) / 2} shape={<Cross x={100} y={100} width={70} height={150}/>} /> */}
 
           <Tooltip content={<CustomTooltip />} cursor={false} />
@@ -232,9 +241,6 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
 
       <br />
       <span>Click above to calculate Exact upgrade distribution</span>
-      <br />
-      <span>COMING SOON (tm): MinimumStatConstraint</span>
-      <br />
       <br />
 
     </CardContent>

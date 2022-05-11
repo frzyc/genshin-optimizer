@@ -48,14 +48,14 @@ import { initialBuildSettings } from '../PageBuild/BuildSetting';
 import ArtifactBuildDisplayItem from '../PageBuild/Components/ArtifactBuildDisplayItem';
 import OptimizationTargetSelector from '../PageBuild/Components/OptimizationTargetSelector';
 import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from '../PageBuild/foreground';
-import { QueryArtifact, QueryBuild, Query, querySetup, queryDebug, evalArtifact, QueryResult } from './artifactQuery'
+import { QueryArtifact, QueryBuild, Query, querySetup, evalArtifact, QueryResult } from './artifactQuery'
 import Artifact from "../Data/Artifacts/Artifact";
 import ArtifactCard from "../PageArtifact/ArtifactCard";
 import { useTranslation } from "react-i18next";
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
 import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../Components/HitModeEditor';
 import ArtifactConditionalCard from '../PageBuild/Components/ArtifactConditionalCard';
-import { mvnDebug } from './mvncdf'
+// import { debug } from './help'
 
 
 // import HitModeCard from '../PageBuild/Components/HitModeCard';
@@ -159,12 +159,12 @@ export default function UpgradeOptDisplay() {
     const numPages = Math.ceil(artifactUpgradeOpts.length / maxNumArtifactsToDisplay)
     const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
     const toShow = artifactUpgradeOpts.slice(currentPageIndex * maxNumArtifactsToDisplay, (currentPageIndex + 1) * maxNumArtifactsToDisplay)
-    const thr = toShow.length > 0 ? toShow[0].params[0].thr : 0
+    const thr = toShow.length > 0 ? toShow[0].thresholds[0] : 0
 
     return {
       artifactsToShow: toShow, numPages, currentPageIndex,
-      minObj0: toShow.reduce((a, b) => Math.min(b.params[0].appxDist.x0, a), thr),
-      maxObj0: toShow.reduce((a, b) => Math.max(b.params[0].appxDist.x1, a), thr)
+      minObj0: toShow.reduce((a, b) => Math.min(b.distr.lower, a), thr),
+      maxObj0: toShow.reduce((a, b) => Math.max(b.distr.upper, a), thr)
     }
   }, [artifactUpgradeOpts, pageIdex])
 
@@ -208,8 +208,6 @@ export default function UpgradeOptDisplay() {
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
   const generateBuilds = useCallback(async () => {
-    mvnDebug();
-
     if (!characterKey || !optimizationTarget) return
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
@@ -224,7 +222,7 @@ export default function UpgradeOptDisplay() {
       return { value: input.total[key], minimum: value }
     }).filter(x => x.value && x.minimum > -Infinity)
 
-    const queryArts: QueryArtifact[] = database._getArts().map(art => {
+    const queryArts: QueryArtifact[] = database._getArts().filter(art => art.rarity == 5).map(art => {
       const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, 20)  // 5* only
       const buildData = {
         id: art.id, slot: art.slotKey, level: art.level, rarity: art.rarity,
@@ -264,19 +262,29 @@ export default function UpgradeOptDisplay() {
       delete buildData.values[""]
       return { [slotKey]: buildData }
     }))
+    let qaLookup: Dict<string, QueryArtifact> = {};
+    queryArts.forEach(art => qaLookup[art.id] = art)
 
     // CTRL-F: asdfasdf
     let nodes = [optimizationTargetNode, ...valueFilter.map(x => x.value)]
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     const query = querySetup(nodes, valueFilter.map(x => x.minimum), curEquip, data);
-    let artUpOpt: QueryResult[] = []
-    queryArts.forEach(art => {
-      if (art.rarity == 5) {
-        let toSav = evalArtifact(query, art, true)
-        artUpOpt.push(toSav)
-      }
-    })
+    let artUpOpt = queryArts.map(art => evalArtifact(query, art, false))
     artUpOpt = artUpOpt.sort((a, b) => b.prob * b.upAvg - a.prob * a.upAvg)
+
+    // Re-sort & slow eval
+    const kk = 10;  // expand the top `kk` artifacts; repeat until we're reasonably confident top 5(page lim) are in correct positions
+    let i = 0;
+    do {
+      for (; i < kk; i++) {
+        let arti = qaLookup[artUpOpt[i].id]
+        if (arti) artUpOpt[i] = evalArtifact(query, arti, true);
+      }
+      artUpOpt = artUpOpt.sort((a, b) => b.prob * b.upAvg - a.prob * a.upAvg)
+      for (i = 0; i < kk; i++) {
+        if (artUpOpt[i].evalMode == 'fast') break;
+      }
+    } while (i < kk);
 
     setArtifactUpgradeOpts(artUpOpt);
   }, [characterKey, database, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, buildSettingsDispatch, setFilters, statFilters])

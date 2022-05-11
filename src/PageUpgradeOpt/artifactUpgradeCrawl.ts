@@ -50,7 +50,6 @@ export function allUpgradeValues(upOpt: QueryResult) {
 
   const base = upOpt.statsBase
   const f = upOpt.evalFn
-  const skip = upOpt.skippableDerivs[0]
 
   // let coeffs = [...upOpt.params[0].ks]
   // while (coeffs.length < 4) coeffs.push(0)
@@ -59,7 +58,7 @@ export function allUpgradeValues(upOpt: QueryResult) {
   crawlUpgrades(upOpt.rollsLeft, (ns, p) => {
     const vals = ns.map((ni, i) => {
       const sub = upOpt.subs[i]
-      if (sub && !skip[allSubstats.indexOf(sub)]) return range(7 * ni, 10 * ni)
+      if (sub && !upOpt.skippableDerivs[allSubstats.indexOf(sub)]) return range(7 * ni, 10 * ni)
       return [NaN]
     })
     // const vals = ns.map((ni, i) => upOpt.subs[i] ? range(7 * ni, 10 * ni) : [NaN])
