@@ -228,7 +228,8 @@ export class UIData {
           operands = operands.filter(operand => operand.value !== identity)
         if (!operands.length)
           return variant ? { ...this._constant(identity), info: { variant } } : this._constant(identity)
-        if (operands.length === 1) return operands[0]
+        // Oh, the bounds of human hubris, for we must suffer knowing that some parenthesis are optional...
+        // if (operands.length === 1) return operands[0]
     }
 
     let formula: { display: Displayable, dependencies: Displayable[] }

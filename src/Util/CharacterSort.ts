@@ -29,7 +29,7 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
 export type CharacterFilterConfigs = FilterConfigs<"element" | "weaponType" | "favorite" | "name", CharacterKey>
 export function characterFilterConfigs(database: ArtCharDatabase, characterSheets: Record<CharacterKey, CharacterSheet>): CharacterFilterConfigs {
   return {
-    element: (ck, filter) => !filter || (filter === characterSheets?.[ck]?.elementKey),
+    element: (ck, filter) => !filter || (filter === characterSheets?.[ck]?.elementKey) || (ck === "Traveler" && database._getChar(ck as CharacterKey)?.elementKey === filter),
     weaponType: (ck, filter) => !filter || (filter === characterSheets?.[ck]?.weaponTypeKey),
     favorite: (ck, filter) =>
       !filter || (filter === (database._getChar(ck as CharacterKey)?.favorite ? "yes" : "no")),

@@ -1,5 +1,6 @@
 import { Box, CardContent, Divider, Grid, Skeleton, Typography } from "@mui/material"
 import { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useReducer } from "react"
+import { useTranslation } from "react-i18next"
 import Assets from "../../../../Assets/Assets"
 import CardDark from "../../../../Components/Card/CardDark"
 import CloseButton from "../../../../Components/CloseButton"
@@ -19,6 +20,7 @@ const ArtifactFilterDisplay = lazy(() => import('../../../../Components/Artifact
 
 export default function ArtifactSwapModal({ onChangeId, slotKey, show, onClose }:
   { onChangeId: (id: string) => void, slotKey: SlotKey, show: boolean, onClose: () => void }) {
+  const { t } = useTranslation("page_character")
   const { database } = useContext(DatabaseContext)
   const clickHandler = useCallback((id) => {
     onChangeId(id)
@@ -42,7 +44,7 @@ export default function ArtifactSwapModal({ onChangeId, slotKey, show, onClose }
   return <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }} >
     <CardDark>
       <CardContent sx={{ py: 1, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <Typography variant="h6">{slotKey ? <ImgIcon src={Assets.slot[slotKey]} /> : null} Swap Artifact</Typography>
+        <Typography variant="h6">{slotKey ? <ImgIcon src={Assets.slot[slotKey]} /> : null} {t`tabEquip.swapArt`}</Typography>
         <CloseButton onClick={onClose} />
       </CardContent>
       <Divider />
