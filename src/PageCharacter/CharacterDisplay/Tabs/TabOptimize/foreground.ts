@@ -40,6 +40,8 @@ export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLeve
     Object.keys(data.values).forEach(x => keys.add(x))
   }
   result.base = objectKeyMap([...keys], _ => 0)
+  for (const value of Object.values(result.values))
+    value.push({ id: "", values: {} })
   return result
 }
 // TODO: Use this as the new set filter

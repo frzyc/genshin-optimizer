@@ -147,7 +147,7 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number, keepArtifacts:
         const greaterEqual = Object.entries(other.values).every(([k, o]) => o >= art.values[k])
         const greater = Object.entries(other.values).some(([k, o]) => o > art.values[k])
         if (greaterEqual && (greater || other.id > art.id) &&
-          (!keepArtifacts.has(art.set) || art.set === other.set))
+          (!keepArtifacts.has(art.set!) || art.set === other.set))
           count++
         return count < numTop
       })
@@ -318,8 +318,8 @@ export function filterArts(arts: ArtifactsBySlot, filters: RequestFilter): Artif
       const filter = filters[slot]
       switch (filter.kind) {
         case "id": return arts.values[slot].filter(art => filter.ids.has(art.id))
-        case "exclude": return arts.values[slot].filter(art => !filter.sets.has(art.set))
-        case "required": return arts.values[slot].filter(art => filter.sets.has(art.set))
+        case "exclude": return arts.values[slot].filter(art => !filter.sets.has(art.set!))
+        case "required": return arts.values[slot].filter(art => filter.sets.has(art.set!))
       }
     })
   }
