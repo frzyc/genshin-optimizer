@@ -39,7 +39,7 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
     .filter(filterFunction({ weaponType: weaponTypeKey, rarity }, filterConfigs))
     .sort(sortFunction("level", false, sortConfigs))
     .map(weapon => weapon.id)) ?? []
-    , [dbDirty, database, filterConfigs, rarity, weaponTypeKey])
+    , [dbDirty, database, filterConfigs, sortConfigs, rarity, weaponTypeKey])
 
   return <ModalWrapper open={show} onClose={onClose} >
     <CardDark>

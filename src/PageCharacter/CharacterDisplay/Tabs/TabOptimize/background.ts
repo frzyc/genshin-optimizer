@@ -128,7 +128,7 @@ function refresh(force: boolean): void {
 type Stats = { [key in MainStatKey | SubstatKey]?: number }
 export type ArtifactBuildData = {
   id: string
-  set: ArtifactSetKey
+  set?: ArtifactSetKey
   values: DynStat
 }
 

@@ -2,6 +2,7 @@ import { Close, Difference } from "@mui/icons-material"
 import { Button, Skeleton, Tooltip, Typography } from "@mui/material"
 import { Suspense, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
+import { HitModeToggle, ReactionToggle } from "../../../../Components/HitModeEditor"
 import ModalWrapper from "../../../../Components/ModalWrapper"
 import { DatabaseContext } from "../../../../Database/Database"
 import { DataContext } from "../../../../DataContext"
@@ -26,7 +27,7 @@ export default function CompareBuildButton({ artId, weaponId }: { artId?: string
     <ModalWrapper open={show} onClose={onHide} containerProps={{ maxWidth: "xl" }}>
       <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
         <DataContext.Provider value={{ characterSheet, character, characterDispatch, mainStatAssumptionLevel, data: teamData[characterKey]!.target, teamData, oldData }}>
-          <BuildDisplayItem compareBuild={true} extraButtons={<Button size='small' color="error" onClick={onHide} ><Close /></Button>} />
+          <BuildDisplayItem compareBuild={true} extraButtons={<><HitModeToggle size="small" /><ReactionToggle size="small" /><Button size='small' color="error" onClick={onHide} ><Close /></Button></>} />
         </DataContext.Provider>
       </Suspense>
     </ModalWrapper>
