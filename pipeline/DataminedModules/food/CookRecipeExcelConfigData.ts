@@ -2,64 +2,64 @@ import { nameToKey, TextMapEN } from "../../TextMapUtil"
 import { dumpFile } from "../../Util"
 
 type CookRecipeExcelConfigData = {//Adeptus' Temptation
-  "Id": number// 5101,
-  "NameTextMapHash": number//2535717720,
-  "RankLevel": number//5,
-  "Icon": string// "UI_ItemIcon_108123",
-  "DescTextMapHash": number//3785660866,
-  "EffectDesc": number[]
+  "id": number// 5101,
+  "nameTextMapHash": number//2535717720,
+  "rankLevel": number//5,
+  "icon": string// "UI_ItemIcon_108123",
+  "descTextMapHash": number//3785660866,
+  "effectDesc": number[]
   // [
   //   1022833117,
   //   3090219849,
   //   3779451422,
   //   4255144839
   // ],
-  "FoodType": "COOK_FOOD_ATTACK",
-  "CookMethod": "COOK_METHOD_BOIL",
-  "MaxProficiency": number//25,
-  "QualityOutputVec": {
-    "Id": number//108122,
-    "Count": number//1
+  "foodType": "COOK_FOOD_ATTACK",
+  "cookMethod": "COOK_METHOD_BOIL",
+  "maxProficiency": number//25,
+  "qualityOutputVec": {
+    "id": number//108122,
+    "count": number//1
   }[]
   // [
   //   {
-  //     "Id": 108122,
-  //     "Count": 1
+  //     "id": 108122,
+  //     "count": 1
   //   },
   //   {
-  //     "Id": 108123,
-  //     "Count": 1
+  //     "id": 108123,
+  //     "count": 1
   //   },
   //   {
-  //     "Id": 108124,
-  //     "Count": 1
+  //     "id": 108124,
+  //     "count": 1
   //   }
   // ],
-  "InputVec": {
-    "Id": number//108122,
-    "Count": number//1
+  "inputVec": {
+    "id": number//108122,
+    "count": number//1
   }[]
   // [
   //   {
-  //     "Id": 110005,
-  //     "Count": 4
+  //     "id": 110005,
+  //     "count": 4
   //   },
   //   {
-  //     "Id": 100073,
-  //     "Count": 3
+  //     "id": 100073,
+  //     "count": 3
   //   },
   //   {
-  //     "Id": 100093,
-  //     "Count": 3
+  //     "id": 100093,
+  //     "count": 3
   //   },
   //   {
-  //     "Id": 100063,
-  //     "Count": 3
+  //     "id": 100063,
+  //     "count": 3
   //   },
   //   {}
   // ],
-  "QteParam": string// "0.63,0.17",
-  "QteQualityWeightVec": number[]
+  "qteParam": string// "0.63,0.17",
+  "qteQualityWeightVec": number[]
   // [
   //   0,
   //   0,
@@ -70,9 +70,9 @@ type CookRecipeExcelConfigData = {//Adeptus' Temptation
 const cookRecipeExcelConfigDataSrc = require('../../GenshinData/ExcelBinOutput/CookRecipeExcelConfigData.json') as CookRecipeExcelConfigData[]
 //character data
 const cookRecipeExcelConfigData = Object.fromEntries(cookRecipeExcelConfigDataSrc.map(data =>
-  [data.Id, data])) as { [AvatarId: number]: CookRecipeExcelConfigData }
+  [data.id, data])) as { [AvatarId: number]: CookRecipeExcelConfigData }
 
 dumpFile(`${__dirname}/CookRecipeExcelConfigData_idmap_gen.json`,
-  Object.fromEntries(cookRecipeExcelConfigDataSrc.map(data => [data.Id, nameToKey(TextMapEN[data.NameTextMapHash])])))
+  Object.fromEntries(cookRecipeExcelConfigDataSrc.map(data => [data.id, nameToKey(TextMapEN[data.nameTextMapHash])])))
 
 export default cookRecipeExcelConfigData

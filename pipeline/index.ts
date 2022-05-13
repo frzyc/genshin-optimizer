@@ -1,4 +1,4 @@
-import { CharacterExpCurveData } from "./DataminedModules/character/characterExpCurve";
+import { CharacterExpCurveData } from "./DataminedModules/character/AvatarCurveExcelConfigData";
 import { WeaponExpCurveData } from "./DataminedModules/weapon/WeaponCurveExcelConfigData";
 import { WeaponData, CharacterData } from './main'
 export { CharacterExpCurveData, WeaponExpCurveData, WeaponData, CharacterData }
@@ -10,7 +10,7 @@ export const tagColor = {
   "99FFFFFF": "cryo",
   "80C0FFFF": "hydro",
   "FF9999FF": "pyro",
-  "FFACFFFF": "electro"
+  "fFACFFFF": "electro"
 } as const
 export type ColorTag = typeof tagColor[keyof typeof tagColor]
 

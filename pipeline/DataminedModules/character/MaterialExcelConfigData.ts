@@ -1,36 +1,42 @@
 
 type MaterialExcelConfigData = {
-  "InteractionTitleTextMapHash": number// 1734642623,
-  "MaterialType": "MATERIAL_NAMECARD",
-  "StackLimit": number//1000,
-  "MaxUseCount": number//99,
-  "CloseBagAfterUsed": true,
-  "PlayGainEffect": true,
-  "UseParam": string[]
+  "interactionTitleTextMapHash": number// 1734642623,
+  "materialType": "MATERIAL_NAMECARD",
+  "stackLimit": number//1000,
+  "maxUseCount": number//99,
+  "useOnGain": boolean,
+  "noFirstGetHint": boolean,
+  "playGainEffect": boolean,
+  "itemUse": Array<{
+    "useOp"?: string,
+    "useParam": string[]
+  }>
+  "rankLevel": number,
+  "effectDescTextMapHash": number//1059911031,
+  "specialDescTextMapHash": number//569101353,
+  "typeDescTextMapHash": number//3736344046,
+  "effectIcon": string,
+  "effectName": string,
+  "picPath": string[]
   // [
   //     "UI_NameCardPic_Noel_Alpha",
   //     "UI_NameCardPic_Noel_P"
   // ],
-  "RankLevel": 4,
-  "EffectDescTextMapHash": number//1059911031,
-  "SpecialDescTextMapHash": number//569101353,
-  "TypeDescTextMapHash": number//3736344046,
-  "EffectIcon": "",
-  "EffectName": "",
-  "SatiationParams": [],
-  "DestroyReturnMaterial": [],
-  "DestroyReturnMaterialCount": [],
-  "IsForceGetHint": true,
-  "Id": number//210014,
-  "NameTextMapHash": number//73191444,
-  "DescTextMapHash": number//1889394509,
-  "Icon": string//"UI_NameCardIcon_Noel",
-  "ItemType": "ITEM_MATERIAL"
+  "closeBagAfterUsed": boolean,
+  "satiationParams": []
+  "destroyReturnMaterial": [],
+  "destroyReturnMaterialCount": [],
+  "isForceGetHint": true,
+  "id": number//210014,
+  "nameTextMapHash": number//73191444,
+  "descTextMapHash": number//1889394509,
+  "icon": string//"UI_NameCardIcon_Noel",
+  "itemType": "ITEM_MATERIAL"
 }
 
 const materialExcelConfigDataSrc = require('../../GenshinData/ExcelBinOutput/MaterialExcelConfigData.json') as MaterialExcelConfigData[]
 //character data
 const materialExcelConfigData = Object.fromEntries(materialExcelConfigDataSrc.map(data =>
-  [data.Id, data])) as { [Id: number]: MaterialExcelConfigData }
+  [data.id, data])) as { [id: number]: MaterialExcelConfigData }
 
 export default materialExcelConfigData

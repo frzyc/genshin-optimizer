@@ -3,27 +3,27 @@
 import { extrapolateFloat } from "../../extrapolateFloat"
 
 type AvatarCurveExcelConfigData = {
-  "Level": number//2,
-  "CurveInfos": [
+  "level": number//2,
+  "curveInfos": [
     {
-      "Type": "GROW_CURVE_HP_S4",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0829999446868896
+      "type": "GROW_CURVE_HP_S4",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0829999446868896
     },
     {
-      "Type": "GROW_CURVE_ATTACK_S4",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0829999446868896
+      "type": "GROW_CURVE_ATTACK_S4",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0829999446868896
     },
     {
-      "Type": "GROW_CURVE_HP_S5",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0829999446868896
+      "type": "GROW_CURVE_HP_S5",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0829999446868896
     },
     {
-      "Type": "GROW_CURVE_ATTACK_S5",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0829999446868896
+      "type": "GROW_CURVE_ATTACK_S5",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0829999446868896
     }
   ]
 }
@@ -43,10 +43,10 @@ export type CharacterExpCurveData = {
 }
 
 const characterExpCurve = {} as CharacterExpCurveData
-characterExpCurveSrc.forEach(({ Level, CurveInfos }) =>
-  CurveInfos.forEach(({ Type, Value }) => {
-    if (!characterExpCurve[Type]) characterExpCurve[Type] = {} // TODO: [0]
-    characterExpCurve[Type][Level] = extrapolateFloat(Value)
+characterExpCurveSrc.forEach(({ level, curveInfos }) =>
+  curveInfos.forEach(({ type, value }) => {
+    if (!characterExpCurve[type]) characterExpCurve[type] = {} // TODO: [0]
+    characterExpCurve[type][level] = extrapolateFloat(value)
   }))
 
 export default characterExpCurve
