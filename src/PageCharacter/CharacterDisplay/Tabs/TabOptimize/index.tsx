@@ -48,13 +48,12 @@ import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
-import { useOptimizeDBState } from './DBState';
+import { useOptimizeDBState, defThreads } from './DBState';
 import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
 
 export default function TabBuild() {
   const { character, character: { key: characterKey } } = useContext(DataContext)
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
-  const [{ equipmentPriority }] = useOptimizeDBState()
   const { database } = useContext(DatabaseContext)
 
   const [generatingBuilds, setgeneratingBuilds] = useState(false)
@@ -66,7 +65,9 @@ export default function TabBuild() {
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
-  const [maxWorkers, setMaxWorkers] = useState(navigator.hardwareConcurrency || 4)
+  const [{ equipmentPriority, threads = defThreads }, setOptimizeDBState] = useOptimizeDBState()
+  const maxWorkers = threads > defThreads ? defThreads : threads
+  const setMaxWorkers = useCallback(threads => setOptimizeDBState({ threads }), [setOptimizeDBState],)
 
   const characterDispatch = useCharacterReducer(characterKey)
   const buildSettings = character?.buildSettings ?? initialBuildSettings()
@@ -406,7 +407,7 @@ export default function TabBuild() {
                 </Typography>
               </MenuItem>
               <Divider />
-              {range(1, navigator.hardwareConcurrency || 4).reverse().map(v => <MenuItem key={v}
+              {range(1, defThreads).reverse().map(v => <MenuItem key={v}
                 onClick={() => setMaxWorkers(v)}>{v} {v === 1 ? "Thread" : "Threads"}</MenuItem>)}
             </DropdownButton>
             <Button
