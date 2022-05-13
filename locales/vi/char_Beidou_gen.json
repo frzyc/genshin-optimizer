@@ -45,15 +45,15 @@
       "0": "Không có gì phải lo lắng. Nếu có ai dám ra tay với cô hoặc người của cô, thì sẽ phải trả giá gấp 10 lần bằng sấm sét và kiếm.",
       "1": "<br/>",
       "2": "<strong>Nhấn</strong>",
-      "3": "Tích tụ sức mạnh sấm sét, chém mạnh kiếm lớn về phía trước, gây <electro>Sát Thương Nguyên Tố Lôi</electro>.",
+      "3": "Tích tụ sức mạnh sấm sét, chém mạnh kiếm lớn về phía trước, gây <undefined>Sát Thương Nguyên Tố Lôi</undefined>.",
       "4": "<br/>",
       "5": "<strong>Nhấn Giữ</strong>",
       "6": "Nhấc vũ khí lên hình thành khiên, hấp thụ lượng sát thương căn cứ theo giới hạn HP của Beidou.",
-      "7": "Sau khi thả giữ kỹ năng hoặc hết thời gian, sẽ vung kiếm giải phóng sức mạnh tích lũy để phản công, gây <electro>Sát Thương Nguyên Tố Lôi</electro>. Dựa vào số lần bị tấn công trong thời gian kỹ năng, tăng sát thương tạo thành. Kích hoạt 2 lần sẽ đạt buff sát thương cao nhất.",
+      "7": "Sau khi thả giữ kỹ năng hoặc hết thời gian, sẽ vung kiếm giải phóng sức mạnh tích lũy để phản công, gây <undefined>Sát Thương Nguyên Tố Lôi</undefined>. Dựa vào số lần bị tấn công trong thời gian kỹ năng, tăng sát thương tạo thành. Kích hoạt 2 lần sẽ đạt buff sát thương cao nhất.",
       "8": "Khiên có hiệu quả như sau:",
       "9": [
-        "Đối với <electro>Sát Thương Nguyên Tố Lôi</electro> có 250% hiệu quả hấp thu;",
-        "Khi thi triển, có thêm <electro>Nguyên Tố Lôi kèm theo</electro> cho Beidou."
+        "Đối với <undefined>Sát Thương Nguyên Tố Lôi</undefined> có 250% hiệu quả hấp thu;",
+        "Khi thi triển, có thêm <undefined>Nguyên Tố Lôi kèm theo</undefined> cho Beidou."
       ],
       "10": "<br/>",
       "11": "<i>Thuyền Meo Meo đuổi theo sóng biển.</i>"
@@ -80,11 +80,11 @@
   "burst": {
     "name": "Chước Lôi",
     "description": {
-      "0": "Nhớ lại trận chiến diệt Cự Thú Hải Sơn, triệu hồi cự thú và sức mạnh lôi điện, tạo ra Khiên Lôi Thú bao quanh, đồng thời gây <electro>Sát Thương Nguyên Tố Lôi</electro> cho kẻ địch xung quanh.",
+      "0": "Nhớ lại trận chiến diệt Cự Thú Hải Sơn, triệu hồi cự thú và sức mạnh lôi điện, tạo ra Khiên Lôi Thú bao quanh, đồng thời gây <undefined>Sát Thương Nguyên Tố Lôi</undefined> cho kẻ địch xung quanh.",
       "1": "<br/>",
       "2": "<strong>Khiên Lôi Thú</strong>",
       "3": [
-        "Khi tấn công thường và trọng kích đánh trúng địch, giải phóng sức mạnh sấm sét, tạo 1 tia sét chạy giữa địch, gây <electro>Sát Thương Nguyên Tố Lôi</electro>;",
+        "Khi tấn công thường và trọng kích đánh trúng địch, giải phóng sức mạnh sấm sét, tạo 1 tia sét chạy giữa địch, gây <undefined>Sát Thương Nguyên Tố Lôi</undefined>;",
         "Tăng khả năng kháng gián đoạn của nhân vật và giảm sát thương phải chịu."
       ],
       "4": "<br/>",
@@ -137,7 +137,7 @@
     "description": {
       "0": "Khi thi triển <strong>Chước Lôi</strong>: ",
       "1": "Hình thành tấm khiên hấp thu sát thương tương đương với 16% giới hạn HP, kéo dài 15s.",
-      "2": "Khiên có hiệu quả hấp thụ 250% <electro>sát thương Nguyên Tố Lôi</electro>."
+      "2": "Khiên có hiệu quả hấp thụ 250% <undefined>sát thương Nguyên Tố Lôi</undefined>."
     }
   },
   "constellation2": {
@@ -156,7 +156,7 @@
   "constellation4": {
     "name": "Sao Trời Dẫn Lối",
     "description": {
-      "0": "Trong vòng 10s sau khi bị tấn công, tấn công thường của Beidou tăng thêm 20% <electro>sát thương Nguyên Tố Lôi</electro>."
+      "0": "Trong vòng 10s sau khi bị tấn công, tấn công thường của Beidou tăng thêm 20% <undefined>sát thương Nguyên Tố Lôi</undefined>."
     }
   },
   "constellation5": {
@@ -169,7 +169,7 @@
   "constellation6": {
     "name": "Beidou Diệt Ác",
     "description": {
-      "0": "Trong thời gian <strong>Chước Lôi</strong> tồn tại, <electro>kháng Nguyên Tố Lôi</electro> của địch xung quanh giảm 15%."
+      "0": "Trong thời gian <strong>Chước Lôi</strong> tồn tại, <undefined>kháng Nguyên Tố Lôi</undefined> của địch xung quanh giảm 15%."
     }
   }
 }

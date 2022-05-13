@@ -45,12 +45,12 @@
       "0": "Caza su presa usando las técnicas que le enseñó su maestro y su Lupical.",
       "1": "<br/>",
       "2": "<strong>Pulsar una vez</strong>",
-      "3": "Ataca con las garras del Lobo del Trueno, infligiendo <electro>Daño Electro</electro> a los enemigos frente a Razor.",
+      "3": "Ataca con las garras del Lobo del Trueno, infligiendo <undefined>Daño Electro</undefined> a los enemigos frente a Razor.",
       "4": "Al golpear a un enemigo, Razor obtendrá una insignia Electro, la cual aumentará su Recarga de Energía.",
       "5": "Razor puede tener hasta 3 insignias Electro al mismo tiempo. Obtener una nueva insignia Electro reiniciará su duración.",
       "6": "<br/>",
       "7": "<strong>Mantener pulsado</strong>",
-      "8": "Reúne energía eléctrica para desatar una tormenta de rayos sobre una AdE, infligiendo una gran cantidad de <electro>Daño Electro</electro>, y eliminando todas las insignias Electro de Razor.",
+      "8": "Reúne energía eléctrica para desatar una tormenta de rayos sobre una AdE, infligiendo una gran cantidad de <undefined>Daño Electro</undefined>, y eliminando todas las insignias Electro de Razor.",
       "9": "Cada insignia Electro eliminada de esta manera se convertirá en Energía Elemental.",
       "10": "<br/>",
       "11": "<i>En el momento en que cae el rayo , a veces se puede ver en lo más profundo de los ojos de Razor la mirada de un depredador observando a su presa.</i>"
@@ -77,14 +77,14 @@
   "burst": {
     "name": "Colmillo relámpago",
     "description": {
-      "0": "Razor invoca a su lobo interior, infligiendo <electro>Daño Electro</electro> a todos los enemigos cercanos. Esto elimina todas sus insignias Electro, que se convertirán en Energía Elemental.",
+      "0": "Razor invoca a su lobo interior, infligiendo <undefined>Daño Electro</undefined> a todos los enemigos cercanos. Esto elimina todas sus insignias Electro, que se convertirán en Energía Elemental.",
       "1": "El lobo interior luchará junto a Razor mientras dure la habilidad.",
       "2": "<br/>",
       "3": "<strong>Lobo interior</strong>",
       "4": [
-        "Ataca junto a los Ataques Normales de Razor, infligiendo <electro>Daño Electro</electro>.",
-        "Aumenta la Vel. de Ataque de Razor y su <electro>RES Electro</electro>.",
-        "Hace que Razor sea inmune al daño que recibe por la reacción de <electro>Electrocargado</electro>.",
+        "Ataca junto a los Ataques Normales de Razor, infligiendo <undefined>Daño Electro</undefined>.",
+        "Aumenta la Vel. de Ataque de Razor y su <undefined>RES Electro</undefined>.",
+        "Hace que Razor sea inmune al daño que recibe por la reacción de <undefined>Electrocargado</undefined>.",
         "Desactiva los Ataques Cargados de Razor.",
         "Aumenta la RES a interrupción de Razor."
       ],
@@ -168,7 +168,7 @@
   "constellation6": {
     "name": "Lupus fulguris",
     "description": {
-      "0": "La espada de Razor se carga de electricidad cada 10 s, lo que hace que su próximo Ataque Normal libere un rayo que inflige un 100% del ATQ como <electro>Daño Electro</electro>.",
+      "0": "La espada de Razor se carga de electricidad cada 10 s, lo que hace que su próximo Ataque Normal libere un rayo que inflige un 100% del ATQ como <undefined>Daño Electro</undefined>.",
       "1": "Cuando no está bajo los efectos de <strong>Colmillo relámpago</strong>, cada rayo añade 1 insignia Electro a <strong>Garra y trueno</strong>."
     }
   }

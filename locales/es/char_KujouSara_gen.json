@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",
         "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
-        "2": "Mientras se apunta, el poder del trueno se acumulará en la punta de la flecha. Las flechas que han reunido el poder del trueno infligen <electro>Daño Electro</electro> a los enemigos.",
+        "2": "Mientras se apunta, el poder del trueno se acumulará en la punta de la flecha. Las flechas que han reunido el poder del trueno infligen <undefined>Daño Electro</undefined> a los enemigos.",
         "3": "Si está bajo los efectos de velo alado, las flechas completamente cargadas dejarán caer una pluma de cuervo al impactar."
       },
       "plunging": {
@@ -45,7 +45,7 @@
     "description": {
       "0": "Retrocede con la velocidad de un tengu e invoca la protección de las plumas de cuervo.",
       "1": "Además, entra en el estado de velo alado durante 18 s. Cuando Kujou Sara dispara una flecha cargada, velo alado se consumirá y dejará una pluma de cuervo en la ubicación del enemigo contra en el que impactó.",
-      "2": "Al poco tiempo, la pluma de cuervo provocará una maldición tengu: emboscada que inflige <electro>Daño Electro</electro> contra los enemigos en un área, además de otorgar al personaje en uso que estaba en esa área un Bono de ATQ proporcional al ATQ Básico de Kujou Sara.",
+      "2": "Al poco tiempo, la pluma de cuervo provocará una maldición tengu: emboscada que inflige <undefined>Daño Electro</undefined> contra los enemigos en un área, además de otorgar al personaje en uso que estaba en esa área un Bono de ATQ proporcional al ATQ Básico de Kujou Sara.",
       "3": "<br/>",
       "4": "Los Bonos de ATQ otorgados por las distintas maldiciones tengu no se pueden acumular, sino que sus efectos y duración se calcularán en función de la última maldición realizada.",
       "5": "<br/>",
@@ -74,7 +74,7 @@
   "burst": {
     "name": "Aplacamiento: Camino de la luz",
     "description": {
-      "0": "Una maldición tengu: masacratitanes cae sobre la ubicación del objetivo e inflige <electro>Daño Electro en el AdE</electro>. Después, esta maldición da lugar a 4 maldiciones tengu: tormenta pétrea consecutivas que infligen <electro>Daño Electro en el AdE</electro>.",
+      "0": "Una maldición tengu: masacratitanes cae sobre la ubicación del objetivo e inflige <undefined>Daño Electro en el AdE</undefined>. Después, esta maldición da lugar a 4 maldiciones tengu: tormenta pétrea consecutivas que infligen <undefined>Daño Electro en el AdE</undefined>.",
       "1": "Maldición tengu: masacratitanes y maldición tengu: tormenta pétrea otorgan al personaje en uso que estaba en esa área el mismo Bono de ATQ que otorgaría la Habilidad Elemental de Kujou Sara, Electroinvocación tengu.",
       "2": "<br/>",
       "3": "Los Bonos de ATQ otorgados por las maldiciones tengu no se pueden acumular, sino que sus efectos y duración se calcularán en función de la última maldición realizada.",
@@ -154,7 +154,7 @@
   "constellation6": {
     "name": "Pecado del orgullo",
     "description": {
-      "0": "Aumenta en un 60% el <electro>Daño CRIT Electro</electro> de los personajes que han obtenido un Bono de ATQ mediante una maldición tengu."
+      "0": "Aumenta en un 60% el <undefined>Daño CRIT Electro</undefined> de los personajes que han obtenido un Bono de ATQ mediante una maldición tengu."
     }
   }
 }

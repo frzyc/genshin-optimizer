@@ -8,15 +8,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Tấn Công Thường</strong>",
-        "1": "Triệu hồi linh hồn hồ ly, thực hiện tối đa 3 lần tấn công, gây <electro>Sát Thương Nguyên Tố Lôi</electro>."
+        "1": "Triệu hồi linh hồn hồ ly, thực hiện tối đa 3 lần tấn công, gây <undefined>Sát Thương Nguyên Tố Lôi</undefined>."
       },
       "charged": {
         "0": "<strong>Trọng Kích</strong>",
-        "1": "Tiêu hao thể lực nhất định, tụ lực và gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>."
+        "1": "Tiêu hao thể lực nhất định, tụ lực và gây <undefined>Sát Thương Phạm Vi Nguyên Tố Lôi</undefined>."
       },
       "plunging": {
         "0": "<strong>Tấn Công Khi Đáp</strong>",
-        "1": "Ngưng tụ sức mạnh lôi đình, từ trên không lao xuống mặt đất, tấn công kẻ địch trên đường, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> khi chạm đất."
+        "1": "Ngưng tụ sức mạnh lôi đình, từ trên không lao xuống mặt đất, tấn công kẻ địch trên đường, gây <undefined>Sát Thương Phạm Vi Nguyên Tố Lôi</undefined> khi chạm đất."
       }
     },
     "skillParams": {
@@ -47,7 +47,7 @@
       "3": "<strong>Sesshou Sakura</strong>",
       "4": "Có đặc tính sau:",
       "5": [
-        "Cứ cách một thời gian sẽ giáng sét xuống 1 kẻ địch ở xung quanh, gây <electro>Sát Thương Nguyên Tố Lôi</electro>;",
+        "Cứ cách một thời gian sẽ giáng sét xuống 1 kẻ địch ở xung quanh, gây <undefined>Sát Thương Nguyên Tố Lôi</undefined>;",
         "Khi gần đó có Sesshou Sakura khác, sẽ tăng bậc cho chúng để tăng sát thương của đòn tấn công nêu trên."
       ],
       "6": "<br/>",
@@ -78,8 +78,8 @@
   "burst": {
     "name": "Đại Bí Pháp - Tenko Kenshin",
     "description": {
-      "0": "Trong dân gian Inazuma có nhắc đến khái niệm \"kitsunetsuki\", hay có thể hiểu là chứng nhận của hồ ly. Trong đó, của \"Thiên Hồ\" là tương đối đặc biệt, có thể dùng lôi đình để giáng xuống người kẻ địch của Đền Narukami. Giáng sấm sét xuống, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>.",
-      "1": "Khi thi triển, Yae Miko sẽ giải phóng Sesshou Sakura ở gần đó, phá hủy hình thái của chúng và hóa thành Thiên Hồ Lôi Đình giáng xuống, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>. Mỗi lần phá hủy 1 Sesshou Sakura bằng cách này sẽ giáng xuống 1 tia Thiên Hồ Lôi Đình.",
+      "0": "Trong dân gian Inazuma có nhắc đến khái niệm \"kitsunetsuki\", hay có thể hiểu là chứng nhận của hồ ly. Trong đó, của \"Thiên Hồ\" là tương đối đặc biệt, có thể dùng lôi đình để giáng xuống người kẻ địch của Đền Narukami. Giáng sấm sét xuống, gây <undefined>Sát Thương Phạm Vi Nguyên Tố Lôi</undefined>.",
+      "1": "Khi thi triển, Yae Miko sẽ giải phóng Sesshou Sakura ở gần đó, phá hủy hình thái của chúng và hóa thành Thiên Hồ Lôi Đình giáng xuống, gây <undefined>Sát Thương Phạm Vi Nguyên Tố Lôi</undefined>. Mỗi lần phá hủy 1 Sesshou Sakura bằng cách này sẽ giáng xuống 1 tia Thiên Hồ Lôi Đình.",
       "2": "<br/>",
       "3": "<i>Vào lúc này, Yae cần để lộ ra chứng nhận thiên hồ để hiệu lệnh lôi đình. Nhưng những kẻ đã nhìn thấy đại nhân Guuji để lộ chiếc đuôi đều đã tan biến không còn lại gì dù chỉ là hạt bụi. Cho nên, hãy nhớ cho kỹ nhé - Yae đại nhân không hề có đuôi.</i>"
     },
@@ -142,7 +142,7 @@
   "constellation4": {
     "name": "Anh Đào Dẫn Lôi Chương",
     "description": {
-      "0": "Sau khi sấm sét của <strong>Sesshou Sakura</strong> đánh trúng kẻ địch, tất cả nhân vật trong đội ở gần sẽ nhận được 20% <electro>Buff Sát Thương Nguyên Tố Lôi</electro>, duy trì 5s."
+      "0": "Sau khi sấm sét của <strong>Sesshou Sakura</strong> đánh trúng kẻ địch, tất cả nhân vật trong đội ở gần sẽ nhận được 20% <undefined>Buff Sát Thương Nguyên Tố Lôi</undefined>, duy trì 5s."
     }
   },
   "constellation5": {

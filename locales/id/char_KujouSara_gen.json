@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Charged Attack</strong>",
         "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
-        "2": "Saat membidik, energi listrik akan berkumpul di ujung anak panah. Panah dengan listrik yang terkumpul penuh akan mengakibatkan <electro>Electro DMG</electro> saat mengenai musuh.",
+        "2": "Saat membidik, energi listrik akan berkumpul di ujung anak panah. Panah dengan listrik yang terkumpul penuh akan mengakibatkan <undefined>Electro DMG</undefined> saat mengenai musuh.",
         "3": "Saat berada dalam status Crowfeather Cover, anak panah dengan energi yang terkumpul penuh akan meninggalkan Crowfeather saat mengenai target."
       },
       "plunging": {
@@ -45,7 +45,7 @@
     "description": {
       "0": "Mundur dengan kecepatan seperti tengu dan memanggil perlindungan dari Crowfeather.",
       "1": "Mendapatkan efek Crowfeather Cover selama 18 detik, dan jika Kujou Sara melancarkan Serangan Membidik yang terisi penuh, Crowfeather Cover akan terkonsumsi dan tembakan ini akan meninggalkan sebuah Crowfeather di lokasi target.",
-      "2": "Crowfeather akan memicu Tengu Juurai: Ambush setelah beberapa saat, mengakibatkan <electro>Electro DMG</electro> pada musuh di dekatnya, dan memberikan Bonus ATK sebesar persentase dari Base ATK Kujou Sara pada Karakter aktif di sekitar.",
+      "2": "Crowfeather akan memicu Tengu Juurai: Ambush setelah beberapa saat, mengakibatkan <undefined>Electro DMG</undefined> pada musuh di dekatnya, dan memberikan Bonus ATK sebesar persentase dari Base ATK Kujou Sara pada Karakter aktif di sekitar.",
       "3": "<br/>",
       "4": "Bonus ATK dari berbagai Tengu Juurai yang berbeda tidak bisa digabungkan. Efek dan durasi nya juga akan ditentukan oleh efek Tengu Juurai yang aktif terakhir.",
       "5": "<br/>",
@@ -74,7 +74,7 @@
   "burst": {
     "name": "Subjugation: Koukou Sendou",
     "description": {
-      "0": "Menjatuhkan sebuah Tengu Juurai: Titanbreaker di lokasi target dan mengakibatkan <electro>Electro DMG Area</electro>. Setelah itu, Tengu Juurai: Titanbreaker ini akan berpencar menjadi 4 Tengu Juurai: Stormcluster secara beruntun dan mengakibatkan <electro>Electro DMG Area</electro>.",
+      "0": "Menjatuhkan sebuah Tengu Juurai: Titanbreaker di lokasi target dan mengakibatkan <undefined>Electro DMG Area</undefined>. Setelah itu, Tengu Juurai: Titanbreaker ini akan berpencar menjadi 4 Tengu Juurai: Stormcluster secara beruntun dan mengakibatkan <undefined>Electro DMG Area</undefined>.",
       "1": "Tengu Juurai: Titanbreaker dan Tengu Juurai: Stormcluster akan memberikan Bonus ATK pada Karakter aktif yang ada di sekitar, sama seperti saat melancarkan Elemental Skill Tengu Stormcall.",
       "2": "<br/>",
       "3": "Bonus ATK dari berbagai Tengu Juurai yang berbeda tidak bisa digabungkan. Efek dan durasi nya juga akan ditentukan oleh efek Tengu Juurai yang aktif terakhir.",
@@ -154,7 +154,7 @@
   "constellation6": {
     "name": "Sin of Pride",
     "description": {
-      "0": "Saat Karakter mendapatkan Bonus ATK dari Tengu Juurai, maka CRIT DMG untuk <electro>Electro DMG</electro> milik Karakter tersebut akan meningkat 60%."
+      "0": "Saat Karakter mendapatkan Bonus ATK dari Tengu Juurai, maka CRIT DMG untuk <undefined>Electro DMG</undefined> milik Karakter tersebut akan meningkat 60%."
     }
   }
 }

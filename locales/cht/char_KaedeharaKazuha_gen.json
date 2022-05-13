@@ -6,7 +6,7 @@
       "1": "刀風會留下名為「流風秋野」的領域，對其中的敵人造成間歇的<anemo>風元素傷害</anemo>。",
       "2": "<br/>",
       "3": "<strong>元素轉化</strong>",
-      "4": "若流風秋野在持續期間接觸了<hydro>水元素</hydro>/<pyro>火元素</pyro>/<cryo>冰元素</cryo>/<electro>雷元素</electro>，則會獲得對應元素屬性，額外造成該元素附加傷害。",
+      "4": "若流風秋野在持續期間接觸了<hydro>水元素</hydro>/<pyro>火元素</pyro>/<cryo>冰元素</cryo>/<undefined>雷元素</undefined>，則會獲得對應元素屬性，額外造成該元素附加傷害。",
       "5": "這種轉化在技能持續期間僅會發生一次。",
       "6": "<br/>",
       "7": "<i>「須臾照見萬世長，一葉便知天下秋。我欲憑切楓一閃，做萬世之問叩——」</i>"
@@ -114,7 +114,7 @@
   "passive1": {
     "name": "相聞之劍法",
     "description": {
-      "0": "<strong>千早振</strong>在施放時，如果接觸了<hydro>水元素</hydro>/<pyro>火元素</pyro>/<cryo>冰元素</cryo>/<electro>雷元素</electro>，則會使這次<strong>千早振</strong>的下落攻擊·亂嵐撥止，發生元素轉化，將附加200%攻擊力的對應元素傷害，該傷害視為下落攻擊傷害。每次<strong>千早振</strong>的技能效果中，元素轉化僅會發生一次。"
+      "0": "<strong>千早振</strong>在施放時，如果接觸了<hydro>水元素</hydro>/<pyro>火元素</pyro>/<cryo>冰元素</cryo>/<undefined>雷元素</undefined>，則會使這次<strong>千早振</strong>的下落攻擊·亂嵐撥止，發生元素轉化，將附加200%攻擊力的對應元素傷害，該傷害視為下落攻擊傷害。每次<strong>千早振</strong>的技能效果中，元素轉化僅會發生一次。"
     }
   },
   "passive2": {

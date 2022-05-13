@@ -41,11 +41,11 @@
   "skill": {
     "name": "Trascendencia: Presagio maligno",
     "description": {
-      "0": "La Shogun Raiden libera un fragmento de su eutimia para infligir <electro>Daño Electro</electro> contra los enemigos de alrededor y otorgar a todos los personajes del equipo cercanos el efecto de “ojo del castigo atronador”.",
+      "0": "La Shogun Raiden libera un fragmento de su eutimia para infligir <undefined>Daño Electro</undefined> contra los enemigos de alrededor y otorgar a todos los personajes del equipo cercanos el efecto de “ojo del castigo atronador”.",
       "1": "<br/>",
       "2": "<strong>Ojo del castigo atronador</strong>",
       "3": [
-        "Cuando los ataques de los personajes que obtengan este efecto inflijan daño a un enemigo, el ojo liberará un ataque coordinado que inflige <electro>Daño Electro en el AdE</electro> en la ubicación de ese enemigo.",
+        "Cuando los ataques de los personajes que obtengan este efecto inflijan daño a un enemigo, el ojo liberará un ataque coordinado que inflige <undefined>Daño Electro en el AdE</undefined> en la ubicación de ese enemigo.",
         "Mientras un personaje esté bajo los efectos de ojo del castigo atronador, el daño que inflige con su Habilidad Definitiva aumenta en proporción a la Energía Elemental consumida para realizar dicha habilidad."
       ],
       "4": "<br/>",
@@ -76,11 +76,11 @@
   "burst": {
     "name": "Técnica secreta: Verdad onírica",
     "description": {
-      "0": "Reúne las infinitas verdades y consume su ambición infinita para ejecutar un corte onírico que extermina todas las maldiciones del mundo, infligiendo <electro>Daño Electro en el AdE</electro> y pasando al estado de “mente onírica” durante cierto periodo de tiempo. El daño infligido con corte onírico y con los ataques de mente onírica dependerá de las cargas de rueda de la ambición consumidas cuando esta habilidad sea utilizada.",
+      "0": "Reúne las infinitas verdades y consume su ambición infinita para ejecutar un corte onírico que extermina todas las maldiciones del mundo, infligiendo <undefined>Daño Electro en el AdE</undefined> y pasando al estado de “mente onírica” durante cierto periodo de tiempo. El daño infligido con corte onírico y con los ataques de mente onírica dependerá de las cargas de rueda de la ambición consumidas cuando esta habilidad sea utilizada.",
       "1": "<br/>",
       "2": "<strong>Mente onírica</strong>",
-      "3": "En este estado, la Shogun Raiden ataca con su tachi, y sus Ataques Normales, Cargados y Descendentes infligen <electro>Daño Electro</electro>, el cual no puede sustituirse imbuyéndose de otro elemento. Al golpear a un enemigo con estos ataques, todos los personajes del equipo cercanos regeneran Energía Elemental. Esta regeneración puede ocurrir una vez por segundo y activarse un máximo de 5 veces mientras mente onírica está activa.",
-      "4": "En este estado, la RES a interrupción de la Shogun Raiden aumenta, y se vuelve inmune al daño recibido por la reacción de <electro>Electrocargado</electro>.",
+      "3": "En este estado, la Shogun Raiden ataca con su tachi, y sus Ataques Normales, Cargados y Descendentes infligen <undefined>Daño Electro</undefined>, el cual no puede sustituirse imbuyéndose de otro elemento. Al golpear a un enemigo con estos ataques, todos los personajes del equipo cercanos regeneran Energía Elemental. Esta regeneración puede ocurrir una vez por segundo y activarse un máximo de 5 veces mientras mente onírica está activa.",
+      "4": "En este estado, la RES a interrupción de la Shogun Raiden aumenta, y se vuelve inmune al daño recibido por la reacción de <undefined>Electrocargado</undefined>.",
       "5": "Durante el estado de mente onírica, el daño infligido por los Ataques Normales, Cargados y Descendentes de la Shogun Raiden se considera daño de Habilidad Definitiva.",
       "6": "<br/>",
       "7": "El efecto de mente onírica desaparece cuando la Shogun Raiden abandona el campo de batalla.",
@@ -125,7 +125,7 @@
       "0": "Si la Shogun Raiden tiene más de un 100% de Recarga de Energía, por cada 1% adicional obtiene los siguientes efectos:",
       "1": [
         "Aumenta en un 0.6% adicional la regeneración de Energía Elemental otorgada por <strong>mente onírica</strong>.",
-        "Aumenta en un 0.4% adicional su <electro>Bono de Daño Electro</electro>."
+        "Aumenta en un 0.4% adicional su <undefined>Bono de Daño Electro</undefined>."
       ]
     }
   },
@@ -138,7 +138,7 @@
   "constellation1": {
     "name": "Inscripción ominosa",
     "description": {
-      "0": "<strong>Rueda de la ambición</strong> acumula cargas de ambición más rápidamente. Las cargas acumuladas con la Habilidad Definitiva de los personajes de tipo elemental <electro>Electro</electro> aumentan en un 80%, y las de los personajes del resto de los tipos elementales aumentan en un 20%."
+      "0": "<strong>Rueda de la ambición</strong> acumula cargas de ambición más rápidamente. Las cargas acumuladas con la Habilidad Definitiva de los personajes de tipo elemental <undefined>Electro</undefined> aumentan en un 80%, y las de los personajes del resto de los tipos elementales aumentan en un 20%."
     }
   },
   "constellation2": {

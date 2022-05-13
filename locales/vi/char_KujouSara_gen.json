@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Trọng Kích</strong>",
         "1": "<strong>Ngắm bắn</strong> chuẩn hơn, sát thương cao hơn.",
-        "2": "Khi ngắm bắn, sấm sét tích tụ trên đầu mũi tên. Khi mũi tên tích đầy sấm sét bắn trúng kẻ địch sẽ gây <electro>Sát Thương Nguyên Tố Lôi</electro>.",
+        "2": "Khi ngắm bắn, sấm sét tích tụ trên đầu mũi tên. Khi mũi tên tích đầy sấm sét bắn trúng kẻ địch sẽ gây <undefined>Sát Thương Nguyên Tố Lôi</undefined>.",
         "3": "Khi trong trạng thái \"Lông Quạ Bao Phủ\", mũi tên hoàn thành tụ lực khi bắn trúng sẽ để lại \"Lông Quạ\"."
       },
       "plunging": {
@@ -45,7 +45,7 @@
     "description": {
       "0": "Di chuyển nhanh về phía sau với tốc độ của Tengu, đồng thời triệu hồi sự bảo vệ của lông quạ.",
       "1": "Nhận được \"Lông Quạ Bao Phủ\" trong 18s, khi Kujou Sara tụ lực bắn tên sẽ tiêu hao \"Lông Quạ Bao Phủ\", đồng thời để lại \"Lông Quạ\" tại vị trí bắn trúng.",
-      "2": "\"Lông Quạ\" sau một thời gian ngắn sẽ kích hoạt Tengu Juurai - Phục Kích, gây <electro>Sát Thương Nguyên Tố Lôi</electro> cho kẻ địch trong phạm vi, đồng thời tăng tấn công với tỷ lệ nhất định cho nhân vật trong phạm vi dựa theo sức tấn công cơ bản của Kujou Sara.",
+      "2": "\"Lông Quạ\" sau một thời gian ngắn sẽ kích hoạt Tengu Juurai - Phục Kích, gây <undefined>Sát Thương Nguyên Tố Lôi</undefined> cho kẻ địch trong phạm vi, đồng thời tăng tấn công với tỷ lệ nhất định cho nhân vật trong phạm vi dựa theo sức tấn công cơ bản của Kujou Sara.",
       "3": "<br/>",
       "4": "Mức tấn công tăng thêm của các loại Tengu Juurai cung cấp sẽ không thể cộng dồn, thời gian duy trì và hiệu quả sẽ tính theo hiệu quả sau cùng.",
       "5": "<br/>",
@@ -74,7 +74,7 @@
   "burst": {
     "name": "Bí Thức - Koukou Sendou",
     "description": {
-      "0": "Thi triển Tengu Juurai - Vòng Kim Cang ở vị trí mục tiêu, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>. Sau đó, Tengu Juurai - Vòng Kim Cang sẽ khuếch tán chuyển thành 4 dòng Tengu Juurai - Tụ Sấm liên tục, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>.",
+      "0": "Thi triển Tengu Juurai - Vòng Kim Cang ở vị trí mục tiêu, gây <undefined>Sát Thương Phạm Vi Nguyên Tố Lôi</undefined>. Sau đó, Tengu Juurai - Vòng Kim Cang sẽ khuếch tán chuyển thành 4 dòng Tengu Juurai - Tụ Sấm liên tục, gây <undefined>Sát Thương Phạm Vi Nguyên Tố Lôi</undefined>.",
       "1": "Tengu Juurai - Vòng Kim Cang và Tengu Juurai - Tụ Sấm sẽ khiến nhân vật trong phạm vi nhận được hiệu quả tăng tấn công như Kỹ Năng Nguyên Tố Bão Sét Tengu.",
       "2": "<br/>",
       "3": "Mức tấn công tăng thêm của các loại Tengu Juurai cung cấp sẽ không thể cộng dồn, thời gian duy trì và hiệu quả sẽ tính theo hiệu quả sau cùng.",
@@ -154,7 +154,7 @@
   "constellation6": {
     "name": "Bản Ngã",
     "description": {
-      "0": "Khi nhân vật ở trạng thái tăng tấn công nhờ Tengu Juurai, sát thương bạo kích <electro>Nguyên Tố Lôi</electro> tăng 60%."
+      "0": "Khi nhân vật ở trạng thái tăng tấn công nhờ Tengu Juurai, sát thương bạo kích <undefined>Nguyên Tố Lôi</undefined> tăng 60%."
     }
   }
 }

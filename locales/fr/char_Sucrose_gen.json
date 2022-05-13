@@ -71,7 +71,7 @@
       "1": "L'Esprit attire les ennemis et les objets proches à lui, projetant les ennemis dans les airs et leur infligeant des <anemo>DGT Anémo</anemo>.",
       "2": "<br/>",
       "3": "<strong>Absorption élémentaire</strong>",
-      "4": "L'Esprit du vent absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
+      "4": "L'Esprit du vent absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <undefined>Électro</undefined> avec lesquels il entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
       "5": "Un seul élément peut être absorbé à la fois.",
       "6": "<br/>",
       "7": "<i>Sucrose aime à donner des noms à ses Hypostases Anémo instables ; leur lignée est encore plus longue que celle du Baron Lapinou 893e du nom.</i>"

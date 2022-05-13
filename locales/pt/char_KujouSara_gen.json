@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Ataque Carregado</strong>",
         "1": "Dispara um <strong>Tiro com Mira</strong> mais preciso e com Dano aumentado.",
-        "2": "Ao mirar, relâmpagos crepitantes irão se acumular na ponta da flecha. Uma flecha de relâmpago completamente carregada inflige <electro>Dano Electro</electro>."
+        "2": "Ao mirar, relâmpagos crepitantes irão se acumular na ponta da flecha. Uma flecha de relâmpago completamente carregada inflige <undefined>Dano Electro</undefined>."
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",
@@ -44,7 +44,7 @@
     "description": {
       "0": "Retira-se rapidamente com a velocidade de um tengu, invocando a proteção da Pena do Corvo.",
       "1": "Ganha a Proteção da Pena do Corvo por 18s, e quando a Kujou Sara dispara um tiro com mira totalmente carregada, a Proteção da Pena do Corvo será consumida, e deixará uma Pena do Corvo no local alvo.",
-      "2": "As Penas do Corvo desencadearão o Tengu Juurai: Emboscada após um curto período de tempo, causando <electro>Dano Electro</electro> e concedendo ao personagem ativo um Bônus de ATQ baseado no ATQ Base de Kujou Sara dentro da AdE do campo atual.",
+      "2": "As Penas do Corvo desencadearão o Tengu Juurai: Emboscada após um curto período de tempo, causando <undefined>Dano Electro</undefined> e concedendo ao personagem ativo um Bônus de ATQ baseado no ATQ Base de Kujou Sara dentro da AdE do campo atual.",
       "3": "<br/>",
       "4": "<i>À raça tengu nunca faltaram talentos excepcionais que tenham recebido uma Visão Electro. É que eles costumam fazer cânticos à Arconte Electro enquanto manipulam o Electro. Os cânticos são mais ou menos assim</i>",
       "5": "<i>\"Mostre sua força, ó louvável Narukami, e conceda a este suplicante sua força trovejante! Sowaka!\"</i>"
@@ -71,7 +71,7 @@
   "burst": {
     "name": "Subjugação: Koukou Sendou",
     "description": {
-      "0": "Lança um Tengu Juurai: Destruidor de Titãs, causando <electro>Dano Electro em uma AdE</electro>. Depois disso, Tengu Juurai: Destruidor de Titãs irá se espalhar em 4 Tengu Juurai: Aglomerado de Tempestades consecutivos, causando <electro>Dano Electro em uma AdE</electro>.",
+      "0": "Lança um Tengu Juurai: Destruidor de Titãs, causando <undefined>Dano Electro em uma AdE</undefined>. Depois disso, Tengu Juurai: Destruidor de Titãs irá se espalhar em 4 Tengu Juurai: Aglomerado de Tempestades consecutivos, causando <undefined>Dano Electro em uma AdE</undefined>.",
       "1": "Tengu Juurai: Destruidor de Titãs e Tengu Juurai: Aglomerado de Tempestades permitirá que o personagem ativo receba o mesmo Bônus de ATQ que receberia durante a Habilidade Elemental dentro da AdE do campo atual, Invocação da Tempestade Tengu.",
       "2": "<br/>",
       "3": "O Bônus de ATQ fornecido por vários tipos de Tengu Juurai não será acumulado, e seus efeitos e duração serão determinados pelo último Tengu Juurai a entrar em vigor.",
@@ -151,7 +151,7 @@
   "constellation6": {
     "name": "Meu Mundo",
     "description": {
-      "0": "O <electro>Dano Electro</electro> dos personagens que tiveram seus ATQs aumentados pelo Tengu Juurai tem seu Dano CRIT aumentado em 60%."
+      "0": "O <undefined>Dano Electro</undefined> dos personagens que tiveram seus ATQs aumentados pelo Tengu Juurai tem seu Dano CRIT aumentado em 60%."
     }
   }
 }

@@ -8,15 +8,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Ataque Normal</strong>",
-        "1": "Invoca espíritus kitsune para realizar hasta 3 ataques que infligen <electro>Daño Electro</electro>."
+        "1": "Invoca espíritus kitsune para realizar hasta 3 ataques que infligen <undefined>Daño Electro</undefined>."
       },
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",
-        "1": "Consume una cierta cantidad de Aguante para infligir <electro>Daño Electro en el AdE</electro> después de un corto tiempo de invocación."
+        "1": "Consume una cierta cantidad de Aguante para infligir <undefined>Daño Electro en el AdE</undefined> después de un corto tiempo de invocación."
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Concentra el poder del trueno y desciende hacia el suelo, dañando a todos los enemigos cercanos e infligiendo <electro>Daño Electro en el AdE</electro> en el momento del impacto."
+        "1": "Concentra el poder del trueno y desciende hacia el suelo, dañando a todos los enemigos cercanos e infligiendo <undefined>Daño Electro en el AdE</undefined> en el momento del impacto."
       }
     },
     "skillParams": {
@@ -47,7 +47,7 @@
       "3": "<strong>Cerezo kitsune</strong>",
       "4": "Tiene las siguientes características:",
       "5": [
-        "Cada cierto tiempo, hace descender un rayo sobre un enemigo cercano para infligirle <electro>Daño Electro</electro>.",
+        "Cada cierto tiempo, hace descender un rayo sobre un enemigo cercano para infligirle <undefined>Daño Electro</undefined>.",
         "Si se invoca un cerezo kitsune cuando ya existen otros, los ya existentes subirán de nivel y el daño que infligen con sus ataques aumentará."
       ],
       "6": "<br/>",
@@ -78,8 +78,8 @@
   "burst": {
     "name": "Técnica secreta suprema: Encarnación de Kitsune Celestial",
     "description": {
-      "0": "En Inazuma existen leyendas sobre posesiones kitsune. Una de las más particulares es la de la posesión por Kitsune Celestiales que caen con forma de relámpago sobre los intrusos que se infiltran en el Gran Santuario Narukami. Cuando el relámpago desciende, inflige <electro>Daño Electro en el AdE</electro>.",
-      "1": "Al lanzar la habilidad, Yae Miko destruye los cerezos kitsune cercanos, los cuales se transforman en relámpagos de Kitsune Celestiales que infligen <electro>Daño Electro en el AdE</electro>. Un relámpago de Kitsune Celestial caerá por cada cerezo kitsune que se destruya de esta forma.",
+      "0": "En Inazuma existen leyendas sobre posesiones kitsune. Una de las más particulares es la de la posesión por Kitsune Celestiales que caen con forma de relámpago sobre los intrusos que se infiltran en el Gran Santuario Narukami. Cuando el relámpago desciende, inflige <undefined>Daño Electro en el AdE</undefined>.",
+      "1": "Al lanzar la habilidad, Yae Miko destruye los cerezos kitsune cercanos, los cuales se transforman en relámpagos de Kitsune Celestiales que infligen <undefined>Daño Electro en el AdE</undefined>. Un relámpago de Kitsune Celestial caerá por cada cerezo kitsune que se destruya de esta forma.",
       "2": "<br/>",
       "3": "<i>Yae Miko solo revela su aspecto de Kitsune Celestial en los momentos más cruciales para invocar el poder del rayo. De aquellos que han visto la cola de la Suma Sacerdotisa no quedan ni las cenizas, así que más te vale recordar esto muy bien: la Srta. Yae no tiene cola.</i>"
     },
@@ -142,7 +142,7 @@
   "constellation4": {
     "name": "Cerezo de la tormenta",
     "description": {
-      "0": "Cuando el rayo de un <strong>cerezo kitsune</strong> golpea a un enemigo, todos los miembros del equipo cercanos obtienen un 20% de <electro>Bono de Daño Electro</electro> durante 5 s."
+      "0": "Cuando el rayo de un <strong>cerezo kitsune</strong> golpea a un enemigo, todos los miembros del equipo cercanos obtienen un 20% de <undefined>Bono de Daño Electro</undefined> durante 5 s."
     }
   },
   "constellation5": {

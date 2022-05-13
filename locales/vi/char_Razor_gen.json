@@ -45,12 +45,12 @@
       "0": "Dùng cách mà thầy và người nhà đã dạy, để giải quyết con mồi.",
       "1": "<br/>",
       "2": "<strong>Nhấn</strong>",
-      "3": "Vung móng vuốt của sói về phía trước, gây cho địch phía trước <electro>Sát Thương Nguyên Tố Lôi</electro>.",
+      "3": "Vung móng vuốt của sói về phía trước, gây cho địch phía trước <undefined>Sát Thương Nguyên Tố Lôi</undefined>.",
       "4": "Nếu đánh trúng kẻ địch, sẽ tạo ra một Ấn Lôi cho Razor, nâng cao hiệu quả nạp nguyên tố của Razor.",
       "5": "Cùng lúc chỉ xuất hiện tối đa 3 Ấn Lôi, cộng dồn sẽ làm mới thời gian kéo dài.",
       "6": "<br/>",
       "7": "<strong>Nhấn Giữ</strong>",
-      "8": "Tích tụ sức mạnh sấm sét gây nổ quy mô nhỏ, gây lượng lớn <electro>Sát Thương Nguyên Tố Lôi</electro>, và xóa bỏ Ấn Lôi đã có.",
+      "8": "Tích tụ sức mạnh sấm sét gây nổ quy mô nhỏ, gây lượng lớn <undefined>Sát Thương Nguyên Tố Lôi</undefined>, và xóa bỏ Ấn Lôi đã có.",
       "9": "Mỗi Ấn Lôi bị xóa bỏ, đều sẽ chuyển thành năng lượng nguyên tố của Razor.",
       "10": "<br/>",
       "11": "<i>Trong khoảnh khắc sét đánh xuống, thi thoảng thoáng thấy sâu trong linh hồn của Razor ẩn chứa ánh mắt của sói quan sát con mồi.</i>"
@@ -77,14 +77,14 @@
   "burst": {
     "name": "Răng Sét",
     "description": {
-      "0": "Đánh thức sói vô hình để bảo vệ bản thân, gây cho địch xung quanh <electro>Sát Thương Nguyên Tố Lôi</electro>, và tiêu hao tất cả Ấn Lôi, hồi năng lượng nguyên tố cho Razor.",
+      "0": "Đánh thức sói vô hình để bảo vệ bản thân, gây cho địch xung quanh <undefined>Sát Thương Nguyên Tố Lôi</undefined>, và tiêu hao tất cả Ấn Lôi, hồi năng lượng nguyên tố cho Razor.",
       "1": "Trong thời gian Sói tồn tại, sẽ chiến đấu cùng Razor.",
       "2": "<br/>",
       "3": "<strong>Sói</strong>",
       "4": [
-        "sẽ cùng Razor tấn công thường, gây <electro>Sát Thương Nguyên Tố Lôi</electro>;",
-        "Tăng tốc độ tấn công của Razor và <electro>Kháng Nguyên Tố Lôi</electro>;",
-        "Giúp Razor miễn nhiễm với sát thương phản ứng <electro>Điện Cảm</electro>;",
+        "sẽ cùng Razor tấn công thường, gây <undefined>Sát Thương Nguyên Tố Lôi</undefined>;",
+        "Tăng tốc độ tấn công của Razor và <undefined>Kháng Nguyên Tố Lôi</undefined>;",
+        "Giúp Razor miễn nhiễm với sát thương phản ứng <undefined>Điện Cảm</undefined>;",
         "Không thể thi triển Trọng Kích;",
         "Tăng khả năng chống gián đoạn cho Razor."
       ],
@@ -168,7 +168,7 @@
   "constellation6": {
     "name": "Thiên Lang",
     "description": {
-      "0": "Mỗi 10s, kiếm của Razor sẽ tự động nạp, tấn công thường sau đó sẽ gây ra sấm sét, tạo ra 100% tấn công <electro>sát thương Nguyên Tố Lôi</electro>. Khi không ở trong trạng thái <strong>Răng Sét</strong>, nếu sét đánh trúng địch, sẽ tích luỹ cho Razor 1 Ấn Lôi <strong>Vuốt Và Sấm</strong>."
+      "0": "Mỗi 10s, kiếm của Razor sẽ tự động nạp, tấn công thường sau đó sẽ gây ra sấm sét, tạo ra 100% tấn công <undefined>sát thương Nguyên Tố Lôi</undefined>. Khi không ở trong trạng thái <strong>Răng Sét</strong>, nếu sét đánh trúng địch, sẽ tích luỹ cho Razor 1 Ấn Lôi <strong>Vuốt Và Sấm</strong>."
     }
   }
 }

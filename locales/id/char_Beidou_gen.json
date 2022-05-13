@@ -45,16 +45,16 @@
       "0": "Tidak ada yang perlu dikhawatirkan. Jika ada yang mengangkat tangan melawan dia atau anak buahnya, dia akan membalasnya sepuluh kali lipat dengan pedang dan petir.",
       "1": "<br/>",
       "2": "<strong>Tekan</strong>",
-      "3": "Dengan akumulasi listrik, Beidou mengayunkan pedangnya dengan garang, mengakibatkan <electro>Electro DMG</electro>.",
+      "3": "Dengan akumulasi listrik, Beidou mengayunkan pedangnya dengan garang, mengakibatkan <undefined>Electro DMG</undefined>.",
       "4": "<br/>",
       "5": "<strong>Tahan</strong>",
       "6": "Mengangkat senjata dan menggunakannya sebagai perisai. Max DMG yang tertahan meningkat seiring dengan Max HP Beidou.",
-      "7": "Saat dilepas atau saat durasi skill selesai, menyerang dengan energi yang tersimpan di dalam pedang, mengakibatkan <electro>Electro DMG</electro>.",
+      "7": "Saat dilepas atau saat durasi skill selesai, menyerang dengan energi yang tersimpan di dalam pedang, mengakibatkan <undefined>Electro DMG</undefined>.",
       "8": "DMG serangan meningkat berdasarkan jumlah serangan yang diterima selama skill berlangsung. Bonus DMG akan tercapai saat skill terpicu dua kali.",
       "9": "Perisainya memiliki efek berikut:",
       "10": [
-        "Memiliki 250% ketahanan terhadap <electro>Electro DMG</electro>.",
-        "Memberikan <electro>elemen Electro</electro> kepada Beidou saat skill diaktifkan."
+        "Memiliki 250% ketahanan terhadap <undefined>Electro DMG</undefined>.",
+        "Memberikan <undefined>elemen Electro</undefined> kepada Beidou saat skill diaktifkan."
       ],
       "11": "<br/>",
       "12": "<i>Taklukkan deru lautan! Kendarai ombak dan terjanglah badai!</i>"
@@ -81,11 +81,11 @@
   "burst": {
     "name": "Stormbreaker",
     "description": {
-      "0": "Dengan memanggil kembali semangat tarung saat di tengah pertarungan sengit melawan Haishan, Beidou memanggil petir dan kekuatan yang luar biasa untuk menciptakan Thunderbeast's Targe di sekelilingnya, mengakibatkan <electro>Electro DMG</electro> kepada musuh di sekitarnya.",
+      "0": "Dengan memanggil kembali semangat tarung saat di tengah pertarungan sengit melawan Haishan, Beidou memanggil petir dan kekuatan yang luar biasa untuk menciptakan Thunderbeast's Targe di sekelilingnya, mengakibatkan <undefined>Electro DMG</undefined> kepada musuh di sekitarnya.",
       "1": "<br/>",
       "2": "<strong>Thunderbeast's Targe</strong>",
       "3": [
-        "Saat Normal dan Charged Attack mengenai musuh, memanggil 1 sambaran petir yang dapat melompat di antara musuh, mengakibatkan <electro>Electro DMG</electro>.",
+        "Saat Normal dan Charged Attack mengenai musuh, memanggil 1 sambaran petir yang dapat melompat di antara musuh, mengakibatkan <undefined>Electro DMG</undefined>.",
         "Meningkatkan ketahanan Beidou terhadap interupsi, dan mengurangi DMG yang diterima."
       ],
       "4": "<br/>",
@@ -140,7 +140,7 @@
     "description": {
       "0": "Saat <strong>Stormbreaker</strong> digunakan:",
       "1": "Membentuk perisai yang menahan DMG sebesar 16% dari Max HP Beidou selama 15 detik.",
-      "2": "Perisai ini juga menahan <electro>Electro DMG</electro> 250% lebih efektif."
+      "2": "Perisai ini juga menahan <undefined>Electro DMG</undefined> 250% lebih efektif."
     }
   },
   "constellation2": {
@@ -159,7 +159,7 @@
   "constellation4": {
     "name": "Stunning Revenge",
     "description": {
-      "0": "Setelah terkena serangan, Normal Attack Beidou memperoleh 20% <electro>Electro DMG</electro> tambahan selama 10 detik."
+      "0": "Setelah terkena serangan, Normal Attack Beidou memperoleh 20% <undefined>Electro DMG</undefined> tambahan selama 10 detik."
     }
   },
   "constellation5": {
@@ -172,7 +172,7 @@
   "constellation6": {
     "name": "Bane of Evil",
     "description": {
-      "0": "Selama durasi <strong>Stormbreaker</strong>, <electro>Electro RES</electro> musuh di sekitar berkurang 15%."
+      "0": "Selama durasi <strong>Stormbreaker</strong>, <undefined>Electro RES</undefined> musuh di sekitar berkurang 15%."
     }
   }
 }

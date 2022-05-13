@@ -45,16 +45,16 @@
       "0": "N'ayez crainte. Que quelqu'un ose s'en prendre à Beidou ou aux siens, et sa lame et le tonnerre lui feront payer au centuple.",
       "1": "<br/>",
       "2": "<strong>Appui simple</strong>",
-      "3": "Beidou concentre le pouvoir de la foudre sur son épée, et exécute un coup violent qui inflige aux ennemis en face des <electro>DGT Électro</electro>.",
+      "3": "Beidou concentre le pouvoir de la foudre sur son épée, et exécute un coup violent qui inflige aux ennemis en face des <undefined>DGT Électro</undefined>.",
       "4": "<br/>",
       "5": "<strong>Appui long</strong>",
       "6": "Beidou brandit son arme, qu'elle utilise comme bouclier. La quantité de DGT absorbés est proportionnelle aux PV max de Beidou.",
-      "7": "Lorsque vous relâchez la compétence ou que celle-ci prend fin, Beidou brandit sa longue épée et effectue une contre-attaque libérant toute l'énergie accumulée, infligeant des <electro>DGT Électro</electro>.",
+      "7": "Lorsque vous relâchez la compétence ou que celle-ci prend fin, Beidou brandit sa longue épée et effectue une contre-attaque libérant toute l'énergie accumulée, infligeant des <undefined>DGT Électro</undefined>.",
       "8": "Les DGT infligés augmentent en fonction du nombre d'attaques subies par Beidou pendant la durée de la compétence. Le bonus de DGT maximum est atteint lorsque l'effet est déclenché deux fois.",
       "9": "Le bouclier a les propriétés suivantes :",
       "10": [
-        " A 250 % d'efficacité contre les <electro>DGT Électro</electro>.",
-        " Applique l'<electro>élément Électro</electro> à Beidou à l'activation."
+        " A 250 % d'efficacité contre les <undefined>DGT Électro</undefined>.",
+        " Applique l'<undefined>élément Électro</undefined> à Beidou à l'activation."
       ],
       "11": "<br/>",
       "12": "<i>À l'assaut des mers ! À la poursuite des vagues et de la tempête !</i>"
@@ -81,11 +81,11 @@
   "burst": {
     "name": "Brisure d'orage",
     "description": {
-      "0": "Se remémorant son combat contre Haishan, la bête géante, Beidou fait appel à la même force destructrice, et crée un bouclier de foudre qui inflige des <electro>DGT Électro</electro> aux ennemis à proximité.",
+      "0": "Se remémorant son combat contre Haishan, la bête géante, Beidou fait appel à la même force destructrice, et crée un bouclier de foudre qui inflige des <undefined>DGT Électro</undefined> aux ennemis à proximité.",
       "1": "<br/>",
       "2": "<strong>Bouclier de foudre</strong>",
       "3": [
-        " Les attaques normales et chargées, lorsqu'elles touchent, libèrent une décharge électrique qui se propage d'ennemi en ennemi et inflige des <electro>DGT Électro</electro>.",
+        " Les attaques normales et chargées, lorsqu'elles touchent, libèrent une décharge électrique qui se propage d'ennemi en ennemi et inflige des <undefined>DGT Électro</undefined>.",
         " Augmente la RÉS à l'interruption du personnage et réduit les DGT subis."
       ],
       "4": "<br/>",
@@ -139,7 +139,7 @@
     "description": {
       "0": "L'activation de <strong>Brisure d'orage</strong> confère les effets suivants :",
       "1": "Génère un bouclier qui absorbe une quantité de DGT équivalant à 16 % des PV max et dure 15 s.",
-      "2": "Le bouclier est efficace à 250 % contre les <electro>DGT Électro</electro>."
+      "2": "Le bouclier est efficace à 250 % contre les <undefined>DGT Électro</undefined>."
     }
   },
   "constellation2": {
@@ -158,7 +158,7 @@
   "constellation4": {
     "name": "Vengeance étonnante",
     "description": {
-      "0": "Après avoir subi une attaque, les attaques normales de Beidou infligent 20 % de <electro>DGT Électro</electro> supplémentaires pendant 10 s."
+      "0": "Après avoir subi une attaque, les attaques normales de Beidou infligent 20 % de <undefined>DGT Électro</undefined> supplémentaires pendant 10 s."
     }
   },
   "constellation5": {
@@ -171,7 +171,7 @@
   "constellation6": {
     "name": "Chancre du mal",
     "description": {
-      "0": "La <electro>RÉS Électro</electro> des ennemis proches est réduite de 15 % tant que <strong>Brisure d'orage</strong> est actif."
+      "0": "La <undefined>RÉS Électro</undefined> des ennemis proches est réduite de 15 % tant que <strong>Brisure d'orage</strong> est actif."
     }
   }
 }

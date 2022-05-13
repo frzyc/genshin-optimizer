@@ -71,7 +71,7 @@
       "1": "Zieht während der Wirkungsdauer fortlaufend Gegner und Objekte in der Nähe an, schleudert die angezogenen Genger weg und verursacht <anemo>Anemo-Schaden</anemo>.",
       "2": "<br/>",
       "3": "<strong>Elementarumwandlung</strong>",
-      "4": "Verleiht der Windseele beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Effekte während der Wirkungsdauer das jeweilige Element und verursacht dementsprechend zusätzlichen Schaden.",
+      "4": "Verleiht der Windseele beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <undefined>Elektro</undefined>-Effekte während der Wirkungsdauer das jeweilige Element und verursacht dementsprechend zusätzlichen Schaden.",
       "5": "Elementarumwandlung nur einmal während der Wirkungsdauer möglich.",
       "6": "<br/>",
       "7": "<i>Saccharose wollte ursprünglich jeder instabilen Anemo-Hypostase einen Namen geben. Dieses Vorhaben musste sie jedoch aufgeben, da bald mehr Hypostasen als Generationen von Graf von Hoppel zusammenkamen.</i>"

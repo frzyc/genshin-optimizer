@@ -45,12 +45,12 @@
       "0": "Erledigt seine Beute mithilfe der Methoden, die ihm sein Meister und seine Familie beigebracht haben.",
       "1": "<br/>",
       "2": "<strong>Drücken</strong>",
-      "3": "Fügt den Gegnern vor ihm mit den Klauen des Blitzwolfs <electro>Elektro-Schaden</electro> zu.",
+      "3": "Fügt den Gegnern vor ihm mit den Klauen des Blitzwolfs <undefined>Elektro-Schaden</undefined> zu.",
       "4": "Sammelt beim Treffen Gegnern ein Elektro-Siegel, das Razors Aufladerate erhöht.",
       "5": "Bis zu 3 Elektro-Siegel sammelbar. Aktualisiert bei weiteren Elektro-Siegeln die Dauer.",
       "6": "<br/>",
       "7": "<strong>Gedrückt halten</strong>",
-      "8": "Konzentriert die Kraft des Blitzes zu einer Explosion mit geringer Reichweite, verursacht hohen <electro>Elektro-Schaden </electro> und entfernt vorhandene Elektro-Siegel.",
+      "8": "Konzentriert die Kraft des Blitzes zu einer Explosion mit geringer Reichweite, verursacht hohen <undefined>Elektro-Schaden </undefined> und entfernt vorhandene Elektro-Siegel.",
       "9": "Erhöht Razors Elementarenergie für jedes entfernte Elektro-Siegel.",
       "10": "<br/>",
       "11": "<i>Siehst du gerade in Razors Augen, während der Blitzschlag eintrifft, erhaschst du vielleicht einen Blick auf den Wolf in seinem Innern, der auf die Jagd geht.</i>"
@@ -77,14 +77,14 @@
   "burst": {
     "name": "Blitzklauen",
     "description": {
-      "0": "Erweckt den formlosen Blitzwolf, um sich zu schützen, und fügt Gegnern in der Umgebung <electro>Elektro-Schaden</electro> zu. Verbraucht alle Elektro-Siegel, um Razors Elementarenergie wiederherzustellen.",
+      "0": "Erweckt den formlosen Blitzwolf, um sich zu schützen, und fügt Gegnern in der Umgebung <undefined>Elektro-Schaden</undefined> zu. Verbraucht alle Elektro-Siegel, um Razors Elementarenergie wiederherzustellen.",
       "1": "Der Blitzwolf kämpft gemeinsam mit Razor, solange er auf dem Feld ist.",
       "2": "<br/>",
       "3": "<strong>Blitzwolf</strong>",
       "4": [
-        " Greift an, sobald Razor einen Standardangriff ausführt, und verursacht <electro>Elektro-Schaden</electro>.",
-        " Erhöht Razors Angriffs-GSW und <electro>Elektro-WDS</electro>.",
-        " Macht Razor immun gegen Schaden durch die Reaktion <electro>Unter Strom</electro>.",
+        " Greift an, sobald Razor einen Standardangriff ausführt, und verursacht <undefined>Elektro-Schaden</undefined>.",
+        " Erhöht Razors Angriffs-GSW und <undefined>Elektro-WDS</undefined>.",
+        " Macht Razor immun gegen Schaden durch die Reaktion <undefined>Unter Strom</undefined>.",
         " Anwendung heftiger Schläge nicht möglich.",
         " Erhöht Razors Unterbrechungs-WDS."
       ],
@@ -168,7 +168,7 @@
   "constellation6": {
     "name": "Lupus Fulguris",
     "description": {
-      "0": "Razors Großschwert lädt sich alle 10 s auf, elektrisiert den nächsten Standardangriff und verursacht damit <electro>Elektro-Schaden</electro> in Höhe von 100 % ANG.",
+      "0": "Razors Großschwert lädt sich alle 10 s auf, elektrisiert den nächsten Standardangriff und verursacht damit <undefined>Elektro-Schaden</undefined> in Höhe von 100 % ANG.",
       "1": "Sammelt ohne den Zustand <strong>Blitzklauen</strong> bei einem Treffer mit dem elektrisierten Angriff ein Elektro-Siegel für Razors <strong>Klauen und Donner</strong>."
     }
   }

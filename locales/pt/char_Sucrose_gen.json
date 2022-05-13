@@ -71,7 +71,7 @@
       "1": "Enquanto ela persistir, o Grande Espírito do Vento irá continuamente puxar e lançar inimigos e objetos próximos, causando <anemo>Dano de Anemo em AdE</anemo>.",
       "2": "<br/>",
       "3": "<strong>Absorção Elemental</strong>",
-      "4": "Se o Espírito do Vento entrar em contato com os elementos <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, ele irá causar Dano elemental adicional baseado naquele tipo.",
+      "4": "Se o Espírito do Vento entrar em contato com os elementos <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, ele irá causar Dano elemental adicional baseado naquele tipo.",
       "5": "Absorção Elemental pode ocorrer apenas uma vez por uso.",
       "6": "<i>Sucrose costumava dar nomes ao seu volátil Anemo Hypostases. Mas a sua linha de herdeiros cresceu rapidamente até ultrapassar o Barão Coelho n° 893.</i>"
     },

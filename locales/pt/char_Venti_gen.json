@@ -80,7 +80,7 @@
       "0": "Dispara uma flecha energizada com vento, criando um grande Olho da Tempestade que suga inimigos, causando <anemo>Dano Anemo</anemo> contínuo.",
       "1": "<br/>",
       "2": "<strong>Absorção Elemental</strong>",
-      "3": "Se o Olho da Tempestade entrar em contato com os elementos <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, causará Dano elemental adicional daquele tipo.",
+      "3": "Se o Olho da Tempestade entrar em contato com os elementos <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, causará Dano elemental adicional daquele tipo.",
       "4": "A Absorção Elemental pode ocorrer uma vez a cada uso.",
       "5": "<br/>",
       "6": "<i>Muitos hinos escritos para elogiar o Arconte Anemo não existem mais. Essa é a sua compreensão do vento.</i>"

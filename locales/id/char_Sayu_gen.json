@@ -56,7 +56,7 @@
       "11": "Durasi skill maksimum adalah 10 detik, dan skill ini akan segera memasuki CD setelah efeknya berakhir. Semakin lama Sayu berada dalam status Fuufuu Windwheel, maka semakin lama durasi CD skill ini.",
       "12": "<br/>",
       "13": "<strong>Elemental Absorption</strong>",
-      "14": "Selama berada dalam status Fuufuu Windwheel, jika Sayu bersentuhan dengan <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, maka Sayu akan mengakibatkan DMG elemental tambahan yang sesuai dengan elemen tersebut.",
+      "14": "Selama berada dalam status Fuufuu Windwheel, jika Sayu bersentuhan dengan <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, maka Sayu akan mengakibatkan DMG elemental tambahan yang sesuai dengan elemen tersebut.",
       "15": "Elemental Absorption hanya dapat terpicu sekali setiap kali skill digunakan.",
       "16": "<br/>",
       "17": "<i>Sayu dapat melakukan skill ini dengan mata tertutup. Teknik ini awalnya diciptakan untuk melarikan diri. Namun dengan Vision yang dimilikinya sekarang, Sayu akhirnya dapat berputar dan membuat musuh-musuhnya tak berkutik.</i>"

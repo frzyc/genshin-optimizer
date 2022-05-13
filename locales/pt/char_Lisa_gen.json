@@ -8,15 +8,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Ataque Normal</strong>",
-        "1": "Realiza até 4 ataques de relâmpago que infligem <electro>Dano Electro</electro>."
+        "1": "Realiza até 4 ataques de relâmpago que infligem <undefined>Dano Electro</undefined>."
       },
       "charged": {
         "0": "<strong>Ataque Carregado</strong>",
-        "1": "Consome uma certa quantidade de Stamina que inflige <electro>Dano Electro em uma AdE</electro> após um curto período de canalização."
+        "1": "Consome uma certa quantidade de Stamina que inflige <undefined>Dano Electro em uma AdE</undefined> após um curto período de canalização."
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",
-        "1": "Reunindo o poder do Electro, Lisa mergulha ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <electro>Dano Electro em uma AdE</electro> durante o impacto com o chão."
+        "1": "Reunindo o poder do Electro, Lisa mergulha ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <undefined>Dano Electro em uma AdE</undefined> durante o impacto com o chão."
       }
     },
     "skillParams": {
@@ -45,10 +45,10 @@
       "1": "<br/>",
       "2": "<strong>Pressionar</strong>",
       "3": "Libera uma esfera relâmpago perseguidora.",
-      "4": "Ao acertar, inflige <electro>Dano Electro</electro> e aplica um acúmulo do efeito Condutor (máximo de 3 acúmulos) nos inimigos em uma pequena AdE",
+      "4": "Ao acertar, inflige <undefined>Dano Electro</undefined> e aplica um acúmulo do efeito Condutor (máximo de 3 acúmulos) nos inimigos em uma pequena AdE",
       "5": "<br/>",
       "6": "<strong>Manter pressionado</strong>",
-      "7": "Após um longo período de canalização, convoca os relâmpagos dos céus, infligindo <electro>Dano Electro</electro> massivo em todos os inimigos próximos baseado no número de acúmulos do efeito Condução aplicados neles, e remove seus efeitos de Condução.",
+      "7": "Após um longo período de canalização, convoca os relâmpagos dos céus, infligindo <undefined>Dano Electro</undefined> massivo em todos os inimigos próximos baseado no número de acúmulos do efeito Condução aplicados neles, e remove seus efeitos de Condução.",
       "8": "<br/>",
       "9": "<i>O Electro Púrpura é a vestimenta de uma Bruxa das Rosas</i>"
     },
@@ -74,8 +74,8 @@
   "burst": {
     "name": "Rosa do Relâmpago",
     "description": {
-      "0": "Evoca uma Rosa Elétrica que desfere poderosos relâmpagos, lançando inimigos próximos e infligindo <electro>Dano Electro</electro>.",
-      "1": "A Rosa Elétrica irá continuamente emitir raios que empurram os inimigos e infligem <electro>Dano Electro</electro> enquanto ela permanecer.",
+      "0": "Evoca uma Rosa Elétrica que desfere poderosos relâmpagos, lançando inimigos próximos e infligindo <undefined>Dano Electro</undefined>.",
+      "1": "A Rosa Elétrica irá continuamente emitir raios que empurram os inimigos e infligem <undefined>Dano Electro</undefined> enquanto ela permanecer.",
       "2": "<br/>",
       "3": "<i>Essa rosa é linda, mas tenha cuidado com seus espinhos mortais.</i>"
     },

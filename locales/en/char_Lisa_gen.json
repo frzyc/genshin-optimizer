@@ -8,15 +8,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
-        "1": "Perform up to 4 lightning attacks that deal <electro>Electro DMG</electro>."
+        "1": "Perform up to 4 lightning attacks that deal <undefined>Electro DMG</undefined>."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Consumes a certain amount of Stamina to deal <electro>AoE Electro DMG</electro> after a short casting time."
+        "1": "Consumes a certain amount of Stamina to deal <undefined>AoE Electro DMG</undefined> after a short casting time."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Gathering the might of Electro, Lisa plunges towards the ground from mid-air, damaging all opponents in her path. Deals <electro>AoE Electro DMG</electro> upon impact with the ground."
+        "1": "Gathering the might of Electro, Lisa plunges towards the ground from mid-air, damaging all opponents in her path. Deals <undefined>AoE Electro DMG</undefined> upon impact with the ground."
       }
     },
     "skillParams": {
@@ -45,10 +45,10 @@
       "1": "<br/>",
       "2": "<strong>Press</strong>",
       "3": "Releases a homing Lightning Orb.",
-      "4": "On hit, it deals <electro>Electro DMG</electro> and applies a stack of the Conductive status (max 3 stacks) to opponents in a small AoE.",
+      "4": "On hit, it deals <undefined>Electro DMG</undefined> and applies a stack of the Conductive status (max 3 stacks) to opponents in a small AoE.",
       "5": "<br/>",
       "6": "<strong>Hold</strong>",
-      "7": "After an extended casting time, calls down lightning from the heavens, dealing massive <electro>Electro DMG</electro> to all nearby opponents.",
+      "7": "After an extended casting time, calls down lightning from the heavens, dealing massive <undefined>Electro DMG</undefined> to all nearby opponents.",
       "8": "Deals great amounts of extra damage to opponents based on the number of Conductive stacks applied to them, and clears their Conductive status.",
       "9": "<br/>",
       "10": "<i>Electro Purple is the raiment of the Witch of Purple Rose.</i>"
@@ -75,8 +75,8 @@
   "burst": {
     "name": "Lightning Rose",
     "description": {
-      "0": "Summons a Lightning Rose that unleashes powerful lightning bolts, launching surrounding opponents and dealing <electro>Electro DMG</electro>.",
-      "1": "The Lightning Rose will continuously emit lightning to knock back opponents and deal <electro>Electro DMG</electro> throughout the ability's duration.",
+      "0": "Summons a Lightning Rose that unleashes powerful lightning bolts, launching surrounding opponents and dealing <undefined>Electro DMG</undefined>.",
+      "1": "The Lightning Rose will continuously emit lightning to knock back opponents and deal <undefined>Electro DMG</undefined> throughout the ability's duration.",
       "2": "<br/>",
       "3": "<i>This rose is beautiful, but beware its mortal thorns.</i>"
     },

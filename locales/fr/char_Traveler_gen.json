@@ -5,7 +5,7 @@
       "enerRechInc": "Bonus recharge d'énergie",
       "name": "Lame d'éclair",
       "description": {
-        "0": "Libère trois ombres de foudre rapides, qui infligent des <electro>DGT Électro</electro> aux ennemis, et laissent une amulette d'abondance lorsqu'elles touchent un ennemi.",
+        "0": "Libère trois ombres de foudre rapides, qui infligent des <undefined>DGT Électro</undefined> aux ennemis, et laissent une amulette d'abondance lorsqu'elles touchent un ennemi.",
         "1": "Jusqu'à 2 amulettes d'abondance peuvent être ainsi générées. Réutiliser la compétence annule les amulettes d'abondance générées.",
         "2": "<br/>",
         "3": "<strong>Amulettes d'abondance</strong>",
@@ -38,10 +38,10 @@
       "thunderDMG": "DGT Foudre majestueuse",
       "name": "Tonnerre hurlant",
       "description": {
-        "0": "Vous invoquez la protection de la foudre, qui repousse les ennemis proches et leur inflige des <electro>DGT Électro</electro>.",
+        "0": "Vous invoquez la protection de la foudre, qui repousse les ennemis proches et leur inflige des <undefined>DGT Électro</undefined>.",
         "1": "<br/>",
         "2": "<strong>Voile de foudre</strong>",
-        "3": "Les attaques chargées ou normales du personnage déployé font pleuvoir la Foudre majestueuse lorsqu'elles touchent, qui inflige des <electro>DGT Électro</electro>.",
+        "3": "Les attaques chargées ou normales du personnage déployé font pleuvoir la Foudre majestueuse lorsqu'elles touchent, qui inflige des <undefined>DGT Électro</undefined>.",
         "4": "Lorsque la Foudre majestueuse touche un ennemi, elle fait récupérer de l'énergie élémentaire à ce personnage.",
         "5": "Jusqu'à 1 Foudre majestueuse peut être déclenchée toutes les 0,5 s.",
         "6": "<br/>",
@@ -122,7 +122,7 @@
     "constellation2": {
       "name": "Véhémence pourpre",
       "description": {
-        "0": "Réduit de 15 % pendant 8 s la <electro>RÉS Électro</electro> des ennemis ayant été touchés par la Foudre majestueuse de <strong>Tonnerre hurlant</strong>."
+        "0": "Réduit de 15 % pendant 8 s la <undefined>RÉS Électro</undefined> des ennemis ayant été touchés par la Foudre majestueuse de <strong>Tonnerre hurlant</strong>."
       }
     },
     "constellation3": {
@@ -202,7 +202,7 @@
         "4": "Augmente les DGT et la zone d'effet.",
         "5": "<br/>",
         "6": "<strong>Absorption élémentaire</strong>",
-        "7": "Le vortex absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact ; ceux-ci lui confèrent un bonus de DGT de l'élément correspondant.",
+        "7": "Le vortex absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <undefined>Électro</undefined> avec lesquels il entre en contact ; ceux-ci lui confèrent un bonus de DGT de l'élément correspondant.",
         "8": "Une seule réaction d'absorption élémentaire peut avoir lieu par utilisation.",
         "9": "<br/>",
         "10": "<i>Vous avez discuté de la maîtrise de vos nouveaux pouvoirs Anémo avec Paimon.</i>"
@@ -232,7 +232,7 @@
         "0": "Vous invoquez une tornade qui attire les objets et les ennemis en avançant, et qui inflige des <anemo>DGT Anémo continus</anemo>.",
         "1": "<br/>",
         "2": "<strong>Absorption élémentaire</strong>",
-        "3": "La tornade absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels elle entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
+        "3": "La tornade absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <undefined>Électro</undefined> avec lesquels elle entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
         "4": "Un seul élément peut être absorbé à la fois.",
         "5": "<br/>",
         "6": "<i>Vous avez étudié le battement des ailes du papillon avec Paimon.</i>"

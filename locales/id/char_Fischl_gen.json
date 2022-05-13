@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar. Saat membidik, jiwa petir hitam dari Immernachtreich akan menjawab panggilan Prinzessin dan kekuatannya berkumpul pada ujung anak panah. Saat terkumpul penuh, Rachsüchtig Blitz akan mengakibatkan <electro>Electro DMG</electro>."
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar. Saat membidik, jiwa petir hitam dari Immernachtreich akan menjawab panggilan Prinzessin dan kekuatannya berkumpul pada ujung anak panah. Saat terkumpul penuh, Rachsüchtig Blitz akan mengakibatkan <undefined>Electro DMG</undefined>."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
@@ -41,8 +41,8 @@
   "skill": {
     "name": "Nightrider",
     "description": {
-      "0": "Memanggil Oz. Gagak malam yang tercipta dalam kegelapan dan halilintar turun ke bumi untuk mengakibatkan <electro>Electro DMG</electro> dalam area kecil.",
-      "1": "Selama durasi skill, Oz akan terus menyerang musuh di sekitar dengan <electro>Freikugel</electro>.",
+      "0": "Memanggil Oz. Gagak malam yang tercipta dalam kegelapan dan halilintar turun ke bumi untuk mengakibatkan <undefined>Electro DMG</undefined> dalam area kecil.",
+      "1": "Selama durasi skill, Oz akan terus menyerang musuh di sekitar dengan <undefined>Freikugel</undefined>.",
       "2": "<br/>",
       "3": "Tahan untuk mengatur lokasi di mana Oz akan dipanggil.",
       "4": "Tekan lagi sewaktu-waktu dalam durasi skill untuk memanggil Oz kembali ke sisi Fischl.",
@@ -76,7 +76,7 @@
       "1": "Memiliki efek berikut selama durasi skill:",
       "2": [
         "Fischl mengambil bentuk Oz, membuat kecepatan gerak dia meningkat drastis.",
-        "Menyerang musuh terdekat dengan menggunakan petir, menghasilkan <electro>Electro DMG</electro> kepada musuh yang menyentuhnya. Setiap musuh hanya dapat tersambar satu kali.",
+        "Menyerang musuh terdekat dengan menggunakan petir, menghasilkan <undefined>Electro DMG</undefined> kepada musuh yang menyentuhnya. Setiap musuh hanya dapat tersambar satu kali.",
         "Saat efeknya berakhir, Oz akan tetap berada di medan tempur dan menyerang musuh Prinzessin. Jika Oz sudah berada di medan tempur, maka akan memutar ulang durasi kehadirannya."
       ],
       "3": "<br/>",
@@ -105,13 +105,13 @@
   "passive1": {
     "name": "Stellar Predator",
     "description": {
-      "0": "Saat Fischl menembakkan Serangan Membidik yang telah di-Charge penuh ke arah Oz, Oz akan memanggil Thundering Retribution yang mengakibatkan <electro>Electro DMG area</electro> sebesar 152.7% DMG panah."
+      "0": "Saat Fischl menembakkan Serangan Membidik yang telah di-Charge penuh ke arah Oz, Oz akan memanggil Thundering Retribution yang mengakibatkan <undefined>Electro DMG area</undefined> sebesar 152.7% DMG panah."
     }
   },
   "passive2": {
     "name": "Undone Be Thy Sinful Hex",
     "description": {
-      "0": "Jika karakter yang sedang digunakan memicu <electro>Reaksi Elemental yang berhubungan dengan elemen Electro</electro> pada saat Oz berada di medan tempur, musuh akan terkena Thundering Retribution yang mengakibatkan <electro>Electro DMG</electro> sebesar 80% ATK Fischl."
+      "0": "Jika karakter yang sedang digunakan memicu <undefined>Reaksi Elemental yang berhubungan dengan elemen Electro</undefined> pada saat Oz berada di medan tempur, musuh akan terkena Thundering Retribution yang mengakibatkan <undefined>Electro DMG</undefined> sebesar 80% ATK Fischl."
     }
   },
   "passive3": {
@@ -142,7 +142,7 @@
   "constellation4": {
     "name": "Her Pilgrimage of Bleak",
     "description": {
-      "0": "Saat menggunakan <strong>Midnight Phantasmagoria</strong>, mengakibatkan <electro>Electro DMG</electro> ke musuh di sekitar sebesar 222% ATK ke musuh di sekitar.",
+      "0": "Saat menggunakan <strong>Midnight Phantasmagoria</strong>, mengakibatkan <undefined>Electro DMG</undefined> ke musuh di sekitar sebesar 222% ATK ke musuh di sekitar.",
       "1": "Saat skill berakhir, memulihkan 20% HP Fischl."
     }
   },
@@ -156,7 +156,7 @@
   "constellation6": {
     "name": "Evernight Raven",
     "description": {
-      "0": "Meningkatkan durasi pemanggilan Oz selama 2 detik, selama durasi, Oz menyerang bersama dengan karakter yang sedang bertarung, mengakibatkan 30% ATK Fischl sebagai <electro>Electro DMG</electro>."
+      "0": "Meningkatkan durasi pemanggilan Oz selama 2 detik, selama durasi, Oz menyerang bersama dengan karakter yang sedang bertarung, mengakibatkan 30% ATK Fischl sebagai <undefined>Electro DMG</undefined>."
     }
   }
 }

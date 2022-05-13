@@ -8,15 +8,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Ataque Normal</strong>",
-        "1": "Realiza hasta 4 ataques eléctricos que infligen <electro>Daño Electro</electro>."
+        "1": "Realiza hasta 4 ataques eléctricos que infligen <undefined>Daño Electro</undefined>."
       },
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",
-        "1": "Consume una cierta cantidad de Aguante para infligir <electro>Daño Electro en el AdE</electro> después de un corto tiempo de lanzamiento."
+        "1": "Consume una cierta cantidad de Aguante para infligir <undefined>Daño Electro en el AdE</undefined> después de un corto tiempo de lanzamiento."
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Concentra el poder Electro y desciende hacia el suelo, dañando a todos los enemigos cercanos e infligiendo <electro>Daño Electro en el AdE</electro> en el momento del impacto."
+        "1": "Concentra el poder Electro y desciende hacia el suelo, dañando a todos los enemigos cercanos e infligiendo <undefined>Daño Electro en el AdE</undefined> en el momento del impacto."
       }
     },
     "skillParams": {
@@ -44,10 +44,10 @@
       "0": "Canaliza el poder del rayo para deshacerse de los asuntos más molestos.",
       "1": "<br/>",
       "2": "<strong>Pulsar una vez</strong>",
-      "3": "Lanza un orbe eléctrico contra sus enemigos. En el momento del impacto, el orbe inflige <electro>Daño Electro</electro> y afecta a los enemigos situados en una pequeña AdE con una carga de conducción (máx. 3 cargas).",
+      "3": "Lanza un orbe eléctrico contra sus enemigos. En el momento del impacto, el orbe inflige <undefined>Daño Electro</undefined> y afecta a los enemigos situados en una pequeña AdE con una carga de conducción (máx. 3 cargas).",
       "4": "<br/>",
       "5": "<strong>Mantener pulsado</strong>",
-      "6": "Tras un tiempo de canalización, invoca los truenos del cielo, infligiendo una gran cantidad de <electro>Daño Electro</electro> a los enemigos cercanos.",
+      "6": "Tras un tiempo de canalización, invoca los truenos del cielo, infligiendo una gran cantidad de <undefined>Daño Electro</undefined> a los enemigos cercanos.",
       "7": "Inflige grandes cantidades de daño adicional a los enemigos en proporción al número de cargas de conducción que tengan, tras lo que elimina este efecto.",
       "8": "<br/>",
       "9": "<i>El color de los rayos es el color preferido de la Bruja de las Rosas.</i>"
@@ -74,8 +74,8 @@
   "burst": {
     "name": "Rayo de la rosa",
     "description": {
-      "0": "Invoca una rosa devastadora que libera un inmenso poder eléctrico y empuja a los enemigos cercanos, infligiendo <electro>Daño Electro</electro>.",
-      "1": "Durante su efecto, la rosa devastadora chispea periódicamente relámpagos para atacar a los oponentes cercanos, infligiendo <electro>Daño Electro</electro>.",
+      "0": "Invoca una rosa devastadora que libera un inmenso poder eléctrico y empuja a los enemigos cercanos, infligiendo <undefined>Daño Electro</undefined>.",
+      "1": "Durante su efecto, la rosa devastadora chispea periódicamente relámpagos para atacar a los oponentes cercanos, infligiendo <undefined>Daño Electro</undefined>.",
       "2": "<br/>",
       "3": "<i>Efectivamente, esta rosa es increíblemente bella, pero sus espinas pueden llegan a ser letales</i>."
     },

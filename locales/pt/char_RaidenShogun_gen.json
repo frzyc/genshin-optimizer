@@ -41,10 +41,10 @@
   "skill": {
     "name": "Milagre: Luz Maligna",
     "description": {
-      "0": "A Shogun Raiden revela um fragmento de sua Eutimia, causando <electro>Dano Electro</electro> a inimigos próximos, e concedendo a membros da equipe próximos o Olho do Julgamento Tempestuoso.",
+      "0": "A Shogun Raiden revela um fragmento de sua Eutimia, causando <undefined>Dano Electro</undefined> a inimigos próximos, e concedendo a membros da equipe próximos o Olho do Julgamento Tempestuoso.",
       "1": "<strong>Olho do Julgamento Tempestuoso</strong>",
       "2": [
-        "Quando personagens com esse bônus atacam e causam Dano aos inimigos, o Olho lançará um Ataque Coordenado, causando <electro>Dano Electro em uma AdE</electro> na localização dos inimigos.",
+        "Quando personagens com esse bônus atacam e causam Dano aos inimigos, o Olho lançará um Ataque Coordenado, causando <undefined>Dano Electro em uma AdE</undefined> na localização dos inimigos.",
         "Personagens que ganham o Olho do Julgamento Tempestuoso terão o Dano de seus Supremos aumentado baseado no custo de Energia Elemental do Supremo durante a duração do Olho."
       ],
       "3": "<br/>",
@@ -75,11 +75,11 @@
   "burst": {
     "name": "Arte Secreta: Musou Shinsetsu",
     "description": {
-      "0": "Reunindo verdades não numeradas e desejos incontáveis, a Shogun Raiden liberta o Musou no Hitotachi e causa <electro>Dano Electro em uma AdE</electro>, usando Musou Isshin em combate por um certo tempo depois. O dano de Musou no Hitotachi e dos ataques causados por Musou Isshin aumentam de acordo com o número de acúmulos de Determinação consumidos pelo Shogan Byakugen no Rin quando esta habilidade é utilizada.",
+      "0": "Reunindo verdades não numeradas e desejos incontáveis, a Shogun Raiden liberta o Musou no Hitotachi e causa <undefined>Dano Electro em uma AdE</undefined>, usando Musou Isshin em combate por um certo tempo depois. O dano de Musou no Hitotachi e dos ataques causados por Musou Isshin aumentam de acordo com o número de acúmulos de Determinação consumidos pelo Shogan Byakugen no Rin quando esta habilidade é utilizada.",
       "1": "<br/>",
       "2": "<strong>Musou Isshin</strong>",
-      "3": "Enquanto estiver neste estado, a Shogun Raiden usará sua tachi em batalha, enquanto seus ataques Normais, Carregados e Imersivos serão infundidos com <electro>Dano Electro</electro>, que não pode ser substituído. Quando tais ataques atingem os oponentes, ela irá regenerar energia para todos os membros da equipe mais próxima. A energia pode ser restaurada desta forma a cada 1s, e este efeito pode ser acionado 5 vezes durante toda a duração desta habilidade.",
-      "4": "Enquanto neste estado, a resistência da Shogun Raiden à interrupção é aumentada, e ela fica imune a Dano de reações de <electro>Eletricamente Carregado</electro>.",
+      "3": "Enquanto estiver neste estado, a Shogun Raiden usará sua tachi em batalha, enquanto seus ataques Normais, Carregados e Imersivos serão infundidos com <undefined>Dano Electro</undefined>, que não pode ser substituído. Quando tais ataques atingem os oponentes, ela irá regenerar energia para todos os membros da equipe mais próxima. A energia pode ser restaurada desta forma a cada 1s, e este efeito pode ser acionado 5 vezes durante toda a duração desta habilidade.",
+      "4": "Enquanto neste estado, a resistência da Shogun Raiden à interrupção é aumentada, e ela fica imune a Dano de reações de <undefined>Eletricamente Carregado</undefined>.",
       "5": "No estado de Musou Isshin, os danos do Ataque Normal, Ataque Carregado e Ataque Imersivo são considerados como Dano de Supremo.",
       "6": "<br/>",
       "7": "O efeito do Musou Isshin será removido quando a Shogun Raiden sair de campo.",
@@ -124,7 +124,7 @@
       "0": "Cada 1% acima de 100% de Recarga de Energia que a Shogun Raiden possui lhe dá:",
       "1": [
         "0.6% a mais de restauração de Energia Elemental de <strong>Musou Isshin</strong>.",
-        "0.4% de <electro>Bônus de Dano Electro</electro>."
+        "0.4% de <undefined>Bônus de Dano Electro</undefined>."
       ]
     }
   },
@@ -137,7 +137,7 @@
   "constellation1": {
     "name": "Inscrição Ameaçadora",
     "description": {
-      "0": "<strong>Shogan Byakugen no Rin</strong> acumulará Determinação ainda mais rápido. Quando personagens <electro>Electro</electro> usarem seus Supremos, o ganho de Determinação é aumentado em 80%. Quando personagens de outros Tipos Elementais usam seus Supremos, o ganho de Determinação é aumentado em 20%."
+      "0": "<strong>Shogan Byakugen no Rin</strong> acumulará Determinação ainda mais rápido. Quando personagens <undefined>Electro</undefined> usarem seus Supremos, o ganho de Determinação é aumentado em 80%. Quando personagens de outros Tipos Elementais usam seus Supremos, o ganho de Determinação é aumentado em 20%."
     }
   },
   "constellation2": {

@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
         "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
-        "2": "Lors de la visée, des éclairs crépitants s'accumulent sur le carreau de la flèche. Une flèche complètement chargée inflige des <electro>DGT Électro</electro>.",
+        "2": "Lors de la visée, des éclairs crépitants s'accumulent sur le carreau de la flèche. Une flèche complètement chargée inflige des <undefined>DGT Électro</undefined>.",
         "3": "Sous l'effet de la Protection corvidée, une flèche complètement chargée laisse une plume de corbeau à l'emplacement atteint."
       },
       "plunging": {
@@ -45,7 +45,7 @@
     "description": {
       "0": "Recule à la vitesse d'un Tengu et invoque la protection des corbeaux.",
       "1": "Bénéficie de la Protection corvidée pendant 18 s, un effet qui est consommé lorsque Sara tire une flèche complètement chargée et laisse une plume de corbeau à l'emplacement atteint par la flèche.",
-      "2": "La plume de corbeau déclenche Tengu Juurai : Embuscade après un court moment, infligeant des <electro>DGT Électro</electro> aux ennemis proches, et accordant au personnage déployé à portée un bonus d'ATQ en fonction de l'ATQ de base de Sara.",
+      "2": "La plume de corbeau déclenche Tengu Juurai : Embuscade après un court moment, infligeant des <undefined>DGT Électro</undefined> aux ennemis proches, et accordant au personnage déployé à portée un bonus d'ATQ en fonction de l'ATQ de base de Sara.",
       "3": "<br/>",
       "4": "Les bonus d'ATQ des différents Tengu Juurai ne se cumulent pas, et leur effet et durée sont déterminés par le dernier Tengu Juurai actif.",
       "5": "<br/>",
@@ -74,7 +74,7 @@
   "burst": {
     "name": "Soumission : Chemin de lumière",
     "description": {
-      "0": "Dépose un Tengu Juurai : Brise-titan à l'emplacement de l'ennemi, infligeant des <electro>DGT Électro de zone</electro>. Puis ce Tengu Juurai : Brise-titan se divise en 4 Tengu Juurai : Tempête de pierres consécutifs, infligeant des <electro>DGT Électro de zone</electro>.",
+      "0": "Dépose un Tengu Juurai : Brise-titan à l'emplacement de l'ennemi, infligeant des <undefined>DGT Électro de zone</undefined>. Puis ce Tengu Juurai : Brise-titan se divise en 4 Tengu Juurai : Tempête de pierres consécutifs, infligeant des <undefined>DGT Électro de zone</undefined>.",
       "1": "Tengu Juurai : Brise-titan et Tengu Juurai : Tempête de pierres permettent au personnage déployé à portée de recevoir le même bonus d'ATQ que lors de la compétence élémentaire, Tempestrier tengu.",
       "2": "<br/>",
       "3": "Les bonus d'ATQ des différents Tengu Juurai ne se cumulent pas, et leur effet et durée sont déterminés par le dernier Tengu Juurai actif.",
@@ -154,7 +154,7 @@
   "constellation6": {
     "name": "Péché d'orgueil",
     "description": {
-      "0": "Les personnages bénéficiant d'une augmentation d'ATQ accordée par Tengu Juurai voient les DGT CRIT de leurs <electro>DGT Électro</electro> augmenter de 60 %."
+      "0": "Les personnages bénéficiant d'une augmentation d'ATQ accordée par Tengu Juurai voient les DGT CRIT de leurs <undefined>DGT Électro</undefined> augmenter de 60 %."
     }
   }
 }

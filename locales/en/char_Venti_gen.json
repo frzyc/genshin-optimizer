@@ -80,7 +80,7 @@
       "0": "Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in opponents and deals continuous <anemo>Anemo DMG</anemo>.",
       "1": "<br/>",
       "2": "<strong>Elemental Absorption</strong>",
-      "3": "If the Stormeye comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, it will deal additional elemental DMG of that type.",
+      "3": "If the Stormeye comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, it will deal additional elemental DMG of that type.",
       "4": "Elemental Absorption may only occur once per use.",
       "5": "<br/>",
       "6": "<i>Many hymns written in praise of the Anemo Archon have been lost to time. This one sings of his mastery over the wind.</i>"

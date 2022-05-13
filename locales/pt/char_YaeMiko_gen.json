@@ -8,15 +8,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Ataque Normal</strong>",
-        "1": "Evoca espíritos kitsune que realizam até 3 ataques que infligem <electro>Dano Electro</electro>."
+        "1": "Evoca espíritos kitsune que realizam até 3 ataques que infligem <undefined>Dano Electro</undefined>."
       },
       "charged": {
         "0": "<strong>Ataque Carregado</strong>",
-        "1": "Consome uma certa quantidade de Stamina que inflige <electro>Dano Electro em uma AdE</electro> após um curto período de canalização."
+        "1": "Consome uma certa quantidade de Stamina que inflige <undefined>Dano Electro em uma AdE</undefined> após um curto período de canalização."
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",
-        "1": "Reunindo o poder do relâmpago, Yae Miko mergulha ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <electro>Dano Electro em uma AdE</electro> durante o impacto com o chão."
+        "1": "Reunindo o poder do relâmpago, Yae Miko mergulha ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <undefined>Dano Electro em uma AdE</undefined> durante o impacto com o chão."
       }
     },
     "skillParams": {
@@ -47,7 +47,7 @@
       "3": "<strong>Sesshou Sakura</strong>",
       "4": "Tem as seguintes propriedades:",
       "5": [
-        " Ataca um inimigo próximo periodicamente com um relâmpago, causando <electro>Dano Electro</electro>;",
+        " Ataca um inimigo próximo periodicamente com um relâmpago, causando <undefined>Dano Electro</undefined>;",
         " Quando há outras Sesshou Sakura por perto, seu nível aumenta, aumentando o Dano causado por seus ataques."
       ],
       "6": "<br/>",
@@ -78,8 +78,8 @@
   "burst": {
     "name": "Grande Arte Secreta: Tenko Kenshin",
     "description": {
-      "0": "A lenda da \"kitsunetsuki\", ou a manifestação do poder kitsune, é uma das lendas de Inazuma. Dentre elas, a da Kitsune Celestial é considerada especial, caindo sobre os inimigos do Grande Santuário Narukami sob a forma de relâmpagos, causando <electro>Dano Electro em uma AdE</electro>.",
-      "1": "Quando ela usa esta habilidade, Yae Miko irá retirar os selos das Sesshou Sakura próximas, destruindo suas formas externas e transformando-as em Relâmpagos de Kitsunes Celestiais que caem dos céus, causando <electro>Dano Electro em uma AdE</electro>. Cada Sesshou Sakura destruída desta forma irá criar um Relâmpago.",
+      "0": "A lenda da \"kitsunetsuki\", ou a manifestação do poder kitsune, é uma das lendas de Inazuma. Dentre elas, a da Kitsune Celestial é considerada especial, caindo sobre os inimigos do Grande Santuário Narukami sob a forma de relâmpagos, causando <undefined>Dano Electro em uma AdE</undefined>.",
+      "1": "Quando ela usa esta habilidade, Yae Miko irá retirar os selos das Sesshou Sakura próximas, destruindo suas formas externas e transformando-as em Relâmpagos de Kitsunes Celestiais que caem dos céus, causando <undefined>Dano Electro em uma AdE</undefined>. Cada Sesshou Sakura destruída desta forma irá criar um Relâmpago.",
       "2": "<br/>",
       "3": "<i>Yae apenas usa os sinais da Kitsune Celestial em momentos assim, empunhando o próprio relâmpago. Todos que viram a cauda da Senhora Guuji foram transformados em cinzas, portanto, lembre-se, a Senhorita Yae não tem cauda alguma.</i>"
     },
@@ -142,7 +142,7 @@
   "constellation4": {
     "name": "Canalização da Sakura",
     "description": {
-      "0": "Depois de o raio de <strong>Sesshou Sakura</strong> atingir os inimigos, todos os personagens próximos da equipe obterão 20% de <electro>Bônus de Dano Electro</electro> por 5s."
+      "0": "Depois de o raio de <strong>Sesshou Sakura</strong> atingir os inimigos, todos os personagens próximos da equipe obterão 20% de <undefined>Bônus de Dano Electro</undefined> por 5s."
     }
   },
   "constellation5": {

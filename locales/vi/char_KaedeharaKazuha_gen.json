@@ -6,7 +6,7 @@
       "1": "Kỹ năng sẽ để lại một khu vực mang tên \"Một Khắc Gió Thu\", gây <anemo>sát thương nguyên tố Phong</anemo> ngắt quãng cho kẻ địch trong đó.",
       "2": "<br/>",
       "3": "<strong>Chuyển hóa nguyên tố</strong>",
-      "4": "Trong thời gian Một Khắc Gió Thu tồn tại, nếu tiếp xúc <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<electro>Nguyên Tố Lôi</electro>, sẽ nhận được thuộc tính nguyên tố tương ứng, gây thêm sát thương kèm theo của nguyên tố này.",
+      "4": "Trong thời gian Một Khắc Gió Thu tồn tại, nếu tiếp xúc <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<undefined>Nguyên Tố Lôi</undefined>, sẽ nhận được thuộc tính nguyên tố tương ứng, gây thêm sát thương kèm theo của nguyên tố này.",
       "5": "Loại chuyển hóa này chỉ phát sinh một lần trong thời gian duy trì kỹ năng.",
       "6": "<br/>",
       "7": "<i>\"Vạn thế trôi qua trong nháy mắt, chỉ cần một chiếc lá cũng biết được mùa thu. Ta muốn cắt đứt lá phong này, đặt câu hỏi khẩn thiết về vạn thế!\"</i>"
@@ -114,7 +114,7 @@
   "passive1": {
     "name": "Kiếm Pháp Soumon",
     "description": {
-      "0": "Khi <strong>Chihayaburu</strong> đang thi triển, nếu tiếp xúc <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<electro>Nguyên Tố Lôi</electro> sẽ khiến Tấn Công Khi Đáp - Xua Tan Mây Mù lần này của <strong>Chihayaburu</strong> xảy ra chuyển hóa nguyên tố, kèm sát thương Nguyên Tố bằng 200% tấn công, sát thương này được xem như sát thương tấn công khi đáp. Mỗi lần kỹ năng <strong>Chihayaburu</strong> đang có hiệu lực, chỉ xảy ra 1 lần chuyển hóa nguyên tố."
+      "0": "Khi <strong>Chihayaburu</strong> đang thi triển, nếu tiếp xúc <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<undefined>Nguyên Tố Lôi</undefined> sẽ khiến Tấn Công Khi Đáp - Xua Tan Mây Mù lần này của <strong>Chihayaburu</strong> xảy ra chuyển hóa nguyên tố, kèm sát thương Nguyên Tố bằng 200% tấn công, sát thương này được xem như sát thương tấn công khi đáp. Mỗi lần kỹ năng <strong>Chihayaburu</strong> đang có hiệu lực, chỉ xảy ra 1 lần chuyển hóa nguyên tố."
     }
   },
   "passive2": {
