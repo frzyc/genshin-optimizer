@@ -1,13 +1,13 @@
 
 type FetterCharacterCardExcelConfigData = {
-  "AvatarId": number//10000034,
-  "FetterLevel": number//10,
-  "RewardId": number//241012 look up in ExcelBinOutput\RewardExcelConfigData.json
+  "avatarId": number//10000034,
+  "fetterLevel": number//10,
+  "rewardId": number//241012 look up in ExcelBinOutput\RewardExcelConfigData.json
 }
 
 const fetterCharacterCardExcelConfigDataSrc = require('../../GenshinData/ExcelBinOutput/FetterCharacterCardExcelConfigData.json') as FetterCharacterCardExcelConfigData[]
 //character data
 const fetterCharacterCardExcelConfigData = Object.fromEntries(fetterCharacterCardExcelConfigDataSrc.map(data =>
-  [data.AvatarId, data])) as { [AvatarId: number]: FetterCharacterCardExcelConfigData }
+  [data.avatarId, data])) as { [avatarId: number]: FetterCharacterCardExcelConfigData }
 
 export default fetterCharacterCardExcelConfigData
