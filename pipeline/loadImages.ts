@@ -9,7 +9,7 @@ import materialExcelConfigData from './DataminedModules/character/MaterialExcelC
 import skillGroups from './DataminedModules/character/passives'
 import rewardExcelConfigData from './DataminedModules/character/RewardExcelConfigData'
 import skillDepot, { AvatarSkillDepotExcelConfigData } from './DataminedModules/character/skillDepot'
-import talents from './DataminedModules/character/talents'
+import talentsData from './DataminedModules/character/talents'
 import weaponExcelConfigData from './DataminedModules/weapon/WeaponExcelConfigData'
 import { crawlObject, dumpFile, layeredAssignment } from './Util'
 const fs = require('fs')
@@ -27,18 +27,18 @@ export default function loadImages() {
   }
 
   // Get icons for each artifact piece
-  Object.entries(reliquarySetExcelConfigData).filter(([SetId, data]) => SetId in artifactIdMap).forEach(([SetId, data]) => {
-    const { EquipAffixId, ContainsList } = data
-    if (!EquipAffixId) return
+  Object.entries(reliquarySetExcelConfigData).filter(([setId, data]) => setId in artifactIdMap).forEach(([setId, data]) => {
+    const { equipAffixId, containsList } = data
+    if (!equipAffixId) return
 
-    const pieces = Object.fromEntries(ContainsList.map(pieceId => {
+    const pieces = Object.fromEntries(containsList.map(pieceId => {
       const pieceData = artifactPiecesData[pieceId]
-      if (!pieceData) throw `No piece data with Id ${pieceId} in SetId ${SetId}`
-      const { Icon, EquipType } = pieceData
-      return [artifactSlotMap[EquipType], Icon]
+      if (!pieceData) throw `No piece data with id ${pieceId} in setId ${setId}`
+      const { icon, equipType } = pieceData
+      return [artifactSlotMap[equipType], icon]
     }))
 
-    AssetData.artifact[artifactIdMap[SetId]] = pieces
+    AssetData.artifact[artifactIdMap[setId]] = pieces
   })
   Object.entries(AssetData.artifact).forEach(([setKey, pieces]) =>
     Object.entries(pieces).forEach(([slotKey, icon]) =>
@@ -47,83 +47,82 @@ export default function loadImages() {
 
   // Get the icon/awakened for each weapon
   Object.entries(weaponExcelConfigData).filter(([weaponid, weaponData]) => weaponid in weaponIdMap).forEach(([weaponid, weaponData]) => {
-    const { Icon, AwakenIcon, WeaponType } = weaponData
-    const weaponType = weaponMap[WeaponType]
-    AssetData.weapon[weaponType][weaponIdMap[weaponid]] = {
-      Icon,
-      AwakenIcon
+    const { icon, awakenIcon, weaponType } = weaponData
+    const wepType = weaponMap[weaponType]
+    AssetData.weapon[wepType][weaponIdMap[weaponid]] = {
+      icon,
+      awakenIcon
     }
   })
   Object.entries(AssetData.weapon).forEach(([weaponTypeKey, weaponTypeData]) => {
-    Object.entries(weaponTypeData).forEach(([weaponKey, { Icon, AwakenIcon }]) => {
-      copyFile(`${__dirname}/Texture2D/${Icon}.png`, `${__dirname}/../src/Data/Weapons/${weaponTypeKey[0].toUpperCase() + weaponTypeKey.slice(1)}/${weaponKey}/Icon.png`)
-      copyFile(`${__dirname}/Texture2D/${AwakenIcon}.png`, `${__dirname}/../src/Data/Weapons/${weaponTypeKey[0].toUpperCase() + weaponTypeKey.slice(1)}/${weaponKey}/AwakenIcon.png`)
+    Object.entries(weaponTypeData).forEach(([weaponKey, { icon, awakenIcon }]) => {
+      copyFile(`${__dirname}/Texture2D/${icon}.png`, `${__dirname}/../src/Data/Weapons/${weaponTypeKey[0].toUpperCase() + weaponTypeKey.slice(1)}/${weaponKey}/Icon.png`)
+      copyFile(`${__dirname}/Texture2D/${awakenIcon}.png`, `${__dirname}/../src/Data/Weapons/${weaponTypeKey[0].toUpperCase() + weaponTypeKey.slice(1)}/${weaponKey}/AwakenIcon.png`)
     })
   })
 
   // parse baseStat/ascension/basic data for non traveler.
-  Object.entries(avatarExcelConfigData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
-    const { IconName, SideIconName } = charData
+  Object.entries(avatarExcelConfigData).filter(([charId, charData]) => charId in characterIdMap).forEach(([charid, charData]) => {
+    const { iconName, sideIconName } = charData
 
-    let Banner, Bar;
+    let banner, bar;
     if (fetterCharacterCardExcelConfigData[charid]) {
-      const { RewardId } = fetterCharacterCardExcelConfigData[charid]
-      const { RewardItemList } = rewardExcelConfigData[RewardId]
-      const { ItemId } = RewardItemList[0];
-      ({ UseParam: [Bar, Banner] } = materialExcelConfigData[ItemId]);
+      const { rewardId } = fetterCharacterCardExcelConfigData[charid]
+      const { rewardItemList } = rewardExcelConfigData[rewardId]
+      const { itemId } = rewardItemList[0];
+      ({ picPath: [bar, banner] } = materialExcelConfigData[itemId]);
     }
     AssetData.char[characterIdMap[charid]] = {
-      Icon: IconName,
-      IconSide: SideIconName,
-      Banner,
-      Bar
+      icon: iconName,
+      iconSide: sideIconName,
+      banner,
+      bar
     }
   })
 
   const characterAssetDump = {}
   Object.entries(avatarExcelConfigData).filter(([charid,]) => charid in characterIdMap).forEach(([charid, charData]) => {
-    const { IconName, SideIconName, SkillDepotId, CandSkillDepotIds } = charData
-    let skillDepotId = SkillDepotId
+    const { iconName, sideIconName, skillDepotId, candSkillDepotIds } = charData
 
     const keys = [characterIdMap[charid]]
-    layeredAssignment(characterAssetDump, [...keys, "Icon"], IconName)
-    layeredAssignment(characterAssetDump, [...keys, "IconSide"], SideIconName)
+    layeredAssignment(characterAssetDump, [...keys, "icon"], iconName)
+    layeredAssignment(characterAssetDump, [...keys, "iconSide"], sideIconName)
 
     if (fetterCharacterCardExcelConfigData[charid]) {
-      const { RewardId } = fetterCharacterCardExcelConfigData[charid]
-      const { RewardItemList } = rewardExcelConfigData[RewardId]
-      const { ItemId } = RewardItemList[0];
-      const { UseParam: [Bar, Banner] } = materialExcelConfigData[ItemId];
-      Bar && layeredAssignment(characterAssetDump, [...keys, "Bar"], Bar)
-      Banner && layeredAssignment(characterAssetDump, [...keys, "Banner"], Banner)
+      const { rewardId } = fetterCharacterCardExcelConfigData[charid]
+      const { rewardItemList } = rewardExcelConfigData[rewardId]
+      const { itemId } = rewardItemList[0];
+      const { picPath: [bar, banner] } = materialExcelConfigData[itemId];
+      bar && layeredAssignment(characterAssetDump, [...keys, "bar"], bar)
+      banner && layeredAssignment(characterAssetDump, [...keys, "banner"], banner)
     }
     function genTalentHash(keys: string[], depot: AvatarSkillDepotExcelConfigData) {
-      const { EnergySkill: burst, Skills: [normal, skill, sprint], Talents, InherentProudSkillOpens: [passive1, passive2, passive3, , passive] } = depot
+      const { energySkill: burst, skills: [normal, skill, sprint], talents, inherentProudSkillOpens: [passive1, passive2, passive3, , passive] } = depot
 
       // auto icons are shared.
-      // layeredAssignment(characterAssetDump, [...keys, "auto"], talents[normal].SkillIcon)
-      layeredAssignment(characterAssetDump, [...keys, "skill"], talents[skill].SkillIcon)
+      // layeredAssignment(characterAssetDump, [...keys, "auto"], talents[normal].skillIcon)
+      layeredAssignment(characterAssetDump, [...keys, "skill"], talentsData[skill].skillIcon)
 
-      // Burst has a more detailed _HD version
-      layeredAssignment(characterAssetDump, [...keys, "burst"], talents[burst].SkillIcon + "_HD")
+      // burst has a more detailed _HD version
+      layeredAssignment(characterAssetDump, [...keys, "burst"], talentsData[burst].skillIcon + "_HD")
       if (sprint)
-        layeredAssignment(characterAssetDump, [...keys, "sprint"], talents[sprint].SkillIcon)
+        layeredAssignment(characterAssetDump, [...keys, "sprint"], talentsData[sprint].skillIcon)
 
-      layeredAssignment(characterAssetDump, [...keys, "passive1"], skillGroups[passive1.ProudSkillGroupId][0].Icon)
-      layeredAssignment(characterAssetDump, [...keys, "passive2"], skillGroups[passive2.ProudSkillGroupId][0].Icon)
-      if (passive3?.ProudSkillGroupId)
-        layeredAssignment(characterAssetDump, [...keys, "passive3"], skillGroups[passive3.ProudSkillGroupId][0].Icon)
+      layeredAssignment(characterAssetDump, [...keys, "passive1"], skillGroups[passive1.proudSkillGroupId][0].icon)
+      layeredAssignment(characterAssetDump, [...keys, "passive2"], skillGroups[passive2.proudSkillGroupId][0].icon)
+      if (passive3?.proudSkillGroupId)
+        layeredAssignment(characterAssetDump, [...keys, "passive3"], skillGroups[passive3.proudSkillGroupId][0].icon)
 
       // Seems to be only used by SangonomiyaKokomi
-      if (passive?.ProudSkillGroupId)
-        layeredAssignment(characterAssetDump, [...keys, "passive"], skillGroups[passive.ProudSkillGroupId][0].Icon)
+      if (passive?.proudSkillGroupId)
+        layeredAssignment(characterAssetDump, [...keys, "passive"], skillGroups[passive.proudSkillGroupId][0].icon)
 
-      Talents.forEach((skId, i) => {
-        layeredAssignment(characterAssetDump, [...keys, `constellation${i + 1}`], constellations[skId].Icon)
+      talents.forEach((skId, i) => {
+        layeredAssignment(characterAssetDump, [...keys, `constellation${i + 1}`], constellations[skId].icon)
       })
     }
 
-    if (CandSkillDepotIds.length) { // Traveler
+    if (candSkillDepotIds.length) { // Traveler
       // This will be 504,506... for male
       genTalentHash([...keys, "anemo"], skillDepot[704])
       genTalentHash([...keys, "geo"], skillDepot[706])

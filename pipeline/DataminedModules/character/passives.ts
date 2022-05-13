@@ -1,26 +1,26 @@
 export type ProudSkillExcelConfigData = {
-  "ProudSkillId": number//342101,
-  "ProudSkillGroupId": number//3421,
-  "Level": number//1,
-  "ProudSkillType": number//2,
-  "NameTextMapHash": number//4119686205,
-  "DescTextMapHash": number//59436107,
-  "UnlockDescTextMapHash": number//4234322242,
-  "Icon": string//"UI_Talent_S_Noel_05",
-  "CostItems": object[]
+  "proudSkillId": number//342101,
+  "proudSkillGroupId": number//3421,
+  "level": number//1,
+  "proudSkillType": number//2,
+  "nameTextMapHash": number//4119686205,
+  "descTextMapHash": number//59436107,
+  "unlockDescTextMapHash": number//4234322242,
+  "icon": string//"UI_Talent_S_Noel_05",
+  "costItems": object[]
   // [
   //   {},
   //   {},
   //   {},
   //   {}
   // ],
-  "FilterConds": string[]
+  "filterConds": string[]
   // [
   //   "TALENT_FILTER_NONE",
   //   "TALENT_FILTER_NONE"
   // ],
-  "BreakLevel": number//1,
-  "ParamDescList": number[]
+  "breakLevel": number//1,
+  "paramDescList": number[]
   // [
   //   2427507414,
   //   666607366,
@@ -37,20 +37,20 @@ export type ProudSkillExcelConfigData = {
   //   3063793031,
   //   1869540363
   // ],
-  "LifeEffectParams": [
+  "lifeEffectParams": [
     "",
     "",
     "",
     "",
     ""
   ],
-  "OpenConfig": "Noel_ProudSkill_21",
-  "AddProps": object[]
+  "openConfig": "Noel_ProudSkill_21",
+  "addProps": object[]
   // [
   //     {},
   //     {}
   // ],
-  "ParamList": number[]
+  "paramList": number[]
   // [
   //     0.30000001192092896,
   //     4.0,
@@ -78,8 +78,8 @@ const passivesSrc = require('../../GenshinData/ExcelBinOutput/ProudSkillExcelCon
 const skillGroups = {} as { [id: number]: ProudSkillExcelConfigData[] }
 
 passivesSrc.forEach(data => {
-  const { ProudSkillGroupId, Level } = data
-  if (!skillGroups[ProudSkillGroupId]) skillGroups[ProudSkillGroupId] = []
-  skillGroups[ProudSkillGroupId][Level - 1] = data
+  const { proudSkillGroupId, level } = data
+  if (!skillGroups[proudSkillGroupId]) skillGroups[proudSkillGroupId] = []
+  skillGroups[proudSkillGroupId][level - 1] = data
 })
 export default skillGroups

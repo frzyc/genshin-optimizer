@@ -1,34 +1,34 @@
 import { CharacterId } from "../.."
 
 type FetterInfoExcelConfigData = {
-  "InfoBirthMonth": number//3,
-  "InfoBirthDay": number//21,
-  "AvatarNativeTextMapHash": number//3006274177,
-  "AvatarVisionBeforTextMapHash": number//3929787020,
-  "AvatarConstellationBeforTextMapHash": number//808906466,
-  "AvatarTitleTextMapHash": number//2339950258,
-  "AvatarDetailTextMapHash": number//2464288834,
-  "AvatarAssocType": string//"ASSOC_TYPE_MONDSTADT",
-  "CvChineseTextMapHash": number//4257440758,
-  "CvJapaneseTextMapHash": number//2464221280,
-  "CvEnglishTextMapHash": number//3349029444,
-  "CvKoreanTextMapHash": number//2318572807,
-  "AvatarVisionAfterTextMapHash": number//3710640289,
-  "AvatarConstellationAfterTextMapHash": number//1057268155,
-  "FetterId": number//122,
-  "AvatarId": CharacterId//10000034,
-  "OpenConds": any[]//[],
-  "FinishConds": object[]
+  "infoBirthMonth": number//3,
+  "infoBirthDay": number//21,
+  "avatarNativeTextMapHash": number//3006274177,
+  "avatarVisionBeforTextMapHash": number//3929787020,
+  "avatarConstellationBeforTextMapHash": number//808906466,
+  "avatarTitleTextMapHash": number//2339950258,
+  "avatarDetailTextMapHash": number//2464288834,
+  "avatarAssocType": string//"ASSOC_TYPE_MONDSTADT",
+  "cvChineseTextMapHash": number//4257440758,
+  "cvJapaneseTextMapHash": number//2464221280,
+  "cvEnglishTextMapHash": number//3349029444,
+  "cvKoreanTextMapHash": number//2318572807,
+  "avatarVisionAfterTextMapHash": number//3710640289,
+  "avatarConstellationAfterTextMapHash": number//1057268155,
+  "fetterId": number//122,
+  "avatarId": CharacterId//10000034,
+  "openConds": any[]//[],
+  "finishConds": object[]
   // [
   //   {
-  //     "CondType": "FETTER_COND_NOT_OPEN",
-  //     "ParamList": []
+  //     "condType": "FETTER_COND_NOT_OPEN",
+  //     "paramList": []
   //   }
   // ]
 }
 const characterInfoSrc = require('../../GenshinData/ExcelBinOutput/FetterInfoExcelConfigData.json') as FetterInfoExcelConfigData[]
 
 const characterInfo = Object.fromEntries(characterInfoSrc.map(data =>
-  [data.AvatarId, data])) as Record<CharacterId, FetterInfoExcelConfigData>
+  [data.avatarId, data])) as Record<CharacterId, FetterInfoExcelConfigData>
 
 export default characterInfo

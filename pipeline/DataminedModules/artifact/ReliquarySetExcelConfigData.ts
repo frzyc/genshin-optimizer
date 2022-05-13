@@ -1,13 +1,13 @@
 type ReliquarySetExcelConfigData = {
-  "SetId": number//15008,
-  "SetIcon": string//"UI_RelicIcon_15008_4",
-  "SetNeedNum": number[]
+  "setId": number//15008,
+  "setIcon": string//"UI_RelicIcon_15008_4",
+  "setNeedNum": number[]
   // [
   //   2,
   //   4
   // ],
-  "EquipAffixId": number//215008,
-  "ContainsList": number[]
+  "equipAffixId": number//215008,
+  "containsList": number[]
   // [
   //   82340,
   //   82320,
@@ -18,6 +18,6 @@ type ReliquarySetExcelConfigData = {
 }
 const reliquarySetExcelConfigDataSrc = require('../../GenshinData/ExcelBinOutput/ReliquarySetExcelConfigData.json') as ReliquarySetExcelConfigData[]
 
-const reliquarySetExcelConfigData = Object.fromEntries(reliquarySetExcelConfigDataSrc.map(data => [data.SetId, data])) as Record<number, ReliquarySetExcelConfigData>
+const reliquarySetExcelConfigData = Object.fromEntries(reliquarySetExcelConfigDataSrc.map(data => [data.setId, data])) as Record<number, ReliquarySetExcelConfigData>
 
 export default reliquarySetExcelConfigData //

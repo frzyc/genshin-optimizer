@@ -39,10 +39,11 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
   const [newOld, setNewOld] = useState(undefined as NewOld | undefined)
   const close = useCallback(() => setNewOld(undefined), [setNewOld],)
 
-  const equipArts = useCallback(() => {
-    if (!window.confirm("Do you want to equip this artifact build to this character?")) return
+  const equipBuild = useCallback(() => {
+    if (!window.confirm("Do you want to equip this build to this character?")) return
     const newBuild = Object.fromEntries(allSlotKeys.map(s => [s, data.get(input.art[s].id).value])) as Record<SlotKey, string>
     database.equipArtifacts(character.key, newBuild)
+    database.setWeaponLocation(data.get(input.weapon.id).value!, character.key)
   }, [character, data, database])
   if (!character || !artifactSheets || !oldData) return null
   const currentlyEquipped = allSlotKeys.every(slotKey => data.get(input.art[slotKey].id).value === oldData.get(input.art[slotKey].id).value) && data.get(input.weapon.id).value === oldData.get(input.weapon.id).value
@@ -69,7 +70,7 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
           )}
           <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}>
           </Box>
-          <Button size='small' color="success" onClick={equipArts} disabled={disabled || currentlyEquipped}>Equip Build</Button>
+          <Button size='small' color="success" onClick={equipBuild} disabled={disabled || currentlyEquipped}>Equip Build</Button>
           {extraButtons}
         </Box>
         <Grid container spacing={1} sx={{ pb: 1 }}>

@@ -1,18 +1,18 @@
 type AvatarTalentExcelConfigData = {
-  "TalentId": number//293,
-  "NameTextMapHash": number//1369435161,
-  "DescTextMapHash": number//2182377015,
-  "Icon": string//"UI_Talent_U_Klee_01",
-  "PrevTalent": number//292,
-  "MainCostItemId": number//1129,
-  "MainCostItemCount": number//1,
-  "OpenConfig": string//"Klee_Constellation_3",
-  "AddProps": any[]
+  "talentId": number//293,
+  "nameTextMapHash": number//1369435161,
+  "descTextMapHash": number//2182377015,
+  "icon": string//"UI_Talent_U_Klee_01",
+  "prevTalent": number//292,
+  "mainCostItemId": number//1129,
+  "mainCostItemCount": number//1,
+  "openConfig": string//"Klee_Constellation_3",
+  "addProps": any[]
   // [
   //     {},
   //     {}
   // ],
-  "ParamList": number[]
+  "paramList": number[]
   // [
   //     0.0,
   //     0.0,
@@ -23,6 +23,6 @@ type AvatarTalentExcelConfigData = {
   // ]
 }
 const constellationsSrc = require('../../GenshinData/ExcelBinOutput/AvatarTalentExcelConfigData.json') as AvatarTalentExcelConfigData[]
-const constellations = Object.fromEntries(constellationsSrc.map(data => [data.TalentId, data])) as { [id: number]: AvatarTalentExcelConfigData }
+const constellations = Object.fromEntries(constellationsSrc.map(data => [data.talentId, data])) as { [id: number]: AvatarTalentExcelConfigData }
 
 export default constellations
