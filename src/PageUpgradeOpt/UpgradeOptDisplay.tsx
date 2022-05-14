@@ -10,7 +10,8 @@ import {
   Grid,
   Link,
   Skeleton,
-  Typography
+  Typography,
+  Pagination
 } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
@@ -43,7 +44,7 @@ import { dynamicData } from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/
 import { QueryArtifact, QueryBuild, querySetup, evalArtifact, QueryResult } from './artifactQuery'
 import Artifact from "../Data/Artifacts/Artifact";
 import ArtifactCard from "../PageArtifact/ArtifactCard";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
 import { HitModeToggle, ReactionToggle } from '../Components/HitModeEditor';
 import ArtifactSetConditional from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Components/ArtifactSetConditional';
@@ -61,8 +62,6 @@ export default function UpgradeOptDisplay() {
     else setBuildSettings({ characterKey: "" })
   }, [setBuildSettings, database])
 
-  const { t } = useTranslation(["artifact", "ui"]);
-
   const setCharacter = useCharSelectionCallback()
   const characterDispatch = useCharacterReducer(characterKey)
   const character = useCharacter(characterKey)
@@ -78,6 +77,8 @@ export default function UpgradeOptDisplay() {
     characterDispatch && characterDispatch({ buildSettings: buildSettingsReducer(buildSettings, action) }), [characterDispatch, buildSettings])
 
   const [pageIdex, setpageIdex] = useState(0)
+  const invScrollRef = useRef<HTMLDivElement>(null)
+  const { t } = useTranslation(["artifact", "ui"]);
 
   const [artifactUpgradeOpts, setArtifactUpgradeOpts] = useState([] as QueryResult[])
 
@@ -94,6 +95,16 @@ export default function UpgradeOptDisplay() {
       maxObj0: toShow.reduce((a, b) => Math.max(b.distr.upper, a), thr)
     }
   }, [artifactUpgradeOpts, pageIdex])
+
+  //for pagination
+  // const totalShowing = artifactIds.length !== artifactUpgradeOpts ? `${artifactIds.length}/${totalArtNum}` : `${totalArtNum}`
+  const setPage = useCallback(
+    (e, value) => {
+      invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
+      setpageIdex(value - 1);
+    },
+    [setpageIdex, invScrollRef],
+  )
 
   //select a new character Key
   const selectCharacter = useCallback((cKey = "") => {
@@ -269,9 +280,19 @@ export default function UpgradeOptDisplay() {
                 >Calc Upgrade Priority</Button>
               </ButtonGroup>
 
+              {numPages > 1 && <CardDark ><CardContent>
+                <Grid container>
+                  <Grid item flexGrow={1}>
+                    <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
+                  </Grid>
+                  <Grid item>
+                    <ShowingArt numShowing={artifactsToShow.length} total={artifactUpgradeOpts.length} t={t} />
+                  </Grid>
+                </Grid>
+              </CardContent></CardDark>}
+
               <Box display="flex" flexDirection="column" gap={1} my={1}>
                 {noArtifact && <Alert severity="info" variant="filled">Looks like you haven't added any artifacts yet. If you want, there are <Link color="warning.main" component={RouterLink} to="/scanner">automatic scanners</Link> that can speed up the import process!</Alert>}
-
                 <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
                   {artifactsToShow.map(art =>
                     <Grid container key={art.id + 'asdfsf'} gap={1} wrap="nowrap">
@@ -284,16 +305,16 @@ export default function UpgradeOptDisplay() {
                     </Grid>
                   )}
                 </Suspense>
-                {/* {numPages > 1 && <CardDark ><CardContent>
+                {numPages > 1 && <CardDark ><CardContent>
                   <Grid container>
                     <Grid item flexGrow={1}>
                       <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
                     </Grid>
                     <Grid item>
-                      <ShowingArt count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
+                      <ShowingArt numShowing={artifactsToShow.length} total={artifactUpgradeOpts.length} t={t} />
                     </Grid>
                   </Grid>
-                </CardContent></CardDark>} */}
+                </CardContent></CardDark>}
               </Box >
 
             </Grid>
@@ -304,4 +325,12 @@ export default function UpgradeOptDisplay() {
 
     </DataContext.Provider>}
   </Box>
+}
+
+function ShowingArt({ numShowing, total, t }) {
+  return <Typography color="text.secondary">
+    <Trans t={t} i18nKey="showingNum" count={numShowing} value={total} >
+      Showing <b>{{ count: numShowing }}</b> out of {{ value: total }} Artifacts
+    </Trans>
+  </Typography>
 }
