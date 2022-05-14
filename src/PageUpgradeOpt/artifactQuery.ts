@@ -7,7 +7,7 @@ import { allSlotKeys, ArtifactSetKey, CharacterKey, SlotKey, Rarity } from '../T
 import Artifact from "../Data/Artifacts/Artifact"
 import { crawlUpgrades, allUpgradeValues } from "./artifactUpgradeCrawl"
 import { erf } from "../Util/MathUtil"
-import { gaussianPE, mvnPE_bad } from "./mvncdf"
+import { gaussianPE, mvnPE_good } from "./mvncdf"
 
 type StructuredNumber = {
   v: number,
@@ -159,7 +159,7 @@ function gmmNd({ rollsLeft, stats, subs, thresholds, scale, objectiveEval }: Int
     const obj = objectiveEval(stat2);
     let mu = obj.map(o => o.v)
     let cov = obj.map(o1 => obj.map(o2 => o1.ks.reduce((pv, cv, k) => pv + o1.ks[k] * o2.ks[k] * ns[k], 0)))
-    const res = mvnPE_bad(mu, cov, thresholds)
+    const res = mvnPE_good(mu, cov, thresholds)
     lpe.push({ l: p, ...res })
 
     // Feels a little bad to discard everything but the first axis, but whatevs

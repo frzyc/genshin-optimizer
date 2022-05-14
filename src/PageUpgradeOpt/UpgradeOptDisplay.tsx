@@ -47,6 +47,7 @@ import { useTranslation } from "react-i18next";
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
 import { HitModeToggle, ReactionToggle } from '../Components/HitModeEditor';
 import ArtifactSetConditional from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Components/ArtifactSetConditional';
+import { debugMVN } from './mvncdf'
 
 function hackyGetAroun(): { characterKey: CharacterKey | "" } {
   return { characterKey: '' }
@@ -125,6 +126,8 @@ export default function UpgradeOptDisplay() {
   }, [setcharacterKey, characterKey])
 
   const generateBuilds = useCallback(async () => {
+    debugMVN();
+
     if (!characterKey || !optimizationTarget) return
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
