@@ -1,16 +1,13 @@
 import { Button, CardContent, Grid, Box } from '@mui/material';
-import CardDark from '../Components/Card/CardDark';
 import React, { useEffect, useState, useContext, useMemo } from 'react';
 import { DatabaseContext } from '../Database/Database';
-import { DataContext, dataContextObj, TeamData } from '../DataContext';
+import { DataContext } from '../DataContext';
 import Assets from '../Assets/Assets';
 import {
   Line,
   Area,
-  Scatter,
   ComposedChart,
   Legend,
-  ReferenceArea,
   ReferenceLine,
   ReferenceDot,
   ResponsiveContainer,
@@ -19,15 +16,10 @@ import {
   XAxis,
   YAxis,
   Label,
-  Cross,
-  Dot,
-  Polygon
 } from 'recharts';
 import CardLight from '../Components/Card/CardLight';
 import { QueryResult } from './artifactQuery';
 import { allUpgradeValues } from './artifactUpgradeCrawl'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalculator } from "@fortawesome/free-solid-svg-icons";
 import { uiInput as input } from '../Formula';
 import { ArtifactCardPico } from '../PageCharacter/CharacterCard';
 import { allSlotKeys, SlotKey } from '../Types/consts';
@@ -177,18 +169,14 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
 
   return <CardLight>
     <CardContent>
-      <ResponsiveContainer height="99%" aspect={3}>
-        {/* <ComposedChart width={600} height={250} data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}> */}
+      <ResponsiveContainer height="99%" aspect={3} key={upgradeOpt.id}>
         <ComposedChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 20 }}>
-          {/* <CartesianGrid strokeDasharray="4 4" /> */}
-          {/* <XAxis dataKey="x" type="number" domain={[Math.round(miin), Math.round(maax)]} allowDecimals={false} /> */}
           <XAxis dataKey="x" type="number" domain={['auto', 'auto']} allowDecimals={false} tickFormatter={v => `${v <= 0 ? "" : "+"}${v}%`} >
             <Label value='Relative Damage Potential' position='insideBottom' style={{ fill: '#eaebed' }} offset={-10} />
           </XAxis>
           <YAxis type="number" domain={[0, ymax]} tick={false} >
             <Label value='Probability' position='insideLeft' angle={-90} style={{ fill: '#eaebed' }} />
           </YAxis>
-          {/* <Tooltip /> */}
           <Legend verticalAlign='top' height={36} />
 
           <defs>
@@ -205,11 +193,7 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
           {calcExacts && <Area type="stepAfter" dataKey="exactCons" dot={false} opacity={.7} name={`Exact${constrained ? ' Constrained' : ''} Distribution (Histogram)`} activeDot={false} />}
 
           <ReferenceLine x={perc(thr0)} stroke="red" strokeDasharray="3 3" name="Current Damage" />
-          {/* <ReferenceLine x={thr + upgradeOpt.Edmg} stroke="#ffffff" strokeDasharray="3 3" name="Current Damage" /> */}
-          {/* <Scatter dataKey="expInc" /> */}
-          {/* <ReferenceArea x1={thr} stroke="gray" strokeOpacity={0.05}/> */}
           <ReferenceDot x={perc(thr0 + reportD)} y={(gaussConstrained(thr0 + reportD) || ymax) / 2} shape={<circle radius={1} opacity={.5} />} />
-          {/* <ReferenceDot x={thr + reportD} y={(gauss(thr + reportD) || ymax) / 2} shape={<Cross x={100} y={100} width={70} height={150}/>} /> */}
 
           <Tooltip content={<CustomTooltip />} cursor={false} />
         </ComposedChart>
@@ -218,11 +202,9 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
       <Grid direction="row" container spacing={0.75} columns={12}>
         {artifacts.map(([sk, art]: [SlotKey, ICachedArtifact | undefined]) => {
           if (sk != slot)
-            return <ArtifactCardPico slotKey={sk} artifactObj={art} />
-          return <Grid item key={sk} xs={1}><Button style={{ height: "100%", width: '100%' }}
-            // return <Button
+            return <ArtifactCardPico slotKey={sk} artifactObj={art} key={`${sk}_${upgradeOpt.id}`} />
+          return <Grid item key={`${sk}_${upgradeOpt.id}`} xs={1}><Button style={{ height: "100%", width: '100%' }}
             onClick={() => setCalcExacts(true)}
-            // startIcon={<FontAwesomeIcon icon={faCalculator} />}
             startIcon={<Box
               sx={{
                 position: "absolute",
@@ -237,7 +219,6 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
           </Grid>
         })}
       </Grid>
-      {/* <ArtifactCardPico slotKey="flower" artifactObj={undefined} /> */}
 
       <br />
       <span>Click above to calculate Exact upgrade distribution</span>

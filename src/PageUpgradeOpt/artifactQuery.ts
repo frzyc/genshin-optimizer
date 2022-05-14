@@ -7,7 +7,7 @@ import { allSlotKeys, ArtifactSetKey, CharacterKey, SlotKey, Rarity } from '../T
 import Artifact from "../Data/Artifacts/Artifact"
 import { crawlUpgrades, allUpgradeValues } from "./artifactUpgradeCrawl"
 import { erf } from "../Util/MathUtil"
-import { mvnPE_bad } from "./mvncdf"
+import { gaussianPE, mvnPE_bad } from "./mvncdf"
 
 type StructuredNumber = {
   v: number,
@@ -78,26 +78,6 @@ function toStats(build: QueryBuild): DynStat {
   return stats
 }
 
-// From a Gaussian mean & variance, get P(x > mu) and E[x | x > mu]
-function gaussianPE(mean: number, variance: number, x: number) {
-  if (variance < 1e-5) {
-    if (mean > x) return { p: 1, upAvg: mean - x }
-    return { p: 0, upAvg: 0 }
-  }
-
-  const z = (x - mean) / Math.sqrt(variance)
-  const p = (1 - erf(z / Math.sqrt(2))) / 2
-  if (z > 5) {
-    // Z-score large means p will be very small.
-    // We can use taylor expansion at infinity to evaluate upAvg.
-    const y = 1 / z, y2 = y * y
-    return { p: p, upAvg: Math.sqrt(variance) * y * (1 - 2 * y2 * (1 - y2 * (5 + 37 * y2))) }
-  }
-
-  const phi = Math.exp(-z * z / 2) / Math.sqrt(2 * Math.PI)
-  return { p: p, upAvg: mean - x + Math.sqrt(variance) * phi / p }
-}
-
 export function evalArtifact(objective: Query, art: QueryArtifact, slow = false): QueryResult {
   let newBuild = { ...objective.curBuild }
   newBuild[art.slot] = art
@@ -115,7 +95,6 @@ export function evalArtifact(objective: Query, art: QueryArtifact, slow = false)
     objectiveEval: (stats) => objective.evalFn(stats).map(({ v, grads }) => ({ v: v, ks: art.subs.map(key => grads[allSubstats.indexOf(key)] * scale(key)) }))
   }
 
-  // const out = slow ? gmm1d(iq) : totalGaussian1d(iq)
   const out = slow ? gmmNd(iq) : fastUB(iq);
   return {
     id: art.id,
@@ -133,28 +112,6 @@ export function evalArtifact(objective: Query, art: QueryArtifact, slow = false)
     evalMode: slow ? 'slow' : 'fast',
   }
 }
-
-// function totalGaussian1d({ rollsLeft, subs, stats, scale, objectiveEval, thresholds }: InternalQuery, ix = 0): InternalResult {
-//   // Evaluate derivatives at center of 4-D upgrade distribution
-//   let stats2 = { ...stats }
-//   subs.forEach(key => {
-//     // console.log(key, 17 / 8 * rollsLeft * scale(key))
-//     stats2[key] = (stats2[key] ?? 0) + 17 / 8 * rollsLeft * scale(key)
-//   })
-
-//   const { v, ks } = objectiveEval(stats2)[ix]
-//   const ksum = ks.reduce((a, b) => a + b)
-//   const ksum2 = ks.reduce((a, b) => a + b * b, 0)
-//   const N = rollsLeft
-
-//   const mean = v
-//   const variance = (147 / 8 * ksum2 - 289 / 64 * ksum * ksum) * N
-//   const appx: GaussianMixture = {
-//     gmm: [{ phi: 1, mu: mean, sig2: variance, cp: 1 }], lower: mean - 4 * Math.sqrt(variance), upper: mean + 4 * Math.sqrt(variance)
-//   }
-
-//   return { ...gaussianPE(mean, variance, thresholds[ix]), appxDist: appx }
-// }
 
 function fastUB({ rollsLeft, subs, stats, scale, objectiveEval, thresholds }: InternalQuery): InternalResult {
   // Evaluate derivatives at center of 4-D upgrade distribution
@@ -188,41 +145,10 @@ function fastUB({ rollsLeft, subs, stats, scale, objectiveEval, thresholds }: In
   return { p: p_min, upAvg: upAvgUB, appxDist: apxDist }
 }
 
-// function gmm1d({ rollsLeft, stats, subs, thresholds, scale, objectiveEval }: InternalQuery, ix = 0): InternalResult {
-//   const appx: GaussianMixture = { gmm: [], lower: thresholds[0], upper: thresholds[0] }
-//   let lpe: { l: number, p: number, upAvg: number }[] = []
-//   crawlUpgrades(rollsLeft, (ns, p) => {
-//     let stat2 = { ...stats }
-//     subs.forEach((sub, i) => {
-//       stat2[sub] = (stat2[sub] ?? 0) + 17 / 2 * ns[i] * scale(sub)
-//     })
-
-//     const { v, ks } = objectiveEval(stat2)[ix]
-//     const mean = v
-//     const variance = 5 / 4 * ks.reduce((pv, cv, i) => pv + cv * cv * ns[i], 0)
-//     appx.gmm.push({ phi: p, mu: mean, sig2: variance, cp: 1 })
-//     appx.lower = Math.min(appx.lower, mean - 4 * Math.sqrt(variance))
-//     appx.upper = Math.max(appx.upper, mean + 4 * Math.sqrt(variance))
-
-//     lpe.push({ l: p, ...gaussianPE(mean, variance, thresholds[ix]) })
-//   })
-
-//   // Aggregate gaussian mixture statistics.
-//   let p_ret = 0, upAvg_ret = 0
-//   lpe.forEach(({ l, p, upAvg }) => {
-//     p_ret += l * p
-//     upAvg_ret += l * p * upAvg
-//   })
-
-//   if (p_ret < 1e-10) return { p: 0, upAvg: 0, appxDist: appx }
-//   upAvg_ret = upAvg_ret / p_ret
-//   return { p: p_ret, upAvg: upAvg_ret, appxDist: appx }
-// }
-
 function gmmNd({ rollsLeft, stats, subs, thresholds, scale, objectiveEval }: InternalQuery): InternalResult {
   const appx: GaussianMixture = { gmm: [], lower: thresholds[0], upper: thresholds[0] }
 
-  let lpe: { l: number, p: number, upAvg: number }[] = []
+  let lpe: { l: number, p: number, upAvg: number, cp: number }[] = []
   crawlUpgrades(rollsLeft, (ns, p) => {
     let stat2 = { ...stats }
     subs.forEach((sub, i) => {
@@ -244,9 +170,9 @@ function gmmNd({ rollsLeft, stats, subs, thresholds, scale, objectiveEval }: Int
 
   // Aggregate gaussian mixture statistics.
   let p_ret = 0, upAvg_ret = 0
-  lpe.forEach(({ l, p, upAvg }) => {
-    p_ret += l * p
-    upAvg_ret += l * p * upAvg
+  lpe.forEach(({ l, p, upAvg, cp }) => {
+    p_ret += l * p * cp;
+    upAvg_ret += l * p * cp * upAvg;
   })
 
   if (p_ret < 1e-10) return { p: 0, upAvg: 0, appxDist: appx }
