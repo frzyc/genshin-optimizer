@@ -1,4 +1,5 @@
 import { erf } from "../Util/MathUtil";
+import { Module } from "wasmpack/assembly.js";
 
 export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
   // TODO: an implementation without using the independence assumption
@@ -30,4 +31,25 @@ export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
     }
   }
   return { p: ptot, upAvg: upAvg, cp: cptot }
+}
+
+export function debugMVN() {
+  console.log('begin');
+  let m = new Module.VectorD();
+  m.push_back(0);
+  let x = new Module.VectorD();
+  x.push_back(0);
+  let c = new Module.VectorD();
+  c.push_back(1);
+  var mvn = new Module.MVNHandle(1, x, m, c);
+  console.log('this', mvn.value)
+
+  m.push_back(0);
+  x.push_back(.1);
+
+  c.push_back(-.5);
+  c.push_back(-.5);
+  c.push_back(2);
+  var mvn2 = new Module.MVNHandle(2, x, m, c);
+  console.log('that', mvn2.value)
 }
