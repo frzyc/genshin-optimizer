@@ -56,6 +56,7 @@ import UpgradeOptChartCard from "./UpgradeOptChartCard"
 import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../Components/HitModeEditor';
 import ArtifactConditionalCard from '../PageBuild/Components/ArtifactConditionalCard';
 // import { debug } from './help'
+import { Module } from "wasmpack/assembly.js";
 
 
 // import HitModeCard from '../PageBuild/Components/HitModeCard';
@@ -117,9 +118,32 @@ function initialBuildDisplayState(): {
 // { location: { characterKey: propCharacterKey } }
 export default function UpgradeOptDisplay() {
 
-  const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
-  const { database } = useContext(DatabaseContext)
-  const [{ characterKey }, setBuildSettings] = useDBState("BuildDisplay", initialBuildDisplayState)
+  useEffect(
+    () => {
+      console.log('begin');
+      let m = new Module.VectorD();
+      m.push_back(0);
+      let x = new Module.VectorD();
+      x.push_back(0);
+      let c = new Module.VectorD();
+      c.push_back(1);
+      var mvn = new Module.MVNHandle(1, x, m, c);
+      console.log('this', mvn.value)
+
+      m.push_back(0);
+      x.push_back(.1);
+
+      c.push_back(-.5);
+      c.push_back(-.5);
+      c.push_back(2);
+      var mvn2 = new Module.MVNHandle(2, x, m, c);
+      console.log('that', mvn2.value)
+    }, []);
+
+
+  const [{tcMode}] = useDBState("GlobalSettings", initGlobalSettings)
+  const {database} = useContext(DatabaseContext)
+  const [{characterKey}, setBuildSettings] = useDBState("BuildDisplay", initialBuildDisplayState)
   const setcharacterKey = useCallback(characterKey => {
     if (characterKey && database._getChar(characterKey)) setBuildSettings({ characterKey })
     else setBuildSettings({ characterKey: "" })
