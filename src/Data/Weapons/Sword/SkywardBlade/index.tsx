@@ -3,16 +3,15 @@ import { input } from '../../../../Formula'
 import { constant, equal, infoMut, percent, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, sgt, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "SkywardBlade"
 const data_gen = data_gen_json as WeaponData
-const [tr, trm] = trans("weapon", key)
 
 const [condPassivePath, condPassive] = cond(key, "SkyPiercingMight")
 const atkSrc_ = [0.2, 0.25, 0.3, 0.35, 0.40]
@@ -34,28 +33,26 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{ node: critRate_ }],
-    conditional: {
-      value: condPassive,
-      path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken, trm("might")),
-      description: conditionaldesc(tr),
-      name: st('afterUse.burst'),
-      states: {
-        on: {
-          fields: [{
-            node: moveSPD_
-          }, {
-            node: atkSPD_
-          }, {
-            node: infoMut(dmg, { key: "sheet:dmg" })
-          }, {
-            text: sgt("duration"),
-            value: 12,
-            unit: "s"
-          }]
-        }
+  }, {
+    value: condPassive,
+    path: condPassivePath,
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    name: st('afterUse.burst'),
+    states: {
+      on: {
+        fields: [{
+          node: moveSPD_
+        }, {
+          node: atkSPD_
+        }, {
+          node: infoMut(dmg, { key: "sheet:dmg" })
+        }, {
+          text: sgt("duration"),
+          value: 12,
+          unit: "s"
+        }]
       }
     }
   }],

@@ -2,51 +2,51 @@ import { PropTypeKey } from "../.."
 import { layeredAssignment } from "../../Util"
 
 type WeaponPromoteExcelConfigData = {
-  "WeaponPromoteId": number//12406,
-  "PromoteLevel": number//6,
-  "CostItems": {
-    "Id": number,
-    "Count": number
+  "weaponPromoteId": number//12406,
+  "promoteLevel": number//6,
+  "costItems": {
+    "id": number,
+    "count": number
   }[]
   // [
   //   {
-  //     "Id": 114024,
-  //     "Count": 4
+  //     "id": 114024,
+  //     "count": 4
   //   },
   //   {
-  //     "Id": 112043,
-  //     "Count": 18
+  //     "id": 112043,
+  //     "count": 18
   //   },
   //   {
-  //     "Id": 112007,
-  //     "Count": 12
+  //     "id": 112007,
+  //     "count": 12
   //   }
   // ],
-  "CoinCost": number,
-  "AddProps": {
-    "PropType": PropTypeKey
-    "Value": number
+  "coinCost": number,
+  "addProps": {
+    "propType": PropTypeKey
+    "value": number
   }[]
   // [
   //   {
-  //     "PropType": "FIGHT_PROP_BASE_ATTACK",
-  //     "Value": 155.60000610351562
+  //     "propType": "FIGHT_PROP_BASE_ATTACK",
+  //     "value": 155.60000610351562
   //   },
   //   {
-  //     "PropType": "FIGHT_PROP_CRITICAL"
+  //     "propType": "FIGHT_PROP_CRITICAL"
   //   },
   //   {
-  //     "PropType": "FIGHT_PROP_CRITICAL_HURT"
+  //     "propType": "FIGHT_PROP_CRITICAL_HURT"
   //   },
   //   {
-  //     "PropType": "FIGHT_PROP_CHARGE_EFFICIENCY"
+  //     "propType": "FIGHT_PROP_CHARGE_EFFICIENCY"
   //   },
   //   {
-  //     "PropType": "FIGHT_PROP_ELEMENT_MASTERY"
+  //     "propType": "FIGHT_PROP_ELEMENT_MASTERY"
   //   }
   // ],
-  "UnlockMaxLevel": number//90,
-  "RequiredPlayerLevel": number//50
+  "unlockMaxLevel": number//90,
+  "requiredPlayerLevel": number//50
 }
 const weaponPromoteExcelConfigDataSrc = require('../../GenshinData/ExcelBinOutput/WeaponPromoteExcelConfigData.json') as WeaponPromoteExcelConfigData[]
 
@@ -54,11 +54,11 @@ const weaponPromoteExcelConfigData = {} as Record<number, WeaponPromoteExcelConf
 
 weaponPromoteExcelConfigDataSrc.forEach(data => {
 
-  const { WeaponPromoteId = 0, PromoteLevel = 0 } = data
-  if (!WeaponPromoteId || !PromoteLevel) return
+  const { weaponPromoteId = 0, promoteLevel = 0 } = data
+  if (!weaponPromoteId || !promoteLevel) return
 
-  if (!weaponPromoteExcelConfigData[WeaponPromoteId]) weaponPromoteExcelConfigData[WeaponPromoteId] = [null]//fill in first item, to help with processing
-  layeredAssignment(weaponPromoteExcelConfigData, [WeaponPromoteId, PromoteLevel], data)
+  if (!weaponPromoteExcelConfigData[weaponPromoteId]) weaponPromoteExcelConfigData[weaponPromoteId] = [null]//fill in first item, to help with processing
+  layeredAssignment(weaponPromoteExcelConfigData, [weaponPromoteId, promoteLevel], data)
 })
 
 export default weaponPromoteExcelConfigData

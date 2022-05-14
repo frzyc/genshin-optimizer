@@ -2,16 +2,16 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, trans } from '../../../SheetUtil'
+import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "CinnabarSpindle"
 const data_gen = data_gen_json as WeaponData
-const [tr, trm] = trans("weapon", key)
+const [, trm] = trans("weapon", key)
 
 const eleDmgIncSrc = [0.4, 0.5, 0.6, 0.7, 0.8]
 const [condPassivePath, condPassive] = cond(key, "SpotlessHeart")
@@ -28,10 +28,9 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    conditional: {
-      value: condPassive,
+    value: condPassive,
       path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken),
+      header: headerTemplate(key, icon, iconAwaken, st("conditional")),
       name: trm("name"),
       states: {
         on: {
@@ -40,7 +39,6 @@ const sheet: IWeaponSheet = {
           }]
         }
       }
-    }
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

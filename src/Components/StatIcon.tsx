@@ -13,7 +13,7 @@ export const uncoloredEleIcons = {
   dendro: <FontAwesomeIcon icon={faDendro as any} />,
   physical: <FontAwesomeIcon icon={faPhysicalDmgBonus as any} />,
 } as const
-const coloredEleIcon = objectKeyMap(Object.keys(uncoloredEleIcons), key => <ColorText color={key} >{uncoloredEleIcons[key]}</ColorText>)
+const coloredEleIcon = objectKeyMap(Object.keys(uncoloredEleIcons), key => <ColorText color={key} sx={{ lineHeight: 1 }} >{uncoloredEleIcons[key]}</ColorText>)
 
 const StatIcon = {
   hp_: <FontAwesomeIcon icon={faHp as any} />,

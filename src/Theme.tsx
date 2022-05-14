@@ -99,6 +99,8 @@ declare module "@mui/material/Chip" {
     electro: true;
     anemo: true;
     physical: true;
+    vaporize: true;
+    melt: true;
   }
 }
 

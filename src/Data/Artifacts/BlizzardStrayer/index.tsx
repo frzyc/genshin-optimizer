@@ -1,14 +1,14 @@
-import icons from './icons'
-import { Data } from '../../../Formula/type'
-import { lookup, naught, percent, greaterEq } from '../../../Formula/utils'
 import { input } from '../../../Formula'
+import { Data } from '../../../Formula/type'
+import { greaterEq, lookup, naught, percent } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
-import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
-import { dataObjForArtifactSheet } from '../dataUtil'
 import { cond, trans } from '../../SheetUtil'
+import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
+import icons from './icons'
 
 const key: ArtifactSetKey = "BlizzardStrayer"
-
+const setHeader = setHeaderTemplate(key, icons)
 const [, trm] = trans("artifact", key)
 
 const [condStatePath, condState] = cond(key, "state")
@@ -26,26 +26,25 @@ export const data: Data = dataObjForArtifactSheet(key, {
   }
 })
 
-const sheet: IArtifactSheet = {//Icebreaker
+const sheet: IArtifactSheet = {
   name: "Blizzard Strayer", rarity: [4, 5],
   icons,
   setEffects: {
-    2: { document: [{ fields: [{ node: set2 }] }] },
+    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
     4: {
       document: [{
-        conditional: {
-          value: condState,
-          path: condStatePath,
-          name: trm("condName"),
-          states: {
-            cryo: {
-              name: trm("condCryo"),
-              fields: [{ node: set4 }]
-            },
-            frozen: {
-              name: trm("condFrozen"),
-              fields: [{ node: set4 }]
-            }
+        header: setHeader(4),
+        value: condState,
+        path: condStatePath,
+        name: trm("condName"),
+        states: {
+          cryo: {
+            name: trm("condCryo"),
+            fields: [{ node: set4 }]
+          },
+          frozen: {
+            name: trm("condFrozen"),
+            fields: [{ node: set4 }]
           }
         }
       }],

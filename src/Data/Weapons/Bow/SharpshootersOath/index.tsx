@@ -2,16 +2,15 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { st, trans } from '../../../SheetUtil'
+import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "SharpshootersOath"
 const data_gen = data_gen_json as WeaponData
-const [tr] = trans("weapon", key)
 
 const weakspotDMG_s = [.24, .30, .36, .42, .48]
 const weakspotDMG_ = subscript(input.weapon.refineIndex, weakspotDMG_s)
@@ -26,7 +25,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
       node: weakspotDMG_
     }]

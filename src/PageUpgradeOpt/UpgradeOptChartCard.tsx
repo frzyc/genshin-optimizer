@@ -1,4 +1,4 @@
-import { Button, CardContent, Grid, Box } from '@mui/material';
+import { IconButton, Button, CardContent, Grid, Box } from '@mui/material';
 import React, { useEffect, useState, useContext, useMemo } from 'react';
 import { DatabaseContext } from '../Database/Database';
 import { DataContext } from '../DataContext';
@@ -21,7 +21,7 @@ import CardLight from '../Components/Card/CardLight';
 import { QueryResult } from './artifactQuery';
 import { allUpgradeValues } from './artifactUpgradeCrawl'
 import { uiInput as input } from '../Formula';
-import { ArtifactCardPico } from '../PageCharacter/CharacterCard';
+import ArtifactCardPico from '../Components/Artifact/ArtifactCardPico'
 import { allSlotKeys, SlotKey } from '../Types/consts';
 import { ICachedArtifact } from '../Types/artifact';
 
@@ -202,8 +202,8 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
       <Grid direction="row" container spacing={0.75} columns={12}>
         {artifacts.map(([sk, art]: [SlotKey, ICachedArtifact | undefined]) => {
           if (sk != slot)
-            return <ArtifactCardPico slotKey={sk} artifactObj={art} key={`${sk}_${upgradeOpt.id}`} />
-          return <Grid item key={`${sk}_${upgradeOpt.id}`} xs={1}><Button style={{ height: "100%", width: '100%' }}
+            return <Grid item key={`${sk}_${upgradeOpt.id}`} xs={1}><ArtifactCardPico slotKey={sk} artifactObj={art} /></Grid>
+          return <Grid item key={`${sk}_${upgradeOpt.id}`} xs={1}><Button variant='contained' style={{ height: "100%", width: '100%' }}
             onClick={() => setCalcExacts(true)}
             startIcon={<Box
               sx={{
@@ -211,11 +211,12 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
                 width: "70%", height: "70%",
                 left: "50%", top: "50%",
                 transform: "translate(-50%, -50%)",
-                opacity: 0.7
+                opacity: 0.7,
               }}
               component="img"
               src={Assets.slot[sk]}
-            />} />
+            />}
+            sx={{ minWidth: 0 }} />
           </Grid>
         })}
       </Grid>

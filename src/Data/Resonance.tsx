@@ -54,7 +54,7 @@ const ferventFlames: IResonance = {
 }
 
 // Soothing Waters
-const swNode = greaterEq(tally.hydro, 2, percent(0.25))
+const swNode = greaterEq(tally.hydro, 2, percent(0.30))
 const soothingWaters: IResonance = {
   name: tr("SoothingWater.name"),
   desc: tr("SoothingWater.desc"),
@@ -87,22 +87,21 @@ const shatteringIce: IResonance = {
       text: st("effectDuration.electro"),
       value: -40,
       unit: "%"
-    }],
-    conditional: {
-      teamBuff: true,
-      path: condSIPath,
-      value: condSI,
-      name: trm("ShatteringIce.cond"),
-      header: {
-        title: tr("ShatteringIce.name"),
-        icon: StatIcon.cryo,
-      },
-      states: {
-        on: {
-          fields: [{
-            node: siNode
-          }]
-        }
+    }]
+  }, {
+    teamBuff: true,
+    path: condSIPath,
+    value: condSI,
+    name: trm("ShatteringIce.cond"),
+    header: {
+      title: tr("ShatteringIce.name"),
+      icon: StatIcon.cryo,
+    },
+    states: {
+      on: {
+        fields: [{
+          node: siNode
+        }]
       }
     }
   }]
@@ -161,28 +160,27 @@ const enduringRock: IResonance = {
     text: tr("EnduringRock.desc"),
     fields: [{
       node: erNodeshield_
-    }],
-    conditional: {
-      teamBuff: true,
-      path: condERPath,
-      value: condER,
-      header: {
-        title: tr("EnduringRock.name"),
-        icon: StatIcon.geo,
-      },
-      name: st("protectedByShield"),
-      states: {
-        on: {
-          fields: [{
-            node: erNodeDMG_
-          }, {
-            node: erNodeRes_
-          }, {
-            text: sgt("duration"),
-            value: 15,
-            unit: "s"
-          }]
-        }
+    }]
+  }, {
+    teamBuff: true,
+    path: condERPath,
+    value: condER,
+    header: {
+      title: tr("EnduringRock.name"),
+      icon: StatIcon.geo,
+    },
+    name: st("protectedByShield"),
+    states: {
+      on: {
+        fields: [{
+          node: erNodeDMG_
+        }, {
+          node: erNodeRes_
+        }, {
+          text: sgt("duration"),
+          value: 15,
+          unit: "s"
+        }]
       }
     }
   }]

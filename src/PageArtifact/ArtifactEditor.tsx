@@ -15,7 +15,7 @@ import CustomNumberTextField from '../Components/CustomNumberTextField';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import ImgIcon from '../Components/Image/ImgIcon';
 import ModalWrapper from '../Components/ModalWrapper';
-import StatIcon from '../Components/StatIcon';
+import StatIcon, { uncoloredEleIcons } from '../Components/StatIcon';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../Database/Database';
@@ -25,7 +25,7 @@ import KeyMap, { cacheValueString } from '../KeyMap';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
 import { allSubstats, IArtifact, ICachedArtifact, ISubstat, MainStatKey } from '../Types/artifact';
-import { ArtifactRarity, ArtifactSetKey, SlotKey } from '../Types/consts';
+import { allElementsWithPhy, ArtifactRarity, ArtifactSetKey, SlotKey } from '../Types/consts';
 import { randomizeArtifact } from '../Util/ArtifactUtil';
 import { clamp, deepClone } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
@@ -223,6 +223,12 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
 
   const theme = useTheme();
   const grmd = useMediaQuery(theme.breakpoints.up('md'));
+
+  const element = artifact ? allElementsWithPhy.find(ele => artifact.mainStatKey.includes(ele)) : undefined
+  const color = artifact
+    ? element ?? "success"
+    : "primary"
+
   return <ModalWrapper open={show} onClose={onClose} >
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: show ? "100%" : 64 }} />}><CardDark >
       <UploadExplainationModal modalShow={modalShow} hide={() => setModalShow(false)} />
@@ -268,8 +274,8 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
 
             {/* main stat */}
             <Box component="div" display="flex">
-              <DropdownButton startIcon={artifact?.mainStatKey ? StatIcon[artifact.mainStatKey] : undefined}
-                title={<b>{artifact ? KeyMap.getArtStr(artifact.mainStatKey) : t`mainStat`}</b>} disabled={!sheet} color={artifact ? "success" : "primary"} >
+              <DropdownButton startIcon={element ? uncoloredEleIcons[element] : (artifact?.mainStatKey ? StatIcon[artifact.mainStatKey] : undefined)}
+                title={<b>{artifact ? KeyMap.getArtStr(artifact.mainStatKey) : t`mainStat`}</b>} disabled={!sheet} color={color} >
                 {Artifact.slotMainStats(slotKey).map(mainStatK =>
                   <MenuItem key={mainStatK} selected={artifact?.mainStatKey === mainStatK} disabled={artifact?.mainStatKey === mainStatK} onClick={() => update({ mainStatKey: mainStatK })} >
                     <ListItemIcon>{StatIcon[mainStatK]}</ListItemIcon>

@@ -3,16 +3,15 @@ import { input } from '../../../../Formula'
 import { constant, infoMut, prod, subscript } from '../../../../Formula/utils'
 import { allElements, WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
-import { st, trans } from '../../../SheetUtil'
+import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "SkywardAtlas"
 const data_gen = data_gen_json as WeaponData
-const [tr] = trans("weapon", key)
 
 const dmgBonus = [0.12, 0.15, 0.18, 0.21, 0.24]
 const eleBonus_ = Object.fromEntries(allElements.map(ele => [ele, subscript(input.weapon.refineIndex, dmgBonus)]))
@@ -31,7 +30,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [
       ...allElements.map(ele => ({ node: eleBonus_[ele] })),
       {

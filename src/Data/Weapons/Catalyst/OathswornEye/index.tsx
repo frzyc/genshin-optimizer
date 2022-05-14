@@ -2,16 +2,15 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, st, trans } from '../../../SheetUtil'
+import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "OathswornEye"
 const data_gen = data_gen_json as WeaponData
-const [tr] = trans("weapon", key)
 
 const refinementVals = [0.24, 0.30, 0.36, 0.42, 0.48]
 
@@ -29,19 +28,16 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    conditional: {
-      value: condSkillBurst,
-      path: condSkillBurstPath,
-      header: conditionalHeader(tr, icon, iconAwaken),
-      description: conditionaldesc(tr),
-      name: st("afterUse.skill"),
-      states: {
-        skillBurst: {
-          fields: [{
-            node: enerRech_
-          }]
-        },
-      }
+    value: condSkillBurst,
+    path: condSkillBurstPath,
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    name: st("afterUse.skill"),
+    states: {
+      skillBurst: {
+        fields: [{
+          node: enerRech_
+        }]
+      },
     }
   }],
 }

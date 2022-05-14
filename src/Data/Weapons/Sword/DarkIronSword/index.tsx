@@ -2,16 +2,16 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, st, trans } from '../../../SheetUtil'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "DarkIronSword"
 const data_gen = data_gen_json as WeaponData
-const [tr, trm] = trans("weapon", key)
+const [, trm] = trans("weapon", key)
 
 const atkInc = [0.2, 0.25, 0.3, 0.35, 0.5]
 const [condPassivePath, condPassive] = cond(key, "Overloaded")
@@ -26,22 +26,19 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    conditional: {
-      value: condPassive,
-      path: condPassivePath,
-      name: trm("condName"),
-      header: conditionalHeader(tr, icon, iconAwaken),
-      description: conditionaldesc(tr),
-      states: {
-        on: {
-          fields: [{
-            node: atk_,
-          }, {
-            text: st("duration"),
-            value: 12,
-            unit: 's'
-          }]
-        }
+    value: condPassive,
+    path: condPassivePath,
+    name: trm("condName"),
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    states: {
+      on: {
+        fields: [{
+          node: atk_,
+        }, {
+          text: sgt("duration"),
+          value: 12,
+          unit: 's'
+        }]
       }
     }
   }],

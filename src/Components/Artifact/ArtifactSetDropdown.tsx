@@ -1,6 +1,6 @@
 import { Replay } from "@mui/icons-material";
-import { ButtonProps, Divider, ListItemIcon, ListItemText, MenuItem, Typography } from "@mui/material";
-import React, { useMemo } from "react";
+import { ButtonProps, Divider, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from "@mui/material";
+import React, { Suspense, useMemo } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
 import usePromise from "../../ReactHooks/usePromise";
@@ -46,14 +46,16 @@ export default function ArtifactSetDropdown({ selectedSetKey = "", onChange, art
           <Trans t={t} i18nKey="editor.set.maxRarity">Max Rarity <Stars stars={parseInt(star) as Rarity} /></Trans>
         </Typography>
       </MenuItem>] : []),
-      ...sets.map(setKey => <MenuItem key={setKey} onClick={() => onChange(setKey)} selected={selectedSetKey === setKey} disabled={selectedSetKey === setKey}>
-        <ListItemIcon>
-          <ImgIcon src={artifactSheets?.[setKey]?.defIconSrc} sx={{ fontSize: "1.5em" }} />
-        </ListItemIcon>
-        <ListItemText>
-          {artifactSheets?.[setKey]?.name}
-        </ListItemText>
-      </MenuItem >)
+      ...sets.map(setKey => <Suspense key={setKey} fallback={<MenuItem><Skeleton variant="text" width={100} /></MenuItem>}>
+        <MenuItem onClick={() => onChange(setKey)} selected={selectedSetKey === setKey} disabled={selectedSetKey === setKey}>
+          <ListItemIcon>
+            <ImgIcon src={artifactSheets?.[setKey]?.defIconSrc} sx={{ fontSize: "1.5em" }} />
+          </ListItemIcon>
+          <ListItemText>
+            {artifactSheets?.[setKey]?.name}
+          </ListItemText>
+        </MenuItem >
+      </Suspense>)
     ])}
   </DropdownButton>
 }

@@ -2,16 +2,15 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, st, trans } from '../../../SheetUtil'
+import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "SolarPearl"
 const data_gen = data_gen_json as WeaponData
-const [tr] = trans("weapon", key)
 
 const refinementVals = [0.20, 0.25, 0.30, 0.35, 0.40]
 
@@ -34,36 +33,30 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    conditional: {
-      value: condNormal,
-      path: condNormalPath,
-      header: conditionalHeader(tr, icon, iconAwaken),
-      description: conditionaldesc(tr),
-      name: st("hitOp.normal"),
-      states: {
-        normal: {
-          fields: [{
-            node: skill_dmg_
-          }, {
-            node: burst_dmg_
-          }]
-        }
+    value: condNormal,
+    path: condNormalPath,
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    name: st("hitOp.normal"),
+    states: {
+      normal: {
+        fields: [{
+          node: skill_dmg_
+        }, {
+          node: burst_dmg_
+        }]
       }
     }
-  }, { 
-    conditional: {
-      value: condSkillBurst,
-      path: condSkillBurstPath,
-      header: conditionalHeader(tr, icon, iconAwaken),
-      description: conditionaldesc(tr),
-      name: st("hitOp.skillOrBurst"),
-      states: {
-        skillBurst: {
-          fields: [{
-            node: normal_dmg_
-          }]
-        },
-      }
+  }, {
+    value: condSkillBurst,
+    path: condSkillBurstPath,
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    name: st("hitOp.skillOrBurst"),
+    states: {
+      skillBurst: {
+        fields: [{
+          node: normal_dmg_
+        }]
+      },
     }
   }],
 }
