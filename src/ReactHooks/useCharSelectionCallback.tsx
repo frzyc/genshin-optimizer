@@ -18,6 +18,7 @@ export default function useCharSelectionCallback() {
   const cb = useCallback(
     async (characterKey: CharacterKey) => {
       const character = database._getChar(characterKey)
+      let navTab = tab
       // Create a new character + weapon, with linking if char isnt in db.
       if (!character) {
         const newChar = initialCharacter(characterKey)
@@ -30,9 +31,9 @@ export default function useCharSelectionCallback() {
         // If we are navigating to a new character,
         // redirect to Overview, regardless of previous tab.
         // Trying to enforce a certain UI flow when building new characters
-        tab = ""
+        navTab = ""
       }
-      navigate(`/character/${characterKey}/${tab}`)
+      navigate(`/character/${characterKey}/${navTab}`)
     },
     [navigate, database, tab],
   )

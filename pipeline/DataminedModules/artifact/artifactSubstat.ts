@@ -3,13 +3,11 @@ import { extrapolateFloat } from "../../extrapolateFloat"
 import { layeredAssignment } from "../../Util"
 
 type ReliquaryAffixExcelConfigData = {
-  "Id": number//996004, AFAIK, not used
-  "DepotId": number//996,
-  "GroupId": number//20,
-  "PropType": PropTypeKey//"FIGHT_PROP_CRITICAL",
-  "PropValue": number//0.062199998646974564,
-  "Weight": number//1,
-  "UpgradeWeight": number//1000
+  "id": number//996004, AFAIK, not used
+  "depotId": number//996,
+  "groupId": number//20,
+  "propType": PropTypeKey//"FIGHT_PROP_CRITICAL",
+  "propValue": number//0.062199998646974564,
 }
 const artifactSubstatDataSrc = require('../../GenshinData/ExcelBinOutput/ReliquaryAffixExcelConfigData.json') as ReliquaryAffixExcelConfigData[]
 
@@ -26,10 +24,10 @@ Array.from({ length: 5 }, (_, i) => i + 1).forEach(rank => {
   });
 })
 
-artifactSubstatDataSrc.forEach(({ DepotId, GroupId, PropType, PropValue }) => {
-  const rank = Math.round(DepotId / 100)
+artifactSubstatDataSrc.forEach(({ depotId, propType, propValue }) => {
+  const rank = Math.round(depotId / 100)
   if (rank > 5) return
-  artifactSubstatData[rank][SubStatPropTypeMap[PropType]].push(extrapolateFloat(PropValue))
+  artifactSubstatData[rank][SubStatPropTypeMap[propType]].push(extrapolateFloat(propValue))
 })
 
 export default artifactSubstatData

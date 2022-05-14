@@ -290,7 +290,7 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
         if (!item.pivot && item.formula) itemFormula = item.formula
         else itemFormula = createFormulaComponent(item)
 
-        if (shouldWrap && item.mayNeedWrapping) {
+        if (shouldWrap && item.mayNeedWrapping && array.length > 1) {
           predisplay.push("( ")
           predisplay.push(itemFormula)
           predisplay.push(" )")
@@ -351,14 +351,15 @@ function mergeFormulaComponents(components: Displayable[]): Displayable {
 }
 /*/
 function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
-  const { key, value, formula, prefix, source, variant, fixed } = node
+  const { info, value, formula } = node
+  const { key, prefix, source, fixed } = info
   if (typeof value !== "number") return
   node.valueDisplay = valueString(value, KeyMap.unit(key), fixed)
   if (key && key !== '_') {
     const prefixDisplay = (prefix && !source) ? `${KeyMap.getPrefixStr(prefix)} ` : ""
     // TODO: Convert `source` key to actual name
     const sourceDisplay = source ? ` ${source}` : ""
-    node.name = `${prefixDisplay}${KeyMap.getNoUnit(key!)}${sourceDisplay}`
+    node.name = `${prefixDisplay}${KeyMap.getStr(key!)}${sourceDisplay}`
 
     if (formula)
       node.assignment = `${node.name} ${node.valueDisplay} = ${formula}`
@@ -390,7 +391,7 @@ interface ContextNodeDisplay<V = number> {
 
   dependencies: Set<Displayable>
 
-  mayNeedWrapping: boolean
+  mayNeedWrapping: boolean // Whether this formula should be parenthesized when it is a part of multiplications/divisions and subtractions' subtrahends
 
   // Don't set these manually outside of `UIData.computeNode`
   name?: Displayable

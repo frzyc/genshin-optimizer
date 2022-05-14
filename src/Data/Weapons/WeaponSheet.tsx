@@ -1,14 +1,14 @@
+import type { WeaponData } from 'pipeline';
+import ImgIcon from '../../Components/Image/ImgIcon';
+import SqBadge from '../../Components/SqBadge';
 import { Translate } from '../../Components/Translate';
+import { input } from '../../Formula';
 import { Data } from '../../Formula/type';
 import { Rarity, WeaponKey, WeaponTypeKey } from '../../Types/consts';
-import { DocumentSection } from '../../Types/sheet';
+import { DocumentSection, IDocumentHeader } from '../../Types/sheet';
 import { ICachedWeapon } from '../../Types/weapon';
 import { ambiguousLevel, ambiguousLevelLow, ascensionMaxLevel, lowRarityMilestoneLevels, milestoneLevels } from '../LevelData';
-import type { WeaponData } from 'pipeline';
-import IConditional from '../../Types/IConditional';
-import ImgIcon from '../../Components/Image/ImgIcon';
-import { input } from '../../Formula';
-import SqBadge from '../../Components/SqBadge';
+
 const weaponSheets = import('.').then(imp => imp.default)
 
 export interface IWeaponSheet {
@@ -32,7 +32,7 @@ export default class WeaponSheet {
   }
   static get = (weaponKey: WeaponKey | ""): Promise<WeaponSheet> | undefined => weaponKey ? weaponSheets.then(w => w[weaponKey]) : undefined
   static get getAll() { return weaponSheets }
-  static getWeaponsOfType = (sheets: StrictDict<WeaponKey, WeaponSheet>, weaponType: string): Dict<WeaponKey, WeaponSheet> => Object.fromEntries(Object.entries(sheets).filter(([key, sheet]) => (sheet as WeaponSheet).weaponType === weaponType))
+  static getWeaponsOfType = (sheets: StrictDict<WeaponKey, WeaponSheet>, weaponType: string): Dict<WeaponKey, WeaponSheet> => Object.fromEntries(Object.entries(sheets).filter(([_, sheet]) => (sheet as WeaponSheet).weaponType === weaponType))
   static getLevelString = (weapon: ICachedWeapon): string => `${weapon.level}/${ascensionMaxLevel[weapon.ascension]}`
   tr = (strKey: string) => <Translate ns={`weapon_${this.key}_gen`} key18={strKey} />
   get name() { return this.tr("name") }
@@ -52,11 +52,12 @@ export default class WeaponSheet {
     else return ambiguousLevelLow(level)
   }
 }
-export const conditionalHeader = (tr: (string) => Displayable, img: string, imgAwaken: string, action?: Displayable): IConditional["header"] => ({
-  title: tr(`passiveName`),
-  icon: data => <ImgIcon size={2} sx={{ m: -1 }} src={data.get(input.weapon.asc).value < 2 ? img : imgAwaken} />,
-  action: action && <SqBadge color="success">{action}</SqBadge>,
-})
-
-export const conditionaldesc = (tr: (string) => Displayable) =>
-  data => tr(`passiveDescription.${data.get(input.weapon.refineIndex).value}`)
+export const headerTemplate = (weaponKey: WeaponKey, img: string, imgAwaken: string, action?: Displayable): IDocumentHeader => {
+  const tr = (strKey: string) => <Translate ns={`weapon_${weaponKey}_gen`} key18={strKey} />
+  return {
+    title: tr(`passiveName`),
+    icon: data => <ImgIcon size={2} sx={{ m: -1 }} src={data.get(input.weapon.asc).value < 2 ? img : imgAwaken} />,
+    action: action && <SqBadge color="success">{action}</SqBadge>,
+    description: data => tr(`passiveDescription.${data.get(input.weapon.refineIndex).value}`)
+  }
+}

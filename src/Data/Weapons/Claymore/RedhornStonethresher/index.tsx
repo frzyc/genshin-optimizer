@@ -2,16 +2,15 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { st, trans } from '../../../SheetUtil'
+import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "RedhornStonethresher"
 const data_gen = data_gen_json as WeaponData
-const [tr] = trans("weapon", key)
 
 const def_Src = [0.28, 0.35, 0.42, 0.49, 0.56]
 const normal_dmg_Src = [0.4, 0.5, 0.6, 0.7, 0.8]
@@ -34,7 +33,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
       node: def_
     }, {

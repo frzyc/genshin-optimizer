@@ -1,15 +1,15 @@
 
 type RewardExcelConfigData = {
-  "RewardId": number//241012,
-  "RewardItemList": {
-    "ItemId": number// 210014, //MaterialExcelConfigData
-    "ItemCount": number//1
+  "rewardId": number//241012,
+  "rewardItemList": {
+    "itemId": number// 210014, //MaterialExcelConfigData
+    "itemCount": number//1
   }[]
 }
 
 const rewardExcelConfigDataSrc = require('../../GenshinData/ExcelBinOutput/RewardExcelConfigData.json') as RewardExcelConfigData[]
 //character data
 const rewardExcelConfigData = Object.fromEntries(rewardExcelConfigDataSrc.map(data =>
-  [data.RewardId, data])) as { [RewardId: number]: RewardExcelConfigData }
+  [data.rewardId, data])) as { [rewardId: number]: RewardExcelConfigData }
 
 export default rewardExcelConfigData

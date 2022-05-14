@@ -48,5 +48,6 @@
     "mefficiency": "Maximum RV",
     "probability": "Roll Probability"
   },
-  "updatedfor": "Updated for {{version}}"
+  "updatedfor": "Updated for {{version}}",
+  "delete": "Delete"
 }

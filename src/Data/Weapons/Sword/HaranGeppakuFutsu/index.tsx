@@ -5,14 +5,14 @@ import { allElements, WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "HaranGeppakuFutsu"
 const data_gen = data_gen_json as WeaponData
-const [tr, trm] = trans("weapon", key)
+const [, trm] = trans("weapon", key)
 
 const passiveRefine = [0.12, 0.15, 0.18, 0.21, 0.24]
 const stack_normal_dmg_ = [0.2, 0.25, 0.3, 0.35, 0.4]
@@ -36,22 +36,21 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    fieldsHeader: conditionalHeader(tr, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [ // Passive
       ...allElements.map((ele) => {
         return { node: passive_dmg_[`${ele}_dmg_`] }
       })
     ],
-    conditional: {
-      value: condNode,
-      path: condPath,
-      name: trm("consumed"),
-      header: conditionalHeader(tr, icon, iconAwaken, trm("ripp")),
-      states: objectKeyMap(range(1, 2), i => ({
-        name: st("stack", { count: i }),
-        fields: [{ node: normal_dmg_ }]
-      }))
-    }
+  }, {
+    value: condNode,
+    path: condPath,
+    name: trm("consumed"),
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    states: objectKeyMap(range(1, 2), i => ({
+      name: st("stack", { count: i }),
+      fields: [{ node: normal_dmg_ }]
+    }))
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

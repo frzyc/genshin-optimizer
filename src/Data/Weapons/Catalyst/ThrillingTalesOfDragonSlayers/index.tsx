@@ -2,16 +2,16 @@ import { WeaponData } from 'pipeline'
 import { input, target } from '../../../../Formula'
 import { equal, infoMut, subscript, unequal } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, trans } from '../../../SheetUtil'
+import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "ThrillingTalesOfDragonSlayers"
 const data_gen = data_gen_json as WeaponData
-const [tr, trm] = trans("weapon", key)
+const [, trm] = trans("weapon", key)
 
 const atkSrc = [0.24, 0.3, 0.36, 0.42, 0.48]
 
@@ -31,24 +31,21 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    conditional: {
-      value: condPassive,
-      path: condPassivePath,
-      name: trm('condName'),
-      canShow: unequal(input.activeCharKey, input.charKey, 1),
-      teamBuff: true,
-      header: conditionalHeader(tr, icon, iconAwaken),
-      description: conditionaldesc(tr),
-      states: {
-        on: {
-          fields: [{
-            node: infoMut(atk_Disp, { key: "atk_" })
-          }, {
-            text: sgt("duration"),
-            value: 10,
-            unit: "s"
-          }]
-        }
+    value: condPassive,
+    path: condPassivePath,
+    name: trm('condName'),
+    canShow: unequal(input.activeCharKey, input.charKey, 1),
+    teamBuff: true,
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    states: {
+      on: {
+        fields: [{
+          node: infoMut(atk_Disp, { key: "atk_" })
+        }, {
+          text: sgt("duration"),
+          value: 10,
+          unit: "s"
+        }]
       }
     }
   }],

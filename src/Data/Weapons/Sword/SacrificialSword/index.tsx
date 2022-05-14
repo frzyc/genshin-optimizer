@@ -1,42 +1,18 @@
 import { WeaponData } from 'pipeline'
-import { equal, percent } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "SacrificialSword"
 const data_gen = data_gen_json as WeaponData
-const [tr, trm] = trans("weapon", key)
 
-const [condPassivePath, condPassive] = cond(key, "Composed")
-const cdRed_ = equal(condPassive, 'on', percent(1))
-
-const data = dataObjForWeaponSheet(key, data_gen, {
-  premod: {
-    cdRed_,
-  },
-})
+const data = dataObjForWeaponSheet(key, data_gen)
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
-  document: [{
-    conditional: {
-      value: condPassive,
-      path: condPassivePath,
-      name: trm("condName"),
-      header: conditionalHeader(tr, icon, iconAwaken),
-      states: {
-        on: {
-          fields: [{
-            node: cdRed_
-          },]
-        }
-      }
-    }
-  }],
+  document: [{ header: headerTemplate(key, icon, iconAwaken), fields: [] }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

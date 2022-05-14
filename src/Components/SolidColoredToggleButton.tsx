@@ -9,7 +9,7 @@ export type SolidColoredToggleButtonProps = SolidColoredToggleButtonPartial & To
 
 const SolidColoredToggleButton = styled(ToggleButton, {
   shouldForwardProp: (prop) => prop !== "baseColor" && prop !== "selectedColor"
-})<SolidColoredToggleButtonPartial>(({ theme, baseColor = "primary", selectedColor = "success" }) => ({
+})<SolidColoredToggleButtonPartial>(({ theme, baseColor = "secondary", selectedColor = "success" }) => ({
   '&': {
     backgroundColor: theme.palette[baseColor].main,
     color: theme.palette[baseColor].contrastText,

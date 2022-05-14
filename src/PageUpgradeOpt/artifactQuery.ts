@@ -1,7 +1,7 @@
 import { Data, NumNode } from "../Formula/type"
 import { precompute, optimize } from "../Formula/optimization"
 import { ddx, zero_deriv } from "../Formula/differentiate"
-import { ArtifactBuildData, ArtifactsBySlot, DynStat } from "../PageBuild/background"
+import { DynStat } from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/background'
 import { SubstatKey, allSubstats, IArtifact, MainStatKey } from "../Types/artifact"
 import { allSlotKeys, ArtifactSetKey, CharacterKey, SlotKey, Rarity } from '../Types/consts';
 import Artifact from "../Data/Artifacts/Artifact"

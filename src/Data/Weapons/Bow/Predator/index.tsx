@@ -1,18 +1,17 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { lookup, prod, naught, constant, percent, equal } from "../../../../Formula/utils"
+import { constant, equal, lookup, naught, percent, prod } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, sgt, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "Predator"
 const data_gen = data_gen_json as WeaponData
-const [tr] = trans("weapon", key)
 
 const normalInc = percent(.1)
 const chargedInc = percent(.1)
@@ -38,24 +37,22 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    conditional: {
-      value: condPassive,
-      path: condPassivePath,
-      header: conditionalHeader(tr, icon, iconAwaken, st("stacks")),
-      name: st("hitOp.cryo"),
-      states: Object.fromEntries(range(1, 2).map(c => [c, {
-        name: st("stack", { count: c }),
-        fields: [{
-          node: normal_dmg_
-        }, {
-          node: charged_dmg_
-        }, {
-          text: sgt("duration"),
-          value: 6,
-          unit: 's'
-        }],
-      }]))
-    }
+    value: condPassive,
+    path: condPassivePath,
+    header: headerTemplate(key, icon, iconAwaken, st("stacks")),
+    name: st("hitOp.cryo"),
+    states: Object.fromEntries(range(1, 2).map(c => [c, {
+      name: st("stack", { count: c }),
+      fields: [{
+        node: normal_dmg_
+      }, {
+        node: charged_dmg_
+      }, {
+        text: sgt("duration"),
+        value: 6,
+        unit: 's'
+      }],
+    }]))
   }]
 }
 

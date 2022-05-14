@@ -2,15 +2,14 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, sgt, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { conditionaldesc, conditionalHeader, IWeaponSheet } from '../../WeaponSheet'
+import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
 const key: WeaponKey = "MitternachtsWaltz"
-const [tr] = trans("weapon", key)
 const data_gen = data_gen_json as WeaponData
 
 const skill_dmg_s = [.20, .25, .30, .35, .40]
@@ -33,41 +32,35 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
-    conditional: {
-      value: condNormal,
-      path: condNormalPath,
-      header: conditionalHeader(tr, icon, iconAwaken),
-      description: conditionaldesc(tr),
-      name: st("hitOp.skill"),
-      states: {
-        on: {
-          fields: [{
-            node: normal_dmg_
-          }, {
-            text: sgt("duration"),
-            value: 5,
-            unit: 's'
-          }]
-        }
+    value: condNormal,
+    path: condNormalPath,
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    name: st("hitOp.skill"),
+    states: {
+      on: {
+        fields: [{
+          node: normal_dmg_
+        }, {
+          text: sgt("duration"),
+          value: 5,
+          unit: 's'
+        }]
       }
     }
   }, {
-    conditional: {
-      value: condSkill,
-      path: condSkillPath,
-      header: conditionalHeader(tr, icon, iconAwaken),
-      description: conditionaldesc(tr),
-      name: st("hitOp.normal"),
-      states: {
-        on: {
-          fields: [{
-            node: skill_dmg_
-          }, {
-            text: sgt("duration"),
-            value: 5,
-            unit: 's'
-          }]
-        }
+    value: condSkill,
+    path: condSkillPath,
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    name: st("hitOp.normal"),
+    states: {
+      on: {
+        fields: [{
+          node: skill_dmg_
+        }, {
+          text: sgt("duration"),
+          value: 5,
+          unit: 's'
+        }]
       }
     }
   }],

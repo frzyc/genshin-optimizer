@@ -3,11 +3,12 @@ import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
-import { ArtifactSheet, IArtifactSheet } from '../ArtifactSheet'
+import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
 
 const key: ArtifactSetKey = "ShimenawasReminiscence"
+const setHeader = setHeaderTemplate(key, icons)
 const [, trm] = trans("artifact", key)
 
 const [usedEnergyStatePath, usedEnergyState] = cond(key, "usedEnergy")
@@ -31,23 +32,22 @@ const sheet: IArtifactSheet = {
   name: "Shimenawa's Reminiscence", rarity: [4, 5],
   icons,
   setEffects: {
-    2: { document: [{ fields: [{ node: set2 }] }] },
+    2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
     4: {
       document: [{
-        conditional: {
-          value: usedEnergyState,
-          path: usedEnergyStatePath,
-          name: trm("afterUseEnergy"),
-          states: {
-            used: {
-              fields: [{
-                node: set4Norm,
-              }, {
-                node: set4Charged,
-              }, {
-                node: set4Plunge,
-              }]
-            }
+        header: setHeader(4),
+        value: usedEnergyState,
+        path: usedEnergyStatePath,
+        name: trm("afterUseEnergy"),
+        states: {
+          used: {
+            fields: [{
+              node: set4Norm,
+            }, {
+              node: set4Charged,
+            }, {
+              node: set4Plunge,
+            }]
           }
         }
       }]

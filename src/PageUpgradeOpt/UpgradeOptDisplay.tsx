@@ -27,67 +27,35 @@ import { uiInput as input } from '../Formula/index';
 import { optimize } from '../Formula/optimization';
 import { NumNode } from '../Formula/type';
 import { initGlobalSettings } from '../GlobalSettings';
-import CharacterCard from '../PageCharacter/CharacterCard';
+import CharacterCard from '../Components/Character/CharacterCard';
 import useCharacter from '../ReactHooks/useCharacter';
 import useCharacterReducer, { characterReducerAction } from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useDBState from '../ReactHooks/useDBState';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
 import { ICachedArtifact, SubstatKey } from '../Types/artifact';
-import { BuildSetting } from '../Types/Build';
+// import { BuildSetting } from '../Types/Build';
+import { buildSettingsReducer, initialBuildSettings } from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting';
 import { allSlotKeys, CharacterKey } from '../Types/consts';
 import { clamp, objPathValue } from '../Util/Util';
-import { initialBuildSettings } from '../PageBuild/BuildSetting';
-import OptimizationTargetSelector from '../PageBuild/Components/OptimizationTargetSelector';
-import { dynamicData } from '../PageBuild/foreground';
+import OptimizationTargetSelector from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector';
+import { dynamicData } from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/foreground';
 import { QueryArtifact, QueryBuild, querySetup, evalArtifact, QueryResult } from './artifactQuery'
 import Artifact from "../Data/Artifacts/Artifact";
 import ArtifactCard from "../PageArtifact/ArtifactCard";
 import { useTranslation } from "react-i18next";
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
 import { HitModeToggle, ReactionToggle } from '../Components/HitModeEditor';
-import ArtifactConditionalCard from '../PageBuild/Components/ArtifactConditionalCard';
+import ArtifactSetConditional from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Components/ArtifactSetConditional';
 
-function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
-  switch (action.type) {
-    case 'mainStatKey': {
-      const { slotKey, mainStatKey } = action
-      const mainStatKeys = { ...state.mainStatKeys }//create a new object to update react dependencies
-
-      if (state.mainStatKeys[slotKey].includes(mainStatKey))
-        mainStatKeys[slotKey] = mainStatKeys[slotKey].filter(k => k !== mainStatKey)
-      else
-        mainStatKeys[slotKey].push(mainStatKey)
-      return { ...state, mainStatKeys }
-    }
-    case 'mainStatKeyReset': {
-      const { slotKey } = action
-      const mainStatKeys = { ...state.mainStatKeys }//create a new object to update react dependencies
-      mainStatKeys[slotKey] = []
-      return { ...state, mainStatKeys }
-    }
-    case `setFilter`: {
-      const { index, key, num = 0 } = action
-      state.setFilters[index] = { key, num }
-      return { ...state, setFilters: [...state.setFilters] }//do this because this is a dependency, so needs to be a "new" array
-    }
-    default:
-      break;
-  }
-  return { ...state, ...action }
-}
-function initialBuildDisplayState(): {
-  characterKey: CharacterKey | ""
-} {
-  return {
-    characterKey: ""
-  }
+function hackyGetAroun(): { characterKey: CharacterKey | "" } {
+  return { characterKey: '' }
 }
 
 export default function UpgradeOptDisplay() {
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { database } = useContext(DatabaseContext)
-  const [{ characterKey }, setBuildSettings] = useDBState("BuildDisplay", initialBuildDisplayState)
+  const [{ characterKey }, setBuildSettings] = useDBState("BuildDisplay", hackyGetAroun)
   const setcharacterKey = useCallback(characterKey => {
     if (characterKey && database._getChar(characterKey)) setBuildSettings({ characterKey })
     else setBuildSettings({ characterKey: "" })
@@ -287,7 +255,7 @@ export default function UpgradeOptDisplay() {
                   {/*Minimum Final Stat Filter */}
                   <StatFilterCard statFilters={statFilters} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={false} />
 
-                  <ArtifactConditionalCard disabled={false} />
+                  <ArtifactSetConditional disabled={false} />
                 </Grid>
               </Grid>
 

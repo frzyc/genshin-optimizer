@@ -44,14 +44,14 @@ export const mapHashData = {
     },
   }
 }
-type WeaponIcon = { Icon: string, AwakenIcon: string }
+type WeaponIcon = { icon: string, awakenIcon: string }
 type WeaponIconData = { [key: string]: WeaponIcon }
 
 type CharacterIcon = {
-  Icon: string,
-  IconSide: string,
-  Banner: string,
-  Bar: string
+  icon: string,
+  iconSide: string,
+  banner: string,
+  bar: string
 }
 type CharacterIconData = { [key: string]: CharacterIcon }
 //An object to store all the asset related data.

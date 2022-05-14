@@ -3,97 +3,97 @@
 import { extrapolateFloat } from "../../extrapolateFloat"
 
 type WeaponCurveExcelConfigData = {
-  "Level": 1,
-  "CurveInfos": [
+  "level": 1,
+  "curveInfos": [
     {
-      "Type": "GROW_CURVE_ATTACK_101",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_101",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_ATTACK_102",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_102",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_ATTACK_103",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_103",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_ATTACK_104",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_104",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_ATTACK_105",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_105",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_CRITICAL_101",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_CRITICAL_101",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_ATTACK_201",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_201",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_ATTACK_202",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_202",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_ATTACK_203",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_203",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_ATTACK_204",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_204",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_ATTACK_205",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_205",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_CRITICAL_201",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_CRITICAL_201",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_ATTACK_301",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_301",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_ATTACK_302",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_302",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_ATTACK_303",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_303",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_ATTACK_304",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_304",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_ATTACK_305",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_ATTACK_305",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     },
     {
-      "Type": "GROW_CURVE_CRITICAL_301",
-      "Arith": "ARITH_MULTI",
-      "Value": number//1.0
+      "type": "GROW_CURVE_CRITICAL_301",
+      "arith": "ARITH_MULTI",
+      "value": number//1.0
     }
   ]
 }
@@ -106,10 +106,10 @@ const weaponCurveExcelConfigDataSrc = require('../../GenshinData/ExcelBinOutput/
 export type WeaponExpCurveData = Record<WeaponGrowCurveKey, { [level: number]: number }>
 
 const weaponCurveExcelConfigData = {} as WeaponExpCurveData
-weaponCurveExcelConfigDataSrc.forEach(({ Level, CurveInfos }) =>
-  CurveInfos.forEach(({ Type, Value }) => {
-    if (!weaponCurveExcelConfigData[Type]) weaponCurveExcelConfigData[Type] = {} // TODO: [0]
-    weaponCurveExcelConfigData[Type][Level] = extrapolateFloat(Value)
+weaponCurveExcelConfigDataSrc.forEach(({ level, curveInfos }) =>
+  curveInfos.forEach(({ type, value }) => {
+    if (!weaponCurveExcelConfigData[type]) weaponCurveExcelConfigData[type] = {} // TODO: [0]
+    weaponCurveExcelConfigData[type][level] = extrapolateFloat(value)
   }))
 
 export default weaponCurveExcelConfigData

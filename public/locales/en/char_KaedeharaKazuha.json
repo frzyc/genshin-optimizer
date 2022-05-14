@@ -1,10 +1,4 @@
 {
-  "a4": {
-    "name_hydro": "Upon triggering a <hydro>Hydro</hydro> Swirl reaction",
-    "name_pyro": "Upon triggering a <pyro>Pyro</pyro> Swirl reaction",
-    "name_electro": "Upon triggering a <electro>Electro</electro> Swirl reaction",
-    "name_cryo": "Upon triggering a <cryo>Cryo</cryo> Swirl reaction"
-  },
   "c1": "Using <strong>Kazuha Slash</strong> resets CD",
   "c2": "Autumn Whirlwind field active",
   "c6": {

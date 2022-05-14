@@ -3,62 +3,62 @@ import { nameToKey, TextMapEN } from "../../TextMapUtil"
 import { dumpFile } from "../../Util"
 
 type WeaponExcelConfigData = {
-  "WeaponType": DWeaponTypeKey// "WEAPON_CLAYMORE",
-  "RankLevel": 1 | 2 | 3 | 4 | 5 //4,
-  "WeaponBaseExp": number//50000,
-  "SkillAffix": number[]
+  "weaponType": DWeaponTypeKey// "WEAPON_CLAYMORE",
+  "rankLevel": 1 | 2 | 3 | 4 | 5 //4,
+  "weaponBaseExp": number//50000,
+  "skillAffix": number[]
   // [
   //   112407,
   //   0
   // ],
-  "WeaponProp": [
+  "weaponProp": [
     {
-      "PropType": "FIGHT_PROP_BASE_ATTACK",
-      "InitValue": 42.4010009765625,
-      "Type": "GROW_CURVE_ATTACK_201"
+      "propType": "FIGHT_PROP_BASE_ATTACK",
+      "initValue": 42.4010009765625,
+      "type": "GROW_CURVE_ATTACK_201"
     },
     {
-      "PropType": "FIGHT_PROP_DEFENSE_PERCENT",
-      "InitValue": 0.11259999871253967,
-      "Type": "GROW_CURVE_CRITICAL_201"
+      "propType": "FIGHT_PROP_DEFENSE_PERCENT",
+      "initValue": 0.11259999871253967,
+      "type": "GROW_CURVE_CRITICAL_201"
     }
   ],
-  "AwakenTexture": string//"ART/Equip/AvatarEquip/Equip_Claymore_Exotic/Equip_Claymore_Exotic_OverrideTexture/Equip_Claymore_Exotic_02_Tex_Diffuse",
-  "AwakenLightMapTexture": string//"ART/Equip/AvatarEquip/Equip_Claymore_Exotic/Equip_Claymore_Exotic_OverrideTexture/Equip_Claymore_Exotic_02_Tex_Lightmap",
-  "AwakenIcon": string//"UI_EquipIcon_Claymore_Exotic_Awaken",
-  "WeaponPromoteId": number//12407,
-  "StoryId": number//192407,
-  "AwakenCosts": number[]
+  "awakenTexture": string//"ART/Equip/AvatarEquip/Equip_Claymore_Exotic/Equip_Claymore_Exotic_OverrideTexture/Equip_Claymore_Exotic_02_Tex_Diffuse",
+  "awakenLightMapTexture": string//"ART/Equip/AvatarEquip/Equip_Claymore_Exotic/Equip_Claymore_Exotic_OverrideTexture/Equip_Claymore_Exotic_02_Tex_Lightmap",
+  "awakenIcon": string//"UI_EquipIcon_Claymore_Exotic_Awaken",
+  "weaponPromoteId": number//12407,
+  "storyId": number//192407,
+  "awakenCosts": number[]
   // [
   //   1000,
   //   2000,
   //   4000,
   //   8000
   // ],
-  "GachaCardNameHashSuffix": number//3014887376,
-  "GachaCardNameHashPre": number//216,
-  "DestroyReturnMaterial": number[]
+  "gachaCardNameHashSuffix": number//3014887376,
+  "gachaCardNameHashPre": number//216,
+  "destroyReturnMaterial": number[]
   // [
   //   0
   // ],
-  "DestroyReturnMaterialCount": number[]
+  "destroyReturnMaterialCount": number[]
   // [
   //   0
   // ],
-  "Weight": number//2,
-  "Id": number//12407,
-  "NameTextMapHash": number//680510411,
-  "DescTextMapHash": number//1683286045,
-  "Icon": "UI_EquipIcon_Claymore_Exotic",
-  "ItemType": "ITEM_WEAPON",
-  "Rank": 10,
-  "GadgetId": 50012407
+  "weight": number//2,
+  "id": number//12407,
+  "nameTextMapHash": number//680510411,
+  "descTextMapHash": number//1683286045,
+  "icon": "UI_EquipIcon_Claymore_Exotic",
+  "itemType": "ITEM_WEAPON",
+  "rank": 10,
+  "gadgetId": 50012407
 }
 const weaponExcelConfigDataSrc = require('../../GenshinData/ExcelBinOutput/WeaponExcelConfigData.json') as WeaponExcelConfigData[]
 const weaponExcelConfigData = Object.fromEntries(weaponExcelConfigDataSrc.map(data =>
-  [data.Id, data]))
+  [data.id, data]))
 
 dumpFile(`${__dirname}/WeaponExcelConfigData_idmap_gen.json`,
-  Object.fromEntries(weaponExcelConfigDataSrc.map(data => [data.Id, nameToKey(TextMapEN[data.NameTextMapHash])])))
+  Object.fromEntries(weaponExcelConfigDataSrc.map(data => [data.id, nameToKey(TextMapEN[data.nameTextMapHash])])))
 
 export default weaponExcelConfigData
