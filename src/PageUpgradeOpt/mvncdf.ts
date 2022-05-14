@@ -51,6 +51,38 @@ export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
   return { p: ptot, upAvg: upAvg, cp: cptot }
 }
 
+export function mvnPE_good(mu: number[], cov: number[][], x: number[]) {
+  let mu_c = new Module.VectorD();
+  let x_c = new Module.VectorD();
+  let cov_c = new Module.VectorD();
+  let mvn: any = undefined;
+  let p_est = -1;
+  try {
+    let n = mu.length;
+    for (let i = 0; i < n; ++i) {
+      mu_c.push_back(mu[i])
+      x_c.push_back(x[i])
+      for (let j = 0; j < n; ++j) {
+        cov_c.push_back(cov[i][j])
+      }
+    }
+
+    mvn = new Module.MVNHandle(n, x_c, mu_c, cov_c);
+    p_est = mvn.value
+  }
+  finally {
+    // HAHAHA explicit memory management in my javascript
+    mu_c.delete();
+    x_c.delete();
+    cov_c.delete();
+    if (mvn) mvn.delete();
+  }
+
+  const { upAvg } = gaussianPE(mu[0], cov[0][0], x[0])
+  return { p: p_est, upAvg: upAvg, cp: 1 }
+}
+
+
 export function debugMVN() {
   console.log('begin');
   let m = new Module.VectorD();
