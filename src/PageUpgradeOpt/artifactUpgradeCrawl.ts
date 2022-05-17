@@ -1,24 +1,29 @@
-import { QueryArtifact, QueryResult } from "./artifactQuery"
-import { SubstatKey, allSubstats, IArtifact, MainStatKey } from "../Types/artifact"
+import { QueryResult } from "./artifactQuery"
+import { SubstatKey, allSubstats } from "../Types/artifact"
 import Artifact from "../Data/Artifacts/Artifact"
 import { range } from "../Util/Util"
 import { quadrinomial } from "../Util/MathUtil"
 
 // Cartesian product of arrays
-const cartesian = (...a) => a.reduce((a, b) => a.flatMap(d => b.map(e => [d, e].flat())));
+const cartesian = (...a: any[][]): any[][] => a.reduce((a, b) => a.flatMap(d => b.map(e => [d, e].flat())));
 
+// Manually cached multinomial distribution.
+// Example: sigma([2, 3, 0, 0], 5)
+//   gives the probability (n1=2, n2=3, n3=0, n4=0) given N=5 total rolls. (uniform distribution is assumed for the four bins)
+// `sigr` and `sig_arr` constitute a near perfect hash of all combinations for N=1 to N=5.
+// This function has undefined behavior for N > 5 and N = 0
 const sig_arr = [270 / 1024, 80 / 1024, 0, 12 / 256, 8 / 256, 120 / 1024, 0, 60 / 1024, 4 / 256, 60 / 1024, 4 / 256, 30 / 1024, 24 / 256, 160 / 1024, 1 / 64, 1 / 64, 24 / 256, 1 / 64, 12 / 256, 0, 6 / 256, 2 / 16, 6 / 256, 0, 81 / 256, 16 / 256, 0, 27 / 64, 12 / 64, 0, 1 / 16, 1 / 16, 12 / 64, 1 / 16, 6 / 64, 3 / 4, 2 / 4, 243 / 1024, 32 / 1024, 0, 108 / 256, 32 / 256, 0, 9 / 64, 6 / 64, 48 / 256, 0, 24 / 256, 3 / 64, 5 / 1024, 3 / 64, 5 / 1024, 0, 405 / 1024, 80 / 1024, 0, 54 / 256, 90 / 1024, 40 / 1024, 0, 1 / 256, 1 / 256, 40 / 1024, 1 / 256, 20 / 1024, 9 / 16, 4 / 16, 0, 1 / 4, 1 / 4, 0, 1 / 4, 27 / 64, 8 / 64, 0, 6 / 16, 4 / 16, 10 / 1024, 0, 10 / 1024, 2 / 16, 0, 0, 0, 15 / 1024, 10 / 1024, 1 / 1024, 1 / 1024, 0, 1 / 1024]
 const sigr = [35, 64, 70, 21, 33, 45, 12, 0, 53, 76, 48, 86]
-function sigma(ss: number[], n: number) {
+function sigma(ss: number[], N: number) {
   const ssum = ss.reduce((a, b) => a + b);
-  if ((ss.length > 4) || ssum > n) return 0
-  if ((ss.length == 4) && (ssum != n)) return 0
-  if (ss.length == 3) ss = [...ss, n - ssum]
+  if ((ss.length > 4) || ssum > N) return 0
+  if ((ss.length == 4) && (ssum != N)) return 0
+  if (ss.length == 3) ss = [...ss, N - ssum]
   ss.sort().reverse();
 
   // t = 12
   // offset = -14
-  let v = 13 * n + ss.length - 14 + 16 * ss[0]
+  let v = 13 * N + ss.length - 14 + 16 * ss[0]
   if (ss.length > 1) v += 4 * ss[1]
   const x = v % 12
   const y = Math.trunc(v / 12) // integer divide
@@ -45,11 +50,9 @@ export function crawlUpgrades(n: number, fn?: (n1234: number[], p: number) => vo
 }
 
 export function allUpgradeValues(upOpt: QueryResult) {
-  // TODO: Fixed rarity 5*
+  // TODO: Include non-5* artifacts
   let scale = (key: SubstatKey) => key.endsWith('_') ? Artifact.maxSubstatValues(key, 5) / 1000 : Artifact.maxSubstatValues(key, 5) / 10
-
   const base = upOpt.statsBase
-  const f = upOpt.evalFn
 
   let results: WeightedPoint[] = []
   crawlUpgrades(upOpt.rollsLeft, (ns, p) => {
@@ -59,7 +62,6 @@ export function allUpgradeValues(upOpt: QueryResult) {
       return [NaN]
     })
 
-    // Cartesian product
     const allValues: number[][] = cartesian(...vals)
     allValues.forEach(upVals => {
       let stats = { ...base }
@@ -74,7 +76,7 @@ export function allUpgradeValues(upOpt: QueryResult) {
         let p_val = (4 ** -ni) * quadrinomial(ni, val - 7 * ni)
         p_upVals *= p_val
       }
-      results.push({ v: f(stats).map(n => n.v), p: p * p_upVals })
+      results.push({ v: upOpt.evalFn(stats).map(n => n.v), p: p * p_upVals })
     })
   })
 

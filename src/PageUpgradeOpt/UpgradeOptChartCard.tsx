@@ -1,4 +1,4 @@
-import { IconButton, Button, CardContent, Grid, Box } from '@mui/material';
+import { Button, CardContent, Grid, Box } from '@mui/material';
 import React, { useEffect, useState, useContext, useMemo } from 'react';
 import { DatabaseContext } from '../Database/Database';
 import { DataContext } from '../DataContext';
@@ -24,6 +24,7 @@ import { uiInput as input } from '../Formula';
 import ArtifactCardPico from '../Components/Artifact/ArtifactCardPico'
 import { allSlotKeys, SlotKey } from '../Types/consts';
 import { ICachedArtifact } from '../Types/artifact';
+import { gaussPDF } from '../Util/MathUtil'
 
 type Data = {
   upgradeOpt: QueryResult,
@@ -41,6 +42,7 @@ type ChartData = {
   expInc?: number,
 }
 
+// linspace with non-inclusive endpoint.
 function linspace(lower = 0, upper = 1, steps = 50): number[] {
   var arr: number[] = [];
   var step = (upper - lower) / steps;
@@ -69,10 +71,10 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
     allSlotKeys.map(k => [k, database._getArt(data.get(input.art[k].id).value ?? "")]),
     [data, database]) as Array<[SlotKey, ICachedArtifact | undefined]>;
 
-  const gauss = (x: number) => upgradeOpt.distr.gmm.reduce((pv, { phi: p, mu, sig2 }) =>
-    pv + (sig2 > 0 ? p * Math.exp(-(mu - x) * (mu - x) / sig2 / 2) / Math.sqrt(2 * Math.PI * sig2) : 0), 0)
-  const gaussConstrained = (x: number) => upgradeOpt.distr.gmm.reduce((pv, { phi, mu, sig2, cp }) =>
-    pv + (sig2 > 0 ? phi * cp * Math.exp(-(mu - x) * (mu - x) / sig2 / 2) / Math.sqrt(2 * Math.PI * sig2) : 0), 0)
+  const gauss = (x: number) => upgradeOpt.distr.gmm.reduce(
+    (pv, { phi, mu, sig2 }) => pv + phi * gaussPDF(x, mu, sig2), 0)
+  const gaussConstrained = (x: number) => upgradeOpt.distr.gmm.reduce(
+    (pv, { phi, cp, mu, sig2 }) => pv + cp * phi * gaussPDF(x, mu, sig2), 0)
   const thresh = upgradeOpt.thresholds;
   const thr0 = thresh[0];
   const perc = (x: number) => 100 * (x - thr0) / thr0;
@@ -97,22 +99,22 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
       deltasConstrained[mu] = (deltasConstrained[mu] ?? 0) + phi * cp
     }
   })
-  Object.entries(deltas).forEach(([mu, p]) => dataEst.push({ x: perc(parseFloat(mu)), est: p * nbins / (maax - miin) }))
-  Object.entries(deltasConstrained).forEach(([mu, p]) => dataEst.push({ x: perc(parseFloat(mu)), estCons: p * nbins / (maax - miin) }))
+  Object.entries(deltas).forEach(([mu, p]) => dataEst.push({ x: perc(parseFloat(mu)), est: p * nbins / (maax - miin), estCons: deltasConstrained[mu] * nbins / (maax - miin) }))
 
   dataEst.sort((a, b) => a.x - b.x)
   let xpercent = (thr0 - miin) / (maax - miin)
 
   const [trueData, setTrueData] = useState<ChartData[]>([]);
   const [trueP, setTrueP] = useState(-1);
-  const [trueD, setTrueD] = useState(-1);
+  const [trueE, setTrueE] = useState(-1);
 
   useEffect(() => {
-    // when `calcExacts` is pressed, we should sink/swim this artifact to its proper spot. Or not b/c people only really need a fuzzy ordering anyways.
+    // When `calcExacts` is pressed, we may want to sink/swim this artifact to its proper spot.
+    // Or not b/c people only really need a fuzzy ordering anyways.
     if (!calcExacts) return;
     const exactData = allUpgradeValues(upgradeOpt)
     let true_p = 0
-    let true_d = 0
+    let true_e = 0
 
     let bins = new Array(nbins).fill(0)
     let binsConstrained = new Array(nbins).fill(0)
@@ -126,15 +128,15 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
         binsConstrained[whichBin] += p
         if (v[0] > thr0) {
           true_p += p
-          true_d += p * (v[0] - thr0)
+          true_e += p * (v[0] - thr0)
         }
       }
     })
-    if (true_p > 0) true_d = true_d / true_p
+    if (true_p > 0) true_e = true_e / true_p
 
     let dataExact: ChartData[] = bins.map((dens, ix) => ({ x: perc(miin + ix * binstep), exact: dens / binstep, exactCons: binsConstrained[ix] / binstep }))
     setTrueP(true_p)
-    setTrueD(true_d)
+    setTrueE(true_e)
     setTrueData(dataExact)
   }, [calcExacts]);
 
@@ -145,26 +147,21 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
     }
   }
 
+  // if trueP/E have been calculated, otherwise use upgradeOpt's estimate
   const reportP = (trueP >= 0) ? trueP : upgradeOpt.prob
-  const reportD = (trueD >= 0) ? trueD : upgradeOpt.upAvg
+  const reportD = (trueE >= 0) ? trueE : upgradeOpt.upAvg
   let chartData = dataEst.concat(trueData)
 
-  const CustomTooltip = ({
-    active,
-    payload,
-    label,
-  }: TooltipProps<string, string>) => {
-    if (active) {
-      return (
-        <div className="custom-tooltip">
-          <p className="label"></p>
-          <p className="desc">prob. upgrade{trueP >= 0 ? '' : ' (est.)'}: {(100 * reportP).toFixed(1)}%</p>
-          <p className="desc">average increase{trueD >= 0 ? '' : ' (est.)'}: {reportD <= 0 ? "" : "+"}{(100 * reportD / thr0).toFixed(1)}%</p>
-        </div>
-      )
-    }
-
-    return null;
+  const CustomTooltip = ({ active, payload, label, }: TooltipProps<string, string>) => {
+    if (!active) return null;
+    // I kinda want the [average increase] to only appear when hovering the white dot.
+    return (
+      <div className="custom-tooltip">
+        <p className="label"></p>
+        <p className="desc">prob. upgrade{trueP >= 0 ? '' : ' (est.)'}: {(100 * reportP).toFixed(1)}%</p>
+        <p className="desc">average increase{trueE >= 0 ? '' : ' (est.)'}: {reportD <= 0 ? "" : "+"}{(100 * reportD / thr0).toFixed(1)}%</p>
+      </div>
+    )
   };
 
   return <CardLight>

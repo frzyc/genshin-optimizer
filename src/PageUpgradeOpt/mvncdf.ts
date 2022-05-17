@@ -20,6 +20,7 @@ export function gaussianPE(mean: number, variance: number, x: number) {
   return { p: p, upAvg: mean - x + Math.sqrt(variance) * phi / p }
 }
 
+// From a multivariate Gaussian mean & variance, get P(x > mu) and E[x0 | x > mu]
 export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
   // TODO: an implementation without using the independence assumption
   let ptot = 1
@@ -40,7 +41,7 @@ export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
   // Naive 1st moment of truncated distribution: assume it's relatively stationary w.r.t. the
   //  constraints. If the constraints greatly affects the moment, then its associated
   //  conditional probability should also be small. Therefore in conjunction with the summation
-  //  method in `gmmNd()`, the overall approximation should be fairly good, even if the  individual
+  //  method in `gmmNd()`, the overall approximation should be fairly good, even if the individual
   //  upAvg terms may be very bad.
   // Appears to work well in practice.
   //
