@@ -10,7 +10,8 @@ import {
   Grid,
   Link,
   Skeleton,
-  Typography
+  Typography,
+  Pagination
 } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
@@ -33,17 +34,14 @@ import useCharacterReducer, { characterReducerAction } from '../ReactHooks/useCh
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useDBState from '../ReactHooks/useDBState';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
-import { ICachedArtifact, SubstatKey } from '../Types/artifact';
-// import { BuildSetting } from '../Types/Build';
 import { buildSettingsReducer, initialBuildSettings } from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting';
 import { allSlotKeys, CharacterKey } from '../Types/consts';
 import { clamp, objPathValue } from '../Util/Util';
 import OptimizationTargetSelector from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector';
 import { dynamicData } from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/foreground';
-import { QueryArtifact, QueryBuild, querySetup, evalArtifact, QueryResult } from './artifactQuery'
-import Artifact from "../Data/Artifacts/Artifact";
+import { Query, QueryArtifact, QueryBuild, querySetup, evalArtifact, QueryResult, toQueryArtifact, cmpQ } from './artifactQuery'
 import ArtifactCard from "../PageArtifact/ArtifactCard";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
 import { HitModeToggle, ReactionToggle } from '../Components/HitModeEditor';
 import ArtifactSetConditional from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Components/ArtifactSetConditional';
@@ -85,8 +83,6 @@ export default function UpgradeOptDisplay() {
     else setBuildSettings({ characterKey: "" })
   }, [setBuildSettings, database])
 
-  const { t } = useTranslation(["artifact", "ui"]);
-
   const setCharacter = useCharSelectionCallback()
   const characterDispatch = useCharacterReducer(characterKey)
   const character = useCharacter(characterKey)
@@ -102,14 +98,18 @@ export default function UpgradeOptDisplay() {
     characterDispatch && characterDispatch({ buildSettings: buildSettingsReducer(buildSettings, action) }), [characterDispatch, buildSettings])
 
   const [pageIdex, setpageIdex] = useState(0)
+  const invScrollRef = useRef<HTMLDivElement>(null)
+  const { t } = useTranslation(["artifact", "ui"]);
 
   const [artifactUpgradeOpts, setArtifactUpgradeOpts] = useState([] as QueryResult[])
+  const [qs2, setQuery] = useState(undefined as Query | undefined)
+  let querySaved = qs2
 
-  const maxNumArtifactsToDisplay = 5;
+  const artifactsToDisplayPerPage = 5;
   const { artifactsToShow: artifactsToShow, numPages, currentPageIndex, minObj0, maxObj0 } = useMemo(() => {
-    const numPages = Math.ceil(artifactUpgradeOpts.length / maxNumArtifactsToDisplay)
+    const numPages = Math.ceil(artifactUpgradeOpts.length / artifactsToDisplayPerPage)
     const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
-    const toShow = artifactUpgradeOpts.slice(currentPageIndex * maxNumArtifactsToDisplay, (currentPageIndex + 1) * maxNumArtifactsToDisplay)
+    const toShow = artifactUpgradeOpts.slice(currentPageIndex * artifactsToDisplayPerPage, (currentPageIndex + 1) * artifactsToDisplayPerPage)
     const thr = toShow.length > 0 ? toShow[0].thresholds[0] : 0
 
     return {
@@ -117,13 +117,60 @@ export default function UpgradeOptDisplay() {
       minObj0: toShow.reduce((a, b) => Math.min(b.distr.lower, a), thr),
       maxObj0: toShow.reduce((a, b) => Math.max(b.distr.upper, a), thr)
     }
-  }, [artifactUpgradeOpts, pageIdex])
+  }, [artifactUpgradeOpts, artifactsToDisplayPerPage, pageIdex])
+
+  //for pagination
+  const setPage = useCallback(
+    (e, value) => {
+      invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
+      let start = (currentPageIndex + 1) * artifactsToDisplayPerPage
+      let end = value * artifactsToDisplayPerPage
+      let zz = upgradeOptExpandSink(artifactUpgradeOpts, start, end)
+      setArtifactUpgradeOpts(zz)
+      setpageIdex(value - 1);
+    },
+    [setpageIdex, setArtifactUpgradeOpts, invScrollRef, currentPageIndex, artifactsToDisplayPerPage, artifactUpgradeOpts, upgradeOptExpandSink],
+  )
 
   //select a new character Key
   const selectCharacter = useCallback((cKey = "") => {
     if (characterKey === cKey) return
     setcharacterKey(cKey)
   }, [setcharacterKey, characterKey])
+
+  // Because upgradeOpt is a two-stage estimation method, we want to expand (slow-estimate) our artifacts lazily as they are needed.
+  // Lazy method means we need to take care to never 'lift' any artifacts past the current page, since that may cause a user to miss artifacts
+  //  that are lifted in the middle of an expansion. Increase lookahead to mitigate this issue.
+  const lookahead = 5
+  function upgradeOptExpandSink(upOpt: QueryResult[], start: number, expandTo: number) {
+    if (querySaved === undefined) return upOpt
+    const queryArts: QueryArtifact[] = database._getArts()
+      .filter(art => art.rarity == 5)
+      .map(art => toQueryArtifact(art, 20))
+
+    let qaLookup: Dict<string, QueryArtifact> = {};
+    queryArts.forEach(art => qaLookup[art.id] = art)
+
+    const fixedList = upOpt.slice(0, start)
+    let arr = upOpt.slice(start)
+
+    let i = 0
+    const end = Math.min(expandTo - start + lookahead, arr.length);
+    do {
+      for (; i < end; i++) {
+        let arti = qaLookup[arr[i].id]
+        if (arti) arr[i] = evalArtifact(querySaved, arti, true);
+      }
+
+      // sort on only bottom half to prevent lifting
+      arr.sort(cmpQ)
+      for (i = 0; i < end; i++) {
+        if (arr[i].evalMode == 'fast') break
+      }
+    } while (i < end)
+
+    return [...fixedList, ...arr]
+  }
 
   const generateBuilds = useCallback(async () => {
     debugMVN();
@@ -138,54 +185,22 @@ export default function UpgradeOptDisplay() {
     if (!optimizationTargetNode) return
 
     const valueFilter: { value: NumNode, minimum: number }[] = Object.entries(statFilters).map(([key, value]) => {
-      if (key.endsWith("_")) value = value / 100 // TODO: Conversion
+      if (key.endsWith("_")) value = value / 100
       return { value: input.total[key], minimum: value }
     }).filter(x => x.value && x.minimum > -Infinity)
 
-    const queryArts: QueryArtifact[] = database._getArts().filter(art => art.rarity == 5).map(art => {
-      const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, 20)  // 5* only
-      const buildData = {
-        id: art.id, slot: art.slotKey, level: art.level, rarity: art.rarity,
-        values: {
-          [art.setKey]: 1,
-          [art.mainStatKey]: art.mainStatKey.endsWith('_') ? mainStatVal / 100 : mainStatVal,
-          ...Object.fromEntries(art.substats.map(substat =>
-            [substat.key, substat.key.endsWith('_') ? substat.accurateValue / 100 : substat.accurateValue]))
-        },
-        subs: art.substats.reduce((sub: SubstatKey[], x) => {
-          if (x.key != "") sub.push(x.key)
-          return sub
-        }, [])
-      }
-      delete buildData.values[""]
-      return buildData
-    })
+    const queryArts: QueryArtifact[] = database._getArts()
+      .filter(art => art.rarity == 5)
+      .map(art => toQueryArtifact(art, 20))
 
     let curEquip: QueryBuild = Object.assign({}, ...allSlotKeys.map(slotKey => {
       const art = database._getArt(data?.get(input.art[slotKey].id).value ?? "")
       if (!art) return { [slotKey]: undefined }
-
-      const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, art.level)
-      const buildData: QueryArtifact = {
-        id: art.id, slot: slotKey, level: art.level, rarity: art.rarity,
-        values: {
-          [art.setKey]: 1,
-          [art.mainStatKey]: art.mainStatKey.endsWith('_') ? mainStatVal / 100 : mainStatVal,
-          ...Object.fromEntries(art.substats.map(substat =>
-            [substat.key, substat.key.endsWith('_') ? substat.accurateValue / 100 : substat.accurateValue]))
-        },
-        subs: art.substats.reduce((sub: SubstatKey[], x) => {
-          if (x.key != "") sub.push(x.key)
-          return sub
-        }, [])
-      }
-      delete buildData.values[""]
-      return { [slotKey]: buildData }
+      return { [slotKey]: toQueryArtifact(art) }
     }))
     let qaLookup: Dict<string, QueryArtifact> = {};
     queryArts.forEach(art => qaLookup[art.id] = art)
 
-    // CTRL-F: asdfasdf
     let nodes = [optimizationTargetNode, ...valueFilter.map(x => x.value)]
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     const query = querySetup(nodes, valueFilter.map(x => x.minimum), curEquip, data);
@@ -193,20 +208,11 @@ export default function UpgradeOptDisplay() {
     artUpOpt = artUpOpt.sort((a, b) => b.prob * b.upAvg - a.prob * a.upAvg)
 
     // Re-sort & slow eval
-    const kk = 10;  // expand the top `kk` artifacts; repeat until we're reasonably confident top 5(page lim) are in correct positions
-    let i = 0;
-    do {
-      for (; i < kk; i++) {
-        let arti = qaLookup[artUpOpt[i].id]
-        if (arti) artUpOpt[i] = evalArtifact(query, arti, true);
-      }
-      artUpOpt = artUpOpt.sort((a, b) => b.prob * b.upAvg - a.prob * a.upAvg)
-      for (i = 0; i < kk; i++) {
-        if (artUpOpt[i].evalMode == 'fast') break;
-      }
-    } while (i < kk);
+    querySaved = query
+    artUpOpt = upgradeOptExpandSink(artUpOpt, 0, 5)
 
     setArtifactUpgradeOpts(artUpOpt);
+    setQuery(query);
   }, [characterKey, database, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, buildSettingsDispatch, setFilters, statFilters])
 
   const characterName = characterSheet?.name ?? "Character Name"
@@ -295,9 +301,19 @@ export default function UpgradeOptDisplay() {
                 >Calc Upgrade Priority</Button>
               </ButtonGroup>
 
+              {numPages > 1 && <CardDark ><CardContent>
+                <Grid container>
+                  <Grid item flexGrow={1}>
+                    <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
+                  </Grid>
+                  <Grid item>
+                    <ShowingArt numShowing={artifactsToShow.length} total={artifactUpgradeOpts.length} t={t} />
+                  </Grid>
+                </Grid>
+              </CardContent></CardDark>}
+
               <Box display="flex" flexDirection="column" gap={1} my={1}>
                 {noArtifact && <Alert severity="info" variant="filled">Looks like you haven't added any artifacts yet. If you want, there are <Link color="warning.main" component={RouterLink} to="/scanner">automatic scanners</Link> that can speed up the import process!</Alert>}
-
                 <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
                   {artifactsToShow.map(art =>
                     <Grid container key={art.id + 'asdfsf'} gap={1} wrap="nowrap">
@@ -310,16 +326,16 @@ export default function UpgradeOptDisplay() {
                     </Grid>
                   )}
                 </Suspense>
-                {/* {numPages > 1 && <CardDark ><CardContent>
+                {numPages > 1 && <CardDark ><CardContent>
                   <Grid container>
                     <Grid item flexGrow={1}>
                       <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
                     </Grid>
                     <Grid item>
-                      <ShowingArt count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
+                      <ShowingArt numShowing={artifactsToShow.length} total={artifactUpgradeOpts.length} t={t} />
                     </Grid>
                   </Grid>
-                </CardContent></CardDark>} */}
+                </CardContent></CardDark>}
               </Box >
 
             </Grid>
@@ -330,4 +346,12 @@ export default function UpgradeOptDisplay() {
 
     </DataContext.Provider>}
   </Box>
+}
+
+function ShowingArt({ numShowing, total, t }) {
+  return <Typography color="text.secondary">
+    <Trans t={t} i18nKey="showingNum" count={numShowing} value={total} >
+      Showing <b>{{ count: numShowing }}</b> out of {{ value: total }} Artifacts
+    </Trans>
+  </Typography>
 }

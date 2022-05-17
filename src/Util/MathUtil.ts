@@ -46,3 +46,12 @@ export function erf(x: number) {
 
   return sign * y;
 }
+
+// Gaussian probability distribution. mean & variance can be omitted for standard Gaussian.
+export function gaussPDF(x: number, mu?: number, sig2?: number) {
+  if (mu === undefined) mu = 0
+  if (sig2 === undefined) sig2 = 1
+
+  if (sig2 <= 0) return 0
+  return Math.exp(-(mu - x) * (mu - x) / sig2 / 2) / Math.sqrt(2 * Math.PI * sig2)
+}
