@@ -17,7 +17,7 @@ function FooterContent() {
         <Trans t={t} i18nKey="ui:rightsDisclaimer">Genshin Optimizer is not affiliated with or endorsed by miHoYo.</Trans>
       </Typography>
       <Typography variant="caption" sx={{ color: grey[200], textAlign: "right" }} >
-        <Trans t={t} i18nKey="ui:appVersion" values={{ version: packageInfo.version }}>Genshin Optimizer Version: <code>{{ version: packageInfo.version }}</code></Trans>
+        <Trans t={t} i18nKey="ui:appVersion" values={{ version: packageInfo.version }}>Genshin Optimizer Version: <code>{{ version: packageInfo.version } as any}</code></Trans>
       </Typography>
     </Box>
   </AppBar >

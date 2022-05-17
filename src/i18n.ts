@@ -1,4 +1,4 @@
-import i18n from 'i18next';
+import i18n, { InitOptions } from 'i18next';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
@@ -50,6 +50,8 @@ i18n
     // Specify the default namespace.
     defaultNS: "ui",
 
+    allowObjectInHTMLChildren: true,
+
     // Only use the language code, skipping the region code.
     // For example, en-US becomes simply en.
     load: 'languageOnly',
@@ -67,6 +69,6 @@ i18n
     interpolation: {
       escapeValue: false,//react does interlopation already
     }
-  });
+  } as InitOptions);
 
 export default i18n;

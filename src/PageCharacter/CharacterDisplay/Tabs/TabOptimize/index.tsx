@@ -334,7 +334,7 @@ export default function TabBuild() {
             {/* main stat selector */}
             <MainStatSelectionCard
               mainStatKeys={mainStatKeys}
-              onChangeMainStatKey={onChangeMainStatKey}
+              onChangeMainStatKey={onChangeMainStatKey as any}
               disabled={generatingBuilds}
             />
           </CardLight>
