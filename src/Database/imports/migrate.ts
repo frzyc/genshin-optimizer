@@ -10,7 +10,12 @@ import { getDBVersion, setDBVersion } from "../utils"
 
 export const currentDBVersion = 15
 
-/** old storage -> internal new (prevalidated) storage */
+/**
+ * Migrate parsed data in `storage` in-place to a parsed data of the latest supported DB version.
+ *
+ * **CAUTION**
+ * Throw an error if `storage` uses unsupported DB version.
+ */
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
   if (version === 0) {

@@ -18,12 +18,21 @@ export function importGOOD(data: IGOOD, oldDatabase: ArtCharDatabase): ImportRes
 function importGOOD1(data: IGOOD, oldDatabase: ArtCharDatabase): ImportResult | undefined {
   const result = parseImport(data)
   if (!result) return
+  // TODO
+  // Handle the error thrown when the `storage` uses unsupported DB version.
   migrate(result.storage)
+  // TODO
+  // The `merging` part can be separated into another step in DB migration.
+  // We can let the user select finer grain migration options, such as
+  // weapon-only migration.
   merge(result, oldDatabase)
   return result
 }
 
-/** DB file -> internal (old) storage */
+/**
+ * Parse GOODv1 data format into a parsed data of the version specified in `data`.
+ * If the DB version is not specified, the default version is used.
+ */
 function parseImport(data: IGOOD): ImportResult | undefined {
   const source = data.source, storage = new SandboxStorage()
   const result: ImportResult = { type: "GOOD", storage, source }
