@@ -46,5 +46,6 @@
       "usingNum_one": "Using from <1>{{count}}</1> character",
       "usingNum_other": "Using from <1>{{count}}</1> characters"
     }
-  }
+  },
+  "characterName": "Character Name"
 }

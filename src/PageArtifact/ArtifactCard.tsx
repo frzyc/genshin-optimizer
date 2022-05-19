@@ -1,12 +1,12 @@
 import { faBan, faChartLine, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Lock, LockOpen } from '@mui/icons-material';
+import { BusinessCenter, Lock, LockOpen } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardActions, CardContent, Chip, Grid, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
 import React, { lazy, Suspense, useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
 import CardLight from '../Components/Card/CardLight';
-import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton';
+import CharacterAutocomplete from '../Components/Character/CharacterAutocomplete';
 import LocationName from '../Components/Character/LocationName';
 import ColorText from '../Components/ColoredText';
 import InfoTooltip from '../Components/InfoTooltip';
@@ -19,7 +19,7 @@ import { DatabaseContext } from '../Database/Database';
 import KeyMap, { cacheValueString } from '../KeyMap';
 import useArtifact from '../ReactHooks/useArtifact';
 import usePromise from '../ReactHooks/usePromise';
-import { allSubstats, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
+import { allSubstatKeys, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
 import { CharacterKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
 import PercentBadge from './PercentBadge';
@@ -35,10 +35,10 @@ type Data = {
   probabilityFilter?: Dict<SubstatKey, number>
   disableEditSetSlot?: boolean
 }
-const allSubstatFilter = new Set(allSubstats)
+const allSubstatFilter = new Set(allSubstatKeys)
 
 export default function ArtifactCard({ artifactId, artifactObj, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter, disableEditSetSlot = false }: Data): JSX.Element | null {
-  const { t } = useTranslation(["artifact"]);
+  const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
   const sheet = usePromise(ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
@@ -64,7 +64,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onDelete, mainSt
   const setDescTooltip = sheet && setEffects && <InfoTooltip title={
     <span>
       {Object.keys(setEffects).map(setNumKey => <span key={setNumKey}>
-        <Typography variant="h6"><SqBadge color="success">{t(`setEffectNum`, { setNum: setNumKey })}</SqBadge></Typography>
+        <Typography variant="h6"><SqBadge color="success">{t(`artifact:setEffectNum`, { setNum: setNumKey })}</SqBadge></Typography>
         <Typography>{sheet.setEffectDesc(setNumKey as any)}</Typography>
       </span>)}
     </span>
@@ -115,11 +115,11 @@ export default function ArtifactCard({ artifactId, artifactObj, onDelete, mainSt
       <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", pt: 1, pb: 0 }}>
         {substats.map((stat: ICachedSubstat) => <SubstatDisplay key={stat.key} stat={stat} effFilter={effFilter} rarity={rarity} />)}
         <Box sx={{ display: "flex", my: 1 }}>
-          <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.curSubEff`}</Typography>
+          <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`artifact:editor.curSubEff`}</Typography>
           <PercentBadge value={currentEfficiency} max={900} valid={artifactValid} />
         </Box>
         {currentEfficiency !== maxEfficiency && <Box sx={{ display: "flex", mb: 1 }}>
-          <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.maxSubEff`}</Typography>
+          <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`artifact:editor.maxSubEff`}</Typography>
           <PercentBadge value={maxEfficiency} max={900} valid={artifactValid} />
         </Box>}
         <Box flexGrow={1} />
@@ -129,12 +129,12 @@ export default function ArtifactCard({ artifactId, artifactObj, onDelete, mainSt
       <CardActions>
         <Grid container sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
           {editable ?
-            <CharacterDropdownButton size="small" inventory value={location} onChange={equipOnChar} /> : <LocationName location={location} />}
+            <CharacterAutocomplete sx={{ flexGrow: 1 }} size="small" showDefault defaultIcon={<BusinessCenter />} defaultText={t("ui:inventory")} value={location} onChange={equipOnChar} /> : <LocationName location={location} />}
           {editable && <ButtonGroup>
             <Button color="info" onClick={onShowEditor} size="small">
               <FontAwesomeIcon icon={faEdit} className="fa-fw" />
             </Button>
-            <Tooltip title={<Typography>{t`excludeArtifactTip`}</Typography>} placement="top" arrow>
+            <Tooltip title={<Typography>{t`artifact:excludeArtifactTip`}</Typography>} placement="top" arrow>
               <Button onClick={() => database.updateArt({ exclude: !exclude }, id)} color={exclude ? "error" : "success"} size="small">
                 <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
               </Button>

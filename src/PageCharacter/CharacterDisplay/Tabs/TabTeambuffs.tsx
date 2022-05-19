@@ -4,7 +4,7 @@ import { Box } from "@mui/system";
 import React, { useContext, useMemo } from 'react';
 import CardLight from "../../../Components/Card/CardLight";
 import CharacterCard from "../../../Components/Character/CharacterCard";
-import CharacterDropdownButton from "../../../Components/Character/CharacterDropdownButton";
+import CharacterAutocomplete from "../../../Components/Character/CharacterAutocomplete";
 import DocumentDisplay from "../../../Components/DocumentDisplay";
 import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
 import InfoTooltip from "../../../Components/InfoTooltip";
@@ -92,9 +92,14 @@ function TeammateDisplay({ index }: { index: number }) {
   }
   return <CardLight>
     <CardContent>
-      <CharacterDropdownButton fullWidth value={characterKey}
+      <CharacterAutocomplete fullWidth value={characterKey}
         onChange={charKey => activeCharacterDispatch({ type: "team", index, charKey })}
-        filter={(_, ck) => ck !== activeCharacterKey && !active.team.includes(ck)} unSelectText={`Teammate ${index + 1}`} unSelectIcon={<PersonAdd />} />
+        disable={ck => ck === activeCharacterKey || active.team.includes(ck)}
+        labelText={`Teammate ${index + 1}`}
+        defaultText={"None"}
+        defaultIcon={<PersonAdd />}
+        showDefault
+      />
     </CardContent>
     {teamMateDataContext && <DataContext.Provider value={teamMateDataContext}>
       <CharacterCard characterKey={characterKey}

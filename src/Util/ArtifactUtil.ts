@@ -2,7 +2,7 @@ import Artifact from "../Data/Artifacts/Artifact"
 import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet"
 import artifactSubstatRollCorrection from '../Data/Artifacts/artifact_sub_rolls_correction_gen.json'
 import KeyMap, { cacheValueString } from "../KeyMap"
-import { allSubstats, IArtifact, ISubstat, SubstatKey } from "../Types/artifact"
+import { allSubstatKeys, IArtifact, ISubstat, SubstatKey } from "../Types/artifact"
 import { allArtifactSets } from "../Types/consts"
 import { getRandomElementFromArray, getRandomIntInclusive } from "./Util"
 
@@ -23,7 +23,7 @@ export async function randomizeArtifact(base: Partial<IArtifact> = {}): Promise<
   const RollStat = (substat: SubstatKey): number =>
     getRandomElementFromArray(Artifact.getSubstatRollData(substat, rarity))
 
-  let remainingSubstats = allSubstats.filter(key => mainStatKey !== key)
+  let remainingSubstats = allSubstatKeys.filter(key => mainStatKey !== key)
   for (const substat of substats.slice(0, numOfInitialSubstats)) {
     substat.key = getRandomElementFromArray(remainingSubstats)
     substat.value = RollStat(substat.key)

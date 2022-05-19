@@ -10,7 +10,7 @@ import TextButton from '../../../Components/TextButton';
 import Artifact from '../../../Data/Artifacts/Artifact';
 import artifactSubstatRollCorrection from '../../../Data/Artifacts/artifact_sub_rolls_correction_gen.json';
 import KeyMap, { cacheValueString } from '../../../KeyMap';
-import { allSubstats, ICachedArtifact, ISubstat } from '../../../Types/artifact';
+import { allSubstatKeys, ICachedArtifact, ISubstat } from '../../../Types/artifact';
 import { clamp } from '../../../Util/Util';
 import PercentBadge from '../../PercentBadge';
 export default function SubstatInput({ index, artifact, setSubstat }: { index: number, artifact: ICachedArtifact | undefined, setSubstat: (index: number, substat: ISubstat) => void, }) {
@@ -46,7 +46,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
           color={key ? "success" : "primary"}
           sx={{ whiteSpace: "nowrap" }}>
           {key && <MenuItem onClick={() => setSubstat(index, { key: "", value: 0 })}>{t`editor.substat.noSubstat`}</MenuItem>}
-          {allSubstats.filter(key => mainStatKey !== key)
+          {allSubstatKeys.filter(key => mainStatKey !== key)
             .map(k => <MenuItem key={k} selected={key === k} disabled={key === k} onClick={() => setSubstat(index, { key: k, value: 0 })} >
               <ListItemIcon>{StatIcon[k]}</ListItemIcon>
               <ListItemText>{KeyMap.getArtStr(k)}</ListItemText>

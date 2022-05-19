@@ -1,46 +1,30 @@
 import { faBan, faChartLine, faTrash, faUserShield, faUserSlash } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { BusinessCenter, Lock, LockOpen, Replay } from "@mui/icons-material"
-import { Button, CardContent, Divider, Grid, ListItemIcon, ListItemText, MenuItem, Skeleton, ToggleButton, Typography } from "@mui/material"
-import { Box } from "@mui/system"
+import { Lock, LockOpen, Replay } from "@mui/icons-material"
+import { Autocomplete, Button, CardContent, Grid, Skeleton, TextField, ToggleButton, Typography, useTheme } from "@mui/material"
 import { Suspense, useContext, useMemo } from "react"
 import { Trans, useTranslation } from "react-i18next"
+import { ArtifactMainStatAutocomplete, ArtifactSetAutocomplete, ArtifactSubstatAutocomplete } from "../Components/Artifact/ArtifactAutocomplete"
 import ArtifactLevelSlider from "../Components/Artifact/ArtifactLevelSlider"
-import ArtifactMainStatMultipleSelectChip from "../Components/Artifact/ArtifactMainStatMultipleSelectChip"
-import ArtifactSetMultipleSelectChip from "../Components/Artifact/ArtifactSetMultipleSelectChip"
-import ArtifactSubStatMultipleSelectChip from "../Components/Artifact/ArtifactSubStatMultipleSelectChip"
 import { artifactSlotIcon } from "../Components/Artifact/SlotNameWIthIcon"
 import CardDark from "../Components/Card/CardDark"
-import { CharacterMenuItemArray } from "../Components/Character/CharacterDropdownButton"
-import DropdownButton from "../Components/DropdownMenu/DropdownButton"
+import CharacterAutocomplete from "../Components/Character/CharacterAutocomplete"
 import SolidToggleButtonGroup from "../Components/SolidToggleButtonGroup"
 import SqBadge from "../Components/SqBadge"
 import { Stars } from "../Components/StarDisplay"
-import CharacterSheet from "../Data/Characters/CharacterSheet"
 import { DatabaseContext } from "../Database/Database"
 import usePromise from "../ReactHooks/usePromise"
 import { ICachedArtifact } from "../Types/artifact"
-import { allArtifactRarities, allSlotKeys, CharacterKey } from "../Types/consts"
-import { characterFilterConfigs } from "../Util/CharacterSort";
+import { allArtifactRarities, allSlotKeys } from "../Types/consts"
+import MenuItemWithImage from "../Components/MenuItemWithImage"
 import { FilterOption } from "./ArtifactSort"
 
 export default function ArtifactFilter({ filterOption, filterOptionDispatch, filterDispatch, numShowing, total, }:
   { filterOption: FilterOption, filterOptionDispatch: (any) => void, filterDispatch: (any) => void, numShowing: number, total: number }) {
-  const { t } = useTranslation(["artifact", "ui"]);
+  const { t } = useTranslation(["artifact", "ui"])
+  const theme = useTheme()
   const { artSetKeys = [], mainStatKeys = [], rarity = [], slotKeys = [], levelLow, levelHigh, substats = [],
     location = "", excluded = "" } = filterOption
-  const locationCharacterSheet = usePromise(CharacterSheet.get(location as CharacterKey), [location])
-
-  let locationDisplay
-  if (!location) locationDisplay = t("filterLocation.any")
-  else if (location === "Inventory") locationDisplay = <span><BusinessCenter /> {t("filterLocation.inventory")}</span>
-  else if (location === "Equipped") locationDisplay = <span><FontAwesomeIcon icon={faUserShield} /> {t("filterLocation.currentlyEquipped")}</span>
-  else locationDisplay = <b>{locationCharacterSheet?.nameWIthIcon}</b>
-
-  let excludedDisplay
-  if (excluded === "excluded") excludedDisplay = <span><FontAwesomeIcon icon={faBan} /> {t`exclusion.excluded`}</span>
-  else if (excluded === "included") excludedDisplay = <span><FontAwesomeIcon icon={faChartLine} /> {t`exclusion.included`}</span>
-  else excludedDisplay = t("exclusionDisplay", { value: t("exclusion.any") })
 
   return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={300} />}>
     <CardDark  >
@@ -74,37 +58,74 @@ export default function ArtifactFilter({ filterOption, filterOptionDispatch, fil
               setLow={levelLow => filterOptionDispatch({ levelLow })}
               setHigh={levelHigh => filterOptionDispatch({ levelHigh })}
               setBoth={(levelLow, levelHigh) => filterOptionDispatch({ levelLow, levelHigh })} />
-            <Box display="flex" gap={1}>
-              {/* location */}
-              <LocationDropdown dropdownProps={{ color: location ? "success" : "primary" }} title={locationDisplay} onChange={location => filterOptionDispatch({ location })} selectedCharacterKey={location} />
+            <Grid container display="flex" gap={1}>
+              <Grid item flexGrow={1}>
+                {/* location */}
+                <CharacterAutocomplete
+                  value={location}
+                  onChange={location => filterOptionDispatch({ location })}
+                  placeholderText={t("artifact:filterLocation.any")}
+                  defaultText={t("artifact:filterLocation.any")}
+                  labelText={t("artifact:filterLocation.location")}
+                  showDefault
+                  showInventory
+                  showEquipped
+                />
+              </Grid>
               {/* exclusion state */}
-              <DropdownButton fullWidth title={excludedDisplay} color={excluded ? (excluded === "included" ? "success" : "error") : "primary"}>
-                <MenuItem selected={excluded === ""} disabled={excluded === ""} onClick={() => filterOptionDispatch({ excluded: "" })}><Trans t={t} i18nKey="exclusion.any" >Any</Trans></MenuItem>
-                <MenuItem selected={excluded === "excluded"} disabled={excluded === "excluded"} onClick={() => filterOptionDispatch({ excluded: "excluded" })}>
-                  <ListItemIcon>
-                    <FontAwesomeIcon icon={faBan} />
-                  </ListItemIcon>
-                  <ListItemText>
-                    <Trans t={t} i18nKey="exclusion.excluded" >Excluded</Trans>
-                  </ListItemText>
-                </MenuItem>
-                <MenuItem selected={excluded === "included"} disabled={excluded === "included"} onClick={() => filterOptionDispatch({ excluded: "included" })}>
-                  <ListItemIcon>
-                    <FontAwesomeIcon icon={faChartLine} />
-                  </ListItemIcon>
-                  <ListItemText>
-                    <Trans t={t} i18nKey="exclusion.included" >Included</Trans>
-                  </ListItemText>
-                </MenuItem>
-              </DropdownButton>
-            </Box>
+              <Grid item flexGrow={1}>
+                <Autocomplete
+                  autoHighlight
+                  options={[{ label: "" }, { label: "excluded" }, { label: "included" }]}
+                  value={{ label: excluded }}
+                  onChange={(_, value) => filterOptionDispatch({ excluded: value ? value.label : "" })}
+                  isOptionEqualToValue={(option, value) => option.label === value.label}
+                  getOptionLabel={(option) => t(`artifact:exclusion.${option.label ? option.label : "any"}`)}
+                  renderInput={(params) => <TextField
+                    {...params}
+                    multiline
+                    label={t("artifact:exclusion.exclusion")}
+                    variant="filled"
+                    focused
+                    type="search"
+                    color={excluded ? "success" : "primary"}
+                    InputProps={{
+                      ...params.InputProps,
+                      startAdornment: excluded === "excluded"
+                        ? <FontAwesomeIcon icon={faBan} />
+                        : excluded === "included"
+                          ? <FontAwesomeIcon icon={faChartLine} />
+                          : undefined
+                    }}
+                    InputLabelProps={{ style: { color: theme.palette.text.primary } }}
+                    sx={{
+                      "& .MuiFilledInput-root.Mui-focused": { "padding-right": 0, "background-color": excluded ? theme.palette.success.main : theme.palette.primary.main },
+                      "& .MuiFilledInput-root:hover": { "background-color": excluded ? theme.palette.success.dark : theme.palette.primary.dark }
+                    }}
+                  />}
+                  renderOption={(props, option) => <MenuItemWithImage
+                    key={option.label ? option.label : "default"}
+                    image={option.label === "excluded"
+                      ? <FontAwesomeIcon icon={faBan} />
+                      : option.label === "included"
+                        ? <FontAwesomeIcon icon={faChartLine} />
+                        : undefined
+                    }
+                    text={<Trans t={t} i18nKey={`exclusion.${option.label ? option.label : "any"}`}>{option.label}</Trans>}
+                    theme={theme}
+                    isSelected={excluded === option.label}
+                    props={props}
+                  />}
+                />
+              </Grid>
+            </Grid>
           </Grid>
           {/* right */}
           <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
             {/* Artifact Set */}
-            <ArtifactSetMultipleSelectChip artSetKeys={artSetKeys} setArtSetKeys={artSetKeys => filterOptionDispatch({ artSetKeys })} />
-            <ArtifactMainStatMultipleSelectChip mainStatKeys={mainStatKeys} setMainStatKeys={mainStatKeys => filterOptionDispatch({ mainStatKeys })} />
-            <ArtifactSubStatMultipleSelectChip subStatKeys={substats} setSubStatKeys={substats => filterOptionDispatch({ substats })} />
+            <ArtifactSetAutocomplete artSetKeys={artSetKeys} setArtSetKeys={artSetKeys => filterOptionDispatch({ artSetKeys })} />
+            <ArtifactMainStatAutocomplete mainStatKeys={mainStatKeys} setMainStatKeys={mainStatKeys => filterOptionDispatch({ mainStatKeys })} />
+            <ArtifactSubstatAutocomplete substatKeys={substats} setSubstatKeys={substats => filterOptionDispatch({ substats })} />
           </Grid>
         </Grid>
       </CardContent>

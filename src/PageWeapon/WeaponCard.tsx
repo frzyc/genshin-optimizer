@@ -1,11 +1,11 @@
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Lock, LockOpen } from "@mui/icons-material"
+import { BusinessCenter, Lock, LockOpen } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, CardHeader, IconButton, Skeleton, Typography } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import Assets from "../Assets/Assets"
 import CardLight from "../Components/Card/CardLight"
-import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton'
+import CharacterAutocomplete from '../Components/Character/CharacterAutocomplete'
 import LocationName from "../Components/Character/LocationName"
 import ConditionalWrapper from "../Components/ConditionalWrapper"
 import ImgIcon from "../Components/Image/ImgIcon"
@@ -24,6 +24,7 @@ import { CharacterKey } from "../Types/consts"
 
 type WeaponCardProps = { weaponId: string, onClick?: (weaponId: string) => void, onEdit?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, canEquip?: boolean }
 export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEquip = false }: WeaponCardProps) {
+  const { t } = useTranslation("ui")
   const { database } = useContext(DatabaseContext)
   const databaseWeapon = useWeapon(weaponId)
   const weapon = databaseWeapon
@@ -85,10 +86,10 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
             </Box>
           })}
         </CardContent>
-        {/* grow to fill the 100% heigh */}
+        {/* grow to fill the 100% height */}
         <Box flexGrow={1} />
         <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between" }}>
-          {canEquip ? <CharacterDropdownButton size="small" noUnselect inventory value={location} onChange={equipOnChar} filter={filter} /> : <LocationName location={location} />}
+          {canEquip ? <CharacterAutocomplete size="small" sx={{ flexGrow: 1 }} showDefault defaultIcon={<BusinessCenter />} defaultText={t("inventory")} value={location} onChange={equipOnChar} filter={filter} /> : <LocationName location={location} />}
           <ButtonGroup>
             {!!onEdit && <Button color="info" onClick={() => onEdit(id)} >
               <FontAwesomeIcon icon={faEdit} className="fa-fw" />

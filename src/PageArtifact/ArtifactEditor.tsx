@@ -24,7 +24,7 @@ import { validateArtifact } from '../Database/imports/validate';
 import KeyMap, { cacheValueString } from '../KeyMap';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
-import { allSubstats, IArtifact, ICachedArtifact, ISubstat, MainStatKey } from '../Types/artifact';
+import { allSubstatKeys, IArtifact, ICachedArtifact, ISubstat, MainStatKey } from '../Types/artifact';
 import { allElementsWithPhy, ArtifactRarity, ArtifactSetKey, SlotKey } from '../Types/consts';
 import { randomizeArtifact } from '../Util/ArtifactUtil';
 import { clamp, deepClone } from '../Util/Util';
@@ -35,7 +35,7 @@ import UploadExplainationModal from './ArtifactEditor/Components/UploadExplainat
 import { OutstandingEntry, ProcessedEntry, processEntry, queueReducer } from './ScanningUtil';
 
 const maxProcessingCount = 3, maxProcessedCount = 16
-const allSubstatFilter = new Set(allSubstats)
+const allSubstatFilter = new Set(allSubstatKeys)
 type ResetMessage = { type: "reset" }
 type SubstatMessage = { type: "substat", index: number, substat: ISubstat }
 type OverwriteMessage = { type: "overwrite", artifact: IArtifact }

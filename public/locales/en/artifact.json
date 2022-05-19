@@ -59,7 +59,8 @@
     "title": "Substats to use in Roll Value calculation"
   },
   "filterLocation": {
-    "any": "Location: Any",
+    "location": "Location",
+    "any": "Any",
     "inventory": "Inventory",
     "currentlyEquipped": "Currently Equipped"
   },
@@ -83,6 +84,7 @@
   ],
   "exclusionDisplay": "Exclusion: {{value}}",
   "exclusion": {
+    "exclusion": "Exclusion",
     "any": "Any",
     "excluded": "Excluded",
     "included": "Included"
@@ -97,5 +99,10 @@
   "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
   "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
   "resetFilters": "Reset Filters",
-  "excludeArtifactTip": "Excluding an artifact will prevent the build generator from picking it for builds."
+  "excludeArtifactTip": "Excluding an artifact will prevent the build generator from picking it for builds.",
+  "autocompleteLabels": {
+    "set": "Artifact Sets",
+    "mainStat": "Main Stats",
+    "substat": "Sub-Stats"
+  }
 }

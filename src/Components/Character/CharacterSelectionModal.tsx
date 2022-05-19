@@ -1,6 +1,7 @@
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, Typography } from "@mui/material";
 import { useContext, useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import Assets from "../../Assets/Assets";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
@@ -16,6 +17,7 @@ import { filterFunction, sortFunction } from "../../Util/SortByFilters";
 import CardDark from "../Card/CardDark";
 import CardLight from "../Card/CardLight";
 import CloseButton from "../CloseButton";
+import CustomTextField from "../CustomTextField";
 import ImgIcon from "../Image/ImgIcon";
 import ModalWrapper from "../ModalWrapper";
 import SortByButton from "../SortByButton";
@@ -40,6 +42,7 @@ type CharacterSelectionModalProps = {
 export function CharacterSelectionModal({ show, onHide, onSelect, filter = () => true, newFirst = false }: CharacterSelectionModalProps) {
   const sortKeys = useMemo(() => newFirst ? ["new", ...defaultSortKeys] : defaultSortKeys, [newFirst])
   const { database } = useContext(DatabaseContext)
+  const { t } = useTranslation("page_character")
 
   const [sortBy, setsortBy] = useState(sortKeys[0])
   const [ascending, setascending] = useState(false)
@@ -51,31 +54,36 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
   const [favesDirty, setFavesDirty] = useForceUpdate()
   useEffect(() => database.followAnyChar(setFavesDirty), [database, setFavesDirty])
 
+  const [searchTerm, setSearchTerm] = useState("")
+
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
   const filterConfigs = useMemo(() => characterSheets && favesDirty && characterFilterConfigs(database, characterSheets), [favesDirty, database, characterSheets])
   const ownedCharacterKeyList = useMemo(() => characterSheets ? [...new Set(allCharacterKeys)].filter(cKey => filter(database._getChar(cKey), characterSheets[cKey])) : [], [database, characterSheets, filter])
   const characterKeyList = useMemo(() => (characterSheets && sortConfigs && filterConfigs) ?
     ownedCharacterKeyList
-      .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter, favorite: "yes" }, filterConfigs))
+      .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter, favorite: "yes", name: searchTerm }, filterConfigs))
       .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
       .concat(
         ownedCharacterKeyList
-          .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter, favorite: "no" }, filterConfigs))
+          .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter, favorite: "no", name: searchTerm }, filterConfigs))
           .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
       )
     : [],
-    [characterSheets, elementalFilter, weaponFilter, sortBy, ascending, sortConfigs, filterConfigs, ownedCharacterKeyList])
+    [characterSheets, elementalFilter, weaponFilter, sortBy, ascending, sortConfigs, filterConfigs, ownedCharacterKeyList, searchTerm])
 
   if (!characterSheets) return null
-  return <ModalWrapper open={show} onClose={onHide} >
+  return <ModalWrapper open={show} onClose={onHide} sx={{ "& .MuiContainer-root": { justifyContent: "normal" } }}>
     <CardDark>
       <CardContent sx={{ py: 1 }}>
         <Grid container spacing={1} >
           <Grid item>
             <WeaponToggle sx={{ height: "100%" }} onChange={setweaponFilter} value={weaponFilter} size="small" />
           </Grid>
-          <Grid item flexGrow={1}>
+          <Grid item>
             <ElementToggle sx={{ height: "100%" }} onChange={setelementalFilter} value={elementalFilter} size="small" />
+          </Grid>
+          <Grid item>
+            <CustomTextField autoFocus onChange={term => setSearchTerm(term)} label={t("characterName")} />
           </Grid>
 
           <Grid item flexGrow={1} />
