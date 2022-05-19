@@ -1,12 +1,12 @@
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Lock, LockOpen } from "@mui/icons-material"
+import { BusinessCenter, Lock, LockOpen } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, CardHeader, IconButton, Skeleton, Tooltip, Typography } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import Assets from "../Assets/Assets"
 import CardLight from "../Components/Card/CardLight"
-import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton'
+import CharacterAutocomplete from '../Components/Character/CharacterAutocomplete'
 import LocationName from "../Components/Character/LocationName"
 import ConditionalWrapper from "../Components/ConditionalWrapper"
 import ImgIcon from "../Components/Image/ImgIcon"
@@ -25,7 +25,7 @@ import { CharacterKey } from "../Types/consts"
 
 type WeaponCardProps = { weaponId: string, onClick?: (weaponId: string) => void, onEdit?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, canEquip?: boolean, extraButtons?: JSX.Element }
 export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEquip = false, extraButtons }: WeaponCardProps) {
-  const { t } = useTranslation(["page_weapon"]);
+  const { t } = useTranslation(["page_weapon", "ui"]);
   const { database } = useContext(DatabaseContext)
   const databaseWeapon = useWeapon(weaponId)
   const weapon = databaseWeapon
@@ -87,9 +87,13 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
         </CardContent>
       </ConditionalWrapper>
       <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }}>
-        {canEquip ? <CharacterDropdownButton size="small" noUnselect inventory value={location} onChange={equipOnChar} filter={filter} /> : <LocationName location={location} />}
+        {canEquip
+          ? <CharacterAutocomplete size="small" sx={{ flexGrow: 1 }}
+              showDefault defaultIcon={<BusinessCenter />} defaultText={t("inventory")}
+              value={location} onChange={equipOnChar} filter={filter} />
+          : <LocationName location={location} />}
         <ButtonGroup>
-          {!!onEdit && <Tooltip title={<Typography>{t`edit`}</Typography>} placement="top" arrow>
+          {!!onEdit && <Tooltip title={<Typography>{t`page_weapon:edit`}</Typography>} placement="top" arrow>
             <Button color="info" onClick={() => onEdit(id)} >
               <FontAwesomeIcon icon={faEdit} className="fa-fw" />
             </Button>

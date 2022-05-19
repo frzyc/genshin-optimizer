@@ -1,7 +1,7 @@
 import { faBan, faChartLine, faTrash, faUserSlash } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Lock, LockOpen, Replay } from "@mui/icons-material"
-import { Button, CardContent, Grid, Skeleton, Typography } from "@mui/material"
+import { Button, CardContent, Grid, Skeleton, Typography, useTheme } from "@mui/material"
 import { lazy, Suspense, useContext, useMemo } from "react"
 import { Trans, useTranslation } from "react-i18next"
 import CardDark from "../Components/Card/CardDark"
@@ -14,7 +14,7 @@ const ArtifactFilterDisplay = lazy(() => import('../Components/Artifact/Artifact
 
 export default function ArtifactFilter({ filterOption, filterOptionDispatch, filterDispatch, numShowing, total, }:
   { filterOption: FilterOption, filterOptionDispatch: (any) => void, filterDispatch: (any) => void, numShowing: number, total: number }) {
-  const { t } = useTranslation(["artifact", "ui"]);
+  const { t } = useTranslation(["artifact", "ui"])
 
   return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={300} />}>
     <CardDark  >

@@ -1,9 +1,10 @@
-import { Lock, LockOpen } from "@mui/icons-material"
+import { BusinessCenter, Lock, LockOpen } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardContent, CardHeader, Divider, Grid, ListItem, MenuItem, Typography } from "@mui/material"
 import { useCallback, useContext, useEffect, useMemo, useState } from "react"
+import { useTranslation } from "react-i18next"
 import CardDark from "../Components/Card/CardDark"
 import CardLight from "../Components/Card/CardLight"
-import CharacterDropdownButton from "../Components/Character/CharacterDropdownButton"
+import CharacterAutocomplete from "../Components/Character/CharacterAutocomplete"
 import CloseButton from "../Components/CloseButton"
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from "../Components/CustomNumberInput"
 import DocumentDisplay from "../Components/DocumentDisplay"
@@ -37,6 +38,7 @@ export default function WeaponEditor({
   onClose,
   extraButtons
 }: WeaponStatsEditorCardProps) {
+  const { t } = useTranslation("ui")
   const { data } = useContext(DataContext)
 
   const { database } = useContext(DatabaseContext)
@@ -160,7 +162,7 @@ export default function WeaponEditor({
     {footer && id && <CardContent sx={{ py: 1 }}>
       <Grid container>
         <Grid item flexGrow={1}>
-          <CharacterDropdownButton noUnselect inventory value={location} onChange={equipOnChar} filter={filter} />
+          <CharacterAutocomplete showDefault defaultIcon={<BusinessCenter />} defaultText={t("inventory")} value={location} onChange={equipOnChar} filter={filter} />
         </Grid>
         {!!onClose && <Grid item><CloseButton large onClick={onClose} /></Grid>}
       </Grid>

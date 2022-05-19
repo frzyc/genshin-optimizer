@@ -105,6 +105,7 @@
     "dendro": "Dendro DMG Absorption",
     "geo": "Geo DMG Absorption"
   },
+  "1set": "1-Set",
   "2set": "2-Set",
   "4set": "4-Set",
   "activationStam": "Activation Stamina Consumption",

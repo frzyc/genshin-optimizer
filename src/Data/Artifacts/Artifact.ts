@@ -1,5 +1,5 @@
 import KeyMap, { cacheValueString } from '../../KeyMap';
-import { allSubstats, ICachedArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
+import { allSubstatKeys, ICachedArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
 import { allRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../../Types/consts';
 import { clampPercent, objectKeyMap } from '../../Util/Util';
 import { ArtifactSlotsData, ArtifactStarsData } from './ArtifactData';
@@ -42,7 +42,7 @@ export default class Artifact {
   }
 
   static maxSubstatRollEfficiency = objectKeyMap(allRarities,
-    rarity => 100 * Math.max(...allSubstats.map(substat =>
+    rarity => 100 * Math.max(...allSubstatKeys.map(substat =>
       Artifact.maxSubstatValues(substat, rarity) /
       Artifact.maxSubstatValues(substat, maxStar))))
 

@@ -5,8 +5,8 @@ import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgr
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
+import { ArtifactSetSingleAutocomplete } from '../Components/Artifact/ArtifactAutocomplete';
 import ArtifactRarityDropdown from '../Components/Artifact/ArtifactRarityDropdown';
-import ArtifactSetDropdown from '../Components/Artifact/ArtifactSetDropdown';
 import ArtifactSlotDropdown from '../Components/Artifact/ArtifactSlotDropdown';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
@@ -24,7 +24,7 @@ import { validateArtifact } from '../Database/imports/validate';
 import KeyMap, { cacheValueString } from '../KeyMap';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
-import { allSubstats, IArtifact, ICachedArtifact, ISubstat, MainStatKey } from '../Types/artifact';
+import { allSubstatKeys, IArtifact, ICachedArtifact, ISubstat, MainStatKey } from '../Types/artifact';
 import { allElementsWithPhy, ArtifactRarity, ArtifactSetKey, SlotKey } from '../Types/consts';
 import { randomizeArtifact } from '../Util/ArtifactUtil';
 import { clamp, deepClone } from '../Util/Util';
@@ -35,7 +35,7 @@ import UploadExplainationModal from './ArtifactEditor/Components/UploadExplainat
 import { OutstandingEntry, ProcessedEntry, processEntry, queueReducer } from './ScanningUtil';
 
 const maxProcessingCount = 3, maxProcessedCount = 16
-const allSubstatFilter = new Set(allSubstats)
+const allSubstatFilter = new Set(allSubstatKeys)
 type ResetMessage = { type: "reset" }
 type SubstatMessage = { type: "substat", index: number, substat: ISubstat }
 type OverwriteMessage = { type: "overwrite", artifact: IArtifact }
@@ -243,7 +243,14 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             {/* set & rarity */}
             <ButtonGroup sx={{ display: "flex", mb: 1 }}>
               {/* Artifact Set */}
-              <ArtifactSetDropdown selectedSetKey={artifact?.setKey} onChange={setKey => update({ setKey: setKey as ArtifactSetKey })} sx={{ flexGrow: 1 }} disabled={disableEditSetSlot} />
+              <ArtifactSetSingleAutocomplete
+                size="small"
+                disableClearable
+                artSetKey={artifact?.setKey ?? ""}
+                setArtSetKey={setKey => update({ setKey: setKey as ArtifactSetKey })}
+                sx={{ flexGrow: 1 }}
+                disabled={disableEditSetSlot}
+              />
               {/* rarity dropdown */}
               <ArtifactRarityDropdown rarity={artifact ? rarity : undefined} onChange={r => update({ rarity: r })} filter={r => !!sheet?.rarity?.includes?.(r)} disabled={disableEditSetSlot || !sheet} />
             </ButtonGroup>

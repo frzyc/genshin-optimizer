@@ -4,7 +4,7 @@ import { Box } from "@mui/system";
 import React, { useContext, useMemo } from 'react';
 import CardLight from "../../../Components/Card/CardLight";
 import CharacterCard from "../../../Components/Character/CharacterCard";
-import CharacterDropdownButton from "../../../Components/Character/CharacterDropdownButton";
+import CharacterAutocomplete from "../../../Components/Character/CharacterAutocomplete";
 import DocumentDisplay from "../../../Components/DocumentDisplay";
 import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
 import InfoTooltip from "../../../Components/InfoTooltip";
@@ -18,6 +18,7 @@ import useCharSelectionCallback from "../../../ReactHooks/useCharSelectionCallba
 import usePromise from "../../../ReactHooks/usePromise";
 import { ElementKey } from "../../../Types/consts";
 import { objPathValue, range } from "../../../Util/Util";
+import { useTranslation } from "react-i18next";
 
 export default function TabTeambuffs() {
   return <Box display="flex" flexDirection="column" gap={1} alignItems="stretch">
@@ -75,6 +76,7 @@ function ResonanceDisplay() {
 }
 function TeammateDisplay({ index }: { index: number }) {
   const dataContext = useContext(DataContext)
+  const { t } = useTranslation("page_character")
   const { character: active, teamData, characterDispatch: activeCharacterDispatch } = dataContext
   const activeCharacterKey = active.key
   const characterKey = active.team[index]
@@ -92,9 +94,14 @@ function TeammateDisplay({ index }: { index: number }) {
   }
   return <CardLight>
     <CardContent>
-      <CharacterDropdownButton fullWidth value={characterKey}
+      <CharacterAutocomplete fullWidth value={characterKey}
         onChange={charKey => activeCharacterDispatch({ type: "team", index, charKey })}
-        filter={(_, ck) => ck !== activeCharacterKey && !active.team.includes(ck)} unSelectText={`Teammate ${index + 1}`} unSelectIcon={<PersonAdd />} />
+        disable={ck => ck === activeCharacterKey || active.team.includes(ck)}
+        labelText={t("teammate", { count: index + 1 })}
+        defaultText={t("none")}
+        defaultIcon={<PersonAdd />}
+        showDefault
+      />
     </CardContent>
     {teamMateDataContext && <DataContext.Provider value={teamMateDataContext}>
       <CharacterCard characterKey={characterKey}
