@@ -6,7 +6,7 @@ import { SubstatKey, allSubstats, ICachedArtifact } from "../Types/artifact"
 import { SlotKey, Rarity } from '../Types/consts';
 import Artifact from "../Data/Artifacts/Artifact"
 import { crawlUpgrades } from "./artifactUpgradeCrawl"
-import { gaussianPE, mvnPE_good } from "./mvncdf"
+import { gaussianPE, mvnPE_good, mvnPE_bad } from "./mvncdf"
 
 type GaussianMixture = {
   gmm: {
@@ -170,6 +170,8 @@ function gmmNd({ rollsLeft, stats, subs, thresholds, scale, objectiveEval }: Int
     let mu = obj.map(o => o.v)
     let cov = obj.map(o1 => obj.map(o2 => o1.ks.reduce((pv, cv, k) => pv + o1.ks[k] * o2.ks[k] * ns[k], 0)))
     const res = mvnPE_good(mu, cov, thresholds)
+    if (!isFinite(res.upAvg))
+      console.log(res, mu, cov, thresholds)
     lpe.push({ l: p, ...res })
 
     // Feels a little bad to discard everything but the first axis, but can change later

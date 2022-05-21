@@ -93,9 +93,9 @@ $(BLDPATH)/%.F90.bc: $(SRCPATH)/%.F90
 $(BLDPATH)/%.f.bc: $(SRCPATH)/%.f
 	$(FC) $(FCFLAGS) $(MODDIRS) -J $(dir $@) -o $@ -c $<
 $(BLDPATH)/%.c.bc: $(SRCPATH)/%.c
-	$(CC) $(CCFLAGS) -o $@ $< 
+	$(CC) $(CCFLAGS) -o $@ $<
 $(BLDPATH)/%.cpp.bc: $(SRCPATH)/%.cpp
-	$(CC) $(CCFLAGS) -o $@ $< 
+	$(CC) $(CCFLAGS) -o $@ $<
 
 # Archive objects
 $(ARCHIVE): $(CBCS) $(FBCS)
@@ -104,4 +104,4 @@ $(ARCHIVE): $(CBCS) $(FBCS)
 
 # Link and wrap in Javascript
 $(BIN): $(ARCHIVE) $(LIBS)
-	$(WLD) $(EMSFLAGS) $(WLDFLAGS) $(EXPORTFLAGS) -o $@ -Wl,--whole-archive $^ 
+	$(WLD) $(EMSFLAGS) $(WLDFLAGS) $(EXPORTFLAGS) -o $@ -Wl,--whole-archive $^

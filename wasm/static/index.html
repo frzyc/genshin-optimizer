@@ -10,27 +10,61 @@
   <script>
     var Module = {
       onRuntimeInitialized: function () {
-        var mvn = new Module.MVNHandle(1);
-        mvn.pushX(0);
-        mvn.pushMu(0);
-        mvn.pushCov(1);
+        // var mvn = new Module.MVNHandle(1);
+        // mvn.pushX(0);
+        // mvn.pushMu(0);
+        // mvn.pushCov(1);
 
-        mvn.compute();
-        console.log('this', mvn.p)
+        // mvn.compute();
+        // console.log('this', mvn.p)
 
-        var mvn2 = new Module.MVNHandle(2);
+        // var mvn2 = new Module.MVNHandle(2);
 
-        let mu = [1, 0]
-        let x = [1.2, 1]
-        let cov = [[10, -5], [-5, 20]]
-        mu.forEach(m => mvn2.pushMu(m))
-        x.forEach(x => mvn2.pushX(x))
-        cov.forEach(a => a.forEach(c => mvn2.pushCov(c)))
+        // let mu = [1, 0]
+        // let x = [1.2, 1]
+        // let cov = [[10, -5], [-5, 20]]
+        // mu.forEach(m => mvn2.pushMu(m))
+        // x.forEach(x => mvn2.pushX(x))
+        // cov.forEach(a => a.forEach(c => mvn2.pushCov(c)))
 
-        mvn2.compute()
-        console.log('that', mvn2.p)
-        console.log('cp', mvn2.cp)
-        console.log('eup', mvn2.Eup)
+        // mvn2.compute()
+        // console.log('that', mvn2.p)
+        // console.log('cp', mvn2.cp)
+        // console.log('eup', mvn2.Eup)
+
+        var mvn3 = new Module.MVNHandle(2);
+        mu = [.61, .6]
+        x = [0, 0]
+        cov = [[1, 1], [1, 1]]
+        mu.forEach(m => mvn3.pushMu(m))
+        x.forEach(x => mvn3.pushX(x))
+        cov.forEach(a => a.forEach(c => mvn3.pushCov(c)))
+        mvn3.compute()
+        console.log('degen-p', mvn3.p)
+        console.log('degen-cp', mvn3.cp)
+        console.log('degen-eup', mvn3.Eup)
+        mvn3.delete()
+
+        var m4 = new Module.MVNHandle(2);
+        x = [5819.636920930524, 1900]
+        mu = [6011.93578146624, 1964.732432540255]
+        cov = [[293.88214534317297, 96.04224051764906], [96.04224051764906, 31.38711252049267]]
+        mu.forEach(m => m4.pushMu(m))
+        x.forEach(x => m4.pushX(x))
+        cov.forEach(a => a.forEach(c => m4.pushCov(c)))
+        m4.compute()
+        console.log('degen2', m4.p, m4.cp, m4.Eup)
+
+        var m5 = new Module.MVNHandle(2);
+        mu = [.6, .6]
+        x = [0, 0]
+        cov = [[1, 1], [1, 1]]
+        mu.forEach(m => m5.pushMu(m))
+        x.forEach(x => m5.pushX(x))
+        cov.forEach(a => a.forEach(c => m5.pushCov(c)))
+        m5.compute()
+        console.log('degen3', m5.p, m5.cp, m5.Eup)
+        m5.delete()
       }
     }
   </script>
