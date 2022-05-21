@@ -228,7 +228,7 @@ export class UIData {
     switch (operation) {
       case "add": case "mul":
         if (operands.length === 1) {
-          fStr`${{ operands }}`
+          return operands[0]
         }
     }
     let formula: { display: Displayable, dependencies: Displayable[] }
@@ -240,7 +240,7 @@ export class UIData {
       case "add": infixSymbol = '+'; formula = fStr`${{ operands, infixSymbol }}`; break
       case "mul": infixSymbol = '*'; formula = fStr`${{ operands, infixSymbol }}`; break
       case "sum_frac":
-        formula = fStr`${{ operands: [operands[0]] }} / ( ${{ operands, infixSymbol: '+' }} )`;
+        formula = fStr`${{ operands: [operands[0]], infixSymbol: '/' }} / ( ${{ operands, infixSymbol: '+' }} )`;
         infixSymbol = "/"
         break
       case "res": {
