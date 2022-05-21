@@ -85,7 +85,7 @@ export default function UseEquipped({ useEquippedArts, buildSettingsDispatch, di
             <NewItem onAdd={addPrio} list={equipmentPriority} />
             <Button color="error" onClick={resetPrio} startIcon={<Replay />}><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.clearList">Clear List</Trans></Button>
           </Box>
-          {!!numUseEquippedChar && <SqBadge color="success"><Typography><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.usingNum" count={numUnlisted}>Using artifacts from <strong>{{ count: numUnlisted } as any}</strong> unlisted characters</Trans></Typography></SqBadge>}
+          {!!numUseEquippedChar && <SqBadge color="success"><Typography><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.usingNum" count={numUnlisted}>Using artifacts from <strong>{{ count: numUnlisted }}</strong> unlisted characters</Trans></Typography></SqBadge>}
         </Box>
       </CardContent>
     </CardDark ></ModalWrapper>
@@ -93,7 +93,7 @@ export default function UseEquipped({ useEquippedArts, buildSettingsDispatch, di
       <Button sx={{ flexGrow: 1 }} onClick={() => buildSettingsDispatch({ useEquippedArts: !useEquippedArts })} disabled={disabled} startIcon={useEquippedArts ? <CheckBox /> : <CheckBoxOutlineBlank />} color={useEquippedArts ? "success" : "secondary"}>
         <Box>
           <span><Trans t={t} i18nKey="tabOptimize.useEquipped.title">Use Equipped Artifacts</Trans></span>
-          {useEquippedArts && <SqBadge><Trans t={t} i18nKey="tabOptimize.useEquipped.usingNum" count={numUseEquippedChar}>Using from <strong>{{ count: numUseEquippedChar } as any}</strong> characters</Trans></SqBadge>}
+          {useEquippedArts && <SqBadge><Trans t={t} i18nKey="tabOptimize.useEquipped.usingNum" count={numUseEquippedChar}>Using from <strong>{{ count: numUseEquippedChar }}</strong> characters</Trans></SqBadge>}
         </Box>
       </Button>
       {useEquippedArts && <Button sx={{ flexShrink: 1 }} color="info" onClick={onOpen}><Settings /></Button>}

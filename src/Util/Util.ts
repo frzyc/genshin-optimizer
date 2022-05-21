@@ -141,3 +141,6 @@ export function range(from: number, to: number): number[] {
 export function assertUnreachable(value: never): never {
   throw new Error(`Should not reach this with value ${value}`)
 }
+
+/** useful for typesafe upcasting */
+export const identity = <T>(t: T) => t

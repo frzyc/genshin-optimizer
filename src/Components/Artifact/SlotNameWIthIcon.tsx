@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next"
 import { faCirclet, faFlower, faGoblet, faPlume, faSands } from '../faIcons'
 import { SlotKey } from "../../Types/consts"
 import { SizeProp } from "@fortawesome/fontawesome-svg-core"
+import { identity as id } from "../../Util/Util"
 
 export const SlotIconSVG: StrictDict<SlotKey, any> = {
   flower: faFlower,
@@ -19,5 +20,5 @@ export function artifactSlotIcon(slotKey: SlotKey, size?: SizeProp) {
 export default function SlotNameWithIcon({ slotKey }: { slotKey: SlotKey }) {
   const { t } = useTranslation("artifact")
   const icon = artifactSlotIcon(slotKey)
-  return <span>{icon} {t(`slotName.${slotKey}`)}</span>
+  return <span>{icon} {id<string>(t(`slotName.${slotKey}`))}</span>
 }

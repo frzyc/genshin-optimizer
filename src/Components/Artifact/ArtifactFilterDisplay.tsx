@@ -20,6 +20,7 @@ import usePromise from "../../ReactHooks/usePromise"
 import { allArtifactRarities, allSlotKeys, CharacterKey } from "../../Types/consts"
 import { characterFilterConfigs } from "../../Util/CharacterSort"
 import { FilterOption } from "../../PageArtifact/ArtifactSort"
+import { identity as id } from "../../Util/Util"
 
 export default function ArtifactFilterDisplay({ filterOption, filterOptionDispatch, }: { filterOption: FilterOption, filterOptionDispatch: (any) => void }) {
   const { t } = useTranslation(["artifact", "ui"]);
@@ -30,13 +31,13 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
 
   let locationDisplay
   if (!location) locationDisplay = t("filterLocation.any")
-  else if (location === "Inventory") locationDisplay = <span><BusinessCenter /> {t("filterLocation.inventory")}</span>
-  else if (location === "Equipped") locationDisplay = <span><FontAwesomeIcon icon={faUserShield} /> {t("filterLocation.currentlyEquipped")}</span>
+  else if (location === "Inventory") locationDisplay = <span><BusinessCenter /> {id<string>(t("filterLocation.inventory"))}</span>
+  else if (location === "Equipped") locationDisplay = <span><FontAwesomeIcon icon={faUserShield} /> {id<string>(t("filterLocation.currentlyEquipped"))}</span>
   else locationDisplay = <b>{locationCharacterSheet?.nameWIthIcon}</b>
 
   let excludedDisplay
-  if (excluded === "excluded") excludedDisplay = <span><FontAwesomeIcon icon={faBan} /> {t`exclusion.excluded`}</span>
-  else if (excluded === "included") excludedDisplay = <span><FontAwesomeIcon icon={faChartLine} /> {t`exclusion.included`}</span>
+  if (excluded === "excluded") excludedDisplay = <span><FontAwesomeIcon icon={faBan} /> {id<string>(t`exclusion.excluded`)}</span>
+  else if (excluded === "included") excludedDisplay = <span><FontAwesomeIcon icon={faChartLine} /> {id<string>(t`exclusion.included`)}</span>
   else excludedDisplay = t("exclusionDisplay", { value: t("exclusion.any") })
   return <Grid container spacing={1} >
     {/* left */}
