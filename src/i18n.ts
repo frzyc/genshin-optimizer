@@ -50,7 +50,6 @@ i18n
     // Specify the default namespace.
     defaultNS: "ui",
 
-
     // Only use the language code, skipping the region code.
     // For example, en-US becomes simply en.
     load: 'languageOnly',

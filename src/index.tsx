@@ -7,7 +7,6 @@ import ReactGA from 'react-ga';
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-
 ReactGA.initialize(process.env.REACT_APP_GA_TRACKINGID as any, {
   // debug: process.env.NODE_ENV === "development"
 });
