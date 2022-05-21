@@ -53,54 +53,42 @@ export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
 }
 
 export function mvnPE_good(mu: number[], cov: number[][], x: number[]) {
-  let mu_c = new Module.VectorD();
-  let x_c = new Module.VectorD();
-  let cov_c = new Module.VectorD();
-  let mvn: any = undefined;
-  let p_est = -1;
+  let mvn: any = new Module.MVNHandle(mu.length);
   try {
-    let n = mu.length;
-    for (let i = 0; i < n; ++i) {
-      mu_c.push_back(mu[i])
-      x_c.push_back(x[i])
-      for (let j = 0; j < n; ++j) {
-        cov_c.push_back(cov[i][j])
-      }
-    }
+    x.forEach(xi => mvn.pushX(xi));
+    mu.forEach(mui => mvn.pushMu(mui));
+    cov.forEach(arr => arr.forEach(c => mvn.pushCov(c)));
 
-    mvn = new Module.MVNHandle(n, x_c, mu_c, cov_c);
-    p_est = mvn.value
+    mvn.compute()
+    return { p: mvn.p, upAvg: mvn.Eup, cp: mvn.cp }
   }
   finally {
     // HAHAHA explicit memory management in my javascript
-    mu_c.delete();
-    x_c.delete();
-    cov_c.delete();
-    if (mvn) mvn.delete();
+    mvn.delete();
   }
-
-  const { upAvg } = gaussianPE(mu[0], cov[0][0], x[0])
-  return { p: p_est, upAvg: upAvg, cp: 1 }
 }
 
 
 export function debugMVN() {
-  console.log('begin');
-  let m = new Module.VectorD();
-  m.push_back(0);
-  let x = new Module.VectorD();
-  x.push_back(0);
-  let c = new Module.VectorD();
-  c.push_back(1);
-  var mvn = new Module.MVNHandle(1, x, m, c);
-  console.log('this', mvn.value)
+  var mvn = new Module.MVNHandle(1);
+  mvn.pushX(0);
+  mvn.pushMu(0);
+  mvn.pushCov(1);
 
-  m.push_back(0);
-  x.push_back(.1);
+  mvn.compute();
+  console.log('this', mvn.p)
+  mvn.delete()
 
-  c.push_back(-.5);
-  c.push_back(-.5);
-  c.push_back(2);
-  var mvn2 = new Module.MVNHandle(2, x, m, c);
-  console.log('that', mvn2.value)
+  var mvn2 = new Module.MVNHandle(2);
+  let mu = [1, 0]
+  let x = [1.2, 1]
+  let cov = [[10, -5], [-5, 20]]
+  mu.forEach(m => mvn2.pushMu(m))
+  x.forEach(x => mvn2.pushX(x))
+  cov.forEach(a => a.forEach(c => mvn2.pushCov(c)))
+  mvn2.compute()
+  console.log('that', mvn2.p)
+  console.log('cp', mvn2.cp)
+  console.log('eup', mvn2.Eup)
+  mvn2.delete()
 }

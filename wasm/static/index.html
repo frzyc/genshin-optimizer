@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Fortran WASM Test</title>
+</head>
+
+<body>
+  <script>
+    var Module = {
+      onRuntimeInitialized: function () {
+        var mvn = new Module.MVNHandle(1);
+        mvn.pushX(0);
+        mvn.pushMu(0);
+        mvn.pushCov(1);
+
+        mvn.compute();
+        console.log('this', mvn.p)
+
+        var mvn2 = new Module.MVNHandle(2);
+
+        let mu = [1, 0]
+        let x = [1.2, 1]
+        let cov = [[10, -5], [-5, 20]]
+        mu.forEach(m => mvn2.pushMu(m))
+        x.forEach(x => mvn2.pushX(x))
+        cov.forEach(a => a.forEach(c => mvn2.pushCov(c)))
+
+        mvn2.compute()
+        console.log('that', mvn2.p)
+        console.log('cp', mvn2.cp)
+        console.log('eup', mvn2.Eup)
+      }
+    }
+  </script>
+  <script src="assembly.js"></script>
+  Open the developer console to see program output.
+</body>
+
+</html>
