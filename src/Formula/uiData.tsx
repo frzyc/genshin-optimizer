@@ -5,7 +5,6 @@ import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from 
 import { allOperations } from "./optimization"
 import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput, Variant } from "./type"
 
-const shouldWrap = true
 export interface NodeDisplay<V = number> {
   /** Leave this here to make sure one can use `crawlObject` on hierarchy of `NodeDisplay` */
   operation: true
@@ -122,8 +121,6 @@ export class UIData {
         delete result.assignment
         result.dependencies = new Set()
       }
-      if (result.pivot || !result.formula)
-        result.mayNeedWrapping = false
     }
     createDisplay(result)
 
@@ -209,7 +206,6 @@ export class UIData {
       info: {},
       value, pivot: false,
       empty: false,
-      mayNeedWrapping: false,
       dependencies: new Set(),
     }
   }
@@ -229,34 +225,39 @@ export class UIData {
         if (!operands.length)
           return variant ? { ...this._constant(identity), info: { variant } } : this._constant(identity)
     }
-
+    switch (operation) {
+      case "add": case "mul":
+        if (operands.length === 1) {
+          fStr`${{ operands }}`
+        }
+    }
     let formula: { display: Displayable, dependencies: Displayable[] }
-    let mayNeedWrapping = false
+    let infixSymbol: InfixSymbol | undefined;
+
     switch (operation) {
       case "max": formula = fStr`Max( ${{ operands }} )`; break
       case "min": formula = fStr`Min( ${{ operands }} )`; break
-      case "add": formula = fStr`${{ operands, separator: ' + ' }}`; break
-      case "mul": formula = fStr`${{ operands, separator: ' * ', shouldWrap }}`; break
-      case "sum_frac": formula = fStr`${{ operands: [operands[0]], shouldWrap }} / ( ${{ operands, separator: ' + ' }} )`; break
+      case "add": infixSymbol = '+'; formula = fStr`${{ operands, infixSymbol }}`; break
+      case "mul": infixSymbol = '*'; formula = fStr`${{ operands, infixSymbol }}`; break
+      case "sum_frac":
+        formula = fStr`${{ operands: [operands[0]] }} / ( ${{ operands, infixSymbol: '+' }} )`;
+        infixSymbol = "/"
+        break
       case "res": {
         const base = operands[0].value
         if (base < 0) {
-          formula = fStr`100% - ${{ operands, shouldWrap }} / 2`
-          mayNeedWrapping = true
-        }
-        else if (base >= 0.75) formula = fStr`100% / ( ${{ operands, shouldWrap }} * 4 + 100% )`
-        else {
-          formula = fStr`100% - ${{ operands, shouldWrap }}`
-          mayNeedWrapping = true
+          formula = fStr`100% - ${{ operands, infixSymbol: '/' }} / 2`
+          infixSymbol = "-"
+        } else if (base >= 0.75) {
+          formula = fStr`100% / ( ${{ operands, infixSymbol: '*' }} * 4 + 100% )`
+          infixSymbol = '/'
+        } else {
+          formula = fStr`100% - ${{ operands }}`
+          infixSymbol = "-"
         }
         break
       }
       default: assertUnreachable(operation)
-    }
-    switch (operation) {
-      case "add": case "mul":
-        if (operands.length <= 1) mayNeedWrapping = operands[0]?.mayNeedWrapping ?? true
-        else if (operation === "add") mayNeedWrapping = true
     }
 
     const value = allOperations[operation](operands.map(x => x.value))
@@ -268,13 +269,13 @@ export class UIData {
       info: { variant },
       formula: formula.display,
       empty: operands.every(x => x.empty),
-      value, mayNeedWrapping,
+      value, infixSymbol,
       pivot: false, dependencies,
     }
     return result
   }
 }
-type ContextNodeDisplayList = { operands: ContextNodeDisplay[], separator?: string, shouldWrap?: boolean }
+type ContextNodeDisplayList = { operands: ContextNodeDisplay[], infixSymbol?: InfixSymbol }
 function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]): { display: Displayable, dependencies: Displayable[] } {
   const dependencies = new Set<Displayable>()
   const predisplay: Displayable[] = []
@@ -284,26 +285,45 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
 
     const key = list[i]
     if (key) {
-      const { operands, shouldWrap, separator = ", " } = key
+      const { operands, infixSymbol } = key
       operands.forEach((item, i, array) => {
         let itemFormula: Displayable
         if (!item.pivot && item.formula) itemFormula = item.formula
         else itemFormula = createFormulaComponent(item)
 
-        if (shouldWrap && item.mayNeedWrapping && array.length > 1) {
+        if (shouldWrap(infixSymbol, item.infixSymbol)) {
           predisplay.push("( ")
           predisplay.push(itemFormula)
           predisplay.push(" )")
         } else {
           predisplay.push(itemFormula)
         }
-        if (i + 1 < array.length) predisplay.push(separator)
+        if (i + 1 < array.length) predisplay.push(` ${infixSymbol || ","} `)
         item.dependencies.forEach(x => dependencies.add(x))
       })
     }
   })
   return { display: mergeFormulaComponents(predisplay), dependencies: [...dependencies] }
 }
+function shouldWrap(parentOp?: InfixSymbol, nodeOp?: InfixSymbol) {
+  if (!parentOp || !nodeOp) {
+    return false;
+  }
+  const precedence = {
+    '-': 0, '+': 0,
+    '/': 1, '*': 1
+  }
+  if (precedence[parentOp] < precedence[nodeOp]) {
+    return false;
+  }
+  const isAssociative = (op: InfixSymbol) =>
+    op === '+' || op === '*'
+  if (parentOp === nodeOp && isAssociative(parentOp)) {
+    return false;
+  }
+  return true;
+}
+
 function mergeVariants<V>(operands: ContextNodeDisplay<V>[]): Info["variant"] {
   const unique = new Set(operands.map(x => x.info.variant))
   if (unique.size > 1) unique.delete(undefined)
@@ -381,6 +401,8 @@ function mergeInfo(base: Info, override: Info): Info {
   return result
 }
 
+type InfixSymbol = '+' | '/' | '-' | '*';
+
 interface ContextNodeDisplay<V = number> {
   info: Info
 
@@ -391,8 +413,8 @@ interface ContextNodeDisplay<V = number> {
 
   dependencies: Set<Displayable>
 
-  mayNeedWrapping: boolean // Whether this formula should be parenthesized when it is a part of multiplications/divisions and subtractions' subtrahends
-
+  // Whether this is a binary operation with an infix symbol
+  infixSymbol?: InfixSymbol
   // Don't set these manually outside of `UIData.computeNode`
   name?: Displayable
   valueDisplay?: Displayable
@@ -405,20 +427,18 @@ const illformed: ContextNodeDisplay = {
   value: NaN, pivot: true,
   empty: false,
   dependencies: new Set(),
-  mayNeedWrapping: false
 }
 const illformedStr: ContextNodeDisplay<string | undefined> = {
   info: {},
   value: undefined, pivot: true,
   empty: false,
   dependencies: new Set(),
-  mayNeedWrapping: false
 }
 function makeEmpty(emptyValue: number): ContextNodeDisplay<number>
 function makeEmpty(emptyValue: string | undefined): ContextNodeDisplay<string | undefined>
 function makeEmpty(emptyValue: number | string | undefined): ContextNodeDisplay<number | string | undefined>
 function makeEmpty(emptyValue: number | string | undefined): ContextNodeDisplay<number | string | undefined> {
   return {
-    info: {}, value: emptyValue, pivot: false, empty: true, dependencies: new Set(), mayNeedWrapping: false
+    info: {}, value: emptyValue, pivot: false, empty: true, dependencies: new Set()
   }
 }
