@@ -6,3 +6,4 @@ docker run --rm -v `pwd`:/project stargate01/f90wasm bash -c 'cd /project && VER
 
 cp `pwd`/bin/assembly.js `pwd`/../wasmpack/
 cp `pwd`/bin/assembly.wasm `pwd`/../public/static/js/
+echo "export {Module};" >> `pwd`/../wasmpack/assembly.js
