@@ -1,25 +1,16 @@
-import { faBan, faChartLine, faUserShield } from "@fortawesome/free-solid-svg-icons"
+import { faBan, faChartLine } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { BusinessCenter, Replay } from "@mui/icons-material"
-import { Divider, Grid, ListItemIcon, ListItemText, MenuItem, ToggleButton } from "@mui/material"
-import { Box } from "@mui/system"
-import { useContext, useMemo } from "react"
+import { Autocomplete, Grid, TextField, ToggleButton, useTheme } from "@mui/material"
 import { Trans, useTranslation } from "react-i18next"
-import ArtifactLevelSlider from "./ArtifactLevelSlider"
-import ArtifactMainStatMultipleSelectChip from "./ArtifactMainStatMultipleSelectChip"
-import ArtifactSetMultipleSelectChip from "./ArtifactSetMultipleSelectChip"
-import ArtifactSubStatMultipleSelectChip from "./ArtifactSubStatMultipleSelectChip"
-import { artifactSlotIcon } from "./SlotNameWIthIcon"
-import { CharacterMenuItemArray } from "../Character/CharacterDropdownButton"
-import DropdownButton from "../DropdownMenu/DropdownButton"
+import { FilterOption } from "../../PageArtifact/ArtifactSort"
+import { allArtifactRarities, allSlotKeys } from "../../Types/consts"
+import CharacterAutocomplete from "../Character/CharacterAutocomplete"
+import MenuItemWithImage from "../MenuItemWithImage"
 import SolidToggleButtonGroup from "../SolidToggleButtonGroup"
 import { Stars } from "../StarDisplay"
-import CharacterSheet from "../../Data/Characters/CharacterSheet"
-import { DatabaseContext } from "../../Database/Database"
-import usePromise from "../../ReactHooks/usePromise"
-import { allArtifactRarities, allSlotKeys, CharacterKey } from "../../Types/consts"
-import { characterFilterConfigs } from "../../Util/CharacterSort"
-import { FilterOption } from "../../PageArtifact/ArtifactSort"
+import { ArtifactMainStatAutocomplete, ArtifactSetAutocomplete, ArtifactSubstatAutocomplete } from "./ArtifactAutocomplete"
+import ArtifactLevelSlider from "./ArtifactLevelSlider"
+import { artifactSlotIcon } from "./SlotNameWIthIcon"
 
 export default function ArtifactFilterDisplay({ filterOption, filterOptionDispatch, }: { filterOption: FilterOption, filterOptionDispatch: (any) => void }) {
   const { t } = useTranslation(["artifact", "ui"]);
@@ -87,40 +78,4 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
       <ArtifactSubStatMultipleSelectChip subStatKeys={substats} setSubStatKeys={substats => filterOptionDispatch({ substats })} />
     </Grid>
   </Grid>
-}
-
-function LocationDropdown({ title, onChange, selectedCharacterKey, dropdownProps }) {
-  const { database } = useContext(DatabaseContext)
-  const characterSheets = usePromise(CharacterSheet.getAll, [])
-  const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
-  const { t } = useTranslation(["artifact", "ui"]);
-
-  return <DropdownButton fullWidth {...dropdownProps} title={title}>
-    <MenuItem key="unselect" selected={selectedCharacterKey === ""} disabled={selectedCharacterKey === ""} onClick={() => onChange("")}>
-      <ListItemIcon>
-        <Replay />
-      </ListItemIcon>
-      <ListItemText>
-        <Trans t={t} i18nKey="ui:unselect" >Unselect</Trans>
-      </ListItemText>
-    </MenuItem>
-    <MenuItem key="inventory" selected={selectedCharacterKey === "Inventory"} disabled={selectedCharacterKey === "Inventory"} onClick={() => onChange("Inventory")}>
-      <ListItemIcon>
-        <BusinessCenter />
-      </ListItemIcon>
-      <ListItemText>
-        <Trans t={t} i18nKey="filterLocation.inventory" >Inventory</Trans>
-      </ListItemText>
-    </MenuItem>
-    <MenuItem key="equipped" selected={selectedCharacterKey === "Equipped"} disabled={selectedCharacterKey === "Equipped"} onClick={() => onChange("Equipped")}>
-      <ListItemIcon>
-        <FontAwesomeIcon icon={faUserShield} />
-      </ListItemIcon>
-      <ListItemText>
-        <Trans t={t} i18nKey="filterLocation.currentlyEquipped" >Currently Equipped</Trans>
-      </ListItemText>
-    </MenuItem>
-    <Divider />
-    {!!characterSheets && CharacterMenuItemArray(characterSheets, database._getCharKeys().sort(), onChange, selectedCharacterKey, filterConfigs)}
-  </DropdownButton>
 }
