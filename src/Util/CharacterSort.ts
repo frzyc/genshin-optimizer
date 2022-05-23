@@ -13,7 +13,8 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
       tieBreaker: "name"
     },
     name: {
-      getValue: (ck) => i18n.t(`char_${ck}_gen:name`).toString(),
+      //TODO - Enforce that the character names are loaded: getValue: (ck) => i18n.t(`char_${ck}_gen:name`).toString(),
+      getValue: (ck) => ck
     },
     level: {
       getValue: (ck) => database._getChar(ck as CharacterKey)?.level ?? 0,
