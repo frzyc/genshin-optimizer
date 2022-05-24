@@ -1,7 +1,7 @@
 import { faBan, faChartLine, faTrash, faUserSlash } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Lock, LockOpen, Replay } from "@mui/icons-material"
-import { Button, CardContent, Grid, Skeleton, Typography, useTheme } from "@mui/material"
+import { Button, CardContent, Grid, Skeleton, Typography } from "@mui/material"
 import { lazy, Suspense, useContext, useMemo } from "react"
 import { Trans, useTranslation } from "react-i18next"
 import CardDark from "../Components/Card/CardDark"

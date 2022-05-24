@@ -1,5 +1,4 @@
-import { Autocomplete, AutocompleteProps, Chip, TextField } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { Autocomplete, AutocompleteProps, Chip, TextField, useTheme } from '@mui/material';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
