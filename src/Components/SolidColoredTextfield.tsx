@@ -23,8 +23,11 @@ export default function SolidColoredTextField({ hasValue, startAdornment, flatte
     sx={{
       ...props.sx,
       "& .MuiFilledInput-root": { paddingRight: 0, backgroundColor: hasValue ? theme.palette.success.main : theme.palette.primary.main, borderRadius: flattenCorners ? 0 : undefined },
+      "& .MuiFilledInput-root:before": { border: "none" },
+      "& .MuiFilledInput-root:after": { border: "none" },
       "& .MuiFilledInput-root.Mui-focused": { paddingRight: 0, backgroundColor: hasValue ? theme.palette.success.main : theme.palette.primary.main, borderRadius: flattenCorners ? 0 : undefined },
-      "& .MuiFilledInput-root:hover": { backgroundColor: hasValue ? theme.palette.success.dark : theme.palette.primary.dark }
+      "& .MuiFilledInput-root:hover": { backgroundColor: hasValue ? theme.palette.success.dark : theme.palette.primary.dark },
+      "& .MuiFilledInput-root:hover:not(.Mui-disabled):before": { border: "none" },
     }}
   />
 }
