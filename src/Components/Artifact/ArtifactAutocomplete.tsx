@@ -137,8 +137,9 @@ type ArtifactSingleAutocompleteProps<T extends ArtifactSingleAutocompleteKey> = 
   showDefault?: boolean
   defaultText?: string
   defaultIcon?: Displayable
+  flattenCorners?: boolean
 }
-function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ allArtifactKeys, selectedArtifactKey, setArtifactKey, getName, getImage, label, disable= () => false, showDefault = false, defaultText = "", defaultIcon = "", ...props }:
+function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ allArtifactKeys, selectedArtifactKey, setArtifactKey, getName, getImage, label, disable= () => false, showDefault = false, defaultText = "", defaultIcon = "", flattenCorners = false, ...props }:
   ArtifactSingleAutocompleteProps<T>) {
   const theme = useTheme();
 
@@ -162,6 +163,7 @@ function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ a
       label={label}
       startAdornment={getImage(selectedArtifactKey)}
       hasValue={selectedArtifactKey ? true : false}
+      flattenCorners={flattenCorners}
     />}
     renderOption={(props, option) => (
       <MenuItemWithImage
@@ -187,8 +189,9 @@ type ArtifactSetSingleAutocompleteProps = Omit<AutocompleteProps<ArtifactSingleA
   showDefault?: boolean
   defaultText?: string
   defaultIcon?: Displayable
+  flattenCorners?: boolean
 }
-export function ArtifactSetSingleAutocomplete({ allArtSetKeys = allArtifactSets, artSetKey, setArtSetKey, label = "", ...props }: ArtifactSetSingleAutocompleteProps) {
+export function ArtifactSetSingleAutocomplete({ allArtSetKeys = allArtifactSets, artSetKey, setArtSetKey, label = "", flattenCorners, ...props }: ArtifactSetSingleAutocompleteProps) {
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const { t } = useTranslation("artifact")
   label = label ? label : t("autocompleteLabels.set")
@@ -200,6 +203,7 @@ export function ArtifactSetSingleAutocomplete({ allArtSetKeys = allArtifactSets,
     getName={(key: ArtifactSetKey | "") => key && artifactSheets[key].nameRaw}
     getImage={(key: ArtifactSetKey | "") => key ? artifactSheets[key].defIcon : <></>}
     label={label}
+    flattenCorners={flattenCorners}
     {...props}
   />
 }

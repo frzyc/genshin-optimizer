@@ -39,6 +39,8 @@ export default function ArtifactSetPicker({ index, setFilters, onChange, disable
     <ButtonGroup sx={{ width: "100%" }}>
       {/* Artifact set */}
       {artifactSheets && <ArtifactSetSingleAutocomplete
+        flattenCorners
+        showDefault
         size="small"
         artSetKey={setKey}
         setArtSetKey={setKey => onChange(index, setKey as ArtifactSetKey, parseInt(Object.keys(artifactSheets[setKey]?.setEffects ?? {})[0] as string) ?? 0)}
@@ -47,12 +49,12 @@ export default function ArtifactSetPicker({ index, setFilters, onChange, disable
         disabled={disabled}
         sx={{ flexGrow: 1 }}
         disable={(setKey) => setFilters.some(setFilter => setFilter.key === setKey)}
-        showDefault
         defaultText={t("none")}
       />}
       {/* set number */}
       <DropdownButton title={`${setNum}-set`}
         disabled={disabled || !setKey || artsAccounted >= 5}
+        sx={{ borderRadius: 0 }}
       >
         {Object.keys(artifactSheets?.[setKey]?.setEffects ?? {}).map((num: any) => {
           let artsAccountedOther = setFilters.reduce((accu, cur) => (cur.key && cur.key !== setKey) ? accu + cur.num : accu, 0)
