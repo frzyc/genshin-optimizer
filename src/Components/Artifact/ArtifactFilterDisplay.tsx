@@ -30,13 +30,13 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
 
   let locationDisplay
   if (!location) locationDisplay = t("filterLocation.any")
-  else if (location === "Inventory") locationDisplay = <span><BusinessCenter /> {t("filterLocation.inventory")}</span>
-  else if (location === "Equipped") locationDisplay = <span><FontAwesomeIcon icon={faUserShield} /> {t("filterLocation.currentlyEquipped")}</span>
+  else if (location === "Inventory") locationDisplay = <span><BusinessCenter /> {t<string>("filterLocation.inventory")}</span>
+  else if (location === "Equipped") locationDisplay = <span><FontAwesomeIcon icon={faUserShield} /> {t<string>("filterLocation.currentlyEquipped")}</span>
   else locationDisplay = <b>{locationCharacterSheet?.nameWIthIcon}</b>
 
   let excludedDisplay
-  if (excluded === "excluded") excludedDisplay = <span><FontAwesomeIcon icon={faBan} /> {t`exclusion.excluded`}</span>
-  else if (excluded === "included") excludedDisplay = <span><FontAwesomeIcon icon={faChartLine} /> {t`exclusion.included`}</span>
+  if (excluded === "excluded") excludedDisplay = <span><FontAwesomeIcon icon={faBan} /> {t<string>("exclusion.excluded")}</span>
+  else if (excluded === "included") excludedDisplay = <span><FontAwesomeIcon icon={faChartLine} /> {t<string>("exclusion.included")}</span>
   else excludedDisplay = t("exclusionDisplay", { value: t("exclusion.any") })
   return <Grid container spacing={1} >
     {/* left */}

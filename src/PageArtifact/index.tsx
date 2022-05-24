@@ -225,7 +225,7 @@ function NewArtifactCard() {
 function ShowingArt({ numShowing, total, t }) {
   return <Typography color="text.secondary">
     <Trans t={t} i18nKey="showingNum" count={numShowing} value={total} >
-      Showing <b>{{ count: numShowing } as any}</b> out of {{ value: total }} Artifacts
+      Showing <b>{{ count: numShowing }}</b> out of {{ value: total }} Artifacts
     </Trans>
   </Typography>
 }

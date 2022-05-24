@@ -12,7 +12,7 @@ export default function UseExcluded({ buildSettingsDispatch, useExcludedArts, di
   return <Button fullWidth onClick={() => buildSettingsDispatch({ useExcludedArts: !useExcludedArts })} disabled={!numExcludedArt || disabled} startIcon={useExcludedArts ? <CheckBox /> : <CheckBoxOutlineBlank />} color={useExcludedArts ? "success" : "secondary"}>
     <Box>
       <span><Trans t={t} i18nKey="tabOptimize.useExcluded.title" count={numExcludedArt}>Use Excluded Artifacts</Trans></span>
-      {useExcludedArts && <SqBadge><Trans t={t} i18nKey="tabOptimize.useExcluded.usingNum" count={numExcludedArt}>Using <strong>{{ count: numExcludedArt } as any}</strong> excluded artifacts</Trans></SqBadge>}
+      {useExcludedArts && <SqBadge><Trans t={t} i18nKey="tabOptimize.useExcluded.usingNum" count={numExcludedArt}>Using <strong>{{ count: numExcludedArt }}</strong> excluded artifacts</Trans></SqBadge>}
     </Box>
   </Button>
 }

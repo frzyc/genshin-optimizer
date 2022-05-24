@@ -16,7 +16,9 @@ export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHi
   const [sliderLow, setsliderLow] = useState(levelLow)
   const [sliderHigh, setsliderHigh] = useState(levelHigh)
   const setSlider = useCallback(
-    (e, [l, h]) => {
+    (e: unknown, value: number | number[]) => {
+      if (typeof value == "number") throw new TypeError()
+      const [l, h] = value
       setsliderLow(l)
       setsliderHigh(h)
     },
@@ -36,7 +38,7 @@ export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHi
     <Slider sx={{ width: 100, flexGrow: 1, mx: 2 }}
       getAriaLabel={() => 'Arifact Level Range'}
       value={[sliderLow, sliderHigh]}
-      onChange={setSlider as any}
+      onChange={setSlider}
       onChangeCommitted={(e, value) => setBoth(value[0], value[1])}
       valueLabelDisplay="auto"
       min={0} max={20} step={1} marks
