@@ -29,9 +29,9 @@ import useCharacterReducer, { characterReducerAction } from '../../../../ReactHo
 import useDBState from '../../../../ReactHooks/useDBState';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
-import { ICachedArtifact } from '../../../../Types/artifact';
+import { ICachedArtifact, MainStatKey } from '../../../../Types/artifact';
 import { ICachedCharacter } from '../../../../Types/character';
-import { ArtifactSetKey, CharacterKey } from '../../../../Types/consts';
+import { ArtifactSetKey, CharacterKey, SlotKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
 import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
@@ -83,7 +83,7 @@ export default function TabBuild() {
     characterDispatch && characterDispatch({ buildSettings: buildSettingsReducer(buildSettings, action) })
     , [characterDispatch, buildSettings])
 
-  const onChangeMainStatKey = useCallback((slotKey, mainStatKey = undefined) => {
+  const onChangeMainStatKey = useCallback((slotKey: SlotKey, mainStatKey?: MainStatKey) => {
     if (mainStatKey === undefined) buildSettingsDispatch({ type: "mainStatKeyReset", slotKey })
     else buildSettingsDispatch({ type: "mainStatKey", slotKey, mainStatKey })
   }, [buildSettingsDispatch])

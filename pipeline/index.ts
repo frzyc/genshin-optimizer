@@ -10,7 +10,7 @@ export const tagColor = {
   "99FFFFFF": "cryo",
   "80C0FFFF": "hydro",
   "FF9999FF": "pyro",
-  "fFACFFFF": "electro"
+  "FFACFFFF": "electro"
 } as const
 export type ColorTag = typeof tagColor[keyof typeof tagColor]
 

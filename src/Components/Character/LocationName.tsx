@@ -8,7 +8,7 @@ export default function LocationName({ location }) {
   const { t } = useTranslation("ui");
   const characterSheet = usePromise(CharacterSheet.get(location ?? ""), [location])
   return <Typography component="span">
-    {characterSheet?.name ? characterSheet.nameWIthIcon : <span><BusinessCenter sx={{ verticalAlign: "text-bottom" }} /> {t`inventory`}</span>}
+    {characterSheet?.name ? characterSheet.nameWIthIcon : <span><BusinessCenter sx={{ verticalAlign: "text-bottom" }} /> {t<string>("inventory")}</span>}
   </Typography>
 
 }

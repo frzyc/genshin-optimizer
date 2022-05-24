@@ -16,7 +16,9 @@ export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHi
   const [sliderLow, setsliderLow] = useState(levelLow)
   const [sliderHigh, setsliderHigh] = useState(levelHigh)
   const setSlider = useCallback(
-    (e, [l, h]) => {
+    (e: unknown, value: number | number[]) => {
+      if (typeof value == "number") throw new TypeError()
+      const [l, h] = value
       setsliderLow(l)
       setsliderHigh(h)
     },
