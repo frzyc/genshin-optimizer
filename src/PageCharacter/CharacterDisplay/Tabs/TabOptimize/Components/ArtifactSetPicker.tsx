@@ -31,8 +31,9 @@ export default function ArtifactSetPicker({ index, setFilters, onChange, disable
     })
   }, [artifactSheets, setFilters, index])
 
+  if (!artifactSets) return null
+
   const artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
-  console.log(setFilters)
 
   return <CardLight>
     <ButtonGroup sx={{ width: "100%" }}>
@@ -46,6 +47,8 @@ export default function ArtifactSetPicker({ index, setFilters, onChange, disable
         disabled={disabled}
         sx={{ flexGrow: 1 }}
         disable={(setKey) => setFilters.some(setFilter => setFilter.key === setKey)}
+        showDefault
+        defaultText={t("none")}
       />}
       {/* set number */}
       <DropdownButton title={`${setNum}-set`}

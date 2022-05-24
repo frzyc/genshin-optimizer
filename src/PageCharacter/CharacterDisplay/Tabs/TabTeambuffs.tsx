@@ -18,6 +18,7 @@ import useCharSelectionCallback from "../../../ReactHooks/useCharSelectionCallba
 import usePromise from "../../../ReactHooks/usePromise";
 import { ElementKey } from "../../../Types/consts";
 import { objPathValue, range } from "../../../Util/Util";
+import { useTranslation } from "react-i18next";
 
 export default function TabTeambuffs() {
   return <Box display="flex" flexDirection="column" gap={1} alignItems="stretch">
@@ -75,6 +76,7 @@ function ResonanceDisplay() {
 }
 function TeammateDisplay({ index }: { index: number }) {
   const dataContext = useContext(DataContext)
+  const { t } = useTranslation("page_character")
   const { character: active, teamData, characterDispatch: activeCharacterDispatch } = dataContext
   const activeCharacterKey = active.key
   const characterKey = active.team[index]
@@ -95,8 +97,8 @@ function TeammateDisplay({ index }: { index: number }) {
       <CharacterAutocomplete fullWidth value={characterKey}
         onChange={charKey => activeCharacterDispatch({ type: "team", index, charKey })}
         disable={ck => ck === activeCharacterKey || active.team.includes(ck)}
-        labelText={`Teammate ${index + 1}`}
-        defaultText={"None"}
+        labelText={t("teammate", { count: index + 1 })}
+        defaultText={t("none")}
         defaultIcon={<PersonAdd />}
         showDefault
       />

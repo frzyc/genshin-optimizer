@@ -121,7 +121,7 @@ export function ArtifactSubstatMultiAutoComplete({ substatKeys, setSubstatKeys, 
   />
 }
 
-type ArtifactSingleAutocompleteKey = ArtifactSetKey | MainStatKey | SubstatKey | ""
+type ArtifactSingleAutocompleteKey = (ArtifactSetKey | "") | (MainStatKey | "") | (SubstatKey | "")
 type ArtifactSingleAutocompleteOption<T extends ArtifactSingleAutocompleteKey> = {
   key: T
   label: string
@@ -134,18 +134,21 @@ type ArtifactSingleAutocompleteProps<T extends ArtifactSingleAutocompleteKey> = 
   getImage: (key: T) => JSX.Element
   label: string
   disable?: (v: any) => boolean
+  showDefault?: boolean
+  defaultText?: string
+  defaultIcon?: Displayable
 }
-function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ allArtifactKeys, selectedArtifactKey, setArtifactKey, getName, getImage, label, disable= () => false, ...props }:
+function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ allArtifactKeys, selectedArtifactKey, setArtifactKey, getName, getImage, label, disable= () => false, showDefault = false, defaultText = "", defaultIcon = "", ...props }:
   ArtifactSingleAutocompleteProps<T>) {
   const theme = useTheme();
 
-  const options = useMemo(() => allArtifactKeys.map(key => ({ key: key, label: getName(key) })), [allArtifactKeys, getName])
+  const options = useMemo(() => (showDefault ? [{ key: "" as T, label: defaultText }] : []).concat(allArtifactKeys.map(key => ({ key: key, label: getName(key) }))), [allArtifactKeys, getName])
   return <Autocomplete
     autoHighlight
     options={options}
     value={{ key: selectedArtifactKey, label: getName(selectedArtifactKey) }}
     onChange={(_, newValue) => setArtifactKey(newValue ? newValue.key : "")}
-    getOptionLabel={(option) => option.label}
+    getOptionLabel={(option) => option.label ? option.label : defaultText}
     isOptionEqualToValue={(option, value) => option.key === value.key}
     getOptionDisabled={option => option.key ? disable(option.key) : false}
     renderInput={(props) => <SolidColoredTextField
@@ -175,6 +178,9 @@ type ArtifactSetSingleAutoCompleteProps = Omit<AutocompleteProps<ArtifactSingleA
   setArtSetKey: (key: ArtifactSetKey | "") => void
   label?: string
   disable?: (v: any) => boolean
+  showDefault?: boolean
+  defaultText?: string
+  defaultIcon?: Displayable
 }
 export function ArtifactSetSingleAutoComplete({ allArtSetKeys = allArtifactSets, artSetKey, setArtSetKey, label = "", ...props }: ArtifactSetSingleAutoCompleteProps) {
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])

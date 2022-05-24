@@ -57,5 +57,7 @@
       "tooltip": "Set certain requirements that generated builds must confirm to. e.g. Generated builds must have at least 140% Energy Recharge."
     }
   },
-  "characterName": "Character Name"
+  "characterName": "Character Name",
+  "teammate": "Teammate {{count}}",
+  "none": "None"
 }
