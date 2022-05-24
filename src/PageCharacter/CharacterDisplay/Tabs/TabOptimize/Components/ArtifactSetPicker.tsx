@@ -1,7 +1,7 @@
 import { ButtonGroup, CardContent, Divider, MenuItem } from '@mui/material';
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArtifactSetSingleAutoComplete } from '../../../../../Components/Artifact/ArtifactAutocomplete';
+import { ArtifactSetSingleAutocomplete } from '../../../../../Components/Artifact/ArtifactAutocomplete';
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay';
 import CardLight from '../../../../../Components/Card/CardLight';
 import DropdownButton from '../../../../../Components/DropdownMenu/DropdownButton';
@@ -38,7 +38,7 @@ export default function ArtifactSetPicker({ index, setFilters, onChange, disable
   return <CardLight>
     <ButtonGroup sx={{ width: "100%" }}>
       {/* Artifact set */}
-      {artifactSheets && <ArtifactSetSingleAutoComplete
+      {artifactSheets && <ArtifactSetSingleAutocomplete
         size="small"
         artSetKey={setKey}
         setArtSetKey={setKey => onChange(index, setKey as ArtifactSetKey, parseInt(Object.keys(artifactSheets[setKey]?.setEffects ?? {})[0] as string) ?? 0)}

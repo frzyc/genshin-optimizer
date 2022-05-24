@@ -5,7 +5,7 @@ import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgr
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
-import { ArtifactSetSingleAutoComplete } from '../Components/Artifact/ArtifactAutocomplete';
+import { ArtifactSetSingleAutocomplete } from '../Components/Artifact/ArtifactAutocomplete';
 import ArtifactRarityDropdown from '../Components/Artifact/ArtifactRarityDropdown';
 import ArtifactSlotDropdown from '../Components/Artifact/ArtifactSlotDropdown';
 import CardDark from '../Components/Card/CardDark';
@@ -243,7 +243,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             {/* set & rarity */}
             <ButtonGroup sx={{ display: "flex", mb: 1 }}>
               {/* Artifact Set */}
-              <ArtifactSetSingleAutoComplete
+              <ArtifactSetSingleAutocomplete
                 size="small"
                 disableClearable
                 artSetKey={artifact?.setKey ?? ""}

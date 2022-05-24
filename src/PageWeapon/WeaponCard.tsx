@@ -1,6 +1,6 @@
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Lock, LockOpen } from "@mui/icons-material"
+import { BusinessCenter, Lock, LockOpen } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, CardHeader, IconButton, Skeleton, Tooltip, Typography } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
@@ -87,7 +87,12 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
         </CardContent>
       </ConditionalWrapper>
       <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }}>
-        {canEquip ? <CharacterDropdownButton size="small" noUnselect inventory value={location} onChange={equipOnChar} filter={filter} /> : <LocationName location={location} />}
+        {canEquip
+          ? <CharacterAutocomplete size="small" sx={{ flexGrow: 1 }}
+              showDefault defaultIcon={<BusinessCenter />} defaultText={t("inventory")}
+              value={location} onChange={equipOnChar} filter={filter}
+            />
+          : <LocationName location={location} />}
         <ButtonGroup>
           {!!onEdit && <Tooltip title={<Typography>{t`edit`}</Typography>} placement="top" arrow>
             <Button color="info" onClick={() => onEdit(id)} >

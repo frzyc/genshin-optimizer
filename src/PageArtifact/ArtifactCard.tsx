@@ -1,6 +1,6 @@
 import { faBan, faChartLine, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Lock, LockOpen } from '@mui/icons-material';
+import { BusinessCenter, Lock, LockOpen } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, Chip, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
 import React, { lazy, Suspense, useCallback, useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -138,8 +138,13 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
         </CardContent>
       </ConditionalWrapper>
       <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }}>
-        {editable && canEquip ?
-          <CharacterDropdownButton size="small" inventory value={location} onChange={equipOnChar} /> : <LocationName location={location} />}
+        {editable && canEquip
+          ? <CharacterAutocomplete sx={{ flexGrow: 1 }} size="small" showDefault
+            defaultIcon={<BusinessCenter />} defaultText={t("ui:inventory")}
+            value={location} onChange={equipOnChar}
+          />
+          : <LocationName location={location} />
+        }
         {editable && <ButtonGroup sx={{ height: "100%" }}>
           {editor && <Tooltip title={<Typography>{t`edit`}</Typography>} placement="top" arrow>
             <Button color="info" size="small" onClick={onShowEditor} >

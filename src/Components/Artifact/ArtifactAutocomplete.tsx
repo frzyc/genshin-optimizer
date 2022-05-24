@@ -68,11 +68,11 @@ function ArtifactMultiAutocomplete<T extends ArtifactMultiAutocompleteKey>({ all
   />
 }
 
-type ArtifactSetMultiAutoCompleteProps = Omit<AutocompleteProps<ArtifactMultiAutocompleteOption<ArtifactSetKey>, true, false, false>, "title" | "children" | "onChange" | "options" | "renderInput" | "value"> & {
+type ArtifactSetMultiAutocompleteProps = Omit<AutocompleteProps<ArtifactMultiAutocompleteOption<ArtifactSetKey>, true, false, false>, "title" | "children" | "onChange" | "options" | "renderInput" | "value"> & {
   artSetKeys: ArtifactSetKey[]
   setArtSetKeys: (keys: ArtifactSetKey[]) => void
 }
-export function ArtifactSetMultiAutoComplete({ artSetKeys, setArtSetKeys, ...props }: ArtifactSetMultiAutoCompleteProps) {
+export function ArtifactSetMultiAutocomplete({ artSetKeys, setArtSetKeys, ...props }: ArtifactSetMultiAutocompleteProps) {
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const { t } = useTranslation("artifact")
   if (!artifactSheets) return null
@@ -87,11 +87,11 @@ export function ArtifactSetMultiAutoComplete({ artSetKeys, setArtSetKeys, ...pro
   />
 }
 
-type ArtifactMainStatMultiAutoCompleteProps = Omit<AutocompleteProps<ArtifactMultiAutocompleteOption<MainStatKey>, true, false, false>, "title" | "children" | "onChange" | "options" | "renderInput" | "value"> & {
+type ArtifactMainStatMultiAutocompleteProps = Omit<AutocompleteProps<ArtifactMultiAutocompleteOption<MainStatKey>, true, false, false>, "title" | "children" | "onChange" | "options" | "renderInput" | "value"> & {
   mainStatKeys: MainStatKey[]
   setMainStatKeys: (keys: MainStatKey[]) => void
 }
-export function ArtifactMainStatMultiAutoComplete({ mainStatKeys, setMainStatKeys, ...props }: ArtifactMainStatMultiAutoCompleteProps) {
+export function ArtifactMainStatMultiAutocomplete({ mainStatKeys, setMainStatKeys, ...props }: ArtifactMainStatMultiAutocompleteProps) {
   const { t } = useTranslation("artifact")
   return <ArtifactMultiAutocomplete<MainStatKey>
     allArtifactKeys={allMainStatKeys}
@@ -104,11 +104,11 @@ export function ArtifactMainStatMultiAutoComplete({ mainStatKeys, setMainStatKey
   />
 }
 
-type ArtifactSubstatMultiAutoCompleteProps = Omit<AutocompleteProps<ArtifactMultiAutocompleteOption<SubstatKey>, true, false, false>, "title" | "children" | "onChange" | "options" | "renderInput" | "value"> & {
+type ArtifactSubstatMultiAutocompleteProps = Omit<AutocompleteProps<ArtifactMultiAutocompleteOption<SubstatKey>, true, false, false>, "title" | "children" | "onChange" | "options" | "renderInput" | "value"> & {
   substatKeys: SubstatKey[]
   setSubstatKeys: (keys: SubstatKey[]) => void
 }
-export function ArtifactSubstatMultiAutoComplete({ substatKeys, setSubstatKeys, ...props }: ArtifactSubstatMultiAutoCompleteProps) {
+export function ArtifactSubstatMultiAutocomplete({ substatKeys, setSubstatKeys, ...props }: ArtifactSubstatMultiAutocompleteProps) {
   const { t } = useTranslation("artifact")
   return <ArtifactMultiAutocomplete<SubstatKey>
     allArtifactKeys={allSubstatKeys}
@@ -142,7 +142,13 @@ function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ a
   ArtifactSingleAutocompleteProps<T>) {
   const theme = useTheme();
 
-  const options = useMemo(() => (showDefault ? [{ key: "" as T, label: defaultText }] : []).concat(allArtifactKeys.map(key => ({ key: key, label: getName(key) }))), [allArtifactKeys, getName])
+  const options = useMemo(() =>
+    (showDefault
+      ? [{ key: "" as T, label: defaultText }]
+      : []
+    ).concat(allArtifactKeys.map(key => (
+      { key: key, label: getName(key) }
+    ))), [allArtifactKeys, getName, defaultText, showDefault])
   return <Autocomplete
     autoHighlight
     options={options}
@@ -172,7 +178,7 @@ function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ a
   />
 }
 
-type ArtifactSetSingleAutoCompleteProps = Omit<AutocompleteProps<ArtifactSingleAutocompleteOption<ArtifactSetKey | "">, false, true, false>, "title" | "children" | "onChange" | "options" | "renderInput" | "value"> & {
+type ArtifactSetSingleAutocompleteProps = Omit<AutocompleteProps<ArtifactSingleAutocompleteOption<ArtifactSetKey | "">, false, true, false>, "title" | "children" | "onChange" | "options" | "renderInput" | "value"> & {
   allArtSetKeys?: readonly ArtifactSetKey[]
   artSetKey: ArtifactSetKey | ""
   setArtSetKey: (key: ArtifactSetKey | "") => void
@@ -182,7 +188,7 @@ type ArtifactSetSingleAutoCompleteProps = Omit<AutocompleteProps<ArtifactSingleA
   defaultText?: string
   defaultIcon?: Displayable
 }
-export function ArtifactSetSingleAutoComplete({ allArtSetKeys = allArtifactSets, artSetKey, setArtSetKey, label = "", ...props }: ArtifactSetSingleAutoCompleteProps) {
+export function ArtifactSetSingleAutocomplete({ allArtSetKeys = allArtifactSets, artSetKey, setArtSetKey, label = "", ...props }: ArtifactSetSingleAutocompleteProps) {
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const { t } = useTranslation("artifact")
   label = label ? label : t("autocompleteLabels.set")

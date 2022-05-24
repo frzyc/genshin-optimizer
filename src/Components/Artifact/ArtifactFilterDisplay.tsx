@@ -9,28 +9,18 @@ import MenuItemWithImage from "../MenuItemWithImage"
 import SolidColoredTextField from "../SolidColoredTextfield"
 import SolidToggleButtonGroup from "../SolidToggleButtonGroup"
 import { Stars } from "../StarDisplay"
-import { ArtifactMainStatMultiAutoComplete, ArtifactSetMultiAutoComplete, ArtifactSubstatMultiAutoComplete } from "./ArtifactAutocomplete"
+import { ArtifactMainStatMultiAutocomplete, ArtifactSetMultiAutocomplete, ArtifactSubstatMultiAutocomplete } from "./ArtifactAutocomplete"
 import ArtifactLevelSlider from "./ArtifactLevelSlider"
 import { artifactSlotIcon } from "./SlotNameWIthIcon"
 
 export default function ArtifactFilterDisplay({ filterOption, filterOptionDispatch, }: { filterOption: FilterOption, filterOptionDispatch: (any) => void }) {
   const { t } = useTranslation(["artifact", "ui"]);
+  const theme = useTheme()
 
   const { artSetKeys = [], mainStatKeys = [], rarity = [], slotKeys = [], levelLow, levelHigh, substats = [],
     location = "", excluded = "" } = filterOption
-  const locationCharacterSheet = usePromise(CharacterSheet.get(location as CharacterKey), [location])
 
-  let locationDisplay
-  if (!location) locationDisplay = t("filterLocation.any")
-  else if (location === "Inventory") locationDisplay = <span><BusinessCenter /> {t("filterLocation.inventory")}</span>
-  else if (location === "Equipped") locationDisplay = <span><FontAwesomeIcon icon={faUserShield} /> {t("filterLocation.currentlyEquipped")}</span>
-  else locationDisplay = <b>{locationCharacterSheet?.nameWIthIcon}</b>
-
-  let excludedDisplay
-  if (excluded === "excluded") excludedDisplay = <span><FontAwesomeIcon icon={faBan} /> {t`exclusion.excluded`}</span>
-  else if (excluded === "included") excludedDisplay = <span><FontAwesomeIcon icon={faChartLine} /> {t`exclusion.included`}</span>
-  else excludedDisplay = t("exclusionDisplay", { value: t("exclusion.any") })
-  return <Grid container spacing={1} >
+  return <Grid container spacing={1}>
     {/* left */}
     <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
       {/* Artifact stars filter */}
@@ -46,9 +36,20 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
         setLow={levelLow => filterOptionDispatch({ levelLow })}
         setHigh={levelHigh => filterOptionDispatch({ levelHigh })}
         setBoth={(levelLow, levelHigh) => filterOptionDispatch({ levelLow, levelHigh })} />
-      <Box display="flex" gap={1}>
-        {/* location */}
-        <LocationDropdown dropdownProps={{ color: location ? "success" : "primary" }} title={locationDisplay} onChange={location => filterOptionDispatch({ location })} selectedCharacterKey={location} />
+      <Grid container display="flex" gap={1}>
+        <Grid item flexGrow={1}>
+          {/* location */}
+          <CharacterAutocomplete
+            value={location}
+            onChange={location => filterOptionDispatch({ location })}
+            placeholderText={t("artifact:filterLocation.any")}
+            defaultText={t("artifact:filterLocation.any")}
+            labelText={t("artifact:filterLocation.location")}
+            showDefault
+            showInventory
+            showEquipped
+          />
+        </Grid>
         {/* exclusion state */}
         <Grid item flexGrow={1}>
           <Autocomplete
@@ -58,8 +59,8 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
             onChange={(_, value) => filterOptionDispatch({ excluded: value ? value.label : "" })}
             isOptionEqualToValue={(option, value) => option.label === value.label}
             getOptionLabel={(option) => t(`artifact:exclusion.${option.label ? option.label : "any"}`)}
-            renderInput={(props) => <SolidColoredTextField
-              {...props}
+            renderInput={(params) => <SolidColoredTextField
+              {...params}
               label={t("artifact:exclusion.exclusion")}
               hasValue={excluded ? true : false}
               startAdornment={excluded === "excluded"
@@ -90,9 +91,9 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
     {/* right */}
     <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
       {/* Artifact Set */}
-      <ArtifactSetMultiAutoComplete artSetKeys={artSetKeys} setArtSetKeys={artSetKeys => filterOptionDispatch({ artSetKeys })} />
-      <ArtifactMainStatMultiAutoComplete mainStatKeys={mainStatKeys} setMainStatKeys={mainStatKeys => filterOptionDispatch({ mainStatKeys })} />
-      <ArtifactSubstatMultiAutoComplete substatKeys={substats} setSubstatKeys={substats => filterOptionDispatch({ substats })} />
+      <ArtifactSetMultiAutocomplete artSetKeys={artSetKeys} setArtSetKeys={artSetKeys => filterOptionDispatch({ artSetKeys })} />
+      <ArtifactMainStatMultiAutocomplete mainStatKeys={mainStatKeys} setMainStatKeys={mainStatKeys => filterOptionDispatch({ mainStatKeys })} />
+      <ArtifactSubstatMultiAutocomplete substatKeys={substats} setSubstatKeys={substats => filterOptionDispatch({ substats })} />
     </Grid>
   </Grid>
 }
