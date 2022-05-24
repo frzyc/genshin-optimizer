@@ -1,8 +1,8 @@
 import { faUserShield } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BusinessCenter, Favorite } from "@mui/icons-material";
-import { Autocomplete, AutocompleteProps, Box, Skeleton, TextField, Typography, useTheme } from "@mui/material";
-import { Suspense, useContext, useMemo } from "react";
+import { Autocomplete, AutocompleteProps, Box, Skeleton, Typography, useTheme } from "@mui/material";
+import { Suspense, useCallback, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
@@ -11,11 +11,13 @@ import { allCharacterKeys, CharacterKey } from "../../Types/consts";
 import { CharacterFilterConfigs, characterFilterConfigs } from "../../Util/CharacterSort";
 import { filterFunction } from "../../Util/SortByFilters";
 import MenuItemWithImage from "../MenuItemWithImage";
+import SolidColoredTextField from "../SolidColoredTextfield";
 import ThumbSide from "./ThumbSide";
 
 type CharacterAutocompleteValue = CharacterKey | "" | "Inventory" | "Equipped"
 type CharacterAutocompleteOption = {
   value: CharacterAutocompleteValue
+  label: string
 }
 type CharacterAutocompleteProps = Omit<AutocompleteProps<CharacterAutocompleteOption, false, true, false>, "onChange" | "options" | "renderInput" | "value" | "disableClearable"> & {
   value: CharacterAutocompleteValue
@@ -38,23 +40,8 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
   const characterSheets = usePromise(CharacterSheet.getAll, [])
   const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
   const characterKeys = database._getCharKeys().filter(ck => characterSheets?.[ck] && filter(characterSheets[ck], ck)).sort()
-  const characterOptions = useMemo(() => filterConfigs && charOptions(characterKeys, filterConfigs, showDefault, showInventory, showEquipped),
-    [filterConfigs, characterKeys, showDefault, showInventory, showEquipped])
 
-  function imageForValue(value: CharacterAutocompleteValue): Displayable {
-    switch (value) {
-      case "Equipped":
-        return <FontAwesomeIcon icon={faUserShield} />
-      case "Inventory":
-        return <BusinessCenter />
-      case "":
-        return defaultIcon
-      default:
-        return <ThumbSide src={characterSheets![value]?.thumbImgSide} sx={{ pr: 1 }} />
-    }
-  }
-
-  function textForValue(value: CharacterAutocompleteValue): string {
+  const textForValue = useCallback((value: CharacterAutocompleteValue): string => {
     switch (value) {
       case "Equipped":
         return t("artifact:filterLocation.currentlyEquipped")
@@ -65,43 +52,50 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
       default:
         return t(`char_${value}_gen:name`)
     }
-  }
+  }, [defaultText, t])
+
+  const imageForValue = useCallback((value: CharacterAutocompleteValue): Displayable => {
+    switch (value) {
+      case "Equipped":
+        return <FontAwesomeIcon icon={faUserShield} />
+      case "Inventory":
+        return <BusinessCenter />
+      case "":
+        return defaultIcon
+      default:
+        return <ThumbSide src={characterSheets![value]?.thumbImgSide} sx={{ pr: 1 }} />
+    }
+  }, [defaultIcon, characterSheets])
+
+  const characterOptions = useMemo(() => filterConfigs && charOptions(characterKeys, filterConfigs, textForValue, showDefault, showInventory, showEquipped),
+    [filterConfigs, characterKeys, showDefault, showInventory, showEquipped, textForValue])
+
+
 
   if (!characterSheets || !characterOptions) return null
 
   return <Autocomplete
-    autoHighlight
     disableClearable
+    autoHighlight
     options={characterOptions}
-    getOptionLabel={(option) => textForValue(option.value)}
+    getOptionLabel={(option) => option.label}
     onChange={(_, newValue) => onChange(newValue ? newValue.value : "")}
     isOptionEqualToValue={(option, value) => option.value === value.value}
     getOptionDisabled={option => option.value ? disable(option.value) : false}
-    value={{ value }}
-    renderInput={(params) => <TextField
-      {...params}
-      multiline
-      variant="filled"
-      color={value ? "success" : "primary"}
-      focused
-      hiddenLabel={labelText === ""}
-      type="search"
+    value={{ value, label: textForValue(value) }}
+    renderInput={(props) => <SolidColoredTextField
+      {...props}
       label={labelText}
       placeholder={placeholderText}
-      InputProps={{
-        ...params.InputProps,
-        startAdornment: imageForValue(value),
-      }}
-      InputLabelProps={{ style: { color: theme.palette.text.primary } }}
-      sx={{
-        "& .MuiFilledInput-root.Mui-focused": { "padding-right": 0, "background-color": value ? theme.palette.success.main : theme.palette.primary.main },
-        "& .MuiFilledInput-root:hover": { "background-color": value ? theme.palette.success.dark : theme.palette.primary.dark }
-      }}
+      startAdornment={imageForValue(value)}
+      hasValue={value ? true : false}
     />}
     renderOption={(props, option) => {
-      const favorite = valueIsCharKey(option.value) && database._getChar(option.value)?.favorite
+      const favorite = option.value !== "Equipped" && option.value !== "Inventory"
+        && option.value !== "" && database._getChar(option.value)?.favorite
       return <MenuItemWithImage
         key={option.value ? option.value : "default"}
+        value={option.value ? option.value : "default"}
         image={imageForValue(option.value)}
         text={
           <Suspense fallback={<Skeleton variant="text" width={100} />}>
@@ -124,28 +118,24 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
 }
 
 
-function charOptions(characterKeys: CharacterKey[], filterConfigs: CharacterFilterConfigs | undefined, showDefault: boolean, showInventory, showEquipped): CharacterAutocompleteOption[] {
+function charOptions(characterKeys: CharacterKey[], filterConfigs: CharacterFilterConfigs | undefined, textForValue: (v: CharacterAutocompleteValue) => string, showDefault: boolean, showInventory, showEquipped): CharacterAutocompleteOption[] {
   if (!filterConfigs) return []
   const base: CharacterAutocompleteOption[] = []
   if (showDefault) {
-    base.push({ value: "" })
+    base.push({ value: "", label: textForValue("") })
   }
   if (showInventory) {
-    base.push({ value: "Inventory" })
+    base.push({ value: "Inventory", label: textForValue("Inventory") })
   }
   if (showEquipped) {
-    base.push({ value: "Equipped" })
+    base.push({ value: "Equipped", label: textForValue("Equipped") })
   }
   const faves = characterKeys
     .filter(filterFunction({ element: "", weaponType: "", favorite: "yes", name: "" }, filterConfigs))
-    .map(characterKey => ({ value: characterKey }))
+    .map(characterKey => ({ value: characterKey, label: textForValue(characterKey) }))
   const nonFaves = characterKeys
     .filter(filterFunction({ element: "", weaponType: "", favorite: "no", name: "" }, filterConfigs))
-    .map(characterKey => ({ value: characterKey }))
+    .map(characterKey => ({ value: characterKey, label: textForValue(characterKey) }))
 
   return base.concat(faves).concat(nonFaves)
-}
-
-function valueIsCharKey(value: CharacterAutocompleteValue): value is CharacterKey {
-  return value !== "Equipped" && value !== "Inventory" && value !== ""
 }

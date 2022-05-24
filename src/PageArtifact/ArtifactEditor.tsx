@@ -5,8 +5,8 @@ import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgr
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
+import { ArtifactSetSingleAutoComplete } from '../Components/Artifact/ArtifactAutocomplete';
 import ArtifactRarityDropdown from '../Components/Artifact/ArtifactRarityDropdown';
-import ArtifactSetDropdown from '../Components/Artifact/ArtifactSetDropdown';
 import ArtifactSlotDropdown from '../Components/Artifact/ArtifactSlotDropdown';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
@@ -243,7 +243,14 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             {/* set & rarity */}
             <ButtonGroup sx={{ display: "flex", mb: 1 }}>
               {/* Artifact Set */}
-              <ArtifactSetDropdown selectedSetKey={artifact?.setKey} onChange={setKey => update({ setKey: setKey as ArtifactSetKey })} sx={{ flexGrow: 1 }} disabled={disableEditSetSlot} />
+              <ArtifactSetSingleAutoComplete
+                size="small"
+                disableClearable
+                artSetKey={artifact?.setKey ?? ""}
+                setArtSetKey={setKey => update({ setKey: setKey as ArtifactSetKey })}
+                sx={{ flexGrow: 1 }}
+                disabled={disableEditSetSlot}
+              />
               {/* rarity dropdown */}
               <ArtifactRarityDropdown rarity={artifact ? rarity : undefined} onChange={r => update({ rarity: r })} filter={r => !!sheet?.rarity?.includes?.(r)} disabled={disableEditSetSlot || !sheet} />
             </ButtonGroup>

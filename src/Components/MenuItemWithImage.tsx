@@ -1,7 +1,7 @@
 import { ListItemIcon, ListItemText, MenuItem, Theme } from "@mui/material";
 
 type MenuItemWithImageProps = {
-  key: string
+  value: string
   image?: Displayable
   text: Displayable
   theme: Theme
@@ -10,8 +10,8 @@ type MenuItemWithImageProps = {
   props?: object
 }
 
-export default function MenuItemWithImage({ key, image = "", text, theme, isSelected, addlElement, props }: MenuItemWithImageProps) {
-  return <MenuItem key={key} value={key} {...props}>
+export default function MenuItemWithImage({ value, image = "", text, theme, isSelected, addlElement, props }: MenuItemWithImageProps) {
+  return <MenuItem key={value} value={value} {...props}>
     <ListItemIcon>{image}</ListItemIcon>
     <ListItemText primaryTypographyProps={{ style: { fontWeight: isSelected ? theme.typography.fontWeightMedium : theme.typography.fontWeightRegular } }}>
       {text}
