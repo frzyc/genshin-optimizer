@@ -1,9 +1,9 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Calculate, Checkroom, DeleteForever, FactCheck, Groups } from '@mui/icons-material';
-import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, Typography } from '@mui/material';
+import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, TextField, Typography } from '@mui/material';
 import i18next from 'i18next';
-import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { ChangeEvent, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +11,6 @@ import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
 import CharacterCard from '../Components/Character/CharacterCard';
 import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
-import CustomTextField from '../Components/CustomTextField';
 import SortByButton from '../Components/SortByButton';
 import ElementToggle from '../Components/ToggleButton/ElementToggle';
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
@@ -44,6 +43,7 @@ export default function PageCharacter(props) {
   const { database } = useContext(DatabaseContext)
   const [state, stateDispatch] = useDBState("CharacterDisplay", initialState)
   const [searchTerm, setSearchTerm] = useState("")
+  const deferredSearchTerm = useDeferredValue(searchTerm)
   const [pageIdex, setpageIdex] = useState(0)
   const invScrollRef = useRef<HTMLDivElement>(null)
   const setPage = useCallback(
@@ -90,15 +90,15 @@ export default function PageCharacter(props) {
     const totalCharNum = chars.length
     if (!sortConfigs || !filterConfigs) return { charKeyList: [], totalCharNum }
     const charKeyList = database._getCharKeys()
-      .filter(filterFunction({ element, weaponType, favorite: "yes", name: searchTerm }, filterConfigs))
+      .filter(filterFunction({ element, weaponType, favorite: "yes", name: deferredSearchTerm }, filterConfigs))
       .sort(sortFunction(state.sortType, state.ascending, sortConfigs))
       .concat(
         database._getCharKeys()
-          .filter(filterFunction({ element, weaponType, favorite: "no", name: searchTerm }, filterConfigs))
+          .filter(filterFunction({ element, weaponType, favorite: "no", name: deferredSearchTerm }, filterConfigs))
           .sort(sortFunction(state.sortType, state.ascending, sortConfigs)))
     return dbDirty && { charKeyList, totalCharNum }
   },
-    [dbDirty, database, sortConfigs, state.sortType, state.ascending, element, filterConfigs, weaponType, searchTerm])
+    [dbDirty, database, sortConfigs, state.sortType, state.ascending, element, filterConfigs, weaponType, deferredSearchTerm])
 
   const { charKeyListToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(charKeyList.length / maxNumToDisplay)
@@ -118,7 +118,12 @@ export default function PageCharacter(props) {
           <ElementToggle sx={{ height: "100%" }} onChange={element => stateDispatch({ element })} value={state.element} size="small" />
         </Grid>
         <Grid item flexGrow={1}>
-          <CustomTextField autoFocus onChange={term => setSearchTerm(term)} label={t("characterName")} />
+          <TextField
+            autoFocus
+            value={searchTerm}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
+            label={t("characterName")}
+          />
         </Grid>
         <Grid item >
           <SortByButton sx={{ height: "100%" }}
