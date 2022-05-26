@@ -1,6 +1,6 @@
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, InputBase, Typography } from '@mui/material';
 import React, { useEffect, useRef } from 'react';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import Assets from '../Assets/Assets';
 import CardDark from '../Components/Card/CardDark';
 import ImgIcon from '../Components/Image/ImgIcon';
@@ -10,7 +10,7 @@ import EXPCalc from './EXPCalc';
 import TeyvatTime from './TeyvatTime';
 
 export default function PageTools(props) {
-  ReactGA.pageview('/tools')
+  ReactGA.send({ hitType: "pageview", page: '/tools' })
   return <Box display="flex" flexDirection="column" gap={1} my={1}>
     <TeyvatTime />
     <ResinCounter />

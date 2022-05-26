@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Add, ChevronRight, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, ListItemIcon, ListItemText, MenuItem, Skeleton, styled, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
-import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
 import ArtifactRarityDropdown from '../Components/Artifact/ArtifactRarityDropdown';
 import ArtifactSetDropdown from '../Components/Artifact/ArtifactSetDropdown';
@@ -308,10 +307,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
                       </label>
                     </Grid>
                     <Grid item>
-                      <Button color="info" sx={{ px: 2, minWidth: 0 }} onClick={() => {
-                        setModalShow(true)
-                        ReactGA.modalview('/artifact/how-to-upload')
-                      }}><Typography><FontAwesomeIcon icon={faQuestionCircle} /></Typography></Button>
+                      <Button color="info" sx={{ px: 2, minWidth: 0 }} onClick={() => setModalShow(true)}><Typography><FontAwesomeIcon icon={faQuestionCircle} /></Typography></Button>
                     </Grid>
                   </Grid>
                   {image && <Box display="flex" justifyContent="center">

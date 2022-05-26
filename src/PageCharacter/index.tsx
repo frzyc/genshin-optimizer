@@ -4,7 +4,7 @@ import { Calculate, Checkroom, DeleteForever, FactCheck, Groups } from '@mui/ico
 import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, Typography } from '@mui/material';
 import i18next from 'i18next';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
@@ -59,7 +59,7 @@ export default function PageCharacter(props) {
   const [dbDirty, forceUpdate] = useForceUpdate()
   //set follow, should run only once
   useEffect(() => {
-    ReactGA.pageview('/character')
+    ReactGA.send({ hitType: "pageview", page: '/character' })
     return database.followAnyChar(forceUpdate)
   }, [forceUpdate, database])
 
