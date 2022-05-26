@@ -325,7 +325,7 @@ const sheet: ICharacterSheet = {
           { node: c6_ele_enemyRes_arr[`${eleKey}_enemyRes_`] }
         )),
         canShow: unequal(condBurstAbsorption, undefined,
-          equal(condC6, "on",
+          equal(condC6, "takeDmg",
             equal(target.charKey, key, 1)
           )
         ),
@@ -334,7 +334,7 @@ const sheet: ICharacterSheet = {
         path: condBurstAbsorptionPath,
         name: st("eleAbsor"),
         teamBuff: true,
-        canShow: equal(condC6, "on", unequal(input.activeCharKey, key, 1)),
+        canShow: equal(condC6, "takeDmg", unequal(input.activeCharKey, key, 1)),
         states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
           name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
           fields: [{
