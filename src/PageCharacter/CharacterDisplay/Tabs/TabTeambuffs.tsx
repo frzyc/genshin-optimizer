@@ -22,7 +22,7 @@ import { objPathValue, range } from "../../../Util/Util";
 export default function TabTeambuffs() {
   return <Box display="flex" flexDirection="column" gap={1} alignItems="stretch">
     <Grid container spacing={1}>
-      <Grid item xs={12} md={6} lg={3} sx={{ display: "flex", flexDirection:"column", gap: 1 }}>
+      <Grid item xs={12} md={6} lg={3} sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
         <TeamBuffDisplay />
         <ResonanceDisplay />
       </Grid>
@@ -67,7 +67,7 @@ function ResonanceDisplay() {
         <CardHeader title={title} action={res.icon} titleTypographyProps={{ variant: "subtitle2" }} />
         {res.canShow(data) && <Divider />}
         {res.canShow(data) && <CardContent>
-          <DocumentDisplay sections={res.sections} teamBuffOnly hideDesc/>
+          <DocumentDisplay sections={res.sections} teamBuffOnly hideDesc />
         </CardContent>}
       </CardLight>
     })}
@@ -82,7 +82,7 @@ function TeammateDisplay({ index }: { index: number }) {
   const onClickHandler = useCharSelectionCallback()
 
   const dataBundle = teamData[characterKey]
-  const teamMateDataContext: dataContextObj | undefined = dataBundle && characterDispatch && {
+  const teamMateDataContext: dataContextObj | undefined = dataBundle && {
     character: dataBundle.character,
     characterSheet: dataBundle.characterSheet,
     data: dataBundle.target,

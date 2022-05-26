@@ -28,8 +28,8 @@ function Section({ displayNs, sectionKey }: { displayNs: DisplaySub<NodeDisplay>
   const { data, oldData } = useContext(DataContext)
   const header = usePromise(getDisplayHeader(data, sectionKey), [data, sectionKey])
   const displayNsReads = useMemo(() => objectMap(displayNs, (n, nodeKey) => customRead(["display", sectionKey, nodeKey])), [displayNs, sectionKey]);
-  // TODO: Should still show the section if `oldData` contains some non-empty entries
-  if (!header || Object.values(displayNs).every(x => x.isEmpty)) return null
+  if (!header) return <CardDark></CardDark>
+
   const { title, icon, action } = header
   return <CardDark >
     <CardHeader avatar={icon && <ImgIcon size={2} sx={{ m: -1 }} src={icon} />} title={title} action={action} titleTypographyProps={{ variant: "subtitle1" }} />
