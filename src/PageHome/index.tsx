@@ -47,7 +47,7 @@ function FeatureCard({ image, title, content, t }) {
 
 const features = [{
   image: art_editor,
-  title: t => <Link component={RouterLink} to="/artifact">
+  title: t => <Link component={RouterLink} to="/artifacts">
     <Trans i18nKey="features.artifact.title" t={t}>
       Artifact Editor & Inventory
     </Trans>
@@ -66,7 +66,7 @@ const features = [{
   </Typography>
 }, {
   image: character_editor,
-  title: t => <Link component={RouterLink} to="/character" >
+  title: t => <Link component={RouterLink} to="/characters" >
     <Trans i18nKey="features.characterEditor.title" t={t}>
       Character & Weapon Editor
     </Trans>
@@ -85,7 +85,7 @@ const features = [{
   </Typography>
 }, {
   image: talent_screen,
-  title: t => <Link component={RouterLink} to="/character" >
+  title: t => <Link component={RouterLink} to="/characters" >
     <Trans i18nKey="features.characterCalc.title" t={t}>
       Character Damage Calculations
     </Trans>

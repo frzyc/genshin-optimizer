@@ -40,10 +40,10 @@ export default function CharacterDisplay() {
   let { characterKey } = useParams<{ characterKey?: CharacterKey }>();
   const invalidKey = !allCharacterKeys.includes(characterKey as any ?? "")
   if (invalidKey)
-    return <Navigate to="/character" />
+    return <Navigate to="/characters" />
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
     {characterKey && <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}>
-      <CharacterDisplayCard characterKey={characterKey} onClose={() => navigate("/character")} />
+      <CharacterDisplayCard characterKey={characterKey} onClose={() => navigate("/characters")} />
     </Suspense>}
   </Box>
 }

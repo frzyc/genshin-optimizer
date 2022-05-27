@@ -61,7 +61,7 @@ export default function PageCharacter(props) {
   const [dbDirty, forceUpdate] = useForceUpdate()
   //set follow, should run only once
   useEffect(() => {
-    ReactGA.send({ hitType: "pageview", page: '/character' })
+    ReactGA.send({ hitType: "pageview", page: '/characters' })
     return database.followAnyChar(forceUpdate)
   }, [forceUpdate, database])
 
