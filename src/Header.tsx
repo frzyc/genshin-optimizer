@@ -12,18 +12,18 @@ import { SlotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
 const content = [{
   i18Key: "tabs.artifacts",
   svg: SlotIconSVG.flower,
-  to: "/artifact",
-  value: "artifact",
+  to: "/artifacts",
+  value: "artifacts",
 }, {
   i18Key: "tabs.weapons",
   svg: faGavel,
-  to: "/weapon",
-  value: "weapon",
+  to: "/weapons",
+  value: "weapons",
 }, {
   i18Key: "tabs.characters",
   svg: faIdCard,
-  to: "/character",
-  value: "character",
+  to: "/characters",
+  value: "characters",
 }, {
   i18Key: "tabs.tools",
   svg: faTools,

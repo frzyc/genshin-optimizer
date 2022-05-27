@@ -177,7 +177,7 @@ export default function PageCharacter(props) {
                     <Checkroom />
                   </IconButton>
                 </BootstrapTooltip>
-                <BootstrapTooltip placement="top" title={<Typography>{t("tabs.buffs")}</Typography>}>
+                <BootstrapTooltip placement="top" title={<Typography>{t("tabs.teambuffs")}</Typography>}>
                   <IconButton onClick={() => navigate(`${charKey}/teambuffs`)} >
                     <Groups />
                   </IconButton>

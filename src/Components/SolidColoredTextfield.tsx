@@ -7,7 +7,6 @@ type SolidColoredTextFieldProps = Omit<TextFieldProps, "multiline" | "variant" |
 }
 export default function SolidColoredTextField({ hasValue, startAdornment, flattenCorners = false, InputProps, sx, ...props }: SolidColoredTextFieldProps) {
   const theme = useTheme()
-  console.log(flattenCorners)
   return <TextField
     {...props}
     multiline
