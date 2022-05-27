@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Replay } from '@mui/icons-material';
 import { Alert, Box, Button, CardContent, Grid, Link, Pagination, Skeleton, ToggleButton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import CardDark from '../Components/Card/CardDark';
@@ -68,7 +68,7 @@ export default function PageArtifact() {
   const deleteArtifact = useCallback((id: string) => database.removeArt(id), [database])
 
   useEffect(() => {
-    ReactGA.pageview('/artifact')
+    ReactGA.send({ hitType: "pageview", page: '/artifact' })
     return database.followAnyArt(forceUpdate)
   }, [database, forceUpdate])
 

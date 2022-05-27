@@ -3,12 +3,12 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { createRoot } from 'react-dom/client';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 ReactGA.initialize(process.env.REACT_APP_GA_TRACKINGID as any, {
-  // debug: process.env.NODE_ENV === "development"
+  testMode: process.env.NODE_ENV === "development"
 });
 const container = document.getElementById('root');
 const root = createRoot(container!);

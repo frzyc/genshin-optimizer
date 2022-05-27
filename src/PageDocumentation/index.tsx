@@ -1,7 +1,7 @@
 import { ArrowRightAlt } from "@mui/icons-material";
 import { Box, CardContent, Divider, Grid, Link as MuiLink, Skeleton, styled, Tab, Tabs, Typography } from "@mui/material";
 import React, { Suspense } from "react";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { useTranslation } from 'react-i18next';
 import { Link, Route, Routes, useMatch } from "react-router-dom";
 import CardDark from "../Components/Card/CardDark";
@@ -13,7 +13,7 @@ import { allArtifactSets, allCharacterKeys, allWeaponKeys } from "../Types/const
 
 export default function PageDocumentation() {
   // const { t } = useTranslation("documentation")
-  ReactGA.pageview('/doc')
+  ReactGA.send({ hitType: "pageview", page: '/doc' })
 
   const { params: { currentTab } } = useMatch("/doc/:currentTab") ?? { params: { currentTab: "" } }
 
