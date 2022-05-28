@@ -47,5 +47,7 @@
     "probability": "Roll Probability"
   },
   "updatedfor": "Updated for {{version}}",
-  "delete": "Delete"
+  "delete": "Delete",
+  "locked": "Locked",
+  "unlocked": "Unlocked"
 }

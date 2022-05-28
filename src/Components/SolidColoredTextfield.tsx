@@ -9,7 +9,6 @@ export default function SolidColoredTextField({ hasValue, startAdornment, flatte
   const theme = useTheme()
   return <TextField
     {...props}
-    multiline
     variant="filled"
     color={hasValue ? "success" : "primary"}
     hiddenLabel={props.label ? false : true}

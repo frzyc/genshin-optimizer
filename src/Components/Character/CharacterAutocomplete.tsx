@@ -75,7 +75,6 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
   if (!characterSheets || !characterOptions) return null
 
   return <Autocomplete
-    disableClearable
     autoHighlight
     options={characterOptions}
     getOptionLabel={(option) => option.label}

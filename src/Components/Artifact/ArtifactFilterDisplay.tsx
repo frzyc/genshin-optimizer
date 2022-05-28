@@ -1,24 +1,24 @@
-import { faBan, faChartLine } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Autocomplete, Grid, ToggleButton, useTheme } from "@mui/material"
-import { Trans, useTranslation } from "react-i18next"
-import { FilterOption } from "../../PageArtifact/ArtifactSort"
-import { allArtifactRarities, allSlotKeys } from "../../Types/consts"
-import CharacterAutocomplete from "../Character/CharacterAutocomplete"
-import MenuItemWithImage from "../MenuItemWithImage"
-import SolidColoredTextField from "../SolidColoredTextfield"
-import SolidToggleButtonGroup from "../SolidToggleButtonGroup"
-import { Stars } from "../StarDisplay"
-import { ArtifactMainStatMultiAutocomplete, ArtifactSetMultiAutocomplete, ArtifactSubstatMultiAutocomplete } from "./ArtifactAutocomplete"
-import ArtifactLevelSlider from "./ArtifactLevelSlider"
-import { artifactSlotIcon } from "./SlotNameWIthIcon"
+import { faBan, faChartLine } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Lock, LockOpen } from '@mui/icons-material';
+import { Box, Grid, ToggleButton, useTheme } from "@mui/material";
+import { Trans, useTranslation } from "react-i18next";
+import { FilterOption } from "../../PageArtifact/ArtifactSort";
+import { allArtifactRarities, allSlotKeys } from "../../Types/consts";
+import CharacterAutocomplete from "../Character/CharacterAutocomplete";
+import SolidToggleButtonGroup from "../SolidToggleButtonGroup";
+import { Stars } from "../StarDisplay";
+import { ArtifactMainStatMultiAutocomplete, ArtifactSetMultiAutocomplete, ArtifactSubstatMultiAutocomplete } from "./ArtifactAutocomplete";
+import ArtifactLevelSlider from "./ArtifactLevelSlider";
+import { artifactSlotIcon } from "./SlotNameWIthIcon";
 
 export default function ArtifactFilterDisplay({ filterOption, filterOptionDispatch, }: { filterOption: FilterOption, filterOptionDispatch: (any) => void }) {
   const { t } = useTranslation(["artifact", "ui"]);
   const theme = useTheme()
 
   const { artSetKeys = [], mainStatKeys = [], rarity = [], slotKeys = [], levelLow, levelHigh, substats = [],
-    location = "", excluded = "" } = filterOption
+    location = "", exclusion = ["excluded", "included"], locked = ["locked", "unlocked"] } = filterOption
+
   return <Grid container spacing={1}>
     {/* left */}
     <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
@@ -30,6 +30,25 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
       <SolidToggleButtonGroup fullWidth onChange={(e, newVal) => filterOptionDispatch({ slotKeys: newVal })} value={slotKeys} size="small">
         {allSlotKeys.map(slotKey => <ToggleButton key={slotKey} value={slotKey}>{artifactSlotIcon(slotKey)}</ToggleButton>)}
       </SolidToggleButtonGroup>
+      {/* exclusion + locked */}
+      <Box display="flex" gap={1}>
+        <SolidToggleButtonGroup fullWidth value={exclusion} onChange={(e, newVal) => filterOptionDispatch({ exclusion: newVal })} size="small">
+          <ToggleButton value="excluded" sx={{ display: "flex", gap: 1 }}>
+            <FontAwesomeIcon icon={faBan} /><Trans i18nKey={"exclusion.excluded"} t={t} />
+          </ToggleButton>
+          <ToggleButton value="included" sx={{ display: "flex", gap: 1 }}>
+            <FontAwesomeIcon icon={faChartLine} /><Trans i18nKey={"exclusion.included"} t={t} />
+          </ToggleButton>
+        </SolidToggleButtonGroup>
+        <SolidToggleButtonGroup fullWidth value={locked} onChange={(e, newVal) => filterOptionDispatch({ locked: newVal })} size="small">
+          <ToggleButton value="locked" sx={{ display: "flex", gap: 1 }}>
+            <Lock /><Trans i18nKey={"ui:locked"} t={t} />
+          </ToggleButton>
+          <ToggleButton value="unlocked" sx={{ display: "flex", gap: 1 }}>
+            <LockOpen /><Trans i18nKey={"ui:unlocked"} t={t} />
+          </ToggleButton>
+        </SolidToggleButtonGroup>
+      </Box>
       {/* Artiface level filter */}
       <ArtifactLevelSlider showLevelText levelLow={levelLow} levelHigh={levelHigh}
         setLow={levelLow => filterOptionDispatch({ levelLow })}
@@ -47,42 +66,6 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
             showDefault
             showInventory
             showEquipped
-          />
-        </Grid>
-        {/* exclusion state */}
-        <Grid item flexGrow={1}>
-          <Autocomplete
-            autoHighlight
-            options={[{ label: "" }, { label: "excluded" }, { label: "included" }]}
-            value={{ label: excluded }}
-            onChange={(_, value) => filterOptionDispatch({ excluded: value ? value.label : "" })}
-            isOptionEqualToValue={(option, value) => option.label === value.label}
-            getOptionLabel={(option) => t(`artifact:exclusion.${option.label ? option.label : "any"}`)}
-            renderInput={(params) => <SolidColoredTextField
-              {...params}
-              label={t("artifact:exclusion.exclusion")}
-              hasValue={excluded ? true : false}
-              startAdornment={excluded === "excluded"
-                ? <FontAwesomeIcon icon={faBan} />
-                : excluded === "included"
-                  ? <FontAwesomeIcon icon={faChartLine} />
-                  : undefined
-              }
-            />}
-            renderOption={(props, option) => <MenuItemWithImage
-              key={option.label ? option.label : "default"}
-              value={option.label ? option.label : "default"}
-              image={option.label === "excluded"
-                ? <FontAwesomeIcon icon={faBan} />
-                : option.label === "included"
-                  ? <FontAwesomeIcon icon={faChartLine} />
-                  : undefined
-              }
-              text={<Trans t={t} i18nKey={`exclusion.${option.label ? option.label : "any"}`}>{option.label}</Trans>}
-              theme={theme}
-              isSelected={excluded === option.label}
-              props={props}
-            />}
           />
         </Grid>
       </Grid>
