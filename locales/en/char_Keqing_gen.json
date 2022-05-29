@@ -42,7 +42,7 @@
     "name": "Stellar Restoration",
     "description": {
       "0": "Hurls a Lightning Stiletto that annihilates her opponents like the swift thunder.",
-      "1": "When the Stiletto hits its target, it deals <undefined>Electro DMG</undefined> to opponents in a small AoE, and places a Stiletto Mark on the spot hit.",
+      "1": "When the Stiletto hits its target, it deals <electro>Electro DMG</electro> to opponents in a small AoE, and places a Stiletto Mark on the spot hit.",
       "2": "<br/>",
       "3": "<strong>Hold</strong>",
       "4": "Hold to adjust the direction in which the Stiletto shall be thrown.",
@@ -51,8 +51,8 @@
       "7": "<strong>Lightning Stiletto</strong>",
       "8": " If Keqing uses Stellar Restoration again or uses a Charged Attack while its duration lasts, it will clear the Stiletto Mark and produce different effects:",
       "9": [
-        "If she uses Stellar Restoration again, she will blink to the location of the Mark and unleash one slashing attack that deals <undefined>AoE Electro DMG</undefined>. When blinking to a Stiletto that was thrown from a Holding attack, Keqing can leap across obstructing terrain.",
-        "If Keqing uses a Charged Attack, she will ignite a series of thundering cuts at the Mark's location, dealing <undefined>AoE Electro DMG</undefined>."
+        "If she uses Stellar Restoration again, she will blink to the location of the Mark and unleash one slashing attack that deals <electro>AoE Electro DMG</electro>. When blinking to a Stiletto that was thrown from a Holding attack, Keqing can leap across obstructing terrain.",
+        "If Keqing uses a Charged Attack, she will ignite a series of thundering cuts at the Mark's location, dealing <electro>AoE Electro DMG</electro>."
       ],
       "10": "<br/>",
       "11": "<i>\"Humans are like moths, endlessly chasing the flame we call gods and adepti. But this light that I have here is my own.\"</i>"
@@ -79,8 +79,8 @@
   "burst": {
     "name": "Starward Sword",
     "description": {
-      "0": "Keqing unleashes the power of lightning, dealing <undefined>Electro DMG</undefined> in an AOE.",
-      "1": "She then blends into the shadow of her blade, striking a series of thunderclap-blows to nearby opponents simultaneously that deal multiple instances of <undefined>Electro DMG</undefined>. The final attack deals massive <undefined>AoE Electro DMG</undefined>.",
+      "0": "Keqing unleashes the power of lightning, dealing <electro>Electro DMG</electro> in an AOE.",
+      "1": "She then blends into the shadow of her blade, striking a series of thunderclap-blows to nearby opponents simultaneously that deal multiple instances of <electro>Electro DMG</electro>. The final attack deals massive <electro>AoE Electro DMG</electro>.",
       "2": "<br/>",
       "3": "<i>The swiftest technique in Keqing's personal arsenal is fast enough to bring stars crashing down.</i>"
     },
@@ -106,7 +106,7 @@
   "passive1": {
     "name": "Thundering Penance",
     "description": {
-      "0": "After recasting <strong>Stellar Restoration</strong> while a Lightning Stiletto is present, Keqing's weapon gains an <undefined>Electro Infusion</undefined> for 5s."
+      "0": "After recasting <strong>Stellar Restoration</strong> while a Lightning Stiletto is present, Keqing's weapon gains an <electro>Electro Infusion</electro> for 5s."
     }
   },
   "passive2": {
@@ -124,13 +124,13 @@
   "constellation1": {
     "name": "Thundering Might",
     "description": {
-      "0": "Recasting <strong>Stellar Restoration</strong> while a Lightning Stiletto is present causes Keqing to deal 50% of her ATK as <undefined>AoE Electro DMG</undefined> at the start point and terminus of her Blink."
+      "0": "Recasting <strong>Stellar Restoration</strong> while a Lightning Stiletto is present causes Keqing to deal 50% of her ATK as <electro>AoE Electro DMG</electro> at the start point and terminus of her Blink."
     }
   },
   "constellation2": {
     "name": "Keen Extraction",
     "description": {
-      "0": "When Keqing's Normal and Charged Attacks hit opponents affected by <undefined>Electro</undefined>, they have a 50% chance of producing an Elemental Particle.",
+      "0": "When Keqing's Normal and Charged Attacks hit opponents affected by <electro>Electro</electro>, they have a 50% chance of producing an Elemental Particle.",
       "1": "This effect can only occur once every 5s."
     }
   },
@@ -144,7 +144,7 @@
   "constellation4": {
     "name": "Attunement",
     "description": {
-      "0": "For 10s after Keqing triggers an <undefined>Electro-related Elemental Reaction</undefined>, her ATK is increased by 25%."
+      "0": "For 10s after Keqing triggers an <electro>Electro-related Elemental Reaction</electro>, her ATK is increased by 25%."
     }
   },
   "constellation5": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Tenacious Star",
     "description": {
-      "0": "When initiating a Normal Attack, a Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% <undefined>Electro DMG Bonus</undefined> for 8s.",
+      "0": "When initiating a Normal Attack, a Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% <electro>Electro DMG Bonus</electro> for 8s.",
       "1": "Effects triggered by Normal Attacks, Charged Attacks, Elemental Skills and Elemental Bursts are considered independent entities."
     }
   }

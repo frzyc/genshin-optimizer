@@ -8,15 +8,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
-        "1": "Summons forth kitsune spirits, initiating a maximum of 3 attacks that deal <undefined>Electro DMG</undefined>."
+        "1": "Summons forth kitsune spirits, initiating a maximum of 3 attacks that deal <electro>Electro DMG</electro>."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Consumes a certain amount of Stamina to deal <undefined>AoE Electro DMG</undefined> after a short casting time."
+        "1": "Consumes a certain amount of Stamina to deal <electro>AoE Electro DMG</electro> after a short casting time."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Plunges towards the ground from mid-air, damaging all opponents in her path with thunderous might. Deals <undefined>AoE Electro DMG</undefined> upon impact with the ground."
+        "1": "Plunges towards the ground from mid-air, damaging all opponents in her path with thunderous might. Deals <electro>AoE Electro DMG</electro> upon impact with the ground."
       }
     },
     "skillParams": {
@@ -47,7 +47,7 @@
       "3": "<strong>Sesshou Sakura</strong>",
       "4": "Has the following properties:",
       "5": [
-        " Periodically strikes one nearby opponent with lightning, dealing <undefined>Electro DMG</undefined>",
+        " Periodically strikes one nearby opponent with lightning, dealing <electro>Electro DMG</electro>",
         " When there are other Sesshou Sakura nearby, their level will increase, boosting the DMG dealt by these lightning strikes."
       ],
       "6": "<br/>",
@@ -78,8 +78,8 @@
   "burst": {
     "name": "Great Secret Art: Tenko Kenshin",
     "description": {
-      "0": "Legends of \"kitsunetsuki,\" or the manifestation of a kitsune's might, are common in Inazuma's folktales. One that particularly captures the imagination is that of the Sky Kitsune, said to cause lightning to fall down upon the foes of the Grand Narukami Shrine. Summons a lightning strike, dealing <undefined>AoE Electro DMG</undefined>.",
-      "1": "When she uses this skill, Yae Miko will unseal nearby Sesshou Sakura, destroying their outer forms and transforming them into Tenko Thunderbolts that descend from the skies, dealing <undefined>AoE Electro DMG</undefined>. Each Sesshou Sakura destroyed in this way will create one Tenko Thunderbolt.",
+      "0": "Legends of \"kitsunetsuki,\" or the manifestation of a kitsune's might, are common in Inazuma's folktales. One that particularly captures the imagination is that of the Sky Kitsune, said to cause lightning to fall down upon the foes of the Grand Narukami Shrine. Summons a lightning strike, dealing <electro>AoE Electro DMG</electro>.",
+      "1": "When she uses this skill, Yae Miko will unseal nearby Sesshou Sakura, destroying their outer forms and transforming them into Tenko Thunderbolts that descend from the skies, dealing <electro>AoE Electro DMG</electro>. Each Sesshou Sakura destroyed in this way will create one Tenko Thunderbolt.",
       "2": "<br/>",
       "3": "<i>Only at times like these will Yae reveal her Sky Kitsune form and wield lightning itself. None have seen the Lady Guuji's tails and lived to tell the story... so remember, as far as you are concerned, Lady Yae does not have a tail.</i>"
     },
@@ -142,7 +142,7 @@
   "constellation4": {
     "name": "Sakura Channeling",
     "description": {
-      "0": "When <strong>Sesshou Sakura</strong> lightning hits opponents, the <undefined>Electro DMG Bonus</undefined> of all nearby party members is increased by 20% for 5s."
+      "0": "When <strong>Sesshou Sakura</strong> lightning hits opponents, the <electro>Electro DMG Bonus</electro> of all nearby party members is increased by 20% for 5s."
     }
   },
   "constellation5": {

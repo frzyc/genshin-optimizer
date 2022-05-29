@@ -41,11 +41,11 @@
   "skill": {
     "name": "Transcendance : Présage funeste",
     "description": {
-      "0": "La Shogun Raiden dévoile un fragment de son euthymie, infligeant des <undefined>DGT Électro</undefined> aux ennemis proches, et accordant à tous les personnages de l'équipe à proximité un œil de jugement orageux.",
+      "0": "La Shogun Raiden dévoile un fragment de son euthymie, infligeant des <electro>DGT Électro</electro> aux ennemis proches, et accordant à tous les personnages de l'équipe à proximité un œil de jugement orageux.",
       "1": "<br/>",
       "2": "<strong>Œil de jugement orageux</strong>",
       "3": [
-        " Lorsqu'un personnage bénéficiant de cet effet attaque et inflige des DGT à un ennemi, l'œil déclenche une attaque coordonnée, infligeant des <undefined>DGT Électro de zone</undefined> à l'emplacement de l'ennemi.",
+        " Lorsqu'un personnage bénéficiant de cet effet attaque et inflige des DGT à un ennemi, l'œil déclenche une attaque coordonnée, infligeant des <electro>DGT Électro de zone</electro> à l'emplacement de l'ennemi.",
         " Les personnages qui obtiennent un œil de jugement orageux voient les DGT de leurs déchaînements élémentaires augmenter pendant la durée de l'œil, en fonction de l'énergie élémentaire consommée par le déchaînement."
       ],
       "4": "<br/>",
@@ -76,11 +76,11 @@
   "burst": {
     "name": "Art secret : Dogme d'idéal",
     "description": {
-      "0": "Rassemblant des vérités innombrables et des souhaits inquantifiables, la Shogun Raiden libère le Kendo d'idéal et inflige des <undefined>DGT Électro de zone</undefined>, avant d'utiliser l'Harmonie d'idéal au combat pendant un certain temps. Les DGT infligés par le Kendo d'idéal et ceux infligés par les attaques sous l'Harmonie d'idéal augmentent selon le nombre de charges de résolution de Chakra Desiderata consommées en utilisant l'aptitude.",
+      "0": "Rassemblant des vérités innombrables et des souhaits inquantifiables, la Shogun Raiden libère le Kendo d'idéal et inflige des <electro>DGT Électro de zone</electro>, avant d'utiliser l'Harmonie d'idéal au combat pendant un certain temps. Les DGT infligés par le Kendo d'idéal et ceux infligés par les attaques sous l'Harmonie d'idéal augmentent selon le nombre de charges de résolution de Chakra Desiderata consommées en utilisant l'aptitude.",
       "1": "<br/>",
       "2": "<strong>Harmonie d'idéal</strong>",
-      "3": "Dans cet état, la Shogun Raiden utilisera son tachi au combat, tandis que ses attaques normales, chargées et plongeantes seront imprégnées de <undefined>DGT Électro</undefined> ne pouvant pas être enchantés. Lorsque de telles attaques touchent des ennemis, la Shogun restaure l'énergie élémentaire de tous les personnages de l'équipe à proximité. La restauration peut être déclenchée une fois toutes les secondes de cette façon, et un maximum de 5 fois pendant toute la durée de cette aptitude.",
-      "4": "Dans cet état, la RÉS à l'interruption de la Shogun Raiden augmente, et elle est immunisée contre les <undefined>Électrocutions</undefined>.",
+      "3": "Dans cet état, la Shogun Raiden utilisera son tachi au combat, tandis que ses attaques normales, chargées et plongeantes seront imprégnées de <electro>DGT Électro</electro> ne pouvant pas être enchantés. Lorsque de telles attaques touchent des ennemis, la Shogun restaure l'énergie élémentaire de tous les personnages de l'équipe à proximité. La restauration peut être déclenchée une fois toutes les secondes de cette façon, et un maximum de 5 fois pendant toute la durée de cette aptitude.",
+      "4": "Dans cet état, la RÉS à l'interruption de la Shogun Raiden augmente, et elle est immunisée contre les <electro>Électrocutions</electro>.",
       "5": "Tant que l'Harmonie d'idéal est active, les DGT des attaques normales, chargées et plongeantes de la Shogun Raiden sont considérés comme étant des DGT de déchaînement élémentaire.",
       "6": "<br/>",
       "7": "Les effets de l'Harmonie d'idéal seront annulés lorsque la Shogun Raiden quitte le champ de bataille.",
@@ -125,7 +125,7 @@
       "0": "Tous les 1 % de recharge d'énergie au-dessus de 100 %, la Shogun Raiden bénéficie des effets suivants :",
       "1": [
         " La restauration d'énergie élémentaire accordée par l'<strong>Harmonie d'idéal</strong> augmente de 0,6 % ;",
-        " Le <undefined>bonus de DGT Électro</undefined> augmente de 0,4 %."
+        " Le <electro>bonus de DGT Électro</electro> augmente de 0,4 %."
       ]
     }
   },
@@ -138,7 +138,7 @@
   "constellation1": {
     "name": "Inscription menaçante",
     "description": {
-      "0": "<strong>Chakra Desiderata</strong> accumule de la résolution encore plus rapidement. Quand un personnage <undefined>Électro</undefined> utilise un déchaînement élémentaire, le gain de résolution augmente de 80 % ; quand un personnage d'un autre type élémentaire utilise un déchaînement élémentaire, le gain de résolution augmente de 20 %."
+      "0": "<strong>Chakra Desiderata</strong> accumule de la résolution encore plus rapidement. Quand un personnage <electro>Électro</electro> utilise un déchaînement élémentaire, le gain de résolution augmente de 80 % ; quand un personnage d'un autre type élémentaire utilise un déchaînement élémentaire, le gain de résolution augmente de 20 %."
     }
   },
   "constellation2": {

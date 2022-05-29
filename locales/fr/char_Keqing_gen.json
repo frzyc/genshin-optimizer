@@ -42,7 +42,7 @@
     "name": "Retour des étoiles",
     "description": {
       "0": "Keqing lance une Lame de foudre qui attaque ses ennemis avec la puissance des cieux.",
-      "1": "Lorsqu'une Lame de foudre touche sa cible, elle inflige des <undefined>DGT Électro de zone</undefined> et laisse une marque à l'endroit visé.",
+      "1": "Lorsqu'une Lame de foudre touche sa cible, elle inflige des <electro>DGT Électro de zone</electro> et laisse une marque à l'endroit visé.",
       "2": "<br/>",
       "3": "<strong>Appui long</strong>",
       "4": "Ajuste la zone où la compétence sera lancée.",
@@ -51,8 +51,8 @@
       "7": "<strong>Lame de foudre</strong>",
       "8": "Lorsque la marque est active, Keqing peut utiliser à nouveau Retour des étoiles pour se téléporter ou lancer une attaque chargée et la marque disparaîtra avec les effets suivant selon le cas :",
       "9": [
-        " Réactivation de Retour des étoiles : Keqing se téléporte à l'emplacement de la marque et exécute une entaille qui inflige des <undefined>DGT Électro de zone</undefined>. Keqing passe à travers tous les obstacles topographiques lorsqu'elle se téléporte.",
-        " Attaque chargée : une série de coups de tonnerre tranchants s'abat à l'emplacement de la marque, infligeant des <undefined>DGT Électro de zone</undefined>."
+        " Réactivation de Retour des étoiles : Keqing se téléporte à l'emplacement de la marque et exécute une entaille qui inflige des <electro>DGT Électro de zone</electro>. Keqing passe à travers tous les obstacles topographiques lorsqu'elle se téléporte.",
+        " Attaque chargée : une série de coups de tonnerre tranchants s'abat à l'emplacement de la marque, infligeant des <electro>DGT Électro de zone</electro>."
       ],
       "10": "<br/>",
       "11": "<i>« Les humains sont comme des papillons de nuit, attirés par la lumière des dieux et des Adeptes. Or seule la mienne guide mes ailes. »</i>"
@@ -79,8 +79,8 @@
   "burst": {
     "name": "Promenade céleste",
     "description": {
-      "0": "Keqing fait appel à la puissance de l'éclair, et inflige des <undefined>DGT Électro de zone</undefined>.",
-      "1": "Se fondant ensuite dans l'ombre de son épée, elle libère une série de coups tranchants rapides, infligeant aux ennemis proches des <undefined>DGT Électro</undefined>. Le coup final inflige d'importants <undefined>DGT Électro de zone</undefined>.",
+      "0": "Keqing fait appel à la puissance de l'éclair, et inflige des <electro>DGT Électro de zone</electro>.",
+      "1": "Se fondant ensuite dans l'ombre de son épée, elle libère une série de coups tranchants rapides, infligeant aux ennemis proches des <electro>DGT Électro</electro>. Le coup final inflige d'importants <electro>DGT Électro de zone</electro>.",
       "2": "<br/>",
       "3": "<i>L'une des techniques les plus rapides de l'arsenal de Keqing, capable de faire tomber même les étoiles.</i>"
     },
@@ -106,7 +106,7 @@
   "passive1": {
     "name": "Pénitence retentissante",
     "description": {
-      "0": "Keqing obtient pendant 5 s un <undefined>enchantement Électro</undefined> lorsqu'une Lame de foudre est active et que <strong>Retour des Étoiles</strong> est lancé à nouveau."
+      "0": "Keqing obtient pendant 5 s un <electro>enchantement Électro</electro> lorsqu'une Lame de foudre est active et que <strong>Retour des Étoiles</strong> est lancé à nouveau."
     }
   },
   "passive2": {
@@ -124,13 +124,13 @@
   "constellation1": {
     "name": "Force foudroyante",
     "description": {
-      "0": "Lorsque Keqing libère de nouveau <strong>Retour des étoiles</strong> lorsqu'une Lame de foudre est active, elle inflige des <undefined>DGT Électro de zone</undefined> équivalant à 50 % de son ATQ aux endroits où elle disparaît puis réapparaît."
+      "0": "Lorsque Keqing libère de nouveau <strong>Retour des étoiles</strong> lorsqu'une Lame de foudre est active, elle inflige des <electro>DGT Électro de zone</electro> équivalant à 50 % de son ATQ aux endroits où elle disparaît puis réapparaît."
     }
   },
   "constellation2": {
     "name": "Taxation sévère",
     "description": {
-      "0": "Les attaques normales et chargées de Keqing touchant un ennemi affecté par l'élément <undefined>Électro</undefined> ont 50 % de chances de générer une particule élémentaire.",
+      "0": "Les attaques normales et chargées de Keqing touchant un ennemi affecté par l'élément <electro>Électro</electro> ont 50 % de chances de générer une particule élémentaire.",
       "1": "Cet effet peut être déclenché une fois toutes les 5 s."
     }
   },
@@ -144,7 +144,7 @@
   "constellation4": {
     "name": "Syntonie",
     "description": {
-      "0": "Lorsque Keqing déclenche une <undefined>réaction liée à l'élément Électro</undefined>, son ATQ augmente de 25 % pendant 10 s."
+      "0": "Lorsque Keqing déclenche une <electro>réaction liée à l'élément Électro</electro>, son ATQ augmente de 25 % pendant 10 s."
     }
   },
   "constellation5": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Étoile tenace",
     "description": {
-      "0": "Les attaques normales, attaques chargées, compétences élémentaires et déchaînements élémentaires de Keqing lui confèrent un <undefined>bonus de DGT Électro de 6 % pendant 8 s.</undefined> Les effets déclenchés sont différents selon le type d'attaque."
+      "0": "Les attaques normales, attaques chargées, compétences élémentaires et déchaînements élémentaires de Keqing lui confèrent un <electro>bonus de DGT Électro de 6 % pendant 8 s.</electro> Les effets déclenchés sont différents selon le type d'attaque."
     }
   }
 }

@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Charged Attack</strong>",
         "1": "Perform a more precise <strong>Aimed Shot</strong> with increased DMG.",
-        "2": "While aiming, the dark lightning spirits of Immernachtreich shall heed the call of their Prinzessin and indwell the enchanted arrowhead. When fully indwelt, the Rachsüchtig Blitz shall deal immense <undefined>Electro DMG</undefined>."
+        "2": "While aiming, the dark lightning spirits of Immernachtreich shall heed the call of their Prinzessin and indwell the enchanted arrowhead. When fully indwelt, the Rachsüchtig Blitz shall deal immense <electro>Electro DMG</electro>."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
@@ -42,8 +42,8 @@
   "skill": {
     "name": "Nightrider",
     "description": {
-      "0": "Summons Oz. The night raven forged of darkness and lightning descends upon the land, dealing <undefined>Electro DMG</undefined> in a small AoE.",
-      "1": "For the ability's duration, Oz will continuously attack nearby opponents with <undefined>Freikugel</undefined>.",
+      "0": "Summons Oz. The night raven forged of darkness and lightning descends upon the land, dealing <electro>Electro DMG</electro> in a small AoE.",
+      "1": "For the ability's duration, Oz will continuously attack nearby opponents with <electro>Freikugel</electro>.",
       "2": "<br/>",
       "3": "Hold to adjust the location Oz will be summoned to.",
       "4": "Press again any time during the ability's duration to once again summon him to Fischl's side.",
@@ -77,7 +77,7 @@
       "1": "Has the following properties during the ability's duration:",
       "2": [
         "Fischl takes on Oz's form, greatly increasing her Movement Speed.",
-        "Strikes nearby opponents with lightning, dealing <undefined>Electro DMG</undefined> to opponents she comes into contact with. Each opponent can only be struck once.",
+        "Strikes nearby opponents with lightning, dealing <electro>Electro DMG</electro> to opponents she comes into contact with. Each opponent can only be struck once.",
         "Once this ability's effects end, Oz will remain on the battlefield and attack his Prinzessin's foes. If Oz is already on the field, then this will reset the duration of his presence."
       ],
       "3": "<br/>",
@@ -106,13 +106,13 @@
   "passive1": {
     "name": "Stellar Predator",
     "description": {
-      "0": "When Fischl hits Oz with a fully-charged Aimed Shot, Oz brings down Thundering Retribution, dealing <undefined>AoE Electro DMG</undefined> equal to 152.7% of the arrow's DMG."
+      "0": "When Fischl hits Oz with a fully-charged Aimed Shot, Oz brings down Thundering Retribution, dealing <electro>AoE Electro DMG</electro> equal to 152.7% of the arrow's DMG."
     }
   },
   "passive2": {
     "name": "Undone Be Thy Sinful Hex",
     "description": {
-      "0": "If your current active character triggers an <undefined>Electro-related Elemental Reaction</undefined> when Oz is on the field, the opponent shall be stricken with Thundering Retribution, dealing <undefined>Electro DMG</undefined> equal to 80% of Fischl's ATK."
+      "0": "If your current active character triggers an <electro>Electro-related Elemental Reaction</electro> when Oz is on the field, the opponent shall be stricken with Thundering Retribution, dealing <electro>Electro DMG</electro> equal to 80% of Fischl's ATK."
     }
   },
   "passive3": {
@@ -143,7 +143,7 @@
   "constellation4": {
     "name": "Her Pilgrimage of Bleak",
     "description": {
-      "0": "When <strong>Midnight Phantasmagoria</strong> is used, it deals 222% of ATK as <undefined>Electro DMG</undefined> to surrounding opponents.",
+      "0": "When <strong>Midnight Phantasmagoria</strong> is used, it deals 222% of ATK as <electro>Electro DMG</electro> to surrounding opponents.",
       "1": "When the skill duration ends, Fischl regenerates 20% of her HP."
     }
   },
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Evernight Raven",
     "description": {
-      "0": "Extends the duration of Oz's presence on the field by 2s. Additionally, Oz performs joint attacks with your active character when present, dealing 30% of Fischl's ATK as <undefined>Electro DMG</undefined>."
+      "0": "Extends the duration of Oz's presence on the field by 2s. Additionally, Oz performs joint attacks with your active character when present, dealing 30% of Fischl's ATK as <electro>Electro DMG</electro>."
     }
   }
 }

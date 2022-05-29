@@ -42,7 +42,7 @@
     "name": "Restauração Estelar",
     "description": {
       "0": "Arremessa um Relâmpago Stiletto que aniquila seus inimigos como um rápido trovão.",
-      "1": "Quando o Stiletto acerta seu alvo, ele causa <undefined>Dano Electro</undefined> nos inimigos em uma pequena AdE e coloca uma Marca de Stiletto no local atingido.",
+      "1": "Quando o Stiletto acerta seu alvo, ele causa <electro>Dano Electro</electro> nos inimigos em uma pequena AdE e coloca uma Marca de Stiletto no local atingido.",
       "2": "<br/>",
       "3": "<strong>Manter pressionado</strong>",
       "4": "Mantenha pressionado para ajustar a direção na qual o Stiletto deve ser lançado.",
@@ -50,8 +50,8 @@
       "6": "<br/>",
       "7": "<strong>Relâmpago Stiletto</strong>",
       "8": " Se Keqing usar Restauração Estelar novamente ou usar um Ataque Carregado ainda em sua duração, removerá a Marca de Stiletto e produzirá efeitos diferentes:",
-      "9": " se ela usar Restauração Estelar novamente, ela irá teleportar para a localização da Marca e desencadeará um ataque cortante, que causa <undefined>Dano Electro em AdE</undefined>. Quando teleportando para um Stiletto que foi lançado com um Ataque Pressionado, Keqing pode ignorar obstruções do terreno.",
-      "10": " Se Keqing usa um Ataque Carregado, ela provocará uma série de cortes estrondosos na localização da Marca, causando <undefined>Dano Electro em AdE</undefined>.",
+      "9": " se ela usar Restauração Estelar novamente, ela irá teleportar para a localização da Marca e desencadeará um ataque cortante, que causa <electro>Dano Electro em AdE</electro>. Quando teleportando para um Stiletto que foi lançado com um Ataque Pressionado, Keqing pode ignorar obstruções do terreno.",
+      "10": " Se Keqing usa um Ataque Carregado, ela provocará uma série de cortes estrondosos na localização da Marca, causando <electro>Dano Electro em AdE</electro>.",
       "11": "<br/>",
       "12": "<i>“Humanos são como mariposas, buscando incessantemente a chama que chamamos de deuses e Adepti. Mas essa luz que tenho aqui é a minha.”</i>"
     },
@@ -77,8 +77,8 @@
   "burst": {
     "name": "Passeio Celestial",
     "description": {
-      "0": "Keqing desencadeia o poder dos raios, infligindo <undefined>Dano Electro</undefined> em uma AdE.",
-      "1": "Ela então se mistura na sombra de sua espada, desferindo uma série de golpes trovejantes nos inimigos próximos que simultaneamente infligem múltiplos acertos de <undefined>Dano Electro</undefined>. O ataque final inflige um massivo <undefined>Dano Electro em uma AdE</undefined>.",
+      "0": "Keqing desencadeia o poder dos raios, infligindo <electro>Dano Electro</electro> em uma AdE.",
+      "1": "Ela então se mistura na sombra de sua espada, desferindo uma série de golpes trovejantes nos inimigos próximos que simultaneamente infligem múltiplos acertos de <electro>Dano Electro</electro>. O ataque final inflige um massivo <electro>Dano Electro em uma AdE</electro>.",
       "2": "<br/>",
       "3": "<i>A técnica mais veloz no arsenal pessoal de Keqing é rápida o suficiente para derrubar as estrelas ao chão.</i>"
     },
@@ -104,7 +104,7 @@
   "passive1": {
     "name": "Penitência do Trovão",
     "description": {
-      "0": "Após relançar <strong>Restauração Estelar</strong> enquanto um Relâmpago Stiletto está presente, Keqing ganha <undefined>Encantamento Electro</undefined> por 5s."
+      "0": "Após relançar <strong>Restauração Estelar</strong> enquanto um Relâmpago Stiletto está presente, Keqing ganha <electro>Encantamento Electro</electro> por 5s."
     }
   },
   "passive2": {
@@ -122,13 +122,13 @@
   "constellation1": {
     "name": "Poder Trovejante",
     "description": {
-      "0": "Relançar <strong>Restauração Estelar</strong> enquanto um Stiletto de Relâmpago está presente faz com que Keqing cause 50% do seu ATQ como <undefined>Dano Electro em uma AdE</undefined> na localização inicial e final de seu Teleporte."
+      "0": "Relançar <strong>Restauração Estelar</strong> enquanto um Stiletto de Relâmpago está presente faz com que Keqing cause 50% do seu ATQ como <electro>Dano Electro em uma AdE</electro> na localização inicial e final de seu Teleporte."
     }
   },
   "constellation2": {
     "name": "Extração Afiada",
     "description": {
-      "0": "Quando Ataques Normais e Carregados da Keqing acertam inimigos afetados por <undefined>Electro</undefined> eles têm 50% de chance de produzir uma Partícula Elemental.",
+      "0": "Quando Ataques Normais e Carregados da Keqing acertam inimigos afetados por <electro>Electro</electro> eles têm 50% de chance de produzir uma Partícula Elemental.",
       "1": "Esse efeito pode ocorrer apenas uma vez a cada 5 segundos."
     }
   },
@@ -142,7 +142,7 @@
   "constellation4": {
     "name": "Sintonia",
     "description": {
-      "0": "Por 10 segundos após Keqing acionar uma <undefined>Reação Elemental relacionada com Electro</undefined>, seu ATQ é aumentado em 25%."
+      "0": "Por 10 segundos após Keqing acionar uma <electro>Reação Elemental relacionada com Electro</electro>, seu ATQ é aumentado em 25%."
     }
   },
   "constellation5": {
@@ -155,7 +155,7 @@
   "constellation6": {
     "name": "Estrela Tenaz",
     "description": {
-      "0": "Ao iniciar um Ataque Normal, um Ataque Carregado, uma Habilidade Elemental ou um Supremo, Keqing ganha 6% de <undefined>Bônus de Dano Electro</undefined> por 8 segundos.",
+      "0": "Ao iniciar um Ataque Normal, um Ataque Carregado, uma Habilidade Elemental ou um Supremo, Keqing ganha 6% de <electro>Bônus de Dano Electro</electro> por 8 segundos.",
       "1": "Efeitos ativados por Ataques Normais, Ataques Carregados, Habilidades Elementais e Supremos são considerados entidades independentes."
     }
   }

@@ -56,7 +56,7 @@
       "11": "This skill has a maximum duration of 10s and enters CD once its effects end. The longer Sayu remains in her Windwheel state, the longer the CD.",
       "12": "<br/>",
       "13": "<strong>Elemental Absorption</strong>",
-      "14": "If Sayu comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined> while in her Windwheel state, she will deal additional elemental DMG of that type.",
+      "14": "If Sayu comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> while in her Windwheel state, she will deal additional elemental DMG of that type.",
       "15": "Elemental Absorption may only occur once per use of this skill.",
       "16": "<br/>",
       "17": "<i>Sayu can pull this skill off with her eyes closed. This technique was originally created for escaping, but now that she's got a Vision, might as well make her foes eat dirt while she's at it.</i>"

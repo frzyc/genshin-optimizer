@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
         "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
-        "2": "Konzentriert die Kraft der Blitze während des Zielens an der Pfeilspitze, die voll aufgeladen beim Treffen von Gegnern <undefined>Elektro-Schaden</undefined> verursacht.",
+        "2": "Konzentriert die Kraft der Blitze während des Zielens an der Pfeilspitze, die voll aufgeladen beim Treffen von Gegnern <electro>Elektro-Schaden</electro> verursacht.",
         "3": "Jeder voll aufgeladene Pfeil hinterlässt im Zustand „Krähenfederhaube“ beim Treffen von Gegnern eine „Krähenfeder“."
       },
       "plunging": {
@@ -45,7 +45,7 @@
     "description": {
       "0": "Zieht sich geschwind mit der Schnelligkeit eines Tengu zurück und beschwört den Schutz der Krähenfedern.",
       "1": "Erhält eine 18 s anhaltende „Krähenfederhaube“. Sobald Kujou Sara einen voll aufgeladenen Pfeil abschießt, verbraucht sie die Krähenfederhaube und hinterlässt an der Stelle des Treffers des Pfeils eine Krähenfeder.",
-      "2": "Krähenfedern lösen nach kurzer Zeit Tengu Juurai – Hinterhalt aus, fügen allen Gegnern im Wirkungsbereich <undefined>Elektro-Schaden</undefined> zu und erhöhen den Angriff aktueller Figuren im Wirkungsbereich basierend auf Kujou Saras Basis-ANG.",
+      "2": "Krähenfedern lösen nach kurzer Zeit Tengu Juurai – Hinterhalt aus, fügen allen Gegnern im Wirkungsbereich <electro>Elektro-Schaden</electro> zu und erhöhen den Angriff aktueller Figuren im Wirkungsbereich basierend auf Kujou Saras Basis-ANG.",
       "3": "<br/>",
       "4": "Die ANG-Boni verschiedener Tengu Juurai sind nicht stapelbar und Effekt sowie Wirkungsdauer hängen vom zuletzt in Kraft getretenen Tengu Juurai ab.",
       "5": "<br/>",
@@ -74,7 +74,7 @@
   "burst": {
     "name": "Unterwerfung – Koukou Sendou",
     "description": {
-      "0": "Beschwört an der Stelle des Ziels einen Tengu Juurai – Titanenbrecher und verursacht <undefined>Elektro-Flächenschaden</undefined>. Der Tengu Juurai – Titanenbrecher spaltet sich danach in 4 aufeinanderfolgende Tengu Juurai – Blitzbündel auf und verursacht <undefined>Elektro-Flächenschaden</undefined>.",
+      "0": "Beschwört an der Stelle des Ziels einen Tengu Juurai – Titanenbrecher und verursacht <electro>Elektro-Flächenschaden</electro>. Der Tengu Juurai – Titanenbrecher spaltet sich danach in 4 aufeinanderfolgende Tengu Juurai – Blitzbündel auf und verursacht <electro>Elektro-Flächenschaden</electro>.",
       "1": "Tengu Juurai – Titanenbrecher sowie Tengu Juurai – Blitzbündel verleihen aktuellen Figuren im Wirkungsbereich den gleichen ANG-Bonus wie die Elementarfähigkeit Tengu-Sturmbeschwörung.",
       "2": "<br/>",
       "3": "Die ANG-Boni verschiedener Tengu Juurai sind nicht stapelbar und Effekt sowie Wirkungsdauer hängen vom zuletzt in Kraft getretenen Tengu Juurai ab.",
@@ -154,7 +154,7 @@
   "constellation6": {
     "name": "Sünde des Stolzes",
     "description": {
-      "0": "Erhöht den Kritischen Schaden von <undefined>Elektro-SCH</undefined> der Figuren mit dem ANG-Bonus von Tengu Juurai um 60 %."
+      "0": "Erhöht den Kritischen Schaden von <electro>Elektro-SCH</electro> der Figuren mit dem ANG-Bonus von Tengu Juurai um 60 %."
     }
   }
 }

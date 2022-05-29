@@ -45,15 +45,15 @@
       "0": "Nothing to worry about. Should anyone raise a hand against her or her men, she will avenge it ten-fold with sword and thunder.",
       "1": "<br/>",
       "2": "<strong>Press</strong>",
-      "3": "Accumulating the power of lightning, Beidou swings her blade forward fiercely, dealing <undefined>Electro DMG</undefined>.",
+      "3": "Accumulating the power of lightning, Beidou swings her blade forward fiercely, dealing <electro>Electro DMG</electro>.",
       "4": "<br/>",
       "5": "<strong>Hold</strong>",
       "6": "Lifts her weapon up as a shield. Max DMG absorbed scales off Beidou's Max HP.",
-      "7": "Attacks using the energy stored within the greatsword upon release or once this ability's duration expires, dealing <undefined>Electro DMG</undefined>. DMG dealt scales with the number of times Beidou is attacked in the skill's duration. The greatest DMG Bonus will be attained once this effect is triggered twice.",
+      "7": "Attacks using the energy stored within the greatsword upon release or once this ability's duration expires, dealing <electro>Electro DMG</electro>. DMG dealt scales with the number of times Beidou is attacked in the skill's duration. The greatest DMG Bonus will be attained once this effect is triggered twice.",
       "8": "The shield possesses the following properties:",
       "9": [
-        "Has 250% <undefined>Electro DMG</undefined> Absorption Efficiency.",
-        "Applies the <undefined>Electro element</undefined> to Beidou upon activation."
+        "Has 250% <electro>Electro DMG</electro> Absorption Efficiency.",
+        "Applies the <electro>Electro element</electro> to Beidou upon activation."
       ],
       "10": "<br/>",
       "11": "<i>Conquer the high seas! Pursue the waves and chase the storm!</i>"
@@ -80,11 +80,11 @@
   "burst": {
     "name": "Stormbreaker",
     "description": {
-      "0": "Recalling her slaying of the great beast Haishan, Beidou calls upon that monstrous strength and the lightning to create a Thunderbeast's Targe around herself, dealing <undefined>Electro DMG</undefined> to nearby opponents.",
+      "0": "Recalling her slaying of the great beast Haishan, Beidou calls upon that monstrous strength and the lightning to create a Thunderbeast's Targe around herself, dealing <electro>Electro DMG</electro> to nearby opponents.",
       "1": "<br/>",
       "2": "<strong>Thunderbeast's Targe</strong>",
       "3": [
-        "When Normal and Charged Attacks hit, they create a lightning discharge that can jump between opponents, dealing <undefined>Electro DMG</undefined>.",
+        "When Normal and Charged Attacks hit, they create a lightning discharge that can jump between opponents, dealing <electro>Electro DMG</electro>.",
         "Increases the character's resistance to interruption, and decreases DMG taken."
       ],
       "4": "<br/>",
@@ -139,7 +139,7 @@
     "description": {
       "0": "When <strong>Stormbreaker</strong> is used:",
       "1": "Creates a shield that absorbs up to 16% of Beidou's Max HP for 15s.",
-      "2": "This shield absorbs <undefined>Electro DMG</undefined> 250% more effectively."
+      "2": "This shield absorbs <electro>Electro DMG</electro> 250% more effectively."
     }
   },
   "constellation2": {
@@ -158,7 +158,7 @@
   "constellation4": {
     "name": "Stunning Revenge",
     "description": {
-      "0": "Upon being attacked, Beidou's Normal Attacks gain an additional instance of 20% <undefined>Electro DMG</undefined> for 10s."
+      "0": "Upon being attacked, Beidou's Normal Attacks gain an additional instance of 20% <electro>Electro DMG</electro> for 10s."
     }
   },
   "constellation5": {
@@ -171,7 +171,7 @@
   "constellation6": {
     "name": "Bane of Evil",
     "description": {
-      "0": "During the duration of <strong>Stormbreaker</strong>, the <undefined>Electro RES</undefined> of surrounding opponents is decreased by 15%."
+      "0": "During the duration of <strong>Stormbreaker</strong>, the <electro>Electro RES</electro> of surrounding opponents is decreased by 15%."
     }
   }
 }

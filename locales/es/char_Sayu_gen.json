@@ -56,7 +56,7 @@
       "11": "La rueda de viento tiene una duración máxima de 10 s y, al finalizar, la habilidad entrará en TdE. Cuanto más tiempo esté transformada en la rueda de viento, más largo será dicho TdE.",
       "12": "<br/>",
       "13": "<strong>Cambio elemental</strong>",
-      "14": "Si Sayu entra en contacto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined> estando transformada en la rueda de viento, tanto dicha rueda como la tornadopatada infligirán un bono de Daño Elemental adicional de ese tipo.",
+      "14": "Si Sayu entra en contacto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> estando transformada en la rueda de viento, tanto dicha rueda como la tornadopatada infligirán un bono de Daño Elemental adicional de ese tipo.",
       "15": "El cambio elemental solo puede ocurrir una vez durante la habilidad.",
       "16": "<br/>",
       "17": "<i>Sayu podría ejecutar a la perfección esta técnica incluso con los ojos cerrados. En un principio, la usaba para huir, pero tras conseguir su Visión, por fin la puede aprovechar para que sus enemigos muerdan el polvo.</i>"

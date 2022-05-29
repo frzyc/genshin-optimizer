@@ -5,7 +5,7 @@
       "enerRechInc": "Aufladeratenbonus",
       "name": "Blitzschattenschwert",
       "description": {
-        "0": "Führt drei schnelle Blitzschattenhiebe aus, die Gegnern <undefined>Elektro-Schaden</undefined> zufügen und Amulette des Überflusses bei getroffenen Gegnern hinterlassen.",
+        "0": "Führt drei schnelle Blitzschattenhiebe aus, die Gegnern <electro>Elektro-Schaden</electro> zufügen und Amulette des Überflusses bei getroffenen Gegnern hinterlassen.",
         "1": "Kann anfänglich bis zu 2 Amulette des Überflusses erschaffen. Entfernt bei Anwendung dieser Fähigkeit alle bereits selbst erschaffenen Amulette des Überflusses.",
         "2": "<br/>",
         "3": "<strong>Amulette des Überflusses</strong>",
@@ -40,10 +40,10 @@
       "thunderDMG": "SCH greller Blitzschläge",
       "name": "Rollender Donner",
       "description": {
-        "0": "Du beschwörst den Schutz der Blitze an deine Seite, stößt Gegner in der Umgebung zurück und verursachst <undefined>Elektro-Schaden</undefined>.",
+        "0": "Du beschwörst den Schutz der Blitze an deine Seite, stößt Gegner in der Umgebung zurück und verursachst <electro>Elektro-Schaden</electro>.",
         "1": "<br/>",
         "2": "<strong>Blitzgewand</strong>",
-        "3": "Beschwört beim Treffen von Gegnern mit Standardangriffen oder heftigen Schlägen der aktuellen eigenen Figur einen grellen Blitzschlag und fügt Gegnern <undefined>Elektro-Schaden</undefined> zu.",
+        "3": "Beschwört beim Treffen von Gegnern mit Standardangriffen oder heftigen Schlägen der aktuellen eigenen Figur einen grellen Blitzschlag und fügt Gegnern <electro>Elektro-Schaden</electro> zu.",
         "4": "Stellt beim Treffen von Gegnern mit grellen Blitzschlägen der jeweiligen Figur Elementarenergie wieder her.",
         "5": "0,5 s Abklingzeit für grelle Blitzschläge.",
         "6": "<br/>",
@@ -124,7 +124,7 @@
     "constellation2": {
       "name": "Wucht des Wetters",
       "description": {
-        "0": "Verringert beim Treffen von Gegnern mit dem grellen Blitzschlag von <strong>Rollender Donner</strong> den <undefined>Elektro-WDS</undefined> dieser Gegner 8 s lang um 15 %."
+        "0": "Verringert beim Treffen von Gegnern mit dem grellen Blitzschlag von <strong>Rollender Donner</strong> den <electro>Elektro-WDS</electro> dieser Gegner 8 s lang um 15 %."
       }
     },
     "constellation3": {
@@ -204,7 +204,7 @@
         "4": "Schaden und Wirkungsbereich vergrößern sich allmählich.",
         "5": "<br/>",
         "6": "<strong>Elementarumwandlung</strong>",
-        "7": "Verleiht dem Vakuumstrudel beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <undefined>Elektro</undefined>-Effekte während der Wirkungsdauer das jeweilige Element und verursacht dementsprechend Schaden.",
+        "7": "Verleiht dem Vakuumstrudel beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Effekte während der Wirkungsdauer das jeweilige Element und verursacht dementsprechend Schaden.",
         "8": "Elementarumwandlung nur einmal während der Wirkungsdauer möglich.",
         "9": "<br/>",
         "10": "<i>Du hast mit Paimon darüber gesprochen, wie man formlosen Wind in der Hand halten kann.</i>"
@@ -234,7 +234,7 @@
         "0": "Leitet den Wind und erschafft einen sich nach vorn bewegenden Tornado, der Objekte und Gegner in seiner Bahn mitreißt und fortlaufend <anemo>Anemo-Schaden</anemo> verursacht.",
         "1": "<br/>",
         "2": "<strong>Elementarumwandlung</strong>",
-        "3": "Verleiht dem Tornado beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <undefined>Elektro</undefined>-Effekte während der Wirkungsdauer das jeweilige Element und verursacht dementsprechend zusätzlichen Schaden.",
+        "3": "Verleiht dem Tornado beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Effekte während der Wirkungsdauer das jeweilige Element und verursacht dementsprechend zusätzlichen Schaden.",
         "4": "Elementarumwandlung nur einmal während der Wirkungsdauer möglich.",
         "5": "<br/>",
         "6": "<i>Du hast mit Paimon den Flügelschlag von Schmetterlingen untersucht.</i>"

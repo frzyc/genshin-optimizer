@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Charged Attack</strong>",
         "1": "Perform a more precise <strong>Aimed Shot</strong> with increased DMG.",
-        "2": "While aiming, crackling lightning will accumulate on the arrowhead. An arrow fully charged with the storm's might will deal <undefined>Electro DMG</undefined>.",
+        "2": "While aiming, crackling lightning will accumulate on the arrowhead. An arrow fully charged with the storm's might will deal <electro>Electro DMG</electro>.",
         "3": "When in the Crowfeather Cover state, a fully-charged arrow will leave a Crowfeather behind after it hits."
       },
       "plunging": {
@@ -45,7 +45,7 @@
     "description": {
       "0": "Retreats rapidly with the speed of a tengu, summoning the protection of the Crowfeather.",
       "1": "Gains Crowfeather Cover for 18s, and when Kujou Sara fires a fully-charged Aimed Shot, Crowfeather Cover will be consumed, and will leave a Crowfeather at the target location.",
-      "2": "Crowfeathers will trigger Tengu Juurai: Ambush after a short time, dealing <undefined>Electro DMG</undefined> and granting the active character within its AoE an ATK Bonus based on Kujou Sara's Base ATK.",
+      "2": "Crowfeathers will trigger Tengu Juurai: Ambush after a short time, dealing <electro>Electro DMG</electro> and granting the active character within its AoE an ATK Bonus based on Kujou Sara's Base ATK.",
       "3": "<br/>",
       "4": "The ATK Bonuses from different Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
       "5": "<br/>",
@@ -74,7 +74,7 @@
   "burst": {
     "name": "Subjugation: Koukou Sendou",
     "description": {
-      "0": "Casts down Tengu Juurai: Titanbreaker, dealing <undefined>AoE Electro DMG</undefined>. Afterwards, Tengu Juurai: Titanbreaker spreads out into 4 consecutive bouts of Tengu Juurai: Stormcluster, dealing <undefined>AoE Electro DMG</undefined>.",
+      "0": "Casts down Tengu Juurai: Titanbreaker, dealing <electro>AoE Electro DMG</electro>. Afterwards, Tengu Juurai: Titanbreaker spreads out into 4 consecutive bouts of Tengu Juurai: Stormcluster, dealing <electro>AoE Electro DMG</electro>.",
       "1": "Tengu Juurai: Titanbreaker and Tengu Juurai: Stormcluster can provide the active character within their AoE with the same ATK Bonus as given by the Elemental Skill, Tengu Stormcall.",
       "2": "<br/>",
       "3": "The ATK Bonus provided by various kinds of Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
@@ -154,7 +154,7 @@
   "constellation6": {
     "name": "Sin of Pride",
     "description": {
-      "0": "The <undefined>Electro DMG</undefined> of characters who have had their ATK increased by Tengu Juurai has its Crit DMG increased by 60%."
+      "0": "The <electro>Electro DMG</electro> of characters who have had their ATK increased by Tengu Juurai has its Crit DMG increased by 60%."
     }
   }
 }

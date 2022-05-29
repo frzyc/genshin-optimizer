@@ -80,7 +80,7 @@
       "0": "Menembakkan panah yang terbuat dari angin gabungan yang tak terhitung jumlahnya. Membuat Stormeye raksasa yang menarik musuh; mengakibatkan <anemo>Anemo DMG</anemo> berkelanjutan.",
       "1": "<br/>",
       "2": "<strong>Elemental Absorption</strong>",
-      "3": "Jika Stormeye bersentuhan dengan elemen <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, ia akan mengakibatkan tambahan Elemental DMG dengan tipe tersebut.",
+      "3": "Jika Stormeye bersentuhan dengan elemen <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, ia akan mengakibatkan tambahan Elemental DMG dengan tipe tersebut.",
       "4": "Elemental Absorption hanya dapat terjadi sekali untuk setiap penggunaan skill.",
       "5": "<br/>",
       "6": "<i>Sebagian besar nyanyian pujian Archon Anemo telah hilang ditelan waktu. Nyanyian yang satu ini melantunkan keahliannya dalam menguasai angin.</i>"

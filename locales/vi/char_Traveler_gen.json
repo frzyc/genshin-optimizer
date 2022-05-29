@@ -5,7 +5,7 @@
       "enerRechInc": "Tăng Hiệu Quả Nạp Nguyên Tố",
       "name": "Lôi Ảnh Kiếm",
       "description": {
-        "0": "Chém ra ba đường lôi ảnh chớp nhoáng. Lôi ảnh sẽ gây cho địch <undefined>sát thương Nguyên Tố Lôi</undefined>, đồng thời khi đánh trúng địch sẽ để lại Khuyết Ngọc Dậy Sóng.",
+        "0": "Chém ra ba đường lôi ảnh chớp nhoáng. Lôi ảnh sẽ gây cho địch <electro>sát thương Nguyên Tố Lôi</electro>, đồng thời khi đánh trúng địch sẽ để lại Khuyết Ngọc Dậy Sóng.",
         "1": "Ban đầu sẽ sinh ra tối đa 2 Khuyết Ngọc Dậy Sóng. Khi thi triển kỹ năng sẽ xóa bỏ Khuyết Ngọc Dậy Sóng của bản thân.",
         "2": "<br/>",
         "3": "<strong>Khuyết Ngọc Dậy Sóng</strong>",
@@ -40,10 +40,10 @@
       "thunderDMG": "Sát thương Sấm Sét Uy Vũ",
       "name": "Xung Điện Sấm Rền",
       "description": {
-        "0": "Kêu gọi sự bảo vệ của sấm sét, đánh lui kẻ địch xung quanh và gây <undefined>sát thương Nguyên Tố Lôi</undefined>.",
+        "0": "Kêu gọi sự bảo vệ của sấm sét, đánh lui kẻ địch xung quanh và gây <electro>sát thương Nguyên Tố Lôi</electro>.",
         "1": "<br/>",
         "2": "<strong>Sấm Sét Bao Vây</strong>",
-        "3": "Khi tấn công thường hoặc trọng kích của nhân vật trong trận đánh trúng địch sẽ triệu hồi Sấm Sét Uy Vũ gây <undefined>sát thương Nguyên Tố Lôi</undefined> cho địch.",
+        "3": "Khi tấn công thường hoặc trọng kích của nhân vật trong trận đánh trúng địch sẽ triệu hồi Sấm Sét Uy Vũ gây <electro>sát thương Nguyên Tố Lôi</electro> cho địch.",
         "4": "Khi Sấm Sét Uy Vũ đánh trúng địch sẽ hồi Năng Lượng Nguyên Tố cho nhân vật này.",
         "5": "Mỗi 0.5s tối đa sinh ra Sấm Sét Uy Vũ 1 lần.",
         "6": "<br/>",
@@ -124,7 +124,7 @@
     "constellation2": {
       "name": "Như Sấm Thịnh Nộ",
       "description": {
-        "0": "Sau khi Sấm Sét Uy Vũ của <strong>Xung Điện Sấm Rền</strong> đánh trúng địch, sẽ làm giảm 15% <undefined>Kháng Nguyên Tố Lôi</undefined> của địch, duy trì 8s."
+        "0": "Sau khi Sấm Sét Uy Vũ của <strong>Xung Điện Sấm Rền</strong> đánh trúng địch, sẽ làm giảm 15% <electro>Kháng Nguyên Tố Lôi</electro> của địch, duy trì 8s."
       }
     },
     "constellation3": {
@@ -204,7 +204,7 @@
         "4": "Sát thương và phạm vi ảnh hưởng sẽ tăng dần.",
         "5": "<br/>",
         "6": "<strong>Chuyển hóa nguyên tố</strong>",
-        "7": "Nếu trong thời gian duy trì xoáy chân không có tiếp xúc <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<undefined>Nguyên Tố Lôi</undefined>, thì sẽ nhận được thuộc tính nguyên tố tương ứng, gây thêm sát thương kèm theo của nguyên tố đó.",
+        "7": "Nếu trong thời gian duy trì xoáy chân không có tiếp xúc <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<electro>Nguyên Tố Lôi</electro>, thì sẽ nhận được thuộc tính nguyên tố tương ứng, gây thêm sát thương kèm theo của nguyên tố đó.",
         "8": "Chuyển hóa nguyên tố chỉ phát sinh một lần trong thời gian duy trì kỹ năng.",
         "9": "<br/>",
         "10": "<i>Thảo luận với Paimon cách để nắm bắt ngọn gió vô hình.</i>"
@@ -234,7 +234,7 @@
         "0": "Gió dẫn ra con đường, triệu hồi lốc xoáy về phía trước, cuốn vật thể và địch bên đường vào, duy trì gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
         "1": "<br/>",
         "2": "<strong>Chuyển hóa nguyên tố</strong>",
-        "3": "Nếu trong thời gian duy trì kỹ năng lốc xoáy có tiếp xúc <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<undefined>Nguyên Tố Lôi</undefined>, sẽ nhận được thuộc tính nguyên tố tương ứng, gây thêm sát thương kèm theo của nguyên tố đó.",
+        "3": "Nếu trong thời gian duy trì kỹ năng lốc xoáy có tiếp xúc <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<electro>Nguyên Tố Lôi</electro>, sẽ nhận được thuộc tính nguyên tố tương ứng, gây thêm sát thương kèm theo của nguyên tố đó.",
         "4": "Loại chuyển hóa này chỉ phát sinh một lần trong thời gian duy trì kỹ năng.",
         "5": "<br/>",
         "6": "<i>Cùng Paimon nghiên cứu cách vỗ cánh của bướm.</i>"

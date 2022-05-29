@@ -8,15 +8,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Tấn Công Thường</strong>",
-        "1": "Thực hiện tối đa 4 lần chích điện, gây <undefined>Sát Thương Nguyên Tố Lôi</undefined>."
+        "1": "Thực hiện tối đa 4 lần chích điện, gây <electro>Sát Thương Nguyên Tố Lôi</electro>."
       },
       "charged": {
         "0": "<strong>Trọng Kích</strong>",
-        "1": "Tiêu hao thể lực nhất định, sau khi tụ lực, gây <undefined>Sát Thương Phạm Vi Nguyên Tố Lôi</undefined>."
+        "1": "Tiêu hao thể lực nhất định, sau khi tụ lực, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>."
       },
       "plunging": {
         "0": "<strong>Tấn Công Khi Đáp</strong>",
-        "1": "Ngưng tụ sức mạnh lôi điện, từ trên trời tấn công xuống mặt đất, tấn công kẻ địch trên đường, gây <undefined>sát thương phạm vi Nguyên Tố Lôi</undefined> khi chạm đất."
+        "1": "Ngưng tụ sức mạnh lôi điện, từ trên trời tấn công xuống mặt đất, tấn công kẻ địch trên đường, gây <electro>sát thương phạm vi Nguyên Tố Lôi</electro> khi chạm đất."
       }
     },
     "skillParams": {
@@ -45,10 +45,10 @@
       "1": "<br/>",
       "2": "<strong>Nhấn</strong>",
       "3": "Phóng ra tia điện hình cầu có khả năng tự tìm địch.",
-      "4": "Sau khi đánh trúng, tạo ra <undefined>Sát Thương Nguyên Tố Lôi</undefined> cho mục tiêu, có thêm hiệu quả dẫn điện đối với địch trong phạm vi nhỏ, cộng dồn tối đa 3 tầng.",
+      "4": "Sau khi đánh trúng, tạo ra <electro>Sát Thương Nguyên Tố Lôi</electro> cho mục tiêu, có thêm hiệu quả dẫn điện đối với địch trong phạm vi nhỏ, cộng dồn tối đa 3 tầng.",
       "5": "<br/>",
       "6": "<strong>Nhấn Giữ</strong>",
-      "7": "Sau khi tụ lực, triệu hồi sấm sét từ trên trời xuống, tạo thành <undefined>Sát Thương Nguyên Tố Lôi</undefined> đối với tất cả địch ở gần.",
+      "7": "Sau khi tụ lực, triệu hồi sấm sét từ trên trời xuống, tạo thành <electro>Sát Thương Nguyên Tố Lôi</electro> đối với tất cả địch ở gần.",
       "8": "Nếu địch đang trong trạng thái dẫn điện, sẽ căn cứ theo số tầng cộng dồn mà gây thêm lượng lớn sát thương, và xóa hiệu quả dẫn điện.",
       "9": "<br/>",
       "10": "<i>Màu sắc của lôi điện là màu sắc đầy mê hoặc của ma nữ tường vi.</i>"
@@ -75,8 +75,8 @@
   "burst": {
     "name": "Tường Vi Sấm Sét",
     "description": {
-      "0": "Triệu hồi Tường Vi Sấm Sét, phóng ra sấm sét cường đại, đánh lui địch xung quanh và gây <undefined>Sát Thương Nguyên Tố Lôi</undefined>.",
-      "1": "Trong thời gian tồn tại, Tường Vi Sấm Sét sẽ tiếp tục phóng điện công kích vào phạm vi công kích của địch, gây <undefined>Sát Thương Nguyên Tố Lôi</undefined>.",
+      "0": "Triệu hồi Tường Vi Sấm Sét, phóng ra sấm sét cường đại, đánh lui địch xung quanh và gây <electro>Sát Thương Nguyên Tố Lôi</electro>.",
+      "1": "Trong thời gian tồn tại, Tường Vi Sấm Sét sẽ tiếp tục phóng điện công kích vào phạm vi công kích của địch, gây <electro>Sát Thương Nguyên Tố Lôi</electro>.",
       "2": "<br/>",
       "3": "<i>Đóa tường vi này thật đẹp, nhưng lại có gai chết người.</i>"
     },

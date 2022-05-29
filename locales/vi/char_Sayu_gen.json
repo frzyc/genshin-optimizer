@@ -56,7 +56,7 @@
       "11": "Kéo dài tối đa 10s. Khi hiệu quả kết thúc, kỹ năng sẽ vào CD. Thời gian trong trạng thái bánh xe gió càng dài, CD sẽ càng dài.",
       "12": "<br/>",
       "13": "<strong>Chuyển hóa nguyên tố</strong>",
-      "14": "Nếu Sayu ở trạng thái bánh xe gió, tiếp xúc với <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<undefined>Nguyên Tố Lôi</undefined> sẽ nhận thuộc tính nguyên tố tương ứng, khiến bánh xe gió và Cú Đá Lốc Xoáy kèm thêm sát thương của nguyên tố này.",
+      "14": "Nếu Sayu ở trạng thái bánh xe gió, tiếp xúc với <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<electro>Nguyên Tố Lôi</electro> sẽ nhận thuộc tính nguyên tố tương ứng, khiến bánh xe gió và Cú Đá Lốc Xoáy kèm thêm sát thương của nguyên tố này.",
       "15": "Chuyển hóa nguyên tố chỉ xảy ra 1 lần trong thời gian duy trì kỹ năng.",
       "16": "<br/>",
       "17": "<i>Sayu nhắm mắt lại cũng có thể thi triển một cách thuần thục. Vốn chỉ dùng để chạy trốn, sau khi có Vision cuối cùng cũng có thể khiến kẻ địch nếm mùi đau khổ.</i>"

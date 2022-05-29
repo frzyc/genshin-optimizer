@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
         "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
-        "2": "Ruft während des Zielens die Blitzgeister aus dem Immernachtreich herbei, die dem Befehl der Prinzessin folgen und ihre Kraft auf der Pfeilspitze konzentrieren, die voll aufgeladen mit dem Blitz der Rachsucht hohen <undefined>Elektro-Schaden</undefined> verursacht."
+        "2": "Ruft während des Zielens die Blitzgeister aus dem Immernachtreich herbei, die dem Befehl der Prinzessin folgen und ihre Kraft auf der Pfeilspitze konzentrieren, die voll aufgeladen mit dem Blitz der Rachsucht hohen <electro>Elektro-Schaden</electro> verursacht."
       },
       "plunging": {
         "0": "<strong>Angriff aus dem Fall</strong>",
@@ -42,8 +42,8 @@
   "skill": {
     "name": "Schutz der Dunkelheit",
     "description": {
-      "0": "Beschwört Oz, den Raben aus Schatten und Blitzen, in diese Welt, der Gegnern mit geringer Reichweite <undefined>Elektro-Schaden</undefined> zufügt.",
-      "1": "Schießt bei Anwesenheit von Oz <undefined>Blitzgeschosse</undefined> ab, die Gegner in der Nähe angreifen.",
+      "0": "Beschwört Oz, den Raben aus Schatten und Blitzen, in diese Welt, der Gegnern mit geringer Reichweite <electro>Elektro-Schaden</electro> zufügt.",
+      "1": "Schießt bei Anwesenheit von Oz <electro>Blitzgeschosse</electro> ab, die Gegner in der Nähe angreifen.",
       "2": "<br/>",
       "3": "Gedrückt halten, um das Ziel der Fähigkeit zu bestimmen.",
       "4": "Bei Anwesenheit von Oz erneut drücken, um Oz zurückzuholen.",
@@ -77,7 +77,7 @@
       "1": "Effekte während der Wirkungsdauer:",
       "2": [
         " Bewegt sich in Form von Oz mit hoher Geschwindigkeit.",
-        " Trifft Gegner in der Nähe mit einem Blitz und verursacht <undefined>Elektro-Schaden</undefined>. Jeder Gegner kann nur einmal Schaden von einem Blitz erleiden.",
+        " Trifft Gegner in der Nähe mit einem Blitz und verursacht <electro>Elektro-Schaden</electro>. Jeder Gegner kann nur einmal Schaden von einem Blitz erleiden.",
         " Oz verbleibt nach dem Ende der Wirkungsdauer und greift die Gegner der Prinzessin an. Setzt die Aufenthaltsdauer von Oz zurück, wenn er schon auf dem Feld ist."
       ],
       "3": "<br/>",
@@ -106,13 +106,13 @@
   "passive1": {
     "name": "Sterneverschlinger",
     "description": {
-      "0": "Wenn Fischl Oz mit einem voll aufgeladenen gezielten Schuss trifft, schickt Oz den Blitz des heiligen Urteils zu den Gegnern in der Nähe und verursacht damit <undefined>Elektro-Flächenschaden</undefined> in Höhe von 152,7 % des gezielten Schusses."
+      "0": "Wenn Fischl Oz mit einem voll aufgeladenen gezielten Schuss trifft, schickt Oz den Blitz des heiligen Urteils zu den Gegnern in der Nähe und verursacht damit <electro>Elektro-Flächenschaden</electro> in Höhe von 152,7 % des gezielten Schusses."
     }
   },
   "passive2": {
     "name": "Schatten der Verurteilung",
     "description": {
-      "0": "Schickt bei Anwesenheit von Oz und, wenn der Angriff der aktuellen eigenen Figur eine <undefined>Elektro-Reaktion</undefined> verursacht, den Blitz des heiligen Urteils auf den betroffenen Gegner und verursacht <undefined>Elektro-Schaden</undefined> in Höhe von 80 % von Fischls ANG."
+      "0": "Schickt bei Anwesenheit von Oz und, wenn der Angriff der aktuellen eigenen Figur eine <electro>Elektro-Reaktion</electro> verursacht, den Blitz des heiligen Urteils auf den betroffenen Gegner und verursacht <electro>Elektro-Schaden</electro> in Höhe von 80 % von Fischls ANG."
     }
   },
   "passive3": {
@@ -143,7 +143,7 @@
   "constellation4": {
     "name": "Fantastereien der Prinzessin",
     "description": {
-      "0": "Fügt allen Gegnern in der Umgebung bei Anwendung von <strong>Mitternachtstraum</strong> <undefined>Elektro-Schaden</undefined> in Höhe von 222 % ANG zu.",
+      "0": "Fügt allen Gegnern in der Umgebung bei Anwendung von <strong>Mitternachtstraum</strong> <electro>Elektro-Schaden</electro> in Höhe von 222 % ANG zu.",
       "1": "Stellt Fischl nach Ablauf der Dauer des Effekts 20 % LP wieder her."
     }
   },
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Vogel der ewigen Nacht",
     "description": {
-      "0": "Verlängert die Dauer des Vorhandenseins von Oz um 2 s, greift gemeinsam mit der aktuellen eigenen Figur an und verursacht <undefined>Elektro-Schaden</undefined> in Höhe von 30 % von Fischls ANG."
+      "0": "Verlängert die Dauer des Vorhandenseins von Oz um 2 s, greift gemeinsam mit der aktuellen eigenen Figur an und verursacht <electro>Elektro-Schaden</electro> in Höhe von 30 % von Fischls ANG."
     }
   }
 }

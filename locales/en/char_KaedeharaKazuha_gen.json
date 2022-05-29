@@ -6,7 +6,7 @@
       "1": "The blade's passage will leave behind a field named \"Autumn Whirlwind\" that periodically deals <anemo>AoE Anemo DMG</anemo> to opponents within its range.",
       "2": "<br/>",
       "3": "<strong>Elemental Absorption</strong>",
-      "4": "If Autumn Whirlwind comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, it will deal additional elemental DMG of that type.",
+      "4": "If Autumn Whirlwind comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, it will deal additional elemental DMG of that type.",
       "5": "Elemental Absorption may only occur once per use.",
       "6": "<br/>",
       "7": "<i>\"I see eternity go by in an instant, the autumns of many years from a single leaf. Thus I shall slice this maple in a flash, and ask a question of the ages.\"</i>"
@@ -116,7 +116,7 @@
   "passive1": {
     "name": "Soumon Swordsmanship",
     "description": {
-      "0": "If <strong>Chihayaburu</strong> comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined> when cast, <strong>Chihayaburu</strong> will absorb that element and if Plunging Attack: Midare Ranzan is used before the effect expires, it will deal an additional 200% ATK of the absorbed elemental type as DMG. This will be considered Plunging Attack DMG.",
+      "0": "If <strong>Chihayaburu</strong> comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> when cast, <strong>Chihayaburu</strong> will absorb that element and if Plunging Attack: Midare Ranzan is used before the effect expires, it will deal an additional 200% ATK of the absorbed elemental type as DMG. This will be considered Plunging Attack DMG.",
       "1": "Elemental Absorption may only occur once per use of <strong>Chihayaburu</strong>."
     }
   },

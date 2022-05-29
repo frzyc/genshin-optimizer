@@ -41,11 +41,11 @@
   "skill": {
     "name": "Transcendence: Baleful Omen",
     "description": {
-      "0": "The Raiden Shogun unveils a shard of her Euthymia, dealing <undefined>Electro DMG</undefined> to nearby opponents, and granting nearby party members the Eye of Stormy Judgment.",
+      "0": "The Raiden Shogun unveils a shard of her Euthymia, dealing <electro>Electro DMG</electro> to nearby opponents, and granting nearby party members the Eye of Stormy Judgment.",
       "1": "<br/>",
       "2": "<strong>Eye of Stormy Judgment</strong>",
       "3": [
-        "When characters with this buff attack and deal DMG to opponents, the Eye will unleash a coordinated attack, dealing <undefined>AoE Electro DMG</undefined> at the opponent's position.",
+        "When characters with this buff attack and deal DMG to opponents, the Eye will unleash a coordinated attack, dealing <electro>AoE Electro DMG</electro> at the opponent's position.",
         "Characters who gain the Eye of Stormy Judgment will have their Elemental Burst DMG increased based on the Energy Cost of the Elemental Burst during the Eye's duration."
       ],
       "4": "<br/>",
@@ -76,11 +76,11 @@
   "burst": {
     "name": "Secret Art: Musou Shinsetsu",
     "description": {
-      "0": "Gathering truths unnumbered and wishes uncounted, the Raiden Shogun unleashes the Musou no Hitotachi and deals <undefined>AoE Electro DMG</undefined>, using Musou Isshin in combat for a certain duration afterward. The DMG dealt by Musou no Hitotachi and Musou Isshin's attacks will be increased based on the number of Chakra Desiderata's Resolve stacks consumed when this skill is used.",
+      "0": "Gathering truths unnumbered and wishes uncounted, the Raiden Shogun unleashes the Musou no Hitotachi and deals <electro>AoE Electro DMG</electro>, using Musou Isshin in combat for a certain duration afterward. The DMG dealt by Musou no Hitotachi and Musou Isshin's attacks will be increased based on the number of Chakra Desiderata's Resolve stacks consumed when this skill is used.",
       "1": "<br/>",
       "2": "<strong>Musou Isshin</strong>",
-      "3": "While in this state, the Raiden Shogun will wield her tachi in battle, while her Normal, Charged, and Plunging Attacks will be infused with <undefined>Electro DMG</undefined>, which cannot be overridden. When such attacks hit opponents, she will regenerate Energy for all nearby party members. Energy can be restored this way once every 1s, and this effect can be triggered 5 times throughout this skill's duration.",
-      "4": "While in this state, the Raiden Shogun's resistance to interruption is increased, and she is immune to <undefined>Electro-Charged</undefined> reaction DMG.",
+      "3": "While in this state, the Raiden Shogun will wield her tachi in battle, while her Normal, Charged, and Plunging Attacks will be infused with <electro>Electro DMG</electro>, which cannot be overridden. When such attacks hit opponents, she will regenerate Energy for all nearby party members. Energy can be restored this way once every 1s, and this effect can be triggered 5 times throughout this skill's duration.",
+      "4": "While in this state, the Raiden Shogun's resistance to interruption is increased, and she is immune to <electro>Electro-Charged</electro> reaction DMG.",
       "5": "While Musou Isshin is active, the Raiden Shogun's Normal, Charged, and Plunging Attack DMG will be considered Elemental Burst DMG.",
       "6": "<br/>",
       "7": "The effects of Musou Isshin will be cleared when the Raiden Shogun leaves the field.",
@@ -125,7 +125,7 @@
       "0": "Each 1% above 100% Energy Recharge that the Raiden Shogun possesses grants her:",
       "1": [
         "0.6% greater Energy restoration from <strong>Musou Isshin</strong>",
-        "0.4% <undefined>Electro DMG Bonus</undefined>."
+        "0.4% <electro>Electro DMG Bonus</electro>."
       ]
     }
   },
@@ -138,7 +138,7 @@
   "constellation1": {
     "name": "Ominous Inscription",
     "description": {
-      "0": "<strong>Chakra Desiderata</strong> will gather Resolve even faster. When <undefined>Electro</undefined> characters use their Elemental Bursts, the Resolve gained is increased by 80%. When characters of other Elemental Types use their Elemental Bursts, the Resolve gained is increased by 20%."
+      "0": "<strong>Chakra Desiderata</strong> will gather Resolve even faster. When <electro>Electro</electro> characters use their Elemental Bursts, the Resolve gained is increased by 80%. When characters of other Elemental Types use their Elemental Bursts, the Resolve gained is increased by 20%."
     }
   },
   "constellation2": {

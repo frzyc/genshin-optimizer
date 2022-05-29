@@ -5,7 +5,7 @@
       "enerRechInc": "Aumento de Recarga de Energia",
       "name": "Lâmina Raikage",
       "description": {
-        "0": "Libera três sombras de raio ágil, causando <undefined>Dano Electro</undefined>. Quando atinge o inimigo, deixa um Amuleto da Abundância.",
+        "0": "Libera três sombras de raio ágil, causando <electro>Dano Electro</electro>. Quando atinge o inimigo, deixa um Amuleto da Abundância.",
         "1": "No início, podem ser criados até 2 Amuletos da Abundância. Ao lançar a Habilidade, os Amuletos da Abundância criados por você serão eliminados.",
         "2": "<br/>",
         "3": "<strong>Amuleto da Abundância</strong>",
@@ -40,10 +40,10 @@
       "thunderDMG": "Dano do Relâmpago Poderoso",
       "name": "Rugido do Trovão",
       "description": {
-        "0": "Você pode invocar a proteção do Revestimento de Relâmpago, afastando os inimigos ao redor e causando <undefined>Dano Electro</undefined>.",
+        "0": "Você pode invocar a proteção do Revestimento de Relâmpago, afastando os inimigos ao redor e causando <electro>Dano Electro</electro>.",
         "1": "<br/>",
         "2": "<strong>Revestimento de Relâmpago</strong>",
-        "3": "Quando o Ataque Normal ou Ataque Carregado do seu personagem em campo atinge o inimigo, irá ser invocado um Relâmpago Poderoso, causando <undefined>Dano Electro</undefined> ao inimigo.",
+        "3": "Quando o Ataque Normal ou Ataque Carregado do seu personagem em campo atinge o inimigo, irá ser invocado um Relâmpago Poderoso, causando <electro>Dano Electro</electro> ao inimigo.",
         "4": "Quando o Relâmpago Poderoso atinge um inimigo, irá restaurar Energia Elemental para esse personagem.",
         "5": "Um Relâmpago Poderoso pode ser ativado uma vez a cada 0.5s.",
         "6": "<br/>",
@@ -124,7 +124,7 @@
     "constellation2": {
       "name": "Veemência Violeta",
       "description": {
-        "0": "Após o Relâmpago Poderoso do <strong>Rugido do Trovão</strong> acertar em um inimigo, a <undefined>RES Electro</undefined> do inimigo é diminuída em 15% por 8s."
+        "0": "Após o Relâmpago Poderoso do <strong>Rugido do Trovão</strong> acertar em um inimigo, a <electro>RES Electro</electro> do inimigo é diminuída em 15% por 8s."
       }
     },
     "constellation3": {
@@ -204,7 +204,7 @@
         "4": "Dano em AdE irá aumentar gradualmente.",
         "5": "<br/>",
         "6": "<strong>Absorção Elemental</strong>",
-        "7": "Se o vórtex entrar em contato com os elementos <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, ele irá causar Dano elemental adicional baseado naquele tipo.",
+        "7": "Se o vórtex entrar em contato com os elementos <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, ele irá causar Dano elemental adicional baseado naquele tipo.",
         "8": "Absorção Elemental pode ocorrer apenas uma vez por uso.",
         "9": "<br/>",
         "10": "<i>Você conversou com a Paimon sobre a maneira de agarrar o vento sem forma.</i>"
@@ -234,7 +234,7 @@
         "0": "Guiando o caminho das correntes de vento, você evoca um tornado que se movimenta rapidamente para a frente e suga objetos e oponentes para dentro de si, causando <anemo>Dano Anemo</anemo> contínuo.",
         "1": "<br/>",
         "2": "<strong>Absorção Elemental</strong>",
-        "3": "Se o tornado entrar em contato com os elementos <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, ele irá causar Dano elemental adicional daquele tipo.",
+        "3": "Se o tornado entrar em contato com os elementos <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, ele irá causar Dano elemental adicional daquele tipo.",
         "4": "Absorção Elemental pode ocorrer apenas uma vez por uso.",
         "5": "<br/>",
         "6": "<i>Você e a Paimon estudaram o bater das asas de uma borboleta.</i>"

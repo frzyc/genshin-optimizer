@@ -6,7 +6,7 @@
       "1": "刀风会留下名为「流风秋野」的领域，对其中的敌人造成间歇的<anemo>风元素伤害</anemo>。",
       "2": "<br/>",
       "3": "<strong>元素转化</strong>",
-      "4": "若流风秋野在持续期间接触了<hydro>水元素</hydro>/<pyro>火元素</pyro>/<cryo>冰元素</cryo>/<undefined>雷元素</undefined>，则会获得对应元素属性，额外造成该元素附加伤害。",
+      "4": "若流风秋野在持续期间接触了<hydro>水元素</hydro>/<pyro>火元素</pyro>/<cryo>冰元素</cryo>/<electro>雷元素</electro>，则会获得对应元素属性，额外造成该元素附加伤害。",
       "5": "这种转化在技能持续期间仅会发生一次。",
       "6": "<br/>",
       "7": "<i>「须臾照见万世长，一叶便知天下秋。我欲凭切枫一闪，做万世之问叩——」</i>"
@@ -114,7 +114,7 @@
   "passive1": {
     "name": "相闻之剑法",
     "description": {
-      "0": "<strong>千早振</strong>在施放时，如果接触了<hydro>水元素</hydro>/<pyro>火元素</pyro>/<cryo>冰元素</cryo>/<undefined>雷元素</undefined>，则会使这次<strong>千早振</strong>的下落攻击·乱岚拨止，发生元素转化，将附加200%攻击力的对应元素伤害，该伤害视为下落攻击伤害。每次<strong>千早振</strong>的技能效果中，元素转化仅会发生一次。"
+      "0": "<strong>千早振</strong>在施放时，如果接触了<hydro>水元素</hydro>/<pyro>火元素</pyro>/<cryo>冰元素</cryo>/<electro>雷元素</electro>，则会使这次<strong>千早振</strong>的下落攻击·乱岚拨止，发生元素转化，将附加200%攻击力的对应元素伤害，该伤害视为下落攻击伤害。每次<strong>千早振</strong>的技能效果中，元素转化仅会发生一次。"
     }
   },
   "passive2": {

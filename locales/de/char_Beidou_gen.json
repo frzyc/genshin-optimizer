@@ -45,15 +45,15 @@
       "0": "Es gibt nichts zu befürchten. Denn sollte es jemand wagen, ihr zu nahe zu kommen, wird sie es ihm zehnfach mit ihrem Schwert und ihrer Elektro-Kraft zurückzahlen.",
       "1": "<br/>",
       "2": "<strong>Drücken</strong>",
-      "3": "Konzentriert die Elektro-Kraft, wirbelt das Großschwert wild nach vorn und verursacht <undefined>Elektro-Schaden</undefined>.",
+      "3": "Konzentriert die Elektro-Kraft, wirbelt das Großschwert wild nach vorn und verursacht <electro>Elektro-Schaden</electro>.",
       "4": "<br/>",
       "5": "<strong>Gedrückt halten</strong>",
       "6": "Hebt die Waffe an, um sie als Schutzschild zu verwenden und Schaden basierend auf Beidous max. LP abzuhalten.",
-      "7": "Wirbelt das Großschwert bei Loslassen oder Ablauf der Dauer mit der angestauten Kraft, schlägt zu und verursacht <undefined>Elektro-Schaden</undefined>. Erhöht den beim Zuschlagen verursachten Schaden je nach Anzahl erlittener Angriffe während der Wirkungsdauer. Erreicht nach 2 Anwendungen den höchsten SCH-Bonus.",
+      "7": "Wirbelt das Großschwert bei Loslassen oder Ablauf der Dauer mit der angestauten Kraft, schlägt zu und verursacht <electro>Elektro-Schaden</electro>. Erhöht den beim Zuschlagen verursachten Schaden je nach Anzahl erlittener Angriffe während der Wirkungsdauer. Erreicht nach 2 Anwendungen den höchsten SCH-Bonus.",
       "8": "Effekte des Schildes:",
       "9": [
-        " Hält bei <undefined>Elektro-Schaden</undefined> 250 % ab.",
-        " Verleiht Beidou beim Zuschlagen das <undefined>Elektro-Attribut</undefined>."
+        " Hält bei <electro>Elektro-Schaden</electro> 250 % ab.",
+        " Verleiht Beidou beim Zuschlagen das <electro>Elektro-Attribut</electro>."
       ],
       "10": "<br/>",
       "11": "<i>Reite auf den Wellen und ergreife die Blitze.</i>"
@@ -80,11 +80,11 @@
   "burst": {
     "name": "Blitzbrecher",
     "description": {
-      "0": "Ruft die Erinnerung an den Kampf gegen das Ungeheuer, das Meere und Berge teilte, und somit die Kraft des Ungeheuers und des Donners hervor, um einen kreisenden Donnerschild zu erschaffen und Gegnern in der Umgebung <undefined>Elektro-Schaden</undefined> zuzufügen.",
+      "0": "Ruft die Erinnerung an den Kampf gegen das Ungeheuer, das Meere und Berge teilte, und somit die Kraft des Ungeheuers und des Donners hervor, um einen kreisenden Donnerschild zu erschaffen und Gegnern in der Umgebung <electro>Elektro-Schaden</electro> zuzufügen.",
       "1": "<br/>",
       "2": "<strong>Donnerschild</strong>",
       "3": [
-        " Erschafft bei Treffern mit Standardangriffen und heftigen Schlägen einen Kettenblitz, der zwischen den Gegnern umherspringt und <undefined>Elektro-Schaden</undefined> verursacht.",
+        " Erschafft bei Treffern mit Standardangriffen und heftigen Schlägen einen Kettenblitz, der zwischen den Gegnern umherspringt und <electro>Elektro-Schaden</electro> verursacht.",
         " Erhöht den Unterbrechungs-WDS der Figur und verringert den erlittenen Schaden."
       ],
       "4": "<br/>",
@@ -139,7 +139,7 @@
     "description": {
       "0": "Effekte bei Anwendung von <strong>Blitzbrecher</strong>:",
       "1": "Erstellt einen Schutzschild, der Schaden in Höhe von 16 % der max. LP abhält, hält 15 s.",
-      "2": "Hält bei <undefined>Elektro-Schaden</undefined> 250 % ab."
+      "2": "Hält bei <electro>Elektro-Schaden</electro> 250 % ab."
     }
   },
   "constellation2": {
@@ -158,7 +158,7 @@
   "constellation4": {
     "name": "Überwältigender Gegenschlag",
     "description": {
-      "0": "Beidous Standardangriffe verursachen nach dem Erleiden von Angriffen 10 s lang zusätzlich 20 % <undefined>Elektro-SCH</undefined>."
+      "0": "Beidous Standardangriffe verursachen nach dem Erleiden von Angriffen 10 s lang zusätzlich 20 % <electro>Elektro-SCH</electro>."
     }
   },
   "constellation5": {
@@ -171,7 +171,7 @@
   "constellation6": {
     "name": "Schrecken des Bösen",
     "description": {
-      "0": "Verringert während der Wirkungsdauer von <strong>Blitzbrecher</strong> den <undefined>Elektro-WDS</undefined> von Gegnern in der Umgebung um 15 %."
+      "0": "Verringert während der Wirkungsdauer von <strong>Blitzbrecher</strong> den <electro>Elektro-WDS</electro> von Gegnern in der Umgebung um 15 %."
     }
   }
 }

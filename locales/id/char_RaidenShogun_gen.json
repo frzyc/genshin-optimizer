@@ -41,11 +41,11 @@
   "skill": {
     "name": "Transcendence: Baleful Omen",
     "description": {
-      "0": "Raiden Shogun membuka sebagian Euthymia-nya, mengakibatkan <undefined>Electro DMG</undefined> pada musuh di sekitar dan memberikan efek Eye of Stormy Judgment pada anggota party di sekitar.",
+      "0": "Raiden Shogun membuka sebagian Euthymia-nya, mengakibatkan <electro>Electro DMG</electro> pada musuh di sekitar dan memberikan efek Eye of Stormy Judgment pada anggota party di sekitar.",
       "1": "<br/>",
       "2": "<strong>Eye of Stormy Judgment</strong>",
       "3": [
-        "Saat Karakter dengan efek ini mengakibatkan DMG pada musuh, Eye of Stormy Judgment akan melancarkan serangan terkoordinasi dan mengakibatkan <undefined>Electro DMG Area</undefined> di tempat musuh berada.",
+        "Saat Karakter dengan efek ini mengakibatkan DMG pada musuh, Eye of Stormy Judgment akan melancarkan serangan terkoordinasi dan mengakibatkan <electro>Electro DMG Area</electro> di tempat musuh berada.",
         "Selama Eye of Stormy Judgment aktif, DMG Elemental Burst Karakter yang mendapatkan efek Eye of Stormy Judgment akan meningkat sesuai dengan Konsumsi Energy Elemental Burst tersebut."
       ],
       "4": "<br/>",
@@ -78,11 +78,11 @@
   "burst": {
     "name": "Secret Art: Musou Shinsetsu",
     "description": {
-      "0": "Dengan mengumpulkan kebenaran dan harapan yang tak terhitung, Raiden Shogun mengeluarkan Musou no Hitotachi-nya dan mengakibatkan <undefined>Electro DMG Area</undefined>. Kemudian Raiden Shogun akan bertarung menggunakan Musou Isshin untuk sementara waktu. DMG yang diakibatkan Musou no Hitotachi dan Musou Isshin akan meningkat berdasarkan jumlah lapisan Resolve dari Chakra Desiderata yang dikonsumsi saat menggunakan skill ini.",
+      "0": "Dengan mengumpulkan kebenaran dan harapan yang tak terhitung, Raiden Shogun mengeluarkan Musou no Hitotachi-nya dan mengakibatkan <electro>Electro DMG Area</electro>. Kemudian Raiden Shogun akan bertarung menggunakan Musou Isshin untuk sementara waktu. DMG yang diakibatkan Musou no Hitotachi dan Musou Isshin akan meningkat berdasarkan jumlah lapisan Resolve dari Chakra Desiderata yang dikonsumsi saat menggunakan skill ini.",
       "1": "<br/>",
       "2": "<strong>Musou Isshin</strong>",
-      "3": "Dalam kondisi ini, Raiden Shogun akan bertarung menggunakan pedang tachi miliknya. Normal, Charged, dan Plunging Attack Raiden Shogun dikonversi menjadi <undefined>Electro DMG</undefined> yang tidak bisa ditimpa oleh Elemental Infusion lainnya. Saat serangan yang berada dalam kondisi ini mengenai musuh, Raiden Shogun akan memulihkan Energy untuk anggota party di sekitar. Pemulihan Energy dengan cara ini hanya bisa terpicu setiap 1 detik, dan maksimum sebanyak 5 kali selama durasi skill.",
-      "4": "Dalam kondisi ini, pertahanan Raiden Shogun terhadap interupsi akan meningkat dan menjadi kebal terhadap DMG dari reaksi <undefined>Electro-Charged</undefined>.",
+      "3": "Dalam kondisi ini, Raiden Shogun akan bertarung menggunakan pedang tachi miliknya. Normal, Charged, dan Plunging Attack Raiden Shogun dikonversi menjadi <electro>Electro DMG</electro> yang tidak bisa ditimpa oleh Elemental Infusion lainnya. Saat serangan yang berada dalam kondisi ini mengenai musuh, Raiden Shogun akan memulihkan Energy untuk anggota party di sekitar. Pemulihan Energy dengan cara ini hanya bisa terpicu setiap 1 detik, dan maksimum sebanyak 5 kali selama durasi skill.",
+      "4": "Dalam kondisi ini, pertahanan Raiden Shogun terhadap interupsi akan meningkat dan menjadi kebal terhadap DMG dari reaksi <electro>Electro-Charged</electro>.",
       "5": "Saat berada dalam kondisi Musou Isshin, DMG dari Normal, Charged, dan Plunging Attack Raiden Shogun akan terhitung sebagai DMG Elemental Burst.",
       "6": "<br/>",
       "7": "Efek Musou Isshin akan hilang saat Raiden Shogun meninggalkan medan pertempuran.",
@@ -127,7 +127,7 @@
       "0": "Untuk setiap 1% Energy Recharge di atas 100% yang dimiliki Raiden Shogun, Raiden Shogun akan mendapatkan efek:",
       "1": [
         "<strong>Musou Isshin</strong> memberikan pemulihan Energy 0,6% lebih besar.",
-        "0,4% <undefined>Electro DMG Bonus</undefined>."
+        "0,4% <electro>Electro DMG Bonus</electro>."
       ]
     }
   },
@@ -140,7 +140,7 @@
   "constellation1": {
     "name": "Ominous Inscription",
     "description": {
-      "0": "<strong>Chakra Desiderata</strong> dapat mengumpulkan Resolve dengan lebih cepat. Setelah Karakter dengan elemen <undefined>Electro</undefined> melancarkan Elemental Burst, jumlah Resolve yang didapatkan akan meningkat 80%. Setelah Karakter dengan elemen lain melancarkan Elemental Burst, jumlah Resolve yang didapatkan akan meningkat 20%."
+      "0": "<strong>Chakra Desiderata</strong> dapat mengumpulkan Resolve dengan lebih cepat. Setelah Karakter dengan elemen <electro>Electro</electro> melancarkan Elemental Burst, jumlah Resolve yang didapatkan akan meningkat 80%. Setelah Karakter dengan elemen lain melancarkan Elemental Burst, jumlah Resolve yang didapatkan akan meningkat 20%."
     }
   },
   "constellation2": {

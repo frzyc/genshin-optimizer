@@ -6,7 +6,7 @@
       "1": "Hinterlässt ein Feld namens „wirbelndes Herbstfeld“, das Gegnern darin in bestimmten zeitlichen Abständen <anemo>Anemo-Schaden</anemo> zufügt.",
       "2": "<br/>",
       "3": "<strong>Elementarumwandlung</strong>",
-      "4": "Verleiht dem wirbelnden Herbstfeld beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <undefined>Elektro</undefined>-Effekte während der Wirkungsdauer das jeweilige Element und verursacht dementsprechend zusätzlichen Schaden.",
+      "4": "Verleiht dem wirbelnden Herbstfeld beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Effekte während der Wirkungsdauer das jeweilige Element und verursacht dementsprechend zusätzlichen Schaden.",
       "5": "Elementarumwandlung nur einmal während der Wirkungsdauer möglich.",
       "6": "<br/>",
       "7": "<i>„Die Ewigkeit zieht im Nu an mir vorbei, wie ein Blatt vom Baume fällt und derweil tausende Herbste vergehen. So fälle ich diesen Ahorn, um die Antwort auf alle Fragen zu erhalten.“</i>"
@@ -114,7 +114,7 @@
   "passive1": {
     "name": "Soumon-Schwertkunst",
     "description": {
-      "0": "Verleiht dem Angriff aus dem Fall: Midare Ranzan von <strong>Chihayaburu</strong> nach der Anwendung von <strong>Chihayaburu</strong> beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <undefined>Elektro</undefined>-Effekte das jeweilige Element und verursacht zusätzlichen Schaden des jeweiligen Elements in Höhe von 200 % ANG, welcher als Angriff aus dem Fall gilt. Elementarumwandlung nur einmal während des Effekts von <strong>Chihayaburu</strong> möglich."
+      "0": "Verleiht dem Angriff aus dem Fall: Midare Ranzan von <strong>Chihayaburu</strong> nach der Anwendung von <strong>Chihayaburu</strong> beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Effekte das jeweilige Element und verursacht zusätzlichen Schaden des jeweiligen Elements in Höhe von 200 % ANG, welcher als Angriff aus dem Fall gilt. Elementarumwandlung nur einmal während des Effekts von <strong>Chihayaburu</strong> möglich."
     }
   },
   "passive2": {

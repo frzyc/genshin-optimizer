@@ -42,7 +42,7 @@
     "name": "Retorno estelar",
     "description": {
       "0": "Lanza una cuña relámpago que aniquila a sus enemigos como un rayo veloz.",
-      "1": "Cuando la cuña golpea a su objetivo, inflige <undefined>Daño Electro</undefined> a los enemigos en una pequeña AdE, y añade una marca en el lugar donde golpea.",
+      "1": "Cuando la cuña golpea a su objetivo, inflige <electro>Daño Electro</electro> a los enemigos en una pequeña AdE, y añade una marca en el lugar donde golpea.",
       "2": "<br/>",
       "3": "<strong>Mantener pulsado</strong>",
       "4": "Mantén pulsado para ajustar la dirección en la que se lanzará la cuña.",
@@ -51,8 +51,8 @@
       "7": "<strong>Cuña relámpago</strong>",
       "8": "Si Keching usa Retorno estelar de nuevo o hace un Ataque Cargado durante la habilidad, eliminará la marca de la cuña y producirá diferentes efectos:",
       "9": [
-        "Si vuelve a usar Retorno estelar, se teletransportará hasta la ubicación de la marca y desatará un ataque cortante que inflige <undefined>Daño Electro en el AdE</undefined>. Al teletransportarse a una cuña lanzada tras mantener pulsado, Keching ignora los obstáculos del terreno.",
-        "Si Keching usa un Ataque Cargado, desencadenará una tempestad eléctrica en la marca de la cuña, infligiendo <undefined>Daño Electro en el AdE</undefined>."
+        "Si vuelve a usar Retorno estelar, se teletransportará hasta la ubicación de la marca y desatará un ataque cortante que inflige <electro>Daño Electro en el AdE</electro>. Al teletransportarse a una cuña lanzada tras mantener pulsado, Keching ignora los obstáculos del terreno.",
+        "Si Keching usa un Ataque Cargado, desencadenará una tempestad eléctrica en la marca de la cuña, infligiendo <electro>Daño Electro en el AdE</electro>."
       ],
       "10": "<br/>",
       "11": "<i>“Los humanos son como las polillas: persiguen a ciegas la claridad a la que llaman ‘dioses’ y ‘Adeptus’. En cambio, yo tengo mi luz propia”.</i>"
@@ -79,8 +79,8 @@
   "burst": {
     "name": "Paseo celestial",
     "description": {
-      "0": "Keching desata el poder del rayo, infligiendo <undefined>Daño Electro</undefined> en el AdE.",
-      "1": "Después, se funde en la sombra de su espada y ataca con una serie de golpes relámpago a los enemigos infligiendo <undefined>Daño Electro</undefined>. El ataque final inflige una gran cantidad de <undefined>Daño Electro en el AdE</undefined>.",
+      "0": "Keching desata el poder del rayo, infligiendo <electro>Daño Electro</electro> en el AdE.",
+      "1": "Después, se funde en la sombra de su espada y ataca con una serie de golpes relámpago a los enemigos infligiendo <electro>Daño Electro</electro>. El ataque final inflige una gran cantidad de <electro>Daño Electro en el AdE</electro>.",
       "2": "<br/>",
       "3": "<i>La técnica más veloz en el arsenal personal de Keching es lo suficientemente rápida como para derribar estrellas.</i>"
     },
@@ -106,7 +106,7 @@
   "passive1": {
     "name": "Penitencia del trueno",
     "description": {
-      "0": "Al utilizar <strong>Retorno estelar</strong> mientras esté presente una cuña relámpago, Keching se <undefined>imbuye del elemento Electro</undefined> durante 5 s."
+      "0": "Al utilizar <strong>Retorno estelar</strong> mientras esté presente una cuña relámpago, Keching se <electro>imbuye del elemento Electro</electro> durante 5 s."
     }
   },
   "passive2": {
@@ -124,13 +124,13 @@
   "constellation1": {
     "name": "Fuerza atronadora",
     "description": {
-      "0": "Usar <strong>Retorno estelar</strong> mientras está presente una cuña relámpago hace que Keching inflija un 50% de su ATQ como <undefined>Daño Electro en el AdE</undefined> en el punto de inicio y de reaparición."
+      "0": "Usar <strong>Retorno estelar</strong> mientras está presente una cuña relámpago hace que Keching inflija un 50% de su ATQ como <electro>Daño Electro en el AdE</electro> en el punto de inicio y de reaparición."
     }
   },
   "constellation2": {
     "name": "Impuestos desorbitantes",
     "description": {
-      "0": "Cuando los Ataques Normales y Cargados de Keching golpean a enemigos afectados por <undefined>Electro</undefined>, hay una probabilidad del 50% de crear una partícula elemental.",
+      "0": "Cuando los Ataques Normales y Cargados de Keching golpean a enemigos afectados por <electro>Electro</electro>, hay una probabilidad del 50% de crear una partícula elemental.",
       "1": "Este efecto solo puede ocurrir una vez cada 5 s."
     }
   },
@@ -144,7 +144,7 @@
   "constellation4": {
     "name": "Sintonización",
     "description": {
-      "0": "Cuando Keching causa una <undefined>Reacción Elemental con Electro</undefined>, su ATQ aumenta en un 25% durante 10 s."
+      "0": "Cuando Keching causa una <electro>Reacción Elemental con Electro</electro>, su ATQ aumenta en un 25% durante 10 s."
     }
   },
   "constellation5": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Estrella tenaz",
     "description": {
-      "0": "Al hacer un Ataque Normal, un Ataque Cargado, una Habilidad Elemental o una Habilidad Definitiva, Keching obtiene un 6% de <undefined>Bono de Daño Electro</undefined> durante 8 s.",
+      "0": "Al hacer un Ataque Normal, un Ataque Cargado, una Habilidad Elemental o una Habilidad Definitiva, Keching obtiene un 6% de <electro>Bono de Daño Electro</electro> durante 8 s.",
       "1": "Los efectos activados por Ataques Normales, Ataques Cargados, Habilidades Elementales y Habilidades Definitivas serán independientes unos de otros."
     }
   }

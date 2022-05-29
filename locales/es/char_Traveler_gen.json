@@ -5,7 +5,7 @@
       "enerRechInc": "Aumento de Rec. de Energía",
       "name": "Espada electrosombría",
       "description": {
-        "0": "Libera tres rápidos relámpagos sombríos, los cuales infligen <undefined>Daño Electro</undefined> contra los enemigos y, al golpearlos, colocan un abalorio de la profusión.",
+        "0": "Libera tres rápidos relámpagos sombríos, los cuales infligen <electro>Daño Electro</electro> contra los enemigos y, al golpearlos, colocan un abalorio de la profusión.",
         "1": "Originalmente solo se pueden crear un máximo de 2 abalorios de la profusión. Al usar esta habilidad se reiniciarán todos los abalorios ya creados.",
         "2": "<br/>",
         "3": "<strong>Abalorio de la profusión</strong>",
@@ -40,10 +40,10 @@
       "thunderDMG": "Daño de rayo temible",
       "name": "Estallido atronador",
       "description": {
-        "0": "Invocas el velo del relámpago para empujar e infligir <undefined>Daño Electro</undefined> a los enemigos a tu alrededor.",
+        "0": "Invocas el velo del relámpago para empujar e infligir <electro>Daño Electro</electro> a los enemigos a tu alrededor.",
         "1": "<br/>",
         "2": "<strong>Velo del relámpago</strong>",
-        "3": "Cuando tu personaje en uso golpea a un enemigo con sus Ataques Normales o Cargados, caerá un rayo temible que inflige <undefined>Daño Electro</undefined>.",
+        "3": "Cuando tu personaje en uso golpea a un enemigo con sus Ataques Normales o Cargados, caerá un rayo temible que inflige <electro>Daño Electro</electro>.",
         "4": "Al golpear al enemigo, el rayo hará que dicho personaje recupere Energía Elemental.",
         "5": "Solo puede caer un rayo temible cada 0.5 s.",
         "6": "<br/>",
@@ -124,7 +124,7 @@
     "constellation2": {
       "name": "Rayo vehemente",
       "description": {
-        "0": "Cuando un enemigo es golpeado por el rayo temible de <strong>Estallido atronador</strong>, su <undefined>RES Electro</undefined> se reduce en un 15% durante 8 s."
+        "0": "Cuando un enemigo es golpeado por el rayo temible de <strong>Estallido atronador</strong>, su <electro>RES Electro</electro> se reduce en un 15% durante 8 s."
       }
     },
     "constellation3": {
@@ -204,7 +204,7 @@
         "4": "El daño y el AdE aumentarán progresivamente.",
         "5": "<br/>",
         "6": "<strong>Cambio elemental</strong>",
-        "7": "Si el vórtice de vacío entra en contacto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, infligirá un bono de Daño Elemental adicional de ese tipo.",
+        "7": "Si el vórtice de vacío entra en contacto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, infligirá un bono de Daño Elemental adicional de ese tipo.",
         "8": "El cambio elemental solo puede ocurrir una vez durante la habilidad.",
         "9": "<br/>",
         "10": "<i>Hablaste con Paimon de cómo atrapar el viento sin forma.</i>"
@@ -234,7 +234,7 @@
         "0": "Guía al viento para invocar un tornado que avanza y atrae a los objetos y oponentes, infligiendo <anemo>Daño Anemo</anemo> continuo.",
         "1": "<br/>",
         "2": "<strong>Cambio elemental</strong>",
-        "3": "Si el tornado entra en contacto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, infligirá un bono de Daño Elemental adicional de ese tipo.",
+        "3": "Si el tornado entra en contacto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, infligirá un bono de Daño Elemental adicional de ese tipo.",
         "4": "El cambio elemental solo puede ocurrir una vez durante la habilidad.",
         "5": "<br/>",
         "6": "<i>Investigaste con Paimon el aleteo de las mariposas</i>."

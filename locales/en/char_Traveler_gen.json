@@ -5,7 +5,7 @@
       "enerRechInc": "Energy Recharge Increase",
       "name": "Lightning Blade",
       "description": {
-        "0": "Unleashes three swift thunder shadows that deal <undefined>Electro DMG</undefined> to opponents and leave an Abundance Amulet behind after hitting an opponent.",
+        "0": "Unleashes three swift thunder shadows that deal <electro>Electro DMG</electro> to opponents and leave an Abundance Amulet behind after hitting an opponent.",
         "1": "2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.",
         "2": "<br/>",
         "3": "<strong>Abundance Amulets</strong>",
@@ -40,10 +40,10 @@
       "thunderDMG": "Falling Thunder DMG",
       "name": "Bellowing Thunder",
       "description": {
-        "0": "You call upon the protection of lightning, knocking nearby opponents back and dealing <undefined>Electro DMG</undefined> to them.",
+        "0": "You call upon the protection of lightning, knocking nearby opponents back and dealing <electro>Electro DMG</electro> to them.",
         "1": "<br/>",
         "2": "<strong>Lightning Shroud</strong>",
-        "3": "When your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing <undefined>Electro DMG.</undefined>",
+        "3": "When your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing <electro>Electro DMG.</electro>",
         "4": "When Falling Thunder hits opponents, it will regenerate Energy for that character.",
         "5": "One instance of Falling Thunder can be generated every 0.5s.",
         "6": "<br/>",
@@ -124,7 +124,7 @@
     "constellation2": {
       "name": "Violet Vehemence",
       "description": {
-        "0": "When Falling Thunder created by <strong>Bellowing Thunder</strong> hits an opponent, it will decrease their <undefined>Electro RES</undefined> by 15% for 8s."
+        "0": "When Falling Thunder created by <strong>Bellowing Thunder</strong> hits an opponent, it will decrease their <electro>Electro RES</electro> by 15% for 8s."
       }
     },
     "constellation3": {
@@ -204,7 +204,7 @@
         "4": "DMG and AoE will gradually increase.",
         "5": "<br/>",
         "6": "<strong>Elemental Absorption</strong>",
-        "7": "If the vortex comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, it will deal additional elemental DMG of that type.",
+        "7": "If the vortex comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, it will deal additional elemental DMG of that type.",
         "8": "Elemental Absorption may only occur once per use.",
         "9": "<br/>",
         "10": "<i>You discussed the way to grasp the formless wind with Paimon.</i>"
@@ -234,7 +234,7 @@
         "0": "Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing continuous <anemo>Anemo DMG</anemo>.",
         "1": "<br/>",
         "2": "<strong>Elemental Absorption</strong>",
-        "3": "If the tornado comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, it will deal additional elemental DMG of that type.",
+        "3": "If the tornado comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, it will deal additional elemental DMG of that type.",
         "4": "Elemental Absorption may only occur once per use.",
         "5": "<br/>",
         "6": "<i>You and Paimon studied the flapping of a butterfly's wings.</i>"

@@ -80,7 +80,7 @@
       "0": "Dispara una flecha imbuida de viento, creando un enorme ciclón que atrae a los enemigos e inflige <anemo>Daño Anemo</anemo>.",
       "1": "<br/>",
       "2": "<strong>Cambio elemental</strong>",
-      "3": "Si el ciclón entra en contacto con <hydro>Hydro</hydro>/<pyro>Pyro </pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, inflige Daño Elemental adicional de ese tipo.",
+      "3": "Si el ciclón entra en contacto con <hydro>Hydro</hydro>/<pyro>Pyro </pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, inflige Daño Elemental adicional de ese tipo.",
       "4": "El cambio elemental solo puede ocurrir una vez por uso.",
       "5": "<br/>",
       "6": "<i>Muchos himnos escritos en alabanza al Arconte Anemo se han perdido en el tiempo. Este canta sobre su dominio del viento.</i>"

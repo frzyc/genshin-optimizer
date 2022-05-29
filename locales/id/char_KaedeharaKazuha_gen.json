@@ -6,7 +6,7 @@
       "1": "Tebasan pedang ini akan menyisakan sebuah area yang disebut \"Autumn Whirlwind\" dan mengakibatkan <anemo>Anemo DMG Area</anemo> setiap beberapa saat ke musuh di dalamnya.",
       "2": "<br/>",
       "3": "<strong>Elemental Absorption</strong>",
-      "4": "Jika Autumn Whirlwind bersentuhan dengan <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, maka Autumn Whirlwind akan mengakibatkan DMG elemental tambahan yang sesuai dengan elemen tersebut.",
+      "4": "Jika Autumn Whirlwind bersentuhan dengan <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, maka Autumn Whirlwind akan mengakibatkan DMG elemental tambahan yang sesuai dengan elemen tersebut.",
       "5": "Elemental Absorption hanya dapat terpicu sekali setiap penggunaan.",
       "6": "<br/>",
       "7": "<i>\"Aku dapat melihat keabadian yang berlalu dalam satu kedipan mata, dalam selembar daun yang telah melewati ribuan musim gugur. Biarkan pedangku memotong lembaran daun ini, dan mempertanyakan jalannya sang waktu——\"</i>"
@@ -116,7 +116,7 @@
   "passive1": {
     "name": "Soumon Swordmanship",
     "description": {
-      "0": "Jika <strong>Chihayaburu</strong> bersentuhan dengan <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined> saat digunakan, maka <strong>Chihayaburu</strong> mendapatkan efek Elemental Absorption dan Plunging Attack: Midare Ranzan akan mengakibatkan DMG tambahan sesuai elemen yang bersentuhan sebesar 200% ATK. DMG ini terhitung sebagai DMG Plunging Attack.",
+      "0": "Jika <strong>Chihayaburu</strong> bersentuhan dengan <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> saat digunakan, maka <strong>Chihayaburu</strong> mendapatkan efek Elemental Absorption dan Plunging Attack: Midare Ranzan akan mengakibatkan DMG tambahan sesuai elemen yang bersentuhan sebesar 200% ATK. DMG ini terhitung sebagai DMG Plunging Attack.",
       "1": "Elemental Absorption hanya dapat terpicu sekali setiap penggunaan <strong>Chihayaburu</strong>."
     }
   },

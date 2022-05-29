@@ -45,12 +45,12 @@
       "0": "Hunts his prey using the techniques taught to him by his master and his lupical.",
       "1": "<br/>",
       "2": "<strong>Press</strong>",
-      "3": "Swings the Thunder Wolf Claw, dealing <undefined>Electro DMG</undefined> to opponents in front of Razor.",
+      "3": "Swings the Thunder Wolf Claw, dealing <electro>Electro DMG</electro> to opponents in front of Razor.",
       "4": "Upon striking an opponent, Razor will gain an Electro Sigil, which increases his Energy Recharge rate.",
       "5": "Razor can have up to 3 Electro Sigils simultaneously, and gaining a new Electro Sigil refreshes their duration.",
       "6": "<br/>",
       "7": "<strong>Hold</strong>",
-      "8": "Gathers Electro energy to unleash a lightning storm over a small AoE, causing massive <undefined>Electro DMG</undefined>, and clears all of Razor's Electro Sigils.",
+      "8": "Gathers Electro energy to unleash a lightning storm over a small AoE, causing massive <electro>Electro DMG</electro>, and clears all of Razor's Electro Sigils.",
       "9": "Each Electro Sigil cleared in this manner will be converted into Energy for Razor.",
       "10": "<br/>",
       "11": "<i>In the moment when lightning strikes, you can sometimes glimpse the look of a predator sizing up his prey deep within Razor's eyes.</i>"
@@ -77,14 +77,14 @@
   "burst": {
     "name": "Lightning Fang",
     "description": {
-      "0": "Summons the Wolf Within, which deals <undefined>Electro DMG</undefined> to all nearby opponents. This clears all of Razor's Electro Sigils, which will be converted into Elemental Energy for him.",
+      "0": "Summons the Wolf Within, which deals <electro>Electro DMG</electro> to all nearby opponents. This clears all of Razor's Electro Sigils, which will be converted into Elemental Energy for him.",
       "1": "The Wolf Within will fight alongside Razor for the skill's duration.",
       "2": "<br/>",
       "3": "<strong>The Wolf Within</strong>",
       "4": [
-        "Strikes alongside Razor's normal attacks, dealing <undefined>Electro DMG</undefined>.",
-        "Raises Razor's ATK SPD and <undefined>Electro RES</undefined>.",
-        "Causes Razor to be immune to DMG inflicted by the <undefined>Electro-Charged</undefined> status.",
+        "Strikes alongside Razor's normal attacks, dealing <electro>Electro DMG</electro>.",
+        "Raises Razor's ATK SPD and <electro>Electro RES</electro>.",
+        "Causes Razor to be immune to DMG inflicted by the <electro>Electro-Charged</electro> status.",
         "Disables Razor's Charged Attacks.",
         "Increases Razor's resistance to interruption."
       ],
@@ -168,7 +168,7 @@
   "constellation6": {
     "name": "Lupus Fulguris",
     "description": {
-      "0": "Every 10s, Razor's sword charges up, causing the next Normal Attack to release lightning that deals 100% of Razor's ATK as <undefined>Electro DMG</undefined>.",
+      "0": "Every 10s, Razor's sword charges up, causing the next Normal Attack to release lightning that deals 100% of Razor's ATK as <electro>Electro DMG</electro>.",
       "1": "When Razor is not using <strong>Lightning Fang</strong>, a lightning strike on an opponent will grant Razor an Electro Sigil for <strong>Claw and Thunder</strong>."
     }
   }

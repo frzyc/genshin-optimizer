@@ -42,7 +42,7 @@
     "name": "Tinh Đẩu Quy Vị",
     "description": {
       "0": "Giáng Đá Lôi nhanh như chớp, tiêu diệt kẻ địch.",
-      "1": "Khi Đá Lôi đánh trúng sẽ gây <undefined>sát thương nguyên tố lôi</undefined> cho địch trong phạm vi nhỏ và để lại dấu ấn Đá Lôi ở nơi đó.",
+      "1": "Khi Đá Lôi đánh trúng sẽ gây <electro>sát thương nguyên tố lôi</electro> cho địch trong phạm vi nhỏ và để lại dấu ấn Đá Lôi ở nơi đó.",
       "2": "<br/>",
       "3": "<strong>Nhấn giữ</strong>",
       "4": "Nhấn giữ để điều chỉnh hướng giáng Đá Lôi.",
@@ -51,8 +51,8 @@
       "7": "<strong>Đá Lôi</strong>",
       "8": "Trong thời gian Đá Lôi, Keqing thi triển Tinh Đẩu Quy Vị lần nữa hoặc trọng kích, sẽ xóa dấu ấn Đá Lôi và tạo ra hiệu quả khác nhau:",
       "9": [
-        "Khi thi triển Tinh Đẩu Quy Vị lần nữa, di chuyển đến nơi có dấu ấn thực hiện trảm kích 1 lần, gây <undefined>sát thương phạm vi nguyên tố lôi</undefined>. Khi đến nơi nhấn giữ giáng Đá Lôi, có thể vượt qua chướng ngại của địa hình.",
-        "Khi thi triển trọng kích, ở nơi có dấu ấn sẽ giáng sét liên tục, gây <undefined>sát thương phạm vi nguyên tố lôi</undefined> nhiều lần."
+        "Khi thi triển Tinh Đẩu Quy Vị lần nữa, di chuyển đến nơi có dấu ấn thực hiện trảm kích 1 lần, gây <electro>sát thương phạm vi nguyên tố lôi</electro>. Khi đến nơi nhấn giữ giáng Đá Lôi, có thể vượt qua chướng ngại của địa hình.",
+        "Khi thi triển trọng kích, ở nơi có dấu ấn sẽ giáng sét liên tục, gây <electro>sát thương phạm vi nguyên tố lôi</electro> nhiều lần."
       ],
       "10": "<br/>",
       "11": "<i>\"Chân dung là bướm đêm, cứ nhảy bổ vào ánh lửa gọi là thần tiên. Nhưng ánh sáng này của tôi là tự tôi thắp sáng\"</i>"
@@ -79,8 +79,8 @@
   "burst": {
     "name": "Tuần Du Thiên Nhai",
     "description": {
-      "0": "Dẫn nổ sức mạnh lôi điện, gây <undefined>sát thương nguyên tố lôi</undefined> trong phạm vi.",
-      "1": "Sau đó ẩn vào kiếm ảnh, gây liên trảm nhanh như sấm chớp cho kẻ địch xung quanh, gây nhiều lần <undefined>sát thương nguyên tố lôi</undefined> và ở đòn cuối cùng, gây thêm <undefined>sát thương phạm vi nguyên tố lôi</undefined>.",
+      "0": "Dẫn nổ sức mạnh lôi điện, gây <electro>sát thương nguyên tố lôi</electro> trong phạm vi.",
+      "1": "Sau đó ẩn vào kiếm ảnh, gây liên trảm nhanh như sấm chớp cho kẻ địch xung quanh, gây nhiều lần <electro>sát thương nguyên tố lôi</electro> và ở đòn cuối cùng, gây thêm <electro>sát thương phạm vi nguyên tố lôi</electro>.",
       "2": "<br/>",
       "3": "<i>Chiêu nhanh nhất trong kiếm thuật có thể chém rơi tất cả ngôi sao trên trời.</i>"
     },
@@ -106,7 +106,7 @@
   "passive1": {
     "name": "Sự Trừng Phạt Sấm Sét",
     "description": {
-      "0": "Ở thời gian Đá Lôi tồn tại, trong vòng 5s sau khi thi triển <strong>Tinh Đẩu Quy Vị</strong>, Keqing nhận <undefined>Nguyên Tố Lôi đính kèm</undefined>."
+      "0": "Ở thời gian Đá Lôi tồn tại, trong vòng 5s sau khi thi triển <strong>Tinh Đẩu Quy Vị</strong>, Keqing nhận <electro>Nguyên Tố Lôi đính kèm</electro>."
     }
   },
   "passive2": {
@@ -124,13 +124,13 @@
   "constellation1": {
     "name": "Sấm Sét Trừng Phạt",
     "description": {
-      "0": "Ở thời gian Đá Lôi tồn tại, khi thi triển <strong>Tinh Đẩu Quy Vị</strong> lần nữa, ở nơi Keqing biến mất và xuất hiện gây ra <undefined>sát thương phạm vi Nguyên Tố Lôi</undefined> bằng 50% tấn công"
+      "0": "Ở thời gian Đá Lôi tồn tại, khi thi triển <strong>Tinh Đẩu Quy Vị</strong> lần nữa, ở nơi Keqing biến mất và xuất hiện gây ra <electro>sát thương phạm vi Nguyên Tố Lôi</electro> bằng 50% tấn công"
     }
   },
   "constellation2": {
     "name": "Nghiêm Nghị Hà Khắc",
     "description": {
-      "0": "Khi Keqing tấn công thường và trọng kích trúng kẻ địch bị ảnh hưởng bởi <undefined>Nguyên Tố Lôi</undefined>, có tỷ lệ 50% tạo 1 Nguyên Tố Hạt Nhân.",
+      "0": "Khi Keqing tấn công thường và trọng kích trúng kẻ địch bị ảnh hưởng bởi <electro>Nguyên Tố Lôi</electro>, có tỷ lệ 50% tạo 1 Nguyên Tố Hạt Nhân.",
       "1": "Mỗi 5s mới có hiệu quả một lần."
     }
   },
@@ -144,7 +144,7 @@
   "constellation4": {
     "name": "Điều Luật",
     "description": {
-      "0": "Trong vòng 10s sau khi Keqing kích hoạt <undefined>phản ứng Nguyên Tố Lôi</undefined>, lực tấn công tăng 25%."
+      "0": "Trong vòng 10s sau khi Keqing kích hoạt <electro>phản ứng Nguyên Tố Lôi</electro>, lực tấn công tăng 25%."
     }
   },
   "constellation5": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Sao Liêm Trinh",
     "description": {
-      "0": "Khi tấn công thường, trọng kích, thi triển kỹ năng nguyên tố hoặc kỹ năng nộ, Keqing sẽ nhận 6% <undefined>buff sát thương Nguyên Tố Lôi</undefined>, kéo dài 8s.",
+      "0": "Khi tấn công thường, trọng kích, thi triển kỹ năng nguyên tố hoặc kỹ năng nộ, Keqing sẽ nhận 6% <electro>buff sát thương Nguyên Tố Lôi</electro>, kéo dài 8s.",
       "1": "Hiệu quả xuất phát từ tấn công thường, trọng kích, kỹ năng nguyên tố hoặc kỹ năng nộ tồn tại độc lập với nhau."
     }
   }

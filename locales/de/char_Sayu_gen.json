@@ -56,7 +56,7 @@
       "11": "Hält bis zu 10 s. Startet am Ende des Effekts eine Abklingphase. Je länger der Zustand des Windradmodus anhält, desto länger wird die Abklingphase.",
       "12": "<br/>",
       "13": "<strong>Elementarumwandlung</strong>",
-      "14": "Verleiht Sayu beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <undefined>Elektro</undefined>-Effekte im Windradmodus das jeweilige Element und verursacht mit dem Windrad sowie dem Windradtritt dementsprechend zusätzlichen Schaden.",
+      "14": "Verleiht Sayu beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Effekte im Windradmodus das jeweilige Element und verursacht mit dem Windrad sowie dem Windradtritt dementsprechend zusätzlichen Schaden.",
       "15": "Elementarumwandlung nur einmal während der Wirkungsdauer möglich.",
       "16": "<br/>",
       "17": "<i>Sayu ist so geübt in dieser Fähigkeit, dass sie sie mit geschlossenen Augen anwenden könnte. Eigentlich war sie als Mittel zur Flucht gedacht. Jetzt, da sie ein Göttliches Auge hat, kann sie ihren Feinden dabei wenigstens ordentlich zusetzen.</i>"

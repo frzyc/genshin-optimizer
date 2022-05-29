@@ -5,7 +5,7 @@
       "enerRechInc": "Peningkatan Energy Recharge",
       "name": "Lightning Blade",
       "description": {
-        "0": "Melancarkan 3 tebasan secepat kilat yang mengakibatkan <undefined>Electro DMG</undefined> pada musuh, dan meninggalkan Abundance Amulet pada musuh yang terkena.",
+        "0": "Melancarkan 3 tebasan secepat kilat yang mengakibatkan <electro>Electro DMG</electro> pada musuh, dan meninggalkan Abundance Amulet pada musuh yang terkena.",
         "1": "Awal-awal, maksimal 2 Abundance Amulet dapat dihasilkan. Dan saat skill dilancarkan, semua Abundance Amulet yang ada akan terkonsumsi.",
         "2": "<br/>",
         "3": "<strong>Abundance Amulet</strong>",
@@ -40,10 +40,10 @@
       "thunderDMG": "DMG Falling Thunder",
       "name": "Bellowing Thunder",
       "description": {
-        "0": "Memanggil perlindungan petir, menghempas musuh di sekitar dan menyebabkan <undefined>Electro DMG</undefined>.",
+        "0": "Memanggil perlindungan petir, menghempas musuh di sekitar dan menyebabkan <electro>Electro DMG</electro>.",
         "1": "<br/>",
         "2": "<strong>Lightning Shroud</strong>",
-        "3": "Jika Normal atau Charged Attack Karakter yang sedang aktif mengenai musuh, Falling Thunder akan terpicu dan mengakibatkan <undefined>Electro DMG.</undefined>",
+        "3": "Jika Normal atau Charged Attack Karakter yang sedang aktif mengenai musuh, Falling Thunder akan terpicu dan mengakibatkan <electro>Electro DMG.</electro>",
         "4": "Falling Thunder yang mengenai musuh akan memulihkan Energy Karakter yang bersangkutan.",
         "5": "Satu Falling Thunder dapat terpicu setiap 0,5 detik.",
         "6": "<br/>",
@@ -124,7 +124,7 @@
     "constellation2": {
       "name": "Violet Vehemence",
       "description": {
-        "0": "Falling Thunder dari <strong>Bellowing Thunder</strong> yang mengenai musuh akan mengurangi 15% <undefined>Electro RES</undefined> musuh selama 8 detik."
+        "0": "Falling Thunder dari <strong>Bellowing Thunder</strong> yang mengenai musuh akan mengurangi 15% <electro>Electro RES</electro> musuh selama 8 detik."
       }
     },
     "constellation3": {
@@ -204,7 +204,7 @@
         "4": "DMG dan area akan terus membesar.",
         "5": "<br/>",
         "6": "<strong>Elemental Absorption</strong>",
-        "7": "Jika pusarannya bersentuhan dengan elemen <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, ia akan mengakibatkan tambahan Elemental DMG dengan tipe tersebut.",
+        "7": "Jika pusarannya bersentuhan dengan elemen <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, ia akan mengakibatkan tambahan Elemental DMG dengan tipe tersebut.",
         "8": "Elemental Absorption hanya dapat terjadi sekali untuk setiap penggunaan skill.",
         "9": "<br/>",
         "10": "<i>Kamu berbincang dengan Paimon tentang cara menggenggam kekuatan angin yang tak terlihat.</i>"
@@ -234,7 +234,7 @@
         "0": "Memandu jalur aliran angin, kamu memanggil topan yang terus maju ke depan. Topannya menghisap masuk benda-benda dan musuh ke dalam serta mengakibatkan <anemo>Anemo DMG</anemo> berkelanjutan.",
         "1": "<br/>",
         "2": "<strong>Elemental Absorption</strong>",
-        "3": "Jika topan bersentuhan dengan elemen <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<undefined>Electro</undefined>, ia akan mengakibatkan tambahan Elemental DMG dengan tipe tersebut.",
+        "3": "Jika topan bersentuhan dengan elemen <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, ia akan mengakibatkan tambahan Elemental DMG dengan tipe tersebut.",
         "4": "Elemental Absorption hanya dapat terjadi sekali untuk setiap penggunaan skill.",
         "5": "<br/>",
         "6": "<i>Kamu dan Paimon mempelajari kepakan sayap kupu-kupu.</i>"

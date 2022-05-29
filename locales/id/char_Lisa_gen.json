@@ -8,15 +8,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
-        "1": "Melancarkan hingga 4 serangan listrik yang mengakibatkan <undefined>Electro DMG</undefined>."
+        "1": "Melancarkan hingga 4 serangan listrik yang mengakibatkan <electro>Electro DMG</electro>."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Mengonsumsi sejumlah Stamina dan mengakibatkan <undefined>Electro DMG area</undefined> setelah jeda singkat."
+        "1": "Mengonsumsi sejumlah Stamina dan mengakibatkan <electro>Electro DMG area</electro> setelah jeda singkat."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Mengumpulkan kekuatan Electro dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <undefined>Electro DMG area</undefined> saat mendarat."
+        "1": "Mengumpulkan kekuatan Electro dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <electro>Electro DMG area</electro> saat mendarat."
       }
     },
     "skillParams": {
@@ -45,10 +45,10 @@
       "1": "<br/>",
       "2": "<strong>Tekan</strong>",
       "3": "Melancarkan sebuah bola listrik yang mengejar musuh.",
-      "4": "Saat mengenai musuh, mengakibatkan <undefined>Electro DMG</undefined> dan memberikan satu lapis efek Conductive (hingga 3 lapis) ke musuh di dalam area kecil.",
+      "4": "Saat mengenai musuh, mengakibatkan <electro>Electro DMG</electro> dan memberikan satu lapis efek Conductive (hingga 3 lapis) ke musuh di dalam area kecil.",
       "5": "<br/>",
       "6": "<strong>Tahan</strong>",
-      "7": "Setelah waktu casting yang diperpanjang, memanggil petir dari langit untuk mengakibatkan <undefined>Electro DMG</undefined> yang besar ke semua musuh di sekitar.",
+      "7": "Setelah waktu casting yang diperpanjang, memanggil petir dari langit untuk mengakibatkan <electro>Electro DMG</electro> yang besar ke semua musuh di sekitar.",
       "8": "Mengakibatkan tambahan DMG yang besar ke musuh berdasarkan jumlah lapisan Conductive yang mereka miliki dan menghapusnya.",
       "9": "<br/>",
       "10": "<i>Warna Electro Purple adalah warna sang Rose Witch.</i>"
@@ -75,8 +75,8 @@
   "burst": {
     "name": "Lightning Rose",
     "description": {
-      "0": "Memanggil Lightning Rose yang mengerahkan sambaran petir dan menghempas musuh di sekitar untuk mengakibatkan <undefined>Electro DMG</undefined>.",
-      "1": "Lightning Rose akan terus memanggil petir untuk menghempas musuh dan mengakibatkan <undefined>Electro DMG</undefined> selama ia tetap ada.",
+      "0": "Memanggil Lightning Rose yang mengerahkan sambaran petir dan menghempas musuh di sekitar untuk mengakibatkan <electro>Electro DMG</electro>.",
+      "1": "Lightning Rose akan terus memanggil petir untuk menghempas musuh dan mengakibatkan <electro>Electro DMG</electro> selama ia tetap ada.",
       "2": "<br/>",
       "3": "<i>Hati-hati dengan duri mematikan dari mawar yang cantik.</i>"
     },

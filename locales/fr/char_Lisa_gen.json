@@ -8,15 +8,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Attaque normale</strong>",
-        "1": "Enchaîne jusqu'à 4 attaques électrifiées, infligeant des <undefined>DGT Électro</undefined>."
+        "1": "Enchaîne jusqu'à 4 attaques électrifiées, infligeant des <electro>DGT Électro</electro>."
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Consomme de l'endurance pour infliger des <undefined>DGT Électro de zone</undefined> après un court délai."
+        "1": "Consomme de l'endurance pour infliger des <electro>DGT Électro de zone</electro> après un court délai."
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",
-        "1": "Plonge depuis les airs en concentrant ses pouvoirs Électro, infligeant des DGT aux ennemis en chemin et des <undefined>DGT Électro de zone</undefined> à l'impact."
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Électro, infligeant des DGT aux ennemis en chemin et des <electro>DGT Électro de zone</electro> à l'impact."
       }
     },
     "skillParams": {
@@ -46,10 +46,10 @@
       "2": "<strong>Appui simple</strong>",
       "3": "Libère un orbe électrique à tête chercheuse.",
       "4": "<br/>",
-      "5": "Lorsqu'il touche une cible, l'orbe inflige des <undefined>DGT Électro</undefined>, ainsi que l'effet Conductivité aux ennemis proches, cumulable 3 fois maximum.",
+      "5": "Lorsqu'il touche une cible, l'orbe inflige des <electro>DGT Électro</electro>, ainsi que l'effet Conductivité aux ennemis proches, cumulable 3 fois maximum.",
       "6": "<br/>",
       "7": "<strong>Appui long</strong>",
-      "8": "Après un court délai, des éclairs s'abattent des cieux et infligent des <undefined>DGT Électro</undefined> à tous les ennemis proches.",
+      "8": "Après un court délai, des éclairs s'abattent des cieux et infligent des <electro>DGT Électro</electro> à tous les ennemis proches.",
       "9": "Les ennemis affectés par Conductivité subissent des DGT supplémentaires proportionnels au nombre de cumuls.",
       "10": "<br/>",
       "11": "<i>La couleur de la foudre est aussi la couleur de la Sorcière à la rose.</i>"
@@ -76,8 +76,8 @@
   "burst": {
     "name": "Rose de foudre",
     "description": {
-      "0": "Invoque une rose de foudre qui libère une puissante énergie électrique repoussant les ennemis proches et leur infligeant des <undefined>DGT Électro</undefined>.",
-      "1": "La rose de foudre envoie des décharges électriques qui infligent des <undefined>DGT Électro</undefined> aux ennemis proches tant qu'elle est active.",
+      "0": "Invoque une rose de foudre qui libère une puissante énergie électrique repoussant les ennemis proches et leur infligeant des <electro>DGT Électro</electro>.",
+      "1": "La rose de foudre envoie des décharges électriques qui infligent des <electro>DGT Électro</electro> aux ennemis proches tant qu'elle est active.",
       "2": "<br/>",
       "3": "<i>Cette rose est belle, mais possède des épines mortelles.</i>"
     },

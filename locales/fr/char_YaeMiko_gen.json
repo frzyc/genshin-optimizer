@@ -8,15 +8,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Attaque normale</strong>",
-        "1": "Invoque des esprits Kitsunes, enchaînant jusqu'à 3 attaques qui infligent des <undefined>DGT Électro</undefined>."
+        "1": "Invoque des esprits Kitsunes, enchaînant jusqu'à 3 attaques qui infligent des <electro>DGT Électro</electro>."
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Consomme de l'endurance pour infliger des <undefined>DGT Électro de zone</undefined> après un court délai."
+        "1": "Consomme de l'endurance pour infliger des <electro>DGT Électro de zone</electro> après un court délai."
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",
-        "1": "Plonge depuis les airs en concentrant la puissance du tonnerre, infligeant des DGT aux ennemis en chemin et des <undefined>DGT Électro de zone</undefined> à l'impact."
+        "1": "Plonge depuis les airs en concentrant la puissance du tonnerre, infligeant des DGT aux ennemis en chemin et des <electro>DGT Électro de zone</electro> à l'impact."
       }
     },
     "skillParams": {
@@ -47,7 +47,7 @@
       "3": "<strong>Sakura dévastateur</strong>",
       "4": "Les caractéristiques suivantes s'appliquent :",
       "5": [
-        " Frappe un ennemi proche d'un éclair de façon intermittente, infligeant des <undefined>DGT Électro</undefined>.",
+        " Frappe un ennemi proche d'un éclair de façon intermittente, infligeant des <electro>DGT Électro</electro>.",
         " Lorsqu'il y a d'autres sakura dévastateurs à proximité, leur niveau augmente, améliorant les DGT qu'ils infligent."
       ],
       "6": "<br/>",
@@ -78,8 +78,8 @@
   "burst": {
     "name": "Technique secrète : Incarnation de tenko",
     "description": {
-      "0": "La légende du « kitsunetsuki », ou la possession par un Kitsune, est l'un des contes populaires d'Inazuma. Parmi eux, celui du Kitsune céleste est considéré comme spécial, accablant les ennemis du Sanctuaire de Narukami sous la forme d'un éclair qui s'abat, infligeant des <undefined>DGT Électro de zone</undefined>.",
-      "1": "En utilisant cette compétence, Yae Miko descelle les sakura dévastateurs à proximité pour détruire leurs formes extérieures et les transformer en éclairs de tenko descendant du ciel, infligeant des <undefined>DGT Électro de zone</undefined>. Chaque sakura dévastateur détruit de cette manière déclenche un éclair.",
+      "0": "La légende du « kitsunetsuki », ou la possession par un Kitsune, est l'un des contes populaires d'Inazuma. Parmi eux, celui du Kitsune céleste est considéré comme spécial, accablant les ennemis du Sanctuaire de Narukami sous la forme d'un éclair qui s'abat, infligeant des <electro>DGT Électro de zone</electro>.",
+      "1": "En utilisant cette compétence, Yae Miko descelle les sakura dévastateurs à proximité pour détruire leurs formes extérieures et les transformer en éclairs de tenko descendant du ciel, infligeant des <electro>DGT Électro de zone</electro>. Chaque sakura dévastateur détruit de cette manière déclenche un éclair.",
       "2": "<br/>",
       "3": "<i>Yae n'utilise sa quintessence de Kitsune céleste que dans ces moments-là, brandissant elle-même la foudre. Tous ceux qui ont vu les queues de la guuji ont été réduits en cendres, alors rappelez-vous que dame Yae n'a pas de queue !</i>"
     },
@@ -142,7 +142,7 @@
   "constellation4": {
     "name": "Canalisation de sakura",
     "description": {
-      "0": "Lorsque l'éclair d'un <strong>sakura dévastateur</strong> touche un ennemi, tous les membres de l'équipe à proximité obtiennent un <undefined>bonus de DGT Électro</undefined> de 20 % pendant 5 s."
+      "0": "Lorsque l'éclair d'un <strong>sakura dévastateur</strong> touche un ennemi, tous les membres de l'équipe à proximité obtiennent un <electro>bonus de DGT Électro</electro> de 20 % pendant 5 s."
     }
   },
   "constellation5": {

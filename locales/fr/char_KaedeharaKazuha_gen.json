@@ -6,7 +6,7 @@
       "1": "Le trajet de la lame laissera derrière lui un champ appelé « Vent d'automne » qui inflige des <anemo>DGT Anémo</anemo> de façon intermittente aux ennemis à l'intérieur.",
       "2": "<br/>",
       "3": "<strong>Absorption élémentaire</strong>",
-      "4": "Le Vent d'automne absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <undefined>Électro</undefined> avec lesquels il entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
+      "4": "Le Vent d'automne absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
       "5": "Un seul élément peut être absorbé à la fois.",
       "6": "<br/>",
       "7": "<i>« Je vois passer l'éternité en un instant, les automnes de plusieurs années d'une seule feuille ; ainsi je trancherai cet érable en un éclair, et je poserai la question des âges... »</i>"
@@ -114,7 +114,7 @@
   "passive1": {
     "name": "Lame d'érosion",
     "description": {
-      "0": "Si <strong>Véhémence divine</strong> entre en contact avec l'élément <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> ou <undefined>Électro</undefined> lors de son utilisation, l'attaque plongeante « Contrôle du chaos » déclenchée après cette <strong>Véhémence divine</strong> bénéficie d'une absorption élémentaire, ajoutant ensuite des DGT de l'élément correspondant pour 200 % de l'attaque, DGT considérés comme étant des DGT d'attaque plongeante.",
+      "0": "Si <strong>Véhémence divine</strong> entre en contact avec l'élément <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> ou <electro>Électro</electro> lors de son utilisation, l'attaque plongeante « Contrôle du chaos » déclenchée après cette <strong>Véhémence divine</strong> bénéficie d'une absorption élémentaire, ajoutant ensuite des DGT de l'élément correspondant pour 200 % de l'attaque, DGT considérés comme étant des DGT d'attaque plongeante.",
       "1": "Un seul élément peut être absorbé à chaque utilisation de <strong>Véhémence divine</strong>."
     }
   },

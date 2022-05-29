@@ -8,15 +8,15 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Standardangriff</strong>",
-        "1": "Beschwört Kitsune-Geister hervor, führt bis zu 3 Angriffe aus und verursacht <undefined>Elektro-Schaden</undefined>."
+        "1": "Beschwört Kitsune-Geister hervor, führt bis zu 3 Angriffe aus und verursacht <electro>Elektro-Schaden</electro>."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
-        "1": "Verbraucht eine gewisse Menge Ausdauer und verursacht nach kurzer Aufladezeit <undefined>Elektro-Flächenschaden</undefined>."
+        "1": "Verbraucht eine gewisse Menge Ausdauer und verursacht nach kurzer Aufladezeit <electro>Elektro-Flächenschaden</electro>."
       },
       "plunging": {
         "0": "<strong>Angriff aus dem Fall</strong>",
-        "1": "Konzentriert die Kraft des Donners, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <undefined>Elektro-Flächenschaden</undefined>."
+        "1": "Konzentriert die Kraft des Donners, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <electro>Elektro-Flächenschaden</electro>."
       }
     },
     "skillParams": {
@@ -47,7 +47,7 @@
       "3": "<strong>Sesshou-Sakura</strong>",
       "4": "Merkmale:",
       "5": [
-        " Schlägt in gewissen zeitlichen Abständen einen Gegner in der Umgebung mit einem Blitz und fügt ihm <undefined>Elektro-Schaden</undefined> zu.",
+        " Schlägt in gewissen zeitlichen Abständen einen Gegner in der Umgebung mit einem Blitz und fügt ihm <electro>Elektro-Schaden</electro> zu.",
         " Erhöht bei Anwesenheit weiterer Sesshou-Sakura in der Nähe die Stufe und erhöht damit den mit dem oben beschriebenen Angriff verursachten Schaden."
       ],
       "6": "<br/>",
@@ -78,8 +78,8 @@
   "burst": {
     "name": "Große Geheimkunst – Tenko Kenshin",
     "description": {
-      "0": "Die Legende des „Kitsunetsuki“, der Heimsuchung durch eine Kitsune, gehört zu den Volksmärchen von Inazuma. Unter ihnen gilt die der Himmelsfüchse als etwas Besonderes, die in Form eines Blitzes auf die Feinde des Großen Narukami-Schreins herabfallen, wobei <undefined>Elektro-Flächenschaden</undefined> verursacht wird.",
-      "1": "Yae Miko aktiviert die Sesshou-Sakura in der Nähe beim Auslösen der Fähigkeit, zerstört ihre äußere Form und verwandelt sie in Tenko-Blitzschläge, die herunterprasseln und <undefined>Elektro-Flächenschaden</undefined> verursachen. Für jede zerstörte Sesshou-Sakura wird ein Tenko-Blitzschlag erzeugt.",
+      "0": "Die Legende des „Kitsunetsuki“, der Heimsuchung durch eine Kitsune, gehört zu den Volksmärchen von Inazuma. Unter ihnen gilt die der Himmelsfüchse als etwas Besonderes, die in Form eines Blitzes auf die Feinde des Großen Narukami-Schreins herabfallen, wobei <electro>Elektro-Flächenschaden</electro> verursacht wird.",
+      "1": "Yae Miko aktiviert die Sesshou-Sakura in der Nähe beim Auslösen der Fähigkeit, zerstört ihre äußere Form und verwandelt sie in Tenko-Blitzschläge, die herunterprasseln und <electro>Elektro-Flächenschaden</electro> verursachen. Für jede zerstörte Sesshou-Sakura wird ein Tenko-Blitzschlag erzeugt.",
       "2": "<br/>",
       "3": "<i>Yae benutzt nur in solchen Zeiten das Zeichen der Himmelsfüchse, um Blitze zu beschwören. Alle, die bisher die Schwänze der Guuji gesehen haben, sind zu Asche zerfallen. Also vergiss nicht, Yae hat keine Schwänze.</i>"
     },
@@ -142,7 +142,7 @@
   "constellation4": {
     "name": "Rosarote Blitzleiter",
     "description": {
-      "0": "Erhöht beim Treffen von Gegnern mit den Blitzschlägen von <strong>Sesshou-Sakura</strong> den <undefined>Elektro-Schaden</undefined> aller Truppenmitglieder in der Nähe 5 s lang um 20 %."
+      "0": "Erhöht beim Treffen von Gegnern mit den Blitzschlägen von <strong>Sesshou-Sakura</strong> den <electro>Elektro-Schaden</electro> aller Truppenmitglieder in der Nähe 5 s lang um 20 %."
     }
   },
   "constellation5": {

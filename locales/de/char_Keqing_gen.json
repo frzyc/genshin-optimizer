@@ -42,7 +42,7 @@
     "name": "Rückkehr der Sterne",
     "description": {
       "0": "Wirft einen Donnerkeil, der sich blitzartig auf die Gegner zubewegt.",
-      "1": "Der Donnerkeil fügt Gegnern mit geringer Reichweite <undefined>Elektro-Schaden</undefined> zu und hinterlässt an der Stelle des Auftreffens eine Markierung.",
+      "1": "Der Donnerkeil fügt Gegnern mit geringer Reichweite <electro>Elektro-Schaden</electro> zu und hinterlässt an der Stelle des Auftreffens eine Markierung.",
       "2": "<br/>",
       "3": "<strong>Gedrückt halten</strong>",
       "4": "Halte gedrückt, um die Wurfrichtung der Donnerkeilmarkierung anzupassen.",
@@ -51,8 +51,8 @@
       "7": "<strong>Donnerkeil</strong>",
       "8": "Entfernt bei erneuter Anwendung von Rückkehr der Sterne oder heftigen Schlägen während der Wirkungsdauer von Donnerkeilen die Donnerkeilmarkierung und verursacht unterschiedliche Effekte:",
       "9": [
-        " Keqing bewegt sich bei erneuter Anwendung von Rückkehr der Sterne sofort zur Markierung, schlägt zu und verursacht <undefined>Elektro-Flächenschaden</undefined>. Überwindet dabei jegliche Hindernisse auf dem Weg.",
-        " Schlägt bei Anwendung von heftigen Schlägen mit einer Reihe von Elektro-Hieben auf die markierte Stelle und verursacht mehrfachen <undefined>Elektro-Flächenschaden</undefined>."
+        " Keqing bewegt sich bei erneuter Anwendung von Rückkehr der Sterne sofort zur Markierung, schlägt zu und verursacht <electro>Elektro-Flächenschaden</electro>. Überwindet dabei jegliche Hindernisse auf dem Weg.",
+        " Schlägt bei Anwendung von heftigen Schlägen mit einer Reihe von Elektro-Hieben auf die markierte Stelle und verursacht mehrfachen <electro>Elektro-Flächenschaden</electro>."
       ],
       "10": "<br/>",
       "11": "<i>„Menschen sind wie Motten, die nach dem Licht suchen, das die Götter und Adepten ausstrahlen. Doch dieses Licht hier stammt ganz von mir.“</i>"
@@ -79,8 +79,8 @@
   "burst": {
     "name": "Himmelswanderung",
     "description": {
-      "0": "Entfesselt die Kraft der Blitze und verursacht <undefined>Elektro-Flächenschaden</undefined>.",
-      "1": "Versteckt sich danach im Schwertschatten und fügt den Gegnern in der Umgebung mit blitzartiger Geschwindigkeit eine Reihe von Hieben zu, die mehrstufigen <undefined>Elektro-Schaden</undefined> und beim letzten Hieb hohen <undefined>Elektro-Flächenschaden</undefined> verursachen.",
+      "0": "Entfesselt die Kraft der Blitze und verursacht <electro>Elektro-Flächenschaden</electro>.",
+      "1": "Versteckt sich danach im Schwertschatten und fügt den Gegnern in der Umgebung mit blitzartiger Geschwindigkeit eine Reihe von Hieben zu, die mehrstufigen <electro>Elektro-Schaden</electro> und beim letzten Hieb hohen <electro>Elektro-Flächenschaden</electro> verursachen.",
       "2": "<br/>",
       "3": "<i>Dies ist die schnellste Technik, die Keqing beherrscht. Damit kann sie sogar Sterne vom Himmel holen.</i>"
     },
@@ -106,7 +106,7 @@
   "passive1": {
     "name": "Donnernde Strafe",
     "description": {
-      "0": "Verleiht Keqing bei erneuter Anwendung von <strong>Rückkehr der Sterne</strong> während der Wirkungsdauer eines Donnerkeils 5 s lang die <undefined>Elektro-Kraft</undefined>."
+      "0": "Verleiht Keqing bei erneuter Anwendung von <strong>Rückkehr der Sterne</strong> während der Wirkungsdauer eines Donnerkeils 5 s lang die <electro>Elektro-Kraft</electro>."
     }
   },
   "passive2": {
@@ -124,13 +124,13 @@
   "constellation1": {
     "name": "Donnernde Gewalt",
     "description": {
-      "0": "Verursacht bei erneuter Anwendung von <strong>Rückkehr der Sterne</strong> während der Wirkungsdauer eines Donnerkeils an den Stellen des Verschwindens und Auftauchens von Keqing <undefined>Elektro-Flächenschaden</undefined> in Höhe von 50 % ANG."
+      "0": "Verursacht bei erneuter Anwendung von <strong>Rückkehr der Sterne</strong> während der Wirkungsdauer eines Donnerkeils an den Stellen des Verschwindens und Auftauchens von Keqing <electro>Elektro-Flächenschaden</electro> in Höhe von 50 % ANG."
     }
   },
   "constellation2": {
     "name": "Steuererhöhung",
     "description": {
-      "0": "Erschafft beim Treffen von <undefined>Elektro</undefined>-Effekten betroffener Gegner mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % ein Elementarteilchen.",
+      "0": "Erschafft beim Treffen von <electro>Elektro</electro>-Effekten betroffener Gegner mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % ein Elementarteilchen.",
       "1": "5 s Abklingzeit."
     }
   },
@@ -144,7 +144,7 @@
   "constellation4": {
     "name": "Abstimmung",
     "description": {
-      "0": "Erhöht Keqings ANG nach Auslösen von <undefined>Elektro-Reaktionen</undefined> 10 s lang um 25 %."
+      "0": "Erhöht Keqings ANG nach Auslösen von <electro>Elektro-Reaktionen</electro> 10 s lang um 25 %."
     }
   },
   "constellation5": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Störrischer Stern",
     "description": {
-      "0": "Erhöht Keqings <undefined>Elektro-Schaden</undefined> bei Anwendung von Standardangriffen, heftigen Schlägen, Elementarfähigkeiten und Spezialfähigkeit 8 s lang um 6 %.",
+      "0": "Erhöht Keqings <electro>Elektro-Schaden</electro> bei Anwendung von Standardangriffen, heftigen Schlägen, Elementarfähigkeiten und Spezialfähigkeit 8 s lang um 6 %.",
       "1": "Die Effekte für Standardangriffe, heftige Schläge, Elementarfähigkeiten und Spezialfähigkeit existieren unabhängig voneinander."
     }
   }
