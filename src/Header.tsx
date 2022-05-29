@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Suspense, useState } from "react";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from "react-i18next";
 import { Link as RouterLink, useMatch } from "react-router-dom";
 import { SlotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
@@ -12,18 +12,18 @@ import { SlotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
 const content = [{
   i18Key: "tabs.artifacts",
   svg: SlotIconSVG.flower,
-  to: "/artifact",
-  value: "artifact",
+  to: "/artifacts",
+  value: "artifacts",
 }, {
   i18Key: "tabs.weapons",
   svg: faGavel,
-  to: "/weapon",
-  value: "weapon",
+  to: "/weapons",
+  value: "weapons",
 }, {
   i18Key: "tabs.characters",
   svg: faIdCard,
-  to: "/character",
-  value: "character",
+  to: "/characters",
+  value: "characters",
 }, {
   i18Key: "tabs.tools",
   svg: faTools,

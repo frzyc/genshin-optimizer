@@ -1,7 +1,8 @@
 import { KeyboardArrowUp } from '@mui/icons-material';
 import { Box, Container, CssBaseline, Fab, Grid, Skeleton, StyledEngineProvider, ThemeProvider, useScrollTrigger, Zoom } from '@mui/material';
 import React, { lazy, Suspense, useMemo, useState } from 'react';
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+import { HashRouter, Route, Routes, useMatch } from "react-router-dom";
 import './App.scss';
 import './Database/Database';
 import { ArtCharDatabase, DatabaseContext } from './Database/Database';
@@ -10,6 +11,7 @@ import Footer from './Footer';
 import Header from './Header';
 import './i18n';
 import './index.css';
+import useTitle from './ReactHooks/useTitle';
 import { theme } from './Theme';
 
 const PageHome = lazy(() => import('./PageHome'))
@@ -65,6 +67,7 @@ function App() {
         <CssBaseline />
         <DatabaseContext.Provider value={dbContextObj}>
           <HashRouter basename="/">
+            <MatchTitle />
             <Grid container direction="column" minHeight="100vh">
               <Grid item >
                 <Header anchor="back-to-top-anchor" />
@@ -73,9 +76,9 @@ function App() {
                 <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%" }} />}>
                   <Routes>
                     <Route index element={<PageHome />} />
-                    <Route path="/artifact" element={<PageArtifact />} />
-                    <Route path="/weapon" element={<PageWeapon />} />
-                    <Route path="/character/*"  >
+                    <Route path="/artifacts" element={<PageArtifact />} />
+                    <Route path="/weapons" element={<PageWeapon />} />
+                    <Route path="/characters/*"  >
                       <Route index element={<PageCharacter />} />
                       <Route path=":characterKey/*" element={<CharacterDisplay />} />
                     </Route>
@@ -102,5 +105,11 @@ function App() {
       </ThemeProvider>
     </StyledEngineProvider>
   </React.StrictMode>
+}
+function MatchTitle() {
+  const { t } = useTranslation("ui")
+  let { params: { page = "" } } = useMatch({ path: "/:page", end: false }) ?? { params: { page: "" } }
+  useTitle(page && t(`tabs.${page}`))
+  return null
 }
 export default App;

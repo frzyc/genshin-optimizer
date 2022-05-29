@@ -26,6 +26,7 @@ import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../ReactHooks/useCharSelectionCallback';
 import usePromise from '../../ReactHooks/usePromise';
 import useTeamData from '../../ReactHooks/useTeamData';
+import useTitle from '../../ReactHooks/useTitle';
 import { allCharacterKeys, CharacterKey } from '../../Types/consts';
 import { clamp } from '../../Util/Util';
 import TabEquip from './Tabs/TabEquip';
@@ -39,10 +40,10 @@ export default function CharacterDisplay() {
   let { characterKey } = useParams<{ characterKey?: CharacterKey }>();
   const invalidKey = !allCharacterKeys.includes(characterKey as any ?? "")
   if (invalidKey)
-    return <Navigate to="/character" />
+    return <Navigate to="/characters" />
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
     {characterKey && <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}>
-      <CharacterDisplayCard characterKey={characterKey} onClose={() => navigate("/character")} />
+      <CharacterDisplayCard characterKey={characterKey} onClose={() => navigate("/characters")} />
     </Suspense>}
   </Box>
 }
@@ -56,8 +57,9 @@ type CharacterDisplayCardProps = {
 function CharacterDisplayCard({ characterKey, newteamData, mainStatAssumptionLevel = 0, onClose }: CharacterDisplayCardProps) {
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { character, characterSheet, target: charUIData } = teamData?.[characterKey] ?? {}
-  let { params: { tab = "overview" } } = useMatch({ path: "/character/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }
-
+  let { params: { tab = "overview" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }
+  const { t } = useTranslation(`char_${characterKey}_gen`)
+  useTitle(`${t("name")} - ${t(`page_character:tabs.${tab}`)}`)
   const characterDispatch = useCharacterReducer(character?.key ?? "")
   const { compareData } = character ?? {}
 
@@ -127,7 +129,7 @@ function TabNav({ tab }: { tab: string }) {
     <Tab sx={{ minWidth: "20%" }} value="overview" label={t("tabs.overview")} icon={<Person />} component={RouterLink} to="" />
     <Tab sx={{ minWidth: "20%" }} value="talent" label={t("tabs.talent")} icon={<FactCheck />} component={RouterLink} to="talent" />
     <Tab sx={{ minWidth: "20%" }} value="equip" label={t("tabs.equip")} icon={<Checkroom />} component={RouterLink} to="equip" />
-    <Tab sx={{ minWidth: "20%" }} value="teambuffs" label={t("tabs.buffs")} icon={<Groups />} component={RouterLink} to="teambuffs" />
+    <Tab sx={{ minWidth: "20%" }} value="teambuffs" label={t("tabs.teambuffs")} icon={<Groups />} component={RouterLink} to="teambuffs" />
     <Tab sx={{ minWidth: "20%" }} value="optimize" label={t("tabs.optimize")} icon={<Calculate />} component={RouterLink} to="optimize" />
   </Tabs>
 }

@@ -1,44 +1,25 @@
-import { faBan, faChartLine, faUserShield } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { BusinessCenter, Replay } from "@mui/icons-material"
-import { Divider, Grid, ListItemIcon, ListItemText, MenuItem, ToggleButton } from "@mui/material"
-import { Box } from "@mui/system"
-import { useContext, useMemo } from "react"
-import { Trans, useTranslation } from "react-i18next"
-import ArtifactLevelSlider from "./ArtifactLevelSlider"
-import ArtifactMainStatMultipleSelectChip from "./ArtifactMainStatMultipleSelectChip"
-import ArtifactSetMultipleSelectChip from "./ArtifactSetMultipleSelectChip"
-import ArtifactSubStatMultipleSelectChip from "./ArtifactSubStatMultipleSelectChip"
-import { artifactSlotIcon } from "./SlotNameWIthIcon"
-import { CharacterMenuItemArray } from "../Character/CharacterDropdownButton"
-import DropdownButton from "../DropdownMenu/DropdownButton"
-import SolidToggleButtonGroup from "../SolidToggleButtonGroup"
-import { Stars } from "../StarDisplay"
-import CharacterSheet from "../../Data/Characters/CharacterSheet"
-import { DatabaseContext } from "../../Database/Database"
-import usePromise from "../../ReactHooks/usePromise"
-import { allArtifactRarities, allSlotKeys, CharacterKey } from "../../Types/consts"
-import { characterFilterConfigs } from "../../Util/CharacterSort"
-import { FilterOption } from "../../PageArtifact/ArtifactSort"
+import { faBan, faChartLine } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Lock, LockOpen } from '@mui/icons-material';
+import { Box, Grid, ToggleButton, useTheme } from "@mui/material";
+import { Trans, useTranslation } from "react-i18next";
+import { FilterOption } from "../../PageArtifact/ArtifactSort";
+import { allArtifactRarities, allSlotKeys } from "../../Types/consts";
+import CharacterAutocomplete from "../Character/CharacterAutocomplete";
+import SolidToggleButtonGroup from "../SolidToggleButtonGroup";
+import { Stars } from "../StarDisplay";
+import { ArtifactMainStatMultiAutocomplete, ArtifactSetMultiAutocomplete, ArtifactSubstatMultiAutocomplete } from "./ArtifactAutocomplete";
+import ArtifactLevelSlider from "./ArtifactLevelSlider";
+import { artifactSlotIcon } from "./SlotNameWIthIcon";
 
 export default function ArtifactFilterDisplay({ filterOption, filterOptionDispatch, }: { filterOption: FilterOption, filterOptionDispatch: (any) => void }) {
   const { t } = useTranslation(["artifact", "ui"]);
+  const theme = useTheme()
 
   const { artSetKeys = [], mainStatKeys = [], rarity = [], slotKeys = [], levelLow, levelHigh, substats = [],
-    location = "", excluded = "" } = filterOption
-  const locationCharacterSheet = usePromise(CharacterSheet.get(location as CharacterKey), [location])
+    location = "", exclusion = ["excluded", "included"], locked = ["locked", "unlocked"] } = filterOption
 
-  let locationDisplay
-  if (!location) locationDisplay = t("filterLocation.any")
-  else if (location === "Inventory") locationDisplay = <span><BusinessCenter /> {t("filterLocation.inventory")}</span>
-  else if (location === "Equipped") locationDisplay = <span><FontAwesomeIcon icon={faUserShield} /> {t("filterLocation.currentlyEquipped")}</span>
-  else locationDisplay = <b>{locationCharacterSheet?.nameWIthIcon}</b>
-
-  let excludedDisplay
-  if (excluded === "excluded") excludedDisplay = <span><FontAwesomeIcon icon={faBan} /> {t`exclusion.excluded`}</span>
-  else if (excluded === "included") excludedDisplay = <span><FontAwesomeIcon icon={faChartLine} /> {t`exclusion.included`}</span>
-  else excludedDisplay = t("exclusionDisplay", { value: t("exclusion.any") })
-  return <Grid container spacing={1} >
+  return <Grid container spacing={1}>
     {/* left */}
     <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
       {/* Artifact stars filter */}
@@ -49,78 +30,52 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
       <SolidToggleButtonGroup fullWidth onChange={(e, newVal) => filterOptionDispatch({ slotKeys: newVal })} value={slotKeys} size="small">
         {allSlotKeys.map(slotKey => <ToggleButton key={slotKey} value={slotKey}>{artifactSlotIcon(slotKey)}</ToggleButton>)}
       </SolidToggleButtonGroup>
+      {/* exclusion + locked */}
+      <Box display="flex" gap={1}>
+        <SolidToggleButtonGroup fullWidth value={exclusion} onChange={(e, newVal) => filterOptionDispatch({ exclusion: newVal })} size="small">
+          <ToggleButton value="excluded" sx={{ display: "flex", gap: 1 }}>
+            <FontAwesomeIcon icon={faBan} /><Trans i18nKey={"exclusion.excluded"} t={t} />
+          </ToggleButton>
+          <ToggleButton value="included" sx={{ display: "flex", gap: 1 }}>
+            <FontAwesomeIcon icon={faChartLine} /><Trans i18nKey={"exclusion.included"} t={t} />
+          </ToggleButton>
+        </SolidToggleButtonGroup>
+        <SolidToggleButtonGroup fullWidth value={locked} onChange={(e, newVal) => filterOptionDispatch({ locked: newVal })} size="small">
+          <ToggleButton value="locked" sx={{ display: "flex", gap: 1 }}>
+            <Lock /><Trans i18nKey={"ui:locked"} t={t} />
+          </ToggleButton>
+          <ToggleButton value="unlocked" sx={{ display: "flex", gap: 1 }}>
+            <LockOpen /><Trans i18nKey={"ui:unlocked"} t={t} />
+          </ToggleButton>
+        </SolidToggleButtonGroup>
+      </Box>
       {/* Artiface level filter */}
       <ArtifactLevelSlider showLevelText levelLow={levelLow} levelHigh={levelHigh}
         setLow={levelLow => filterOptionDispatch({ levelLow })}
         setHigh={levelHigh => filterOptionDispatch({ levelHigh })}
         setBoth={(levelLow, levelHigh) => filterOptionDispatch({ levelLow, levelHigh })} />
-      <Box display="flex" gap={1}>
-        {/* location */}
-        <LocationDropdown dropdownProps={{ color: location ? "success" : "primary" }} title={locationDisplay} onChange={location => filterOptionDispatch({ location })} selectedCharacterKey={location} />
-        {/* exclusion state */}
-        <DropdownButton fullWidth title={excludedDisplay} color={excluded ? (excluded === "included" ? "success" : "error") : "primary"}>
-          <MenuItem selected={excluded === ""} disabled={excluded === ""} onClick={() => filterOptionDispatch({ excluded: "" })}><Trans t={t} i18nKey="exclusion.any" >Any</Trans></MenuItem>
-          <MenuItem selected={excluded === "excluded"} disabled={excluded === "excluded"} onClick={() => filterOptionDispatch({ excluded: "excluded" })}>
-            <ListItemIcon>
-              <FontAwesomeIcon icon={faBan} />
-            </ListItemIcon>
-            <ListItemText>
-              <Trans t={t} i18nKey="exclusion.excluded" >Excluded</Trans>
-            </ListItemText>
-          </MenuItem>
-          <MenuItem selected={excluded === "included"} disabled={excluded === "included"} onClick={() => filterOptionDispatch({ excluded: "included" })}>
-            <ListItemIcon>
-              <FontAwesomeIcon icon={faChartLine} />
-            </ListItemIcon>
-            <ListItemText>
-              <Trans t={t} i18nKey="exclusion.included" >Included</Trans>
-            </ListItemText>
-          </MenuItem>
-        </DropdownButton>
-      </Box>
+      <Grid container display="flex" gap={1}>
+        <Grid item flexGrow={1}>
+          {/* location */}
+          <CharacterAutocomplete
+            value={location}
+            onChange={location => filterOptionDispatch({ location })}
+            placeholderText={t("artifact:filterLocation.any")}
+            defaultText={t("artifact:filterLocation.any")}
+            labelText={t("artifact:filterLocation.location")}
+            showDefault
+            showInventory
+            showEquipped
+          />
+        </Grid>
+      </Grid>
     </Grid>
     {/* right */}
     <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
       {/* Artifact Set */}
-      <ArtifactSetMultipleSelectChip artSetKeys={artSetKeys} setArtSetKeys={artSetKeys => filterOptionDispatch({ artSetKeys })} />
-      <ArtifactMainStatMultipleSelectChip mainStatKeys={mainStatKeys} setMainStatKeys={mainStatKeys => filterOptionDispatch({ mainStatKeys })} />
-      <ArtifactSubStatMultipleSelectChip subStatKeys={substats} setSubStatKeys={substats => filterOptionDispatch({ substats })} />
+      <ArtifactSetMultiAutocomplete artSetKeys={artSetKeys} setArtSetKeys={artSetKeys => filterOptionDispatch({ artSetKeys })} />
+      <ArtifactMainStatMultiAutocomplete mainStatKeys={mainStatKeys} setMainStatKeys={mainStatKeys => filterOptionDispatch({ mainStatKeys })} />
+      <ArtifactSubstatMultiAutocomplete substatKeys={substats} setSubstatKeys={substats => filterOptionDispatch({ substats })} />
     </Grid>
   </Grid>
-}
-
-function LocationDropdown({ title, onChange, selectedCharacterKey, dropdownProps }) {
-  const { database } = useContext(DatabaseContext)
-  const characterSheets = usePromise(CharacterSheet.getAll, [])
-  const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
-  const { t } = useTranslation(["artifact", "ui"]);
-
-  return <DropdownButton fullWidth {...dropdownProps} title={title}>
-    <MenuItem key="unselect" selected={selectedCharacterKey === ""} disabled={selectedCharacterKey === ""} onClick={() => onChange("")}>
-      <ListItemIcon>
-        <Replay />
-      </ListItemIcon>
-      <ListItemText>
-        <Trans t={t} i18nKey="ui:unselect" >Unselect</Trans>
-      </ListItemText>
-    </MenuItem>
-    <MenuItem key="inventory" selected={selectedCharacterKey === "Inventory"} disabled={selectedCharacterKey === "Inventory"} onClick={() => onChange("Inventory")}>
-      <ListItemIcon>
-        <BusinessCenter />
-      </ListItemIcon>
-      <ListItemText>
-        <Trans t={t} i18nKey="filterLocation.inventory" >Inventory</Trans>
-      </ListItemText>
-    </MenuItem>
-    <MenuItem key="equipped" selected={selectedCharacterKey === "Equipped"} disabled={selectedCharacterKey === "Equipped"} onClick={() => onChange("Equipped")}>
-      <ListItemIcon>
-        <FontAwesomeIcon icon={faUserShield} />
-      </ListItemIcon>
-      <ListItemText>
-        <Trans t={t} i18nKey="filterLocation.currentlyEquipped" >Currently Equipped</Trans>
-      </ListItemText>
-    </MenuItem>
-    <Divider />
-    {!!characterSheets && CharacterMenuItemArray(characterSheets, database._getCharKeys().sort(), onChange, selectedCharacterKey, filterConfigs)}
-  </DropdownButton>
 }

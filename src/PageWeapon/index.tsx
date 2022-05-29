@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Button, CardContent, Grid, Pagination, Skeleton, ToggleButton, Typography } from '@mui/material';
 import i18next from 'i18next';
 import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import CardDark from '../Components/Card/CardDark';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
@@ -48,7 +48,7 @@ export default function PageWeapon() {
   const [pageIdex, setpageIdex] = useState(0)
   //set follow, should run only once
   useEffect(() => {
-    ReactGA.pageview('/weapon')
+    ReactGA.send({ hitType: "pageview", page: '/weapon' })
     return database.followAnyWeapon(forceUpdate)
   }, [forceUpdate, database])
 

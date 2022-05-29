@@ -19,5 +19,5 @@ export function artifactSlotIcon(slotKey: SlotKey, size?: SizeProp) {
 export default function SlotNameWithIcon({ slotKey }: { slotKey: SlotKey }) {
   const { t } = useTranslation("artifact")
   const icon = artifactSlotIcon(slotKey)
-  return <span>{icon} {t(`slotName.${slotKey}`)}</span>
+  return <span>{icon} {t<string>(`slotName.${slotKey}`)}</span>
 }

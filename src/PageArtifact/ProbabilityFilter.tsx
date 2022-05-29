@@ -5,14 +5,14 @@ import CardLight from "../Components/Card/CardLight"
 import ColorText from "../Components/ColoredText"
 import SqBadge from "../Components/SqBadge"
 import { StatFilterItem } from "../Components/StatFilterCard"
-import { allSubstats, SubstatKey } from "../Types/artifact"
+import { allSubstatKeys, SubstatKey } from "../Types/artifact"
 
 export default function ProbabilityFilter({ probabilityFilter: statFilters = {}, setProbabilityFilter: setStatFilters, disabled = false }: {
   probabilityFilter: Dict<SubstatKey, number>,
   setProbabilityFilter: (object: Dict<SubstatKey, number>) => void,
   disabled?: boolean
 }) {
-  const remainingKeys = allSubstats.filter(key => !(Object.keys(statFilters) as any).some(k => k === key))
+  const remainingKeys = allSubstatKeys.filter(key => !(Object.keys(statFilters) as any).some(k => k === key))
   const setFilter = useCallback((sKey, min) => setStatFilters({ ...statFilters, [sKey]: min }), [statFilters, setStatFilters],
   )
   return <CardDark>

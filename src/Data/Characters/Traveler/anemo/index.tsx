@@ -75,8 +75,8 @@ const datamine = {
 const [condBurstAbsorptionPath, condBurstAbsorption] = cond(key, `${elementKey}BurstAbsorption`)
 const nodeC2 = greaterEq(input.constellation, 2, datamine.constellation2.enerRech_)
 const [condC6Path, condC6] = cond(key, `${elementKey}C6Hit`)
-const nodeC6 = equal(condC6, "on", datamine.constellation6.enemyRes_)
-const nodesC6 = objectKeyValueMap(absorbableEle, ele => [`${ele}_enemyRes_`, equal(condC6, "on", equal(condBurstAbsorption, ele, datamine.constellation6.enemyRes_))])
+const nodeC6 = greaterEq(input.constellation, 6, equal(condC6, "on", datamine.constellation6.enemyRes_))
+const nodesC6 = objectKeyValueMap(absorbableEle, ele => [`${ele}_enemyRes_`, greaterEq(input.constellation, 6, equal(condC6, "on", equal(condBurstAbsorption, ele, datamine.constellation6.enemyRes_)))])
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
@@ -113,8 +113,12 @@ export const data = dataObjForCharacterSheet(key, elementKey, undefined, data_ge
   },
   premod: {
     enerRech_: nodeC2,
-    ...nodesC6,
-    anemo_enemyRes_: nodeC6,
+  },
+  teamBuff: {
+    premod: {
+      ...nodesC6,
+      anemo_enemyRes_: nodeC6,
+    }
   }
 })
 
@@ -214,7 +218,7 @@ const talentSheet: TalentSheet = {
         }
       }
     }), ct.headerTemplate("constellation6", { // C6 elemental self-display
-      canShow: unequal(condBurstAbsorption, undefined, equal(target.charKey, key, 1)),
+      canShow: unequal(condBurstAbsorption, undefined, equal(condC6, "on", equal(target.charKey, key, 1))),
       fields: absorbableEle.map(eleKey => (
         { node: nodesC6[`${eleKey}_enemyRes_`] }
       ))
@@ -223,7 +227,7 @@ const talentSheet: TalentSheet = {
       path: condBurstAbsorptionPath,
       name: st("eleAbsor"),
       teamBuff: true,
-      canShow: unequal(input.activeCharKey, key, 1),
+      canShow: equal(condC6, "on", unequal(input.activeCharKey, key, 1)),
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
         name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
         fields: [{

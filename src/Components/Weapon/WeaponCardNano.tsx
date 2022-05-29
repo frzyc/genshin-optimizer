@@ -1,5 +1,5 @@
 import { BusinessCenter } from "@mui/icons-material";
-import { Box, CardActionArea, Chip, Typography } from "@mui/material";
+import { Box, CardActionArea, Chip, Skeleton, Typography } from "@mui/material";
 import { useCallback, useMemo } from "react";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import WeaponSheet from "../../Data/Weapons/WeaponSheet";
@@ -29,7 +29,7 @@ export default function WeaponCardNano({ weaponId, showLocation = false, onClick
   const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
   const actionWrapperFunc = useCallback(children => <CardActionArea sx={{ height: "100%" }} onClick={onClick}>{children}</CardActionArea>, [onClick],)
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
-  if (!weapon || !weaponSheet || !UIData) return null;
+  if (!weapon || !weaponSheet || !UIData) return <BGComponent sx={{ height: "100%" }}><Skeleton variant="rectangular" sx={{ width: "100%", height: "100%" }} /></BGComponent>;
   const { refinement, location } = weapon
   return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}  >
     <Box display="flex" height="100%" alignItems="stretch" >
