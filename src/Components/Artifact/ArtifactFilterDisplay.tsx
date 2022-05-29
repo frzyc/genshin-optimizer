@@ -1,7 +1,7 @@
 import { faBan, faChartLine } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Lock, LockOpen } from '@mui/icons-material';
-import { Box, Grid, ToggleButton, useTheme } from "@mui/material";
+import { Box, Grid, ToggleButton } from "@mui/material";
 import { Trans, useTranslation } from "react-i18next";
 import { FilterOption } from "../../PageArtifact/ArtifactSort";
 import { allArtifactRarities, allSlotKeys } from "../../Types/consts";
@@ -14,7 +14,6 @@ import { artifactSlotIcon } from "./SlotNameWIthIcon";
 
 export default function ArtifactFilterDisplay({ filterOption, filterOptionDispatch, }: { filterOption: FilterOption, filterOptionDispatch: (any) => void }) {
   const { t } = useTranslation(["artifact", "ui"]);
-  const theme = useTheme()
 
   const { artSetKeys = [], mainStatKeys = [], rarity = [], slotKeys = [], levelLow, levelHigh, substats = [],
     location = "", exclusion = ["excluded", "included"], locked = ["locked", "unlocked"] } = filterOption

@@ -160,11 +160,11 @@ export default function WeaponEditor({
       </Grid>}
     </CardContent>
     {footer && id && <CardContent sx={{ py: 1 }}>
-      <Grid container>
+      <Grid container spacing={1}>
         <Grid item flexGrow={1}>
           <CharacterAutocomplete showDefault defaultIcon={<BusinessCenter />} defaultText={t("inventory")} value={location} onChange={equipOnChar} filter={filter} />
         </Grid>
-        {!!onClose && <Grid item><CloseButton large onClick={onClose} /></Grid>}
+        {!!onClose && <Grid item><CloseButton sx={{ height: "100%" }} large onClick={onClose} /></Grid>}
       </Grid>
     </CardContent>}
   </CardLight ></ModalWrapper>

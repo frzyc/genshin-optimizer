@@ -1,7 +1,7 @@
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { BusinessCenter, Lock, LockOpen } from "@mui/icons-material"
-import { Box, Button, ButtonGroup, CardActionArea, CardContent, CardHeader, IconButton, Skeleton, Tooltip, Typography } from "@mui/material"
+import { Box, Button, ButtonGroup, CardActionArea, CardContent, IconButton, Skeleton, Tooltip, Typography } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import Assets from "../Assets/Assets"
@@ -52,18 +52,19 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 300 }} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
       <ConditionalWrapper condition={!!onClick} wrapper={wrapperFunc} falseWrapper={falseWrapperFunc}>
-        <Box className={`grad-${weaponSheet.rarity}star`} sx={{ position: "relative" }}>
+        <Box className={`grad-${weaponSheet.rarity}star`} sx={{ position: "relative", pt: 2, px: 2, }}>
           {!onClick && <IconButton color="primary" onClick={() => database.updateWeapon({ lock: !lock }, id)} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 2 }}>
             {lock ? <Lock /> : <LockOpen />}
           </IconButton>}
           <Box sx={{ position: "relative", zIndex: 1 }}>
-            <CardHeader sx={{ pb: 1 }} title={weaponSheet.name} avatar={<ImgIcon sx={{ fontSize: "1.5em" }} src={Assets.weaponTypes?.[weaponTypeKey]} />} titleTypographyProps={{ variant: "subtitle1" }} />
-            <Box sx={{ px: 2, }}>
-              <Typography component="span" variant="h5">Lv. {level}</Typography>
-              <Typography component="span" variant="h5" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
-              <Typography variant="h6">Refinement <strong>{refinement}</strong></Typography>
-              <Typography><Stars stars={weaponSheet.rarity} colored /></Typography>
+            <Box component="div" sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
+              <ImgIcon sx={{ fontSize: "1.5em" }} src={Assets.weaponTypes?.[weaponTypeKey]} />
+              <Typography noWrap sx={{ textAlign: "center", backgroundColor: "rgba(100,100,100,0.35)", borderRadius: "1em", px: 1 }}><strong>{weaponSheet.name}</strong></Typography>
             </Box>
+            <Typography component="span" variant="h5">Lv. {level}</Typography>
+            <Typography component="span" variant="h5" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
+            <Typography variant="h6">Refinement <strong>{refinement}</strong></Typography>
+            <Typography><Stars stars={weaponSheet.rarity} colored /></Typography>
           </Box>
           <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>
             <Box
@@ -89,8 +90,8 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
       <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }}>
         {canEquip
           ? <CharacterAutocomplete size="small" sx={{ flexGrow: 1 }}
-              showDefault defaultIcon={<BusinessCenter />} defaultText={t("inventory")}
-              value={location} onChange={equipOnChar} filter={filter} />
+            showDefault defaultIcon={<BusinessCenter />} defaultText={t("inventory")}
+            value={location} onChange={equipOnChar} filter={filter} />
           : <LocationName location={location} />}
         <ButtonGroup>
           {!!onEdit && <Tooltip title={<Typography>{t`page_weapon:edit`}</Typography>} placement="top" arrow>

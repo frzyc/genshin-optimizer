@@ -58,8 +58,8 @@ function CharacterDisplayCard({ characterKey, newteamData, mainStatAssumptionLev
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { character, characterSheet, target: charUIData } = teamData?.[characterKey] ?? {}
   let { params: { tab = "overview" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }
-  const { t } = useTranslation(`char_${characterKey}_gen`)
-  useTitle(`${t("name")} - ${t(`page_character:tabs.${tab}`)}`)
+  const { t } = useTranslation()
+  useTitle(`${t(`char_${characterKey}_gen:name`)} - ${t(`page_character:tabs.${tab}`)}`)
   const characterDispatch = useCharacterReducer(character?.key ?? "")
   const { compareData } = character ?? {}
 

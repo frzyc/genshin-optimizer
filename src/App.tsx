@@ -108,7 +108,7 @@ function App() {
 }
 function MatchTitle() {
   const { t } = useTranslation("ui")
-  let { params: { page = "" } } = useMatch({ path: "/:page", end: false }) ?? { params: { page: "" } }
+  let { params: { page = "" } } = useMatch({ path: "/:page" }) ?? { params: { page: "" } }
   useTitle(page && t(`tabs.${page}`))
   return null
 }

@@ -34,6 +34,7 @@ type CharacterAutocompleteProps = Omit<AutocompleteProps<CharacterAutocompleteOp
 }
 
 export default function CharacterAutocomplete({ value, onChange, defaultText = "", defaultIcon = "", placeholderText = "", labelText = "", showDefault = false, showInventory = false, showEquipped = false, filter = () => true, disable = () => false, ...props }: CharacterAutocompleteProps) {
+  // TODO: #412 We shouldn't be loading all the character translation files. Should have a separate lookup file for character name.
   const { t } = useTranslation(["ui", "artifact", ...allCharacterKeys.map(k => `char_${k}_gen`)])
   const theme = useTheme()
   const { database } = useContext(DatabaseContext)

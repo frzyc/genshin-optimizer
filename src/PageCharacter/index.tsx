@@ -21,7 +21,7 @@ import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
-import { CharacterKey, ElementKey, WeaponTypeKey } from '../Types/consts';
+import { allCharacterKeys, CharacterKey, ElementKey, WeaponTypeKey } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
@@ -39,7 +39,8 @@ function initialState() {
 }
 
 export default function PageCharacter(props) {
-  const { t } = useTranslation("page_character")
+  // TODO: #412 We shouldn't be loading all the character translation files. Should have a separate lookup file for character name.
+  const { t } = useTranslation(["page_character", ...allCharacterKeys.map(k => `char_${k}_gen`)])
   const { database } = useContext(DatabaseContext)
   const [state, stateDispatch] = useDBState("CharacterDisplay", initialState)
   const [searchTerm, setSearchTerm] = useState("")
