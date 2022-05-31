@@ -34,7 +34,7 @@ const sheet: IWeaponSheet = {
     value: condState,
     path: condStatePath,
     header: headerTemplate(key, icon, iconAwaken, st("conditional")),
-    name: trm("party"),
+    name: trm("condName"),
     states: Object.fromEntries(Object.keys(state_dmg_dict).map(state => [
       state,
       {

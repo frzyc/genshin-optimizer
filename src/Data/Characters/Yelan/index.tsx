@@ -95,7 +95,7 @@ const a4Dmg_Disp = greaterEq(input.asc, 4,
   ])),
     naught)
 )
-const a4Dmg = unequal(target.charKey, input.activeCharKey, a4Dmg_Disp)
+const a4Dmg = equal(target.charKey, input.activeCharKey, a4Dmg_Disp)
 
 const [condC4StacksPath, condC4Stacks] = cond(key, "c4Stacks")
 const c4Stacks = range(1, datamine.constellation4.maxStacks)
@@ -160,10 +160,10 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
   },
   premod: {
     hp_: a1_hp_,
-    all_dmg_: a4Dmg,
   },
   teamBuff: {
     premod: {
+      all_dmg_: a4Dmg,
       hp_: c4Hp_,
     }
   }
