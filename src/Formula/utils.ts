@@ -7,7 +7,7 @@ type Str = string | undefined | StrNode
 type Any = Num | Str
 
 export const todo: NumNode = constant(NaN, { key: "TODO" })
-export const unit = percent(1), naught = percent(0)
+export const one = percent(1), naught = percent(0)
 
 export function constant(value: number, info?: Info): NumNode
 export function constant(value: string | undefined, info?: Info): StrNode

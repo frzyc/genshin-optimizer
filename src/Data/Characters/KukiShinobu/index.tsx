@@ -4,7 +4,7 @@ import { constant, equal, greaterEq, infoMut, matchFull, percent, prod, subscrip
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
-import { customDmgNode, customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { customDmgNode, customHealNode, dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
 import { banner, card, talentAssets, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -72,18 +72,18 @@ const datamine = {
     cd: skillParam_gen.constellation4[1],
   },
   constellation6: {
-    cd: skillParam_gen.constellation6[0],
-    hpThresh_: skillParam_gen.constellation6[1],
+    hpThresh_: skillParam_gen.constellation6[0],
+    duration: skillParam_gen.constellation6[1],
     em: skillParam_gen.constellation6[2],
-    duration: skillParam_gen.constellation6[3]
+    cd: skillParam_gen.constellation6[3],
   },
 } as const
 
 const [condUnderHPPath, condUnderHP] = cond(key, "underHP")
 const a1Heal_ = greaterEq(input.asc, 1, equal(condUnderHP, "on", datamine.passive1.heal_))
 
-const a4Skill_heal_ = greaterEq(input.asc, 4, prod(percent(datamine.passive2.emSkillHeal_), input.total.eleMas))
-const a4Skill_dmg_ = greaterEq(input.asc, 4, prod(percent(datamine.passive2.emSkillDmg_), input.total.eleMas)) // TODO: something weird is happening when this node is displayed
+const a4Skill_healInc = greaterEq(input.asc, 4, prod(percent(datamine.passive2.emSkillHeal_), input.total.eleMas))
+const a4Skill_dmgInc = greaterEq(input.asc, 4, prod(percent(datamine.passive2.emSkillDmg_), input.total.eleMas)) // TODO: something weird is happening when this node is displayed
 
 const [condC6TriggerPath, condC6Trigger] = cond(key, "c6Trigger")
 const c6eleMas = greaterEq(input.constellation, 6, equal(condC6Trigger, "on", datamine.constellation6.em))
@@ -99,14 +99,9 @@ const dmgFormulas = {
     [name, dmgNode("atk", arr, "plunging")])),
   skill: {
     pressDmg: dmgNode("atk", datamine.skill.pressDmg, "skill"),
-    ringHeal: customHealNode(sum(
-      prod(
-        subscript(input.total.skillIndex, datamine.skill.ringHealHP_, { key: "_" }),
-        input.total.hp,
-      ),
-      subscript(input.total.skillIndex, datamine.skill.ringHealFlat),
-      a4Skill_heal_,
-    )),
+    ringHeal: healNodeTalent("hp", datamine.skill.ringHealHP_, datamine.skill.ringHealFlat, "skill",
+      { premod: { healInc: a4Skill_healInc } }
+    ),
     ringDmg: dmgNode("atk", datamine.skill.ringDmg, "skill"),
   },
   burst: {
@@ -130,7 +125,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "inazuma", data_ge
   },
   premod: {
     heal_: a1Heal_,
-    skill_dmg_: a4Skill_dmg_,
+    skill_dmgInc: a4Skill_dmgInc,
     eleMas: c6eleMas,
   },
 })
@@ -159,11 +154,13 @@ const sheet: ICharacterSheet = {
         text: tr("auto.fields.charged"),
       }, {
         fields: [{
-          node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
+          node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.4` }),
+          textSuffix: "(1)"
         }, {
-          node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${key}_gen:auto.skillParams.6` }),
+          node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${key}_gen:auto.skillParams.4` }),
+          textSuffix: "(2)"
         }, {
-          text: tr("auto.skillParams.7"),
+          text: tr("auto.skillParams.5"),
           value: datamine.charged.stamina,
         }]
       }, {
@@ -202,9 +199,9 @@ const sheet: ICharacterSheet = {
         }]
       }, ct.headerTemplate("passive2", {
         fields: [{
-          node: infoMut(a4Skill_heal_, { key: `char_${key}:a4.heal_` }),
+          node: infoMut(a4Skill_healInc, { key: `char_${key}:a4.heal`, variant: "success" }),
         }, {
-          node: a4Skill_dmg_
+          node: a4Skill_dmgInc
         }]
       }), ct.headerTemplate("constellation2", {
         fields: [{

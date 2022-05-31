@@ -32,6 +32,7 @@ const statMap = {
   dmgRed_: "Damage Reduction",
 
   heal_multi: "Heal multiplier",
+  healInc: "Heal Increase",
 
   // Reaction
   transformative_level_multi: "Reaction Level Multiplier",

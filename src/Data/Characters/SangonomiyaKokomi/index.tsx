@@ -98,12 +98,12 @@ const burstSkillDmgInc = equal(condBurst, "on", prod(
 
 const passiveHeal_ = constant(datamine.p.heal_)
 const passiveCritRate_ = constant(datamine.p.critRate_)
-const c2SkillHeal_ = greaterEq(input.constellation, 2,
+const c2SkillHeal = greaterEq(input.constellation, 2,
   equal(condC2, "on",
     prod(percent(datamine.c2.s_heal_), input.total.hp)
   )
 )
-const c2BurstHeal_ = greaterEq(input.constellation, 2,
+const c2BurstHeal = greaterEq(input.constellation, 2,
   equal(condC2, "on",
     prod(percent(datamine.c2.nc_heal_), input.total.hp)
   )
@@ -122,13 +122,13 @@ const dmgFormulas = {
   skill: {
     dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
     heal: healNodeTalent("hp", datamine.skill.heal_, datamine.skill.heal, "skill",
-      { premod: { heal_: c2SkillHeal_ } }
+      { premod: { healInc: c2SkillHeal } }
     )
   },
   burst: {
     dmg: dmgNode("hp", datamine.burst.dmg, "burst"),
     heal: healNodeTalent("hp", datamine.burst.heal_, datamine.burst.heal, "burst",
-      { premod: { heal_: c2BurstHeal_ } }
+      { premod: { healInc: c2BurstHeal } }
     )
   },
   constellation1: {
@@ -271,9 +271,9 @@ const sheet: ICharacterSheet = {
         states: {
           on: {
             fields: [{
-              node: infoMut(c2SkillHeal_, { key: `char_${key}:c2SkillHeal_` }),
+              node: infoMut(c2SkillHeal, { key: `char_${key}:c2SkillHeal` }),
             }, {
-              node: infoMut(c2BurstHeal_, { key: `char_${key}:c2BurstHeal_` }),
+              node: infoMut(c2BurstHeal, { key: `char_${key}:c2BurstHeal` }),
             }]
           }
         }

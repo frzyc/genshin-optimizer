@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from "../../../Formula/index"
-import { constant, equal, greaterEq, infoMut, min, percent, prod, subscript, sum, unit } from "../../../Formula/utils"
+import { constant, equal, greaterEq, infoMut, min, percent, prod, subscript, sum, one } from "../../../Formula/utils"
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, st, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
@@ -94,12 +94,12 @@ export const dmgFormulas = {
     press1: customDmgNode(prod(
       subscript(input.total.skillIndex, datamine.skill.hit1, { key: "_" }),
       input.total.atk,
-      sum(unit, nodeC4)
+      sum(one, nodeC4)
     ), "skill"),
     press2: customDmgNode(prod(
       subscript(input.total.skillIndex, datamine.skill.hit2, { key: "_" }),
       input.total.atk,
-      sum(unit, nodeC4)
+      sum(one, nodeC4)
     ), "skill"),
     dmgRed_: nodeSkillDmgRed_,
   },

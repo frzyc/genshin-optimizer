@@ -39,6 +39,7 @@ const datamine = {
   },
   skill: {
     dmg: skillParam_gen.skill[s++],
+    resetChance: skillParam_gen.skill[s++][0],
     maxDuration: skillParam_gen.skill[s++][0],
     cd: skillParam_gen.skill[s++][0],
   },
@@ -72,9 +73,9 @@ const datamine = {
     maxStacks: 4,
   },
   constellation6: {
-    dmg_: skillParam_gen.constellation6[0],
+    charges: skillParam_gen.constellation6[0],
     duration: skillParam_gen.constellation6[1],
-    charges: skillParam_gen.constellation6[2],
+    dmg_: skillParam_gen.constellation6[2],
   }
 }
 
@@ -188,7 +189,7 @@ const sheet: ICharacterSheet = {
         canShow: unequal(c6Active, 1, 1),
         fields: datamine.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
-          textSuffix: i === 3 ? st("brHits", { count: 3 }) : ""
+          textSuffix: i === 3 ? st("brHits", { count: 2 }) : ""
         }))
       }, ct.conditionalTemplate("constellation6", {
         path: condC6ActivePath,
@@ -251,7 +252,7 @@ const sheet: ICharacterSheet = {
         }]
       }, ct.headerTemplate("constellation1", {
         fields: [{
-          text: st("addlCharges"),
+          text: st("addlCharge"),
           value: datamine.constellation1.addlCharge,
         }]
       }), ct.conditionalTemplate("constellation4", {

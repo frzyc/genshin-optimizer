@@ -3,7 +3,7 @@
     "cost": "% Current HP"
   },
   "a4": {
-    "heal_": "Ele. Skill Healing Increase"
+    "heal": "Ele. Skill Healing Increase"
   },
   "c1": {
     "aoeInc": "AoE Increase"
