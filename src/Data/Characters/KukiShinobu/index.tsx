@@ -1,10 +1,10 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { constant, equal, greaterEq, infoMut, matchFull, percent, prod, subscript, sum } from '../../../Formula/utils'
+import { constant, equal, greaterEq, infoMut, matchFull, percent, prod } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
-import { customDmgNode, customHealNode, dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
+import { customDmgNode, dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
 import { banner, card, talentAssets, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -83,7 +83,7 @@ const [condUnderHPPath, condUnderHP] = cond(key, "underHP")
 const a1Heal_ = greaterEq(input.asc, 1, equal(condUnderHP, "on", datamine.passive1.heal_))
 
 const a4Skill_healInc = greaterEq(input.asc, 4, prod(percent(datamine.passive2.emSkillHeal_), input.total.eleMas))
-const a4Skill_dmgInc = greaterEq(input.asc, 4, prod(percent(datamine.passive2.emSkillDmg_), input.total.eleMas)) // TODO: something weird is happening when this node is displayed
+const a4Skill_dmgInc = greaterEq(input.asc, 4, prod(percent(datamine.passive2.emSkillDmg_), input.total.eleMas))
 
 const [condC6TriggerPath, condC6Trigger] = cond(key, "c6Trigger")
 const c6eleMas = greaterEq(input.constellation, 6, equal(condC6Trigger, "on", datamine.constellation6.em))

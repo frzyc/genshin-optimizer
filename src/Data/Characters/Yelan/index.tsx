@@ -51,7 +51,7 @@ const datamine = {
     enerCost: skillParam_gen.burst[b++][0],
   },
   passive1: {
-    hp_perEle: skillParam_gen.passive1[0][0],
+    hp_Arr: [0, ...skillParam_gen.passive1.map(([a]) => a)],
   },
   passive2: {
     baseDmg_: skillParam_gen.passive2[0][0],
@@ -83,7 +83,7 @@ const a1_hp_ = greaterEq(input.asc, 1, subscript(
   sum(...allElements.map(ele =>
     greaterEq(tally[ele], 1, 1)
   )),
-  range(0, 4).map(i => i * datamine.passive1.hp_perEle),
+  datamine.passive1.hp_Arr,
 ))
 
 const [condA4StacksPath, condA4Stacks] = cond(key, "a4Stacks")
