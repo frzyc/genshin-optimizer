@@ -142,7 +142,7 @@
     "name": "Lingering Carmine",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Guide to Afterlife</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -155,7 +155,7 @@
     "name": "Floral Incense",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Spirit Soother</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

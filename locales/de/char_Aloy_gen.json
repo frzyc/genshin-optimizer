@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Standardangriff</strong>",
-        "1": "Führt bis zu 4 Pfeilschüsse aus."
+        "1": "Führt bis zu 4 Pfeilschüsse hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",

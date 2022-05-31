@@ -129,7 +129,7 @@
     "name": "Fire and Steel",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Searing Onslaught</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -143,7 +143,7 @@
     "name": "Phoenix, Harbinger of Dawn",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Dawn</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

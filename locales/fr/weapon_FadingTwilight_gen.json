@@ -1,0 +1,12 @@
+{
+  "name": "Crépuscule couchant",
+  "description": "Un arc précieux en platine, incrusté d'un orbe qui scintille à la lumière du soir.",
+  "passiveName": "Flèche enterrée",
+  "passiveDescription": {
+    "0": "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de <cryo>6{NON_BREAK_SPACE}%/10{NON_BREAK_SPACE}%/14{NON_BREAK_SPACE}%</cryo>. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+    "1": "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de <cryo>7,5{NON_BREAK_SPACE}%/12,5{NON_BREAK_SPACE}%/17,5{NON_BREAK_SPACE}%</cryo>. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+    "2": "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de <cryo>9{NON_BREAK_SPACE}%/15{NON_BREAK_SPACE}%/21{NON_BREAK_SPACE}%</cryo>. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+    "3": "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de <cryo>10,5{NON_BREAK_SPACE}%/17,5{NON_BREAK_SPACE}%/24,5{NON_BREAK_SPACE}%</cryo>. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+    "4": "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de <cryo>12{NON_BREAK_SPACE}%/20{NON_BREAK_SPACE}%/28{NON_BREAK_SPACE}%</cryo>. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+  }
+}

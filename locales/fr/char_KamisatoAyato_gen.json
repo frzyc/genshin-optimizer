@@ -148,7 +148,7 @@
   "constellation4": {
     "name": "Flux ininterrompu",
     "description": {
-      "0": "Après avoir utilisé <strong>École Kamisato : Jardin d'eau</strong>, la VIT d'attaque des attaques normales des personnages de l'équipe à proximité augmentent de 15 % pendant 15 s."
+      "0": "Après avoir utilisé <strong>École Kamisato : Jardin d'eau</strong>, la VIT d'attaque des attaques normales des personnages de l'équipe à proximité augmente de 15 % pendant 15 s."
     }
   },
   "constellation5": {
@@ -161,7 +161,7 @@
   "constellation6": {
     "name": "Origine illimitée",
     "description": {
-      "0": "Après avoir utilisé <strong>École Kamisato : Beauté réfléchie</strong>, la prochaine attaque de Shunsuiken d'Ayato déclenchent 2 attaques supplémentaires de Shunsuiken en touchant un ennemi, chaque attaque supplémentaire infligeant des DGT d'une valeur équivalant à 450 % de l'ATQ d'Ayato.",
+      "0": "Après avoir utilisé <strong>École Kamisato : Beauté réfléchie</strong>, la prochaine attaque de Shunsuiken d'Ayato déclenche 2 attaques supplémentaires de Shunsuiken en touchant un ennemi, chaque attaque supplémentaire infligeant des DGT d'une valeur équivalant à 450 % de l'ATQ d'Ayato.",
       "1": "Ces deux attaques supplémentaires ne seront pas affectées par l'effet de flash onduleux."
     }
   }

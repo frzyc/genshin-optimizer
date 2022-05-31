@@ -159,10 +159,10 @@
   "constellation4": {
     "name": "Oozora Genpou",
     "description": {
-      "0": "Khi năng lượng nguyên tố của Kaedehara Kazuha thấp hơn 45 sẽ có những hiệu ứng sau:",
+      "0": "Khi năng lượng nguyên tố của Kaedehara Kazuha thấp hơn 45 điểm sẽ có những hiệu ứng sau:",
       "1": [
-        "Nhấn, nhấn giữ thi triển <strong>Chihayaburu</strong> sẽ hồi phục cho Kazuha lần lượt 3, 4 năng lượng nguyên tố;",
-        "Khi trong trạng thái lượn, mỗi giây sẽ giúp Kazuha hồi phục 2 năng lượng nguyên tố."
+        "Nhấn, nhấn giữ thi triển <strong>Chihayaburu</strong> sẽ lần lượt hồi phục 3 điểm, 4 điểm năng lượng nguyên tố cho Kazuha;",
+        "Khi trong trạng thái lượn, mỗi giây sẽ giúp Kazuha hồi phục 2 điểm năng lượng nguyên tố."
       ]
     }
   },

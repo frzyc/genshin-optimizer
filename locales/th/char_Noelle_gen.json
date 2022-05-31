@@ -71,7 +71,7 @@
   "description": "สาวใช้ผู้สามารถพึ่งพาได้เสมอ ของ \"กองอัศวินแห่ง Favonius\" มีความฝันว่า สักวันหนึ่งจะเป็น อัศวินอย่างเต็มตัวให้ได้",
   "constellationName": "Parma Cordis",
   "auto": {
-    "name": " Maid",
+    "name": "Favonius Bladework - Maid",
     "fields": {
       "normal": {
         "0": "<strong><strong>โจมตีปกติ</strong>",
@@ -144,7 +144,7 @@
     "name": "Invulnerable Maid",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Breastplate</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -157,7 +157,7 @@
     "name": "Favonius Sweeper Master",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Sweeping Time</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

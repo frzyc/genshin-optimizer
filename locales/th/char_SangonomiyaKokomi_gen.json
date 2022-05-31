@@ -149,7 +149,7 @@
     "name": "The Moon, A Ship O'er the Seas",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Nereid's Ascension</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -163,7 +163,7 @@
     "name": "All Streams Flow to the Sea",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Kurage's Oath</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

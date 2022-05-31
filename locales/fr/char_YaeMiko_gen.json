@@ -142,7 +142,7 @@
   "constellation4": {
     "name": "Canalisation de sakura",
     "description": {
-      "0": "Lorsque l'éclair d'un <strong>sakura dévastateur</strong> touche un ennemi, tous les membres de l'équipe à proximité obtiennent un <electro>bonus de DGT Électro</electro> de 20 % pendant 5 s."
+      "0": "Lorsque l'éclair d'un <strong>sakura dévastateur</strong> a touché un ennemi, tous les membres de l'équipe à proximité obtiennent un <electro>bonus de DGT Électro</electro> de 20 % pendant 5 s."
     }
   },
   "constellation5": {

@@ -135,7 +135,7 @@
     "name": "The War Within",
     "description": {
       "0": "เพิ่มเลเวลของสกิล <strong>Subjugation: Koukou Sendou</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -148,7 +148,7 @@
     "name": "Spellsinger",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Tengu Stormcall</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

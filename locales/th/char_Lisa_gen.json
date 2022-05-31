@@ -137,7 +137,7 @@
     "name": "Resonant Thunder",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Lightning Rose</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -150,7 +150,7 @@
     "name": "Electrocute",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Violet Arc</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

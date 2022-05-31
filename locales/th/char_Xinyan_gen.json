@@ -143,7 +143,7 @@
     "name": "Double-Stop",
     "description": {
       "0": "เพิ่มเลเวลของสกิล <strong>Sweeping Fervor</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -156,7 +156,7 @@
     "name": "Screamin' for an Encore",
     "description": {
       "0": "เพิ่มเลเวลของสกิล <strong>Riff Revolution</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

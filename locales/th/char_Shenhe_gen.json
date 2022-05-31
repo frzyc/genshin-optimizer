@@ -142,7 +142,7 @@
     "name": "Seclusion",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Spring Spirit Summoning</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -159,7 +159,7 @@
     "name": "Divine Attainment",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Divine Maiden's Deliverance</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

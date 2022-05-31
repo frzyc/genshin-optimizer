@@ -142,7 +142,7 @@
     "name": "A—Another Round?",
     "description": {
       "0": "เพิ่มเลเวลของสกิล <strong>Signature Mix</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -155,7 +155,7 @@
     "name": "Double Shot, On The Rocks",
     "description": {
       "0": "เพิ่มเลเวลของสกิล <strong>Icy Paws</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

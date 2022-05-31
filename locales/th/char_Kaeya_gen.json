@@ -127,7 +127,7 @@
     "name": "Dance of Frost",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Frostgnaw</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -143,7 +143,7 @@
     "name": "Frostbiting Embrace",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Glacial Waltz</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

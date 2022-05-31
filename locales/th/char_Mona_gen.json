@@ -164,7 +164,7 @@
     "name": "Restless Revolution",
     "description": {
       "0": "เพิ่มเลเวลของสกิล <strong>Stellaris Phantasm</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -177,7 +177,7 @@
     "name": "Mockery of Fortuna",
     "description": {
       "0": "เพิ่มเลเวลของสกิล <strong>Mirror Reflection of Doom</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

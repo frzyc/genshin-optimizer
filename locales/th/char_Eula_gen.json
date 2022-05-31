@@ -144,7 +144,7 @@
     "name": "Lawrence Pedigree",
     "description": {
       "0": "เพิ่มเลเวลของสกิล <strong>Glacial Illumination</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -157,7 +157,7 @@
     "name": "Chivalric Quality",
     "description": {
       "0": "เพิ่มเลเวลของสกิล <strong>Icetide Vortex</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

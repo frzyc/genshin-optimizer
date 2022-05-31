@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>ชาร์จโจมตี</strong>",
         "1": "เพิ่มความแม่นยำในการ<strong>เล็งโจมตี</strong>และสร้างความเสียหายมากขึ้น",
-        "2": "เมื่อเล็งเป้าหมายจะทำการรวบรวมพลังธาตุน้ำไว้ตรงหัวลูกศร ซึ่งลูกธนูที่รวบรวมกระแสน้ำไว้เต็มที่แล้วจะสร้าง<hydro>ความเสียหายน้ำ</hydro>และเกิดเอฟเฟกต์หยุดชะงัก"
+        "2": "เมื่อเล็งเป้าหมายจะทำการรวบรวมพลังธาตุน้ำไว้ตรงหัวลูกศร ซึ่งลูกธนูที่รวบรวมกระแสน้ำไว้เต็มที่แล้ว จะสร้าง<hydro>ความเสียหายน้ำ</hydro>แก่ศัตรูที่ถูกโจมตี และทำให้เกิดเอฟเฟกต์ Riptide"
       },
       "riptide": {
         "0": "<strong>Riptide</strong>",
@@ -26,7 +26,7 @@
       "plunging": {
         "0": "<strong>การโจมตีพุ่งลงจากอากาศ</strong>",
         "1": "ปล่อยฝนธนูจากกลางอากาศและพุ่งลง มายังพื้นดินเพื่อโจมตีอย่างรวดเร็ว โดยจะสร้างความเสียหายวงกว้างเมื่อ ลงถึงพื้น",
-        "2": "เมื่ออยู่ในรูปแบบการต่อสู้ระยะประชิดของ Foul Legacy - Raging Tide จะไม่สามารถโจมตีจากที่สูงได้"
+        "2": "เมื่ออยู่ในรูปแบบการต่อสู้ระยะประชิดของ Foul Legacy: Raging Tide จะไม่สามารถโจมตีจากที่สูงได้"
       }
     },
     "skillParams": {
@@ -49,7 +49,7 @@
     }
   },
   "skill": {
-    "name": "Foul Legacy - Raging Tide",
+    "name": "Foul Legacy: Raging Tide",
     "description": {
       "0": "ปลดปล่อยอาวุธที่สร้างขึ้นจากน้ำอันบริสุทธิ์ เพื่อสร้าง<hydro>ความเสียหายน้ำ</hydro>แก่ศัตรูที่อยู่โดยรอบ และเข้าสู่รูปแบบการต่อสู้ระยะประชิด",
       "1": "ในรูปแบบนี้ การโจมตีปกติและชาร์จโจมตีของ Tartaglia จะถูกเปลี่ยนเป็น<hydro>ความเสียหายธาตุน้ำ</hydro> โดยที่ไม่สามารถแทนที่ด้วยการแปลงของธาตุอื่นได้ และจะเกิดการเปลี่ยนแปลงดังต่อไปนี้:",
@@ -61,7 +61,7 @@
       "7": "ใช้พลังกายปลดปล่อยดาบออกไป ข้างหน้าสองเล่มในช่วงเวลาสั้น ๆ เพื่อสร้าง<hydro>ความเสียหายน้ำ</hydro>",
       "8": "<br/>",
       "9": "<strong>Riptide Slash</strong>",
-      "10": "เมื่อโจมตีระยะใกล้ถูกศัตรูที่ได้รับผลกระทบของ Riptide จะทำให้เกิด Riptide Slash หนึ่งครั้ง เกิดเป็น<hydro>ความเสียหายน้ำวงกว้าง</hydro> โดยความเสียหายจาก Riptide Slash จะถูกนับเป็นความเสียหายทางธาตุ และใช้ได้มากสุดหนึ่งครั้งในทุก 1.5 วินาที",
+      "10": "เมื่อโจมตีระยะใกล้ถูกศัตรูที่ได้รับผลกระทบของ Riptide จะทำให้เกิด Riptide Slash หนึ่งครั้ง เกิดเป็น<hydro>ความเสียหายน้ำวงกว้าง</hydro> โดยความเสียหายจาก Riptide Slash จะถูกนับเป็นความเสียหายสกิลธาตุ และใช้ได้มากสุดหนึ่งครั้งในทุก 1.5 วินาที",
       "11": "<br/>",
       "12": "เอฟเฟกต์จะหายไปหลังผ่านไป 30 วินาที หรือทำการปลดปล่อยสกิลอีกครั้ง โดยจะกลับสู่รูปแบบการต่อสู้ระยะไกล และเข้าสู่การคูลดาวน์สกิล ซึ่งยิ่งอยู่ในรูปแบบการต่อสู้ระยะประชิดนาน ระยะเวลาการคูลดาวน์ก็จะยิ่งนานไปด้วย",
       "13": "หากกลับสู่รูปแบบการต่อสู้ระยะไกลโดยอัตโนมัติหลังผ่านไป 30 วินาที จะเข้าสู่ช่วงเวลาคูลดาวน์สกิลที่นานยิ่งขึ้น",
@@ -88,7 +88,7 @@
     }
   },
   "burst": {
-    "name": "Havoc - Obliteration",
+    "name": "Havoc: Obliteration",
     "description": {
       "0": "ใช้การโจมตีที่แตกต่างกันไปตามรูปแบบของ Tartaglia ในขณะนั้น",
       "1": "<br/>",
@@ -132,7 +132,7 @@
   "passive2": {
     "name": "Sword of Torrents",
     "description": {
-      "0": "ภายใต้รูปแบบการต่อสู้ระยะประชิดของ <strong>Foul Legacy - Raging Tide</strong> เมื่อการโจมตีปกติหรือชาร์จโจมตี เกิดคริติคอลจะทำให้เกิดเอฟเฟกต์ Riptide กับศัตรูที่ถูกโจมตี"
+      "0": "ภายใต้รูปแบบการต่อสู้ระยะประชิดของ <strong>Foul Legacy: Raging Tide</strong> เมื่อการโจมตีปกติหรือชาร์จโจมตี เกิดคริติคอลจะทำให้เกิดเอฟเฟกต์ Riptide กับศัตรูที่ถูกโจมตี"
     }
   },
   "passive3": {
@@ -142,42 +142,42 @@
     }
   },
   "constellation1": {
-    "name": "Foul Legacy - Tide Withholder",
+    "name": "Foul Legacy: Tide Withholder",
     "description": {
-      "0": "ลดเวลาคูลดาวน์ของ <strong>Foul Legacy - Raging Tide</strong> ลง 20%"
+      "0": "ลดเวลาคูลดาวน์ของ <strong>Foul Legacy: Raging Tide</strong> ลง 20%"
     }
   },
   "constellation2": {
-    "name": "Foul Legacy - Understream",
+    "name": "Foul Legacy: Understream",
     "description": {
       "0": "ฟื้นฟูพลังงานธาตุ 4 หน่วยให้ Tartaglia เมื่อศัตรูที่อยู่ภายใต้เอฟเฟกต์ Riptide ตาย"
     }
   },
   "constellation3": {
-    "name": "Abyssal Mayhem - Vortex of Turmoil",
+    "name": "Abyssal Mayhem: Vortex of Turmoil",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของ <strong>Foul Legacy - Raging Tide</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "0": "เพิ่มเลเวลสกิลของ <strong>Foul Legacy: Raging Tide</strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
-    "name": "Abyssal Mayhem - Hydrospout",
+    "name": "Abyssal Mayhem: Hydrospout",
     "description": {
-      "0": "เมื่อมีการใช้เอฟเฟกต์ Riptide ของ Tartaglia ในการต่อสู้ หาก Tartaglia อยู่ในรูปแบบการต่อสู้ระยะประชิดของ <strong>Foul Legacy - Raging Tide</strong> จะปล่อย Riptide Slash ไม่เช่นนั้นก็จะปล่อย Riptide Flash ในทุก ๆ 4 วินาที ",
+      "0": "เมื่อมีการใช้เอฟเฟกต์ Riptide ของ Tartaglia ในการต่อสู้ หาก Tartaglia อยู่ในรูปแบบการต่อสู้ระยะประชิดของ <strong>Foul Legacy: Raging Tide</strong> จะปล่อย Riptide Slash ไม่เช่นนั้นก็จะปล่อย Riptide Flash ในทุก ๆ 4 วินาที ",
       "1": "Riptide Slash และ Riptide Flash ที่ปล่อยโดยกลุ่มดาว จะไม่ถูกจำกัดช่วงการปล่อยโดยเอฟเฟกต์ Riptide ของทั้งสอง และจะไม่มีผลต่อช่วงการปล่อยเอฟเฟกต์ดังกล่าว"
     }
   },
   "constellation5": {
-    "name": "Havoc - Formless Blade",
+    "name": "Havoc: Formless Blade",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของ <strong>Havoc - Obliteration</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "0": "เพิ่มเลเวลสกิลของ <strong>Havoc: Obliteration</strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {
-    "name": "Havoc - Annihilation",
+    "name": "Havoc: Annihilation",
     "description": {
-      "0": "ภายใต้รูปแบบการต่อสู้ระยะประชิด เมื่อใช้ <strong>Havoc - Obliteration</strong> จะลบล้างเวลาคูลดาวน์ของ <strong>Foul Legacy - Raging Tide</strong>",
+      "0": "ภายใต้รูปแบบการต่อสู้ระยะประชิด เมื่อใช้ <strong>Havoc: Obliteration</strong> จะลบล้างเวลาคูลดาวน์ของ <strong>Foul Legacy: Raging Tide</strong>",
       "1": "เอฟเฟกต์ดังกล่าวจะถูกปล่อย เมื่อกลับสู่รูปแบบการต่อสู้ระยะไกล"
     }
   }

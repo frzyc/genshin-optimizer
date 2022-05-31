@@ -265,7 +265,7 @@
     "passive2": {
       "name": "Vent de guérison",
       "description": {
-        "0": "<strong>Vortex destructeur</strong> restaure 2 % des PV par seconde pendant 5 s lorsqu'il élimine un ennemi.",
+        "0": "<strong>Vortex destructeur</strong> restaure 2 % des PV toutes les secondes pendant 5 s lorsqu'il élimine un ennemi.",
         "1": "Cet effet peut être déclenché une fois toutes les 5 s."
       }
     },

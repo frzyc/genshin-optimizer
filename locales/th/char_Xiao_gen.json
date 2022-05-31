@@ -111,53 +111,53 @@
     }
   },
   "passive2": {
-    "name": "Dissolution Eon - Heaven Fall",
+    "name": "Dissolution Eon: Heaven Fall",
     "description": {
       "0": "การปล่อย <strong>Lemniscatic Wind Cycling</strong> จะทำให้การปล่อย Lemniscatic Wind Cycling ครั้งต่อไปภายในเวลา 7 วินาที สร้างความเสียหายเพิ่มขึ้น 15%",
       "1": "เอฟเฟกต์นี้จะคงอยู่เป็นเวลา 7 วินาที โดยจะซ้อนทับกันได้มากสุด 3 ครั้ง และจะรีเฟรชระยะเวลาต่อเนื่อง เมื่อเกิดการซ้อนทับกัน"
     }
   },
   "passive3": {
-    "name": "Transcension - Gravity Defier",
+    "name": "Transcension: Gravity Defier",
     "description": {
       "0": "ลดอัตราการเสียพลังกายจากการปีน ให้ตัวละครของตนเองที่อยู่ในทีมลง 20%",
       "1": "ไม่สามารถซ้อนทับพรสวรรค์ติดตัวที่เอฟเฟกต์เหมือนกันทุกประการได้"
     }
   },
   "constellation1": {
-    "name": "Dissolution Eon - Destroyer of Worlds",
+    "name": "Dissolution Eon: Destroyer of Worlds",
     "description": {
       "0": "จำนวนครั้งที่สามารถใช้ <strong>Lemniscatic Wind Cycling</strong> ได้ เพิ่มขึ้น 1 ครั้ง"
     }
   },
   "constellation2": {
-    "name": "Annihilation Eon - Blossom of Kaleidos",
+    "name": "Annihilation Eon: Blossom of Kaleidos",
     "description": {
       "0": "เมื่ออยู่ในทีมแต่ไม่ได้เข้าร่วมการต่อสู้ ประสิทธิภาพการฟื้นฟูพลังงานธาตุของ Xiao จะเพิ่มขึ้น 25%"
     }
   },
   "constellation3": {
-    "name": "Conqueror of Evil - Wrath Deity",
+    "name": "Conqueror of Evil: Wrath Deity",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Lemniscatic Wind Cycling</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
-    "name": "Transcension - Extinction of Suffering",
+    "name": "Transcension: Extinction of Suffering",
     "description": {
       "0": "เมื่อพลังชีวิตของ Xiao ต่ำกว่า 50% พลังป้องกันจะเพิ่มขึ้น 100%"
     }
   },
   "constellation5": {
-    "name": "Evolution Eon - Origin of Ignorance",
+    "name": "Evolution Eon: Origin of Ignorance",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Bane of All Evil</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {
-    "name": "Conqueror of Evil - Guardian Yaksha",
+    "name": "Conqueror of Evil: Guardian Yaksha",
     "description": {
       "0": "ภายใต้สภาวะของ <strong>Bane of All Evil</strong> เมื่อการโจมตีพุ่งลงจากอากาศถูกศัตรูอย่างน้อย 2 ตัว จะได้รับจำนวนการใช้ <strong>Lemniscatic Wind Cycling</strong> เพิ่มขึ้น 1 ครั้ง โดยทันที และจะได้รับการยกเว้นช่วงเวลาคูลดาวน์ ของ Lemniscatic Wind Cycling เป็นเวลา 1 วินาที หลังจากนั้น"
     }

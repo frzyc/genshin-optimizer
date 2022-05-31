@@ -1,0 +1,176 @@
+{
+  "name": "Yelan",
+  "title": "Lan Sinh U Cốc",
+  "description": "Nhân sĩ thần bí tự xưng làm việc cho Tổng Vụ, nhưng lại là \"người không tồn tại\" trong danh sách của Tổng Vụ.",
+  "constellationName": "Cung U Khách",
+  "auto": {
+    "name": "Mũi Tên Lén Lút",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần bắn tên liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "<strong>Ngắm bắn</strong> gây sát thương cao hơn và chính xác hơn.",
+        "2": "Khi ngắm bắn, thủy lưu sẽ tích tụ liên tục trên mũi tên. Mũi tên tích đầy thủy lưu sẽ gây <hydro>Sát Thương Nguyên Tố Thủy</hydro>."
+      },
+      "breakthrough": {
+        "0": "<strong>Phá Trận</strong>",
+        "1": "Sau khi rời khỏi chiến đấu 5s, Yelan sẽ nhận được trạng thái \"Phá Trận\", thời gian tụ lực ngắm bắn lần sau giảm 80%, đồng thời sẽ bắn ra \"Mũi Tên Phá Trận\", gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> dựa trên giới hạn HP của Yelan."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Bắn mưa tên liên tiếp xuống mặt đất, đồng thời lao nhanh xuống đất và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Ngắm Bắn",
+      "5": "Tụ Lực Ngắm Bắn",
+      "6": "Sát Thương Mũi Tên Phá Trận",
+      "7": "Sát Thương Khi Rơi",
+      "8": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Dây Sinh Mệnh Quanh Quẩn",
+    "description": {
+      "0": "Kéo theo \"Lạc Mệnh Tơ\" di chuyển, đánh dấu kẻ địch trên đường.",
+      "1": "Sau khi kết thúc di chuyển, \"Lạc Mệnh Tơ\" sẽ phát nổ, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> lên kẻ địch đã đánh dấu dựa trên giới hạn HP của Yelan.",
+      "2": "<br/>",
+      "3": "<strong>Nhấn</strong>",
+      "4": "Di chuyển nhanh về phía trước.",
+      "5": "<br/>",
+      "6": "<strong>Nhấn giữ</strong>",
+      "7": "Di chuyển liên tục, tăng kháng gián đoạn cho Yelan trong trạng thái này.",
+      "8": "Trong lúc đó, Yelan có thể điều khiển hướng di chuyển, đồng thời có thể thi triển kỹ năng lần nữa để kết thúc sớm trạng thái này.",
+      "9": "<br/>",
+      "10": "Ngoài ra, khi \"Lạc Mệnh Tơ\" phát nổ sẽ căn cứ vào số lượng kẻ địch bị đánh dấu mà Yelan có tỉ lệ nhận trạng thái \"Phá Trận\" khác nhau: Mỗi kẻ địch đánh dấu sẽ khiến tỉ lệ tăng 34%.",
+      "11": "<br/>",
+      "12": "<i>Cho đến khi giật dây thì những kẻ thủ ác mới biết được bản thân khó mà thoát được.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Thời Gian Kéo Dài Tối Đa Nhấn Giữ",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Xúc Xắc Toan Tính",
+    "description": {
+      "0": "Gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> và tạo ra \"Xúc Xắc Tinh Tế\" để hỗ trợ chiến đấu.",
+      "1": "<br/>",
+      "2": "<strong>Xúc Xắc Tinh Tế</strong>",
+      "3": "Đi theo nhân vật và sẽ hỗ trợ tấn công kẻ địch trong những trường hợp sau, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> dựa theo giới hạn HP của Yelan:",
+      "4": [
+        "Nhân vật của bản thân trong trận hiện tại tấn công thường, mỗi 1s tối đa kích hoạt một lần;",
+        "\"Lạc Mệnh Tơ\" của Yelan khi phát nổ trúng kẻ địch sẽ hỗ trợ tấn công một lần."
+      ],
+      "5": "<br/>",
+      "6": "<i>\"Nghiện cờ bạc là không tốt đâu. Thân là nhà cái, để tôi làm một ví dụ nhỏ cho xem. {F#Cô}{M#Cậu} dùng một hột xúc xắc, làm sao thắng được bảy hột xúc xắc của tôi chứ?\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Xúc Xắc Tinh Tế",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Nắm Thế Chủ Động",
+    "description": {
+      "0": "Trong đội có 1/2/3/4 loại nguyên tố, giới hạn HP của Yelan sẽ tăng 6%/12%/18%/30%."
+    }
+  },
+  "passive2": {
+    "name": "Thích Nghi Dễ Dàng",
+    "description": {
+      "0": "Trong thời gian <strong>Xúc Xắc Tinh Tế</strong> tồn tại, có thể khiến nhân vật trong trận hiện tại của bản thân tăng 1% sát thương gây ra, đồng thời mỗi 1s tăng thêm 3.5%, tối đa khiến sát thương của nhân vật gây ra tăng 50%.",
+      "1": "Trong thời gian hiệu lực, nếu sử dụng Xúc Xắc Toan Tính lần nữa sẽ xóa hiệu quả kể trên."
+    }
+  },
+  "passive3": {
+    "name": "Cân Nhắc Lâu Dài",
+    "description": {
+      "0": "Khi làm nhiệm vụ Phái Đi Thám Hiểm có thời gian là 20 giờ ở Liyue, phần thưởng nhận được tăng 25%."
+    }
+  },
+  "constellation1": {
+    "name": "Kẻ Toan Tính, Lâm Trận Cẩn Thận",
+    "description": {
+      "0": "Tăng 1 lần sử dụng cho <strong>Dây Sinh Mệnh Quanh Quẩn</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Kẻ Nhập Cuộc, Càng Đông Càng Tốt",
+    "description": {
+      "0": "<strong>\"Xúc Xắc Tinh Tế\"</strong> khi hỗ trợ tấn công sẽ bắn thêm một mũi tên nước, gây lượng Sát Thương Nguyên Tố Thủy tương ứng với 14% giới hạn HP của Yelan.",
+      "1": "Hiệu quả này mỗi 1.8s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation3": {
+    "name": "Kẻ Nâng Ly, Cẩn Thận Chiêu Trò",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Xúc Xắc Toan Tính</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Kẻ Giảo Hoạt, Đánh Lận Con Đen",
+    "description": {
+      "0": "Dựa theo số lượng kẻ địch mà <strong>\"Lạc Mệnh Tơ\"</strong> đánh dấu, mỗi dấu ấn khi phát nổ sẽ tăng 10% giới hạn HP cho toàn bộ nhân vật trong đội, duy trì 25s. Thông qua cách này, giới hạn HP tăng thêm tối đa tăng đến 40%."
+    }
+  },
+  "constellation5": {
+    "name": "Kẻ Làm Cái, Biến Hóa Ảo Diệu",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Dây Sinh Mệnh Quanh Quẩn</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Kẻ Thắng Cuộc, Gom Sạch Tất Cả",
+    "description": {
+      "0": "Sau khi thi triển <strong>Xúc Xắc Toan Tính</strong>, Yelan sẽ vào trạng thái \"Bàn Luận Chiến Lược\":",
+      "1": "Tấn công thường của Yelan sẽ chuyển thành \"Mũi Tên Phá Trận\" đặc biệt. Mũi tên này có đặc tính tương tự với Mũi Tên Phá Trận, sát thương gây ra được tính là sát thương trọng kích, gây ra 156% sát thương so với Mũi Tên Phá Trận.",
+      "2": "<br/>",
+      "3": "Trạng thái \"Bàn Luận Chiến Lược\" tồn tại tối đa 20s và sẽ biến mất khi Yelan bắn ra 5 mũi tên."
+    }
+  }
+}

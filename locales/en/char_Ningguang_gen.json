@@ -133,7 +133,7 @@
     }
   },
   "constellation3": {
-    "name": "Majesty be the Array of Stars",
+    "name": "Majesty Be the Array of Stars",
     "description": {
       "0": "Increases the Level of <strong>Starshatter</strong> by 3.",
       "1": "Maximum upgrade level is 15."
@@ -146,14 +146,14 @@
     }
   },
   "constellation5": {
-    "name": "Invincible be the Jade Screen",
+    "name": "Invincible Be the Jade Screen",
     "description": {
       "0": "Increases the Level of <strong>Jade Screen</strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
-    "name": "Grandeur be the Seven Stars",
+    "name": "Grandeur Be the Seven Stars",
     "description": {
       "0": "When <strong>Starshatter</strong> is used, Ningguang gains 7 Star Jades."
     }

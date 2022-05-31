@@ -38,7 +38,7 @@
   "description": "คุณหนูใหญ่ของตระกูล Kamisato แห่งสำนัก Yashiro ใน Inazuma ทั้งสง่างามและมีเกียรติ เปี่ยมไปด้วยสติปัญญาและความแข็งแกร่ง",
   "constellationName": "Grus Nivis",
   "auto": {
-    "name": "Kabuki",
+    "name": "Kamisato Art - Kabuki",
     "fields": {
       "normal": {
         "0": "<strong><strong>โจมตีปกติ</strong>",
@@ -152,7 +152,7 @@
     "name": "Frostbloom Kamifubuki",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Kamisato Art: Soumetsu</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -165,7 +165,7 @@
     "name": "Blossom Cloud Irutsuki",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Kamisato Art: Hyouka</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

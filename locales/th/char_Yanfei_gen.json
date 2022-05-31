@@ -136,7 +136,7 @@
     "name": "Samadhi Fire-Forged",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Signed Edict</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -151,7 +151,7 @@
     "name": "Abiding Affidavit",
     "description": {
       "0": "เพิ่มเลเวลของสกิล <strong>Done Deal</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

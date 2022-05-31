@@ -148,7 +148,7 @@
     "name": "Fortified Resolve",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Blazing Blessing</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -161,7 +161,7 @@
     "name": "Raging Wildfire",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Crimson Ooyoroi</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

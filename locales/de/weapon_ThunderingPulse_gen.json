@@ -1,6 +1,6 @@
 {
   "name": "Donnerpuls",
-  "description": "Ein Langbogen, der ein Geschenk des Shouguns war. Ewige Blitze knistern rundherum.",
+  "description": "Ein Langbogen, der ein Geschenk des Shougun war. Ewige Blitze knistern rundherum.",
   "passiveName": "Blitzherrschaft",
   "passiveDescription": {
     "0": "Erhöht den ANG um <cryo>20 %</cryo> und verleiht die Kraft des „Blitzflugsiegels“: Erhöht den mit Standardangriffen verursachten Schaden bei 1/2/3 Stapelungen um jeweils <cryo>12/24/40 %</cryo>. Verleiht der Figur in folgenden Situationen je 1 Blitzflugsiegel: Verursachen von Schaden mit Standardangriffen, hält 5 s; Anwendung von Elementarfähigkeiten, hält 10 s; Elementarenergie der Figur unter 100 %, verschwindet bei voller Elementarenergie. Wirkungsdauer jeder Stapelung Blitzflugsiegel ist unabhängig.",

@@ -15,8 +15,8 @@
         "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
         "2": "Mientras se apunta, unas llamas se acumularán en la punta de la flecha antes de que esta sea disparada. Sus efectos serán distintos dependiendo de durante cuánto tiempo se haya cargado:",
         "3": [
-          "Carga 1: Dispara una flecha ardiente que inflige <pyro>Daño Pyro</pyro>.",
-          "Carga 2: Dependiendo del tiempo de carga, dispara hasta un máximo de 3 flechas abrasadoras que son liberadas cuando Yoimiya ejecuta este Disparo Preciso. Las flechas abrasadoras perseguirán por sí solas a los enemigos cercanos y, al alcanzarlos, infligirán <pyro>Daño Pyro</pyro> contra ellos."
+          "Carga 1: dispara una flecha ardiente que inflige <pyro>Daño Pyro</pyro>.",
+          "Carga 2: dependiendo del tiempo de carga, dispara hasta un máximo de 3 flechas abrasadoras que son liberadas cuando Yoimiya ejecuta este Disparo Preciso. Las flechas abrasadoras perseguirán por sí solas a los enemigos cercanos y, al alcanzarlos, infligirán <pyro>Daño Pyro</pyro> contra ellos."
         ]
       },
       "plunging": {
@@ -53,7 +53,7 @@
       "4": "<br/>",
       "5": "Este efecto se disipará una vez que Yoimiya sea retirada de combate.",
       "6": "<br/>",
-      "7": "<i>Las nitrofogatas son un tipo de fuegos artificiales en barritas inventado por Yoimiya. Para prenderlas, no se necesita ninguna preparación ni entrenamiento previos, por lo que gozan de gran popularidad. Tras varios incidentes ocasionados por el fuego, la Comisión Tenryou prohibió prender nitrofogatas dentro de la ciudad. Sin embargo, pequeñas chispas brillantes siguen viéndose con frecuencia durante la noche. De hecho, si se observa desde un punto elevado, parecen como estrellas con una luz titilante.</i>"
+      "7": "<i>Las nitrofogatas son un tipo de fuegos artificiales de incienso inventados por Yoimiya. Para prenderlas, no se necesita ninguna preparación ni entrenamiento previos, por lo que gozan de gran popularidad. Tras varios incidentes ocasionados por el fuego, la Comisión Tenryou prohibió prender nitrofogatas dentro de la ciudad. Sin embargo, pequeñas chispas brillantes siguen viéndose con frecuencia durante la noche. De hecho, si se observa desde un punto elevado, parecen como estrellas con una luz titilante.</i>"
     },
     "skillParams": {
       "0": "Daño de flecha flamígera",
@@ -77,7 +77,7 @@
   "burst": {
     "name": "Saxifraga de oro",
     "description": {
-      "0": "Tras lanzar hacia el cielo su creación, la saxifraga de oro, Yoimiya dispara cohetes ardientes sorpresa que infligen <pyro>Daño Pyro en el AdE</pyro> y que aplican el efecto de ascua dorada sobre uno de los enemigos golpeados.",
+      "0": "Yoimiya da un salto para lanzar su creación, la saxifraga de oro, y disparar cohetes ardientes sorpresa que infligen <pyro>Daño Pyro en el AdE</pyro> y que aplican el efecto de ascua dorada sobre uno de los enemigos golpeados.",
       "1": "<br/>",
       "2": "<strong>Ascua dorada</strong>",
       "3": "Cuando cualquier personaje del equipo (a excepción de Yoimiya) ataca al enemigo afectado por ascua dorada con Ataques Normales, Cargados o Descendentes o con la Habilidad Elemental o Definitiva, ocurrirá una explosión que inflige <pyro>Daño Pyro en el AdE</pyro>.",
@@ -115,7 +115,7 @@
   "passive2": {
     "name": "Sofoco estival",
     "description": {
-      "0": "Tras realizar <strong>Saxifraga de oro</strong>, el ATQ de todos los miembros del equipo (a excepción de Yoimiya) aumenta en un 10% durante 15 s. Además, en función del número de acumulaciones de Truco ígneo en el momento de ejecutar <strong>Saxifraga de oro</strong>, el ATQ aumentará aún más, concretamente, un 1% por cada acumulación."
+      "0": "Tras usar <strong>Saxifraga de oro</strong>, el ATQ de todos los miembros del equipo (a excepción de Yoimiya) aumenta en un 10% durante 15 s. Además, en función del número de acumulaciones de Truco ígneo que tenga Yoimiya en el momento de usar <strong>Saxifraga de oro</strong>, dicho aumento de ATQ incrementará en un 1% adicional por cada acumulación."
     }
   },
   "passive3": {
@@ -135,7 +135,7 @@
     "name": "Procesión de las antorchas",
     "description": {
       "0": "Cuando Yoimiya asesta un golpe CRIT de <pyro>Daño Pyro</pyro>, obtiene un 25% de <pyro>Bono de Daño Pyro</pyro> durante 6 s.",
-      "1": "Si Yoimiya está en tu equipo pero no en combate, podrá seguir recibiendo este bono."
+      "1": "Este efecto se puede activar incluso cuando Yoimiya está en tu equipo pero no en combate."
     }
   },
   "constellation3": {

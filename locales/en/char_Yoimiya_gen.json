@@ -1,7 +1,7 @@
 {
   "name": "Yoimiya",
   "title": "Frolicking Flames",
-  "description": "Owner of Naganohara Fireworks. Known as \"Queen of the Summer Festival,\" she excels in her craft of creating fireworks that symbolize people's hopes and dreams.",
+  "description": "Owner of Naganohara Fireworks. Known as the \"Queen of the Summer Festival,\" she excels in her craft of creating fireworks that symbolize people's hopes and dreams.",
   "constellationName": "Carassius Auratus",
   "auto": {
     "name": "Firework Flare-Up",
@@ -161,7 +161,7 @@
   "constellation6": {
     "name": "Naganohara Meteor Swarm",
     "description": {
-      "0": "During <strong>Niwabi Fire-Dance</strong>, Yoimiya's Normal Attacks have a 50% chance of firing an extra Kindling Arrow that deals 60% of its original DMG. This DMG is considered Normal Attack DMG."
+      "0": "During <strong>Niwabi Fire-Dance</strong>, Yoimiya's Normal Attacks have a 50% chance of firing an extra Blazing Arrow that deals 60% of its original DMG. This DMG is considered Normal Attack DMG."
     }
   }
 }

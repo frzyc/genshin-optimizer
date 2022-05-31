@@ -39,7 +39,7 @@
     }
   },
   "skill": {
-    "name": "Guhua Sword · Fatal Rainscreen",
+    "name": "Guhua Sword: Fatal Rainscreen",
     "description": {
       "0": "โจมตีฟันต่อเนื่องสองครั้ง สร้าง<hydro>ความเสียหายน้ำ</hydro>แก่ศัตรูที่อยู่ตรงหน้า ขณะเดียวกันจะสร้าง Rain Sword จำนวนสูงสุดขึ้นมารอบ ๆ ตัวละครของตนเองที่เข้าต่อสู้ในขณะนั้น",
       "1": "Rain Sword มีคุณสมบัติดังนี้:",
@@ -75,7 +75,7 @@
     }
   },
   "burst": {
-    "name": "Guhua Sword · Raincutter",
+    "name": "Guhua Sword: Raincutter",
     "description": {
       "0": "เปิดใช้ Rainbow Bladework ต่อสู้โดย ใช้ภาพมายาของฝนดาบและสร้าง Rain Sword จำนวนสูงสุดขึ้นมา",
       "1": "<br/>",
@@ -133,34 +133,34 @@
   "constellation2": {
     "name": "Rainbow Upon the Azure Sky",
     "description": {
-      "0": "ระยะเวลาคงอยู่ของ <strong>Guhua Sword · Raincutter</strong> นานขึ้น 3 วินาที;",
-      "1": "นอกจากนี้ศัตรูที่ถูกฝนดาบ โจมตีจะถูกลด <hydro>ความต้านทานน้ำ</hydro> ลง 15% เป็นเวลา 4 วินาที"
+      "0": "ระยะเวลาคงอยู่ของ <strong>Guhua Sword: Raincutter</strong> นานขึ้น 3 วินาที;",
+      "1": "นอกจากนี้ ศัตรูที่ถูกฝนดาบโจมตี จะถูกลด<hydro>ความต้านทานน้ำ</hydro>ลง 15% เป็นเวลา 4 วินาที"
     }
   },
   "constellation3": {
     "name": "Weaver of Verses",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของ <strong>Guhua Sword · Raincutter</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "0": "เพิ่มเลเวลสกิลของ <strong>Guhua Sword: Raincutter</strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
     "name": "Evilsoother",
     "description": {
-      "0": "ในระยะเวลาคงอยู่ของ <strong>Guhua Sword · Raincutter</strong> ความเสียหายที่สร้างขึ้นจาก <strong>Guhua Sword · Fatal Rainscreen</strong> เพิ่มขึ้น 50%"
+      "0": "ในระยะเวลาคงอยู่ของ <strong>Guhua Sword: Raincutter</strong> ความเสียหายที่สร้างขึ้นจาก <strong>Guhua Sword: Fatal Rainscreen</strong> เพิ่มขึ้น 50%"
     }
   },
   "constellation5": {
     "name": "Embrace of Rain",
     "description": {
-      "0": "เพิ่มเลเวลสกิลของ <strong>Guhua Sword · Fatal Rainscreen</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "0": "เพิ่มเลเวลสกิลของ <strong>Guhua Sword: Fatal Rainscreen</strong> ขึ้น 3 ระดับ",
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {
     "name": "Hence, Call Them My Own Verses",
     "description": {
-      "0": "ทุกการปล่อยการโจมตีด้วยฝนดาบ 2 ครั้ง <strong>Guhua Sword · Raincutter</strong> จะเพิ่มความเสียหายของ ฝนดาบครั้งต่อไปขึ้นใน ปริมาณมาก และฟื้นฟูพลังงานธาตุของ Xingqiu ขึ้น 3 หน่วยในตอนที่โจมตีโดนศัตรู"
+      "0": "ทุกการปล่อยการโจมตีด้วยฝนดาบ 2 ครั้ง <strong>Guhua Sword: Raincutter</strong> จะเพิ่มความเสียหายของฝนดาบครั้งต่อไปขึ้นในปริมาณมาก และฟื้นฟูพลังงานธาตุของ Xingqiu ขึ้น 3 หน่วย ในตอนที่โจมตีโดนศัตรู"
     }
   }
 }

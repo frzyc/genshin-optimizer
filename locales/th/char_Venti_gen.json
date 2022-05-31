@@ -141,7 +141,7 @@
     "name": "Ode to Thousand Winds",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Wind's Grand Ode</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -154,7 +154,7 @@
     "name": "Concerto dal Cielo",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Skyward Sonnet</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

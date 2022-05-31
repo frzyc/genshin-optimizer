@@ -151,7 +151,7 @@
     "name": "Shinkage Bygones",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Secret Art: Musou Shinsetsu</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -164,7 +164,7 @@
     "name": "Shogun's Descent",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Transcendence: Baleful Omen</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

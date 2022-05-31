@@ -131,7 +131,7 @@
       "name": "Distant Crackling",
       "description": {
         "0": "เพิ่มเลเวลสกิลของ <strong>Bellowing Thunder</strong> ขึ้น 3 ระดับ",
-        "1": "เพิ่มได้มากสุด 15 ระดับ"
+        "1": "เพิ่มได้สูงสุดถึงระดับ 15"
       }
     },
     "constellation4": {
@@ -144,7 +144,7 @@
       "name": "Clamour in the Wilds",
       "description": {
         "0": "เพิ่มเลเวลสกิลของ <strong>Lightning Blade</strong> ขึ้น 3 ระดับ",
-        "1": "เพิ่มได้มากสุด 15 ระดับ"
+        "1": "เพิ่มได้สูงสุดถึงระดับ 15"
       }
     },
     "constellation6": {
@@ -286,7 +286,7 @@
       "name": "Sweeping Gust",
       "description": {
         "0": "เพิ่มเลเวลสกิลของ <strong>Gust Surge</strong> ขึ้น 3 ระดับ",
-        "1": "เพิ่มได้มากสุด 15 ระดับ"
+        "1": "เพิ่มได้สูงสุดถึงระดับ 15"
       }
     },
     "constellation4": {
@@ -299,7 +299,7 @@
       "name": "Vortex Stellaris",
       "description": {
         "0": "เพิ่มเลเวลสกิลของ <strong>Palm Vortex</strong> ขึ้น 3 ระดับ",
-        "1": "เพิ่มได้มากสุด 15 ระดับ"
+        "1": "เพิ่มได้สูงสุดถึงระดับ 15"
       }
     },
     "constellation6": {
@@ -433,7 +433,7 @@
       "name": "Will of the Rock",
       "description": {
         "0": "เพิ่มเลเวลสกิลของ <strong>Wake of Earth</strong> ขึ้น 3 ระดับ",
-        "1": "เพิ่มได้มากสุด 15 ระดับ"
+        "1": "เพิ่มได้สูงสุดถึงระดับ 15"
       }
     },
     "constellation4": {
@@ -447,7 +447,7 @@
       "name": "Meteorite Impact",
       "description": {
         "0": "เพิ่มเลเวลสกิลของ <strong>Starfell Sword</strong> ขึ้น 3 ระดับ",
-        "1": "เพิ่มได้มากสุด 15 ระดับ"
+        "1": "เพิ่มได้สูงสุดถึงระดับ 15"
       }
     },
     "constellation6": {

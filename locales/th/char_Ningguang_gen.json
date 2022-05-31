@@ -136,7 +136,7 @@
     "name": "Majesty be the Array of Stars",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Starshatter</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -149,7 +149,7 @@
     "name": "Invincible be the Jade Screen",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Jade Screen</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

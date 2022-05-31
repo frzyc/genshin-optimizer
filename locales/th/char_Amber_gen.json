@@ -138,7 +138,7 @@
     "name": "It Burns!",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Fiery Rain</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -151,7 +151,7 @@
     "name": "It's Baron Bunny!",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Explosive Puppet</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

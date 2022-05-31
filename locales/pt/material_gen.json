@@ -151,6 +151,14 @@
     "name": "Talismã da Conquista",
     "description": "Um talismã estranho que apareceu do nada em você. Quando você o segura, ainda é capaz de sentir emoções profundas emitidas sutilmente dele..."
   },
+  "MoonlitCragstone": {
+    "name": "Pedra do Brilho Lunar",
+    "description": "Uma pedra com uma aura estranha. Só pode ser encontrada em um lugar específico do Despenhadeiro, e tanto a sua origem como a sua composição são desconhecidas. No entanto, ela possui propriedades estranhas e únicas: quando caiu, manteve sua forma regular e sua seção transversal manteve o brilho lustroso original. É possível que essas pedras anciãs tenham vivido tempo suficiente para testemunhar as antigas batalhas do passado.\\nEssas pedras podem ser trocadas por tesouros durante o evento \"Trilha Perigosa\"."
+  },
+  "StratagemShard": {
+    "name": "Fragmento de Estratagema",
+    "description": "Um cristal que possui um poder profundo e sutil. Tem um tom dourado muito parecido com a pedra Cor Lapis. Seu poder pode ser ativado até certo ponto neste espaço abaixo do Despenhadeiro, ajudando você a derrotar os monstros.\\nVocê pode usá-lo no Campo de Batalha Traiçoeiro da Trilha Perigosa para criar estratagemas ou permitir que personagens derrotados voltem para o campo de batalha."
+  },
   "Primogem": {
     "name": "Gema Essencial",
     "description": "Uma gema cristalina primordial que vai além da compreensão mundana. Seu brilho está cheio de esperanças e sonhos do universo em que esteve."
@@ -439,6 +447,10 @@
     "name": "Yae Miko",
     "description": "A Senhorita Guuji do Grande Santuário Narukami, e também a Editora-Chefe da Editora Yae. Por trás de sua bela aparência escondem-se sabedoria e astúcia inimagináveis."
   },
+  "Yelan": {
+    "name": "Yelan",
+    "description": "Uma pessoa misteriosa que afirma trabalhar para o Ministério dos Assuntos Civis, mas \"não existe\" nos registros deles."
+  },
   "Aloy": {
     "name": "Aloy",
     "description": "Era uma pária, agora uma caçadora de uma avidez inigualável. Pronta para fazer a coisa certa com seu arco, a qualquer momento."
@@ -450,6 +462,10 @@
   "YunJin": {
     "name": "Yunjin",
     "description": "Uma renomada cantora de ópera de Liyue, hábil tanto em dramaturgia quanto em canto. Seu estilo é único, requintado e delicado, exatamente como ela."
+  },
+  "KukiShinobu": {
+    "name": "Kuki Shinobu",
+    "description": "Uma talentosa e confiável ajudante da Gangue Arataki — Nota: Talentosa e confiável descreve a ajudante, mas não a Gangue Arataki."
   },
   "KamisatoAyato": {
     "name": "Kamisato Ayato",
@@ -635,6 +651,10 @@
     "name": "Stella Fortuna de Yae Miko",
     "description": "Material de Ativação de Constelação de Yae Miko"
   },
+  "YelansStellaFortuna": {
+    "name": "Stella Fortuna de Yelan",
+    "description": "Material de Ativação da Constelação de Yelan"
+  },
   "AloysStellaFortuna": {
     "name": "Stella Fortuna de Alloy",
     "description": "Material de Ativação da Constelação de Aloy"
@@ -646,6 +666,10 @@
   "YunJinsStellaFortuna": {
     "name": "Stella Fortuna de Yunjin",
     "description": "Material de Ativação da Constelação de Yunjin"
+  },
+  "KukiShinobusStellaFortuna": {
+    "name": "Stella Fortuna de Kuki Shinobu",
+    "description": "Material de Ativação da Constelação de Kuki Shinobu"
   },
   "KamisatoAyatosStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayato",
@@ -1321,7 +1345,7 @@
   },
   "HilichurlBalladSelectionII": {
     "name": "Antologia de Poemas de Hilichurls (II)",
-    "description": "O vinho e os poemas fazem parte do estilo de vida do Hilichurl? Eles possuem desejos puros e devotos? Especialista de Hilichurls, Jacob Musk tem as respostas para você!"
+    "description": "O vinho e os poemas fazem parte do estilo de vida do Hilichurl? Eles possuem desejos puros e devotos? Especiliasta de Hilichurls, Jacob Musk tem as respostas para você!"
   },
   "VerasMelancholyV": {
     "name": "A Melancolia de Vera (V)",
@@ -2901,15 +2925,15 @@
   },
   "IoroisWard": {
     "name": "Amuleto de Ioroi",
-    "description": "Um amuleto dado para você por Ioroi como agradecimento. Tem a forma de um delicado pente.\\nIoroi roubou esse pente para atrair \"aquela maldita raposa\". Como punição, Ioroi e seus companheiros foram selados na imagem entalhada na pedra por \"aquele colega desprezível\".\\nDe acordo com Kazari, esses amuletos são necessários para conduzir o Ritual Sagrado de Purificação Sakura."
+    "description": "Um amuleto dado para você por Ioroi como agradecimento. Tem a forma de um delicado pente.\\nIoroi roubou esse pente para atrair \"aquela maldita raposa\". Como punição, Ioroi e seus companheiros foram selados na imagem entalhada na pedra por \"aquele colega desprezível\".\\nDe acordo com Hanachirusato, esses amuletos são necessários para conduzir o Ritual Sagrado de Purificação Sakura."
   },
   "ScrollShapedWard": {
     "name": "Amuleto em Formato de Pergaminho",
-    "description": "Um antigo e misterioso item na forma de um pergaminho selado apertadamente. Não importa o que você faça, nada o abrirá.\\nDe acordo com Kazari, esses amuletos são necessários para conduzir o Ritual Sagrado de Purificação Sakura."
+    "description": "Um antigo e misterioso item na forma de um pergaminho selado apertadamente. Não importa o que você faça, nada o abrirá.\\nDe acordo com Hanachirusato, esses amuletos são necessários para conduzir o Ritual Sagrado de Purificação Sakura."
   },
   "KeyShapedWard": {
     "name": "Amuleto em Formato de Chave",
-    "description": "Um antigo e misterioso item na forma de uma chave antiga. Se há uma chave, há uma fechadura. Mas a fechadura dessa chave está para ser penetrada pela contaminação absorvida pelas raízes da árvore.\\nDe acordo com Kazari, esses amuletos são necessários para conduzir o Ritual Sagrado de Purificação Sakura."
+    "description": "Um antigo e misterioso item na forma de uma chave antiga. Se há uma chave, há uma fechadura. Mas a fechadura dessa chave está para ser penetrada pela contaminação absorvida pelas raízes da árvore.\\nDe acordo com Hanachirusato, esses amuletos são necessários para conduzir o Ritual Sagrado de Purificação Sakura."
   },
   "OldKey": {
     "name": "Chave Velha",
@@ -3169,7 +3193,7 @@
   },
   "MaskOfMemories": {
     "name": "Máscara de Reminescências",
-    "description": "Kazari, a sacerdotisa do Santuário, usava essa máscara. Ela está muito manchada na parte de dentro.\\nAlgumas memórias estão contidas nela, e por elas é possível a arte de criar o Catalisador conhecido como \"Anel de Hakushin\".\\nAgora que Kazari foi separada dessa máscara, Paimon não entende porque ainda a chamam de Sacerdotisa Mascarada."
+    "description": "Hanachirusato, a sacerdotisa do Santuário, usava essa máscara. Ela está muito manchada na parte de dentro.\\nAlgumas memórias estão contidas nela, e por elas é possível a arte de criar o Catalisador conhecido como \"Anel de Hakushin\".\\nAgora que Hanachirusato foi separada dessa máscara, Paimon não entende porque ainda a chamam de Sacerdotisa Mascarada."
   },
   "TheVioletOnisBlade": {
     "name": "A Espada do Oni Violeta",
@@ -3235,7 +3259,7 @@
     "name": "Pérola do Espírito",
     "description": "Uma pérola antiga e vibrante, dentro da qual reside o segredo das profundezas do oceano."
   },
-  "KeyOfTheMoonbathedDeep": {
+  "KeyOfTheMoonBathedDeep": {
     "name": "Chave das Profundezas Banhadas pela Lua",
     "description": "Um tesouro estranho com um nome estranho. Diz-se que foi forjado com o sangue de Watatsumi Omikami."
   },
@@ -3860,16 +3884,16 @@
     "description": "Registros históricos escritos pelo famoso historiador do Shogunato, Kujou Michizane, também conhecido como um dos \"Três Dignatários Kujou\" ou \"O Grande Calígrafo\". Descreve a história da Ilha de Watatsumi de forma resumida."
   },
   "TheSagaOfHamavaranPreface": {
-    "name": "Guerras Hamawaran - Prefácio",
-    "description": "Os prefácios do novo romance \"Guerras Hamawaran\", agora combinados em um único volume devido a um ajuste do modelo de negócios!"
+    "name": "Guerras Hamavaran - Prefácio",
+    "description": "Os prefácios do novo romance \"Guerras Hamavaran\", agora combinados em um único volume devido a um ajuste do modelo de negócios!"
   },
   "TheSagaOfHamavaranI": {
-    "name": "Guerras Hamawaran (I)",
+    "name": "Guerras Hamavaran (I)",
     "description": "\"Como isso pôde acontecer...\" Um erudito viajante comum de Sumeru, inesperadamente designado a um assunto impopular, recebe a ordem de ir para a terra do trovão... As cortinas se erguem lentamente em uma aventura na grande nação costeira!"
   },
   "TheSagaOfHamavaranII": {
-    "name": "Guerras Hamawaran (II)",
-    "description": "\"Invocação de fantasmas? Isso é o mesmo que chamar os espíritos na minha terra natal?\" Com essa dúvida pairando em sua mente, Hamawaran começa a falar com seu novo companheiro de viagem. Uma jornada inesperada começa!"
+    "name": "Guerras Hamavaran (II)",
+    "description": "\"Invocação de fantasmas? Isso é o mesmo que chamar os espíritos na minha terra natal?\" Com essa dúvida pairando em sua mente, Hamavaran começa a falar com seu novo companheiro de viagem. Uma jornada inesperada começa!"
   },
   "ALegendOfSwordI": {
     "name": "A Lenda da Espada (I)",
@@ -4431,6 +4455,14 @@
     "name": "Abalone Vegetariano com Cheiro Aromático",
     "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
   },
+  "TheAlmightyAratakiGreatAndGloriousDrumalongFestival": {
+    "name": "O Glorioso Festival de Tambores do Muito Respeitado Arataki",
+    "description": "Uma carta de convite um tanto extravagante em termos de estilo e conteúdo. Ela descreve um festival significante de grande escala e longo alcance, podendo ser considerado um evento nacional. Como {F#uma convidada}{M#um convidado} de honra, você será uma celebridade ilustre."
+  },
+  "WorksiteRecords": {
+    "name": "Registro do Local de Construção",
+    "description": "Originalmente um livro fiscal, agora parece ser usado como um livro de anotações. Ele contém registros recentes da rotina diária da Forja do Penhasco Obscuro, embora não haja muitas informações úteis."
+  },
   "FragrantMintSalad": {
     "name": "Salada de Menta com Cheiro Aromático",
     "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
@@ -4563,6 +4595,10 @@
     "name": "Kitsune de Brinquedo",
     "description": "Um boneco kitsune que Gorou conseguiu por ajudar Kokomi a comprar livros durante o Festival Irodori. Gorou o deu para você como agradecimento por acompanhá-lo.\\nTodas as vezes que você olha para ele, não consegue evitar lembrar de todos os cabelos de Gorou ficarem de pé ao ele ouvir a palavra \"kitsune\"."
   },
+  "SalaryBag": {
+    "name": "Embrulho escrito \"Salário\"",
+    "description": "Dizem que abri-lo com pressa revelará um pacote com má sorte. Parece mais leve do que o esperado."
+  },
   "ALegendOfSwordVI": {
     "name": "A Lenda da Espada (VI)",
     "description": "\"Em essência, a grande batalha no espaço não é diferente do conflito armado que ocorreu dez anos atrás naquele planeta deserto...\" Em breve, o nome daquele homem será tão conhecido na galáxia como o do Imperador."
@@ -4586,6 +4622,34 @@
   "BagOfOrnaments": {
     "name": "Bolsa de Joias",
     "description": "Uma bolsa com joias que o Chou lhe deu como compensação por Tang Wuchou. Elas foram feitas de maneira rústica pelos Ladrões de Tesouro no Despenhadeiro com minérios contrabandeados, e mal se pode considerar possuidoras de qualidades estéticas. Por isso, não há chance alguma de serem vendidas em Liyue. A única coisa boa que pode ser dita sobre essas joias é que elas pelo menos foram feitas com os materiais certos."
+  },
+  "NoteOfUnknownOriginI": {
+    "name": "Nota de Origem Desconhecida: I",
+    "description": "Você encontrou esta nota no espaço misterioso. O seu conteúdo parece o de um diário."
+  },
+  "NoteOfUnknownOriginII": {
+    "name": "Nota de Origem Desconhecida: II",
+    "description": "Você encontrou esta nota no espaço misterioso. O seu conteúdo parece o de um diário."
+  },
+  "NoteOfUnknownOriginIII": {
+    "name": "Nota de Origem Desconhecida: III",
+    "description": "Você encontrou esta nota no espaço misterioso. O seu conteúdo parece o de um diário."
+  },
+  "NoteOfUnknownOriginIV": {
+    "name": "Nota de Origem Desconhecida: IV",
+    "description": "Você encontrou esta nota no espaço misterioso. O seu conteúdo parece o de um diário."
+  },
+  "RedemptionVoucher": {
+    "name": "Cupom de Troca 1",
+    "description": "Cupom usado para resgatar Coruja do Lago dos Espelhos: Rodopio"
+  },
+  "NoteOfUnknownOrigin": {
+    "name": "Nota de Origem Desconhecida",
+    "description": "Você encontrou esta nota no espaço misterioso. O seu conteúdo parece o de um diário."
+  },
+  "DragonspineSuppliesHam": {
+    "name": "Suprimento da Espinha do Dragão — Presunto",
+    "description": "Um presunto usado como suprimento. Pode ser conservado por muito tempo em temperaturas baixas."
   },
   "PyroShard": {
     "name": "Fragmento Pyro",
@@ -6535,6 +6599,14 @@
     "name": "Elegância Serena",
     "description": "Especialidade de Kamisato Ayato. Este arranjo é requintado e elegante, muito parecido com a maneira que Ayato lida com seus problemas. Mais do que isso e teria sido demais. Menos do que isso e teria sido uma experiência desperdiçada. Ao provar o prato, você descobre que seu sabor é idêntico ao do Restaurante Uyuu. Incrível. Mas assim que você coloca seus pauzinhos próximos aquela Camélia Cristalina, Ayato te impede... \"Isso foi só algo que eu fiz durante a prática da espada. É apenas uma decoração\"."
   },
+  "OmuriceWaltz": {
+    "name": "Valsa do Omelete de Arroz",
+    "description": "Especialidade de Kuki Shinobu. A pele suave dos ovos quase parece dançar em um palco feito de molho, com arroz macio e fofo dançando sob sua saia. Pode-se dizer que este prato está ao nível dos pratos do Restaurante Uyuu. O certificado de culinária de Shinobu realmente não foi ganho à toa."
+  },
+  "DewDippedShrimp": {
+    "name": "Camarão Marinado",
+    "description": "Especialidade de Yelan. Entre os ingredientes usados para confeccionar este prato está o novo chá proveniente da Vila Qiaoying chamado Gotas de Orvalho, que foi enviado diretamente para a Casa de Chá e depois levemente frito com camarão fresco do rio. Este prato tem uma fragrância suave de chá, e seu sabor é tenro ao paladar... Espere um minuto. Por que ela está vindo aqui com um prato de pimenta?"
+  },
   "RecipeItem": {
     "name": "Ingredientes",
     "description": "Desbloquear utensílios de cozinha"
@@ -7465,7 +7537,7 @@
   },
   "AshenHeart": {
     "name": "Coração das Cinzas",
-    "description": "Um fragmento deformado que contém emoções poderosas. Você obteve isso ao derrotar Signora, que liberou seu poder original em batalha.\\nAté mesmo lágrimas não podem extinguir as chamas. Agonia derretida quente e fúria correm por suas veias, escorrendo de suas glândulas lacrimais.\\nO Primeiro Fatuus encontrou ela antes de seu coração poder ser destruído pela chama eterna. Ele entendeu que apenas o ódio mais profundo poderia apaziguar o fogo que a devorou e fazê-la sua aliada..."
+    "description": "Um fragmento deformado que contém emoções poderosas. Você obteve isso ao derrotar Signora, que liberou seu poder original em batalha.\\nAté mesmo lágrimas não podem extinguir as chamas. Agonia derretida quente e fúria correm por suas veias, escorrendo de suas glândulas lacrimais.\\nO Primeiro Fatui encontrou ela antes de seu coração poder ser destruído pela chama eterna. Ele entendeu que apenas o ódio mais profundo poderia apaziguar o fogo que a devorou e fazê-la sua aliada..."
   },
   "DewOfRepudiation": {
     "name": "Orvalho da Repudiação",
@@ -8086,6 +8158,10 @@
   "OintmentOfSight": {
     "name": "Bálsamo da Visibilidade",
     "description": "Material de refinamento para \"Olho do Juramento\".\\nO óleo especial do Unagi do Mar Profundo foi utilizado no passado para conservar os artefatos sagrados de Enkanomiya, e o seu processo de fabricação é cuidadoso para que o olho seja muito brilhante por eras."
+  },
+  "GlowingGem": {
+    "name": "Pérola Brilhante",
+    "description": "Material especializado de Refinamento para o Crepúsculo Desvanecido.\\nCor Lapis delicadamente refinada através de antigas técnicas artísticas pelos primeiros habitantes do Despenhadeiro. Emite uma luz fraca que lembra o primeiro raio de sol ao amanhecer, ou o desvanecimento da luz do dia ao anoitecer. Aparecendo em cavernas que não veem um único raio de sol, deve ter trazido algum conforto para aqueles que vieram aqui para desafiar o inimigo maléfico."
   },
   "FalconsDance": {
     "name": "Dança do Falcão",
@@ -8731,6 +8807,18 @@
     "name": "Passe de Batalha — Irodori",
     "description": "Estilo de Cartão de Visita.\\nAqueles que tem um passatempo são conhecidos como um grupo de \"fãs\". Pessoal, é melhor começar a inventar histórias, antes que a editora-chefe kitsune comece a sonhar com a ideia de criar a lei de direitos autorais... Ou talvez ela já tenha sonhado com isso, apenas não realmente se importa?"
   },
+  "YelanThrow": {
+    "name": "Yelan: Lançamento",
+    "description": "Estilo de cartão de visita.\\n\"Os dados raramente são justos. Pior ainda quando se trata de dados de baixa qualidade de produção. O resultado desse tipo de dado é sempre parcial.\""
+  },
+  "KukiShinobuNet": {
+    "name": "Kuki Shinobu: Rede",
+    "description": "Estilo de cartão de visita.\\n\"Você sabe aqueles anéis de Erva Naku de Inazuma? Os que podem repelir o mal. Shinobu teve a ideia de que, uma vez que as criaturas malignas não cruzam esses anéis por vontade própria, os anéis poderiam ser usados deliberadamente para este propósito. Ah, seu talento como sacerdotisa é realmente assustador...\""
+  },
+  "TravelNotesDivineWill": {
+    "name": "Passe de Batalha: Destino",
+    "description": "Estilo de Cartão de Visita.\\n\"Há muito tempo, almas leais se dispersaram para o leste e oeste como gansos\". \"Hoje eu acendo minha lanterna para que eles não percam seu caminho\"."
+  },
   "AnemoculusResonanceStone": {
     "name": "Pedra de Ressonância de Anemoculus",
     "description": "Pode usar em Mondstadt para buscar 'Anemoculus Perdidos' nos arredores.\\nEssa pedra tem características similares às Estátuas Anemo das Estátuas dos Sete e gera ressonância com Anemoculus.\\nAs Pedras de Ressonância de Oculus são imitações brutas das Estátuas dos Sete construídas pelos antigos. Mas é exatamente devido a essa rudeza que desejam a força de oculus elemental e oferecendo uma boa oportunidade a devotos e aventureiros para encontrar oculus."
@@ -8898,6 +8986,14 @@
   "BokusoBox": {
     "name": "Caixa de Bokuso",
     "description": "Use isso para eliminar a Escuridão de uma certa área de Enkanomiya.\\nO nome \"Bokuso\" é formado de \"boku\" que significa \"aproximar o que é bom\" e \"so\", que significa \"afastar o que está sujo\"."
+  },
+  "AratakisGreatAndGloriousDrum": {
+    "name": "Tambor Glorioso de Arataki",
+    "description": "Um instrumento que, depois de ser utilizado, pode ser tocado em performances.\\nÉ um tambor pequeno que Itto lhe deu. Ele comprou com um comerciante forasteiro, e apesar de sua aparência normal, dizem que é uma relíquia deixada para trás por um antigo e poderoso onmyouji que o usou para afastar uma calamidade e orar por bênçãos.\\nPara uma pessoa normal custaria um braço e uma perna. No entanto, o preço é negociável se o seu comprador estiver destinado a tê-lo.\\nE veja só, o tesouro de 8.000.000 de Mora foi comprado por 80.000. Saiu bem barato para Itto."
+  },
+  "MaterialCollector": {
+    "name": "Coletor de Materiais",
+    "description": "Um dispositivo coletor criado por Bertrand, um fabricante de máquinas. Pode coletar os materiais necessários para criar outros produtos. Quando ligado à Grande Máquina, despejará a matéria-prima nela e iniciará o processo de criação de decorações robóticas."
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instruções: Pedra de Ressonância de Anemoculus",
@@ -9233,7 +9329,7 @@
   },
   "GatheringOfGourmets": {
     "name": "Rua das Delícias",
-    "description": "Um diagrama detalhado com o passo a passo para colocar \"Rua das Delícias\".\\nUma praça de alimentação com instalações ao ar livre que revisita a agitação do Penhasco Chihu.\\nChamar isso de \"reunião de gourmets\" é um eufemismo, pois embora pareça não haver muitos utensílios de cozinha aqui, eles são mais do que suficientes para cobrir todas as especialidades conhecidas da região de Liyue. Chefs qualificados podem fazer pratos deliciosos a partir dos utensílios mais simples, e certamente ajudam que pratos que não são particulares sobre os utensílios necessários também circulem com facilidade.\\nApós usar este item, você pode visualizá-lo na Interface de Colocação.\\nOs personagens a seguir preferem este Conjunto de Decoração: Beidou, Xiangling, Ganyu, Xinyan, Tartaglia"
+    "description": "Um diagrama detalhado com o passo a passo para colocar \"Rua das Delícias\".\\nUma praça de alimentação com instalações ao ar livre que revisita a agitação do Penhasco Chihu.\\nChamar isso de \"reunião de gourmets\" é um eufemismo, pois embora pareça não haver muitos utensílios de cozinha aqui, eles são mais do que suficientes para cobrir todas as especialidades conhecidas da região de Liyue. Chefs qualificados podem fazer pratos deliciosos a partir dos utensílios mais simples, e certamente ajudam que pratos que não são particulares sobre os utensílios necessários também circulem com facilidade.\\nApós usar este item, você pode visualizá-lo na Interface de Colocação.\\nOs personagens a seguir preferem este Conjunto de Decoração: Beidou, Xiangling, Ganyu, Xinyan, Tartaglia, Yelan"
   },
   "GlitteringStreet": {
     "name": "Rua Cintilante",
@@ -9241,7 +9337,7 @@
   },
   "QingceCloudResidence": {
     "name": "Casas Celestes de Qingce",
-    "description": "Um diagrama detalhado com o passo a passo para colocar \"Casas Celestes de Qingce\".\\nUm vilarejo de montanha modelado baseado na Vila Qingce. Dizem que o ambiente amigável ali é contagiante e que os visitantes que entram se encontrarão mais calmos e agradecidos pelas simples alegrias que podem ter sido esquecidas.\\nSeguir os próprios ideais e passar muitos anos perseguindo magnificamente uma carreira certamente é louvável. Mas depois de passar muito tempo fazendo tais coisas, pode-se eventualmente sentir cansaço, e uma vez que isso aconteça, uma vida calma e pacífica no campo pode continuar sendo uma boa escolha. A Vila Qingce sempre manteve sua aceitação daqueles jovens que saem em busca de suas fortunas e está pronta para recebê-los de volta de braços abertos a qualquer momento.\\nApós usar este item, você pode visualizá-lo na Interface de Colocação.\\nOs personagens a seguir preferem este Conjunto de Decoração: Xinyan, Xiao, Hutao, Qiqi, Shenhe"
+    "description": "Um diagrama detalhado com o passo a passo para colocar \"Casas Celestes de Qingce\".\\nUm vilarejo de montanha modelado baseado na Vila Qingce. Dizem que o ambiente amigável ali é contagiante e que os visitantes que entram se encontrarão mais calmos e agradecidos pelas simples alegrias que podem ter sido esquecidas.\\nSeguir os próprios ideais e passar muitos anos perseguindo magnificamente uma carreira certamente é louvável. Mas depois de passar muito tempo fazendo tais coisas, pode-se eventualmente sentir cansaço, e uma vez que isso aconteça, uma vida calma e pacífica no campo pode continuar sendo uma boa escolha. A Vila Qingce sempre manteve sua aceitação daqueles jovens que saem em busca de suas fortunas e está pronta para recebê-los de volta de braços abertos a qualquer momento.\\nApós usar este item, você pode visualizá-lo na Interface de Colocação.\\nOs personagens a seguir preferem este Conjunto de Decoração: Xinyan, Xiao, Hutao, Qiqi, Shenhe, Yelan"
   },
   "OfHuntingAndDancing": {
     "name": "Acampamento de Caça e Canções",
@@ -9285,7 +9381,7 @@
   },
   "SakuraHuedStreet": {
     "name": "Rua de Cor Sakura",
-    "description": "Um diagrama detalhado passo a passo para fazer Rua de Cor Sakura.\\nUma cópia perfeita do distrito comercial cuidadosamente planejado da cidade de Inazuma.\\nNão importa o que aconteça, o povo de Inazuma vive em uma atmosfera calma e pacífica. As ruas que podem ser percorridas a pé refletem as condições de vida dos moradores, que é a representação mais verdadeira da cidade. Se seguir Thoma, um habitante local que conhece Inazuma por dentro e por fora, e for vendo os vários negócios e lojas, poderá realmente compreender e apreciar os costumes locais.\\nDepois de usar, você pode entrar na interface de colocação para vê-la.\\nCompanheiros que preferem este conjunto: Yoimiya, Thoma"
+    "description": "Um diagrama detalhado passo a passo para fazer Rua de Cor Sakura.\\nUma cópia perfeita do distrito comercial cuidadosamente planejado da cidade de Inazuma.\\nNão importa o que aconteça, o povo de Inazuma vive em uma atmosfera calma e pacífica. As ruas que podem ser percorridas a pé refletem as condições de vida dos moradores, que é a representação mais verdadeira da cidade. Se seguir Thoma, um habitante local que conhece Inazuma por dentro e por fora, e for vendo os vários negócios e lojas, poderá realmente compreender e apreciar os costumes locais.\\nDepois de usar, você pode entrar na interface de colocação para vê-la.\\nCompanheiros que preferem este conjunto: Yoimiya, Thoma, Kuki Shinobu"
   },
   "EternalDomainOfFleetingDreams": {
     "name": "Domínio dos Sonhos Transitórios",
@@ -9297,7 +9393,7 @@
   },
   "ScholarlyTrove": {
     "name": "Tesouro Acadêmico",
-    "description": "Um diagrama detalhado passo a passo para fazer Tesouro Acadêmico.\\nUma coleção de textos foi colocada aqui na grande estante de livros preferida de todos os membros da Comissão Tripla. Esta estante suporta pelo menos cem livros. Mas para alguns habitantes de Inazuma, não é o número de livros que conta, mas sim a \"precisão\" e \"substância\" de cada um — isto é, você deve guardar em seu coração todas as palavras de um bom livro que tenha lido. Como tal, basta organizar os livros de acordo com o quanto os valorizamos. Para livros que você leu há muito tempo e memorizou, você pode emprestá-los ou até vendê-los, se quiser. Dizem que a Sacerdotisa Divina da Ilha Watatsumi tem exatamente esse hábito.\\nDepois de usar, você pode entrar na interface de colocação para vê-la.\\nCompanheiro que prefere este conjunto: Sangonomiya Kokomi"
+    "description": "Um diagrama detalhado passo a passo para fazer Tesouro Acadêmico.\\nUma coleção de textos foi colocada aqui na grande estante de livros preferida de todos os membros da Comissão Tripla. Esta estante suporta pelo menos cem livros. Mas para alguns habitantes de Inazuma, não é o número de livros que conta, mas sim a \"precisão\" e \"substância\" de cada um — isto é, você deve guardar em seu coração todas as palavras de um bom livro que tenha lido. Como tal, basta organizar os livros de acordo com o quanto os valorizamos. Para livros que você leu há muito tempo e memorizou, você pode emprestá-los ou até vendê-los, se quiser. Dizem que a Sacerdotisa Divina da Ilha Watatsumi tem exatamente esse hábito.\\nDepois de usar, você pode entrar na interface de colocação para vê-la.\\nCompanheiro que prefere este conjunto: Sangonomiya Kokomi, Kuki Shinobu"
   },
   "OfMapleAndTeaScentsEntwined": {
     "name": "Fragrância de Bordo e Chá",
@@ -9402,6 +9498,10 @@
   "RainbowLightsAtDawnWeCelebrate": {
     "name": "Luzes do Arco-íris: Comemorando ao Amanhecer",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Luzes do Arco-íris: Comemorando ao Amanhecer\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "StoneworksLampDeepingGloomCandle": {
+    "name": "Lâmpada de Forja: Vela das Profundezas",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Lâmpada de Forja: Vela das Profundezas\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
   },
   "NorthernBirchFoldingCounter": {
     "name": "Balcão Dobrável de Vidoeiro do Norte",
@@ -9821,7 +9921,7 @@
   },
   "WoodenRestaurantSignboard": {
     "name": "Letreiro de Madeira de Restaurante",
-    "description": "Um diagrama que descreve passo a passo detalhadamente como fabricar Letreiro de Madeira de Restaurante\\nDepois de usar, você pode entrar na interface de colocação para ver."
+    "description": "Um diagrama que descreve passo a passo como fabricar Letreiro de Madeira de Restaurante\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
   "BrightVaseShapedSconce": {
     "name": "Arandela Luminosa em Forma de Vaso",
@@ -9926,6 +10026,10 @@
   "YumemiruDecorumKimonoRack": {
     "name": "Prateleira de Madeira Otogi \"Cortesia\"",
     "description": "Um diagrama que descreve passo a passo como fabricar Prateleira de Madeira Otogi \"Cortesia\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "PearOrchardStageYunHanStyle": {
+    "name": "Palco do Pomar de Peras: Estilo Yun-Han",
+    "description": "Um diagrama que descreve passo a passo como fabricar Palco do Pomar de Peras: Estilo Yun-Han.\\nDepois de usar, você pode entrar na interface de produção para vê-la."
   },
   "MultiArchedMondstadtBuilding": {
     "name": "Prédio de Mondstadt com Vários Arcos",
@@ -10243,6 +10347,14 @@
     "name": "Cabochão sub-espacial: Voo Pleno",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Cabochão sub-espacial: Voo Pleno\".\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
   },
+  "StoneworksCraneMountainMover": {
+    "name": "Guindaste de Forja: Move Montanhas",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Guindaste de Forja: Move Montanhas\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "StoneworksCraneHillTamer": {
+    "name": "Guindaste de Forja: Domador de Colinas",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Guindaste de Forja: Domador de Colinas\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
   "AdeptusGate": {
     "name": "Portão do Adeptus",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Portão do Adeptus\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -10401,7 +10513,7 @@
   },
   "FruitSellersToil": {
     "name": "Fadiga dos Vendedores de Frutas",
-    "description": "Um diagrama que descreve passo a passo detalhadamente como fabricar \"Fadiga dos Vendedores de Frutas\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Fadiga dos Vendedores de Frutas\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
   "HardenedGlazedVase": {
     "name": "Vaso Vitrificado Endurecido",
@@ -10675,6 +10787,14 @@
     "name": "Bandeira Pintada de Edição Limitada de \"Kitsune Guuji\"",
     "description": "Um diagrama que descreve passo a passo como fabricar Bandeira de Edição Limitada de \"Kitsune Guuji\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
   },
+  "PearOrchardScreenDexterous": {
+    "name": "Tela do Pomar de Peras - Entrando",
+    "description": "Um diagrama que descreve passo a passo como fabricar Tela do Pomar de Peras: Entrando.\\nDepois de usar, você pode entrar na interface de produção para vê-la."
+  },
+  "PearOrchardScreenDeft": {
+    "name": "Tela do Pomar de Peras: Saindo",
+    "description": "Um diagrama que descreve passo a passo como fabricar Tela do Pomar de Peras: Saindo.\\nDepois de usar, você pode entrar na interface de produção para vê-la."
+  },
   "WroughtIronCarvedStreetLight": {
     "name": "Poste de Rua Esculpido em Ferro Fundido",
     "description": "Um diagrama que descreve passo a passo como fabricar Poste de Rua Esculpido em Ferro Fundido\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -10807,6 +10927,10 @@
     "name": "Banco Quadrado de Madeira Otogi \"Rakushi\"",
     "description": "Um diagrama que descreve passo a passo como fabricar Banco Quadrado de Madeira Otogi \"Rakushi\".\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
   },
+  "PearOrchardSeatGatheredInJoy": {
+    "name": "Assento do Pomar de Peras: Reunidos em Alegria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Assento do Pomar de Peras: Reunidos em Alegria.\\nDepois de usar, você pode entrar na interface de produção para vê-la."
+  },
   "TwoStoryHilichurlSentryTower": {
     "name": "Torre de Vigia Dupla dos Hilichurls",
     "description": "Um diagrama que descreve passo a passo como fabricar Torre de Vigia Dupla dos Hilichurls\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -10859,6 +10983,14 @@
     "name": "Mesa Quadrada de Madeira Otogi \"Rakushi\"",
     "description": "Um diagrama que descreve passo a passo como fabricar Mesa Quadrada de Madeira Otogi \"Rakushi\".\\nDepois de usar, você pode entrar na interface de produção para vê-la."
   },
+  "PearOrchardSeatOfTunesAndFragrantTea": {
+    "name": "Assento do Pomar de Peras: Melodias e Chás Perfumados",
+    "description": "Um diagrama que descreve passo a passo como fabricar Assento do Pomar de Peras: Melodias e Chás Perfumados.\\nDepois de usar, você pode entrar na interface de produção para vê-la."
+  },
+  "PearOrchardAccessoryAttendAndListen": {
+    "name": "Acessório do Pomar de Peras: Plateia Atenta",
+    "description": "Um diagrama que descreve passo a passo como fabricar Acessório do Pomar de Peras: Plateia Atenta.\\nDepois de usar, você pode entrar na interface de produção para vê-la."
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Balcão de Loja de Vinhos: \"Para Alegrar Seu Coração\"",
     "description": "Um diagrama que descreve passo a passo como fabricar Balcão de Loja de Vinhos: \"Para Alegrar Seu Coração\"\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -10890,5 +11022,9 @@
   "OfFieldsGreenCookieRoad": {
     "name": "Campos Verdejantes: Estrada de Biscoito",
     "description": "Um diagrama que descreve passo a passo como fabricar Campos Verdejantes: Estrada de Biscoito.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "FoundationsOfStoneGrandDesign": {
+    "name": "Fundações de Pedra: Criação Deslumbrante",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Fundações de Pedra: Criação Deslumbrante\".\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
   }
 }

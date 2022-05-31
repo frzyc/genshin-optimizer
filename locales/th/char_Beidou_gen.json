@@ -152,7 +152,7 @@
     "name": "Summoner of Storm",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Tidecaller</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -165,7 +165,7 @@
     "name": "Crimson Tidewalker",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Stormbreaker</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

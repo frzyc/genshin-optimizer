@@ -98,7 +98,7 @@
   "passive1": {
     "name": "Catalyst Conversion",
     "description": {
-      "0": "เมื่อ Sucrose ทำให้เกิดปฏิกิริยาการกระจาย จะทำให้ตัวละครในทีมทั้งหมดที่เป็นธาตุเดียวกับธาตุที่ผสมกันจนเกิดการกระจายนั้น (ยกเว้น Sucrose) มีความชำนาญธาตุเพิ่มขึ้น 50 เป็นเวลา 8 วินาที"
+      "0": "เมื่อ Sucrose ทำให้เกิดปฏิกิริยาการกระจาย จะทำให้ตัวละครในทีมทั้งหมดที่เป็นธาตุเดียวกับธาตุที่ผสมกันจนเกิดการกระจายนั้น (ยกเว้น Sucrose) มีความชำนาญธาตุเพิ่มขึ้น 50 หน่วย เป็นเวลา 8 วินาที"
     }
   },
   "passive2": {
@@ -120,7 +120,7 @@
     }
   },
   "constellation2": {
-    "name": "Beth - Unbound Form",
+    "name": "Beth: Unbound Form",
     "description": {
       "0": "เพิ่มระยะเวลา <strong>Forbidden Creation - Isomer 75 / Type II</strong> ขึ้น 2 วินาที"
     }
@@ -129,7 +129,7 @@
     "name": "Flawless Achemistress",
     "description": {
       "0": "เพิ่มเลเวลของสกิล <strong>Astable Anemohypostasis Creation - 6308</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -143,7 +143,7 @@
     "name": "Caution: Standard Flask",
     "description": {
       "0": "เพิ่มเลเวลของสกิล <strong>Forbidden Creation - Isomer 75 / Type II</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

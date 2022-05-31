@@ -138,7 +138,7 @@
     "name": "Cloud-Strider",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Celestial Shower</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -153,7 +153,7 @@
     "name": "The Merciful",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Trail of the Qilin</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

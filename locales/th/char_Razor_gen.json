@@ -149,7 +149,7 @@
     "name": "Soul Companion",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Lightning Fang</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -162,7 +162,7 @@
     "name": "Sharpened Claws",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Claw and Thunder</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

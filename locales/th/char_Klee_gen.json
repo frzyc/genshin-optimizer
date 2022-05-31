@@ -131,7 +131,7 @@
     "name": "Exquisite Compound",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Jumpy Dumpty</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -144,7 +144,7 @@
     "name": "Nova Burst",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Sparks 'n' Splash</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

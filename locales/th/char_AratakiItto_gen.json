@@ -33,7 +33,7 @@
       "5": "ความเสียหายการฟันครั้งสุดท้ายของ Arataki Kesagiri",
       "6": "ระยะเวลาของ Superlative Superstrength",
       "7": "ความเสียหายของ Saichimonji Slash",
-      "8": "Saichimonji ใช้พลังกาย",
+      "8": "Saichimonji Slash ใช้พลังกาย",
       "9": "ความเสียหายพุ่งลง",
       "10": "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง",
       "11": "",
@@ -159,7 +159,7 @@
     "name": "Horns Lowered, Coming Through",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Masatsu Zetsugi: Akaushi Burst!</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -172,7 +172,7 @@
     "name": "10 Years of Hanamizaka Fame",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Royal Descent: Behold, Itto the Evil!</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

@@ -139,7 +139,7 @@
     "name": "Seafaring General",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Cliffbreaker's Banner</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -152,7 +152,7 @@
     "name": "Famed Throughout the Land",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Opening Flourish</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

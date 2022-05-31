@@ -75,9 +75,9 @@
     }
   },
   "burst": {
-    "name": "Cỏ Ryukin",
+    "name": "Cỏ Ryuukin",
     "description": {
-      "0": "Yoimiya bay lên trời theo pháo hoa tự chế \"Cỏ Ryukin\", bắn mũi tên lửa ra phía trước, gây <pyro>sát thương phạm vi Nguyên Tố Hỏa</pyro> đồng thời gây thêm \"Lưu Kim Hỏa Quang\" cho 1 kẻ địch bị bắn trúng.",
+      "0": "Yoimiya bay lên trời theo pháo hoa tự chế \"Cỏ Ryuukin\", bắn mũi tên lửa ra phía trước, gây <pyro>sát thương phạm vi Nguyên Tố Hỏa</pyro> đồng thời gây thêm \"Lưu Kim Hỏa Quang\" cho 1 kẻ địch bị bắn trúng.",
       "1": "<br/>",
       "2": "<strong>Lưu Kim Hỏa Quang</strong>",
       "3": "Tấn công thường, trọng kích, tấn công khi đáp, kỹ năng nguyên tố, kỹ năng nộ của tất cả nhân vật trong đội (không bao gồm bản thân Yoimiya) đánh trúng kẻ địch bị ảnh hưởng bởi \"Lưu Kim Hỏa Quang\" sẽ phát nổ, gây <pyro>sát thương phạm vi Nguyên Tố Hỏa</pyro>.",
@@ -115,7 +115,7 @@
   "passive2": {
     "name": "Bài Thơ Cảnh Hè Tàn Lụi",
     "description": {
-      "0": "Trong vòng 15s sau khi thi triển <strong>Cỏ Ryukin</strong>, tất cả nhân vật khác ở gần (không bao gồm bản thân Yoimiya) tăng 10% tấn công. Ngoài ra, tùy theo số tầng cộng dồn của thiên phú cố định \"Tụ Hỏa Bách Cảnh Đồ\" khi Yoimiya thi triển <strong>Cỏ Ryukin</strong>, sẽ tăng thêm hiệu quả tấn công kể trên, mỗi tầng tăng 1% tấn công."
+      "0": "Trong vòng 15s sau khi thi triển <strong>Cỏ Ryuukin</strong>, tất cả nhân vật khác ở gần (không bao gồm bản thân Yoimiya) tăng 10% tấn công. Ngoài ra, tùy theo số tầng cộng dồn của thiên phú cố định \"Tụ Hỏa Bách Cảnh Đồ\" khi Yoimiya thi triển <strong>Cỏ Ryuukin</strong>, sẽ tăng thêm hiệu quả tấn công kể trên, mỗi tầng tăng 1% tấn công."
     }
   },
   "passive3": {
@@ -127,7 +127,7 @@
   "constellation1": {
     "name": "Xích Ngọc Lưu Kim",
     "description": {
-      "0": "Thời gian kéo dài Lưu Kim Hỏa Quang của <strong>Cỏ Ryukin</strong> tăng 4s.",
+      "0": "Thời gian kéo dài Lưu Kim Hỏa Quang của <strong>Cỏ Ryuukin</strong> tăng 4s.",
       "1": "Ngoài ra, khi kẻ địch chịu ảnh hưởng bởi Lưu Kim Hỏa Quang của Yoimiya bị hạ gục trong thời gian duy trì, tấn công của Yoimiya sẽ tăng 20%, kéo dài 20s."
     }
   },
@@ -154,7 +154,7 @@
   "constellation5": {
     "name": "Đêm Hội Mùa Hè",
     "description": {
-      "0": "Cấp kỹ năng <strong>Cỏ Ryukin</strong> +3.",
+      "0": "Cấp kỹ năng <strong>Cỏ Ryuukin</strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },

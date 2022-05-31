@@ -90,8 +90,8 @@
       "10": "Saat Plunging Attack dilakukan dengan menggunakan efek Elemental Skill Chihayaburu, maka DMG dari Plunging Attack akan berubah menjadi <anemo>Anemo DMG</anemo> dan menciptakan arus angin kecil yang menarik musuh dan benda di sekitarnya.",
       "11": "DMG dari Midare Ranzan terhitung sebagai DMG Plunging Attack.",
       "12": "<br/>",
-      "13": "<i>\"Dedaunan dihembus oleh angin kesedihan",
-      "14": "karena masa dewa-dewa dan manusia telah lama berlalu",
+      "13": "<i>\"Dedaunan terembus oleh angin kesedihan,",
+      "14": "masa dewa-dewa dan manusia telah lama berlalu,",
       "15": "bagaikan gunung merah di musim gugur.\"</i>"
     },
     "skillParams": {
@@ -129,8 +129,8 @@
   "passive3": {
     "name": "Cloud Strider",
     "description": {
-      "0": "Mengurangi 20% konsumsi Stamina karakter sendiri saat berlari.",
-      "1": "Efek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama."
+      "0": "Mengurangi 20% konsumsi Stamina Karakter sendiri saat berlari.",
+      "1": "Efek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama persis."
     }
   },
   "constellation1": {

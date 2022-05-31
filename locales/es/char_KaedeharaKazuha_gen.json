@@ -2,12 +2,12 @@
   "burst": {
     "name": "Filo de las diez mil hojas",
     "description": {
-      "0": "Ejecuta la técnica Garyu definitiva para realizar un corte de tormenta que inflige <anemo>Daño Anemo en el AdE</anemo>.",
+      "0": "Ejecuta la técnica Garyuu definitiva para realizar un corte de viento otoñal que inflige <anemo>Daño Anemo en el AdE</anemo>.",
       "1": "El viento generado por la espada creará un área llamada “viento del otoño”, que infligirá regularmente <anemo>Daño Anemo</anemo> a los enemigos dentro de ella.",
       "2": "<br/>",
       "3": "<strong>Cambio elemental</strong>",
-      "4": "Si viento del otoño entra en contacto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> mientras dure, infligirá un bono de Daño Elemental adicional de ese tipo.",
-      "5": "El cambio elemental solo puede ocurrir una vez durante la habilidad.",
+      "4": "Si viento del otoño entra en contacto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> mientras dure, infligirá Daño Elemental adicional de ese tipo.",
+      "5": "Este cambio elemental solo puede ocurrir una vez durante la habilidad.",
       "6": "<br/>",
       "7": "<i>“Veo en un momento la eternidad pasar",
       "8": "Sé al instante que el otoño va a llegar",
@@ -16,7 +16,7 @@
     },
     "slashdmg": "Daño de corte",
     "skillParams": {
-      "0": "Daño de corte de tormenta",
+      "0": "Daño de corte de viento",
       "1": "Daño continuo",
       "2": "Daño Elemental adicional",
       "3": "Duración",
@@ -51,7 +51,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto. Si el Ataque Descendente se activa debido a Vehemencia estremecedora, se convertirá en Ataque Descendente: Contención del caos."
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto. Si el Ataque Descendente se activa tras usar Vehemencia estremecedora, se convertirá en Ataque Descendente: Contención del caos."
       },
       "plunging_midare": {
         "0": "<strong>Ataque Descendente: Contención del caos</strong>",
@@ -81,7 +81,7 @@
     "name": "Vehemencia estremecedora",
     "description": {
       "0": "Usa una técnica secreta para crear un fuerte vendaval que atrae a los enemigos y los objetos hacia la ubicación actual de Kazuha, los lanza por los aires y les inflige <anemo>Daño Anemo</anemo>. Además, Kazuha alzará el vuelo gracias a la corriente de aire generada mediante esta habilidad.",
-      "1": "En los 10 s siguientes de alzar el vuelo tras usar Vehemencia estremecedora, y también al permanecer en el aire gracias al efecto de esta habilidad, si Kazuha realiza un Ataque Descendente, este se convertirá en un poderoso Ataque Descendente: Contención del caos.",
+      "1": "En los 10 s siguientes de permanecer en el aire tras usar Vehemencia estremecedora, si Kazuha realiza un Ataque Descendente, este se convertirá en un poderoso Ataque Descendente: Contención del caos.",
       "2": "<br/>",
       "3": "<strong>Pulsar una vez</strong>",
       "4": "Puede ejecutarse estando en el aire.",
@@ -119,7 +119,7 @@
   "passive1": {
     "name": "Espada de la erosión",
     "description": {
-      "0": "Si al usar <strong>Vehemencia estremecedora</strong>, esta entra en contacto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, el siguiente Ataque Descendente: Contención del caos realizado gracias a <strong>Vehemencia estremecedora</strong> experimentará un cambio elemental e infligirá adicionalmente un 200% de daño del elemento al que cambió. Este daño se considera daño de Ataque Descendente. El cambio elemental solo puede ocurrir una vez por cada efecto de <strong>Vehemencia estremecedora</strong>."
+      "0": "Si al usar <strong>Vehemencia estremecedora</strong>, esta entra en contacto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, el siguiente Ataque Descendente: Contención del caos realizado gracias a <strong>Vehemencia estremecedora</strong> experimentará un cambio elemental e infligirá adicionalmente un 200% de daño del elemento al que cambió. Este daño se considera daño de Ataque Descendente. El cambio elemental solo puede ocurrir una vez por cada uso de <strong>Vehemencia estremecedora</strong>."
     }
   },
   "passive2": {

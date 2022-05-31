@@ -155,7 +155,7 @@
     "name": "Mauling Hound: Fierce as Fire",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Inuzaka All-Round Defense</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -168,7 +168,7 @@
     "name": "Striking Hound: Thunderous Force",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Juuga: Forward Unto Victory</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

@@ -4,7 +4,7 @@
   "description": "ผู้นำตระกูล Kamisato แห่งสำนัก Yashiro ชายหนุ่มผู้มากความสามารถ ซึ่งปฏิบัติต่อผู้คนด้วยความสุภาพอ่อนโยน และมักจะจัดการเรื่องต่าง ๆ อย่างมีชั้นเชิง",
   "constellationName": "Cypressus Custos",
   "auto": {
-    "name": "Marobashi",
+    "name": "Kamisato Art - Marobashi",
     "fields": {
       "normal": {
         "0": "<strong><strong>โจมตีปกติ</strong>",
@@ -142,7 +142,7 @@
     "name": "To Admire the Flowers",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Kamisato Art: Kyouka</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -155,7 +155,7 @@
     "name": "Bansui Ichiro",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Kamisato Art: Suiyuu</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

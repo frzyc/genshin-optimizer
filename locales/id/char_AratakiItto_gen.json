@@ -1,7 +1,7 @@
 {
   "name": "Arataki Itto",
   "title": "Hanamizaka Heroics",
-  "description": "Pemimpin tertinggi dan pertama dari geng Arataki, yang terkenal di Hanamizaka, Kota Inazuma ... Apa katamu? Belum pernah dengar? Mau cari ribut ya?",
+  "description": "Ketua Geng Arataki yang Pertama dan yang Terhebat, dan terkenal di Hanamizaka, Kota Inazuma ... Apa katamu? Belum pernah dengar? Mau cari ribut ya?",
   "constellationName": "Taurus Iracundus",
   "auto": {
     "name": "Fight Club Legend",
@@ -62,7 +62,7 @@
       "8": "<br/>",
       "9": "Ushi dianggap sebagai sebuah <geo>Geo Construct</geo> dan hanya bisa ada 1 Ushi ciptaan Itto sendiri saja di medan pertempuran pada saat bersamaan.",
       "10": "<br/>",
-      "11": "<i>Nama teknik ini berasal dari novel ringan Onibudou (karangan Junkichi). Namun, menggunakan nama \"Onisatsu Zetsugi\" bisa menyebabkan masalah hak cipta. Ditambah lagi, Itto sendiri adalah seorang \"oni\" ....</i>"
+      "11": "<i>Nama teknik ini berasal dari novel ringan Onibudou (karangan Junkichi). Tapi kalau pakai nama \"Onisatsu Zetsugi\", nanti kena masalah hak cipta. Lagian, Itto kan memang oni betulan ....</i>"
     },
     "skillParams": {
       "0": "DMG Skill",
@@ -97,7 +97,7 @@
       "3": "<br/>",
       "4": "Status Raging Oni King akan lenyap saat Arataki Itto meninggalkan medan pertempuran.",
       "5": "<br/>",
-      "6": "<i>Ini adalah jurus pamungkas super kuat milik Itto (kata Itto sendiri). Apa gunanya bagi seorang Arataki Itto untuk meniru benda atau orang lain demi menjadi lebih kuat? Arataki Itto, dialah si raja oni terkuat dan terkejam yang ada di dunia. Dengan kata lain, Arataki Itto cukup meniru dirinya sendiri!</i>",
+      "6": "<i>Jurus pamungkas super kuat Itto (katanya). Apa faedahnya seorang Arataki Itto meniru benda atau orang lain? Di dunia ini, tidak ada yang lebih kejam atau lebih kuat dari Arataki Itto, si raja oni. Gampang, Arataki Itto cukup meniru dirinya sendiri!</i>",
       "7": "<i>Shouta merasa ini keren sekali.</i>"
     },
     "skillParams": {

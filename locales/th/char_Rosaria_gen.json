@@ -128,7 +128,7 @@
     "name": "The Wages of Sin",
     "description": {
       "0": "เพิ่มเลเวลสกิลของ <strong>Ravaging Confession</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation4": {
@@ -142,7 +142,7 @@
     "name": "Last Rites",
     "description": {
       "0": "เพิ่มเลเวลของสกิล <strong>Rites of Termination</strong> ขึ้น 3 ระดับ",
-      "1": "เพิ่มได้มากสุด 15 ระดับ"
+      "1": "เพิ่มได้สูงสุดถึงระดับ 15"
     }
   },
   "constellation6": {

@@ -126,7 +126,7 @@
   "constellation3": {
     "name": "Cloudburst",
     "description": {
-      "0": "Increases the Level of <strong>Spirit Blade: Cloud-parting Star</strong> by 3.",
+      "0": "Increases the Level of <strong>Spirit Blade: Cloud-Parting Star</strong> by 3.",
       "1": "Maximum upgrade level is 15."
     }
   },
@@ -147,7 +147,7 @@
   "constellation6": {
     "name": "Rally of Four Blades",
     "description": {
-      "0": "<strong>Spirit Blade: Cloud-parting Star</strong> deals 15% more DMG to opponents with a lower percentage of their Max HP remaining than Chongyun.",
+      "0": "<strong>Spirit Blade: Cloud-Parting Star</strong> deals 15% more DMG to opponents with a lower percentage of their Max HP remaining than Chongyun.",
       "1": "This skill will also summon 1 additional spirit blade."
     }
   }

@@ -46,7 +46,7 @@
       "2": "La barrière brûlante possède les caractéristiques suivantes :",
       "3": [
         " Elle absorbe les <pyro>DGT Pyro</pyro> avec 250 % d'efficacité.",
-        " L'absorption de DGT restante d'une barrière brûlante existante se cumulera si une autre barrière brûlante est obtenue en même temps, tandis que sa durée sera actualisée."
+        " L'absorption de DGT restante d'une barrière brûlante existante se cumulera si une autre barrière brûlante est obtenue en même temps, tandis que sa durée sera réinitialisée."
       ],
       "4": "<br/>",
       "5": "L'absorption maximale de DGT de la barrière ne dépassera pas un certain pourcentage des PV max de Thomas.",
@@ -84,7 +84,7 @@
       "6": "Une barrière brûlante créée de cette manière est identique à celle créée grâce à la compétence élémentaire « Bénédiction flamboyante » de Thomas, à l'exception de la quantité de DGT qu'elle peut absorber.",
       "7": [
         " Elle absorbe les <pyro>DGT Pyro</pyro> avec 250 % d'efficacité.",
-        " L'absorption de DGT restante d'une barrière brûlante existante se cumulera si une autre barrière brûlante est obtenue en même temps, tandis que sa durée sera actualisée."
+        " L'absorption de DGT restante d'une barrière brûlante existante se cumulera si une autre barrière brûlante est obtenue en même temps, tandis que sa durée sera réinitialisée."
       ],
       "8": "<br/>",
       "9": "L'absorption maximale de DGT de la barrière ne dépassera pas un certain pourcentage des PV max de Thomas.",
@@ -115,7 +115,7 @@
   "passive1": {
     "name": "Superposition d'armures",
     "description": {
-      "0": "Lorsque le personnage déployé obtient ou actualise une <strong>barrière brûlante</strong>, la force de son bouclier augmente de 5 % pendant 6 s.",
+      "0": "Lorsque le personnage déployé obtient ou réinitialise une <strong>barrière brûlante</strong>, la force de son bouclier augmente de 5 % pendant 6 s.",
       "1": "Cet effet peut être déclenché une fois toutes les 0,3 s et cumulé 5 fois maximum."
     }
   },
@@ -167,7 +167,7 @@
   "constellation6": {
     "name": "Cœur brûlant",
     "description": {
-      "0": "Lorsqu'une <strong>barrière brûlante</strong> est obtenue ou actualisée, les DGT des attaques normales, chargées et plongeantes de tous les personnages de l'équipe augmentent de 15 % pendant 6 s."
+      "0": "Lorsqu'une <strong>barrière brûlante</strong> est obtenue ou réinitialisée, les DGT des attaques normales, chargées et plongeantes de tous les personnages de l'équipe augmentent de 15 % pendant 6 s."
     }
   }
 }
