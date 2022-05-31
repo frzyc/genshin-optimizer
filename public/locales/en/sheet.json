@@ -62,6 +62,7 @@
   "incInterRes": "Increase resistance to interruption",
   "charges": "Charges",
   "cooldown": "Cooldown",
+  "addlCharge": "Additional charge",
   "addlCharges": "Additional charges",
   "activeCharField": "Active Character in field",
   "opponentsField": "Opponents in field",

@@ -1,0 +1,12 @@
+{
+  "c2": {
+    "dmg": "Taking All Comers DMG"
+  },
+  "c4": {
+    "condName": "Number of opponents marked by Lifeline"
+  },
+  "c6": {
+    "condName": "In the Mastermind state",
+    "dmg": "Mastermind Breakthrough Barb DMG"
+  }
+}

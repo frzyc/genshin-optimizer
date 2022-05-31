@@ -2,7 +2,7 @@ import { transformativeReactions } from "../KeyMap/StatConstants";
 import { absorbableEle } from "../Types/consts";
 import { objectKeyMap } from "../Util/Util";
 import { input } from "./index";
-import { frac, infoMut, percent, prod, subscript, sum, unit } from "./utils";
+import { frac, infoMut, percent, prod, subscript, sum, one } from "./utils";
 
 // https://github.com/Dimbreath/GenshinData/blob/72c9112a7c5e8e5014f61009a1a2764e266aeab7/ExcelBinOutput/ElementCoeffExcelConfigData.json
 //   or if the permalink is dead,
@@ -20,7 +20,7 @@ const asConst = true as const
 
 const crystallizeMulti1 = subscript(input.lvl, crystallizeLevelMultipliers)
 const crystallizeElemas = prod(40 / 9, frac(input.total.eleMas, 1400))
-const crystallizeHit = infoMut(prod(sum(unit, /** + Crystallize bonus */ crystallizeElemas), crystallizeMulti1), { key: "crystallize", variant: "geo" })
+const crystallizeHit = infoMut(prod(sum(one, /** + Crystallize bonus */ crystallizeElemas), crystallizeMulti1), { key: "crystallize", variant: "geo" })
 
 const transMulti1 = subscript(input.lvl, transformativeReactionLevelMultipliers)
 const transMulti2 = prod(16, frac(input.total.eleMas, 2000))
@@ -29,14 +29,14 @@ const trans = {
     const { multi, variants: [ele] } = transformativeReactions[reaction]
     return infoMut(prod(
       infoMut(prod(multi, transMulti1), { asConst }),
-      sum(unit, transMulti2, input.total[`${reaction}_dmg_`]),
+      sum(one, transMulti2, input.total[`${reaction}_dmg_`]),
       input.enemy[`${ele}_resMulti`]),
       { key: `${reaction}_hit`, variant: reaction })
   }),
   swirl: objectKeyMap(transformativeReactions.swirl.variants, ele => infoMut(
     prod(
       infoMut(prod(transformativeReactions.swirl.multi, transMulti1), { asConst }),
-      sum(unit, transMulti2, input.total.swirl_dmg_),
+      sum(one, transMulti2, input.total.swirl_dmg_),
       input.enemy[`${ele}_resMulti`]),
     { key: `${ele}_swirl_hit`, variant: ele }))
 }
