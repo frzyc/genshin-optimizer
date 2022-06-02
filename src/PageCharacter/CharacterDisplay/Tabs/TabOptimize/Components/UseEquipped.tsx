@@ -96,7 +96,7 @@ export default function UseEquipped({ useEquippedArts, buildSettingsDispatch, di
           {useEquippedArts && <SqBadge><Trans t={t} i18nKey="tabOptimize.useEquipped.usingNum" count={numUseEquippedChar}>Using from <strong>{{ count: numUseEquippedChar }}</strong> characters</Trans></SqBadge>}
         </Box>
       </Button>
-      {useEquippedArts && <Button sx={{ flexShrink: 1 }} color="info" onClick={onOpen}><Settings /></Button>}
+      {useEquippedArts && <Button sx={{ flexShrink: 1 }} color="info" onClick={onOpen} disabled={disabled}><Settings /></Button>}
     </ButtonGroup>
   </Box>
 }
