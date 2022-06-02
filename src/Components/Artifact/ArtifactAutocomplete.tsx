@@ -153,7 +153,7 @@ function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ a
     autoHighlight
     options={options}
     value={{ key: selectedArtifactKey, label: getName(selectedArtifactKey) }}
-    onChange={(_, newValue) => setArtifactKey(newValue ? newValue.key : "")}
+    onChange={(event, newValue, reason) => (event.type !== "change" || reason !== "clear") && setArtifactKey(newValue ? newValue.key : "")}
     getOptionLabel={(option) => option.label ? option.label : defaultText}
     isOptionEqualToValue={(option, value) => option.key === value.key}
     getOptionDisabled={option => option.key ? disable(option.key) : false}

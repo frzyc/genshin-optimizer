@@ -73,13 +73,13 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
 
 
 
-  if (!characterSheets || !characterOptions) return null
+  if (!characterSheets || !characterOptions) return <Skeleton height={50} />
 
   return <Autocomplete
     autoHighlight
     options={characterOptions}
     getOptionLabel={(option) => option.label}
-    onChange={(_, newValue) => onChange(newValue ? newValue.value : "")}
+    onChange={(event, newValue, reason) => (event.type !== "change" || reason !== "clear") && onChange(newValue ? newValue.value : "")}
     isOptionEqualToValue={(option, value) => option.value === value.value}
     getOptionDisabled={option => disable(option.value)}
     value={{ value, label: textForValue(value) }}
