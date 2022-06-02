@@ -187,7 +187,7 @@
         "descending": "По убыванию",
         "sortByFormat": "Сортировать по: {{value}}",
         "loading": "Загрузка...",
-        "rightsDisclaimer": "Genshin Optimizer не сотрудничает и не поддерживается miHoYo.",
+        "rightsDisclaimer": "Genshin Optimizer не сотрудничает и не поддерживается hoYoVerse.",
         "appVersion": "$t(pageTitle) Версия: {{version}}",
         "underConstruction": "В разработке",
         "error": "Ошибка",

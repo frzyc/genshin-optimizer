@@ -1,6 +1,6 @@
 import { Groups } from "@mui/icons-material";
-import { Box, List, ListItem, styled, Typography } from "@mui/material";
-import React, { useContext, useMemo } from 'react';
+import { Box, List, ListItem, Skeleton, styled, Typography } from "@mui/material";
+import React, { Suspense, useContext, useMemo } from 'react';
 import { DataContext } from "../DataContext";
 import { NodeDisplay } from "../Formula/api";
 import KeyMap, { valueString } from "../KeyMap";
@@ -58,7 +58,7 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: 
     const diff = node.value - oldValue
     fieldVal = <span>{valueString(oldValue, node.unit)}{diff > 0.0001 || diff < -0.0001 ? <ColorText color={diff > 0 ? "success" : "error"}> {diff > 0 ? "+" : ""}{valueString(diff, node.unit)}</ColorText> : ""}</span>
   } else fieldVal = valueString(node.value, node.unit)
-  const formulaTextOverlay = !!node.formula && <QuestionTooltip title={<Typography>{fieldFormulaText}</Typography>} />
+  const formulaTextOverlay = !!node.formula && <QuestionTooltip title={<Typography><Suspense fallback={<Skeleton variant="rectangular" width={300} height={30} />}>{fieldFormulaText}</Suspense></Typography>} />
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1 }} component={component} >
     <Typography color={`${node.info.variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{!!isTeamBuff && <Groups />}{icon}{fieldText}{suffix}</Typography>
     <Typography sx={{ display: "flex", gap: 1, alignItems: "center" }} >{fieldVal}{formulaTextOverlay}</Typography>

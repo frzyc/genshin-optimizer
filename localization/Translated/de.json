@@ -156,7 +156,7 @@
         "descending": "Absteigend",
         "sortByFormat": "Sortieren nach: {{value}}",
         "loading": "Laden...",
-        "rightsDisclaimer": "Genshin Optimizer ist kein Teil von miHoYo und wird nicht davon unterstützt.",
+        "rightsDisclaimer": "Genshin Optimizer ist kein Teil von hoYoVerse und wird nicht davon unterstützt.",
         "appVersion": "$t(pageTitle) Version: {{version}}",
         "underConstruction": "In Arbeit",
         "error": "Fehler",

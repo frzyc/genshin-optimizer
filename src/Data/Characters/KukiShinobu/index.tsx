@@ -9,7 +9,7 @@ import { banner, card, talentAssets, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
-const key: CharacterKey = "KukiShinobu"
+const key: CharacterKey = "Fischl"//"KukiShinobu"
 const elementKey: ElementKey = "electro"
 const data_gen = data_gen_src as CharacterData
 const [tr, trm] = trans("char", key)

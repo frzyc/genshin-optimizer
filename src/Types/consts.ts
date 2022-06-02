@@ -99,7 +99,7 @@ export const allCharacterKeys = [
   "Zhongli",
   "KamisatoAyato",
   "Yelan",
-  "KukiShinobu"
+  // "KukiShinobu"
 ] as const
 
 export const allWeaponSwordKeys = [
