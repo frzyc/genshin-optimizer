@@ -19,7 +19,7 @@ type CharacterAutocompleteOption = {
   value: CharacterAutocompleteValue
   label: string
 }
-type CharacterAutocompleteProps = Omit<AutocompleteProps<CharacterAutocompleteOption, false, true, false>, "onChange" | "options" | "renderInput" | "value" | "disableClearable"> & {
+type CharacterAutocompleteProps = Omit<AutocompleteProps<CharacterAutocompleteOption, false, true, false>, "onChange" | "options" | "renderInput" | "value"> & {
   value: CharacterAutocompleteValue
   onChange: (v: any) => void
   filter?: (cs: CharacterSheet, ck: CharacterKey) => boolean
@@ -81,7 +81,7 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
     getOptionLabel={(option) => option.label}
     onChange={(_, newValue) => onChange(newValue ? newValue.value : "")}
     isOptionEqualToValue={(option, value) => option.value === value.value}
-    getOptionDisabled={option => option.value ? disable(option.value) : false}
+    getOptionDisabled={option => disable(option.value)}
     value={{ value, label: textForValue(value) }}
     renderInput={(props) => <SolidColoredTextField
       {...props}
