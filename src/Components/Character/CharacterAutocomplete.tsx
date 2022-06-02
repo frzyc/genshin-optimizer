@@ -78,6 +78,7 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
   return <Autocomplete
     autoHighlight
     options={characterOptions}
+    clearIcon={value ? undefined : ""} // Hide the clear icon if the value is already default
     getOptionLabel={(option) => option.label}
     onChange={(event, newValue, reason) => (event.type !== "change" || reason !== "clear") && onChange(newValue ? newValue.value : "")}
     isOptionEqualToValue={(option, value) => option.value === value.value}

@@ -152,6 +152,7 @@ function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ a
   return <Autocomplete
     autoHighlight
     options={options}
+    clearIcon={selectedArtifactKey ? undefined : ""} // Hide the clear icon if the value is already default
     value={{ key: selectedArtifactKey, label: getName(selectedArtifactKey) }}
     onChange={(event, newValue, reason) => (event.type !== "change" || reason !== "clear") && setArtifactKey(newValue ? newValue.key : "")}
     getOptionLabel={(option) => option.label ? option.label : defaultText}
