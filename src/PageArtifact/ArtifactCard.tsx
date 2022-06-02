@@ -66,10 +66,10 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
   const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
   const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
   const artifactValid = maxEfficiency !== 0
-  const slotName = sheet?.getSlotName(slotKey) || "Unknown Piece Name"
+  const slotName = sheet?.getSlotName(slotKey)
   const slotDesc = sheet?.getSlotDesc(slotKey)
   const slotDescTooltip = slotDesc && <InfoTooltip title={<Box>
-    <Typography variant='h6'>{slotName}</Typography>
+    <Suspense fallback={<Skeleton variant="text" width={100} />}><Typography variant='h6'>{slotName}</Typography></Suspense>
     <Typography>{slotDesc}</Typography>
   </Box>} />
   const setEffects = sheet?.setEffects
@@ -99,7 +99,9 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
             {/* header */}
             <Box component="div" sx={{ display: "flex", alignItems: "center", gap: 1, justifyContent: "space-between", mb: 1 }}>
               <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
-              <Typography noWrap sx={{ textAlign: "center", backgroundColor: "rgba(100,100,100,0.35)", borderRadius: "1em", px: 1 }}>{slotName}</Typography>
+              {!slotName && <Skeleton variant="text" width={100} />}
+              {slotName && <Typography noWrap sx={{ textAlign: "center", backgroundColor: "rgba(100,100,100,0.35)", borderRadius: "1em", px: 1 }}>{slotName}</Typography>}
+              {!slotDescTooltip && <Skeleton width={10}/>}
               {slotDescTooltip}
             </Box>
             <Typography color="text.secondary" variant="body2">
