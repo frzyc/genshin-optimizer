@@ -97,10 +97,10 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
           </IconButton>}
           <Box sx={{ pt: 2, px: 2, position: "relative", zIndex: 1 }}>
             {/* header */}
-            <Box component="div" sx={{ display: "flex", alignItems: "center", gap: 1, justifyContent: "space-between", mb: 1 }}>
+            <Box component="div" sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
               <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
               {!slotName && <Skeleton variant="text" width={100} />}
-              {slotName && <Typography noWrap sx={{ textAlign: "center", backgroundColor: "rgba(100,100,100,0.35)", borderRadius: "1em", px: 1 }}>{slotName}</Typography>}
+              {slotName && <Typography noWrap sx={{ textAlign: "center", backgroundColor: "rgba(100,100,100,0.35)", borderRadius: "1em", px: 1 }}><strong>{slotName}</strong></Typography>}
               {!slotDescTooltip && <Skeleton width={10}/>}
               {slotDescTooltip}
             </Box>
