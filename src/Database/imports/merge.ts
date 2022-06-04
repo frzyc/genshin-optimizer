@@ -4,7 +4,18 @@ import { ICachedWeapon, IWeapon } from "../../Types/weapon";
 import { ArtCharDatabase } from "../Database";
 import { ImportResult } from "../exim";
 
-/** new prevalidated storage -> new validated storage */
+/**
+ * Merge the parsed storage (`result`) of the current DB version with existing
+ * database (`base`) to create a new (parsed) storage. If the data for art/char/weapon
+ * exists in `result`, it will be merged with `base` on best-effort basis. The
+ * information in `result` takes precedence when the data exists in both locations.
+ *
+ * `result` must be using the latest DB format, i.e., it must already be `migrate`d.
+ *
+ * TODO:
+ * This can be easily extended to include options whether to merge
+ * each category (art/char/weapon) or to force the `result` data or `base` data.
+ */
 export function merge(result: ImportResult, base: ArtCharDatabase) {
   const { artifacts: artCounter, weapons: weaponCounter, characters: charCounter, storage } = result
 

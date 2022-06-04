@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Close } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import ReactGA from 'react-ga';
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BackgroundWorker";
@@ -29,9 +28,9 @@ import useCharacterReducer, { characterReducerAction } from '../../../../ReactHo
 import useDBState from '../../../../ReactHooks/useDBState';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
-import { ICachedArtifact } from '../../../../Types/artifact';
+import { ICachedArtifact, MainStatKey } from '../../../../Types/artifact';
 import { ICachedCharacter } from '../../../../Types/character';
-import { ArtifactSetKey, CharacterKey } from '../../../../Types/consts';
+import { ArtifactSetKey, CharacterKey, SlotKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
 import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
@@ -48,7 +47,7 @@ import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
-import { useOptimizeDBState, defThreads } from './DBState';
+import { defThreads, useOptimizeDBState } from './DBState';
 import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
 
 export default function TabBuild() {
@@ -83,7 +82,7 @@ export default function TabBuild() {
     characterDispatch && characterDispatch({ buildSettings: buildSettingsReducer(buildSettings, action) })
     , [characterDispatch, buildSettings])
 
-  const onChangeMainStatKey = useCallback((slotKey, mainStatKey = undefined) => {
+  const onChangeMainStatKey = useCallback((slotKey: SlotKey, mainStatKey?: MainStatKey) => {
     if (mainStatKey === undefined) buildSettingsDispatch({ type: "mainStatKeyReset", slotKey })
     else buildSettingsDispatch({ type: "mainStatKey", slotKey, mainStatKey })
   }, [buildSettingsDispatch])
@@ -280,13 +279,6 @@ export default function TabBuild() {
       setgenerationProgress(wrap.buildCount)
       setgenerationSkipped(wrap.skippedCount)
       setgenerationDuration(totalDuration)
-
-      ReactGA.timing({
-        category: "Build Generation",
-        variable: "timing",
-        value: totalDuration,
-        label: totBuildNumber.toString()
-      })
     }
     setgeneratingBuilds(false)
   }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingsDispatch, setFilters, statFilters, maxWorkers])

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { ExpandMore, Scanner } from "@mui/icons-material"
 import { Box, Button, CardContent, CardHeader, Collapse, Grid, Link, Typography } from "@mui/material"
 import { useState } from "react"
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
 import CardDark from "../Components/Card/CardDark"
@@ -47,7 +47,7 @@ function FeatureCard({ image, title, content, t }) {
 
 const features = [{
   image: art_editor,
-  title: t => <Link component={RouterLink} to="/artifact">
+  title: t => <Link component={RouterLink} to="/artifacts">
     <Trans i18nKey="features.artifact.title" t={t}>
       Artifact Editor & Inventory
     </Trans>
@@ -66,7 +66,7 @@ const features = [{
   </Typography>
 }, {
   image: character_editor,
-  title: t => <Link component={RouterLink} to="/character" >
+  title: t => <Link component={RouterLink} to="/characters" >
     <Trans i18nKey="features.characterEditor.title" t={t}>
       Character & Weapon Editor
     </Trans>
@@ -85,7 +85,7 @@ const features = [{
   </Typography>
 }, {
   image: talent_screen,
-  title: t => <Link component={RouterLink} to="/character" >
+  title: t => <Link component={RouterLink} to="/characters" >
     <Trans i18nKey="features.characterCalc.title" t={t}>
       Character Damage Calculations
     </Trans>
@@ -143,7 +143,7 @@ function ABtn({ href, icon, children }) {
 }
 export default function PageHome() {
   const { t } = useTranslation("page_home")
-  ReactGA.pageview('/home')
+  ReactGA.send({ hitType: "pageview", page: '/home' })
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
     <CardDark>
       <CardContent>

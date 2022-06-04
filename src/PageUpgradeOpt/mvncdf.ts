@@ -1,11 +1,9 @@
 import { erf } from "../Util/MathUtil";
 import { Module } from "wasmpack/assembly.js";
 
-const ZEROCOV = 1e-5
-
 // From a Gaussian mean & variance, get P(x > mu) and E[x | x > mu]
 export function gaussianPE(mean: number, variance: number, x: number) {
-  if (variance < ZEROCOV) {
+  if (variance < 1e-5) {
     if (mean > x) return { p: 1, upAvg: mean - x }
     return { p: 0, upAvg: 0 }
   }
@@ -29,7 +27,7 @@ export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
   let ptot = 1
   let cptot = 1
   for (let i = 0; i < mu.length; ++i) {
-    if (cov[i][i] < ZEROCOV) {
+    if (cov[i][i] < 1e-5) {
       if (mu[i] < x[i]) return { p: 0, upAvg: 0, cp: 0 }
       continue;
     }
@@ -55,43 +53,13 @@ export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
 }
 
 export function mvnPE_good(mu: number[], cov: number[][], x: number[]) {
-  let keepIxs = [0]
-  for (let i = 1; i < mu.length; i++) {
-    if (cov[i][i] < ZEROCOV) {
-      if (mu[i] < x[i]) return { p: 0, upAvg: 0, cp: 0 }
-      continue;
-    }
-
-    keepIxs.push(i)
-  }
-  if (cov[0][0] < ZEROCOV) {
-    if (mu[0] < x[0]) return { p: 0, upAvg: 0, cp: 1 }
-    return { p: 1, cp: 1, upAvg: mu[0] - x[0] }
-  }
-
-  let mvn: any = new Module.MVNHandle(keepIxs.length);
+  let mvn: any = new Module.MVNHandle(mu.length);
   try {
-    let sendx: number[] = []
-    let sendm: number[] = []
-    let sendc: number[] = []
-    keepIxs.forEach(i => {
-      mvn.pushX(x[i])
-      mvn.pushMu(mu[i])
-      keepIxs.forEach(j => mvn.pushCov(cov[i][j]))
-
-      sendx.push(x[i])
-      sendm.push(mu[i])
-      keepIxs.forEach(j => sendc.push(cov[i][j]))
-    })
-
-    // console.log('SENDING', sendx, sendm, sendc)
+    x.forEach(xi => mvn.pushX(xi));
+    mu.forEach(mui => mvn.pushMu(mui));
+    cov.forEach(arr => arr.forEach(c => mvn.pushCov(c)));
 
     mvn.compute()
-    // console.log(x, mu, cov, { p: mvn.p, upAvg: mvn.Eup, cp: mvn.cp })
-    if (!isFinite(mvn.Eup)) {
-      // console.log(mvn.Eup, mvn.p, mvn.cp, cov)
-      // console.log(keepIxs)
-    }
     return { p: mvn.p, upAvg: mvn.Eup, cp: mvn.cp }
   }
   finally {
@@ -123,17 +91,4 @@ export function debugMVN() {
   console.log('cp', mvn2.cp)
   console.log('eup', mvn2.Eup)
   mvn2.delete()
-
-  var mvn3 = new Module.MVNHandle(2);
-  mu = [0, 0]
-  x = [0, 0]
-  cov = [[1, 1], [1, 1]]
-  mu.forEach(m => mvn3.pushMu(m))
-  x.forEach(x => mvn3.pushX(x))
-  cov.forEach(a => a.forEach(c => mvn3.pushCov(c)))
-  mvn3.compute()
-  console.log('that', mvn3.p)
-  console.log('cp', mvn3.cp)
-  console.log('eup', mvn3.Eup)
-  mvn3.delete()
 }

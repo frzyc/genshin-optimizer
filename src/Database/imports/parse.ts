@@ -2,7 +2,7 @@ import Artifact from "../../Data/Artifacts/Artifact";
 import { ascensionMaxLevel } from "../../Data/LevelData";
 import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Build";
 import { initialBuildSettings } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting";
-import { allMainStatKeys, allSubstats, IArtifact, ISubstat } from "../../Types/artifact";
+import { allMainStatKeys, allSubstatKeys, IArtifact, ISubstat } from "../../Types/artifact";
 import { ICharacter } from "../../Types/character";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../../Types/consts";
 import { IWeapon } from "../../Types/weapon";
@@ -51,7 +51,7 @@ function parseSubstats(obj: any): ISubstat[] {
   if (!Array.isArray(obj))
     return new Array(4).map(_ => ({ key: "", value: 0 }))
   const substats = obj.slice(0, 4).map(({ key = undefined, value = undefined }) => {
-    if (!allSubstats.includes(key) || typeof value !== "number" || !isFinite(value))
+    if (!allSubstatKeys.includes(key) || typeof value !== "number" || !isFinite(value))
       return { key: "", value: 0 }
     value = key.endsWith("_") ? Math.round(value * 10) / 10 : Math.round(value)
     return { key, value }

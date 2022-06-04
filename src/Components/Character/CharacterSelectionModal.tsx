@@ -1,6 +1,7 @@
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
-import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, Typography } from "@mui/material";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, Skeleton, TextField, Typography } from "@mui/material";
+import { ChangeEvent, Suspense, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import Assets from "../../Assets/Assets";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
@@ -40,6 +41,7 @@ type CharacterSelectionModalProps = {
 export function CharacterSelectionModal({ show, onHide, onSelect, filter = () => true, newFirst = false }: CharacterSelectionModalProps) {
   const sortKeys = useMemo(() => newFirst ? ["new", ...defaultSortKeys] : defaultSortKeys, [newFirst])
   const { database } = useContext(DatabaseContext)
+  const { t } = useTranslation("page_character")
 
   const [sortBy, setsortBy] = useState(sortKeys[0])
   const [ascending, setascending] = useState(false)
@@ -51,31 +53,42 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
   const [favesDirty, setFavesDirty] = useForceUpdate()
   useEffect(() => database.followAnyChar(setFavesDirty), [database, setFavesDirty])
 
+  const [searchTerm, setSearchTerm] = useState("")
+  const deferredSearchTerm = useDeferredValue(searchTerm)
+
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
   const filterConfigs = useMemo(() => characterSheets && favesDirty && characterFilterConfigs(database, characterSheets), [favesDirty, database, characterSheets])
-  const ownedCharacterKeyList = useMemo(() => characterSheets ? [...new Set(allCharacterKeys)].filter(cKey => filter(database._getChar(cKey), characterSheets[cKey])) : [], [database, characterSheets, filter])
+  const ownedCharacterKeyList = useMemo(() => characterSheets ? allCharacterKeys.filter(cKey => filter(database._getChar(cKey), characterSheets[cKey])) : [], [database, characterSheets, filter])
   const characterKeyList = useMemo(() => (characterSheets && sortConfigs && filterConfigs) ?
     ownedCharacterKeyList
-      .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter, favorite: "yes" }, filterConfigs))
+      .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter, favorite: "yes", name: deferredSearchTerm }, filterConfigs))
       .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
       .concat(
         ownedCharacterKeyList
-          .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter, favorite: "no" }, filterConfigs))
+          .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter, favorite: "no", name: deferredSearchTerm }, filterConfigs))
           .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
       )
     : [],
-    [characterSheets, elementalFilter, weaponFilter, sortBy, ascending, sortConfigs, filterConfigs, ownedCharacterKeyList])
+    [characterSheets, elementalFilter, weaponFilter, sortBy, ascending, sortConfigs, filterConfigs, ownedCharacterKeyList, deferredSearchTerm])
 
   if (!characterSheets) return null
-  return <ModalWrapper open={show} onClose={onHide} >
+  return <ModalWrapper open={show} onClose={onHide} sx={{ "& .MuiContainer-root": { justifyContent: "normal" } }}>
     <CardDark>
       <CardContent sx={{ py: 1 }}>
         <Grid container spacing={1} >
           <Grid item>
             <WeaponToggle sx={{ height: "100%" }} onChange={setweaponFilter} value={weaponFilter} size="small" />
           </Grid>
-          <Grid item flexGrow={1}>
+          <Grid item>
             <ElementToggle sx={{ height: "100%" }} onChange={setelementalFilter} value={elementalFilter} size="small" />
+          </Grid>
+          <Grid item>
+            <TextField
+              autoFocus
+              value={searchTerm}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
+              label={t("characterName")}
+            />
           </Grid>
 
           <Grid item flexGrow={1} />
@@ -93,23 +106,21 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
       <Divider />
       <CardContent><Grid container spacing={1}>
         {characterKeyList.map(characterKey => <Grid item key={characterKey} xs={6} md={4} lg={3} >
-          <CharacterBtn key={characterKey} characterKey={characterKey} onClick={() => { onHide(); onSelect?.(characterKey) }} />
+          <CharacterBtn key={characterKey} characterKey={characterKey} characterSheet={characterSheets[characterKey]} onClick={() => { onHide(); onSelect?.(characterKey) }} />
         </Grid>)}
       </Grid></CardContent>
     </CardDark>
   </ModalWrapper>
 }
 
-function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characterKey: CharacterKey, }) {
-  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
+function CharacterBtn({ onClick, characterKey, characterSheet }: { onClick: () => void, characterKey: CharacterKey, characterSheet: CharacterSheet }) {
   const teamData = useTeamData(characterKey)
   const { database } = useContext(DatabaseContext)
   const characterDispatch = useCharacterReducer(characterKey)
   const favorite = database._getChar(characterKey)?.favorite
   const { target: data } = teamData?.[characterKey] ?? {}
-  if (!characterSheet) return null
   const rarity = characterSheet.rarity
-  return <Box>
+  return <Suspense fallback={<Skeleton variant="rectangular" height={130} />}><Box>
     {favorite !== undefined && <Box display="flex" position="absolute" alignSelf="start" zIndex={1}>
       <IconButton sx={{ p: 0.5 }} onClick={() => characterDispatch({ favorite: !favorite })}>
         {favorite ? <Favorite /> : <FavoriteBorder />}
@@ -135,5 +146,5 @@ function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characte
         </Box>
       </CardLight>
     </CardActionArea >
-  </Box>
+  </Box></Suspense>
 }

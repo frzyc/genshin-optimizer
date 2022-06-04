@@ -104,7 +104,7 @@ const [condC6Path, condC6] = cond(key, "c6")
 const c6_anemo_enemyRes_ = greaterEq(input.constellation, 6, equal(condC6, "takeDmg", datamine.constellation6.res_))
 const c6_ele_enemyRes_arr = Object.fromEntries(absorbableEle.map(ele => [
   `${ele}_enemyRes_`,
-  greaterEq(input.constellation, 6, equal(ele, condBurstAbsorption, constant(datamine.constellation6.res_)))
+  greaterEq(input.constellation, 6, equal(condC6, "takeDmg", equal(ele, condBurstAbsorption, constant(datamine.constellation6.res_))))
 ]))
 
 const dmgFormulas = {
@@ -308,7 +308,7 @@ const sheet: ICharacterSheet = {
         }, {
           text: trm("q"),
         }]
-      }), ct.conditionalTemplate("constellation6", { // C6 Anemo team-display
+      }), ct.conditionalTemplate("constellation6", { // C6 Anemo
         value: condC6,
         path: condC6Path,
         teamBuff: true,
@@ -325,14 +325,16 @@ const sheet: ICharacterSheet = {
           { node: c6_ele_enemyRes_arr[`${eleKey}_enemyRes_`] }
         )),
         canShow: unequal(condBurstAbsorption, undefined,
-          equal(target.charKey, key, 1)
+          equal(condC6, "takeDmg",
+            equal(target.charKey, key, 1)
+          )
         ),
       }), ct.conditionalTemplate("constellation6", { // C6 elemental team-display
         value: condBurstAbsorption,
         path: condBurstAbsorptionPath,
         name: st("eleAbsor"),
         teamBuff: true,
-        canShow: unequal(input.activeCharKey, key, 1),
+        canShow: equal(condC6, "takeDmg", unequal(input.activeCharKey, key, 1)),
         states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
           name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
           fields: [{

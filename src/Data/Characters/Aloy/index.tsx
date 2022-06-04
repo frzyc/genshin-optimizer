@@ -97,7 +97,7 @@ const dmgFormulas = {
   skill: {
     freezeBombDmg: dmgNode("atk", datamine.skill.freezeBombDmg, "skill"),
     chillWaterBomblets: dmgNode("atk", datamine.skill.chillWaterBomblets, "skill"),
-    atkDecrease: subscript(input.total.skillIndex, datamine.skill.atkDecrease, { key: "_" })
+    atkDecrease: subscript(input.total.skillIndex, datamine.skill.atkDecrease)
   },
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
@@ -164,9 +164,7 @@ const sheet: ICharacterSheet = {
         }, {
           node: infoMut(dmgFormulas.skill.chillWaterBomblets, { key: `char_${key}_gen:skill.skillParams.1` }),
         }, {
-          text: tr("skill.skillParams.2"),
-          value: (data) => (datamine.skill.atkDecrease[data.get(input.total.skillIndex).value] * 100).toFixed(1),
-          unit: "%"
+          node: infoMut(dmgFormulas.skill.atkDecrease, { key: `char_${key}_gen:skill.skillParams.2_` }),
         }, {
           text: tr("skill.skillParams.3"),
           value: `${datamine.skill.atkDecreaseDuration}`,

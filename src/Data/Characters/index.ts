@@ -24,6 +24,7 @@ import KamisatoAyato from './KamisatoAyato'
 import Keqing from './Keqing'
 import Klee from './Klee'
 import KujouSara from './KujouSara'
+// import KukiShinobu from './KukiShinobu'
 import Lisa from './Lisa'
 import Mona from './Mona'
 import Ningguang from './Ningguang'
@@ -46,6 +47,7 @@ import Xingqiu from './Xingqiu'
 import Xinyan from './Xinyan'
 import YaeMiko from './YaeMiko'
 import Yanfei from './Yanfei'
+import Yelan from './Yelan'
 import Yoimiya from './Yoimiya'
 import YunJin from './YunJin'
 import Zhongli from './Zhongli'
@@ -74,6 +76,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Keqing,
   Klee,
   KujouSara,
+  // KukiShinobu,
   Lisa,
   Mona,
   Ningguang,
@@ -96,6 +99,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Xinyan,
   YaeMiko,
   Yanfei,
+  Yelan,
   Yoimiya,
   YunJin,
   Zhongli

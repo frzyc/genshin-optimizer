@@ -2,7 +2,7 @@ import { allEleEnemyResKeys } from "../KeyMap"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
 import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
-import { constant, equalStr, frac, infoMut, lookup, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringRead, sum, unit } from "./utils"
+import { constant, equalStr, frac, infoMut, lookup, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringRead, sum, one } from "./utils"
 
 const asConst = true as const, pivot = true as const
 
@@ -14,7 +14,7 @@ const allTransformative = ["overloaded", "shattered", "electrocharged", "superco
 const allAmplifying = ["vaporize", "melt"] as const
 const allMisc = [
   "stamina", "staminaDec_", "staminaSprintDec_", "staminaGlidingDec_", "staminaChargedDec_",
-  "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_", "dmgRed_"
+  "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_", "dmgRed_", "healInc"
 ] as const
 
 const allModStats = [
@@ -138,7 +138,7 @@ total.critRate_.info!.prefix = "uncapped"
 // Nodes that are not used anywhere else but `common` below
 
 /** Base Amplifying Bonus */
-const baseAmpBonus = sum(unit, prod(25 / 9, frac(total.eleMas, 1400)))
+const baseAmpBonus = sum(one, prod(25 / 9, frac(total.eleMas, 1400)))
 /** Effective reaction, taking into account the hit's element */
 export const effectiveReaction = lookup(hit.ele, {
   pyro: lookup(hit.reaction, { pyro_vaporize: constant("vaporize"), pyro_melt: constant("melt") }, undefined),
@@ -154,7 +154,7 @@ const common: Data = {
       const operands: NumNode[] = []
       switch (key) {
         case "atk": case "def": case "hp":
-          operands.push(prod(base[key], sum(unit, premod[`${key}_`])))
+          operands.push(prod(base[key], sum(one, premod[`${key}_`])))
           break
         case "critRate_":
           operands.push(percent(0.05, { key, prefix: "default" }),
@@ -179,7 +179,7 @@ const common: Data = {
     ...objectKeyValueMap(allTalents, talent => [`${talent}Index`, sum(total[talent], -1)]),
     stamina: sum(constant(100, { key: "stamina", prefix: "default" }), customBonus.stamina),
 
-    cappedCritRate: max(min(total.critRate_, unit), naught),
+    cappedCritRate: max(min(total.critRate_, one), naught),
   },
 
   hit: {
@@ -195,11 +195,11 @@ const common: Data = {
     ),
     dmg: prod(
       sum(hit.base, hit.dmgInc),
-      sum(unit, hit.dmgBonus),
+      sum(one, hit.dmgBonus),
       lookup(hit.hitMode, {
-        hit: unit,
-        critHit: sum(unit, total.critDMG_),
-        avgHit: sum(unit, prod(total.cappedCritRate, total.critDMG_)),
+        hit: one,
+        critHit: sum(one, total.critDMG_),
+        avgHit: sum(one, prod(total.cappedCritRate, total.critDMG_)),
       }, NaN),
       enemy.def,
       lookup(hit.ele,
@@ -219,7 +219,7 @@ const common: Data = {
 
   enemy: {
     // TODO: shred cap of 90%
-    def: frac(sum(input.lvl, 100), prod(sum(enemy.level, 100), sum(unit, prod(-1, enemy.defRed)), sum(unit, prod(-1, enemy.defIgn)))),
+    def: frac(sum(input.lvl, 100), prod(sum(enemy.level, 100), sum(one, prod(-1, enemy.defRed)), sum(one, prod(-1, enemy.defIgn)))),
     defRed: total.enemyDefRed_,
     ...objectKeyValueMap(allElements, ele =>
       [`${ele}_resMulti`, res(infoMut(sum(enemy[`${ele}_res_`], total[`${ele}_enemyRes_`]), { key: `${ele}_res_`, variant: ele }))]),

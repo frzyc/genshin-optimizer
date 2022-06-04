@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Replay } from '@mui/icons-material';
 import { Alert, Box, Button, CardContent, Grid, Link, Pagination, Skeleton, ToggleButton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import CardDark from '../Components/Card/CardDark';
@@ -17,7 +17,7 @@ import KeyMap from '../KeyMap';
 import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
-import { allSubstats, SubstatKey } from '../Types/artifact';
+import { allSubstatKeys, SubstatKey } from '../Types/artifact';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
@@ -36,7 +36,7 @@ const numToShowMap = { xs: 10 - 1, sm: 12 - 1, md: 24 - 1, lg: 24 - 1, xl: 24 - 
 function initialState() {
   return {
     ...initialArtifactSortFilter(),
-    effFilter: [...allSubstats] as SubstatKey[],
+    effFilter: [...allSubstatKeys] as SubstatKey[],
     probabilityFilter: {} as Dict<SubstatKey, number>,
   }
 }
@@ -68,7 +68,7 @@ export default function PageArtifact() {
   const deleteArtifact = useCallback((id: string) => database.removeArt(id), [database])
 
   useEffect(() => {
-    ReactGA.pageview('/artifact')
+    ReactGA.send({ hitType: "pageview", page: '/artifact' })
     return database.followAnyArt(forceUpdate)
   }, [database, forceUpdate])
 
@@ -136,7 +136,7 @@ export default function PageArtifact() {
         <Grid container sx={{ mb: 1 }}>
           <Grid item flexGrow={1}><span><Trans t={t} i18nKey="efficiencyFilter.title">Substats to use in efficiency calculation</Trans></span></Grid>
           <Grid item>
-            <Button size="small" color="error" onClick={() => stateDispatch({ effFilter: [...allSubstats] })} startIcon={<Replay />}><Trans t={t} i18nKey="ui:reset" /></Button>
+            <Button size="small" color="error" onClick={() => stateDispatch({ effFilter: [...allSubstatKeys] })} startIcon={<Replay />}><Trans t={t} i18nKey="ui:reset" /></Button>
           </Grid>
         </Grid>
         <EfficiencyFilter selectedKeys={effFilter} onChange={n => stateDispatch({ effFilter: n })} />
@@ -231,8 +231,8 @@ function ShowingArt({ numShowing, total, t }) {
 }
 
 function EfficiencyFilter({ selectedKeys, onChange }) {
-  const keys1 = allSubstats.slice(0, 6)
-  const keys2 = allSubstats.slice(6)
+  const keys1 = allSubstatKeys.slice(0, 6)
+  const keys2 = allSubstatKeys.slice(6)
   const selKeys1 = selectedKeys.filter(k => keys1.includes(k))
   const selKeys2 = selectedKeys.filter(k => keys2.includes(k))
   return <Grid container spacing={1}>

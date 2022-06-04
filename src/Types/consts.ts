@@ -97,7 +97,9 @@ export const allCharacterKeys = [
   "YaeMiko",
   "YunJin",
   "Zhongli",
-  "KamisatoAyato"
+  "KamisatoAyato",
+  "Yelan",
+  // "KukiShinobu"
 ] as const
 
 export const allWeaponSwordKeys = [
@@ -193,9 +195,11 @@ export type WeaponPoleArmKey = typeof allWeaponPolearmKeys[number]
 export const allWeaponBowKeys = [
   "AlleyHunter",
   "AmosBow",
+  "AquaSimulacra",
   "BlackcliffWarbow",
   "CompoundBow",
   "ElegyForTheEnd",
+  "FadingTwilight",
   "FavoniusWarbow",
   "Hamayumi",
   "HuntersBow",

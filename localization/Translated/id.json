@@ -190,7 +190,7 @@
         "descending": "Menurun",
         "sortByFormat": "Urut Berdasarkan: {{value}}",
         "loading": "Memuat...",
-        "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan miHoYo.",
+        "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan hoYoVerse.",
         "appVersion": "$t(halamanJudul) Versi: <1>{{version}}</1>",
         "underConstruction": "Sedang Dibangun",
         "error": "Error",

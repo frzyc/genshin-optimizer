@@ -76,7 +76,7 @@ export async function getDisplayHeader(data: UIData, sectionKey: string): Promis
  */
 export function getDisplaySections(data: UIData,): [string, DisplaySub<NodeDisplay>][] {
   const display = data.getDisplay()
-  const sections = Object.entries(display)
+  const sections = Object.entries(display).filter(([key, nodes]) => !Object.values(nodes).every(x => x.isEmpty))
   const basic = sections.filter(([k]) => k === "basic")
   const reaction = sections.filter(([k]) => k === "reaction")
   const weapon = sections.filter(([k]) => k.startsWith("weapon"))

@@ -1,4 +1,4 @@
-import { Box, CardActionArea, CardContent, Divider, Grid, MenuItem, Typography, useMediaQuery } from "@mui/material";
+import { Box, CardActionArea, CardContent, Grid, MenuItem, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
 import React, { useCallback, useContext, useMemo } from 'react';
 import CardDark from "../../../Components/Card/CardDark";
@@ -133,15 +133,10 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
       talent[tKey] = newTalentLevelKey
       characterDispatch({ talent })
     }
-    header = <>
-      <CardContent sx={{ py: 1 }}>
-        <DropdownButton fullWidth title={`Talent Lv. ${level}`} color={levelBoost ? "info" : "primary"}>
-          {range(1, talentLimits[asc]).map(i =>
-            <MenuItem key={i} selected={talent[talentKey] === (i)} disabled={talent[talentKey] === (i)} onClick={() => setTalentLevel(talentKey, i)}>Talent Lv. {i + levelBoost}</MenuItem>)}
-        </DropdownButton>
-      </CardContent>
-      <Divider />
-    </>
+    header = <DropdownButton fullWidth title={`Talent Lv. ${level}`} color={levelBoost ? "info" : "primary"} sx={{ borderRadius: 0 }}>
+      {range(1, talentLimits[asc]).map(i =>
+        <MenuItem key={i} selected={talent[talentKey] === (i)} disabled={talent[talentKey] === (i)} onClick={() => setTalentLevel(talentKey, i)}>Talent Lv. {i + levelBoost}</MenuItem>)}
+    </DropdownButton>
   }
   const talentSheet = characterSheet.getTalentOfKey(talentKey, data.get(input.charEle).value as ElementKey | undefined)
 

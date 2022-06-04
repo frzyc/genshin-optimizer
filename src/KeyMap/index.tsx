@@ -32,6 +32,7 @@ const statMap = {
   dmgRed_: "Damage Reduction",
 
   heal_multi: "Heal multiplier",
+  healInc: "Heal Increase",
 
   // Reaction
   transformative_level_multi: "Reaction Level Multiplier",
@@ -161,7 +162,9 @@ export default class KeyMap {
     const name = KeyMap.getStr(key)
     if (name) return <span>{name}</span>
     if (key.includes(":")) {
-      const [ns, key18] = key.split(":")
+      let [ns, key18] = key.split(":")
+      if (ns.endsWith("_gen") && key18.endsWith("_"))
+        key18 = key18.slice(0, -1);
       return <Translate ns={ns} key18={key18} />
     }
     return <span>{key}</span>

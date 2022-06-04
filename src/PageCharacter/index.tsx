@@ -1,14 +1,15 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Calculate, Checkroom, DeleteForever, FactCheck, Groups } from '@mui/icons-material';
-import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, Typography } from '@mui/material';
+import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, TextField, Typography } from '@mui/material';
 import i18next from 'i18next';
-import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import ReactGA from 'react-ga';
+import React, { ChangeEvent, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
+import CharacterCard from '../Components/Character/CharacterCard';
 import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
 import SortByButton from '../Components/SortByButton';
 import ElementToggle from '../Components/ToggleButton/ElementToggle';
@@ -18,13 +19,12 @@ import { DatabaseContext } from '../Database/Database';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
+import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
-import { CharacterKey, ElementKey, WeaponTypeKey } from '../Types/consts';
+import { allCharacterKeys, CharacterKey, ElementKey, WeaponTypeKey } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
-import CharacterCard from '../Components/Character/CharacterCard';
 import { clamp } from '../Util/Util';
-import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 4 - 1, sm: 4 - 1, md: 6 - 1, lg: 8 - 1, xl: 8 - 1 }
@@ -39,9 +39,12 @@ function initialState() {
 }
 
 export default function PageCharacter(props) {
-  const { t } = useTranslation("page_character")
+  // TODO: #412 We shouldn't be loading all the character translation files. Should have a separate lookup file for character name.
+  const { t } = useTranslation(["page_character", ...allCharacterKeys.map(k => `char_${k}_gen`)])
   const { database } = useContext(DatabaseContext)
-  const [state, stateDisplatch] = useDBState("CharacterDisplay", initialState)
+  const [state, stateDispatch] = useDBState("CharacterDisplay", initialState)
+  const [searchTerm, setSearchTerm] = useState("")
+  const deferredSearchTerm = useDeferredValue(searchTerm)
   const [pageIdex, setpageIdex] = useState(0)
   const invScrollRef = useRef<HTMLDivElement>(null)
   const setPage = useCallback(
@@ -59,7 +62,7 @@ export default function PageCharacter(props) {
   const [dbDirty, forceUpdate] = useForceUpdate()
   //set follow, should run only once
   useEffect(() => {
-    ReactGA.pageview('/character')
+    ReactGA.send({ hitType: "pageview", page: '/characters' })
     return database.followAnyChar(forceUpdate)
   }, [forceUpdate, database])
 
@@ -88,15 +91,15 @@ export default function PageCharacter(props) {
     const totalCharNum = chars.length
     if (!sortConfigs || !filterConfigs) return { charKeyList: [], totalCharNum }
     const charKeyList = database._getCharKeys()
-      .filter(filterFunction({ element, weaponType, favorite: "yes" }, filterConfigs))
+      .filter(filterFunction({ element, weaponType, favorite: "yes", name: deferredSearchTerm }, filterConfigs))
       .sort(sortFunction(state.sortType, state.ascending, sortConfigs))
       .concat(
         database._getCharKeys()
-          .filter(filterFunction({ element, weaponType, favorite: "no" }, filterConfigs))
+          .filter(filterFunction({ element, weaponType, favorite: "no", name: deferredSearchTerm }, filterConfigs))
           .sort(sortFunction(state.sortType, state.ascending, sortConfigs)))
     return dbDirty && { charKeyList, totalCharNum }
   },
-    [dbDirty, database, sortConfigs, state.sortType, state.ascending, element, filterConfigs, weaponType])
+    [dbDirty, database, sortConfigs, state.sortType, state.ascending, element, filterConfigs, weaponType, deferredSearchTerm])
 
   const { charKeyListToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(charKeyList.length / maxNumToDisplay)
@@ -110,15 +113,23 @@ export default function PageCharacter(props) {
     <CardDark ref={invScrollRef} ><CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
       <Grid container spacing={1}>
         <Grid item>
-          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => stateDisplatch({ weaponType })} value={state.weaponType} size="small" />
+          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => stateDispatch({ weaponType })} value={state.weaponType} size="small" />
+        </Grid>
+        <Grid item>
+          <ElementToggle sx={{ height: "100%" }} onChange={element => stateDispatch({ element })} value={state.element} size="small" />
         </Grid>
         <Grid item flexGrow={1}>
-          <ElementToggle sx={{ height: "100%" }} onChange={element => stateDisplatch({ element })} value={state.element} size="small" />
+          <TextField
+            autoFocus
+            value={searchTerm}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
+            label={t("characterName")}
+          />
         </Grid>
         <Grid item >
           <SortByButton sx={{ height: "100%" }}
-            sortKeys={characterSortKeys} value={state.sortType} onChange={sortType => stateDisplatch({ sortType })}
-            ascending={state.ascending} onChangeAsc={ascending => stateDisplatch({ ascending })} />
+            sortKeys={characterSortKeys} value={state.sortType} onChange={sortType => stateDispatch({ sortType })}
+            ascending={state.ascending} onChangeAsc={ascending => stateDispatch({ ascending })} />
         </Grid>
       </Grid>
       <Grid container alignItems="flex-end">
@@ -167,7 +178,7 @@ export default function PageCharacter(props) {
                     <Checkroom />
                   </IconButton>
                 </BootstrapTooltip>
-                <BootstrapTooltip placement="top" title={<Typography>{t("tabs.buffs")}</Typography>}>
+                <BootstrapTooltip placement="top" title={<Typography>{t("tabs.teambuffs")}</Typography>}>
                   <IconButton onClick={() => navigate(`${charKey}/teambuffs`)} >
                     <Groups />
                   </IconButton>

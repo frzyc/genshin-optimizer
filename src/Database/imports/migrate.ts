@@ -8,9 +8,14 @@ import { getDBVersion, setDBVersion } from "../utils"
 // 2. Call the added `migrateV<x>ToV<x+1>` from `migrate`
 // 3. Update `currentDBVersion`
 
-export const currentDBVersion = 15
+export const currentDBVersion = 16
 
-/** old storage -> internal new (prevalidated) storage */
+/**
+ * Migrate parsed data in `storage` in-place to a parsed data of the latest supported DB version.
+ *
+ * **CAUTION**
+ * Throw an error if `storage` uses unsupported DB version.
+ */
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
   if (version === 0) {
@@ -28,7 +33,7 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 13) { migrateV12ToV13(storage); setDBVersion(storage, 13) }
   if (version < 14) { migrateV13ToV14(storage); setDBVersion(storage, 14) }
   if (version < 15) { migrateV14ToV15(storage); setDBVersion(storage, 15) }
-
+  if (version < 16) { migrateV15ToV16(storage); setDBVersion(storage, 16) }
   if (version > currentDBVersion) throw new Error(`Database version ${version} is not supported`)
 
   return { migrated: version < getDBVersion(storage) }
@@ -178,7 +183,7 @@ function migrateV13ToV14(storage: DBStorage) {
     }
   }
 }
-// 8.0.0 - Present
+// 8.0.0 - 8.5.3
 function migrateV14ToV15(storage: DBStorage) {
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {
@@ -187,5 +192,13 @@ function migrateV14ToV15(storage: DBStorage) {
       delete character.bonusStats
       storage.set(key, character)
     }
+  }
+}
+// 8.6.0 - Present
+function migrateV15ToV16(storage: DBStorage) {
+  const state_ArtifactDisplay = storage.get("state_ArtifactDisplay")
+  if (state_ArtifactDisplay?.filterOption) {
+    delete state_ArtifactDisplay.filterOption.excluded
+    storage.set("state_ArtifactDisplay", state_ArtifactDisplay)
   }
 }

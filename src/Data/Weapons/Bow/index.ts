@@ -1,10 +1,13 @@
 import { WeaponBowKey } from '../../../Types/consts'
 import WeaponSheet from '../WeaponSheet'
+
 import AlleyHunter from './AlleyHunter'
 import AmosBow from "./AmosBow"
+import AquaSimulacra from "./AquaSimulacra"
 import BlackcliffWarbow from './BlackcliffWarbow'
 import CompoundBow from './CompoundBow'
 import ElegyForTheEnd from "./ElegyForTheEnd"
+import FadingTwilight from "./FadingTwilight"
 import FavoniusWarbow from './FavoniusWarbow'
 import Hamayumi from './Hamayumi'
 import HuntersBow from "./HuntersBow"
@@ -27,12 +30,15 @@ import TheStringless from './TheStringless'
 import TheViridescentHunt from './TheViridescentHunt'
 import ThunderingPulse from './ThunderingPulse'
 import WindblumeOde from './WindblumeOde'
+
 const bow: Record<WeaponBowKey, WeaponSheet> = {
   AlleyHunter,
   AmosBow,
+  AquaSimulacra,
   BlackcliffWarbow,
   CompoundBow,
   ElegyForTheEnd,
+  FadingTwilight,
   FavoniusWarbow,
   Hamayumi,
   HuntersBow,

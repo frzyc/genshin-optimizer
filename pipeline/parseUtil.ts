@@ -99,8 +99,12 @@ export const parsingFunctions: { [key: string]: (lang: Language, string: string,
         const [normal, charged, riptide, plunging] = strings
         return { normal, charged, riptide, plunging } as any
       }
+      if (charkey === "Yelan") {
+        const [normal, charged, breakthrough, plunging] = strings
+        return { normal, charged, breakthrough, plunging } as any
+      }
     }
-    throw `parsing fields error: ${string}`
+    throw `parsing fields error[${keys}](${lang}): ${string}`
   },
   paragraph: (lang, string) => paragraph(string),
   skillParam: (lang, string) => {
