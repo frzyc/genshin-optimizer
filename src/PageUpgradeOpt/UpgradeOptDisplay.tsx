@@ -19,7 +19,7 @@ import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
-import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton';
+import CharacterDropdownButton from './stopBreakingMe';
 import StatFilterCard from '../Components/StatFilterCard';
 import { DatabaseContext } from '../Database/Database';
 import { DataContext, dataContextObj } from '../DataContext';
