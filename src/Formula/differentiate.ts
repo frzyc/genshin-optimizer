@@ -12,7 +12,7 @@ export function zero_deriv(funct: NumNode, binding: (readNode: ReadNode<number>)
       case "read":
         if (f.type !== "number" || (f.accu && f.accu !== "add"))
           throw new Error(`Unsupported [${operation}] node in zero_deriv`)
-        if (binding(f) == diff) ret = false
+        if (binding(f) === diff) ret = false
     }
   })
   return ret
@@ -25,7 +25,7 @@ export function ddx(f: NumNode, binding: (readNode: ReadNode<number>) => string,
       if (f.type !== "number" || (f.accu && f.accu !== "add"))
         throw new Error(`Unsupported [${operation}] node in d/dx`)
       const name = binding(f)
-      if (name == diff) return constant(1)
+      if (name === diff) return constant(1)
       return constant(0)
     case "const": return constant(0)
     case "res":
@@ -50,13 +50,15 @@ export function ddx(f: NumNode, binding: (readNode: ReadNode<number>) => string,
         case 1: return ddx(f.operands[0], binding, diff)
         case 2:
           const [arg1, arg2] = f.operands
-          if (operation == "min") return cmp(arg1, arg2, ddx(arg2, binding, diff), ddx(arg1, binding, diff))
-          if (operation == "max") return cmp(arg1, arg2, ddx(arg1, binding, diff), ddx(arg2, binding, diff))
+          if (operation === "min") return cmp(arg1, arg2, ddx(arg2, binding, diff), ddx(arg1, binding, diff))
+          if (operation === "max") return cmp(arg1, arg2, ddx(arg1, binding, diff), ddx(arg2, binding, diff))
           assertUnreachable(operation)
+          break
         default:
           throw new Error(`[${operation}] node operates on only 1 or 2 arguments. ${f}`)
       }
 
+    break
     case "threshold":
       const [value, threshold, pass, fail] = f.operands
       if (!zero_deriv(value, binding, diff) || !zero_deriv(threshold, binding, diff))

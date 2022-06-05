@@ -1,6 +1,6 @@
 
-<a href="https://frzyc.github.io/genshin-optimizer"><img alt="Website-link" src="https://img.shields.io/website?logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC%2FxhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACEFBMVEUbJjsbJjsbJjsbJjsbJjsaJToYIzgXIzgZJDoXIjgZJDksNkpZYXB6gI2HjZh9g49fZ3UyPE82QFJianh%2FhZF4f4tWXm0qNEhfZ3bMztP3%2BPj%2F%2F%2F%2F6%2BvrW2Nxwd4QfKT4aJTsjLkLd3uH7%2B%2Fv29vfIys9bY3JeZnTr7O719vd0e4gdKD2Mkpz8%2FPzp6u1cY3MrNUnKzNHe3%2BI6Q1UYIzlPWGju7%2FEsNklaYnH5%2Bfqjp7Bka3mAhpLj5ef%2B%2Fv%2BYnabm5%2BmCiJRja3mfpK34%2BPn4%2BfldZXSDiZTDxssmMEQWIjd%2BhJChpq4jLULCxcuEipUXIje%2BwceIjpmZnqidoapVXm339%2Fi0uL%2FT1dkYJDmWm6Weo6yXnKZSWmr19va4u8IeKT5XX26QlqClqbL19fZXX28wOk1sc4FxeIUtN0ocJzxFTl%2BssLixtLywtLuztr2CiJMdKDwsN0oVITZdZXP8%2Ff27vsRcZHP6%2BvsWITZWXm7m6Orx8vP%2B%2Fv4mMUU%2FSFpQWWman6icoKpVXW329%2Fi1uL%2BVmqSgpK3Aw8kkLkJ6gY2ip68iLUG8v8WJj5r3%2BPmcoapeZnV5gIzg4eR2fYnMz9M7RVfw8fJhaXju7%2FCRlqD9%2Ff3s7e9ka3rQ09f7%2B%2Fza3N91fIggKj8lL0SFi5bg4uVgZ3YvOUyAh5KOlJ5kbHo1P1I6Q1Zob32GjJeOk57Yu9OOAAAABHRSTlMRiev6VTBHSgAAAAFiS0dEGwJg1KQAAAAHdElNRQflCBsRHiYmncirAAACC0lEQVQ4y2NgYGRiwQmYGBkYGJmBDFY2diBkhYlzsLOzcYK5zIwMIP1c3Dy8fPwCghxgaVZWIWERPlExcS6QGQwgIQlJKWlpaRlZOXkFoLyiiJIykKuiqgaSAyrgUteQhgBNLaCx2jq6UK6ePhdIAauBIYgHFjUy5jIxNYNzDc1ZgQrYLIDmW1pZ29hKS9tpsbPaA2UcHJ2cXaSlXd3YQArcgSIenl5e3kDah9XXD0j5B3gpBgLpIJACrmAgK4SDhS00TFo6XFs8AqjTgp0lMgoo7AyygjUayIrhYmGLjZOWjk%2FglpWWDktkY2FLAgons6AoSIErSGVjMcFQwJqWLpcRypKJUwELK2dAgAkrTgVZ2iCQhVNBQHZObl5efkFhEQ4FxSWloLArw%2BnI4vIKkALcvqisqq6pxafApK5eLgxvOLAWNxAIKIIhSZIClMjiagSymoAKmlukpVsR0d0GFG4Hpyh%2FIKujM6CyC%2BjNblZFDyC3wCugpxdI94FTVDkwcfVPmDhpMlBkCjsrKP3Y8qs3Aj1tORGkgLVoKigMK4D6pSdP4zKJnQ5k1ILDdWomKzjZz5gJTedhosBknzBrNpQ7RwKc7FlYsubOswTy5y9YuAiogHXxkqWgRO8ydRk444Cz3vKJK1b6r1rNqgDOeixr1q5bL6KWCcl68MzLxs4By7xcIB4s8xLK%2FgBwFKIDu%2FzCbAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0wOC0yN1QxNzozMDoyMyswMDowMDGD68oAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMDgtMjdUMTc6MzA6MjMrMDA6MDBA3lN2AAAAAElFTkSuQmCC&style=for-the-badge&url=https%3A%2F%2Ffrzyc.github.io%2Fgenshin-optimizer"></a> 
-<a href="https://discord.gg/CXUbQXyfUs"><img alt="Discord" src="https://img.shields.io/discord/785153694478893126?color=%232a364d&label=DISCORD&logo=discord&style=for-the-badge"></a> 
+<a href="https://frzyc.github.io/genshin-optimizer"><img alt="Website-link" src="https://img.shields.io/website?logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC%2FxhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACEFBMVEUbJjsbJjsbJjsbJjsbJjsaJToYIzgXIzgZJDoXIjgZJDksNkpZYXB6gI2HjZh9g49fZ3UyPE82QFJianh%2FhZF4f4tWXm0qNEhfZ3bMztP3%2BPj%2F%2F%2F%2F6%2BvrW2Nxwd4QfKT4aJTsjLkLd3uH7%2B%2Fv29vfIys9bY3JeZnTr7O719vd0e4gdKD2Mkpz8%2FPzp6u1cY3MrNUnKzNHe3%2BI6Q1UYIzlPWGju7%2FEsNklaYnH5%2Bfqjp7Bka3mAhpLj5ef%2B%2Fv%2BYnabm5%2BmCiJRja3mfpK34%2BPn4%2BfldZXSDiZTDxssmMEQWIjd%2BhJChpq4jLULCxcuEipUXIje%2BwceIjpmZnqidoapVXm339%2Fi0uL%2FT1dkYJDmWm6Weo6yXnKZSWmr19va4u8IeKT5XX26QlqClqbL19fZXX28wOk1sc4FxeIUtN0ocJzxFTl%2BssLixtLywtLuztr2CiJMdKDwsN0oVITZdZXP8%2Ff27vsRcZHP6%2BvsWITZWXm7m6Orx8vP%2B%2Fv4mMUU%2FSFpQWWman6icoKpVXW329%2Fi1uL%2BVmqSgpK3Aw8kkLkJ6gY2ip68iLUG8v8WJj5r3%2BPmcoapeZnV5gIzg4eR2fYnMz9M7RVfw8fJhaXju7%2FCRlqD9%2Ff3s7e9ka3rQ09f7%2B%2Fza3N91fIggKj8lL0SFi5bg4uVgZ3YvOUyAh5KOlJ5kbHo1P1I6Q1Zob32GjJeOk57Yu9OOAAAABHRSTlMRiev6VTBHSgAAAAFiS0dEGwJg1KQAAAAHdElNRQflCBsRHiYmncirAAACC0lEQVQ4y2NgYGRiwQmYGBkYGJmBDFY2diBkhYlzsLOzcYK5zIwMIP1c3Dy8fPwCghxgaVZWIWERPlExcS6QGQwgIQlJKWlpaRlZOXkFoLyiiJIykKuiqgaSAyrgUteQhgBNLaCx2jq6UK6ePhdIAauBIYgHFjUy5jIxNYNzDc1ZgQrYLIDmW1pZ29hKS9tpsbPaA2UcHJ2cXaSlXd3YQArcgSIenl5e3kDah9XXD0j5B3gpBgLpIJACrmAgK4SDhS00TFo6XFs8AqjTgp0lMgoo7AyygjUayIrhYmGLjZOWjk%2FglpWWDktkY2FLAgons6AoSIErSGVjMcFQwJqWLpcRypKJUwELK2dAgAkrTgVZ2iCQhVNBQHZObl5efkFhEQ4FxSWloLArw%2BnI4vIKkALcvqisqq6pxafApK5eLgxvOLAWNxAIKIIhSZIClMjiagSymoAKmlukpVsR0d0GFG4Hpyh%2FIKujM6CyC%2BjNblZFDyC3wCugpxdI94FTVDkwcfVPmDhpMlBkCjsrKP3Y8qs3Aj1tORGkgLVoKigMK4D6pSdP4zKJnQ5k1ILDdWomKzjZz5gJTedhosBknzBrNpQ7RwKc7FlYsubOswTy5y9YuAiogHXxkqWgRO8ydRk444Cz3vKJK1b6r1rNqgDOeixr1q5bL6KWCcl68MzLxs4By7xcIB4s8xLK%2FgBwFKIDu%2FzCbAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0wOC0yN1QxNzozMDoyMyswMDowMDGD68oAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMDgtMjdUMTc6MzA6MjMrMDA6MDBA3lN2AAAAAElFTkSuQmCC&style=for-the-badge&url=https%3A%2F%2Ffrzyc.github.io%2Fgenshin-optimizer"></a>
+<a href="https://discord.gg/CXUbQXyfUs"><img alt="Discord" src="https://img.shields.io/discord/785153694478893126?color=%232a364d&label=DISCORD&logo=discord&style=for-the-badge"></a>
 <a href="https://github.com/frzyc/genshin-optimizer/blob/master/package.json"><img alt="GitHub" src="https://img.shields.io/github/package-json/v/frzyc/genshin-optimizer?style=for-the-badge"></a>
 <a href="https://github.com/frzyc/genshin-optimizer"><img alt="Github-last-commit" src="https://img.shields.io/github/last-commit/frzyc/genshin-optimizer?logo=github&style=for-the-badge"></a>
 <a href="https://github.com/frzyc/genshin-optimizer/blob/master/LICENSE"><img alt="GitHub-license" src="https://img.shields.io/github/license/frzyc/genshin-optimizer?style=for-the-badge"></a>
@@ -8,8 +8,8 @@
 Genshin Optimize is a helper website for the online action-rpg gacha game [Genshin Impact](https://genshin.mihoyo.com/). It is intended to assist players with optimizing artifacts to max-min their characters, while providing a clean, structured UI, and provide real-time results.
 
 # Getting Started with Genshin Optimizer.
-This project is primarily bootstrapped with with [Create React App](https://github.com/facebook/create-react-app). Most of the original functions are retained.
-Note: you need to have git installed in your command line, since it pulls some git repos as dependency.
+This project is primarily bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Most of the original scripts are retained.
+Note: you need to have git installed in your command line, since it pulls some git repos as dependencies.
 
 ## Available Scripts
 
@@ -48,13 +48,13 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run deploy`
 `predeploy: npm run build`
 
-Deploy the site using Github Pages. 
+Deploy the site using Github Pages.
 
 ### `npm run analyze`
 To view graphically the size/structure of the built bundles. For optimizing payload size of the built site.
 
 ### `npm run testserver`
-To create a "production" server
+Create a "production" server, running in [http://localhost:9000](http://localhost:9000).
 
 ### `npm run localization-gen-main`
 Combine all english translation as a single JSON to be uploaded to translation site.
@@ -67,10 +67,12 @@ Load the translations from [POEditor](https://poeditor.com/projects/view?id=4395
 ### `npm run pipeline-datamined`
 Generate localization & data from datamined data in `pipeline/GenshinData` from the repo [Dimbreath/GenshinData](https://github.com/Dimbreath/GenshinData)
 This will create localization files in `/public/locales/...` with in-game translated text.
+
 This will also try to populate the arifact/weapon/character images from a `pipeline/Texture2D/` directory. This is optional.
 
 ### `npm run gen-files`
 `npm run pipeline-datamined && npm run localization-load`
+Run pipeline and load localization.
 
 ### `npm run eject`
 

@@ -10,7 +10,7 @@ export const tagColor = {
   "99FFFFFF": "cryo",
   "80C0FFFF": "hydro",
   "FF9999FF": "pyro",
-  "fFACFFFF": "electro"
+  "FFACFFFF": "electro"
 } as const
 export type ColorTag = typeof tagColor[keyof typeof tagColor]
 
@@ -65,9 +65,11 @@ export const characterIdMap = {
   10000056: "KujouSara",
   10000057: "AratakiItto",
   10000058: "YaeMiko",
+  10000060: "Yelan",
   10000062: "Aloy",
   10000063: "Shenhe",
   10000064: "YunJin",
+  10000065: "KukiShinobu",
   10000066: "KamisatoAyato",
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
@@ -232,7 +234,7 @@ export const weaponIdMap = {
   15408: "BlackcliffWarbow",
   15409: "TheViridescentHunt",
   15410: "AlleyHunter",
-  // 15411: "",
+  15411: "FadingTwilight",
   15412: "MitternachtsWaltz",
   15413: "WindblumeOde",
   15414: "Hamayumi",
@@ -245,7 +247,7 @@ export const weaponIdMap = {
   // 15505: "Primordial Jade Vista",
   // 15506: "Mirror Breaker",
   15507: "PolarStar",
-  // 15508: "",
+  15508: "AquaSimulacra",
   15509: "ThunderingPulse",
 
 } as const

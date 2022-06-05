@@ -152,7 +152,7 @@
         "descending": "Decrescente",
         "sortByFormat": "Ordenar por: {{value}}",
         "loading": "Carregando...",
-        "rightsDisclaimer": "Genshin Optimizer não é afiliado ou endossado por miHoYo.",
+        "rightsDisclaimer": "Genshin Optimizer não é afiliado ou endossado por hoYoVerse.",
         "appVersion": "$t(pageTitle) Versão: {{version}}",
         "underConstruction": "Em Construção",
         "error": "Erro"

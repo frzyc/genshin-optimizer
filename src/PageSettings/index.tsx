@@ -1,5 +1,5 @@
 import { CardContent, Divider, Typography } from '@mui/material'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from "react-i18next"
 import CardDark from '../Components/Card/CardDark'
 import DownloadCard from './DownloadCard'
@@ -9,7 +9,7 @@ import UploadCard from './UploadCard'
 
 export default function PageSettings() {
   const { t } = useTranslation(["settings"]);
-  ReactGA.pageview('/setting')
+  ReactGA.send({ hitType: "pageview", page: '/setting' })
 
   return <CardDark sx={{ my: 1 }}>
     <CardContent sx={{ py: 1 }}>

@@ -133,6 +133,7 @@ const dmgFormulas = {
   },
   passive1: Object.fromEntries(absorbableEle.map(key =>
     [key, equal(condSkillAbsorption, key, customDmgNode(prod(input.total.atk, datamine.passive1.asorbAdd), "plunging", { hit: { ele: constant(key) } }))])),
+  passive2: asc4,
   constellation6: {
     normal_dmg_: c6NormDmg_,
     charged_dmg_: c6ChargedDmg_,

@@ -35,7 +35,7 @@ export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
     const p = (1 - erf(z / Math.sqrt(2))) / 2
     ptot *= p
 
-    if (i != 0) cptot *= p
+    if (i !== 0) cptot *= p
   }
 
   // Naive 1st moment of truncated distribution: assume it's relatively stationary w.r.t. the

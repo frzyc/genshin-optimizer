@@ -236,7 +236,7 @@ const sheet: ICharacterSheet = {
         }
       })]),
       passive2: ct.talentTemplate("passive2", [ct.conditionalTemplate("passive2", {
-        name: st("afterUse.skill"),
+        name: st("afterUse.burst"),
         value: condA4,
         path: condA4Path,
         teamBuff: true,

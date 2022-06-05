@@ -236,7 +236,7 @@ export class UIData {
       case "max": formula = fStr`Max( ${{ operands }} )`; break
       case "min": formula = fStr`Min( ${{ operands }} )`; break
       case "add": formula = fStr`${{ operands, separator: ' + ' }}`; break
-      case "mul": formula = fStr`${{ operands, separator: ' * ', shouldWrap }}`; break
+      case "mul": formula = fStr`${{ operands, separator: ' * ', shouldWrap: operands.length > 1 }}`; break
       case "sum_frac": formula = fStr`${{ operands: [operands[0]], shouldWrap }} / ( ${{ operands, separator: ' + ' }} )`; break
       case "res": {
         const base = operands[0].value
@@ -290,7 +290,7 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
         if (!item.pivot && item.formula) itemFormula = item.formula
         else itemFormula = createFormulaComponent(item)
 
-        if (shouldWrap && item.mayNeedWrapping && array.length > 1) {
+        if (shouldWrap && item.mayNeedWrapping) {
           predisplay.push("( ")
           predisplay.push(itemFormula)
           predisplay.push(" )")

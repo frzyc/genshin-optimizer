@@ -57,14 +57,15 @@ export default function CharacterDropdownButton({ value, onChange, unSelectText,
 // Returning an array instead of Fragment because MUI Menu doesn't like fragments.
 export function CharacterMenuItemArray(characterSheets: StrictDict<CharacterKey, CharacterSheet>, characterKeys: CharacterKey[], onChange: (ck: CharacterKey) => void, selectedCharacterKey: CharacterKey | "" = "", filterConfigs: CharacterFilterConfigs | undefined) {
   if (!filterConfigs) return []
-  const faves = characterKeys
-    .filter(filterFunction({ element: "", weaponType: "", favorite: "yes" }, filterConfigs))
-    .map(characterKey => <CharMenuItem key={characterKey} {...{ characterSheets, characterKey, selectedCharacterKey, onChange, favorite: true }} />)
-  const nonFaves = characterKeys
-    .filter(filterFunction({ element: "", weaponType: "", favorite: "no" }, filterConfigs))
-    .map(characterKey => <CharMenuItem key={characterKey} {...{ characterSheets, characterKey, selectedCharacterKey, onChange, favorite: false }} />)
+  // const faves = characterKeys
+  //   .filter(filterFunction({ "favorite": "yes" }, filterConfigs))
+  //   .map(characterKey => <CharMenuItem key={characterKey} {...{ characterSheets, characterKey, selectedCharacterKey, onChange, favorite: true }} />)
+  // const nonFaves = characterKeys
+  //   .filter(filterFunction({ favorite: "no" }, filterConfigs))
+  //   .map(characterKey => <CharMenuItem key={characterKey} {...{ characterSheets, characterKey, selectedCharacterKey, onChange, favorite: false }} />)
 
-  return faves.concat(nonFaves)
+  // return faves.concat(nonFaves)
+  return characterKeys
 }
 function CharMenuItem({ characterSheets, characterKey, selectedCharacterKey = "", onChange, favorite }:
   { characterKey: CharacterKey, selectedCharacterKey: CharacterKey | "", characterSheets: StrictDict<CharacterKey, CharacterSheet>, onChange: (ck: CharacterKey) => void, favorite: boolean }) {

@@ -150,6 +150,7 @@ const sheet: ICharacterSheet = {
         }))
       }, {
         text: tr("auto.fields.charged"),
+      }, {
         fields: [{
           node: infoMut(dmgFormulas.charged.aimed, { key: `char_${key}_gen:auto.skillParams.6` }),
         }, {

@@ -14,7 +14,7 @@ import {
   Pagination
 } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import CardDark from '../Components/Card/CardDark';
@@ -292,7 +292,7 @@ export default function UpgradeOptDisplay() {
                   {artifactsToShow.map(art =>
                     <Grid container key={art.id + 'asdfsf'} gap={1} wrap="nowrap">
                       <Grid item xs={5} sm={4} md={4} lg={3} xl={3} >
-                        <ArtifactCard artifactId={art.id} />
+                        <ArtifactCard artifactId={art.id} editor />
                       </Grid>
                       <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
                         <UpgradeOptChartCard upgradeOpt={art} objMax={maxObj0} objMin={minObj0} />

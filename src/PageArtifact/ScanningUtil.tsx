@@ -4,7 +4,7 @@ import ColorText from '../Components/ColoredText';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import KeyMap, { cacheValueString } from '../KeyMap';
-import { allMainStatKeys, allSubstats, IArtifact, ICachedArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
+import { allMainStatKeys, allSubstatKeys, IArtifact, ICachedArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
 import { allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
 import { clamp, hammingDistance, objectKeyMap } from '../Util/Util';
 import { BorrowManager } from './BorrowManager';
@@ -358,7 +358,7 @@ function parseSubstats(texts: string[]): ISubstat[] {
   for (let text of texts) {
     text = text.replace(/^[\W]+/, "").replace(/\n/, "")
     //parse substats
-    allSubstats.forEach(key => {
+    allSubstatKeys.forEach(key => {
       const name = KeyMap.getStr(key)
       const regex = KeyMap.unit(key) === "%" ?
         new RegExp(name + "\\s*\\+\\s*(\\d+[\\.|,]+\\d)%", "im") :

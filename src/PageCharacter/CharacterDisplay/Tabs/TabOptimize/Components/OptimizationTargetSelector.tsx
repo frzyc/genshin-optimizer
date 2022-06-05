@@ -56,9 +56,8 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
 function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[]) => void }) {
   const { data } = useContext(DataContext)
   const header = usePromise(getDisplayHeader(data, sectionKey), [data, sectionKey])
-  if (!header || Object.values(displayNs).every(n => n.isEmpty)) return null
   return <CardLight key={sectionKey as string}>
-    <CardHeader avatar={header.icon && <ImgIcon size={2} sx={{ m: -1 }} src={header.icon} />} title={header.title} action={header.action} titleTypographyProps={{ variant: "subtitle1" }} />
+    {header && <CardHeader avatar={header.icon && <ImgIcon size={2} sx={{ m: -1 }} src={header.icon} />} title={header.title} action={header.action} titleTypographyProps={{ variant: "subtitle1" }} />}
     <Divider />
     <MenuList>
       {Object.entries(displayNs).map(([key, n]) =>

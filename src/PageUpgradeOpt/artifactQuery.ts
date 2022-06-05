@@ -2,7 +2,7 @@ import { Data, NumNode } from "../Formula/type"
 import { precompute, optimize } from "../Formula/optimization"
 import { ddx, zero_deriv } from "../Formula/differentiate"
 import { DynStat } from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/background'
-import { SubstatKey, allSubstats, ICachedArtifact } from "../Types/artifact"
+import { SubstatKey, allSubstatKeys, ICachedArtifact } from "../Types/artifact"
 import { SlotKey, Rarity } from '../Types/consts';
 import Artifact from "../Data/Artifacts/Artifact"
 import { crawlUpgrades } from "./artifactUpgradeCrawl"
@@ -90,7 +90,7 @@ export function evalArtifact(objective: Query, art: QueryArtifact, slow = false)
     subs: art.subs,
     stats: newStats,
     thresholds: objective.thresholds,
-    objectiveEval: (stats) => objective.evalFn(stats).map(({ v, grads }) => ({ v: v, ks: art.subs.map(key => grads[allSubstats.indexOf(key)] * scale(key)) })),
+    objectiveEval: (stats) => objective.evalFn(stats).map(({ v, grads }) => ({ v: v, ks: art.subs.map(key => grads[allSubstatKeys.indexOf(key)] * scale(key)) })),
     scale: scale,
   }
 
@@ -140,7 +140,7 @@ function fastUB({ rollsLeft, subs, stats, scale, objectiveEval, thresholds }: In
     const variance = (147 / 8 * ksum2 - 289 / 64 * ksum * ksum) * N
 
     const { p, upAvg } = gaussianPE(mean, variance, thresholds[ix])
-    if (ix == 0) {
+    if (ix === 0) {
       upAvgUB = upAvg
       apxDist = { gmm: [{ phi: 1, mu: mean, sig2: variance, cp: 1 }], lower: mean - 4 * Math.sqrt(variance), upper: mean + 4 * Math.sqrt(variance) }
     }
@@ -195,7 +195,7 @@ function gmmNd({ rollsLeft, stats, subs, thresholds, scale, objectiveEval }: Int
 export function querySetup(formulas: NumNode[], thresholds: number[], curBuild: QueryBuild, data: Data = {}): Query {
   let toEval: NumNode[] = []
   formulas.forEach(f => {
-    toEval.push(f, ...allSubstats.map(sub => ddx(f, fo => fo.path[1], sub)))
+    toEval.push(f, ...allSubstatKeys.map(sub => ddx(f, fo => fo.path[1], sub)))
   })
   // Opt loop a couple times to ensure all constants folded?
   let evalOpt = optimize(toEval, data, ({ path: [p] }) => p !== "dyn")
@@ -205,12 +205,12 @@ export function querySetup(formulas: NumNode[], thresholds: number[], curBuild: 
   let stats = toStats(curBuild)
   const dmg0 = evalFn(stats)[0]
 
-  const skippableDerivs = allSubstats.map(sub => formulas.every(f => zero_deriv(f, f => f.path[1], sub)))
+  const skippableDerivs = allSubstatKeys.map(sub => formulas.every(f => zero_deriv(f, f => f.path[1], sub)))
   const structuredEval = (stats: Dict<string, number>) => {
     const out = evalFn(stats)
     return formulas.map((_, i) => {
-      const ix = i * (1 + allSubstats.length)
-      return { v: out[ix], grads: allSubstats.map((sub, si) => out[ix + 1 + si]) }
+      const ix = i * (1 + allSubstatKeys.length)
+      return { v: out[ix], grads: allSubstatKeys.map((sub, si) => out[ix + 1 + si]) }
     })
   }
 
@@ -229,7 +229,7 @@ export function toQueryArtifact(art: ICachedArtifact, fixedLevel?: number) {
         [substat.key, substat.key.endsWith('_') ? substat.accurateValue / 100 : substat.accurateValue]))
     },
     subs: art.substats.reduce((sub: SubstatKey[], x) => {
-      if (x.key != "") sub.push(x.key)
+      if (x.key !== "") sub.push(x.key)
       return sub
     }, [])
   }

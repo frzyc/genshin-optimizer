@@ -3,7 +3,7 @@ import { input } from "../../Formula";
 import { inferInfoMut, mergeData } from "../../Formula/api";
 import { reactions } from "../../Formula/reaction";
 import { Data, DisplaySub, NumNode } from "../../Formula/type";
-import { constant, data, infoMut, lookup, percent, prod, stringPrio, subscript, sum, unit } from "../../Formula/utils";
+import { constant, data, infoMut, lookup, percent, prod, stringPrio, subscript, sum, one } from "../../Formula/utils";
 import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey, Region } from "../../Types/consts";
 import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
@@ -45,12 +45,14 @@ export function customDmgNode(base: NumNode, move: "normal" | "charged" | "plung
 }
 /** Note: `additional` applies only to this formula */
 export function customShieldNode(base: NumNode, additional?: Data): NumNode {
-  const shieldNode = prod(base, sum(unit, input.total.shield_))
+  const shieldNode = prod(base, sum(one, input.total.shield_))
   return additional ? data(shieldNode, additional) : shieldNode
 }
 /** Note: `additional` applies only to this formula */
 export function customHealNode(base: NumNode, additional?: Data): NumNode {
-  const healNode = prod(base, sum(unit, input.total.heal_, input.total.incHeal_))
+  const healInc = input.total.healInc
+  const healNode = prod(sum(base, healInc), sum(one, input.total.heal_, input.total.incHeal_))
+
   return additional ? data(healNode, additional) : healNode
 }
 /** Note: `additional` applies only to this formula */
