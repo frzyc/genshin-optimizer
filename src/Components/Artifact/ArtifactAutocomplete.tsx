@@ -25,15 +25,16 @@ type ArtifactMultiAutocompleteProps<T extends ArtifactMultiAutocompleteKey> = Om
 }
 function ArtifactMultiAutocomplete<T extends ArtifactMultiAutocompleteKey>({ allArtifactKeys, selectedArtifactKeys, setArtifactKeys, getName, getImage, label, ...props }:
   ArtifactMultiAutocompleteProps<T>) {
-  const theme = useTheme();
+  const theme = useTheme()
 
   const handleChange = (_, value: ArtifactMultiAutocompleteOption<T>[]) => {
     setArtifactKeys(value.map(v => v.key))
-  };
+  }
   const options = useMemo(() => allArtifactKeys.map(key => ({ key: key, label: getName(key) })), [allArtifactKeys, getName])
   return <Autocomplete
     autoHighlight
     multiple
+    disableCloseOnSelect
     options={options}
     value={selectedArtifactKeys.map(key => ({ key: key, label: getName(key) }))}
     onChange={handleChange}
