@@ -1,8 +1,11 @@
+import { useCallback, useContext, useEffect, useState } from "react";
+import { DatabaseContext } from "../../../../Database/Database";
 import { StatKey } from "../../../../KeyMap";
 import { MainStatKey, SubstatKey } from "../../../../Types/artifact";
-import { SetFilter } from "../../../../Types/Build";
+import { ArtifactSetKey, CharacterKey } from "../../../../Types/consts";
+import { maxBuildsToShowDefault, maxBuildsToShowList } from "./Build";
 export interface BuildSetting {
-  setFilters: SetFilter,
+  artSetExclusion: Dict<ArtifactSetKey, number[]>
   statFilters: Dict<StatKey, number>
   mainStatKeys: {
     sands: MainStatKey[],
@@ -24,7 +27,7 @@ export interface BuildSetting {
   levelHigh: number,
 }
 export const initialBuildSettings = (): BuildSetting => ({
-  setFilters: [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }],
+  artSetExclusion: {},
   statFilters: {},
   mainStatKeys: { sands: [], goblet: [], circlet: [] },
   optimizationTarget: undefined,
@@ -40,11 +43,27 @@ export const initialBuildSettings = (): BuildSetting => ({
   levelHigh: 20,
 })
 
-export function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
+export default function useBuildSetting(characterKey: CharacterKey) {
+  const { database } = useContext(DatabaseContext)
+  const [buildSetting, setBuildSetting] = useState(database._getBuildSetting(characterKey))
+  useEffect(() =>
+    database.followBuildSetting(characterKey, setBuildSetting),
+    [characterKey, setBuildSetting, database])
+  const buildSettingDispatch = useCallback(action => characterKey && database.updateBuildSetting(characterKey, action), [characterKey, database],)
+
+  return { buildSetting: buildSetting as BuildSetting, buildSettingDispatch }
+}
+
+export function buildSettingsReducer(state: BuildSetting = initialBuildSettings(), action): BuildSetting {
   switch (action.type) {
     case 'mainStatKey': {
       const { slotKey, mainStatKey } = action
       const mainStatKeys = { ...state.mainStatKeys }//create a new object to update react dependencies
+      //when mainstatkey is empty, then it resets the slot
+      if (!mainStatKey) {
+        mainStatKeys[slotKey] = []
+        return { ...state, mainStatKeys }
+      }
 
       if (state.mainStatKeys[slotKey].includes(mainStatKey))
         mainStatKeys[slotKey] = mainStatKeys[slotKey].filter(k => k !== mainStatKey)
@@ -52,19 +71,54 @@ export function buildSettingsReducer(state: BuildSetting, action): BuildSetting 
         mainStatKeys[slotKey].push(mainStatKey)
       return { ...state, mainStatKeys }
     }
-    case 'mainStatKeyReset': {
-      const { slotKey } = action
-      const mainStatKeys = { ...state.mainStatKeys }//create a new object to update react dependencies
-      mainStatKeys[slotKey] = []
-      return { ...state, mainStatKeys }
-    }
-    case `setFilter`: {
-      const { index, key, num = 0 } = action
-      state.setFilters[index] = { key, num }
-      return { ...state, setFilters: [...state.setFilters] }//do this because this is a dependency, so needs to be a "new" array
+    case "artSetExclusion": {
+      const { setKey, num } = action
+      const artSetExclusion = { ...state.artSetExclusion }
+      if (!artSetExclusion[setKey]) artSetExclusion[setKey] = [num]
+      else if (!artSetExclusion[setKey].includes(num)) artSetExclusion[setKey] = [...artSetExclusion[setKey], num]
+      else {
+        artSetExclusion[setKey] = artSetExclusion[setKey].filter(n => n !== num)
+        if (!artSetExclusion[setKey].length) delete artSetExclusion[setKey]
+      }
+      return { ...state, artSetExclusion }
     }
     default:
       break;
   }
-  return { ...state, ...action }
+  return validateBuildSetting({ ...state, ...action })
+}
+
+export function validateBuildSetting(obj: any): BuildSetting {
+  let { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = obj ?? {}
+
+  if (typeof statFilters !== "object") statFilters = {}
+
+  if (!mainStatKeys || !mainStatKeys.sands || !mainStatKeys.goblet || !mainStatKeys.circlet) {
+    const tempmainStatKeys = initialBuildSettings().mainStatKeys
+    if (Array.isArray(mainStatKeys)) {
+      const [sands, goblet, circlet] = mainStatKeys
+      if (sands) tempmainStatKeys.sands = [sands]
+      if (goblet) tempmainStatKeys.goblet = [goblet]
+      if (circlet) tempmainStatKeys.circlet = [circlet]
+    }
+    mainStatKeys = tempmainStatKeys
+  }
+
+  if (!optimizationTarget || !Array.isArray(optimizationTarget)) optimizationTarget = undefined
+  if (typeof mainStatAssumptionLevel !== "number" || mainStatAssumptionLevel < 0 || mainStatAssumptionLevel > 20)
+    mainStatAssumptionLevel = 0
+  useExcludedArts = !!useExcludedArts
+  useEquippedArts = !!useEquippedArts
+  if (!Array.isArray(builds) || !builds.every(b => Array.isArray(b) && b.every(s => typeof s === "string"))) {
+    builds = []
+    buildDate = 0
+  }
+  if (!Number.isInteger(buildDate)) buildDate = 0
+  if (!maxBuildsToShowList.includes(maxBuildsToShow)) maxBuildsToShow = maxBuildsToShowDefault
+  if (typeof plotBase !== "string") plotBase = ""
+  if (compareBuild === undefined) compareBuild = false
+  if (levelLow === undefined) levelLow = 0
+  if (levelHigh === undefined) levelHigh = 20
+  if (!artSetExclusion) artSetExclusion = {}
+  return { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
 }
