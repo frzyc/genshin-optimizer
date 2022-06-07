@@ -109,7 +109,7 @@ export default function TabBuild() {
     })
     const split = compactArtifacts(arts, mainStatAssumptionLevel)
     const setPerms = [...artSetPerm(artSetExclusion, Object.values(split.values).flatMap(x => x.map(x => x.set!)))]
-    if (process.env.NODE_ENV === "development") console.log("Art Set Permutation Count", setPerms.length, setPerms)
+    if (process.env.NODE_ENV === "development") console.log("Art Set Permutation Count", setPerms.length)
     const totBuildNumber = [...setPerms].map(perm => countBuilds(filterArts(split, perm))).reduce((a, b) => a + b, 0)
     return artsDirty && { split, setPerms, totBuildNumber }
   }, [characterKey, useExcludedArts, useEquippedArts, equipmentPriority, mainStatKeys, artSetExclusion, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
