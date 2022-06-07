@@ -46,7 +46,7 @@ export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLeve
 }
 export function* artSetPerm(exclusion: Dict<ArtifactSetKey | "rainbow", number[]>, _arts: ArtifactsBySlot): Iterable<RequestFilter> {
   // Yes, there are a couple of millions of better ways to do this. So, PR welcomed..
-  const arts = objectKeyMap(allSlotKeys, slot => [...new Set(_arts.values[slot].map(v => v.set!))])
+  const arts = objectKeyMap(allSlotKeys, slot => [...new Set(_arts.values[slot].map(v => v.set!).filter(x => x))])
 
   const noFilter = { kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }
   const result: RequestFilter = objectKeyMap(allSlotKeys, _ => noFilter)
@@ -55,32 +55,26 @@ export function* artSetPerm(exclusion: Dict<ArtifactSetKey | "rainbow", number[]
 
   function* check(remainingSlots: number) {
     const minRainbow = Math.max(0, setCounts.rainbow - remainingSlots)
-    const maxRainbow = Math.min(5, setCounts.rainbow + remainingSlots)
+    const maxRainbow = setCounts.rainbow + remainingSlots
     if (minRainbow > setLimits.rainbow) return
     // If `noRainbow`, all filters afterward won't affect the rainbow status.
-    // So we can then use aggregations to help w/ the combinatorial explosion.
+    // So we can use aggregations to help w/ the combinatorial explosion.
     const noRainbow = maxRainbow <= setLimits.rainbow
-    let yieldable = noRainbow
-    if (yieldable)
-      for (const [set, limit] of Object.entries(setLimits)) {
-        if (setCounts[set] + remainingSlots > limit) {
-          yieldable = false
-          break
-        }
-      }
-    if (yieldable) {
+    if (noRainbow && Object.entries(setLimits).every(([set, limit]) => setCounts[set] + remainingSlots <= limit)) {
       yield { ...result }
       return
     }
-    if (!remainingSlots) return
+    if (!remainingSlots) return // This shouldn't trigger
 
-    const slot = allSlotKeys[remainingSlots - 1]
-    const toExclude: Set<ArtifactSetKey> = new Set()
+    const slot = allSlotKeys[remainingSlots - 1], isolated: ArtifactSetKey[] = [], groupped: Set<ArtifactSetKey> = new Set()
     for (const set of arts[slot]) {
-      if (!set || (noRainbow && exclusion[set] === undefined)) continue
-      if (noRainbow) toExclude.add(set)
-      if (setCounts[set] + 1 > (setLimits[set] ?? 5)) continue
-
+      if (setCounts[set] >= (setLimits[set] ?? 5)) continue
+      const rainbowRelevant = !noRainbow && setCounts[set] <= 1
+      const mayViolate = setCounts[set] + remainingSlots > (setLimits[set] ?? 5)
+      if (rainbowRelevant || mayViolate) isolated.push(set)
+      else groupped.add(set)
+    }
+    for (const set of isolated) {
       let rainbowDiff = 0
       if (setCounts[set] === 0) rainbowDiff = 1
       else if (setCounts[set] === 1) rainbowDiff = -1
@@ -94,8 +88,8 @@ export function* artSetPerm(exclusion: Dict<ArtifactSetKey | "rainbow", number[]
       setCounts.rainbow -= rainbowDiff
       setCounts[set] -= 1
     }
-    if (noRainbow) {
-      result[slot] = { kind: "exclude", sets: toExclude }
+    if (groupped.size) {
+      result[slot] = { kind: "required", sets: groupped }
       yield* check(remainingSlots - 1)
     }
     result[slot] = noFilter
