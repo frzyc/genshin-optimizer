@@ -132,10 +132,6 @@ export function* artSetPerm(exclusion: Dict<ArtifactSetKey, number[]>, _artSets:
       }
     }
     function* check_free(i: number) {
-      if (i === free.length) {
-        yield { ...result }
-        return
-      }
       const remaining = free.length - i, isolated: ArtifactSetKey[] = [], missing: ArtifactSetKey[] = [], rejected: ArtifactSetKey[] = []
       let required = 0
       for (const set of artSets) {
@@ -147,6 +143,11 @@ export function* artSetPerm(exclusion: Dict<ArtifactSetKey, number[]>, _artSets:
           missing.push(set)
         }
         else if (range(0, remaining).some(j => !allowedSet.has(count + j))) isolated.push(set)
+      }
+      if (required > remaining) return
+      if (i === free.length) {
+        yield { ...result }
+        return
       }
       if (required === remaining) {
         for (const set of missing) {
