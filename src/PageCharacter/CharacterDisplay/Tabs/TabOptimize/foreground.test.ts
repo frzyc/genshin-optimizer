@@ -16,9 +16,11 @@ describe("foreground.ts", () => {
     const filter: Dict<ArtifactSetKey, number[]> = { Adventurer: [2], ArchaicPetra: [4] }, excludeRainbow = 4
     const artSets: ArtifactSetKey[] = ["Adventurer", "ArchaicPetra", "Berserker", "BloodstainedChivalry"]
     const perm = [...artSetPerm(filter, artSets, excludeRainbow)]
+
     for (const combination of allCombinations(objectKeyMap(allSlotKeys, _ => artSets))) {
       let shouldMatch = true, rainbowCount = 0
-      for (const [key, list] of Object.entries(filter)) {
+      for (const key of new Set([...Object.keys(filter), ...Object.values(combination)])) {
+        const list = filter[key] ?? []
         let allowed = [0, 1, 2, 3, 4, 5]
         if (list.includes(2)) allowed = allowed.filter(x => x !== 2 && x !== 3)
         if (list.includes(4)) allowed = allowed.filter(x => x !== 4 && x !== 5)

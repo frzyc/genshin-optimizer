@@ -58,35 +58,25 @@ export function* artSetPerm(exclusion: Dict<ArtifactSetKey, number[]>, _artSets:
   }
   populateShapes([0], new Set([0]), [0])
   function indexOfShape(shape: number[], replacing: number) {
+    if (range(replacing + 1, 4).some(i => shape[i] !== 5))
+      return undefined
     shape = [...shape]
-    let newIndex: number | undefined = undefined
-    for (let i = replacing + 1; i < 5; i++) {
-      if (shape[i] === replacing) {
-        if (!newIndex) newIndex = i
-        shape[i] = newIndex
-      }
-    }
     shape[replacing] = 5
     return shape.reduce((a, b) => a * 6 + b, 0)
   }
-  function shapeOfIndex(index: number) {
-    const shape: number[] = []
-    for (let i = 0; i < 5; i++) {
-      shape.push(index % 6)
-      index = Math.floor(index / 6)
-    }
-    return shape.reverse()
-  }
-  for (let index = 4; index > 0; index--) {
+  for (let replacing = 4; replacing >= 0; replacing--) {
     const required: Map<number, number> = new Map()
     for (const shape of shapes) {
-      const id = indexOfShape(shape, index)
-      required.set(id, (required.get(id) ?? new Set(shape.slice(0, index)).size + 1) - 1)
+      const id = indexOfShape(shape, replacing)
+      if (id === undefined) continue
+      required.set(id, (required.get(id) ?? new Set(shape.slice(0, replacing)).size + 1) - 1)
     }
     for (const [id, remaining] of required.entries()) {
       if (remaining === 0) {
-        shapes = shapes.filter(shape => indexOfShape(shape, index) !== id)
-        shapes.push(shapeOfIndex(id))
+        const shape = [...shapes.find(shape => indexOfShape(shape, replacing) === id)!]
+        shape[replacing] = 5
+        shapes = shapes.filter(shape => indexOfShape(shape, replacing) !== id)
+        shapes.push(shape)
       }
     }
   }
