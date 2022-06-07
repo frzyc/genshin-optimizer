@@ -36,7 +36,7 @@ import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResul
 import { maxBuildsToShowList } from './Build';
 import useBuildSetting from './BuildSetting';
 import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
-import ArtifactSetConditional from './Components/ArtifactSetConditional';
+import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
 import BuildAlert, { warningBuildNumber } from './Components/BuildAlert';
@@ -323,11 +323,7 @@ export default function TabBuild() {
 
         {/* 3 */}
         <Grid item xs={12} sm={6} lg={6} display="flex" flexDirection="column" gap={1}>
-          <ArtifactSetConditional disabled={generatingBuilds} />
-          {/*Minimum Final Stat Filter */}
-          <StatFilterCard disabled={generatingBuilds} />
-
-          <BonusStatsCard />
+          <ArtifactSetConfig disabled={generatingBuilds} />
 
           {/* use excluded */}
           <UseExcluded disabled={generatingBuilds} artsDirty={artsDirty} />
@@ -347,6 +343,11 @@ export default function TabBuild() {
               disabled={generatingBuilds}
             />
           </CardLight>
+
+          {/*Minimum Final Stat Filter */}
+          <StatFilterCard disabled={generatingBuilds} />
+
+          <BonusStatsCard />
         </Grid>
       </Grid>
       {/* Footer */}
