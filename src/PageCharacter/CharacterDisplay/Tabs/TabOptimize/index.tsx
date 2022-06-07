@@ -157,7 +157,7 @@ export default function TabBuild() {
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow,
       new Set(
-        artSetExclusion.rainbow?.length ? [...allArtifactSets, undefined as any]
+        artSetExclusion.rainbow?.length ? allArtifactSets
           : Object.keys(artSetExclusion).filter(set => artSetExclusion[set]?.length) as ArtifactSetKey[]), {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
     }))
