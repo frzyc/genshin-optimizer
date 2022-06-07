@@ -30,7 +30,7 @@ import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../../../Types/artifact';
 import { ICachedCharacter } from '../../../../Types/character';
-import { allArtifactSets, CharacterKey } from '../../../../Types/consts';
+import { allArtifactSets, ArtifactSetKey, CharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
 import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
@@ -156,14 +156,9 @@ export default function TabBuild() {
 
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow,
-      new Set([
-        /*
-          URGENT TODO
-          We have to reduce this pruning restriction.
-          This effectively disable most prunning, tanking the performance significantly
-        */
-        undefined, ...allArtifactSets
-      ] as any), {
+      new Set(
+        artSetExclusion.rainbow?.length ? allArtifactSets
+          : Object.keys(artSetExclusion).filter(set => artSetExclusion[set]?.length) as ArtifactSetKey[]), {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
     }))
 
@@ -281,7 +276,7 @@ export default function TabBuild() {
       setgenerationDuration(totalDuration)
     }
     setgeneratingBuilds(false)
-  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingDispatch, statFilters, maxWorkers])
+  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingDispatch, statFilters, maxWorkers, artSetExclusion])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
