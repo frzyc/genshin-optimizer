@@ -57,21 +57,28 @@ export function* artSetPerm(exclusion: Dict<ArtifactSetKey | "rainbow", number[]
     const minRainbow = Math.max(0, setCounts.rainbow - remainingSlots)
     const maxRainbow = Math.min(5, setCounts.rainbow + remainingSlots)
     if (minRainbow > setLimits.rainbow) return
-    let yieldable = maxRainbow <= setLimits.rainbow
-    for (const [set, limit] of Object.entries(setLimits)) {
-      if (setCounts[set] + remainingSlots > limit) {
-        yieldable = false
-        break
+    // If `noRainbow`, all filters afterward won't affect the rainbow status.
+    // So we can then use aggregations to help w/ the combinatorial explosion.
+    const noRainbow = maxRainbow <= setLimits.rainbow
+    let yieldable = noRainbow
+    if (yieldable)
+      for (const [set, limit] of Object.entries(setLimits)) {
+        if (setCounts[set] + remainingSlots > limit) {
+          yieldable = false
+          break
+        }
       }
-    }
     if (yieldable) {
       yield { ...result }
       return
     }
+    if (!remainingSlots) return
 
     const slot = allSlotKeys[remainingSlots - 1]
+    const toExclude: Set<ArtifactSetKey> = new Set()
     for (const set of arts[slot]) {
-      if (!set) continue
+      if (!set || (noRainbow && exclusion[set] === undefined)) continue
+      if (noRainbow) toExclude.add(set)
       if (setCounts[set] + 1 > (setLimits[set] ?? 5)) continue
 
       let rainbowDiff = 0
@@ -86,6 +93,10 @@ export function* artSetPerm(exclusion: Dict<ArtifactSetKey | "rainbow", number[]
 
       setCounts.rainbow -= rainbowDiff
       setCounts[set] -= 1
+    }
+    if (noRainbow) {
+      result[slot] = { kind: "exclude", sets: toExclude }
+      yield* check(remainingSlots - 1)
     }
     result[slot] = noFilter
   }
