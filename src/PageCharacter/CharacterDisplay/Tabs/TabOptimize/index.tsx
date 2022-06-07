@@ -47,7 +47,7 @@ import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
-import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
+import { artSetPerm, compactArtifacts, dynamicData, filterFeasiblePerm, splitFiltersBySet } from './foreground';
 
 export default function TabBuild() {
   const { character, character: { key: characterKey } } = useContext(DataContext)
@@ -108,7 +108,7 @@ export default function TabBuild() {
       return true
     })
     const split = compactArtifacts(arts, mainStatAssumptionLevel)
-    const setPerms = [...artSetPerm(artSetExclusion, Object.values(split.values).flatMap(x => x.map(x => x.set!)))]
+    const setPerms = [...filterFeasiblePerm(artSetPerm(artSetExclusion, Object.values(split.values).flatMap(x => x.map(x => x.set!))), split)]
     if (process.env.NODE_ENV === "development") console.log("Art Set Permutation Count", setPerms.length)
     const totBuildNumber = [...setPerms].map(perm => countBuilds(filterArts(split, perm))).reduce((a, b) => a + b, 0)
     return artsDirty && { split, setPerms, totBuildNumber }

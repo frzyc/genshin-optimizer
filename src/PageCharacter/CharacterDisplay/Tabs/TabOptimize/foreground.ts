@@ -49,6 +49,20 @@ export function exclusionToAllowed(exclusion: number[] | undefined): Set<number>
     ? exclusion.includes(4) ? [0, 1] : [0, 1, 4, 5]
     : exclusion?.includes(4) ? [0, 1, 2, 3] : [0, 1, 2, 3, 4, 5])
 }
+export function* filterFeasiblePerm(filters: Iterable<RequestFilter>, _artSets: ArtifactsBySlot): Iterable<RequestFilter> {
+  const artSets = objectMap(_artSets.values, values => new Set(values.map(v => v.set)))
+  filter_loop: for (const filter of filters) {
+    for (const [slot, f] of Object.entries(filter)) {
+      const available = artSets[slot]!
+      switch (f.kind) {
+        case "required": if ([...f.sets].every(s => !available.has(s))) continue filter_loop; break
+        case "exclude": if ([...available].every(s => f.sets.has(s!))) continue filter_loop; break
+        case "id": break
+      }
+    }
+    yield filter
+  }
+}
 /** A *disjoint* set of `RequestFilter` satisfying the exclusion rules */
 export function* artSetPerm(exclusion: Dict<ArtifactSetKey | "rainbow", number[]>, _artSets: ArtifactSetKey[]): Iterable<RequestFilter> {
   /**
@@ -243,8 +257,6 @@ function* splitFilterByIds(_arts: ArtifactsBySlot, filter: RequestFilter, limit:
     }
   }
 }
-
-// const noFilter = { kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }
 
 export function debugCompute(nodes: NumNode[], base: DynStat, arts: ArtifactBuildData[]) {
   const stats = { ...base }
