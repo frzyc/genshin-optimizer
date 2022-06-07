@@ -29,9 +29,8 @@ import useDBState from '../../../../ReactHooks/useDBState';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../../../Types/artifact';
-import { SetFilter } from '../../../../Types/Build';
 import { ICachedCharacter } from '../../../../Types/character';
-import { ArtifactSetKey, CharacterKey } from '../../../../Types/consts';
+import { CharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
 import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
@@ -76,8 +75,7 @@ export default function TabBuild() {
 
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
   const { plotBase, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting!
-  // TODO: convert setFilter to use artSetExclusion
-  const setFilters = useMemo(() => [] as SetFilter, [])
+  const artSetExclusion = useMemo(() => buildSetting.artSetExclusion, [buildSetting])
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
   const buildsArts = useMemo(() => builds.map(build => build.map(i => database._getArt(i)!)), [builds, database])
@@ -111,10 +109,11 @@ export default function TabBuild() {
       return true
     })
     const split = compactArtifacts(arts, mainStatAssumptionLevel)
-    const setPerms = [...artSetPerm([setFilters.map(({ key, num }) => ({ key, min: num }))])]
+    const setPerms = [...artSetPerm(artSetExclusion, split)]
+    if (process.env.NODE_ENV === "development") console.log("Art Set Permutation", setPerms)
     const totBuildNumber = [...setPerms].map(perm => countBuilds(filterArts(split, perm))).reduce((a, b) => a + b, 0)
     return artsDirty && { split, setPerms, totBuildNumber }
-  }, [characterKey, useExcludedArts, useEquippedArts, equipmentPriority, mainStatKeys, setFilters, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
+  }, [characterKey, useExcludedArts, useEquippedArts, equipmentPriority, mainStatKeys, artSetExclusion, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
 
   // Reset the Alert by setting progress to zero.
   useEffect(() => {
@@ -158,7 +157,7 @@ export default function TabBuild() {
 
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow,
-      new Set(setFilters.map(x => x.key as ArtifactSetKey)), {
+      new Set(/* TODO This may lead to over-pruning */), {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
     }))
 
@@ -276,7 +275,7 @@ export default function TabBuild() {
       setgenerationDuration(totalDuration)
     }
     setgeneratingBuilds(false)
-  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingDispatch, setFilters, statFilters, maxWorkers])
+  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingDispatch, statFilters, maxWorkers])
 
   const characterName = characterSheet?.name ?? "Character Name"
 

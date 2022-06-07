@@ -1,8 +1,7 @@
 import { allSlotKeys, ArtifactSetKey, SlotKey } from "../../../../Types/consts"
 import { objectKeyMap } from "../../../../Util/Util"
-import { artSetPerm } from "./foreground"
 
-
+/*
 describe("foreground.ts", () => {
   describe("artSetPerm should handle", () => {
     function* allCombinations(sets: StrictDict<SlotKey, ArtifactSetKey[]>): Iterable<StrictDict<SlotKey, ArtifactSetKey>> {
@@ -42,3 +41,4 @@ describe("foreground.ts", () => {
     }
   })
 })
+*/

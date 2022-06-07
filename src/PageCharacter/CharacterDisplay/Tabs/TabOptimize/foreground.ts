@@ -44,82 +44,52 @@ export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLeve
     value.push({ id: "", values: {} })
   return result
 }
-// TODO: Use this as the new set filter
-type _SetFilter = { key: ArtifactSetKey | "", min?: number, max?: number }[]
-/**
- * Computes a (disjoint) list of all request filters that satisfy `filter`.
- * `filters` is expressed as a disjunctive normal form, e.g., a request filter
- * satisfies `filter` of
- *
- * ```
- * [
- *   [ condition1, condition2 ],
- *   [ condition3, condition4 ],
- * ]
- * ```
- *
- * if
- * - Both `condition1` AND `condition2` are met, or
- * - Both `condition3` and `condition4` are met.
- */
-export function* artSetPerm(_filters: _SetFilter[]): Iterable<RequestFilter> {
-  type Filters = Dict<ArtifactSetKey, { min: number, max: number }>
-
-  const allFilters: Filters[] = _filters.map(fs => {
-    const result: Dict<ArtifactSetKey, { min: number, max: number }> = {}
-    fs.forEach(({ key, min, max }) => {
-      if (!key) return
-      if (!result[key]) result[key] = { min: 0, max: 5 }
-      const obj = result[key]!
-      obj.min = Math.max(obj.min, min ?? 0)
-      obj.max = Math.min(obj.max, max ?? 5)
-    })
-    return result
-  }).filter(fs => Object.values(fs).every(f => f.min <= f.max))
-
-  // Remove unnecessary or impossible filters
-  function cleanFilters(result: Filters[], remainingSlots: number): Filters[] {
-    return result.map(result => {
-      result = { ...result }
-      for (const [key, value] of Object.entries(result)) {
-        if (value.min === 0 && value.max >= remainingSlots)
-          // Unnecessary filter
-          delete result[key]
-      }
-      return result
-    }).filter(fs =>
-      // Keep only possible filters
-      Object.values(fs).reduce((a, b) => a + b.min, 0) <= remainingSlots
-    )
-  }
+export function* artSetPerm(exclusion: Dict<ArtifactSetKey | "rainbow", number[]>, _arts: ArtifactsBySlot): Iterable<RequestFilter> {
+  // Yes, there are a couple of millions of better ways to do this. So, PR welcomed..
+  const arts = objectKeyMap(allSlotKeys, slot => [...new Set(_arts.values[slot].map(v => v.set!))])
 
   const noFilter = { kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }
   const result: RequestFilter = objectKeyMap(allSlotKeys, _ => noFilter)
-  function* check(_filters: Filters[], remainingSlots: number) {
-    const filters = cleanFilters(_filters, remainingSlots)
-    if (!filters.length) return
-    if (filters.some(fs => !Object.keys(fs).length)) {
+  const setCounts = { rainbow: 0, ...objectKeyMap(Object.values(arts).flatMap(x => x), _ => 0) }
+  const setLimits = { rainbow: 6, ...objectMap(exclusion, v => Math.min(...v) - 1) }
+
+  function* check(remainingSlots: number) {
+    const minRainbow = Math.max(0, setCounts.rainbow - remainingSlots)
+    const maxRainbow = Math.min(5, setCounts.rainbow + remainingSlots)
+    if (minRainbow > setLimits.rainbow) return
+    let yieldable = maxRainbow <= setLimits.rainbow
+    for (const [set, limit] of Object.entries(setLimits)) {
+      if (setCounts[set] + remainingSlots > limit) {
+        yieldable = false
+        break
+      }
+    }
+    if (yieldable) {
       yield { ...result }
       return
     }
 
     const slot = allSlotKeys[remainingSlots - 1]
-    const relevantSets = new Set(filters.flatMap(fs => Object.keys(fs)))
-    for (const set of relevantSets) {
+    for (const set of arts[slot]) {
+      if (!set) continue
+      if (setCounts[set] + 1 > (setLimits[set] ?? 5)) continue
+
+      let rainbowDiff = 0
+      if (setCounts[set] === 0) rainbowDiff = 1
+      else if (setCounts[set] === 1) rainbowDiff = -1
+
+      setCounts[set] += 1
+      setCounts.rainbow += rainbowDiff
+
       result[slot] = { kind: "required", sets: new Set([set]) }
-      const newFilters = filters.map(fs => {
-        const obj = fs[set]
-        if (obj)
-          return { ...fs, [set]: { min: obj.min ? obj.min - 1 : 0, max: obj.max - 1 } }
-        return fs
-      })
-      yield* check(newFilters, remainingSlots - 1)
+      yield* check(remainingSlots - 1)
+
+      setCounts.rainbow -= rainbowDiff
+      setCounts[set] -= 1
     }
-    result[slot] = { kind: "exclude", sets: relevantSets }
-    yield* check(filters, remainingSlots - 1)
     result[slot] = noFilter
   }
-  yield* check(allFilters, 5)
+  yield* check(5)
 }
 export function* splitFiltersBySet(_arts: ArtifactsBySlot, filters: Iterable<RequestFilter>, limit: number): Iterable<RequestFilter> {
   if (limit < 10000) limit = 10000
