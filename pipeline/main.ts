@@ -247,6 +247,7 @@ Object.entries(weaponExcelConfigData).filter(([weaponid,]) => weaponid in weapon
   const [ascensionDataId,] = skillAffix
   const ascData = ascensionDataId && equipAffixExcelConfigData[ascensionDataId]
 
+  mapHashData.weaponNames[weaponIdMap[weaponid]] = nameTextMapHash
   mapHashData.weapon[weaponIdMap[weaponid]] = {
     name: nameTextMapHash,
     description: descTextMapHash,
@@ -262,6 +263,7 @@ Object.entries(avatarExcelConfigData).filter(([charid,]) => charid in characterI
 
 
   const keys = ["char", characterIdMap[charid]]
+  mapHashData.charNames[characterIdMap[charid]] = nameTextMapHash
   layeredAssignment(mapHashData, [...keys, "name"], nameTextMapHash)
   layeredAssignment(mapHashData, [...keys, "title"], avatarTitleTextMapHash)
   layeredAssignment(mapHashData, [...keys, "description"], descTextMapHash)
@@ -362,7 +364,7 @@ Object.entries(languageData).forEach(([lang, data]) => {
 
   Object.entries(data).forEach(([type, typeData]) => {
     //general manual localiation namespaces
-    if (["sheet", "weaponKey", "elementalResonance", "material"].includes(type))
+    if (["sheet", "weaponKey", "elementalResonance", "material", "charNames", "weaponNames"].includes(type))
       return dumpFile(`${fileDir}/${type}_gen.json`, typeData)
 
     //weapons/characters/artifacts

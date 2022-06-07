@@ -41,7 +41,7 @@ type CharacterSelectionModalProps = {
 export function CharacterSelectionModal({ show, onHide, onSelect, filter = () => true, newFirst = false }: CharacterSelectionModalProps) {
   const sortKeys = useMemo(() => newFirst ? ["new", ...defaultSortKeys] : defaultSortKeys, [newFirst])
   const { database } = useContext(DatabaseContext)
-  const { t } = useTranslation("page_character")
+  const { t } = useTranslation(["page_character", "charNames_gen"])
 
   const [sortBy, setsortBy] = useState(sortKeys[0])
   const [ascending, setascending] = useState(false)
