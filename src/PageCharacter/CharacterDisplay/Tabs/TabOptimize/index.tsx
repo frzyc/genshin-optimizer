@@ -74,8 +74,7 @@ export default function TabBuild() {
   const noArtifact = useMemo(() => !database._getArts().length, [database])
 
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
-  const { plotBase, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting!
-  const artSetExclusion = useMemo(() => buildSetting.artSetExclusion, [buildSetting])
+  const { artSetExclusion, plotBase, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting!
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
   const buildsArts = useMemo(() => builds.map(build => build.map(i => database._getArt(i)!)), [builds, database])
@@ -323,8 +322,8 @@ export default function TabBuild() {
         </Grid>
 
         {/* 3 */}
-        <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
-
+        <Grid item xs={12} sm={6} lg={6} display="flex" flexDirection="column" gap={1}>
+          <ArtifactSetConditional disabled={generatingBuilds} />
           {/*Minimum Final Stat Filter */}
           <StatFilterCard disabled={generatingBuilds} />
 
@@ -349,12 +348,6 @@ export default function TabBuild() {
             />
           </CardLight>
         </Grid>
-
-        {/* 4 */}
-        <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
-          <ArtifactSetConditional disabled={generatingBuilds} />
-        </Grid>
-
       </Grid>
       {/* Footer */}
       <Grid container spacing={1}>
