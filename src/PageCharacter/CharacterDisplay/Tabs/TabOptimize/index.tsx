@@ -30,7 +30,7 @@ import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../../../Types/artifact';
 import { ICachedCharacter } from '../../../../Types/character';
-import { CharacterKey } from '../../../../Types/consts';
+import { allArtifactSets, CharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
 import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
@@ -156,7 +156,14 @@ export default function TabBuild() {
 
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow,
-      new Set(/* TODO This may lead to over-pruning */), {
+      new Set([
+        /*
+          URGENT TODO
+          We have to reduce this pruning restriction.
+          This effectively disable most prunning, tanking the performance significantly
+        */
+        undefined, ...allArtifactSets
+      ] as any), {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
     }))
 
