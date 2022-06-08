@@ -10,7 +10,7 @@ type DynMinMax = { [key in string]: MinMax }
 type MinMax = { min: number, max: number }
 
 type MicropassOperation = "reaffine" | "pruneArtRange" | "pruneNodeRange" | "pruneOrder"
-export function pruneAll(nodes: NumNode[], minimum: number[], arts: ArtifactsBySlot, numTop: number, keepArtifacts: Set<ArtifactSetKey>, forced: Dict<MicropassOperation, boolean>): { nodes: NumNode[], arts: ArtifactsBySlot } {
+export function pruneAll(nodes: NumNode[], minimum: number[], arts: ArtifactsBySlot, numTop: number, mayExcludeSets: Set<ArtifactSetKey>, forced: Dict<MicropassOperation, boolean>): { nodes: NumNode[], arts: ArtifactsBySlot } {
   let should = forced
   /** If `key` makes progress, all operations in `value` should be performed */
   const deps: StrictDict<MicropassOperation, Dict<MicropassOperation, true>> = {
@@ -23,7 +23,7 @@ export function pruneAll(nodes: NumNode[], minimum: number[], arts: ArtifactsByS
   while (Object.values(should).some(x => x) && count++ < 20) {
     if (should.pruneOrder) {
       delete should.pruneOrder
-      const newArts = pruneOrder(arts, numTop, keepArtifacts)
+      const newArts = pruneOrder(arts, numTop, mayExcludeSets)
       if (arts !== newArts) {
         arts = newArts
         should = { ...should, ...deps.pruneOrder }
@@ -137,7 +137,7 @@ function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean 
   return result
 }
 /** Remove artifacts that cannot be in top `numTop` builds */
-export function pruneOrder(arts: ArtifactsBySlot, numTop: number, keepArtifacts: Set<ArtifactSetKey>): ArtifactsBySlot {
+export function pruneOrder(arts: ArtifactsBySlot, numTop: number, mayExcludeSets: Set<ArtifactSetKey>): ArtifactsBySlot {
   let progress = false
   const values = objectKeyMap(allSlotKeys, slot => {
     const list = arts.values[slot]
@@ -147,7 +147,7 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number, keepArtifacts:
         const greaterEqual = Object.entries(other.values).every(([k, o]) => o >= art.values[k])
         const greater = Object.entries(other.values).some(([k, o]) => o > art.values[k])
         if (greaterEqual && (greater || other.id > art.id) &&
-          (!keepArtifacts.has(art.set!) || art.set === other.set))
+          (!mayExcludeSets.has(other.set!) || art.set === other.set))
           count++
         return count < numTop
       })

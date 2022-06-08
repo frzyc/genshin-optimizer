@@ -29,16 +29,15 @@ import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCal
 import useDBState from '../../../../ReactHooks/useDBState';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
-import { ICachedArtifact, MainStatKey } from '../../../../Types/artifact';
+import { ICachedArtifact } from '../../../../Types/artifact';
 import { ICachedCharacter } from '../../../../Types/character';
-import { ArtifactSetKey, CharacterKey, SlotKey } from '../../../../Types/consts';
+import { allArtifactSets, ArtifactSetKey, CharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
 import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
-import { buildSettingsReducer, initialBuildSettings } from './BuildSetting';
+import useBuildSetting from './BuildSetting';
 import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
-import ArtifactSetConditional from './Components/ArtifactSetConditional';
-import ArtifactSetPicker from './Components/ArtifactSetPicker';
+import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
 import BuildAlert, { warningBuildNumber } from './Components/BuildAlert';
@@ -49,7 +48,7 @@ import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
-import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
+import { artSetPerm, compactArtifacts, dynamicData, filterFeasiblePerm, splitFiltersBySet } from './foreground';
 
 export default function TabBuild() {
   const { character, character: { key: characterKey } } = useContext(DataContext)
@@ -70,24 +69,17 @@ export default function TabBuild() {
   const setMaxWorkers = useCallback(threads => setOptimizeDBState({ threads }), [setOptimizeDBState],)
 
   const characterDispatch = useCharacterReducer(characterKey)
-  const onClickTeammate = useCharSelectionCallback()
-  const buildSettings = character?.buildSettings ?? initialBuildSettings()
-  const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSettings
-  const buildsArts = useMemo(() => builds.map(build => build.map(i => database._getArt(i)!)), [builds, database])
-  const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
-  const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
   const compareData = character?.compareData ?? false
+
+  const onClickTeammate = useCharSelectionCallback()
 
   const noArtifact = useMemo(() => !database._getArts().length, [database])
 
-  const buildSettingsDispatch = useCallback((action) =>
-    characterDispatch && characterDispatch({ buildSettings: buildSettingsReducer(buildSettings, action) })
-    , [characterDispatch, buildSettings])
-
-  const onChangeMainStatKey = useCallback((slotKey: SlotKey, mainStatKey?: MainStatKey) => {
-    if (mainStatKey === undefined) buildSettingsDispatch({ type: "mainStatKeyReset", slotKey })
-    else buildSettingsDispatch({ type: "mainStatKey", slotKey, mainStatKey })
-  }, [buildSettingsDispatch])
+  const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
+  const { artSetExclusion, plotBase, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting!
+  const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
+  const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
+  const buildsArts = useMemo(() => builds.map(build => build.map(i => database._getArt(i)!)), [builds, database])
 
   //register changes in artifact database
   useEffect(() =>
@@ -118,10 +110,11 @@ export default function TabBuild() {
       return true
     })
     const split = compactArtifacts(arts, mainStatAssumptionLevel)
-    const setPerms = [...artSetPerm([setFilters.map(({ key, num }) => ({ key, min: num }))])]
+    const setPerms = [...filterFeasiblePerm(artSetPerm(artSetExclusion, Object.values(split.values).flatMap(x => x.map(x => x.set!))), split)]
+    if (process.env.NODE_ENV === "development") console.log("Art Set Permutation Count", setPerms.length)
     const totBuildNumber = [...setPerms].map(perm => countBuilds(filterArts(split, perm))).reduce((a, b) => a + b, 0)
     return artsDirty && { split, setPerms, totBuildNumber }
-  }, [characterKey, useExcludedArts, useEquippedArts, equipmentPriority, mainStatKeys, setFilters, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
+  }, [characterKey, useExcludedArts, useEquippedArts, equipmentPriority, mainStatKeys, artSetExclusion, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
 
   // Reset the Alert by setting progress to zero.
   useEffect(() => {
@@ -165,7 +158,9 @@ export default function TabBuild() {
 
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow,
-      new Set(setFilters.map(x => x.key as ArtifactSetKey)), {
+      new Set(
+        artSetExclusion.rainbow?.length ? allArtifactSets
+          : Object.keys(artSetExclusion).filter(set => artSetExclusion[set]?.length) as ArtifactSetKey[]), {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
     }))
 
@@ -275,7 +270,7 @@ export default function TabBuild() {
       }
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
       if (process.env.NODE_ENV === "development") console.log("Build Result", builds)
-      buildSettingsDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
+      buildSettingDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
       const totalDuration = performance.now() - t1
 
       setgenerationProgress(wrap.buildCount)
@@ -283,14 +278,14 @@ export default function TabBuild() {
       setgenerationDuration(totalDuration)
     }
     setgeneratingBuilds(false)
-  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingsDispatch, setFilters, statFilters, maxWorkers])
+  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingDispatch, statFilters, maxWorkers, artSetExclusion])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
   const setPlotBase = useCallback(plotBase => {
-    buildSettingsDispatch({ plotBase })
+    buildSettingDispatch({ plotBase })
     setchartData(undefined)
-  }, [buildSettingsDispatch])
+  }, [buildSettingDispatch])
   const dataContext: dataContextObj | undefined = useMemo(() => {
     return data && characterSheet && character && teamData && {
       data,
@@ -321,32 +316,24 @@ export default function TabBuild() {
               <Typography gutterBottom>Main Stat</Typography>
               <BootstrapTooltip placement="top" title={<Typography><strong>Level Assumption</strong> changes mainstat value to be at least a specific level. Does not change substats.</Typography>}>
                 <Box>
-                  <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={mainStatAssumptionLevel => buildSettingsDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
+                  <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={mainStatAssumptionLevel => buildSettingDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
                 </Box>
               </BootstrapTooltip>
             </CardContent>
             {/* main stat selector */}
-            <MainStatSelectionCard
-              mainStatKeys={mainStatKeys}
-              onChangeMainStatKey={onChangeMainStatKey}
-              disabled={generatingBuilds}
-            />
+            <MainStatSelectionCard disabled={generatingBuilds} />
           </CardLight>
         </Grid>
 
         {/* 3 */}
-        <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
-
-          {/*Minimum Final Stat Filter */}
-          <StatFilterCard statFilters={statFilters} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={generatingBuilds} />
-
-          <BonusStatsCard />
+        <Grid item xs={12} sm={6} lg={6} display="flex" flexDirection="column" gap={1}>
+          <ArtifactSetConfig disabled={generatingBuilds} />
 
           {/* use excluded */}
-          <UseExcluded disabled={generatingBuilds} useExcludedArts={useExcludedArts} buildSettingsDispatch={buildSettingsDispatch} artsDirty={artsDirty} />
+          <UseExcluded disabled={generatingBuilds} artsDirty={artsDirty} />
 
           {/* use equipped */}
-          <UseEquipped disabled={generatingBuilds} useEquippedArts={useEquippedArts} buildSettingsDispatch={buildSettingsDispatch} />
+          <UseEquipped disabled={generatingBuilds} />
 
           { /* Level Filter */}
           <CardLight>
@@ -354,23 +341,18 @@ export default function TabBuild() {
               Artifact Level Filter
             </CardContent>
             <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh}
-              setLow={levelLow => buildSettingsDispatch({ levelLow })}
-              setHigh={levelHigh => buildSettingsDispatch({ levelHigh })}
-              setBoth={(levelLow, levelHigh) => buildSettingsDispatch({ levelLow, levelHigh })}
+              setLow={levelLow => buildSettingDispatch({ levelLow })}
+              setHigh={levelHigh => buildSettingDispatch({ levelHigh })}
+              setBoth={(levelLow, levelHigh) => buildSettingDispatch({ levelLow, levelHigh })}
               disabled={generatingBuilds}
             />
           </CardLight>
+
+          {/*Minimum Final Stat Filter */}
+          <StatFilterCard disabled={generatingBuilds} />
+
+          <BonusStatsCard />
         </Grid>
-
-        {/* 4 */}
-        <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
-          <ArtifactSetConditional disabled={generatingBuilds} />
-
-          {/* Artifact set pickers */}
-          {setFilters.map((setFilter, index) => (index <= setFilters.filter(s => s.key).length) && <ArtifactSetPicker key={index} index={index} setFilters={setFilters}
-            disabled={generatingBuilds} onChange={(index, key, num) => buildSettingsDispatch({ type: 'setFilter', index, key, num })} />)}
-        </Grid>
-
       </Grid>
       {/* Footer */}
       <Grid container spacing={1}>
@@ -391,7 +373,7 @@ export default function TabBuild() {
               </MenuItem>
               <Divider />
               {maxBuildsToShowList.map(v => <MenuItem key={v}
-                onClick={() => buildSettingsDispatch({ maxBuildsToShow: v })}>{v} {v === 1 ? "Build" : "Builds"}</MenuItem>)}
+                onClick={() => buildSettingDispatch({ maxBuildsToShow: v })}>{v} {v === 1 ? "Build" : "Builds"}</MenuItem>)}
             </DropdownButton>
             <DropdownButton disabled={generatingBuilds || !characterKey}
               title={<span><b>{maxWorkers}</b> {maxWorkers === 1 ? "Thread" : "Threads"}</span>}>
@@ -416,7 +398,7 @@ export default function TabBuild() {
           <span>Optimization Target: </span>
           {<OptimizationTargetSelector
             optimizationTarget={optimizationTarget}
-            setTarget={target => buildSettingsDispatch({ optimizationTarget: target })}
+            setTarget={target => buildSettingDispatch({ optimizationTarget: target })}
             disabled={!!generatingBuilds}
           />}
         </Grid>
@@ -435,7 +417,7 @@ export default function TabBuild() {
               {builds ? <span>Showing <strong>{builds.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
                 : <span>Select a character to generate builds.</span>}
             </Typography>
-            <Button disabled={!builds.length} color="error" onClick={() => buildSettingsDispatch({ builds: [], buildDate: 0 })} >Clear Builds</Button>
+            <Button disabled={!builds.length} color="error" onClick={() => buildSettingDispatch({ builds: [], buildDate: 0 })} >Clear Builds</Button>
           </Box>
           <Grid container display="flex" spacing={1}>
             <Grid item><HitModeToggle size="small" /></Grid>
