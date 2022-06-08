@@ -1,7 +1,7 @@
-import { initialCharacter } from "../ReactHooks/useCharSelectionCallback"
 import { ICachedArtifact } from "../Types/artifact"
 import { ICachedCharacter } from "../Types/character"
 import { randomizeArtifact } from "../Util/ArtifactUtil"
+import { initialCharacter } from "../Util/CharacterUtil"
 import { getArrLastElement } from "../Util/Util"
 import { defaultInitialWeapon } from "../Util/WeaponUtil"
 import { ArtCharDatabase } from "./Database"

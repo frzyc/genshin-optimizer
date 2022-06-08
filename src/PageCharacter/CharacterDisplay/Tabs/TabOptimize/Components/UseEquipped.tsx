@@ -19,13 +19,11 @@ import useCharacter from "../../../../../ReactHooks/useCharacter";
 import useCharSelectionCallback from "../../../../../ReactHooks/useCharSelectionCallback";
 import { ICachedCharacter } from "../../../../../Types/character";
 import { CharacterKey } from "../../../../../Types/consts";
-import useBuildSetting from "../BuildSetting";
 import { useOptimizeDBState } from "../DBState";
 
-export default function UseEquipped({ disabled = false }: { disabled?: boolean }) {
+export default function UseEquipped({ useEquippedArts, buildSettingsDispatch, disabled }) {
   const { t } = useTranslation("page_character")
   const { character: { key: characterKey } } = useContext(DataContext)
-  const { buildSetting: { useEquippedArts }, buildSettingDispatch } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState(false)
   const [{ equipmentPriority: tempEquipmentPriority }, setOptimizeDBState] = useOptimizeDBState()
@@ -93,7 +91,7 @@ export default function UseEquipped({ disabled = false }: { disabled?: boolean }
       </CardContent>
     </CardDark ></ModalWrapper>
     <ButtonGroup sx={{ display: "flex", width: "100%" }}>
-      <Button sx={{ flexGrow: 1 }} onClick={() => buildSettingDispatch({ useEquippedArts: !useEquippedArts })} disabled={disabled} startIcon={useEquippedArts ? <CheckBox /> : <CheckBoxOutlineBlank />} color={useEquippedArts ? "success" : "secondary"}>
+      <Button sx={{ flexGrow: 1 }} onClick={() => buildSettingsDispatch({ useEquippedArts: !useEquippedArts })} disabled={disabled} startIcon={useEquippedArts ? <CheckBox /> : <CheckBoxOutlineBlank />} color={useEquippedArts ? "success" : "secondary"}>
         <Box>
           <span><Trans t={t} i18nKey="tabOptimize.useEquipped.title">Use Equipped Artifacts</Trans></span>
           {useEquippedArts && <SqBadge><Trans t={t} i18nKey="tabOptimize.useEquipped.usingNum" count={numUseEquippedChar}>Using from <strong>{{ count: numUseEquippedChar }}</strong> characters</Trans></SqBadge>}

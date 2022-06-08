@@ -1,4 +1,5 @@
 import { EleEnemyResKey, StatKey } from "../KeyMap";
+import { BuildSetting } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting";
 import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey } from "./consts";
 import { IConditionalValues } from "./IConditional";
 import { DocumentSection } from "./sheet";
@@ -22,6 +23,7 @@ export interface ICharacter {
   bonusStats: Partial<Record<StatKey, number>>
   enemyOverride: Partial<Record<EleEnemyResKey | "enemyLevel" | "enemyDefRed_" | "enemyDefIgn_", number>>
   infusionAura: ElementKey | ""
+  buildSettings?: BuildSetting
   compareData: boolean
   favorite: boolean
 }

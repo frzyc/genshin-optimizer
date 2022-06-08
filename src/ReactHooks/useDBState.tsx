@@ -5,6 +5,7 @@ export default function useDBState<O extends object>(key: string, init: () => O)
   const { database } = useContext(DatabaseContext)
   const [state, setState] = useState(database._getState<O>(key, init))
 
+  useEffect(() => setState(database._getState(key, init)), [database, key, init])
   useEffect(() =>
     key ? database.followState(key, setState) : undefined,
     [key, setState, database])

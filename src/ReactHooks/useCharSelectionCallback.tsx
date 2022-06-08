@@ -1,11 +1,10 @@
 import { useCallback, useContext } from "react";
 import { useNavigate, useMatch } from "react-router";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
+import { initialCharacter } from "../Util/CharacterUtil";
 import { DatabaseContext } from "../Database/Database";
-import { allSlotKeys, CharacterKey } from "../Types/consts";
+import { CharacterKey } from "../Types/consts";
 import { defaultInitialWeapon } from "../Util/WeaponUtil";
-import { ICachedCharacter } from "../Types/character";
-import { objectKeyMap } from "../Util/Util";
 
 /**
  * Basically a history hook to go to the dedicated character page. Will create the character if it doesn't exist.
@@ -39,29 +38,4 @@ export default function useCharSelectionCallback() {
     [navigate, database, tab],
   )
   return cb
-}
-
-export function initialCharacter(key: CharacterKey): ICachedCharacter {
-  return {
-    key,
-    level: 1,
-    ascension: 0,
-    hitMode: "avgHit",
-    reactionMode: "",
-    equippedArtifacts: objectKeyMap(allSlotKeys, () => ""),
-    equippedWeapon: "",
-    conditional: {},
-    bonusStats: {},
-    enemyOverride: {},
-    talent: {
-      auto: 1,
-      skill: 1,
-      burst: 1,
-    },
-    infusionAura: "",
-    constellation: 0,
-    team: ["", "", ""],
-    compareData: false,
-    favorite: false,
-  }
 }

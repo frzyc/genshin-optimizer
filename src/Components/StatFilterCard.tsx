@@ -7,18 +7,15 @@ import { useTranslation } from 'react-i18next';
 import { DataContext } from '../DataContext';
 import { uiInput as input } from '../Formula';
 import KeyMap, { StatKey } from '../KeyMap';
-import useBuildSetting from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting';
 import { ElementKey } from '../Types/consts';
 import CardLight from './Card/CardLight';
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from './CustomNumberInput';
 import DropdownButton from './DropdownMenu/DropdownButton';
 import InfoTooltip from './InfoTooltip';
-export default function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
+export default function StatFilterCard({ statFilters = {}, setStatFilters, disabled = false }:
+  { statFilters: Dict<StatKey, number>, setStatFilters: (object: Dict<StatKey, number>) => void, disabled?: boolean }) {
   const { t } = useTranslation("page_character")
-  const { data, character: { key: characterKey } } = useContext(DataContext)
-  const { buildSetting: { statFilters }, buildSettingDispatch } = useBuildSetting(characterKey)
-  const setStatFilters = useCallback((statFilters: Dict<StatKey, number>) => buildSettingDispatch({ statFilters }), [buildSettingDispatch],)
-
+  const { data } = useContext(DataContext)
   const statKeys: StatKey[] = ["atk", "hp", "def", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_"]
   if (data.get(input.weaponType).value !== "catalyst") statKeys.push("physical_dmg_")
   const charEle = data.get(input.charEle).value as ElementKey
