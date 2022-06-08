@@ -25,15 +25,16 @@ type ArtifactMultiAutocompleteProps<T extends ArtifactMultiAutocompleteKey> = Om
 }
 function ArtifactMultiAutocomplete<T extends ArtifactMultiAutocompleteKey>({ allArtifactKeys, selectedArtifactKeys, setArtifactKeys, getName, getImage, label, ...props }:
   ArtifactMultiAutocompleteProps<T>) {
-  const theme = useTheme();
+  const theme = useTheme()
 
   const handleChange = (_, value: ArtifactMultiAutocompleteOption<T>[]) => {
     setArtifactKeys(value.map(v => v.key))
-  };
+  }
   const options = useMemo(() => allArtifactKeys.map(key => ({ key: key, label: getName(key) })), [allArtifactKeys, getName])
   return <Autocomplete
     autoHighlight
     multiple
+    disableCloseOnSelect
     options={options}
     value={selectedArtifactKeys.map(key => ({ key: key, label: getName(key) }))}
     onChange={handleChange}
@@ -152,8 +153,9 @@ function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ a
   return <Autocomplete
     autoHighlight
     options={options}
+    clearIcon={selectedArtifactKey ? undefined : ""} // Hide the clear icon if the value is already default
     value={{ key: selectedArtifactKey, label: getName(selectedArtifactKey) }}
-    onChange={(_, newValue) => setArtifactKey(newValue ? newValue.key : "")}
+    onChange={(event, newValue, reason) => (event.type !== "change" || reason !== "clear") && setArtifactKey(newValue ? newValue.key : "")}
     getOptionLabel={(option) => option.label ? option.label : defaultText}
     isOptionEqualToValue={(option, value) => option.key === value.key}
     getOptionDisabled={option => option.key ? disable(option.key) : false}

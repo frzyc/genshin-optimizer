@@ -16,6 +16,7 @@ import { DatabaseContext } from "../../../../../Database/Database";
 import { DataContext } from "../../../../../DataContext";
 import useBoolState from "../../../../../ReactHooks/useBoolState";
 import useCharacter from "../../../../../ReactHooks/useCharacter";
+import useCharSelectionCallback from "../../../../../ReactHooks/useCharSelectionCallback";
 import { ICachedCharacter } from "../../../../../Types/character";
 import { CharacterKey } from "../../../../../Types/consts";
 import { useOptimizeDBState } from "../DBState";
@@ -96,7 +97,7 @@ export default function UseEquipped({ useEquippedArts, buildSettingsDispatch, di
           {useEquippedArts && <SqBadge><Trans t={t} i18nKey="tabOptimize.useEquipped.usingNum" count={numUseEquippedChar}>Using from <strong>{{ count: numUseEquippedChar }}</strong> characters</Trans></SqBadge>}
         </Box>
       </Button>
-      {useEquippedArts && <Button sx={{ flexShrink: 1 }} color="info" onClick={onOpen}><Settings /></Button>}
+      {useEquippedArts && <Button sx={{ flexShrink: 1 }} color="info" onClick={onOpen} disabled={disabled}><Settings /></Button>}
     </ButtonGroup>
   </Box>
 }
@@ -113,6 +114,7 @@ function SelectItem({ characterKey, rank, maxRank, setRank, onRemove, numAbove }
   const { t } = useTranslation("page_character")
   const { database } = useContext(DatabaseContext)
   const character = useCharacter(characterKey)
+  const onClick = useCharSelectionCallback()
   if (!character) return null
   const { equippedWeapon, equippedArtifacts } = character
   return <CardLight sx={{ p: 1 }}  >
@@ -153,7 +155,7 @@ function SelectItem({ characterKey, rank, maxRank, setRank, onRemove, numAbove }
     </Box>
     <Grid container columns={7} spacing={1}>
       <Grid item xs={1} >
-        <CharacterCardPico characterKey={characterKey} />
+        <CharacterCardPico characterKey={characterKey} onClick={onClick} />
       </Grid>
       <Grid item xs={1}><WeaponCardPico weaponId={equippedWeapon} /></Grid>
       {Object.entries(equippedArtifacts).map(([slotKey, aId]) => <Grid item xs={1} key={slotKey} ><ArtifactCardPico slotKey={slotKey} artifactObj={database._getArt(aId)} /></Grid>)}

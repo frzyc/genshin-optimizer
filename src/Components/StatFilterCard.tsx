@@ -57,7 +57,7 @@ export function StatFilterItem({ statKey, statKeys = [], value = 0, close, setFi
     </DropdownButton>
     <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }}>
       <CustomNumberInput
-        disabled={!statKey}
+        disabled={!statKey || disabled}
         float={isFloat}
         value={value}
         placeholder="Min Value"
