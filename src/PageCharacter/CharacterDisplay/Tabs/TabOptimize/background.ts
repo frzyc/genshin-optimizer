@@ -45,7 +45,7 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
   const totalCount = countBuilds(preArts)
 
   let nodes = optimize(shared.nodes, {}, _ => false);
-  ({ nodes, arts: preArts } = pruneAll(nodes, shared.min, preArts, shared.maxBuilds, new Set(), {
+  ({ nodes, arts: preArts } = pruneAll(nodes, shared.min, preArts, shared.maxBuilds, {}, {
     pruneArtRange: true, pruneNodeRange: true,
   }))
   const compute = precompute(nodes, f => f.path[1])

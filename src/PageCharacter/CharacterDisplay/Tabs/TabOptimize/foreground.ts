@@ -8,6 +8,7 @@ import { allMainStatKeys, allSubstatKeys, ICachedArtifact } from "../../../../Ty
 import { allSlotKeys, ArtifactSetKey } from "../../../../Types/consts";
 import { deepClone, objectKeyMap, objectMap, range } from "../../../../Util/Util";
 import type { ArtifactBuildData, ArtifactsBySlot, DynStat, RequestFilter } from "./background";
+import { ArtSetExclusion } from "./BuildSetting";
 import { countBuilds, filterArts } from "./common";
 
 const dynamic = setReadNodeKeys(deepClone({ dyn: { ...input.art, ...input.artSet } }))
@@ -64,7 +65,7 @@ export function* filterFeasiblePerm(filters: Iterable<RequestFilter>, _artSets: 
   }
 }
 /** A *disjoint* set of `RequestFilter` satisfying the exclusion rules */
-export function* artSetPerm(exclusion: Dict<ArtifactSetKey | "rainbow", number[]>, _artSets: ArtifactSetKey[]): Iterable<RequestFilter> {
+export function* artSetPerm(exclusion: ArtSetExclusion, _artSets: ArtifactSetKey[]): Iterable<RequestFilter> {
   /**
    * This generation algorithm is separated into two parts:
    * - "Shape" generation

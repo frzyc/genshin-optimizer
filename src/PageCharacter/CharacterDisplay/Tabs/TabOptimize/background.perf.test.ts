@@ -30,7 +30,7 @@ describe.skip("Worker Perf", () => {
     let nodes = optimize([optimizationTargetNode], workerData, ({ path: [p] }) => p !== "dyn")
     let arts = compactArtifacts(database._getArts(), 0)
     const minimum = [-Infinity];
-    ({ nodes, arts } = pruneAll(nodes, minimum, arts, 10, new Set(), { reaffine: true }))
+    ({ nodes, arts } = pruneAll(nodes, minimum, arts, 10, {}, { reaffine: true }))
 
     setup({
       command: "setup",

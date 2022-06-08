@@ -4,8 +4,9 @@ import { StatKey } from "../../../../KeyMap";
 import { MainStatKey, SubstatKey } from "../../../../Types/artifact";
 import { ArtifactSetKey, CharacterKey } from "../../../../Types/consts";
 import { maxBuildsToShowDefault, maxBuildsToShowList } from "./Build";
+export type ArtSetExclusion = Dict<Exclude<ArtifactSetKey, "PrayersForDestiny" | "PrayersForIllumination" | "PrayersForWisdom" | "PrayersToSpringtime"> | "rainbow", (2 | 4)[]>
 export interface BuildSetting {
-  artSetExclusion: Dict<Exclude<ArtifactSetKey, "PrayersForDestiny" | "PrayersForIllumination" | "PrayersForWisdom" | "PrayersToSpringtime"> | "rainbow", Array<2 | 4>>
+  artSetExclusion: ArtSetExclusion
   statFilters: Dict<StatKey, number>
   mainStatKeys: {
     sands: MainStatKey[],

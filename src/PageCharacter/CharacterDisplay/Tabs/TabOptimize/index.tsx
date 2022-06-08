@@ -30,7 +30,7 @@ import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../../../Types/artifact';
 import { ICachedCharacter } from '../../../../Types/character';
-import { allArtifactSets, ArtifactSetKey, CharacterKey } from '../../../../Types/consts';
+import { CharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
 import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
@@ -155,10 +155,7 @@ export default function TabBuild() {
     }
 
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
-    ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow,
-      new Set(
-        artSetExclusion.rainbow?.length ? allArtifactSets
-          : Object.keys(artSetExclusion).filter(set => artSetExclusion[set]?.length) as ArtifactSetKey[]), {
+    ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow, artSetExclusion, {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
     }))
 

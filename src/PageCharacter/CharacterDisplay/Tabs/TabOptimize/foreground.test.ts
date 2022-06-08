@@ -1,5 +1,6 @@
 import { allSlotKeys, ArtifactSetKey, SlotKey } from "../../../../Types/consts"
 import { objectKeyMap } from "../../../../Util/Util"
+import { ArtSetExclusion } from "./BuildSetting"
 import { artSetPerm, exclusionToAllowed } from "./foreground"
 
 function* allCombinations(sets: StrictDict<SlotKey, ArtifactSetKey[]>): Iterable<StrictDict<SlotKey, ArtifactSetKey>> {
@@ -13,7 +14,7 @@ function* allCombinations(sets: StrictDict<SlotKey, ArtifactSetKey[]>): Iterable
 
 describe("foreground.ts", () => {
   describe("artSetPerm should handle", () => {
-    const filter: Dict<ArtifactSetKey | "rainbow", number[]> = { Adventurer: [2, 4], ArchaicPetra: [4], Berserker: [2, 4], rainbow: [2, 4] }
+    const filter: ArtSetExclusion = { Adventurer: [2, 4], ArchaicPetra: [4], Berserker: [2, 4], rainbow: [2, 4] }
     const artSets: ArtifactSetKey[] = ["Adventurer", "ArchaicPetra", "Berserker", "BloodstainedChivalry"]
     const perm = [...artSetPerm(filter, artSets)], allowedRainbows = exclusionToAllowed(filter.rainbow)
 
