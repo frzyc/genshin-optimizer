@@ -61,7 +61,7 @@ export default function PageWeapon() {
     if (!weapon) return
     const name = t(`weaponNames_gen:${weapon.key}`)
 
-    if (!window.confirm(`Are you sure you want to remove ${name}?`)) return
+    if (!window.confirm(t("removeWeapon", { value: name }))) return
     database.removeWeapon(key)
     if (state.editWeaponId === key)
       stateDispatch({ editWeaponId: "" })
@@ -169,7 +169,7 @@ export default function PageWeapon() {
         <Grid item xs={1}>
           <CardDark sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
             <CardContent>
-              <Typography sx={{ textAlign: "center" }}>Add New Weapon</Typography>
+              <Typography sx={{ textAlign: "center" }}>{t("page_weapon:addWeapon")}</Typography>
             </CardContent>
             <WeaponSelectionModal show={newWeaponModalShow} onHide={() => setnewWeaponModalShow(false)} onSelect={newWeapon} />
             <Box sx={{
