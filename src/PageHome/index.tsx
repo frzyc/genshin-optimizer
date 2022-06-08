@@ -1,7 +1,7 @@
 import { faDiscord, faGithub, faPatreon, faPaypal, faReact } from "@fortawesome/free-brands-svg-icons"
 import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { ExpandMore, Scanner } from "@mui/icons-material"
+import { ExpandMore, Scanner, YouTube } from "@mui/icons-material"
 import { Box, Button, CardContent, CardHeader, Collapse, Grid, Link, Typography } from "@mui/material"
 import { useState } from "react"
 import ReactGA from 'react-ga4'
@@ -190,6 +190,19 @@ export default function PageHome() {
             Quick Links
           </Trans>
         </Typography>
+        <CardLight sx={{ mb: 1, }}>
+          <CardContent>
+            <Typography variant="h6" gutterBottom>
+              Tutorials: We have a Youtube playlist!
+            </Typography>
+            <Typography color="text.secondary" gutterBottom>
+              We've recorded a Youtube playlist of bit-sized (1-5 minutes per video) tutorials that can get you started using GO.
+            </Typography>
+            <Button component={Link} href={process.env.REACT_APP_YOUTUBE_TUT_PL} target="_blank" size="small" variant="contained" startIcon={<YouTube />}>
+              Youtube Playlist
+            </Button>
+          </CardContent>
+        </CardLight>
         <CardLight sx={{ mb: 1, }}>
           <CardContent>
             <Typography variant="h6" gutterBottom>
