@@ -211,6 +211,7 @@ export function* splitFiltersBySet(_arts: ArtifactsBySlot, filters: Iterable<Req
       const filter = filters.pop()!
       const arts = filterArts(_arts, filter)
       const count = countBuilds(arts)
+      if (count === 0) continue
       if (count <= limit) {
         if (count) yield filter
         continue
