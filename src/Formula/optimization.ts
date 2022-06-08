@@ -1,4 +1,4 @@
-import { assertUnreachable, objPathValue } from "../Util/Util"
+import { assertUnreachable, objectKeyMap, objPathValue } from "../Util/Util"
 import { forEachNodes, mapFormulas } from "./internal"
 import { constant } from "./utils"
 import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode, StrPrioNode } from "./type"
@@ -28,7 +28,7 @@ export function optimize(formulas: NumNode[], topLevelData: Data, shouldFold = (
   formulas = deduplicate(formulas)
   return formulas
 }
-export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<number>) => string): (values: Dict<string, number>) => number[] {
+export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<number>) => string): [compute: () => Float64Array, mapping: Dict<string, number>, buffer: Float64Array] {
   // TODO: Use min-cut to minimize the size of interim array
   type Reference = string | number | { ins: Reference[] }
 
@@ -107,8 +107,7 @@ export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<num
     })
   })
 
-  const buffer = Array(offset).fill(0)
-  buffer.forEach((_, i, array) => array[i] = NaN)
+  const buffer = new Float64Array(offset).fill(0)
   uniqueNumbers.forEach(number => buffer[locations.get(number)!] = number)
 
   // Copy target for when some outputs are duplicated
@@ -120,15 +119,14 @@ export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<num
     copyList.forEach(([src, dst]) => buffer[dst] = buffer[src])
   } : undefined
 
-  return values => {
-    readStrings.forEach((id, i) => buffer[readOffset + i] = values[id] ?? 0)
+  return [() => {
     computations.forEach(({ out, ins, op, buff }) => {
       ins.forEach((i, j) => buff[j] = buffer[i])
       buffer[out] = op(buff)
     })
     copyFormula?.()
     return buffer
-  }
+  }, objectKeyMap(readStrings, (_, i) => readOffset + i), buffer]
 }
 
 function flatten(formulas: NumNode[]): NumNode[] {

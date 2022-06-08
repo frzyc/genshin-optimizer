@@ -48,15 +48,22 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
   ({ nodes, arts: preArts } = pruneAll(nodes, shared.min, preArts, shared.maxBuilds, {}, {
     pruneArtRange: true, pruneNodeRange: true,
   }))
-  const compute = precompute(nodes, f => f.path[1])
-  const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length)
+  const [compute, mapping, buffer] = precompute(nodes, f => f.path[1])
+  const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length).map(arts => arts.map(art => {
+    return {
+      id: art.id,
+      values: Object.entries(art.values)
+        .map(([key, value]) => ({ key: mapping[key]!, value, cache: 0 }))
+        .filter(({ key, value }) => key !== undefined && value !== 0)
+    }
+  }))
 
   const ids: string[] = Array(arts.length).fill("")
   let count = { build: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }
 
-  function permute(i: number, stats: Stats) {
+  function permute(i: number) {
     if (i < 0) {
-      const result = compute(stats)
+      const result = compute()
       if (shared.min.every((m, i) => (m <= result[i]))) {
         const value = result[shared.min.length]
         let build: Build | undefined
@@ -79,11 +86,16 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
     arts[i].forEach(art => {
       ids[i] = art.id
 
-      const newStats = { ...stats }
-      Object.entries(art.values).forEach(([key, value]) =>
-        newStats[key] = (newStats[key] ?? 0) + value)
+      for (const current of art.values) {
+        const { key, value } = current
+        current.cache = buffer[key]
+        buffer[key] += value
+      }
 
-      permute(i - 1, newStats)
+      permute(i - 1)
+
+      for (const { key, cache } of art.values)
+        buffer[key] = cache
     })
     if (i === 0) {
       count.build += arts[0].length
@@ -92,7 +104,13 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
     }
   }
 
-  permute(arts.length - 1, preArts.base)
+  for (const [key, value] of Object.entries(preArts.base)) {
+    const i = mapping[key]
+    if (i !== undefined)
+      buffer[i] = value
+  }
+
+  permute(arts.length - 1)
   interimReport(count)
   return { command: "request", id, total: totalCount }
 }
