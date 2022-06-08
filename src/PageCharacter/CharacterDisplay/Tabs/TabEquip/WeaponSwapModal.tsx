@@ -1,5 +1,5 @@
-import { Box, CardContent, Divider, Grid, ToggleButton, Typography } from "@mui/material"
-import { useCallback, useContext, useEffect, useMemo, useState } from "react"
+import { Box, CardContent, Divider, Grid, TextField, ToggleButton, Typography } from "@mui/material"
+import { ChangeEvent, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 import Assets from "../../../../Assets/Assets"
 import CardDark from "../../../../Components/Card/CardDark"
@@ -17,10 +17,11 @@ import { allRarities, WeaponTypeKey } from "../../../../Types/consts"
 import { filterFunction, sortFunction } from '../../../../Util/SortByFilters'
 import { weaponFilterConfigs, weaponSortConfigs } from '../../../../Util/WeaponSort'
 import CompareBuildButton from "./CompareBuildButton"
+
 export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClose }: { onChangeId: (id: string) => void, weaponTypeKey: WeaponTypeKey, show: boolean, onClose: () => void }) {
-  const { t } = useTranslation("page_character")
+  const { t } = useTranslation(["page_character", "page_weapon", "weaponNames_gen"])
   const { database } = useContext(DatabaseContext)
-  const clickHandler = useCallback((id) => {
+  const clickHandler = useCallback((id: string) => {
     onChangeId(id)
     onClose()
   }, [onChangeId, onClose])
@@ -35,18 +36,21 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
 
   const [rarity, setRarity] = useState([5, 4, 3])
 
+  const [searchTerm, setSearchTerm] = useState("")
+  const deferredSearchTerm = useDeferredValue(searchTerm)
+
   const weaponIdList = useMemo(() => (filterConfigs && sortConfigs && dbDirty && database._getWeapons()
-    .filter(filterFunction({ weaponType: weaponTypeKey, rarity }, filterConfigs))
+    .filter(filterFunction({ weaponType: weaponTypeKey, rarity, name: deferredSearchTerm }, filterConfigs))
     .sort(sortFunction("level", false, sortConfigs))
     .map(weapon => weapon.id)) ?? []
-    , [dbDirty, database, filterConfigs, sortConfigs, rarity, weaponTypeKey])
+    , [dbDirty, database, filterConfigs, sortConfigs, rarity, weaponTypeKey, deferredSearchTerm])
 
   return <ModalWrapper open={show} onClose={onClose} >
     <CardDark>
       <CardContent sx={{ py: 1 }}>
         <Grid container>
           <Grid item flexGrow={1}>
-            <Typography variant="h6">{weaponTypeKey ? <ImgIcon src={Assets.weaponTypes[weaponTypeKey]} /> : null} {t`tabEquip.swapWeapon`}</Typography>
+            <Typography variant="h6">{weaponTypeKey ? <ImgIcon src={Assets.weaponTypes[weaponTypeKey]} /> : null} {t`page_character:tabEquip.swapWeapon`}</Typography>
           </Grid>
           <Grid item>
             <CloseButton onClick={onClose} />
@@ -55,11 +59,22 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
       </CardContent>
       <Divider />
       <CardContent>
-        <Box mb={1}>
-          <SolidToggleButtonGroup sx={{ height: "100%" }} onChange={(e, newVal) => setRarity(newVal)} value={rarity} size="small">
-            {allRarities.map(star => <ToggleButton key={star} value={star}><Box display="flex" gap={1}><strong>{star}</strong><Stars stars={1} /></Box></ToggleButton>)}
-          </SolidToggleButtonGroup>
-        </Box>
+        <Grid container spacing={1} mb={1}>
+          <Grid item>
+            <SolidToggleButtonGroup sx={{ height: "100%" }} onChange={(e, newVal) => setRarity(newVal)} value={rarity} size="small">
+              {allRarities.map(star => <ToggleButton key={star} value={star}><Box display="flex" gap={1}><strong>{star}</strong><Stars stars={1} /></Box></ToggleButton>)}
+            </SolidToggleButtonGroup>
+          </Grid>
+          <Grid item flexGrow={1}>
+            <TextField
+              autoFocus
+              size="small"
+              value={searchTerm}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
+              label={t("page_weapon:weaponName")}
+            />
+          </Grid>
+        </Grid>
         <Grid container spacing={1}>
           {weaponIdList.map(weaponId =>
             <Grid item key={weaponId} xs={6} sm={6} md={4} lg={3} >

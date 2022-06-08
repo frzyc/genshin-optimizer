@@ -90,7 +90,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
       <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }}>
         {canEquip
           ? <CharacterAutocomplete size="small" sx={{ flexGrow: 1 }}
-            showDefault defaultIcon={<BusinessCenter />} defaultText={t("inventory")}
+            showDefault defaultIcon={<BusinessCenter />} defaultText={t("ui:inventory")}
             value={location} onChange={equipOnChar} filter={filter} />
           : <LocationName location={location} />}
         <ButtonGroup>

@@ -1,5 +1,5 @@
-import { Box, CardActionArea, CardContent, Divider, Grid, Typography } from "@mui/material"
-import { useEffect, useState } from "react"
+import { Box, CardActionArea, CardContent, Divider, Grid, TextField, Typography } from "@mui/material"
+import { ChangeEvent, useDeferredValue, useEffect, useMemo, useState } from "react"
 import Assets from "../../Assets/Assets"
 import usePromise from "../../ReactHooks/usePromise"
 import { allWeaponKeys, WeaponKey, WeaponTypeKey } from "../../Types/consts"
@@ -11,6 +11,7 @@ import ImgIcon from "../Image/ImgIcon"
 import ModalWrapper from "../ModalWrapper"
 import { Stars } from "../StarDisplay"
 import WeaponToggle from "../ToggleButton/WeaponToggle"
+import { useTranslation } from "react-i18next"
 
 type WeaponSelectionModalProps = {
   show: boolean,
@@ -21,27 +22,39 @@ type WeaponSelectionModalProps = {
 }
 
 export default function WeaponSelectionModal({ show, onHide, onSelect, filter = () => true, weaponFilter: propWeaponFilter }: WeaponSelectionModalProps) {
+  const { t } = useTranslation(["page_weapon", "weaponNames_gen"])
   const weaponSheets = usePromise(WeaponSheet.getAll, [])
   const [weaponFilter, setWeaponfilter] = useState<WeaponTypeKey | "">(propWeaponFilter ?? "")
 
   useEffect(() => propWeaponFilter && setWeaponfilter(propWeaponFilter), [propWeaponFilter])
 
-  const weaponIdList = !weaponSheets ? [] : [...new Set(allWeaponKeys)].filter(wKey => filter(weaponSheets[wKey]))
-    .filter(wKey => {
-      if (weaponFilter && weaponFilter !== weaponSheets?.[wKey]?.weaponType) return false
-      return true
-    })
-    .sort((a, b) => (weaponSheets?.[b]?.rarity ?? 0) - (weaponSheets?.[a]?.rarity ?? 0))
+  const [searchTerm, setSearchTerm] = useState("")
+  const deferredSearchTerm = useDeferredValue(searchTerm)
+
+  const weaponIdList = useMemo(() => !weaponSheets ? [] : allWeaponKeys.filter(wKey => filter(weaponSheets[wKey]))
+    .filter(wKey => !(weaponFilter && weaponFilter !== weaponSheets?.[wKey]?.weaponType))
+    .filter(wKey => !deferredSearchTerm || t(`weaponNames_gen:${wKey}`).toLowerCase().includes(deferredSearchTerm.toLowerCase()))
+    .sort((a, b) => (weaponSheets?.[b]?.rarity ?? 0) - (weaponSheets?.[a]?.rarity ?? 0)),
+    [weaponSheets, weaponFilter, deferredSearchTerm])
 
   if (!weaponSheets) return null
 
   return <ModalWrapper open={show} onClose={onHide}>
     <CardDark>
       <CardContent sx={{ py: 1 }}>
-        <Grid container>
-          <Grid item flexGrow={1}>
+        <Grid container spacing={1}>
+          <Grid item>
             <WeaponToggle value={weaponFilter} onChange={setWeaponfilter} disabled={!!propWeaponFilter} size="small" />
           </Grid >
+          <Grid item flexGrow={1}>
+            <TextField
+              autoFocus
+              size="small"
+              value={searchTerm}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
+              label={t("weaponName")}
+            />
+          </Grid>
           <Grid item>
             <CloseButton onClick={onHide} />
           </Grid >
