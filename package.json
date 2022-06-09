@@ -25,6 +25,7 @@
     "i18next": "^21.8.3",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.0",
+    "mathjs": "^10.6.1",
     "pipeline": "file:./pipeline",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

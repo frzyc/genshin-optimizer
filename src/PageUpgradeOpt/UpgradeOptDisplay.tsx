@@ -13,13 +13,13 @@ import {
   Typography,
   Pagination
 } from '@mui/material';
-import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import ReactGA from 'react-ga';
+import { Suspense, useCallback, useContext, useMemo, useRef, useState } from 'react';
+// import ReactGA from 'react-ga';
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
-import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton';
+import CharacterDropdownButton from './stopBreakingMe';
 import StatFilterCard from '../Components/StatFilterCard';
 import { DatabaseContext } from '../Database/Database';
 import { DataContext, dataContextObj } from '../DataContext';
@@ -30,12 +30,12 @@ import { NumNode } from '../Formula/type';
 import { initGlobalSettings } from '../GlobalSettings';
 import CharacterCard from '../Components/Character/CharacterCard';
 import useCharacter from '../ReactHooks/useCharacter';
-import useCharacterReducer, { characterReducerAction } from '../ReactHooks/useCharacterReducer';
+import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useDBState from '../ReactHooks/useDBState';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
 import { buildSettingsReducer, initialBuildSettings } from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting';
-import { allSlotKeys, CharacterKey } from '../Types/consts';
+import { allSlotKeys, CharacterKey, SlotKey } from '../Types/consts';
 import { clamp, objPathValue } from '../Util/Util';
 import OptimizationTargetSelector from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector';
 import { dynamicData } from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/foreground';
@@ -87,7 +87,7 @@ export default function UpgradeOptDisplay() {
   const characterDispatch = useCharacterReducer(characterKey)
   const character = useCharacter(characterKey)
   const buildSettings = character?.buildSettings ?? initialBuildSettings()
-  const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSettings
+  const { plotBase, setFilters, statFilters, optimizationTarget, mainStatAssumptionLevel, maxBuildsToShow } = buildSettings
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
@@ -106,7 +106,7 @@ export default function UpgradeOptDisplay() {
   let querySaved = qs2
 
   const artifactsToDisplayPerPage = 5;
-  const { artifactsToShow: artifactsToShow, numPages, currentPageIndex, minObj0, maxObj0 } = useMemo(() => {
+  const { artifactsToShow, numPages, currentPageIndex, minObj0, maxObj0 } = useMemo(() => {
     const numPages = Math.ceil(artifactUpgradeOpts.length / artifactsToDisplayPerPage)
     const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
     const toShow = artifactUpgradeOpts.slice(currentPageIndex * artifactsToDisplayPerPage, (currentPageIndex + 1) * artifactsToDisplayPerPage)
@@ -119,19 +119,6 @@ export default function UpgradeOptDisplay() {
     }
   }, [artifactUpgradeOpts, artifactsToDisplayPerPage, pageIdex])
 
-  //for pagination
-  const setPage = useCallback(
-    (e, value) => {
-      invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
-      let start = (currentPageIndex + 1) * artifactsToDisplayPerPage
-      let end = value * artifactsToDisplayPerPage
-      let zz = upgradeOptExpandSink(artifactUpgradeOpts, start, end)
-      setArtifactUpgradeOpts(zz)
-      setpageIdex(value - 1);
-    },
-    [setpageIdex, setArtifactUpgradeOpts, invScrollRef, currentPageIndex, artifactsToDisplayPerPage, artifactUpgradeOpts, upgradeOptExpandSink],
-  )
-
   //select a new character Key
   const selectCharacter = useCallback((cKey = "") => {
     if (characterKey === cKey) return
@@ -141,11 +128,11 @@ export default function UpgradeOptDisplay() {
   // Because upgradeOpt is a two-stage estimation method, we want to expand (slow-estimate) our artifacts lazily as they are needed.
   // Lazy method means we need to take care to never 'lift' any artifacts past the current page, since that may cause a user to miss artifacts
   //  that are lifted in the middle of an expansion. Increase lookahead to mitigate this issue.
-  const lookahead = 5
-  function upgradeOptExpandSink(upOpt: QueryResult[], start: number, expandTo: number) {
+  const upgradeOptExpandSink = useCallback((upOpt: QueryResult[], start: number, expandTo: number) => {
+    const lookahead = 5
     if (querySaved === undefined) return upOpt
     const queryArts: QueryArtifact[] = database._getArts()
-      .filter(art => art.rarity == 5)
+      .filter(art => art.rarity === 5)
       .map(art => toQueryArtifact(art, 20))
 
     let qaLookup: Dict<string, QueryArtifact> = {};
@@ -165,12 +152,25 @@ export default function UpgradeOptDisplay() {
       // sort on only bottom half to prevent lifting
       arr.sort(cmpQ)
       for (i = 0; i < end; i++) {
-        if (arr[i].evalMode == 'fast') break
+        if (arr[i].evalMode === 'fast') break
       }
     } while (i < end)
 
     return [...fixedList, ...arr]
-  }
+  }, [database, querySaved])
+
+  //for pagination
+  const setPage = useCallback(
+    (e, value) => {
+      invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
+      let start = (currentPageIndex + 1) * artifactsToDisplayPerPage
+      let end = value * artifactsToDisplayPerPage
+      let zz = upgradeOptExpandSink(artifactUpgradeOpts, start, end)
+      setArtifactUpgradeOpts(zz)
+      setpageIdex(value - 1);
+    },
+    [setpageIdex, setArtifactUpgradeOpts, invScrollRef, currentPageIndex, artifactsToDisplayPerPage, artifactUpgradeOpts, upgradeOptExpandSink],
+  )
 
   const generateBuilds = useCallback(async () => {
     debugMVN();
@@ -190,16 +190,19 @@ export default function UpgradeOptDisplay() {
     }).filter(x => x.value && x.minimum > -Infinity)
 
     const queryArts: QueryArtifact[] = database._getArts()
-      .filter(art => art.rarity == 5)
+      .filter(art => art.rarity === 5)
       .map(art => toQueryArtifact(art, 20))
 
+    const equippedArts = database._getChar(characterKey)?.equippedArtifacts ?? {} as StrictDict<SlotKey, string>
     let curEquip: QueryBuild = Object.assign({}, ...allSlotKeys.map(slotKey => {
-      const art = database._getArt(data?.get(input.art[slotKey].id).value ?? "")
+      const art = database._getArt(equippedArts[slotKey] ?? "")
       if (!art) return { [slotKey]: undefined }
       return { [slotKey]: toQueryArtifact(art) }
     }))
     let qaLookup: Dict<string, QueryArtifact> = {};
     queryArts.forEach(art => qaLookup[art.id] = art)
+    console.log(curEquip, input)
+    console.log(database._getChar(characterKey))
 
     let nodes = [optimizationTargetNode, ...valueFilter.map(x => x.value)]
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
@@ -318,7 +321,7 @@ export default function UpgradeOptDisplay() {
                   {artifactsToShow.map(art =>
                     <Grid container key={art.id + 'asdfsf'} gap={1} wrap="nowrap">
                       <Grid item xs={5} sm={4} md={4} lg={3} xl={3} >
-                        <ArtifactCard artifactId={art.id} />
+                        <ArtifactCard artifactId={art.id} editor />
                       </Grid>
                       <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
                         <UpgradeOptChartCard upgradeOpt={art} objMax={maxObj0} objMin={minObj0} />

@@ -88,7 +88,7 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
     ymax = Math.max(ymax, est)
     return { x: perc(v), est: est, estCons: gaussConstrained(v) }
   })
-  if (ymax == 0) ymax = nbins / (maax - miin)
+  if (ymax === 0) ymax = nbins / (maax - miin)
 
   // go back and add delta distributions.
   let deltas: { [key: number]: number } = {}
@@ -124,7 +124,7 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
       let whichBin = Math.min(Math.trunc((v[0] - miin) / binstep), nbins - 1)
       bins[whichBin] += p
 
-      if (v.every((val, ix) => ix == 0 || val > thresh[ix])) {
+      if (v.every((val, ix) => ix === 0 || val > thresh[ix])) {
         binsConstrained[whichBin] += p
         if (v[0] > thr0) {
           true_p += p
@@ -138,9 +138,9 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
     setTrueP(true_p)
     setTrueE(true_e)
     setTrueData(dataExact)
-  }, [calcExacts]);
+  }, [calcExacts, maax, miin, thr0, thresh, upgradeOpt]);
 
-  if (trueData.length == 0) {
+  if (trueData.length === 0) {
     let binstep = (maax - miin) / nbins
     for (let i = 0; i < nbins; i++) {
       trueData.push({ x: perc(miin + i * binstep), exact: 0, exactCons: 0 })
@@ -198,7 +198,7 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
 
       <Grid direction="row" container spacing={0.75} columns={12}>
         {artifacts.map(([sk, art]: [SlotKey, ICachedArtifact | undefined]) => {
-          if (sk != slot)
+          if (sk !== slot)
             return <Grid item key={`${sk}_${upgradeOpt.id}`} xs={1}><ArtifactCardPico slotKey={sk} artifactObj={art} /></Grid>
           return <Grid item key={`${sk}_${upgradeOpt.id}`} xs={1}><Button variant='contained' style={{ height: "100%", width: '100%' }}
             onClick={() => setCalcExacts(true)}

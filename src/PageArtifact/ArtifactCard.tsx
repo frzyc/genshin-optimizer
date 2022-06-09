@@ -25,7 +25,6 @@ import { CharacterKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
 import PercentBadge from './PercentBadge';
 import { probability } from './RollProbability';
-import { QueryResult } from "../PageUpgradeOpt/artifactQuery";
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
 

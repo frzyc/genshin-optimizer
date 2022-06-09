@@ -141,3 +141,8 @@ export function range(from: number, to: number): number[] {
 export function assertUnreachable(value: never): never {
   throw new Error(`Should not reach this with value ${value}`)
 }
+
+// cartesian product of list of arrays
+export function cartesian<T>(...q: T[][]): T[][] {
+  return q.reduce((a, b) => a.flatMap(d => b.map(e => [d, [e]].flat())), [[]] as T[][])
+}

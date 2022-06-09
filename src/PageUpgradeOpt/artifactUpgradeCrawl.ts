@@ -1,5 +1,5 @@
 import { QueryResult } from "./artifactQuery"
-import { SubstatKey, allSubstats } from "../Types/artifact"
+import { SubstatKey, allSubstatKeys } from "../Types/artifact"
 import Artifact from "../Data/Artifacts/Artifact"
 import { range } from "../Util/Util"
 import { quadrinomial } from "../Util/MathUtil"
@@ -17,8 +17,8 @@ const sigr = [35, 64, 70, 21, 33, 45, 12, 0, 53, 76, 48, 86]
 function sigma(ss: number[], N: number) {
   const ssum = ss.reduce((a, b) => a + b);
   if ((ss.length > 4) || ssum > N) return 0
-  if ((ss.length == 4) && (ssum != N)) return 0
-  if (ss.length == 3) ss = [...ss, N - ssum]
+  if ((ss.length === 4) && (ssum !== N)) return 0
+  if (ss.length === 3) ss = [...ss, N - ssum]
   ss.sort().reverse();
 
   // t = 12
@@ -32,7 +32,7 @@ function sigma(ss: number[], N: number) {
 }
 
 export function crawlUpgrades(n: number, fn?: (n1234: number[], p: number) => void) {
-  if (n == 0) {
+  if (n === 0) {
     fn!([0, 0, 0, 0], 1)
     return
   }
@@ -58,7 +58,7 @@ export function allUpgradeValues(upOpt: QueryResult) {
   crawlUpgrades(upOpt.rollsLeft, (ns, p) => {
     const vals = ns.map((ni, i) => {
       const sub = upOpt.subs[i]
-      if (sub && !upOpt.skippableDerivs[allSubstats.indexOf(sub)]) return range(7 * ni, 10 * ni)
+      if (sub && !upOpt.skippableDerivs[allSubstatKeys.indexOf(sub)]) return range(7 * ni, 10 * ni)
       return [NaN]
     })
 
