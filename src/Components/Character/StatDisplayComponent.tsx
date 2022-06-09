@@ -1,9 +1,9 @@
 import { Masonry } from "@mui/lab"
-import { CardContent, CardHeader, Divider } from "@mui/material"
+import { CardContent, CardHeader, Divider, ListItem } from "@mui/material"
 import { Box } from "@mui/system"
 import { useContext, useMemo } from "react"
 import CardDark from "../Card/CardDark"
-import { NodeFieldDisplay } from "../FieldDisplay"
+import { FieldDisplayList, NodeFieldDisplay } from "../FieldDisplay"
 import ImgIcon from "../Image/ImgIcon"
 import { DataContext } from "../../DataContext"
 import { getDisplayHeader, getDisplaySections } from "../../Formula/DisplayUtil"
@@ -34,8 +34,10 @@ function Section({ displayNs, sectionKey }: { displayNs: DisplaySub<NodeDisplay>
   return <CardDark >
     <CardHeader avatar={icon && <ImgIcon size={2} sx={{ m: -1 }} src={icon} />} title={title} action={action} titleTypographyProps={{ variant: "subtitle1" }} />
     <Divider />
-    <CardContent>
-      {Object.entries(displayNs).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(displayNsReads[nodeKey]!).value : undefined} />)}
+    <CardContent sx={{ p: 0, "&:last-child": { pb: 0 } }}>
+      <FieldDisplayList sx={{ m: 0 }}>
+        {Object.entries(displayNs).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(displayNsReads[nodeKey]!).value : undefined} component={ListItem} />)}
+      </FieldDisplayList>
     </CardContent>
   </CardDark>
 }

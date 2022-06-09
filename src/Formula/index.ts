@@ -2,7 +2,7 @@ import { allEleEnemyResKeys } from "../KeyMap"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
 import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
-import { constant, equalStr, frac, infoMut, lookup, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringRead, sum, one } from "./utils"
+import { constant, equalStr, frac, infoMut, lookup, max, min, naught, one, percent, prod, read, res, setReadNodeKeys, stringRead, sum, todo } from "./utils"
 
 const asConst = true as const, pivot = true as const
 
@@ -227,7 +227,11 @@ const common: Data = {
 }
 
 const target = setReadNodeKeys(deepClone(input), ["target"])
-const tally = setReadNodeKeys(objectKeyMap([...allElements, ...allRegions], _ => read("add")), ["tally"])
+const tally = {
+  ...setReadNodeKeys(objectKeyMap([...allElements, ...allRegions], _ => read("add")), ["tally"]),
+  ele: todo,
+}
+tally.ele = sum(...allElements.map(ele => min(tally[ele], 1)))
 
 /**
  * List of `input` nodes, rearranged to conform to the needs of the

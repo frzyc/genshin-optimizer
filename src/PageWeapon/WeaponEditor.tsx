@@ -162,8 +162,9 @@ export default function WeaponEditor({
     {footer && id && <CardContent sx={{ py: 1 }}>
       <Grid container spacing={1}>
         <Grid item flexGrow={1}>
-          <CharacterAutocomplete showDefault defaultIcon={<BusinessCenter />} defaultText={t("inventory")} value={location} onChange={equipOnChar} filter={filter} />
+          <CharacterAutocomplete showDefault size="small" defaultIcon={<BusinessCenter />} defaultText={t("inventory")} value={location} onChange={equipOnChar} filter={filter} disable={(v: any) => v === ""} disableClearable />
         </Grid>
+        <Grid item flexGrow={2} />
         {!!onClose && <Grid item><CloseButton sx={{ height: "100%" }} large onClick={onClose} /></Grid>}
       </Grid>
     </CardContent>}

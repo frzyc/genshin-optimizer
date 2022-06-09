@@ -24,19 +24,20 @@ import WeaponFullCard from '../Weapon/WeaponFullCard';
 
 type CharacterCardProps = {
   characterKey: CharacterKey | "",
-  onClick?: (characterKey: CharacterKey, tab: string) => void,
-  onClickHeader?: (characterKey: CharacterKey, tab: string) => void,
+  onClick?: (characterKey: CharacterKey) => void,
+  onClickHeader?: (characterKey: CharacterKey) => void,
+  onClickTeammate?: (characterKey: CharacterKey) => void,
   artifactChildren?: Displayable,
   weaponChildren?: Displayable,
   characterChildren?: Displayable,
   footer?: Displayable,
   isTeammateCard?: boolean,
 }
-export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, characterChildren, onClick, onClickHeader, footer, isTeammateCard }: CharacterCardProps) {
+export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, characterChildren, onClick, onClickHeader, onClickTeammate, footer, isTeammateCard }: CharacterCardProps) {
   const { teamData: teamDataContext } = useContext(DataContext)
   const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
   const { character, characterSheet, target: data } = teamData?.[characterKey] ?? {}
-  const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey, "overview"), [characterKey, onClick])
+  const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={onClickHandler} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
     [onClickHandler],
@@ -56,7 +57,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
     <DataContext.Provider value={dataContextObj}>
       <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
         <Box sx={{ display: "flex", position: "absolute", zIndex: 2, opacity: 0.7 }}>
-          <IconButton sx={{ p: 0.5 }} onClick={event => characterDispatch({ favorite: !character.favorite })}>
+          <IconButton sx={{ p: 0.5 }} onClick={_ => characterDispatch({ favorite: !character.favorite })}>
             {character.favorite ? <Favorite /> : <FavoriteBorder />}
           </IconButton>
         </Box>
@@ -68,7 +69,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
               <Grid item xs={1} height="100%">
                 <WeaponCardPico weaponId={character.equippedWeapon} />
               </Grid>
-              {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} index={i} /></Grid>)}
+              {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} onClick={!onClick ? onClickTeammate : undefined} index={i} /></Grid>)}
             </Grid>}
             {isTeammateCard && <WeaponFullCard weaponId={character.equippedWeapon} />}
             {!isTeammateCard && <Stats />}
@@ -82,7 +83,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
     </DataContext.Provider>
   </Suspense>
 }
-function Header({ onClick }: { onClick?: (characterKey: CharacterKey, tab: string) => void }) {
+function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void }) {
   const { data, characterSheet } = useContext(DataContext)
   const characterKey = data.get(input.charKey).value as CharacterKey
   const characterEle = data.get(input.charEle).value as ElementKey
@@ -98,7 +99,7 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey, tab: strin
   const tBurst = data.get(input.total.burst).value
 
   const actionWrapperFunc = useCallback(
-    children => <CardActionArea onClick={() => characterKey && onClick?.(characterKey, "overview")} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
+    children => <CardActionArea onClick={() => characterKey && onClick?.(characterKey)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
     [onClick, characterKey],
   )
   return <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >
