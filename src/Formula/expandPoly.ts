@@ -9,8 +9,8 @@ export function foldSum(nodes: NumNode[]) {
   nodes = nodes.flatMap(n => n.operation === 'add' ? n.operands : n)
   let constVal = nodes.reduce((pv, n) => n.operation === 'const' ? pv + n.value : pv, 0)
   nodes = nodes.filter(n => n.operation !== 'const')
+  if (nodes.length === 0) return constant(constVal)
   if (constVal === 0) return sum(...nodes)
-
   return sum(...nodes, constant(constVal))
 }
 
@@ -20,6 +20,8 @@ export function foldProd(nodes: NumNode[]) {
   nodes = nodes.flatMap(n => n.operation === 'mul' ? n.operands : n)
   let constVal = nodes.reduce((pv, n) => n.operation === 'const' ? pv * n.value : pv, 1)
   nodes = nodes.filter(n => n.operation !== 'const')
+
+  if (nodes.length === 0) return constant(constVal)
   if (constVal === 0) return sum(...nodes)
   return prod(...nodes, constant(constVal))
 }
@@ -70,17 +72,23 @@ export function expandPoly(node: NumNode, isVar: (n: NumNode) => boolean): NumNo
  * Prunes formulas that are unreachable due to not enough slots.
  */
 export function productPossible(node: NumNode) {
-  if (node.operation !== 'mul') return false
+  // TODO: fix me? This might be over-eager currently.
+  return countSlotUsage(node) <= 5
+}
 
-  let slotsLeft = 5
-  node.operands.forEach(n => {
-    if (n.operation === 'threshold') {
-      const branch = n.operands[0]
-      if (branch.operation === 'read' && (allArtifactSets as readonly string[]).includes(branch.path[1])) {
-        let con = n.operands[1] as ConstantNode<number>
-        slotsLeft -= con.value
-      }
+export function countSlotUsage(node: NumNode) {
+  if (node.operation === 'add') {
+    return Math.min(...node.operands.map(n => countSlotUsage(n)))
+  }
+  else if (node.operation === 'mul') {
+    return node.operands.map(n => countSlotUsage(n)).reduce((a, b) => a + b)
+  }
+  else if (node.operation === 'threshold') {
+    const branch = node.operands[0]
+    if (branch.operation === 'read' && (allArtifactSets as readonly string[]).includes(branch.path[1])) {
+      let con = node.operands[1] as ConstantNode<number>
+      return con.value
     }
-  })
-  return slotsLeft >= 0
+  }
+  return 0
 }

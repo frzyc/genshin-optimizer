@@ -54,6 +54,13 @@ function maxWeight(a: ArtifactsBySlot, lin: LinearForm) {
 function estimateMaximum(func: NumNode, a: ArtifactsBySlot): { maxEst: number, lin: LinearForm } {
   const { statsMin, statsMax } = boundsUpperLower(a)
 
+  if (func.operation === 'const') {
+    return { maxEst: func.value, lin: toLinearUpperBound(func, statsMin, statsMax) as LinearForm }
+  }
+  if (func.operation === 'read') {
+    return { maxEst: statsMax[func.path[1]], lin: toLinearUpperBound(func, statsMin, statsMax) as LinearForm }
+  }
+
   function isVari(n: NumNode) {
     switch (n.operation) {
       case 'read':
@@ -87,10 +94,17 @@ function subStats(f: NumNode, lower: DynStat, upper: DynStat) {
   let [f2] = mapFormulas([f], n => n, n => {
     if (n.operation === 'read' && n.path[1] in fixedStats) return constant(fixedStats[n.path[1]])
     if (n.operation === 'threshold') {
-      const [branch, branchVal] = n.operands
+      const [branch, branchVal, ge, lt] = n.operands
       if (branch.operation === 'read' && branchVal.operation === 'const') {
         if (lower[branch.path[1]] >= branchVal.value) return n.operands[2]
         if (upper[branch.path[1]] < branchVal.value) return n.operands[3]
+      }
+
+      if (ge.operation !== 'const') {
+        if (lt.operation === 'const' && lt.value === 0) {
+          return prod(cmp(branch, branchVal, 1, 0), ge)
+        }
+        throw Error('Threshold between non-const `pass` and non-zero `fail` not supported.')
       }
     }
     return n
@@ -101,6 +115,9 @@ function subStats(f: NumNode, lower: DynStat, upper: DynStat) {
 }
 
 export function debugMe(func: NumNode, a: ArtifactsBySlot) {
+  // debug3()
+  // return
+
   a = {
     base: a.base,
     values: {
@@ -132,12 +149,24 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
   while (!pq.isEmpty()) {
     let { maxEst, f, a, lin } = pq.pop()
     let numBuilds = Object.values(a.values).reduce((tot, arts) => tot * arts.length, 1)
+    niter += 1
+    if (niter > 250) break;
 
     //  Stats *should* already be subbed in, but it doesn't hurt to try again.
     let { statsMin, statsMax } = boundsUpperLower(a)
     f = subStats(f, statsMin, statsMax)
 
     let est = estimateMaximum(f, a)
+    if (est.maxEst < feasibleObjVal(f, a, est.lin)) {
+      console.log('~~~~~~~~~~~~ BIG PROBLEM UH OH ~~~~~~~~~~~~')
+      debug2(a, f)
+      return
+    }
+    if (isNaN(est.maxEst)) {
+      console.log('uh oh 2')
+      // debug2(a, f)
+      return
+    }
     if (est.maxEst < maxEst) {
       maxEst = est.maxEst;
       lin = est.lin;
@@ -145,23 +174,21 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
     // If re-evaluation tells us this branch is worthless, then just skip.
     lowerBoundDmg = Math.max(feasibleObjVal(f, a, lin), lowerBoundDmg)
     if (maxEst < lowerBoundDmg) {
+      console.log({ niter, numBuilds, pqsize: pq.size() }, { lower: lowerBoundDmg, upper: maxEst }, 'PRUNED')
       pruned += numBuilds
       continue
     }
 
-    console.log({ niter, numBuilds, pqsize: pq.size() }, lowerBoundDmg, '/', maxEst, lin.err)
-    console.log('Total pruned: ', pruned)
+    console.log({ niter, numBuilds, pqsize: pq.size() }, { lower: lowerBoundDmg, upper: maxEst })
+    // console.log('Total pruned: ', pruned)
 
     // TODO: count `a`, if small then just enumerate it all.
     if (numBuilds < 1000) {
       // TODO: enumerate
       enumerated += numBuilds
-      console.log('--------------- ENUMERATE ---------------')
+      console.log('--------------- ENUMERATE (implement me please) ---------------')
       continue
     }
-
-    niter += 1
-    if (niter > 150) break;
 
     if (niter < 4) {
       // For earlier iterations, shatter search space on `score` to separate
@@ -211,14 +238,15 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
             return
           }
 
-          console.log(s1, s2, s3, s4, s5, '(', numBuilds, ')', maxEst, linToUse.err)
+          // console.log(s1, s2, s3, s4, s5, '(', numBuilds, ')', maxEst, linToUse.err)
+          console.log(s1, s2, s3, s4, s5, { numBuilds, upper: maxEst })
           pq.push({ maxEst, lin: linToUse, f: f2, a: z })
         })
 
       continue
     }
 
-    // Heuristically pick branch parameter by picking the one with
+    // Heuristically pick branch parameter by picking the one with largest
     //   linear weight & the largest reduction in stat range.
     let shatterOn = { k: '', heur: -1 }
     Object.keys(lin.w).forEach(k => {
@@ -245,8 +273,9 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
       return [slotKey, (Math.min(...vals) + Math.max(...vals)) / 2]
     }))
 
-    let correctnessCount = 0
-
+    // Instead of shattering all 32 branches in parallel, we can do it sequentially and have earlier
+    // branch pruning by checking their upper bound. Should speed up tail-end calculations
+    //  by 16-32x
     cartesian([0, 1], [0, 1], [0, 1], [0, 1], [0, 1]).forEach(sel => {
       const [s1, s2, s3, s4, s5] = sel
       let z = {
@@ -259,7 +288,6 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
         }
       }
       let numBuilds = Object.values(z.values).reduce((tot, arts) => tot * arts.length, 1)
-      correctnessCount += numBuilds
       if (numBuilds === 0) return;
 
       const { statsMin, statsMax } = boundsUpperLower(z)
@@ -273,6 +301,13 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
 
       // Possible TODO: re-compute `lin` on `z`.
       let est2 = estimateMaximum(f2, z)
+      // TODO: remove this sanity checker.
+      if (est2.maxEst + 1 < feasibleObjVal(f2, z, est2.lin)) {
+        console.log('!!!!!!!!!!!!! BIG PROBLEM UH OH !!!!!!!!!!!!!')
+        pq.push({ maxEst: Infinity, lin: est2.lin, f: f2, a: z })
+        // debug2(z, f2)
+        return
+      }
 
       const maxEst2 = maxWeight(z, est2.lin)
       const [maxEst, linToUse] = maxEst1 < maxEst2 ? [maxEst1, lin] : [maxEst2, est2.lin]
@@ -282,7 +317,7 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
         return
       }
 
-      console.log(s1, s2, s3, s4, s5, '(', numBuilds, ')', maxEst, linToUse.err)
+      console.log(s1, s2, s3, s4, s5, { numBuilds, upper: maxEst })
       pq.push({ maxEst, lin: linToUse, f: f2, a: z })
     })
 
@@ -297,6 +332,7 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
   }
 
   console.log(pq)
+
   let totbuilds = 0
   while (!pq.isEmpty()) {
     let { a } = pq.pop()
@@ -306,4 +342,93 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
 
   console.log('builds left:', totbuilds)
   console.log('Total enumerated vs pruned:', enumerated, pruned, ' out of total ', tottal)
+  console.log('Final damage:', lowerBoundDmg)
+}
+
+function debug2(a: ArtifactsBySlot, f: NumNode) {
+  console.log(a)
+  console.log(f)
+  const { statsMin, statsMax } = boundsUpperLower(a)
+  console.log('minstat', statsMin)
+  console.log('maxstat', statsMax)
+  f = subStats(f, statsMin, statsMax)
+
+  function isVari(n: NumNode) {
+    switch (n.operation) {
+      case 'read':
+        // if (mainStatExclusiveKeys.includes(n.path[1])) return true
+        return true
+      case 'max': case 'min':
+      case 'sum_frac':
+      case 'threshold':
+        return true
+      case 'res':
+      default:
+        return false
+    }
+  }
+
+  let ee = expandPoly(f, isVari)
+  console.log('expanded', ee)
+
+  let ww = ee.operands as NumNode[]
+  ww = ww.filter(productPossible)
+  let zzz = ww.flatMap(e => toLinearUpperBound(e, statsMin, statsMax))
+  let lin = zzz.reduce((pv, lin) => {
+    Object.entries(lin.w).forEach(([k, v]) => pv.w[k] = v + (pv.w[k] ?? 0))
+    return { w: pv.w, c: pv.c + lin.c, err: pv.err + lin.err }
+  }, { w: {}, c: 0, err: 0 })
+  console.log(ww)
+  console.log(ww.map(e => toLinearUpperBound(e, statsMin, statsMax)))
+
+  const maxTotVal = Object.entries(a.values).reduce((maxTotVal, [slotKey, slotArts]) => {
+    const maxSlot = slotArts.reduce((maxArtVal, art) => {
+      const artVal = Object.entries(lin.w).reduce((dotProd, [statkey, w]) => dotProd + w * (art.values[statkey] ?? 0), 0)
+      const artVal0 = Object.entries(lin.w).reduce((dotProd, [statkey, w]) => dotProd + w * (maxArtVal.values[statkey] ?? 0), 0)
+      return artVal > artVal0 ? art : maxArtVal;
+    })
+    return Object.fromEntries(Object.entries(maxTotVal).map(([statKey, val]) => [statKey, val + maxSlot.values[statKey]]))
+  }, a.base)
+
+  console.log('stats', maxTotVal)
+
+  let stats = maxTotVal
+  console.log('======= numeric cmp =========')
+  const compute = precompute(ww, n => n.path[1])
+  const cmp1 = compute(stats).slice(0, ww.length)
+  console.log(cmp1)
+
+  let zz = ww.map(e => {
+    let lf = toLinearUpperBound(e, statsMin, statsMax)
+    if (Array.isArray(lf)) {
+      let wow = lf.map(ll => Object.entries(ll.w).reduce((tot, [k, wk]) => tot + wk * stats[k], 0) + ll.c)
+      return wow.reduce((a, b) => a + b)
+    }
+    else {
+      return Object.entries(lf.w).reduce((tot, [k, wk]) => tot + wk * stats[k], 0) + lf.c
+    }
+  })
+  console.log(zz)
+
+  console.log(cmp1.reduce((a, b) => a + b), zz.reduce((a, b) => a + b, 0))
+  console.log(maxWeight(a, lin))
+  console.log(estimateMaximum(f, a))
+
+  console.log('=========== shitty debug time ===============')
+  console.log(ww[0])
+  console.log(toLinearUpperBound(ww[0], statsMin, statsMax))
+
+  debug3()
+}
+
+function debug3() {
+  const statsMin: DynStat = { "0": 0.595294, "1": 0.8840000033378601, "2": 0.1, "TenacityOfTheMillelith": 0, "hp_": 0, "hp": 4780, "BraveHeart": 0, "EchoesOfAnOffering": 0, "GladiatorsFinale": 0, "ShimenawasReminiscence": 0, "VermillionHereafter": 0, "atk_": 0.0408, "atk": 71.18, "HeartOfDepth": 0, "CrimsonWitchOfFlames": 0, "pyro_dmg_": 0, "Instructor": 0, "WanderersTroupe": 0, "eleMas": 200.92999999999998 }
+  const statsMax: DynStat = { "0": 0.867494, "1": 1.43570000333786, "2": 0.1, "TenacityOfTheMillelith": 0, "hp_": 0.6817, "hp": 6363.39, "BraveHeart": 1, "EchoesOfAnOffering": 0, "GladiatorsFinale": 2, "ShimenawasReminiscence": 1, "VermillionHereafter": 1, "atk_": 0.8099, "atk": 427.71999999999997, "HeartOfDepth": 2, "CrimsonWitchOfFlames": 4, "pyro_dmg_": 0, "Instructor": 0, "WanderersTroupe": 1, "eleMas": 289.07 }
+  const badop: NumNode = { "operation": "mul", "operands": [{ "operation": "min", "operands": [{ "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "hp_"], "info": { "prefix": "art", "asConst": true, "key": "hp_" }, "type": "number", "accu": "add" }, { "operation": "const", "operands": [], "value": 1, 'type': 'number' }] }, { "operation": "const", "operands": [], "value": 15552.306844604493, 'type': 'number' }] }, { "operation": "read", "operands": [], "path": ["dyn", "hp"], "info": { "prefix": "art", "asConst": true, "key": "hp" }, "type": "number", "accu": "add" }] }, { "operation": "const", "operands": [], "value": 0.05957, 'type': 'number' }] }, { "operation": "const", "operands": [], "value": 2030.911879967212, 'type': 'number' }] }, { "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "CrimsonWitchOfFlames"], "accu": "add", "info": { "key": "CrimsonWitchOfFlames" }, "type": "number" }, { "operation": "const", "operands": [], "value": 2, 'type': 'number' }, { "operation": "const", "operands": [], "value": 0.15, "info": { "key": "_" }, 'type': 'number' }, { "operation": "const", "operands": [], "value": 0, 'type': 'number' }], "info": { "key": "pyro_dmg_", "variant": "pyro" }, "emptyOn": "l" }, { "operation": "min", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "0"], "type": "number", "accu": "add" }, { "operation": "const", "operands": [], "value": 1, 'type': 'number' }] }, { "operation": "read", "operands": [], "path": ["dyn", "1"], "type": "number", "accu": "add" }, { "operation": "sum_frac", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "eleMas"], "info": { "prefix": "art", "asConst": true, "key": "eleMas" }, "type": "number", "accu": "add" }, { "operation": "const", "operands": [], "value": 1400, 'type': 'number' }] }, { "operation": "const", "operands": [], "value": 4.287375, 'type': 'number' }] }
+
+  const stats = { "0": 0.6186940000000001, "1": 1.91780000333786, "2": 0.1, "TenacityOfTheMillelith": 0, "hp_": 0.3148, "hp": 6512.77, "BraveHeart": 0, "EchoesOfAnOffering": 0, "GladiatorsFinale": 0, "ShimenawasReminiscence": 0, "VermillionHereafter": 0, "atk_": 0.6234, "atk": 410.21, "HeartOfDepth": 0, "CrimsonWitchOfFlames": 1, "pyro_dmg_": 0, "Instructor": 0, "WanderersTroupe": 0, "eleMas": 244.78 }
+
+  let hmm = toLinearUpperBound(badop, statsMin, statsMax)
+  console.log(badop)
+  console.log(hmm)
 }

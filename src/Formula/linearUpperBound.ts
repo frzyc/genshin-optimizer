@@ -25,6 +25,10 @@ export type LinearForm = {
  * @returns
  */
 export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat): LinearForm | LinearForm[] {
+  if (node.operation === 'const')
+    return { w: {}, c: node.value, err: 0 }
+  if (node.operation === 'read')
+    return { w: { [node.path[1]]: 1 }, c: 0, err: 0 }
   if (node.operation !== 'mul') {
     throw Error('toLUB should only operate on product forms')
   }
@@ -36,14 +40,14 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
   // Converts threshold(Glad) * ATK * min(CR, 1) => Glad * ATK * CR
   // Also updates lower & upper limits to respect min, max, threshold.
   // TODO: track linearization error for threshold(), min(), max(), sum_frac() nodes
-  function pureProductForm(node: NumNode) {
+  function purePolyForm(node: NumNode) {
     switch (node.operation) {
       case 'const': case 'read':
         return node
       case 'add':
-        return foldSum(node.operands.map(n => pureProductForm(n)))
+        return foldSum(node.operands.map(n => purePolyForm(n)))
       case 'mul':
-        return foldProd(node.operands.map(n => pureProductForm(n)))
+        return foldProd(node.operands.map(n => purePolyForm(n)))
       case 'threshold':
         const [branch, bval, ge, lt] = node.operands
         if (branch.operation === 'read'
@@ -52,11 +56,17 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
           if (lower[key] >= bval.value) return constant(ge.value)
           if (upper[key] < bval.value) return constant(lt.value)
 
+          if (ge.value < lt.value) {
+            console.log(node)
+            throw Error('Not Implemented (threshold)')
+          }
+
           const slope = (ge.value - lt.value) / bval.value
           u[key] = bval.value
           // TODO: update linerr
           return sum(lt.value, prod(slope, branch))
         }
+        console.log(node)
         throw Error('Not Implemented (threshold)')
       case 'res':
         const op = node.operands[0]
@@ -89,29 +99,19 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
         const [em, denom] = node.operands
         if (denom.operation !== 'const') throw Error('Not Implemented (non-constant sum_frac denominator)')
 
-        let emPath = ''
-        if (em.operation === 'read')
-          emPath = em.path[1]
-        else if (em.operation === 'add') {
-          // Works only with EM = EM + threshold(wanderer's) for now.
-          em.operands.forEach(op => {
-            if (op.operation === 'read') emPath = op.path[1]
-          })
-        }
-        else {
-          throw Error('EM depends on no stat...')
-        }
+        let emFunc = precompute([em], n => n.path[1])
+        const [minEM, maxEM] = [emFunc(lower)[0], emFunc(upper)[0]]
 
-        const [minEM, maxEM] = [lower[emPath], upper[emPath]]  // TODO: fix this to account for wanderer's
         const k = denom.value
         // The sum_frac form is concave, so any Taylor expansion of EM / (EM + k) gives an upper bound.
         // We can solve for the best Taylor approximation location with the following formula.
         let loc = Math.sqrt((minEM + k) * (maxEM + k)) - k
-        let slope = k / (k + loc) / (k + loc)
-        let c = loc * loc / (k + loc) / (k + loc)
+        let below = (k + loc) * (k + loc)
+        let slope = k / below
+        let c = loc * loc / below
 
         // TODO: update linerr
-        return pureProductForm(sum(c, prod(slope, em)))
+        return purePolyForm(sum(c, prod(slope, em)))
       default:
         console.log(node)
         throw Error('Not Implemented')
@@ -119,9 +119,11 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
   }
 
   // `lpf` *should* be a product of read() and const() nodes. Maybe a sum of these products.
-  const lpf = expandPoly(pureProductForm(node), n => n.operation !== 'const')
+  const lpf = expandPoly(purePolyForm(node), n => n.operation !== 'const')
   if (lpf.operation === 'const')
     return { w: {} as DynStat, c: lpf.value, err: linerr }
+
+  // console.log('PRODUCT FORM:', lpf)
 
   function toLUB(n: NumNode) {
     if (n.operation === 'read') {
@@ -135,12 +137,14 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
       throw Error('toLUB takes only mul nodes.')
     }
     let coeff = 1
+    // TODO: handle duplicity in the vars
     const vars = n.operands.reduce((vars, op) => {
       if (op.operation === 'read') vars.push(op.path[1])
       if (op.operation === 'const') coeff *= op.value
       return vars
     }, [] as string[])
     const bounds = vars.map(v => ({ lower: lower[v], upper: upper[v] }))
+    // console.log('Solving ', vars, '...')
     const { w, c, err } = lub(bounds)
     return { w: Object.fromEntries(w.map((wi, i) => [vars[i], wi * coeff])), c: c * coeff, err: err * coeff + linerr }
   }
@@ -175,12 +179,14 @@ function lub(bounds: { lower: number, upper: number }[]): { w: number[], c: numb
   // Force equality at upper & lower corners?
   // cons.push([...bounds.map(lu => lu.lower), -1, 0, bounds.reduce((prod, { lower }) => prod * lower, 1)])
   // cons.push([...bounds.map(lu => lu.upper), -1, 0, bounds.reduce((prod, { upper }) => prod * upper, 1)])
-  // console.log(cons)
+  // console.log('Ab', cons)
 
   let soln: any
   const objective = [...bounds.map(_ => 0), 0, 1]
   try {
+    // TODO: verify solution
     soln = solveLP(objective, cons)
+    // console.log('soln', soln)
   }
   catch (e) {
     console.log('ERROR on bounds', bounds)
