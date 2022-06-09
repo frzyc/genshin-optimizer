@@ -35,7 +35,7 @@ import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useDBState from '../ReactHooks/useDBState';
 import useTeamData, { getTeamData } from '../ReactHooks/useTeamData';
 import { buildSettingsReducer, initialBuildSettings } from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting';
-import { allSlotKeys, CharacterKey } from '../Types/consts';
+import { allSlotKeys, CharacterKey, SlotKey } from '../Types/consts';
 import { clamp, objPathValue } from '../Util/Util';
 import OptimizationTargetSelector from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector';
 import { dynamicData } from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/foreground';
@@ -167,13 +167,16 @@ export default function UpgradeOptDisplay() {
       .filter(art => art.rarity === 5)
       .map(art => toQueryArtifact(art, 20))
 
+    const equippedArts = database._getChar(characterKey)?.equippedArtifacts ?? {} as StrictDict<SlotKey, string>
     let curEquip: QueryBuild = Object.assign({}, ...allSlotKeys.map(slotKey => {
-      const art = database._getArt(data?.get(input.art[slotKey].id).value ?? "")
+      const art = database._getArt(equippedArts[slotKey] ?? "")
       if (!art) return { [slotKey]: undefined }
       return { [slotKey]: toQueryArtifact(art) }
     }))
     let qaLookup: Dict<string, QueryArtifact> = {};
     queryArts.forEach(art => qaLookup[art.id] = art)
+    console.log(curEquip, input)
+    console.log(database._getChar(characterKey))
 
     let nodes = [optimizationTargetNode, ...valueFilter.map(x => x.value)]
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");

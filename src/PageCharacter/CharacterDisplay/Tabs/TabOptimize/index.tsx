@@ -49,6 +49,7 @@ import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
 import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
+import { debugMe } from '../../../../Formula/branchAndBound'
 
 export default function TabBuild() {
   const { character, character: { key: characterKey } } = useContext(DataContext)
@@ -166,9 +167,14 @@ export default function TabBuild() {
       new Set(setFilters.map(x => x.key as ArtifactSetKey)), {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
     }))
+    // Can be further folded after pruning
+    nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
+
+    debugMe(optimizationTargetNode, arts)
+    // console.log(arts)
 
     let wrap = {
       buildCount: 0, failedCount: 0, skippedCount: origCount,
