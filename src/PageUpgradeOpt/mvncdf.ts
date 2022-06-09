@@ -70,25 +70,52 @@ export function mvnPE_good(mu: number[], cov: number[][], x: number[]) {
 
 
 export function debugMVN() {
-  var mvn = new Module.MVNHandle(1);
-  mvn.pushX(0);
-  mvn.pushMu(0);
-  mvn.pushCov(1);
+  console.log('FROM debugMVN()')
+  // var mvn = new Module.MVNHandle(1);
+  // mvn.pushX(0);
+  // mvn.pushMu(0);
+  // mvn.pushCov(1);
 
-  mvn.compute();
-  console.log('this', mvn.p)
-  mvn.delete()
+  // mvn.compute();
+  // console.log('this', mvn.p)
+  // mvn.delete()
 
-  var mvn2 = new Module.MVNHandle(2);
-  let mu = [1, 0]
-  let x = [1.2, 1]
-  let cov = [[10, -5], [-5, 20]]
-  mu.forEach(m => mvn2.pushMu(m))
-  x.forEach(x => mvn2.pushX(x))
-  cov.forEach(a => a.forEach(c => mvn2.pushCov(c)))
-  mvn2.compute()
-  console.log('that', mvn2.p)
-  console.log('cp', mvn2.cp)
-  console.log('eup', mvn2.Eup)
-  mvn2.delete()
+  // var mvn2 = new Module.MVNHandle(2);
+  // let mu = [0, 0]
+  // let x = [1, 1]
+  // let cov = [[10, -5], [-5, 20]]
+  // mu.forEach(m => mvn2.pushMu(m))
+  // x.forEach(x => mvn2.pushX(x))
+  // cov.forEach(a => a.forEach(c => mvn2.pushCov(c)))
+  // mvn2.compute()
+  // console.log('that', mvn2.p)
+  // console.log('cp', mvn2.cp)
+  // console.log('eup', mvn2.Eup)
+  // mvn2.delete()
+
+  // var mvn3 = new Module.MVNHandle(4);
+  // let mu3 = [0.30650569, 0.53707501, 0.95858678, 0.80295683]
+  // let x3 = [0, 0, 0, 0]
+  // let cov3 = [
+  //   [0.48907391, 0.02377247, -0.16140441, -0.24788451],
+  //   [0.02377247, 0.40132075, -0.19141678, 0.09189226],
+  //   [-0.16140441, -0.19141678, 0.41230111, -0.03428392],
+  //   [-0.24788451, 0.09189226, -0.03428392, 0.16998822]
+  // ]
+  // mu3.forEach(m => mvn3.pushMu(m))
+  // x3.forEach(x => mvn3.pushX(x))
+  // cov3.forEach(a => a.forEach(c => mvn3.pushCov(c)))
+
+  // mvn3.compute()
+  // console.log('mvn3', mvn3.p, mvn3.cp, mvn3.Eup)
+
+  var mvn4 = new Module.MVNHandle(2);
+  let mu4 = [29437.599765014198, 2597.693806908243]
+  let x4 = [31777.245955648243, 30]
+  let cov4 = [[3025.039702728439, 266.94183507340136], [266.94183507340136, 23.556035726765433]]
+  mu4.forEach(m => mvn4.pushMu(m))
+  x4.forEach(x => mvn4.pushX(x))
+  cov4.forEach(a => a.forEach(c => mvn4.pushCov(c)))
+  mvn4.compute()
+  console.log('mvn4', mvn4.p, mvn4.cp, mvn4.Eup)
 }

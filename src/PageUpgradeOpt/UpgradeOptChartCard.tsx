@@ -152,6 +152,8 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
   const reportD = (trueE >= 0) ? trueE : upgradeOpt.upAvg
   let chartData = dataEst.concat(trueData)
 
+  // console.log('repd', reportD, upgradeOpt.upAvg)
+
   const CustomTooltip = ({ active, payload, label, }: TooltipProps<string, string>) => {
     if (!active) return null;
     // I kinda want the [average increase] to only appear when hovering the white dot.

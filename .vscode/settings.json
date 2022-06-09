@@ -4,5 +4,9 @@
   "files.trimFinalNewlines": true,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "fortran.fortls.disabled": true
+  "fortran.fortls.disabled": true,
+  "files.associations": {
+    "ostream": "cpp",
+    "iostream": "cpp"
+  }
 }

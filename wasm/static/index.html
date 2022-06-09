@@ -10,27 +10,37 @@
   <script>
     var Module = {
       onRuntimeInitialized: function () {
-        var mvn = new Module.MVNHandle(1);
-        mvn.pushX(0);
-        mvn.pushMu(0);
-        mvn.pushCov(1);
+        // var mvn = new Module.MVNHandle(1);
+        // mvn.pushX(0);
+        // mvn.pushMu(0);
+        // mvn.pushCov(1);
 
-        mvn.compute();
-        console.log('this', mvn.p)
+        // mvn.compute();
+        // console.log('this', mvn.p)
 
-        var mvn2 = new Module.MVNHandle(2);
+        // var mvn2 = new Module.MVNHandle(2);
 
-        let mu = [1, 0]
-        let x = [1.2, 1]
-        let cov = [[10, -5], [-5, 20]]
-        mu.forEach(m => mvn2.pushMu(m))
-        x.forEach(x => mvn2.pushX(x))
-        cov.forEach(a => a.forEach(c => mvn2.pushCov(c)))
+        // let mu = [1, 0]
+        // let x = [1.2, 1]
+        // let cov = [[10, -5], [-5, 20]]
+        // mu.forEach(m => mvn2.pushMu(m))
+        // x.forEach(x => mvn2.pushX(x))
+        // cov.forEach(a => a.forEach(c => mvn2.pushCov(c)))
 
-        mvn2.compute()
-        console.log('that', mvn2.p)
-        console.log('cp', mvn2.cp)
-        console.log('eup', mvn2.Eup)
+        // mvn2.compute()
+        // console.log('that', mvn2.p)
+        // console.log('cp', mvn2.cp)
+        // console.log('eup', mvn2.Eup)
+
+        var mvn4 = new Module.MVNHandle(2);
+        let mu4 = [29437.599765014198, 2597.693806908243]
+        let x4 = [31777.245955648243, 30]
+        let cov4 = [[3025.039702728439, 266.94183507340136], [266.94183507340136, 23.556035726765433]]
+        mu4.forEach(m => mvn4.pushMu(m))
+        x4.forEach(x => mvn4.pushX(x))
+        cov4.forEach(a => a.forEach(c => mvn4.pushCov(c)))
+        mvn4.compute()
+        console.log('mvn4', mvn4.p, mvn4.cp, mvn4.Eup)
       }
     }
   </script>

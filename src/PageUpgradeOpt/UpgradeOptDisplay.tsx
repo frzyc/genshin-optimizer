@@ -201,8 +201,6 @@ export default function UpgradeOptDisplay() {
     }))
     let qaLookup: Dict<string, QueryArtifact> = {};
     queryArts.forEach(art => qaLookup[art.id] = art)
-    console.log(curEquip, input)
-    console.log(database._getChar(characterKey))
 
     let nodes = [optimizationTargetNode, ...valueFilter.map(x => x.value)]
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
@@ -213,6 +211,7 @@ export default function UpgradeOptDisplay() {
     // Re-sort & slow eval
     querySaved = query
     artUpOpt = upgradeOptExpandSink(artUpOpt, 0, 5)
+    // console.log('top result:', artUpOpt[0])
 
     setArtifactUpgradeOpts(artUpOpt);
     setQuery(query);
