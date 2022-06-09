@@ -182,8 +182,8 @@ export default function TabBuild() {
       maxWorkers === 1
         // Don't split for single worker
         ? Infinity
-        // 8 perms / worker, up to 1M builds / perm
-        : Math.min(origCount / maxWorkers / 4, 1_000_000))[Symbol.iterator]()
+        // 4 perms / worker, up to 8M builds / perm
+        : Math.min(origCount / maxWorkers / 4, 8_000_000))[Symbol.iterator]()
 
     function fetchWork(): Request | undefined {
       const { done, value } = setPerm.next()
