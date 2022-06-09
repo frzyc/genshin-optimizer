@@ -18,7 +18,8 @@ export const currentDBVersion = 16
  */
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
-  if (version === 0) {
+  if (version < 8) {
+    storage.clear()
     setDBVersion(storage, currentDBVersion)
     return { migrated: false }
   }
