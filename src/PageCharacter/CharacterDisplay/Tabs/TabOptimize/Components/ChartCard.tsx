@@ -10,7 +10,13 @@ import { uiInput as input } from '../../../../../Formula';
 import { NumNode } from '../../../../../Formula/type';
 import KeyMap from '../../../../../KeyMap';
 import { MainStatKey, SubstatKey } from '../../../../../Types/artifact';
-import { ChartData } from '../background';
+import { Build } from '../common';
+
+export type ChartData = {
+  valueNode: NumNode,
+  plotNode: NumNode,
+  data: Build[]
+}
 type ChartCardProps = {
   chartData?: ChartData
   plotBase: MainStatKey | SubstatKey | "",

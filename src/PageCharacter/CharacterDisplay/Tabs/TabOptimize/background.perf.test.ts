@@ -5,16 +5,16 @@ import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { optimize } from '../../../../Formula/optimization';
 import { customRead } from '../../../../Formula/utils';
 import { getTeamData } from '../../../../ReactHooks/useTeamData';
-import { finalize, request, setup } from './background';
 import * as data1 from "./background.perf.test.json";
-import { pruneAll } from './common';
+import { countBuilds, pruneAll } from './common';
+import { ComputeWorker } from './ComputeWorker';
 import { compactArtifacts, dynamicData } from './foreground';
 
 describe.skip("Worker Perf", () => {
   test("Test", async () => {
 
     /**
-     * TODO: have a import api that directly result in a database, without this faff of making 2 differnt databases
+     * TODO: have an import api that directly result in a database, without making 2 different databases
      */
     const dbStorage = new DBLocalStorage(localStorage)
     const database = new ArtCharDatabase(dbStorage)
@@ -32,7 +32,7 @@ describe.skip("Worker Perf", () => {
     const minimum = [-Infinity];
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, 10, new Set(), { reaffine: true }))
 
-    setup({
+    const worker = new ComputeWorker({
       command: "setup",
       id: 0,
       arts,
@@ -41,23 +41,23 @@ describe.skip("Worker Perf", () => {
       maxBuilds: 2,
       filters: []
     }, () => { })
+    const total = countBuilds(arts)
 
     const date1 = new Date().getTime();
 
-    const { total } = request({
-      command: "request",
-      threshold: -Infinity, filter: {
-        "flower": { kind: "exclude", sets: new Set() },
-        "goblet": { kind: "exclude", sets: new Set() },
-        "circlet": { kind: "exclude", sets: new Set() },
-        "plume": { kind: "exclude", sets: new Set() },
-        "sands": { kind: "exclude", sets: new Set() },
-      }
+    worker.compute(-Infinity, {
+      "flower": { kind: "exclude", sets: new Set() },
+      "goblet": { kind: "exclude", sets: new Set() },
+      "circlet": { kind: "exclude", sets: new Set() },
+      "plume": { kind: "exclude", sets: new Set() },
+      "sands": { kind: "exclude", sets: new Set() },
     })
 
     const date2 = new Date().getTime()
     const diff = (date2 - date1) / 1000 // total time in seconds
+
+    worker.refresh(true)
     console.log(`Build speed: ${total / diff} builds/s (${total} builds over ${diff} seconds)`)
-    console.log(finalize().builds.map(build => build.value))
+    console.log(worker.builds.map(build => build.value))
   })
 })

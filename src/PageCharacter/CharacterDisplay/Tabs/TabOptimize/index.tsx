@@ -33,23 +33,24 @@ import { ICachedArtifact, MainStatKey } from '../../../../Types/artifact';
 import { ICachedCharacter } from '../../../../Types/character';
 import { ArtifactSetKey, CharacterKey, SlotKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
-import { Build, ChartData, Command, FinalizeResult, RequestFilter, Setup, WorkerResult } from './background';
+import { FinalizeResult, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
 import { buildSettingsReducer, initialBuildSettings } from './BuildSetting';
-import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
+import { Build, countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
 import ArtifactSetConditional from './Components/ArtifactSetConditional';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
 import BuildAlert, { warningBuildNumber } from './Components/BuildAlert';
 import BuildDisplayItem from './Components/BuildDisplayItem';
-import ChartCard from './Components/ChartCard';
+import ChartCard, { ChartData } from './Components/ChartCard';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
 import { artSetPerm, compactArtifacts, dynamicData } from './foreground';
+import { Setup } from './SplitWorker';
 
 export default function TabBuild() {
   const { character, character: { key: characterKey } } = useContext(DataContext)
@@ -187,20 +188,20 @@ export default function TabBuild() {
     const idleWorkers: { id: number, worker: Worker }[] = []
     const pruningID = new Set<number>()
 
-    function fetchContinueWork(): Command {
-      return { command: "breakdown", filter: undefined, minCount: minFilterCount, threshold: wrap.buildValues[maxBuildsToShow - 1] }
+    function fetchContinueWork(): WorkerCommand {
+      return { command: "split", filter: undefined, minCount: minFilterCount, threshold: wrap.buildValues[maxBuildsToShow - 1] }
     }
-    function fetchPruningWork(): Command | undefined {
+    function fetchPruningWork(): WorkerCommand | undefined {
       const { done, value } = unprunedFilters.next()
       return done ? undefined : {
-        command: "breakdown", minCount: minFilterCount,
+        command: "split", minCount: minFilterCount,
         threshold: wrap.buildValues[maxBuildsToShow - 1], filter: value,
       }
     }
-    function fetchRequestWork(): Command | undefined {
+    function fetchRequestWork(): WorkerCommand | undefined {
       const filter = requestFilters.pop()
       return !filter ? undefined : {
-        command: "request",
+        command: "iterate",
         threshold: wrap.buildValues[maxBuildsToShow - 1], filter
       }
     }
@@ -224,7 +225,7 @@ export default function TabBuild() {
       worker.postMessage(setup, undefined)
       let finalize: (_: FinalizeResult) => void
       const finalized = new Promise<FinalizeResult>(r => finalize = r)
-      worker.onmessage = async ({ data }: { data: WorkerResult }) => {
+      worker.onmessage = async ({ data }: { data: { id: number } & WorkerResult }) => {
         switch (data.command) {
           case "interim":
             wrap.buildCount += data.buildCount
@@ -235,14 +236,14 @@ export default function TabBuild() {
               wrap.buildValues.sort((a, b) => b - a).splice(maxBuildsToShow)
             }
             break
-          case "breakdown":
+          case "split":
             if (data.filter) {
               requestFilters.push(data.filter)
               pruningID.add(data.id)
             } else pruningID.delete(data.id)
             idleWorkers.push({ id: data.id, worker })
             break
-          case "request":
+          case "iterate":
             idleWorkers.push({ id: data.id, worker })
             break
           case "finalize":
@@ -253,7 +254,7 @@ export default function TabBuild() {
         }
         while (idleWorkers.length) {
           const { id, worker } = idleWorkers.pop()!
-          let work: Command | undefined
+          let work: WorkerCommand | undefined
           if (wrap.finalizing) work = { command: "finalize" }
           else if (requestFilters.length >= maxRequestFilterInFlight) work = fetchRequestWork()
           else if (pruningID.has(id)) work = fetchContinueWork()

@@ -1,6 +1,8 @@
 import { StatKey } from "../../../../KeyMap";
 import { MainStatKey, SubstatKey } from "../../../../Types/artifact";
-import { SetFilter } from "../../../../Types/Build";
+import { ArtifactSetKey } from "../../../../Types/consts";
+
+export type SetFilter = { key: ArtifactSetKey | "", num: number }[]
 export interface BuildSetting {
   setFilters: SetFilter,
   statFilters: Dict<StatKey, number>

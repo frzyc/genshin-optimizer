@@ -2,9 +2,8 @@ import { forEachNodes, mapFormulas } from "../../../../Formula/internal";
 import { allOperations, constantFold } from "../../../../Formula/optimization";
 import { ConstantNode, NumNode } from "../../../../Formula/type";
 import { constant, customRead, max, min } from "../../../../Formula/utils";
-import { allSlotKeys, ArtifactSetKey } from "../../../../Types/consts";
+import { allSlotKeys, ArtifactSetKey, SlotKey } from "../../../../Types/consts";
 import { assertUnreachable, objectKeyMap, objectMap } from "../../../../Util/Util";
-import type { ArtifactBuildData, ArtifactsBySlot, Build, DynStat, PlotData, RequestFilter } from "./background";
 
 type DynMinMax = { [key in string]: MinMax }
 type MinMax = { min: number, max: number }
@@ -347,4 +346,25 @@ export function mergePlot(plots: PlotData[]): PlotData {
 
 export function countBuilds(arts: ArtifactsBySlot): number {
   return allSlotKeys.reduce((_count, slot) => _count * arts.values[slot].length, 1)
+}
+
+export type RequestFilter = StrictDict<SlotKey,
+  { kind: "required", sets: Set<ArtifactSetKey> } |
+  { kind: "exclude", sets: Set<ArtifactSetKey> } |
+  { kind: "id", ids: Set<string> }
+>
+
+export type DynStat = { [key in string]: number }
+export type ArtifactBuildData = {
+  id: string
+  set?: ArtifactSetKey
+  values: DynStat
+}
+export type ArtifactsBySlot = { base: DynStat, values: StrictDict<SlotKey, ArtifactBuildData[]> }
+
+export type PlotData = Dict<number, Build>
+export interface Build {
+  value: number
+  plot?: number
+  artifactIds: string[]
 }
