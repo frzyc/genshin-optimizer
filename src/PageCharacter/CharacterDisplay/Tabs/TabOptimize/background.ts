@@ -1,10 +1,10 @@
 import { optimize, precompute } from '../../../../Formula/optimization';
 import type { NumNode } from '../../../../Formula/type';
 import type { MainStatKey, SubstatKey } from '../../../../Types/artifact';
-import { ArtifactSetKey, SlotKey } from '../../../../Types/consts';
+import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../../../Types/consts';
 import { countBuilds, filterArts, mergePlot, pruneAll } from './common';
 
-let id: string
+let id: number
 let builds: Build[]
 let buildValues: number[] | undefined
 let plotData: PlotData | undefined
@@ -39,6 +39,27 @@ export function setup(msg: Setup, callback: WorkerStat["callback"]): RequestResu
   return { command: "request", id }
 }
 
+let splitFilters: Iterator<RequestFilter> | undefined
+let splittingFilters: RequestFilter[] = []
+
+export function breakdown({ threshold: newThreshold, minCount, filter }: Breakdown): BreakdownResult {
+  if (threshold > newThreshold) threshold = newThreshold
+  if (filter) splittingFilters.push(filter)
+
+  while (splittingFilters.length || splitFilters) {
+    const { done, value } = splitFilters?.next() ?? { done: true }
+    if (done) {
+      splitFilters = undefined
+      if (splittingFilters.length) {
+        splitFilters = splitFiltersBySet(shared.arts, splittingFilters, minCount)[Symbol.iterator]()
+        splittingFilters = []
+      }
+    } else {
+      return { command: "breakdown", id, buildCount: -1, filter: value as RequestFilter }
+    }
+  }
+  return { command: "breakdown", id, buildCount: 0, filter: undefined }
+}
 export function request({ threshold: newThreshold, filter: filters }: Request): RequestResult & { total: number } {
   if (threshold > newThreshold) threshold = newThreshold
   let preArts = filterArts(shared.arts, filters)
@@ -150,19 +171,25 @@ export type ArtifactBuildData = {
   values: DynStat
 }
 
-export type Command = Setup | Request | Finalize
+export type Command = Setup | Breakdown | Request | Finalize
 export type ArtifactsBySlot = { base: DynStat, values: StrictDict<SlotKey, ArtifactBuildData[]> }
 export type DynStat = { [key in string]: number }
 export interface Setup {
   command: "setup"
 
-  id: string
+  id: number
   arts: ArtifactsBySlot
 
   optimizationTarget: NumNode
   filters: { value: NumNode, min: number }[]
   plotBase: NumNode | undefined,
   maxBuilds: number
+}
+export interface Breakdown {
+  command: "breakdown"
+  threshold: number
+  minCount: number
+  filter?: RequestFilter
 }
 export interface Request {
   command: "request"
@@ -185,10 +212,16 @@ export interface Finalize {
   command: "finalize"
 }
 
-export type WorkerResult = InterimResult | RequestResult | FinalizeResult | DebugMsg
+export type WorkerResult = InterimResult | BreakdownResult | RequestResult | FinalizeResult | DebugMsg
+export interface BreakdownResult {
+  command: "breakdown"
+  id: number
+  buildCount: number
+  filter: RequestFilter | undefined
+}
 export interface InterimResult {
   command: "interim"
-  id: string
+  id: number
   buildValues: number[] | undefined
   /** The number of builds since last report, including failed builds */
   buildCount: number
@@ -198,13 +231,13 @@ export interface InterimResult {
 }
 export interface FinalizeResult {
   command: "finalize"
-  id: string
+  id: number
   builds: Build[]
   plotData?: PlotData
 }
 export interface RequestResult {
   command: "request"
-  id: string
+  id: number
 }
 export interface Build {
   value: number
@@ -213,6 +246,64 @@ export interface Build {
 }
 export interface DebugMsg {
   command: "debug"
-  id: string
+  id: number
   value: any
+}
+
+export function* splitFiltersBySet(_arts: ArtifactsBySlot, filters: Iterable<RequestFilter>, limit: number): Iterable<RequestFilter> {
+  if (limit < 10000) limit = 10000
+
+  for (const filter of filters) {
+    const filters = [filter]
+
+    while (filters.length) {
+      const filter = filters.pop()!
+      const arts = filterArts(_arts, filter)
+      const count = countBuilds(arts)
+      if (count <= limit) {
+        if (count) yield filter
+        continue
+      }
+
+      const candidates = allSlotKeys
+        // TODO: Cache this loop
+        .map(slot => ({ slot, sets: new Set(arts.values[slot].map(x => x.set)) }))
+        .filter(({ sets }) => sets.size > 1)
+      if (!candidates.length) {
+        yield* splitFilterByIds(arts, filter, limit)
+        continue
+      }
+      const { sets, slot } = candidates.reduce((a, b) => a.sets.size < b.sets.size ? a : b)
+      sets.forEach(set => filters.push({ ...filter, [slot]: { kind: "required", sets: new Set([set]) } }))
+    }
+  }
+}
+function* splitFilterByIds(_arts: ArtifactsBySlot, filter: RequestFilter, limit: number): Iterable<RequestFilter> {
+  const filters = [filter]
+
+  while (filters.length) {
+    const filter = filters.pop()!
+    const arts = filterArts(_arts, filter)
+    const count = countBuilds(arts)
+    if (count <= limit) {
+      if (count) yield filter
+      continue
+    }
+
+    const candidates = allSlotKeys
+      .map(slot => ({ slot, length: arts.values[slot].length }))
+      .filter(x => x.length > 1)
+    const { slot, length } = candidates.reduce((a, b) => a.length < b.length ? a : b)
+
+    const numChunks = Math.ceil(count / limit)
+    const boundedNumChunks = Math.min(numChunks, length)
+    const chunk = Array(boundedNumChunks).fill(0).map(_ => new Set<string>())
+    arts.values[slot].forEach(({ id }, i) => chunk[i % boundedNumChunks].add(id))
+    if (numChunks > length) {
+      chunk.forEach(ids => filters.push({ ...filter, [slot]: { kind: "id", ids } }))
+    } else {
+      for (const ids of chunk)
+        yield { ...filter, [slot]: { kind: "id", ids } }
+    }
+  }
 }

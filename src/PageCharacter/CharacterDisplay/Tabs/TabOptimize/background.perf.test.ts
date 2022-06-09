@@ -34,7 +34,7 @@ describe.skip("Worker Perf", () => {
 
     setup({
       command: "setup",
-      id: `0`,
+      id: 0,
       arts,
       optimizationTarget: nodes[0],
       plotBase: undefined,

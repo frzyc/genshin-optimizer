@@ -8,7 +8,6 @@ import { allMainStatKeys, allSubstatKeys, ICachedArtifact } from "../../../../Ty
 import { allSlotKeys, ArtifactSetKey } from "../../../../Types/consts";
 import { deepClone, objectKeyMap, objectMap } from "../../../../Util/Util";
 import type { ArtifactBuildData, ArtifactsBySlot, DynStat, RequestFilter } from "./background";
-import { countBuilds, filterArts } from "./common";
 
 const dynamic = setReadNodeKeys(deepClone({ dyn: { ...input.art, ...input.artSet } }))
 export const dynamicData = {
@@ -121,65 +120,6 @@ export function* artSetPerm(_filters: _SetFilter[]): Iterable<RequestFilter> {
   }
   yield* check(allFilters, 5)
 }
-export function* splitFiltersBySet(_arts: ArtifactsBySlot, filters: Iterable<RequestFilter>, limit: number): Iterable<RequestFilter> {
-  if (limit < 10000) limit = 10000
-
-  for (const filter of filters) {
-    const filters = [filter]
-
-    while (filters.length) {
-      const filter = filters.pop()!
-      const arts = filterArts(_arts, filter)
-      const count = countBuilds(arts)
-      if (count <= limit) {
-        if (count) yield filter
-        continue
-      }
-
-      const candidates = allSlotKeys
-        // TODO: Cache this loop
-        .map(slot => ({ slot, sets: new Set(arts.values[slot].map(x => x.set)) }))
-        .filter(({ sets }) => sets.size > 1)
-      if (!candidates.length) {
-        yield* splitFilterByIds(arts, filter, limit)
-        continue
-      }
-      const { sets, slot } = candidates.reduce((a, b) => a.sets.size < b.sets.size ? a : b)
-      sets.forEach(set => filters.push({ ...filter, [slot]: { kind: "required", sets: new Set([set]) } }))
-    }
-  }
-}
-function* splitFilterByIds(_arts: ArtifactsBySlot, filter: RequestFilter, limit: number): Iterable<RequestFilter> {
-  const filters = [filter]
-
-  while (filters.length) {
-    const filter = filters.pop()!
-    const arts = filterArts(_arts, filter)
-    const count = countBuilds(arts)
-    if (count <= limit) {
-      if (count) yield filter
-      continue
-    }
-
-    const candidates = allSlotKeys
-      .map(slot => ({ slot, length: arts.values[slot].length }))
-      .filter(x => x.length > 1)
-    const { slot, length } = candidates.reduce((a, b) => a.length < b.length ? a : b)
-
-    const numChunks = Math.ceil(count / limit)
-    const boundedNumChunks = Math.min(numChunks, length)
-    const chunk = Array(boundedNumChunks).fill(0).map(_ => new Set<string>())
-    arts.values[slot].forEach(({ id }, i) => chunk[i % boundedNumChunks].add(id))
-    if (numChunks > length) {
-      chunk.forEach(ids => filters.push({ ...filter, [slot]: { kind: "id", ids } }))
-    } else {
-      for (const ids of chunk)
-        yield { ...filter, [slot]: { kind: "id", ids } }
-    }
-  }
-}
-
-// const noFilter = { kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }
 
 export function debugCompute(nodes: NumNode[], base: DynStat, arts: ArtifactBuildData[]) {
   const stats = { ...base }

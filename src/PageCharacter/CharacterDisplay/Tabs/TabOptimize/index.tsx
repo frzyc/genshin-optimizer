@@ -33,7 +33,7 @@ import { ICachedArtifact, MainStatKey } from '../../../../Types/artifact';
 import { ICachedCharacter } from '../../../../Types/character';
 import { ArtifactSetKey, CharacterKey, SlotKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
-import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
+import { Build, ChartData, Command, FinalizeResult, RequestFilter, Setup, WorkerResult } from './background';
 import { maxBuildsToShowList } from './Build';
 import { buildSettingsReducer, initialBuildSettings } from './BuildSetting';
 import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
@@ -49,7 +49,7 @@ import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
-import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
+import { artSetPerm, compactArtifacts, dynamicData } from './foreground';
 
 export default function TabBuild() {
   const { character, character: { key: characterKey } } = useContext(DataContext)
@@ -174,22 +174,34 @@ export default function TabBuild() {
 
     let wrap = {
       buildCount: 0, failedCount: 0, skippedCount: origCount,
-      buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity)
+      buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity),
+      finalizing: false
     }
     setPerms.forEach(filter => wrap.skippedCount -= countBuilds(filterArts(arts, filter)))
 
-    const setPerm = splitFiltersBySet(arts, setPerms,
-      maxWorkers === 1
-        // Don't split for single worker
-        ? Infinity
-        // 8 perms / worker, up to 1M builds / perm
-        : Math.min(origCount / maxWorkers / 4, 1_000_000))[Symbol.iterator]()
+    const minFilterCount = maxWorkers === 1
+      ? Infinity // Don't split for single worker
+      : Math.min(origCount / maxWorkers / 4, 8_000_000) // 8 perms / worker, up to 8M builds / perm
+    const maxRequestFilterInFlight = maxWorkers * 4
+    const unprunedFilters = setPerms[Symbol.iterator](), requestFilters: RequestFilter[] = []
+    const idleWorkers: { id: number, worker: Worker }[] = []
+    const pruningID = new Set<number>()
 
-    function fetchWork(): Request | undefined {
-      const { done, value } = setPerm.next()
+    function fetchContinueWork(): Command {
+      return { command: "breakdown", filter: undefined, minCount: minFilterCount, threshold: wrap.buildValues[maxBuildsToShow - 1] }
+    }
+    function fetchPruningWork(): Command | undefined {
+      const { done, value } = unprunedFilters.next()
       return done ? undefined : {
-        command: "request",
+        command: "breakdown", minCount: minFilterCount,
         threshold: wrap.buildValues[maxBuildsToShow - 1], filter: value,
+      }
+    }
+    function fetchRequestWork(): Command | undefined {
+      const filter = requestFilters.pop()
+      return !filter ? undefined : {
+        command: "request",
+        threshold: wrap.buildValues[maxBuildsToShow - 1], filter
       }
     }
 
@@ -203,8 +215,7 @@ export default function TabBuild() {
 
       const setup: Setup = {
         command: "setup",
-        id: `${i}`,
-        arts,
+        id: i, arts,
         optimizationTarget: optimizationTargetNode,
         plotBase: plotBaseNode,
         maxBuilds: maxBuildsToShow,
@@ -224,20 +235,40 @@ export default function TabBuild() {
               wrap.buildValues.sort((a, b) => b - a).splice(maxBuildsToShow)
             }
             break
+          case "breakdown":
+            if (data.filter) {
+              requestFilters.push(data.filter)
+              pruningID.add(data.id)
+            } else pruningID.delete(data.id)
+            idleWorkers.push({ id: data.id, worker })
+            break
           case "request":
-            const work = fetchWork()
-            if (work) {
-              worker.postMessage(work)
-            } else {
-              const finalizeCommand: Finalize = { command: "finalize" }
-              worker.postMessage(finalizeCommand)
-            }
+            idleWorkers.push({ id: data.id, worker })
             break
           case "finalize":
             worker.terminate()
             finalize(data);
             break
           default: console.log("DEBUG", data)
+        }
+        while (idleWorkers.length) {
+          const { id, worker } = idleWorkers.pop()!
+          let work: Command | undefined
+          if (wrap.finalizing) work = { command: "finalize" }
+          else if (requestFilters.length >= maxRequestFilterInFlight) work = fetchRequestWork()
+          else if (pruningID.has(id)) work = fetchContinueWork()
+          else if (!(id % 2)) work = fetchPruningWork()
+          if (!work) work = fetchRequestWork()
+
+          if (work) worker.postMessage(work)
+          else {
+            idleWorkers.push({ id, worker })
+            if (idleWorkers.length === maxWorkers) {
+              wrap.finalizing = true
+              continue
+            }
+            break
+          }
         }
       }
 
