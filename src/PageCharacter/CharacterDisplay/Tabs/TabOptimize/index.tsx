@@ -25,6 +25,7 @@ import { UIData } from '../../../../Formula/uiData';
 import { initGlobalSettings } from '../../../../GlobalSettings';
 import KeyMap from '../../../../KeyMap';
 import useCharacterReducer, { characterReducerAction } from '../../../../ReactHooks/useCharacterReducer';
+import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useDBState from '../../../../ReactHooks/useDBState';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
@@ -68,7 +69,7 @@ export default function TabBuild() {
   const setMaxWorkers = useCallback(threads => setOptimizeDBState({ threads }), [setOptimizeDBState],)
 
   const characterDispatch = useCharacterReducer(characterKey)
-
+  const onClickTeammate = useCharSelectionCallback()
   const compareData = character?.compareData ?? false
 
   const noArtifact = useMemo(() => !database._getArts().length, [database])
@@ -301,7 +302,7 @@ export default function TabBuild() {
         {/* 1*/}
         <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
           {/* character card */}
-          <Box><CharacterCard characterKey={characterKey} /></Box>
+          <Box><CharacterCard characterKey={characterKey} onClickTeammate={onClickTeammate} /></Box>
         </Grid>
 
         {/* 2 */}

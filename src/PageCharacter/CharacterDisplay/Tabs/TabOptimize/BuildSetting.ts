@@ -47,6 +47,7 @@ export const initialBuildSettings = (): BuildSetting => ({
 export default function useBuildSetting(characterKey: CharacterKey) {
   const { database } = useContext(DatabaseContext)
   const [buildSetting, setBuildSetting] = useState(database._getBuildSetting(characterKey))
+  useEffect(() => setBuildSetting(database._getBuildSetting(characterKey)), [database, characterKey])
   useEffect(() =>
     database.followBuildSetting(characterKey, setBuildSetting),
     [characterKey, setBuildSetting, database])
