@@ -1,12 +1,11 @@
-import { constant, sum, prod, cmp, res } from "./utils"
-import { AnyNode, ComputeNode, ConstantNode, NumNode, ReadNode } from "./type"
+import { constant, prod, cmp } from "./utils"
+import { NumNode } from "./type"
 import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/background"
 import { toLinearUpperBound, LinearForm } from './linearUpperBound'
-import { precompute, allOperations, optimize } from "./optimization"
+import { precompute, optimize } from "./optimization"
 import { expandPoly, productPossible } from './expandPoly'
-import { forEachNodes, mapFormulas } from "./internal"
+import { mapFormulas } from "./internal"
 import { PriorityQueue } from './priorityQueue'
-import { allArtifactSets, allSlotKeys } from "../Types/consts"
 import { cartesian } from '../Util/Util'
 
 function feasibleObjVal(f: NumNode, a: ArtifactsBySlot, lin: LinearForm) {
@@ -89,7 +88,7 @@ function estimateMaximum(func: NumNode, a: ArtifactsBySlot): { maxEst: number, l
   return { maxEst: maxWeight(a, linUBtot), lin: linUBtot }
 }
 
-function subStats(f: NumNode, lower: DynStat, upper: DynStat) {
+function simplifyFormulaSubstitution(f: NumNode, lower: DynStat, upper: DynStat) {
   const fixedStats = Object.fromEntries(Object.entries(lower).filter(([statKey, v]) => v === upper[statKey]))
   let [f2] = mapFormulas([f], n => n, n => {
     if (n.operation === 'read' && n.path[1] in fixedStats) return constant(fixedStats[n.path[1]])
@@ -114,10 +113,7 @@ function subStats(f: NumNode, lower: DynStat, upper: DynStat) {
   return f3
 }
 
-export function debugMe(func: NumNode, a: ArtifactsBySlot) {
-  // debug3()
-  // return
-
+export function optimizeBNB(func: NumNode, a: ArtifactsBySlot) {
   a = {
     base: a.base,
     values: {
@@ -131,7 +127,7 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
 
   // 1 more optimize loop for good measure.
   let { statsMin, statsMax } = boundsUpperLower(a)
-  func = subStats(func, statsMin, statsMax)
+  func = simplifyFormulaSubstitution(func, statsMin, statsMax)
 
   // careful, this may consume O(n^5) memory.
   type Packet = { maxEst: number, f: NumNode, a: ArtifactsBySlot, lin: LinearForm }
@@ -154,7 +150,7 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
 
     //  Stats *should* already be subbed in, but it doesn't hurt to try again.
     let { statsMin, statsMax } = boundsUpperLower(a)
-    f = subStats(f, statsMin, statsMax)
+    f = simplifyFormulaSubstitution(f, statsMin, statsMax)
 
     let est = estimateMaximum(f, a)
     if (est.maxEst < feasibleObjVal(f, a, est.lin)) {
@@ -219,7 +215,7 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
           if (numBuilds === 0) return;
 
           const { statsMin, statsMax } = boundsUpperLower(z)
-          let f2 = subStats(f, statsMin, statsMax)
+          let f2 = simplifyFormulaSubstitution(f, statsMin, statsMax)
 
           const maxEst1 = maxWeight(z, lin)
           if (maxEst1 < lowerBoundDmg) {
@@ -291,7 +287,7 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
       if (numBuilds === 0) return;
 
       const { statsMin, statsMax } = boundsUpperLower(z)
-      let f2 = subStats(f, statsMin, statsMax)
+      let f2 = simplifyFormulaSubstitution(f, statsMin, statsMax)
 
       const maxEst1 = maxWeight(z, lin)
       if (maxEst1 < lowerBoundDmg) {
@@ -305,7 +301,6 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
       if (est2.maxEst + 1 < feasibleObjVal(f2, z, est2.lin)) {
         console.log('!!!!!!!!!!!!! BIG PROBLEM UH OH !!!!!!!!!!!!!')
         pq.push({ maxEst: Infinity, lin: est2.lin, f: f2, a: z })
-        // debug2(z, f2)
         return
       }
 
@@ -320,15 +315,7 @@ export function debugMe(func: NumNode, a: ArtifactsBySlot) {
       console.log(s1, s2, s3, s4, s5, { numBuilds, upper: maxEst })
       pq.push({ maxEst, lin: linToUse, f: f2, a: z })
     })
-
-    // console.log('SHOULD BE SAME', correctnessCount, numBuilds)
     continue
-
-    console.log(maxEst, lin, a)
-    console.log(statsMin, statsMax)
-
-    console.log(pq)
-    throw Error('I didnt think Id get this far.')
   }
 
   console.log(pq)
@@ -351,7 +338,7 @@ function debug2(a: ArtifactsBySlot, f: NumNode) {
   const { statsMin, statsMax } = boundsUpperLower(a)
   console.log('minstat', statsMin)
   console.log('maxstat', statsMax)
-  f = subStats(f, statsMin, statsMax)
+  f = simplifyFormulaSubstitution(f, statsMin, statsMax)
 
   function isVari(n: NumNode) {
     switch (n.operation) {
@@ -417,18 +404,4 @@ function debug2(a: ArtifactsBySlot, f: NumNode) {
   console.log('=========== shitty debug time ===============')
   console.log(ww[0])
   console.log(toLinearUpperBound(ww[0], statsMin, statsMax))
-
-  debug3()
-}
-
-function debug3() {
-  const statsMin: DynStat = { "0": 0.595294, "1": 0.8840000033378601, "2": 0.1, "TenacityOfTheMillelith": 0, "hp_": 0, "hp": 4780, "BraveHeart": 0, "EchoesOfAnOffering": 0, "GladiatorsFinale": 0, "ShimenawasReminiscence": 0, "VermillionHereafter": 0, "atk_": 0.0408, "atk": 71.18, "HeartOfDepth": 0, "CrimsonWitchOfFlames": 0, "pyro_dmg_": 0, "Instructor": 0, "WanderersTroupe": 0, "eleMas": 200.92999999999998 }
-  const statsMax: DynStat = { "0": 0.867494, "1": 1.43570000333786, "2": 0.1, "TenacityOfTheMillelith": 0, "hp_": 0.6817, "hp": 6363.39, "BraveHeart": 1, "EchoesOfAnOffering": 0, "GladiatorsFinale": 2, "ShimenawasReminiscence": 1, "VermillionHereafter": 1, "atk_": 0.8099, "atk": 427.71999999999997, "HeartOfDepth": 2, "CrimsonWitchOfFlames": 4, "pyro_dmg_": 0, "Instructor": 0, "WanderersTroupe": 1, "eleMas": 289.07 }
-  const badop: NumNode = { "operation": "mul", "operands": [{ "operation": "min", "operands": [{ "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "hp_"], "info": { "prefix": "art", "asConst": true, "key": "hp_" }, "type": "number", "accu": "add" }, { "operation": "const", "operands": [], "value": 1, 'type': 'number' }] }, { "operation": "const", "operands": [], "value": 15552.306844604493, 'type': 'number' }] }, { "operation": "read", "operands": [], "path": ["dyn", "hp"], "info": { "prefix": "art", "asConst": true, "key": "hp" }, "type": "number", "accu": "add" }] }, { "operation": "const", "operands": [], "value": 0.05957, 'type': 'number' }] }, { "operation": "const", "operands": [], "value": 2030.911879967212, 'type': 'number' }] }, { "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "CrimsonWitchOfFlames"], "accu": "add", "info": { "key": "CrimsonWitchOfFlames" }, "type": "number" }, { "operation": "const", "operands": [], "value": 2, 'type': 'number' }, { "operation": "const", "operands": [], "value": 0.15, "info": { "key": "_" }, 'type': 'number' }, { "operation": "const", "operands": [], "value": 0, 'type': 'number' }], "info": { "key": "pyro_dmg_", "variant": "pyro" }, "emptyOn": "l" }, { "operation": "min", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "0"], "type": "number", "accu": "add" }, { "operation": "const", "operands": [], "value": 1, 'type': 'number' }] }, { "operation": "read", "operands": [], "path": ["dyn", "1"], "type": "number", "accu": "add" }, { "operation": "sum_frac", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "eleMas"], "info": { "prefix": "art", "asConst": true, "key": "eleMas" }, "type": "number", "accu": "add" }, { "operation": "const", "operands": [], "value": 1400, 'type': 'number' }] }, { "operation": "const", "operands": [], "value": 4.287375, 'type': 'number' }] }
-
-  const stats = { "0": 0.6186940000000001, "1": 1.91780000333786, "2": 0.1, "TenacityOfTheMillelith": 0, "hp_": 0.3148, "hp": 6512.77, "BraveHeart": 0, "EchoesOfAnOffering": 0, "GladiatorsFinale": 0, "ShimenawasReminiscence": 0, "VermillionHereafter": 0, "atk_": 0.6234, "atk": 410.21, "HeartOfDepth": 0, "CrimsonWitchOfFlames": 1, "pyro_dmg_": 0, "Instructor": 0, "WanderersTroupe": 0, "eleMas": 244.78 }
-
-  let hmm = toLinearUpperBound(badop, statsMin, statsMax)
-  console.log(badop)
-  console.log(hmm)
 }

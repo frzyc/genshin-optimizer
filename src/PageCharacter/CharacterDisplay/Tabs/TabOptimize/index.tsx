@@ -49,7 +49,7 @@ import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
 import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
-import { debugMe } from '../../../../Formula/branchAndBound'
+import { optimizeBNB } from '../../../../Formula/branchAndBound'
 
 export default function TabBuild() {
   const { character, character: { key: characterKey } } = useContext(DataContext)
@@ -173,7 +173,7 @@ export default function TabBuild() {
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
 
-    debugMe(optimizationTargetNode, arts)
+    optimizeBNB(optimizationTargetNode, arts)
     // console.log(arts)
 
     let wrap = {

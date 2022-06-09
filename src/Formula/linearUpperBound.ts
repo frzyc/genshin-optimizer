@@ -1,8 +1,8 @@
-import { AnyNode, ComputeNode, ConstantNode, NumNode, ReadNode } from "./type"
-import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/background"
-import { constant, sum, prod, cmp, res } from "./utils"
+import { NumNode } from "./type"
+import { DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/background"
+import { constant, sum, prod } from "./utils"
 import { foldSum, foldProd, expandPoly } from './expandPoly'
-import { precompute, allOperations, optimize } from "./optimization"
+import { precompute, allOperations } from "./optimization"
 import { solveLP } from './solveLP_simplex'
 import { cartesian } from '../Util/Util'
 
@@ -123,8 +123,6 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
   if (lpf.operation === 'const')
     return { w: {} as DynStat, c: lpf.value, err: linerr }
 
-  // console.log('PRODUCT FORM:', lpf)
-
   function toLUB(n: NumNode) {
     if (n.operation === 'read') {
       return { w: { [n.path[1]]: 1 }, c: 0, err: 0 }
@@ -144,7 +142,6 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
       return vars
     }, [] as string[])
     const bounds = vars.map(v => ({ lower: lower[v], upper: upper[v] }))
-    // console.log('Solving ', vars, '...')
     const { w, c, err } = lub(bounds)
     return { w: Object.fromEntries(w.map((wi, i) => [vars[i], wi * coeff])), c: c * coeff, err: err * coeff + linerr }
   }
@@ -159,7 +156,7 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
  * @returns { w, c, err } with
  */
 function lub(bounds: { lower: number, upper: number }[]): { w: number[], c: number, err: number } {
-  if (bounds.length == 0) return { w: [], c: 0, err: 0 }
+  if (bounds.length === 0) return { w: [], c: 0, err: 0 }
   const nVar = bounds.length
 
   // Re-scale bounds to [0, 1] for numerical stability.
@@ -179,14 +176,12 @@ function lub(bounds: { lower: number, upper: number }[]): { w: number[], c: numb
   // Force equality at upper & lower corners?
   // cons.push([...bounds.map(lu => lu.lower), -1, 0, bounds.reduce((prod, { lower }) => prod * lower, 1)])
   // cons.push([...bounds.map(lu => lu.upper), -1, 0, bounds.reduce((prod, { upper }) => prod * upper, 1)])
-  // console.log('Ab', cons)
 
   let soln: any
   const objective = [...bounds.map(_ => 0), 0, 1]
   try {
     // TODO: verify solution
     soln = solveLP(objective, cons)
-    // console.log('soln', soln)
   }
   catch (e) {
     console.log('ERROR on bounds', bounds)

@@ -75,10 +75,10 @@ function backtrack(tableau: number[][], ijTrack: { i: number, j: number }[], tar
  *
  * Does not implement any cycle detection, though that *shouldnt* a problem for GO's use
  *   case. This algorithm is fairly numerically unstable though, use with care & always
- *   try to verify the solution.
+ *   try to verify the solution. It's also a fair bit slower than it needs to be.
  *
  * @param c        Objective vector
- * @param Ab       Constraints matrix with thresholds. Inputted in block for [A, b]
+ * @param Ab       Constraints matrix with thresholds. Inputted in block form [A, b]
  * @returns        the optimal solution x
  */
 export function solveLP(c: number[], Ab: number[][]) {
@@ -92,20 +92,17 @@ export function solveLP(c: number[], Ab: number[][]) {
   // console.log('tab', tableau)
 
   let ijTrack: { i: number, j: number }[] = []
-  let iter = 0
 
   while (tableau.some((t, i) => i < rows - 1 && t[cols - 1] < 0)) {
     const ij = findPiv2(tableau)
     ijTrack.push(ij)
     tableau = pivot(tableau, ij)
-    iter += 1
   }
 
   while (tableau[rows - 1].some((t, j) => j < cols - 1 && t < 0)) {
     const ij = findPiv1(tableau)
     ijTrack.push(ij)
     tableau = pivot(tableau, ij)
-    iter += 1
   }
 
   return c.map((_, i) => backtrack(tableau, ijTrack, i))

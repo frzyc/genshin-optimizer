@@ -4,7 +4,7 @@ import { allArtifactSets } from "../Types/consts"
 import { cartesian } from '../Util/Util'
 
 export function foldSum(nodes: NumNode[]) {
-  if (nodes.length == 1) return nodes[0]
+  if (nodes.length === 1) return nodes[0]
 
   nodes = nodes.flatMap(n => n.operation === 'add' ? n.operands : n)
   let constVal = nodes.reduce((pv, n) => n.operation === 'const' ? pv + n.value : pv, 0)
@@ -15,7 +15,7 @@ export function foldSum(nodes: NumNode[]) {
 }
 
 export function foldProd(nodes: NumNode[]) {
-  if (nodes.length == 1) return nodes[0]
+  if (nodes.length === 1) return nodes[0]
 
   nodes = nodes.flatMap(n => n.operation === 'mul' ? n.operands : n)
   let constVal = nodes.reduce((pv, n) => n.operation === 'const' ? pv * n.value : pv, 1)
