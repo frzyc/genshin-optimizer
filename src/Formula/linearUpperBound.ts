@@ -58,7 +58,7 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
 
           if (ge.value < lt.value) {
             console.log(node)
-            throw Error('Not Implemented (threshold)')
+            throw Error('Not Implemented (threshold must be increasing)')
           }
 
           const slope = (ge.value - lt.value) / bval.value
@@ -87,13 +87,30 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
             // TODO: update linerr
             u[rop.path[1]] = cop.value
           }
-          return rop
+          return purePolyForm(rop)
         }
 
         // TODO: update linerr
         // If it's not a simple min() node, returning either value is still UB.
         return rop
       case 'max':
+        let [varop, constop] = node.operands
+        if (constop.operation !== 'const')
+          [varop, constop] = [constop, varop]
+
+        if (cop.operation === 'const') {
+          const thresh = cop.value
+          let vFunc = precompute([varop], n => n.path[1])
+          const [minVal, maxVal] = [vFunc(lower)[0], vFunc(upper)[0]]
+          if (minVal > thresh) return varop
+          if (thresh > maxVal) return constant(thresh)
+
+          // rescale `varop` to be above thresh.
+          let m = (maxVal - thresh) / (maxVal - minVal)
+          let b = thresh - minVal
+          return sum(prod(m, purePolyForm(varop)), b)
+        }
+        console.log(node)
         throw Error('Not Implemented (max)')
       case 'sum_frac':
         const [em, denom] = node.operands
