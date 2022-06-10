@@ -1,6 +1,6 @@
 import { assertUnreachable } from '../../../../Util/Util'
 import { Build, PlotData, RequestFilter } from "./common"
-import { ComputeWorker, InterimResult } from "./ComputeWorker"
+import { ComputeWorker } from "./ComputeWorker"
 import { Setup, SplitWorker } from "./SplitWorker"
 
 let id: number, splitWorker: SplitWorker, computeWorker: ComputeWorker
@@ -11,12 +11,13 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
   switch (command) {
     case "setup":
       id = data.id
-      splitWorker = new SplitWorker(data)
-      computeWorker = new ComputeWorker(data, interim => postMessage({ id, ...interim }))
+      const callback = (interim: InterimResult) => postMessage({ id, ...interim })
+      splitWorker = new SplitWorker(data, callback)
+      computeWorker = new ComputeWorker(data, callback)
       result = { command: "iterate" }
       break
     case "split":
-      result = { command: "split", filter: splitWorker.breakdown(data.threshold, data.minCount, data.filter) }
+      result = { command: "split", filter: splitWorker.split(data.threshold, data.minCount, data.filter) }
       break
     case "iterate":
       const { threshold, filter } = data
@@ -63,4 +64,13 @@ export interface FinalizeResult {
 }
 export interface IterateResult {
   command: "iterate"
+}
+export interface InterimResult {
+  command: "interim"
+  buildValues: number[] | undefined
+  /** The number of builds since last report, including failed builds */
+  buildCount: number
+  /** The number of builds that does not meet the min-filter requirement since last report */
+  failedCount: number
+  skippedCount: number
 }

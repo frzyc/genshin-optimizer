@@ -1,5 +1,6 @@
 import { optimize, precompute } from '../../../../Formula/optimization';
 import type { NumNode } from '../../../../Formula/type';
+import type { InterimResult } from './BackgroundWorker';
 import { ArtifactsBySlot, Build, countBuilds, filterArts, mergePlot, PlotData, pruneAll, RequestFilter } from './common';
 
 export class ComputeWorker {
@@ -138,13 +139,4 @@ export interface Setup {
   filters: { value: NumNode, min: number }[]
   plotBase: NumNode | undefined,
   maxBuilds: number
-}
-export interface InterimResult {
-  command: "interim"
-  buildValues: number[] | undefined
-  /** The number of builds since last report, including failed builds */
-  buildCount: number
-  /** The number of builds that does not meet the min-filter requirement since last report */
-  failedCount: number
-  skippedCount: number
 }
