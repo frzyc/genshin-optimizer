@@ -68,6 +68,10 @@ type InternalResult = {
   upAvg: number,
   appxDist: GaussianMixture
 }
+export type UpgradeOptResult = {
+  query: Query,
+  arts: QueryResult[],
+}
 
 function toStats(build: QueryBuild): DynStat {
   let stats: DynStat = {}

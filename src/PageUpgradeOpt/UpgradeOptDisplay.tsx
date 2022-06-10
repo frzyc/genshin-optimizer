@@ -39,7 +39,7 @@ import { allSlotKeys, CharacterKey, SlotKey } from '../Types/consts';
 import { clamp, objPathValue } from '../Util/Util';
 import OptimizationTargetSelector from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector';
 import { dynamicData } from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/foreground';
-import { Query, QueryArtifact, QueryBuild, querySetup, evalArtifact, QueryResult, toQueryArtifact, cmpQ } from './artifactQuery'
+import { Query, QueryArtifact, QueryBuild, querySetup, evalArtifact, toQueryArtifact, cmpQ, UpgradeOptResult } from './artifactQuery'
 import ArtifactCard from "../PageArtifact/ArtifactCard";
 import { Trans, useTranslation } from "react-i18next";
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
@@ -101,15 +101,16 @@ export default function UpgradeOptDisplay() {
   const invScrollRef = useRef<HTMLDivElement>(null)
   const { t } = useTranslation(["artifact", "ui"]);
 
-  const [artifactUpgradeOpts, setArtifactUpgradeOpts] = useState([] as QueryResult[])
+  const [artifactUpgradeOpts, setArtifactUpgradeOpts] = useState(undefined as UpgradeOptResult | undefined)
   const [qs2, setQuery] = useState(undefined as Query | undefined)
   let querySaved = qs2
 
   const artifactsToDisplayPerPage = 5;
   const { artifactsToShow, numPages, currentPageIndex, minObj0, maxObj0 } = useMemo(() => {
-    const numPages = Math.ceil(artifactUpgradeOpts.length / artifactsToDisplayPerPage)
+    if (!artifactUpgradeOpts) return { artifactsToShow: [], numPages: 0, toShow: 0, minObj0: 0, maxObj0: 0 }
+    const numPages = Math.ceil(artifactUpgradeOpts.arts.length / artifactsToDisplayPerPage)
     const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
-    const toShow = artifactUpgradeOpts.slice(currentPageIndex * artifactsToDisplayPerPage, (currentPageIndex + 1) * artifactsToDisplayPerPage)
+    const toShow = artifactUpgradeOpts.arts.slice(currentPageIndex * artifactsToDisplayPerPage, (currentPageIndex + 1) * artifactsToDisplayPerPage)
     const thr = toShow.length > 0 ? toShow[0].thresholds[0] : 0
 
     return {
@@ -122,15 +123,16 @@ export default function UpgradeOptDisplay() {
   //select a new character Key
   const selectCharacter = useCallback((cKey = "") => {
     if (characterKey === cKey) return
+    setArtifactUpgradeOpts(undefined)
     setcharacterKey(cKey)
   }, [setcharacterKey, characterKey])
 
   // Because upgradeOpt is a two-stage estimation method, we want to expand (slow-estimate) our artifacts lazily as they are needed.
   // Lazy method means we need to take care to never 'lift' any artifacts past the current page, since that may cause a user to miss artifacts
   //  that are lifted in the middle of an expansion. Increase lookahead to mitigate this issue.
-  const upgradeOptExpandSink = useCallback((upOpt: QueryResult[], start: number, expandTo: number) => {
+  const upgradeOptExpandSink = useCallback(({ query, arts }: UpgradeOptResult, start: number, expandTo: number): UpgradeOptResult => {
     const lookahead = 5
-    if (querySaved === undefined) return upOpt
+    // if (querySaved === undefined) return upOpt
     const queryArts: QueryArtifact[] = database._getArts()
       .filter(art => art.rarity === 5)
       .map(art => toQueryArtifact(art, 20))
@@ -138,15 +140,15 @@ export default function UpgradeOptDisplay() {
     let qaLookup: Dict<string, QueryArtifact> = {};
     queryArts.forEach(art => qaLookup[art.id] = art)
 
-    const fixedList = upOpt.slice(0, start)
-    let arr = upOpt.slice(start)
+    const fixedList = arts.slice(0, start)
+    let arr = arts.slice(start)
 
     let i = 0
     const end = Math.min(expandTo - start + lookahead, arr.length);
     do {
       for (; i < end; i++) {
         let arti = qaLookup[arr[i].id]
-        if (arti) arr[i] = evalArtifact(querySaved, arti, true);
+        if (arti) arr[i] = evalArtifact(query, arti, true);
       }
 
       // sort on only bottom half to prevent lifting
@@ -156,12 +158,13 @@ export default function UpgradeOptDisplay() {
       }
     } while (i < end)
 
-    return [...fixedList, ...arr]
+    return { query, arts: [...fixedList, ...arr] }
   }, [database, querySaved])
 
   //for pagination
   const setPage = useCallback(
     (e, value) => {
+      if (!artifactUpgradeOpts) return
       invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
       let start = (currentPageIndex + 1) * artifactsToDisplayPerPage
       let end = value * artifactsToDisplayPerPage
@@ -208,12 +211,11 @@ export default function UpgradeOptDisplay() {
     let artUpOpt = queryArts.map(art => evalArtifact(query, art, false))
     artUpOpt = artUpOpt.sort((a, b) => b.prob * b.upAvg - a.prob * a.upAvg)
 
-    // Re-sort & slow eval
-    querySaved = query
-    artUpOpt = upgradeOptExpandSink(artUpOpt, 0, 5)
-    // console.log('top result:', artUpOpt[0])
+    let upOpt = { query: query, arts: artUpOpt }
 
-    setArtifactUpgradeOpts(artUpOpt);
+    // Re-sort & slow eval
+    upOpt = upgradeOptExpandSink(upOpt, 0, 5)
+    setArtifactUpgradeOpts(upOpt);
     setQuery(query);
   }, [characterKey, database, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, buildSettingsDispatch, setFilters, statFilters])
 
@@ -309,7 +311,7 @@ export default function UpgradeOptDisplay() {
                     <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
                   </Grid>
                   <Grid item>
-                    <ShowingArt numShowing={artifactsToShow.length} total={artifactUpgradeOpts.length} t={t} />
+                    <ShowingArt numShowing={artifactsToShow.length} total={artifactUpgradeOpts?.arts.length} t={t} />
                   </Grid>
                 </Grid>
               </CardContent></CardDark>}
@@ -334,7 +336,7 @@ export default function UpgradeOptDisplay() {
                       <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
                     </Grid>
                     <Grid item>
-                      <ShowingArt numShowing={artifactsToShow.length} total={artifactUpgradeOpts.length} t={t} />
+                      <ShowingArt numShowing={artifactsToShow.length} total={artifactUpgradeOpts?.arts.length} t={t} />
                     </Grid>
                   </Grid>
                 </CardContent></CardDark>}
