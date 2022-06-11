@@ -26,14 +26,20 @@ function feasibleObjVal(f: NumNode, a: ArtifactsBySlot, lin: LinearForm) {
 
 function boundsUpperLower(a: ArtifactsBySlot) {
   let minStats = Object.entries(a.values).reduce((pv, [slotKey, slotArts]) => {
-    let minStatSlot = slotArts.reduce((pv, cv) =>
-      Object.fromEntries(Object.entries(cv.values).map(([k, v]) => [k, Math.min(v, pv[k] ?? Infinity)])), {})
-    return Object.fromEntries(Object.entries(pv).map(([k, v]) => [k, v + (minStatSlot[k] ?? 0)]))
+    let minStatSlot: DynStat = {}
+    slotArts.forEach(art => {
+      for (const statKey in art.values) minStatSlot[statKey] = Math.min(art.values[statKey], minStatSlot[statKey] ?? Infinity)
+    })
+    Object.entries(minStatSlot).forEach(([k, v]) => pv[k] = v + (pv[k] ?? 0))
+    return pv
   }, { ...a.base })
   let maxStats = Object.entries(a.values).reduce((pv, [slotKey, slotArts]) => {
-    let maxStatSlot = slotArts.reduce((pv, cv) =>
-      Object.fromEntries(Object.entries(cv.values).map(([k, v]) => [k, Math.max(v, pv[k] ?? 0)])), {})
-    return Object.fromEntries(Object.entries(pv).map(([k, v]) => [k, v + (maxStatSlot[k] ?? 0)]))
+    let maxStatSlot: DynStat = {}
+    slotArts.forEach(art => {
+      for (const statKey in art.values) maxStatSlot[statKey] = Math.max(art.values[statKey], maxStatSlot[statKey] ?? 0)
+    })
+    Object.entries(maxStatSlot).forEach(([k, v]) => pv[k] = v + (pv[k] ?? 0))
+    return pv
   }, { ...a.base })
   return { statsMin: minStats, statsMax: maxStats }
 }
@@ -143,6 +149,42 @@ export function optimizeBNB(func: NumNode, a: ArtifactsBySlot) {
   let lowerBoundDmg = feasibleObjVal(func, a, lin)
   // First search node; contains ALL builds.
   pq.push({ maxEst, f: func, a, lin })
+
+  /**
+   * ============================ PROFILING RESULTS ============================
+   *
+   * - estimateMaximum()      ┬ 73.5%
+   *   - toLinearUpperBound() ├─┬ 49.8%
+   *     - lub()              │ ├─┬ 30%
+   *       - solveLP()        │ │ └─ 26.6%
+   *     - expandPoly()       │ ├── 9.1%
+   *     - copyData() (?)     │ └── 3.1%
+   *   - expandPoly()         └── 12.3%
+   * - boundsUpperLower()     ─ 17.8%
+   * - feasibleObjective()    ─ 5.4%
+   * - simplifyFormula()      ─ 4.5%
+   * - maxWeight()            ─ 3.8%
+   *
+   * Stuff that can be improved:
+   *   boundsUpperLower() - during shattering phase, save the bounds for each slot's splits
+   *                        to reduce upperLower calls from 32 -> 2
+   *                      - pass bounds into pq, avoid re-computing
+   *   estimateMaximum()  - pass into pq, avoid re-computing (should reduce 2x)
+   *   expandPoly()       - Right now I notice some variables are duplicated, for example
+   *                        Venti 14 ticks has stats => {0: -, 1: -, 2: -, 3: -, atk, CR, ...} but
+   *                        the "1" and "2" both correspond to CDmg for some reason. Also seems to
+   *                        be equal for all aritfacts, so we can roughly halve the number of formulas
+   *                        we need to expand by combining those stats.
+   *   gatherSumOfProds() - Current implementation is very jank. expandPoly() spends roughly 70% of
+   *                        its time trying to gather like terms.
+   *
+   *   solveLP()          - Something something warm start? I'm fairly certain this can be improved
+   *                        more than 100x, but up to (you) how sophisticated a solving algorithm you
+   *                        want to implement. Current implementation spends 85% of its time pivoting
+   *                        the tableau; lazy pivoting or better pivot selection algo would help.
+   *
+   * ===========================================================================
+   */
 
   let niter = 0
   const tottal = Object.values(a.values).reduce((tot, arts) => tot * arts.length, 1)
