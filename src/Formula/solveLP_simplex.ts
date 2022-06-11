@@ -15,7 +15,7 @@ function findPiv1(A: number[][]) {
   for (let j = 0; j < c - 1; j++) {
     if (A[r - 1][j] >= 0) continue
     for (let i = 0; i < r - 1; i++) {
-      if (A[i][j] > 0) {
+      if (A[i][j] > 1e-5) {
         const cmp = A[i][c - 1] / A[i][j]
         if (cmp < minloc.cmp) minloc = { i, j, cmp }
       }
@@ -34,7 +34,7 @@ function findPiv2(A: number[][]) {
   for (let i = 0; i < r - 1; i++) {
     if (A[i][c - 1] >= 0) continue
     for (let j = 0; j < c - 1; j++) {
-      if (A[i][j] < 0) {
+      if (A[i][j] < -1e-5) {
         const cmp = A[i][c - 1] / A[i][j]
         if (cmp < minloc.cmp) minloc = { i, j, cmp }
       }

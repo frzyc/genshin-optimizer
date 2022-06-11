@@ -182,3 +182,57 @@ export function matchFull(v1: Str, v2: Str, match: Str, unmatch: Str, info?: Inf
 export function matchFull(v1: Num | Str, v2: Num | Str, match: Num | Str, unmatch: Num | Str, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(unmatch)], info }
 }
+
+export function cmpNode(a: NumNode, b: NumNode): boolean {
+  if (a.operation !== b.operation) return false;
+  if (a.operands.length !== b.operands.length) return false;
+
+  switch (a.operation) {
+    case 'read':
+      if (b.operation !== a.operation) return false; // just doing this so typescript stops yelling at me
+      return a.path.every((ai, i) => ai === b.path[i])
+    case 'const':
+      if (b.operation !== a.operation) return false; // just doing this so typescript stops yelling at me
+      return a.value === b.value
+    case 'mul': case 'add': case 'min': case 'max':  // commutative ops.
+      if (b.operation !== a.operation) return false; // just doing this so typescript stops yelling at me
+      let used = [] as number[]
+      return a.operands.every((ai, i) => b.operands.some((bj, j) => {
+        if (used.includes(j)) return false
+        if (cmpNode(ai, bj)) {
+          used.push(j)
+          return true
+        }
+        return false
+      }))
+    default:
+      return a.operands.every((ai, i) => cmpNode(ai as NumNode, b.operands[i] as NumNode))
+  }
+}
+
+// Hash function pulled from StackOverflow
+//   https://stackoverflow.com/a/52171480
+const cyrb53 = function (str: string, seed = 0) {
+  let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+  for (let i = 0, ch; i < str.length; i++) {
+    ch = str.charCodeAt(i);
+    h1 = Math.imul(h1 ^ ch, 2654435761);
+    h2 = Math.imul(h2 ^ ch, 1597334677);
+  }
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+  return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+};
+
+// I made these numbers up; we might get better performance with different choice.
+export function hashNode(n: NumNode): number {
+  let hsh = Math.imul(cyrb53(n.operation), 5234543537);
+  switch (n.operation) {
+    case 'const':
+      return hsh ^ cyrb53(n.value.toString(2))
+    case 'mul': case 'add': case 'min': case 'max':  // commutative ops.
+      return n.operands.reduce((hsh, ni) => hsh ^ hashNode(ni), hsh)
+    default:
+      return (n.operands as NumNode[]).reduce((hsh, ni) => Math.imul(hsh ^ hashNode(ni), 9923429423), hsh)
+  }
+}

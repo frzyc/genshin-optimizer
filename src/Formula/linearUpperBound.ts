@@ -1,15 +1,63 @@
-import { NumNode } from "./type"
+import { NumNode, ComputeNode } from "./type"
 import { DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/background"
-import { constant, sum, prod } from "./utils"
+import { constant, sum, prod, cmp } from "./utils"
 import { foldSum, foldProd, expandPoly } from './expandPoly'
 import { precompute, allOperations } from "./optimization"
 import { solveLP } from './solveLP_simplex'
 import { cartesian } from '../Util/Util'
+import { mapFormulas } from "./internal"
 
 export type LinearForm = {
   w: DynStat,
   c: number,
   err: number
+}
+
+function minMax(node: NumNode, lower: DynStat, upper: DynStat) {
+  let f = precompute([node], n => n.path[1])
+  return [f(lower)[0], f(upper)[0]]
+}
+
+/**
+ * `res` is the ONE place where negative arguments & negative slopes are allowed.
+ * @param node
+ */
+function handleResArg(node: { 'operation': 'res', 'operands': NumNode[] }, lower: DynStat, upper: DynStat) {
+  function flipOps(n: NumNode): NumNode {
+    switch (n.operation) {
+      case 'add':
+        return sum(...n.operands.map(n => flipOps(n)))
+      case 'const':
+        return constant(-n.value)
+      case 'threshold':
+        const [branch, bval, ge, lt] = n.operands
+        if (ge.operation === 'const' && lt.operation === 'const') {
+          if (ge.value <= lt.value) {
+            return cmp(branch, bval, -ge.value, lt.value)
+          }
+        }
+        console.log(n)
+        throw Error('(res neg slope): threshold. Something went wrong.')
+      default:
+        console.log(n)
+        throw Error('(res neg slope) Havent written logic to handle this')
+    }
+  }
+
+  const flippedResOp = flipOps(node.operands[0])
+
+  let [a, b] = minMax(flippedResOp, lower, upper)
+  let resf = allOperations['res']
+  let [c, d] = [resf([-a]), resf([-b])]
+
+  if (b > 0 && a > -1.75) {
+    // 1 + x / 2
+    return sum(1, prod(.5, flippedResOp))
+  }
+
+  const intercept = (b * c - a * d) / (b - a)
+  const slope = (c - d) / (b - a)
+  return sum(intercept, prod(slope, flippedResOp))
 }
 
 /**
@@ -67,16 +115,12 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
           return sum(lt.value, prod(slope, branch))
         }
         console.log(node)
-        throw Error('Not Implemented (threshold)')
+        throw Error('Not Implemented (threshold must branch between constants)')
       case 'res':
-        const op = node.operands[0]
-        if (op.operation === 'read') {
-          if (l[op.path[1]] === u[op.path[1]]) {
-            return constant(allOperations['res']([l[op.path[1]]]))
-          }
-          throw Error('res non constant!?')
-        }
-        throw Error('Not Implemented (res)')
+        let op = handleResArg(node as { 'operation': 'res', 'operands': NumNode[] }, lower, upper)
+        op = expandPoly(op, n => n.operation !== 'const')
+        return purePolyForm(op)
+
       case 'min':
         let [rop, cop] = node.operands
         if (cop.operation !== 'const')
@@ -93,6 +137,7 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
         // TODO: update linerr
         // If it's not a simple min() node, returning either value is still UB.
         return rop
+
       case 'max':
         let [varop, constop] = node.operands
         if (constop.operation !== 'const')
@@ -100,8 +145,7 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
 
         if (cop.operation === 'const') {
           const thresh = cop.value
-          let vFunc = precompute([varop], n => n.path[1])
-          const [minVal, maxVal] = [vFunc(lower)[0], vFunc(upper)[0]]
+          const [minVal, maxVal] = minMax(varop, lower, upper)
           if (minVal > thresh) return varop
           if (thresh > maxVal) return constant(thresh)
 
@@ -112,13 +156,12 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
         }
         console.log(node)
         throw Error('Not Implemented (max)')
+
       case 'sum_frac':
         const [em, denom] = node.operands
         if (denom.operation !== 'const') throw Error('Not Implemented (non-constant sum_frac denominator)')
 
-        let emFunc = precompute([em], n => n.path[1])
-        const [minEM, maxEM] = [emFunc(lower)[0], emFunc(upper)[0]]
-
+        const [minEM, maxEM] = minMax(em, lower, upper)
         const k = denom.value
         // The sum_frac form is concave, so any Taylor expansion of EM / (EM + k) gives an upper bound.
         // We can solve for the best Taylor approximation location with the following formula.
@@ -160,7 +203,12 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
     }, [] as string[])
     const bounds = vars.map(v => ({ lower: lower[v], upper: upper[v] }))
     const { w, c, err } = lub(bounds)
-    return { w: Object.fromEntries(w.map((wi, i) => [vars[i], wi * coeff])), c: c * coeff, err: err * coeff + linerr }
+
+    const retw = w.reduce((ret, wi, i) => {
+      ret[vars[i]] = wi * coeff + (ret[vars[i]] ?? 0)
+      return ret
+    }, {} as DynStat)
+    return { w: retw, c: c * coeff, err: err * coeff + linerr }
   }
 
   if (lpf.operation === 'add') return lpf.operands.map(n => toLUB(n))

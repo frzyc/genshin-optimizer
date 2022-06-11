@@ -125,6 +125,12 @@ export function optimizeBNB(func: NumNode, a: ArtifactsBySlot) {
     }
   }
 
+  // debug3()
+  // return
+
+  console.log('arts: ', a)
+  console.log('f', func)
+
   // 1 more optimize loop for good measure.
   let { statsMin, statsMax } = boundsUpperLower(a)
   func = simplifyFormulaSubstitution(func, statsMin, statsMax)
@@ -146,7 +152,7 @@ export function optimizeBNB(func: NumNode, a: ArtifactsBySlot) {
     let { maxEst, f, a, lin } = pq.pop()
     let numBuilds = Object.values(a.values).reduce((tot, arts) => tot * arts.length, 1)
     niter += 1
-    if (niter > 250) break;
+    if (niter > 1000) break;
 
     //  Stats *should* already be subbed in, but it doesn't hurt to try again.
     let { statsMin, statsMax } = boundsUpperLower(a)
@@ -175,18 +181,18 @@ export function optimizeBNB(func: NumNode, a: ArtifactsBySlot) {
       continue
     }
 
-    console.log({ niter, numBuilds, pqsize: pq.size() }, { lower: lowerBoundDmg, upper: maxEst })
+    console.log({ niter, numBuilds, pqsize: pq.size() }, { lower: lowerBoundDmg, upper: maxEst, err: lin.err })
     // console.log('Total pruned: ', pruned)
 
     // TODO: count `a`, if small then just enumerate it all.
-    if (numBuilds < 1000) {
+    if (numBuilds < 2000) {
       // TODO: enumerate
       enumerated += numBuilds
       console.log('--------------- ENUMERATE (implement me please) ---------------')
       continue
     }
 
-    if (niter < 4) {
+    if (niter < 3) {
       // For earlier iterations, shatter search space on `score` to separate
       //   obviously good vs obviously bad artifacts (e.g. fully leveled vs lvl 0 artifacts)
       //
@@ -224,10 +230,11 @@ export function optimizeBNB(func: NumNode, a: ArtifactsBySlot) {
           }
 
           // Possible TODO: re-compute `lin` on `z`.
-          // let est2 = estimateMaximum(f2, z)
+          let est2 = estimateMaximum(f2, z)
 
-          // const maxEst2 = maxWeight(z, est2.lin)
-          const [maxEst, linToUse] = [maxEst1, lin]
+          // const [maxEst, linToUse] = [maxEst1, lin]
+          const maxEst2 = maxWeight(z, est2.lin)
+          const [maxEst, linToUse] = maxEst1 < maxEst2 ? [maxEst1, lin] : [maxEst2, est2.lin]
           lowerBoundDmg = Math.max(feasibleObjVal(f2, z, linToUse), lowerBoundDmg)
           if (maxEst < lowerBoundDmg) {
             pruned += numBuilds
@@ -241,6 +248,10 @@ export function optimizeBNB(func: NumNode, a: ArtifactsBySlot) {
 
       continue
     }
+
+    // console.log('smin', statsMin)
+    // console.log('smax', statsMax)
+    // console.log('lin', lin)
 
     // Heuristically pick branch parameter by picking the one with largest
     //   linear weight & the largest reduction in stat range.
@@ -259,10 +270,16 @@ export function optimizeBNB(func: NumNode, a: ArtifactsBySlot) {
         return newRangeSlot + newRange
       }, 0)
       let shatterHeur = lin.w[k] * (statsMax[k] - statsMin[k] - postShatterRange)
+      // console.log(k, shatterHeur, statsMax[k] - statsMin[k], postShatterRange)
       if (shatterHeur > shatterOn.heur) shatterOn = { k: k, heur: shatterHeur }
     })
 
     console.log('shatterOn', shatterOn)
+    if (shatterOn.heur < 0) {
+      console.log('wow this actually way better?')
+      return
+    }
+    // return;
 
     const branchVals = Object.fromEntries(Object.entries(a.values).map(([slotKey, arts]) => {
       const vals = arts.map(a => a.values[shatterOn.k])
@@ -276,11 +293,11 @@ export function optimizeBNB(func: NumNode, a: ArtifactsBySlot) {
       const [s1, s2, s3, s4, s5] = sel
       let z = {
         base: { ...a.base }, values: {
-          flower: a.values.flower.filter(art => art.values[shatterOn.k] > branchVals.flower ? s1 === 0 : s1 === 1),
-          plume: a.values.plume.filter(art => art.values[shatterOn.k] > branchVals.plume ? s2 === 0 : s2 === 1),
-          sands: a.values.sands.filter(art => art.values[shatterOn.k] > branchVals.sands ? s3 === 0 : s3 === 1),
-          goblet: a.values.goblet.filter(art => art.values[shatterOn.k] > branchVals.goblet ? s4 === 0 : s4 === 1),
-          circlet: a.values.circlet.filter(art => art.values[shatterOn.k] > branchVals.circlet ? s5 === 0 : s5 === 1),
+          flower: a.values.flower.filter(art => art.values[shatterOn.k] < branchVals.flower ? s1 === 0 : s1 === 1),
+          plume: a.values.plume.filter(art => art.values[shatterOn.k] < branchVals.plume ? s2 === 0 : s2 === 1),
+          sands: a.values.sands.filter(art => art.values[shatterOn.k] < branchVals.sands ? s3 === 0 : s3 === 1),
+          goblet: a.values.goblet.filter(art => art.values[shatterOn.k] < branchVals.goblet ? s4 === 0 : s4 === 1),
+          circlet: a.values.circlet.filter(art => art.values[shatterOn.k] < branchVals.circlet ? s5 === 0 : s5 === 1),
         }
       }
       let numBuilds = Object.values(z.values).reduce((tot, arts) => tot * arts.length, 1)
@@ -312,7 +329,7 @@ export function optimizeBNB(func: NumNode, a: ArtifactsBySlot) {
         return
       }
 
-      console.log(s1, s2, s3, s4, s5, { numBuilds, upper: maxEst })
+      console.log(s1, s2, s3, s4, s5, { numBuilds, upper: maxEst, err: linToUse.err })
       pq.push({ maxEst, lin: linToUse, f: f2, a: z })
     })
     continue
@@ -357,6 +374,10 @@ function debug2(a: ArtifactsBySlot, f: NumNode) {
 
   let ee = expandPoly(f, isVari)
   console.log('expanded', ee)
+
+  let compute1 = precompute([f], n => n.path[1])
+  let compute2 = precompute([ee], n => n.path[1])
+  console.log('Compare expand number', compute1(statsMax)[0], compute2(statsMax)[0])
 
   let ww = ee.operands as NumNode[]
   ww = ww.filter(productPossible)
@@ -404,4 +425,48 @@ function debug2(a: ArtifactsBySlot, f: NumNode) {
   console.log('=========== shitty debug time ===============')
   console.log(ww[0])
   console.log(toLinearUpperBound(ww[0], statsMin, statsMax))
+}
+
+function debug3() {
+  const fbad: NumNode = { "operation": "mul", "operands": [{ "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "ViridescentVenerer"], "accu": "add", "info": { "key": "ViridescentVenerer" }, "type": "number" }, { "operation": "const", "operands": [], "value": 4, 'type': 'number' }, { "operation": "const", "operands": [], "value": 0.6, 'type': 'number', "info": { "key": "_" } }, { "operation": "const", "operands": [], "value": 0, 'type': 'number' }], "info": { "key": "swirl_dmg_", "variant": "swirl", "source": "ViridescentVenerer" }, "emptyOn": "l" }, { "operation": "res", "operands": [{ "operation": "add", "operands": [{ "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "ViridescentVenerer"], "accu": "add", "info": { "key": "ViridescentVenerer" }, "type": "number" }, { "operation": "const", "operands": [], "value": 4, 'type': 'number' }, { "operation": "const", "operands": [], "value": -0.4, 'type': 'number', "info": { "key": "_" } }, { "operation": "const", "operands": [], "value": 0, 'type': 'number' }], "info": { "isTeamBuff": true, "key": "cryo_enemyRes_", "variant": "cryo", "source": "ViridescentVenerer" }, "emptyOn": "l" }, { "operation": "const", "operands": [], "value": 0.1, 'type': 'number' }] }] }, { "operation": "const", "operands": [], "value": 9323.979839999998, 'type': 'number' }] }
+  const statsMin = {
+    "0": 0.0874,
+    "1": 0.7718999999999999,
+    "2": 0.7718999999999999,
+    "GladiatorsFinale": 0,
+    "ShimenawasReminiscence": 0,
+    "atk": 373.25,
+    "EmblemOfSeveredFate": 0,
+    "enerRech_": 0,
+    "NoblesseOblige": 0,
+    "ViridescentVenerer": 3,
+    "anemo_dmg_": 0,
+    "Berserker": 0,
+    "critRate_": 0.23719999999999994,
+    "BlizzardStrayer": 0,
+    "cryo_dmg_": 0,
+    "WanderersTroupe": 0,
+    "eleMas": 559.5
+  }
+  const statsMax = {
+    "0": 0.4255,
+    "1": 1.1916,
+    "2": 1.1916,
+    "GladiatorsFinale": 0,
+    "ShimenawasReminiscence": 1,
+    "atk": 392.7,
+    "EmblemOfSeveredFate": 0,
+    "enerRech_": 0.1684,
+    "NoblesseOblige": 0,
+    "ViridescentVenerer": 4,
+    "anemo_dmg_": 0,
+    "Berserker": 0,
+    "critRate_": 0.39659999999999995,
+    "BlizzardStrayer": 0,
+    "cryo_dmg_": 0,
+    "WanderersTroupe": 0,
+    "eleMas": 559.5
+  }
+
+  console.log(toLinearUpperBound(fbad, statsMin, statsMax))
 }
