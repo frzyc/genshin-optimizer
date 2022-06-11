@@ -47,7 +47,7 @@ export class ComputeWorker {
     })))
 
     const ids: string[] = Array(arts.length).fill("")
-    let count = { build: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }
+    let count = { tested: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }
 
     function permute(i: number) {
       if (i < 0) {
@@ -86,8 +86,8 @@ export class ComputeWorker {
           buffer[key] = cache
       })
       if (i === 0) {
-        count.build += arts[0].length
-        if (count.build > 8192)
+        count.tested += arts[0].length
+        if (count.tested > 8192)
           interimReport(count)
       }
     }
@@ -115,20 +115,15 @@ export class ComputeWorker {
       this.threshold = Math.max(this.threshold, this.buildValues[maxBuilds - 1] ?? -Infinity)
     }
   }
-  interimReport = (count: { build: number, failed: number, skipped: number }) => {
+  interimReport = (count: { tested: number, failed: number, skipped: number }) => {
     this.refresh(false)
-    this.callback({
-      command: "interim", buildValues: this.buildValues,
-      buildCount: count.build, failedCount: count.failed, skippedCount: count.skipped
-    })
+    this.callback({ command: "interim", buildValues: this.buildValues, ...count })
     this.buildValues = undefined
-    count.build = 0
+    count.tested = 0
     count.failed = 0
     count.skipped = 0
   }
 }
-
-
 export interface Setup {
   command: "setup"
 

@@ -6,6 +6,8 @@ import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, u
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BackgroundWorker";
+// eslint-disable-next-line
+import TotalCountWorker from "worker-loader!./TotalCountWorker";
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider';
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
 import CardLight from '../../../../Components/Card/CardLight';
@@ -36,11 +38,11 @@ import { objPathValue, range } from '../../../../Util/Util';
 import { FinalizeResult, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
 import useBuildSetting from './BuildSetting';
-import { Build, countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
+import { artSetPerm, Build, countBuilds, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
-import BuildAlert, { warningBuildNumber } from './Components/BuildAlert';
+import BuildAlert, { BuildStatus } from './Components/BuildAlert';
 import BuildDisplayItem from './Components/BuildDisplayItem';
 import ChartCard, { ChartData } from './Components/ChartCard';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
@@ -48,7 +50,7 @@ import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
-import { artSetPerm, compactArtifacts, dynamicData, filterFeasiblePerm } from './foreground';
+import { compactArtifacts, dynamicData } from './foreground';
 import { Setup } from './SplitWorker';
 
 export default function TabBuild() {
@@ -56,10 +58,8 @@ export default function TabBuild() {
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { database } = useContext(DatabaseContext)
 
-  const [generatingBuilds, setgeneratingBuilds] = useState(false)
-  const [generationProgress, setgenerationProgress] = useState(0)
-  const [generationDuration, setgenerationDuration] = useState(0)//in ms
-  const [generationSkipped, setgenerationSkipped] = useState(0)
+  const [buildStatus, setBuildStatus] = useState({ type: "inactive", tested: 0, failed: 0, skipped: 0, total: 0 } as BuildStatus)
+  const generatingBuilds = buildStatus.type !== "inactive"
 
   const [chartData, setchartData] = useState(undefined as ChartData | undefined)
 
@@ -86,7 +86,7 @@ export default function TabBuild() {
     database.followAnyArt(setArtsDirty),
     [setArtsDirty, database])
 
-  const { split, setPerms, totBuildNumber } = useMemo(() => {
+  const { split } = useMemo(() => {
     if (!characterKey) // Make sure we have all slotKeys
       return { totBuildNumber: 0 }
     let cantTakeList: CharacterKey[] = []
@@ -110,23 +110,15 @@ export default function TabBuild() {
       return true
     })
     const split = compactArtifacts(arts, mainStatAssumptionLevel)
-    const setPerms = [...filterFeasiblePerm(artSetPerm(artSetExclusion, Object.values(split.values).flatMap(x => x.map(x => x.set!))), split)]
-    if (process.env.NODE_ENV === "development") console.log("Art Set Permutation Count", setPerms.length)
-    const totBuildNumber = [...setPerms].map(perm => countBuilds(filterArts(split, perm))).reduce((a, b) => a + b, 0)
-    return artsDirty && { split, setPerms, totBuildNumber }
-  }, [characterKey, useExcludedArts, useEquippedArts, equipmentPriority, mainStatKeys, artSetExclusion, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
-
-  // Reset the Alert by setting progress to zero.
-  useEffect(() => {
-    setgenerationProgress(0)
-  }, [totBuildNumber])
+    return artsDirty && { split }
+  }, [characterKey, useExcludedArts, useEquippedArts, equipmentPriority, mainStatKeys, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
 
   // Provides a function to cancel the work
   const cancelToken = useRef(() => { })
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
   const generateBuilds = useCallback(async () => {
-    if (!characterKey || !optimizationTarget || !split || !setPerms) return
+    if (!characterKey || !optimizationTarget || !split) return
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
     const workerData = uiDataForTeam(teamData.teamData, characterKey)[characterKey as CharacterKey]?.target.data![0]
@@ -140,17 +132,15 @@ export default function TabBuild() {
       return { value: input.total[key], minimum: value }
     }).filter(x => x.value && x.minimum > -Infinity)
 
-    const t1 = performance.now()
-    setgeneratingBuilds(true)
     setchartData(undefined)
-    setgenerationDuration(0)
-    setgenerationProgress(0)
-    setgenerationSkipped(0)
 
     const cancelled = new Promise<void>(r => cancelToken.current = r)
 
     let nodes = [...valueFilter.map(x => x.value), optimizationTargetNode], arts = split!
-    const origCount = totBuildNumber, minimum = [...valueFilter.map(x => x.minimum), -Infinity]
+    const setPerms = filterFeasiblePerm(artSetPerm(artSetExclusion, Object.values(split.values).flatMap(x => x.map(x => x.set!))), split)
+
+    const minimum = [...valueFilter.map(x => x.minimum), -Infinity]
+    const status: Omit<BuildStatus, "type"> = { tested: 0, failed: 0, skipped: 0, total: NaN, startTime: performance.now() }
     if (plotBase) {
       nodes.push(input.total[plotBase])
       minimum.push(-Infinity)
@@ -164,16 +154,12 @@ export default function TabBuild() {
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
 
-    let wrap = {
-      buildCount: 0, failedCount: 0, skippedCount: origCount,
+    const wrap = {
       buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity),
       finalizing: false
     }
-    setPerms.forEach(filter => wrap.skippedCount -= countBuilds(filterArts(arts, filter)))
 
-    const minFilterCount = maxWorkers === 1
-      ? Infinity // Don't split for single worker
-      : Math.min(origCount / maxWorkers / 4, 8_000_000) // 8 perms / worker, up to 8M builds / perm
+    const minFilterCount = maxWorkers === 1 ? Infinity : 8_000_000 // Don't split for single worker
     const maxRequestFilterInFlight = maxWorkers * 4
     const unprunedFilters = setPerms[Symbol.iterator](), requestFilters: RequestFilter[] = []
     const idleWorkers: { id: number, worker: Worker }[] = []
@@ -214,14 +200,21 @@ export default function TabBuild() {
         filters
       }
       worker.postMessage(setup, undefined)
+      if (i === 0) {
+        const countCommand: WorkerCommand = { command: "count", exclusion: artSetExclusion }
+        worker.postMessage(countCommand, undefined)
+      }
       let finalize: (_: FinalizeResult) => void
       const finalized = new Promise<FinalizeResult>(r => finalize = r)
       worker.onmessage = async ({ data }: { data: { id: number } & WorkerResult }) => {
         switch (data.command) {
+          case "count":
+            status.total = data.count
+            return
           case "interim":
-            wrap.buildCount += data.buildCount
-            wrap.failedCount += data.failedCount
-            wrap.skippedCount += data.skippedCount
+            status.tested += data.tested
+            status.failed += data.failed
+            status.skipped += data.skipped
             if (data.buildValues) {
               wrap.buildValues.push(...data.buildValues)
               wrap.buildValues.sort((a, b) => b - a).splice(maxBuildsToShow)
@@ -268,19 +261,16 @@ export default function TabBuild() {
       finalizedList.push(finalized)
     }
 
-    const buildTimer = setInterval(() => {
-      setgenerationProgress(wrap.buildCount)
-      setgenerationSkipped(wrap.skippedCount)
-      setgenerationDuration(performance.now() - t1)
-    }, 100)
+    const buildTimer = setInterval(() => setBuildStatus({ type: "active", ...status }), 100)
     const results = await Promise.any([Promise.all(finalizedList), cancelled])
     clearInterval(buildTimer)
     cancelToken.current = () => { }
 
     if (!results) {
-      setgenerationDuration(0)
-      setgenerationProgress(0)
-      setgenerationSkipped(0)
+      status.tested = 0
+      status.failed = 0
+      status.skipped = 0
+      status.total = 0
     } else {
       if (plotBase) {
         const plotData = mergePlot(results.map(x => x.plotData!))
@@ -299,14 +289,9 @@ export default function TabBuild() {
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
       if (process.env.NODE_ENV === "development") console.log("Build Result", builds)
       buildSettingDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
-      const totalDuration = performance.now() - t1
-
-      setgenerationProgress(wrap.buildCount)
-      setgenerationSkipped(wrap.skippedCount)
-      setgenerationDuration(totalDuration)
     }
-    setgeneratingBuilds(false)
-  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingDispatch, statFilters, maxWorkers, artSetExclusion])
+    setBuildStatus({ ...status, type: "inactive", finishTime: performance.now() })
+  }, [characterKey, database, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, split, buildSettingDispatch, statFilters, maxWorkers, artSetExclusion])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
@@ -387,8 +372,8 @@ export default function TabBuild() {
         <Grid item flexGrow={1} >
           <ButtonGroup>
             <Button
-              disabled={!characterKey || generatingBuilds || !optimizationTarget || !totBuildNumber || !objPathValue(data?.getDisplay(), optimizationTarget)}
-              color={(characterKey && totBuildNumber <= warningBuildNumber) ? "success" : "warning"}
+              disabled={!characterKey || generatingBuilds || !optimizationTarget || !objPathValue(data?.getDisplay(), optimizationTarget)}
+              color={characterKey ? "success" : "warning"}
               onClick={generateBuilds}
               startIcon={<FontAwesomeIcon icon={faCalculator} />}
             >Generate Builds</Button>
@@ -433,7 +418,7 @@ export default function TabBuild() {
       </Grid>
 
       {!!characterKey && <Box >
-        <BuildAlert {...{ totBuildNumber, generatingBuilds, generationSkipped, generationProgress, generationDuration, characterName, maxBuildsToShow }} />
+        <BuildAlert {...{ status: buildStatus, characterName, maxBuildsToShow }} />
       </Box>}
       {tcMode && <Box >
         <ChartCard disabled={generatingBuilds} chartData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} />

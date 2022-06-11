@@ -1,5 +1,6 @@
 import { assertUnreachable } from '../../../../Util/Util'
-import { Build, PlotData, RequestFilter } from "./common"
+import { ArtSetExclusion } from './BuildSetting'
+import { ArtifactsBySlot, artSetPerm, Build, countBuilds, filterArts, filterFeasiblePerm, PlotData, RequestFilter } from "./common"
 import { ComputeWorker } from "./ComputeWorker"
 import { Setup, SplitWorker } from "./SplitWorker"
 
@@ -29,13 +30,23 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
       const { builds, plotData } = computeWorker
       result = { command: "finalize", builds, plotData }
       break
+    case "count":
+      {
+        const { exclusion } = data, arts = computeWorker.arts
+        const setPerm = filterFeasiblePerm(artSetPerm(exclusion, [...new Set(Object.values(arts.values).flatMap(x => x.map(x => x.set!)))]), arts)
+        let count = 0
+        for (const perm of setPerm)
+          count += countBuilds(filterArts(arts, perm))
+        result = { command: "count", count }
+        break
+      }
     default: assertUnreachable(command)
   }
   postMessage({ id, ...result });
 }
 
-export type WorkerCommand = Setup | Split | Iterate | Finalize
-export type WorkerResult = InterimResult | SplitResult | IterateResult | FinalizeResult
+export type WorkerCommand = Setup | Split | Iterate | Finalize | Count
+export type WorkerResult = InterimResult | SplitResult | IterateResult | FinalizeResult | CountResult
 
 export interface Split {
   command: "split"
@@ -52,25 +63,32 @@ export interface Iterate {
 export interface Finalize {
   command: "finalize"
 }
-
+export interface Count {
+  command: "count"
+  exclusion: ArtSetExclusion
+}
 export interface SplitResult {
   command: "split"
   filter: RequestFilter | undefined
+}
+export interface IterateResult {
+  command: "iterate"
 }
 export interface FinalizeResult {
   command: "finalize"
   builds: Build[]
   plotData?: PlotData
 }
-export interface IterateResult {
-  command: "iterate"
+export interface CountResult {
+  command: "count"
+  count: number
 }
 export interface InterimResult {
   command: "interim"
   buildValues: number[] | undefined
   /** The number of builds since last report, including failed builds */
-  buildCount: number
+  tested: number
   /** The number of builds that does not meet the min-filter requirement since last report */
-  failedCount: number
-  skippedCount: number
+  failed: number
+  skipped: number
 }
