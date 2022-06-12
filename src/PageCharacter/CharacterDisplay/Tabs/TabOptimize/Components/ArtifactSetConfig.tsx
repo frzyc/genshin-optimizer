@@ -70,7 +70,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
     <CardLight sx={{ display: "flex" }}>
       <CardContent sx={{ flexGrow: 1 }} >
         <Typography><strong>Artifact Set Config</strong></Typography>
-        <Typography>Set Effects Conditionals {!!artifactCondCount && <SqBadge color="success">{artifactCondCount} Enabled</SqBadge>}</Typography>
+        <Typography>Set Effects Conditionals <SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} Enabled</SqBadge></Typography>
         <Typography>2-set <SqBadge color="success">{allow2} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> Allowed</SqBadge>{!!exclude2 && " / "}{!!exclude2 && <SqBadge color="error">{exclude2} <FontAwesomeIcon icon={faBan} className="fa-fw" /> Excluded</SqBadge>}</Typography>
         <Typography>4-set <SqBadge color="success">{allow4} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> Allowed</SqBadge>{!!exclude4 && " / "}{!!exclude4 && <SqBadge color="error">{exclude4} <FontAwesomeIcon icon={faBan} className="fa-fw" /> Excluded</SqBadge>}</Typography>
       </CardContent>
@@ -88,7 +88,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
         <CardLight sx={{ mb: 1 }}><CardContent>
           <Box display="flex" gap={1}>
             <Typography ><strong>Default Artifact Set Conditional Effects</strong></Typography>
-            <Typography sx={{ flexGrow: 1 }}>{!!artifactCondCount && <SqBadge color="success">{artifactCondCount} Selected</SqBadge>}</Typography>
+            <Typography sx={{ flexGrow: 1 }}><SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} Selected</SqBadge></Typography>
             <Button size='small' onClick={resetArtConds} color="error" startIcon={<Replay />}>Reset Conditionals</Button>
           </Box>
           <Typography>Some artifacts provide conditional stats. This windows allows you to select those stats, so they can take effect during build calculation, when artifact sets are not specified.</Typography>

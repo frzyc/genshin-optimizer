@@ -47,7 +47,7 @@ export default function BuildAlert({ status: { type, tested, failed, skipped, to
     title = <Typography>Generated and tested {testedString} Build configurations against the criteria for <b>{characterName}</b>. {skippedText}</Typography>
     subtitle = <Typography>Total duration: {durationString}</Typography>
   } else {
-    title = <Typography>Current configuration will generate builds for <b>{characterName}</b>.</Typography>
+    return null
   }
 
   return <Alert severity={color} variant="filled" sx={{

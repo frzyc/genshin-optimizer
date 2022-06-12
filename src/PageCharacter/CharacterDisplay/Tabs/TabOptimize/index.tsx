@@ -6,8 +6,6 @@ import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, u
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BackgroundWorker";
-// eslint-disable-next-line
-import TotalCountWorker from "worker-loader!./TotalCountWorker";
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider';
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
 import CardLight from '../../../../Components/Card/CardLight';
@@ -38,7 +36,7 @@ import { objPathValue, range } from '../../../../Util/Util';
 import { FinalizeResult, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
 import useBuildSetting from './BuildSetting';
-import { artSetPerm, Build, countBuilds, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
+import { artSetPerm, Build, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
@@ -417,9 +415,7 @@ export default function TabBuild() {
         </Grid>
       </Grid>
 
-      {!!characterKey && <Box >
-        <BuildAlert {...{ status: buildStatus, characterName, maxBuildsToShow }} />
-      </Box>}
+      {!!characterKey && <BuildAlert {...{ status: buildStatus, characterName, maxBuildsToShow }} />}
       {tcMode && <Box >
         <ChartCard disabled={generatingBuilds} chartData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} />
       </Box>}
