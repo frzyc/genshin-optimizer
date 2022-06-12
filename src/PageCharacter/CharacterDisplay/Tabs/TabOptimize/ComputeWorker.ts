@@ -31,7 +31,7 @@ export class ComputeWorker {
 
   compute(newThreshold: number, filter: RequestFilter) {
     if (this.threshold > newThreshold) this.threshold = newThreshold
-    const { min, threshold, builds, plotData, interimReport } = this
+    const { min, interimReport } = this, self = this // `this` in nested functions means different things
     let preArts = filterArts(this.arts, filter)
     const totalCount = countBuilds(preArts)
 
@@ -53,7 +53,7 @@ export class ComputeWorker {
       if (i < 0) {
         const result = compute()
         if (min.every((m, i) => (m <= result[i]))) {
-          const value = result[min.length]
+          const value = result[min.length], { builds, plotData, threshold } = self
           let build: Build | undefined
           if (value >= threshold) {
             build = { value, artifactIds: [...ids] }
