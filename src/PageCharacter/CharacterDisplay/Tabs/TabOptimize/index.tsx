@@ -74,7 +74,7 @@ export default function TabBuild() {
   const noArtifact = useMemo(() => !database._getArts().length, [database])
 
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
-  const { artSetExclusion, plotBase, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting!
+  const { plotBase, optimizationTarget, mainStatAssumptionLevel, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
   const buildsArts = useMemo(() => builds.map(build => build.map(i => database._getArt(i)!)), [builds, database])
@@ -84,16 +84,21 @@ export default function TabBuild() {
     database.followAnyArt(setArtsDirty),
     [setArtsDirty, database])
 
-  const { split } = useMemo(() => {
-    if (!characterKey) // Make sure we have all slotKeys
-      return { totBuildNumber: 0 }
+  // Provides a function to cancel the work
+  const cancelToken = useRef(() => { })
+  //terminate worker when component unmounts
+  useEffect(() => () => cancelToken.current(), [])
+  const generateBuilds = useCallback(async () => {
+    const { artSetExclusion, plotBase, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, maxBuildsToShow, levelLow, levelHigh } = buildSetting
+    if (!characterKey || !optimizationTarget) return
+
     let cantTakeList: CharacterKey[] = []
     if (useEquippedArts) {
       const index = equipmentPriority.indexOf(characterKey)
       if (index < 0) cantTakeList = [...equipmentPriority]
       else cantTakeList = equipmentPriority.slice(0, index)
     }
-    const arts = database._getArts().filter(art => {
+    const filteredArts = database._getArts().filter(art => {
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -107,16 +112,8 @@ export default function TabBuild() {
       if (art.location && useEquippedArts && cantTakeList.includes(art.location)) return false
       return true
     })
-    const split = compactArtifacts(arts, mainStatAssumptionLevel)
-    return artsDirty && { split }
-  }, [characterKey, useExcludedArts, useEquippedArts, equipmentPriority, mainStatKeys, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
+    const split = compactArtifacts(filteredArts, mainStatAssumptionLevel)
 
-  // Provides a function to cancel the work
-  const cancelToken = useRef(() => { })
-  //terminate worker when component unmounts
-  useEffect(() => () => cancelToken.current(), [])
-  const generateBuilds = useCallback(async () => {
-    if (!characterKey || !optimizationTarget || !split) return
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
     const workerData = uiDataForTeam(teamData.teamData, characterKey)[characterKey as CharacterKey]?.target.data![0]
@@ -289,7 +286,7 @@ export default function TabBuild() {
       buildSettingDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
     }
     setBuildStatus({ ...status, type: "inactive", finishTime: performance.now() })
-  }, [characterKey, database, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, split, buildSettingDispatch, statFilters, maxWorkers, artSetExclusion])
+  }, [characterKey, database, buildSettingDispatch, maxWorkers, buildSetting, equipmentPriority])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
