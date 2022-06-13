@@ -3,10 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Replay, Settings } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Typography } from '@mui/material';
 import React, { useCallback, useContext, useMemo, useState } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import CloseButton from '../../../../../Components/CloseButton';
+import ColorText from '../../../../../Components/ColoredText';
 import InfoTooltip from '../../../../../Components/InfoTooltip';
 import ModalWrapper from '../../../../../Components/ModalWrapper';
 import SqBadge from '../../../../../Components/SqBadge';
@@ -22,6 +24,7 @@ import { objectKeyMap } from '../../../../../Util/Util';
 import useBuildSetting from '../BuildSetting';
 
 export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, }) {
+  const { t } = useTranslation(["page_character", "sheet"])
   const dataContext = useContext(DataContext)
   const { character: { key: characterKey, conditional }, characterDispatch } = dataContext
   const { buildSetting: { artSetExclusion }, buildSettingDispatch } = useBuildSetting(characterKey)
@@ -69,10 +72,14 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   return <>
     <CardLight sx={{ display: "flex" }}>
       <CardContent sx={{ flexGrow: 1 }} >
-        <Typography><strong>Artifact Set Config</strong></Typography>
-        <Typography>Set Effects Conditionals <SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} Enabled</SqBadge></Typography>
-        <Typography>2-set <SqBadge color="success">{allow2} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> Allowed</SqBadge>{!!exclude2 && " / "}{!!exclude2 && <SqBadge color="error">{exclude2} <FontAwesomeIcon icon={faBan} className="fa-fw" /> Excluded</SqBadge>}</Typography>
-        <Typography>4-set <SqBadge color="success">{allow4} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> Allowed</SqBadge>{!!exclude4 && " / "}{!!exclude4 && <SqBadge color="error">{exclude4} <FontAwesomeIcon icon={faBan} className="fa-fw" /> Excluded</SqBadge>}</Typography>
+        <Typography>
+          <strong>{t`tabOptimize.artSetConfig.title`}</strong>
+        </Typography>
+        <Typography>{t`tabOptimize.artSetConfig.setEffCond`} <SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} {t<string>("tabOptimize.artSetConfig.enabled")}</SqBadge></Typography>
+        <Typography>{t`sheet:2set`} <SqBadge color="success">{allow2} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.allowed")}</SqBadge>{!!exclude2 && " / "}{!!exclude2 && <SqBadge color="error">{exclude2} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.excluded")}</SqBadge>}</Typography>
+        <Typography>{t`sheet:4set`} <SqBadge color="success">{allow4} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.allowed")}</SqBadge>{!!exclude4 && " / "}{!!exclude4 && <SqBadge color="error">{exclude4} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.excluded")}</SqBadge>}</Typography>
+        <Typography>{t`tabOptimize.artSetConfig.2rainbow`} <SqBadge color={allowRainbow2 ? "success" : "error"}><FontAwesomeIcon icon={allowRainbow2 ? faChartLine : faBan} className="fa-fw" /> {allowRainbow2 ? t<string>("tabOptimize.artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
+        <Typography>{t`tabOptimize.artSetConfig.4rainbow`} <SqBadge color={allowRainbow4 ? "success" : "error"}><FontAwesomeIcon icon={allowRainbow4 ? faChartLine : faBan} className="fa-fw" /> {allowRainbow4 ? t<string>("tabOptimize.artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
       </CardContent>
       <Button onClick={onOpen} disabled={disabled} color="info" sx={{ borderRadius: 0 }}>
         <Settings />
@@ -80,26 +87,32 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
     </CardLight>
     {artifactSheets && <ModalWrapper open={open} onClose={onClose} ><CardDark>
       <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
-        <Typography variant="h6" >Artifact Set Config</Typography>
+        <Typography variant="h6" >{t`tabOptimize.artSetConfig.title`}</Typography>
         <CloseButton onClick={onClose} />
       </CardContent>
       <Divider />
       <CardContent >
         <CardLight sx={{ mb: 1 }}><CardContent>
           <Box display="flex" gap={1}>
-            <Typography ><strong>Default Artifact Set Conditional Effects</strong></Typography>
-            <Typography sx={{ flexGrow: 1 }}><SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} Selected</SqBadge></Typography>
-            <Button size='small' onClick={resetArtConds} color="error" startIcon={<Replay />}>Reset Conditionals</Button>
+            <Typography><strong>{t`tabOptimize.artSetConfig.modal.setCond.title`}</strong></Typography>
+            <Typography sx={{ flexGrow: 1 }}><SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} {t<string>("tabOptimize.artSetConfig.selected")}</SqBadge></Typography>
+            <Button size='small' onClick={resetArtConds} color="error" startIcon={<Replay />}>{t`tabOptimize.artSetConfig.modal.setCond.reset`}</Button>
           </Box>
-          <Typography>Some artifacts provide conditional stats. This windows allows you to select those stats, so they can take effect during build calculation, when artifact sets are not specified.</Typography>
+          <Typography>{t`tabOptimize.artSetConfig.modal.setCond.text`}</Typography>
         </CardContent></CardLight>
         <CardLight sx={{ mb: 1 }}><CardContent>
           <Box display="flex" gap={1}>
-            <Typography sx={{ flexGrow: 1 }}><strong>Artifact Set Allowed/Excluded</strong></Typography>
+            <Typography sx={{ flexGrow: 1 }}><strong>
+              <Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.title" >Artifact Sets <ColorText color='success'>Allowed<FontAwesomeIcon icon={faChartLine} className="fa-fw" /></ColorText> / <ColorText color='error'>Excluded<FontAwesomeIcon icon={faBan} className="fa-fw" /></ColorText></Trans>
+            </strong></Typography>
             <Button size='small' onClick={resetSetFilter} color="error" startIcon={<Replay />}>Reset Set Filter</Button>
           </Box>
-          <Typography>There are a lot of flexibility for how you can define the set constraints of your final builds. You can allow/exclude specific 2/4 sets for generated builds.</Typography>
-
+          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.intro">You can allow/exclude which builds sets you want the builder to consider. In the following examples, <strong>A</strong> is on-set, and <strong>R</strong> is rainbow(1-set artifacts)</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.2set"><strong>2-set Toggle: </strong><ColorText color='error'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 2-set</ColorText> effects would exclude 2-set builds: <strong><ColorText color='error'>AA</ColorText>RRR</strong> and <strong><ColorText color='error'>AAA</ColorText>RR</strong></Trans></Typography>
+          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.4set"><strong>4-set Toggle: </strong><ColorText color='error'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 4-set</ColorText> effects would exclude 4-set builds: <strong><ColorText color='error'>AAAA</ColorText>R</strong> and <strong><ColorText color='error'>AAAAA</ColorText></strong></Trans></Typography>
+          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.24set"><strong>Combination Set toggles: </strong><ColorText color='success'>Allowing<FontAwesomeIcon icon={faChartLine} className="fa-fw" /> 4-set</ColorText> and <ColorText color='error'>excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 2-set</ColorText> allows the builder to only consider 4-set builds. (<strong><ColorText color='success'>AAAAA</ColorText></strong> and <strong><ColorText color='success'>AAAA</ColorText>R</strong> are allowed, but <strong><ColorText color='error'>AA</ColorText>RRR</strong> and <strong><ColorText color='error'>AAA</ColorText>RR</strong> are removed.)</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.2rain"><strong>2/3-Rainbow Toggle: </strong><ColorText color='error'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 2/3-Rainbow</ColorText> excludes builds that are 2-set-rainbows: disallow <strong>AA<ColorText color='error'>RRR</ColorText></strong> and <strong>AAA<ColorText color='error'>RR</ColorText></strong>; 5-rainbow <strong><ColorText color='success'>RRRRR</ColorText></strong> builds are allowed.</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.4rain"><strong>5-Rainbow Toggle: </strong><ColorText color='error'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 5-Rainbow</ColorText> specifically disallows 5-rainbow <strong><ColorText color='error'>RRRRR</ColorText></strong> builds.</Trans></Typography>
         </CardContent></CardLight>
         <Grid container columns={{ xs: 2, lg: 3 }} sx={{ mb: 1 }} spacing={1}>
           <Grid item xs={1}>
@@ -111,16 +124,15 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
           <Grid item xs={1}>
             <CardLight>
               <CardContent>
-                <Typography gutterBottom><strong>Allow/Exclude Rainbow Builds</strong></Typography>
+                <Typography gutterBottom><strong><Trans t={t} i18nKey="tabOptimize.artSetConfig.alExRainbow"><ColorText color='success'>Allow <FontAwesomeIcon icon={faChartLine} className="fa-fw" /></ColorText> / <ColorText color='error'>Exclude <FontAwesomeIcon icon={faBan} className="fa-fw" /></ColorText> Rainbow Builds</Trans></strong></Typography>
                 <Box sx={{ display: "flex", gap: 1 }}>
-                  <Button fullWidth onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey: "rainbow", num: 2 })} color={allowRainbow2 ? "success" : "error"} startIcon={<FontAwesomeIcon icon={allowRainbow2 ? faChartLine : faBan} className="fa-fw" />}>2/3-Rainbow</Button>
-                  <Button fullWidth onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey: "rainbow", num: 4 })} color={allowRainbow4 ? "success" : "error"} startIcon={<FontAwesomeIcon icon={allowRainbow4 ? faChartLine : faBan} className="fa-fw" />}>5-Rainbow</Button>
+                  <Button fullWidth onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey: "rainbow", num: 2 })} color={allowRainbow2 ? "success" : "error"} startIcon={<FontAwesomeIcon icon={allowRainbow2 ? faChartLine : faBan} className="fa-fw" />}>{t`tabOptimize.artSetConfig.2rainbow`}</Button>
+                  <Button fullWidth onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey: "rainbow", num: 4 })} color={allowRainbow4 ? "success" : "error"} startIcon={<FontAwesomeIcon icon={allowRainbow4 ? faChartLine : faBan} className="fa-fw" />}>{t`tabOptimize.artSetConfig.4rainbow`}</Button>
                 </Box>
               </CardContent>
             </CardLight>
           </Grid>
         </Grid>
-
         <Grid container spacing={1} columns={{ xs: 2, lg: 3 }}>
           {artSetKeyList.map(setKey => {
             return <ArtifactSetCard key={setKey} setKey={setKey} sheet={artifactSheets[setKey]} fakeDataContextObj={fakeDataContextObj} />
@@ -131,21 +143,23 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
       <CardContent sx={{ py: 1 }}>
         <CloseButton large onClick={onClose} />
       </CardContent>
-    </CardDark></ModalWrapper>}
+    </CardDark></ModalWrapper >}
   </>
 }
 function AllSetAllowExcludeCard({ numAllow, numExclude, setNum, setAllExclusion }) {
+  const { t } = useTranslation(["page_character", "sheet"])
   return <CardLight>
     <CardContent>
-      <Typography gutterBottom><strong>{setNum}-set</strong> <SqBadge color="success">{numAllow} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> Allowed</SqBadge>{!!numExclude && " / "}{!!numExclude && <SqBadge color="error">{numExclude} <FontAwesomeIcon icon={faBan} className="fa-fw" /> Excluded</SqBadge>}</Typography>
+      <Typography gutterBottom><strong>{t(`sheet:${setNum}set`)}</strong> <SqBadge color="success">{numAllow} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.allowed")}</SqBadge>{!!numExclude && " / "}{!!numExclude && <SqBadge color="error">{numExclude} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.excluded")}</SqBadge>}</Typography>
       <Box sx={{ display: "flex", gap: 1 }}>
-        <Button fullWidth disabled={!numExclude} onClick={() => setAllExclusion(setNum, false)} color='success' startIcon={<FontAwesomeIcon icon={faChartLine} className="fa-fw" />}>All {setNum}-set</Button>
-        <Button fullWidth disabled={!numAllow} onClick={() => setAllExclusion(setNum, true)} color='error' startIcon={<FontAwesomeIcon icon={faBan} className="fa-fw" />}>All {setNum}-set</Button>
+        <Button fullWidth disabled={!numExclude} onClick={() => setAllExclusion(setNum, false)} color='success' startIcon={<FontAwesomeIcon icon={faChartLine} className="fa-fw" />}>{t(`tabOptimize.artSetConfig.all${setNum}set`)}</Button>
+        <Button fullWidth disabled={!numAllow} onClick={() => setAllExclusion(setNum, true)} color='error' startIcon={<FontAwesomeIcon icon={faBan} className="fa-fw" />}>{t(`tabOptimize.artSetConfig.all${setNum}set`)}</Button>
       </Box>
     </CardContent>
   </CardLight>
 }
 function ArtifactSetCard({ sheet, setKey, fakeDataContextObj }: { setKey: ArtifactSetKey, sheet: ArtifactSheet, fakeDataContextObj: dataContextObj }) {
+  const { t } = useTranslation("sheet")
   const { character: { key: characterKey } } = useContext(DataContext)
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
   const setExclusionSet = buildSetting?.artSetExclusion?.[setKey] ?? []
@@ -156,6 +170,8 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj }: { setKey: Artifa
     if (!allow4) return []
     return Object.keys(sheet.setEffects).filter(setNumKey => sheet.setEffects[setNumKey]?.document.some(doc => "states" in doc))
   }, [sheet.setEffects, allow4])
+  const exclude2 = setExclusionSet.includes(2)
+  const exclude4 = setExclusionSet.includes(4)
 
   return <Grid item key={setKey} xs={1}>
     <CardLight sx={{ height: "100%" }}>
@@ -166,13 +182,20 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj }: { setKey: Artifa
           <Box display="flex" gap={1}>
             <Typography variant="subtitle1">{sheet.rarity.map((ns, i) => <span key={ns}>{ns} <Stars stars={1} /> {i < (sheet.rarity.length - 1) ? "/ " : null}</span>)}</Typography>
             {/* If there is ever a 2-set conditional, we will need to change this */}
-            <InfoTooltip title={<Typography><Translate ns={`artifact_${setKey}_gen`} key18={"setEffects.4"} /></Typography>} />
+            <InfoTooltip title={<Box>
+              <Typography><SqBadge color="success">{t`2set`}</SqBadge></Typography>
+              <Typography><Translate ns={`artifact_${setKey}_gen`} key18={"setEffects.2"} /></Typography>
+              <Box paddingTop={1} sx={{ opacity: setExclusionSet.includes(4) ? 0.6 : 1 }} >
+                <Typography><SqBadge color="success">{t`4set`}</SqBadge></Typography>
+                <Typography><Translate ns={`artifact_${setKey}_gen`} key18={"setEffects.4"} /></Typography>
+              </Box>
+            </Box>} />
           </Box>
         </Box>
       </Box>
       <ButtonGroup sx={{ ".MuiButton-root": { borderRadius: 0 } }} fullWidth>
-        <SetButton setNum={2} excluded={setExclusionSet.includes(2)} onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey, num: 2 })} />
-        <SetButton setNum={4} excluded={setExclusionSet.includes(4)} onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey, num: 4 })} />
+        <Button onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey, num: 2 })} color={exclude2 ? 'error' : 'success'} startIcon={<FontAwesomeIcon icon={exclude2 ? faBan : faChartLine} className="fa-fw" />}>{t`2set`}</Button>
+        <Button onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey, num: 4 })} color={exclude4 ? 'error' : 'success'} startIcon={<FontAwesomeIcon icon={exclude4 ? faBan : faChartLine} className="fa-fw" />}>{t`4set`}</Button>
       </ButtonGroup>
 
       {!!set4CondNums.length && <DataContext.Provider value={fakeDataContextObj}>
@@ -184,9 +207,6 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj }: { setKey: Artifa
       </DataContext.Provider>}
     </CardLight>
   </Grid>
-}
-function SetButton({ setNum, excluded, onClick }: { setNum: number, excluded: boolean, onClick: () => void }) {
-  return <Button onClick={onClick} color={excluded ? 'error' : 'success'} startIcon={<FontAwesomeIcon icon={excluded ? faBan : faChartLine} className="fa-fw" />}>{setNum}-set</Button>
 }
 function fakeData(currentContext: dataContextObj): dataContextObj {
   return {
