@@ -116,7 +116,7 @@ const features = [{
         <li>Limit builds by artifact sets, main stats...</li>
         <li>Fully featured build settings to fine-tune build results.</li>
         <li>Compare generated artifact build against artifacts currently on character.</li>
-        <li>Use conditional stats from artifact sets, e.g. Embled of Severed Fate's 4-set Elemental Burst DMG Bonus conversion, as part of the build calculations.</li>
+        <li>Use conditional stats from artifact sets, e.g. Embled of Severed Fate's 4-Set Elemental Burst DMG Bonus conversion, as part of the build calculations.</li>
       </ul>
     </Trans>
   </Typography>

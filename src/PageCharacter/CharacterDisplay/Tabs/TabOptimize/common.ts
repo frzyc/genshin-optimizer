@@ -2,15 +2,15 @@ import { forEachNodes, mapFormulas } from "../../../../Formula/internal";
 import { allOperations, constantFold } from "../../../../Formula/optimization";
 import { ConstantNode, NumNode } from "../../../../Formula/type";
 import { constant, customRead, max, min } from "../../../../Formula/utils";
-import { allSlotKeys, ArtifactSetKey } from "../../../../Types/consts";
-import { assertUnreachable, objectKeyMap, objectMap } from "../../../../Util/Util";
-import type { ArtifactBuildData, ArtifactsBySlot, Build, DynStat, PlotData, RequestFilter } from "./background";
+import { allSlotKeys, ArtifactSetKey, SlotKey } from "../../../../Types/consts";
+import { assertUnreachable, objectKeyMap, objectMap, range } from "../../../../Util/Util";
+import type { ArtSetExclusion } from "./BuildSetting";
 
 type DynMinMax = { [key in string]: MinMax }
 type MinMax = { min: number, max: number }
 
 type MicropassOperation = "reaffine" | "pruneArtRange" | "pruneNodeRange" | "pruneOrder"
-export function pruneAll(nodes: NumNode[], minimum: number[], arts: ArtifactsBySlot, numTop: number, keepArtifacts: Set<ArtifactSetKey>, forced: Dict<MicropassOperation, boolean>): { nodes: NumNode[], arts: ArtifactsBySlot } {
+export function pruneAll(nodes: NumNode[], minimum: number[], arts: ArtifactsBySlot, numTop: number, exclusion: ArtSetExclusion, forced: Dict<MicropassOperation, boolean>): { nodes: NumNode[], arts: ArtifactsBySlot } {
   let should = forced
   /** If `key` makes progress, all operations in `value` should be performed */
   const deps: StrictDict<MicropassOperation, Dict<MicropassOperation, true>> = {
@@ -23,7 +23,7 @@ export function pruneAll(nodes: NumNode[], minimum: number[], arts: ArtifactsByS
   while (Object.values(should).some(x => x) && count++ < 20) {
     if (should.pruneOrder) {
       delete should.pruneOrder
-      const newArts = pruneOrder(arts, numTop, keepArtifacts)
+      const newArts = pruneOrder(arts, numTop, exclusion)
       if (arts !== newArts) {
         arts = newArts
         should = { ...should, ...deps.pruneOrder }
@@ -137,8 +137,11 @@ function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean 
   return result
 }
 /** Remove artifacts that cannot be in top `numTop` builds */
-export function pruneOrder(arts: ArtifactsBySlot, numTop: number, keepArtifacts: Set<ArtifactSetKey>): ArtifactsBySlot {
+export function pruneOrder(arts: ArtifactsBySlot, numTop: number, exclusion: ArtSetExclusion): ArtifactsBySlot {
   let progress = false
+  const noRainbow = !exclusion.rainbow?.length
+  const noSwitchIn = new Set(Object.entries(exclusion).filter(([_, v]) => v.length).map(([k]) => k) as ArtifactSetKey[])
+  const noSwitchOut = new Set(Object.entries(exclusion).filter(([_, v]) => v.includes(2) && !v.includes(4)).map(([k]) => k) as ArtifactSetKey[])
   const values = objectKeyMap(allSlotKeys, slot => {
     const list = arts.values[slot]
     const newList = list.filter(art => {
@@ -147,7 +150,7 @@ export function pruneOrder(arts: ArtifactsBySlot, numTop: number, keepArtifacts:
         const greaterEqual = Object.entries(other.values).every(([k, o]) => o >= art.values[k])
         const greater = Object.entries(other.values).some(([k, o]) => o > art.values[k])
         if (greaterEqual && (greater || other.id > art.id) &&
-          (!keepArtifacts.has(art.set!) || art.set === other.set))
+          ((noRainbow && !noSwitchIn.has(other.set!) && !noSwitchOut.has(art.set!)) || art.set === other.set))
           count++
         return count < numTop
       })
@@ -347,4 +350,183 @@ export function mergePlot(plots: PlotData[]): PlotData {
 
 export function countBuilds(arts: ArtifactsBySlot): number {
   return allSlotKeys.reduce((_count, slot) => _count * arts.values[slot].length, 1)
+}
+
+
+export function* filterFeasiblePerm(filters: Iterable<RequestFilter>, _artSets: ArtifactsBySlot): Iterable<RequestFilter> {
+  const artSets = objectMap(_artSets.values, values => new Set(values.map(v => v.set)))
+  filter_loop: for (const filter of filters) {
+    for (const [slot, f] of Object.entries(filter)) {
+      const available = artSets[slot]!
+      switch (f.kind) {
+        case "required": if ([...f.sets].every(s => !available.has(s))) continue filter_loop; break
+        case "exclude": if ([...available].every(s => f.sets.has(s!))) continue filter_loop; break
+        case "id": break
+      }
+    }
+    yield filter
+  }
+}
+export function exclusionToAllowed(exclusion: number[] | undefined): Set<number> {
+  return new Set(exclusion?.includes(2)
+    ? exclusion.includes(4) ? [0, 1] : [0, 1, 4, 5]
+    : exclusion?.includes(4) ? [0, 1, 2, 3] : [0, 1, 2, 3, 4, 5])
+}
+/** A *disjoint* set of `RequestFilter` satisfying the exclusion rules */
+export function* artSetPerm(exclusion: ArtSetExclusion, _artSets: ArtifactSetKey[]): Iterable<RequestFilter> {
+  /**
+   * This generation algorithm is separated into two parts:
+   * - "Shape" generation
+   *   - It first generates all build "shapes", e.g., AABBC, ABBCD
+   *   - It then filters the generated shapes according to the rainbow exclusion, e.g., removes ABBCD if excluding 3 rainbows
+   *   - It then merges the remaining shapes into wildcards, e.g. AABAA + AABAB + AABAC => AABA*
+   * - Shape filling
+   *   - From the given shapes, it tries to fill in all non-rainbow slots, e.g., slots A and B of AABBC, with actual artifacts
+   *   - It then fills the rainbow slots, e.g., slot C of AABBC while ensuring the exclusion rule of each sets
+   */
+  const artSets = [...new Set(_artSets)], allowedRainbows = exclusionToAllowed(exclusion.rainbow)
+  let shapes: number[][] = []
+  function populateShapes(current: number[], list: Set<number>, rainbows: number[]) {
+    if (current.length === 5) {
+      if (allowedRainbows.has(rainbows.length))
+        shapes.push(current)
+      return
+    }
+    for (const i of list) populateShapes([...current, i], list, rainbows.filter(j => j !== i))
+    populateShapes([...current, current.length], new Set([...list, current.length]), [...rainbows, current.length])
+  }
+  populateShapes([0], new Set([0]), [0])
+  function indexOfShape(shape: number[], replacing: number) {
+    if (range(replacing + 1, 4).some(i => shape[i] !== 5))
+      return undefined
+    shape = [...shape]
+    shape[replacing] = 5
+    return shape.reduce((a, b) => a * 6 + b, 0)
+  }
+  for (let replacing = 4; replacing >= 0; replacing--) {
+    const required: Map<number, number> = new Map()
+    for (const shape of shapes) {
+      const id = indexOfShape(shape, replacing)
+      if (id === undefined) continue
+      required.set(id, (required.get(id) ?? new Set(shape.slice(0, replacing)).size + 1) - 1)
+    }
+    for (const [id, remaining] of required.entries()) {
+      if (remaining === 0) {
+        const shape = [...shapes.find(shape => indexOfShape(shape, replacing) === id)!]
+        shape[replacing] = 5
+        shapes = shapes.filter(shape => indexOfShape(shape, replacing) !== id)
+        shapes.push(shape)
+      }
+    }
+  }
+
+  // Shapes are now calculated and merged, proceed to fill in the sets
+
+  const noFilter = { kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }
+  const result: RequestFilter = objectKeyMap(allSlotKeys, _ => noFilter)
+
+  const counts = { ...objectMap(exclusion, _ => 0), ...objectKeyMap(artSets, _ => 0) }
+  const allowedCounts = objectMap(exclusion, exclusionToAllowed)
+
+  function* check(shape: number[]) {
+    const used: Set<ArtifactSetKey> = new Set()
+    let groupped: number[][] = [], rainbows: number[] = []
+    for (const i of shape) {
+      groupped.push([])
+      if (i === 5) rainbows.push(groupped.length - 1)
+      else groupped[i].push(groupped.length - 1)
+    }
+    groupped = groupped.filter(v => v.length).sort((a, b) => b.length - a.length)
+    let usableRainbows = rainbows.length
+
+    // Inception.. because js doesn't like functions inside a for-loop
+    function* check(i: number) {
+      if (i === groupped.length)
+        return yield* check_free(0)
+
+      for (const set of artSets) {
+        if (used.has(set)) continue
+        const length = groupped[i].length, allowedSet = allowedCounts[set]
+        let requiredRainbows = 0
+
+        if (allowedSet && !allowedSet.has(length)) {
+          // Look ahead and see if we have enough rainbows to fill to the next `allowedSet` if we use the current set
+          requiredRainbows = (range(length + 1, 5).find(l => allowedSet.has(l)) ?? 6) - length
+          if (requiredRainbows > usableRainbows) continue // Not enough rainbows. Next..
+        }
+
+        used.add(set)
+        counts[set] = groupped[i].length
+        groupped[i].forEach(j => result[allSlotKeys[j]] = { kind: "required", sets: new Set([set]) })
+        usableRainbows -= requiredRainbows
+
+        yield* check(i + 1)
+
+        usableRainbows += requiredRainbows
+        counts[set] = 0
+        used.delete(set)
+      }
+    }
+    // We separate filling rainbow slots from groupped slots because it has an entirely
+    // different set of rules regarding what can be filled and what states to be kept.
+    function* check_free(i: number) {
+      const remaining = rainbows.length - i, isolated: ArtifactSetKey[] = [], missing: ArtifactSetKey[] = [], rejected: ArtifactSetKey[] = []
+      let required = 0
+      for (const set of artSets) {
+        const allowedSet = allowedCounts[set], count = counts[set]
+        if (!allowedSet) continue
+        if (range(1, remaining).every(j => !allowedSet.has(count + j))) rejected.push(set)
+        else if (!allowedSet.has(count)) {
+          required += [...allowedSet].find(x => x > count)! - count
+          missing.push(set)
+        }
+        else if (range(0, remaining).some(j => !allowedSet.has(count + j))) isolated.push(set)
+      }
+      if (required > remaining) return
+      if (i === rainbows.length) {
+        yield { ...result }
+        return
+      }
+      if (required === remaining) {
+        for (const set of missing) {
+          counts[set]++
+          result[allSlotKeys[rainbows[i]]] = { kind: "required", sets: new Set([set]) }
+          yield* check_free(i + 1)
+          counts[set]--
+        }
+        return
+      }
+      for (const set of [...isolated, ...missing]) {
+        counts[set]++
+        result[allSlotKeys[rainbows[i]]] = { kind: "required", sets: new Set([set]) }
+        yield* check_free(i + 1)
+        counts[set]--
+      }
+      result[allSlotKeys[rainbows[i]]] = { kind: "exclude", sets: new Set([...missing, ...rejected, ...isolated]) }
+      yield* check_free(i + 1)
+    }
+    yield* check(0)
+  }
+  for (const shape of shapes) yield* check(shape)
+}
+
+export type RequestFilter = StrictDict<SlotKey,
+  { kind: "required", sets: Set<ArtifactSetKey> } |
+  { kind: "exclude", sets: Set<ArtifactSetKey> } |
+  { kind: "id", ids: Set<string> }
+>
+
+export type DynStat = { [key in string]: number }
+export type ArtifactBuildData = {
+  id: string
+  set?: ArtifactSetKey
+  values: DynStat
+}
+export type ArtifactsBySlot = { base: DynStat, values: StrictDict<SlotKey, ArtifactBuildData[]> }
+
+export type PlotData = Dict<number, Build>
+export interface Build {
+  value: number
+  plot?: number
+  artifactIds: string[]
 }
