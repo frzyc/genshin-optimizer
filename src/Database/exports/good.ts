@@ -29,5 +29,8 @@ export function exportGOOD(storage: DBStorage): IGOOD & IGO {
     states: storage.entries
       .filter(([key]) => key.startsWith("state_"))
       .map(([key, value]) => ({ ...JSON.parse(value), key: key.split("state_")[1] })),
+    buildSettings: storage.entries
+      .filter(([key]) => key.startsWith("buildSetting_"))
+      .map(([key, value]) => ({ ...JSON.parse(value), key: key.split("buildSetting_")[1] })),
   }
 }
