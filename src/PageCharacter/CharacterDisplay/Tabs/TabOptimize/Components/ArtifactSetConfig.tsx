@@ -107,12 +107,11 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
             </strong></Typography>
             <Button size='small' onClick={resetSetFilter} color="error" startIcon={<Replay />}>Reset Set Filter</Button>
           </Box>
-          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.intro">You can allow/exclude which builds sets you want the builder to consider. In the following examples, <strong>A</strong> is on-set, and <strong>R</strong> is rainbow(1-set artifacts)</Trans></Typography>
-          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.2set"><strong>2-set Toggle: </strong><ColorText color='error'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 2-set</ColorText> effects would exclude 2-set builds: <strong><ColorText color='error'>AA</ColorText>RRR</strong> and <strong><ColorText color='error'>AAA</ColorText>RR</strong></Trans></Typography>
-          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.4set"><strong>4-set Toggle: </strong><ColorText color='error'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 4-set</ColorText> effects would exclude 4-set builds: <strong><ColorText color='error'>AAAA</ColorText>R</strong> and <strong><ColorText color='error'>AAAAA</ColorText></strong></Trans></Typography>
-          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.24set"><strong>Combination Set toggles: </strong><ColorText color='success'>Allowing<FontAwesomeIcon icon={faChartLine} className="fa-fw" /> 4-set</ColorText> and <ColorText color='error'>excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 2-set</ColorText> allows the builder to only consider 4-set builds. (<strong><ColorText color='success'>AAAAA</ColorText></strong> and <strong><ColorText color='success'>AAAA</ColorText>R</strong> are allowed, but <strong><ColorText color='error'>AA</ColorText>RRR</strong> and <strong><ColorText color='error'>AAA</ColorText>RR</strong> are removed.)</Trans></Typography>
-          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.2rain"><strong>2/3-Rainbow Toggle: </strong><ColorText color='error'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 2/3-Rainbow</ColorText> excludes builds that are 2-set-rainbows: disallow <strong>AA<ColorText color='error'>RRR</ColorText></strong> and <strong>AAA<ColorText color='error'>RR</ColorText></strong>; 5-rainbow <strong><ColorText color='success'>RRRRR</ColorText></strong> builds are allowed.</Trans></Typography>
-          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.4rain"><strong>5-Rainbow Toggle: </strong><ColorText color='error'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 5-Rainbow</ColorText> specifically disallows 5-rainbow <strong><ColorText color='error'>RRRRR</ColorText></strong> builds.</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.intro">You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-Set, and <strong>R</strong> is rainbow(1-Set)</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.2set"><strong><ColorText color='error'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 2-Set</ColorText></strong> would exclude 2-Set builds: <strong><ColorText color='error'>AA</ColorText>RRR</strong> and <strong><ColorText color='error'>AAA</ColorText>RR</strong>.</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.4set"><strong><ColorText color='error'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 4-Set</ColorText></strong> would exclude 4-Set builds: <strong><ColorText color='error'>AAAA</ColorText>R</strong> and <strong><ColorText color='error'>AAAAA</ColorText></strong>.</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.2rain"><strong><ColorText color='error'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 3-Rainbow</ColorText></strong> would exclude 2-Set + 3-Rainbow builds: <strong>AA<ColorText color='error'>RRR</ColorText></strong> and <strong>AAA<ColorText color='error'>RR</ColorText></strong>.</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.4rain"><strong><ColorText color='error'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 5-Rainbow</ColorText></strong> would exclude full 5-Rainbow builds: <strong><ColorText color='error'>RRRRR</ColorText></strong>.</Trans></Typography>
         </CardContent></CardLight>
         <Grid container columns={{ xs: 2, lg: 3 }} sx={{ mb: 1 }} spacing={1}>
           <Grid item xs={1}>
@@ -165,7 +164,7 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj }: { setKey: Artifa
   const setExclusionSet = buildSetting?.artSetExclusion?.[setKey] ?? []
   const allow4 = !setExclusionSet.includes(4)
 
-  /* Assumes that all conditionals are from 4-set. needs to change if there are 2-set conditionals */
+  /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
   const set4CondNums = useMemo(() => {
     if (!allow4) return []
     return Object.keys(sheet.setEffects).filter(setNumKey => sheet.setEffects[setNumKey]?.document.some(doc => "states" in doc))
@@ -181,7 +180,7 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj }: { setKey: Artifa
           <Typography variant="h6">{sheet.name ?? ""}</Typography>
           <Box display="flex" gap={1}>
             <Typography variant="subtitle1">{sheet.rarity.map((ns, i) => <span key={ns}>{ns} <Stars stars={1} /> {i < (sheet.rarity.length - 1) ? "/ " : null}</span>)}</Typography>
-            {/* If there is ever a 2-set conditional, we will need to change this */}
+            {/* If there is ever a 2-Set conditional, we will need to change this */}
             <InfoTooltip title={<Box>
               <Typography><SqBadge color="success">{t`2set`}</SqBadge></Typography>
               <Typography><Translate ns={`artifact_${setKey}_gen`} key18={"setEffects.2"} /></Typography>

@@ -63,10 +63,10 @@
       "allowed": "Allowed",
       "excluded": "Excluded",
       "selected": "Selected",
-      "2rainbow": "2/3-Rainbow",
+      "2rainbow": "3-Rainbow",
       "4rainbow": "5-Rainbow",
-      "all2set": "All 2-set",
-      "all4set": "All 4-set",
+      "all2set": "All 2-Set",
+      "all4set": "All 4-Set",
       "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow Builds",
       "modal": {
         "setCond": {
@@ -76,12 +76,11 @@
         },
         "ArtSetFilter": {
           "title": "Artifact Sets <1>Allowed<1></1></1> / <3>Excluded<1></1></3>",
-          "intro": "You can allow/exclude which builds sets you want the builder to consider. In the following examples, <strong>A</strong> is on-set, and <strong>R</strong> is rainbow(1-set artifacts)",
-          "2set": "<strong>2-set Toggle: </strong><1>Excluding<1></1> 2-set</1> effects would exclude 2-set builds: <3><0>AA</0>RRR</3> and <5><0>AAA</0>RR</5>",
-          "4set": "<strong>4-set Toggle: </strong><1>Excluding<1></1> 4-set</1> effects would exclude 4-set builds: <3><0>AAAA</0>R</3> and <5><0>AAAAA</0></5>",
-          "24set": "<strong>Combination Set toggles: </strong><1>Allowing<1></1> 4-set</1> and <3>excluding<1></1> 2-set</3> allows the builder to only consider 4-set builds. (<5><0>AAAAA</0></5> and <7><0>AAAA</0>R</7> are allowed, but <9><0>AA</0>RRR</9> and <11><0>AAA</0>RR</11> are removed.)",
-          "2rain": "<strong>2/3-Rainbow Toggle: </strong><1>Excluding<1></1> 2/3-Rainbow</1> excludes builds that are 2-set-rainbows: disallow <3>AA<1>RRR</1></3> and <5>AAA<1>RR</1></5>; 5-rainbow <7><0>RRRRR</0></7> builds are allowed.",
-          "4rain": "<strong>5-Rainbow Toggle: </strong><1>Excluding<1></1> 5-Rainbow</1> specifically disallows 5-rainbow <3><0>RRRRR</0></3> builds."
+          "intro": "You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-Set, and <strong>R</strong> is rainbow(1-Set)",
+          "2set": "<0><0>Excluding<1></1> 2-Set</0></0> would exclude 2-Set builds: <2><0>AA</0>RRR</2> and <4><0>AAA</0>RR</4>.",
+          "4set": "<0><0>Excluding<1></1> 4-Set</0></0> would exclude 4-Set builds: <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",
+          "2rain": "<0><0>Excluding<1></1> 3-Rainbow</0></0> would exclude 2-Set + 3-Rainbow builds: <2>AA<1>RRR</1></2> and <4>AAA<1>RR</1></4>.",
+          "4rain": "<0><0>Excluding<1></1> 5-Rainbow</0></0> would exclude full 5-Rainbow builds: <2><0>RRRRR</0></2>."
         }
       }
     }

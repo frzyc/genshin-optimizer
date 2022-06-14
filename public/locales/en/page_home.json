@@ -25,7 +25,7 @@
     },
     "build": {
       "title": "Build Generator",
-      "content": "<0><0>Generates builds for specific characters using artifact inventory.</0><1>Allows the maximization of character build based on specified optimization target.</1><2>Limit builds by artifact sets, main stats...</2><3>Fully featured build settings to fine-tune build results.</3><4>Compare generated artifact build against artifacts currently on character.</4><5>Use conditional stats from artifact sets, e.g. Embled of Severed Fate's 4-set Elemental Burst DMG Bonus conversion, as part of the build calculations.</5></0>"
+      "content": "<0><0>Generates builds for specific characters using artifact inventory.</0><1>Allows the maximization of character build based on specified optimization target.</1><2>Limit builds by artifact sets, main stats...</2><3>Fully featured build settings to fine-tune build results.</3><4>Compare generated artifact build against artifacts currently on character.</4><5>Use conditional stats from artifact sets, e.g. Embled of Severed Fate's 4-Set Elemental Burst DMG Bonus conversion, as part of the build calculations.</5></0>"
     },
     "tools": {
       "title": "Tools and Gadgets",
