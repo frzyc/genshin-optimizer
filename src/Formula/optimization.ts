@@ -1,7 +1,7 @@
-import { assertUnreachable, objPathValue } from "../Util/Util"
+import { assertUnreachable, objectKeyMap, objPathValue } from "../Util/Util"
 import { forEachNodes, mapFormulas } from "./internal"
-import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode, StrPrioNode } from "./type"
 import { constant } from "./utils"
+import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode, StrPrioNode } from "./type"
 
 const allCommutativeMonoidOperations: StrictDict<CommutativeMonoidOperation, (_: number[]) => number> = {
   min: (x: number[]): number => Math.min(...x),
@@ -29,46 +29,95 @@ export function optimize(formulas: NumNode[], topLevelData: Data, shouldFold = (
   return formulas
 }
 export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<number>) => string): [compute: () => Float64Array, mapping: Dict<string, number>, buffer: Float64Array] {
-  const computations: { out: number, ins: number[], op: (_: number[]) => number, buff: number[] }[] = []
-  const locations = new Map<NumNode, number>(), mapping = new Map<number | string, number>()
-  let nextLocation = formulas.length
-  function setID(f: NumNode, location: number): number {
-    switch (f.operation) {
-      case "read": case "const":
-        const id = f.operation === "read" ? binding(f) : f.value, prevLoc = mapping.get(id)
-        if (prevLoc !== undefined) location = prevLoc
-        else mapping.set(id, location)
-        break
-      default: location = locations.get(f) ?? location
-    }
-    locations.set(f, location)
-    return location
-  }
+  // TODO: Use min-cut to minimize the size of interim array
+  type Reference = string | number | { ins: Reference[] }
 
-  formulas.forEach(setID)
+  const uniqueReadStrings = new Set<string>()
+  const uniqueNumbers = new Set<number>()
+  const mapping = new Map<NumNode, Reference>()
+
   forEachNodes(formulas, _ => { }, f => {
-    const { operation } = f, location = setID(f as NumNode, locations.get(f as NumNode) ?? nextLocation)
-    if (location === nextLocation) nextLocation++
+    const { operation } = f
     switch (operation) {
-      case "read": if (f.type !== "number" || (f.accu && f.accu !== "add")) throw new Error(`Unsupported ${operation} node in precompute`); break
-      case "const": if (typeof f.value !== "number") throw new Error("Found string constant while precomputing"); break
-      case "add": case "min": case "max": case "mul": case "threshold": case "res": case "sum_frac":
-        computations.push({
-          out: location, ins: f.operands.map(x => locations.get(x)!),
-          op: allOperations[f.operation], buff: Array(f.operands.length)
-        })
+      case "read":
+        if (f.type !== "number" || (f.accu && f.accu !== "add"))
+          throw new Error(`Unsupported ${operation} node in precompute`)
+        const name = binding(f)
+        uniqueReadStrings.add(name)
+        mapping.set(f, name)
         break
-      case "match": case "lookup": case "subscript": case "prio": case "small": case "data":
-        throw new Error(`Unsupported ${operation} node in precompute`)
+      case "add": case "min": case "max": case "mul":
+      case "threshold": case "res": case "sum_frac":
+        mapping.set(f, { ins: f.operands.map(op => mapping.get(op)!) })
+        break
+      case "const":
+        if (typeof f.value !== "number")
+          throw new Error("Found string constant while precomputing")
+        const value = f.value
+        uniqueNumbers.add(value)
+        mapping.set(f as ConstantNode<number>, value)
+        break
+      case "match": case "lookup": case "subscript":
+      case "prio": case "small":
+      case "data": throw new Error(`Unsupported ${operation} node in precompute`)
       default: assertUnreachable(operation)
     }
-    locations.set(f as NumNode, location)
-    if (location === nextLocation) nextLocation++
   })
-  const buffer = new Float64Array(nextLocation).fill(NaN)
-  const copyList = formulas.map((id, loc) => (locations.get(id) !== loc) ? [locations.get(id)!, loc] : undefined!).filter(x => x)
-  for (const [num, loc] of mapping) if (typeof num === "number") buffer[loc] = num
-  const copyFormula = copyList.length ? () => copyList.forEach(([src, dst]) => buffer[dst] = buffer[src]) : undefined
+
+  /**
+   * [ Outputs , Input , Constants, Deduplicated Compute ]
+   *
+   * Note that only Compute nodes are deduplicated. Outputs are arranged
+   * in the same order as formulas even when they are duplicated. Inputs
+   * are arranged in the same order as the read strings, even when they
+   * overlap with outputs. If an output is a constant or a compute node,
+   * only put the data in the output region.
+   */
+  const locations = new Map<NumNode | number | string, number>()
+
+  const readStrings = [...uniqueReadStrings], readOffset = formulas.length
+  const constValues = [...uniqueNumbers]
+  const computations: { out: number, ins: number[], op: (_: number[]) => number, buff: number[] }[] = []
+
+  formulas.forEach((f, i) => {
+    locations.set(f, i)
+    if (f.operation === "const") locations.set(f.value, i)
+  })
+  // After this line, if some outputs are also read node, `locations`
+  // will point to the one in the read node portion instead.
+  readStrings.forEach((str, i) => locations.set(str, i + formulas.length))
+  let offset = formulas.length + readStrings.length
+  constValues.forEach(value => locations.has(value) || locations.set(value, offset++))
+
+  // `locations` is stable from this point on. We now only append new values.
+  // There is no change to existing values.
+  //
+  // DO NOT read from `location` prior to this line.
+  mapping.forEach((ref, node) => {
+    if (typeof ref !== "object") {
+      locations.set(node, locations.get(ref)!)
+      return
+    }
+    if (!locations.has(node)) locations.set(node, offset++)
+    computations.push({
+      out: locations.get(node)!,
+      ins: node.operands.map(op => locations.get(op)!),
+      op: allOperations[node.operation],
+      buff: Array(node.operands.length).fill(0),
+    })
+  })
+
+  const buffer = new Float64Array(offset).fill(0)
+  uniqueNumbers.forEach(number => buffer[locations.get(number)!] = number)
+
+  // Copy target for when some outputs are duplicated
+  const copyList = formulas.map((node, i) => {
+    const src = locations.get(node)!
+    return src !== i ? [src, i] : undefined!
+  }).filter(x => x)
+  const copyFormula = copyList.length ? () => {
+    copyList.forEach(([src, dst]) => buffer[dst] = buffer[src])
+  } : undefined
 
   return [() => {
     computations.forEach(({ out, ins, op, buff }) => {
@@ -77,7 +126,7 @@ export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<num
     })
     copyFormula?.()
     return buffer
-  }, Object.fromEntries([...mapping].filter(([x]) => typeof x === "string") as [string, number][]), buffer]
+  }, objectKeyMap(readStrings, (_, i) => readOffset + i), buffer]
 }
 
 function flatten(formulas: NumNode[]): NumNode[] {

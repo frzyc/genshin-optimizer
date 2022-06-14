@@ -71,19 +71,11 @@ describe("optimization", () => {
       buffer[map[0]!] = 32
       expect([...compute().slice(0, 1)]).toEqual([32])
     })
-    test.only("Output is constant node", () => {
+    test("Output is constant node", () => {
       const r1 = inputs[0], r2 = inputs[1], r3 = inputs[2]
       const output1 = sum(1, r1, r2), output2 = prod(r2, r3), output3 = sum(output1, output2)
 
       const [compute, map, buffer] = precompute([constant(35)], x => x.path[0])
-      expect([...compute().slice(0, 1)]).toEqual([35])
-    })
-    test.only("Outputs are the same constant node", () => {
-      const r1 = inputs[0], r2 = inputs[1], r3 = inputs[2]
-      const output1 = sum(1, r1, r2), output2 = prod(r2, r3), output3 = sum(output1, output2)
-
-      const out = constant(35)
-      const [compute, map, buffer] = precompute([out, out], x => x.path[0])
       expect([...compute().slice(0, 1)]).toEqual([35])
     })
     test("Output is duplicated", () => {
