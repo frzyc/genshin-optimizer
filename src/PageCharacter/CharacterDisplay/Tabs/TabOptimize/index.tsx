@@ -33,7 +33,7 @@ import { ICachedArtifact } from '../../../../Types/artifact';
 import { ICachedCharacter } from '../../../../Types/character';
 import { CharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
-import { FinalizeResult, WorkerCommand, WorkerResult } from './BackgroundWorker';
+import { FinalizeResult, Setup, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
 import useBuildSetting from './BuildSetting';
 import { artSetPerm, Build, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
@@ -49,7 +49,6 @@ import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
 import { compactArtifacts, dynamicData } from './foreground';
-import { Setup } from './SplitWorker';
 
 export default function TabBuild() {
   const { character, character: { key: characterKey } } = useContext(DataContext)

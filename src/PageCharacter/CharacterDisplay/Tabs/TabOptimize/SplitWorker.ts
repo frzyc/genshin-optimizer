@@ -1,6 +1,6 @@
 import type { NumNode } from '../../../../Formula/type';
 import { allSlotKeys } from '../../../../Types/consts';
-import type { InterimResult } from './BackgroundWorker';
+import type { InterimResult, Setup } from './BackgroundWorker';
 import { ArtifactsBySlot, countBuilds, filterArts, RequestFilter } from './common';
 
 export class SplitWorker {
@@ -36,18 +36,6 @@ export class SplitWorker {
       splitBySetOrID(this.arts, filter, minCount).forEach(filter => this.addFilter(filter))
     }
   }
-}
-
-export interface Setup {
-  command: "setup"
-
-  id: number
-  arts: ArtifactsBySlot
-
-  optimizationTarget: NumNode
-  filters: { value: NumNode, min: number }[]
-  plotBase: NumNode | undefined,
-  maxBuilds: number
 }
 
 function splitBySetOrID(_arts: ArtifactsBySlot, filter: RequestFilter, limit: number): RequestFilter[] {

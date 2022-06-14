@@ -1,6 +1,6 @@
 import { optimize, precompute } from '../../../../Formula/optimization';
 import type { NumNode } from '../../../../Formula/type';
-import type { InterimResult } from './BackgroundWorker';
+import type { InterimResult, Setup } from './BackgroundWorker';
 import { ArtifactsBySlot, Build, countBuilds, filterArts, mergePlot, PlotData, pruneAll, RequestFilter } from './common';
 
 export class ComputeWorker {
@@ -123,15 +123,4 @@ export class ComputeWorker {
     count.failed = 0
     count.skipped = 0
   }
-}
-export interface Setup {
-  command: "setup"
-
-  id: number
-  arts: ArtifactsBySlot
-
-  optimizationTarget: NumNode
-  filters: { value: NumNode, min: number }[]
-  plotBase: NumNode | undefined,
-  maxBuilds: number
 }

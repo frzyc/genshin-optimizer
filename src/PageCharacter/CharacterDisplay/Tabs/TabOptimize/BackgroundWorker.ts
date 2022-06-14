@@ -1,8 +1,9 @@
+import { NumNode } from '../../../../Formula/type'
 import { assertUnreachable } from '../../../../Util/Util'
 import { ArtSetExclusion } from './BuildSetting'
-import { artSetPerm, Build, countBuilds, filterArts, filterFeasiblePerm, PlotData, RequestFilter } from "./common"
+import { ArtifactsBySlot, artSetPerm, Build, countBuilds, filterArts, filterFeasiblePerm, PlotData, RequestFilter } from "./common"
 import { ComputeWorker } from "./ComputeWorker"
-import { Setup, SplitWorker } from "./SplitWorker"
+import { SplitWorker } from "./SplitWorker"
 
 let id: number, splitWorker: SplitWorker, computeWorker: ComputeWorker
 
@@ -48,6 +49,17 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
 export type WorkerCommand = Setup | Split | Iterate | Finalize | Count
 export type WorkerResult = InterimResult | SplitResult | IterateResult | FinalizeResult | CountResult
 
+export interface Setup {
+  command: "setup"
+
+  id: number
+  arts: ArtifactsBySlot
+
+  optimizationTarget: NumNode
+  filters: { value: NumNode, min: number }[]
+  plotBase: NumNode | undefined,
+  maxBuilds: number
+}
 export interface Split {
   command: "split"
   threshold: number
