@@ -25,6 +25,7 @@ import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter';
 import { artifactFilterConfigs, artifactSortConfigs, artifactSortKeys, artifactSortKeysTC, initialArtifactSortFilter } from './ArtifactSort';
 import ProbabilityFilter from './ProbabilityFilter';
 import { probability } from './RollProbability';
+import { allSlotKeys } from "../Types/consts";
 
 //lazy load the weapon display
 const ArtifactEditor = React.lazy(() => import('./ArtifactEditor'))
@@ -89,7 +90,10 @@ export default function PageArtifact() {
   const { artifactIds, totalArtNum } = useMemo(() => {
     const { sortType = artifactSortKeys[0], ascending = false, filterOption } = state
     let allArtifacts = database._getArts()
-    const filterFunc = filterFunction(filterOption, filterConfigs)
+    const filterFunc =
+      filterFunction(
+        { ...filterOption, slotKeys: filterOption.slotKeys.length === 0 ? allSlotKeys : filterOption.slotKeys },
+        filterConfigs)
     const sortFunc = sortFunction(sortType, ascending, sortConfigs)
     //in probability mode, filter out the artifacts that already reach criteria
     if (showProbability) {
