@@ -35,10 +35,10 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
       {
         const { exclusion } = data, arts = computeWorker.arts
         const setPerm = filterFeasiblePerm(artSetPerm(exclusion, [...new Set(Object.values(arts.values).flatMap(x => x.map(x => x.set!)))]), arts)
-        let count = 0
+        let counts = data.arts.map(_ => 0)
         for (const perm of setPerm)
-          count += countBuilds(filterArts(arts, perm))
-        result = { command: "count", count }
+          data.arts.forEach((arts, i) => counts[i] += countBuilds(filterArts(arts, perm)));
+        result = { command: "count", counts }
         break
       }
     default: assertUnreachable(command)
@@ -77,6 +77,7 @@ export interface Finalize {
 }
 export interface Count {
   command: "count"
+  arts: ArtifactsBySlot[]
   exclusion: ArtSetExclusion
 }
 export interface SplitResult {
@@ -93,7 +94,7 @@ export interface FinalizeResult {
 }
 export interface CountResult {
   command: "count"
-  count: number
+  counts: number[]
 }
 export interface InterimResult {
   command: "interim"
