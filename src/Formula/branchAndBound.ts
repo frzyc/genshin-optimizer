@@ -282,7 +282,7 @@ function bnbWorker({ f, a, thresh, cachedCompute }: WorkerPayload): { branches: 
  *
  * ===========================================================================
  */
-export function optimizeBNB(func: NumNode, a: ArtifactsBySlot) {
+export function optimizeBNB_new(func: NumNode, a: ArtifactsBySlot) {
   a = {
     base: a.base,
     values: {
@@ -340,7 +340,7 @@ export function optimizeBNB(func: NumNode, a: ArtifactsBySlot) {
   console.log({ enumerated, pruned, tottal })
 }
 
-export function optimizeBNB_old(func: NumNode, a: ArtifactsBySlot) {
+export function optimizeBNB(func: NumNode, a: ArtifactsBySlot) {
   a = {
     base: a.base,
     values: {
@@ -421,7 +421,7 @@ export function optimizeBNB_old(func: NumNode, a: ArtifactsBySlot) {
       continue
     }
 
-    if (niter < 3) {
+    if (niter < 10) {
       // For earlier iterations, shatter search space on `score` to separate
       //   obviously good vs obviously bad artifacts (e.g. fully leveled vs lvl 0 artifacts)
       //
