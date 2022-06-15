@@ -22,10 +22,9 @@ import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter';
-import { artifactFilterConfigs, artifactSortConfigs, artifactSortKeys, artifactSortKeysTC, initialArtifactSortFilter } from './ArtifactSort';
+import { artifactFilterConfigs, artifactSortConfigs, artifactSortKeys, artifactSortKeysTC, FilterOption, initialArtifactSortFilter, initialFilterOption } from './ArtifactSort';
 import ProbabilityFilter from './ProbabilityFilter';
 import { probability } from './RollProbability';
-import { allSlotKeys } from "../Types/consts";
 
 //lazy load the weapon display
 const ArtifactEditor = React.lazy(() => import('./ArtifactEditor'))
@@ -90,10 +89,7 @@ export default function PageArtifact() {
   const { artifactIds, totalArtNum } = useMemo(() => {
     const { sortType = artifactSortKeys[0], ascending = false, filterOption } = state
     let allArtifacts = database._getArts()
-    const filterFunc =
-      filterFunction(
-        { ...filterOption, slotKeys: filterOption.slotKeys.length === 0 ? allSlotKeys : filterOption.slotKeys },
-        filterConfigs)
+    const filterFunc = filterFunction(replaceEmptyFilters(filterOption), filterConfigs)
     const sortFunc = sortFunction(sortType, ascending, sortConfigs)
     //in probability mode, filter out the artifacts that already reach criteria
     if (showProbability) {
@@ -197,6 +193,27 @@ export default function PageArtifact() {
     </CardContent></CardDark>}
   </Box >
 }
+
+/** when the user selects nothing on a filter, that filter will not be activated, otherwise we would show 0 results */
+function replaceEmptyFilters(filter: FilterOption): FilterOption {
+  const defaults = initialFilterOption();
+  const newExlusion =
+    filter.exclusion.length === 0 ? { exclusion: defaults.exclusion } : {}
+  const newSlotkeys =
+    filter.slotKeys.length === 0 ? { slotKeys: defaults.slotKeys } : {}
+  const newRarity =
+    filter.rarity.length === 0 ? { rarity: defaults.rarity } : {}
+  const newLocked =
+    filter.locked.length === 0 ? { locked: defaults.locked } : {}
+  return {
+    ...filter,
+    ...newExlusion,
+    ...newSlotkeys,
+    ...newRarity,
+    ...newLocked
+  };
+}
+
 function NewArtifactCard() {
   const [show, setshow] = useState(false)
   const onShow = useCallback(() => setshow(true), [setshow])
