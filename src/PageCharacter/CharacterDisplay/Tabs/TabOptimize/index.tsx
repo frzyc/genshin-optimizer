@@ -140,6 +140,7 @@ export default function TabBuild() {
       minimum.push(-Infinity)
     }
 
+    const prepruneArts = arts
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow, artSetExclusion, {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
@@ -195,7 +196,7 @@ export default function TabBuild() {
       }
       worker.postMessage(setup, undefined)
       if (i === 0) {
-        const countCommand: WorkerCommand = { command: "count", exclusion: artSetExclusion }
+        const countCommand: WorkerCommand = { command: "count", exclusion: artSetExclusion, arts: [arts, prepruneArts] }
         worker.postMessage(countCommand, undefined)
       }
       let finalize: (_: FinalizeResult) => void
@@ -203,7 +204,9 @@ export default function TabBuild() {
       worker.onmessage = async ({ data }: { data: { id: number } & WorkerResult }) => {
         switch (data.command) {
           case "count":
-            status.total = data.count
+            const [pruned, prepruned] = data.counts
+            status.total = prepruned
+            status.skipped += prepruned - pruned
             return
           case "interim":
             status.tested += data.tested
