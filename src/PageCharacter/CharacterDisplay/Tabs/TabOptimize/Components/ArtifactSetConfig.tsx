@@ -20,7 +20,7 @@ import { UIData } from '../../../../../Formula/uiData';
 import { constant } from '../../../../../Formula/utils';
 import usePromise from '../../../../../ReactHooks/usePromise';
 import { allArtifactSets, ArtifactSetKey, SetNum } from '../../../../../Types/consts';
-import { objectKeyMap } from '../../../../../Util/Util';
+import { deepClone, objectKeyMap } from '../../../../../Util/Util';
 import useBuildSetting from '../BuildSetting';
 
 export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, }) {
@@ -54,15 +54,11 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   }, [conditional, characterDispatch]);
   const resetSetFilter = useCallback(() => buildSettingDispatch({ artSetExclusion: {} }), [buildSettingDispatch],)
   const setAllExclusion = useCallback(
-    (setnum, exclude = true) => {
-      const artSetExclusion_ = { ...artSetExclusion }
+    (setnum: number, exclude = true) => {
+      const artSetExclusion_ = deepClone(artSetExclusion)
       artSetKeyList.forEach(k => {
-        if (exclude) {
-          if (!artSetExclusion_[k]) artSetExclusion_[k] = [setnum]
-          else artSetExclusion_[k].push(setnum)
-        } else {
-          if (artSetExclusion_[k]) artSetExclusion_[k] = artSetExclusion_[k].filter(n => n !== setnum)
-        }
+        if (exclude) artSetExclusion_[k] = [...(artSetExclusion_[k] ?? []), setnum];
+        else if (artSetExclusion_[k]) artSetExclusion_[k] = artSetExclusion_[k].filter(n => n !== setnum);
       })
       buildSettingDispatch({ artSetExclusion: artSetExclusion_ })
     },

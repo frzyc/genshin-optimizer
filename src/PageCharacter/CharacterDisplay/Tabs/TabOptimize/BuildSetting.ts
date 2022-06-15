@@ -3,6 +3,7 @@ import { DatabaseContext } from "../../../../Database/Database";
 import { StatKey } from "../../../../KeyMap";
 import { MainStatKey, SubstatKey } from "../../../../Types/artifact";
 import { ArtifactSetKey, CharacterKey } from "../../../../Types/consts";
+import { deepClone } from "../../../../Util/Util";
 import { maxBuildsToShowDefault, maxBuildsToShowList } from "./Build";
 export type ArtSetExclusion = Dict<Exclude<ArtifactSetKey, "PrayersForDestiny" | "PrayersForIllumination" | "PrayersForWisdom" | "PrayersToSpringtime"> | "rainbow", (2 | 4)[]>
 export interface BuildSetting {
@@ -75,7 +76,7 @@ export function buildSettingsReducer(state: BuildSetting = initialBuildSettings(
     }
     case "artSetExclusion": {
       const { setKey, num } = action
-      const artSetExclusion = { ...state.artSetExclusion }
+      const artSetExclusion = deepClone(state.artSetExclusion)
       if (!artSetExclusion[setKey]) artSetExclusion[setKey] = [num]
       else if (!artSetExclusion[setKey].includes(num)) artSetExclusion[setKey] = [...artSetExclusion[setKey], num]
       else {
@@ -87,7 +88,7 @@ export function buildSettingsReducer(state: BuildSetting = initialBuildSettings(
     default:
       break;
   }
-  return validateBuildSetting({ ...state, ...action })
+  return { ...state, ...action }
 }
 
 export function validateBuildSetting(obj: any): BuildSetting {
@@ -121,6 +122,7 @@ export function validateBuildSetting(obj: any): BuildSetting {
   if (compareBuild === undefined) compareBuild = false
   if (levelLow === undefined) levelLow = 0
   if (levelHigh === undefined) levelHigh = 20
-  if (!artSetExclusion) artSetExclusion = {}
+  if (!artSetExclusion) artSetExclusion = {};
+  artSetExclusion = Object.fromEntries(Object.entries(artSetExclusion as ArtSetExclusion).map(([k, a]) => [k, [...new Set(a)]]).filter(([k, a]) => a.length))
   return { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
 }

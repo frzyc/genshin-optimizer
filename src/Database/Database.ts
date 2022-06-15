@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { BuildSetting, buildSettingsReducer, initialBuildSettings } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting";
+import { BuildSetting, buildSettingsReducer, initialBuildSettings, validateBuildSetting } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting";
 import { IArtifact, ICachedArtifact } from "../Types/artifact";
 import { ICachedCharacter, ICharacter } from "../Types/character";
 import { allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
@@ -267,7 +267,7 @@ export class ArtCharDatabase {
   }
   updateBuildSetting(key: CharacterKey, value: Partial<BuildSetting>) {
     const oldState = this.buildSettings.get(key) as BuildSetting
-    this.saveBuildSetting(key, buildSettingsReducer(oldState, value))
+    this.saveBuildSetting(key, validateBuildSetting(buildSettingsReducer(oldState, value)))
   }
 
   createArt(value: IArtifact): string {
