@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
 import { input, tally, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
-import { allElements, CharacterKey, ElementKey } from '../../../Types/consts'
+import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
@@ -79,12 +79,7 @@ const datamine = {
   }
 }
 
-const a1_hp_ = greaterEq(input.asc, 1, subscript(
-  sum(...allElements.map(ele =>
-    greaterEq(tally[ele], 1, 1)
-  )),
-  datamine.passive1.hp_Arr,
-))
+const a1_hp_ = greaterEq(input.asc, 1, subscript(tally.ele, datamine.passive1.hp_Arr))
 
 const [condA4StacksPath, condA4Stacks] = cond(key, "a4Stacks")
 const a4Stacks = range(0, datamine.passive2.maxStacks)

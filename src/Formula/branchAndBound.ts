@@ -1,6 +1,6 @@
 import { constant, prod, cmp } from "./utils"
 import { NumNode } from "./type"
-import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/background"
+import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
 import { toLinearUpperBound, LinearForm } from './linearUpperBound'
 import { precompute, optimize } from "./optimization"
 import { expandPoly, productPossible } from './expandPoly'
@@ -22,8 +22,9 @@ function feasibleObjVal(f: NumNode, a: ArtifactsBySlot, lin: LinearForm) {
     return Object.fromEntries(Object.entries(pv).map(([k, v]) => [k, v + bestArt.values[k]]))
   }, { ...a.base })
 
-  const compute = precompute([f], n => n.path[1])
-  return { dmgVal: compute(statsFeasible)[0], arts: selected }
+  const [compute, mapping, buffer] = precompute([f], n => n.path[1])
+  // return { dmgVal: compute(statsFeasible)[0], arts: selected }
+  return { dmgVal: 0, arts: selected }
 }
 
 function boundsUpperLower(a: ArtifactsBySlot) {
@@ -152,7 +153,7 @@ function bnbWorker({ f, a, thresh, cachedCompute }: WorkerPayload): { branches: 
   builds.push(feas)
   if (est.maxEst < feas.dmgVal) {
     console.log('~~~~~~~~~~~~ BIG PROBLEM UH OH ~~~~~~~~~~~~')
-    debug2(a, f0)
+    // debug2(a, f0)
     throw Error('BIG PROBLEM: UPPER BOUND VIOLATED')
   }
 
@@ -336,127 +337,4 @@ export function optimizeBNB(func: NumNode, a: ArtifactsBySlot) {
 
   console.log('Best found:', { dmg: lowerBoundDmg, bestBuild })
   console.log({ enumerated, pruned, tottal })
-}
-
-
-function debug2(a: ArtifactsBySlot, f: NumNode) {
-  console.log(a)
-  console.log(f)
-  const { statsMin, statsMax } = boundsUpperLower(a)
-  console.log('minstat', statsMin)
-  console.log('maxstat', statsMax)
-  f = simplifyFormulaSubstitution(f, statsMin, statsMax)
-
-  function isVari(n: NumNode) {
-    switch (n.operation) {
-      case 'read':
-        // if (mainStatExclusiveKeys.includes(n.path[1])) return true
-        return true
-      case 'max': case 'min':
-      case 'sum_frac':
-      case 'threshold':
-        return true
-      case 'res':
-      default:
-        return false
-    }
-  }
-
-  let ee = expandPoly(f, isVari)
-  console.log('expanded', ee)
-
-  let compute1 = precompute([f], n => n.path[1])
-  let compute2 = precompute([ee], n => n.path[1])
-  console.log('Compare expand number', compute1(statsMax)[0], compute2(statsMax)[0])
-
-  let ww = ee.operands as NumNode[]
-  ww = ww.filter(productPossible)
-  let zzz = ww.flatMap(e => toLinearUpperBound(e, statsMin, statsMax))
-  let lin = zzz.reduce((pv, lin) => {
-    Object.entries(lin.w).forEach(([k, v]) => pv.w[k] = v + (pv.w[k] ?? 0))
-    return { w: pv.w, c: pv.c + lin.c, err: pv.err + lin.err }
-  }, { w: {}, c: 0, err: 0 })
-  console.log(ww)
-  console.log(ww.map(e => toLinearUpperBound(e, statsMin, statsMax)))
-
-  const maxTotVal = Object.entries(a.values).reduce((maxTotVal, [slotKey, slotArts]) => {
-    const maxSlot = slotArts.reduce((maxArtVal, art) => {
-      const artVal = Object.entries(lin.w).reduce((dotProd, [statkey, w]) => dotProd + w * (art.values[statkey] ?? 0), 0)
-      const artVal0 = Object.entries(lin.w).reduce((dotProd, [statkey, w]) => dotProd + w * (maxArtVal.values[statkey] ?? 0), 0)
-      return artVal > artVal0 ? art : maxArtVal;
-    })
-    return Object.fromEntries(Object.entries(maxTotVal).map(([statKey, val]) => [statKey, val + maxSlot.values[statKey]]))
-  }, a.base)
-
-  console.log('stats', maxTotVal)
-
-  let stats = maxTotVal
-  console.log('======= numeric cmp =========')
-  const compute = precompute(ww, n => n.path[1])
-  const cmp1 = compute(stats).slice(0, ww.length)
-  console.log(cmp1)
-
-  let zz = ww.map(e => {
-    let lf = toLinearUpperBound(e, statsMin, statsMax)
-    if (Array.isArray(lf)) {
-      let wow = lf.map(ll => Object.entries(ll.w).reduce((tot, [k, wk]) => tot + wk * stats[k], 0) + ll.c)
-      return wow.reduce((a, b) => a + b)
-    }
-    else {
-      return Object.entries(lf.w).reduce((tot, [k, wk]) => tot + wk * stats[k], 0) + lf.c
-    }
-  })
-  console.log(zz)
-
-  console.log(cmp1.reduce((a, b) => a + b), zz.reduce((a, b) => a + b, 0))
-  console.log(maxWeight(a, lin))
-  console.log(estimateMaximum(f, a))
-
-  console.log('=========== shitty debug time ===============')
-  // console.log(ww[0])
-  // console.log(toLinearUpperBound(ww[0], statsMin, statsMax))
-}
-
-function debug3() {
-  const fbad: NumNode = { "operation": "mul", "operands": [{ "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "ViridescentVenerer"], "accu": "add", "info": { "key": "ViridescentVenerer" }, "type": "number" }, { "operation": "const", "operands": [], "value": 4, 'type': 'number' }, { "operation": "const", "operands": [], "value": 0.6, 'type': 'number', "info": { "key": "_" } }, { "operation": "const", "operands": [], "value": 0, 'type': 'number' }], "info": { "key": "swirl_dmg_", "variant": "swirl", "source": "ViridescentVenerer" }, "emptyOn": "l" }, { "operation": "res", "operands": [{ "operation": "add", "operands": [{ "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "ViridescentVenerer"], "accu": "add", "info": { "key": "ViridescentVenerer" }, "type": "number" }, { "operation": "const", "operands": [], "value": 4, 'type': 'number' }, { "operation": "const", "operands": [], "value": -0.4, 'type': 'number', "info": { "key": "_" } }, { "operation": "const", "operands": [], "value": 0, 'type': 'number' }], "info": { "isTeamBuff": true, "key": "cryo_enemyRes_", "variant": "cryo", "source": "ViridescentVenerer" }, "emptyOn": "l" }, { "operation": "const", "operands": [], "value": 0.1, 'type': 'number' }] }] }, { "operation": "const", "operands": [], "value": 9323.979839999998, 'type': 'number' }] }
-  const statsMin = {
-    "0": 0.0874,
-    "1": 0.7718999999999999,
-    "2": 0.7718999999999999,
-    "GladiatorsFinale": 0,
-    "ShimenawasReminiscence": 0,
-    "atk": 373.25,
-    "EmblemOfSeveredFate": 0,
-    "enerRech_": 0,
-    "NoblesseOblige": 0,
-    "ViridescentVenerer": 3,
-    "anemo_dmg_": 0,
-    "Berserker": 0,
-    "critRate_": 0.23719999999999994,
-    "BlizzardStrayer": 0,
-    "cryo_dmg_": 0,
-    "WanderersTroupe": 0,
-    "eleMas": 559.5
-  }
-  const statsMax = {
-    "0": 0.4255,
-    "1": 1.1916,
-    "2": 1.1916,
-    "GladiatorsFinale": 0,
-    "ShimenawasReminiscence": 1,
-    "atk": 392.7,
-    "EmblemOfSeveredFate": 0,
-    "enerRech_": 0.1684,
-    "NoblesseOblige": 0,
-    "ViridescentVenerer": 4,
-    "anemo_dmg_": 0,
-    "Berserker": 0,
-    "critRate_": 0.39659999999999995,
-    "BlizzardStrayer": 0,
-    "cryo_dmg_": 0,
-    "WanderersTroupe": 0,
-    "eleMas": 559.5
-  }
-
-  console.log(toLinearUpperBound(fbad, statsMin, statsMax))
 }

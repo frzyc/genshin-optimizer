@@ -1,10 +1,10 @@
-import { Data, NumNode } from "../Formula/type"
-import { precompute, optimize } from "../Formula/optimization"
-import { ddx, zero_deriv } from "../Formula/differentiate"
-import { DynStat } from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common'
-import { SubstatKey, allSubstatKeys, ICachedArtifact } from "../Types/artifact"
-import { SlotKey, Rarity } from '../Types/consts';
-import Artifact from "../Data/Artifacts/Artifact"
+import { Data, NumNode } from "../../../../Formula/type"
+import { precompute, optimize } from "../../../../Formula/optimization"
+import { ddx, zero_deriv } from "../../../../Formula/differentiate"
+import { DynStat } from '../../../..//PageCharacter/CharacterDisplay/Tabs/TabOptimize/common'
+import { SubstatKey, allSubstatKeys, ICachedArtifact } from "../../../../Types/artifact"
+import { SlotKey, Rarity } from '../../../../Types/consts';
+import Artifact from "../../../../Data/Artifacts/Artifact"
 import { crawlUpgrades } from "./artifactUpgradeCrawl"
 import { gaussianPE, mvnPE_good } from "./mvncdf"
 
@@ -211,6 +211,7 @@ export function querySetup(formulas: NumNode[], thresholds: number[], curBuild: 
 
   const skippableDerivs = allSubstatKeys.map(sub => formulas.every(f => zero_deriv(f, f => f.path[1], sub)))
   const structuredEval = (stats: Dict<string, number>) => {
+    Object.values(mapping).forEach(k => buffer[k] = 0)  // Need to reset buffer before evaluating
     Object.entries(stats).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
     const out = evalFn()
     return formulas.map((_, i) => {

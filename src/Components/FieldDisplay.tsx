@@ -61,7 +61,10 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: 
   const formulaTextOverlay = !!node.formula && <QuestionTooltip title={<Typography><Suspense fallback={<Skeleton variant="rectangular" width={300} height={30} />}>{fieldFormulaText}</Suspense></Typography>} />
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1 }} component={component} >
     <Typography color={`${node.info.variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{!!isTeamBuff && <Groups />}{icon}{fieldText}{suffix}</Typography>
-    <Typography sx={{ display: "flex", gap: 1, alignItems: "center" }} >{fieldVal}{formulaTextOverlay}</Typography>
+    <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+      <Typography noWrap>{fieldVal}</Typography>
+      {formulaTextOverlay}
+    </Box>
   </Box>
 }
 

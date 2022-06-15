@@ -31,7 +31,7 @@
   "descending": "Descending",
   "sortBy": "Sort By: ",
   "loading": "Loading...",
-  "rightsDisclaimer": "Genshin Optimizer is not affiliated with or endorsed by hoYoVerse.",
+  "rightsDisclaimer": "Genshin Optimizer is not affiliated with or endorsed by HoYoverse.",
   "appVersion": "$t(pageTitle) Version: <1>{{version}}</1>",
   "underConstruction": "Under Construction",
   "error": "Error",

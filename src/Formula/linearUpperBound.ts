@@ -1,5 +1,5 @@
 import { NumNode, ComputeNode } from "./type"
-import { DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/background"
+import { DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
 import { constant, sum, prod, cmp } from "./utils"
 import { foldSum, foldProd, expandPoly } from './expandPoly'
 import { precompute, allOperations } from "./optimization"
@@ -15,7 +15,8 @@ export type LinearForm = {
 
 function minMax(node: NumNode, lower: DynStat, upper: DynStat) {
   let f = precompute([node], n => n.path[1])
-  return [f(lower)[0], f(upper)[0]]
+  // return [f(lower)[0], f(upper)[0]]
+  return [0, 0]
 }
 
 /**

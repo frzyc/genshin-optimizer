@@ -25,41 +25,38 @@ import { UIData } from '../../../../Formula/uiData';
 import { initGlobalSettings } from '../../../../GlobalSettings';
 import KeyMap from '../../../../KeyMap';
 import useCharacterReducer, { characterReducerAction } from '../../../../ReactHooks/useCharacterReducer';
+import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useDBState from '../../../../ReactHooks/useDBState';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
-import { ICachedArtifact, MainStatKey } from '../../../../Types/artifact';
+import { ICachedArtifact } from '../../../../Types/artifact';
 import { ICachedCharacter } from '../../../../Types/character';
-import { ArtifactSetKey, CharacterKey, SlotKey } from '../../../../Types/consts';
+import { CharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
-import { Build, ChartData, Finalize, FinalizeResult, Request, Setup, WorkerResult } from './background';
+import { FinalizeResult, Setup, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
-import { buildSettingsReducer, initialBuildSettings } from './BuildSetting';
-import { countBuilds, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
-import ArtifactSetConditional from './Components/ArtifactSetConditional';
-import ArtifactSetPicker from './Components/ArtifactSetPicker';
+import useBuildSetting from './BuildSetting';
+import { artSetPerm, Build, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
+import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
-import BuildAlert, { warningBuildNumber } from './Components/BuildAlert';
+import BuildAlert, { BuildStatus } from './Components/BuildAlert';
 import BuildDisplayItem from './Components/BuildDisplayItem';
-import ChartCard from './Components/ChartCard';
+import ChartCard, { ChartData } from './Components/ChartCard';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
-import { artSetPerm, compactArtifacts, dynamicData, splitFiltersBySet } from './foreground';
-// import { optimizeBNB } from '../../../../Formula/branchAndBound'
+import { compactArtifacts, dynamicData } from './foreground';
 
 export default function TabBuild() {
   const { character, character: { key: characterKey } } = useContext(DataContext)
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { database } = useContext(DatabaseContext)
 
-  const [generatingBuilds, setgeneratingBuilds] = useState(false)
-  const [generationProgress, setgenerationProgress] = useState(0)
-  const [generationDuration, setgenerationDuration] = useState(0)//in ms
-  const [generationSkipped, setgenerationSkipped] = useState(0)
+  const [buildStatus, setBuildStatus] = useState({ type: "inactive", tested: 0, failed: 0, skipped: 0, total: 0 } as BuildStatus)
+  const generatingBuilds = buildStatus.type !== "inactive"
 
   const [chartData, setchartData] = useState(undefined as ChartData | undefined)
 
@@ -70,39 +67,37 @@ export default function TabBuild() {
   const setMaxWorkers = useCallback(threads => setOptimizeDBState({ threads }), [setOptimizeDBState],)
 
   const characterDispatch = useCharacterReducer(characterKey)
-  const buildSettings = character?.buildSettings ?? initialBuildSettings()
-  const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSettings
-  const buildsArts = useMemo(() => builds.map(build => build.map(i => database._getArt(i)!)), [builds, database])
-  const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
-  const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
+  const onClickTeammate = useCharSelectionCallback()
   const compareData = character?.compareData ?? false
 
   const noArtifact = useMemo(() => !database._getArts().length, [database])
 
-  const buildSettingsDispatch = useCallback((action) =>
-    characterDispatch && characterDispatch({ buildSettings: buildSettingsReducer(buildSettings, action) })
-    , [characterDispatch, buildSettings])
-
-  const onChangeMainStatKey = useCallback((slotKey: SlotKey, mainStatKey?: MainStatKey) => {
-    if (mainStatKey === undefined) buildSettingsDispatch({ type: "mainStatKeyReset", slotKey })
-    else buildSettingsDispatch({ type: "mainStatKey", slotKey, mainStatKey })
-  }, [buildSettingsDispatch])
+  const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
+  const { plotBase, optimizationTarget, mainStatAssumptionLevel, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting
+  const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
+  const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
+  const buildsArts = useMemo(() => builds.map(build => build.map(i => database._getArt(i)!)), [builds, database])
 
   //register changes in artifact database
   useEffect(() =>
     database.followAnyArt(setArtsDirty),
     [setArtsDirty, database])
 
-  const { split, setPerms, totBuildNumber } = useMemo(() => {
-    if (!characterKey) // Make sure we have all slotKeys
-      return { totBuildNumber: 0 }
+  // Provides a function to cancel the work
+  const cancelToken = useRef(() => { })
+  //terminate worker when component unmounts
+  useEffect(() => () => cancelToken.current(), [])
+  const generateBuilds = useCallback(async () => {
+    const { artSetExclusion, plotBase, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, maxBuildsToShow, levelLow, levelHigh } = buildSetting
+    if (!characterKey || !optimizationTarget) return
+
     let cantTakeList: CharacterKey[] = []
     if (useEquippedArts) {
       const index = equipmentPriority.indexOf(characterKey)
       if (index < 0) cantTakeList = [...equipmentPriority]
       else cantTakeList = equipmentPriority.slice(0, index)
     }
-    const arts = database._getArts().filter(art => {
+    const filteredArts = database._getArts().filter(art => {
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -116,23 +111,8 @@ export default function TabBuild() {
       if (art.location && useEquippedArts && cantTakeList.includes(art.location)) return false
       return true
     })
-    const split = compactArtifacts(arts, mainStatAssumptionLevel)
-    const setPerms = [...artSetPerm([setFilters.map(({ key, num }) => ({ key, min: num }))])]
-    const totBuildNumber = [...setPerms].map(perm => countBuilds(filterArts(split, perm))).reduce((a, b) => a + b, 0)
-    return artsDirty && { split, setPerms, totBuildNumber }
-  }, [characterKey, useExcludedArts, useEquippedArts, equipmentPriority, mainStatKeys, setFilters, levelLow, levelHigh, artsDirty, database, mainStatAssumptionLevel])
+    const split = compactArtifacts(filteredArts, mainStatAssumptionLevel)
 
-  // Reset the Alert by setting progress to zero.
-  useEffect(() => {
-    setgenerationProgress(0)
-  }, [totBuildNumber])
-
-  // Provides a function to cancel the work
-  const cancelToken = useRef(() => { })
-  //terminate worker when component unmounts
-  useEffect(() => () => cancelToken.current(), [])
-  const generateBuilds = useCallback(async () => {
-    if (!characterKey || !optimizationTarget || !split || !setPerms) return
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
     const workerData = uiDataForTeam(teamData.teamData, characterKey)[characterKey as CharacterKey]?.target.data![0]
@@ -146,25 +126,22 @@ export default function TabBuild() {
       return { value: input.total[key], minimum: value }
     }).filter(x => x.value && x.minimum > -Infinity)
 
-    const t1 = performance.now()
-    setgeneratingBuilds(true)
     setchartData(undefined)
-    setgenerationDuration(0)
-    setgenerationProgress(0)
-    setgenerationSkipped(0)
 
     const cancelled = new Promise<void>(r => cancelToken.current = r)
 
     let nodes = [...valueFilter.map(x => x.value), optimizationTargetNode], arts = split!
-    const origCount = totBuildNumber, minimum = [...valueFilter.map(x => x.minimum), -Infinity]
+    const setPerms = filterFeasiblePerm(artSetPerm(artSetExclusion, Object.values(split.values).flatMap(x => x.map(x => x.set!))), split)
+
+    const minimum = [...valueFilter.map(x => x.minimum), -Infinity]
+    const status: Omit<BuildStatus, "type"> = { tested: 0, failed: 0, skipped: 0, total: NaN, startTime: performance.now() }
     if (plotBase) {
       nodes.push(input.total[plotBase])
       minimum.push(-Infinity)
     }
 
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
-    ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow,
-      new Set(setFilters.map(x => x.key as ArtifactSetKey)), {
+    ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow, artSetExclusion, {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
     }))
     // Can be further folded after pruning
@@ -173,27 +150,32 @@ export default function TabBuild() {
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
 
-    // optimizeBNB(optimizationTargetNode, arts)
-    // console.log(arts)
-
-    let wrap = {
-      buildCount: 0, failedCount: 0, skippedCount: origCount,
-      buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity)
+    const wrap = {
+      buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity),
+      finalizing: false
     }
-    setPerms.forEach(filter => wrap.skippedCount -= countBuilds(filterArts(arts, filter)))
 
-    const setPerm = splitFiltersBySet(arts, setPerms,
-      maxWorkers === 1
-        // Don't split for single worker
-        ? Infinity
-        // 8 perms / worker, up to 1M builds / perm
-        : Math.min(origCount / maxWorkers / 4, 1_000_000))[Symbol.iterator]()
+    const minFilterCount = maxWorkers === 1 ? Infinity : 8_000_000 // Don't split for single worker
+    const maxRequestFilterInFlight = maxWorkers * 4
+    const unprunedFilters = setPerms[Symbol.iterator](), requestFilters: RequestFilter[] = []
+    const idleWorkers: { id: number, worker: Worker }[] = []
+    const pruningID = new Set<number>()
 
-    function fetchWork(): Request | undefined {
-      const { done, value } = setPerm.next()
+    function fetchContinueWork(): WorkerCommand {
+      return { command: "split", filter: undefined, minCount: minFilterCount, threshold: wrap.buildValues[maxBuildsToShow - 1] }
+    }
+    function fetchPruningWork(): WorkerCommand | undefined {
+      const { done, value } = unprunedFilters.next()
       return done ? undefined : {
-        command: "request",
+        command: "split", minCount: minFilterCount,
         threshold: wrap.buildValues[maxBuildsToShow - 1], filter: value,
+      }
+    }
+    function fetchRequestWork(): WorkerCommand | undefined {
+      const filter = requestFilters.pop()
+      return !filter ? undefined : {
+        command: "iterate",
+        threshold: wrap.buildValues[maxBuildsToShow - 1], filter
       }
     }
 
@@ -207,35 +189,42 @@ export default function TabBuild() {
 
       const setup: Setup = {
         command: "setup",
-        id: `${i}`,
-        arts,
+        id: i, arts,
         optimizationTarget: optimizationTargetNode,
         plotBase: plotBaseNode,
         maxBuilds: maxBuildsToShow,
         filters
       }
       worker.postMessage(setup, undefined)
+      if (i === 0) {
+        const countCommand: WorkerCommand = { command: "count", exclusion: artSetExclusion }
+        worker.postMessage(countCommand, undefined)
+      }
       let finalize: (_: FinalizeResult) => void
       const finalized = new Promise<FinalizeResult>(r => finalize = r)
-      worker.onmessage = async ({ data }: { data: WorkerResult }) => {
+      worker.onmessage = async ({ data }: { data: { id: number } & WorkerResult }) => {
         switch (data.command) {
+          case "count":
+            status.total = data.count
+            return
           case "interim":
-            wrap.buildCount += data.buildCount
-            wrap.failedCount += data.failedCount
-            wrap.skippedCount += data.skippedCount
+            status.tested += data.tested
+            status.failed += data.failed
+            status.skipped += data.skipped
             if (data.buildValues) {
               wrap.buildValues.push(...data.buildValues)
               wrap.buildValues.sort((a, b) => b - a).splice(maxBuildsToShow)
             }
             break
-          case "request":
-            const work = fetchWork()
-            if (work) {
-              worker.postMessage(work)
-            } else {
-              const finalizeCommand: Finalize = { command: "finalize" }
-              worker.postMessage(finalizeCommand)
-            }
+          case "split":
+            if (data.filter) {
+              requestFilters.push(data.filter)
+              pruningID.add(data.id)
+            } else pruningID.delete(data.id)
+            idleWorkers.push({ id: data.id, worker })
+            break
+          case "iterate":
+            idleWorkers.push({ id: data.id, worker })
             break
           case "finalize":
             worker.terminate()
@@ -243,25 +232,41 @@ export default function TabBuild() {
             break
           default: console.log("DEBUG", data)
         }
+        while (idleWorkers.length) {
+          const { id, worker } = idleWorkers.pop()!
+          let work: WorkerCommand | undefined
+          if (wrap.finalizing) work = { command: "finalize" }
+          else if (requestFilters.length >= maxRequestFilterInFlight) work = fetchRequestWork()
+          else if (pruningID.has(id)) work = fetchContinueWork()
+          else if (!(id % 2)) work = fetchPruningWork()
+          if (!work) work = fetchRequestWork()
+
+          if (work) worker.postMessage(work)
+          else {
+            idleWorkers.push({ id, worker })
+            if (idleWorkers.length === maxWorkers) {
+              wrap.finalizing = true
+              continue
+            }
+            break
+          }
+        }
       }
 
       cancelled.then(() => worker.terminate())
       finalizedList.push(finalized)
     }
 
-    const buildTimer = setInterval(() => {
-      setgenerationProgress(wrap.buildCount)
-      setgenerationSkipped(wrap.skippedCount)
-      setgenerationDuration(performance.now() - t1)
-    }, 100)
+    const buildTimer = setInterval(() => setBuildStatus({ type: "active", ...status }), 100)
     const results = await Promise.any([Promise.all(finalizedList), cancelled])
     clearInterval(buildTimer)
     cancelToken.current = () => { }
 
     if (!results) {
-      setgenerationDuration(0)
-      setgenerationProgress(0)
-      setgenerationSkipped(0)
+      status.tested = 0
+      status.failed = 0
+      status.skipped = 0
+      status.total = 0
     } else {
       if (plotBase) {
         const plotData = mergePlot(results.map(x => x.plotData!))
@@ -279,22 +284,17 @@ export default function TabBuild() {
       }
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
       if (process.env.NODE_ENV === "development") console.log("Build Result", builds)
-      buildSettingsDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
-      const totalDuration = performance.now() - t1
-
-      setgenerationProgress(wrap.buildCount)
-      setgenerationSkipped(wrap.skippedCount)
-      setgenerationDuration(totalDuration)
+      buildSettingDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
     }
-    setgeneratingBuilds(false)
-  }, [characterKey, database, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, plotBase, setPerms, split, buildSettingsDispatch, setFilters, statFilters, maxWorkers])
+    setBuildStatus({ ...status, type: "inactive", finishTime: performance.now() })
+  }, [characterKey, database, buildSettingDispatch, maxWorkers, buildSetting, equipmentPriority])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
   const setPlotBase = useCallback(plotBase => {
-    buildSettingsDispatch({ plotBase })
+    buildSettingDispatch({ plotBase })
     setchartData(undefined)
-  }, [buildSettingsDispatch])
+  }, [buildSettingDispatch])
   const dataContext: dataContextObj | undefined = useMemo(() => {
     return data && characterSheet && character && teamData && {
       data,
@@ -315,7 +315,7 @@ export default function TabBuild() {
         {/* 1*/}
         <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
           {/* character card */}
-          <Box><CharacterCard characterKey={characterKey} /></Box>
+          <Box><CharacterCard characterKey={characterKey} onClickTeammate={onClickTeammate} /></Box>
         </Grid>
 
         {/* 2 */}
@@ -325,32 +325,24 @@ export default function TabBuild() {
               <Typography gutterBottom>Main Stat</Typography>
               <BootstrapTooltip placement="top" title={<Typography><strong>Level Assumption</strong> changes mainstat value to be at least a specific level. Does not change substats.</Typography>}>
                 <Box>
-                  <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={mainStatAssumptionLevel => buildSettingsDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
+                  <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={mainStatAssumptionLevel => buildSettingDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
                 </Box>
               </BootstrapTooltip>
             </CardContent>
             {/* main stat selector */}
-            <MainStatSelectionCard
-              mainStatKeys={mainStatKeys}
-              onChangeMainStatKey={onChangeMainStatKey}
-              disabled={generatingBuilds}
-            />
+            <MainStatSelectionCard disabled={generatingBuilds} />
           </CardLight>
         </Grid>
 
         {/* 3 */}
-        <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
-
-          {/*Minimum Final Stat Filter */}
-          <StatFilterCard statFilters={statFilters} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={generatingBuilds} />
-
-          <BonusStatsCard />
+        <Grid item xs={12} sm={6} lg={6} display="flex" flexDirection="column" gap={1}>
+          <ArtifactSetConfig disabled={generatingBuilds} />
 
           {/* use excluded */}
-          <UseExcluded disabled={generatingBuilds} useExcludedArts={useExcludedArts} buildSettingsDispatch={buildSettingsDispatch} artsDirty={artsDirty} />
+          <UseExcluded disabled={generatingBuilds} artsDirty={artsDirty} />
 
           {/* use equipped */}
-          <UseEquipped disabled={generatingBuilds} useEquippedArts={useEquippedArts} buildSettingsDispatch={buildSettingsDispatch} />
+          <UseEquipped disabled={generatingBuilds} />
 
           { /* Level Filter */}
           <CardLight>
@@ -358,31 +350,26 @@ export default function TabBuild() {
               Artifact Level Filter
             </CardContent>
             <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh}
-              setLow={levelLow => buildSettingsDispatch({ levelLow })}
-              setHigh={levelHigh => buildSettingsDispatch({ levelHigh })}
-              setBoth={(levelLow, levelHigh) => buildSettingsDispatch({ levelLow, levelHigh })}
+              setLow={levelLow => buildSettingDispatch({ levelLow })}
+              setHigh={levelHigh => buildSettingDispatch({ levelHigh })}
+              setBoth={(levelLow, levelHigh) => buildSettingDispatch({ levelLow, levelHigh })}
               disabled={generatingBuilds}
             />
           </CardLight>
+
+          {/*Minimum Final Stat Filter */}
+          <StatFilterCard disabled={generatingBuilds} />
+
+          <BonusStatsCard />
         </Grid>
-
-        {/* 4 */}
-        <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
-          <ArtifactSetConditional disabled={generatingBuilds} />
-
-          {/* Artifact set pickers */}
-          {setFilters.map((setFilter, index) => (index <= setFilters.filter(s => s.key).length) && <ArtifactSetPicker key={index} index={index} setFilters={setFilters}
-            disabled={generatingBuilds} onChange={(index, key, num) => buildSettingsDispatch({ type: 'setFilter', index, key, num })} />)}
-        </Grid>
-
       </Grid>
       {/* Footer */}
       <Grid container spacing={1}>
         <Grid item flexGrow={1} >
           <ButtonGroup>
             <Button
-              disabled={!characterKey || generatingBuilds || !optimizationTarget || !totBuildNumber || !objPathValue(data?.getDisplay(), optimizationTarget)}
-              color={(characterKey && totBuildNumber <= warningBuildNumber) ? "success" : "warning"}
+              disabled={!characterKey || generatingBuilds || !optimizationTarget || !objPathValue(data?.getDisplay(), optimizationTarget)}
+              color={characterKey ? "success" : "warning"}
               onClick={generateBuilds}
               startIcon={<FontAwesomeIcon icon={faCalculator} />}
             >Generate Builds</Button>
@@ -395,7 +382,7 @@ export default function TabBuild() {
               </MenuItem>
               <Divider />
               {maxBuildsToShowList.map(v => <MenuItem key={v}
-                onClick={() => buildSettingsDispatch({ maxBuildsToShow: v })}>{v} {v === 1 ? "Build" : "Builds"}</MenuItem>)}
+                onClick={() => buildSettingDispatch({ maxBuildsToShow: v })}>{v} {v === 1 ? "Build" : "Builds"}</MenuItem>)}
             </DropdownButton>
             <DropdownButton disabled={generatingBuilds || !characterKey}
               title={<span><b>{maxWorkers}</b> {maxWorkers === 1 ? "Thread" : "Threads"}</span>}>
@@ -420,15 +407,13 @@ export default function TabBuild() {
           <span>Optimization Target: </span>
           {<OptimizationTargetSelector
             optimizationTarget={optimizationTarget}
-            setTarget={target => buildSettingsDispatch({ optimizationTarget: target })}
+            setTarget={target => buildSettingDispatch({ optimizationTarget: target })}
             disabled={!!generatingBuilds}
           />}
         </Grid>
       </Grid>
 
-      {!!characterKey && <Box >
-        <BuildAlert {...{ totBuildNumber, generatingBuilds, generationSkipped, generationProgress, generationDuration, characterName, maxBuildsToShow }} />
-      </Box>}
+      {!!characterKey && <BuildAlert {...{ status: buildStatus, characterName, maxBuildsToShow }} />}
       {tcMode && <Box >
         <ChartCard disabled={generatingBuilds} chartData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} />
       </Box>}
@@ -439,7 +424,7 @@ export default function TabBuild() {
               {builds ? <span>Showing <strong>{builds.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
                 : <span>Select a character to generate builds.</span>}
             </Typography>
-            <Button disabled={!builds.length} color="error" onClick={() => buildSettingsDispatch({ builds: [], buildDate: 0 })} >Clear Builds</Button>
+            <Button disabled={!builds.length} color="error" onClick={() => buildSettingDispatch({ builds: [], buildDate: 0 })} >Clear Builds</Button>
           </Box>
           <Grid container display="flex" spacing={1}>
             <Grid item><HitModeToggle size="small" /></Grid>

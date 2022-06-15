@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import { BuildSetting, buildSettingsReducer, initialBuildSettings } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting";
 import { IArtifact, ICachedArtifact } from "../Types/artifact";
 import { ICachedCharacter, ICharacter } from "../Types/character";
 import { allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
@@ -19,6 +20,7 @@ export class ArtCharDatabase {
   chars = new DataManager<CharacterKey, ICachedCharacter>()
   weapons = new DataManager<string, ICachedWeapon>()
   states = new DataManager<string, object>()
+  buildSettings = new DataManager<string, BuildSetting>()
 
   constructor(storage: DBStorage, forcedUpdate = false) {
     this.storage = storage
@@ -140,6 +142,20 @@ export class ArtCharDatabase {
         if (migrated) this.storage.set(key, stateObj)
       }
     }
+    for (const key of storage.keys) {
+      if (key.startsWith("buildSetting_")) {
+        const [, charKey] = key.split("buildSetting_")
+        const buildSettingsObj = storage.get(key)
+        if (!buildSettingsObj) {
+          // Non-recoverable
+          storage.remove(key)
+          continue
+        }
+        this.buildSettings.set(charKey, buildSettingsObj)
+        // Save migrated version back to db
+        if (migrated) this.storage.set(key, buildSettingsObj)
+      }
+    }
   }
 
   private saveArt(key: string, art: ICachedArtifact) {
@@ -158,6 +174,10 @@ export class ArtCharDatabase {
     this.storage.set(`state_${key}`, obj)
     this.states.set(key, obj)
   }
+  private saveBuildSetting(key: string, obj: BuildSetting) {
+    this.storage.set(`buildSetting_${key}`, obj)
+    this.buildSettings.set(key, obj)
+  }
   // TODO: Make theses `_` functions private once we migrate to use `followXXX`,
   // or de-underscore it if we decide that these are to stay
   _getArt(key: string) { return this.arts.get(key) }
@@ -173,11 +193,19 @@ export class ArtCharDatabase {
     this.saveState(key, newState)
     return this.states.get(key) as O
   }
+  _getBuildSetting(key: CharacterKey) {
+    const bs = this.buildSettings.get(key)
+    if (bs) return bs
+    const newBs = initialBuildSettings()
+    this.saveBuildSetting(key, newBs)
+    return this.buildSettings.get(key)
+  }
 
   followChar(key: CharacterKey, cb: Callback<ICachedCharacter>) { return this.chars.follow(key, cb) }
   followArt(key: string, cb: Callback<ICachedArtifact>) { return this.arts.follow(key, cb) }
   followWeapon(key: string, cb: Callback<ICachedWeapon>) { return this.weapons.follow(key, cb) }
   followState<O extends object>(key: string, cb: (arg: O) => void) { return this.states.follow(key, cb as any) }
+  followBuildSetting(key: string, cb: Callback<BuildSetting>) { return this.buildSettings.follow(key, cb) }
 
   followAnyChar(cb: (key: CharacterKey | {}) => void): (() => void) | undefined { return this.chars.followAny(cb) }
   followAnyArt(cb: (key: string | {}) => void): (() => void) | undefined { return this.arts.followAny(cb) }
@@ -236,6 +264,10 @@ export class ArtCharDatabase {
   updateState<O extends object>(id: string, value: Partial<O>) {
     const oldState = this.states.get(id) as O
     this.saveState(id, { ...oldState, ...value })
+  }
+  updateBuildSetting(key: CharacterKey, value: Partial<BuildSetting>) {
+    const oldState = this.buildSettings.get(key) as BuildSetting
+    this.saveBuildSetting(key, buildSettingsReducer(oldState, value))
   }
 
   createArt(value: IArtifact): string {

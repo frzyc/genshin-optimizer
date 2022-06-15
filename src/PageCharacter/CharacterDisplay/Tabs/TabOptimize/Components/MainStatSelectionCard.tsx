@@ -1,26 +1,27 @@
 import { Replay } from '@mui/icons-material';
 import { Button, CardContent, Divider, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import SqBadge from '../../../../../Components/SqBadge';
 import StatIcon, { uncoloredEleIcons } from '../../../../../Components/StatIcon';
 import Artifact from '../../../../../Data/Artifacts/Artifact';
+import { DataContext } from '../../../../../DataContext';
 import KeyMap from '../../../../../KeyMap';
-import { MainStatKey } from '../../../../../Types/artifact';
-import { allElementsWithPhy, SlotKey } from '../../../../../Types/consts';
-import { BuildSetting } from '../BuildSetting';
+import { allElementsWithPhy } from '../../../../../Types/consts';
+import useBuildSetting from '../BuildSetting';
 
 export const artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"] as const
 
-export default function MainStatSelectionCard({ mainStatKeys, onChangeMainStatKey, disabled = false, }: {
-  mainStatKeys: BuildSetting["mainStatKeys"]
-  onChangeMainStatKey: (slotKey: SlotKey, mainStatKey?: MainStatKey) => void
+export default function MainStatSelectionCard({ disabled = false, }: {
   disabled?: boolean
 }) {
   const { t } = useTranslation("artifact")
+  const { character: { key: characterKey } } = useContext(DataContext)
+  const { buildSetting: { mainStatKeys }, buildSettingDispatch } = useBuildSetting(characterKey)
+
   return <Box display="flex" flexDirection="column" gap={1}>
     {artifactsSlotsToSelectMainStats.map(slotKey => {
       const numSel = mainStatKeys[slotKey].length
@@ -35,7 +36,7 @@ export default function MainStatSelectionCard({ mainStatKeys, onChangeMainStatKe
               <SqBadge color="info">{numSel ? `${numSel} Selected` : `Any`}</SqBadge>
             </Box>
             <Button color="error" size="small" disabled={!mainStatKeys[slotKey].length || disabled} sx={{ mt: -1, mb: -1 }}
-              onClick={() => onChangeMainStatKey(slotKey)}>
+              onClick={() => buildSettingDispatch({ type: "mainStatKey", slotKey })}>
               <Replay />
             </Button>
           </Box>
@@ -48,7 +49,7 @@ export default function MainStatSelectionCard({ mainStatKeys, onChangeMainStatKe
               return <Grid item key={mainStatKey} flexGrow={1} xs={i < 3 ? 4 : undefined} >
                 <BootstrapTooltip placement="top" title={<Typography><strong>{KeyMap.getArtStr(mainStatKey)}</strong></Typography>} disableInteractive>
                   <Button fullWidth size="small" color={color} sx={{ fontSize: "1.2em", height: "100%", pointerEvents: disabled ? "none" : undefined, cursor: disabled ? "none" : undefined }}
-                    onClick={() => onChangeMainStatKey(slotKey, mainStatKey)}>
+                    onClick={() => buildSettingDispatch({ type: "mainStatKey", slotKey, mainStatKey })}>
                     {element ? uncoloredEleIcons[element] : StatIcon[mainStatKey]}
                   </Button>
                 </BootstrapTooltip>

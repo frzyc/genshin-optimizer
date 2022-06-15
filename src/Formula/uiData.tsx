@@ -115,14 +115,14 @@ export class UIData {
       result.info = mergeInfo(result.info, info)
 
       // Pivot all keyed nodes for debugging
-      // if (key) result.info.pivot = true
+      // if (info.key) result.info.pivot = true
 
       if (asConst) {
         delete result.formula
         delete result.assignment
         result.dependencies = new Set()
       }
-      if (result.pivot || !result.formula)
+      if (result.info.pivot || !result.formula)
         result.mayNeedWrapping = false
     }
     createDisplay(result)
@@ -206,8 +206,7 @@ export class UIData {
   }
   private _constant<V>(value: V): ContextNodeDisplay<V> {
     return {
-      info: {},
-      value, pivot: false,
+      info: {}, value,
       empty: false,
       mayNeedWrapping: false,
       dependencies: new Set(),
@@ -261,15 +260,14 @@ export class UIData {
 
     const value = allOperations[operation](operands.map(x => x.value))
     const dependencies = new Set([...operands.flatMap(x =>
-      x.pivot && x.assignment
+      x.info.pivot && x.assignment
         ? [x.assignment, ...x.dependencies]
         : [...x.dependencies])])
     const result: ContextNodeDisplay = {
       info: { variant },
       formula: formula.display,
       empty: operands.every(x => x.empty),
-      value, mayNeedWrapping,
-      pivot: false, dependencies,
+      value, mayNeedWrapping, dependencies,
     }
     return result
   }
@@ -287,7 +285,7 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
       const { operands, shouldWrap, separator = ", " } = key
       operands.forEach((item, i, array) => {
         let itemFormula: Displayable
-        if (!item.pivot && item.formula) itemFormula = item.formula
+        if (!item.info.pivot && item.formula) itemFormula = item.formula
         else itemFormula = createFormulaComponent(item)
 
         if (shouldWrap && item.mayNeedWrapping) {
@@ -383,10 +381,7 @@ function mergeInfo(base: Info, override: Info): Info {
 
 interface ContextNodeDisplay<V = number> {
   info: Info
-
-  pivot: boolean
   empty: boolean
-
   value: V
 
   dependencies: Set<Displayable>
@@ -401,15 +396,15 @@ interface ContextNodeDisplay<V = number> {
 }
 
 const illformed: ContextNodeDisplay = {
-  info: {},
-  value: NaN, pivot: true,
+  info: { pivot: true },
+  value: NaN,
   empty: false,
   dependencies: new Set(),
   mayNeedWrapping: false
 }
 const illformedStr: ContextNodeDisplay<string | undefined> = {
-  info: {},
-  value: undefined, pivot: true,
+  info: { pivot: true },
+  value: undefined,
   empty: false,
   dependencies: new Set(),
   mayNeedWrapping: false
@@ -419,6 +414,6 @@ function makeEmpty(emptyValue: string | undefined): ContextNodeDisplay<string | 
 function makeEmpty(emptyValue: number | string | undefined): ContextNodeDisplay<number | string | undefined>
 function makeEmpty(emptyValue: number | string | undefined): ContextNodeDisplay<number | string | undefined> {
   return {
-    info: {}, value: emptyValue, pivot: false, empty: true, dependencies: new Set(), mayNeedWrapping: false
+    info: {}, value: emptyValue, empty: true, dependencies: new Set(), mayNeedWrapping: false
   }
 }

@@ -82,7 +82,7 @@ function parseImport(data: IGOOD): ImportResult | undefined {
     })
   }
   if (source === GOSource) {
-    const { dbVersion, states } = data as unknown as IGO
+    const { dbVersion, states, buildSettings } = data as unknown as IGO
     if (dbVersion < 8) return // Something doesn't look right here
     setDBVersion(storage, dbVersion)
     states && states.forEach(s => {
@@ -90,6 +90,11 @@ function parseImport(data: IGOOD): ImportResult | undefined {
       if (!key) return
       storage.set(`state_${key}`, state)
     });
+    buildSettings && buildSettings.forEach(b => {
+      const { key, ...state } = b as any
+      if (!key) return
+      storage.set(`buildSetting_${key}`, state)
+    })
   } else {
     // DO NOT CHANGE THE DB VERSION
     // Update this ONLY when it has been verified that base GOODv1 is a valid GO
