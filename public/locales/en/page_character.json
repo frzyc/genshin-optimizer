@@ -65,8 +65,10 @@
       "selected": "Selected",
       "2rainbow": "3-Rainbow",
       "4rainbow": "5-Rainbow",
-      "all2set": "All 2-Set",
-      "all4set": "All 4-Set",
+      "allowAll2set": "Allow All 2-Set",
+      "excludeAll2set": "Exclude All 2-Set",
+      "allowAll4set": "Allow All 4-Set",
+      "excludeAll4set": "Exclude All 4-Set",
       "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow Builds",
       "modal": {
         "setCond": {

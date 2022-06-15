@@ -1,9 +1,13 @@
 import { styled } from "@mui/material";
+import { HTMLAttributes } from "react";
 
+interface ColorTextProps extends HTMLAttributes<HTMLSpanElement> {
+  variant?: string
+}
 
-const ColorText = styled("span")(({ theme, color }) => {
+const ColorText = styled("span")<ColorTextProps>(({ theme, color, variant = "main" }) => {
   if (color && theme.palette[color])
-    return { color: theme.palette[color].main }
+    return { color: theme.palette[color][variant] }
   return {}
 })
 
