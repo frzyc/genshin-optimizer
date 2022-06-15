@@ -169,7 +169,7 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
 
   return <CardLight>
     <CardContent>
-      <ResponsiveContainer height="99%" aspect={3} key={upgradeOpt.id}>
+      <ResponsiveContainer width="100%" aspect={2.5} key={upgradeOpt.id}>
         <ComposedChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 20 }}>
           <XAxis dataKey="x" type="number" domain={['auto', 'auto']} allowDecimals={false} tickFormatter={v => `${v <= 0 ? "" : "+"}${v}%`} >
             <Label value='Relative Damage Potential' position='insideBottom' style={{ fill: '#eaebed' }} offset={-10} />

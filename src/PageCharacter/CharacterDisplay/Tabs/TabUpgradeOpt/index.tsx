@@ -23,7 +23,7 @@ import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import useBuildSetting from '../TabOptimize/BuildSetting';
-import {  dynamicData } from '../TabOptimize/foreground';
+import { dynamicData } from '../TabOptimize/foreground';
 import { allSlotKeys, CharacterKey, SlotKey } from '../../../../Types/consts';
 import { clamp, objPathValue } from '../../../../Util/Util';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
@@ -241,22 +241,24 @@ export default function TabUpopt() {
               </Grid>
             </CardContent></CardDark>}
 
-            <Grid item>
-              <Box display="flex" flexDirection="column" gap={1} my={1}>
+            <Grid item lg={12} spacing={1}>
+              <Grid container display="flex" flexDirection="column" gap={1}>
                 {noArtifact && <Alert severity="info" variant="filled">Looks like you haven't added any artifacts yet. If you want, there are <Link color="warning.main" component={RouterLink} to="/scanner">automatic scanners</Link> that can speed up the import process!</Alert>}
-                <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
-                  {artifactsToShow.map(art =>
-                    <Grid container key={art.id + 'asdfsf'} gap={1} wrap="nowrap">
-                      <Grid item xs={5} sm={4} md={4} lg={3} xl={3} >
-                        <ArtifactCard artifactId={art.id} editor />
+                <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: 600, minHeight: 5000 }} />}>
+                  {/* <Grid item display="flex" flexDirection="column" gap={1}> */}
+                    {artifactsToShow.map(art =>
+                      <Grid container key={art.id + 'asdfsf'} spacing={1}>
+                        <Grid item xs={5} sm={4} md={4} lg={3} xl={3} >
+                          <ArtifactCard artifactId={art.id} editor />
+                        </Grid>
+                        <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
+                          <UpgradeOptChartCard upgradeOpt={art} objMax={maxObj0} objMin={minObj0} />
+                        </Grid>
                       </Grid>
-                      <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
-                        <UpgradeOptChartCard upgradeOpt={art} objMax={maxObj0} objMin={minObj0} />
-                      </Grid>
-                    </Grid>
-                  )}
+                    )}
+                  {/* </Grid> */}
                 </Suspense>
-              </Box>
+              </Grid>
             </Grid>
 
             {numPages > 1 && <CardDark ><CardContent>
