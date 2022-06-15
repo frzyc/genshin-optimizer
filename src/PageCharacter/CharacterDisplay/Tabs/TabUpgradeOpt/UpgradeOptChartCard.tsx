@@ -1,5 +1,5 @@
 import { Button, CardContent, Grid, Box } from '@mui/material';
-import React, { useEffect, useState, useContext, useMemo } from 'react';
+import React, { useEffect, useState, useContext, useMemo, useCallback } from 'react';
 import { DatabaseContext } from '../../../../Database/Database';
 import { DataContext } from '../../../../DataContext';
 import Assets from '../../../../Assets/Assets';
@@ -77,7 +77,8 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
     (pv, { phi, cp, mu, sig2 }) => pv + cp * phi * gaussPDF(x, mu, sig2), 0)
   const thresh = upgradeOpt.thresholds;
   const thr0 = thresh[0];
-  const perc = (x: number) => 100 * (x - thr0) / thr0;
+  // const perc = (x: number) => 100 * (x - thr0) / thr0;
+  const perc = useCallback((x: number) => 100 * (x - thr0) / thr0, [thr0])
 
   const miin = objMin
   const maax = objMax
@@ -138,7 +139,7 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
     setTrueP(true_p)
     setTrueE(true_e)
     setTrueData(dataExact)
-  }, [calcExacts, maax, miin, thr0, thresh, upgradeOpt]);
+  }, [calcExacts, maax, miin, thr0, thresh, upgradeOpt, perc]);
 
   if (trueData.length === 0) {
     let binstep = (maax - miin) / nbins

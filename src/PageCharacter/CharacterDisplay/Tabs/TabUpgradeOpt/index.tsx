@@ -1,58 +1,47 @@
 import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Close } from '@mui/icons-material';
-import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography, Pagination } from '@mui/material';
+import { Alert, Box, Button, CardContent, Grid, Link, Skeleton, Typography, Pagination } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import CardDark from '../../../../Components/Card/CardDark';
 import CardLight from '../../../../Components/Card/CardLight';
 import CharacterCard from '../../../../Components/Character/CharacterCard';
 import StatFilterCard from '../../../../Components/StatFilterCard';
 import ArtifactCard from "../../../../PageArtifact/ArtifactCard";
-import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard';
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard';
-import AssumeFullLevelToggle from '../TabOptimize/Components/AssumeFullLevelToggle';
-import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
-import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton';
 import { HitModeToggle, ReactionToggle } from '../../../../Components/HitModeEditor';
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector';
-import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup';
-import CharacterSheet from '../../../../Data/Characters/CharacterSheet';
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig';
 
-import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { Trans, useTranslation } from "react-i18next";
+import React, { Suspense, useCallback, useContext, useMemo, useRef, useState } from 'react';
+import { Trans } from "react-i18next";
 import { DataContext, dataContextObj } from '../../../../DataContext';
 import { DatabaseContext } from '../../../../Database/Database';
-import { initGlobalSettings } from '../../../../GlobalSettings';
 import { optimize } from '../../../../Formula/optimization';
 import { NumNode } from '../../../../Formula/type';
 import { uiInput as input } from '../../../../Formula/index';
-import useDBState from '../../../../ReactHooks/useDBState';
-import useCharacterReducer, { characterReducerAction } from '../../../../ReactHooks/useCharacterReducer';
+import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import useBuildSetting from '../TabOptimize/BuildSetting';
-import { compactArtifacts, dynamicData } from '../TabOptimize/foreground';
+import {  dynamicData } from '../TabOptimize/foreground';
 import { allSlotKeys, CharacterKey, SlotKey } from '../../../../Types/consts';
 import { clamp, objPathValue } from '../../../../Util/Util';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
-import { querySetup, evalArtifact, toQueryArtifact, cmpQ, Query, QueryArtifact, QueryBuild, UpgradeOptResult } from './artifactQuery'
+import { querySetup, evalArtifact, toQueryArtifact, cmpQ, QueryArtifact, QueryBuild, UpgradeOptResult } from './artifactQuery'
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
 
 
 export default function TabUpopt() {
   const { character, character: { key: characterKey } } = useContext(DataContext)
-  const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { database } = useContext(DatabaseContext)
 
   const characterDispatch = useCharacterReducer(characterKey)
   const onClickTeammate = useCharSelectionCallback()
-  const compareData = character?.compareData ?? false
 
   const noArtifact = useMemo(() => !database._getArts().length, [database])
 
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
-  const { plotBase, optimizationTarget, mainStatAssumptionLevel, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting
+  const { optimizationTarget, mainStatAssumptionLevel } = buildSetting
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
@@ -169,7 +158,7 @@ export default function TabUpopt() {
     upOpt = upgradeOptExpandSink(upOpt, 0, 5)
     setArtifactUpgradeOpts(upOpt);
     console.log('result', upOpt)
-  }, [characterKey, database, setArtifactUpgradeOpts])
+  }, [characterKey, buildSetting, data, database, setArtifactUpgradeOpts, upgradeOptExpandSink])
 
   const dataContext: dataContextObj | undefined = useMemo(() => {
     // if (characterKey === '') return undefined
