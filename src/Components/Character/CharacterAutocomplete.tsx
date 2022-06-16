@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
 import usePromise from "../../ReactHooks/usePromise";
-import { allCharacterKeys, CharacterKey } from "../../Types/consts";
+import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey } from "../../Types/consts";
 import { CharacterFilterConfigs, characterFilterConfigs } from "../../Util/CharacterSort";
 import { filterFunction } from "../../Util/SortByFilters";
 import MenuItemWithImage from "../MenuItemWithImage";
@@ -132,10 +132,10 @@ function charOptions(characterKeys: CharacterKey[], filterConfigs: CharacterFilt
     base.push({ value: "Equipped", label: textForValue("Equipped") })
   }
   const faves = characterKeys
-    .filter(filterFunction({ element: "", weaponType: "", favorite: "yes", name: "" }, filterConfigs))
+    .filter(filterFunction({ element: [...allElements], weaponType: [...allWeaponTypeKeys], favorite: "yes", name: "" }, filterConfigs))
     .map(characterKey => ({ value: characterKey, label: textForValue(characterKey) }))
   const nonFaves = characterKeys
-    .filter(filterFunction({ element: "", weaponType: "", favorite: "no", name: "" }, filterConfigs))
+    .filter(filterFunction({ element: [...allElements], weaponType: [...allWeaponTypeKeys], favorite: "no", name: "" }, filterConfigs))
     .map(characterKey => ({ value: characterKey, label: textForValue(characterKey) }))
 
   return base.concat(faves).concat(nonFaves)

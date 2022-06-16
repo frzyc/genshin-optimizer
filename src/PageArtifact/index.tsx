@@ -2,7 +2,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Replay } from '@mui/icons-material';
 import { Alert, Box, Button, CardContent, Grid, Link, Pagination, Skeleton, ToggleButton, Typography } from '@mui/material';
-import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
@@ -44,19 +44,19 @@ export default function PageArtifact() {
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
-  const [state, setState] = useDBState("ArtifactDisplay", initialState)
+  const [artifactDisplayState, setArtifactDisplayState] = useDBState("ArtifactDisplay", initialState)
   const stateDispatch = useCallback(
     action => {
-      if (action.type === "reset") setState(initialArtifactSortFilter())
-      else setState(action)
+      if (action.type === "reset") setArtifactDisplayState(initialArtifactSortFilter())
+      else setArtifactDisplayState(action)
     },
-    [setState],
+    [setArtifactDisplayState],
   )
   const brPt = useMediaQueryUp()
   const maxNumArtifactsToDisplay = numToShowMap[brPt]
 
-  const { effFilter, filterOption, ascending, probabilityFilter } = state
-  let { sortType } = state
+  const { effFilter, filterOption, ascending, probabilityFilter } = artifactDisplayState
+  let { sortType } = artifactDisplayState
   const showProbability = tcMode && sortType === "probability"
   //force the sortType back to a normal value after exiting TC mode
   if (sortType === "probability" && !tcMode) stateDispatch({ sortType: artifactSortKeys[0] })
@@ -86,8 +86,9 @@ export default function PageArtifact() {
   const noArtifact = useMemo(() => !database._getArts().length, [database])
   const sortConfigs = useMemo(() => artifactSortConfigs(effFilterSet, probabilityFilter), [effFilterSet, probabilityFilter])
   const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
+  const deferredArtifactDisplayState = useDeferredValue(artifactDisplayState)
   const { artifactIds, totalArtNum } = useMemo(() => {
-    const { sortType = artifactSortKeys[0], ascending = false, filterOption } = state
+    const { sortType = artifactSortKeys[0], ascending = false, filterOption } = deferredArtifactDisplayState
     let allArtifacts = database._getArts()
     const filterFunc = filterFunction(filterOption, filterConfigs)
     const sortFunc = sortFunction(sortType, ascending, sortConfigs)
@@ -98,7 +99,7 @@ export default function PageArtifact() {
     }
     const artifactIds = allArtifacts.filter(filterFunc).sort(sortFunc).map(art => art.id)
     return { artifactIds, totalArtNum: allArtifacts.length, ...dbDirty }//use dbDirty to shoo away warnings!
-  }, [state, dbDirty, database, sortConfigs, filterConfigs, probabilityFilter, showProbability])
+  }, [deferredArtifactDisplayState, dbDirty, database, sortConfigs, filterConfigs, probabilityFilter, showProbability])
 
 
   const { artifactIdsToShow, numPages, currentPageIndex } = useMemo(() => {

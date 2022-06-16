@@ -1,8 +1,9 @@
 import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Close } from '@mui/icons-material';
+import { CheckBox, CheckBoxOutlineBlank, Close } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BackgroundWorker";
@@ -51,6 +52,7 @@ import { defThreads, useOptimizeDBState } from './DBState';
 import { compactArtifacts, dynamicData } from './foreground';
 
 export default function TabBuild() {
+  const { t } = useTranslation("page_character")
   const { character, character: { key: characterKey } } = useContext(DataContext)
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { database } = useContext(DatabaseContext)
@@ -73,7 +75,7 @@ export default function TabBuild() {
   const noArtifact = useMemo(() => !database._getArts().length, [database])
 
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
-  const { plotBase, optimizationTarget, mainStatAssumptionLevel, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting
+  const { plotBase, optimizationTarget, mainStatAssumptionLevel, allowPartial, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
   const buildsArts = useMemo(() => builds.map(build => build.map(i => database._getArt(i)!)), [builds, database])
@@ -88,7 +90,7 @@ export default function TabBuild() {
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
   const generateBuilds = useCallback(async () => {
-    const { artSetExclusion, plotBase, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, maxBuildsToShow, levelLow, levelHigh } = buildSetting
+    const { artSetExclusion, plotBase, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, levelLow, levelHigh } = buildSetting
     if (!characterKey || !optimizationTarget) return
 
     let cantTakeList: CharacterKey[] = []
@@ -111,7 +113,7 @@ export default function TabBuild() {
       if (art.location && useEquippedArts && cantTakeList.includes(art.location)) return false
       return true
     })
-    const split = compactArtifacts(filteredArts, mainStatAssumptionLevel)
+    const split = compactArtifacts(filteredArts, mainStatAssumptionLevel, allowPartial)
 
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
@@ -140,6 +142,7 @@ export default function TabBuild() {
       minimum.push(-Infinity)
     }
 
+    const prepruneArts = arts
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow, artSetExclusion, {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
@@ -195,7 +198,7 @@ export default function TabBuild() {
       }
       worker.postMessage(setup, undefined)
       if (i === 0) {
-        const countCommand: WorkerCommand = { command: "count", exclusion: artSetExclusion }
+        const countCommand: WorkerCommand = { command: "count", exclusion: artSetExclusion, arts: [arts, prepruneArts] }
         worker.postMessage(countCommand, undefined)
       }
       let finalize: (_: FinalizeResult) => void
@@ -203,7 +206,9 @@ export default function TabBuild() {
       worker.onmessage = async ({ data }: { data: { id: number } & WorkerResult }) => {
         switch (data.command) {
           case "count":
-            status.total = data.count
+            const [pruned, prepruned] = data.counts
+            status.total = prepruned
+            status.skipped += prepruned - pruned
             return
           case "interim":
             status.tested += data.tested
@@ -317,7 +322,7 @@ export default function TabBuild() {
         </Grid>
 
         {/* 2 */}
-        <Grid item xs={12} sm={6} lg={3}>
+        <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
           <CardLight>
             <CardContent  >
               <Typography gutterBottom>Main Stat</Typography>
@@ -330,6 +335,7 @@ export default function TabBuild() {
             {/* main stat selector */}
             <MainStatSelectionCard disabled={generatingBuilds} />
           </CardLight>
+          <BonusStatsCard />
         </Grid>
 
         {/* 3 */}
@@ -342,6 +348,7 @@ export default function TabBuild() {
           {/* use equipped */}
           <UseEquipped disabled={generatingBuilds} />
 
+          <Button fullWidth startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />} color={allowPartial ? "success" : "secondary"} onClick={() => buildSettingDispatch({ allowPartial: !allowPartial })}>{t`tabOptimize.allowPartial`}</Button>
           { /* Level Filter */}
           <CardLight>
             <CardContent sx={{ py: 1 }}>
@@ -358,7 +365,6 @@ export default function TabBuild() {
           {/*Minimum Final Stat Filter */}
           <StatFilterCard disabled={generatingBuilds} />
 
-          <BonusStatsCard />
         </Grid>
       </Grid>
       {/* Footer */}
