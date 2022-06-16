@@ -52,6 +52,7 @@
       "usingNum_one": "Using from <1>{{count}}</1> character",
       "usingNum_other": "Using from <1>{{count}}</1> characters"
     },
+    "allowPartial": "Allow Partial Builds (<5 artifacts)",
     "constraintFilter": {
       "title": "Build Constraints",
       "tooltip": "Set certain requirements that generated builds must confirm to. e.g. Generated builds must have at least 140% Energy Recharge."
@@ -65,8 +66,10 @@
       "selected": "Selected",
       "2rainbow": "3-Rainbow",
       "4rainbow": "5-Rainbow",
-      "all2set": "All 2-Set",
-      "all4set": "All 4-Set",
+      "allowAll2set": "Allow All 2-Set",
+      "excludeAll2set": "Exclude All 2-Set",
+      "allowAll4set": "Allow All 4-Set",
+      "excludeAll4set": "Exclude All 4-Set",
       "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow Builds",
       "modal": {
         "setCond": {
@@ -76,7 +79,7 @@
         },
         "ArtSetFilter": {
           "title": "Artifact Sets <1>Allowed<1></1></1> / <3>Excluded<1></1></3>",
-          "intro": "You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-Set, and <strong>R</strong> is rainbow(1-Set)",
+          "intro": "You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-set, and <strong>R</strong> is rainbow(off-set)",
           "2set": "<0><0>Excluding<1></1> 2-Set</0></0> would exclude 2-Set builds: <2><0>AA</0>RRR</2> and <4><0>AAA</0>RR</4>.",
           "4set": "<0><0>Excluding<1></1> 4-Set</0></0> would exclude 4-Set builds: <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",
           "2rain": "<0><0>Excluding<1></1> 3-Rainbow</0></0> would exclude 2-Set + 3-Rainbow builds: <2>AA<1>RRR</1></2> and <4>AAA<1>RR</1></4>.",
