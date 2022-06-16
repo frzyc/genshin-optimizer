@@ -27,7 +27,7 @@ import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
-const numToShowMap = { xs: 4 - 1, sm: 4 - 1, md: 6 - 1, lg: 8 - 1, xl: 8 - 1 }
+const numToShowMap = { xs: 4 - 1, sm: 4 - 1, md: 9 - 1, lg: 12 - 1, xl: 12 - 1 }
 
 function initialState() {
   return {

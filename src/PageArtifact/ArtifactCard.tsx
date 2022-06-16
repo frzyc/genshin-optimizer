@@ -101,7 +101,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
               <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
               {!slotName && <Skeleton variant="text" width={100} />}
               {slotName && <Typography noWrap sx={{ textAlign: "center", backgroundColor: "rgba(100,100,100,0.35)", borderRadius: "1em", px: 1 }}><strong>{slotName}</strong></Typography>}
-              {!slotDescTooltip && <Skeleton width={10}/>}
+              {!slotDescTooltip && <Skeleton width={10} />}
               {slotDescTooltip}
             </Box>
             <Typography color="text.secondary" variant="body2">
@@ -155,7 +155,10 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
               <FontAwesomeIcon icon={faEdit} className="fa-fw" />
             </Button>
           </Tooltip>}
-          {canExclude && <Tooltip title={<Typography>{t`artifact:excludeArtifactTip`}</Typography>} placement="top" arrow>
+          {canExclude && <Tooltip title={<Box>
+            <Typography>{t`artifact:excludeArtifactTip`}</Typography>
+            <Typography><ColorText color={exclude ? "error" : "success"}>{t(`artifact:${exclude ? "excluded" : "included"}`)}</ColorText></Typography>
+          </Box>} placement="top" arrow>
             <Button onClick={() => database.updateArt({ exclude: !exclude }, id)} color={exclude ? "error" : "success"} size="small" >
               <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
             </Button>

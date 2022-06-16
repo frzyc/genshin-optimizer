@@ -13,10 +13,14 @@ import { DatabaseContext } from "../../../../Database/Database"
 import WeaponCard from "../../../../PageWeapon/WeaponCard"
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
 import usePromise from "../../../../ReactHooks/usePromise"
-import { allRarities, WeaponTypeKey } from "../../../../Types/consts"
+import { allRarities, Rarity, WeaponTypeKey } from "../../../../Types/consts"
+import { handleMultiSelect } from "../../../../Util/MultiSelect"
 import { filterFunction, sortFunction } from '../../../../Util/SortByFilters'
 import { weaponFilterConfigs, weaponSortConfigs } from '../../../../Util/WeaponSort'
 import CompareBuildButton from "./CompareBuildButton"
+
+const rarityHandler = handleMultiSelect([...allRarities])
+
 export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClose }: { onChangeId: (id: string) => void, weaponTypeKey: WeaponTypeKey, show: boolean, onClose: () => void }) {
   const { t } = useTranslation("page_character")
   const { database } = useContext(DatabaseContext)
@@ -33,7 +37,7 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
   const filterConfigs = useMemo(() => weaponSheets && weaponFilterConfigs(weaponSheets), [weaponSheets])
   const sortConfigs = useMemo(() => weaponSheets && weaponSortConfigs(weaponSheets), [weaponSheets])
 
-  const [rarity, setRarity] = useState([5, 4, 3])
+  const [rarity, setRarity] = useState<Rarity[]>([5, 4, 3])
 
   const weaponIdList = useMemo(() => (filterConfigs && sortConfigs && dbDirty && database._getWeapons()
     .filter(filterFunction({ weaponType: weaponTypeKey, rarity }, filterConfigs))
@@ -56,8 +60,10 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
       <Divider />
       <CardContent>
         <Box mb={1}>
-          <SolidToggleButtonGroup sx={{ height: "100%" }} onChange={(e, newVal) => setRarity(newVal)} value={rarity} size="small">
-            {allRarities.map(star => <ToggleButton key={star} value={star}><Box display="flex" gap={1}><strong>{star}</strong><Stars stars={1} /></Box></ToggleButton>)}
+          <SolidToggleButtonGroup sx={{ height: "100%" }} value={rarity} size="small">
+            {allRarities.map(star => <ToggleButton key={star} value={star} onClick={() => setRarity(rarityHandler(rarity, star))}>
+              <Box display="flex" gap={1}><strong>{star}</strong><Stars stars={1} /></Box>
+            </ToggleButton>)}
           </SolidToggleButtonGroup>
         </Box>
         <Grid container spacing={1}>
