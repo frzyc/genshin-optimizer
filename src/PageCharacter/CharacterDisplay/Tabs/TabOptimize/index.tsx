@@ -164,14 +164,12 @@ export default function TabBuild() {
     const unprunedFilters = setPerms[Symbol.iterator](), requestFilters: RequestFilter[] = []
     const idleWorkers: { id: number, worker: Worker }[] = []
     const pruningID = new Set<number>()
-    console.log('unprunedFilters', unprunedFilters)
 
     function fetchContinueWork(): WorkerCommand {
       return { command: "split", filter: undefined, minCount: minFilterCount, threshold: wrap.buildValues[maxBuildsToShow - 1] }
     }
     function fetchPruningWork(): WorkerCommand | undefined {
       const { done, value } = unprunedFilters.next()
-      console.log('unprunedFiltersNext', value)
       return done ? undefined : {
         command: "split", minCount: minFilterCount,
         threshold: wrap.buildValues[maxBuildsToShow - 1], filter: value,

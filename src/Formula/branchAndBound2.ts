@@ -282,7 +282,7 @@ export function debugMe(f: NumNode, arts: ArtifactsBySlot) {
   const noFilter = { kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }
   const noFilter2: RequestFilter = objectKeyMap(allSlotKeys, _ => noFilter)
   // let minVal = -Infinity
-  let minVal = 80000
+  let minVal = 32000
   let jobs = [{ arts, filter: noFilter2, nodes: [f], min: [minVal], depth: 0 }] as BNBSplitRequest[]
 
   let cnt = 0
