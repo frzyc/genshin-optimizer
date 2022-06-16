@@ -5,6 +5,7 @@ import { Box, Grid, ToggleButton } from "@mui/material";
 import { Trans, useTranslation } from "react-i18next";
 import { FilterOption } from "../../PageArtifact/ArtifactSort";
 import { allArtifactRarities, allSlotKeys } from "../../Types/consts";
+import { handleMultiSelect } from "../../Util/MultiSelect";
 import CharacterAutocomplete from "../Character/CharacterAutocomplete";
 import SolidToggleButtonGroup from "../SolidToggleButtonGroup";
 import { Stars } from "../StarDisplay";
@@ -12,40 +13,42 @@ import { ArtifactMainStatMultiAutocomplete, ArtifactSetMultiAutocomplete, Artifa
 import ArtifactLevelSlider from "./ArtifactLevelSlider";
 import { artifactSlotIcon } from "./SlotNameWIthIcon";
 
+const exclusionValues = ["excluded", "included"] as const
+const lockedValues = ["locked", "unlocked"] as const
+
+const rarityHandler = handleMultiSelect([...allArtifactRarities])
+const slotHandler = handleMultiSelect([...allSlotKeys])
+const exclusionHandler = handleMultiSelect([...exclusionValues])
+const lockedHandler = handleMultiSelect([...lockedValues])
+
 export default function ArtifactFilterDisplay({ filterOption, filterOptionDispatch, }: { filterOption: FilterOption, filterOptionDispatch: (any) => void }) {
   const { t } = useTranslation(["artifact", "ui"]);
 
   const { artSetKeys = [], mainStatKeys = [], rarity = [], slotKeys = [], levelLow, levelHigh, substats = [],
-    location = "", exclusion = ["excluded", "included"], locked = ["locked", "unlocked"] } = filterOption
+    location = "", exclusion = [...exclusionValues], locked = [...lockedValues] } = filterOption
 
   return <Grid container spacing={1}>
     {/* left */}
     <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
       {/* Artifact stars filter */}
-      <SolidToggleButtonGroup fullWidth onChange={(e, newVal) => filterOptionDispatch({ rarity: newVal })} value={rarity} size="small">
-        {allArtifactRarities.map(star => <ToggleButton key={star} value={star}><Stars stars={star} /></ToggleButton>)}
+      <SolidToggleButtonGroup fullWidth value={rarity} size="small" >
+        {allArtifactRarities.map(star => <ToggleButton key={star} value={star} onClick={() => filterOptionDispatch({ rarity: rarityHandler(rarity, star) })}><Stars stars={star} /></ToggleButton>)}
       </SolidToggleButtonGroup>
       {/* Artifact Slot */}
-      <SolidToggleButtonGroup fullWidth onChange={(e, newVal) => filterOptionDispatch({ slotKeys: newVal })} value={slotKeys} size="small">
-        {allSlotKeys.map(slotKey => <ToggleButton key={slotKey} value={slotKey}>{artifactSlotIcon(slotKey)}</ToggleButton>)}
+      <SolidToggleButtonGroup fullWidth value={slotKeys} size="small">
+        {allSlotKeys.map(slotKey => <ToggleButton key={slotKey} value={slotKey} onClick={() => filterOptionDispatch({ slotKeys: slotHandler(slotKeys, slotKey) })}>{artifactSlotIcon(slotKey)}</ToggleButton>)}
       </SolidToggleButtonGroup>
       {/* exclusion + locked */}
       <Box display="flex" gap={1}>
-        <SolidToggleButtonGroup fullWidth value={exclusion} onChange={(e, newVal) => filterOptionDispatch({ exclusion: newVal })} size="small">
-          <ToggleButton value="excluded" sx={{ display: "flex", gap: 1 }}>
-            <FontAwesomeIcon icon={faBan} /><Trans i18nKey={"exclusion.excluded"} t={t} />
-          </ToggleButton>
-          <ToggleButton value="included" sx={{ display: "flex", gap: 1 }}>
-            <FontAwesomeIcon icon={faChartLine} /><Trans i18nKey={"exclusion.included"} t={t} />
-          </ToggleButton>
+        <SolidToggleButtonGroup fullWidth value={exclusion} size="small">
+          {exclusionValues.map((v, i) => <ToggleButton value={v} sx={{ display: "flex", gap: 1 }} onClick={() => filterOptionDispatch({ exclusion: exclusionHandler(exclusion, v) })}>
+            <FontAwesomeIcon icon={i ? faChartLine : faBan} /><Trans i18nKey={`exclusion.${v}`} t={t} />
+          </ToggleButton>)}
         </SolidToggleButtonGroup>
-        <SolidToggleButtonGroup fullWidth value={locked} onChange={(e, newVal) => filterOptionDispatch({ locked: newVal })} size="small">
-          <ToggleButton value="locked" sx={{ display: "flex", gap: 1 }}>
-            <Lock /><Trans i18nKey={"ui:locked"} t={t} />
-          </ToggleButton>
-          <ToggleButton value="unlocked" sx={{ display: "flex", gap: 1 }}>
-            <LockOpen /><Trans i18nKey={"ui:unlocked"} t={t} />
-          </ToggleButton>
+        <SolidToggleButtonGroup fullWidth value={locked} size="small">
+          {lockedValues.map((v, i) => <ToggleButton value={v} sx={{ display: "flex", gap: 1 }} onClick={() => filterOptionDispatch({ locked: lockedHandler(locked, v) })}>
+            {i ? <LockOpen /> : <Lock />}<Trans i18nKey={`ui:${v}`} t={t} />
+          </ToggleButton>)}
         </SolidToggleButtonGroup>
       </Box>
       {/* Artiface level filter */}

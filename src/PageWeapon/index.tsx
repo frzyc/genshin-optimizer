@@ -17,7 +17,7 @@ import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
-import { allRarities, WeaponKey, WeaponTypeKey } from '../Types/consts';
+import { allRarities, allWeaponTypeKeys, WeaponKey } from '../Types/consts';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import { weaponFilterConfigs, weaponSortConfigs, weaponSortKeys } from '../Util/WeaponSort';
@@ -34,8 +34,8 @@ const initialState = () => ({
   editWeaponId: "",
   sortType: weaponSortKeys[0],
   ascending: false,
-  rarity: [5, 4],
-  weaponType: "" as WeaponTypeKey | "",
+  rarity: [...allRarities],
+  weaponType: [...allWeaponTypeKeys],
 })
 
 export default function PageWeapon() {

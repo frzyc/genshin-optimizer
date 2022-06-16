@@ -2,9 +2,10 @@ import { faBan, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CheckBoxOutlineBlank, CheckBox, Replay, Settings } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Typography } from '@mui/material';
-import React, { useCallback, useContext, useMemo, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay';
+import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import CloseButton from '../../../../../Components/CloseButton';
@@ -15,17 +16,20 @@ import SqBadge from '../../../../../Components/SqBadge';
 import { Stars } from '../../../../../Components/StarDisplay';
 import { Translate } from '../../../../../Components/Translate';
 import { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
+import { DatabaseContext } from '../../../../../Database/Database';
 import { DataContext, dataContextObj } from '../../../../../DataContext';
 import { UIData } from '../../../../../Formula/uiData';
 import { constant } from '../../../../../Formula/utils';
+import useForceUpdate from '../../../../../ReactHooks/useForceUpdate';
 import usePromise from '../../../../../ReactHooks/usePromise';
-import { allArtifactSets, ArtifactSetKey, SetNum } from '../../../../../Types/consts';
+import { allArtifactSets, allSlotKeys, ArtifactSetKey, SetNum, SlotKey } from '../../../../../Types/consts';
 import { deepClone, objectKeyMap } from '../../../../../Util/Util';
 import useBuildSetting from '../BuildSetting';
 
 export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, }) {
   const { t } = useTranslation(["page_character", "sheet"])
   const dataContext = useContext(DataContext)
+  const { database } = useContext(DatabaseContext)
   const { character: { key: characterKey, conditional }, characterDispatch } = dataContext
   const { buildSetting: { artSetExclusion }, buildSettingDispatch } = useBuildSetting(characterKey)
   const [open, setOpen] = useState(false)
@@ -34,6 +38,14 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const artSetKeyList = useMemo(() => artifactSheets ? Object.entries(ArtifactSheet.setKeysByRarities(artifactSheets)).reverse().flatMap(([, sets]) => sets).filter(key => !key.includes("Prayers")) : [], [artifactSheets])
 
+  const [dbDirty, forceUpdate] = useForceUpdate()
+  useEffect(() => database.followAnyArt(forceUpdate), [database, forceUpdate])
+
+  const artSlotCount = useMemo(() => {
+    const artSlotCount: Dict<ArtifactSetKey, Record<SlotKey, number>> = Object.fromEntries(artSetKeyList.map(k => [k, Object.fromEntries(allSlotKeys.map(sk => [sk, 0]))]))
+    database._getArts().map(art => artSlotCount[art.setKey] && artSlotCount[art.setKey]![art.slotKey]++)
+    return dbDirty && artSlotCount
+  }, [dbDirty, database, artSetKeyList])
   const allowRainbow2 = !artSetExclusion.rainbow?.includes(2)
   const allowRainbow4 = !artSetExclusion.rainbow?.includes(4)
 
@@ -99,7 +111,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
           <Typography sx={{ flexGrow: 1 }}><strong>
             <Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.title" >Artifact Sets <ColorText color='success'>Allowed<FontAwesomeIcon icon={faChartLine} className="fa-fw" /></ColorText> / <ColorText color='secondary' variant='light'>Excluded<FontAwesomeIcon icon={faBan} className="fa-fw" /></ColorText></Trans>
           </strong></Typography>
-          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.intro">You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-Set, and <strong>R</strong> is rainbow(1-Set)</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.intro">You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-set, and <strong>R</strong> is rainbow(off-set)</Trans></Typography>
           <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.2set"><strong><ColorText color='secondary' variant='light'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 2-Set</ColorText></strong> would exclude 2-Set builds: <strong><ColorText color='secondary' variant='light'>AA</ColorText>RRR</strong> and <strong><ColorText color='secondary' variant='light'>AAA</ColorText>RR</strong>.</Trans></Typography>
           <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.4set"><strong><ColorText color='secondary' variant='light'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 4-Set</ColorText></strong> would exclude 4-Set builds: <strong><ColorText color='secondary' variant='light'>AAAA</ColorText>R</strong> and <strong><ColorText color='secondary' variant='light'>AAAAA</ColorText></strong>.</Trans></Typography>
           <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.2rain"><strong><ColorText color='secondary' variant='light'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 3-Rainbow</ColorText></strong> would exclude 2-Set + 3-Rainbow builds: <strong>AA<ColorText color='secondary' variant='light'>RRR</ColorText></strong> and <strong>AAA<ColorText color='secondary' variant='light'>RR</ColorText></strong>.</Trans></Typography>
@@ -126,7 +138,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
         </Grid>
         <Grid container spacing={1} columns={{ xs: 2, lg: 3 }}>
           {artSetKeyList.map(setKey => {
-            return <ArtifactSetCard key={setKey} setKey={setKey} sheet={artifactSheets[setKey]} fakeDataContextObj={fakeDataContextObj} />
+            return <ArtifactSetCard key={setKey} setKey={setKey} sheet={artifactSheets[setKey]} fakeDataContextObj={fakeDataContextObj} slotCount={artSlotCount[setKey]!} />
           })}
         </Grid>
       </CardContent>
@@ -137,7 +149,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
     </CardDark></ModalWrapper >}
   </>
 }
-function AllSetAllowExcludeCard({ numAllow, numExclude, setNum, setAllExclusion }) {
+function AllSetAllowExcludeCard({ numAllow, numExclude, setNum, setAllExclusion }: { numAllow: number, numExclude: number, setNum: 2 | 4, setAllExclusion: (setNum: 2 | 4, exclude?: boolean) => void }) {
   const { t } = useTranslation(["page_character", "sheet"])
   return <CardLight>
     <CardContent>
@@ -149,12 +161,13 @@ function AllSetAllowExcludeCard({ numAllow, numExclude, setNum, setAllExclusion 
     </CardContent>
   </CardLight>
 }
-function ArtifactSetCard({ sheet, setKey, fakeDataContextObj }: { setKey: ArtifactSetKey, sheet: ArtifactSheet, fakeDataContextObj: dataContextObj }) {
+function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { setKey: ArtifactSetKey, sheet: ArtifactSheet, fakeDataContextObj: dataContextObj, slotCount: Record<SlotKey, number> }) {
   const { t } = useTranslation("sheet")
   const { character: { key: characterKey } } = useContext(DataContext)
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
   const setExclusionSet = buildSetting?.artSetExclusion?.[setKey] ?? []
   const allow4 = !setExclusionSet.includes(4)
+  const slots = useMemo(() => Object.values(slotCount).reduce((tot, v) => tot + (v ? 1 : 0), 0), [slotCount])
 
   /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
   const set4CondNums = useMemo(() => {
@@ -163,7 +176,7 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj }: { setKey: Artifa
   }, [sheet.setEffects, allow4])
   const exclude2 = setExclusionSet.includes(2)
   const exclude4 = setExclusionSet.includes(4)
-
+  if (slots < 2) return null
   return <Grid item key={setKey} xs={1}>
     <CardLight sx={{ height: "100%" }}>
       <Box className={`grad-${sheet.rarity[0]}star`} width="100%" sx={{ display: "flex" }} >
@@ -182,11 +195,12 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj }: { setKey: Artifa
               </Box>
             </Box>} />
           </Box>
+          <Box sx={{ display: "flex", gap: 1 }}>{Object.entries(slotCount).map(([slotKey, count]) => <Typography key={slotKey} sx={{ flexGrow: 1 }} variant="subtitle1" ><SqBadge sx={{ width: "100%" }} color={count ? "primary" : "secondary"}>{artifactSlotIcon(slotKey)} {count}</SqBadge></Typography>)}</Box>
         </Box>
       </Box>
       <ButtonGroup sx={{ ".MuiButton-root": { borderRadius: 0 } }} fullWidth>
-        <Button startIcon={exclude2 ? <CheckBoxOutlineBlank /> : <CheckBox />} onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey, num: 2 })} color={exclude2 ? 'secondary' : 'success'} endIcon={<FontAwesomeIcon icon={exclude2 ? faBan : faChartLine} className="fa-fw" />}>{t`2set`}</Button>
-        <Button startIcon={exclude4 ? <CheckBoxOutlineBlank /> : <CheckBox />} onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey, num: 4 })} color={exclude4 ? 'secondary' : 'success'} endIcon={<FontAwesomeIcon icon={exclude4 ? faBan : faChartLine} className="fa-fw" />}>{t`4set`}</Button>
+        {slots >= 2 && <Button startIcon={exclude2 ? <CheckBoxOutlineBlank /> : <CheckBox />} onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey, num: 2 })} color={exclude2 ? 'secondary' : 'success'} endIcon={<FontAwesomeIcon icon={exclude2 ? faBan : faChartLine} className="fa-fw" />}>{t`2set`}</Button>}
+        {slots >= 4 && <Button startIcon={exclude4 ? <CheckBoxOutlineBlank /> : <CheckBox />} onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey, num: 4 })} color={exclude4 ? 'secondary' : 'success'} endIcon={<FontAwesomeIcon icon={exclude4 ? faBan : faChartLine} className="fa-fw" />}>{t`4set`}</Button>}
       </ButtonGroup>
 
       {!!set4CondNums.length && <DataContext.Provider value={fakeDataContextObj}>
@@ -197,7 +211,7 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj }: { setKey: Artifa
         </CardContent>
       </DataContext.Provider>}
     </CardLight>
-  </Grid>
+  </Grid >
 }
 function fakeData(currentContext: dataContextObj): dataContextObj {
   return {

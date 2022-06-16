@@ -1,3 +1,4 @@
+import { allElements, allWeaponTypeKeys } from "../../Types/consts"
 import { crawlObject, layeredAssignment } from "../../Util/Util"
 import { DBStorage } from "../DBStorage"
 import { getDBVersion, setDBVersion } from "../utils"
@@ -235,6 +236,17 @@ function migrateV17toV18(storage: DBStorage) {
       buildSetting.builds = []
       buildSetting.buildDate = 0
       storage.set(key, buildSetting)
+    }
+    if (key === "state_WeaponDisplay") {
+      const state = storage.get(key)
+      state.weaponType = [...allWeaponTypeKeys]
+      storage.set(key, state)
+    }
+    if (key === "state_CharacterDisplay") {
+      const state = storage.get(key)
+      state.weaponType = [...allWeaponTypeKeys]
+      state.element = [...allElements]
+      storage.set(key, state)
     }
   }
 }

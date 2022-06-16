@@ -20,6 +20,6 @@ export function weaponSortConfigs(weaponSheets: Record<WeaponKey, WeaponSheet>):
 export function weaponFilterConfigs(weaponSheets: Record<WeaponKey, WeaponSheet>): FilterConfigs<"rarity" | "weaponType", ICachedWeapon> {
   return {
     rarity: (wp, filter) => filter.includes(weaponSheets?.[wp.key]?.rarity),
-    weaponType: (wp, filter) => !filter || (filter === weaponSheets?.[wp.key]?.weaponType),
+    weaponType: (wp, filter) => filter.includes(weaponSheets?.[wp.key]?.weaponType),
   }
 }

@@ -20,6 +20,7 @@ export interface BuildSetting {
   mainStatAssumptionLevel: number,
   useExcludedArts: boolean,
   useEquippedArts: boolean,
+  allowPartial: boolean,
   builds: string[][]
   buildDate: number,
   maxBuildsToShow: number,
@@ -36,6 +37,7 @@ export const initialBuildSettings = (): BuildSetting => ({
   mainStatAssumptionLevel: 0,
   useExcludedArts: false,
   useEquippedArts: false,
+  allowPartial: false,
   builds: [],
   buildDate: 0,
   maxBuildsToShow: 5,
@@ -92,7 +94,7 @@ export function buildSettingsReducer(state: BuildSetting = initialBuildSettings(
 }
 
 export function validateBuildSetting(obj: any): BuildSetting {
-  let { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = obj ?? {}
+  let { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = obj ?? {}
 
   if (typeof statFilters !== "object") statFilters = {}
 
@@ -123,6 +125,7 @@ export function validateBuildSetting(obj: any): BuildSetting {
   if (levelLow === undefined) levelLow = 0
   if (levelHigh === undefined) levelHigh = 20
   if (!artSetExclusion) artSetExclusion = {};
+  if (!allowPartial) allowPartial = false
   artSetExclusion = Object.fromEntries(Object.entries(artSetExclusion as ArtSetExclusion).map(([k, a]) => [k, [...new Set(a)]]).filter(([k, a]) => a.length))
-  return { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
+  return { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
 }
