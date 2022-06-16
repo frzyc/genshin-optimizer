@@ -151,7 +151,7 @@ export default function TabBuild() {
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
 
-    debugMe(optimizationTargetNode, arts)
+    // debugMe(optimizationTargetNode, arts)
     // console.log('setPerms', setPerms, artSetExclusion)
 
     const wrap = {
