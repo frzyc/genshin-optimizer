@@ -246,16 +246,16 @@ export default function TabUpopt() {
                 {noArtifact && <Alert severity="info" variant="filled">Looks like you haven't added any artifacts yet. If you want, there are <Link color="warning.main" component={RouterLink} to="/scanner">automatic scanners</Link> that can speed up the import process!</Alert>}
                 <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: 600, minHeight: 5000 }} />}>
                   {/* <Grid item display="flex" flexDirection="column" gap={1}> */}
-                    {artifactsToShow.map(art =>
-                      <Grid container key={art.id + 'asdfsf'} spacing={1}>
-                        <Grid item xs={5} sm={4} md={4} lg={3} xl={3} >
-                          <ArtifactCard artifactId={art.id} editor />
-                        </Grid>
-                        <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
-                          <UpgradeOptChartCard upgradeOpt={art} objMax={maxObj0} objMin={minObj0} />
-                        </Grid>
+                  {artifactsToShow.map(art =>
+                    <Grid container key={art.id + 'asdfsf'} spacing={1}>
+                      <Grid item xs={5} sm={4} md={4} lg={3} xl={3} >
+                        <ArtifactCard artifactId={art.id} editor />
                       </Grid>
-                    )}
+                      <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
+                        <UpgradeOptChartCard upgradeOpt={art} objMax={maxObj0} objMin={minObj0} />
+                      </Grid>
+                    </Grid>
+                  )}
                   {/* </Grid> */}
                 </Suspense>
               </Grid>

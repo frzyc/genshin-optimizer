@@ -18,6 +18,7 @@ import CharacterSheet from '../../../../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../../../../Database/Database';
 import { DataContext, dataContextObj } from '../../../../DataContext';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
+import { debugMe } from '../../../../Formula/branchAndBound2';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
 import { NumNode } from '../../../../Formula/type';
@@ -150,6 +151,9 @@ export default function TabBuild() {
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
 
+    debugMe(optimizationTargetNode, arts)
+    // console.log('setPerms', setPerms, artSetExclusion)
+
     const wrap = {
       buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity),
       finalizing: false
@@ -160,12 +164,14 @@ export default function TabBuild() {
     const unprunedFilters = setPerms[Symbol.iterator](), requestFilters: RequestFilter[] = []
     const idleWorkers: { id: number, worker: Worker }[] = []
     const pruningID = new Set<number>()
+    console.log('unprunedFilters', unprunedFilters)
 
     function fetchContinueWork(): WorkerCommand {
       return { command: "split", filter: undefined, minCount: minFilterCount, threshold: wrap.buildValues[maxBuildsToShow - 1] }
     }
     function fetchPruningWork(): WorkerCommand | undefined {
       const { done, value } = unprunedFilters.next()
+      console.log('unprunedFiltersNext', value)
       return done ? undefined : {
         command: "split", minCount: minFilterCount,
         threshold: wrap.buildValues[maxBuildsToShow - 1], filter: value,

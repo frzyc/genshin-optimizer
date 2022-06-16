@@ -76,7 +76,6 @@ export function allUpgradeValues(upOpt: QueryResult) {
         let p_val = (4 ** -ni) * quadrinomial(ni, val - 7 * ni)
         p_upVals *= p_val
       }
-      console.log({ ns, stats })
       results.push({ v: upOpt.evalFn(stats).map(n => n.v), p: p * p_upVals })
     })
   })

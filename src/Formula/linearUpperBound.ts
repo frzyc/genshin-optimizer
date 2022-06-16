@@ -14,9 +14,12 @@ export type LinearForm = {
 }
 
 function minMax(node: NumNode, lower: DynStat, upper: DynStat) {
-  let f = precompute([node], n => n.path[1])
-  // return [f(lower)[0], f(upper)[0]]
-  return [0, 0]
+  let [compute, mapping, buffer] = precompute([node], n => n.path[1])
+  Object.entries(lower).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
+  const minval = compute()[0]
+  Object.entries(upper).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
+  const maxval = compute()[0]
+  return [minval, maxval]
 }
 
 /**
@@ -137,7 +140,7 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
 
         // TODO: update linerr
         // If it's not a simple min() node, returning either value is still UB.
-        return rop
+        return purePolyForm(rop)
 
       case 'max':
         let [varop, constop] = node.operands

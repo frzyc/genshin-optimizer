@@ -113,6 +113,9 @@ public:
     if (prob < 1e-8)
       return 0;
 
+    if (stds[j] < 1e-8)
+      return mu[j] - x[j];
+
     double c2 = 0;
     for (int i = 0; i < dim; i++)
       c2 += (i == j ? d0j[i] : d0j[i] * correl[ij2k(i, j)]);
@@ -122,6 +125,8 @@ public:
   double getPEUp() const
   {
     int j = 0;
+    if (stds[j] < 1e-8)
+      return prob * (mu[j] - x[j]);
 
     double c2 = 0;
     for (int i = 0; i < dim; i++)
@@ -288,5 +293,21 @@ int main(int argc, char **argv)
   double eup = mvn.getEUp();
   std::cout << mvn.getValue() << ", " << eup << "\n";
   std::cout << mvn.getPEUp() << " vs " << mvn.getValue() * eup << "\n";
+
+  MVNHandle mvn2(2);
+  double mu2[] = {3646.497, 1.8845};
+  double x2[] = {3334.86, 1.8};
+  double cov2[] = {0, 0, 0, 0};
+  for (double d : mu2)
+    mvn2.pushMu(d);
+  for (double d : x2)
+    mvn2.pushX(d);
+  for (double d : cov2)
+    mvn2.pushCov(d);
+
+  mvn2.compute();
+  double eup2 = mvn2.getEUp();
+  std::cout << mvn2.getValue() << ", " << eup2 << "\n";
+  std::cout << mvn2.getPEUp() << " vs " << mvn2.getValue() * eup2 << "\n";
 }
 #endif

@@ -24,6 +24,7 @@ export class SplitWorker {
   }
   addFilter(filter: RequestFilter) {
     const count = countBuilds(filterArts(this.arts, filter))
+    if (count === 0) return
     this.filters.push({ count, filter })
   }
   split(newThreshold: number, minCount: number, filter: RequestFilter | undefined): RequestFilter | undefined {
