@@ -222,7 +222,15 @@ function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot): NumNode[] {
       }
     }
     return f
-  }, f => f)
+  }, (f, orig) => {
+    if (f === orig) return f
+    switch (f.operation) {
+      case "min": case "max":
+        if (f.operands.length === 0) return constant(f.operation === "max" ? -Infinity : Infinity)
+        if (f.operands.length === 1) return f.operands[0]
+    }
+    return f
+  })
 }
 function addArtRange(ranges: DynMinMax[]): DynMinMax {
   const result: DynMinMax = {}

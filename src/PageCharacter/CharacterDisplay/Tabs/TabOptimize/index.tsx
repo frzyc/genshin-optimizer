@@ -147,6 +147,7 @@ export default function TabBuild() {
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow, artSetExclusion, {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
     }))
+    nodes = optimize(nodes, {}, _ => false)
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
