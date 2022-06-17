@@ -29,6 +29,7 @@ export default function CharacterDropdownButton({ value, onChange, unSelectText,
   const characterSheet = usePromise(CharacterSheet.get(value), [value])
   const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
   const characterKeys = database._getCharKeys().filter(ck => characterSheets?.[ck] && filter(characterSheets[ck], ck)).sort()
+  console.log({ characterKeys }, { characterSheets })
   return <DropdownButton
     {...props}
     title={characterSheet?.name ?? (inventory ? t`inventory` : (unSelectText ?? t`unselect`))}
@@ -58,12 +59,17 @@ export default function CharacterDropdownButton({ value, onChange, unSelectText,
 export function CharacterMenuItemArray(characterSheets: StrictDict<CharacterKey, CharacterSheet>, characterKeys: CharacterKey[], onChange: (ck: CharacterKey) => void, selectedCharacterKey: CharacterKey | "" = "", filterConfigs: CharacterFilterConfigs | undefined) {
   if (!filterConfigs) return []
   const faves = characterKeys
-    .filter(filterFunction({ name:"", element: "", weaponType:"", favorite: "yes" }, filterConfigs))
+    .filter(filterFunction({ name: "", element: "", weaponType: "", favorite: "yes" }, filterConfigs))
     .map(characterKey => <CharMenuItem key={characterKey} {...{ characterSheets, characterKey, selectedCharacterKey, onChange, favorite: true }} />)
   const nonFaves = characterKeys
-    .filter(filterFunction({ name:"", element: "", weaponType:"", favorite: "no" }, filterConfigs))
+    .filter(filterFunction({ name: "", element: "", weaponType: "", favorite: "no" }, filterConfigs))
     .map(characterKey => <CharMenuItem key={characterKey} {...{ characterSheets, characterKey, selectedCharacterKey, onChange, favorite: false }} />)
 
+  console.log({ filterConfigs })
+
+  // const ff = filterFunction({ name: "", element: "", weaponType: "", favorite: "yes" }, filterConfigs)
+  // console.log('should be getting menu items', faves.length + nonFaves.length, filterConfigs)
+  // console.log(characterKeys.map(ck => [ck, ff(ck)]))
   return faves.concat(nonFaves)
   // return characterKeys
 }
