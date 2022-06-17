@@ -30,6 +30,7 @@ export class ComputeWorker {
     }
   }
 
+  // I'm so sorry I turned this into a big mess
   compute(newThreshold: number, subproblem: SubProblem) {
     if (this.threshold > newThreshold) this.threshold = newThreshold
     const { optimizationTarget, constraints, filter, artSetExclusion } = subproblem
@@ -56,10 +57,6 @@ export class ComputeWorker {
         .map(([key, value]) => ({ key: mapping[key]!, key2: mapping2[key] ?? 0, value, cache: 0 }))
         .filter(({ key, value }) => key !== undefined && value !== 0)
     })))
-    // console.log(mapping)
-    // console.log(artSetExclusion)
-    // console.log(this.arts)
-    // throw Error('stop here')
 
     const ids: string[] = Array(arts.length).fill("")
     let count = { tested: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }
@@ -82,8 +79,15 @@ export class ComputeWorker {
           if (!bufloc) return false
           return vals.includes(buffer[bufloc])
         })
+
+        // if (passArtExcl && result[min.length] > 31540) {
+        //   console.log('------------------------------------------------------------------------------------------------------------------------------------------------')
+        //   console.log('shouldnt pass tho', passArtExcl, oddKeys)
+        // }
+
         // This checks rainbows
-        if (artSetExclusion['uniqueKey'] !== undefined) passArtExcl = artSetExclusion['uniqueKey'].every(v => v !== oddKeys.size)
+        if (passArtExcl && artSetExclusion['uniqueKey'] !== undefined) passArtExcl = artSetExclusion['uniqueKey'].every(v => v !== oddKeys.size)
+
         if (passArtExcl && min.every((m, i) => (m <= result[i]))) {
           const value = result[min.length], { builds, plotData, threshold } = self
           let build: Build | undefined
@@ -114,10 +118,10 @@ export class ComputeWorker {
         }
 
         if (oddKeys.has(art.set)) oddKeys.delete(art.set)
-        else oddKeys.delete(art.set)
+        else oddKeys.add(art.set)
         permute(i - 1, oddKeys)
         if (oddKeys.has(art.set)) oddKeys.delete(art.set)
-        else oddKeys.delete(art.set)
+        else oddKeys.add(art.set)
 
         for (const { key, key2, cache } of art.values) {
           buffer[key] = cache

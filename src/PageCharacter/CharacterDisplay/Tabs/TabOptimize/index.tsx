@@ -18,7 +18,6 @@ import CharacterSheet from '../../../../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../../../../Database/Database';
 import { DataContext, dataContextObj } from '../../../../DataContext';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
-import { debugMe } from '../../../../Formula/branchAndBound2';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
 import { NumNode } from '../../../../Formula/type';
@@ -159,6 +158,10 @@ export default function TabBuild() {
       finalizing: false
     }
 
+    const artSetExclFull = objectKeyValueMap(Object.entries(artSetExclusion), ([setKey, v]) => {
+      if (setKey === 'rainbow') return ['uniqueKey', v.map(v => v + 1)]
+      return [setKey, v.flatMap(v => (v === 2) ? [2, 3] : [4, 5])]
+    })
     const filters = nodes
       .map((value, i) => ({ value, min: minimum[i] }))
       .filter(x => x.min > -Infinity)
@@ -166,12 +169,12 @@ export default function TabBuild() {
       cache: false,
       optimizationTarget: optimizationTargetNode,
       constraints: filters,
-      artSetExclusion: artSetExclusion,
+      artSetExclusion: artSetExclFull,
 
       filter: emptyfilter
     }
 
-    const maxSplitIters = 5
+    const maxSplitIters = 20
     const minFilterCount = 2_000 // Don't split for single worker
     const maxRequestFilterInFlight = maxWorkers * 4
     const workQueue: SubProblem[] = [initialProblem]

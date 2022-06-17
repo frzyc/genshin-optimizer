@@ -54,12 +54,13 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
 }
 
 
+export type ArtSetExclusionFull = Dict<Exclude<ArtifactSetKey, "PrayersForDestiny" | "PrayersForIllumination" | "PrayersForWisdom" | "PrayersToSpringtime"> | "uniqueKey", number[]>
 export type SubProblem = SubProblemNC | SubProblemWC
 export type SubProblemNC = {
   cache: false,
   optimizationTarget: NumNode,
   constraints: { value: NumNode, min: number }[],
-  artSetExclusion: Dict<ArtifactSetKey | 'uniqueKey', number[]>,
+  artSetExclusion: ArtSetExclusionFull,
 
   filter: RequestFilter,
 }
@@ -67,7 +68,7 @@ export type SubProblemWC = {
   cache: true,
   optimizationTarget: NumNode,
   constraints: { value: NumNode, min: number }[],
-  artSetExclusion: Dict<ArtifactSetKey | 'uniqueKey', number[]>,
+  artSetExclusion: ArtSetExclusionFull,
 
   filter: RequestFilter,
   cachedCompute: CachedCompute
