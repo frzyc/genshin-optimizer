@@ -34,7 +34,6 @@ import TabBuild from './Tabs/TabOptimize';
 import TabOverview from './Tabs/TabOverview';
 import TabTalent from './Tabs/TabTalent';
 import TabTeambuffs from './Tabs/TabTeambuffs';
-import TabUpopt from './Tabs/TabUpgradeOpt';
 
 export default function CharacterDisplay() {
   const navigate = useNavigate();
@@ -105,7 +104,6 @@ function CharacterDisplayCard({ characterKey, newteamData, mainStatAssumptionLev
             <Route path="/equip" element={<TabEquip />} />
             <Route path="/teambuffs" element={<TabTeambuffs />} />
             <Route path="/optimize" element={<TabBuild />} />
-            <Route path="/upgradeOpt" element={<TabUpopt />} />
           </Routes>
         </Suspense>
         <CardLight>
@@ -128,12 +126,11 @@ function TabNav({ tab }: { tab: string }) {
       },
     }}
   >
-    <Tab sx={{ minWidth: "15%" }} value="overview" label={t("tabs.overview")} icon={<Person />} component={RouterLink} to="" />
-    <Tab sx={{ minWidth: "15%" }} value="talent" label={t("tabs.talent")} icon={<FactCheck />} component={RouterLink} to="talent" />
-    <Tab sx={{ minWidth: "15%" }} value="equip" label={t("tabs.equip")} icon={<Checkroom />} component={RouterLink} to="equip" />
-    <Tab sx={{ minWidth: "15%" }} value="teambuffs" label={t("tabs.teambuffs")} icon={<Groups />} component={RouterLink} to="teambuffs" />
-    <Tab sx={{ minWidth: "15%" }} value="optimize" label={t("tabs.optimize")} icon={<Calculate />} component={RouterLink} to="optimize" />
-    <Tab sx={{ minWidth: "15%" }} value="upgradeOpt" label={t("tabs.upgradeOpt")} icon={<Calculate />} component={RouterLink} to="upgradeOpt" />
+    <Tab sx={{ minWidth: "20%" }} value="overview" label={t("tabs.overview")} icon={<Person />} component={RouterLink} to="" />
+    <Tab sx={{ minWidth: "20%" }} value="talent" label={t("tabs.talent")} icon={<FactCheck />} component={RouterLink} to="talent" />
+    <Tab sx={{ minWidth: "20%" }} value="equip" label={t("tabs.equip")} icon={<Checkroom />} component={RouterLink} to="equip" />
+    <Tab sx={{ minWidth: "20%" }} value="teambuffs" label={t("tabs.teambuffs")} icon={<Groups />} component={RouterLink} to="teambuffs" />
+    <Tab sx={{ minWidth: "20%" }} value="optimize" label={t("tabs.optimize")} icon={<Calculate />} component={RouterLink} to="optimize" />
   </Tabs>
 }
 

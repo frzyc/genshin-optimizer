@@ -2,29 +2,8 @@ import { constant, sum, prod, hashNode, cmp, cmpNode } from "./utils"
 import { ConstantNode, NumNode } from "./type"
 import { allArtifactSets } from "../Types/consts"
 import { cartesian } from '../Util/Util'
+import { foldProd, foldSum } from "./addedUtils"
 
-export function foldSum(nodes: NumNode[]) {
-  if (nodes.length === 1) return nodes[0]
-
-  nodes = nodes.flatMap(n => n.operation === 'add' ? n.operands : n)
-  let constVal = nodes.reduce((pv, n) => n.operation === 'const' ? pv + n.value : pv, 0)
-  nodes = nodes.filter(n => n.operation !== 'const')
-  if (nodes.length === 0) return constant(constVal)
-  if (constVal === 0) return sum(...nodes)
-  return sum(...nodes, constant(constVal))
-}
-
-export function foldProd(nodes: NumNode[]) {
-  if (nodes.length === 1) return nodes[0]
-
-  nodes = nodes.flatMap(n => n.operation === 'mul' ? n.operands : n)
-  let constVal = nodes.reduce((pv, n) => n.operation === 'const' ? pv * n.value : pv, 1)
-  nodes = nodes.filter(n => n.operation !== 'const')
-
-  if (nodes.length === 0) return constant(constVal)
-  if (constVal === 1) return prod(...nodes)
-  return prod(...nodes, constant(constVal))
-}
 
 function gatherSumOfProds(products: NumNode[], isVar: (n: NumNode) => boolean): NumNode[] {
   // return products

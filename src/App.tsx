@@ -17,7 +17,6 @@ import { theme } from './Theme';
 const PageHome = lazy(() => import('./PageHome'))
 const PageArtifact = lazy(() => import('./PageArtifact'))
 const PageTools = lazy(() => import('./PageTools'))
-const UpgradeOptDisplay = lazy(() => import('./PageUpgradeOpt/UpgradeOptDisplay'))
 const PageSettings = lazy(() => import('./PageSettings'))
 const PageWeapon = lazy(() => import('./PageWeapon'))
 const PageDocumentation = lazy(() => import('./PageDocumentation'))
@@ -83,7 +82,6 @@ function App() {
                       <Route index element={<PageCharacter />} />
                       <Route path=":characterKey/*" element={<CharacterDisplay />} />
                     </Route>
-                    <Route path="/UpgradeOpt" element={<UpgradeOptDisplay />} />
                     <Route path="/tools" element={<PageTools />} />
                     <Route path="/setting" element={<PageSettings />} />
                     <Route path="/doc/*" element={<PageDocumentation />} />

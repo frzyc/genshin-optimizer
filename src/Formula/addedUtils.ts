@@ -1,10 +1,33 @@
-import { constant, prod, cmp } from "./utils"
+import { constant, prod, cmp, sum } from "./utils"
 import { NumNode } from "./type"
 import { optimize } from "./optimization"
 import { mapFormulas } from "./internal"
 import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
 import { LinearForm, maxWeight, toLinearUpperBound } from "./linearUpperBound"
 import { expandPoly, productPossible } from "./expandPoly"
+
+export function foldSum(nodes: NumNode[]) {
+  if (nodes.length === 1) return nodes[0]
+
+  nodes = nodes.flatMap(n => n.operation === 'add' ? n.operands : n)
+  let constVal = nodes.reduce((pv, n) => n.operation === 'const' ? pv + n.value : pv, 0)
+  nodes = nodes.filter(n => n.operation !== 'const')
+  if (nodes.length === 0) return constant(constVal)
+  if (constVal === 0) return sum(...nodes)
+  return sum(...nodes, constant(constVal))
+}
+
+export function foldProd(nodes: NumNode[]) {
+  if (nodes.length === 1) return nodes[0]
+
+  nodes = nodes.flatMap(n => n.operation === 'mul' ? n.operands : n)
+  let constVal = nodes.reduce((pv, n) => n.operation === 'const' ? pv * n.value : pv, 1)
+  nodes = nodes.filter(n => n.operation !== 'const')
+
+  if (nodes.length === 0) return constant(constVal)
+  if (constVal === 1) return prod(...nodes)
+  return prod(...nodes, constant(constVal))
+}
 
 export function statsUpperLower(a: ArtifactsBySlot) {
   let minStats = Object.entries(a.values).reduce((pv, [slotKey, slotArts]) => {
