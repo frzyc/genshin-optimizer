@@ -35,7 +35,6 @@
     "recharts": "^2.1.6",
     "source-map-explorer": "^2.5.2",
     "tesseract.js": "^2.1.5",
-    "wasmpack": "file:./wasmpack",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

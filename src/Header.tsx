@@ -1,5 +1,5 @@
 import { faDiscord, faPatreon, faPaypal } from "@fortawesome/free-brands-svg-icons";
-import { faBook, faCog, faGavel, faIdCard, faTools, faCalculator } from "@fortawesome/free-solid-svg-icons";
+import { faBook, faCog, faGavel, faIdCard, faTools } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
