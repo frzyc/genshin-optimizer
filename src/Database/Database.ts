@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { BuildSetting, buildSettingsReducer, initialBuildSettings } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting";
+import { BuildSetting, buildSettingsReducer, initialBuildSettings, validateBuildSetting } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting";
 import { IArtifact, ICachedArtifact } from "../Types/artifact";
 import { ICachedCharacter, ICharacter } from "../Types/character";
 import { allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
@@ -17,6 +17,7 @@ export class ArtCharDatabase {
   storage: DBStorage
 
   arts = new DataManager<string, ICachedArtifact>()
+  deletedArts = new Set<string>()
   chars = new DataManager<CharacterKey, ICachedCharacter>()
   weapons = new DataManager<string, ICachedWeapon>()
   states = new DataManager<string, object>()
@@ -145,11 +146,19 @@ export class ArtCharDatabase {
     for (const key of storage.keys) {
       if (key.startsWith("buildSetting_")) {
         const [, charKey] = key.split("buildSetting_")
+        // TODO Parse the object and check if it is valid
         const buildSettingsObj = storage.get(key)
         if (!buildSettingsObj) {
           // Non-recoverable
           storage.remove(key)
           continue
+        }
+        if (buildSettingsObj.builds && Array.isArray(buildSettingsObj.builds)) { // This should have been checked during parsing
+          const newBuilds = buildSettingsObj.builds.map(build => {
+            if (!Array.isArray(build)) return [] // This should have been parsed
+            return build.filter(id => this.arts.get(id))
+          }).filter(x => x.length)
+          buildSettingsObj.builds = newBuilds
         }
         this.buildSettings.set(charKey, buildSettingsObj)
         // Save migrated version back to db
@@ -267,11 +276,11 @@ export class ArtCharDatabase {
   }
   updateBuildSetting(key: CharacterKey, value: Partial<BuildSetting>) {
     const oldState = this.buildSettings.get(key) as BuildSetting
-    this.saveBuildSetting(key, buildSettingsReducer(oldState, value))
+    this.saveBuildSetting(key, validateBuildSetting(buildSettingsReducer(oldState, value)))
   }
 
   createArt(value: IArtifact): string {
-    const id = generateRandomArtID(new Set(this.arts.keys))
+    const id = generateRandomArtID(new Set(this.arts.keys), this.deletedArts)
     const newArt = validateArtifact(parseArtifact({ ...value, location: "" })!, id).artifact
     this.saveArt(id, newArt)
     return id
@@ -314,6 +323,7 @@ export class ArtCharDatabase {
     }
     this.storage.remove(key)
     this.arts.remove(key)
+    this.deletedArts.add(key)
   }
   removeWeapon(key: string) {
     const weapon = this.weapons.get(key)
@@ -441,11 +451,12 @@ export class ArtCharDatabase {
 }
 
 /// Get a random integer (converted to string) that is not in `keys`
-function generateRandomArtID(keys: Set<string>): string {
+function generateRandomArtID(keys: Set<string>, rejectedKeys: Set<string>): string {
+  const range = 2 * (1 + keys.size + rejectedKeys.size)
   let candidate = ""
   do {
-    candidate = `artifact_${getRandomInt(1, 2 * (keys.size + 1))}`
-  } while (keys.has(candidate))
+    candidate = `artifact_${getRandomInt(1, range)}`
+  } while (keys.has(candidate) || rejectedKeys.has(candidate))
   return candidate
 }
 

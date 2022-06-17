@@ -134,6 +134,7 @@ const rangeGen = function* (from: number, to: number): Iterable<number> {
   for (let i = from; i <= to; i++) yield i;
 };
 
+/** range of [from, to], inclusive */
 export function range(from: number, to: number): number[] {
   return [...rangeGen(from, to)]
 }
@@ -145,4 +146,15 @@ export function assertUnreachable(value: never): never {
 // cartesian product of list of arrays
 export function cartesian<T>(...q: T[][]): T[][] {
   return q.reduce((a, b) => a.flatMap(d => b.map(e => [d, [e]].flat())), [[]] as T[][])
+}
+
+/** Will change `arr` in-place */
+export function toggleInArr<T>(arr: T[], value: T) {
+  const ind = arr.indexOf(value)
+  if (ind < 0) arr.push(value)
+  else arr.splice(ind, 1)
+}
+
+export function toggleArr<T>(arr: T[], value: T) {
+  return arr.includes(value) ? arr.filter(a => a !== value) : [...arr, value]
 }

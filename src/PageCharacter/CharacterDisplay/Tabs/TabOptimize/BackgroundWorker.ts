@@ -38,14 +38,12 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
       break
     // case "count":
     //   {
-    //     console.log('count stuff', id)
     //     const { exclusion } = data, arts = computeWorker.arts
     //     const setPerm = filterFeasiblePerm(artSetPerm(exclusion, [...new Set(Object.values(arts.values).flatMap(x => x.map(x => x.set!)))]), arts)
-    //     let count = 0
+    //     let counts = data.arts.map(_ => 0)
     //     for (const perm of setPerm)
-    //       count += countBuilds(filterArts(arts, perm))
-    //     result = { command: "count", count }
-    //     console.log('count stuff done', id)
+    //       data.arts.forEach((arts, i) => counts[i] += countBuilds(filterArts(arts, perm)));
+    //     result = { command: "count", counts }
     //     break
     //   }
     default: assertUnreachable(command)
@@ -121,9 +119,9 @@ export interface Finalize {
   command: "finalize"
 }
 
-
 // export interface Count {
 //   command: "count"
+//   arts: ArtifactsBySlot[]
 //   exclusion: ArtSetExclusion
 // }
 
@@ -151,5 +149,5 @@ export interface FinalizeResult {
 }
 export interface CountResult {
   command: "count"
-  count: number
+  counts: number[]
 }

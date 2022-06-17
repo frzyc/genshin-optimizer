@@ -21,20 +21,20 @@ import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
-import { allCharacterKeys, CharacterKey, ElementKey, WeaponTypeKey } from '../Types/consts';
+import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
-const numToShowMap = { xs: 4 - 1, sm: 4 - 1, md: 6 - 1, lg: 8 - 1, xl: 8 - 1 }
+const numToShowMap = { xs: 4 - 1, sm: 4 - 1, md: 9 - 1, lg: 12 - 1, xl: 12 - 1 }
 
 function initialState() {
   return {
     sortType: characterSortKeys[0],
     ascending: false,
-    weaponType: "" as WeaponTypeKey | "",
-    element: "" as ElementKey | "",
+    weaponType: [...allWeaponTypeKeys],
+    element: [...allElements],
   }
 }
 
@@ -83,23 +83,26 @@ export default function PageCharacter(props) {
 
   const navigate = useNavigate()
 
-  const { element, weaponType } = state
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
   const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
+  const deferredState = useDeferredValue(state)
   const { charKeyList, totalCharNum } = useMemo(() => {
     const chars = database._getCharKeys()
     const totalCharNum = chars.length
     if (!sortConfigs || !filterConfigs) return { charKeyList: [], totalCharNum }
+    const { element, weaponType, sortType, ascending } = deferredState
     const charKeyList = database._getCharKeys()
       .filter(filterFunction({ element, weaponType, favorite: "yes", name: deferredSearchTerm }, filterConfigs))
-      .sort(sortFunction(state.sortType, state.ascending, sortConfigs))
+      .sort(sortFunction(sortType, ascending, sortConfigs))
       .concat(
         database._getCharKeys()
           .filter(filterFunction({ element, weaponType, favorite: "no", name: deferredSearchTerm }, filterConfigs))
-          .sort(sortFunction(state.sortType, state.ascending, sortConfigs)))
+          .sort(sortFunction(sortType, ascending, sortConfigs)))
     return dbDirty && { charKeyList, totalCharNum }
   },
-    [dbDirty, database, sortConfigs, state.sortType, state.ascending, element, filterConfigs, weaponType, deferredSearchTerm])
+    [dbDirty, database, sortConfigs, filterConfigs, deferredState, deferredSearchTerm])
+
+  const { weaponType, element, sortType, ascending } = state
 
   const { charKeyListToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(charKeyList.length / maxNumToDisplay)
@@ -113,10 +116,10 @@ export default function PageCharacter(props) {
     <CardDark ref={invScrollRef} ><CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
       <Grid container spacing={1}>
         <Grid item>
-          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => stateDispatch({ weaponType })} value={state.weaponType} size="small" />
+          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => stateDispatch({ weaponType })} value={weaponType} size="small" />
         </Grid>
         <Grid item>
-          <ElementToggle sx={{ height: "100%" }} onChange={element => stateDispatch({ element })} value={state.element} size="small" />
+          <ElementToggle sx={{ height: "100%" }} onChange={element => stateDispatch({ element })} value={element} size="small" />
         </Grid>
         <Grid item flexGrow={1}>
           <TextField
@@ -128,8 +131,8 @@ export default function PageCharacter(props) {
         </Grid>
         <Grid item >
           <SortByButton sx={{ height: "100%" }}
-            sortKeys={characterSortKeys} value={state.sortType} onChange={sortType => stateDispatch({ sortType })}
-            ascending={state.ascending} onChangeAsc={ascending => stateDispatch({ ascending })} />
+            sortKeys={characterSortKeys} value={sortType} onChange={sortType => stateDispatch({ sortType })}
+            ascending={ascending} onChangeAsc={ascending => stateDispatch({ ascending })} />
         </Grid>
       </Grid>
       <Grid container alignItems="flex-end">
