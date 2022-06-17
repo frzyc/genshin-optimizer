@@ -2,7 +2,7 @@ import { Box, CardActionArea, CardContent, Divider, Grid, Typography } from "@mu
 import { useEffect, useState } from "react"
 import Assets from "../../Assets/Assets"
 import usePromise from "../../ReactHooks/usePromise"
-import { allWeaponKeys, WeaponKey, WeaponTypeKey } from "../../Types/consts"
+import { allWeaponKeys, allWeaponTypeKeys, WeaponKey, WeaponTypeKey } from "../../Types/consts"
 import WeaponSheet from "../../Data/Weapons/WeaponSheet"
 import CardDark from "../Card/CardDark"
 import CardLight from "../Card/CardLight"
@@ -22,15 +22,12 @@ type WeaponSelectionModalProps = {
 
 export default function WeaponSelectionModal({ show, onHide, onSelect, filter = () => true, weaponFilter: propWeaponFilter }: WeaponSelectionModalProps) {
   const weaponSheets = usePromise(WeaponSheet.getAll, [])
-  const [weaponFilter, setWeaponfilter] = useState<WeaponTypeKey | "">(propWeaponFilter ?? "")
+  const [weaponFilter, setWeaponfilter] = useState<WeaponTypeKey[]>(propWeaponFilter ? [propWeaponFilter] : [...allWeaponTypeKeys])
 
-  useEffect(() => propWeaponFilter && setWeaponfilter(propWeaponFilter), [propWeaponFilter])
+  useEffect(() => propWeaponFilter && setWeaponfilter([propWeaponFilter]), [propWeaponFilter])
 
   const weaponIdList = !weaponSheets ? [] : [...new Set(allWeaponKeys)].filter(wKey => filter(weaponSheets[wKey]))
-    .filter(wKey => {
-      if (weaponFilter && weaponFilter !== weaponSheets?.[wKey]?.weaponType) return false
-      return true
-    })
+    .filter(wKey => weaponFilter.includes(weaponSheets?.[wKey]?.weaponType))
     .sort((a, b) => (weaponSheets?.[b]?.rarity ?? 0) - (weaponSheets?.[a]?.rarity ?? 0))
 
   if (!weaponSheets) return null

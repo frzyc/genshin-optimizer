@@ -14,7 +14,7 @@ export const dynamicData = {
   artSet: objectMap(input.artSet, (_, key) => dynamic.dyn[key]),
 }
 
-export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLevel: number): ArtifactsBySlot {
+export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLevel: number, allowPartial: boolean): ArtifactsBySlot {
   const result: ArtifactsBySlot = {
     base: {},
     values: { flower: [], plume: [], goblet: [], circlet: [], sands: [] }
@@ -38,8 +38,9 @@ export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLeve
     Object.keys(data.values).forEach(x => keys.add(x))
   }
   result.base = objectKeyMap([...keys], _ => 0)
-  for (const value of Object.values(result.values))
-    value.push({ id: "", values: {} })
+  if (allowPartial)
+    for (const value of Object.values(result.values))
+      value.push({ id: "", values: {} })
   return result
 }
 
