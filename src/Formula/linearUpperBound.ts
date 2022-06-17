@@ -1,5 +1,5 @@
 import { NumNode, ComputeNode } from "./type"
-import { DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
+import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
 import { constant, sum, prod, cmp } from "./utils"
 import { foldSum, foldProd, expandPoly } from './expandPoly'
 import { precompute, allOperations } from "./optimization"
@@ -262,4 +262,18 @@ function lub(bounds: { lower: number, upper: number }[]): { w: number[], c: numb
     c: -scaleProd * soln[nVar],
     err: scaleProd * soln[nVar + 1]
   }
+}
+
+export function maxWeight(a: ArtifactsBySlot, lin: LinearForm) {
+  const baseVal = Object.entries(lin.w).reduce((dotProd, [statKey, w]) => dotProd + w * a.base[statKey], lin.c)
+  const maxTot = Object.entries(a.values).reduce((maxTotVal, [slotKey, slotArts]) => {
+    const maxSlot = slotArts.reduce((maxArt, art) => {
+      const artVal = Object.entries(lin.w).reduce((dotProd, [statkey, w]) => dotProd + w * art.values[statkey], 0)
+      return maxArt.v > artVal ? maxArt : { v: artVal, id: art.id }
+    }, { v: 0, id: '' })
+    maxTotVal.v += maxSlot.v
+    maxTotVal.ids.push(maxSlot.id)
+    return maxTotVal
+  }, { v: baseVal, ids: [] as string[] })
+  return maxTot.v
 }

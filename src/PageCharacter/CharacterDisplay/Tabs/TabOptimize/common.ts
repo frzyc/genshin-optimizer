@@ -515,6 +515,7 @@ export type RequestFilter = StrictDict<SlotKey,
   { kind: "exclude", sets: Set<ArtifactSetKey> } |
   { kind: "id", ids: Set<string> }
 >
+export const emptyfilter: RequestFilter = objectKeyMap(allSlotKeys, _ => ({ kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }));
 
 export type DynStat = { [key in string]: number }
 export type ArtifactBuildData = {

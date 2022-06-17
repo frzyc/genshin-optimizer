@@ -39,18 +39,25 @@ describe.skip("Worker Perf", () => {
       optimizationTarget: nodes[0],
       plotBase: undefined,
       maxBuilds: 2,
-      filters: []
+      filters: [],
+      artSetExclusion: {}
     }, () => { })
     const total = countBuilds(arts)
 
     const date1 = new Date().getTime();
 
     worker.compute(-Infinity, {
-      "flower": { kind: "exclude", sets: new Set() },
-      "goblet": { kind: "exclude", sets: new Set() },
-      "circlet": { kind: "exclude", sets: new Set() },
-      "plume": { kind: "exclude", sets: new Set() },
-      "sands": { kind: "exclude", sets: new Set() },
+      cache: false,
+      optimizationTarget: nodes[0],
+      constraints: [],
+      artSetExclusion: {},
+      filter: {
+        "flower": { kind: "exclude", sets: new Set() },
+        "goblet": { kind: "exclude", sets: new Set() },
+        "circlet": { kind: "exclude", sets: new Set() },
+        "plume": { kind: "exclude", sets: new Set() },
+        "sands": { kind: "exclude", sets: new Set() },
+      }
     })
 
     const date2 = new Date().getTime()

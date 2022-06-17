@@ -8,6 +8,7 @@ import { mapFormulas } from "./internal"
 import { PriorityQueue } from './priorityQueue'
 import { cartesian, objectKeyMap } from '../Util/Util'
 import { allArtifactSets, allSlotKeys, ArtifactSetKey, SlotKey } from "../Types/consts"
+import { ArtSetExclusion } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting"
 
 /**
  * @param a  Artifact set
@@ -119,9 +120,16 @@ function estimateMaximum({ f, a, cachedCompute }: MaxEstQuery) {
   }
 }
 
-function pickBranch(a: ArtifactsBySlot, cachedCompute: CachedCompute) {
+/**
+ * Decides how to split between different branches.
+ * TODO: Branch values should also be calculated & returned here
+ * @param a     Artifact set
+ * @param lin   Linear form from compute
+ * @returns     The key to branch on.
+ */
+function pickBranch(a: ArtifactsBySlot, { lin }: CachedCompute) {
   // TODO: fix this to account for other constraints & maybe set key stuff
-  let linToConsider = cachedCompute.lin[0]
+  let linToConsider = lin[lin.length - 1]
   let keysToConsider = Object.keys(linToConsider.w)
 
   let shatterOn = { k: '', heur: -1 }
@@ -169,13 +177,24 @@ function reduceFormula(f: NumNode[], lower: DynStat, upper: DynStat) {
   return optimize(f2, {})
 }
 
-function cutConstraints(f: NumNode[], min: number[], lower: DynStat) {
+/**
+ * Checks for always-satisfied constraints & returns a new problem identical
+ *   to the last one, but with always-satisfied constraints removed.
+ * @param f
+ * @param min
+ * @param artSetExclusion
+ * @param lower
+ * @returns
+ */
+function cutConstraints(f: NumNode[], min: number[], artSetExclusion: ArtSetExclusion, lower: DynStat, upper: DynStat) {
   const [compute, mapping, buffer] = precompute(f, n => n.path[1])
   Object.entries(lower).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
   const result = compute()
   const active = min.map((m, i) => m > result[i])
   active[active.length - 1] = true  // Always preserve main dmg formula
-  return { f: f.filter((_, i) => active[i]), thr: min.filter((__, i) => active[i]) }
+
+  Object.entries(artSetExclusion).filter(([setKey, filterSet]) => true)
+  return { f: f.filter((_, i) => active[i]), thr: min.filter((__, i) => active[i]), artSetExclusion }
 }
 
 export type BNBSplitRequest = {
@@ -183,6 +202,7 @@ export type BNBSplitRequest = {
   filter: RequestFilter,
   nodes: NumNode[],
   min: number[],
+  artSetExclusion: ArtSetExclusion,
 
   bnbCompute?: BNBCachedCompute,
   depth: number
@@ -200,7 +220,7 @@ type CachedCompute = {
   lower: DynStat,
   upper: DynStat,
 }
-function splitBNB({ arts, filter, nodes, min, bnbCompute }: BNBSplitRequest): { filter: RequestFilter, bnbCompute: BNBCachedCompute }[] {
+export function splitBNB({ arts, filter, nodes, min, artSetExclusion, bnbCompute }: BNBSplitRequest): { filter: RequestFilter, bnbCompute: BNBCachedCompute }[] {
   const a = filterArts(arts, filter)
 
   // 1. check constraints & simplify formula.
@@ -209,7 +229,7 @@ function splitBNB({ arts, filter, nodes, min, bnbCompute }: BNBSplitRequest): { 
     nodes = reduceFormula(nodes, statsMin, statsMax)
 
     // 1a. Cut away always-satisfied constraints
-    const { f, thr } = cutConstraints(nodes, min, statsMin)
+    const { f, thr } = cutConstraints(nodes, min, artSetExclusion, statsMin, statsMax)
 
     // 1b. Check that existing constraints are satisfiable
     const cc: CachedCompute = estimateMaximum({ f, a })
@@ -281,34 +301,38 @@ export function debugMe(f: NumNode, arts: ArtifactsBySlot) {
 
   const noFilter = { kind: "exclude" as const, sets: new Set<ArtifactSetKey>() }
   const noFilter2: RequestFilter = objectKeyMap(allSlotKeys, _ => noFilter)
-  // let minVal = -Infinity
-  let minVal = 32000
-  let jobs = [{ arts, filter: noFilter2, nodes: [f], min: [minVal], depth: 0 }] as BNBSplitRequest[]
 
-  let cnt = 0
-  let numEnum = 0
-  while (jobs.length > 0) {
-    let req = jobs.pop()
-    if (req === undefined) break
+  filterArts(arts, noFilter2)
+  // filterArts(arts, undefined)
 
-    if ((req.bnbCompute?.cachedCompute.maxEst[0] ?? Infinity) < minVal) continue
+  // // let minVal = -Infinity
+  // let minVal = 32000
+  // let jobs = [{ arts, filter: noFilter2, nodes: [f], min: [minVal], depth: 0 }] as BNBSplitRequest[]
 
-    let { filter, nodes, min, depth } = req
-    let numBuilds = countBuilds(filterArts(arts, filter))
-    if (numBuilds < 2000) {
-      numEnum += numBuilds
-      continue
-    }
+  // let cnt = 0
+  // let numEnum = 0
+  // while (jobs.length > 0) {
+  //   let req = jobs.pop()
+  //   if (req === undefined) break
 
-    console.log({ iter: cnt, nb: numBuilds, treesize: jobs.length, depth }, { max: req.bnbCompute?.cachedCompute.maxEst[0] })
-    splitBNB(req).forEach(({ filter, bnbCompute }) => jobs.push({ arts, filter, nodes, min, bnbCompute, depth: depth + 1 }))
-    // console.log(jobs.length)
+  //   if ((req.bnbCompute?.cachedCompute.maxEst[0] ?? Infinity) < minVal) continue
 
-    cnt += 1
-    if (cnt > 2000) break
-  }
+  //   let { filter, nodes, min, depth } = req
+  //   let numBuilds = countBuilds(filterArts(arts, filter))
+  //   if (numBuilds < 2000) {
+  //     numEnum += numBuilds
+  //     continue
+  //   }
 
-  console.log(jobs, cnt, numEnum)
+  //   console.log({ iter: cnt, nb: numBuilds, treesize: jobs.length, depth }, { max: req.bnbCompute?.cachedCompute.maxEst[0] })
+  //   splitBNB(req).forEach(({ filter, bnbCompute }) => jobs.push({ arts, filter, nodes, min, bnbCompute, depth: depth + 1 }))
+  //   // console.log(jobs.length)
+
+  //   cnt += 1
+  //   if (cnt > 2000) break
+  // }
+
+  // console.log(jobs, cnt, numEnum)
 }
 
 function debug3(f: NumNode, arts: ArtifactsBySlot) {

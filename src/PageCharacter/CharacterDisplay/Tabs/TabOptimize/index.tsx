@@ -33,11 +33,11 @@ import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../../../Types/artifact';
 import { ICachedCharacter } from '../../../../Types/character';
 import { CharacterKey } from '../../../../Types/consts';
-import { objPathValue, range } from '../../../../Util/Util';
-import { FinalizeResult, Setup, WorkerCommand, WorkerResult } from './BackgroundWorker';
+import { objectKeyValueMap, objPathValue, range } from '../../../../Util/Util';
+import { FinalizeResult, Setup, SubProblem, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
 import useBuildSetting from './BuildSetting';
-import { artSetPerm, Build, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
+import { artSetPerm, Build, countBuilds, emptyfilter, filterArts, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
@@ -132,7 +132,7 @@ export default function TabBuild() {
     const cancelled = new Promise<void>(r => cancelToken.current = r)
 
     let nodes = [...valueFilter.map(x => x.value), optimizationTargetNode], arts = split!
-    const setPerms = filterFeasiblePerm(artSetPerm(artSetExclusion, Object.values(split.values).flatMap(x => x.map(x => x.set!))), split)
+    // const setPerms = filterFeasiblePerm(artSetPerm(artSetExclusion, Object.values(split.values).flatMap(x => x.map(x => x.set!))), split)
 
     const minimum = [...valueFilter.map(x => x.minimum), -Infinity]
     const status: Omit<BuildStatus, "type"> = { tested: 0, failed: 0, skipped: 0, total: NaN, startTime: performance.now() }
@@ -152,41 +152,50 @@ export default function TabBuild() {
     optimizationTargetNode = nodes.pop()!
 
     // debugMe(optimizationTargetNode, arts)
-    // console.log('setPerms', setPerms, artSetExclusion)
+    // console.log('artSetExclusion', artSetExclusion)
 
     const wrap = {
       buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity),
       finalizing: false
     }
 
-    const minFilterCount = maxWorkers === 1 ? Infinity : 8_000_000 // Don't split for single worker
-    const maxRequestFilterInFlight = maxWorkers * 4
-    const unprunedFilters = setPerms[Symbol.iterator](), requestFilters: RequestFilter[] = []
-    const idleWorkers: { id: number, worker: Worker }[] = []
-    const pruningID = new Set<number>()
-
-    function fetchContinueWork(): WorkerCommand {
-      return { command: "split", filter: undefined, minCount: minFilterCount, threshold: wrap.buildValues[maxBuildsToShow - 1] }
-    }
-    function fetchPruningWork(): WorkerCommand | undefined {
-      const { done, value } = unprunedFilters.next()
-      return done ? undefined : {
-        command: "split", minCount: minFilterCount,
-        threshold: wrap.buildValues[maxBuildsToShow - 1], filter: value,
-      }
-    }
-    function fetchRequestWork(): WorkerCommand | undefined {
-      const filter = requestFilters.pop()
-      return !filter ? undefined : {
-        command: "iterate",
-        threshold: wrap.buildValues[maxBuildsToShow - 1], filter
-      }
-    }
-
     const filters = nodes
       .map((value, i) => ({ value, min: minimum[i] }))
       .filter(x => x.min > -Infinity)
+    const initialProblem: SubProblem = {
+      cache: false,
+      optimizationTarget: optimizationTargetNode,
+      constraints: filters,
+      artSetExclusion: artSetExclusion,
 
+      filter: emptyfilter
+    }
+
+    const maxSplitIters = 5
+    const minFilterCount = 2_000 // Don't split for single worker
+    const maxRequestFilterInFlight = maxWorkers * 4
+    const workQueue: SubProblem[] = [initialProblem]
+    const idleWorkers: { id: number, worker: Worker }[] = []  // Currently idle workers
+    const busyWorkerIDs = new Set<number>()  // Workers with pending work in SplitWorker()
+    // const pruningID = new Set<number>()
+
+    function fetchContinueWork(numSplits: number): WorkerCommand {
+      if (numSplits === 0) return { command: "split", minCount: minFilterCount, maxIter: maxSplitIters, threshold: wrap.buildValues[maxBuildsToShow - 1] }
+      return { command: "splitwork", threshold: wrap.buildValues[maxBuildsToShow - 1], numSplits }
+    }
+    function fetchRequestWork(): WorkerCommand | undefined {
+      const subproblem = workQueue.pop()
+      if (!subproblem) return undefined
+      let numBuild = countBuilds(filterArts(arts, subproblem.filter))
+
+      console.log('Requesting work... ', numBuild)
+
+      if (numBuild < minFilterCount) return { command: 'iterate', threshold: wrap.buildValues[maxBuildsToShow - 1], subproblem }
+      return { command: 'split', threshold: wrap.buildValues[maxBuildsToShow - 1], minCount: minFilterCount, maxIter: maxSplitIters, subproblem }
+    }
+
+
+    status.total = Object.values(arts.values).reduce((prod, arts) => prod * arts.length, 1)
     const finalizedList: Promise<FinalizeResult>[] = []
     for (let i = 0; i < maxWorkers; i++) {
       const worker = new Worker()
@@ -195,22 +204,26 @@ export default function TabBuild() {
         command: "setup",
         id: i, arts,
         optimizationTarget: optimizationTargetNode,
+        artSetExclusion: artSetExclusion,
         plotBase: plotBaseNode,
         maxBuilds: maxBuildsToShow,
         filters
       }
       worker.postMessage(setup, undefined)
-      if (i === 0) {
-        const countCommand: WorkerCommand = { command: "count", exclusion: artSetExclusion }
-        worker.postMessage(countCommand, undefined)
-      }
+      // if (i === 0) {
+      // const countCommand: WorkerCommand = { command: "count", exclusion: artSetExclusion }
+      // worker.postMessage(countCommand, undefined)
+      // const initCommand: WorkerCommand = { command: 'splitwork', filter: emptyfilter, threshold: -Infinity, numSplits: maxWorkers - 1 }
+      // worker.postMessage(initCommand)
+      // }
       let finalize: (_: FinalizeResult) => void
       const finalized = new Promise<FinalizeResult>(r => finalize = r)
+      // console.log('Definining onmessage', i)
       worker.onmessage = async ({ data }: { data: { id: number } & WorkerResult }) => {
         switch (data.command) {
-          case "count":
-            status.total = data.count
-            return
+          // case "count":
+          //   status.total = data.count
+          //   return
           case "interim":
             status.tested += data.tested
             status.failed += data.failed
@@ -221,10 +234,10 @@ export default function TabBuild() {
             }
             break
           case "split":
-            if (data.filter) {
-              requestFilters.push(data.filter)
-              pruningID.add(data.id)
-            } else pruningID.delete(data.id)
+            console.log('split return', data.subproblems, data.ready)
+            workQueue.push(...data.subproblems)
+            if (data.ready) busyWorkerIDs.delete(data.id)
+            else busyWorkerIDs.add(data.id)
             idleWorkers.push({ id: data.id, worker })
             break
           case "iterate":
@@ -236,25 +249,34 @@ export default function TabBuild() {
             break
           default: console.log("DEBUG", data)
         }
+
+        // Figure out how many
+        const numSplitting = idleWorkers.filter(({ id }) => busyWorkerIDs.has(id)).length
+        const numWorkerWithNoJob = Math.max(idleWorkers.filter(({ id }) => !busyWorkerIDs.has(id)).length - workQueue.length, 0)
+        const nChunksFromEveryone = Math.ceil(numWorkerWithNoJob / numSplitting)
+
+        console.log('workers be like...', idleWorkers, data)
         while (idleWorkers.length) {
           const { id, worker } = idleWorkers.pop()!
           let work: WorkerCommand | undefined
           if (wrap.finalizing) work = { command: "finalize" }
-          else if (requestFilters.length >= maxRequestFilterInFlight) work = fetchRequestWork()
-          else if (pruningID.has(id)) work = fetchContinueWork()
-          else if (!(id % 2)) work = fetchPruningWork()
+          else if (workQueue.length >= maxRequestFilterInFlight) work = fetchRequestWork()
+          else if (busyWorkerIDs.has(id)) work = fetchContinueWork(nChunksFromEveryone)
           if (!work) work = fetchRequestWork()
 
           if (work) worker.postMessage(work)
           else {
             idleWorkers.push({ id, worker })
-            if (idleWorkers.length === maxWorkers) {
+            if (idleWorkers.length === maxWorkers && busyWorkerIDs.size === 0) {
               wrap.finalizing = true
               continue
             }
             break
           }
         }
+        // if (busyWorkerIDs.size === 0 && idleWorkers.length >= maxWorkers) {
+        //   wrap.finalizing = true
+        // }
       }
 
       cancelled.then(() => worker.terminate())

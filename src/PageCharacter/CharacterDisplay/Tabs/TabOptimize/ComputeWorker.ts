@@ -1,6 +1,7 @@
 import { optimize, precompute } from '../../../../Formula/optimization';
 import type { NumNode } from '../../../../Formula/type';
-import type { InterimResult, Setup } from './BackgroundWorker';
+import { ArtifactSetKey } from '../../../../Types/consts';
+import type { InterimResult, Setup, SubProblem } from './BackgroundWorker';
 import { ArtifactsBySlot, Build, countBuilds, filterArts, mergePlot, PlotData, pruneAll, RequestFilter } from './common';
 
 export class ComputeWorker {
@@ -29,30 +30,61 @@ export class ComputeWorker {
     }
   }
 
-  compute(newThreshold: number, filter: RequestFilter) {
+  compute(newThreshold: number, subproblem: SubProblem) {
     if (this.threshold > newThreshold) this.threshold = newThreshold
+    const { optimizationTarget, constraints, filter, artSetExclusion } = subproblem
+    // TODO: check artSetExclusion stuff
+
     const { min, interimReport } = this, self = this // `this` in nested functions means different things
     let preArts = filterArts(this.arts, filter)
     const totalCount = countBuilds(preArts)
 
+    let nodesReduced = optimize([...constraints.map(({ value }) => value), optimizationTarget], {}, _ => false);
+    // const min = [...constraints.map(({ min }) => min), -Infinity];
+
+    // console.log(this.arts)
+
     let nodes = optimize(this.nodes, {}, _ => false);
-    ({ nodes, arts: preArts } = pruneAll(nodes, min, preArts, this.maxBuilds, {}, {
-      pruneArtRange: true, pruneNodeRange: true,
-    }))
+    // ({ nodes, arts: preArts } = pruneAll(nodes, min, preArts, this.maxBuilds, {}, {
+    //   pruneArtRange: true, pruneNodeRange: true,
+    // }))
     const [compute, mapping, buffer] = precompute(nodes, f => f.path[1])
+    const [compute2, mapping2, buffer2] = precompute(nodesReduced, f => f.path[1])
     const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length).map(arts => arts.map(art => ({
-      id: art.id, values: Object.entries(art.values)
-        .map(([key, value]) => ({ key: mapping[key]!, value, cache: 0 }))
+      id: art.id, set: art.set, values: Object.entries(art.values)
+        // .map(([key, value]) => ({ key: mapping[key]!, value, cache: 0 }))
+        .map(([key, value]) => ({ key: mapping[key]!, key2: mapping2[key] ?? 0, value, cache: 0 }))
         .filter(({ key, value }) => key !== undefined && value !== 0)
     })))
+    // console.log(mapping)
+    // console.log(artSetExclusion)
+    // console.log(this.arts)
+    // throw Error('stop here')
 
     const ids: string[] = Array(arts.length).fill("")
     let count = { tested: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }
 
-    function permute(i: number) {
+    function permute(i: number, oddKeys: Set<ArtifactSetKey | undefined>) {
       if (i < 0) {
         const result = compute()
-        if (min.every((m, i) => (m <= result[i]))) {
+        const result2 = compute2()
+        if (Math.abs(result[min.length] - result2[constraints.length]) > 1e-4) {
+          console.log('OOF COMPUTE NO MATCH')
+          console.log(preArts)
+          console.log(nodes)
+          console.log(nodesReduced)
+          console.log(buffer)
+          console.log(buffer2)
+          throw Error('what?')
+        }
+        let passArtExcl = !Object.entries(artSetExclusion).some(([setKey, vals]) => {
+          let bufloc = mapping[setKey]
+          if (!bufloc) return false
+          return vals.includes(buffer[bufloc])
+        })
+        // This checks rainbows
+        if (artSetExclusion['uniqueKey'] !== undefined) passArtExcl = artSetExclusion['uniqueKey'].every(v => v !== oddKeys.size)
+        if (passArtExcl && min.every((m, i) => (m <= result[i]))) {
           const value = result[min.length], { builds, plotData, threshold } = self
           let build: Build | undefined
           if (value >= threshold) {
@@ -78,12 +110,19 @@ export class ComputeWorker {
           const { key, value } = current
           current.cache = buffer[key]
           buffer[key] += value
+          buffer2[current.key2] += value
         }
 
-        permute(i - 1)
+        if (oddKeys.has(art.set)) oddKeys.delete(art.set)
+        else oddKeys.delete(art.set)
+        permute(i - 1, oddKeys)
+        if (oddKeys.has(art.set)) oddKeys.delete(art.set)
+        else oddKeys.delete(art.set)
 
-        for (const { key, cache } of art.values)
+        for (const { key, key2, cache } of art.values) {
           buffer[key] = cache
+          buffer2[key2] = cache
+        }
       })
       if (i === 0) {
         count.tested += arts[0].length
@@ -96,10 +135,15 @@ export class ComputeWorker {
       const i = mapping[key]
       if (i !== undefined)
         buffer[i] = value
+
+      const i2 = mapping2[key]
+      if (i2 !== undefined)
+        buffer2[i2] = value
     }
 
-    permute(arts.length - 1)
+    permute(arts.length - 1, new Set())
     this.interimReport(count)
+    return this.threshold
   }
 
   refresh(force: boolean): void {
@@ -107,7 +151,8 @@ export class ComputeWorker {
     if (Object.keys(this.plotData ?? {}).length >= 100000)
       this.plotData = mergePlot([this.plotData!])
 
-    if (this.builds.length >= 100000 || force) {
+    // I need frequent updating of threshold
+    if (true || this.builds.length >= 100000 || force) {
       this.builds = this.builds
         .sort((a, b) => b.value - a.value)
         .slice(0, maxBuilds)
