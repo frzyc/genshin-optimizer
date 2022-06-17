@@ -22,7 +22,7 @@ export function foldProd(nodes: NumNode[]) {
   nodes = nodes.filter(n => n.operation !== 'const')
 
   if (nodes.length === 0) return constant(constVal)
-  if (constVal === 0) return sum(...nodes)
+  if (constVal === 1) return prod(...nodes)
   return prod(...nodes, constant(constVal))
 }
 
