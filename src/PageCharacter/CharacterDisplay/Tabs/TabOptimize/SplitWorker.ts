@@ -111,6 +111,7 @@ export class SplitWorker {
 
 
     const { optimizationTarget, cachedCompute } = subproblem
+    if (cachedCompute.maxEst[cachedCompute.maxEst.length - 1] < threshold) return []
 
     // 3. Perform branching
     // let { f, thr } = cachedCompute
