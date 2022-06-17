@@ -1,18 +1,10 @@
 import type { NumNode } from '../../../../Formula/type';
 import { precompute } from '../../../../Formula/optimization';
-import { toLinearUpperBound, maxWeight, LinearForm } from '../../../../Formula/linearUpperBound';
-import { allArtifactSets, allSlotKeys, ArtifactSetKey } from '../../../../Types/consts';
+import { allSlotKeys, ArtifactSetKey } from '../../../../Types/consts';
 import { estimateMaximum, reduceFormula, statsUpperLower } from '../../../../Formula/addedUtils';
-import type { CachedCompute, InterimResult, Setup, Split, SplitWork, SubProblem, SubProblemNC, SubProblemWC } from './BackgroundWorker';
+import type { ArtSetExclusionFull, CachedCompute, InterimResult, Setup, Split, SplitWork, SubProblem, SubProblemNC, SubProblemWC } from './BackgroundWorker';
 import { ArtifactsBySlot, countBuilds, DynStat, filterArts, RequestFilter } from './common';
 import { cartesian, objectKeyMap, objectKeyValueMap } from '../../../../Util/Util';
-
-type SplitRequest = {
-  threshold: number,
-  minCount: number,
-  maxIter: number,
-  filter?: RequestFilter,
-}
 
 export class SplitWorker {
   min: number[]
@@ -39,11 +31,20 @@ export class SplitWorker {
       return [setKey, v.flatMap(v => (v === 2) ? [2, 3] : [4, 5])]
     })
   }
+
   addSubProblem(subproblem: SubProblem) {
     const count = countBuilds(filterArts(this.arts, subproblem.filter))
     if (count === 0) return
     this.subproblems.push({ count, subproblem })
   }
+
+  /**
+   * Iteratively splits the subproblem (depth-first) into smaller chunks until it is small enough,
+   *   as determined by `minCount`. Repeat up to `maxIter` times before returning control to the main thread.
+   * @param minCount
+   * @param maxIter
+   * @returns Either ONE [subproblem] of size `minCount` or ZERO [] subproblems.
+   */
   split({ threshold, minCount, maxIter, subproblem }: Split): SubProblem[] {
     if (threshold > this.min[this.min.length - 1]) this.min[this.min.length - 1] = threshold
     if (subproblem) this.addSubProblem(subproblem)
@@ -59,12 +60,15 @@ export class SplitWorker {
       if (count <= minCount) return [subproblem]
 
       this.splitBNB(this.min[this.min.length - 1], subproblem).forEach(subp => this.addSubProblem(subp))
-      // console.log('[bnb iter]', this.min[this.min.length - 1], {
-      //   todo: this.filters.length, buildsleft: this.filters.reduce((a, { count }) => a + count, 0)
-      // })
     }
     return []
   }
+
+  /**
+   * Iteratively splits the subproblem (breadth-first) into many many chunks to better distribute the B&B workload
+   *   between the workers. There is some danger of over-fracturing the chunks.
+   * @returns A list of [subproblems] with length `numSplits`
+   */
   splitWork({ threshold, numSplits, subproblem }: SplitWork) {
     if (threshold > this.min[this.min.length - 1]) this.min[this.min.length - 1] = threshold
     if (subproblem) this.addSubProblem(subproblem)
@@ -77,6 +81,16 @@ export class SplitWorker {
     return this.subproblems.splice(0, numSplits).map(({ subproblem }) => subproblem)
   }
 
+
+  /**
+   * splitBNB takes a SubProblem and tries to perform Branch and Bound (BnB) pruning to solve for the
+   *   optimal damage value. As the name states, there are two main phases: Branching and Bounding.
+   *   The bounding is handled by an `estimateMaximum()` function call, and the branching is done by `pickBranch()`.
+   *
+   * @param threshold  Objective function lower bound threshold
+   * @param subproblem The subproblem to split
+   * @returns An array of up to 32 splits of the input subproblem.
+   */
   splitBNB(threshold: number, subproblem: SubProblem) {
     const a = filterArts(this.arts, subproblem.filter)
 
@@ -96,6 +110,10 @@ export class SplitWorker {
 
       subproblem = { ...sub2, cache: true, cachedCompute }
     }
+    // 1c. A cached subproblem skips most of the above constraint checking, but `threshold` may change
+    //     between iterations.
+    const { cachedCompute } = subproblem
+    if (cachedCompute.maxEst[cachedCompute.maxEst.length - 1] < threshold) return []
 
     // 2. Pick branching parameter
     const { k } = pickBranch(a, subproblem.cachedCompute)
@@ -109,14 +127,8 @@ export class SplitWorker {
       return [slotKey, [below, above]]
     }))
 
-
-    const { optimizationTarget, cachedCompute } = subproblem
-    if (cachedCompute.maxEst[cachedCompute.maxEst.length - 1] < threshold) return []
-
-    // 3. Perform branching
-    // let { f, thr } = cachedCompute
-    // let cachedCompute = cachedCompute
-    let results = [] as { numBuilds: number, subproblem: SubProblemWC }[]
+    // 3. Perform branching. Check bounding during the branching phase as well.
+    let branches = [] as { numBuilds: number, subproblem: SubProblemWC }[]
     cartesian([0, 1], [0, 1], [0, 1], [0, 1], [0, 1]).forEach(([s1, s2, s3, s4, s5]) => {
       let z = {
         base: { ...a.base },
@@ -149,7 +161,7 @@ export class SplitWorker {
       if (cc2.maxEst[cc2.maxEst.length - 1] < threshold) return;
 
       let newFilter: RequestFilter = objectKeyMap(allSlotKeys, slot => ({ kind: 'id' as 'id', ids: new Set(z.values[slot].map(art => art.id)) }))
-      results.push({
+      branches.push({
         numBuilds,
         subproblem: {
           ...sub2,
@@ -159,26 +171,20 @@ export class SplitWorker {
         }
       })
     })
-    results.sort((a, b) => b.numBuilds - a.numBuilds)
-    return results.map(({ subproblem }) => subproblem)
+    branches.sort((a, b) => b.numBuilds - a.numBuilds)
+    return branches.map(({ subproblem }) => subproblem)
   }
-
-
-
 }
 
-type BNBSplitRequest = {
-  filter: RequestFilter,
-  bnbCompute?: CachedCompute
-}
-type BNBHelper = {
-  a: ArtifactsBySlot,
-  statsMin: DynStat,
-  statsMax: DynStat,
-
-  threshold: number
-}
-
+/**
+ * Takes a Subproblem and reduces whatever formulas it can. Also deletes any constraint equations that are always active
+ *   (and therefore have no contribution)
+ *
+ * @param sub          Subproblem to reduce/simplify.
+ * @param statsMinMax  Reduction is based on the range of valid stats.
+ * @returns  A new subproblem that should be identical to the previous one, but with fewer components.
+ *           If the subproblem is unsatisfiable, return `undefined`
+ */
 function reduceSubProblem(sub: SubProblem, statsMin: DynStat, statsMax: DynStat): SubProblemNC | undefined {
   const { optimizationTarget, constraints, artSetExclusion } = sub
   let subnodes = [optimizationTarget, ...constraints.map(({ value }) => value)]
@@ -197,7 +203,7 @@ function reduceSubProblem(sub: SubProblem, statsMin: DynStat, statsMax: DynStat)
   const newConstraints = subnodes.map((value, i) => ({ value, min: submin[i] })).filter((_, i) => active[i])
 
   // 2. Check for never-active and always-active ArtSetExcl constraints.
-  let newArtExcl = {} as Dict<ArtifactSetKey, number[]>
+  let newArtExcl = {} as ArtSetExclusionFull
   for (const [setKey, exclude] of Object.entries(artSetExclusion)) {
     if (setKey === 'uniqueKey') {
       // let minSets = Object.fromEntries(Object.entries(statsMin).filter(([statKey, v]) => v > 0 && allArtifactSets.includes(statKey as any)))
@@ -221,26 +227,6 @@ function reduceSubProblem(sub: SubProblem, statsMin: DynStat, statsMax: DynStat)
 
     filter: sub.filter
   }
-
-  // const newArtExcl = Object.entries(artSetExclusion)
-  //   .reduce((ret, [setKey, exclude]) => {
-  //     if (setKey === 'uniqueKey') {
-  //       let minSets = Object.fromEntries(Object.entries(statsMin).filter(([statKey, v]) => v > 0 && allArtifactSets.includes(statKey as any)))
-  //       let numSets = Object.keys(minSets).length
-  //       let numSlotsUsed = Object.values(minSets).reduce((a, b) => a + b)
-  //       ret[setKey] = exclude.filter(v => {
-  //         // TODO: logic for checking if never active
-  //         return true
-  //       })
-  //       return ret
-  //     }
-  //     const reducedExcl = [...exclude].filter(n => statsMin[setKey] <= n && n <= statsMax[setKey])
-  //     if (reducedExcl.length > 0) ret[setKey] = reducedExcl
-  //     return ret
-  //   }, {} as Dict<ArtifactSetKey | 'uniqueKey', number[]>
-  //   )
-
-  // 3. Check for always-active ArtSetExcle constraints. (problem is never feasible)
 }
 
 /**
@@ -275,41 +261,3 @@ function pickBranch(a: ArtifactsBySlot, { lin }: CachedCompute) {
   if (shatterOn.k === '') throw Error('Shatter broke...')
   return shatterOn
 }
-
-
-
-
-
-
-
-
-
-
-
-function splitBySetOrID(_arts: ArtifactsBySlot, filter: RequestFilter, limit: number): RequestFilter[] {
-  const arts = filterArts(_arts, filter)
-
-  const candidates = allSlotKeys
-    .map(slot => ({ slot, sets: new Set(arts.values[slot].map(x => x.set)) }))
-    .filter(({ sets }) => sets.size > 1)
-  if (!candidates.length)
-    return splitByID(arts, filter, limit)
-  const { sets, slot } = candidates.reduce((a, b) => a.sets.size < b.sets.size ? a : b)
-  return [...sets].map(set => ({ ...filter, [slot]: { kind: "required", sets: new Set([set]) } }))
-}
-function splitByID(_arts: ArtifactsBySlot, filter: RequestFilter, limit: number): RequestFilter[] {
-  const arts = filterArts(_arts, filter)
-  const count = countBuilds(arts)
-
-  const candidates = allSlotKeys
-    .map(slot => ({ slot, length: arts.values[slot].length }))
-    .filter(x => x.length > 1)
-  const { slot, length } = candidates.reduce((a, b) => a.length < b.length ? a : b)
-
-  const numChunks = Math.ceil(count / limit)
-  const boundedNumChunks = Math.min(numChunks, length)
-  const chunk = Array(boundedNumChunks).fill(0).map(_ => new Set<string>())
-  arts.values[slot].forEach(({ id }, i) => chunk[i % boundedNumChunks].add(id))
-  return chunk.map(ids => ({ ...filter, [slot]: { kind: "id", ids } }))
-}
-//

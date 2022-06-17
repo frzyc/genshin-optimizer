@@ -83,7 +83,8 @@ export class ComputeWorker {
           return vals.includes(buffer[bufloc])
         })
         // This checks rainbows
-        if (artSetExclusion['uniqueKey'] !== undefined) passArtExcl = artSetExclusion['uniqueKey'].every(v => v !== oddKeys.size)
+        if (passArtExcl && artSetExclusion['uniqueKey'] !== undefined) passArtExcl = artSetExclusion['uniqueKey'].every(v => v !== oddKeys.size)
+
         if (passArtExcl && min.every((m, i) => (m <= result[i]))) {
           const value = result[min.length], { builds, plotData, threshold } = self
           let build: Build | undefined
@@ -114,10 +115,10 @@ export class ComputeWorker {
         }
 
         if (oddKeys.has(art.set)) oddKeys.delete(art.set)
-        else oddKeys.delete(art.set)
+        else oddKeys.add(art.set)
         permute(i - 1, oddKeys)
         if (oddKeys.has(art.set)) oddKeys.delete(art.set)
-        else oddKeys.delete(art.set)
+        else oddKeys.add(art.set)
 
         for (const { key, key2, cache } of art.values) {
           buffer[key] = cache
