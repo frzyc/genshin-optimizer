@@ -48,6 +48,7 @@ export class SplitWorker {
   split({ threshold, minCount, maxIter, subproblem }: Split): SubProblem[] {
     if (threshold > this.min[this.min.length - 1]) this.min[this.min.length - 1] = threshold
     if (subproblem) this.addSubProblem(subproblem)
+    const initialProblemTotal = this.subproblems.reduce((a, { count }) => a + count, 0)
 
     console.log('split', this.min[this.min.length - 1], {
       todo: this.subproblems.length, buildsleft: this.subproblems.reduce((a, { count }) => a + count, 0)
@@ -57,10 +58,16 @@ export class SplitWorker {
     while (n < maxIter && this.subproblems.length) {
       n += 1
       const { count, subproblem } = this.subproblems.pop()!
-      if (count <= minCount) return [subproblem]
+      if (count <= minCount) {
+        const newProblemTotal = this.subproblems.reduce((a, { count }) => a + count, 0) + count
+        this.callback({ command: 'interim', tested: 0, failed: 0, skipped: initialProblemTotal - newProblemTotal, buildValues: undefined })
+        return [subproblem]
+      }
 
       this.splitBNB(this.min[this.min.length - 1], subproblem).forEach(subp => this.addSubProblem(subp))
     }
+    const newProblemTotal = this.subproblems.reduce((a, { count }) => a + count, 0)
+    this.callback({ command: 'interim', tested: 0, failed: 0, skipped: initialProblemTotal - newProblemTotal, buildValues: undefined })
     return []
   }
 
@@ -72,11 +79,14 @@ export class SplitWorker {
   splitWork({ threshold, numSplits, subproblem }: SplitWork) {
     if (threshold > this.min[this.min.length - 1]) this.min[this.min.length - 1] = threshold
     if (subproblem) this.addSubProblem(subproblem)
+    const initialProblemTotal = this.subproblems.reduce((a, { count }) => a + count, 0)
 
     while (this.subproblems.length > 0 && this.subproblems.length <= numSplits) {
       const { subproblem } = this.subproblems.shift()!
       this.splitBNB(this.min[this.min.length - 1], subproblem).forEach(subp => this.addSubProblem(subp))
     }
+    const newProblemTotal = this.subproblems.reduce((a, { count }) => a + count, 0)
+    this.callback({ command: 'interim', tested: 0, failed: 0, skipped: initialProblemTotal - newProblemTotal, buildValues: undefined })
     console.log('exit splitWork. Filters pre-exit', this.subproblems)
     return this.subproblems.splice(0, numSplits).map(({ subproblem }) => subproblem)
   }
