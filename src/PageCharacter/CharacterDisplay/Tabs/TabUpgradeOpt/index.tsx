@@ -154,6 +154,13 @@ export default function TabUpopt() {
 
     let upOpt = { query: query, arts: artUpOpt }
 
+    artUpOpt.forEach(qr => {
+      if (qr.id === 'artifact_295') {
+        console.log(qr)
+        console.log(evalArtifact(query, qaLookup[qr.id]!, true))
+      }
+    })
+
     // Re-sort & slow eval
     upOpt = upgradeOptExpandSink(upOpt, 0, 5)
     setArtifactUpgradeOpts(upOpt);

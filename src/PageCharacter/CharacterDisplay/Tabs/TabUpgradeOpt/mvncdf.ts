@@ -60,6 +60,7 @@ export function mvnPE_good(mu: number[], cov: number[][], x: number[]) {
     cov.forEach(arr => arr.forEach(c => mvn.pushCov(c)));
 
     mvn.compute()
+    console.log({ x, mu, cov }, { eup: mvn.Eup })
     return { p: mvn.p, upAvg: mvn.Eup, cp: mvn.cp }
   }
   finally {

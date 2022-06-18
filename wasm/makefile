@@ -23,7 +23,7 @@ DEBUG:=
 
 # Tools and flags
 FC:=emfc.sh
-CC:=emcc
+CC:=emcc -D EMITWASM
 WLD:=emcc
 AR:=emar
 RANLIB:=emranlib

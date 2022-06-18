@@ -1,4 +1,4 @@
-#define EMITWASM
+// #define EMITWASM
 
 #include <vector>
 #include <math.h>
@@ -17,7 +17,8 @@ inline double phi1(double mu, double sig2) { return exp(-mu * mu / sig2 / 2) / s
 /* MIN and MAX macros, except they're inline functions for compiler fun. */
 inline int32_t MIN(int32_t a, int32_t b) { return ((a) < (b) ? a : b); }
 inline int32_t MAX(int32_t a, int32_t b) { return ((a) > (b) ? a : b); }
-#define LARGEFINITE 1024
+#define LARGEFINITE 1048576
+#define DIVZERO(value) ((value) < 0 ? -LARGEFINITE : ((value) > 0 ? LARGEFINITE : 0))
 
 /**
  * Triangular number generators and inverters.
@@ -58,16 +59,9 @@ public:
     {
       stds.push_back(sqrt(cov[i + dim * i]));
       if (stds.back() == 0)
-      {
-        if (x[i] - mu[i] < 0)
-          lower.push_back(-LARGEFINITE);
-        else
-          lower.push_back(LARGEFINITE);
-      }
+        lower.push_back(DIVZERO(x[i] - mu[i]));
       else
-      {
         lower.push_back((x[i] - mu[i]) / stds[i]);
-      }
       for (int j = 0; j < i; ++j)
       {
         if (stds[i] == 0 || stds[j] == 0)
@@ -98,29 +92,24 @@ public:
 
     for (int j = 0; j < dim; j++)
     {
-      double c2 = 0;
-      for (int i = 0; i < dim; i++)
-        c2 += i == j ? d0j[i] : d0j[i] * correl[ij2k(i, j)];
-      moments.push_back(stds[j] * (-lower[j] + c2 / prob));
+      if (prob < 1e-8)
+        moments.push_back(0);
+      else if (stds[j] < 1e-8)
+        moments.push_back(mu[j] - x[j]);
+      else
+      {
+        double c2 = 0;
+        for (int i = 0; i < dim; i++)
+          c2 += i == j ? d0j[i] : d0j[i] * correl[ij2k(i, j)];
+        moments.push_back(stds[j] * (-lower[j] + c2 / prob));
+      }
     }
   }
 
   void narrow() { maxpts *= 16; }
 
   double getConstrainProb() const { return constrainProb; }
-  double getMoment(int j) const
-  {
-    if (prob < 1e-8)
-      return 0;
-
-    if (stds[j] < 1e-8)
-      return mu[j] - x[j];
-
-    double c2 = 0;
-    for (int i = 0; i < dim; i++)
-      c2 += (i == j ? d0j[i] : d0j[i] * correl[ij2k(i, j)]);
-    return stds[j] * (-lower[j] + c2 / prob);
-  }
+  double getMoment(int j) const { return moments[j]; }
   double getEUp() const { return getMoment(0); }
   double getPEUp() const
   {
@@ -179,18 +168,10 @@ private:
       if (i == j)
         continue;
 
-      if (correl[ij2k(i, j)] >= 1)
+      if (correl[ij2k(i, j)] >= 1) // Degenerate case.
       {
-        // Degenerate case.
         std_tilde[i] = 0;
-        double cmp = mmu[i] - mmu[j];
-        double val = 0;
-        if (cmp < 0)
-          val = -INFINITY;
-        if (cmp > 0)
-          val = INFINITY;
-
-        mu_tilde.push_back(val);
+        mu_tilde.push_back(DIVZERO(mmu[i] - mmu[j]));
       }
       else
       {
@@ -309,5 +290,25 @@ int main(int argc, char **argv)
   double eup2 = mvn2.getEUp();
   std::cout << mvn2.getValue() << ", " << eup2 << "\n";
   std::cout << mvn2.getPEUp() << " vs " << mvn2.getValue() * eup2 << "\n";
+
+  MVNHandle mvn3(3);
+  double mu3[] = {17138.664897515624, 1.90998, 65.27};
+  double x3[] = {16320.574836804108, 1.5, 60};
+  double cov3[] = {204.08784901630685, 0.09257283843187661, 0,
+                   0.09257283843187661, 0.0000419904, 0,
+                   0, 0, 0};
+  for (double d : mu3)
+    mvn3.pushMu(d);
+  for (double d : x3)
+    mvn3.pushX(d);
+  for (double d : cov3)
+    mvn3.pushCov(d);
+
+  mvn3.compute();
+
+  std::cout << "eup failing?\n";
+  double eup3 = mvn3.getEUp();
+  std::cout << mvn3.getValue() << ", " << eup3 << "\n";
+  std::cout << mvn3.getPEUp() << " vs " << mvn3.getValue() * eup3 << "\n";
 }
 #endif

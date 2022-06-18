@@ -189,6 +189,7 @@ function gmmNd({ rollsLeft, stats, subs, thresholds, scale, objectiveEval }: Int
     p_ret += l * p * cp;
     upAvg_ret += l * p * cp * upAvg;
   })
+  console.log(lpe)
 
   if (p_ret < 1e-10) return { p: 0, upAvg: 0, appxDist: appx }
   upAvg_ret = upAvg_ret / p_ret
