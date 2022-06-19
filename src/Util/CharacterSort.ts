@@ -17,7 +17,11 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
       getValue: (ck) => ck
     },
     level: {
-      getValue: (ck) => database._getChar(ck as CharacterKey)?.level ?? 0,
+      getValue: (ck) => {
+        const char = database._getChar(ck as CharacterKey)
+        if (!char) return 0
+        return char.level * char.ascension
+      },
       tieBreaker: "rarity"
     },
     rarity: {
