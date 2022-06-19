@@ -171,9 +171,9 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
 
   /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
   const set4CondNums = useMemo(() => {
-    if (!allow4) return []
+    if (!allow4 || slots < 4) return []
     return Object.keys(sheet.setEffects).filter(setNumKey => sheet.setEffects[setNumKey]?.document.some(doc => "states" in doc))
-  }, [sheet.setEffects, allow4])
+  }, [sheet.setEffects, allow4, slots])
   const exclude2 = setExclusionSet.includes(2)
   const exclude4 = setExclusionSet.includes(4)
   if (slots < 2) return null
