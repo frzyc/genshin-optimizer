@@ -3,7 +3,7 @@ import ColorText from "../Components/ColoredText"
 import KeyMap, { Unit, valueString } from "../KeyMap"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
-import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput, Variant } from "./type"
+import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput } from "./type"
 
 const shouldWrap = true
 export interface NodeDisplay<V = number> {
@@ -82,6 +82,7 @@ export class UIData {
 
     const result = computeNodeDisplay(this.computeNode(node))
     this.processed.set(node, result)
+    if (result.info.subVariant) console.log(result.info)
     return result
   }
   private computeNode(node: NumNode): ContextNodeDisplay
@@ -213,11 +214,12 @@ export class UIData {
     }
   }
   private _accumulate(operation: ComputeNode["operation"], operands: ContextNodeDisplay[]): ContextNodeDisplay {
-    let variant: Variant | undefined
+    let info: Info | undefined
     switch (operation) {
       case "add": case "mul": case "min": case "max":
       case "res": case "sum_frac":
-        variant = mergeVariants(operands); break
+        info = accumulateInfo(operands)
+        break
       default: assertUnreachable(operation)
     }
     switch (operation) {
@@ -226,7 +228,7 @@ export class UIData {
         if (process.env.NODE_ENV !== "development")
           operands = operands.filter(operand => operand.value !== identity)
         if (!operands.length)
-          return variant ? { ...this._constant(identity), info: { variant } } : this._constant(identity)
+          return Object.values(info).some(x => x) ? { ...this._constant(identity), info } : this._constant(identity)
     }
 
     let formula: { display: Displayable, dependencies: Displayable[] }
@@ -264,8 +266,7 @@ export class UIData {
         ? [x.assignment, ...x.dependencies]
         : [...x.dependencies])])
     const result: ContextNodeDisplay = {
-      info: { variant },
-      formula: formula.display,
+      info, formula: formula.display,
       empty: operands.every(x => x.empty),
       value, mayNeedWrapping, dependencies,
     }
@@ -302,14 +303,23 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
   })
   return { display: mergeFormulaComponents(predisplay), dependencies: [...dependencies] }
 }
-function mergeVariants<V>(operands: ContextNodeDisplay<V>[]): Info["variant"] {
-  const unique = new Set(operands.map(x => x.info.variant))
-  if (unique.size > 1) unique.delete(undefined)
-  if (unique.size > 1) unique.delete("physical")
-  // Prefer reactions
-  if (unique.has("melt")) return "melt"
-  if (unique.has("vaporize")) return "vaporize"
-  return unique.values().next().value
+function accumulateInfo<V>(operands: ContextNodeDisplay<V>[]): Info {
+  function score(variant: Required<Info>["variant"]) {
+    switch (variant) {
+      case "overloaded": case "shattered": case "electrocharged": case "superconduct":
+      case "vaporize": case "swirl": case "melt": case "success": return 2
+      case "anemo": case "cryo": case "hydro": case "pyro": case "electro": case "geo": return 1
+      case "physical": return 0
+      default: assertUnreachable(variant)
+    }
+  }
+  const variants = new Set(operands.flatMap(x => [x.info.variant!, x.info.subVariant!]))
+  variants.delete(undefined!);
+  const sorted = [...variants].sort((a, b) => score(a) - score(b)), result: Info = {}
+  if (sorted.length) result.variant = sorted.pop()
+  if (sorted.length) result.subVariant = sorted.pop()
+  else result.subVariant = result.variant
+  return result
 }
 function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
   const { info, dependencies, value, formula, assignment, empty } = node

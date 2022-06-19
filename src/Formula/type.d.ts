@@ -24,6 +24,7 @@ interface Info {
   prefix?: KeyMapPrefix
   source?: CharacterKey | WeaponKey | ArtifactSetKey
   variant?: Variant
+  subVariant?: Variant
   asConst?: true
   pivot?: true
   fixed?: number
