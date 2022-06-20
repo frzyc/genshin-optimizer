@@ -35,7 +35,7 @@ export default function WeaponSelectionModal({ show, onHide, onSelect, filter = 
     .filter(wKey => !(weaponFilter && weaponFilter !== weaponSheets?.[wKey]?.weaponType))
     .filter(wKey => !deferredSearchTerm || t(`weaponNames_gen:${wKey}`).toLowerCase().includes(deferredSearchTerm.toLowerCase()))
     .sort((a, b) => (weaponSheets?.[b]?.rarity ?? 0) - (weaponSheets?.[a]?.rarity ?? 0)),
-    [weaponSheets, weaponFilter, deferredSearchTerm])
+    [weaponSheets, weaponFilter, deferredSearchTerm, filter, t])
 
   if (!weaponSheets) return null
 
