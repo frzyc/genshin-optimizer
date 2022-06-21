@@ -40,8 +40,6 @@ export default class WeaponSheet {
   get passiveName() { return this.hasRefinement ? this.tr("passiveName") : "" }
   get description() { return this.tr("description") }
   passiveDescription = (refineIndex: number) => this.hasRefinement ? this.tr(`passiveDescription.${refineIndex}`) : ""
-  get img() { return this.sheet.icon }
-  get imgAwaken() { return this.sheet.iconAwaken }
   get document() { return this.sheet.document }
   get milestoneLevels(): Array<[number, number]> {
     if (this.hasRefinement) return milestoneLevels as any
@@ -50,6 +48,9 @@ export default class WeaponSheet {
   ambiguousLevel(level: number) {
     if (this.hasRefinement) return ambiguousLevel(level)
     else return ambiguousLevelLow(level)
+  }
+  getImg(ascsion: number) {
+    return ascsion < 2 ? this.sheet.icon : this.sheet.iconAwaken
   }
 }
 export const headerTemplate = (weaponKey: WeaponKey, img: string, imgAwaken: string, action?: Displayable): IDocumentHeader => {

@@ -17,7 +17,11 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
       getValue: (ck) => ck
     },
     level: {
-      getValue: (ck) => database._getChar(ck as CharacterKey)?.level ?? 0,
+      getValue: (ck) => {
+        const char = database._getChar(ck as CharacterKey)
+        if (!char) return 0
+        return char.level * char.ascension
+      },
       tieBreaker: "rarity"
     },
     rarity: {
@@ -30,7 +34,9 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
 export type CharacterFilterConfigs = FilterConfigs<"element" | "weaponType" | "favorite" | "name", CharacterKey>
 export function characterFilterConfigs(database: ArtCharDatabase, characterSheets: Record<CharacterKey, CharacterSheet>): CharacterFilterConfigs {
   return {
-    element: (ck, filter) => filter.includes(characterSheets?.[ck]?.elementKey) || (ck === "Traveler" && !database._getChar(ck as CharacterKey)) || (ck === "Traveler" && filter.includes(database._getChar(ck as CharacterKey)?.elementKey)),
+    element: (ck, filter) => filter.includes(characterSheets?.[ck]?.elementKey) ||
+      (ck === "Traveler" && !database._getChar(ck as CharacterKey) && filter.some(fe => characterSheets.Traveler.elementKeys.includes(fe))) ||
+      (ck === "Traveler" && filter.includes(database._getChar(ck as CharacterKey)?.elementKey)),
     weaponType: (ck, filter) => filter.includes(characterSheets?.[ck]?.weaponTypeKey),
     favorite: (ck, filter) =>
       !filter || (filter === (database._getChar(ck as CharacterKey)?.favorite ? "yes" : "no")),

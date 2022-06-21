@@ -3,6 +3,7 @@ import elementalData from "./ElementalData";
 import { amplifyingReactions, AmplifyingReactionsKey, HitMoveKey, hitMoves, transformativeReactions, TransformativeReactionsKey } from "./StatConstants";
 import { MainStatKey, SubstatKey } from "../Types/artifact";
 import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";
+import ColorText from "../Components/ColoredText";
 
 const statMap = {
   hp: "HP", hp_: "HP", atk: "ATK", atk_: "ATK", def: "DEF", def_: "DEF",
@@ -198,4 +199,8 @@ export function cacheValueString(value: number, unit: Unit): string {
     case "%": return (Math.round(value * 10) / 10).toFixed(1) // TODO: % conversion
     default: return Math.round(value).toFixed(0)
   }
+}
+
+export function StatColoredWithUnit({ statKey }: { statKey: StatKey }) {
+  return <ColorText color={KeyMap.getVariant(statKey)}>{KeyMap.get(statKey)}{KeyMap.unit(statKey)}</ColorText>
 }

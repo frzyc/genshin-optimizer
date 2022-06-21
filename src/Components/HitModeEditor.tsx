@@ -1,5 +1,7 @@
 import { Box, MenuItem, ToggleButton, ToggleButtonGroupProps } from "@mui/material";
 import { useContext } from 'react';
+import { useTranslation } from "react-i18next";
+import { CharacterContext } from "../CharacterContext";
 import { infusionNode } from "../Data/Characters/dataUtil";
 import { DataContext } from "../DataContext";
 import { uiInput as input } from "../Formula";
@@ -16,7 +18,7 @@ const infusionVals = {
 }
 type InfusionAuraDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" | "children">
 export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {
-  const { characterSheet, character: { infusionAura }, characterDispatch } = useContext(DataContext)
+  const { characterSheet, character: { infusionAura }, characterDispatch } = useContext(CharacterContext)
   if (!characterSheet?.isMelee()) return null
   return <DropdownButton title={infusionVals[infusionAura]} color={infusionAura || "secondary"} disableElevation {...props}>
     {Object.entries(infusionVals).map(([key, text]) =>
@@ -29,7 +31,8 @@ export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {
 type ReactionToggleProps = Omit<ToggleButtonGroupProps, "color">
 const sqBadgeStyle = { mx: 0.25, px: 0.25, fontSize: "1em" }
 export function ReactionToggle(props: ReactionToggleProps) {
-  const { data, character: { reactionMode }, characterDispatch } = useContext(DataContext)
+  const { character: { reactionMode }, characterDispatch } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
   const charEleKey = data.get(input.charEle).value as ElementKey
   const infusion = data.get(infusionNode).value as ElementKey
   if (!["pyro", "hydro", "cryo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusion)) return null
@@ -80,7 +83,8 @@ export function ReactionToggle(props: ReactionToggleProps) {
 }
 type HitModeToggleProps = Omit<ToggleButtonGroupProps, "color">
 export function HitModeToggle(props: HitModeToggleProps) {
-  const { character: { hitMode }, characterDispatch } = useContext(DataContext)
+  const { t } = useTranslation("page_character")
+  const { character: { hitMode }, characterDispatch } = useContext(CharacterContext)
   return <SolidToggleButtonGroup exclusive baseColor="secondary"
     value={hitMode} onChange={(_, hitMode) => characterDispatch({ hitMode })} {...props} >
     <ToggleButton value="avgHit" disabled={hitMode === "avgHit"}>Avg. DMG</ToggleButton>

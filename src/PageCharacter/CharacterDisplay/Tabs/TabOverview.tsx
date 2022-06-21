@@ -26,9 +26,11 @@ import { allElementsWithPhy, allSlotKeys, ElementKey } from "../../../Types/cons
 import { range } from "../../../Util/Util";
 import CharacterCardPico from "../../../Components/Character/CharacterCardPico";
 import StatInput from "../../../Components/StatInput";
+import { CharacterContext } from "../../../CharacterContext";
 
 export default function TabOverview() {
-  const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
+  const { characterSheet, character: { key: characterKey, favorite, equippedWeapon, team } } = useContext(CharacterContext)
+  const { data, } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
   const navigate = useNavigate()
   const { t } = useTranslation("page_character")
@@ -57,8 +59,8 @@ export default function TabOverview() {
             {characterSheet.name}&nbsp;
             <ImgIcon sx={{ pr: 0.5 }} src={Assets.weaponTypes?.[weaponTypeKey]} />
             {StatIcon[charEle]}
-            <IconButton sx={{ p: 0.5, mt: -0.5 }} onClick={() => characterDispatch({ favorite: !character.favorite })}>
-              {character.favorite ? <Favorite /> : <FavoriteBorder />}
+            <IconButton sx={{ p: 0.5, mt: -0.5 }} onClick={() => characterDispatch({ favorite: !favorite })}>
+              {favorite ? <Favorite /> : <FavoriteBorder />}
             </IconButton>
           </Typography>
           <Typography variant="h6"><Stars stars={characterSheet.rarity} colored /></Typography>
@@ -105,7 +107,7 @@ export default function TabOverview() {
           <Typography sx={{ textAlign: "center", mt: 1 }} variant="h6">{t("teammates")}</Typography>
           <CardActionArea sx={{ p: 1 }} onClick={() => navigate("teambuffs")}>
             <Grid container columns={3} spacing={1}>
-              {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} index={i} /></Grid>)}
+              {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={team[i]} index={i} /></Grid>)}
             </Grid>
           </CardActionArea>
         </CardContent>
@@ -116,7 +118,7 @@ export default function TabOverview() {
     }} >
       <Grid container spacing={1} columns={{ xs: 2, sm: 2, md: 3, lg: 4, xl: 6 }}>
         <Grid item xs={1}>
-          <WeaponCardNano weaponId={character.equippedWeapon} BGComponent={CardLight} onClick={() => navigate("equip")} />
+          <WeaponCardNano weaponId={equippedWeapon} BGComponent={CardLight} onClick={() => navigate("equip")} />
         </Grid>
         {allSlotKeys.map(slotKey =>
           <Grid item key={slotKey} xs={1} >
@@ -172,8 +174,8 @@ function StatDisplayContent({ nodes, statBreakpoint, extra }: { nodes: ReadNode<
 }
 
 function MainStatsCards() {
-  const { data, character, character: { key: characterKey } } = useContext(DataContext)
-  const characterDispatch = useCharacterReducer(characterKey)
+  const { character: { bonusStats }, characterDispatch } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
   const specialNode = data.get(input.special)
 
   return <>
@@ -192,7 +194,7 @@ function MainStatsCards() {
             <StatInput
               name={<span>{StatIcon[statKey]} {statName}</span>}
               placeholder={KeyMap.getStr(statKey)}
-              value={character.bonusStats[statKey] ?? 0}
+              value={bonusStats[statKey] ?? 0}
               percent={KeyMap.unit(statKey) === "%"}
               onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
             />
@@ -210,7 +212,7 @@ function MainStatsCards() {
             <StatInput
               name={<span>{StatIcon[statKey]} {statName}</span>}
               placeholder={KeyMap.getStr(statKey)}
-              value={character.bonusStats[statKey] ?? 0}
+              value={bonusStats[statKey] ?? 0}
               percent={KeyMap.unit(statKey) === "%"}
               defaultValue={undefined}
               onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
@@ -231,7 +233,7 @@ function MainStatsCards() {
             <StatInput
               name={<span>{StatIcon[statKey]} {statName}</span>}
               placeholder={KeyMap.getStr(statKey)}
-              value={character.bonusStats[statKey] ?? 0}
+              value={bonusStats[statKey] ?? 0}
               percent={KeyMap.unit(statKey) === "%"}
               onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
             />

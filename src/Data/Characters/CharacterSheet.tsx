@@ -53,6 +53,7 @@ export default class CharacterSheet {
   get bannerImg() { return this.sheet.bannerImg }
   get rarity() { return this.sheet.rarity }
   get elementKey() { return "elementKey" in this.sheet ? this.sheet.elementKey : undefined }
+  get elementKeys() { return "talents" in this.sheet ? Object.keys(this.sheet.talents) : [] }
   get weaponTypeKey() { return this.sheet.weaponTypeKey }
   get constellationName() { return this.sheet.constellationName }
 

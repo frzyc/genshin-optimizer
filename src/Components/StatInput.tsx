@@ -40,7 +40,7 @@ export default function StatInput({ name, children, value, placeholder, defaultV
         endAdornment={percent ? "%" : undefined}
       />
     </CustomNumberInputButtonGroupWrapper>
-    <Button onClick={() => onReset ? onReset() : onValueChange(defaultValue)} disabled={disabled || value === defaultValue} >
+    <Button color="error" onClick={() => onReset ? onReset() : onValueChange(defaultValue)} disabled={disabled || value === defaultValue} >
       <Replay />
     </Button>
   </FlexButtonGroup>

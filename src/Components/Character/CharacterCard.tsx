@@ -21,6 +21,10 @@ import { Stars } from '../StarDisplay';
 import StatIcon from '../StatIcon';
 import WeaponCardPico from '../Weapon/WeaponCardPico';
 import WeaponFullCard from '../Weapon/WeaponFullCard';
+import { CharacterContext, CharacterContextObj } from '../../CharacterContext';
+import usePromise from '../../ReactHooks/usePromise';
+import CharacterSheet from '../../Data/Characters/CharacterSheet';
+import useCharacter from '../../ReactHooks/useCharacter';
 
 type CharacterCardProps = {
   characterKey: CharacterKey | "",
@@ -36,25 +40,29 @@ type CharacterCardProps = {
 export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, characterChildren, onClick, onClickHeader, onClickTeammate, footer, isTeammateCard }: CharacterCardProps) {
   const { teamData: teamDataContext } = useContext(DataContext)
   const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
-  const { character, characterSheet, target: data } = teamData?.[characterKey] ?? {}
+  const character = useCharacter(characterKey)
+  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
+  const characterDispatch = useCharacterReducer(characterKey)
+  const data = teamData?.[characterKey]?.target
   const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={onClickHandler} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
     [onClickHandler],
   )
-  const characterDispatch = useCharacterReducer(characterKey)
-  if (!teamData || !character || !characterSheet || !data) return null;
-  const dataContextObj: dataContextObj = {
-    character,
+
+  const characterContextObj: CharacterContextObj | undefined = useMemo(() => character && characterSheet && {
+    character, characterSheet, characterDispatch
+  }, [character, characterSheet, characterDispatch])
+  const dataContextObj: dataContextObj | undefined = useMemo(() => teamData && ({
     data,
-    characterSheet,
-    mainStatAssumptionLevel: 0,
     teamData,
-    characterDispatch
-  }
+  }), [data, teamData])
+
+  if (!character || !dataContextObj || !characterContextObj) return null;
+
 
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
-    <DataContext.Provider value={dataContextObj}>
+    <CharacterContext.Provider value={characterContextObj}><DataContext.Provider value={dataContextObj}>
       <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
         <Box sx={{ display: "flex", position: "absolute", zIndex: 2, opacity: 0.7 }}>
           <IconButton sx={{ p: 0.5 }} onClick={_ => characterDispatch({ favorite: !character.favorite })}>
@@ -80,11 +88,12 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
         </ConditionalWrapper>
         {footer}
       </CardLight>
-    </DataContext.Provider>
+    </DataContext.Provider></CharacterContext.Provider>
   </Suspense>
 }
 function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void }) {
-  const { data, characterSheet } = useContext(DataContext)
+  const { characterSheet } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
   const characterKey = data.get(input.charKey).value as CharacterKey
   const characterEle = data.get(input.charEle).value as ElementKey
   const characterLevel = data.get(input.lvl).value

@@ -32,7 +32,8 @@ type Data = {
   artifactId?: string,
   artifactObj?: ICachedArtifact,
   onClick?: (id: string) => void,
-  onDelete?: (id: string) => void, mainStatAssumptionLevel?: number,
+  onDelete?: (id: string) => void,
+  mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
   probabilityFilter?: Dict<SubstatKey, number>
   disableEditSetSlot?: boolean

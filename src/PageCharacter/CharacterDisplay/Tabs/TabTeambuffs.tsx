@@ -11,6 +11,7 @@ import InfoTooltip from "../../../Components/InfoTooltip";
 import { ArtifactSheet } from "../../../Data/Artifacts/ArtifactSheet";
 import { resonanceSheets } from "../../../Data/Resonance";
 import { DataContext, dataContextObj } from "../../../DataContext";
+import { CharacterContext, CharacterContextObj } from "../../../CharacterContext";
 import { uiInput as input } from "../../../Formula";
 import { NodeDisplay } from "../../../Formula/uiData";
 import useCharacterReducer from "../../../ReactHooks/useCharacterReducer";
@@ -75,23 +76,24 @@ function ResonanceDisplay() {
   </>
 }
 function TeammateDisplay({ index }: { index: number }) {
-  const dataContext = useContext(DataContext)
+  const { teamData } = useContext(DataContext)
   const { t } = useTranslation("page_character")
-  const { character: active, teamData, characterDispatch: activeCharacterDispatch } = dataContext
+  const { character: active, characterDispatch: activeCharacterDispatch } = useContext(CharacterContext)
   const activeCharacterKey = active.key
   const characterKey = active.team[index]
   const characterDispatch = useCharacterReducer(characterKey)
   const onClickHandler = useCharSelectionCallback()
 
   const dataBundle = teamData[characterKey]
-  const teamMateDataContext: dataContextObj | undefined = dataBundle && {
+  const teammateCharacterContext: CharacterContextObj | undefined = useMemo(() => dataBundle && {
     character: dataBundle.character,
     characterSheet: dataBundle.characterSheet,
+    characterDispatch
+  }, [dataBundle, characterDispatch])
+  const teamMateDataContext: dataContextObj | undefined = useMemo(() => dataBundle && {
     data: dataBundle.target,
     teamData: teamData,
-    mainStatAssumptionLevel: 0,
-    characterDispatch
-  }
+  }, [dataBundle, teamData])
   return <CardLight>
     <CardContent>
       <CharacterAutocomplete fullWidth value={characterKey}
@@ -103,15 +105,17 @@ function TeammateDisplay({ index }: { index: number }) {
         showDefault
       />
     </CardContent>
-    {teamMateDataContext && <DataContext.Provider value={teamMateDataContext}>
-      <CharacterCard characterKey={characterKey}
-        onClickHeader={onClickHandler}
-        artifactChildren={<CharArtifactCondDisplay />}
-        weaponChildren={<CharWeaponCondDisplay />}
-        characterChildren={<CharTalentCondDisplay />}
-        isTeammateCard
-      />
-    </DataContext.Provider>}
+    {teammateCharacterContext && <CharacterContext.Provider value={teammateCharacterContext}>
+      {teamMateDataContext && <DataContext.Provider value={teamMateDataContext}>
+        <CharacterCard characterKey={characterKey}
+          onClickHeader={onClickHandler}
+          artifactChildren={<CharArtifactCondDisplay />}
+          weaponChildren={<CharWeaponCondDisplay />}
+          characterChildren={<CharTalentCondDisplay />}
+          isTeammateCard
+        />
+      </DataContext.Provider>}
+    </CharacterContext.Provider>}
   </CardLight>
 
 }
@@ -127,13 +131,15 @@ function CharArtifactCondDisplay() {
   return <DocumentDisplay sections={sections} teamBuffOnly={true} />
 }
 function CharWeaponCondDisplay() {
-  const { teamData, character: { key: charKey } } = useContext(DataContext)
+  const { character: { key: charKey } } = useContext(CharacterContext)
+  const { teamData } = useContext(DataContext)
   const weaponSheet = teamData[charKey]!.weaponSheet
   if (!weaponSheet.document) return null
   return <DocumentDisplay sections={weaponSheet.document} teamBuffOnly={true} />
 }
 function CharTalentCondDisplay() {
-  const { data, teamData, character: { key: charKey } } = useContext(DataContext)
+  const { character: { key: charKey } } = useContext(CharacterContext)
+  const { data, teamData } = useContext(DataContext)
   const characterSheet = teamData[charKey]!.characterSheet
   const talent = characterSheet.getTalent(data.get(input.charEle).value as ElementKey)!
   const sections = Object.values(talent.sheets).flatMap(sts => sts.sections)
