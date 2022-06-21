@@ -1,6 +1,7 @@
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material';
 import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material';
 import React, { useCallback, useContext } from 'react';
+import { CharacterContext } from '../../CharacterContext';
 import { DataContext } from '../../DataContext';
 import { DocumentConditional, IDocumentConditionalExclusive, IDocumentConditionalMultiple } from '../../Types/sheet';
 import { deepClone, deletePropPath, layeredAssignment } from '../../Util/Util';
@@ -26,7 +27,8 @@ interface SimpleConditionalSelectorProps extends ConditionalSelectorProps {
   conditional: IDocumentConditionalExclusive
 }
 function SimpleConditionalSelector({ conditional, disabled }: SimpleConditionalSelectorProps) {
-  const { character, characterDispatch, data } = useContext(DataContext)
+  const { character, characterDispatch } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
   const setConditional = useCallback((v?: string) => {
     const conditionalValues = deepClone(character.conditional)
     if (v) {
@@ -51,7 +53,8 @@ interface ExclusiveConditionalSelectorProps extends ConditionalSelectorProps {
   conditional: IDocumentConditionalExclusive
 }
 function ExclusiveConditionalSelector({ conditional, disabled }: ExclusiveConditionalSelectorProps) {
-  const { character, characterDispatch, data } = useContext(DataContext)
+  const { character, characterDispatch } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
   const setConditional = useCallback((v?: string) => {
     const conditionalValues = deepClone(character.conditional)
     if (v) {
@@ -81,7 +84,8 @@ interface MultipleConditionalSelectorProps extends ConditionalSelectorProps {
   conditional: IDocumentConditionalMultiple
 }
 function MultipleConditionalSelector({ conditional, disabled }: MultipleConditionalSelectorProps) {
-  const { character, characterDispatch, data } = useContext(DataContext)
+  const { character, characterDispatch } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
   const setConditional = useCallback((path: readonly string[], v?: string) => {
     const conditionalValues = deepClone(character.conditional)
     if (v) {

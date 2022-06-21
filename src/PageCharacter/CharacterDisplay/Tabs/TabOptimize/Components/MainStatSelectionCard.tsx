@@ -3,12 +3,12 @@ import { Button, CardContent, Divider, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import { CharacterContext } from '../../../../../CharacterContext';
 import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import SqBadge from '../../../../../Components/SqBadge';
 import StatIcon, { uncoloredEleIcons } from '../../../../../Components/StatIcon';
 import Artifact from '../../../../../Data/Artifacts/Artifact';
-import { DataContext } from '../../../../../DataContext';
 import KeyMap from '../../../../../KeyMap';
 import { allElementsWithPhy } from '../../../../../Types/consts';
 import useBuildSetting from '../BuildSetting';
@@ -19,7 +19,7 @@ export default function MainStatSelectionCard({ disabled = false, }: {
   disabled?: boolean
 }) {
   const { t } = useTranslation("artifact")
-  const { character: { key: characterKey } } = useContext(DataContext)
+  const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { mainStatKeys }, buildSettingDispatch } = useBuildSetting(characterKey)
 
   return <Box display="flex" flexDirection="column" gap={1}>

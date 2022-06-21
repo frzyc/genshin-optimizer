@@ -4,6 +4,7 @@ import { Button, ButtonGroup, CardContent, MenuItem, Typography } from '@mui/mat
 import { Box } from '@mui/system';
 import React, { useCallback, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import { CharacterContext } from '../CharacterContext';
 import { DataContext } from '../DataContext';
 import { uiInput as input } from '../Formula';
 import KeyMap, { StatKey } from '../KeyMap';
@@ -15,7 +16,8 @@ import DropdownButton from './DropdownMenu/DropdownButton';
 import InfoTooltip from './InfoTooltip';
 export default function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
   const { t } = useTranslation("page_character")
-  const { data, character: { key: characterKey } } = useContext(DataContext)
+  const { character: { key: characterKey } } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
   const { buildSetting: { statFilters }, buildSettingDispatch } = useBuildSetting(characterKey)
   const setStatFilters = useCallback((statFilters: Dict<StatKey, number>) => buildSettingDispatch({ statFilters }), [buildSettingDispatch],)
 

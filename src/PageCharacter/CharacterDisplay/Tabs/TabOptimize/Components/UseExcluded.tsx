@@ -2,14 +2,14 @@ import { CheckBox, CheckBoxOutlineBlank } from "@mui/icons-material";
 import { Box, Button } from "@mui/material";
 import { useContext, useMemo } from "react";
 import { Trans, useTranslation } from "react-i18next";
+import { CharacterContext } from "../../../../../CharacterContext";
 import SqBadge from "../../../../../Components/SqBadge";
 import { DatabaseContext } from "../../../../../Database/Database";
-import { DataContext } from "../../../../../DataContext";
 import useBuildSetting from "../BuildSetting";
 
 export default function UseExcluded({ disabled = false, artsDirty }: { disabled?: boolean, artsDirty: object }) {
   const { t } = useTranslation("page_character")
-  const { character: { key: characterKey } } = useContext(DataContext)
+  const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { useExcludedArts }, buildSettingDispatch } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
   const numExcludedArt = useMemo(() => artsDirty && database._getArts().reduce((a, art) => a + (art.exclude ? 1 : 0), 0), [database, artsDirty])

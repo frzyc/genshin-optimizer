@@ -3,6 +3,7 @@ import { Box, Button, CardContent, Divider, Grid, Tooltip, Typography, useMediaQ
 import { useTheme } from "@mui/system";
 import { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { CharacterContext } from '../../../../CharacterContext';
 import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay';
 import SlotNameWithIcon from '../../../../Components/Artifact/SlotNameWIthIcon';
 import CardLight from '../../../../Components/Card/CardLight';
@@ -19,6 +20,7 @@ import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import usePromise from '../../../../ReactHooks/usePromise';
 import { allSlotKeys, SlotKey, WeaponTypeKey } from '../../../../Types/consts';
 import { objectKeyMap } from '../../../../Util/Util';
+import useBuildSetting from '../TabOptimize/BuildSetting';
 import ArtifactSwapModal from './ArtifactSwapModal';
 import WeaponSwapModal from './WeaponSwapModal';
 
@@ -26,7 +28,9 @@ const WeaponEditor = lazy(() => import('../../../../PageWeapon/WeaponEditor'))
 
 function TabEquip() {
   const { t } = useTranslation("page_character")
-  const { teamData, data, character, character: { equippedWeapon, key: characterKey, equippedArtifacts }, characterSheet, mainStatAssumptionLevel } = useContext(DataContext)
+  const { character, character: { equippedWeapon, key: characterKey, equippedArtifacts }, characterSheet } = useContext(CharacterContext)
+  const { buildSetting: { mainStatAssumptionLevel } } = useBuildSetting(characterKey)
+  const { teamData, data } = useContext(DataContext)
   const { weaponSheet } = teamData[characterKey]!
   const [weaponId, setweaponId] = useState("")
   const showWeapon = useCallback(() => setweaponId(equippedWeapon), [equippedWeapon],)
@@ -106,7 +110,7 @@ function TabEquip() {
 }
 export default TabEquip
 function ArtSwapCard({ slotKey }: { slotKey: SlotKey }) {
-  const { character: { key: characterKey } } = useContext(DataContext)
+  const { character: { key: characterKey } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState()
   return <CardLight sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
@@ -130,7 +134,7 @@ function ArtSwapCard({ slotKey }: { slotKey: SlotKey }) {
 }
 function WeaponSwapButton({ weaponTypeKey }: { weaponTypeKey: WeaponTypeKey }) {
   const { t } = useTranslation("page_character")
-  const { character: { key: characterKey } } = useContext(DataContext)
+  const { character: { key: characterKey } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState()
   return <>
@@ -142,7 +146,7 @@ function WeaponSwapButton({ weaponTypeKey }: { weaponTypeKey: WeaponTypeKey }) {
 }
 function LargeWeaponSwapButton({ weaponTypeKey }: { weaponTypeKey: WeaponTypeKey }) {
   const { t } = useTranslation("page_character")
-  const { character: { key: characterKey } } = useContext(DataContext)
+  const { character: { key: characterKey } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState()
   return <>
@@ -152,7 +156,7 @@ function LargeWeaponSwapButton({ weaponTypeKey }: { weaponTypeKey: WeaponTypeKey
 }
 function ArtifactSwapButton({ slotKey }: { slotKey: SlotKey }) {
   const { t } = useTranslation("page_character")
-  const { character: { key: characterKey } } = useContext(DataContext)
+  const { character: { key: characterKey } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState()
   return <>
