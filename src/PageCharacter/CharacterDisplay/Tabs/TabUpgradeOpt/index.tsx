@@ -30,6 +30,7 @@ import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { querySetup, evalArtifact, toQueryArtifact, cmpQ, QueryArtifact, QueryBuild, UpgradeOptResult } from './artifactQuery'
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material';
+import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard';
 
 
 export default function TabUpopt() {
@@ -42,14 +43,15 @@ export default function TabUpopt() {
   const noArtifact = useMemo(() => !database._getArts().length, [database])
 
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
-  const { optimizationTarget, mainStatAssumptionLevel } = buildSetting
-  const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
+  const { optimizationTarget } = buildSetting
+  const teamData = useTeamData(characterKey)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
   const [artifactUpgradeOpts, setArtifactUpgradeOpts] = useState(undefined as UpgradeOptResult | undefined)
 
   const [show20, setShow20] = useState(true)
   const [check4th, setCheck4th] = useState(false)
+  const [useMainStatFilter, setUseMainStatFilter] = useState(false)
 
   // Because upgradeOpt is a two-stage estimation method, we want to expand (slow-estimate) our artifacts lazily as they are needed.
   // Lazy method means we need to take care to never 'lift' any artifacts past the current page, since that may cause a user to miss artifacts
@@ -118,10 +120,10 @@ export default function TabUpopt() {
   )
 
   const generateBuilds = useCallback(async () => {
-    const { statFilters, optimizationTarget, mainStatAssumptionLevel } = buildSetting
+    const { statFilters, optimizationTarget, mainStatKeys } = buildSetting
 
     if (!characterKey || !optimizationTarget) return
-    const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
+    const teamData = await getTeamData(database, characterKey, 0, [])
     if (!teamData) return
     const workerData = uiDataForTeam(teamData.teamData, characterKey)[characterKey as CharacterKey]?.target.data![0]
     if (!workerData) return
@@ -136,9 +138,11 @@ export default function TabUpopt() {
       return { value: input.total[key], minimum: value }
     }).filter(x => x.value && x.minimum > -Infinity)
 
+    console.log(mainStatKeys)
     const queryArts: QueryArtifact[] = database._getArts()
       .filter(art => art.rarity === 5)
       .filter(art => show20 || art.level !== 20)
+      .filter(art => !useMainStatFilter || !mainStatKeys[art.slotKey]?.length || mainStatKeys[art.slotKey]?.includes(art.mainStatKey))
       // .filter(art => true)
       .map(art => toQueryArtifact(art, 20))
 
@@ -164,19 +168,18 @@ export default function TabUpopt() {
     upOpt = upgradeOptExpandSink(upOpt, 0, 5)
     setArtifactUpgradeOpts(upOpt);
     console.log('result', upOpt)
-  }, [show20, check4th, characterKey, buildSetting, data, database, setArtifactUpgradeOpts, setpageIdex, upgradeOptExpandSink])
+  }, [show20, check4th, useMainStatFilter, characterKey, buildSetting, data, database, setArtifactUpgradeOpts, setpageIdex, upgradeOptExpandSink])
 
   const dataContext: dataContextObj | undefined = useMemo(() => {
-    // if (characterKey === '') return undefined
     return character && data && characterSheet && teamData && {
       data,
       characterSheet,
       character,
-      mainStatAssumptionLevel,
+      mainStatAssumptionLevel: 0,
       teamData,
       characterDispatch
     }
-  }, [data, characterSheet, character, teamData, characterDispatch, mainStatAssumptionLevel])
+  }, [data, characterSheet, character, teamData, characterDispatch])
 
   return <Box display="flex" flexDirection="column" gap={1}>
     {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
@@ -209,6 +212,11 @@ export default function TabUpopt() {
                   <StatFilterCard disabled={false} />
                 </CardContent>
               </CardLight>
+              {useMainStatFilter && <CardLight>
+                <CardContent>
+                  <MainStatSelectionCard disabled={false} />
+                </CardContent>
+              </CardLight>}
             </Grid>
             <Grid item lg={8} display="flex" flexDirection="column" gap={1}>
               <CardLight>
@@ -221,6 +229,7 @@ export default function TabUpopt() {
                   <Grid container spacing={1}>
                     <Grid item><Button startIcon={show20 ? <CheckBox /> : <CheckBoxOutlineBlank />} color={show20 ? 'success' : 'secondary'} onClick={() => setShow20(!show20)}>show lvl 20</Button></Grid>
                     <Grid item><Button startIcon={check4th ? <CheckBox /> : <CheckBoxOutlineBlank />} color={check4th ? 'success' : 'secondary'} onClick={() => setCheck4th(!check4th)}>compute 4th sub</Button></Grid>
+                    <Grid item><Button startIcon={useMainStatFilter ? <CheckBox /> : <CheckBoxOutlineBlank />} color={useMainStatFilter ? 'success' : 'secondary'} onClick={() => setUseMainStatFilter(!useMainStatFilter)}>filter main stats</Button></Grid>
                   </Grid>
                 </CardContent>
               </CardLight>

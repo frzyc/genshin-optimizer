@@ -56,8 +56,9 @@ export function allUpgradeValues({ statsBase, rollsLeft, subs, skippableDerivs, 
 
   let results: WeightedPoint[] = []
   crawlUpgrades(rollsLeft, (ns, p) => {
+    if (fourthsubOpts) ns[3] += 1
     const vals = ns.map((ni, i) => {
-      if (fourthsubOpts && i == 3) return range(7 * ni, 10 * ni)
+      if (fourthsubOpts && i === 3) return range(7 * ni, 10 * ni)
       const sub = subs[i]
       if (sub && !skippableDerivs[allSubstatKeys.indexOf(sub)]) return range(7 * ni, 10 * ni)
       return [NaN]
@@ -78,7 +79,6 @@ export function allUpgradeValues({ statsBase, rollsLeft, subs, skippableDerivs, 
         p_upVals *= p_val
       }
       if (fourthsubOpts !== undefined) {
-        // results.push({ v: evalFn(stats).map(n => n.v), p: p * p_upVals })
         fourthsubOpts.forEach(({ sub, subprob }) => {
           const stats2 = { ...stats }
           const key = sub
