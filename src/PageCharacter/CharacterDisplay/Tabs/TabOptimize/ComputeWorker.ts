@@ -2,7 +2,7 @@ import { optimize, precompute } from '../../../../Formula/optimization';
 import type { NumNode } from '../../../../Formula/type';
 import { ArtifactSetKey } from '../../../../Types/consts';
 import type { InterimResult, Setup, SubProblem } from './BackgroundWorker';
-import { ArtifactsBySlot, Build, countBuilds, filterArts, mergePlot, PlotData, pruneAll, RequestFilter } from './common';
+import { ArtifactsBySlot, Build, countBuilds, DynStat, filterArts, mergePlot, PlotData, pruneAll, RequestFilter } from './common';
 
 export class ComputeWorker {
   builds: Build[] = []
@@ -57,14 +57,14 @@ export class ComputeWorker {
         .filter(({ key, value }) => key !== undefined && value !== 0)
     })))
     // console.log(mapping)
-    // console.log(artSetExclusion)
+    console.log('enumerating', { artSetExclusion, preArts })
     // console.log(this.arts)
     // throw Error('stop here')
 
     const ids: string[] = Array(arts.length).fill("")
     let count = { tested: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }
 
-    function permute(i: number, oddKeys: Set<ArtifactSetKey | undefined>) {
+    function permute(i: number, setKeyCounts: DynStat, oddKeys: Set<ArtifactSetKey | undefined>) {
       if (i < 0) {
         const result = compute()
         const result2 = compute2()
@@ -78,9 +78,11 @@ export class ComputeWorker {
           throw Error('what?')
         }
         let passArtExcl = !Object.entries(artSetExclusion).some(([setKey, vals]) => {
-          let bufloc = mapping[setKey]
-          if (!bufloc) return false
-          return vals.includes(buffer[bufloc])
+          if (setKey === 'uniqueKey') return false
+          return vals.includes(setKeyCounts[setKey])
+          // let bufloc = mapping[setKey]
+          // if (!bufloc) return false
+          // return vals.includes(buffer[bufloc])
         })
         // This checks rainbows
         if (passArtExcl && artSetExclusion['uniqueKey'] !== undefined) passArtExcl = artSetExclusion['uniqueKey'].every(v => v !== oddKeys.size)
@@ -116,9 +118,12 @@ export class ComputeWorker {
 
         if (oddKeys.has(art.set)) oddKeys.delete(art.set)
         else oddKeys.add(art.set)
-        permute(i - 1, oddKeys)
+        setKeyCounts[art.set ?? ''] = 1 + (setKeyCounts[art.set ?? ''] ?? 0)
+        permute(i - 1, setKeyCounts, oddKeys)
         if (oddKeys.has(art.set)) oddKeys.delete(art.set)
         else oddKeys.add(art.set)
+        setKeyCounts[art.set ?? ''] -= 1
+        if (setKeyCounts[art.set ?? ''] === 0) delete setKeyCounts[art.set ?? '']
 
         for (const { key, key2, cache } of art.values) {
           buffer[key] = cache
@@ -142,7 +147,7 @@ export class ComputeWorker {
         buffer2[i2] = value
     }
 
-    permute(arts.length - 1, new Set())
+    permute(arts.length - 1, {}, new Set())
     this.interimReport(count)
     return this.threshold
   }

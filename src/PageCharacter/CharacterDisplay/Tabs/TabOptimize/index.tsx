@@ -165,6 +165,7 @@ export default function TabBuild() {
       if (setKey === 'rainbow') return ['uniqueKey', v.map(v => v + 1)]
       return [setKey, v.flatMap(v => (v === 2) ? [2, 3] : [4, 5])]
     })
+    console.log({ artSetExclFull })
     const filters = nodes
       .map((value, i) => ({ value, min: minimum[i] }))
       .filter(x => x.min > -Infinity)
@@ -186,8 +187,9 @@ export default function TabBuild() {
     // const pruningID = new Set<number>()
 
     function fetchContinueWork(numSplits: number): WorkerCommand {
-      if (numSplits === 0) return { command: "split", minCount: minFilterCount, maxIter: maxSplitIters, threshold: wrap.buildValues[maxBuildsToShow - 1] }
-      return { command: "splitwork", threshold: wrap.buildValues[maxBuildsToShow - 1], numSplits }
+      return { command: "split", minCount: minFilterCount, maxIter: maxSplitIters, threshold: wrap.buildValues[maxBuildsToShow - 1] }
+      // if (numSplits === 0) return { command: "split", minCount: minFilterCount, maxIter: maxSplitIters, threshold: wrap.buildValues[maxBuildsToShow - 1] }
+      // return { command: "splitwork", threshold: wrap.buildValues[maxBuildsToShow - 1], numSplits }
     }
     function fetchRequestWork(): WorkerCommand | undefined {
       const subproblem = workQueue.pop()
@@ -261,7 +263,7 @@ export default function TabBuild() {
         const numWorkerWithNoJob = Math.max(idleWorkers.filter(({ id }) => !busyWorkerIDs.has(id)).length - workQueue.length, 0)
         const nChunksFromEveryone = Math.ceil(numWorkerWithNoJob / numSplitting)
 
-        console.log('workers be like...', idleWorkers, data)
+        // console.log('workers be like...', idleWorkers, data)
         while (idleWorkers.length) {
           const { id, worker } = idleWorkers.pop()!
           let work: WorkerCommand | undefined

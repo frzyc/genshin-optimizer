@@ -81,6 +81,10 @@ export class SplitWorker {
     if (subproblem) this.addSubProblem(subproblem)
     const initialProblemTotal = this.subproblems.reduce((a, { count }) => a + count, 0)
 
+    console.log('splitWork', this.min[this.min.length - 1], {
+      todo: this.subproblems.length, buildsleft: this.subproblems.reduce((a, { count }) => a + count, 0)
+    })
+
     while (this.subproblems.length > 0 && this.subproblems.length <= numSplits) {
       const { subproblem } = this.subproblems.shift()!
       this.splitBNB(this.min[this.min.length - 1], subproblem).forEach(subp => this.addSubProblem(subp))
@@ -90,7 +94,6 @@ export class SplitWorker {
     console.log('exit splitWork. Filters pre-exit', this.subproblems)
     return this.subproblems.splice(0, numSplits).map(({ subproblem }) => subproblem)
   }
-
 
   /**
    * splitBNB takes a SubProblem and tries to perform Branch and Bound (BnB) pruning to solve for the
@@ -126,6 +129,7 @@ export class SplitWorker {
     if (cachedCompute.maxEst[cachedCompute.maxEst.length - 1] < threshold) return []
 
     // 2. Pick branching parameter
+    let numBuilds = Object.values(a.values).reduce((tot, arts) => tot * arts.length, 1)
     const { k } = pickBranch(a, subproblem.cachedCompute)
     const branchVals = Object.fromEntries(Object.entries(a.values).map(([slotKey, arts]) => {
       const vals = arts.map(a => a.values[k])
@@ -228,6 +232,7 @@ function reduceSubProblem(sub: SubProblem, statsMin: DynStat, statsMax: DynStat)
     if (reducedExcl.includes(statsMin[setKey]) && reducedExcl.includes(statsMax[setKey])) return;  // Always active.
     if (reducedExcl.length > 0) newArtExcl[setKey] = reducedExcl
   }
+  console.log({ artSetExclusion, newArtExcl }, { statsMin, statsMax })
 
   return {
     cache: false,
@@ -259,15 +264,23 @@ function pickBranch(a: ArtifactsBySlot, { lin }: CachedCompute) {
       const maxv = Math.max(...vals)
       if (minv === maxv) return rangeReduc
 
+      arts.map(a => Object.entries(a.values).reduce((acc, [statKey, val]) => acc + val * (linToConsider[statKey] ?? 0), 0))
+
       const branchVal = (minv + maxv) / 2
       const glb = Math.max(...vals.filter(v => v <= branchVal))
       const lub = Math.min(...vals.filter(v => v > branchVal))
       return rangeReduc + Math.min(maxv - glb, lub - minv)
     }, 0)
     const heur = linToConsider.w[k] * postShatterRangeReduction
+    // console.log({ k, heur })
     if (heur > shatterOn.heur) shatterOn = { k, heur }
   })
 
-  if (shatterOn.k === '') throw Error('Shatter broke...')
+  // throw Error('stop here')
+
+  if (shatterOn.k === '') {
+    console.log('===================== SHATTER BROKE ====================', lin, a)
+    throw Error('Shatter broke...')
+  }
   return shatterOn
 }

@@ -13,12 +13,16 @@ export function statsUpperLower(a: ArtifactsBySlot) {
       for (const statKey in art.values) minStatSlot[statKey] = Math.min(art.values[statKey], minStatSlot[statKey] ?? Infinity)
     })
     Object.entries(minStatSlot).forEach(([k, v]) => pv[k] = v + (pv[k] ?? 0))
+    const setOpts = new Set(slotArts.map(art => art.set))
+    if (setOpts.size === 1) setOpts.forEach(sk => { if (sk) pv[sk] = 1 })
+    else setOpts.forEach(sk => { if (sk) pv[sk] = 0 })
     return pv
   }, { ...a.base })
   let maxStats = Object.entries(a.values).reduce((pv, [slotKey, slotArts]) => {
     let maxStatSlot: DynStat = {}
     slotArts.forEach(art => {
       for (const statKey in art.values) maxStatSlot[statKey] = Math.max(art.values[statKey], maxStatSlot[statKey] ?? 0)
+      if (art.set) maxStatSlot[art.set] = 1
     })
     Object.entries(maxStatSlot).forEach(([k, v]) => pv[k] = v + (pv[k] ?? 0))
     return pv
