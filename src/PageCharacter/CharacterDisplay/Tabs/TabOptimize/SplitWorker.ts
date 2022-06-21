@@ -26,13 +26,12 @@ export class SplitWorker {
     const count = countBuilds(filterArts(this.arts, filter))
     this.filters.push({ count, filter })
   }
-  split(newThreshold: number, minCount: number, filter: RequestFilter | undefined): RequestFilter | undefined {
+  split(newThreshold: number, minCount: number) {
     if (this.min[this.min.length - 1] > newThreshold) this.min[this.min.length - 1] = newThreshold
-    if (filter) this.addFilter(filter)
 
     while (this.filters.length) {
       const { count, filter } = this.filters.pop()!
-      if (count <= minCount) return filter
+      if (count <= minCount) return { count, filter }
       splitBySetOrID(this.arts, filter, minCount).forEach(filter => this.addFilter(filter))
     }
   }

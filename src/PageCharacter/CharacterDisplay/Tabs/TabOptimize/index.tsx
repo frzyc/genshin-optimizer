@@ -145,20 +145,17 @@ export default function TabBuild() {
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow, artSetExclusion, {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
     }))
+    nodes = optimize(nodes, {}, _ => false)
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
 
-    const wrap = {
-      buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity),
-      finalizing: false
-    }
+    const wrap = { buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity) }
 
-    const minFilterCount = maxWorkers === 1 ? Infinity : 8_000_000 // Don't split for single worker
-    const maxRequestFilterInFlight = maxWorkers * 4
+    const minFilterCount = 8_000_000, maxRequestFilterInFlight = maxWorkers * 4
     const unprunedFilters = setPerms[Symbol.iterator](), requestFilters: RequestFilter[] = []
-    const idleWorkers: { id: number, worker: Worker }[] = []
-    const pruningID = new Set<number>()
+    const idleWorkers: number[] = [], splittingWorkers = new Set<number>()
+    const workers: Worker[] = []
 
     function fetchContinueWork(): WorkerCommand {
       return { command: "split", filter: undefined, minCount: minFilterCount, threshold: wrap.buildValues[maxBuildsToShow - 1] }
@@ -203,11 +200,6 @@ export default function TabBuild() {
       const finalized = new Promise<FinalizeResult>(r => finalize = r)
       worker.onmessage = async ({ data }: { data: { id: number } & WorkerResult }) => {
         switch (data.command) {
-          case "count":
-            const [pruned, prepruned] = data.counts
-            status.total = prepruned
-            status.skipped += prepruned - pruned
-            return
           case "interim":
             status.tested += data.tested
             status.failed += data.failed
@@ -220,43 +212,50 @@ export default function TabBuild() {
           case "split":
             if (data.filter) {
               requestFilters.push(data.filter)
-              pruningID.add(data.id)
-            } else pruningID.delete(data.id)
-            idleWorkers.push({ id: data.id, worker })
+              splittingWorkers.add(data.id)
+            } else splittingWorkers.delete(data.id)
+            idleWorkers.push(data.id)
             break
           case "iterate":
-            idleWorkers.push({ id: data.id, worker })
+            idleWorkers.push(data.id)
             break
           case "finalize":
             worker.terminate()
             finalize(data);
-            break
+            return
+          case "count":
+            const [pruned, prepruned] = data.counts
+            status.total = prepruned
+            status.skipped += prepruned - pruned
+            return
           default: console.log("DEBUG", data)
         }
         while (idleWorkers.length) {
-          const { id, worker } = idleWorkers.pop()!
+          const id = idleWorkers.pop()!, worker = workers[id]
           let work: WorkerCommand | undefined
-          if (wrap.finalizing) work = { command: "finalize" }
-          else if (requestFilters.length >= maxRequestFilterInFlight) work = fetchRequestWork()
-          else if (pruningID.has(id)) work = fetchContinueWork()
-          else if (!(id % 2)) work = fetchPruningWork()
+          if (requestFilters.length < maxRequestFilterInFlight) {
+            work = fetchPruningWork()
+            if (!work && splittingWorkers.has(id)) work = fetchContinueWork()
+          }
           if (!work) work = fetchRequestWork()
-
           if (work) worker.postMessage(work)
           else {
-            idleWorkers.push({ id, worker })
-            if (idleWorkers.length === maxWorkers) {
-              wrap.finalizing = true
-              continue
+            idleWorkers.push(id)
+            if (idleWorkers.length === 8 * maxWorkers) {
+              const command: WorkerCommand = { command: "finalize" }
+              workers.forEach(worker => worker.postMessage(command))
             }
             break
           }
         }
       }
 
+      workers.push(worker)
       cancelled.then(() => worker.terminate())
       finalizedList.push(finalized)
     }
+    for (let i = 0; i < 7; i++)
+      idleWorkers.push(...range(0, maxWorkers - 1))
 
     const buildTimer = setInterval(() => setBuildStatus({ type: "active", ...status }), 100)
     const results = await Promise.any([Promise.all(finalizedList), cancelled])

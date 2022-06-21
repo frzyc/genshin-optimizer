@@ -27,6 +27,7 @@ export class ComputeWorker {
       this.plotData = {}
       this.nodes.push(plotBase)
     }
+    this.nodes = optimize(this.nodes, {}, _ => false)
   }
 
   compute(newThreshold: number, filter: RequestFilter) {
@@ -35,7 +36,7 @@ export class ComputeWorker {
     let preArts = filterArts(this.arts, filter)
     const totalCount = countBuilds(preArts)
 
-    let nodes = optimize(this.nodes, {}, _ => false);
+    let nodes = this.nodes;
     ({ nodes, arts: preArts } = pruneAll(nodes, min, preArts, this.maxBuilds, {}, {
       pruneArtRange: true, pruneNodeRange: true,
     }))
