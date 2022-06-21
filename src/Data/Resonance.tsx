@@ -3,7 +3,7 @@ import { Translate } from "../Components/Translate";
 import { tally } from "../Formula";
 import { inferInfoMut } from "../Formula/api";
 import { UIData } from "../Formula/uiData";
-import { equal, greaterEq, min, percent, sum } from "../Formula/utils";
+import { equal, greaterEq, percent } from "../Formula/utils";
 import { allElements, allElementsWithPhy } from "../Types/consts";
 import { DocumentSection } from "../Types/sheet";
 import { objectKeyValueMap } from "../Util/Util";
@@ -20,8 +20,7 @@ type IResonance = {
 }
 
 // Protective Canopy
-const pcNodes = objectKeyValueMap(allElementsWithPhy, e => [`${e}_res_`,
-greaterEq(sum(...allElementsWithPhy.map(i => min(1, tally[i]))), 4, percent(0.15))])
+const pcNodes = objectKeyValueMap(allElementsWithPhy, e => [`${e}_res_`, greaterEq(tally.ele, 4, percent(0.15))])
 
 const protectiveCanopy: IResonance = {
   name: tr("ProtectiveCanopy.name"),

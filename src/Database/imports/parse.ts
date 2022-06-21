@@ -1,7 +1,5 @@
 import Artifact from "../../Data/Artifacts/Artifact";
 import { ascensionMaxLevel } from "../../Data/LevelData";
-import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Build";
-import { initialBuildSettings } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting";
 import { allMainStatKeys, allSubstatKeys, IArtifact, ISubstat } from "../../Types/artifact";
 import { ICharacter } from "../../Types/character";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../../Types/consts";
@@ -73,7 +71,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
 
   let {
     key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditional,
-    bonusStats, enemyOverride, talent, infusionAura, constellation, buildSettings, team,
+    bonusStats, enemyOverride, talent, infusionAura, constellation, team,
     compareData, favorite
   } = obj
 
@@ -100,48 +98,6 @@ export function parseCharacter(obj: any): ICharacter | undefined {
     if (typeof burst !== "number" || burst < 1 || burst > 15) burst = 1
     talent = { auto, skill, burst }
   }
-  if (buildSettings && typeof buildSettings === "object") {//buildSettings
-    let { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = buildSettings ?? {}
-    if (!Array.isArray(setFilters)) setFilters = initialBuildSettings().setFilters
-
-    //make sure set effects are all numbers
-    setFilters = setFilters.map(({ key, num }) => {
-      if (Number.isInteger(num)) return { key, num }
-      return { key: "", num: 0 }
-    })
-    //move all the empty entries to the back
-    setFilters = [...setFilters.filter(s => s.key), ...setFilters.filter(s => !s.key)]
-
-    if (typeof statFilters !== "object") statFilters = {}
-
-    if (!mainStatKeys || !mainStatKeys.sands || !mainStatKeys.goblet || !mainStatKeys.circlet) {
-      const tempmainStatKeys = initialBuildSettings().mainStatKeys
-      if (Array.isArray(mainStatKeys)) {
-        const [sands, goblet, circlet] = mainStatKeys
-        if (sands) tempmainStatKeys.sands = [sands]
-        if (goblet) tempmainStatKeys.goblet = [goblet]
-        if (circlet) tempmainStatKeys.circlet = [circlet]
-      }
-      mainStatKeys = tempmainStatKeys
-    }
-
-    if (!optimizationTarget || !Array.isArray(optimizationTarget)) optimizationTarget = undefined
-    if (typeof mainStatAssumptionLevel !== "number" || mainStatAssumptionLevel < 0 || mainStatAssumptionLevel > 20)
-      mainStatAssumptionLevel = 0
-    useExcludedArts = !!useExcludedArts
-    useEquippedArts = !!useEquippedArts
-    if (!Array.isArray(builds) || !builds.every(b => Array.isArray(b) && b.every(s => typeof s === "string"))) {
-      builds = []
-      buildDate = 0
-    }
-    if (!Number.isInteger(buildDate)) buildDate = 0
-    if (!maxBuildsToShowList.includes(maxBuildsToShow)) maxBuildsToShow = maxBuildsToShowDefault
-    if (typeof plotBase !== "string") plotBase = ""
-    if (compareBuild === undefined) compareBuild = false
-    if (levelLow === undefined) levelLow = 0
-    if (levelHigh === undefined) levelHigh = 20
-    buildSettings = { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
-  }
 
   if (!conditional)
     conditional = {}
@@ -159,7 +115,6 @@ export function parseCharacter(obj: any): ICharacter | undefined {
     bonusStats, enemyOverride, talent, infusionAura, constellation, team,
     compareData, favorite
   }
-  if (buildSettings) result.buildSettings = buildSettings
   if (elementKey) result.elementKey = elementKey
   return result
 }

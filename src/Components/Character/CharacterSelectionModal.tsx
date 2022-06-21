@@ -11,7 +11,7 @@ import useForceUpdate from "../../ReactHooks/useForceUpdate";
 import usePromise from "../../ReactHooks/usePromise";
 import useTeamData from "../../ReactHooks/useTeamData";
 import { ICachedCharacter } from "../../Types/character";
-import { allCharacterKeys, CharacterKey, ElementKey, WeaponTypeKey } from "../../Types/consts";
+import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey } from "../../Types/consts";
 import { characterFilterConfigs, characterSortConfigs } from "../../Util/CharacterSort";
 import { filterFunction, sortFunction } from "../../Util/SortByFilters";
 import CardDark from "../Card/CardDark";
@@ -45,8 +45,8 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
 
   const [sortBy, setsortBy] = useState(sortKeys[0])
   const [ascending, setascending] = useState(false)
-  const [elementalFilter, setelementalFilter] = useState<ElementKey | "">("")
-  const [weaponFilter, setweaponFilter] = useState<WeaponTypeKey | "">("")
+  const [elementalFilter, setelementalFilter] = useState([...allElements])
+  const [weaponFilter, setweaponFilter] = useState([...allWeaponTypeKeys])
 
   const characterSheets = usePromise(CharacterSheet.getAll, [])
 

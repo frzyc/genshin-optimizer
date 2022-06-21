@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
 import usePromise from "../../ReactHooks/usePromise";
-import { CharacterKey } from "../../Types/consts";
+import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey } from "../../Types/consts";
 import { CharacterFilterConfigs, characterFilterConfigs } from "../../Util/CharacterSort";
 import { filterFunction } from "../../Util/SortByFilters";
 import MenuItemWithImage from "../MenuItemWithImage";
@@ -19,7 +19,7 @@ type CharacterAutocompleteOption = {
   value: CharacterAutocompleteValue
   label: string
 }
-type CharacterAutocompleteProps = Omit<AutocompleteProps<CharacterAutocompleteOption, false, true, false>, "onChange" | "options" | "renderInput" | "value" | "disableClearable"> & {
+type CharacterAutocompleteProps = Omit<AutocompleteProps<CharacterAutocompleteOption, false, true, false>, "onChange" | "options" | "renderInput" | "value"> & {
   value: CharacterAutocompleteValue
   onChange: (v: any) => void
   filter?: (cs: CharacterSheet, ck: CharacterKey) => boolean
@@ -72,15 +72,16 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
 
 
 
-  if (!characterSheets || !characterOptions) return null
+  if (!characterSheets || !characterOptions) return <Skeleton height={50} />
 
   return <Autocomplete
     autoHighlight
     options={characterOptions}
+    clearIcon={value ? undefined : ""} // Hide the clear icon if the value is already default
     getOptionLabel={(option) => option.label}
-    onChange={(_, newValue) => onChange(newValue ? newValue.value : "")}
+    onChange={(event, newValue, reason) => (event.type !== "change" || reason !== "clear") && onChange(newValue ? newValue.value : "")}
     isOptionEqualToValue={(option, value) => option.value === value.value}
-    getOptionDisabled={option => option.value ? disable(option.value) : false}
+    getOptionDisabled={option => disable(option.value)}
     value={{ value, label: textForValue(value) }}
     renderInput={(props) => <SolidColoredTextField
       {...props}
@@ -130,10 +131,10 @@ function charOptions(characterKeys: CharacterKey[], filterConfigs: CharacterFilt
     base.push({ value: "Equipped", label: textForValue("Equipped") })
   }
   const faves = characterKeys
-    .filter(filterFunction({ element: "", weaponType: "", favorite: "yes", name: "" }, filterConfigs))
+    .filter(filterFunction({ element: [...allElements], weaponType: [...allWeaponTypeKeys], favorite: "yes", name: "" }, filterConfigs))
     .map(characterKey => ({ value: characterKey, label: textForValue(characterKey) }))
   const nonFaves = characterKeys
-    .filter(filterFunction({ element: "", weaponType: "", favorite: "no", name: "" }, filterConfigs))
+    .filter(filterFunction({ element: [...allElements], weaponType: [...allWeaponTypeKeys], favorite: "no", name: "" }, filterConfigs))
     .map(characterKey => ({ value: characterKey, label: textForValue(characterKey) }))
 
   return base.concat(faves).concat(nonFaves)

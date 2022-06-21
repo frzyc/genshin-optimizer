@@ -101,6 +101,8 @@
   "resetFilters": "Reset Filters",
   "edit": "Edit Artifact",
   "excludeArtifactTip": "Excluding an artifact will prevent the build generator from picking it for builds.",
+  "excluded": "This artifact is excluded.",
+  "included": "This artifact is not excluded.",
   "autocompleteLabels": {
     "set": "Artifact Sets",
     "mainStat": "Main Stats",

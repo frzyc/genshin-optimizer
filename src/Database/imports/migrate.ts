@@ -1,3 +1,4 @@
+import { allElements, allWeaponTypeKeys } from "../../Types/consts"
 import { crawlObject, layeredAssignment } from "../../Util/Util"
 import { DBStorage } from "../DBStorage"
 import { getDBVersion, setDBVersion } from "../utils"
@@ -8,7 +9,7 @@ import { getDBVersion, setDBVersion } from "../utils"
 // 2. Call the added `migrateV<x>ToV<x+1>` from `migrate`
 // 3. Update `currentDBVersion`
 
-export const currentDBVersion = 16
+export const currentDBVersion = 18
 
 /**
  * Migrate parsed data in `storage` in-place to a parsed data of the latest supported DB version.
@@ -18,14 +19,19 @@ export const currentDBVersion = 16
  */
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
-  if (version === 0) {
+  if (version < 8) {
+    storage.clear()
     setDBVersion(storage, currentDBVersion)
     return { migrated: false }
   }
 
   // Update version upon each successful migration, so we don't
   // need to migrate that part again if later parts fail.
-  if (version < 8) throw new Error(`Database version ${version} is no longer supported`)
+  if (version < 8) {
+    storage.clear()
+    setDBVersion(storage, currentDBVersion)
+    return { migrated: false }
+  }
   if (version < 9) { migrateV8ToV9(storage); setDBVersion(storage, 9) }
   if (version < 10) { migrateV9ToV10(storage); setDBVersion(storage, 10) }
   if (version < 11) { migrateV10ToV11(storage); setDBVersion(storage, 11) }
@@ -34,6 +40,9 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 14) { migrateV13ToV14(storage); setDBVersion(storage, 14) }
   if (version < 15) { migrateV14ToV15(storage); setDBVersion(storage, 15) }
   if (version < 16) { migrateV15ToV16(storage); setDBVersion(storage, 16) }
+  if (version < 17) { migrateV16toV17(storage); setDBVersion(storage, 17) }
+  if (version < 18) { migrateV17toV18(storage); setDBVersion(storage, 18) }
+
   if (version > currentDBVersion) throw new Error(`Database version ${version} is not supported`)
 
   return { migrated: version < getDBVersion(storage) }
@@ -194,11 +203,50 @@ function migrateV14ToV15(storage: DBStorage) {
     }
   }
 }
-// 8.6.0 - Present
+// 8.6.0 - 8.7.5
 function migrateV15ToV16(storage: DBStorage) {
   const state_ArtifactDisplay = storage.get("state_ArtifactDisplay")
   if (state_ArtifactDisplay?.filterOption) {
     delete state_ArtifactDisplay.filterOption.excluded
     storage.set("state_ArtifactDisplay", state_ArtifactDisplay)
+  }
+}
+// 8.8.0 - 8.8.1
+function migrateV16toV17(storage: DBStorage) {
+  for (const key of storage.keys) {
+    if (key.startsWith("char_")) {
+      const character = storage.get(key)
+      const buildSetting = character.buildSettings
+
+      delete character.buildSettings
+      storage.set(key, character)
+      if (buildSetting) {
+        delete buildSetting.setFilters
+        buildSetting.artSetExclusion = {}
+        storage.set(`buildSetting_${key.split("char_")[1]}`, buildSetting)
+      }
+    }
+  }
+}
+// 8.8.2 - Present
+function migrateV17toV18(storage: DBStorage) {
+  for (const key of storage.keys) {
+    if (key.startsWith("buildSetting_")) {
+      const buildSetting = storage.get(key)
+      buildSetting.builds = []
+      buildSetting.buildDate = 0
+      storage.set(key, buildSetting)
+    }
+    if (key === "state_WeaponDisplay") {
+      const state = storage.get(key)
+      state.weaponType = [...allWeaponTypeKeys]
+      storage.set(key, state)
+    }
+    if (key === "state_CharacterDisplay") {
+      const state = storage.get(key)
+      state.weaponType = [...allWeaponTypeKeys]
+      state.element = [...allElements]
+      storage.set(key, state)
+    }
   }
 }

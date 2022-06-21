@@ -21,6 +21,7 @@ export type IGO = {
   dbVersion: number
   source: typeof GOSource
   states?: object[]
+  buildSettings?: object[]
 }
 
 export type ImportResultCounter<T> = {

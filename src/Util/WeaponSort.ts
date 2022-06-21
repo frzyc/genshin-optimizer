@@ -21,7 +21,8 @@ export function weaponSortConfigs(weaponSheets: Record<WeaponKey, WeaponSheet>):
 export function weaponFilterConfigs(weaponSheets: Record<WeaponKey, WeaponSheet>): FilterConfigs<"rarity" | "weaponType" | "name", ICachedWeapon> {
   return {
     rarity: (wp, filter) => filter.includes(weaponSheets?.[wp.key]?.rarity),
-    weaponType: (wp, filter) => !filter || (filter === weaponSheets?.[wp.key]?.weaponType),
-    name: (wp, filter) => !filter || (i18n.t(`weaponNames_gen:${wp.key}`).toLowerCase().includes(filter.toLowerCase()))
+    weaponType: (wp, filter) => filter.includes(weaponSheets?.[wp.key]?.weaponType),
+    // TODO: Add types to this. filter may or may not be an array?
+    name: (wp, filter) => i18n.t(`weaponNames_gen:${wp.key}`).toLowerCase().includes(filter.toLowerCase()),
   }
 }

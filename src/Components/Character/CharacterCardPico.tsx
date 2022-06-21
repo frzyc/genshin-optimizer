@@ -1,5 +1,5 @@
-import { Box, Skeleton, Typography } from '@mui/material';
-import { Suspense } from 'react';
+import { Box, CardActionArea, Skeleton, Typography } from '@mui/material';
+import { Suspense, useCallback } from 'react';
 import Assets from '../../Assets/Assets';
 import CharacterSheet from '../../Data/Characters/CharacterSheet';
 import { ascensionMaxLevel } from '../../Data/LevelData';
@@ -8,35 +8,42 @@ import usePromise from '../../ReactHooks/usePromise';
 import { CharacterKey } from '../../Types/consts';
 import BootstrapTooltip from '../BootstrapTooltip';
 import CardDark from '../Card/CardDark';
+import ConditionalWrapper from '../ConditionalWrapper';
 import SqBadge from '../SqBadge';
 import StatIcon from '../StatIcon';
 
-export default function CharacterCardPico({ characterKey = "", index = -1 }: { characterKey: CharacterKey | "", index?: number }) {
+export default function CharacterCardPico({ characterKey = "", index = -1, onClick }: { characterKey: CharacterKey | "", index?: number, onClick?: (characterKey: CharacterKey) => void }) {
   const teammateSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
   const character = useCharacter(characterKey)
+  const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
+  const actionWrapperFunc = useCallback(
+    children => <CardActionArea onClick={onClickHandler}>{children}</CardActionArea>,
+    [onClickHandler])
   if (teammateSheet && character) {
     const title = <Suspense fallback={<Skeleton variant="text" width={100} />}>
       <Typography>{teammateSheet.elementKey && StatIcon[teammateSheet.elementKey]} {teammateSheet.name}</Typography>
     </Suspense>
 
     return <CardDark sx={{ maxWidth: 128, position: "relative", display: "flex", flexDirection: "column", }}>
-      <BootstrapTooltip placement="top" title={title}>
-        <Box display="flex" className={`grad-${teammateSheet.rarity}star`}>
-          <Box
-            component="img"
-            src={teammateSheet.thumbImgSide}
-            maxWidth="100%"
-            maxHeight="100%"
-            sx={{ transform: "scale(1.4)", transformOrigin: "bottom" }}
-          />
-        </Box>
-      </BootstrapTooltip>
-      <Typography variant='subtitle1' sx={{ position: "absolute", mt: -0.2, lineHeight: 1, pointerEvents: "none" }}>
-        <SqBadge color="primary" >{character.level}/{ascensionMaxLevel[character.ascension]}</SqBadge>
-      </Typography>
-      <Typography variant='subtitle1' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, pointerEvents: "none" }}>
-        <SqBadge color="secondary" >C{character.constellation}</SqBadge>
-      </Typography>
+      <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
+        <BootstrapTooltip placement="top" title={title}>
+          <Box display="flex" className={`grad-${teammateSheet.rarity}star`}>
+            <Box
+              component="img"
+              src={teammateSheet.thumbImgSide}
+              maxWidth="100%"
+              maxHeight="100%"
+              sx={{ transform: "scale(1.4)", transformOrigin: "bottom" }}
+            />
+          </Box>
+        </BootstrapTooltip>
+        <Typography variant='subtitle1' sx={{ position: "absolute", top: 0, mt: -0.2, lineHeight: 1, pointerEvents: "none" }}>
+          <SqBadge color="primary" >{character.level}/{ascensionMaxLevel[character.ascension]}</SqBadge>
+        </Typography>
+        <Typography variant='subtitle1' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, pointerEvents: "none" }}>
+          <SqBadge color="secondary" >C{character.constellation}</SqBadge>
+        </Typography>
+      </ConditionalWrapper>
     </CardDark>
   } else {
     return <CardDark sx={{ display: "flex", alignItems: "center", justifyContent: "center", py: "12.5%" }}>

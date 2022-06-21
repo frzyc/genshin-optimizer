@@ -89,9 +89,9 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
       </ConditionalWrapper>
       <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }}>
         {canEquip
-          ? <CharacterAutocomplete size="small" sx={{ flexGrow: 1 }}
+          ? <CharacterAutocomplete size="small" sx={{ flexGrow: 1 }} disable={(v: any) => v === ""}
             showDefault defaultIcon={<BusinessCenter />} defaultText={t("ui:inventory")}
-            value={location} onChange={equipOnChar} filter={filter} />
+            value={location} onChange={equipOnChar} filter={filter} disableClearable/>
           : <LocationName location={location} />}
         <ButtonGroup>
           {!!onEdit && <Tooltip title={<Typography>{t`page_weapon:edit`}</Typography>} placement="top" arrow>
