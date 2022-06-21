@@ -103,7 +103,10 @@ function TabEquip() {
       </Grid>
       {!grxl && <Grid item xs={12} md={12} xl={3} container spacing={1} >
         <Grid item xs={12} md={6} lg={4}>{weaponDoc}</Grid>
-        <Grid item xs={12} md={6} lg={4}>{artifactFields}</Grid>
+        <Grid item xs={12} md={6} lg={4} sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+          {hasEquipped && <Button color="error" onClick={unequipArts} fullWidth>{t`tabEquip.unequipArts`}</Button>}
+          {artifactFields}
+        </Grid>
       </Grid>}
     </Grid>
   </Box>
