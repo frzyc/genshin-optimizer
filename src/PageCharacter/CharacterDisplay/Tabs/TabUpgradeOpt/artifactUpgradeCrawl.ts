@@ -49,16 +49,17 @@ export function crawlUpgrades(n: number, fn?: (n1234: number[], p: number) => vo
   }
 }
 
-export function allUpgradeValues(upOpt: QueryResult) {
+export function allUpgradeValues({ statsBase, rollsLeft, subs, skippableDerivs, fourthsubOpts, evalFn }: QueryResult) {
   // TODO: Include non-5* artifacts
   let scale = (key: SubstatKey) => key.endsWith('_') ? Artifact.maxSubstatValues(key, 5) / 1000 : Artifact.maxSubstatValues(key, 5) / 10
-  const base = upOpt.statsBase
+  const base = statsBase
 
   let results: WeightedPoint[] = []
-  crawlUpgrades(upOpt.rollsLeft, (ns, p) => {
+  crawlUpgrades(rollsLeft, (ns, p) => {
     const vals = ns.map((ni, i) => {
-      const sub = upOpt.subs[i]
-      if (sub && !upOpt.skippableDerivs[allSubstatKeys.indexOf(sub)]) return range(7 * ni, 10 * ni)
+      if (fourthsubOpts && i == 3) return range(7 * ni, 10 * ni)
+      const sub = subs[i]
+      if (sub && !skippableDerivs[allSubstatKeys.indexOf(sub)]) return range(7 * ni, 10 * ni)
       return [NaN]
     })
 
@@ -66,17 +67,39 @@ export function allUpgradeValues(upOpt: QueryResult) {
     allValues.forEach(upVals => {
       let stats = { ...base }
       let p_upVals = 1
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 3; i++) {
         if (isNaN(upVals[i])) continue
 
-        const key = upOpt.subs[i];
+        const key = subs[i];
         const val = upVals[i];
         const ni = ns[i];
         stats[key] = (stats[key] ?? 0) + val * scale(key)
         let p_val = (4 ** -ni) * quadrinomial(ni, val - 7 * ni)
         p_upVals *= p_val
       }
-      results.push({ v: upOpt.evalFn(stats).map(n => n.v), p: p * p_upVals })
+      if (fourthsubOpts !== undefined) {
+        // results.push({ v: evalFn(stats).map(n => n.v), p: p * p_upVals })
+        fourthsubOpts.forEach(({ sub, subprob }) => {
+          const stats2 = { ...stats }
+          const key = sub
+          const val = upVals[3]
+          const ni = ns[3]
+          stats2[key] = (stats2[key] ?? 0) + val * scale(key)
+          let p_val = (4 ** -ni) * quadrinomial(ni, val - 7 * ni) * subprob
+          const p_upVals2 = p_upVals * p_val
+          results.push({ v: evalFn(stats2).map(n => n.v), p: p * p_upVals2 })
+        })
+        return
+      }
+      if (!isNaN(upVals[3])) {
+        const key = subs[3];
+        const val = upVals[3];
+        const ni = ns[3];
+        stats[key] = (stats[key] ?? 0) + val * scale(key)
+        let p_val = (4 ** -ni) * quadrinomial(ni, val - 7 * ni)
+        p_upVals *= p_val
+      }
+      results.push({ v: evalFn(stats).map(n => n.v), p: p * p_upVals })
     })
   })
 

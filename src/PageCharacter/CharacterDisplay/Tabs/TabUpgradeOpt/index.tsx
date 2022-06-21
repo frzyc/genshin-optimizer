@@ -29,6 +29,7 @@ import { clamp, objPathValue } from '../../../../Util/Util';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { querySetup, evalArtifact, toQueryArtifact, cmpQ, QueryArtifact, QueryBuild, UpgradeOptResult } from './artifactQuery'
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
+import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material';
 
 
 export default function TabUpopt() {
@@ -45,8 +46,10 @@ export default function TabUpopt() {
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
-
   const [artifactUpgradeOpts, setArtifactUpgradeOpts] = useState(undefined as UpgradeOptResult | undefined)
+
+  const [show20, setShow20] = useState(true)
+  const [check4th, setCheck4th] = useState(false)
 
   // Because upgradeOpt is a two-stage estimation method, we want to expand (slow-estimate) our artifacts lazily as they are needed.
   // Lazy method means we need to take care to never 'lift' any artifacts past the current page, since that may cause a user to miss artifacts
@@ -69,7 +72,7 @@ export default function TabUpopt() {
     do {
       for (; i < end; i++) {
         let arti = qaLookup[arr[i].id]
-        if (arti) arr[i] = evalArtifact(query, arti, true);
+        if (arti) arr[i] = evalArtifact(query, arti, true, check4th);
       }
 
       // sort on only bottom half to prevent lifting
@@ -80,7 +83,7 @@ export default function TabUpopt() {
     } while (i < end)
 
     return { query, arts: [...fixedList, ...arr] }
-  }, [database])
+  }, [database, check4th])
 
   // Paging logic
   const [pageIdex, setpageIdex] = useState(0)
@@ -125,6 +128,8 @@ export default function TabUpopt() {
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     let optimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
     if (!optimizationTargetNode) return
+    setArtifactUpgradeOpts(undefined)
+    setpageIdex(0)
 
     const valueFilter: { value: NumNode, minimum: number }[] = Object.entries(statFilters).map(([key, value]) => {
       if (key.endsWith("_")) value = value / 100
@@ -133,6 +138,8 @@ export default function TabUpopt() {
 
     const queryArts: QueryArtifact[] = database._getArts()
       .filter(art => art.rarity === 5)
+      .filter(art => show20 || art.level !== 20)
+      // .filter(art => true)
       .map(art => toQueryArtifact(art, 20))
 
     const equippedArts = database._getChar(characterKey)?.equippedArtifacts ?? {} as StrictDict<SlotKey, string>
@@ -149,23 +156,15 @@ export default function TabUpopt() {
     let nodes = [optimizationTargetNode, ...valueFilter.map(x => x.value)]
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     const query = querySetup(nodes, valueFilter.map(x => x.minimum), curEquip, data);
-    let artUpOpt = queryArts.map(art => evalArtifact(query, art, false))
+    let artUpOpt = queryArts.map(art => evalArtifact(query, art, false, check4th))
     artUpOpt = artUpOpt.sort((a, b) => b.prob * b.upAvg - a.prob * a.upAvg)
 
-    let upOpt = { query: query, arts: artUpOpt }
-
-    artUpOpt.forEach(qr => {
-      if (qr.id === 'artifact_295') {
-        console.log(qr)
-        console.log(evalArtifact(query, qaLookup[qr.id]!, true))
-      }
-    })
-
     // Re-sort & slow eval
+    let upOpt = { query: query, arts: artUpOpt }
     upOpt = upgradeOptExpandSink(upOpt, 0, 5)
     setArtifactUpgradeOpts(upOpt);
     console.log('result', upOpt)
-  }, [characterKey, buildSetting, data, database, setArtifactUpgradeOpts, upgradeOptExpandSink])
+  }, [show20, check4th, characterKey, buildSetting, data, database, setArtifactUpgradeOpts, setpageIdex, upgradeOptExpandSink])
 
   const dataContext: dataContextObj | undefined = useMemo(() => {
     // if (characterKey === '') return undefined
@@ -210,12 +209,19 @@ export default function TabUpopt() {
                   <StatFilterCard disabled={false} />
                 </CardContent>
               </CardLight>
-
             </Grid>
-            <Grid item lg={8}>
+            <Grid item lg={8} display="flex" flexDirection="column" gap={1}>
               <CardLight>
                 <CardContent>
                   <ArtifactSetConfig disabled={false} />
+                </CardContent>
+              </CardLight>
+              <CardLight>
+                <CardContent>
+                  <Grid container spacing={1}>
+                    <Grid item><Button startIcon={show20 ? <CheckBox /> : <CheckBoxOutlineBlank />} color={show20 ? 'success' : 'secondary'} onClick={() => setShow20(!show20)}>show lvl 20</Button></Grid>
+                    <Grid item><Button startIcon={check4th ? <CheckBox /> : <CheckBoxOutlineBlank />} color={check4th ? 'success' : 'secondary'} onClick={() => setCheck4th(!check4th)}>compute 4th sub</Button></Grid>
+                  </Grid>
                 </CardContent>
               </CardLight>
             </Grid>
@@ -224,15 +230,18 @@ export default function TabUpopt() {
             <Grid item lg={12}>
               <CardLight>
                 <CardContent>
-                  <Button
-                    disabled={!characterKey || !optimizationTarget || !objPathValue(data?.getDisplay(), optimizationTarget)}
-                    color={(characterKey) ? "success" : "warning"}
-                    onClick={generateBuilds}
-                    startIcon={<FontAwesomeIcon icon={faCalculator} />}
-                  >Calc Upgrade Priority</Button>
-
-                  <HitModeToggle size="small" />
-                  <ReactionToggle size="small" />
+                  <Grid container spacing={1}>
+                    <Grid item>
+                      <Button
+                        disabled={!characterKey || !optimizationTarget || !objPathValue(data?.getDisplay(), optimizationTarget)}
+                        color={(characterKey) ? "success" : "warning"}
+                        onClick={generateBuilds}
+                        startIcon={<FontAwesomeIcon icon={faCalculator} />}
+                      >Calc Upgrade Priority</Button>
+                    </Grid>
+                    <Grid item><HitModeToggle size="small" /></Grid>
+                    <Grid item><ReactionToggle size="small" /></Grid>
+                  </Grid>
                 </CardContent>
               </CardLight>
             </Grid>
