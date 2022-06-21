@@ -77,6 +77,10 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
               value={searchTerm}
               onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
               label={t("page_weapon:weaponName")}
+              sx={{ height: "100%" }}
+              InputProps={{
+                sx: { height: "100%" }
+              }}
             />
           </Grid>
         </Grid>

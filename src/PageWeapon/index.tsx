@@ -143,9 +143,14 @@ export default function PageWeapon() {
         <Grid item flexGrow={1}>
           <TextField
             autoFocus
+            size="small"
             value={searchTerm}
             onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
             label={t("weaponName")}
+            sx={{ height: "100%" }}
+            InputProps={{
+              sx: { height: "100%" }
+            }}
           />
         </Grid>
         <Grid item>

@@ -52,6 +52,10 @@ export default function WeaponSelectionModal({ show, onHide, onSelect, filter = 
               value={searchTerm}
               onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
               label={t("weaponName")}
+              sx={{ height: "100%" }}
+              InputProps={{
+                sx: { height: "100%" }
+              }}
             />
           </Grid>
           <Grid item>

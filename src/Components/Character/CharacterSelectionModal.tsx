@@ -88,6 +88,11 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
               value={searchTerm}
               onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
               label={t("characterName")}
+              size="small"
+              sx={{ height: "100%" }}
+              InputProps={{
+                sx: { height: "100%" }
+              }}
             />
           </Grid>
 

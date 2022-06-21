@@ -124,6 +124,11 @@ export default function PageCharacter() {
             value={searchTerm}
             onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
             label={t("characterName")}
+            size="small"
+            sx={{ height: "100%" }}
+            InputProps={{
+              sx: { height: "100%" }
+            }}
           />
         </Grid>
         <Grid item >
