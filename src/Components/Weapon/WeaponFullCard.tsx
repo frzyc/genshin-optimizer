@@ -23,7 +23,7 @@ export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
       <Box flexShrink={1} maxWidth="35%" display="flex" flexDirection="column" alignContent="flex-end" className={`grad-${weaponSheet.rarity}star`} >
         <Box
           component="img"
-          src={weaponSheet.img}
+          src={weaponSheet.getImg(weapon.ascension)}
           width="100%"
           height="auto"
           sx={{ mt: "auto" }}
