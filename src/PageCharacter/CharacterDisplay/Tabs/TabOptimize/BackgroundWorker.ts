@@ -46,6 +46,10 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
     //     result = { command: "count", counts }
     //     break
     //   }
+    case "share":
+      const oo = splitWorker.popOne()
+      result = { command: 'share', subproblem: oo, sender: data.sender }
+      break
     default: assertUnreachable(command)
   }
   postMessage({ id, ...result });
@@ -61,6 +65,7 @@ export type SubProblemNC = {
   artSetExclusion: ArtSetExclusionFull,
 
   filter: RequestFilter,
+  depth: number,
 }
 export type SubProblemWC = {
   cache: true,
@@ -69,7 +74,8 @@ export type SubProblemWC = {
   artSetExclusion: ArtSetExclusionFull,
 
   filter: RequestFilter,
-  cachedCompute: CachedCompute
+  cachedCompute: CachedCompute,
+  depth: number,
 }
 export type CachedCompute = {
   maxEst: number[],
@@ -78,9 +84,9 @@ export type CachedCompute = {
   upper: DynStat
 }
 
-export type WorkerCommand = Setup | Split | SplitWork | Iterate | Finalize
+export type WorkerCommand = Setup | Split | SplitWork | Iterate | Finalize | Share
 // export type WorkerResult = InterimResult | SplitResult | IterateResult | FinalizeResult | CountResult
-export type WorkerResult = InterimResult | SplitResult | IterateResult | FinalizeResult
+export type WorkerResult = InterimResult | SplitResult | IterateResult | FinalizeResult | ShareResult
 
 export interface Setup {
   command: "setup"
@@ -118,6 +124,10 @@ export interface Iterate {
 export interface Finalize {
   command: "finalize"
 }
+export interface Share {
+  command: "share"
+  sender: number
+}
 
 
 // export interface Count {
@@ -151,4 +161,9 @@ export interface FinalizeResult {
 export interface CountResult {
   command: "count"
   counts: number[]
+}
+export interface ShareResult {
+  command: "share"
+  subproblem?: SubProblem
+  sender: number
 }

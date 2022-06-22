@@ -57,14 +57,14 @@ export class ComputeWorker {
         .filter(({ key, value }) => key !== undefined && value !== 0)
     })))
     // console.log(mapping)
-    console.log('enumerating', { artSetExclusion, preArts })
+    console.log('enumerating', { artSetExclusion, preArts }, { depth: subproblem.depth })
     // console.log(this.arts)
     // throw Error('stop here')
 
     const ids: string[] = Array(arts.length).fill("")
     let count = { tested: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }
 
-    function permute(i: number, setKeyCounts: DynStat, oddKeys: Set<ArtifactSetKey | undefined>) {
+    function permute(i: number, setKeyCounts: DynStat) {
       if (i < 0) {
         const result = compute()
         const result2 = compute2()
@@ -85,7 +85,10 @@ export class ComputeWorker {
           // return vals.includes(buffer[bufloc])
         })
         // This checks rainbows
-        if (passArtExcl && artSetExclusion['uniqueKey'] !== undefined) passArtExcl = artSetExclusion['uniqueKey'].every(v => v !== oddKeys.size)
+        if (passArtExcl && artSetExclusion['uniqueKey'] !== undefined) {
+          const nRainbow = Object.values(setKeyCounts).reduce((a, b) => a + (b % 2))
+          passArtExcl = artSetExclusion['uniqueKey'].every(v => v !== nRainbow)
+        }
 
         if (passArtExcl && min.every((m, i) => (m <= result[i]))) {
           const value = result[min.length], { builds, plotData, threshold } = self
@@ -116,12 +119,8 @@ export class ComputeWorker {
           buffer2[current.key2] += value
         }
 
-        if (oddKeys.has(art.set)) oddKeys.delete(art.set)
-        else oddKeys.add(art.set)
         setKeyCounts[art.set ?? ''] = 1 + (setKeyCounts[art.set ?? ''] ?? 0)
-        permute(i - 1, setKeyCounts, oddKeys)
-        if (oddKeys.has(art.set)) oddKeys.delete(art.set)
-        else oddKeys.add(art.set)
+        permute(i - 1, setKeyCounts)
         setKeyCounts[art.set ?? ''] -= 1
         if (setKeyCounts[art.set ?? ''] === 0) delete setKeyCounts[art.set ?? '']
 
@@ -147,7 +146,7 @@ export class ComputeWorker {
         buffer2[i2] = value
     }
 
-    permute(arts.length - 1, {}, new Set())
+    permute(arts.length - 1, {})
     this.interimReport(count)
     return this.threshold
   }

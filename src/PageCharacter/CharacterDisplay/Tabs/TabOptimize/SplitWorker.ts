@@ -1,10 +1,11 @@
 import type { NumNode } from '../../../../Formula/type';
 import { precompute } from '../../../../Formula/optimization';
 import { allSlotKeys, ArtifactSetKey } from '../../../../Types/consts';
-import { estimateMaximum, reduceFormula, statsUpperLower } from '../../../../Formula/addedUtils';
+import { estimateMaximum, reduceFormula, slotUpperLower, statsUpperLower } from '../../../../Formula/addedUtils';
 import type { ArtSetExclusionFull, CachedCompute, InterimResult, Setup, Split, SplitWork, SubProblem, SubProblemNC, SubProblemWC } from './BackgroundWorker';
-import { ArtifactsBySlot, countBuilds, DynStat, filterArts, RequestFilter } from './common';
+import { ArtifactBuildData, ArtifactsBySlot, countBuilds, DynStat, filterArts, RequestFilter } from './common';
 import { cartesian, objectKeyMap, objectKeyValueMap } from '../../../../Util/Util';
+import { sparseMatmul } from '../../../../Formula/linearUpperBound';
 
 export class SplitWorker {
   min: number[]
@@ -50,9 +51,9 @@ export class SplitWorker {
     if (subproblem) this.addSubProblem(subproblem)
     const initialProblemTotal = this.subproblems.reduce((a, { count }) => a + count, 0)
 
-    console.log('split', this.min[this.min.length - 1], {
-      todo: this.subproblems.length, buildsleft: this.subproblems.reduce((a, { count }) => a + count, 0)
-    })
+    // console.log('split', this.min[this.min.length - 1], {
+    //   todo: this.subproblems.length, buildsleft: this.subproblems.reduce((a, { count }) => a + count, 0)
+    // }, this.subproblems)
 
     let n = 0
     while (n < maxIter && this.subproblems.length) {
@@ -69,6 +70,19 @@ export class SplitWorker {
     const newProblemTotal = this.subproblems.reduce((a, { count }) => a + count, 0)
     this.callback({ command: 'interim', tested: 0, failed: 0, skipped: initialProblemTotal - newProblemTotal, buildValues: undefined })
     return []
+  }
+
+  popOne() {
+    // Give last of 2nd to last "layer"
+    if (this.subproblems.length === 0) return undefined
+    let dprev = this.subproblems[this.subproblems.length - 1].subproblem.depth - 2
+    for (let i = 1; i < this.subproblems.length; i++) {
+      let dnext = this.subproblems[i].subproblem.depth
+      if (dnext > dprev) {
+        return this.subproblems.splice(i - 1, 1)[0].subproblem
+      }
+    }
+    return undefined
   }
 
   /**
@@ -130,7 +144,7 @@ export class SplitWorker {
 
     // 2. Pick branching parameter
     let numBuilds = Object.values(a.values).reduce((tot, arts) => tot * arts.length, 1)
-    const { k } = pickBranch(a, subproblem.cachedCompute)
+    const { k } = pickBranch(a, threshold, subproblem)
     const branchVals = Object.fromEntries(Object.entries(a.values).map(([slotKey, arts]) => {
       const vals = arts.map(a => a.values[k])
       return [slotKey, (Math.min(...vals) + Math.max(...vals)) / 2]
@@ -142,7 +156,7 @@ export class SplitWorker {
     }))
 
     // 3. Perform branching. Check bounding during the branching phase as well.
-    let branches = [] as { numBuilds: number, subproblem: SubProblemWC }[]
+    let branches = [] as { numBuilds: number, heur: number, subproblem: SubProblemWC }[]
     cartesian([0, 1], [0, 1], [0, 1], [0, 1], [0, 1]).forEach(([s1, s2, s3, s4, s5]) => {
       let z = {
         base: { ...a.base },
@@ -177,11 +191,13 @@ export class SplitWorker {
       let newFilter: RequestFilter = objectKeyMap(allSlotKeys, slot => ({ kind: 'id' as 'id', ids: new Set(z.values[slot].map(art => art.id)) }))
       branches.push({
         numBuilds,
+        heur: cc2.maxEst[cc2.maxEst.length - 1],
         subproblem: {
           ...sub2,
           filter: newFilter,
           cache: true,
-          cachedCompute: cc2
+          cachedCompute: cc2,
+          depth: sub2.depth + 1
         }
       })
     })
@@ -199,8 +215,8 @@ export class SplitWorker {
  * @returns  A new subproblem that should be identical to the previous one, but with fewer components.
  *           If the subproblem is unsatisfiable, return `undefined`
  */
-function reduceSubProblem(sub: SubProblem, statsMin: DynStat, statsMax: DynStat): SubProblemNC | undefined {
-  const { optimizationTarget, constraints, artSetExclusion } = sub
+function reduceSubProblem({ optimizationTarget, constraints, artSetExclusion, filter, depth }: SubProblem, statsMin: DynStat, statsMax: DynStat): SubProblemNC | undefined {
+  // const { optimizationTarget, constraints, artSetExclusion } = sub
   let subnodes = [optimizationTarget, ...constraints.map(({ value }) => value)]
   const submin = constraints.map(({ min }) => min)
 
@@ -232,7 +248,6 @@ function reduceSubProblem(sub: SubProblem, statsMin: DynStat, statsMax: DynStat)
     if (reducedExcl.includes(statsMin[setKey]) && reducedExcl.includes(statsMax[setKey])) return;  // Always active.
     if (reducedExcl.length > 0) newArtExcl[setKey] = reducedExcl
   }
-  console.log({ artSetExclusion, newArtExcl }, { statsMin, statsMax })
 
   return {
     cache: false,
@@ -240,7 +255,7 @@ function reduceSubProblem(sub: SubProblem, statsMin: DynStat, statsMax: DynStat)
     constraints: newConstraints,
     artSetExclusion: newArtExcl,
 
-    filter: sub.filter
+    filter, depth
   }
 }
 
@@ -251,13 +266,66 @@ function reduceSubProblem(sub: SubProblem, statsMin: DynStat, statsMax: DynStat)
  * @param lin   Linear form from compute
  * @returns     The key to branch on.
  */
-function pickBranch(a: ArtifactsBySlot, { lin }: CachedCompute) {
-  // TODO: Experiment with
+function pickBranch(a: ArtifactsBySlot, threshold: number, { constraints, cachedCompute: { lin }, artSetExclusion }: SubProblemWC) {
   let linToConsider = lin[lin.length - 1]
-  let keysToConsider = Object.keys(linToConsider.w)
+  let keysToConsider = [...Object.keys(linToConsider.w), ...Object.keys(artSetExclusion).filter(k => k !== 'uniqueKey')]
+
+  // let thr = [...constraints.map(({ min }) => min), threshold]
+  // const w0 = lin.map(({ c }) => c)
+  // function pickBranchHelper(arts: ArtifactBuildData[]) {
+  //   const w = sparseMatmul(lin, arts.map(art => art.values)).reduce((maxWs, ws) => {
+  //     ws.forEach((wi, i) => maxWs[i] = Math.max(maxWs[i], wi))
+  //     return maxWs
+  //   }, Array(lin.length).fill(-Infinity) as number[])
+  //   return { arts, w, ...slotUpperLower(arts) }
+  // }
+
 
   let shatterOn = { k: '', heur: -1 }
   keysToConsider.forEach(k => {
+    // let branches = Object.fromEntries(Object.entries(a.values).map(([slotKey, arts]) => {
+    //   const vals = arts.map(a => a.values[k])
+    //   const minv = Math.min(...vals)
+    //   const maxv = Math.max(...vals)
+    //   if (minv === maxv) {
+    //     return [slotKey, [pickBranchHelper(arts)]]
+    //   }
+
+    //   const branchVal = (minv + maxv) / 2
+    //   const lowerArts = arts.filter(a => a.values[k] <= branchVal)
+    //   const upperArts = arts.filter(a => a.values[k] > branchVal)
+    //   return [slotKey, [
+    //     pickBranchHelper(lowerArts),
+    //     pickBranchHelper(upperArts),
+    //   ]]
+    // }))
+
+    // // Do a quick forward-branch to check how good the branch is.
+    // let numBranch = 0
+    // let numBuild = 0
+    // let maxW = -Infinity
+    // cartesian(branches.flower, branches.plume, branches.sands, branches.goblet, branches.circlet)
+    //   .forEach(([flower, plume, sands, goblet, circlet]) => {
+    //     const maxEst = Array(flower.w.length).fill(0).map((_, i) => (w0[i] + flower.w[i] + plume.w[i] + sands.w[i] + goblet.w[i] + circlet.w[i]))
+    //     let mememe: ArtifactsBySlot = { base: a.base, values: { flower: flower.arts, plume: plume.arts, sands: sands.arts, goblet: goblet.arts, circlet: circlet.arts } }
+    //     let { statsMin, statsMax } = statsUpperLower(mememe)
+
+    //     if (maxEst.some((m, i) => m < thr[i])) return
+    //     if (Object.entries(artSetExclusion).some(([slotKey, excl]) => excl.includes(statsMin[slotKey]) && excl.includes(statsMax[slotKey]))) return
+
+    //     numBranch++
+    //     numBuild += flower.arts.length * plume.arts.length * sands.arts.length * goblet.arts.length * circlet.arts.length
+    //     maxW = Math.max(maxW, maxEst[maxEst.length - 1])
+    //   })
+
+    //   if (numBuild === 0) {
+    //     console.log(k, branches)
+    //     throw Error('wait what')
+    //   }
+
+    // console.log('new', { k, numBranch, numBuild, maxW })
+    // throw Error('stop')
+
     const postShatterRangeReduction = Object.entries(a.values).reduce((rangeReduc, [slot, arts]) => {
       const vals = arts.map(a => a.values[k])
       const minv = Math.min(...vals)
@@ -272,11 +340,9 @@ function pickBranch(a: ArtifactsBySlot, { lin }: CachedCompute) {
       return rangeReduc + Math.min(maxv - glb, lub - minv)
     }, 0)
     const heur = linToConsider.w[k] * postShatterRangeReduction
-    // console.log({ k, heur })
+    // console.log('old', { k, heur })
     if (heur > shatterOn.heur) shatterOn = { k, heur }
   })
-
-  // throw Error('stop here')
 
   if (shatterOn.k === '') {
     console.log('===================== SHATTER BROKE ====================', lin, a)

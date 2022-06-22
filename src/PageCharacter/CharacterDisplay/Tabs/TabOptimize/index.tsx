@@ -175,10 +175,14 @@ export default function TabBuild() {
       constraints: filters,
       artSetExclusion: artSetExclFull,
 
-      filter: emptyfilter
+      filter: emptyfilter,
+      depth: 0,
     }
 
-    const maxSplitIters = 20
+    var masterID = -1
+    var masterReady = true
+    let allWorkers: Worker[] = []
+    const maxSplitIters = 5
     const minFilterCount = 2_000 // Don't split for single worker
     const maxRequestFilterInFlight = maxWorkers * 4
     const workQueue: SubProblem[] = [initialProblem]
@@ -186,27 +190,26 @@ export default function TabBuild() {
     const busyWorkerIDs = new Set<number>()  // Workers with pending work in SplitWorker()
     // const pruningID = new Set<number>()
 
-    function fetchContinueWork(numSplits: number): WorkerCommand {
+    function fetchContinueWork(): WorkerCommand {
       return { command: "split", minCount: minFilterCount, maxIter: maxSplitIters, threshold: wrap.buildValues[maxBuildsToShow - 1] }
-      // if (numSplits === 0) return { command: "split", minCount: minFilterCount, maxIter: maxSplitIters, threshold: wrap.buildValues[maxBuildsToShow - 1] }
-      // return { command: "splitwork", threshold: wrap.buildValues[maxBuildsToShow - 1], numSplits }
     }
-    function fetchRequestWork(): WorkerCommand | undefined {
-      const subproblem = workQueue.pop()
+    function fetchWork(): WorkerCommand | undefined {
+      const subproblem = workQueue.shift()
       if (!subproblem) return undefined
       let numBuild = countBuilds(filterArts(arts, subproblem.filter))
-
-      console.log('Requesting work... ', numBuild)
 
       if (numBuild <= minFilterCount) return { command: 'iterate', threshold: wrap.buildValues[maxBuildsToShow - 1], subproblem }
       return { command: 'split', threshold: wrap.buildValues[maxBuildsToShow - 1], minCount: minFilterCount, maxIter: maxSplitIters, subproblem }
     }
-
+    function requestShareWork(sender: number): WorkerCommand {
+      return { command: 'share', sender }
+    }
 
     status.total = Object.values(arts.values).reduce((prod, arts) => prod * arts.length, 1)
     const finalizedList: Promise<FinalizeResult>[] = []
     for (let i = 0; i < maxWorkers; i++) {
       const worker = new Worker()
+      allWorkers.push(worker)
 
       const setup: Setup = {
         command: "setup",
@@ -218,10 +221,10 @@ export default function TabBuild() {
         filters
       }
       worker.postMessage(setup, undefined)
-      // if (i === 0) {
-      //   const countCommand: WorkerCommand = { command: "count", exclusion: artSetExclusion, arts: [arts, prepruneArts] }
-      //   worker.postMessage(countCommand, undefined)
-      // }
+      if (i === 0) {
+        // const countCommand: WorkerCommand = { command: "count", exclusion: artSetExclusion, arts: [arts, prepruneArts] }
+        // worker.postMessage(countCommand, undefined)
+      }
       let finalize: (_: FinalizeResult) => void
       const finalized = new Promise<FinalizeResult>(r => finalize = r)
       // console.log('Definining onmessage', i)
@@ -242,8 +245,8 @@ export default function TabBuild() {
             }
             break
           case "split":
-            console.log('split return', data.subproblems, data.ready)
             workQueue.push(...data.subproblems)
+            if (data.ready && data.id === masterID) masterReady = true
             if (data.ready) busyWorkerIDs.delete(data.id)
             else busyWorkerIDs.add(data.id)
             idleWorkers.push({ id: data.id, worker })
@@ -255,24 +258,35 @@ export default function TabBuild() {
             worker.terminate()
             finalize(data);
             break
+          case "share":
+            console.log('Sharing work?', data)
+            if (data.subproblem) {
+              const splitCommand = { command: 'split', threshold: wrap.buildValues[maxBuildsToShow - 1], minCount: minFilterCount, maxIter: maxSplitIters, subproblem: data.subproblem }
+              allWorkers[data.sender].postMessage(splitCommand)
+            }
+            else
+              idleWorkers.push({ id: data.sender, worker: allWorkers[data.sender] })
+            break
           default: console.log("DEBUG", data)
         }
 
-        // Figure out how many
-        const numSplitting = idleWorkers.filter(({ id }) => busyWorkerIDs.has(id)).length
-        const numWorkerWithNoJob = Math.max(idleWorkers.filter(({ id }) => !busyWorkerIDs.has(id)).length - workQueue.length, 0)
-        const nChunksFromEveryone = Math.ceil(numWorkerWithNoJob / numSplitting)
-
-        // console.log('workers be like...', idleWorkers, data)
+        // console.log('pre-idle assignment loop', { masterID, idle: idleWorkers.map(({ id }) => id) })
         while (idleWorkers.length) {
           const { id, worker } = idleWorkers.pop()!
           let work: WorkerCommand | undefined
           if (wrap.finalizing) work = { command: "finalize" }
-          else if (workQueue.length >= maxRequestFilterInFlight) work = fetchRequestWork()
-          else if (busyWorkerIDs.has(id)) work = fetchContinueWork(nChunksFromEveryone)
-          if (!work) work = fetchRequestWork()
+          else if (workQueue.length >= maxRequestFilterInFlight) work = fetchWork()
+          else if (busyWorkerIDs.has(id)) work = fetchContinueWork()
+          if (!work) work = fetchWork()
+          if (masterID < 0) {
+            masterID = id
+            masterReady = false
+          }
 
           if (work) worker.postMessage(work)
+          else if (!masterReady) {
+            allWorkers[masterID].postMessage(requestShareWork(id))
+          }
           else {
             idleWorkers.push({ id, worker })
             if (idleWorkers.length === maxWorkers && busyWorkerIDs.size === 0) {

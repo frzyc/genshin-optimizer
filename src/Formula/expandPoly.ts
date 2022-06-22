@@ -27,52 +27,52 @@ export function foldProd(nodes: NumNode[]) {
 }
 
 function gatherSumOfProds(products: NumNode[], isVar: (n: NumNode) => boolean): NumNode[] {
-  // return products
-  type NodeLinkedList = { n: NumNode, ix: number, next: NodeLinkedList | undefined }
-  let varMap = {} as Dict<number, NodeLinkedList> // my shitty hashmap
-  const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541]
-  let varCounter = 0
-  function lookup(n: NumNode) {
-    let hsh = hashNode(n)
-    let z = varMap[hsh]
-    while (z !== undefined) {
-      if (cmpNode(z.n, n)) return BigInt(z.ix)
-      z = z.next
-    }
+  return products
+  // type NodeLinkedList = { n: NumNode, ix: number, next: NodeLinkedList | undefined }
+  // let varMap = {} as Dict<number, NodeLinkedList> // my shitty hashmap
+  // const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541]
+  // let varCounter = 0
+  // function lookup(n: NumNode) {
+  //   let hsh = hashNode(n)
+  //   let z = varMap[hsh]
+  //   while (z !== undefined) {
+  //     if (cmpNode(z.n, n)) return BigInt(z.ix)
+  //     z = z.next
+  //   }
 
-    const ix = primes[varCounter]
-    varMap[hsh] = { n, ix, next: varMap[hsh] }
-    varCounter += 1
-    return BigInt(ix)
-  }
+  //   const ix = primes[varCounter]
+  //   varMap[hsh] = { n, ix, next: varMap[hsh] }
+  //   varCounter += 1
+  //   return BigInt(ix)
+  // }
 
-  let result: { [k: string]: { coeff: number, rhs: NumNode[] } } = {}
-  products.forEach(n => {
-    if (n.operation === 'const') {
-      result[1] = { coeff: n.value + (result[1]?.coeff ?? 0), rhs: [] }
-      return
-    }
-    else if (isVar(n)) {
-      let ix = lookup(n).toString()
-      result[ix] = { coeff: 1 + (result[ix]?.coeff ?? 0), rhs: [n] }
-      return
-    }
-    else if (n.operation === 'mul') {
-      const { coeff, ix, ops } = n.operands.reduce(({ coeff, ix, ops }, n) => {
-        if (n.operation === 'const') return { coeff: coeff * n.value, ix, ops }
-        ops.push(n)
-        return { coeff, ix: ix * lookup(n), ops: ops }
-      }, { coeff: 1, ix: BigInt(1), ops: [] as NumNode[] })
-      let ix2 = ix.toString()
-      result[ix2] = { coeff: coeff + (result[ix2]?.coeff ?? 0), rhs: ops }
-      return
-    }
-    console.log(n)
-    throw Error('Encountered unexpected node in `gatherSumOfProds`')
-  })
-  return Object.entries(result).map(([k, { coeff, rhs }]) => {
-    return foldProd([...rhs, constant(coeff)])
-  })
+  // let result: { [k: string]: { coeff: number, rhs: NumNode[] } } = {}
+  // products.forEach(n => {
+  //   if (n.operation === 'const') {
+  //     result[1] = { coeff: n.value + (result[1]?.coeff ?? 0), rhs: [] }
+  //     return
+  //   }
+  //   else if (isVar(n)) {
+  //     let ix = lookup(n).toString()
+  //     result[ix] = { coeff: 1 + (result[ix]?.coeff ?? 0), rhs: [n] }
+  //     return
+  //   }
+  //   else if (n.operation === 'mul') {
+  //     const { coeff, ix, ops } = n.operands.reduce(({ coeff, ix, ops }, n) => {
+  //       if (n.operation === 'const') return { coeff: coeff * n.value, ix, ops }
+  //       ops.push(n)
+  //       return { coeff, ix: ix * lookup(n), ops: ops }
+  //     }, { coeff: 1, ix: BigInt(1), ops: [] as NumNode[] })
+  //     let ix2 = ix.toString()
+  //     result[ix2] = { coeff: coeff + (result[ix2]?.coeff ?? 0), rhs: ops }
+  //     return
+  //   }
+  //   console.log(n)
+  //   throw Error('Encountered unexpected node in `gatherSumOfProds`')
+  // })
+  // return Object.entries(result).map(([k, { coeff, rhs }]) => {
+  //   return foldProd([...rhs, constant(coeff)])
+  // })
 }
 
 /**

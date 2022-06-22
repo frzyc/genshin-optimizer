@@ -2,32 +2,41 @@ import { constant, prod, cmp } from "./utils"
 import { NumNode } from "./type"
 import { optimize } from "./optimization"
 import { mapFormulas } from "./internal"
-import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
+import { ArtifactBuildData, ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
 import { LinearForm, maxWeight, toLinearUpperBound } from "./linearUpperBound"
 import { expandPoly, productPossible } from "./expandPoly"
+import { ArtifactSetKey } from "../Types/consts"
+
+export function slotUpperLower(a: ArtifactBuildData[]) {
+  let statsMin: DynStat = {}
+  let statsMax: DynStat = {}
+  let sets = new Set<ArtifactSetKey | undefined>()
+  a.forEach(art => {
+    for (const statKey in art.values) {
+      statsMin[statKey] = Math.min(art.values[statKey], statsMin[statKey] ?? Infinity)
+      statsMax[statKey] = Math.max(art.values[statKey], statsMax[statKey] ?? -Infinity)
+    }
+    if (art.set) {
+      statsMax[art.set] = 1
+      statsMin[art.set] = 0
+    }
+    sets.add(art.set)
+  })
+  if (sets.size === 1 && a[0].set) statsMin[a[0].set] = 1
+  return { statsMin, statsMax }
+}
 
 export function statsUpperLower(a: ArtifactsBySlot) {
-  let minStats = Object.entries(a.values).reduce((pv, [slotKey, slotArts]) => {
-    let minStatSlot: DynStat = {}
-    slotArts.forEach(art => {
-      for (const statKey in art.values) minStatSlot[statKey] = Math.min(art.values[statKey], minStatSlot[statKey] ?? Infinity)
+  let statsMin: DynStat = { ...a.base }
+  let statsMax: DynStat = { ...a.base }
+  Object.entries(a.values).forEach(([slotKey, slotArts]) => {
+    const { statsMin: smin, statsMax: smax } = slotUpperLower(slotArts)
+    Object.keys(smin).forEach(sk => {
+      statsMin[sk] = smin[sk] + (statsMin[sk] ?? 0)
+      statsMax[sk] = smax[sk] + (statsMax[sk] ?? 0)
     })
-    Object.entries(minStatSlot).forEach(([k, v]) => pv[k] = v + (pv[k] ?? 0))
-    const setOpts = new Set(slotArts.map(art => art.set))
-    if (setOpts.size === 1) setOpts.forEach(sk => { if (sk) pv[sk] = 1 })
-    else setOpts.forEach(sk => { if (sk) pv[sk] = 0 })
-    return pv
-  }, { ...a.base })
-  let maxStats = Object.entries(a.values).reduce((pv, [slotKey, slotArts]) => {
-    let maxStatSlot: DynStat = {}
-    slotArts.forEach(art => {
-      for (const statKey in art.values) maxStatSlot[statKey] = Math.max(art.values[statKey], maxStatSlot[statKey] ?? 0)
-      if (art.set) maxStatSlot[art.set] = 1
-    })
-    Object.entries(maxStatSlot).forEach(([k, v]) => pv[k] = v + (pv[k] ?? 0))
-    return pv
-  }, { ...a.base })
-  return { statsMin: minStats, statsMax: maxStats }
+  })
+  return { statsMin, statsMax }
 }
 
 export function reduceFormula(f: NumNode[], lower: DynStat, upper: DynStat) {

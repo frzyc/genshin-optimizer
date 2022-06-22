@@ -57,7 +57,7 @@ describe.skip("Worker Perf", () => {
         "circlet": { kind: "exclude", sets: new Set() },
         "plume": { kind: "exclude", sets: new Set() },
         "sands": { kind: "exclude", sets: new Set() },
-      }
+      }, depth: 0
     })
 
     const date2 = new Date().getTime()

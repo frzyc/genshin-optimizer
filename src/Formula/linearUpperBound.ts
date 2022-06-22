@@ -265,15 +265,35 @@ function lub(bounds: { lower: number, upper: number }[]): { w: number[], c: numb
 }
 
 export function maxWeight(a: ArtifactsBySlot, lin: LinearForm) {
-  const baseVal = Object.entries(lin.w).reduce((dotProd, [statKey, w]) => dotProd + w * a.base[statKey], lin.c)
-  const maxTot = Object.entries(a.values).reduce((maxTotVal, [slotKey, slotArts]) => {
-    const maxSlot = slotArts.reduce((maxArt, art) => {
-      const artVal = Object.entries(lin.w).reduce((dotProd, [statkey, w]) => dotProd + w * art.values[statkey], 0)
-      return maxArt.v > artVal ? maxArt : { v: artVal, id: art.id }
-    }, { v: 0, id: '' })
-    maxTotVal.v += maxSlot.v
-    maxTotVal.ids.push(maxSlot.id)
-    return maxTotVal
-  }, { v: baseVal, ids: [] as string[] })
-  return maxTot.v
+  const baseVal = sparseMatmul([lin], [a.base])[0][0] + lin.c
+
+  return baseVal + Object.entries(a.values).reduce((maxTotVal, [slotKey, slotArts]) => {
+    const wArts = sparseMatmul([lin], slotArts.map(a => a.values)).map(v => v[0])
+    return maxTotVal + Math.max(...wArts)
+  }, 0)
+
+  // const baseVal = Object.entries(lin.w).reduce((dotProd, [statKey, w]) => dotProd + w * a.base[statKey], lin.c)
+  // const maxTot = Object.entries(a.values).reduce((maxTotVal, [slotKey, slotArts]) => {
+  //   const maxSlot = slotArts.reduce((maxArt, art) => {
+  //     const artVal = Object.entries(lin.w).reduce((dotProd, [statkey, w]) => dotProd + w * art.values[statkey], 0)
+  //     return maxArt.v > artVal ? maxArt : { v: artVal, id: art.id }
+  //   }, { v: 0, id: '' })
+  //   maxTotVal.v += maxSlot.v
+  //   maxTotVal.ids.push(maxSlot.id)
+  //   return maxTotVal
+  // }, { v: baseVal, ids: [] as string[] })
+  // return maxTot.v
+}
+
+
+// Implement matrix multiply between row-major w's of LinearForm and col-major DynStats that represent artifacts.
+/**
+ * Implements sparse matrix multiplication between A and x
+ * @param A A list of row-major w's of some LinearForm
+ * @param x A list of col-major DynStats that represent some artifacts
+ * @returns A col-major 2d array number[][] with shape (A.length, x.length).
+ *          ret[0] is [A1 @ x1, A2 @ x1, ..., An @ x1]
+ */
+export function sparseMatmul(A: LinearForm[], x: DynStat[]) {
+  return x.map(dyn => A.map(({ w }) => Object.entries(w).reduce((a, [k, wk]) => a + wk * (dyn[k] ?? 0), 0)))
 }
