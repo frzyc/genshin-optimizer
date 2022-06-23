@@ -233,12 +233,12 @@ function reduceSubProblem({ optimizationTarget, constraints, artSetExclusion, fi
   subnodes = reduceFormula(subnodes, statsMin, statsMax)
 
   // 1. Check for always-feasible constraints.
-  const [compute, mapping, buffer] = precompute(subnodes, n => n.path[1])
+  const [compute, mapping, buffer] = precompute(constraints.map(({ value }) => value), n => n.path[1])
   fillBuffer(statsMin, mapping, buffer)
   const result = compute()
+  const active = submin.map((m, i) => m > result[i])
 
   const newOptTarget = subnodes.pop()!
-  const active = submin.map((m, i) => m > result[i])
   const newConstraints = subnodes.map((value, i) => ({ value, min: submin[i] })).filter((_, i) => active[i])
   if (debug) console.log('reduceSubP', { statsMin, subnodes, submin, result, active })
 
@@ -246,10 +246,6 @@ function reduceSubProblem({ optimizationTarget, constraints, artSetExclusion, fi
   let newArtExcl = {} as ArtSetExclusionFull
   for (const [setKey, exclude] of Object.entries(artSetExclusion)) {
     if (setKey === 'uniqueKey') {
-      // let minSets = Object.fromEntries(Object.entries(statsMin).filter(([statKey, v]) => v > 0 && allArtifactSets.includes(statKey as any)))
-      // let numSets = Object.keys(minSets).length
-      // let numSlotsUsed = Object.values(minSets).reduce((a, b) => a + b)
-
       // TODO: Check and exclude rainbow bullshit.
       newArtExcl[setKey] = exclude
       continue
