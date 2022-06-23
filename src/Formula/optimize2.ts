@@ -1,9 +1,8 @@
 import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common";
-import { assertUnreachable } from "../Util/Util";
 import { reduceFormula, statsUpperLower } from "./addedUtils";
 import { foldProd, foldSum } from "./expandPoly";
 import { forEachNodes, mapFormulas } from "./internal";
-import { ComputeNode, NumNode } from "./type";
+import { NumNode } from "./type";
 import { cmp, constant, customRead, prod, sum } from './utils';
 
 function makeid(length: number, disallowed?: string[]) {

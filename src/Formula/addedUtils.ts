@@ -1,4 +1,4 @@
-import { constant, prod, cmp } from "./utils"
+import { constant } from "./utils"
 import { NumNode } from "./type"
 import { optimize } from "./optimization"
 import { mapFormulas } from "./internal"
@@ -46,8 +46,8 @@ export function reduceFormula(f: NumNode[], lower: DynStat, upper: DynStat) {
     if (n.operation === 'threshold') {
       const [branch, branchVal, ge, lt] = n.operands
       if (branch.operation === 'read' && branchVal.operation === 'const') {
-        if (lower[branch.path[1]] >= branchVal.value) return n.operands[2]
-        if (upper[branch.path[1]] < branchVal.value) return n.operands[3]
+        if (lower[branch.path[1]] >= branchVal.value) return ge
+        if (upper[branch.path[1]] < branchVal.value) return lt
       }
     }
     return n

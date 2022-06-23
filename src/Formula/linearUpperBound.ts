@@ -1,11 +1,10 @@
-import { NumNode, ComputeNode } from "./type"
+import { NumNode } from "./type"
 import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
 import { constant, sum, prod, cmp } from "./utils"
 import { foldSum, foldProd, expandPoly } from './expandPoly'
 import { precompute, allOperations } from "./optimization"
 import { solveLP } from './solveLP_simplex'
 import { cartesian } from '../Util/Util'
-import { mapFormulas } from "./internal"
 import { fillBuffer } from "./addedUtils"
 
 export type LinearForm = {
