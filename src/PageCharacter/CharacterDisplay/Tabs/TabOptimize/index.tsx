@@ -20,7 +20,8 @@ import { DatabaseContext } from '../../../../Database/Database';
 import { DataContext, dataContextObj } from '../../../../DataContext';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { uiInput as input } from '../../../../Formula/index';
-import { optimize } from '../../../../Formula/optimization';
+import { optimize, precompute } from '../../../../Formula/optimization';
+import { elimLinDepStats, thresholdToConstBranches } from '../../../../Formula/optimize2';
 import { NumNode } from '../../../../Formula/type';
 import { UIData } from '../../../../Formula/uiData';
 import { initGlobalSettings } from '../../../../GlobalSettings';
@@ -149,6 +150,32 @@ export default function TabBuild() {
     }))
     // Can be further folded after pruning
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
+    nodes = thresholdToConstBranches(nodes);
+    ({ a: arts, nodes } = elimLinDepStats(arts, nodes));
+
+    console.log(arts)
+
+    // TODO: REMOVEME
+    // {
+    //   let [compute, mapping, buffer] = precompute(nodes, n => n.path[1])
+    //   Object.entries(arts.base).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
+    //   Object.entries(arts.values.flower[0].values).forEach(([k, v]) => buffer[mapping[k] ?? 0] += v)
+    //   Object.entries(arts.values.plume[0].values).forEach(([k, v]) => buffer[mapping[k] ?? 0] += v)
+    //   console.log(compute())
+
+    //   let [compute3, mapping3, buffer3] = precompute(nodes2, n => n.path[1])
+    //   Object.entries(arts.base).forEach(([k, v]) => buffer3[mapping3[k] ?? 0] = v)
+    //   Object.entries(arts.values.flower[0].values).forEach(([k, v]) => buffer3[mapping3[k] ?? 0] += v)
+    //   Object.entries(arts.values.plume[0].values).forEach(([k, v]) => buffer3[mapping3[k] ?? 0] += v)
+    //   console.log(compute3())
+
+    //   let { a: arts2, nodes: nodes3 } = elimLinDepStats(arts, nodes2)
+    //   let [compute2, mapping2, buffer2] = precompute(nodes3, n => n.path[1])
+    //   Object.entries(arts2.base).forEach(([k, v]) => buffer2[mapping2[k] ?? 0] = v)
+    //   Object.entries(arts.values.flower[0].values).forEach(([k, v]) => buffer2[mapping2[k] ?? 0] += v)
+    //   Object.entries(arts.values.plume[0].values).forEach(([k, v]) => buffer2[mapping2[k] ?? 0] += v)
+    //   console.log(compute2())
+    // }
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
@@ -183,7 +210,7 @@ export default function TabBuild() {
     var masterReady = true
     let allWorkers: Worker[] = []
     const maxSplitIters = 5
-    const minFilterCount = 2_000 // Don't split for single worker
+    const minFilterCount = 10_000 // Don't split for single worker
     const maxRequestFilterInFlight = maxWorkers * 4
     const workQueue: SubProblem[] = [initialProblem]
     const idleWorkers: { id: number, worker: Worker }[] = []  // Currently idle workers

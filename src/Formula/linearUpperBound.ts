@@ -77,16 +77,17 @@ function handleResArg(node: { 'operation': 'res', 'operands': NumNode[] }, lower
  * @returns
  */
 export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat): LinearForm | LinearForm[] {
-  if (node.operation === 'const')
-    return { w: {}, c: node.value, err: 0 }
-  if (node.operation === 'read')
-    return { w: { [node.path[1]]: 1 }, c: 0, err: 0 }
-  if (node.operation !== 'mul') {
-    throw Error('toLUB should only operate on product forms')
-  }
+  // if (node.operation === 'const')
+  //   return { w: {}, c: node.value, err: 0 }
+  // if (node.operation === 'read')
+  //   return { w: { [node.path[1]]: 1 }, c: 0, err: 0 }
+  // if (node.operation !== 'mul') {
+  //   console.log(node)
+  //   throw Error('toLinearUpperBound should only operate on product forms')
+  // }
 
-  let l = { ...lower }
-  let u = { ...upper }
+  // let l = { ...lower }
+  // let u = { ...upper }
   let linerr = 0
 
   // Converts threshold(Glad) * ATK * min(CR, 1) => Glad * ATK * CR
@@ -114,7 +115,7 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
           }
 
           const slope = (ge.value - lt.value) / bval.value
-          u[key] = bval.value
+          // u[key] = bval.value
           // TODO: update linerr
           return sum(lt.value, prod(slope, branch))
         }
@@ -130,13 +131,13 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
         if (cop.operation !== 'const')
           [rop, cop] = [cop, rop]  // Assume min(const, read)
 
-        if (rop.operation === 'read' && cop.operation === 'const') {
-          if (cop.value < u[rop.path[1]]) {
+        // if (rop.operation === 'read' && cop.operation === 'const') {
+          // if (cop.value < upper[rop.path[1]]) {
             // TODO: update linerr
-            u[rop.path[1]] = cop.value
-          }
-          return purePolyForm(rop)
-        }
+            // u[rop.path[1]] = cop.value
+          // }
+          // return purePolyForm(rop)
+        // }
 
         // TODO: update linerr
         // If it's not a simple min() node, returning either value is still UB.

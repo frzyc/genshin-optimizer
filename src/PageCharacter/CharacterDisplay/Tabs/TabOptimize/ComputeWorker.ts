@@ -31,7 +31,7 @@ export class ComputeWorker {
   }
 
   compute(newThreshold: number, subproblem: SubProblem) {
-    if (this.threshold > newThreshold) this.threshold = newThreshold
+    if (this.threshold < newThreshold) this.threshold = newThreshold
     const { optimizationTarget, constraints, filter, artSetExclusion } = subproblem
     // TODO: check artSetExclusion stuff
 
@@ -53,11 +53,11 @@ export class ComputeWorker {
     const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length).map(arts => arts.map(art => ({
       id: art.id, set: art.set, values: Object.entries(art.values)
         // .map(([key, value]) => ({ key: mapping[key]!, value, cache: 0 }))
-        .map(([key, value]) => ({ key: mapping[key]!, key2: mapping2[key] ?? 0, value, cache: 0 }))
+        .map(([key, value]) => ({ key: mapping[key]!, key2: mapping2[key] ?? -1, value, cache: 0 }))
         .filter(({ key, value }) => key !== undefined && value !== 0)
     })))
     // console.log(mapping)
-    console.log('enumerating', { artSetExclusion, preArts }, { depth: subproblem.depth })
+    console.log('enumerating', { artSetExclusion, preArts }, { depth: subproblem.depth }, this.threshold)
     // console.log(this.arts)
     // throw Error('stop here')
 
@@ -86,7 +86,7 @@ export class ComputeWorker {
         })
         // This checks rainbows
         if (passArtExcl && artSetExclusion['uniqueKey'] !== undefined) {
-          const nRainbow = Object.values(setKeyCounts).reduce((a, b) => a + (b % 2))
+          const nRainbow = Object.values(setKeyCounts).reduce((a, b) => a + (b % 2), 0)
           passArtExcl = artSetExclusion['uniqueKey'].every(v => v !== nRainbow)
         }
 
@@ -113,10 +113,10 @@ export class ComputeWorker {
         ids[i] = art.id
 
         for (const current of art.values) {
-          const { key, value } = current
+          const { key, key2, value } = current
           current.cache = buffer[key]
           buffer[key] += value
-          buffer2[current.key2] += value
+          if (key2 > 0) buffer2[key2] += value
         }
 
         setKeyCounts[art.set ?? ''] = 1 + (setKeyCounts[art.set ?? ''] ?? 0)
@@ -126,7 +126,7 @@ export class ComputeWorker {
 
         for (const { key, key2, cache } of art.values) {
           buffer[key] = cache
-          buffer2[key2] = cache
+          if (key2 > 0) buffer2[key2] = cache
         }
       })
       if (i === 0) {

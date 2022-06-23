@@ -14,7 +14,7 @@ export class SplitWorker {
   nodes: NumNode[]
   artSet: Dict<ArtifactSetKey | 'uniqueKey', number[]>
 
-  subproblems: { count: number, subproblem: SubProblem }[] = []
+  subproblems: { count: number, heur: number, subproblem: SubProblem }[] = []
 
   callback: (interim: InterimResult) => void
 
@@ -36,7 +36,8 @@ export class SplitWorker {
   addSubProblem(subproblem: SubProblem) {
     const count = countBuilds(filterArts(this.arts, subproblem.filter))
     if (count === 0) return
-    this.subproblems.push({ count, subproblem })
+    let maxEst = subproblem.cache ? subproblem.cachedCompute.maxEst[subproblem.cachedCompute.maxEst.length - 1] : 0
+    this.subproblems.push({ count, heur: maxEst, subproblem })
   }
 
   /**
@@ -73,16 +74,15 @@ export class SplitWorker {
   }
 
   popOne() {
-    // Give last of 2nd to last "layer"
+    // Yield largest subproblem (requests => level-order / prio queue order)
     if (this.subproblems.length === 0) return undefined
-    let dprev = this.subproblems[this.subproblems.length - 1].subproblem.depth - 2
+    let ret = { i: -1, heur: -Infinity }
     for (let i = 1; i < this.subproblems.length; i++) {
-      let dnext = this.subproblems[i].subproblem.depth
-      if (dnext > dprev) {
-        return this.subproblems.splice(i - 1, 1)[0].subproblem
-      }
+      const { heur, subproblem } = this.subproblems[i]
+      if (heur > ret.heur) ret = { i, heur }
     }
-    return undefined
+    if (ret.i < 0) return undefined
+    return this.subproblems.splice(ret.i, 1)[0].subproblem
   }
 
   /**

@@ -40,21 +40,14 @@ export function statsUpperLower(a: ArtifactsBySlot) {
 }
 
 export function reduceFormula(f: NumNode[], lower: DynStat, upper: DynStat) {
-  const fixedStats = Object.fromEntries(Object.entries(lower).filter(([statKey, v]) => v === upper[statKey]))
+  const fixedStats = Object.keys(lower).filter(statKey => lower[statKey] === upper[statKey])
   let f2 = mapFormulas(f, n => n, n => {
-    if (n.operation === 'read' && n.path[1] in fixedStats) return constant(fixedStats[n.path[1]])
+    if (n.operation === 'read' && fixedStats.includes(n.path[1])) return constant(lower[n.path[1]])
     if (n.operation === 'threshold') {
       const [branch, branchVal, ge, lt] = n.operands
       if (branch.operation === 'read' && branchVal.operation === 'const') {
         if (lower[branch.path[1]] >= branchVal.value) return n.operands[2]
         if (upper[branch.path[1]] < branchVal.value) return n.operands[3]
-      }
-
-      if (ge.operation !== 'const') {
-        if (lt.operation === 'const' && lt.value === 0) {
-          return prod(cmp(branch, branchVal, 1, 0), ge)
-        }
-        throw Error('Threshold between non-const `pass` and non-zero `fail` not supported.')
       }
     }
     return n
