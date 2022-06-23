@@ -138,6 +138,8 @@ function collapseAffine(a: ArtifactsBySlot, nodes: NumNode[]) {
   })
   unusedKeys.forEach(k => deleteKey(a, k))
 
+  console.log('added registers', addedRegisters)
+
   return { a, nodes: newNodes }
 }
 

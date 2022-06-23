@@ -8,6 +8,7 @@ export class ComputeWorker {
   builds: Build[] = []
   buildValues: number[] | undefined = undefined
   plotData: PlotData | undefined
+  plotBase: NumNode | undefined
   threshold: number = -Infinity
   maxBuilds: number
   min: number[]
@@ -26,68 +27,58 @@ export class ComputeWorker {
     this.nodes.push(optimizationTarget)
     if (plotBase) {
       this.plotData = {}
+      this.plotBase = plotBase
       this.nodes.push(plotBase)
     }
   }
 
-  compute(newThreshold: number, subproblem: SubProblem) {
+  compute(newThreshold: number, subproblem: SubProblem, dbg = false) {
     if (this.threshold < newThreshold) this.threshold = newThreshold
-    const { optimizationTarget, constraints, filter, artSetExclusion } = subproblem
-    // TODO: check artSetExclusion stuff
+    const { optimizationTarget, constraints, filter, artSetExclusion, depth } = subproblem
 
-    const { min, interimReport } = this, self = this // `this` in nested functions means different things
+    const { interimReport } = this, self = this // `this` in nested functions means different things
     let preArts = filterArts(this.arts, filter)
     const totalCount = countBuilds(preArts)
 
-    let nodesReduced = optimize([...constraints.map(({ value }) => value), optimizationTarget], {}, _ => false);
-    // const min = [...constraints.map(({ min }) => min), -Infinity];
+    if (subproblem.cache) {
+      if (subproblem.cachedCompute.maxEst[subproblem.cachedCompute.maxEst.length - 1] < this.threshold) {
+        this.interimReport({ tested: 0, failed: 0, skipped: totalCount })
+        return
+      }
+    }
 
-    // console.log(this.arts)
-
-    let nodes = optimize(this.nodes, {}, _ => false);
+    let nodes = [...constraints.map(({ value }) => value), optimizationTarget]
+    if (this.plotBase !== undefined) nodes.push(this.plotBase)
+    nodes = optimize(nodes, {}, _ => false);
+    let min = constraints.map(({ min }) => min)
     // ({ nodes, arts: preArts } = pruneAll(nodes, min, preArts, this.maxBuilds, {}, {
     //   pruneArtRange: true, pruneNodeRange: true,
     // }))
     const [compute, mapping, buffer] = precompute(nodes, f => f.path[1])
-    const [compute2, mapping2, buffer2] = precompute(nodesReduced, f => f.path[1])
-    const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length).map(arts => arts.map(art => ({
-      id: art.id, set: art.set, values: Object.entries(art.values)
-        // .map(([key, value]) => ({ key: mapping[key]!, value, cache: 0 }))
-        .map(([key, value]) => ({ key: mapping[key]!, key2: mapping2[key] ?? -1, value, cache: 0 }))
-        .filter(({ key, value }) => key !== undefined && value !== 0)
-    })))
-    // console.log(mapping)
-    console.log('enumerating', { artSetExclusion, preArts }, { depth: subproblem.depth }, this.threshold)
-    // console.log(this.arts)
-    // throw Error('stop here')
+
+    const arts = Object.values(preArts.values)
+      .sort((a, b) => a.length - b.length)
+      .map(arts => arts.map(art => ({
+        id: art.id, set: art.set, values: Object.entries(art.values)
+          .map(([key, value]) => ({ key: mapping[key]!, value, cache: 0 }))
+          .filter(({ key, value }) => key !== undefined && value !== 0)
+      })))
 
     const ids: string[] = Array(arts.length).fill("")
     let count = { tested: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }
 
+    let maxFound = -Infinity
+
     function permute(i: number, setKeyCounts: DynStat) {
       if (i < 0) {
         const result = compute()
-        const result2 = compute2()
-        if (Math.abs(result[min.length] - result2[constraints.length]) > 1e-4) {
-          console.log('OOF COMPUTE NO MATCH')
-          console.log(preArts)
-          console.log(nodes)
-          console.log(nodesReduced)
-          console.log(buffer)
-          console.log(buffer2)
-          throw Error('what?')
-        }
-        let passArtExcl = !Object.entries(artSetExclusion).some(([setKey, vals]) => {
-          if (setKey === 'uniqueKey') return false
-          return vals.includes(setKeyCounts[setKey])
-          // let bufloc = mapping[setKey]
-          // if (!bufloc) return false
-          // return vals.includes(buffer[bufloc])
-        })
-        // This checks rainbows
+        maxFound = Math.max(result[constraints.length], maxFound)
+        let passArtExcl = Object.entries(artSetExclusion).every(([setKey, vals]) => !vals.includes(setKeyCounts[setKey]))
+
+        // Check rainbows
         if (passArtExcl && artSetExclusion['uniqueKey'] !== undefined) {
           const nRainbow = Object.values(setKeyCounts).reduce((a, b) => a + (b % 2), 0)
-          passArtExcl = artSetExclusion['uniqueKey'].every(v => v !== nRainbow)
+          passArtExcl = !artSetExclusion['uniqueKey'].includes(nRainbow)
         }
 
         if (passArtExcl && min.every((m, i) => (m <= result[i]))) {
@@ -113,10 +104,9 @@ export class ComputeWorker {
         ids[i] = art.id
 
         for (const current of art.values) {
-          const { key, key2, value } = current
+          const { key, value } = current
           current.cache = buffer[key]
           buffer[key] += value
-          if (key2 > 0) buffer2[key2] += value
         }
 
         setKeyCounts[art.set ?? ''] = 1 + (setKeyCounts[art.set ?? ''] ?? 0)
@@ -124,10 +114,7 @@ export class ComputeWorker {
         setKeyCounts[art.set ?? ''] -= 1
         if (setKeyCounts[art.set ?? ''] === 0) delete setKeyCounts[art.set ?? '']
 
-        for (const { key, key2, cache } of art.values) {
-          buffer[key] = cache
-          if (key2 > 0) buffer2[key2] = cache
-        }
+        for (const { key, cache } of art.values) buffer[key] = cache
       })
       if (i === 0) {
         count.tested += arts[0].length
@@ -140,13 +127,15 @@ export class ComputeWorker {
       const i = mapping[key]
       if (i !== undefined)
         buffer[i] = value
-
-      const i2 = mapping2[key]
-      if (i2 !== undefined)
-        buffer2[i2] = value
     }
 
     permute(arts.length - 1, {})
+    // if (subproblem.cache) {
+    //   const cc = subproblem.cachedCompute
+    //   const maxEst = cc.maxEst[cc.maxEst.length - 1]
+
+    //   console.log('enumerated', { count: countBuilds(preArts), depth }, this.threshold, { gap: maxEst - maxFound }, { nodes, preArts }, cc)
+    // }
     this.interimReport(count)
     return this.threshold
   }
