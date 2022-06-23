@@ -131,7 +131,7 @@ export class SplitWorker {
 
       // 1b. Check that remaining constraints are satisfiable
       let f = [...sub2.constraints.map(({ value }) => value), sub2.optimizationTarget]
-      const cachedCompute = estimateMaximum({ f, a })
+      const cachedCompute = estimateMaximum({ f, a, cachedCompute: { lower: statsMin, upper: statsMax } })
       if (sub2.constraints.some(({ min }, i) => cachedCompute.maxEst[i] < min)) return []
       if (cachedCompute.maxEst[cachedCompute.maxEst.length - 1] < threshold) return []
 
@@ -154,26 +154,34 @@ export class SplitWorker {
     const branchArts = Object.fromEntries(Object.entries(a.values).map(([slotKey, arts]) => {
       const above = arts.filter(art => art.values[k] < branchVals[slotKey] ? true : false)
       const below = arts.filter(art => art.values[k] < branchVals[slotKey] ? false : true)
-      return [slotKey, [below, above]]
+      return [slotKey, [{ arts: below, ...slotUpperLower(below) }, { arts: above, ...slotUpperLower(above) }]]
     }))
 
     // 3. Perform branching. Check bounding during the branching phase as well.
     let branches = [] as { numBuilds: number, heur: number, subproblem: SubProblemWC }[]
     cartesian([0, 1], [0, 1], [0, 1], [0, 1], [0, 1]).forEach(([s1, s2, s3, s4, s5]) => {
-      let z = {
+      let selected = {
+        flower: branchArts.flower[s1],
+        plume: branchArts.plume[s2],
+        sands: branchArts.sands[s3],
+        goblet: branchArts.goblet[s4],
+        circlet: branchArts.circlet[s5],
+      }
+
+      let z: ArtifactsBySlot = {
         base: { ...a.base },
-        values: {
-          flower: branchArts.flower[s1],
-          plume: branchArts.plume[s2],
-          sands: branchArts.sands[s3],
-          goblet: branchArts.goblet[s4],
-          circlet: branchArts.circlet[s5],
-        }
+        values: objectKeyValueMap(Object.entries(selected), ([k, { arts }]) => [k, arts])
       }
 
       let numBuilds = Object.values(z.values).reduce((tot, arts) => tot * arts.length, 1)
       if (numBuilds === 0) return;
-      const { statsMin, statsMax } = statsUpperLower(z)
+
+      let statsMin = { ...a.base }
+      let statsMax = { ...a.base }
+      Object.entries(selected).forEach(([slotKey, { statsMin: smin, statsMax: smax }]) => {
+        Object.entries(smin).forEach(([k, v]) => statsMin[k] = v + (statsMin[k] ?? 0))
+        Object.entries(smax).forEach(([k, v]) => statsMax[k] = v + (statsMax[k] ?? 0))
+      })
 
       // 1a. Simplify formula, cut off always-satisfied constraints, and validate setExclusion stuff.
       let sub2 = reduceSubProblem(subproblem, statsMin, statsMax)
@@ -186,7 +194,7 @@ export class SplitWorker {
 
       // 1b. (slow) Check that existing constraints are satisfiable
       let f = [...sub2.constraints.map(({ value }) => value), sub2.optimizationTarget]
-      let cc2 = estimateMaximum({ a: z, f })
+      let cc2 = estimateMaximum({ a: z, f, cachedCompute: { lower: statsMin, upper: statsMax } })
       if (sub2.constraints.some(({ min }, i) => cc2.maxEst[i] < min)) return;
       if (cc2.maxEst[cc2.maxEst.length - 1] < threshold) return;
 
@@ -285,8 +293,8 @@ function pickBranch(a: ArtifactsBySlot, threshold: number, subproblem: SubProble
   //   the constraints; assuming the marginal distribution of the values are uniform on
   //   their ranges. Honestly it's a really wacky heuristic but it does a good job
   //   at telling the algorithm to branch targeting a constraint when that constraint
-  //   becomes difficult to satsify.
-  const decisionHeur = thr.map((th, i) => (th - wMins[i]) / (wMaxs[i] - wMins[i])).map(v => v < .25 ? -1 : v)
+  //   becomes difficult to satsify. (>50% chance to violate)
+  const decisionHeur = thr.map((th, i) => (th - wMins[i]) / (wMaxs[i] - wMins[i])).map(v => v < .5 ? -1 : v)
   decisionHeur[decisionHeur.length - 1] = Math.max(decisionHeur[decisionHeur.length - 1], 0)
   const argMax = decisionHeur.reduce((m, c, i) => c > decisionHeur[m] ? i : m, 0)
 
@@ -304,8 +312,6 @@ function pickBranch(a: ArtifactsBySlot, threshold: number, subproblem: SubProble
       const minv = Math.min(...vals)
       const maxv = Math.max(...vals)
       if (minv === maxv) return rangeReduc
-
-      arts.map(a => Object.entries(a.values).reduce((acc, [statKey, val]) => acc + val * (linToConsider[statKey] ?? 0), 0))
 
       const branchVal = (minv + maxv) / 2
       const glb = Math.max(...vals.filter(v => v <= branchVal))

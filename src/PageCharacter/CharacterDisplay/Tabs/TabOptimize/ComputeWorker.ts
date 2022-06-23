@@ -130,12 +130,12 @@ export class ComputeWorker {
     }
 
     permute(arts.length - 1, {})
-    // if (subproblem.cache) {
-    //   const cc = subproblem.cachedCompute
-    //   const maxEst = cc.maxEst[cc.maxEst.length - 1]
+    if (subproblem.cache) {
+      const cc = subproblem.cachedCompute
+      const maxEst = cc.maxEst[cc.maxEst.length - 1]
 
-    //   console.log('enumerated', { count: countBuilds(preArts), depth }, this.threshold, { gap: maxEst - maxFound }, { nodes, preArts }, cc)
-    // }
+      console.log('enumerated', { count: countBuilds(preArts), depth }, this.threshold, { gap: maxEst - maxFound }, { nodes, preArts }, cc)
+    }
     this.interimReport(count)
     return this.threshold
   }

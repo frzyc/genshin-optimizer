@@ -92,18 +92,19 @@ function estimateMaximumOnce(func: NumNode, a: ArtifactsBySlot, { statsMin, stat
  * @param cachedCompute  Optional Prior cached compute. If specified, will re-calculate `maxEst` assuming `lin, lower, upper` are correct.
  * @returns              CachedCompute
  */
-type MaxEstQuery = { f: NumNode[], a: ArtifactsBySlot, cachedCompute?: undefined } | { f?: undefined, cachedCompute: { lin: LinearForm[], lower: DynStat, upper: DynStat }, a: ArtifactsBySlot }
+type MaxEstQuery = { f: NumNode[], a: ArtifactsBySlot, cachedCompute: { lower: DynStat, upper: DynStat } }
+  | { f?: undefined, cachedCompute: { lin: LinearForm[], lower: DynStat, upper: DynStat }, a: ArtifactsBySlot }
 export function estimateMaximum({ f, a, cachedCompute }: MaxEstQuery) {
   // function estimateMaximum(f: NumNode[], a: ArtifactsBySlot, cachedCompute?: CachedCompute) {
-  if (cachedCompute === undefined) {
-    const { statsMin, statsMax } = statsUpperLower(a)
-    const est = f.map(fi => estimateMaximumOnce(fi, a, { statsMin, statsMax }))
+  if (f !== undefined) {
+    const { lower, upper } = cachedCompute
+    // const { statsMin, statsMax } = statsUpperLower(a)
+    const est = f.map(fi => estimateMaximumOnce(fi, a, { statsMin: lower, statsMax: upper }))
 
     return {
       maxEst: est.map(({ maxEst }) => maxEst),
       lin: est.map(({ lin }) => lin),
-      lower: statsMin,
-      upper: statsMax
+      lower, upper
     }
   }
 

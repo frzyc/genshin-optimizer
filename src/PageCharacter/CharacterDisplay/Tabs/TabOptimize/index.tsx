@@ -187,7 +187,7 @@ export default function TabBuild() {
     var masterReady = true
     let allWorkers: Worker[] = []
     const maxSplitIters = 5
-    const minFilterCount = 10_000 // Don't split for single worker
+    const minFilterCount = 2_000 // Don't split for single worker
     const maxRequestFilterInFlight = maxWorkers * 4
     const workQueue: SubProblem[] = [initialProblem]
     const idleWorkers: { id: number, worker: Worker }[] = []  // Currently idle workers
