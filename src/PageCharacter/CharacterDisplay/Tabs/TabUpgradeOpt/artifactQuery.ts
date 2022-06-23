@@ -7,6 +7,7 @@ import { SlotKey, Rarity, allArtifactSets } from '../../../../Types/consts';
 import Artifact from "../../../../Data/Artifacts/Artifact"
 import { crawlUpgrades } from "./artifactUpgradeCrawl"
 import { gaussianPE, mvnPE_good } from "./mvncdf"
+import { fillBuffer } from "../../../../Formula/addedUtils"
 
 type GaussianMixture = {
   gmm: {
@@ -23,7 +24,7 @@ export type Query = {
   curBuild: QueryBuild,
 
   thresholds: number[],
-  evalFn: (values: Dict<string, number>) => StructuredNumber[],
+  evalFn: (values: DynStat) => StructuredNumber[],
   skippableDerivs: boolean[],
 }
 export type QueryResult = {
@@ -31,7 +32,7 @@ export type QueryResult = {
   rollsLeft: number,
   subs: SubstatKey[],
   statsBase: DynStat,
-  evalFn: (values: Dict<string, number>) => StructuredNumber[],
+  evalFn: (values: DynStat) => StructuredNumber[],
   skippableDerivs: boolean[],
 
   prob: number,
@@ -62,7 +63,7 @@ type InternalQuery = {
   calc4th: boolean,
   stats: DynStat,
   thresholds: number[],
-  objectiveEval: (values: Dict<string, number>) => { v: number, ks: number[] }[],
+  objectiveEval: (values: DynStat) => { v: number, ks: number[] }[],
   scale: (key: SubstatKey) => number,
 }
 type InternalResult = {
@@ -257,13 +258,13 @@ export function querySetup(formulas: NumNode[], thresholds: number[], curBuild: 
   const [evalFn, mapping, buffer] = precompute(evalOpt, f => f.path[1])
 
   let stats = toStats(curBuild)
-  Object.entries(stats).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
+  fillBuffer(stats, mapping, buffer)
   const dmg0 = evalFn()[0]
 
   const skippableDerivs = allSubstatKeys.map(sub => formulas.every(f => zero_deriv(f, f => f.path[1], sub)))
-  const structuredEval = (stats: Dict<string, number>) => {
+  const structuredEval = (stats: DynStat) => {
     Object.values(mapping).forEach(k => buffer[k] = 0)  // Need to reset buffer before evaluating
-    Object.entries(stats).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
+    fillBuffer(stats, mapping, buffer)
     const out = evalFn()
     return formulas.map((_, i) => {
       const ix = i * (1 + allSubstatKeys.length)

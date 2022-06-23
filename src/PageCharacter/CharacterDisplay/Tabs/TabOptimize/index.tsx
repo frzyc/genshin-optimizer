@@ -152,30 +152,7 @@ export default function TabBuild() {
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     nodes = thresholdToConstBranches(nodes);
     ({ a: arts, nodes } = elimLinDepStats(arts, nodes));
-
     console.log(arts)
-
-    // TODO: REMOVEME
-    // {
-    //   let [compute, mapping, buffer] = precompute(nodes, n => n.path[1])
-    //   Object.entries(arts.base).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
-    //   Object.entries(arts.values.flower[0].values).forEach(([k, v]) => buffer[mapping[k] ?? 0] += v)
-    //   Object.entries(arts.values.plume[0].values).forEach(([k, v]) => buffer[mapping[k] ?? 0] += v)
-    //   console.log(compute())
-
-    //   let [compute3, mapping3, buffer3] = precompute(nodes2, n => n.path[1])
-    //   Object.entries(arts.base).forEach(([k, v]) => buffer3[mapping3[k] ?? 0] = v)
-    //   Object.entries(arts.values.flower[0].values).forEach(([k, v]) => buffer3[mapping3[k] ?? 0] += v)
-    //   Object.entries(arts.values.plume[0].values).forEach(([k, v]) => buffer3[mapping3[k] ?? 0] += v)
-    //   console.log(compute3())
-
-    //   let { a: arts2, nodes: nodes3 } = elimLinDepStats(arts, nodes2)
-    //   let [compute2, mapping2, buffer2] = precompute(nodes3, n => n.path[1])
-    //   Object.entries(arts2.base).forEach(([k, v]) => buffer2[mapping2[k] ?? 0] = v)
-    //   Object.entries(arts.values.flower[0].values).forEach(([k, v]) => buffer2[mapping2[k] ?? 0] += v)
-    //   Object.entries(arts.values.plume[0].values).forEach(([k, v]) => buffer2[mapping2[k] ?? 0] += v)
-    //   console.log(compute2())
-    // }
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!

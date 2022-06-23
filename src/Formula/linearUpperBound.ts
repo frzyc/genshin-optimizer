@@ -6,6 +6,7 @@ import { precompute, allOperations } from "./optimization"
 import { solveLP } from './solveLP_simplex'
 import { cartesian } from '../Util/Util'
 import { mapFormulas } from "./internal"
+import { fillBuffer } from "./addedUtils"
 
 export type LinearForm = {
   w: DynStat,
@@ -15,9 +16,9 @@ export type LinearForm = {
 
 function minMax(node: NumNode, lower: DynStat, upper: DynStat) {
   let [compute, mapping, buffer] = precompute([node], n => n.path[1])
-  Object.entries(lower).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
+  fillBuffer(lower, mapping, buffer)
   const minval = compute()[0]
-  Object.entries(upper).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
+  fillBuffer(upper, mapping, buffer)
   const maxval = compute()[0]
   return [minval, maxval]
 }
@@ -132,11 +133,11 @@ export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat
           [rop, cop] = [cop, rop]  // Assume min(const, read)
 
         // if (rop.operation === 'read' && cop.operation === 'const') {
-          // if (cop.value < upper[rop.path[1]]) {
-            // TODO: update linerr
-            // u[rop.path[1]] = cop.value
-          // }
-          // return purePolyForm(rop)
+        // if (cop.value < upper[rop.path[1]]) {
+        // TODO: update linerr
+        // u[rop.path[1]] = cop.value
+        // }
+        // return purePolyForm(rop)
         // }
 
         // TODO: update linerr

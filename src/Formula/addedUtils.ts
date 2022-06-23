@@ -113,3 +113,9 @@ export function estimateMaximum({ f, a, cachedCompute }: MaxEstQuery) {
     lin, lower, upper
   }
 }
+
+export function fillBuffer(stats: DynStat, mapping: Dict<string, number>, buffer: Float64Array) {
+  Object.entries(stats)
+    .filter(([k]) => mapping[k] !== undefined)
+    .forEach(([k, v]) => buffer[mapping[k]!] = v)
+}

@@ -3,6 +3,8 @@ import { forEachNodes } from "./internal"
 import { constant, sum, prod, cmp } from "./utils"
 import { NumNode, ReadNode } from "./type"
 import { precompute } from "./optimization"
+import { fillBuffer } from "./addedUtils"
+import { DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
 
 export function zero_deriv(funct: NumNode, binding: (readNode: ReadNode<number>) => string, diff: string): boolean {
   let ret = true
@@ -76,19 +78,19 @@ export function diff_debug() {
   console.log('Youve reached differentiate!!!')
 
   // Copied stats & formula from arbitrary build of my HuTao
-  const stats: Dict<string, number> = { "0": 0.284294, "1": 0.9462000033378601, "2": 0.1, "3": 1.48, "TenacityOfTheMillelith": 0, "hp_": 0.23249999999999998, "hp": 1159, "ShimenawasReminiscence": 1, "atk_": 0.0933, "atk": 110.58, "EmblemOfSeveredFate": 0, "enerRech_": 0.09709999999999999 }
+  const stats: DynStat = { "0": 0.284294, "1": 0.9462000033378601, "2": 0.1, "3": 1.48, "TenacityOfTheMillelith": 0, "hp_": 0.23249999999999998, "hp": 1159, "ShimenawasReminiscence": 1, "atk_": 0.0933, "atk": 110.58, "EmblemOfSeveredFate": 0, "enerRech_": 0.09709999999999999 }
   const formula1: NumNode = { "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "TenacityOfTheMillelith"], "accu": "add", "info": { "key": "TenacityOfTheMillelith" }, "type": "number" }, { "operation": "const", 'type': 'number', "operands": [], "value": 2 }, { "operation": "const", 'type': 'number', "operands": [], "value": 0.2, "info": { "key": "_" } }, { "operation": "const", 'type': 'number', "operands": [], "value": 0 }], "info": { "key": "hp_", "source": "TenacityOfTheMillelith" }, "emptyOn": "l" }, { "operation": "read", "operands": [], "path": ["dyn", "hp_"], "info": { "prefix": "art", "asConst": true, "key": "hp_" }, "type": "number", "accu": "add" }, { "operation": "const", 'type': 'number', "operands": [], "value": 1 }] }, { "operation": "const", 'type': 'number', "operands": [], "value": 15552.306844604493 }] }, { "operation": "read", "operands": [], "path": ["dyn", "hp"], "info": { "prefix": "art", "asConst": true, "key": "hp" }, "type": "number", "accu": "add" }] }, { "operation": "const", 'type': 'number', "operands": [], "value": 0.05957 }] }, { "operation": "mul", "operands": [{ "operation": "add", "operands": [{ "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "ShimenawasReminiscence"], "accu": "add", "info": { "key": "ShimenawasReminiscence" }, "type": "number" }, { "operation": "const", 'type': 'number', "operands": [], "value": 2 }, { "operation": "const", 'type': 'number', "operands": [], "value": 0.18, "info": { "key": "_" } }, { "operation": "const", 'type': 'number', "operands": [], "value": 0 }], "info": { "key": "atk_", "source": "ShimenawasReminiscence" }, "emptyOn": "l" }, { "operation": "read", "operands": [], "path": ["dyn", "atk_"], "info": { "prefix": "art", "asConst": true, "key": "atk_" }, "type": "number", "accu": "add" }, { "operation": "const", 'type': 'number', "operands": [], "value": 1 }] }, { "operation": "const", 'type': 'number', "operands": [], "value": 507.727969991803 }] }, { "operation": "read", "operands": [], "path": ["dyn", "atk"], "info": { "prefix": "art", "asConst": true, "key": "atk" }, "type": "number", "accu": "add" }] }, { "operation": "read", "operands": [], "path": ["dyn", "3"], "type": "number", "accu": "add" }, { "operation": "add", "operands": [{ "operation": "mul", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "0"], "type": "number", "accu": "add" }, { "operation": "read", "operands": [], "path": ["dyn", "1"], "type": "number", "accu": "add" }] }, { "operation": "const", 'type': 'number', "operands": [], "value": 1 }] }, { "operation": "res", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "2"], "type": "number", "accu": "add" }] }, { "operation": "add", "operands": [{ "operation": "mul", "operands": [{ "operation": "sum_frac", "operands": [{ "operation": "add", "operands": [{ "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "WanderersTroupe"], "accu": "add", "info": { "key": "WanderersTroupe" }, "type": "number" }, { "operation": "const", 'type': 'number', "operands": [], "value": 2 }, { "operation": "const", 'type': 'number', "operands": [], "value": 80 }, { "operation": "const", 'type': 'number', "operands": [], "value": 0 }], "info": { "key": "eleMas", "source": "WanderersTroupe" }, "emptyOn": "l" }, { "operation": "read", "operands": [], "path": ["dyn", "eleMas"], "info": { "prefix": "art", "asConst": true, "key": "eleMas" }, "type": "number", "accu": "add" }] }, { "operation": "const", 'type': 'number', "operands": [], "value": 1400 }] }, { "operation": "const", 'type': 'number', "operands": [], "value": 2.7777777777777777 }] }, { "operation": "threshold", "operands": [{ "operation": "read", "operands": [], "path": ["dyn", "CrimsonWitchOfFlames"], "accu": "add", "info": { "key": "CrimsonWitchOfFlames" }, "type": "number" }, { "operation": "const", 'type': 'number', "operands": [], "value": 4 }, { "operation": "const", 'type': 'number', "operands": [], "value": 0.15, "info": { "key": "_" } }, { "operation": "const", 'type': 'number', "operands": [], "value": 0 }], "info": { "key": "vaporize_dmg_", "variant": "vaporize", "source": "CrimsonWitchOfFlames" }, "emptyOn": "l" }, { "operation": "const", 'type': 'number', "operands": [], "value": 1 }] }, { "operation": "const", 'type': 'number', "operands": [], "value": 1.71495 }] }
   const formula2 = formula1
 
   var [compute, mapping, buffer] = precompute([formula2], f => f.path[1])
-  Object.entries(stats).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
+  fillBuffer(stats, mapping, buffer)
   var result = compute()[0]
 
   // Check validity of calculated derivatives
   const eps = 1e-5
   let stat2 = { ...stats }
   stat2['hp_'] = eps + (stat2['hp_'] ?? 0)
-  Object.entries(stat2).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
+  fillBuffer(stat2, mapping, buffer)
   var res2 = compute()[0]
   var dhp_ = ddx(formula2, f => f.path[1], 'hp_')
   var [c_dhp_, mapping2, buffer2] = precompute([dhp_], f => f.path[1])
@@ -97,7 +99,7 @@ export function diff_debug() {
 
   stat2 = { ...stats }
   stat2['hp'] = eps + (stat2['hp'] ?? 0)
-  Object.entries(stat2).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
+  fillBuffer(stat2, mapping, buffer)
   res2 = compute()[0]
   var dhp = ddx(formula2, f => f.path[1], 'hp')
   var [c_dhp, mapping3, buffer3] = precompute([dhp], f => f.path[1])
@@ -106,7 +108,7 @@ export function diff_debug() {
 
   stat2 = { ...stats }
   stat2['atk_'] = eps + (stat2['atk_'] ?? 0)
-  Object.entries(stat2).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
+  fillBuffer(stat2, mapping, buffer)
   res2 = compute()[0]
   var datk_ = ddx(formula2, f => f.path[1], 'atk_')
   var [c_datk_, buffer4, mapping4] = precompute([datk_], f => f.path[1])
@@ -115,7 +117,7 @@ export function diff_debug() {
 
   stat2 = { ...stats }
   stat2['eleMas'] = eps + (stat2['eleMas'] ?? 0)
-  Object.entries(stat2).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
+  fillBuffer(stat2, mapping, buffer)
   res2 = compute()[0]
   var deleMas = ddx(formula2, f => f.path[1], 'eleMas')
   var [c_deleMas, mapping5, buffer5] = precompute([deleMas], f => f.path[1])
