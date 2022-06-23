@@ -1,12 +1,21 @@
-function pivot(A: number[][], ij: { i: number, j: number }) {
-  const { i, j } = ij
+function pivotInplace(A: number[][], { i, j }: { i: number, j: number }) {
   const Aij = A[i][j]
-  return A.map((Ah, h) => Ah.map((Ahk, k) => {
-    if (h === i && k === j) return 1 / Aij;
-    if (h === i) return A[i][k] / Aij;
-    if (k === j) return -A[h][j] / Aij;
-    return Ahk - A[i][k] * A[h][j] / Aij;
-  }))
+  for (let h = 0; h < A.length; h++) {
+    if (h === i) continue
+    for (let k = 0; k < A[0].length; k++) {
+      if (k === j) continue
+      A[h][k] -= A[i][k] * A[h][j] / Aij
+    }
+  }
+  for (let h = 0; h < A.length; h++) {
+    if (h === i) continue
+    A[h][j] = -A[h][j] / Aij
+  }
+  for (let k = 0; k < A[0].length; k++) {
+    if (k === j) continue
+    A[i][k] = A[i][k] / Aij
+  }
+  A[i][j] = 1 / Aij
 }
 
 function findPiv1(A: number[][]) {
@@ -96,13 +105,15 @@ export function solveLP(c: number[], Ab: number[][]) {
   while (tableau.some((t, i) => i < rows - 1 && t[cols - 1] < 0)) {
     const ij = findPiv2(tableau)
     ijTrack.push(ij)
-    tableau = pivot(tableau, ij)
+    // tableau = pivot(tableau, ij)
+    pivotInplace(tableau, ij)
   }
 
   while (tableau[rows - 1].some((t, j) => j < cols - 1 && t < 0)) {
     const ij = findPiv1(tableau)
     ijTrack.push(ij)
-    tableau = pivot(tableau, ij)
+    // tableau = pivot(tableau, ij)
+    pivotInplace(tableau, ij)
   }
 
   return c.map((_, i) => backtrack(tableau, ijTrack, i))
