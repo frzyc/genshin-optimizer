@@ -3,7 +3,7 @@ import { NumNode } from "./type"
 import { allOperations, optimize } from "./optimization"
 import { mapFormulas } from "./internal"
 import { ArtifactBuildData, ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
-import { LinearForm, maxWeight, toLinearUpperBound } from "./linearUpperBound"
+import { LinearForm, maxWeight, toLinearUpperBound, toLinearUpperBound2 } from "./linearUpperBound"
 import { expandPoly, foldLikeTerms, foldProd, foldSum, productPossible, ExpandedPolynomial } from "./expandPoly"
 import { ArtifactSetKey } from "../Types/consts"
 
@@ -183,6 +183,26 @@ export function estimateMaximum({ f, a, cachedCompute }: MaxEstQuery) {
   return {
     maxEst: lin.map(l => maxWeight(a, l)),
     lin, lower, upper
+  }
+}
+
+type MaxEstQuery2 = { f: ExpandedPolynomial[], a: ArtifactsBySlot, cachedCompute: { lower: DynStat, upper: DynStat } }
+  | { f?: undefined, cachedCompute: { lin: LinearForm[], lower: DynStat, upper: DynStat }, a: ArtifactsBySlot }
+export function estimateMaximum2({ f, a, cachedCompute }: MaxEstQuery2) {
+  if (f === undefined) {
+    return { maxEst: cachedCompute.lin.map(l => maxWeight(a, l)), ...cachedCompute }
+  }
+
+  const { lower, upper } = cachedCompute
+  const est = f.map(fi => {
+    const lin = toLinearUpperBound2(fi, lower, upper)
+    return { maxEst: maxWeight(a, lin), lin }
+  })
+
+  return {
+    maxEst: est.map(({ maxEst }) => maxEst),
+    lin: est.map(({ lin }) => lin),
+    lower, upper
   }
 }
 
