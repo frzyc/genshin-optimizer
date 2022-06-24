@@ -1,10 +1,10 @@
 import { constant } from "./utils"
 import { NumNode } from "./type"
-import { optimize } from "./optimization"
+import { allOperations, optimize } from "./optimization"
 import { mapFormulas } from "./internal"
 import { ArtifactBuildData, ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
 import { LinearForm, maxWeight, toLinearUpperBound } from "./linearUpperBound"
-import { expandPoly, productPossible } from "./expandPoly"
+import { expandPoly, foldLikeTerms, foldProd, foldSum, productPossible, ExpandedPolynomial } from "./expandPoly"
 import { ArtifactSetKey } from "../Types/consts"
 
 export function slotUpperLower(a: ArtifactBuildData[]) {
@@ -54,6 +54,77 @@ export function reduceFormula(f: NumNode[], lower: DynStat, upper: DynStat) {
   })
 
   return optimize(f2, {})
+}
+
+export function reduceFormula2(f: ExpandedPolynomial[], lower: DynStat, upper: DynStat): ExpandedPolynomial[] {
+  const fixedStats = Object.keys(lower).filter(statKey => lower[statKey] === upper[statKey])
+  return f.map(({ nodes, terms }) => {
+    // 1. Reduce nodes by substituting constants
+    const tagNodePairs = Object.entries(nodes)
+    const reducedNodes = mapFormulas(tagNodePairs.map(([k, v]) => v), n => n, n => {
+      switch (n.operation) {
+        case 'read':
+          if (fixedStats.includes(n.path[1])) return constant(lower[n.path[1]])
+          return n
+        case 'threshold':
+          const [branch, branchVal, ge, lt] = n.operands
+          if (branch.operation === 'const' && branchVal.operation === 'const')
+            return branch.value >= branchVal.value ? ge : lt
+          if (branch.operation === 'read' && branchVal.operation === 'const') {
+            if (lower[branch.path[1]] >= branchVal.value) return ge
+            if (upper[branch.path[1]] < branchVal.value) return lt
+          }
+          else throw Error('Branch between non-read and non-const!!!')
+          return n
+        case 'add':
+          return foldSum(n.operands)
+        case 'mul':
+          return foldProd(n.operands)
+        case 'res': case 'sum_frac':
+          if (n.operands.every(ni => ni.operation === 'const')) {
+            const out = allOperations[n.operation](n.operands.map(ni => ni.operation === 'const' ? ni.value : NaN))
+            return constant(out)
+          }
+          return n
+        case 'min': case 'max':
+          // TODO: reduce min & max
+          if (n.operands.every(ni => ni.operation === 'const')) {
+            const out = allOperations[n.operation](n.operands.map(ni => ni.operation === 'const' ? ni.value : NaN))
+            return constant(out)
+          }
+          return n
+        default:
+          return n
+      }
+    })
+
+    // 2a. Find all the nodes that have been reduced to constants
+    let tagsToKill = {} as Dict<string, number>
+    reducedNodes.forEach((n, i) => {
+      if (n.operation !== 'const') return
+      const [tag] = tagNodePairs[i]
+      tagsToKill[tag] = n.value
+    })
+
+    // 2b. Substitute the constant nodes in where possible
+    let newTerms = terms.map(mon => {
+      let c = mon.coeff
+      const newTerms = mon.terms.filter(t => {
+        if (tagsToKill[t] !== undefined) {
+          c *= tagsToKill[t]!
+          return false
+        }
+        return true
+      })
+      if (c === 0) return { coeff: 0, terms: [] }
+      return { coeff: c, terms: newTerms }
+    })
+
+    // 3. Delete all the constant tags & add like terms together
+    let newNodes = Object.fromEntries(reducedNodes.map((n, i) => [tagNodePairs[i][0], n]))
+    Object.keys(tagsToKill).forEach(t => delete newNodes[t])
+    return { nodes: newNodes, terms: foldLikeTerms(newTerms) }
+  })
 }
 
 function estimateMaximumOnce(func: NumNode, a: ArtifactsBySlot, { statsMin, statsMax }: { statsMin: DynStat, statsMax: DynStat }): { maxEst: number, lin: LinearForm } {

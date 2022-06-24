@@ -19,6 +19,7 @@ import CharacterSheet from '../../../../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../../../../Database/Database';
 import { DataContext, dataContextObj } from '../../../../DataContext';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
+import { debugExpandPoly } from '../../../../Formula/expandPoly';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize, precompute } from '../../../../Formula/optimization';
 import { elimLinDepStats, thresholdToConstBranches } from '../../../../Formula/optimize2';
@@ -151,6 +152,10 @@ export default function TabBuild() {
     // Can be further folded after pruning
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     nodes = thresholdToConstBranches(nodes);
+
+    console.log(arts);
+    debugExpandPoly(nodes[nodes.length - 2]);
+
     ({ a: arts, nodes } = elimLinDepStats(arts, nodes));
     console.log(arts)
 

@@ -5,7 +5,7 @@ import { forEachNodes, mapFormulas } from "./internal";
 import { NumNode } from "./type";
 import { cmp, constant, customRead, prod, sum } from './utils';
 
-function makeid(length: number, disallowed?: string[]) {
+export function makeid(length: number, disallowed?: string[]) {
   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   var charactersLength = characters.length;
   for (let _ = 0; _ < 5; _++) {
