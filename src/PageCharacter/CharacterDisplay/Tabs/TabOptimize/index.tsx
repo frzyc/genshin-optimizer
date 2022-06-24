@@ -19,9 +19,9 @@ import CharacterSheet from '../../../../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../../../../Database/Database';
 import { DataContext, dataContextObj } from '../../../../DataContext';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
-import { debugExpandPoly, expandPoly2 } from '../../../../Formula/expandPoly';
+import { expandPoly } from '../../../../Formula/expandPoly';
 import { uiInput as input } from '../../../../Formula/index';
-import { optimize, precompute } from '../../../../Formula/optimization';
+import { optimize } from '../../../../Formula/optimization';
 import { elimLinDepStats, thresholdToConstBranches } from '../../../../Formula/optimize2';
 import { NumNode } from '../../../../Formula/type';
 import { UIData } from '../../../../Formula/uiData';
@@ -39,7 +39,7 @@ import { objectKeyValueMap, objPathValue, range } from '../../../../Util/Util';
 import { FinalizeResult, Setup, SubProblem, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
 import useBuildSetting from './BuildSetting';
-import { artSetPerm, Build, countBuilds, emptyfilter, filterArts, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
+import { Build, countBuilds, emptyfilter, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
@@ -144,7 +144,7 @@ export default function TabBuild() {
       minimum.push(-Infinity)
     }
 
-    const prepruneArts = arts
+    // const prepruneArts = arts
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow, artSetExclusion, {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
@@ -179,11 +179,11 @@ export default function TabBuild() {
       .map((value, i) => ({ value, min: minimum[i] }))
       .filter(x => x.min > -Infinity)
     const filtersEP = nodes
-      .map((value, i) => ({ value: expandPoly2(value), min: minimum[i] }))
+      .map((value, i) => ({ value: expandPoly(value), min: minimum[i] }))
       .filter(x => x.min > -Infinity)
     const initialProblem: SubProblem = {
       cache: false,
-      optimizationTarget: expandPoly2(optimizationTargetNode),
+      optimizationTarget: expandPoly(optimizationTargetNode),
       constraints: filtersEP,
       artSetExclusion: artSetExclFull,
 
@@ -191,8 +191,9 @@ export default function TabBuild() {
       depth: 0,
     }
 
-    var masterID = -1
-    var masterReady = true
+    // var masterID = -1
+    // var masterReady = true
+    const masterInfo = { id: -1, ready: true }
     let allWorkers: Worker[] = []
     const maxSplitIters = 10
     const minFilterCount = 2_000 // Don't split for single worker
@@ -258,7 +259,7 @@ export default function TabBuild() {
             break
           case "split":
             workQueue.push(...data.subproblems)
-            if (data.ready && data.id === masterID) masterReady = true
+            if (data.ready && data.id === masterInfo.id) masterInfo.ready = true
             if (data.ready) busyWorkerIDs.delete(data.id)
             else busyWorkerIDs.add(data.id)
             idleWorkers.push({ id: data.id, worker })
@@ -290,14 +291,14 @@ export default function TabBuild() {
           else if (workQueue.length >= maxRequestFilterInFlight) work = fetchWork()
           else if (busyWorkerIDs.has(id)) work = fetchContinueWork()
           if (!work) work = fetchWork()
-          if (masterID < 0) {
-            masterID = id
-            masterReady = false
+          if (masterInfo.id < 0) {
+            masterInfo.id = id
+            masterInfo.ready = false
           }
 
           if (work) worker.postMessage(work)
-          else if (!masterReady) {
-            allWorkers[masterID].postMessage(requestShareWork(id))
+          else if (!masterInfo.ready) {
+            allWorkers[masterInfo.id].postMessage(requestShareWork(id))
           }
           else {
             idleWorkers.push({ id, worker })

@@ -1,7 +1,7 @@
 import type { NumNode } from '../../../../Formula/type';
 import { precompute } from '../../../../Formula/optimization';
 import { allSlotKeys, ArtifactSetKey } from '../../../../Types/consts';
-import { estimateMaximum2, fillBuffer, reduceFormula2, slotUpperLower, statsUpperLower } from '../../../../Formula/addedUtils';
+import { estimateMaximum, fillBuffer, reducePolynomial, slotUpperLower, statsUpperLower } from '../../../../Formula/addedUtils';
 import type { ArtSetExclusionFull, CachedCompute, InterimResult, Setup, Split, SplitWork, SubProblem, SubProblemNC, SubProblemWC } from './BackgroundWorker';
 import { ArtifactBuildData, ArtifactsBySlot, countBuilds, DynStat, filterArts, RequestFilter } from './common';
 import { cartesian, objectKeyMap, objectKeyValueMap } from '../../../../Util/Util';
@@ -132,7 +132,7 @@ export class SplitWorker {
 
       // 1b. Check that remaining constraints are satisfiable
       let f = [...sub2.constraints.map(({ value }) => value), sub2.optimizationTarget]
-      const cachedCompute = estimateMaximum2({ f, a, cachedCompute: { lower: statsMin, upper: statsMax } })
+      const cachedCompute = estimateMaximum({ f, a, cachedCompute: { lower: statsMin, upper: statsMax } })
       if (sub2.constraints.some(({ min }, i) => cachedCompute.maxEst[i] < min)) return []
       if (cachedCompute.maxEst[cachedCompute.maxEst.length - 1] < threshold) return []
 
@@ -200,7 +200,7 @@ export class SplitWorker {
 
       // 1b. (slow) Check that existing constraints are satisfiable
       let f = [...sub2.constraints.map(({ value }) => value), sub2.optimizationTarget]
-      let cc2 = estimateMaximum2({ a: z, f, cachedCompute: { lower: statsMin, upper: statsMax } })
+      let cc2 = estimateMaximum({ a: z, f, cachedCompute: { lower: statsMin, upper: statsMax } })
       if (sub2.constraints.some(({ min }, i) => cc2.maxEst[i] < min)) return;
       if (cc2.maxEst[cc2.maxEst.length - 1] < threshold) return;
 
@@ -236,7 +236,7 @@ function reduceSubProblem({ optimizationTarget, constraints, artSetExclusion, fi
   let subnodes = [...constraints.map(({ value }) => value), optimizationTarget]
   const submin = constraints.map(({ min }) => min)
 
-  subnodes = reduceFormula2(subnodes, statsMin, statsMax)
+  subnodes = reducePolynomial(subnodes, statsMin, statsMax)
 
   // 1. Check for always-feasible constraints.
   const [compute, mapping, buffer] = precompute(constraints.map(({ value }) => toNumNode(value)), n => n.path[1])

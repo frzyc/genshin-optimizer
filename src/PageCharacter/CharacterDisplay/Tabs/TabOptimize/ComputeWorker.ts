@@ -1,7 +1,5 @@
-import { toNumNode } from '../../../../Formula/expandPoly';
 import { optimize, precompute } from '../../../../Formula/optimization';
 import type { NumNode } from '../../../../Formula/type';
-import { ArtifactSetKey } from '../../../../Types/consts';
 import type { InterimResult, Setup, SubProblem } from './BackgroundWorker';
 import { ArtifactsBySlot, Build, countBuilds, DynStat, filterArts, mergePlot, PlotData, pruneAll, RequestFilter } from './common';
 

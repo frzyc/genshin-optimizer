@@ -37,16 +37,16 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
       const { builds, plotData } = computeWorker
       result = { command: "finalize", builds, plotData }
       break
-    // case "count":
-    //   {
-    //     const { exclusion } = data, arts = computeWorker.arts
-    //     const setPerm = filterFeasiblePerm(artSetPerm(exclusion, [...new Set(Object.values(arts.values).flatMap(x => x.map(x => x.set!)))]), arts)
-    //     let counts = data.arts.map(_ => 0)
-    //     for (const perm of setPerm)
-    //       data.arts.forEach((arts, i) => counts[i] += countBuilds(filterArts(arts, perm)));
-    //     result = { command: "count", counts }
-    //     break
-    //   }
+    case "count":
+      {
+        const { exclusion } = data, arts = computeWorker.arts
+        const setPerm = filterFeasiblePerm(artSetPerm(exclusion, [...new Set(Object.values(arts.values).flatMap(x => x.map(x => x.set!)))]), arts)
+        let counts = data.arts.map(_ => 0)
+        for (const perm of setPerm)
+          data.arts.forEach((arts, i) => counts[i] += countBuilds(filterArts(arts, perm)));
+        result = { command: "count", counts }
+        break
+      }
     case "share":
       const oo = splitWorker.popOne()
       result = { command: 'share', subproblem: oo, sender: data.sender }
@@ -85,9 +85,8 @@ export type CachedCompute = {
   upper: DynStat
 }
 
-export type WorkerCommand = Setup | Split | SplitWork | Iterate | Finalize | Share
-// export type WorkerResult = InterimResult | SplitResult | IterateResult | FinalizeResult | CountResult
-export type WorkerResult = InterimResult | SplitResult | IterateResult | FinalizeResult | ShareResult
+export type WorkerCommand = Setup | Split | SplitWork | Iterate | Finalize | Share | Count
+export type WorkerResult = InterimResult | SplitResult | IterateResult | FinalizeResult | ShareResult | CountResult
 
 export interface Setup {
   command: "setup"
@@ -129,13 +128,11 @@ export interface Share {
   command: "share"
   sender: number
 }
-
-
-// export interface Count {
-//   command: "count"
-//   arts: ArtifactsBySlot[]
-//   exclusion: ArtSetExclusion
-// }
+export interface Count {
+  command: "count"
+  arts: ArtifactsBySlot[]
+  exclusion: ArtSetExclusion
+}
 
 export interface InterimResult {
   command: "interim"
@@ -159,12 +156,12 @@ export interface FinalizeResult {
   builds: Build[]
   plotData?: PlotData
 }
-export interface CountResult {
-  command: "count"
-  counts: number[]
-}
 export interface ShareResult {
   command: "share"
   subproblem?: SubProblem
   sender: number
+}
+export interface CountResult {
+  command: "count"
+  counts: number[]
 }

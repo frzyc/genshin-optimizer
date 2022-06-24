@@ -1,12 +1,11 @@
 import { NumNode } from "./type"
 import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
 import { constant, sum, prod, cmp } from "./utils"
-import { foldSum, foldProd, expandPoly, ExpandedPolynomial, Monomial, sumM, prodM, constantM, readM, foldLikeTerms } from './expandPoly'
+import { ExpandedPolynomial, Monomial, sumM, prodM, constantM, readM, foldLikeTerms } from './expandPoly'
 import { precompute, allOperations } from "./optimization"
 import { solveLP } from './solveLP_simplex'
 import { cartesian } from '../Util/Util'
 import { fillBuffer } from "./addedUtils"
-import { forEachNodes } from "./internal"
 
 export type LinearForm = {
   w: DynStat,
@@ -65,7 +64,19 @@ function handleResArg(node: { 'operation': 'res', 'operands': NumNode[] }, lower
   return sum(intercept, prod(slope, flippedResOp))
 }
 
-export function toLinearUpperBound2({ nodes, terms }: ExpandedPolynomial, lower: DynStat, upper: DynStat): LinearForm {
+/**
+ * First converts a product of variables (including max, min, sum_frac, threshold, etc.) to
+ *   a pure product form consisting of only `read` and `const` nodes, guaranteeing the
+ *   product form is an upper bound.
+ *
+ * Then on the product form, create a linear upper bound using `lub` and return it.
+ *
+ * @param node The formula to expand
+ * @param lower Stat lower bounds
+ * @param upper Stat upper bounds
+ * @returns
+ */
+export function toLinearUpperBound({ nodes, terms }: ExpandedPolynomial, lower: DynStat, upper: DynStat): LinearForm {
   let stat2tag = {} as Dict<string, string>
   Object.entries(nodes).forEach(([tag, n]) => {
     if (n.operation === 'read') stat2tag[n.path[1]] = tag
@@ -105,7 +116,6 @@ export function toLinearUpperBound2({ nodes, terms }: ExpandedPolynomial, lower:
         throw Error('Not Implemented (threshold must branch between constants)')
       case 'res':
         let op = handleResArg(n as { 'operation': 'res', 'operands': NumNode[] }, lower, upper)
-        op = expandPoly(op, n => n.operation !== 'const')
         return toPureRead(op)
 
       case 'min': case 'max':
@@ -184,143 +194,6 @@ export function toLinearUpperBound2({ nodes, terms }: ExpandedPolynomial, lower:
     Object.entries(l.w).forEach(([k, v]) => lin.w[k] = v + (lin.w[k] ?? 0))
     return lin
   }, { w: {}, c: 0, err: 0 })
-}
-
-/**
- * First converts a product of variables (including max, min, sum_frac, threshold, etc.) to
- *   a pure product form consisting of only `read` and `const` nodes, guaranteeing the
- *   product form is an upper bound.
- *
- * Then on the product form, create a linear upper bound using `lub` and return it.
- *
- * @param node The formula to expand
- * @param lower Stat lower bounds
- * @param upper Stat upper bounds
- * @returns
- */
-export function toLinearUpperBound(node: NumNode, lower: DynStat, upper: DynStat): LinearForm | LinearForm[] {
-  let linerr = 0
-
-  // Converts threshold(Glad) * ATK * min(CR, 1) => Glad * ATK * CR
-  // Also updates lower & upper limits to respect min, max, threshold.
-  // TODO: track linearization error for threshold(), min(), max(), sum_frac() nodes
-  function purePolyForm(node: NumNode) {
-    switch (node.operation) {
-      case 'const': case 'read':
-        return node
-      case 'add':
-        return foldSum(node.operands.map(n => purePolyForm(n)))
-      case 'mul':
-        return foldProd(node.operands.map(n => purePolyForm(n)))
-      case 'threshold':
-        const [branch, bval, ge, lt] = node.operands
-        if (branch.operation === 'read'
-          && bval.operation === 'const' && lt.operation === 'const' && ge.operation === 'const') {
-          let key = branch.path[1]
-          if (lower[key] >= bval.value) return constant(ge.value)
-          if (upper[key] < bval.value) return constant(lt.value)
-
-          if (ge.value < lt.value) {
-            console.log(node)
-            throw Error('Not Implemented (threshold must be increasing)')
-          }
-
-          const slope = (ge.value - lt.value) / bval.value
-          // u[key] = bval.value
-          // TODO: update linerr
-          return sum(lt.value, prod(slope, branch))
-        }
-        console.log(node)
-        throw Error('Not Implemented (threshold must branch between constants)')
-      case 'res':
-        let op = handleResArg(node as { 'operation': 'res', 'operands': NumNode[] }, lower, upper)
-        op = expandPoly(op, n => n.operation !== 'const')
-        return purePolyForm(op)
-
-      case 'min':
-        let [rop, cop] = node.operands
-        if (cop.operation !== 'const')
-          [rop, cop] = [cop, rop]  // Assume min(const, read)
-
-        // TODO: update linerr
-        // If it's not a simple min() node, returning either value is still UB.
-        return purePolyForm(rop)
-
-      case 'max':
-        let [varop, constop] = node.operands
-        if (constop.operation !== 'const')
-          [varop, constop] = [constop, varop]
-
-        if (cop.operation === 'const') {
-          const thresh = cop.value
-          const [minVal, maxVal] = minMax(varop, lower, upper)
-          if (minVal > thresh) return varop
-          if (thresh > maxVal) return constant(thresh)
-
-          // rescale `varop` to be above thresh.
-          let m = (maxVal - thresh) / (maxVal - minVal)
-          let b = thresh - minVal
-          return sum(prod(m, purePolyForm(varop)), b)
-        }
-        console.log(node)
-        throw Error('Not Implemented (max)')
-
-      case 'sum_frac':
-        const [em, denom] = node.operands
-        if (denom.operation !== 'const') throw Error('Not Implemented (non-constant sum_frac denominator)')
-
-        const [minEM, maxEM] = minMax(em, lower, upper)
-        const k = denom.value
-        // The sum_frac form is concave, so any Taylor expansion of EM / (EM + k) gives an upper bound.
-        // We can solve for the best Taylor approximation location with the following formula.
-        let loc = Math.sqrt((minEM + k) * (maxEM + k)) - k
-        let below = (k + loc) * (k + loc)
-        let slope = k / below
-        let c = loc * loc / below
-
-        // TODO: update linerr
-        return purePolyForm(sum(c, prod(slope, em)))
-      default:
-        console.log(node)
-        throw Error('Not Implemented')
-    }
-  }
-
-  // `lpf` *should* be a product of read() and const() nodes. Maybe a sum of these products.
-  const lpf = expandPoly(purePolyForm(node), n => n.operation !== 'const')
-  if (lpf.operation === 'const')
-    return { w: {} as DynStat, c: lpf.value, err: linerr }
-
-  function toLUB(n: NumNode) {
-    if (n.operation === 'read') {
-      return { w: { [n.path[1]]: 1 }, c: 0, err: 0 }
-    }
-    if (n.operation === 'const') {
-      return { w: {}, c: n.value, err: 0 }
-    }
-    if (n.operation !== 'mul') {
-      console.log(n)
-      throw Error('toLUB takes only mul nodes.')
-    }
-    let coeff = 1
-    // TODO: handle duplicity in the vars
-    const vars = n.operands.reduce((vars, op) => {
-      if (op.operation === 'read') vars.push(op.path[1])
-      if (op.operation === 'const') coeff *= op.value
-      return vars
-    }, [] as string[])
-    const bounds = vars.map(v => ({ lower: lower[v], upper: upper[v] }))
-    const { w, c, err } = lub(bounds)
-
-    const retw = w.reduce((ret, wi, i) => {
-      ret[vars[i]] = wi * coeff + (ret[vars[i]] ?? 0)
-      return ret
-    }, {} as DynStat)
-    return { w: retw, c: c * coeff, err: err * coeff + linerr }
-  }
-
-  if (lpf.operation === 'add') return lpf.operands.map(n => toLUB(n))
-  return toLUB(lpf)
 }
 
 /**

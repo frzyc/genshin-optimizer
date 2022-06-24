@@ -1,6 +1,6 @@
 import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common";
 import { reduceFormula, statsUpperLower } from "./addedUtils";
-import { foldProd, foldSum } from "./expandPoly";
+import { foldProd, foldSum } from "./addedUtils";
 import { forEachNodes, mapFormulas } from "./internal";
 import { NumNode, ReadNode } from "./type";
 import { cmp, constant, prod, sum } from './utils';
@@ -141,13 +141,10 @@ function collapseAffine(a: ArtifactsBySlot, nodes: NumNode[]) {
   })
   unusedKeys.forEach(k => deleteKey(a, k))
 
-  console.log('added registers', addedRegisters)
-
   return { a, nodes: newNodes }
 }
 
 export function elimLinDepStats(a: ArtifactsBySlot, nodes: NumNode[]) {
-
   // Step 1. Find all constants and eliminate them from the equation.
   const { statsMin, statsMax } = statsUpperLower(a)
   nodes = reduceFormula(nodes, statsMin, statsMax);
