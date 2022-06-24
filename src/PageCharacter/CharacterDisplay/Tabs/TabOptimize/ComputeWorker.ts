@@ -5,7 +5,7 @@ import { ArtifactsBySlot, Build, countBuilds, DynStat, filterArts, mergePlot, Pl
 
 export class ComputeWorker {
   builds: Build[] = []
-  buildValues: number[] | undefined = undefined
+  buildValues: number[] = []
   plotData: PlotData | undefined
   plotBase: NumNode | undefined
   threshold: number = -Infinity
@@ -88,6 +88,7 @@ export class ComputeWorker {
           if (value >= threshold) {
             build = { value, artifactIds: [...ids] }
             builds.push(build)
+            self.buildValues.push(value)
           }
           if (plotData) {
             const x = result[min.length + 1]
@@ -131,12 +132,12 @@ export class ComputeWorker {
     }
 
     permute(arts.length - 1, {})
-    if (subproblem.cache) {
-      const cc = subproblem.cachedCompute
-      const maxEst = cc.maxEst[cc.maxEst.length - 1]
+    // if (subproblem.cache) {
+    //   const cc = subproblem.cachedCompute
+    //   const maxEst = cc.maxEst[cc.maxEst.length - 1]
 
-      console.log('enumerated', { count: countBuilds(preArts), depth }, this.threshold, { gap: maxEst - maxFound }, { nodes, preArts }, cc)
-    }
+    //   console.log('enumerated', { count: countBuilds(preArts), depth }, this.threshold, { gap: maxEst - maxFound }, { nodes, preArts }, cc)
+    // }
     this.interimReport(count)
     return this.threshold
   }
@@ -151,14 +152,14 @@ export class ComputeWorker {
       this.builds = this.builds
         .sort((a, b) => b.value - a.value)
         .slice(0, maxBuilds)
-      this.buildValues = this.builds.map(x => x.value)
-      this.threshold = Math.max(this.threshold, this.buildValues[maxBuilds - 1] ?? -Infinity)
+      // this.buildValues = this.builds.map(x => x.value)
+      // this.threshold = Math.max(this.threshold, this.buildValues[maxBuilds - 1] ?? -Infinity)
     }
   }
   interimReport = (count: { tested: number, failed: number, skipped: number }) => {
     this.refresh(false)
     this.callback({ command: "interim", buildValues: this.buildValues, ...count })
-    this.buildValues = undefined
+    this.buildValues = []
     count.tested = 0
     count.failed = 0
     count.skipped = 0
