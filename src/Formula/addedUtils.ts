@@ -1,4 +1,4 @@
-import { constant, sum, prod } from "./utils"
+import { constant, sum, prod, cmp } from "./utils"
 import { NumNode } from "./type"
 import { allOperations, optimize } from "./optimization"
 import { mapFormulas } from "./internal"
@@ -6,6 +6,7 @@ import { ArtifactBuildData, ArtifactsBySlot, DynStat } from "../PageCharacter/Ch
 import { LinearForm, maxWeight, toLinearUpperBound } from "./linearUpperBound"
 import { foldLikeTerms, ExpandedPolynomial } from "./expandPoly"
 import { ArtifactSetKey } from "../Types/consts"
+import { ArtSetExclusion } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting"
 
 export function foldSum(nodes: readonly NumNode[]) {
   if (nodes.length === 1) return nodes[0]
@@ -64,18 +65,36 @@ export function statsUpperLower(a: ArtifactsBySlot) {
 export function reduceFormula(f: NumNode[], lower: DynStat, upper: DynStat) {
   const fixedStats = Object.keys(lower).filter(statKey => lower[statKey] === upper[statKey])
   let f2 = mapFormulas(f, n => n, n => {
-    if (n.operation === 'read' && fixedStats.includes(n.path[1])) return constant(lower[n.path[1]])
-    if (n.operation === 'threshold') {
-      const [branch, branchVal, ge, lt] = n.operands
-      if (branch.operation === 'read' && branchVal.operation === 'const') {
-        if (lower[branch.path[1]] >= branchVal.value) return ge
-        if (upper[branch.path[1]] < branchVal.value) return lt
-      }
+    switch (n.operation) {
+      case 'add':
+        return foldSum(n.operands)
+      case 'mul':
+        return foldProd(n.operands)
+
+      case 'read':
+        if (fixedStats.includes(n.path[1])) return constant(lower[n.path[1]])
+        return n
+      case 'threshold':
+        const [branch, branchVal, ge, lt] = n.operands
+        if (branch.operation === 'read' && branchVal.operation === 'const') {
+          if (lower[branch.path[1]] >= branchVal.value) return ge
+          if (upper[branch.path[1]] < branchVal.value) return lt
+        }
+        return n
+      case 'min': case 'max':
+      case 'res': case 'sum_frac':
+        if (n.operands.every(ni => ni.operation === 'const')) {
+          const out = allOperations[n.operation](n.operands.map(ni => ni.operation === 'const' ? ni.value : NaN))
+          return constant(out)
+        }
+        return n
+      default:
+        return n
     }
-    return n
   })
 
-  return optimize(f2, {})
+  // f2 = optimize(f2, {})
+  return f2
 }
 
 export function reducePolynomial(f: ExpandedPolynomial[], lower: DynStat, upper: DynStat): ExpandedPolynomial[] {
@@ -180,4 +199,32 @@ export function fillBuffer(stats: DynStat, mapping: Dict<string, number>, buffer
   Object.entries(stats)
     .filter(([k]) => mapping[k] !== undefined)
     .forEach(([k, v]) => buffer[mapping[k]!] = v)
+}
+
+export function thresholdExclusions(nodes: NumNode[], excl: ArtSetExclusion) {
+  console.log('before', nodes)
+  nodes = mapFormulas(nodes, n => n, n => {
+    switch (n.operation) {
+      case 'threshold':
+        const [branch, branchVal, ge, lt] = n.operands
+        if (branch.operation === 'read' && branchVal.operation === 'const') {
+          const key = branch.path[1] as ArtifactSetKey
+          if (excl[key] !== undefined) {
+            const exc = excl[key] as (2 | 4)[]
+            // Based on exclusion, either return `lt` or shift `branchVal` to 4.
+            if (branchVal.value === 2 && exc.includes(2)) {
+              if (exc.includes(4)) return lt
+              return cmp(branch, 4, ge, lt)
+            }
+            if (branchVal.value === 4 && exc.includes(4))
+              return lt
+          }
+        }
+        return n
+      default:
+        return n
+    }
+  })
+  console.log('after', nodes)
+  return nodes
 }

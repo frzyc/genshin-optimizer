@@ -1,8 +1,9 @@
 import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common";
+import { ArtifactSetKey } from "../Types/consts";
 import { reduceFormula, statsUpperLower } from "./addedUtils";
 import { foldProd, foldSum } from "./addedUtils";
 import { forEachNodes, mapFormulas } from "./internal";
-import { NumNode, ReadNode } from "./type";
+import { Info, NumNode, ReadNode } from "./type";
 import { cmp, constant, prod, sum } from './utils';
 
 export function makeid(length: number, disallowed?: string[]) {
@@ -53,7 +54,7 @@ function collapseAffine(a: ArtifactsBySlot, nodes: NumNode[]) {
     switch (n.operation) {
       case 'threshold':
         let [branch, bval, ge, lt] = n.operands
-        return cmp(branch, bval, foldProd([ge, constant(v)]), foldProd([lt, constant(v)]))
+        return cmp(branch, bval, foldProd([ge, constant(v)]), foldProd([lt, constant(v)]), { source: (branch as ReadNode<number>).path[1] as ArtifactSetKey })
       case 'const':
         return constant(v * n.value)
       case 'add':

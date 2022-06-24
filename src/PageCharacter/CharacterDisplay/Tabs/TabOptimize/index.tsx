@@ -18,6 +18,7 @@ import StatFilterCard from '../../../../Components/StatFilterCard';
 import CharacterSheet from '../../../../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../../../../Database/Database';
 import { DataContext, dataContextObj } from '../../../../DataContext';
+import { thresholdExclusions } from '../../../../Formula/addedUtils';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { expandPoly } from '../../../../Formula/expandPoly';
 import { uiInput as input } from '../../../../Formula/index';
@@ -151,8 +152,10 @@ export default function TabBuild() {
     }))
     // Can be further folded after pruning
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
+    nodes = thresholdExclusions(nodes, artSetExclusion);
     nodes = thresholdToConstBranches(nodes);
     ({ a: arts, nodes } = elimLinDepStats(arts, nodes));
+    console.log('postafter', [...nodes])
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
@@ -205,8 +208,6 @@ export default function TabBuild() {
       const subproblem = workQueue.shift()
       if (!subproblem) return undefined
       let numBuild = countBuilds(filterArts(arts, subproblem.filter))
-
-      console.log('bv', [...wrap.buildValues])
 
       if (numBuild <= minFilterCount) return { command: 'iterate', threshold: wrap.buildValues[maxBuildsToShow - 1], subproblem }
       return { command: 'split', threshold: wrap.buildValues[maxBuildsToShow - 1], minCount: minFilterCount, maxIter: maxSplitIters, subproblem }
