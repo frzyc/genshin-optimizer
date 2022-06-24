@@ -1,7 +1,7 @@
 import { optimize, precompute } from '../../../../Formula/optimization';
 import type { NumNode } from '../../../../Formula/type';
 import type { InterimResult, Setup, SubProblem } from './BackgroundWorker';
-import { ArtifactsBySlot, Build, countBuilds, DynStat, filterArts, mergePlot, PlotData, pruneAll, RequestFilter } from './common';
+import { ArtifactsBySlot, Build, countBuilds, DynStat, filterArts, mergePlot, PlotData, pruneAll } from './common';
 
 export class ComputeWorker {
   builds: Build[] = []
@@ -152,8 +152,6 @@ export class ComputeWorker {
       this.builds = this.builds
         .sort((a, b) => b.value - a.value)
         .slice(0, maxBuilds)
-      // this.buildValues = this.builds.map(x => x.value)
-      // this.threshold = Math.max(this.threshold, this.buildValues[maxBuilds - 1] ?? -Infinity)
     }
   }
   interimReport = (count: { tested: number, failed: number, skipped: number }) => {

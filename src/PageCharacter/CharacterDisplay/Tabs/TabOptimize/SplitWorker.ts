@@ -2,8 +2,8 @@ import type { NumNode } from '../../../../Formula/type';
 import { precompute } from '../../../../Formula/optimization';
 import { allSlotKeys, ArtifactSetKey } from '../../../../Types/consts';
 import { estimateMaximum, fillBuffer, reducePolynomial, slotUpperLower, statsUpperLower } from '../../../../Formula/addedUtils';
-import type { ArtSetExclusionFull, CachedCompute, InterimResult, Setup, Split, SplitWork, SubProblem, SubProblemNC, SubProblemWC } from './BackgroundWorker';
-import { ArtifactBuildData, ArtifactsBySlot, countBuilds, DynStat, filterArts, RequestFilter } from './common';
+import type { ArtSetExclusionFull, InterimResult, Setup, Split, SubProblem, SubProblemNC, SubProblemWC } from './BackgroundWorker';
+import { ArtifactsBySlot, countBuilds, DynStat, filterArts, RequestFilter } from './common';
 import { cartesian, objectKeyMap, objectKeyValueMap } from '../../../../Util/Util';
 import { sparseMatmul, sparseMatmulMax } from '../../../../Formula/linearUpperBound';
 import { toNumNode } from '../../../../Formula/expandPoly';
@@ -87,30 +87,6 @@ export class SplitWorker {
   }
 
   /**
-   * Iteratively splits the subproblem (breadth-first) into many many chunks to better distribute the B&B workload
-   *   between the workers. There is some danger of over-fracturing the chunks.
-   * @returns A list of [subproblems] with length `numSplits`
-   */
-  splitWork({ threshold, numSplits, subproblem }: SplitWork) {
-    if (threshold > this.min[this.min.length - 1]) this.min[this.min.length - 1] = threshold
-    if (subproblem) this.addSubProblem(subproblem)
-    const initialProblemTotal = this.subproblems.reduce((a, { count }) => a + count, 0)
-
-    console.log('splitWork', this.min[this.min.length - 1], {
-      todo: this.subproblems.length, buildsleft: this.subproblems.reduce((a, { count }) => a + count, 0)
-    })
-
-    while (this.subproblems.length > 0 && this.subproblems.length <= numSplits) {
-      const { subproblem } = this.subproblems.shift()!
-      this.splitBNB(this.min[this.min.length - 1], subproblem).forEach(subp => this.addSubProblem(subp))
-    }
-    const newProblemTotal = this.subproblems.reduce((a, { count }) => a + count, 0)
-    this.callback({ command: 'interim', tested: 0, failed: 0, skipped: initialProblemTotal - newProblemTotal, buildValues: undefined })
-    console.log('exit splitWork. Filters pre-exit', this.subproblems)
-    return this.subproblems.splice(0, numSplits).map(({ subproblem }) => subproblem)
-  }
-
-  /**
    * splitBNB takes a SubProblem and tries to perform Branch and Bound (BnB) pruning to solve for the
    *   optimal damage value. As the name states, there are two main phases: Branching and Bounding.
    *   The bounding is handled by an `estimateMaximum()` function call, and the branching is done by `pickBranch()`.
@@ -142,8 +118,6 @@ export class SplitWorker {
     //     between iterations.
     const { cachedCompute: { maxEst, lin } } = subproblem
     if (maxEst[maxEst.length - 1] < threshold) return []
-
-    // console.log(subproblem)
 
     // 2. Pick branching parameter
     let numBuilds = Object.values(a.values).reduce((tot, arts) => tot * arts.length, 1)
@@ -211,13 +185,14 @@ export class SplitWorker {
         subproblem: {
           ...sub2,
           filter: newFilter,
+
           cache: true,
           cachedCompute: cc2,
           depth: sub2.depth + 1
         }
       })
     })
-    branches.sort((a, b) => a.heur - b.heur)
+    branches.sort((a, b) => b.heur - a.heur)  // Alternative: sort by decreasing maxEst
     return branches.map(({ subproblem }) => subproblem)
   }
 }

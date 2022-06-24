@@ -231,10 +231,10 @@ export default function TabBuild() {
         filters
       }
       worker.postMessage(setup, undefined)
-      if (i === 0) {
-        // const countCommand: WorkerCommand = { command: "count", exclusion: artSetExclusion, arts: [arts, prepruneArts] }
-        // worker.postMessage(countCommand, undefined)
-      }
+      // if (i === 0) {
+      //   const countCommand: WorkerCommand = { command: "count", exclusion: artSetExclusion, arts: [arts, prepruneArts] }
+      //   worker.postMessage(countCommand, undefined)
+      // }
       let finalize: (_: FinalizeResult) => void
       const finalized = new Promise<FinalizeResult>(r => finalize = r)
       // console.log('Definining onmessage', i)

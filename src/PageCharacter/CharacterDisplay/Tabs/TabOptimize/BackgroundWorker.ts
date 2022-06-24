@@ -24,9 +24,6 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
     case "split":
       result = { command: "split", subproblems: splitWorker.split(data), ready: splitWorker.subproblems.length === 0 }
       break
-    case "splitwork":
-      result = { command: 'split', subproblems: splitWorker.splitWork(data), ready: splitWorker.subproblems.length === 0 }
-      break
     case "iterate":
       const { threshold, subproblem } = data
       computeWorker.compute(threshold, subproblem)
@@ -85,7 +82,7 @@ export type CachedCompute = {
   upper: DynStat
 }
 
-export type WorkerCommand = Setup | Split | SplitWork | Iterate | Finalize | Share | Count
+export type WorkerCommand = Setup | Split | Iterate | Finalize | Share | Count
 export type WorkerResult = InterimResult | SplitResult | IterateResult | FinalizeResult | ShareResult | CountResult
 
 export interface Setup {
@@ -105,13 +102,6 @@ export interface Split {
   threshold: number
   minCount: number
   maxIter: number
-
-  subproblem?: SubProblem
-}
-export interface SplitWork {
-  command: "splitwork"
-  threshold: number
-  numSplits: number
 
   subproblem?: SubProblem
 }
