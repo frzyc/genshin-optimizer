@@ -152,12 +152,7 @@ export default function TabBuild() {
     // Can be further folded after pruning
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     nodes = thresholdToConstBranches(nodes);
-
-    // console.log(arts);
-    // debugExpandPoly(nodes[nodes.length - 2]);
-
     ({ a: arts, nodes } = elimLinDepStats(arts, nodes));
-    // console.log(arts)
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
@@ -210,6 +205,8 @@ export default function TabBuild() {
       const subproblem = workQueue.shift()
       if (!subproblem) return undefined
       let numBuild = countBuilds(filterArts(arts, subproblem.filter))
+
+      console.log('bv', [...wrap.buildValues])
 
       if (numBuild <= minFilterCount) return { command: 'iterate', threshold: wrap.buildValues[maxBuildsToShow - 1], subproblem }
       return { command: 'split', threshold: wrap.buildValues[maxBuildsToShow - 1], minCount: minFilterCount, maxIter: maxSplitIters, subproblem }
@@ -272,7 +269,7 @@ export default function TabBuild() {
             finalize(data);
             break
           case "share":
-            console.log('Sharing work?', data)
+            // console.log('Sharing work?', data)
             if (data.subproblem) {
               const splitCommand = { command: 'split', threshold: wrap.buildValues[maxBuildsToShow - 1], minCount: minFilterCount, maxIter: maxSplitIters, subproblem: data.subproblem }
               allWorkers[data.sender].postMessage(splitCommand)
@@ -309,9 +306,6 @@ export default function TabBuild() {
             break
           }
         }
-        // if (busyWorkerIDs.size === 0 && idleWorkers.length >= maxWorkers) {
-        //   wrap.finalizing = true
-        // }
       }
 
       cancelled.then(() => worker.terminate())
