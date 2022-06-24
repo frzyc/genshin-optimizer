@@ -55,7 +55,7 @@ export class SplitWorker {
 
     // console.log('split', this.min[this.min.length - 1], {
     //   todo: this.subproblems.length, buildsleft: this.subproblems.reduce((a, { count }) => a + count, 0)
-    // }, this.subproblems)
+    // })
 
     let n = 0
     while (n < maxIter && this.subproblems.length) {
