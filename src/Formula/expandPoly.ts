@@ -118,24 +118,24 @@ export type ExpandedPolynomial = {
   nodes: Dict<string, NumNode>,
 }
 
-export function sumM(...monomials: Monomial[][]) {
+export function sumM(...monomials: Monomial[][]): Monomial[] {
   return monomials.flat()
 }
-export function prodM(...monomials: Monomial[][]) {
+export function prodM(...monomials: Monomial[][]): Monomial[] {
   return cartesian(...monomials).map(monos => monos.reduce((ret, nxt) => {
     ret.coeff *= nxt.coeff
     ret.terms.push(...nxt.terms)
     return ret
   }, { coeff: 1, terms: [] }))
 }
-export function constantM(v: number) {
+export function constantM(v: number): Monomial[] {
   return [{ coeff: v, terms: [] }]
 }
-export function readM(tag: string) {
+export function readM(tag: string): Monomial[] {
   return [{ coeff: 1, terms: [tag] }]
 }
 
-export function foldLikeTerms(mono: Monomial[]) {
+export function foldLikeTerms(mono: Monomial[]): Monomial[] {
   let mon = [...mono]
   mon.forEach(m => m.terms.sort())
   mon.sort(({ terms: termsA }, { terms: termsB }) => {
@@ -201,6 +201,10 @@ export function expandPoly2(node: NumNode, inheritTags?: string[]): ExpandedPoly
     terms: sop,
     nodes: tagMap,
   })
+}
+
+export function toNumNode({ nodes, terms }: ExpandedPolynomial) {
+  return sum(...terms.map(({ coeff, terms }) => prod(coeff, ...terms.map(t => nodes[t]!))))
 }
 
 export function debugExpandPoly(f: NumNode) {

@@ -2,8 +2,8 @@ import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs
 import { reduceFormula, statsUpperLower } from "./addedUtils";
 import { foldProd, foldSum } from "./expandPoly";
 import { forEachNodes, mapFormulas } from "./internal";
-import { NumNode } from "./type";
-import { cmp, constant, customRead, prod, sum } from './utils';
+import { NumNode, ReadNode } from "./type";
+import { cmp, constant, prod, sum } from './utils';
 
 export function makeid(length: number, disallowed?: string[]) {
   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -16,6 +16,10 @@ export function makeid(length: number, disallowed?: string[]) {
     return result;
   }
   throw Error('Too many collisions in `makeid`')
+}
+
+function readKey(k: string): ReadNode<number> {
+  return { operation: "read", operands: [], path: ['dyn', k], type: "number", accu: 'add' }
 }
 
 function isShallow(f: NumNode) {
@@ -57,7 +61,7 @@ function collapseAffine(a: ArtifactsBySlot, nodes: NumNode[]) {
       case 'read':
         let newID = makeid(5, [...allKeys, ...Object.keys(addedRegisters)])
         addedRegisters[newID] = { base: 0, coeff: v, sumKeys: [n.path[1]] }
-        return customRead(['dyn', newID])
+        return readKey(newID)
       default:
         throw Error('Should not reach here...')
     }
@@ -97,8 +101,8 @@ function collapseAffine(a: ArtifactsBySlot, nodes: NumNode[]) {
           const sumKeys = tofold.map(n => n.operation === 'read' ? n.path[1] : undefined).filter(n => n) as string[]
           addedRegisters[newID] = { base, coeff: 1, sumKeys }
 
-          if (nofold.length === 0) return customRead(['dyn', newID])
-          return sum(...nofold, customRead(['dyn', newID]))
+          if (nofold.length === 0) return readKey(newID)
+          return sum(...nofold, readKey(newID))
         }
         return f
       default:
@@ -200,7 +204,7 @@ export function elimLinDepStats(a: ArtifactsBySlot, nodes: NumNode[]) {
         .filter(({ w }) => Math.abs(w) > 1e-8)
 
       if (depOn.some(({ w }) => w < 0)) continue  // Ignore lindep if any negative coeff
-      const replaceWith = foldSum(depOn.map(({ w, key }) => w === 1 ? customRead(['dyn', key]) : prod(w, customRead(['dyn', key]))))
+      const replaceWith = foldSum(depOn.map(({ w, key }) => w === 1 ? readKey(key) : prod(w, readKey(key))))
       nodes = mapFormulas(nodes, n => n, f => {
         if (f.operation === 'read' && f.path[1] === allKeys[n]) {
           return replaceWith

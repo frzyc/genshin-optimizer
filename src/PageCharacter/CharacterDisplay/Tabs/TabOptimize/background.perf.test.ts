@@ -2,6 +2,7 @@ import { ArtCharDatabase } from '../../../../Database/Database';
 import { DBLocalStorage } from '../../../../Database/DBStorage';
 import { importGOOD } from '../../../../Database/imports/good';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
+import { expandPoly2 } from '../../../../Formula/expandPoly';
 import { optimize } from '../../../../Formula/optimization';
 import { customRead } from '../../../../Formula/utils';
 import { getTeamData } from '../../../../ReactHooks/useTeamData';
@@ -48,7 +49,7 @@ describe.skip("Worker Perf", () => {
 
     worker.compute(-Infinity, {
       cache: false,
-      optimizationTarget: nodes[0],
+      optimizationTarget: expandPoly2(nodes[0]),
       constraints: [],
       artSetExclusion: {},
       filter: {

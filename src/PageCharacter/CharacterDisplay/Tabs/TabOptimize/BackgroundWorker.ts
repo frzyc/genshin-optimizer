@@ -1,3 +1,4 @@
+import { ExpandedPolynomial } from '../../../../Formula/expandPoly'
 import { LinearForm } from '../../../../Formula/linearUpperBound'
 import { NumNode } from '../../../../Formula/type'
 import { ArtifactSetKey } from '../../../../Types/consts'
@@ -60,8 +61,8 @@ export type ArtSetExclusionFull = Dict<Exclude<ArtifactSetKey, "PrayersForDestin
 export type SubProblem = SubProblemNC | SubProblemWC
 export type SubProblemNC = {
   cache: false,
-  optimizationTarget: NumNode,
-  constraints: { value: NumNode, min: number }[],
+  optimizationTarget: ExpandedPolynomial,
+  constraints: { value: ExpandedPolynomial, min: number }[],
   artSetExclusion: ArtSetExclusionFull,
 
   filter: RequestFilter,
@@ -69,8 +70,8 @@ export type SubProblemNC = {
 }
 export type SubProblemWC = {
   cache: true,
-  optimizationTarget: NumNode,
-  constraints: { value: NumNode, min: number }[],
+  optimizationTarget: ExpandedPolynomial,
+  constraints: { value: ExpandedPolynomial, min: number }[],
   artSetExclusion: ArtSetExclusionFull,
 
   filter: RequestFilter,

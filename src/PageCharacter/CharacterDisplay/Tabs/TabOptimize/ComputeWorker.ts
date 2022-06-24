@@ -1,3 +1,4 @@
+import { toNumNode } from '../../../../Formula/expandPoly';
 import { optimize, precompute } from '../../../../Formula/optimization';
 import type { NumNode } from '../../../../Formula/type';
 import { ArtifactSetKey } from '../../../../Types/consts';
@@ -47,13 +48,15 @@ export class ComputeWorker {
       }
     }
 
-    let nodes = [...constraints.map(({ value }) => value), optimizationTarget]
+    // let nodes = [...constraints.map(({ value }) => toNumNode(value)), toNumNode(optimizationTarget)]
+    // let min = constraints.map(({ min }) => min)
+    let nodes = this.nodes
+    let min = this.min
     if (this.plotBase !== undefined) nodes.push(this.plotBase)
     nodes = optimize(nodes, {}, _ => false);
-    let min = constraints.map(({ min }) => min)
-    // ({ nodes, arts: preArts } = pruneAll(nodes, min, preArts, this.maxBuilds, {}, {
-    //   pruneArtRange: true, pruneNodeRange: true,
-    // }))
+    ({ nodes, arts: preArts } = pruneAll(nodes, min, preArts, this.maxBuilds, {}, {
+      pruneArtRange: true, pruneNodeRange: true,
+    }))
     const [compute, mapping, buffer] = precompute(nodes, f => f.path[1])
 
     const arts = Object.values(preArts.values)

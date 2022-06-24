@@ -19,7 +19,7 @@ import CharacterSheet from '../../../../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../../../../Database/Database';
 import { DataContext, dataContextObj } from '../../../../DataContext';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
-import { debugExpandPoly } from '../../../../Formula/expandPoly';
+import { debugExpandPoly, expandPoly2 } from '../../../../Formula/expandPoly';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize, precompute } from '../../../../Formula/optimization';
 import { elimLinDepStats, thresholdToConstBranches } from '../../../../Formula/optimize2';
@@ -153,11 +153,11 @@ export default function TabBuild() {
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     nodes = thresholdToConstBranches(nodes);
 
-    console.log(arts);
-    debugExpandPoly(nodes[nodes.length - 2]);
+    // console.log(arts);
+    // debugExpandPoly(nodes[nodes.length - 2]);
 
     ({ a: arts, nodes } = elimLinDepStats(arts, nodes));
-    console.log(arts)
+    // console.log(arts)
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
@@ -178,10 +178,13 @@ export default function TabBuild() {
     const filters = nodes
       .map((value, i) => ({ value, min: minimum[i] }))
       .filter(x => x.min > -Infinity)
+    const filtersEP = nodes
+      .map((value, i) => ({ value: expandPoly2(value), min: minimum[i] }))
+      .filter(x => x.min > -Infinity)
     const initialProblem: SubProblem = {
       cache: false,
-      optimizationTarget: optimizationTargetNode,
-      constraints: filters,
+      optimizationTarget: expandPoly2(optimizationTargetNode),
+      constraints: filtersEP,
       artSetExclusion: artSetExclFull,
 
       filter: emptyfilter,
@@ -191,7 +194,7 @@ export default function TabBuild() {
     var masterID = -1
     var masterReady = true
     let allWorkers: Worker[] = []
-    const maxSplitIters = 5
+    const maxSplitIters = 10
     const minFilterCount = 2_000 // Don't split for single worker
     const maxRequestFilterInFlight = maxWorkers * 4
     const workQueue: SubProblem[] = [initialProblem]

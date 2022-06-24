@@ -369,14 +369,11 @@ function lub(bounds: { lower: number, upper: number }[]): { w: number[], c: numb
 }
 
 export function maxWeight(a: ArtifactsBySlot, lin: LinearForm) {
-  const baseVal = sparseMatmul([lin], [a.base])[0][0] + lin.c
+  const baseVal = sparseMatmulMax([lin], [a.base])[0] + lin.c
 
-  return baseVal + Object.entries(a.values).reduce((maxTotVal, [slotKey, slotArts]) => {
-    const wArts = sparseMatmul([lin], slotArts.map(a => a.values)).map(v => v[0])
-    return maxTotVal + Math.max(...wArts)
-  }, 0)
+  return baseVal + Object.entries(a.values)
+    .reduce((maxTotVal, [slotKey, slotArts]) => maxTotVal + sparseMatmulMax([lin], slotArts.map(a => a.values))[0], 0)
 }
-
 
 // Implement matrix multiply between row-major w's of LinearForm and col-major DynStats that represent artifacts.
 /**
@@ -388,4 +385,11 @@ export function maxWeight(a: ArtifactsBySlot, lin: LinearForm) {
  */
 export function sparseMatmul(A: LinearForm[], x: DynStat[]) {
   return x.map(dyn => A.map(({ w }) => Object.entries(w).reduce((a, [k, wk]) => a + wk * (dyn[k] ?? 0), 0)))
+}
+
+/**
+ * Sparse matrix multiplication between A and x, followed by a max() along the rows.
+ */
+export function sparseMatmulMax(A: LinearForm[], x: DynStat[]) {
+  return A.map(({ w }) => Math.max(...x.map(dyn => Object.entries(w).reduce((a, [k, wk]) => a + wk * (dyn[k] ?? 0), 0))))
 }

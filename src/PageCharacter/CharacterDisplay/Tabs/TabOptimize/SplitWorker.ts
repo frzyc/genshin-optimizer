@@ -1,11 +1,12 @@
 import type { NumNode } from '../../../../Formula/type';
 import { precompute } from '../../../../Formula/optimization';
 import { allSlotKeys, ArtifactSetKey } from '../../../../Types/consts';
-import { estimateMaximum, fillBuffer, reduceFormula, slotUpperLower, statsUpperLower } from '../../../../Formula/addedUtils';
+import { estimateMaximum2, fillBuffer, reduceFormula2, slotUpperLower, statsUpperLower } from '../../../../Formula/addedUtils';
 import type { ArtSetExclusionFull, CachedCompute, InterimResult, Setup, Split, SplitWork, SubProblem, SubProblemNC, SubProblemWC } from './BackgroundWorker';
 import { ArtifactBuildData, ArtifactsBySlot, countBuilds, DynStat, filterArts, RequestFilter } from './common';
 import { cartesian, objectKeyMap, objectKeyValueMap } from '../../../../Util/Util';
-import { sparseMatmul } from '../../../../Formula/linearUpperBound';
+import { sparseMatmul, sparseMatmulMax } from '../../../../Formula/linearUpperBound';
+import { toNumNode } from '../../../../Formula/expandPoly';
 
 export class SplitWorker {
   min: number[]
@@ -131,7 +132,7 @@ export class SplitWorker {
 
       // 1b. Check that remaining constraints are satisfiable
       let f = [...sub2.constraints.map(({ value }) => value), sub2.optimizationTarget]
-      const cachedCompute = estimateMaximum({ f, a, cachedCompute: { lower: statsMin, upper: statsMax } })
+      const cachedCompute = estimateMaximum2({ f, a, cachedCompute: { lower: statsMin, upper: statsMax } })
       if (sub2.constraints.some(({ min }, i) => cachedCompute.maxEst[i] < min)) return []
       if (cachedCompute.maxEst[cachedCompute.maxEst.length - 1] < threshold) return []
 
@@ -139,8 +140,8 @@ export class SplitWorker {
     }
     // 1c. A cached subproblem skips most of the above constraint checking, but `threshold` may change
     //     between iterations.
-    const { cachedCompute } = subproblem
-    if (cachedCompute.maxEst[cachedCompute.maxEst.length - 1] < threshold) return []
+    const { cachedCompute: { maxEst, lin } } = subproblem
+    if (maxEst[maxEst.length - 1] < threshold) return []
 
     // console.log(subproblem)
 
@@ -154,8 +155,12 @@ export class SplitWorker {
     const branchArts = Object.fromEntries(Object.entries(a.values).map(([slotKey, arts]) => {
       const above = arts.filter(art => art.values[k] < branchVals[slotKey] ? true : false)
       const below = arts.filter(art => art.values[k] < branchVals[slotKey] ? false : true)
-      return [slotKey, [{ arts: below, ...slotUpperLower(below) }, { arts: above, ...slotUpperLower(above) }]]
+
+      const wAbove = sparseMatmulMax(lin, above.map(({ values }) => values))
+      const wBelow = sparseMatmulMax(lin, below.map(({ values }) => values))
+      return [slotKey, [{ arts: below, ...slotUpperLower(below), ww: wBelow }, { arts: above, ...slotUpperLower(above), ww: wAbove }]]
     }))
+    const w0 = sparseMatmulMax(lin, [a.base]).map((wi, i) => wi + lin[i].c)
 
     // 3. Perform branching. Check bounding during the branching phase as well.
     let branches = [] as { numBuilds: number, heur: number, subproblem: SubProblemWC }[]
@@ -176,9 +181,15 @@ export class SplitWorker {
       let numBuilds = Object.values(z.values).reduce((tot, arts) => tot * arts.length, 1)
       if (numBuilds === 0) return;
 
+      // 1b. (fast) Check that existing constraints are satisfiable
+      const maxEstC = [...w0]
+      Object.values(selected).forEach(({ ww }) => ww.forEach((w, i) => maxEstC[i] += w))
+      if (subproblem.constraints.some(({ min }, i) => maxEstC[i] < min)) return;
+      if (maxEstC[maxEstC.length - 1] < threshold) return;
+
       let statsMin = { ...a.base }
       let statsMax = { ...a.base }
-      Object.entries(selected).forEach(([slotKey, { statsMin: smin, statsMax: smax }]) => {
+      Object.values(selected).forEach(({ statsMin: smin, statsMax: smax }) => {
         Object.entries(smin).forEach(([k, v]) => statsMin[k] = v + (statsMin[k] ?? 0))
         Object.entries(smax).forEach(([k, v]) => statsMax[k] = v + (statsMax[k] ?? 0))
       })
@@ -187,14 +198,9 @@ export class SplitWorker {
       let sub2 = reduceSubProblem(subproblem, statsMin, statsMax)
       if (sub2 === undefined) return;
 
-      // 1b. (fast) Check that existing constraints are satisfiable
-      let { maxEst } = estimateMaximum({ a: z, cachedCompute })
-      if (sub2.constraints.some(({ min }, i) => maxEst[i] < min)) return;
-      if (maxEst[maxEst.length - 1] < threshold) return;
-
       // 1b. (slow) Check that existing constraints are satisfiable
       let f = [...sub2.constraints.map(({ value }) => value), sub2.optimizationTarget]
-      let cc2 = estimateMaximum({ a: z, f, cachedCompute: { lower: statsMin, upper: statsMax } })
+      let cc2 = estimateMaximum2({ a: z, f, cachedCompute: { lower: statsMin, upper: statsMax } })
       if (sub2.constraints.some(({ min }, i) => cc2.maxEst[i] < min)) return;
       if (cc2.maxEst[cc2.maxEst.length - 1] < threshold) return;
 
@@ -230,10 +236,10 @@ function reduceSubProblem({ optimizationTarget, constraints, artSetExclusion, fi
   let subnodes = [...constraints.map(({ value }) => value), optimizationTarget]
   const submin = constraints.map(({ min }) => min)
 
-  subnodes = reduceFormula(subnodes, statsMin, statsMax)
+  subnodes = reduceFormula2(subnodes, statsMin, statsMax)
 
   // 1. Check for always-feasible constraints.
-  const [compute, mapping, buffer] = precompute(constraints.map(({ value }) => value), n => n.path[1])
+  const [compute, mapping, buffer] = precompute(constraints.map(({ value }) => toNumNode(value)), n => n.path[1])
   fillBuffer(statsMin, mapping, buffer)
   const result = compute()
   const active = submin.map((m, i) => m > result[i])
@@ -274,8 +280,8 @@ function reduceSubProblem({ optimizationTarget, constraints, artSetExclusion, fi
  */
 function pickBranch(a: ArtifactsBySlot, threshold: number, subproblem: SubProblemWC) {
   const { constraints, cachedCompute: { lin }, artSetExclusion } = subproblem
-  let wMins = sparseMatmul(lin, [a.base])[0]
-  let wMaxs = sparseMatmul(lin, [a.base])[0]
+  let wMins = sparseMatmulMax(lin, [a.base])
+  let wMaxs = sparseMatmulMax(lin, [a.base])
   Object.entries(a.values).forEach(([slotKey, arts]) => {
     const matmul = sparseMatmul(lin, arts.map(({ values }) => values))
     wMins.forEach((_, i) => {
