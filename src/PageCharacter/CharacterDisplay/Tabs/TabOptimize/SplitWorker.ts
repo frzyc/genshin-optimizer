@@ -1,10 +1,12 @@
 import type { NumNode } from '../../../../Formula/type';
 import { precompute } from '../../../../Formula/optimization';
 import { allSlotKeys, ArtifactSetKey } from '../../../../Types/consts';
-import { estimateMaximum, reduceFormula, statsUpperLower } from '../../../../Formula/addedUtils';
-import type { CachedCompute, InterimResult, Setup, Split, SplitWork, SubProblem, SubProblemNC, SubProblemWC } from './BackgroundWorker';
+import { estimateMaximum, fillBuffer, reducePolynomial, slotUpperLower, statsUpperLower } from '../../../../Formula/addedUtils';
+import type { ArtSetExclusionFull, InterimResult, Setup, Split, SubProblem, SubProblemNC, SubProblemWC } from './BackgroundWorker';
 import { ArtifactsBySlot, countBuilds, DynStat, filterArts, RequestFilter } from './common';
 import { cartesian, objectKeyMap, objectKeyValueMap } from '../../../../Util/Util';
+import { sparseMatmul, sparseMatmulMax } from '../../../../Formula/linearUpperBound';
+import { toNumNode } from '../../../../Formula/expandPoly';
 
 export class SplitWorker {
   min: number[]
@@ -13,7 +15,7 @@ export class SplitWorker {
   nodes: NumNode[]
   artSet: Dict<ArtifactSetKey | 'uniqueKey', number[]>
 
-  subproblems: { count: number, subproblem: SubProblem }[] = []
+  subproblems: { count: number, heur: number, subproblem: SubProblem }[] = []
 
   callback: (interim: InterimResult) => void
 
@@ -32,10 +34,11 @@ export class SplitWorker {
     })
   }
 
-  addSubproblem(subproblem: SubProblem) {
+  addSubProblem(subproblem: SubProblem) {
     const count = countBuilds(filterArts(this.arts, subproblem.filter))
     if (count === 0) return
-    this.subproblems.push({ count, subproblem })
+    let maxEst = subproblem.cache ? subproblem.cachedCompute.maxEst[subproblem.cachedCompute.maxEst.length - 1] : 0
+    this.subproblems.push({ count, heur: maxEst, subproblem })
   }
 
   /**
@@ -47,38 +50,40 @@ export class SplitWorker {
    */
   split({ threshold, minCount, maxIter, subproblem }: Split): SubProblem[] {
     if (threshold > this.min[this.min.length - 1]) this.min[this.min.length - 1] = threshold
-    if (subproblem) this.addSubproblem(subproblem)
+    if (subproblem) this.addSubProblem(subproblem)
+    const initialProblemTotal = this.subproblems.reduce((a, { count }) => a + count, 0)
 
-    console.log('split', this.min[this.min.length - 1], {
-      todoListLen: this.subproblems.length, buildsleft: this.subproblems.reduce((a, { count }) => a + count, 0)
-    })
+    // console.log('split', this.min[this.min.length - 1], {
+    //   todo: this.subproblems.length, buildsleft: this.subproblems.reduce((a, { count }) => a + count, 0)
+    // })
 
     let n = 0
     while (n < maxIter && this.subproblems.length) {
       n += 1
       const { count, subproblem } = this.subproblems.pop()!
-      if (count <= minCount) return [subproblem]
+      if (count <= minCount) {
+        const newProblemTotal = this.subproblems.reduce((a, { count }) => a + count, 0) + count
+        this.callback({ command: 'interim', tested: 0, failed: 0, skipped: initialProblemTotal - newProblemTotal, buildValues: undefined })
+        return [subproblem]
+      }
 
-      this.splitBNB(this.min[this.min.length - 1], subproblem).forEach(subp => this.addSubproblem(subp))
+      this.splitBNB(this.min[this.min.length - 1], subproblem).forEach(subp => this.addSubProblem(subp))
     }
+    const newProblemTotal = this.subproblems.reduce((a, { count }) => a + count, 0)
+    this.callback({ command: 'interim', tested: 0, failed: 0, skipped: initialProblemTotal - newProblemTotal, buildValues: undefined })
     return []
   }
 
-  /**
-   * Iteratively splits the subproblem (breadth-first) into many many chunks to better distribute the B&B workload
-   *   between the workers. There is some danger of over-fracturing the chunks.
-   * @returns A list of [subproblems] with length `numSplits`
-   */
-  splitWork({ threshold, numSplits, subproblem }: SplitWork) {
-    if (threshold > this.min[this.min.length - 1]) this.min[this.min.length - 1] = threshold
-    if (subproblem) this.addSubproblem(subproblem)
-
-    while (this.subproblems.length > 0 && this.subproblems.length <= numSplits) {
-      const { subproblem } = this.subproblems.shift()!
-      this.splitBNB(this.min[this.min.length - 1], subproblem).forEach(subp => this.addSubproblem(subp))
+  popOne() {
+    // Yield largest subproblem (requests => level-order / prio queue order)
+    if (this.subproblems.length === 0) return undefined
+    let ret = { i: -1, heur: -Infinity }
+    for (let i = 1; i < this.subproblems.length; i++) {
+      const { heur, subproblem } = this.subproblems[i]
+      if (heur > ret.heur) ret = { i, heur }
     }
-    console.log('exit splitWork. Filters pre-exit', this.subproblems)
-    return this.subproblems.splice(0, numSplits).map(({ subproblem }) => subproblem)
+    if (ret.i < 0) return undefined
+    return this.subproblems.splice(ret.i, 1)[0].subproblem
   }
 
   /**
@@ -103,7 +108,7 @@ export class SplitWorker {
 
       // 1b. Check that remaining constraints are satisfiable
       let f = [...sub2.constraints.map(({ value }) => value), sub2.optimizationTarget]
-      const cachedCompute = estimateMaximum({ f, a })
+      const cachedCompute = estimateMaximum({ f, a, cachedCompute: { lower: statsMin, upper: statsMax } })
       if (sub2.constraints.some(({ min }, i) => cachedCompute.maxEst[i] < min)) return []
       if (cachedCompute.maxEst[cachedCompute.maxEst.length - 1] < threshold) return []
 
@@ -111,11 +116,12 @@ export class SplitWorker {
     }
     // 1c. A cached subproblem skips most of the above constraint checking, but `threshold` may change
     //     between iterations.
-    const { cachedCompute } = subproblem
-    if (cachedCompute.maxEst[cachedCompute.maxEst.length - 1] < threshold) return []
+    const { cachedCompute: { maxEst, lin } } = subproblem
+    if (maxEst[maxEst.length - 1] < threshold) return []
 
     // 2. Pick branching parameter
-    const { k } = pickBranch(a, subproblem.cachedCompute)
+    let numBuilds = Object.values(a.values).reduce((tot, arts) => tot * arts.length, 1)
+    const { k } = pickBranch(a, threshold, subproblem)
     const branchVals = Object.fromEntries(Object.entries(a.values).map(([slotKey, arts]) => {
       const vals = arts.map(a => a.values[k])
       return [slotKey, (Math.min(...vals) + Math.max(...vals)) / 2]
@@ -123,55 +129,70 @@ export class SplitWorker {
     const branchArts = Object.fromEntries(Object.entries(a.values).map(([slotKey, arts]) => {
       const above = arts.filter(art => art.values[k] < branchVals[slotKey] ? true : false)
       const below = arts.filter(art => art.values[k] < branchVals[slotKey] ? false : true)
-      return [slotKey, [below, above]]
-    }))
 
-    // 3. Perform branching. Check bounding during the branchin phase as well.
-    let branches = [] as { numBuilds: number, subproblem: SubProblemWC }[]
+      const wAbove = sparseMatmulMax(lin, above.map(({ values }) => values))
+      const wBelow = sparseMatmulMax(lin, below.map(({ values }) => values))
+      return [slotKey, [{ arts: below, ...slotUpperLower(below), ww: wBelow }, { arts: above, ...slotUpperLower(above), ww: wAbove }]]
+    }))
+    const w0 = sparseMatmulMax(lin, [a.base]).map((wi, i) => wi + lin[i].c)
+
+    // 3. Perform branching. Check bounding during the branching phase as well.
+    let branches = [] as { numBuilds: number, heur: number, subproblem: SubProblemWC }[]
     cartesian([0, 1], [0, 1], [0, 1], [0, 1], [0, 1]).forEach(([s1, s2, s3, s4, s5]) => {
-      let z = {
+      let selected = {
+        flower: branchArts.flower[s1],
+        plume: branchArts.plume[s2],
+        sands: branchArts.sands[s3],
+        goblet: branchArts.goblet[s4],
+        circlet: branchArts.circlet[s5],
+      }
+
+      let z: ArtifactsBySlot = {
         base: { ...a.base },
-        values: {
-          flower: branchArts.flower[s1],
-          plume: branchArts.plume[s2],
-          sands: branchArts.sands[s3],
-          goblet: branchArts.goblet[s4],
-          circlet: branchArts.circlet[s5],
-        }
+        values: objectKeyValueMap(Object.entries(selected), ([k, { arts }]) => [k, arts])
       }
 
       let numBuilds = Object.values(z.values).reduce((tot, arts) => tot * arts.length, 1)
       if (numBuilds === 0) return;
-      const { statsMin, statsMax } = statsUpperLower(z)
+
+      // 1b. (fast) Check that existing constraints are satisfiable
+      const maxEstC = [...w0]
+      Object.values(selected).forEach(({ ww }) => ww.forEach((w, i) => maxEstC[i] += w))
+      if (subproblem.constraints.some(({ min }, i) => maxEstC[i] < min)) return;
+      if (maxEstC[maxEstC.length - 1] < threshold) return;
+
+      let statsMin = { ...a.base }
+      let statsMax = { ...a.base }
+      Object.values(selected).forEach(({ statsMin: smin, statsMax: smax }) => {
+        Object.entries(smin).forEach(([k, v]) => statsMin[k] = v + (statsMin[k] ?? 0))
+        Object.entries(smax).forEach(([k, v]) => statsMax[k] = v + (statsMax[k] ?? 0))
+      })
 
       // 1a. Simplify formula, cut off always-satisfied constraints, and validate setExclusion stuff.
       let sub2 = reduceSubProblem(subproblem, statsMin, statsMax)
       if (sub2 === undefined) return;
 
-      // 1b. (fast) Check that existing constraints are satisfiable
-      let { maxEst } = estimateMaximum({ a: z, cachedCompute })
-      if (sub2.constraints.some(({ min }, i) => maxEst[i] < min)) return;
-      if (maxEst[maxEst.length - 1] < threshold) return;
-
       // 1b. (slow) Check that existing constraints are satisfiable
       let f = [...sub2.constraints.map(({ value }) => value), sub2.optimizationTarget]
-      let cc2 = estimateMaximum({ a: z, f })
+      let cc2 = estimateMaximum({ a: z, f, cachedCompute: { lower: statsMin, upper: statsMax } })
       if (sub2.constraints.some(({ min }, i) => cc2.maxEst[i] < min)) return;
       if (cc2.maxEst[cc2.maxEst.length - 1] < threshold) return;
 
       let newFilter: RequestFilter = objectKeyMap(allSlotKeys, slot => ({ kind: 'id' as 'id', ids: new Set(z.values[slot].map(art => art.id)) }))
       branches.push({
         numBuilds,
+        heur: cc2.maxEst[cc2.maxEst.length - 1],
         subproblem: {
           ...sub2,
           filter: newFilter,
 
           cache: true,
-          cachedCompute: cc2
+          cachedCompute: cc2,
+          depth: sub2.depth + 1
         }
       })
     })
-    branches.sort((a, b) => b.numBuilds - a.numBuilds)  // Alternative: sort by decreasing maxEst
+    branches.sort((a, b) => b.heur - a.heur)  // Alternative: sort by decreasing maxEst
     return branches.map(({ subproblem }) => subproblem)
   }
 }
@@ -185,31 +206,27 @@ export class SplitWorker {
  * @returns  A new subproblem that should be identical to the previous one, but with fewer components.
  *           If the subproblem is unsatisfiable, return `undefined`
  */
-function reduceSubProblem(sub: SubProblem, statsMin: DynStat, statsMax: DynStat): SubProblemNC | undefined {
-  const { optimizationTarget, constraints, artSetExclusion, filter } = sub
-  let subnodes = [optimizationTarget, ...constraints.map(({ value }) => value)]
+function reduceSubProblem({ optimizationTarget, constraints, artSetExclusion, filter, depth }: SubProblem, statsMin: DynStat, statsMax: DynStat, debug = false): SubProblemNC | undefined {
+  // const { optimizationTarget, constraints, artSetExclusion } = sub
+  let subnodes = [...constraints.map(({ value }) => value), optimizationTarget]
   const submin = constraints.map(({ min }) => min)
 
-  subnodes = reduceFormula(subnodes, statsMin, statsMax)
+  subnodes = reducePolynomial(subnodes, statsMin, statsMax)
 
   // 1. Check for always-feasible constraints.
-  const [compute, mapping, buffer] = precompute(subnodes, n => n.path[1])
-  Object.entries(statsMin).forEach(([k, v]) => buffer[mapping[k] ?? 0] = v)
+  const [compute, mapping, buffer] = precompute(constraints.map(({ value }) => toNumNode(value)), n => n.path[1])
+  fillBuffer(statsMin, mapping, buffer)
   const result = compute()
-
-  const newOptTarget = subnodes.shift()!
   const active = submin.map((m, i) => m > result[i])
-  active[0] = true  // Always preserve main dmg formula
+
+  const newOptTarget = subnodes.pop()!
   const newConstraints = subnodes.map((value, i) => ({ value, min: submin[i] })).filter((_, i) => active[i])
+  if (debug) console.log('reduceSubP', { statsMin, subnodes, submin, result, active })
 
   // 2. Check for never-active and always-active ArtSetExcl constraints.
-  let newArtExcl = {} as StrictDict<ArtifactSetKey | 'uniqueKey', number[]>
+  let newArtExcl = {} as ArtSetExclusionFull
   for (const [setKey, exclude] of Object.entries(artSetExclusion)) {
     if (setKey === 'uniqueKey') {
-      // let minSets = Object.fromEntries(Object.entries(statsMin).filter(([statKey, v]) => v > 0 && allArtifactSets.includes(statKey as any)))
-      // let numSets = Object.keys(minSets).length
-      // let numSlotsUsed = Object.values(minSets).reduce((a, b) => a + b)
-
       // TODO: Check and exclude rainbow bullshit.
       newArtExcl[setKey] = exclude
       continue
@@ -225,7 +242,7 @@ function reduceSubProblem(sub: SubProblem, statsMin: DynStat, statsMax: DynStat)
     constraints: newConstraints,
     artSetExclusion: newArtExcl,
 
-    filter
+    filter, depth
   }
 }
 
@@ -236,10 +253,34 @@ function reduceSubProblem(sub: SubProblem, statsMin: DynStat, statsMax: DynStat)
  * @param lin   Linear form from compute
  * @returns     The key to branch on.
  */
-function pickBranch(a: ArtifactsBySlot, { lin }: CachedCompute) {
-  // TODO: Experiment with
-  let linToConsider = lin[lin.length - 1]
+function pickBranch(a: ArtifactsBySlot, threshold: number, subproblem: SubProblemWC) {
+  const { constraints, cachedCompute: { lin }, artSetExclusion } = subproblem
+  let wMins = sparseMatmulMax(lin, [a.base])
+  let wMaxs = sparseMatmulMax(lin, [a.base])
+  Object.entries(a.values).forEach(([slotKey, arts]) => {
+    const matmul = sparseMatmul(lin, arts.map(({ values }) => values))
+    wMins.forEach((_, i) => {
+      wMaxs[i] += Math.max(...matmul.map(row => row[i]))
+      wMins[i] += Math.min(...matmul.map(row => row[i]))
+    })
+  })
+
+  const thr = [...constraints.map(({ min }) => min), threshold]
+  // Consider this the "probability" a randomly chosen set of 5 artifacts will violate
+  //   the constraints; assuming the marginal distribution of the values are uniform on
+  //   their ranges. Honestly it's a really wacky heuristic but it does a good job
+  //   at telling the algorithm to branch targeting a constraint when that constraint
+  //   becomes difficult to satsify. (>50% chance to violate)
+  const decisionHeur = thr.map((th, i) => (th - wMins[i]) / (wMaxs[i] - wMins[i])).map(v => v < .5 ? -1 : v)
+  decisionHeur[decisionHeur.length - 1] = Math.max(decisionHeur[decisionHeur.length - 1], 0)
+  const argMax = decisionHeur.reduce((m, c, i) => c > decisionHeur[m] ? i : m, 0)
+
+  // TODO: figure out a heuristic for when to branch on artSetExclusion
+
+  let linToConsider = lin[argMax]
+  // let linToConsider = lin[lin.length - 1]
   let keysToConsider = Object.keys(linToConsider.w)
+  // let keysToConsider = [...Object.keys(linToConsider.w), ...Object.keys(artSetExclusion).filter(k => k !== 'uniqueKey')]
 
   let shatterOn = { k: '', heur: -1 }
   keysToConsider.forEach(k => {
@@ -255,9 +296,14 @@ function pickBranch(a: ArtifactsBySlot, { lin }: CachedCompute) {
       return rangeReduc + Math.min(maxv - glb, lub - minv)
     }, 0)
     const heur = linToConsider.w[k] * postShatterRangeReduction
+    // console.log('old', { k, heur })
     if (heur > shatterOn.heur) shatterOn = { k, heur }
   })
 
-  if (shatterOn.k === '') throw Error('Shatter broke...')
+  if (shatterOn.k === '') {
+    console.log(subproblem, reduceSubProblem(subproblem, subproblem.cachedCompute.lower, subproblem.cachedCompute.upper, true))
+    console.log('===================== SHATTER BROKE ====================', lin, a)
+    throw Error('Shatter broke...')
+  }
   return shatterOn
 }

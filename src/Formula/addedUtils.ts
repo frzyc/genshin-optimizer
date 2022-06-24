@@ -1,25 +1,25 @@
-import { constant, prod, cmp, sum } from "./utils"
+import { constant, sum, prod } from "./utils"
 import { NumNode } from "./type"
-import { optimize } from "./optimization"
+import { allOperations, optimize } from "./optimization"
 import { mapFormulas } from "./internal"
-import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
+import { ArtifactBuildData, ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
 import { LinearForm, maxWeight, toLinearUpperBound } from "./linearUpperBound"
-import { expandPoly, productPossible } from "./expandPoly"
+import { foldLikeTerms, ExpandedPolynomial } from "./expandPoly"
+import { ArtifactSetKey } from "../Types/consts"
 
-export function foldSum(nodes: NumNode[]) {
+export function foldSum(nodes: readonly NumNode[]) {
   if (nodes.length === 1) return nodes[0]
-
   nodes = nodes.flatMap(n => n.operation === 'add' ? n.operands : n)
   let constVal = nodes.reduce((pv, n) => n.operation === 'const' ? pv + n.value : pv, 0)
   nodes = nodes.filter(n => n.operation !== 'const')
+
   if (nodes.length === 0) return constant(constVal)
   if (constVal === 0) return sum(...nodes)
   return sum(...nodes, constant(constVal))
 }
 
-export function foldProd(nodes: NumNode[]) {
+export function foldProd(nodes: readonly NumNode[]) {
   if (nodes.length === 1) return nodes[0]
-
   nodes = nodes.flatMap(n => n.operation === 'mul' ? n.operands : n)
   let constVal = nodes.reduce((pv, n) => n.operation === 'const' ? pv * n.value : pv, 1)
   nodes = nodes.filter(n => n.operation !== 'const')
@@ -29,42 +29,47 @@ export function foldProd(nodes: NumNode[]) {
   return prod(...nodes, constant(constVal))
 }
 
+export function slotUpperLower(a: ArtifactBuildData[]) {
+  let statsMin: DynStat = {}
+  let statsMax: DynStat = {}
+  let sets = new Set<ArtifactSetKey | undefined>()
+  a.forEach(art => {
+    for (const statKey in art.values) {
+      statsMin[statKey] = Math.min(art.values[statKey], statsMin[statKey] ?? Infinity)
+      statsMax[statKey] = Math.max(art.values[statKey], statsMax[statKey] ?? -Infinity)
+    }
+    if (art.set) {
+      statsMax[art.set] = 1
+      statsMin[art.set] = 0
+    }
+    sets.add(art.set)
+  })
+  if (sets.size === 1 && a[0].set) statsMin[a[0].set] = 1
+  return { statsMin, statsMax }
+}
+
 export function statsUpperLower(a: ArtifactsBySlot) {
-  let minStats = Object.entries(a.values).reduce((pv, [slotKey, slotArts]) => {
-    let minStatSlot: DynStat = {}
-    slotArts.forEach(art => {
-      for (const statKey in art.values) minStatSlot[statKey] = Math.min(art.values[statKey], minStatSlot[statKey] ?? Infinity)
+  let statsMin: DynStat = { ...a.base }
+  let statsMax: DynStat = { ...a.base }
+  Object.entries(a.values).forEach(([slotKey, slotArts]) => {
+    const { statsMin: smin, statsMax: smax } = slotUpperLower(slotArts)
+    Object.keys(smin).forEach(sk => {
+      statsMin[sk] = smin[sk] + (statsMin[sk] ?? 0)
+      statsMax[sk] = smax[sk] + (statsMax[sk] ?? 0)
     })
-    Object.entries(minStatSlot).forEach(([k, v]) => pv[k] = v + (pv[k] ?? 0))
-    return pv
-  }, { ...a.base })
-  let maxStats = Object.entries(a.values).reduce((pv, [slotKey, slotArts]) => {
-    let maxStatSlot: DynStat = {}
-    slotArts.forEach(art => {
-      for (const statKey in art.values) maxStatSlot[statKey] = Math.max(art.values[statKey], maxStatSlot[statKey] ?? 0)
-    })
-    Object.entries(maxStatSlot).forEach(([k, v]) => pv[k] = v + (pv[k] ?? 0))
-    return pv
-  }, { ...a.base })
-  return { statsMin: minStats, statsMax: maxStats }
+  })
+  return { statsMin, statsMax }
 }
 
 export function reduceFormula(f: NumNode[], lower: DynStat, upper: DynStat) {
-  const fixedStats = Object.fromEntries(Object.entries(lower).filter(([statKey, v]) => v === upper[statKey]))
+  const fixedStats = Object.keys(lower).filter(statKey => lower[statKey] === upper[statKey])
   let f2 = mapFormulas(f, n => n, n => {
-    if (n.operation === 'read' && n.path[1] in fixedStats) return constant(fixedStats[n.path[1]])
+    if (n.operation === 'read' && fixedStats.includes(n.path[1])) return constant(lower[n.path[1]])
     if (n.operation === 'threshold') {
       const [branch, branchVal, ge, lt] = n.operands
       if (branch.operation === 'read' && branchVal.operation === 'const') {
-        if (lower[branch.path[1]] >= branchVal.value) return n.operands[2]
-        if (upper[branch.path[1]] < branchVal.value) return n.operands[3]
-      }
-
-      if (ge.operation !== 'const') {
-        if (lt.operation === 'const' && lt.value === 0) {
-          return prod(cmp(branch, branchVal, 1, 0), ge)
-        }
-        throw Error('Threshold between non-const `pass` and non-zero `fail` not supported.')
+        if (lower[branch.path[1]] >= branchVal.value) return ge
+        if (upper[branch.path[1]] < branchVal.value) return lt
       }
     }
     return n
@@ -73,33 +78,75 @@ export function reduceFormula(f: NumNode[], lower: DynStat, upper: DynStat) {
   return optimize(f2, {})
 }
 
-function estimateMaximumOnce(func: NumNode, a: ArtifactsBySlot, { statsMin, statsMax }: { statsMin: DynStat, statsMax: DynStat }): { maxEst: number, lin: LinearForm } {
-  // const { statsMin, statsMax } = statsUpperLower(a)
+export function reducePolynomial(f: ExpandedPolynomial[], lower: DynStat, upper: DynStat): ExpandedPolynomial[] {
+  const fixedStats = Object.keys(lower).filter(statKey => lower[statKey] === upper[statKey])
+  return f.map(({ nodes, terms }) => {
+    // 1. Reduce nodes by substituting constants
+    const tagNodePairs = Object.entries(nodes)
+    const reducedNodes = mapFormulas(tagNodePairs.map(([k, v]) => v), n => n, n => {
+      switch (n.operation) {
+        case 'read':
+          if (fixedStats.includes(n.path[1])) return constant(lower[n.path[1]])
+          return n
+        case 'threshold':
+          const [branch, branchVal, ge, lt] = n.operands
+          if (branch.operation === 'const' && branchVal.operation === 'const')
+            return branch.value >= branchVal.value ? ge : lt
+          if (branch.operation === 'read' && branchVal.operation === 'const') {
+            if (lower[branch.path[1]] >= branchVal.value) return ge
+            if (upper[branch.path[1]] < branchVal.value) return lt
+          }
+          else throw Error('Branch between non-read and non-const!!!')
+          return n
+        case 'add':
+          return foldSum(n.operands)
+        case 'mul':
+          return foldProd(n.operands)
+        case 'res': case 'sum_frac':
+          if (n.operands.every(ni => ni.operation === 'const')) {
+            const out = allOperations[n.operation](n.operands.map(ni => ni.operation === 'const' ? ni.value : NaN))
+            return constant(out)
+          }
+          return n
+        case 'min': case 'max':
+          // TODO: reduce min & max
+          if (n.operands.every(ni => ni.operation === 'const')) {
+            const out = allOperations[n.operation](n.operands.map(ni => ni.operation === 'const' ? ni.value : NaN))
+            return constant(out)
+          }
+          return n
+        default:
+          return n
+      }
+    })
 
-  if (func.operation === 'const') {
-    return { maxEst: func.value, lin: toLinearUpperBound(func, statsMin, statsMax) as LinearForm }
-  }
-  if (func.operation === 'read') {
-    return { maxEst: statsMax[func.path[1]], lin: toLinearUpperBound(func, statsMin, statsMax) as LinearForm }
-  }
+    // 2a. Find all the nodes that have been reduced to constants
+    let tagsToKill = {} as Dict<string, number>
+    reducedNodes.forEach((n, i) => {
+      if (n.operation !== 'const') return
+      const [tag] = tagNodePairs[i]
+      tagsToKill[tag] = n.value
+    })
 
-  function isVariable(n: NumNode) {
-    switch (n.operation) {
-      case 'read': case 'max': case 'min': case 'sum_frac': case 'threshold': return true
-      default: return false
-    }
-  }
+    // 2b. Substitute the constant nodes in where possible
+    let newTerms = terms.map(mon => {
+      let c = mon.coeff
+      const newTerms = mon.terms.filter(t => {
+        if (tagsToKill[t] !== undefined) {
+          c *= tagsToKill[t]!
+          return false
+        }
+        return true
+      })
+      if (c === 0) return { coeff: 0, terms: [] }
+      return { coeff: c, terms: newTerms }
+    })
 
-  let expandedFunc = expandPoly(func, isVariable)
-  let products = (expandedFunc.operands as NumNode[]).filter(productPossible)
-  let linUBs = products.flatMap(n => toLinearUpperBound(n, statsMin, statsMax))
-
-  let linUBtot = linUBs.reduce((pv, lin) => {
-    Object.entries(lin.w).forEach(([k, v]) => pv.w[k] = v + (pv.w[k] ?? 0))
-    return { w: pv.w, c: pv.c + lin.c, err: pv.err + lin.err }
-  }, { w: {}, c: 0, err: 0 })
-
-  return { maxEst: maxWeight(a, linUBtot), lin: linUBtot }
+    // 3. Delete all the constant tags & add like terms together
+    let newNodes = Object.fromEntries(reducedNodes.map((n, i) => [tagNodePairs[i][0], n]))
+    Object.keys(tagsToKill).forEach(t => delete newNodes[t])
+    return { nodes: newNodes, terms: foldLikeTerms(newTerms) }
+  })
 }
 
 /**
@@ -109,24 +156,28 @@ function estimateMaximumOnce(func: NumNode, a: ArtifactsBySlot, { statsMin, stat
  * @param cachedCompute  Optional Prior cached compute. If specified, will re-calculate `maxEst` assuming `lin, lower, upper` are correct.
  * @returns              CachedCompute
  */
-type MaxEstQuery = { f: NumNode[], a: ArtifactsBySlot, cachedCompute?: undefined } | { f?: undefined, cachedCompute: { lin: LinearForm[], lower: DynStat, upper: DynStat }, a: ArtifactsBySlot }
-export function estimateMaximum({ f, a, cachedCompute }: MaxEstQuery) {
-  // function estimateMaximum(f: NumNode[], a: ArtifactsBySlot, cachedCompute?: CachedCompute) {
-  if (cachedCompute === undefined) {
-    const { statsMin, statsMax } = statsUpperLower(a)
-    const est = f.map(fi => estimateMaximumOnce(fi, a, { statsMin, statsMax }))
-
-    return {
-      maxEst: est.map(({ maxEst }) => maxEst),
-      lin: est.map(({ lin }) => lin),
-      lower: statsMin,
-      upper: statsMax
-    }
+type MaxEstQuery2 = { f: ExpandedPolynomial[], a: ArtifactsBySlot, cachedCompute: { lower: DynStat, upper: DynStat } }
+  | { f?: undefined, cachedCompute: { lin: LinearForm[], lower: DynStat, upper: DynStat }, a: ArtifactsBySlot }
+export function estimateMaximum({ f, a, cachedCompute }: MaxEstQuery2) {
+  if (f === undefined) {
+    return { maxEst: cachedCompute.lin.map(l => maxWeight(a, l)), ...cachedCompute }
   }
 
-  let { lin, lower, upper } = cachedCompute
+  const { lower, upper } = cachedCompute
+  const est = f.map(fi => {
+    const lin = toLinearUpperBound(fi, lower, upper)
+    return { maxEst: maxWeight(a, lin), lin }
+  })
+
   return {
-    maxEst: lin.map(l => maxWeight(a, l)),
-    lin, lower, upper
+    maxEst: est.map(({ maxEst }) => maxEst),
+    lin: est.map(({ lin }) => lin),
+    lower, upper
   }
+}
+
+export function fillBuffer(stats: DynStat, mapping: Dict<string, number>, buffer: Float64Array) {
+  Object.entries(stats)
+    .filter(([k]) => mapping[k] !== undefined)
+    .forEach(([k, v]) => buffer[mapping[k]!] = v)
 }

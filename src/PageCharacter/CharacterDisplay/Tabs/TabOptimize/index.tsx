@@ -19,8 +19,10 @@ import CharacterSheet from '../../../../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../../../../Database/Database';
 import { DataContext, dataContextObj } from '../../../../DataContext';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
+import { expandPoly } from '../../../../Formula/expandPoly';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
+import { elimLinDepStats, thresholdToConstBranches } from '../../../../Formula/optimize2';
 import { NumNode } from '../../../../Formula/type';
 import { UIData } from '../../../../Formula/uiData';
 import { initGlobalSettings } from '../../../../GlobalSettings';
@@ -37,7 +39,7 @@ import { objectKeyValueMap, objPathValue, range } from '../../../../Util/Util';
 import { FinalizeResult, Setup, SubProblem, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
 import useBuildSetting from './BuildSetting';
-import { artSetPerm, Build, countBuilds, emptyfilter, filterArts, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
+import { Build, countBuilds, emptyfilter, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
@@ -142,13 +144,15 @@ export default function TabBuild() {
       minimum.push(-Infinity)
     }
 
-    const prepruneArts = arts
+    // const prepruneArts = arts
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow, artSetExclusion, {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
     }))
     // Can be further folded after pruning
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
+    nodes = thresholdToConstBranches(nodes);
+    ({ a: arts, nodes } = elimLinDepStats(arts, nodes));
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
@@ -165,19 +169,28 @@ export default function TabBuild() {
       if (setKey === 'rainbow') return ['uniqueKey', v.map(v => v + 1)]
       return [setKey, v.flatMap(v => (v === 2) ? [2, 3] : [4, 5])]
     })
+    console.log({ artSetExclFull })
     const filters = nodes
       .map((value, i) => ({ value, min: minimum[i] }))
       .filter(x => x.min > -Infinity)
+    const filtersEP = nodes
+      .map((value, i) => ({ value: expandPoly(value), min: minimum[i] }))
+      .filter(x => x.min > -Infinity)
     const initialProblem: SubProblem = {
       cache: false,
-      optimizationTarget: optimizationTargetNode,
-      constraints: filters,
+      optimizationTarget: expandPoly(optimizationTargetNode),
+      constraints: filtersEP,
       artSetExclusion: artSetExclFull,
 
-      filter: emptyfilter
+      filter: emptyfilter,
+      depth: 0,
     }
 
-    const maxSplitIters = 20
+    // var masterID = -1
+    // var masterReady = true
+    const masterInfo = { id: -1, ready: true }
+    let allWorkers: Worker[] = []
+    const maxSplitIters = 10
     const minFilterCount = 2_000 // Don't split for single worker
     const maxRequestFilterInFlight = maxWorkers * 4
     const workQueue: SubProblem[] = [initialProblem]
@@ -185,26 +198,28 @@ export default function TabBuild() {
     const busyWorkerIDs = new Set<number>()  // Workers with pending work in SplitWorker()
     // const pruningID = new Set<number>()
 
-    function fetchContinueWork(numSplits: number): WorkerCommand {
-      if (numSplits === 0) return { command: "split", minCount: minFilterCount, maxIter: maxSplitIters, threshold: wrap.buildValues[maxBuildsToShow - 1] }
-      return { command: "splitwork", threshold: wrap.buildValues[maxBuildsToShow - 1], numSplits }
+    function fetchContinueWork(): WorkerCommand {
+      return { command: "split", minCount: minFilterCount, maxIter: maxSplitIters, threshold: wrap.buildValues[maxBuildsToShow - 1] }
     }
-    function fetchRequestWork(): WorkerCommand | undefined {
-      const subproblem = workQueue.pop()
+    function fetchWork(): WorkerCommand | undefined {
+      const subproblem = workQueue.shift()
       if (!subproblem) return undefined
       let numBuild = countBuilds(filterArts(arts, subproblem.filter))
 
-      console.log('Requesting work... ', numBuild)
+      console.log('bv', [...wrap.buildValues])
 
-      if (numBuild < minFilterCount) return { command: 'iterate', threshold: wrap.buildValues[maxBuildsToShow - 1], subproblem }
+      if (numBuild <= minFilterCount) return { command: 'iterate', threshold: wrap.buildValues[maxBuildsToShow - 1], subproblem }
       return { command: 'split', threshold: wrap.buildValues[maxBuildsToShow - 1], minCount: minFilterCount, maxIter: maxSplitIters, subproblem }
     }
-
+    function requestShareWork(sender: number): WorkerCommand {
+      return { command: 'share', sender }
+    }
 
     status.total = Object.values(arts.values).reduce((prod, arts) => prod * arts.length, 1)
     const finalizedList: Promise<FinalizeResult>[] = []
     for (let i = 0; i < maxWorkers; i++) {
       const worker = new Worker()
+      allWorkers.push(worker)
 
       const setup: Setup = {
         command: "setup",
@@ -240,8 +255,8 @@ export default function TabBuild() {
             }
             break
           case "split":
-            console.log('split return', data.subproblems, data.ready)
             workQueue.push(...data.subproblems)
+            if (data.ready && data.id === masterInfo.id) masterInfo.ready = true
             if (data.ready) busyWorkerIDs.delete(data.id)
             else busyWorkerIDs.add(data.id)
             idleWorkers.push({ id: data.id, worker })
@@ -253,24 +268,35 @@ export default function TabBuild() {
             worker.terminate()
             finalize(data);
             break
+          case "share":
+            // console.log('Sharing work?', data)
+            if (data.subproblem) {
+              const splitCommand = { command: 'split', threshold: wrap.buildValues[maxBuildsToShow - 1], minCount: minFilterCount, maxIter: maxSplitIters, subproblem: data.subproblem }
+              allWorkers[data.sender].postMessage(splitCommand)
+            }
+            else
+              idleWorkers.push({ id: data.sender, worker: allWorkers[data.sender] })
+            break
           default: console.log("DEBUG", data)
         }
 
-        // Figure out how many
-        const numSplitting = idleWorkers.filter(({ id }) => busyWorkerIDs.has(id)).length
-        const numWorkerWithNoJob = Math.max(idleWorkers.filter(({ id }) => !busyWorkerIDs.has(id)).length - workQueue.length, 0)
-        const nChunksFromEveryone = Math.ceil(numWorkerWithNoJob / numSplitting)
-
-        console.log('workers be like...', idleWorkers, data)
+        // console.log('pre-idle assignment loop', { masterID, idle: idleWorkers.map(({ id }) => id) })
         while (idleWorkers.length) {
           const { id, worker } = idleWorkers.pop()!
           let work: WorkerCommand | undefined
           if (wrap.finalizing) work = { command: "finalize" }
-          else if (workQueue.length >= maxRequestFilterInFlight) work = fetchRequestWork()
-          else if (busyWorkerIDs.has(id)) work = fetchContinueWork(nChunksFromEveryone)
-          if (!work) work = fetchRequestWork()
+          else if (workQueue.length >= maxRequestFilterInFlight) work = fetchWork()
+          else if (busyWorkerIDs.has(id)) work = fetchContinueWork()
+          if (!work) work = fetchWork()
+          if (masterInfo.id < 0) {
+            masterInfo.id = id
+            masterInfo.ready = false
+          }
 
           if (work) worker.postMessage(work)
+          else if (!masterInfo.ready) {
+            allWorkers[masterInfo.id].postMessage(requestShareWork(id))
+          }
           else {
             idleWorkers.push({ id, worker })
             if (idleWorkers.length === maxWorkers && busyWorkerIDs.size === 0) {
@@ -280,9 +306,6 @@ export default function TabBuild() {
             break
           }
         }
-        // if (busyWorkerIDs.size === 0 && idleWorkers.length >= maxWorkers) {
-        //   wrap.finalizing = true
-        // }
       }
 
       cancelled.then(() => worker.terminate())

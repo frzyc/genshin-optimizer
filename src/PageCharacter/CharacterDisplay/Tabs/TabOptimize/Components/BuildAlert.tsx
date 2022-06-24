@@ -39,7 +39,7 @@ export default function BuildAlert({ status: { type, tested, failed, skipped, to
   let progress = undefined as undefined | number
 
   if (generatingBuilds) {
-    progress = tested * 100 / (unskipped)
+    progress = (skipped + tested) * 100 / (skipped + unskipped)
     title = <Typography>Generating and testing {testedString}{hasTotal ? <>/{unskippedString}</> : undefined} build configurations against the criteria for <b>{characterName}</b>. {skippedText}</Typography>
     subtitle = <Typography>Time elapsed: {durationString}</Typography>
   } else if (tested + skipped) {

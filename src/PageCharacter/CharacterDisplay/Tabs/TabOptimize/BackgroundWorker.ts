@@ -1,3 +1,4 @@
+import { ExpandedPolynomial } from '../../../../Formula/expandPoly'
 import { LinearForm } from '../../../../Formula/linearUpperBound'
 import { NumNode } from '../../../../Formula/type'
 import { ArtifactSetKey } from '../../../../Types/consts'
@@ -23,9 +24,6 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
     case "split":
       result = { command: "split", subproblems: splitWorker.split(data), ready: splitWorker.subproblems.length === 0 }
       break
-    case "splitwork":
-      result = { command: 'split', subproblems: splitWorker.splitWork(data), ready: splitWorker.subproblems.length === 0 }
-      break
     case "iterate":
       const { threshold, subproblem } = data
       computeWorker.compute(threshold, subproblem)
@@ -36,16 +34,20 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
       const { builds, plotData } = computeWorker
       result = { command: "finalize", builds, plotData }
       break
-    // case "count":
-    //   {
-    //     const { exclusion } = data, arts = computeWorker.arts
-    //     const setPerm = filterFeasiblePerm(artSetPerm(exclusion, [...new Set(Object.values(arts.values).flatMap(x => x.map(x => x.set!)))]), arts)
-    //     let counts = data.arts.map(_ => 0)
-    //     for (const perm of setPerm)
-    //       data.arts.forEach((arts, i) => counts[i] += countBuilds(filterArts(arts, perm)));
-    //     result = { command: "count", counts }
-    //     break
-    //   }
+    case "count":
+      {
+        const { exclusion } = data, arts = computeWorker.arts
+        const setPerm = filterFeasiblePerm(artSetPerm(exclusion, [...new Set(Object.values(arts.values).flatMap(x => x.map(x => x.set!)))]), arts)
+        let counts = data.arts.map(_ => 0)
+        for (const perm of setPerm)
+          data.arts.forEach((arts, i) => counts[i] += countBuilds(filterArts(arts, perm)));
+        result = { command: "count", counts }
+        break
+      }
+    case "share":
+      const oo = splitWorker.popOne()
+      result = { command: 'share', subproblem: oo, sender: data.sender }
+      break
     default: assertUnreachable(command)
   }
   postMessage({ id, ...result });
@@ -56,20 +58,22 @@ export type ArtSetExclusionFull = Dict<Exclude<ArtifactSetKey, "PrayersForDestin
 export type SubProblem = SubProblemNC | SubProblemWC
 export type SubProblemNC = {
   cache: false,
-  optimizationTarget: NumNode,
-  constraints: { value: NumNode, min: number }[],
+  optimizationTarget: ExpandedPolynomial,
+  constraints: { value: ExpandedPolynomial, min: number }[],
   artSetExclusion: ArtSetExclusionFull,
 
   filter: RequestFilter,
+  depth: number,
 }
 export type SubProblemWC = {
   cache: true,
-  optimizationTarget: NumNode,
-  constraints: { value: NumNode, min: number }[],
+  optimizationTarget: ExpandedPolynomial,
+  constraints: { value: ExpandedPolynomial, min: number }[],
   artSetExclusion: ArtSetExclusionFull,
 
   filter: RequestFilter,
-  cachedCompute: CachedCompute
+  cachedCompute: CachedCompute,
+  depth: number,
 }
 export type CachedCompute = {
   maxEst: number[],
@@ -78,9 +82,8 @@ export type CachedCompute = {
   upper: DynStat
 }
 
-export type WorkerCommand = Setup | Split | SplitWork | Iterate | Finalize
-// export type WorkerResult = InterimResult | SplitResult | IterateResult | FinalizeResult | CountResult
-export type WorkerResult = InterimResult | SplitResult | IterateResult | FinalizeResult
+export type WorkerCommand = Setup | Split | Iterate | Finalize | Share | Count
+export type WorkerResult = InterimResult | SplitResult | IterateResult | FinalizeResult | ShareResult | CountResult
 
 export interface Setup {
   command: "setup"
@@ -102,13 +105,6 @@ export interface Split {
 
   subproblem?: SubProblem
 }
-export interface SplitWork {
-  command: "splitwork"
-  threshold: number
-  numSplits: number
-
-  subproblem?: SubProblem
-}
 export interface Iterate {
   command: "iterate"
   threshold: number
@@ -118,12 +114,15 @@ export interface Iterate {
 export interface Finalize {
   command: "finalize"
 }
-
-// export interface Count {
-//   command: "count"
-//   arts: ArtifactsBySlot[]
-//   exclusion: ArtSetExclusion
-// }
+export interface Share {
+  command: "share"
+  sender: number
+}
+export interface Count {
+  command: "count"
+  arts: ArtifactsBySlot[]
+  exclusion: ArtSetExclusion
+}
 
 export interface InterimResult {
   command: "interim"
@@ -146,6 +145,11 @@ export interface FinalizeResult {
   command: "finalize"
   builds: Build[]
   plotData?: PlotData
+}
+export interface ShareResult {
+  command: "share"
+  subproblem?: SubProblem
+  sender: number
 }
 export interface CountResult {
   command: "count"
