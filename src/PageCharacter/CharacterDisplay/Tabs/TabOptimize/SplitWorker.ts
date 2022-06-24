@@ -207,7 +207,7 @@ export class SplitWorker {
       let newFilter: RequestFilter = objectKeyMap(allSlotKeys, slot => ({ kind: 'id' as 'id', ids: new Set(z.values[slot].map(art => art.id)) }))
       branches.push({
         numBuilds,
-        heur: cc2.maxEst[cc2.maxEst.length - 1],
+        heur: cc2.maxEst[cc2.maxEst.length - 1] - cc2.lin[cc2.lin.length - 1].err,
         subproblem: {
           ...sub2,
           filter: newFilter,
@@ -217,7 +217,7 @@ export class SplitWorker {
         }
       })
     })
-    branches.sort((a, b) => b.numBuilds - a.numBuilds)
+    branches.sort((a, b) => a.heur - b.heur)
     return branches.map(({ subproblem }) => subproblem)
   }
 }
