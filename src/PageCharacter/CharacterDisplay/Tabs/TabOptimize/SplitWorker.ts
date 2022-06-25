@@ -1,10 +1,10 @@
 import type { NumNode } from '../../../../Formula/type';
 import { precompute } from '../../../../Formula/optimization';
-import { allSlotKeys, ArtifactSetKey } from '../../../../Types/consts';
+import { allArtifactSets, allSlotKeys, ArtifactSetKey } from '../../../../Types/consts';
 import { estimateMaximum, fillBuffer, reducePolynomial, slotUpperLower, statsUpperLower } from '../../../../Formula/addedUtils';
 import type { ArtSetExclusionFull, InterimResult, Setup, Split, SubProblem, SubProblemNC, SubProblemWC } from './BackgroundWorker';
 import { ArtifactsBySlot, countBuilds, DynStat, filterArts, RequestFilter } from './common';
-import { cartesian, objectKeyMap, objectKeyValueMap } from '../../../../Util/Util';
+import { cartesian, objectKeyMap, objectKeyValueMap, range } from '../../../../Util/Util';
 import { sparseMatmul, sparseMatmulMax } from '../../../../Formula/linearUpperBound';
 import { toNumNode } from '../../../../Formula/expandPoly';
 
@@ -52,10 +52,6 @@ export class SplitWorker {
     if (threshold > this.min[this.min.length - 1]) this.min[this.min.length - 1] = threshold
     if (subproblem) this.addSubProblem(subproblem)
     const initialProblemTotal = this.subproblems.reduce((a, { count }) => a + count, 0)
-
-    // console.log('split', this.min[this.min.length - 1], {
-    //   todo: this.subproblems.length, buildsleft: this.subproblems.reduce((a, { count }) => a + count, 0)
-    // })
 
     let n = 0
     while (n < maxIter && this.subproblems.length) {
@@ -114,38 +110,18 @@ export class SplitWorker {
 
       subproblem = { ...sub2, cache: true, cachedCompute }
     }
-    // 1c. A cached subproblem skips most of the above constraint checking, but `threshold` may change
-    //     between iterations.
+    // 1c. A cached subproblem skips most of the above constraint checking, but `threshold` may change between iterations.
     const { cachedCompute: { maxEst, lin } } = subproblem
     if (maxEst[maxEst.length - 1] <= threshold) return []
 
     // 2. Pick branching parameter
-    let numBuilds = Object.values(a.values).reduce((tot, arts) => tot * arts.length, 1)
-    const { k } = pickBranch(a, threshold, subproblem)
-    const branchVals = Object.fromEntries(Object.entries(a.values).map(([slotKey, arts]) => {
-      const vals = arts.map(a => a.values[k])
-      return [slotKey, (Math.min(...vals) + Math.max(...vals)) / 2]
-    }))
-    const branchArts = Object.fromEntries(Object.entries(a.values).map(([slotKey, arts]) => {
-      const above = arts.filter(art => art.values[k] < branchVals[slotKey] ? true : false)
-      const below = arts.filter(art => art.values[k] < branchVals[slotKey] ? false : true)
-
-      const wAbove = sparseMatmulMax(lin, above.map(({ values }) => values))
-      const wBelow = sparseMatmulMax(lin, below.map(({ values }) => values))
-      return [slotKey, [{ arts: below, ...slotUpperLower(below), ww: wBelow }, { arts: above, ...slotUpperLower(above), ww: wAbove }]]
-    }))
+    const branchArts = pickBranch(a, threshold, subproblem)
     const w0 = sparseMatmulMax(lin, [a.base]).map((wi, i) => wi + lin[i].c)
 
     // 3. Perform branching. Check bounding during the branching phase as well.
     let branches = [] as { numBuilds: number, heur: number, subproblem: SubProblemWC }[]
-    cartesian([0, 1], [0, 1], [0, 1], [0, 1], [0, 1]).forEach(([s1, s2, s3, s4, s5]) => {
-      let selected = {
-        flower: branchArts.flower[s1],
-        plume: branchArts.plume[s2],
-        sands: branchArts.sands[s3],
-        goblet: branchArts.goblet[s4],
-        circlet: branchArts.circlet[s5],
-      }
+    cartesian(branchArts.flower, branchArts.plume, branchArts.sands, branchArts.goblet, branchArts.circlet).forEach(([flower, plume, sands, goblet, circlet]) => {
+      const selected = { flower, plume, sands, goblet, circlet }
 
       let z: ArtifactsBySlot = {
         base: { ...a.base },
@@ -229,6 +205,22 @@ function reduceSubProblem({ optimizationTarget, constraints, artSetExclusion, fi
     if (setKey === 'uniqueKey') {
       // TODO: Check and exclude rainbow bullshit.
       newArtExcl[setKey] = exclude
+      const feasibleKeys = allArtifactSets.filter(setKey => statsMax[setKey] > 0)
+      let feasible4sets = 0
+      let feasible2sets = 0
+      feasibleKeys.forEach(k => {
+        let allowedCnts = range(statsMin[k], statsMax[k])
+        if (artSetExclusion[k])
+          allowedCnts = allowedCnts.filter(cnt => !artSetExclusion[k].includes(cnt))
+
+        if (allowedCnts.includes(4) || allowedCnts.includes(5)) feasible4sets++
+        if (allowedCnts.includes(2) || allowedCnts.includes(3)) feasible2sets++
+      })
+
+      if (exclude.includes(5) && feasible4sets === 0) {
+        if (feasible2sets === 0) return; // No feasible 4sets or 2sets along with rainbow5 excluded is never satisfiable
+        if (exclude.includes(3) && feasible2sets < 2) return; // No 4sets, rainbow5 excluded, rainbow3 excluded means we need at least 2 2sets
+      }
       continue
     }
     const reducedExcl = exclude.filter(n => statsMin[setKey] <= n && n <= statsMax[setKey])        // Cut away never-active
@@ -248,12 +240,11 @@ function reduceSubProblem({ optimizationTarget, constraints, artSetExclusion, fi
 
 /**
  * Decides how to split between different branches.
- * TODO: Branch values should also be calculated & returned here
  * @param a     Artifact set
  * @param lin   Linear form from compute
  * @returns     The key to branch on.
  */
-function pickBranch(a: ArtifactsBySlot, threshold: number, subproblem: SubProblemWC) {
+function pickBranch(a: ArtifactsBySlot, threshold: number, subproblem: SubProblemWC, debug = false) {
   const { constraints, cachedCompute: { lin }, artSetExclusion } = subproblem
   let wMins = sparseMatmulMax(lin, [a.base])
   let wMaxs = sparseMatmulMax(lin, [a.base])
@@ -271,16 +262,23 @@ function pickBranch(a: ArtifactsBySlot, threshold: number, subproblem: SubProble
   //   their ranges. Honestly it's a really wacky heuristic but it does a good job
   //   at telling the algorithm to branch targeting a constraint when that constraint
   //   becomes difficult to satsify. (>50% chance to violate)
-  const decisionHeur = thr.map((th, i) => (th - wMins[i]) / (wMaxs[i] - wMins[i])).map(v => v < .5 ? -1 : v)
-  decisionHeur[decisionHeur.length - 1] = Math.max(decisionHeur[decisionHeur.length - 1], 0)
-  const argMax = decisionHeur.reduce((m, c, i) => c > decisionHeur[m] ? i : m, 0)
+  const decisionHeur = thr.map((th, i) => (th - wMins[i]) / (wMaxs[i] - wMins[i]))
 
-  // TODO: figure out a heuristic for when to branch on artSetExclusion
+  let argMax = -1
+  for (let i = decisionHeur.length - 1; i >= 0; i--) {
+    if (Object.keys(lin[i].w).length === 0) continue  // don't branch on an empty `lin`
+    if (argMax < 0) argMax = i                        // by default, pick optTarget to branch on
+    if (decisionHeur[argMax] < .5) continue           // Discard constraints with low probability of violation
+    if (decisionHeur[i] > decisionHeur[argMax]) argMax = i
+  }
+
+  // TODO: figure out a heuristic for when to branch on artSetExclusion instead. Currently doing so
+  //  when no other options available.
+  if (argMax < 0)
+    return splitOnSetExclusion(a, subproblem)
 
   let linToConsider = lin[argMax]
-  // let linToConsider = lin[lin.length - 1]
   let keysToConsider = Object.keys(linToConsider.w)
-  // let keysToConsider = [...Object.keys(linToConsider.w), ...Object.keys(artSetExclusion).filter(k => k !== 'uniqueKey')]
 
   let shatterOn = { k: '', heur: -1 }
   keysToConsider.forEach(k => {
@@ -296,7 +294,6 @@ function pickBranch(a: ArtifactsBySlot, threshold: number, subproblem: SubProble
       return rangeReduc + Math.min(maxv - glb, lub - minv)
     }, 0)
     const heur = linToConsider.w[k] * postShatterRangeReduction
-    // console.log('old', { k, heur })
     if (heur > shatterOn.heur) shatterOn = { k, heur }
   })
 
@@ -305,5 +302,56 @@ function pickBranch(a: ArtifactsBySlot, threshold: number, subproblem: SubProble
     console.log('===================== SHATTER BROKE ====================', lin, a)
     throw Error('Shatter broke...')
   }
-  return shatterOn
+
+  const branchVals = Object.fromEntries(Object.entries(a.values).map(([slotKey, arts]) => {
+    const vals = arts.map(a => a.values[shatterOn.k])
+    return [slotKey, (Math.min(...vals) + Math.max(...vals)) / 2]
+  }))
+  const branchArts = Object.fromEntries(Object.entries(a.values).map(([slotKey, arts]) => {
+    const above = arts.filter(art => art.values[shatterOn.k] < branchVals[slotKey] ? true : false)
+    const below = arts.filter(art => art.values[shatterOn.k] < branchVals[slotKey] ? false : true)
+    const artBranches = [above, below]
+
+    const wAbove = sparseMatmulMax(lin, above.map(({ values }) => values))
+    const wBelow = sparseMatmulMax(lin, below.map(({ values }) => values))
+    const wBranches = [wAbove, wBelow]
+
+    return [slotKey, [0, 1]
+      .filter(i => artBranches[i].length > 0)
+      .map(i => ({ arts: artBranches[i], ...slotUpperLower(artBranches[i]), ww: wBranches[i] }))
+    ]
+  }))
+  return branchArts
+}
+
+function splitOnSetExclusion(a: ArtifactsBySlot, { artSetExclusion, cachedCompute: { lin, upper } }: SubProblemWC) {
+  // Split on set exclusion by just picking the most popular set key.
+  const feasibleKeys = allArtifactSets.filter(setKey => upper[setKey] > 0)
+
+  var branchOn = { k: undefined as ArtifactSetKey | undefined, cnt: -1 }
+  feasibleKeys.forEach(k => {
+    let cnt = upper[k]
+    if (artSetExclusion[k] && artSetExclusion[k].includes(cnt))
+      cnt = Math.min(...artSetExclusion[k]) - 1
+
+    if (cnt > branchOn.cnt) branchOn = { k, cnt }
+  })
+
+  const sk = branchOn.k!
+  const branchArts = Object.fromEntries(Object.entries(a.values).map(([slotKey, arts]) => {
+    const above = arts.filter(art => art.set === sk ? true : false)
+    const below = arts.filter(art => art.set === sk ? false : true)
+    const artBranches = [above, below]
+
+    const wAbove = sparseMatmulMax(lin, above.map(({ values }) => values))
+    const wBelow = sparseMatmulMax(lin, below.map(({ values }) => values))
+    const wBranches = [wAbove, wBelow]
+
+    return [slotKey, [0, 1]
+      .filter(i => artBranches[i].length > 0)
+      .map(i => ({ arts: artBranches[i], ...slotUpperLower(artBranches[i]), ww: wBranches[i] }))
+    ]
+  }))
+
+  return branchArts
 }
