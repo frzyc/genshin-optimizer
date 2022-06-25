@@ -155,11 +155,14 @@ export default function TabBuild() {
     nodes = thresholdExclusions(nodes, artSetExclusion);
     nodes = thresholdToConstBranches(nodes);
     ({ a: arts, nodes } = elimLinDepStats(arts, nodes));
-    console.log('postafter', [...nodes])
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
 
+    // var outcnt = 0
+    // forEachNodes([optimizationTargetNode], _ => { }, n => outcnt++)
+    // console.log('Original count', outcnt)
+    // debugHorny(expandPoly(optimizationTargetNode))
     // debugMe(optimizationTargetNode, arts)
     // console.log('artSetExclusion', artSetExclusion)
 
@@ -189,8 +192,6 @@ export default function TabBuild() {
       depth: 0,
     }
 
-    // var masterID = -1
-    // var masterReady = true
     const masterInfo = { id: -1, ready: true }
     let allWorkers: Worker[] = []
     const maxSplitIters = 10
@@ -199,7 +200,6 @@ export default function TabBuild() {
     const workQueue: SubProblem[] = [initialProblem]
     const idleWorkers: { id: number, worker: Worker }[] = []  // Currently idle workers
     const busyWorkerIDs = new Set<number>()  // Workers with pending work in SplitWorker()
-    // const pruningID = new Set<number>()
 
     function fetchContinueWork(): WorkerCommand {
       return { command: "split", minCount: minFilterCount, maxIter: maxSplitIters, threshold: wrap.buildValues[maxBuildsToShow - 1] }
