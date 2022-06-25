@@ -1,6 +1,6 @@
 import { constant, sum, prod, cmp } from "./utils"
 import { NumNode } from "./type"
-import { allOperations, optimize } from "./optimization"
+import { allOperations } from "./optimization"
 import { mapFormulas } from "./internal"
 import { ArtifactBuildData, ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
 import { LinearForm, maxWeight, toLinearUpperBound } from "./linearUpperBound"
@@ -31,21 +31,32 @@ export function foldProd(nodes: readonly NumNode[]) {
 }
 
 export function slotUpperLower(a: ArtifactBuildData[]) {
+  if (a.length === 0) return { statsMin: {}, statsMax: {} }
+  // Assume keys are the same for all artifacts.
+  const keys = Object.keys(a[0].values)
   let statsMin: DynStat = {}
   let statsMax: DynStat = {}
-  let sets = new Set<ArtifactSetKey | undefined>()
-  a.forEach(art => {
-    for (const statKey in art.values) {
-      statsMin[statKey] = Math.min(art.values[statKey], statsMin[statKey] ?? Infinity)
-      statsMax[statKey] = Math.max(art.values[statKey], statsMax[statKey] ?? -Infinity)
-    }
-    if (art.set) {
-      statsMax[art.set] = 1
-      statsMin[art.set] = 0
-    }
-    sets.add(art.set)
+  let sets = new Set<ArtifactSetKey>()
+  keys.forEach(k => {
+    statsMin[k] = Infinity
+    statsMax[k] = -Infinity
   })
-  if (sets.size === 1 && a[0].set) statsMin[a[0].set] = 1
+  for (let i = 0; i < a.length; i++) {
+    for (let j = 0; j < keys.length; j++) {
+      const k = keys[j]
+      statsMin[k] = Math.min(a[i].values[k], statsMin[k])
+      statsMax[k] = Math.max(a[i].values[k], statsMax[k])
+    }
+    if (a[i].set) sets.add(a[i].set!)
+  }
+  sets.forEach(set => {
+    statsMax[set] = 1
+    statsMin[set] = 0
+  })
+  if (sets.size === 1) {
+    const [s] = sets
+    statsMin[s] = 1
+  }
   return { statsMin, statsMax }
 }
 
@@ -204,7 +215,6 @@ export function fillBuffer(stats: DynStat, mapping: Dict<string, number>, buffer
 }
 
 export function thresholdExclusions(nodes: NumNode[], excl: ArtSetExclusion) {
-  console.log('before', nodes)
   nodes = mapFormulas(nodes, n => n, n => {
     switch (n.operation) {
       case 'threshold':
@@ -227,6 +237,5 @@ export function thresholdExclusions(nodes: NumNode[], excl: ArtSetExclusion) {
         return n
     }
   })
-  console.log('after', nodes)
   return nodes
 }
