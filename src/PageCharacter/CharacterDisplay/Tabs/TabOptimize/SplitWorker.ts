@@ -117,7 +117,7 @@ export class SplitWorker {
     // 1c. A cached subproblem skips most of the above constraint checking, but `threshold` may change
     //     between iterations.
     const { cachedCompute: { maxEst, lin } } = subproblem
-    if (maxEst[maxEst.length - 1] < threshold) return []
+    if (maxEst[maxEst.length - 1] <= threshold) return []
 
     // 2. Pick branching parameter
     let numBuilds = Object.values(a.values).reduce((tot, arts) => tot * arts.length, 1)

@@ -76,6 +76,8 @@ export function reduceFormula(f: NumNode[], lower: DynStat, upper: DynStat) {
         return n
       case 'threshold':
         const [branch, branchVal, ge, lt] = n.operands
+        if (branch.operation === 'const' && branchVal.operation === 'const')
+          return branch.value >= branchVal.value ? ge : lt
         if (branch.operation === 'read' && branchVal.operation === 'const') {
           if (lower[branch.path[1]] >= branchVal.value) return ge
           if (upper[branch.path[1]] < branchVal.value) return lt
