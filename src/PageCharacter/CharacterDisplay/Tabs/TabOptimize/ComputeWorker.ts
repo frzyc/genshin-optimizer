@@ -2,7 +2,7 @@ import { reduceFormula, statsUpperLower } from '../../../../Formula/addedUtils';
 import { precompute } from '../../../../Formula/optimization';
 import type { NumNode } from '../../../../Formula/type';
 import type { InterimResult, Setup, SubProblem } from './BackgroundWorker';
-import { ArtifactsBySlot, Build, countBuilds, DynStat, filterArts, mergePlot, PlotData, pruneAll, reaffine } from './common';
+import { ArtifactsBySlot, Build, countBuilds, DynStat, filterArts, mergePlot, PlotData, reaffine } from './common';
 
 export class ComputeWorker {
   builds: Build[] = []
