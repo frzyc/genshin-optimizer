@@ -1,7 +1,8 @@
-import { optimize, precompute } from '../../../../Formula/optimization';
+import { reduceFormula, statsUpperLower } from '../../../../Formula/addedUtils';
+import { precompute } from '../../../../Formula/optimization';
 import type { NumNode } from '../../../../Formula/type';
 import type { InterimResult, Setup, SubProblem } from './BackgroundWorker';
-import { ArtifactsBySlot, Build, countBuilds, DynStat, filterArts, mergePlot, PlotData, pruneAll } from './common';
+import { ArtifactsBySlot, Build, countBuilds, DynStat, filterArts, mergePlot, PlotData, pruneAll, reaffine } from './common';
 
 export class ComputeWorker {
   builds: Build[] = []
@@ -46,17 +47,16 @@ export class ComputeWorker {
       }
     }
 
-    // let nodes = [...constraints.map(({ value }) => toNumNode(value)), toNumNode(optimizationTarget)]
-    // let min = constraints.map(({ min }) => min)
-    let nodes = this.nodes
-    let min = this.min
-    if (this.plotBase !== undefined) nodes.push(this.plotBase)
-    nodes = optimize(nodes, {}, _ => false);
-    ({ nodes, arts: preArts } = pruneAll(nodes, min, preArts, this.maxBuilds, {}, {
-      pruneArtRange: true, pruneNodeRange: true,
-    }))
-    const [compute, mapping, buffer] = precompute(nodes, f => f.path[1])
+    let nodes = [...this.nodes]
+    let min = [...this.min]
+    if (this.plotBase !== undefined) nodes.push(this.plotBase);
+    let { statsMin, statsMax } = statsUpperLower(preArts)
+    nodes = reduceFormula(nodes, statsMin, statsMax)
+    const reaff = reaffine(nodes, preArts)
+    nodes = reaff.nodes
+    preArts = reaff.arts
 
+    const [compute, mapping, buffer] = precompute(nodes, f => f.path[1])
     const arts = Object.values(preArts.values)
       .sort((a, b) => a.length - b.length)
       .map(arts => arts.map(art => ({
@@ -132,12 +132,6 @@ export class ComputeWorker {
     }
 
     permute(arts.length - 1, {})
-    // if (subproblem.cache) {
-    //   const cc = subproblem.cachedCompute
-    //   const maxEst = cc.maxEst[cc.maxEst.length - 1]
-
-    //   console.log('enumerated', { count: countBuilds(preArts), depth }, this.threshold, { gap: maxEst - maxFound }, { nodes, preArts }, cc)
-    // }
     this.interimReport(count)
     return this.threshold
   }
