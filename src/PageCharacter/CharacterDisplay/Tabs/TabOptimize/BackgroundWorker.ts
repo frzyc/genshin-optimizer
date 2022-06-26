@@ -23,6 +23,7 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
       break
     case "split":
       result = { command: "split", subproblems: splitWorker.split(data), ready: splitWorker.subproblems.length === 0 }
+      // console.log(id, splitWorker.subproblems)
       break
     case "iterate":
       const { threshold, subproblem } = data

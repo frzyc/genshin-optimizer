@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BackgroundWorker";
+import { CharacterContext } from '../../../../CharacterContext';
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider';
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
 import CardLight from '../../../../Components/Card/CardLight';
@@ -15,7 +16,6 @@ import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton';
 import { HitModeToggle, ReactionToggle } from '../../../../Components/HitModeEditor';
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup';
 import StatFilterCard from '../../../../Components/StatFilterCard';
-import CharacterSheet from '../../../../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../../../../Database/Database';
 import { DataContext, dataContextObj } from '../../../../DataContext';
 import { thresholdExclusions } from '../../../../Formula/addedUtils';
@@ -28,13 +28,12 @@ import { NumNode } from '../../../../Formula/type';
 import { UIData } from '../../../../Formula/uiData';
 import { initGlobalSettings } from '../../../../GlobalSettings';
 import KeyMap from '../../../../KeyMap';
-import useCharacterReducer, { characterReducerAction } from '../../../../ReactHooks/useCharacterReducer';
+import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useDBState from '../../../../ReactHooks/useDBState';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../../../Types/artifact';
-import { ICachedCharacter } from '../../../../Types/character';
 import { CharacterKey } from '../../../../Types/consts';
 import { objectKeyValueMap, objPathValue, range } from '../../../../Util/Util';
 import { FinalizeResult, Setup, SubProblem, WorkerCommand, WorkerResult } from './BackgroundWorker';
@@ -56,7 +55,7 @@ import { compactArtifacts, dynamicData } from './foreground';
 
 export default function TabBuild() {
   const { t } = useTranslation("page_character")
-  const { character, character: { key: characterKey } } = useContext(DataContext)
+  const { character: { key: characterKey, compareData } } = useContext(CharacterContext)
   const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { database } = useContext(DatabaseContext)
 
@@ -73,7 +72,6 @@ export default function TabBuild() {
 
   const characterDispatch = useCharacterReducer(characterKey)
   const onClickTeammate = useCharSelectionCallback()
-  const compareData = character?.compareData ?? false
 
   const noArtifact = useMemo(() => !database._getArts().length, [database])
 
@@ -145,7 +143,6 @@ export default function TabBuild() {
       minimum.push(-Infinity)
     }
 
-    // const prepruneArts = arts
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow, artSetExclusion, {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
@@ -155,6 +152,7 @@ export default function TabBuild() {
     nodes = thresholdExclusions(nodes, artSetExclusion);
     nodes = thresholdToConstBranches(nodes);
     ({ a: arts, nodes } = elimLinDepStats(arts, nodes));
+    nodes = optimize(nodes, {}, _ => false)
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
@@ -165,11 +163,6 @@ export default function TabBuild() {
     // debugHorny(expandPoly(optimizationTargetNode))
     // debugMe(optimizationTargetNode, arts)
     // console.log('artSetExclusion', artSetExclusion)
-
-    const wrap = {
-      buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity),
-      finalizing: false
-    }
 
     const artSetExclFull = objectKeyValueMap(Object.entries(artSetExclusion), ([setKey, v]) => {
       if (setKey === 'rainbow') return ['uniqueKey', v.map(v => v + 1)]
@@ -193,13 +186,15 @@ export default function TabBuild() {
     }
 
     const masterInfo = { id: -1, ready: true }
-    let allWorkers: Worker[] = []
     const maxSplitIters = 10
     const minFilterCount = 2_000 // Don't split for single worker
     const maxRequestFilterInFlight = maxWorkers * 4
     const workQueue: SubProblem[] = [initialProblem]
-    const idleWorkers: { id: number, worker: Worker }[] = []  // Currently idle workers
+    const idleWorkers = new Set<number>()  // Currently idle workers
     const busyWorkerIDs = new Set<number>()  // Workers with pending work in SplitWorker()
+    const workers: Worker[] = []
+
+    const wrap = { buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity) }
 
     function fetchContinueWork(): WorkerCommand {
       return { command: "split", minCount: minFilterCount, maxIter: maxSplitIters, threshold: wrap.buildValues[maxBuildsToShow - 1] }
@@ -220,7 +215,7 @@ export default function TabBuild() {
     const finalizedList: Promise<FinalizeResult>[] = []
     for (let i = 0; i < maxWorkers; i++) {
       const worker = new Worker()
-      allWorkers.push(worker)
+      workers.push(worker)
 
       const setup: Setup = {
         command: "setup",
@@ -238,14 +233,8 @@ export default function TabBuild() {
       // }
       let finalize: (_: FinalizeResult) => void
       const finalized = new Promise<FinalizeResult>(r => finalize = r)
-      // console.log('Definining onmessage', i)
       worker.onmessage = async ({ data }: { data: { id: number } & WorkerResult }) => {
         switch (data.command) {
-          // case "count":
-          //   const [pruned, prepruned] = data.counts
-          //   status.total = prepruned
-          //   status.skipped += prepruned - pruned
-          //   return
           case "interim":
             status.tested += data.tested
             status.failed += data.failed
@@ -254,39 +243,45 @@ export default function TabBuild() {
               wrap.buildValues.push(...data.buildValues)
               wrap.buildValues.sort((a, b) => b - a).splice(maxBuildsToShow)
             }
-            break
+            return
           case "split":
             workQueue.push(...data.subproblems)
             if (data.ready && data.id === masterInfo.id) masterInfo.ready = true
-            if (data.ready) busyWorkerIDs.delete(data.id)
+            if (data.ready) {
+              busyWorkerIDs.delete(data.id)
+            }
             else busyWorkerIDs.add(data.id)
-            idleWorkers.push({ id: data.id, worker })
+            idleWorkers.add(data.id)
             break
           case "iterate":
-            idleWorkers.push({ id: data.id, worker })
+            idleWorkers.add(data.id)
             break
           case "finalize":
             worker.terminate()
             finalize(data);
-            break
+            return
           case "share":
-            // console.log('Sharing work?', data)
             if (data.subproblem) {
               const splitCommand = { command: 'split', threshold: wrap.buildValues[maxBuildsToShow - 1], minCount: minFilterCount, maxIter: maxSplitIters, subproblem: data.subproblem }
-              allWorkers[data.sender].postMessage(splitCommand)
+              workers[data.sender].postMessage(splitCommand)
+              busyWorkerIDs.add(data.sender)
             }
-            else
-              idleWorkers.push({ id: data.sender, worker: allWorkers[data.sender] })
+            else idleWorkers.add(data.sender)
             break
+          case "count":
+            const [pruned, prepruned] = data.counts
+            status.total = prepruned
+            status.skipped += prepruned - pruned
+            return
           default: console.log("DEBUG", data)
         }
 
-        // console.log('pre-idle assignment loop', { masterID, idle: idleWorkers.map(({ id }) => id) })
-        while (idleWorkers.length) {
-          const { id, worker } = idleWorkers.pop()!
+        const toLoop = [...idleWorkers]
+        for (const id of toLoop) {
+          const worker = workers[id]
           let work: WorkerCommand | undefined
-          if (wrap.finalizing) work = { command: "finalize" }
-          else if (workQueue.length >= maxRequestFilterInFlight) work = fetchWork()
+
+          if (workQueue.length >= maxRequestFilterInFlight) work = fetchWork()
           else if (busyWorkerIDs.has(id)) work = fetchContinueWork()
           if (!work) work = fetchWork()
           if (masterInfo.id < 0) {
@@ -294,18 +289,18 @@ export default function TabBuild() {
             masterInfo.ready = false
           }
 
-          if (work) worker.postMessage(work)
+          if (work) {
+            idleWorkers.delete(id)
+            worker.postMessage(work)
+          }
           else if (!masterInfo.ready) {
-            allWorkers[masterInfo.id].postMessage(requestShareWork(id))
+            idleWorkers.delete(id)
+            workers[masterInfo.id].postMessage(requestShareWork(id))
           }
-          else {
-            idleWorkers.push({ id, worker })
-            if (idleWorkers.length === maxWorkers && busyWorkerIDs.size === 0) {
-              wrap.finalizing = true
-              continue
-            }
-            break
-          }
+        }
+
+        if (busyWorkerIDs.size === 0 && idleWorkers.size === maxWorkers) {
+          workers.forEach(worker => worker.postMessage({ command: 'finalize' }))
         }
       }
 
@@ -352,15 +347,8 @@ export default function TabBuild() {
     setchartData(undefined)
   }, [buildSettingDispatch])
   const dataContext: dataContextObj | undefined = useMemo(() => {
-    return data && characterSheet && character && teamData && {
-      data,
-      characterSheet,
-      character,
-      mainStatAssumptionLevel,
-      teamData,
-      characterDispatch
-    }
-  }, [data, characterSheet, character, teamData, characterDispatch, mainStatAssumptionLevel])
+    return data && teamData && { data, teamData }
+  }, [data, teamData])
 
   return <Box display="flex" flexDirection="column" gap={1}>
     {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
@@ -498,51 +486,44 @@ export default function TabBuild() {
           </Grid>
         </CardContent>
       </CardLight>
-      <BuildList {...{ buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled: !!generatingBuilds }} />
+      <BuildList buildsArts={buildsArts} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} />
     </DataContext.Provider>}
   </Box>
 }
-function BuildList({ buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled }: {
+function BuildList({ buildsArts, characterKey, data, compareData, disabled }: {
   buildsArts: ICachedArtifact[][],
-  character?: ICachedCharacter,
   characterKey?: "" | CharacterKey,
-  characterSheet?: CharacterSheet,
   data?: UIData,
   compareData: boolean,
-  mainStatAssumptionLevel: number,
-  characterDispatch: (action: characterReducerAction) => void
   disabled: boolean,
 }) {
   // Memoize the build list because calculating/rendering the build list is actually very expensive, which will cause longer optimization times.
   const list = useMemo(() => <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
-    {buildsArts?.map((build, index) => character && characterKey && characterSheet && data && <DataContextWrapper
+    {buildsArts?.map((build, index) => characterKey && data && <DataContextWrapper
       key={index + build.join()}
       characterKey={characterKey}
-      character={character}
       build={build}
-      characterSheet={characterSheet}
       oldData={data}
-      mainStatAssumptionLevel={mainStatAssumptionLevel}
-      characterDispatch={characterDispatch} >
+    >
       <BuildDisplayItem index={index} compareBuild={compareData} disabled={disabled} />
     </DataContextWrapper>
     )}
-  </Suspense>, [buildsArts, character, characterKey, characterSheet, data, compareData, mainStatAssumptionLevel, characterDispatch, disabled])
+  </Suspense>, [buildsArts, characterKey, data, compareData, disabled])
   return list
 }
 
 type Prop = {
   children: React.ReactNode
   characterKey: CharacterKey,
-  character: ICachedCharacter,
   build: ICachedArtifact[],
-  mainStatAssumptionLevel?: number, characterSheet: CharacterSheet, oldData: UIData,
-  characterDispatch: (action: characterReducerAction) => void
+  oldData: UIData,
 }
-function DataContextWrapper({ children, characterKey, character, build, characterDispatch, mainStatAssumptionLevel = 0, characterSheet, oldData }: Prop) {
+function DataContextWrapper({ children, characterKey, build, oldData }: Prop) {
+  const { buildSetting: { mainStatAssumptionLevel } } = useBuildSetting(characterKey)
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel, build)
-  if (!teamData) return null
-  return <DataContext.Provider value={{ characterSheet, character, characterDispatch, mainStatAssumptionLevel, data: teamData[characterKey]!.target, teamData, oldData }}>
+  const providerValue = useMemo(() => teamData && ({ data: teamData[characterKey]!.target, teamData, oldData }), [teamData, oldData, characterKey])
+  if (!providerValue) return null
+  return <DataContext.Provider value={providerValue}>
     {children}
   </DataContext.Provider>
 }

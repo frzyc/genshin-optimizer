@@ -12,6 +12,7 @@ import CardLight from "./Card/CardLight";
 import ColorText from "./ColoredText";
 import ExpandButton from "./ExpandButton";
 import { uncoloredEleIcons } from "./StatIcon";
+import { CharacterContext } from "../CharacterContext";
 
 export function EnemyExpandCard() {
   const { data } = useContext(DataContext)
@@ -71,7 +72,8 @@ export function EnemyResText({ element }: { element: ElementKeyWithPhy }) {
 }
 
 export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object }) {
-  const { data, character: { enemyOverride }, characterDispatch } = useContext(DataContext)
+  const { character: { enemyOverride }, characterDispatch } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
   const defaultVal = 10
 
   const eLvl = enemyOverride.enemyLevel ?? data.get(input.lvl).value

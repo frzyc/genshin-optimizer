@@ -1,5 +1,5 @@
 import { reduceFormula, statsUpperLower } from '../../../../Formula/addedUtils';
-import { precompute } from '../../../../Formula/optimization';
+import { optimize, precompute } from '../../../../Formula/optimization';
 import type { NumNode } from '../../../../Formula/type';
 import type { InterimResult, Setup, SubProblem } from './BackgroundWorker';
 import { ArtifactsBySlot, Build, countBuilds, DynStat, filterArts, mergePlot, PlotData, reaffine } from './common';
@@ -30,6 +30,7 @@ export class ComputeWorker {
       this.plotBase = plotBase
       this.nodes.push(plotBase)
     }
+    this.nodes = optimize(this.nodes, {}, _ => false)
   }
 
   compute(newThreshold: number, subproblem: SubProblem, dbg = false) {

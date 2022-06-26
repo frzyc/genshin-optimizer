@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo } from "react";
+import { useContext, useDeferredValue, useEffect, useMemo } from "react";
 import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { resonanceData } from "../Data/Resonance";
@@ -25,7 +25,8 @@ type TeamDataBundle = {
 export default function useTeamData(characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[], overrideWeapon?: ICachedWeapon): TeamData | undefined {
   const { database } = useContext(DatabaseContext)
   const [dbDirty, setDbDirty] = useForceUpdate()
-  const teamDataBundle = usePromise(getTeamData(database, characterKey, mainStatAssumptionLevel, overrideArt, overrideWeapon), [dbDirty, characterKey, database, mainStatAssumptionLevel, overrideArt, overrideWeapon])
+  const dbDirtyDeferred = useDeferredValue(dbDirty)
+  const teamDataBundle = usePromise(getTeamData(database, characterKey, mainStatAssumptionLevel, overrideArt, overrideWeapon), [dbDirtyDeferred, characterKey, database, mainStatAssumptionLevel, overrideArt, overrideWeapon])
 
   const { team = [], teamData, teamBundle } = teamDataBundle ?? {}
 

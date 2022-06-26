@@ -66,6 +66,7 @@ export const allCharacterKeys = [
   "Keqing",
   "Klee",
   "KujouSara",
+  "KukiShinobu",
   "Lisa",
   "Mona",
   "Ningguang",
@@ -99,7 +100,6 @@ export const allCharacterKeys = [
   "Zhongli",
   "KamisatoAyato",
   "Yelan",
-  // "KukiShinobu"
 ] as const
 
 export const allWeaponSwordKeys = [

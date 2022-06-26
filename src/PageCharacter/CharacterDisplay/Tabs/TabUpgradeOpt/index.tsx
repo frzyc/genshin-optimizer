@@ -31,10 +31,11 @@ import { querySetup, evalArtifact, toQueryArtifact, cmpQ, QueryArtifact, QueryBu
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material';
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard';
+import { CharacterContext } from '../../../../CharacterContext';
 
 
 export default function TabUpopt() {
-  const { character, character: { key: characterKey } } = useContext(DataContext)
+  const { character, character: { key: characterKey } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
 
   const characterDispatch = useCharacterReducer(characterKey)
@@ -50,7 +51,7 @@ export default function TabUpopt() {
   const [artifactUpgradeOpts, setArtifactUpgradeOpts] = useState(undefined as UpgradeOptResult | undefined)
 
   const [show20, setShow20] = useState(true)
-  const [check4th, setCheck4th] = useState(false)
+  const [check4th, setCheck4th] = useState(true)
   const [useMainStatFilter, setUseMainStatFilter] = useState(false)
 
   // Because upgradeOpt is a two-stage estimation method, we want to expand (slow-estimate) our artifacts lazily as they are needed.

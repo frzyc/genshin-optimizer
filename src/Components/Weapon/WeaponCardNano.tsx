@@ -37,7 +37,7 @@ export default function WeaponCardNano({ weaponId, showLocation = false, onClick
         <WeaponNameTooltip sheet={weaponSheet}>
           <Box
             component="img"
-            src={weaponSheet.img}
+            src={weaponSheet.getImg(weapon.ascension)}
             sx={{ mx: -1, maxHeight: "100%", maxWidth: "100%" }}
           />
         </WeaponNameTooltip>

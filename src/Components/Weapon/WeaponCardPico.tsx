@@ -29,7 +29,7 @@ export default function WeaponCardPico({ weaponId }: { weaponId: string }) {
       <WeaponNameTooltip sheet={weaponSheet} addlText={tooltipAddl}>
         <Box
           component="img"
-          src={weaponSheet.img}
+          src={weaponSheet.getImg(weapon.ascension)}
           maxWidth="100%"
           maxHeight="100%"
           sx={{ mt: "auto" }}
