@@ -34,10 +34,10 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
 export type CharacterFilterConfigs = FilterConfigs<"element" | "weaponType" | "favorite" | "name", CharacterKey>
 export function characterFilterConfigs(database: ArtCharDatabase, characterSheets: Record<CharacterKey, CharacterSheet>): CharacterFilterConfigs {
   return {
-    element: (ck, filter) => !filter || filter.includes(characterSheets?.[ck]?.elementKey) ||
+    element: (ck, filter) => filter.includes(characterSheets?.[ck]?.elementKey) ||
       (ck === "Traveler" && !database._getChar(ck as CharacterKey) && filter.some(fe => characterSheets.Traveler.elementKeys.includes(fe))) ||
       (ck === "Traveler" && filter.includes(database._getChar(ck as CharacterKey)?.elementKey)),
-    weaponType: (ck, filter) => !filter || filter.includes(characterSheets?.[ck]?.weaponTypeKey),
+    weaponType: (ck, filter) => filter.includes(characterSheets?.[ck]?.weaponTypeKey),
     favorite: (ck, filter) =>
       !filter || (filter === (database._getChar(ck as CharacterKey)?.favorite ? "yes" : "no")),
     name: (ck, filter) => !filter || (i18n.t(`char_${ck}_gen:name`).toLowerCase().includes(filter.toLowerCase()))
