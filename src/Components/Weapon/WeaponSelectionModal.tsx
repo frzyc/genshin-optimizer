@@ -1,9 +1,10 @@
 import { Box, CardActionArea, CardContent, Divider, Grid, TextField, Typography } from "@mui/material"
-import { ChangeEvent, useDeferredValue, useEffect, useMemo, useState } from "react"
+import { ChangeEvent, useDeferredValue, useEffect, useState } from "react"
+import { useTranslation } from "react-i18next"
 import Assets from "../../Assets/Assets"
+import WeaponSheet from "../../Data/Weapons/WeaponSheet"
 import usePromise from "../../ReactHooks/usePromise"
 import { allWeaponKeys, allWeaponTypeKeys, WeaponKey, WeaponTypeKey } from "../../Types/consts"
-import WeaponSheet from "../../Data/Weapons/WeaponSheet"
 import CardDark from "../Card/CardDark"
 import CardLight from "../Card/CardLight"
 import CloseButton from "../CloseButton"
@@ -11,7 +12,6 @@ import ImgIcon from "../Image/ImgIcon"
 import ModalWrapper from "../ModalWrapper"
 import { Stars } from "../StarDisplay"
 import WeaponToggle from "../ToggleButton/WeaponToggle"
-import { useTranslation } from "react-i18next"
 
 type WeaponSelectionModalProps = {
   show: boolean,

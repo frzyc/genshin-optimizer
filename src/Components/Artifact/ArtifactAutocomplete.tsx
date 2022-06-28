@@ -82,7 +82,7 @@ export function ArtifactSetMultiAutocomplete({ artSetKeys, setArtSetKeys, ...pro
     setArtifactKeys={setArtSetKeys}
     getName={(key: ArtifactSetKey) => artifactSheets[key].nameRaw}
     getImage={(key: ArtifactSetKey) => artifactSheets[key].defIcon}
-    label={t("autocompleteLabels.set")}
+    label={t("autocompleteLabels.sets")}
     {...props}
   />
 }
@@ -99,7 +99,7 @@ export function ArtifactMainStatMultiAutocomplete({ mainStatKeys, setMainStatKey
     setArtifactKeys={setMainStatKeys}
     getName={(key: MainStatKey) => KeyMap.getArtStr(key)}
     getImage={(key: MainStatKey) => StatIcon[key]}
-    label={t("autocompleteLabels.mainStat")}
+    label={t("autocompleteLabels.mainStats")}
     {...props}
   />
 }
@@ -116,12 +116,12 @@ export function ArtifactSubstatMultiAutocomplete({ substatKeys, setSubstatKeys, 
     setArtifactKeys={setSubstatKeys}
     getName={(key: SubstatKey) => KeyMap.getArtStr(key)}
     getImage={(key: SubstatKey) => StatIcon[key]}
-    label={t("autocompleteLabels.substat")}
+    label={t("autocompleteLabels.substats")}
     {...props}
   />
 }
 
-type ArtifactSingleAutocompleteKey = (ArtifactSetKey | "") | (MainStatKey | "") | (SubstatKey | "")
+type ArtifactSingleAutocompleteKey = ArtifactSetKey | MainStatKey | SubstatKey | ""
 type ArtifactSingleAutocompleteOption<T extends ArtifactSingleAutocompleteKey> = {
   key: T
   label: string
@@ -137,9 +137,8 @@ type ArtifactSingleAutocompleteProps<T extends ArtifactSingleAutocompleteKey> = 
   showDefault?: boolean
   defaultText?: string
   defaultIcon?: Displayable
-  flattenCorners?: boolean
 }
-function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ allArtifactKeys, selectedArtifactKey, setArtifactKey, getName, getImage, label, disable= () => false, showDefault = false, defaultText = "", defaultIcon = "", flattenCorners = false, ...props }:
+function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ allArtifactKeys, selectedArtifactKey, setArtifactKey, getName, getImage, label, disable = () => false, showDefault = false, defaultText = "", defaultIcon = "", ...props }:
   ArtifactSingleAutocompleteProps<T>) {
   const theme = useTheme();
 
@@ -158,13 +157,12 @@ function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ a
     onChange={(event, newValue, reason) => (event.type !== "change" || reason !== "clear") && setArtifactKey(newValue ? newValue.key : "")}
     getOptionLabel={(option) => option.label ? option.label : defaultText}
     isOptionEqualToValue={(option, value) => option.key === value.key}
-    getOptionDisabled={option => option.key ? disable(option.key) : false}
+    getOptionDisabled={option => disable(option.key)}
     renderInput={(props) => <SolidColoredTextField
       {...props}
       label={label}
       startAdornment={getImage(selectedArtifactKey)}
       hasValue={selectedArtifactKey ? true : false}
-      flattenCorners={flattenCorners}
     />}
     renderOption={(props, option) => (
       <MenuItemWithImage
@@ -182,7 +180,6 @@ function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ a
 }
 
 type ArtifactSetSingleAutocompleteProps = Omit<AutocompleteProps<ArtifactSingleAutocompleteOption<ArtifactSetKey | "">, false, true, false>, "title" | "children" | "onChange" | "options" | "renderInput" | "value"> & {
-  allArtSetKeys?: readonly ArtifactSetKey[]
   artSetKey: ArtifactSetKey | ""
   setArtSetKey: (key: ArtifactSetKey | "") => void
   label?: string
@@ -190,21 +187,19 @@ type ArtifactSetSingleAutocompleteProps = Omit<AutocompleteProps<ArtifactSingleA
   showDefault?: boolean
   defaultText?: string
   defaultIcon?: Displayable
-  flattenCorners?: boolean
 }
-export function ArtifactSetSingleAutocomplete({ allArtSetKeys = allArtifactSets, artSetKey, setArtSetKey, label = "", flattenCorners, ...props }: ArtifactSetSingleAutocompleteProps) {
+export function ArtifactSetSingleAutocomplete({artSetKey, setArtSetKey, label = "", ...props }: ArtifactSetSingleAutocompleteProps) {
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const { t } = useTranslation("artifact")
   label = label ? label : t("autocompleteLabels.set")
   if (!artifactSheets) return null
   return <ArtifactSingleAutocomplete<ArtifactSetKey | "">
-    allArtifactKeys={allArtSetKeys}
+    allArtifactKeys={allArtifactSets}
     selectedArtifactKey={artSetKey}
     setArtifactKey={setArtSetKey}
     getName={(key: ArtifactSetKey | "") => key && artifactSheets[key].nameRaw}
     getImage={(key: ArtifactSetKey | "") => key ? artifactSheets[key].defIcon : <></>}
     label={label}
-    flattenCorners={flattenCorners}
     {...props}
   />
 }

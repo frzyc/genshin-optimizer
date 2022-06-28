@@ -243,11 +243,14 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             <ButtonGroup sx={{ display: "flex", mb: 1 }}>
               {/* Artifact Set */}
               <ArtifactSetSingleAutocomplete
-                size="small"
+                showDefault
                 disableClearable
+                size="small"
                 artSetKey={artifact?.setKey ?? ""}
                 setArtSetKey={setKey => update({ setKey: setKey as ArtifactSetKey })}
                 sx={{ flexGrow: 1 }}
+                defaultText={t("editor.unknownSetName")}
+                disable={(key) => key === ""}
                 disabled={disableEditSetSlot}
               />
               {/* rarity dropdown */}
