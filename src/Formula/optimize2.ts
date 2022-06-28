@@ -3,7 +3,7 @@ import { ArtifactSetKey } from "../Types/consts";
 import { reduceFormula, statsUpperLower } from "./addedUtils";
 import { foldProd, foldSum } from "./addedUtils";
 import { forEachNodes, mapFormulas } from "./internal";
-import { Info, NumNode, ReadNode } from "./type";
+import { NumNode, ReadNode } from "./type";
 import { cmp, constant, prod, sum } from './utils';
 
 export function makeid(length: number, disallowed?: string[]) {
