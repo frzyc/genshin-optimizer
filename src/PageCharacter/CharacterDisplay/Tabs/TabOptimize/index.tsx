@@ -23,7 +23,7 @@ import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { expandPoly } from '../../../../Formula/expandPoly';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
-import { elimLinDepStats, thresholdToConstBranches } from '../../../../Formula/optimize2';
+import { elimLinDepStats, thresholdToConstBranchForm } from '../../../../Formula/optimize2';
 import { NumNode } from '../../../../Formula/type';
 import { UIData } from '../../../../Formula/uiData';
 import { initGlobalSettings } from '../../../../GlobalSettings';
@@ -150,7 +150,7 @@ export default function TabBuild() {
     // Can be further folded after pruning
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
     nodes = thresholdExclusions(nodes, artSetExclusion);
-    nodes = thresholdToConstBranches(nodes);
+    nodes = thresholdToConstBranchForm(nodes);
     ({ a: arts, nodes } = elimLinDepStats(arts, nodes));
     nodes = optimize(nodes, {}, _ => false)
 
