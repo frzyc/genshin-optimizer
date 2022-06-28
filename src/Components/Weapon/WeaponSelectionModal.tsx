@@ -22,7 +22,7 @@ type WeaponSelectionModalProps = {
 }
 
 export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSelect, filter = () => true, weaponFilter: propWeaponFilter }: WeaponSelectionModalProps) {
-  const weaponSheets = usePromise(WeaponSheet.getAll, [])
+  const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
   const [weaponFilter, setWeaponfilter] = useState<WeaponTypeKey[]>(propWeaponFilter ? [propWeaponFilter] : [...allWeaponTypeKeys])
 
   useEffect(() => propWeaponFilter && setWeaponfilter([propWeaponFilter]), [propWeaponFilter])

@@ -44,7 +44,7 @@ export default function WeaponEditor({
   const { database } = useContext(DatabaseContext)
   const weapon = useWeapon(propWeaponId)
   const { key = "", level = 0, refinement = 0, ascension = 0, lock, location = "", id } = weapon ?? {}
-  const weaponSheet = usePromise(WeaponSheet.get(key), [key])
+  const weaponSheet = usePromise(() => WeaponSheet.get(key), [key])
 
   const weaponDispatch = useCallback((newWeapon: Partial<ICachedWeapon>) => {
     database.updateWeapon(newWeapon, propWeaponId)
@@ -62,7 +62,7 @@ export default function WeaponEditor({
     else weaponDispatch({ ascension: lowerAscension })
   }, [weaponDispatch, ascension, level])
 
-  const characterSheet = usePromise(location ? CharacterSheet.get(location) : undefined, [location])
+  const characterSheet = usePromise(() => location ? CharacterSheet.get(location) : undefined, [location])
   const weaponFilter = characterSheet ? (ws) => ws.weaponType === characterSheet.weaponTypeKey : undefined
   const initialWeaponFilter = characterSheet && characterSheet.weaponTypeKey
 

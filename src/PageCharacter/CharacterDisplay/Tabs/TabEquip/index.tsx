@@ -43,7 +43,7 @@ function TabEquip() {
   }, [weaponId, equippedWeapon])
 
   const { database } = useContext(DatabaseContext)
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
 
   // TODO: We can also listen only to equipped artifacts
   const [, updateArt] = useForceUpdate()

@@ -26,7 +26,7 @@ type Data = {
 
 export default function WeaponCardNano({ weaponId, showLocation = false, onClick, BGComponent = CardDark, }: Data) {
   const weapon = useWeapon(weaponId)
-  const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
+  const weaponSheet = usePromise(() => weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
   const actionWrapperFunc = useCallback(children => <CardActionArea sx={{ height: "100%" }} onClick={onClick}>{children}</CardActionArea>, [onClick],)
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return <BGComponent sx={{ height: "100%" }}><Skeleton variant="rectangular" sx={{ width: "100%", height: "100%" }} /></BGComponent>;
@@ -73,6 +73,6 @@ function WeaponStat({ node }: { node: NodeDisplay }) {
   </Box>)
 }
 function LocationIcon({ location }) {
-  const characterSheet = usePromise(CharacterSheet.get(location ?? ""), [location])
+  const characterSheet = usePromise(() => CharacterSheet.get(location ?? ""), [location])
   return characterSheet ? <BootstrapTooltip placement="right-end" title={<Typography>{characterSheet.name}</Typography>}><ImgIcon src={characterSheet.thumbImgSide} sx={{ height: "3em", marginTop: "-1.5em", marginLeft: "-0.5em" }} /></BootstrapTooltip> : <BusinessCenter />
 }

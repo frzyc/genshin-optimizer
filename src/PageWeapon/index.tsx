@@ -55,7 +55,7 @@ export default function PageWeapon() {
   const brPt = useMediaQueryUp()
   const maxNumToDisplay = numToShowMap[brPt]
 
-  const weaponSheets = usePromise(WeaponSheet.getAll, [])
+  const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
 
   const deleteWeapon = useCallback(async (key) => {
     const weapon = database._getWeapon(key)

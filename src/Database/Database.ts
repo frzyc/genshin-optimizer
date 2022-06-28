@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import { TeamData } from "../DataContext";
 import { BuildSetting, buildSettingsReducer, initialBuildSettings, validateBuildSetting } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting";
 import { IArtifact, ICachedArtifact } from "../Types/artifact";
 import { ICachedCharacter, ICharacter } from "../Types/character";
@@ -22,10 +23,16 @@ export class ArtCharDatabase {
   weapons = new DataManager<string, ICachedWeapon>()
   states = new DataManager<string, object>()
   buildSettings = new DataManager<string, BuildSetting>()
+  teamData = {} as Partial<Record<CharacterKey, TeamData>>
 
   constructor(storage: DBStorage, forcedUpdate = false) {
     this.storage = storage
     this.reloadStorage(forcedUpdate)
+
+    this.followAnyChar((key) => {
+      if (typeof key === "string")
+        delete this.teamData[key]
+    })
   }
 
   reloadStorage(forced = false) {
@@ -208,6 +215,12 @@ export class ArtCharDatabase {
     const newBs = initialBuildSettings()
     this.saveBuildSetting(key, newBs)
     return this.buildSettings.get(key)
+  }
+  _getTeamData(key: CharacterKey) {
+    return this.teamData[key]
+  }
+  cacheTeamData(key: CharacterKey, data: TeamData) {
+    this.teamData[key] = data
   }
 
   followChar(key: CharacterKey, cb: Callback<ICachedCharacter>) { return this.chars.follow(key, cb) }

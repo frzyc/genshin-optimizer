@@ -73,7 +73,7 @@ type ArtifactSetMultiAutocompleteProps = Omit<AutocompleteProps<ArtifactMultiAut
   setArtSetKeys: (keys: ArtifactSetKey[]) => void
 }
 export function ArtifactSetMultiAutocomplete({ artSetKeys, setArtSetKeys, ...props }: ArtifactSetMultiAutocompleteProps) {
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const { t } = useTranslation("artifact")
   if (!artifactSheets) return null
   return <ArtifactMultiAutocomplete<ArtifactSetKey>
@@ -139,7 +139,7 @@ type ArtifactSingleAutocompleteProps<T extends ArtifactSingleAutocompleteKey> = 
   defaultIcon?: Displayable
   flattenCorners?: boolean
 }
-function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ allArtifactKeys, selectedArtifactKey, setArtifactKey, getName, getImage, label, disable= () => false, showDefault = false, defaultText = "", defaultIcon = "", flattenCorners = false, ...props }:
+function ArtifactSingleAutocomplete<T extends ArtifactSingleAutocompleteKey>({ allArtifactKeys, selectedArtifactKey, setArtifactKey, getName, getImage, label, disable = () => false, showDefault = false, defaultText = "", defaultIcon = "", flattenCorners = false, ...props }:
   ArtifactSingleAutocompleteProps<T>) {
   const theme = useTheme();
 
@@ -193,7 +193,7 @@ type ArtifactSetSingleAutocompleteProps = Omit<AutocompleteProps<ArtifactSingleA
   flattenCorners?: boolean
 }
 export function ArtifactSetSingleAutocomplete({ allArtSetKeys = allArtifactSets, artSetKey, setArtSetKey, label = "", flattenCorners, ...props }: ArtifactSetSingleAutocompleteProps) {
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const { t } = useTranslation("artifact")
   label = label ? label : t("autocompleteLabels.set")
   if (!artifactSheets) return null

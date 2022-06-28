@@ -32,7 +32,7 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
   const [dbDirty, forceUpdate] = useForceUpdate()
   useEffect(() => database.followAnyWeapon(forceUpdate), [forceUpdate, database])
 
-  const weaponSheets = usePromise(WeaponSheet.getAll, [])
+  const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
 
   const filterConfigs = useMemo(() => weaponSheets && weaponFilterConfigs(weaponSheets), [weaponSheets])
   const sortConfigs = useMemo(() => weaponSheets && weaponSortConfigs(weaponSheets), [weaponSheets])

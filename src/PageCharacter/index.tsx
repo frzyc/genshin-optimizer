@@ -66,7 +66,7 @@ export default function PageCharacter(props) {
     return database.followAnyChar(forceUpdate)
   }, [forceUpdate, database])
 
-  const characterSheets = usePromise(CharacterSheet.getAll, [])
+  const characterSheets = usePromise(() => CharacterSheet.getAll, [])
 
   const deleteCharacter = useCallback(async (cKey: CharacterKey) => {
     const chararcterSheet = await CharacterSheet.get(cKey)
