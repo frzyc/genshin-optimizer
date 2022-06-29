@@ -9,7 +9,7 @@ export type WeaponSortKey = typeof weaponSortKeys[number]
 export function weaponSortConfigs(weaponSheets: Record<WeaponKey, WeaponSheet>): SortConfigs<WeaponSortKey, ICachedWeapon> {
   return {
     level: {
-      getValue: wp => wp.level ?? 0,
+      getValue: wp => wp.level * wp.ascension ?? 0,
       tieBreaker: "rarity"
     },
     rarity: {

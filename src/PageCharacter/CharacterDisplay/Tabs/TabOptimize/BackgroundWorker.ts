@@ -19,7 +19,14 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
       result = { command: "iterate" }
       break
     case "split":
-      result = { command: "split", filter: splitWorker.split(data.threshold, data.minCount, data.filter) }
+      if (data.filter) splitWorker.addFilter(data.filter)
+      let total = 0, split = splitWorker.split(data.threshold, data.minCount)
+      while (split && split.count <= 50_000 && total <= 500_000) {
+        total += split.count
+        computeWorker.compute(-Infinity, split.filter)
+        split = splitWorker.split(-Infinity, data.minCount)
+      }
+      result = { command: "split", filter: split?.filter }
       break
     case "iterate":
       const { threshold, filter } = data

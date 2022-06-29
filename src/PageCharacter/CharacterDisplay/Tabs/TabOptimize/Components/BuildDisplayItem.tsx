@@ -1,7 +1,8 @@
 import { ChevronRight } from '@mui/icons-material';
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { Suspense, useCallback, useContext, useState } from 'react';
+import React, { Suspense, useCallback, useContext, useMemo, useState } from 'react';
+import { CharacterContext } from '../../../../../CharacterContext';
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano';
 import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
 import CardDark from '../../../../../Components/Card/CardDark';
@@ -17,6 +18,7 @@ import { uiInput as input } from '../../../../../Formula';
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard';
 import usePromise from '../../../../../ReactHooks/usePromise';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../../../../Types/consts';
+import useBuildSetting from '../BuildSetting';
 
 type NewOld = {
   newId: string,
@@ -31,24 +33,32 @@ type BuildDisplayItemProps = {
 }
 //for displaying each artifact build
 export default function BuildDisplayItem({ index, compareBuild, extraButtons, disabled }: BuildDisplayItemProps) {
+  const { character: { key: characterKey, equippedArtifacts } } = useContext(CharacterContext)
+  const { buildSetting: { mainStatAssumptionLevel } } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
   const dataContext = useContext(DataContext)
 
-  const { character, data, oldData, mainStatAssumptionLevel } = dataContext
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const { data, oldData } = dataContext
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const [newOld, setNewOld] = useState(undefined as NewOld | undefined)
   const close = useCallback(() => setNewOld(undefined), [setNewOld],)
 
   const equipBuild = useCallback(() => {
     if (!window.confirm("Do you want to equip this build to this character?")) return
     const newBuild = Object.fromEntries(allSlotKeys.map(s => [s, data.get(input.art[s].id).value])) as Record<SlotKey, string>
-    database.equipArtifacts(character.key, newBuild)
-    database.setWeaponLocation(data.get(input.weapon.id).value!, character.key)
-  }, [character, data, database])
-  if (!character || !artifactSheets || !oldData) return null
+    database.equipArtifacts(characterKey, newBuild)
+    database.setWeaponLocation(data.get(input.weapon.id).value!, characterKey)
+  }, [characterKey, data, database])
+
+  const statProviderContext = useMemo(() => {
+    const dataContext_ = { ...dataContext }
+    if (!compareBuild) dataContext_.oldData = undefined
+    return dataContext_
+  }, [dataContext, compareBuild])
+
+  if (!artifactSheets || !oldData) return null
   const currentlyEquipped = allSlotKeys.every(slotKey => data.get(input.art[slotKey].id).value === oldData.get(input.art[slotKey].id).value) && data.get(input.weapon.id).value === oldData.get(input.weapon.id).value
-  const statProviderContext = { ...dataContext }
-  if (!compareBuild) statProviderContext.oldData = undefined
+
   const setToSlots: Partial<Record<ArtifactSetKey, SlotKey[]>> = {}
   allSlotKeys.forEach(slotKey => {
     const set = data.get(input.art[slotKey].set).value as ArtifactSetKey | undefined
@@ -80,7 +90,7 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
           {allSlotKeys.map(slotKey =>
             <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >
               <ArtifactCardNano showLocation slotKey={slotKey} artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} onClick={() => {
-                const oldId = character.equippedArtifacts[slotKey]
+                const oldId = equippedArtifacts[slotKey]
                 const newId = data.get(input.art[slotKey].id).value!
                 setNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
               }} />

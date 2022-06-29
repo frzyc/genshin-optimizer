@@ -49,7 +49,7 @@ export async function getDisplayHeader(data: UIData, sectionKey: string): Promis
       const asc = data.get(input.weapon.asc).value
       return {
         title: sheet.name,
-        icon: asc < 2 ? sheet.img : sheet.imgAwaken
+        icon: sheet.getImg(asc)
       }
     }
   } else {

@@ -48,7 +48,7 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
   const [elementalFilter, setelementalFilter] = useState([...allElements])
   const [weaponFilter, setweaponFilter] = useState([...allWeaponTypeKeys])
 
-  const characterSheets = usePromise(CharacterSheet.getAll, [])
+  const characterSheets = usePromise(() => CharacterSheet.getAll, [])
 
   const [favesDirty, setFavesDirty] = useForceUpdate()
   useEffect(() => database.followAnyChar(setFavesDirty), [database, setFavesDirty])

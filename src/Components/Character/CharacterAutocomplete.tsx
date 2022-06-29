@@ -37,7 +37,7 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
   const { t } = useTranslation(["ui", "artifact", "charNames_gen"])
   const theme = useTheme()
   const { database } = useContext(DatabaseContext)
-  const characterSheets = usePromise(CharacterSheet.getAll, [])
+  const characterSheets = usePromise(() => CharacterSheet.getAll, [])
   const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
   const characterKeys = database._getCharKeys().filter(ck => characterSheets?.[ck] && filter(characterSheets[ck], ck)).sort()
 

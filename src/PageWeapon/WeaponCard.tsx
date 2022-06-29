@@ -29,7 +29,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
   const { database } = useContext(DatabaseContext)
   const databaseWeapon = useWeapon(weaponId)
   const weapon = databaseWeapon
-  const weaponSheet = usePromise(weapon?.key ? WeaponSheet.get(weapon.key) : undefined, [weapon?.key])
+  const weaponSheet = usePromise(() => weapon?.key ? WeaponSheet.get(weapon.key) : undefined, [weapon?.key])
 
   const filter = useCallback(
     (cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType,
@@ -47,7 +47,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
   const { level, ascension, refinement, id, location = "", lock } = weapon
   const weaponTypeKey = UIData.get(input.weapon.type).value!
   const stats = [input.weapon.main, input.weapon.sub, input.weapon.sub2].map(x => UIData.get(x))
-  const img = ascension < 2 ? weaponSheet?.img : weaponSheet?.imgAwaken
+  const img = weaponSheet.getImg(ascension)
 
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 300 }} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
@@ -91,7 +91,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
         {canEquip
           ? <CharacterAutocomplete size="small" sx={{ flexGrow: 1 }} disable={(v: any) => v === ""}
             showDefault defaultIcon={<BusinessCenter />} defaultText={t("ui:inventory")}
-            value={location} onChange={equipOnChar} filter={filter} disableClearable/>
+            value={location} onChange={equipOnChar} filter={filter} disableClearable />
           : <LocationName location={location} />}
         <ButtonGroup>
           {!!onEdit && <Tooltip title={<Typography>{t`page_weapon:edit`}</Typography>} placement="top" arrow>

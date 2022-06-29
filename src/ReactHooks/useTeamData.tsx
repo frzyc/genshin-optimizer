@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo } from "react";
+import { useContext, useDeferredValue, useEffect } from "react";
 import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { resonanceData } from "../Data/Resonance";
@@ -17,7 +17,6 @@ import useForceUpdate from "./useForceUpdate";
 import usePromise from "./usePromise";
 
 type TeamDataBundle = {
-  team: CharacterKey[],
   teamData: Dict<CharacterKey, Data[]>
   teamBundle: Dict<CharacterKey, CharBundle>
 }
@@ -25,10 +24,8 @@ type TeamDataBundle = {
 export default function useTeamData(characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[], overrideWeapon?: ICachedWeapon): TeamData | undefined {
   const { database } = useContext(DatabaseContext)
   const [dbDirty, setDbDirty] = useForceUpdate()
-  const teamDataBundle = usePromise(getTeamData(database, characterKey, mainStatAssumptionLevel, overrideArt, overrideWeapon), [dbDirty, characterKey, database, mainStatAssumptionLevel, overrideArt, overrideWeapon])
-
-  const { team = [], teamData, teamBundle } = teamDataBundle ?? {}
-
+  const dbDirtyDeferred = useDeferredValue(dbDirty)
+  const data = usePromise(() => getTeamDataCalc(database, characterKey, mainStatAssumptionLevel, overrideArt, overrideWeapon), [dbDirtyDeferred, characterKey, database, mainStatAssumptionLevel, overrideArt, overrideWeapon]) ?? {}
   useEffect(() =>
     characterKey ? database.followChar(characterKey, setDbDirty) : undefined,
     [characterKey, setDbDirty, database])
@@ -37,7 +34,7 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
     characterKey ? database.followAnyArt(setDbDirty) : undefined,
     [characterKey, setDbDirty, database])
 
-  const [t1, t2, t3, t4] = team
+  const [t1, t2, t3, t4] = Object.keys(data)
   useEffect(() =>
     t1 ? database.followChar(t1, setDbDirty) : undefined,
     [t1, setDbDirty, database])
@@ -51,17 +48,28 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
     t4 ? database.followChar(t4, setDbDirty) : undefined,
     [t4, setDbDirty, database])
 
-  const calcData = useMemo(() => {
-    return teamData && uiDataForTeam(teamData, characterKey as CharacterKey)
-  }, [teamData, characterKey])
-  const data = useMemo(() => {
-    if (!calcData || !teamBundle) return
-    return objectMap(calcData, (obj, ck) => {
-      const { data: _, ...rest } = teamBundle[ck]!
-      return { ...obj, ...rest }
-    })
-  }, [calcData, teamBundle])
+  return data
+}
 
+async function getTeamDataCalc(database: ArtCharDatabase, characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[], overrideWeapon?: ICachedWeapon):
+  Promise<TeamData | undefined> {
+  if (!characterKey) return
+
+  // Retrive from cache
+  if (!mainStatAssumptionLevel && !overrideArt && !overrideWeapon) {
+    const cache = database._getTeamData(characterKey)
+    if (cache) return cache
+  }
+  const { teamData, teamBundle } = (await getTeamData(database, characterKey, mainStatAssumptionLevel, overrideArt, overrideWeapon)) ?? {}
+  if (!teamData || !teamBundle) return
+
+  const calcData = uiDataForTeam(teamData, characterKey as CharacterKey)
+
+  const data = objectMap(calcData, (obj, ck) => {
+    const { data: _, ...rest } = teamBundle[ck]!
+    return { ...obj, ...rest }
+  })
+  database.cacheTeamData(characterKey, data)
   return data
 }
 
@@ -70,7 +78,6 @@ export async function getTeamData(database: ArtCharDatabase, characterKey: Chara
   if (!characterKey) return
   const char1DataBundle = await getCharDataBundle(database, characterKey, mainStatAssumptionLevel, overrideArt, overrideWeapon)
   if (!char1DataBundle) return
-  const team: CharacterKey[] = [characterKey]
   const teamBundle = { [characterKey]: char1DataBundle }
   const teamData: Dict<CharacterKey, Data[]> = { [characterKey]: char1DataBundle.data }
 
@@ -78,12 +85,11 @@ export async function getTeamData(database: ArtCharDatabase, characterKey: Chara
     if (!ck) return
     const databundle = await getCharDataBundle(database, ck)
     if (!databundle) return
-    team.push(ck)
     teamBundle[ck] = databundle
     teamData[ck] = databundle.data
   }))
 
-  return { team, teamData, teamBundle }
+  return { teamData, teamBundle }
 }
 type CharBundle = {
   character: ICachedCharacter,

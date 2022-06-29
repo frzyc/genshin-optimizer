@@ -15,6 +15,7 @@ import WeaponToggle from "../ToggleButton/WeaponToggle"
 
 type WeaponSelectionModalProps = {
   show: boolean,
+  ascension?: number,
   onHide: () => void,
   onSelect: (wKey: WeaponKey) => void,
   filter?: (sheet: WeaponSheet) => boolean,
@@ -23,7 +24,7 @@ type WeaponSelectionModalProps = {
 
 export default function WeaponSelectionModal({ show, onHide, onSelect, filter = () => true, weaponFilter: propWeaponFilter }: WeaponSelectionModalProps) {
   const { t } = useTranslation(["page_weapon", "weaponNames_gen"])
-  const weaponSheets = usePromise(WeaponSheet.getAll, [])
+  const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
   const [weaponFilter, setWeaponfilter] = useState<WeaponTypeKey[]>(propWeaponFilter ? [propWeaponFilter] : [...allWeaponTypeKeys])
 
   useEffect(() => propWeaponFilter && setWeaponfilter([propWeaponFilter]), [propWeaponFilter])
@@ -70,7 +71,7 @@ export default function WeaponSelectionModal({ show, onHide, onSelect, filter = 
           return <Grid item key={weaponKey} lg={3} md={4}>
             <CardLight sx={{ height: "100%" }} >
               <CardActionArea onClick={() => { onHide(); onSelect(weaponKey) }} sx={{ display: "flex" }}>
-                <Box component="img" src={weaponSheet.img} sx={{ width: 100, height: "auto" }} className={` grad-${weaponSheet.rarity}star`} />
+                <Box component="img" src={weaponSheet.getImg(ascension)} sx={{ width: 100, height: "auto" }} className={` grad-${weaponSheet.rarity}star`} />
                 <Box sx={{ flexGrow: 1, px: 1 }}>
                   <Typography variant="subtitle1">{weaponSheet.name}</Typography>
                   <Typography><ImgIcon src={Assets.weaponTypes?.[weaponSheet.weaponType]} /> <Stars stars={weaponSheet.rarity} colored /></Typography>

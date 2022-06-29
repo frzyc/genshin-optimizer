@@ -78,7 +78,7 @@ type ArtifactSetMultiAutocompleteProps = Omit<AutocompleteProps<ArtifactMultiAut
   setArtSetKeys: (keys: ArtifactSetKey[]) => void
 }
 export function ArtifactSetMultiAutocomplete({ artSetKeys, setArtSetKeys, ...props }: ArtifactSetMultiAutocompleteProps) {
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const { t } = useTranslation(["artifact", "artifactNames_gen"])
   if (!artifactSheets) return null
 
@@ -208,7 +208,7 @@ type ArtifactSetSingleAutocompleteProps = Omit<AutocompleteProps<ArtifactSingleA
   defaultIcon?: Displayable
 }
 export function ArtifactSetSingleAutocomplete({ artSetKey, setArtSetKey, label = "", ...props }: ArtifactSetSingleAutocompleteProps) {
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const { t } = useTranslation(["artifact", "artifactNames_gen"])
   label = label ? label : t("artifact:autocompleteLabels.set")
   if (!artifactSheets) return null

@@ -2,6 +2,7 @@ import { Add, CheckBox, CheckBoxOutlineBlank, Close, KeyboardArrowDown, Keyboard
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Typography } from "@mui/material";
 import { useCallback, useContext, useMemo } from "react";
 import { Trans, useTranslation } from "react-i18next";
+import { CharacterContext } from "../../../../../CharacterContext";
 import ArtifactCardPico from "../../../../../Components/Artifact/ArtifactCardPico";
 import CardDark from "../../../../../Components/Card/CardDark";
 import CardLight from "../../../../../Components/Card/CardLight";
@@ -13,7 +14,6 @@ import ModalWrapper from "../../../../../Components/ModalWrapper";
 import SqBadge from "../../../../../Components/SqBadge";
 import WeaponCardPico from "../../../../../Components/Weapon/WeaponCardPico";
 import { DatabaseContext } from "../../../../../Database/Database";
-import { DataContext } from "../../../../../DataContext";
 import useBoolState from "../../../../../ReactHooks/useBoolState";
 import useCharacter from "../../../../../ReactHooks/useCharacter";
 import useCharSelectionCallback from "../../../../../ReactHooks/useCharSelectionCallback";
@@ -24,7 +24,7 @@ import { useOptimizeDBState } from "../DBState";
 
 export default function UseEquipped({ disabled = false }: { disabled?: boolean }) {
   const { t } = useTranslation("page_character")
-  const { character: { key: characterKey } } = useContext(DataContext)
+  const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { useEquippedArts }, buildSettingDispatch } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState(false)

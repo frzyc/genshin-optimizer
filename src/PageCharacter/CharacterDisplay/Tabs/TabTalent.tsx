@@ -1,6 +1,7 @@
 import { Box, CardActionArea, CardContent, Grid, MenuItem, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
 import React, { useCallback, useContext, useMemo } from 'react';
+import { CharacterContext } from "../../../CharacterContext";
 import CardDark from "../../../Components/Card/CardDark";
 import CardLight from "../../../Components/Card/CardLight";
 import ConditionalWrapper from "../../../Components/ConditionalWrapper";
@@ -24,7 +25,8 @@ const talentSpacing = {
 }
 
 export default function CharacterTalentPane() {
-  const { data, character, characterSheet } = useContext(DataContext)
+  const { character, characterSheet } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(character.key)
   const skillBurstList = [["auto", "Normal/Charged Attack"], ["skill", "Elemental Skill"], ["burst", "Elemental Burst"]] as [TalentSheetElementKey, string][]
   const passivesList: [tKey: TalentSheetElementKey, tText: string, asc: number][] = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
@@ -116,7 +118,8 @@ type SkillDisplayCardProps = {
   onClickTitle?: (any) => any
 }
 function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCardProps) {
-  const { data, character: { talent }, characterSheet, characterDispatch } = useContext(DataContext)
+  const { character: { talent }, characterSheet, characterDispatch } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
 
   const actionWrapeprFunc = useCallback(
     children => <CardActionArea onClick={onClickTitle}>{children}</CardActionArea>,

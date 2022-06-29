@@ -4,6 +4,7 @@ import { CheckBoxOutlineBlank, CheckBox, Replay, Settings } from '@mui/icons-mat
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Typography } from '@mui/material';
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { CharacterContext } from '../../../../../CharacterContext';
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay';
 import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
 import CardDark from '../../../../../Components/Card/CardDark';
@@ -30,12 +31,12 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   const { t } = useTranslation(["page_character", "sheet"])
   const dataContext = useContext(DataContext)
   const { database } = useContext(DatabaseContext)
-  const { character: { key: characterKey, conditional }, characterDispatch } = dataContext
+  const { character: { key: characterKey, conditional }, characterDispatch } = useContext(CharacterContext)
   const { buildSetting: { artSetExclusion }, buildSettingDispatch } = useBuildSetting(characterKey)
   const [open, setOpen] = useState(false)
   const onOpen = useCallback(() => setOpen(true), [setOpen])
   const onClose = useCallback(() => setOpen(false), [setOpen])
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const artSetKeyList = useMemo(() => artifactSheets ? Object.entries(ArtifactSheet.setKeysByRarities(artifactSheets)).reverse().flatMap(([, sets]) => sets).filter(key => !key.includes("Prayers")) : [], [artifactSheets])
 
   const [dbDirty, forceUpdate] = useForceUpdate()
@@ -163,7 +164,7 @@ function AllSetAllowExcludeCard({ numAllow, numExclude, setNum, setAllExclusion 
 }
 function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { setKey: ArtifactSetKey, sheet: ArtifactSheet, fakeDataContextObj: dataContextObj, slotCount: Record<SlotKey, number> }) {
   const { t } = useTranslation("sheet")
-  const { character: { key: characterKey } } = useContext(DataContext)
+  const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
   const setExclusionSet = buildSetting?.artSetExclusion?.[setKey] ?? []
   const allow4 = !setExclusionSet.includes(4)
@@ -171,9 +172,9 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
 
   /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
   const set4CondNums = useMemo(() => {
-    if (!allow4) return []
+    if (!allow4 || slots < 4) return []
     return Object.keys(sheet.setEffects).filter(setNumKey => sheet.setEffects[setNumKey]?.document.some(doc => "states" in doc))
-  }, [sheet.setEffects, allow4])
+  }, [sheet.setEffects, allow4, slots])
   const exclude2 = setExclusionSet.includes(2)
   const exclude4 = setExclusionSet.includes(4)
   if (slots < 2) return null

@@ -32,7 +32,8 @@ type Data = {
   artifactId?: string,
   artifactObj?: ICachedArtifact,
   onClick?: (id: string) => void,
-  onDelete?: (id: string) => void, mainStatAssumptionLevel?: number,
+  onDelete?: (id: string) => void,
+  mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
   probabilityFilter?: Dict<SubstatKey, number>
   disableEditSetSlot?: boolean
@@ -47,7 +48,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
-  const sheet = usePromise(ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
+  const sheet = usePromise(() => ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
   const equipOnChar = (charKey: CharacterKey | "") => database.setArtLocation(artifactId!, charKey)
   const editable = !artifactObj
   const [showEditor, setshowEditor] = useState(false)

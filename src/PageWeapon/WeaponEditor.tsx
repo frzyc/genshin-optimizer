@@ -44,7 +44,7 @@ export default function WeaponEditor({
   const { database } = useContext(DatabaseContext)
   const weapon = useWeapon(propWeaponId)
   const { key = "", level = 0, refinement = 0, ascension = 0, lock, location = "", id } = weapon ?? {}
-  const weaponSheet = usePromise(WeaponSheet.get(key), [key])
+  const weaponSheet = usePromise(() => WeaponSheet.get(key), [key])
 
   const weaponDispatch = useCallback((newWeapon: Partial<ICachedWeapon>) => {
     database.updateWeapon(newWeapon, propWeaponId)
@@ -62,7 +62,7 @@ export default function WeaponEditor({
     else weaponDispatch({ ascension: lowerAscension })
   }, [weaponDispatch, ascension, level])
 
-  const characterSheet = usePromise(location ? CharacterSheet.get(location) : undefined, [location])
+  const characterSheet = usePromise(() => location ? CharacterSheet.get(location) : undefined, [location])
   const weaponFilter = characterSheet ? (ws) => ws.weaponType === characterSheet.weaponTypeKey : undefined
   const initialWeaponFilter = characterSheet && characterSheet.weaponTypeKey
 
@@ -73,7 +73,7 @@ export default function WeaponEditor({
   )
 
   const [showModal, setshowModal] = useState(false)
-  const img = ascension < 2 ? weaponSheet?.img : weaponSheet?.imgAwaken
+  const img = weaponSheet?.getImg(ascension)
 
   //check the levels when switching from a 5* to a 1*, for example.
   useEffect(() => {
@@ -87,7 +87,7 @@ export default function WeaponEditor({
 
   const weaponUIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   return <ModalWrapper open={!!propWeaponId} onClose={onClose} containerProps={{ maxWidth: "md" }}><CardLight>
-    <WeaponSelectionModal show={showModal} onHide={() => setshowModal(false)} onSelect={k => weaponDispatch({ key: k })} filter={weaponFilter} weaponFilter={initialWeaponFilter} />
+    <WeaponSelectionModal ascension={ascension} show={showModal} onHide={() => setshowModal(false)} onSelect={k => weaponDispatch({ key: k })} filter={weaponFilter} weaponFilter={initialWeaponFilter} />
     <CardContent >
       {weaponSheet && weaponUIData && <Grid container spacing={1.5}>
         <Grid item xs={12} sm={3}>

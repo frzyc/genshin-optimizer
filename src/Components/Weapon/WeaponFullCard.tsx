@@ -15,7 +15,7 @@ import StatIcon from '../StatIcon';
 export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const { database } = useContext(DatabaseContext)
   const weapon = database._getWeapon(weaponId)
-  const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
+  const weaponSheet = usePromise(() => weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
   return <CardDark>
@@ -23,7 +23,7 @@ export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
       <Box flexShrink={1} maxWidth="35%" display="flex" flexDirection="column" alignContent="flex-end" className={`grad-${weaponSheet.rarity}star`} >
         <Box
           component="img"
-          src={weaponSheet.img}
+          src={weaponSheet.getImg(weapon.ascension)}
           width="100%"
           height="auto"
           sx={{ mt: "auto" }}

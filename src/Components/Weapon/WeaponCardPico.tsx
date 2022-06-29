@@ -15,7 +15,7 @@ import WeaponNameTooltip from './WeaponNameTooltip';
 export default function WeaponCardPico({ weaponId }: { weaponId: string }) {
   const { database } = useContext(DatabaseContext)
   const weapon = database._getWeapon(weaponId)
-  const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
+  const weaponSheet = usePromise(() => weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
 
@@ -29,7 +29,7 @@ export default function WeaponCardPico({ weaponId }: { weaponId: string }) {
       <WeaponNameTooltip sheet={weaponSheet} addlText={tooltipAddl}>
         <Box
           component="img"
-          src={weaponSheet.img}
+          src={weaponSheet.getImg(weapon.ascension)}
           maxWidth="100%"
           maxHeight="100%"
           sx={{ mt: "auto" }}
