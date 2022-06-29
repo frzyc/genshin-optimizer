@@ -25,7 +25,7 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
   const { database } = useContext(DatabaseContext)
   const [dbDirty, setDbDirty] = useForceUpdate()
   const dbDirtyDeferred = useDeferredValue(dbDirty)
-  const data = usePromise(() => getTeamDataCalc(database, characterKey, mainStatAssumptionLevel, overrideArt, overrideWeapon), [dbDirtyDeferred, characterKey, database, mainStatAssumptionLevel, overrideArt, overrideWeapon]) ?? {}
+  const data = usePromise(() => getTeamDataCalc(database, characterKey, mainStatAssumptionLevel, overrideArt, overrideWeapon), [dbDirtyDeferred, characterKey, database, mainStatAssumptionLevel, overrideArt, overrideWeapon])
   useEffect(() =>
     characterKey ? database.followChar(characterKey, setDbDirty) : undefined,
     [characterKey, setDbDirty, database])
@@ -34,7 +34,7 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
     characterKey ? database.followAnyArt(setDbDirty) : undefined,
     [characterKey, setDbDirty, database])
 
-  const [t1, t2, t3, t4] = Object.keys(data)
+  const [t1, t2, t3, t4] = Object.keys(data ?? {})
   useEffect(() =>
     t1 ? database.followChar(t1, setDbDirty) : undefined,
     [t1, setDbDirty, database])
@@ -69,7 +69,8 @@ async function getTeamDataCalc(database: ArtCharDatabase, characterKey: Characte
     const { data: _, ...rest } = teamBundle[ck]!
     return { ...obj, ...rest }
   })
-  database.cacheTeamData(characterKey, data)
+  if (!mainStatAssumptionLevel && !overrideArt && !overrideWeapon)
+    database.cacheTeamData(characterKey, data)
   return data
 }
 
