@@ -139,7 +139,6 @@ export default function TabUpopt() {
       return { value: input.total[key], minimum: value }
     }).filter(x => x.value && x.minimum > -Infinity)
 
-    console.log(mainStatKeys)
     const queryArts: QueryArtifact[] = database._getArts()
       .filter(art => art.rarity === 5)
       .filter(art => show20 || art.level !== 20)
@@ -155,8 +154,6 @@ export default function TabUpopt() {
     }))
     let qaLookup: Dict<string, QueryArtifact> = {};
     queryArts.forEach(art => qaLookup[art.id] = art)
-
-    console.log({ equippedArts })
 
     let nodes = [optimizationTargetNode, ...valueFilter.map(x => x.value)]
     nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");

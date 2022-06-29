@@ -158,6 +158,8 @@ private:
   // DOI: 10.1080/10618600.2017.1322092
   double computeDkj(const std::vector<double> &mmu, const std::vector<double> &correl, int j)
   {
+    if (dim == 1)
+      return phi1(mmu[j], 1);
     std::vector<double> mu_tilde;
     std::vector<double> correl_tilde;
     std::vector<double> std_tilde;
@@ -254,61 +256,70 @@ int main(int argc, char **argv)
   //   std::cout << mvn.getMoment(i) << ", ";
   // std::cout << "]\n";
 
-  MVNHandle mvn(2);
+  // MVNHandle mvn(2);
   // double x[] = {0, 0};
   // double mu[] = {1, 1};
   // double cov[] = {1, 1, 1, 1};
-  double mu[] = {31954.805004473237, 2556.4394303978797};
-  double x[] = {31777.245955648243, 3000};
-  double cov[] = {26088.171042120885, 0, 0, 0};
+  // double mu[] = {31954.805004473237, 2556.4394303978797};
+  // double x[] = {31777.245955648243, 3000};
+  // double cov[] = {26088.171042120885, 0, 0, 0};
 
-  for (double d : mu)
-    mvn.pushMu(d);
-  for (double d : x)
-    mvn.pushX(d);
-  for (double d : cov)
-    mvn.pushCov(d);
+  // for (double d : mu)
+  //   mvn.pushMu(d);
+  // for (double d : x)
+  //   mvn.pushX(d);
+  // for (double d : cov)
+  //   mvn.pushCov(d);
 
-  mvn.compute();
+  // mvn.compute();
 
-  double eup = mvn.getEUp();
-  std::cout << mvn.getValue() << ", " << eup << "\n";
-  std::cout << mvn.getPEUp() << " vs " << mvn.getValue() * eup << "\n";
+  // double eup = mvn.getEUp();
+  // std::cout << mvn.getValue() << ", " << eup << "\n";
+  // std::cout << mvn.getPEUp() << " vs " << mvn.getValue() * eup << "\n";
 
-  MVNHandle mvn2(2);
-  double mu2[] = {3646.497, 1.8845};
-  double x2[] = {3334.86, 1.8};
-  double cov2[] = {0, 0, 0, 0};
-  for (double d : mu2)
-    mvn2.pushMu(d);
-  for (double d : x2)
-    mvn2.pushX(d);
-  for (double d : cov2)
-    mvn2.pushCov(d);
+  // MVNHandle mvn2(2);
+  // double mu2[] = {3646.497, 1.8845};
+  // double x2[] = {3334.86, 1.8};
+  // double cov2[] = {0, 0, 0, 0};
+  // for (double d : mu2)
+  //   mvn2.pushMu(d);
+  // for (double d : x2)
+  //   mvn2.pushX(d);
+  // for (double d : cov2)
+  //   mvn2.pushCov(d);
 
-  mvn2.compute();
-  double eup2 = mvn2.getEUp();
-  std::cout << mvn2.getValue() << ", " << eup2 << "\n";
-  std::cout << mvn2.getPEUp() << " vs " << mvn2.getValue() * eup2 << "\n";
+  // mvn2.compute();
+  // double eup2 = mvn2.getEUp();
+  // std::cout << mvn2.getValue() << ", " << eup2 << "\n";
+  // std::cout << mvn2.getPEUp() << " vs " << mvn2.getValue() * eup2 << "\n";
 
-  MVNHandle mvn3(3);
-  double mu3[] = {17138.664897515624, 1.90998, 65.27};
-  double x3[] = {16320.574836804108, 1.5, 60};
-  double cov3[] = {204.08784901630685, 0.09257283843187661, 0,
-                   0.09257283843187661, 0.0000419904, 0,
-                   0, 0, 0};
-  for (double d : mu3)
-    mvn3.pushMu(d);
-  for (double d : x3)
-    mvn3.pushX(d);
-  for (double d : cov3)
-    mvn3.pushCov(d);
+  // MVNHandle mvn3(3);
+  // double mu3[] = {17138.664897515624, 1.90998, 65.27};
+  // double x3[] = {16320.574836804108, 1.5, 60};
+  // double cov3[] = {204.08784901630685, 0.09257283843187661, 0,
+  //                  0.09257283843187661, 0.0000419904, 0,
+  //                  0, 0, 0};
+  // for (double d : mu3)
+  //   mvn3.pushMu(d);
+  // for (double d : x3)
+  //   mvn3.pushX(d);
+  // for (double d : cov3)
+  //   mvn3.pushCov(d);
 
-  mvn3.compute();
+  // mvn3.compute();
 
-  std::cout << "eup failing?\n";
-  double eup3 = mvn3.getEUp();
-  std::cout << mvn3.getValue() << ", " << eup3 << "\n";
-  std::cout << mvn3.getPEUp() << " vs " << mvn3.getValue() * eup3 << "\n";
-}
+  // std::cout << "eup failing?\n";
+  // double eup3 = mvn3.getEUp();
+  // std::cout << mvn3.getValue() << ", " << eup3 << "\n";
+  // std::cout << mvn3.getPEUp() << " vs " << mvn3.getValue() * eup3 << "\n";
+
+  MVNHandle ng(1); // negative value debug
+  ng.pushX(277279.15757776);
+  ng.pushMu(274849.23454438325);
+  ng.pushCov(530831.8330317889);
+
+  ng.compute();
+  std::cout << "p: " << ng.getValue() << ", Eup: " << ng.getEUp() << std::endl;
+  std::cout << "PEup: " << ng.getPEUp() << " vs p * Eup: " << ng.getValue() * ng.getEUp() << std::endl;
+};
 #endif
