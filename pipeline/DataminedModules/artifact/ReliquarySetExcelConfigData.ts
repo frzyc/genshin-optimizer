@@ -6,7 +6,7 @@ type ReliquarySetExcelConfigData = {
   //   2,
   //   4
   // ],
-  "equipAffixId": number//215008,
+  "EquipAffixId": number//215008,
   "containsList": number[]
   // [
   //   82340,

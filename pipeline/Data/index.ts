@@ -6,6 +6,7 @@ export const mapHashData = {
   weapon: {}, // will be populated from datamine parsing pipeline
   weaponNames: {}, // will be populated from datamine parsing pipeline
   artifact: {}, // will be populated from datamine parsing pipeline
+  artifactNames: {}, // will be populated from datamine parsing pipeline
   material: {}, // will be populated from datamine parsing pipeline
   sheet,
   weaponKey: {
