@@ -54,7 +54,11 @@ function collapseAffine(a: ArtifactsBySlot, nodes: NumNode[]) {
     switch (n.operation) {
       case 'threshold':
         let [branch, bval, ge, lt] = n.operands
-        return cmp(branch, bval, foldProd([ge, constant(v)]), foldProd([lt, constant(v)]), { source: (branch as ReadNode<number>).path[1] as ArtifactSetKey })
+        if (branch.operation === 'read') {
+          return cmp(branch, bval, foldProd([ge, constant(v)]), foldProd([lt, constant(v)]), { source: branch.path[1] as ArtifactSetKey })
+        }
+        console.log(n)
+        throw Error('branch is not read...?')
       case 'const':
         return constant(v * n.value)
       case 'add':
@@ -216,16 +220,35 @@ export function elimLinDepStats(a: ArtifactsBySlot, nodes: NumNode[]) {
   return { a, nodes }
 }
 
-export function thresholdToConstBranches(nodes: NumNode[]) {
+export function thresholdToConstBranchForm(nodes: NumNode[]) {
   return mapFormulas(nodes, n => n, n => {
     switch (n.operation) {
       case "threshold":
         const [branch, bval, ge, lt] = n.operands
+        if (branch.operation === 'threshold' && bval.operation === 'const') {
+          // Reserved for non-stacking buffs
+          const [br2, bv2, ge2, lt2] = branch.operands
+          if (br2.operation === 'read' && bv2.operation === 'const' && ge2.operation === 'const' && lt2.operation === 'const') {
+            let left = ge2.value >= bval.value ? ge : lt
+            let right = lt2.value >= bval.value ? ge : lt
+
+            console.log('non-stacking buff', n, cmp(br2, bv2, left, right))
+            return cmp(br2, bv2, left, right)
+          }
+          console.log('faulty node:', n)
+          throw Error('Not Implemented: nested threshold must follow the form [read, const, const, const]')
+        }
         if (ge.operation !== 'const' || lt.operation !== 'const') {
           if (lt.operation === 'const' && lt.value === 0) {
             return prod(cmp(branch, bval, 1, 0), ge)
           }
+          console.log('faulty node:', n)
           throw Error('Not Implemented: threshold() node with non-constant `pass` AND non-zero `fail`')
+        }
+
+        if (branch.operation !== 'read') {
+          console.log('faulty node:', n)
+          throw Error('Not Implemented: threshold() node with non-read `branch`')
         }
         return n
       default:
