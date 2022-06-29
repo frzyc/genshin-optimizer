@@ -22,7 +22,7 @@ type WeaponSelectionModalProps = {
   weaponFilter?: WeaponTypeKey,
 }
 
-export default function WeaponSelectionModal({ show, onHide, onSelect, filter = () => true, weaponFilter: propWeaponFilter }: WeaponSelectionModalProps) {
+export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSelect, filter = () => true, weaponFilter: propWeaponFilter }: WeaponSelectionModalProps) {
   const { t } = useTranslation(["page_weapon", "weaponNames_gen"])
   const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
   const [weaponFilter, setWeaponfilter] = useState<WeaponTypeKey[]>(propWeaponFilter ? [propWeaponFilter] : [...allWeaponTypeKeys])
