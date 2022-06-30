@@ -1,9 +1,10 @@
-import { Box, CardActionArea, CardContent, Divider, Grid, Typography } from "@mui/material"
-import { useEffect, useState } from "react"
+import { Box, CardActionArea, CardContent, Divider, Grid, TextField, Typography } from "@mui/material"
+import { ChangeEvent, useDeferredValue, useEffect, useState } from "react"
+import { useTranslation } from "react-i18next"
 import Assets from "../../Assets/Assets"
+import WeaponSheet from "../../Data/Weapons/WeaponSheet"
 import usePromise from "../../ReactHooks/usePromise"
 import { allWeaponKeys, allWeaponTypeKeys, WeaponKey, WeaponTypeKey } from "../../Types/consts"
-import WeaponSheet from "../../Data/Weapons/WeaponSheet"
 import CardDark from "../Card/CardDark"
 import CardLight from "../Card/CardLight"
 import CloseButton from "../CloseButton"
@@ -22,13 +23,18 @@ type WeaponSelectionModalProps = {
 }
 
 export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSelect, filter = () => true, weaponFilter: propWeaponFilter }: WeaponSelectionModalProps) {
+  const { t } = useTranslation(["page_weapon", "weaponNames_gen"])
   const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
   const [weaponFilter, setWeaponfilter] = useState<WeaponTypeKey[]>(propWeaponFilter ? [propWeaponFilter] : [...allWeaponTypeKeys])
 
   useEffect(() => propWeaponFilter && setWeaponfilter([propWeaponFilter]), [propWeaponFilter])
 
-  const weaponIdList = !weaponSheets ? [] : [...new Set(allWeaponKeys)].filter(wKey => filter(weaponSheets[wKey]))
+  const [searchTerm, setSearchTerm] = useState("")
+  const deferredSearchTerm = useDeferredValue(searchTerm)
+
+  const weaponIdList = !weaponSheets ? [] : allWeaponKeys.filter(wKey => filter(weaponSheets[wKey]))
     .filter(wKey => weaponFilter.includes(weaponSheets?.[wKey]?.weaponType))
+    .filter(wKey => !deferredSearchTerm || t(`weaponNames_gen:${wKey}`).toLowerCase().includes(deferredSearchTerm.toLowerCase()))
     .sort((a, b) => (weaponSheets?.[b]?.rarity ?? 0) - (weaponSheets?.[a]?.rarity ?? 0))
 
   if (!weaponSheets) return null
@@ -36,10 +42,23 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
   return <ModalWrapper open={show} onClose={onHide}>
     <CardDark>
       <CardContent sx={{ py: 1 }}>
-        <Grid container>
-          <Grid item flexGrow={1}>
+        <Grid container spacing={1}>
+          <Grid item>
             <WeaponToggle value={weaponFilter} onChange={setWeaponfilter} disabled={!!propWeaponFilter} size="small" />
           </Grid >
+          <Grid item flexGrow={1}>
+            <TextField
+              autoFocus
+              size="small"
+              value={searchTerm}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
+              label={t("weaponName")}
+              sx={{ height: "100%" }}
+              InputProps={{
+                sx: { height: "100%" }
+              }}
+            />
+          </Grid>
           <Grid item>
             <CloseButton onClick={onHide} />
           </Grid >

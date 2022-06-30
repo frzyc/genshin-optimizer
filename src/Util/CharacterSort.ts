@@ -13,8 +13,7 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
       tieBreaker: "name"
     },
     name: {
-      // TODO: #412 - Enforce that the character names are loaded: getValue: (ck) => i18n.t(`char_${ck}_gen:name`).toString(),
-      getValue: (ck) => ck
+      getValue: (ck) => i18n.t(`charNames_gen"${ck}`).toString(),
     },
     level: {
       getValue: (ck) => {
@@ -40,6 +39,6 @@ export function characterFilterConfigs(database: ArtCharDatabase, characterSheet
     weaponType: (ck, filter) => filter.includes(characterSheets?.[ck]?.weaponTypeKey),
     favorite: (ck, filter) =>
       !filter || (filter === (database._getChar(ck as CharacterKey)?.favorite ? "yes" : "no")),
-    name: (ck, filter) => !filter || (i18n.t(`char_${ck}_gen:name`).toLowerCase().includes(filter.toLowerCase()))
+    name: (ck, filter) => !filter || (i18n.t(`charNames_gen:${ck}`).toLowerCase().includes(filter.toLowerCase()))
   }
 }

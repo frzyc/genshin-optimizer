@@ -1,8 +1,7 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Box, Button, CardContent, Grid, Pagination, Skeleton, ToggleButton, Typography } from '@mui/material';
-import i18next from 'i18next';
-import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { Box, Button, CardContent, Grid, Pagination, Skeleton, TextField, ToggleButton, Typography } from '@mui/material';
+import React, { ChangeEvent, lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import CardDark from '../Components/Card/CardDark';
@@ -24,7 +23,7 @@ import { weaponFilterConfigs, weaponSortConfigs, weaponSortKeys } from '../Util/
 import { initialWeapon } from '../Util/WeaponUtil';
 import WeaponCard from './WeaponCard';
 
-//lazy load the weapon display
+// Lazy load the weapon display
 const WeaponEditor = lazy(() => import('./WeaponEditor'))
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
@@ -39,13 +38,13 @@ const initialState = () => ({
 })
 
 export default function PageWeapon() {
-  const { t } = useTranslation(["page_weapon", "ui"]);
+  const { t } = useTranslation(["page_weapon", "ui", "weaponNames_gen"])
   const { database } = useContext(DatabaseContext)
-  const [state, stateDisplatch] = useDBState("WeaponDisplay", initialState)
+  const [state, stateDispatch] = useDBState("WeaponDisplay", initialState)
   const [newWeaponModalShow, setnewWeaponModalShow] = useState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
   const invScrollRef = useRef<HTMLDivElement>(null)
-  const [pageIdex, setpageIdex] = useState(0)
+  const [pageIndex, setPageIndex] = useState(0)
   //set follow, should run only once
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: '/weapon' })
@@ -57,26 +56,29 @@ export default function PageWeapon() {
 
   const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
 
-  const deleteWeapon = useCallback(async (key) => {
+  const deleteWeapon = useCallback(async (key: string) => {
     const weapon = database._getWeapon(key)
     if (!weapon) return
-    const name = i18next.t(`weapon_${weapon.key}_gen:name`)
+    const name = t(`weaponNames_gen:${weapon.key}`)
 
-    if (!window.confirm(`Are you sure you want to remove ${name}?`)) return
+    if (!window.confirm(t("removeWeapon", { value: name }))) return
     database.removeWeapon(key)
     if (state.editWeaponId === key)
-      stateDisplatch({ editWeaponId: "" })
-  }, [state.editWeaponId, stateDisplatch, database])
+      stateDispatch({ editWeaponId: "" })
+  }, [state.editWeaponId, stateDispatch, database, t])
 
-  const editWeapon = useCallback(key => {
-    stateDisplatch({ editWeaponId: key })
-  }, [stateDisplatch])
+  const editWeapon = useCallback((key: string | undefined) => {
+    stateDispatch({ editWeaponId: key })
+  }, [stateDispatch])
 
   const newWeapon = useCallback(
     (weaponKey: WeaponKey) => {
       editWeapon(database.createWeapon(initialWeapon(weaponKey)))
     },
     [database, editWeapon])
+
+  const [searchTerm, setSearchTerm] = useState("")
+  const deferredSearchTerm = useDeferredValue(searchTerm)
 
   const { sortType, ascending, weaponType, rarity } = state
   const sortConfigs = useMemo(() => weaponSheets && weaponSortConfigs(weaponSheets), [weaponSheets])
@@ -85,28 +87,29 @@ export default function PageWeapon() {
     const weapons = database._getWeapons()
     const totalWeaponNum = weapons.length
     if (!sortConfigs || !filterConfigs) return { weaponIdList: [], totalWeaponNum }
-    const weaponIdList = weapons.filter(filterFunction({ weaponType, rarity }, filterConfigs))
-      .sort(sortFunction(sortType, ascending, sortConfigs)).map(weapon => weapon.id);
+    const weaponIdList = weapons.filter(filterFunction({ weaponType, rarity, name: deferredSearchTerm }, filterConfigs))
+      .sort(sortFunction(sortType, ascending, sortConfigs))
+      .map(weapon => weapon.id)
     return dbDirty && { weaponIdList, totalWeaponNum }
-  }, [dbDirty, database, sortConfigs, filterConfigs, sortType, ascending, rarity, weaponType])
+  }, [dbDirty, database, sortConfigs, filterConfigs, sortType, ascending, rarity, weaponType, deferredSearchTerm])
 
   const { weaponIdsToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(weaponIdList.length / maxNumToDisplay)
-    const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
+    const currentPageIndex = clamp(pageIndex, 0, numPages - 1)
     return { weaponIdsToShow: weaponIdList.slice(currentPageIndex * maxNumToDisplay, (currentPageIndex + 1) * maxNumToDisplay), numPages, currentPageIndex }
-  }, [weaponIdList, pageIdex, maxNumToDisplay])
+  }, [weaponIdList, pageIndex, maxNumToDisplay])
 
-  //for pagination
+  // Pagination
   const totalShowing = weaponIdList.length !== totalWeaponNum ? `${weaponIdList.length}/${totalWeaponNum}` : `${totalWeaponNum}`
   const setPage = useCallback(
-    (e, value) => {
+    (_: ChangeEvent<unknown>, value: number) => {
       invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
-      setpageIdex(value - 1);
+      setPageIndex(value - 1);
     },
-    [setpageIdex, invScrollRef],
+    [setPageIndex, invScrollRef]
   )
 
-  const resetEditWeapon = useCallback(() => stateDisplatch({ editWeaponId: "" }), [stateDisplatch])
+  const resetEditWeapon = useCallback(() => stateDispatch({ editWeaponId: "" }), [stateDispatch])
 
   const { editWeaponId } = state
 
@@ -118,7 +121,7 @@ export default function PageWeapon() {
   }, [database, editWeaponId, resetEditWeapon])
 
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
-    {/* editor/character detail display */}
+    {/* Editor/character detail display */}
     <Suspense fallback={false}>
       <WeaponEditor
         weaponId={editWeaponId}
@@ -130,17 +133,30 @@ export default function PageWeapon() {
     <CardDark ref={invScrollRef} sx={{ p: 2, pb: 1 }}>
       <Grid container spacing={1} sx={{ mb: 1 }}>
         <Grid item>
-          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => stateDisplatch({ weaponType })} value={weaponType} size="small" />
+          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => stateDispatch({ weaponType })} value={weaponType} size="small" />
         </Grid>
-        <Grid item flexGrow={1}>
-          <SolidToggleButtonGroup sx={{ height: "100%" }} onChange={(e, newVal) => stateDisplatch({ rarity: newVal })} value={rarity} size="small">
+        <Grid item>
+          <SolidToggleButtonGroup sx={{ height: "100%" }} onChange={(e, newVal) => stateDispatch({ rarity: newVal })} value={rarity} size="small">
             {allRarities.map(star => <ToggleButton key={star} value={star}><Box display="flex" gap={1}><strong>{star}</strong><Stars stars={1} /></Box></ToggleButton>)}
           </SolidToggleButtonGroup>
         </Grid>
-        <Grid item >
+        <Grid item flexGrow={1}>
+          <TextField
+            autoFocus
+            size="small"
+            value={searchTerm}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
+            label={t("weaponName")}
+            sx={{ height: "100%" }}
+            InputProps={{
+              sx: { height: "100%" }
+            }}
+          />
+        </Grid>
+        <Grid item>
           <SortByButton sx={{ height: "100%" }} sortKeys={weaponSortKeys}
-            value={sortType} onChange={sortType => stateDisplatch({ sortType })}
-            ascending={ascending} onChangeAsc={ascending => stateDisplatch({ ascending })}
+            value={sortType} onChange={sortType => stateDispatch({ sortType })}
+            ascending={ascending} onChangeAsc={ascending => stateDispatch({ ascending })}
           />
         </Grid>
       </Grid>
@@ -158,7 +174,7 @@ export default function PageWeapon() {
         <Grid item xs={1}>
           <CardDark sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
             <CardContent>
-              <Typography sx={{ textAlign: "center" }}>Add New Weapon</Typography>
+              <Typography sx={{ textAlign: "center" }}>{t("page_weapon:addWeapon")}</Typography>
             </CardContent>
             <WeaponSelectionModal show={newWeaponModalShow} onHide={() => setnewWeaponModalShow(false)} onSelect={newWeapon} />
             <Box sx={{

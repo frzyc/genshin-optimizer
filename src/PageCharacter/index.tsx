@@ -2,7 +2,6 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Calculate, Checkroom, DeleteForever, FactCheck, Groups } from '@mui/icons-material';
 import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, TextField, Typography } from '@mui/material';
-import i18next from 'i18next';
 import React, { ChangeEvent, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
@@ -21,7 +20,7 @@ import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
-import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey } from '../Types/consts';
+import { allElements, allWeaponTypeKeys, CharacterKey } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
@@ -29,30 +28,28 @@ import { clamp } from '../Util/Util';
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 6 - 1, sm: 8 - 1, md: 12 - 1, lg: 16 - 1, xl: 16 - 1 }
 
-function initialState() {
-  return {
+const initialState = () => ({
     sortType: characterSortKeys[0],
     ascending: false,
     weaponType: [...allWeaponTypeKeys],
     element: [...allElements],
   }
-}
+)
 
-export default function PageCharacter(props) {
-  // TODO: #412 We shouldn't be loading all the character translation files. Should have a separate lookup file for character name.
-  const { t } = useTranslation(["page_character", ...allCharacterKeys.map(k => `char_${k}_gen`)])
+export default function PageCharacter() {
+  const { t } = useTranslation(["page_character", "charNames_gen"])
   const { database } = useContext(DatabaseContext)
   const [state, stateDispatch] = useDBState("CharacterDisplay", initialState)
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
-  const [pageIdex, setpageIdex] = useState(0)
+  const [pageIndex, setPageIndex] = useState(0)
   const invScrollRef = useRef<HTMLDivElement>(null)
   const setPage = useCallback(
-    (e, value) => {
+    (_: ChangeEvent<unknown>, value: number) => {
       invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
-      setpageIdex(value - 1);
+      setPageIndex(value - 1);
     },
-    [setpageIdex, invScrollRef],
+    [setPageIndex, invScrollRef]
   )
 
   const brPt = useMediaQueryUp()
@@ -60,7 +57,7 @@ export default function PageCharacter(props) {
 
   const [newCharacter, setnewCharacter] = useState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
-  //set follow, should run only once
+  // Set follow, should run only once
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: '/characters' })
     return database.followAnyChar(forceUpdate)
@@ -71,9 +68,9 @@ export default function PageCharacter(props) {
   const deleteCharacter = useCallback(async (cKey: CharacterKey) => {
     const chararcterSheet = await CharacterSheet.get(cKey)
     let name = chararcterSheet?.name
-    //use translated string
+    // Use translated string
     if (typeof name === "object")
-      name = i18next.t(`char_${cKey}_gen:name`)
+      name = t(`charNames_gen:${cKey}`)
 
     if (!window.confirm(t("removeCharacter", { value: name }))) return
     database.removeChar(cKey)
@@ -106,9 +103,9 @@ export default function PageCharacter(props) {
 
   const { charKeyListToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(charKeyList.length / maxNumToDisplay)
-    const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
+    const currentPageIndex = clamp(pageIndex, 0, numPages - 1)
     return { charKeyListToShow: charKeyList.slice(currentPageIndex * maxNumToDisplay, (currentPageIndex + 1) * maxNumToDisplay), numPages, currentPageIndex }
-  }, [charKeyList, pageIdex, maxNumToDisplay])
+  }, [charKeyList, pageIndex, maxNumToDisplay])
 
   const totalShowing = charKeyList.length !== totalCharNum ? `${charKeyList.length}/${totalCharNum}` : `${totalCharNum}`
 
@@ -127,6 +124,11 @@ export default function PageCharacter(props) {
             value={searchTerm}
             onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
             label={t("characterName")}
+            size="small"
+            sx={{ height: "100%" }}
+            InputProps={{
+              sx: { height: "100%" }
+            }}
           />
         </Grid>
         <Grid item >

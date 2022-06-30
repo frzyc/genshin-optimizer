@@ -41,7 +41,7 @@ type CharacterSelectionModalProps = {
 export function CharacterSelectionModal({ show, onHide, onSelect, filter = () => true, newFirst = false }: CharacterSelectionModalProps) {
   const sortKeys = useMemo(() => newFirst ? ["new", ...defaultSortKeys] : defaultSortKeys, [newFirst])
   const { database } = useContext(DatabaseContext)
-  const { t } = useTranslation("page_character")
+  const { t } = useTranslation(["page_character", "charNames_gen"])
 
   const [sortBy, setsortBy] = useState(sortKeys[0])
   const [ascending, setascending] = useState(false)
@@ -88,6 +88,11 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
               value={searchTerm}
               onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
               label={t("characterName")}
+              size="small"
+              sx={{ height: "100%" }}
+              InputProps={{
+                sx: { height: "100%" }
+              }}
             />
           </Grid>
 
