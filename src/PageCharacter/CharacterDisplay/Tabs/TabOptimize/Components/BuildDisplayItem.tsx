@@ -39,7 +39,7 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
   const dataContext = useContext(DataContext)
 
   const { data, oldData } = dataContext
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const [newOld, setNewOld] = useState(undefined as NewOld | undefined)
   const close = useCallback(() => setNewOld(undefined), [setNewOld],)
 

@@ -83,12 +83,13 @@ const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 const nodeC2skillDmg_ = greaterEq(input.constellation, 2, percent(datamine.constellation2.icyPawDmg_))
 
-const holdSkillShieldStr_ = { "customBonus": { "shield_": percent(0.75) } }
-//C2 Shield bonus modifies everything at the very end, it's not a shield strength bonus
-//100% if not C2, 175% if C2 or higher
+// Hold shield bonus is a separate multiplier
+const holdSkillShieldStr_ = percent(1.75)
+// C2 Shield bonus modifies everything at the very end, it's not a shield strength bonus
+// 100% if not C2, 175% if C2 or higher
 const nodeC2shieldStr_ = sum(percent(1), greaterEq(input.constellation, 2, percent(datamine.constellation2.icyPawShield_)))
 const nodeSkillShieldPress = prod(nodeC2shieldStr_, shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill",))
-const nodeSkillShieldHold = prod(nodeC2shieldStr_, shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill", holdSkillShieldStr_))
+const nodeSkillShieldHold = prod(nodeC2shieldStr_, holdSkillShieldStr_, shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill"))
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>

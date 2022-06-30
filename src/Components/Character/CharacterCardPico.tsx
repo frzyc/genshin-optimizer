@@ -13,7 +13,7 @@ import SqBadge from '../SqBadge';
 import StatIcon from '../StatIcon';
 
 export default function CharacterCardPico({ characterKey = "", index = -1, onClick }: { characterKey: CharacterKey | "", index?: number, onClick?: (characterKey: CharacterKey) => void }) {
-  const teammateSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
+  const teammateSheet = usePromise(() => CharacterSheet.get(characterKey), [characterKey])
   const character = useCharacter(characterKey)
   const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
   const actionWrapperFunc = useCallback(

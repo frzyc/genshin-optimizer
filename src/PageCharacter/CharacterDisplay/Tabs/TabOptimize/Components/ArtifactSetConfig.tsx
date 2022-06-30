@@ -36,7 +36,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   const [open, setOpen] = useState(false)
   const onOpen = useCallback(() => setOpen(true), [setOpen])
   const onClose = useCallback(() => setOpen(false), [setOpen])
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const artSetKeyList = useMemo(() => artifactSheets ? Object.entries(ArtifactSheet.setKeysByRarities(artifactSheets)).reverse().flatMap(([, sets]) => sets).filter(key => !key.includes("Prayers")) : [], [artifactSheets])
 
   const [dbDirty, forceUpdate] = useForceUpdate()

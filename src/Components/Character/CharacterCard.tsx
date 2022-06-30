@@ -41,7 +41,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   const { teamData: teamDataContext } = useContext(DataContext)
   const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
   const character = useCharacter(characterKey)
-  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
+  const characterSheet = usePromise(() => CharacterSheet.get(characterKey), [characterKey])
   const characterDispatch = useCharacterReducer(characterKey)
   const data = teamData?.[characterKey]?.target
   const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
@@ -53,13 +53,12 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   const characterContextObj: CharacterContextObj | undefined = useMemo(() => character && characterSheet && {
     character, characterSheet, characterDispatch
   }, [character, characterSheet, characterDispatch])
-  const dataContextObj: dataContextObj | undefined = useMemo(() => teamData && ({
+  const dataContextObj: dataContextObj | undefined = useMemo(() => data && teamData && ({
     data,
     teamData,
   }), [data, teamData])
 
   if (!character || !dataContextObj || !characterContextObj) return null;
-
 
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     <CharacterContext.Provider value={characterContextObj}><DataContext.Provider value={dataContextObj}>

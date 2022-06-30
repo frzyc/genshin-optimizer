@@ -77,7 +77,7 @@ export default class Artifact {
     const rollsRemaining = Artifact.rollsRemaining(level, rarity);
     const emptySlotCount = substats.filter(s => !s.key).length
     const matchedSlotCount = substats.filter(s => s.key && filter.has(s.key)).length
-    const unusedFilterCount = filter.size - matchedSlotCount
+    const unusedFilterCount = filter.size - matchedSlotCount - (filter.has(artifact.mainStatKey as any) ? 1 : 0)
     let maxEfficiency
     if (emptySlotCount && unusedFilterCount) maxEfficiency = currentEfficiency + Artifact.maxSubstatRollEfficiency[rarity] * rollsRemaining // Rolls into good empty slot
     else if (matchedSlotCount) maxEfficiency = currentEfficiency + Artifact.maxSubstatRollEfficiency[rarity] * (rollsRemaining - emptySlotCount) // Rolls into existing matched slot

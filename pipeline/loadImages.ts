@@ -28,8 +28,8 @@ export default function loadImages() {
 
   // Get icons for each artifact piece
   Object.entries(reliquarySetExcelConfigData).filter(([setId, data]) => setId in artifactIdMap).forEach(([setId, data]) => {
-    const { equipAffixId, containsList } = data
-    if (!equipAffixId) return
+    const { EquipAffixId, containsList } = data
+    if (!EquipAffixId) return
 
     const pieces = Object.fromEntries(containsList.map(pieceId => {
       const pieceData = artifactPiecesData[pieceId]

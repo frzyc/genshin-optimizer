@@ -15,7 +15,7 @@ import StatIcon from '../StatIcon';
 export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const { database } = useContext(DatabaseContext)
   const weapon = database._getWeapon(weaponId)
-  const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
+  const weaponSheet = usePromise(() => weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
   return <CardDark>

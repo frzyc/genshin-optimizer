@@ -55,7 +55,7 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
 }
 function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[]) => void }) {
   const { data } = useContext(DataContext)
-  const header = usePromise(getDisplayHeader(data, sectionKey), [data, sectionKey])
+  const header = usePromise(() => getDisplayHeader(data, sectionKey), [data, sectionKey])
   return <CardLight key={sectionKey as string}>
     {header && <CardHeader avatar={header.icon && <ImgIcon size={2} sx={{ m: -1 }} src={header.icon} />} title={header.title} action={header.action} titleTypographyProps={{ variant: "subtitle1" }} />}
     <Divider />
@@ -70,7 +70,7 @@ function NoTarget() {
 }
 function TargetDisplayText({ optimizationTarget }: { optimizationTarget?: string[] }) {
   const { data } = useContext(DataContext)
-  const displayHeader = usePromise(optimizationTarget && getDisplayHeader(data, optimizationTarget[0]), [data, optimizationTarget])
+  const displayHeader = usePromise(() => optimizationTarget && getDisplayHeader(data, optimizationTarget[0]), [data, optimizationTarget])
 
   if (!optimizationTarget || !displayHeader) return <NoTarget />
   const node: NodeDisplay | undefined = objPathValue(data.getDisplay(), optimizationTarget) as any

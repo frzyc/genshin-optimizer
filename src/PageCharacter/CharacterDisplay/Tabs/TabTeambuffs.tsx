@@ -121,7 +121,7 @@ function TeammateDisplay({ index }: { index: number }) {
 }
 function CharArtifactCondDisplay() {
   const { data, } = useContext(DataContext)
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const sections = useMemo(() => artifactSheets &&
     Object.entries(ArtifactSheet.setEffects(artifactSheets, data))
       .flatMap(([setKey, setNums]) =>

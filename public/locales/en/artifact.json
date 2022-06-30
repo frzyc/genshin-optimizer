@@ -8,6 +8,7 @@
     "rarity": "Rarity",
     "level": "Level",
     "unknownPieceName": "Unknown Piece Name",
+    "unknownSetName": "Unknown Set Name",
     "mainSelect": "Select a Main Stat",
     "curSubEff": "Current Roll Value",
     "curSubEffDesc": "Every 4 artifact upgrades, you get a substat roll. <strong>Roll Value</strong> calculates how high the substat rolled as a percentage.",
@@ -104,8 +105,9 @@
   "excluded": "This artifact is excluded.",
   "included": "This artifact is not excluded.",
   "autocompleteLabels": {
-    "set": "Artifact Sets",
-    "mainStat": "Main Stats",
-    "substat": "Sub-Stats"
+    "sets": "Artifact Sets",
+    "mainStats": "Main Stats",
+    "substats": "Sub-Stats",
+    "set": "Artifact Set"
   }
 }

@@ -74,7 +74,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   { artifactIdToEdit?: string, cancelEdit: () => void, allowUpload?: boolean, allowEmpty?: boolean, disableEditSetSlot?: boolean }) {
   const { t } = useTranslation("artifact")
 
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
 
   const { database } = useContext(DatabaseContext)
 
@@ -92,8 +92,8 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const firstProcessed = processed[0] as ProcessedEntry | undefined
   const firstOutstanding = outstanding[0] as OutstandingEntry | undefined
 
-  const processingImageURL = usePromise(firstOutstanding?.imageURL, [firstOutstanding?.imageURL])
-  const processingResult = usePromise(firstOutstanding?.result, [firstOutstanding?.result])
+  const processingImageURL = usePromise(() => firstOutstanding?.imageURL, [firstOutstanding?.imageURL])
+  const processingResult = usePromise(() => firstOutstanding?.result, [firstOutstanding?.result])
 
   const remaining = processed.length + outstanding.length
 
@@ -243,11 +243,14 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             <ButtonGroup sx={{ display: "flex", mb: 1 }}>
               {/* Artifact Set */}
               <ArtifactSetSingleAutocomplete
-                size="small"
+                showDefault
                 disableClearable
+                size="small"
                 artSetKey={artifact?.setKey ?? ""}
                 setArtSetKey={setKey => update({ setKey: setKey as ArtifactSetKey })}
                 sx={{ flexGrow: 1 }}
+                defaultText={t("editor.unknownSetName")}
+                disable={(key) => key === ""}
                 disabled={disableEditSetSlot}
               />
               {/* rarity dropdown */}

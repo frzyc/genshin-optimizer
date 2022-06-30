@@ -26,7 +26,7 @@ export default function StatDisplayComponent() {
 
 function Section({ displayNs, sectionKey }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string }) {
   const { data, oldData } = useContext(DataContext)
-  const header = usePromise(getDisplayHeader(data, sectionKey), [data, sectionKey])
+  const header = usePromise(() => getDisplayHeader(data, sectionKey), [data, sectionKey])
   const displayNsReads = useMemo(() => objectMap(displayNs, (n, nodeKey) => customRead(["display", sectionKey, nodeKey])), [displayNs, sectionKey]);
   if (!header) return <CardDark></CardDark>
 

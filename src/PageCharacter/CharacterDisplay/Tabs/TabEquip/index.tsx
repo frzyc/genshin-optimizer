@@ -31,7 +31,7 @@ function TabEquip() {
   const { character, character: { equippedWeapon, key: characterKey, equippedArtifacts }, characterSheet } = useContext(CharacterContext)
   const { buildSetting: { mainStatAssumptionLevel } } = useBuildSetting(characterKey)
   const { teamData, data } = useContext(DataContext)
-  const { weaponSheet } = teamData[characterKey]!
+  const weaponSheet = teamData[characterKey]?.weaponSheet
   const [weaponId, setweaponId] = useState("")
   const showWeapon = useCallback(() => setweaponId(equippedWeapon), [equippedWeapon],)
   const hideWeapon = useCallback(() => setweaponId(""), [])
@@ -43,7 +43,7 @@ function TabEquip() {
   }, [weaponId, equippedWeapon])
 
   const { database } = useContext(DatabaseContext)
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
 
   // TODO: We can also listen only to equipped artifacts
   const [, updateArt] = useForceUpdate()
@@ -69,7 +69,7 @@ function TabEquip() {
         </Grid>
       </CardContent>
     </CardLight>), [artifactSheets, setEffects])
-  const weaponDoc = useMemo(() => weaponSheet.document.length > 0 && <CardLight><CardContent><DocumentDisplay sections={weaponSheet.document} /></CardContent></CardLight>, [weaponSheet])
+  const weaponDoc = useMemo(() => weaponSheet && weaponSheet.document.length > 0 && <CardLight><CardContent><DocumentDisplay sections={weaponSheet.document} /></CardContent></CardLight>, [weaponSheet])
   return <Box display="flex" flexDirection="column" gap={1}>
     <Suspense fallback={false}>
       <WeaponEditor
