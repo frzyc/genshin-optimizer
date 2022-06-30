@@ -56,6 +56,16 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
     return dataContext_
   }, [dataContext, compareBuild])
 
+  // Memoize Arts because of its dynamic onClick
+  const artNanos = useMemo(() => allSlotKeys.map(slotKey =>
+    <Grid item xs={1} key={slotKey} >
+      <ArtifactCardNano showLocation slotKey={slotKey} artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} onClick={() => {
+        const oldId = equippedArtifacts[slotKey]
+        const newId = data.get(input.art[slotKey].id).value!
+        setNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
+      }} />
+    </Grid>), [data, setNewOld, equippedArtifacts, mainStatAssumptionLevel])
+
   if (!artifactSheets || !oldData) return null
   const currentlyEquipped = allSlotKeys.every(slotKey => data.get(input.art[slotKey].id).value === oldData.get(input.art[slotKey].id).value) && data.get(input.weapon.id).value === oldData.get(input.weapon.id).value
 
@@ -83,18 +93,11 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
           <Button size='small' color="success" onClick={equipBuild} disabled={disabled || currentlyEquipped}>Equip Build</Button>
           {extraButtons}
         </Box>
-        <Grid container spacing={1} sx={{ pb: 1 }}>
-          <Grid item xs={6} sm={4} md={3} lg={2}>
+        <Grid container spacing={1} sx={{ pb: 1 }} columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}>
+          <Grid item xs={1}>
             <WeaponCardNano showLocation weaponId={data.get(input.weapon.id).value} />
           </Grid>
-          {allSlotKeys.map(slotKey =>
-            <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >
-              <ArtifactCardNano showLocation slotKey={slotKey} artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} onClick={() => {
-                const oldId = equippedArtifacts[slotKey]
-                const newId = data.get(input.art[slotKey].id).value!
-                setNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
-              }} />
-            </Grid>)}
+          {artNanos}
         </Grid>
         <DataContext.Provider value={statProviderContext}>
           <StatDisplayComponent />
