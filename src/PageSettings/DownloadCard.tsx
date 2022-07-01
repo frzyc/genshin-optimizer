@@ -11,9 +11,9 @@ import { exportGOOD } from '../Database/exports/good'
 export default function DownloadCard() {
   const { database, setDatabase } = useContext(DatabaseContext)
   const { t } = useTranslation(["settings"]);
-  const numChar = database._getCharKeys().length
-  const numArt = database._getArts().length
-  const numWeapon = database._getWeapons().length
+  const numChar = database.chars.keys.length
+  const numArt = database.arts.values.length
+  const numWeapon = database.weapons.values.length
   const downloadValid = Boolean(numChar || numArt)
   const deleteDB = useCallback(() => {
     database.storage.clear()

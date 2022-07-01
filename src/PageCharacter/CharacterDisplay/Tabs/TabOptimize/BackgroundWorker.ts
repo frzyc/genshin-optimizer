@@ -1,6 +1,6 @@
+import { ArtSetExclusion } from '../../../../Database/DBStorageClasses/BuildsettingDataManager'
 import { NumNode } from '../../../../Formula/type'
 import { assertUnreachable } from '../../../../Util/Util'
-import { ArtSetExclusion } from './BuildSetting'
 import { ArtifactsBySlot, artSetPerm, Build, countBuilds, filterArts, filterFeasiblePerm, PlotData, RequestFilter } from "./common"
 import { ComputeWorker } from "./ComputeWorker"
 import { SplitWorker } from "./SplitWorker"

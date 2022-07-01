@@ -18,7 +18,7 @@ import { uiInput as input } from '../../../../../Formula';
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard';
 import usePromise from '../../../../../ReactHooks/usePromise';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../../../../Types/consts';
-import useBuildSetting from '../BuildSetting';
+import useBuildSetting from '../useBuildSetting';
 
 type NewOld = {
   newId: string,
@@ -46,8 +46,8 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
   const equipBuild = useCallback(() => {
     if (!window.confirm("Do you want to equip this build to this character?")) return
     const newBuild = Object.fromEntries(allSlotKeys.map(s => [s, data.get(input.art[s].id).value])) as Record<SlotKey, string>
-    database.equipArtifacts(characterKey, newBuild)
-    database.setWeaponLocation(data.get(input.weapon.id).value!, characterKey)
+    database.chars.equipArtifacts(characterKey, newBuild)
+    database.weapons.setLocation(data.get(input.weapon.id).value!, characterKey)
   }, [characterKey, data, database])
 
   const statProviderContext = useMemo(() => {

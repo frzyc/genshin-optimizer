@@ -35,7 +35,7 @@ import { CharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
 import { FinalizeResult, Setup, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
-import useBuildSetting from './BuildSetting';
+import useBuildSetting from './useBuildSetting';
 import { artSetPerm, Build, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
@@ -70,17 +70,17 @@ export default function TabBuild() {
   const characterDispatch = useCharacterReducer(characterKey)
   const onClickTeammate = useCharSelectionCallback()
 
-  const noArtifact = useMemo(() => !database._getArts().length, [database])
+  const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
   const { plotBase, optimizationTarget, mainStatAssumptionLevel, allowPartial, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
-  const buildsArts = useMemo(() => builds.map(build => build.map(i => database._getArt(i)!)), [builds, database])
+  const buildsArts = useMemo(() => builds.map(build => build.map(i => database.arts.get(i)!)), [builds, database])
 
   //register changes in artifact database
   useEffect(() =>
-    database.followAnyArt(setArtsDirty),
+    database.arts.followAny(setArtsDirty),
     [setArtsDirty, database])
 
   // Provides a function to cancel the work
@@ -97,7 +97,7 @@ export default function TabBuild() {
       if (index < 0) cantTakeList = [...equipmentPriority]
       else cantTakeList = equipmentPriority.slice(0, index)
     }
-    const filteredArts = database._getArts().filter(art => {
+    const filteredArts = database.arts.values.filter(art => {
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]

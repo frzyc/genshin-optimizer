@@ -65,11 +65,11 @@ export default function PageArtifact() {
   const invScrollRef = useRef<HTMLDivElement>(null)
   const [dbDirty, forceUpdate] = useForceUpdate()
   const effFilterSet = useMemo(() => new Set(effFilter), [effFilter]) as Set<SubstatKey>
-  const deleteArtifact = useCallback((id: string) => database.removeArt(id), [database])
+  const deleteArtifact = useCallback((id: string) => database.arts.remove(id), [database])
 
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: '/artifact' })
-    return database.followAnyArt(forceUpdate)
+    return database.arts.followAny(forceUpdate)
   }, [database, forceUpdate])
 
   const filterOptionDispatch = useCallback((action) => {
@@ -83,13 +83,13 @@ export default function PageArtifact() {
 
   const setProbabilityFilter = useCallback(probabilityFilter => stateDispatch({ probabilityFilter }), [stateDispatch],)
 
-  const noArtifact = useMemo(() => !database._getArts().length, [database])
+  const noArtifact = useMemo(() => !database.arts.values.length, [database])
   const sortConfigs = useMemo(() => artifactSortConfigs(effFilterSet, probabilityFilter), [effFilterSet, probabilityFilter])
   const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
   const deferredArtifactDisplayState = useDeferredValue(artifactDisplayState)
   const { artifactIds, totalArtNum } = useMemo(() => {
     const { sortType = artifactSortKeys[0], ascending = false, filterOption } = deferredArtifactDisplayState
-    let allArtifacts = database._getArts()
+    let allArtifacts = database.arts.values
     const filterFunc = filterFunction(filterOption, filterConfigs)
     const sortFunc = sortFunction(sortType, ascending, sortConfigs)
     //in probability mode, filter out the artifacts that already reach criteria

@@ -9,7 +9,7 @@ export type CharacterSortKey = typeof characterSortKeys[number]
 export function characterSortConfigs(database: ArtCharDatabase, characterSheets: Record<CharacterKey, CharacterSheet>): SortConfigs<CharacterSortKey, CharacterKey> {
   return {
     new: {
-      getValue: (ck) => database._getChar(ck as CharacterKey) ? 0 : 1,
+      getValue: (ck) => database.chars.get(ck as CharacterKey) ? 0 : 1,
       tieBreaker: "name"
     },
     name: {
@@ -17,7 +17,7 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
     },
     level: {
       getValue: (ck) => {
-        const char = database._getChar(ck as CharacterKey)
+        const char = database.chars.get(ck as CharacterKey)
         if (!char) return 0
         return char.level * char.ascension
       },
@@ -34,11 +34,11 @@ export type CharacterFilterConfigs = FilterConfigs<"element" | "weaponType" | "f
 export function characterFilterConfigs(database: ArtCharDatabase, characterSheets: Record<CharacterKey, CharacterSheet>): CharacterFilterConfigs {
   return {
     element: (ck, filter) => filter.includes(characterSheets?.[ck]?.elementKey) ||
-      (ck === "Traveler" && !database._getChar(ck as CharacterKey) && filter.some(fe => characterSheets.Traveler.elementKeys.includes(fe))) ||
-      (ck === "Traveler" && filter.includes(database._getChar(ck as CharacterKey)?.elementKey)),
+      (ck === "Traveler" && !database.chars.get(ck as CharacterKey) && filter.some(fe => characterSheets.Traveler.elementKeys.includes(fe))) ||
+      (ck === "Traveler" && filter.includes(database.chars.get(ck as CharacterKey)?.elementKey)),
     weaponType: (ck, filter) => filter.includes(characterSheets?.[ck]?.weaponTypeKey),
     favorite: (ck, filter) =>
-      !filter || (filter === (database._getChar(ck as CharacterKey)?.favorite ? "yes" : "no")),
+      !filter || (filter === (database.chars.get(ck as CharacterKey)?.favorite ? "yes" : "no")),
     name: (ck, filter) => !filter || (i18n.t(`charNames_gen:${ck}`).toLowerCase().includes(filter.toLowerCase()))
   }
 }

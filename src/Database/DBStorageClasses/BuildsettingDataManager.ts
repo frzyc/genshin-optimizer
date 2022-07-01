@@ -1,11 +1,13 @@
-import { useCallback, useContext, useEffect, useState } from "react";
-import { DatabaseContext } from "../../../../Database/Database";
-import { StatKey } from "../../../../KeyMap";
-import { MainStatKey, SubstatKey } from "../../../../Types/artifact";
-import { ArtifactSetKey, CharacterKey } from "../../../../Types/consts";
-import { deepClone } from "../../../../Util/Util";
-import { maxBuildsToShowDefault, maxBuildsToShowList } from "./Build";
+import { StatKey } from "../../KeyMap";
+import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Build";
+import { MainStatKey, SubstatKey } from "../../Types/artifact";
+import { ArtifactSetKey, CharacterKey } from "../../Types/consts";
+import { deepClone } from "../../Util/Util";
+import { ArtCharDatabase } from "../Database";
+import { DataManager } from "../DataManager";
+
 export type ArtSetExclusion = Dict<Exclude<ArtifactSetKey, "PrayersForDestiny" | "PrayersForIllumination" | "PrayersForWisdom" | "PrayersToSpringtime"> | "rainbow", (2 | 4)[]>
+
 export interface BuildSetting {
   artSetExclusion: ArtSetExclusion
   statFilters: Dict<StatKey, number>
@@ -29,7 +31,57 @@ export interface BuildSetting {
   levelLow: number,
   levelHigh: number,
 }
-export const initialBuildSettings = (): BuildSetting => ({
+
+export default class BuildsettingDataManager extends DataManager<CharacterKey, string, BuildSetting, BuildSetting>{
+  constructor(database: ArtCharDatabase) {
+    super(database)
+    for (const key of this.database.storage.keys) {
+      if (key.startsWith("buildSetting_")) {
+        const [, charKey] = key.split("buildSetting_")
+        // TODO Parse the object and check if it is valid
+        const buildSettingsObj = this.database.storage.get(key)
+        if (!buildSettingsObj) {
+          // Non-recoverable
+          this.database.storage.remove(key)
+          continue
+        }
+        if (buildSettingsObj.builds && Array.isArray(buildSettingsObj.builds)) { // This should have been checked during parsing
+          const newBuilds = buildSettingsObj.builds.map(build => {
+            if (!Array.isArray(build)) return [] // This should have been parsed
+            return build.filter(id => this.database.arts.get(id))
+          }).filter(x => x.length)
+          buildSettingsObj.builds = newBuilds
+        }
+        this.set(charKey as CharacterKey, buildSettingsObj)
+      }
+    }
+  }
+  toStorageKey(key: string): string {
+    return `buildSetting_${key}`
+  }
+  get(key: CharacterKey) {
+    const bs = super.get(key)
+    if (bs) return bs
+    const newBs = initialBuildSettings()
+    this.set(key, newBs)
+    return super.get(key)
+  }
+
+  set(key: CharacterKey, value: BuildSettingReducerAction) {
+    const oldState = super.get(key) as BuildSetting
+    super.set(key, validateBuildSetting(buildSettingsReducer(oldState, value)))
+  }
+}
+type BSMainStatKey = {
+  type: "mainStatKey", slotKey: "sands" | "goblet" | "circlet", mainStatKey?: MainStatKey
+}
+type BSArtSetExclusion = {
+  type: "artSetExclusion", setKey: ArtifactSetKey | "rainbow", num: 2 | 4
+}
+
+export type BuildSettingReducerAction = BSMainStatKey | BSArtSetExclusion | Partial<BuildSetting>
+
+const initialBuildSettings = (): BuildSetting => ({
   artSetExclusion: {},
   statFilters: {},
   mainStatKeys: { sands: [], goblet: [], circlet: [] },
@@ -47,20 +99,8 @@ export const initialBuildSettings = (): BuildSetting => ({
   levelHigh: 20,
 })
 
-export default function useBuildSetting(characterKey: CharacterKey) {
-  const { database } = useContext(DatabaseContext)
-  const [buildSetting, setBuildSetting] = useState(database._getBuildSetting(characterKey))
-  useEffect(() => setBuildSetting(database._getBuildSetting(characterKey)), [database, characterKey])
-  useEffect(() =>
-    database.followBuildSetting(characterKey, setBuildSetting),
-    [characterKey, setBuildSetting, database])
-  const buildSettingDispatch = useCallback(action => characterKey && database.updateBuildSetting(characterKey, action), [characterKey, database],)
-
-  return { buildSetting: buildSetting as BuildSetting, buildSettingDispatch }
-}
-
-export function buildSettingsReducer(state: BuildSetting = initialBuildSettings(), action): BuildSetting {
-  switch (action.type) {
+function buildSettingsReducer(state: BuildSetting = initialBuildSettings(), action: BuildSettingReducerAction): BuildSetting {
+  if ("type" in action) switch (action.type) {
     case 'mainStatKey': {
       const { slotKey, mainStatKey } = action
       const mainStatKeys = { ...state.mainStatKeys }//create a new object to update react dependencies
@@ -93,7 +133,7 @@ export function buildSettingsReducer(state: BuildSetting = initialBuildSettings(
   return { ...state, ...action }
 }
 
-export function validateBuildSetting(obj: any): BuildSetting {
+function validateBuildSetting(obj: any): BuildSetting {
   let { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = obj ?? {}
 
   if (typeof statFilters !== "object") statFilters = {}

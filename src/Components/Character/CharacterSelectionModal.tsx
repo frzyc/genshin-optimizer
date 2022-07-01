@@ -51,14 +51,14 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
 
   const [favesDirty, setFavesDirty] = useForceUpdate()
-  useEffect(() => database.followAnyChar(setFavesDirty), [database, setFavesDirty])
+  useEffect(() => database.chars.followAny(setFavesDirty), [database, setFavesDirty])
 
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
   const filterConfigs = useMemo(() => characterSheets && favesDirty && characterFilterConfigs(database, characterSheets), [favesDirty, database, characterSheets])
-  const ownedCharacterKeyList = useMemo(() => characterSheets ? allCharacterKeys.filter(cKey => filter(database._getChar(cKey), characterSheets[cKey])) : [], [database, characterSheets, filter])
+  const ownedCharacterKeyList = useMemo(() => characterSheets ? allCharacterKeys.filter(cKey => filter(database.chars.get(cKey), characterSheets[cKey])) : [], [database, characterSheets, filter])
   const characterKeyList = useMemo(() => (characterSheets && sortConfigs && filterConfigs) ?
     ownedCharacterKeyList
       .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter, favorite: "yes", name: deferredSearchTerm }, filterConfigs))
@@ -122,7 +122,7 @@ function CharacterBtn({ onClick, characterKey, characterSheet }: { onClick: () =
   const teamData = useTeamData(characterKey)
   const { database } = useContext(DatabaseContext)
   const characterDispatch = useCharacterReducer(characterKey)
-  const favorite = database._getChar(characterKey)?.favorite
+  const favorite = database.chars.get(characterKey)?.favorite
   const { target: data } = teamData?.[characterKey] ?? {}
   const rarity = characterSheet.rarity
   return <Suspense fallback={<Skeleton variant="rectangular" height={130} />}><Box>

@@ -49,7 +49,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
   const sheet = usePromise(() => ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
-  const equipOnChar = (charKey: CharacterKey | "") => database.setArtLocation(artifactId!, charKey)
+  const equipOnChar = (charKey: CharacterKey | "") => database.arts.setLocation(artifactId!, charKey)
   const editable = !artifactObj
   const [showEditor, setshowEditor] = useState(false)
   const onHideEditor = useCallback(() => setshowEditor(false), [setshowEditor])
@@ -93,7 +93,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <ConditionalWrapper condition={!!onClick} wrapper={wrapperFunc} falseWrapper={falseWrapperFunc}>
         <Box className={`grad-${rarity}star`} sx={{ position: "relative", width: "100%" }}>
-          {!onClick && <IconButton color="primary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 2 }}>
+          {!onClick && <IconButton color="primary" disabled={!editable} onClick={() => database.arts.set(id, { lock: !lock })} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 2 }}>
             {lock ? <Lock /> : <LockOpen />}
           </IconButton>}
           <Box sx={{ pt: 2, px: 2, position: "relative", zIndex: 1 }}>
@@ -160,7 +160,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
             <Typography>{t`artifact:excludeArtifactTip`}</Typography>
             <Typography><ColorText color={exclude ? "error" : "success"}>{t(`artifact:${exclude ? "excluded" : "included"}`)}</ColorText></Typography>
           </Box>} placement="top" arrow>
-            <Button onClick={() => database.updateArt({ exclude: !exclude }, id)} color={exclude ? "error" : "success"} size="small" >
+            <Button onClick={() => database.arts.set(id, { exclude: !exclude })} color={exclude ? "error" : "success"} size="small" >
               <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
             </Button>
           </Tooltip>}

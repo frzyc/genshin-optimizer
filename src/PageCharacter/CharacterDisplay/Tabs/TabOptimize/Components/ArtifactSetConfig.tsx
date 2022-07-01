@@ -25,7 +25,7 @@ import useForceUpdate from '../../../../../ReactHooks/useForceUpdate';
 import usePromise from '../../../../../ReactHooks/usePromise';
 import { allArtifactSets, allSlotKeys, ArtifactSetKey, SetNum, SlotKey } from '../../../../../Types/consts';
 import { deepClone, objectKeyMap } from '../../../../../Util/Util';
-import useBuildSetting from '../BuildSetting';
+import useBuildSetting from '../useBuildSetting';
 
 export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, }) {
   const { t } = useTranslation(["page_character", "sheet"])
@@ -40,11 +40,11 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   const artSetKeyList = useMemo(() => artifactSheets ? Object.entries(ArtifactSheet.setKeysByRarities(artifactSheets)).reverse().flatMap(([, sets]) => sets).filter(key => !key.includes("Prayers")) : [], [artifactSheets])
 
   const [dbDirty, forceUpdate] = useForceUpdate()
-  useEffect(() => database.followAnyArt(forceUpdate), [database, forceUpdate])
+  useEffect(() => database.arts.followAny(forceUpdate), [database, forceUpdate])
 
   const artSlotCount = useMemo(() => {
     const artSlotCount: Dict<ArtifactSetKey, Record<SlotKey, number>> = Object.fromEntries(artSetKeyList.map(k => [k, Object.fromEntries(allSlotKeys.map(sk => [sk, 0]))]))
-    database._getArts().map(art => artSlotCount[art.setKey] && artSlotCount[art.setKey]![art.slotKey]++)
+    database.arts.values.map(art => artSlotCount[art.setKey] && artSlotCount[art.setKey]![art.slotKey]++)
     return dbDirty && artSlotCount
   }, [dbDirty, database, artSetKeyList])
   const allowRainbow2 = !artSetExclusion.rainbow?.includes(2)

@@ -30,7 +30,7 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
   }, [onChangeId, onClose])
 
   const [dbDirty, forceUpdate] = useForceUpdate()
-  useEffect(() => database.followAnyWeapon(forceUpdate), [forceUpdate, database])
+  useEffect(() => database.weapons.followAny(forceUpdate), [forceUpdate, database])
 
   const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
 
@@ -42,7 +42,7 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
-  const weaponIdList = useMemo(() => (filterConfigs && sortConfigs && dbDirty && database._getWeapons()
+  const weaponIdList = useMemo(() => (filterConfigs && sortConfigs && dbDirty && database.weapons.values
     .filter(filterFunction({ weaponType: weaponTypeKey, rarity, name: deferredSearchTerm }, filterConfigs))
     .sort(sortFunction("level", false, sortConfigs))
     .map(weapon => weapon.id)) ?? []

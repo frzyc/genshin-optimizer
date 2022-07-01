@@ -45,7 +45,7 @@ export function ArtifactRedButtons({ artifactIds, filterOption }:
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const { numDelete, numUnequip, numExclude, numInclude, numUnlock, numLock } = useMemo(() => {
-    const artifacts = artifactIds.map(id => database._getArt(id)) as ICachedArtifact[]
+    const artifacts = artifactIds.map(id => database.arts.get(id)) as ICachedArtifact[]
     const numUnlock = artifacts.reduce((a, art) => a + (art.lock ? 0 : 1), 0)
     const numLock = artifacts.length - numUnlock
     const numDelete = numUnlock
@@ -58,27 +58,27 @@ export function ArtifactRedButtons({ artifactIds, filterOption }:
 
   const unequipArtifacts = () =>
     window.confirm(`Are you sure you want to unequip ${numUnequip} artifacts currently equipped on characters?`) &&
-    artifactIds.map(id => database.setArtLocation(id, ""))
+    artifactIds.map(id => database.arts.setLocation(id, ""))
 
   const deleteArtifacts = () =>
     window.confirm(`Are you sure you want to delete ${numDelete} artifacts?`) &&
-    artifactIds.map(id => !database._getArt(id)?.lock && database.removeArt(id))
+    artifactIds.map(id => !database.arts.get(id)?.lock && database.arts.remove(id))
 
   const excludeArtifacts = () =>
     window.confirm(`Are you sure you want to exclude ${numInclude} artifacts from build generations?`) &&
-    artifactIds.map(id => database.updateArt({ exclude: true }, id))
+    artifactIds.map(id => database.arts.set(id, { exclude: true }))
 
   const includeArtifacts = () =>
     window.confirm(`Are you sure you want to include ${numExclude} artifacts in build generations?`) &&
-    artifactIds.map(id => database.updateArt({ exclude: false }, id))
+    artifactIds.map(id => database.arts.set(id, { exclude: false }))
 
   const lockArtifacts = () =>
     window.confirm(`Are you sure you want to lock ${numUnlock} artifacts?`) &&
-    artifactIds.map(id => database.updateArt({ lock: true }, id))
+    artifactIds.map(id => database.arts.set(id, { lock: true }))
 
   const unlockArtifacts = () =>
     window.confirm(`Are you sure you want to unlock ${numLock} artifacts?`) &&
-    artifactIds.map(id => database.updateArt({ lock: false }, id))
+    artifactIds.map(id => database.arts.set(id, { lock: false }))
 
   return <Grid container spacing={1} alignItems="center">
     <Grid item xs={12} sm={6} md={3}>

@@ -22,11 +22,11 @@ export function merge(result: ImportResult, base: ArtCharDatabase) {
   // Match artifacts for counter, metadata, and locations
   if (artCounter) {
     const arts = storage.entries.filter(([k]) => k.startsWith("artifact_")).map(([key, v]) => [key, JSON.parse(v) as IArtifact] as const)
-    const idsToRemove = new Set(base._getArts().map(a => a.id))
+    const idsToRemove = new Set(base.arts.values.map(a => a.id))
     const hasLocations = arts.some(a => a[1].location)
 
     for (const [key, art] of arts) {
-      let { duplicated, upgraded } = base.findDuplicates(art)
+      let { duplicated, upgraded } = base.arts.findDups(art)
 
       // Don't reuse dups/upgrades
       duplicated = duplicated.filter(a => idsToRemove.has(a.id))
@@ -49,18 +49,18 @@ export function merge(result: ImportResult, base: ArtCharDatabase) {
       else artCounter.new.push(art)
       storage.set(key, art)
     }
-    artCounter.removed = [...idsToRemove].map(id => base._getArt(id)!)
+    artCounter.removed = [...idsToRemove].map(id => base.arts.get(id)!)
   } else
-    base._getArts().forEach((x, i) => storage.set(`artifact_${i}`, x))
+    base.arts.values.forEach((x, i) => storage.set(`artifact_${i}`, x))
 
   // Match weapons for counter, metadata, and locations
   if (weaponCounter) {
     const weapons = storage.entries.filter(([k]) => k.startsWith("weapon_")).map(([key, v]) => [key, JSON.parse(v) as IWeapon] as const)
-    const idsToRemove = new Set(base._getWeapons().map(w => w.id))
+    const idsToRemove = new Set(base.weapons.values.map(w => w.id))
     const hasLocations = weapons.some(weapon => weapon[1].location)
 
     for (const [key, weapon] of weapons) {
-      let { duplicated, upgraded } = base.findDuplicateWeapons(weapon)
+      let { duplicated, upgraded } = base.weapons.findDup(weapon)
 
       // Don't reuse dups/upgrades
       duplicated = duplicated.filter(w => idsToRemove.has(w.id))
@@ -83,14 +83,14 @@ export function merge(result: ImportResult, base: ArtCharDatabase) {
       else weaponCounter.new.push(weapon)
       storage.set(key, weapon)
     }
-    weaponCounter.removed = [...idsToRemove].map(id => base._getWeapon(id)!)
+    weaponCounter.removed = [...idsToRemove].map(id => base.weapons.get(id)!)
   } else
-    base._getWeapons().forEach((x, i) => storage.set(`weapon_${i}`, x))
+    base.weapons.values.forEach((x, i) => storage.set(`weapon_${i}`, x))
 
   if (charCounter) {
     const newCharEntries = storage.entries.filter(([k]) => k.startsWith("char_")).map(([key, value]) => [key.slice(5), JSON.parse(value) as ICharacter] as const)
     const newCharKeys = new Set(newCharEntries.map(([k]) => k))
-    const oldCharKeys = new Set(base._getCharKeys() as string[])
+    const oldCharKeys = new Set(base.chars.keys as string[])
 
     charCounter.updated = []
     charCounter.new = []
@@ -98,7 +98,7 @@ export function merge(result: ImportResult, base: ArtCharDatabase) {
     const hasTeamData = newCharEntries.some(([_, char]) => char.team.some(x => x))
 
     for (const [key, char] of newCharEntries) {
-      const match = base._getChar(key as any)
+      const match = base.chars.get(key as any)
       if (match) {
         charCounter.updated.push(char)
       } else {
@@ -115,10 +115,10 @@ export function merge(result: ImportResult, base: ArtCharDatabase) {
       storage.set(`char_${key}`, char)
     }
 
-    charCounter.removed = [...oldCharKeys].filter(([k]) => newCharKeys.has(k)).map(k => base._getChar(k as any)!)
+    charCounter.removed = [...oldCharKeys].filter(([k]) => newCharKeys.has(k)).map(k => base.chars.get(k as any)!)
     charCounter.unchanged = []
   } else
-    base._getCharKeys().forEach(k => storage.set(`char_${k}`, base._getChar(k)))
+    base.chars.keys.forEach(k => storage.set(`char_${k}`, base.chars.get(k)))
 
   // Merge misc.
   const newKeys = new Set(storage.keys)

@@ -1,10 +1,10 @@
+import { ArtSetExclusion } from "../../../../Database/DBStorageClasses/BuildsettingDataManager";
 import { forEachNodes, mapFormulas } from "../../../../Formula/internal";
 import { allOperations, constantFold } from "../../../../Formula/optimization";
 import { ConstantNode, NumNode } from "../../../../Formula/type";
 import { constant, customRead, max, min } from "../../../../Formula/utils";
 import { allSlotKeys, ArtifactSetKey, SlotKey } from "../../../../Types/consts";
 import { assertUnreachable, objectKeyMap, objectMap, range } from "../../../../Util/Util";
-import type { ArtSetExclusion } from "./BuildSetting";
 
 type DynMinMax = { [key in string]: MinMax }
 type MinMax = { min: number, max: number }

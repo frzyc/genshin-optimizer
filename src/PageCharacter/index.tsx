@@ -29,11 +29,11 @@ const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 6 - 1, sm: 8 - 1, md: 12 - 1, lg: 16 - 1, xl: 16 - 1 }
 
 const initialState = () => ({
-    sortType: characterSortKeys[0],
-    ascending: false,
-    weaponType: [...allWeaponTypeKeys],
-    element: [...allElements],
-  }
+  sortType: characterSortKeys[0],
+  ascending: false,
+  weaponType: [...allWeaponTypeKeys],
+  element: [...allElements],
+}
 )
 
 export default function PageCharacter() {
@@ -60,7 +60,7 @@ export default function PageCharacter() {
   // Set follow, should run only once
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: '/characters' })
-    return database.followAnyChar(forceUpdate)
+    return database.chars.followAny(forceUpdate)
   }, [forceUpdate, database])
 
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
@@ -73,7 +73,7 @@ export default function PageCharacter() {
       name = t(`charNames_gen:${cKey}`)
 
     if (!window.confirm(t("removeCharacter", { value: name }))) return
-    database.removeChar(cKey)
+    database.chars.remove(cKey)
   }, [database, t])
 
   const editCharacter = useCharSelectionCallback()
@@ -83,21 +83,22 @@ export default function PageCharacter() {
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
   const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
   const deferredState = useDeferredValue(state)
+  const deferredDbDirty = useDeferredValue(dbDirty)
   const { charKeyList, totalCharNum } = useMemo(() => {
-    const chars = database._getCharKeys()
+    const chars = database.chars.keys
     const totalCharNum = chars.length
     if (!sortConfigs || !filterConfigs) return { charKeyList: [], totalCharNum }
     const { element, weaponType, sortType, ascending } = deferredState
-    const charKeyList = database._getCharKeys()
+    const charKeyList = database.chars.keys
       .filter(filterFunction({ element, weaponType, favorite: "yes", name: deferredSearchTerm }, filterConfigs))
       .sort(sortFunction(sortType, ascending, sortConfigs))
       .concat(
-        database._getCharKeys()
+        database.chars.keys
           .filter(filterFunction({ element, weaponType, favorite: "no", name: deferredSearchTerm }, filterConfigs))
           .sort(sortFunction(sortType, ascending, sortConfigs)))
-    return dbDirty && { charKeyList, totalCharNum }
+    return deferredDbDirty && { charKeyList, totalCharNum }
   },
-    [dbDirty, database, sortConfigs, filterConfigs, deferredState, deferredSearchTerm])
+    [deferredDbDirty, database, sortConfigs, filterConfigs, deferredState, deferredSearchTerm])
 
   const { weaponType, element, sortType, ascending } = state
 
