@@ -32,7 +32,7 @@ export interface BuildSetting {
   levelHigh: number,
 }
 
-export default class BuildsettingDataManager extends DataManager<CharacterKey, string, BuildSetting, BuildSetting>{
+export class BuildsettingDataManager extends DataManager<CharacterKey, string, BuildSetting, BuildSetting>{
   constructor(database: ArtCharDatabase) {
     super(database)
     for (const key of this.database.storage.keys) {

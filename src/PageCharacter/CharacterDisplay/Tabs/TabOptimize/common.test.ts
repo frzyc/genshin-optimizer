@@ -1,4 +1,4 @@
-import { ArtSetExclusion } from "../../../../Database/DBStorageClasses/BuildsettingDataManager"
+import { ArtSetExclusion } from "../../../../Database/Data/BuildsettingData"
 import { allSlotKeys, ArtifactSetKey, SlotKey } from "../../../../Types/consts"
 import { objectKeyMap } from "../../../../Util/Util"
 import { artSetPerm, exclusionToAllowed } from "./common"

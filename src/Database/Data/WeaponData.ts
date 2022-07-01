@@ -6,7 +6,7 @@ import { DataManager } from "../DataManager";
 import { parseWeapon } from "../imports/parse";
 import { validateWeapon } from "../imports/validate";
 
-export default class WeaponDataManager extends DataManager<string, string, ICachedWeapon, IWeapon>{
+export class WeaponDataManager extends DataManager<string, string, ICachedWeapon, IWeapon>{
   constructor(database: ArtCharDatabase) {
     super(database)
     for (const key of this.database.storage.keys) {

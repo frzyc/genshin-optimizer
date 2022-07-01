@@ -5,7 +5,7 @@ import { DataManager } from "../DataManager";
 import { parseArtifact } from "../imports/parse";
 import { validateArtifact } from "../imports/validate";
 
-export default class ArtifactDataManager extends DataManager<string, string, ICachedArtifact, IArtifact>{
+export class ArtifactDataManager extends DataManager<string, string, ICachedArtifact, IArtifact>{
   deletedArts = new Set<string>()
   constructor(database: ArtCharDatabase) {
     super(database)

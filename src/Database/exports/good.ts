@@ -1,6 +1,6 @@
 
 import { DBStorage } from "../DBStorage";
-import { BuildSetting } from "../DBStorageClasses/BuildsettingDataManager";
+import { BuildSetting } from "../Data/BuildsettingData";
 import { GOSource, IGO, IGOOD } from "../exim";
 import { currentDBVersion } from "../imports/migrate";
 

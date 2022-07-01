@@ -1,4 +1,4 @@
-import { TalentSheetElementKey } from '../../../Types/character'
+import { TalentSheetElementKey } from '../CharacterSheet'
 import banner from './Banner.png'
 import burst from './burst.png'
 import card from './Character_Zhongli_Card.png'

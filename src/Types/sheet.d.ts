@@ -1,7 +1,7 @@
 import { NumNode, ReadNode } from "../Formula/type";
 import { UIData } from "../Formula/uiData";
 import { ArtifactSetKey, CharacterKey, WeaponKey } from "./consts";
-import { IFieldDisplay } from "./IFieldDisplay";
+import { IFieldDisplay } from "./fieldDisplay";
 
 interface IDocumentBase {
   canShow?: NumNode

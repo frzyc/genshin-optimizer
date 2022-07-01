@@ -1,7 +1,7 @@
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 
-export default class StateDataManager extends DataManager<string, string, object, object>{
+export class StateDataManager extends DataManager<string, string, object, object>{
   constructor(database: ArtCharDatabase) {
     super(database)
     for (const key of this.database.storage.keys) {

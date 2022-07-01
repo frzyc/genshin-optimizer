@@ -7,7 +7,7 @@ import { DataManager } from "../DataManager";
 import { parseCharacter } from "../imports/parse";
 import { validateCharacter } from "../imports/validate";
 
-export default class CharacterDataManager extends DataManager<CharacterKey, string, ICachedCharacter, ICharacter>{
+export class CharacterDataManager extends DataManager<CharacterKey, string, ICachedCharacter, ICharacter>{
   constructor(database: ArtCharDatabase) {
     super(database)
     for (const key of this.database.storage.keys) {

@@ -2,11 +2,11 @@ import { createContext } from "react";
 import { TeamData } from "../DataContext";
 import { CharacterKey } from "../Types/consts";
 import { DBStorage } from "./DBStorage";
-import ArtifactDataManager from "./DBStorageClasses/ArtifactDataManager";
-import BuildsettingDataManager from "./DBStorageClasses/BuildsettingDataManager";
-import CharacterDataManager from "./DBStorageClasses/CharacterDataManager";
-import StateDataManager from "./DBStorageClasses/StateDataManager";
-import WeaponDataManager from "./DBStorageClasses/WeaponDataManager";
+import { ArtifactDataManager } from "./Data/ArtifactData";
+import { BuildsettingDataManager } from "./Data/BuildsettingData";
+import { CharacterDataManager } from "./Data/CharacterData";
+import { StateDataManager } from "./Data/StateData";
+import { WeaponDataManager } from "./Data/WeaponData";
 import { migrate } from "./imports/migrate";
 
 export class ArtCharDatabase {

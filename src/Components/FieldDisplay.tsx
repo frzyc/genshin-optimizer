@@ -4,7 +4,7 @@ import React, { Suspense, useContext, useMemo } from 'react';
 import { DataContext } from "../DataContext";
 import { NodeDisplay } from "../Formula/api";
 import KeyMap, { valueString } from "../KeyMap";
-import { IBasicFieldDisplay, IFieldDisplay } from "../Types/IFieldDisplay";
+import { IBasicFieldDisplay, IFieldDisplay } from "../Types/fieldDisplay";
 import { evalIfFunc } from "../Util/Util";
 import ColorText from "./ColoredText";
 import QuestionTooltip from "./QuestionTooltip";
