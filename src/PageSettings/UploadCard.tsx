@@ -157,7 +157,7 @@ function GOUploadAction({ data: { storage }, data, reset }: { data: ImportResult
   const replaceDB = () => {
     database.storage.clear()
     database.storage.copyFrom(storage)
-    setDatabase(new ArtCharDatabase(database.storage, true))
+    setDatabase(new ArtCharDatabase(database.storage))
     reset()
   }
 

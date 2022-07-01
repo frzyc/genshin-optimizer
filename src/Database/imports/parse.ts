@@ -1,7 +1,7 @@
 import Artifact from "../../Data/Artifacts/Artifact";
 import { ascensionMaxLevel } from "../../Data/LevelData";
 import { allMainStatKeys, allSubstatKeys, IArtifact, ISubstat } from "../../Types/artifact";
-import { ICachedCharacter, ICharacter } from "../../Types/character";
+import { ICharacter } from "../../Types/character";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../../Types/consts";
 import { IWeapon } from "../../Types/weapon";
 
