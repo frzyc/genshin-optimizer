@@ -51,6 +51,7 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
       this.database.chars.set(char.key, char)
     }
     super.remove(key)
+    this.deletedArts.add(key)
   }
   /**
    * **Caution** This does not update `location`, use `setLocation` instead
