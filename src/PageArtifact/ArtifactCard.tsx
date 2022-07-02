@@ -2,7 +2,7 @@ import { faBan, faChartLine, faEdit, faTrashAlt } from '@fortawesome/free-solid-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BusinessCenter, Lock, LockOpen } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, Chip, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
-import React, { lazy, Suspense, useCallback, useContext, useState } from 'react';
+import React, { lazy, Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
 import CardLight from '../Components/Card/CardLight';
@@ -174,10 +174,9 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
   </Suspense>
 }
 function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, effFilter: Set<SubstatKey>, rarity: Rarity }) {
-  if (!stat.value) return null
   const numRolls = stat.rolls?.length ?? 0
   const maxRoll = stat.key ? Artifact.maxSubstatValues(stat.key) : 0
-  const rollData = stat.key ? Artifact.getSubstatRollData(stat.key, rarity) : []
+  const rollData = useMemo(() => stat.key ? Artifact.getSubstatRollData(stat.key, rarity) : [], [stat.key, rarity])
   const rollOffset = 7 - rollData.length
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
   const efficiency = stat.efficiency ?? 0
@@ -185,11 +184,12 @@ function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, eff
   const statName = KeyMap.getStr(stat.key)
   const unit = KeyMap.unit(stat.key)
   const inFilter = stat.key && effFilter.has(stat.key)
+  const progresses = useMemo(() => inFilter && <Box display="flex" gap={0.25} height="1.3em">
+    {[...stat.rolls].sort().map((v, i) => <SmolProgress key={`${i}${v}`} value={100 * v / maxRoll} color={`roll${clamp(rollOffset + rollData.indexOf(v), 1, 6)}.main`} />)}
+  </Box>, [inFilter, stat.rolls, maxRoll, rollData, rollOffset])
   return (<Box display="flex" gap={1} alignContent="center">
     <Typography sx={{ flexGrow: 1 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{StatIcon[stat.key]} {statName}{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}</Typography>
-    {inFilter && <Box display="flex" gap={0.25} height="1.3em">
-      {stat.rolls.sort().map((v, i) => <SmolProgress key={`${i}${v}`} value={100 * v / maxRoll} color={`roll${clamp(rollOffset + rollData.indexOf(v), 1, 6)}.main`} />)}
-    </Box>}
+    {progresses}
     <Typography sx={{ opacity: effOpacity, minWidth: 40, textAlign: "right" }}>{inFilter ? `${efficiency.toFixed()}%` : "-"}</Typography>
   </Box>)
 }

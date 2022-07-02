@@ -1,3 +1,4 @@
+import { deepFreeze } from "../Util/Util"
 import { ArtCharDatabase } from "./Database"
 
 export class DataManager<CacheKey extends string | number, StorageKey extends string | number, CacheValue, StorageValue> {
@@ -37,7 +38,8 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
   get values() { return Object.values(this.data) }
   get(key: CacheKey | "" | undefined): CacheValue | undefined { return key ? this.data[key] : undefined }
   set(key: CacheKey, value: CacheValue) {
-    this.data[key] = Object.freeze(value)
+    deepFreeze(value)
+    this.data[key] = value
     this.database.storage.set(this.toStorageKey(key) as string, this.deCache(value))
     this.trigger(key)
   }

@@ -1,5 +1,5 @@
 import { IArtifact, ICachedArtifact } from "../../Types/artifact";
-import { getRandomInt } from "../../Util/Util";
+import { deepClone, getRandomInt } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 import { parseArtifact } from "../imports/parse";
@@ -20,8 +20,11 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
 
         // Update relations
         const { location, slotKey } = flex
-        if (this.database.chars.data[location] && this.database.chars.data[location]?.equippedArtifacts[slotKey] === "") {
-          this.database.chars.data[location]!.equippedArtifacts[slotKey] = key // equiped on `location`
+        const char = this.database.chars.get(location)
+        if (location && char && char.equippedArtifacts[slotKey] === "") {
+          const equippedArtifacts = deepClone(char.equippedArtifacts)
+          equippedArtifacts[slotKey] = key
+          this.database.chars.setEquippedArtifacts(location, equippedArtifacts)
         } else flex.location = ""
 
         const { artifact } = validateArtifact(flex, key)
@@ -46,10 +49,8 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
     if (!art) return
 
     const char = art.location && this.database.chars.get(art.location)
-    if (char && char.equippedArtifacts[art.slotKey] === key) {
-      char.equippedArtifacts[art.slotKey] = ""
-      this.database.chars.set(char.key, char)
-    }
+    if (char && char.equippedArtifacts[art.slotKey] === key)
+      this.database.chars.setEquippedArtifact(char.key, art.slotKey, "")
     super.remove(key)
     this.deletedArts.add(key)
   }

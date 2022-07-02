@@ -1,7 +1,7 @@
 import { CharacterKey } from "pipeline";
 import { ICachedCharacter, ICharacter } from "../../Types/character";
 import { allSlotKeys, SlotKey } from "../../Types/consts";
-import { objectKeyMap } from "../../Util/Util";
+import { deepClone, objectKeyMap } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 import { parseCharacter } from "../imports/parse";
@@ -90,11 +90,28 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     }
     super.set(key, newChar)
   }
+
+  /**
+   * This does not update the `location` on artifacts. Use `CharacterDataManager.equipArtifacts` or `ArtifactDataManager.setlocation`
+   */
   setEquippedArtifacts(key: CharacterKey, equippedArtifacts: ICachedCharacter["equippedArtifacts"]) {
     const char = super.get(key)
     if (!char) return
     super.set(key, { ...char, equippedArtifacts })
   }
+  /**
+   * This does not update the `location` on artifacts. Use `CharacterDataManager.equipArtifacts` or `ArtifactDataManager.setlocation`
+   */
+  setEquippedArtifact(key: CharacterKey, slotKey: SlotKey, artid: string) {
+    const char = super.get(key)
+    if (!char) return
+    const equippedArtifacts = deepClone(char.equippedArtifacts)
+    equippedArtifacts[slotKey] = artid
+    super.set(key, { ...char, equippedArtifacts })
+  }
+  /**
+   * This does not update the `location` on weapon. Use `WeaponDataManager.setLocation`
+   */
   setEquippedWeapon(key: CharacterKey, equippedWeapon: ICachedCharacter["equippedWeapon"]) {
     const char = super.get(key)
     if (!char) return
