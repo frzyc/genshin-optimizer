@@ -103,7 +103,7 @@ function buildSettingsReducer(state: BuildSetting = initialBuildSettings(), acti
   if ("type" in action) switch (action.type) {
     case 'mainStatKey': {
       const { slotKey, mainStatKey } = action
-      const mainStatKeys = { ...state.mainStatKeys }//create a new object to update react dependencies
+      const mainStatKeys = deepClone(state.mainStatKeys)//create a new object to update react dependencies
       //when mainstatkey is empty, then it resets the slot
       if (!mainStatKey) {
         mainStatKeys[slotKey] = []

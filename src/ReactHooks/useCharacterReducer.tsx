@@ -71,7 +71,8 @@ export default function useCharacterReducer(characterKey: CharacterKey | "") {
       }
       case "team": {
         const character = database.chars.get(characterKey)!
-        const { team } = character
+        const { team: team_ } = character
+        const team = [...team_] as ICachedCharacter["team"]
 
         const { index, charKey: newCharKey } = action
         const oldCharKey = team[index]

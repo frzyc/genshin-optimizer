@@ -10,6 +10,7 @@ import { uiInput as input } from '../Formula';
 import KeyMap, { StatColoredWithUnit, StatKey } from '../KeyMap';
 import useBuildSetting from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/useBuildSetting';
 import { ElementKey } from '../Types/consts';
+import { deepClone } from '../Util/Util';
 import CardLight from './Card/CardLight';
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from './CustomNumberInput';
 import DropdownButton from './DropdownMenu/DropdownButton';
@@ -41,8 +42,9 @@ export default function StatFilterCard({ disabled = false }: { disabled?: boolea
     <Box display="flex" flexDirection="column" gap={0.5}>
       {Object.entries(statFilters).map(([statKey, min]) => {
         return <StatFilterItem key={statKey} statKey={statKey} statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} value={min} close={() => {
-          delete statFilters[statKey]
-          setStatFilters({ ...statFilters })
+          const statFilters_ = { ...statFilters }
+          delete statFilters_[statKey]
+          setStatFilters({ ...statFilters_ })
         }} />
       })}
       <StatFilterItem statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} />
