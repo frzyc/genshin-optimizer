@@ -47,7 +47,7 @@ export default function WeaponEditor({
   const weaponSheet = usePromise(() => WeaponSheet.get(key), [key])
 
   const weaponDispatch = useCallback((newWeapon: Partial<ICachedWeapon>) => {
-    database.updateWeapon(newWeapon, propWeaponId)
+    database.weapons.set(propWeaponId, newWeapon)
   }, [propWeaponId, database])
 
   const setLevel = useCallback(level => {
@@ -66,7 +66,7 @@ export default function WeaponEditor({
   const weaponFilter = characterSheet ? (ws) => ws.weaponType === characterSheet.weaponTypeKey : undefined
   const initialWeaponFilter = characterSheet && characterSheet.weaponTypeKey
 
-  const equipOnChar = useCallback((charKey: CharacterKey | "") => id && database.setWeaponLocation(id, charKey), [database, id])
+  const equipOnChar = useCallback((charKey: CharacterKey | "") => id && database.weapons.setLocation(id, charKey), [database, id])
   const filter = useCallback(
     (cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType,
     [weaponSheet],
@@ -135,7 +135,7 @@ export default function WeaponEditor({
               </DropdownButton>}
             </ButtonGroup>
 
-            <Button color="error" onClick={() => id && database.updateWeapon({ lock: !lock }, id)} startIcon={lock ? <Lock /> : <LockOpen />}>
+            <Button color="error" onClick={() => id && database.weapons.set(id, { lock: !lock })} startIcon={lock ? <Lock /> : <LockOpen />}>
               {lock ? "Locked" : "Unlocked"}
             </Button>
           </Box>

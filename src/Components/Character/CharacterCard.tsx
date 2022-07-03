@@ -166,7 +166,7 @@ function Artifacts() {
   const { database } = useContext(DatabaseContext)
   const { data } = useContext(DataContext)
   const artifacts = useMemo(() =>
-    allSlotKeys.map(k => [k, database._getArt(data.get(input.art[k].id).value ?? "")]),
+    allSlotKeys.map(k => [k, database.arts.get(data.get(input.art[k].id).value ?? "")]),
     [data, database]) as Array<[SlotKey, ICachedArtifact | undefined]>;
 
   return <Grid direction="row" container spacing={0.75} columns={5}>

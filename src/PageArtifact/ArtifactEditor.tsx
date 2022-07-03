@@ -81,7 +81,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const [show, setShow] = useState(false)
 
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
-  useEffect(() => database.followAnyArt(setDirtyDatabase), [database, setDirtyDatabase])
+  useEffect(() => database.arts.followAny(setDirtyDatabase), [database, setDirtyDatabase])
 
   const [editorArtifact, artifactDispatch] = useReducer(artifactReducer, undefined)
   const artifact = useMemo(() => editorArtifact && parseArtifact(editorArtifact), [editorArtifact])
@@ -144,10 +144,10 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   )
 
   const { old, oldType }: { old: ICachedArtifact | undefined, oldType: "edit" | "duplicate" | "upgrade" | "" } = useMemo(() => {
-    const databaseArtifact = dirtyDatabase && artifactIdToEdit && database._getArt(artifactIdToEdit)
+    const databaseArtifact = dirtyDatabase && artifactIdToEdit && database.arts.get(artifactIdToEdit)
     if (databaseArtifact) return { old: databaseArtifact, oldType: "edit" }
     if (artifact === undefined) return { old: undefined, oldType: "" }
-    const { duplicated, upgraded } = dirtyDatabase && database.findDuplicates(artifact)
+    const { duplicated, upgraded } = dirtyDatabase && database.arts.findDups(artifact)
     return { old: duplicated[0] ?? upgraded[0], oldType: duplicated.length !== 0 ? "duplicate" : "upgrade" }
   }, [artifact, artifactIdToEdit, database, dirtyDatabase])
 
@@ -168,7 +168,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
       setShow(true)
       artifactDispatch({ type: "reset" })
     }
-    const databaseArtifact = artifactIdToEdit && dirtyDatabase && database._getArt(artifactIdToEdit)
+    const databaseArtifact = artifactIdToEdit && dirtyDatabase && database.arts.get(artifactIdToEdit)
     if (databaseArtifact) {
       setShow(true)
       artifactDispatch({ type: "overwrite", artifact: deepClone(databaseArtifact) })
@@ -383,7 +383,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
           <Grid item>
             {oldType === "edit" ?
               <Button startIcon={<Add />} onClick={() => {
-                database.updateArt(editorArtifact!, old!.id);
+                database.arts.set(old!.id, editorArtifact!);
                 if (allowEmpty) reset()
                 else {
                   setShow(false)
@@ -393,7 +393,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
                 {t`editor.btnSave`}
               </Button> :
               <Button startIcon={<Add />} onClick={() => {
-                database.createArt(artifact!);
+                database.arts.new(artifact!);
                 if (allowEmpty) reset()
                 else {
                   setShow(false)
@@ -410,7 +410,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             {process.env.NODE_ENV === "development" && <Button color="info" startIcon={<Shuffle />} onClick={async () => artifactDispatch({ type: "overwrite", artifact: await randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
           </Grid>
           {old && oldType !== "edit" && <Grid item>
-            <Button startIcon={<Update />} onClick={() => { database.updateArt(editorArtifact!, old.id); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>
+            <Button startIcon={<Update />} onClick={() => { database.arts.set(old.id, editorArtifact!); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>
           </Grid>}
         </Grid>
       </CardContent>

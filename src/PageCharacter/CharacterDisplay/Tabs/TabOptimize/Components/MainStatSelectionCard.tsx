@@ -11,7 +11,7 @@ import StatIcon, { uncoloredEleIcons } from '../../../../../Components/StatIcon'
 import Artifact from '../../../../../Data/Artifacts/Artifact';
 import KeyMap from '../../../../../KeyMap';
 import { allElementsWithPhy } from '../../../../../Types/consts';
-import useBuildSetting from '../BuildSetting';
+import useBuildSetting from '../useBuildSetting';
 
 export const artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"] as const
 

@@ -8,7 +8,7 @@ import { CharacterContext } from '../CharacterContext';
 import { DataContext } from '../DataContext';
 import { uiInput as input } from '../Formula';
 import KeyMap, { StatColoredWithUnit, StatKey } from '../KeyMap';
-import useBuildSetting from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting';
+import useBuildSetting from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/useBuildSetting';
 import { ElementKey } from '../Types/consts';
 import CardLight from './Card/CardLight';
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from './CustomNumberInput';

@@ -4,10 +4,10 @@ import { CharacterKey } from "../Types/consts";
 
 export default function useCharacter(characterKey: CharacterKey | "" | undefined = "") {
   const { database } = useContext(DatabaseContext)
-  const [character, updateCharacter] = useState(database._getChar(characterKey))
-  useEffect(() => updateCharacter(database._getChar(characterKey)), [database, characterKey])
+  const [character, updateCharacter] = useState(database.chars.get(characterKey))
+  useEffect(() => updateCharacter(database.chars.get(characterKey)), [database, characterKey])
   useEffect(() =>
-    characterKey ? database.followChar(characterKey, updateCharacter) : undefined,
+    characterKey ? database.chars.follow(characterKey, updateCharacter) : undefined,
     [characterKey, updateCharacter, database])
   return character
 }

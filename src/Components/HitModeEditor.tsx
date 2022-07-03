@@ -43,7 +43,7 @@ export const reactionModeText = {
     <SqBadge sx={sqBadgeStyle} color="pyro">{uncoloredEleIcons.pyro}</SqBadge>
   </Box>,
   hydro_vaporize: (t) => <Box display="flex" alignItems="center">
-    <ColorText color="vaporize">{t`ampReaction.pyro_melt`}</ColorText>
+    <ColorText color="vaporize">{t`ampReaction.hydro_vaporize`}</ColorText>
     <SqBadge sx={sqBadgeStyle} color="pyro">{uncoloredEleIcons.pyro}</SqBadge>
     {`+`}
     <SqBadge sx={sqBadgeStyle} color="hydro">{uncoloredEleIcons.hydro}</SqBadge>

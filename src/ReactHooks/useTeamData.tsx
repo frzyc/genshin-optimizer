@@ -1,4 +1,4 @@
-import { useContext, useDeferredValue, useEffect } from "react";
+import { useCallback, useContext, useDeferredValue, useEffect } from "react";
 import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { resonanceData } from "../Data/Resonance";
@@ -27,26 +27,34 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
   const dbDirtyDeferred = useDeferredValue(dbDirty)
   const data = usePromise(() => getTeamDataCalc(database, characterKey, mainStatAssumptionLevel, overrideArt, overrideWeapon), [dbDirtyDeferred, characterKey, database, mainStatAssumptionLevel, overrideArt, overrideWeapon])
   useEffect(() =>
-    characterKey ? database.followChar(characterKey, setDbDirty) : undefined,
+    characterKey ? database.chars.follow(characterKey, setDbDirty) : undefined,
     [characterKey, setDbDirty, database])
 
   useEffect(() =>
-    characterKey ? database.followAnyArt(setDbDirty) : undefined,
+    characterKey ? database.arts.followAny(setDbDirty) : undefined,
     [characterKey, setDbDirty, database])
 
-  const [t1, t2, t3, t4] = Object.keys(data ?? {})
+  const team = Object.keys(data ?? {})
+  const [t1, t2, t3, t4] = team
+
+  const setTeamDataDirty = useCallback(() => {
+    team.map(c => database.invalidateTeamData(c))
+    setDbDirty()
+  }, [database, team, setDbDirty])
+
+
   useEffect(() =>
-    t1 ? database.followChar(t1, setDbDirty) : undefined,
-    [t1, setDbDirty, database])
+    t1 ? database.chars.follow(t1, setTeamDataDirty) : undefined,
+    [t1, setTeamDataDirty, database])
   useEffect(() =>
-    t2 ? database.followChar(t2, setDbDirty) : undefined,
-    [t2, setDbDirty, database])
+    t2 ? database.chars.follow(t2, setTeamDataDirty) : undefined,
+    [t2, setTeamDataDirty, database])
   useEffect(() =>
-    t3 ? database.followChar(t3, setDbDirty) : undefined,
-    [t3, setDbDirty, database])
+    t3 ? database.chars.follow(t3, setTeamDataDirty) : undefined,
+    [t3, setTeamDataDirty, database])
   useEffect(() =>
-    t4 ? database.followChar(t4, setDbDirty) : undefined,
-    [t4, setDbDirty, database])
+    t4 ? database.chars.follow(t4, setTeamDataDirty) : undefined,
+    [t4, setTeamDataDirty, database])
 
   return data
 }
@@ -102,9 +110,9 @@ type CharBundle = {
 async function getCharDataBundle(database: ArtCharDatabase, characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[], overrideWeapon?: ICachedWeapon)
   : Promise<CharBundle | undefined> {
   if (!characterKey) return
-  const character = database._getChar(characterKey)
+  const character = database.chars.get(characterKey)
   if (!character) return
-  const weapon = overrideWeapon ?? database._getWeapon(character.equippedWeapon)
+  const weapon = overrideWeapon ?? database.weapons.get(character.equippedWeapon)
   if (!weapon) return
   const [characterSheet, weaponSheet, artifactSheetsData] = await Promise.all([
     CharacterSheet.get(characterKey),
@@ -112,7 +120,7 @@ async function getCharDataBundle(database: ArtCharDatabase, characterKey: Charac
     ArtifactSheet.getAllData
   ])
   if (!characterSheet || !weaponSheet || !artifactSheetsData) return
-  const artifacts = (overrideArt ?? Object.values(character.equippedArtifacts).map(a => database._getArt(a))).filter(a => a) as ICachedArtifact[]
+  const artifacts = (overrideArt ?? Object.values(character.equippedArtifacts).map(a => database.arts.get(a))).filter(a => a) as ICachedArtifact[]
   const data = [
     ...artifacts.map(a => dataObjForArtifact(a, mainStatAssumptionLevel)),
     dataObjForCharacter(character),

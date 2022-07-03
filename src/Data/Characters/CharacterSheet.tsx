@@ -5,13 +5,24 @@ import { Translate } from "../../Components/Translate";
 import { input } from "../../Formula";
 import { Data, NumNode } from "../../Formula/type";
 import { greaterEq } from "../../Formula/utils";
-import { TalentSheet, TalentSheetElement, TalentSheetElementKey } from "../../Types/character";
 import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "../../Types/consts";
 import { DocumentConditional, DocumentConditionalBase, DocumentSection, IDocumentFields, IDocumentHeader } from "../../Types/sheet";
 import { ascensionMaxLevel } from "../LevelData";
 import { st, trans } from "../SheetUtil";
 
 const characterSheets = import('.').then(imp => imp.default)
+
+interface TalentSheetElement {
+  name: Displayable //talentName
+  img: string
+  sections: DocumentSection[]
+}
+
+export type TalentSheetElementKey = "auto" | "skill" | "burst" | "sprint" | "passive" | "passive1" | "passive2" | "passive3" | "constellation1" | "constellation2" | "constellation3" | "constellation4" | "constellation5" | "constellation6"
+export type TalentSheet = {
+  sheets: Dict<TalentSheetElementKey, TalentSheetElement>
+}
+
 
 interface ICharacterSheetBase {
   name: Displayable

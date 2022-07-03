@@ -1,4 +1,4 @@
-import { TalentSheetElementKey } from '../../../../Types/character'
+import { TalentSheetElementKey } from '../../CharacterSheet'
 import burst from './burst.png'
 import constellation1 from './constellation1.png'
 import constellation2 from './constellation2.png'

@@ -2,12 +2,27 @@ import KeyMap, { cacheValueString } from '../../KeyMap';
 import { allSubstatKeys, ICachedArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
 import { allRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../../Types/consts';
 import { clampPercent, objectKeyMap } from '../../Util/Util';
-import { ArtifactSlotsData, ArtifactStarsData } from './ArtifactData';
 import ArtifactMainStatsData from './artifact_main_gen.json';
 import ArtifactSubstatsData from './artifact_sub_gen.json';
 import ArtifactSubstatLookupTable from './artifact_sub_rolls_gen.json';
 
 const maxStar: Rarity = 5
+
+const ArtifactSubstatRollData: StrictDict<Rarity, { low: number, high: number, numUpgrades: number }> = {
+  1: { low: 0, high: 0, numUpgrades: 1 },
+  2: { low: 0, high: 1, numUpgrades: 2 },
+  3: { low: 1, high: 2, numUpgrades: 3 },
+  4: { low: 2, high: 3, numUpgrades: 4 },
+  5: { low: 3, high: 4, numUpgrades: 5 }
+};
+
+const ArtifactSlotsData: StrictDict<SlotKey, { name: string, stats: readonly MainStatKey[] }> = {
+  flower: { name: "Flower of Life", stats: ["hp"] },
+  plume: { name: "Plume of Death", stats: ["atk"] },
+  sands: { name: "Sands of Eon", stats: ["hp_", "def_", "atk_", "eleMas", "enerRech_"] },
+  goblet: { name: "Goblet of Eonothem", stats: ["hp_", "def_", "atk_", "eleMas", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_",] },
+  circlet: { name: "Circlet of Logos", stats: ["hp_", "def_", "atk_", "eleMas", "critRate_", "critDMG_", "heal_"] },
+};
 
 export default class Artifact {
   //do not instantiate.
@@ -33,7 +48,7 @@ export default class Artifact {
 
   //SUBSTATS
   static rollInfo = (rarity: Rarity): { low: number, high: number, numUpgrades: number } =>
-    ArtifactStarsData[rarity]
+    ArtifactSubstatRollData[rarity]
 
   static maxSubstatValues = (substatKey: SubstatKey, rarity = maxStar): number => {
     if (substatKey.endsWith("_")) // TODO: % CONVERSION
@@ -47,7 +62,7 @@ export default class Artifact {
       Artifact.maxSubstatValues(substat, maxStar))))
 
   static totalPossibleRolls = (rarity: Rarity): number =>
-    ArtifactStarsData[rarity].high + ArtifactStarsData[rarity].numUpgrades
+    ArtifactSubstatRollData[rarity].high + ArtifactSubstatRollData[rarity].numUpgrades
   static rollsRemaining = (level: number, rarity: Rarity) =>
     Math.ceil((rarity * 4 - level) / 4)
   static getSubstatRollData = (substatKey: SubstatKey, rarity: Rarity) => {

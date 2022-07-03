@@ -36,18 +36,18 @@ export default function useCharacterReducer(characterKey: CharacterKey | "") {
 
     if ("type" in action) switch (action.type) {
       case "weapon":
-        database.setWeaponLocation(action.id, characterKey)
+        database.weapons.setLocation(action.id, characterKey)
         break
       case "enemyOverride": {
-        const character = database._getChar(characterKey)!
+        const character = database.chars.get(characterKey)!
         const enemyOverride = character.enemyOverride
         const { statKey, value } = action
         if (enemyOverride[statKey] === value) break
-        database.updateChar({ ...character, enemyOverride: { ...enemyOverride, [statKey]: value } })
+        database.chars.set(characterKey, { ...character, enemyOverride: { ...enemyOverride, [statKey]: value } })
         break
       }
       case "editStats": {
-        const character = database._getChar(characterKey)!
+        const character = database.chars.get(characterKey)!
         const { statKey, value } = action
 
         const bonusStats = deepClone(character.bonusStats)
@@ -56,21 +56,21 @@ export default function useCharacterReducer(characterKey: CharacterKey | "") {
         if (!value) delete bonusStats[statKey]
         else bonusStats[statKey] = value
 
-        database.updateChar({ ...character, bonusStats })
+        database.chars.set(characterKey, { ...character, bonusStats })
         break
       }
       case "resetStats": {
-        const character = database._getChar(characterKey)!
+        const character = database.chars.get(characterKey)!
         const { statKey } = action
 
         const bonusStats = character.bonusStats
         delete bonusStats[statKey]
 
-        database.updateChar({ ...character, bonusStats })
+        database.chars.set(characterKey, { ...character, bonusStats })
         break
       }
       case "team": {
-        const character = database._getChar(characterKey)!
+        const character = database.chars.get(characterKey)!
         const { team } = character
 
         const { index, charKey: newCharKey } = action
@@ -79,18 +79,18 @@ export default function useCharacterReducer(characterKey: CharacterKey | "") {
 
         // move the old char to "inventory"
         if (oldCharKey) {
-          const oldChar = database._getChar(oldCharKey)
-          if (oldChar) database.updateChar({ ...oldChar, team: ["", "", ""] })
+          const oldChar = database.chars.get(oldCharKey)
+          if (oldChar) database.chars.set(characterKey, { ...oldChar, team: ["", "", ""] })
         }
 
         // unequip new char from its old teammates
         if (newCharKey) {
-          const newChar = database._getChar(newCharKey)
+          const newChar = database.chars.get(newCharKey)
           if (newChar) {
             newChar.team.forEach(t => {
               if (!t) return
-              const tChar = database._getChar(t)
-              tChar && database.updateChar({ ...tChar, team: tChar.team.map(c => c === newCharKey ? "" : c) as ICachedCharacter["team"] })
+              const tChar = database.chars.get(t)
+              tChar && database.chars.set(characterKey, { ...tChar, team: tChar.team.map(c => c === newCharKey ? "" : c) as ICachedCharacter["team"] })
             })
           }
         }
@@ -98,15 +98,15 @@ export default function useCharacterReducer(characterKey: CharacterKey | "") {
         // equip new char to new teammates
         team.forEach((t, tind) => {
           if (!t) return
-          const newChar = database._getChar(t)
-          if (newChar) database.updateChar({ ...newChar, team: [characterKey, ...team].filter((_, i) => i !== tind + 1) as ICachedCharacter["team"] })
+          const newChar = database.chars.get(t)
+          if (newChar) database.chars.set(characterKey, { ...newChar, team: [characterKey, ...team].filter((_, i) => i !== tind + 1) as ICachedCharacter["team"] })
         })
 
         // update src character
-        database.updateChar({ ...character, team })
+        database.chars.set(characterKey, { ...character, team })
       }
     } else
-      database.updateChar({ ...database._getChar(characterKey)!, ...action })
+      database.chars.set(characterKey, { ...database.chars.get(characterKey)!, ...action })
   }, [characterKey, database])
 
 }

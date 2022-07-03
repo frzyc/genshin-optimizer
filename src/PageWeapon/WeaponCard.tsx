@@ -39,7 +39,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
   const wrapperFunc = useCallback(children => <CardActionArea onClick={() => onClick?.(weaponId)} >{children}</CardActionArea>, [onClick, weaponId],)
   const falseWrapperFunc = useCallback(children => <Box >{children}</Box>, [])
 
-  const equipOnChar = useCallback((charKey: CharacterKey | "") => database.setWeaponLocation(weaponId, charKey), [database, weaponId],)
+  const equipOnChar = useCallback((charKey: CharacterKey | "") => database.weapons.setLocation(weaponId, charKey), [database, weaponId],)
 
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
 
@@ -53,7 +53,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
       <ConditionalWrapper condition={!!onClick} wrapper={wrapperFunc} falseWrapper={falseWrapperFunc}>
         <Box className={`grad-${weaponSheet.rarity}star`} sx={{ position: "relative", pt: 2, px: 2, }}>
-          {!onClick && <IconButton color="primary" onClick={() => database.updateWeapon({ lock: !lock }, id)} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 2 }}>
+          {!onClick && <IconButton color="primary" onClick={() => database.weapons.set(id, { lock: !lock })} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 2 }}>
             {lock ? <Lock /> : <LockOpen />}
           </IconButton>}
           <Box sx={{ position: "relative", zIndex: 1 }}>

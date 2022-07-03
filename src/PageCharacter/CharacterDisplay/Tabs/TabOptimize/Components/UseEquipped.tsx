@@ -19,7 +19,7 @@ import useCharacter from "../../../../../ReactHooks/useCharacter";
 import useCharSelectionCallback from "../../../../../ReactHooks/useCharSelectionCallback";
 import { ICachedCharacter } from "../../../../../Types/character";
 import { CharacterKey } from "../../../../../Types/consts";
-import useBuildSetting from "../BuildSetting";
+import useBuildSetting from "../useBuildSetting";
 import { useOptimizeDBState } from "../DBState";
 
 export default function UseEquipped({ disabled = false }: { disabled?: boolean }) {
@@ -30,7 +30,7 @@ export default function UseEquipped({ disabled = false }: { disabled?: boolean }
   const [show, onOpen, onClose] = useBoolState(false)
   const [{ equipmentPriority: tempEquipmentPriority }, setOptimizeDBState] = useOptimizeDBState()
   //Basic validate for the equipmentPrio list to remove dups and characters that doesnt exist.
-  const equipmentPriority = useMemo(() => [...new Set(tempEquipmentPriority)].filter(ck => database._getChar(ck)), [database, tempEquipmentPriority])
+  const equipmentPriority = useMemo(() => [...new Set(tempEquipmentPriority)].filter(ck => database.chars.get(ck)), [database, tempEquipmentPriority])
   const setPrio = useCallback((equipmentPriority: CharacterKey[]) => setOptimizeDBState({ equipmentPriority }), [setOptimizeDBState])
 
   const setPrioRank = useCallback((fromIndex, toIndex) => {
@@ -55,10 +55,10 @@ export default function UseEquipped({ disabled = false }: { disabled?: boolean }
     return numAbove
   }, [characterKey, equipmentPriority])
   const numUseEquippedChar = useMemo(() => {
-    return database._getCharKeys().length - 1 - numAbove
+    return database.chars.keys.length - 1 - numAbove
   }, [numAbove, database])
   const numUnlisted = useMemo(() => {
-    return database._getCharKeys().length - equipmentPriority.length
+    return database.chars.keys.length - equipmentPriority.length
   }, [equipmentPriority, database])
 
   return <Box display="flex" gap={1}>
@@ -160,7 +160,7 @@ function SelectItem({ characterKey, rank, maxRank, setRank, onRemove, numAbove }
         <CharacterCardPico characterKey={characterKey} onClick={onClick} />
       </Grid>
       <Grid item xs={1}><WeaponCardPico weaponId={equippedWeapon} /></Grid>
-      {Object.entries(equippedArtifacts).map(([slotKey, aId]) => <Grid item xs={1} key={slotKey} ><ArtifactCardPico slotKey={slotKey} artifactObj={database._getArt(aId)} /></Grid>)}
+      {Object.entries(equippedArtifacts).map(([slotKey, aId]) => <Grid item xs={1} key={slotKey} ><ArtifactCardPico slotKey={slotKey} artifactObj={database.arts.get(aId)} /></Grid>)}
     </Grid>
 
   </CardLight>

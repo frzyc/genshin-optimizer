@@ -1,5 +1,6 @@
-import { BuildSetting } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting";
+
 import { DBStorage } from "../DBStorage";
+import { BuildSetting } from "../Data/BuildsettingData";
 import { GOSource, IGO, IGOOD } from "../exim";
 import { currentDBVersion } from "../imports/migrate";
 

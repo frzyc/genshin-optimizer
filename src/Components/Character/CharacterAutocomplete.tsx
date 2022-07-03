@@ -39,7 +39,7 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
   const { database } = useContext(DatabaseContext)
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
   const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
-  const characterKeys = database._getCharKeys().filter(ck => characterSheets?.[ck] && filter(characterSheets[ck], ck)).sort()
+  const characterKeys = database.chars.keys.filter(ck => characterSheets?.[ck] && filter(characterSheets[ck], ck)).sort()
 
   const textForValue = useCallback((value: CharacterAutocompleteValue): string => {
     switch (value) {
@@ -92,7 +92,7 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
     />}
     renderOption={(props, option) => {
       const favorite = option.value !== "Equipped" && option.value !== "Inventory"
-        && option.value !== "" && database._getChar(option.value)?.favorite
+        && option.value !== "" && database.chars.get(option.value)?.favorite
       return <MenuItemWithImage
         key={option.value ? option.value : "default"}
         value={option.value ? option.value : "default"}

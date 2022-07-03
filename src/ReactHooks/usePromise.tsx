@@ -10,7 +10,7 @@ export default function usePromise<T>(promiseFunc: () => Promise<T> | undefined,
   const [res, setRes] = useState<T | undefined>(undefined);
   useEffect(() => {
     let pending = true
-    promiseFunc()?.then(res => pending && setRes(() => res), console.error)
+    promiseFunc()?.then(res => pending && setRes(res), console.error) ?? setRes(undefined)
     return () => {
       pending = false
       !useOld && setRes(undefined)

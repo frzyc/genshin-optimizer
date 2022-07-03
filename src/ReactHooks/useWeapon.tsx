@@ -3,10 +3,10 @@ import { DatabaseContext } from "../Database/Database";
 
 export default function useWeapon(weaponID: string | undefined = "") {
   const { database } = useContext(DatabaseContext)
-  const [weapon, setWeapon] = useState(database._getWeapon(weaponID))
-  useEffect(() => setWeapon(database._getWeapon(weaponID)), [database, weaponID])
+  const [weapon, setWeapon] = useState(database.weapons.get(weaponID))
+  useEffect(() => setWeapon(database.weapons.get(weaponID)), [database, weaponID])
   useEffect(() =>
-    weaponID ? database.followWeapon(weaponID, setWeapon) : undefined,
+    weaponID ? database.weapons.follow(weaponID, setWeapon) : undefined,
     [weaponID, setWeapon, database])
   return weapon
 }

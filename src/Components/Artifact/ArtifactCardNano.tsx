@@ -9,7 +9,7 @@ import KeyMap, { cacheValueString } from "../../KeyMap";
 import useArtifact from "../../ReactHooks/useArtifact";
 import usePromise from "../../ReactHooks/usePromise";
 import { ICachedSubstat } from "../../Types/artifact";
-import { allElementsWithPhy, SlotKey } from "../../Types/consts";
+import { allElementsWithPhy, CharacterKey, SlotKey } from "../../Types/consts";
 import { clamp } from "../../Util/Util";
 import BootstrapTooltip from "../BootstrapTooltip";
 import CardDark from "../Card/CardDark";
@@ -30,7 +30,7 @@ type Data = {
 
 export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainStatAssumptionLevel = 0, showLocation = false, onClick, BGComponent = CardDark }: Data) {
   const art = useArtifact(artifactId)
-  const sheet = usePromise(() => ArtifactSheet.get(art?.setKey), [art])
+  const sheet = usePromise(() => ArtifactSheet.get(art?.setKey), [art?.setKey])
   const actionWrapperFunc = useCallback(children => <CardActionArea onClick={onClick} sx={{ height: "100%" }}>{children}</CardActionArea>, [onClick],)
   const theme = useTheme()
   if (!art) return <BGComponent sx={{ display: "flex", height: "100%", alignItems: "center", justifyContent: "center" }}>
@@ -91,7 +91,7 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
     </Typography>
   </Box>)
 }
-function LocationIcon({ location }) {
+function LocationIcon({ location }: { location: CharacterKey | "" }) {
   const characterSheet = usePromise(() => CharacterSheet.get(location ?? ""), [location])
   return characterSheet ? <BootstrapTooltip placement="right-end" title={<Typography>{characterSheet.name}</Typography>}><ImgIcon src={characterSheet.thumbImgSide} sx={{ height: "3em", marginTop: "-1.5em", marginLeft: "-0.5em" }} /></BootstrapTooltip> : <BusinessCenter />
 }

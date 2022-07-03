@@ -31,14 +31,14 @@ export default function ArtifactSwapModal({ onChangeId, slotKey, show, onClose }
   const [filterOption, filterOptionDispatch]: [FilterOption, (action: any) => void] = useReducer(filterOptionReducer, { ...initialFilterOption(), slotKeys: [slotKey] })
 
   const [dbDirty, forceUpdate] = useForceUpdate()
-  useEffect(() => { return database.followAnyArt(forceUpdate) }, [database, forceUpdate])
+  useEffect(() => { return database.arts.followAny(forceUpdate) }, [database, forceUpdate])
 
   const brPt = useMediaQueryUp()
 
   const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
   const artIdList = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
-    return dbDirty && database._getArts().filter(filterFunc).map(art => art.id).slice(0, numToShowMap[brPt])
+    return dbDirty && database.arts.values.filter(filterFunc).map(art => art.id).slice(0, numToShowMap[brPt])
   }, [dbDirty, database, filterConfigs, filterOption, brPt])
 
   return <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }} >

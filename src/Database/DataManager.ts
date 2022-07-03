@@ -1,17 +1,31 @@
-export class DataManager<Key extends string | number, Value> {
+import { deepFreeze } from "../Util/Util"
+import { ArtCharDatabase } from "./Database"
+
+export class DataManager<CacheKey extends string | number, StorageKey extends string | number, CacheValue, StorageValue> {
+  database: ArtCharDatabase
+
+  constructor(database: ArtCharDatabase) {
+    this.database = database
+  }
   static readonly allKeys = {} as const
 
-  data: Dict<Key, Value> = {}
-  listeners: Dict<Key, Callback<Value | undefined>[]> = {}
-  anyListeners: Callback<Key | typeof DataManager.allKeys>[] = []
+  data: Dict<CacheKey, CacheValue> = {}
+  listeners: Dict<CacheKey, Callback<CacheValue | undefined>[]> = {}
+  anyListeners: Callback<CacheKey | typeof DataManager.allKeys>[] = []
 
-  followAny(callback: Callback<Key | typeof DataManager.allKeys>): () => void {
+  toStorageKey(key: CacheKey): StorageKey {
+    return key as any as StorageKey
+  }
+  deCache(cacheObj: CacheValue): StorageValue {
+    return cacheObj as any as StorageValue
+  }
+  followAny(callback: Callback<CacheKey | typeof DataManager.allKeys>): () => void {
     this.anyListeners.push(callback)
     return () => {
       this.anyListeners = this.anyListeners.filter(cb => cb !== callback)
     }
   }
-  follow(key: Key, callback: Callback<Value | undefined>) {
+  follow(key: CacheKey, callback: Callback<CacheValue | undefined>) {
     if (this.listeners[key]) this.listeners[key]!.push(callback)
     else this.listeners[key] = [callback]
     return () => {
@@ -22,30 +36,25 @@ export class DataManager<Key extends string | number, Value> {
 
   get keys() { return Object.keys(this.data) }
   get values() { return Object.values(this.data) }
-  get(key: Key | "" | undefined): Value | undefined { return key ? this.data[key] : undefined }
-  set(key: Key, value: Value) {
+  get(key: CacheKey | "" | undefined): CacheValue | undefined { return key ? this.data[key] : undefined }
+  set(key: CacheKey, value: CacheValue) {
+    deepFreeze(value)
     this.data[key] = value
-
+    this.database.storage.set(this.toStorageKey(key) as string, this.deCache(value))
     this.trigger(key)
   }
   /** Trigger update event */
-  trigger(key: Key) {
+  trigger(key: CacheKey) {
     const value = this.data[key]
     this.listeners[key]?.forEach(cb => cb(value))
     this.anyListeners.forEach(cb => cb(key))
   }
-  remove(key: Key) {
+  remove(key: CacheKey) {
     delete this.data[key]
+    this.database.storage.remove(this.toStorageKey(key) as string)
+
     this.trigger(key)
     delete this.listeners[key]
-  }
-  removeAll() {
-    this.data = {}
-
-    Object.values(this.listeners).forEach(listeners => listeners.forEach(listener => listener(undefined)))
-    this.anyListeners.forEach(listener => listener(DataManager.allKeys))
-    this.listeners = {}
-    this.anyListeners = []
   }
 }
 

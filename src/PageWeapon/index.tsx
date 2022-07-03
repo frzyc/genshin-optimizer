@@ -48,7 +48,7 @@ export default function PageWeapon() {
   //set follow, should run only once
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: '/weapon' })
-    return database.followAnyWeapon(forceUpdate)
+    return database.weapons.followAny(forceUpdate)
   }, [forceUpdate, database])
 
   const brPt = useMediaQueryUp()
@@ -57,12 +57,12 @@ export default function PageWeapon() {
   const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
 
   const deleteWeapon = useCallback(async (key: string) => {
-    const weapon = database._getWeapon(key)
+    const weapon = database.weapons.get(key)
     if (!weapon) return
     const name = t(`weaponNames_gen:${weapon.key}`)
 
     if (!window.confirm(t("removeWeapon", { value: name }))) return
-    database.removeWeapon(key)
+    database.weapons.remove(key)
     if (state.editWeaponId === key)
       stateDispatch({ editWeaponId: "" })
   }, [state.editWeaponId, stateDispatch, database, t])
@@ -73,7 +73,7 @@ export default function PageWeapon() {
 
   const newWeapon = useCallback(
     (weaponKey: WeaponKey) => {
-      editWeapon(database.createWeapon(initialWeapon(weaponKey)))
+      editWeapon(database.weapons.new(initialWeapon(weaponKey)))
     },
     [database, editWeapon])
 
@@ -84,7 +84,7 @@ export default function PageWeapon() {
   const sortConfigs = useMemo(() => weaponSheets && weaponSortConfigs(weaponSheets), [weaponSheets])
   const filterConfigs = useMemo(() => weaponSheets && weaponFilterConfigs(weaponSheets), [weaponSheets])
   const { weaponIdList, totalWeaponNum } = useMemo(() => {
-    const weapons = database._getWeapons()
+    const weapons = database.weapons.values
     const totalWeaponNum = weapons.length
     if (!sortConfigs || !filterConfigs) return { weaponIdList: [], totalWeaponNum }
     const weaponIdList = weapons.filter(filterFunction({ weaponType, rarity, name: deferredSearchTerm }, filterConfigs))
@@ -116,7 +116,7 @@ export default function PageWeapon() {
   // Validate weaponId to be an actual weapon
   useEffect(() => {
     if (!editWeaponId) return
-    if (!database._getWeapon(editWeaponId))
+    if (!database.weapons.get(editWeaponId))
       resetEditWeapon()
   }, [database, editWeaponId, resetEditWeapon])
 
