@@ -130,7 +130,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
           </Box>
         </Box>
         <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", pt: 1, pb: 0, width: "100%" }}>
-          {substats.map((stat: ICachedSubstat) => <SubstatDisplay key={stat.key} stat={stat} effFilter={effFilter} rarity={rarity} />)}
+          {substats.map((stat: ICachedSubstat) => !!stat.value && <SubstatDisplay key={stat.key} stat={stat} effFilter={effFilter} rarity={rarity} />)}
           <Box sx={{ display: "flex", my: 1 }}>
             <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`artifact:editor.curSubEff`}</Typography>
             <PercentBadge value={currentEfficiency} max={900} valid={artifactValid} />

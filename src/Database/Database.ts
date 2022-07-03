@@ -49,6 +49,10 @@ export class ArtCharDatabase {
   invalidateTeamData(key: CharacterKey | "") {
     delete this.teamData[key]
   }
+  clear() {
+    [this.arts, this.chars, this.weapons, this.states, this.buildSettings].map(dm => dm.clear())
+    this.teamData = {}
+  }
 }
 export type DatabaseContextObj = {
   database: ArtCharDatabase,

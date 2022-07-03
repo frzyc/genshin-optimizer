@@ -81,7 +81,7 @@ export default function useCharacterReducer(characterKey: CharacterKey | "") {
         // move the old char to "inventory"
         if (oldCharKey) {
           const oldChar = database.chars.get(oldCharKey)
-          if (oldChar) database.chars.set(characterKey, { ...oldChar, team: ["", "", ""] })
+          if (oldChar) database.chars.set(oldCharKey, { ...oldChar, team: ["", "", ""] })
         }
 
         // unequip new char from its old teammates
@@ -91,7 +91,7 @@ export default function useCharacterReducer(characterKey: CharacterKey | "") {
             newChar.team.forEach(t => {
               if (!t) return
               const tChar = database.chars.get(t)
-              tChar && database.chars.set(characterKey, { ...tChar, team: tChar.team.map(c => c === newCharKey ? "" : c) as ICachedCharacter["team"] })
+              tChar && database.chars.set(t, { ...tChar, team: tChar.team.map(c => c === newCharKey ? "" : c) as ICachedCharacter["team"] })
             })
           }
         }
@@ -100,7 +100,7 @@ export default function useCharacterReducer(characterKey: CharacterKey | "") {
         team.forEach((t, tind) => {
           if (!t) return
           const newChar = database.chars.get(t)
-          if (newChar) database.chars.set(characterKey, { ...newChar, team: [characterKey, ...team].filter((_, i) => i !== tind + 1) as ICachedCharacter["team"] })
+          if (newChar) database.chars.set(t, { ...newChar, team: [characterKey, ...team].filter((_, i) => i !== tind + 1) as ICachedCharacter["team"] })
         })
 
         // update src character

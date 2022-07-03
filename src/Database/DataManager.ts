@@ -56,6 +56,11 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
     this.trigger(key)
     delete this.listeners[key]
   }
+  clear() {
+    for (const key in this.data) {
+      this.remove(key)
+    }
+  }
 }
 
 type Callback<Arg> = (arg: Arg) => void

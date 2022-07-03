@@ -71,6 +71,10 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
     if (newArt.location)
       this.trigger(newArt.location)
   }
+  clear(): void {
+    super.clear()
+    this.deletedArts = new Set<string>()
+  }
 
   setLocation(artKey: string, newCharKey: IArtifact['location']) {
     const art1 = super.get(artKey)

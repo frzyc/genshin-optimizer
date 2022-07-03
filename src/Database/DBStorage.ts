@@ -12,6 +12,8 @@ export interface DBStorage {
 
   copyFrom(other: DBStorage): void
   clear(): void
+  getDBVersion(): number
+  setDBVersion(version: number): void
 }
 
 export class DBLocalStorage implements DBStorage {
@@ -66,6 +68,12 @@ export class DBLocalStorage implements DBStorage {
         this.storage.removeItem(key)
     }
   }
+  getDBVersion(): number {
+    return parseInt(this.getString('db_ver') ?? '0')
+  }
+  setDBVersion(version: number): void {
+    this.setString('db_ver', version.toString())
+  }
 }
 
 export class SandboxStorage implements DBStorage {
@@ -116,5 +124,11 @@ export class SandboxStorage implements DBStorage {
   }
   removeForKeys(shouldRemove: (key: string) => boolean) {
     this.storage = Object.fromEntries(Object.entries(this.storage).filter(([key]) => !shouldRemove(key)))
+  }
+  getDBVersion(): number {
+    return parseInt(this.getString('db_ver') ?? '0')
+  }
+  setDBVersion(version: number): void {
+    this.setString('db_ver', version.toString())
   }
 }

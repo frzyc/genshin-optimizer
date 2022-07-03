@@ -13,5 +13,5 @@ export default function useDBState<O extends object>(key: string, init: () => O)
     [database, key],
   )
 
-  return [state, updateState]
+  return [state ?? init(), updateState]
 }
