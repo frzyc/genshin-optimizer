@@ -17,6 +17,17 @@
   "teammates": "Teammates",
   "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Character",
   "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Characters",
+  "hitmode": {
+    "hit": "Non Crit DMG",
+    "avgHit": "Avg. DMG",
+    "critHit": "Crit Hit DMG"
+  },
+  "ampReaction": {
+    "pyro_vaporize": "Vaporize(Pyro)",
+    "pyro_melt": "Melt(Pyro)",
+    "hydro_vaporize": "Vaporize(Hydro)",
+    "cryo_melt": "Melt(Cryo)"
+  },
   "tabEquip": {
     "swapWeapon": "Swap Weapon",
     "swapArt": "Swap Artifact",
