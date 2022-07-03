@@ -126,16 +126,16 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
     [onClickTitle],
   )
 
+  const setTalentLevel = useCallback((tKey: TalentSheetElementKey, newTalentLevelKey: number) =>
+    characterDispatch({ talent: { ...talent, [tKey]: newTalentLevelKey } }), [talent, characterDispatch])
+
   let header: Displayable | null = null
 
   if (talentKey in talent) {
     const levelBoost = data.get(input.bonus[talentKey] as NumNode).value
     const level = data.get(input.total[talentKey]).value
     const asc = data.get(input.asc).value
-    const setTalentLevel = (tKey, newTalentLevelKey) => {
-      talent[tKey] = newTalentLevelKey
-      characterDispatch({ talent })
-    }
+
     header = <DropdownButton fullWidth title={`Talent Lv. ${level}`} color={levelBoost ? "info" : "primary"} sx={{ borderRadius: 0 }}>
       {range(1, talentLimits[asc]).map(i =>
         <MenuItem key={i} selected={talent[talentKey] === (i)} disabled={talent[talentKey] === (i)} onClick={() => setTalentLevel(talentKey, i)}>Talent Lv. {i + levelBoost}</MenuItem>)}
