@@ -23,10 +23,10 @@ export default function StatInput({ name, children, value, placeholder, defaultV
 
   return <FlexButtonGroup {...restProps} >
     {children}
-    <TextButton sx={{ whiteSpace: "nowrap" }} >
+    <TextButton sx={{ px: 1 }}>
       {name}
     </TextButton>
-    <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }} >
+    <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: "10em", flexGrow: 1 }} >
       <CustomNumberInput
         sx={{ px: 1 }}
         inputProps={{
@@ -40,7 +40,7 @@ export default function StatInput({ name, children, value, placeholder, defaultV
         endAdornment={percent ? "%" : undefined}
       />
     </CustomNumberInputButtonGroupWrapper>
-    <Button color="error" onClick={() => onReset ? onReset() : onValueChange(defaultValue)} disabled={disabled || value === defaultValue} >
+    <Button sx={{ flexShrink: 2 }} size="small" color="error" onClick={() => onReset ? onReset() : onValueChange(defaultValue)} disabled={disabled || value === defaultValue} >
       <Replay />
     </Button>
   </FlexButtonGroup>
