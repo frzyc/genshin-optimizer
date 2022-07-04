@@ -16,7 +16,7 @@ const data_gen = data_gen_json as WeaponData
 const healing_s = [.08, .10, .12, .14, .16]
 const healing = customHealNode(prod(input.total.hp, subscript(input.weapon.refineIndex, healing_s)))
 
-const data = dataObjForWeaponSheet(key, data_gen)
+const data = dataObjForWeaponSheet(key, data_gen, undefined, { healing })
 
 const sheet: IWeaponSheet = {
   icon,
