@@ -64,7 +64,7 @@ export function StatFilterItem({ statKey, statKeys = [], value = 0, close, setFi
     >
       {statKeys.map(sKey => <MenuItem key={sKey} onClick={() => { close?.(); setFilter(sKey, value) }}><StatColoredWithUnit statKey={sKey} /></MenuItem>)}
     </DropdownButton>
-    <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }}>
+    <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: "10em", flexGrow: 1 }}>
       <CustomNumberInput
         disabled={!statKey || disabled}
         float={isFloat}
