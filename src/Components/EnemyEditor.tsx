@@ -1,9 +1,7 @@
-import { faCheckSquare, faSquare } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ExpandMore } from "@mui/icons-material";
+import { CheckBox, CheckBoxOutlineBlank, ExpandMore } from "@mui/icons-material";
 import { Button, CardContent, Chip, Collapse, Grid, Typography } from "@mui/material";
 import { useCallback, useContext, useState } from 'react';
-import StatInput from "./StatInput";
+import { CharacterContext } from "../CharacterContext";
 import { DataContext } from "../DataContext";
 import { uiInput as input } from "../Formula";
 import KeyMap, { valueString } from '../KeyMap';
@@ -12,7 +10,7 @@ import CardLight from "./Card/CardLight";
 import ColorText from "./ColoredText";
 import ExpandButton from "./ExpandButton";
 import { uncoloredEleIcons } from "./StatIcon";
-import { CharacterContext } from "../CharacterContext";
+import StatInput from "./StatInput";
 
 export function EnemyExpandCard() {
   const { data } = useContext(DataContext)
@@ -111,8 +109,8 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
           disabled={elementImmunity}
           percent
         >
-          <Button color={eleKey} onClick={() => characterDispatch({ type: "enemyOverride", statKey, value: elementImmunity ? defaultVal : Number.MAX_VALUE })} >
-            <FontAwesomeIcon icon={elementImmunity ? faCheckSquare : faSquare} className="fa-fw" /> Immunity
+          <Button color={eleKey} onClick={() => characterDispatch({ type: "enemyOverride", statKey, value: elementImmunity ? defaultVal : Number.MAX_VALUE })} startIcon={elementImmunity ? <CheckBox /> : <CheckBoxOutlineBlank />} >
+            Immunity
           </Button>
         </StatInput>
       </Grid>
