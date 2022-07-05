@@ -15,13 +15,16 @@
     "unchanged": "Unchanged:",
     "invalid": "Invalid:"
   },
-  "downloadCard": {
-    "databaseDownload": "Database Download",
+  "DatabaseCard": {
+    "title": "Database",
     "button": {
       "download": "Download",
-      "copy": "Copy to Clipboard",
-      "delete": "Delete Database"
-    }
+      "copy": "Clipboard",
+      "delete": "Delete",
+      "upload": "Upload",
+      "swap": "Swap"
+    },
+    "currentDB": "Current Database"
   },
   "uploadCard": {
     "title": "Database Upload",
