@@ -22,7 +22,7 @@ const dmgOnCryoOp = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgCr
   hit: { ele: constant("physical") }
 })
 
-const data = dataObjForWeaponSheet(key, data_gen)
+const data = dataObjForWeaponSheet(key, data_gen, undefined, { dmgAoe, dmgOnCryoOp })
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,

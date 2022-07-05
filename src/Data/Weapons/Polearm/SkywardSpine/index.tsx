@@ -25,6 +25,8 @@ const data = dataObjForWeaponSheet(key, data_gen, {
     critRate_,
     atkSPD_
   }
+}, {
+  dmg
 })
 
 const sheet: IWeaponSheet = {

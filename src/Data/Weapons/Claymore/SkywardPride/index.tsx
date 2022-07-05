@@ -23,8 +23,11 @@ const dmg = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgPerc, { ke
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     all_dmg_
-  }
+  },
+}, {
+  dmg
 })
+
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,

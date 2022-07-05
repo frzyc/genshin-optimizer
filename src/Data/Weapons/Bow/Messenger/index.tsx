@@ -16,7 +16,7 @@ const data_gen = data_gen_json as WeaponData
 const dmg_s = [1, 1.25, 1.5, 1.75, 2]
 const dmg = customDmgNode(prod(subscript(input.weapon.refineIndex, dmg_s), input.total.atk), "elemental", { hit: { ele: constant("physical") } })
 
-const data = dataObjForWeaponSheet(key, data_gen)
+const data = dataObjForWeaponSheet(key, data_gen, undefined, { dmg })
 
 const sheet: IWeaponSheet = {
   icon,

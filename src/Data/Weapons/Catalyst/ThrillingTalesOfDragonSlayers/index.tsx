@@ -1,5 +1,5 @@
 import { WeaponData } from 'pipeline'
-import { input, target } from '../../../../Formula'
+import { input } from '../../../../Formula'
 import { equal, infoMut, subscript, unequal } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { cond, sgt, st, trans } from '../../../SheetUtil'
@@ -17,7 +17,7 @@ const atkSrc = [0.24, 0.3, 0.36, 0.42, 0.48]
 
 const [condPassivePath, condPassive] = cond(key, "Heritage")
 const atk_Disp = equal("on", condPassive, subscript(input.weapon.refineIndex, atkSrc))
-const atk_ = equal(input.activeCharKey, target.charKey, atk_Disp)
+const atk_ = unequal(input.activeCharKey, input.charKey, atk_Disp)
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   teamBuff: {
