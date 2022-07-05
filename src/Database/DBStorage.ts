@@ -77,7 +77,7 @@ export class DBLocalStorage implements DBStorage {
 }
 
 export class SandboxStorage implements DBStorage {
-  private storage: Dict<string, string> = {}
+  protected storage: Dict<string, string> = {}
 
   constructor(other: DBStorage | undefined = undefined) {
     other && this.copyFrom(other)
@@ -131,4 +131,19 @@ export class SandboxStorage implements DBStorage {
   setDBVersion(version: number): void {
     this.setString('db_ver', version.toString())
   }
+}
+
+export class ExtraStorage extends SandboxStorage {
+  databaseName: string
+  constructor(databaseName: string, other: DBStorage | undefined = undefined) {
+    super(other)
+    this.databaseName = databaseName
+  }
+  setStorage(obj: Dict<string, string>): void {
+    this.storage = obj
+  }
+  saveStorage() {
+    localStorage.setItem(this.databaseName, JSON.stringify(this.storage))
+  }
+
 }
