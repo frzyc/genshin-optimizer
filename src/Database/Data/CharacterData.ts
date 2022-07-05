@@ -12,9 +12,10 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     super(database)
     for (const key of this.database.storage.keys) {
       if (key.startsWith("char_")) {
-        const flex = parseCharacter(this.database.storage.get(key))
+        const obj = this.database.storage.get(key)
+        const flex = parseCharacter(obj)
         if (!flex || key !== `char_${flex.key}`) {
-          // Non-recoverable
+          console.error("CharacterData", key, "is unrecoverable.", obj)
           this.database.storage.remove(key)
           continue
         }

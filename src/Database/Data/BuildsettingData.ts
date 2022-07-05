@@ -38,10 +38,10 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, B
     for (const key of this.database.storage.keys) {
       if (key.startsWith("buildSetting_")) {
         const [, charKey] = key.split("buildSetting_")
-        // TODO Parse the object and check if it is valid
+        // TODO: Parse the object and check if it is valid
         const buildSettingsObj = this.database.storage.get(key)
         if (!buildSettingsObj) {
-          // Non-recoverable
+          console.error("Entry", key, "is unrecoverable.", buildSettingsObj)
           this.database.storage.remove(key)
           continue
         }

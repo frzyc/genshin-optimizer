@@ -13,7 +13,7 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
       if (key.startsWith("weapon_")) {
         const flex = parseWeapon(this.database.storage.get(key))
         if (!flex) {
-          // Non-recoverable
+          console.error("WeaponData", key, "is unrecoverable.")
           this.database.storage.remove(key)
           continue
         }

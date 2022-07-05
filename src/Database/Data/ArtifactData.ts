@@ -11,9 +11,10 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
     super(database)
     for (const key of this.database.storage.keys) {
       if (key.startsWith("artifact_")) {
-        const flex = parseArtifact(this.database.storage.get(key))
+        const obj = this.database.storage.get(key)
+        const flex = parseArtifact(obj)
         if (!flex) {
-          // Non-recoverable
+          console.error("Entry", key, "is unrecoverable.", obj)
           this.database.storage.remove(key)
           continue
         }
