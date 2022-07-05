@@ -98,7 +98,7 @@ function TeammateDisplay({ index }: { index: number }) {
     <CardContent>
       <CharacterAutocomplete fullWidth value={characterKey}
         onChange={charKey => activeCharacterDispatch({ type: "team", index, charKey })}
-        disable={ck => ck === activeCharacterKey || active.team.includes(ck)}
+        disable={ck => ck === activeCharacterKey || (ck !== "" && active.team.includes(ck))}
         labelText={t("teammate", { count: index + 1 })}
         defaultText={t("none")}
         defaultIcon={<PersonAdd />}

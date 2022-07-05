@@ -21,7 +21,9 @@ const dmg = customDmgNode(prod(dmgPerc, input.total.atk), "elemental", { hit: { 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     critDMG_
-  }
+  },
+}, {
+  dmg
 })
 
 const sheet: IWeaponSheet = {

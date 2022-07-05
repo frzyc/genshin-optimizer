@@ -9,7 +9,7 @@ export class StateDataManager extends DataManager<string, string, object, object
         const [, stateKey] = key.split("state_")
         const stateObj = this.database.storage.get(key)
         if (!stateObj) {
-          // Non-recoverable
+          console.error("StateData", key, "is unrecoverable.", stateObj)
           this.database.storage.remove(key)
           continue
         }

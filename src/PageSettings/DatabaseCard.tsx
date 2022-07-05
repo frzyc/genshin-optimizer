@@ -46,6 +46,9 @@ function ExtraDatabaseWrapper({ index, children }) {
     const storage = new ExtraStorage(dbName)
     const dbObj = JSON.parse(localStorage.getItem(dbName) ?? `{ "dbIndex": "${index}" }`)
     storage.setStorage(dbObj)
+
+    // A bit of preventive programming
+    storage.removeForKeys(k => k.startsWith("extraDatabase_"))
     const db = new ArtCharDatabase(storage)
     storage.saveStorage()
     return db
@@ -114,9 +117,10 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
     // save current database to appropriate slot
     const dbIndex = parseInt(databaseContextObj.database.storage.getString("dbIndex") || "1")
     const tempStorage = new ExtraStorage(`extraDatabase_${dbIndex}`, databaseContextObj.database.storage)
+    tempStorage.removeForKeys(k => k.startsWith("extraDatabase_"))
     tempStorage.saveStorage()
 
-    // clear current slot database
+    // clear this slot database
     const storage = database.storage as ExtraStorage
     const dbName = storage.databaseName
     localStorage.removeItem(dbName)

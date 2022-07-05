@@ -17,7 +17,7 @@ const dmgPerc = [1.6, 2, 2.4, 2.8, 3.2]
 const dmg = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgPerc, { key: "_" }), input.total.atk), "elemental", {
   hit: { ele: constant("physical") }
 })
-const data = dataObjForWeaponSheet(key, data_gen)
+const data = dataObjForWeaponSheet(key, data_gen, undefined, { dmg })
 
 const sheet: IWeaponSheet = {
   icon,

@@ -21,7 +21,12 @@ const slotHandler = handleMultiSelect([...allSlotKeys])
 const exclusionHandler = handleMultiSelect([...exclusionValues])
 const lockedHandler = handleMultiSelect([...lockedValues])
 
-export default function ArtifactFilterDisplay({ filterOption, filterOptionDispatch, }: { filterOption: FilterOption, filterOptionDispatch: (any) => void }) {
+interface ArtifactFilterDisplayProps {
+  filterOption: FilterOption
+  filterOptionDispatch: (option: any) => void
+  disableSlotFilter?: boolean
+}
+export default function ArtifactFilterDisplay({ filterOption, filterOptionDispatch, disableSlotFilter = false }: ArtifactFilterDisplayProps) {
   const { t } = useTranslation(["artifact", "ui"]);
 
   const { artSetKeys = [], mainStatKeys = [], rarity = [], slotKeys = [], levelLow, levelHigh, substats = [],
@@ -35,7 +40,7 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
         {allArtifactRarities.map(star => <ToggleButton key={star} value={star} onClick={() => filterOptionDispatch({ rarity: rarityHandler(rarity, star) })}><Stars stars={star} /></ToggleButton>)}
       </SolidToggleButtonGroup>
       {/* Artifact Slot */}
-      <SolidToggleButtonGroup fullWidth value={slotKeys} size="small">
+      <SolidToggleButtonGroup fullWidth value={slotKeys} size="small" disabled={disableSlotFilter}>
         {allSlotKeys.map(slotKey => <ToggleButton key={slotKey} value={slotKey} onClick={() => filterOptionDispatch({ slotKeys: slotHandler(slotKeys, slotKey) })}>{artifactSlotIcon(slotKey)}</ToggleButton>)}
       </SolidToggleButtonGroup>
       {/* exclusion + locked */}
