@@ -1,19 +1,19 @@
-import { SvgIcon } from "@mui/material";
+import { SvgIcon, SvgIconProps } from "@mui/material";
 import React from "react";
 
 type FontAwesomeSvgIconProps = {
   icon: any;
-};
+} & SvgIconProps;
 const FontAwesomeSvgIcon = React.forwardRef<SVGSVGElement, FontAwesomeSvgIconProps>(
   (props, ref) => {
-    const { icon } = props;
+    const { icon, ...restProps } = props;
 
     const {
       icon: [width, height, , , svgPathData],
     } = icon;
 
     return (
-      <SvgIcon ref={ref} viewBox={`0 0 ${width} ${height}`}>
+      <SvgIcon ref={ref} viewBox={`0 0 ${width} ${height}`} {...restProps} >
         {typeof svgPathData === 'string' ? (
           <path d={svgPathData} />
         ) : (

@@ -4,7 +4,7 @@ import { faCirclet, faFlower, faGoblet, faPlume, faSands } from '../faIcons'
 import { SlotKey } from "../../Types/consts"
 import { SizeProp } from "@fortawesome/fontawesome-svg-core"
 
-export const SlotIconSVG: StrictDict<SlotKey, any> = {
+export const slotIconSVG: StrictDict<SlotKey, any> = {
   flower: faFlower,
   plume: faPlume,
   sands: faSands,
@@ -13,7 +13,7 @@ export const SlotIconSVG: StrictDict<SlotKey, any> = {
 }
 
 export function artifactSlotIcon(slotKey: SlotKey, size?: SizeProp) {
-  return <FontAwesomeIcon icon={SlotIconSVG[slotKey]} key={slotKey} className="fa-fw" size={size} />
+  return <FontAwesomeIcon icon={slotIconSVG[slotKey]} key={slotKey} fixedWidth size={size} />
 }
 
 export default function SlotNameWithIcon({ slotKey }: { slotKey: SlotKey }) {
