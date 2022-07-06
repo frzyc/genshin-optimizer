@@ -45,7 +45,7 @@ function BasicFieldDisplay({ field, component }: { field: IBasicFieldDisplay, co
   </Box>
 }
 
-export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: NodeDisplay, oldValue?: number, suffix?: Displayable, component?: React.ElementType }) {
+export function NodeFieldDisplay({ node, oldValue, suffix, component, emphasize }: { node: NodeDisplay, oldValue?: number, suffix?: Displayable, component?: React.ElementType, emphasize?: boolean }) {
   if (node.isEmpty) return null
 
   suffix = suffix && <span>{suffix}</span>
@@ -59,7 +59,7 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component }: { node: 
     fieldVal = <span>{valueString(oldValue, node.unit)}{diff > 0.0001 || diff < -0.0001 ? <ColorText color={diff > 0 ? "success" : "error"}> {diff > 0 ? "+" : ""}{valueString(diff, node.unit)}</ColorText> : ""}</span>
   } else fieldVal = valueString(node.value, node.unit)
   const formulaTextOverlay = !!node.formula && <QuestionTooltip title={<Typography><Suspense fallback={<Skeleton variant="rectangular" width={300} height={30} />}>{fieldFormulaText}</Suspense></Typography>} />
-  return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1 }} component={component} >
+  return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1, boxShadow: emphasize ? "0px 0px 0px 2px red inset" : undefined }} component={component} >
     <Typography color={`${node.info.variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{!!isTeamBuff && <Groups />}{icon}{fieldText}{suffix}</Typography>
     <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
       <Typography noWrap>{fieldVal}</Typography>
