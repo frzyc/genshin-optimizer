@@ -13,6 +13,7 @@ import { ArtCharDatabase, DatabaseContext, DatabaseContextObj } from "../Databas
 import { ExtraStorage } from '../Database/DBStorage'
 import { exportGOOD } from '../Database/exports/good'
 import useBoolState from '../ReactHooks/useBoolState'
+import useDBState, { dbMetaInit } from '../ReactHooks/useDBState'
 import { range } from '../Util/Util'
 import UploadCard from './UploadCard'
 
@@ -58,9 +59,10 @@ function ExtraDatabaseWrapper({ index, children }) {
     {children}
   </DatabaseContext.Provider>
 }
+
 function DataCard({ index, databaseContextObj }: { index: number, databaseContextObj?: DatabaseContextObj }) {
   const { database, setDatabase } = useContext(DatabaseContext)
-  const { name } = database.states.getWithInit("dbMeta", () => ({ name: `Database ${index}` }))
+  const [{ name, lastEdit }, setDbMeta] = useDBState("dbMeta", dbMetaInit(index))
   const current = !databaseContextObj
   const [uploadOpen, onOpen, onClose] = useBoolState()
   const { t } = useTranslation(["settings"]);
@@ -100,7 +102,7 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
     const date = new Date()
     const dateStr = date.toISOString().split(".")[0].replace("T", "_").replaceAll(":", "-")
     const JSONStr = JSON.stringify(exportGOOD(database.storage))
-    const filename = `go-data_${dateStr}.json`
+    const filename = `${name.trim().replaceAll(" ", "_")}_${dateStr}.json`
     const contentType = "application/json;charset=utf-8"
     const a = document.createElement('a');
     a.download = filename
@@ -109,7 +111,7 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
     document.body.appendChild(a)
     a.click()
     document.body.removeChild(a)
-  }, [database])
+  }, [database, name])
 
   const onSwap = useCallback(() => {
     if (!databaseContextObj) return
@@ -137,7 +139,7 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
   useEffect(() => setTempName(name), [name])
 
   const onBlur = useCallback(() => {
-    database.states.set("dbMeta", { name: tempName })
+    setDbMeta({ name: tempName })
     if (!current) (database.storage as ExtraStorage).saveStorage()
   }, [tempName, database, current])
   const onKeyDOwn = useCallback(e => e.key === "Enter" && onBlur(), [onBlur],)
@@ -155,6 +157,7 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
           <Typography noWrap><Trans t={t} i18nKey="count.chars" /> <strong>{numChar}</strong></Typography>
           <Typography noWrap><Trans t={t} i18nKey="count.arts" /> <strong>{numArt}</strong></Typography>
           <Typography noWrap><Trans t={t} i18nKey="count.weapons" /> <strong>{numWeapon}</strong></Typography>
+          {!!lastEdit && <Typography noWrap><strong>{(new Date(lastEdit).toLocaleString())}</strong></Typography>}
         </Box>
         <Box>
           <Grid container spacing={1} columns={{ xs: 2 }} >

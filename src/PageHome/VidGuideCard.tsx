@@ -9,7 +9,7 @@ export default function VidGuideCard() {
   const { t } = useTranslation(["page_home", "ui"])
   if (!embeds.length) return null
   return <CardDark>
-    <CardHeader title={<Typography variant="h5" component={Link} color="inherit" href={process.env.REACT_APP_URL_YOUTUBE_TUTPL} target="_blank" rel="noopener">{t`vidGuideCard.title`}</Typography>} avatar={<YouTube fontSize="large" sx={{ color: "red" }} />} />
+    <CardHeader title={<Typography variant="h5" component={Link} color="inherit" href={process.env.REACT_APP_URL_YOUTUBE_TUTPL} target="_blank" rel="noopener">{t`vidGuideCard.title`}</Typography>} avatar={<YouTube fontSize="large" />} />
     <Divider />
     <CardContent>
       <Grid container columns={{ xs: 1, sm: 2 }} spacing={2} >
