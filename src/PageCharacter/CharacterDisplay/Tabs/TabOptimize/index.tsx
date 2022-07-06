@@ -49,6 +49,7 @@ import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
 import { compactArtifacts, dynamicData } from './foreground';
+import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext';
 
 export default function TabBuild() {
   const { t } = useTranslation("page_character")
@@ -435,7 +436,9 @@ export default function TabBuild() {
           </Grid>
         </CardContent>
       </CardLight>
-      <BuildList buildsArts={buildsArts} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} />
+      <OptimizationTargetContext.Provider value={optimizationTarget}>
+        <BuildList buildsArts={buildsArts} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} />
+      </OptimizationTargetContext.Provider>
     </DataContext.Provider>}
   </Box>
 }
