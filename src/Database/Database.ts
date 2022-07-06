@@ -37,6 +37,14 @@ export class ArtCharDatabase {
     this.chars.followAny((key) => {
       if (typeof key === "string")
         this.invalidateTeamData(key as CharacterKey)
+
+      this.states.set("dbMeta", { lastEdit: Date.now() })
+    })
+    this.arts.followAny(() => {
+      this.states.set("dbMeta", { lastEdit: Date.now() })
+    })
+    this.weapons.followAny(() => {
+      this.states.set("dbMeta", { lastEdit: Date.now() })
     })
   }
 

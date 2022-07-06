@@ -1,6 +1,6 @@
 import { faDiscord, faPatreon, faPaypal } from "@fortawesome/free-brands-svg-icons";
 import { Article, Construction, Menu as MenuIcon, People, Scanner, Settings } from "@mui/icons-material";
-import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { AppBar, Box, Button, Chip, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Suspense, useState } from "react";
 import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from "react-i18next";
@@ -8,6 +8,7 @@ import { Link as RouterLink, useMatch } from "react-router-dom";
 import Assets from "./Assets/Assets";
 import { slotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
 import FontAwesomeSvgIcon from "./Components/FontAwesomeSvgIcon";
+import useDBState, { dbMetaInit } from "./ReactHooks/useDBState";
 
 const content = [{
   i18Key: "tabs.artifacts",
@@ -79,6 +80,7 @@ function HeaderContent({ anchor }) {
   const theme = useTheme();
   const isLarge = useMediaQuery(theme.breakpoints.up('lg'));
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const [{ name }] = useDBState("dbMeta", dbMetaInit(1))
 
   const { t } = useTranslation("ui")
 
@@ -111,12 +113,17 @@ function HeaderContent({ anchor }) {
         <Trans t={t} i18nKey="pageTitle">Genshin Optimizer</Trans>
       </Typography>} />
       {content.map(({ i18Key, value, to, icon, resize }) => <Tab key={value} value={value} component={RouterLink} to={to} icon={icon} iconPosition="start" label={(isLarge || !resize) && t(i18Key)} />)}
+      <Box display="flex" alignItems="center">
+        <Chip color="success" label={name} />
+      </Box>
+
       <Box flexGrow={1} />
       {links.map(({ i18Key, href, label, icon }) => <Tab key={label} component="a" href={href} target="_blank" icon={icon} iconPosition="start" onClick={e => ReactGA.outboundLink({ label }, () => { })} label={isLarge && t(i18Key)} />)}
     </Tabs>
   </AppBar>
 }
 function MobileHeader({ anchor, currentTab }) {
+  const [{ name }] = useDBState("dbMeta", dbMetaInit(1))
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -145,6 +152,9 @@ function MobileHeader({ anchor, currentTab }) {
               <ListItemIcon>{icon}</ListItemIcon>
               <ListItemText>{t(i18Key)}</ListItemText>
             </ListItemButton >)}
+          <Box display="flex" justifyContent="center">
+            <Chip color="success" label={name} />
+          </Box>
         </List>
         <Divider />
         <List>

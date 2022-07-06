@@ -30,6 +30,16 @@ declare module '@mui/material/styles' {
     swirl: Palette['primary'];
     burning: Palette['primary'];
     crystallize: Palette['primary'];
+
+    white: Palette['primary'];
+    red: Palette['primary'];
+
+    discord: Palette['primary'];
+    patreon: Palette['primary'];
+    twitch: Palette['primary'];
+    twitter: Palette['primary'];
+    paypal: Palette['primary'];
+    keqing: Palette['primary'];
   }
   interface PaletteOptions {
     warning?: PaletteOptions['primary'];
@@ -59,6 +69,16 @@ declare module '@mui/material/styles' {
     swirl?: PaletteOptions['primary'];
     burning?: PaletteOptions['primary'];
     crystallize?: PaletteOptions['primary'];
+
+    white?: PaletteOptions['primary'];
+    red?: PaletteOptions['primary'];
+
+    discord?: PaletteOptions['primary'];
+    patreon?: PaletteOptions['primary'];
+    twitch?: PaletteOptions['primary'];
+    twitter?: PaletteOptions['primary'];
+    paypal?: PaletteOptions['primary'];
+    keqing?: PaletteOptions['primary'];
   }
 }
 
@@ -79,6 +99,16 @@ declare module "@mui/material/Button" {
     electro: true;
     anemo: true;
     physical: true;
+
+    white: true;
+    red: true;
+
+    discord: true;
+    patreon: true;
+    twitch: true;
+    twitter: true;
+    paypal: true;
+    keqing: true;
   }
 }
 
@@ -247,6 +277,40 @@ export const theme = createTheme({
     crystallize: defaultTheme.palette.augmentColor({
       color: { main: "#f8ba4e", },
       name: "crystallize"
+    }),
+
+    white: defaultTheme.palette.augmentColor({
+      color: { main: "#FFFFFF", },
+      name: "white"
+    }),
+    red: defaultTheme.palette.augmentColor({
+      color: { main: "#ff0000", },
+      name: "red"
+    }),
+
+    discord: defaultTheme.palette.augmentColor({
+      color: { main: "#5663F7", },
+      name: "discord"
+    }),
+    patreon: defaultTheme.palette.augmentColor({
+      color: { main: "#f96854", contrastText: "#ffffff" },
+      name: "patreon"
+    }),
+    twitch: defaultTheme.palette.augmentColor({
+      color: { main: "#6441a5", },
+      name: "twitch"
+    }),
+    twitter: defaultTheme.palette.augmentColor({
+      color: { main: "#55acee", contrastText: "#ffffff" },
+      name: "twitter"
+    }),
+    paypal: defaultTheme.palette.augmentColor({
+      color: { main: "#00457C", },
+      name: "paypal"
+    }),
+    keqing: defaultTheme.palette.augmentColor({
+      color: { main: "#584862", },
+      name: "keqing"
     }),
   },
   typography: {

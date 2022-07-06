@@ -14,13 +14,6 @@ import KeyMap from '../../../../../KeyMap';
 import usePromise from '../../../../../ReactHooks/usePromise';
 import { objPathValue } from '../../../../../Util/Util';
 
-const WhiteButton = styled(Button)({
-  color: "black",
-  backgroundColor: "white",
-  "&:hover": {
-    backgroundColor: "#e1e1e1",
-  }
-})
 export default function OptimizationTargetSelector({ optimizationTarget, setTarget, disabled = false }: {
   optimizationTarget?: string[], setTarget: (target: string[]) => void, disabled
 }) {
@@ -38,9 +31,9 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
   const { data } = useContext(DataContext)
   const sections = getDisplaySections(data)
   return <>
-    <WhiteButton onClick={onOpen} disabled={disabled} >
+    <Button color="white" onClick={onOpen} disabled={disabled} >
       <TargetDisplayText optimizationTarget={optimizationTarget} />
-    </WhiteButton>
+    </Button>
     <ModalWrapper open={open} onClose={onClose}>
       <CardDark >
         <CardContent>
