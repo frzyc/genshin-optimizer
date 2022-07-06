@@ -35,7 +35,8 @@ const elementalTypeReadNodes = elementalTypeEditKeys.map(k => input.total[k])
 
 const miscStatEditKeys = [
   "all_dmg_",
-  ...["normal", "charged", "plunging", "skill", "burst"].flatMap(m => [`${m}_dmg_`, `${m}_critRate_`]),
+  "all_dmgInc",
+  ...["normal", "charged", "plunging", "skill", "burst"].flatMap(m => [`${m}_dmg_`, `${m}_critRate_`, `${m}_dmgInc`]),
   ...Object.keys(transformativeReactions).map(x => `${x}_dmg_`),
   ...Object.keys(amplifyingReactions).map(x => `${x}_dmg_`),
   "burning_dmg_",
