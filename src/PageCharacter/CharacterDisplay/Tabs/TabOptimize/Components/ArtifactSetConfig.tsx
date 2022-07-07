@@ -78,20 +78,27 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   )
 
   return <>
-    <CardLight sx={{ display: "flex" }}>
-      <CardContent sx={{ flexGrow: 1 }} >
+    <CardLight >
+      <CardContent>
         <Typography>
-          <strong>{t`tabOptimize.artSetConfig.title`}</strong>
+          {t`tabOptimize.artSetConfig.title`}
         </Typography>
+      </CardContent>
+      <Divider />
+      <CardContent sx={{ display: "flex", p: 0, "&:last-child": { pb: 0 } }} >
+        <Box sx={{ flexGrow: 1, p: 2 }}>
         <Typography>{t`tabOptimize.artSetConfig.setEffCond`} <SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} {t<string>("tabOptimize.artSetConfig.enabled")}</SqBadge></Typography>
         <Typography>{t`sheet:2set`} <SqBadge color="success">{allow2} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.allowed")}</SqBadge>{!!exclude2 && " / "}{!!exclude2 && <SqBadge color="secondary">{exclude2} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.excluded")}</SqBadge>}</Typography>
         <Typography>{t`sheet:4set`} <SqBadge color="success">{allow4} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.allowed")}</SqBadge>{!!exclude4 && " / "}{!!exclude4 && <SqBadge color="secondary">{exclude4} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.excluded")}</SqBadge>}</Typography>
         <Typography>{t`tabOptimize.artSetConfig.2rainbow`} <SqBadge color={allowRainbow2 ? "success" : "secondary"}><FontAwesomeIcon icon={allowRainbow2 ? faChartLine : faBan} className="fa-fw" /> {allowRainbow2 ? t<string>("tabOptimize.artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
         <Typography>{t`tabOptimize.artSetConfig.4rainbow`} <SqBadge color={allowRainbow4 ? "success" : "secondary"}><FontAwesomeIcon icon={allowRainbow4 ? faChartLine : faBan} className="fa-fw" /> {allowRainbow4 ? t<string>("tabOptimize.artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
+        </Box>
+        <Box>
+        <Button onClick={onOpen} disabled={disabled} color="info" sx={{ borderRadius: 0, height: "100%" }}>
+          <Settings />
+        </Button>
+        </Box>
       </CardContent>
-      <Button onClick={onOpen} disabled={disabled} color="info" sx={{ borderRadius: 0 }}>
-        <Settings />
-      </Button>
     </CardLight>
     {artifactSheets && <ModalWrapper open={open} onClose={onClose} ><CardDark>
       <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>

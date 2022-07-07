@@ -16,6 +16,7 @@ import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton';
 import { HitModeToggle, ReactionToggle } from '../../../../Components/HitModeEditor';
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup';
 import StatFilterCard from '../../../../Components/StatFilterCard';
+import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext';
 import { DatabaseContext } from '../../../../Database/Database';
 import { DataContext, dataContextObj } from '../../../../DataContext';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
@@ -33,9 +34,9 @@ import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../../../Types/artifact';
 import { CharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
+import { TeamBuffDisplay } from '../TabTeambuffs';
 import { FinalizeResult, Setup, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
-import useBuildSetting from './useBuildSetting';
 import { artSetPerm, Build, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
@@ -49,7 +50,7 @@ import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
 import { compactArtifacts, dynamicData } from './foreground';
-import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext';
+import useBuildSetting from './useBuildSetting';
 
 export default function TabBuild() {
   const { t } = useTranslation("page_character")
@@ -305,7 +306,7 @@ export default function TabBuild() {
     {/* Build Generator Editor */}
     {dataContext && <DataContext.Provider value={dataContext}>
 
-      <Grid container spacing={1} >
+      <Grid container spacing={1}>
         {/* 1*/}
         <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
           {/* character card */}
@@ -315,8 +316,11 @@ export default function TabBuild() {
         {/* 2 */}
         <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
           <CardLight>
-            <CardContent  >
-              <Typography gutterBottom>Main Stat</Typography>
+            <CardContent>
+              <Typography>Main Stat</Typography>
+            </CardContent>
+            <Divider />
+            <CardContent>
               <BootstrapTooltip placement="top" title={<Typography><strong>Level Assumption</strong> changes mainstat value to be at least a specific level. Does not change substats.</Typography>}>
                 <Box>
                   <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={mainStatAssumptionLevel => buildSettingDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
@@ -326,11 +330,10 @@ export default function TabBuild() {
             {/* main stat selector */}
             <MainStatSelectionCard disabled={generatingBuilds} />
           </CardLight>
-          <BonusStatsCard />
         </Grid>
 
         {/* 3 */}
-        <Grid item xs={12} sm={6} lg={6} display="flex" flexDirection="column" gap={1}>
+        <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
           <ArtifactSetConfig disabled={generatingBuilds} />
 
           {/* use excluded */}
@@ -342,22 +345,31 @@ export default function TabBuild() {
           <Button fullWidth startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />} color={allowPartial ? "success" : "secondary"} onClick={() => buildSettingDispatch({ allowPartial: !allowPartial })}>{t`tabOptimize.allowPartial`}</Button>
           { /* Level Filter */}
           <CardLight>
-            <CardContent sx={{ py: 1 }}>
+            <CardContent>
               Artifact Level Filter
             </CardContent>
-            <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh}
-              setLow={levelLow => buildSettingDispatch({ levelLow })}
-              setHigh={levelHigh => buildSettingDispatch({ levelHigh })}
-              setBoth={(levelLow, levelHigh) => buildSettingDispatch({ levelLow, levelHigh })}
-              disabled={generatingBuilds}
-            />
+            <Divider />
+            <CardContent>
+              <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh}
+                setLow={levelLow => buildSettingDispatch({ levelLow })}
+                setHigh={levelHigh => buildSettingDispatch({ levelHigh })}
+                setBoth={(levelLow, levelHigh) => buildSettingDispatch({ levelLow, levelHigh })}
+                disabled={generatingBuilds}
+              />
+            </CardContent>
           </CardLight>
 
           {/*Minimum Final Stat Filter */}
           <StatFilterCard disabled={generatingBuilds} />
+        </Grid>
 
+        {/* 4 */}
+        <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
+          <TeamBuffDisplay />
+          <BonusStatsCard />
         </Grid>
       </Grid>
+
       {/* Footer */}
       <Grid container spacing={1}>
         <Grid item flexGrow={1} >

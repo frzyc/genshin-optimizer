@@ -1,6 +1,6 @@
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, ButtonGroup, CardContent, MenuItem, Typography } from '@mui/material';
+import { Button, ButtonGroup, CardContent, Divider, MenuItem, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useCallback, useContext, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -37,7 +37,8 @@ export default function StatFilterCard({ disabled = false }: { disabled?: boolea
         <Typography>{t`tabOptimize.constraintFilter.title`}</Typography>
         <InfoTooltip title={<Typography>{t`tabOptimize.constraintFilter.tooltip`}</Typography>} />
       </CardContent>
-    </CardLight>
+      <Divider />
+      <CardContent>
     <Box display="flex" flexDirection="column" gap={0.5}>
       {Object.entries(statFilters).map(([statKey, min]) => {
         return <StatFilterItem key={statKey} statKey={statKey} statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} value={min} close={() => {
@@ -48,6 +49,8 @@ export default function StatFilterCard({ disabled = false }: { disabled?: boolea
       })}
       <StatFilterItem statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} />
     </Box>
+    </CardContent>
+    </CardLight>
   </Box>
 }
 

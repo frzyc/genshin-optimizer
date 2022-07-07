@@ -22,12 +22,12 @@ export default function MainStatSelectionCard({ disabled = false, }: {
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { mainStatKeys }, buildSettingDispatch } = useBuildSetting(characterKey)
 
-  return <Box display="flex" flexDirection="column" gap={1}>
+  return <Box display="flex" flexDirection="column">
     {artifactsSlotsToSelectMainStats.map(slotKey => {
       const numSel = mainStatKeys[slotKey].length
       return <Box key={slotKey}>
         <Divider />
-        <CardContent sx={{ pt: 1 }}>
+        <CardContent >
           <Box sx={{ display: "flex", gap: 1, alignItems: "center", pb: 1 }}>
             <BootstrapTooltip placement="top" title={<Typography>{t(`slotName.${slotKey}`)}</Typography>}>
               <span>{artifactSlotIcon(slotKey)}</span>
