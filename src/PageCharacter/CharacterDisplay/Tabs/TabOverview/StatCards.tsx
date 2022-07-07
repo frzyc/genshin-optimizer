@@ -1,9 +1,11 @@
 import { faEdit, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ModeEdit } from "@mui/icons-material";
+import { ModeEdit, Replay } from "@mui/icons-material";
 import { Box, Button, CardContent, Divider, Grid, Typography } from "@mui/material";
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { CharacterContext } from "../../../../CharacterContext";
+import BootstrapTooltip from "../../../../Components/BootstrapTooltip";
 import CardLight from "../../../../Components/Card/CardLight";
 import ColorText from "../../../../Components/ColoredText";
 import { NodeFieldDisplay } from "../../../../Components/FieldDisplay";
@@ -16,13 +18,10 @@ import KeyMap, { valueString } from "../../../../KeyMap";
 import { amplifyingReactions, transformativeReactions } from "../../../../KeyMap/StatConstants";
 import { allElementsWithPhy } from "../../../../Types/consts";
 
-const EDIT = "Edit Stats"
-const EXIT = "EXIT"
-
-const baseEditKeys = ["hp_", "hp", "atk_", "atk", "def_", "def", "eleMas", "stamina"] as const
+const baseEditKeys = ["hp_", "hp", "atk_", "atk", "def_", "def", "eleMas", "stamina"]
 const baseReadNodes = ["hp", "atk", "def", "eleMas", "stamina"].map(k => input.total[k])
 
-const advancedEditKeys = ["critRate_", "critDMG_", "heal_", "incHeal_", "enerRech_", "cdRed_", "shield_"] as const
+const advancedEditKeys = ["critRate_", "critDMG_", "heal_", "incHeal_", "enerRech_", "cdRed_", "shield_"]
 const advancedReadNodes = advancedEditKeys.map(k => input.total[k])
 
 const elementalTypeEditKeys = allElementsWithPhy.flatMap(ele => [
@@ -55,13 +54,14 @@ function StatDisplayContent({ nodes, extra }: { nodes: ReadNode<number>[], extra
     {nodes.map(rn => {
       const key = rn.info?.key
       const modified = key && (bonusStats[key] || bonusStats[key + "_"])
-      return <Grid item key={key} xs={12} >
+      return <Grid item key={key} xs={12} sx={{ fontStyle: modified ? "bold" : undefined }} >
         {<NodeFieldDisplay
           node={data.get(rn)}
           oldValue={oldData?.get(rn)?.value}
-          suffix={modified ? <ModeEdit fontSize="inherit" sx={{ mt: "3px", mb: "-3px" }} /> : undefined}
+          suffix={modified ? <ModeEdit color="warning" fontSize="inherit" sx={{ mt: "3px", mb: "-3px" }} /> : undefined}
         />}
-      </Grid>})
+      </Grid>
+    })
     }
     {extra}
   </Grid>
@@ -101,14 +101,14 @@ export default function StatCards() {
                 <span >{valueString(specialNode.value, specialNode.unit)}</span>
               </Grid>}
             />}
-            editContent={<StatEditContent keys={baseEditKeys} />}
+            editKeys={baseEditKeys}
           />
         </Grid>
         <Grid item xs={12} md={6} lg={12}>
           <StatDisplayCard
             title="Advanced Stats"
             content={<StatDisplayContent nodes={advancedReadNodes} />}
-            editContent={<StatEditContent keys={advancedEditKeys} />}
+            editKeys={advancedEditKeys}
           />
         </Grid >
       </Grid >
@@ -117,32 +117,53 @@ export default function StatCards() {
       <StatDisplayCard
         title="Elemental Type"
         content={<StatDisplayContent nodes={elementalTypeReadNodes} />}
-        editContent={<StatEditContent keys={elementalTypeEditKeys} />}
+        editKeys={elementalTypeEditKeys}
       />
     </Grid>
     <Grid item xs={12} md={6} lg={4}>
       <StatDisplayCard
         title="Misc Stats"
         content={<StatDisplayContent nodes={miscStatReadNodes} />}
-        editContent={<StatEditContent keys={miscStatEditKeys} />}
+        editKeys={miscStatEditKeys}
       />
     </Grid>
   </Grid >
 }
-function StatDisplayCard({ title, content, editContent }) {
+function StatDisplayCard({ title, content, editKeys }: { title: Displayable, content: Displayable, editKeys: string[] }) {
+  const { t } = useTranslation("ui")
   const [edit, setedit] = useState(false)
+  const { character: { bonusStats }, characterDispatch } = useContext(CharacterContext)
+  const resetStats = useCallback(() => {
+    editKeys.forEach(key => bonusStats[key] && characterDispatch({ type: "editStats", statKey: key, value: 0 }))
+  }, [editKeys, bonusStats, characterDispatch])
+
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
-      <Box display="flex" justifyContent="space-between">
-        <Typography variant="subtitle1">{title}</Typography>
-        <Button size="small" color={edit ? "error" : "info"} onClick={() => setedit(!edit)} >
-          <span><FontAwesomeIcon icon={edit ? faSave : faEdit} /> {edit ? EXIT : EDIT}</span>
+      <Box display="flex" gap={1}>
+        <Typography variant="subtitle1" flexGrow={1}>{title}</Typography>
+        <Button
+          size="small"
+          color={edit ? "error" : "info"}
+          onClick={() => setedit(!edit)}
+          startIcon={<FontAwesomeIcon icon={edit ? faSave : faEdit} />}
+        >
+          {edit ? t("ui:exit") : t("ui:edit")}
         </Button>
+        <BootstrapTooltip title={t("ui:reset")} placement="top">
+          <Button
+            size="small"
+            color="error"
+            onClick={() => resetStats()}
+            sx={{ px: 1, minWidth: 0 }}
+          >
+            <Replay />
+          </Button>
+        </BootstrapTooltip>
       </Box>
     </CardContent>
     <Divider />
     <CardContent>
-      {edit ? editContent : content}
+      {edit ? <StatEditContent keys={editKeys} /> : content}
     </CardContent>
   </CardLight>
 }

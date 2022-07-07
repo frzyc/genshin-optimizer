@@ -37,6 +37,8 @@
   "reset": "Reset",
   "info": "INFO",
   "close": "Close",
+  "exit": "Exit",
+  "edit": "Edit",
   "sortMap": {
     "new": "New",
     "name": "Name",
