@@ -1,5 +1,6 @@
 import { faEdit, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ModeEdit } from "@mui/icons-material";
 import { Box, Button, CardContent, Divider, Grid, Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { CharacterContext } from "../../../../CharacterContext";
@@ -49,10 +50,19 @@ const miscStatReadNodes = miscStatEditKeys.map(k => input.total[k])
 
 function StatDisplayContent({ nodes, extra }: { nodes: ReadNode<number>[], extra?: Displayable }) {
   const { data, oldData } = useContext(DataContext)
+  const { character: { bonusStats } } = useContext(CharacterContext)
   return <Grid container columnSpacing={{ xs: 2, lg: 3 }} rowSpacing={1}>
-    {nodes.map(rn => <Grid item key={rn.info?.key} xs={12} >
-      {<NodeFieldDisplay node={data.get(rn)} oldValue={oldData?.get(rn)?.value} />}
-    </Grid>)}
+    {nodes.map(rn => {
+      const key = rn.info?.key
+      const modified = key && (bonusStats[key] || bonusStats[key + "_"])
+      return <Grid item key={key} xs={12} >
+        {<NodeFieldDisplay
+          node={data.get(rn)}
+          oldValue={oldData?.get(rn)?.value}
+          suffix={modified ? <ModeEdit fontSize="inherit" sx={{ mt: "3px", mb: "-3px" }} /> : undefined}
+        />}
+      </Grid>})
+    }
     {extra}
   </Grid>
 }
@@ -80,9 +90,9 @@ export default function StatCards() {
   const specialNode = data.get(input.special)
 
   return <Grid container spacing={1}>
-    <Grid item xs={12} md={6} lg={4}>
+    <Grid item xs={12} md={12} lg={4}>
       <Grid container spacing={1}>
-        <Grid item>
+        <Grid item xs={12} md={6} lg={12}>
           <StatDisplayCard
             title="Base Stats"
             content={<StatDisplayContent nodes={baseReadNodes}
@@ -94,7 +104,7 @@ export default function StatCards() {
             editContent={<StatEditContent keys={baseEditKeys} />}
           />
         </Grid>
-        <Grid item>
+        <Grid item xs={12} md={6} lg={12}>
           <StatDisplayCard
             title="Advanced Stats"
             content={<StatDisplayContent nodes={advancedReadNodes} />}
