@@ -28,7 +28,7 @@ export default function useCharSelectionCallback() {
         if (!characterSheet) return
         const weapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
         const weaponId = database.weapons.new(weapon)
-        database.weapons.setLocation(weaponId, characterKey)
+        database.weapons.set(weaponId, { location: characterKey })
         // If we are navigating to a new character,
         // redirect to Overview, regardless of previous tab.
         // Trying to enforce a certain UI flow when building new characters

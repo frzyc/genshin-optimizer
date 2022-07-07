@@ -159,7 +159,7 @@ export default function PageArtifact() {
           />
         </Grid>
       </Grid>
-      <ArtifactRedButtons artifactIds={artifactIds} filterOption={filterOption} />
+      <ArtifactRedButtons artifactIds={artifactIds} />
     </CardContent></CardDark>
 
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>

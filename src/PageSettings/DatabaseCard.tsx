@@ -141,7 +141,7 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
   const onBlur = useCallback(() => {
     setDbMeta({ name: tempName })
     if (!current) (database.storage as ExtraStorage).saveStorage()
-  }, [tempName, database, current, setDbMeta])
+  }, [setDbMeta, tempName, database, current])
   const onKeyDOwn = useCallback(e => e.key === "Enter" && onBlur(), [onBlur],)
 
   return <CardDark sx={{ height: "100%" }}>

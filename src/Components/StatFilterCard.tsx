@@ -4,8 +4,8 @@ import { Button, ButtonGroup, CardContent, Divider, MenuItem, Typography } from 
 import { Box } from '@mui/system';
 import React, { useCallback, useContext, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CharacterContext } from '../CharacterContext';
-import { DataContext } from '../DataContext';
+import { CharacterContext } from '../Context/CharacterContext';
+import { DataContext } from '../Context/DataContext';
 import { uiInput as input } from '../Formula';
 import KeyMap, { StatColoredWithUnit, StatKey } from '../KeyMap';
 import useBuildSetting from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/useBuildSetting';

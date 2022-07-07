@@ -1,7 +1,7 @@
 import { Box, CardActionArea, CardContent, Grid, MenuItem, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
 import React, { useCallback, useContext, useMemo } from 'react';
-import { CharacterContext } from "../../../CharacterContext";
+import { CharacterContext } from "../../../Context/CharacterContext";
 import CardDark from "../../../Components/Card/CardDark";
 import CardLight from "../../../Components/Card/CardLight";
 import ConditionalWrapper from "../../../Components/ConditionalWrapper";
@@ -9,7 +9,7 @@ import DocumentDisplay from "../../../Components/DocumentDisplay";
 import DropdownButton from "../../../Components/DropdownMenu/DropdownButton";
 import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
 import { TalentSheetElementKey } from "../../../Data/Characters/CharacterSheet";
-import { DataContext } from '../../../DataContext';
+import { DataContext } from '../../../Context/DataContext';
 import { uiInput as input } from "../../../Formula";
 import { NumNode } from "../../../Formula/type";
 import { NodeDisplay } from '../../../Formula/uiData';

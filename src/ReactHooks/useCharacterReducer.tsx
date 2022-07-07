@@ -4,9 +4,6 @@ import { ICachedCharacter } from "../Types/character";
 import { CharacterKey } from "../Types/consts";
 import { deepClone } from "../Util/Util";
 
-type characterEquipWeapon = {
-  type: "weapon", id: string
-}
 type characterReducerBonusStatsAction = {
   type: "editStats",
   statKey: string
@@ -26,7 +23,7 @@ type characterTeamAction = {
   index: number,
   charKey: CharacterKey | ""
 }
-export type characterReducerAction = characterEquipWeapon | characterReducerBonusStatsAction | characterReducerenemyOverrideAction | characterReducerResetStatsAction | characterTeamAction | Partial<ICachedCharacter>
+export type characterReducerAction = characterReducerBonusStatsAction | characterReducerenemyOverrideAction | characterReducerResetStatsAction | characterTeamAction | Partial<ICachedCharacter>
 
 export default function useCharacterReducer(characterKey: CharacterKey | "") {
   const { database } = useContext(DatabaseContext)
@@ -35,9 +32,6 @@ export default function useCharacterReducer(characterKey: CharacterKey | "") {
     if (!characterKey) return
 
     if ("type" in action) switch (action.type) {
-      case "weapon":
-        database.weapons.setLocation(action.id, characterKey)
-        break
       case "enemyOverride": {
         const character = database.chars.get(characterKey)!
         const enemyOverride = character.enemyOverride

@@ -83,7 +83,7 @@ export default function QuickLinksCard() {
     <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
 
       <Box display="flex" justifyContent="space-between" gap={1}>
-        {smallIcons.map(({ tooltip, icon, url, color }, i) => <Tooltip key={i} title={tooltip} placement="top" arrow>
+        {smallIcons.map(({ tooltip, icon, url, color }) => <Tooltip key={tooltip} title={tooltip} placement="top" arrow>
           <Button fullWidth color={color} key={tooltip} sx={{ p: 1, minWidth: 0 }} component={Link} href={url} target="_blank" rel="noopener">{icon}</Button>
         </Tooltip>)}
       </Box>

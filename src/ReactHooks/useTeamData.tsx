@@ -4,7 +4,7 @@ import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { resonanceData } from "../Data/Resonance";
 import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database";
-import { TeamData } from "../DataContext";
+import { TeamData } from "../Context/DataContext";
 import { common } from "../Formula";
 import { dataObjForArtifact, dataObjForCharacter, dataObjForWeapon, uiDataForTeam } from "../Formula/api";
 import { Data } from "../Formula/type";

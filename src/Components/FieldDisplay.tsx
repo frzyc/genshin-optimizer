@@ -1,7 +1,7 @@
 import { Groups } from "@mui/icons-material";
 import { Box, List, ListItem, Skeleton, styled, Typography } from "@mui/material";
 import React, { Suspense, useContext, useMemo } from 'react';
-import { DataContext } from "../DataContext";
+import { DataContext } from "../Context/DataContext";
 import { NodeDisplay } from "../Formula/api";
 import KeyMap, { valueString } from "../KeyMap";
 import { IBasicFieldDisplay, IFieldDisplay } from "../Types/fieldDisplay";

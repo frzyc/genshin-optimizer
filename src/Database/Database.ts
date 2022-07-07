@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { TeamData } from "../DataContext";
+import { TeamData } from "../Context/DataContext";
 import { CharacterKey } from "../Types/consts";
 import { DBStorage } from "./DBStorage";
 import { ArtifactDataManager } from "./Data/ArtifactData";
@@ -24,10 +24,10 @@ export class ArtCharDatabase {
     migrate(storage)
     this.chars = new CharacterDataManager(this)
 
-    // Artifacts needs to after character to check for relations
+    // Artifacts needs to be instantiated after character to check for relations
     this.arts = new ArtifactDataManager(this)
 
-    // Weapons needs to be reloaded after character to check for relations
+    // Weapons needs to be instantiated after character to check for relations
     this.weapons = new WeaponDataManager(this)
 
     this.states = new StateDataManager(this)

@@ -3,7 +3,7 @@ import { Box, CardActionArea, CardContent, Chip, Grid, IconButton, Skeleton, Typ
 import { Suspense, useCallback, useContext, useMemo } from 'react';
 import { ascensionMaxLevel } from '../../Data/LevelData';
 import { DatabaseContext } from '../../Database/Database';
-import { DataContext, dataContextObj, TeamData } from '../../DataContext';
+import { DataContext, dataContextObj, TeamData } from '../../Context/DataContext';
 import { uiInput as input } from '../../Formula';
 import KeyMap from '../../KeyMap';
 import CharacterCardPico from './CharacterCardPico';
@@ -21,7 +21,7 @@ import { Stars } from '../StarDisplay';
 import StatIcon from '../StatIcon';
 import WeaponCardPico from '../Weapon/WeaponCardPico';
 import WeaponFullCard from '../Weapon/WeaponFullCard';
-import { CharacterContext, CharacterContextObj } from '../../CharacterContext';
+import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
 import usePromise from '../../ReactHooks/usePromise';
 import CharacterSheet from '../../Data/Characters/CharacterSheet';
 import useCharacter from '../../ReactHooks/useCharacter';

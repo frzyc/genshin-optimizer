@@ -1,8 +1,8 @@
 import { CheckBox, CheckBoxOutlineBlank, ExpandMore } from "@mui/icons-material";
 import { Button, CardContent, Chip, Collapse, Grid, Typography } from "@mui/material";
 import { useCallback, useContext, useState } from 'react';
-import { CharacterContext } from "../CharacterContext";
-import { DataContext } from "../DataContext";
+import { CharacterContext } from "../Context/CharacterContext";
+import { DataContext } from "../Context/DataContext";
 import { uiInput as input } from "../Formula";
 import KeyMap, { valueString } from '../KeyMap';
 import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";

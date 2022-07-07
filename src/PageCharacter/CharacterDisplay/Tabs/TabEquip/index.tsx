@@ -3,15 +3,15 @@ import { Box, Button, CardContent, Divider, Grid, Tooltip, Typography, useMediaQ
 import { useTheme } from "@mui/system";
 import { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CharacterContext } from '../../../../CharacterContext';
 import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay';
 import SlotNameWithIcon from '../../../../Components/Artifact/SlotNameWIthIcon';
 import CardLight from '../../../../Components/Card/CardLight';
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent';
 import DocumentDisplay from "../../../../Components/DocumentDisplay";
+import { CharacterContext } from '../../../../Context/CharacterContext';
+import { DataContext } from '../../../../Context/DataContext';
 import { ArtifactSheet } from '../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../Database/Database';
-import { DataContext } from '../../../../DataContext';
 import { uiInput as input } from '../../../../Formula';
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard';
 import WeaponCard from '../../../../PageWeapon/WeaponCard';
@@ -59,16 +59,20 @@ function TabEquip() {
 
   const theme = useTheme();
   const grxl = useMediaQuery(theme.breakpoints.up('xl'));
+  const unequipButton = useMemo(() => hasEquipped && <Button color="error" onClick={unequipArts} fullWidth sx={{ borderBottomRightRadius: 0, borderBottomLeftRadius: 0 }}>{t`tabEquip.unequipArts`}</Button>, [t, hasEquipped, unequipArts])
   const artifactFields = useMemo(() => artifactSheets && setEffects && Object.entries(setEffects).map(([setKey, setNumKeyArr]) =>
     <CardLight key={setKey} sx={{ flexGrow: 1, }} >
+      {unequipButton}
       <CardContent >
         <Grid container spacing={1} flexDirection="column" height="100%" >
+
           <Grid item display="flex" flexDirection="column" gap={2}>
             {setNumKeyArr.map(setNumKey => <SetEffectDisplay key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} />)}
           </Grid>
         </Grid>
       </CardContent>
-    </CardLight>), [artifactSheets, setEffects])
+    </CardLight>
+  ), [artifactSheets, setEffects, unequipButton])
   const weaponDoc = useMemo(() => weaponSheet && weaponSheet.document.length > 0 && <DocumentDisplay sections={weaponSheet.document} />, [weaponSheet])
   return <Box display="flex" flexDirection="column" gap={1}>
     <Suspense fallback={false}>
@@ -87,7 +91,6 @@ function TabEquip() {
     <Grid container spacing={1}>
       {grxl && <Grid item xs={12} md={12} xl={3} sx={{ display: "flex", flexDirection: "column", gap: 1 }} >
         {weaponDoc && <CardLight><CardContent>{weaponDoc}</CardContent></CardLight>}
-        {hasEquipped && <Button color="error" onClick={unequipArts} fullWidth>{t`tabEquip.unequipArts`}</Button>}
         {artifactFields}
       </Grid>}
       <Grid item xs={12} md={12} xl={9} container spacing={1}>
@@ -102,9 +105,8 @@ function TabEquip() {
         </Grid>)}
       </Grid>
       {!grxl && <Grid item xs={12} md={12} xl={3} container spacing={1} >
-        <Grid item xs={12} md={6} lg={4}>{weaponDoc}</Grid>
+        <Grid item xs={12} md={6} lg={4}><CardLight><CardContent>{weaponDoc}</CardContent></CardLight></Grid>
         <Grid item xs={12} md={6} lg={4} sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-          {hasEquipped && <Button color="error" onClick={unequipArts} fullWidth>{t`tabEquip.unequipArts`}</Button>}
           {artifactFields}
         </Grid>
       </Grid>}
@@ -128,7 +130,7 @@ function ArtSwapCard({ slotKey }: { slotKey: SlotKey }) {
       alignItems: "center"
     }}
     >
-      <ArtifactSwapModal slotKey={slotKey} show={show} onClose={onClose} onChangeId={id => database.arts.setLocation(id, characterKey)} />
+      <ArtifactSwapModal slotKey={slotKey} show={show} onClose={onClose} onChangeId={id => database.arts.set(id, { location: characterKey })} />
       <Button onClick={onOpen} color="info" sx={{ borderRadius: "1em", }}>
         <SwapHoriz sx={{ height: 100, width: 100 }} />
       </Button>
@@ -144,7 +146,7 @@ function WeaponSwapButton({ weaponTypeKey }: { weaponTypeKey: WeaponTypeKey }) {
     <Tooltip title={<Typography>{t`tabEquip.swapWeapon`}</Typography>} placement="top" arrow>
       <Button color="info" size="small" onClick={onOpen} ><SwapHoriz /></Button>
     </Tooltip>
-    <WeaponSwapModal weaponTypeKey={weaponTypeKey} onChangeId={id => database.weapons.setLocation(id, characterKey)} show={show} onClose={onClose} />
+    <WeaponSwapModal weaponTypeKey={weaponTypeKey} onChangeId={id => database.weapons.set(id, { location: characterKey })} show={show} onClose={onClose} />
   </>
 }
 function LargeWeaponSwapButton({ weaponTypeKey }: { weaponTypeKey: WeaponTypeKey }) {
@@ -154,7 +156,7 @@ function LargeWeaponSwapButton({ weaponTypeKey }: { weaponTypeKey: WeaponTypeKey
   const [show, onOpen, onClose] = useBoolState()
   return <>
     <Button color="info" onClick={onOpen} startIcon={<SwapHoriz />} >{t`tabEquip.swapWeapon`}</Button>
-    <WeaponSwapModal weaponTypeKey={weaponTypeKey} onChangeId={id => database.weapons.setLocation(id, characterKey)} show={show} onClose={onClose} />
+    <WeaponSwapModal weaponTypeKey={weaponTypeKey} onChangeId={id => database.weapons.set(id, { location: characterKey })} show={show} onClose={onClose} />
   </>
 }
 function ArtifactSwapButton({ slotKey }: { slotKey: SlotKey }) {
@@ -166,6 +168,6 @@ function ArtifactSwapButton({ slotKey }: { slotKey: SlotKey }) {
     <Tooltip title={<Typography>{t`tabEquip.swapArt`}</Typography>} placement="top" arrow>
       <Button color="info" size="small" onClick={onOpen} ><SwapHoriz /></Button>
     </Tooltip>
-    <ArtifactSwapModal slotKey={slotKey} show={show} onClose={onClose} onChangeId={id => database.arts.setLocation(id, characterKey)} />
+    <ArtifactSwapModal slotKey={slotKey} show={show} onClose={onClose} onChangeId={id => database.arts.set(id, { location: characterKey })} />
   </>
 }

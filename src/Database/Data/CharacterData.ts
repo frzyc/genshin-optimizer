@@ -66,7 +66,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     for (const artKey of Object.values(char.equippedArtifacts)) {
       const art = this.database.arts.get(artKey)
       if (art && art.location === key)
-        this.database.arts.setLocation(artKey, "")
+        this.database.arts.set(artKey, { location: "" })
     }
     const weapon = this.database.weapons.get(char.equippedWeapon)
     if (weapon && weapon.location === key)
@@ -75,8 +75,8 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
   }
 
   /**
-   * **Caution**: This does not update `equippedArtifacts`, use `setEquippedArtifacts` instead
-   * **Caution**: This does not update `equippedWeapon`, use `setEquippedWeapon` instead
+   * **Caution**: This does not propagate triggers on changes to `equippedArtifacts`
+   * **Caution**: This does not propagate triggers on changes to `equippedWeapon`
    */
   set(key: CharacterKey, value: Partial<ICharacter>): void {
     const oldChar = super.get(key)
@@ -85,23 +85,13 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
 
     const newChar = validateCharacter({ ...oldChar, ...parsedChar })
 
-    if (oldChar) {
-      newChar.equippedArtifacts = oldChar.equippedArtifacts
-      newChar.equippedWeapon = oldChar.equippedWeapon
-    }
     super.set(key, newChar)
   }
 
   /**
-   * This does not update the `location` on artifacts. Use `CharacterDataManager.equipArtifacts` or `ArtifactDataManager.setlocation`
-   */
-  setEquippedArtifacts(key: CharacterKey, equippedArtifacts: ICachedCharacter["equippedArtifacts"]) {
-    const char = super.get(key)
-    if (!char) return
-    super.set(key, { ...char, equippedArtifacts })
-  }
-  /**
-   * This does not update the `location` on artifacts. Use `CharacterDataManager.equipArtifacts` or `ArtifactDataManager.setlocation`
+   * **Caution**:
+   * This does not update the `location` on artifact, nor trigger callback.
+   * This function should be use internally for database to maintain cache on ICachedCharacter.
    */
   setEquippedArtifact(key: CharacterKey, slotKey: SlotKey, artid: string) {
     const char = super.get(key)
@@ -111,7 +101,9 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     super.set(key, { ...char, equippedArtifacts })
   }
   /**
-   * This does not update the `location` on weapon. Use `WeaponDataManager.setLocation`
+   * **Caution**:
+   * This does not update the `location` on weapon, nor trigger callback.
+   * This function should be use internally for database to maintain cache on ICachedCharacter.
    */
   setEquippedWeapon(key: CharacterKey, equippedWeapon: ICachedCharacter["equippedWeapon"]) {
     const char = super.get(key)
@@ -121,11 +113,8 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
   equipArtifacts(charKey: CharacterKey, newArts: StrictDict<SlotKey, string>) {
     const char = super.get(charKey)
     if (!char) return
-
-    const oldArts = char.equippedArtifacts
-    for (const [slot, newArt] of Object.entries(newArts)) {
-      if (newArt) this.database.arts.setLocation(newArt, charKey)
-      else if (oldArts[slot]) this.database.arts.setLocation(oldArts[slot], "")
+    for (const newArt of Object.values(newArts)) {
+      if (newArt) this.database.arts.set(newArt, { location: charKey })
     }
   }
 }

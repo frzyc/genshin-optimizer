@@ -40,8 +40,7 @@ export default function ArtifactFilter({ filterOption, filterOptionDispatch, fil
   </Suspense>
 }
 
-export function ArtifactRedButtons({ artifactIds, filterOption }:
-  { artifactIds: string[], filterOption: FilterOption }) {
+export function ArtifactRedButtons({ artifactIds }: { artifactIds: string[] }) {
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const { numDelete, numUnequip, numExclude, numInclude, numUnlock, numLock } = useMemo(() => {
@@ -58,7 +57,7 @@ export function ArtifactRedButtons({ artifactIds, filterOption }:
 
   const unequipArtifacts = () =>
     window.confirm(`Are you sure you want to unequip ${numUnequip} artifacts currently equipped on characters?`) &&
-    artifactIds.map(id => database.arts.setLocation(id, ""))
+    artifactIds.map(id => database.arts.set(id, { location: "" }))
 
   const deleteArtifacts = () =>
     window.confirm(`Are you sure you want to delete ${numDelete} artifacts?`) &&

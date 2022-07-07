@@ -17,7 +17,7 @@ import CharacterSheet from "../Data/Characters/CharacterSheet"
 import { ascensionMaxLevel, lowRarityMilestoneLevels } from "../Data/LevelData"
 import WeaponSheet from "../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../Database/Database"
-import { DataContext } from "../DataContext"
+import { DataContext } from "../Context/DataContext"
 import { uiInput as input } from "../Formula"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import usePromise from "../ReactHooks/usePromise"
@@ -66,7 +66,7 @@ export default function WeaponEditor({
   const weaponFilter = characterSheet ? (ws) => ws.weaponType === characterSheet.weaponTypeKey : undefined
   const initialWeaponFilter = characterSheet && characterSheet.weaponTypeKey
 
-  const equipOnChar = useCallback((charKey: CharacterKey | "") => id && database.weapons.setLocation(id, charKey), [database, id])
+  const equipOnChar = useCallback((charKey: CharacterKey | "") => id && database.weapons.set(id, { location: charKey }), [database, id])
   const filter = useCallback(
     (cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType,
     [weaponSheet],

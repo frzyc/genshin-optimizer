@@ -1,6 +1,6 @@
 import { CardContent } from "@mui/material"
 import { useContext } from "react"
-import { DataContext } from "../../DataContext"
+import { DataContext } from "../../Context/DataContext"
 import { DocumentConditional, DocumentSection } from "../../Types/sheet"
 import { evalIfFunc } from "../../Util/Util"
 import CardDark from "../Card/CardDark"

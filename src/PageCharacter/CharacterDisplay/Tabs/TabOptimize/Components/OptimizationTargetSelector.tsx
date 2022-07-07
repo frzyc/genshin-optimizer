@@ -6,7 +6,7 @@ import CardLight from '../../../../../Components/Card/CardLight';
 import ColorText from '../../../../../Components/ColoredText';
 import ImgIcon from '../../../../../Components/Image/ImgIcon';
 import ModalWrapper from '../../../../../Components/ModalWrapper';
-import { DataContext } from '../../../../../DataContext';
+import { DataContext } from '../../../../../Context/DataContext';
 import { getDisplayHeader, getDisplaySections } from '../../../../../Formula/DisplayUtil';
 import { DisplaySub } from '../../../../../Formula/type';
 import { NodeDisplay } from '../../../../../Formula/uiData';
