@@ -83,7 +83,7 @@ export default function QuickLinksCard() {
     <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
 
       <Box display="flex" justifyContent="space-between" gap={1}>
-        {smallIcons.map(({ tooltip, icon, url, color }) => <Tooltip title={tooltip} placement="top" arrow>
+        {smallIcons.map(({ tooltip, icon, url, color }, i) => <Tooltip key={i} title={tooltip} placement="top" arrow>
           <Button fullWidth color={color} key={tooltip} sx={{ p: 1, minWidth: 0 }} component={Link} href={url} target="_blank" rel="noopener">{icon}</Button>
         </Tooltip>)}
       </Box>
@@ -94,7 +94,7 @@ export default function QuickLinksCard() {
           button = <Button fullWidth key={i} color={color} component={RouterLink} to={btnProps.to} startIcon={icon}>{title(t)}</Button>
         if ("url" in btnProps)
           button = <Button fullWidth key={i} color={color} component={Link} href={btnProps.url} target="_blank" rel="noopener" startIcon={icon}>{title(t)}</Button>
-        return <Tooltip title={tooltip(t)} placement="top" arrow>
+        return <Tooltip key={i} title={tooltip(t)} placement="top" arrow>
           {button}
         </Tooltip>
       })}
