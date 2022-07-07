@@ -44,7 +44,7 @@ function IntroCard() {
     <CardContent>
       <Typography variant="subtitle1">
         <Trans t={t} i18nKey="intro" >
-          The <strong>ultimate</strong> <Link href="https://genshin.mihoyo.com/" target="_blank" rel="noreferrer"><i>Genshin Impact</i></Link> calculator, GO will keep track of your artifact/weapon/character inventory, and help you create the best build based on how you play, with that you have.
+          The <strong>ultimate</strong> <Link href="https://genshin.mihoyo.com/" target="_blank" rel="noreferrer"><i>Genshin Impact</i></Link> calculator, GO will keep track of your artifact/weapon/character inventory, and help you create the best build based on how you play, with what you have.
         </Trans>
       </Typography>
     </CardContent>
