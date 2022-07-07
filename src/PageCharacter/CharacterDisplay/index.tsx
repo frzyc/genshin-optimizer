@@ -3,7 +3,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink, Navigate, Route, Routes, useMatch, useNavigate, useParams } from 'react-router-dom';
-import { CharacterContext, CharacterContextObj } from '../../CharacterContext';
+import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
 import CardDark from '../../Components/Card/CardDark';
 import CardLight from '../../Components/Card/CardLight';
 import { CharacterSelectionModal } from '../../Components/Character/CharacterSelectionModal';
@@ -19,7 +19,7 @@ import ImgIcon from '../../Components/Image/ImgIcon';
 import CharacterSheet from '../../Data/Characters/CharacterSheet';
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../../Data/LevelData';
 import { sgt } from '../../Data/SheetUtil';
-import { DataContext, dataContextObj, TeamData } from '../../DataContext';
+import { DataContext, dataContextObj, TeamData } from '../../Context/DataContext';
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil';
 import { DisplaySub } from '../../Formula/type';
 import { NodeDisplay } from '../../Formula/uiData';

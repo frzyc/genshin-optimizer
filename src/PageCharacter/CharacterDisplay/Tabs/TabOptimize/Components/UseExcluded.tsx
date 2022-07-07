@@ -2,7 +2,7 @@ import { CheckBox, CheckBoxOutlineBlank } from "@mui/icons-material";
 import { Box, Button } from "@mui/material";
 import { useContext, useMemo } from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { CharacterContext } from "../../../../../CharacterContext";
+import { CharacterContext } from "../../../../../Context/CharacterContext";
 import SqBadge from "../../../../../Components/SqBadge";
 import { DatabaseContext } from "../../../../../Database/Database";
 import useBuildSetting from "../useBuildSetting";

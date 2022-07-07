@@ -1,7 +1,7 @@
 import { createContext } from "react"
-import CharacterSheet from "./Data/Characters/CharacterSheet"
-import { characterReducerAction } from "./ReactHooks/useCharacterReducer"
-import { ICachedCharacter } from "./Types/character"
+import CharacterSheet from "../Data/Characters/CharacterSheet"
+import { characterReducerAction } from "../ReactHooks/useCharacterReducer"
+import { ICachedCharacter } from "../Types/character"
 export type CharacterContextObj = {
   character: ICachedCharacter
   characterSheet: CharacterSheet

@@ -1,9 +1,9 @@
 import { CardContent, Divider, Typography } from '@mui/material';
 import { useContext } from 'react';
-import { CharacterContext } from '../../../../../CharacterContext';
+import { CharacterContext } from '../../../../../Context/CharacterContext';
 import CardLight from '../../../../../Components/Card/CardLight';
 import { NodeFieldDisplay } from '../../../../../Components/FieldDisplay';
-import { DataContext } from '../../../../../DataContext';
+import { DataContext } from '../../../../../Context/DataContext';
 import { uiInput as input } from '../../../../../Formula';
 import { NumNode } from '../../../../../Formula/type';
 export default function BonusStatsCard() {

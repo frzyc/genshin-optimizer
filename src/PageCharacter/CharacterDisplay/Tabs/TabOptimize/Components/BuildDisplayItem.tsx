@@ -2,7 +2,7 @@ import { ChevronRight } from '@mui/icons-material';
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { Suspense, useCallback, useContext, useMemo, useState } from 'react';
-import { CharacterContext } from '../../../../../CharacterContext';
+import { CharacterContext } from '../../../../../Context/CharacterContext';
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano';
 import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
 import CardDark from '../../../../../Components/Card/CardDark';
@@ -13,7 +13,7 @@ import SqBadge from '../../../../../Components/SqBadge';
 import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano';
 import { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../../Database/Database';
-import { DataContext } from '../../../../../DataContext';
+import { DataContext } from '../../../../../Context/DataContext';
 import { uiInput as input } from '../../../../../Formula';
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard';
 import usePromise from '../../../../../ReactHooks/usePromise';
@@ -47,7 +47,7 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
     if (!window.confirm("Do you want to equip this build to this character?")) return
     const newBuild = Object.fromEntries(allSlotKeys.map(s => [s, data.get(input.art[s].id).value])) as Record<SlotKey, string>
     database.chars.equipArtifacts(characterKey, newBuild)
-    database.weapons.setLocation(data.get(input.weapon.id).value!, characterKey)
+    database.weapons.set(data.get(input.weapon.id).value!, { location: characterKey })
   }, [characterKey, data, database])
 
   const statProviderContext = useMemo(() => {
@@ -108,14 +108,22 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
 }
 
 function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLevel, onClose }: { newOld: NewOld, mainStatAssumptionLevel: number, onClose: () => void }) {
+  const { database } = useContext(DatabaseContext)
+  const { character: { key: characterKey } } = useContext(CharacterContext)
+  const onEquip = useCallback(() => {
+    if (!window.confirm("Do you want to equip this artifact to this character?")) return
+    database.arts.set(newId, { location: characterKey })
+    onClose()
+  }, [newId, database, characterKey, onClose])
+
   return <ModalWrapper open={!!newId} onClose={onClose} containerProps={{ maxWidth: oldId ? "md" : "xs" }}>
     <CardDark>
       <CardContent sx={{ display: "flex", justifyContent: "center", alignItems: "stretch", gap: 2, height: "100%" }}>
-        {oldId && <Box><ArtifactCard artifactId={oldId} mainStatAssumptionLevel={mainStatAssumptionLevel} disableEditSetSlot canExclude canEquip /></Box>}
+        {oldId && <Box minWidth={320}><ArtifactCard artifactId={oldId} mainStatAssumptionLevel={mainStatAssumptionLevel} canExclude canEquip /></Box>}
         {oldId && <Box display="flex" flexGrow={1} />}
-        {oldId && <Box display="flex" alignItems="center" justifyContent="center"><CardLight sx={{ display: "flex" }}><ChevronRight sx={{ fontSize: 40 }} /></CardLight></Box>}
+        {oldId && <Box display="flex" alignItems="center" justifyContent="center"><Button onClick={onEquip} sx={{ display: "flex" }}><ChevronRight sx={{ fontSize: 40 }} /></Button></Box>}
         {oldId && <Box display="flex" flexGrow={1} />}
-        <Box><ArtifactCard artifactId={newId} mainStatAssumptionLevel={mainStatAssumptionLevel} disableEditSetSlot canExclude canEquip /></Box>
+        <Box minWidth={320}><ArtifactCard artifactId={newId} mainStatAssumptionLevel={mainStatAssumptionLevel} canExclude canEquip /></Box>
       </CardContent>
     </CardDark>
   </ModalWrapper>

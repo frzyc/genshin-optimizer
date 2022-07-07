@@ -70,8 +70,8 @@ const InputInvis = styled('input')({
   display: 'none',
 });
 
-export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allowUpload = false, allowEmpty = false, disableEditSetSlot: disableEditSlotProp = false }:
-  { artifactIdToEdit?: string, cancelEdit: () => void, allowUpload?: boolean, allowEmpty?: boolean, disableEditSetSlot?: boolean }) {
+export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allowUpload = false, allowEmpty = false, }:
+  { artifactIdToEdit?: string, cancelEdit: () => void, allowUpload?: boolean, allowEmpty?: boolean, }) {
   const { t } = useTranslation("artifact")
 
   const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
@@ -101,7 +101,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const { artifact: artifactProcessed, texts } = firstProcessed ?? {}
   // const fileName = firstProcessed?.fileName ?? firstOutstanding?.fileName ?? "Click here to upload Artifact screenshot files"
 
-  const disableEditSetSlot = disableEditSlotProp || !!artifact?.location
+  const disableEditSlot = !!artifact?.location
 
   useEffect(() => {
     if (!artifact && artifactProcessed)
@@ -228,6 +228,16 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
     ? element ?? "success"
     : "primary"
 
+  const updateSetKey = useCallback((setKey: ArtifactSetKey | "") => update({ setKey: setKey as ArtifactSetKey }), [update],)
+  const setACDisable = useCallback((key: ArtifactSetKey | "") => {
+    if (key === "") return true
+    //Disable being able to select any of the prayer set unless the current slotkey is circlet
+    if (disableEditSlot && slotKey !== "circlet" && (key === "PrayersForDestiny" || key === "PrayersForIllumination" || key === "PrayersForWisdom" || key === "PrayersToSpringtime"))
+      return true
+    return false
+  }, [disableEditSlot, slotKey])
+
+
   return <ModalWrapper open={show} onClose={onClose} >
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: show ? "100%" : 64 }} />}><CardDark >
       <UploadExplainationModal modalShow={modalShow} hide={() => setModalShow(false)} />
@@ -240,22 +250,27 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
           {/* Left column */}
           <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
             {/* set & rarity */}
-            <ButtonGroup sx={{ display: "flex", mb: 1 }}>
+            <Box sx={{ display: "flex", gap: 1, mb: 1 }}>
               {/* Artifact Set */}
               <ArtifactSetSingleAutocomplete
                 showDefault
                 disableClearable
                 size="small"
                 artSetKey={artifact?.setKey ?? ""}
-                setArtSetKey={setKey => update({ setKey: setKey as ArtifactSetKey })}
-                sx={{ flexGrow: 1 }}
+                setArtSetKey={updateSetKey}
+                sx={(theme) => ({
+                  flexGrow: 1,
+                  ".MuiFilledInput-root": {
+                    borderBottomRightRadius: theme.shape.borderRadius,
+                    borderBottomLeftRadius: theme.shape.borderRadius
+                  }
+                })}
                 defaultText={t("editor.unknownSetName")}
-                disable={(key) => key === ""}
-                disabled={disableEditSetSlot}
+                disable={setACDisable}
               />
               {/* rarity dropdown */}
-              <ArtifactRarityDropdown rarity={artifact ? rarity : undefined} onChange={r => update({ rarity: r })} filter={r => !!sheet?.rarity?.includes?.(r)} disabled={disableEditSetSlot || !sheet} />
-            </ButtonGroup>
+              <ArtifactRarityDropdown rarity={artifact ? rarity : undefined} onChange={r => update({ rarity: r })} filter={r => !!sheet?.rarity?.includes?.(r)} disabled={!sheet} />
+            </Box>
 
             {/* level */}
             <Box component="div" display="flex">
@@ -271,7 +286,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
 
             {/* slot */}
             <Box component="div" display="flex">
-              <ArtifactSlotDropdown disabled={disableEditSetSlot || !sheet} slotKey={slotKey} onChange={slotKey => update({ slotKey })} />
+              <ArtifactSlotDropdown disabled={disableEditSlot || !sheet} slotKey={slotKey} onChange={slotKey => update({ slotKey })} />
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                 <Suspense fallback={<Skeleton width="60%" />}>
                   <Typography color="text.secondary">

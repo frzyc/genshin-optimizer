@@ -46,7 +46,7 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
         weaponIds.add(weaponId)
         this.set(weaponId, weapon)
         // No need to set anything on character side.
-        this.setLocation(weaponId, charKey)
+        this.set(weaponId, { location: charKey })
       }
     }
   }
@@ -68,38 +68,33 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
     super.remove(key)
   }
 
-  /**
-  * **Caution** This does not update `location` use `setLocation` instead
-  */
   set(id: string, value: Partial<IWeapon>) {
     const oldWeapon = super.get(id)
     const parsedWeapon = parseWeapon({ ...oldWeapon, ...value })
     if (!parsedWeapon) return
 
     const newWeapon = validateWeapon({ ...oldWeapon, ...parsedWeapon }, id)
-    super.set(id, newWeapon)
-    if (newWeapon.location)
+
+    if (oldWeapon && newWeapon.location !== oldWeapon.location) {
+      const prevChar = this.database.chars.get(oldWeapon.location)
+      const newChar = this.database.chars.get(newWeapon.location)
+
+      // previously equipped art at new location
+      const prevWeapon = super.get(newChar?.equippedWeapon)
+
+      //current prevWeapon <-> newChar  && newWeapon <-> prevChar
+      //swap to prevWeapon <-> prevChar && newWeapon <-> newChar(outside of this if)
+
+      if (prevWeapon)
+        super.set(prevWeapon.id, { ...prevWeapon, location: prevChar?.key ?? "" })
+      if (newChar)
+        this.database.chars.setEquippedWeapon(newChar.key, newWeapon.id)
+      if (prevChar)
+        this.database.chars.setEquippedWeapon(prevChar.key, prevWeapon?.id ?? "")
+    } else if (newWeapon.location) // Trigger a update to character as well
       this.database.chars.trigger(newWeapon.location)
-  }
 
-  setLocation(weaponId: string, newCharKey: IWeapon["location"]) {
-    const weapon1 = super.get(weaponId)
-    const char1 = this.database.chars.get(newCharKey)
-    if (!weapon1 || !char1 || weapon1.location === newCharKey) return
-
-    const weapon2 = this.get(char1.equippedWeapon)!
-    const char2 = this.database.chars.get(weapon1.location)
-
-    // Currently weapon1 <-> char2 & weapon2 <-> char1
-    // Swap to weapon1 <-> char1 & weapon2 <-> char2
-
-    super.set(weapon1.id, { ...weapon1, location: char1.key })
-    this.database.chars.setEquippedWeapon(char1.key, weapon1.id)
-
-    if (weapon2)
-      super.set(weapon2.id, { ...weapon2, location: char2?.key ?? "" })
-    if (char2)
-      this.database.chars.setEquippedWeapon(char2.key, weapon2.id)
+    super.set(id, newWeapon)
   }
 
   findDup(weapon: IWeapon): { duplicated: ICachedWeapon[], upgraded: ICachedWeapon[] } {

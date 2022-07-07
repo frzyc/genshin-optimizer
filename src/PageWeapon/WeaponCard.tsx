@@ -39,7 +39,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
   const wrapperFunc = useCallback(children => <CardActionArea onClick={() => onClick?.(weaponId)} >{children}</CardActionArea>, [onClick, weaponId],)
   const falseWrapperFunc = useCallback(children => <Box >{children}</Box>, [])
 
-  const equipOnChar = useCallback((charKey: CharacterKey | "") => database.weapons.setLocation(weaponId, charKey), [database, weaponId],)
+  const equipOnChar = useCallback((charKey: CharacterKey | "") => database.weapons.set(weaponId, { location: charKey }), [database, weaponId],)
 
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
 

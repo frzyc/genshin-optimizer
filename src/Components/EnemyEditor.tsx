@@ -4,7 +4,7 @@ import { ExpandMore } from "@mui/icons-material";
 import { Button, CardContent, Chip, Collapse, Grid, Typography } from "@mui/material";
 import { useCallback, useContext, useState } from 'react';
 import StatInput from "./StatInput";
-import { DataContext } from "../DataContext";
+import { DataContext } from "../Context/DataContext";
 import { uiInput as input } from "../Formula";
 import KeyMap, { valueString } from '../KeyMap';
 import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";
@@ -12,7 +12,7 @@ import CardLight from "./Card/CardLight";
 import ColorText from "./ColoredText";
 import ExpandButton from "./ExpandButton";
 import { uncoloredEleIcons } from "./StatIcon";
-import { CharacterContext } from "../CharacterContext";
+import { CharacterContext } from "../Context/CharacterContext";
 
 export function EnemyExpandCard() {
   const { data } = useContext(DataContext)

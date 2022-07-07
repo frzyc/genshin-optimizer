@@ -15,7 +15,7 @@ import { Stars } from "../../../Components/StarDisplay";
 import StatIcon from "../../../Components/StatIcon";
 import WeaponCardNano from "../../../Components/Weapon/WeaponCardNano";
 import CharacterSheet, { TalentSheetElementKey } from "../../../Data/Characters/CharacterSheet";
-import { DataContext } from "../../../DataContext";
+import { DataContext } from "../../../Context/DataContext";
 import { uiInput as input } from "../../../Formula";
 import { ReadNode } from "../../../Formula/type";
 import KeyMap, { valueString } from "../../../KeyMap";
@@ -25,7 +25,7 @@ import { allElementsWithPhy, allSlotKeys, ElementKey } from "../../../Types/cons
 import { range } from "../../../Util/Util";
 import CharacterCardPico from "../../../Components/Character/CharacterCardPico";
 import StatInput from "../../../Components/StatInput";
-import { CharacterContext } from "../../../CharacterContext";
+import { CharacterContext } from "../../../Context/CharacterContext";
 
 export default function TabOverview() {
   const { characterSheet, character: { key: characterKey, favorite, equippedWeapon, team } } = useContext(CharacterContext)

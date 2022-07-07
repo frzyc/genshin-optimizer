@@ -36,12 +36,12 @@ describe("Database", () => {
     amber.equippedWeapon = database.weapons.new(amberWeapon)
     database.chars.set(albedo.key, albedo)
     database.chars.set(amber.key, amber)
-    database.weapons.setLocation(albedo.equippedWeapon, "Albedo")
-    database.weapons.setLocation(amber.equippedWeapon, "Amber")
+    database.weapons.set(albedo.equippedWeapon, { location: "Albedo" })
+    database.weapons.set(amber.equippedWeapon, { location: "Amber" })
 
     art1.id = database.arts.new(art1)
     art2.id = database.arts.new(art2)
-    database.arts.setLocation(art1.id, "Albedo")
+    database.arts.set(art1.id, { location: "Albedo" })
     art1.location = "Albedo"
 
     const { storage } = importGOOD(exportGOOD(database.storage), database) ?? { storage: new SandboxStorage() }
@@ -107,8 +107,8 @@ describe("Database", () => {
     const amberWeaponId = database.weapons.new(amberWeapon)
     database.chars.set(albedo.key, albedo)
     database.chars.set(amber.key, amber)
-    database.weapons.setLocation(albedoWeaponId, "Albedo")
-    database.weapons.setLocation(amberWeaponId, "Amber")
+    database.weapons.set(albedoWeaponId, { location: "Albedo" })
+    database.weapons.set(amberWeaponId, { location: "Amber" })
     albedo.equippedWeapon = albedoWeaponId
     amber.equippedWeapon = amberWeaponId
 
@@ -135,7 +135,7 @@ describe("Database", () => {
     /* const artifact1Callback1Cleanup = */ database.arts.follow(art1.id, artifact1Callback1)
 
     // Set location
-    database.arts.setLocation(art1.id, "Albedo")
+    database.arts.set(art1.id, { location: "Albedo" })
     expect(database.arts.get(art1.id)?.location).toEqual("Albedo")
     expect(database.chars.get("Albedo")?.equippedArtifacts[art1.slotKey]).toEqual(art1.id)
     // (Update later so that we're sure it's not referential)
@@ -162,11 +162,11 @@ describe("Database", () => {
     const lastCount = AlbedoCallback1.mock.calls.length
     AlbedoCallback1Cleanup?.()
     // We should no longer receive any new calls
-    database.arts.setLocation(art1.id, "Amber")
+    database.arts.set(art1.id, { location: "Amber" })
     expect(AlbedoCallback1.mock.calls.length).toEqual(lastCount)
 
     // Right now, we would have (Amber, art1) and (Albedo, art2), so if we set location of either
-    database.arts.setLocation(art2.id, "Amber")
+    database.arts.set(art2.id, { location: "Amber" })
     // art1 and art2 should swap locations, while, of course retaining other values
     albedo.equippedArtifacts.circlet = art1.id
     amber.equippedArtifacts.circlet = art2.id

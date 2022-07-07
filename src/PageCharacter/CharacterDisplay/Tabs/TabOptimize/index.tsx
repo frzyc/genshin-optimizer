@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BackgroundWorker";
-import { CharacterContext } from '../../../../CharacterContext';
+import { CharacterContext } from '../../../../Context/CharacterContext';
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider';
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
 import CardLight from '../../../../Components/Card/CardLight';
@@ -17,7 +17,7 @@ import { HitModeToggle, ReactionToggle } from '../../../../Components/HitModeEdi
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup';
 import StatFilterCard from '../../../../Components/StatFilterCard';
 import { DatabaseContext } from '../../../../Database/Database';
-import { DataContext, dataContextObj } from '../../../../DataContext';
+import { DataContext, dataContextObj } from '../../../../Context/DataContext';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';

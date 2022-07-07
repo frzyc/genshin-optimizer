@@ -1,5 +1,5 @@
 import { IArtifact, ICachedArtifact } from "../../Types/artifact";
-import { deepClone, getRandomInt } from "../../Util/Util";
+import { getRandomInt } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 import { parseArtifact } from "../imports/parse";
@@ -23,9 +23,7 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
         const { location, slotKey } = flex
         const char = this.database.chars.get(location)
         if (location && char && char.equippedArtifacts[slotKey] === "") {
-          const equippedArtifacts = deepClone(char.equippedArtifacts)
-          equippedArtifacts[slotKey] = key
-          this.database.chars.setEquippedArtifacts(location, equippedArtifacts)
+          this.database.chars.setEquippedArtifact(location, slotKey, key)
         } else flex.location = ""
 
         const { artifact } = validateArtifact(flex, key)
@@ -55,47 +53,38 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
     super.remove(key)
     this.deletedArts.add(key)
   }
-  /**
-   * **Caution** This does not update `location`, use `setLocation` instead
-   */
-  set(id: string, value: Partial<IArtifact>,) {
+  set(id: string, value: Partial<IArtifact>) {
     const oldArt = super.get(id)
     const parsedArt = parseArtifact({ ...oldArt, ...value })
     if (!parsedArt) return
 
     const newArt = validateArtifact({ ...oldArt, ...parsedArt }, id).artifact
 
-    if (oldArt) {
-      newArt.location = oldArt.location
-    }
+    if (oldArt && newArt.location !== oldArt.location) {
+      const slotKey = newArt.slotKey
+      const prevChar = this.database.chars.get(oldArt.location)
+      const newChar = this.database.chars.get(newArt.location)
+
+      // previously equipped art at new location
+      const prevArt = super.get(newChar?.equippedArtifacts[slotKey])
+
+      //current prevArt <-> newChar  && newArt <-> prevChar
+      //swap to prevArt <-> prevChar && newArt <-> newChar(outside of this if)
+
+      if (prevArt)
+        super.set(prevArt.id, { ...prevArt, location: prevChar?.key ?? "" })
+      if (newChar)
+        this.database.chars.setEquippedArtifact(newChar.key, slotKey, newArt.id)
+      if (prevChar)
+        this.database.chars.setEquippedArtifact(prevChar.key, slotKey, prevArt?.id ?? "")
+    } else if (newArt.location) // Trigger a update to character as well
+      this.database.chars.trigger(newArt.location)
+
     super.set(id, newArt)
-    if (newArt.location)
-      this.trigger(newArt.location)
   }
   clear(): void {
     super.clear()
     this.deletedArts = new Set<string>()
-  }
-
-  setLocation(artKey: string, newCharKey: IArtifact['location']) {
-    const art1 = super.get(artKey)
-    if (!art1 || art1.location === newCharKey) return
-
-    const slotKey = art1.slotKey
-    const char1 = this.database.chars.get(newCharKey)
-    const art2 = super.get(char1?.equippedArtifacts[slotKey])
-    const char2 = this.database.chars.get(art1.location)
-
-    // Currently art1 <-> char2 & art2 <-> char1
-    // Swap to art1 <-> char1 & art2 <-> char2
-
-    super.set(art1.id, { ...art1, location: char1?.key ?? "" })
-    if (art2)
-      super.set(art2.id, { ...art2, location: char2?.key ?? "" })
-    if (char1)
-      this.database.chars.setEquippedArtifacts(char1.key, { ...char1.equippedArtifacts, [slotKey]: art1.id })
-    if (char2)
-      this.database.chars.setEquippedArtifacts(char2.key, { ...char2.equippedArtifacts, [slotKey]: art2?.id ?? "" })
   }
 
   findDups(editorArt: IArtifact): { duplicated: ICachedArtifact[], upgraded: ICachedArtifact[] } {

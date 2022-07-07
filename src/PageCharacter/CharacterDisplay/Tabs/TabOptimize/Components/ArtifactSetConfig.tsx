@@ -4,7 +4,7 @@ import { CheckBoxOutlineBlank, CheckBox, Replay, Settings } from '@mui/icons-mat
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Typography } from '@mui/material';
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { CharacterContext } from '../../../../../CharacterContext';
+import { CharacterContext } from '../../../../../Context/CharacterContext';
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay';
 import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
 import CardDark from '../../../../../Components/Card/CardDark';
@@ -18,7 +18,7 @@ import { Stars } from '../../../../../Components/StarDisplay';
 import { Translate } from '../../../../../Components/Translate';
 import { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../../Database/Database';
-import { DataContext, dataContextObj } from '../../../../../DataContext';
+import { DataContext, dataContextObj } from '../../../../../Context/DataContext';
 import { UIData } from '../../../../../Formula/uiData';
 import { constant } from '../../../../../Formula/utils';
 import useForceUpdate from '../../../../../ReactHooks/useForceUpdate';

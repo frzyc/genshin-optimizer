@@ -1,9 +1,9 @@
 import { Box, MenuItem, ToggleButton, ToggleButtonGroupProps } from "@mui/material";
 import { useContext } from 'react';
 import { useTranslation } from "react-i18next";
-import { CharacterContext } from "../CharacterContext";
+import { CharacterContext } from "../Context/CharacterContext";
 import { infusionNode } from "../Data/Characters/dataUtil";
-import { DataContext } from "../DataContext";
+import { DataContext } from "../Context/DataContext";
 import { uiInput as input } from "../Formula";
 import { allHitModes, allReactionModes, ElementKey } from "../Types/consts";
 import ColorText from "./ColoredText";

@@ -1,8 +1,8 @@
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material';
 import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material';
 import React, { useCallback, useContext } from 'react';
-import { CharacterContext } from '../../CharacterContext';
-import { DataContext } from '../../DataContext';
+import { CharacterContext } from '../../Context/CharacterContext';
+import { DataContext } from '../../Context/DataContext';
 import { DocumentConditional, IDocumentConditionalExclusive, IDocumentConditionalMultiple } from '../../Types/sheet';
 import { deepClone, deletePropPath, layeredAssignment } from '../../Util/Util';
 import DropdownButton from '../DropdownMenu/DropdownButton';

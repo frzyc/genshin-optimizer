@@ -36,7 +36,6 @@ type Data = {
   mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
   probabilityFilter?: Dict<SubstatKey, number>
-  disableEditSetSlot?: boolean
   editor?: boolean,
   canExclude?: boolean
   canEquip?: boolean,
@@ -44,12 +43,12 @@ type Data = {
 }
 const allSubstatFilter = new Set(allSubstatKeys)
 
-export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter, disableEditSetSlot = false, editor = false, canExclude = false, canEquip = false, extraButtons }: Data): JSX.Element | null {
+export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter,  editor = false, canExclude = false, canEquip = false, extraButtons }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
   const sheet = usePromise(() => ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
-  const equipOnChar = (charKey: CharacterKey | "") => database.arts.setLocation(artifactId!, charKey)
+  const equipOnChar = (charKey: CharacterKey | "") => database.arts.set(artifactId!, { location: charKey })
   const editable = !artifactObj
   const [showEditor, setshowEditor] = useState(false)
   const onHideEditor = useCallback(() => setshowEditor(false), [setshowEditor])
@@ -87,7 +86,6 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
       <ArtifactEditor
         artifactIdToEdit={showEditor ? artifactId : ""}
         cancelEdit={onHideEditor}
-        disableEditSetSlot={disableEditSetSlot}
       />
     </Suspense>}
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
