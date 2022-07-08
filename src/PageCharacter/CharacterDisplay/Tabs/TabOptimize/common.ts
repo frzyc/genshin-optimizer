@@ -5,7 +5,6 @@ import { constant, customRead, max, min } from "../../../../Formula/utils";
 import { allSlotKeys, ArtifactSetKey, SlotKey } from "../../../../Types/consts";
 import { assertUnreachable, objectKeyMap, objectMap, range } from "../../../../Util/Util";
 import type { ArtSetExclusion } from "./BuildSetting";
-import { RequestFilter2 } from "./subproblemUtil";
 
 type DynMinMax = { [key in string]: MinMax }
 type MinMax = { min: number, max: number }
@@ -341,7 +340,7 @@ export function filterArtsVec(arts: ArtifactsBySlotVec, filters: RequestFilter):
     })
   }
 }
-export function filterArts2(arts: ArtifactsBySlot, { filterVec }: RequestFilter2): ArtifactsBySlot {
+export function filterArts2(arts: ArtifactsBySlot, filterVec: StrictDict<SlotKey, number[]>): ArtifactsBySlot {
   return {
     base: arts.base,
     values: objectKeyMap(allSlotKeys, slot => {
@@ -351,7 +350,7 @@ export function filterArts2(arts: ArtifactsBySlot, { filterVec }: RequestFilter2
     })
   }
 }
-export function filterArtsVec2(arts: ArtifactsBySlotVec, { filterVec }: RequestFilter2): ArtifactsBySlotVec {
+export function filterArtsVec2(arts: ArtifactsBySlotVec, filterVec: StrictDict<SlotKey, number[]>): ArtifactsBySlotVec {
   return {
     keys: arts.keys, base: arts.base, baseBuffer: arts.baseBuffer,
     values: objectKeyMap(allSlotKeys, slot => {

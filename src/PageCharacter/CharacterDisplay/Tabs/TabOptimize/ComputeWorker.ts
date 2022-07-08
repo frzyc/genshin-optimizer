@@ -74,7 +74,7 @@ export class ComputeWorker {
 
     const [compute, mapping, buffer] = precompute(nodes, f => f.path[1])
     const unionArts = filters.map(filter => {
-      const a = filterArts2(reaff.arts, filter)
+      const a = filterArts2(reaff.arts, filter.filterVec)
       return Object.values(a.values)
         .sort((a, b) => a.length - b.length)
         .map(arts => arts.map(art => ({

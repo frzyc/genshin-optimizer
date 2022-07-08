@@ -148,6 +148,13 @@ export function cartesian<T>(...q: T[][]): T[][] {
   return q.reduce((a, b) => a.flatMap(d => b.map(e => [d, [e]].flat())), [[]] as T[][])
 }
 
+export function partition<T>(q: T[], length: number): T[][] {
+  let rest = q.length % length
+  let size = Math.floor(q.length / length)
+  let j = 0;
+  return Array.from({ length }, (_, i) => q.slice(j, j += size + (i < rest ? 1 : 0)));
+}
+
 /** Will change `arr` in-place */
 export function toggleInArr<T>(arr: T[], value: T) {
   const ind = arr.indexOf(value)

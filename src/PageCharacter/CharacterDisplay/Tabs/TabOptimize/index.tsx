@@ -20,7 +20,6 @@ import { DatabaseContext } from '../../../../Database/Database';
 import { DataContext, dataContextObj } from '../../../../DataContext';
 import { thresholdExclusions } from '../../../../Formula/addedUtils';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
-import { expandPoly } from '../../../../Formula/expandPoly';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
 import { elimLinDepStats, thresholdToConstBranchForm } from '../../../../Formula/optimize2';
@@ -39,7 +38,7 @@ import { objectKeyValueMap, objPathValue, range } from '../../../../Util/Util';
 import { FinalizeResult, Setup, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
 import useBuildSetting from './BuildSetting';
-import { Build, countBuilds, emptyfilter, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
+import { Build, mergeBuilds, mergePlot, pruneAll } from './common';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
@@ -186,7 +185,7 @@ export default function TabBuild() {
     // }
 
     const masterInfo = { id: -1, ready: true }
-    const maxSplitIters = 10
+    const maxSplitIters = 5
     const minFilterCount = 2_000 // Don't split for single worker
     // const maxRequestFilterInFlight = maxWorkers * 4
     const maxRequestFilterInFlight = 1

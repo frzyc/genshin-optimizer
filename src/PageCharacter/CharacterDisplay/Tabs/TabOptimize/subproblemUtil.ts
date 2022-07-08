@@ -1,13 +1,12 @@
-import { estimateMaximum, fillBuffer, reducePolynomial, statsUpperLower } from "../../../../Formula/addedUtils"
+import { fillBuffer, reducePolynomial } from "../../../../Formula/addedUtils"
 import { ExpandedPolynomial, expandPoly, toNumNode } from "../../../../Formula/expandPoly"
-import { LinearForm, maxWeight, maxWeightVec, minMaxWeightVec, toLinearUpperBound } from "../../../../Formula/linearUpperBound"
+import { LinearForm, minMaxWeightVec, toLinearUpperBound } from "../../../../Formula/linearUpperBound"
 import { precompute } from "../../../../Formula/optimization"
 import { NumNode } from "../../../../Formula/type"
 import { allArtifactSets, allSlotKeys, ArtifactSetKey, SlotKey } from "../../../../Types/consts"
 import { objectKeyMap, objectKeyValueMap, range } from "../../../../Util/Util"
 import { ArtSetExclusion } from "./BuildSetting"
-// import { ArtSetExclusionFull, SubProblem, SubProblemWC, UnionFilter } from "./BackgroundWorker"
-import { ArtifactBuildDataVecDense, ArtifactsBySlot, ArtifactsBySlotVec, countBuilds, DynStat, filterArts, filterArtsVec, filterArtsVec2, RequestFilter } from "./common"
+import { ArtifactBuildDataVecDense, ArtifactsBySlot, ArtifactsBySlotVec, DynStat, filterArtsVec2, RequestFilter } from "./common"
 
 export type UnionFilter = {
   uType: true
@@ -166,7 +165,7 @@ export function reduceSubProblem(arts: ArtifactsBySlotVec, threshold: number, su
   const newFilters = filters
     .map(filter => {
       const { filterVec, lower, upper } = filter
-      const a = filterArtsVec2(arts, filter)  // CANDIDATE for making this more efficient
+      const a = filterArtsVec2(arts, filter.filterVec)  // CANDIDATE for making this more efficient
       const minww = [...a.baseBuffer]
       const maxww = [...a.baseBuffer]
       allSlotKeys.forEach(slotKey => {
@@ -246,13 +245,10 @@ export function problemSetup(arts: ArtifactsBySlotVec, { optimizationTargetNode,
   const lin = f.map(fi => toLinearUpperBound(fi, statsMin, statsMax))
   const minMaxEst = lin.map(li => minMaxWeightVec(arts, li))
 
-  console.log('-----------------------------------------------------------------------')
-  console.log('lin', lin)
-  console.log('-----------------------------------------------------------------------')
+  // console.log('-----------------------------------------------------------------------')
+  // console.log('lin', lin)
+  // console.log('-----------------------------------------------------------------------')
 
-  const filter = objectKeyMap(allSlotKeys, slotKey => {
-    return { kind: 'id' as const, ids: new Set(arts.values[slotKey].map(({ id }) => id)) }
-  })
   const filterVec = objectKeyMap(allSlotKeys, slotKey => {
     return arts.values[slotKey].map((v, i) => i)
   })
@@ -271,6 +267,8 @@ export function problemSetup(arts: ArtifactsBySlotVec, { optimizationTargetNode,
     depth: 0,
     lin,
   }
+
+  // performSingletonSplit(arts, -Infinity, initialProblem)
 
   return initialProblem
 }
@@ -306,12 +304,30 @@ export function slotUpperLowerVecW(arts: ArtifactBuildDataVecDense[]) {
 export function statsUpperLowerVec(a: ArtifactsBySlotVec) {
   const lower = [...a.base]
   const upper = [...a.base]
+  const minw = [...a.baseBuffer]
+  const maxw = [...a.baseBuffer]
   Object.values(a.values).forEach(slotArts => {
     const slotUL = slotUpperLowerVec(slotArts)
     for (let i = 0; i < lower.length; i++) {
       lower[i] += slotUL.lower[i]
       upper[i] += slotUL.upper[i]
     }
+    for (let i = 0; i < minw.length; i++) {
+      minw[i] += slotUL.minw[i]
+      maxw[i] += slotUL.maxw[i]
+    }
   })
-  return { lower, upper }
+  return { lower, upper, minw, maxw }
+}
+export function statsUpperLowerVecW(a: ArtifactsBySlotVec) {
+  const minw = [...a.baseBuffer]
+  const maxw = [...a.baseBuffer]
+  Object.values(a.values).forEach(slotArts => {
+    const slotUL = slotUpperLowerVecW(slotArts)
+    for (let i = 0; i < minw.length; i++) {
+      minw[i] += slotUL.minw[i]
+      maxw[i] += slotUL.maxw[i]
+    }
+  })
+  return { minw, maxw }
 }

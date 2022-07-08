@@ -1,10 +1,7 @@
-import { ExpandedPolynomial } from '../../../../Formula/expandPoly'
-import { LinearForm } from '../../../../Formula/linearUpperBound'
 import { NumNode } from '../../../../Formula/type'
-import { ArtifactSetKey, SlotKey } from '../../../../Types/consts'
 import { assertUnreachable } from '../../../../Util/Util'
 import { ArtSetExclusion } from './BuildSetting'
-import { ArtifactsBySlot, ArtifactsBySlotVec, artSetPerm, Build, countBuilds, DynStat, filterArts, filterFeasiblePerm, PlotData, RequestFilter } from "./common"
+import { ArtifactsBySlot, ArtifactsBySlotVec, artSetPerm, Build, countBuilds, filterArts, filterFeasiblePerm, PlotData } from "./common"
 import { ComputeWorker } from "./ComputeWorker"
 import { SplitWorker } from "./SplitWorker"
 import { SubProblem } from './subproblemUtil'
