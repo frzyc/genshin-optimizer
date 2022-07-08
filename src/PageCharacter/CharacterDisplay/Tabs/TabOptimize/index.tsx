@@ -333,7 +333,7 @@ export default function TabBuild() {
         </Grid>
 
         {/* 3 */}
-        <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
+        <Grid item xs={12} sm={6} display="flex" flexDirection="column" gap={1}>
           <ArtifactSetConfig disabled={generatingBuilds} />
 
           {/* use excluded */}
@@ -361,12 +361,6 @@ export default function TabBuild() {
 
           {/*Minimum Final Stat Filter */}
           <StatFilterCard disabled={generatingBuilds} />
-        </Grid>
-
-        {/* 4 */}
-        <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
-          <TeamBuffDisplay />
-          <BonusStatsCard />
         </Grid>
       </Grid>
 
