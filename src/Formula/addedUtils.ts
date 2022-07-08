@@ -15,7 +15,10 @@ export function foldSum(nodes: readonly NumNode[]) {
   nodes = nodes.filter(n => n.operation !== 'const')
 
   if (nodes.length === 0) return constant(constVal)
-  if (constVal === 0) return sum(...nodes)
+  if (constVal === 0) {
+    if (nodes.length === 1) return nodes[0]
+    return sum(...nodes)
+  }
   return sum(...nodes, constant(constVal))
 }
 
@@ -111,7 +114,7 @@ export function reduceFormula(f: NumNode[], lower: DynStat, upper: DynStat) {
 }
 
 export function reducePolynomial(f: ExpandedPolynomial[], lower: DynStat, upper: DynStat): ExpandedPolynomial[] {
-  const fixedStats = Object.keys(lower).filter(statKey => lower[statKey] === upper[statKey])
+  const fixedStats = Object.keys(lower).filter(statKey => Math.abs(lower[statKey] - upper[statKey]) < 1e-6)
   return f.map(({ nodes, terms }) => {
     // 1. Reduce nodes by substituting constants
     const tagNodePairs = Object.entries(nodes)

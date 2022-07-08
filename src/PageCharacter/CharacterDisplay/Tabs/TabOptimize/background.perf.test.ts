@@ -33,39 +33,40 @@ describe.skip("Worker Perf", () => {
     const minimum = [-Infinity];
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, 10, {}, { reaffine: true }))
 
-    const worker = new ComputeWorker({
-      command: "setup",
-      id: 0,
-      arts,
-      optimizationTarget: nodes[0],
-      plotBase: undefined,
-      maxBuilds: 2,
-      filters: [],
-      artSetExclusion: {}
-    }, () => { })
-    const total = countBuilds(arts)
+    // const worker = new ComputeWorker({
+    //   command: "setup",
+    //   id: 0,
+    //   arts,
+    //   optimizationTarget: nodes[0],
+    //   plotBase: undefined,
+    //   maxBuilds: 2,
+    //   filters: [],
+    //   artSetExclusion: {}
+    // }, () => { })
+    // const total = countBuilds(arts)
 
-    const date1 = new Date().getTime();
+    // const date1 = new Date().getTime();
 
-    worker.compute(-Infinity, {
-      cache: false,
-      optimizationTarget: expandPoly(nodes[0]),
-      constraints: [],
-      artSetExclusion: {},
-      filter: {
-        "flower": { kind: "exclude", sets: new Set() },
-        "goblet": { kind: "exclude", sets: new Set() },
-        "circlet": { kind: "exclude", sets: new Set() },
-        "plume": { kind: "exclude", sets: new Set() },
-        "sands": { kind: "exclude", sets: new Set() },
-      }, depth: 0
-    })
+    // worker.compute(-Infinity, {
+    //   cache: false,
+    //   optimizationTarget: expandPoly(nodes[0]),
+    //   constraints: [],
+    //   artSetExclusion: {},
+    //   filter: {
+    //     "flower": { kind: "exclude", sets: new Set() },
+    //     "goblet": { kind: "exclude", sets: new Set() },
+    //     "circlet": { kind: "exclude", sets: new Set() },
+    //     "plume": { kind: "exclude", sets: new Set() },
+    //     "sands": { kind: "exclude", sets: new Set() },
+    //     uType: false
+    //   }, depth: 0
+    // })
 
-    const date2 = new Date().getTime()
-    const diff = (date2 - date1) / 1000 // total time in seconds
+    // const date2 = new Date().getTime()
+    // const diff = (date2 - date1) / 1000 // total time in seconds
 
-    worker.refresh(true)
-    console.log(`Build speed: ${total / diff} builds/s (${total} builds over ${diff} seconds)`)
-    console.log(worker.builds.map(build => build.value))
+    // worker.refresh(true)
+    // console.log(`Build speed: ${total / diff} builds/s (${total} builds over ${diff} seconds)`)
+    // console.log(worker.builds.map(build => build.value))
   })
 })

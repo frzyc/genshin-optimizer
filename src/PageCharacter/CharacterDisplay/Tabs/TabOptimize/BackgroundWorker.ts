@@ -1,12 +1,13 @@
 import { ExpandedPolynomial } from '../../../../Formula/expandPoly'
 import { LinearForm } from '../../../../Formula/linearUpperBound'
 import { NumNode } from '../../../../Formula/type'
-import { ArtifactSetKey } from '../../../../Types/consts'
+import { ArtifactSetKey, SlotKey } from '../../../../Types/consts'
 import { assertUnreachable } from '../../../../Util/Util'
 import { ArtSetExclusion } from './BuildSetting'
-import { ArtifactsBySlot, artSetPerm, Build, countBuilds, DynStat, filterArts, filterFeasiblePerm, PlotData, RequestFilter } from "./common"
+import { ArtifactsBySlot, ArtifactsBySlotVec, artSetPerm, Build, countBuilds, DynStat, filterArts, filterFeasiblePerm, PlotData, RequestFilter } from "./common"
 import { ComputeWorker } from "./ComputeWorker"
 import { SplitWorker } from "./SplitWorker"
+import { SubProblem } from './subproblemUtil'
 
 let id: number, splitWorker: SplitWorker, computeWorker: ComputeWorker
 
@@ -27,7 +28,7 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
       break
     case "iterate":
       const { threshold, subproblem } = data
-      computeWorker.compute(threshold, subproblem)
+      computeWorker.computeU(threshold, subproblem)
       result = { command: "iterate" }
       break
     case "finalize":
@@ -55,34 +56,6 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
 }
 
 
-export type ArtSetExclusionFull = Dict<Exclude<ArtifactSetKey, "PrayersForDestiny" | "PrayersForIllumination" | "PrayersForWisdom" | "PrayersToSpringtime"> | "uniqueKey", number[]>
-export type SubProblem = SubProblemNC | SubProblemWC
-export type SubProblemNC = {
-  cache: false,
-  optimizationTarget: ExpandedPolynomial,
-  constraints: { value: ExpandedPolynomial, min: number }[],
-  artSetExclusion: ArtSetExclusionFull,
-
-  filter: RequestFilter,
-  depth: number,
-}
-export type SubProblemWC = {
-  cache: true,
-  optimizationTarget: ExpandedPolynomial,
-  constraints: { value: ExpandedPolynomial, min: number }[],
-  artSetExclusion: ArtSetExclusionFull,
-
-  filter: RequestFilter,
-  cachedCompute: CachedCompute,
-  depth: number,
-}
-export type CachedCompute = {
-  maxEst: number[],
-  lin: LinearForm[],
-  lower: DynStat,
-  upper: DynStat
-}
-
 export type WorkerCommand = Setup | Split | Iterate | Finalize | Share | Count
 export type WorkerResult = InterimResult | SplitResult | IterateResult | FinalizeResult | ShareResult | CountResult
 
@@ -91,6 +64,7 @@ export interface Setup {
 
   id: number
   arts: ArtifactsBySlot
+  artsVec: ArtifactsBySlotVec
 
   optimizationTarget: NumNode
   filters: { value: NumNode, min: number }[]

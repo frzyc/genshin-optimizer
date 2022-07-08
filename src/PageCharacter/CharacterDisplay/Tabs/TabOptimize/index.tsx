@@ -36,7 +36,7 @@ import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../../../Types/artifact';
 import { CharacterKey } from '../../../../Types/consts';
 import { objectKeyValueMap, objPathValue, range } from '../../../../Util/Util';
-import { FinalizeResult, Setup, SubProblem, WorkerCommand, WorkerResult } from './BackgroundWorker';
+import { FinalizeResult, Setup, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
 import useBuildSetting from './BuildSetting';
 import { Build, countBuilds, emptyfilter, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
@@ -52,6 +52,7 @@ import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
 import { compactArtifacts, dynamicData } from './foreground';
+import { countBuildsU, problemSetup, SubProblem, toArtifactBySlotVec } from './subproblemUtil';
 
 export default function TabBuild() {
   const { t } = useTranslation("page_character")
@@ -169,26 +170,26 @@ export default function TabBuild() {
       return [setKey, v.flatMap(v => (v === 2) ? [2, 3] : [4, 5])]
     })
     console.log({ artSetExclFull })
-    const filters = nodes
+    const constraints = nodes
       .map((value, i) => ({ value, min: minimum[i] }))
       .filter(x => x.min > -Infinity)
-    const filtersEP = nodes
-      .map((value, i) => ({ value: expandPoly(value), min: minimum[i] }))
-      .filter(x => x.min > -Infinity)
-    const initialProblem: SubProblem = {
-      cache: false,
-      optimizationTarget: expandPoly(optimizationTargetNode),
-      constraints: filtersEP,
-      artSetExclusion: artSetExclFull,
+    const artsVec = toArtifactBySlotVec(arts)
+    const initialProblem = problemSetup(artsVec, { optimizationTargetNode, nodes, minimum, artSetExclusion })
+    // const initialProblem: SubProblem = {
+    //   cache: false,
+    //   optimizationTarget: expandPoly(optimizationTargetNode),
+    //   constraints: filtersEP,
+    //   artSetExclusion: artSetExclFull,
 
-      filter: emptyfilter,
-      depth: 0,
-    }
+    //   filter: { ...emptyfilter, uType: false },
+    //   depth: 0,
+    // }
 
     const masterInfo = { id: -1, ready: true }
     const maxSplitIters = 10
     const minFilterCount = 2_000 // Don't split for single worker
-    const maxRequestFilterInFlight = maxWorkers * 4
+    // const maxRequestFilterInFlight = maxWorkers * 4
+    const maxRequestFilterInFlight = 1
     const workQueue: SubProblem[] = [initialProblem]
     const idleWorkers = new Set<number>()  // Currently idle workers
     const busyWorkerIDs = new Set<number>()  // Workers with pending work in SplitWorker()
@@ -202,7 +203,8 @@ export default function TabBuild() {
     function fetchWork(): WorkerCommand | undefined {
       const subproblem = workQueue.shift()
       if (!subproblem) return undefined
-      let numBuild = countBuilds(filterArts(arts, subproblem.filter))
+      let numBuild = countBuildsU(subproblem.filters)
+      // let numBuild = countBuilds(filterArts(arts, subproblem.filter))
 
       if (numBuild <= minFilterCount) return { command: 'iterate', threshold: wrap.buildValues[maxBuildsToShow - 1], subproblem }
       return { command: 'split', threshold: wrap.buildValues[maxBuildsToShow - 1], minCount: minFilterCount, maxIter: maxSplitIters, subproblem }
@@ -219,12 +221,12 @@ export default function TabBuild() {
 
       const setup: Setup = {
         command: "setup",
-        id: i, arts,
+        id: i, arts, artsVec,
         optimizationTarget: optimizationTargetNode,
         artSetExclusion: artSetExclusion,
         plotBase: plotBaseNode,
         maxBuilds: maxBuildsToShow,
-        filters
+        filters: constraints
       }
       worker.postMessage(setup, undefined)
       // if (i === 0) {

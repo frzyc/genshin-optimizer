@@ -1,5 +1,5 @@
 import { NumNode } from "./type"
-import { ArtifactsBySlot, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
+import { ArtifactsBySlot, ArtifactsBySlotVec, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
 import { constant, sum, prod, cmp } from "./utils"
 import { ExpandedPolynomial, Monomial, sumM, prodM, constantM, readM, foldLikeTerms } from './expandPoly'
 import { precompute, allOperations } from "./optimization"
@@ -9,6 +9,11 @@ import { fillBuffer } from "./addedUtils"
 
 export type LinearForm = {
   w: DynStat,
+  c: number,
+  err: number
+}
+export type LinearFormVec = {
+  w: number[],
   c: number,
   err: number
 }
@@ -247,6 +252,49 @@ export function maxWeight(a: ArtifactsBySlot, lin: LinearForm) {
   return baseVal + Object.entries(a.values)
     .reduce((maxTotVal, [slotKey, slotArts]) => maxTotVal + sparseMatmulMax([lin], slotArts.map(a => a.values))[0], 0)
 }
+export function minWeight(a: ArtifactsBySlot, lin: LinearForm) {
+  const baseVal = sparseMatmulMin([lin], [a.base])[0] + lin.c
+
+  return baseVal + Object.entries(a.values)
+    .reduce((minTotVal, [slotKey, slotArts]) => minTotVal + sparseMatmulMin([lin], slotArts.map(a => a.values))[0], 0)
+}
+
+export function maxWeightVec(a: ArtifactsBySlotVec, lin: LinearForm) {
+  const ixs: number[] = []
+  const w: number[] = []
+  Object.entries(lin.w).forEach(([k, ww]) => {
+    ixs.push(a.keys.indexOf(k))
+    w.push(ww)
+  })
+
+  const baseVal = ixs.reduce((accum, ix, i) => accum + a.base[ix] * w[i], lin.c)
+  return Object.values(a.values)
+    .reduce((wtot, arts) => wtot + Math.max(
+      ...arts.map(art => ixs.reduce((accum, ix, i) => accum + art.values[ix] * w[i], 0))
+    ), baseVal)
+}
+export function minMaxWeightVec(a: ArtifactsBySlotVec, lin: LinearForm) {
+  const ixs: number[] = []
+  const w: number[] = []
+  Object.entries(lin.w).forEach(([k, ww]) => {
+    ixs.push(a.keys.indexOf(k))
+    w.push(ww)
+  })
+
+  const baseVal = ixs.reduce((accum, ix, i) => accum + a.base[ix] * w[i], lin.c)
+  const maxw = Object.values(a.values)
+    .reduce((wtot, arts) => wtot + Math.max(
+      ...arts.map(art => ixs.reduce((accum, ix, i) => accum + art.values[ix] * w[i], 0))
+    ), baseVal)
+
+  const minw = Object.values(a.values)
+    .reduce((wtot, arts) => wtot + Math.min(
+      ...arts.map(art => ixs.reduce((accum, ix, i) => accum + art.values[ix] * w[i], 0))
+    ), baseVal)
+  return { minw, maxw }
+}
+
+
 
 // Implement matrix multiply between row-major w's of LinearForm and col-major DynStats that represent artifacts.
 /**
@@ -265,4 +313,11 @@ export function sparseMatmul(A: LinearForm[], x: DynStat[]) {
  */
 export function sparseMatmulMax(A: LinearForm[], x: DynStat[]) {
   return A.map(({ w }) => Math.max(...x.map(dyn => Object.entries(w).reduce((a, [k, wk]) => a + wk * (dyn[k] ?? 0), 0))))
+}
+
+/**
+ * Sparse matrix multiplication between A and x, followed by a min() along the rows.
+ */
+export function sparseMatmulMin(A: LinearForm[], x: DynStat[]) {
+  return A.map(({ w }) => Math.min(...x.map(dyn => Object.entries(w).reduce((a, [k, wk]) => a + wk * (dyn[k] ?? 0), 0))))
 }
