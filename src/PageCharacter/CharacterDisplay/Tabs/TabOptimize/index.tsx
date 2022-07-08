@@ -346,7 +346,7 @@ export default function TabBuild() {
           { /* Level Filter */}
           <CardLight>
             <CardContent>
-              Artifact Level Filter
+              <Typography>Artifact Level Filter</Typography>
             </CardContent>
             <Divider />
             <CardContent>
