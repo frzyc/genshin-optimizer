@@ -23,8 +23,7 @@ import usePromise from '../ReactHooks/usePromise';
 import { allSubstatKeys, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
 import { CharacterKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
-import PercentBadge from './PercentBadge';
-import { probability } from './RollProbability';
+import PercentBadge from '../Components/PercentBadge';
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
 
@@ -35,7 +34,6 @@ type Data = {
   onDelete?: (id: string) => void,
   mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
-  probabilityFilter?: Dict<SubstatKey, number>
   editor?: boolean,
   canExclude?: boolean
   canEquip?: boolean,
@@ -43,7 +41,7 @@ type Data = {
 }
 const allSubstatFilter = new Set(allSubstatKeys)
 
-export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter,  editor = false, canExclude = false, canEquip = false, extraButtons }: Data): JSX.Element | null {
+export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, editor = false, canExclude = false, canEquip = false, extraButtons }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
@@ -58,13 +56,22 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
   const falseWrapperFunc = useCallback(children => <Box sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }} >{children}</Box>, [])
 
   const art = artifactObj ?? databaseArtifact
+
+  const { currentEfficiency, maxEfficiency, currentEfficiency_, maxEfficiency_ } = useMemo(() => {
+    if (!art) return { currentEfficiency: 0, maxEfficiency: 0, currentEfficiency_: 0, maxEfficiency_: 0 }
+    const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
+    const { currentEfficiency: currentEfficiency_, maxEfficiency: maxEfficiency_ } = Artifact.getArtifactEfficiency(art, new Set(allSubstatKeys))
+    return { currentEfficiency, maxEfficiency, currentEfficiency_, maxEfficiency_ }
+  }, [art, effFilter])
+
+
   if (!art) return null
 
   const { id, lock, slotKey, rarity, level, mainStatKey, substats, exclude, location = "" } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
   const mainStatUnit = KeyMap.unit(mainStatKey)
   const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
-  const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
+
   const artifactValid = maxEfficiency !== 0
   const slotName = sheet?.getSlotName(slotKey)
   const slotDesc = sheet?.getSlotDesc(slotKey)
@@ -129,16 +136,20 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
         </Box>
         <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", pt: 1, pb: 0, width: "100%" }}>
           {substats.map((stat: ICachedSubstat) => !!stat.value && <SubstatDisplay key={stat.key} stat={stat} effFilter={effFilter} rarity={rarity} />)}
-          <Box sx={{ display: "flex", my: 1 }}>
+          <Box sx={{ display: "flex", my: 1, gap: 1 }}>
             <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`artifact:editor.curSubEff`}</Typography>
             <PercentBadge value={currentEfficiency} max={900} valid={artifactValid} />
+            {currentEfficiency !== currentEfficiency_ && <Typography component="span" variant="caption" >/</Typography>}
+            {currentEfficiency !== currentEfficiency_ && <PercentBadge value={currentEfficiency_} max={900} valid={artifactValid} />}
           </Box>
-          {currentEfficiency !== maxEfficiency && <Box sx={{ display: "flex", mb: 1 }}>
+          {currentEfficiency !== maxEfficiency && <Box sx={{ display: "flex", mb: 1, gap: 1 }}>
             <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`artifact:editor.maxSubEff`}</Typography>
             <PercentBadge value={maxEfficiency} max={900} valid={artifactValid} />
+            {maxEfficiency !== maxEfficiency_ && <Typography component="span" variant="caption" >/</Typography>}
+            {maxEfficiency !== maxEfficiency_ && <PercentBadge value={maxEfficiency_} max={900} valid={artifactValid} />}
           </Box>}
           <Box flexGrow={1} />
-          {probabilityFilter && <strong>Probability: {(probability(art, probabilityFilter) * 100).toFixed(2)}%</strong>}
+          {art.probability !== undefined && art.probability >= 0 && <strong>Probability: {(art.probability * 100).toFixed(2)}%</strong>}
           <Typography color="success.main">{sheet?.name ?? "Artifact Set"} {setDescTooltip}</Typography>
         </CardContent>
       </ConditionalWrapper>
@@ -178,17 +189,17 @@ function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, eff
   const rollOffset = 7 - rollData.length
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
   const efficiency = stat.efficiency ?? 0
+  const inFilter = stat.key && effFilter.has(stat.key)
   const effOpacity = clamp01(0.5 + (efficiency / (100 * 5)) * 0.5) //divide by 6 because an substat can have max 6 rolls
   const statName = KeyMap.getStr(stat.key)
   const unit = KeyMap.unit(stat.key)
-  const inFilter = stat.key && effFilter.has(stat.key)
-  const progresses = useMemo(() => inFilter && <Box display="flex" gap={0.25} height="1.3em">
+  const progresses = useMemo(() => <Box display="flex" gap={0.25} height="1.3em" sx={{ opacity: inFilter ? 1 : 0.3 }}>
     {[...stat.rolls].sort().map((v, i) => <SmolProgress key={`${i}${v}`} value={100 * v / maxRoll} color={`roll${clamp(rollOffset + rollData.indexOf(v), 1, 6)}.main`} />)}
   </Box>, [inFilter, stat.rolls, maxRoll, rollData, rollOffset])
   return (<Box display="flex" gap={1} alignContent="center">
     <Typography sx={{ flexGrow: 1 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{StatIcon[stat.key]} {statName}{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}</Typography>
     {progresses}
-    <Typography sx={{ opacity: effOpacity, minWidth: 40, textAlign: "right" }}>{inFilter ? `${efficiency.toFixed()}%` : "-"}</Typography>
+    <Typography sx={{ opacity: effOpacity, minWidth: 40, textAlign: "right" }}>{efficiency.toFixed()}%</Typography>
   </Box>)
 }
 export function SmolProgress({ color = "red", value = 50 }) {

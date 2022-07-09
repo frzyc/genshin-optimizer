@@ -62,6 +62,5 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     constellation: 0,
     team: ["", "", ""],
     compareData: false,
-    favorite: false,
   }
 }

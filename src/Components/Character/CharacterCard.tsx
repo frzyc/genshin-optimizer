@@ -25,6 +25,8 @@ import { CharacterContext, CharacterContextObj } from '../../Context/CharacterCo
 import usePromise from '../../ReactHooks/usePromise';
 import CharacterSheet from '../../Data/Characters/CharacterSheet';
 import useCharacter from '../../ReactHooks/useCharacter';
+import useDBState from '../../ReactHooks/useDBState';
+import { initCharMeta } from '../../stateInit';
 
 type CharacterCardProps = {
   characterKey: CharacterKey | "",
@@ -58,14 +60,16 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
     teamData,
   }), [data, teamData])
 
+  const [{ favorite }, setCharMeta] = useDBState(`charMeta_${characterKey}`, initCharMeta)
+
   if (!character || !dataContextObj || !characterContextObj) return null;
 
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     <CharacterContext.Provider value={characterContextObj}><DataContext.Provider value={dataContextObj}>
       <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
         <Box sx={{ display: "flex", position: "absolute", zIndex: 2, opacity: 0.7 }}>
-          <IconButton sx={{ p: 0.5 }} onClick={_ => characterDispatch({ favorite: !character.favorite })}>
-            {character.favorite ? <Favorite /> : <FavoriteBorder />}
+          <IconButton sx={{ p: 0.5 }} onClick={_ => setCharMeta({ favorite: !favorite })}>
+            {favorite ? <Favorite /> : <FavoriteBorder />}
           </IconButton>
         </Box>
         <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >

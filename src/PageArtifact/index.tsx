@@ -1,22 +1,20 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Replay } from '@mui/icons-material';
-import { Alert, Box, Button, CardContent, Grid, Link, Pagination, Skeleton, ToggleButton, Typography } from '@mui/material';
+import { Alert, Box, Button, CardContent, Grid, Link, Pagination, Skeleton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
+import SubstatToggle from '../Components/Artifact/SubstatToggle';
 import CardDark from '../Components/Card/CardDark';
 import InfoComponent from '../Components/InfoComponent';
-import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import SortByButton from '../Components/SortByButton';
-import StatIcon from '../Components/StatIcon';
 import { DatabaseContext } from '../Database/Database';
-import { initGlobalSettings } from '../GlobalSettings';
-import KeyMap from '../KeyMap';
 import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
+import { initGlobalSettings } from '../stateInit';
 import { allSubstatKeys, SubstatKey } from '../Types/artifact';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
@@ -87,6 +85,15 @@ export default function PageArtifact() {
   const sortConfigs = useMemo(() => artifactSortConfigs(effFilterSet, probabilityFilter), [effFilterSet, probabilityFilter])
   const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
   const deferredArtifactDisplayState = useDeferredValue(artifactDisplayState)
+  const deferredProbabilityFilter = useDeferredValue(probabilityFilter)
+  useEffect(() => {
+    if (!showProbability) return
+    database.arts.values.forEach(art => database.arts.setProbability(art.id, probability(art, deferredProbabilityFilter)))
+    return () => {
+      database.arts.values.forEach(art => database.arts.setProbability(art.id, -1))
+    }
+  }, [database, showProbability, deferredProbabilityFilter])
+
   const { artifactIds, totalArtNum } = useMemo(() => {
     const { sortType = artifactSortKeys[0], ascending = false, filterOption } = deferredArtifactDisplayState
     let allArtifacts = database.arts.values
@@ -94,12 +101,11 @@ export default function PageArtifact() {
     const sortFunc = sortFunction(sortType, ascending, sortConfigs)
     //in probability mode, filter out the artifacts that already reach criteria
     if (showProbability) {
-      allArtifacts.forEach(art => (art as any).probability = probability(art, probabilityFilter))
-      allArtifacts = allArtifacts.filter(art => (art as any).probability && (art as any).probability !== 1)
+      allArtifacts = allArtifacts.filter(art => art.probability && art.probability !== 1)
     }
     const artifactIds = allArtifacts.filter(filterFunc).sort(sortFunc).map(art => art.id)
     return { artifactIds, totalArtNum: allArtifacts.length, ...dbDirty }//use dbDirty to shoo away warnings!
-  }, [deferredArtifactDisplayState, dbDirty, database, sortConfigs, filterConfigs, probabilityFilter, showProbability])
+  }, [deferredArtifactDisplayState, dbDirty, database, sortConfigs, filterConfigs, showProbability])
 
 
   const { artifactIdsToShow, numPages, currentPageIndex } = useMemo(() => {
@@ -140,7 +146,7 @@ export default function PageArtifact() {
             <Button size="small" color="error" onClick={() => stateDispatch({ effFilter: [...allSubstatKeys] })} startIcon={<Replay />}><Trans t={t} i18nKey="ui:reset" /></Button>
           </Grid>
         </Grid>
-        <EfficiencyFilter selectedKeys={effFilter} onChange={n => stateDispatch({ effFilter: n })} />
+        <SubstatToggle selectedKeys={effFilter} onChange={n => stateDispatch({ effFilter: n })} />
       </CardContent>
     </CardDark>
     <CardDark ><CardContent>
@@ -173,7 +179,6 @@ export default function PageArtifact() {
               artifactId={artId}
               effFilter={effFilterSet}
               onDelete={deleteArtifact}
-              probabilityFilter={showProbability ? probabilityFilter : undefined}
               editor
               canExclude
               canEquip
@@ -229,33 +234,4 @@ function ShowingArt({ numShowing, total, t }) {
       Showing <b>{{ count: numShowing }}</b> out of {{ value: total }} Artifacts
     </Trans>
   </Typography>
-}
-
-function EfficiencyFilter({ selectedKeys, onChange }) {
-  const keys1 = allSubstatKeys.slice(0, 6)
-  const keys2 = allSubstatKeys.slice(6)
-  const selKeys1 = selectedKeys.filter(k => keys1.includes(k))
-  const selKeys2 = selectedKeys.filter(k => keys2.includes(k))
-  return <Grid container spacing={1}>
-    <Grid item xs={12} md={6}>
-      <SolidToggleButtonGroup fullWidth value={selKeys1} onChange={(e, arr) => onChange([...selKeys2, ...arr])} sx={{ height: "100%" }}>
-        {keys1.map(key => <ToggleButton size="small" key={key} value={key}>
-          <Box display="flex" gap={1} alignItems="center">
-            {StatIcon[key]}
-            {KeyMap.getArtStr(key)}
-          </Box>
-        </ToggleButton>)}
-      </SolidToggleButtonGroup>
-    </Grid>
-    <Grid item xs={12} md={6}>
-      <SolidToggleButtonGroup fullWidth value={selKeys2} onChange={(e, arr) => onChange([...selKeys1, ...arr])} sx={{ height: "100%" }}>
-        {keys2.map(key => <ToggleButton size="small" key={key} value={key}>
-          <Box display="flex" gap={1} alignItems="center">
-            {StatIcon[key]}
-            {KeyMap.getArtStr(key)}
-          </Box>
-        </ToggleButton>)}
-      </SolidToggleButtonGroup>
-    </Grid>
-  </Grid>
 }
