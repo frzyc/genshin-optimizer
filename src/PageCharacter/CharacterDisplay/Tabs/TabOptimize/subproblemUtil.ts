@@ -128,6 +128,7 @@ export function reduceSubProblem(arts: ArtifactsBySlotVec, threshold: number, su
 
   const newOptTarget = nodes.pop()!
   const newConstraints = nodes.map((value, i) => ({ value, min: mins[i] })).filter((_, i) => active[i])
+  const newMins = newConstraints.map(({ min }) => min)
 
   // 2. Check for never-active and always-active ArtSetExcl constraints.
   const newArtExcl = {} as ArtSetExclusionFull
@@ -181,7 +182,7 @@ export function reduceSubProblem(arts: ArtifactsBySlotVec, threshold: number, su
       }
     })
     .filter(({ maxw }) => {
-      if (mins.some((min, j) => maxw[j] < min)) return false
+      if (newMins.some((min, j) => maxw[j] < min)) return false
       if (maxw[mins.length] < threshold) return false
       return true
     })
@@ -245,9 +246,9 @@ export function problemSetup(arts: ArtifactsBySlotVec, { optimizationTargetNode,
   const lin = f.map(fi => toLinearUpperBound(fi, statsMin, statsMax))
   const minMaxEst = lin.map(li => minMaxWeightVec(arts, li))
 
-  // console.log('-----------------------------------------------------------------------')
-  // console.log('lin', lin)
-  // console.log('-----------------------------------------------------------------------')
+  console.log('-----------------------------------------------------------------------')
+  console.log('lin', lin)
+  console.log('-----------------------------------------------------------------------')
 
   const filterVec = objectKeyMap(allSlotKeys, slotKey => {
     return arts.values[slotKey].map((v, i) => i)
@@ -267,10 +268,11 @@ export function problemSetup(arts: ArtifactsBySlotVec, { optimizationTargetNode,
     depth: 0,
     lin,
   }
-
-  // performSingletonSplit(arts, -Infinity, initialProblem)
-
-  return initialProblem
+  const initialReducedProblem = reduceSubProblem(arts, -Infinity, initialProblem)
+  console.log(initialReducedProblem)
+  if (initialReducedProblem === undefined)
+    return initialProblem
+  return initialReducedProblem
 }
 
 export function slotUpperLowerVec(arts: ArtifactBuildDataVecDense[]) {

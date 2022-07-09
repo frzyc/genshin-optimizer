@@ -225,6 +225,9 @@ export function thresholdToConstBranchForm(nodes: NumNode[]) {
     switch (n.operation) {
       case "threshold":
         const [branch, bval, ge, lt] = n.operands
+        if (branch.operation === 'const' && bval.operation === 'const') {
+          return branch.value >= bval.value ? ge : lt
+        }
         if (branch.operation === 'threshold' && bval.operation === 'const') {
           // Reserved for non-stacking buffs
           const [br2, bv2, ge2, lt2] = branch.operands
