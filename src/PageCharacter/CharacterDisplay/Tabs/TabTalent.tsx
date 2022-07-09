@@ -1,19 +1,19 @@
 import { Box, CardActionArea, CardContent, Grid, MenuItem, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
 import React, { useCallback, useContext, useMemo } from 'react';
-import { CharacterContext } from "../../../CharacterContext";
+import { CharacterContext } from "../../../Context/CharacterContext";
 import CardDark from "../../../Components/Card/CardDark";
 import CardLight from "../../../Components/Card/CardLight";
 import ConditionalWrapper from "../../../Components/ConditionalWrapper";
 import DocumentDisplay from "../../../Components/DocumentDisplay";
 import DropdownButton from "../../../Components/DropdownMenu/DropdownButton";
 import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
-import { DataContext } from '../../../DataContext';
+import { TalentSheetElementKey } from "../../../Data/Characters/CharacterSheet";
+import { DataContext } from '../../../Context/DataContext';
 import { uiInput as input } from "../../../Formula";
 import { NumNode } from "../../../Formula/type";
 import { NodeDisplay } from '../../../Formula/uiData';
 import useCharacterReducer from "../../../ReactHooks/useCharacterReducer";
-import { TalentSheetElementKey } from "../../../Types/character";
 import { ElementKey } from "../../../Types/consts";
 import { DocumentSection } from "../../../Types/sheet";
 import { range } from "../../../Util/Util";
@@ -126,16 +126,16 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
     [onClickTitle],
   )
 
+  const setTalentLevel = useCallback((tKey: TalentSheetElementKey, newTalentLevelKey: number) =>
+    characterDispatch({ talent: { ...talent, [tKey]: newTalentLevelKey } }), [talent, characterDispatch])
+
   let header: Displayable | null = null
 
   if (talentKey in talent) {
     const levelBoost = data.get(input.bonus[talentKey] as NumNode).value
     const level = data.get(input.total[talentKey]).value
     const asc = data.get(input.asc).value
-    const setTalentLevel = (tKey, newTalentLevelKey) => {
-      talent[tKey] = newTalentLevelKey
-      characterDispatch({ talent })
-    }
+
     header = <DropdownButton fullWidth title={`Talent Lv. ${level}`} color={levelBoost ? "info" : "primary"} sx={{ borderRadius: 0 }}>
       {range(1, talentLimits[asc]).map(i =>
         <MenuItem key={i} selected={talent[talentKey] === (i)} disabled={talent[talentKey] === (i)} onClick={() => setTalentLevel(talentKey, i)}>Talent Lv. {i + levelBoost}</MenuItem>)}

@@ -5,13 +5,14 @@ import { useContext, useMemo } from "react"
 import CardDark from "../Card/CardDark"
 import { FieldDisplayList, NodeFieldDisplay } from "../FieldDisplay"
 import ImgIcon from "../Image/ImgIcon"
-import { DataContext } from "../../DataContext"
+import { DataContext } from "../../Context/DataContext"
 import { getDisplayHeader, getDisplaySections } from "../../Formula/DisplayUtil"
 import { DisplaySub } from "../../Formula/type"
 import { NodeDisplay } from "../../Formula/uiData"
 import { customRead } from "../../Formula/utils"
 import usePromise from "../../ReactHooks/usePromise"
 import { objectMap } from "../../Util/Util"
+import { OptimizationTargetContext } from "../../Context/OptimizationTargetContext"
 
 export default function StatDisplayComponent() {
   const { data } = useContext(DataContext)
@@ -25,8 +26,9 @@ export default function StatDisplayComponent() {
 }
 
 function Section({ displayNs, sectionKey }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string }) {
+  const optimizationTarget = useContext(OptimizationTargetContext)
   const { data, oldData } = useContext(DataContext)
-  const header = usePromise(getDisplayHeader(data, sectionKey), [data, sectionKey])
+  const header = usePromise(() => getDisplayHeader(data, sectionKey), [data, sectionKey])
   const displayNsReads = useMemo(() => objectMap(displayNs, (n, nodeKey) => customRead(["display", sectionKey, nodeKey])), [displayNs, sectionKey]);
   if (!header) return <CardDark></CardDark>
 
@@ -36,7 +38,10 @@ function Section({ displayNs, sectionKey }: { displayNs: DisplaySub<NodeDisplay>
     <Divider />
     <CardContent sx={{ p: 0, "&:last-child": { pb: 0 } }}>
       <FieldDisplayList sx={{ m: 0 }}>
-        {Object.entries(displayNs).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(displayNsReads[nodeKey]!).value : undefined} component={ListItem} />)}
+        {Object.entries(displayNs).map(([nodeKey, n]) =>
+          <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(displayNsReads[nodeKey]!).value : undefined} component={ListItem}
+            emphasize={JSON.stringify(optimizationTarget) === JSON.stringify([sectionKey, nodeKey])}
+          />)}
       </FieldDisplayList>
     </CardContent>
   </CardDark>

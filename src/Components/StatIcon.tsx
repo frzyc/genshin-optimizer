@@ -2,7 +2,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { objectKeyMap } from '../Util/Util'
 import ColorText from './ColoredText'
 import { faAnemo, faAtk, faCdReduction, faCritDmg, faCritRate, faCryo, faDef, faDendro, faElectro, faElementalMastery, faEnergyRecharge, faGeo, faHealingAdd, faHealingBonus, faHp, faHydro, faMaxStamina, faPhysicalDmgBonus, faPyro, faShieldStrength } from './faIcons'
-
+export const elementSvg = {
+  anemo: faAnemo,
+  geo: faGeo,
+  electro: faElectro,
+  hydro: faHydro,
+  pyro: faPyro,
+  cryo: faCryo,
+  dendro: faDendro,
+  physical: faPhysicalDmgBonus,
+}
 export const uncoloredEleIcons = {
   anemo: <FontAwesomeIcon icon={faAnemo as any} />,
   geo: <FontAwesomeIcon icon={faGeo as any} />,

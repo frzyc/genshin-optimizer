@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BackgroundWorker";
-import { CharacterContext } from '../../../../CharacterContext';
+import { CharacterContext } from '../../../../Context/CharacterContext';
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider';
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
 import CardLight from '../../../../Components/Card/CardLight';
@@ -17,7 +17,7 @@ import { HitModeToggle, ReactionToggle } from '../../../../Components/HitModeEdi
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup';
 import StatFilterCard from '../../../../Components/StatFilterCard';
 import { DatabaseContext } from '../../../../Database/Database';
-import { DataContext, dataContextObj } from '../../../../DataContext';
+import { DataContext, dataContextObj } from '../../../../Context/DataContext';
 import { thresholdExclusions } from '../../../../Formula/addedUtils';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { uiInput as input } from '../../../../Formula/index';
@@ -37,8 +37,8 @@ import { CharacterKey } from '../../../../Types/consts';
 import { objectKeyValueMap, objPathValue, range } from '../../../../Util/Util';
 import { FinalizeResult, Setup, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
-import useBuildSetting from './BuildSetting';
-import { Build, mergeBuilds, mergePlot, pruneAll } from './common';
+import useBuildSetting from './useBuildSetting';
+import { artSetPerm, Build, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
@@ -51,6 +51,7 @@ import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
 import { compactArtifacts, dynamicData } from './foreground';
+import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext';
 import { countBuildsU, problemSetup, SubProblem, toArtifactBySlotVec } from './subproblemUtil';
 
 export default function TabBuild() {
@@ -73,17 +74,17 @@ export default function TabBuild() {
   const characterDispatch = useCharacterReducer(characterKey)
   const onClickTeammate = useCharSelectionCallback()
 
-  const noArtifact = useMemo(() => !database._getArts().length, [database])
+  const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
   const { plotBase, optimizationTarget, mainStatAssumptionLevel, allowPartial, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
-  const buildsArts = useMemo(() => builds.map(build => build.map(i => database._getArt(i)!)), [builds, database])
+  const buildsArts = useMemo(() => builds.map(build => build.map(i => database.arts.get(i)!)), [builds, database])
 
   //register changes in artifact database
   useEffect(() =>
-    database.followAnyArt(setArtsDirty),
+    database.arts.followAny(setArtsDirty),
     [setArtsDirty, database])
 
   // Provides a function to cancel the work
@@ -100,7 +101,7 @@ export default function TabBuild() {
       if (index < 0) cantTakeList = [...equipmentPriority]
       else cantTakeList = equipmentPriority.slice(0, index)
     }
-    const filteredArts = database._getArts().filter(art => {
+    const filteredArts = database.arts.values.filter(art => {
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -487,7 +488,9 @@ export default function TabBuild() {
           </Grid>
         </CardContent>
       </CardLight>
-      <BuildList buildsArts={buildsArts} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} />
+      <OptimizationTargetContext.Provider value={optimizationTarget}>
+        <BuildList buildsArts={buildsArts} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} />
+      </OptimizationTargetContext.Provider>
     </DataContext.Provider>}
   </Box>
 }

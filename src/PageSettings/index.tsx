@@ -2,10 +2,9 @@ import { CardContent, Divider, Typography } from '@mui/material'
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from "react-i18next"
 import CardDark from '../Components/Card/CardDark'
-import DownloadCard from './DownloadCard'
+import DatabaseCard from './DatabaseCard'
 import LanguageCard from './LanguageCard'
 import TCToggleCard from './TCToggleCard'
-import UploadCard from './UploadCard'
 
 export default function PageSettings() {
   const { t } = useTranslation(["settings"]);
@@ -20,8 +19,7 @@ export default function PageSettings() {
     <Divider />
     <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       <LanguageCard />
-      <DownloadCard />
-      <UploadCard />
+      <DatabaseCard />
       <TCToggleCard />
     </CardContent>
   </CardDark>

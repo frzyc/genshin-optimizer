@@ -2,7 +2,7 @@ import { faBan, faChartLine, faEdit, faTrashAlt } from '@fortawesome/free-solid-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BusinessCenter, Lock, LockOpen } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, Chip, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
-import React, { lazy, Suspense, useCallback, useContext, useState } from 'react';
+import React, { lazy, Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
 import CardLight from '../Components/Card/CardLight';
@@ -36,7 +36,6 @@ type Data = {
   mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
   probabilityFilter?: Dict<SubstatKey, number>
-  disableEditSetSlot?: boolean
   editor?: boolean,
   canExclude?: boolean
   canEquip?: boolean,
@@ -44,12 +43,12 @@ type Data = {
 }
 const allSubstatFilter = new Set(allSubstatKeys)
 
-export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter, disableEditSetSlot = false, editor = false, canExclude = false, canEquip = false, extraButtons }: Data): JSX.Element | null {
+export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter,  editor = false, canExclude = false, canEquip = false, extraButtons }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
-  const sheet = usePromise(ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
-  const equipOnChar = (charKey: CharacterKey | "") => database.setArtLocation(artifactId!, charKey)
+  const sheet = usePromise(() => ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
+  const equipOnChar = (charKey: CharacterKey | "") => database.arts.set(artifactId!, { location: charKey })
   const editable = !artifactObj
   const [showEditor, setshowEditor] = useState(false)
   const onHideEditor = useCallback(() => setshowEditor(false), [setshowEditor])
@@ -87,13 +86,12 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
       <ArtifactEditor
         artifactIdToEdit={showEditor ? artifactId : ""}
         cancelEdit={onHideEditor}
-        disableEditSetSlot={disableEditSetSlot}
       />
     </Suspense>}
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <ConditionalWrapper condition={!!onClick} wrapper={wrapperFunc} falseWrapper={falseWrapperFunc}>
         <Box className={`grad-${rarity}star`} sx={{ position: "relative", width: "100%" }}>
-          {!onClick && <IconButton color="primary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 2 }}>
+          {!onClick && <IconButton color="primary" disabled={!editable} onClick={() => database.arts.set(id, { lock: !lock })} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 2 }}>
             {lock ? <Lock /> : <LockOpen />}
           </IconButton>}
           <Box sx={{ pt: 2, px: 2, position: "relative", zIndex: 1 }}>
@@ -130,7 +128,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
           </Box>
         </Box>
         <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", pt: 1, pb: 0, width: "100%" }}>
-          {substats.map((stat: ICachedSubstat) => <SubstatDisplay key={stat.key} stat={stat} effFilter={effFilter} rarity={rarity} />)}
+          {substats.map((stat: ICachedSubstat) => !!stat.value && <SubstatDisplay key={stat.key} stat={stat} effFilter={effFilter} rarity={rarity} />)}
           <Box sx={{ display: "flex", my: 1 }}>
             <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`artifact:editor.curSubEff`}</Typography>
             <PercentBadge value={currentEfficiency} max={900} valid={artifactValid} />
@@ -160,7 +158,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
             <Typography>{t`artifact:excludeArtifactTip`}</Typography>
             <Typography><ColorText color={exclude ? "error" : "success"}>{t(`artifact:${exclude ? "excluded" : "included"}`)}</ColorText></Typography>
           </Box>} placement="top" arrow>
-            <Button onClick={() => database.updateArt({ exclude: !exclude }, id)} color={exclude ? "error" : "success"} size="small" >
+            <Button onClick={() => database.arts.set(id, { exclude: !exclude })} color={exclude ? "error" : "success"} size="small" >
               <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
             </Button>
           </Tooltip>}
@@ -174,10 +172,9 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
   </Suspense>
 }
 function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, effFilter: Set<SubstatKey>, rarity: Rarity }) {
-  if (!stat.value) return null
   const numRolls = stat.rolls?.length ?? 0
   const maxRoll = stat.key ? Artifact.maxSubstatValues(stat.key) : 0
-  const rollData = stat.key ? Artifact.getSubstatRollData(stat.key, rarity) : []
+  const rollData = useMemo(() => stat.key ? Artifact.getSubstatRollData(stat.key, rarity) : [], [stat.key, rarity])
   const rollOffset = 7 - rollData.length
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
   const efficiency = stat.efficiency ?? 0
@@ -185,11 +182,12 @@ function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, eff
   const statName = KeyMap.getStr(stat.key)
   const unit = KeyMap.unit(stat.key)
   const inFilter = stat.key && effFilter.has(stat.key)
+  const progresses = useMemo(() => inFilter && <Box display="flex" gap={0.25} height="1.3em">
+    {[...stat.rolls].sort().map((v, i) => <SmolProgress key={`${i}${v}`} value={100 * v / maxRoll} color={`roll${clamp(rollOffset + rollData.indexOf(v), 1, 6)}.main`} />)}
+  </Box>, [inFilter, stat.rolls, maxRoll, rollData, rollOffset])
   return (<Box display="flex" gap={1} alignContent="center">
     <Typography sx={{ flexGrow: 1 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{StatIcon[stat.key]} {statName}{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}</Typography>
-    {inFilter && <Box display="flex" gap={0.25} height="1.3em">
-      {stat.rolls.sort().map((v, i) => <SmolProgress key={`${i}${v}`} value={100 * v / maxRoll} color={`roll${clamp(rollOffset + rollData.indexOf(v), 1, 6)}.main`} />)}
-    </Box>}
+    {progresses}
     <Typography sx={{ opacity: effOpacity, minWidth: 40, textAlign: "right" }}>{inFilter ? `${efficiency.toFixed()}%` : "-"}</Typography>
   </Box>)
 }

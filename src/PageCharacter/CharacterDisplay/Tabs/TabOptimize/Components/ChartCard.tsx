@@ -5,7 +5,7 @@ import { CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Scatte
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import DropdownButton from '../../../../../Components/DropdownMenu/DropdownButton';
-import { DataContext } from '../../../../../DataContext';
+import { DataContext } from '../../../../../Context/DataContext';
 import { uiInput as input } from '../../../../../Formula';
 import { NumNode } from '../../../../../Formula/type';
 import KeyMap from '../../../../../KeyMap';

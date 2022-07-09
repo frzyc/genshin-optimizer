@@ -10,8 +10,8 @@ import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
 import InfoTooltip from "../../../Components/InfoTooltip";
 import { ArtifactSheet } from "../../../Data/Artifacts/ArtifactSheet";
 import { resonanceSheets } from "../../../Data/Resonance";
-import { DataContext, dataContextObj } from "../../../DataContext";
-import { CharacterContext, CharacterContextObj } from "../../../CharacterContext";
+import { DataContext, dataContextObj } from "../../../Context/DataContext";
+import { CharacterContext, CharacterContextObj } from "../../../Context/CharacterContext";
 import { uiInput as input } from "../../../Formula";
 import { NodeDisplay } from "../../../Formula/uiData";
 import useCharacterReducer from "../../../ReactHooks/useCharacterReducer";
@@ -98,7 +98,7 @@ function TeammateDisplay({ index }: { index: number }) {
     <CardContent>
       <CharacterAutocomplete fullWidth value={characterKey}
         onChange={charKey => activeCharacterDispatch({ type: "team", index, charKey })}
-        disable={ck => ck === activeCharacterKey || active.team.includes(ck)}
+        disable={ck => ck === activeCharacterKey || (ck !== "" && active.team.includes(ck))}
         labelText={t("teammate", { count: index + 1 })}
         defaultText={t("none")}
         defaultIcon={<PersonAdd />}
@@ -121,7 +121,7 @@ function TeammateDisplay({ index }: { index: number }) {
 }
 function CharArtifactCondDisplay() {
   const { data, } = useContext(DataContext)
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const sections = useMemo(() => artifactSheets &&
     Object.entries(ArtifactSheet.setEffects(artifactSheets, data))
       .flatMap(([setKey, setNums]) =>

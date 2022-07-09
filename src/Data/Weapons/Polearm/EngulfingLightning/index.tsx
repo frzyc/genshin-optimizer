@@ -25,6 +25,8 @@ export const data = dataObjForWeaponSheet(key, data_gen, {
     atk_,
     enerRech_
   },
+}, {
+  atk_
 })
 const sheet: IWeaponSheet = {
   icon,

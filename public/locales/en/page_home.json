@@ -1,37 +1,42 @@
 {
-  "intro": "<0>What is Genshin Optimizer?</0><1>Genshin Optimizer (GO) is an open-source fan-made website for the action-RPG gacha game <1><strong>Genshin Impact</strong></1>. It is mainly intended to help players with the complex aspect of the game: Artifact Optimization. Since artifacts are heavily RNG-based elements that directly contribute to how effective your characters are in the game, GO will try to find the best artifacts for your characters based on your current artifact inventory.</1><2>GO can keep track of your artifacts, and allows more ease in filtering/comparing artifacts, it serves as a tool to help user find good artifacts in their inventory to level up, and bad artifacts to use as fodder.</2><3>Since GO can replicate the exact stats of any character, along with calculate all their damage numbers to up 1% accuracy, it can also serve as a Damage calculator, and a tool for theory crafting.</3>",
-  "notGO": "<0>What Genshin Optimizer is NOT:</0><1>GO does NOT tell you how to play the game. The information/calculations are intended to be un-opinionated as possible.</1><2>GO does NOT supplement your lack of in-game knowledge, inappropriate configuration of the builder can provide misleading results. Please research your characters, and figure out how you want to use them before configuring them on GO. Think of GO as more of a calculator.</2><3>GO does NOT generally take consideration of Energy Recharge, or team rotations. Please keep those mechanics in mind when you use this tool.</3>",
-  "quickLinks": {
+  "intro": "The <strong>ultimate</strong> <3><i>Genshin Impact</i></3> calculator, GO will keep track of your artifact/weapon/character inventory, and help you create the best build based on how you play, with that you have.",
+  "quickLinksCard": {
     "title": "Quick Links",
-    "scannerTitle": "Do you want to automate some of the artifact input process?",
-    "scannerText": "Here is a list of compatible automatic scanners that can feed data into GO. These programs will automatically scan artifacts from your game, and exporting that data into a file. This file can then be imported to GO.",
-    "scannerBtn": "Scanner List",
-    "goGithubText": "GO is completely open-source, written in TypeScript, with the <1></1>React framework.",
-    "goGithubBtn": "Genshin Optimizer Github"
-  },
-  "features": {
-    "title": "Features",
-    "artifact": {
-      "title": "Artifact Editor & Inventory",
-      "content": "<0><0>Fully featured Artifact editor.</0><1>Add Artifacts by scanning a screenshot.</1><2>Automatically calculate the exact rolled value of each artifact.</2><3>Calculate substat efficiency, using the roll calculations. Use a single number to determine whether to keep or trash an artifact!</3><4>Maintains a completely sortable, filterable artifact inventory.</4><5>Imports artifact database from <1>3rd party automatic scanners</1>.</5></0>"
-    },
-    "characterEditor": {
-      "title": "Character & Weapon Editor",
-      "content": "<0><0>Fully featured Character editor.</0><1>Automatically populate character stats at every milestone level/ascension.</1><2>Fully editable stats for customization.</2><3>Calculate current stats based on weapon/artifacts.</3><4>Fully featured weapon editor, with milestone level/ascension stats</4><5>Apply conditional passives, from talents & weapons & artifacts to accurately mimic in-game conditions. </5></0>"
-    },
-    "characterCalc": {
-      "title": "Character Damage Calculations",
-      "content": "<0><0>All the details for every character's talents.</0><1>All numbers should reflect real in game damage (within 1% error).</1><2>Conditional stats and modifications from every Constellation accounted for.</2><3>Shows calculations for all the numbers, along with formulas.</3><4>Enemy editor with level/ resistance fields to customize damage calculations.</4><5>Account for elemental infusion for normal/charged/plunging attacks.</5><6>Real time damage calculations.</6></0>"
-    },
-    "build": {
-      "title": "Build Generator",
-      "content": "<0><0>Generates builds for specific characters using artifact inventory.</0><1>Allows the maximization of character build based on specified optimization target.</1><2>Limit builds by artifact sets, main stats...</2><3>Fully featured build settings to fine-tune build results.</3><4>Compare generated artifact build against artifacts currently on character.</4><5>Use conditional stats from artifact sets, e.g. Embled of Severed Fate's 4-Set Elemental Burst DMG Bonus conversion, as part of the build calculations.</5></0>"
-    },
-    "tools": {
-      "title": "Tools and Gadgets",
-      "content": "<0><0>Server time, with countdown to reset.</0><1>Resin Counter.</1><2>Experience Calculator, to optimize EXP. books usage.</2></0>"
+    "buttons": {
+      "tyGuide": {
+        "title": "Youtube Guide Playlist",
+        "tooltip": "Learn how to use Genshin Optimizer"
+      },
+      "scanners": {
+        "title": "Automatic Scanners",
+        "tooltip": "3rd Party programs that automatically scans artifacts from the game"
+      },
+      "kqm": {
+        "title": "KeqingMains",
+        "tooltip": "Theorycrafting & guides community"
+      },
+      "devDiscord": {
+        "title": "Genshin Dev Discord",
+        "tooltip": "Community of developers for Genshin"
+      },
+      "good": {
+        "title": "GOOD documentation",
+        "tooltip": "Genshin Open Object Descriptor Documentation"
+      }
     }
   },
-  "helpDev": "<0>Want to help the developer?</0><1>If you want to financially support the developer, please consider donating via <1>Paypal</1> or <3>Patreon</3>. GO does not host ads, and will not lock any features behind a paywall.</1><2>If you want to help with localization/translation of GO to your native language, request a feature or report a bug, join our <1>discord</1>. This is where you will find more GO-related information, and checkout what is being actively worked on.</2><3>You can also join the <1>Genshin Dev discord</1> if you are interested in creating Genshin apps.</3>",
-  "credits": "<0>Credit where credit is due</0><1>GO is the culmination of hundreds of hours of programming/designing by two maintainers, <1><strong> frzyc</strong></1> and <3><strong> lantua</strong></3>. There are also a ton of other resources that aid in the creation of this website. Time to take a bow and thank them.</1><2><0><0>Thanks to everyone in the community, and especially people on our <1>discord</1> for providing feedback and helping us improve this tool.</0><1>Thanks to <1>Dimbreath</1>, for giving us a reliable, consistent source for Genshin data and numbers. All our calculations would be moot without them.</1><2>Special thanks to members of our community who has gone the extra mile, and has been helping us with localization/translation of GO to other languages, help us test formulas by recording in-game data, and programmers who has helped us with source code contributions.</2><3>Thanks for everyone else, for sharing this tool, and getting more people to use this tool.</3><4>Lastly, and most importantly, thank <strong>YOU</strong>, for using GO right now.</4></0></2>"
+  "inventoryCard": {
+    "title": "GO Inventory"
+  },
+  "vidGuideCard": {
+    "title": "Video Guides"
+  },
+  "teamCard": {
+    "title": "Meet the Team",
+    "jobTitle": {
+      "leadDev": "Lead Developer",
+      "dev": "Developer",
+      "mod": "Moderator"
+    }
+  }
 }

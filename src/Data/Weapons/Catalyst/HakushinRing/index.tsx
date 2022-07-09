@@ -44,78 +44,73 @@ const sheet: IWeaponSheet = {
   iconAwaken,
   document: [{
     value: condPassive,
-      path: condPassivePath,
-      name: trm("afterElectroReaction"),
-      canShow: unequal(input.activeCharKey, input.charKey, 1),
-      teamBuff: true,
-      header: headerTemplate(key, icon, iconAwaken, st("conditional")),
-      states: {
-        anemo: {
-          name: <ColorText color="swirl">{sgt("reaction.swirl")}</ColorText>,
-          fields: [{
-            node: anemo_dmg_
-          }, {
-            node: electro_dmg_
-          }, {
-            canShow: (data) => data.get(input.activeCharKey).value !== data.get(input.charKey).value,
-            text: sgt("duration"),
-            value: 6,
-            unit: "s"
-          }]
-        },
-        cryo: {
-          name: <ColorText color="superconduct">{sgt("reaction.Superconduct")}</ColorText>,
-          fields: [{
-            node: cryo_dmg_
-          }, {
-            node: electro_dmg_
-          }, {
-            canShow: (data) => data.get(input.activeCharKey).value !== data.get(input.charKey).value,
-            text: sgt("duration"),
-            value: 6,
-            unit: "s"
-          }]
-        },
-        geo: {
-          name: <ColorText color="crystallize">{sgt("reaction.crystallize")}</ColorText>,
-          fields: [{
-            node: geo_dmg_
-          }, {
-            node: electro_dmg_
-          }, {
-            canShow: (data) => data.get(input.activeCharKey).value !== data.get(input.charKey).value,
-            text: sgt("duration"),
-            value: 6,
-            unit: "s"
-          }]
-        },
-        pyro: {
-          name: <ColorText color="overload">{sgt("reaction.overloaded")}</ColorText>,
-          fields: [{
-            node: pyro_dmg_
-          }, {
-            node: electro_dmg_
-          }, {
-            canShow: (data) => data.get(input.activeCharKey).value !== data.get(input.charKey).value,
-            text: sgt("duration"),
-            value: 6,
-            unit: "s"
-          }]
-        },
-        hydro: {
-          name: <ColorText color="electrocharged">{sgt("reaction.electrocharged")}</ColorText>,
-          fields: [{
-            node: hydro_dmg_
-          }, {
-            node: electro_dmg_
-          }, {
-            canShow: (data) => data.get(input.activeCharKey).value !== data.get(input.charKey).value,
-            text: sgt("duration"),
-            value: 6,
-            unit: "s"
-          }]
-        }
+    path: condPassivePath,
+    name: trm("afterElectroReaction"),
+    canShow: unequal(input.activeCharKey, input.charKey, 1),
+    teamBuff: true,
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    states: {
+      anemo: {
+        name: <ColorText color="swirl">{sgt("reaction.swirl")}</ColorText>,
+        fields: [{
+          node: anemo_dmg_
+        }, {
+          node: electro_dmg_
+        }, {
+          text: sgt("duration"),
+          value: 6,
+          unit: "s"
+        }]
+      },
+      cryo: {
+        name: <ColorText color="superconduct">{sgt("reaction.Superconduct")}</ColorText>,
+        fields: [{
+          node: cryo_dmg_
+        }, {
+          node: electro_dmg_
+        }, {
+          text: sgt("duration"),
+          value: 6,
+          unit: "s"
+        }]
+      },
+      geo: {
+        name: <ColorText color="crystallize">{sgt("reaction.crystallize")}</ColorText>,
+        fields: [{
+          node: geo_dmg_
+        }, {
+          node: electro_dmg_
+        }, {
+          text: sgt("duration"),
+          value: 6,
+          unit: "s"
+        }]
+      },
+      pyro: {
+        name: <ColorText color="overloaded">{sgt("reaction.overloaded")}</ColorText>,
+        fields: [{
+          node: pyro_dmg_
+        }, {
+          node: electro_dmg_
+        }, {
+          text: sgt("duration"),
+          value: 6,
+          unit: "s"
+        }]
+      },
+      hydro: {
+        name: <ColorText color="electrocharged">{sgt("reaction.electrocharged")}</ColorText>,
+        fields: [{
+          node: hydro_dmg_
+        }, {
+          node: electro_dmg_
+        }, {
+          text: sgt("duration"),
+          value: 6,
+          unit: "s"
+        }]
       }
+    }
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

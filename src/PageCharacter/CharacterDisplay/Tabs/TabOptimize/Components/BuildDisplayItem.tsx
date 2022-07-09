@@ -2,7 +2,7 @@ import { ChevronRight } from '@mui/icons-material';
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { Suspense, useCallback, useContext, useMemo, useState } from 'react';
-import { CharacterContext } from '../../../../../CharacterContext';
+import { CharacterContext } from '../../../../../Context/CharacterContext';
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano';
 import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
 import CardDark from '../../../../../Components/Card/CardDark';
@@ -13,12 +13,12 @@ import SqBadge from '../../../../../Components/SqBadge';
 import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano';
 import { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../../Database/Database';
-import { DataContext } from '../../../../../DataContext';
+import { DataContext } from '../../../../../Context/DataContext';
 import { uiInput as input } from '../../../../../Formula';
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard';
 import usePromise from '../../../../../ReactHooks/usePromise';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../../../../Types/consts';
-import useBuildSetting from '../BuildSetting';
+import useBuildSetting from '../useBuildSetting';
 
 type NewOld = {
   newId: string,
@@ -39,15 +39,15 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
   const dataContext = useContext(DataContext)
 
   const { data, oldData } = dataContext
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const [newOld, setNewOld] = useState(undefined as NewOld | undefined)
   const close = useCallback(() => setNewOld(undefined), [setNewOld],)
 
   const equipBuild = useCallback(() => {
     if (!window.confirm("Do you want to equip this build to this character?")) return
     const newBuild = Object.fromEntries(allSlotKeys.map(s => [s, data.get(input.art[s].id).value])) as Record<SlotKey, string>
-    database.equipArtifacts(characterKey, newBuild)
-    database.setWeaponLocation(data.get(input.weapon.id).value!, characterKey)
+    database.chars.equipArtifacts(characterKey, newBuild)
+    database.weapons.set(data.get(input.weapon.id).value!, { location: characterKey })
   }, [characterKey, data, database])
 
   const statProviderContext = useMemo(() => {
@@ -55,6 +55,16 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
     if (!compareBuild) dataContext_.oldData = undefined
     return dataContext_
   }, [dataContext, compareBuild])
+
+  // Memoize Arts because of its dynamic onClick
+  const artNanos = useMemo(() => allSlotKeys.map(slotKey =>
+    <Grid item xs={1} key={slotKey} >
+      <ArtifactCardNano showLocation slotKey={slotKey} artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} onClick={() => {
+        const oldId = equippedArtifacts[slotKey]
+        const newId = data.get(input.art[slotKey].id).value!
+        setNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
+      }} />
+    </Grid>), [data, setNewOld, equippedArtifacts, mainStatAssumptionLevel])
 
   if (!artifactSheets || !oldData) return null
   const currentlyEquipped = allSlotKeys.every(slotKey => data.get(input.art[slotKey].id).value === oldData.get(input.art[slotKey].id).value) && data.get(input.weapon.id).value === oldData.get(input.weapon.id).value
@@ -83,18 +93,11 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
           <Button size='small' color="success" onClick={equipBuild} disabled={disabled || currentlyEquipped}>Equip Build</Button>
           {extraButtons}
         </Box>
-        <Grid container spacing={1} sx={{ pb: 1 }}>
-          <Grid item xs={6} sm={4} md={3} lg={2}>
+        <Grid container spacing={1} sx={{ pb: 1 }} columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}>
+          <Grid item xs={1}>
             <WeaponCardNano showLocation weaponId={data.get(input.weapon.id).value} />
           </Grid>
-          {allSlotKeys.map(slotKey =>
-            <Grid item xs={6} sm={4} md={3} lg={2} key={slotKey} >
-              <ArtifactCardNano showLocation slotKey={slotKey} artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} onClick={() => {
-                const oldId = equippedArtifacts[slotKey]
-                const newId = data.get(input.art[slotKey].id).value!
-                setNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
-              }} />
-            </Grid>)}
+          {artNanos}
         </Grid>
         <DataContext.Provider value={statProviderContext}>
           <StatDisplayComponent />
@@ -105,14 +108,22 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
 }
 
 function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLevel, onClose }: { newOld: NewOld, mainStatAssumptionLevel: number, onClose: () => void }) {
+  const { database } = useContext(DatabaseContext)
+  const { character: { key: characterKey } } = useContext(CharacterContext)
+  const onEquip = useCallback(() => {
+    if (!window.confirm("Do you want to equip this artifact to this character?")) return
+    database.arts.set(newId, { location: characterKey })
+    onClose()
+  }, [newId, database, characterKey, onClose])
+
   return <ModalWrapper open={!!newId} onClose={onClose} containerProps={{ maxWidth: oldId ? "md" : "xs" }}>
     <CardDark>
       <CardContent sx={{ display: "flex", justifyContent: "center", alignItems: "stretch", gap: 2, height: "100%" }}>
-        {oldId && <Box><ArtifactCard artifactId={oldId} mainStatAssumptionLevel={mainStatAssumptionLevel} disableEditSetSlot canExclude canEquip /></Box>}
+        {oldId && <Box minWidth={320}><ArtifactCard artifactId={oldId} mainStatAssumptionLevel={mainStatAssumptionLevel} canExclude canEquip /></Box>}
         {oldId && <Box display="flex" flexGrow={1} />}
-        {oldId && <Box display="flex" alignItems="center" justifyContent="center"><CardLight sx={{ display: "flex" }}><ChevronRight sx={{ fontSize: 40 }} /></CardLight></Box>}
+        {oldId && <Box display="flex" alignItems="center" justifyContent="center"><Button onClick={onEquip} sx={{ display: "flex" }}><ChevronRight sx={{ fontSize: 40 }} /></Button></Box>}
         {oldId && <Box display="flex" flexGrow={1} />}
-        <Box><ArtifactCard artifactId={newId} mainStatAssumptionLevel={mainStatAssumptionLevel} disableEditSetSlot canExclude canEquip /></Box>
+        <Box minWidth={320}><ArtifactCard artifactId={newId} mainStatAssumptionLevel={mainStatAssumptionLevel} canExclude canEquip /></Box>
       </CardContent>
     </CardDark>
   </ModalWrapper>

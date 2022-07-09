@@ -12,7 +12,7 @@ import StatIcon, { uncoloredEleIcons } from '../StatIcon';
 import ArtifactSetSlotTooltip from './ArtifactSetSlotTooltip';
 
 export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { artifactObj: ICachedArtifact | undefined, slotKey: SlotKey }) {
-  const artifactSheet = usePromise(art?.setKey && ArtifactSheet.get(art.setKey), [art?.setKey])
+  const artifactSheet = usePromise(() => art?.setKey && ArtifactSheet.get(art.setKey), [art?.setKey])
   // Blank artifact slot icon
   if (!art || !artifactSheet)
     return <CardDark sx={{ display: "flex", flexDirection: "column", height: "100%" }}>

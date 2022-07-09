@@ -3,7 +3,7 @@ import { Box, CardActionArea, CardContent, Chip, Grid, IconButton, Skeleton, Typ
 import { Suspense, useCallback, useContext, useMemo } from 'react';
 import { ascensionMaxLevel } from '../../Data/LevelData';
 import { DatabaseContext } from '../../Database/Database';
-import { DataContext, dataContextObj, TeamData } from '../../DataContext';
+import { DataContext, dataContextObj, TeamData } from '../../Context/DataContext';
 import { uiInput as input } from '../../Formula';
 import KeyMap from '../../KeyMap';
 import CharacterCardPico from './CharacterCardPico';
@@ -21,7 +21,7 @@ import { Stars } from '../StarDisplay';
 import StatIcon from '../StatIcon';
 import WeaponCardPico from '../Weapon/WeaponCardPico';
 import WeaponFullCard from '../Weapon/WeaponFullCard';
-import { CharacterContext, CharacterContextObj } from '../../CharacterContext';
+import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
 import usePromise from '../../ReactHooks/usePromise';
 import CharacterSheet from '../../Data/Characters/CharacterSheet';
 import useCharacter from '../../ReactHooks/useCharacter';
@@ -41,7 +41,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   const { teamData: teamDataContext } = useContext(DataContext)
   const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
   const character = useCharacter(characterKey)
-  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
+  const characterSheet = usePromise(() => CharacterSheet.get(characterKey), [characterKey])
   const characterDispatch = useCharacterReducer(characterKey)
   const data = teamData?.[characterKey]?.target
   const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
@@ -53,13 +53,12 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   const characterContextObj: CharacterContextObj | undefined = useMemo(() => character && characterSheet && {
     character, characterSheet, characterDispatch
   }, [character, characterSheet, characterDispatch])
-  const dataContextObj: dataContextObj | undefined = useMemo(() => teamData && ({
+  const dataContextObj: dataContextObj | undefined = useMemo(() => data && teamData && ({
     data,
     teamData,
   }), [data, teamData])
 
   if (!character || !dataContextObj || !characterContextObj) return null;
-
 
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     <CharacterContext.Provider value={characterContextObj}><DataContext.Provider value={dataContextObj}>
@@ -167,7 +166,7 @@ function Artifacts() {
   const { database } = useContext(DatabaseContext)
   const { data } = useContext(DataContext)
   const artifacts = useMemo(() =>
-    allSlotKeys.map(k => [k, database._getArt(data.get(input.art[k].id).value ?? "")]),
+    allSlotKeys.map(k => [k, database.arts.get(data.get(input.art[k].id).value ?? "")]),
     [data, database]) as Array<[SlotKey, ICachedArtifact | undefined]>;
 
   return <Grid direction="row" container spacing={0.75} columns={5}>

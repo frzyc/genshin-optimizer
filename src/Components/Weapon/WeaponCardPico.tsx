@@ -1,21 +1,20 @@
 import { Box, Typography } from '@mui/material';
-import { useContext, useMemo } from 'react';
+import { useMemo } from 'react';
 import WeaponSheet from '../../Data/Weapons/WeaponSheet';
-import { DatabaseContext } from '../../Database/Database';
 import { uiInput as input } from '../../Formula';
 import { computeUIData, dataObjForWeapon } from '../../Formula/api';
 import { NodeDisplay } from '../../Formula/uiData';
 import { valueString } from '../../KeyMap';
 import usePromise from '../../ReactHooks/usePromise';
+import useWeapon from '../../ReactHooks/useWeapon';
 import CardDark from '../Card/CardDark';
 import SqBadge from '../SqBadge';
 import StatIcon from '../StatIcon';
 import WeaponNameTooltip from './WeaponNameTooltip';
 
 export default function WeaponCardPico({ weaponId }: { weaponId: string }) {
-  const { database } = useContext(DatabaseContext)
-  const weapon = database._getWeapon(weaponId)
-  const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
+  const weapon = useWeapon(weaponId)
+  const weaponSheet = usePromise(() => weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
 

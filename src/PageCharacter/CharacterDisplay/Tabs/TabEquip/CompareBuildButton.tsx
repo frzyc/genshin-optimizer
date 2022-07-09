@@ -2,15 +2,15 @@ import { Close, Difference } from "@mui/icons-material"
 import { Button, Skeleton, Tooltip, Typography } from "@mui/material"
 import { Suspense, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
-import { CharacterContext } from "../../../../CharacterContext"
+import { CharacterContext } from "../../../../Context/CharacterContext"
 import { HitModeToggle, ReactionToggle } from "../../../../Components/HitModeEditor"
 import ModalWrapper from "../../../../Components/ModalWrapper"
 import { DatabaseContext } from "../../../../Database/Database"
-import { DataContext } from "../../../../DataContext"
+import { DataContext } from "../../../../Context/DataContext"
 import useBoolState from "../../../../ReactHooks/useBoolState"
 import useTeamData from "../../../../ReactHooks/useTeamData"
 import { objectMap } from "../../../../Util/Util"
-import useBuildSetting from "../TabOptimize/BuildSetting"
+import useBuildSetting from "../TabOptimize/useBuildSetting"
 import BuildDisplayItem from "../TabOptimize/Components/BuildDisplayItem"
 
 export default function CompareBuildButton({ artId, weaponId }: { artId?: string, weaponId?: string }) {
@@ -21,11 +21,11 @@ export default function CompareBuildButton({ artId, weaponId }: { artId?: string
   const { buildSetting: { mainStatAssumptionLevel } } = useBuildSetting(characterKey)
   const { data: oldData } = useContext(DataContext)
   const build = useMemo(() => {
-    const newArt = database._getArt(artId ?? "")
-    const artmap = objectMap(equippedArtifacts, (id, slot) => slot === newArt?.slotKey ? newArt : database._getArt(id))
+    const newArt = database.arts.get(artId ?? "")
+    const artmap = objectMap(equippedArtifacts, (id, slot) => slot === newArt?.slotKey ? newArt : database.arts.get(id))
     return Object.values(artmap)
   }, [database, equippedArtifacts, artId])
-  const teamData = useTeamData(characterKey, mainStatAssumptionLevel, build, weaponId ? database._getWeapon(weaponId) : undefined)
+  const teamData = useTeamData(characterKey, mainStatAssumptionLevel, build, weaponId ? database.weapons.get(weaponId) : undefined)
   const dataProviderValue = useMemo(() => teamData && ({ data: teamData[characterKey]!.target, teamData, oldData }), [characterKey, teamData, oldData])
   return <>
     <ModalWrapper open={show} onClose={onHide} containerProps={{ maxWidth: "xl" }}>

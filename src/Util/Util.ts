@@ -103,8 +103,8 @@ export function objClearEmpties(o) {
     if (!Object.keys(o[k]).length) delete o[k];
   }
 }
-export function crawlObject(obj, keys, validate, cb) {
-  if (validate(obj)) cb(obj, keys)
+export function crawlObject(obj: any, keys: string[] = [], validate: (o: any, keys: string[]) => boolean, cb: (o: any, keys: string[]) => void) {
+  if (validate(obj, keys)) cb(obj, keys)
   else obj && typeof obj === "object" && Object.entries(obj).forEach(([key, val]) => crawlObject(val, [...keys, key], validate, cb))
 }
 // const getObjectKeysRecursive = (obj) => Object.values(obj).reduce((a, prop) => typeof prop === "object" ? [...a, ...getObjectKeysRecursive(prop)] : a, Object.keys(obj))
@@ -164,4 +164,10 @@ export function toggleInArr<T>(arr: T[], value: T) {
 
 export function toggleArr<T>(arr: T[], value: T) {
   return arr.includes(value) ? arr.filter(a => a !== value) : [...arr, value]
+}
+
+export function deepFreeze(obj: any, layers: number = 5) {
+  if (layers === 0) return
+  if (typeof obj === "object")
+    Object.values(Object.freeze(obj)).forEach(o => deepFreeze(o, layers--))
 }

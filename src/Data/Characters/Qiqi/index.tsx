@@ -21,8 +21,8 @@ const datamine = {
     hitArr: [
       skillParam_gen.auto[a++], // 1
       skillParam_gen.auto[a++], // 2
-      skillParam_gen.auto[a++], // 3
-      skillParam_gen.auto[a++], // 4
+      skillParam_gen.auto[a++], // 3x2
+      skillParam_gen.auto[a++], // 4x2
       skillParam_gen.auto[a++], // 5
     ]
   },
@@ -116,6 +116,7 @@ const sheet: ICharacterSheet = {
       }, {
         fields: datamine.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
+          textSuffix: (i === 2 || i === 3) ? st("brHits", { count: 2 }) : undefined
         }))
       }, {
         text: tr("auto.fields.charged"),

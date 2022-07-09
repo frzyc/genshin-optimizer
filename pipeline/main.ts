@@ -213,12 +213,12 @@ dumpFile(`${__dirname}/../src/Data/Artifacts/artifact_sub_rolls_correction_gen.j
 
 //generate the MapHashes for localization for artifacts
 Object.entries(reliquarySetExcelConfigData).filter(([setId, data]) => setId in artifactIdMap).forEach(([setId, data]) => {
-  const { equipAffixId, setNeedNum, containsList } = data
-  if (!equipAffixId) return
+  const { EquipAffixId, setNeedNum, containsList } = data
+  if (!EquipAffixId) return
 
   const setEffects = Object.fromEntries(setNeedNum.map((setNeed, i) => {
-    const equipAffixData = equipAffixExcelConfigData[equipAffixId]?.[i]
-    if (!equipAffixData) throw `No data for equipAffixId ${equipAffixId} for setEffect ${setNeed}`
+    const equipAffixData = equipAffixExcelConfigData[EquipAffixId]?.[i]
+    if (!equipAffixData) throw `No data for EquipAffixId ${EquipAffixId} for setEffect ${setNeed}`
     return [setNeed, equipAffixData.descTextMapHash]
   }))
 
@@ -232,8 +232,9 @@ Object.entries(reliquarySetExcelConfigData).filter(([setId, data]) => setId in a
     }]
   }))
 
-  const setName = equipAffixExcelConfigData[equipAffixId]?.[0]?.nameTextMapHash
+  const setName = equipAffixExcelConfigData[EquipAffixId]?.[0]?.nameTextMapHash
 
+  mapHashData.artifactNames[artifactIdMap[setId]] = setName
   mapHashData.artifact[artifactIdMap[setId]] = {
     setName,
     setEffects,
@@ -247,6 +248,7 @@ Object.entries(weaponExcelConfigData).filter(([weaponid,]) => weaponid in weapon
   const [ascensionDataId,] = skillAffix
   const ascData = ascensionDataId && equipAffixExcelConfigData[ascensionDataId]
 
+  mapHashData.weaponNames[weaponIdMap[weaponid]] = nameTextMapHash
   mapHashData.weapon[weaponIdMap[weaponid]] = {
     name: nameTextMapHash,
     description: descTextMapHash,
@@ -262,6 +264,7 @@ Object.entries(avatarExcelConfigData).filter(([charid,]) => charid in characterI
 
 
   const keys = ["char", characterIdMap[charid]]
+  mapHashData.charNames[characterIdMap[charid]] = nameTextMapHash
   layeredAssignment(mapHashData, [...keys, "name"], nameTextMapHash)
   layeredAssignment(mapHashData, [...keys, "title"], avatarTitleTextMapHash)
   layeredAssignment(mapHashData, [...keys, "description"], descTextMapHash)
@@ -362,7 +365,7 @@ Object.entries(languageData).forEach(([lang, data]) => {
 
   Object.entries(data).forEach(([type, typeData]) => {
     //general manual localiation namespaces
-    if (["sheet", "weaponKey", "elementalResonance", "material"].includes(type))
+    if (["sheet", "weaponKey", "elementalResonance", "material", "charNames", "weaponNames", "artifactNames"].includes(type))
       return dumpFile(`${fileDir}/${type}_gen.json`, typeData)
 
     //weapons/characters/artifacts

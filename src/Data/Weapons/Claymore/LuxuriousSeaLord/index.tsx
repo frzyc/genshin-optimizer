@@ -17,7 +17,7 @@ const burst_dmg_Src = [0.12, 0.15, 0.18, 0.21, 0.24]
 const dmg_Src = [1, 1.25, 1.5, 1.75, 2]
 const burst_dmg_ = subscript(input.weapon.refineIndex, burst_dmg_Src)
 const [condPassivePath, condPassive] = cond(key, "OceanicVictory")
-const dmg_ = equal(condPassive, 'on',
+const dmg = equal(condPassive, 'on',
   customDmgNode(prod(
     subscript(
       input.weapon.refineIndex, dmg_Src, { key: "_" }),
@@ -31,6 +31,8 @@ const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     burst_dmg_
   },
+}, {
+  dmg
 })
 const sheet: IWeaponSheet = {
   icon,
@@ -46,7 +48,7 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: infoMut(dmg_, { key: "sheet:dmg" })
+          node: infoMut(dmg, { key: "sheet:dmg" })
         }, {
           text: sgt("cd"),
           value: 15,

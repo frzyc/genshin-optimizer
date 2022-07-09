@@ -29,7 +29,7 @@ describe.skip("Worker Perf", () => {
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
 
     let nodes = optimize([optimizationTargetNode], workerData, ({ path: [p] }) => p !== "dyn")
-    let arts = compactArtifacts(database._getArts(), 0, true)
+    let arts = compactArtifacts(database.arts.values, 0, true)
     const minimum = [-Infinity];
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, 10, {}, { reaffine: true }))
 

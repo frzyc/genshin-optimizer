@@ -1,12 +1,12 @@
 import { Masonry } from '@mui/lab';
-import { Button, CardContent, CardHeader, Divider, MenuItem, MenuList, styled } from '@mui/material';
+import { Button, CardContent, CardHeader, Divider, MenuItem, MenuList } from '@mui/material';
 import React, { useCallback, useContext, useState } from 'react';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import ColorText from '../../../../../Components/ColoredText';
 import ImgIcon from '../../../../../Components/Image/ImgIcon';
 import ModalWrapper from '../../../../../Components/ModalWrapper';
-import { DataContext } from '../../../../../DataContext';
+import { DataContext } from '../../../../../Context/DataContext';
 import { getDisplayHeader, getDisplaySections } from '../../../../../Formula/DisplayUtil';
 import { DisplaySub } from '../../../../../Formula/type';
 import { NodeDisplay } from '../../../../../Formula/uiData';
@@ -14,13 +14,6 @@ import KeyMap from '../../../../../KeyMap';
 import usePromise from '../../../../../ReactHooks/usePromise';
 import { objPathValue } from '../../../../../Util/Util';
 
-const WhiteButton = styled(Button)({
-  color: "black",
-  backgroundColor: "white",
-  "&:hover": {
-    backgroundColor: "#e1e1e1",
-  }
-})
 export default function OptimizationTargetSelector({ optimizationTarget, setTarget, disabled = false }: {
   optimizationTarget?: string[], setTarget: (target: string[]) => void, disabled
 }) {
@@ -38,9 +31,9 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
   const { data } = useContext(DataContext)
   const sections = getDisplaySections(data)
   return <>
-    <WhiteButton onClick={onOpen} disabled={disabled} >
+    <Button color="white" onClick={onOpen} disabled={disabled} >
       <TargetDisplayText optimizationTarget={optimizationTarget} />
-    </WhiteButton>
+    </Button>
     <ModalWrapper open={open} onClose={onClose}>
       <CardDark >
         <CardContent>
@@ -55,7 +48,7 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
 }
 function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[]) => void }) {
   const { data } = useContext(DataContext)
-  const header = usePromise(getDisplayHeader(data, sectionKey), [data, sectionKey])
+  const header = usePromise(() => getDisplayHeader(data, sectionKey), [data, sectionKey])
   return <CardLight key={sectionKey as string}>
     {header && <CardHeader avatar={header.icon && <ImgIcon size={2} sx={{ m: -1 }} src={header.icon} />} title={header.title} action={header.action} titleTypographyProps={{ variant: "subtitle1" }} />}
     <Divider />
@@ -70,7 +63,7 @@ function NoTarget() {
 }
 function TargetDisplayText({ optimizationTarget }: { optimizationTarget?: string[] }) {
   const { data } = useContext(DataContext)
-  const displayHeader = usePromise(optimizationTarget && getDisplayHeader(data, optimizationTarget[0]), [data, optimizationTarget])
+  const displayHeader = usePromise(() => optimizationTarget && getDisplayHeader(data, optimizationTarget[0]), [data, optimizationTarget])
 
   if (!optimizationTarget || !displayHeader) return <NoTarget />
   const node: NodeDisplay | undefined = objPathValue(data.getDisplay(), optimizationTarget) as any
