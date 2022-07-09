@@ -25,11 +25,11 @@ export type CharacterDropdownButtonProps = Omit<DropdownButtonProps, "title" | "
 export default function CharacterDropdownButton({ value, onChange, unSelectText, unSelectIcon, inventory = false, noUnselect = false, filter = () => true, ...props }: CharacterDropdownButtonProps) {
   const { t } = useTranslation("ui");
   const { database } = useContext(DatabaseContext)
-  const characterSheets = usePromise(CharacterSheet.getAll, [])
-  const characterSheet = usePromise(CharacterSheet.get(value), [value])
+  const characterSheets = usePromise(() => CharacterSheet.getAll, [])
+  const characterSheet = usePromise(() => CharacterSheet.get(value), [value])
   const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
-  const characterKeys = database._getCharKeys().filter(ck => characterSheets?.[ck] && filter(characterSheets[ck], ck)).sort()
-  console.log({ characterKeys }, { characterSheets })
+  const characterKeys = database.chars.keys.filter(ck => characterSheets?.[ck] && filter(characterSheets[ck], ck)).sort()
+  console.log('help me i literally dont know', { characterKeys }, { characterSheets })
   return <DropdownButton
     {...props}
     title={characterSheet?.name ?? (inventory ? t`inventory` : (unSelectText ?? t`unselect`))}
@@ -65,7 +65,7 @@ export function CharacterMenuItemArray(characterSheets: StrictDict<CharacterKey,
     .filter(filterFunction({ name: "", element: "", weaponType: "", favorite: "no" }, filterConfigs))
     .map(characterKey => <CharMenuItem key={characterKey} {...{ characterSheets, characterKey, selectedCharacterKey, onChange, favorite: false }} />)
 
-  console.log({ filterConfigs })
+  console.log('mah selection', faves.concat(nonFaves))
 
   // const ff = filterFunction({ name: "", element: "", weaponType: "", favorite: "yes" }, filterConfigs)
   // console.log('should be getting menu items', faves.length + nonFaves.length, filterConfigs)

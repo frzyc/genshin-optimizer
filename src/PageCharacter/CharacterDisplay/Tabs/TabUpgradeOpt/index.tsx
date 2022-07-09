@@ -14,7 +14,7 @@ import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig';
 
 import React, { Suspense, useCallback, useContext, useMemo, useRef, useState } from 'react';
 import { Trans } from "react-i18next";
-import { DataContext, dataContextObj } from '../../../../DataContext';
+import { DataContext, dataContextObj } from '../../../../Context/DataContext';
 import { DatabaseContext } from '../../../../Database/Database';
 import { optimize } from '../../../../Formula/optimization';
 import { NumNode } from '../../../../Formula/type';
@@ -22,7 +22,7 @@ import { uiInput as input } from '../../../../Formula/index';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
-import useBuildSetting from '../TabOptimize/BuildSetting';
+import useBuildSetting from '../TabOptimize/useBuildSetting';
 import { dynamicData } from '../TabOptimize/foreground';
 import { allSlotKeys, CharacterKey, SlotKey } from '../../../../Types/consts';
 import { clamp, objPathValue } from '../../../../Util/Util';
@@ -31,7 +31,7 @@ import { querySetup, evalArtifact, toQueryArtifact, cmpQ, QueryArtifact, QueryBu
 import UpgradeOptChartCard from "./UpgradeOptChartCard"
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material';
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard';
-import { CharacterContext } from '../../../../CharacterContext';
+import { CharacterContext } from '../../../../Context/CharacterContext';
 
 
 export default function TabUpopt() {
@@ -41,7 +41,7 @@ export default function TabUpopt() {
   const characterDispatch = useCharacterReducer(characterKey)
   const onClickTeammate = useCharSelectionCallback()
 
-  const noArtifact = useMemo(() => !database._getArts().length, [database])
+  const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
   const { optimizationTarget } = buildSetting
@@ -60,7 +60,7 @@ export default function TabUpopt() {
   const upgradeOptExpandSink = useCallback(({ query, arts }: UpgradeOptResult, start: number, expandTo: number): UpgradeOptResult => {
     const lookahead = 5
     // if (querySaved === undefined) return upOpt
-    const queryArts: QueryArtifact[] = database._getArts()
+    const queryArts: QueryArtifact[] = database.arts.values
       .filter(art => art.rarity === 5)
       .map(art => toQueryArtifact(art, 20))
 
@@ -139,16 +139,16 @@ export default function TabUpopt() {
       return { value: input.total[key], minimum: value }
     }).filter(x => x.value && x.minimum > -Infinity)
 
-    const queryArts: QueryArtifact[] = database._getArts()
+    const queryArts: QueryArtifact[] = database.arts.values
       .filter(art => art.rarity === 5)
       .filter(art => show20 || art.level !== 20)
       .filter(art => !useMainStatFilter || !mainStatKeys[art.slotKey]?.length || mainStatKeys[art.slotKey]?.includes(art.mainStatKey))
       // .filter(art => true)
       .map(art => toQueryArtifact(art, 20))
 
-    const equippedArts = database._getChar(characterKey)?.equippedArtifacts ?? {} as StrictDict<SlotKey, string>
+    const equippedArts = database.chars.get(characterKey)?.equippedArtifacts ?? {} as StrictDict<SlotKey, string>
     let curEquip: QueryBuild = Object.assign({}, ...allSlotKeys.map(slotKey => {
-      const art = database._getArt(equippedArts[slotKey] ?? "")
+      const art = database.arts.get(equippedArts[slotKey] ?? "")
       if (!art) return { [slotKey]: undefined }
       return { [slotKey]: toQueryArtifact(art) }
     }))

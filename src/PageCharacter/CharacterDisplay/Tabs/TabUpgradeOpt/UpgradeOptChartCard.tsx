@@ -1,7 +1,7 @@
 import { Button, CardContent, Grid, Box } from '@mui/material';
 import React, { useEffect, useState, useContext, useMemo, useCallback } from 'react';
 import { DatabaseContext } from '../../../../Database/Database';
-import { DataContext } from '../../../../DataContext';
+import { DataContext } from '../../../../Context/DataContext';
 import Assets from '../../../../Assets/Assets';
 import {
   Line,
@@ -58,7 +58,7 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
   const [calcExacts, setCalcExacts] = useState(false);
 
   const { database } = useContext(DatabaseContext)
-  const bla = database._getArt(upgradeOpt.id)
+  const bla = database.arts.get(upgradeOpt.id)
   if (!bla) {
     throw new Error(`artifact ${upgradeOpt.id} not found.`)
   }
@@ -68,7 +68,7 @@ export default function UpgradeOptChartCard({ upgradeOpt, objMin, objMax }: Data
   const slot = bla.slotKey;
   const { data } = useContext(DataContext)
   const artifacts = useMemo(() =>
-    allSlotKeys.map(k => [k, database._getArt(data.get(input.art[k].id).value ?? "")]),
+    allSlotKeys.map(k => [k, database.arts.get(data.get(input.art[k].id).value ?? "")]),
     [data, database]) as Array<[SlotKey, ICachedArtifact | undefined]>;
 
   const gauss = (x: number) => upgradeOpt.distr.gmm.reduce(

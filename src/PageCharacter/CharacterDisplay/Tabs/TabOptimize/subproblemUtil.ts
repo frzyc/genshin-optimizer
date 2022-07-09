@@ -1,3 +1,4 @@
+import { ArtSetExclusion } from "../../../../Database/Data/BuildsettingData"
 import { fillBuffer, reducePolynomial } from "../../../../Formula/addedUtils"
 import { ExpandedPolynomial, expandPoly, toNumNode } from "../../../../Formula/expandPoly"
 import { LinearForm, minMaxWeightVec, toLinearUpperBound } from "../../../../Formula/linearUpperBound"
@@ -5,7 +6,6 @@ import { precompute } from "../../../../Formula/optimization"
 import { NumNode } from "../../../../Formula/type"
 import { allArtifactSets, allSlotKeys, ArtifactSetKey, SlotKey } from "../../../../Types/consts"
 import { objectKeyMap, objectKeyValueMap, range } from "../../../../Util/Util"
-import { ArtSetExclusion } from "./BuildSetting"
 import { ArtifactBuildDataVecDense, ArtifactsBySlot, ArtifactsBySlotVec, DynStat, filterArtsVec2, RequestFilter } from "./common"
 
 export type UnionFilter = {
