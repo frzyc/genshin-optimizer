@@ -85,6 +85,7 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
   }, [onClose, current, database.storage])
 
   const onDelete = useCallback(() => {
+    if (!window.confirm(`Are you sure you want to delete "${name}"?`)) return
     if (current) {
       database.clear()
       setDatabase(new ArtCharDatabase(database.storage))
@@ -96,7 +97,7 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
       setDatabase(new ArtCharDatabase(extraStorage))
       localStorage.removeItem(dbName)
     }
-  }, [database, current, setDatabase])
+  }, [database, current, name, setDatabase])
 
   const download = useCallback(() => {
     const date = new Date()
