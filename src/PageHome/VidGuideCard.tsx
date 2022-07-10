@@ -13,7 +13,7 @@ export default function VidGuideCard() {
     <Divider />
     <CardContent>
       <Grid container columns={{ xs: 1, sm: 2 }} spacing={2} >
-        {embeds.map(embed => <Grid item xs={1}>
+        {embeds.map(embed => <Grid item xs={1} key={embed}>
           <Box key={embed} sx={{
             position: "relative",
             pb: "56.25%",

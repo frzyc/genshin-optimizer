@@ -12,7 +12,7 @@ import artifactSubstatRollCorrection from '../../../Data/Artifacts/artifact_sub_
 import KeyMap, { cacheValueString } from '../../../KeyMap';
 import { allSubstatKeys, ICachedArtifact, ISubstat } from '../../../Types/artifact';
 import { clamp } from '../../../Util/Util';
-import PercentBadge from '../../PercentBadge';
+import PercentBadge from '../../../Components/PercentBadge';
 export default function SubstatInput({ index, artifact, setSubstat }: { index: number, artifact: ICachedArtifact | undefined, setSubstat: (index: number, substat: ISubstat) => void, }) {
   const { t } = useTranslation("artifact")
   const { mainStatKey = "", rarity = 5 } = artifact ?? {}

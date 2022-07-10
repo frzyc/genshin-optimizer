@@ -63,6 +63,10 @@ export default function PageCharacter() {
     return database.chars.followAny(forceUpdate)
   }, [forceUpdate, database])
 
+  useEffect(() => {
+    return database.states.followAny(s => typeof s === "string" && s.includes("charMeta_") && forceUpdate())
+  }, [forceUpdate, database])
+
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
 
   const deleteCharacter = useCallback(async (cKey: CharacterKey) => {

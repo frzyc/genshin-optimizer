@@ -72,7 +72,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   let {
     key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditional,
     bonusStats, enemyOverride, talent, infusionAura, constellation, team,
-    compareData, favorite
+    compareData
   } = obj
 
   if (!allCharacterKeys.includes(characterKey) ||
@@ -105,7 +105,6 @@ export function parseCharacter(obj: any): ICharacter | undefined {
     team = ["", "", ""]
 
   if (typeof compareData !== "boolean") compareData = false
-  if (typeof favorite !== "boolean") favorite = false
 
   // TODO: validate bonusStats
   if (typeof bonusStats !== "object" || !Object.entries(bonusStats).map(([_, num]) => typeof num === "number")) bonusStats = {}
@@ -113,7 +112,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   const result: ICharacter = {
     key: characterKey, level, ascension, hitMode, reactionMode, conditional,
     bonusStats, enemyOverride, talent, infusionAura, constellation, team,
-    compareData, favorite
+    compareData
   }
   if (elementKey) result.elementKey = elementKey
   return result
