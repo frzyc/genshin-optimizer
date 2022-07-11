@@ -29,6 +29,7 @@
     "charged": "Charged Attack hits on opponents",
     "normalOrCharged": "Normal / Charged Attack hits on opponents",
     "plunging": "Plunging Attack hits on opponents",
+    "normalChargedOrPlunging": "Normal / Charged / Plunging Attack hits on opponents",
     "skill": "Elemental Skill hits on opponents",
     "burst": "Elemental Burst hits on opponents",
     "skillOrBurst": "Elemental Skill or Elemental Burst hits on opponents",
@@ -88,6 +89,7 @@
     "geo": "Geo effect duration"
   },
   "durationInc": "Duration increase",
+  "aoeInc": "AoE increase",
   "base": "Base",
   "conditional": "Conditional",
   "stacks": "Stacks",
