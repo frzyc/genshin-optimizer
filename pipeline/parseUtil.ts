@@ -3,6 +3,7 @@ import { ColorTag, Language, tagColor } from "."
 export function preprocess(string: string): string {
   { // color tags
     const stack: ColorTag[] = []
+    if (!string) string = ""
     string = string.replace(/<(\/?)color(?:=#([0-9A-F]{8}))?>/g, (_match, isClosed, color) => {
       if (isClosed) return `</${stack.pop()}>`
       const tag = tagColor[color]
@@ -108,6 +109,7 @@ export const parsingFunctions: { [key: string]: (lang: Language, string: string,
   },
   paragraph: (lang, string) => paragraph(string),
   skillParam: (lang, string) => {
+    if (!string) string = ""
     string = string.split('|')[0]
     return string
   },
