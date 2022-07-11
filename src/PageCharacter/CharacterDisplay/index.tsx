@@ -3,7 +3,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink, Navigate, Route, Routes, useMatch, useNavigate, useParams } from 'react-router-dom';
-import { CharacterContext, CharacterContextObj } from '../../CharacterContext';
+import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
 import CardDark from '../../Components/Card/CardDark';
 import CardLight from '../../Components/Card/CardLight';
 import { CharacterSelectionModal } from '../../Components/Character/CharacterSelectionModal';
@@ -19,7 +19,7 @@ import ImgIcon from '../../Components/Image/ImgIcon';
 import CharacterSheet from '../../Data/Characters/CharacterSheet';
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../../Data/LevelData';
 import { sgt } from '../../Data/SheetUtil';
-import { DataContext, dataContextObj, TeamData } from '../../DataContext';
+import { DataContext, dataContextObj, TeamData } from '../../Context/DataContext';
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil';
 import { DisplaySub } from '../../Formula/type';
 import { NodeDisplay } from '../../Formula/uiData';
@@ -40,14 +40,16 @@ import TabTeambuffs from './Tabs/TabTeambuffs';
 
 export default function CharacterDisplay() {
   const navigate = useNavigate();
+  const onClose = useCallback(() => navigate("/characters"), [navigate])
   let { characterKey } = useParams<{ characterKey?: CharacterKey }>();
   const invalidKey = !allCharacterKeys.includes(characterKey as any ?? "")
   if (invalidKey)
     return <Navigate to="/characters" />
+
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
-    {characterKey && <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}>
-      <CharacterDisplayCard characterKey={characterKey} onClose={() => navigate("/characters")} />
-    </Suspense>}
+    <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}>
+      {characterKey && <CharacterDisplayCard characterKey={characterKey} onClose={onClose} />}
+    </Suspense>
   </Box>
 }
 
@@ -59,7 +61,7 @@ type CharacterDisplayCardProps = {
 }
 function CharacterDisplayCard({ characterKey, newteamData, mainStatAssumptionLevel = 0, onClose }: CharacterDisplayCardProps) {
   const character = useCharacter(characterKey)
-  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
+  const characterSheet = usePromise(() => CharacterSheet.get(characterKey), [characterKey])
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { target: charUIData } = teamData?.[characterKey] ?? {}
   let { params: { tab = "overview" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }
@@ -103,22 +105,26 @@ function CharacterDisplayCard({ characterKey, newteamData, mainStatAssumptionLev
         </CardLight>
         <FormulaCalcCard />
         <EnemyExpandCard />
-        <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={500} />}>
-          <Routes>
-            {/* Character Panel */}
-            <Route index element={<TabOverview />} />
-            <Route path="/talent" element={<TabTalent />} />
-            <Route path="/equip" element={<TabEquip />} />
-            <Route path="/teambuffs" element={<TabTeambuffs />} />
-            <Route path="/optimize" element={<TabBuild />} />
-          </Routes>
-        </Suspense>
+        <CharacterPanel />
         <CardLight>
           <TabNav tab={tab} />
         </CardLight>
       </CardContent>
     </DataContext.Provider></CharacterContext.Provider> : <Skeleton variant='rectangular' width='100%' height={1000} />}
   </CardDark>
+}
+function CharacterPanel() {
+  return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={500} />}>
+    <Routes>
+      {/* Character Panel */}
+      <Route index element={<TabOverview />} />
+      <Route path="/talent" element={<TabTalent />} />
+      <Route path="/equip" element={<TabEquip />} />
+      <Route path="/teambuffs" element={<TabTeambuffs />} />
+      <Route path="/optimize" element={<TabBuild />} />
+      <Route path="/upgradeOpt" element={<TabUpopt />} />
+    </Routes>
+  </Suspense>
 }
 function TabNav({ tab }: { tab: string }) {
   const { t } = useTranslation("page_character")
@@ -242,7 +248,7 @@ function CalculationDisplay() {
 }
 function FormulaCalc({ sectionKey, displayNs }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string }) {
   const { data } = useContext(DataContext)
-  const header = usePromise(getDisplayHeader(data, sectionKey), [data, sectionKey])
+  const header = usePromise(() => getDisplayHeader(data, sectionKey), [data, sectionKey])
   if (!header) return null
   if (Object.entries(displayNs).every(([_, node]) => node.isEmpty)) return null
   const { title, icon, action } = header

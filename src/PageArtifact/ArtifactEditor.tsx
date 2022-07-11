@@ -70,18 +70,18 @@ const InputInvis = styled('input')({
   display: 'none',
 });
 
-export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allowUpload = false, allowEmpty = false, disableEditSetSlot: disableEditSlotProp = false }:
-  { artifactIdToEdit?: string, cancelEdit: () => void, allowUpload?: boolean, allowEmpty?: boolean, disableEditSetSlot?: boolean }) {
+export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allowUpload = false, allowEmpty = false, }:
+  { artifactIdToEdit?: string, cancelEdit: () => void, allowUpload?: boolean, allowEmpty?: boolean, }) {
   const { t } = useTranslation("artifact")
 
-  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
 
   const { database } = useContext(DatabaseContext)
 
   const [show, setShow] = useState(false)
 
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
-  useEffect(() => database.followAnyArt(setDirtyDatabase), [database, setDirtyDatabase])
+  useEffect(() => database.arts.followAny(setDirtyDatabase), [database, setDirtyDatabase])
 
   const [editorArtifact, artifactDispatch] = useReducer(artifactReducer, undefined)
   const artifact = useMemo(() => editorArtifact && parseArtifact(editorArtifact), [editorArtifact])
@@ -92,8 +92,8 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const firstProcessed = processed[0] as ProcessedEntry | undefined
   const firstOutstanding = outstanding[0] as OutstandingEntry | undefined
 
-  const processingImageURL = usePromise(firstOutstanding?.imageURL, [firstOutstanding?.imageURL])
-  const processingResult = usePromise(firstOutstanding?.result, [firstOutstanding?.result])
+  const processingImageURL = usePromise(() => firstOutstanding?.imageURL, [firstOutstanding?.imageURL])
+  const processingResult = usePromise(() => firstOutstanding?.result, [firstOutstanding?.result])
 
   const remaining = processed.length + outstanding.length
 
@@ -101,7 +101,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const { artifact: artifactProcessed, texts } = firstProcessed ?? {}
   // const fileName = firstProcessed?.fileName ?? firstOutstanding?.fileName ?? "Click here to upload Artifact screenshot files"
 
-  const disableEditSetSlot = disableEditSlotProp || !!artifact?.location
+  const disableEditSlot = !!artifact?.location
 
   useEffect(() => {
     if (!artifact && artifactProcessed)
@@ -144,10 +144,10 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   )
 
   const { old, oldType }: { old: ICachedArtifact | undefined, oldType: "edit" | "duplicate" | "upgrade" | "" } = useMemo(() => {
-    const databaseArtifact = dirtyDatabase && artifactIdToEdit && database._getArt(artifactIdToEdit)
+    const databaseArtifact = dirtyDatabase && artifactIdToEdit && database.arts.get(artifactIdToEdit)
     if (databaseArtifact) return { old: databaseArtifact, oldType: "edit" }
     if (artifact === undefined) return { old: undefined, oldType: "" }
-    const { duplicated, upgraded } = dirtyDatabase && database.findDuplicates(artifact)
+    const { duplicated, upgraded } = dirtyDatabase && database.arts.findDups(artifact)
     return { old: duplicated[0] ?? upgraded[0], oldType: duplicated.length !== 0 ? "duplicate" : "upgrade" }
   }, [artifact, artifactIdToEdit, database, dirtyDatabase])
 
@@ -168,7 +168,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
       setShow(true)
       artifactDispatch({ type: "reset" })
     }
-    const databaseArtifact = artifactIdToEdit && dirtyDatabase && database._getArt(artifactIdToEdit)
+    const databaseArtifact = artifactIdToEdit && dirtyDatabase && database.arts.get(artifactIdToEdit)
     if (databaseArtifact) {
       setShow(true)
       artifactDispatch({ type: "overwrite", artifact: deepClone(databaseArtifact) })
@@ -228,6 +228,16 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
     ? element ?? "success"
     : "primary"
 
+  const updateSetKey = useCallback((setKey: ArtifactSetKey | "") => update({ setKey: setKey as ArtifactSetKey }), [update],)
+  const setACDisable = useCallback((key: ArtifactSetKey | "") => {
+    if (key === "") return true
+    //Disable being able to select any of the prayer set unless the current slotkey is circlet
+    if (disableEditSlot && slotKey !== "circlet" && (key === "PrayersForDestiny" || key === "PrayersForIllumination" || key === "PrayersForWisdom" || key === "PrayersToSpringtime"))
+      return true
+    return false
+  }, [disableEditSlot, slotKey])
+
+
   return <ModalWrapper open={show} onClose={onClose} >
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: show ? "100%" : 64 }} />}><CardDark >
       <UploadExplainationModal modalShow={modalShow} hide={() => setModalShow(false)} />
@@ -240,19 +250,27 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
           {/* Left column */}
           <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
             {/* set & rarity */}
-            <ButtonGroup sx={{ display: "flex", mb: 1 }}>
+            <Box sx={{ display: "flex", gap: 1, mb: 1 }}>
               {/* Artifact Set */}
               <ArtifactSetSingleAutocomplete
-                size="small"
+                showDefault
                 disableClearable
+                size="small"
                 artSetKey={artifact?.setKey ?? ""}
-                setArtSetKey={setKey => update({ setKey: setKey as ArtifactSetKey })}
-                sx={{ flexGrow: 1 }}
-                disabled={disableEditSetSlot}
+                setArtSetKey={updateSetKey}
+                sx={(theme) => ({
+                  flexGrow: 1,
+                  ".MuiFilledInput-root": {
+                    borderBottomRightRadius: theme.shape.borderRadius,
+                    borderBottomLeftRadius: theme.shape.borderRadius
+                  }
+                })}
+                defaultText={t("editor.unknownSetName")}
+                disable={setACDisable}
               />
               {/* rarity dropdown */}
-              <ArtifactRarityDropdown rarity={artifact ? rarity : undefined} onChange={r => update({ rarity: r })} filter={r => !!sheet?.rarity?.includes?.(r)} disabled={disableEditSetSlot || !sheet} />
-            </ButtonGroup>
+              <ArtifactRarityDropdown rarity={artifact ? rarity : undefined} onChange={r => update({ rarity: r })} filter={r => !!sheet?.rarity?.includes?.(r)} disabled={!sheet} />
+            </Box>
 
             {/* level */}
             <Box component="div" display="flex">
@@ -268,7 +286,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
 
             {/* slot */}
             <Box component="div" display="flex">
-              <ArtifactSlotDropdown disabled={disableEditSetSlot || !sheet} slotKey={slotKey} onChange={slotKey => update({ slotKey })} />
+              <ArtifactSlotDropdown disabled={disableEditSlot || !sheet} slotKey={slotKey} onChange={slotKey => update({ slotKey })} />
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                 <Suspense fallback={<Skeleton width="60%" />}>
                   <Typography color="text.secondary">
@@ -380,7 +398,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
           <Grid item>
             {oldType === "edit" ?
               <Button startIcon={<Add />} onClick={() => {
-                database.updateArt(editorArtifact!, old!.id);
+                database.arts.set(old!.id, editorArtifact!);
                 if (allowEmpty) reset()
                 else {
                   setShow(false)
@@ -390,7 +408,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
                 {t`editor.btnSave`}
               </Button> :
               <Button startIcon={<Add />} onClick={() => {
-                database.createArt(artifact!);
+                database.arts.new(artifact!);
                 if (allowEmpty) reset()
                 else {
                   setShow(false)
@@ -407,7 +425,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             {process.env.NODE_ENV === "development" && <Button color="info" startIcon={<Shuffle />} onClick={async () => artifactDispatch({ type: "overwrite", artifact: await randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
           </Grid>
           {old && oldType !== "edit" && <Grid item>
-            <Button startIcon={<Update />} onClick={() => { database.updateArt(editorArtifact!, old.id); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>
+            <Button startIcon={<Update />} onClick={() => { database.arts.set(old.id, editorArtifact!); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>
           </Grid>}
         </Grid>
       </CardContent>

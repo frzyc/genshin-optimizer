@@ -24,7 +24,10 @@ const data = dataObjForWeaponSheet(key, data_gen, {
   total: {
     atk
   }
+}, {
+  atk
 })
+
 const sheet: IWeaponSheet = {
   icon,
   iconAwaken,

@@ -15,7 +15,7 @@ const InvisInput = styled('input')({
   display: 'none',
 });
 
-export default function UploadCard() {
+export default function UploadCard({ onReplace }: { onReplace: () => void }) {
   const { database } = useContext(DatabaseContext)
   const { t } = useTranslation("settings");
   const [data, setdata] = useState("")
@@ -59,6 +59,7 @@ export default function UploadCard() {
   const reset = () => {
     setdata("")
     setfilename("")
+    onReplace()
   }
   const onUpload = async e => {
     const file = e.target.files[0]
@@ -86,7 +87,7 @@ export default function UploadCard() {
       </Grid>
       <Typography gutterBottom variant="caption"><Trans t={t} i18nKey="settings:uploadCard.hintPaste" /></Typography>
       <Box component="textarea" sx={{ width: "100%", fontFamily: "monospace", minHeight: "10em", mb: 2, resize: "vertical" }} value={data} onChange={e => setdata(e.target.value)} />
-      {UploadInfo(dataObj) ?? errorMsg}
+      {UploadInfo(dataObj) ?? t(errorMsg)}
     </CardContent>
     {UploadAction(dataObj, reset)}
   </CardLight>
@@ -155,9 +156,9 @@ function GOUploadAction({ data: { storage }, data, reset }: { data: ImportResult
   const { t } = useTranslation("settings")
   const dataValid = data.characters?.total || data.artifacts?.total || data.weapons?.total
   const replaceDB = () => {
-    database.storage.clear()
+    database.clear()
     database.storage.copyFrom(storage)
-    setDatabase(new ArtCharDatabase(database.storage, true))
+    setDatabase(new ArtCharDatabase(database.storage))
     reset()
   }
 

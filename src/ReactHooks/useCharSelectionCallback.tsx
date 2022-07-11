@@ -18,17 +18,17 @@ export default function useCharSelectionCallback() {
   let { params: { tab = "" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "" } }
   const cb = useCallback(
     async (characterKey: CharacterKey) => {
-      const character = database._getChar(characterKey)
+      const character = database.chars.get(characterKey)
       let navTab = tab
       // Create a new character + weapon, with linking if char isnt in db.
       if (!character) {
         const newChar = initialCharacter(characterKey)
-        database.updateChar(newChar)
+        database.chars.set(characterKey, newChar)
         const characterSheet = await CharacterSheet.get(characterKey)
         if (!characterSheet) return
         const weapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
-        const weaponId = database.createWeapon(weapon)
-        database.setWeaponLocation(weaponId, characterKey)
+        const weaponId = database.weapons.new(weapon)
+        database.weapons.set(weaponId, { location: characterKey })
         // If we are navigating to a new character,
         // redirect to Overview, regardless of previous tab.
         // Trying to enforce a certain UI flow when building new characters
@@ -62,6 +62,5 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     constellation: 0,
     team: ["", "", ""],
     compareData: false,
-    favorite: false,
   }
 }

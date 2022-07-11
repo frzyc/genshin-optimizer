@@ -103,8 +103,8 @@ export function objClearEmpties(o) {
     if (!Object.keys(o[k]).length) delete o[k];
   }
 }
-export function crawlObject(obj, keys, validate, cb) {
-  if (validate(obj)) cb(obj, keys)
+export function crawlObject(obj: any, keys: string[] = [], validate: (o: any, keys: string[]) => boolean, cb: (o: any, keys: string[]) => void) {
+  if (validate(obj, keys)) cb(obj, keys)
   else obj && typeof obj === "object" && Object.entries(obj).forEach(([key, val]) => crawlObject(val, [...keys, key], validate, cb))
 }
 // const getObjectKeysRecursive = (obj) => Object.values(obj).reduce((a, prop) => typeof prop === "object" ? [...a, ...getObjectKeysRecursive(prop)] : a, Object.keys(obj))
@@ -148,6 +148,13 @@ export function cartesian<T>(...q: T[][]): T[][] {
   return q.reduce((a, b) => a.flatMap(d => b.map(e => [d, [e]].flat())), [[]] as T[][])
 }
 
+export function partition<T>(q: T[], length: number): T[][] {
+  let rest = q.length % length
+  let size = Math.floor(q.length / length)
+  let j = 0;
+  return Array.from({ length }, (_, i) => q.slice(j, j += size + (i < rest ? 1 : 0)));
+}
+
 /** Will change `arr` in-place */
 export function toggleInArr<T>(arr: T[], value: T) {
   const ind = arr.indexOf(value)
@@ -157,4 +164,10 @@ export function toggleInArr<T>(arr: T[], value: T) {
 
 export function toggleArr<T>(arr: T[], value: T) {
   return arr.includes(value) ? arr.filter(a => a !== value) : [...arr, value]
+}
+
+export function deepFreeze(obj: any, layers: number = 5) {
+  if (layers === 0) return
+  if (typeof obj === "object")
+    Object.values(Object.freeze(obj)).forEach(o => deepFreeze(o, layers--))
 }

@@ -1,7 +1,7 @@
 import { CheckBox, CheckBoxOutlineBlank } from "@mui/icons-material";
 import { Button, CardContent, Typography } from "@mui/material";
 import CardLight from "../Components/Card/CardLight";
-import { initGlobalSettings } from "../GlobalSettings";
+import { initGlobalSettings } from "../stateInit";
 import useDBState from "../ReactHooks/useDBState";
 
 export default function TCToggleCard() {

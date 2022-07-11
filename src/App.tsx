@@ -60,51 +60,53 @@ function ScrollTop({ children }: { children: React.ReactElement }) {
 function App() {
   const [database, setDatabase] = useState(() => new ArtCharDatabase(new DBLocalStorage(localStorage)))
   const dbContextObj = useMemo(() => ({ database, setDatabase }), [database, setDatabase])
-  return <React.StrictMode>
-    {/* https://mui.com/guides/interoperability/#css-injection-order-2 */}
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <DatabaseContext.Provider value={dbContextObj}>
-          <HashRouter basename="/">
+  return <StyledEngineProvider injectFirst>{/* https://mui.com/guides/interoperability/#css-injection-order-2 */}
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <DatabaseContext.Provider value={dbContextObj}>
+        <HashRouter basename="/">
+          <Suspense fallback={null}>
             <MatchTitle />
-            <Grid container direction="column" minHeight="100vh">
-              <Grid item >
-                <Header anchor="back-to-top-anchor" />
-              </Grid>
-              <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1, md: 2 } }}>
-                <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%" }} />}>
-                  <Routes>
-                    <Route index element={<PageHome />} />
-                    <Route path="/artifacts" element={<PageArtifact />} />
-                    <Route path="/weapons" element={<PageWeapon />} />
-                    <Route path="/characters/*"  >
-                      <Route index element={<PageCharacter />} />
-                      <Route path=":characterKey/*" element={<CharacterDisplay />} />
-                    </Route>
-                    <Route path="/tools" element={<PageTools />} />
-                    <Route path="/setting" element={<PageSettings />} />
-                    <Route path="/doc/*" element={<PageDocumentation />} />
-                    <Route path="/scanner" element={<PageScanner />} />
-                  </Routes>
-                </Suspense>
-              </Container>
-              {/* make sure footer is always at bottom */}
-              <Grid item flexGrow={1} />
-              <Grid item >
-                <Footer />
-              </Grid>
-            </Grid>
-            <ScrollTop >
-              <Fab color="secondary" size="small" aria-label="scroll back to top">
-                <KeyboardArrowUp />
-              </Fab>
-            </ScrollTop>
-          </HashRouter>
-        </DatabaseContext.Provider>
-      </ThemeProvider>
-    </StyledEngineProvider>
-  </React.StrictMode>
+          </Suspense>
+          <Content />
+          <ScrollTop >
+            <Fab color="secondary" size="small" aria-label="scroll back to top">
+              <KeyboardArrowUp />
+            </Fab>
+          </ScrollTop>
+        </HashRouter>
+      </DatabaseContext.Provider>
+    </ThemeProvider>
+  </StyledEngineProvider>
+}
+function Content() {
+  return <Grid container direction="column" minHeight="100vh">
+    <Grid item >
+      <Header anchor="back-to-top-anchor" />
+    </Grid>
+    <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1, md: 2 } }}>
+      <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%" }} />}>
+        <Routes>
+          <Route index element={<PageHome />} />
+          <Route path="/artifacts" element={<PageArtifact />} />
+          <Route path="/weapons" element={<PageWeapon />} />
+          <Route path="/characters/*"  >
+            <Route index element={<PageCharacter />} />
+            <Route path=":characterKey/*" element={<CharacterDisplay />} />
+          </Route>
+          <Route path="/tools" element={<PageTools />} />
+          <Route path="/setting" element={<PageSettings />} />
+          <Route path="/doc/*" element={<PageDocumentation />} />
+          <Route path="/scanner" element={<PageScanner />} />
+        </Routes>
+      </Suspense>
+    </Container>
+    {/* make sure footer is always at bottom */}
+    <Grid item flexGrow={1} />
+    <Grid item >
+      <Footer />
+    </Grid>
+  </Grid>
 }
 function MatchTitle() {
   const { t } = useTranslation("ui")

@@ -17,15 +17,17 @@ const atkInc = [0.008, 0.01, 0.012, 0.014, 0.016]
 const lowHpAtkInc = [0.01, 0.012, 0.014, 0.016, 0.018]
 const hp_ = subscript(input.weapon.refineIndex, hpInc, { key: "_" })
 const [condPassivePath, condPassive] = cond(key, "RecklessCinnabar")
-const atk1_ = prod(subscript(input.weapon.refineIndex, atkInc, { key: "_" }), input.premod.hp)
-const atk2_ = equal("on", condPassive, prod(subscript(input.weapon.refineIndex, lowHpAtkInc, { key: "_" }), input.premod.hp), { key: "atk" })
+const atk1 = prod(subscript(input.weapon.refineIndex, atkInc, { key: "_" }), input.premod.hp)
+const atk2 = equal("on", condPassive, prod(subscript(input.weapon.refineIndex, lowHpAtkInc, { key: "_" }), input.premod.hp), { key: "atk" })
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     hp_,
   },
   total: {
-    atk: sum(atk1_, atk2_)
+    atk: sum(atk1, atk2)
   }
+}, {
+  atk2_: atk2
 })
 
 const sheet: IWeaponSheet = {
@@ -36,7 +38,7 @@ const sheet: IWeaponSheet = {
     fields: [{
       node: hp_
     }, {
-      node: infoMut(atk1_, { key: "atk" })
+      node: infoMut(atk1, { key: "atk" })
     }],
   }, {
     value: condPassive,
@@ -46,7 +48,7 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: atk2_,
+          node: atk2,
         }]
       }
     }

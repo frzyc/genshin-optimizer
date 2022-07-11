@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BackgroundWorker";
-import { CharacterContext } from '../../../../CharacterContext';
+import { CharacterContext } from '../../../../Context/CharacterContext';
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider';
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
 import CardLight from '../../../../Components/Card/CardLight';
@@ -17,16 +17,15 @@ import { HitModeToggle, ReactionToggle } from '../../../../Components/HitModeEdi
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup';
 import StatFilterCard from '../../../../Components/StatFilterCard';
 import { DatabaseContext } from '../../../../Database/Database';
-import { DataContext, dataContextObj } from '../../../../DataContext';
+import { DataContext, dataContextObj } from '../../../../Context/DataContext';
 import { thresholdExclusions } from '../../../../Formula/addedUtils';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
-import { expandPoly } from '../../../../Formula/expandPoly';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
 import { elimLinDepStats, thresholdToConstBranchForm } from '../../../../Formula/optimize2';
 import { NumNode } from '../../../../Formula/type';
 import { UIData } from '../../../../Formula/uiData';
-import { initGlobalSettings } from '../../../../GlobalSettings';
+import { initGlobalSettings } from '../../../../stateInit';
 import KeyMap from '../../../../KeyMap';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
@@ -36,10 +35,10 @@ import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../../../Types/artifact';
 import { CharacterKey } from '../../../../Types/consts';
 import { objectKeyValueMap, objPathValue, range } from '../../../../Util/Util';
-import { FinalizeResult, Setup, SubProblem, WorkerCommand, WorkerResult } from './BackgroundWorker';
+import { FinalizeResult, Setup, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
-import useBuildSetting from './BuildSetting';
-import { Build, countBuilds, emptyfilter, filterArts, mergeBuilds, mergePlot, pruneAll } from './common';
+import useBuildSetting from './useBuildSetting';
+import { artSetPerm, Build, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
@@ -52,6 +51,8 @@ import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
 import { compactArtifacts, dynamicData } from './foreground';
+import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext';
+import { countBuildsU, problemSetup, SubProblem, toArtifactBySlotVec } from './subproblemUtil';
 
 export default function TabBuild() {
   const { t } = useTranslation("page_character")
@@ -73,17 +74,17 @@ export default function TabBuild() {
   const characterDispatch = useCharacterReducer(characterKey)
   const onClickTeammate = useCharSelectionCallback()
 
-  const noArtifact = useMemo(() => !database._getArts().length, [database])
+  const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
   const { plotBase, optimizationTarget, mainStatAssumptionLevel, allowPartial, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
-  const buildsArts = useMemo(() => builds.map(build => build.map(i => database._getArt(i)!)), [builds, database])
+  const buildsArts = useMemo(() => builds.map(build => build.map(i => database.arts.get(i)!)), [builds, database])
 
   //register changes in artifact database
   useEffect(() =>
-    database.followAnyArt(setArtsDirty),
+    database.arts.followAny(setArtsDirty),
     [setArtsDirty, database])
 
   // Provides a function to cancel the work
@@ -100,7 +101,7 @@ export default function TabBuild() {
       if (index < 0) cantTakeList = [...equipmentPriority]
       else cantTakeList = equipmentPriority.slice(0, index)
     }
-    const filteredArts = database._getArts().filter(art => {
+    const filteredArts = database.arts.values.filter(art => {
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -169,26 +170,26 @@ export default function TabBuild() {
       return [setKey, v.flatMap(v => (v === 2) ? [2, 3] : [4, 5])]
     })
     console.log({ artSetExclFull })
-    const filters = nodes
+    const constraints = nodes
       .map((value, i) => ({ value, min: minimum[i] }))
       .filter(x => x.min > -Infinity)
-    const filtersEP = nodes
-      .map((value, i) => ({ value: expandPoly(value), min: minimum[i] }))
-      .filter(x => x.min > -Infinity)
-    const initialProblem: SubProblem = {
-      cache: false,
-      optimizationTarget: expandPoly(optimizationTargetNode),
-      constraints: filtersEP,
-      artSetExclusion: artSetExclFull,
+    const artsVec = toArtifactBySlotVec(arts)
+    const initialProblem = problemSetup(artsVec, { optimizationTargetNode, nodes, minimum, artSetExclusion })
+    // const initialProblem: SubProblem = {
+    //   cache: false,
+    //   optimizationTarget: expandPoly(optimizationTargetNode),
+    //   constraints: filtersEP,
+    //   artSetExclusion: artSetExclFull,
 
-      filter: emptyfilter,
-      depth: 0,
-    }
+    //   filter: { ...emptyfilter, uType: false },
+    //   depth: 0,
+    // }
 
     const masterInfo = { id: -1, ready: true }
-    const maxSplitIters = 10
+    const maxSplitIters = 5
     const minFilterCount = 2_000 // Don't split for single worker
-    const maxRequestFilterInFlight = maxWorkers * 4
+    // const maxRequestFilterInFlight = maxWorkers * 4
+    const maxRequestFilterInFlight = 1
     const workQueue: SubProblem[] = [initialProblem]
     const idleWorkers = new Set<number>()  // Currently idle workers
     const busyWorkerIDs = new Set<number>()  // Workers with pending work in SplitWorker()
@@ -202,7 +203,8 @@ export default function TabBuild() {
     function fetchWork(): WorkerCommand | undefined {
       const subproblem = workQueue.shift()
       if (!subproblem) return undefined
-      let numBuild = countBuilds(filterArts(arts, subproblem.filter))
+      let numBuild = countBuildsU(subproblem.filters)
+      // let numBuild = countBuilds(filterArts(arts, subproblem.filter))
 
       if (numBuild <= minFilterCount) return { command: 'iterate', threshold: wrap.buildValues[maxBuildsToShow - 1], subproblem }
       return { command: 'split', threshold: wrap.buildValues[maxBuildsToShow - 1], minCount: minFilterCount, maxIter: maxSplitIters, subproblem }
@@ -219,12 +221,12 @@ export default function TabBuild() {
 
       const setup: Setup = {
         command: "setup",
-        id: i, arts,
+        id: i, arts, artsVec,
         optimizationTarget: optimizationTargetNode,
         artSetExclusion: artSetExclusion,
         plotBase: plotBaseNode,
         maxBuilds: maxBuildsToShow,
-        filters
+        filters: constraints
       }
       worker.postMessage(setup, undefined)
       // if (i === 0) {
@@ -486,7 +488,9 @@ export default function TabBuild() {
           </Grid>
         </CardContent>
       </CardLight>
-      <BuildList buildsArts={buildsArts} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} />
+      <OptimizationTargetContext.Provider value={optimizationTarget}>
+        <BuildList buildsArts={buildsArts} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} />
+      </OptimizationTargetContext.Provider>
     </DataContext.Provider>}
   </Box>
 }

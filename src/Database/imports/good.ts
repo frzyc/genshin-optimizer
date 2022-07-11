@@ -1,7 +1,6 @@
 import { ArtCharDatabase } from "../Database";
 import { SandboxStorage } from "../DBStorage";
 import { GOSource, IGO, IGOOD, ImportResult, newCounter } from "../exim";
-import { setDBVersion } from "../utils";
 import { merge } from "./merge";
 import { migrate } from "./migrate";
 import { parseArtifact, parseCharacter, parseWeapon } from "./parse";
@@ -84,7 +83,7 @@ function parseImport(data: IGOOD): ImportResult | undefined {
   if (source === GOSource) {
     const { dbVersion, states, buildSettings } = data as unknown as IGO
     if (dbVersion < 8) return // Something doesn't look right here
-    setDBVersion(storage, dbVersion)
+    storage.setDBVersion(dbVersion)
     states && states.forEach(s => {
       const { key, ...state } = s as any
       if (!key) return
@@ -99,7 +98,7 @@ function parseImport(data: IGOOD): ImportResult | undefined {
     // DO NOT CHANGE THE DB VERSION
     // Update this ONLY when it has been verified that base GOODv1 is a valid GO
     // of that particular version. Any missing/extra keys could crash the system.
-    setDBVersion(storage, 8)
+    storage.setDBVersion(8)
   }
   return result
 }

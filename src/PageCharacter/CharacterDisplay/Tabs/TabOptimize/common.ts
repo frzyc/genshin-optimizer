@@ -1,10 +1,10 @@
+import { ArtSetExclusion } from "../../../../Database/Data/BuildsettingData";
 import { forEachNodes, mapFormulas } from "../../../../Formula/internal";
 import { allOperations, constantFold } from "../../../../Formula/optimization";
 import { ConstantNode, NumNode } from "../../../../Formula/type";
 import { constant, customRead, max, min } from "../../../../Formula/utils";
 import { allSlotKeys, ArtifactSetKey, SlotKey } from "../../../../Types/consts";
 import { assertUnreachable, objectKeyMap, objectMap, range } from "../../../../Util/Util";
-import type { ArtSetExclusion } from "./BuildSetting";
 
 type DynMinMax = { [key in string]: MinMax }
 type MinMax = { min: number, max: number }
@@ -327,7 +327,39 @@ export function filterArts(arts: ArtifactsBySlot, filters: RequestFilter): Artif
     })
   }
 }
-
+export function filterArtsVec(arts: ArtifactsBySlotVec, filters: RequestFilter): ArtifactsBySlotVec {
+  return {
+    keys: arts.keys, base: arts.base, baseBuffer: arts.baseBuffer,
+    values: objectKeyMap(allSlotKeys, slot => {
+      const filter = filters[slot]
+      switch (filter.kind) {
+        case "id": return arts.values[slot].filter(art => filter.ids.has(art.id))
+        case "exclude": return arts.values[slot].filter(art => !filter.sets.has(art.set!))
+        case "required": return arts.values[slot].filter(art => filter.sets.has(art.set!))
+      }
+    })
+  }
+}
+export function filterArts2(arts: ArtifactsBySlot, filterVec: StrictDict<SlotKey, number[]>): ArtifactsBySlot {
+  return {
+    base: arts.base,
+    values: objectKeyMap(allSlotKeys, slot => {
+      const filterIxs = filterVec[slot]
+      const slotVals = arts.values[slot]
+      return filterIxs.map(ix => slotVals[ix])
+    })
+  }
+}
+export function filterArtsVec2(arts: ArtifactsBySlotVec, filterVec: StrictDict<SlotKey, number[]>): ArtifactsBySlotVec {
+  return {
+    keys: arts.keys, base: arts.base, baseBuffer: arts.baseBuffer,
+    values: objectKeyMap(allSlotKeys, slot => {
+      const filterIxs = filterVec[slot]
+      const slotVals = arts.values[slot]
+      return filterIxs.map(ix => slotVals[ix])
+    })
+  }
+}
 export function mergeBuilds(builds: Build[][], maxNum: number): Build[] {
   return builds.flatMap(x => x).sort((a, b) => b.value - a.value).slice(0, maxNum)
 }
@@ -524,6 +556,21 @@ export type ArtifactBuildData = {
   values: DynStat
 }
 export type ArtifactsBySlot = { base: DynStat, values: StrictDict<SlotKey, ArtifactBuildData[]> }
+
+
+export type ArtifactBuildDataVecDense = {
+  id: string
+  set?: ArtifactSetKey
+  values: number[]
+  buffer: number[]
+}
+// I dont *think* its worth it to implement sparse vectors n shit
+// export type ArtifactBuildDataVecSparse = {
+//   id: string
+//   set?: ArtifactSetKey
+//   values: number[][]
+// }
+export type ArtifactsBySlotVec = { keys: string[], base: number[], values: StrictDict<SlotKey, ArtifactBuildDataVecDense[]>, baseBuffer: number[] }
 
 export type PlotData = Dict<number, Build>
 export interface Build {

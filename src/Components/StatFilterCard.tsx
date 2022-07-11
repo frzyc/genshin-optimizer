@@ -4,11 +4,11 @@ import { Button, ButtonGroup, CardContent, MenuItem, Typography } from '@mui/mat
 import { Box } from '@mui/system';
 import React, { useCallback, useContext, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CharacterContext } from '../CharacterContext';
-import { DataContext } from '../DataContext';
+import { CharacterContext } from '../Context/CharacterContext';
+import { DataContext } from '../Context/DataContext';
 import { uiInput as input } from '../Formula';
 import KeyMap, { StatColoredWithUnit, StatKey } from '../KeyMap';
-import useBuildSetting from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/BuildSetting';
+import useBuildSetting from '../PageCharacter/CharacterDisplay/Tabs/TabOptimize/useBuildSetting';
 import { ElementKey } from '../Types/consts';
 import CardLight from './Card/CardLight';
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from './CustomNumberInput';
@@ -41,8 +41,9 @@ export default function StatFilterCard({ disabled = false }: { disabled?: boolea
     <Box display="flex" flexDirection="column" gap={0.5}>
       {Object.entries(statFilters).map(([statKey, min]) => {
         return <StatFilterItem key={statKey} statKey={statKey} statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} value={min} close={() => {
-          delete statFilters[statKey]
-          setStatFilters({ ...statFilters })
+          const statFilters_ = { ...statFilters }
+          delete statFilters_[statKey]
+          setStatFilters({ ...statFilters_ })
         }} />
       })}
       <StatFilterItem statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} />

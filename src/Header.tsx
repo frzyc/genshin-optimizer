@@ -1,60 +1,73 @@
 import { faDiscord, faPatreon, faPaypal } from "@fortawesome/free-brands-svg-icons";
-import { faBook, faCog, faGavel, faIdCard, faTools } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Menu as MenuIcon } from "@mui/icons-material";
-import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Article, Construction, Menu as MenuIcon, People, Scanner, Settings } from "@mui/icons-material";
+import { AppBar, Box, Button, Chip, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Suspense, useState } from "react";
 import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from "react-i18next";
 import { Link as RouterLink, useMatch } from "react-router-dom";
-import { SlotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
+import Assets from "./Assets/Assets";
+import { slotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
+import FontAwesomeSvgIcon from "./Components/FontAwesomeSvgIcon";
+import useDBState, { dbMetaInit } from "./ReactHooks/useDBState";
 
 const content = [{
   i18Key: "tabs.artifacts",
-  svg: SlotIconSVG.flower,
+  icon: <FontAwesomeSvgIcon icon={slotIconSVG.flower} />,
   to: "/artifacts",
   value: "artifacts",
+  resize: false
 }, {
   i18Key: "tabs.weapons",
-  svg: faGavel,
+  icon: Assets.svg.anvil,
   to: "/weapons",
   value: "weapons",
+  resize: false
 }, {
   i18Key: "tabs.characters",
-  svg: faIdCard,
+  icon: <People />,
   to: "/characters",
   value: "characters",
+  resize: false
 }, {
   i18Key: "tabs.tools",
-  svg: faTools,
+  icon: <Construction />,
   to: "/tools",
   value: "tools",
+  resize: true,
 }, {
-  i18Key: "tabs.setting",
-  svg: faCog,
-  to: "/setting",
-  value: "setting",
+  i18Key: "tabs.scanner",
+  icon: <Scanner />,
+  to: "/scanner",
+  value: "scanner",
+  resize: true,
 }, {
   i18Key: "tabs.doc",
-  svg: faBook,
+  icon: <Article />,
   to: "/doc",
   value: "doc",
+  resize: true,
+}, {
+  i18Key: "tabs.setting",
+  icon: <Settings />,
+  to: "/setting",
+  value: "setting",
+  resize: true,
 },] as const
 
 const links = [{
   i18Key: "social.paypal",
-  href: process.env.REACT_APP_PAYPAL_LINK,
-  svg: faPaypal,
+  href: process.env.REACT_APP_URL_PAYPAL_FRZYC,
+  icon: <FontAwesomeSvgIcon icon={faPaypal} />,
   label: "paypal",
 }, {
   i18Key: "social.patreon",
-  href: process.env.REACT_APP_PATREON_LINK,
-  svg: faPatreon,
+  href: process.env.REACT_APP_URL_PATREON_FRZYC,
+  icon: <FontAwesomeSvgIcon icon={faPatreon} />,
   label: "patreon",
 }, {
   i18Key: "social.discord",
-  href: process.env.REACT_APP_DISCORD_LINK,
-  svg: faDiscord,
+  href: process.env.REACT_APP_URL_DISCORD_GO,
+  icon: <FontAwesomeSvgIcon icon={faDiscord} />,
   label: "discord",
 },] as const
 
@@ -67,6 +80,7 @@ function HeaderContent({ anchor }) {
   const theme = useTheme();
   const isLarge = useMediaQuery(theme.breakpoints.up('lg'));
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const [{ name }] = useDBState("dbMeta", dbMetaInit(1))
 
   const { t } = useTranslation("ui")
 
@@ -98,13 +112,18 @@ function HeaderContent({ anchor }) {
       <Tab value="" component={RouterLink} to="/" label={<Typography variant="h6" sx={{ px: 1 }}>
         <Trans t={t} i18nKey="pageTitle">Genshin Optimizer</Trans>
       </Typography>} />
-      {content.map(({ i18Key, value, to, svg }) => <Tab key={value} value={value} component={RouterLink} to={to} icon={<FontAwesomeIcon icon={svg} />} label={t(i18Key)} />)}
+      {content.map(({ i18Key, value, to, icon, resize }) => <Tab key={value} value={value} component={RouterLink} to={to} icon={icon} iconPosition="start" label={(isLarge || !resize) && t(i18Key)} />)}
+      <Box display="flex" alignItems="center">
+        <Chip color="success" label={name} />
+      </Box>
+
       <Box flexGrow={1} />
-      {links.map(({ i18Key, href, label, svg }) => <Tab key={label} component="a" href={href} target="_blank" icon={<FontAwesomeIcon icon={svg} />} onClick={e => ReactGA.outboundLink({ label }, () => { })} label={isLarge && t(i18Key)} />)}
+      {links.map(({ i18Key, href, label, icon }) => <Tab key={label} component="a" href={href} target="_blank" icon={icon} iconPosition="start" onClick={e => ReactGA.outboundLink({ label }, () => { })} label={isLarge && t(i18Key)} />)}
     </Tabs>
   </AppBar>
 }
 function MobileHeader({ anchor, currentTab }) {
+  const [{ name }] = useDBState("dbMeta", dbMetaInit(1))
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -128,17 +147,20 @@ function MobileHeader({ anchor, currentTab }) {
           <ListItemButton key="home" component={RouterLink} to={'/'} selected={currentTab === ""} disabled={currentTab === ""} onClick={handleDrawerToggle} >
             <ListItemText>{t("pageTitle")}</ListItemText>
           </ListItemButton >
-          {content.map(({ i18Key, value, to, svg }) =>
+          {content.map(({ i18Key, value, to, icon }) =>
             <ListItemButton key={value} component={RouterLink} to={to} selected={currentTab === value} disabled={currentTab === value} onClick={handleDrawerToggle} >
-              <ListItemIcon><FontAwesomeIcon icon={svg} /></ListItemIcon>
+              <ListItemIcon>{icon}</ListItemIcon>
               <ListItemText>{t(i18Key)}</ListItemText>
             </ListItemButton >)}
+          <Box display="flex" justifyContent="center">
+            <Chip color="success" label={name} />
+          </Box>
         </List>
         <Divider />
         <List>
-          {links.map(({ i18Key, href, svg, label }) =>
+          {links.map(({ i18Key, href, icon, label }) =>
             <ListItemButton key={label} component="a" href={href} target="_blank" onClick={e => ReactGA.outboundLink({ label }, () => { })} >
-              <ListItemIcon><FontAwesomeIcon icon={svg} /></ListItemIcon>
+              <ListItemIcon>{icon}</ListItemIcon>
               <ListItemText>{t(i18Key)}</ListItemText>
             </ListItemButton >)}
         </List>

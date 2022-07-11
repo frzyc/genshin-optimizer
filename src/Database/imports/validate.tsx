@@ -16,7 +16,8 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
 
   const errors: Displayable[] = []
   const substats: ICachedSubstat[] = flex.substats.map(substat => ({ ...substat, rolls: [], efficiency: 0, accurateValue: substat.value }))
-  const validated: ICachedArtifact = { id, setKey, location, slotKey, exclude, lock, mainStatKey, rarity, level, substats, mainStatVal }
+  // Carry over the probability, since its a cached value calculated outside of the artifact.
+  const validated: ICachedArtifact = { id, setKey, location, slotKey, exclude, lock, mainStatKey, rarity, level, substats, mainStatVal, probability: ((flex as any).probability) }
 
   const allPossibleRolls: { index: number, substatRolls: number[][] }[] = []
   let totalUnambiguousRolls = 0

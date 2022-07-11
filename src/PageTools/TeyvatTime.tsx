@@ -8,7 +8,7 @@ import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import useDBState from '../ReactHooks/useDBState';
 import { DAY_MS, HOUR_MS, MINUTE_MS, SECOND_MS, timeString } from '../Util/TimeUtil';
 
-const timeZones = {
+export const timeZones = {
   "America": - 5 * HOUR_MS,
   "Europe": HOUR_MS,
   "Asia": 8 * HOUR_MS,
@@ -16,14 +16,14 @@ const timeZones = {
 }
 type TimeZoneKey = keyof typeof timeZones
 
-function initToolsDisplayTimezone() {
+export function initToolsDisplayTimezone() {
   return { timeZoneKey: Object.keys(timeZones)[0] as TimeZoneKey }
 }
 export default function TeyvatTime() {
   const [{ timeZoneKey }, setTimeZone] = useDBState("ToolsDisplayTimezone", initToolsDisplayTimezone)
   const setTimeZoneKey = useCallback((timeZoneKey) => setTimeZone({ timeZoneKey }), [setTimeZone])
 
-  let [time, setTime] = useState(new Date(Date.now() + timeZones[timeZoneKey]))
+  const [time, setTime] = useState(new Date(Date.now() + timeZones[timeZoneKey]))
   //set a timer. timer resets when timezone is changed.
   useEffect(() => {
     let setSecondTimeout = () => {

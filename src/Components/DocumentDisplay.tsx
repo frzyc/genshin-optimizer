@@ -1,6 +1,6 @@
 import { Box, CardHeader, Divider, Typography } from "@mui/material"
 import { useContext } from "react"
-import { DataContext } from "../DataContext"
+import { DataContext } from "../Context/DataContext"
 import { DocumentSection, IDocumentFields, IDocumentHeader, IDocumentText } from "../Types/sheet"
 import { evalIfFunc } from "../Util/Util"
 import CardDark from "./Card/CardDark"

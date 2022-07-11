@@ -23,20 +23,8 @@ export interface ICharacter {
   enemyOverride: Partial<Record<EleEnemyResKey | "enemyLevel" | "enemyDefRed_" | "enemyDefIgn_", number>>
   infusionAura: ElementKey | ""
   compareData: boolean
-  favorite: boolean
 }
 export interface ICachedCharacter extends ICharacter {
   equippedArtifacts: StrictDict<SlotKey, string>
   equippedWeapon: string
-}
-
-export type TalentSheetElementKey = "auto" | "skill" | "burst" | "sprint" | "passive" | "passive1" | "passive2" | "passive3" | "constellation1" | "constellation2" | "constellation3" | "constellation4" | "constellation5" | "constellation6"
-export type TalentSheet = {
-  sheets: Dict<TalentSheetElementKey, TalentSheetElement>
-}
-
-export interface TalentSheetElement {
-  name: Displayable //talentName
-  img: string
-  sections: DocumentSection[]
 }

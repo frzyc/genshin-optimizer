@@ -1,7 +1,7 @@
+import { allSubstatKeys } from "../../Types/artifact"
 import { allElements, allWeaponTypeKeys } from "../../Types/consts"
 import { crawlObject, layeredAssignment } from "../../Util/Util"
 import { DBStorage } from "../DBStorage"
-import { getDBVersion, setDBVersion } from "../utils"
 
 // MIGRATION STEP
 // 0. DO NOT change old `migrateV<x>ToV<x+1>` code
@@ -9,7 +9,7 @@ import { getDBVersion, setDBVersion } from "../utils"
 // 2. Call the added `migrateV<x>ToV<x+1>` from `migrate`
 // 3. Update `currentDBVersion`
 
-export const currentDBVersion = 18
+export const currentDBVersion = 19
 
 /**
  * Migrate parsed data in `storage` in-place to a parsed data of the latest supported DB version.
@@ -18,34 +18,30 @@ export const currentDBVersion = 18
  * Throw an error if `storage` uses unsupported DB version.
  */
 export function migrate(storage: DBStorage): { migrated: boolean } {
-  const version = getDBVersion(storage)
-  if (version < 8) {
-    storage.clear()
-    setDBVersion(storage, currentDBVersion)
-    return { migrated: false }
-  }
+  const version = storage.getDBVersion()
 
   // Update version upon each successful migration, so we don't
   // need to migrate that part again if later parts fail.
   if (version < 8) {
     storage.clear()
-    setDBVersion(storage, currentDBVersion)
+    storage.setDBVersion(currentDBVersion)
     return { migrated: false }
   }
-  if (version < 9) { migrateV8ToV9(storage); setDBVersion(storage, 9) }
-  if (version < 10) { migrateV9ToV10(storage); setDBVersion(storage, 10) }
-  if (version < 11) { migrateV10ToV11(storage); setDBVersion(storage, 11) }
-  if (version < 12) { migrateV11ToV12(storage); setDBVersion(storage, 12) }
-  if (version < 13) { migrateV12ToV13(storage); setDBVersion(storage, 13) }
-  if (version < 14) { migrateV13ToV14(storage); setDBVersion(storage, 14) }
-  if (version < 15) { migrateV14ToV15(storage); setDBVersion(storage, 15) }
-  if (version < 16) { migrateV15ToV16(storage); setDBVersion(storage, 16) }
-  if (version < 17) { migrateV16toV17(storage); setDBVersion(storage, 17) }
-  if (version < 18) { migrateV17toV18(storage); setDBVersion(storage, 18) }
+  if (version < 9) { migrateV8ToV9(storage); storage.setDBVersion(9) }
+  if (version < 10) { migrateV9ToV10(storage); storage.setDBVersion(10) }
+  if (version < 11) { migrateV10ToV11(storage); storage.setDBVersion(11) }
+  if (version < 12) { migrateV11ToV12(storage); storage.setDBVersion(12) }
+  if (version < 13) { migrateV12ToV13(storage); storage.setDBVersion(13) }
+  if (version < 14) { migrateV13ToV14(storage); storage.setDBVersion(14) }
+  if (version < 15) { migrateV14ToV15(storage); storage.setDBVersion(15) }
+  if (version < 16) { migrateV15ToV16(storage); storage.setDBVersion(16) }
+  if (version < 17) { migrateV16toV17(storage); storage.setDBVersion(17) }
+  if (version < 18) { migrateV17toV18(storage); storage.setDBVersion(18) }
+  if (version < 19) { migrateV18toV19(storage); storage.setDBVersion(19) }
 
   if (version > currentDBVersion) throw new Error(`Database version ${version} is not supported`)
 
-  return { migrated: version < getDBVersion(storage) }
+  return { migrated: version < storage.getDBVersion() }
 }
 
 // 6.1.0 - 6.1.5
@@ -228,7 +224,7 @@ function migrateV16toV17(storage: DBStorage) {
     }
   }
 }
-// 8.8.2 - Present
+// 8.8.2 - 8.11.0
 function migrateV17toV18(storage: DBStorage) {
   for (const key of storage.keys) {
     if (key.startsWith("buildSetting_")) {
@@ -247,6 +243,24 @@ function migrateV17toV18(storage: DBStorage) {
       state.weaponType = [...allWeaponTypeKeys]
       state.element = [...allElements]
       storage.set(key, state)
+    }
+  }
+}
+// 8.11.0 - Present
+function migrateV18toV19(storage: DBStorage) {
+  for (const key of storage.keys) {
+    if (key.startsWith("char_")) {
+      const characterKey = key.split("_")[1]
+      if (!characterKey) return
+      const character = storage.get(key)
+      const favorite = character.favorite
+
+      const charMeta = {
+        favorite,
+        rvFilter: [...allSubstatKeys]
+      }
+
+      storage.set(`state_charMeta_${characterKey}`, charMeta)
     }
   }
 }
