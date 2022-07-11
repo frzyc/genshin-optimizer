@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
 import usePromise from "../../ReactHooks/usePromise";
+import { initCharMeta } from "../../stateInit";
 import { allElements, allWeaponTypeKeys, CharacterKey } from "../../Types/consts";
 import { CharacterFilterConfigs, characterFilterConfigs } from "../../Util/CharacterSort";
 import { filterFunction } from "../../Util/SortByFilters";
@@ -92,7 +93,7 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
     />}
     renderOption={(props, option) => {
       const favorite = option.value !== "Equipped" && option.value !== "Inventory"
-        && option.value !== "" && database.chars.get(option.value)?.favorite
+        && option.value !== "" && database.states.getWithInit(`charMeta_${option.value}`, initCharMeta).favorite
       return <MenuItemWithImage
         key={option.value ? option.value : "default"}
         value={option.value ? option.value : "default"}

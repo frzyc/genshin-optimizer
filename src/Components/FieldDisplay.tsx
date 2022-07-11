@@ -33,7 +33,7 @@ function FieldDisplay({ field, component }: { field: IFieldDisplay, component?: 
   return <BasicFieldDisplay field={field} component={component} />
 }
 
-function BasicFieldDisplay({ field, component }: { field: IBasicFieldDisplay, component?: React.ElementType }) {
+export function BasicFieldDisplay({ field, component }: { field: IBasicFieldDisplay, component?: React.ElementType }) {
   const { data } = useContext(DataContext)
   const v = evalIfFunc(field.value, data)
   const variant = evalIfFunc(field.variant, data)

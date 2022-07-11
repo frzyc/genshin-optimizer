@@ -82,6 +82,10 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
 
     super.set(id, newArt)
   }
+  setProbability(id: string, probability?: number) {
+    const art = super.get(id)
+    if (art) super.set(id, { ...art, probability })
+  }
   clear(): void {
     super.clear()
     this.deletedArts = new Set<string>()

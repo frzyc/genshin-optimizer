@@ -6,10 +6,11 @@ import Assets from "../../Assets/Assets";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
 import { uiInput as input } from "../../Formula";
-import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
+import useDBState from "../../ReactHooks/useDBState";
 import useForceUpdate from "../../ReactHooks/useForceUpdate";
 import usePromise from "../../ReactHooks/usePromise";
 import useTeamData from "../../ReactHooks/useTeamData";
+import { initCharMeta } from "../../stateInit";
 import { ICachedCharacter } from "../../Types/character";
 import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey } from "../../Types/consts";
 import { characterFilterConfigs, characterSortConfigs } from "../../Util/CharacterSort";
@@ -51,7 +52,9 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
 
   const [favesDirty, setFavesDirty] = useForceUpdate()
-  useEffect(() => database.chars.followAny(setFavesDirty), [database, setFavesDirty])
+  useEffect(() => {
+    return database.states.followAny(s => typeof s === "string" && s.includes("charMeta_") && setFavesDirty())
+  }, [setFavesDirty, database])
 
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
@@ -120,14 +123,12 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
 
 function CharacterBtn({ onClick, characterKey, characterSheet }: { onClick: () => void, characterKey: CharacterKey, characterSheet: CharacterSheet }) {
   const teamData = useTeamData(characterKey)
-  const { database } = useContext(DatabaseContext)
-  const characterDispatch = useCharacterReducer(characterKey)
-  const favorite = database.chars.get(characterKey)?.favorite
   const { target: data } = teamData?.[characterKey] ?? {}
   const rarity = characterSheet.rarity
+  const [{ favorite }, setCharMeta] = useDBState(`charMeta_${characterKey}`, initCharMeta)
   return <Suspense fallback={<Skeleton variant="rectangular" height={130} />}><Box>
     {favorite !== undefined && <Box display="flex" position="absolute" alignSelf="start" zIndex={1}>
-      <IconButton sx={{ p: 0.5 }} onClick={() => characterDispatch({ favorite: !favorite })}>
+      <IconButton sx={{ p: 0.5 }} onClick={() => setCharMeta({ favorite: !favorite })}>
         {favorite ? <Favorite /> : <FavoriteBorder />}
       </IconButton>
     </Box>}

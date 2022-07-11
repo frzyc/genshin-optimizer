@@ -26,9 +26,11 @@ import { range } from "../../../Util/Util";
 import CharacterCardPico from "../../../Components/Character/CharacterCardPico";
 import StatInput from "../../../Components/StatInput";
 import { CharacterContext } from "../../../Context/CharacterContext";
+import useDBState from "../../../ReactHooks/useDBState";
+import { initCharMeta } from "../../../stateInit";
 
 export default function TabOverview() {
-  const { characterSheet, character: { key: characterKey, favorite, equippedWeapon, team } } = useContext(CharacterContext)
+  const { characterSheet, character: { key: characterKey, equippedWeapon, team } } = useContext(CharacterContext)
   const { data, } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
   const navigate = useNavigate()
@@ -48,6 +50,7 @@ export default function TabOverview() {
     skill: data.get(input.bonus.skill).value,
     burst: data.get(input.bonus.burst).value,
   }
+  const [{ favorite }, setCharMeta] = useDBState(`charMeta_${characterKey}`, initCharMeta)
   return <Grid container spacing={1} sx={{ justifyContent: "center" }}>
     <Grid item xs={8} sm={5} md={4} lg={2.5}  >
       {/* Image card with star and name and level */}
@@ -58,7 +61,7 @@ export default function TabOverview() {
             {characterSheet.name}&nbsp;
             <ImgIcon sx={{ pr: 0.5 }} src={Assets.weaponTypes?.[weaponTypeKey]} />
             {StatIcon[charEle]}
-            <IconButton sx={{ p: 0.5, mt: -0.5 }} onClick={() => characterDispatch({ favorite: !favorite })}>
+            <IconButton sx={{ p: 0.5, mt: -0.5 }} onClick={() => setCharMeta({ favorite: !favorite })}>
               {favorite ? <Favorite /> : <FavoriteBorder />}
             </IconButton>
           </Typography>
