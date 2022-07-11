@@ -41,5 +41,3 @@ _TEMPLATE
 # template files
 TEMPLATE*
 *_ignore.png
-
-/wasm/bin

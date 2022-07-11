@@ -135,8 +135,6 @@ export default function TabBuild() {
     const cancelled = new Promise<void>(r => cancelToken.current = r)
 
     let nodes = [...valueFilter.map(x => x.value), optimizationTargetNode], arts = split!
-    // const setPerms = filterFeasiblePerm(artSetPerm(artSetExclusion, Object.values(split.values).flatMap(x => x.map(x => x.set!))), split)
-
     const minimum = [...valueFilter.map(x => x.minimum), -Infinity]
     const status: Omit<BuildStatus, "type"> = { tested: 0, failed: 0, skipped: 0, total: NaN, startTime: performance.now() }
     if (plotBase) {
@@ -158,13 +156,6 @@ export default function TabBuild() {
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
 
-    // var outcnt = 0
-    // forEachNodes([optimizationTargetNode], _ => { }, n => outcnt++)
-    // console.log('Original count', outcnt)
-    // debugHorny(expandPoly(optimizationTargetNode))
-    // debugMe(optimizationTargetNode, arts)
-    // console.log('artSetExclusion', artSetExclusion)
-
     const artSetExclFull = objectKeyValueMap(Object.entries(artSetExclusion), ([setKey, v]) => {
       if (setKey === 'rainbow') return ['uniqueKey', v.map(v => v + 1)]
       return [setKey, v.flatMap(v => (v === 2) ? [2, 3] : [4, 5])]
@@ -175,15 +166,6 @@ export default function TabBuild() {
       .filter(x => x.min > -Infinity)
     const artsVec = toArtifactBySlotVec(arts)
     const initialProblem = problemSetup(artsVec, { optimizationTargetNode, nodes, minimum, artSetExclusion })
-    // const initialProblem: SubProblem = {
-    //   cache: false,
-    //   optimizationTarget: expandPoly(optimizationTargetNode),
-    //   constraints: filtersEP,
-    //   artSetExclusion: artSetExclFull,
-
-    //   filter: { ...emptyfilter, uType: false },
-    //   depth: 0,
-    // }
 
     const masterInfo = { id: -1, ready: true }
     const maxSplitIters = 5
