@@ -36,6 +36,7 @@ import Rosaria from './Rosaria'
 import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
 import Shenhe from "./Shenhe"
+import ShikanoinHeizou from "./ShikanoinHeizou"
 import Sucrose from "./Sucrose"
 import Tartaglia from './Tartaglia'
 import Thoma from './Thoma'
@@ -88,6 +89,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   SangonomiyaKokomi,
   Sayu,
   Shenhe,
+  ShikanoinHeizou,
   Sucrose,
   Tartaglia,
   Thoma,
