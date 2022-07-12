@@ -47,7 +47,7 @@ export default function TeamCard() {
     <Divider />
     <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
       <Grid container columns={{ xs: 6, md: 5 }} spacing={1}>
-        {team.map(({ name, img, title, subtitle, url }, i) => <Grid item key="name" xs={i < 2 ? 3 : 2} md={1}>
+        {team.map(({ name, img, title, subtitle, url }, i) => <Grid item key={name} xs={i < 2 ? 3 : 2} md={1}>
           <CardLight sx={{ height: "100%" }}>
             <CardContent>
               <Box component="img" src={img} sx={{ width: "100%", height: "auto", borderRadius: "50%" }} />

@@ -164,7 +164,7 @@ function ArtifactSectionCard() {
   const unequipArts = useCallback(() => {
     if (!character) return
     if (!window.confirm("Do you want to move all currently equipped artifacts to inventory?")) return
-    database.chars.equipArtifacts(character.key, objectKeyMap(allSlotKeys, _ => ""))
+    Object.values(equippedArtifacts).forEach(aid => database.arts.set(aid, { location: "" }))
   }, [character, database])
 
   const setEffects = useMemo(() => artifactSheets && ArtifactSheet.setEffects(artifactSheets, data), [artifactSheets, data])
