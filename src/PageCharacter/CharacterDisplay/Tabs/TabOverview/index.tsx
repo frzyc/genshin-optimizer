@@ -4,7 +4,6 @@ import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import Assets from "../../../../Assets/Assets";
-import { CharacterContext } from "../../../../Context/CharacterContext";
 import ArtifactCardNano from "../../../../Components/Artifact/ArtifactCardNano";
 import CardLight from "../../../../Components/Card/CardLight";
 import CharacterCardPico from "../../../../Components/Character/CharacterCardPico";
@@ -12,16 +11,19 @@ import ImgIcon from "../../../../Components/Image/ImgIcon";
 import { Stars } from "../../../../Components/StarDisplay";
 import StatIcon from "../../../../Components/StatIcon";
 import WeaponCardNano from "../../../../Components/Weapon/WeaponCardNano";
-import CharacterSheet, { TalentSheetElementKey } from "../../../../Data/Characters/CharacterSheet";
+import { CharacterContext } from "../../../../Context/CharacterContext";
 import { DataContext } from "../../../../Context/DataContext";
+import CharacterSheet, { TalentSheetElementKey } from "../../../../Data/Characters/CharacterSheet";
 import { uiInput as input } from "../../../../Formula";
 import useCharacterReducer from "../../../../ReactHooks/useCharacterReducer";
+import useDBState from "../../../../ReactHooks/useDBState";
+import { initCharMeta } from "../../../../stateInit";
 import { allSlotKeys, ElementKey } from "../../../../Types/consts";
 import { range } from "../../../../Util/Util";
 import StatCards from "./StatCards";
 
 export default function TabOverview() {
-  const { characterSheet, character: { key: characterKey, favorite, equippedWeapon, team } } = useContext(CharacterContext)
+  const { characterSheet, character: { key: characterKey, equippedWeapon, team } } = useContext(CharacterContext)
   const { data, } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
   const navigate = useNavigate()
@@ -41,6 +43,7 @@ export default function TabOverview() {
     skill: data.get(input.bonus.skill).value,
     burst: data.get(input.bonus.burst).value,
   }
+  const [{ favorite }, setCharMeta] = useDBState(`charMeta_${characterKey}`, initCharMeta)
   return <Grid container spacing={1} sx={{ justifyContent: "center" }}>
     <Grid item xs={8} sm={5} md={4} lg={2.5}  >
       {/* Image card with star and name and level */}
@@ -51,7 +54,7 @@ export default function TabOverview() {
             {characterSheet.name}&nbsp;
             <ImgIcon sx={{ pr: 0.5 }} src={Assets.weaponTypes?.[weaponTypeKey]} />
             {StatIcon[charEle]}
-            <IconButton sx={{ p: 0.5, mt: -0.5 }} onClick={() => characterDispatch({ favorite: !favorite })}>
+            <IconButton sx={{ p: 0.5, mt: -0.5 }} onClick={() => setCharMeta({ favorite: !favorite })}>
               {favorite ? <Favorite /> : <FavoriteBorder />}
             </IconButton>
           </Typography>
