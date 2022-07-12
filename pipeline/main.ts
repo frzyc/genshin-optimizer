@@ -91,7 +91,7 @@ const characterSkillParamDump = Object.fromEntries(Object.entries(avatarExcelCon
       const skillParamBase = skillArr.map(proud => proud.paramList)
 
       //need to transpose the skillParam
-      const skillParamUntrimmed = []
+      const skillParamUntrimmed: Array<Array<number>> = []
       skillParamBase.forEach((arr, i) => {
         arr.forEach((value, j) => {
           if (!skillParamUntrimmed[j]) skillParamUntrimmed[j] = []
@@ -111,8 +111,8 @@ const characterSkillParamDump = Object.fromEntries(Object.entries(avatarExcelCon
     if (sprint)
       parseSkillParams(result, [...keys, "sprint"], skillGroups[talentsData[sprint].proudSkillGroupId])
 
-    parseSkillParams(result, [...keys, "passive1"], skillGroups[passive1.proudSkillGroupId])
-    parseSkillParams(result, [...keys, "passive2"], skillGroups[passive2.proudSkillGroupId])
+    passive1.proudSkillGroupId && parseSkillParams(result, [...keys, "passive1"], skillGroups[passive1.proudSkillGroupId])
+    passive2.proudSkillGroupId && parseSkillParams(result, [...keys, "passive2"], skillGroups[passive2.proudSkillGroupId])
     if (passive3?.proudSkillGroupId)
       parseSkillParams(result, [...keys, "passive3"], skillGroups[passive3.proudSkillGroupId])
     //seems to be only used by sangonomiyaKokomi
@@ -184,7 +184,7 @@ const weaponDataDump = Object.fromEntries(Object.entries(weaponExcelConfigData).
     addProps: refData ? refData.map(asc =>
       Object.fromEntries(asc.addProps.filter(ap => "value" in ap).map((ap: any) =>
         [propTypeMap[ap.propType] ?? ap.propType, extrapolateFloat(ap.value)]))
-    ) : undefined,
+    ) : [],
     ascension: ascData.map(asd => {
       if (!asd) return { addStats: {} }
       return {
@@ -289,11 +289,11 @@ Object.entries(avatarExcelConfigData).filter(([charid,]) => charid in characterI
       layeredAssignment(mapHashData, [...keys, "sprint", "description"], [talentsData[sprint].descTextMapHash, "paragraph"])
     }
 
-    layeredAssignment(mapHashData, [...keys, "passive1", "name"], skillGroups[passive1.proudSkillGroupId][0].nameTextMapHash)
-    layeredAssignment(mapHashData, [...keys, "passive1", "description"], [skillGroups[passive1.proudSkillGroupId][0].descTextMapHash, "paragraph"])
+    passive1.proudSkillGroupId && layeredAssignment(mapHashData, [...keys, "passive1", "name"], skillGroups[passive1.proudSkillGroupId][0].nameTextMapHash)
+    passive1.proudSkillGroupId && layeredAssignment(mapHashData, [...keys, "passive1", "description"], [skillGroups[passive1.proudSkillGroupId][0].descTextMapHash, "paragraph"])
 
-    layeredAssignment(mapHashData, [...keys, "passive2", "name"], skillGroups[passive2.proudSkillGroupId][0].nameTextMapHash)
-    layeredAssignment(mapHashData, [...keys, "passive2", "description"], [skillGroups[passive2.proudSkillGroupId][0].descTextMapHash, "paragraph"])
+    passive2.proudSkillGroupId && layeredAssignment(mapHashData, [...keys, "passive2", "name"], skillGroups[passive2.proudSkillGroupId][0].nameTextMapHash)
+    passive2.proudSkillGroupId && layeredAssignment(mapHashData, [...keys, "passive2", "description"], [skillGroups[passive2.proudSkillGroupId][0].descTextMapHash, "paragraph"])
 
     if (passive3?.proudSkillGroupId) {
       layeredAssignment(mapHashData, [...keys, "passive3", "name"], skillGroups[passive3.proudSkillGroupId][0].nameTextMapHash)

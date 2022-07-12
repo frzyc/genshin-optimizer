@@ -2,7 +2,7 @@ import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
 import { constant, greaterEq, infoMut, lessThan, percent, prod, subscript, sum } from '../../../Formula/utils'
 import { CharacterKey, ElementKey, Region } from '../../../Types/consts'
-import { trans } from '../../SheetUtil'
+import { st, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { customDmgNode, customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, card, talentAssets, thumb, thumbSide } from './assets'
@@ -13,7 +13,7 @@ const data_gen = data_gen_src as CharacterData
 const key: CharacterKey = "Fischl"
 const elementKey: ElementKey = "electro"
 const region: Region = "mondstadt"
-const [tr, trm] = trans("char", key)
+const [tr] = trans("char", key)
 const ct = charTemplates(key, data_gen.weaponTypeKey, talentAssets)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
@@ -174,7 +174,7 @@ const sheet: ICharacterSheet = {
           unit: "s"
         }, {
           canShow: (data) => data.get(input.constellation).value >= 2,
-          text: trm("c2AoeIncrease"),
+          text: st("aoeInc"),
           value: 50,
           unit: "%"
         }]
