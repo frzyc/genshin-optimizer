@@ -3,6 +3,7 @@ import { ColorTag, Language, tagColor } from "."
 export function preprocess(string: string): string {
   { // color tags
     const stack: ColorTag[] = []
+    if (!string) string = ""
     string = string.replace(/<(\/?)color(?:=#([0-9A-F]{8}))?>/g, (_match, isClosed, color) => {
       if (isClosed) return `</${stack.pop()}>`
       const tag = tagColor[color]
@@ -52,6 +53,7 @@ function plungeUtil(lang, string, low) {
       break;
     case "th":
       string = string.replace(/((\S{3})\/(\S{3}))/, res)
+      break;
     default:
       string = string.replace(/((\S+)\/(\S+))/, res)
       break;
@@ -69,7 +71,7 @@ const autoFields = string => {
   return strings.map(s => ({ ...paragraph(s) }))
 }
 
-export const parsingFunctions: { [key: string]: (lang: Language, string: string, keys?: string[]) => any } = {
+export const parsingFunctions: { [key: string]: (lang: Language, string: string, keys: string[]) => any } = {
   autoName: (lang, string) => {
     //starts with Normal Attack: ______ in english
     if (string.includes("·")) {
@@ -90,7 +92,7 @@ export const parsingFunctions: { [key: string]: (lang: Language, string: string,
       const [normal, charged, plunging] = strings
       return { normal, charged, plunging } as any
     } else if (strings.length === 4) {//for childe or kazuha
-      const [, charkey] = keys
+      const [, charkey] = keys as any
       if (charkey === "KaedeharaKazuha") {
         const [normal, charged, plunging, plunging_midare] = strings
         return { normal, charged, plunging, plunging_midare } as any
@@ -108,6 +110,7 @@ export const parsingFunctions: { [key: string]: (lang: Language, string: string,
   },
   paragraph: (lang, string) => paragraph(string),
   skillParam: (lang, string) => {
+    if (!string) string = ""
     string = string.split('|')[0]
     return string
   },

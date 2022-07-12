@@ -108,8 +108,8 @@ export default function loadImages() {
       if (sprint)
         layeredAssignment(characterAssetDump, [...keys, "sprint"], talentsData[sprint].skillIcon)
 
-      layeredAssignment(characterAssetDump, [...keys, "passive1"], skillGroups[passive1.proudSkillGroupId][0].icon)
-      layeredAssignment(characterAssetDump, [...keys, "passive2"], skillGroups[passive2.proudSkillGroupId][0].icon)
+      passive1.proudSkillGroupId && layeredAssignment(characterAssetDump, [...keys, "passive1"], skillGroups[passive1.proudSkillGroupId][0].icon)
+      passive2.proudSkillGroupId && layeredAssignment(characterAssetDump, [...keys, "passive2"], skillGroups[passive2.proudSkillGroupId][0].icon)
       if (passive3?.proudSkillGroupId)
         layeredAssignment(characterAssetDump, [...keys, "passive3"], skillGroups[passive3.proudSkillGroupId][0].icon)
 

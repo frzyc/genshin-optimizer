@@ -254,7 +254,7 @@ const sheet: ICharacterSheet = {
         }
       }), ct.headerTemplate("constellation1", {
         fields: [{
-          text: trm("c1.aoeInc"),
+          text: st("aoeInc"),
           value: datamine.constellation1.aoeInc * 100,
           unit: "%",
         }]
