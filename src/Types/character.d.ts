@@ -23,7 +23,6 @@ export interface ICharacter {
   enemyOverride: Partial<Record<EleEnemyResKey | "enemyLevel" | "enemyDefRed_" | "enemyDefIgn_", number>>
   infusionAura: ElementKey | ""
   compareData: boolean
-  favorite: boolean
 }
 export interface ICachedCharacter extends ICharacter {
   equippedArtifacts: StrictDict<SlotKey, string>

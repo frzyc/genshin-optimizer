@@ -24,7 +24,7 @@ import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
 import { NumNode } from '../../../../Formula/type';
 import { UIData } from '../../../../Formula/uiData';
-import { initGlobalSettings } from '../../../../GlobalSettings';
+import { initGlobalSettings } from '../../../../stateInit';
 import KeyMap from '../../../../KeyMap';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';

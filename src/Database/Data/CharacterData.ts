@@ -46,12 +46,12 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     const {
       key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditional,
       bonusStats, enemyOverride, talent, infusionAura, constellation, team,
-      compareData, favorite
+      compareData
     } = char
     const result: ICharacter = {
       key: characterKey, level, ascension, hitMode, reactionMode, conditional,
       bonusStats, enemyOverride, talent, infusionAura, constellation, team,
-      compareData, favorite
+      compareData
     }
     if (elementKey) result.elementKey = elementKey
     return result

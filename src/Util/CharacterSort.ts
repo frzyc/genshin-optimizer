@@ -1,6 +1,7 @@
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { ArtCharDatabase } from "../Database/Database";
 import i18n from "../i18n";
+import { initCharMeta } from "../stateInit";
 import { CharacterKey } from "../Types/consts";
 import { FilterConfigs, SortConfigs } from "./SortByFilters";
 export const characterSortKeys = ["level", "rarity", "name"]
@@ -38,7 +39,7 @@ export function characterFilterConfigs(database: ArtCharDatabase, characterSheet
       (ck === "Traveler" && filter.includes(database.chars.get(ck as CharacterKey)?.elementKey)),
     weaponType: (ck, filter) => filter.includes(characterSheets?.[ck]?.weaponTypeKey),
     favorite: (ck, filter) =>
-      !filter || (filter === (database.chars.get(ck as CharacterKey)?.favorite ? "yes" : "no")),
+      !filter || (filter === (database.states.getWithInit(`charMeta_${ck}`, initCharMeta).favorite ? "yes" : "no")),
     name: (ck, filter) => !filter || (i18n.t(`charNames_gen:${ck}`).toLowerCase().includes(filter.toLowerCase()))
   }
 }

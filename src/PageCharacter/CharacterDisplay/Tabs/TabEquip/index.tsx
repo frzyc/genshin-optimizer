@@ -1,24 +1,33 @@
-import { SwapHoriz } from '@mui/icons-material';
-import { Box, Button, CardContent, Divider, Grid, Tooltip, Typography, useMediaQuery } from '@mui/material';
+import { Settings, SwapHoriz } from '@mui/icons-material';
+import { Box, Button, CardContent, Divider, Grid, ListItem, Tooltip, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from "@mui/system";
-import { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay';
 import SlotNameWithIcon from '../../../../Components/Artifact/SlotNameWIthIcon';
+import SubstatToggle from '../../../../Components/Artifact/SubstatToggle';
+import CardDark from '../../../../Components/Card/CardDark';
 import CardLight from '../../../../Components/Card/CardLight';
 import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent';
 import DocumentDisplay from "../../../../Components/DocumentDisplay";
+import { BasicFieldDisplay, FieldDisplayList } from '../../../../Components/FieldDisplay';
+import ModalWrapper from '../../../../Components/ModalWrapper';
+import PercentBadge from '../../../../Components/PercentBadge';
 import { CharacterContext } from '../../../../Context/CharacterContext';
 import { DataContext } from '../../../../Context/DataContext';
+import Artifact from '../../../../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../Database/Database';
 import { uiInput as input } from '../../../../Formula';
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard';
 import WeaponCard from '../../../../PageWeapon/WeaponCard';
 import useBoolState from '../../../../ReactHooks/useBoolState';
-import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
+import useDBState from "../../../../ReactHooks/useDBState";
 import usePromise from '../../../../ReactHooks/usePromise';
+import { initCharMeta } from '../../../../stateInit';
+import { allSubstatKeys } from '../../../../Types/artifact';
 import { allSlotKeys, SlotKey, WeaponTypeKey } from '../../../../Types/consts';
+import { IFieldDisplay } from '../../../../Types/fieldDisplay';
 import { objectKeyMap } from '../../../../Util/Util';
 import useBuildSetting from '../TabOptimize/useBuildSetting';
 import ArtifactSwapModal from './ArtifactSwapModal';
@@ -27,8 +36,7 @@ import WeaponSwapModal from './WeaponSwapModal';
 const WeaponEditor = lazy(() => import('../../../../PageWeapon/WeaponEditor'))
 
 function TabEquip() {
-  const { t } = useTranslation("page_character")
-  const { character, character: { equippedWeapon, key: characterKey, equippedArtifacts }, characterSheet } = useContext(CharacterContext)
+  const { character: { equippedWeapon, key: characterKey }, characterSheet } = useContext(CharacterContext)
   const { buildSetting: { mainStatAssumptionLevel } } = useBuildSetting(characterKey)
   const { teamData, data } = useContext(DataContext)
   const weaponSheet = teamData[characterKey]?.weaponSheet
@@ -42,38 +50,13 @@ function TabEquip() {
       setweaponId(equippedWeapon)
   }, [weaponId, equippedWeapon])
 
-  const { database } = useContext(DatabaseContext)
-  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
-
-  // TODO: We can also listen only to equipped artifacts
-  const [, updateArt] = useForceUpdate()
-  useEffect(() => database.arts.followAny(updateArt))
-
-  const hasEquipped = useMemo(() => !!Object.values(equippedArtifacts).filter(i => i).length, [equippedArtifacts])
-  const unequipArts = useCallback(() => {
-    if (!character) return
-    if (!window.confirm("Do you want to move all currently equipped artifacts to inventory?")) return
-    database.chars.equipArtifacts(character.key, objectKeyMap(allSlotKeys, _ => ""))
-  }, [character, database])
-  const setEffects = useMemo(() => artifactSheets && ArtifactSheet.setEffects(artifactSheets, data), [artifactSheets, data])
-
   const theme = useTheme();
   const grxl = useMediaQuery(theme.breakpoints.up('xl'));
-  const unequipButton = useMemo(() => hasEquipped && <Button color="error" onClick={unequipArts} fullWidth sx={{ borderBottomRightRadius: 0, borderBottomLeftRadius: 0 }}>{t`tabEquip.unequipArts`}</Button>, [t, hasEquipped, unequipArts])
-  const artifactFields = useMemo(() => artifactSheets && setEffects && Object.entries(setEffects).map(([setKey, setNumKeyArr]) =>
-    <CardLight key={setKey} sx={{ flexGrow: 1, }} >
-      {unequipButton}
-      <CardContent >
-        <Grid container spacing={1} flexDirection="column" height="100%" >
 
-          <Grid item display="flex" flexDirection="column" gap={2}>
-            {setNumKeyArr.map(setNumKey => <SetEffectDisplay key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} />)}
-          </Grid>
-        </Grid>
-      </CardContent>
-    </CardLight>
-  ), [artifactSheets, setEffects, unequipButton])
-  const weaponDoc = useMemo(() => weaponSheet && weaponSheet.document.length > 0 && <DocumentDisplay sections={weaponSheet.document} />, [weaponSheet])
+  const weaponDoc = useMemo(() => weaponSheet && weaponSheet.document.length > 0 && <CardLight><CardContent><DocumentDisplay sections={weaponSheet.document} /></CardContent></CardLight>, [weaponSheet])
+  const [{ rvFilter }] = useDBState(`charMeta_${characterKey}`, initCharMeta)
+  const deferredRvFilter = useDeferredValue(rvFilter)
+  const deferredRvSet = useMemo(() => new Set(deferredRvFilter), [deferredRvFilter])
   return <Box display="flex" flexDirection="column" gap={1}>
     <Suspense fallback={false}>
       <WeaponEditor
@@ -90,8 +73,8 @@ function TabEquip() {
     </CardLight>
     <Grid container spacing={1}>
       {grxl && <Grid item xs={12} md={12} xl={3} sx={{ display: "flex", flexDirection: "column", gap: 1 }} >
-        {weaponDoc && <CardLight><CardContent>{weaponDoc}</CardContent></CardLight>}
-        {artifactFields}
+        {weaponDoc && weaponDoc}
+        <ArtifactSectionCard />
       </Grid>}
       <Grid item xs={12} md={12} xl={9} container spacing={1}>
         <Grid item xs={12} sm={6} md={4} display="flex" flexDirection="column" gap={1}>
@@ -99,15 +82,15 @@ function TabEquip() {
         </Grid>
         {allSlotKeys.map(slotKey => <Grid item xs={12} sm={6} md={4} key={slotKey} >
           {!!data.get(input.art[slotKey].id).value ?
-            <ArtifactCard artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel}
+            <ArtifactCard artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} effFilter={deferredRvSet}
               extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editor canExclude canEquip /> :
             <ArtSwapCard slotKey={slotKey} />}
         </Grid>)}
       </Grid>
       {!grxl && <Grid item xs={12} md={12} xl={3} container spacing={1} >
-        <Grid item xs={12} md={6} lg={4}><CardLight><CardContent>{weaponDoc}</CardContent></CardLight></Grid>
+        {weaponDoc && <Grid item xs={12} md={6} lg={4}>{weaponDoc}</Grid>}
         <Grid item xs={12} md={6} lg={4} sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-          {artifactFields}
+          <ArtifactSectionCard />
         </Grid>
       </Grid>}
     </Grid>
@@ -170,4 +153,77 @@ function ArtifactSwapButton({ slotKey }: { slotKey: SlotKey }) {
     </Tooltip>
     <ArtifactSwapModal slotKey={slotKey} show={show} onClose={onClose} onChangeId={id => database.arts.set(id, { location: characterKey })} />
   </>
+}
+function ArtifactSectionCard() {
+  const { t } = useTranslation(["page_character", "artifact"])
+  const { database } = useContext(DatabaseContext)
+  const { character, character: { key: characterKey, equippedArtifacts } } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
+  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
+  const hasEquipped = useMemo(() => !!Object.values(equippedArtifacts).filter(i => i).length, [equippedArtifacts])
+  const unequipArts = useCallback(() => {
+    if (!character) return
+    if (!window.confirm("Do you want to move all currently equipped artifacts to inventory?")) return
+    database.chars.equipArtifacts(character.key, objectKeyMap(allSlotKeys, _ => ""))
+  }, [character, database])
+
+  const setEffects = useMemo(() => artifactSheets && ArtifactSheet.setEffects(artifactSheets, data), [artifactSheets, data])
+  const [{ rvFilter }, setCharMeta] = useDBState(`charMeta_${characterKey}`, initCharMeta)
+  const setRVFilter = useCallback(rvFilter => setCharMeta({ rvFilter }), [setCharMeta],)
+
+  const [show, onShow, onHide] = useBoolState()
+  const deferredrvFilter = useDeferredValue(rvFilter)
+  const { rvField, rvmField } = useMemo(() => {
+    const { currentEfficiency, currentEfficiency_, maxEfficiency, maxEfficiency_ } = Object.values(equippedArtifacts).reduce((a, artid) => {
+      const art = database.arts.get(artid)
+      if (art) {
+        const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, new Set(deferredrvFilter))
+        const { currentEfficiency: currentEfficiency_, maxEfficiency: maxEfficiency_ } = Artifact.getArtifactEfficiency(art, new Set(allSubstatKeys))
+        a.currentEfficiency = a.currentEfficiency + currentEfficiency
+        a.maxEfficiency = a.maxEfficiency + maxEfficiency
+
+        a.currentEfficiency_ = a.currentEfficiency_ + currentEfficiency_
+        a.maxEfficiency_ = a.maxEfficiency_ + maxEfficiency_
+      }
+      return a
+    }, { currentEfficiency: 0, currentEfficiency_: 0, maxEfficiency: 0, maxEfficiency_: 0 })
+    const rvField: IFieldDisplay = {
+      text: t`artifact:editor.curSubEff`,
+      value: currentEfficiency === currentEfficiency_ ? <PercentBadge value={currentEfficiency} max={4500} valid /> :
+        <span><PercentBadge value={currentEfficiency} max={4500} valid /> / <PercentBadge value={currentEfficiency_} max={4500} valid /></span>
+    }
+    const rvmField: IFieldDisplay = {
+      text: t`artifact:editor.maxSubEff`,
+      canShow: () => currentEfficiency_ !== maxEfficiency_,
+      value: maxEfficiency === maxEfficiency_ ? <PercentBadge value={maxEfficiency} max={4500} valid /> :
+        <span><PercentBadge value={maxEfficiency} max={4500} valid /> / <PercentBadge value={maxEfficiency_} max={4500} valid /></span>
+    }
+    return { rvField, rvmField }
+  }, [t, deferredrvFilter, equippedArtifacts, database])
+
+  return <CardLight>
+    {hasEquipped && <Button color="error" onClick={unequipArts} fullWidth sx={{ borderBottomRightRadius: 0, borderBottomLeftRadius: 0 }}>{t`tabEquip.unequipArts`}</Button>}
+    <CardContent >
+      <CardDark sx={{ mb: 2 }}>
+        <Button fullWidth color="info" startIcon={<Settings />} sx={{ borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }} onClick={onShow}>RV Filter</Button>
+        <ModalWrapper open={show} onClose={onHide}>
+          <CardDark>
+            <CardContent>
+              <SubstatToggle selectedKeys={rvFilter} onChange={setRVFilter} />
+            </CardContent>
+          </CardDark>
+        </ModalWrapper>
+        <FieldDisplayList >
+          < BasicFieldDisplay field={rvField} component={ListItem} />
+          < BasicFieldDisplay field={rvmField} component={ListItem} />
+        </FieldDisplayList>
+      </CardDark>
+      <Box display="flex" gap={1} flexDirection="column">
+        {artifactSheets && setEffects && Object.entries(setEffects).map(([setKey, setNumKeyArr]) =>
+          <CardDark key={setKey} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            {setNumKeyArr.map(setNumKey => <SetEffectDisplay key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} />)}
+          </CardDark>)}
+      </Box>
+    </CardContent>
+  </CardLight>
 }
