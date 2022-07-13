@@ -29,5 +29,6 @@ export const languageMap = {
 } as const
 
 export function nameToKey(name: string) {
+  if (!name) name = ""
   return name.replace(/[^a-zA-Z ]/g,'').split(" ").map(str => str.charAt(0).toUpperCase() + str.slice(1)).join('')
 }
