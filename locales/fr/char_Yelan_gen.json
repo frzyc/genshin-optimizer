@@ -115,7 +115,7 @@
   "passive1": {
     "name": "Contrôle stratégique",
     "description": {
-      "0": "Si l'équipe comprend des personnages de 1/2/3/4 types élémentaires, les PV max de Yelan augmentent de 6 %/12{NON_BREAK_SPACE}%/18 %/30 %."
+      "0": "Si l'équipe comprend des personnages de 1/2/3/4 types élémentaires, les PV max de Yelan augmentent de 6{NON_BREAK_SPACE}%/12{NON_BREAK_SPACE}%/18{NON_BREAK_SPACE}%/30{NON_BREAK_SPACE}%."
     }
   },
   "passive2": {

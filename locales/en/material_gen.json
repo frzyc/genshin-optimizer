@@ -155,6 +155,10 @@
     "name": "Moonlit Cragstone",
     "description": "A stone that gives off a strange radiance. It can only be found in a separate part of The Chasm, and its origins and composition are both unknown. However, it has strange and unique properties: When it falls, it maintains a regular shape and its cross-section still keeps its mirrored sheen. Those of these rocks that are older may have witnessed that ancient battle.\\nThese stones can be exchanged for treasures during \"Perilous Trail.\""
   },
+  "IridescentFlotsam": {
+    "name": "Iridescent Flotsam",
+    "description": "The shell of some sea creature, hard in texture and scattered in the Golden Apple Archipelago. As if affected by a certain power, its surface loses all its natural patterns and becomes iridescent instead.\\nCan be exchanged for treasure during \"Summertime Odyssey.\""
+  },
   "StratagemShard": {
     "name": "Stratagem Shard",
     "description": "A crystal that contains a deep and subtle power. Much like Cor Lapis, it has a pure Geo-gold hue. Its power can be activated to some extent within this space under The Chasm, thus helping to defeat monsters.\\nThis can be used in the \"Realms of Guile and War\" of \"Perilous Trails\" to draw Stratagems or allow characters who have fallen to take to the field once again."
@@ -281,7 +285,7 @@
   },
   "Lisa": {
     "name": "Lisa",
-    "description": "The languid but knowledgeable Librarian of the Knights of Favonius, deemed by Sumeru Academia to be their most distinguished graduate in the past two centuries."
+    "description": "The languid but knowledgeable Librarian of the Knights of Favonius, deemed by Sumeru Akademiya to be their most distinguished graduate in the past two centuries."
   },
   "FemaleLead": {
     "name": "Female Lead",
@@ -446,6 +450,10 @@
   "YaeMiko": {
     "name": "Yae Miko",
     "description": "Lady Guuji of the Grand Narukami Shrine. Also serves as the editor-in-chief of Yae Publishing House. Unimaginable intelligence and cunning are hidden under her beautiful appearance."
+  },
+  "ShikanoinHeizou": {
+    "name": "Shikanoin Heizou",
+    "description": "A young prodigy detective from the Tenryou Commission. His senses are sharp and his thoughts are clear."
   },
   "Yelan": {
     "name": "Yelan",
@@ -650,6 +658,10 @@
   "YaeMikosStellaFortuna": {
     "name": "Yae Miko's Stella Fortuna",
     "description": "Yae Miko's Constellation Activation Material"
+  },
+  "ShikanoinHeizousStellaFortuna": {
+    "name": "Shikanoin Heizou's Stella Fortuna",
+    "description": "Shikanoin Heizou's Constellation Activation Material"
   },
   "YelansStellaFortuna": {
     "name": "Yelan's Stella Fortuna",
@@ -4183,8 +4195,8 @@
     "name": "Photo of a Strange Rock",
     "description": "You took this picture of a strange rock that can be seen on the walls of The Chasm. You do not know what the patterns on the rock mean, but perhaps it could be of value to some researchers."
   },
-  "AcademiaRecommendationLetter": {
-    "name": "Academia Recommendation Letter",
+  "AkademiyaRecommendationLetter": {
+    "name": "Akademiya Recommendation Letter",
     "description": "This letter, carefully crafted, and it is sealed in the name of \"Ecologist Khedive Pursina.\"\\nYou got this as a gift from Khedive. He claims that this is even more precious than gold, and can gain you the help of the House of Purbiruni.\\nKhedive himself believes monetary remuneration to be something of an insult... Hopefully, this doesn't prove to be a trend with people from Sumeru."
   },
   "OrbOfTheBlueDepths": {
@@ -4471,6 +4483,10 @@
     "name": "Fragrant Triple-Layered Consommé",
     "description": "A delicious dish with some extra seasoning! It gives off a titillating aroma... But whose tastes will this dish suit? Invite your friends, invite your pals — get them to try this new dish!"
   },
+  "OldNotes": {
+    "name": "Old Notes",
+    "description": ""
+  },
   "ZhiqiongsLetter": {
     "name": "Zhiqiong's Letter",
     "description": "A letter left by a young adventurer. There is a slightly bitter scent of Qingxin on this piece of paper."
@@ -4599,6 +4615,18 @@
     "name": "Salary Bag",
     "description": "It is said that opening this will bring you bad luck. It seems lighter than you assumed it might be...?"
   },
+  "ACompleteChartOfAkosTreasure": {
+    "name": "A Complete Chart of Ako's Treasure",
+    "description": "A complete nautical chart pieced together after all four parts of the clue were collected, leading to the treasure hidden by Ako Domeki and company before they left this place."
+  },
+  "OutlanderBrigadeWhenTheWindOfDeathBlewTowardsTheBlondSamuraiScript": {
+    "name": "\"Outlander Brigade: When the Wind of Death Blew Towards the Blond Samurai\" Script",
+    "description": "A \"film script\" you obtained from Xavier."
+  },
+  "MushouninScript": {
+    "name": "\"Mushounin\" Script",
+    "description": "A new film script that Xavier finished overnight, much thicker than his last one. What you have here merely contains Act I.\\nThe willpower one can harness to achieve a goal is truly amazing."
+  },
   "ALegendOfSwordVI": {
     "name": "A Legend of Sword (VI)",
     "description": "\"In essence, the great battle in space is no different from the armed conflict between commoners which took place ten years ago on that barren planet...\" Soon, the name of that man shall be known across the Galaxy, matching that of the Emperor."
@@ -4615,6 +4643,10 @@
     "name": "Let's Go, Dodoco!",
     "description": "Message From the Editor: \"Let's Go, Dodoco!\" is the combined work of an older girl and a younger girl. Every chapter brims with their gentleness and good wishes, as the story is intended as a gift to our readers. I hope this book — in spite of its small volume — can bring you some simple joy after a long day of work."
   },
+  "AkosTreasureLocation": {
+    "name": "Ako's Treasure: Location 1",
+    "description": "Before Ako Domeki and company left, they had hidden a treasure here and agreed to unearth it when they met in the archipelago again. The secret of where the treasure is was split into four parts, and this is the first part."
+  },
   "JinwusSoup": {
     "name": "Jinwu's Soup",
     "description": "A thick soup that Jinwu made for sick miners. It's nutritious, fragrant, and makes you feel warm inside when you drink it.\\nDon't let it go cold, now."
@@ -4622,6 +4654,106 @@
   "BagOfOrnaments": {
     "name": "Bag of Ornaments",
     "description": "A bag of decorations that Old Chou gave you as compensation for Tang Wuchou's misfortunes. They are very roughly made, owing to having been manufactured by the Treasure Hoarders within The Chasm using smuggled ore, and can barely be considered to possess any aesthetic qualities at all. As such, there is no hope at all of them selling well in Liyue. The only thing good you could say about these ornaments is that they are at least made using the right materials..."
+  },
+  "SeaRouteLog": {
+    "name": "Sea Route Log",
+    "description": "A log indicating how to find the clues, left by the ones who hid them. If you navigate as it directs, you may indeed find a clue regarding the treasure left by Ako Domeki and company."
+  },
+  "RouteLogI": {
+    "name": "Route Log: I",
+    "description": "A log indicating how to find the clues, left by the ones who hid them. If you proceed as it directs, you may indeed find a clue regarding the treasure left by Ako Domeki and company."
+  },
+  "RouteLogII": {
+    "name": "Route Log: II",
+    "description": "A log indicating how to find the clues, left by the ones who hid them. If you proceed as it directs, you may indeed find a clue regarding the treasure left by Ako Domeki and company. Still, this is, what, the second log you've found already? Hopefully, it can lead you directly to the clue this time."
+  },
+  "AsterismShard": {
+    "name": "Asterism Shard",
+    "description": "A mysterious shard engraved with a pattern of stars. It seems to be the key to solving a certain mechanism puzzle somewhere."
+  },
+  "BottleOfSpringWater": {
+    "name": "Bottle of Spring Water",
+    "description": "A bottle of spring water. The Glacial Spring Water that Blazing Heart desires should be stored within."
+  },
+  "FrozenSoulsPetal": {
+    "name": "Frozen Soul's Petal",
+    "description": "An uncanny petal. At first glance, it seems like ice molded into the shape of a petal, but it is quite soft to the touch.\\n\"Plant my petal at the ending point of the intersection of melodies, and what had once sunk into the earth will re-emerge with the music.\"\\nThat's what Frozen Soul said."
+  },
+  "ElegantlyWrittenNote": {
+    "name": "Elegantly-Written Note",
+    "description": "An elegantly-written note."
+  },
+  "ALetter": {
+    "name": "A Letter",
+    "description": "A letter."
+  },
+  "RockGardenRoughStoneLeft": {
+    "name": "Rock Garden Rough Stone (Left)",
+    "description": "Mountain rocks. They look suited in all ways to be used as base materials from which to carve rocks for the bonsai's left side."
+  },
+  "RockGardenRoughStoneRight": {
+    "name": "Rock Garden Rough Stone (Right)",
+    "description": "Mountain rocks. They look suited in all ways to be used as base materials from which to carve rocks for the bonsai's right side."
+  },
+  "RockGardenCarvingTools": {
+    "name": "Rock Garden Carving Tools",
+    "description": "Carving tools that you found on the Mondstadt-style mountains. You might be able to use them to carve the base materials you have into a rock garden."
+  },
+  "SmallGear": {
+    "name": "Small Gear",
+    "description": "A small gear. No matter how small a gear is, it can be of use sometime, perhaps?"
+  },
+  "MediumGear": {
+    "name": "Medium Gear",
+    "description": "A medium gear. \"The pivotal one,\" as we call it."
+  },
+  "DriveGear": {
+    "name": "Drive Gear",
+    "description": "A gear that can transmit a measure of force. After all, momentum is key."
+  },
+  "LargeGear": {
+    "name": "Large Gear",
+    "description": "A large gear. Its weight and the noise it emits will make an impression for sure."
+  },
+  "DuplexGear": {
+    "name": "Duplex Gear",
+    "description": "A rather small duplex gear. Double the flanks, double the labor hours."
+  },
+  "LargeDuplexGear": {
+    "name": "Large Duplex Gear",
+    "description": "A fairly large duplex gear. The bigger the size is, the more it takes to manufacture."
+  },
+  "DrivenGear": {
+    "name": "Driven Gear",
+    "description": "A gear that requires power to rotate. It can be very helpful. Really. Can someone help rotate it, please?"
+  },
+  "LeisurelyRocksLeft": {
+    "name": "Leisurely Rocks: Left",
+    "description": "Slightly soft bonsai rocks. They seem to be able to summon a leisurely and comfy breeze. These can be placed on the left side of the bonsai."
+  },
+  "LeisurelyRocksRight": {
+    "name": "Leisurely Rocks: Right",
+    "description": "Slightly soft bonsai rocks. They seem to be able to summon a leisurely and comfy breeze. These can be placed on the right side of the bonsai."
+  },
+  "HoverlightRocksLeft": {
+    "name": "Hoverlight Rocks: Left",
+    "description": "Rocks of moderate hardness. It is said that a glimmer will dance across the surface of these rocks during stormy weather. These can be placed on the left side of the bonsai."
+  },
+  "HoverlightRocksRight": {
+    "name": "Hoverlight Rocks: Right",
+    "description": "Bonsai rocks of moderate hardness. It is said that a glimmer will dance across the surface of these rocks during stormy weather. These can be placed on the right side of the bonsai."
+  },
+  "UnyieldingRocksLeft": {
+    "name": "Unyielding Rocks: Left",
+    "description": "Very hard bonsai rocks that have an air of firmness to them. These can be placed on the left side of the bonsai."
+  },
+  "UnyieldingRocksRight": {
+    "name": "Unyielding Rocks: Right",
+    "description": "Very hard bonsai rocks that have an air of firmness to them. These can be placed on the right side of the bonsai."
+  },
+  "ABoxOfComponents": {
+    "name": "A Box of Components",
+    "description": "A box full of components. They all look quite intact, perhaps because monsters have no interest in them..."
   },
   "NoteOfUnknownOriginI": {
     "name": "Note of Unknown Origin: I",
@@ -4639,17 +4771,117 @@
     "name": "Note of Unknown Origin: IV",
     "description": "You found this note in the mysterious space. Its content seems similar to that of a journal."
   },
+  "ANote": {
+    "name": "A Note",
+    "description": "A wrinkled note with horrendously slanted handwriting."
+  },
   "RedemptionVoucher": {
     "name": "Redemption Voucher 1",
     "description": "Used to redeem Mirrorpool Horned Owl: Turning"
+  },
+  "PartBreeze": {
+    "name": "Part: Breeze",
+    "description": "A part of the \"Evermotion Mechanical Painting\" that Félix Yogue is trying to restore."
+  },
+  "PartSky": {
+    "name": "Part: Sky",
+    "description": "A part of the \"Evermotion Mechanical Painting\" that Félix Yogue is trying to restore."
+  },
+  "PartClouds": {
+    "name": "Part: Clouds",
+    "description": "A part of the \"Evermotion Mechanical Painting\" that Félix Yogue is trying to restore."
+  },
+  "PartCompany": {
+    "name": "Part: Company",
+    "description": "A part of the \"Evermotion Mechanical Painting\" that Félix Yogue is trying to restore."
+  },
+  "PartLonely": {
+    "name": "Part: Lonely",
+    "description": "A part of the \"Evermotion Mechanical Painting\" that Félix Yogue is trying to restore."
+  },
+  "PartMeadow": {
+    "name": "Part: Meadow",
+    "description": "A part of the \"Evermotion Mechanical Painting\" that Félix Yogue is trying to restore."
+  },
+  "ForensicOfficeResearchLogExcerpt": {
+    "name": "Forensic Office Research Log Excerpt",
+    "description": "A research log excerpt with plenty of crinkles. The handwriting is still very much legible."
   },
   "NoteOfUnknownOrigin": {
     "name": "Note of Unknown Origin",
     "description": "You found this note in the mysterious space. Its content seems similar to that of a journal."
   },
+  "CrystallineCore": {
+    "name": "Crystalline Core",
+    "description": "The crystalline core component that was missing from the curious Fatui machine. According to Persikov's manuscript, the machine can be restarted if three such cores are found and inserted into the device."
+  },
+  "OldYellowedNotes": {
+    "name": "Old Yellowed Notes",
+    "description": "Old Yellowed Notes"
+  },
+  "MysteriousLetter": {
+    "name": "Mysterious Letter",
+    "description": "Mysterious Letter"
+  },
+  "ASeeminglyWaterproofNote": {
+    "name": "A Seemingly Waterproof Note",
+    "description": "A Seemingly Waterproof Note"
+  },
+  "ReverberatingKey": {
+    "name": "Reverberating Key",
+    "description": "A key related to a certain mysterious plant. It seems to be able to open some door somewhere..."
+  },
+  "ANewLetter": {
+    "name": "A New Letter",
+    "description": "A letter the head housemaid, Adelinde, just received. It needs to be sent to Dawn Winery for archiving.\\nThe paper is slightly wrinkled. Maybe the person who wrote the letter was in a hurry and couldn't find a desk."
+  },
+  "DawnWinerysTopQualityGrapeJuice": {
+    "name": "Dawn Winery's Top-Quality Grape Juice",
+    "description": "A gift from Diluc. A bottle of grape juice with luxury packaging. It is something Paimon has long been looking forward to, but more so a memento of the time when you and your friends handled the crisis together.\\nIt is also Diluc's personal favorite, produced using only Dawn Winery's best quality grapes.\\nBeing \"Master Diluc's favorite grape juice\" seems to have inestimable commercial value..."
+  },
+  "StarlightCoalescence": {
+    "name": "Starlight Coalescence",
+    "description": "A translucent crystal that seems to hold coalescent starlight within it. This item seems to be key to solving a certain mechanism puzzle somewhere."
+  },
   "DragonspineSuppliesHam": {
     "name": "Dragonspine Supplies: Ham",
     "description": "Ham meant to be used for resupply. It will keep longer in low-temperature conditions."
+  },
+  "NightwatchContract": {
+    "name": "Nightwatch Contract",
+    "description": "A contract penned and signed personally by the Prinzessin der Verurteilung herself. It may be used to authorize the opening of the navigational site. Those who should produce this letter of warrant shall be authorized forthwith to spread their black feathers where dawn meets dusk, and envelop the skies in night's own embrace."
+  },
+  "TenryouCommissionsMissingPersonPoster": {
+    "name": "Tenryou Commission's Missing Person Poster",
+    "description": "An official missing person poster with the Tenryou Commission's symbol on it."
+  },
+  "SeaSaltCrustedKey": {
+    "name": "Sea Salt-Crusted Key",
+    "description": "A key found in the Golden Apple Archipelago, seemingly able to open a lock somewhere..."
+  },
+  "MisplacedConch": {
+    "name": "Misplaced Conch 1",
+    "description": "This Imaging Conch should have been placed somewhere else but was abandoned here by someone, causing it to project images out of their proper order. Return it to its rightful place, and who knows what you might find..."
+  },
+  "RedDyedFabric": {
+    "name": "Red-Dyed Fabric",
+    "description": ""
+  },
+  "SilverPocketWatch": {
+    "name": "Silver Pocket Watch",
+    "description": "This is certainly not a new pocket watch. But you can tell that it has been carefully polished, evidence of how much the owner really cares about it. Inside is a photograph centering on a young girl from Snezhnaya."
+  },
+  "OldInsignia": {
+    "name": "Old Insignia",
+    "description": "This looks like a Fatui insignia, but it's all scratched up somehow."
+  },
+  "PersikovsManuscript": {
+    "name": "Persikov's Manuscript",
+    "description": "Notes penned by the Fatui researcher Persikov. These notes contain a map, and if you follow its instructions, you should be able to find the crystalline cores that the Cognitive Mimicry device is missing..."
+  },
+  "TwilightTheaterHeadsNotes": {
+    "name": "Twilight Theater Head's Notes",
+    "description": "The script for \"Drama Phantasmagoria: Tale of the Sword-Wielding Princess!\" The meandering scribbles appended to the script seem to be annotations from the theater troupe head, some of which contain such radical instructions as to render their adoption unlikely in the extreme."
   },
   "PyroShard": {
     "name": "Pyro Shard",
@@ -6606,6 +6838,10 @@
   "DewDippedShrimp": {
     "name": "Dew-Dipped Shrimp",
     "description": "Yelan's specialty. Amongst the ingredients here is the new tea, Dipped Dew, delivered from Qiaoying Village right to the Teahouse, which was then quickly fried together with freshly-caught river shrimp. The look is sightly, the scent of distant tea, and the taste both tender and springy... Wait a moment. Why's she coming over with that plate of chilli?"
+  },
+  "TheOnlyTruth": {
+    "name": "The Only Truth",
+    "description": "Shikanoin Heizou's specialty. On the tender, moist scrambled eggs lies a juicy katsu fried to golden perfection, its aroma most enticing indeed... Having been tempted to gobble the dish down, you are somehow seized by the urge to let out all that is hidden in your heart — this is not some sort of secret weapon of Heizou... is it?"
   },
   "RecipeItem": {
     "name": "Recipe Item",
@@ -8819,6 +9055,14 @@
     "name": "Travel Notes: Divine Will",
     "description": "Namecard style.\\n\"Once upon a time, loyal souls did scatter east and west like swan geese.\" \"Today I light my lantern, that they may not lose their way.\""
   },
+  "ShikanoinHeizouTemari": {
+    "name": "Shikanoin Heizou: Temari",
+    "description": "Namecard style.\\nA Temari of entwining strings in various colors. It must have taken someone's great effort to make such an item, yet Heizou only sees it as a simple game to untangle each string."
+  },
+  "TravelNotesAzureMain": {
+    "name": "Travel Notes: Azure Main",
+    "description": "Namecard style.\\nYears have gone by, and you wake from an old dream. Inside the keepsake shell, lingers the blue ocean of those summer days."
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone",
     "description": "A stone that can be used in Mondstadt to search for nearby Anemoculi.\\nThis man-made stone plate possesses a certain characteristic similar to that of the Anemo Statues of The Seven, giving it the power to resonate with Anemoculi.\\nOculus Resonance Stones are crude imitations of the Statues of The Seven constructed by the ancients. But it is precisely this crudeness that makes them crave the power of elemental oculi, thus providing devout worshippers and adventurers alike a prime opportunity to collect oculi."
@@ -9155,6 +9399,14 @@
     "name": "Opulent Splendor",
     "description": "Keqing's formal wear. Amidst the beautiful dawn of the Lantern Rite, the threads weaved by days of hard work intertwine into a light yet magnificent appearance."
   },
+  "RedDeadOfNight": {
+    "name": "Red Dead of Night",
+    "description": "One of the outfits Diluc wears during covert actions, it resembles a flame dancing in the shadows. The crimson red traces it leaves behind at the edges of the enemy's vision will scar their nightmares forever."
+  },
+  "EinImmernachtstraum": {
+    "name": "Ein Immernachtstraum",
+    "description": "A ceremonial outfit for the Prinzessin. May she who is noble retain her courage, sincerity, and kindness forever, such that no evil shall ever overcome her."
+  },
   "GunnhildrsLegacy": {
     "name": "Gunnhildr's Legacy",
     "description": "Jean's outfit. This classic knight's ceremonial outfit is suited to all manner of occasions."
@@ -9357,7 +9609,7 @@
   },
   "WakefulSpring": {
     "name": "Wakeful Spring",
-    "description": "A detailed step-by-step blueprint for making a Wakeful Spring.\\nA feature-complete open-air hot spring. The minerals and elements present here may not be the equal of Aisa Bathhouse, but hot springs of this kind win in terms of their relaxed, casual atmosphere and the relative lack of regulations.\\nJust a half-hour soak in here and all the fatigue you've accumulated from work will dissipate into nothingness, replaced by a reawakened vigor, and if there's time, you can lean against a nearby white stone and have some tea and a chat with your friends.\\nOf course, please keep some basic etiquette in mind before entering: enjoying the hot spring with friends is fine, but do not stay too long. If you spend too much time in there with chatty folk like the Queen of the Summer Festival, you might get dizzy.\\nAfter using this item, you can view it in the Placement Screen.\\nThis Furnishing Set is favored by the following companions: Yoimiya, Gorou, Yae Miko"
+    "description": "A detailed step-by-step blueprint for making a Wakeful Spring.\\nA feature-complete open-air hot spring. The minerals and elements present here may not be the equal of Aisa Bathhouse, but hot springs of this kind win in terms of their relaxed, casual atmosphere and the relative lack of regulations.\\nJust a half-hour soak in here and all the fatigue you've accumulated from work will dissipate into nothingness, replaced by a reawakened vigor, and if there's time, you can lean against a nearby white stone and have some tea and a chat with your friends.\\nOf course, please keep some basic etiquette in mind before entering: enjoying the hot spring with friends is fine, but do not stay too long. If you spend too much time in there with chatty folk like the Queen of the Summer Festival, you might get dizzy.\\nAfter using this item, you can view it in the Placement Screen.\\nThis Furnishing Set is favored by the following companions: Yoimiya, Gorou, Yae Miko, Shikanoin Heizou"
   },
   "RuralConcealment": {
     "name": "Rural Concealment",
@@ -9385,7 +9637,7 @@
   },
   "EternalDomainOfFleetingDreams": {
     "name": "Eternal Domain of Fleeting Dreams",
-    "description": "A detailed step-by-step blueprint for making an Eternal Domain of Fleeting Dreams.\\nThis bedroom is filled with a unique Inazuman aesthetic but also adopts ideas from other nations quite freely, thus striking a brilliant balance between tradition and practicality. The design process included considerations as to how guests might feel, and the room itself was designed for them to relax sufficiently, such that they will feel re-energized, as one might after a long, dreaming sleep, even after only taking a short rest. The kotatsu that has been kindly set up also contributes to the feeling of never wanting to leave your room.\\nAfter using this item, you can view it in the Placement Screen.\\nThis Furnishing Set is favored by the following companions: Sayu, Sangonomiya Kokomi"
+    "description": "A detailed step-by-step blueprint for making an Eternal Domain of Fleeting Dreams.\\nThis bedroom is filled with a unique Inazuman aesthetic but also adopts ideas from other nations quite freely, thus striking a brilliant balance between tradition and practicality. The design process included considerations as to how guests might feel, and the room itself was designed for them to relax sufficiently, such that they will feel re-energized, as one might after a long, dreaming sleep, even after only taking a short rest. The kotatsu that has been kindly set up also contributes to the feeling of never wanting to leave your room.\\nAfter using this item, you can view it in the Placement Screen.\\nThis Furnishing Set is favored by the following companions: Sayu, Sangonomiya Kokomi, Shikanoin Heizou"
   },
   "AThousandSwings": {
     "name": "A Thousand Swings",
@@ -9779,6 +10031,10 @@
     "name": "Seashell Table Lamp",
     "description": "A detailed step-by-step blueprint for making a Seashell Table Lamp.\\nAfter using this item, you can view it in the Creation Screen."
   },
+  "TranquilStarlight": {
+    "name": "Tranquil Starlight",
+    "description": "A detailed step-by-step blueprint for making a Tranquil Starlight.\\nAfter using this item, you can view it in the Creation Screen."
+  },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Flower Arrangement: Baby Blue Tranquility",
     "description": "A detailed step-by-step blueprint for making a Flower Arrangement: Baby Blue Tranquility.\\nAfter using this item, you can view it in the Creation Screen."
@@ -9878,6 +10134,10 @@
   "TrueCookeryNukiNukiDaruma": {
     "name": "\"True Cookery\": Nuki-Nuki Daruma",
     "description": "A detailed step-by-step blueprint for making a \"True Cookery\": Nuki-Nuki Daruma.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "CosmosWithin": {
+    "name": "Cosmos Within",
+    "description": "A detailed step-by-step blueprint for making a Cosmos Within.\\nAfter using this item, you can view it in the Creation Screen."
   },
   "LandscapePaintingCountryHome": {
     "name": "Landscape Painting: Country Home",
@@ -10174,6 +10434,10 @@
   "FestivalBoothLiteraryTalent": {
     "name": "Festival Booth - \"Literary Talent\"",
     "description": "A detailed step-by-step blueprint for making a Festival Booth - \"Literary Talent.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "DodocosSummertime": {
+    "name": "Dodoco's Summertime",
+    "description": "A detailed step-by-step blueprint for making Dodoco's Summertime.\\nAfter using this item, you can view it in the Creation Screen."
   },
   "RitualShrine": {
     "name": "Ritual Shrine",
@@ -10623,6 +10887,10 @@
     "name": "Serene Flames",
     "description": "A detailed step-by-step blueprint for making Serene Flames.\\nAfter using this item, you can view it in the Creation Screen."
   },
+  "AllegroBloomSpecialTuning": {
+    "name": "Allegro Bloom: Special Tuning",
+    "description": "A detailed step-by-step blueprint for making an Allegro Bloom: Special Tuning.\\nAfter using this item, you can view it in the Creation Screen."
+  },
   "PottedPlantVerdantVastness": {
     "name": "Potted Plant: Verdant Vastness",
     "description": "A detailed step-by-step blueprint for making a Potted Plant: Verdant Vastness.\\nAfter using this item, you can view it in the Creation Screen."
@@ -10794,6 +11062,26 @@
   "PearOrchardScreenDeft": {
     "name": "Pear Orchard Screen: Deft",
     "description": "A detailed step-by-step blueprint for making a Pear Orchard Screen: Deft.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "DodocosTravelBag": {
+    "name": "Dodoco's Travel Bag",
+    "description": "A detailed step-by-step blueprint for making Dodoco's Travel Bag.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "DodocosDodoStove": {
+    "name": "Dodoco's Dodo Stove",
+    "description": "A detailed step-by-step blueprint for making Dodoco's Dodo Stove.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "DodocosBeachNap": {
+    "name": "Dodoco's Beach Nap",
+    "description": "A detailed step-by-step blueprint for making Dodoco's Beach Nap.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "DodocosCollectionCupboard": {
+    "name": "Dodoco's Collection Cupboard",
+    "description": "A detailed step-by-step blueprint for making Dodoco's Collection Cupboard.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "DodocosSunshadeUmbrella": {
+    "name": "Dodoco's Sunshade Umbrella",
+    "description": "A detailed step-by-step blueprint for making Dodoco's Sunshade Umbrella.\\nAfter using this item, you can view it in the Creation Screen."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Wrought Iron Carved Street Light",

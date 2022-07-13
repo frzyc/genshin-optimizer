@@ -1,7 +1,7 @@
 {
   "name": "Yae Miko",
   "title": "Astute Amusement",
-  "description": "Lady Guuji dari Kuil Agung Narukami juga menjabat sebagai pemimpin redaksi Yae Publishing House. Kecerdasan dan kelicikan yang tidak dapat dibayangkan tersembunyi di balik penampilannya yang cantik.",
+  "description": "Lady Guuji dari Kuil Agung Narukami ini juga menjabat sebagai pemimpin redaksi Yae Publishing House. Kecerdasan dan kelicikan yang tidak dapat dibayangkan tersembunyi di balik penampilannya yang cantik.",
   "constellationName": "Divina Vulpes",
   "auto": {
     "name": "Spiritfox Sin-Eater",
@@ -12,11 +12,11 @@
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Mengonsumsi sejumlah Stamina dan mengakibatkan <electro>Electro DMG area</electro> setelah jeda singkat."
+        "1": "Mengonsumsi sejumlah Stamina dan mengakibatkan <electro>Electro DMG Area</electro> setelah jeda singkat."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Mengumpulkan kekuatan gemuruh dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <electro>Electro DMG area</electro> saat mendarat."
+        "1": "Mengumpulkan kekuatan petir dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <electro>Electro DMG Area</electro> saat mendarat."
       }
     },
     "skillParams": {
@@ -78,10 +78,10 @@
   "burst": {
     "name": "Great Secret Art: Tenko Kenshin",
     "description": {
-      "0": "Salah satu cerita rakyat Inazuma disebut \"kitsunetsuki\", dan yang paling spesial di antaranya adalah kisah tentang Sky Kitsune yang turun menghanguskan musuh-musuh Kuil Agung Narukami dalam bentuk sambaran petir, mengakibatkan <electro>Electro DMG area</electro>.",
-      "1": "Saat melancarkan skill ini, Yae Miko akan membuka Sesshou Sakura yang ada di dekatnya, menghancurkan wujud luarnya, dan mengubahnya menjadi Tenko Thunderbolt yang turun dari langit, dan mengakibatkan <electro>Electro DMG area</electro>. Setiap Sesshou Sakura yang dihancurkan dengan cara ini akan membuat satu Tenko Thunderbolt.",
+      "0": "Salah satu cerita rakyat Inazuma disebut \"kitsunetsuki\", dan yang paling spesial di antaranya adalah kisah tentang Sky Kitsune yang turun menghanguskan musuh-musuh Kuil Agung Narukami. Memanggil sambaran petir dan mengakibatkan <electro>Electro DMG Area</electro>.",
+      "1": "Saat melancarkan skill ini, Yae Miko akan membuka Sesshou Sakura yang ada di dekatnya, menghancurkan wujud luarnya, dan mengubahnya menjadi Tenko Thunderbolt yang turun dari langit, dan mengakibatkan <electro>Electro DMG Area</electro>. Setiap Sesshou Sakura yang dihancurkan dengan cara ini akan menciptakan satu Tenko Thunderbolt.",
       "2": "<br/>",
-      "3": "<i>Yae hanya akan mengeluarkan \"wujud\" Sky Kitsune-nya di saat-saat tertentu seperti ini dan mengendalikan petir tersebut. Tidak ada seorang pun yang hidup setelah melihat ekor sang Nona Guuji ... Jadi ingat ya, Nona Yae tidak punya ekor.</i>"
+      "3": "<i>Yae hanya akan mengeluarkan \"wujud\" Sky Kitsune-nya di saat-saat tertentu seperti ini dan mengendalikan petir tersebut. Tidak ada seorang pun yang hidup setelah melihat ekor sang Nona Guuji ... Jadi ingat baik-baik ya, Nona Yae \"tidak\" punya ekor.</i>"
     },
     "skillParams": {
       "0": "DMG Skill",

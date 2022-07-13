@@ -155,6 +155,10 @@
     "name": "Mondscheinstein",
     "description": "Ein Stein, der eine seltsame Ausstrahlung hat. Er kann nur in einem bestimmten Teil der Großen Kluft gefunden werden. Sowohl seine Herkunft als auch seine Zusammensetzung sind unbekannt. Er hat jedoch seltsame und einzigartige Eigenschaften: Wenn ein Mondscheinstein auseinanderfällt, behält jedes Fragment eine regelmäßige Form und dessen Querschnitt behält den ursprünglichen spiegelnden Glanz. Diejenigen dieser Steine, die schon unzählige Winter überstanden haben, könnten vielleicht sogar Zeuge der uralten Schlacht gewesen sein.\\nDiese Steine können während der Aktion „Unheilvoller Pfad“ gegen Schätze eingetauscht werden."
   },
+  "IridescentFlotsam": {
+    "name": "Schillerndes Treibgut",
+    "description": "Im Goldapfelarchipel zurückgelassene Schalen von Meereskreaturen mit einer harten Oberfläche. Wie von einer bestimmten Kraft bewirkt, haben sie ihre ursprünglichen Muster verloren und sind jetzt in ein regenbogenfarbenes Schillern getaucht.\\nTausche sie in der Aktion „Ein Sommeraufenthalt am Meer“ gegen wertvolle Schätze."
+  },
   "StratagemShard": {
     "name": "Kampfstrategiesplitter",
     "description": "Ein Kristall, der eine tiefe und subtile Kraft besitzt. Ähnlich wie Cor Lapis hat er einen reinen Geo-Goldton. Seine Kraft kann bis zu einem gewissen Grad in diesem Raum unter der Großen Kluft aktiviert werden und hilft dir dabei, Monster zu besiegen.\\nEr kann in „Schlachtfeld der Listen und Kriege“ von „Unheilvoller Pfad“ verwendet werden, um Kampfstrategien zu ziehen oder ohnmächtigen Figuren zu ermöglichen, wieder auf das Schlachtfeld zu ziehen."
@@ -447,6 +451,10 @@
     "name": "Yae Miko",
     "description": "Die Guuji des Großen Narukami-Schreins und Chefredakteurin des „Verlagshauses Yae“. Hinter ihrem schönen Aussehen verbergen sich unerwartete Intelligenz und Gerissenheit."
   },
+  "ShikanoinHeizou": {
+    "name": "Shikanoin Heizou",
+    "description": "Der begnadete junge Detektiv der Tenryou-Verwaltung, ausgestattet mit scharfem Instinkt und wachem Geist."
+  },
   "Yelan": {
     "name": "Yelan",
     "description": "Eine mysteriöse Person, die behauptet, für den Rat für Allgemeine Angelegenheiten zu arbeiten, aber auf der Liste des Rats für Allgemeine Angelegenheiten als „nicht existent“ geführt wird."
@@ -650,6 +658,10 @@
   "YaeMikosStellaFortuna": {
     "name": "Stella Fortuna von Yae Miko",
     "description": "Material zum Aktivieren von Yae Mikos Sternbild"
+  },
+  "ShikanoinHeizousStellaFortuna": {
+    "name": "Stella Fortuna von Shikanoin Heizou",
+    "description": "Material zum Aktivieren von Shikanoin Heizous Sternbild"
   },
   "YelansStellaFortuna": {
     "name": "Stella Fortuna von Yelan",
@@ -3120,8 +3132,8 @@
     "description": "Die Wandmalerei, die du an einer Steinwand auf der namenlosen Insel gefunden hast. Sie scheint eine Rettung darzustellen ..."
   },
   "TwinningIsleMural": {
-    "name": "Wandmalerei der Zwillingsinseln",
-    "description": "Die Wandmalerei, die du an einer Steinwand auf den Zwillingsinseln gefunden hast. In der Malerei steht ein Berg mit einer sonderbaren Markierung ..."
+    "name": "Wandmalerei der Zwillingsinsel",
+    "description": "Die Wandmalerei, die du an einer Steinwand auf der Zwillingsinsel gefunden hast. In der Malerei steht ein Berg mit einer sonderbaren Markierung ..."
   },
   "IllegibleNotes": {
     "name": "Notiz mit verschwommenen Schriften",
@@ -4085,7 +4097,7 @@
   },
   "TreasuredTalesOfTheChoukenShinkageuchiI": {
     "name": "Kostbare Erzählungen über den Chouken Shinkageuchi – Band I",
-    "description": "Der erste Teil der traditionellen Erzählungen von Inazuma. Dieser Band ist auch als „Shinkageuchi“ bekannt und war früher ein verbotener Text. Er enthält eine fantastische Geschichte über den ersten Shougun Raiden und seine Kagemusha, in der die wohlwollende Klugheit des ersten Shougun und die große Tapferkeit seiner Kagemusha dargestellt werden. Aufgrund der großen Beliebtheit eines anderen Buches, das umgangssprachlich als „Reinkarnation des Shougun Raiden“ bekannt ist, interessierten sich jedoch viele Menschen für Geschichten dieser Art. So kam es, dass dieses Buch auf unregelmäßige Weise veröffentlicht wurde."
+    "description": "Der erste Teil der traditionellen Erzählungen von Inazuma. Dieser Band ist auch als „Shinkageuchi“ bekannt und war früher ein verbotener Text. Er enthält eine fantastische Geschichte über den ersten Shougun Raiden und ihre Kagemusha, in der die wohlwollende Klugheit des ersten Shougun und die große Tapferkeit ihrer Kagemusha dargestellt werden. Aufgrund der großen Beliebtheit eines anderen Buches, das umgangssprachlich als „Wiedergeburt des Shougun Raiden“ bekannt ist, interessierten sich jedoch viele Menschen für Geschichten dieser Art. So kam es, dass dieses Buch doch veröffentlicht wurde."
   },
   "MysteriousStone": {
     "name": "Geheimnisvoller Stein",
@@ -4183,7 +4195,7 @@
     "name": "Bild von seltsamen Felsen",
     "description": "Ein Bild, das du in der Großen Kluft gemacht hast. Es zeigt diese seltsamen Felsen, die manchmal an den Wänden zu finden sind. Es ist nicht bekannt, was die Muster auf der Oberfläche bedeuten, aber sie könnten für Gelehrte von großem wissenschaftlichem Wert sein."
   },
-  "AcademiaRecommendationLetter": {
+  "AkademiyaRecommendationLetter": {
     "name": "Empfehlungsschreiben der Akademie",
     "description": "Ein mit großer Sorgfalt geschriebener Brief. Auf dem Umschlag befindet sich das Siegel von „Khedive Pursina, einem Forscher im Bereich Ökologie“.\\nSeiner Meinung nach ist er wertvoller als alle Mora der Welt. Mit ihm kannst du garantiert die Hilfe der Purbiruni-Schule bekommen.\\nObwohl Khedive der festen Überzeugung ist, dass Mora als Belohnung eine persönliche Beleidigung bedeutet, lass uns hoffen, dass nicht alle Leute von Sumeru seine Meinung teilen ..."
   },
@@ -4471,6 +4483,10 @@
     "name": "Duftendes gestreiftes Dreierlei",
     "description": "Ein köstliches Gericht mit einer Extraportion Würze! Es verströmt ein betörendes Aroma ... aber wem wird dieses Gericht schmecken? Lade deine Freunde ein, lade deine Bekannten ein und bring sie dazu, dieses neue Gericht zu probieren!"
   },
+  "OldNotes": {
+    "name": "Alte Aufzeichnungen",
+    "description": ""
+  },
   "ZhiqiongsLetter": {
     "name": "Zhiqiongs Brief",
     "description": "Ein Brief von einer jungen Abenteurerin. Das Stück Papier riecht leicht bitter nach Qingxin."
@@ -4599,6 +4615,18 @@
     "name": "Paket, das „Löhne“ enthält",
     "description": "Ein Paket, dem nachgesagt wird, dass es Unglück bringt, wenn man es übereilt öffnet. Scheint etwas leichter zu sein als erwartet ..."
   },
+  "ACompleteChartOfAkosTreasure": {
+    "name": "Meereskarte des versteckten Schatzes (vollständig)",
+    "description": "Eine Meereskarte eines Schatzes, den die „Ako-Domeki-Bande“ beim Verlassen dieses Ortes versteckt hat. Nach dem Einsammeln aller vier Teile verrät sie den Ort, an dem der Schatz vergraben ist."
+  },
+  "OutlanderBrigadeWhenTheWindOfDeathBlewTowardsTheBlondSamuraiScript": {
+    "name": "Skript für „Rummelreise in der Fremde: Blonder Samurai im Angesicht des Todeswinds“",
+    "description": "Ein „Filmskript“, das du von Xavier erhalten hast."
+  },
+  "MushouninScript": {
+    "name": "Skript für „Mushounin“",
+    "description": "Xaviers über Nacht neu geschriebenes Filmskript. Es ist deutlich dicker als das vorherige und dabei umfasst es bisher nur den 1. Akt.\\nWenn man sich ein Ziel gesetzt hat, hat man eine erschreckende Willenskraft."
+  },
   "ALegendOfSwordVI": {
     "name": "Vom Schwert gefunden im Herbst – VI",
     "description": "„Im Grunde unterscheidet sich die große Schlacht im Weltraum nicht von dem bewaffneten Konflikt zwischen gewöhnlichen Menschen, der vor zehn Jahren auf diesem öden Planeten stattfand ...“ Bald wird der Name dieses Mannes in der ganzen Galaxie bekannt sein und sich mit dem des Imperators messen können."
@@ -4615,6 +4643,10 @@
     "name": "Los geht’s, Dodoco!",
     "description": "Nachricht von der Redaktion: „Los geht’s, Dodoco!“ ist das gemeinsame Werk eines älteren und eines jüngeren Mädchens. Jedes Kapitel strotzt vor ihrer Sanftheit und ihren guten Wünschen, was das Buch zu einem echten Geschenk für euch, unsere Leser, macht. Ich hoffe, dass dieses Buch, trotz seines geringen Umfangs, dir nach einem langen Arbeitstag ein wenig Freude bereiten kann."
   },
+  "AkosTreasureLocation": {
+    "name": "Akos versteckter Schatz I",
+    "description": "Beim Verlassen dieses Ortes entschloss sich die „Ako-Domeki-Bande“, hier einen Schatz zu hinterlassen. Als sie den Schatz vergrub, entschloss sich die Bande, sich später erneut auf der Insel zu versammeln und ihn auszugraben. Zu diesem Zweck erstellten sie eine Meereskarte, auf welcher der Ort, wo der Schatz vergraben liegt, markiert wurde und teilten sie in vier Teile. Dies ist der erste."
+  },
   "JinwusSoup": {
     "name": "Jinwus Suppe",
     "description": "Eine dicke Suppe, die Jinwu für kranke Bergarbeiter zubereitet hat. Sie ist nahrhaft, duftend und gibt dir ein warmes Gefühl, wenn du sie trinkst.\\nLass sie jetzt nicht kalt werden."
@@ -4622,6 +4654,106 @@
   "BagOfOrnaments": {
     "name": "Schmucktasche",
     "description": "Ein Beutel mit Juwelen, den du vom alten Chou als Entschädigung für Tang den Unbesiegbaren erhalten hast. Die Juwelen wurden von den Schatzräubern hergestellt, die Erze aus der Großen Kluft schmuggeln. Aufgrund der groben und einfachen Technik, die bei der Herstellung dieser Juwelen angewandt wurde, sowie ihres eher schlichten Aussehens hätten sie in Liyue keine Chance, verkauft zu werden. Das einzig Positive, was man über sie sagen kann, ist, dass sie echte Juwelen sind ..."
+  },
+  "SeaRouteLog": {
+    "name": "Logbuch",
+    "description": "Wurde von den Leuten, welche die Hinweise versteckt haben, hinterlassen. Damit sollte es einfach sein, die Hinweise zu finden. Wenn man der hier verzeichneten Route folgt, kann man bestimmt alle Hinweise zum Schatz der „Ako-Domeki-Bande“ finden."
+  },
+  "RouteLogI": {
+    "name": "Logbucheintrag I",
+    "description": "Wurde von den Leuten, welche die Hinweise versteckt haben hinterlassen. Damit sollte es einfach sein, die Hinweise zu finden. Wenn man der hier verzeichneten Route folgt, kann man bestimmt alle Hinweise zum Schatz der „Ako-Domeki-Bande“ finden."
+  },
+  "RouteLogII": {
+    "name": "Logbucheintrag II",
+    "description": "Wurde von den Leuten, welche die Hinweise versteckt haben hinterlassen. Damit sollte es einfach sein, die Hinweise zu finden. Wenn man der hier verzeichneten Route folgt, kann man bestimmt alle Hinweise zum Schatz der „Ako-Domeki-Bande“ finden. Auch wenn es schon die zweite Aufzeichnung ist, dass du gefunden hast, solltest du die Hoffnung nicht verlieren, dieses Mal direkt einen Hinweis zum Schatz zu finden."
+  },
+  "AsterismShard": {
+    "name": "Sternbildsplitter",
+    "description": "Ein geheimnisvoller Splitter, in dem ein Muster aus Sternen eingraviert ist. Er scheint der Schlüssel zu sein, um irgendwo ein bestimmtes Rätsel zu lösen."
+  },
+  "BottleOfSpringWater": {
+    "name": "Mit Quellwasser gefüllte Flasche",
+    "description": "Eine bis oben mit Quellwasser gefüllte Flasche. Darin sollte sich das „Eisgipfelquellwasser“ befinden, nach dem Entflammtes Herz verlangt."
+  },
+  "FrozenSoulsPetal": {
+    "name": "Blütenblatt des Gefrorenen Herzens",
+    "description": "Ein unglaubliches Blütenblatt. Auf den ersten Blick wirkt es, als hätte man Eisbrocken in die Form eines Blütenblatts geschnitzt, doch in der Hand fühlt es sich sanft an.\\n„Nimm mein Blütenblatt und pflanze es am Ende des Aufeinandertreffens der Töne. Die Berge, die im Boden versunken sind, werden sich zum Klang dieser Musik erheben.“\\nSo sagte es Gefrorenes Herz."
+  },
+  "ElegantlyWrittenNote": {
+    "name": "Anmutig geschriebene Aufzeichnungen",
+    "description": "Anmutig geschriebene Aufzeichnungen."
+  },
+  "ALetter": {
+    "name": "Brief",
+    "description": "Ein Brief."
+  },
+  "RockGardenRoughStoneLeft": {
+    "name": "Steingarten-Rohling (links)",
+    "description": "Bergfelsen. Ein in jeder Hinsicht als Fels für die linke Seite der Miniaturlandschaft geeigneter Naturstein."
+  },
+  "RockGardenRoughStoneRight": {
+    "name": "Steingarten-Rohling (rechts)",
+    "description": "Bergfelsen. Ein in jeder Hinsicht als Fels für die rechte Seite der Miniaturlandschaft geeigneter Naturstein."
+  },
+  "RockGardenCarvingTools": {
+    "name": "Steinmetzwerkzeug für den Steingarten",
+    "description": "Ein Steinmetzwerkzeug, das in den für Mondstadt typischen Bergen aufgetaucht ist. Es sieht aus, als könne es zum Modellieren von Steinmaterial für den Steingarten verwendet werden."
+  },
+  "SmallGear": {
+    "name": "Kleines Zahnrad",
+    "description": "Ein kleines Zahnrad. Auch ein noch so kleines Zahnrad hat seinen Nutzen, zumindest vielleicht."
+  },
+  "MediumGear": {
+    "name": "Mittelgroßes Zahnrad",
+    "description": "Ein mittelgroßes Zahnrad. Normalerweise nennen wir es das „Rückgrat“."
+  },
+  "DriveGear": {
+    "name": "Starter-Zahnrad",
+    "description": "Ein Zahnrad, das ein wenig Kraft bereitstellen kann. Kraft ist das Allerwichtigste."
+  },
+  "LargeGear": {
+    "name": "Großes Zahnrad",
+    "description": "Ein großes Zahnrad. Sein Gewicht und seine Arbeitsgeräusche hinterlassen einen tiefen Eindruck."
+  },
+  "DuplexGear": {
+    "name": "Doppellagiges Zahnrad",
+    "description": "Ein relativ kleines doppellagiges Zahnrad. Doppelte Struktur, doppelte Arbeitsleistung."
+  },
+  "LargeDuplexGear": {
+    "name": "Großes doppellagiges Zahnrad",
+    "description": "Ein relativ großes doppellagiges Zahnrad. Große Struktur, großer Verbrauch."
+  },
+  "DrivenGear": {
+    "name": "Getriebenes Zahnrad",
+    "description": "Ein Zahnrad, das angetrieben werden muss. Es ist sehr nützlich, wirklich. Wer könnte helfen, es zu drehen?"
+  },
+  "LeisurelyRocksLeft": {
+    "name": "Ruhiger Felsen – Links",
+    "description": "Ein Felsen für die Miniaturlandschaft mit einer recht sanften Oberfläche, er scheint eine beruhigende Brise heraufbeschwören zu können. Er kann die Miniaturlandschaft auf der linken Seite flankieren."
+  },
+  "LeisurelyRocksRight": {
+    "name": "Ruhiger Felsen – Rechts",
+    "description": "Ein Felsen für die Miniaturlandschaft mit einer recht sanften Oberfläche, er scheint eine beruhigende Brise heraufbeschwören zu können. Er kann die Miniaturlandschaft auf der rechten Seite flankieren."
+  },
+  "HoverlightRocksLeft": {
+    "name": "Leuchtender Felsen – Links",
+    "description": "Ein Felsen mittlerer Härte für die Miniaturlandschaft, es heißt, bei Gewittersturm und Regen würde die Oberfläche des Felsens aufleuchten. Er kann die Miniaturlandschaft auf der linken Seite flankieren."
+  },
+  "HoverlightRocksRight": {
+    "name": "Leuchtender Felsen – Rechts",
+    "description": "Ein Felsen mittlerer Härte für die Miniaturlandschaft, es heißt, bei Gewittersturm und Regen würde die Oberfläche des Felsens aufleuchten. Er kann die Miniaturlandschaft auf der rechten Seite flankieren."
+  },
+  "UnyieldingRocksLeft": {
+    "name": "Harter Felsen – Links",
+    "description": "Ein außerordentlich harter Felsen für die Miniaturlandschaft, der einen unglaublich felsigen Duft beherbergt. Er kann die Miniaturlandschaft auf der linken Seite flankieren."
+  },
+  "UnyieldingRocksRight": {
+    "name": "Harter Felsen – Rechts",
+    "description": "Ein außerordentlich harter Felsen für die Miniaturlandschaft, der einen unglaublich felsigen Duft beherbergt. Er kann die Miniaturlandschaft auf der rechten Seite flankieren."
+  },
+  "ABoxOfComponents": {
+    "name": "Kiste mit Komponenten",
+    "description": "Eine Kiste randvoll mit Komponenten. Diese Komponenten sehen intakt aus. Vielleicht, weil sich die Ungeheuer nicht dafür interessieren ..."
   },
   "NoteOfUnknownOriginI": {
     "name": "Notiz unbekannter Herkunft I",
@@ -4639,17 +4771,117 @@
     "name": "Notiz unbekannter Herkunft IV",
     "description": "Du hast diese Notiz in dem geheimnisvollen Raum gefunden. Ihr Inhalt sieht wie der eines Tagebuchs aus."
   },
+  "ANote": {
+    "name": "Ein Zettel",
+    "description": "Ein geknitterter Zettel voller liederlicher Schrift."
+  },
   "RedemptionVoucher": {
     "name": "Gutschein Nr.1",
     "description": "Ein Gutschein, der gegen „Eule des Spiegelsees – Drehung“ eingetauscht werden kann."
+  },
+  "PartBreeze": {
+    "name": "Teil – Auf dem Wind",
+    "description": "Ein Teil des „mechanischen Perpetuum-Mobile-Puzzles“, das Félix Yogue wiederherstellen möchte."
+  },
+  "PartSky": {
+    "name": "Teil – In der Luft",
+    "description": "Ein Teil des „mechanischen Perpetuum-Mobile-Puzzles“, das Félix Yogue wiederherstellen möchte."
+  },
+  "PartClouds": {
+    "name": "Teil – Über den Wolken",
+    "description": "Ein Teil des „mechanischen Perpetuum-Mobile-Puzzles“, das Félix Yogue wiederherstellen möchte."
+  },
+  "PartCompany": {
+    "name": "Teil – Blumenmuster",
+    "description": "Ein Teil des „mechanischen Perpetuum-Mobile-Puzzles“, das Félix Yogue wiederherstellen möchte."
+  },
+  "PartLonely": {
+    "name": "Teil – Stempel",
+    "description": "Ein Teil des „mechanischen Perpetuum-Mobile-Puzzles“, das Félix Yogue wiederherstellen möchte."
+  },
+  "PartMeadow": {
+    "name": "Teil – Blätter",
+    "description": "Ein Teil des „mechanischen Perpetuum-Mobile-Puzzles“, das Félix Yogue wiederherstellen möchte."
+  },
+  "ForensicOfficeResearchLogExcerpt": {
+    "name": "Seite aus dem Forschungsprotokoll der Gerichtsmedizin",
+    "description": "Eine zerknitterte Seite aus einem Forschungsjournal, auf der die Handschrift noch klar lesbar ist."
   },
   "NoteOfUnknownOrigin": {
     "name": "Notiz unbekannter Herkunft",
     "description": "Du hast diese Notiz in dem geheimnisvollen Raum gefunden. Ihr Inhalt sieht wie der eines Tagebuchs aus."
   },
+  "CrystallineCore": {
+    "name": "Kristallkern",
+    "description": "Ein dem ungewöhnlichen Apparat der Fatui fehlender Kristallkern. Anhand von Persikovs Notiz werden drei davon benötigt, um den Apparat erneut zu starten."
+  },
+  "OldYellowedNotes": {
+    "name": "Vergilbte Alte Aufzeichnungen",
+    "description": "Vergilbte Alte Aufzeichnungen"
+  },
+  "MysteriousLetter": {
+    "name": "Rätselhafter Brief",
+    "description": "Rätselhafter Brief"
+  },
+  "ASeeminglyWaterproofNote": {
+    "name": "Eine anscheinend wasserdichte Notiz",
+    "description": "Eine anscheinend wasserdichte Notiz"
+  },
+  "ReverberatingKey": {
+    "name": "Tönender Schlüssel",
+    "description": "Ein mit irgendeiner seltsamen Pflanze verknüpfter Schlüssel. Mit ihm sollte eine Tür geöffnet werden können ..."
+  },
+  "ANewLetter": {
+    "name": "Gerade ausgelieferter Brief",
+    "description": "Ein Brief, den Hausmädchen Adelinde vor Kurzem erhalten hat und der im Weingut abgelegt werden muss.\\nDas Papier ist ein wenig verknickt, vielleicht war sein Verfasser ein wenig in Eile und konnte keinen ebenen Schreibtisch finden."
+  },
+  "DawnWinerysTopQualityGrapeJuice": {
+    "name": "Geschätzter Traubensaft vom Weingut Morgenröte",
+    "description": "Dieser prachtvoll verpackte Traubensaft, auf welchen Paimon schon lange voller Sehnsucht geschielt hat, ist ein Geschenk von Diluc, das an das gemeinsame Überwinden von Krisen erinnert.\\nDiese Art von Saft, bei der Weintrauben vom Weingut Morgenröte ihre Verwendung finden, ist Diluc am liebsten.\\n„Dilucs liebste Art Traubensaft“, dieses besondere Prädikat hat womöglich einen unschätzbaren materiellen Wert."
+  },
+  "StarlightCoalescence": {
+    "name": "Sternenlicht-Kondenskern",
+    "description": "Ein lichtdurchlässiger Kristall, der Sternenlicht gesammelt zu haben scheint. Er kann der Schlüssel zur Lösung eines Rätsels sein."
+  },
   "DragonspineSuppliesHam": {
     "name": "Vorrat des Drachengrats – Schinken",
     "description": "Ein als Vorrat eingepackter Schinken, unter kalten Bedingungen ist er sehr lange haltbar."
+  },
+  "NightwatchContract": {
+    "name": "Nachtwachenvertrag",
+    "description": "Ein von der Prinzessin der Verurteilung selbst aufgesetzter und unterschriebener Vertrag, der den Anwender zur Eröffnung von Navigationspunkten berechtigt. Wer dieses Schreiben vorweist, ist befähigt, an der Grenze von Tag und Nacht seine schwarzen Schwingen auszubreiten und den Himmel in die Dunkelheit der Nacht zu hüllen."
+  },
+  "TenryouCommissionsMissingPersonPoster": {
+    "name": "Vermisstenanzeige der Polizei",
+    "description": "Eine offizielle Vermisstenanzeige der Polizei, das Siegel der Tenryou-Verwaltung wurde darauf geprägt."
+  },
+  "SeaSaltCrustedKey": {
+    "name": "Meersalzverkrusteter Schlüssel",
+    "description": "Ein auf dem Goldapfelarchipel gefundener Schlüssel, er kann bestimmt benutzt werden, um etwas zu öffnen ..."
+  },
+  "MisplacedConch": {
+    "name": "Verlegte Schnecke 1",
+    "description": "Diese widerspiegelnde Schnecke sollte eigentlich woanders liegen, wurde aber hier zurückgelassen, sodass sie nun Abbilder verzerrt projiziert. Bring sie an ihren richtigen Platz zurück. Schau mal, was du dann herausfinden kannst ..."
+  },
+  "RedDyedFabric": {
+    "name": "Rotgefärbter Stoff",
+    "description": ""
+  },
+  "SilverPocketWatch": {
+    "name": "Versilberte Taschenuhr",
+    "description": "Eine offenbar etwas in die Jahre gekommene Taschenuhr. An den Reinigungsspuren auf ihrer Oberfläche kann man die Liebe ihres Eigentümers dafür erkennen. Im Inneren befindet sich das Bild eines jungen Mädchens aus Snezhnaya."
+  },
+  "OldInsignia": {
+    "name": "Altes Abzeichen",
+    "description": "Das sollte ein Abzeichen der Fatui sein, aber aus irgendeinem Grund ist es vollkommen zerkratzt."
+  },
+  "PersikovsManuscript": {
+    "name": "Persikovs Notiz",
+    "description": "Die Notiz des Fatui-Forschers Persikov, das eine Karte enthält. Die Angaben auf der Karte könnten anscheinend zu den fehlenden Kristallkernen des Apparats „Wahrnehmungsimitator“ führen ..."
+  },
+  "TwilightTheaterHeadsNotes": {
+    "name": "Manuskript des Leiters der Theatergruppe Zwielicht",
+    "description": "Das Regiebuch vom „Nächtlichen Trugbild – Märchen von der schwertschwingenden Prinzessin“. Bei der krakeligen Handschrift scheint es sich um Anmerkungen des Leiters zu handeln, von denen einige so radikal sind, dass sie wohl nicht übernommen werden würden."
   },
   "PyroShard": {
     "name": "Pyro-Kristallsplitter",
@@ -6325,7 +6557,7 @@
   },
   "InvigoratingKittyMeal": {
     "name": "Belebende Katzenmahlzeit",
-    "description": "Dieses Hauptgericht sieht ziemlich süß aus. Mit Kiminami Annas Hilfe wurde dieses Gericht nach dem Geschmack der vorläufigen Oberpriesterin Neko zubereitet. Obwohl es nicht ganz an den Geschmack von Hibiki herankommt, scheint Neko dennoch recht zufrieden mit der Arbeit zu sein. Aufgrund der fehlenden Gewürze könnten die Menschen dieses Gericht ein wenig schlicht finden."
+    "description": "Dieses Hauptgericht sieht ziemlich süß aus. Mit Kiminami Annas Hilfe wurde dieses Gericht nach dem Geschmack der vorläufigen Oberpriesterin Neko zubereitet. Obwohl es nicht ganz an den Geschmack von Hibiki herankommt, scheint Neko dennoch recht zufrieden mit Ihrer Arbeit zu sein. Aufgrund der fehlenden Gewürze könnten die Menschen dieses Gericht ein wenig schlicht finden."
   },
   "DeliciousInvigoratingKittyMeal": {
     "name": "Leckere belebende Katzenmahlzeit",
@@ -6606,6 +6838,10 @@
   "DewDippedShrimp": {
     "name": "Morgentau-Garnelen",
     "description": "Yelans Spezialzubereitung. Zu den Zutaten gehört der neue Tee namens Tautropfen, der aus Qiaoying direkt in die Teestube geliefert und dann zusammen mit fangfrischen Flussgarnelen schnell gebraten wurde. Es riecht nach fernem Teeduft und schmeckt zart und federnd ... Warte! Warum kommt sie jetzt mit einem Teller Peperoni rüber?"
+  },
+  "TheOnlyTruth": {
+    "name": "Nichts als die Wahrheit",
+    "description": "Die Spezialzubereitung von Shikanoin Heizou. Auf dem zarten, feuchten Rührei liegt ein saftiges, goldbraun gebratenes Schnitzel, dessen Aroma sehr verlockend ist ... Nachdem du das ganze Gericht aufgegessen hast, bekommst du plötzlich den Drang, alle deine Geheimnisse auszuspucken. Das ist doch nicht etwa eine Geheimwaffe von Heizou, oder?"
   },
   "RecipeItem": {
     "name": "Objekt für Rezepte",
@@ -8819,6 +9055,14 @@
     "name": "Erlebnispass – Himmlischer Wille",
     "description": "Ein Motiv für Namenskärtchen.\\n„Einst flogen die treuen Seelen wie Schwanengänse nach Osten und Westen.“ „Heute zünde ich meine Laterne an, damit sie sich nicht verirren.“"
   },
+  "ShikanoinHeizouTemari": {
+    "name": "Shikanoin Heizou – Temari",
+    "description": "Ein Motiv für Namenskärtchen\\nEin Temari aus verflochtenen Fäden in verschiedenen Farben. Es muss jemanden viel Mühe gekostet haben, einen solchen Gegenstand herzustellen, aber für Heizou ist es nur ein einfaches Spiel, die Fäden zu entwirren."
+  },
+  "TravelNotesAzureMain": {
+    "name": "Erlebnispass – Meeresblau",
+    "description": "Ein Motiv für Namenskärtchen.\\nAls würdest du nach vielen Jahren von einem langen Traum erwachen. In der Erinnerungen bewahrenden Muschel verbleibt noch immer das Meer jenes Sommers."
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus-Resonanzstein",
     "description": "Im Gebiet von Mondstadt angewendet kannst du hiermit verlorene Anemoculi in der Nähe aufspüren.\\nDiese künstliche Steinplatte besitzt eine gewisse Charakteristik, die der der Anemo-Statuen der Sieben ähnelt und ihr die Kraft verleiht, mit den Anemoculi zu interagieren.\\nOculus-Resonanzsteine sind grobe Imitationen der Statuen der Sieben, die von den Menschen des Altertums gebaut wurden. Gerade die Rohheit solcher Steine ist es, was sie dazu bringt, nach der Kraft der Oculi zu verlangen, um Anhängern der Götter und Abenteurern die Möglichkeit zu geben, Oculi zu finden."
@@ -9155,6 +9399,14 @@
     "name": "Üppige Pracht",
     "description": "Keqings formelle Kleidung. Die Fäden, die in tagelanger harter Arbeit gewebt wurden, verflechten sich inmitten der schönen Morgenstunden des Laternenrituals zu einem leichten und doch prächtigen Erscheinungsbild."
   },
+  "RedDeadOfNight": {
+    "name": "Blutrote Nacht",
+    "description": "Eines der Kleidungsstücke, die Diluc auf seinen Geheimmissionen zu tragen pflegt, wie eine im Dunkeln tanzende Flamme. Das letzte bisschen Blutrot, das Feinde zu Gesicht bekommen und vor dem sie bis an ihr Lebensende unauslöschliche Albträume bekommen."
+  },
+  "EinImmernachtstraum": {
+    "name": "Ein Immernachtstraum",
+    "description": "Das Ritualkleid der Prinzessin Fischl. Möge die edle Person immer Mut, Aufrichtigkeit und Herzensgüte besitzen, sodass das Böse sie nicht überkommen kann."
+  },
   "GunnhildrsLegacy": {
     "name": "Gunnhildrs Erbe",
     "description": "Jeans Kleidung. Die elegante Ritterkleidung passt perfekt zu allen möglichen Anlässen."
@@ -9357,7 +9609,7 @@
   },
   "WakefulSpring": {
     "name": "Thermalbad der Wachsamkeit",
-    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Thermalbad der Wachsamkeit“.\\nEine komplett ausgestattete heiße Quelle im Freien. Die Mineralien und Elemente, die hier vorhanden sind, sind vielleicht nicht mit denen des Badehauses Aisa vergleichbar, aber heiße Quellen dieser Art bieten eine viel freundlichere und ungezwungenere Atmosphäre.\\nNur ein halbstündiges Bad hier und all die Müdigkeit, die du von der Arbeit angesammelt hast, wird sich in Nichts auflösen und durch eine wiedererwachte Vitalität ersetzt werden, und wenn du Zeit hast, kannst du dich an einen nahegelegenen weißen Stein lehnen und einen Tee trinken und mit deinen Freunden plaudern.\\nNatürlich solltest du die grundsätzlichen Anstandsregeln beachten, bevor du eintrittst: Es ist in Ordnung, die heiße Quelle mit Freunden zu genießen, aber bleib nicht zu lange. Wenn du zu viel Zeit mit schwatzhaften Leuten wie der Königin des Sommerfestes verbringst, könnte dir schwindelig werden.\\nNach der Anwendung im Platzierungsbildschirm zu finden.\\nDieses Set wird von folgenden Kameraden bevorzugt: Yoimiya, Gorou und Yae Miko."
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Thermalbad der Wachsamkeit“.\\nEine komplett ausgestattete heiße Quelle im Freien. Die Mineralien und Elemente, die hier vorhanden sind, sind vielleicht nicht mit denen des Badehauses Aisa vergleichbar, aber heiße Quellen dieser Art bieten eine viel freundlichere und ungezwungenere Atmosphäre.\\nNur ein halbstündiges Bad hier und all die Müdigkeit, die du von der Arbeit angesammelt hast, wird sich in Nichts auflösen und durch eine wiedererwachte Vitalität ersetzt werden, und wenn du Zeit hast, kannst du dich an einen nahegelegenen weißen Stein lehnen und einen Tee trinken und mit deinen Freunden plaudern.\\nNatürlich solltest du die grundsätzlichen Anstandsregeln beachten, bevor du eintrittst. Es ist ebenfalls in Ordnung, die heiße Quelle mit Freunden zu genießen, aber bleib nicht zu lange. Wenn du zu viel Zeit mit schwatzhaften Leuten wie der Königin des Sommerfestes verbringst, könnte dir schwindlig werden.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von folgenden Kameraden bevorzugt: Yoimiya, Gorou, Yae Miko und Shikanoin Heizou."
   },
   "RuralConcealment": {
     "name": "Ländlicher Rückzugsort",
@@ -9385,7 +9637,7 @@
   },
   "EternalDomainOfFleetingDreams": {
     "name": "Ewiges Reich der flüchtigen Träume",
-    "description": "Bauplan mit detaillierten Schritten zur Platzierung von „Ewiges Reich der flüchtigen Träume“.\\nDieses Schlafzimmer ist von der einzigartigen Ästhetik von Inazuma geprägt, greift aber auch Ideen aus anderen Reichen auf und schafft so eine hervorragende Balance zwischen Tradition und Zweckmäßigkeit. Bei der Gestaltung wurde berücksichtigt, wie sich die Gäste fühlen könnten, und der Raum selbst wurde so gestaltet, dass sie sich ausreichend entspannen können, so dass sie sich wie nach einem langen, träumerischen Schlaf erholt fühlen, auch wenn sie nur eine kurze Pause machen. Das freundlich eingerichtete Kotatsu trägt ebenfalls zu dem Gefühl bei, das Zimmer nicht verlassen zu wollen.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Sayu und Sangonomiya Kokomi."
+    "description": "Bauplan mit detaillierten Schritten zur Platzierung von „Ewiges Reich der flüchtigen Träume“.\\nDieses Schlafzimmer ist von der einzigartigen Ästhetik von Inazuma geprägt, greift aber auch Ideen aus anderen Reichen auf und schafft so eine hervorragende Balance zwischen Tradition und Zweckmäßigkeit. Bei der Gestaltung wurde berücksichtigt, wie sich die Gäste fühlen könnten, und der Raum selbst wurde so gestaltet, dass sie sich ausreichend entspannen können, sodass sie sich wie nach einem langen, träumerischen Schlaf erholt fühlen, auch wenn sie nur eine kurze Pause machen. Das freundlich eingerichtete Kotatsu trägt ebenfalls zu dem Gefühl bei, das Zimmer nicht verlassen zu wollen.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Sayu, Sangonomiya Kokomi und Shikanoin Heizou."
   },
   "AThousandSwings": {
     "name": "Tausend Schläge",
@@ -9779,6 +10031,10 @@
     "name": "Muschel-Tischlampe",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Muschel-Tischlampe“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "TranquilStarlight": {
+    "name": "„Klares Sternenlicht“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Klares Sternenlicht“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Blumenarrangement – „Himmelblaue Ruhe“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Blumenarrangement – Himmelblaue Ruhe“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -9878,6 +10134,10 @@
   "TrueCookeryNukiNukiDaruma": {
     "name": "Tanuki-Spielzeug – „Echte Kochkunst“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Tanuki-Spielzeug – Echte Kochkunst“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "CosmosWithin": {
+    "name": "„Wirbelnder Kosmos“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wirbelnder Kosmos“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "LandscapePaintingCountryHome": {
     "name": "Landschaftsmalerei – „Landhaus“",
@@ -10174,6 +10434,10 @@
   "FestivalBoothLiteraryTalent": {
     "name": "Feststand – „Literarisches Talent“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Feststand – Literarisches Talent“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DodocosSummertime": {
+    "name": "„Dodocos wunderschöner Sommer\"",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Dodocos wunderschöner Sommer“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "RitualShrine": {
     "name": "„Schrein des Rituals“",
@@ -10623,6 +10887,10 @@
     "name": "Gelassene Flammen",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Gelassene Flammen“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "AllegroBloomSpecialTuning": {
+    "name": "„Allegro-Blume – Besondere{NON_BREAK_SPACE}Stimmung“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Allegro-Blume – Besondere Stimmung“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "PottedPlantVerdantVastness": {
     "name": "Topfpflanze – „Kleine Oase“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Topfpflanze – Kleine Oase“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -10794,6 +11062,26 @@
   "PearOrchardScreenDeft": {
     "name": "Birnengarten-Paravent – „Fingerfertigkeit“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Birnengarten-Paravent – Fingerfertigkeit“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DodocosTravelBag": {
+    "name": "„Dodocos Reisetasche“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Dodocos Reisetasche“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DodocosDodoStove": {
+    "name": "„Dodocos Dodo-Ofen“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Dodocos Dodo-Ofen“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DodocosBeachNap": {
+    "name": "„Dodocos Strandnickerchen“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Dodocos Strandnickerchen“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DodocosCollectionCupboard": {
+    "name": "„Dodocos Schatzvitrine“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Dodocos Schatzvitrine“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DodocosSunshadeUmbrella": {
+    "name": "„Dodocos Strandschirm“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Dodocos Strandschirm“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Eiserne Straßenlaterne mit Gravur",

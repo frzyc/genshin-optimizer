@@ -2,7 +2,7 @@
   "setName": "Au-delà cinabrin",
   "setEffects": {
     "2": "Augmente l'ATQ de 18 %.",
-    "4": "Lorsqu'un personnage utilise un déchaînement élémentaire, il gagne un effet de Lumière latente pendant 16 s, augmentant son ATQ de 8 %, puis de 10 % supplémentaires à chaque fois que ses PV diminuent. Cette augmentation supplémentaire peut être cumulée 4 fois maximum et déclenchée une fois toutes les 0,8 s. L'effet de Lumière latente cesse lorsque le personnage quitte le champ de bataille. Si le personnage utilise à nouveau son déchaînement élémentaire alors que la Lumière latente est en effet, l'effet original de Lumière latente est dissipé."
+    "4": "Lorsqu'un personnage utilise un déchaînement élémentaire, il gagne un effet de Lumière latente pendant 16 s, augmentant son ATQ de 8 %, puis de 10 % supplémentaires à chaque fois que ses PV diminuent. Cette augmentation supplémentaire peut être cumulée 4 fois maximum et déclenchée une fois toutes les 0,8 s. L'effet Lumière latente cesse lorsque le personnage quitte le champ de bataille. Si le personnage utilise à nouveau son déchaînement élémentaire alors que la Lumière latente est en effet, l'effet original de Lumière latente est dissipé."
   },
   "pieces": {
     "flower": {

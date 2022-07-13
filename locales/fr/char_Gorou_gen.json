@@ -47,9 +47,9 @@
       "2": "<strong>Bannière de général</strong>",
       "3": "Accorde les effets suivants aux personnages déployés dans la zone d'effet en fonction de la quantité de personnages de type <geo>Géo</geo> dans l'équipe au moment de l'utilisation :",
       "4": [
-        " Avoir 1 personnage Géo accorde un effet de pied ferme : bonus de DÉF.",
-        " Avoir 2 personnages Géo accorde un effet d'imprenabilité : effet précédent + bonus de RÉS à l'interruption.",
-        " Avoir 3 personnages Géo accorde un effet de fracas : effets précédents + <geo>bonus de DGT Géo</geo>."
+        " Avoir 1 personnage Géo accorde un effet de Pied ferme : bonus de DÉF.",
+        " Avoir 2 personnages Géo accorde un effet d'Imprenabilité : effet précédent + bonus de RÉS à l'interruption.",
+        " Avoir 3 personnages Géo accorde un effet de Fracas : effets précédents + <geo>bonus de DGT Géo</geo>."
       ],
       "5": "<br/>",
       "6": "Gorou ne peut générer qu'une bannière de général à la fois, et les personnages ne peuvent bénéficier des effets que d'une seule bannière de général à la fois. Lorsque le personnage quitte la zone, les effets continuent pendant 2 s.",
@@ -176,9 +176,9 @@
     "description": {
       "0": "Pendant 12 s après <strong>Défense intégrale d'Inuzaka</strong> ou <strong>Crocs bestiaux : Vers la victoire</strong>, les DGT CRIT des <geo>DGT Géo</geo> de tous les personnages de l'équipe à proximité augmentent en fonction du niveau du champ au moment de l'utilisation de la compétence{NON_BREAK_SPACE}:",
       "1": [
-        " Pied ferme : +10 %.",
-        " Imprenabilité : +20 %.",
-        " Fracas : +40 %."
+        " Pied ferme : + 10 %.",
+        " Imprenabilité : + 20 %.",
+        " Fracas : + 40 %."
       ],
       "2": "<br/>",
       "3": "Cet effet ne se cumule pas, et la dernière augmentation déclenchée sera la référence pour l'effet."

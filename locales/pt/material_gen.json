@@ -155,6 +155,10 @@
     "name": "Pedra do Brilho Lunar",
     "description": "Uma pedra com uma aura estranha. Só pode ser encontrada em um lugar específico do Despenhadeiro, e tanto a sua origem como a sua composição são desconhecidas. No entanto, ela possui propriedades estranhas e únicas: quando caiu, manteve sua forma regular e sua seção transversal manteve o brilho lustroso original. É possível que essas pedras anciãs tenham vivido tempo suficiente para testemunhar as antigas batalhas do passado.\\nEssas pedras podem ser trocadas por tesouros durante o evento \"Trilha Perigosa\"."
   },
+  "IridescentFlotsam": {
+    "name": "Concha Iridescente",
+    "description": "Concha de uma criatura marinha deixada no Arquipélago de Maçã Dourada. Como se fosse afetada por uma certa força, ela perdeu seus padrões originais e se tornou iridescente.\\nVocê pode trocar essas conchas por tesouros valiosos durante o evento \"A Jornada do Mar de Verão\"."
+  },
   "StratagemShard": {
     "name": "Fragmento de Estratagema",
     "description": "Um cristal que possui um poder profundo e sutil. Tem um tom dourado muito parecido com a pedra Cor Lapis. Seu poder pode ser ativado até certo ponto neste espaço abaixo do Despenhadeiro, ajudando você a derrotar os monstros.\\nVocê pode usá-lo no Campo de Batalha Traiçoeiro da Trilha Perigosa para criar estratagemas ou permitir que personagens derrotados voltem para o campo de batalha."
@@ -447,6 +451,10 @@
     "name": "Yae Miko",
     "description": "A Senhorita Guuji do Grande Santuário Narukami, e também a Editora-Chefe da Editora Yae. Por trás de sua bela aparência escondem-se sabedoria e astúcia inimagináveis."
   },
+  "ShikanoinHeizou": {
+    "name": "Shikanoin Heizou",
+    "description": "Um jovem e talentoso detetive da Comissão Tenryou. Tem uma intuição astuta e aguçada."
+  },
   "Yelan": {
     "name": "Yelan",
     "description": "Uma pessoa misteriosa que afirma trabalhar para o Ministério dos Assuntos Civis, mas \"não existe\" nos registros deles."
@@ -650,6 +658,10 @@
   "YaeMikosStellaFortuna": {
     "name": "Stella Fortuna de Yae Miko",
     "description": "Material de Ativação de Constelação de Yae Miko"
+  },
+  "ShikanoinHeizousStellaFortuna": {
+    "name": "Stella Fortuna de Shikanoin Heizou",
+    "description": "Material de Ativação da Constelação de Shikanoin Heizou"
   },
   "YelansStellaFortuna": {
     "name": "Stella Fortuna de Yelan",
@@ -1232,7 +1244,7 @@
     "description": "Um tesouro que pertenceu ao Barbatos, o Arconte Anemo, com algum poder restaurado por um Cristal da Lágrima."
   },
   "CompletelyRepairedHolyLyreDerHimmel": {
-    "name": "Lira Sagrada der Himmel totalmente parada",
+    "name": "Lira Sagrada der Himmel totalmente reparada",
     "description": "Um tesouro que pertenceu ao Barbatos, o Arconte Anemo, que teve seu poder totalmente restaurado. Até mesmo o Dvalin terá que cuidar com o seu chamado."
   },
   "ClearDvalinTear": {
@@ -4085,7 +4097,7 @@
   },
   "TreasuredTalesOfTheChoukenShinkageuchiI": {
     "name": "Teorias Estranhas de Kiyoshiken Shinkageuchi (I)",
-    "description": "Um volume dos contos tradicionais de Inazuma. Este volume se chama \"Shinkageuchi\" e já foi banido no passado. Ele fala sobre um conto fantástico da primeira Shogun Raiden e seu kagemusha, retratando a sabedoria benevolente da primeira Shogun e o grande valor de seu kagemusha. No entanto, devido à popularidade de outro livro coloquialmente conhecido como \"A Reencarnação da Shogun Raiden\", esse tipo de livro começou a ser amplamente aceito. Assim, este livro voltou a ser publicado gratuitamente."
+    "description": "Um volume dos contos tradicionais de Inazuma. Este volume se chama \"Shinkageuchi\" e já foi banido no passado. Ele fala sobre um conto fantástico da primeira Shogun Raiden e seu kagemusha, retratando a sabedoria benevolente da primeira Shogun e o grande valor de sua kagemusha. No entanto, devido à popularidade de outro livro coloquialmente conhecido como \"A Reencarnação da Shogun Raiden\", esse tipo de livro começou a ser amplamente aceito. Assim, este livro voltou a ser publicado gratuitamente."
   },
   "MysteriousStone": {
     "name": "Pedra Misteriosa",
@@ -4183,7 +4195,7 @@
     "name": "Fotografia de Pedra Estranha",
     "description": "Uma fotografia feita no Despenhadeiro de uma pedra estranha que pode ser encontrada nas paredes. Não se sabe o que os padrões na pedra significam, mas talvez ela seja valiosa para aqueles estudiosos."
   },
-  "AcademiaRecommendationLetter": {
+  "AkademiyaRecommendationLetter": {
     "name": "Carta de Recomendação da Academia",
     "description": "Uma carta escrita com muito cuidado e selada no nome de \"Ecólogo Khedive Pursina\".\\nVocê obteve isso como uma recompensa de Khedive. Ele alega ser mais valiosa que ouro, e pode lhe ajudar a ter a ajuda da Casa de Purbiruni.\\nKhedive acredita que recompensas monetárias são um insulto... Você espera que isso não seja algo recorrente com as pessoas de Sumeru."
   },
@@ -4471,6 +4483,10 @@
     "name": "Tiras de Três Sabores com Cheiro Aromático",
     "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
   },
+  "OldNotes": {
+    "name": "Nota Velha",
+    "description": ""
+  },
   "ZhiqiongsLetter": {
     "name": "Carta de Zhiqiong",
     "description": "Uma carta deixada por uma jovem aventureira. Há um cheiro amargo de Qingxin nela."
@@ -4599,6 +4615,18 @@
     "name": "Embrulho escrito \"Salário\"",
     "description": "Dizem que abri-lo com pressa revelará um pacote com má sorte. Parece mais leve do que o esperado."
   },
+  "ACompleteChartOfAkosTreasure": {
+    "name": "Carta Náutica Completa do Tesouro de Ako",
+    "description": "Carta náutica com a localização do tesouro que a gangue de Ako Domeki escondeu antes de deixar este lugar. Depois de coletar todas as quatro partes, ela revelou o local onde o tesouro foi enterrado."
+  },
+  "OutlanderBrigadeWhenTheWindOfDeathBlewTowardsTheBlondSamuraiScript": {
+    "name": "Roteiro de \"Viagens de um Forasteiro: Quando os Ventos da Morte Sopram para o Samurai Louro\"",
+    "description": "Um roteiro de filme que você obteve de Xavier."
+  },
+  "MushouninScript": {
+    "name": "Roteiro de \"Mushounin\"",
+    "description": "Um novo roteiro de filme que Xavier escreveu em uma noite. É significativamente mais grosso que o anterior, apesar de conter apenas o ato 1 até agora.\\nA força de vontade que nasce quando você quer atingir um objetivo é realmente incrível."
+  },
   "ALegendOfSwordVI": {
     "name": "A Lenda da Espada (VI)",
     "description": "\"Em essência, a grande batalha no espaço não é diferente do conflito armado que ocorreu dez anos atrás naquele planeta deserto...\" Em breve, o nome daquele homem será tão conhecido na galáxia como o do Imperador."
@@ -4615,6 +4643,10 @@
     "name": "Vamos, Dodoco!",
     "description": "Mensagem do editor: \"Vamos, Dodoco!\" é o trabalho conjunto de uma garota e uma menininha. Cada capítulo contém sua gentileza e desejos, tornando o livro um verdadeiro presente para os leitores. Espero que este livro, apesar de seu pequeno tamanho, possa lhe trazer alegria após um longo dia de trabalho."
   },
+  "AkosTreasureLocation": {
+    "name": "Tesouro de Ako - I",
+    "description": "Antes de partir, a gangue de Ako Domeki escondeu um tesouro e concordou em desenterrá-lo quando se encontrassem novamente no arquipélago. Eles então dividiram as pistas para a localização do tesouro em quatro, esta é a primeira parte dessas pistas."
+  },
   "JinwusSoup": {
     "name": "Sopa de Jinwu",
     "description": "Uma sopa grossa que Jinwu fez para os mineradores doentes. É nutritiva, aromática e conforta seu coração quando é bebida.\\nJinwu a fez com carinho, por isso não deixe esfriar."
@@ -4622,6 +4654,106 @@
   "BagOfOrnaments": {
     "name": "Bolsa de Joias",
     "description": "Uma bolsa com joias que o Chou lhe deu como compensação por Tang Wuchou. Elas foram feitas de maneira rústica pelos Ladrões de Tesouro no Despenhadeiro com minérios contrabandeados, e mal se pode considerar possuidoras de qualidades estéticas. Por isso, não há chance alguma de serem vendidas em Liyue. A única coisa boa que pode ser dita sobre essas joias é que elas pelo menos foram feitas com os materiais certos."
+  },
+  "SeaRouteLog": {
+    "name": "Caderno de Rota Marítima",
+    "description": "Quem escondeu as pistas deixou instruções para encontrá-las. Se você navegar conforme as instruções, você poderá encontrar uma pista sobre o tesouro deixado pela gangue de Ako Domeki."
+  },
+  "RouteLogI": {
+    "name": "Caderno de Rota: I",
+    "description": "Quem escondeu as pistas deixou instruções para encontrá-las. Se você proceder conforme as instruções, você poderá encontrar uma pista sobre o tesouro deixado pela gangue de Ako Domeki."
+  },
+  "RouteLogII": {
+    "name": "Caderno de Rota: II",
+    "description": "Quem escondeu as pistas deixou instruções para encontrá-las. Se você proceder conforme as instruções, você poderá encontrar uma pista sobre o tesouro deixado pela gangue de Ako Domeki. Este é o segundo caderno que você encontra, esperemos que desta vez contenha uma pista direta para encontrar o tesouro."
+  },
+  "AsterismShard": {
+    "name": "Fragmento Estelar",
+    "description": "Um fragmento misterioso gravado com um padrão de estrelas. Ele parece ser a chave para resolver o mistério de um certo mecanismo."
+  },
+  "BottleOfSpringWater": {
+    "name": "Garrafa de Água da Nascente",
+    "description": "Uma garrafa de água de nascente. A Água da Nascente Glacial que Coração Flamejante quer deve ser armazenada aqui."
+  },
+  "FrozenSoulsPetal": {
+    "name": "Pétala de Coração Gélido",
+    "description": "Uma pétala incrível. À primeira vista, ela parece um pedaço de gelo em forma de pétala, mas macia ao toque.\\n\"Plante minha pétala no ponto final da intersecção das melodias, e o que antes afundou na terra reemergirá com a música.\"\\nFoi isso que o Coração Gélido disse."
+  },
+  "ElegantlyWrittenNote": {
+    "name": "Anotação Elegantemente Escrita",
+    "description": "Anotação Elegantemente Escrita."
+  },
+  "ALetter": {
+    "name": "Uma carta",
+    "description": "Uma carta."
+  },
+  "RockGardenRoughStoneLeft": {
+    "name": "Pedra Áspera do Jardim de Rocha (Esquerda)",
+    "description": "Uma pedra das montanhas. Parece ser ideal para ser usada como matéria-prima para esculpir rochas para o lado esquerdo do bonsai."
+  },
+  "RockGardenRoughStoneRight": {
+    "name": "Pedra Áspera do Jardim de Rochas (Direita)",
+    "description": "Uma pedra das montanhas. Parece ser ideal para ser usada como matéria-prima para esculpir rochas para o lado direito do bonsai."
+  },
+  "RockGardenCarvingTools": {
+    "name": "Cinzel para Jardim de Rochas",
+    "description": "Ferramenta de esculpimento que você encontrou nas montanhas no estilo de Mondstadt. Você talvez possa usá-la para esculpir a matéria-prima que possui em um jardim de pedra."
+  },
+  "SmallGear": {
+    "name": "Engrenagem Pequena",
+    "description": "Uma pequena engrenagem. Não importa o quão pequena seja, deve ter alguma utilidade, não é?"
+  },
+  "MediumGear": {
+    "name": "Engrenagem Média",
+    "description": "Uma engrenagem média. Geralmente nos referimos a ela como \"força central\"."
+  },
+  "DriveGear": {
+    "name": "Engrenagem Condutora",
+    "description": "Uma engrenagem capaz de fornecer uma certa força. Afinal, isso que é importante."
+  },
+  "LargeGear": {
+    "name": "Engrenagem Grande",
+    "description": "Uma engrenagem grande. Seu peso e o barulho que faz deixarão uma impressão profunda nas pessoas."
+  },
+  "DuplexGear": {
+    "name": "Engrenagem Dupla",
+    "description": "Uma engrenagem dupla relativamente pequena. Estrutura em dobro, trabalho em dobro."
+  },
+  "LargeDuplexGear": {
+    "name": "Engrenagem Dupla Grande",
+    "description": "Uma engrenagem dupla relativamente grande. Quão maior, mais se consome para fazê-la."
+  },
+  "DrivenGear": {
+    "name": "Engrenagem Estática",
+    "description": "Uma engrenagem que necessita de força para ser movida. Ela é muito útil. Sério. Alguém pode ajudar a girá-la?"
+  },
+  "LeisurelyRocksLeft": {
+    "name": "Rocha Serena: Esquerda",
+    "description": "Rocha de textura leve para bonsai. Ela parece poder invocar uma brisa suave. Pode ser colocada no lado esquerdo do bonsai."
+  },
+  "LeisurelyRocksRight": {
+    "name": "Rocha Serena: Direita",
+    "description": "Rocha de textura leve para bonsai. Ela parece poder invocar uma brisa suave. Pode ser colocada no lado direito do bonsai."
+  },
+  "HoverlightRocksLeft": {
+    "name": "Rocha Luminescente: Esquerda",
+    "description": "Rocha de bonsai moderadamente dura. Dizem que raios de luz dançam em sua superfície quando há uma tempestade. Pode ser colocada no lado esquerdo do bonsai."
+  },
+  "HoverlightRocksRight": {
+    "name": "Rocha Luminescente: Direita",
+    "description": "Rocha de bonsai moderadamente dura. Dizem que raios de luz dançam em sua superfície quando há uma tempestade. Pode ser colocada no lado direito do bonsai."
+  },
+  "UnyieldingRocksLeft": {
+    "name": "Rocha Sólida: Esquerda",
+    "description": "Rocha de bonsai extraordinariamente dura que exala uma sensação incrivelmente rochosa. Pode ser colocada no lado esquerdo do bonsai."
+  },
+  "UnyieldingRocksRight": {
+    "name": "Rocha Sólida: Direita",
+    "description": "Rocha de bonsai extraordinariamente dura que exala uma sensação incrivelmente rochosa. Pode ser colocada no lado direito do bonsai."
+  },
+  "ABoxOfComponents": {
+    "name": "Caixa de Componentes",
+    "description": "Uma caixa cheia de componentes. Esses componentes parecem não terem sofrido dano algum, talvez os monstros não tenham se interessado por eles..."
   },
   "NoteOfUnknownOriginI": {
     "name": "Nota de Origem Desconhecida: I",
@@ -4639,17 +4771,117 @@
     "name": "Nota de Origem Desconhecida: IV",
     "description": "Você encontrou esta nota no espaço misterioso. O seu conteúdo parece o de um diário."
   },
+  "ANote": {
+    "name": "Uma Nota",
+    "description": "Uma nota amassada com escrita torta."
+  },
   "RedemptionVoucher": {
     "name": "Cupom de Troca 1",
     "description": "Cupom usado para resgatar Coruja do Lago dos Espelhos: Rodopio"
+  },
+  "PartBreeze": {
+    "name": "Componente: Brisa",
+    "description": "Um dos componentes da Pintura Mecânica de Movimento Perpétuo que Félix Yogue está tentando restaurar."
+  },
+  "PartSky": {
+    "name": "Componente: Céu",
+    "description": "Um dos componentes da Pintura Mecânica de Movimento Perpétuo que Félix Yogue está tentando restaurar."
+  },
+  "PartClouds": {
+    "name": "Componente: Além-nuvens",
+    "description": "Um dos componentes da Pintura Mecânica de Movimento Perpétuo que Félix Yogue está tentando restaurar."
+  },
+  "PartCompany": {
+    "name": "Componente: Arranjo Floral",
+    "description": "Um dos componentes da Pintura Mecânica de Movimento Perpétuo que Félix Yogue está tentando restaurar."
+  },
+  "PartLonely": {
+    "name": "Componente: Pistilo",
+    "description": "Um dos componentes da Pintura Mecânica de Movimento Perpétuo que Félix Yogue está tentando restaurar."
+  },
+  "PartMeadow": {
+    "name": "Componente: Prado",
+    "description": "Um dos componentes da Pintura Mecânica de Movimento Perpétuo que Félix Yogue está tentando restaurar."
+  },
+  "ForensicOfficeResearchLogExcerpt": {
+    "name": "Folhas do Registro de Investigação do Laboratório Forense",
+    "description": "Folhas amassadas de um diário de investigação. A escrita ainda está legível."
   },
   "NoteOfUnknownOrigin": {
     "name": "Nota de Origem Desconhecida",
     "description": "Você encontrou esta nota no espaço misterioso. O seu conteúdo parece o de um diário."
   },
+  "CrystallineCore": {
+    "name": "Núcleo de Cristal",
+    "description": "Um núcleo de cristal desaparecido do misterioso dispositivo dos Fatui. De acordo com o Manuscrito de Persikov, é necessário encontrar três núcleos de cristal como esse e inseri-los no dispositivo para que ele possa ser ativado."
+  },
+  "OldYellowedNotes": {
+    "name": "Notas Amareladas",
+    "description": "Notas Amareladas"
+  },
+  "MysteriousLetter": {
+    "name": "Carta Misteriosa",
+    "description": "Carta Misteriosa"
+  },
+  "ASeeminglyWaterproofNote": {
+    "name": "Uma Nota Aparentemente à Prova d'água",
+    "description": "Uma Nota Aparentemente à Prova d'água"
+  },
+  "ReverberatingKey": {
+    "name": "Chave Reverberante",
+    "description": "Uma chave relacionada a alguma planta fantástica. Parece que ela pode abrir alguma porta..."
+  },
+  "ANewLetter": {
+    "name": "Carta Nova",
+    "description": "Uma carta que a empregada chefe, Adelinde, recebeu. Deve ser enviada para a adega para ser arquivada.\\nO papel está amassado, talvez a pessoa que a escreveu estava apressada e não conseguiu encontrar uma mesa."
+  },
+  "DawnWinerysTopQualityGrapeJuice": {
+    "name": "Suco de Uva de Excelente Qualidade da Adega do Alvorecer",
+    "description": "Um presente de Diluc. É uma garrafa de suco de uva com uma embalagem luxuosa. É algo que Paimon estava muito ansiosa, mas é mais uma lembrança do tempo que você passou com seus amigos para resolver uma crise.\\nTambém é a bebida favorita pessoal de Diluc, produzida utilizando as uvas de melhor qualidade da Adega do Alvorecer.\\nComo é \"o suco de uva favorito do Mestre Diluc\", parece ter um valor comercial inestimável..."
+  },
+  "StarlightCoalescence": {
+    "name": "Núcleo da Luz Estelar",
+    "description": "Um cristal que condensa a luz estelar. Parece poder abrir algum mecanismo misterioso."
+  },
   "DragonspineSuppliesHam": {
     "name": "Suprimento da Espinha do Dragão — Presunto",
     "description": "Um presunto usado como suprimento. Pode ser conservado por muito tempo em temperaturas baixas."
+  },
+  "NightwatchContract": {
+    "name": "Contrato de Patrulha Voadora da Noite Eterna",
+    "description": "Um contrato assinado pessoalmente pela Princesa do Pecado. Ele pode ser utilizado para autorizar a abertura do local de navegação. Aqueles que mostrarem essa carta estarão autorizados a espalhar suas penas negras onde a alvorada encontra o crepúsculo, e envolver os céus no abraço da noite."
+  },
+  "TenryouCommissionsMissingPersonPoster": {
+    "name": "Pôster de Pessoa Desaparecida da Comissão Tenryou",
+    "description": "Um pôster de pessoa desaparecida com o símbolo da Comissão Tenryou."
+  },
+  "SeaSaltCrustedKey": {
+    "name": "Chave Coberta de Sal",
+    "description": "Uma chave encontrada no Arquipélago de Maçã Dourada, parece poder abrir uma fechadura em algum lugar..."
+  },
+  "MisplacedConch": {
+    "name": "Concha Deslocada 1",
+    "description": "Uma Concha de Miragem que deveria estar noutro lugar. Alguém a tirou daqui e ela está reproduzindo uma imagem que aconteceu em outro local. Coloque-a de volta na sua posição original para uma nova cena..."
+  },
+  "RedDyedFabric": {
+    "name": "Tecido Tingido de Vermelho",
+    "description": ""
+  },
+  "SilverPocketWatch": {
+    "name": "Relógio de Bolso Prateado",
+    "description": "Esse relógio de bolso é um pouco antigo. Mas você percebe que foi cuidadosamente mantido, evidenciando o quanto seu dono o valoriza. Dentro há uma fotografia de uma garota de Snezhnaya."
+  },
+  "OldInsignia": {
+    "name": "Insígnia Antiga",
+    "description": "Uma insígnia que deve ser de um Fatui. Mas você não sabe porque ela está repleta de arranhões."
+  },
+  "PersikovsManuscript": {
+    "name": "Manuscrito de Persikov",
+    "description": "O manuscrito de Persikov. Essas notas contêm um mapa, e se você seguir suas instruções, deve conseguir encontrar os núcleos de cristal que faltam no Simulador Cognitivo..."
+  },
+  "TwilightTheaterHeadsNotes": {
+    "name": "Roteiro do Diretor da Companhia Teatral Crepúsculo",
+    "description": "O roteiro para \"Dramaturgia Fantasmagórica: A Princesa Espadachim!\". Os rabiscos ao redor do roteiro parecem ser anotações do diretor da companhia de teatro, e algumas delas contêm instruções extremas para que não sejam utilizadas."
   },
   "PyroShard": {
     "name": "Fragmento Pyro",
@@ -6606,6 +6838,10 @@
   "DewDippedShrimp": {
     "name": "Camarão Marinado",
     "description": "Especialidade de Yelan. Entre os ingredientes usados para confeccionar este prato está o novo chá proveniente da Vila Qiaoying chamado Gotas de Orvalho, que foi enviado diretamente para a Casa de Chá e depois levemente frito com camarão fresco do rio. Este prato tem uma fragrância suave de chá, e seu sabor é tenro ao paladar... Espere um minuto. Por que ela está vindo aqui com um prato de pimenta?"
+  },
+  "TheOnlyTruth": {
+    "name": "A Única Verdade",
+    "description": "Especialidade de Shikanoin Heizou. Um katsu frito dourado reside nos saborosos ovos mexidos, e seu aroma é inebriante... Tentad{F#a}{M#o} pelo prato, você é tomad{F#a}{M#o} pela sensação de revelar tudo em seu coração... Será que isso é alguma arma secreta de Heizou?"
   },
   "RecipeItem": {
     "name": "Ingredientes",
@@ -8819,6 +9055,14 @@
     "name": "Passe de Batalha: Destino",
     "description": "Estilo de Cartão de Visita.\\n\"Há muito tempo, almas leais se dispersaram para o leste e oeste como gansos\". \"Hoje eu acendo minha lanterna para que eles não percam seu caminho\"."
   },
+  "ShikanoinHeizouTemari": {
+    "name": "Shikanoin Heizou — Temari",
+    "description": "Estilo de Cartão de Visita.\\nUm Temari de cordas de várias cores. Deve ter dado muito trabalho para ser feito, mas Heizou apenas vê como um jogo de desamarrar cada uma."
+  },
+  "TravelNotesAzureMain": {
+    "name": "Passe de Batalha — Azul Marinho",
+    "description": "Estilo de Cartão de Visita.\\nOs anos passaram, e você desperta de um velho sonho. Dentro da concha de lembrança reside a reminiscência do oceano azul dos dias de verão."
+  },
   "AnemoculusResonanceStone": {
     "name": "Pedra de Ressonância de Anemoculus",
     "description": "Pode usar em Mondstadt para buscar 'Anemoculus Perdidos' nos arredores.\\nEssa pedra tem características similares às Estátuas Anemo das Estátuas dos Sete e gera ressonância com Anemoculus.\\nAs Pedras de Ressonância de Oculus são imitações brutas das Estátuas dos Sete construídas pelos antigos. Mas é exatamente devido a essa rudeza que desejam a força de oculus elemental e oferecendo uma boa oportunidade a devotos e aventureiros para encontrar oculus."
@@ -9155,6 +9399,14 @@
     "name": "Esplendor Opulente",
     "description": "Vestuário formal de Keqing. Em meio à bela aurora do Ritual de Lanternas, os fios tecidos por dias de trabalho duro se entrelaçam em uma aparência suave, porém magnífica."
   },
+  "RedDeadOfNight": {
+    "name": "Vermelho Escarlate da Noite",
+    "description": "Uma das vestimentas que Diluc usa durante suas operações secretas, ela lembra uma chama dançando em meio a escuridão. Os rastros carmesins que ela deixa para trás nos cantos da visão dos inimigos os traumatizará e causará pesadelos para sempre."
+  },
+  "EinImmernachtstraum": {
+    "name": "Sonho da Noite Eterna",
+    "description": "Um vestuário cerimonial para a Princesa Fischl. Que ela, tão nobre, eternamente mantenha sua coragem, cordialidade e benevolência, assim o mal jamais a derrotará."
+  },
   "GunnhildrsLegacy": {
     "name": "Legado de Gunnhildr",
     "description": "Vestuário de Jean. Esse clássico vestuário cerimonial de cavaleiros é adequado para todas as ocasiões."
@@ -9357,7 +9609,7 @@
   },
   "WakefulSpring": {
     "name": "Fonte Termal Revitalizante",
-    "description": "Um diagrama detalhado passo a passo para fazer uma Fonte Termal Revitalizante.\\nUma fonte termal ao ar livre com recursos completos. Os minerais e elementos presentes aqui podem não ser iguais aos Banhos de Aisa, mas as fontes termais deste tipo ganham em termos de qualidade para comparações de preços e a atmosfera amigável e casual.\\nSó necessita de meia hora repousando aqui e todo o cansaço que você acumulou no trabalho se dissipará logo, substituído por um vigor renovado e, se houver tempo, você pode ainda encostar-se em uma das pedras brancas que há por aqui e tomar um chá enquanto bate um papo com seus amigos.\\nClaro, mantenha a etiqueta adequada quando entrar na fonte: aproveitar as águas termais com os amigos é bom, mas não fique muito tempo. Se você passar muito tempo a tagarelar com o pessoal lá, como a Rainha do Festival de Verão faz, pode ficar tont{M#o}{F#a}.\\nApós usar este item, você pode visualizá-lo na Interface de Colocação.\\nCompanheiro que prefere este conjunto: Yoimiya, Gorou, Yae Miko"
+    "description": "Um diagrama detalhado passo a passo para fazer uma Fonte Termal Revitalizante.\\nUma fonte termal ao ar livre com recursos completos. Os minerais e elementos presentes aqui podem não ser iguais aos Banhos de Aisa, mas as fontes termais deste tipo ganham em termos de qualidade para comparações de preços e a atmosfera amigável e casual.\\nSó necessita de meia hora repousando aqui e todo o cansaço que você acumulou no trabalho se dissipará logo, substituído por um vigor renovado e, se houver tempo, você pode ainda encostar-se em uma das pedras brancas que há por aqui e tomar um chá enquanto bate um papo com seus amigos.\\nClaro, mantenha a etiqueta adequada quando entrar na fonte: aproveitar as águas termais com os amigos é bom, mas não fique muito tempo. Se você passar muito tempo a tagarelar com o pessoal lá, como a Rainha do Festival de Verão faz, pode ficar tont{M#o}{F#a}.\\nApós usar este item, você pode visualizá-lo na Interface de Colocação.\\nCompanheiros que preferem este conjunto: Yoimiya, Gorou, Yae Miko, Shikanoin Heizou"
   },
   "RuralConcealment": {
     "name": "Dissimulação Rural",
@@ -9385,7 +9637,7 @@
   },
   "EternalDomainOfFleetingDreams": {
     "name": "Domínio dos Sonhos Transitórios",
-    "description": "Um diagrama detalhado passo a passo para fazer Domínio dos Sonhos Transitórios.\\nEste quarto está repleto de uma estética no estilo de Inazuma única, mas também adota ideias de outras nações de forma bastante livre, atingindo assim um equilíbrio brilhante entre tradição e praticidade. O processo de design incluiu considerações sobre como os hóspedes poderiam se sentir, e o quarto em si foi projetado para que eles relaxassem o suficiente, de modo que se sentissem reenergizados, como alguém que acaba de ter um sono reparador. O kotatsu gentilmente montado também contribui para a sensação de nunca querer sair do quarto.\\nDepois de usar, você pode entrar na interface de colocação para vê-la.\\nCompanheiros que preferem este conjunto: Sayu, Sangonomiya Kokomi"
+    "description": "Um diagrama detalhado passo a passo para fazer Domínio dos Sonhos Transitórios.\\nEste quarto está repleto de uma estética no estilo de Inazuma única, mas também adota ideias de outras nações de forma bastante livre, atingindo assim um equilíbrio brilhante entre tradição e praticidade. O processo de design incluiu considerações sobre como os hóspedes poderiam se sentir, e o quarto em si foi projetado para que eles relaxassem o suficiente, de modo que se sentissem reenergizados, como alguém que acaba de ter um sono reparador. O kotatsu gentilmente montado também contribui para a sensação de nunca querer sair do quarto.\\nDepois de usar, você pode entrar na interface de colocação para vê-la.\\nCompanheiros que preferem este conjunto: Sayu, Sangonomiya Kokomi, Shikanoin Heizou"
   },
   "AThousandSwings": {
     "name": "Devoção Firme",
@@ -9779,6 +10031,10 @@
     "name": "Abajur de Conchas",
     "description": "Um diagrama que descreve passo a passo como fabricar Abajur de Conchas\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
+  "TranquilStarlight": {
+    "name": "Luz Estrelar Serena",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Luz Estrelar Serena\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Arranjo de Flores: \"Graciosidade Azul\"",
     "description": "Um diagrama que descreve passo a passo como fabricar Arranjo de Flores: \"Graciosidade Azul\"\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -9878,6 +10134,10 @@
   "TrueCookeryNukiNukiDaruma": {
     "name": "Nuki-Nuki Daruma: O Verdadeiro Cozinheiro",
     "description": "Um diagrama que descreve passo a passo como fabricar Nuki-Nuki Daruma: O Verdadeiro Cozinheiro.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "CosmosWithin": {
+    "name": "Rotação Cósmica",
+    "description": "Um diagrama que descreve passo a passo como fabricar a \"Rotação Cósmica\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
   },
   "LandscapePaintingCountryHome": {
     "name": "Pintura com Paisagem: \"Casa de Campo\"",
@@ -10174,6 +10434,10 @@
   "FestivalBoothLiteraryTalent": {
     "name": "Estande do Festival — \"Talento Literário\"",
     "description": "Um diagrama que descreve passo a passo como fabricar Estande do Festival — \"Talento Literário\".\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
+  "DodocosSummertime": {
+    "name": "O Verão de Dodoco",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"O Verão de Dodoco\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
   },
   "RitualShrine": {
     "name": "Santuário do Ritual",
@@ -10623,6 +10887,10 @@
     "name": "Chamas Serenas",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Chamas Serenas\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
   },
+  "AllegroBloomSpecialTuning": {
+    "name": "Flor Allegro: Afinação Especial",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Flor Allegro: Afinação Especial\".\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
+  },
   "PottedPlantVerdantVastness": {
     "name": "Planta em Vaso: \"Vastidão Verdejante\"",
     "description": "Um diagrama que descreve passo a passo como fabricar Planta em Vaso: \"Vastidão Verdejante\"\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -10794,6 +11062,26 @@
   "PearOrchardScreenDeft": {
     "name": "Tela do Pomar de Peras: Saindo",
     "description": "Um diagrama que descreve passo a passo como fabricar Tela do Pomar de Peras: Saindo.\\nDepois de usar, você pode entrar na interface de produção para vê-la."
+  },
+  "DodocosTravelBag": {
+    "name": "A Bolsa de Viagem de Dodoco",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"A Bolsa de Viagem de Dodoco\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "DodocosDodoStove": {
+    "name": "O Forninho de Dodoco",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"O Forninho de Dodoco\".\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
+  "DodocosBeachNap": {
+    "name": "A Soneca de Dodoco Na Praia",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"A Soneca de Dodoco Na Praia\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "DodocosCollectionCupboard": {
+    "name": "O Armário de Coleções de Dodoco",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"O Armário de Coleções de Dodoco\".\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
+  "DodocosSunshadeUmbrella": {
+    "name": "O Chapéu de Sol de Dodoco",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"O Chapéu de Sol de Dodoco\".\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Poste de Rua Esculpido em Ferro Fundido",

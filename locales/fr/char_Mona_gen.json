@@ -1,7 +1,7 @@
 {
   "name": "Mona",
   "title": "Réflexion astrale",
-  "description": "Jeune astromancienne mystérieuse, Mona se surnomme elle-même « la grande astromancienne Mona », et fait preuve d'une force singulière et d'une érudition hors-norme qui ne désavouent pas cette appellation.",
+  "description": "Jeune astromancienne mystérieuse, Mona se surnomme elle-même « la grande astromancienne Mona », et fait preuve d'une force singulière et d'une érudition hors norme qui ne désavouent pas cette appellation.",
   "constellationName": "Astrolabos",
   "auto": {
     "name": "Ondes du destin",
@@ -95,7 +95,7 @@
       "10": "<i>C'est lorsque le regard des dieux dessina les étoiles que la notion de « destin » naquit.</i>"
     },
     "skillParams": {
-      "0": "Durée Bulle Nocturne",
+      "0": "Durée Bulle nocturne",
       "1": "DGT bulle nocturne",
       "2": "Bonus de DGT",
       "3": "Durée du présage",
@@ -184,7 +184,7 @@
   "constellation6": {
     "name": "Rhétorique de l'adversité",
     "description": {
-      "0": "Dans l'état <strong>Vicissitude</strong>, Mona obtient un bonus de 60 % DGT pour sa prochaine attaque chargée à chaque seconde passée à se déplacer.",
+      "0": "Dans l'état <strong>Vicissitude</strong>, Mona obtient un bonus de 60 % de DGT pour sa prochaine attaque chargée à chaque seconde passée à se déplacer.",
       "1": "Cet effet peut être cumulé 3 fois maximum (bonus de 180 %) et dure 8 s."
     }
   }

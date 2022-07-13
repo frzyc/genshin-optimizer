@@ -165,7 +165,7 @@
   "constellation6": {
     "name": "烈火與勇氣",
     "description": {
-      "0": "處於<strong>美妙旅程</strong>領域內，且持單手劍、雙手劍、長柄武器的隊伍中的場上角色獲得15%<pyro>火元素傷害加成</pyro>，並獲得<pyro>火元素傷害</pyro>。"
+      "0": "處於<strong>美妙旅程</strong>領域內，且持單手劍、雙手劍、長柄武器的隊伍中的場上角色獲得15%<pyro>火元素傷害加成</pyro>，並獲得<pyro>火元素附魔</pyro>。"
     }
   }
 }

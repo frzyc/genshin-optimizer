@@ -2,7 +2,7 @@
   "name": "Fischl",
   "title": "Công Chúa Định Tội!!",
   "description": "Tự xưng là \"Công Chúa Định Tội\", thiếu nữ thần bí đồng hành cùng chú quạ đen tên Oz.",
-  "constellationName": "Hoan Áp",
+  "constellationName": "Cung Hoan Áp",
   "auto": {
     "name": "Mũi Tên Diệt Ác",
     "fields": {
@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Trọng Kích</strong>",
         "1": "Sát thương càng cao, <strong>ngắm bắn</strong> càng chuẩn.",
-        "2": "Khi ngắm bắn, Tinh Linh Sấm Sét của vùng đất Đêm Niết Bàn sẽ nghe theo hiệu lệnh của công chúa mà bám trên mũi tên sấm sét. Mũi tên chứa đầy tia sét định tội sẽ gây thêm <electro>Sát Thương Nguyên Tố Lôi</electro>."
+        "2": "Khi ngắm bắn, Tinh Linh Sấm Sét của Vương Đô U Ám sẽ nghe theo hiệu lệnh của công chúa mà bám trên mũi tên sấm sét. Mũi tên chứa đầy tia sét định tội sẽ gây thêm <electro>Sát Thương Nguyên Tố Lôi</electro>."
       },
       "plunging": {
         "0": "<strong>Tấn Công Khi Đáp</strong>",

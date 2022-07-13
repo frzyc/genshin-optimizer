@@ -155,6 +155,10 @@
     "name": "U Uẩn Thạch",
     "description": "Những viên đá có độ sáng kỳ lạ chỉ tồn tại ở những vị trí cá biệt trong Vực Đá Sâu, không rõ nguồn gốc và thành phần, nhưng có một đặc tính đặc biệt là hình dạng khi rơi xuống rất đều và mặt cắt khá nhẵn, phản chiếu mọi thứ như một tấm gương. Trong số đó, những viên đá lâu đời hơn có lẽ cũng đã từng chứng kiến trận chiến khốc liệt năm nào.\\nTrong thời gian \"Lộ Trình Nguy Hiểm\", có thể đổi lấy bảo vật."
   },
+  "IridescentFlotsam": {
+    "name": "Vật Trôi Nổi Óng Ánh",
+    "description": "Lớp vỏ sinh vật biển rải rác ở Quần Đảo Táo Vàng, chất vỏ cứng rắn, giống như chịu ảnh hưởng của nguồn sức mạnh nào đó nên mất đi hoa văn vốn có, để lộ ra một màu sắc óng ánh sặc sỡ.\\nTrong thời gian sự kiện \"Chuyến Đi Biển Ngày Hè\", có thể dùng để đổi báu vật."
+  },
   "StratagemShard": {
     "name": "Mảnh Ngọc Chiến Lược",
     "description": "Tinh thể ngưng tụ sức mạnh bí truyền, giống như các mảnh Thạch Phách, có màu sắc của nguyên tố Nham thuần túy. Ở bên trong không gian dưới Vực Đá Sâu, dường như có thể kích hoạt sức mạnh nhất định, rất hữu ích cho việc đánh bại ma vật.\\nTrong \"Chiến Cảnh Dị Vực\" của \"Lộ Trình Nguy Hiểm\", có thể dùng để rút \"chiến lược\", hoặc giúp nhân vật ngã xuống tiếp tục ra trận."
@@ -447,6 +451,10 @@
     "name": "Yae Miko",
     "description": "Đại nhân Guuji của Đền Narukami, kiêm tổng biên tập của Nhà Xuất Bản Yae. Phía sau vẻ ngoài xinh đẹp kiều diễm là sự thông minh và xảo quyệt mà khó ai ngờ đến."
   },
+  "ShikanoinHeizou": {
+    "name": "Shikanoin Heizou",
+    "description": "Thám tử thiếu niên thiên tài của Hiệp Hội Tenryou, trực giác nhạy bén, tư duy sắc sảo."
+  },
   "Yelan": {
     "name": "Yelan",
     "description": "Nhân sĩ thần bí tự xưng làm việc cho Tổng Vụ, nhưng lại là \"người không tồn tại\" trong danh sách của Tổng Vụ."
@@ -650,6 +658,10 @@
   "YaeMikosStellaFortuna": {
     "name": "Chòm Sao Của Yae Miko",
     "description": "Nguyên liệu kích hoạt cung mệnh Yae Miko"
+  },
+  "ShikanoinHeizousStellaFortuna": {
+    "name": "Chòm Sao Của Shikanoin Heizou",
+    "description": "Nguyên liệu kích hoạt cung mệnh Shikanoin Heizou"
   },
   "YelansStellaFortuna": {
     "name": "Chòm Sao Của Yelan",
@@ -4183,7 +4195,7 @@
     "name": "Ảnh Nham Thạch Kỳ Lạ",
     "description": "Ảnh chụp nham thạch kỳ lạ, thỉnh thoảng sẽ thấy được trên vách đá ở Vực Đá Sâu. Đường nét hoa văn trên nham thạch không biết có hàm ý gì, không chừng sẽ có giá trị nghiên cứu rất cao đối với các học giả đó."
   },
-  "AcademiaRecommendationLetter": {
+  "AkademiyaRecommendationLetter": {
     "name": "Thư Tiến Cử Của Giáo Viện",
     "description": "Lá thư được viết cẩn thận, bên trên dấu sáp là huy hiệu của \"Học giả sinh thái Khedive Pursina\".\\nThù lao nhận được từ chỗ Khedive, theo cách nói của anh ấy, lá thư này còn quý hơn vàng, có thể nhận được sự giúp đỡ của Purbiruni.\\nKhedive cho rằng, dùng tiền để trả thù lao là một sự sỉ nhục, mong rằng đây không phải cách nghĩ chung của người Sumeru."
   },
@@ -4471,6 +4483,10 @@
     "name": "Khấu Tam Tư Thơm Lừng",
     "description": "Món ăn ngon sau khi được thêm gia vị, có mùi thơm hấp dẫn. Không biết phù hợp với khẩu vị của ai nhỉ? Mau đi mời bạn bè dùng thử đi nào!"
   },
+  "OldNotes": {
+    "name": "Nhật Ký Cũ",
+    "description": ""
+  },
   "ZhiqiongsLetter": {
     "name": "Thư Của Zhiqiong",
     "description": "Thư của một nhà mạo hiểm trẻ tuổi để lại, có hương thơm mát nhưng hơi đắng chát."
@@ -4599,6 +4615,18 @@
     "name": "Túi Đựng \"Tiền Lương\"",
     "description": "Nghe nói là túi đồ mà nếu mạo muội mở ra sẽ bị xui xẻo đeo bám, trọng lượng hình như là hơi nhẹ hơn bạn tưởng...?"
   },
+  "ACompleteChartOfAkosTreasure": {
+    "name": "Bản Đồ Kho Báu Bí Mật - Hoàn Chỉnh",
+    "description": "Kho báu bí mật do \"nhóm hải tặc Ako Domeki\" đã để lại khi rời khỏi nơi này. Sau khi thu thập đủ 4 manh mối sẽ có được bản đồ nơi cất giấu kho báu này."
+  },
+  "OutlanderBrigadeWhenTheWindOfDeathBlewTowardsTheBlondSamuraiScript": {
+    "name": "Kịch Bản \"Hành Trình Ồn Ào Của Kẻ Ngoại Bang - Ngọn Gió Chết Chóc Thổi Về Phía Võ Sĩ Tóc Vàng\"",
+    "description": "Kịch bản lấy được từ chỗ Xavier."
+  },
+  "MushouninScript": {
+    "name": "Kịch Bản \"Mushounin\"",
+    "description": "Kịch bản mới mà Xavier đã viết xuyên đêm, dày hơn nhiều so với kịch bản bộ phim lần trước. Trên tay bạn chỉ mới là màn 1 mà thôi.\\nCon người một khi đã có mục tiêu thì sẽ thật sự bùng nổ sức mạnh ý chí đáng sợ."
+  },
   "ALegendOfSwordVI": {
     "name": "Trầm Thu Thập Kiếm Lục VI",
     "description": "\"Trận chiến được dàn dựng ở Biển Sao thực ra không khác gì cuộc chiến giữa những thảo dân trên hành tinh cằn cỗi mười năm trước...\" Không lâu sau, tên của người nam nhân đó, sẽ được khắp thiên hà biết đến giống như tên của Hoàng đế."
@@ -4615,6 +4643,10 @@
     "name": "Xuất Phát Thôi! Dodoco",
     "description": "Lời của người biên tập: \"Xuất Phát Thôi! Dodoco\" là một câu chuyện được hoàn thành bởi một cô gái lớn và một cô gái nhỏ, tất cả những mảnh vỡ nhỏ trong câu chuyện đều chứa đựng sự dịu dàng và lời chúc phúc của họ, và đó cũng là món quà dành cho người đọc. Hy vọng cuốn sách nhỏ này sẽ mang đến cho độc giả một niềm vui giản dị nào đó trong lịch trình bận rộn của mình."
   },
+  "AkosTreasureLocation": {
+    "name": "Kho Báu Ako I",
+    "description": "Kho báu bí mật do \"nhóm hải tặc Ako Domeki\" đã để lại khi rời khỏi nơi này, lúc chôn giấu kho báu đã hẹn rằng khi nào nhóm hải tặc hội tụ ở quần đảo sẽ cùng nhau đào lên. Thế là họ đã đem manh mối kho báu chia làm 4 phần, đây là phần thứ nhất."
+  },
   "JinwusSoup": {
     "name": "Canh Jinwu",
     "description": "Canh do Jinwu hầm cho các thợ mỏ bị bệnh, rất nhiều dinh dưỡng, hương vị đậm đà, uống vào khiến người ta cảm thấy rất ấm lòng.\\nĐây chính là tâm ý của Jinwu, không được để nguội lạnh."
@@ -4622,6 +4654,106 @@
   "BagOfOrnaments": {
     "name": "Một Túi Trang Sức",
     "description": "Túi trang sức lấy được từ chỗ Lão Chou, dùng để bù đắp cho Tang Wuchou. Được chế tác bởi Đạo Bảo Đoàn buôn lậu nguyên liệu khoáng thạch của Vực Đá Sâu, thủ công đơn giản thô kệch, và miễn cưỡng được xem là có chút thiết kế kiểu dáng, chặn đứng mọi khả năng loạt trang sức này có thể tiếp tục bán ra ở Liyue. Chỉ có một điểm duy nhất có thể khẳng định, chính là loạt trang sức này được chế tạo từ nguyên liệu thật."
+  },
+  "SeaRouteLog": {
+    "name": "Lộ Trình Hàng Hải",
+    "description": "Cách tìm ra manh mối do chính người cất giấu manh mối đã để lại. Đi theo chỉ dẫn trên đó nói không chừng sẽ tìm được manh mối kho báu của \"nhóm hải tặc Ako Domeki\"."
+  },
+  "RouteLogI": {
+    "name": "Thư Dọc Đường I",
+    "description": "Cách tìm ra manh mối do chính người cất giấu manh mối đã để lại. Hành động theo chỉ dẫn trên đó nói không chừng sẽ tìm được manh mối kho báu của \"nhóm hải tặc Ako Domeki\"."
+  },
+  "RouteLogII": {
+    "name": "Thư Dọc Đường II",
+    "description": "Cách tìm ra manh mối do chính người cất giấu manh mối đã để lại. Hành động theo chỉ dẫn trên đó nói không chừng sẽ tìm được manh mối kho báu của \"nhóm hải tặc Ako Domeki\". Nhưng đây đã là lá thư thứ hai rồi, hy vọng lần này có thể trực tiếp tìm thấy manh mối."
+  },
+  "AsterismShard": {
+    "name": "Mảnh Tinh Tượng",
+    "description": "Mảnh ghép thần bí có những đường hoa văn của bầu trời sao, hình như có thể dùng để giải câu đố cơ quan nào đó."
+  },
+  "BottleOfSpringWater": {
+    "name": "Chiếc Bình Chứa Đầy Nước Suối",
+    "description": "Chiếc bình chứa đầy nước suối. Thứ bên trong chắc hẳn là \"Suối Ngọt Giá Lạnh\" mà Con Tim Rực Lửa đang cần."
+  },
+  "FrozenSoulsPetal": {
+    "name": "Cánh hoa của \"Con Tim Băng Giá\"",
+    "description": "Những cánh hoa thần bí. Thoạt nhìn, nó giống như những viên đá được đục thành hình cánh hoa, nhưng chạm vào lại rất mềm mại.\\n\"Hãy đem cánh hoa của tôi gieo vào điểm cuối nơi giao thoa của âm nhạc, và những gì đã từng chìm vào lòng đất sẽ tái hiện theo âm nhạc.\"\\nCon Tim Băng Giá đã nói như thế."
+  },
+  "ElegantlyWrittenNote": {
+    "name": "Sổ Tay Với Nét Chữ Ngay Ngắn",
+    "description": "Sổ tay với nét chữ ngay ngắn."
+  },
+  "ALetter": {
+    "name": "Một Lá Thư",
+    "description": "Một Bức Thư."
+  },
+  "RockGardenRoughStoneLeft": {
+    "name": "Đá Hòn Non Bộ (Trái)",
+    "description": "Đá trên núi. Về mọi mặt, nó rất thích hợp làm nguyên liệu để chạm khắc hòn non bộ bên trái chậu bonsai."
+  },
+  "RockGardenRoughStoneRight": {
+    "name": "Đá Hòn Non Bộ (Phải)",
+    "description": "Đá trên núi. Về mọi mặt, nó rất thích hợp làm nguyên liệu để chạm khắc hòn non bộ bên phải chậu bonsai."
+  },
+  "RockGardenCarvingTools": {
+    "name": "Công Cụ Điêu Khắc Hòn Non Bộ",
+    "description": "Công cụ điêu khắc, xuất hiện trên những ngọn núi mang phong cách Mondstadt. Có lẽ có thể dùng nó để điêu khắc hòn non bộ."
+  },
+  "SmallGear": {
+    "name": "Bánh Răng Nhỏ",
+    "description": "Bánh răng cỡ nhỏ. Bánh răng nhỏ cỡ nào cũng có công dụng của nó, chắc vậy đó."
+  },
+  "MediumGear": {
+    "name": "Bánh Răng Vừa",
+    "description": "Bánh răng cỡ vừa. Chúng thường được gọi là \"sức mạnh chủ lực\"."
+  },
+  "DriveGear": {
+    "name": "Bánh Răng Khởi Động",
+    "description": "Bánh răng có thể cung cấp một ít động lực. Động lực chính là điều quan trọng nhất."
+  },
+  "LargeGear": {
+    "name": "Bánh Răng Lớn",
+    "description": "Bánh răng cỡ lớn. Trọng lượng và âm thanh của nó khi hoạt động đều khiến người ta có ấn tượng sâu đậm."
+  },
+  "DuplexGear": {
+    "name": "Bánh Răng Hai Tầng",
+    "description": "Bánh răng có kết cấu hai tầng hơi nhỏ. Hai tầng kết cấu, hai tầng công việc."
+  },
+  "LargeDuplexGear": {
+    "name": "Bánh Răng Hai Tầng Lớn",
+    "description": "Bánh răng có kết cấu hai tầng hơi lớn. Kết cấu lớn, tiêu hao nhiều."
+  },
+  "DrivenGear": {
+    "name": "Bánh Răng Không Động Lực",
+    "description": "Bánh răng cần có động lực để khởi động. Nó rất hữu dụng, thật đó, ai giúp nó xoay đây?"
+  },
+  "LeisurelyRocksLeft": {
+    "name": "Đá Nhàn Nhã - Trái",
+    "description": "Những tảng đá bonsai hơi mềm. Chúng dường như có thể mang đến một làn gió nhàn nhã và dễ chịu. Có thể đặt làm hòn non bộ bên trái chậu bonsai."
+  },
+  "LeisurelyRocksRight": {
+    "name": "Đá Nhàn Nhã - Phải",
+    "description": "Những tảng đá bonsai hơi mềm. Chúng dường như có thể mang đến một làn gió nhàn nhã và dễ chịu. Có thể đặt làm hòn non bộ bên phải chậu bonsai."
+  },
+  "HoverlightRocksLeft": {
+    "name": "Đá Phù Quang - Trái",
+    "description": "Những tảng đá bonsai hơi cứng, nghe nói trong thời tiết mưa giông, bề mặt của đá sẽ phát sáng, có thể đặt làm hòn non bộ bên trái chậu bonsai."
+  },
+  "HoverlightRocksRight": {
+    "name": "Đá Phù Quang - Phải",
+    "description": "Những tảng đá bonsai hơi cứng, nghe nói trong thời tiết mưa giông, bề mặt của đá sẽ phát sáng, có thể đặt làm hòn non bộ bên phải chậu bonsai."
+  },
+  "UnyieldingRocksLeft": {
+    "name": "Đá Kiên Cố - Trái",
+    "description": "Những tảng đá bonsai rất cứng và kiên cố, nặng mùi đá, có thể đặt làm hòn non bộ bên trái chậu bonsai."
+  },
+  "UnyieldingRocksRight": {
+    "name": "Đá Kiên Cố - Phải",
+    "description": "Những tảng đá bonsai rất cứng và kiên cố, nặng mùi đá, có thể đặt làm hòn non bộ bên phải chậu bonsai."
+  },
+  "ABoxOfComponents": {
+    "name": "Một Hộp Linh Kiện",
+    "description": "Một hộp chứa đầy ắp linh kiện. Số linh kiện này trông có vẻ không bị hư hại gì, có lẽ vì ma vật chẳng có chút hứng thú với chúng..."
   },
   "NoteOfUnknownOriginI": {
     "name": "Mảnh Giấy Không Rõ Lai Lịch 1",
@@ -4639,17 +4771,117 @@
     "name": "Mảnh Giấy Không Rõ Lai Lịch 4",
     "description": "Mảnh giấy tìm được trong không gian lạc lối. Nội dung giống như nhật ký."
   },
+  "ANote": {
+    "name": "Một Mảnh Giấy",
+    "description": "Mảnh giấy nhăn nheo với nét chữ xiêu vẹo."
+  },
   "RedemptionVoucher": {
     "name": "Phiếu Quà Tặng 1",
     "description": "Phiếu quà tặng dùng để đổi \"Cú Mặt Nước - Xoay\""
+  },
+  "PartBreeze": {
+    "name": "Nổi Gió",
+    "description": "Một bộ phận trong \"Tranh Máy Móc Vĩnh Cửu\" mà Félix Yogue muốn phục chế"
+  },
+  "PartSky": {
+    "name": "Không Trung",
+    "description": "Một bộ phận trong \"Tranh Máy Móc Vĩnh Cửu\" mà Félix Yogue muốn phục chế"
+  },
+  "PartClouds": {
+    "name": "Tầng Mây",
+    "description": "Một bộ phận trong \"Tranh Máy Móc Vĩnh Cửu\" mà Félix Yogue muốn phục chế"
+  },
+  "PartCompany": {
+    "name": "Hoa Lá",
+    "description": "Một bộ phận trong \"Tranh Máy Móc Vĩnh Cửu\" mà Félix Yogue muốn phục chế"
+  },
+  "PartLonely": {
+    "name": "Nhụy Hoa",
+    "description": "Một bộ phận trong \"Tranh Máy Móc Vĩnh Cửu\" mà Félix Yogue muốn phục chế"
+  },
+  "PartMeadow": {
+    "name": "Thảm Xanh",
+    "description": "Một bộ phận trong \"Tranh Máy Móc Vĩnh Cửu\" mà Félix Yogue muốn phục chế"
+  },
+  "ForensicOfficeResearchLogExcerpt": {
+    "name": "Trang Ghi Chép Nghiên Cứu Phòng Pháp Y",
+    "description": "Trang ghi chép nghiên cứu với đầy vết gấp, nhưng nét chữ vẫn rất rõ ràng."
   },
   "NoteOfUnknownOrigin": {
     "name": "Mảnh Giấy Không Rõ Lai Lịch",
     "description": "Mảnh giấy tìm được trong không gian lạc lối. Nội dung giống như nhật ký."
   },
+  "CrystallineCore": {
+    "name": "Tinh Hạt Nhân",
+    "description": "Tinh Hạt Nhân bị mất trong thiết bị bí ẩn của Fatui. Dựa theo Bản Thảo Của Persikov, tìm 3 Tinh Hạt Nhân như vậy đặt vào thiết bị là có thể khởi động lại."
+  },
+  "OldYellowedNotes": {
+    "name": "Ghi Chép Lâu Ngày",
+    "description": "Ghi Chép Lâu Ngày"
+  },
+  "MysteriousLetter": {
+    "name": "Bức Thư Bí Ẩn",
+    "description": "Bức Thư Bí Ẩn"
+  },
+  "ASeeminglyWaterproofNote": {
+    "name": "Ghi Chép Có Vẻ Như Chống Nước",
+    "description": "Ghi Chép Có Vẻ Như Chống Nước"
+  },
+  "ReverberatingKey": {
+    "name": "Chìa Khóa Dư Âm",
+    "description": "Chìa khóa có liên quan đến một loại cây kỳ diệu, hình như có thể dùng để mở cánh cửa nào đó..."
+  },
+  "ANewLetter": {
+    "name": "Thư Vừa Nhận",
+    "description": "Lá thư mà hầu gái trưởng Adelinde đã nhận thay cách đây không lâu, cần phải đưa đến tửu trang để lưu trữ.\\nTrang giấy có hơi nhàu, có lẽ người viết thư hơi vội vàng, không tìm được mặt bàn bằng phẳng."
+  },
+  "DawnWinerysTopQualityGrapeJuice": {
+    "name": "Nước Ép Nho Quý Của Tửu Trang Dawn",
+    "description": "Quà tặng từ Diluc, nước ép nho được đóng gói sang trọng, là món thức uống mà Paimon đã đợi từ lâu, hơn nữa còn là vật kỷ niệm cho việc đã cùng bạn bè xử lý mối hiểm nguy.\\nLoại nước ép này là một trong những món Diluc thích nhất, đã dùng loại nho chất lượng tốt nhất của Tửu Trang Dawn.\\n\"Nước ép nho mà Diluc lão gia thích nhất\" chỉ riêng thuộc tính này dường như đã đủ giá trị thương mại khó mà ước tính?"
+  },
+  "StarlightCoalescence": {
+    "name": "Ánh Sao Ngưng Tụ",
+    "description": "Tinh thể trong suốt giống như ánh sao ngưng tụ, hình như có thể dùng để giải câu đố cơ quan nào đó."
+  },
   "DragonspineSuppliesHam": {
     "name": "Tiếp Tế Núi Tuyết - Giăm Bông",
     "description": "Giăm bông tiếp tế, có thể bảo quản thời gian dài dưới nhiệt độ thấp."
+  },
+  "NightwatchContract": {
+    "name": "Khế Ước Bay Đêm",
+    "description": "Khế ước do chính tay Công Chúa Định Tội ký và phát hành, người sử dụng nó sẽ có quyền mở trạm bay. Những người có thể trình khế ước này ra sẽ được xem là có đủ tư cách sải rộng đôi cánh đen khi ngày và đêm giao nhau, và che phủ bầu trời bằng bóng tối."
+  },
+  "TenryouCommissionsMissingPersonPoster": {
+    "name": "Ủy Thác Tìm Người Của Hiệp Hội",
+    "description": "Một ủy thác tìm người chính thức, có đóng dấu của Hiệp Hội Tenryou."
+  },
+  "SeaSaltCrustedKey": {
+    "name": "Chìa Khóa Dính Muối Biển",
+    "description": "Chìa khóa tìm được ở Quần Đảo Táo Vàng, hình như có thể dùng để mở khóa ở nơi nào đó..."
+  },
+  "MisplacedConch": {
+    "name": "Ốc Biển Sai Vị Trí I",
+    "description": "Vỏ ốc này có vẻ như nên được đặt ở đâu đó, nhưng đã bị người ta quăng đi, bên trong phát ra những hình ảnh sai vị trí. Để nó trở về vị trí chính xác có thể sẽ biết được thông tin nào đó chăng..."
+  },
+  "RedDyedFabric": {
+    "name": "Vải Nhuộm Đỏ",
+    "description": ""
+  },
+  "SilverPocketWatch": {
+    "name": "Đồng Hồ Khảm Bạc",
+    "description": "Đồng hồ trông đã cũ kỹ, nhưng từ dấu vết lau chùi lớp vỏ bên ngoài có thể thấy được chủ nhân vô cùng yêu quý nó. Bên trong có một tấm ảnh thiếu nữ Snezhnaya đứng ở giữa."
+  },
+  "OldInsignia": {
+    "name": "Phù Hiệu Cũ Kỹ",
+    "description": "Chắc là phù hiệu của Fatui, nhưng không biết tại sao trên đó lại đầy vết xước."
+  },
+  "PersikovsManuscript": {
+    "name": "Bản Thảo Của Persikov",
+    "description": "Bản thảo của nhà nghiên cứu Persikov, trong đó có kèm bản đồ, có thể dựa vào gợi ý của bản đồ để tìm tinh hạt nhân còn thiếu của thiết bị \"Mô Phỏng Nhận Thức\"..."
+  },
+  "TwilightTheaterHeadsNotes": {
+    "name": "Bản Thảo Trưởng Đoàn Kịch Hoàng Hôn",
+    "description": "Kịch bản của \"Ảo Mộng Đêm Khuya - Chuyện Về Nữ Hoàng Mang Kiếm!\". Nét chữ nguệch ngoạc dường như là lời ghi chú của trưởng đoàn kịch, một số nhận xét rất cấp tiến, chắc sẽ không được chấp thuận."
   },
   "PyroShard": {
     "name": "Mảnh Nguyên Tố Hỏa",
@@ -6606,6 +6838,10 @@
   "DewDippedShrimp": {
     "name": "Tôm Nhuốm Sương",
     "description": "Món ăn đặc sắc của Yelan. Nguyên liệu được chọn từ lá trà mới còn nhuốm sương vừa được Làng Kiều Anh giao đến, phối hợp với tôm sông mới vừa bắt lên cho vào xào nhanh. Nhìn, màu sắc tươi đẹp; Ngửi, hương trà phảng phất; Nếm, thơm ngon vừa miệng... Chờ đã, sao cô ấy lại bưng thêm một đĩa ớt lên?"
+  },
+  "TheOnlyTruth": {
+    "name": "Chân Tướng Duy Nhất",
+    "description": "Món ăn đặc sắc của Shikanoin Heizou. Miếng thịt sườn vàng ươm mọng nước nằm vắt ngang trên lớp sốt trứng gà tươi ngon, tỏa ra hương thơm quyến rũ khó lòng cưỡng lại... Sau khi ngấu nghiến ăn xong, đột nhiên có cảm hứng muốn nói hết bí mật cất giấu trong lòng, chẳng lẽ đây là vũ khí bí mật gì đó của Heizou sao?"
   },
   "RecipeItem": {
     "name": "Đạo Cụ Công Thức",
@@ -8669,7 +8905,7 @@
   },
   "InazumaRaidenEmblem": {
     "name": "Inazuma - Hoa Văn Lôi Điện",
-    "description": "Hoa văn danh thiếp. \\n\"Tam Trùng Lôi\", hoa văn biểu tượng và cũng là phù hiệu của quân đội dưới quyền chỉ huy của Ogosho tướng quân."
+    "description": "Hoa văn danh thiếp. \\n\"Tam Trùng Lôi\", hoa văn biểu tượng và cũng là phù hiệu của quân đội dưới quyền chỉ huy của Ogosho tướng quân."
   },
   "InazumaKamisatoCrest": {
     "name": "Inazuma - Hoa Văn Kamisato",
@@ -8819,6 +9055,14 @@
     "name": "Nhật Ký Hành Trình - Thiên Mệnh",
     "description": "Hoa văn danh thiếp.\\n\"Xưa có trung hồn, như cánh nhạn li tán đông tây\", \"Nay ta dẫn đèn, chỉ mong linh hồn đừng chia cách\"."
   },
+  "ShikanoinHeizouTemari": {
+    "name": "Shikanoin Heizou - Temari",
+    "description": "Hoa văn danh thiếp.\\nVốn được bện một cách thật tỉ mỉ bằng những sợi dây màu sắc, nhưng không ngờ rằng vào tay anh ấy thì chỉ là một trò chơi rút dây đơn giản mà thôi."
+  },
+  "TravelNotesAzureMain": {
+    "name": "Nhật Ký Hành Trình - Biển Xanh",
+    "description": "Hoa văn danh thiếp.\\nCũng giống như bạn ở nhiều năm về sau, thức tỉnh từ trong giấc mơ xưa. Bên trong vỏ ốc kỷ niệm, vẫn còn đó cảnh biển của mùa hè năm đó."
+  },
   "AnemoculusResonanceStone": {
     "name": "Đá Cộng Hưởng Phong Thần Đồng",
     "description": "Khi sử dụng ở Mondstadt, có thể tìm được \"Mảnh Phong Thần Đồng\" ở gần đó.\\nLà đĩa đá do con người tạo ra có tính chất tương tự như Thất Thiên Thần Tượng Phong, cộng hưởng với Phong Thần Đồng.\\nĐá Cộng Hưởng Thần Đồng là những vật mô phỏng không hoàn hảo so với chất liệu gây dựng Thất Thiên Thần Tượng được người xưa đặt khắp đại lục. Chính vì sự không hoàn hảo, mới khao khát sức mạnh của Thần Đồng, tạo cơ hội cho những người thành kính và nhà mạo hiểm tìm kiếm Thần Đồng."
@@ -8885,7 +9129,7 @@
   },
   "SpecialKamera": {
     "name": "Máy Ảnh Đặc Chế",
-    "description": "Khi dùng sẽ có thể lưu lại cảnh tượng trước mắt kèm những hiệu ứng đặc biệt.\\nMột thiết bị kỳ lạ của Fontaine, không chỉ ghi lại cảnh vật mà còn kèm màu sắc đặc biệt. Thiết kế này được thực hiện để đáp ứng yêu cầu của hãng tin \"Chim Xông Hơi\" về một máy ảnh không chỉ có thể phản ánh môi trường mà còn về cả cảm xúc của người chụp. Thật không may, sản phẩm cuối cùng không thể đáp ứng được yêu cầu."
+    "description": "Khi dùng sẽ có thể lưu lại cảnh tượng trước mắt kèm những hiệu ứng đặc biệt.\\nMột thiết bị kỳ lạ của Fontaine, không chỉ ghi lại cảnh vật mà còn kèm màu sắc đặc biệt. Thiết kế này được thực hiện để đáp ứng yêu cầu của hãng tin \"Chim Hơi Nước\" về một máy ảnh không chỉ có thể phản ánh môi trường mà còn về cả cảm xúc của người chụp. Thật không may, sản phẩm cuối cùng không thể đáp ứng được yêu cầu."
   },
   "ParametricTransformer": {
     "name": "Máy Biến Đổi Tham Số",
@@ -9155,6 +9399,14 @@
     "name": "Vũ Điệu Nghê Thường",
     "description": "Lễ phục của Keqing. Trong khoảnh khắc tươi đẹp của Tết Hải Đăng, từng đường nét được vẽ bằng sự vất vả trong quá khứ, đã kết nên dung mạo xinh tươi nhẹ nhàng của hôm nay."
   },
+  "RedDeadOfNight": {
+    "name": "Màn Đêm Đỏ Thẫm",
+    "description": "Một trong những bộ trang phục mà Diluc đã mặc khi bí mật hành động, trông như ngọn lửa bùng cháy trong bóng tối. Dấu vết đỏ thẫm lưu lại trong tầm mắt của kẻ địch, cũng chính là cơn ác mộng mà chúng không thể nào quên được trong suốt phần đời còn lại."
+  },
+  "EinImmernachtstraum": {
+    "name": "Giấc Mộng Đêm Khuya",
+    "description": "Trang phục nghi lễ của công chúa Fischl. Nguyện cho người cao quý luôn giữ vững lòng can đảm, sự chân thành và bản tính lương thiện. Có như thế thì tà ác mới không thể nào quật ngã cô ấy."
+  },
   "GunnhildrsLegacy": {
     "name": "Thừa Kế Của Gunnhildr",
     "description": "Phong cách của Jean. Lễ phục kỵ sĩ gọn gàng mà trang nhã, thích hợp cho mọi hoàn cảnh."
@@ -9357,7 +9609,7 @@
   },
   "WakefulSpring": {
     "name": "Suối Nước Nóng Bừng Tỉnh",
-    "description": "Bản vẽ chi tiết từng bước, ghi lại cách bố trí \"Suối Nước Nóng Bừng Tỉnh\".\\nSuối nước nóng lộ thiên đầy đủ trang thiết bị. Tuy nói rằng nhiệt độ và nguyên tố khoáng chất trong nước có hơi kém so với \"Phòng Tắm Hơi Aisa\", nhưng bầu không khí tổng thể ở đây lại thoải mái hơn, không có quá nhiều quy tắc.\\nNgâm mình trong suối nước nóng nửa giờ, là có thể tiêu tan mọi mệt mỏi sau một ngày làm việc, sức sống như được thức tỉnh lần nữa. Nếu dư dả thời gian, có thể tựa vào tảng đá trắng bên hồ, thưởng thức trà và đàm đạo với bạn bè.\\nĐương nhiên, trước khi vào hồ cần chú ý những lễ nghi cơ bản; khi ngâm suối cùng bạn bè phải lưu ý thời gian. Nếu trò chuyện khi tắm suối nước nóng với một người bạn thích nói chuyện giống như \"nữ hoàng lễ hội mùa hè\", trò chuyện quá lâu có thể sẽ bị hoa mắt chóng mặt đó.\\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Yoimiya, Gorou, Yae Miko"
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách bố trí \"Suối Nước Nóng Bừng Tỉnh\".\\nSuối nước nóng lộ thiên đầy đủ trang thiết bị. Tuy nói rằng nhiệt độ và nguyên tố khoáng chất trong nước có hơi kém so với \"Phòng Tắm Hơi Aisa\", nhưng bầu không khí tổng thể ở đây lại thoải mái hơn, không có quá nhiều quy tắc.\\nNgâm mình trong suối nước nóng nửa giờ, là có thể tiêu tan mọi mệt mỏi sau một ngày làm việc, sức sống như được thức tỉnh lần nữa. Nếu dư dả thời gian, có thể tựa vào tảng đá trắng bên hồ, thưởng thức trà và đàm đạo với bạn bè.\\nĐương nhiên, trước khi vào hồ cần chú ý những lễ nghi cơ bản; khi ngâm suối cùng bạn bè phải lưu ý thời gian. Nếu trò chuyện khi tắm suối nước nóng với một người bạn thích nói chuyện giống như \"nữ hoàng lễ hội mùa hè\", trò chuyện quá lâu có thể sẽ bị hoa mắt chóng mặt đó.\\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Yoimiya, Gorou, Yae Miko, Shikanoin Heizou"
   },
   "RuralConcealment": {
     "name": "Hình Bóng Thôn Làng",
@@ -9385,7 +9637,7 @@
   },
   "EternalDomainOfFleetingDreams": {
     "name": "Giấc Mộng Êm Đềm",
-    "description": "Bản vẽ chi tiết từng bước, ghi lại cách bố trí \"Giấc Mộng Êm Đềm\".\\nPhòng ngủ mang đậm phong cách Inazuma, nhưng cũng dung hòa khái niệm trang trí của nước khác, cân bằng giữa truyền thống và tính tiện dụng. Khi thiết kế đã suy nghĩ về cảm nhận của người ở, để có thể giúp người ở trong phòng này thả lỏng toàn thân, nghỉ ngơi trong thời gian ngắn nhưng có được trải nghiệm như một giấc ngủ đủ dài, giống như được trải qua một thời gian thật dài trong mơ. Bàn sưởi kotatsu giúp xử lý nhiều việc mà không cần bước chân ra ngoài.\\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Sayu, Sangonomiya Kokomi"
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách bố trí \"Giấc Mộng Êm Đềm\".\\nPhòng ngủ mang đậm phong cách Inazuma, nhưng cũng dung hòa khái niệm trang trí của nước khác, cân bằng giữa truyền thống và tính tiện dụng. Khi thiết kế đã suy nghĩ về cảm nhận của người ở, để có thể giúp người ở trong phòng này thả lỏng toàn thân, nghỉ ngơi trong thời gian ngắn nhưng có được trải nghiệm như một giấc ngủ đủ dài, giống như được trải qua một thời gian thật dài trong mơ. Bàn sưởi kotatsu giúp xử lý nhiều việc mà không cần bước chân ra ngoài.\\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Sayu, Sangonomiya Kokomi, Shikanoin Heizou"
   },
   "AThousandSwings": {
     "name": "Thiên Chấn Trí Nghiệp",
@@ -9779,6 +10031,10 @@
     "name": "Đèn Bàn Với Chụp Đèn Vỏ Sò",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đèn Bàn Với Chụp Đèn Vỏ Sò\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "TranquilStarlight": {
+    "name": "Ánh Sao Trong Vắt",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ánh Sao Trong Vắt\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Bình Hoa - Ung Dung Nhạt Nhòa",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bình Hoa - Ung Dung Nhạt Nhòa\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -9878,6 +10134,10 @@
   "TrueCookeryNukiNukiDaruma": {
     "name": "Nuki-Nuki Daruma \"Vua Đầu Bếp\"",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Nuki-Nuki Daruma \"Vua Đầu Bếp\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "CosmosWithin": {
+    "name": "Thiên Tượng Hồi Chuyển",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Thiên Tượng Hồi Chuyển\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "LandscapePaintingCountryHome": {
     "name": "Tranh Phong Cảnh - Quê Hương",
@@ -10174,6 +10434,10 @@
   "FestivalBoothLiteraryTalent": {
     "name": "Gian Hàng Lễ Hội - Tài Năng Văn Học",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Gian Hàng Lễ Hội - Tài Năng Văn Học\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DodocosSummertime": {
+    "name": "Mùa Hè Của Dodoco",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Mùa Hè Của Dodoco\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "RitualShrine": {
     "name": "Đền Vĩnh Hằng",
@@ -10623,6 +10887,10 @@
     "name": "Ngọn Lửa Yên Bình",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ngọn Lửa Yên Bình\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "AllegroBloomSpecialTuning": {
+    "name": "Hoa Tốc Âm - Giai Điệu Đặc Biệt",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Hoa Tốc Âm - Giai Điệu Đặc Biệt\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "PottedPlantVerdantVastness": {
     "name": "Chậu Cây Xanh - Xanh Ngắt Mát Mẻ",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Chậu Cây Xanh - Xanh Ngắt Mát Mẻ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -10794,6 +11062,26 @@
   "PearOrchardScreenDeft": {
     "name": "Bình Phong Đoàn Kịch - Xuống Đài",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bình Phong Đoàn Kịch - Xuống Đài\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DodocosTravelBag": {
+    "name": "Hành Trang Lên Đường Của Dodoco",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Hành Trang Lên Đường Của Dodoco\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DodocosDodoStove": {
+    "name": "Lò Dodo Của Dodoco",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Lò Dodo Của Dodoco\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DodocosBeachNap": {
+    "name": "Giấc Ngủ Trên Bãi Biển Của Dodoco",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Giấc Ngủ Trên Bãi Biển Của Dodoco\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DodocosCollectionCupboard": {
+    "name": "Tủ Sưu Tầm Của Dodoco",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tủ Sưu Tầm Của Dodoco\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DodocosSunshadeUmbrella": {
+    "name": "Chiếc Ô Mát Mẻ Của Dodoco",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Chiếc Ô Mát Mẻ Của Dodoco\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Đèn Đường Khắc Hoa",

@@ -117,7 +117,7 @@
   "passive1": {
     "name": "Quelqu'un de plus efficace",
     "description": {
-      "0": "Lorsque Sayu déclenche une Dispersion, elle soigne les personnages de l'équipe ainsi que les personnages alliés proches à hauteur de 300 PV. Sayu récupère de plus 1,2 PV supplémentaires pour chacun de ses pts de maîtrise élémentaire.",
+      "0": "Lorsque Sayu déclenche une réaction de Dispersion sur le champ de bataille, elle soigne les personnages de l'équipe ainsi que les personnages alliés proches à hauteur de 300 PV. Sayu récupère de plus 1,2 PV supplémentaires pour chacun de ses pts de maîtrise élémentaire.",
       "1": "Cet effet peut être déclenché une fois toutes les 2 s."
     }
   },
@@ -164,7 +164,7 @@
   "constellation4": {
     "name": "Paresse revue et améliorée",
     "description": {
-      "0": "Sayu récupère 1,2 pts d'énergie élémentaire lorsqu'elle déclenche une Dispersion sur le champ de bataille.",
+      "0": "Sayu récupère 1,2 pts d'énergie élémentaire lorsqu'elle déclenche une réaction de Dispersion sur le champ de bataille.",
       "1": "Cet effet peut être déclenché une fois toutes les 2 s."
     }
   },

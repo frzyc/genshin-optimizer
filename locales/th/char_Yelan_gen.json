@@ -165,7 +165,7 @@
     }
   },
   "constellation6": {
-    "name": "Winner Take All",
+    "name": "Winner Takes All",
     "description": {
       "0": "หลังจากใช้ <strong>Depth-Clarion Dice</strong> Yelan จะเข้าสู่สถานะ Mastermind:",
       "1": "การโจมตีปกติของ Yelan จะเปลี่ยนเป็นการยิง Breakthrough Barb ที่มีความพิเศษ ซึ่งลูกศรแบบนี้ จะมีคุณลักษณะที่คล้ายกับ Breakthrough Barb โดยความเสียหายที่สร้าง จะถูกมองว่าเป็นความเสียหายของการชาร์จโจมตี ซึ่งสามารถสร้างความเสียหายเป็น 156% ของความเสียหายของ Breakthrough Barb ปกติ",

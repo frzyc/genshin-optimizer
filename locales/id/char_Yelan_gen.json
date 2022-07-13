@@ -17,7 +17,7 @@
       },
       "breakthrough": {
         "0": "<strong>Breakthrough</strong>",
-        "1": "Setelah keluar dari medan tempur selama 5 detik Yelan akan memasuki kondisi \"Breakthrough\", dalam kondisi ini waktu charge untuk Serangan Membidik-nya akan berkurang 80% dan saat dilancarkan, Yelan akan menembakkan \"Breakthrough Barb\" yang mengakibatkan <hydro>Hydro DMG Area</hydro> berdasarkan Max HP Yelan."
+        "1": "Setelah keluar dari status tempur selama 5 detik Yelan akan memasuki kondisi \"Breakthrough\", dalam kondisi ini waktu charge untuk Serangan Membidik-nya akan berkurang 80% dan saat dilancarkan, Yelan akan menembakkan \"Breakthrough Barb\" yang mengakibatkan <hydro>Hydro DMG Area</hydro> berdasarkan Max HP Yelan."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
@@ -121,7 +121,7 @@
   "passive2": {
     "name": "Adapt With Ease",
     "description": {
-      "0": "Selama <strong>Exquisite Throw</strong> masih berjalan, maka Karakter aktif akan mengakibatkan 1% DMG lebih besar. Peningkatakan ini berlangsung sebanyak 3,5% DMG setiap detik. Maksimum peningkatan DMG sampai 50%.",
+      "0": "Selama <strong>Exquisite Throw</strong> masih berjalan, maka Karakter aktif akan mengakibatkan 1% DMG lebih besar. Peningkatan ini berlangsung sebanyak 3,5% DMG setiap detik. Maksimum peningkatan DMG sampai 50%.",
       "1": "Jika Depth-Clarion Dice dilancarkan lagi saat durasinya masih berlangsung maka efek yang sudah ada sebelumnya akan hilang."
     }
   },

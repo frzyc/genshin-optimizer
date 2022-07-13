@@ -82,7 +82,7 @@
       "0": "Keqing melepaskan kekuatan petir, menghasilkan <electro>Electro DMG</electro> pada area sekitar.",
       "1": "Lalu dia akan menyatu dengan bayangan pedangnya, menyerang dengan serangkaian pukulan petir kepada musuh di sekitarnya secara bersamaan yang menghasilkan beberapa <electro>Electro DMG</electro>. Serangan terakhir menghasilkan <electro>Electro DMG area</electro> yang luar biasa.",
       "2": "<br/>",
-      "3": "<i>Teknik tercepat dalam ilmu pedang adalah harus cukup cepat sampai dapat memotong bintang-bintang</i>"
+      "3": "<i>Teknik tercepat dalam ilmu pedang yang dimiliki Keqing cukup cepat untuk dapat meruntuhkan bintang-bintang.</i>"
     },
     "skillParams": {
       "0": "DMG Skill",
@@ -144,7 +144,7 @@
   "constellation4": {
     "name": "Attunement",
     "description": {
-      "0": "ATK Keqing meningkat 25% setelah Keqing memicu <electro>Reaksi Elemental yang berhubungan dengan elemen Electro</electro> selama 10 detik."
+      "0": "Setelah Keqing memicu <electro>Reaksi Elemental yang berhubungan dengan elemen Electro</electro>, ATK Keqing meningkat 25% selama 10 detik."
     }
   },
   "constellation5": {

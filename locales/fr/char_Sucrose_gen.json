@@ -98,7 +98,7 @@
   "passive1": {
     "name": "Permutation de catalyste",
     "description": {
-      "0": "Tous les personnages de l'équipe du type élémentaire concerné (à l'exception de Sucrose) obtiennent un bonus de 50 pts de maîtrise élémentaire pendant 8 s lorsque Sucrose déclenche une Dispersion."
+      "0": "Tous les personnages de l'équipe du type élémentaire concerné (à l'exception de Sucrose) obtiennent un bonus de 50 pts de maîtrise élémentaire pendant 8 s lorsque Sucrose déclenche une réaction de Dispersion."
     }
   },
   "passive2": {
@@ -142,7 +142,7 @@
   "constellation5": {
     "name": "Flasque standard",
     "description": {
-      "0": "Niveau d'aptitude <strong>Esprit du vent : Isomorphe 75 Type II</strong> +3",
+      "0": "Niveau d'aptitude <strong>Esprit du vent : Isomorphe 75 Type II</strong> +3.",
       "1": "Niveau max : 15"
     }
   },
