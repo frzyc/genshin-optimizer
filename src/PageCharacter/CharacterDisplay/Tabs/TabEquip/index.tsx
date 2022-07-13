@@ -28,7 +28,6 @@ import { initCharMeta } from '../../../../stateInit';
 import { allSubstatKeys } from '../../../../Types/artifact';
 import { allSlotKeys, SlotKey, WeaponTypeKey } from '../../../../Types/consts';
 import { IFieldDisplay } from '../../../../Types/fieldDisplay';
-import { objectKeyMap } from '../../../../Util/Util';
 import useBuildSetting from '../TabOptimize/useBuildSetting';
 import ArtifactSwapModal from './ArtifactSwapModal';
 import WeaponSwapModal from './WeaponSwapModal';
@@ -165,7 +164,7 @@ function ArtifactSectionCard() {
     if (!character) return
     if (!window.confirm("Do you want to move all currently equipped artifacts to inventory?")) return
     Object.values(equippedArtifacts).forEach(aid => database.arts.set(aid, { location: "" }))
-  }, [character, database])
+  }, [character, database, equippedArtifacts])
 
   const setEffects = useMemo(() => artifactSheets && ArtifactSheet.setEffects(artifactSheets, data), [artifactSheets, data])
   const [{ rvFilter }, setCharMeta] = useDBState(`charMeta_${characterKey}`, initCharMeta)
