@@ -5,7 +5,7 @@ import { absorbableEle, CharacterKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { banner, card, talentAssets, thumb, thumbSide } from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -80,13 +80,13 @@ const declension_dmg_ = lookup(
   Object.fromEntries(stacksArr.map(stacks => [
     stacks,
     prod(
-      subscript(input.total.skillIndex, datamine.skill.declension_dmg_, { key: "_" }),
+      subscript(input.total.skillIndex, datamine.skill.declension_dmg_, { key: "sheet:bonusScaling.skill_" }),
       stacks
     )
-  ])), naught, { key: "skill_dmg_" })
+  ])), naught, { key: "sheet:bonusScaling.skill_" })
 const conviction_dmg_ = equal(condDeclensionStacks, "4",
   subscript(input.total.skillIndex, datamine.skill.conviction_dmg_, { key: "_" }),
-  { key: "skill_dmg_" }
+  { key: "sheet:bonusScaling.skill_" }
 )
 const totalStacks_dmg_ = sum(declension_dmg_, conviction_dmg_)
 
@@ -124,7 +124,17 @@ export const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill")
+    dmg: customDmgNode(
+      prod(
+        sum(
+          subscript(input.total.skillIndex, datamine.skill.dmg, { key: "_" }),
+          totalStacks_dmg_
+        ),
+        input.total.atk
+      ),
+      "skill",
+      { hit: { ele: constant("anemo") } }
+    )
   },
   burst: {
     slugger_dmg: dmgNode("atk", datamine.burst.slugger_dmg, "burst"),
@@ -143,7 +153,6 @@ export const data = dataObjForCharacterSheet(key, elementKey, "inazuma", data_ge
     burst: burstC5,
   },
   premod: {
-    skill_dmg_: totalStacks_dmg_,
     atkSPD_: c1_atkSpd_,
     skill_critRate_: c6_skill_critRate_,
     skill_critDMG_: c6_skill_critDMG_,
@@ -219,7 +228,7 @@ const sheet: ICharacterSheet = {
           {
             name: st("stack", { count: stacks }),
             fields: [{
-              node: totalStacks_dmg_
+              node: infoMut(totalStacks_dmg_, { key: "sheet:bonusScaling.skill_" })
             }, {
               canShow: (data) => data.get(condDeclensionStacks).value === "4",
               text: st("aoeInc"),

@@ -134,5 +134,8 @@
     "pyro": "Upon triggering a <pyro>Pyro</pyro> Swirl reaction",
     "electro": "Upon triggering an <electro>Electro</electro> Swirl reaction",
     "cryo": "Upon triggering a <cryo>Cryo</cryo> Swirl reaction"
+  },
+  "bonusScaling": {
+    "skill_": "Ele. Skill Bonus Scaling"
   }
 }
