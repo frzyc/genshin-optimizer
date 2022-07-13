@@ -65,6 +65,7 @@ export const characterIdMap = {
   10000056: "KujouSara",
   10000057: "AratakiItto",
   10000058: "YaeMiko",
+  10000059: "ShikanoinHeizou",
   10000060: "Yelan",
   10000062: "Aloy",
   10000063: "Shenhe",
