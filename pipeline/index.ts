@@ -111,6 +111,7 @@ export const weaponIdMap = {
   11413: "FesteringDesire",
   11414: "AmenomaKageuchi",
   11415: "CinnabarSpindle",
+  11416: "KagotsurubeIsshin",
   11501: "AquilaFavonia",
   11502: "SkywardBlade",
   11503: "FreedomSworn",

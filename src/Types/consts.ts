@@ -109,6 +109,7 @@ export const allWeaponSwordKeys = [
   "BlackcliffLongsword",
   "CinnabarSpindle",
   "CoolSteel",
+  "KagotsurubeIsshin",
   "DarkIronSword",
   "DullBlade",
   "FavoniusSword",

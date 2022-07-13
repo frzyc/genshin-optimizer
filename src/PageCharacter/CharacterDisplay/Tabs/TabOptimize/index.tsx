@@ -15,7 +15,6 @@ import CharacterCard from '../../../../Components/Character/CharacterCard';
 import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton';
 import { HitModeToggle, ReactionToggle } from '../../../../Components/HitModeEditor';
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup';
-import StatFilterCard from '../../../../Components/StatFilterCard';
 import { DatabaseContext } from '../../../../Database/Database';
 import { DataContext, dataContextObj } from '../../../../Context/DataContext';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
@@ -50,6 +49,7 @@ import UseExcluded from './Components/UseExcluded';
 import { defThreads, useOptimizeDBState } from './DBState';
 import { compactArtifacts, dynamicData } from './foreground';
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext';
+import StatFilterCard from './Components/StatFilterCard';
 
 export default function TabBuild() {
   const { t } = useTranslation("page_character")
