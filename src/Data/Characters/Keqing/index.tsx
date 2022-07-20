@@ -196,6 +196,7 @@ const sheet: ICharacterSheet = {
           text: sgt("cd"),
           value: datamine.skill.cd,
           unit: "s",
+          fixed: 1
         }]
       }, ct.conditionalTemplate("passive1", {
         value: condAfterRecast,
