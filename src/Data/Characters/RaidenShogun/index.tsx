@@ -100,13 +100,13 @@ const skillEyeTeamBurstDmgInc = unequal(input.activeCharKey, input.charKey,
 const resolveStacks = [10, 20, 30, 40, 50, 60]
 const [condResolveStackPath, condResolveStack] = cond(key, "burstResolve")
 
-const resolveStackNode = lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0)
+const resolveStackNode = lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0, { key: `char_${key}:burst.resolves` })
 const resolveInitialBonus_ = prod(
-  subscript(input.total.burstIndex, datamine.burst.resolveBonus1, { key: "_" }),
+  subscript(input.total.burstIndex, datamine.burst.resolveBonus1, { key: `char_${key}:burst.resolveInitial_` }),
   resolveStackNode
 )
 const resolveInfusedBonus_ = prod(
-  subscript(input.total.burstIndex, datamine.burst.resolveBonus2, { key: "_" }),
+  subscript(input.total.burstIndex, datamine.burst.resolveBonus2, { key: `char_${key}:burst.resolveInfused_` }),
   resolveStackNode
 )
 function burstResolve(mvArr: number[], initial = false) {

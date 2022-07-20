@@ -5,8 +5,8 @@
   },
   "burst": {
     "resolves": "Resolve Stacks",
-    "resolveInitial_": "<electro>Musou no Hitotachi Base DMG Bonus</electro",
-    "resolveInfused_": "<electro>Musou Isshin DMG Bonus</electro>"
+    "resolveInitial_": "<electro>Musou no Hitotachi Base DMG Bonus Scaling</electro",
+    "resolveInfused_": "<electro>Musou Isshin DMG Bonus Scaling</electro>"
   },
   "a4": {
     "enerRest": "Energy restoration from <strong>Musou Isshin</strong>",
