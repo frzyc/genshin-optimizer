@@ -186,9 +186,9 @@ const sheet: ICharacterSheet = {
         fields: datamine.normal.hitArr.map((_, i) => ({
           node: infoMut(
             dmgFormulas.normal[i],
-            { key: `char_${key}_gen:auto.skillParams.${i > 3 ? (i < 6 ? 3 : 4) : i}` }
+            { key: `char_${key}_gen:auto.skillParams.${i > 2 ? (i < 6 ? 3 : 4) : i}` }
           ),
-          textSuffix: (i > 3 && i < 6) ? `(${i - 3})` : undefined,
+          textSuffix: (i > 2 && i < 6) ? `(${i - 2})` : undefined,
         }))
       }, {
         text: tr("auto.fields.charged"),
