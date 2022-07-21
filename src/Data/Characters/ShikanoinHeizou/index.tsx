@@ -81,7 +81,7 @@ const declension_dmg_ = lookup(
     stacks,
     prod(
       subscript(input.total.skillIndex, datamine.skill.declension_dmg_, { key: "sheet:bonusScaling.skill_" }),
-      stacks
+      constant(stacks, { key: `char_${key}:declensionStacks` })
     )
   ])), naught, { key: "sheet:bonusScaling.skill_" })
 const conviction_dmg_ = equal(condDeclensionStacks, "4",
@@ -107,12 +107,15 @@ const c6_skill_critRate_ = greaterEq(input.constellation, 6, lookup(
   condDeclensionStacks,
   Object.fromEntries(stacksArr.map(stacks => [
     stacks,
-    prod(stacks, datamine.constellation6.hsCritRate_)
+    prod(
+      percent(datamine.constellation6.hsCritRate_),
+      constant(stacks, { key: `char_${key}:declensionStacks` })
+    )
   ])),
   naught
 ))
 const c6_skill_critDMG_ = greaterEq(input.constellation, 6,
-  equal(condDeclensionStacks, "4", datamine.constellation6.hsCritDmg_)
+  equal(condDeclensionStacks, "4", percent(datamine.constellation6.hsCritDmg_))
 )
 
 export const dmgFormulas = {
