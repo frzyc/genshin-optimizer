@@ -28,6 +28,7 @@ import { initCharMeta } from '../../../../stateInit';
 import { allSubstatKeys } from '../../../../Types/artifact';
 import { allSlotKeys, SlotKey, WeaponTypeKey } from '../../../../Types/consts';
 import { IFieldDisplay } from '../../../../Types/fieldDisplay';
+import { floatCompare } from '../../../../Util/Util';
 import useBuildSetting from '../TabOptimize/useBuildSetting';
 import ArtifactSwapModal from './ArtifactSwapModal';
 import WeaponSwapModal from './WeaponSwapModal';
@@ -188,13 +189,13 @@ function ArtifactSectionCard() {
     }, { currentEfficiency: 0, currentEfficiency_: 0, maxEfficiency: 0, maxEfficiency_: 0 })
     const rvField: IFieldDisplay = {
       text: t`artifact:editor.curSubEff`,
-      value: currentEfficiency === currentEfficiency_ ? <PercentBadge value={currentEfficiency} max={4500} valid /> :
+      value: !floatCompare(currentEfficiency, currentEfficiency_) ? <PercentBadge value={currentEfficiency} max={4500} valid /> :
         <span><PercentBadge value={currentEfficiency} max={4500} valid /> / <PercentBadge value={currentEfficiency_} max={4500} valid /></span>
     }
     const rvmField: IFieldDisplay = {
       text: t`artifact:editor.maxSubEff`,
-      canShow: () => currentEfficiency_ !== maxEfficiency_,
-      value: maxEfficiency === maxEfficiency_ ? <PercentBadge value={maxEfficiency} max={4500} valid /> :
+      canShow: () => !!floatCompare(currentEfficiency_, maxEfficiency_),
+      value: !floatCompare(maxEfficiency, maxEfficiency_) ? <PercentBadge value={maxEfficiency} max={4500} valid /> :
         <span><PercentBadge value={maxEfficiency} max={4500} valid /> / <PercentBadge value={maxEfficiency_} max={4500} valid /></span>
     }
     return { rvField, rvmField }
@@ -213,8 +214,8 @@ function ArtifactSectionCard() {
           </CardDark>
         </ModalWrapper>
         <FieldDisplayList >
-          < BasicFieldDisplay field={rvField} component={ListItem} />
-          < BasicFieldDisplay field={rvmField} component={ListItem} />
+          <BasicFieldDisplay field={rvField} component={ListItem} />
+          <BasicFieldDisplay field={rvmField} component={ListItem} />
         </FieldDisplayList>
       </CardDark>
       <Box display="flex" gap={1} flexDirection="column">
