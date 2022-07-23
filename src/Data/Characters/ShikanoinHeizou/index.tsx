@@ -81,7 +81,7 @@ const declension_dmg_ = lookup(
     stacks,
     prod(
       subscript(input.total.skillIndex, datamine.skill.declension_dmg_, { key: "sheet:bonusScaling.skill_" }),
-      stacks
+      constant(stacks, { key: `char_${key}:declensionStacks` })
     )
   ])), naught, { key: "sheet:bonusScaling.skill_" })
 const conviction_dmg_ = equal(condDeclensionStacks, "4",
@@ -107,12 +107,15 @@ const c6_skill_critRate_ = greaterEq(input.constellation, 6, lookup(
   condDeclensionStacks,
   Object.fromEntries(stacksArr.map(stacks => [
     stacks,
-    prod(stacks, datamine.constellation6.hsCritRate_)
+    prod(
+      percent(datamine.constellation6.hsCritRate_),
+      constant(stacks, { key: `char_${key}:declensionStacks` })
+    )
   ])),
   naught
 ))
 const c6_skill_critDMG_ = greaterEq(input.constellation, 6,
-  equal(condDeclensionStacks, "4", datamine.constellation6.hsCritDmg_)
+  equal(condDeclensionStacks, "4", percent(datamine.constellation6.hsCritDmg_))
 )
 
 export const dmgFormulas = {
@@ -186,9 +189,9 @@ const sheet: ICharacterSheet = {
         fields: datamine.normal.hitArr.map((_, i) => ({
           node: infoMut(
             dmgFormulas.normal[i],
-            { key: `char_${key}_gen:auto.skillParams.${i > 3 ? (i < 6 ? 3 : 4) : i}` }
+            { key: `char_${key}_gen:auto.skillParams.${i > 2 ? (i < 6 ? 3 : 4) : i}` }
           ),
-          textSuffix: (i > 3 && i < 6) ? `(${i - 3})` : undefined,
+          textSuffix: (i > 2 && i < 6) ? `(${i - 2})` : undefined,
         }))
       }, {
         text: tr("auto.fields.charged"),

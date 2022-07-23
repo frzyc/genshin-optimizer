@@ -137,5 +137,6 @@
   },
   "bonusScaling": {
     "skill_": "Ele. Skill Bonus Scaling"
-  }
+  },
+  "energy": "Energy"
 }

@@ -194,7 +194,8 @@ const sheet: ICharacterSheet = {
       passive2: ct.talentTemplate("passive2", [ct.fieldsTemplate("passive2", {
         fields: [{
           text: trm("a4.enerRest"),
-          value: data => data.get(input.total.enerRech_).value * datamine.passive2.energyGen
+          value: data => data.get(input.total.enerRech_).value * datamine.passive2.energyGen,
+          fixed: 2
         }]
       })]),
       passive3: ct.talentTemplate("passive3"),

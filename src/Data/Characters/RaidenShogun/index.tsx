@@ -82,7 +82,7 @@ const datamine = {
 
 const [condSkillEyePath, condSkillEye] = cond(key, "skillEye")
 const skillEye_ = equal("skillEye", condSkillEye,
-  prod(datamine.burst.enerCost, subscript(input.total.skillIndex, datamine.skill.burstDmg_bonus.map(x => x), { key: '_' })))
+  prod(constant(datamine.burst.enerCost, { key: "sheet:energy" }), subscript(input.total.skillIndex, datamine.skill.burstDmg_bonus, { fixed: 2, key: '_' })))
 
 function skillDmg(atkType: number[]) {
   // if Raiden is above or equal to C2, then account for DEF Ignore else not
@@ -94,19 +94,19 @@ function skillDmg(atkType: number[]) {
 const energyCosts = [40, 50, 60, 70, 80, 90]
 const [condSkillEyeTeamPath, condSkillEyeTeam] = cond(key, "skillEyeTeam")
 const skillEyeTeamBurstDmgInc = unequal(input.activeCharKey, input.charKey,
-  prod(lookup(condSkillEyeTeam, objectKeyMap(energyCosts, i => constant(i)), 0),
-    subscript(input.total.skillIndex, datamine.skill.burstDmg_bonus, { key: '_' })))
+  prod(lookup(condSkillEyeTeam, objectKeyMap(energyCosts, i => constant(i, { key: "sheet:energy" })), 0),
+    subscript(input.total.skillIndex, datamine.skill.burstDmg_bonus, { fixed: 2, key: '_' })))
 
 const resolveStacks = [10, 20, 30, 40, 50, 60]
 const [condResolveStackPath, condResolveStack] = cond(key, "burstResolve")
 
-const resolveStackNode = lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0)
+const resolveStackNode = lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0, { key: `char_${key}:burst.resolves` })
 const resolveInitialBonus_ = prod(
-  subscript(input.total.burstIndex, datamine.burst.resolveBonus1, { key: "_" }),
+  subscript(input.total.burstIndex, datamine.burst.resolveBonus1, { key: `char_${key}:burst.resolveInitial_` }),
   resolveStackNode
 )
 const resolveInfusedBonus_ = prod(
-  subscript(input.total.burstIndex, datamine.burst.resolveBonus2, { key: "_" }),
+  subscript(input.total.burstIndex, datamine.burst.resolveBonus2, { key: `char_${key}:burst.resolveInfused_` }),
   resolveStackNode
 )
 function burstResolve(mvArr: number[], initial = false) {
