@@ -7,6 +7,7 @@ export const allArtifactRarities = [5, 4, 3] as const
 export const allSlotKeys = ["flower", "plume", "sands", "goblet", "circlet"] as const
 export const allElements = ['anemo', 'geo', 'electro', 'hydro', 'pyro', 'cryo'] as const
 export const allElementsWithPhy = ["physical", ...allElements] as const
+export const allInfusionAuraElements = ["pyro", 'cryo'] as const
 export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'] as const
 export const allArtifactSets = [
   "Adventurer",
@@ -277,6 +278,7 @@ export type ArtifactRarity = typeof allArtifactRarities[number]
 export type SlotKey = typeof allSlotKeys[number]
 export type ElementKey = typeof allElements[number]
 export type ElementKeyWithPhy = typeof allElementsWithPhy[number]
+export type InfusionAuraElements = typeof allInfusionAuraElements[number]
 export type ArtifactSetKey = typeof allArtifactSets[number]
 export type CharacterKey = typeof allCharacterKeys[number]
 export type WeaponTypeKey = typeof allWeaponTypeKeys[number]

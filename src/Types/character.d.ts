@@ -1,5 +1,5 @@
 import { EleEnemyResKey, StatKey } from "../KeyMap";
-import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey } from "./consts";
+import { CharacterKey, ElementKey, HitModeKey, InfusionAuraElements, ReactionModeKey, SlotKey } from "./consts";
 import { IConditionalValues } from "./IConditional";
 import { DocumentSection } from "./sheet";
 export interface ICharacter {
@@ -21,7 +21,7 @@ export interface ICharacter {
   conditional: IConditionalValues
   bonusStats: Partial<Record<StatKey, number>>
   enemyOverride: Partial<Record<EleEnemyResKey | "enemyLevel" | "enemyDefRed_" | "enemyDefIgn_", number>>
-  infusionAura: ElementKey | ""
+  infusionAura: InfusionAuraElements | ""
   compareData: boolean
 }
 export interface ICachedCharacter extends ICharacter {
