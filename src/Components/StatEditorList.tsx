@@ -7,8 +7,8 @@ import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from './Custom
 import DropdownButton from './DropdownMenu/DropdownButton';
 
 
-export default function StatEditorList({ statKeys, statFilters, setStatFilters, disabled = false }: {
-  statKeys: StatKey[], statFilters: Dict<StatKey, number>, setStatFilters: (statFilters: Dict<StatKey, number>) => void, disabled?: boolean
+export default function StatEditorList({ statKeys, statFilters, setStatFilters, disabled = false, wrapperFunc = (ele) => ele }: {
+  statKeys: StatKey[], statFilters: Dict<StatKey, number>, setStatFilters: (statFilters: Dict<StatKey, number>) => void, disabled?: boolean, wrapperFunc?: (ele: JSX.Element) => JSX.Element
 }) {
   const remainingKeys = useMemo(() => statKeys.filter(key => !(Object.keys(statFilters) as any).some(k => k === key)), [statKeys, statFilters])
   const setKey = useCallback(
@@ -36,9 +36,9 @@ export default function StatEditorList({ statKeys, statFilters, setStatFilters, 
 
   return <>
     {Object.entries(statFilters).map(([statKey, min]) =>
-      <StatFilterItem key={statKey} statKey={statKey} statKeys={remainingKeys} disabled={disabled} value={min} setValue={setFilter} setKey={setKey} delKey={delKey} />
+      wrapperFunc(<StatFilterItem key={statKey} statKey={statKey} statKeys={remainingKeys} disabled={disabled} value={min} setValue={setFilter} setKey={setKey} delKey={delKey} />)
     )}
-    <StatFilterItem statKeys={remainingKeys} setValue={setFilter} setKey={setKey} delKey={delKey} disabled={disabled} />
+    {wrapperFunc(<StatFilterItem statKeys={remainingKeys} setValue={setFilter} setKey={setKey} delKey={delKey} disabled={disabled} />)}
   </>
 }
 

@@ -20,7 +20,7 @@ const allMisc = [
 const allModStats = [
   ...allArtModStats,
   ...(["all", "burning", ...allTransformative, ...allAmplifying, ...allMoves] as const).map(x => `${x}_dmg_` as const),
-]
+] as const
 const allNonModStats = [
   ...allElements.flatMap(x => [
     `${x}_dmgInc` as const,
@@ -34,7 +34,11 @@ const allNonModStats = [
   ...allEleEnemyResKeys,
   "enemyDefRed_" as const,
   ...allMisc,
-]
+] as const
+
+export const allInputPremodKeys = [...allModStats, ...allNonModStats] as const
+
+export type InputPremodKey = typeof allInputPremodKeys[number]
 
 const talent = objectKeyMap(allTalents, _ => read())
 const allModStatNodes = objectKeyMap(allModStats, key => read(undefined, { key }))

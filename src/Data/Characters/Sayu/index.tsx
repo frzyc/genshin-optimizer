@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
-import { constant, greaterEq, infoMut, lookup, min, naught, percent, prod, subscript, sum } from '../../../Formula/utils'
+import { constant, equal, greaterEq, infoMut, lookup, min, naught, percent, prod, subscript, sum } from '../../../Formula/utils'
 import { absorbableEle, CharacterKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
@@ -153,7 +153,11 @@ const dmgFormulas = {
     darumaHeal
   },
   passive1: {
-    heal: greaterEq(input.asc, 1, sum(datamine.passive1.baseHeal, prod(datamine.passive1.emHeal, input.total.eleMas)))
+    heal: greaterEq(input.asc, 1, equal(condActiveSwirl, "activeSwirl",
+      customHealNode(
+        sum(datamine.passive1.baseHeal, prod(datamine.passive1.emHeal, input.total.eleMas))
+      )
+    ))
   },
   passive2: {
     extraHeal: greaterEq(input.asc, 4, prod(darumaHeal, percent(datamine.passive2.nearHeal)))

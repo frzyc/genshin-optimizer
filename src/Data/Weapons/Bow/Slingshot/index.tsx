@@ -13,19 +13,18 @@ const key: WeaponKey = "Slingshot"
 const data_gen = data_gen_json as WeaponData
 const [, trm] = trans("weapon", key)
 
-const normal_atk_increase_s = [.46, .52, .58, .64, .70] // Increased by 10% to counteract the decrease
-const charged_atk_increase_s = [.46, .52, .58, .64, .70]
+const dmg_arr = [.36, .42, .48, .54, .60]
 
 const [condPassivePath, condPassive] = cond(key, "Slingshot")
-const normal_atk_increase = equal(condPassive, "on", subscript(input.weapon.refineIndex, normal_atk_increase_s), { key: "normal_dmg_" })
-const charged_atk_increase = equal(condPassive, "on", subscript(input.weapon.refineIndex, charged_atk_increase_s), { key: "charged_dmg_" })
-const normal_atk_decrease = percent(-0.1, { key: "normal_dmg_" })
-const charged_atk_decrease = percent(-0.1, { key: "charged_dmg_" })
+const normal_dmg_inc = equal(condPassive, "on", subscript(input.weapon.refineIndex, dmg_arr), { key: "normal_dmg_" })
+const charged_dmg_inc = equal(condPassive, "on", subscript(input.weapon.refineIndex, dmg_arr), { key: "charged_dmg_" })
+const normal_dmg_dec = equal(condPassive, undefined, percent(-0.1, { key: "normal_dmg_" }))
+const charged_dmg_dec = equal(condPassive, undefined, percent(-0.1, { key: "charged_dmg_" }))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
-    normal_dmg_: sum(normal_atk_increase, normal_atk_decrease),
-    charged_dmg_: sum(charged_atk_increase, normal_atk_decrease)
+    normal_dmg_: sum(normal_dmg_inc, normal_dmg_dec),
+    charged_dmg_: sum(charged_dmg_inc, charged_dmg_dec),
   }
 })
 
@@ -35,9 +34,9 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
-      node: normal_atk_decrease
+      node: normal_dmg_dec
     }, {
-      node: charged_atk_decrease
+      node: charged_dmg_dec
     }],
   }, {
     value: condPassive,
@@ -47,9 +46,9 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: normal_atk_increase
+          node: normal_dmg_inc
         }, {
-          node: charged_atk_increase
+          node: charged_dmg_inc
         }]
       }
     }
