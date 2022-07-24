@@ -95,10 +95,10 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
             premod: objectMap(bonusStats, (v) => constant(v)),
             hit: {
               hitMode: constant(hitMode),
-              reaction: reactionMode ? constant(reactionMode) : undefined,
+              reaction: reactionMode ? constant(reactionMode) : constant("noReaction"),
             },
             infusion: {
-              team: infusionAura ? constant(infusionAura) : undefined
+              team: infusionAura ? constant(infusionAura) : constant("noInfusion"),
             }
           }), { pivot: true })
         )
