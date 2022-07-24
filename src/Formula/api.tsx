@@ -3,11 +3,11 @@ import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import { crawlObject, deepClone, layeredAssignment, objectKeyMap, objPathValue } from "../Util/Util";
+import { crawlObject, deepClone, layeredAssignment, objectKeyMap, objectMap, objPathValue } from "../Util/Util";
 import { input } from "./index";
 import { Data, DisplaySub, Info, Input, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData } from "./uiData";
-import { constant, customRead, percent, resetData, setReadNodeKeys } from "./utils";
+import { constant, customRead, data, infoMut, percent, prod, resetData, setReadNodeKeys, sum } from "./utils";
 
 const asConst = true as const, pivot = true as const
 
@@ -45,7 +45,8 @@ function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel: numbe
     },
   }
 }
-function dataObjForCharacter(char: ICachedCharacter): Data {
+// when sheetData is supplied, then it is assumed that the data is in "Custom Multi-target" mode
+function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
   const result: Data = {
     lvl: constant(char.level),
     constellation: constant(char.constellation),
@@ -80,6 +81,32 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
 
   crawlObject(char.conditional, ["conditional"], (x: any) => typeof x === "string", (x: string, keys: string[]) =>
     layeredAssignment(result, keys, constant(x)))
+
+  if (sheetData?.display) {
+    sheetData.display.custom = {}
+    char.customMultiTarget.forEach(({ name, targets }, i) => {
+      const targetNodes = targets.map(({ weight, path, hitMode, reactionMode, infusionAura, bonusStats }) => {
+        const targetNode = objPathValue(sheetData.display, path) as NumNode | undefined
+        if (!targetNode) return constant(0)
+
+        return prod(
+          constant(weight),
+          infoMut(data(targetNode, {
+            premod: objectMap(bonusStats, (v) => constant(v)),
+            hit: {
+              hitMode: constant(hitMode),
+              reaction: reactionMode ? constant(reactionMode) : undefined,
+            },
+            infusion: {
+              team: infusionAura ? constant(infusionAura) : undefined
+            }
+          }), { pivot: true })
+        )
+      })
+      const multiTargetNode = infoMut(sum(...targetNodes), { key: name, variant: "invalid" })
+      sheetData.display!.custom[i] = multiTargetNode
+    })
+  }
   return result
 }
 function dataObjForWeapon(weapon: ICachedWeapon): Data {

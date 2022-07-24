@@ -2,6 +2,20 @@ import { EleEnemyResKey, StatKey } from "../KeyMap";
 import { CharacterKey, ElementKey, HitModeKey, InfusionAuraElements, ReactionModeKey, SlotKey } from "./consts";
 import { IConditionalValues } from "./IConditional";
 import { DocumentSection } from "./sheet";
+
+export interface CustomTarget {
+  weight: number,
+  path: string[]
+  hitMode: HitModeKey,
+  reactionMode?: ReactionModeKey,
+  infusionAura?: InfusionAuraElements,
+  bonusStats: Partial<Record<InputPremodKey, number>>
+}
+export interface CustomMultiTarget {
+  name: string,
+  targets: CustomTarget[]
+}
+
 export interface ICharacter {
   key: CharacterKey
   level: number
@@ -23,6 +37,7 @@ export interface ICharacter {
   enemyOverride: Partial<Record<EleEnemyResKey | "enemyLevel" | "enemyDefRed_" | "enemyDefIgn_", number>>
   infusionAura: InfusionAuraElements | ""
   compareData: boolean
+  customMultiTarget: CustomMultiTarget[]
 }
 export interface ICachedCharacter extends ICharacter {
   equippedArtifacts: StrictDict<SlotKey, string>

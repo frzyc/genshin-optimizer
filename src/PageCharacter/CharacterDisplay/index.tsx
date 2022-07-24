@@ -37,6 +37,7 @@ import TabBuild from './Tabs/TabOptimize';
 import TabOverview from './Tabs/TabOverview';
 import TabTalent from './Tabs/TabTalent';
 import TabTeambuffs from './Tabs/TabTeambuffs';
+import { CustomMultiTargetButton } from '../CustomMultiTarget';
 
 export default function CharacterDisplay() {
   const navigate = useNavigate();
@@ -93,6 +94,9 @@ function CharacterDisplayCard({ characterKey, newteamData, mainStatAssumptionLev
         <Grid container spacing={1}>
           <Grid item>
             <CharSelectDropdown />
+          </Grid>
+          <Grid item>
+            <CustomMultiTargetButton />
           </Grid>
           <Grid item flexGrow={1} />
           {!!mainStatAssumptionLevel && <Grid item><Card sx={{ p: 1, bgcolor: t => t.palette.warning.dark }}><Typography><strong>Assume Main Stats are Level {mainStatAssumptionLevel}</strong></Typography></Card></Grid>}

@@ -82,7 +82,7 @@ export class UIData {
 
     const result = computeNodeDisplay(this.computeNode(node))
     this.processed.set(node, result)
-    if (result.info.subVariant) console.log(result.info)
+    // if (result.info.subVariant) console.log(result.info)
     return result
   }
   private computeNode(node: NumNode): ContextNodeDisplay
@@ -310,6 +310,7 @@ function accumulateInfo<V>(operands: ContextNodeDisplay<V>[]): Info {
       case "vaporize": case "swirl": case "melt": case "success": return 2
       case "anemo": case "cryo": case "hydro": case "pyro": case "electro": case "geo": return 1
       case "physical": return 0
+      case "invalid": return -1
       default: assertUnreachable(variant)
     }
   }

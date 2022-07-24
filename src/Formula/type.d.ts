@@ -30,7 +30,7 @@ interface Info {
   fixed?: number
   isTeamBuff?: boolean
 }
-export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "success"
+export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "success" | "invalid"
 
 interface Base {
   operands: readonly AnyNode[]
