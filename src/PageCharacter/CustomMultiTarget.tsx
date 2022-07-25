@@ -62,7 +62,7 @@ function validateCustomTarget(ct: any): CustomTarget | undefined {
     bonusStats = {}
 
   bonusStats = Object.fromEntries(Object.entries(bonusStats).filter(([key, value]) =>
-    !allInputPremodKeys.includes(key as InputPremodKey) && typeof value == "number"
+    allInputPremodKeys.includes(key as InputPremodKey) && typeof value == "number"
   ))
 
   return { weight, path, hitMode, reactionMode, infusionAura, bonusStats }
@@ -208,6 +208,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
   const setWeight = useCallback(weight => setCustomTarget({ ...customTarget, weight }), [customTarget, setCustomTarget],)
   const node: NodeDisplay = objPathValue(data.getDisplay(), path) as any
   const setFilter = useCallback((bonusStats) => setCustomTarget({ ...customTarget, bonusStats }), [customTarget, setCustomTarget],)
+  console.log(customTarget, bonusStats)
 
   const isMeleeNorm = characterSheet?.isMelee() && path[0] === "normal"
   return <CardDark>
