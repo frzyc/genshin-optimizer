@@ -99,6 +99,15 @@ declare module "@mui/material/Button" {
     electro: true;
     anemo: true;
     physical: true;
+    vaporize: true;
+    melt: true;
+    overloaded: true;
+    superconduct: true;
+    electrocharged: true;
+    shattered: true;
+    swirl: true;
+    burning: true;
+    crystallize: true;
 
     white: true;
     red: true;

@@ -55,9 +55,9 @@ function StatFilterItem({ statKey, statKeys = [], value = 0, delKey, setKey, set
   const onChange = useCallback(s => statKey && setValue(statKey, s), [setValue, statKey])
   return <ButtonGroup sx={{ width: "100%" }}>
     <DropdownButton
-      title={statKey ? <StatColoredWithUnit statKey={statKey} /> : "New Stat"}
+      title={statKey ? <span>{KeyMap.get(statKey)}{KeyMap.unit(statKey)}</span> : "New Stat"}
       disabled={disabled}
-      color={statKey ? "success" : "secondary"}
+      color={statKey ? (KeyMap.getVariant(statKey) ?? "success") : "secondary"}
     >
       {statKeys.map(sKey => <MenuItem key={sKey} onClick={() => setKey(sKey, statKey)}><StatColoredWithUnit statKey={sKey} /></MenuItem>)}
     </DropdownButton>

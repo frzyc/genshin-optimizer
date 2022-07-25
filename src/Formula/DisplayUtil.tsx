@@ -1,12 +1,10 @@
-import { Typography } from "@mui/material";
 import { input } from ".";
+import ColorText from "../Components/ColoredText";
 import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
-import ColorText from "../Components/ColoredText";
-import SqBadge from "../Components/SqBadge";
+import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import { ArtifactSetKey, CharacterKey, ElementKey, WeaponKey } from "../Types/consts";
 import { range } from "../Util/Util";
-import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import { DisplaySub } from "./type";
 import { NodeDisplay, UIData } from "./uiData";
 
@@ -64,7 +62,7 @@ export async function getDisplayHeader(data: UIData, sectionKey: string): Promis
     return {
       icon: talent.img,
       title: talent.name,
-      action: actionText ? <SqBadge ><Typography variant="subtitle2">{actionText}</Typography></SqBadge> : undefined
+      action: actionText
     }
   }
   return errHeader

@@ -6,8 +6,6 @@ const SqBadge = styled("span", {
 })(({ theme, color = "primary" }) => ({
   display: "inline-block",
   padding: ".25em .4em",
-  fontSize: "75%",
-  fontWeight: 700,
   lineHeight: 1,
   textAlign: "center",
   whiteSpace: "nowrap",
