@@ -7,7 +7,7 @@ import { crawlObject, deepClone, layeredAssignment, objectKeyMap, objectMap, obj
 import { input } from "./index";
 import { Data, DisplaySub, Info, Input, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData } from "./uiData";
-import { constant, customRead, data, infoMut, percent, prod, resetData, setReadNodeKeys, sum } from "./utils";
+import { constant, customRead, data, infoMut, none, percent, prod, resetData, setReadNodeKeys, sum } from "./utils";
 
 const asConst = true as const, pivot = true as const
 
@@ -95,10 +95,10 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
             premod: objectMap(bonusStats, (v, k) => k.endsWith('_') ? percent(v / 100) : constant(v)),
             hit: {
               hitMode: constant(hitMode),
-              reaction: reactionMode ? constant(reactionMode) : constant("noReaction"),
+              reaction: reactionMode ? constant(reactionMode) : none,
             },
             infusion: {
-              team: infusionAura ? constant(infusionAura) : constant("noInfusion"),
+              team: infusionAura ? constant(infusionAura) : none,
             }
           }), { pivot: true })
         )
