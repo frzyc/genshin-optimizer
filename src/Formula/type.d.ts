@@ -3,15 +3,15 @@ import type { AmplifyingReactionsKey, TransformativeReactionsKey } from "../KeyM
 import type { ArtifactSetKey, CharacterKey, ElementKeyWithPhy, WeaponKey } from "../Types/consts"
 import type { input, uiInput } from "./index"
 
-export type NumNode = ComputeNode | ThresholdNode |
+export type NumNode = ComputeNode | ThresholdNode<NumNode> |
   DataNode<NumNode> |
-  LookupNode<NumNode> | MatchNode<NumNode, StrNode> | MatchNode<NumNode, NumNode> |
+  LookupNode<NumNode> | MatchNode<StrNode, NumNode> | MatchNode<NumNode, NumNode> |
   SubscriptNode<number> |
   ReadNode<number> | ConstantNode<number>
 export type StrNode = StrPrioNode | SmallestNode |
   DataNode<StrNode> |
   LookupNode<StrNode> |
-  MatchNode<StrNode, StrNode> | MatchNode<StrNode, NumNode> |
+  MatchNode<StrNode, StrNode> | MatchNode<NumNode, StrNode> |
   ReadNode<string | undefined> | ConstantNode<string | undefined>
 export type AnyNode = NumNode | StrNode | {
   operation: string
@@ -45,14 +45,14 @@ export interface SmallestNode extends Base {
   operation: "small"
   operands: readonly StrNode[]
 }
-export interface LookupNode<N> extends Base {
+export interface LookupNode<Output> extends Base {
   operation: "lookup"
-  operands: readonly [index: StrNode] | readonly [index: StrNode, defaultNode: N]
-  table: Dict<string, N>
+  operands: readonly [index: StrNode] | readonly [index: StrNode, defaultNode: Output]
+  table: Dict<string, Output>
 }
-export interface DataNode<N> extends Base {
+export interface DataNode<Output> extends Base {
   operation: "data"
-  operands: readonly [N]
+  operands: readonly [Output]
   data: Data
   reset?: true
 }
@@ -60,33 +60,33 @@ export interface ComputeNode extends Base {
   operation: Operation
   operands: readonly NumNode[]
 }
-export interface ThresholdNode<M = NumNode> extends Base {
+export interface ThresholdNode<Output> extends Base {
   operation: "threshold"
-  operands: readonly [NumNode, NumNode, M, M]
+  operands: readonly [NumNode, NumNode, Output, Output]
   emptyOn?: "ge" | "l"
 }
-export interface MatchNode<N, M = StrNode> extends Base {
+export interface MatchNode<Input, Output> extends Base {
   operation: "match"
-  operands: readonly [v1: M, v2: M, match: N, unmatch: N]
+  operands: readonly [v1: Input, v2: Input, match: Output, unmatch: Output]
   emptyOn?: "match" | "unmatch"
 }
-export interface SubscriptNode<V> extends Base {
+export interface SubscriptNode<Value> extends Base {
   operation: "subscript"
   operands: readonly [index: NumNode]
-  list: readonly V[]
+  list: readonly Value[]
 }
-export interface ReadNode<V> extends Base {
+export interface ReadNode<Value> extends Base {
   operation: "read"
   operands: readonly []
-  accu?: V extends number ? CommutativeMonoidOperation : "small"
+  accu?: Value extends number ? CommutativeMonoidOperation : "small"
   path: readonly string[]
-  type: V extends number ? "number" : V extends string ? "string" : undefined
+  type: Value extends number ? "number" : Value extends string ? "string" : undefined
 }
-export interface ConstantNode<V> extends Base {
+export interface ConstantNode<Value> extends Base {
   operation: "const"
   operands: readonly []
-  value: V
-  type: V extends number ? "number" : V extends string ? "string" : undefined
+  value: Value
+  type: Value extends number ? "number" : Value extends string ? "string" : undefined
 }
 
 type _StrictInput<T, Num, Str> = T extends ReadNode<number> ? Num : T extends ReadNode<string> ? Str : { [key in keyof T]: _StrictInput<T[key], Num, Str> }
