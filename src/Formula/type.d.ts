@@ -65,9 +65,9 @@ export interface ThresholdNode<M = NumNode> extends Base {
   operands: readonly [NumNode, NumNode, M, M]
   emptyOn?: "ge" | "l"
 }
-export interface MatchNode<N, M = StrNode> extends Base {
+export interface MatchNode<Output, Input = StrNode> extends Base {
   operation: "match"
-  operands: readonly [v1: M, v2: M, match: N, unmatch: N]
+  operands: readonly [v1: Input, v2: Input, match: Output, unmatch: Output]
   emptyOn?: "match" | "unmatch"
 }
 export interface SubscriptNode<V> extends Base {

@@ -64,7 +64,7 @@ export function res(base: Num): NumNode {
 /** v1 == v2 ? pass : 0 */
 export function equal(v1: Num, v2: Num, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
 export function equal(v1: Str, v2: Str, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
-export function equal(v1: Num | Str, v2: Num | Str, pass: Num, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
+export function equal(v1: Num | Str, v2: Num | Str, pass: Num, info?: Info): MatchNode<NumNode, NumNode | StrNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(pass), intoV(0)], info, emptyOn: "unmatch" }
 }
 /** v1 == v2 ? pass : `undefined` */
@@ -76,7 +76,7 @@ export function equalStr(v1: Num | Str, v2: Num | Str, pass: Str, info?: Info): 
 /** v1 != v2 ? pass : 0 */
 export function unequal(v1: Num, v2: Num, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
 export function unequal(v1: Str, v2: Str, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
-export function unequal(v1: Num | Str, v2: Num | Str, pass: Num | Str, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
+export function unequal(v1: Num | Str, v2: Num | Str, pass: Num, info?: Info): MatchNode<NumNode, NumNode | StrNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(0), intoV(pass)], info, emptyOn: "match" }
 }
 /** v1 != v2 ? pass : `undefined` */
