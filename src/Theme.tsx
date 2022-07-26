@@ -236,7 +236,7 @@ export const theme = createTheme({
       name: "hydro"
     }),
     cryo: defaultTheme.palette.augmentColor({
-      color: { main: "#77a2e6", contrastText: "#fff" },
+      color: { main: "#77a2e6" },
       name: "cryo"
     }),
     electro: defaultTheme.palette.augmentColor({
