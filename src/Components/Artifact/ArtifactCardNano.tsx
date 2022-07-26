@@ -17,7 +17,7 @@ import ColorText from "../ColoredText";
 import ConditionalWrapper from "../ConditionalWrapper";
 import ImgIcon from "../Image/ImgIcon";
 import StatIcon, { uncoloredEleIcons } from "../StatIcon";
-import ArtifactSetSlotTooltip from "./ArtifactSetSlotTooltip";
+import ArtifactTooltip from "./ArtifactTooltip";
 
 type Data = {
   artifactId?: string,
@@ -46,13 +46,13 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
   return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}  >
     <Box display="flex" height="100%">
       <Box className={`grad-${rarity}star`} sx={{ position: "relative", flexGrow: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }} >
-        <ArtifactSetSlotTooltip slotKey={slotKey} sheet={sheet}>
+        <ArtifactTooltip art={art}>
           <Box
             component="img"
             src={sheet?.slotIcons[slotKey] ?? ""}
             sx={{ m: -1, maxHeight: "110%", maxWidth: "110%" }}
           />
-        </ArtifactSetSlotTooltip>
+        </ArtifactTooltip>
         <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, display: "flex", justifyContent: "space-between", pointerEvents: "none" }} >
           <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
           {showLocation && <Chip size="small" label={<LocationIcon location={location} />} color={"secondary"} sx={{

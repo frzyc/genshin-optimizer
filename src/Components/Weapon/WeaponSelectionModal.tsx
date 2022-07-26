@@ -10,7 +10,7 @@ import CardLight from "../Card/CardLight"
 import CloseButton from "../CloseButton"
 import ImgIcon from "../Image/ImgIcon"
 import ModalWrapper from "../ModalWrapper"
-import { Stars } from "../StarDisplay"
+import { StarsDisplay } from "../StarDisplay"
 import WeaponToggle from "../ToggleButton/WeaponToggle"
 
 type WeaponSelectionModalProps = {
@@ -74,7 +74,7 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
                 <Box component="img" src={weaponSheet.getImg(ascension)} sx={{ width: 100, height: "auto" }} className={` grad-${weaponSheet.rarity}star`} />
                 <Box sx={{ flexGrow: 1, px: 1 }}>
                   <Typography variant="subtitle1">{weaponSheet.name}</Typography>
-                  <Typography><ImgIcon src={Assets.weaponTypes?.[weaponSheet.weaponType]} /> <Stars stars={weaponSheet.rarity} colored /></Typography>
+                  <Typography><ImgIcon src={Assets.weaponTypes?.[weaponSheet.weaponType]} /> <StarsDisplay stars={weaponSheet.rarity} colored /></Typography>
                 </Box>
               </CardActionArea>
             </CardLight>

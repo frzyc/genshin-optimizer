@@ -11,7 +11,7 @@ import CardLight from "../../../Components/Card/CardLight";
 import ColorText from "../../../Components/ColoredText";
 import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
 import ImgIcon from "../../../Components/Image/ImgIcon";
-import { Stars } from "../../../Components/StarDisplay";
+import { StarsDisplay } from "../../../Components/StarDisplay";
 import StatIcon from "../../../Components/StatIcon";
 import WeaponCardNano from "../../../Components/Weapon/WeaponCardNano";
 import CharacterSheet, { TalentSheetElementKey } from "../../../Data/Characters/CharacterSheet";
@@ -65,7 +65,7 @@ export default function TabOverview() {
               {favorite ? <Favorite /> : <FavoriteBorder />}
             </IconButton>
           </Typography>
-          <Typography variant="h6"><Stars stars={characterSheet.rarity} colored /></Typography>
+          <Typography variant="h6"><StarsDisplay stars={characterSheet.rarity} colored /></Typography>
           <Typography variant="h5">Lvl. {CharacterSheet.getLevelString(level, ascension)}</Typography>
           <CardActionArea sx={{ p: 1 }} onClick={() => navigate("talent")}>
             <Grid container spacing={1} mt={-1}>
