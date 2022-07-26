@@ -1,5 +1,5 @@
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material';
-import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material';
+import { Button, ButtonGroup, ButtonProps, Divider, MenuItem } from '@mui/material';
 import React, { useCallback, useContext } from 'react';
 import { CharacterContext } from '../../Context/CharacterContext';
 import { DataContext } from '../../Context/DataContext';
@@ -124,7 +124,7 @@ function isElement(disp: Displayable): disp is JSX.Element {
 function getStateBadge(stateName: Displayable | undefined): Displayable {
   if (!stateName) return ""
 
-  let badgeColor = "primary"
+  let badgeColor: ButtonProps['color'] = "primary"
   let badgeText = stateName
   if (stateName && isElement(stateName)) {
     if (stateName.props.color) {

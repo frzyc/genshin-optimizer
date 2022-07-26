@@ -1,7 +1,6 @@
-import { Button } from '@mui/material';
+import { Button, Divider, Stack } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { useCallback, useContext } from 'react';
-import ColorText from '../../../../../Components/ColoredText';
+import { useCallback, useContext } from 'react';
 import ImgIcon from '../../../../../Components/Image/ImgIcon';
 import SqBadge from '../../../../../Components/SqBadge';
 import { DataContext } from '../../../../../Context/DataContext';
@@ -25,31 +24,27 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
     },
     [onClose, setTarget],
   )
-
-  return <>
-    <Button color="white" onClick={onShow} disabled={disabled} >
-      <TargetDisplayText optimizationTarget={optimizationTarget} useSubVariant={useSubVariant} />
-    </Button>
-    <TargetSelectorModal show={show} onClose={onClose} setTarget={setTargetHandler} useSubVariant={useSubVariant} {...targetSelectorModalProps} />
-  </>
-}
-
-function NoTarget() {
-  return <b>Select an Optimization Target</b>
-}
-function TargetDisplayText({ optimizationTarget, useSubVariant = false }: { optimizationTarget?: string[], useSubVariant?: boolean }) {
   const { data } = useContext(DataContext)
   const displayHeader = usePromise(() => optimizationTarget && getDisplayHeader(data, optimizationTarget[0]), [data, optimizationTarget])
 
-  if (!optimizationTarget || !displayHeader) return <NoTarget />
+  const { title, icon, action } = displayHeader ?? {}
+  const node: NodeDisplay | undefined = optimizationTarget && objPathValue(data.getDisplay(), optimizationTarget) as any
 
-  const { title, icon, action } = displayHeader
-  const node: NodeDisplay | undefined = objPathValue(data.getDisplay(), optimizationTarget) as any
-  if (!node) return <NoTarget />
-  return <b><Box display="flex" gap={1} alignItems="center">
-    {!!icon && <SqBadge><ImgIcon src={icon} size={1.7} /></SqBadge>}
-    {action}
-    <span>{title}</span>
-    <ColorText color={useSubVariant ? node.info.subVariant : node.info.variant}>{KeyMap.get(node.info.key)}</ColorText>
-  </Box></b>
+  const invalidTarget = !optimizationTarget || !displayHeader || !node
+
+  const variant = invalidTarget ? "secondary" : useSubVariant ? node.info.subVariant : node.info.variant
+
+  return <>
+    <Button color="primary" onClick={onShow} disabled={disabled} >
+      {invalidTarget ? <strong>Select an Optimization Target</strong> : <Stack direction="row" divider={<Divider orientation='vertical' flexItem />} spacing={1}>
+        <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+          {!!icon && <ImgIcon src={icon} size={2} sx={{ my: -1 }} />}
+          <span>{title}</span>
+          {!!action && <SqBadge color='success'>{action}</SqBadge>}
+        </Box>
+        <SqBadge color={variant}><strong>{KeyMap.get(node.info.key)}</strong></SqBadge>
+      </Stack>}
+    </Button>
+    <TargetSelectorModal show={show} onClose={onClose} setTarget={setTargetHandler} useSubVariant={useSubVariant} {...targetSelectorModalProps} />
+  </>
 }

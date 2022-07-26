@@ -13,6 +13,7 @@ import { customRead } from "../../Formula/utils"
 import usePromise from "../../ReactHooks/usePromise"
 import { objectMap } from "../../Util/Util"
 import { OptimizationTargetContext } from "../../Context/OptimizationTargetContext"
+import SqBadge from "../SqBadge"
 
 export default function StatDisplayComponent() {
   const { data } = useContext(DataContext)
@@ -34,7 +35,7 @@ function Section({ displayNs, sectionKey }: { displayNs: DisplaySub<NodeDisplay>
 
   const { title, icon, action } = header
   return <CardDark >
-    <CardHeader avatar={icon && <ImgIcon size={2} sx={{ m: -1 }} src={icon} />} title={title} action={action} titleTypographyProps={{ variant: "subtitle1" }} />
+    <CardHeader avatar={icon && <ImgIcon size={2} sx={{ m: -1 }} src={icon} />} title={title} action={action && <SqBadge>{action}</SqBadge>} titleTypographyProps={{ variant: "subtitle1" }} />
     <Divider />
     <CardContent sx={{ p: 0, "&:last-child": { pb: 0 } }}>
       <FieldDisplayList sx={{ m: 0 }}>
