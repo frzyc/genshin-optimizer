@@ -6,6 +6,7 @@ import CardLight from "../../../../../Components/Card/CardLight"
 import ColorText from "../../../../../Components/ColoredText"
 import ImgIcon from "../../../../../Components/Image/ImgIcon"
 import ModalWrapper from "../../../../../Components/ModalWrapper"
+import SqBadge from "../../../../../Components/SqBadge"
 import { DataContext } from "../../../../../Context/DataContext"
 import { getDisplayHeader, getDisplaySections } from "../../../../../Formula/DisplayUtil"
 import { DisplaySub } from "../../../../../Formula/type"
@@ -42,9 +43,9 @@ export function TargetSelectorModal({ show, onClose, setTarget, useSubVariant = 
 }
 function SelectorSection({ displayNs, sectionKey, setTarget, useSubVariant = false, flatOnly = false }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[]) => void, useSubVariant?: boolean, flatOnly?: boolean }) {
   const { data } = useContext(DataContext)
-  const header = usePromise(()=>getDisplayHeader(data, sectionKey), [data, sectionKey])
+  const header = usePromise(() => getDisplayHeader(data, sectionKey), [data, sectionKey])
   return <CardLight key={sectionKey as string}>
-    {header && <CardHeader avatar={header.icon && <ImgIcon size={2} sx={{ m: -1 }} src={header.icon} />} title={header.title} action={header.action} titleTypographyProps={{ variant: "subtitle1" }} />}
+    {header && <CardHeader avatar={header.icon && <ImgIcon size={2} sx={{ m: -1 }} src={header.icon} />} title={header.title} action={header.action && <SqBadge>{header.action}</SqBadge>} titleTypographyProps={{ variant: "subtitle1" }} />}
     <Divider />
     <MenuList>
       {Object.entries(displayNs).map(([key, n]) =>

@@ -2,7 +2,7 @@ import { faBan, faChartLine, faEdit, faTrashAlt } from '@fortawesome/free-solid-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BusinessCenter, Lock, LockOpen } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, Chip, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
-import React, { lazy, Suspense, useCallback, useContext, useMemo, useState } from 'react';
+import { lazy, Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
 import CardLight from '../Components/Card/CardLight';
@@ -11,6 +11,7 @@ import LocationName from '../Components/Character/LocationName';
 import ColorText from '../Components/ColoredText';
 import ConditionalWrapper from '../Components/ConditionalWrapper';
 import InfoTooltip from '../Components/InfoTooltip';
+import PercentBadge from '../Components/PercentBadge';
 import SqBadge from '../Components/SqBadge';
 import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
@@ -23,7 +24,6 @@ import usePromise from '../ReactHooks/usePromise';
 import { allSubstatKeys, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
 import { CharacterKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
-import PercentBadge from '../Components/PercentBadge';
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
 
@@ -88,6 +88,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
       </span>)}
     </span>
   } />
+  const mainIcon = StatIcon[mainStatKey]// allElementsWithPhy.some(e => mainStatKey.startsWith(e)) ? uncoloredEleIcons[mainStatKey] : StatIcon[mainStatKey]
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     {editor && <Suspense fallback={false}>
       <ArtifactEditor
@@ -113,8 +114,9 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
             <Typography color="text.secondary" variant="body2">
               <SlotNameWithIcon slotKey={slotKey} />
             </Typography>
-            <Typography variant="h6" color={`${KeyMap.getVariant(mainStatKey)}.main`}>
-              <span>{StatIcon[mainStatKey]} {KeyMap.get(mainStatKey)}</span>
+            <Typography variant="h6" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              {mainIcon}
+              <span>{KeyMap.get(mainStatKey)}</span>
             </Typography>
             <Typography variant="h5">
               <strong>
@@ -136,18 +138,18 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
         </Box>
         <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", pt: 1, pb: 0, width: "100%" }}>
           {substats.map((stat: ICachedSubstat) => !!stat.value && <SubstatDisplay key={stat.key} stat={stat} effFilter={effFilter} rarity={rarity} />)}
-          <Box sx={{ display: "flex", my: 1, gap: 1 }}>
-            <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`artifact:editor.curSubEff`}</Typography>
+          <Typography variant="caption" sx={{ display: "flex", gap: 1, my: 1 }}>
+            <ColorText color="secondary" sx={{ flexGrow: 1 }}>{t`artifact:editor.curSubEff`}</ColorText>
             <PercentBadge value={currentEfficiency} max={900} valid={artifactValid} />
-            {currentEfficiency !== currentEfficiency_ && <Typography component="span" variant="caption" >/</Typography>}
+            {currentEfficiency !== currentEfficiency_ && <span>/</span>}
             {currentEfficiency !== currentEfficiency_ && <PercentBadge value={currentEfficiency_} max={900} valid={artifactValid} />}
-          </Box>
-          {currentEfficiency !== maxEfficiency && <Box sx={{ display: "flex", mb: 1, gap: 1 }}>
-            <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`artifact:editor.maxSubEff`}</Typography>
+          </Typography>
+          {currentEfficiency !== maxEfficiency && <Typography variant="caption" sx={{ display: "flex", gap: 1 }}>
+            <ColorText color="secondary" sx={{ flexGrow: 1 }}>{t`artifact:editor.maxSubEff`}</ColorText>
             <PercentBadge value={maxEfficiency} max={900} valid={artifactValid} />
-            {maxEfficiency !== maxEfficiency_ && <Typography component="span" variant="caption" >/</Typography>}
+            {maxEfficiency !== maxEfficiency_ && <span>/</span>}
             {maxEfficiency !== maxEfficiency_ && <PercentBadge value={maxEfficiency_} max={900} valid={artifactValid} />}
-          </Box>}
+          </Typography>}
           <Box flexGrow={1} />
           {art.probability !== undefined && art.probability >= 0 && <strong>Probability: {(art.probability * 100).toFixed(2)}%</strong>}
           <Typography color="success.main">{sheet?.name ?? "Artifact Set"} {setDescTooltip}</Typography>

@@ -82,7 +82,7 @@ export class UIData {
 
     const result = computeNodeDisplay(this.computeNode(node))
     this.processed.set(node, result)
-    if (result.info.subVariant) console.log(result.info)
+    // if (result.info.subVariant) console.log(result.info)
     return result
   }
   private computeNode(node: NumNode): ContextNodeDisplay

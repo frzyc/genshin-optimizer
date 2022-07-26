@@ -1,13 +1,16 @@
-import { styled } from "@mui/material";
+import { ButtonProps, styled } from "@mui/material";
+import { HTMLAttributes } from "react";
+
+interface ColorTextProps extends HTMLAttributes<HTMLSpanElement> {
+  color?: ButtonProps['color'],
+}
 
 const SqBadge = styled("span", {
   name: 'SqBadge',
   slot: 'Root',
-})(({ theme, color = "primary" }) => ({
+})<ColorTextProps>(({ theme, color = "primary" }) => ({
   display: "inline-block",
   padding: ".25em .4em",
-  fontSize: "75%",
-  fontWeight: 700,
   lineHeight: 1,
   textAlign: "center",
   whiteSpace: "nowrap",

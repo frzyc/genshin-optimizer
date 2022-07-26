@@ -99,6 +99,15 @@ declare module "@mui/material/Button" {
     electro: true;
     anemo: true;
     physical: true;
+    vaporize: true;
+    melt: true;
+    overloaded: true;
+    superconduct: true;
+    electrocharged: true;
+    shattered: true;
+    swirl: true;
+    burning: true;
+    crystallize: true;
 
     white: true;
     red: true;
@@ -227,7 +236,7 @@ export const theme = createTheme({
       name: "hydro"
     }),
     cryo: defaultTheme.palette.augmentColor({
-      color: { main: "#77a2e6", contrastText: "#fff" },
+      color: { main: "#77a2e6" },
       name: "cryo"
     }),
     electro: defaultTheme.palette.augmentColor({

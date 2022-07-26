@@ -13,6 +13,7 @@ import KeyMap, { cacheValueString } from '../../../KeyMap';
 import { allSubstatKeys, ICachedArtifact, ISubstat } from '../../../Types/artifact';
 import { clamp } from '../../../Util/Util';
 import PercentBadge from '../../../Components/PercentBadge';
+import { RollColorKey } from '../../../Types/consts';
 export default function SubstatInput({ index, artifact, setSubstat }: { index: number, artifact: ICachedArtifact | undefined, setSubstat: (index: number, substat: ISubstat) => void, }) {
   const { t } = useTranslation("artifact")
   const { mainStatKey = "", rarity = 5 } = artifact ?? {}
@@ -79,7 +80,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
     <Box sx={{ p: 1, }}>
       {error ? <SqBadge color="error">{t`ui:error`}</SqBadge> : <Grid container>
         <Grid item>
-          <SqBadge color={rollNum === 0 ? "secondary" : `roll${clamp(rollNum, 1, 6)}`}>
+          <SqBadge color={rollNum === 0 ? "secondary" : `roll${clamp(rollNum, 1, 6)}` as RollColorKey}>
             {rollNum ? t("editor.substat.RollCount", { count: rollNum }) : t`editor.substat.noRoll`}
           </SqBadge>
         </Grid>

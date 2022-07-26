@@ -2,7 +2,8 @@ import { styled } from "@mui/material";
 import { HTMLAttributes } from "react";
 
 interface ColorTextProps extends HTMLAttributes<HTMLSpanElement> {
-  variant?: string
+  color?: string,
+  variant?: string,
 }
 
 const ColorText = styled("span")<ColorTextProps>(({ theme, color, variant = "main" }) => {

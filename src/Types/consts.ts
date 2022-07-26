@@ -9,6 +9,7 @@ export const allElements = ['anemo', 'geo', 'electro', 'hydro', 'pyro', 'cryo'] 
 export const allElementsWithPhy = ["physical", ...allElements] as const
 export const allInfusionAuraElements = ["pyro", 'cryo'] as const
 export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'] as const
+export const allRollColorKeys = ['roll1', 'roll2', 'roll3', 'roll4', 'roll5', 'roll6'] as const
 export const allArtifactSets = [
   "Adventurer",
   "ArchaicPetra",
@@ -282,5 +283,6 @@ export type InfusionAuraElements = typeof allInfusionAuraElements[number]
 export type ArtifactSetKey = typeof allArtifactSets[number]
 export type CharacterKey = typeof allCharacterKeys[number]
 export type WeaponTypeKey = typeof allWeaponTypeKeys[number]
+export type RollColorKey = typeof allRollColorKeys[number]
 export type CharacterSpecializedStatKey = typeof characterSpecializedStatKeys[number]
 export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[]
