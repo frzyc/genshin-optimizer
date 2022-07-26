@@ -5,13 +5,13 @@ import type { input, uiInput } from "./index"
 
 export type NumNode = ComputeNode | ThresholdNode<NumNode> |
   DataNode<NumNode> |
-  LookupNode<NumNode> | MatchNode<NumNode, StrNode> | MatchNode<NumNode, NumNode> |
+  LookupNode<NumNode> | MatchNode<StrNode, NumNode> | MatchNode<NumNode, NumNode> |
   SubscriptNode<number> |
   ReadNode<number> | ConstantNode<number>
 export type StrNode = StrPrioNode | SmallestNode |
   DataNode<StrNode> |
   LookupNode<StrNode> |
-  MatchNode<StrNode, StrNode> | MatchNode<StrNode, NumNode> |
+  MatchNode<StrNode, StrNode> | MatchNode<NumNode, StrNode> |
   ReadNode<string | undefined> | ConstantNode<string | undefined>
 export type AnyNode = NumNode | StrNode | {
   operation: string
@@ -65,7 +65,7 @@ export interface ThresholdNode<Output> extends Base {
   operands: readonly [NumNode, NumNode, Output, Output]
   emptyOn?: "ge" | "l"
 }
-export interface MatchNode<Output, Input> extends Base {
+export interface MatchNode<Input, Output> extends Base {
   operation: "match"
   operands: readonly [v1: Input, v2: Input, match: Output, unmatch: Output]
   emptyOn?: "match" | "unmatch"
