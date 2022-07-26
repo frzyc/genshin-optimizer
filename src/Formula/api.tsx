@@ -92,7 +92,7 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
         return prod(
           constant(weight),
           infoMut(data(targetNode, {
-            premod: objectMap(bonusStats, (v) => constant(v)),
+            premod: objectMap(bonusStats, (v, k) => k.endsWith('_') ? percent(v / 100) : constant(v)),
             hit: {
               hitMode: constant(hitMode),
               reaction: reactionMode ? constant(reactionMode) : constant("noReaction"),

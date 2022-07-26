@@ -32,7 +32,8 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
 
   const invalidTarget = !optimizationTarget || !displayHeader || !node
 
-  const variant = invalidTarget ? "secondary" : useSubVariant ? node.info.subVariant : node.info.variant
+  const prevariant = invalidTarget ? "secondary" : useSubVariant ? node.info.subVariant : node.info.variant
+  const variant = prevariant === "invalid" ? undefined : prevariant
 
   return <>
     <Button color="primary" onClick={onShow} disabled={disabled} >
