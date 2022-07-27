@@ -33,7 +33,7 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
   const mainStatUnit = KeyMap.unit(mainStatKey)
   const mainIcon = StatIcon[mainStatKey]
   const mainVariant = KeyMap.getVariant(mainStatKey)
-  return <Box>
+  return <Box p={1}>
     <Typography variant='h6'>{artifactSlotIcon(slotKey)} {slotName}</Typography>
     <Typography variant="subtitle1" color={`${mainVariant}.main`}>{mainIcon} {KeyMap.get(mainStatKey)} {cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, level) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</Typography>
     <Typography variant="subtitle2" sx={{ display: "flex", justifyContent: "space-between" }} ><StarsDisplay stars={rarity} /><SqBadge color={levelVariant}>+{level}</SqBadge> </Typography>

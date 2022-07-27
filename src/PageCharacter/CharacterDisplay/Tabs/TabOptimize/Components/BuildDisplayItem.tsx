@@ -1,28 +1,28 @@
 import { ChevronRight } from '@mui/icons-material';
 import { Button, CardContent, Grid, Skeleton, Stack, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { Suspense, useCallback, useContext, useMemo, useState } from 'react';
-import { CharacterContext } from '../../../../../Context/CharacterContext';
+import { ArtifactSlotKey } from 'pipeline';
+import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano';
 import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
+import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import StatDisplayComponent from '../../../../../Components/Character/StatDisplayComponent';
 import ModalWrapper from '../../../../../Components/ModalWrapper';
 import SqBadge from '../../../../../Components/SqBadge';
+import { Translate } from '../../../../../Components/Translate';
 import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano';
+import { CharacterContext } from '../../../../../Context/CharacterContext';
+import { DataContext } from '../../../../../Context/DataContext';
 import { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../../Database/Database';
-import { DataContext } from '../../../../../Context/DataContext';
 import { uiInput as input } from '../../../../../Formula';
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard';
 import usePromise from '../../../../../ReactHooks/usePromise';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../../../../Types/consts';
 import useBuildSetting from '../useBuildSetting';
-import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
-import { ArtifactSlotKey } from 'pipeline';
-import { useTranslation } from 'react-i18next';
-import { Translate } from '../../../../../Components/Translate';
 
 type NewOld = {
   newId: string,
@@ -129,7 +129,7 @@ function SetBadge({ setKey, currentlyEquipped = false, slotarr }: { setKey: Arti
 }
 function SetToolTipTitle({ artifactSheet, numInSet }: { artifactSheet: ArtifactSheet, numInSet: number }) {
   const { t } = useTranslation("sheet")
-  return <Stack spacing={1}>
+  return <Stack spacing={2} sx={{ p: 1 }}>
     {Object.keys(artifactSheet.setEffects).map((setKey) => <Box sx={{ opacity: parseInt(setKey) <= numInSet ? 1 : 0.5 }}>
       <Typography><SqBadge color="success">{t(`${setKey}set`)}</SqBadge></Typography>
       <Typography><Translate ns={`artifact_${artifactSheet.key}_gen`} key18={`setEffects.${setKey}`} /></Typography>
