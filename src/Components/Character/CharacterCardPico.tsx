@@ -37,11 +37,11 @@ export default function CharacterCardPico({ characterKey = "", index = -1, onCli
             />
           </Box>
         </BootstrapTooltip>
-        <Typography variant='subtitle1' sx={{ position: "absolute", top: 0, mt: -0.2, lineHeight: 1, pointerEvents: "none" }}>
-          <SqBadge color="primary" >{character.level}/{ascensionMaxLevel[character.ascension]}</SqBadge>
+        <Typography sx={{ position: "absolute", fontSize: "0.75rem", lineHeight: 1, opacity: 0.85, pointerEvents: "none", top: 0, }}>
+          <strong><SqBadge color="primary" >{character.level}/{ascensionMaxLevel[character.ascension]}</SqBadge></strong>
         </Typography>
-        <Typography variant='subtitle1' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, pointerEvents: "none" }}>
-          <SqBadge color="secondary" >C{character.constellation}</SqBadge>
+        <Typography sx={{ position: "absolute", fontSize: "0.75rem", lineHeight: 1, opacity: 0.85, pointerEvents: "none", bottom: 0, right: 0, }}>
+          <strong><SqBadge color="secondary" >C{character.constellation}</SqBadge></strong>
         </Typography>
       </ConditionalWrapper>
     </CardDark>

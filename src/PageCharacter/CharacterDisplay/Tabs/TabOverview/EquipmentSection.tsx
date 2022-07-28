@@ -1,5 +1,5 @@
 import { Settings, SwapHoriz } from '@mui/icons-material';
-import { Box, Button, CardContent, Divider, Grid, ListItem, Tooltip, Typography, useMediaQuery } from '@mui/material';
+import { Box, Button, CardContent, Divider, Grid, ListItem, Stack, Tooltip, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from "@mui/system";
 import { lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -8,7 +8,6 @@ import SlotNameWithIcon from '../../../../Components/Artifact/SlotNameWIthIcon';
 import SubstatToggle from '../../../../Components/Artifact/SubstatToggle';
 import CardDark from '../../../../Components/Card/CardDark';
 import CardLight from '../../../../Components/Card/CardLight';
-import StatDisplayComponent from '../../../../Components/Character/StatDisplayComponent';
 import DocumentDisplay from "../../../../Components/DocumentDisplay";
 import { BasicFieldDisplay, FieldDisplayList } from '../../../../Components/FieldDisplay';
 import ModalWrapper from '../../../../Components/ModalWrapper';
@@ -35,7 +34,7 @@ import WeaponSwapModal from './WeaponSwapModal';
 
 const WeaponEditor = lazy(() => import('../../../../PageWeapon/WeaponEditor'))
 
-function TabEquip() {
+export default function EquipmentSection() {
   const { character: { equippedWeapon, key: characterKey }, characterSheet } = useContext(CharacterContext)
   const { buildSetting: { mainStatAssumptionLevel } } = useBuildSetting(characterKey)
   const { teamData, data } = useContext(DataContext)
@@ -51,13 +50,13 @@ function TabEquip() {
   }, [weaponId, equippedWeapon])
 
   const theme = useTheme();
-  const grxl = useMediaQuery(theme.breakpoints.up('xl'));
+  const breakpoint = useMediaQuery(theme.breakpoints.up('lg'));
 
   const weaponDoc = useMemo(() => weaponSheet && weaponSheet.document.length > 0 && <CardLight><CardContent><DocumentDisplay sections={weaponSheet.document} /></CardContent></CardLight>, [weaponSheet])
   const [{ rvFilter }] = useDBState(`charMeta_${characterKey}`, initCharMeta)
   const deferredRvFilter = useDeferredValue(rvFilter)
   const deferredRvSet = useMemo(() => new Set(deferredRvFilter), [deferredRvFilter])
-  return <Box display="flex" flexDirection="column" gap={1}>
+  return <Box >
     <Suspense fallback={false}>
       <WeaponEditor
         weaponId={weaponId}
@@ -66,17 +65,12 @@ function TabEquip() {
         extraButtons={<LargeWeaponSwapButton weaponTypeKey={characterSheet.weaponTypeKey} />}
       />
     </Suspense>
-    <CardLight >
-      <CardContent>
-        <StatDisplayComponent />
-      </CardContent>
-    </CardLight>
     <Grid container spacing={1}>
-      {grxl && <Grid item xs={12} md={12} xl={3} sx={{ display: "flex", flexDirection: "column", gap: 1 }} >
+      {breakpoint && <Grid item xs={12} md={12} lg={3} xl={3} sx={{ display: "flex", flexDirection: "column", gap: 1 }} >
         {weaponDoc && weaponDoc}
         <ArtifactSectionCard />
       </Grid>}
-      <Grid item xs={12} md={12} xl={9} container spacing={1}>
+      <Grid item xs={12} md={12} lg={9} xl={9} container spacing={1}>
         <Grid item xs={12} sm={6} md={4} display="flex" flexDirection="column" gap={1}>
           <WeaponCard weaponId={equippedWeapon} onEdit={showWeapon} canEquip extraButtons={<WeaponSwapButton weaponTypeKey={characterSheet.weaponTypeKey} />} />
         </Grid>
@@ -87,7 +81,7 @@ function TabEquip() {
             <ArtSwapCard slotKey={slotKey} />}
         </Grid>)}
       </Grid>
-      {!grxl && <Grid item xs={12} md={12} xl={3} container spacing={1} >
+      {!breakpoint && <Grid item xs={12} md={12} xl={3} container spacing={1} >
         {weaponDoc && <Grid item xs={12} md={6} lg={4}>{weaponDoc}</Grid>}
         <Grid item xs={12} md={6} lg={4} sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
           <ArtifactSectionCard />
@@ -96,7 +90,6 @@ function TabEquip() {
     </Grid>
   </Box>
 }
-export default TabEquip
 function ArtSwapCard({ slotKey }: { slotKey: SlotKey }) {
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
@@ -204,26 +197,27 @@ function ArtifactSectionCard() {
   return <CardLight>
     {hasEquipped && <Button color="error" onClick={unequipArts} fullWidth sx={{ borderBottomRightRadius: 0, borderBottomLeftRadius: 0 }}>{t`tabEquip.unequipArts`}</Button>}
     <CardContent >
-      <CardDark sx={{ mb: 2 }}>
-        <Button fullWidth color="info" startIcon={<Settings />} sx={{ borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }} onClick={onShow}>RV Filter</Button>
-        <ModalWrapper open={show} onClose={onHide}>
-          <CardDark>
-            <CardContent>
-              <SubstatToggle selectedKeys={rvFilter} onChange={setRVFilter} />
-            </CardContent>
-          </CardDark>
-        </ModalWrapper>
-        <FieldDisplayList >
-          <BasicFieldDisplay field={rvField} component={ListItem} />
-          <BasicFieldDisplay field={rvmField} component={ListItem} />
-        </FieldDisplayList>
-      </CardDark>
-      <Box display="flex" gap={1} flexDirection="column">
-        {artifactSheets && setEffects && Object.entries(setEffects).map(([setKey, setNumKeyArr]) =>
-          <CardDark key={setKey} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            {setNumKeyArr.map(setNumKey => <SetEffectDisplay key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} />)}
-          </CardDark>)}
-      </Box>
+      <Stack spacing={1}>
+        <CardDark >
+          <Button fullWidth color="info" startIcon={<Settings />} sx={{ borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }} onClick={onShow}>RV Filter</Button>
+          <ModalWrapper open={show} onClose={onHide}>
+            <CardDark>
+              <CardContent>
+                <SubstatToggle selectedKeys={rvFilter} onChange={setRVFilter} />
+              </CardContent>
+            </CardDark>
+          </ModalWrapper>
+          <FieldDisplayList >
+            <BasicFieldDisplay field={rvField} component={ListItem} />
+            <BasicFieldDisplay field={rvmField} component={ListItem} />
+          </FieldDisplayList>
+        </CardDark>
+        {artifactSheets && setEffects && Object.entries(setEffects).flatMap(([setKey, setNumKeyArr]) =>
+          setNumKeyArr.map(setNumKey => <CardDark key={setKey} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            <SetEffectDisplay key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} />
+          </CardDark>)
+        )}
+      </Stack>
     </CardContent>
   </CardLight>
 }

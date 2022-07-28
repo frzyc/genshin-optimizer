@@ -3,7 +3,7 @@ import Assets from '../../Assets/Assets';
 import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
 import usePromise from '../../ReactHooks/usePromise';
 import { ICachedArtifact } from '../../Types/artifact';
-import { allElementsWithPhy, SlotKey } from '../../Types/consts';
+import { allElementsWithPhy, RollColorKey, SlotKey } from '../../Types/consts';
 import CardDark from '../Card/CardDark';
 import SqBadge from '../SqBadge';
 import StatIcon, { uncoloredEleIcons } from '../StatIcon';
@@ -31,7 +31,7 @@ export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { a
 
   // Actual artifact icon + info
   const { mainStatKey, rarity, level } = art
-  const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
+  const levelVariant = `roll${Math.floor(Math.max(level, 0) / 4) + 1}` as RollColorKey
   const element = allElementsWithPhy.find(ele => art.mainStatKey.includes(ele))
   const color = element ?? "secondary"
 
@@ -43,9 +43,11 @@ export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { a
       maxWidth="100%"
       maxHeight="100%"
     />
-    <Typography sx={{ position: "absolute", m: -0.2, lineHeight: 1, pointerEvents: "none" }} variant="subtitle2"><SqBadge color={levelVariant as any}>+{level}</SqBadge></Typography>
-    <Typography variant='h6' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, }}>
-      <SqBadge color={color} sx={{ p: 0.25 }}>{element ? uncoloredEleIcons[element] : StatIcon[mainStatKey]}</SqBadge>
+    <Typography sx={{ position: "absolute", fontSize: "0.75rem", lineHeight: 1, opacity: 0.85, pointerEvents: "none", }}>
+      <strong><SqBadge sx={{ p: 0.5 }} color={levelVariant}><strong>+{level}</strong></SqBadge></strong>
+    </Typography>
+    <Typography sx={{ position: "absolute", fontSize: "0.75rem", lineHeight: 1, opacity: 0.85, pointerEvents: "none", bottom: 0, right: 0 }}>
+      <SqBadge color={color} sx={{ p: 0.5 }}>{element ? uncoloredEleIcons[element] : StatIcon[mainStatKey]}</SqBadge>
     </Typography>
   </CardDark></ArtifactTooltip>
 }

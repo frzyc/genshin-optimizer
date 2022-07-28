@@ -138,8 +138,8 @@ function CharacterBtn({ onClick, characterKey, characterSheet }: { onClick: () =
         <Box sx={{ pl: 1 }}>
           <Typography><strong>{characterSheet.name}</strong></Typography>
           {data ? <>
-            <Typography variant="h6"> {characterSheet.elementKey && StatIcon[characterSheet.elementKey]} <ImgIcon src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} />{` `}{CharacterSheet.getLevelString(data.get(input.lvl).value, data.get(input.asc).value)}</Typography>
-            <Typography >
+            <Typography variant="h6" sx={{ display: "flex", gap: 0.5, alignItems: "center" }}> {characterSheet.elementKey && StatIcon[characterSheet.elementKey]} <ImgIcon src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} />{` `}{CharacterSheet.getLevelString(data.get(input.lvl).value, data.get(input.asc).value)}</Typography>
+            <Typography variant="subtitle2" >
               <SqBadge color="success">{`C${data.get(input.constellation).value}`}</SqBadge>{` `}
               <SqBadge color={data.get(input.bonus.auto).value ? "info" : "secondary"}><strong >{data.get(input.total.auto).value}</strong></SqBadge>{` `}
               <SqBadge color={data.get(input.bonus.skill).value ? "info" : "secondary"}><strong >{data.get(input.total.skill).value}</strong></SqBadge>{` `}

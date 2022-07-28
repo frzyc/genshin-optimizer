@@ -63,7 +63,7 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
         </Box>
         {/* mainstats */}
         <Chip size="small" sx={{ position: "absolute", bottom: 0, mb: 1, backgroundColor: color }}
-          label={<Typography variant="h6" sx={{ display: "flex", gap: 1, px: 1, zIndex: 1 }}>
+          label={<Typography sx={{ display: "flex", gap: 0.5, px: 1, zIndex: 1 }}>
             <BootstrapTooltip placement="top" title={<Typography>{KeyMap.getArtStr(mainStatKey)}</Typography>} disableInteractive>
               <span>{element ? uncoloredEleIcons[element] : StatIcon[mainStatKey]}</span>
             </BootstrapTooltip>
@@ -83,7 +83,7 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
   const unit = KeyMap.unit(stat.key)
   return (<Box display="flex" gap={1} alignContent="center">
-    <Typography sx={{ flexGrow: 1, display: "flex", gap: 1 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">
+    <Typography sx={{ flexGrow: 1, display: "flex", gap: 0.5 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">
       <BootstrapTooltip placement="top" title={<Typography>{stat.key && KeyMap.getArtStr(stat.key)}</Typography>} disableInteractive>
         <span>{StatIcon[stat.key]}</span>
       </BootstrapTooltip>

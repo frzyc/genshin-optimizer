@@ -1,42 +1,37 @@
-import { Calculate, Checkroom, ExpandMore, FactCheck, Groups, Person } from '@mui/icons-material';
-import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, Card, CardContent, CardHeader, Collapse, Divider, Grid, MenuItem, Skeleton, Tab, Tabs, Typography } from '@mui/material';
+import { BarChart, Calculate, ExpandMore, FactCheck, Groups, Person } from '@mui/icons-material';
+import { Accordion, AccordionDetails, AccordionSummary, Box, Button, CardContent, CardHeader, Collapse, Divider, Grid, Skeleton, Stack, Tab, Tabs, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink, Navigate, Route, Routes, useMatch, useNavigate, useParams } from 'react-router-dom';
-import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
 import CardDark from '../../Components/Card/CardDark';
 import CardLight from '../../Components/Card/CardLight';
-import { CharacterSelectionModal } from '../../Components/Character/CharacterSelectionModal';
-import ThumbSide from '../../Components/Character/ThumbSide';
 import CloseButton from '../../Components/CloseButton';
 import ColorText from '../../Components/ColoredText';
-import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../../Components/CustomNumberInput';
-import DropdownButton from '../../Components/DropdownMenu/DropdownButton';
-import { EnemyExpandCard } from '../../Components/EnemyEditor';
 import ExpandButton from '../../Components/ExpandButton';
 import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../../Components/HitModeEditor';
 import ImgIcon from '../../Components/Image/ImgIcon';
+import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
+import { DataContext, dataContextObj } from '../../Context/DataContext';
 import CharacterSheet from '../../Data/Characters/CharacterSheet';
-import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../../Data/LevelData';
-import { sgt } from '../../Data/SheetUtil';
-import { DataContext, dataContextObj, TeamData } from '../../Context/DataContext';
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil';
 import { DisplaySub } from '../../Formula/type';
 import { NodeDisplay } from '../../Formula/uiData';
 import KeyMap, { valueString } from '../../KeyMap';
+import useBoolState from '../../ReactHooks/useBoolState';
 import useCharacter from '../../ReactHooks/useCharacter';
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
-import useCharSelectionCallback from '../../ReactHooks/useCharSelectionCallback';
 import usePromise from '../../ReactHooks/usePromise';
 import useTeamData from '../../ReactHooks/useTeamData';
 import useTitle from '../../ReactHooks/useTitle';
 import { allCharacterKeys, CharacterKey } from '../../Types/consts';
-import { clamp } from '../../Util/Util';
-import TabEquip from './Tabs/TabEquip';
+import CharSelectDropdown from './CharSelectDropdown';
+import LevelSelect from './LevelSelect';
+import StatModal from './StatModal';
 import TabBuild from './Tabs/TabOptimize';
 import TabOverview from './Tabs/TabOverview';
 import TabTalent from './Tabs/TabTalent';
 import TabTeambuffs from './Tabs/TabTeambuffs';
+import TravelerElementSelect from './TravelerElementSelect';
 
 export default function CharacterDisplay() {
   const navigate = useNavigate();
@@ -55,29 +50,26 @@ export default function CharacterDisplay() {
 
 type CharacterDisplayCardProps = {
   characterKey: CharacterKey,
-  newteamData?: TeamData,
-  mainStatAssumptionLevel?: number,
-  onClose?: (any) => void,
+  onClose?: () => void,
 }
-function CharacterDisplayCard({ characterKey, newteamData, mainStatAssumptionLevel = 0, onClose }: CharacterDisplayCardProps) {
+function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardProps) {
   const character = useCharacter(characterKey)
   const characterSheet = usePromise(() => CharacterSheet.get(characterKey), [characterKey])
-  const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
+  const teamData = useTeamData(characterKey)
   const { target: charUIData } = teamData?.[characterKey] ?? {}
   let { params: { tab = "overview" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }
   const { t } = useTranslation()
   useTitle(`${t(`char_${characterKey}_gen:name`)} - ${t(`page_character:tabs.${tab}`)}`)
   const characterDispatch = useCharacterReducer(character?.key ?? "")
-  const { compareData } = character ?? {}
 
   const dataContextValue: dataContextObj | undefined = useMemo(() => {
     if (!teamData || !charUIData) return undefined
     return {
-      data: (newteamData ? newteamData[characterKey]!.target : charUIData),
-      teamData: (newteamData ? newteamData : teamData),
-      oldData: (compareData && newteamData) ? charUIData : undefined,
+      data: charUIData,
+      teamData,
+      oldData: undefined,
     }
-  }, [newteamData, charUIData, teamData, characterKey, compareData])
+  }, [charUIData, teamData])
 
   const characterContextValue: CharacterContextObj | undefined = useMemo(() => {
     if (!character || !characterSheet) return undefined
@@ -90,21 +82,19 @@ function CharacterDisplayCard({ characterKey, newteamData, mainStatAssumptionLev
   return <CardDark >
     {dataContextValue && characterContextValue ? <CharacterContext.Provider value={characterContextValue}><DataContext.Provider value={dataContextValue}>
       <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-        <Grid container spacing={1}>
-          <Grid item>
+        <Stack direction="row" >
+          <Stack direction="row" spacing={1} sx={{ flexGrow: 1 }}>
             <CharSelectDropdown />
-          </Grid>
-          <Grid item flexGrow={1} />
-          {!!mainStatAssumptionLevel && <Grid item><Card sx={{ p: 1, bgcolor: t => t.palette.warning.dark }}><Typography><strong>Assume Main Stats are Level {mainStatAssumptionLevel}</strong></Typography></Card></Grid>}
-          {!!onClose && <Grid item>
-            <CloseButton onClick={onClose} />
-          </Grid>}
-        </Grid>
+            <TravelerElementSelect />
+            <LevelSelect />
+            <DetailStatButton />
+          </Stack>
+          {!!onClose && <CloseButton onClick={onClose} />}
+        </Stack>
         <CardLight>
           <TabNav tab={tab} />
         </CardLight>
         <FormulaCalcCard />
-        <EnemyExpandCard />
         <CharacterPanel />
         <CardLight>
           <TabNav tab={tab} />
@@ -119,7 +109,6 @@ function CharacterPanel() {
       {/* Character Panel */}
       <Route index element={<TabOverview />} />
       <Route path="/talent" element={<TabTalent />} />
-      <Route path="/equip" element={<TabEquip />} />
       <Route path="/teambuffs" element={<TabTeambuffs />} />
       <Route path="/optimize" element={<TabBuild />} />
     </Routes>
@@ -138,65 +127,11 @@ function TabNav({ tab }: { tab: string }) {
       },
     }}
   >
-    <Tab sx={{ minWidth: "20%" }} value="overview" label={t("tabs.overview")} icon={<Person />} component={RouterLink} to="" />
-    <Tab sx={{ minWidth: "20%" }} value="talent" label={t("tabs.talent")} icon={<FactCheck />} component={RouterLink} to="talent" />
-    <Tab sx={{ minWidth: "20%" }} value="equip" label={t("tabs.equip")} icon={<Checkroom />} component={RouterLink} to="equip" />
-    <Tab sx={{ minWidth: "20%" }} value="teambuffs" label={t("tabs.teambuffs")} icon={<Groups />} component={RouterLink} to="teambuffs" />
-    <Tab sx={{ minWidth: "20%" }} value="optimize" label={t("tabs.optimize")} icon={<Calculate />} component={RouterLink} to="optimize" />
+    <Tab sx={{ minWidth: "25%" }} value="overview" label={t("tabs.overview")} icon={<Person />} component={RouterLink} to="" />
+    <Tab sx={{ minWidth: "25%" }} value="talent" label={t("tabs.talent")} icon={<FactCheck />} component={RouterLink} to="talent" />
+    <Tab sx={{ minWidth: "25%" }} value="teambuffs" label={t("tabs.teambuffs")} icon={<Groups />} component={RouterLink} to="teambuffs" />
+    <Tab sx={{ minWidth: "25%" }} value="optimize" label={t("tabs.optimize")} icon={<Calculate />} component={RouterLink} to="optimize" />
   </Tabs>
-}
-
-function CharSelectDropdown() {
-  const { t } = useTranslation("page_character")
-  const { character, characterSheet, characterDispatch } = useContext(CharacterContext)
-  const [showModal, setshowModal] = useState(false)
-  const setCharacter = useCharSelectionCallback()
-  const setLevel = useCallback((level) => {
-    level = clamp(level, 1, 90)
-    const ascension = ascensionMaxLevel.findIndex(ascenML => level <= ascenML)
-    characterDispatch({ level, ascension })
-  }, [characterDispatch])
-  const setAscension = useCallback(() => {
-    if (!character) return
-    const { level = 1, ascension = 0 } = character
-    const lowerAscension = ascensionMaxLevel.findIndex(ascenML => level !== 90 && level === ascenML)
-    if (ascension === lowerAscension) characterDispatch({ ascension: ascension + 1 })
-    else characterDispatch({ ascension: lowerAscension })
-  }, [characterDispatch, character])
-  const { elementKey = "anemo", level = 1, ascension = 0 } = character
-  return <>
-    <CharacterSelectionModal show={showModal} onHide={() => setshowModal(false)} onSelect={setCharacter} />
-    <Grid container spacing={1}>
-      <Grid item>
-        <Button color="info" onClick={() => setshowModal(true)} startIcon={<ThumbSide src={characterSheet?.thumbImgSide} />} >{characterSheet?.name ?? t("selectCharacter")}</Button>
-      </Grid>
-      <Grid item>
-        <ButtonGroup sx={{ bgcolor: t => t.palette.contentDark.main }} >
-          {characterSheet?.sheet && "talents" in characterSheet?.sheet && <DropdownButton title={<strong><ColorText color={elementKey}>{sgt(`element.${elementKey}`)}</ColorText></strong>}>
-            {Object.keys(characterSheet.sheet.talents).map(eleKey =>
-              <MenuItem key={eleKey} selected={elementKey === eleKey} disabled={elementKey === eleKey} onClick={() => characterDispatch({ elementKey: eleKey })}>
-                <strong><ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText></strong></MenuItem>)}
-          </DropdownButton>}
-          <CustomNumberInputButtonGroupWrapper >
-            <CustomNumberInput onChange={setLevel} value={level}
-              startAdornment="Lv. "
-              inputProps={{ min: 1, max: 90, sx: { textAlign: "center" } }}
-              sx={{ width: "100%", height: "100%", pl: 2 }}
-              disabled={!characterSheet} />
-          </CustomNumberInputButtonGroupWrapper>
-          <Button sx={{ pl: 1 }} disabled={!ambiguousLevel(level) || !characterSheet} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
-          <DropdownButton title={t("selectLevel")} disabled={!characterSheet}>
-            {milestoneLevels.map(([lv, as]) => {
-              const sameLevel = lv === ascensionMaxLevel[as]
-              const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
-              const selected = lv === level && as === ascension
-              return <MenuItem key={`${lv}/${as}`} selected={selected} disabled={selected} onClick={() => characterDispatch({ level: lv, ascension: as })}>{lvlstr}</MenuItem>
-            })}
-          </DropdownButton>
-        </ButtonGroup>
-      </Grid>
-    </Grid>
-  </>
 }
 
 function FormulaCalcCard() {
@@ -266,4 +201,11 @@ function FormulaCalc({ sectionKey, displayNs }: { displayNs: DisplaySub<NodeDisp
         </Accordion>)}
     </CardContent>
   </CardDark>
+}
+function DetailStatButton() {
+  const [open, onOpen, onClose] = useBoolState()
+  return <>
+    <Button color="info" startIcon={<BarChart />} onClick={onOpen}>Detailed Stats</Button>
+    <StatModal open={open} onClose={onClose} />
+  </>
 }

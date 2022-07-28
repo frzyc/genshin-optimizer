@@ -35,11 +35,11 @@ export default function WeaponCardPico({ weaponId }: { weaponId: string }) {
         />
       </WeaponNameTooltip>
     </Box>
-    <Typography variant='subtitle1' sx={{ position: "absolute", mt: -0.2, lineHeight: 1, pointerEvents: "none" }}>
-      <SqBadge color="primary">{WeaponSheet.getLevelString(weapon)}</SqBadge>
+    <Typography sx={{ position: "absolute", fontSize: "0.75rem", lineHeight: 1, opacity: 0.85, pointerEvents: "none", }}>
+      <strong><SqBadge color="primary">{WeaponSheet.getLevelString(weapon)}</SqBadge></strong>
     </Typography>
-    {weaponSheet.hasRefinement && <Typography variant='subtitle1' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, pointerEvents: "none" }}>
-      <SqBadge color="secondary">R{weapon.refinement}</SqBadge>
+    {weaponSheet.hasRefinement && <Typography sx={{ position: "absolute", fontSize: "0.75rem", lineHeight: 1, opacity: 0.85, pointerEvents: "none", bottom: 0, right: 0, }}>
+      <strong><SqBadge color="secondary">R{weapon.refinement}</SqBadge></strong>
     </Typography>}
   </CardDark>
 }

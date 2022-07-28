@@ -342,9 +342,7 @@ export default function TabBuild() {
           <Button fullWidth startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />} color={allowPartial ? "success" : "secondary"} onClick={() => buildSettingDispatch({ allowPartial: !allowPartial })}>{t`tabOptimize.allowPartial`}</Button>
           { /* Level Filter */}
           <CardLight>
-            <CardContent sx={{ py: 1 }}>
-              Artifact Level Filter
-            </CardContent>
+            <CardContent>Artifact Level Filter</CardContent>
             <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh}
               setLow={levelLow => buildSettingDispatch({ levelLow })}
               setHigh={levelHigh => buildSettingDispatch({ levelHigh })}

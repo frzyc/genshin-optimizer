@@ -1,7 +1,7 @@
 import { faBan, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CheckBoxOutlineBlank, CheckBox, Replay, Settings } from '@mui/icons-material';
-import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Typography } from '@mui/material';
+import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Stack, Typography } from '@mui/material';
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { CharacterContext } from '../../../../../Context/CharacterContext';
@@ -83,11 +83,14 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
         <Typography>
           <strong>{t`tabOptimize.artSetConfig.title`}</strong>
         </Typography>
-        <Typography>{t`tabOptimize.artSetConfig.setEffCond`} <SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} {t<string>("tabOptimize.artSetConfig.enabled")}</SqBadge></Typography>
-        <Typography>{t`sheet:2set`} <SqBadge color="success">{allow2} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.allowed")}</SqBadge>{!!exclude2 && " / "}{!!exclude2 && <SqBadge color="secondary">{exclude2} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.excluded")}</SqBadge>}</Typography>
-        <Typography>{t`sheet:4set`} <SqBadge color="success">{allow4} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.allowed")}</SqBadge>{!!exclude4 && " / "}{!!exclude4 && <SqBadge color="secondary">{exclude4} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.excluded")}</SqBadge>}</Typography>
-        <Typography>{t`tabOptimize.artSetConfig.2rainbow`} <SqBadge color={allowRainbow2 ? "success" : "secondary"}><FontAwesomeIcon icon={allowRainbow2 ? faChartLine : faBan} className="fa-fw" /> {allowRainbow2 ? t<string>("tabOptimize.artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
-        <Typography>{t`tabOptimize.artSetConfig.4rainbow`} <SqBadge color={allowRainbow4 ? "success" : "secondary"}><FontAwesomeIcon icon={allowRainbow4 ? faChartLine : faBan} className="fa-fw" /> {allowRainbow4 ? t<string>("tabOptimize.artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
+        <Stack spacing={1}>
+          <Typography>{t`tabOptimize.artSetConfig.setEffCond`} <SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} {t<string>("tabOptimize.artSetConfig.enabled")}</SqBadge></Typography>
+          <Typography>{t`sheet:2set`} <SqBadge color="success">{allow2} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.allowed")}</SqBadge>{!!exclude2 && " / "}{!!exclude2 && <SqBadge color="secondary">{exclude2} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.excluded")}</SqBadge>}</Typography>
+          <Typography>{t`sheet:4set`} <SqBadge color="success">{allow4} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.allowed")}</SqBadge>{!!exclude4 && " / "}{!!exclude4 && <SqBadge color="secondary">{exclude4} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.excluded")}</SqBadge>}</Typography>
+          <Typography>{t`tabOptimize.artSetConfig.2rainbow`} <SqBadge color={allowRainbow2 ? "success" : "secondary"}><FontAwesomeIcon icon={allowRainbow2 ? faChartLine : faBan} className="fa-fw" /> {allowRainbow2 ? t<string>("tabOptimize.artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
+          <Typography>{t`tabOptimize.artSetConfig.4rainbow`} <SqBadge color={allowRainbow4 ? "success" : "secondary"}><FontAwesomeIcon icon={allowRainbow4 ? faChartLine : faBan} className="fa-fw" /> {allowRainbow4 ? t<string>("tabOptimize.artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
+        </Stack>
+
       </CardContent>
       <Button onClick={onOpen} disabled={disabled} color="info" sx={{ borderRadius: 0 }}>
         <Settings />
@@ -181,7 +184,7 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
   return <Grid item key={setKey} xs={1}>
     <CardLight sx={{ height: "100%" }}>
       <Box className={`grad-${sheet.rarity[0]}star`} width="100%" sx={{ display: "flex" }} >
-        <Box component="img" src={sheet.defIconSrc} sx={{ height: 100, width: "auto" }} />
+        <Box component="img" src={sheet.defIconSrc} sx={{ height: 100, width: "auto", mx: -1 }} />
         <Box sx={{ flexGrow: 1, px: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <Typography variant="h6">{sheet.name ?? ""}</Typography>
           <Box display="flex" gap={1}>
@@ -190,13 +193,13 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
             <InfoTooltip title={<Box>
               <Typography><SqBadge color="success">{t`2set`}</SqBadge></Typography>
               <Typography><Translate ns={`artifact_${setKey}_gen`} key18={"setEffects.2"} /></Typography>
-              <Box paddingTop={1} sx={{ opacity: setExclusionSet.includes(4) ? 0.6 : 1 }} >
+              <Box paddingTop={2} sx={{ opacity: setExclusionSet.includes(4) ? 0.6 : 1 }} >
                 <Typography><SqBadge color="success">{t`4set`}</SqBadge></Typography>
                 <Typography><Translate ns={`artifact_${setKey}_gen`} key18={"setEffects.4"} /></Typography>
               </Box>
             </Box>} />
           </Box>
-          <Box sx={{ display: "flex", gap: 1 }}>{Object.entries(slotCount).map(([slotKey, count]) => <Typography key={slotKey} sx={{ flexGrow: 1 }} variant="subtitle1" ><SqBadge sx={{ width: "100%" }} color={count ? "primary" : "secondary"}>{artifactSlotIcon(slotKey)} {count}</SqBadge></Typography>)}</Box>
+          <Box sx={{ display: "flex", gap: 1 }}>{Object.entries(slotCount).map(([slotKey, count]) => <Typography key={slotKey} sx={{ flexGrow: 1 }} variant="subtitle2" ><SqBadge sx={{ width: "100%" }} color={count ? "primary" : "secondary"}>{artifactSlotIcon(slotKey)}{count}</SqBadge></Typography>)}</Box>
         </Box>
       </Box>
       <ButtonGroup sx={{ ".MuiButton-root": { borderRadius: 0 } }} fullWidth>
