@@ -11,7 +11,7 @@ import DocumentDisplay from "../Components/DocumentDisplay"
 import DropdownButton from "../Components/DropdownMenu/DropdownButton"
 import { FieldDisplayList, NodeFieldDisplay } from "../Components/FieldDisplay"
 import ModalWrapper from "../Components/ModalWrapper"
-import { Stars } from "../Components/StarDisplay"
+import { StarsDisplay } from "../Components/StarDisplay"
 import WeaponSelectionModal from "../Components/Weapon/WeaponSelectionModal"
 import CharacterSheet from "../Data/Characters/CharacterSheet"
 import { ascensionMaxLevel, lowRarityMilestoneLevels } from "../Data/LevelData"
@@ -139,7 +139,7 @@ export default function WeaponEditor({
               {lock ? "Locked" : "Unlocked"}
             </Button>
           </Box>
-          <Typography><Stars stars={weaponSheet.rarity} /></Typography>
+          <Typography><StarsDisplay stars={weaponSheet.rarity} /></Typography>
           <Typography variant="subtitle1"><strong>{weaponSheet.passiveName}</strong></Typography>
           <Typography gutterBottom>{weaponSheet.passiveName && weaponSheet.passiveDescription(weaponUIData.get(input.weapon.refineIndex).value)}</Typography>
           <Box display="flex" flexDirection="column" gap={1}>

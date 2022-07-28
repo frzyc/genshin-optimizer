@@ -9,7 +9,7 @@ import { allMainStatKeys, allSubstatKeys, MainStatKey, SubstatKey } from '../../
 import { allElementsWithPhy, ArtifactRarity, ArtifactSetKey } from '../../Types/consts';
 import MenuItemWithImage from '../MenuItemWithImage';
 import SolidColoredTextField from '../SolidColoredTextfield';
-import { Stars } from '../StarDisplay';
+import { StarsDisplay } from '../StarDisplay';
 import StatIcon from '../StatIcon';
 
 type Grouper = string | number | undefined
@@ -96,7 +96,7 @@ export function ArtifactSetMultiAutocomplete({ artSetKeys, setArtSetKeys, ...pro
     groupBy={(option) => option.grouper?.toString() ?? ""}
     renderGroup={(params: AutocompleteRenderGroupParams) => params.group && <List key={params.group} component={Box}>
       <ListSubheader key={`${params.group}Header`} sx={{ top: "-1em" }}>
-        {params.group} <Stars stars={+params.group as ArtifactRarity} />
+        {params.group} <StarsDisplay stars={+params.group as ArtifactRarity} />
       </ListSubheader>
       {params.children}
     </List>}
@@ -227,7 +227,7 @@ export function ArtifactSetSingleAutocomplete({ artSetKey, setArtSetKey, label =
     groupBy={(option) => option.grouper?.toString() ?? ""}
     renderGroup={(params: AutocompleteRenderGroupParams) => params.group && <List key={params.group} component={Box}>
       <ListSubheader key={`${params.group}Header`} sx={{ top: "-1em" }}>
-        {params.group} <Stars stars={+params.group as ArtifactRarity} />
+        {params.group} <StarsDisplay stars={+params.group as ArtifactRarity} />
       </ListSubheader>
       {params.children}
     </List>}

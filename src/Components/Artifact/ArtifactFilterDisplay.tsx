@@ -8,7 +8,7 @@ import { allArtifactRarities, allSlotKeys } from "../../Types/consts";
 import { handleMultiSelect } from "../../Util/MultiSelect";
 import CharacterAutocomplete from "../Character/CharacterAutocomplete";
 import SolidToggleButtonGroup from "../SolidToggleButtonGroup";
-import { Stars } from "../StarDisplay";
+import { StarsDisplay } from "../StarDisplay";
 import { ArtifactMainStatMultiAutocomplete, ArtifactSetMultiAutocomplete, ArtifactSubstatMultiAutocomplete } from "./ArtifactAutocomplete";
 import ArtifactLevelSlider from "./ArtifactLevelSlider";
 import { artifactSlotIcon } from "./SlotNameWIthIcon";
@@ -37,7 +37,7 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
     <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
       {/* Artifact stars filter */}
       <SolidToggleButtonGroup fullWidth value={rarity} size="small" >
-        {allArtifactRarities.map(star => <ToggleButton key={star} value={star} onClick={() => filterOptionDispatch({ rarity: rarityHandler(rarity, star) })}><Stars stars={star} /></ToggleButton>)}
+        {allArtifactRarities.map(star => <ToggleButton key={star} value={star} onClick={() => filterOptionDispatch({ rarity: rarityHandler(rarity, star) })}><StarsDisplay stars={star} /></ToggleButton>)}
       </SolidToggleButtonGroup>
       {/* Artifact Slot */}
       <SolidToggleButtonGroup fullWidth value={slotKeys} size="small" disabled={disableSlotFilter}>

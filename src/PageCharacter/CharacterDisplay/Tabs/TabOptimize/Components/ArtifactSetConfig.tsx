@@ -14,7 +14,7 @@ import ColorText from '../../../../../Components/ColoredText';
 import InfoTooltip from '../../../../../Components/InfoTooltip';
 import ModalWrapper from '../../../../../Components/ModalWrapper';
 import SqBadge from '../../../../../Components/SqBadge';
-import { Stars } from '../../../../../Components/StarDisplay';
+import { StarsDisplay } from '../../../../../Components/StarDisplay';
 import { Translate } from '../../../../../Components/Translate';
 import { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../../Database/Database';
@@ -185,7 +185,7 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
         <Box sx={{ flexGrow: 1, px: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <Typography variant="h6">{sheet.name ?? ""}</Typography>
           <Box display="flex" gap={1}>
-            <Typography variant="subtitle1">{sheet.rarity.map((ns, i) => <span key={ns}>{ns} <Stars stars={1} /> {i < (sheet.rarity.length - 1) ? "/ " : null}</span>)}</Typography>
+            <Typography variant="subtitle1">{sheet.rarity.map((ns, i) => <span key={ns}>{ns} <StarsDisplay stars={1} /> {i < (sheet.rarity.length - 1) ? "/ " : null}</span>)}</Typography>
             {/* If there is ever a 2-Set conditional, we will need to change this */}
             <InfoTooltip title={<Box>
               <Typography><SqBadge color="success">{t`2set`}</SqBadge></Typography>

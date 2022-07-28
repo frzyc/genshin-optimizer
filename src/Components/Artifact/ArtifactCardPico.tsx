@@ -1,15 +1,13 @@
 import { Box, Typography } from '@mui/material';
 import Assets from '../../Assets/Assets';
 import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
-import KeyMap, { cacheValueString } from '../../KeyMap';
 import usePromise from '../../ReactHooks/usePromise';
 import { ICachedArtifact } from '../../Types/artifact';
 import { allElementsWithPhy, SlotKey } from '../../Types/consts';
-import BootstrapTooltip from '../BootstrapTooltip';
 import CardDark from '../Card/CardDark';
 import SqBadge from '../SqBadge';
 import StatIcon, { uncoloredEleIcons } from '../StatIcon';
-import ArtifactSetSlotTooltip from './ArtifactSetSlotTooltip';
+import ArtifactTooltip from './ArtifactTooltip';
 
 export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { artifactObj: ICachedArtifact | undefined, slotKey: SlotKey }) {
   const artifactSheet = usePromise(() => art?.setKey && ArtifactSheet.get(art.setKey), [art?.setKey])
@@ -32,26 +30,22 @@ export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { a
     </CardDark>
 
   // Actual artifact icon + info
-  const { mainStatKey, rarity, level, mainStatVal } = art
+  const { mainStatKey, rarity, level } = art
   const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
   const element = allElementsWithPhy.find(ele => art.mainStatKey.includes(ele))
   const color = element ?? "secondary"
 
-  return <CardDark sx={{ display: "flex", flexDirection: "column", position: "relative" }}>
-    <ArtifactSetSlotTooltip slotKey={key} sheet={artifactSheet}>
-      <Box
-        component="img"
-        className={`grad-${rarity}star`}
-        src={artifactSheet.slotIcons[key]}
-        maxWidth="100%"
-        maxHeight="100%"
-      />
-    </ArtifactSetSlotTooltip>
+  return <ArtifactTooltip art={art}><CardDark sx={{ display: "flex", flexDirection: "column", position: "relative" }}>
+    <Box
+      component="img"
+      className={`grad-${rarity}star`}
+      src={artifactSheet.slotIcons[key]}
+      maxWidth="100%"
+      maxHeight="100%"
+    />
     <Typography sx={{ position: "absolute", m: -0.2, lineHeight: 1, pointerEvents: "none" }} variant="subtitle2"><SqBadge color={levelVariant as any}>+{level}</SqBadge></Typography>
     <Typography variant='h6' sx={{ position: "absolute", bottom: 0, right: 0, lineHeight: 1, }}>
-      <BootstrapTooltip placement="top" title={<Typography>{cacheValueString(mainStatVal, KeyMap.unit(mainStatKey))}{KeyMap.unit(mainStatKey)} {KeyMap.getStr(mainStatKey)}</Typography>} disableInteractive>
-        <SqBadge color={color} sx={{ p: 0.25 }}>{element ? uncoloredEleIcons[element] : StatIcon[mainStatKey]}</SqBadge>
-      </BootstrapTooltip>
+      <SqBadge color={color} sx={{ p: 0.25 }}>{element ? uncoloredEleIcons[element] : StatIcon[mainStatKey]}</SqBadge>
     </Typography>
-  </CardDark>
+  </CardDark></ArtifactTooltip>
 }

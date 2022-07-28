@@ -22,7 +22,7 @@ import ImgIcon from "../Image/ImgIcon";
 import ModalWrapper from "../ModalWrapper";
 import SortByButton from "../SortByButton";
 import SqBadge from "../SqBadge";
-import { Stars } from "../StarDisplay";
+import { StarsDisplay } from "../StarDisplay";
 import StatIcon from "../StatIcon";
 import ElementToggle from "../ToggleButton/ElementToggle";
 import WeaponToggle from "../ToggleButton/WeaponToggle";
@@ -148,7 +148,7 @@ function CharacterBtn({ onClick, characterKey, characterSheet }: { onClick: () =
           </> : <>
             <Typography variant="h6"><SqBadge color="primary">NEW</SqBadge></Typography>
           </>}
-          <small><Stars stars={rarity} colored /></small>
+          <small><StarsDisplay stars={rarity} colored /></small>
         </Box>
       </CardLight>
     </CardActionArea >
