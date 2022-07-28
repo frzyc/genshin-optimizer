@@ -96,7 +96,7 @@ export default function CharacterTalentPane() {
 function ReactionDisplay() {
   const { data } = useContext(DataContext)
   const reaction = data.getDisplay().reaction as { [key: string]: NodeDisplay }
-  return <CardLight sx={{ mb: 1 }}>
+  return <CardLight>
     <CardContent>
       <Grid container spacing={1}>
         {Object.entries(reaction).map(([key, node]) => {

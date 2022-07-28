@@ -13,7 +13,7 @@ export default function BonusStatsCard() {
   if (!bonusStatsKeys.length) return null
   const nodes = bonusStatsKeys.map(k => data.get(input.customBonus[k] as NumNode))
   return <CardLight>
-    <CardContent sx={{ py: 1 }}>
+    <CardContent>
       <Typography>Bonus Stats</Typography>
     </CardContent>
     <Divider />
