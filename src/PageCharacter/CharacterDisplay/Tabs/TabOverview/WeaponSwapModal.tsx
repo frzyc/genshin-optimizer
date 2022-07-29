@@ -7,7 +7,7 @@ import CloseButton from "../../../../Components/CloseButton"
 import ImgIcon from "../../../../Components/Image/ImgIcon"
 import ModalWrapper from "../../../../Components/ModalWrapper"
 import SolidToggleButtonGroup from "../../../../Components/SolidToggleButtonGroup"
-import { Stars } from "../../../../Components/StarDisplay"
+import { StarsDisplay } from "../../../../Components/StarDisplay"
 import WeaponSheet from "../../../../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../../../../Database/Database"
 import WeaponCard from "../../../../PageWeapon/WeaponCard"
@@ -66,7 +66,7 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
           <Grid item>
             <SolidToggleButtonGroup sx={{ height: "100%" }} value={rarity} size="small">
               {allRarities.map(star => <ToggleButton key={star} value={star} onClick={() => setRarity(rarityHandler(rarity, star))}>
-                <Box display="flex" gap={1}><strong>{star}</strong><Stars stars={1} /></Box>
+                <Box display="flex" gap={1}><strong>{star}</strong><StarsDisplay stars={1} /></Box>
               </ToggleButton>)}
             </SolidToggleButtonGroup>
           </Grid>

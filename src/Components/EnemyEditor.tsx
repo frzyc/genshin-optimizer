@@ -1,9 +1,7 @@
-import { faCheckSquare, faSquare } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ExpandMore } from "@mui/icons-material";
+import { CheckBox, CheckBoxOutlineBlank, ExpandMore } from "@mui/icons-material";
 import { Button, CardContent, Chip, Collapse, Grid, Typography } from "@mui/material";
 import { useCallback, useContext, useState } from 'react';
-import StatInput from "./StatInput";
+import { CharacterContext } from "../Context/CharacterContext";
 import { DataContext } from "../Context/DataContext";
 import { uiInput as input } from "../Formula";
 import KeyMap, { valueString } from '../KeyMap';
@@ -12,7 +10,7 @@ import CardLight from "./Card/CardLight";
 import ColorText from "./ColoredText";
 import ExpandButton from "./ExpandButton";
 import { uncoloredEleIcons } from "./StatIcon";
-import { CharacterContext } from "../Context/CharacterContext";
+import StatInput from "./StatInput";
 
 export function EnemyExpandCard() {
   const { data } = useContext(DataContext)
@@ -22,37 +20,31 @@ export function EnemyExpandCard() {
   const eDefRed = data.get(input.enemy.defRed)
   const eDefIgn = data.get(input.enemy.defIgn)
   return <CardLight>
-    <CardContent>
-      <Grid container>
-        <Grid item flexGrow={1} alignItems="center">
-          <Grid container spacing={1}>
-            <Grid item>
-              <Chip size="small" color="success" label={<span>{KeyMap.get(eLvlNode.info.key)} <strong>{eLvlNode.value}</strong></span>} />
-            </Grid>
-            {allElementsWithPhy.map(element => <Grid item key={element}>
-              <Typography key={element} ><EnemyResText element={element} /></Typography>
-            </Grid>)}
-            <Grid item>
-              <Typography>DEF Reduction {valueString(eDefRed.value, eDefRed.unit)}</Typography>
-            </Grid>
-            <Grid item>
-              <Typography>DEF Ignore {valueString(eDefIgn.value, eDefIgn.unit)}</Typography>
-            </Grid>
-          </Grid>
+    <CardContent sx={{ display: "flex" }}>
+      <Grid container spacing={1} flexGrow={1} alignItems="center">
+        <Grid item>
+          <Chip size="small" color="success" label={<span>{KeyMap.get(eLvlNode.info.key)} <strong>{eLvlNode.value}</strong></span>} />
+        </Grid>
+        {allElementsWithPhy.map(element => <Grid item key={element}>
+          <Typography key={element} ><EnemyResText element={element} /></Typography>
+        </Grid>)}
+        <Grid item>
+          <Typography>DEF Reduction {valueString(eDefRed.value, eDefRed.unit)}</Typography>
         </Grid>
         <Grid item>
-          <ExpandButton
-            expand={expanded}
-            onClick={toggle}
-            aria-expanded={expanded}
-            aria-label="show more"
-            size="small"
-            sx={{ p: 0 }}
-          >
-            <ExpandMore />
-          </ExpandButton>
+          <Typography>DEF Ignore {valueString(eDefIgn.value, eDefIgn.unit)}</Typography>
         </Grid>
       </Grid>
+      <ExpandButton
+        expand={expanded}
+        onClick={toggle}
+        aria-expanded={expanded}
+        aria-label="show more"
+        size="small"
+        sx={{ p: 0 }}
+      >
+        <ExpandMore />
+      </ExpandButton>
     </CardContent>
     <Collapse in={expanded} timeout="auto" unmountOnExit>
       <CardContent sx={{ pt: 0 }}>
@@ -111,8 +103,8 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
           disabled={elementImmunity}
           percent
         >
-          <Button color={eleKey} onClick={() => characterDispatch({ type: "enemyOverride", statKey, value: elementImmunity ? defaultVal : Number.MAX_VALUE })} >
-            <FontAwesomeIcon icon={elementImmunity ? faCheckSquare : faSquare} className="fa-fw" /> Immunity
+          <Button color={eleKey} onClick={() => characterDispatch({ type: "enemyOverride", statKey, value: elementImmunity ? defaultVal : Number.MAX_VALUE })} startIcon={elementImmunity ? <CheckBox /> : <CheckBoxOutlineBlank />} >
+            Immunity
           </Button>
         </StatInput>
       </Grid>

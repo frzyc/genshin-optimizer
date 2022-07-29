@@ -10,7 +10,7 @@ import CharacterAutocomplete from '../Components/Character/CharacterAutocomplete
 import LocationName from "../Components/Character/LocationName"
 import ConditionalWrapper from "../Components/ConditionalWrapper"
 import ImgIcon from "../Components/Image/ImgIcon"
-import { Stars } from "../Components/StarDisplay"
+import { StarsDisplay } from "../Components/StarDisplay"
 import StatIcon from "../Components/StatIcon"
 import CharacterSheet from "../Data/Characters/CharacterSheet"
 import { ascensionMaxLevel } from "../Data/LevelData"
@@ -64,7 +64,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
             <Typography component="span" variant="h5">Lv. {level}</Typography>
             <Typography component="span" variant="h5" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
             <Typography variant="h6">Refinement <strong>{refinement}</strong></Typography>
-            <Typography><Stars stars={weaponSheet.rarity} colored /></Typography>
+            <Typography><StarsDisplay stars={weaponSheet.rarity} colored /></Typography>
           </Box>
           <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>
             <Box

@@ -1,5 +1,5 @@
 import { Groups } from "@mui/icons-material";
-import { Box, List, ListItem, Skeleton, styled, Typography } from "@mui/material";
+import { Box, List, ListItem, ListProps, Palette, PaletteColor, Skeleton, styled, Typography } from "@mui/material";
 import React, { Suspense, useContext, useMemo } from 'react';
 import { DataContext } from "../Context/DataContext";
 import { NodeDisplay } from "../Formula/api";
@@ -68,14 +68,19 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component, emphasize 
   </Box>
 }
 
-export const FieldDisplayList = styled(List)(({ theme }) => ({
+export interface FieldDisplayListProps extends ListProps {
+  light?: keyof Palette,
+  dark?: keyof Palette,
+  palletOption?: keyof PaletteColor
+}
+export const FieldDisplayList = styled(List)<FieldDisplayListProps>(({ theme, light = "contentDark", dark = "contentDarker", palletOption = "main" }) => ({
   borderRadius: theme.shape.borderRadius,
   overflow: "hidden",
   margin: 0,
   '> .MuiListItem-root:nth-of-type(even)': {
-    backgroundColor: theme.palette.contentDark.main
+    backgroundColor: (theme.palette[light] as PaletteColor)[palletOption]
   },
   '> .MuiListItem-root:nth-of-type(odd)': {
-    backgroundColor: theme.palette.contentDarker.main
+    backgroundColor: (theme.palette[dark] as PaletteColor)[palletOption]
   },
 }));

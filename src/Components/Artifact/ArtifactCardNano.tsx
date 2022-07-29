@@ -17,7 +17,7 @@ import ColorText from "../ColoredText";
 import ConditionalWrapper from "../ConditionalWrapper";
 import ImgIcon from "../Image/ImgIcon";
 import StatIcon, { uncoloredEleIcons } from "../StatIcon";
-import ArtifactSetSlotTooltip from "./ArtifactSetSlotTooltip";
+import ArtifactTooltip from "./ArtifactTooltip";
 
 type Data = {
   artifactId?: string,
@@ -46,13 +46,13 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
   return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}  >
     <Box display="flex" height="100%">
       <Box className={`grad-${rarity}star`} sx={{ position: "relative", flexGrow: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }} >
-        <ArtifactSetSlotTooltip slotKey={slotKey} sheet={sheet}>
+        <ArtifactTooltip art={art}>
           <Box
             component="img"
             src={sheet?.slotIcons[slotKey] ?? ""}
             sx={{ m: -1, maxHeight: "110%", maxWidth: "110%" }}
           />
-        </ArtifactSetSlotTooltip>
+        </ArtifactTooltip>
         <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, display: "flex", justifyContent: "space-between", pointerEvents: "none" }} >
           <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
           {showLocation && <Chip size="small" label={<LocationIcon location={location} />} color={"secondary"} sx={{
@@ -63,7 +63,7 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
         </Box>
         {/* mainstats */}
         <Chip size="small" sx={{ position: "absolute", bottom: 0, mb: 1, backgroundColor: color }}
-          label={<Typography variant="h6" sx={{ display: "flex", gap: 1, px: 1, zIndex: 1 }}>
+          label={<Typography sx={{ display: "flex", gap: 0.5, px: 1, zIndex: 1 }}>
             <BootstrapTooltip placement="top" title={<Typography>{KeyMap.getArtStr(mainStatKey)}</Typography>} disableInteractive>
               <span>{element ? uncoloredEleIcons[element] : StatIcon[mainStatKey]}</span>
             </BootstrapTooltip>
@@ -83,7 +83,7 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
   const unit = KeyMap.unit(stat.key)
   return (<Box display="flex" gap={1} alignContent="center">
-    <Typography sx={{ flexGrow: 1, display: "flex", gap: 1 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">
+    <Typography sx={{ flexGrow: 1, display: "flex", gap: 0.5 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">
       <BootstrapTooltip placement="top" title={<Typography>{stat.key && KeyMap.getArtStr(stat.key)}</Typography>} disableInteractive>
         <span>{StatIcon[stat.key]}</span>
       </BootstrapTooltip>

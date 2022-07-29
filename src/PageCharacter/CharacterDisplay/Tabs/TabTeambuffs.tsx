@@ -47,7 +47,7 @@ export function TeamBuffDisplay() {
   if (!nodes.length) return null
   return <CardLight>
     <CardContent>
-      Team Buffs
+      <Typography>Team Buffs</Typography>
     </CardContent>
     <Divider />
     <CardContent>

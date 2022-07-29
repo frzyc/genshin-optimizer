@@ -13,7 +13,7 @@ import ConditionalWrapper from '../Components/ConditionalWrapper';
 import InfoTooltip from '../Components/InfoTooltip';
 import PercentBadge from '../Components/PercentBadge';
 import SqBadge from '../Components/SqBadge';
-import { Stars } from '../Components/StarDisplay';
+import { StarsDisplay } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
@@ -123,7 +123,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
                 <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
               </strong>
             </Typography>
-            <Stars stars={rarity} colored />
+            <StarsDisplay stars={rarity} colored />
             {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
           </Box>
           <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>

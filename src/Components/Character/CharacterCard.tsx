@@ -17,7 +17,7 @@ import CardLight from '../Card/CardLight';
 import ConditionalWrapper from '../ConditionalWrapper';
 import { NodeFieldDisplay } from '../FieldDisplay';
 import SqBadge from '../SqBadge';
-import { Stars } from '../StarDisplay';
+import { StarsDisplay } from '../StarDisplay';
 import StatIcon from '../StatIcon';
 import WeaponCardPico from '../Weapon/WeaponCardPico';
 import WeaponFullCard from '../Weapon/WeaponFullCard';
@@ -161,7 +161,7 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
             <Chip color={burstBoost ? "info" : "secondary"} label={<strong >{tBurst}</strong>} />
           </Grid>
         </Grid>
-        <Typography mt={1} ><Stars stars={characterSheet.rarity} colored /></Typography>
+        <Typography mt={1} ><StarsDisplay stars={characterSheet.rarity} colored /></Typography>
       </Box>
     </Box>
   </ConditionalWrapper>

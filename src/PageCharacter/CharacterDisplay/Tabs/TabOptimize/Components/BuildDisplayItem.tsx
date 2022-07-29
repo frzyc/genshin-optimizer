@@ -1,19 +1,23 @@
 import { ChevronRight } from '@mui/icons-material';
-import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
+import { Button, CardContent, Grid, Skeleton, Stack, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { Suspense, useCallback, useContext, useMemo, useState } from 'react';
-import { CharacterContext } from '../../../../../Context/CharacterContext';
+import { ArtifactSlotKey } from 'pipeline';
+import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano';
 import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
+import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import StatDisplayComponent from '../../../../../Components/Character/StatDisplayComponent';
 import ModalWrapper from '../../../../../Components/ModalWrapper';
 import SqBadge from '../../../../../Components/SqBadge';
+import { Translate } from '../../../../../Components/Translate';
 import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano';
+import { CharacterContext } from '../../../../../Context/CharacterContext';
+import { DataContext } from '../../../../../Context/DataContext';
 import { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../../Database/Database';
-import { DataContext } from '../../../../../Context/DataContext';
 import { uiInput as input } from '../../../../../Formula';
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard';
 import usePromise from '../../../../../ReactHooks/usePromise';
@@ -39,7 +43,6 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
   const dataContext = useContext(DataContext)
 
   const { data, oldData } = dataContext
-  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const [newOld, setNewOld] = useState(undefined as NewOld | undefined)
   const close = useCallback(() => setNewOld(undefined), [setNewOld],)
 
@@ -66,16 +69,8 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
       }} />
     </Grid>), [data, setNewOld, equippedArtifacts, mainStatAssumptionLevel])
 
-  if (!artifactSheets || !oldData) return null
+  if (!oldData) return null
   const currentlyEquipped = allSlotKeys.every(slotKey => data.get(input.art[slotKey].id).value === oldData.get(input.art[slotKey].id).value) && data.get(input.weapon.id).value === oldData.get(input.weapon.id).value
-
-  const setToSlots: Partial<Record<ArtifactSetKey, SlotKey[]>> = {}
-  allSlotKeys.forEach(slotKey => {
-    const set = data.get(input.art[slotKey].set).value as ArtifactSetKey | undefined
-    if (!set) return
-    if (setToSlots[set]) setToSlots[set]!.push(slotKey)
-    else setToSlots[set] = [slotKey]
-  })
 
   return <CardLight>
     <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
@@ -83,11 +78,7 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
       <CardContent>
         <Box display="flex" gap={1} sx={{ pb: 1 }} flexWrap="wrap">
           {index !== undefined && <SqBadge color="info"><Typography><strong>#{index + 1}{currentlyEquipped ? " (Equipped)" : ""}</strong></Typography></SqBadge>}
-          {(Object.entries(setToSlots) as [ArtifactSetKey, SlotKey[]][]).sort(([k1, slotarr1], [k2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
-            <Box key={key}><SqBadge color={currentlyEquipped ? "success" : "primary"} ><Typography >
-              {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {artifactSheets?.[key].name ?? ""}
-            </Typography></SqBadge></Box>
-          )}
+          <SetBadges currentlyEquipped={currentlyEquipped} />
           <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}>
           </Box>
           <Button size='small' color="success" onClick={equipBuild} disabled={disabled || currentlyEquipped}>Equip Build</Button>
@@ -105,6 +96,46 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
       </CardContent>
     </Suspense>
   </CardLight>
+}
+function SetBadges({ currentlyEquipped = false }: { currentlyEquipped: boolean }) {
+  const { data } = useContext(DataContext)
+  const setToSlots: Partial<Record<ArtifactSetKey, SlotKey[]>> = {}
+  allSlotKeys.forEach(slotKey => {
+    const set = data.get(input.art[slotKey].set).value as ArtifactSetKey | undefined
+    if (!set) return
+    if (setToSlots[set]) setToSlots[set]!.push(slotKey)
+    else setToSlots[set] = [slotKey]
+  })
+  return <>{Object.entries(setToSlots).sort(([k1, slotarr1], [k2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
+    <SetBadge key={key} setKey={key} currentlyEquipped={currentlyEquipped} slotarr={slotarr} />
+  )}</>
+
+}
+function SetBadge({ setKey, currentlyEquipped = false, slotarr }: { setKey: ArtifactSetKey, currentlyEquipped: boolean, slotarr: ArtifactSlotKey[] }) {
+  const artifactSheet = usePromise(() => ArtifactSheet.get(setKey), [])
+  if (!artifactSheet) return null
+
+  return <Box>
+    <BootstrapTooltip placement="top" title={
+      <Suspense fallback={<Skeleton variant='rectangular' width={100} height={100} />}>
+        <SetToolTipTitle artifactSheet={artifactSheet} numInSet={slotarr.length} />
+      </Suspense>
+    } disableInteractive >
+      <SqBadge color={currentlyEquipped ? "success" : "primary"} ><Typography >
+        {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {artifactSheet.name ?? ""}
+      </Typography></SqBadge>
+    </BootstrapTooltip>
+  </Box>
+}
+function SetToolTipTitle({ artifactSheet, numInSet }: { artifactSheet: ArtifactSheet, numInSet: number }) {
+  const { t } = useTranslation("sheet")
+  return <Stack spacing={2} sx={{ p: 1 }}>
+    {Object.keys(artifactSheet.setEffects).map((setKey) => <Box sx={{ opacity: parseInt(setKey) <= numInSet ? 1 : 0.5 }}>
+      <Typography><SqBadge color="success">{t(`${setKey}set`)}</SqBadge></Typography>
+      <Typography><Translate ns={`artifact_${artifactSheet.key}_gen`} key18={`setEffects.${setKey}`} /></Typography>
+    </Box>
+    )}
+  </Stack>
 }
 
 function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLevel, onClose }: { newOld: NewOld, mainStatAssumptionLevel: number, onClose: () => void }) {

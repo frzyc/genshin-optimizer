@@ -1,9 +1,10 @@
-import { Box, CardHeader, Divider, Typography } from "@mui/material"
+import { Box, Divider, Typography } from "@mui/material"
 import { useContext } from "react"
 import { DataContext } from "../Context/DataContext"
 import { DocumentSection, IDocumentFields, IDocumentHeader, IDocumentText } from "../Types/sheet"
 import { evalIfFunc } from "../Util/Util"
 import CardDark from "./Card/CardDark"
+import CardHeaderCustom from "./Card/CardHeaderCustom"
 import ConditionalDisplay from "./Conditional/ConditionalDisplay"
 import FieldsDisplay from "./FieldDisplay"
 import InfoTooltip from "./InfoTooltip"
@@ -20,7 +21,7 @@ export default function DocumentDisplay({ sections, teamBuffOnly, hideDesc = fal
   if (!sections.length) return null
   const sectionDisplays = sections.map((s, i) => {
     // If we can't show this section, return null
-    if (s.canShow && !data.get(s.canShow).value ) return null
+    if (s.canShow && !data.get(s.canShow).value) return null
     // If we are showing only teambuffs, and this section is not a teambuff, return null
     if (teamBuffOnly && !s.teamBuff) return null
     return <SectionDisplay section={s} key={i} hideDesc={hideDesc} hideHeader={hideHeader} />
@@ -62,7 +63,7 @@ export function HeaderDisplay({ header, hideDesc, hideDivider }: { header: IDocu
   const description = !hideDesc && evalIfFunc(header.description, data)
   const displayTitle = hideDesc ? title : <span>{title} <InfoTooltip title={<Typography>{description}</Typography>} /></span>
   return <>
-    <CardHeader avatar={icon} title={displayTitle} action={action} titleTypographyProps={{ variant: "subtitle2" }} />
+    <CardHeaderCustom avatar={icon} title={displayTitle} action={action} />
     {!hideDivider && <Divider />}
   </>
 }

@@ -7,7 +7,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import CardDark from '../Components/Card/CardDark';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import SortByButton from '../Components/SortByButton';
-import { Stars } from '../Components/StarDisplay';
+import { StarsDisplay } from '../Components/StarDisplay';
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
 import WeaponSelectionModal from '../Components/Weapon/WeaponSelectionModal';
 import WeaponSheet from '../Data/Weapons/WeaponSheet';
@@ -137,7 +137,7 @@ export default function PageWeapon() {
         </Grid>
         <Grid item>
           <SolidToggleButtonGroup sx={{ height: "100%" }} onChange={(e, newVal) => stateDispatch({ rarity: newVal })} value={rarity} size="small">
-            {allRarities.map(star => <ToggleButton key={star} value={star}><Box display="flex" gap={1}><strong>{star}</strong><Stars stars={1} /></Box></ToggleButton>)}
+            {allRarities.map(star => <ToggleButton key={star} value={star}><Box display="flex" gap={1}><strong>{star}</strong><StarsDisplay stars={1} /></Box></ToggleButton>)}
           </SolidToggleButtonGroup>
         </Grid>
         <Grid item flexGrow={1}>
