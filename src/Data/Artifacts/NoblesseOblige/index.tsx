@@ -1,6 +1,6 @@
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
-import { customRead, equal, greaterEq, percent } from '../../../Formula/utils'
+import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { cond, sgt, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -13,18 +13,15 @@ const setHeader = setHeaderTemplate(key, icons)
 const set2 = greaterEq(input.artSet.NoblesseOblige, 2, percent(0.2))
 
 const [condSet4Path, condSet4] = cond(key, "set4")
-const set4TallyWrite = greaterEq(input.artSet.NoblesseOblige, 4, equal(condSet4, "on", 1))
-const set4TallyRead = customRead(["tally", "NO4"])
-const set4 = greaterEq(set4TallyRead, 1, percent(0.2))
+const set4 = greaterEq(input.artSet.NoblesseOblige, 4, equal(condSet4, "on", percent(0.2)))
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     burst_dmg_: set2,
-    atk_: set4,
   },
   teamBuff: {
-    tally: {
-      NO4: set4TallyWrite
+    premod: {
+      atk_: set4,
     }
   }
 })
