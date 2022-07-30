@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { constant, equal, greaterEq, infoMut, lookup, matchFull, naught, percent, subscript, unequal } from '../../../Formula/utils'
+import { compareEq, constant, equal, greaterEq, infoMut, lookup, naught, percent, subscript, unequal } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
@@ -85,7 +85,7 @@ const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal", {
       hit: {
-        ele: matchFull("rush", condCoil, constant(elementKey), constant("physical"))
+        ele: compareEq("rush", condCoil, elementKey, "physical")
       }
     })])),
   charged: {

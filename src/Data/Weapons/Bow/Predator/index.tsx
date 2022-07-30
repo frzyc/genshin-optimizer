@@ -22,7 +22,7 @@ const normal_dmg_ = lookup(condPassive, {
 const charged_dmg_ = lookup(condPassive, {
   ...objectKeyMap(range(1, 2), i => prod(chargedInc, i))
 }, naught)
-const atk = equal(input.activeCharKey, "Aloy", constant(66))
+const atk = equal(input.activeCharKey, "Aloy", 66)
 
 
 const data = dataObjForWeaponSheet(key, data_gen, {

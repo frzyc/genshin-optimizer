@@ -104,7 +104,7 @@ const [condC6Path, condC6] = cond(key, "c6")
 const c6_anemo_enemyRes_ = greaterEq(input.constellation, 6, equal(condC6, "takeDmg", datamine.constellation6.res_))
 const c6_ele_enemyRes_arr = Object.fromEntries(absorbableEle.map(ele => [
   `${ele}_enemyRes_`,
-  greaterEq(input.constellation, 6, equal(condC6, "takeDmg", equal(ele, condBurstAbsorption, constant(datamine.constellation6.res_))))
+  greaterEq(input.constellation, 6, equal(condC6, "takeDmg", equal(ele, condBurstAbsorption, datamine.constellation6.res_)))
 ]))
 
 const dmgFormulas = {

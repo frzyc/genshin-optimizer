@@ -1,6 +1,6 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { constant, lookup, matchFull, prod, subscript } from "../../../../Formula/utils"
+import { compareEq, constant, lookup, prod, subscript } from "../../../../Formula/utils"
 import { allElements, WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
@@ -23,7 +23,7 @@ const atk_ = [0.032, 0.04, 0.048, 0.056, 0.064]
 
 const dmg_Nodes = Object.fromEntries(allElements.map(e => [`${e}_dmg_`, subscript(input.weapon.refineIndex, dmg_)]))
 const atkInc = prod(
-  matchFull(input.activeCharKey, input.charKey,
+  compareEq(input.activeCharKey, input.charKey,
     constant(1, { /* TODO: Add key for active char */ }),
     constant(2, { /* TODO: Add key for inactive char */ })),
   lookup(condStack, objectKeyMap(range(1, 6), i => constant(i)), 0), // TODO: Add key for stack
