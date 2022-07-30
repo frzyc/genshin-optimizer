@@ -39,9 +39,15 @@ const trans = {
       sum(one, transMulti2, input.total.swirl_dmg_),
       input.enemy[`${ele}_resMulti`]
     ]
-    return infoMut(["pyro", "hydro", "cryo"].includes(ele)
-      ? data(prod(...base, input.hit.ampMulti), { hit: { ele: constant(ele) } })
-      : prod(...base),
+    return infoMut(
+      // CAUTION:
+      // Add amp multiplier only to swirls that have amp reactions.
+      // It is wasteful to add them indiscriminately, but this means
+      // that we need to audit and add appropriate elements here
+      // should amp reactions be added to more swirls.
+      ["pyro", "hydro", "cryo"].includes(ele)
+        ? data(prod(...base, input.hit.ampMulti), { hit: { ele: constant(ele) } })
+        : prod(...base),
       { key: `${ele}_swirl_hit` })
   })
 }
