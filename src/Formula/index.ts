@@ -218,14 +218,12 @@ const common: Data = {
     ),
     ampMulti: lookup(enemy.eleAffliction, {
       pyro: lookup(hit.ele, {
-        hydro: infoMut(prod(2, sum(baseAmpBonus, total.vaporize_dmg_)), { key: "vaporize_dmg_" }),
-        cryo: infoMut(prod(1.5, sum(baseAmpBonus, total.melt_dmg_)), { key: "melt_dmg_" }),
-      }, 1),
-      cryo: compareEq(hit.ele, "pyro",
-        infoMut(prod(2, sum(baseAmpBonus, total.melt_dmg_)), { key: "melt_dmg_" }), 1),
-      hydro: compareEq(hit.ele, "pyro",
-        infoMut(prod(1.5, sum(baseAmpBonus, total.vaporize_dmg_)), { key: "vaporize_dmg_" }), 1),
-    }, 1),
+        hydro: prod(2, sum(baseAmpBonus, total.vaporize_dmg_)),
+        cryo: prod(1.5, sum(baseAmpBonus, total.melt_dmg_)),
+      }, one),
+      cryo: compareEq(hit.ele, "pyro", prod(2, sum(baseAmpBonus, total.melt_dmg_)), one),
+      hydro: compareEq(hit.ele, "pyro", prod(1.5, sum(baseAmpBonus, total.vaporize_dmg_)), one),
+    }, one),
   },
 
   enemy: {
