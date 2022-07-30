@@ -117,7 +117,7 @@ const input = setReadNodeKeys(deepClone({
 
   hit: {
     ele: stringRead(), reaction: stringRead(), move: stringRead(), hitMode: stringRead(),
-    base: read("add", { key: "base" }),
+    base: read("add", { key: "base" }), ampMulti: read(),
 
     dmgBonus: read("add", { key: "dmg_", pivot }),
     dmgInc: read("add", { key: "dmgInc", pivot }),
@@ -217,17 +217,18 @@ const common: Data = {
       enemy.def,
       lookup(hit.ele,
         objectKeyMap(allElements, ele => enemy[`${ele}_resMulti` as const]), NaN),
-      lookup(effectiveReaction, {
-        melt: lookup(hit.ele, {
-          pyro: prod(2, sum(baseAmpBonus, total.melt_dmg_)),
-          cryo: prod(1.5, sum(baseAmpBonus, total.melt_dmg_)),
-        }, 1, { key: "melt_dmg_" }),
-        vaporize: lookup(hit.ele, {
-          hydro: prod(2, sum(baseAmpBonus, total.vaporize_dmg_)),
-          pyro: prod(1.5, sum(baseAmpBonus, total.vaporize_dmg_)),
-        }, 1, { key: "vaporize_dmg_" }),
-      }, 1),
+      hit.ampMulti,
     ),
+    ampMulti: lookup(effectiveReaction, {
+      melt: lookup(hit.ele, {
+        pyro: prod(2, sum(baseAmpBonus, total.melt_dmg_)),
+        cryo: prod(1.5, sum(baseAmpBonus, total.melt_dmg_)),
+      }, 1, { key: "melt_dmg_" }),
+      vaporize: lookup(hit.ele, {
+        hydro: prod(2, sum(baseAmpBonus, total.vaporize_dmg_)),
+        pyro: prod(1.5, sum(baseAmpBonus, total.vaporize_dmg_)),
+      }, 1, { key: "vaporize_dmg_" }),
+    }, 1),
   },
 
   enemy: {

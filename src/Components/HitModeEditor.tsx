@@ -64,11 +64,11 @@ export function ReactionToggle(props: ReactionToggleProps) {
   const { data } = useContext(DataContext)
   const charEleKey = data.get(input.charEle).value as ElementKey
   const infusion = data.get(infusionNode).value as ElementKey
-  if (!["pyro", "hydro", "cryo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusion)) return null
+  if (!["pyro", "hydro", "cryo", "anemo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusion)) return null
   return <SolidToggleButtonGroup exclusive baseColor="secondary"
     value={reactionMode} onChange={(_, reactionMode) => characterDispatch({ reactionMode })} {...props}>
     <ToggleButton value="" disabled={reactionMode === ""} >No Reactions</ToggleButton >
-    {allReactionModes.map(rm => (charEleKey === rm.split("_")[0] || infusion === rm.split("_")[0]) && <ToggleButton key={rm} value={rm} disabled={reactionMode === rm}>
+    {allReactionModes.map(rm => (charEleKey === "anemo" || charEleKey === rm.split("_")[0] || infusion === rm.split("_")[0]) && <ToggleButton key={rm} value={rm} disabled={reactionMode === rm}>
       {reactionModeText[rm](t)}
     </ToggleButton >)}
   </SolidToggleButtonGroup>
