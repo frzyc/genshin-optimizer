@@ -106,6 +106,7 @@ const input = setReadNodeKeys(deepClone({
   }),
 
   enemy: {
+    eleAffliction: stringRead(),
     def: read("add", { key: "enemyDef_multi", pivot }),
     ...objectKeyMap(allElements.map(ele => `${ele}_resMulti` as const), _ => read()),
 
@@ -116,7 +117,9 @@ const input = setReadNodeKeys(deepClone({
   },
 
   hit: {
-    ele: stringRead(), reaction: stringRead(), move: stringRead(), hitMode: stringRead(),
+    /** @deprecated Use `enemy.eleAfflication` instead */
+    reaction: stringRead(),
+    ele: stringRead(), move: stringRead(), hitMode: stringRead(),
     base: read("add", { key: "base" }), ampMulti: read(),
 
     dmgBonus: read("add", { key: "dmg_", pivot }),
@@ -145,9 +148,9 @@ total.critRate_.info!.prefix = "uncapped"
 const baseAmpBonus = sum(one, prod(25 / 9, frac(total.eleMas, 1400)))
 /** Effective reaction, taking into account the hit's element */
 export const effectiveReaction = lookup(hit.ele, {
-  pyro: lookup(hit.reaction, { pyro_vaporize: constant("vaporize"), pyro_melt: constant("melt") }, undefined),
-  hydro: equalStr(hit.reaction, "hydro_vaporize", "vaporize"),
-  cryo: equalStr(hit.reaction, "cryo_melt", "melt"),
+  pyro: lookup(enemy.eleAffliction, { hydro: constant("vaporize"), cryo: constant("melt") }, undefined),
+  hydro: equalStr(enemy.eleAffliction, "pyro", "vaporize"),
+  cryo: equalStr(enemy.eleAffliction, "pyro", "melt"),
 }, undefined)
 
 const common: Data = {

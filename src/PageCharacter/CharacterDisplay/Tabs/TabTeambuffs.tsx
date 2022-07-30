@@ -43,7 +43,7 @@ export function TeamBuffDisplay() {
   Object.entries(teamBuffs.premod ?? {}).forEach(([key, node]) =>
     !node.isEmpty && node.value !== 0 && nodes.push([["premod", key], node]))
   Object.entries(teamBuffs.enemy ?? {}).forEach(([key, node]) =>
-    !node.isEmpty && node.value !== 0 && nodes.push([["enemy", key], node]))
+    !node.isEmpty && typeof node.value === "number" && node.value !== 0 && nodes.push([["enemy", key], node as NodeDisplay<number>]))
   if (!nodes.length) return null
   return <CardLight>
     <CardContent>

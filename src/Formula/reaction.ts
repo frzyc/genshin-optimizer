@@ -31,7 +31,7 @@ const trans = {
       infoMut(prod(multi, transMulti1), { asConst }),
       sum(one, transMulti2, input.total[`${reaction}_dmg_`]),
       input.enemy[`${ele}_resMulti`]),
-      { key: `${reaction}_hit`, variant: reaction })
+      { key: `${reaction}_hit` })
   }),
   swirl: objectKeyMap(transformativeReactions.swirl.variants, ele => {
     const base = [
@@ -42,7 +42,7 @@ const trans = {
     return infoMut(["pyro", "hydro", "cryo"].includes(ele)
       ? data(prod(...base, input.hit.ampMulti), { hit: { ele: constant(ele) } })
       : prod(...base),
-      { key: `${ele}_swirl_hit`, variant: ele })
+      { key: `${ele}_swirl_hit` })
   })
 }
 export const reactions = {
