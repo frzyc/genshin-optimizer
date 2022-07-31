@@ -1,7 +1,8 @@
 import { Groups } from "@mui/icons-material";
 import { Box, List, ListItem, ListProps, Palette, PaletteColor, Skeleton, styled, Typography } from "@mui/material";
-import React, { Suspense, useContext, useMemo } from 'react';
+import React, { Suspense, useCallback, useContext, useMemo } from 'react';
 import { DataContext } from "../Context/DataContext";
+import { FormulaDataContext } from "../Context/FormulaDataContext";
 import { NodeDisplay } from "../Formula/api";
 import KeyMap, { valueString } from "../KeyMap";
 import { IBasicFieldDisplay, IFieldDisplay } from "../Types/fieldDisplay";
@@ -46,6 +47,10 @@ export function BasicFieldDisplay({ field, component }: { field: IBasicFieldDisp
 }
 
 export function NodeFieldDisplay({ node, oldValue, suffix, component, emphasize }: { node: NodeDisplay, oldValue?: number, suffix?: Displayable, component?: React.ElementType, emphasize?: boolean }) {
+  const { data } = useContext(DataContext)
+  const { setFormulaData } = useContext(FormulaDataContext)
+  const onClick = useCallback(() => setFormulaData(data, node), [setFormulaData, data, node])
+
   if (node.isEmpty) return null
 
   suffix = suffix && <span>{suffix}</span>
@@ -58,7 +63,8 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component, emphasize 
     const diff = node.value - oldValue
     fieldVal = <span>{valueString(oldValue, node.unit)}{diff > 0.0001 || diff < -0.0001 ? <ColorText color={diff > 0 ? "success" : "error"}> {diff > 0 ? "+" : ""}{valueString(diff, node.unit)}</ColorText> : ""}</span>
   } else fieldVal = valueString(node.value, node.unit)
-  const formulaTextOverlay = !!node.formula && <QuestionTooltip title={<Typography><Suspense fallback={<Skeleton variant="rectangular" width={300} height={30} />}>{fieldFormulaText}</Suspense></Typography>} />
+
+  const formulaTextOverlay = !!node.formula && <QuestionTooltip onClick={onClick} title={<Typography><Suspense fallback={<Skeleton variant="rectangular" width={300} height={30} />}>{fieldFormulaText}</Suspense></Typography>} />
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1, boxShadow: emphasize ? "0px 0px 0px 2px red inset" : undefined }} component={component} >
     <Typography color={`${node.info.variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{!!isTeamBuff && <Groups />}{icon}{fieldText}{suffix}</Typography>
     <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
