@@ -114,14 +114,23 @@ async function getCharDataBundle(database: ArtCharDatabase, characterKey: Charac
   if (!character) return
   const weapon = overrideWeapon ?? database.weapons.get(character.equippedWeapon)
   if (!weapon) return
-  const [characterSheet, weaponSheet, artifactSheetsData] = await Promise.all([
-    CharacterSheet.get(characterKey),
-    WeaponSheet.get(weapon.key),
-    ArtifactSheet.getAllData
-  ])
-  if (!characterSheet || !weaponSheet || !artifactSheetsData) return
+  const characterSheet = await CharacterSheet.get(characterKey)
+  if (!characterSheet) return
+
+  const weaponSheet = await WeaponSheet.get(weapon.key)
+  if (!weaponSheet) return
+
+  const weaponSheetsDataOfType = await WeaponSheet.getAllDataOfType(characterSheet.weaponTypeKey)
+
+  const weaponSheetsData = useCustom ? (() => {
+    // display is included in WeaponSheet.getAllDataOfType
+    const { display, ...restWeaponSheetData } = weaponSheet.data
+    return mergeData([restWeaponSheetData, weaponSheetsDataOfType])
+  })() : weaponSheet.data
+
+  const artifactSheetsData = await ArtifactSheet.getAllData
   const artifacts = (overrideArt ?? Object.values(character.equippedArtifacts).map(a => database.arts.get(a))).filter(a => a) as ICachedArtifact[]
-  const sheetData = mergeData([characterSheet.getData(character.elementKey), weaponSheet.data, artifactSheetsData])
+  const sheetData = mergeData([characterSheet.getData(character.elementKey), weaponSheetsData, artifactSheetsData])
   const data = [
     ...artifacts.map(a => dataObjForArtifact(a, mainStatAssumptionLevel)),
     dataObjForCharacter(character, useCustom ? sheetData : undefined),

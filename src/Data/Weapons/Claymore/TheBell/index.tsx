@@ -16,7 +16,8 @@ const data_gen = data_gen_json as WeaponData
 const shieldSrc = [0.2, 0.23, 0.26, 0.29, 0.32]
 const allDmgSrc = [0.12, 0.15, 0.18, 0.21, 0.24]
 const [condPassivePath, condPassive] = cond(key, "RebelliousGuardian")
-const shield = equal(condPassive, "on", customShieldNode(prod(subscript(input.weapon.refineIndex, shieldSrc, { key: "_" }), input.total.hp)))
+const shield = equal(input.weapon.key, key,
+  equal(condPassive, "on", customShieldNode(prod(subscript(input.weapon.refineIndex, shieldSrc, { key: "_" }), input.total.hp))))
 const [condWithShieldPath, condWithShield] = cond(key, "WithShield")
 const all_dmg_ = equal(condWithShield, "protected", subscript(input.weapon.refineIndex, allDmgSrc, { key: "_" }))
 

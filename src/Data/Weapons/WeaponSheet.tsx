@@ -3,8 +3,9 @@ import ImgIcon from '../../Components/Image/ImgIcon';
 import SqBadge from '../../Components/SqBadge';
 import { Translate } from '../../Components/Translate';
 import { input } from '../../Formula';
+import { mergeData } from '../../Formula/api';
 import { Data } from '../../Formula/type';
-import { Rarity, WeaponKey, WeaponTypeKey } from '../../Types/consts';
+import { allWeaponTypeKeys, Rarity, WeaponKey, WeaponTypeKey } from '../../Types/consts';
 import { DocumentSection, IDocumentHeader } from '../../Types/sheet';
 import { ICachedWeapon } from '../../Types/weapon';
 import { ambiguousLevel, ambiguousLevelLow, ascensionMaxLevel, lowRarityMilestoneLevels, milestoneLevels } from '../LevelData';
@@ -16,7 +17,12 @@ export interface IWeaponSheet {
   iconAwaken: string,
   document: DocumentSection[],
 }
-
+// This is the weapon Data.displays merged together for each weapons.
+const displayDataMap = weaponSheets.then(as =>
+  Object.fromEntries(allWeaponTypeKeys.map(k =>
+    [k, mergeData(Object.values(as).filter(sheet => sheet.weaponType === k).map(sheet => ({ display: sheet.data.display })))]
+  )) as Record<WeaponTypeKey, Data>
+)
 export default class WeaponSheet {
   readonly key: WeaponKey;
   readonly sheet: IWeaponSheet;
@@ -32,6 +38,7 @@ export default class WeaponSheet {
   }
   static get = (weaponKey: WeaponKey | ""): Promise<WeaponSheet> | undefined => weaponKey ? weaponSheets.then(w => w[weaponKey]) : undefined
   static get getAll() { return weaponSheets }
+  static getAllDataOfType(weaponType: WeaponTypeKey) { return displayDataMap.then(map => map[weaponType]) }
   static getWeaponsOfType = (sheets: StrictDict<WeaponKey, WeaponSheet>, weaponType: string): Dict<WeaponKey, WeaponSheet> => Object.fromEntries(Object.entries(sheets).filter(([_, sheet]) => (sheet as WeaponSheet).weaponType === weaponType))
   static getLevelString = (weapon: ICachedWeapon): string => `${weapon.level}/${ascensionMaxLevel[weapon.ascension]}`
   tr = (strKey: string) => <Translate ns={`weapon_${this.key}_gen`} key18={strKey} />

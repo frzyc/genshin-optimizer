@@ -1,6 +1,6 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { infoMut, prod, subscript } from "../../../../Formula/utils"
+import { equal, infoMut, prod, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { customHealNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
@@ -14,7 +14,8 @@ const key: WeaponKey = "RecurveBow"
 const data_gen = data_gen_json as WeaponData
 
 const healing_s = [.08, .10, .12, .14, .16]
-const healing = customHealNode(prod(input.total.hp, subscript(input.weapon.refineIndex, healing_s)))
+const healing = equal(input.weapon.key, key,
+  customHealNode(prod(input.total.hp, subscript(input.weapon.refineIndex, healing_s))))
 
 const data = dataObjForWeaponSheet(key, data_gen, undefined, { healing })
 

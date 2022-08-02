@@ -1,6 +1,6 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { constant, infoMut, percent, prod, subscript } from "../../../../Formula/utils"
+import { constant, equal, infoMut, percent, prod, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
@@ -16,7 +16,8 @@ const data_gen = data_gen_json as WeaponData
 const critd_s = [.20, .25, .30, .35, .40]
 const dmgPerc = percent(1.25)
 const critDMG_ = subscript(input.weapon.refineIndex, critd_s)
-const dmg = customDmgNode(prod(dmgPerc, input.total.atk), "elemental", { hit: { ele: constant("physical") } })
+const dmg = equal(input.weapon.key, key,
+  customDmgNode(prod(dmgPerc, input.total.atk), "elemental", { hit: { ele: constant("physical") } }))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

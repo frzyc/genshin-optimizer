@@ -18,7 +18,9 @@ import SqBadge from "../SqBadge"
 
 export default function StatDisplayComponent() {
   const { data } = useContext(DataContext)
-  const sections = getDisplaySections(data)
+  const sections = useMemo(() =>
+    getDisplaySections(data).filter(([, ns]) => Object.values(ns).some(n => !n.isEmpty)),
+    [data])
   return <Box sx={{ mr: -1, mb: -1 }}>
     <Masonry columns={{ xs: 1, sm: 2, md: 3, xl: 4 }} spacing={1}>
       {sections.map(([key, Nodes]) =>

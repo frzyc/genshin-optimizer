@@ -97,6 +97,7 @@ export function CustomMultiTargetButton() {
     setCustomTargets(customTargets_)
   }, [customMultiTarget, setCustomTargets])
   const deleteCustomMultiTarget = useCallback(ind => {
+    if (customMultiTarget[ind].targets.length && !window.confirm(`Are you sure you want to delete "${customMultiTarget[ind].name}"?`)) return
     const customTargets_ = [...customMultiTarget]
     customTargets_.splice(ind, 1)
     setCustomTargets(customTargets_)
@@ -205,10 +206,9 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
   const { characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const { path, weight, hitMode, reactionMode, bonusStats, infusionAura } = customTarget
-  const setWeight = useCallback(weight => setCustomTarget({ ...customTarget, weight }), [customTarget, setCustomTarget],)
+  const setWeight = useCallback(weight => setCustomTarget({ ...customTarget, weight }), [customTarget, setCustomTarget])
   const node: NodeDisplay = objPathValue(data.getDisplay(), path) as any
-  const setFilter = useCallback((bonusStats) => setCustomTarget({ ...customTarget, bonusStats }), [customTarget, setCustomTarget],)
-  console.log(customTarget, bonusStats)
+  const setFilter = useCallback((bonusStats) => setCustomTarget({ ...customTarget, bonusStats }), [customTarget, setCustomTarget])
 
   const isMeleeNorm = characterSheet?.isMelee() && path[0] === "normal"
   return <CardDark>

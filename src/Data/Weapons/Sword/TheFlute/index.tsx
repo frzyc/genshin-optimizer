@@ -1,6 +1,6 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { constant, infoMut, percent, prod } from '../../../../Formula/utils'
+import { constant, equal, infoMut, percent, prod } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
@@ -13,9 +13,10 @@ import icon from './Icon.png'
 const key: WeaponKey = "TheFlute"
 const data_gen = data_gen_json as WeaponData
 
-const dmg_ = customDmgNode(prod(percent(2), input.premod.atk), "elemental", {
-  hit: { ele: constant("physical") }
-})
+const dmg_ = equal(input.weapon.key, key,
+  customDmgNode(prod(percent(2), input.premod.atk), "elemental", {
+    hit: { ele: constant("physical") }
+  }))
 
 const data = dataObjForWeaponSheet(key, data_gen, undefined, {
   dmg_

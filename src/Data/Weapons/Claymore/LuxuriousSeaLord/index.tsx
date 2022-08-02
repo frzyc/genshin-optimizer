@@ -17,7 +17,7 @@ const burst_dmg_Src = [0.12, 0.15, 0.18, 0.21, 0.24]
 const dmg_Src = [1, 1.25, 1.5, 1.75, 2]
 const burst_dmg_ = subscript(input.weapon.refineIndex, burst_dmg_Src)
 const [condPassivePath, condPassive] = cond(key, "OceanicVictory")
-const dmg = equal(condPassive, 'on',
+const dmg = equal(input.weapon.key, key, equal(condPassive, 'on',
   customDmgNode(prod(
     subscript(
       input.weapon.refineIndex, dmg_Src, { key: "_" }),
@@ -25,7 +25,7 @@ const dmg = equal(condPassive, 'on',
     ),
     "elemental",
     { hit: { ele: constant("physical") }
-}))
+})))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

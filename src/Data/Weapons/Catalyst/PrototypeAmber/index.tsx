@@ -1,6 +1,6 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { infoMut, prod, subscript } from "../../../../Formula/utils"
+import { equal, infoMut, prod, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { customHealNode } from '../../../Characters/dataUtil'
 import { cond, st } from '../../../SheetUtil'
@@ -16,7 +16,8 @@ const data_gen = data_gen_json as WeaponData
 const [condPassivePath, condPassive] = cond(key, "Gliding")
 const healPerc = [0.04, 0.045, 0.05, 0.055, 0.06]
 
-const heal = customHealNode(prod(subscript(input.weapon.refineIndex, healPerc, { key: "_" }), input.total.hp))
+const heal = equal(input.weapon.key, key,
+  customHealNode(prod(subscript(input.weapon.refineIndex, healPerc, { key: "_" }), input.total.hp)))
 export const data = dataObjForWeaponSheet(key, data_gen, undefined, { heal })
 const sheet: IWeaponSheet = {
   icon,

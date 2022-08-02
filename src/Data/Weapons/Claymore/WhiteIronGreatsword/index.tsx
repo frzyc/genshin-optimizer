@@ -15,7 +15,8 @@ const data_gen = data_gen_json as WeaponData
 
 const hpRegen = [0.08, 0.1, 0.12, 0.14, 0.16]
 const [condPath, condNode] = cond(key, "CullTheWeak")
-const heal = equal(condNode, 'on', customHealNode(prod(subscript(input.weapon.refineIndex, hpRegen, { key: "_" }), input.total.hp)))
+const heal = equal(input.weapon.key, key,
+  equal(condNode, 'on', customHealNode(prod(subscript(input.weapon.refineIndex, hpRegen, { key: "_" }), input.total.hp))))
 
 export const data = dataObjForWeaponSheet(key, data_gen, undefined, { heal })
 const sheet: IWeaponSheet = {

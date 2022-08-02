@@ -15,7 +15,8 @@ const data_gen = data_gen_json as WeaponData
 
 const [condPassivePath, condPassive] = cond(key, "passive")
 const atk_ = equal(condPassive, "on", percent(0.15)) // No refinement data
-const dmg = equal(condPassive, "on", customDmgNode(prod(percent(1.8), input.total.atk), "elemental", { hit: { ele: constant("physical") } }))
+const dmg = equal(input.weapon.key, key,
+  equal(condPassive, "on", customDmgNode(prod(percent(1.8), input.total.atk), "elemental", { hit: { ele: constant("physical") } })))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
