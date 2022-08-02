@@ -2,7 +2,7 @@ import { allEleEnemyResKeys } from "../KeyMap"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
 import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
-import { compareEq, constant, frac, infoMut, lookup, max, min, naught, one, percent, prod, read, res, setReadNodeKeys, stringRead, sum, todo } from "./utils"
+import { constant, frac, lookup, max, min, naught, one, percent, prod, read, res, setReadNodeKeys, stringRead, sum, todo } from "./utils"
 
 const asConst = true as const, pivot = true as const
 
@@ -106,7 +106,6 @@ const input = setReadNodeKeys(deepClone({
   }),
 
   enemy: {
-    eleAffliction: stringRead(),
     def: read("add", { key: "enemyDef_multi", pivot }),
     ...objectKeyMap(allElements.map(ele => `${ele}_resMulti` as const), _ => read()),
 
@@ -117,7 +116,6 @@ const input = setReadNodeKeys(deepClone({
   },
 
   hit: {
-    /** @deprecated Use `enemy.eleAfflication` instead */
     reaction: stringRead(),
     ele: stringRead(), move: stringRead(), hitMode: stringRead(),
     base: read("add", { key: "base" }), ampMulti: read(),
@@ -216,13 +214,16 @@ const common: Data = {
         objectKeyMap(allElements, ele => enemy[`${ele}_resMulti` as const]), NaN),
       hit.ampMulti,
     ),
-    ampMulti: lookup(enemy.eleAffliction, {
-      pyro: lookup(hit.ele, {
+    ampMulti: lookup(hit.reaction, {
+      vape: lookup(hit.ele, {
         hydro: prod(2, sum(baseAmpBonus, total.vaporize_dmg_)),
+        pyro: prod(1.5, sum(baseAmpBonus, total.vaporize_dmg_)),
+
+      }, one),
+      melt: lookup(hit.ele, {
+        pyro: prod(2, sum(baseAmpBonus, total.melt_dmg_)),
         cryo: prod(1.5, sum(baseAmpBonus, total.melt_dmg_)),
       }, one),
-      cryo: compareEq(hit.ele, "pyro", prod(2, sum(baseAmpBonus, total.melt_dmg_)), one),
-      hydro: compareEq(hit.ele, "pyro", prod(1.5, sum(baseAmpBonus, total.vaporize_dmg_)), one),
     }, one),
   },
 

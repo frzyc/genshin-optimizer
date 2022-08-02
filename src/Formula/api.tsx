@@ -59,14 +59,13 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
       burst: constant(char.talent.burst),
     },
     enemy: {
-      eleAffliction: constant(undefined), // TODO
       ...objectKeyMap(allElementsWithPhy.map(ele => `${ele}_res_`), ele =>
         percent((char.enemyOverride[`${ele.slice(0, -5)}_enemyRes_`] ?? 10) / 100)),
       level: constant(char.enemyOverride.enemyLevel ?? char.level),
     },
     hit: {
       hitMode: constant(char.hitMode),
-      reaction: constant(char.reactionMode),
+      reaction: constant(undefined), // TODO: Convert to "vape", "melt", or undefined
     },
     customBonus: {},
   }
