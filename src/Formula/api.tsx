@@ -85,7 +85,7 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
   if (sheetData?.display) {
     sheetData.display.custom = {}
     char.customMultiTarget.forEach(({ name, targets }, i) => {
-      const targetNodes = targets.map(({ weight, path, hitMode, reactionMode, infusionAura, bonusStats }) => {
+      const targetNodes = targets.map(({ weight, path, hitMode, reaction, infusionAura, bonusStats }) => {
         const targetNode = objPathValue(sheetData.display, path) as NumNode | undefined
         if (!targetNode) return constant(0)
 
@@ -95,7 +95,7 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
             premod: objectMap(bonusStats, (v, k) => k.endsWith('_') ? percent(v / 100) : constant(v)),
             hit: {
               hitMode: constant(hitMode),
-              reaction: reactionMode ? constant(reactionMode) : none,
+              reaction: reaction ? constant(reaction) : none,
             },
             infusion: {
               team: infusionAura ? constant(infusionAura) : none,

@@ -7,7 +7,7 @@ export interface CustomTarget {
   weight: number,
   path: string[]
   hitMode: HitModeKey,
-  reactionMode?: ReactionModeKey,
+  reaction?: AmpReactionKey,
   infusionAura?: InfusionAuraElements,
   bonusStats: Partial<Record<InputPremodKey, number>>
 }

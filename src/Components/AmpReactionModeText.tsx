@@ -17,8 +17,9 @@ export const ampReactionMap = {
   }
 } as const
 const sqBadgeStyle = { mx: 0.25, px: 0.25 }
-export default function AmpReactionModeText({ reaction, subvariant }: { reaction: AmpReactionKey, subvariant: Variant }) {
+export default function AmpReactionModeText({ reaction, subvariant }: { reaction: AmpReactionKey, subvariant?: Variant }) {
   const { t } = useTranslation("page_character")
+  if (!subvariant) subvariant = Object.keys(ampReactionMap[reaction])[0]
   const eles = ampReactionMap[reaction][subvariant]
   if (!eles) return null;
   const [base, trigger] = eles

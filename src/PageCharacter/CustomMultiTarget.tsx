@@ -2,11 +2,12 @@ import { Add, ContentCopy, DeleteForever, ExpandLess, ExpandMore, Settings } fro
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, CardContent, Chip, Grid, MenuItem, Skeleton, Tooltip, Typography } from "@mui/material";
 import { Suspense, useCallback, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import AmpReactionModeText from "../Components/AmpReactionModeText";
 import CardDark from "../Components/Card/CardDark";
 import CloseButton from "../Components/CloseButton";
 import CustomNumberInput, { StyledInputBase } from "../Components/CustomNumberInput";
 import DropdownButton from "../Components/DropdownMenu/DropdownButton";
-import { infusionVals, reactionModeText } from "../Components/HitModeEditor";
+import { infusionVals } from "../Components/HitModeEditor";
 import ModalWrapper from "../Components/ModalWrapper";
 import StatEditorList from "../Components/StatEditorList";
 import { CharacterContext } from "../Context/CharacterContext";
@@ -15,7 +16,7 @@ import { allInputPremodKeys, InputPremodKey } from "../Formula";
 import { NodeDisplay } from "../Formula/uiData";
 import useBoolState from "../ReactHooks/useBoolState";
 import { CustomMultiTarget, CustomTarget } from "../Types/character";
-import { allHitModes, allInfusionAuraElements, allReactionModes, HitModeKey, ReactionModeKey } from "../Types/consts";
+import { allAmpReactions, allHitModes, allInfusionAuraElements, AmpReactionKey, HitModeKey } from "../Types/consts";
 import { objPathValue } from "../Util/Util";
 import OptimizationTargetSelector from "./CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector";
 import { TargetSelectorModal } from "./CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal";
@@ -39,7 +40,7 @@ function validateOptTarget(path: string[]): string[] {
   return path
 }
 function validateCustomTarget(ct: any): CustomTarget | undefined {
-  let { weight, path, hitMode, reactionMode, infusionAura, bonusStats } = ct
+  let { weight, path, hitMode, reaction, infusionAura, bonusStats } = ct
 
   if (typeof weight !== "number")
     weight = 1
@@ -52,8 +53,8 @@ function validateCustomTarget(ct: any): CustomTarget | undefined {
   if (!hitMode || typeof hitMode !== "string" || !allHitModes.includes(hitMode as HitModeKey))
     hitMode = "avgHit"
 
-  if (reactionMode && !allReactionModes.includes(reactionMode))
-    reactionMode = undefined
+  if (reaction && !allAmpReactions.includes(reaction))
+    reaction = undefined
 
   if (infusionAura && !allInfusionAuraElements.includes(infusionAura))
     infusionAura = undefined
@@ -65,7 +66,7 @@ function validateCustomTarget(ct: any): CustomTarget | undefined {
     allInputPremodKeys.includes(key as InputPremodKey) && typeof value == "number"
   ))
 
-  return { weight, path, hitMode, reactionMode, infusionAura, bonusStats }
+  return { weight, path, hitMode, reaction, infusionAura, bonusStats }
 }
 export function validateCustomMultiTarget(cmt: any): CustomMultiTarget | undefined {
   let { name, targets } = cmt
@@ -205,7 +206,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
   const { t } = useTranslation("page_character")
   const { characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
-  const { path, weight, hitMode, reactionMode, bonusStats, infusionAura } = customTarget
+  const { path, weight, hitMode, reaction, bonusStats, infusionAura } = customTarget
   const setWeight = useCallback(weight => setCustomTarget({ ...customTarget, weight }), [customTarget, setCustomTarget])
   const node: NodeDisplay = objPathValue(data.getDisplay(), path) as any
   const setFilter = useCallback((bonusStats) => setCustomTarget({ ...customTarget, bonusStats }), [customTarget, setCustomTarget])
@@ -232,20 +233,20 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
                 onClick={() => setCustomTarget({ ...customTarget, infusionAura: key ? key : undefined })}>{text}</MenuItem>)}
           </DropdownButton>
         </Grid>}
-        <ReactionDropdown reactionMode={reactionMode} setReactionMode={(rm) => setCustomTarget({ ...customTarget, reactionMode: rm })} node={node} />
+        <ReactionDropdown reaction={reaction} setReactionMode={(rm) => setCustomTarget({ ...customTarget, reaction: rm })} node={node} />
         <StatEditorList statKeys={keys} statFilters={bonusStats} setStatFilters={setFilter} wrapperFunc={wrapperFunc} />
       </Grid>
     </CardContent>
   </CardDark>
 }
-function ReactionDropdown({ node, reactionMode, setReactionMode }: { node: NodeDisplay, reactionMode?: ReactionModeKey, setReactionMode: (r: ReactionModeKey) => void }) {
+function ReactionDropdown({ node, reaction, setReactionMode }: { node: NodeDisplay, reaction?: AmpReactionKey, setReactionMode: (r: AmpReactionKey) => void }) {
   const ele = node.info.subVariant ?? "physical"
   const { t } = useTranslation("page_character")
   if (!["pyro", "hydro", "cryo"].includes(ele)) return null
-  return <Grid item xs={1}><DropdownButton fullWidth title={reactionMode ? reactionModeText[reactionMode](t) : "No Reaction"} sx={{ ml: "auto" }}>
-    <MenuItem value="" disabled={!reactionMode} >No Reactions</MenuItem >
-    {allReactionModes.map(rm => (ele === rm.split("_")[0]) && <MenuItem key={rm} disabled={reactionMode === rm} onClick={() => setReactionMode(rm)}>
-      {reactionModeText[rm](t)}
+  return <Grid item xs={1}><DropdownButton fullWidth title={reaction ? <AmpReactionModeText reaction={reaction} /> : t`ampReaction.noReaction`} sx={{ ml: "auto" }}>
+    <MenuItem value="" disabled={!reaction} >No Reactions</MenuItem >
+    {allAmpReactions.map(rm => <MenuItem key={rm} disabled={reaction === rm} onClick={() => setReactionMode(rm)}>
+      <AmpReactionModeText reaction={rm} />
     </MenuItem >)}
   </DropdownButton></Grid >
 }

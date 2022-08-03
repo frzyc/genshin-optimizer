@@ -6,7 +6,7 @@ import { DataContext } from "../Context/DataContext";
 import { infusionNode } from "../Data/Characters/dataUtil";
 import { uiInput as input } from "../Formula";
 import { allAmpReactions, allHitModes, ElementKey } from "../Types/consts";
-import AmpReactionModeText, { ampReactionMap } from "./AmpReactionModeText";
+import AmpReactionModeText from "./AmpReactionModeText";
 import DropdownButton, { DropdownButtonProps } from "./DropdownMenu/DropdownButton";
 import SolidToggleButtonGroup from "./SolidToggleButtonGroup";
 import SqBadge from "./SqBadge";
@@ -40,7 +40,7 @@ export function ReactionToggle(props: ReactionToggleProps) {
     value={reaction} onChange={(_, reaction) => characterDispatch({ reaction })} {...props}>
     <ToggleButton value="" disabled={!reaction} >{t`ampReaction.noReaction`}</ToggleButton >
     {allAmpReactions.map(rm => (charEleKey === "anemo" || charEleKey === rm.split("_")[0] || infusion === rm.split("_")[0]) && <ToggleButton key={rm} value={rm} disabled={reaction === rm}>
-      <AmpReactionModeText reaction={rm} subvariant={Object.keys(ampReactionMap[rm])[0]} />
+      <AmpReactionModeText reaction={rm} />
     </ToggleButton >)}
   </SolidToggleButtonGroup>
 }
