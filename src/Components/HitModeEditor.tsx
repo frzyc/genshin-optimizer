@@ -1,12 +1,12 @@
-import { Box, MenuItem, ToggleButton, ToggleButtonGroupProps } from "@mui/material";
+import { MenuItem, ToggleButton, ToggleButtonGroupProps } from "@mui/material";
 import { useContext } from 'react';
 import { useTranslation } from "react-i18next";
 import { CharacterContext } from "../Context/CharacterContext";
-import { infusionNode } from "../Data/Characters/dataUtil";
 import { DataContext } from "../Context/DataContext";
+import { infusionNode } from "../Data/Characters/dataUtil";
 import { uiInput as input } from "../Formula";
-import { allHitModes, allReactionModes, ElementKey } from "../Types/consts";
-import ColorText from "./ColoredText";
+import { allAmpReactions, allHitModes, ElementKey } from "../Types/consts";
+import AmpReactionModeText, { ampReactionMap } from "./AmpReactionModeText";
 import DropdownButton, { DropdownButtonProps } from "./DropdownMenu/DropdownButton";
 import SolidToggleButtonGroup from "./SolidToggleButtonGroup";
 import SqBadge from "./SqBadge";
@@ -28,48 +28,19 @@ export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {
   </DropdownButton>
 }
 
-const sqBadgeStyle = { mx: 0.25, px: 0.25, fontSize: "1em" }
-export const reactionModeText = {
-  pyro_vaporize: (t) => <Box display="flex" alignItems="center">
-    <ColorText color="vaporize">{t`ampReaction.pyro_vaporize`}</ColorText>
-    <SqBadge sx={sqBadgeStyle} color="hydro">{uncoloredEleIcons.hydro}</SqBadge>
-    {`+`}
-    <SqBadge sx={sqBadgeStyle} color="pyro">{uncoloredEleIcons.pyro}</SqBadge>
-  </Box>,
-  pyro_melt: (t) => <Box display="flex" alignItems="center">
-    <ColorText color="melt">{t`ampReaction.pyro_melt`}</ColorText>
-    <SqBadge sx={sqBadgeStyle} color="cryo">{uncoloredEleIcons.cryo}</SqBadge>
-    {`+`}
-    <SqBadge sx={sqBadgeStyle} color="pyro">{uncoloredEleIcons.pyro}</SqBadge>
-  </Box>,
-  hydro_vaporize: (t) => <Box display="flex" alignItems="center">
-    <ColorText color="vaporize">{t`ampReaction.hydro_vaporize`}</ColorText>
-    <SqBadge sx={sqBadgeStyle} color="pyro">{uncoloredEleIcons.pyro}</SqBadge>
-    {`+`}
-    <SqBadge sx={sqBadgeStyle} color="hydro">{uncoloredEleIcons.hydro}</SqBadge>
-  </Box>,
-  cryo_melt: (t) => <Box display="flex" alignItems="center">
-    <ColorText color="melt">{t`ampReaction.cryo_melt`}</ColorText>
-    <SqBadge sx={sqBadgeStyle} color="pyro">{uncoloredEleIcons.pyro}</SqBadge>
-    {`+`}
-    <SqBadge sx={sqBadgeStyle} color="cryo">{uncoloredEleIcons.cryo}</SqBadge>
-  </Box>
-
-} as const
-
 type ReactionToggleProps = Omit<ToggleButtonGroupProps, "color">
 export function ReactionToggle(props: ReactionToggleProps) {
   const { t } = useTranslation("page_character")
-  const { character: { reactionMode }, characterDispatch } = useContext(CharacterContext)
+  const { character: { reaction }, characterDispatch } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const charEleKey = data.get(input.charEle).value as ElementKey
   const infusion = data.get(infusionNode).value as ElementKey
   if (!["pyro", "hydro", "cryo", "anemo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusion)) return null
   return <SolidToggleButtonGroup exclusive baseColor="secondary"
-    value={reactionMode} onChange={(_, reactionMode) => characterDispatch({ reactionMode })} {...props}>
-    <ToggleButton value="" disabled={reactionMode === ""} >No Reactions</ToggleButton >
-    {allReactionModes.map(rm => (charEleKey === "anemo" || charEleKey === rm.split("_")[0] || infusion === rm.split("_")[0]) && <ToggleButton key={rm} value={rm} disabled={reactionMode === rm}>
-      {reactionModeText[rm](t)}
+    value={reaction} onChange={(_, reaction) => characterDispatch({ reaction })} {...props}>
+    <ToggleButton value="" disabled={!reaction} >{t`ampReaction.noReaction`}</ToggleButton >
+    {allAmpReactions.map(rm => (charEleKey === "anemo" || charEleKey === rm.split("_")[0] || infusion === rm.split("_")[0]) && <ToggleButton key={rm} value={rm} disabled={reaction === rm}>
+      <AmpReactionModeText reaction={rm} subvariant={Object.keys(ampReactionMap[rm])[0]} />
     </ToggleButton >)}
   </SolidToggleButtonGroup>
 }

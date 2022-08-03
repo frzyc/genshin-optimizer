@@ -215,7 +215,7 @@ const common: Data = {
       hit.ampMulti,
     ),
     ampMulti: lookup(hit.reaction, {
-      vape: lookup(hit.ele, {
+      vaporize: lookup(hit.ele, {
         hydro: prod(2, sum(baseAmpBonus, total.vaporize_dmg_)),
         pyro: prod(1.5, sum(baseAmpBonus, total.vaporize_dmg_)),
 

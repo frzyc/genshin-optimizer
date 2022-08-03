@@ -22,10 +22,9 @@
     "critHit": "Crit Hit DMG"
   },
   "ampReaction": {
-    "pyro_vaporize": "Vaporize(Pyro)",
-    "pyro_melt": "Melt(Pyro)",
-    "hydro_vaporize": "Vaporize(Hydro)",
-    "cryo_melt": "Melt(Cryo)"
+    "noReaction": "No Reactions",
+    "vaporize": "Vaporize",
+    "melt": "Melt"
   },
   "tabEquip": {
     "swapWeapon": "Swap Weapon",

@@ -1,6 +1,6 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { constant, equal, lookup, naught, percent, prod } from "../../../../Formula/utils"
+import { equal, lookup, naught, percent, prod } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, sgt, st } from '../../../SheetUtil'

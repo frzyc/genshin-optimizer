@@ -1,6 +1,7 @@
 import { ExpandMore } from '@mui/icons-material';
 import { Accordion, AccordionDetails, AccordionSummary, Box, CardContent, CardHeader, Divider, Skeleton, Typography } from '@mui/material';
 import { MutableRefObject, Suspense, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import AmpReactionModeText from '../../Components/AmpReactionModeText';
 import CardDark from '../../Components/Card/CardDark';
 import CardHeaderCustom from '../../Components/Card/CardHeaderCustom';
 import CardLight from '../../Components/Card/CardLight';
@@ -12,10 +13,11 @@ import SqBadge from '../../Components/SqBadge';
 import { DataContext } from '../../Context/DataContext';
 import { FormulaDataContext } from '../../Context/FormulaDataContext';
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil';
-import { DisplaySub } from '../../Formula/type';
+import { DisplaySub, Variant } from '../../Formula/type';
 import { NodeDisplay } from '../../Formula/uiData';
 import KeyMap, { valueString } from '../../KeyMap';
 import usePromise from '../../ReactHooks/usePromise';
+import { allAmpReactions, AmpReactionKey } from '../../Types/consts';
 
 export default function FormulaModal() {
   const { modalOpen } = useContext(FormulaDataContext)
@@ -70,6 +72,9 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
   return <Accordion sx={{ bgcolor: "contentDark.main" }} expanded={node === contextNode || expanded} onChange={handleChange} ref={scrollRef} >
     <AccordionSummary expandIcon={<ExpandMore />} >
       <Typography><ColorText color={node.info.variant}>{KeyMap.get(node.info.key ?? "")}</ColorText> <strong>{valueString(node.value, node.unit)}</strong></Typography>
+      {allAmpReactions.includes(node.info.variant as any) && <SqBadge sx={{ display: "inline-block", ml: "auto", mr: 2, my: "-0.25em" }}>
+        <AmpReactionModeText reaction={node.info.variant as AmpReactionKey} subvariant={node.info.subVariant as Variant} />
+      </SqBadge>}
     </AccordionSummary>
     <AccordionDetails >
       {node.formulas.map((subform, i) => <Typography key={i}>{subform}</Typography>)}

@@ -65,7 +65,7 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     },
     hit: {
       hitMode: constant(char.hitMode),
-      reaction: constant(undefined), // TODO: Convert to "vape", "melt", or undefined
+      reaction: constant(char.reaction),
     },
     customBonus: {},
   }
