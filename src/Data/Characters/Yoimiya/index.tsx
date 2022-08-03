@@ -102,12 +102,26 @@ const normalEntries = datamine.normal.hitArr.map((arr, i) => [
     hit: {
       ele: compareEq(condSkill, "skill", elementKey, "physical")
     }
-  }
-  )
+  })
 ])
 
 // This might just need to be a single dmgNode of her kindling arrow, with proper scaling applied.
-const kindlingEntries = normalEntries.map(([_, node], i) => [i, greaterEq(input.constellation, 6, equal(condSkill, "skill", prod(percent(datamine.constellation6.dmg_), node)))])
+const kindlingEntries = datamine.normal.hitArr.map((arr, i) => [i, greaterEq(input.constellation, 6,
+  equal(condSkill, "skill",
+    customDmgNode(
+      prod(
+        subscript(input.total.autoIndex, arr, { key: "_" }),
+        constant(datamine.constellation6.dmg_, { key: `char_${characterKey}:c6Key_` }),
+        input.total.atk,
+        normal_dmgMult
+      ),
+      "normal", {
+      hit: {
+        ele: compareEq(condSkill, "skill", elementKey, "physical")
+      }
+    })
+  )
+)])
 
 export const dmgFormulas = {
   normal: Object.fromEntries(normalEntries),
