@@ -10,7 +10,7 @@ import SqBadge from "../../../../../Components/SqBadge"
 import { DataContext } from "../../../../../Context/DataContext"
 import { getDisplayHeader, getDisplaySections } from "../../../../../Formula/DisplayUtil"
 import { DisplaySub } from "../../../../../Formula/type"
-import { NodeDisplay } from "../../../../../Formula/uiData"
+import { NodeDisplay, UIData } from "../../../../../Formula/uiData"
 import KeyMap from "../../../../../KeyMap"
 import usePromise from "../../../../../ReactHooks/usePromise"
 
@@ -23,33 +23,50 @@ export interface TargetSelectorModalProps {
   excludeSections?: string[]
 }
 export function TargetSelectorModal({ show, onClose, setTarget, useSubVariant = false, flatOnly = false, excludeSections = [] }: TargetSelectorModalProps) {
-  const { data } = useContext(DataContext)
-  const sections = useMemo(() => getDisplaySections(data).filter(([key]) => !excludeSections.includes(key))
-    .map(([key, sectionObj]) => [key, Object.fromEntries(Object.entries(sectionObj).filter(([sectionKey, node]) => {
-      if (flatOnly && KeyMap.unit(node.info.key) === "%") return false
+  const { data: origUIData } = useContext(DataContext)
 
-      // Assume `useSubVariant`= multitarget, ignore heal nodes on multi-target
-      if (useSubVariant && node.info.variant === "success") return false
+  const sections = useMemo(() => {
+    let data: UIData
+    if (useSubVariant) {
+      // Make sure that the fields we're deleting belong to
+      // copies. We don't need deep copies though, as the
+      // rest of the Data are still intact.
+      const origData = origUIData.data[0]
+      const newData = { ...origData, hit: { ...origData.hit }, infusion: { ...origData.infusion } }
+      delete newData.hit.reaction
+      delete newData.infusion.team
+      data = new UIData(newData, undefined)
+    } else {
+      data = origUIData
+    }
 
-      // Assume `useSubVariant`= multitarget, allow showing of empty nodes as targets.
-      if (!useSubVariant && node.isEmpty) return false
-      return true
-    })) as DisplaySub<NodeDisplay>] as [string, DisplaySub<NodeDisplay>])
-    // Determine if a section has all empty entries
-    .filter(([key, sectionObj]) => Object.keys(sectionObj).length), [data, excludeSections, flatOnly, useSubVariant])
+    return getDisplaySections(data).filter(([key]) => !excludeSections.includes(key))
+      .map(([key, sectionObj]) => [key, Object.fromEntries(Object.entries(sectionObj).filter(([sectionKey, node]) => {
+        if (flatOnly && KeyMap.unit(node.info.key) === "%") return false
+
+        // Assume `useSubVariant`= multitarget, ignore heal nodes on multi-target
+        if (useSubVariant && node.info.variant === "success") return false
+
+        // Assume `useSubVariant`= multitarget, allow showing of empty nodes as targets.
+        if (!useSubVariant && node.isEmpty) return false
+        return true
+      })) as DisplaySub<NodeDisplay>] as [string, DisplaySub<NodeDisplay>])
+      // Determine if a section has all empty entries
+      .filter(([key, sectionObj]) => Object.keys(sectionObj).length)
+  }, [origUIData, excludeSections, flatOnly, useSubVariant])
 
   return <ModalWrapper open={show} onClose={onClose}>
-    <CardDark >
+    <CardDark>
       <CardContent>
         <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={1}>
           {sections.map(([key, Nodes]) =>
-            <SelectorSection key={key} displayNs={Nodes} sectionKey={key} setTarget={setTarget} useSubVariant={useSubVariant} />)}
+            <SelectorSection key={key} displayNs={Nodes} sectionKey={key} setTarget={setTarget} />)}
         </Masonry >
       </CardContent>
     </CardDark>
   </ModalWrapper>
 }
-function SelectorSection({ displayNs, sectionKey, setTarget, useSubVariant = false }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[]) => void, useSubVariant?: boolean, flatOnly?: boolean }) {
+function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[]) => void, flatOnly?: boolean }) {
   const { data } = useContext(DataContext)
   const header = usePromise(() => getDisplayHeader(data, sectionKey), [data, sectionKey])
   return <CardLight key={sectionKey as string}>
@@ -57,13 +74,13 @@ function SelectorSection({ displayNs, sectionKey, setTarget, useSubVariant = fal
     <Divider />
     <MenuList>
       {Object.entries(displayNs).map(([key, n]) =>
-        <TargetSelectorMenuItem key={key} node={n} onClick={() => setTarget([sectionKey, key])} useSubVariant={useSubVariant} />)}
+        <TargetSelectorMenuItem key={key} node={n} onClick={() => setTarget([sectionKey, key])} />)}
     </MenuList>
   </CardLight>
 }
 
-function TargetSelectorMenuItem({ node, onClick, useSubVariant = false }: { node: NodeDisplay, onClick: () => void, useSubVariant?: boolean }) {
+function TargetSelectorMenuItem({ node, onClick }: { node: NodeDisplay, onClick: () => void }) {
   return <MenuItem onClick={onClick} style={{ overflow: "hidden", textOverflow: "ellipsis" }}>
-    <ColorText color={useSubVariant ? (node.info.subVariant ?? node.info.variant) : node.info.variant} >{KeyMap.get(node.info.key)}</ColorText>
+    <ColorText color={node.info.variant} >{KeyMap.get(node.info.key)}</ColorText>
   </MenuItem>
 }
