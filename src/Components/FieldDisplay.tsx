@@ -69,7 +69,7 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component, emphasize 
 
   const formulaTextOverlay = !!node.formula && <QuestionTooltip onClick={onClick} title={<Typography><Suspense fallback={<Skeleton variant="rectangular" width={300} height={30} />}>
     {allAmpReactions.includes(node.info.variant as any) && <Box sx={{ display: "inline-flex", gap: 1, mr: 1 }}>
-      <Box><AmpReactionModeText reaction={node.info.variant as AmpReactionKey} subvariant={node.info.subVariant as Variant} /></Box>
+      <Box><AmpReactionModeText reaction={node.info.variant as AmpReactionKey} trigger={node.info.subVariant as Variant} /></Box>
       <Divider orientation="vertical" flexItem />
     </Box>}
     <span>{fieldFormulaText}</span>

@@ -73,7 +73,7 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
     <AccordionSummary expandIcon={<ExpandMore />} >
       <Typography><ColorText color={node.info.variant}>{KeyMap.get(node.info.key ?? "")}</ColorText> <strong>{valueString(node.value, node.unit)}</strong></Typography>
       {allAmpReactions.includes(node.info.variant as any) && <Box sx={{ display: "inline-block", ml: "auto", mr: 2 }}>
-        <AmpReactionModeText reaction={node.info.variant as AmpReactionKey} subvariant={node.info.subVariant as Variant} />
+        <AmpReactionModeText reaction={node.info.variant as AmpReactionKey} trigger={node.info.subVariant as Variant} />
       </Box>}
     </AccordionSummary>
     <AccordionDetails >

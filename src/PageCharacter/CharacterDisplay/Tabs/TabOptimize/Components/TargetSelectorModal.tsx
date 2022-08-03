@@ -10,7 +10,7 @@ import SqBadge from "../../../../../Components/SqBadge"
 import { DataContext } from "../../../../../Context/DataContext"
 import { getDisplayHeader, getDisplaySections } from "../../../../../Formula/DisplayUtil"
 import { DisplaySub } from "../../../../../Formula/type"
-import { NodeDisplay, UIData } from "../../../../../Formula/uiData"
+import { NodeDisplay } from "../../../../../Formula/uiData"
 import KeyMap from "../../../../../KeyMap"
 import usePromise from "../../../../../ReactHooks/usePromise"
 
@@ -18,42 +18,28 @@ export interface TargetSelectorModalProps {
   show: boolean,
   onClose: () => void,
   setTarget: (target: string[]) => void,
-  useSubVariant?: boolean,
+  ignoreGlobal?: boolean,
   flatOnly?: boolean
   excludeSections?: string[]
 }
-export function TargetSelectorModal({ show, onClose, setTarget, useSubVariant = false, flatOnly = false, excludeSections = [] }: TargetSelectorModalProps) {
-  const { data: origUIData } = useContext(DataContext)
+export function TargetSelectorModal({ show, onClose, setTarget, ignoreGlobal = false, flatOnly = false, excludeSections = [] }: TargetSelectorModalProps) {
+  const { data } = useContext(DataContext)
 
   const sections = useMemo(() => {
-    let data: UIData
-    if (useSubVariant) {
-      // Make sure that the fields we're deleting belong to
-      // copies. We don't need deep copies though, as the
-      // rest of the Data are still intact.
-      const origData = origUIData.data[0]
-      const newData = { ...origData, hit: { ...origData.hit }, infusion: { ...origData.infusion } }
-      delete newData.hit.reaction
-      delete newData.infusion.team
-      data = new UIData(newData, undefined)
-    } else {
-      data = origUIData
-    }
-
     return getDisplaySections(data).filter(([key]) => !excludeSections.includes(key))
       .map(([key, sectionObj]) => [key, Object.fromEntries(Object.entries(sectionObj).filter(([sectionKey, node]) => {
         if (flatOnly && KeyMap.unit(node.info.key) === "%") return false
 
-        // Assume `useSubVariant`= multitarget, ignore heal nodes on multi-target
-        if (useSubVariant && node.info.variant === "success") return false
+        // Assume `ignoreGlobal`= multitarget, ignore heal nodes on multi-target
+        if (ignoreGlobal && node.info.variant === "success") return false
 
-        // Assume `useSubVariant`= multitarget, allow showing of empty nodes as targets.
-        if (!useSubVariant && node.isEmpty) return false
+        // Assume `ignoreGlobal`= multitarget, allow showing of empty nodes as targets.
+        if (!ignoreGlobal && node.isEmpty) return false
         return true
       })) as DisplaySub<NodeDisplay>] as [string, DisplaySub<NodeDisplay>])
       // Determine if a section has all empty entries
       .filter(([key, sectionObj]) => Object.keys(sectionObj).length)
-  }, [origUIData, excludeSections, flatOnly, useSubVariant])
+  }, [data, excludeSections, flatOnly, ignoreGlobal])
 
   return <ModalWrapper open={show} onClose={onClose}>
     <CardDark>

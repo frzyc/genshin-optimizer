@@ -1,6 +1,6 @@
 import { Add, ContentCopy, DeleteForever, ExpandLess, ExpandMore, Settings } from "@mui/icons-material";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, CardContent, Chip, Grid, MenuItem, Skeleton, Tooltip, Typography } from "@mui/material";
-import { Suspense, useCallback, useContext, useEffect, useState } from "react";
+import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import AmpReactionModeText from "../Components/AmpReactionModeText";
 import CardDark from "../Components/Card/CardDark";
@@ -13,7 +13,7 @@ import StatEditorList from "../Components/StatEditorList";
 import { CharacterContext } from "../Context/CharacterContext";
 import { DataContext } from "../Context/DataContext";
 import { allInputPremodKeys, InputPremodKey } from "../Formula";
-import { NodeDisplay } from "../Formula/uiData";
+import { NodeDisplay, UIData } from "../Formula/uiData";
 import useBoolState from "../ReactHooks/useBoolState";
 import { CustomMultiTarget, CustomTarget } from "../Types/character";
 import { allAmpReactions, allHitModes, allInfusionAuraElements, AmpReactionKey, HitModeKey } from "../Types/consts";
@@ -113,31 +113,50 @@ export function CustomMultiTargetButton() {
       onCloseModal()
       characterDispatch({ customMultiTarget })
     }, [customMultiTarget, onCloseModal, characterDispatch])
+
+  const { data: origUIData, teamData } = useContext(DataContext)
+  const dataContextObj = useMemo(() => {
+
+    // Make sure that the fields we're deleting belong to
+    // copies. We don't need deep copies though, as the
+    // rest of the Data are still intact.
+    const origData = origUIData.data[0]
+    const newData = { ...origData, hit: { ...origData.hit }, infusion: { ...origData.infusion } }
+    delete newData.hit.reaction
+    delete newData.infusion.team
+    return {
+      data: new UIData(newData, undefined),
+      teamData
+    }
+  }, [origUIData, teamData])
+
   return <Suspense fallback={<Skeleton variant="rectangular" height="100%" width={100} />}>
     <Button color="info" onClick={onShow} startIcon={<Settings />}>Custom Multi-Target Config</Button>
-    <ModalWrapper open={show} onClose={onClose} containerProps={{ sx: { overflow: "visible" } }}>
-      <CardDark>
-        <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-          <Box display="flex" gap={1} justifyContent={"space-between"}>
-            <Typography variant="h6">Custom Multi-Target Config</Typography>
-            <CloseButton onClick={onClose} />
-          </Box>
-          <Box>
-            {customMultiTarget.map((ctar, i) => <CustomMultiTargetDisplay
-              key={i}
-              index={i}
-              expanded={i === expandedInd}
-              onExpand={() => setExpandedInd(i === expandedInd ? false : i)}
-              target={ctar}
-              setTarget={(t) => setCustomMultiTarget(i, t)}
-              onDelete={() => deleteCustomMultiTarget(i)}
-              onDup={() => dupCustomMultiTarget(i)}
-            />)}
-            <Button fullWidth onClick={addNewCustomMultiTarget} startIcon={<Add />} sx={{ mt: 1 }}>Add New Custom Multi-target</Button>
-          </Box>
-        </CardContent>
-      </CardDark>
-    </ModalWrapper>
+    <DataContext.Provider value={dataContextObj}>
+      <ModalWrapper open={show} onClose={onClose} containerProps={{ sx: { overflow: "visible" } }}>
+        <CardDark>
+          <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+            <Box display="flex" gap={1} justifyContent={"space-between"}>
+              <Typography variant="h6">Custom Multi-Target Config</Typography>
+              <CloseButton onClick={onClose} />
+            </Box>
+            <Box>
+              {customMultiTarget.map((ctar, i) => <CustomMultiTargetDisplay
+                key={i}
+                index={i}
+                expanded={i === expandedInd}
+                onExpand={() => setExpandedInd(i === expandedInd ? false : i)}
+                target={ctar}
+                setTarget={(t) => setCustomMultiTarget(i, t)}
+                onDelete={() => deleteCustomMultiTarget(i)}
+                onDup={() => dupCustomMultiTarget(i)}
+              />)}
+              <Button fullWidth onClick={addNewCustomMultiTarget} startIcon={<Add />} sx={{ mt: 1 }}>Add New Custom Multi-target</Button>
+            </Box>
+          </CardContent>
+        </CardDark>
+      </ModalWrapper>
+    </DataContext.Provider>
   </Suspense>
 }
 
@@ -216,7 +235,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
     <CardContent >
       <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
         <CustomNumberInput float startAdornment="x" value={weight} onChange={setWeight} sx={{ borderRadius: 1, pl: 1 }} inputProps={{ sx: { textAlign: "center", width: "2em" } }} />
-        <OptimizationTargetSelector optimizationTarget={path} setTarget={path => setCustomTarget({ ...customTarget, path })} useSubVariant targetSelectorModalProps={{ flatOnly: true, excludeSections: ["basic", "custom"] }} />
+        <OptimizationTargetSelector optimizationTarget={path} setTarget={path => setCustomTarget({ ...customTarget, path })} ignoreGlobal targetSelectorModalProps={{ flatOnly: true, excludeSections: ["basic", "custom"] }} />
         <Box sx={{ flexGrow: 1 }} />
         <ReactionDropdown reaction={reaction} setReactionMode={(rm) => setCustomTarget({ ...customTarget, reaction: rm })} node={node} />
         <DropdownButton title={t(`hitmode.${hitMode}`)}>
@@ -239,7 +258,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
   </CardDark>
 }
 function ReactionDropdown({ node, reaction, setReactionMode }: { node: NodeDisplay, reaction?: AmpReactionKey, setReactionMode: (r?: AmpReactionKey) => void }) {
-  const ele = node.info.subVariant ?? "physical"
+  const ele = node.info.variant ?? "physical"
   const { t } = useTranslation("page_character")
   if (!["pyro", "hydro", "cryo"].includes(ele)) return null
   return <DropdownButton title={reaction ? <AmpReactionModeText reaction={reaction} /> : t`ampReaction.noReaction`} sx={{ ml: "auto" }}>
@@ -259,7 +278,7 @@ function AddCustomTargetBtn({ setTarget }: { setTarget: (t: string[]) => void })
 
   return <>
     <Button fullWidth onClick={onShow} startIcon={<Add />} sx={{ mb: 1 }}>Add New Custom target</Button>
-    <TargetSelectorModal show={show} onClose={onClose} setTarget={setTargetHandler} useSubVariant flatOnly excludeSections={["basic", "custom"]} />
+    <TargetSelectorModal ignoreGlobal flatOnly show={show} onClose={onClose} setTarget={setTargetHandler} excludeSections={["basic", "custom"]} />
   </>
 }
 // const TextArea = styled("textarea")({
