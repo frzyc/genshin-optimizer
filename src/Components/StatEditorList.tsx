@@ -68,7 +68,7 @@ function StatFilterItem({ statKey, statKeys = [], value = 0, delKey, setKey, set
         value={value}
         placeholder="Stat Value"
         onChange={onChange}
-        sx={{ px: 2, }}
+        sx={{ px: 1, }}
         inputProps={{ sx: { textAlign: "right" } }}
         endAdornment={KeyMap.unit(statKey)}
       />

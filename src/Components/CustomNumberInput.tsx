@@ -1,11 +1,12 @@
 import { Button, ButtonProps, InputBase, InputProps, styled } from '@mui/material'
-import { useCallback, useEffect, useMemo, useState } from 'react'
-type props = Omit<InputProps, "onChange"> & {
+import { useCallback, useEffect, useState } from 'react'
+export type CustomNumberInputProps = Omit<InputProps, "onChange"> & {
   value?: number | undefined,
   onChange: (newValue: number | undefined) => void,
   disabled?: boolean
   float?: boolean,
   allowEmpty?: boolean,
+  disableNegative?: boolean
 }
 
 export const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -37,10 +38,14 @@ export function CustomNumberInputButtonGroupWrapper({ children, disableRipple, d
   return <Wrapper disableRipple disableFocusRipple disableTouchRipple {...props}>{children}</Wrapper>
 }
 
-export default function CustomNumberInput({ value = 0, onChange, disabled = false, float = false, ...props }: props) {
+export default function CustomNumberInput({ value = 0, onChange, disabled = false, float = false, disableNegative = false, ...props }: CustomNumberInputProps) {
   const [number, setNumber] = useState(value)
   const [focused, setFocus] = useState(false)
-  const parseFunc = useMemo(() => float ? parseFloat : parseInt, [float],)
+  const parseFunc = useCallback((val: string) => {
+    let num = float ? parseFloat(val) : parseInt(val)
+    if (disableNegative) num = Math.abs(num)
+    return num
+  }, [float, disableNegative])
   const onBlur = useCallback(
     () => {
       onChange(number)
