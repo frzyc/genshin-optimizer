@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { constant, equal, greaterEq, infoMut, lookup, matchFull, percent, prod, subscript, sum, unequal, one } from "../../../Formula/utils"
+import { compareEq, constant, equal, greaterEq, infoMut, lookup, one, percent, prod, subscript, sum, unequal } from "../../../Formula/utils"
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { INodeFieldDisplay } from '../../../Types/fieldDisplay'
 import { range } from '../../../Util/Util'
@@ -86,7 +86,7 @@ const [condC1Path, condC1] = cond(characterKey, "c1")
 const [condC2Path, condC2] = cond(characterKey, "c2")
 const const3TalentInc = greaterEq(input.constellation, 3, 3)
 const const5TalentInc = greaterEq(input.constellation, 5, 3)
-const normal_dmgMult = matchFull(condSkill, "skill", subscript(input.total.skillIndex, datamine.skill.dmg_, { key: `char_${characterKey}:normMult_` }), one)
+const normal_dmgMult = compareEq(condSkill, "skill", subscript(input.total.skillIndex, datamine.skill.dmg_, { key: `char_${characterKey}:normMult_` }), one)
 const a1Stacks = lookup(condA1, Object.fromEntries(range(1, datamine.passive1.maxStacks).map(i => [i, constant(i)])), 0)
 const pyro_dmg_ = greaterEq(input.asc, 1, equal(condSkill, "skill", infoMut(prod(percent(datamine.passive1.pyro_dmg_), a1Stacks), { key: 'pyro_dmg_', variant: elementKey })))
 const atk_ = greaterEq(input.asc, 4, equal(condBurst, "on", unequal(input.activeCharKey, characterKey,
@@ -100,7 +100,7 @@ const normalEntries = datamine.normal.hitArr.map((arr, i) => [
     prod(subscript(input.total.autoIndex, arr, { key: "_" }), input.total.atk, normal_dmgMult),
     "normal", {
     hit: {
-      ele: matchFull(condSkill, "skill", constant(elementKey), constant("physical"))
+      ele: compareEq(condSkill, "skill", elementKey, "physical")
     }
   }
   )

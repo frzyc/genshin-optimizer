@@ -62,6 +62,14 @@ export function res(base: Num): NumNode {
   return { operation: "res", operands: intoOps([base]) }
 }
 
+/** v1 == v2 ? eq : neq */
+export function compareEq(v1: Num, v2: Num, eq: Num, neq: Num, info?: Info): MatchNode<NumNode, NumNode>
+export function compareEq(v1: Num, v2: Num, eq: Str, neq: Str, info?: Info): MatchNode<NumNode, StrNode>
+export function compareEq(v1: Str, v2: Str, eq: Num, neq: Num, info?: Info): MatchNode<StrNode, NumNode>
+export function compareEq(v1: Str, v2: Str, eq: Str, neq: Str, info?: Info): MatchNode<StrNode, StrNode>
+export function compareEq(v1: Num | Str, v2: Num | Str, eq: Num | Str, neq: Num | Str, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(eq), intoV(neq)], info }
+}
 /** v1 == v2 ? pass : 0 */
 export function equal(v1: Num, v2: Num, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
 export function equal(v1: Str, v2: Str, pass: Num, info?: Info): MatchNode<StrNode, NumNode>
@@ -174,7 +182,7 @@ type NodeList = _NodeList | ReadNode<number> | ReadNode<string>
 
 /**
  * `v1` === `v2` ? `match` : `unmatch`
- * @deprecated Use `equal`, `unequal`, or `equalStr` instead
+ * @deprecated Use `equal`, `unequal`, `equalStr`, or `compareEq` instead
  */
 export function matchFull(v1: Num, v2: Num, match: Num, unmatch: Num, info?: Info): MatchNode<NumNode, NumNode>
 export function matchFull(v1: Num, v2: Num, match: Str, unmatch: Str, info?: Info): MatchNode<NumNode, StrNode>

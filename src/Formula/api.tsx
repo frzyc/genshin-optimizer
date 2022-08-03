@@ -66,7 +66,7 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
     },
     hit: {
       hitMode: constant(char.hitMode),
-      reaction: constant(char.reactionMode),
+      reaction: constant(char.reaction),
     },
     customBonus: {},
   }

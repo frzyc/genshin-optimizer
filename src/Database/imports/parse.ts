@@ -3,7 +3,7 @@ import { ascensionMaxLevel } from "../../Data/LevelData";
 import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
 import { allMainStatKeys, allSubstatKeys, IArtifact, ISubstat } from "../../Types/artifact";
 import { ICharacter } from "../../Types/character";
-import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../../Types/consts";
+import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allAmpReactions, allSlotKeys, allWeaponKeys } from "../../Types/consts";
 import { IWeapon } from "../../Types/weapon";
 
 // MIGRATION STEP:
@@ -71,7 +71,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   if (typeof obj !== "object") return
 
   let {
-    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditional,
+    key: characterKey, level, ascension, hitMode, elementKey, reaction, conditional,
     bonusStats, enemyOverride, talent, infusionAura, constellation, team,
     compareData, customMultiTarget
   } = obj
@@ -83,7 +83,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   if (!allHitModes.includes(hitMode)) hitMode = "avgHit"
   if (characterKey !== "Traveler") elementKey = undefined
   else if (!allElements.includes(elementKey)) elementKey = "anemo"
-  if (!allReactionModes.includes(reactionMode)) reactionMode = ""
+  if (!allAmpReactions.includes(reaction)) reaction = undefined
   if (!allElements.includes(infusionAura)) infusionAura = ""
   if (typeof constellation !== "number" && constellation < 0 && constellation > 6) constellation = 0
   if (typeof ascension !== "number" ||
@@ -113,7 +113,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   if (!customMultiTarget) customMultiTarget = []
   customMultiTarget = customMultiTarget.map(cmt => validateCustomMultiTarget(cmt)).filter(t => t)
   const result: ICharacter = {
-    key: characterKey, level, ascension, hitMode, reactionMode, conditional,
+    key: characterKey, level, ascension, hitMode, reaction, conditional,
     bonusStats, enemyOverride, talent, infusionAura, constellation, team,
     compareData, customMultiTarget
   }

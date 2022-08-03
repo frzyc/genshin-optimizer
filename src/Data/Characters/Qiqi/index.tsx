@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { constant, equal, greaterEq, infoMut } from '../../../Formula/utils'
+import { equal, greaterEq, infoMut } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
@@ -59,9 +59,9 @@ const [condA1Path, condA1] = cond(key, "QiqiA1")
 const [condC2Path, condC2] = cond(key, "QiqiC2")
 
 // Values here doesn't exist in skillParam_gen
-const nodeA1HealingBonus = equal(condA1, "on", greaterEq(input.asc, 1, constant(0.2)))
-const nodeC2ChargedDmgInc = equal(condC2, "on", greaterEq(input.constellation, 2, constant(0.15)))
-const nodeC2NormalDmgInc = equal(condC2, "on", greaterEq(input.constellation, 2, constant(0.15)))
+const nodeA1HealingBonus = equal(condA1, "on", greaterEq(input.asc, 1, 0.2))
+const nodeC2ChargedDmgInc = equal(condC2, "on", greaterEq(input.constellation, 2, 0.15))
+const nodeC2NormalDmgInc = equal(condC2, "on", greaterEq(input.constellation, 2, 0.15))
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>

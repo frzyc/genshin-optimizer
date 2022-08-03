@@ -2,7 +2,7 @@ import { transformativeReactions } from "../KeyMap/StatConstants";
 import { absorbableEle } from "../Types/consts";
 import { objectKeyMap } from "../Util/Util";
 import { input } from "./index";
-import { frac, infoMut, percent, prod, subscript, sum, one } from "./utils";
+import { frac, infoMut, percent, prod, subscript, sum, one, data, constant } from "./utils";
 
 // https://github.com/Dimbreath/GenshinData/blob/72c9112a7c5e8e5014f61009a1a2764e266aeab7/ExcelBinOutput/ElementCoeffExcelConfigData.json
 //   or if the permalink is dead,
@@ -31,14 +31,25 @@ const trans = {
       infoMut(prod(multi, transMulti1), { asConst }),
       sum(one, transMulti2, input.total[`${reaction}_dmg_`]),
       input.enemy[`${ele}_resMulti`]),
-      { key: `${reaction}_hit`, variant: reaction })
+      { key: `${reaction}_hit` })
   }),
-  swirl: objectKeyMap(transformativeReactions.swirl.variants, ele => infoMut(
-    prod(
+  swirl: objectKeyMap(transformativeReactions.swirl.variants, ele => {
+    const base = [
       infoMut(prod(transformativeReactions.swirl.multi, transMulti1), { asConst }),
       sum(one, transMulti2, input.total.swirl_dmg_),
-      input.enemy[`${ele}_resMulti`]),
-    { key: `${ele}_swirl_hit`, variant: ele }))
+      input.enemy[`${ele}_resMulti`]
+    ]
+    return infoMut(
+      // CAUTION:
+      // Add amp multiplier only to swirls that have amp reactions.
+      // It is wasteful to add them indiscriminately, but this means
+      // that we need to audit and add appropriate elements here
+      // should amp reactions be added to more swirls.
+      ["pyro", "hydro", "cryo"].includes(ele)
+        ? data(prod(...base, input.hit.ampMulti), { hit: { ele: constant(ele) } })
+        : prod(...base),
+      { key: `${ele}_swirl_hit` })
+  })
 }
 export const reactions = {
   anemo: {
