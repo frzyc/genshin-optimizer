@@ -45,9 +45,10 @@ export function ReactionToggle(props: ReactionToggleProps) {
   return <SolidToggleButtonGroup exclusive baseColor="secondary"
     value={reaction} onChange={(_, reaction) => characterDispatch({ reaction })} {...props}>
     <ToggleButton value="" disabled={!reaction} >{t`ampReaction.noReaction`}</ToggleButton >
-    {reactions.map(rm => <ToggleButton key={rm} value={rm} disabled={reaction === rm}>
-      <AmpReactionModeText reaction={rm} />
-    </ToggleButton >)}
+    {reactions.map(rm =>
+      <ToggleButton key={rm} value={rm} disabled={reaction === rm}>
+        <AmpReactionModeText reaction={rm} />
+      </ToggleButton >)}
   </SolidToggleButtonGroup>
 }
 type HitModeToggleProps = Omit<ToggleButtonGroupProps, "color">
