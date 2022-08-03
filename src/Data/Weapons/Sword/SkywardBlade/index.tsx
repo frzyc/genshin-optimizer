@@ -17,9 +17,10 @@ const [condPassivePath, condPassive] = cond(key, "SkyPiercingMight")
 const atkSrc_ = [0.2, 0.25, 0.3, 0.35, 0.40]
 const moveSPD_ = equal("on", condPassive, percent(0.1))
 const atkSPD_ = equal("on", condPassive, percent(0.1))
-const dmg = equal("on", condPassive, customDmgNode(prod(subscript(input.weapon.refineIndex, atkSrc_, { key: "_" }), input.premod.atk), "elemental", {
-  hit: { ele: constant("physical") }
-}))
+const dmg = equal(input.weapon.key, key,
+  equal("on", condPassive, customDmgNode(prod(subscript(input.weapon.refineIndex, atkSrc_, { key: "_" }), input.premod.atk), "elemental", {
+    hit: { ele: constant("physical") }
+  })))
 const critRate_ = subscript(input.weapon.refineIndex, data_gen.addProps.map(x => x.critRate_ ?? NaN))
 
 const data = dataObjForWeaponSheet(key, data_gen, {

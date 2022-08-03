@@ -6,7 +6,7 @@ import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database";
 import { TeamData } from "../Context/DataContext";
 import { common } from "../Formula";
-import { dataObjForArtifact, dataObjForCharacter, dataObjForWeapon, uiDataForTeam } from "../Formula/api";
+import { dataObjForArtifact, dataObjForCharacter, dataObjForWeapon, mergeData, uiDataForTeam } from "../Formula/api";
 import { Data } from "../Formula/type";
 import { ICachedArtifact } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
@@ -85,7 +85,7 @@ async function getTeamDataCalc(database: ArtCharDatabase, characterKey: Characte
 export async function getTeamData(database: ArtCharDatabase, characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[], overrideWeapon?: ICachedWeapon):
   Promise<TeamDataBundle | undefined> {
   if (!characterKey) return
-  const char1DataBundle = await getCharDataBundle(database, characterKey, mainStatAssumptionLevel, overrideArt, overrideWeapon)
+  const char1DataBundle = await getCharDataBundle(database, characterKey, true, mainStatAssumptionLevel, overrideArt, overrideWeapon)
   if (!char1DataBundle) return
   const teamBundle = { [characterKey]: char1DataBundle }
   const teamData: Dict<CharacterKey, Data[]> = { [characterKey]: char1DataBundle.data }
@@ -107,27 +107,35 @@ type CharBundle = {
   weaponSheet: WeaponSheet,
   data: Data[]
 }
-async function getCharDataBundle(database: ArtCharDatabase, characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[], overrideWeapon?: ICachedWeapon)
+async function getCharDataBundle(database: ArtCharDatabase, characterKey: CharacterKey | "", useCustom = false, mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[], overrideWeapon?: ICachedWeapon)
   : Promise<CharBundle | undefined> {
   if (!characterKey) return
   const character = database.chars.get(characterKey)
   if (!character) return
   const weapon = overrideWeapon ?? database.weapons.get(character.equippedWeapon)
   if (!weapon) return
-  const [characterSheet, weaponSheet, artifactSheetsData] = await Promise.all([
-    CharacterSheet.get(characterKey),
-    WeaponSheet.get(weapon.key),
-    ArtifactSheet.getAllData
-  ])
-  if (!characterSheet || !weaponSheet || !artifactSheetsData) return
+  const characterSheet = await CharacterSheet.get(characterKey)
+  if (!characterSheet) return
+
+  const weaponSheet = await WeaponSheet.get(weapon.key)
+  if (!weaponSheet) return
+
+  const weaponSheetsDataOfType = await WeaponSheet.getAllDataOfType(characterSheet.weaponTypeKey)
+
+  const weaponSheetsData = useCustom ? (() => {
+    // display is included in WeaponSheet.getAllDataOfType
+    const { display, ...restWeaponSheetData } = weaponSheet.data
+    return mergeData([restWeaponSheetData, weaponSheetsDataOfType])
+  })() : weaponSheet.data
+
+  const artifactSheetsData = await ArtifactSheet.getAllData
   const artifacts = (overrideArt ?? Object.values(character.equippedArtifacts).map(a => database.arts.get(a))).filter(a => a) as ICachedArtifact[]
+  const sheetData = mergeData([characterSheet.getData(character.elementKey), weaponSheetsData, artifactSheetsData])
   const data = [
     ...artifacts.map(a => dataObjForArtifact(a, mainStatAssumptionLevel)),
-    dataObjForCharacter(character),
-    characterSheet.getData(character.elementKey),
+    dataObjForCharacter(character, useCustom ? sheetData : undefined),
     dataObjForWeapon(weapon),
-    weaponSheet.data,
-    artifactSheetsData,
+    sheetData,
     common, // NEED TO PUT THIS AT THE END
     resonanceData,
   ]

@@ -5,8 +5,8 @@ import { CharacterContext } from "../Context/CharacterContext";
 import { DataContext } from "../Context/DataContext";
 import { infusionNode } from "../Data/Characters/dataUtil";
 import { uiInput as input } from "../Formula";
-import { allAmpReactions, allHitModes, ElementKey } from "../Types/consts";
-import AmpReactionModeText, { ampReactionMap } from "./AmpReactionModeText";
+import { allHitModes, AmpReactionKey, ElementKey } from "../Types/consts";
+import AmpReactionModeText from "./AmpReactionModeText";
 import DropdownButton, { DropdownButtonProps } from "./DropdownMenu/DropdownButton";
 import SolidToggleButtonGroup from "./SolidToggleButtonGroup";
 import SqBadge from "./SqBadge";
@@ -35,13 +35,20 @@ export function ReactionToggle(props: ReactionToggleProps) {
   const { data } = useContext(DataContext)
   const charEleKey = data.get(input.charEle).value as ElementKey
   const infusion = data.get(infusionNode).value as ElementKey
-  if (!["pyro", "hydro", "cryo", "anemo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusion)) return null
+  const allowedReactions: Dict<ElementKey, AmpReactionKey[]> = {
+    pyro: ["vaporize", "melt"],
+    hydro: ["vaporize"],
+    cryo: ["melt"],
+    anemo: ["vaporize", "melt"],
+  }
+  const reactions = [...new Set([...allowedReactions[charEleKey] ?? [], ...allowedReactions[infusion] ?? []])]
   return <SolidToggleButtonGroup exclusive baseColor="secondary"
     value={reaction} onChange={(_, reaction) => characterDispatch({ reaction })} {...props}>
     <ToggleButton value="" disabled={!reaction} >{t`ampReaction.noReaction`}</ToggleButton >
-    {allAmpReactions.map(rm => (charEleKey === "anemo" || charEleKey === rm.split("_")[0] || infusion === rm.split("_")[0]) && <ToggleButton key={rm} value={rm} disabled={reaction === rm}>
-      <AmpReactionModeText reaction={rm} subvariant={Object.keys(ampReactionMap[rm])[0]} />
-    </ToggleButton >)}
+    {reactions.map(rm =>
+      <ToggleButton key={rm} value={rm} disabled={reaction === rm}>
+        <AmpReactionModeText reaction={rm} />
+      </ToggleButton >)}
   </SolidToggleButtonGroup>
 }
 type HitModeToggleProps = Omit<ToggleButtonGroupProps, "color">

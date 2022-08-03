@@ -12,8 +12,8 @@ import usePromise from '../../../../../ReactHooks/usePromise';
 import { objPathValue } from '../../../../../Util/Util';
 import { TargetSelectorModal, TargetSelectorModalProps } from './TargetSelectorModal';
 
-export default function OptimizationTargetSelector({ optimizationTarget, setTarget, disabled = false, useSubVariant = false, targetSelectorModalProps = {} }: {
-  optimizationTarget?: string[], setTarget: (target: string[]) => void, disabled?: boolean, useSubVariant?: boolean, targetSelectorModalProps?: Partial<TargetSelectorModalProps>
+export default function OptimizationTargetSelector({ optimizationTarget, setTarget, disabled = false, ignoreGlobal = false, targetSelectorModalProps = {} }: {
+  optimizationTarget?: string[], setTarget: (target: string[]) => void, disabled?: boolean, ignoreGlobal?: boolean, targetSelectorModalProps?: Partial<TargetSelectorModalProps>
 }) {
   const [show, onShow, onClose] = useBoolState(false)
 
@@ -32,7 +32,8 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
 
   const invalidTarget = !optimizationTarget || !displayHeader || !node
 
-  const variant = invalidTarget ? "secondary" : useSubVariant ? node.info.subVariant : node.info.variant
+  const prevariant = invalidTarget ? "secondary" : node.info.variant
+  const variant = prevariant === "invalid" ? undefined : prevariant
 
   return <>
     <Button color="primary" onClick={onShow} disabled={disabled} >
@@ -45,6 +46,6 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
         <SqBadge color={variant}><strong>{KeyMap.get(node.info.key)}</strong></SqBadge>
       </Stack>}
     </Button>
-    <TargetSelectorModal show={show} onClose={onClose} setTarget={setTargetHandler} useSubVariant={useSubVariant} {...targetSelectorModalProps} />
+    <TargetSelectorModal show={show} onClose={onClose} setTarget={setTargetHandler} ignoreGlobal={ignoreGlobal} {...targetSelectorModalProps} />
   </>
 }

@@ -1,6 +1,6 @@
 import { Masonry } from "@mui/lab"
 import { CardContent, CardHeader, Divider, MenuItem, MenuList } from "@mui/material"
-import { useContext } from "react"
+import { useContext, useMemo } from "react"
 import CardDark from "../../../../../Components/Card/CardDark"
 import CardLight from "../../../../../Components/Card/CardLight"
 import ColorText from "../../../../../Components/ColoredText"
@@ -18,30 +18,41 @@ export interface TargetSelectorModalProps {
   show: boolean,
   onClose: () => void,
   setTarget: (target: string[]) => void,
-  useSubVariant?: boolean,
+  ignoreGlobal?: boolean,
   flatOnly?: boolean
   excludeSections?: string[]
 }
-export function TargetSelectorModal({ show, onClose, setTarget, useSubVariant = false, flatOnly = false, excludeSections = [] }: TargetSelectorModalProps) {
+export function TargetSelectorModal({ show, onClose, setTarget, ignoreGlobal = false, flatOnly = false, excludeSections = [] }: TargetSelectorModalProps) {
   const { data } = useContext(DataContext)
-  const sections = getDisplaySections(data).filter(([key]) => !excludeSections.includes(key))
-    // Determine if a section has all empty entries
-    .filter(([key, sectionObj]) =>
-      Object.values(sectionObj).some(n => !n.isEmpty && (!flatOnly || !(flatOnly && KeyMap.unit(n.info.key))))
-    )
+
+  const sections = useMemo(() => {
+    return getDisplaySections(data).filter(([key]) => !excludeSections.includes(key))
+      .map(([key, sectionObj]) => [key, Object.fromEntries(Object.entries(sectionObj).filter(([sectionKey, node]) => {
+        if (flatOnly && KeyMap.unit(node.info.key) === "%") return false
+
+        // Assume `ignoreGlobal`= multitarget, ignore heal nodes on multi-target
+        if (ignoreGlobal && node.info.variant === "success") return false
+
+        // Assume `ignoreGlobal`= multitarget, allow showing of empty nodes as targets.
+        if (!ignoreGlobal && node.isEmpty) return false
+        return true
+      })) as DisplaySub<NodeDisplay>] as [string, DisplaySub<NodeDisplay>])
+      // Determine if a section has all empty entries
+      .filter(([key, sectionObj]) => Object.keys(sectionObj).length)
+  }, [data, excludeSections, flatOnly, ignoreGlobal])
 
   return <ModalWrapper open={show} onClose={onClose}>
-    <CardDark >
+    <CardDark>
       <CardContent>
         <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={1}>
           {sections.map(([key, Nodes]) =>
-            <SelectorSection key={key} displayNs={Nodes} sectionKey={key} setTarget={setTarget} useSubVariant={useSubVariant} flatOnly={flatOnly} />)}
+            <SelectorSection key={key} displayNs={Nodes} sectionKey={key} setTarget={setTarget} />)}
         </Masonry >
       </CardContent>
     </CardDark>
   </ModalWrapper>
 }
-function SelectorSection({ displayNs, sectionKey, setTarget, useSubVariant = false, flatOnly = false }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[]) => void, useSubVariant?: boolean, flatOnly?: boolean }) {
+function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[]) => void, flatOnly?: boolean }) {
   const { data } = useContext(DataContext)
   const header = usePromise(() => getDisplayHeader(data, sectionKey), [data, sectionKey])
   return <CardLight key={sectionKey as string}>
@@ -49,15 +60,13 @@ function SelectorSection({ displayNs, sectionKey, setTarget, useSubVariant = fal
     <Divider />
     <MenuList>
       {Object.entries(displayNs).map(([key, n]) =>
-        <TargetSelectorMenuItem key={key} node={n} onClick={() => setTarget([sectionKey, key])} useSubVariant={useSubVariant} flatOnly={flatOnly} />)}
+        <TargetSelectorMenuItem key={key} node={n} onClick={() => setTarget([sectionKey, key])} />)}
     </MenuList>
   </CardLight>
 }
 
-function TargetSelectorMenuItem({ node, onClick, useSubVariant = false, flatOnly = false }: { node: NodeDisplay, onClick: () => void, useSubVariant?: boolean, flatOnly?: boolean }) {
-  if (node.isEmpty) return null
-  if (flatOnly && KeyMap.unit(node.info.key)) return null
+function TargetSelectorMenuItem({ node, onClick }: { node: NodeDisplay, onClick: () => void }) {
   return <MenuItem onClick={onClick} style={{ overflow: "hidden", textOverflow: "ellipsis" }}>
-    <ColorText color={useSubVariant ? node.info.subVariant : node.info.variant} >{KeyMap.get(node.info.key)}</ColorText>
+    <ColorText color={node.info.variant} >{KeyMap.get(node.info.key)}</ColorText>
   </MenuItem>
 }

@@ -31,6 +31,7 @@ export async function getDisplayHeader(data: UIData, sectionKey: string): Promis
 }> {
   if (!sectionKey) return errHeader
   if (sectionKey === "basic") return { title: "Basic Stats" }
+  if (sectionKey === "custom") return { title: "Custom Multi Target" }
   else if (sectionKey === "reaction") return { title: "Transformative Reactions" }
   else if (sectionKey.includes(":")) {
     const [namespace, key] = sectionKey.split(":")
@@ -68,24 +69,26 @@ export async function getDisplayHeader(data: UIData, sectionKey: string): Promis
   return errHeader
 }
 /**
- * Use this function to reorganize the sections to have basic stats at the beginning, and reation at the end.
+ * Use this function to reorganize the sections to have basic stats, custom at the beginning, and reaction at the end.
  * @param data
  * @returns
  */
-export function getDisplaySections(data: UIData,): [string, DisplaySub<NodeDisplay>][] {
+export function getDisplaySections(data: UIData): [string, DisplaySub<NodeDisplay>][] {
   const display = data.getDisplay()
-  const sections = Object.entries(display).filter(([key, nodes]) => !Object.values(nodes).every(x => x.isEmpty))
+  const sections = Object.entries(display)
   const basic = sections.filter(([k]) => k === "basic")
   const reaction = sections.filter(([k]) => k === "reaction")
+  const custom = sections.filter(([k]) => k === "custom")
   const weapon = sections.filter(([k]) => k.startsWith("weapon"))
   const artifact = sections.filter(([k]) => k.startsWith("artifact"))
-  const rest = sections.filter(([k]) => k !== "basic" && k !== "reaction" && !k.startsWith("weapon") && !k.startsWith("artifact"))
+  const rest = sections.filter(([k]) => k !== "basic" && k !== "reaction" && !k.startsWith("weapon") && !k.startsWith("artifact") && k !== "custom")
 
   return [
     ...basic,
+    ...reaction,
+    ...custom,
     ...rest,
     ...weapon,
     ...artifact,
-    ...reaction
   ]
 }

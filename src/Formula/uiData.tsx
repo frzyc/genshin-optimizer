@@ -311,6 +311,7 @@ function accumulateInfo<V>(operands: ContextNodeDisplay<V>[]): Info {
       case "anemo": case "cryo": case "hydro": case "pyro": case "electro": case "geo": return 1
       case "swirl": return 0.5
       case "physical": return 0
+      case "invalid": return -1
       default: assertUnreachable(variant)
     }
   }

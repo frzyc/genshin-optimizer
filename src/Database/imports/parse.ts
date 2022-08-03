@@ -1,5 +1,6 @@
 import Artifact from "../../Data/Artifacts/Artifact";
 import { ascensionMaxLevel } from "../../Data/LevelData";
+import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
 import { allMainStatKeys, allSubstatKeys, IArtifact, ISubstat } from "../../Types/artifact";
 import { ICharacter } from "../../Types/character";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allAmpReactions, allSlotKeys, allWeaponKeys } from "../../Types/consts";
@@ -72,7 +73,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   let {
     key: characterKey, level, ascension, hitMode, elementKey, reaction, conditional,
     bonusStats, enemyOverride, talent, infusionAura, constellation, team,
-    compareData
+    compareData, customMultiTarget
   } = obj
 
   if (!allCharacterKeys.includes(characterKey) ||
@@ -109,10 +110,12 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   // TODO: validate bonusStats
   if (typeof bonusStats !== "object" || !Object.entries(bonusStats).map(([_, num]) => typeof num === "number")) bonusStats = {}
   if (typeof enemyOverride !== "object" || !Object.entries(enemyOverride).map(([_, num]) => typeof num === "number")) enemyOverride = {}
+  if (!customMultiTarget) customMultiTarget = []
+  customMultiTarget = customMultiTarget.map(cmt => validateCustomMultiTarget(cmt)).filter(t => t)
   const result: ICharacter = {
     key: characterKey, level, ascension, hitMode, reaction, conditional,
     bonusStats, enemyOverride, talent, infusionAura, constellation, team,
-    compareData
+    compareData, customMultiTarget
   }
   if (elementKey) result.elementKey = elementKey
   return result

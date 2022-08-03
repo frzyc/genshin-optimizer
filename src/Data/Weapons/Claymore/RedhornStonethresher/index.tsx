@@ -1,6 +1,6 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { prod, subscript } from '../../../../Formula/utils'
+import { equal, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
@@ -16,8 +16,10 @@ const def_Src = [0.28, 0.35, 0.42, 0.49, 0.56]
 const normal_dmg_Src = [0.4, 0.5, 0.6, 0.7, 0.8]
 const charged_dmg_Src = [0.4, 0.5, 0.6, 0.7, 0.8]
 const def_ = subscript(input.weapon.refineIndex, def_Src)
-const normal_dmgInc = prod(subscript(input.weapon.refineIndex, normal_dmg_Src, { key: "_" }), input.premod.def)
-const charged_dmgInc = prod(subscript(input.weapon.refineIndex, charged_dmg_Src, { key: "_" }), input.premod.def)
+const normal_dmgInc = equal(input.weapon.key, key,
+  prod(subscript(input.weapon.refineIndex, normal_dmg_Src, { key: "_" }), input.premod.def))
+const charged_dmgInc = equal(input.weapon.key, key,
+  prod(subscript(input.weapon.refineIndex, charged_dmg_Src, { key: "_" }), input.premod.def))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

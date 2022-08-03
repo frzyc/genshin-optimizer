@@ -8,25 +8,25 @@ import { uncoloredEleIcons } from "./StatIcon";
 
 export const ampReactionMap = {
   melt: {
-    cryo: ["pyro", "cryo"],
-    pyro: ["cryo", "pyro"],
+    cryo: "pyro",
+    pyro: "cryo",
   },
   vaporize: {
-    hydro: ["pyro", "hydro"],
-    pyro: ["hydro", "pyro"],
+    hydro: "pyro",
+    pyro: "hydro",
   }
 } as const
 const sqBadgeStyle = { mx: 0.25, px: 0.25 }
-export default function AmpReactionModeText({ reaction, subvariant }: { reaction: AmpReactionKey, subvariant: Variant }) {
+export default function AmpReactionModeText({ reaction, trigger }: { reaction: AmpReactionKey, trigger?: Variant }) {
   const { t } = useTranslation("page_character")
-  const eles = ampReactionMap[reaction][subvariant]
-  if (!eles) return null;
-  const [base, trigger] = eles
+  if (!trigger) trigger = Object.keys(ampReactionMap[reaction])[0]
+  const base = ampReactionMap[reaction][trigger]
+  if (!base) return null;
 
   return <Box display="flex" alignItems="center">
     <ColorText color="melt">{t(`ampReaction.${reaction}`)}</ColorText>
     <SqBadge sx={sqBadgeStyle} color={base}>{uncoloredEleIcons[base]}</SqBadge>
     {`+`}
-    <SqBadge sx={sqBadgeStyle} color={trigger}>{uncoloredEleIcons[trigger]}</SqBadge>
+    <SqBadge sx={sqBadgeStyle} color={trigger as "cryo" | "pyro" | "hydro"}>{uncoloredEleIcons[trigger]}</SqBadge>
   </Box>
 }

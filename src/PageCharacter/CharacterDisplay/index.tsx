@@ -18,6 +18,7 @@ import usePromise from '../../ReactHooks/usePromise';
 import useTeamData from '../../ReactHooks/useTeamData';
 import useTitle from '../../ReactHooks/useTitle';
 import { allCharacterKeys, CharacterKey } from '../../Types/consts';
+import { CustomMultiTargetButton } from '../CustomMultiTarget';
 import CharSelectDropdown from './CharSelectDropdown';
 import FormulaModal from './FormulaModal';
 import LevelSelect from './LevelSelect';
@@ -81,8 +82,8 @@ function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardPro
           <Box display="flex" gap={1} flexWrap="wrap" flexGrow={1}>
             <CharSelectDropdown />
             <TravelerElementSelect />
-
             <DetailStatButton />
+            <CustomMultiTargetButton />
             <FormulasButton />
           </Box>
           {!!onClose && <CloseButton onClick={onClose} />}

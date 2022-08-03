@@ -3,7 +3,7 @@ import { input } from "../../Formula";
 import { inferInfoMut, mergeData } from "../../Formula/api";
 import { reactions } from "../../Formula/reaction";
 import { Data, DisplaySub, NumNode } from "../../Formula/type";
-import { constant, data, infoMut, lookup, percent, prod, stringPrio, subscript, sum, one } from "../../Formula/utils";
+import { constant, data, infoMut, lookup, none, one, percent, prod, stringPrio, subscript, sum, unequalStr } from "../../Formula/utils";
 import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey, Region } from "../../Types/consts";
 import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
@@ -16,7 +16,7 @@ const commonBasic = objectKeyMap(["hp", "atk", "def", "eleMas", "enerRech_", "cr
 
 export const infusionNode = stringPrio(
   input.infusion.nonOverridableSelf,
-  input.infusion.team,
+  unequalStr(input.infusion.team, none, input.infusion.team),
   input.infusion.overridableSelf)
 const inferredHitEle = stringPrio(
   lookup(input.hit.move, {

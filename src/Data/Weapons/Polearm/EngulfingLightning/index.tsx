@@ -14,7 +14,8 @@ const data_gen = data_gen_json as WeaponData
 
 const atk = [0.28, 0.35, 0.42, 0.49, 0.56]
 const atkMax = [0.8, 0.9, 1, 1.1, 1.2]
-const atk_ = min(prod(subscript(input.weapon.refineIndex, atk), sum(input.premod.enerRech_, percent(-1))), subscript(input.weapon.refineIndex, atkMax))
+const atk_ = equal(input.weapon.key, key,
+  min(prod(subscript(input.weapon.refineIndex, atk), sum(input.premod.enerRech_, percent(-1))), subscript(input.weapon.refineIndex, atkMax)))
 
 const enerRech = [0.3, 0.35, 0.40, 0.45, 0.5, 0.55]
 const [condPassivePath, condPassive] = cond(key, "TimelessDream")

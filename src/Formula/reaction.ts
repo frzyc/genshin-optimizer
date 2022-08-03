@@ -57,6 +57,9 @@ export const reactions = {
     pyroSwirl: trans.swirl.pyro,
     cryoSwirl: trans.swirl.cryo,
     hydroSwirl: trans.swirl.hydro,
+    overloaded: trans.overloaded,
+    electrocharged: trans.electrocharged,
+    superconduct: trans.superconduct,
     shattered: trans.shattered,
   },
   geo: {
