@@ -1,5 +1,5 @@
 import { EleEnemyResKey, StatKey } from "../KeyMap";
-import { CharacterKey, ElementKey, HitModeKey, InfusionAuraElements, ReactionModeKey, SlotKey } from "./consts";
+import { CharacterKey, ElementKey, HitModeKey, InfusionAuraElements, AmpReactionKey, SlotKey } from "./consts";
 import { IConditionalValues } from "./IConditional";
 import { DocumentSection } from "./sheet";
 export interface ICharacter {
@@ -17,7 +17,7 @@ export interface ICharacter {
   // GO-specific
   hitMode: HitModeKey
   elementKey?: ElementKey
-  reactionMode: ReactionModeKey | ""
+  reaction?: AmpReactionKey
   conditional: IConditionalValues
   bonusStats: Partial<Record<StatKey, number>>
   enemyOverride: Partial<Record<EleEnemyResKey | "enemyLevel" | "enemyDefRed_" | "enemyDefIgn_", number>>

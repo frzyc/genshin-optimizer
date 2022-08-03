@@ -1,6 +1,6 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { constant, equal, lookup, naught, percent, prod } from "../../../../Formula/utils"
+import { equal, lookup, naught, percent, prod } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, sgt, st } from '../../../SheetUtil'
@@ -22,7 +22,7 @@ const normal_dmg_ = lookup(condPassive, {
 const charged_dmg_ = lookup(condPassive, {
   ...objectKeyMap(range(1, 2), i => prod(chargedInc, i))
 }, naught)
-const atk = equal(input.activeCharKey, "Aloy", constant(66))
+const atk = equal(input.activeCharKey, "Aloy", 66)
 
 
 const data = dataObjForWeaponSheet(key, data_gen, {

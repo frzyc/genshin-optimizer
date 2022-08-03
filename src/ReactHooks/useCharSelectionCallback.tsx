@@ -47,7 +47,6 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     level: 1,
     ascension: 0,
     hitMode: "avgHit",
-    reactionMode: "",
     equippedArtifacts: objectKeyMap(allSlotKeys, () => ""),
     equippedWeapon: "",
     conditional: {},

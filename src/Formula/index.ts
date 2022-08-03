@@ -2,7 +2,7 @@ import { allEleEnemyResKeys } from "../KeyMap"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
 import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
-import { constant, equalStr, frac, lookup, max, min, naught, one, percent, prod, read, res, setReadNodeKeys, stringRead, sum, todo } from "./utils"
+import { constant, frac, lookup, max, min, naught, one, percent, prod, read, res, setReadNodeKeys, stringRead, sum, todo } from "./utils"
 
 const asConst = true as const, pivot = true as const
 
@@ -116,8 +116,9 @@ const input = setReadNodeKeys(deepClone({
   },
 
   hit: {
-    ele: stringRead(), reaction: stringRead(), move: stringRead(), hitMode: stringRead(),
-    base: read("add", { key: "base" }),
+    reaction: stringRead(),
+    ele: stringRead(), move: stringRead(), hitMode: stringRead(),
+    base: read("add", { key: "base" }), ampMulti: read(),
 
     dmgBonus: read("add", { key: "dmg_", pivot }),
     dmgInc: read("add", { key: "dmgInc", pivot }),
@@ -143,12 +144,6 @@ total.critRate_.info!.prefix = "uncapped"
 
 /** Base Amplifying Bonus */
 const baseAmpBonus = sum(one, prod(25 / 9, frac(total.eleMas, 1400)))
-/** Effective reaction, taking into account the hit's element */
-export const effectiveReaction = lookup(hit.ele, {
-  pyro: lookup(hit.reaction, { pyro_vaporize: constant("vaporize"), pyro_melt: constant("melt") }, undefined),
-  hydro: equalStr(hit.reaction, "hydro_vaporize", "vaporize"),
-  cryo: equalStr(hit.reaction, "cryo_melt", "melt"),
-}, undefined)
 
 const common: Data = {
   premod: {
@@ -217,17 +212,19 @@ const common: Data = {
       enemy.def,
       lookup(hit.ele,
         objectKeyMap(allElements, ele => enemy[`${ele}_resMulti` as const]), NaN),
-      lookup(effectiveReaction, {
-        melt: lookup(hit.ele, {
-          pyro: prod(2, sum(baseAmpBonus, total.melt_dmg_)),
-          cryo: prod(1.5, sum(baseAmpBonus, total.melt_dmg_)),
-        }, 1, { key: "melt_dmg_" }),
-        vaporize: lookup(hit.ele, {
-          hydro: prod(2, sum(baseAmpBonus, total.vaporize_dmg_)),
-          pyro: prod(1.5, sum(baseAmpBonus, total.vaporize_dmg_)),
-        }, 1, { key: "vaporize_dmg_" }),
-      }, 1),
+      hit.ampMulti,
     ),
+    ampMulti: lookup(hit.reaction, {
+      vaporize: lookup(hit.ele, {
+        hydro: prod(2, sum(baseAmpBonus, total.vaporize_dmg_)),
+        pyro: prod(1.5, sum(baseAmpBonus, total.vaporize_dmg_)),
+
+      }, one),
+      melt: lookup(hit.ele, {
+        pyro: prod(2, sum(baseAmpBonus, total.melt_dmg_)),
+        cryo: prod(1.5, sum(baseAmpBonus, total.melt_dmg_)),
+      }, one),
+    }, one),
   },
 
   enemy: {

@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { constant, equal, greaterEq, infoMut, matchFull, percent, prod } from '../../../Formula/utils'
+import { compareEq, constant, equal, greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
@@ -106,7 +106,7 @@ const dmgFormulas = {
   },
   burst: {
     singleDmg: dmgNode("hp", datamine.burst.singleDmg, "burst"),
-    totalDmg: matchFull(condUnderHP, "on",
+    totalDmg: compareEq(condUnderHP, "on",
       dmgNode("hp", datamine.burst.maxDmgExtend, "burst"),
       dmgNode("hp", datamine.burst.maxDmgBase, "burst")
     )

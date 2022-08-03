@@ -108,8 +108,8 @@ const c2BurstHeal = greaterEq(input.constellation, 2,
     prod(percent(datamine.c2.nc_heal_), input.total.hp)
   )
 )
-const c4AtkSpd_ = greaterEq(input.constellation, 4, constant(datamine.c4.atkSPD_))
-const c6Hydro_ = greaterEq(input.constellation, 6, equal(condC6, "on", constant(datamine.c6.hydro_)))
+const c4AtkSpd_ = greaterEq(input.constellation, 4, datamine.c4.atkSPD_)
+const c6Hydro_ = greaterEq(input.constellation, 6, equal(condC6, "on", datamine.c6.hydro_))
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
