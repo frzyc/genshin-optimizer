@@ -177,7 +177,7 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
         }
       }}
     >
-      <Box display="flex" gap={1} alignItems="center"
+      <Box display="flex" gap={1} alignItems="center" flexWrap="wrap"
         sx={{ pointerEvents: "auto", width: "100%", pr: 1 }}
       >
         < StyledInputBase value={target.name} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={setName} />
@@ -214,17 +214,17 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
   const isMeleeNorm = characterSheet?.isMelee() && path[0] === "normal"
   return <CardDark>
     <CardContent >
-      <Box sx={{ display: "flex", gap: 1 }}>
+      <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
         <CustomNumberInput float startAdornment="x" value={weight} onChange={setWeight} sx={{ borderRadius: 1, pl: 1 }} inputProps={{ sx: { textAlign: "center", width: "2em" } }} />
         <OptimizationTargetSelector optimizationTarget={path} setTarget={path => setCustomTarget({ ...customTarget, path })} useSubVariant targetSelectorModalProps={{ flatOnly: true, excludeSections: ["basic", "custom"] }} />
         <Box sx={{ flexGrow: 1 }} />
-
+        <ReactionDropdown reaction={reaction} setReactionMode={(rm) => setCustomTarget({ ...customTarget, reaction: rm })} node={node} />
         <DropdownButton title={t(`hitmode.${hitMode}`)}>
           {allHitModes.map(hm => <MenuItem key={hm} value={hm} disabled={hitMode === hm} onClick={() => setCustomTarget({ ...customTarget, hitMode: hm })} >{t(`hitmode.${hm}`)}</MenuItem>)}
         </DropdownButton>
         <Button color="error" onClick={deleteCustomTarget} ><DeleteForever /></Button>
       </Box>
-      <Grid container columns={{ xs: 2, lg: 3 }} sx={{ pt: 1 }} spacing={1}>
+      <Grid container columns={{ xs: 1, md: 2, lg: 3 }} sx={{ pt: 1 }} spacing={1}>
         {isMeleeNorm && <Grid item xs={1}>
           <DropdownButton title={infusionVals[infusionAura ?? ""]} color={infusionAura || "secondary"} disableElevation fullWidth >
             {Object.entries(infusionVals).map(([key, text]) =>
@@ -233,22 +233,21 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
                 onClick={() => setCustomTarget({ ...customTarget, infusionAura: key ? key : undefined })}>{text}</MenuItem>)}
           </DropdownButton>
         </Grid>}
-        <ReactionDropdown reaction={reaction} setReactionMode={(rm) => setCustomTarget({ ...customTarget, reaction: rm })} node={node} />
         <StatEditorList statKeys={keys} statFilters={bonusStats} setStatFilters={setFilter} wrapperFunc={wrapperFunc} />
       </Grid>
     </CardContent>
   </CardDark>
 }
-function ReactionDropdown({ node, reaction, setReactionMode }: { node: NodeDisplay, reaction?: AmpReactionKey, setReactionMode: (r: AmpReactionKey) => void }) {
+function ReactionDropdown({ node, reaction, setReactionMode }: { node: NodeDisplay, reaction?: AmpReactionKey, setReactionMode: (r?: AmpReactionKey) => void }) {
   const ele = node.info.subVariant ?? "physical"
   const { t } = useTranslation("page_character")
   if (!["pyro", "hydro", "cryo"].includes(ele)) return null
-  return <Grid item xs={1}><DropdownButton fullWidth title={reaction ? <AmpReactionModeText reaction={reaction} /> : t`ampReaction.noReaction`} sx={{ ml: "auto" }}>
-    <MenuItem value="" disabled={!reaction} >No Reactions</MenuItem >
+  return <DropdownButton title={reaction ? <AmpReactionModeText reaction={reaction} /> : t`ampReaction.noReaction`} sx={{ ml: "auto" }}>
+    <MenuItem value="" disabled={!reaction} onClick={() => setReactionMode()} >No Reactions</MenuItem >
     {allAmpReactions.map(rm => <MenuItem key={rm} disabled={reaction === rm} onClick={() => setReactionMode(rm)}>
       <AmpReactionModeText reaction={rm} />
     </MenuItem >)}
-  </DropdownButton></Grid >
+  </DropdownButton>
 }
 function AddCustomTargetBtn({ setTarget }: { setTarget: (t: string[]) => void }) {
   const [show, onShow, onClose] = useBoolState(false)
