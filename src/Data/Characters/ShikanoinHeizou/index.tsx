@@ -91,11 +91,10 @@ const conviction_dmg_ = equal(condDeclensionStacks, "4",
 const totalStacks_dmg_ = sum(declension_dmg_, conviction_dmg_)
 
 const [condSkillHitPath, condSkillHit] = cond(key, "skillHit")
-const a4_eleMas = greaterEq(input.asc, 4,
-  unequal(target.charKey, key, // Not applying to Heizou
-    equal(condSkillHit, "on", datamine.passive2.eleMas)
-  )
+const a4_eleMasDisp = greaterEq(input.asc, 4,
+  equal(condSkillHit, "on", datamine.passive2.eleMas)
 )
+const a4_eleMas = unequal(target.charKey, key, a4_eleMasDisp)
 
 // TODO: After non-stacking buffs
 // const staminaSprintDec_ = percent(datamine.passive3.staminaSprintDec_)
@@ -251,7 +250,7 @@ const sheet: ICharacterSheet = {
         states: {
           on: {
             fields: [{
-              node: a4_eleMas
+              node: infoMut(a4_eleMasDisp, { key: "eleMas" }),
             }, {
               text: sgt("duration"),
               value: datamine.passive2.duration,
