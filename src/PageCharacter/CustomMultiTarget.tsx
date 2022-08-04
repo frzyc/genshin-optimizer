@@ -235,7 +235,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
     <CardContent >
       <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
         <CustomNumberInput disableNegative float startAdornment="x" value={weight} onChange={setWeight} sx={{ borderRadius: 1, pl: 1 }} inputProps={{ sx: { textAlign: "center", width: "2em" } }} />
-        <OptimizationTargetSelector optimizationTarget={path} setTarget={path => setCustomTarget({ ...customTarget, path })} ignoreGlobal targetSelectorModalProps={{ flatOnly: true, excludeSections: ["basic", "custom"] }} />
+        <OptimizationTargetSelector optimizationTarget={path} setTarget={path => setCustomTarget({ ...customTarget, path, reaction: undefined, infusionAura: undefined })} ignoreGlobal targetSelectorModalProps={{ flatOnly: true, excludeSections: ["basic", "custom"] }} />
         <Box sx={{ flexGrow: 1 }} />
         <ReactionDropdown reaction={reaction} setReactionMode={(rm) => setCustomTarget({ ...customTarget, reaction: rm })} node={node} infusionAura={infusionAura} />
         <DropdownButton title={t(`hitmode.${hitMode}`)}>
@@ -249,7 +249,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
             {Object.entries(infusionVals).map(([key, text]) =>
               <MenuItem key={key} sx={key ? { color: `${key}.main` } : undefined}
                 selected={key === infusionAura} disabled={key === infusionAura}
-                onClick={() => setCustomTarget({ ...customTarget, infusionAura: key ? key : undefined })}>{text}</MenuItem>)}
+                onClick={() => setCustomTarget({ ...customTarget, infusionAura: key ? key : undefined, reaction: undefined })}>{text}</MenuItem>)}
           </DropdownButton>
         </Grid>}
         <StatEditorList statKeys={keys} statFilters={bonusStats} setStatFilters={setFilter} wrapperFunc={wrapperFunc} />
