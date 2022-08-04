@@ -124,8 +124,7 @@ function SetBadge({ setKey, currentlyEquipped = false, slotarr }: { setKey: Arti
     } disableInteractive >
       <SqBadge color={currentlyEquipped ? "success" : "primary"} ><Typography >
         {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {artifactSheet.name ?? ""}
-          {setActive.map(n => <SqBadge sx={{ ml: 0.5 }} key={n} color="success">{n}</SqBadge>)}
-
+        {setActive.map(n => <SqBadge sx={{ ml: 0.5 }} key={n} color="success">{n}</SqBadge>)}
       </Typography></SqBadge>
     </BootstrapTooltip>
   </Box>
