@@ -114,15 +114,18 @@ function SetBadges({ currentlyEquipped = false }: { currentlyEquipped: boolean }
 function SetBadge({ setKey, currentlyEquipped = false, slotarr }: { setKey: ArtifactSetKey, currentlyEquipped: boolean, slotarr: ArtifactSlotKey[] }) {
   const artifactSheet = usePromise(() => ArtifactSheet.get(setKey), [])
   if (!artifactSheet) return null
-
+  const numInSet = slotarr.length
+  const setActive = Object.keys(artifactSheet.setEffects).map((setKey) => parseInt(setKey)).filter(setNum => setNum <= numInSet)
   return <Box>
     <BootstrapTooltip placement="top" title={
       <Suspense fallback={<Skeleton variant='rectangular' width={100} height={100} />}>
-        <SetToolTipTitle artifactSheet={artifactSheet} numInSet={slotarr.length} />
+        <SetToolTipTitle artifactSheet={artifactSheet} numInSet={numInSet} />
       </Suspense>
     } disableInteractive >
       <SqBadge color={currentlyEquipped ? "success" : "primary"} ><Typography >
-        {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {artifactSheet.name ?? ""}
+        {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {artifactSheet.name ?? ""} <Box display="inline-flex" gap={0.5}>
+          {setActive.map(n => <SqBadge color="success">{n}</SqBadge>)}
+        </Box>
       </Typography></SqBadge>
     </BootstrapTooltip>
   </Box>

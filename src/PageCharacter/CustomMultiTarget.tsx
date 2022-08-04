@@ -42,7 +42,7 @@ function validateOptTarget(path: string[]): string[] {
 function validateCustomTarget(ct: any): CustomTarget | undefined {
   let { weight, path, hitMode, reaction, infusionAura, bonusStats } = ct
 
-  if (typeof weight !== "number")
+  if (typeof weight !== "number" || weight <= 0)
     weight = 1
 
   if (!Array.isArray(path) || path[0] === "custom")
@@ -234,7 +234,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
   return <CardDark>
     <CardContent >
       <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
-        <CustomNumberInput float startAdornment="x" value={weight} onChange={setWeight} sx={{ borderRadius: 1, pl: 1 }} inputProps={{ sx: { textAlign: "center", width: "2em" } }} />
+        <CustomNumberInput disableNegative float startAdornment="x" value={weight} onChange={setWeight} sx={{ borderRadius: 1, pl: 1 }} inputProps={{ sx: { textAlign: "center", width: "2em" } }} />
         <OptimizationTargetSelector optimizationTarget={path} setTarget={path => setCustomTarget({ ...customTarget, path })} ignoreGlobal targetSelectorModalProps={{ flatOnly: true, excludeSections: ["basic", "custom"] }} />
         <Box sx={{ flexGrow: 1 }} />
         <ReactionDropdown reaction={reaction} setReactionMode={(rm) => setCustomTarget({ ...customTarget, reaction: rm })} node={node} />
@@ -243,7 +243,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
         </DropdownButton>
         <Button color="error" onClick={deleteCustomTarget} ><DeleteForever /></Button>
       </Box>
-      <Grid container columns={{ xs: 1, md: 2, lg: 3 }} sx={{ pt: 1 }} spacing={1}>
+      <Grid container columns={{ xs: 1, lg: 2 }} sx={{ pt: 1 }} spacing={1}>
         {isMeleeNorm && <Grid item xs={1}>
           <DropdownButton title={infusionVals[infusionAura ?? ""]} color={infusionAura || "secondary"} disableElevation fullWidth >
             {Object.entries(infusionVals).map(([key, text]) =>
