@@ -16,7 +16,7 @@ import { allInputPremodKeys, InputPremodKey } from "../Formula";
 import { NodeDisplay, UIData } from "../Formula/uiData";
 import useBoolState from "../ReactHooks/useBoolState";
 import { CustomMultiTarget, CustomTarget } from "../Types/character";
-import { allAmpReactions, allHitModes, allInfusionAuraElements, AmpReactionKey, HitModeKey } from "../Types/consts";
+import { allAmpReactions, allHitModes, allInfusionAuraElements, allowedAmpReactions, AmpReactionKey, HitModeKey, InfusionAuraElements } from "../Types/consts";
 import { objPathValue } from "../Util/Util";
 import OptimizationTargetSelector from "./CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector";
 import { TargetSelectorModal } from "./CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal";
@@ -235,9 +235,9 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
     <CardContent >
       <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
         <CustomNumberInput disableNegative float startAdornment="x" value={weight} onChange={setWeight} sx={{ borderRadius: 1, pl: 1 }} inputProps={{ sx: { textAlign: "center", width: "2em" } }} />
-        <OptimizationTargetSelector optimizationTarget={path} setTarget={path => setCustomTarget({ ...customTarget, path })} ignoreGlobal targetSelectorModalProps={{ flatOnly: true, excludeSections: ["basic", "custom"] }} />
+        <OptimizationTargetSelector optimizationTarget={path} setTarget={path => setCustomTarget({ ...customTarget, path, reaction: undefined, infusionAura: undefined })} ignoreGlobal targetSelectorModalProps={{ flatOnly: true, excludeSections: ["basic", "custom"] }} />
         <Box sx={{ flexGrow: 1 }} />
-        <ReactionDropdown reaction={reaction} setReactionMode={(rm) => setCustomTarget({ ...customTarget, reaction: rm })} node={node} />
+        <ReactionDropdown reaction={reaction} setReactionMode={(rm) => setCustomTarget({ ...customTarget, reaction: rm })} node={node} infusionAura={infusionAura} />
         <DropdownButton title={t(`hitmode.${hitMode}`)}>
           {allHitModes.map(hm => <MenuItem key={hm} value={hm} disabled={hitMode === hm} onClick={() => setCustomTarget({ ...customTarget, hitMode: hm })} >{t(`hitmode.${hm}`)}</MenuItem>)}
         </DropdownButton>
@@ -249,7 +249,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
             {Object.entries(infusionVals).map(([key, text]) =>
               <MenuItem key={key} sx={key ? { color: `${key}.main` } : undefined}
                 selected={key === infusionAura} disabled={key === infusionAura}
-                onClick={() => setCustomTarget({ ...customTarget, infusionAura: key ? key : undefined })}>{text}</MenuItem>)}
+                onClick={() => setCustomTarget({ ...customTarget, infusionAura: key ? key : undefined, reaction: undefined })}>{text}</MenuItem>)}
           </DropdownButton>
         </Grid>}
         <StatEditorList statKeys={keys} statFilters={bonusStats} setStatFilters={setFilter} wrapperFunc={wrapperFunc} />
@@ -257,13 +257,15 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
     </CardContent>
   </CardDark>
 }
-function ReactionDropdown({ node, reaction, setReactionMode }: { node: NodeDisplay, reaction?: AmpReactionKey, setReactionMode: (r?: AmpReactionKey) => void }) {
+function ReactionDropdown({ node, reaction, setReactionMode, infusionAura }: { node: NodeDisplay, reaction?: AmpReactionKey, setReactionMode: (r?: AmpReactionKey) => void, infusionAura?: InfusionAuraElements }) {
   const ele = node.info.variant ?? "physical"
   const { t } = useTranslation("page_character")
-  if (!["pyro", "hydro", "cryo"].includes(ele)) return null
+
+  if (!["pyro", "hydro", "cryo"].some(e => e === ele || e === infusionAura)) return null
+  const reactions = [...new Set([...allowedAmpReactions[ele] ?? [], ...allowedAmpReactions[infusionAura ?? ""] ?? []])]
   return <DropdownButton title={reaction ? <AmpReactionModeText reaction={reaction} /> : t`ampReaction.noReaction`} sx={{ ml: "auto" }}>
     <MenuItem value="" disabled={!reaction} onClick={() => setReactionMode()} >No Reactions</MenuItem >
-    {allAmpReactions.map(rm => <MenuItem key={rm} disabled={reaction === rm} onClick={() => setReactionMode(rm)}>
+    {reactions.map(rm => <MenuItem key={rm} disabled={reaction === rm} onClick={() => setReactionMode(rm)}>
       <AmpReactionModeText reaction={rm} />
     </MenuItem >)}
   </DropdownButton>
