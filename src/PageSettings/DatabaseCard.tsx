@@ -145,10 +145,10 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
   }, [setDbMeta, tempName, database, current])
   const onKeyDOwn = useCallback(e => e.key === "Enter" && onBlur(), [onBlur],)
 
-  return <CardDark sx={{ height: "100%" }}>
+  return <CardDark sx={{ height: "100%", boxShadow: current ? "0px 0px 0px 2px green inset" : undefined }}>
     <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
       < StyledInputBase value={tempName} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={(e) => setTempName(e.target.value)} onBlur={onBlur} onKeyDown={onKeyDOwn} />
-      {!current && <Button startIcon={<ImportExport />} onClick={onSwap} color="success">{t`DatabaseCard.button.swap`}</Button>}
+      {!current && <Button startIcon={<ImportExport />} onClick={onSwap} color="warning">{t`DatabaseCard.button.swap`}</Button>}
       <Chip color={current ? "success" : "secondary"} label={current ? t`DatabaseCard.currentDB` : `${t`DatabaseCard.title`} ${index}`} />
     </CardContent>
     <Divider />
