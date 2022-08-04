@@ -62,7 +62,7 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component, emphasize 
   const isTeamBuff = node.info.isTeamBuff
   const fieldFormulaText = node.formula
   let fieldVal = "" as Displayable
-  if (oldValue) {
+  if (oldValue !== undefined) {
     const diff = node.value - oldValue
     fieldVal = <span>{valueString(oldValue, node.unit)}{diff > 0.0001 || diff < -0.0001 ? <ColorText color={diff > 0 ? "success" : "error"}> {diff > 0 ? "+" : ""}{valueString(diff, node.unit)}</ColorText> : ""}</span>
   } else fieldVal = valueString(node.value, node.unit)
