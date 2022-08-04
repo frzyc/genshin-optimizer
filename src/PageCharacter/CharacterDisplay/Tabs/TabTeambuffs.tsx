@@ -86,7 +86,6 @@ function TeammateDisplay({ index }: { index: number }) {
     character: { ...dataBundle.character, conditional: active.teamConditional[teamMateKey] ?? {} },
     characterSheet: dataBundle.characterSheet,
     characterDispatch: (state) => {
-      console.log("teammatedispatch", state)
       if (!teamMateKey) return
       if (!("conditional" in state)) return
       const { conditional } = state
