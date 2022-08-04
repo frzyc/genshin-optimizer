@@ -159,9 +159,3 @@ export function deepFreeze(obj: any, layers: number = 5) {
   if (typeof obj === "object")
     Object.values(Object.freeze(obj)).forEach(o => deepFreeze(o, layers--))
 }
-
-export function floatCompare(a: number, b: number, accuracy: number = 0.00001) {
-  const diff = a - b
-  if (Math.abs(diff) < accuracy) return 0
-  return diff
-}
