@@ -5,12 +5,13 @@ import { CharacterContext } from "../Context/CharacterContext";
 import { DataContext } from "../Context/DataContext";
 import { infusionNode } from "../Data/Characters/dataUtil";
 import { uiInput as input } from "../Formula";
-import { allHitModes, allowedAmpReactions, AmpReactionKey, ElementKey } from "../Types/consts";
+import { allHitModes, allowedAmpReactions, ElementKey } from "../Types/consts";
 import AmpReactionModeText from "./AmpReactionModeText";
 import DropdownButton, { DropdownButtonProps } from "./DropdownMenu/DropdownButton";
 import SolidToggleButtonGroup from "./SolidToggleButtonGroup";
 import SqBadge from "./SqBadge";
 import { uncoloredEleIcons } from "./StatIcon";
+
 export const infusionVals = {
   "": <span>No Team Melee Infusion</span>,
   "pyro": <span >{uncoloredEleIcons.pyro} <SqBadge>Bennett C6</SqBadge> Fire Ventures with Me</span>,
