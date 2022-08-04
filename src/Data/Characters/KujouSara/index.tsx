@@ -67,7 +67,7 @@ const skillTenguAmbush_disp = equal("TenguJuuraiAmbush", condSkillTenguAmbush,
 const skillTenguAmbush_ = equal(input.activeCharKey, target.charKey, skillTenguAmbush_disp)
 
 const [condC6Path, condC6] = cond(key, "c6")
-const c6ElectroCritDmg_ = equal("c6", condC6, percent(datamine.constellation6.atkInc))
+const c6ElectroCritDmg_ = greaterEq(input.constellation, 6, equal("c6", condC6, percent(datamine.constellation6.atkInc)))
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
