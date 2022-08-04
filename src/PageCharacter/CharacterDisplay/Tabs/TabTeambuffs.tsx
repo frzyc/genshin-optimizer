@@ -1,25 +1,24 @@
 import { PersonAdd } from "@mui/icons-material";
 import { CardContent, CardHeader, Divider, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useContext, useMemo } from 'react';
+import { useContext, useMemo } from 'react';
+import { useTranslation } from "react-i18next";
 import CardLight from "../../../Components/Card/CardLight";
-import CharacterCard from "../../../Components/Character/CharacterCard";
 import CharacterAutocomplete from "../../../Components/Character/CharacterAutocomplete";
+import CharacterCard from "../../../Components/Character/CharacterCard";
 import DocumentDisplay from "../../../Components/DocumentDisplay";
 import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
 import InfoTooltip from "../../../Components/InfoTooltip";
+import { CharacterContext, CharacterContextObj } from "../../../Context/CharacterContext";
+import { DataContext, dataContextObj } from "../../../Context/DataContext";
 import { ArtifactSheet } from "../../../Data/Artifacts/ArtifactSheet";
 import { resonanceSheets } from "../../../Data/Resonance";
-import { DataContext, dataContextObj } from "../../../Context/DataContext";
-import { CharacterContext, CharacterContextObj } from "../../../Context/CharacterContext";
 import { uiInput as input } from "../../../Formula";
 import { NodeDisplay } from "../../../Formula/uiData";
-import useCharacterReducer from "../../../ReactHooks/useCharacterReducer";
 import useCharSelectionCallback from "../../../ReactHooks/useCharSelectionCallback";
 import usePromise from "../../../ReactHooks/usePromise";
 import { ElementKey } from "../../../Types/consts";
 import { objPathValue, range } from "../../../Util/Util";
-import { useTranslation } from "react-i18next";
 
 export default function TabTeambuffs() {
   return <Box display="flex" flexDirection="column" gap={1} alignItems="stretch">
@@ -78,46 +77,60 @@ function ResonanceDisplay() {
 function TeammateDisplay({ index }: { index: number }) {
   const { teamData } = useContext(DataContext)
   const { t } = useTranslation("page_character")
-  const { character: active, characterDispatch: activeCharacterDispatch } = useContext(CharacterContext)
-  const activeCharacterKey = active.key
-  const characterKey = active.team[index]
-  const characterDispatch = useCharacterReducer(characterKey)
+  const { character: active, character: { key: activeCharacterKey }, characterDispatch } = useContext(CharacterContext)
+  const teamMateKey = active.team[index]
   const onClickHandler = useCharSelectionCallback()
 
-  const dataBundle = teamData[characterKey]
+  const dataBundle = teamData[teamMateKey]
   const teammateCharacterContext: CharacterContextObj | undefined = useMemo(() => dataBundle && {
-    character: dataBundle.character,
+    character: { ...dataBundle.character, conditional: active.teamConditional[teamMateKey] ?? {} },
     characterSheet: dataBundle.characterSheet,
-    characterDispatch
-  }, [dataBundle, characterDispatch])
+    characterDispatch: (state) => {
+      console.log("teammatedispatch", state)
+      if (!teamMateKey) return
+      if (!("conditional" in state)) return
+      const { conditional } = state
+      characterDispatch({ type: "teamConditional", teamMateKey: teamMateKey, conditional })
+    }
+  }, [active, teamMateKey, dataBundle, characterDispatch])
   const teamMateDataContext: dataContextObj | undefined = useMemo(() => dataBundle && {
     data: dataBundle.target,
     teamData: teamData,
   }, [dataBundle, teamData])
   return <CardLight>
-    <CardContent>
-      <CharacterAutocomplete fullWidth value={characterKey}
-        onChange={charKey => activeCharacterDispatch({ type: "team", index, charKey })}
-        disable={ck => ck === activeCharacterKey || (ck !== "" && active.team.includes(ck))}
-        labelText={t("teammate", { count: index + 1 })}
-        defaultText={t("none")}
-        defaultIcon={<PersonAdd />}
-        showDefault
-      />
-    </CardContent>
+    <CharacterAutocomplete fullWidth value={teamMateKey}
+      onChange={charKey => characterDispatch({ type: "team", index, charKey })}
+      disable={ck => ck === activeCharacterKey || (ck !== "" && active.team.includes(ck))}
+      labelText={t("teammate", { count: index + 1 })}
+      defaultText={t("none")}
+      defaultIcon={<PersonAdd />}
+      showDefault
+    />
     {teammateCharacterContext && <CharacterContext.Provider value={teammateCharacterContext}>
       {teamMateDataContext && <DataContext.Provider value={teamMateDataContext}>
-        <CharacterCard characterKey={characterKey}
+        <CharacterCard characterKey={teamMateKey}
           onClickHeader={onClickHandler}
-          artifactChildren={<CharArtifactCondDisplay />}
-          weaponChildren={<CharWeaponCondDisplay />}
-          characterChildren={<CharTalentCondDisplay />}
+          // Need to wrap these elements with the providers for them to use the correct functions.
+          artifactChildren={<CharacterContext.Provider value={teammateCharacterContext}>
+            <DataContext.Provider value={teamMateDataContext}>
+              <CharArtifactCondDisplay />
+            </DataContext.Provider>
+          </CharacterContext.Provider>}
+          weaponChildren={<CharacterContext.Provider value={teammateCharacterContext}>
+            <DataContext.Provider value={teamMateDataContext}>
+              <CharWeaponCondDisplay />
+            </DataContext.Provider>
+          </CharacterContext.Provider>}
+          characterChildren={<CharacterContext.Provider value={teammateCharacterContext}>
+            <DataContext.Provider value={teamMateDataContext}>
+              <CharTalentCondDisplay />
+            </DataContext.Provider>
+          </CharacterContext.Provider>}
           isTeammateCard
         />
       </DataContext.Provider>}
     </CharacterContext.Provider>}
   </CardLight>
-
 }
 function CharArtifactCondDisplay() {
   const { data, } = useContext(DataContext)
