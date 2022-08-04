@@ -16,7 +16,7 @@ import { allInputPremodKeys, InputPremodKey } from "../Formula";
 import { NodeDisplay, UIData } from "../Formula/uiData";
 import useBoolState from "../ReactHooks/useBoolState";
 import { CustomMultiTarget, CustomTarget } from "../Types/character";
-import { allAmpReactions, allHitModes, allInfusionAuraElements, AmpReactionKey, HitModeKey } from "../Types/consts";
+import { allAmpReactions, allHitModes, allInfusionAuraElements, allowedAmpReactions, AmpReactionKey, HitModeKey } from "../Types/consts";
 import { objPathValue } from "../Util/Util";
 import OptimizationTargetSelector from "./CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector";
 import { TargetSelectorModal } from "./CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal";
@@ -261,9 +261,10 @@ function ReactionDropdown({ node, reaction, setReactionMode }: { node: NodeDispl
   const ele = node.info.variant ?? "physical"
   const { t } = useTranslation("page_character")
   if (!["pyro", "hydro", "cryo"].includes(ele)) return null
+  const reactions = allowedAmpReactions[ele]
   return <DropdownButton title={reaction ? <AmpReactionModeText reaction={reaction} /> : t`ampReaction.noReaction`} sx={{ ml: "auto" }}>
     <MenuItem value="" disabled={!reaction} onClick={() => setReactionMode()} >No Reactions</MenuItem >
-    {allAmpReactions.map(rm => <MenuItem key={rm} disabled={reaction === rm} onClick={() => setReactionMode(rm)}>
+    {reactions.map(rm => <MenuItem key={rm} disabled={reaction === rm} onClick={() => setReactionMode(rm)}>
       <AmpReactionModeText reaction={rm} />
     </MenuItem >)}
   </DropdownButton>

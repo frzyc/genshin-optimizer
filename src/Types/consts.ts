@@ -286,3 +286,9 @@ export type WeaponTypeKey = typeof allWeaponTypeKeys[number]
 export type RollColorKey = typeof allRollColorKeys[number]
 export type CharacterSpecializedStatKey = typeof characterSpecializedStatKeys[number]
 export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[]
+export const allowedAmpReactions: Dict<ElementKey, AmpReactionKey[]> = {
+  pyro: ["vaporize", "melt"],
+  hydro: ["vaporize"],
+  cryo: ["melt"],
+  anemo: ["vaporize", "melt"],
+}
