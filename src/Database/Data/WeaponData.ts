@@ -20,14 +20,10 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
 
         // Update relations
         const { location } = flex
-        if (location) {
-          const char = this.database.chars.get(location)
-          if (char && !char.equippedWeapon) {
-            this.database.chars.setEquippedWeapon(location, key)
-          }
-        } else {
-          flex.location = ""
-        }
+        const char = this.database.chars.get(location)
+        if (location && char && !char.equippedWeapon)
+          this.database.chars.setEquippedWeapon(location, key)
+        else flex.location = ""
 
         const weapon = validateWeapon(flex, key)
 
