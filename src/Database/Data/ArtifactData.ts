@@ -22,9 +22,9 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
         // Update relations
         const { location, slotKey } = flex
         const char = this.database.chars.get(location)
-        if (location && char && char.equippedArtifacts[slotKey] === "") {
+        if (location && char && char.equippedArtifacts[slotKey] === "")
           this.database.chars.setEquippedArtifact(location, slotKey, key)
-        } else flex.location = ""
+        else flex.location = ""
 
         const { artifact } = validateArtifact(flex, key)
 
