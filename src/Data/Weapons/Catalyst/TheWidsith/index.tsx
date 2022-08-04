@@ -45,6 +45,7 @@ const sheet: IWeaponSheet = {
   document: [{
     value: condPassive,
     path: condPassivePath,
+    teamBuff: true,
     header: headerTemplate(key, icon, iconAwaken, st("conditional")),
     name: tr("passiveName"),
     states: {

@@ -55,6 +55,7 @@ const sheet: IWeaponSheet = {
     value: condNode,
     path: condPath,
     name: trm("emblem"),
+    teamBuff: true,
     header: headerTemplate(key, icon, iconAwaken, st("stacks")),
     states: Object.fromEntries(
       stacks.map(stack => [stack, {

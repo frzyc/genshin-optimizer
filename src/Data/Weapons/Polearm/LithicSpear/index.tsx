@@ -32,6 +32,7 @@ const sheet: IWeaponSheet = {
   document: [{
     value: condStack,
     path: condStackPath,
+    teamBuff: true,
     header: headerTemplate(key, icon, iconAwaken, st("conditional")),
     name: trm("condName"),
     states: Object.fromEntries(range(1, 4).map(i => [i, {

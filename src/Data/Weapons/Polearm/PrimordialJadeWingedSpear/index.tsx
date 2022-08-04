@@ -30,6 +30,7 @@ const sheet: IWeaponSheet = {
   document: [{
     value: condStack,
     path: condStackPath,
+    teamBuff: true,
     header: headerTemplate(key, icon, iconAwaken, st("stacks")),
     name: st("hitOp.none"),
     states: Object.fromEntries(range(1, 7).map(i => [i, {

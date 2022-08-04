@@ -25,8 +25,8 @@ const dmg_Nodes = Object.fromEntries(allElements.map(e => [`${e}_dmg_`, subscrip
 const atkInc = prod(
   compareEq(input.activeCharKey, input.charKey,
     constant(1, { /* TODO: Add key for active char */ }),
-    constant(2, { /* TODO: Add key for inactive char */ })),
-  lookup(condStack, objectKeyMap(range(1, 6), i => constant(i)), 0), // TODO: Add key for stack
+    constant(2, { key: `weapon_${key}:inactiveKey` })),
+  lookup(condStack, objectKeyMap(range(1, 6), i => constant(i, { key: "sheet:stacks" })), 0),
   subscript(input.weapon.refineIndex, atk_, { key: '_' }),
 )
 export const data = dataObjForWeaponSheet(key, data_gen, {
@@ -44,6 +44,7 @@ const sheet: IWeaponSheet = {
   }, {
     value: condStack,
     path: condStackPath,
+    teamBuff: true,
     header: headerTemplate(key, icon, iconAwaken, st("stacks")),
     name: tr("passiveName"),
     states: Object.fromEntries(range(1, 6).map(i => [i, {
