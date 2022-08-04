@@ -213,7 +213,7 @@ function ArtifactSectionCard() {
           </FieldDisplayList>
         </CardDark>
         {artifactSheets && setEffects && Object.entries(setEffects).flatMap(([setKey, setNumKeyArr]) =>
-          setNumKeyArr.map(setNumKey => <CardDark key={setKey} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+          setNumKeyArr.map(setNumKey => <CardDark key={setKey + setNumKey} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <SetEffectDisplay key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} />
           </CardDark>)
         )}
