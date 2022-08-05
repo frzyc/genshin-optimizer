@@ -179,7 +179,7 @@ const sheet: ICharacterSheet = {
         fields: [{
           node: infoMut(dmgFormulas.skill.pressDmg, { key: `char_${key}_gen:skill.skillParams.0` }),
         }, {
-          node: infoMut(dmgFormulas.skill.ringHeal, { key: `char_${key}_gen:skill.skillParams.1`, variant: "success" })
+          node: infoMut(dmgFormulas.skill.ringHeal, { key: `char_${key}_gen:skill.skillParams.1` })
         }, {
           node: infoMut(dmgFormulas.skill.ringDmg, { key: `char_${key}_gen:skill.skillParams.2` }),
         }, {

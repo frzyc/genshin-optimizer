@@ -236,7 +236,7 @@ const sheet: ICharacterSheet = {
 
       passive1: ct.talentTemplate("passive1", [ct.fieldsTemplate("passive1", {
         fields: [{
-          node: infoMut(dmgFormulas.passive1.healing, { key: `sheet_gen:healing`, variant: "success" }),
+          node: infoMut(dmgFormulas.passive1.healing, { key: `sheet_gen:healing` }),
         }]
       })]),
       passive2: ct.talentTemplate("passive2", [ct.fieldsTemplate("passive2", {

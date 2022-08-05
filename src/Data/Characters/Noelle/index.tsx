@@ -193,7 +193,7 @@ const sheet: ICharacterSheet = {
         }, {
           node: infoMut(dmgFormulas.skill.shield, { key: `char_${key}_gen:skill.skillParams.1` }),
         }, {
-          node: infoMut(dmgFormulas.skill.heal, { key: `char_${key}_gen:skill.skillParams.2`, variant: "success" }),
+          node: infoMut(dmgFormulas.skill.heal, { key: `char_${key}_gen:skill.skillParams.2` }),
         }, { //Heal trigger chance
           canShow: data => data.get(input.constellation).value === 0,
           node: nodeSkillHealChanceBase,

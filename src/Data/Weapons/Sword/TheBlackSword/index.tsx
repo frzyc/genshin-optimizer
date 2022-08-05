@@ -36,7 +36,7 @@ const sheet: IWeaponSheet = {
     }, {
       node: charged_dmg_
     }, {
-      node: infoMut(heal, { key: "sheet_gen:healing", variant: "success" })
+      node: infoMut(heal, { key: "sheet_gen:healing" })
     }]
   }],
 }

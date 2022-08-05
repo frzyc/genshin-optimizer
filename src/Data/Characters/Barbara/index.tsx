@@ -147,9 +147,9 @@ const sheet: ICharacterSheet = {
 
       skill: ct.talentTemplate("skill", [{
         fields: [{
-          node: infoMut(dmgFormulas.skill.regen, { key: `char_${key}_gen:skill.skillParams.0`, variant: "success" })
+          node: infoMut(dmgFormulas.skill.regen, { key: `char_${key}_gen:skill.skillParams.0` })
         }, {
-          node: infoMut(dmgFormulas.skill.cregen, { key: `char_${key}_gen:skill.skillParams.1`, variant: "success" })
+          node: infoMut(dmgFormulas.skill.cregen, { key: `char_${key}_gen:skill.skillParams.1` })
         }, {
           node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.2` })
         }, {
@@ -164,7 +164,7 @@ const sheet: ICharacterSheet = {
 
       burst: ct.talentTemplate("burst", [{
         fields: [{
-          node: infoMut(dmgFormulas.burst.regen, { key: `char_${key}_gen:burst.skillParams.0`, variant: "success" })
+          node: infoMut(dmgFormulas.burst.regen, { key: `char_${key}_gen:burst.skillParams.0` })
         }, {
           text: tr("burst.skillParams.1"),
           value: datamine.burst.cd,

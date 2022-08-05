@@ -244,7 +244,7 @@ const sheet: ICharacterSheet = {
         fields: [{
           node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` })
         }, {
-          node: infoMut(dmgFormulas.burst.regen, { key: `char_${key}_gen:burst.skillParams.1`, variant: "success" })
+          node: infoMut(dmgFormulas.burst.regen, { key: `char_${key}_gen:burst.skillParams.1` })
         }, {
           text: tr("burst.skillParams.3"),
           value: datamine.burst.duration,

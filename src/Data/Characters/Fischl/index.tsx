@@ -188,7 +188,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.burst.additionalDmg, { key: `char_${key}:c4AoeDmg` }),
         }, {
           canShow: (data) => data.get(input.constellation).value >= 4,
-          node: infoMut(dmgFormulas.burst.regen, { key: `sheet_gen:healing`, variant: "success" }),
+          node: infoMut(dmgFormulas.burst.regen, { key: `sheet_gen:healing` }),
         }, {
           text: tr("burst.skillParams.1"),
           value: `${datamine.burst.cd}`,

@@ -217,7 +217,7 @@ const sheet: ICharacterSheet = {
         teamBuff: true,
         canShow: greaterEq(tally.geo, 2, 1),
         fields: [{
-          node: infoMut(dmgFormulas.constellation4.heal, { key: "sheet_gen:healing", variant: "success" }),
+          node: infoMut(dmgFormulas.constellation4.heal, { key: "sheet_gen:healing" }),
         }]
       })]),
 

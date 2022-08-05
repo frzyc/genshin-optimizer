@@ -29,7 +29,7 @@ const sheet: IWeaponSheet = {
     header: headerTemplate(key, icon, iconAwaken, st("conditional")),
     states: {
       on: {
-        fields: [{ node: infoMut(heal, { key: "sheet_gen:healing", variant: "success" }) }]
+        fields: [{ node: infoMut(heal, { key: "sheet_gen:healing" }) }]
       }
     }
   }]

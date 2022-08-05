@@ -201,7 +201,7 @@ const sheet: ICharacterSheet = {
 
       skill: ct.talentTemplate("skill", [{
         fields: [{
-          node: infoMut(dmgFormulas.skill.heal, { key: `char_${key}_gen:skill.skillParams.0`, variant: "success" }),
+          node: infoMut(dmgFormulas.skill.heal, { key: `char_${key}_gen:skill.skillParams.0` }),
         }, {
           node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.1` }),
         }, {
