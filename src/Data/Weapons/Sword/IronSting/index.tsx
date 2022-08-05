@@ -31,7 +31,6 @@ const sheet: IWeaponSheet = {
   document: [{
     value: condPassive,
     path: condPassivePath,
-    teamBuff: true,
     header: headerTemplate(key, icon, iconAwaken, st("stacks")),
     name: trm("condName"),
     states: Object.fromEntries(eleDmgDealtStack.map(c => [c, {
