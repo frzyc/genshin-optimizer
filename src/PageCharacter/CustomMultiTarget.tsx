@@ -230,7 +230,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
   const node: NodeDisplay = objPathValue(data.getDisplay(), path) as any
   const setFilter = useCallback((bonusStats) => setCustomTarget({ ...customTarget, bonusStats }), [customTarget, setCustomTarget])
 
-  const isMeleeNorm = characterSheet?.isMelee() && path[0] === "normal"
+  const isMeleeAuto = characterSheet?.isMelee() && (path[0] === "normal" || path[0] === "charged" || path[0] === "plunging")
   return <CardDark>
     <CardContent >
       <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
@@ -244,7 +244,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
         <Button color="error" onClick={deleteCustomTarget} ><DeleteForever /></Button>
       </Box>
       <Grid container columns={{ xs: 1, lg: 2 }} sx={{ pt: 1 }} spacing={1}>
-        {isMeleeNorm && <Grid item xs={1}>
+        {isMeleeAuto && <Grid item xs={1}>
           <DropdownButton title={infusionVals[infusionAura ?? ""]} color={infusionAura || "secondary"} disableElevation fullWidth >
             {Object.entries(infusionVals).map(([key, text]) =>
               <MenuItem key={key} sx={key ? { color: `${key}.main` } : undefined}
