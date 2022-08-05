@@ -39,7 +39,7 @@ export function ReactionToggle(props: ReactionToggleProps) {
   const reactions = [...new Set([...allowedAmpReactions[charEleKey] ?? [], ...allowedAmpReactions[infusion] ?? []])]
   return <SolidToggleButtonGroup exclusive baseColor="secondary"
     value={reaction} onChange={(_, reaction) => characterDispatch({ reaction })} {...props}>
-    <ToggleButton value="" disabled={!reaction} >{t`ampReaction.noReaction`}</ToggleButton >
+    <ToggleButton value="" disabled={!reaction} >{t`noReaction`}</ToggleButton >
     {reactions.map(rm =>
       <ToggleButton key={rm} value={rm} disabled={reaction === rm}>
         <AmpReactionModeText reaction={rm} />

@@ -21,11 +21,7 @@
     "avgHit": "Avg. DMG",
     "critHit": "Crit Hit DMG"
   },
-  "ampReaction": {
-    "noReaction": "No Reactions",
-    "vaporize": "Vaporize",
-    "melt": "Melt"
-  },
+  "noReaction": "No Reactions",
   "tabEquip": {
     "swapWeapon": "Swap Weapon",
     "swapArt": "Swap Artifact",

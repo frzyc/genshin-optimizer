@@ -18,13 +18,13 @@ export const ampReactionMap = {
 } as const
 const sqBadgeStyle = { mx: 0.25, px: 0.25 }
 export default function AmpReactionModeText({ reaction, trigger }: { reaction: AmpReactionKey, trigger?: Variant }) {
-  const { t } = useTranslation("page_character")
+  const { t } = useTranslation("sheet_gen")
   if (!trigger) trigger = Object.keys(ampReactionMap[reaction])[0]
   const base = ampReactionMap[reaction][trigger]
   if (!base) return null;
 
   return <Box display="flex" alignItems="center">
-    <ColorText color="melt">{t(`ampReaction.${reaction}`)}</ColorText>
+    <ColorText color="melt">{t(`reaction.${reaction}`)}</ColorText>
     <SqBadge sx={sqBadgeStyle} color={base}>{uncoloredEleIcons[base]}</SqBadge>
     {`+`}
     <SqBadge sx={sqBadgeStyle} color={trigger as "cryo" | "pyro" | "hydro"}>{uncoloredEleIcons[trigger]}</SqBadge>

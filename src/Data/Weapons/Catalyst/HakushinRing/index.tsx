@@ -63,7 +63,7 @@ const sheet: IWeaponSheet = {
         }]
       },
       cryo: {
-        name: <ColorText color="superconduct">{sgt("reaction.Superconduct")}</ColorText>,
+        name: <ColorText color="superconduct">{sgt("reaction.superconduct")}</ColorText>,
         fields: [{
           node: cryo_dmg_
         }, {
