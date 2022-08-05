@@ -48,6 +48,7 @@ const sheet: IArtifactSheet = {
         header: setHeader(4),
         value: condStack,
         path: condStackPath,
+        teamBuff: true,
         name: trm("condName"),
         states: Object.fromEntries(stackArr.map(i => [i, {
           name: st("stack", { count: i }),
