@@ -60,13 +60,15 @@ const char = {
         thunderDMG: [3560985918, "skillParam"]
       }
     }
-  }
+  },
   // Venti,
   // Xiao,
   // Xiangling,
   // Xingqiu,
   // Xinyan,
   // Yanfei,
-  // Zhongli
+  Zhongli: {
+    constellationName: 2721221067
+  }
 } as const
 export default char
