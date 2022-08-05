@@ -79,7 +79,9 @@ const data = {
     crystallize: 4119674923,
     overloaded: 3538822411,
     electrocharged: 1625280307,
-    Superconduct: 3913817859,
+    superconduct: 3913817859,
+    vaporize: 3111567595,
+    melt: 3497793651,
   }
 } as const
 export default data

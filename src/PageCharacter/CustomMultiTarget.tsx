@@ -263,7 +263,7 @@ function ReactionDropdown({ node, reaction, setReactionMode, infusionAura }: { n
 
   if (!["pyro", "hydro", "cryo"].some(e => e === ele || e === infusionAura)) return null
   const reactions = [...new Set([...allowedAmpReactions[ele] ?? [], ...allowedAmpReactions[infusionAura ?? ""] ?? []])]
-  return <DropdownButton title={reaction ? <AmpReactionModeText reaction={reaction} /> : t`ampReaction.noReaction`} sx={{ ml: "auto" }}>
+  return <DropdownButton title={reaction ? <AmpReactionModeText reaction={reaction} /> : t`noReaction`} sx={{ ml: "auto" }}>
     <MenuItem value="" disabled={!reaction} onClick={() => setReactionMode()} >No Reactions</MenuItem >
     {reactions.map(rm => <MenuItem key={rm} disabled={reaction === rm} onClick={() => setReactionMode(rm)}>
       <AmpReactionModeText reaction={rm} />
