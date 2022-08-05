@@ -40,6 +40,7 @@ const sheet: IArtifactSheet = {
         header: setHeader(4),
         value: condAfterBurst,
         path: condAfterBurstPath,
+        teamBuff: true,
         name: st("afterUse.burst"),
         states: {
           on: {
@@ -50,6 +51,7 @@ const sheet: IArtifactSheet = {
         header: setHeader(4),
         value: condStacks,
         path: condStacksPath,
+        teamBuff: true,
         name: st("stacks"),
         canShow: equal(condAfterBurst, "on", 1),
         states: Object.fromEntries(range(1, 4).map(stacks => [

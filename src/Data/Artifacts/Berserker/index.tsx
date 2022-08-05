@@ -32,6 +32,7 @@ const sheet: IArtifactSheet = {
         header: setHeader(4),
         path: condPath,
         value: condNode,
+        teamBuff: true,
         name: st("lessPercentHP", { percent: 70 }),
         states: {
           70: {

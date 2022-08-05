@@ -43,6 +43,7 @@ const sheet: IArtifactSheet = {
         header: setHeader(4),
         value: condStack,
         path: condStackPath,
+        teamBuff: true,
         name: st("hitOp.skill"),
         states: Object.fromEntries(stackArr.map(i => [i, {
           name: i.toString(),
