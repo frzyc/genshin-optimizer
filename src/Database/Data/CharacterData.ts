@@ -45,12 +45,12 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
   deCache(char: ICachedCharacter): ICharacter {
     const {
       key: characterKey, level, ascension, hitMode, elementKey, reaction, conditional,
-      bonusStats, enemyOverride, talent, infusionAura, constellation, team,
+      bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
       compareData, customMultiTarget
     } = char
     const result: ICharacter = {
       key: characterKey, level, ascension, hitMode, reaction, conditional,
-      bonusStats, enemyOverride, talent, infusionAura, constellation, team,
+      bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
       compareData, customMultiTarget
     }
     if (elementKey) result.elementKey = elementKey

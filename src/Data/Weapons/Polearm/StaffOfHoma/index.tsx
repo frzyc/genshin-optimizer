@@ -44,6 +44,7 @@ const sheet: IWeaponSheet = {
   }, {
     value: condPassive,
     path: condPassivePath,
+    teamBuff: true,
     header: headerTemplate(key, icon, iconAwaken),
     name: st("lessPercentHP", { percent: 50 }),
     states: {

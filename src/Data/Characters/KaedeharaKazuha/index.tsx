@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
-import { constant, equal, equalStr, greaterEq, greaterEqStr, infoMut, percent, prod, unequal } from '../../../Formula/utils'
+import { constant, equal, equalStr, greaterEq, greaterEqStr, infoMut, percent, prod, sum, unequal } from '../../../Formula/utils'
 import { absorbableEle, CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, condReadNode, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
@@ -278,7 +278,7 @@ const sheet: ICharacterSheet = {
             node: infoMut(dmgFormulas.burst[eleKey], { key: `char_${key}_gen:burst.skillParams.2` }),
           }]
         }]))
-      }), ct.conditionalTemplate("constellation2", {
+      }), ct.conditionalTemplate("constellation2", { // C2 self
         value: condC2,
         path: condC2Path,
         name: trm("c2"),
@@ -330,7 +330,25 @@ const sheet: ICharacterSheet = {
             unit: "s"
           }]
         }]))
-        }),
+        }), ct.conditionalTemplate("constellation2", { // C2 self, in teambuff panel
+        value: condC2,
+        path: condC2Path,
+        // Show C2 self buff if A4 is enabled
+        teamBuff: true,
+        canShow: unequal(input.activeCharKey, key,
+          greaterEq(input.asc, 4,
+            sum(...Object.values(condSwirls).map(val => unequal(val, undefined, 1)))
+          )
+        ),
+        name: trm("c2"),
+        states: {
+          c2: {
+            fields: [{
+              node: c2EleMas
+            }]
+          }
+        }
+      })
       ]),
       passive3: ct.talentTemplate("passive3", [ct.headerTemplate("passive3", {
         teamBuff: true,

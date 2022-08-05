@@ -72,7 +72,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
 
   let {
     key: characterKey, level, ascension, hitMode, elementKey, reaction, conditional,
-    bonusStats, enemyOverride, talent, infusionAura, constellation, team,
+    bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
     compareData, customMultiTarget
   } = obj
 
@@ -104,6 +104,8 @@ export function parseCharacter(obj: any): ICharacter | undefined {
     conditional = {}
   if (!team)
     team = ["", "", ""]
+  if (!teamConditional)
+    teamConditional = {}
 
   if (typeof compareData !== "boolean") compareData = false
 
@@ -114,7 +116,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   customMultiTarget = customMultiTarget.map(cmt => validateCustomMultiTarget(cmt)).filter(t => t)
   const result: ICharacter = {
     key: characterKey, level, ascension, hitMode, reaction, conditional,
-    bonusStats, enemyOverride, talent, infusionAura, constellation, team,
+    bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
     compareData, customMultiTarget
   }
   if (elementKey) result.elementKey = elementKey

@@ -60,6 +60,7 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     infusionAura: "",
     constellation: 0,
     team: ["", "", ""],
+    teamConditional: {},
     compareData: false,
     customMultiTarget: []
   }

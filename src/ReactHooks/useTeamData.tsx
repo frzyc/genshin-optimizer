@@ -15,6 +15,7 @@ import { ICachedWeapon } from "../Types/weapon";
 import { objectMap } from "../Util/Util";
 import useForceUpdate from "./useForceUpdate";
 import usePromise from "./usePromise";
+import { IConditionalValues } from "../Types/sheet";
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -85,14 +86,17 @@ async function getTeamDataCalc(database: ArtCharDatabase, characterKey: Characte
 export async function getTeamData(database: ArtCharDatabase, characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[], overrideWeapon?: ICachedWeapon):
   Promise<TeamDataBundle | undefined> {
   if (!characterKey) return
-  const char1DataBundle = await getCharDataBundle(database, characterKey, true, mainStatAssumptionLevel, overrideArt, overrideWeapon)
+  const character = database.chars.get(characterKey)
+  if (!character) return
+
+  const char1DataBundle = await getCharDataBundle(database, characterKey, true, { mainStatAssumptionLevel, overrideArt, overrideWeapon })
   if (!char1DataBundle) return
   const teamBundle = { [characterKey]: char1DataBundle }
   const teamData: Dict<CharacterKey, Data[]> = { [characterKey]: char1DataBundle.data }
 
   await Promise.all(char1DataBundle.character.team.map(async (ck) => {
     if (!ck) return
-    const databundle = await getCharDataBundle(database, ck)
+    const databundle = await getCharDataBundle(database, ck, false, { overrideConditional: character.teamConditional[ck] ?? {} })
     if (!databundle) return
     teamBundle[ck] = databundle
     teamData[ck] = databundle.data
@@ -107,11 +111,22 @@ type CharBundle = {
   weaponSheet: WeaponSheet,
   data: Data[]
 }
-async function getCharDataBundle(database: ArtCharDatabase, characterKey: CharacterKey | "", useCustom = false, mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[], overrideWeapon?: ICachedWeapon)
+type Options = {
+  mainStatAssumptionLevel?: number,
+  overrideArt?: ICachedArtifact[]
+  overrideWeapon?: ICachedWeapon
+  overrideConditional?: IConditionalValues
+}
+async function getCharDataBundle(database: ArtCharDatabase, characterKey: CharacterKey | "", useCustom = false, options: Options)
   : Promise<CharBundle | undefined> {
   if (!characterKey) return
-  const character = database.chars.get(characterKey)
-  if (!character) return
+  const dbcharacter = database.chars.get(characterKey)
+  if (!dbcharacter) return
+
+  const { mainStatAssumptionLevel = 0, overrideArt, overrideWeapon, overrideConditional } = options
+
+  const character = overrideConditional ? { ...dbcharacter, conditional: overrideConditional } : dbcharacter
+
   const weapon = overrideWeapon ?? database.weapons.get(character.equippedWeapon)
   if (!weapon) return
   const characterSheet = await CharacterSheet.get(characterKey)

@@ -46,6 +46,7 @@ const sheet: IWeaponSheet = {
   }, {
     value: condPassive,
     path: condPassivePath,
+    teamBuff: true,
     header: headerTemplate(key, icon, iconAwaken, st("stacks")),
     name: st("hits"),
     states: Object.fromEntries(range(1, 5).map(i =>
