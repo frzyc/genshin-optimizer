@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, sgt, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -11,7 +11,6 @@ import icon from './Icon.png'
 
 const key: WeaponKey = "DarkIronSword"
 const data_gen = data_gen_json as WeaponData
-const [, trm] = trans("weapon", key)
 
 const atkInc = [0.2, 0.25, 0.3, 0.35, 0.5]
 const [condPassivePath, condPassive] = cond(key, "Overloaded")
@@ -28,7 +27,7 @@ const sheet: IWeaponSheet = {
   document: [{
     value: condPassive,
     path: condPassivePath,
-    name: trm("condName"),
+    name: st("elementalReaction.electro"),
     header: headerTemplate(key, icon, iconAwaken, st("conditional")),
     states: {
       on: {

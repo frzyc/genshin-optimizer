@@ -3,7 +3,7 @@ import ColorText from '../../../../Components/ColoredText'
 import { input } from '../../../../Formula'
 import { equal, lookup, naught, subscript, unequal } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, sgt, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -12,7 +12,6 @@ import icon from './Icon.png'
 
 const key: WeaponKey = "HakushinRing"
 const data_gen = data_gen_json as WeaponData
-const [, trm] = trans("weapon", key)
 
 const refinementEleBonusSrc = [0.1, 0.125, 0.15, 0.175, 0.2]
 
@@ -45,7 +44,7 @@ const sheet: IWeaponSheet = {
   document: [{
     value: condPassive,
     path: condPassivePath,
-    name: trm("afterElectroReaction"),
+    name: st("elementalReaction.electro"),
     canShow: unequal(input.activeCharKey, input.charKey, 1),
     teamBuff: true,
     header: headerTemplate(key, icon, iconAwaken, st("conditional")),

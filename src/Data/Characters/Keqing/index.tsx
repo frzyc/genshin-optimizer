@@ -260,7 +260,7 @@ const sheet: ICharacterSheet = {
       constellation4: ct.talentTemplate("constellation4", [ct.conditionalTemplate("constellation4", {
         value: condAfterReact,
         path: condAfterReactPath,
-        name: trm("electroReact"),
+        name: st("elementalReaction.electro"),
         states: {
           afterReact: {
             fields: [{
