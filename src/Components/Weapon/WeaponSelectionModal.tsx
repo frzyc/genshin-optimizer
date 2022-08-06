@@ -19,15 +19,15 @@ type WeaponSelectionModalProps = {
   onHide: () => void,
   onSelect: (wKey: WeaponKey) => void,
   filter?: (sheet: WeaponSheet) => boolean,
-  weaponFilter?: WeaponTypeKey,
+  weaponTypeFilter?: WeaponTypeKey,
 }
 
-export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSelect, filter = () => true, weaponFilter: propWeaponFilter }: WeaponSelectionModalProps) {
+export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSelect, filter = () => true, weaponTypeFilter }: WeaponSelectionModalProps) {
   const { t } = useTranslation(["page_weapon", "weaponNames_gen"])
   const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
-  const [weaponFilter, setWeaponfilter] = useState<WeaponTypeKey[]>(propWeaponFilter ? [propWeaponFilter] : [...allWeaponTypeKeys])
+  const [weaponFilter, setWeaponfilter] = useState<WeaponTypeKey[]>(weaponTypeFilter ? [weaponTypeFilter] : [...allWeaponTypeKeys])
 
-  useEffect(() => propWeaponFilter && setWeaponfilter([propWeaponFilter]), [propWeaponFilter])
+  useEffect(() => weaponTypeFilter && setWeaponfilter([weaponTypeFilter]), [weaponTypeFilter])
 
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
@@ -44,7 +44,7 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
       <CardContent sx={{ py: 1 }}>
         <Grid container spacing={1}>
           <Grid item>
-            <WeaponToggle value={weaponFilter} onChange={setWeaponfilter} disabled={!!propWeaponFilter} size="small" />
+            <WeaponToggle value={weaponFilter} onChange={setWeaponfilter} disabled={!!weaponTypeFilter} size="small" />
           </Grid >
           <Grid item flexGrow={1}>
             <TextField

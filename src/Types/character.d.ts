@@ -1,5 +1,5 @@
 import { EleEnemyResKey, StatKey } from "../KeyMap";
-import { CharacterKey, ElementKey, HitModeKey, InfusionAuraElements, AmpReactionKey, SlotKey } from "./consts";
+import { CharacterKey, ElementKey, HitModeKey, InfusionAuraElements, AmpReactionKey, SlotKey, Ascension } from "./consts";
 import { IConditionalValues } from "./IConditional";
 import { DocumentSection } from "./sheet";
 
@@ -20,7 +20,7 @@ export interface ICharacter {
   key: CharacterKey
   level: number
   constellation: number
-  ascension: number
+  ascension: Ascension
   talent: {
     auto: number
     skill: number

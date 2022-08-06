@@ -1,30 +1,30 @@
 import { BusinessCenter, Lock, LockOpen } from "@mui/icons-material"
-import { Box, Button, ButtonGroup, CardContent, CardHeader, Divider, Grid, ListItem, MenuItem, Typography } from "@mui/material"
-import { useCallback, useContext, useEffect, useMemo, useState } from "react"
+import { Box, Button, ButtonGroup, CardContent, CardHeader, Divider, Grid, ListItem, Typography } from "@mui/material"
+import { useCallback, useContext, useEffect, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import CardDark from "../Components/Card/CardDark"
 import CardLight from "../Components/Card/CardLight"
 import CharacterAutocomplete from "../Components/Character/CharacterAutocomplete"
 import CloseButton from "../Components/CloseButton"
-import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from "../Components/CustomNumberInput"
 import DocumentDisplay from "../Components/DocumentDisplay"
-import DropdownButton from "../Components/DropdownMenu/DropdownButton"
 import { FieldDisplayList, NodeFieldDisplay } from "../Components/FieldDisplay"
+import LevelSelect from "../Components/LevelSelect"
 import ModalWrapper from "../Components/ModalWrapper"
+import RefinementDropdown from "../Components/RefinementDropdown"
 import { StarsDisplay } from "../Components/StarDisplay"
 import WeaponSelectionModal from "../Components/Weapon/WeaponSelectionModal"
+import { DataContext } from "../Context/DataContext"
 import CharacterSheet from "../Data/Characters/CharacterSheet"
-import { ascensionMaxLevel, lowRarityMilestoneLevels } from "../Data/LevelData"
+import { milestoneLevelsLow } from "../Data/LevelData"
 import WeaponSheet from "../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../Database/Database"
-import { DataContext } from "../Context/DataContext"
 import { uiInput as input } from "../Formula"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
+import useBoolState from "../ReactHooks/useBoolState"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
 import { CharacterKey } from "../Types/consts"
 import { ICachedWeapon } from "../Types/weapon"
-import { clamp } from "../Util/Util"
 
 type WeaponStatsEditorCardProps = {
   weaponId: string
@@ -43,27 +43,15 @@ export default function WeaponEditor({
 
   const { database } = useContext(DatabaseContext)
   const weapon = useWeapon(propWeaponId)
-  const { key = "", level = 0, refinement = 0, ascension = 0, lock, location = "", id } = weapon ?? {}
+  const { key = "", level = 0, refinement = 1, ascension = 0, lock, location = "", id } = weapon ?? {}
   const weaponSheet = usePromise(() => WeaponSheet.get(key), [key])
 
   const weaponDispatch = useCallback((newWeapon: Partial<ICachedWeapon>) => {
     database.weapons.set(propWeaponId, newWeapon)
   }, [propWeaponId, database])
 
-  const setLevel = useCallback(level => {
-    level = clamp(level, 1, 90)
-    const ascension = ascensionMaxLevel.findIndex(ascenML => level <= ascenML)
-    weaponDispatch({ level, ascension })
-  }, [weaponDispatch])
-
-  const setAscension = useCallback(() => {
-    const lowerAscension = ascensionMaxLevel.findIndex(ascenML => level !== 90 && level === ascenML)
-    if (ascension === lowerAscension) weaponDispatch({ ascension: ascension + 1 })
-    else weaponDispatch({ ascension: lowerAscension })
-  }, [weaponDispatch, ascension, level])
-
   const characterSheet = usePromise(() => location ? CharacterSheet.get(location) : undefined, [location])
-  const weaponFilter = characterSheet ? (ws) => ws.weaponType === characterSheet.weaponTypeKey : undefined
+
   const initialWeaponFilter = characterSheet && characterSheet.weaponTypeKey
 
   const equipOnChar = useCallback((charKey: CharacterKey | "") => id && database.weapons.set(id, { location: charKey }), [database, id])
@@ -72,14 +60,14 @@ export default function WeaponEditor({
     [weaponSheet],
   )
 
-  const [showModal, setshowModal] = useState(false)
+  const [showModal, onShowModal, onHideModal] = useBoolState()
   const img = weaponSheet?.getImg(ascension)
 
   //check the levels when switching from a 5* to a 1*, for example.
   useEffect(() => {
     if (!weaponSheet || !weaponDispatch || weaponSheet.key !== weapon?.key) return
     if (weaponSheet.rarity <= 2 && (level > 70 || ascension > 4)) {
-      const [level, ascension] = lowRarityMilestoneLevels[0]
+      const [level, ascension] = milestoneLevelsLow[0]
       weaponDispatch({ level, ascension })
     }
   }, [weaponSheet, weapon, weaponDispatch, level, ascension])
@@ -87,7 +75,7 @@ export default function WeaponEditor({
 
   const weaponUIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   return <ModalWrapper open={!!propWeaponId} onClose={onClose} containerProps={{ maxWidth: "md" }}><CardLight>
-    <WeaponSelectionModal ascension={ascension} show={showModal} onHide={() => setshowModal(false)} onSelect={k => weaponDispatch({ key: k })} filter={weaponFilter} weaponFilter={initialWeaponFilter} />
+    <WeaponSelectionModal ascension={ascension} show={showModal} onHide={onHideModal} onSelect={k => weaponDispatch({ key: k })} weaponTypeFilter={initialWeaponFilter} />
     <CardContent >
       {weaponSheet && weaponUIData && <Grid container spacing={1.5}>
         <Grid item xs={12} sm={3}>
@@ -103,38 +91,13 @@ export default function WeaponEditor({
         <Grid item xs={12} sm={9} sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
           <Box display="flex" gap={1} flexWrap="wrap" justifyContent="space-between">
             <ButtonGroup>
-              <Button onClick={() => setshowModal(true)} >{weaponSheet?.name ?? "Select a Weapon"}</Button>
-              {weaponSheet?.hasRefinement && <DropdownButton title={`Refinement ${refinement}`}>
-                <MenuItem>Select Weapon Refinement</MenuItem>
-                <Divider />
-                {[...Array(5).keys()].map(key =>
-                  <MenuItem key={key} onClick={() => weaponDispatch({ refinement: key + 1 })} selected={refinement === (key + 1)} disabled={refinement === (key + 1)}>
-                    {`Refinement ${key + 1}`}
-                  </MenuItem>)}
-              </DropdownButton>}
+              <Button color="info" onClick={onShowModal} >{weaponSheet?.name ?? "Select a Weapon"}</Button>
+              {weaponSheet?.hasRefinement && <RefinementDropdown refinement={refinement} setRefinement={r => weaponDispatch({ refinement: r })} />}
               {extraButtons}
             </ButtonGroup>
           </Box>
           <Box display="flex" gap={1} flexWrap="wrap" justifyContent="space-between">
-            <ButtonGroup sx={{ bgcolor: t => t.palette.contentLight.main }} >
-              <CustomNumberInputButtonGroupWrapper >
-                <CustomNumberInput onChange={setLevel} value={level}
-                  startAdornment="Lv. "
-                  inputProps={{ min: 1, max: 90, sx: { textAlign: "center" } }}
-                  sx={{ width: "100%", height: "100%", pl: 2 }}
-                />
-              </CustomNumberInputButtonGroupWrapper>
-              {weaponSheet && <Button sx={{ pl: 1 }} disabled={!weaponSheet.ambiguousLevel(level)} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>}
-              {weaponSheet && <DropdownButton title={"Select Level"} >
-                {weaponSheet.milestoneLevels.map(([lv, as]) => {
-                  const sameLevel = lv === ascensionMaxLevel[as]
-                  const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
-                  const selected = lv === level && as === ascension
-                  return <MenuItem key={`${lv}/${as}`} selected={selected} disabled={selected} onClick={() => weaponDispatch({ level: lv, ascension: as })}>{lvlstr}</MenuItem>
-                })}
-              </DropdownButton>}
-            </ButtonGroup>
-
+            {weaponSheet && <LevelSelect level={level} ascension={ascension} setBoth={weaponDispatch} useLow={!weaponSheet.hasRefinement} />}
             <Button color="error" onClick={() => id && database.weapons.set(id, { lock: !lock })} startIcon={lock ? <Lock /> : <LockOpen />}>
               {lock ? "Locked" : "Unlocked"}
             </Button>

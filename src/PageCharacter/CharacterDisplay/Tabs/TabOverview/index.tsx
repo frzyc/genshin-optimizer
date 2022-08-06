@@ -14,12 +14,13 @@ import { uncoloredEleIcons } from "../../../../Components/StatIcon";
 import WeaponCardNano from "../../../../Components/Weapon/WeaponCardNano";
 import { CharacterContext } from "../../../../Context/CharacterContext";
 import { DataContext } from "../../../../Context/DataContext";
-import CharacterSheet, { TalentSheetElementKey } from "../../../../Data/Characters/CharacterSheet";
+import { TalentSheetElementKey } from "../../../../Data/Characters/CharacterSheet";
+import { getLevelString } from "../../../../Data/LevelData";
 import { uiInput as input } from "../../../../Formula";
 import useCharacterReducer from "../../../../ReactHooks/useCharacterReducer";
 import useDBState from "../../../../ReactHooks/useDBState";
 import { initCharMeta } from "../../../../stateInit";
-import { allSlotKeys, ElementKey } from "../../../../Types/consts";
+import { allSlotKeys, Ascension, ElementKey } from "../../../../Types/consts";
 import { range } from "../../../../Util/Util";
 import EquipmentSection from "./EquipmentSection";
 
@@ -67,7 +68,7 @@ function CharacterProfileCard() {
   const charEle = data.get(input.charEle).value as ElementKey
   const weaponTypeKey = characterSheet.weaponTypeKey
   const level = data.get(input.lvl).value
-  const ascension = data.get(input.asc).value
+  const ascension = data.get(input.asc).value as Ascension
   const constellation = data.get(input.constellation).value
   const tlvl = {
     auto: data.get(input.total.auto).value,
@@ -100,7 +101,7 @@ function CharacterProfileCard() {
           </IconButton>
         </Box>
         <Typography sx={{ p: 1, position: "absolute", right: 0, top: 0, opacity: 0.8 }}>
-          <SqBadge>{CharacterSheet.getLevelString(level, ascension)}</SqBadge>
+          <SqBadge>{getLevelString(level, ascension)}</SqBadge>
         </Typography>
       </Box>
       <Box src={characterSheet.cardImg} component="img" width="100%" height="auto" />

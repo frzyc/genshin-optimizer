@@ -8,7 +8,7 @@ import { Data } from '../../Formula/type';
 import { allWeaponTypeKeys, Rarity, WeaponKey, WeaponTypeKey } from '../../Types/consts';
 import { DocumentSection, IDocumentHeader } from '../../Types/sheet';
 import { ICachedWeapon } from '../../Types/weapon';
-import { ambiguousLevel, ambiguousLevelLow, ascensionMaxLevel, lowRarityMilestoneLevels, milestoneLevels } from '../LevelData';
+import { getLevelString } from '../LevelData';
 
 const weaponSheets = import('.').then(imp => imp.default)
 
@@ -40,7 +40,7 @@ export default class WeaponSheet {
   static get getAll() { return weaponSheets }
   static getAllDataOfType(weaponType: WeaponTypeKey) { return displayDataMap.then(map => map[weaponType]) }
   static getWeaponsOfType = (sheets: StrictDict<WeaponKey, WeaponSheet>, weaponType: string): Dict<WeaponKey, WeaponSheet> => Object.fromEntries(Object.entries(sheets).filter(([_, sheet]) => (sheet as WeaponSheet).weaponType === weaponType))
-  static getLevelString = (weapon: ICachedWeapon): string => `${weapon.level}/${ascensionMaxLevel[weapon.ascension]}`
+  static getLevelString = (weapon: ICachedWeapon) => getLevelString(weapon.level, weapon.ascension)
   tr = (strKey: string) => <Translate ns={`weapon_${this.key}_gen`} key18={strKey} />
   get name() { return this.tr("name") }
   get hasRefinement() { return this.rarity > 2 }
@@ -48,14 +48,6 @@ export default class WeaponSheet {
   get description() { return this.tr("description") }
   passiveDescription = (refineIndex: number) => this.hasRefinement ? this.tr(`passiveDescription.${refineIndex}`) : ""
   get document() { return this.sheet.document }
-  get milestoneLevels(): Array<[number, number]> {
-    if (this.hasRefinement) return milestoneLevels as any
-    else return lowRarityMilestoneLevels as any
-  }
-  ambiguousLevel(level: number) {
-    if (this.hasRefinement) return ambiguousLevel(level)
-    else return ambiguousLevelLow(level)
-  }
   getImg(ascsion: number) {
     return ascsion < 2 ? this.sheet.icon : this.sheet.iconAwaken
   }

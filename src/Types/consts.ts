@@ -10,6 +10,8 @@ export const allElementsWithPhy = ["physical", ...allElements] as const
 export const allInfusionAuraElements = ["pyro", 'cryo'] as const
 export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'] as const
 export const allRollColorKeys = ['roll1', 'roll2', 'roll3', 'roll4', 'roll5', 'roll6'] as const
+export const allAscension = [0, 1, 2, 3, 4, 5, 6] as const
+export const allRefinement = [1, 2, 3, 4, 5] as const
 export const allArtifactSets = [
   "Adventurer",
   "ArchaicPetra",
@@ -284,6 +286,8 @@ export type ArtifactSetKey = typeof allArtifactSets[number]
 export type CharacterKey = typeof allCharacterKeys[number]
 export type WeaponTypeKey = typeof allWeaponTypeKeys[number]
 export type RollColorKey = typeof allRollColorKeys[number]
+export type Ascension = typeof allAscension[number]
+export type Refinement = typeof allRefinement[number]
 export type CharacterSpecializedStatKey = typeof characterSpecializedStatKeys[number]
 export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[]
 export const allowedAmpReactions: Dict<ElementKey, AmpReactionKey[]> = {
