@@ -1,8 +1,12 @@
-const lowRarityAscMaxLevel = [20, 40, 50, 60, 70] as const
-export const ascensionMaxLevel = [...lowRarityAscMaxLevel, 80, 90] as const
-export const ambiguousLevel = (level) => level !== 90 && ascensionMaxLevel.includes(level)
-export const ambiguousLevelLow = (level) => level !== 70 && lowRarityAscMaxLevel.includes(level)
-export const lowRarityMilestoneLevels = [
+import { Ascension } from "../Types/consts"
+
+export const ascensionMaxLevelLow = [20, 40, 50, 60, 70] as const
+export const maxLevel = 90
+export const maxLevelLow = 70
+export const ascensionMaxLevel = [...ascensionMaxLevelLow, 80, 90] as const
+export const ambiguousLevel = (level) => level !== maxLevel && ascensionMaxLevel.includes(level)
+export const ambiguousLevelLow = (level) => level !== maxLevelLow && ascensionMaxLevelLow.includes(level)
+export const milestoneLevelsLow = [
   [70, 4],
   [60, 4],
   [60, 3],
@@ -19,5 +23,8 @@ export const milestoneLevels = [
   [80, 6],
   [80, 5],
   [70, 5],
-  ...lowRarityMilestoneLevels
+  ...milestoneLevelsLow
 ] as const
+
+export const getLevelString = (level: number, ascension: Ascension): string =>
+  `${level}/${ascensionMaxLevel[ascension]}`

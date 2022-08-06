@@ -21,7 +21,7 @@ import { allCharacterKeys, CharacterKey } from '../../Types/consts';
 import { CustomMultiTargetButton } from '../CustomMultiTarget';
 import CharSelectDropdown from './CharSelectDropdown';
 import FormulaModal from './FormulaModal';
-import LevelSelect from './LevelSelect';
+import LevelSelect from '../../Components/LevelSelect';
 import StatModal from './StatModal';
 import TabBuild from './Tabs/TabOptimize';
 import TabOverview from './Tabs/TabOverview';
@@ -89,7 +89,7 @@ function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardPro
           {!!onClose && <CloseButton onClick={onClose} />}
         </Box>
         <Box display="flex" gap={1} flexWrap="wrap">
-          <LevelSelect />
+          {character && <LevelSelect level={character.level} ascension={character.ascension} setBoth={characterDispatch} />}
           <HitModeToggle size="small" />
           <InfusionAuraDropdown />
           <ReactionToggle size="small" />

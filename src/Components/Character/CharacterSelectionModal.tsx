@@ -4,6 +4,7 @@ import { ChangeEvent, Suspense, useContext, useDeferredValue, useEffect, useMemo
 import { useTranslation } from "react-i18next";
 import Assets from "../../Assets/Assets";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
+import { getLevelString } from "../../Data/LevelData";
 import { DatabaseContext } from "../../Database/Database";
 import { uiInput as input } from "../../Formula";
 import useDBState from "../../ReactHooks/useDBState";
@@ -12,7 +13,7 @@ import usePromise from "../../ReactHooks/usePromise";
 import useTeamData from "../../ReactHooks/useTeamData";
 import { initCharMeta } from "../../stateInit";
 import { ICachedCharacter } from "../../Types/character";
-import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey } from "../../Types/consts";
+import { allCharacterKeys, allElements, allWeaponTypeKeys, Ascension, CharacterKey } from "../../Types/consts";
 import { characterFilterConfigs, characterSortConfigs } from "../../Util/CharacterSort";
 import { filterFunction, sortFunction } from "../../Util/SortByFilters";
 import CardDark from "../Card/CardDark";
@@ -138,7 +139,7 @@ function CharacterBtn({ onClick, characterKey, characterSheet }: { onClick: () =
         <Box sx={{ pl: 1 }}>
           <Typography><strong>{characterSheet.name}</strong></Typography>
           {data ? <>
-            <Typography variant="h6" sx={{ display: "flex", gap: 0.5, alignItems: "center" }}> {characterSheet.elementKey && StatIcon[characterSheet.elementKey]} <ImgIcon src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} />{` `}{CharacterSheet.getLevelString(data.get(input.lvl).value, data.get(input.asc).value)}</Typography>
+            <Typography variant="h6" sx={{ display: "flex", gap: 0.5, alignItems: "center" }}> {characterSheet.elementKey && StatIcon[characterSheet.elementKey]} <ImgIcon src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} />{` `}{getLevelString(data.get(input.lvl).value, data.get(input.asc).value as Ascension)}</Typography>
             <Typography variant="subtitle2" >
               <SqBadge color="success">{`C${data.get(input.constellation).value}`}</SqBadge>{` `}
               <SqBadge color={data.get(input.bonus.auto).value ? "info" : "secondary"}><strong >{data.get(input.total.auto).value}</strong></SqBadge>{` `}
