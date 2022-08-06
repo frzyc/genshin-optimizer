@@ -159,3 +159,10 @@ export function deepFreeze(obj: any, layers: number = 5) {
   if (typeof obj === "object")
     Object.values(Object.freeze(obj)).forEach(o => deepFreeze(o, layers--))
 }
+
+export function arrayMove<T>(arr: T[], oldIndex: number, newIndex: number) {
+  if (newIndex < 0 || newIndex >= arr.length) return arr
+  if (oldIndex < 0 || oldIndex >= arr.length) return arr
+  arr.splice(newIndex, 0, arr.splice(oldIndex, 1)[0]);
+  return arr
+}

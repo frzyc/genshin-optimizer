@@ -181,11 +181,12 @@ export default class KeyMap {
     }
     return <span>{key}</span>
   }
-  static getVariant(key: string = ""): ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | undefined {
+  static getVariant(key: string = ""): ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "heal" | undefined {
     const trans = Object.keys(transformativeReactions).find(e => key.startsWith(e))
     if (trans) return trans
     const amp = Object.keys(amplifyingReactions).find(e => key.startsWith(e))
     if (amp) return amp
+    if (key.includes("heal")) return "heal"
     return allElementsWithPhy.find(e => key.startsWith(e))
   }
   static unit(key: string = ""): Unit {
