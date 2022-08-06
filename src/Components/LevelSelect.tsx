@@ -28,7 +28,7 @@ export default function LevelSelect({ level, ascension, setBoth, useLow = false 
         sx={{ height: "100%", pl: 2 }} />
     </CustomNumberInputButtonGroupWrapper>
     <Button sx={{ pl: 1, whiteSpace: 'nowrap' }} disabled={!(useLow ? ambiguousLevelLow : ambiguousLevel)(level)} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
-    <DropdownButton title={t("level.select")} sx={{ flexGrow: 1 }}>
+    <DropdownButton title={t("selectlevel")} sx={{ flexGrow: 1 }}>
       {[...(useLow ? milestoneLevelsLow : milestoneLevels)].map(([lv, as]) => {
         const selected = lv === level && as === ascension
         return <MenuItem key={`${lv}/${as}`} selected={selected} disabled={selected} onClick={() => setBoth({ level: lv, ascension: as })}>

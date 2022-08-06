@@ -52,7 +52,5 @@
   "locked": "Locked",
   "unlocked": "Unlocked",
   "refinement": "Refinement {{value}}",
-  "level": {
-    "select": "Select Level"
-  }
+  "selectlevel": "Select Level"
 }

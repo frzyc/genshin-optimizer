@@ -5,9 +5,9 @@
     "overview": "Overview",
     "talent": "Talents",
     "teambuffs": "Team Buffs",
-    "optimize": "Optimize",
-    "theorycraft":"Theorycraft"
+    "optimize": "Optimize"
   },
+  "selectLevel": "Select Level",
   "formulas": "Formulas",
   "calculations": "Calculations",
   "selectCharacter": "Select a Character",
