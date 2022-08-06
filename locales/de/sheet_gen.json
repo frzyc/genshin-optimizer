@@ -53,6 +53,8 @@
     "crystallize": "Kristallisation",
     "overloaded": "Überladen",
     "electrocharged": "Unter Strom",
-    "Superconduct": "Supraleiter"
+    "superconduct": "Supraleiter",
+    "vaporize": "Verdampfen",
+    "melt": "Schmelzen"
   }
 }

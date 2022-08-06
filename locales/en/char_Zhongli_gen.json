@@ -1,8 +1,8 @@
 {
+  "constellationName": "Lapis Dei",
   "name": "Zhongli",
   "title": "Vago Mundo",
   "description": "A mysterious expert contracted by the Wangsheng Funeral Parlor. Extremely knowledgeable in all things.",
-  "constellationName": "???",
   "auto": {
     "name": "Rain of Stone",
     "fields": {

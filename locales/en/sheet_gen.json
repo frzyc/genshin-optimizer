@@ -53,6 +53,8 @@
     "crystallize": "Crystallize",
     "overloaded": "Overloaded",
     "electrocharged": "Electro-Charged",
-    "Superconduct": "Superconduct"
+    "superconduct": "Superconduct",
+    "vaporize": "Vaporize",
+    "melt": "Melt"
   }
 }

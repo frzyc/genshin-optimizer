@@ -53,6 +53,8 @@
     "crystallize": "结晶",
     "overloaded": "超载",
     "electrocharged": "感电",
-    "Superconduct": "超导"
+    "superconduct": "超导",
+    "vaporize": "蒸发",
+    "melt": "融化"
   }
 }

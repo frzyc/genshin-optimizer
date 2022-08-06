@@ -1,8 +1,8 @@
 {
+  "constellationName": "Lapis Dei",
   "name": "Zhongli",
   "title": "El Vagabundo del Reino Mortal",
   "description": "Misterioso asesor de la Funeraria El Camino. Erudito y con información sobre todo tipo de cosas.",
-  "constellationName": "¿?",
   "auto": {
     "name": "Lluvia pétrea",
     "fields": {

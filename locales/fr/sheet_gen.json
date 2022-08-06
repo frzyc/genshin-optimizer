@@ -53,6 +53,8 @@
     "crystallize": "Cristallisation",
     "overloaded": "Surcharge",
     "electrocharged": "Électrocution",
-    "Superconduct": "Supraconduction"
+    "superconduct": "Supraconduction",
+    "vaporize": "Évaporation",
+    "melt": "Fonte"
   }
 }

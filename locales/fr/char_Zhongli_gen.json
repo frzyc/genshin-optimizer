@@ -1,8 +1,8 @@
 {
+  "constellationName": "Lapis Dei",
   "name": "Zhongli",
   "title": "Vagabond du monde mortel",
   "description": "Une mystérieuse relation du Funérarium Wangsheng, aux connaissances aussi variées qu'étendues.",
-  "constellationName": "???",
   "auto": {
     "name": "Pluie de pierres",
     "fields": {

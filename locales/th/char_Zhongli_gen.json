@@ -1,8 +1,8 @@
 {
+  "constellationName": "Lapis Dei",
   "name": "Zhongli",
   "title": "ผู้พเนจรแห่งแดนมนุษย์",
   "description": "แขกลึกลับผู้ถูกเชิญโดย \"โถงแห่งการเกิดใหม่ Wangsheng\" มีความรู้เป็นที่สุดในทุก ๆ เรื่อง",
-  "constellationName": "???",
   "auto": {
     "name": "Rain of Stone",
     "fields": {

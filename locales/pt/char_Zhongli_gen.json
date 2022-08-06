@@ -1,8 +1,8 @@
 {
+  "constellationName": "Lapis Dei",
   "name": "Zhongli",
   "title": "Andarilho do Reino Mortal",
   "description": "Um convidado misterioso da Funerária de Wangsheng. É um erudito que tem um profundo conhecimento sobre todos os tipos de coisa.",
-  "constellationName": "???",
   "auto": {
     "name": "Chuva de Pedras",
     "fields": {

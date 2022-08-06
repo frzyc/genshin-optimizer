@@ -53,6 +53,8 @@
     "crystallize": "Кристалл",
     "overloaded": "Перегрузка",
     "electrocharged": "Заряжен",
-    "Superconduct": "Сверхпроводник"
+    "superconduct": "Сверхпроводник",
+    "vaporize": "Пар",
+    "melt": "Таяние"
   }
 }
