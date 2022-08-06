@@ -54,9 +54,9 @@ for (const ele of allElements) {
 for (const reaction of [...allTransformative, ...allAmplifying]) {
   allModStatNodes[`${reaction}_dmg_`].info!.variant = reaction
 }
-allNonModStatNodes.healInc.info!.variant = "success"
-allNonModStatNodes.incHeal_.info!.variant = "success"
-allModStatNodes.heal_.info!.variant = "success"
+allNonModStatNodes.healInc.info!.variant = "heal"
+allNonModStatNodes.incHeal_.info!.variant = "heal"
+allModStatNodes.heal_.info!.variant = "heal"
 
 function withDefaultInfo<T>(info: Info, value: T): T {
   value = deepClone(value)

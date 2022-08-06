@@ -199,7 +199,7 @@ const sheet: ICharacterSheet = {
         }]
       }, ct.headerTemplate("passive2", {
         fields: [{
-          node: infoMut(a4Skill_healInc, { key: `char_${key}:a4.heal`, variant: "success" }),
+          node: infoMut(a4Skill_healInc, { key: `char_${key}:a4.heal`, variant: "heal" }),
         }, {
           node: a4Skill_dmgInc
         }]

@@ -239,7 +239,7 @@ const sheet: ICharacterSheet = {
             }, {
               node: burstSkillDmgInc,
             }, {
-              node: infoMut(dmgFormulas.burst.heal, { key: `char_${key}_gen:burst.skillParams.4`, variant: "success" }),
+              node: infoMut(dmgFormulas.burst.heal, { key: `char_${key}_gen:burst.skillParams.4`, variant: "heal" }),
             }, {
               text: tr("burst.skillParams.5"),
               value: datamine.burst.duration,

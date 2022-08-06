@@ -277,7 +277,7 @@ const sheet: ICharacterSheet = {
         }]
       }, ct.headerTemplate("passive2", {
         fields: [{
-          node: infoMut(dmgFormulas.passive2.extraHeal, { key: `char_${key}:p2Heal`, variant: "success" })
+          node: infoMut(dmgFormulas.passive2.extraHeal, { key: `char_${key}:p2Heal`, variant: "heal" })
         }, {
           text: trm("p2Aoe")
         }]
@@ -289,7 +289,7 @@ const sheet: ICharacterSheet = {
         fields: [{
           node: infoMut(c6_daruma_dmg_inc, { key: `char_${key}:c6DarumaDmgInc`, variant: "anemo" })
         }, {
-          node: infoMut(c6_daruma_heal_inc, { key: `char_${key}:c6DarumaHealInc`, variant: "success" })
+          node: infoMut(c6_daruma_heal_inc, { key: `char_${key}:c6DarumaHealInc`, variant: "heal" })
         }]
       })]),
 

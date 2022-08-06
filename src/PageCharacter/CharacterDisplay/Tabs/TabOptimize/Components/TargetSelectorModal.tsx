@@ -31,7 +31,7 @@ export function TargetSelectorModal({ show, onClose, setTarget, ignoreGlobal = f
         if (flatOnly && KeyMap.unit(node.info.key) === "%") return false
 
         // Assume `ignoreGlobal`= multitarget, ignore heal nodes on multi-target
-        if (ignoreGlobal && node.info.variant === "success") return false
+        if (ignoreGlobal && node.info.variant === "heal") return false
 
         // Assume `ignoreGlobal`= multitarget, allow showing of empty nodes as targets.
         if (!ignoreGlobal && node.isEmpty) return false
