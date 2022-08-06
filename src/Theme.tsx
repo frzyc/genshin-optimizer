@@ -291,7 +291,7 @@ export const theme = createTheme({
       name: "crystallize"
     }),
     heal: defaultTheme.palette.augmentColor({
-      color: { main: "#bcff37", },
+      color: { main: "#c0e86c", },
       name: "heal"
     }),
 

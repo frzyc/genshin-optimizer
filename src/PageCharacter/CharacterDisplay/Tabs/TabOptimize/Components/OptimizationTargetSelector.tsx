@@ -36,7 +36,7 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
   const variant = prevariant === "invalid" ? undefined : prevariant
 
   return <>
-    <Button color="primary" onClick={onShow} disabled={disabled} >
+    <Button color="info" onClick={onShow} disabled={disabled} >
       {invalidTarget ? <strong>Select an Optimization Target</strong> : <Stack direction="row" divider={<Divider orientation='vertical' flexItem />} spacing={1}>
         <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
           {!!icon && <ImgIcon src={icon} size={2} sx={{ my: -1 }} />}
