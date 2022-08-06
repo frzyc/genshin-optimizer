@@ -201,7 +201,7 @@ const sheet: ICharacterSheet = {
 
       skill: ct.talentTemplate("skill", [{
         fields: [{
-          node: infoMut(dmgFormulas.skill.heal, { key: `char_${key}_gen:skill.skillParams.0`, variant: "success" }),
+          node: infoMut(dmgFormulas.skill.heal, { key: `char_${key}_gen:skill.skillParams.0` }),
         }, {
           node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.1` }),
         }, {
@@ -239,7 +239,7 @@ const sheet: ICharacterSheet = {
             }, {
               node: burstSkillDmgInc,
             }, {
-              node: infoMut(dmgFormulas.burst.heal, { key: `char_${key}_gen:burst.skillParams.4`, variant: "success" }),
+              node: infoMut(dmgFormulas.burst.heal, { key: `char_${key}_gen:burst.skillParams.4`, variant: "heal" }),
             }, {
               text: tr("burst.skillParams.5"),
               value: datamine.burst.duration,

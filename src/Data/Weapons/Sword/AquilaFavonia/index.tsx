@@ -46,7 +46,7 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: infoMut(heal, { key: "sheet_gen:healing", variant: "success" })
+          node: infoMut(heal, { key: "sheet_gen:healing", variant: "heal" })
         }, {
           node: infoMut(dmg, { key: "sheet:dmg" })
         }, {

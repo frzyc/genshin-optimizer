@@ -25,7 +25,7 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
-      node: infoMut(healing, { key: "sheet_gen:healing", variant: "success" })
+      node: infoMut(healing, { key: "sheet_gen:healing" })
     }]
   }]
 }

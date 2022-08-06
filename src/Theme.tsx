@@ -30,6 +30,7 @@ declare module '@mui/material/styles' {
     swirl: Palette['primary'];
     burning: Palette['primary'];
     crystallize: Palette['primary'];
+    heal: Palette['primary'];
 
     white: Palette['primary'];
     red: Palette['primary'];
@@ -69,6 +70,7 @@ declare module '@mui/material/styles' {
     swirl?: PaletteOptions['primary'];
     burning?: PaletteOptions['primary'];
     crystallize?: PaletteOptions['primary'];
+    heal?: PaletteOptions['primary'];
 
     white?: PaletteOptions['primary'];
     red?: PaletteOptions['primary'];
@@ -108,6 +110,7 @@ declare module "@mui/material/Button" {
     swirl: true;
     burning: true;
     crystallize: true;
+    heal: true;
 
     white: true;
     red: true;
@@ -286,6 +289,10 @@ export const theme = createTheme({
     crystallize: defaultTheme.palette.augmentColor({
       color: { main: "#f8ba4e", },
       name: "crystallize"
+    }),
+    heal: defaultTheme.palette.augmentColor({
+      color: { main: "#bcff37", },
+      name: "heal"
     }),
 
     white: defaultTheme.palette.augmentColor({

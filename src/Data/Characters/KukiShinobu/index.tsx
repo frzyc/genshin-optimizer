@@ -179,7 +179,7 @@ const sheet: ICharacterSheet = {
         fields: [{
           node: infoMut(dmgFormulas.skill.pressDmg, { key: `char_${key}_gen:skill.skillParams.0` }),
         }, {
-          node: infoMut(dmgFormulas.skill.ringHeal, { key: `char_${key}_gen:skill.skillParams.1`, variant: "success" })
+          node: infoMut(dmgFormulas.skill.ringHeal, { key: `char_${key}_gen:skill.skillParams.1` })
         }, {
           node: infoMut(dmgFormulas.skill.ringDmg, { key: `char_${key}_gen:skill.skillParams.2` }),
         }, {
@@ -199,7 +199,7 @@ const sheet: ICharacterSheet = {
         }]
       }, ct.headerTemplate("passive2", {
         fields: [{
-          node: infoMut(a4Skill_healInc, { key: `char_${key}:a4.heal`, variant: "success" }),
+          node: infoMut(a4Skill_healInc, { key: `char_${key}:a4.heal`, variant: "heal" }),
         }, {
           node: a4Skill_dmgInc
         }]

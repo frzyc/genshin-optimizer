@@ -218,9 +218,9 @@ const sheet: ICharacterSheet = {
         }, {
           node: infoMut(dmgFormulas.burst.enterExitDmg, { key: `char_${key}_gen:burst.skillParams.1` }),
         }, {
-          node: infoMut(dmgFormulas.burst.regen, { key: `char_${key}_gen:burst.skillParams.2`, variant: "success" }),
+          node: infoMut(dmgFormulas.burst.regen, { key: `char_${key}_gen:burst.skillParams.2` }),
         }, {
-          node: infoMut(dmgFormulas.burst.contRegen, { key: `char_${key}_gen:burst.skillParams.3`, variant: "success" }),
+          node: infoMut(dmgFormulas.burst.contRegen, { key: `char_${key}_gen:burst.skillParams.3` }),
         }, {
           text: sgt("duration"),
           value: 11,
@@ -261,7 +261,7 @@ const sheet: ICharacterSheet = {
 
       passive1: ct.talentTemplate("passive1", [ct.fieldsTemplate("passive1", {
         fields: [{
-          node: infoMut(dmgFormulas.passive1.a1Regen, { key: `sheet_gen:healing`, variant: "success" }),
+          node: infoMut(dmgFormulas.passive1.a1Regen, { key: `sheet_gen:healing` }),
         }]
       })]),
       passive2: ct.talentTemplate("passive2", [ct.fieldsTemplate("passive2", {

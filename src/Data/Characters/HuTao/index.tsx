@@ -228,9 +228,9 @@ const sheet: ICharacterSheet = {
         }, {
           node: infoMut(dmgFormulas.burst.lowHpDmg, { key: `char_${key}_gen:burst.skillParams.1` })
         }, {
-          node: infoMut(dmgFormulas.burst.regen, { key: `char_${key}_gen:burst.skillParams.2`, variant: "success" })
+          node: infoMut(dmgFormulas.burst.regen, { key: `char_${key}_gen:burst.skillParams.2` })
         }, {
-          node: infoMut(dmgFormulas.burst.lowHpRegen, { key: `char_${key}_gen:burst.skillParams.3`, variant: "success" })
+          node: infoMut(dmgFormulas.burst.lowHpRegen, { key: `char_${key}_gen:burst.skillParams.3` })
         }, {
           text: tr("burst.skillParams.4"),
           value: datamine.burst.cd,

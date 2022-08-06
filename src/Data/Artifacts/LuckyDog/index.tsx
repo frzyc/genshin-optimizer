@@ -29,7 +29,7 @@ const sheet: IArtifactSheet = {
       document: [{
         header: setHeader(4),
         fields: [{
-          node: infoMut(heal, { key: "sheet_gen:healing", variant: "success" })
+          node: infoMut(heal, { key: "sheet_gen:healing", variant: "heal" })
         }]
       }]
     }

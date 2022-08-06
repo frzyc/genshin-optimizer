@@ -144,9 +144,9 @@ const sheet: ICharacterSheet = {
         fields: [{
           node: infoMut(dmgFormulas.skill.castDmg, { key: `char_${key}_gen:skill.skillParams.0` })
         }, {
-          node: infoMut(dmgFormulas.skill.hitRegen, { key: `char_${key}_gen:skill.skillParams.1`, variant: "success" })
+          node: infoMut(dmgFormulas.skill.hitRegen, { key: `char_${key}_gen:skill.skillParams.1` })
         }, {
-          node: infoMut(dmgFormulas.skill.contRegen, { key: `char_${key}_gen:skill.skillParams.2`, variant: "success" })
+          node: infoMut(dmgFormulas.skill.contRegen, { key: `char_${key}_gen:skill.skillParams.2` })
         }, {
           node: infoMut(dmgFormulas.skill.tickDmg, { key: `char_${key}_gen:skill.skillParams.3` })
         }, {
@@ -165,7 +165,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
         },
         {
-          node: infoMut(dmgFormulas.burst.heal, { key: `char_${key}_gen:burst.skillParams.1`, variant: "success" }),
+          node: infoMut(dmgFormulas.burst.heal, { key: `char_${key}_gen:burst.skillParams.1` }),
         }, {
           text: tr("burst.skillParams.2"),
           value: datamine.skill.duration,

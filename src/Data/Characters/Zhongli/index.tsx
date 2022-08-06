@@ -273,7 +273,7 @@ const sheet: ICharacterSheet = {
       constellation5: ct.talentTemplate("constellation5", [{ fields: [{ node: nodeC5 }] }]),
       constellation6: ct.talentTemplate("constellation6", [ct.fieldsTemplate("constellation6", {
         fields: [{
-          node: infoMut(dmgFormulas.constellation6.heal, { key: `char_${key}:c6heal`, variant: "success" })
+          node: infoMut(dmgFormulas.constellation6.heal, { key: `char_${key}:c6heal` })
         }]
       })]),
     },

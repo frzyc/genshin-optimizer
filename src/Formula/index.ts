@@ -54,6 +54,9 @@ for (const ele of allElements) {
 for (const reaction of [...allTransformative, ...allAmplifying]) {
   allModStatNodes[`${reaction}_dmg_`].info!.variant = reaction
 }
+allNonModStatNodes.healInc.info!.variant = "heal"
+allNonModStatNodes.incHeal_.info!.variant = "heal"
+allModStatNodes.heal_.info!.variant = "heal"
 
 function withDefaultInfo<T>(info: Info, value: T): T {
   value = deepClone(value)
@@ -199,7 +202,7 @@ const common: Data = {
     dmgInc: sum(
       total.all_dmgInc,
       lookup(hit.ele, objectKeyMap(allElements, element => total[`${element}_dmgInc`]), NaN),
-      lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmgInc`]), NaN)
+      lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmgInc`]), NaN),
     ),
     dmg: prod(
       sum(hit.base, hit.dmgInc),

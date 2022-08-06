@@ -241,7 +241,7 @@ const talentSheet: TalentSheet = {
     })]),
     passive2: ct.talentTemplate("passive2", [ct.fieldsTemplate("passive2", {
       fields: [{
-        node: infoMut(dmgFormulas.passive2.heal, { key: `sheet_gen:healing`, variant: "success" })
+        node: infoMut(dmgFormulas.passive2.heal, { key: `sheet_gen:healing` })
       }]
     })]),
     constellation1: ct.talentTemplate("constellation1"),

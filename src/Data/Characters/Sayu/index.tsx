@@ -266,18 +266,18 @@ const sheet: ICharacterSheet = {
         fields: [{
           node: infoMut(dmgFormulas.burst.pressDmg, { key: `char_${key}_gen:burst.skillParams.0` })
         }, {
-          node: infoMut(dmgFormulas.burst.pressHeal, { key: `char_${key}_gen:burst.skillParams.1`, variant: "success" })
+          node: infoMut(dmgFormulas.burst.pressHeal, { key: `char_${key}_gen:burst.skillParams.1` })
         }, {
           node: infoMut(dmgFormulas.burst.darumaDmg, { key: `char_${key}_gen:burst.skillParams.2` })
         }, {
-          node: infoMut(dmgFormulas.burst.darumaHeal, { key: `char_${key}_gen:burst.skillParams.3`, variant: "success" })
+          node: infoMut(dmgFormulas.burst.darumaHeal, { key: `char_${key}_gen:burst.skillParams.3` })
         }, {
           text: trm("burstHits"),
           value: datamine.burst.darumaHits,
         }]
       }, ct.headerTemplate("passive2", {
         fields: [{
-          node: infoMut(dmgFormulas.passive2.extraHeal, { key: `char_${key}:p2Heal`, variant: "success" })
+          node: infoMut(dmgFormulas.passive2.extraHeal, { key: `char_${key}:p2Heal`, variant: "heal" })
         }, {
           text: trm("p2Aoe")
         }]
@@ -289,7 +289,7 @@ const sheet: ICharacterSheet = {
         fields: [{
           node: infoMut(c6_daruma_dmg_inc, { key: `char_${key}:c6DarumaDmgInc`, variant: "anemo" })
         }, {
-          node: infoMut(c6_daruma_heal_inc, { key: `char_${key}:c6DarumaHealInc`, variant: "success" })
+          node: infoMut(c6_daruma_heal_inc, { key: `char_${key}:c6DarumaHealInc`, variant: "heal" })
         }]
       })]),
 
@@ -300,7 +300,7 @@ const sheet: ICharacterSheet = {
         states: {
           activeSwirl: {
             fields: [{
-              node: infoMut(dmgFormulas.passive1.heal, { key: `sheet_gen:healing`, variant: "success" })
+              node: infoMut(dmgFormulas.passive1.heal, { key: `sheet_gen:healing` })
             }, {
               text: sgt("cd"),
               value: datamine.passive1.cd,
