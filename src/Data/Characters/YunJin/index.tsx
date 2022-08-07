@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input, tally } from '../../../Formula'
-import { equal, greaterEq, infoMut, prod, subscript, sum } from '../../../Formula/utils'
+import { equal, greaterEq, infoMut, prod, subscript, sum, unequal } from '../../../Formula/utils'
 import { allElements, CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
@@ -216,7 +216,26 @@ const sheet: ICharacterSheet = {
             }]
           }
         }
-      })]),
+      }), ct.conditionalTemplate("constellation4", {
+        // C4 conditional in teambuff panel if burst is enabled
+        teamBuff: true,
+        canShow: unequal(input.activeCharKey, key, equal(condBurst, "on", 1)),
+        value: condC4,
+        path: condC4Path,
+        name: trm("c4"),
+        states: {
+          on: {
+            fields: [{
+              node: nodeC4
+            }, {
+              text: sgt("duration"),
+              value: datamine.constellation4.duration,
+              unit: "s"
+            },]
+          }
+        }
+      })
+    ]),
 
       passive1: ct.talentTemplate("passive1"),
       passive2: ct.talentTemplate("passive2", [ct.fieldsTemplate("passive2", {
