@@ -85,13 +85,13 @@ const burstNormalDmgInc = equal(condBurst, "on", prod(
     subscript(input.total.burstIndex, datamine.burst.nBonus_, { key: '_' }),
     greaterEq(input.asc, 4, prod(percent(datamine.p2.heal_ratio_), input.premod.heal_)),
   ),
-  input.premod.hp))
+  input.premod.hp), { variant: "invalid" })
 const burstChargedDmgInc = equal(condBurst, "on", prod(
   sum(
     subscript(input.total.burstIndex, datamine.burst.cBonus_, { key: '_' }),
     greaterEq(input.asc, 4, prod(percent(datamine.p2.heal_ratio_), input.premod.heal_)),
   ),
-  input.premod.hp))
+  input.premod.hp), { variant: "invalid" })
 const burstSkillDmgInc = equal(condBurst, "on", prod(
   subscript(input.total.burstIndex, datamine.burst.sBonus_, { key: '_' }),
   input.premod.hp))
