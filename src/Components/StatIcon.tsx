@@ -13,14 +13,14 @@ export const elementSvg = {
   physical: faPhysicalDmgBonus,
 }
 export const uncoloredEleIcons = {
-  anemo: <FontAwesomeIcon icon={faAnemo as any} fixedWidth />,
-  geo: <FontAwesomeIcon icon={faGeo as any} fixedWidth />,
-  electro: <FontAwesomeIcon icon={faElectro as any} fixedWidth />,
-  hydro: <FontAwesomeIcon icon={faHydro as any} fixedWidth />,
-  pyro: <FontAwesomeIcon icon={faPyro as any} fixedWidth />,
-  cryo: <FontAwesomeIcon icon={faCryo as any} fixedWidth />,
-  dendro: <FontAwesomeIcon icon={faDendro as any} fixedWidth />,
-  physical: <FontAwesomeIcon icon={faPhysicalDmgBonus as any} fixedWidth />,
+  anemo: <FontAwesomeIcon icon={faAnemo as any} />,
+  geo: <FontAwesomeIcon icon={faGeo as any} />,
+  electro: <FontAwesomeIcon icon={faElectro as any} />,
+  hydro: <FontAwesomeIcon icon={faHydro as any} />,
+  pyro: <FontAwesomeIcon icon={faPyro as any} />,
+  cryo: <FontAwesomeIcon icon={faCryo as any} />,
+  dendro: <FontAwesomeIcon icon={faDendro as any} />,
+  physical: <FontAwesomeIcon icon={faPhysicalDmgBonus as any} />,
 } as const
 const coloredEleIcon = objectKeyMap(Object.keys(uncoloredEleIcons), key => <ColorText color={key} sx={{ lineHeight: 1 }} >{uncoloredEleIcons[key]}</ColorText>)
 
