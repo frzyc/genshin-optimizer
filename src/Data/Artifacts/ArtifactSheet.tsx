@@ -43,6 +43,7 @@ export class ArtifactSheet {
     return this.slotIcons[slotKey]
   }
   get defIcon() { return <ImgIcon src={this.defIconSrc} sx={{ fontSize: "1.5em" }} /> }
+  get setName() { return tr(this.key, "setName") }
   /**
    * @deprecated use src directly
    */

@@ -5,7 +5,6 @@ import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
 import KeyMap, { cacheValueString } from "../../KeyMap";
 import usePromise from "../../ReactHooks/usePromise";
 import { ICachedArtifact, ICachedSubstat } from "../../Types/artifact";
-import { RollColorKey } from "../../Types/consts";
 import { clamp } from "../../Util/Util";
 import BootstrapTooltip from "../BootstrapTooltip";
 import SqBadge from "../SqBadge";
@@ -28,7 +27,6 @@ export default function ArtifactTooltip({ art, children }: { art: ICachedArtifac
 function ArtifactData({ art }: { art: ICachedArtifact }) {
   const sheet = usePromise(() => ArtifactSheet.get(art.setKey), [art.setKey])
   const { slotKey, level, rarity, mainStatKey, substats } = art
-  const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1) as RollColorKey
   const slotName = sheet?.getSlotName(slotKey)
   const mainStatUnit = KeyMap.unit(mainStatKey)
   const mainIcon = StatIcon[mainStatKey]
@@ -36,7 +34,7 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
   return <Box p={1}>
     <Typography variant='h6'>{artifactSlotIcon(slotKey)} {slotName}</Typography>
     <Typography variant="subtitle1" color={`${mainVariant}.main`}>{mainIcon} {KeyMap.get(mainStatKey)} {cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, level) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</Typography>
-    <Typography variant="subtitle2" sx={{ display: "flex", justifyContent: "space-between" }} ><StarsDisplay stars={rarity} /><SqBadge color={levelVariant}>+{level}</SqBadge> </Typography>
+    <Typography variant="subtitle2" sx={{ display: "flex", justifyContent: "space-between" }} ><StarsDisplay stars={rarity} /><SqBadge color={Artifact.levelVariant(level)}>+{level}</SqBadge> </Typography>
     <Box py={1}>
       {substats.map((stat: ICachedSubstat) => !!stat.value && <Typography key={stat.key} color={`roll${clamp(stat.rolls.length, 1, 6)}.main`}>
         {StatIcon[stat.key]} {KeyMap.getStr(stat.key)} <strong>{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}${KeyMap.unit(stat.key)}`}</strong>

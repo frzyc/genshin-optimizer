@@ -143,7 +143,7 @@ function probability(artifact: IArtifact, _target: { [key in SubstatKey]?: numbe
 
   // normalize `target`
   for (const [key, value] of Object.entries(target))
-    target[key] = Math.max(Math.ceil(10 * value / Artifact.maxSubstatValues(key, rarity)), 1)
+    target[key] = Math.max(Math.ceil(10 * value / Artifact.substatValue(key, rarity)), 1)
 
   let minTotalUpgrades = 0
   const targetEntries = Object.entries(target).map(([key, target]) => {

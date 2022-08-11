@@ -40,7 +40,6 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
   const { slotKey, rarity, level, mainStatKey, substats, location } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
   const mainStatUnit = KeyMap.unit(mainStatKey)
-  const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
   const element = allElementsWithPhy.find(ele => art.mainStatKey.includes(ele))
   const color = element ? alpha(theme.palette[element].main, 0.6) : alpha(theme.palette.secondary.main, 0.6)
   return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}  >
@@ -54,7 +53,7 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
           />
         </ArtifactTooltip>
         <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, display: "flex", justifyContent: "space-between", pointerEvents: "none" }} >
-          <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
+          <Chip size="small" label={<strong>{` +${level}`}</strong>} color={Artifact.levelVariant(level)} />
           {showLocation && <Chip size="small" label={<LocationIcon location={location} />} color={"secondary"} sx={{
             overflow: "visible", ".MuiChip-label": {
               overflow: "visible"

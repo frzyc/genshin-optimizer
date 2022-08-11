@@ -227,7 +227,7 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
         <CopyArea customMultiTarget={target} setCustomMultiTarget={setTarget} />
       </Box> */}
       <Box display="flex" gap={1} flexDirection="column">
-        {target.targets.map((t, i) => <CustomTargetDisplay key={t.path.join() + i} customTarget={t} setCustomTarget={(ct) => setCustomTarget(i, ct)} deleteCustomTarget={() => deleteCustomTarget(i)} index={i + 1} setTargetIndex={setTargetIndex(i)} onDup={dupCustomTarget(i)} />)}
+        {target.targets.map((t, i) => <CustomTargetDisplay key={t.path.join() + i} customTarget={t} setCustomTarget={(ct) => setCustomTarget(i, ct)} deleteCustomTarget={() => deleteCustomTarget(i)} rank={i + 1} maxRank={target.targets.length} setTargetIndex={setTargetIndex(i)} onDup={dupCustomTarget(i)} />)}
         <AddCustomTargetBtn setTarget={addTarget} />
       </Box>
 
@@ -236,7 +236,7 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
 }
 const keys = [...allInputPremodKeys]
 const wrapperFunc = (e: JSX.Element) => <Grid item xs={1}>{e}</Grid>
-function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget, index, setTargetIndex, onDup }: { customTarget: CustomTarget, setCustomTarget: (t: CustomTarget) => void, deleteCustomTarget: () => void, index: number, setTargetIndex: (ind?: number) => void, onDup: () => void }) {
+function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget, rank, maxRank, setTargetIndex, onDup }: { customTarget: CustomTarget, setCustomTarget: (t: CustomTarget) => void, deleteCustomTarget: () => void, rank: number, maxRank: number, setTargetIndex: (ind?: number) => void, onDup: () => void }) {
   const { t } = useTranslation("page_character")
   const { characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
@@ -249,7 +249,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
   return <CardDark sx={{ display: "flex", }} >
     <Box sx={{ p: 1, flexGrow: 1 }} >
       <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
-        <CustomNumberInput disableNegative float startAdornment="x" value={weight} onChange={setWeight} sx={{ borderRadius: 1, pl: 1 }} inputProps={{ sx: { pl: 0.5, width: "2em" } }} />
+        <CustomNumberInput float startAdornment="x" value={weight} onChange={setWeight} sx={{ borderRadius: 1, pl: 1 }} inputProps={{ sx: { pl: 0.5, width: "2em" }, min: 0 }} />
         <OptimizationTargetSelector optimizationTarget={path} setTarget={path => setCustomTarget({ ...customTarget, path, reaction: undefined, infusionAura: undefined })} ignoreGlobal targetSelectorModalProps={{ flatOnly: true, excludeSections: ["basic", "custom"] }} />
         <Box sx={{ flexGrow: 1 }} />
         <ReactionDropdown reaction={reaction} setReactionMode={(rm) => setCustomTarget({ ...customTarget, reaction: rm })} node={node} infusionAura={infusionAura} />
@@ -271,7 +271,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
     </Box>
     <ButtonGroup orientation="vertical" sx={{ borderTopLeftRadius: 0, "*": { flexGrow: 1 } }}>
       <CustomNumberInputButtonGroupWrapper>
-        <CustomNumberInput disableNegative value={index} onChange={setTargetIndex} sx={{ pl: 2 }} inputProps={{ sx: { width: "1em" } }} />
+        <CustomNumberInput value={rank} onChange={setTargetIndex} sx={{ pl: 2 }} inputProps={{ sx: { width: "1em" }, min: 1, max: maxRank }} />
       </CustomNumberInputButtonGroupWrapper>
       <Button size="small" color="info" onClick={onDup} ><ContentCopy /></Button>
       <Button size="small" color="error" onClick={deleteCustomTarget} ><DeleteForever /></Button>

@@ -1,6 +1,6 @@
 import KeyMap, { cacheValueString } from '../../KeyMap';
 import { allSubstatKeys, ICachedArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
-import { allRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../../Types/consts';
+import { allRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, RollColorKey, SlotKey } from '../../Types/consts';
 import { clampPercent, objectKeyMap } from '../../Util/Util';
 import ArtifactMainStatsData from './artifact_main_gen.json';
 import ArtifactSubstatsData from './artifact_sub_gen.json';
@@ -15,14 +15,22 @@ const ArtifactSubstatRollData: StrictDict<Rarity, { low: number, high: number, n
   4: { low: 2, high: 3, numUpgrades: 4 },
   5: { low: 3, high: 4, numUpgrades: 5 }
 };
+export const artifactSandsStatKeys = ["hp_", "def_", "atk_", "eleMas", "enerRech_"] as const
+export type ArtifactSandsStatKey = typeof artifactSandsStatKeys[number]
 
-const ArtifactSlotsData: StrictDict<SlotKey, { name: string, stats: readonly MainStatKey[] }> = {
+export const artifactGobletStatKeys = ["hp_", "def_", "atk_", "eleMas", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_",] as const
+export type ArtifactGobletStatKey = typeof artifactGobletStatKeys[number]
+
+export const artifactCircletStatKeys = ["hp_", "def_", "atk_", "eleMas", "critRate_", "critDMG_", "heal_"] as const
+export type ArtifactCircletStatKey = typeof artifactCircletStatKeys[number]
+
+const ArtifactSlotsData = {
   flower: { name: "Flower of Life", stats: ["hp"] },
   plume: { name: "Plume of Death", stats: ["atk"] },
-  sands: { name: "Sands of Eon", stats: ["hp_", "def_", "atk_", "eleMas", "enerRech_"] },
-  goblet: { name: "Goblet of Eonothem", stats: ["hp_", "def_", "atk_", "eleMas", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_",] },
-  circlet: { name: "Circlet of Logos", stats: ["hp_", "def_", "atk_", "eleMas", "critRate_", "critDMG_", "heal_"] },
-};
+  sands: { name: "Sands of Eon", stats: artifactSandsStatKeys },
+  goblet: { name: "Goblet of Eonothem", stats: artifactGobletStatKeys },
+  circlet: { name: "Circlet of Logos", stats: artifactCircletStatKeys },
+} as const
 
 export default class Artifact {
   //do not instantiate.
@@ -50,16 +58,18 @@ export default class Artifact {
   static rollInfo = (rarity: Rarity): { low: number, high: number, numUpgrades: number } =>
     ArtifactSubstatRollData[rarity]
 
-  static maxSubstatValues = (substatKey: SubstatKey, rarity = maxStar): number => {
-    if (substatKey.endsWith("_")) // TODO: % CONVERSION
-      return Math.max(...ArtifactSubstatsData[rarity][substatKey]) * 100
-    return Math.max(...ArtifactSubstatsData[rarity][substatKey])
+  static substatValue = (substatKey: SubstatKey, rarity = maxStar, type: "max" | "min" | "mid" = "max"): number => {
+    const substats = ArtifactSubstatsData[rarity][substatKey]
+    const value = type === "max" ? Math.max(...substats) :
+      type === "min" ? Math.min(...substats) :
+        substats.reduce((a, b) => a + b, 0) / substats.length
+    return substatKey.endsWith("_") ? value * 100 : value
   }
 
   static maxSubstatRollEfficiency = objectKeyMap(allRarities,
     rarity => 100 * Math.max(...allSubstatKeys.map(substat =>
-      Artifact.maxSubstatValues(substat, rarity) /
-      Artifact.maxSubstatValues(substat, maxStar))))
+      Artifact.substatValue(substat, rarity) /
+      Artifact.substatValue(substat, maxStar))))
 
   static totalPossibleRolls = (rarity: Rarity): number =>
     ArtifactSubstatRollData[rarity].high + ArtifactSubstatRollData[rarity].numUpgrades
@@ -79,7 +89,7 @@ export default class Artifact {
   }
   static getSubstatEfficiency = (substatKey: SubstatKey | "", rolls: number[]): number => {
     const sum = rolls.reduce((a, b) => a + b, 0)
-    const max = substatKey ? Artifact.maxSubstatValues(substatKey) * rolls.length : 0
+    const max = substatKey ? Artifact.substatValue(substatKey) * rolls.length : 0
     return max ? clampPercent((sum / max) * 100) : 0
   }
 
@@ -111,4 +121,5 @@ export default class Artifact {
     })
     return setToSlots
   }
+  static levelVariant = (level: number) => "roll" + (Math.floor(Math.max(level, 0) / 4) + 1) as RollColorKey
 }

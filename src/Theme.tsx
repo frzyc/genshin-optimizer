@@ -145,6 +145,27 @@ declare module "@mui/material/Chip" {
     melt: true;
   }
 }
+declare module "@mui/material/InputBase" {
+  interface InputBasePropsColorOverrides {
+    warning: true;
+    roll1: true;
+    roll2: true;
+    roll3: true;
+    roll4: true;
+    roll5: true;
+    roll6: true;
+    geo: true;
+    dendro: true;
+    pyro: true;
+    hydro: true;
+    cryo: true;
+    electro: true;
+    anemo: true;
+    physical: true;
+    vaporize: true;
+    melt: true;
+  }
+}
 
 const defaultTheme = createTheme({
   palette: {

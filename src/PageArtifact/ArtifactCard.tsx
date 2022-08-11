@@ -70,7 +70,6 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
   const { id, lock, slotKey, rarity, level, mainStatKey, substats, exclude, location = "" } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
   const mainStatUnit = KeyMap.unit(mainStatKey)
-  const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
 
   const artifactValid = maxEfficiency !== 0
   const slotName = sheet?.getSlotName(slotKey)
@@ -105,7 +104,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
           <Box sx={{ pt: 2, px: 2, position: "relative", zIndex: 1 }}>
             {/* header */}
             <Box component="div" sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
-              <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
+              <Chip size="small" label={<strong>{` +${level}`}</strong>} color={Artifact.levelVariant(level)} />
               {!slotName && <Skeleton variant="text" width={100} />}
               {slotName && <Typography noWrap sx={{ textAlign: "center", backgroundColor: "rgba(100,100,100,0.35)", borderRadius: "1em", px: 1 }}><strong>{slotName}</strong></Typography>}
               {!slotDescTooltip && <Skeleton width={10} />}
@@ -186,7 +185,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
 }
 function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, effFilter: Set<SubstatKey>, rarity: Rarity }) {
   const numRolls = stat.rolls?.length ?? 0
-  const maxRoll = stat.key ? Artifact.maxSubstatValues(stat.key) : 0
+  const maxRoll = stat.key ? Artifact.substatValue(stat.key) : 0
   const rollData = useMemo(() => stat.key ? Artifact.getSubstatRollData(stat.key, rarity) : [], [stat.key, rarity])
   const rollOffset = 7 - rollData.length
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
