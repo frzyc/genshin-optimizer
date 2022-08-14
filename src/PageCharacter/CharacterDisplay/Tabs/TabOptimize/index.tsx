@@ -33,7 +33,7 @@ import { CharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
 import { FinalizeResult, Setup, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
-import { artSetPerm, Build, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
+import { addArtRange, ArtifactBuildData, artSetPerm, Build, computeArtRange, computeNodeRange, DynStat, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
@@ -146,145 +146,134 @@ export default function TabBuild() {
     }))
     nodes = optimize(nodes, {}, _ => false)
 
+    const mk = (b: DynStat) => {
+      const g = (f: NumNode) => {
+        const { operation } = f
+        switch (operation) {
+          case "const": return "" + f.value
+          case "read":
+            const bs = b[f.path[1]] !== 0 ? `${b[f.path[1]]} + ` : ""
+            return `(${bs}s.reduce((a, b)=> a + b.values["${f.path[1]}"], 0) )`
+          case "min": case "max":
+            return `Math.${f.operation}( ${f.operands.map(g).join(", ")} )`
+          case "add": return `( ${f.operands.map(g).join(" + ")} )`
+          case "mul": return `( ${f.operands.map(g).join(" * ")} )`
+          case "sum_frac":
+            const [x, c] = f.operands.map(g)
+            return `( ${x} / ( ${x} + ${c} ) )`
+          case "threshold":
+            const [value, threshold, pass, fail] = f.operands.map(g)
+            return `( ${value} >= ${threshold} ? ${pass} : ${fail} )`
+          case "res":
+            const res = g(f.operands[0])
+            return `res(${res})`
+          default: throw new Error(`Unsupported ${operation} node`)
+        }
+      };
+      return g
+    }
+
+    const cN: { (s: ArtifactBuildData[]): number; }[] = nodes.map((n) => new (Function as any)('s', `"use strict";\nconst res = (res) => ( (res < 0) ? (1 - res / 2) : (res >= 0.75) ? (1 / (res * 4 + 1)) : (1 - res) )\nreturn ${mk(arts.base)(n)}`))
+    const pCN = plotBase ? cN.pop() : undefined
+    let s = 0 / 0
+    let min = 0 / 0
+    if (plotBase) {
+      const baseRange = Object.fromEntries(Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }]))
+      const reads = addArtRange([baseRange, ...Object.values(arts.values).map(values => computeArtRange(values))])
+      const nodeRange = computeNodeRange(nodes, reads)
+      const r = nodeRange.get(nodes[nodes.length - 1])!
+      s = 4096 / (r.max - r.min)
+      min = r.min
+    }
+    const tCN = cN.pop()!
+
+    const m = new Float64Array(maxBuildsToShow);
+    const mI = Array(maxBuildsToShow)
+    const pA = new Float32Array(4096)
+    const pAI = new Array(4096)
+    function p(as) {
+      const acc = new Array(as.length);
+      return (function f(i) {
+        if (i + 1 === as.length) {
+          for (const x of as[i]) {
+            acc[i] = x
+            if (cN.every((n, i) => n(acc) > minimum[i])) {
+              const t = tCN(acc)
+              if (t >= m[0]) {
+                l: do {
+                  let i = 0
+                  for (; i < m.length - 1; i++) {
+                    if (t >= m[i]) {
+                      m[i] = m[i + 1]
+                      mI[i] = mI[i + 1]
+                    } else {
+                      m[i] = t
+                      mI[i] = acc.slice()
+                      break l
+                    }
+                  }
+                  if (!(t >= m[i])) {
+                    i = i - 1
+                  }
+                  m[i] = t
+                  mI[i] = acc.slice()
+                } while (0);
+              }
+              if (pCN) {
+                const p = pCN(acc)
+                const i = (s * (p - min)) | 0
+                if (t > pA[i]) {
+                  pA[i] = t
+                  pAI[i] = acc.slice()
+                }
+              }
+            }
+          }
+          return
+        }
+        for (const x of as[i]) {
+          acc[i] = x
+          f(i + 1)
+        }
+      })(0)
+    }
+
+    status.total = Object.values(arts.values).reduce((a, x) => a * x.length, 1)
+    setBuildStatus({ type: "active", ...status })
+    p(Object.values(arts.values))
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
 
-    const wrap = { buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity) }
-
-    const minFilterCount = 8_000_000, maxRequestFilterInFlight = maxWorkers * 4
-    const unprunedFilters = setPerms[Symbol.iterator](), requestFilters: RequestFilter[] = []
-    const idleWorkers: number[] = [], splittingWorkers = new Set<number>()
-    const workers: Worker[] = []
-
-    function fetchContinueWork(): WorkerCommand {
-      return { command: "split", filter: undefined, minCount: minFilterCount, threshold: wrap.buildValues[maxBuildsToShow - 1] }
-    }
-    function fetchPruningWork(): WorkerCommand | undefined {
-      const { done, value } = unprunedFilters.next()
-      return done ? undefined : {
-        command: "split", minCount: minFilterCount,
-        threshold: wrap.buildValues[maxBuildsToShow - 1], filter: value,
-      }
-    }
-    function fetchRequestWork(): WorkerCommand | undefined {
-      const filter = requestFilters.pop()
-      return !filter ? undefined : {
-        command: "iterate",
-        threshold: wrap.buildValues[maxBuildsToShow - 1], filter
-      }
-    }
-
-    const filters = nodes
-      .map((value, i) => ({ value, min: minimum[i] }))
-      .filter(x => x.min > -Infinity)
-
-    const finalizedList: Promise<FinalizeResult>[] = []
-    for (let i = 0; i < maxWorkers; i++) {
-      const worker = new Worker()
-
-      const setup: Setup = {
-        command: "setup",
-        id: i, arts,
-        optimizationTarget: optimizationTargetNode,
-        plotBase: plotBaseNode,
-        maxBuilds: maxBuildsToShow,
-        filters
-      }
-      worker.postMessage(setup, undefined)
-      if (i === 0) {
-        const countCommand: WorkerCommand = { command: "count", exclusion: artSetExclusion, arts: [arts, prepruneArts] }
-        worker.postMessage(countCommand, undefined)
-      }
-      let finalize: (_: FinalizeResult) => void
-      const finalized = new Promise<FinalizeResult>(r => finalize = r)
-      worker.onmessage = async ({ data }: { data: { id: number } & WorkerResult }) => {
-        switch (data.command) {
-          case "interim":
-            status.tested += data.tested
-            status.failed += data.failed
-            status.skipped += data.skipped
-            if (data.buildValues) {
-              wrap.buildValues.push(...data.buildValues)
-              wrap.buildValues.sort((a, b) => b - a).splice(maxBuildsToShow)
-            }
-            break
-          case "split":
-            if (data.filter) {
-              requestFilters.push(data.filter)
-              splittingWorkers.add(data.id)
-            } else splittingWorkers.delete(data.id)
-            idleWorkers.push(data.id)
-            break
-          case "iterate":
-            idleWorkers.push(data.id)
-            break
-          case "finalize":
-            worker.terminate()
-            finalize(data);
-            return
-          case "count":
-            const [pruned, prepruned] = data.counts
-            status.total = prepruned
-            status.skipped += prepruned - pruned
-            return
-          default: console.log("DEBUG", data)
+    if (plotBase) {
+      let data: Build[] = Object.entries(pAI).map(([i, value]) => (
+        {
+          value: pA[+i | 0],
+          plot: +i / s + min,
+          artifactIds: (value as any[]).map(v => v.id)
         }
-        while (idleWorkers.length) {
-          const id = idleWorkers.pop()!, worker = workers[id]
-          let work: WorkerCommand | undefined
-          if (requestFilters.length < maxRequestFilterInFlight) {
-            work = fetchPruningWork()
-            if (!work && splittingWorkers.has(id)) work = fetchContinueWork()
-          }
-          if (!work) work = fetchRequestWork()
-          if (work) worker.postMessage(work)
-          else {
-            idleWorkers.push(id)
-            if (idleWorkers.length === 8 * maxWorkers) {
-              const command: WorkerCommand = { command: "finalize" }
-              workers.forEach(worker => worker.postMessage(command))
-            }
-            break
-          }
-        }
-      }
-
-      workers.push(worker)
-      cancelled.then(() => worker.terminate())
-      finalizedList.push(finalized)
+      ))
+      const plotBaseNode = input.total[plotBase] as NumNode
+      if (KeyMap.unit(targetNode.info?.key) === "%")
+        data = data.map(({ value, plot }) => ({ value: value * 100, plot })) as Build[]
+      if (KeyMap.unit(plotBaseNode!.info?.key) === "%")
+        data = data.map(({ value, plot }) => ({ value, plot: (plot ?? 0) * 100 })) as Build[]
+      setchartData({
+        valueNode: targetNode,
+        plotNode: plotBaseNode,
+        data
+      })
     }
-    for (let i = 0; i < 7; i++)
-      idleWorkers.push(...range(0, maxWorkers - 1))
 
-    const buildTimer = setInterval(() => setBuildStatus({ type: "active", ...status }), 100)
-    const results = await Promise.any([Promise.all(finalizedList), cancelled])
-    clearInterval(buildTimer)
-    cancelToken.current = () => { }
-
-    if (!results) {
-      status.tested = 0
-      status.failed = 0
-      status.skipped = 0
-      status.total = 0
-    } else {
-      if (plotBase) {
-        const plotData = mergePlot(results.map(x => x.plotData!))
-        const plotBaseNode = input.total[plotBase] as NumNode
-        let data = Object.values(plotData)
-        if (KeyMap.unit(targetNode.info?.key) === "%")
-          data = data.map(({ value, plot }) => ({ value: value * 100, plot })) as Build[]
-        if (KeyMap.unit(plotBaseNode!.info?.key) === "%")
-          data = data.map(({ value, plot }) => ({ value, plot: (plot ?? 0) * 100 })) as Build[]
-        setchartData({
-          valueNode: targetNode,
-          plotNode: plotBaseNode,
-          data
-        })
+    const builds = Object.entries(mI).map(([i, value]) => (
+      {
+        value: m[+i | 0],
+        artifactIds: (value as any[]).map(v => v.id)
       }
-      const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
-      if (process.env.NODE_ENV === "development") console.log("Build Result", builds)
-      buildSettingDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
-    }
+    )).slice(0, maxBuildsToShow)
+    if (process.env.NODE_ENV === "development") console.log("Build Result", builds)
+    buildSettingDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
+
+    status.tested = status.total
     setBuildStatus({ ...status, type: "inactive", finishTime: performance.now() })
   }, [characterKey, database, buildSettingDispatch, maxWorkers, buildSetting, equipmentPriority])
 

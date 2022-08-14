@@ -59,6 +59,7 @@ export function pruneAll(nodes: NumNode[], minimum: number[], arts: ArtifactsByS
 }
 
 function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean = false): { nodes: NumNode[], arts: ArtifactsBySlot } {
+  nodes = constantFold(nodes, {})
   const affineNodes = new Set<NumNode>(), topLevelAffine = new Set<NumNode>()
 
   function visit(node: NumNode, isAffine: boolean) {
@@ -224,7 +225,7 @@ function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot): NumNode[] {
     return f
   }, f => f)
 }
-function addArtRange(ranges: DynMinMax[]): DynMinMax {
+export function addArtRange(ranges: DynMinMax[]): DynMinMax {
   const result: DynMinMax = {}
   ranges.forEach(range => {
     Object.entries(range).forEach(([key, value]) => {
@@ -236,7 +237,7 @@ function addArtRange(ranges: DynMinMax[]): DynMinMax {
   })
   return result
 }
-function computeArtRange(arts: ArtifactBuildData[]): DynMinMax {
+export function computeArtRange(arts: ArtifactBuildData[]): DynMinMax {
   const result: DynMinMax = {}
   if (arts.length) {
     Object.keys(arts[0].values)
@@ -254,7 +255,7 @@ function computeArtRange(arts: ArtifactBuildData[]): DynMinMax {
   }
   return result
 }
-function computeNodeRange(nodes: NumNode[], reads: DynMinMax): Map<NumNode, MinMax> {
+export function computeNodeRange(nodes: NumNode[], reads: DynMinMax): Map<NumNode, MinMax> {
   const range = new Map<NumNode, MinMax>()
 
   forEachNodes(nodes, _ => { }, _f => {
