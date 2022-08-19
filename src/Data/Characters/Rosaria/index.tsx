@@ -253,6 +253,24 @@ const sheet: ICharacterSheet = {
             }]
           }
         }
+      }), ct.conditionalTemplate("passive1", {
+        // A1 conditional in teambuff, if A4 is active
+        path: condA1Path,
+        value: condA1,
+        name: trm("a1"),
+        teamBuff: true,
+        canShow: unequal(input.activeCharKey, key, equal(condA4, "on", 1)),
+        states: {
+          on: {
+            fields: [{
+              node: nodeA1CritInc
+            }, {
+              text: sgt("duration"),
+              value: datamine.passive1.duration,
+              unit: 's'
+            }]
+          }
+        }
       })]),
       passive3: ct.talentTemplate("passive3"),
       constellation1: ct.talentTemplate("constellation1", [ct.conditionalTemplate("constellation1", {
