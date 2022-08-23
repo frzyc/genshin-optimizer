@@ -8,10 +8,12 @@ import BlizzardStrayer from './BlizzardStrayer'
 import BloodstainedChivalry from './BloodstainedChivalry'
 import BraveHeart from './BraveHeart'
 import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
+import DeepwoodMemories from './DeepwoodMemories'
 import DefendersWill from './DefendersWill'
 import EchoesOfAnOffering from './EchoesOfAnOffering'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import Gambler from './Gambler'
+import GildedDreams from './GildedDreams'
 import GladiatorsFinale from './GladiatorsFinale'
 import HeartOfDepth from './HeartOfDepth'
 import HuskOfOpulentDreams from './HuskOfOpulentDreams'
@@ -48,10 +50,12 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   BloodstainedChivalry,
   BraveHeart,
   CrimsonWitchOfFlames,
+  DeepwoodMemories,
   DefendersWill,
   EchoesOfAnOffering,
   EmblemOfSeveredFate,
   Gambler,
+  GildedDreams,
   GladiatorsFinale,
   HeartOfDepth,
   HuskOfOpulentDreams,

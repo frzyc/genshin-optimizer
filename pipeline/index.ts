@@ -314,6 +314,8 @@ export const artifactIdMap = {
   15022: "OceanHuedClam",
   15023: "VermillionHereafter",
   15024: "EchoesOfAnOffering",
+  15025: "DeepwoodMemories",
+  15026: "GildedDreams",
 } as const
 
 export const artifactSlotMap = {
