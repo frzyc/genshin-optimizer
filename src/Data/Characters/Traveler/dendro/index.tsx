@@ -107,10 +107,10 @@ const c6_ele_dmg_disp = Object.fromEntries(["hydro", "pyro", "electro"].map(ele 
     )
   )
 ]))
-const c6_ele_dmg_ = Object.entries(c6_ele_dmg_disp).map(([ele, node]) => [
+const c6_ele_dmg_ = Object.fromEntries(Object.entries(c6_ele_dmg_disp).map(([ele, node]) => [
   `${ele}_dmg_`,
   equal(input.activeCharKey, target.charKey, node)
-])
+]))
 
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -133,6 +133,7 @@ const dmgFormulas = {
 const skillC3 = greaterEq(input.constellation, 3, 3)
 const burstC5 = greaterEq(input.constellation, 5, 3)
 
+console.log(c6_ele_dmg_)
 export const data = dataObjForCharacterSheet(key, elementKey, undefined, data_gen, dmgFormulas, {
   bonus: {
     burst: burstC5,
