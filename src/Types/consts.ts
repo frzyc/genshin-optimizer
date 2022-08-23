@@ -109,6 +109,7 @@ export const allCharacterKeys = [
   "Yelan",
   "ShikanoinHeizou",
   "Collei",
+  "Tighnari",
 ] as const
 
 export const allWeaponSwordKeys = [

@@ -41,6 +41,7 @@ import ShikanoinHeizou from "./ShikanoinHeizou"
 import Sucrose from "./Sucrose"
 import Tartaglia from './Tartaglia'
 import Thoma from './Thoma'
+import Tighnari from './Tighnari'
 import Traveler from './Traveler'
 import Venti from './Venti'
 import Xiangling from './Xiangling'
@@ -95,6 +96,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Sucrose,
   Tartaglia,
   Thoma,
+  Tighnari,
   Traveler,
   Venti,
   Xiangling,
