@@ -129,6 +129,7 @@ const characterSkillParamDump = Object.fromEntries(Object.entries(avatarExcelCon
     genTalentHash([...keys, "anemo"], skillDepot[704])
     genTalentHash([...keys, "geo"], skillDepot[706])
     genTalentHash([...keys, "electro"], skillDepot[707])
+    genTalentHash([...keys, "dendro"], skillDepot[708])
   } else {
     genTalentHash(keys, skillDepot[skillDepotId])
   }
@@ -317,6 +318,7 @@ Object.entries(avatarExcelConfigData).filter(([charid,]) => charid in characterI
     genTalentHash([...keys, "anemo"], skillDepot[704])
     genTalentHash([...keys, "geo"], skillDepot[706])
     genTalentHash([...keys, "electro"], skillDepot[707])
+    genTalentHash([...keys, "dendro"], skillDepot[708])
   } else {
     genTalentHash(keys, skillDepot[skillDepotId])
   }

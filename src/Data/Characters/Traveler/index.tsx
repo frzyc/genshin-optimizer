@@ -4,6 +4,7 @@ import { trans } from '../../SheetUtil'
 import CharacterSheet, { ICharacterSheet } from '../CharacterSheet'
 import anemo, { data as anemoData } from './anemo'
 import data_gen_src from './data_gen.json'
+import dendro, { data as dendroData } from './dendro'
 import electro, { data as electroData } from './electro'
 import geo, { data as geoData } from './geo'
 import thumb from './Icon.png'
@@ -27,10 +28,12 @@ const sheet: ICharacterSheet = {
     anemo,
     geo,
     electro,
+    dendro,
   }
 };
 export default new CharacterSheet(sheet, {
   anemo: anemoData,
   geo: geoData,
   electro: electroData,
+  dendro: dendroData,
 });
