@@ -55,7 +55,7 @@ const ferventFlames: IResonance = {
 }
 
 // Soothing Waters
-const swNode = greaterEq(teamSize, 4, greaterEq(tally.hydro, 2, percent(0.30)))
+const swNode = greaterEq(teamSize, 4, greaterEq(tally.hydro, 2, percent(0.25)))
 const soothingWaters: IResonance = {
   name: tr("SoothingWater.name"),
   desc: tr("SoothingWater.desc"),
@@ -263,7 +263,7 @@ export const resonanceData = inferInfoMut({
   premod: {
     ...pcNodes,
     atk_: ffNode,
-    incHeal_: swNode,
+    hp_: swNode,
     staminaDec_: iwNodeStam,
     moveSPD_: iwNodeMove,
     cdRed_: iwNodeCD,
