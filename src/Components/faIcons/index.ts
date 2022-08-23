@@ -23,7 +23,7 @@ export const faCryo = {
 
 export const faDendro = {
   prefix: 'faga',
-  iconName: "dengro",
+  iconName: "dendro",
   icon: [
     14, 14,
     [],

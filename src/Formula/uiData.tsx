@@ -308,7 +308,7 @@ function accumulateInfo<V>(operands: ContextNodeDisplay<V>[]): Info {
     switch (variant) {
       case "overloaded": case "shattered": case "electrocharged": case "superconduct":
       case "vaporize": case "melt": return 2
-      case "anemo": case "cryo": case "hydro": case "pyro": case "electro": case "geo": return 1
+      case "anemo": case "cryo": case "hydro": case "pyro": case "electro": case "geo": case "dendro": return 1
       case "swirl": case "heal": return 0.5
       case "physical": return 0
       case "invalid": return -1

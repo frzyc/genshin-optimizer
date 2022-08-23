@@ -46,7 +46,7 @@ export default function MainStatSelectionCard({ disabled = false, }: {
               const color = mainStatKeys[slotKey].includes(mainStatKey)
                 ? element ?? "success"
                 : "secondary"
-              return <Grid item key={mainStatKey} flexGrow={1} xs={i < 3 ? 4 : undefined} >
+              return <Grid item key={mainStatKey} flexGrow={1} xs={(i < 3 && slotKey !== "goblet") ? 4 : undefined} >
                 <BootstrapTooltip placement="top" title={<Typography><strong>{KeyMap.getArtStr(mainStatKey)}</strong></Typography>} disableInteractive>
                   <Button fullWidth size="small" color={color} sx={{ fontSize: "1.2em", height: "100%", pointerEvents: disabled ? "none" : undefined, cursor: disabled ? "none" : undefined }}
                     onClick={() => buildSettingDispatch({ type: "mainStatKey", slotKey, mainStatKey })}>

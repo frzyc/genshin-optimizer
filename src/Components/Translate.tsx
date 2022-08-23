@@ -10,6 +10,7 @@ const textComponents = {
   hydro: <ColorText color="hydro" />,
   pyro: <ColorText color="pyro" />,
   electro: <ColorText color="electro" />,
+  dendro: <ColorText color="dendro" />,
 }
 const badgeComponents = {
   anemo: <SqBadge color="anemo" />,
@@ -18,6 +19,7 @@ const badgeComponents = {
   hydro: <SqBadge color="hydro" />,
   pyro: <SqBadge color="pyro" />,
   electro: <SqBadge color="electro" />,
+  dendro: <SqBadge color="dendro" />,
 }
 
 /**

@@ -10,7 +10,8 @@ export const tagColor = {
   "99FFFFFF": "cryo",
   "80C0FFFF": "hydro",
   "FF9999FF": "pyro",
-  "FFACFFFF": "electro"
+  "FFACFFFF": "electro",
+  "99FF88FF": "dendro",
 } as const
 export type ColorTag = typeof tagColor[keyof typeof tagColor]
 
@@ -343,7 +344,7 @@ export const MainPropMap = {
   FIGHT_PROP_WATER_ADD_HURT: "hydro_dmg_",
   FIGHT_PROP_ICE_ADD_HURT: "cryo_dmg_",
   FIGHT_PROP_WIND_ADD_HURT: "anemo_dmg_",
-  // FIGHT_PROP_GRASS_ADD_HURT: "dendro_dmg_"
+  FIGHT_PROP_GRASS_ADD_HURT: "dendro_dmg_"
   // FIGHT_PROP_FIRE_SUB_HURT:"" //
 } as const
 export type MainStatKey = typeof MainPropMap[keyof typeof MainPropMap]

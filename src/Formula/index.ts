@@ -9,7 +9,7 @@ const asConst = true as const, pivot = true as const
 const allElements = allElementsWithPhy
 const allTalents = ["auto", "skill", "burst"] as const
 const allMoves = ["normal", "charged", "plunging", "skill", "burst", "elemental"] as const
-const allArtModStats = ["hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "heal_"] as const
+const allArtModStats = ["hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "dendro_dmg_", "heal_"] as const
 const allTransformative = ["overloaded", "shattered", "electrocharged", "superconduct", "swirl"] as const
 const allAmplifying = ["vaporize", "melt"] as const
 const allMisc = [

@@ -248,7 +248,7 @@ export const theme = createTheme({
       name: "geo"
     }),
     dendro: defaultTheme.palette.augmentColor({
-      color: { main: "#b1ea29", },
+      color: { main: "#a5c83b", contrastText: "#fff" },
       name: "dendro"
     }),
     pyro: defaultTheme.palette.augmentColor({

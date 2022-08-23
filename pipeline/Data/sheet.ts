@@ -73,6 +73,7 @@ const data = {
     hydro: 514679490,
     cryo: 1695600284,
     electro: 1821644548,
+    dendro: 3552853794,
   },
   reaction: {
     swirl: 3332129203,
