@@ -8,6 +8,7 @@ import EverlastingMoonglow from './EverlastingMoonglow'
 import EyeOfPerception from './EyeOfPerception'
 import FavoniusCodex from './FavoniusCodex'
 import Frostbearer from './Frostbearer'
+import FruitOfFulfillment from './FruitOfFulfillment'
 import HakushinRing from './HakushinRing'
 import KagurasVerity from './KagurasVerity'
 import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
@@ -35,6 +36,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   EyeOfPerception,
   FavoniusCodex,
   Frostbearer,
+  FruitOfFulfillment,
   HakushinRing,
   KagurasVerity,
   LostPrayerToTheSacredWinds,
