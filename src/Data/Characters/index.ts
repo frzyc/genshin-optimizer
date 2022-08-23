@@ -9,6 +9,7 @@ import Barbara from './Barbara'
 import Beidou from './Beidou'
 import Bennett from './Bennett'
 import Chongyun from './Chongyun'
+import Collei from './Collei'
 import Diluc from './Diluc'
 import Diona from './Diona'
 import Eula from './Eula'
@@ -62,6 +63,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Beidou,
   Bennett,
   Chongyun,
+  Collei,
   Diluc,
   Diona,
   Eula,

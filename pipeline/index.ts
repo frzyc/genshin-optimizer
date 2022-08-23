@@ -73,6 +73,7 @@ export const characterIdMap = {
   10000064: "YunJin",
   10000065: "KukiShinobu",
   10000066: "KamisatoAyato",
+  10000067: "Collei",
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",
