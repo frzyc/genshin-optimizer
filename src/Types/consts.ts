@@ -237,7 +237,7 @@ export const allWeaponBowKeys = [
   "TheStringless",
   "TheViridescentHunt",
   "ThunderingPulse",
-  "Trawler",
+  "EndOfTheLine",
   "WindblumeOde",
 ] as const
 export type WeaponBowKey = typeof allWeaponBowKeys[number]

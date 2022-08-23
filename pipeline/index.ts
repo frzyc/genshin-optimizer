@@ -250,7 +250,7 @@ export const weaponIdMap = {
   15415: "Predator",
   15416: "MouunsMoon",
   15417: "KingsSquire",
-  15418: "Trawler",
+  15418: "EndOfTheLine",
   15501: "SkywardHarp",
   15502: "AmosBow",
   15503: "ElegyForTheEnd",

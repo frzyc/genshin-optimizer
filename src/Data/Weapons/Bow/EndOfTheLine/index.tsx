@@ -10,7 +10,7 @@ import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
 import icon from './Icon.png'
 
-const key: WeaponKey = "Trawler"
+const key: WeaponKey = "EndOfTheLine"
 const data_gen = data_gen_json as WeaponData
 
 const dmgArr = [0.8, 1, 1.2, 1.4, 1.6]

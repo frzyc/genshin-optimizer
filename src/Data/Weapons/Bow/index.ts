@@ -31,7 +31,7 @@ import Slingshot from './Slingshot'
 import TheStringless from './TheStringless'
 import TheViridescentHunt from './TheViridescentHunt'
 import ThunderingPulse from './ThunderingPulse'
-import Trawler from './Trawler'
+import EndOfTheLine from './EndOfTheLine'
 import WindblumeOde from './WindblumeOde'
 
 const bow: Record<WeaponBowKey, WeaponSheet> = {
@@ -65,7 +65,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   TheStringless,
   TheViridescentHunt,
   ThunderingPulse,
-  Trawler,
+  EndOfTheLine,
   WindblumeOde,
 } as const
 export default bow
