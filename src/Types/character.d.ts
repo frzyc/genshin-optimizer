@@ -1,13 +1,12 @@
 import { EleEnemyResKey, StatKey } from "../KeyMap";
-import { CharacterKey, ElementKey, HitModeKey, InfusionAuraElements, AmpReactionKey, SlotKey, Ascension } from "./consts";
+import { AdditiveReactionKey, AmpReactionKey, Ascension, CharacterKey, ElementKey, HitModeKey, InfusionAuraElements, SlotKey } from "./consts";
 import { IConditionalValues } from "./IConditional";
-import { DocumentSection } from "./sheet";
 
 export interface CustomTarget {
   weight: number,
   path: string[]
   hitMode: HitModeKey,
-  reaction?: AmpReactionKey,
+  reaction?: AmpReactionKey | AdditiveReactionKey,
   infusionAura?: InfusionAuraElements,
   bonusStats: Partial<Record<InputPremodKey, number>>
 }
@@ -32,7 +31,7 @@ export interface ICharacter {
   // GO-specific
   hitMode: HitModeKey
   elementKey?: ElementKey
-  reaction?: AmpReactionKey
+  reaction?: AmpReactionKey | AdditiveReactionKey
   conditional: IConditionalValues
   bonusStats: Partial<Record<StatKey, number>>
   enemyOverride: Partial<Record<EleEnemyResKey | "enemyLevel" | "enemyDefRed_" | "enemyDefIgn_", number>>

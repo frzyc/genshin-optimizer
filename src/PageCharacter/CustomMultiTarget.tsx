@@ -2,6 +2,7 @@ import { Add, ContentCopy, DeleteForever, ExpandLess, ExpandMore, Settings } fro
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, CardContent, Chip, Grid, MenuItem, Skeleton, Tooltip, Typography } from "@mui/material";
 import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import AdditiveReactionModeText from "../Components/AdditiveReactionModeText";
 import AmpReactionModeText from "../Components/AmpReactionModeText";
 import CardDark from "../Components/Card/CardDark";
 import CloseButton from "../Components/CloseButton";
@@ -16,7 +17,7 @@ import { allInputPremodKeys, InputPremodKey } from "../Formula";
 import { NodeDisplay, UIData } from "../Formula/uiData";
 import useBoolState from "../ReactHooks/useBoolState";
 import { CustomMultiTarget, CustomTarget } from "../Types/character";
-import { allAmpReactions, allHitModes, allInfusionAuraElements, allowedAmpReactions, AmpReactionKey, HitModeKey, InfusionAuraElements } from "../Types/consts";
+import { AdditiveReactionKey, allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, allowedAdditiveReactions, allowedAmpReactions, AmpReactionKey, HitModeKey, InfusionAuraElements } from "../Types/consts";
 import { arrayMove, deepClone, objPathValue } from "../Util/Util";
 import OptimizationTargetSelector from "./CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector";
 import { TargetSelectorModal } from "./CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal";
@@ -53,7 +54,7 @@ function validateCustomTarget(ct: any): CustomTarget | undefined {
   if (!hitMode || typeof hitMode !== "string" || !allHitModes.includes(hitMode as HitModeKey))
     hitMode = "avgHit"
 
-  if (reaction && !allAmpReactions.includes(reaction))
+  if (reaction && !allAmpReactions.includes(reaction) && !allAdditiveReactions.includes(reaction))
     reaction = undefined
 
   if (infusionAura && !allInfusionAuraElements.includes(infusionAura))
@@ -278,16 +279,23 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
     </ButtonGroup>
   </CardDark >
 }
-function ReactionDropdown({ node, reaction, setReactionMode, infusionAura }: { node: NodeDisplay, reaction?: AmpReactionKey, setReactionMode: (r?: AmpReactionKey) => void, infusionAura?: InfusionAuraElements }) {
+function ReactionDropdown({ node, reaction, setReactionMode, infusionAura }: { node: NodeDisplay, reaction?: AmpReactionKey | AdditiveReactionKey, setReactionMode: (r?: AmpReactionKey | AdditiveReactionKey) => void, infusionAura?: InfusionAuraElements }) {
   const ele = node.info.variant ?? "physical"
   const { t } = useTranslation("page_character")
 
-  if (!["pyro", "hydro", "cryo"].some(e => e === ele || e === infusionAura)) return null
-  const reactions = [...new Set([...allowedAmpReactions[ele] ?? [], ...allowedAmpReactions[infusionAura ?? ""] ?? []])]
-  return <DropdownButton title={reaction ? <AmpReactionModeText reaction={reaction} /> : t`noReaction`} sx={{ ml: "auto" }}>
+  if (!["pyro", "hydro", "cryo", "electro", "dendro"].some(e => e === ele || e === infusionAura)) return null
+  const reactions = [...new Set([...allowedAmpReactions[ele] ?? [], ...allowedAmpReactions[infusionAura ?? ""] ?? [], ...allowedAdditiveReactions[ele] ?? []])]
+  const title = reaction
+    ? (([...allAmpReactions] as string[]).includes(reaction)
+      ? <AmpReactionModeText reaction={reaction as AmpReactionKey} />
+      : <AdditiveReactionModeText reaction={reaction as AdditiveReactionKey} />)
+    : t`noReaction`
+  return <DropdownButton title={title} sx={{ ml: "auto" }}>
     <MenuItem value="" disabled={!reaction} onClick={() => setReactionMode()} >No Reactions</MenuItem >
     {reactions.map(rm => <MenuItem key={rm} disabled={reaction === rm} onClick={() => setReactionMode(rm)}>
-      <AmpReactionModeText reaction={rm} />
+      {([...allAmpReactions] as string[]).includes(rm)
+        ? <AmpReactionModeText reaction={rm} />
+        : <AdditiveReactionModeText reaction={rm} />}
     </MenuItem >)}
   </DropdownButton>
 }

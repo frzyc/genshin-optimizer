@@ -1,6 +1,7 @@
 export const allHitModes = ["hit", "avgHit", "critHit"] as const
 export const allRegions = ["mondstadt", "liyue", "inazuma", "sumeru", "fontaine", "natlan", "snezhnaya", "khaenriah"] as const
 export const allAmpReactions = ["vaporize", "melt",] as const
+export const allAdditiveReactions = ["spread", "aggravate"] as const
 export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
 export const allRarities = [5, 4, 3, 2, 1] as const
 export const allArtifactRarities = [5, 4, 3] as const
@@ -284,6 +285,7 @@ export const characterSpecializedStatKeys = ["hp_", "atk_", "def_", "eleMas", "e
 export type HitModeKey = typeof allHitModes[number]
 export type Region = typeof allRegions[number]
 export type AmpReactionKey = typeof allAmpReactions[number]
+export type AdditiveReactionKey = typeof allAdditiveReactions[number]
 export type SetNum = typeof allArtifactSetCount[number]
 export type Rarity = typeof allRarities[number]
 export type ArtifactRarity = typeof allArtifactRarities[number]
@@ -304,4 +306,9 @@ export const allowedAmpReactions: Dict<ElementKey, AmpReactionKey[]> = {
   hydro: ["vaporize"],
   cryo: ["melt"],
   anemo: ["vaporize", "melt"],
+}
+export const allowedAdditiveReactions: Dict<ElementKey, AdditiveReactionKey[]> = {
+  dendro: ["spread"],
+  electro: ["aggravate"],
+  anemo: ["aggravate"],
 }

@@ -3,7 +3,7 @@ import { Translate } from "../Components/Translate";
 import { MainStatKey, SubstatKey } from "../Types/artifact";
 import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";
 import elementalData from "./ElementalData";
-import { amplifyingReactions, AmplifyingReactionsKey, HitMoveKey, hitMoves, transformativeReactions, TransformativeReactionsKey } from "./StatConstants";
+import { additiveReactions, AdditiveReactionsKey, amplifyingReactions, AmplifyingReactionsKey, HitMoveKey, hitMoves, transformativeReactions, TransformativeReactionsKey } from "./StatConstants";
 
 const statMap = {
   hp: "HP", hp_: "HP", atk: "ATK", atk_: "ATK", def: "DEF", def_: "DEF",
@@ -36,12 +36,15 @@ const statMap = {
   healInc: "Heal Increase",
 
   // Reaction
-  transformative_level_multi: "Reaction Level Multiplier",
+  transformative_level_multi: "Transformative Reaction Level Multiplier",
+  crystallize_level_multi: "Crystallize Reaction Level Multiplier",
   amplificative_dmg_: "Amplificative Reaction DMG Bonus",
   transformative_dmg_: "Transformative Reaction DMG Bonus",
   crystallize_dmg_: "Crystallize Bonus",
-  burning_dmg_: "Burning DMG Bonus",
   crystallize: `Crystallize`, // for displaying general crystallize
+  base_amplifying_multi: "Base Amplifying Multiplier",
+  base_transformative_multi: "Base Transformative Multiplier",
+  base_crystallize_multi: "Base Crystallize Multiplier",
 
   // Enemy
   enemyLevel: "Enemy Level",
@@ -128,6 +131,7 @@ Object.entries(transformativeReactions).forEach(([reaction, { name, variants }])
     statMap[`${v}_${reaction}_hit`] = `${elementalData[v].name} ${name} DMG`
   })
   else statMap[`${reaction}_hit`] = `${name} DMG`
+  statMap[`${reaction}_multi`] = `${name} Multiplier`
 });
 
 //Crystallize
@@ -141,10 +145,19 @@ export const allAmplifyingReactionsDmgKey = Object.keys(amplifyingReactions).map
 
 Object.entries(amplifyingReactions).forEach(([reaction, { name }]) => {
   statMap[`${reaction}_dmg_`] = `${name} DMG Bonus`
+  statMap[`${reaction}_multi`] = `${name} Multiplier`
+})
+
+export type AdditiveReactionsDmgKey = `${AdditiveReactionsKey}_dmg_`
+export const allAdditiveReactionsDmgKey = Object.keys(additiveReactions).map(e => `${e}_dmg_`) as AdditiveReactionsDmgKey[]
+
+Object.entries(additiveReactions).forEach(([reaction, { name }]) => {
+  statMap[`${reaction}_dmg_`] = `${name} DMG Bonus`
+  statMap[`${reaction}_dmgInc`] = `${name} DMG Increase`
 })
 
 /* EVERY stat key */
-export type StatKey = BaseKeys | ElementExtKey | MoveExtKey | TransformativeReactionsDmgKey | AmplifyingReactionsDmgKey
+export type StatKey = BaseKeys | ElementExtKey | MoveExtKey | TransformativeReactionsDmgKey | AmplifyingReactionsDmgKey | AdditiveReactionsDmgKey
 
 export type KeyMapPrefix = 'default' | 'base' | 'total' | 'uncapped' | 'custom' | 'char' | 'art' | 'weapon' | 'teamBuff'
 const subKeyMap: StrictDict<KeyMapPrefix, string> = {
@@ -181,11 +194,13 @@ export default class KeyMap {
     }
     return <span>{key}</span>
   }
-  static getVariant(key: string = ""): ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "heal" | undefined {
+  static getVariant(key: string = ""): ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | AdditiveReactionsKey | "heal" | undefined {
     const trans = Object.keys(transformativeReactions).find(e => key.startsWith(e))
     if (trans) return trans
     const amp = Object.keys(amplifyingReactions).find(e => key.startsWith(e))
     if (amp) return amp
+    const add = Object.keys(additiveReactions).find(e => key.startsWith(e))
+    if (add) return add
     if (key.includes("heal")) return "heal"
     return allElementsWithPhy.find(e => key.startsWith(e))
   }

@@ -306,8 +306,8 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
 function accumulateInfo<V>(operands: ContextNodeDisplay<V>[]): Info {
   function score(variant: Required<Info>["variant"]) {
     switch (variant) {
-      case "overloaded": case "shattered": case "electrocharged": case "superconduct":
-      case "vaporize": case "melt": return 2
+      case "overloaded": case "shattered": case "electrocharged": case "superconduct": case "burning": case "bloom": case "burgeon": case "hyperbloom":
+      case "vaporize": case "melt": case "spread": case "aggravate": return 2
       case "anemo": case "cryo": case "hydro": case "pyro": case "electro": case "geo": case "dendro": return 1
       case "swirl": case "heal": return 0.5
       case "physical": return 0
