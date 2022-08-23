@@ -148,7 +148,7 @@ total.critRate_.info!.prefix = "uncapped"
 // Nodes that are not used anywhere else but `common` below
 
 /** Base Amplifying Bonus */
-const baseAmpBonus = infoMut(sum(one, prod(25 / 9, frac(total.eleMas, 1400))), { key: "base_amplifying_mult", pivot })
+const baseAmpBonus = infoMut(sum(one, prod(25 / 9, frac(total.eleMas, 1400))), { key: "base_amplifying_multi", pivot })
 
 /** Base Additive Bonus */
 const baseAddBonus = sum(one, prod(5, frac(total.eleMas, 1200)))
