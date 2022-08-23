@@ -133,7 +133,6 @@ const dmgFormulas = {
 const skillC3 = greaterEq(input.constellation, 3, 3)
 const burstC5 = greaterEq(input.constellation, 5, 3)
 
-console.log(c6_ele_dmg_)
 export const data = dataObjForCharacterSheet(key, elementKey, undefined, data_gen, dmgFormulas, {
   bonus: {
     burst: burstC5,
