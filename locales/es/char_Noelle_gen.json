@@ -47,7 +47,7 @@
       "4": "<i>Lo que debe limpiarse a veces no es solo el polvo...</i>"
     },
     "skillParams": {
-      "0": "Daño de explosión",
+      "0": "Daño instantáneo",
       "1": "Daño de habilidad",
       "2": "Aumento de ATQ",
       "3": "Duración",

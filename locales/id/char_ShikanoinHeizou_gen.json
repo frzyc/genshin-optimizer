@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Mengonsumsi sejumlah Stamina untuk mengakibatkan tendangan yang mengakibatkan <anemo>Anemo DMG Area</anemo>."
+        "1": "Mengonsumsi sejumlah Stamina untuk mengakibatkan tendangan yang mengakibatkan <anemo>Anemo DMG</anemo>."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
@@ -45,11 +45,11 @@
       "1": "Menggunakan angin kencang untuk meluncurkan Heartstopper Strike yang mengakibatkan <anemo>Anemo DMG</anemo>.",
       "2": "<br/>",
       "3": "<strong>Tahan</strong>",
-      "4": "Mengisi energi untuk melepaskan pukulan yang lebih kuat. Heizou akan mengdapatkan efek Declension saat sedang mengisi energi, efek tersebut akan meningkatkan kekuatan Heartstopper Strike. Saat tombol skill dilepaskan atau saat skill sudah selesai mengisi energi, Heizou akan maju menerjang ke depan dan mengakibatkan <anemo>Anemo DMG</anemo>.",
+      "4": "Mengisi energi untuk melepaskan pukulan yang lebih kuat. Heizou akan mendapatkan efek Declension saat sedang mengisi energi, efek tersebut akan meningkatkan kekuatan Heartstopper Strike. Saat tombol skill dilepaskan atau saat skill sudah selesai mengisi energi, Heizou akan maju menerjang ke depan dan mengakibatkan <anemo>Anemo DMG</anemo>.",
       "5": "<br/>",
       "6": "<strong>Declension</strong>",
       "7": "Meningkatkan kekuatan Heartstopper Strike berikutnya. Maks. 4 lapis.",
-      "8": "Saat mempunyai 4 lapis Declension, akan tercipta lapisan Conviction yang akan mengakibatkan Hearstopper Strike berikutnya menjadi lebih kuat lagi dan mempunyai Area efek yang lebih besar.",
+      "8": "Saat mempunyai 4 lapis Declension, akan tercipta lapisan Conviction yang akan mengakibatkan Heartstopper Strike berikutnya menjadi lebih kuat lagi dan mempunyai Area efek yang lebih besar.",
       "9": "<br/>",
       "10": "<i>Sekilas jurus ini memang terlihat seperti pukulan tinju biasa namun di dalamnya terkandung niat tulus Heizou yang berharap agar para kriminal dapat jujur mengakui kesalahannya dan bertobat.</i>"
     },
@@ -75,8 +75,8 @@
   "burst": {
     "name": "Windmuster Kick",
     "description": {
-      "0": "Melompat ke udara dan menandang Fudou Style Vacuum Slugger ke arah lawan. Saat mengenai musuh, Fudou Style Vacuum Slugger akan menciptakan area berangin yang menarik objek dan musuh di sekitar, lalu mengakibatkan <anemo>Anemo DMG Area</anemo>.",
-      "1": "Saat Vacuum Slugger mengenai musuh yang terkena efek <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, maka musuh trsebut akan terkena Windmuster Iris yang akan meledak setelah beberapa saat dan mengakibatkan DMG Area dari tipe elemen yang disebutkan sebelumnya.",
+      "0": "Melompat ke udara dan menendang Fudou Style Vacuum Slugger ke arah lawan. Saat mengenai musuh, Fudou Style Vacuum Slugger akan menciptakan area berangin yang menarik objek dan musuh di sekitar, lalu mengakibatkan <anemo>Anemo DMG Area</anemo>.",
+      "1": "Saat Vacuum Slugger mengenai musuh yang terkena efek <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, maka musuh tersebut akan terkena Windmuster Iris yang akan meledak setelah beberapa saat dan mengakibatkan DMG Area dari tipe elemen yang disebutkan sebelumnya.",
       "2": "Vacuum Slugger dapat memukul maks. 4 musuh dengan menggunakan Windmuster Iris. Musuh tidak bisa terpengaruh efek Windmuster Iris dari elemen berbeda dalam waktu yang bersamaan.",
       "3": "<br/>",
       "4": "<i>Teknik unik mengumpulkan Anemo di satu tempat sebelum akhirnya dilepaskan dalam satu tendangan. Tendangan ini selalu siap dalam keadaan darurat kapan pun juga untuk mendarat di punggung para kriminal yang berani melarikan diri.</i>"

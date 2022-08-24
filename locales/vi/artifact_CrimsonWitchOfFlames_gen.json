@@ -2,7 +2,7 @@
   "setName": "Diệm Liệt Ma Nữ Cháy Rực",
   "setEffects": {
     "2": "Nhận 15% buff sát thương nguyên tố Hỏa.",
-    "4": "Sát thương phản ứng Quá Tải, Thiêu Đốt gây ra tăng 40%, phản ứng Bốc Hơi, Tan Chảy tăng hệ số buff 15%. 10s sau khi thi triển kỹ năng Nguyên Tố, hiệu quả của 2 món tăng 50%. Hiệu quả này tối đa cộng dồn 3 lần."
+    "4": "Sát thương phản ứng Quá Tải, Thiêu Đốt, Bung Tỏa gây ra tăng 40%, phản ứng Bốc Hơi, Tan Chảy tăng hệ số buff 15%. 10s sau khi thi triển kỹ năng Nguyên Tố, hiệu quả của 2 món tăng 50%. Hiệu quả này tối đa cộng dồn 3 lần."
   },
   "pieces": {
     "flower": {

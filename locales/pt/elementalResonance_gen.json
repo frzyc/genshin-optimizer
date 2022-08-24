@@ -9,7 +9,7 @@
   },
   "SoothingWater": {
     "name": "Cura de Hydro",
-    "desc": "Reduz a duração dos efeitos Pyro em 40%. Aumenta a cura recebida em 30%."
+    "desc": "A duração dos efeitos Pyro é reduzida em 40%. Vida Máxima é aumentada em 25%."
   },
   "ShatteringIce": {
     "name": "Impacto de Cryo",
@@ -17,7 +17,7 @@
   },
   "HighVoltage": {
     "name": "Energia de Electro",
-    "desc": "Reduz a duração dos Efeitos Hydro em 40%. O Supercondutor, a Sobrecarga, e Eletricamente Carregado possuem 100% de chance de gerar uma Partícula Elemental Electro (Recarga: 5s)."
+    "desc": "A duração dos efeitos Hydro é reduzida em 40%. Desencadear as reações de Supercondutor, Sobrecarga, Eletricamente Carregado, Aceleração, Intensificação e Superflorescimento possui 100% de chance de dropar 1 Partícula Elemental Electro, com tempo de recarga de 5s."
   },
   "ImpetuousWinds": {
     "name": "Agilidade de Anemo",
@@ -26,5 +26,9 @@
   "EnduringRock": {
     "name": "Durabilidade de Geo",
     "desc": "A Força do Escudo aumenta em 15%. Além disso, quando o personagem estiver protegido por um Escudo, possui os seguintes efeitos: Dano causado aumenta em 15%, além disso, ao causar Dano aos inimigos, a Resistência contra o Elemento Geo dos inimigos diminui em 20% por 15s."
+  },
+  "SprawlingCanopy": {
+    "name": "Videira Verdejante",
+    "desc": "Aumenta a Proficiência Elemental em 50 pontos. Ao desencadear as reações de Queimadura, Aceleração e Florescimento, aumenta a Proficiência Elemental de todos os personagens próximos da equipe em 30 pontos por 6s. Ao desencadear as reações de Intensificação, Propagação, Superflorescimento e Germinação, aumenta a Proficiência Elemental de todos os personagens próximos da equipe em 20 pontos por 6s. A duração desses efeitos é contada individualmente."
   }
 }

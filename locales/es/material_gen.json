@@ -163,6 +163,18 @@
     "name": "Esquirla estratégica",
     "description": "Un cristal que concentra una enigmática energía en su interior. Al igual que los fragmentos de cor lapis, en él se aprecia el más puro color del elemento Geo. Parece que en las profundidades de la Sima es capaz de emitir cierta energía que sirve para derrotar a los monstruos.\\nEn el Territorio estratégico de «Senderos peligrosos», podrás utilizarlo para conseguir tácticas combativas o hacer que los personajes derrotados regresen al campo de batalla."
   },
+  "CreativeNote": {
+    "name": "Notas ingeniosas",
+    "description": "Este es el resultado de una discusión con tus amigos durante tu aventura sobre cómo hacer más populares las tallas aranara. Puede canjearse por valiosas recompensas durante el evento «Inocencia escultórica»."
+  },
+  "WhimsicalDraft": {
+    "name": "Bosquejo inspirador",
+    "description": "Un boceto dibujado sobre la marcha inspirado en las figurillas aranara durante tus aventuras. Puede canjearse por valiosas recompensas durante el evento «Inocencia escultórica»."
+  },
+  "AncientIronCoin": {
+    "name": "Tael antiguo",
+    "description": "Un Tael antiguo hecho de hierro. Según Ulman, vale una verdadera fortuna. Aunque a primera vista no parece nada especial..."
+  },
   "Primogem": {
     "name": "Protogema",
     "description": "Una gema cristalina que va más allá del mundo terrenal. Brilla con esperanzas y sueños condensados de universos que existieron alguna vez."
@@ -213,7 +225,7 @@
   },
   "DendroSigil": {
     "name": "Insignia Dendro",
-    "description": "Un símbolo de reconocimiento y apreciación, concebido por los vientos que favorecen y vigilan Mondstadt. Puede ser intercambiado por objetos raros en ciertos lugares."
+    "description": "Una insignia obtenida al ganarte la gracia de la vegetación de Sumeru.\\nOfrécesela al Árbol Onírico de las profundidades del bosque para aumentar su nivel de gracia."
   },
   "ElectroSigil": {
     "name": "Insignia Electro",
@@ -238,6 +250,10 @@
   "MondstadtReputationEXP": {
     "name": "EXP de reputación - Mondstadt",
     "description": "Aumenta el nivel de reputación en Mondstadt."
+  },
+  "SumeruReputationEXP": {
+    "name": "EXP de reputación - Sumeru",
+    "description": "Aumenta el nivel de reputación en Sumeru."
   },
   "LiyueReputationEXP": {
     "name": "EXP de reputación - Liyue",
@@ -479,6 +495,18 @@
     "name": "Kamisato Ayato",
     "description": "Joven promesa y actual líder del clan Kamisato de la Comisión Yashiro. Refinado y educado, siempre tiene una forma de solucionar las cosas."
   },
+  "Collei": {
+    "name": "Collei",
+    "description": "Una guardabosques en prácticas que suele rondar por el Bosque Avidya. Detrás de su apasionado carácter se esconde una personalidad más bien introvertida."
+  },
+  "Dori": {
+    "name": "Dori",
+    "description": "Una impredecible comerciante itinerante cuya mayor pasión es el Mora contante y sonante."
+  },
+  "Tighnari": {
+    "name": "Tignari",
+    "description": "Un joven erudito experto en botánica que desempeña el cargo de guarda forestal en el Bosque Avidya. Es muy franco, entusiasta y bueno instruyendo a las personas con menos conocimientos."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka",
     "description": "Material de activación de constelación de Kamisato Ayaka"
@@ -686,6 +714,18 @@
   "KamisatoAyatosStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayato",
     "description": "Material de activación de constelación de Kamisato Ayato"
+  },
+  "ColleisStellaFortuna": {
+    "name": "Stella Fortuna de Collei",
+    "description": "Material de activación de constelación de Collei"
+  },
+  "DorisStellaFortuna": {
+    "name": "Stella Fortuna de Dori",
+    "description": "Material de activación de constelación de Dori"
+  },
+  "TighnarisStellaFortuna": {
+    "name": "Stella Fortuna de Tignari",
+    "description": "Material de activación de constelación de Tignari"
   },
   "GnosticHymnOldNotes": {
     "name": "Pase de Batalla del Gnóstico - Borrador",
@@ -984,7 +1024,7 @@
     "description": "Una pequeña y colorida fruta que se encuentra por todas partes. Muy útil cuando necesitas un poco de energía."
   },
   "MistFlowerCorolla": {
-    "name": "Pistilo de flor de neblina",
+    "name": "Pistilo de flor helada",
     "description": "Un pistilo de flor envuelto en hielo sólido. Incluso después de cortarlo, sigue desprendiendo frío."
   },
   "FlamingFlowerStamen": {
@@ -1122,6 +1162,10 @@
   "UnagiMeat": {
     "name": "Anguila",
     "description": "Carne de anguila fresca. Si se prepara correctamente, puede usarse para hacer un plato muy sabroso."
+  },
+  "GlabrousBeans": {
+    "name": "Legumbres peladas",
+    "description": "Una legumbre típica en Teyvat. Tiene un olor neutro. Dado que existen muchas formas de cocinarla, su uso está muy extendido y aceptado por todos."
   },
   "JeansDocumentPackage": {
     "name": "Paquete de documentos de Jean",
@@ -1325,7 +1369,7 @@
   },
   "TheFoxInTheDandelionSeaII": {
     "name": "El zorro en el mar de dientes de león (II)",
-    "description": "“Tranquilo, no te muevas”. Al encontrar a un cazador, ¿qué destino le espera al zorro atrapado por una flor de neblina?\\nSegunda parte de la historia del cazador y el zorro."
+    "description": "“Tranquilo, no te muevas”. Al encontrar a un cazador, ¿qué destino le espera al zorro atrapado por una flor helada?\\nSegunda parte de la historia del cazador y el zorro."
   },
   "TheFoxInTheDandelionSeaIII": {
     "name": "El zorro en el mar de dientes de león (III)",
@@ -1893,7 +1937,7 @@
   },
   "YakshasTheGuardianAdepti": {
     "name": "Yakshas: los guardianes Adeptus",
-    "description": "Un volumen de la colección «Maravillas y folclore de Liyue» que sirve como versión de «Viaje por las tierras de Liyue», una enciclopedia de creencias y costumbres populares escrito por Mesudi, un erudito de Sumeru. Debido al arcaico estilo de escritura del autor, fue rechazado en gran medida por el público y los editores por igual. En «Yakshas: los guardianes Adeptus», se describen los diversos Yakshas que lucharon codo a codo con el Arconte Geo."
+    "description": "Un volumen de la colección «Maravillas y folclore de Liyue» que sirve como versión de «Viaje por las tierras de Liyue», una enciclopedia de creencias y costumbres populares escrito por Masudi, un erudito de Sumeru. Debido al arcaico estilo de escritura del autor, fue rechazado en gran medida por el público y los editores por igual. En «Yakshas: los guardianes Adeptus», se describen los diversos Yakshas que lucharon codo a codo con el Arconte Geo."
   },
   "WitnessSigil": {
     "name": "Sello del Testigo",
@@ -3645,19 +3689,19 @@
   },
   "NorthlanderBowBillet": {
     "name": "Prototipo de arco del Norte",
-    "description": "Material de fabricación de armas. Puede utilizarse para forjar arcos de 4★.\\nLos filósofos creen que el mármol tiene el potencial de convertirse en una hermosa escultura. Estos prototipos también tienen un potencial ilimitado."
+    "description": "Material de fabricación de armas. Puede usarse para forjar arcos de 4★.\\nLos filósofos creen que el mármol tiene el potencial de convertirse en una hermosa escultura. Estos prototipos también tienen un potencial ilimitado."
   },
   "NorthlanderClaymoreBillet": {
     "name": "Prototipo de mandoble del Norte",
-    "description": "Material de fabricación de armas. Puede utilizarse para forjar mandobles de 4★.\\nLos filósofos creen que el mármol tiene el potencial de convertirse en una hermosa escultura. Estos prototipos también tienen un potencial ilimitado."
+    "description": "Material de fabricación de armas. Puede usarse para forjar mandobles de 4★.\\nLos filósofos creen que el mármol tiene el potencial de convertirse en una hermosa escultura. Estos prototipos también tienen un potencial ilimitado."
   },
   "NorthlanderCatalystBillet": {
     "name": "Prototipo de catalizador del Norte",
-    "description": "Material de fabricación de armas. Se puede usar para forjar catalizadores de 4★.\\nLos filósofos creen que el mármol tiene el potencial de convertirse en una hermosa escultura. Estos prototipos también tienen un potencial ilimitado."
+    "description": "Material de fabricación de armas. Puede usarse para forjar catalizadores de 4★.\\nLos filósofos creen que el mármol tiene el potencial de convertirse en una hermosa escultura. Estos prototipos también tienen un potencial ilimitado."
   },
   "NorthlanderPolearmBillet": {
     "name": "Prototipo de lanza del Norte",
-    "description": "Material de fabricación de armas. Se puede usar para forjar lanzas de 4★.\\nLos filósofos creen que el mármol tiene el potencial de convertirse en una hermosa escultura. Estos prototipos también tienen un potencial ilimitado."
+    "description": "Material de fabricación de armas. Puede usarse para forjar lanzas de 4★.\\nLos filósofos creen que el mármol tiene el potencial de convertirse en una hermosa escultura. Estos prototipos también tienen un potencial ilimitado."
   },
   "NorthlanderSword": {
     "name": "Espada del Norte",
@@ -3678,6 +3722,26 @@
   "NorthlanderPolearm": {
     "name": "Lanza del Norte",
     "description": "Lanza desconocida del Norte"
+  },
+  "MidlanderSwordBillet": {
+    "name": "Prototipo de espada de las Regiones Centrales",
+    "description": "Material de fabricación de armas. Puede usarse para forjar espadas ligeras de 4★.\\nLos filósofos creen que las cosas mundanas se caracterizan por cuatro factores. Y el propósito de estos prototipos es el de convertirse en armas que acompañen a los héroes en cada una de sus batallas."
+  },
+  "MidlanderBowBillet": {
+    "name": "Prototipo de arco de las Regiones Centrales",
+    "description": "Material de fabricación de armas. Puede usarse para forjar arcos de 4★.\\nLos filósofos creen que las cosas mundanas se caracterizan por cuatro factores. Y el propósito de estos prototipos es el de convertirse en armas que acompañen a los héroes en cada una de sus batallas."
+  },
+  "MidlanderClaymoreBillet": {
+    "name": "Prototipo de mandoble de las Regiones Centrales",
+    "description": "Material de fabricación de armas. Puede usarse para forjar mandobles de 4★.\\nLos filósofos creen que las cosas mundanas se caracterizan por cuatro factores. Y el propósito de estos prototipos es el de convertirse en armas que acompañen a los héroes en cada una de sus batallas."
+  },
+  "MidlanderCatalystBillet": {
+    "name": "Prototipo de catalizador de las Regiones Centrales",
+    "description": "Material de fabricación de armas. Puede usarse para forjar catalizadores de 4★.\\nLos filósofos creen que las cosas mundanas se caracterizan por cuatro factores. Y el propósito de estos prototipos es el de convertirse en armas que acompañen a los héroes en cada una de sus batallas."
+  },
+  "MidlanderPolearmBillet": {
+    "name": "Prototipo de lanza de las Regiones Centrales",
+    "description": "Material de fabricación de armas. Puede usarse para forjar lanzas de 4★.\\nLos filósofos creen que las cosas mundanas se caracterizan por cuatro factores. Y el propósito de estos prototipos es el de convertirse en armas que acompañen a los héroes en cada una de sus batallas."
   },
   "Onikabuto": {
     "name": "Escaradiablo",
@@ -3727,6 +3791,46 @@
     "name": "Hongo estelar",
     "description": "Un hongo con un sombrero en forma de estrella. Tiene una fuerza vital muy fuerte. Una vez que madura, el centro del sombrero se divide."
   },
+  "RukkhashavaMushrooms": {
+    "name": "Champiñón rukkhashava",
+    "description": "Un hongo que crece en capas, como si de un mar de nubes se tratara. La mayoría de estos hongos extraños crecen en los troncos de los árboles situados en las zonas más profundas de la selva. Por eso, la gente de Sumeru los considera la sagrada encarnación del legado de la mismísima Rukkhadevata."
+  },
+  "Padisarah": {
+    "name": "Orquídea padishá",
+    "description": "Una flor noble e inmaculada. Exige unas condiciones de lo más estrictas para crecer. Con su estambre, se pueden crear especias realmente valiosas."
+  },
+  "NilotpalaLotus": {
+    "name": "Loto nilotpala",
+    "description": "Esta flor que crece en los humedales de los bosques emite un brillo tan deslumbrante como el de la luna. Solo se abre durante la noche."
+  },
+  "HarraFruit": {
+    "name": "Fruto harra",
+    "description": "Este fruto que crece en las zonas más húmedas y calurosas de la selva se caracteriza por un aroma muy fragante y especiado. Se puede moler para elaborar especias y es la planta aromática más valiosa de Sumeru."
+  },
+  "KalpalataLotus": {
+    "name": "Loto kalpa",
+    "description": "La flor de una planta enredadera que crece en los peñascos más escarpados. La gente la llama “loto” por su apariencia, pero en realidad no tiene nada en común con ellos."
+  },
+  "ZaytunPeach": {
+    "name": "Duraznoliva",
+    "description": "Un fruto que crece en los arbustos del bosque, muy dulce y carnoso. Dicen que comerlo calma el cuerpo y la mente."
+  },
+  "SumeruRose": {
+    "name": "Rosa de Sumeru",
+    "description": "Una deslumbrante flor púrpura cuyo aroma cautiva a todo transeúnte que pase a su lado. Hay quien la confunde con las rosas de rosal, pero técnicamente hablando, pertenecen a otra categoría."
+  },
+  "ActivatedStarshroom": {
+    "name": "Hongo vigorestelar",
+    "description": "Un hongo con un sombrero en forma de estrella y una gran vitalidad. Solo con verlo es posible sentir toda esa vitalidad que desprende."
+  },
+  "ScorchedStarshroom": {
+    "name": "Hongo estelar chamuscado",
+    "description": "Un hongo con un sombrero en forma de estrella y una gran vitalidad. Por su aspecto, parece que se ha chamuscado."
+  },
+  "Viparyas": {
+    "name": "Viparyas",
+    "description": "Una flor sin semillas.\\nSolo con que la tierra las recuerde de nuevo, las viparyas volverán a florecer."
+  },
   "BirchWood": {
     "name": "Madera de abedul",
     "description": "Madera obtenida de abedules. Es fácil de procesar y cortar. Los muebles que se hacen con esta madera son bonitos y duraderos.\\nPuede utilizarse para fabricar decoraciones."
@@ -3770,6 +3874,26 @@
   "OtogiWood": {
     "name": "Madera de murmurador",
     "description": "Madera obtenida de árboles murmuradores. Gracias a que contiene la cantidad exacta de humedad y grasa, se le da múltiples usos.\\nPuede utilizarse para fabricar decoraciones."
+  },
+  "Brightwood": {
+    "name": "Madera radiante",
+    "description": "Madera obtenida de árboles radiantes. Presenta características diferentes a las de la madera de otros árboles corrientes. Su textura es suave pero resistente, lo que hace que sea más fácil de teñir y que se le pueda dar usos diferentes.\\nPuede utilizarse para fabricar decoraciones."
+  },
+  "KarmaphalaWood": {
+    "name": "Madera kármica",
+    "description": "Madera obtenida de árboles kármicos. No se necesita procesar demasiado para conseguir de ella trozos de madera muy lisos, ni tampoco es necesario invertir mucho tiempo y esfuerzo en cada detalle para lograr un resultado impecable.\\nPuede utilizarse para fabricar decoraciones."
+  },
+  "AdhigamaWood": {
+    "name": "Madera de bodhi",
+    "description": "Madera obtenida de árboles bodhi. Se puede encontrar por todas partes y, aunque a simple vista no parece más que madera normal y corriente, resulta ser particularmente ligera y resistente.\\nPuede utilizarse para fabricar decoraciones."
+  },
+  "MountainDateWood": {
+    "name": "Madera de palmera",
+    "description": "Madera obtenida de palmeras. Aunque su apariencia y textura no sean muy llamativas, es capaz de almacenar grandes cantidades de agua y su mantenimiento no conlleva muchas complicaciones.\\nPuede utilizarse para fabricar decoraciones."
+  },
+  "AthelWood": {
+    "name": "Madera de tamarisco",
+    "description": "Madera obtenida de tamariscos. Posee una textura de lo más particular y puede resistir climas secos y húmedos, por lo que suele perdurar durante largos periodos de tiempo.\\nPuede utilizarse para fabricar decoraciones."
   },
   "Fabric": {
     "name": "Tela",
@@ -4647,6 +4771,22 @@
     "name": "El escondite del tesoro secreto de Ako (I)",
     "description": "Antes de marcharse, Ako Domeki y los cuarenta piratas escondieron un tesoro y acordaron llevárselo la próxima vez que se reunieran aquí. Luego dividieron en cuatro las pistas sobre la ubicación del tesoro. Esta es la primera."
   },
+  "YajnaGrass": {
+    "name": "Hierba yajña",
+    "description": "La hierba yajña es uno de los ingredientes con los que se prepara el elixir arahaoma. Se dice que “yajña” significa “plenitud alcanzada al marchitarse”."
+  },
+  "ZohrahMushroom": {
+    "name": "Setasura",
+    "description": "La setasura es uno de los ingredientes con los que se elabora el elixir arahaoma. Se dice que “asura” significa “estar cautivado en sueño”."
+  },
+  "BarsamFlower": {
+    "name": "Flor barsam",
+    "description": "La flor barsam es uno de los ingredientes con los que se elabora el elixir arahaoma. Se dice que el “barsam” era un árbol divino que desapareció hace mucho tiempo."
+  },
+  "Arahaoma": {
+    "name": "Arahaoma",
+    "description": "El elixir arahaoma de los aranara. Solo una gota es suficiente para revelarle al bosque los inocentes sueños de los aranara."
+  },
   "JinwusSoup": {
     "name": "Sopa de Jinwu",
     "description": "Una espesa sopa que Jinwu preparó para los mineros enfermos. Nutritiva, aromática y sabrosa, es capaz de reconfortar el corazón de cualquier persona.\\nLa hizo Jinwu de todo corazón, así que no dejes que se enfríe."
@@ -4654,6 +4794,10 @@
   "BagOfOrnaments": {
     "name": "Bolsa de joyas",
     "description": "Una bolsa de joyas que encontraste cerca de la tienda de Chou para compensar a Tang Wuchou. Las hicieron los ladrones de tesoros que hacen contrabando de minerales en la Sima. Debido a la burda y simple técnica de fabricación utilizada y a su aspecto bastante tosco, no cabría ninguna posibilidad de que se vendieran en Liyue. Lo único positivo que se puede decir de ellas es que los materiales utilizados parecen auténticos..."
+  },
+  "Vasmrti": {
+    "name": "Vasmrti",
+    "description": "Un objeto que obtuviste al explorar los jardines. Es centelleante y traslúcido, como si contuviera los recuerdos de la tierra."
   },
   "SeaRouteLog": {
     "name": "Cuaderno de bitácora",
@@ -4670,6 +4814,94 @@
   "AsterismShard": {
     "name": "Fragmento astral",
     "description": "Un misterioso fragmento con una constelación grabada en él. Tal vez sirva para resolver el acertijo de algún mecanismo."
+  },
+  "VasomaFruit": {
+    "name": "Fruto vasoma",
+    "description": "Un fruto rebosante de una misteriosa energía.\\nCon el fin de ayudar a Rhana, tendrás que obtener el fruto bija. Y para conseguir el fruto bija, tendrás que obtener frutos vasoma."
+  },
+  "Garland": {
+    "name": "Corona de flores",
+    "description": "Una corona de flores que hizo Arama.\\nEsta corona de flores simboliza los buenos deseos de todo Vanarana, y una vez expulsó brotes incesantes de energía al enfrentarte al espíritu de Marana. Sin embargo, quizás porque brillaron con intensidad excesiva, sus rayos fulgurantes ya se disiparon a día de hoy.\\n\\nCada una de las flores está conectada al corazón de un aranara, y juntos conforman esta hermosa corona de flores que resulta ser la puerta a Mahavanaranapna. Los aranara mostrarán su apoyo a todo aquel que lleve una corona de flores como esta. Mitigarán el sufrimiento de sus amigos, reprimirán sus pesadillas, los ayudarán a combatir los días más oscuros y tratarán de llenar el vacío de sus corazones."
+  },
+  "Bija": {
+    "name": "Fruto bija",
+    "description": "La cristalización de las cosas más preciadas para los aranara. Aunque se le llame “fruto”, es una semilla de la esperanza."
+  },
+  "AranasFlower": {
+    "name": "Flor de Arana",
+    "description": "Una flor que te dio Arana.\\nLe prometiste que lucharás contra el mal pase lo que pase."
+  },
+  "ArajasFlower": {
+    "name": "Flor de Araja",
+    "description": "Una flor que te dio Araja.\\nParece haber perdido recuerdos importantes."
+  },
+  "NamelessFlower": {
+    "name": "Flor sin nombre",
+    "description": "Una flor que te dio un aranara desconocido.\\nEste tipo de flores son un símbolo de la amistad para los aranara. Las personas que aceptan estas flores aceptan la amistad de estos pequeños seres."
+  },
+  "ArapandusFlower": {
+    "name": "Flor de Arapandu",
+    "description": "Una flor que te dio Arapandu.\\nSirve como alimentación de la máquina divina de Váruna. Regula la cantidad de agua en la tierra y hace que el bosque irradie vida."
+  },
+  "ArakuntisFlower": {
+    "name": "Flor de Arakunti",
+    "description": "Una flor que te dio Arakunti.\\nLos buenos momentos compartidos con amigos son tan bellos como lotos nilotpala flotando sobre el agua."
+  },
+  "AranakulasFlower": {
+    "name": "Flor de Aranakula",
+    "description": "Una flor que te dio Aranakula.\\nPor más miedo que nos dé, debemos acudir al bosque de los Hongos y cuidar de la piedra de los recuerdos."
+  },
+  "ArabalikasFlower": {
+    "name": "Flor de Arabalika",
+    "description": "Una flor que te dio Arabalika.\\nParece que en su interior aguarda la fuerza suficiente como para noquear a un Guardián de las Ruinas de un solo golpe."
+  },
+  "AranagasFlower": {
+    "name": "Flor de Aranaga",
+    "description": "Una flor que te dio Aranaga.\\nPara que las lluvias regresen, para que las plantas festejen...\\nPara que las granadas canten, para que las manzanas aclamen."
+  },
+  "AranakinsFlower": {
+    "name": "Flor de Aranakin",
+    "description": "Una flor que te dio Aranakin.\\nViento que no vuelve, agua que no va a contracorriente...\\nDulces sueños, sabores astringentes."
+  },
+  "AragarusFlower": {
+    "name": "Flor de Aragaru",
+    "description": "Una flor que te dio Aragaru.\\nAdiós, frutos rechonchos. Adiós, hojas envejecidas... Adiós, sueños que se desvanecen. Adiós, flores marchitas..."
+  },
+  "ArarycansFlower": {
+    "name": "Flor de Ararycan",
+    "description": "Una flor que te dio Ararycan.\\nEn el interior del Coloso de las Ruinas no hay ni tierra ni agua, así que debe de ser un lugar aterrador para Ararycan."
+  },
+  "AraeshasFlower": {
+    "name": "Flor de Araesha",
+    "description": "Una flor que te dio Araesha.\\nQuizás la incógnita más misteriosa sea por qué razón Araesha describe sus acertijos como “deliciosos”."
+  },
+  "ArakarasFlower": {
+    "name": "Flor de Arakara",
+    "description": "Una flor que te dio Arakara.\\nSegún él, que suele cuidar viparyas, las flores que se regalan a los amigos son las más valiosas."
+  },
+  "TheSiblingsFlowers": {
+    "name": "Flor fraternal",
+    "description": "Un regalo de Arapacati y sus hermanos.\\nDebido al vínculo fraternal que mantienen entre sí, estos aranara mantienen desde hace tiempo los roles de hermana y hermanos. Su obsesión por la cocina también viene del deseo de compartir la comida con la familia.\\nPero no importa cómo, el gusto de los aranara nunca será de fiar."
+  },
+  "TheSongGatherersFlowers": {
+    "name": "Flor del recogecanciones",
+    "description": "Una flor que te dio el recogecanciones.\\n“No importa si cielo o tierra están muy oscuros, mientras tu corazón siga brillando como sol, mientras siga desprendiendo luz cálida y dorada, siempre habrá esperanza”."
+  },
+  "AralilaAndAranishatsFlowers": {
+    "name": "Flor de Aralila y Aranishat",
+    "description": "Una flor que te dieron Aralila y Aranishat.\\n¡Está claro que nosotros mismos somos los más fuertes!"
+  },
+  "ArakantasFlower": {
+    "name": "Flor de Arakanta",
+    "description": "Una flor que te dio Arakanta.\\nParece que antes le encantaba jugar con el caracal patilludo. Pero ahora creó un nuevo juego para su amig{F#a}{M#o} nara."
+  },
+  "StoriesOfYouAndTheAranara": {
+    "name": "Tu historia con los aranara",
+    "description": "En tus aventuras con los aranara, vives innumerables historias increíbles. Con el valor que tienen las historias en el mundo de los aranara, quizás alguien esté dispuesto a intercambiarlas contigo."
+  },
+  "EmergencyAdjustmentPlan": {
+    "name": "Mapa del plan de ajuste de emergencia",
+    "description": "Un mapa adjunto al plan de emergencia que se le cayó al Fatui Oleg. En él se indican las ubicaciones de todos los campamentos y la ruta de patrullaje de los Fatui."
   },
   "BottleOfSpringWater": {
     "name": "Botella llena de agua de manantial",
@@ -4751,6 +4983,10 @@
     "name": "Roca sólida (derecha)",
     "description": "Una roca para bonsái de aspecto sólido y extremadamente firme que exuda una fuerte sensación pétrea. Se puede colocar en el lado derecho del macetero."
   },
+  "LivingSpring": {
+    "name": "Agua del manantial vital",
+    "description": "Agua obtenida del nacimiento del río que fluye a través de la Floresta Apam. Según Arapas, la sopa elaborada con el agua del manantial vital es el manjar supremo. Pero... ¿de verdad es diferente al agua común y corriente?"
+  },
   "ABoxOfComponents": {
     "name": "Caja de componentes",
     "description": "Una caja llena de componentes. Parece que no están dañados, probablemente porque a los monstruos no les interesan lo más mínimo."
@@ -4817,7 +5053,7 @@
   },
   "OldYellowedNotes": {
     "name": "Nota amarillenta",
-    "description": "Nota amarillenta"
+    "description": "Una nota amarillenta."
   },
   "MysteriousLetter": {
     "name": "Carta misteriosa",
@@ -4839,6 +5075,18 @@
     "name": "Jugo de uva excelente del Viñedo del Amanecer",
     "description": "Un jugo de uva envuelto lujosamente que te regaló Diluc. Es una bebida que Paimon llevaba mucho tiempo deseando probar, pero es también un recuerdo de los peligros superados juntos.\\nEste jugo es el preferido de Diluc, y para elaborarlo se han usado las mejores uvas del Viñedo del Amanecer.\\nCon un epíteto como el de “el jugo de uva preferido del Sr. Diluc”, debe de tener un incalculable valor comercial."
   },
+  "SlimeCondensateSoakedSoil": {
+    "name": "Barro impregnado de condensado de Slime",
+    "description": "Barro impregnado de condensado de Slime. Resulta pegajoso al tacto. ¿Para qué lo querrá Akim?"
+  },
+  "WhopperflowerRootSoil": {
+    "name": "Barro de las raíces de una Megaflora",
+    "description": "Barro obtenido de la superficie bajo las raíces de una Megaflora. ¿Para qué lo querrá Akim?"
+  },
+  "MoistSoil": {
+    "name": "Barro húmedo",
+    "description": "Barro húmedo obtenido de la superficie que había bajo una roca. ¿Para qué lo querrá Akim?"
+  },
   "StarlightCoalescence": {
     "name": "Núcleo estelar",
     "description": "Un transparente cristal que parece contener la luz de las estrellas. Tal vez sirva para resolver el acertijo de algún mecanismo."
@@ -4851,6 +5099,18 @@
     "name": "Título de rondador nocturnal",
     "description": "Un contrato firmado por la mismísima Princesa del Juicio que otorga al titular el privilegio de abrir puestos de navegación. Se considera que los que pueden mostrar este título tienen potestad para desplegar sus sombrías alas en las tinieblas del ocaso y cubrir el cielo con la oscuridad de la noche cerrada."
   },
+  "SpecialConcresoilForToys": {
+    "name": "Lodomento especial para juguetes",
+    "description": "Un tipo especial de lodomento creado para Nima. ¿Qué tipo de guerreros vasija hará Nima con el lodomento?"
+  },
+  "FertileSoilReportedly": {
+    "name": "Barro aparentemente muy fértil",
+    "description": "Barro de supuesta gran fertilidad. ¿Para qué lo querrá Akim?"
+  },
+  "DiscardedConcresoil": {
+    "name": "Lodomento desechado",
+    "description": "Lodomento de poca calidad. No parece estar en muy buenas condiciones..."
+  },
   "TenryouCommissionsMissingPersonPoster": {
     "name": "Encargo de búsqueda de la comisaría de policía",
     "description": "Un encargo oficial de búsqueda de persona desaparecida, estampado con el sello de la Comisión Tenryou."
@@ -4859,13 +5119,97 @@
     "name": "Llave cubierta de sal",
     "description": "Una llave encontrada en el Archipiélago Manzana Dorada. Quizás sirva para abrir alguna cerradura..."
   },
+  "SpecialBirdEgg": {
+    "name": "Huevo especial",
+    "description": "Un huevo muy fresco que Kayvan el pescador necesita para hacer sus cebos especiales. Aunque procede de un árbol concreto que él mismo señaló, no parece tener nada de particular."
+  },
+  "SpecialMushroom": {
+    "name": "Champiñón especial",
+    "description": "Un champiñón que Kayvan el pescador necesita para hacer sus cebos especiales. Al parecer, este tipo de champiñones resulta extremadamente atrayentes para los monstruos. Algunas criaturas incluso los recolectan..."
+  },
+  "SpecialMint": {
+    "name": "Menta especial",
+    "description": "Una menta que Kayvan el pescador necesita para hacer sus cebos especiales. Al parecer, este tipo de menta resulta extremadamente atrayente para los monstruos. Algunas criaturas incluso la recolectan..."
+  },
+  "SpecialHarraFruit": {
+    "name": "Fruto harra especial",
+    "description": "Un fruto harra que Kayvan el pescador necesita para hacer sus cebos especiales. Al parecer, este tipo de fruto harra resulta extremadamente atrayente para los monstruos. Algunas criaturas incluso los recolectan..."
+  },
+  "SpecialSweetFlower": {
+    "name": "Flor dulce especial",
+    "description": "Una flor dulce que Kayvan el pescador necesita para hacer sus cebos especiales. Al parecer, este tipo de flor dulce resulta extremadamente atrayentes para los monstruos. Algunas criaturas incluso las recolectan..."
+  },
+  "BoxLunchFromTighnari": {
+    "name": "Almuerzo de Tignari",
+    "description": "Comida de emergencia que Tignari preparó para Haypasia. Paimon le echó un ojo a escondidas y vio que dentro había algunos manjares tradicionales de Sumeru. Tienen una pinta deliciosa."
+  },
+  "LetterToHaypasia": {
+    "name": "Carta para Haypasia",
+    "description": "Una carta que escribió Tignari para Haypasia. En la carta, Tignari explica quién eres y todo lo ocurrido desde que llegaste a Sumeru, y solicita a Haypasia que te ayude a aclarar tus dudas."
+  },
+  "BoxLunchFromTheTraveler": {
+    "name": "Almuerzo preparado por {F#la viajera}{M#el viajero}",
+    "description": "Un almuerzo que preparaste especialmente para Haypasia. Tiene pollo asado con miel y sopa vegetariana de rábano. Ojalá que a Haypasia le guste."
+  },
+  "TighnarisIntroductionLetter": {
+    "name": "Carta de presentación de Tignari",
+    "description": "Una carta de Tingari para Rohawi, un investigador de la Escuela de Biología. En ella le pide que ponga a tu disposición sus habilidades para recabar información.\\nEn el sobre está escrita la dirección de Rohawi."
+  },
+  "BagOfTransactionFunds": {
+    "name": "Bolsa de fondos para transacciones",
+    "description": "Una bolsa con Moras que te dio Alhacén para comprar cápsulas de conocimiento. Puedes sentir el peso de su contenido."
+  },
+  "PackageOfCannedKnowledge": {
+    "name": "Paquete de conocimiento encapsulado",
+    "description": "Cápsulas de conocimiento que compraste en el puesto de Dori con los fondos que te dio Alhacén. Dori tuvo el detalle de envolverlas como cualquier otro producto para que no llame la atención."
+  },
+  "CannedKnowledgeSwordfightingTechniquesVIII": {
+    "name": "Cápsula de conocimiento: Técnicas de espada (VIII)",
+    "description": "Una cápsula de conocimiento con el nombre de “Técnicas de espada (VIII)”. Adquirida en el puesto de Dori durante la investigación de Paimon por el precio de 100{NON_BREAK_SPACE}000 Moras. No se sabe dónde están el resto de las cápsulas, pero siempre viene bien conocer técnicas de lucha. Bueno, al menos en teoría."
+  },
+  "BagOfIntelTransactionFunds": {
+    "name": "Bolsa de fondos para comprar información",
+    "description": "Una bolsa con Moras que te dio Alhacén para comprar el conocimiento encapsulado divino."
+  },
+  "PictureOfTheTransaction": {
+    "name": "Imagen de una transacción",
+    "description": "Una imagen de la transacción de la cápsula de conocimiento divino tomada por Dori.\\nEn ella se puede ver con claridad a Mizri, el líder de los Ojos de al-Ahmar y el destello rojo que emite la cápsula que sostiene en la mano."
+  },
+  "InformantCodeChart": {
+    "name": "Lista de contraseñas del informante",
+    "description": "Un código que te entregó Alhacén. Al parecer, para comprar los “productos especiales” de Dori, primero hay que decir la contraseña correcta.\\nAsegúrate de revisar bien las contraseñas antes de reunirte con el contacto de Dori."
+  },
   "MisplacedConch": {
     "name": "Caracola desplazada (1)",
     "description": "Una caracola que debería estar en otro lugar. Alguien la tiró aquí y está reproduciendo una imagen que tuvo lugar en otro sitio. Colócala en el lugar en el que debería estar y podrás ver una nueva escena."
   },
+  "PrescriptionMedicationFromBimarstanForGurgen": {
+    "name": "Medicina del bimaristán para Gurgen",
+    "description": "Una medicina recetada para Gurgen. Además de tomarla, se requiere un buen reposo."
+  },
+  "PrescriptionMedicationFromBimarstanForAzra": {
+    "name": "Medicina del bimaristán para Azra",
+    "description": "Una medicina recetada para Azra. Parece que tiene un sabor muy amargo."
+  },
+  "PrescriptionMedicationFromBimarstanForAftab": {
+    "name": "Medicina del bimaristán para Aftab",
+    "description": "Una medicina recetada para Aftab. Además de tomarla, es necesario seguir una dieta ligera."
+  },
+  "FreshHarraFruit": {
+    "name": "Fruto harra fresco",
+    "description": "Un fruto harra que Kayvan el pescador necesita para hacer sus cebos especiales. Al parecer, este tipo de fruto harra resulta extremadamente atrayente para los monstruos, lo que hace que se concentren a su alrededor..."
+  },
+  "FreshZaytunPeach": {
+    "name": "Duraznoliva fresca",
+    "description": "Una duraznoliva que Kayvan el pescador necesita para hacer sus cebos especiales. A simple vista, parece una duraznoliva normal y corriente..."
+  },
   "RedDyedFabric": {
     "name": "Tela teñida de rojo",
     "description": ""
+  },
+  "TheBestWater": {
+    "name": "El agua más rica",
+    "description": "Agua fresca, pura y refrescante que recogiste en Vanarana. Las hojas que caen sobre el agua parecen flotar como nubes en el cielo. Se nota a simple vista que es agua de la mejor calidad."
   },
   "SilverPocketWatch": {
     "name": "Reloj de bolsillo plateado",
@@ -4875,13 +5219,93 @@
     "name": "Insignia antigua",
     "description": "Debe de ser una insignia Fatui. Quién sabe por qué está llena de arañazos..."
   },
+  "SarehsNote": {
+    "name": "Anotaciones de Sareh",
+    "description": "Tienes que buscar a una gatita de color negro y blanco que se llama Lale. Utiliza el felinés para llamarla. La pronunciación correcta es: “Miau, miau miau, miau...”. Recuerda que primero es un tono descendente y luego uno ascendente. El último debe ser muy alto."
+  },
+  "FreshNilotpalaLotus": {
+    "name": "Loto nilotpala fresco",
+    "description": "Un tipo de flor que crece en suelos húmedos y que florece de noche. Sus pétalos frescos son un ingrediente fundamental en el tratamiento contra la eleazar."
+  },
+  "RoseSprout": {
+    "name": "Rosa joven",
+    "description": "Una rosa nacida en medio del Marana. Es delicada pero resistente."
+  },
+  "EagleFeatherOfTheBrave": {
+    "name": "Pluma de Águila del Valiente",
+    "description": "Se dice que los jóvenes valientes, conocidos como “yuvan”, portan esta pluma como emblema."
+  },
+  "FlorescentTalisman": {
+    "name": "Amuleto floral de la valentía",
+    "description": "Se trata de un mero amuleto hecho con la destreza de un niño. No se sabe qué significado podrá tener. Al estar afectado por el elemento Dendro, mantiene las flores frescas durante más tiempo. No esconde otra particularidad más allá de estar afectado por la energía Dendro."
+  },
+  "FreshlyPickedMushroom": {
+    "name": "Champiñones recién recogidos",
+    "description": "Champiñones recogidos en la localización que te proporcionó Hanbei. Aparte del hecho de que crecen en los troncos de los árboles, no parecen tener nada de especial. No darán ningún problema, ¿verdad?"
+  },
+  "StrangeSumeruRose": {
+    "name": "Rosa de Sumeru anómala",
+    "description": "Una rosa de Sumeru afectada por las líneas ley. Parece algo diferente a un ejemplar normal..."
+  },
+  "RiddleNote": {
+    "name": "Nota con acertijo",
+    "description": "“Un espejo que no es de cristal refleja todos los espectáculos”.\\nOtro acertijo que obtuviste del cofre al que apuntaba el acertijo anterior.\\nNo se sabe quién los escribió.\\nTal vez la respuesta esté cerca del lugar relacionado con ese “espectáculo”."
+  },
+  "RafiqsShipbuildingMaterials": {
+    "name": "Materiales de construcción de Rafiq",
+    "description": "Los materiales de construcción para el barco de Rafiq. Al parecer, se gastó una pequeña fortuna en ellos..."
+  },
+  "LittleDriedFlower": {
+    "name": "Pequeña flor seca",
+    "description": "A simple vista no es más que una flor seca, pero antaño fue un preciado regalo. Un objeto así se merece ser cuidado con esmero, al igual que las ya olvidadas amistades del pasado."
+  },
+  "ActivatedCannedKnowledge": {
+    "name": "Cápsula de conocimiento activada",
+    "description": "Una cápsula de conocimiento con el nombre de “Técnicas de espada (VIII)”. Adquirida en el puesto de Dori durante la investigación de Paimon por el precio de 100{NON_BREAK_SPACE}000 Moras. No se sabe dónde están el resto de las cápsulas, pero siempre viene bien conocer técnicas de lucha. Bueno, al menos en teoría."
+  },
   "PersikovsManuscript": {
     "name": "Manuscrito de Persikov",
     "description": "El manuscrito de Persikov, el investigador Fatui. En él hay un mapa. Si sigues las pistas que contiene, tal vez encuentres los núcleos de cristal que le faltan al simulador cognitivo."
   },
+  "NormalWood": {
+    "name": "Madera común",
+    "description": "La madera que Viktor compró. Dice que la usará para tallar."
+  },
+  "FatuiMeal": {
+    "name": "Almuerzo Fatui",
+    "description": "Una caja con dos raciones de panipuri. Son para Viktor y Vsevolod, que al parecer tienen hambre."
+  },
+  "TreasureMapInABox": {
+    "name": "Mapa del tesoro escondido en un cofre",
+    "description": "Un mapa del tesoro que se encontraba dentro de un cofre. Señala la ubicación de algunos artículos de valor con marcas muy rudimentarias."
+  },
   "TwilightTheaterHeadsNotes": {
     "name": "Manuscrito del director de la Compañía de Teatro Crepúsculo",
-    "description": "El guion de la obra «Fantasía nocturna: La leyenda de la princesa guerrera». Hay algunas cosas escritas de manera un poco caótica que parecen ser las anotaciones del director. Algunas de esas anotaciones tienen comentarios muy crudos. Me da la sensación de que no aceptarán este guion..."
+    "description": "El guion de la obra «Fantasía nocturna: La leyenda de la princesa guerrera». Hay algunas cosas escritas de manera un poco caótica que parecen ser las anotaciones del director. Algunas de esas anotaciones tienen comentarios muy crudos. Da la impresión de que no aceptarán este guion..."
+  },
+  "FreshlyPickedHarraFruit": {
+    "name": "Fruto harra recién recogido",
+    "description": "Un fruto harra recién recogido. Ideal para usar como ingrediente culinario."
+  },
+  "UnsignedNote": {
+    "name": "Nota sin firma",
+    "description": "Una nota sin nombre. No se sabe quién la escribió..."
+  },
+  "RaggedRecords": {
+    "name": "Registro estropeado",
+    "description": ""
+  },
+  "RemeltingDevice": {
+    "name": "Dispositivo refundente",
+    "description": "Este dispositivo es obra de la alquimista Hayanad. Su complejo diseño se basa en una cámara interna capaz de soportar altas presiones y temperaturas para contener la explosión causada por el efecto refundente. Posee una válvula especial capaz de abrirse automáticamente en el momento preciso para dejar escapar el humo resultante al mezclar la poción y otorgar a su usuario la ayuda necesaria durante la batalla.\\nSin embargo, a juzgar por su aspecto, este invento sufrió los efectos de la falta de fondos. No parece que Hayanad cuente con mucha financiación para su proyecto..."
+  },
+  "RemeltingTablet": {
+    "name": "Píldora refundente",
+    "description": "Una verdadera obra maestra de la alquimista Hayanad, la cual creó al solidificar una poción. En teoría, se podría almacenar durante un largo periodo de tiempo, y no supone ningún riesgo a la hora de transportarla. Sin embargo, a la hora de usarla, hay que colocar la píldora dentro del dispositivo refundente para que las dos pociones sólidas se mezclen por medio de una microexplosión y que, así, tenga efecto.\\nEl problema está en lo preocupante que resulta pensar que el dispositivo va a explotar mientras alguien lo sostiene..."
+  },
+  "EmployersOrders": {
+    "name": "Órdenes del patrono",
+    "description": ""
   },
   "PyroShard": {
     "name": "Fragmento Pyro",
@@ -5013,11 +5437,11 @@
   },
   "VarunadaLazuriteChunk": {
     "name": "Trozo de lazurita varunada",
-    "description": "Material de ascensión de personaje.\\n“Mis ideales son inmaculados”.\\n“Permíteme que te corrija. Aquí, no son los dioses los que cargan con los crímenes de la gente...”"
+    "description": "Material de ascensión de personaje.\\n“Mis ideales son inmaculados”.\\n“Permíteme que te corrija. Aquí, la gente no carga con pecados a ojos de los dioses, pues solo las leyes y el Tribunal pueden juzgar a las personas”."
   },
   "VarunadaLazuriteGemstone": {
     "name": "Lazurita varunada",
-    "description": "Material de ascensión de personaje.\\n“Mis ideales son inmaculados”.\\n“Permíteme que te corrija. Aquí, no son los dioses los que cargan con los crímenes de la gente, por lo que solo las leyes y el Tribunal pueden juzgar a las personas”.\\n“Pueden juzgarme incluso a mí. Así pues, alabadas sean mi magnificencia y mi pureza”."
+    "description": "Material de ascensión de personaje.\\n“Mis ideales son inmaculados”.\\n“Permíteme que te corrija. Aquí, la gente no carga con pecados a ojos de los dioses, pues solo las leyes y el Tribunal pueden juzgar a las personas”.\\n“Pueden juzgarme incluso a mí. Así pues, alabadas sean mi magnificencia y mi pureza”."
   },
   "NagadusEmeraldSliver": {
     "name": "Pedacito de esmeralda nagadus",
@@ -5025,15 +5449,15 @@
   },
   "NagadusEmeraldFragment": {
     "name": "Fragmento de esmeralda nagadus",
-    "description": "Material de ascensión de personaje.\\n“Al final, la vida se desprendió de su mano...”"
+    "description": "Material de ascensión de personaje.\\n“Tuve un sueño muy, muy largo...”."
   },
   "NagadusEmeraldChunk": {
     "name": "Trozo de esmeralda nagadus",
-    "description": "Material de ascensión de personaje.\\n“Al final, la vida se desprendió de su mano...”\\n“Dándole así a todos la libertad de vivir”."
+    "description": "Material de ascensión de personaje.\\n“Tuve un sueño muy, muy largo...”.\\n“En él, la gente bailaba en círculo dándose la mano. Había sabios y necios, bailarinas y guerreros, títeres y estatuas de dioses...”."
   },
   "NagadusEmeraldGemstone": {
     "name": "Esmeralda nagadus",
-    "description": "Material de ascensión de personaje.\\n“Al final, la vida se desprendió de su mano...”\\n“Dándole así a todos la libertad de vivir”.\\n“Los humanos y los animales tienen la capacidad de expresarse, pero las plantas no. Por lo tanto, necesitan un portavoz”."
+    "description": "Material de ascensión de personaje.\\n“Tuve un sueño muy, muy largo...”.\\n“En él, la gente bailaba en círculo dándose la mano. Había sabios y necios, bailarinas y guerreros, títeres y estatuas de dioses...”.\\n“Aquel círculo contenía todo lo existente en el universo. Su objetivo era la vida, y la sabiduría, su vehículo”."
   },
   "VajradaAmethystSliver": {
     "name": "Pedacito de amatista vajrada",
@@ -5215,6 +5639,42 @@
     "name": "Filosofía de la luz",
     "description": "Material de mejora de talento.\\nEl mayor anhelo del Reino del Trueno es la luz.\\nAunque la humanidad viviera bajo tierra, seguiría rezando para alcanzar la luz. Los mortales buscan incesantemente superarse a sí mismos y, aunque la eternidad estática y cerrada parezca magnífica, no significaría más que la muerte."
   },
+  "TeachingsOfAdmonition": {
+    "name": "Enseñanzas de la exhortación",
+    "description": "Material de mejora de talento.\\nLa exhortación conforma las ramas del Reino de la Sabiduría y proviene de un corazón puro.\\nSolo unas palabras claras y llenas de bondad pueden transmitir la más profunda de las sabidurías y liberar a sus semillas de las cadenas de la arrogancia."
+  },
+  "GuideToAdmonition": {
+    "name": "Guía de la exhortación",
+    "description": "Material de mejora de talento.\\nLa exhortación conforma las ramas del Reino de la Sabiduría y va de la mano del pensamiento ingenioso.\\nSolo pensando con detenimiento antes de hablar se consigue un discurso claro y humilde. Y solo de esta manera se convencerá a los sabios y se iluminará a los necios, con lo que la sabiduría manará como el cauce de un río."
+  },
+  "PhilosophiesOfAdmonition": {
+    "name": "Filosofía de la exhortación",
+    "description": "Material de mejora de talento.\\nLa exhortación conforma las ramas del Reino de la Sabiduría y culmina con la realización de la bondad.\\nCuando existe coherencia entre el significado de lo que se transmite y el comportamiento, las palabras, los pensamientos y las acciones concuerdan entre sí. Solo así, la sabiduría podrá enriquecernos con los frutos de la bondad."
+  },
+  "TeachingsOfIngenuity": {
+    "name": "Enseñanzas del ingenio",
+    "description": "Material de mejora de talento.\\nEl ingenio constituye las arterias del Reino de la Sabiduría y nace de una voluntad bondadosa.\\nTal como reza el dicho “a árbol malo, frutos malos”, solo manteniendo una bondad firme se logrará impulsar un pensamiento ingenioso y deferente, un pensamiento que nunca manche el nombre de la sabiduría."
+  },
+  "GuideToIngenuity": {
+    "name": "Guía del ingenio",
+    "description": "Material de mejora de talento.\\nEl ingenio constituye las arterias del Reino de la Sabiduría y es el guía de un discurso recto y honesto.\\nReflexionar con ingenio, cuidado y bondad asegura que las palabras nunca se desvíen del camino correcto. En cambio, son el desdén y la malicia los que tergiversan las palabras y acciones."
+  },
+  "PhilosophiesOfIngenuity": {
+    "name": "Filosofía del ingenio",
+    "description": "Material de mejora de talento.\\nEl ingenio constituye las arterias del Reino de la Sabiduría y da lugar a una conducta armoniosa.\\nUna conducta de este tipo se culmina cuando el pensamiento, las palabras y las acciones se complementan entre sí y conforman los sólidos cimientos sobre los que florece el árbol de la sabiduría."
+  },
+  "TeachingsOfPraxis": {
+    "name": "Enseñanzas de la praxis",
+    "description": "Material de mejora de talento.\\nLa praxis conforma las raíces del Reino de la Sabiduría y nace de una naturaleza clara y definida.\\nLa incansable búsqueda de la práctica es el inexorable camino a seguir para la materialización definitiva de la sabiduría. Además, un pensamiento ingenioso y un discurso coherente son imposibles si no van de la mano de la bondad."
+  },
+  "GuideToPraxis": {
+    "name": "Guía de la praxis",
+    "description": "Material de mejora de talento.\\nLa praxis conforma las raíces del Reino de la Sabiduría y es lo que constata la franqueza del discurso.\\nLa sabiduría no consiste solamente en pensar y actuar con bondad, pues en realidad nace de las acciones y pone su sello sobre el discurso recto."
+  },
+  "PhilosophiesOfPraxis": {
+    "name": "Filosofía de la praxis",
+    "description": "Material de mejora de talento.\\nLa praxis conforma las raíces del Reino de la Sabiduría y hace crecer los frutos de esta.\\nLa conducta es algo que se constata por sí mismo, y la coherencia entre las acciones, las palabras y el pensamiento es el único camino que un sabio debe seguir para alcanzar la perfección."
+  },
   "SanctifyingDroplet": {
     "name": "Gota Bendita",
     "description": ""
@@ -5298,6 +5758,14 @@
   "Lumenspar": {
     "name": "Espato lumínico",
     "description": "Un cristal de un color azul tan vívido como el del cielo. Su superficie centellea de forma intermitente, como si las profundidades de la tierra intentasen responder al elevado firmamento.\\nSi uno escucha con detenimiento, es como si pudiera oírse un suspiro procediendo de alguna parte.\\nPuede parecer extraño, pero este cristal transmite una sensación de calidez."
+  },
+  "Dendroculus": {
+    "name": "Dendróculus perdido",
+    "description": "Una sustancia que ha acumulado una intensa energía Dendro. Ofrécesela a una Estatua para que recupere la energía perdida a lo largo de los años."
+  },
+  "SumeruShrineOfDepthsKey": {
+    "name": "Llave de Santuario de las Profundidades de Sumeru",
+    "description": "Capaz de romper los sellos de los antiguos santuarios esparcidos por toda Sumeru.\\nEl altar de una deidad antigua se levanta imponente, a pesar de la destrucción de su civilización. Las llaves, que pueden encontrarse en dominios, pueden romper su sello. Tal vez un soplo del pasado pueda hacer que la deidad del altar olvide sus aflicciones."
   },
   "Dish": {
     "name": "Plato",
@@ -6843,6 +7311,234 @@
     "name": "La verdad y nada más que la verdad",
     "description": "La especialidad de Shikanoin Heizou. La dorada y jugosa carne descansa sobre un cama de huevo y desprende un aroma irresistible. Tras comerlo, sientes el impulso de contar algunos de los privados secretos de tu corazón. ¿Será esta el arma secreta del detective Heizou?"
   },
+  "SuspiciousButterChicken": {
+    "name": "Pollo con mantequilla extraño",
+    "description": "Un plato de un sabor único. Un error de cálculo en su condimentación hace que tenga un sabor demasiado fuerte y que sea difícilmente comestible. Si se bebe agua al comerlo, a duras penas se puede llegar a ingerir..."
+  },
+  "ButterChicken": {
+    "name": "Pollo con mantequilla",
+    "description": "Un plato rico y sabroso. Se marinan los trozos de pollo y se fríen una vez en aceite. Luego se calienta la mantequilla y se añaden los tomates triturados y las especias. Después, se cocinan hasta formar una salsa y se añaden los trozos de pollo frito. El producto final se sirve acompañando al plato principal y es la forma más deliciosa de tocar la fibra sensible de la gente de Sumeru."
+  },
+  "DeliciousButterChicken": {
+    "name": "Pollo con mantequilla delicioso",
+    "description": "Un plato sabroso. La suave salsa envuelve uniformemente cada jugoso trozo de pollo y la riqueza y variedad de condimentos provoca una explosión de sabores en la boca. Antes de que te des cuenta, habrás vaciado el plato y estarás limpiando las últimas gotas de salsa con el naan."
+  },
+  "SuspiciousShawarmaWrap": {
+    "name": "Rollos de shawarma extraños",
+    "description": "Rollos rellenos de carne a la parrilla. La carne chamuscada parece carbón y ni siquiera la corteza perfecta del rollito podría salvarla. No parece muy apetitoso."
+  },
+  "ShawarmaWrap": {
+    "name": "Rollos de shawarma",
+    "description": "Rollos rellenos de carne a la parrilla. La carne se corta en la parrilla vertical y se sirve en una tortita con verduras y salsa. La auténtica y sabrosa comida callejera de Sumeru se caracteriza por su sencillez."
+  },
+  "DeliciousShawarmaWrap": {
+    "name": "Rollos de shawarma deliciosos",
+    "description": "Unos rollos de carne a la parrilla. El exterior de la carne asada está marcado por la parrilla e impregnado de sabrosas especias, mientras que por dentro la carne está tierna y jugosa. Las verduras frescas aportan un sabor refrescante y la corteza fina pero no demasiado dura del rollito envuelve la exquisitez de un bocado tan satisfactorio que ni siquiera se puede desperdiciar el derrame accidental de la salsa."
+  },
+  "SuspiciousSelvaSalad": {
+    "name": "Ensalada tropical extraña",
+    "description": "Una ensalada típica aranara que Paimon ha refinado minuciosamente, pero cuya preparación en realidad se remonta a muchos años atrás en Sumeru. La duraznoliva emite un olor extraño, casi como si se hubiera cocinado hasta el punto de fermentación, y la proporción de menta y rosa está bastante desequilibrada."
+  },
+  "SelvaSalad": {
+    "name": "Ensalada tropical",
+    "description": "Una ensalada típica aranara que Paimon ha refinado minuciosamente, pero cuya preparación en realidad se remonta a muchos años atrás en Sumeru. La duraznoliva es totalmente fresca y crujiente, mientras que la refrescante menta sustituye al dulce sabor del azúcar. El extracto que desprende la rosa de Sumeru al exprimirla potencia su sabor. Un plato refrescante tanto para el gusto como para el olfato."
+  },
+  "DeliciousSelvaSalad": {
+    "name": "Ensalada tropical deliciosa",
+    "description": "Una ensalada típica aranara que Paimon ha refinado minuciosamente, pero cuya preparación en realidad se remonta a muchos años atrás en Sumeru. La duraznoliva es crujiente pero a la vez jugosa. El frescor de la menta y el aroma de las rosas al madurar viajan directamente al estómago. Con la cantidad justa de ligereza y frescor, esto es lo que se llama “el sabor de la felicidad”."
+  },
+  "SuspiciousMasalaCheeseBalls": {
+    "name": "Bolitas de queso con masala extrañas",
+    "description": "Un plato típico aranara que Paimon ha refinado minuciosamente, pero cuya preparación en realidad se remonta a muchos años atrás en Sumeru. Las bolas de queso no están bien fritas y al morderlas se nota la textura del queso crudo. Las papas también están duras. La próxima vez convendría cocinarlas un poco más..."
+  },
+  "MasalaCheeseBalls": {
+    "name": "Bolitas de queso con masala",
+    "description": "Un plato típico aranara que Paimon ha refinado minuciosamente, pero cuya preparación en realidad se remonta a muchos años atrás en Sumeru. Las especias se añaden de forma especial para darle un aroma cautivador al salir de la sartén. El queso de las bolas tiene una textura alargada y cremosa, y al morderlas, el queso fundido brota al instante. Las papas que las acompañan proporcionan una sensación de plena saciedad."
+  },
+  "DeliciousMasalaCheeseBalls": {
+    "name": "Bolitas de queso con masala deliciosas",
+    "description": "Un plato típico aranara que Paimon ha refinado minuciosamente, pero cuya preparación en realidad se remonta a muchos años atrás en Sumeru. El uso especial de las especias resalta el sabor de los propios ingredientes. Los pequeños estímulos para las papilas gustativas añaden capas extra de sabor. El crujiente rebozado exterior de la bola de queso se complementa con la suavidad del interior y las papas calientes."
+  },
+  "SuspiciousMushroomHodgepodge": {
+    "name": "Surtido de champiñones extraño",
+    "description": "Unos champiñones típicos aranara que Paimon ha refinado minuciosamente, pero que en realidad se pueden encontrar en el mercado con más condimentos. Se podría decir que tiene cierto sabor silvestre, aunque más bien... lleno de olor a tierra sin lavar. Un regalo de la naturaleza con el que solo un jabalí del bosque podría ser feliz."
+  },
+  "MushroomHodgepodge": {
+    "name": "Surtido de champiñones",
+    "description": "Unos champiñones típicos aranara que Paimon ha refinado minuciosamente, pero que en realidad se pueden encontrar en el mercado con más condimentos. Se mezclan tres tipos de champiñones diferentes, debidamente procesados y cocinados de forma sencilla, con un sabor y aroma apetecibles."
+  },
+  "DeliciousMushroomHodgepodge": {
+    "name": "Surtido de champiñones delicioso",
+    "description": "Unos champiñones típicos aranara que Paimon ha refinado minuciosamente, pero que en realidad se pueden encontrar en el mercado con más condimentos. La temperatura y el tiempo de cocción se ajustaron con precisión según el tipo de champiñón. Como resultado, los sugerentes sabores de los tres tipos de champiñones se diferencian a la perfección. Comerlos juntos o uno a uno es una cuestión de preferencia personal."
+  },
+  "SuspiciousPitaPocket": {
+    "name": "Döner kebab extraño",
+    "description": "Un pan de pita con variedad de rellenos. El pan crudo deja una textura áspera sobre la lengua, y el relleno seco y duro ha perdido su color. Parece que solo alguien hambriento y perdido durante tres días estaría dispuesto a aceptar una comida así."
+  },
+  "PitaPocket": {
+    "name": "Döner kebab",
+    "description": "Un pan de pita con variedad de rellenos. La masa plana se hornea y se vuelve redonda y voluminosa como un pez globo. Al cortarlo parece un bolsito relleno de comida. Se dice que antiguamente la gente de Sumeru prefería comerlo directamente untándolo en salsa, mientras que hoy en día la forma habitual de comerlo es rellenarlos con todo tipo de ingredientes."
+  },
+  "DeliciousPitaPocket": {
+    "name": "Döner kebab delicioso",
+    "description": "Un pan de pita con variedad de rellenos. La salsa es como una luz que acentúa el encanto de los ingredientes en el centro del escenario. El crujiente de la carne y las verduras se combinan a la perfección y hacen que este “bolsito relleno de comida” sea como un sombrero mágico lleno de tesoros en un espectáculo de magia repleto de sorpresas."
+  },
+  "SuspiciousPanipuri": {
+    "name": "Panipuri extraño",
+    "description": "Un aperitivo servido con una salsa para mojar. La salsa verde tiene un olor un tanto inusual y el color no parece del todo apetecible. Quizás sería mejor renunciar a la salsa para mojar y comerse únicamente las bolas crujientes."
+  },
+  "Panipuri": {
+    "name": "Panipuri",
+    "description": "Un aperitivo servido con una salsa para mojar. Las bolas crujientes se fríen primero en aceite caliente, se agujerean y se rellenan con ingredientes y se sirven con salsa verde. Tienen el tamaño perfecto para comerse de un bocado. Es una comida callejera común en Sumeru."
+  },
+  "DeliciousPanipuri": {
+    "name": "Panipuri delicioso",
+    "description": "Un aperitivo servido con una salsa para mojar. Son unas bolitas crujientes y redondas como un Slime, rellenas de brillantes y misteriosos jugos. Al entrar en la boca, una multitud de sabores frescos, ácidos y agrios explotan en un instante en la lengua creando una combinación de sabores de ensueño. No es de extrañar que haya gente de Sumeru obsesionada con este plato."
+  },
+  "SuspiciousMintyBeanSoup": {
+    "name": "Sopa de menta y frijoles extraña",
+    "description": "Una sopa espesa hecha con ingredientes sencillos. La adición de demasiada agua hace que la sopa sea muy clara y se parezca más a una bebida que a un plato. Tal vez sea una buena idea añadir un poco de hielo y hacer un tazón de agua de frijoles con menta."
+  },
+  "MintyBeanSoup": {
+    "name": "Sopa de menta y frijoles",
+    "description": "Una sopa espesa hecha con ingredientes sencillos. Se hierven las mentas y los frijoles juntos hasta que se ablanden y luego se trituran hasta conseguir una sopa suave. Si se sigue hirviendo, se espesa la textura. Se sirve con un cucharón y se espolvorean algunos frijoles y mentas por encima. Este refrescante manjar sabe igual de bien tanto si se sirve caliente como frío."
+  },
+  "DeliciousMintyBeanSoup": {
+    "name": "Sopa de menta y frijoles deliciosa",
+    "description": "Una sopa espesa hecha con ingredientes sencillos. El toque de los frijoles le da espesor, mientras que la menta ofrece una textura suave y sedosa a la vez que refrescante. Los sabores son sencillos pero no por ello menos extraordinarios, lo que hace que uno se sienta como si estuviera paseando bajo la fresca sombra de un árbol mientras disfruta los placeres sencillos de la vida."
+  },
+  "SuspiciousBiryani": {
+    "name": "Biryani extraño",
+    "description": "Un aromático plato de arroz. Los granos de arroz están empapados en aceite y por eso se han vuelto translúcidos. Su olor grasiento es bastante desagradable. Al terminar el plato, queda en él una capa de aceite. Quizá sea conveniente mantenerse alejado del aceite y de la carne durante los próximos días..."
+  },
+  "Biryani": {
+    "name": "Biryani",
+    "description": "Un aromático plato de arroz. Se saltea la carne para que quede crujiente por fuera y tierna por dentro. A continuación, se guisa con condimentos y arroz de grano largo. Se espolvorea un poco de orquídea padishá antes de servir. El interior de cada grano contiene el aroma de la carne y de los condimentos, con lo que ofrece un sabor exquisito que solo se encuentra en Sumeru."
+  },
+  "DeliciousBiryani": {
+    "name": "Biryani delicioso",
+    "description": "Un aromático plato de arroz. La corona dorada de arroz de grano largo y carne se adorna con pétalos de orquídea padishá en una imagen que recuerda a un oasis estrellado. El atractivo aroma de las especias se entrelaza armónicamente en los granos de arroz. En cada bocado converge cada uno de los cinco sabores. Los comensales no tardan en vaciar el plato y no pueden evitar relamerse en busca del último ápice de sabor."
+  },
+  "SuspiciousTahchin": {
+    "name": "Tahchín extraño",
+    "description": "Un clásico plato de arroz que se sirve en gran cantidad y que resulta muy saciante. El color de la parte exterior ennegrecido no parece muy apetitoso. Al probarlo, está tan duro que da la sensación de que la comida está luchando con los dientes. Por el bien de la salud dental, es mejor comer solo el relleno..."
+  },
+  "Tahchin": {
+    "name": "Tahchín",
+    "description": "Un clásico plato de arroz que se sirve en gran cantidad y que resulta muy saciante. Se introduce la carne marinada con yogur en el arroz cocido y luego se hornean juntos para obtener una superficie crujiente. No hay que olvidarse de espolvorear un poco de orquídea padishá antes de servirlo. Tanto el arroz como la carne pueden mantener a uno lleno durante mucho tiempo. Por eso, este plato es muy popular en el Gran Bazar."
+  },
+  "DeliciousTahchin": {
+    "name": "Tahchín delicioso",
+    "description": "Un clásico plato de arroz que se sirve en gran cantidad y que resulta muy saciante. Con el primer bocado, el crujiente exterior se resquebraja, produciendo un sonido cautivador. Con el segundo, el arroz suave e impregnado se fusiona en la boca junto con la jugosa carne. A continuación, el tercer bocado trae consigo la fragancia de la orquídea padishá hasta que, finalmente, el último bocado te deja embriagado en una maravillosa experiencia que te hace desear seguir comiéndolo. El único inconveniente sería estar demasiado lleno para seguir. ¿Por qué no tomar otra ración mañana?"
+  },
+  "SuspiciousLambadFishRoll": {
+    "name": "Rollo de pescado de Lambad extraño",
+    "description": "Un plato de pescado a la parrilla con un tenue aroma floral. Desgraciadamente, el olor rancio del pescado chamuscado evidencia la falta de habilidad culinaria al hacerlo. Será mejor que Lambad no se dé cuenta, o te cobrará el doble la próxima vez que visites su puesto."
+  },
+  "LambadFishRoll": {
+    "name": "Rollo de pescado de Lambad",
+    "description": "Un plato de pescado a la parrilla con un ligero aroma floral. Se dice que Lambad se aventuró a lo largo y ancho del mundo en su juventud. En cada lugar al que iba, probaba el pescado a la parrilla de las tabernas locales. Este no era un plato emblemático en Sumeru, lo cual Lambad pensó que era una pena, así que inventó este rollo de pescado. Según los comensales de la taberna, las historias de sus aventuras no son necesariamente ciertas, pero su rollo de pescado es sin duda delicioso."
+  },
+  "DeliciousLambadFishRoll": {
+    "name": "Rollo de pescado de Lambad delicioso",
+    "description": "Un plato de pescado a la parrilla con un ligero aroma floral. La carne de pescado dorada y los fragantes pétalos de rosa recuerdan a las ondulantes olas de la superficie del mar enrojecidas por el sol poniente. No es de extrañar que este plato también se conozca con el nombre de “el romance de los marineros”. ¡Espera! ¿Significa eso que Lambad no exageraba sobre sus aventuras?"
+  },
+  "SuspiciousCurryShrimp": {
+    "name": "Camarones al curri extraños",
+    "description": "Un plato sencillo y común en Sumeru. Por el fuerte y penetrante olor, debe ser curri... Después de buscar en el interior de la masa, finalmente encuentras un camarón desnutrido. Sí, es un camarón al curri... ¿Pero harías bien en comerlo?"
+  },
+  "CurryShrimp": {
+    "name": "Camarones al curri",
+    "description": "Un plato sencillo y común en Sumeru. Una sabrosa combinación de curri y marisco. El aromático olor del curri se combina con el olor del mar, y los camarones se cocinan con una consistencia crujiente y sabrosa mientras se fusionan con el caldo de curri, lo que va abriendo poco a poco el apetito. Este plato se sirve en todos los hogares de Sumeru, con un sabor distintivo bajo cada techo. Parece que cada familia tiene su propia receta."
+  },
+  "DeliciousCurryShrimp": {
+    "name": "Camarones al curri deliciosos",
+    "description": "Un plato sencillo y común en Sumeru. Los enormes camarones se sumergen en una salsa cremosa, absorbiendo su rico sabor. El cautivador aroma encuentra con facilidad la nariz. Incluso una persona que dijera haber perdido el apetito babearía por él."
+  },
+  "SuspiciousTandooriRoastChicken": {
+    "name": "Pollo tandoori extraño",
+    "description": "Un plato de pollo característico de Sumeru. Horneado a fuego alto, el pollo ha perdido su jugo y se ha vuelto seco. La sobreabundancia de condimentos ha cubierto el aroma original de los ingredientes. Incluso alguien que disfrute de comer carne seca necesitaría una botella de agua para ayudar a tragar la carne."
+  },
+  "TandooriRoastChicken": {
+    "name": "Pollo tandoori",
+    "description": "Un plato de pollo característico de Sumeru. El pollo se adoba primero con especias rojas y luego se asa en un horno de barro. El proceso no requiere técnicas sofisticadas. Es difícil creer que este clásico manjar de Sumeru haya nacido en un humilde horno. Pero dicen que un horno de barro es igual de importante para un cocinero veterano como una espada lo es para un aventurero."
+  },
+  "DeliciousTandooriRoastChicken": {
+    "name": "Pollo tandoori delicioso",
+    "description": "Un plato de pollo característico de Sumeru. La piel roja del pollo, cocinada bajo el fuego, despierta la atención de todas las papilas gustativas con su delicioso sabor. El pollo y las especias parecen realizar una misteriosa danza de Sumeru en la punta de la lengua, como si se estuviera llevando a cabo un gran banquete festivo."
+  },
+  "SuspiciousPotatoBoat": {
+    "name": "Barco de papa extraño",
+    "description": "Un aperitivo al horno. La papa está medio cocida, e incluso se ven restos de tierra en la superficie. Ni siquiera el sabor del queso todopoderoso pudo devolverle la vida a este plato."
+  },
+  "PotatoBoat": {
+    "name": "Barco de papa",
+    "description": "Un aperitivo al horno. La papa se lava y se hornea junto con el queso y los champiñones rukkhashava. El plato garantiza una experiencia inigualable cuando se come caliente. Esto explica su popularidad en las calles de Sumeru. Pero hay que tener cuidado de no quemarse la lengua."
+  },
+  "DeliciousPotatoBoat": {
+    "name": "Barco de papa delicioso",
+    "description": "Un aperitivo horneado. El queso rezumante, con su seductor aroma, es como un río de oro cargado de deliciosos champiñones rukkhashava que navega por una exquisita papa. Con un solo bocado, sentirás como si estuvieras flotando en un barco en el que emprendes una travesía que desearías que nunca acabara."
+  },
+  "SuspiciousFishWithCreamSauce": {
+    "name": "Pescado a la crema extraño",
+    "description": "Un plato de pescado servido en salsa. El exterior estaba quemado por el aceite sobrecalentado. Es bastante difícil no notar el fuerte contraste entre el pescado negro como el carbón y la salsa blanca como la leche. Solo la carne del interior parece comestible... Espera, ¿a qué se debe esta acidez?"
+  },
+  "FishWithCreamSauce": {
+    "name": "Pescado a la crema",
+    "description": "Un plato de pescado servido en salsa. El pescado fresco se seca y se cocina al horno. La piel crujiente se cubre con una salsa de crema blanca y menta verde. Una receta sencilla para un sabor único."
+  },
+  "DeliciousFishWithCreamSauce": {
+    "name": "Pescado a la crema delicioso",
+    "description": "Un plato de pescado servido en salsa. El pescado se sirve en una salsa blanca cremosa, que es una delicia para el paladar. Con solo un pequeño bocado, uno puede ver a los peces saltando en la superficie del mar."
+  },
+  "ForestWatchersChoice": {
+    "name": "Recomendación de guarda forestal",
+    "description": "La especialidad de Tignari. El guarda forestal eligió personalmente estas setas comestibles, no solo de las comunes, sino también algunas de un misterioso aspecto inusual. No se añaden condimentos para que así el protagonismo recaiga sobre los ingredientes frescos. Le debió de llevar bastante tiempo preparar este delicioso plato."
+  },
+  "Yearning": {
+    "name": "Anhelo",
+    "description": "La especialidad de Collei. Los ingredientes ricos en nutrientes se meten dentro del pan. Una comida apta para llevar y comer en cualquier sitio. Según Collei, el filete que lleva se llama “filete a la parrilla del guardabosques\". De alguna manera, le recuerda a cierta entusiasmada persona de rojo. El plato debe de ser la encarnación del anhelo más íntimo de Collei."
+  },
+  "ShowMeTheMora": {
+    "name": "Mora célere",
+    "description": "La especialidad de Dori. Tras pagar una gran suma de dinero, por fin se puede degustar el plato cocinado por la mismísima magnate Sangemah Bay. El consistente pollo está cubierto de una salsa sedosa de textura suave. Con un sabor capaz de despertar los cinco sentidos, este plato alienta el impulso de gastar otra fortuna solo por otro bocado."
+  },
+  "SuspiciousMeatLoversMushroomPizza": {
+    "name": "Pizza de carne y champiñones extraña",
+    "description": "Una pizza recién orneada. El queso se funde sobre el resto de los ingredientes y desprende un penetrante aroma. Cocinar al punto la gruesa masa supone todo un desafío. Aunque no está claro si el problema es dar con la temperatura de cocción o el punto de fermentación ideal."
+  },
+  "MeatLoversMushroomPizza": {
+    "name": "Pizza de carne y champiñones",
+    "description": "Una pizza recién orneada. Grandes trozos de carne y champiñones frescos cubren toda la masa. Si encima le añades una capa de queso, resulta imposible resistirse a la tentación. No dura ni un minuto encima de la mesa, así que si quieres hacerte con una porción, tendrás que tener buenos reflejos."
+  },
+  "DeliciousMeatLoversMushroomPizza": {
+    "name": "Pizza de carne y champiñones deliciosa",
+    "description": "Una pizza recién horneada. El jugo de la carne en su punto impregna la esponjosa masa de pan, mientras que los champiñones le aportan la frescura necesaria a este manjar. Un pequeño bocado de este delicioso plato cubierto de queso fundido basta para abrirle el apetito a cualquiera."
+  },
+  "SuspiciousSunsetBerryTea": {
+    "name": "Té de bayas crespusculares extraño",
+    "description": "Una bebida frutal con un regusto agridulce. En un intento de enmascarar el sabor amargo se ha añadido demasiado azúcar a la bebida. Normalmente el té aplaca la sed, pero esta bebida hace que cuanto más bebas, más sedient{F#a}{M#o} te sientas. Tal vez si se añade un poco de agua para rebajarlo..."
+  },
+  "SunsetBerryTea": {
+    "name": "Té de bayas crepusculares",
+    "description": "Una bebida frutal con un regusto agridulce. El suave sabor del té se entremezcla con el dulzor natural de la fruta. Se recomienda beber a sorbitos para disfrutar de la refrescante sensación que produce esta bebida mientras calma cualquier sensación de calor y bochorno."
+  },
+  "DeliciousSunsetBerryTea": {
+    "name": "Té de bayas crepusculares delicioso",
+    "description": "Una bebida frutal con un regusto agridulce. La esencia del té impregnando el ambiente parece distender los pensamientos. La sensación es como la de estar en un vasto campo donde sopla una suave y dulce brisa que resulta embriagadora."
+  },
+  "SuspiciousMilkyMushroomCrispTower": {
+    "name": "Tostadas crujientes de champiñones y queso extrañas",
+    "description": "Un aperitivo muy crujiente. Se ve a simple vista que hace tiempo que se prepararon los ingredientes y que el pan se ha secado y endurecido tras haber perdido toda la humedad. Al probarlo, notas un cierto regusto agrio. La próxima vez, será mejor comerlo cuando todavía está caliente."
+  },
+  "MilkyMushroomCrispTower": {
+    "name": "Tostadas crujientes de champiñones y queso",
+    "description": "Un aperitivo muy crujiente. Consiste básicamente en una esponjosa rebanada de pan horneado con champiñones y queso. El aroma de este plato le abre el apetito a cualquiera. Un bocado y serás la persona más feliz de todo Teyvat."
+  },
+  "DeliciousMilkyMushroomCrispTower": {
+    "name": "Tostadas crujientes de champiñones y queso deliciosas",
+    "description": "Un aperitivo muy crujiente. El sabor de los champiñones se entremezcla en el paladar con el regusto del queso fresco y la textura crujiente del pan recién horneado... La sensación de satisfacción es tal que uno no puede evitar lamerse los dedos."
+  },
   "RecipeItem": {
     "name": "Ingredientes",
     "description": "Utensilios de cocina desbloqueados"
@@ -7283,6 +7979,78 @@
     "name": "Receta: Margarita arcoíris",
     "description": "Receta paso a paso para hacer una margarita arcoíris."
   },
+  "RecipeButterChicken": {
+    "name": "Receta: Pollo con mantequilla",
+    "description": "Receta paso a paso para hacer pollo con mantequilla."
+  },
+  "RecipeShawarmaWrap": {
+    "name": "Receta: Rollos de shawarma",
+    "description": "Receta paso a paso para hacer unos rollos de shawarma."
+  },
+  "RecipeSelvaSalad": {
+    "name": "Receta: Ensalada tropical",
+    "description": "Una receta paso a paso que obtuviste durante tu aventura y mejorada por la chef Paimon para hacer una ensalada tropical."
+  },
+  "RecipeMasalaCheeseBalls": {
+    "name": "Receta: Bolitas de queso con masala",
+    "description": "Una receta paso a paso que obtuviste durante tu aventura y mejorada por la chef Paimon para hacer unas bolitas de queso con masala."
+  },
+  "RecipeMushroomHodgepodge": {
+    "name": "Receta: Surtido de champiñones",
+    "description": "Una receta paso a paso que obtuviste durante tu aventura y mejorada por la chef Paimon para hacer un surtido de champiñones."
+  },
+  "RecipePitaPocket": {
+    "name": "Receta: Döner kebab",
+    "description": "Una detallada receta escrita a mano para hacer döner kebab. La caligrafía empleada muestra que la autora no es muy buena escribiendo, ya que algunas de las letras están un poco borrosas, lo cual puede que se deba a alguna enfermedad. Sin embargo, escribió cada letra con mucho cuidado.\\nSi la aprendes, la próxima vez que visites la Villa Gandharva podrás compartir con ella este delicioso manjar."
+  },
+  "RecipePanipuri": {
+    "name": "Receta: Panipuri",
+    "description": "Receta paso a paso para hacer panipuri."
+  },
+  "RecipeMintyBeanSoup": {
+    "name": "Receta: Sopa de menta y frijoles",
+    "description": "Receta paso a paso para hacer una sopa de menta y frijoles."
+  },
+  "RecipeBiryani": {
+    "name": "Receta: Biryani",
+    "description": "Receta paso a paso para hacer biryani."
+  },
+  "RecipeTahchin": {
+    "name": "Receta: Tahchín",
+    "description": "Receta paso a paso para hacer tahchín."
+  },
+  "RecipeLambadFishRoll": {
+    "name": "Receta: Rollo de pescado de Lambad",
+    "description": "Receta paso a paso para hacer un rollo de pescado de Lambad."
+  },
+  "RecipeCurryShrimp": {
+    "name": "Receta: Camarones al curri",
+    "description": "Receta paso a paso para hacer unos camarones al curri."
+  },
+  "RecipeTandooriRoastChicken": {
+    "name": "Receta: Pollo tandoori",
+    "description": "Receta paso a paso para hacer pollo tandoori."
+  },
+  "RecipePotatoBoat": {
+    "name": "Receta: Barco de papa",
+    "description": "Receta paso a paso para hacer un barco de papa."
+  },
+  "RecipeFishWithCreamSauce": {
+    "name": "Receta: Pescado a la crema",
+    "description": "Receta paso a paso para hacer un pescado a la crema."
+  },
+  "RecipeMeatLoversMushroomPizza": {
+    "name": "Receta: Pizza de carne y champiñones",
+    "description": "Receta paso a paso para hacer una pizza de carne y champiñones."
+  },
+  "RecipeSunsetBerryTea": {
+    "name": "Receta: Té de bayas crepusculares",
+    "description": "Receta paso a paso para hacer un té de bayas crepusculares."
+  },
+  "RecipeMilkyMushroomCrispTower": {
+    "name": "Receta: Tostadas crujientes de champiñones y queso",
+    "description": "Receta paso a paso para hacer unas tostadas crujientes de champiñones y queso."
+  },
   "CraftedItems": {
     "name": "Objeto sintetizado",
     "description": "Objetos creados al combinar materiales."
@@ -7334,6 +8102,10 @@
   "DriedFish": {
     "name": "Pescado seco",
     "description": ""
+  },
+  "Spice": {
+    "name": "Especias",
+    "description": "Un condimento derivado de la fusión de distintos sabores. Está hecho a partir de frutos harra secos. Aporta toda una gama de sensaciones culinarias a los platos en los que se usa. De ahí que la gente lo llame “el multifruto”."
   },
   "HeatshieldPotion": {
     "name": "Poción de resistencia térmica",
@@ -7423,6 +8195,10 @@
     "name": "Cebo brilloalga",
     "description": "Un cebo hecho con mineral de cristal mágico y algas. Tiene la capacidad de brillar en los lugares a los que no llega la luz, por lo que atrae especialmente a aquellas especies que la anhelan.\\nSi se te acaba, puedes conseguir más de Kujirai Momiji.\\n\\nPerfecto para pescar todo tipo de peces."
   },
+  "SugardewBait": {
+    "name": "Cebo maná",
+    "description": "El cebo utiliza el capullo de una rosa como base, y se mezcla con fruto harra seco en polvo. Al comerlo da una sensación picante con un regusto dulce. El sabor es como la vida de un pescador. Como se suele decir, la cosecha que ha sobrevivido al temporal es la más gratificante.\\n\\nPerfecto para pescar peces globo y peces espada."
+  },
   "PrimordialEssence": {
     "name": "Esencial primordial",
     "description": "Una mini-partícula con el poder de los elementos primigenios concentrados. Utilizado como material base, tiene varias utilidades en la alquimia antigua."
@@ -7453,7 +8229,7 @@
   },
   "DiviningScroll": {
     "name": "Pergamino guía",
-    "description": "Restos de un pergamino que trata sobre brujería. Emite un calor misterioso e inexplicable."
+    "description": "Restos de un pergamino que trata de algún tipo de magia. Emite una misteriosa e inexplicable sensación de calor."
   },
   "SealedScroll": {
     "name": "Pergamino hechizado",
@@ -7524,16 +8300,16 @@
     "description": "Este dispositivo, procedente de unas reliquias antiguas que ya no están activas, solía ser el corazón que las permitía moverse. Quien sea capaz de entender y reconstruir una tecnología tan misteriosa como esta será capaz de revolucionar el mundo."
   },
   "MistGrassPollen": {
-    "name": "Polen de neblina",
-    "description": "Extrañas esporas creadas por la hierba brumosa en espacios cerrados. Es la comida favorita de los Cicines voladores."
+    "name": "Polen neblinoso",
+    "description": "Extrañas esporas creadas por la Hierba neblinosa en espacios cerrados. Es la comida favorita de los Cicines voladores."
   },
   "MistGrass": {
-    "name": "Hierba brumosa",
-    "description": "Hierba brumosa bien conservada. Algunos se aprovechan del amor incondicional de los Cicines voladores por este tipo de hierba para controlarlos."
+    "name": "Hierba neblinosa",
+    "description": "Hierba neblinosa bien conservada. Algunos se aprovechan del amor incondicional de los Cicines voladores por este tipo de hierba para controlarlos."
   },
   "MistGrassWick": {
-    "name": "Estambre de hierba brumosa",
-    "description": "Una combinación de hierba brumosa muy poco común y que emite un tenue resplandor. Quien lleve este objeto atraerá tanto a los Cicines voladores como a la mala suerte."
+    "name": "Lámpara de hierba neblinosa",
+    "description": "Un conjunto de hierba neblinosa muy poco común y que emite un tenue resplandor. Quien lleve este objeto atraerá tanto a los Cicines voladores como a la mala suerte."
   },
   "HuntersSacrificialKnife": {
     "name": "Daga de cacería",
@@ -7666,6 +8442,42 @@
   "CrystallineCystDust": {
     "name": "Polvo quistecristalino",
     "description": "Un montón de polvo de esporas extraído con sumo cuidado de un esporangio. Al ponerlo en un entorno con las condiciones adecuadas, brotará una colonia de Flotihongos."
+  },
+  "InactivatedFungalNucleus": {
+    "name": "Núcleo fúngico inerte",
+    "description": "Una parte del tejido de los Hongos que solo se forma cuando ha sido expuesto a violentos estímulos elementales externos.\\nSu suave textura lo hace sorprendentemente bueno para aliviar el estrés. Sin embargo, también puede multiplicarse a gran escala, lo que no lo hace apropiado para uso comercial."
+  },
+  "DormantFungalNucleus": {
+    "name": "Núcleo fúngico inactivo",
+    "description": "Una parte del tejido de los Hongos que solo se forma cuando ha sido expuesta a violentos estímulos elementales externos.\\nLos eruditos de la Escuela de Biología mantuvieron un prolongado debate sobre si los Hongos eran animales o plantas. Al final ambas partes se pusieron de acuerdo en dejarlos al margen del reino animal y vegetal."
+  },
+  "RobustFungalNucleus": {
+    "name": "Núcleo fúngico robusto",
+    "description": "Una parte del tejido de los Hongos que solo se forma cuando ha sido expuesta a violentos estímulos elementales externos.\\nEn general, se cree que los Hongos han evolucionado a formas con mayor movilidad para poder dispersar sus esporas con mayor facilidad.\\nHubo cierto poeta que afirmó que en los sueños compartidos de los Hongos, las esporas cubrían el cielo y los mares, y reinaba una paz inédita en el mundo. Después, los Hongos evolucionaron en peces, pájaros, bestias, personas y dioses, y así dependían de la lluvia, la tierra y de su propia especie que había vuelto a la tierra para nacer."
+  },
+  "FadedRedSatin": {
+    "name": "Satén rojo descolorido",
+    "description": "Un pedazo de seda roja ligeramente rasgada que se utiliza para cubrir los ojos.\\nMuchos Eremitas a menudo la usan con ese fin, pero su propósito original se perdió en las arenas del tiempo."
+  },
+  "TrimmedRedSilk": {
+    "name": "Seda roja bordada",
+    "description": "Un trozo de seda roja recortada con adornos sencillos.\\nUn guerrero experimentado es capaz de detectar la debilidad en los ojos de su adversario y tomar ventaja de ella. Desde hace tiempo, Los Eremitas no tienen un maestro al que servir, y ahora no confían en nadie más que en sí mismos. Están convencidos de que cualquier cosa te puede traicionar, incluso tus propios ojos."
+  },
+  "RichRedBrocade": {
+    "name": "Brocado rojo lujoso",
+    "description": "Un pedazo de brocado rojo de seda dorada.\\nLos exiliados nacidos en las arenas doradas del desierto en ocasiones cantan una canción cuyo significado ha caído en el olvido. Adoran al sol abrasador que ilumina la tierra por igual, y lamentan su ida durante el ocaso. Al final de la canción se pronuncian algunas palabras desconocidas, las cuales se dice que son nombres de dioses antiguos. Cuenta la leyenda que cuando el rey del desierto aún vivía, su gente decidió cubrirse los ojos por no atreverse a mirarle directamente, ya que su esplendor era mayor que el del mismo sol."
+  },
+  "ChaosStorage": {
+    "name": "Contenedor del caos",
+    "description": "Proviene de un Dragón de las Ruinas inactivo.\\nLos Dragones de las Ruinas pueden absorber Energía Elemental del exterior y almacenarla en un componente que tienen en el cuello."
+  },
+  "ChaosModule": {
+    "name": "Módulo del caos",
+    "description": "Proviene de un Dragón de las Ruinas inactivo.\\nLos dragones alguna vez fueron la manifestación más antigua y primitiva de los elementos supremos, hasta que fueron derrotados, conquistados o asimilados de alguna manera."
+  },
+  "ChaosBolt": {
+    "name": "Perno del caos",
+    "description": "Proviene de un Dragón de las Ruinas inactivo.\\nEn el antiguo reino caído había un grupo de gente que estaba obsesionada con la idea del mimetismo. Ya fueran los elementos puros y en perfecto orden de los Hipostasis o el poder primigenio y ancestral de los dragones, estas personas creían que todo podía replicarse y modificarse hasta superar a sus homólogos naturales.\\nDeste esta óptica, un cuerpo físico superior e inmaculado podría ser capaz de reemplazar el decadente orden destinado a ser destruido."
   },
   "HurricaneSeed": {
     "name": "Semilla de huracán",
@@ -7806,6 +8618,14 @@
   "RunicFang": {
     "name": "Colmillo rúnico",
     "description": "Un colmillo que la antigua máquina con forma de serpiente utiliza para excavar a través de las rocosas paredes de las profundidades de la montaña. Hay varias runas grabadas en él.\\nCuenta la leyenda que serpientes gigantes se esconden entre las rocas bajo tierra y que albergan un gran odio hacia aquello que pertenece a la superficie. Se dedican a cavar grandes túneles subterráneos, aunque aún no se sabe con qué siniestro fin..."
+  },
+  "MajesticHookedBeak": {
+    "name": "Picogancho fúngico",
+    "description": "Un pico alargado que encontraste tras derrotar al Espantohongo Plumaverde.\\nLos eruditos aún consideran un milagro a día de hoy que unos Hongos suaves hayan evolucionado hasta desarrollar picoganchos tan duros como la roca. Este majestuoso rey entre los Hongos llegó con total tranquilidad a la cima evolutiva. De vez en cuando, hace un llamamiento a todos los seres vivos de la selva para recordarles que incluso la criatura más indefensa e insignificante puede convertirse algún día en el rey de los bosques."
+  },
+  "ThunderclapFruitcore": {
+    "name": "Fruto atronador",
+    "description": "El núcleo de una Regisvid Electro envuelto en unas afiladas hojas. Emite energía Electro de forma aleatoria.\\nSu energía, que ruge desde las profundidades de la tierra, ansía liberar su furia. Por eso, sus enredaderas están teñidas de furia mientras agitan sus retorcidas ramas entre sollozos, sin saber si están deseando que los demás prueben el dolor abrasador del rayo o si se están resistiendo contra su inevitable perdición."
   },
   "TileOfDecarabiansTower": {
     "name": "Fragmento de azulejo de Decarabian",
@@ -7951,6 +8771,54 @@
     "name": "Máscara fantasmagórica",
     "description": "Material de ascensión de arma.\\nEn el pasado, una bestia sobrenatural con cuerpo de tigre y cola de serpiente engulló a Chiyo, una guerrera de la tribu oni con el emblema Electro estampado en la espalda, mientras luchaba contra las fuerzas de la oscuridad. No obstante, Chiyo consiguió liberarse tras desgarrar las entrañas de la criatura desde su interior.\\nAsí fue como se ganó el título de “Chiyo, la mordisco de tigre”, el cual tras muchos años cambió a “Torachiyo”.\\nPero mientras estuvo en el vientre de la bestia, el pecado la corrompió y vio a sus camaradas masacrados por esos dientes manchados de rojo sangre. Sumida por completo en la oscuridad, al final desenvainaría su espada contra la todopoderosa Narukami, quien le cortó el brazo con el que empuñaba la espada y uno de sus cuernos. Entonces, Chiyo huyó cual bestia herida desde la ciudad hasta el bosque. Dicen que, una vez allí, fue considerada como un monstruo desconocido y asesinada por los tengu, o tal vez por Los Ocelos, o tal vez por un vástago del clan Iwakura que entrenaba en lo profundo de las montañas, pues su belleza había sido retorcida por el odio y la agonía de sus heridas. O tal vez incluso conoció al humanoide con espada y máscara de oni cerca de los restos de la serpiente gigante, y allí terminó el viaje de su vida.\\nPocos de los que lucharon contra el abismo en aquellos días se salvaron de tener sueños oscuros. Aquellos que asesinaron monstruos y luego se convirtieron en ellos no eran una minoría. La frontera entre mundos se vuelve frágil y la corrupción quizás no sea simplemente unidireccional."
   },
+  "CopperTalismanOfTheForestDew": {
+    "name": "Talismán de bronce del rocío",
+    "description": "Material de ascensión de arma.\\nBajo las instrucciones del Primer Sabio, los ancestros de la selva hicieron talismanes con la madera de los árboles marchitos y los ofrecieron en honor a la maestra de la vegetación y las plantas.\\nEstos talismanes tenían la forma del dulce rocío del bosque, lo que simbolizaba que la sabiduría penetraba gota tras gota en la mente de los mortales."
+  },
+  "IronTalismanOfTheForestDew": {
+    "name": "Talismán de metal del rocío",
+    "description": "Material de ascensión de arma.\\nTiempo después, la Maestra de las Plantas enseñó a los mortales la técnica para forjar hierro negro, y así aprendieron a usar el fuego y la espada.\\nEsto la hizo muy feliz, ya que, aunque el fuego y el metal eran dañinos para ella, volvieron más fuertes a los mortales."
+  },
+  "SilverTalismanOfTheForestDew": {
+    "name": "Talismán de plata del rocío",
+    "description": "Material de ascensión de arma.\\nEn las muchas historias del bosque, el rey que llevaba una capa con rayas que se asemejaban a un fuego ardiente era el gran soberano del laberinto, el maestro de las aguas donde se refleja la luna.\\nCuando se agachó como gesto para formalizar su amistad con la Maestra de las Plantas, los objetos con los que lo conmemoraron fueron una gema con un brillo como el del agua y una plata que brillaba como la luna.\\nA cambio de esta amistad, la Maestra de las Plantas prometió no revelar el secreto del Rey del Laberinto y proteger los hermosos sueños de la selva.\\nSin embargo, el palacio conformado por todos los secretos y todos los sueños acabó desvaneciéndose bajo las oscuras llamas del olvido para fundirse con la fecunda tierra y nutrir a la nueva vida de la selva."
+  },
+  "GoldenTalismanOfTheForestDew": {
+    "name": "Talismán de oro del rocío",
+    "description": "Material de ascensión de arma.\\n“Los mortales valoran únicamente tres cosas: los manantiales bañados por la luz de la luna, el verdor que rezuma vida y el tener una apariencia eternamente joven”.\\nLa esencia de la sabiduría no radica en saberlo todo o en buscar el beneficio, sino en que, con ella, cualquier criatura puede alcanzar la libertad que le permitirá quitarse las cadenas que la aprisionan.\\nAunque en el bosque ya no se escucha el rugido de los caracales, los firmes guardias se recluyeron de los sueños de los niños. En la noche en la que se deshaga el sello dorado del bosque y todos los sueños centelleen como el ámbar bajo la luz de la luna, tal vez ella y sus apreciados mortales por fin sean libres de verdad."
+  },
+  "OasisGardensReminiscence": {
+    "name": "Reminiscencia del oasis exuberante",
+    "description": "Material de ascensión de arma.\\nEn el pasado, la gente decía que la Reina de las Flores era la maestra del júbilo y la felicidad. De las mangas de su ropa emanó el manantial que dotó al desierto de un exuberante oasis. Plantas y flores de dulce aroma crecían allá por donde ella pasaba, mientras la argéntea luz lunar despejaba su camino.\\nEn la amarga época en la que el cielo le dio la espalda al mundo, la Maestra de las Flores esparció su gracia entre los mortales. Así, recuperaron la felicidad y el ego, pero también volvieron a surgir la ociosidad y la lujuria."
+  },
+  "OasisGardensKindness": {
+    "name": "Gracia del oasis exuberante",
+    "description": "Material de ascensión de arma.\\nSegún los antiguos documentos enterrados bajo las ambarinas arenas del desierto, la Reina de las Flores era también la maestra de los sueños.\\nUna vez, hizo que los exiliados, los dementes y los ignorantes vieran sus propios sueños, con los que les ofreció una dulce felicidad. Aunque los humanos solo tenían objetos de hierro oscuro en las manos, no pudieron evitar sentirse embelesados por la Reina de las Flores y embriagarse de su belleza y su cariño hacia ellos."
+  },
+  "OasisGardensMourning": {
+    "name": "Lamento del oasis exuberante",
+    "description": "Material de ascensión de arma.\\nEn el pasado, la Reina de las Flores era buena amiga de los genios.\\nElla, maestra de las flores y los oasis, unió esfuerzos con el Rey del Desierto y construyó para los genios Ai Janum, la ciudad de los anfiteatros. En la antigua lengua de estos genios, “Ai Janum” significaba “Ciudad de la Dama Luna”.\\nSin embargo, más tarde, la Reina de las Flores murió a causa de la maldad del sol abrasador y del desierto, y las violáceas orquídeas padishá nunca más volvieron a florecer.\\nCuando ella cayó, el desierto y los genios lloraron su pérdida, la redonda gema que brillaba como la luna perdió su función de esparcir felicidad y comenzó a emitir un brillo aciago."
+  },
+  "OasisGardensTruth": {
+    "name": "Esencia del oasis exuberante",
+    "description": "Material de ascensión de arma.\\n“¿Quién adoraría a una deidad que ya ha muerto?”\\nLa Reina de las Flores formó una alianza con los otros dos reyes divinos de aquella época y, aparte de sabiduría y poder, trajo misericordia y alegría al pueblo aún no civilizado.\\nIgual que en la tierra no puede haber solamente lluvia y calor, junto a la razón y el poder había otras cosas igual de importantes: la alegría y el amor, las canciones y la música, el vino y la indulgencia...\\nDicen que la razón de que las flores se abran es para marchitarse estando en todo su esplendor, y ese marchitamiento fue precisamente lo que la Maestra de las Flores estuvo buscando desde siempre, pues la muerte añade un regusto amargo a la alegría que se pierde al morir, y hace que ese regusto sea cada vez más fuerte en los infinitos recuerdos.\\nEl ignorante rey del desierto nunca entendió esta idea y solo se dedicó a embriagarse con la ilimitada belleza y amabilidad de la Reina de las Flores. Así pues, aunque aquel recuerdo se distorsionara, también era algo que ella ya había anticipado."
+  },
+  "EchoOfScorchingMight": {
+    "name": "Eco del poder del sol",
+    "description": "Material de ascensión de arma.\\nHace mucho, mucho tiempo, los habitantes del desierto crearon insignias reales tomando como modelo a los tenaces escarabajos. Con ellas, conmemoraban el sol rojo que marcaba el cambio entre el día y la noche y el infinito transcurso del tiempo.\\nAunque ya nadie pronuncia el nombre prohibido de ese rey, sus insignias reales sí se han conservado hasta hoy en día y aún dejan entrever la gloria de la que gozó en el pasado.\\nDichas insignias se dispersaron por todas partes junto con los dorados descendientes de aquel rey, cuyo pasado se refleja sutilmente en estos objetos."
+  },
+  "RemnantGlowOfScorchingMight": {
+    "name": "Resplandor del poder del sol",
+    "description": "Material de ascensión de arma.\\nTejer los hilos del pensamiento y gobernar sobre una infinidad de almas, eso es lo que se llama “tener poder”.\\nSin embargo, el poder no tiene por qué ser algo cruel y violento, sino que tiene un propósito mucho más profundo: crear una utopía donde la gente no tiene preocupaciones y donde la persecución y la esclavitud no tienen cabida.\\nIgual que todo lo que vio el taciturno rey a través de los secretos de los minerales e igual que lo que le enseñó su compañera fallecida, las oscuras insignias de escarabajo y el juicio férreo se convirtieron en el pilar de la ley de su nación."
+  },
+  "DreamOfScorchingMight": {
+    "name": "Sueño del poder del sol",
+    "description": "Material de ascensión de arma.\\nEn el pasado, la argéntea luz de la luna y los manantiales turquesas decoraban los bellos e idílicos oasis. Sin embargo, cuando la Maestra de las Flores se marchitó en aquella tormenta de arena en la que hasta el sol quedó oculto, su paraíso dorado y libre de preocupaciones fue sepultado por la muerte.\\nSegún las canciones de las tribus doradas, el apenado rey al-Ahmar perdió la cordura cuando el brillo plateado de la luna iluminó su túnica escarlata.\\nPor su parte, en las melancólicas canciones del desierto se canta que, debido a su obsesión por recordar el pasado, el solitario rey creó en dicho desierto una tierra de ensueño que nunca envejecía. Allí había unos imperturbables manantiales inmaculados y una luz que se detuvo para siempre en el momento del ocaso."
+  },
+  "OldenDaysOfScorchingMight": {
+    "name": "Pasado del poder del sol",
+    "description": "Material de ascensión de arma.\\nEn la época en la que gobernaba el necio rey del desierto, su poder se extendía por la tierra como los rayos del dorado sol abrasador.\\nSegún las inscripciones de algunas antiguas estelas, su poder se transformó en siete rayos de luz o en siete pilares, y su misericordia llegó por igual a todas las personas. Nadie quedó excluido de ella y todo el mundo quedó satisfecho.\\nPero aquello ocurrió en una era de oro ya olvidada, en la que la Reina de las Flores ya se había marchitado y la Maestra de las Plantas ya había decidido marcharse. Aun así, los descendientes del desierto decidieron seguir a sus deidades y, aunque el desastre se avecinaba, el poder en el que tanto confiaban emitía un inextinguible resplandor tan refulgente como el ámbar y como el oro.\\nEntonces, el desastre se cernió sobre el mundo y las doradas insignias de escarabajo quedaron enterradas en las profundidades de los templos y los palacios y bajo los pilares rotos que, en el pasado, tenían forma de buitres y bueyes."
+  },
   "StarterSupplyBundle": {
     "name": "Paquete de suministros de principiante",
     "description": "Suministros del Gremio de Aventureros para los más inexpertos. Seguro que te serán de gran ayuda."
@@ -7965,7 +8833,7 @@
   },
   "ExoticShareBundle": {
     "name": "Paquete de curiosidades",
-    "description": "Unas valiosas piedras preciosas entregadas por el Gremio de Aventureros. Algunas esconden un gran poder elemental.\\n\\nAl utilizarlo, podrás escoger una de las siguientes recompensas:\\n·Fragmento de ágata agnidus\\n·Fragmento de lazurita varunada\\n·Fragmento de amatista vajrada\\n·Fragmento de turquesa vayuda\\n·Fragmento de jade shivada\\n·Fragmento de topacio prithiva"
+    "description": "Unas valiosas piedras preciosas entregadas por el Gremio de Aventureros. Algunas esconden un gran poder elemental.\\n\\nAl utilizarlo, podrás escoger una de las siguientes recompensas:\\n·Fragmento de ágata agnidus\\n·Fragmento de lazurita varunada\\n·Fragmento de esmeralda nagadus\\n·Fragmento de amatista vajrada\\n·Fragmento de turquesa vayuda\\n·Fragmento de jade shivada\\n·Fragmento de topacio prithiva"
   },
   "CharacterAscensionBundleHigh": {
     "name": "Paquete de ascensión de personaje (Alto)",
@@ -7981,7 +8849,7 @@
   },
   "VirtuousShareBundle": {
     "name": "Paquete de conocimiento",
-    "description": "En el Gremio suelen repartir libros que tratan sobre la virtud, ya que cultivar un buen carácter puede dar lugar a magníficas habilidades.\\n\\nAl usar este objeto, podrás elegir una de las siguientes recompensas:\\n·Guía de la libertad\\n·Guía de la resistencia\\n·Guía de la poesía\\n·Guía de la prosperidad\\n·Guía del esfuerzo\\n·Guía del oro\\n·Guía de la transitoriedad\\n·Guía de la elegancia\\n·Guía de la luz"
+    "description": "En el Gremio suelen repartir libros que tratan sobre la virtud, ya que cultivar un buen carácter puede dar lugar a magníficas habilidades.\\n\\nAl usar este objeto, podrás elegir una de las siguientes recompensas:\\n·Guía de la libertad\\n·Guía de la resistencia\\n·Guía de la poesía\\n·Guía de la prosperidad\\n·Guía del esfuerzo\\n·Guía del oro\\n·Guía de la transitoriedad\\n·Guía de la elegancia\\n·Guía de la luz\\n·Guía de la exhortación\\n·Guía del ingenio\\n·Guía de la praxis"
   },
   "TalentMaterialsBundleHigh": {
     "name": "Paquete de materiales para talentos (Alto)",
@@ -8009,11 +8877,11 @@
   },
   "MaterialShareBundle": {
     "name": "Paquete de materiales",
-    "description": "Una amplia variedad de excelentes materiales entregados por el Gremio de Aventureros. Algunos esconden un gran potencial.\\n\\nAl utilizarlo, podrás escoger una de las siguientes recompensas:\\n·Fragmento de azulejo de Decarabian\\n·Diente de leche de lobo boreal\\n·Grilletes de Diente de León\\n·Arena brillante de Guyun\\n·Perdigones de plomo\\n·Grano de siderita oscura\\n·Rama de coral del mar distante\\n·Sabiduría de Narukami\\n·Máscara del teniente maligno"
+    "description": "Una amplia variedad de excelentes materiales repartidos por el Gremio de Aventureros. Algunos esconden un gran potencial.\\n\\nAl usar este objeto, podrás elegir una de las siguientes recompensas:\\n·Fragmento de azulejo de Decarabian\\n·Diente de leche de lobo boreal\\n·Grilletes de Diente de León\\n·Arena brillante de Guyun\\n·Perdigones de plomo\\n·Grano de siderita oscura\\n·Rama de coral del mar distante\\n·Sabiduría de Narukami\\n·Máscara del teniente maligno\\n·Talismán de bronce del rocío\\n·Reminiscencia del oasis exuberante\\n·Eco del poder sol"
   },
   "EminentShareBundle": {
     "name": "Paquete de la sofisticación",
-    "description": "Una amplia variedad de materiales entregados por el Gremio de Aventureros. Algunos esconden un gran potencial.\\n\\nAl utilizarlo, podrás escoger una de las siguientes recompensas:\\n·Escombro de la ciudad de Decarabian\\n·Diente roto de lobo boreal\\n·Cadena de Diente de León\\n·Piedra reluciente de Guyun\\n·Perdigones de mercurio\\n·Lámina de siderita oscura\\n·Rama enjoyada del mar distante\\n·Júbilo de Narukami\\n·Máscara del mordisco de tigre"
+    "description": "Una amplia variedad de buenos materiales repartidos por el Gremio de Aventureros. Algunos esconden un gran potencial.\\n\\nAl usar este objeto, podrás elegir una de las siguientes recompensas:\\n·Escombro de la ciudad de Decarabian\\n·Diente roto de lobo boreal\\n·Cadena de Diente de León\\n·Piedra reluciente de Guyun\\n·Perdigones de mercurio\\n·Lámina de siderita oscura\\n·Rama enjoyada del mar distante\\n·Júbilo de Narukami\\n·Máscara del mordisco de tigre\\n·Talismán de metal del rocío\\n·Gracia del oasis exuberante\\n·Resplandor del poder del sol"
   },
   "WeaponAscensionBundleHigh": {
     "name": "Paquete de materiales de ascensión de arma (Alto)",
@@ -8063,6 +8931,10 @@
     "name": "Decoración de regalo fantástica",
     "description": "Un regalo que viene con una novela ligera. Parece ser una decoración muy sofisticada."
   },
+  "MidlanderBilletTrove": {
+    "name": "Cofre de prototipos de las Regiones Centrales",
+    "description": "Un cofre que contiene un prototipo lleno de posibilidades, ya que cambia de forma según los deseos de su dueño.\\n\\nÚsalo para elegir uno de los siguientes:\\n·Prototipo de espada de las Regiones Centrales\\n·Protipo de arco de las Regiones Centrales\\n·Prototipo de mandoble de las Regiones Centrales\\n·Prototipo de catalizador de las Regiones Centrales\\n·Prototipo de lanza de las Regiones Centrales"
+  },
   "BEP": {
     "name": "EXP PB",
     "description": "Tu diario de viaje contiene todo lo que has experimentado en tu largo viaje. Estas experiencias algún día se convertirán en canciones."
@@ -8085,7 +8957,7 @@
   },
   "GuidanceOfTheLandOfGeo": {
     "name": "Guía de la Tierra de la Roca",
-    "description": "Tuviste una epifanía durante tus viajes en Liyue, el Reino de Piedra. La colección de objetos en su interior puede usarse para mejorar tus talentos.\\n\\nAl usar este objeto, podrás elegir una de las siguientes recompensas:\\n·Guía de la prosperidad\\n·Guía del esfuerzo\\n·Guía del oro"
+    "description": "Hiciste un descubrimiento durante tus viajes en Liyue, el Reino de Piedra. La colección de objetos en su interior puede usarse para mejorar tus talentos.\\n\\nAl usar este objeto, podrás elegir una de las siguientes recompensas:\\n·Guía de la prosperidad\\n·Guía del esfuerzo\\n·Guía del oro"
   },
   "PhilosophiesOfTheLandOfGeo": {
     "name": "Filosofía de la Tierra de la Roca",
@@ -8098,6 +8970,14 @@
   "PhilosophiesOfTheLandOfThunder": {
     "name": "Filosofía de la Tierra del Trueno",
     "description": "Hiciste un descubrimiento durante tus viajes en Inazuma, el Reino del Trueno. La colección de objetos en su interior puede usarse para mejorar tus talentos.\\n\\nAl usar este objeto, podrás elegir una de las siguientes recompensas:\\n·Filosofía de la transitoriedad\\n·Filosofía de la elegancia\\n·Filosofía de la luz"
+  },
+  "GuidanceOfTheLandOfVerdure": {
+    "name": "Guía de la Tierra de la Exuberancia",
+    "description": "Hiciste un descubrimiento durante tus viajes en Sumeru, la Tierra de la Exuberancia. La colección de objetos en su interior puede usarse para mejorar tus talentos.\\n\\nAl usar este objeto, podrás elegir una de las siguientes recompensas:\\n·Guía de la exhortación\\n·Guía del ingenio\\n·Guía de la praxis"
+  },
+  "PhilosophiesOfTheLandOfVerdure": {
+    "name": "Filosofía de la Tierra de la Exuberancia",
+    "description": "Hiciste un descubrimiento durante tus viajes en Sumeru, la Tierra de la Exuberancia. La colección de objetos en su interior puede usarse para mejorar tus talentos.\\n\\nAl usar este objeto, podrás elegir una de las siguientes recompensas:\\n·Filosofía de la exhortación\\n·Filosofía del ingenio\\n·Filosofía de la praxis"
   },
   "DomainReliquaryTierIII": {
     "name": "Cofre de artefactos de los dominios - Categoría 3",
@@ -8122,6 +9002,162 @@
   "CakeForTraveler": {
     "name": "Tarta del aventurero",
     "description": "Un regalo obtenido en un día muy especial.\\n\\nEs para ti, la estrella más brillante del cielo nocturno.\\nQue tengas un feliz viaje en este gran mundo."
+  },
+  "ANoteAlraniLeftForNiloofar": {
+    "name": "Nota de Alrani para Nilúfar",
+    "description": "La nota que le escribió Alrani a su tutora, Nilúfar. Está escrita a mano y la caligrafía es algo incomprensible, pero la escribió con tanto esmero que se puede apreciar el estado de vehemencia de su escritora.\\n\\n“¡¡¡¡¡No quiero escribir más tesis!!!!!”"
+  },
+  "AResearchPaperByPirKavikavus": {
+    "name": "Ensayo del profesor Kavikavus",
+    "description": "El título del ensayo es «Teoría y práctica sobre la mejora de la seguridad de las Calderas del caos en condiciones inestables: el caso del Coloso de las Ruinas de Khaenri'ah en la Montaña Devantaka». El ensayo está repleto de tecnicismos, por lo que sería difícil para alguien que no fuera de la Escuela de Tecnología comprender el hilo argumental del texto."
+  },
+  "DriedFlower": {
+    "name": "Flor seca",
+    "description": "Una flor intercalada en el manual del aventurero. Parece contener los recuerdos perdidos de alguien..."
+  },
+  "AmitiDeviceFragmentI": {
+    "name": "Fragmento del dispositivo del amiti (I)",
+    "description": "Un fragmento de un antiguo dispositivo de las ruinas. Se dice que tras unir las piezas se puede usar para abrir la escotilla de un Coloso de las Ruinas."
+  },
+  "AmitiDeviceFragmentII": {
+    "name": "Fragmento del dispositivo del amiti (II)",
+    "description": "Un fragmento de un antiguo dispositivo de las ruinas. Se dice que tras unir las piezas se puede usar para abrir la escotilla de un Coloso de las Ruinas."
+  },
+  "AmitiDeviceFragmentIII": {
+    "name": "Fragmento del dispositivo del amiti (III)",
+    "description": "Un fragmento de un antiguo dispositivo de las ruinas. Se dice que tras unir las piezas se puede usar para abrir la escotilla de un Coloso de las Ruinas."
+  },
+  "JazarisMoraPurse": {
+    "name": "Bolsa de Mora de Jazari",
+    "description": "Una bolsa con Moras pesada que contiene los fondos de seis meses de investigación de Jazari. Si no se gasta con cuidado, seguro que Jazari se pondrá muy triste."
+  },
+  "TheUltraInvincibleAdventureHandbook": {
+    "name": "Manual del aventurero del “Ultrainvicto”",
+    "description": "Un manual del aventurero que alguien dejó atrás en una base secreta. Parece que contiene aventuras infantiles y todo tipo de cosas graciosas. Sin embargo, la mano de quien lo escribió temblaba tanto que resulta difícil entender lo que pone..."
+  },
+  "LostEnergyBlock": {
+    "name": "Fragmento de energía extraviado",
+    "description": "Un fragmento de energía condensado a partir de energía pura. Parece utilizarse para activar los dispositivos de grabación de ciertas reliquias antiguas."
+  },
+  "StrangeParchment": {
+    "name": "Pergamino extraño",
+    "description": "Un antiguo y misterioso pergamino. Parecen las notas olvidadas de algún aventurero."
+  },
+  "WitheredKusava": {
+    "name": "Kusava marchito",
+    "description": "Un Kusava que ha agotado toda su energía. Parece que se ha marchitado, pero la semilla en su interior, que contiene valiosos recuerdos, aún vive."
+  },
+  "GulabgirsSpecialPetSnakeFood": {
+    "name": "Comida especial para serpiente doméstica de Gulabgir",
+    "description": "Comida especial para serpiente doméstica que ha preparado Gulabgir. ¿A qué sabrá?"
+  },
+  "StrangeBead": {
+    "name": "Perla extraña",
+    "description": "Una perla extraña que encontraste en un campamento. No está clara cuál es su finalidad..."
+  },
+  "StrangeTinyHats": {
+    "name": "Sombreros diminutos extraños",
+    "description": "Un montón de sombreros diminutos extraños. Se desconoce para quién se hicieron..."
+  },
+  "ShabbyRack": {
+    "name": "Estante deteriorado",
+    "description": "Un estante en muy mal estado. No está clara cuál es su finalidad..."
+  },
+  "JavisDream": {
+    "name": "Sueño de Javi",
+    "description": "Una caja que contiene un sueño. El único problema es que la persona que lo soñó lo olvidó hace mucho tiempo."
+  },
+  "TheShepherdAndTheMagicBottle": {
+    "name": "El pastor y la botella mágica",
+    "description": "El cuento de un pastor que encuentra una botella plateada en el desierto y en la que hay encerrado alguien inesperado."
+  },
+  "TheTaleOfShiruyehAndShirinI": {
+    "name": "Shiruyeh y Shirín (I)",
+    "description": "El cuento sobre un genio que le cuenta una historia a un pastor bajo la brisa de la noche. No se sabe cuál es su origen, pero rebosa una gran imaginación."
+  },
+  "TheTaleOfShiruyehAndShirinII": {
+    "name": "Shiruyeh y Shirín (II)",
+    "description": "El cuento sobre un genio que le cuenta una historia a un pastor bajo la brisa de la noche. No se sabe cuál es su origen, pero rebosa una gran imaginación."
+  },
+  "TheLayOfAlAhmar": {
+    "name": "El cuento de al-Ahmar",
+    "description": "La historia de un desconocido rey divino de la antigüedad, contada por un genio flotante y de incomprobable veracidad."
+  },
+  "TheFolioOfFoliageI": {
+    "name": "Las enseñanzas del bosque (I)",
+    "description": "Una biografía escrita por un antiguo erudito de Sumeru. En ella se relatan las hazañas de la gran Reina de las Plantas en la época de la gran catástrofe."
+  },
+  "TheFolioOfFoliageII": {
+    "name": "Las enseñanzas del bosque (II)",
+    "description": "Una biografía escrita por un antiguo erudito de Sumeru. En ella se relatan las hazañas de la gran Reina de las Plantas en la época de la gran catástrofe."
+  },
+  "TheFolioOfFoliageIII": {
+    "name": "Las enseñanzas del bosque (III)",
+    "description": "Una biografía escrita por un antiguo erudito de Sumeru. En ella se relatan las hazañas de la gran Reina de las Plantas en la época de la gran catástrofe."
+  },
+  "ScrollOfStreamingSongI": {
+    "name": "Canción del fluir (I)",
+    "description": "Un antiguo manuscrito que un erudito de la Escuela de Etiología desenterró en el desierto. Se desconoce su autoría."
+  },
+  "ScrollOfStreamingSongII": {
+    "name": "Canción del fluir (II)",
+    "description": "Un antiguo manuscrito que un erudito de la Escuela de Etiología desenterró en el desierto. Se desconoce su autoría."
+  },
+  "ScrollOfStreamingSongIII": {
+    "name": "Canción del fluir (III)",
+    "description": "Un antiguo manuscrito que un erudito de la Escuela de Etiología desenterró en el desierto. Se desconoce su autoría."
+  },
+  "AnOdeToSoulLight": {
+    "name": "Stotra de la luz de los espíritus",
+    "description": "Según se dice, una comunidad religiosa del desierto, ahora inexistente, transmitió esta canción de generación en generación de manera oral. Sin embargo, no se sabe quién la transcribió."
+  },
+  "UnsealedParchment": {
+    "name": "Pergamino abierto",
+    "description": "Un antiguo y misterioso pergamino. Parece una nota que dejó algún aventurero. En él aparecen palabras nuevas continuamente."
+  },
+  "GuidingParchment": {
+    "name": "Pergamino con direcciones",
+    "description": "Un antiguo y misterioso pergamino. Parece una nota que dejó algún aventurero. En él aparecen palabras nuevas continuamente."
+  },
+  "WhisperingParchment": {
+    "name": "Pergamino susurrante",
+    "description": "Un antiguo y misterioso pergamino. Parece una nota que dejó algún aventurero. En él aparecen palabras nuevas continuamente."
+  },
+  "MysteriousParchment": {
+    "name": "Pergamino misterioso",
+    "description": "Un antiguo y misterioso pergamino. Parece que contiene el destino final de un aventurero..."
+  },
+  "AncientWorkLog": {
+    "name": "Diario de trabajo antiguo",
+    "description": "Un antiguo diario de trabajo."
+  },
+  "AkademiyaInvestigationTeamsInterimReport": {
+    "name": "Informe provisional del equipo de investigación de la Academia",
+    "description": "Un informe provisional del equipo de investigación de la Academia de Sumeru."
+  },
+  "ZandiksNote": {
+    "name": "Notas de Zandik",
+    "description": "Unas notas escritas por Zandik."
+  },
+  "SohrehsNote": {
+    "name": "Notas de Sohreh",
+    "description": "Unas notas escritas por Sohreh."
+  },
+  "SumeruInvestigationTeamsNote": {
+    "name": "Notas del equipo de investigación de Sumeru",
+    "description": "Unas notas del equipo de investigación de Sumeru."
+  },
+  "DissectionRecords": {
+    "name": "Registro de autopsia",
+    "description": "Un registro de autopsia."
+  },
+  "RaggedAttendanceRecord": {
+    "name": "Registro de trabajo estropeado",
+    "description": "Un registro de trabajo en mal estado."
+  },
+  "AnElegantlyWrittenNote": {
+    "name": "Cuaderno con escritura hermosa",
+    "description": "A juzgar por la forma de escribir, se trata de un cuaderno de Dunyarzad con una escritura hermosa. Si no fuera porque su eleazar le impide controlar bien su fuerza, seguramente le habría salido una escritura aún más bella."
   },
   "SilkFlowerSeed": {
     "name": "Semilla de flor de seda",
@@ -8215,6 +9251,18 @@
     "name": "Semilla de flor de ensueño: vaina de seda",
     "description": "Una semilla de buena calidad y llena de vitalidad obtenida de Sakuya. Si la plantas en los campos del mundo interior de tu Relajatetera, tras cierto tiempo brotará una flor de ensueño: vaina de seda."
   },
+  "HarraFruitSeed": {
+    "name": "Semilla de fruto harra",
+    "description": "Una semilla de buena calidad y llena de vitalidad obtenida del Semillero. Si la plantas en los campos del mundo interior de tu Relajatetera, tras cierto tiempo brotará un fruto harra."
+  },
+  "ZaytunPeachSeed": {
+    "name": "Semilla de duraznoliva",
+    "description": "Una semilla de buena calidad y llena de vitalidad obtenida del Semillero. Si la plantas en los campos del mundo interior de tu Relajatetera, tras cierto tiempo brotará una duraznoliva."
+  },
+  "SumeruRoseSeed": {
+    "name": "Semilla de rosa de Sumeru",
+    "description": "Una semilla de buena calidad y llena de vitalidad obtenida del Semillero. Si la plantas en los campos del mundo interior de tu Relajatetera, tras cierto tiempo brotará una rosa de Sumeru."
+  },
   "Medaka": {
     "name": "Medaka",
     "description": "Un pez energético y de pequeño tamaño conocido por su aspecto de flor.\\nSolían vivir sus vidas en paz como peces ornamentales, pero desde que se descubrió que su carne es sabrosa, con pocas espinas y mucha grasa, son preparados cuidadosamente y servidos en la mesa."
@@ -8303,6 +9351,30 @@
     "name": "Raya formalo",
     "description": "Una misteriosa raya que, en el pasado, se pensaba que era un ser fantástico. Solo hay registros de ellas en algunas antiguas pinturas de la Isla Watatsumi. Su verdadero aspecto por fin se ha descubierto en el presente gracias a la reapertura de las profundidades del océano.\\nDicen que el color de su cuerpo cambia con el tiempo, y que de pequeñas tienen un color dorado claro y tan brillante como el sol. Cuando son adultas, este color se oscurece y sus aletas se cubren de un color violeta profundo. En las pinturas antiguas, a las rayas en esta etapa de la vida se las llamaba “formalo”, lo cual significa “boca avariciosa”."
   },
+  "TrueFruitAngler": {
+    "name": "Pez globo imberbe",
+    "description": "Un pez globo con una característica estructura cartilaginosa en forma de cuerno. Se dice que este tipo de peces utilizan dichos cartílagos para cavar cuevas subacuáticas, crear sus propias madrigueras, y defenderse de posibles depredadores.\\nEl color verdoso de su cuerpo es particularmente común dentro de esta especie de animales acuáticos. Dicho color se asemeja al de la fruta poco madura, por lo que también se les conoce como “imberbes”.\\nAl contrario de lo que cabría esperar, estos peces tienen pocas espinas y mucha carne. Si no se retira la vesícula biliar correctamente o a tiempo, la carne toma un regusto amargo como el de la fruta sin madurar. De ahí que conservar el delicioso sabor de la carne de este pez sea una de las muestras más claras de las dotes culinarias de un verdadero chef."
+  },
+  "PeachOfTheDeepWaves": {
+    "name": "Durazno abisal",
+    "description": "Un pez globo con una característica estructura cartilaginosa en forma de cuerno. Se dice que este tipo de peces utilizan dichos cartílagos para cavar cuevas subacuáticas, crear sus propias madrigueras, y defenderse de posibles depredadores.\\nSu cuerpo tiene un tono rosado y sus aletas son verdes, por lo que mucha gente lo asocia con las duraznolivas. Como su propio nombre indica, su carne tiene un característico sabor dulce. Muchos chefs pensaron que sería el ingrediente perfecto para preparar postres.\\nDesafortunadamente los dulces preparados con su carne no parecen causar una buena impresión entre el público. Este hecho, sumado a la escasez y el elevado precio al que se vende este tipo de peces, lo convierte en un ingrediente poco rentable. De ahí que en la mayoría de ocasiones se utilice como pez ornamental.\\nHay un gran interés de mercado detrás de este espécimen, pero muchos compradores no pueden permitirse pagar su elevado precio. Por ello, algunos vendedores comenzaron a revertir el proceso y crearon figuras que se asemejan al durazno abisal a partir de las duraznolivas. Estas figurillas han resultado ser todo un éxito de ventas."
+  },
+  "SandstormAngler": {
+    "name": "Pez globo arenisco",
+    "description": "Un pez redondo con una característica estructura cartilaginosa en forma de cuerno. Se dice que este tipo de peces utilizan dichos cartílagos para cavar cuevas subacuáticas, crear sus propias madrigueras, o defenderse de posibles depredadores.\\nEste espécimen de color ocre no resulta especialmente llamativo a simple vista, pero ha resultado ser de gran importancia. Su anatomía fue esencial a la hora de investigar las cualidades ecológicas de esta especie de animales acuáticos. Este tipo de peces poseen una descomunal fuerza y sus cuernos son los más resistentes de toda la especie, lo que le permite actuar como el trabajador acuático más diligente de todos. Como resultado de sus actividades a lo largo de los años en los lechos de los ríos y los fondos de los lagos, adoptaron esa especial tonalidad ambarina que les sirve también de protección."
+  },
+  "SunsetCloudAngler": {
+    "name": "Pez globo crepuscular",
+    "description": "Un pez redondo con una característica estructura cartilaginosa en forma de cuerno. Se dice que este tipo de peces utilizan dichos cartílagos para cavar cuevas subacuáticas, crear sus propias madrigueras, o defenderse de posibles depredadores.\\nEs el espécimen más longevo de todos y es fácil de distinguir por el tono rosa apagado de su cuerpo, que recuerda al color del crepúsculo justo antes del anochecer. Este color tan distintivo radica de su particular forma de supervivencia. La piel de estos peces tiene una composición parecida a la de la bilis, por lo que su sabor resulta extremadamente amargo. De ahí que el resto de criaturas marinas prefieran guardar las distancias.\\nSin embargo, si se cocina adecuadamente, ese regusto amargo puede dar lugar a todo un paladar de deliciosos sabores. Por ello, es uno de los productos favoritos en cualquier mercado. En los puestos de Sumeru a menudo se ven carteles que dicen: “No se debe criar al pez globo crepuscular junto a otros peces comestibles”."
+  },
+  "LazuriteAxeMarlin": {
+    "name": "Marlín lanceolado",
+    "description": "Pariente lejano del pez mariposa, este pez posee un esqueleto de gran tamaño y forma curvilínea. Cuenta la leyenda que el primer pescador que atrapó uno de estos peces lo hizo enganchando la caña al extremo de la aleta caudal de pez, y descubrió así que la forma resultante se parecía a la de una lanza. De ahí que este pez se denomine lanza alada. En comparación con su nombre científico, gancho de mariposa, esta denominación resulta más llamativa, por lo que se ha extendido entre la gente de a pie.\\nAunque lleva el nombre de un arma y su poder supera al de muchas otras especies, la mayor parte de estos animales son realmente mansos, sobre todo el lanza alada de franjas añil y dorado. Gracias a la dureza de sus escamas, el lanza alada puede defenderse de cualquier ataque de otras criaturas acuáticas, por lo que puede marcharse tranquilamente una vez que su oponente se ha quedado sin fuerzas.\\nSu fuerza supone un desafío hasta para los maestros pescadores. La única forma de pescar al marlín lanceolado es enfrentarse a él como si fuera una poderosa bestia marina y aguantar hasta que se agote su resistencia."
+  },
+  "HalcyonJadeAxeMarlin": {
+    "name": "Marlín de jade",
+    "description": "Pariente lejano del pez mariposa, este pez posee un esqueleto de gran tamaño y forma curvilínea. Cuenta la leyenda que el primer pescador que atrapó uno de estos peces lo hizo enganchando la caña al extremo de la aleta caudal de pez, y descubrió así que la forma resultante se parecía a la de una lanza. De ahí que este pez se denomine lanza jadeíta. En comparación con su nombre científico, gancho de mariposa, esta denominación resulta más llamativa, por lo que se ha extendido entre la gente de a pie.\\nAl lanza jadeíta le gusta vivir en entornos con un exuberante lecho marino y sus tonalidades esmeraldas se camuflan con el entorno. Con frecuencia, los peces más pequeños que se mueven por el fondo marino, se topan con sus cuerpos camuflados y se desorientan. Sin embargo, el lanza jadeíta no se lo toma como una provocación. Al contrario, suele ofrecer cobijo y protección a otros peces."
+  },
   "WingsOfFirstFlight": {
     "name": "Alas de principiante",
     "description": "Un planeador estilizado con el que se puede sentir la pasión de un Caballero Explorador."
@@ -8338,6 +9410,10 @@
   "WingsOfShimmeringGalaxy": {
     "name": "Alas del Brillo Galáctico",
     "description": "Un planeador estilizado. Un regalo que conmemora la sinfonía que resuena en el mar de estrellas."
+  },
+  "WingsOfTheForest": {
+    "name": "Alas de la Exuberancia",
+    "description": "Un modelo de planeador. Un regalo obtenido por lograr el reconocimiento y las alabanzas de Sumeru."
   },
   "RadiantSpincrystal": {
     "name": "Girocristal radiante (1)",
@@ -8381,15 +9457,15 @@
   },
   "EmperorsBalsam": {
     "name": "Bálsamo regio",
-    "description": "Objeto de refinamiento exclusivo para el arma Rey de los Mares.\\nLa intensa fragancia de este ungüento parece encerrar el espíritu de la vida acuática. Aplícalo sobre el Rey de los Mares para templar este mandoble único y hacerlo aún más resistente."
+    "description": "Objeto de refinamiento exclusivo para el arma “Rey de los Mares”.\\nLa intensa fragancia de este ungüento parece encerrar el espíritu de la vida acuática. Aplícalo sobre el Rey de los Mares para templar este mandoble único y hacerlo aún más resistente."
   },
   "AkosSakeVessel": {
     "name": "Vasija para sake de Ako",
-    "description": "Objeto de refinamiento exclusivo para el arma La Captura.\\nEsta era la vasija de licor preferida de Ako Domeki, quien en el pasado tuvo el control de la región de Seirai. El mar la ha traído hasta el anzuelo de un pescador."
+    "description": "Objeto de refinamiento exclusivo para el arma “La Captura”.\\nEsta era la vasija de licor preferida de Ako Domeki, quien en el pasado tuvo el control de la región de Seirai. El mar la ha traído hasta el anzuelo de un pescador."
   },
   "Alkahest": {
     "name": "Alkahest",
-    "description": "Objeto de refinamiento exclusivo para el arma Huso de Cinabrio.\\nUna sustancia plateada que brilla con una luz extraña y que resulta ser un veneno corrosivo y letal para los objetos de este mundo. No obstante, también posee el poder de sublimar la materia..."
+    "description": "Objeto de refinamiento exclusivo para el arma “Huso de Cinabrio”.\\nUna sustancia plateada que brilla con una luz extraña y que resulta ser un veneno corrosivo y letal para los objetos de este mundo. No obstante, también posee el poder de sublimar la materia..."
   },
   "OintmentOfSight": {
     "name": "Bálsamo de visión",
@@ -8398,6 +9474,10 @@
   "GlowingGem": {
     "name": "Gema arrebol",
     "description": "Objeto de refinamiento exclusivo para el arma “Desvanecimiento del Crepúsculo”.\\nUna gema de cor lapis pulida mediante las intrincadas técnicas artesanales de los antiguos pobladores de la Sima. Emite un brillo similar al del amanecer o del crepúsculo. Este objeto ofrece su compañía a aquellas personas que luchan contra la oscuridad en las cuevas a las que nunca llega la luz del sol."
+  },
+  "OriginalFishOintment": {
+    "name": "Ungüento de pez primigenio",
+    "description": "Objeto de refinamiento exclusivo para el arma “Fin de las Aguas”.\\nUn bálsamo extraído de los peces capturados en un gran lago del norte. Puede restaurar temporalmente la vitalidad de un pez convertido en arco.\\nDicen que en ese lago viven criaturas acuáticas que no existen en ningún otro sitio."
   },
   "FalconsDance": {
     "name": "Danza del halcón",
@@ -8586,6 +9666,10 @@
   "Moonstringer": {
     "name": "Cuerda de la luna",
     "description": "Si logras mantenerte en la zona de tensión ideal cuando estés pescando, esta caña reducirá el tiempo de forcejeo de los peces a una velocidad acelerada y tus posibilidades de éxito aumentarán. Si sales de la zona de tensión ideal, la aceleración se restablecerá.\\n\\nUna caña creada especialmente para pescar al leviatán lunar. Para hacer frente a este pez legendario, el creador de esta caña agregó algunos materiales con funciones extrañas tanto a la propia caña como al hilo de pescar, lo que le aportó una gran maleabilidad y resistencia a la tensión. Con un tesoro como este, se podría atrapar fácilmente a los peces comunes y corrientes, pero eso sería desaprovecharlo y la caña hasta podría sentirse avergonzada de sí misma."
+  },
+  "Serendipity": {
+    "name": "Serendipia",
+    "description": "Si puedes mantener la tensión en la zona de tensión ideal durante la pesca, el uso de esta caña reducirá el tiempo que el pez se resiste y aumenta tus probabilidades de éxito. Este efecto solo puede ocurrir en Sumeru.\\n\\nEsta arcaica caña de pescar de Sumeru está tallada como el jade blanco, adornada con formas doradas oscuras, y embellecida con gemas de color verde. Bajo su apariencia puramente estética, parece que tiene cierto significado relacionado con la vida. Se dice que las cañas de pescar más antiguas de Sumeru fueron ramas envueltas con enredaderas, y que muchos maestros pescadores realizaron pescas milagrosas con ellas. Los pescadores de hoy también creen que esas cañas de pescar repletas de historia les traen buena suerte."
   },
   "GenshinImpactANewWorld": {
     "name": "Genshin Impact - Un nuevo mundo",
@@ -9063,6 +10147,42 @@
     "name": "PB - Azul marino",
     "description": "Diseño de tarjeta de presentación.\\nHan pasado los años y te despiertas de un antiguo sueño. En esa caracola de recuerdo aún existe el océano de aquellos días de verano."
   },
+  "TighnariDewKissed": {
+    "name": "Tignari - Rocío",
+    "description": "Diseño de tarjeta de presentación.\\nTignari prepara un especial aceite esencial con el rocío de las flores. Lo usa para mantener su cola esponjosa y su sutil fragancia tiene un efecto relajante."
+  },
+  "ColleiGoodVirtue": {
+    "name": "Collei - Pantera",
+    "description": "Diseño de tarjeta de presentación.\\n“¡E-es Colleámbar! Oh...”."
+  },
+  "DoriJinni": {
+    "name": "Dori - Lámpara mágica",
+    "description": "Diseño de tarjeta de presentación.\\nSi frotas la lámpara mágica que te dio y luego frotas el Mora que le das por comprarla, cualquier deseo que tengas se cumplirá (más o menos)."
+  },
+  "TravelNotesWoodlands": {
+    "name": "PB - Profundidades de la selva",
+    "description": "Diseño de tarjeta de presentación.\\nEntre bosques y profundos valles, las rosas florecen bajo la luna. Disfruta de este lugar en compañía de otros y te parecerá todo un paraíso."
+  },
+  "AchievementRoaming": {
+    "name": "Logro - Itinerante",
+    "description": "Diseño de tarjeta de presentación.\\nCada viaje y cada recuerdo son un milagro único que solo pertenece a quien emprende ese viaje."
+  },
+  "AchievementFatedEncounter": {
+    "name": "Logro - Encuentro predestinado",
+    "description": "Diseño de tarjeta de presentación.\\nUn día, el instante de encuentro se convertirá en un pensamiento digno de ser recordado."
+  },
+  "SumeruShimmeringWoods": {
+    "name": "Sumeru - Bosque esmeralda",
+    "description": "Diseño de tarjeta de presentación.\\n¿Qué clase de hermosos sueños encierran esas historias que duermen tranquilamente en el bosque?"
+  },
+  "SumeruObservance": {
+    "name": "Sumeru - Iluminación",
+    "description": "Diseño de tarjeta de presentación.\\nContempla lo que el mundo tiene que ofrecerte y observa más allá de lo iluminado por el firmamento."
+  },
+  "SumeruUnsullied": {
+    "name": "Sumeru - Rectitud",
+    "description": "Diseño de tarjeta de presentación.\\nEl sabio que conoce la verdad no se deja manchar por el mal, así como el loto nilotpala permanece puro tras la lluvia."
+  },
   "AnemoculusResonanceStone": {
     "name": "Roca de resonancia de anemóculus",
     "description": "Puede utilizarse en Mondstadt para encontrar anemóculus en las cercanías.\\nUn disco de piedra con características similares a las Estatuas de Los Siete que emite un sonido cuando hay anemóculus en los alrededores.\\nEstos discos son una burda imitación de las Estatuas de Los Siete diseminadas por todo el continente. Como falsificaciones que son, desean el poder de los óculus y ofrecen a devotos y aventureros la oportunidad de encontrarlos."
@@ -9181,7 +10301,7 @@
   },
   "SeedDispensary": {
     "name": "Semillero",
-    "description": "Una misteriosa caja que te dio Madam Ping. Según ella, contiene semillas que pueden germinar. De acuerdo con las características de la planta, puedes plantar las semillas en los campos de la Relajatetera para obtener: flores de seda, flores dulces, cecilias, lirios de cristal, margaritas voladoras, flores chingxin, campanitas de cristal, valbayas, lucettas, chiles de Jueyun, zanahorias, rábanos, menta, champiñones, percibetormentas, colas de caballo, flores doradas, cabezas de loto, lirios cala, algas y hongos marinos."
+    "description": "Una misteriosa caja que te dio Madam Ping. Según ella, contiene semillas que pueden germinar. De acuerdo con las características de la planta, puedes plantar las semillas en los campos de la Relajatetera para obtener: flores de seda, flores dulces, cecilias, lirios de cristal, margaritas voladoras, flores chingxin, campanitas de cristal, valbayas, lucettas, chiles de Jueyun, zanahorias, rábanos, menta, champiñones, percibetormentas, colas de caballo, flores doradas, cabezas de loto, lirios cala, algas, hongos marinos, frutos harra, duraznolivas y rosas de Sumeru."
   },
   "ElectroTreasureCompass": {
     "name": "Brújula buscatesoros Electro",
@@ -9238,6 +10358,50 @@
   "MaterialCollector": {
     "name": "Recolectamateriales",
     "description": "Un dispositivo recolector creado por Bertrand, el fabricante de máquinas. Es capaz de recolectar diferentes materiales en distintas fases. Al conectarlo a la Megamáquina, depositará los materiales en esta para comenzar el proceso de fabricación de decoraciones robóticas."
+  },
+  "Kusava": {
+    "name": "Kusava",
+    "description": "Al llevarlo equipado, podrás usarlo para liberar el poder de los aranara en determinadas situaciones.\\n“Es tanto semilla rechoncha como fruto amargo”.\\nEl kusava es el “hogar temporal” de los recuerdos de los aranara y, al mismo tiempo, lo que almacena su poder."
+  },
+  "Aranyaka": {
+    "name": "Escrituras Araniaka",
+    "description": "Un cuaderno que te dio Arama.\\nTiene el aspecto de haber presenciado muchas primaveras. Parece que antes alguien registraba cierto contenido en su interior, pero este acabó deteriorándose y desapareciendo con el paso del tiempo.\\nPuedes usarlo para registrar tus aventuras con los aranara."
+  },
+  "DendroculusResonanceStone": {
+    "name": "Roca de resonancia de dendróculus",
+    "description": "Puede utilizarse en Sumeru para encontrar dendróculus en las cercanías.\\nUn particular amuleto protector con cualidades similares a las de las Estatuas de Los Siete Dendro, razón por la cual siente atracción por los dendróculus.\\nPlantas, árboles, enredaderas, flores... Los seres vivos que dependen del elemento Dendro tienen todo tipo de formas. Aunque sean de formas distintas y tampoco se parezcan en otros aspectos, los seres que proceden de un mismo lugar acabarán por volver a él."
+  },
+  "DendroTreasureCompass": {
+    "name": "Brújula buscatesoros Dendro",
+    "description": "Puede usarse en Sumeru para encontrar cofres en las cercanías.\\nPara algunas personas, el sentido de la vida es explorar el mundo y superarse a sí mismas. Y es que, al final de ese camino, suele haber un generoso tesoro esperando ser descubierto."
+  },
+  "TheBoonOfTheElderTree": {
+    "name": "Bendición de Ashvattha",
+    "description": "Puede utilizarse para obtener madera en las cercanías.\\nUn amuleto protector que puede verse de vez en cuando en la naturaleza de Sumeru. Tiene la habilidad de concentrar el poder de las plantas.\\nPara prevenir la desertización del bosque y, en una época más oscura y antigua, defenderse de las bestias invasoras, las plantas tomaban la forma de firmes barreras. Quien lleve este amuleto consigo será considerado un amigo por el bosque, podrá caminar por el laberinto de plantas sin que estas lo bloqueen y será guiado por los riachuelos y la luz de la luna. O al menos eso cuenta una antigua leyenda..."
+  },
+  "UltraHotBurnerLampTestModel": {
+    "name": "Lámpara de combustión experimental",
+    "description": "Un dispositivo que mejora la eficiencia del procesamiento de alimentos utilizando minerales.\\nLos eruditos más jóvenes de la Academia de Sumeru tienen por costumbre usar herramientas experimentales para cocinar. Para aumentar la eficiencia y ahorrar tiempo, alguien inventó esta lámpara de combustión que extrae la energía de los minerales, con lo que mejora la productividad.\\nEste artilugio experimental de uso popular reduce el esfuerzo necesario para procesar alimentos al descartar el uso del fuego para disminuir el riesgo de incendios. Sin embargo, sigue siendo muy útil para hacer mermelada o fiambres curados."
+  },
+  "MiniSeelieMoss": {
+    "name": "Miniseelie musgo",
+    "description": "Un recuerdo del evento «Caza de tesoros». Al usarlo, un pequeño Seelie te acompañará.\\nEste Miniseelie verde se pone muy contento cada vez que se acerca a un árbol."
+  },
+  "ExquisiteKamera": {
+    "name": "Daguerrotipo primoroso",
+    "description": "Un Daguerrotipo que el pequeño Razi tomó prestado de la tienda de la magnate Sangemah Bay. ¡Perfecto para capturar el paisaje, obtener inspiración de la naturaleza y recordar momentos felices!\\nComparado con un Daguerrotipo normal, tiene unos ornamentos metálicos adicionales y parece bastante caro, ¡así que ten cuidado con él! Además, según las condiciones del préstamo, el Daguerrotipo solo puede utilizarse en Sumeru."
+  },
+  "FishingLineStabilizer": {
+    "name": "Estabilizador de pesca",
+    "description": "Un estabilizador de tensión autoadaptativo que, una vez instalado en la caña de pescar, nivela la tensión del sedal para que la pesca resulte más cómoda. El dispositivo es capaz de registrar automáticamente la intensidad de forcejeo de los diferentes peces. Cuantos más datos recoja, más preciso será el estabilizador.\\n\\nEl prototipo de este dispositivo surgió a partir de una ocurrencia disparatada de un inventor de Fontaine, y durante mucho tiempo pasó completamente desapercibido. Después de que el Gremio de Pescadores de Fontaine se percatara de su existencia, llevaron a cabo ciertas modificaciones que dieron como resultado el Estabilizador de pesca del que disponemos hoy en día. En cuanto salió a la luz, la mayoría de los miembros del Gremio dieron su aprobación. Con el tiempo, comenzó a utilizarse en otras regiones.\\nLa región donde más se popularizó este dispositivo fue en Snezhnaya porque, según dicen, le gustó mucho a cierto miembro de Los Once."
+  },
+  "VintageLyre": {
+    "name": "Lira antigua",
+    "description": "Con este instrumento tradicional de Mondstadt se pueden interpretar diferentes melodías. Es posible que tenga cierto efecto misterioso si lo tocas en los bosques de Sumeru.\\nUna lira antigua que tomaste prestada en la Aldea Vimara de Sumeru.\\nEn Mondstadt, la nación de la música y la poesía, los bardos se refieren a su instrumento como “querido amigo” o “compañero del alma”. Por eso, si uno de ellos confiara su instrumento a Amadhiah, significaría que guardan aprecio y confianza hacia su persona."
+  },
+  "BubblyKamera": {
+    "name": "Daguerrotipo burbujeante",
+    "description": "Al usar este artilugio, registrarás y guardarás la imagen de un paisaje a color.\\nEsta herramienta de origen desconocido es excelente para conseguir imágenes. Aunque en su interior no tiene agua, al capturar una imagen, esta presenta muchas burbujitas alrededor, lo que le da una sensación ilusoria.\\nPor eso, cierto Capitán de Caballería dice que esta máquina “captura las ganas de tener algo fresco”."
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instrucciones: Roca de resonancia de anemóculus",
@@ -9307,6 +10471,26 @@
     "name": "Plano: Vial exotérmico",
     "description": "Planos detallados para fabricar un Vial exotérmico. Tras obtenerlos, podrás crear un objeto para resistir el Frío extremo."
   },
+  "TaleOfTheForestKing": {
+    "name": "Cuento del Rey del Bosque",
+    "description": "A través de este cuento, aprenderás a fabricar Espada Real del Bosque (mandoble).\\n\\nTrata sobre el Rey del Bosque.\\n“Hace muchas, muchas lunas, bosque era laberinto gigante...”."
+  },
+  "TaleOfTheDesert": {
+    "name": "Cuento del desierto",
+    "description": "A través de este cuento, aprenderás a fabricar Espada de Madera (espada ligera).\\n\\nTrata sobre un amigo que se perdió en el desierto.\\n“Esta es historia procedente de valuka...”."
+  },
+  "TaleOfTheKingsSquire": {
+    "name": "Historia de la vasalla del rey",
+    "description": "A través de este cuento, aprenderás a fabricar Vasalla del Rey (arco).\\n\\nTrata sobre una damisela que se perdió en el gran laberinto del bosque.\\n“Érase una vez una princesa...”."
+  },
+  "TaleOfTheMoonlight": {
+    "name": "Cuento de la luz lunar",
+    "description": "A través de este cuento, aprenderás a fabricar Perforalunas (lanza).\\n\\nTrata sobre la magia de la luz lunar.\\n“Esta es historia sobre niños que estaban fascinados por luz de luna...”."
+  },
+  "TaleOfThePortent": {
+    "name": "Cuento del presagio",
+    "description": "A través de este cuento, aprenderás a fabricar Fruto de la Culminación (catalizador).\\n\\nTrata sobre presagios y desastres.\\n“En realidad, luna no siempre fue redonda como perla...”."
+  },
   "InstructionsElectroculusResonanceStone": {
     "name": "Instrucciones: Roca de resonancia de electróculus",
     "description": "Instrucciones detalladas para fabricar una Roca de resonancia de electróculus. Tras obtenerlas, puedes fabricar un objeto para encontrar electróculus."
@@ -9330,6 +10514,18 @@
   "FormulaFakeFlyBait": {
     "name": "Receta: Cebo de mosca falsa",
     "description": "Receta paso a paso para hacer un cebo de mosca falsa."
+  },
+  "FormulaSugardewBait": {
+    "name": "Receta: Cebo maná",
+    "description": "Receta paso a paso para hacer un cebo maná."
+  },
+  "InstructionsDendroculusResonanceStone": {
+    "name": "Instrucciones: Roca de resonancia de dendróculus",
+    "description": "Instrucciones detalladas para fabricar una Roca de resonancia de dendróculus. Tras obtenerlas, puedes fabricar un objeto para encontrar dendróculus."
+  },
+  "DiagramDendroTreasureCompass": {
+    "name": "Plano: Brújula buscatesoros Dendro",
+    "description": "Planos detallados para fabricar una Brújula buscatesoros Dendro. Puede utilizarse para encontrar fácilmente tesoros en Sumeru."
   },
   "SilkenPrint": {
     "name": "Impresión de seda",
@@ -9755,6 +10951,18 @@
     "name": "Lámpara de mampostería: Candelero de las profundidades",
     "description": "Plano detallado para fabricar una Lámpara de mampostería: Candelero de las profundidades.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "SlumberingDewlight": {
+    "name": "Haz de ensueño",
+    "description": "Plano detallado para fabricar “Haz de ensueño”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DrippingVerdantLight": {
+    "name": "Haz de rocío de verdor",
+    "description": "Plano detallado para fabricar “Haz de gotas de verdor”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DeepwoodIllumination": {
+    "name": "Luminiscencia arbórea",
+    "description": "Plano detallado para fabricar “Luminiscencia arbórea”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "NorthernBirchFoldingCounter": {
     "name": "Mostrador plegable de abedul nórdico",
     "description": "Plano detallado para fabricar un Mostrador plegable de abedul nórdico.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -9778,6 +10986,10 @@
   "GoldLinedSandbearerWardrobe": {
     "name": "Ropero de avellano con motivos dorados",
     "description": "Plano detallado para fabricar un Ropero de avellano con motivos dorados.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PlainBrightwoodShelf": {
+    "name": "Estantería aséptica de madera radiante",
+    "description": "Plano detallado para fabricar “Estantería aséptica de madera radiante”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "TwoTierLibraryBookshelf": {
     "name": "Estantería de biblioteca de dos pisos",
@@ -9878,6 +11090,10 @@
   "TeahouseLongTableSeamlessSeating": {
     "name": "Mesa larga para casa de té: Asientos continuos",
     "description": "Plano detallado para fabricar un Mesa larga para casa de té: Asientos continuos.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "BrightwoodPotteryWorktable": {
+    "name": "Mesa para cerámica de madera radiante",
+    "description": "Plano detallado para fabricar “Mesa para cerámica de madera radiante”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "BreezeBlessedBed": {
     "name": "Cama baja suave como la brisa",
@@ -9999,6 +11215,34 @@
     "name": "Biombo festivo: Calidad y belleza",
     "description": "Plano detallado para fabricar un Biombo festivo: Calidad y belleza.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "HuedVaseCerulean": {
+    "name": "Vasija pigmentada: Cerúlea",
+    "description": "Plano detallado para fabricar “Vasija pigmentada: Cerúlea”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "HuedVaseMalachite": {
+    "name": "Vasija pigmentada: Malaquita",
+    "description": "Plano detallado para fabricar “Vasija pigmentada: Malaquita”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "HuedVaseAmber": {
+    "name": "Vasija pigmentada: Pajiza",
+    "description": "Plano detallado para fabricar “Vasija pigmentada: Ambarina”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PlainVaseBronze": {
+    "name": "Jarrón simple: Bronce",
+    "description": "Plano detallado para fabricar “Jarrón simple: Bronce”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PlainVaseTawny": {
+    "name": "Jarrón simple: Arcilla",
+    "description": "Plano detallado para fabricar “Jarrón simple: Arcilla”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PlainVaseOcher": {
+    "name": "Jarrón simple: Ocre",
+    "description": "Plano detallado para fabricar “Jarrón simple: Ocre”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PlainVaseSepia": {
+    "name": "Jarrón simple: Tostado",
+    "description": "Plano detallado para fabricar “Jarrón simple: Tostado”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Alfombra de Mondstadt: Ardor carmesí",
     "description": "Plano detallado para fabricar una Alfombra de Mondstadt: Ardor carmesí.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -10014,6 +11258,18 @@
   "EntranceRugAWarmWelcome": {
     "name": "Alfombra de entrada: Cálida bienvenida",
     "description": "Plano detallado para fabricar una Alfombra de entrada: Cálida bienvenida.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "GloriousEmeraldTapestry": {
+    "name": "Gloriosa alfombra esmeralda",
+    "description": "Plano detallado para fabricar “Gloriosa alfombra esmeralda”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DazzlingGoldenTapestry": {
+    "name": "Deslumbrante alfombra ambarina",
+    "description": "Plano detallado para fabricar “Deslumbrante alfombra ambarina”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "MusingTawnyTapestry": {
+    "name": "Alfombra café coco",
+    "description": "Plano detallado para fabricar una Alfombra café coco.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "TrustyPortableLamp": {
     "name": "Lámpara portátil inapagable",
@@ -10138,6 +11394,14 @@
   "CosmosWithin": {
     "name": "Giro cósmico",
     "description": "Plano detallado para fabricar “Giro cósmico”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "ALushGlimpse": {
+    "name": "Un atisbo de ostentación",
+    "description": "Plano detallado para fabricar “Un atisbo de ostentación”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "JubilantPosture": {
+    "name": "Percepción risueña",
+    "description": "Plano detallado para fabricar “Percepción risueña”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "LandscapePaintingCountryHome": {
     "name": "Paisaje: Casa de campo",
@@ -10363,6 +11627,50 @@
     "name": "Puesto de ramen de madera de murmurador",
     "description": "Plano detallado para fabricar un Puesto de ramen de madera de murmurador.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "WovenDepth": {
+    "name": "Telar abismal",
+    "description": "Plano detallado para fabricar “Telar abismal”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "WovenLength": {
+    "name": "Telar longitudinal",
+    "description": "Plano detallado para fabricar “Telar longitudinal”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "WovenFruition": {
+    "name": "Telar fructífero",
+    "description": "Plano detallado para fabricar “Telar fructífero”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "SweetnessInExchange": {
+    "name": "Transacción azucarada",
+    "description": "Plano detallado para fabricar “Transacción azucarada”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "SweetnessInTheShade": {
+    "name": "Dulzor a la sombra",
+    "description": "Plano detallado para fabricar “Dulce sombra”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "SweetnessInStorage": {
+    "name": "Acopio de dulces",
+    "description": "Plano detallado para fabricar “Acopio de dulces”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "FishermansDealings": {
+    "name": "Asuntos de pescadores",
+    "description": "Plano detallado para fabricar “Asuntos de pescadores”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "FishermansPreservationTrick": {
+    "name": "Técnica de conserva pescadera",
+    "description": "Plano detallado para fabricar “Técnica de conserva pescadera”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "FishermansMaintenance": {
+    "name": "Mantenimiento de redes",
+    "description": "Plano detallado para fabricar “Mantenimiento de redes”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "BrightwoodGroceryStall": {
+    "name": "Puesto callejero multiusos de madera radiante",
+    "description": "Plano detallado para fabricar “Puesto callejero multiusos de madera radiante”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "BrightwoodKebabCart": {
+    "name": "Puesto de brochetas de madera radiante",
+    "description": "Plano detallado para fabricar “Puesto ambulante de brochetas de madera radiante”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "HilichurlOutpostHut": {
     "name": "Cabaña de avanzadilla Hilichurl",
     "description": "Plano detallado para fabricar una Cabaña de avanzadilla Hilichurl.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -10555,6 +11863,22 @@
     "name": "Casa de Inazuma: Residencia tempestuosa",
     "description": "Plano detallado para fabricar una Casa de Inazuma: Residencia tempestuosa.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "DeepwoodDwellersDeliberation": {
+    "name": "Determinación de los moradores del bosque",
+    "description": "Plano detallado para fabricar “Determinación de los moradores del bosque”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DeepwoodDwellersEstimation": {
+    "name": "Vecindad de los moradores del bosque",
+    "description": "Plano detallado para fabricar “Vecindad de los moradores del bosque”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DeepwoodDwellersLonesome": {
+    "name": "Soledad de los moradores del bosque",
+    "description": "Plano detallado para fabricar “Soledad de los moradores del bosque”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DeepwoodDwellersPerseverance": {
+    "name": "Perseverancia de los moradores del bosque",
+    "description": "Plano detallado para fabricar “Perseverancia de los moradores del bosque”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fuente con flores y pájaros",
     "description": "Plano detallado para fabricar una Fuente con flores y pájaros.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -10739,6 +12063,14 @@
     "name": "Entrada para aguas termales: Refugio contra el frío",
     "description": "Plano detallado para fabricar Entrada para aguas termales: Refugio contra el frío.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "FishermansFence": {
+    "name": "Valla limítrofe de pescador",
+    "description": "Plano detallado para fabricar “Valla limítrofe de pescador”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "NoFishingAhead": {
+    "name": "Valla limitadora de pescador",
+    "description": "Plano detallado para fabricar “Valla limitadora de pescador”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Suelo rocoso: Fortuna y tranquilidad",
     "description": "Plano detallado para fabricar un Suelo rocoso: Fortuna y tranquilidad.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -10888,8 +12220,28 @@
     "description": "Plano detallado para fabricar unas Llamas serenas.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "AllegroBloomSpecialTuning": {
-    "name": "Flor de allegro: afinamiento especial",
-    "description": "Plano detallado para fabricar una Flor de allegro: afinamiento especial.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "name": "Flor de allegro: Afinamiento especial",
+    "description": "Plano detallado para fabricar una Flor de allegro: Afinamiento especial.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "FishermansCatch": {
+    "name": "La pesca del día",
+    "description": "Plano detallado para fabricar “La pesca del día”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "FishermansDelicacy": {
+    "name": "Delicias pescaderas",
+    "description": "Plano detallado para fabricar “Delicias pescaderas”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "FishermansStorageSolution": {
+    "name": "Ofertas del pescador",
+    "description": "Plano detallado para fabricar “Ofertas del pescador”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "FishermansEfforts": {
+    "name": "Los frutos del mar",
+    "description": "Plano detallado para fabricar “Los frutos del mar”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "FishermansClemency": {
+    "name": "Perspicacia del pescador",
+    "description": "Plano detallado para fabricar “Perspicacia del pescador”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "PottedPlantVerdantVastness": {
     "name": "Maceta: Verdor abundante",
@@ -11083,6 +12435,30 @@
     "name": "Sombrilla de playa de Dodoco",
     "description": "Plano detallado para fabricar una Sombrilla de playa de Dodoco.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "FishermansCraftsmanship": {
+    "name": "Destreza del pescador",
+    "description": "Plano detallado para fabricar “Destreza del pescador”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TheEssentials": {
+    "name": "Productos esenciales",
+    "description": "Plano detallado para fabricar “Productos esenciales”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TheEremitesFlameOfVigor": {
+    "name": "Llama del vigor mercenario",
+    "description": "Plano detallado para fabricar “Llama del vigor mercenario”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "EmbodimentOfWarfare": {
+    "name": "Símbolo de la batalla",
+    "description": "Plano detallado para fabricar “Símbolo de la batalla”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "SteelStopper": {
+    "name": "Defensa restrictiva",
+    "description": "Plano detallado para fabricar “Defensa restrictiva”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TheEremitesOdyssey": {
+    "name": "Travesía sobre ruedas",
+    "description": "Plano detallado para fabricar “Travesía sobre ruedas”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "WroughtIronCarvedStreetLight": {
     "name": "Farola de hierro con adornos",
     "description": "Plano detallado para fabricar una Farola de hierro con adornos.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -11150,6 +12526,10 @@
   "PoolOfSapphireGrace": {
     "name": "Estanque nubespiritual",
     "description": "Plano detallado para fabricar un Estanque nubespiritual.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "ShadedClarity": {
+    "name": "Acuario de aguas cristalinas",
+    "description": "Plano detallado para fabricar un Acuario de aguas cristalinas.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "WeatheredBambooFence": {
     "name": "Valla de bambú desgastada",

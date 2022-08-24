@@ -150,7 +150,7 @@
   "constellation6": {
     "name": "À tout feu",
     "description": {
-      "0": "Klee restaure 3 pts d'énergie élémentaire à tous les membres de l'équipe (à l'exception de Klee) toutes les 3 s tant que <strong>Fleur bombardier</strong> est active.",
+      "0": "Klee restaure 3 pts d'énergie élémentaire à tous les membres de l'équipe (hormis Klee) toutes les 3 s tant que <strong>Fleur bombardier</strong> est active.",
       "1": "L'activation de <strong>Fleur bombardier</strong> confère un bonus de <pyro>DGT Pyro</pyro> de 10 % pendant 25 s à tous les membres de l'équipe."
     }
   }

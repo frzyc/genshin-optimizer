@@ -152,7 +152,7 @@
   "constellation2": {
     "name": "Corrente Lunar",
     "description": {
-      "0": "Quando um Ataque Normal acerta, existem 20% de chance que ele será automaticamente seguido de um Ataque Carregado.",
+      "0": "Quando um Ataque Normal acerta, existe 20% de chance que ele será automaticamente seguido de um Ataque Carregado.",
       "1": "Esse efeito pode ocorrer apenas uma vez a cada 5 segundos."
     }
   },

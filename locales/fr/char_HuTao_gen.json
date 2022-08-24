@@ -110,7 +110,7 @@
   "passive1": {
     "name": "Chrysalide",
     "description": {
-      "0": "Le taux CRIT de tous les personnages de l'équipe (à l'exception de Hu Tao) augmente de 12 % pendant 8 s lorsque l'état <strong>Paramita Papilio</strong> conféré par <strong>Chaperon de la renaissance</strong> prend fin."
+      "0": "Le taux CRIT de tous les personnages de l'équipe (hormis Hu Tao) augmente de 12 % pendant 8 s lorsque l'état <strong>Paramita Papilio</strong> conféré par <strong>Chaperon de la renaissance</strong> prend fin."
     }
   },
   "passive2": {
@@ -148,7 +148,7 @@
   "constellation4": {
     "name": "Jardin du repos éternel",
     "description": {
-      "0": "Lorsqu'un ennemi affecté par <strong>Bourgeon de prune</strong> est vaincu, le taux CRT de tous les personnages de l'équipe proches (à l'exception de Hu Tao) augmente de 12 % pendant 15 s."
+      "0": "Lorsqu'un ennemi affecté par <strong>Bourgeon de prune</strong> est vaincu, le taux CRIT de tous les personnages de l'équipe proches (hormis Hu Tao) augmente de 12 % pendant 15 s."
     }
   },
   "constellation5": {

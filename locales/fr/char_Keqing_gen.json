@@ -1,7 +1,7 @@
 {
   "name": "Keqing",
   "title": "Ardeur du tonnerre",
-  "description": "L'Alioth, l'une des Sept Étoiles de Liyue. L'Alioth critique à mots couverts l'idée que Liyue suive à la lettre la parole du Seigneur de la Roche, mais ce dernier apprécie justement ce genre de personnes.",
+  "description": "L'Alioth, l'une des Sept Étoiles de Liyue. L'Alioth critique à mots couverts l'idée que Liyue suive à la lettre la parole du Souverain de la Roche, mais ce dernier apprécie justement ce genre de personnes.",
   "constellationName": "Trulla Cementarii",
   "auto": {
     "name": "Escrime des nuages",
@@ -157,7 +157,8 @@
   "constellation6": {
     "name": "Étoile tenace",
     "description": {
-      "0": "Les attaques normales, attaques chargées, compétences élémentaires et déchaînements élémentaires de Keqing lui confèrent un <electro>bonus de DGT Électro de 6 % pendant 8 s.</electro> Les effets déclenchés sont différents selon le type d'attaque."
+      "0": "Les attaques normales, attaques chargées, compétences élémentaires et déchaînements élémentaires de Keqing lui confèrent un <electro>bonus de DGT Électro</electro> de 6 % pendant 8 s.",
+      "1": "Les effets des attaques normales et chargées et des compétences et déchaînements élémentaires sont comptabilisés indépendamment les uns des autres."
     }
   }
 }

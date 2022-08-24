@@ -23,7 +23,7 @@
   "maxDuration": "Durasi Maksimum",
   "maxStacks": "Lapisan Maks.",
   "skillDMG": "DMG Skill",
-  "burstDMG": "DMG Elemental Burst",
+  "burstDMG": "DMG Burst",
   "dmgAbsorption": "Penahanan DMG",
   "healing": "Pemulihan HP",
   "duration": "Durasi",
@@ -46,7 +46,8 @@
     "pyro": "Pyro",
     "hydro": "Hydro",
     "cryo": "Cryo",
-    "electro": "Electro"
+    "electro": "Electro",
+    "dendro": "Dendro"
   },
   "reaction": {
     "swirl": "Swirl",
@@ -55,6 +56,12 @@
     "electrocharged": "Electro-Charged",
     "superconduct": "Superconduct",
     "vaporize": "Vaporize",
-    "melt": "Melt"
+    "melt": "Melt",
+    "bloom": "Bloom",
+    "burgeon": "Burgeon",
+    "hyperbloom": "Hyperbloom",
+    "quicken": "Quicken",
+    "aggravate": "Aggravate",
+    "spread": "Spread"
   }
 }

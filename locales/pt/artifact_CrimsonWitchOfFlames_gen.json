@@ -2,7 +2,7 @@
   "setName": "A Bruxa das Chamas Carmesim",
   "setEffects": {
     "2": "Bônus de Dano Pyro +15%",
-    "4": "Aumenta o dano causado por Sobrecarga e Queimadura em 40%, aumenta o dano causado pela Vaporização e Fusão em 15%. Ao usar a Habilidade Elemental aumenta os efeitos do Conjunto de 2 Peças em 50% por 10s. Pode acumular até 3x."
+    "4": "Aumenta o Dano causado por Sobrecarga, Queimaduras e Germinação em 40%. Aumenta o Dano causado por Vaporização e Fusão em 15%. Usar Habilidades Elementais aumenta o efeito de Bônus de Conjunto de 2 Peças em 50% do seu valor inicial por 10s. Máximo de 3 acúmulos."
   },
   "pieces": {
     "flower": {

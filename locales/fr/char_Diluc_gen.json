@@ -1,7 +1,7 @@
 {
   "name": "Diluc",
   "title": "Ombre de l'Aurore",
-  "description": "Un jeune noble possédant la plupart des entreprises du vin de Mondstadt ; nul ne saurait sous-estimer sa richesse, sa réputation et ses capacités.",
+  "description": "Un jeune noble possédant la plupart des entreprises du vin de Mondstadt. Nul ne saurait sous-estimer sa richesse, sa réputation et ses capacités.",
   "constellationName": "Noctua",
   "auto": {
     "name": "Épée trempée",
@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Exécute une succession d'entailles aussi rapides que tranchantes ; cette attaque consomme de l'endurance sur la durée.",
+        "1": "Consomme de l'endurance en continu pour exécuter une succession d'entailles aussi rapides que tranchantes.",
         "2": "L'attaque chargée se termine sur un coup puissant."
       },
       "plunging": {
@@ -46,7 +46,7 @@
       "1": "Cette attaque peut être enchaînée 3 fois de suite.",
       "2": "Elle entre en TdR si l'enchaînement n'est pas assez rapide.",
       "3": "<br/>",
-      "4": "<i>Chacune de ces attaques représente les valeurs chères à Diluc : justice, courage et la responsabilité.</i>"
+      "4": "<i>Chacune de ces attaques représente les valeurs chères à Diluc : justice, courage et responsabilité.</i>"
     },
     "skillParams": {
       "0": "DGT 1er coup",
@@ -149,7 +149,7 @@
   "constellation6": {
     "name": "L'épée des flammes brise-nuit",
     "description": {
-      "0": "Confère aux 2 attaques normales suivant dans les 6 s le lancement d'<strong>Assaut brûlant</strong> un bonus de 30 % de DGT et de VIT d'attaque normale.",
+      "0": "Confère aux 2 attaques normales dans les 6 s suivant le lancement d'<strong>Assaut brûlant</strong> un bonus de 30 % de DGT et de VIT d'attaque normale.",
       "1": "De plus, Assaut brûlant n'interrompt plus les enchaînements d'attaques normales."
     }
   }

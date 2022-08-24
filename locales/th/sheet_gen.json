@@ -23,7 +23,7 @@
   "maxDuration": "ระยะเวลาต่อเนื่องสูงสุด",
   "maxStacks": "ขีดจำกัดพลังงาน",
   "skillDMG": "ความเสียหายสกิล",
-  "burstDMG": "ความเสียหายท่าไม้ตาย",
+  "burstDMG": "ความเสียหายระเบิดพลัง",
   "dmgAbsorption": "ปริมาณการดูดซับ",
   "healing": "ปริมาณการรักษา",
   "duration": "ระยะเวลาต่อเนื่อง",
@@ -46,7 +46,8 @@
     "pyro": "ไฟ",
     "hydro": "น้ำ",
     "cryo": "น้ำแข็ง",
-    "electro": "ไฟฟ้า"
+    "electro": "ไฟฟ้า",
+    "dendro": "ไม้"
   },
   "reaction": {
     "swirl": "กระจาย",
@@ -55,6 +56,12 @@
     "electrocharged": "ชาร์จไฟฟ้า",
     "superconduct": "นำไฟฟ้า",
     "vaporize": "ระเหย",
-    "melt": "ละลาย"
+    "melt": "ละลาย",
+    "bloom": "Bloom",
+    "burgeon": "เบ่งบาน",
+    "hyperbloom": "ไฮเปอร์บลูม",
+    "quicken": "ปลุกเร้า",
+    "aggravate": "บีบอัด",
+    "spread": "แพร่ขยาย"
   }
 }

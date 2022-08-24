@@ -55,7 +55,7 @@
       "7": "Mona utilise la puissance de l'eau pour se propulser rapidement en arrière et invoque un mirage du destin.",
       "8": "Il ne peut exister qu'un seul mirage à la fois.",
       "9": "<br/>",
-      "10": "<i>Les astromanciens les plus doués ont toujours rêvé de pouvoir créer un sosie d'eux-mêmes pour pouvoir faire face au danger ; mais Mona est sans doute la première à avoir réalisé ce tour de main.</i>"
+      "10": "<i>Les astromanciens les plus doués ont toujours rêvé de pouvoir créer un sosie d'eux-mêmes pour pouvoir faire face au danger, mais Mona est sans doute la première à avoir réalisé ce tour de main.</i>"
     },
     "skillParams": {
       "0": "DGT continus",
@@ -117,7 +117,7 @@
     "name": "Vicissitude",
     "description": {
       "0": "<strong>Sprint alternatif</strong>",
-      "1": "Mona se transforme en un courant d'eau, consommant de l'endurance pour se déplacer aussi vite qu'un torrent.",
+      "1": "Mona consomme de l'endurance pour se déplacer aussi vite qu'un torrent sous la forme d'un courant d'eau.",
       "2": "<br/>",
       "3": "Dans l'état Vicissitude, Mona peut se déplacer rapidement sur l'eau.",
       "4": "À la fin de l'état, Mona <hydro>trempe</hydro> les ennemis proches lorsqu'elle réapparaît.",

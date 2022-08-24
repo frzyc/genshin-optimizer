@@ -2,7 +2,7 @@
   "setName": "Emblème du destin brisé",
   "setEffects": {
     "2": "Augmente la recharge d'énergie de 20 %.",
-    "4": "Augmente les DGT infligés par le déchaînement élémentaire d'une valeur équivalant à 25 % de la recharge d'énergie. Les DGT peuvent être augmentés de 75 % max de cette manière."
+    "4": "Augmente les DGT infligés par le déchaînement élémentaire d'une valeur équivalant à 25 % de la recharge d'énergie. Les DGT peuvent être augmentés d'un maximum de 75 % de cette manière."
   },
   "pieces": {
     "flower": {

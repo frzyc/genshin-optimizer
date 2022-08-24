@@ -13,11 +13,11 @@
       "charged": {
         "0": "<strong>Charged Attack</strong>",
         "1": "Terus menguras Stamina untuk melancarkan tebasan berkelanjutan.",
-        "2": "Diakhiri dengan sebuah tebasan yang kuat."
+        "2": "Diakhiri dengan sebuah tebasan yang sangat kuat."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG area saat mendarat."
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG Area saat mendarat."
       }
     },
     "skillParams": {
@@ -70,7 +70,7 @@
   "burst": {
     "name": "Dawn",
     "description": {
-      "0": "Mengerahkan kekuatan Pyro untuk menghempas musuh di sekitar, mengakibatkan <pyro>Pyro DMG</pyro>. Setelahnya, mengumpulkan elemen Pyro di ujung senjata dan memanggil seekor burung Phoenix yang terbang melaju, mengakibatkan <pyro>Pyro DMG</pyro> ke semua musuh di jalurnya dan mengakibatkan <pyro>Pyro DMG area</pyro>.",
+      "0": "Mengerahkan kekuatan api yang meledak untuk menghempas musuh di sekitar, mengakibatkan <pyro>Pyro DMG</pyro>. Setelahnya, mengumpulkan elemen Pyro di ujung senjata dan memanggil seekor burung Phoenix yang terbang melaju, mengakibatkan <pyro>Pyro DMG</pyro> kepada semua musuh di jalurnya dan mengakibatkan <pyro>Pyro DMG Area</pyro> yang besar.",
       "1": "Kobaran api yang tersisa pada pedang Diluc memberikan <pyro>Pyro Infusion</pyro> pada serangan Diluc.",
       "2": "<br/>",
       "3": "<i>Satu-satunya alasan untuk berjalan dalam kegelapan adalah untuk membuatnya terang. Lihatlah, cahaya yang lari di tengah kegelapan malam adalah pemberita fajar yang akan datang.</i>"
@@ -149,8 +149,8 @@
   "constellation6": {
     "name": "Flaming Sword, Nemesis of the Dark",
     "description": {
-      "0": "Setelah mengerahkan <strong>Searing Onslaught</strong>, 2 Normal Attack berikutnya dalam waktu 6 detik akan meningkatkan 30% DMG dan ATK SPD.",
-      "1": "Selain itu, Searing Onslaught tidak akan menganggu kombo Normal Attack."
+      "0": "Setelah mengerahkan <strong>Searing Onslaught</strong>, 2 Normal Attack dalam waktu 6 detik berikutnya akan meningkatkan 30% DMG dan ATK SPD.",
+      "1": "Selain itu, Searing Onslaught tidak akan mengganggu kombo Normal Attack."
     }
   }
 }

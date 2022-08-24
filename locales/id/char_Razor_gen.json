@@ -2,7 +2,7 @@
   "name": "Razor",
   "title": "Wolf Boy",
   "description": "Seorang anak laki-laki yang tinggal di daerah Mondstadt. Jauh dari peradaban manusia dan tinggal di kalangan antara serigala di Wolvendom. Firasatnya tajam, tubuhnya lincah bagai kilat.",
-  "constellationName": "Wolf Minor",
+  "constellationName": "Lupus Minor",
   "auto": {
     "name": "Steel Fang",
     "fields": {
@@ -93,7 +93,7 @@
       "9": "<i>Sang serigala telah terbangun, perburuan dimulai.</i>"
     },
     "skillParams": {
-      "0": "DMG Elemental Burst",
+      "0": "DMG Burst",
       "1": "DMG Spirit",
       "2": "Peningkatan Normal Attack SPD",
       "3": "Bonus Electro RES",

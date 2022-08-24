@@ -2,7 +2,7 @@
   "setName": "Donnernder Zorn",
   "setEffects": {
     "2": "Erhöht den Elektro-Schaden um 15 %.",
-    "4": "Erhöht den mit den Effekten „Überladen“, „Unter Strom“ und „Supraleiter“ verursachten Schaden um 40 %. Verringert die Abklingzeit der Elementarfähigkeit beim Auslösen dieser Elementareffekte um 1 s. 0,8 s Abklingzeit."
+    "4": "Erhöht den mit den Reaktionen „Überladen“, „Unter Strom“, „Supraleiter“ und „Supraspross“ verursachten Schaden um 40 %. Erhöht den Effekt des ANG-Bonus der Reaktion „Suprawuchs“ um 20 %. Verkürzt die Abklingzeit der Elementarfähigkeit beim Auslösen dieser Elementarreaktionen und der Reaktion „Urwuchs“ um 1 s. 0,8 s Abklingzeit."
   },
   "pieces": {
     "flower": {

@@ -121,7 +121,7 @@
   "passive2": {
     "name": "Adaptation aisée",
     "description": {
-      "0": "Tant qu'un <strong>dé exquis</strong> est en combat, les DGT infligés par le personnage déployé augmentent de 1 %, puis de 3,5{NON_BREAK_SPACE}% supplémentaires toutes les secondes. Les DGT peuvent être augmentés jusqu'à 50 % maximum de cette manière.",
+      "0": "Tant qu'un <strong>dé exquis</strong> est en combat, les DGT infligés par le personnage déployé augmentent de 1 %, puis de 3,5{NON_BREAK_SPACE}% supplémentaires toutes les secondes. Les DGT peuvent être augmentés d'un maximum de 50 % de cette manière.",
       "1": "Utiliser à nouveau Dé exquis des profondeurs pendant la durée de l'effet décrit ci-dessus dissipera ce dernier."
     }
   },
@@ -134,7 +134,7 @@
   "constellation1": {
     "name": "Tricheur en jeu",
     "description": {
-      "0": "Confère une charge supplémentaire pour <strong>Ligne vitale persistante</strong>."
+      "0": "Confère une utilisation supplémentaire de <strong>Ligne vitale persistante</strong>."
     }
   },
   "constellation2": {

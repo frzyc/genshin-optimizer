@@ -2,7 +2,7 @@
   "setName": "Colère de tonnerre",
   "setEffects": {
     "2": "Confère un bonus de DGT Électro de 15 %.",
-    "4": "Augmente les DGT infligés par Surcharge, Électrocution et Supraconduction de 40 %. Lorsque vous déclenchez ces réactions élémentaires, le TdR de la compétence élémentaire est réduit de 1 s. Cet effet peut être déclenché une fois toutes les 0,8 s."
+    "4": "Augmente les DGT infligés par Surcharge, Électrocution, Supraconduction et Exubérance de 40 % et le bonus de DGT accordée par Suractivation de 20 %. Au déclenchement de ces réactions élémentaires ou d'une réaction de Stimulation, le TdR de la compétence élémentaire est réduit de 1 s. Cet effet peut être déclenché une fois toutes les 0,8 s."
   },
   "pieces": {
     "flower": {

@@ -2,7 +2,7 @@
   "setName": "Brennende Pyro-Hexe",
   "setEffects": {
     "2": "Erhöht den Pyro-Schaden um 15 %.",
-    "4": "Erhöht den mit den Reaktionen „Überladen“ und „In Flammen“ verursachten Schaden um 40 % und den von den Reaktionen „Verdampfen“ und „Schmelzen“ betroffenen Gegnern zugefügten Schaden um 15 %. Erhöht den Effekt eines 2er-Sets bei Anwendung von Elementarfähigkeiten 10 s lang um 50 %, 3-fach stapelbar."
+    "4": "Erhöht den mit den Reaktionen „Überladen“, „In Flammen“ und „Flammenspross“ verursachten Schaden um 40 % und den den von den Reaktionen „Verdampfen“ und „Schmelzen“ betroffenen Gegnern zugefügten Schaden um 15 %. Erhöht den Effekt eines 2er-Sets bei Anwendung von Elementarfähigkeiten 10 s lang um 50 %, 3-fach stapelbar."
   },
   "pieces": {
     "flower": {

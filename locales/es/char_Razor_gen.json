@@ -95,7 +95,7 @@
       "9": "<i>El lobo se ha despertado. La cacería está en marcha.</i>"
     },
     "skillParams": {
-      "0": "Daño de explosión",
+      "0": "Daño instantáneo",
       "1": "Daño del espíritu del lobo",
       "2": "Aumento de Vel. de ATQ Normal",
       "3": "Aumento de RES Electro",

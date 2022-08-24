@@ -128,7 +128,7 @@
   "constellation1": {
     "name": "Dissolution d'éon : Destructeur de mondes",
     "description": {
-      "0": "Confère une charge supplémentaire pour <strong>Cycle du vent lemniscatique</strong>."
+      "0": "Confère une utilisation supplémentaire de <strong>Cycle du vent lemniscatique</strong>."
     }
   },
   "constellation2": {
@@ -160,7 +160,7 @@
   "constellation6": {
     "name": "Dompteur de démons : Gardien Yaksha",
     "description": {
-      "0": "Lorsque <strong>Fléau du mal</strong> est actif, les attaques plongeantes touchant au moins 2 ennemis confèrent immédiatement une charge de <strong>Cycle du vent lemniscatique</strong> supplémentaire, qui peut être activée dans la seconde qui suit, même s'il n'est pas entièrement rechargé."
+      "0": "Lorsque <strong>Fléau du mal</strong> est actif, les attaques plongeantes touchant au moins 2 ennemis confèrent immédiatement un cumul de <strong>Cycle du vent lemniscatique</strong> supplémentaire, qui peut être activé dans la seconde qui suit même s'il n'est pas entièrement rechargé."
     }
   }
 }

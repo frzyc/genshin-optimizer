@@ -19,7 +19,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",
-        "1": "Dispara uma chuva de flechas durante o ar antes de cair e atingir o chão, causando Dano em uma AdE no impacto."
+        "1": "Dispara uma chuva de flechas em pleno ar antes de cair e atingir o chão, causando Dano em uma AdE no impacto."
       }
     },
     "skillParams": {

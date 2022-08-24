@@ -1,8 +1,8 @@
 {
   "name": "Lisa",
   "title": "Witch of Purple Rose",
-  "description": "Pustakawan Knights of Favonius yang sangat malas namun berwawasan sangat luas, pernah dinyatakan oleh Sumeru Academia sebagai siswi kelulusan terbaik 2 abad terakhir.",
-  "constellationName": "Horologium",
+  "description": "Pustakawan Knights of Favonius yang sangat malas namun berwawasan sangat luas, pernah dinyatakan oleh Sumeru Akademiya sebagai siswi kelulusan terbaik 2 abad terakhir.",
+  "constellationName": "Tempus Fugit",
   "auto": {
     "name": "Lighting Touch",
     "fields": {

@@ -8,15 +8,15 @@
       "1": "<br/>",
       "2": "<strong>Appui simple</strong>",
       "3": "Eula exécute une frappe rapide qui inflige des <cryo>DGT Cryo</cryo>.",
-      "4": "Si elle touche un ennemi, Eula gagne une charge de Cœur de glace (jusqu'à 2 charges max). Eula peut gagner une charge toutes les 0,3 s max.",
+      "4": "Si elle touche un ennemi, Eula gagne un cumul de Cœur de glace (jusqu'à 2 cumuls max). Eula peut gagner un cumul toutes les 0,3 s max.",
       "5": "<br/>",
       "6": "<strong>Cœur de glace</strong>",
       "7": "Améliore la RÉS à l'interruption et la DÉF d'Eula.",
       "8": "<br/>",
       "9": "<strong>Appui long</strong>",
-      "10": "Eula consomme toutes les charges de Cœur de glace pour faire tournoyer son épée devant elle et infliger des <cryo>DGT Cryo de zone</cryo> aux ennemis en face.",
-      "11": "Si des charges de Cœur de glace sont consommées, la RÉS physique et la <cryo>RÉS Cryo</cryo> des ennemis proches diminuent.",
-      "12": "Chaque charge de Cœur de glace est convertie en épée vortex de glace, qui inflige des <cryo>DGT Cryo</cryo> aux ennemis proches.",
+      "10": "Eula consomme toutes les cumuls de Cœur de glace pour faire tournoyer son épée devant elle et infliger des <cryo>DGT Cryo de zone</cryo> aux ennemis en face.",
+      "11": "Si des cumuls de Cœur de glace sont consommés, la RÉS physique et la <cryo>RÉS Cryo</cryo> des ennemis proches diminuent.",
+      "12": "Chaque cumul de Cœur de glace est converti en épée vortex de glace, qui inflige des <cryo>DGT Cryo</cryo> aux ennemis proches.",
       "13": "<br/>",
       "14": "<i>Ainsi roula l'écume des vagues, engloutissant dans son sillage la couronne de la royauté. Et chaque embrun de cette marée glaciale étincela de sa lumineuse clarté.</i>"
     },
@@ -83,9 +83,9 @@
     "name": "Lame de fond",
     "description": {
       "0": "Eula brandit son épée avec fureur, infligeant des <cryo>DGT Cryo</cryo> aux ennemis proches, et crée une épée de lumière qui la suit pendant 7 s max.",
-      "1": "Tant qu'elle est active, l'épée de lumière augmente la RÉS à l'interruption d'Eula. Lorsqu'Eula inflige des DGT à des ennemis avec son attaque normale, sa compétence ou son déchaînement élémentaire, elle accumule des charges d'énergie pour l'épée de lumière. Une charge d'énergie peut être cumulée toutes les 0,1 s.",
+      "1": "Tant qu'elle est active, l'épée de lumière augmente la RÉS à l'interruption d'Eula. Lorsqu'Eula inflige des DGT à des ennemis avec son attaque normale, sa compétence ou son déchaînement élémentaire, elle obtient des cumuls d'énergie pour l'épée de lumière. Un cumul d'énergie peut être obtenu toutes les 0,1 s.",
       "2": "Lorsque la durée de l'épée de lumière est écoulée, elle explose violemment, infligeant des DGT physiques aux ennemis proches.",
-      "3": "Ces DGT augmentent en fonction du nombre de charges d'énergie accumulées.",
+      "3": "Ces DGT augmentent en fonction du nombre de cumuls d'énergie obtenus.",
       "4": "L'épée explose immédiatement lorsqu'Eula quitte le champ de bataille.",
       "5": "<br/>",
       "6": "<i>Le naufrage est facile. Et pourtant, Eula insiste pour figer cette marée.</i>"
@@ -93,8 +93,8 @@
     "skillParams": {
       "0": "DGT compétence",
       "1": "DGT de base Épée de lumière",
-      "2": "DGT élémentaires par charge d'énergie",
-      "3": "Limite de charges d'énergie",
+      "2": "DGT élémentaires par cumul d'énergie",
+      "3": "Limite de cumuls d'énergie",
       "4": "Temps de recharge",
       "5": "Énergie élémentaire",
       "6": "",
@@ -112,13 +112,13 @@
   "passive1": {
     "name": "Maelström de glace",
     "description": {
-      "0": "Lorsque vous consommez 2 charges de Cœur de glace lors de l'appui long de <strong>Vortex des mers glacées</strong>, une brève épée de lumière est créée. Cette dernière explose immédiatement, infligeant des DGT physiques équivalant à 50 % des DGT de base de <strong>Lame de fond</strong>."
+      "0": "Lorsque vous consommez 2 cumuls de Cœur de glace lors de l'appui long de <strong>Vortex des mers glacées</strong>, une brève épée de lumière est créée. Cette dernière explose immédiatement, infligeant des DGT physiques équivalant à 50 % des DGT de base de <strong>Lame de fond</strong>."
     }
   },
   "passive2": {
     "name": "Esprit belligérant",
     "description": {
-      "0": "Le TdR de <strong>Vortex des mers glacées</strong> est réinitialisé lors de l'utilisation de <strong>Lame de fond</strong>, et Eula obtient une charge de Cœur de glace."
+      "0": "Le TdR de <strong>Vortex des mers glacées</strong> est réinitialisé lors de l'utilisation de <strong>Lame de fond</strong>, et Eula obtient un cumul de Cœur de glace."
     }
   },
   "passive3": {
@@ -130,8 +130,8 @@
   "constellation1": {
     "name": "Illusion des marées",
     "description": {
-      "0": "À chaque fois qu'une charge de Cœur de glace de <strong>Vortex des mers glacées</strong> est consommée, Eula gagne un bonus de DGT physiques de 30 % pendant 6 s.",
-      "1": "Chaque charge de Cœur de glace consommée prolonge la durée de l'effet de 6 s, jusqu'à un maximum de 18 s."
+      "0": "À chaque fois qu'un cumul de Cœur de glace de <strong>Vortex des mers glacées</strong> est consommé, Eula gagne un bonus de DGT physiques de 30 % pendant 6 s.",
+      "1": "Chaque cumul de Cœur de glace consommé prolonge la durée de l'effet de 6 s, jusqu'à un maximum de 18 s."
     }
   },
   "constellation2": {
@@ -163,7 +163,7 @@
   "constellation6": {
     "name": "Obligations aristocratiques",
     "description": {
-      "0": "Confère immédiatement 5 charges d'énergie à l'épée de lumière créée par <strong>Lame de fond</strong>. De plus, lorsque vous utilisez des attaques normales, la compétence ou le déchaînement élémentaire pour cumuler des charges, vous avez 50 % de chances de gagner une charge supplémentaire."
+      "0": "Confère immédiatement 5 cumuls d'énergie à l'épée de lumière créée par <strong>Lame de fond</strong>. De plus, lorsque vous utilisez des attaques normales, la compétence ou le déchaînement élémentaire pour obtenir des cumuls, vous avez 50 % de chances de gagner un cumul supplémentaire."
     }
   }
 }

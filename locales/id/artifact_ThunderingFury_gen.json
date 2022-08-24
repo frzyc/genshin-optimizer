@@ -2,7 +2,7 @@
   "setName": "Thundering Fury",
   "setEffects": {
     "2": "Electro DMG Bonus +15%.",
-    "4": "Meningkatkan 40% DMG yang diakibatkan Overloaded, Electro-Charged, dan Superconduct. Memicu efek-efek tersebut mengurangi 1 detik CD Elemental Skill. Dapat terpicu setiap 0,8 detik."
+    "4": "Meningkatkan 40% DMG yang diakibatkan Overloaded, Electro-Charged, Superconduct, dan Hyperbloom. Meningkatkan 20% DMG yang diakibatkan Aggravate. Saat memicu reaksi-reaksi elemental di atas atau reaksi Quicken, akan mengurangi 1 detik CD Elemental Skill. Efek ini terpicu setiap 0,8 detik."
   },
   "pieces": {
     "flower": {

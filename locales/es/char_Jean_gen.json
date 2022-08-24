@@ -85,7 +85,7 @@
       "6": "<i>La magnanimidad de Jean es vasta como los campos de dientes de león, así como la raíz de su deseo de proteger a los demás.</i>"
     },
     "skillParams": {
-      "0": "Daño de explosión",
+      "0": "Daño instantáneo",
       "1": "Daño de entrada y salida del área",
       "2": "Curación instantánea",
       "3": "Curación continua",

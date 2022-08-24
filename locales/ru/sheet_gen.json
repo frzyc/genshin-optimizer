@@ -46,7 +46,8 @@
     "pyro": "Пиро",
     "hydro": "Гидро",
     "cryo": "Крио",
-    "electro": "Электро"
+    "electro": "Электро",
+    "dendro": "Дендро"
   },
   "reaction": {
     "swirl": "Рассеивание",
@@ -55,6 +56,12 @@
     "electrocharged": "Заряжен",
     "superconduct": "Сверхпроводник",
     "vaporize": "Пар",
-    "melt": "Таяние"
+    "melt": "Таяние",
+    "bloom": "Свечение",
+    "burgeon": "Цветение",
+    "hyperbloom": "Вегетация",
+    "quicken": "Стимуляция",
+    "aggravate": "Обострение",
+    "spread": "Разрастание"
   }
 }

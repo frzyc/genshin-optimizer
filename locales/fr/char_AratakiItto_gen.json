@@ -123,7 +123,7 @@
     "description": {
       "0": "Lorsqu'Arataki Itto effectue une série de kesa giri d'Arataki, il obtient les effets suivants{NON_BREAK_SPACE}:",
       "1": [
-        " Chaque frappe augmente la VIT d'attaque de la prochaine de 10{NON_BREAK_SPACE}%. La VIT d'attaque peut être augmentée de 30{NON_BREAK_SPACE}% max de cette manière.",
+        " Chaque frappe augmente la VIT d'attaque de la prochaine de 10{NON_BREAK_SPACE}%. La VIT d'attaque peut être augmentée d'un maximum de 30{NON_BREAK_SPACE}% de cette manière.",
         " Sa RÉS à l'interruption augmente."
       ],
       "2": "<br/>",

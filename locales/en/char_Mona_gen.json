@@ -43,19 +43,20 @@
     "description": {
       "0": "Creates an illusory Phantom of Fate from coalesced waterspouts.",
       "1": "<br/>",
-      "2": "The <strong>Phantom</strong> has the following special properties:",
-      "3": [
+      "2": "<strong>Phantom</strong>",
+      "3": "Has the following special properties:",
+      "4": [
         "Continuously taunts nearby opponents, attracting their fire.",
         "Continuously deals <hydro>Hydro DMG</hydro> to nearby opponents.",
         "When its duration expires, the Phantom explodes, dealing <hydro>AoE Hydro DMG</hydro>."
       ],
-      "4": "<br/>",
-      "5": "<strong>Hold</strong>",
-      "6": "Utilizes water currents to move backwards swiftly before conjuring a Phantom.",
-      "7": "<br/>",
-      "8": "Only one Phantom created by Mirror Reflection of Doom can exist at any time.",
-      "9": "<br/>",
-      "10": "<i>Skilled astrologers have always dreamed of using a phantom facsimile of themselves to ward off imminent ill fate, but Mona must be the first to make such a mockery of it in all of Teyvat.</i>"
+      "5": "<br/>",
+      "6": "<strong>Hold</strong>",
+      "7": "Utilizes water currents to move backwards swiftly before conjuring a Phantom.",
+      "8": "<br/>",
+      "9": "Only one Phantom created by Mirror Reflection of Doom can exist at any time.",
+      "10": "<br/>",
+      "11": "<i>Skilled astrologers have always dreamed of using a phantom facsimile of themselves to ward off imminent ill fate, but Mona must be the first to make such a mockery of it in all of Teyvat.</i>"
     },
     "skillParams": {
       "0": "DoT",

@@ -90,7 +90,7 @@
       "4": "À intervalles réguliers, le Daruma Muji-muji agit de l'une des manières suivantes en fonction de la situation :",
       "5": [
         " Lorsque les PV des personnages proches sont supérieurs à 70 %, le Daruma Muji-muji attaque un ennemi proche, à qui il inflige des <anemo>DGT Anémo</anemo> ;",
-        " Lorqu'un personnage déployé dont les PV sont inférieurs ou égaux à 70 % se trouve à proximité, le Daruma Muji-muji soigne le personnage déployé proche ayant le plus faible pourcentage de PV d'une quantité de PV proportionnelle à l'ATQ de Sayu. Si aucun ennemi ne se trouve à proximité et que les personnages ont tous plus de 70 % de leurs PV, le Daruma Muji-muji soigne aussi les personnages."
+        " Lorsqu'un personnage déployé dont les PV sont inférieurs ou égaux à 70 % se trouve à proximité, le Daruma Muji-muji soigne le personnage déployé proche ayant le plus faible pourcentage de PV d'une quantité de PV proportionnelle à l'ATQ de Sayu. Si aucun ennemi ne se trouve à proximité et que les personnages ont tous plus de 70 % de leurs PV, le Daruma Muji-muji soigne aussi les personnages."
       ],
       "6": "<br/>",
       "7": "<i>Ceux qui ne comprennent rien au jujitsu adorent voir Sayu faire étalage de cette technique, et certains ont même essayé de l'apprendre auprès d'elle. Mais Sayu veut dormir et n'a aucune envie d'être dérangée.</i>"
@@ -126,7 +126,7 @@
     "description": {
       "0": "Confère au Daruma Muji-muji invoqué pendant <strong>École Yoohoo : Bourrasque du mujina</strong> les effets suivants :",
       "1": [
-        " Lorqu'il soigne un personnage, les personnages proches de ce dernier sont soignés à hauteur de 20 % des PV récupérés par le personnage ;",
+        " Lorsqu'il soigne un personnage, les personnages proches de ce dernier sont soignés à hauteur de 20 % des PV récupérés par le personnage ;",
         " La zone de DGT infligés augmente lorsqu'il attaque un ennemi."
       ]
     }

@@ -41,7 +41,7 @@
   "skill": {
     "name": "Épée Guhua : Pluie battante",
     "description": {
-      "0": "Lance une succession de 2 coups d'épée qui infligent des <hydro>DGT Hydro</hydro> aux ennemis en face. Dans le même temps, le personnage déployé s'entoure du nombre maximum d'épées de pluie.",
+      "0": "Lance une succession de 2 coups d'épée qui infligent des <hydro>DGT Hydro</hydro> aux ennemis en face. En même temps, le personnage déployé s'entoure du nombre maximum d'épées de pluie.",
       "1": "Les épées de pluie ont les propriétés suivantes :",
       "2": [
         " Les épées se brisent lorsque Xingqiu subit des DGT et ce faisant réduisent les DGT subis.",
@@ -49,7 +49,7 @@
       ],
       "3": "20 % du <hydro>bonus de DGT Hydro</hydro> de Xingqiu est converti en réduction de DGT supplémentaire par les épées de pluie.",
       "4": "<br/>",
-      "5": "Jusqu'à 24 % de réduction de DGT supplémentaire peut être obtenue de cette manière.",
+      "5": "Un maximum de 24 % de réduction de DGT supplémentaire peut être obtenu de cette manière.",
       "6": "Xingqiu commence avec 3 épées de pluie maximum.",
       "7": "Applique l'état <hydro>Trempé</hydro> à Xingqiu lors du lancement.",
       "8": "<br/>",
@@ -160,7 +160,7 @@
   "constellation6": {
     "name": "Rassemblement d'articles",
     "description": {
-      "0": "Les DGT du déluge d'épées d'<strong>Épée Guhua : Pluie et arc-en-ciel</strong> augmentent considérablement tous les 2 pluies d'épées ; Xingqiu récupère de plus 3 pts d'énergie élémentaire."
+      "0": "Les DGT du déluge d'épées d'<strong>Épée Guhua : Pluie et arc-en-ciel</strong> augmentent considérablement toutes les 2 pluies d'épées ; Xingqiu récupère de plus 3 pts d'énergie élémentaire."
     }
   }
 }

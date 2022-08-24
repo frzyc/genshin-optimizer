@@ -46,7 +46,8 @@
     "pyro": "Hỏa",
     "hydro": "Thủy",
     "cryo": "Băng",
-    "electro": "Lôi"
+    "electro": "Lôi",
+    "dendro": "Thảo"
   },
   "reaction": {
     "swirl": "Khuếch tán",
@@ -55,6 +56,12 @@
     "electrocharged": "Điện Cảm",
     "superconduct": "Siêu Dẫn",
     "vaporize": "Bốc Hơi",
-    "melt": "Tan Chảy"
+    "melt": "Tan Chảy",
+    "bloom": "Bloom",
+    "burgeon": "Bung Tỏa",
+    "hyperbloom": "Nở Rộ",
+    "quicken": "Sinh Trưởng",
+    "aggravate": "Tăng Cường",
+    "spread": "Lan Tràn"
   }
 }

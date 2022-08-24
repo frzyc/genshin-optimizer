@@ -3,10 +3,10 @@
   "description": "Sebenarnya, hanya sebilah pedang yang sedikit lebih gelap dari Iron Sword.",
   "passiveName": "Overloaded",
   "passiveDescription": {
-    "0": "Saat Overloaded, Superconduct, Electro-Charged, atau reaksi Swirl dengan elemen Electro terpicu, meningkatkan ATK sebesar <cryo>20%</cryo> selama 12 detik.",
-    "1": "Saat Overloaded, Superconduct, Electro-Charged, atau reaksi Swirl dengan elemen Electro terpicu, meningkatkan ATK sebesar <cryo>25%</cryo> selama 12 detik.",
-    "2": "Saat Overloaded, Superconduct, Electro-Charged, atau reaksi Swirl dengan elemen Electro terpicu, meningkatkan ATK sebesar <cryo>30%</cryo> selama 12 detik.",
-    "3": "Saat Overloaded, Superconduct, Electro-Charged, atau reaksi Swirl dengan elemen Electro terpicu, meningkatkan ATK sebesar <cryo>35%</cryo> selama 12 detik.",
-    "4": "Saat Overloaded, Superconduct, Electro-Charged, atau reaksi Swirl dengan elemen Electro terpicu, meningkatkan ATK sebesar <cryo>40%</cryo> selama 12 detik."
+    "0": "Saat memicu Overloaded, Superconduct, Electro-Charged, Quicken, Aggravate, Hyperbloom, atau reaksi Swirl dengan elemen Electro, meningkatkan <cryo>20%</cryo> ATK selama 12 detik.",
+    "1": "Saat memicu Overloaded, Superconduct, Electro-Charged, Quicken, Aggravate, Hyperbloom, atau reaksi Swirl dengan elemen Electro, meningkatkan <cryo>25%</cryo> ATK selama 12 detik.",
+    "2": "Saat memicu Overloaded, Superconduct, Electro-Charged, Quicken, Aggravate, Hyperbloom, atau reaksi Swirl dengan elemen Electro, meningkatkan <cryo>30%</cryo> ATK selama 12 detik.",
+    "3": "Saat memicu Overloaded, Superconduct, Electro-Charged, Quicken, Aggravate, Hyperbloom, atau reaksi Swirl dengan elemen Electro, meningkatkan <cryo>35%</cryo> ATK selama 12 detik.",
+    "4": "Saat memicu Overloaded, Superconduct, Electro-Charged, Quicken, Aggravate, Hyperbloom, atau reaksi Swirl dengan elemen Electro, meningkatkan <cryo>40%</cryo> ATK selama 12 detik."
   }
 }

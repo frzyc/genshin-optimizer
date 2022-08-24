@@ -3,10 +3,10 @@
   "description": "Kiếm sắt hơi bị đen một chút",
   "passiveName": "Quá Tải",
   "passiveDescription": {
-    "0": "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng <cryo>20%</cryo> tấn công trong 12s.",
-    "1": "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng <cryo>25%</cryo> tấn công trong 12s.",
-    "2": "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng <cryo>30%</cryo> tấn công trong 12s.",
-    "3": "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng <cryo>35%</cryo> tấn công trong 12s.",
-    "4": "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng <cryo>40%</cryo> tấn công trong 12s."
+    "0": "Trong 12s sau khi kích hoạt hiệu ứng Quá Tải, Siêu Dẫn, Điệm Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ hoặc Khuếch Tán nguyên tố Lôi, tấn công tăng <cryo>20%</cryo>.",
+    "1": "Trong 12s sau khi kích hoạt hiệu ứng Quá Tải, Siêu Dẫn, Điệm Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ hoặc Khuếch Tán nguyên tố Lôi, tấn công tăng <cryo>25%</cryo>.",
+    "2": "Trong 12s sau khi kích hoạt hiệu ứng Quá Tải, Siêu Dẫn, Điệm Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ hoặc Khuếch Tán nguyên tố Lôi, tấn công tăng <cryo>30%</cryo>.",
+    "3": "Trong 12s sau khi kích hoạt hiệu ứng Quá Tải, Siêu Dẫn, Điệm Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ hoặc Khuếch Tán nguyên tố Lôi, tấn công tăng <cryo>35%</cryo>.",
+    "4": "Trong 12s sau khi kích hoạt hiệu ứng Quá Tải, Siêu Dẫn, Điệm Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ hoặc Khuếch Tán nguyên tố Lôi, tấn công tăng <cryo>40%</cryo>."
   }
 }

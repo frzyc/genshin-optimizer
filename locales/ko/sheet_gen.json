@@ -46,7 +46,8 @@
     "pyro": "불",
     "hydro": "물 원소",
     "cryo": "얼음",
-    "electro": "번개"
+    "electro": "번개",
+    "dendro": "풀 원소"
   },
   "reaction": {
     "swirl": "확산",
@@ -55,6 +56,12 @@
     "electrocharged": "감전",
     "superconduct": "초전도",
     "vaporize": "증발",
-    "melt": "융해"
+    "melt": "융해",
+    "bloom": "Bloom",
+    "burgeon": "발화",
+    "hyperbloom": "만개",
+    "quicken": "활성",
+    "aggravate": "촉진",
+    "spread": "발산"
   }
 }

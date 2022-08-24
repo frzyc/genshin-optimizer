@@ -23,7 +23,7 @@
   "maxDuration": "Duración máx.",
   "maxStacks": "Límite de cargas de energía",
   "skillDMG": "Daño de habilidad",
-  "burstDMG": "Daño de explosión",
+  "burstDMG": "Daño instantáneo",
   "dmgAbsorption": "Absorción",
   "healing": "Curación",
   "duration": "Duración",
@@ -46,7 +46,8 @@
     "pyro": "Pyro",
     "hydro": "Hydro",
     "cryo": "Cryo",
-    "electro": "Electro"
+    "electro": "Electro",
+    "dendro": "Dendro"
   },
   "reaction": {
     "swirl": "Torbellino",
@@ -55,6 +56,12 @@
     "electrocharged": "Electrocargado",
     "superconduct": "Superconductor",
     "vaporize": "Vaporizado",
-    "melt": "Derretido"
+    "melt": "Derretido",
+    "bloom": "Bloom",
+    "burgeon": "Crepitar",
+    "hyperbloom": "Sobreflorecimiento",
+    "quicken": "Aceleración",
+    "aggravate": "Intensificación",
+    "spread": "Propagación"
   }
 }

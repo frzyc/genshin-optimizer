@@ -86,9 +86,9 @@
       "6": "<i>Berkat Anemo bagaikan dandelion yang terbang ke seluruh pelosok dunia. Inilah fondasi prinsip dan pendirian Jean.</i>"
     },
     "skillParams": {
-      "0": "DMG Elemental Burst",
+      "0": "DMG Burst",
       "1": "DMG Keluar Masuk Field",
-      "2": "Pemulihan Saat Talenta Dilancarkan",
+      "2": "Pemulihan Field",
       "3": "Regenerasi HP/dtk",
       "4": "Cooldown",
       "5": "Konsumsi Energy",

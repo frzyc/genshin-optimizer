@@ -163,7 +163,7 @@
     "description": {
       "0": "Les personnages se trouvant dans le champ d'alcool de <strong>Cuvée spéciale</strong> bénéficient des effets suivants selon les PV qu'il leur reste :",
       "1": [
-        " Bonus de 30 % de soins reçus si les PV sont inférieurs ou égaux à 50 %.",
+        " Bonus de soins reçus de 30 % si les PV sont inférieurs ou égaux à 50 %.",
         " Maîtrise élémentaire augmentée de 200 si les PV sont supérieurs à 50 %."
       ]
     }

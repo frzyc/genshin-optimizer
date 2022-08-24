@@ -45,7 +45,7 @@
       "0": "Concentrant l'énergie des vents dans son épée, Jean libère une tornade qui projette les ennemis dans la direction ciblée, infligeant d'importants <anemo>DGT Anémo</anemo>.",
       "1": "<br/>",
       "2": "<strong>Appui long</strong>",
-      "3": "Les ennemis et les objets proches sont attirés par la tornade ; cette attaque consomme de l'endurance sur la durée.",
+      "3": "Consomme de l'endurance en continu pour générer une tornade qui attire ennemis et objets proches.",
       "4": "La tornade peut être dirigée.",
       "5": "Jean ne peut pas se déplacer tant que l'attaque dure.",
       "6": "<br/>",
@@ -73,8 +73,8 @@
   "burst": {
     "name": "Brise de pissenlit",
     "description": {
-      "0": "Jean invoque la protection des vents ; un champ de pissenlits tournoyant repousse les ennemis proches, tout en leur infligeant des <anemo>DGT Anémo</anemo>.",
-      "1": "Dans le même temps, tous les personnages de l'équipe sont soignés considérablement ; le nombre de PV restaurés est proportionnel à l'ATQ de Jean.",
+      "0": "Jean invoque la protection des vents pour générer un champ de pissenlits tournoyant qui repousse les ennemis proches, tout en leur infligeant des <anemo>DGT Anémo</anemo>.",
+      "1": "En même temps, tous les personnages sont soignés considérablement, la quantité de PV restaurés étant proportionnelle à l'ATQ de Jean.",
       "2": "<br/>",
       "3": "<strong>Champ de pissenlits</strong>",
       "4": [
@@ -86,7 +86,7 @@
       "6": "<i>Semblable aux pissenlits bercés par le vent, la magnanimité de Jean n'a que l'horizon pour limite.</i>"
     },
     "skillParams": {
-      "0": "DGT explosion",
+      "0": "DGT explosifs",
       "1": "DGT entrée/sortie de zone",
       "2": "Soins du champ",
       "3": "Soins continus",
@@ -158,7 +158,7 @@
     "name": "Croc de Lion, le protecteur de Mondstadt",
     "description": {
       "0": "Les DGT subis par les personnages dans le champ de <strong>Brise de pissenlit</strong> sont réduits de 35 %.",
-      "1": "Après avoir quitté le champ, cet effet disparaît après avoir subi 3 attaques ou dans les 10 s."
+      "1": "Après avoir quitté le champ, cet effet disparaît après avoir subi 3 attaques ou après 10 s."
     }
   }
 }

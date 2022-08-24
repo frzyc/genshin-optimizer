@@ -54,7 +54,7 @@
       "5": "<strong>Appui long</strong>",
       "6": "Ajuste la zone où la compétence sera lancée.",
       "7": "<br/>",
-      "8": "<i>Cette étrange dispositif rocheux est semblable à l'art même de l'alchimie : né de la terre et aspirant au ciel.</i>"
+      "8": "<i>Cet étrange dispositif rocheux est semblable à l'art même de l'alchimie : né de la terre et aspirant au ciel.</i>"
     },
     "skillParams": {
       "0": "DGT compétence",
@@ -86,7 +86,7 @@
       "5": "<i>Sous les commandes du Kreideprinz, les forces habitant le sol émergent en une marée implacable.</i>"
     },
     "skillParams": {
-      "0": "DGT explosion",
+      "0": "DGT explosifs",
       "1": "DGT Germe fatal",
       "2": "Temps de recharge",
       "3": "Énergie élémentaire",

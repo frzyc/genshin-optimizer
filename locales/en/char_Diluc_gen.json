@@ -1,6 +1,6 @@
 {
   "name": "Diluc",
-  "title": "The Dark Side of Dawn",
+  "title": "Dark Side of Dawn",
   "description": "The tycoon of a winery empire in Mondstadt, unmatched in every possible way.",
   "constellationName": "Noctua",
   "auto": {
@@ -25,7 +25,7 @@
       "1": "2-Hit DMG",
       "2": "3-Hit DMG",
       "3": "4-Hit DMG",
-      "4": "Charged Attack Spinning DMG",
+      "4": "Charged Attack Cyclic DMG",
       "5": "Charged Attack Final DMG",
       "6": "Charged Attack Stamina Cost",
       "7": "Max Duration",
@@ -44,9 +44,10 @@
     "description": {
       "0": "Performs a forward slash that deals <pyro>Pyro DMG</pyro>.",
       "1": "<br/>",
-      "2": "This skill can be consecutively used 3 times. Enters CD if not cast again within a short period.",
-      "3": "<br/>",
-      "4": "<i>The slashes represent the values that Diluc holds dear: one for justice, one for courage, and one for duty.</i>"
+      "2": "This skill can be consecutively used 3 times.",
+      "3": "Enters CD if not cast again within a short period.",
+      "4": "<br/>",
+      "5": "<i>The slashes represent the values that Diluc holds dear: one for justice, one for courage, and one for duty.</i>"
     },
     "skillParams": {
       "0": "1-Hit DMG",

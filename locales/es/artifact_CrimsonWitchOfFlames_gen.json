@@ -2,7 +2,7 @@
   "setName": "Bruja Carmesí en Llamas",
   "setEffects": {
     "2": "Bono de Daño Pyro +15%.",
-    "4": "Aumenta el daño causado por Sobrecarga y Quemadura en un 40%, y el de Vaporización y Derretido en un 15%. El uso de una Habilidad Elemental aumenta los efectos del conjunto de 2 piezas en un 50% durante 10 s. Puede acumularse hasta un máximo de 3 veces."
+    "4": "Aumenta el daño causado por Sobrecarga, Quemadura y Crepitar en un 40%, y el de Vaporización y Derretido en un 15%. El uso de una Habilidad Elemental aumenta los efectos del conjunto de 2 piezas en un 50% durante 10 s. Puede acumularse hasta un máximo de 3 veces."
   },
   "pieces": {
     "flower": {

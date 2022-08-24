@@ -70,7 +70,7 @@
   "burst": {
     "name": "Alvorecer",
     "description": {
-      "0": "Lança chamas intensas nos inimigos ao redor, causando <pyro>Dano Pyro</pyro>. As chamas então convergem na arma, invocando uma Fênix que voa para frente e causa <pyro>Dano Pyro</pyro> massivo em todos os inimigos no seu caminho. A Fênix explode depois alcançar seu destino, causando um enorme <pyro>Dano Pyro AdE</pyro>.",
+      "0": "Lança chamas intensas nos inimigos ao redor, causando <pyro>Dano Pyro</pyro>. As chamas então convergem na arma, invocando uma Fênix que voa para frente e causa <pyro>Dano Pyro</pyro> massivo em todos os inimigos no seu caminho. A Fênix explode após alcançar seu destino, causando um enorme <pyro>Dano Pyro AdE</pyro>.",
       "1": "<br/>",
       "2": "As chamas que correm de sua lâmina imbuem Diluc com <pyro>Pyro</pyro>.",
       "3": "<br/>",

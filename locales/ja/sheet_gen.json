@@ -46,7 +46,8 @@
     "pyro": "炎",
     "hydro": "水元素",
     "cryo": "氷",
-    "electro": "雷"
+    "electro": "雷",
+    "dendro": "草元素"
   },
   "reaction": {
     "swirl": "拡散",
@@ -55,6 +56,12 @@
     "electrocharged": "感電",
     "superconduct": "超電導",
     "vaporize": "蒸発",
-    "melt": "溶解"
+    "melt": "溶解",
+    "bloom": "Bloom",
+    "burgeon": "烈開花",
+    "hyperbloom": "超開花",
+    "quicken": "原激化",
+    "aggravate": "超激化",
+    "spread": "草激化"
   }
 }

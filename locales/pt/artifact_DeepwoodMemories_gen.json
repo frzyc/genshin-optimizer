@@ -1,0 +1,29 @@
+{
+  "setName": "Memórias da Floresta",
+  "setEffects": {
+    "2": "Bônus de Dano Dendro +15%",
+    "4": "Depois que as Habilidades Elementais ou Supremos acertam os oponentes, a RES Dendro dos alvos serão reduzidas em 30% por 8s. Esse efeito pode ser desencadeado mesmo se o personagem equipando este conjunto não estiver em campo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Visitante do Labirinto",
+      "desc": "Essa adorável flor dourada foi arrancada da coroa do rei da floresta."
+    },
+    "plume": {
+      "name": "Estudioso de Vinhas",
+      "desc": "Uma folha esmeralda, leve feito uma pluma. Arrancada das vestimentas de um estudioso da floresta."
+    },
+    "sands": {
+      "name": "Momento de Sabedoria",
+      "desc": "Relógio utilizados por aqueles que se dedicam ao caminho dos sábios. Este relógio não contém areia sem vida, mas, em vez disso, possui minúsculas sementes de mostarda."
+    },
+    "goblet": {
+      "name": "Lanterna do Perdido",
+      "desc": "Essa era originalmente uma lâmpada a óleo no estilo do reino do deserto, mas desde então, folhas verdes fluorescentes germinaram por ela."
+    },
+    "circlet": {
+      "name": "Diadema Láurea",
+      "desc": "Esse diadema foi dado pela divindade que domina as plantas e as árvores. Era uma herança de uma família real do labirinto. No final, acabou nas mãos de um dos vassalos do rei."
+    }
+  }
+}

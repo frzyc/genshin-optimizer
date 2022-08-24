@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Ataque Carregado</strong>",
-        "1": "Consome uma certa quantidade de Stamina que inflige <anemo>Dano Anemo em uma AdE</anemo> com um chute de varredura."
+        "1": "Consome uma certa quantidade de Stamina que inflige <anemo>Dano Anemo</anemo> com um chute de varredura."
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",
@@ -77,7 +77,7 @@
     "description": {
       "0": "Salta no ar e usa a Bomba de Vácuo Fudou para chutar seus inimigos explosivamente. Ao atingir os inimigos, a Bomba de Vácuo Fudou gerará um Túnel de Vento Repreendedor que atrairá inimigos e objetos próximos, infligindo <anemo>Dano Anemo em AdE</anemo>.",
       "1": "Quando a Bomba de Vácuo Fudou atinge inimigos afetados por <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, esses inimigos serão afetados pelo efeito \"Olho do Furacão\". Esse efeito explodirá após um breve momento e infligirá Dano em AdE do tipo elemental correspondente.",
-      "2": "Bomba de Vácuo Fudou pode atingir até 4 inimigos com Olho do Furacão; os inimigos não poderão estar sob a influência de Olhos do Furacão de elementos diferentes simultaneamente.",
+      "2": "A Bomba de Vácuo Fudou pode atingir até 4 inimigos com Olho do Furacão; os inimigos não poderão estar sob a influência de Olhos do Furacão de elementos diferentes simultaneamente.",
       "3": "<br/>",
       "4": "<i>Uma técnica que reúne Anemo em um local antes de desferi-lo em um único chute. Sempre está presente para chutar as costas de algum criminoso fugitivo.</i>"
     },

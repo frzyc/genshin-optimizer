@@ -21,9 +21,9 @@
     "high": "DGT chute élevée"
   },
   "maxDuration": "Durée max",
-  "maxStacks": "Limite de charges d'énergie",
+  "maxStacks": "Limite de cumuls d'énergie",
   "skillDMG": "DGT compétence",
-  "burstDMG": "DGT",
+  "burstDMG": "DGT explosifs",
   "dmgAbsorption": "PV du bouclier",
   "healing": "Soins",
   "duration": "Durée",
@@ -46,7 +46,8 @@
     "pyro": "Pyro",
     "hydro": "Hydro",
     "cryo": "Cryo",
-    "electro": "Électro"
+    "electro": "Électro",
+    "dendro": "Dendro"
   },
   "reaction": {
     "swirl": "Dispersion",
@@ -55,6 +56,12 @@
     "electrocharged": "Électrocution",
     "superconduct": "Supraconduction",
     "vaporize": "Évaporation",
-    "melt": "Fonte"
+    "melt": "Fonte",
+    "bloom": "Bloom",
+    "burgeon": "Bourgeonnement",
+    "hyperbloom": "Exubérance",
+    "quicken": "Stimulation",
+    "aggravate": "Suractivation",
+    "spread": "Propagation"
   }
 }

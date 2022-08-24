@@ -44,15 +44,15 @@
     "description": {
       "0": "Aloy lance une bombe à gel qui explose à l'impact dans la direction ciblée, infligeant des <cryo>DGT Cryo</cryo>. Après avoir explosé, la bombe à gel se divise en de nombreuses petites bombes glacées qui explosent au contact des ennemis ou après un court délai, infligeant des <cryo>DGT Cryo</cryo>.",
       "1": "Lorsqu'une bombe à gel ou une petite bombe glacée touche un ennemi, l'ATQ de ce dernier est réduite et Aloy obtient 1 cumul de bobine.",
-      "2": "Une charge de bobine peut être obtenue toutes les 0,1 s max.",
+      "2": "Un cumul de bobine peut être obtenu toutes les 0,1 s max.",
       "3": "<br/>",
       "4": "<strong>Bobine</strong>",
       "5": [
-        " Chaque charge augmente les DGT des attaques normales d'Aloy ;",
-        " Avec 4 charges de bobine, Aloy consomme toutes les charges de bobine pour entrer dans un état de Glace précipitée, ce qui augmente davantage les DGT infligés par ses attaques normales et les convertit en <cryo>DGT Cryo</cryo>."
+        " Chaque cumul augmente les DGT des attaques normales d'Aloy ;",
+        " Avec 4 cumuls de bobine, Aloy consomme tous les cumuls de bobine pour entrer dans un état de Glace précipitée, ce qui augmente davantage les DGT infligés par ses attaques normales et les convertit en <cryo>DGT Cryo</cryo>."
       ],
       "6": "<br/>",
-      "7": "Quand Aloy est en état de Glace précipitée, elle ne peut pas recevoir de nouvelles charges de bobine.",
+      "7": "Quand Aloy est en état de Glace précipitée, elle ne peut pas recevoir de nouveaux cumuls de bobine.",
       "8": "Les effets de la bobine seront annulés après 30 s si Aloy quitte le combat.",
       "9": "<br/>",
       "10": "<i>Vous trouvez ça froid ? On voit bien que vous n'avez jamais mis les pieds à la Plaie !</i>"

@@ -25,7 +25,7 @@
       "1": "2-Hit DMG",
       "2": "3-Hit DMG",
       "3": "4-Hit DMG",
-      "4": "Charged Attack Spinning DMG",
+      "4": "Charged Attack Cyclic DMG",
       "5": "Charged Attack Final DMG",
       "6": "Charged Attack Stamina Cost",
       "7": "Max Duration",
@@ -95,7 +95,7 @@
       "9": "<i>The wolf has awoken. The hunt is on.</i>"
     },
     "skillParams": {
-      "0": "Elemental Burst DMG",
+      "0": "Burst DMG",
       "1": "Soul Companion DMG",
       "2": "Normal ATK SPD Bonus",
       "3": "Electro RES Bonus",

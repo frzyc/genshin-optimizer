@@ -76,10 +76,10 @@
   "burst": {
     "name": "Art secret : Dogme d'idéal",
     "description": {
-      "0": "Rassemblant des vérités innombrables et des souhaits inquantifiables, la Shogun Raiden libère le Kendo d'idéal et inflige des <electro>DGT Électro de zone</electro>, avant d'utiliser l'Harmonie d'idéal au combat pendant un certain temps. Les DGT infligés par le Kendo d'idéal et ceux infligés par les attaques sous l'Harmonie d'idéal augmentent selon le nombre de charges de résolution de Chakra Desiderata consommées en utilisant l'aptitude.",
+      "0": "Rassemblant des vérités innombrables et des souhaits inquantifiables, la Shogun Raiden libère le Kendo d'idéal et inflige des <electro>DGT Électro de zone</electro>, avant d'utiliser l'Harmonie d'idéal au combat pendant un certain temps. Les DGT infligés par le Kendo d'idéal et ceux infligés par les attaques sous l'Harmonie d'idéal augmentent selon le nombre de cumuls de résolution de Chakra Desiderata consommées en utilisant l'aptitude.",
       "1": "<br/>",
       "2": "<strong>Harmonie d'idéal</strong>",
-      "3": "Dans cet état, la Shogun Raiden utilisera son tachi au combat, tandis que ses attaques normales, chargées et plongeantes seront imprégnées de <electro>DGT Électro</electro> ne pouvant pas être enchantés. Lorsque de telles attaques touchent des ennemis, la Shogun restaure l'énergie élémentaire de tous les personnages de l'équipe à proximité. La restauration peut être déclenchée une fois toutes les secondes de cette façon, et un maximum de 5 fois pendant toute la durée de cette aptitude.",
+      "3": "Dans cet état, la Shogun Raiden utilisera son tachi au combat, tandis que ses attaques normales, chargées et plongeantes seront imprégnées de <electro>DGT Électro</electro> ne pouvant pas être enchantés. Lorsque de telles attaques touchent des ennemis, la Shogun restaure l'énergie élémentaire de tous les personnages de l'équipe à proximité. La restauration peut être déclenchée une fois toutes les secondes de cette manière, et un maximum de 5 fois pendant toute la durée de cette aptitude.",
       "4": "Dans cet état, la RÉS à l'interruption de la Shogun Raiden augmente, et elle est immunisée contre les <electro>Électrocutions</electro>.",
       "5": "Tant que l'Harmonie d'idéal est active, les DGT des attaques normales, chargées et plongeantes de la Shogun Raiden sont considérés comme étant des DGT de déchaînement élémentaire.",
       "6": "<br/>",
@@ -87,7 +87,7 @@
       "8": "<br/>",
       "9": "<strong>Chakra Desiderata</strong>",
       "10": "Lorsque les personnages de l'équipe à proximité utilisent un déchaînement élémentaire (hormis la Shogun Raiden), le Chakra Desiderata de la Shogun Raiden accumule de la résolution en fonction de l'énergie élémentaire consommée par le déchaînement.",
-      "11": "Il est possible de cumuler jusqu'à 60 charges de résolution.",
+      "11": "Il est possible d'obtenir jusqu'à 60 cumuls de résolution.",
       "12": "<br/>",
       "13": "La résolution obtenue par le Chakra Desiderata sera annulée après 300 s si la Shogun Raiden quitte le combat.",
       "14": "<br/>",
@@ -96,7 +96,7 @@
     "skillParams": {
       "0": "DGT de base Kendo d'idéal",
       "1": "Bonus de résolution",
-      "2": "Gain de charges de résolution",
+      "2": "Gain de cumuls de résolution",
       "3": "DGT 1er coup",
       "4": "DGT 2e coup",
       "5": "DGT 3e coup",
@@ -115,7 +115,7 @@
   "passive1": {
     "name": "Souhaits innombrables",
     "description": {
-      "0": "Lorsque les personnages de l'équipe à proximité obtiennent un orbe ou une particule élémentaire, le <strong>Chakra Desiderata</strong> accumule 2 charges de résolution.",
+      "0": "Lorsque les personnages de l'équipe à proximité obtiennent un orbe ou une particule élémentaire, le <strong>Chakra Desiderata</strong> obtient 2 cumuls de résolution.",
       "1": "Cet effet peut être déclenché une fois toutes les 3 s."
     }
   },

@@ -1,7 +1,7 @@
 {
   "name": "Mona",
   "title": "Astral Reflection",
-  "description": "Seorang astrolog yang menyebut dirinya sendiri sebagai \"Astrologist Mona Megistus\", dan memiliki kemampuan yang sesuai dengan julukannya. Kepandaiannya setara dengan keangkuhannya.",
+  "description": "Seorang astrolog yang menyebut dirinya sendiri sebagai \"Mona si Astrolog Hebat\", dan memiliki kemampuan yang sesuai dengan julukannya. Kepandaiannya setara dengan keangkuhannya.",
   "constellationName": "Astrolabos",
   "auto": {
     "name": "Ripple of Fate",
@@ -43,7 +43,7 @@
     "description": {
       "0": "Menciptakan bayangan ilusi nasib dari bunga air.",
       "1": "<br/>",
-      "2": "<strong>Bayangan</strong> tersebut mempunyai spesial efek seperti:",
+      "2": "<strong>Bayangan</strong> tersebut memiliki karakteristik sebagai berikut:",
       "3": [
         "Terus-menerus menarik perhatian musuh di sekitar."
       ],
@@ -53,7 +53,7 @@
       ],
       "6": "<br/>",
       "7": "<strong>Tahan</strong>",
-      "8": "Manfaatkan arus air untuk bergerak mundur dengan cepat sebelum memanggil bayangan.",
+      "8": "Memanfaatkan arus air untuk bergerak mundur dengan cepat sebelum memanggil bayangan.",
       "9": "<br/>",
       "10": "Hanya satu bayangan saja yang dapat dibuat oleh Mirror Reflection of Doom kapan pun juga.",
       "11": "<br/>",
@@ -124,7 +124,7 @@
       "3": "Saat berada di bawah pengaruh efek Illusory Torrent, Mona dapat bergerak dengan kecepatan tinggi di air.",
       "4": "Saat dia muncul kembali, akan menyebabkan efek <hydro>Wet</hydro> kepada musuh di sekitarnya.",
       "5": "<br/>",
-      "6": "<i>Ini adalah hal yang bisa dilakukan oleh Mona, namun gurunya tidak bisa melakukannya. Yah, namun demikian gurunya juga tidak akan mempelajari lebih lanjut mengenai Hydro Vision...</i>"
+      "6": "<i>Ini adalah hal yang bisa dilakukan oleh Mona, namun tidak bisa dilakukan oleh gurunya. Yah, namun demikian gurunya juga tidak akan mempelajari lebih lanjut mengenai Hydro Vision ...</i>"
     }
   },
   "passive1": {
@@ -189,7 +189,7 @@
     "name": "Rhetorics of Calamitas",
     "description": {
       "0": "Saat dalam kondisi <strong>Illusory Torrent</strong> setiap 1 detik gerakan, Charged Attack Mona meningkat 60%,",
-      "1": "Bonus DMG sampai 180% bertahan selama 8 detik."
+      "1": "Bonus DMG maksimum yang bisa didapatkan dengan cara ini adalah 180%, efek ini berlangsung selama 8 detik."
     }
   }
 }
