@@ -15,14 +15,14 @@ const transMulti1 = subscript(input.lvl, transformativeReactionLevelMultipliers,
 const transMulti2 = prod(16, frac(input.total.eleMas, 2000))
 const trans = {
   ...objectKeyMap(Object.keys(transformativeReactions), reaction => {
-    const { multi, variants: [ele] } = transformativeReactions[reaction]
+    const { multi, resist } = transformativeReactions[reaction]
     return infoMut(prod(
       prod(constant(multi, { key: `${reaction}_multi` }), transMulti1),
       sum(
         infoMut(sum(one, transMulti2), { pivot: true, key: "base_transformative_multi" }),
         input.total[`${reaction}_dmg_`]
       ),
-      input.enemy[`${ele}_resMulti`]
+      input.enemy[`${resist}_resMulti`]
     ), { key: `${reaction}_hit` })
   }),
   swirl: objectKeyMap(transformativeReactions.swirl.variants, ele => {
