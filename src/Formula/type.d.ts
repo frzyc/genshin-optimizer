@@ -1,5 +1,5 @@
 import type { KeyMapPrefix } from "../KeyMap"
-import type { AmplifyingReactionsKey, TransformativeReactionsKey } from "../KeyMap/StatConstants"
+import type { AdditiveReactionsKey, AmplifyingReactionsKey, TransformativeReactionsKey } from "../KeyMap/StatConstants"
 import type { ArtifactSetKey, CharacterKey, ElementKeyWithPhy, WeaponKey } from "../Types/consts"
 import type { input, uiInput } from "./index"
 
@@ -30,7 +30,7 @@ interface Info {
   fixed?: number
   isTeamBuff?: boolean
 }
-export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "heal" | "invalid"
+export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | AdditiveReactionsKey | "heal" | "invalid"
 
 interface Base {
   operands: readonly AnyNode[]

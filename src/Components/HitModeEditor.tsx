@@ -5,7 +5,8 @@ import { CharacterContext } from "../Context/CharacterContext";
 import { DataContext } from "../Context/DataContext";
 import { infusionNode } from "../Data/Characters/dataUtil";
 import { uiInput as input } from "../Formula";
-import { allHitModes, allowedAmpReactions, ElementKey } from "../Types/consts";
+import { AdditiveReactionKey, allAmpReactions, allHitModes, allowedAdditiveReactions, allowedAmpReactions, AmpReactionKey, ElementKey } from "../Types/consts";
+import AdditiveReactionModeText from "./AdditiveReactionModeText";
 import AmpReactionModeText from "./AmpReactionModeText";
 import DropdownButton, { DropdownButtonProps } from "./DropdownMenu/DropdownButton";
 import SolidToggleButtonGroup from "./SolidToggleButtonGroup";
@@ -36,13 +37,16 @@ export function ReactionToggle(props: ReactionToggleProps) {
   const { data } = useContext(DataContext)
   const charEleKey = data.get(input.charEle).value as ElementKey
   const infusion = data.get(infusionNode).value as ElementKey
-  const reactions = [...new Set([...allowedAmpReactions[charEleKey] ?? [], ...allowedAmpReactions[infusion] ?? []])]
+  const reactions = [...new Set([...allowedAmpReactions[charEleKey] ?? [], ...allowedAmpReactions[infusion] ?? [], ...allowedAdditiveReactions[charEleKey] ?? [], ...allowedAdditiveReactions[infusion] ?? []])]
   return <SolidToggleButtonGroup exclusive baseColor="secondary"
     value={reaction} onChange={(_, reaction) => characterDispatch({ reaction })} {...props}>
     <ToggleButton value="" disabled={!reaction} >{t`noReaction`}</ToggleButton >
     {reactions.map(rm =>
       <ToggleButton key={rm} value={rm} disabled={reaction === rm}>
-        <AmpReactionModeText reaction={rm} />
+        {([...allAmpReactions] as string[]).includes(rm)
+          ? <AmpReactionModeText reaction={rm as AmpReactionKey} />
+          : <AdditiveReactionModeText reaction={rm as AdditiveReactionKey} />
+        }
       </ToggleButton >)}
   </SolidToggleButtonGroup>
 }

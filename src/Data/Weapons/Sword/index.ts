@@ -21,6 +21,7 @@ import PrimordialJadeCutter from "./PrimordialJadeCutter"
 import PrototypeRancour from "./PrototypeRancour"
 import RoyalLongsword from "./RoyalLongsword"
 import SacrificialSword from "./SacrificialSword"
+import SapwoodBlade from "./SapwoodBlade"
 import SilverSword from "./SilverSword"
 import SkyriderSword from "./SkyriderSword"
 import SkywardBlade from "./SkywardBlade"
@@ -52,6 +53,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   PrototypeRancour,
   RoyalLongsword,
   SacrificialSword,
+  SapwoodBlade,
   SilverSword,
   SkyriderSword,
   SkywardBlade,

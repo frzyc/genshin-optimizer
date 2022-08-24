@@ -11,6 +11,6 @@ const elementalData: StrictDict<ElementKey | "physical", { name: string }> = {
   hydro: { name: "Hydro" },
   pyro: { name: "Pyro" },
   cryo: { name: "Cryo" },
-  // dendro: { name: "Dendro" }
+  dendro: { name: "Dendro" }
 }
 export default elementalData

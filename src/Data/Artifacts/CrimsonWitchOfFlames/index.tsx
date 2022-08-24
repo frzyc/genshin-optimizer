@@ -16,6 +16,7 @@ const pyro_dmg_info: Info = { key: "pyro_dmg_", variant: "pyro" }
 const set2 = greaterEq(input.artSet.CrimsonWitchOfFlames, 2, percent(0.15), pyro_dmg_info)
 const set4Overload = greaterEq(input.artSet.CrimsonWitchOfFlames, 4, percent(0.4))
 const set4Burning = { ...set4Overload }
+const set4Burgeon = { ...set4Overload }
 const set4Vape = greaterEq(input.artSet.CrimsonWitchOfFlames, 4, percent(0.15))
 const set4Melt = { ...set4Vape }
 const stackArr = range(1, 3)
@@ -32,6 +33,7 @@ export const data: Data = dataObjForArtifactSheet(key, {
     burning_dmg_: set4Burning,
     vaporize_dmg_: set4Vape,
     melt_dmg_: set4Melt,
+    burgeon_dmg_: set4Burgeon,
   },
 })
 
@@ -47,6 +49,8 @@ const sheet: IArtifactSheet = {
           node: set4Overload,
         }, {
           node: set4Burning,
+        }, {
+          node: set4Burgeon,
         }, {
           node: set4Vape,
         }, {

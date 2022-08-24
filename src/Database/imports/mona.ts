@@ -130,7 +130,7 @@ const ArtifactMainStatKeyMap: Dict<string, MainStatKey> = {
   "iceBonus": "cryo_dmg_",
   "windBonus": "anemo_dmg_",
   "rockBonus": "geo_dmg_",
-  // "grassBonus": "dendro_dmg_",  // the day will come...
+  "grassBonus": "dendro_dmg_",
   "physicalBonus": "physical_dmg_",
   // "bonus": "",
   // "aBonus": "",

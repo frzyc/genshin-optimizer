@@ -3,7 +3,7 @@ import { ascensionMaxLevel } from "../../Data/LevelData";
 import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
 import { allMainStatKeys, allSubstatKeys, IArtifact, ISubstat } from "../../Types/artifact";
 import { ICharacter } from "../../Types/character";
-import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allAmpReactions, allSlotKeys, allWeaponKeys } from "../../Types/consts";
+import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allAmpReactions, allSlotKeys, allWeaponKeys, allAdditiveReactions } from "../../Types/consts";
 import { IWeapon } from "../../Types/weapon";
 
 // MIGRATION STEP:
@@ -83,7 +83,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   if (!allHitModes.includes(hitMode)) hitMode = "avgHit"
   if (characterKey !== "Traveler") elementKey = undefined
   else if (!allElements.includes(elementKey)) elementKey = "anemo"
-  if (!allAmpReactions.includes(reaction)) reaction = undefined
+  if (!allAmpReactions.includes(reaction) && !allAdditiveReactions.includes(reaction)) reaction = undefined
   if (!allElements.includes(infusionAura)) infusionAura = ""
   if (typeof constellation !== "number" && constellation < 0 && constellation > 6) constellation = 0
   if (typeof ascension !== "number" ||

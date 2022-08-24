@@ -3,7 +3,7 @@ import { Translate } from "../Components/Translate";
 import { tally } from "../Formula";
 import { inferInfoMut } from "../Formula/api";
 import { UIData } from "../Formula/uiData";
-import { equal, greaterEq, percent, sum } from "../Formula/utils";
+import { equal, greaterEq, infoMut, percent, sum } from "../Formula/utils";
 import { allElements, allElementsWithPhy } from "../Types/consts";
 import { DocumentSection } from "../Types/sheet";
 import { objectKeyValueMap } from "../Util/Util";
@@ -55,7 +55,7 @@ const ferventFlames: IResonance = {
 }
 
 // Soothing Waters
-const swNode = greaterEq(teamSize, 4, greaterEq(tally.hydro, 2, percent(0.30)))
+const swNode = greaterEq(teamSize, 4, greaterEq(tally.hydro, 2, percent(0.25)))
 const soothingWaters: IResonance = {
   name: tr("SoothingWater.name"),
   desc: tr("SoothingWater.desc"),
@@ -187,6 +187,67 @@ const enduringRock: IResonance = {
   }]
 }
 
+// Sprawling Canopy
+const condSC2elePath = ["resonance", "SprawlingCanopy2ele"]
+const condSC2ele = condReadNode(condSC2elePath)
+const condSC3elePath = ["resonance", "SprawlingCanopy3ele"]
+const condSC3ele = condReadNode(condSC3elePath)
+const scBase_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, 80, { key: "eleMas" }))
+const sc2ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC2ele, "on", 30, { key: "eleMas" })))
+const sc3ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC3ele, "on", 30, { key: "eleMas" })))
+const sprawlingCanopy: IResonance = {
+  name: tr("SprawlingCanopy.name"),
+  desc: tr("SprawlingCanopy.desc"),
+  icon: <span>{StatIcon.dendro} {StatIcon.dendro}</span>,
+  canShow: (data: UIData) => data.get(tally.dendro).value >= 2 && data.get(teamSize).value >= 4,
+  sections: [{
+    teamBuff: true,
+    text: tr("SprawlingCanopy.desc"),
+    fields: [{ node: scBase_eleMas }]
+  }, {
+    teamBuff: true,
+    path: condSC2elePath,
+    value: condSC2ele,
+    header: {
+      title: tr("SprawlingCanopy.name"),
+      icon: StatIcon.dendro,
+    },
+    name: trm("SprawlingCanopy.cond2ele"),
+    states: {
+      on: {
+        fields: [{
+          node: sc2ele_eleMas
+        }, {
+          text: sgt("duration"),
+          value: 6,
+          unit: "s"
+        }]
+      }
+    }
+  }, {
+    teamBuff: true,
+    path: condSC3elePath,
+    value: condSC3ele,
+    header: {
+      title: tr("SprawlingCanopy.name"),
+      icon: StatIcon.dendro,
+    },
+    name: trm("SprawlingCanopy.cond3ele"),
+    states: {
+      on: {
+        fields: [{
+          node: sc3ele_eleMas
+        }, {
+          text: sgt("duration"),
+          value: 6,
+          unit: "s"
+        }]
+      }
+    }
+  }]
+}
+
+
 export const resonanceSheets: IResonance[] = [
   protectiveCanopy,
   ferventFlames,
@@ -195,19 +256,21 @@ export const resonanceSheets: IResonance[] = [
   highVoltage,
   impetuousWinds,
   enduringRock,
+  sprawlingCanopy,
 ]
 
 export const resonanceData = inferInfoMut({
   premod: {
     ...pcNodes,
     atk_: ffNode,
-    incHeal_: swNode,
+    hp_: swNode,
     staminaDec_: iwNodeStam,
     moveSPD_: iwNodeMove,
     cdRed_: iwNodeCD,
     shield_: erNodeshield_,
     all_dmg_: erNodeDMG_,
     geo_enemyRes_: erNodeRes_,
+    eleMas: infoMut(sum(scBase_eleMas, sc2ele_eleMas, sc3ele_eleMas), { pivot: true }),
   },
   total: {
     // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.

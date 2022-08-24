@@ -47,6 +47,7 @@
     "skillOrBurst": "After using Ele. Skill or Ele. Burst"
   },
   "afterSprint": "After Sprint",
+  "afterReaction": "After triggering an Elemental Reaction",
   "increase": {
     "atk": "ATK Increase"
   },

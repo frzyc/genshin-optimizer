@@ -33,7 +33,7 @@ artifactMainstatDataSrc.forEach(({ rank = 0, level, addProps }) => {
   addProps.forEach(({ propType, value }) => {
     // Main stat has these values, which we are not really using.
     //TODO: wtf is FIGHT_PROP_FIRE_SUB_HURT? burning reduction?
-    if (["FIGHT_PROP_FIRE_SUB_HURT", "FIGHT_PROP_GRASS_ADD_HURT", "FIGHT_PROP_DEFENSE"].includes(propType)) return
+    if (["FIGHT_PROP_FIRE_SUB_HURT", "FIGHT_PROP_DEFENSE"].includes(propType)) return
     if (Object.keys(MainPropMap).includes(propType))
       layeredAssignment(artifactMainstatData, [rank, propTypeMap[propType], level - 1], extrapolateFloat(value))
     else console.warn(`MainPropMap.${propType} is not a valid key.`);
