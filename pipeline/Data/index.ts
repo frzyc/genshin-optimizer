@@ -45,7 +45,7 @@ export const mapHashData = {
       name: 3018382842,
       desc: 1707021043
     },
-    SprawlingCanopy: {
+    SprawlingGreenery: {
       name: 1292621586,
       desc: 2900013027
     }
