@@ -38,10 +38,10 @@ export default function PageScanner() {
             </Box>
 
             <Typography variant="subtitle2" sx={{ display: "flex", gap: 1, py: 1, flexWrap: "wrap" }}>
-              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 1 }} />3.0</SqBadge>
-              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Computer sx={{ pr: 1 }} />{t("tags.pc") as string}</SqBadge>
-              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><SendToMobile sx={{ pr: 1 }} />{t("tags.mobile") as string}</SqBadge>
-              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><SportsEsports sx={{ pr: 1 }} />{t("tags.ps") as string}</SqBadge>
+              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.0</SqBadge>
+              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Computer sx={{ pr: 0.5 }} />{t("tags.pc") as string}</SqBadge>
+              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><SendToMobile sx={{ pr: 0.5 }} />{t("tags.mobile") as string}</SqBadge>
+              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><SportsEsports sx={{ pr: 0.5 }} />{t("tags.ps") as string}</SqBadge>
             </Typography>
             <Typography gutterBottom>{t("nb.p1") as string}</Typography>
             <Typography gutterBottom>{t("nb.p2") as string}</Typography>
@@ -61,12 +61,12 @@ export default function PageScanner() {
             </Box>
 
             <Typography variant="subtitle2" sx={{ display: "flex", gap: 1, py: 1, flexWrap: "wrap" }}>
-              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 1 }} />3.0</SqBadge>
-              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Computer sx={{ pr: 1 }} />{t("tags.pc") as string}</SqBadge>
-              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Backpack sx={{ pr: 1 }} />{t("tags.materials") as string}</SqBadge>
-              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><PersonSearch sx={{ pr: 1 }} />{t("tags.characters") as string}</SqBadge>
+              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.0</SqBadge>
+              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Computer sx={{ pr: 0.5 }} />{t("tags.pc") as string}</SqBadge>
+              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Backpack sx={{ pr: 0.5 }} />{t("tags.materials") as string}</SqBadge>
+              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><PersonSearch sx={{ pr: 0.5 }} />{t("tags.characters") as string}</SqBadge>
               <WarningWrapper>
-                <SqBadge color="warning" sx={{ display: "flex", alignItems: "center" }} ><Warning sx={{ pr: 1 }} />{t("tags.gameMani") as string}</SqBadge>
+                <SqBadge color="warning" sx={{ display: "flex", alignItems: "center" }} ><Warning sx={{ pr: 0.5 }} />{t("tags.gameMani") as string}</SqBadge>
               </WarningWrapper>
             </Typography>
             <Typography gutterBottom><Trans t={t} i18nKey="ik.p1">This light-weight app will scan all your characters + weapons + artifacts in your inventory. Follow the instrutions in the app to set it up.</Trans></Typography>
@@ -87,13 +87,13 @@ export default function PageScanner() {
             </Box>
 
             <Typography variant="subtitle2" sx={{ display: "flex", gap: 1, py: 1, flexWrap: "wrap" }}>
-              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 1 }} />3.0</SqBadge>
-              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Computer sx={{ pr: 1 }} />{t("tags.pc") as string}</SqBadge>
+              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.0</SqBadge>
+              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Computer sx={{ pr: 0.5 }} />{t("tags.pc") as string}</SqBadge>
               <WarningWrapper>
-                <SqBadge color="warning" sx={{ display: "flex", alignItems: "center" }} ><Warning sx={{ pr: 1 }} />{t("tags.gameMani") as string}</SqBadge>
+                <SqBadge color="warning" sx={{ display: "flex", alignItems: "center" }} ><Warning sx={{ pr: 0.5 }} />{t("tags.gameMani") as string}</SqBadge>
               </WarningWrapper>
             </Typography>
-            <Typography gutterBottom><Trans t={t} i18nKey="as.p1">Scans all your artifacts in inventory. Has a manual scanning mode.</Trans></Typography>
+            <Typography gutterBottom><Trans t={t} i18nKey="as.p1">Scans all artifacts in your inventory. Has a manual scanning mode.</Trans></Typography>
             <Typography gutterBottom><Trans t={t} i18nKey="as.p2">This scanner can also be configured for new artifacts in new game versions without needing an update.</Trans></Typography>
             <Typography gutterBottom><Trans t={t} i18nKey="goodeng">This scanner only scans in english, and exports to GOOD format.</Trans></Typography>
           </CardContent>
@@ -114,14 +114,14 @@ export default function PageScanner() {
             </Box>
 
             <Typography variant="subtitle2" sx={{ display: "flex", gap: 1, py: 1, flexWrap: "wrap" }}>
-              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 1 }} />2.7</SqBadge>
-              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Computer sx={{ pr: 1 }} />{t("tags.pc") as string}</SqBadge>
-              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Backpack sx={{ pr: 1 }} />{t("tags.materials") as string}</SqBadge>
+              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />2.7</SqBadge>
+              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Computer sx={{ pr: 0.5 }} />{t("tags.pc") as string}</SqBadge>
+              <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Backpack sx={{ pr: 0.5 }} />{t("tags.materials") as string}</SqBadge>
               <WarningWrapper>
-                <SqBadge color="warning" sx={{ display: "flex", alignItems: "center" }} ><Warning sx={{ pr: 1 }} />{t("tags.gameMani") as string}</SqBadge>
+                <SqBadge color="warning" sx={{ display: "flex", alignItems: "center" }} ><Warning sx={{ pr: 0.5 }} />{t("tags.gameMani") as string}</SqBadge>
               </WarningWrapper>
             </Typography>
-            <Typography gutterBottom><Trans t={t} i18nKey="am.p1">Scans all you artifacts in your inventory. Follow the instruction to capture the window and scan. Has both Chinese and English version. (Download the <code>_EN.exe</code> version to scan in english). Both the <code>mona-uranai</code> and <code>GOOD</code> format is accepted in GO. the <code>GOOD</code> format is recommended.</Trans></Typography>
+            <Typography gutterBottom><Trans t={t} i18nKey="am.p1">Scans all you artifacts in your inventory. Follow the instruction to capture the window and scan. Has both Chinese and English versions. (Download the <code>_EN.exe</code> version to scan in english). Both the <code>mona-uranai</code> and <code>GOOD</code> format is accepted in GO. The <code>GOOD</code> format is recommended.</Trans></Typography>
             <Typography gutterBottom><Trans t={t} i18nKey="am.p2">Beta version of this scanner can also scan materials for <Link href="https://seelie.me/" target="_blank" rel="noreferrer">Seelie.me</Link></Trans></Typography>
             <Typography gutterBottom><Trans t={t} i18nKey="am.p3">Please feel free to join their discord if you find any bugs. They are in need of more english testers.</Trans></Typography>
           </CardContent>
@@ -133,7 +133,7 @@ export default function PageScanner() {
 
 function WarningWrapper({ children }: { children: JSX.Element }) {
   const { t } = useTranslation('page_scanner')
-  return <Tooltip placement="top" title={<Typography><Trans t={t} i18nKey="tosWarn">As any tools that indirectly interact with the game, althought their usage is virtually undetectable, <Link color="inherit" href="https://genshin.mihoyo.com/en/news/detail/5763" target="_blank" rel="noreferrer">there could still be risk with using them.</Link> Users discretion is advised.</Trans></Typography>}>
+  return <Tooltip placement="top" title={<Typography><Trans t={t} i18nKey="tosWarn">As any tools that indirectly interact with the game, although their usage is virtually undetectable, <Link color="inherit" href="https://genshin.mihoyo.com/en/news/detail/5763" target="_blank" rel="noreferrer">there could still be risk with using them.</Link> Users discretion is advised.</Trans></Typography>}>
     {children}
   </Tooltip>
 }
