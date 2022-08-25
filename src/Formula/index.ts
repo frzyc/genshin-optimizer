@@ -1,17 +1,19 @@
 import { allEleEnemyResKeys } from "../KeyMap"
+import { transformativeReactionLevelMultipliers } from "../KeyMap/StatConstants"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
 import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
-import { constant, frac, lookup, max, min, naught, one, percent, prod, read, res, setReadNodeKeys, stringRead, sum, todo } from "./utils"
+import { constant, equal, frac, infoMut, lookup, max, min, naught, one, percent, prod, read, res, setReadNodeKeys, stringRead, subscript, sum, todo } from "./utils"
 
 const asConst = true as const, pivot = true as const
 
 const allElements = allElementsWithPhy
 const allTalents = ["auto", "skill", "burst"] as const
 const allMoves = ["normal", "charged", "plunging", "skill", "burst", "elemental"] as const
-const allArtModStats = ["hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "heal_"] as const
-const allTransformative = ["overloaded", "shattered", "electrocharged", "superconduct", "swirl"] as const
+const allArtModStats = ["hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "dendro_dmg_", "heal_"] as const
+const allTransformative = ["overloaded", "shattered", "electrocharged", "superconduct", "swirl", "burning", "bloom", "burgeon", "hyperbloom"] as const
 const allAmplifying = ["vaporize", "melt"] as const
+const allAdditive = ["spread", "aggravate"] as const
 const allMisc = [
   "stamina", "staminaDec_", "staminaSprintDec_", "staminaGlidingDec_", "staminaChargedDec_",
   "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_", "dmgRed_", "healInc"
@@ -19,7 +21,7 @@ const allMisc = [
 
 const allModStats = [
   ...allArtModStats,
-  ...(["all", "burning", ...allTransformative, ...allAmplifying, ...allMoves] as const).map(x => `${x}_dmg_` as const),
+  ...(["all", ...allTransformative, ...allAmplifying, ...allAdditive, ...allMoves] as const).map(x => `${x}_dmg_` as const),
 ] as const
 const allNonModStats = [
   ...allElements.flatMap(x => [
@@ -51,7 +53,7 @@ for (const ele of allElements) {
   allNonModStatNodes[`${ele}_dmgInc`].info!.variant = ele
   allModStatNodes[`${ele}_dmg_`].info!.variant = ele
 }
-for (const reaction of [...allTransformative, ...allAmplifying]) {
+for (const reaction of [...allTransformative, ...allAmplifying, ...allAdditive]) {
   allModStatNodes[`${reaction}_dmg_`].info!.variant = reaction
 }
 allNonModStatNodes.healInc.info!.variant = "heal"
@@ -121,10 +123,10 @@ const input = setReadNodeKeys(deepClone({
   hit: {
     reaction: stringRead(),
     ele: stringRead(), move: stringRead(), hitMode: stringRead(),
-    base: read("add", { key: "base" }), ampMulti: read(),
+    base: read("add", { key: "base" }), ampMulti: read(), addTerm: read(undefined, { pivot }),
 
     dmgBonus: read("add", { key: "dmg_", pivot }),
-    dmgInc: read("add", { key: "dmgInc", pivot }),
+    dmgInc: read("add", { key: "dmgInc" }),
     dmg: read(),
   },
 }))
@@ -146,7 +148,10 @@ total.critRate_.info!.prefix = "uncapped"
 // Nodes that are not used anywhere else but `common` below
 
 /** Base Amplifying Bonus */
-const baseAmpBonus = sum(one, prod(25 / 9, frac(total.eleMas, 1400)))
+const baseAmpBonus = infoMut(sum(one, prod(25 / 9, frac(total.eleMas, 1400))), { key: "base_amplifying_multi", pivot })
+
+/** Base Additive Bonus */
+const baseAddBonus = sum(one, prod(5, frac(total.eleMas, 1200)))
 
 const common: Data = {
   premod: {
@@ -200,10 +205,17 @@ const common: Data = {
       lookup(hit.ele, objectKeyMap(allElements, ele => total[`${ele}_dmg_`]), naught)
     ),
     dmgInc: sum(
-      total.all_dmgInc,
-      lookup(hit.ele, objectKeyMap(allElements, element => total[`${element}_dmgInc`]), NaN),
-      lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmgInc`]), NaN),
+      infoMut(sum(
+        total.all_dmgInc,
+        lookup(hit.ele, objectKeyMap(allElements, element => total[`${element}_dmgInc`]), NaN),
+        lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmgInc`]), NaN),
+      ), { key: "dmgInc", pivot }),
+      hit.addTerm,
     ),
+    addTerm: lookup(hit.reaction, {
+      spread: equal(hit.ele, "dendro", prod(subscript(input.lvl, transformativeReactionLevelMultipliers), 1.25, sum(baseAddBonus, total.spread_dmg_)), { key: "spread_dmgInc" }),
+      aggravate: equal(hit.ele, "electro", prod(subscript(input.lvl, transformativeReactionLevelMultipliers), 1.15, sum(baseAddBonus, total.aggravate_dmg_)), { key: "aggravate_dmgInc" }),
+    }, naught),
     dmg: prod(
       sum(hit.base, hit.dmgInc),
       sum(one, hit.dmgBonus),
@@ -221,11 +233,10 @@ const common: Data = {
       vaporize: lookup(hit.ele, {
         hydro: prod(2, sum(baseAmpBonus, total.vaporize_dmg_)),
         pyro: prod(1.5, sum(baseAmpBonus, total.vaporize_dmg_)),
-
       }, one),
       melt: lookup(hit.ele, {
-        pyro: prod(2, sum(baseAmpBonus, total.melt_dmg_)),
-        cryo: prod(1.5, sum(baseAmpBonus, total.melt_dmg_)),
+        pyro: prod(constant(2, { key: "melt_multi", variant: "melt" }), sum(baseAmpBonus, total.melt_dmg_)),
+        cryo: prod(constant(1.5, { key: "melt_multi", variant: "melt" }), sum(baseAmpBonus, total.melt_dmg_)),
       }, one),
     }, one),
   },

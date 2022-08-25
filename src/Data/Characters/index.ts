@@ -9,6 +9,7 @@ import Barbara from './Barbara'
 import Beidou from './Beidou'
 import Bennett from './Bennett'
 import Chongyun from './Chongyun'
+import Collei from './Collei'
 import Diluc from './Diluc'
 import Diona from './Diona'
 import Eula from './Eula'
@@ -40,6 +41,7 @@ import ShikanoinHeizou from "./ShikanoinHeizou"
 import Sucrose from "./Sucrose"
 import Tartaglia from './Tartaglia'
 import Thoma from './Thoma'
+import Tighnari from './Tighnari'
 import Traveler from './Traveler'
 import Venti from './Venti'
 import Xiangling from './Xiangling'
@@ -62,6 +64,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Beidou,
   Bennett,
   Chongyun,
+  Collei,
   Diluc,
   Diona,
   Eula,
@@ -93,6 +96,7 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Sucrose,
   Tartaglia,
   Thoma,
+  Tighnari,
   Traveler,
   Venti,
   Xiangling,

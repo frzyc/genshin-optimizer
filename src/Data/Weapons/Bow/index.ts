@@ -11,6 +11,8 @@ import FadingTwilight from "./FadingTwilight"
 import FavoniusWarbow from './FavoniusWarbow'
 import Hamayumi from './Hamayumi'
 import HuntersBow from "./HuntersBow"
+import HuntersPath from './HuntersPath'
+import KingsSquire from './KingsSquire'
 import Messenger from './Messenger'
 import MitternachtsWaltz from './MitternachtsWaltz'
 import MouunsMoon from './MouunsMoon'
@@ -29,6 +31,7 @@ import Slingshot from './Slingshot'
 import TheStringless from './TheStringless'
 import TheViridescentHunt from './TheViridescentHunt'
 import ThunderingPulse from './ThunderingPulse'
+import EndOfTheLine from './EndOfTheLine'
 import WindblumeOde from './WindblumeOde'
 
 const bow: Record<WeaponBowKey, WeaponSheet> = {
@@ -42,6 +45,8 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   FavoniusWarbow,
   Hamayumi,
   HuntersBow,
+  HuntersPath,
+  KingsSquire,
   Messenger,
   MitternachtsWaltz,
   MouunsMoon,
@@ -60,6 +65,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   TheStringless,
   TheViridescentHunt,
   ThunderingPulse,
+  EndOfTheLine,
   WindblumeOde,
 } as const
 export default bow

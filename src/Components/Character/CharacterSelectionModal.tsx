@@ -79,14 +79,14 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
   return <ModalWrapper open={show} onClose={onHide} sx={{ "& .MuiContainer-root": { justifyContent: "normal" } }}>
     <CardDark>
       <CardContent sx={{ py: 1 }}>
-        <Grid container spacing={1} >
+        <Grid container spacing={1} flexWrap="nowrap" >
           <Grid item>
             <WeaponToggle sx={{ height: "100%" }} onChange={setweaponFilter} value={weaponFilter} size="small" />
           </Grid>
           <Grid item>
             <ElementToggle sx={{ height: "100%" }} onChange={setelementalFilter} value={elementalFilter} size="small" />
           </Grid>
-          <Grid item>
+          <Grid item flexShrink={2}>
             <TextField
               autoFocus
               value={searchTerm}
@@ -99,8 +99,6 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
               }}
             />
           </Grid>
-
-          <Grid item flexGrow={1} />
 
           <Grid item >
             <SortByButton sx={{ height: "100%" }}

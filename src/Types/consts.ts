@@ -1,11 +1,12 @@
 export const allHitModes = ["hit", "avgHit", "critHit"] as const
 export const allRegions = ["mondstadt", "liyue", "inazuma", "sumeru", "fontaine", "natlan", "snezhnaya", "khaenriah"] as const
 export const allAmpReactions = ["vaporize", "melt",] as const
+export const allAdditiveReactions = ["spread", "aggravate"] as const
 export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
 export const allRarities = [5, 4, 3, 2, 1] as const
 export const allArtifactRarities = [5, 4, 3] as const
 export const allSlotKeys = ["flower", "plume", "sands", "goblet", "circlet"] as const
-export const allElements = ['anemo', 'geo', 'electro', 'hydro', 'pyro', 'cryo'] as const
+export const allElements = ['anemo', 'geo', 'electro', 'hydro', 'pyro', 'cryo', 'dendro'] as const
 export const allElementsWithPhy = ["physical", ...allElements] as const
 export const allInfusionAuraElements = ["pyro", 'cryo'] as const
 export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'] as const
@@ -20,10 +21,12 @@ export const allArtifactSets = [
   "BloodstainedChivalry",
   "BraveHeart",
   "CrimsonWitchOfFlames",
+  "DeepwoodMemories",
   "DefendersWill",
   "EchoesOfAnOffering",
   "EmblemOfSeveredFate",
   "Gambler",
+  "GildedDreams",
   "GladiatorsFinale",
   "HeartOfDepth",
   "HuskOfOpulentDreams",
@@ -105,6 +108,8 @@ export const allCharacterKeys = [
   "KamisatoAyato",
   "Yelan",
   "ShikanoinHeizou",
+  "Collei",
+  "Tighnari",
 ] as const
 
 export const allWeaponSwordKeys = [
@@ -129,6 +134,7 @@ export const allWeaponSwordKeys = [
   "PrototypeRancour",
   "RoyalLongsword",
   "SacrificialSword",
+  "SapwoodBlade",
   "SilverSword",
   "SkyriderSword",
   "SkywardBlade",
@@ -148,6 +154,7 @@ export const allWeaponClaymoreKeys = [
   "DebateClub",
   "FavoniusGreatsword",
   "FerrousShadow",
+  "ForestRegalia",
   "KatsuragikiriNagamasa",
   "LithicBlade",
   "LuxuriousSeaLord",
@@ -186,6 +193,7 @@ export const allWeaponPolearmKeys = [
   "IronPoint",
   "KitainCrossSpear",
   "LithicSpear",
+  "Moonpiercer",
   "PrimordialJadeWingedSpear",
   "PrototypeStarglitter",
   "RoyalSpear",
@@ -209,6 +217,8 @@ export const allWeaponBowKeys = [
   "FavoniusWarbow",
   "Hamayumi",
   "HuntersBow",
+  "HuntersPath",
+  "KingsSquire",
   "Messenger",
   "MitternachtsWaltz",
   "MouunsMoon",
@@ -227,6 +237,7 @@ export const allWeaponBowKeys = [
   "TheStringless",
   "TheViridescentHunt",
   "ThunderingPulse",
+  "EndOfTheLine",
   "WindblumeOde",
 ] as const
 export type WeaponBowKey = typeof allWeaponBowKeys[number]
@@ -240,6 +251,7 @@ export const allWeaponCatalystKeys = [
   "EyeOfPerception",
   "FavoniusCodex",
   "Frostbearer",
+  "FruitOfFulfillment",
   "HakushinRing",
   "KagurasVerity",
   "LostPrayerToTheSacredWinds",
@@ -270,11 +282,12 @@ export const allWeaponKeys = [
 ] as const
 export type WeaponKey = WeaponSwordKey | WeaponClaymoreKey | WeaponPoleArmKey | WeaponBowKey | WeaponCatalystKey
 
-export const characterSpecializedStatKeys = ["hp_", "atk_", "def_", "eleMas", "enerRech_", "heal_", "critRate_", "critDMG_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_"] as const
+export const characterSpecializedStatKeys = ["hp_", "atk_", "def_", "eleMas", "enerRech_", "heal_", "critRate_", "critDMG_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_", "dendro_dmg_"] as const
 
 export type HitModeKey = typeof allHitModes[number]
 export type Region = typeof allRegions[number]
 export type AmpReactionKey = typeof allAmpReactions[number]
+export type AdditiveReactionKey = typeof allAdditiveReactions[number]
 export type SetNum = typeof allArtifactSetCount[number]
 export type Rarity = typeof allRarities[number]
 export type ArtifactRarity = typeof allArtifactRarities[number]
@@ -295,4 +308,9 @@ export const allowedAmpReactions: Dict<ElementKey, AmpReactionKey[]> = {
   hydro: ["vaporize"],
   cryo: ["melt"],
   anemo: ["vaporize", "melt"],
+}
+export const allowedAdditiveReactions: Dict<ElementKey, AdditiveReactionKey[]> = {
+  dendro: ["spread"],
+  electro: ["aggravate"],
+  anemo: ["aggravate"],
 }

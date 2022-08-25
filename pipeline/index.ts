@@ -10,7 +10,8 @@ export const tagColor = {
   "99FFFFFF": "cryo",
   "80C0FFFF": "hydro",
   "FF9999FF": "pyro",
-  "FFACFFFF": "electro"
+  "FFACFFFF": "electro",
+  "99FF88FF": "dendro",
 } as const
 export type ColorTag = typeof tagColor[keyof typeof tagColor]
 
@@ -72,6 +73,8 @@ export const characterIdMap = {
   10000064: "YunJin",
   10000065: "KukiShinobu",
   10000066: "KamisatoAyato",
+  10000067: "Collei",
+  10000069: "Tighnari",
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",
@@ -112,6 +115,7 @@ export const weaponIdMap = {
   11414: "AmenomaKageuchi",
   11415: "CinnabarSpindle",
   11416: "KagotsurubeIsshin",
+  11417: "SapwoodBlade",
   11501: "AquilaFavonia",
   11502: "SkywardBlade",
   11503: "FreedomSworn",
@@ -146,6 +150,7 @@ export const weaponIdMap = {
   12412: "LuxuriousSeaLord",
   12414: "KatsuragikiriNagamasa",
   12416: "Akuoumaru",
+  12417: "ForestRegalia",
   12501: "SkywardPride",
   12502: "WolfsGravestone",
   12503: "SongOfBrokenPines",
@@ -174,6 +179,7 @@ export const weaponIdMap = {
   13414: "KitainCrossSpear",
   13415: "TheCatch",
   13416: "WavebreakersFin",
+  13417: "Moonpiercer",
   13501: "StaffOfHoma",
   13502: "SkywardSpine",
   // 13503: "",
@@ -207,6 +213,7 @@ export const weaponIdMap = {
   14413: "DodocoTales",
   14414: "HakushinRing",
   14415: "OathswornEye",
+  14417: "FruitOfFulfillment",
   14501: "SkywardAtlas",
   14502: "LostPrayerToTheSacredWinds",
   // 14503: "Lost Ballade",
@@ -242,6 +249,8 @@ export const weaponIdMap = {
   15414: "Hamayumi",
   15415: "Predator",
   15416: "MouunsMoon",
+  15417: "KingsSquire",
+  15418: "EndOfTheLine",
   15501: "SkywardHarp",
   15502: "AmosBow",
   15503: "ElegyForTheEnd",
@@ -251,6 +260,7 @@ export const weaponIdMap = {
   15507: "PolarStar",
   15508: "AquaSimulacra",
   15509: "ThunderingPulse",
+  15511: "HuntersPath",
 
 } as const
 export type WeaponId = keyof typeof weaponIdMap
@@ -306,6 +316,8 @@ export const artifactIdMap = {
   15022: "OceanHuedClam",
   15023: "VermillionHereafter",
   15024: "EchoesOfAnOffering",
+  15025: "DeepwoodMemories",
+  15026: "GildedDreams",
 } as const
 
 export const artifactSlotMap = {
@@ -343,7 +355,7 @@ export const MainPropMap = {
   FIGHT_PROP_WATER_ADD_HURT: "hydro_dmg_",
   FIGHT_PROP_ICE_ADD_HURT: "cryo_dmg_",
   FIGHT_PROP_WIND_ADD_HURT: "anemo_dmg_",
-  // FIGHT_PROP_GRASS_ADD_HURT: "dendro_dmg_"
+  FIGHT_PROP_GRASS_ADD_HURT: "dendro_dmg_"
   // FIGHT_PROP_FIRE_SUB_HURT:"" //
 } as const
 export type MainStatKey = typeof MainPropMap[keyof typeof MainPropMap]

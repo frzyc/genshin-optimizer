@@ -6,6 +6,7 @@ import BloodtaintedGreatsword from "./BloodtaintedGreatsword"
 import DebateClub from "./DebateClub"
 import FavoniusGreatsword from "./FavoniusGreatsword"
 import FerrousShadow from "./FerrousShadow"
+import ForestRegalia from "./ForestRegalia"
 import KatsuragikiriNagamasa from "./KatsuragikiriNagamasa"
 import LithicBlade from "./LithicBlade"
 import LuxuriousSeaLord from "./LuxuriousSeaLord"
@@ -33,6 +34,7 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   DebateClub,
   FavoniusGreatsword,
   FerrousShadow,
+  ForestRegalia,
   KatsuragikiriNagamasa,
   LithicBlade,
   LuxuriousSeaLord,

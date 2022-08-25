@@ -18,7 +18,7 @@ const ArtifactSubstatRollData: StrictDict<Rarity, { low: number, high: number, n
 export const artifactSandsStatKeys = ["hp_", "def_", "atk_", "eleMas", "enerRech_"] as const
 export type ArtifactSandsStatKey = typeof artifactSandsStatKeys[number]
 
-export const artifactGobletStatKeys = ["hp_", "def_", "atk_", "eleMas", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_",] as const
+export const artifactGobletStatKeys = ["hp_", "def_", "atk_", "eleMas", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_", "dendro_dmg_"] as const
 export type ArtifactGobletStatKey = typeof artifactGobletStatKeys[number]
 
 export const artifactCircletStatKeys = ["hp_", "def_", "atk_", "eleMas", "critRate_", "critDMG_", "heal_"] as const

@@ -178,7 +178,7 @@ function KeyNamingPane() {
 
 function StatKeyPane() {
   // const { t } = useTranslation()
-  const statKeys = ["hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "heal_", "critRate_", "critDMG_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_"] as const
+  const statKeys = ["hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "heal_", "critRate_", "critDMG_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_", "dendro_dmg_"] as const
   const statKeysCode = `type StatKey\n  = ${statKeys.map(k => `"${k}" //${KeyMap.getArtStr(k)}`).join(`\n  | `)}`
   return <>
     <Typography gutterBottom variant="h4">StatKey</Typography>

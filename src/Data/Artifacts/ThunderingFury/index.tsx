@@ -13,6 +13,8 @@ const set2 = greaterEq(input.artSet.ThunderingFury, 2, percent(0.15))
 const overloaded_dmg_ = greaterEq(input.artSet.ThunderingFury, 4, percent(0.40))
 const electrocharged_dmg_ = { ...overloaded_dmg_ }
 const superconduct_dmg_ = { ...overloaded_dmg_ }
+const hyperbloom_dmg_ = { ...overloaded_dmg_ }
+const aggravate_dmg_ = greaterEq(input.artSet.ThunderingFury, 4, percent(0.20))
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
@@ -20,6 +22,8 @@ export const data: Data = dataObjForArtifactSheet(key, {
     overloaded_dmg_,
     electrocharged_dmg_,
     superconduct_dmg_,
+    hyperbloom_dmg_,
+    aggravate_dmg_
   },
 })
 
@@ -37,6 +41,10 @@ const sheet: IArtifactSheet = {
           node: electrocharged_dmg_,
         }, {
           node: superconduct_dmg_,
+        }, {
+          node: hyperbloom_dmg_,
+        }, {
+          node: aggravate_dmg_,
         }]
       }]
     }

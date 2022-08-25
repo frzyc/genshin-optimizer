@@ -1,7 +1,7 @@
 import { WeaponData } from 'pipeline'
 import ColorText from '../../../../Components/ColoredText'
 import { input } from '../../../../Formula'
-import { equal, lookup, naught, subscript, unequal } from '../../../../Formula/utils'
+import { equal, subscript, unequal } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { cond, sgt, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
@@ -22,8 +22,9 @@ const cryo_dmg_ = unequal(input.activeCharKey, input.charKey, equal("cryo", cond
 const geo_dmg_ = unequal(input.activeCharKey, input.charKey, equal("geo", condPassive, eleDmg))
 const hydro_dmg_ = unequal(input.activeCharKey, input.charKey, equal("hydro", condPassive, eleDmg))
 const pyro_dmg_ = unequal(input.activeCharKey, input.charKey, equal("pyro", condPassive, eleDmg))
+const dendro_dmg_= unequal(input.activeCharKey, input.charKey, equal("dendro", condPassive, eleDmg))
 
-const electro_dmg_ = unequal(input.activeCharKey, input.charKey, lookup(condPassive, { "anemo": eleDmg, "cryo": eleDmg, "geo": eleDmg, "hydro": eleDmg, "pyro": eleDmg }, naught))
+const electro_dmg_ = unequal(input.activeCharKey, input.charKey, unequal(condPassive, undefined, eleDmg))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   teamBuff: {
@@ -34,6 +35,7 @@ const data = dataObjForWeaponSheet(key, data_gen, {
       geo_dmg_,
       hydro_dmg_,
       pyro_dmg_,
+      dendro_dmg_,
     }
   }
 })
@@ -101,6 +103,19 @@ const sheet: IWeaponSheet = {
         name: <ColorText color="electrocharged">{sgt("reaction.electrocharged")}</ColorText>,
         fields: [{
           node: hydro_dmg_
+        }, {
+          node: electro_dmg_
+        }, {
+          text: sgt("duration"),
+          value: 6,
+          unit: "s"
+        }]
+      },
+      dendro: {
+        // maybe TODO: Change this to Catalyze
+        name: <ColorText color="aggravate">{sgt("reaction.aggravate")}</ColorText>,
+        fields: [{
+          node: dendro_dmg_
         }, {
           node: electro_dmg_
         }, {
