@@ -47,7 +47,6 @@
     "mefficiency": "Maximum RV",
     "probability": "Roll Probability"
   },
-  "updatedfor": "Updated for {{version}}",
   "delete": "Delete",
   "locked": "Locked",
   "unlocked": "Unlocked",
