@@ -192,9 +192,9 @@ const condSC2elePath = ["resonance", "SprawlingCanopy2ele"]
 const condSC2ele = condReadNode(condSC2elePath)
 const condSC3elePath = ["resonance", "SprawlingCanopy3ele"]
 const condSC3ele = condReadNode(condSC3elePath)
-const scBase_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, 80, { key: "eleMas" }))
+const scBase_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, 50, { key: "eleMas" }))
 const sc2ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC2ele, "on", 30, { key: "eleMas" })))
-const sc3ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC3ele, "on", 30, { key: "eleMas" })))
+const sc3ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC3ele, "on", 20, { key: "eleMas" })))
 const sprawlingCanopy: IResonance = {
   name: tr("SprawlingCanopy.name"),
   desc: tr("SprawlingCanopy.desc"),
