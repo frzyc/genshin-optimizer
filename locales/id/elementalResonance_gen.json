@@ -27,7 +27,7 @@
     "name": "Enduring Rock",
     "desc": "Meningkatkan 15% kekuatan perisai. Selain itu, karakter yang sedang dilindungi perisai akan mendapatkan efek berikut: Meningkatkan 15% DMG; Saat karakter mengakibatkan DMG terhadap musuh, mengurangi 20% Geo RES musuh selama 15 detik."
   },
-  "SprawlingCanopy": {
+  "SprawlingGreenery": {
     "name": "Sprawling Greenery",
     "desc": "Elemental Mastery meningkat 50. Setelah memicu reaksi Burning, Quicken, atau Bloom, seluruh anggota party di sekitar akan mendapatkan 30 Elemental Mastery selama 6 detik. Setelah memicu reaksi Aggravate, Spread, Hyperbloom, atau Burgeon, seluruh anggota party di sekitar akan mendapatkan 20 Elemental Mastery selama 6 detik. Durasi dari efek yang disebutkan di atas akan dihitung secara terpisah."
   }

@@ -27,7 +27,7 @@
     "name": "Roca resistente",
     "desc": "La Protección de Escudo aumenta en un 15%. Cuando un personaje está protegido por un escudo, inflige un 15% más de daño. Al causar daño contra un enemigo, la RES Geo de dicho enemigo se reduce en un 20% durante 15 s."
   },
-  "SprawlingCanopy": {
+  "SprawlingGreenery": {
     "name": "Planta trepadora",
     "desc": "La Maestría Elemental aumenta en 50 pts. Tras causar una reacción de Quemadura, Aceleración o Florecimiento, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 30 pts. durante 6 s. Tras causar una reacción de Intensificación, Propagación, Sobreflorecimiento o Crepitar, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 20 pts. durante 6 s. La duración de estos efectos se calcula de manera independiente."
   }

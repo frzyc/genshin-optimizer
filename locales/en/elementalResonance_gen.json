@@ -27,7 +27,7 @@
     "name": "Enduring Rock",
     "desc": "Increases shield strength by 15%. Additionally, characters protected by a shield will have the following special characteristics: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s."
   },
-  "SprawlingCanopy": {
+  "SprawlingGreenery": {
     "name": "Sprawling Greenery",
     "desc": "Elemental Mastery increased by 50. After triggering Burning, Quicken, or Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently."
   }

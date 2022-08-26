@@ -27,7 +27,7 @@
     "name": "Roc inamovible",
     "desc": "Augmente la force du bouclier de 15 %. De plus, lorsqu'un personnage est sous la protection du bouclier, les effets suivants s'appliquent : les DGT infligés par le personnage augmentent de 15 % ; la RÉS Géo de l'ennemi diminue de 20 % pendant 15 s lorsqu'il subit des DGT de la part du personnage."
   },
-  "SprawlingCanopy": {
+  "SprawlingGreenery": {
     "name": "Plante grimpante",
     "desc": "Augmente la maîtrise élémentaire de 50 pts. Après avoir déclenché une réaction de Brûlure, de Stimulation ou de Fleurissement, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 30 pts pendant 6 s. Après avoir déclenché une réaction de Suractivation, de Propagation, d'Exubérance ou de Bourgeonnement, la maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 20 pts pendant 6 s. La durée de ces effets est calculée indépendamment."
   }
