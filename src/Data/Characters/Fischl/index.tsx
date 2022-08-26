@@ -96,7 +96,7 @@ const dmgFormulas = {
     dmg: greaterEq(input.asc, 4, customDmgNode(prod(input.total.atk, percent(datamine.passive2.dmg)), "skill", { hit: { ele: constant('electro') } }))
   },
   constellation1: {
-    dmg: greaterEq(input.constellation, 1, customDmgNode(prod(input.total.atk, percent(datamine.constellation1.dmg)), "elemental", { hit: { ele: constant('physical') } }))
+    dmg: greaterEq(input.constellation, 1, customDmgNode(prod(input.total.atk, percent(datamine.constellation1.dmg)), "normal", { hit: { ele: constant('physical') } }))
   }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)

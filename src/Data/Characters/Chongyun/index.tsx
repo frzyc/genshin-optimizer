@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input, target } from '../../../Formula'
-import { constant, equal, equalStr, greaterEq, infoMut, lookup, percent, prod } from '../../../Formula/utils'
+import { constant, equal, equalStr, greaterEq, infoMut, lookup, percent, prod, subscript } from '../../../Formula/utils'
 import { CharacterKey, ElementKey, WeaponTypeKey } from '../../../Types/consts'
 import { cond, st, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
@@ -39,7 +39,7 @@ const datamine = {
   },
   skill: {
     dmg: skillParam_gen.skill[s++],
-    infusionDuration: skillParam_gen.skill[s++][0],
+    infusionDuration: skillParam_gen.skill[s++],
     cd: skillParam_gen.skill[s++][0],
     fieldDuration: skillParam_gen.skill[s++][0],
   },
@@ -212,8 +212,9 @@ const sheet: ICharacterSheet = {
               variant: elementKey
             }, {
               text: tr("skill.skillParams.1"),
-              value: datamine.skill.infusionDuration,
-              unit: "s"
+              value: (data) => data.get(subscript(input.total.skillIndex, datamine.skill.infusionDuration)).value,
+              unit: "s",
+              fixed: 1
             }, {
               node: infoMut(nodeAsc1Disp, { key: "atkSPD_" })
             }]

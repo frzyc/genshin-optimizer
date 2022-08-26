@@ -192,27 +192,27 @@ const condSC2elePath = ["resonance", "SprawlingCanopy2ele"]
 const condSC2ele = condReadNode(condSC2elePath)
 const condSC3elePath = ["resonance", "SprawlingCanopy3ele"]
 const condSC3ele = condReadNode(condSC3elePath)
-const scBase_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, 80, { key: "eleMas" }))
+const scBase_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, 50, { key: "eleMas" }))
 const sc2ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC2ele, "on", 30, { key: "eleMas" })))
-const sc3ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC3ele, "on", 30, { key: "eleMas" })))
-const sprawlingCanopy: IResonance = {
-  name: tr("SprawlingCanopy.name"),
-  desc: tr("SprawlingCanopy.desc"),
+const sc3ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC3ele, "on", 20, { key: "eleMas" })))
+const sprawlingGreenery: IResonance = {
+  name: tr("SprawlingGreenery.name"),
+  desc: tr("SprawlingGreenery.desc"),
   icon: <span>{StatIcon.dendro} {StatIcon.dendro}</span>,
   canShow: (data: UIData) => data.get(tally.dendro).value >= 2 && data.get(teamSize).value >= 4,
   sections: [{
     teamBuff: true,
-    text: tr("SprawlingCanopy.desc"),
+    text: tr("SprawlingGreenery.desc"),
     fields: [{ node: scBase_eleMas }]
   }, {
     teamBuff: true,
     path: condSC2elePath,
     value: condSC2ele,
     header: {
-      title: tr("SprawlingCanopy.name"),
+      title: tr("SprawlingGreenery.name"),
       icon: StatIcon.dendro,
     },
-    name: trm("SprawlingCanopy.cond2ele"),
+    name: trm("SprawlingGreenery.cond2ele"),
     states: {
       on: {
         fields: [{
@@ -229,10 +229,10 @@ const sprawlingCanopy: IResonance = {
     path: condSC3elePath,
     value: condSC3ele,
     header: {
-      title: tr("SprawlingCanopy.name"),
+      title: tr("SprawlingGreenery.name"),
       icon: StatIcon.dendro,
     },
-    name: trm("SprawlingCanopy.cond3ele"),
+    name: trm("SprawlingGreenery.cond3ele"),
     states: {
       on: {
         fields: [{
@@ -256,7 +256,7 @@ export const resonanceSheets: IResonance[] = [
   highVoltage,
   impetuousWinds,
   enduringRock,
-  sprawlingCanopy,
+  sprawlingGreenery,
 ]
 
 export const resonanceData = inferInfoMut({
