@@ -1,3 +1,4 @@
+import iGLPK, { GLPK, LP } from "glpk.js";
 import Artifact from "../../../../Data/Artifacts/Artifact";
 import { input } from "../../../../Formula";
 import { computeUIData } from "../../../../Formula/api";
@@ -7,9 +8,8 @@ import { allOperations, precompute } from "../../../../Formula/optimization";
 import { Data, NumNode, StrNode } from "../../../../Formula/type";
 import { constant, prod, setReadNodeKeys, sum } from "../../../../Formula/utils";
 import { allMainStatKeys, allSubstatKeys, ICachedArtifact } from "../../../../Types/artifact";
-import { assertUnreachable, crawlObject, deepClone, layeredAssignment, objectKeyMap, objectMap, objPathValue } from "../../../../Util/Util";
+import { assertUnreachable, deepClone, objectKeyMap, objectMap } from "../../../../Util/Util";
 import { ArtifactBuildData, ArtifactsBySlot, computeNodeRange, DynMinMax, DynStat, MinMax } from "./common";
-import iGLPK, { GLPK, LP } from "glpk.js"
 
 const glpkPromise = (iGLPK as any)() as Promise<GLPK>
 
@@ -70,105 +70,65 @@ export function debugCompute(nodes: NumNode[], base: DynStat, arts: ArtifactBuil
 export async function linearUpperBound(poly: NumNode, artRange: DynMinMax): Promise<{ [key in string]: number }> {
   /**
    * We first compute the monomials found in each node and store them in `term`.
-   * Each `object` represents the monomials as key paths to the an empty object.
-   * E.g., an obj `{ a: { b: {}, c: {} } }` represents a polynomial of the form
-   * `f1(a, b), f2(a, b)` where `f1` and `f2` are some polynomial functions.
+   * Monomials are represented using one-hot encoding, e.g., given variables
+   * [a, b, c], a value [1 << 2, (1 << 0 | 1 << 1)] represents a polynomial of
+   * the form `f1(c), f2(a, b)` where `f1` and `f2` are some polynomial functions.
    */
 
-  const terms = new Map<NumNode | StrNode, object>(), atoms = new Set<string>()
-  function addInplace(a_out: any, b: any): any {
-    for (const [key, value] of Object.entries(b)) {
-      if (key in a_out) {
-        const obj = { ...a_out[key] }
-        a_out[key] = obj
-        addInplace(obj, value)
-      } else a_out[key] = value
-    }
-    return a_out
-  }
-  function mul(a: any, b: any): any {
-    const result: any = {}
-    crawlObject(a, undefined, x => !Object.keys(x).length, (_, pathA) => {
-      crawlObject(b, undefined, x => !Object.keys(x).length, (_, pathB) => {
-        const path = [...new Set([...pathA, ...pathB])].sort(), old = objPathValue(result, path)
-        if (!old) layeredAssignment(result, path, {})
-      })
-    })
-    return result
-  }
+  const bounds = Object.entries(artRange), ids = objectMap(artRange, (_, _k, i) => BigInt(1) << BigInt(i))
+  const terms = new Map<NumNode | StrNode, Set<bigint>>()
   forEachNodes([poly], _ => { }, f => {
     const { operation, operands } = f
     switch (operation) {
-      case "const": terms.set(f, {}); break
-      case "read": terms.set(f, { [f.path[1]]: {} }); atoms.add(f.path[1]); break
-      case "add": terms.set(f, operands.map(x => terms.get(x)!).reduce(addInplace, {})); break
-      case "mul": terms.set(f, operands.map(x => terms.get(x)!).reduce(mul, {})); break
+      case "const": terms.set(f, new Set([BigInt(0)])); break
+      case "read": terms.set(f, new Set([ids[f.path[1]]!])); break
+      case "add": terms.set(f, new Set(operands.flatMap(x => [...terms.get(x)!]))); break
+      case "mul": terms.set(f, new Set(operands.reduce((a, x) => a.flatMap(a => [...terms.get(x)!].map(b => a | b)), [BigInt(0)]))); break
       default: throw new Error(`Found unsupported ${operation} node when computing linear upperbound group`)
     }
   })
 
   /**
    * From the list of monomials, find the corners of the hypercube involving
-   * each variable in the monomial, subjected to `artRange` bounds. We then optimize
+   * each variable in the monomial, subjected to `artRange` bounds. We then
    *
-   *   minimize error over A, c
+   *   minimize error over A, c, error
    *   s.t. error + poly(X) >= Ax + c >= poly(X) for each corner X
    *
    * This gives Ax + c as a linear upperbound in the region dictated by `artRange`.
    */
-  const glpk = await glpkPromise
-  const problem: LP = {
+  const glpk = await glpkPromise, problem: LP = {
     name: "LP",
-    objective: {
-      direction: glpk.GLP_MIN,
-      name: "obj",
-      vars: [{ name: "$error", coef: 1 }]
-    },
+    objective: { name: "obj", vars: [{ name: "$error", coef: 1 }], direction: glpk.GLP_MIN },
     subjectTo: [],
-    bounds: [{ name: "$error", type: glpk.GLP_LO, ub: NaN, lb: 0 }]
+    bounds: [{ name: "$error", type: glpk.GLP_LO, ub: NaN, lb: 0 }],
   }
-  const constraints = problem.subjectTo, map = new Map<string, number>()
-  const bounds = Object.entries(artRange).filter(([key]) => atoms.has(key)).sort(([a], [b]) => a < b ? -1 : 1)
-  if (bounds.length > 30)
-    // Left-shift (<<) operator used to encode the variable operates
-    // on 32-bit integer, so any more bounds would cause problems.
-    throw new Error("Too many variables")
+  const constraints = problem.subjectTo, [compute, mapping, buffer] = precompute([poly], f => f.path[1])
+  const vars = [{ name: "$c", coef: 1 }]
 
-  const [compute, mapping, buffer] = precompute([poly], f => f.path[1])
-
-  bounds.forEach(([key], i) => map.set(key, i))
-  function add_constraint(id: number) {
-    const constraint: typeof constraints[number] = { name: `${id}l`, vars: [{ name: "$c", coef: 1 }], bnds: { type: 0, ub: 0, lb: 0 } }
-    const vars = constraint.vars
-    bounds.forEach(([key, { min, max }], i) => {
-      const coef = (id & (1 << i)) ? max : min
-      vars.push({ name: key, coef })
-      buffer[mapping[key]!] = coef
-    })
-    const [val] = compute()
-    constraint.bnds = { type: glpk.GLP_LO, ub: NaN, lb: val }
-    constraints.push(constraint)
-    constraints.push({ name: `${id}u`, vars: [...constraint.vars, { name: "$error", coef: -1 }], bnds: { type: glpk.GLP_UP, ub: val, lb: NaN } })
-  }
-
-  // Add constraints to the set first to deduplicate entries
-  const constraint_ids = new Set([0])
-  function add_id(id: number, remaining: any, index: number): void {
+  function add_constraint(index: number, id: bigint, list: bigint[]) {
     if (index >= bounds.length) {
-      constraint_ids.add(id)
+      const [val] = compute(), name = constraints.length / 2
+      constraints.push(
+        { name: `${name}l`, vars: [...vars], bnds: { type: glpk.GLP_LO, ub: NaN, lb: val } },
+        { name: `${name}u`, vars: [...vars, { name: "$error", coef: -1 }], bnds: { type: glpk.GLP_UP, ub: val, lb: NaN } }
+      )
       return
     }
-    const [key] = bounds[index]
-    if (key in remaining) {
-      add_id(id | (1 << index), remaining[key], index + 1)
-      add_id(id, remaining[key], index + 1)
+    const maxList = list.filter(num => num & id)
+    const [name, { min, max }] = bounds[index], mapped = mapping[name]!
+    function bound(val: number, list: bigint[]) {
+      buffer[mapped] = val
+      vars.push({ name, coef: val })
+      add_constraint(index + 1, id << BigInt(1), list)
+      vars.pop()
     }
-    add_id(id, remaining, index + 1)
+    if (maxList.length) bound(max, maxList)
+    bound(min, list)
   }
-  add_id(0, terms.get(poly)!, 0)
-  constraint_ids.forEach(add_constraint)
-
-  return await glpk.solve(problem).result.vars
+  const polyTerms = [...terms.get(poly)!]
+  if (polyTerms.length) add_constraint(0, BigInt(1 << 0), polyTerms)
+  return (await glpk.solve(problem)).result.vars
 }
 
 /** Convert `nodes` to a polynomial form */
