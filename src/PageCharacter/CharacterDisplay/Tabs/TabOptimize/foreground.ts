@@ -203,9 +203,12 @@ export function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[]
       case "const": case "read": case "add": case "mul": result = f; break
       case "res": {
         const [base] = operands, { min, max } = nodeRange.get(base)!, res = allOperations['res']
-        if (max <= 0 || max < 0)
-          result = sum(1, prod(-0.5, base)) // linear region 1 - base/2 or concave region with peak at base = 0
-        else result = interpolate([min, res([min])], [max, res([max])], base) // convex region
+        // linear region 1 - base/2 or concave region with peak at base = 0
+        if (min < 0 && max < 1.75) result = sum(1, prod(-0.5, base))
+        else {
+          const m = Math.max(min, 0) // Clamp `min` to guarantee upperbound
+          result = interpolate([m, res([m])], [max, res([max])], base)
+        }
         break
       }
       case "sum_frac": {
