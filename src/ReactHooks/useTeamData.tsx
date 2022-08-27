@@ -1,10 +1,10 @@
 import { useCallback, useContext, useDeferredValue, useEffect } from "react";
+import { TeamData } from "../Context/DataContext";
 import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { resonanceData } from "../Data/Resonance";
 import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database";
-import { TeamData } from "../Context/DataContext";
 import { common } from "../Formula";
 import { dataObjForArtifact, dataObjForCharacter, dataObjForWeapon, mergeData, uiDataForTeam } from "../Formula/api";
 import { Data } from "../Formula/type";
@@ -15,7 +15,6 @@ import { ICachedWeapon } from "../Types/weapon";
 import { objectMap } from "../Util/Util";
 import useForceUpdate from "./useForceUpdate";
 import usePromise from "./usePromise";
-import { IConditionalValues } from "../Types/sheet";
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -27,35 +26,15 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
   const [dbDirty, setDbDirty] = useForceUpdate()
   const dbDirtyDeferred = useDeferredValue(dbDirty)
   const data = usePromise(() => getTeamDataCalc(database, characterKey, mainStatAssumptionLevel, overrideArt, overrideWeapon), [dbDirtyDeferred, characterKey, database, mainStatAssumptionLevel, overrideArt, overrideWeapon])
-  useEffect(() =>
-    characterKey ? database.chars.follow(characterKey, setDbDirty) : undefined,
-    [characterKey, setDbDirty, database])
-
-  useEffect(() =>
-    characterKey ? database.arts.followAny(setDbDirty) : undefined,
-    [characterKey, setDbDirty, database])
-
-  const team = Object.keys(data ?? {})
-  const [t1, t2, t3, t4] = team
 
   const setTeamDataDirty = useCallback(() => {
-    team.map(c => database.invalidateTeamData(c))
+    database.invalidateTeamData(characterKey)
     setDbDirty()
-  }, [database, team, setDbDirty])
+  }, [database, characterKey, setDbDirty])
 
-
   useEffect(() =>
-    t1 ? database.chars.follow(t1, setTeamDataDirty) : undefined,
-    [t1, setTeamDataDirty, database])
-  useEffect(() =>
-    t2 ? database.chars.follow(t2, setTeamDataDirty) : undefined,
-    [t2, setTeamDataDirty, database])
-  useEffect(() =>
-    t3 ? database.chars.follow(t3, setTeamDataDirty) : undefined,
-    [t3, setTeamDataDirty, database])
-  useEffect(() =>
-    t4 ? database.chars.follow(t4, setTeamDataDirty) : undefined,
-    [t4, setTeamDataDirty, database])
+    characterKey ? database.chars.follow(characterKey, setTeamDataDirty) : undefined,
+    [characterKey, setTeamDataDirty, database])
 
   return data
 }
@@ -89,14 +68,23 @@ export async function getTeamData(database: ArtCharDatabase, characterKey: Chara
   const character = database.chars.get(characterKey)
   if (!character) return
 
-  const char1DataBundle = await getCharDataBundle(database, characterKey, true, { mainStatAssumptionLevel, overrideArt, overrideWeapon })
+  const char1DataBundle = await getCharDataBundle(true, mainStatAssumptionLevel,
+    character,
+    overrideWeapon ? overrideWeapon : database.weapons.get(character.equippedWeapon)!,
+    (overrideArt ?? Object.values(character.equippedArtifacts).map(a => database.arts.get(a))).filter(a => a) as ICachedArtifact[]
+  )
   if (!char1DataBundle) return
   const teamBundle = { [characterKey]: char1DataBundle }
   const teamData: Dict<CharacterKey, Data[]> = { [characterKey]: char1DataBundle.data }
 
   await Promise.all(char1DataBundle.character.team.map(async (ck) => {
     if (!ck) return
-    const databundle = await getCharDataBundle(database, ck, false, { overrideConditional: character.teamConditional[ck] ?? {} })
+    const tchar = database.chars.get(ck)
+    if (!tchar) return
+    const databundle = await getCharDataBundle(false, 0,
+      { ...tchar, conditional: character.teamConditional[ck] ?? {} },
+      database.weapons.get(tchar.equippedWeapon)!,
+      Object.values(tchar.equippedArtifacts).map(a => database.arts.get(a)).filter(a => a) as ICachedArtifact[])
     if (!databundle) return
     teamBundle[ck] = databundle
     teamData[ck] = databundle.data
@@ -111,27 +99,15 @@ type CharBundle = {
   weaponSheet: WeaponSheet,
   data: Data[]
 }
-type Options = {
-  mainStatAssumptionLevel?: number,
-  overrideArt?: ICachedArtifact[]
-  overrideWeapon?: ICachedWeapon
-  overrideConditional?: IConditionalValues
-}
-async function getCharDataBundle(database: ArtCharDatabase, characterKey: CharacterKey | "", useCustom = false, options: Options)
-  : Promise<CharBundle | undefined> {
-  if (!characterKey) return
-  const dbcharacter = database.chars.get(characterKey)
-  if (!dbcharacter) return
 
-  const { mainStatAssumptionLevel = 0, overrideArt, overrideWeapon, overrideConditional } = options
+async function getCharDataBundle(useCustom = false, mainStatAssumptionLevel: number,
+  character: ICachedCharacter,
+  weapon: ICachedWeapon,
+  artifacts: ICachedArtifact[],
+): Promise<CharBundle | undefined> {
 
-  const character = overrideConditional ? { ...dbcharacter, conditional: overrideConditional } : dbcharacter
-
-  const weapon = overrideWeapon ?? database.weapons.get(character.equippedWeapon)
-  if (!weapon) return
-  const characterSheet = await CharacterSheet.get(characterKey)
+  const characterSheet = await CharacterSheet.get(character.key)
   if (!characterSheet) return
-
   const weaponSheet = await WeaponSheet.get(weapon.key)
   if (!weaponSheet) return
 
@@ -144,7 +120,6 @@ async function getCharDataBundle(database: ArtCharDatabase, characterKey: Charac
   })() : weaponSheet.data
 
   const artifactSheetsData = await ArtifactSheet.getAllData
-  const artifacts = (overrideArt ?? Object.values(character.equippedArtifacts).map(a => database.arts.get(a))).filter(a => a) as ICachedArtifact[]
   const sheetData = mergeData([characterSheet.getData(character.elementKey), weaponSheetsData, artifactSheetsData])
   const data = [
     ...artifacts.map(a => dataObjForArtifact(a, mainStatAssumptionLevel)),

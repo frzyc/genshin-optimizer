@@ -56,6 +56,7 @@ export class ArtCharDatabase {
   }
   invalidateTeamData(key: CharacterKey | "") {
     delete this.teamData[key]
+    Object.entries(this.teamData).forEach(([k, teamData]) => teamData[key] && delete this.teamData[k])
   }
   clear() {
     [this.arts, this.chars, this.weapons, this.states, this.buildSettings].map(dm => dm.clear())
