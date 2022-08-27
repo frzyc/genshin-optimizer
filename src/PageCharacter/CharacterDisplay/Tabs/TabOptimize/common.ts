@@ -211,6 +211,10 @@ function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot): NumNode[] {
   const nodeRange = computeNodeRange(nodes, reads)
 
   return mapFormulas(nodes, f => {
+    {
+      const { min, max } = nodeRange.get(f as NumNode)!
+      if (min === max) return constant(min)
+    }
     const { operation } = f
     const operandRanges = f.operands.map(x => nodeRange.get(x)!)
     switch (operation) {
