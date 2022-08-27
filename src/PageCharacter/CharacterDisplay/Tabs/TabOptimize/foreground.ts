@@ -66,7 +66,15 @@ export function debugCompute(nodes: NumNode[], base: DynStat, arts: ArtifactBuil
   }
 }
 
+/** Compute a linear upper bound of `poly`, which must be in polynomial form */
 export async function linearUpperBound(poly: NumNode, artRange: DynMinMax): Promise<{ [key in string]: number }> {
+  /**
+   * We first compute the monomials found in each node and store them in `term`.
+   * Each `object` represents the monomials as key paths to the an empty object.
+   * E.g., an obj `{ a: { b: {}, c: {} } }` represents a polynomial of the form
+   * `f1(a, b), f2(a, b)` where `f1` and `f2` are some polynomial functions.
+   */
+
   const terms = new Map<NumNode | StrNode, object>(), atoms = new Set<string>()
   function addInplace(a_out: any, b: any): any {
     for (const [key, value] of Object.entries(b)) {
@@ -99,20 +107,32 @@ export async function linearUpperBound(poly: NumNode, artRange: DynMinMax): Prom
     }
   })
 
+  /**
+   * From the list of monomials, find the corners of the hypercube involving
+   * each variable in the monomial, subjected to `artRange` bounds. We then optimize
+   *
+   *   minimize error over A, c
+   *   s.t. error + poly(X) >= Ax + c >= poly(X) for each corner X
+   *
+   * This gives Ax + c as a linear upperbound in the region dictated by `artRange`.
+   */
   const glpk = await glpkPromise
   const problem: LP = {
     name: "LP",
     objective: {
       direction: glpk.GLP_MIN,
       name: "obj",
-      vars: [{ name: "$slack", coef: 1 }]
+      vars: [{ name: "$error", coef: 1 }]
     },
     subjectTo: [],
-    bounds: [{ name: "$slack", type: glpk.GLP_LO, ub: NaN, lb: 0 }]
+    bounds: [{ name: "$error", type: glpk.GLP_LO, ub: NaN, lb: 0 }]
   }
   const constraints = problem.subjectTo, map = new Map<string, number>()
   const bounds = Object.entries(artRange).filter(([key]) => atoms.has(key)).sort(([a], [b]) => a < b ? -1 : 1)
-  if (bounds.length > 30) throw new Error("Too many variables")
+  if (bounds.length > 30)
+    // Left-shift (<<) operator used to encode the variable operates
+    // on 32-bit integer, so any more bounds would cause problems.
+    throw new Error("Too many variables")
 
   const [compute, mapping, buffer] = precompute([poly], f => f.path[1])
 
@@ -128,10 +148,10 @@ export async function linearUpperBound(poly: NumNode, artRange: DynMinMax): Prom
     const [val] = compute()
     constraint.bnds = { type: glpk.GLP_LO, ub: NaN, lb: val }
     constraints.push(constraint)
-    constraints.push({ name: `${id}u`, vars: [...constraint.vars, { name: "$slack", coef: -1 }], bnds: { type: glpk.GLP_UP, ub: val, lb: NaN } })
+    constraints.push({ name: `${id}u`, vars: [...constraint.vars, { name: "$error", coef: -1 }], bnds: { type: glpk.GLP_UP, ub: val, lb: NaN } })
   }
 
-  // We add constraints to the set first to deduplicate entries
+  // Add constraints to the set first to deduplicate entries
   const constraint_ids = new Set([0])
   function add_id(id: number, remaining: any, index: number): void {
     if (index >= bounds.length) {
@@ -150,7 +170,10 @@ export async function linearUpperBound(poly: NumNode, artRange: DynMinMax): Prom
 
   return await glpk.solve(problem).result.vars
 }
+
+/** Convert `nodes` to a polynomial form */
 export function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[] {
+  // We need some bounds for the nodes to find appropriate polynomial upper bound
   const nodeRange = new Map<NumNode | StrNode, MinMax>(), defaultRange = { min: NaN, max: NaN }
   forEachNodes(nodes, _ => { }, f => {
     const { operation, operands } = f
@@ -190,8 +213,7 @@ export function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[]
         if (cOp.operation !== 'const') throw new Error('Not Implemented (non-constant sum_frac denominator)')
 
         const { min, max } = nodeRange.get(x)!, c = cOp.value
-        // The sum_frac form is concave, so any Taylor expansion of EM / (EM + k) gives an upper bound.
-        // We can solve for the best Taylor approximation location with the following formula.
+        // The sum_frac form is concave, so its linear approximation is also a linear upperbound.
         const loc = Math.sqrt((min + c) * (max + c)) - c, below = (c + loc) * (c + loc)
         result = sum(loc * loc / below, prod(c / below, x))
         break
