@@ -112,6 +112,10 @@ export function lessThan(v1: Num, v2: Num, pass: Num | Str, info?: Info): NumNod
   const operands = [intoV(v1), intoV(v2), intoV(0), intoV(pass)] as any
   return { operation: "threshold", operands, info, emptyOn: "ge" }
 }
+/** v1 >= v2 ? ge : le */
+export function threshold(v1: Num, v2: Num, ge: Num, le: Num, info?: Info): NumNode {
+  return { operation: "threshold", operands: intoOps([v1, v2, ge, le]) as any, info }
+}
 
 export function setReadNodeKeys<T extends NodeList>(nodeList: T, prefix: string[] = []): T {
   if (nodeList.operation) {
