@@ -1,7 +1,7 @@
 import { optimize, precompute } from '../../../../Formula/optimization';
 import type { NumNode } from '../../../../Formula/type';
 import type { InterimResult, Setup } from './BackgroundWorker';
-import { ArtifactsBySlot, Build, countBuilds, filterArts, mergePlot, PlotData, pruneAll, RequestFilter } from './common';
+import { ArtifactBuildData, ArtifactsBySlot, Build, countBuilds, DynStat, filterArts, mergePlot, PlotData, pruneAll, RequestFilter } from './common';
 
 export class ComputeWorker {
   builds: Build[] = []
@@ -40,30 +40,53 @@ export class ComputeWorker {
     ({ nodes, arts: preArts } = pruneAll(nodes, min, preArts, this.maxBuilds, {}, {
       pruneArtRange: true, pruneNodeRange: true,
     }))
-    const [compute, mapping, buffer] = precompute(nodes, f => f.path[1])
-    const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length).map(arts => arts.map(art => ({
-      id: art.id, values: Object.entries(art.values)
-        .map(([key, value]) => ({ key: mapping[key]!, value, cache: 0 }))
-        .filter(({ key, value }) => key !== undefined && value !== 0)
-    })))
 
-    const ids: string[] = Array(arts.length).fill("")
+    const toCompiledString = (b: DynStat) => {
+      const g = (f: NumNode) => {
+        const { operation } = f
+        switch (operation) {
+          case "const": return "" + f.value
+          case "read":
+            const bs = b[f.path[1]] !== 0 ? `${b[f.path[1]]} + ` : ""
+            return `(${bs}s.reduce((a, b)=> a + b.values["${f.path[1]}"], 0) )`
+          case "min": case "max":
+            return `Math.${f.operation}( ${f.operands.map(g).join(", ")} )`
+          case "add": return `( ${f.operands.map(g).join(" + ")} )`
+          case "mul": return `( ${f.operands.map(g).join(" * ")} )`
+          case "sum_frac":
+            const [x, c] = f.operands.map(g)
+            return `( ${x} / ( ${x} + ${c} ) )`
+          case "threshold":
+            const [value, threshold, pass, fail] = f.operands.map(g)
+            return `( ${value} >= ${threshold} ? ${pass} : ${fail} )`
+          case "res":
+            const res = g(f.operands[0])
+            return `res(${res})`
+          default: throw new Error(`Unsupported ${operation} node`)
+        }
+      };
+      return g
+    }
+
+    const compiledNodes: { (s: ArtifactBuildData[]): number; }[] = nodes.map((n) => new (Function as any)('s', `"use strict";\nconst res = (res) => ( (res < 0) ? (1 - res / 2) : (res >= 0.75) ? (1 / (res * 4 + 1)) : (1 - res) )\nreturn ${toCompiledString(preArts.base)(n)}`))
+
+    const arts = Object.values(preArts.values)
     let count = { tested: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }
 
+    const buffer: ArtifactBuildData[] = Array(arts.length)
     function permute(i: number) {
       if (i < 0) {
-        const result = compute()
-        if (min.every((m, i) => (m <= result[i]))) {
-          const value = result[min.length], { builds, plotData, threshold } = self
+        if (min.every((m, i) => (m <= compiledNodes[i](buffer)))) {
+          const value = compiledNodes[min.length](buffer), { builds, plotData, threshold } = self
           let build: Build | undefined
           if (value >= threshold) {
-            build = { value, artifactIds: [...ids] }
+            build = { value, artifactIds: buffer.map(x => x.id) }
             builds.push(build)
           }
           if (plotData) {
-            const x = result[min.length + 1]
+            const x = compiledNodes[min.length + 1](buffer)
             if (!plotData[x] || plotData[x]!.value < value) {
-              if (!build) build = { value, artifactIds: [...ids] }
+              if (!build) build = { value, artifactIds: buffer.map(x => x.id) }
               build.plot = x
               plotData[x] = build
             }
@@ -73,30 +96,14 @@ export class ComputeWorker {
         return
       }
       arts[i].forEach(art => {
-        ids[i] = art.id
-
-        for (const current of art.values) {
-          const { key, value } = current
-          current.cache = buffer[key]
-          buffer[key] += value
-        }
-
+        buffer[i] = art
         permute(i - 1)
-
-        for (const { key, cache } of art.values)
-          buffer[key] = cache
       })
       if (i === 0) {
         count.tested += arts[0].length
         if (count.tested > 8192)
           interimReport(count)
       }
-    }
-
-    for (const [key, value] of Object.entries(preArts.base)) {
-      const i = mapping[key]
-      if (i !== undefined)
-        buffer[i] = value
     }
 
     permute(arts.length - 1)
