@@ -3,18 +3,18 @@ import { NumNode } from '../../../../Formula/type'
 import { assertUnreachable } from '../../../../Util/Util'
 import { ArtifactsBySlot, artSetPerm, Build, countBuilds, filterArts, filterFeasiblePerm, PlotData, RequestFilter } from "./common"
 import { ComputeWorker } from "./ComputeWorker"
-import { SplitWorker } from "./SplitWorker"
+import { DefaultSplitWorker } from "./DefaultSplitWorker"
 
 let id: number, splitWorker: SplitWorker, computeWorker: ComputeWorker
 
-onmessage = ({ data }: { data: WorkerCommand }) => {
+onmessage = async ({ data }: { data: WorkerCommand }) => {
   const command = data.command
   let result: WorkerResult
   switch (command) {
     case "setup":
       id = data.id
       const callback = (interim: InterimResult) => postMessage({ id, ...interim })
-      splitWorker = new SplitWorker(data, callback)
+      splitWorker = new DefaultSplitWorker(data, callback)
       computeWorker = new ComputeWorker(data, callback)
       result = { command: "iterate" }
       break
@@ -51,6 +51,11 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
     default: assertUnreachable(command)
   }
   postMessage({ id, ...result });
+}
+
+export interface SplitWorker {
+  addFilter(filter: RequestFilter): Promise<void>
+  split(newThreshold: number, minCount: number): { count: number, filter: RequestFilter } | undefined
 }
 
 export type WorkerCommand = Setup | Split | Iterate | Finalize | Count

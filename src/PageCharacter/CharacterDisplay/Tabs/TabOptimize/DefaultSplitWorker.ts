@@ -1,9 +1,9 @@
 import type { NumNode } from '../../../../Formula/type';
 import { allSlotKeys } from '../../../../Types/consts';
-import type { InterimResult, Setup } from './BackgroundWorker';
+import type { InterimResult, Setup, SplitWorker } from './BackgroundWorker';
 import { ArtifactsBySlot, countBuilds, filterArts, RequestFilter } from './common';
 
-export class SplitWorker {
+export class DefaultSplitWorker implements SplitWorker {
   min: number[]
 
   arts: ArtifactsBySlot
@@ -22,7 +22,7 @@ export class SplitWorker {
     this.min.push(-Infinity)
     this.nodes.push(optimizationTarget)
   }
-  addFilter(filter: RequestFilter) {
+  async addFilter(filter: RequestFilter) {
     const count = countBuilds(filterArts(this.arts, filter))
     this.filters.push({ count, filter })
   }
