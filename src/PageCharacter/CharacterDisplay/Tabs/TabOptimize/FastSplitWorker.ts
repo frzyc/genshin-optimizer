@@ -3,9 +3,9 @@ import { forEachNodes, mapFormulas } from "../../../../Formula/internal";
 import { allOperations, precompute } from "../../../../Formula/optimization";
 import { NumNode, StrNode } from "../../../../Formula/type";
 import { constant, prod, sum } from "../../../../Formula/utils";
-import { assertUnreachable, objectMap } from "../../../../Util/Util";
-import { InterimResult, Setup, SplitWorker } from "./BackgroundWorker";
-import { ArtifactsBySlot, computeNodeRange, DynMinMax, MinMax, RequestFilter } from "./common";
+import { assertUnreachable, objectMap, strictObjectMap } from "../../../../Util/Util";
+import type { InterimResult, Setup, SplitWorker } from "./BackgroundWorker";
+import { ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynMinMax, DynStat, filterArts, MinMax, RequestFilter } from "./common";
 
 const glpkPromise = (iGLPK as any)() as Promise<GLPK>
 
@@ -13,39 +13,121 @@ export class FastSplitWorker implements SplitWorker {
   glpk: GLPK = {} as any
 
   min: number[]
-
-  arts: ArtifactsBySlot
   nodes: NumNode[]
+  arts: ArtifactsBySlot
 
-  filters: { count: number, filter: RequestFilter }[] = []
+  filters: { arts: ArtifactsBySlot, weights: DynStat[], age: number }[] = []
+  interim: InterimResult | undefined
 
   callback: (interim: InterimResult) => void
 
   constructor({ arts, optimizationTarget, filters }: Setup, callback: (interim: InterimResult) => void) {
     this.arts = arts
-    this.min = filters.map(x => x.min)
-    this.nodes = filters.map(x => x.value)
+    this.min = [-Infinity, ...filters.map(x => x.min)]
+    this.nodes = [optimizationTarget, ...filters.map(x => x.value)]
     this.callback = callback
 
-    this.min.push(-Infinity)
-    this.nodes.push(optimizationTarget)
+    // make sure we can approximate it
+    const _unused = polyUpperBound(this.nodes, computeFullArtRange(arts))
   }
 
-  async setupGLPK() {
-    this.glpk = await glpkPromise
+  addFilter(filter: RequestFilter): void {
+    const arts = filterArts(this.arts, filter)
+    this.filters.push({ arts, weights: [], age: 0 })
+  }
+  async split(newThreshold: number, minCount: number): Promise<RequestFilter | undefined> {
+    if (newThreshold > this.min[0]) this.min[0] = newThreshold
+
+    while (this.filters.length) {
+      let { arts, weights, age } = this.filters.pop()!
+
+      if (!(age % 3)) {
+        // The problem should've gotten small enough that
+        // the old approximation becomes inaccurate
+        const artRange = computeFullArtRange(arts)
+        const polys = polyUpperBound(this.nodes, artRange)
+        weights = []
+        for (const poly of polys)
+          weights.push(await linearUpperBound(poly, artRange))
+      }
+
+      const { min } = this
+      if (weights.some((weight, i) => maxWeighted(weight, arts) < min[i])) {
+        this.addSkip(countBuilds(arts))
+        continue
+      }
+      if (countBuilds(arts) <= minCount) {
+        if (this.interim) {
+          this.callback(this.interim)
+          this.interim = undefined
+        }
+        return strictObjectMap(arts.values, arts => ({ kind: "id" as const, ids: new Set(arts.map(art => art.id)) }))
+      }
+
+      this.splitOldFilter(arts, weights, age)
+    }
+    if (this.interim) {
+      this.callback(this.interim)
+      this.interim = undefined
+    }
+    return undefined
+  }
+  addSkip(count: number) {
+    if (this.interim) this.interim.skipped += count
+    else this.interim = { command: "interim", buildValues: undefined, tested: 0, failed: 0, skipped: count, }
   }
 
-  async addFilter(filter: RequestFilter): Promise<void> {
-    throw new Error("Method not implemented.");
-  }
-  split(newThreshold: number, minCount: number): { count: number; filter: RequestFilter; } | undefined {
-    throw new Error("Method not implemented.");
+  splitOldFilter(arts: ArtifactsBySlot, weights: DynStat[], age: number) {
+    const weight = weights[0]
+    const splitted = strictObjectMap(arts.values, arts => {
+      const contributions = arts.map(art => ({ id: art.id, cont: contribution(weight, art.values) })).sort((a, b) => a.cont - b.cont)
+      let cutoff = contributions.reduce((a, b) => a + b.cont, 0) / 4
+      const high: string[] = []
+      while (cutoff > 0 && contributions.length) {
+        const { id, cont } = contributions.pop()!
+        high.push(id)
+        cutoff -= cont
+      }
+      return { high: { kind: "id" as const, ids: new Set(high) }, low: { kind: "id" as const, ids: new Set(contributions.map(x => x.id)) } }
+    })
+
+    const { filters } = this, current: RequestFilter = strictObjectMap(splitted, x => x.low), remaining = Object.keys(splitted)
+    function partialSplit() {
+      if (!remaining.length)
+        return filters.push({ arts: filterArts(arts, current), weights, age: age + 1 })
+
+      const slot = remaining.pop()!
+      current[slot] = splitted[slot].high
+      partialSplit()
+      current[slot] = splitted[slot].low
+      partialSplit()
+      remaining.push(slot)
+    }
+    partialSplit()
   }
 }
 
+function contribution(weights: DynStat, art: DynStat) {
+  return Object.entries(art).reduce((accu, [key, val]) => accu + val * weights[key]!, 0)
+}
+function minWeighted(weights: DynStat, { base, values }: ArtifactsBySlot): number {
+  let result = weights["$c"] + contribution(weights, base)
+  for (const arts of Object.values(values))
+    result += Math.min(...arts.map(art => contribution(weights, art.values)))
+  return result
+}
+function maxWeighted(weights: DynStat, { base, values }: ArtifactsBySlot): number {
+  function contribution(art: DynStat) {
+    return Object.entries(art).reduce((accu, [key, val]) => accu + val * weights[key]!, 0)
+  }
+  let result = weights["$c"] + contribution(base)
+  for (const arts of Object.values(values))
+    result += Math.max(...arts.map(art => contribution(art.values)))
+  return result
+}
 
 /** Compute a linear upper bound of `poly`, which must be in polynomial form */
-export async function linearUpperBound(poly: NumNode, artRange: DynMinMax): Promise<{ [key in string]: number }> {
+async function linearUpperBound(poly: NumNode, artRange: DynMinMax): Promise<{ [key in string]: number }> {
   /**
    * We first compute the monomials found in each node and store them in `term`.
    * Monomials are represented using one-hot encoding, e.g., given variables
@@ -110,7 +192,7 @@ export async function linearUpperBound(poly: NumNode, artRange: DynMinMax): Prom
 }
 
 /** Convert `nodes` to a polynomial form */
-export function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[] {
+function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[] {
   // We need some bounds for the nodes to find appropriate polynomial upper bound
   const nodeRange = new Map<NumNode | StrNode, MinMax>(), defaultRange = { min: NaN, max: NaN }
   forEachNodes(nodes, _ => { }, f => {

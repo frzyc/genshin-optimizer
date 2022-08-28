@@ -129,6 +129,12 @@ export function objectMap<K extends string, V, T>(obj: Partial<Record<K, V>>, fn
     ([k, v], i) => [k, fn(v, k, i)]
   )) as any
 }
+export function strictObjectMap<K extends string, V, T>(obj: Record<K, V>, fn: (value: V, key: `${K}`, index: number) => T): Record<K, T> {
+  return Object.fromEntries(Object.entries(obj).map(
+    ([k, v], i) => [k, fn(v, k, i)]
+  )) as any
+}
+
 
 const rangeGen = function* (from: number, to: number): Iterable<number> {
   for (let i = from; i <= to; i++) yield i;
