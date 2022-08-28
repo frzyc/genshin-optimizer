@@ -10,7 +10,7 @@ import StatDisplayComponent from "../../../../Components/Character/StatDisplayCo
 import ImgIcon from "../../../../Components/Image/ImgIcon";
 import SqBadge from "../../../../Components/SqBadge";
 import { StarsDisplay } from "../../../../Components/StarDisplay";
-import { uncoloredEleIcons } from "../../../../Components/StatIcon";
+import StatIcon from "../../../../Components/StatIcon";
 import WeaponCardNano from "../../../../Components/Weapon/WeaponCardNano";
 import { CharacterContext } from "../../../../Context/CharacterContext";
 import { DataContext } from "../../../../Context/DataContext";
@@ -90,7 +90,7 @@ function CharacterProfileCard() {
         <Box sx={{ position: "absolute", left: "50%", bottom: "5%", transform: "translate(-50%, -50%)", opacity: 0.85, width: "100%", display: "flex", justifyContent: "center", px: 1 }}>
           <Chip color={charEle} sx={{ height: "auto" }}
             label={<Typography variant="h6" sx={{ display: "flex", gap: 1, alignItems: "center" }} >
-              {uncoloredEleIcons[charEle]}
+              {StatIcon[charEle]}
               <Box sx={{ whiteSpace: "normal", textAlign: "center" }}>{characterSheet.name}</Box>
               <ImgIcon src={Assets.weaponTypes?.[weaponTypeKey]} />
             </Typography>} />

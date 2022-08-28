@@ -1,6 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { objectKeyMap } from '../Util/Util'
-import ColorText from './ColoredText'
 import { faAnemo, faAtk, faCdReduction, faCritDmg, faCritRate, faCryo, faDef, faDendro, faElectro, faElementalMastery, faEnergyRecharge, faGeo, faHealingAdd, faHealingBonus, faHp, faHydro, faMaxStamina, faPhysicalDmgBonus, faPyro, faShieldStrength } from './faIcons'
 export const elementSvg = {
   anemo: faAnemo,
@@ -12,7 +10,7 @@ export const elementSvg = {
   dendro: faDendro,
   physical: faPhysicalDmgBonus,
 }
-export const uncoloredEleIcons = {
+const uncoloredEleIcons = {
   anemo: <FontAwesomeIcon icon={faAnemo as any} />,
   geo: <FontAwesomeIcon icon={faGeo as any} />,
   electro: <FontAwesomeIcon icon={faElectro as any} />,
@@ -22,7 +20,6 @@ export const uncoloredEleIcons = {
   dendro: <FontAwesomeIcon icon={faDendro as any} />,
   physical: <FontAwesomeIcon icon={faPhysicalDmgBonus as any} />,
 } as const
-const coloredEleIcon = objectKeyMap(Object.keys(uncoloredEleIcons), key => <ColorText color={key} sx={{ lineHeight: 1 }} >{uncoloredEleIcons[key]}</ColorText>)
 
 const StatIcon = {
   hp_: <FontAwesomeIcon icon={faHp as any} />,
@@ -46,13 +43,13 @@ const StatIcon = {
   shield_: <FontAwesomeIcon icon={faShieldStrength as any} />,
   stamina: <FontAwesomeIcon icon={faMaxStamina as any} />,
 
-  ...coloredEleIcon,
-  ...Object.fromEntries(Object.keys(coloredEleIcon).flatMap(ele => [
-    [`${ele}_dmg_`, coloredEleIcon[ele]],
-    [`${ele}_res_`, coloredEleIcon[ele]],
-    [`${ele}_critDMG_`, coloredEleIcon[ele]],
-    [`${ele}_dmgInc`, coloredEleIcon[ele]],
-    [`${ele}_enemyRes_`, coloredEleIcon[ele]]
+  ...uncoloredEleIcons,
+  ...Object.fromEntries(Object.keys(uncoloredEleIcons).flatMap(ele => [
+    [`${ele}_dmg_`, uncoloredEleIcons[ele]],
+    [`${ele}_res_`, uncoloredEleIcons[ele]],
+    [`${ele}_critDMG_`, uncoloredEleIcons[ele]],
+    [`${ele}_dmgInc`, uncoloredEleIcons[ele]],
+    [`${ele}_enemyRes_`, uncoloredEleIcons[ele]]
   ]))
 }
 

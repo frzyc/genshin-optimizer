@@ -11,12 +11,12 @@ import AmpReactionModeText from "./AmpReactionModeText";
 import DropdownButton, { DropdownButtonProps } from "./DropdownMenu/DropdownButton";
 import SolidToggleButtonGroup from "./SolidToggleButtonGroup";
 import SqBadge from "./SqBadge";
-import { uncoloredEleIcons } from "./StatIcon";
+import StatIcon from "./StatIcon";
 
 export const infusionVals = {
   "": <span>No Team Melee Infusion</span>,
-  "pyro": <span >{uncoloredEleIcons.pyro} <SqBadge>Bennett C6</SqBadge> Fire Ventures with Me</span>,
-  "cryo": <span >{uncoloredEleIcons.cryo} <SqBadge>Chongyun Skill</SqBadge> Spirit Blade: Chonghua's Layered Frost</span>,
+  "pyro": <span >{StatIcon.pyro} <SqBadge>Bennett C6</SqBadge> Fire Ventures with Me</span>,
+  "cryo": <span >{StatIcon.cryo} <SqBadge>Chongyun Skill</SqBadge> Spirit Blade: Chonghua's Layered Frost</span>,
 }
 type InfusionAuraDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" | "children">
 export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {

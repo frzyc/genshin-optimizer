@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { AdditiveReactionKey } from "../Types/consts";
 import ColorText from "./ColoredText";
 import SqBadge from "./SqBadge";
-import { uncoloredEleIcons } from "./StatIcon";
+import StatIcon from "./StatIcon";
 
 const sqBadgeStyle = { mx: 0.25, px: 0.25 }
 export default function AdditiveReactionModeText({ reaction }: { reaction: AdditiveReactionKey }) {
@@ -13,10 +13,10 @@ export default function AdditiveReactionModeText({ reaction }: { reaction: Addit
 
   return <Box display="flex" alignItems="center">
     <ColorText color={reaction}>{t(`reaction.${reaction}`)}</ColorText>
-    <SqBadge sx={sqBadgeStyle} color={"dendro"}>{uncoloredEleIcons.dendro}</SqBadge>
+    <SqBadge sx={sqBadgeStyle} color={"dendro"}>{StatIcon.dendro}</SqBadge>
     {`+`}
-    <SqBadge sx={sqBadgeStyle} color={"electro"}>{uncoloredEleIcons.electro}</SqBadge>
+    <SqBadge sx={sqBadgeStyle} color={"electro"}>{StatIcon.electro}</SqBadge>
     {`+`}
-    <SqBadge sx={sqBadgeStyle} color={trigger}>{uncoloredEleIcons[trigger]}</SqBadge>
+    <SqBadge sx={sqBadgeStyle} color={trigger}>{StatIcon[trigger]}</SqBadge>
   </Box>
 }

@@ -1,8 +1,8 @@
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Add, ChevronRight, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
-import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, ListItemIcon, ListItemText, MenuItem, Skeleton, styled, Typography, useMediaQuery, useTheme } from '@mui/material';
-import React, { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
+import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, MenuItem, Skeleton, styled, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { ArtifactSetSingleAutocomplete } from '../Components/Artifact/ArtifactAutocomplete';
 import ArtifactRarityDropdown from '../Components/Artifact/ArtifactRarityDropdown';
@@ -14,7 +14,8 @@ import CustomNumberTextField from '../Components/CustomNumberTextField';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import ImgIcon from '../Components/Image/ImgIcon';
 import ModalWrapper from '../Components/ModalWrapper';
-import StatIcon, { uncoloredEleIcons } from '../Components/StatIcon';
+import { StatColoredWithUnit } from '../Components/StatDisplay';
+import StatIcon from '../Components/StatIcon';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../Database/Database';
@@ -298,12 +299,11 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
 
             {/* main stat */}
             <Box component="div" display="flex">
-              <DropdownButton startIcon={element ? uncoloredEleIcons[element] : (artifact?.mainStatKey ? StatIcon[artifact.mainStatKey] : undefined)}
+              <DropdownButton startIcon={artifact?.mainStatKey ? StatIcon[artifact.mainStatKey] : undefined}
                 title={<b>{artifact ? KeyMap.getArtStr(artifact.mainStatKey) : t`mainStat`}</b>} disabled={!sheet} color={color} >
                 {Artifact.slotMainStats(slotKey).map(mainStatK =>
                   <MenuItem key={mainStatK} selected={artifact?.mainStatKey === mainStatK} disabled={artifact?.mainStatKey === mainStatK} onClick={() => update({ mainStatKey: mainStatK })} >
-                    <ListItemIcon>{StatIcon[mainStatK]}</ListItemIcon>
-                    <ListItemText>{KeyMap.getArtStr(mainStatK)}</ListItemText>
+                    <StatColoredWithUnit statKey={mainStatK} />
                   </MenuItem>)}
               </DropdownButton>
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>

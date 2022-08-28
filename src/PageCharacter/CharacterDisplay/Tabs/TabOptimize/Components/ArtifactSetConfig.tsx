@@ -60,7 +60,10 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
     (Object.keys(conditional)).filter(k =>
       allArtifactSets.includes(k as ArtifactSetKey) && Object.keys(conditional[k]).length !== 0).length
     , [conditional])
-  const fakeDataContextObj = useMemo(() => fakeData(dataContext), [dataContext])
+  const fakeDataContextObj = useMemo(() => ({
+    ...dataContext,
+    data: new UIData({ ...dataContext.data.data[0], artSet: objectKeyMap(allArtifactSets, _ => constant(4)) }, undefined)
+  }), [dataContext])
   const resetArtConds = useCallback(() => {
     const tconditional = Object.fromEntries(Object.entries(conditional).filter(([k, v]) => !allArtifactSets.includes(k as any)))
     characterDispatch({ conditional: tconditional })
@@ -216,10 +219,4 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
       </DataContext.Provider>}
     </CardLight>
   </Grid >
-}
-function fakeData(currentContext: dataContextObj): dataContextObj {
-  return {
-    ...currentContext,
-    data: new UIData({ ...currentContext.data.data[0], artSet: objectKeyMap(allArtifactSets, _ => constant(4)) }, undefined)
-  }
 }
