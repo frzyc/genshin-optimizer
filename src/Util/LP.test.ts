@@ -1,4 +1,5 @@
-import { maximizeLP, testExport } from "./LP"
+import { LPConstraint, maximizeLP, testExport, Weights } from "./LP"
+import largeProblem from "./LP.test.data.json"
 
 const { solveLPEq } = testExport
 
@@ -98,6 +99,10 @@ describe("LP", () => {
       // The only valid point is (2, 3)
       expect(x).toBeCloseTo(2, 8)
       expect(y).toBeCloseTo(3, 8)
+    })
+    test.skip("can handle large problem", () => {
+      const obj = largeProblem.obj as Weights, constraints = largeProblem.constraints as LPConstraint[]
+      const sol = maximizeLP(obj, constraints)
     })
   })
 })
