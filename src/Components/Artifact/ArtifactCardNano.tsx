@@ -16,7 +16,8 @@ import CardDark from "../Card/CardDark";
 import ColorText from "../ColoredText";
 import ConditionalWrapper from "../ConditionalWrapper";
 import ImgIcon from "../Image/ImgIcon";
-import StatIcon, { uncoloredEleIcons } from "../StatIcon";
+import { StatColoredWithUnit } from "../StatDisplay";
+import StatIcon from "../StatIcon";
 import ArtifactTooltip from "./ArtifactTooltip";
 
 type Data = {
@@ -63,8 +64,8 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
         {/* mainstats */}
         <Chip size="small" sx={{ position: "absolute", bottom: 0, mb: 1, backgroundColor: color }}
           label={<Typography sx={{ display: "flex", gap: 0.5, px: 1, zIndex: 1 }}>
-            <BootstrapTooltip placement="top" title={<Typography>{KeyMap.getArtStr(mainStatKey)}</Typography>} disableInteractive>
-              <span>{element ? uncoloredEleIcons[element] : StatIcon[mainStatKey]}</span>
+            <BootstrapTooltip placement="top" title={<Typography><StatColoredWithUnit statKey={mainStatKey} /></Typography>} disableInteractive>
+              <span>{StatIcon[mainStatKey]}</span>
             </BootstrapTooltip>
             <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
           </Typography>} />
@@ -83,7 +84,7 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
   const unit = KeyMap.unit(stat.key)
   return (<Box display="flex" gap={1} alignContent="center">
     <Typography sx={{ flexGrow: 1, display: "flex", gap: 0.5 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">
-      <BootstrapTooltip placement="top" title={<Typography>{stat.key && KeyMap.getArtStr(stat.key)}</Typography>} disableInteractive>
+      <BootstrapTooltip placement="top" title={<Typography>{stat.key && <StatColoredWithUnit statKey={stat.key} />}</Typography>} disableInteractive>
         <span>{StatIcon[stat.key]}</span>
       </BootstrapTooltip>
       <span>{`${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}</span>

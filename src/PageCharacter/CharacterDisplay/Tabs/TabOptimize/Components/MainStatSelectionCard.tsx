@@ -1,15 +1,15 @@
 import { Replay } from '@mui/icons-material';
 import { Button, CardContent, Divider, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CharacterContext } from '../../../../../Context/CharacterContext';
 import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import SqBadge from '../../../../../Components/SqBadge';
-import StatIcon, { uncoloredEleIcons } from '../../../../../Components/StatIcon';
+import { StatColoredWithUnit } from '../../../../../Components/StatDisplay';
+import StatIcon from '../../../../../Components/StatIcon';
+import { CharacterContext } from '../../../../../Context/CharacterContext';
 import Artifact from '../../../../../Data/Artifacts/Artifact';
-import KeyMap from '../../../../../KeyMap';
 import { allElementsWithPhy } from '../../../../../Types/consts';
 import useBuildSetting from '../useBuildSetting';
 
@@ -47,10 +47,10 @@ export default function MainStatSelectionCard({ disabled = false, }: {
                 ? element ?? "success"
                 : "secondary"
               return <Grid item key={mainStatKey} flexGrow={1} xs={(i < 3 && slotKey !== "goblet") ? 4 : undefined} >
-                <BootstrapTooltip placement="top" title={<Typography><strong>{KeyMap.getArtStr(mainStatKey)}</strong></Typography>} disableInteractive>
+                <BootstrapTooltip placement="top" title={<Typography><strong><StatColoredWithUnit statKey={mainStatKey} /></strong></Typography>} disableInteractive>
                   <Button fullWidth size="small" color={color} sx={{ fontSize: "1.2em", height: "100%", pointerEvents: disabled ? "none" : undefined, cursor: disabled ? "none" : undefined }}
                     onClick={() => buildSettingDispatch({ type: "mainStatKey", slotKey, mainStatKey })}>
-                    {element ? uncoloredEleIcons[element] : StatIcon[mainStatKey]}
+                    {StatIcon[mainStatKey]}
                   </Button>
                 </BootstrapTooltip>
               </Grid>

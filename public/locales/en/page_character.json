@@ -5,9 +5,9 @@
     "overview": "Overview",
     "talent": "Talents",
     "teambuffs": "Team Buffs",
-    "optimize": "Optimize"
+    "optimize": "Optimize",
+    "theorycraft": "Theorycraft"
   },
-  "selectLevel": "Select Level",
   "formulas": "Formulas",
   "calculations": "Calculations",
   "selectCharacter": "Select a Character",
@@ -95,5 +95,12 @@
   },
   "characterName": "Character Name",
   "teammate": "Teammate {{count}}",
-  "none": "None"
+  "none": "None",
+  "tabTheorycraft": {
+    "substatType": {
+      "min": "Use minimum substat rolls",
+      "max": "Use maximum substat rolls",
+      "mid": "Use median substat rolls"
+    }
+  }
 }

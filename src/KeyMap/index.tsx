@@ -1,4 +1,3 @@
-import ColorText from "../Components/ColoredText";
 import { Translate } from "../Components/Translate";
 import { MainStatKey, SubstatKey } from "../Types/artifact";
 import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";
@@ -230,8 +229,4 @@ export function cacheValueString(value: number, unit: Unit): string {
     case "%": return (Math.round(value * 10) / 10).toFixed(1) // TODO: % conversion
     default: return Math.round(value).toFixed(0)
   }
-}
-
-export function StatColoredWithUnit({ statKey }: { statKey: StatKey }) {
-  return <ColorText color={KeyMap.getVariant(statKey)}>{KeyMap.get(statKey)}{KeyMap.unit(statKey)}</ColorText>
 }

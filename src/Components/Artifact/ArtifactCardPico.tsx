@@ -7,7 +7,7 @@ import { ICachedArtifact } from '../../Types/artifact';
 import { allElementsWithPhy, SlotKey } from '../../Types/consts';
 import CardDark from '../Card/CardDark';
 import SqBadge from '../SqBadge';
-import StatIcon, { uncoloredEleIcons } from '../StatIcon';
+import StatIcon from '../StatIcon';
 import ArtifactTooltip from './ArtifactTooltip';
 
 export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { artifactObj: ICachedArtifact | undefined, slotKey: SlotKey }) {
@@ -47,7 +47,7 @@ export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { a
       <strong><SqBadge sx={{ p: 0.5 }} color={Artifact.levelVariant(level)}><strong>+{level}</strong></SqBadge></strong>
     </Typography>
     <Typography sx={{ position: "absolute", fontSize: "0.75rem", lineHeight: 1, opacity: 0.85, pointerEvents: "none", bottom: 0, right: 0 }}>
-      <SqBadge color={color} sx={{ p: 0.5 }}>{element ? uncoloredEleIcons[element] : StatIcon[mainStatKey]}</SqBadge>
+      <SqBadge color={color} sx={{ p: 0.5 }}>{StatIcon[mainStatKey]}</SqBadge>
     </Typography>
   </CardDark></ArtifactTooltip>
 }

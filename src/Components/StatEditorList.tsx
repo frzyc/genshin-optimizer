@@ -1,10 +1,11 @@
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, ButtonGroup, MenuItem } from '@mui/material';
-import React, { useCallback, useMemo } from 'react';
-import KeyMap, { StatColoredWithUnit, StatKey } from '../KeyMap';
+import { useCallback, useMemo } from 'react';
+import KeyMap, { StatKey } from '../KeyMap';
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from './CustomNumberInput';
 import DropdownButton from './DropdownMenu/DropdownButton';
+import { StatColoredWithUnit, StatWithUnit } from './StatDisplay';
 
 
 export default function StatEditorList({ statKeys, statFilters, setStatFilters, disabled = false, wrapperFunc = (ele) => ele }: {
@@ -55,7 +56,7 @@ function StatFilterItem({ statKey, statKeys = [], value = 0, delKey, setKey, set
   const onChange = useCallback(s => statKey && setValue(statKey, s), [setValue, statKey])
   return <ButtonGroup sx={{ width: "100%" }}>
     <DropdownButton
-      title={statKey ? <span>{KeyMap.get(statKey)}{KeyMap.unit(statKey)}</span> : "New Stat"}
+      title={statKey ? <StatWithUnit statKey={statKey} /> : "New Stat"}
       disabled={disabled}
       color={statKey ? (KeyMap.getVariant(statKey) ?? "success") : "secondary"}
     >

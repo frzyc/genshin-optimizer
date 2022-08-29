@@ -422,12 +422,8 @@ export default function TabBuild() {
             <Grid item><ReactionToggle size="small" /></Grid>
             <Grid item flexGrow={1} />
             <Grid item><SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
-              <ToggleButton value={false} disabled={!compareData}>
-                <small>Show New artifact Stats</small>
-              </ToggleButton>
-              <ToggleButton value={true} disabled={compareData}>
-                <small>Compare against equipped artifacts</small>
-              </ToggleButton>
+              <ToggleButton value={false} disabled={!compareData}>Show new builds</ToggleButton>
+              <ToggleButton value={true} disabled={compareData}>Compare vs. equipped</ToggleButton>
             </SolidToggleButtonGroup></Grid>
           </Grid>
         </CardContent>

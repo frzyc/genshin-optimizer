@@ -1,18 +1,16 @@
 import { ChevronRight } from '@mui/icons-material';
-import { Button, CardContent, Grid, Skeleton, Stack, Typography } from '@mui/material';
+import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { ArtifactSlotKey } from 'pipeline';
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano';
+import ArtifactSetTooltip from '../../../../../Components/Artifact/ArtifactSetTooltip';
 import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
-import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import StatDisplayComponent from '../../../../../Components/Character/StatDisplayComponent';
 import ModalWrapper from '../../../../../Components/ModalWrapper';
 import SqBadge from '../../../../../Components/SqBadge';
-import { Translate } from '../../../../../Components/Translate';
 import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano';
 import { CharacterContext } from '../../../../../Context/CharacterContext';
 import { DataContext } from '../../../../../Context/DataContext';
@@ -117,27 +115,13 @@ function SetBadge({ setKey, currentlyEquipped = false, slotarr }: { setKey: Arti
   const numInSet = slotarr.length
   const setActive = Object.keys(artifactSheet.setEffects).map((setKey) => parseInt(setKey)).filter(setNum => setNum <= numInSet)
   return <Box>
-    <BootstrapTooltip placement="top" title={
-      <Suspense fallback={<Skeleton variant='rectangular' width={100} height={100} />}>
-        <SetToolTipTitle artifactSheet={artifactSheet} numInSet={numInSet} />
-      </Suspense>
-    } disableInteractive >
+    <ArtifactSetTooltip artifactSheet={artifactSheet} numInSet={numInSet} >
       <SqBadge color={currentlyEquipped ? "success" : "primary"} ><Typography >
         {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {artifactSheet.name ?? ""}
         {setActive.map(n => <SqBadge sx={{ ml: 0.5 }} key={n} color="success">{n}</SqBadge>)}
       </Typography></SqBadge>
-    </BootstrapTooltip>
+    </ArtifactSetTooltip>
   </Box>
-}
-function SetToolTipTitle({ artifactSheet, numInSet }: { artifactSheet: ArtifactSheet, numInSet: number }) {
-  const { t } = useTranslation("sheet")
-  return <Stack spacing={2} sx={{ p: 1 }}>
-    {Object.keys(artifactSheet.setEffects).map((setKey) => <Box key={setKey} sx={{ opacity: parseInt(setKey) <= numInSet ? 1 : 0.5 }}>
-      <Typography><SqBadge color="success">{t(`${setKey}set`)}</SqBadge></Typography>
-      <Typography><Translate ns={`artifact_${artifactSheet.key}_gen`} key18={`setEffects.${setKey}`} /></Typography>
-    </Box>
-    )}
-  </Stack>
 }
 
 function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLevel, onClose }: { newOld: NewOld, mainStatAssumptionLevel: number, onClose: () => void }) {
