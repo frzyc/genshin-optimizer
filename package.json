@@ -22,7 +22,6 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "@types/recharts": "^1.8.23",
-    "glpk.js": "^4.0.1",
     "i18next": "^21.8.3",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.0",

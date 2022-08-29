@@ -1,17 +1,13 @@
-import iGLPK, { GLPK, LP } from "glpk.js";
 import { forEachNodes, mapFormulas } from "../../../../Formula/internal";
 import { allOperations, precompute } from "../../../../Formula/optimization";
 import { NumNode, StrNode } from "../../../../Formula/type";
 import { constant, prod, sum } from "../../../../Formula/utils";
+import { maximizeLP, Weights, LPConstraint } from "../../../../Util/LP";
 import { assertUnreachable, objectMap, strictObjectMap } from "../../../../Util/Util";
 import type { InterimResult, Setup, SplitWorker } from "./BackgroundWorker";
 import { ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynMinMax, DynStat, filterArts, MinMax, RequestFilter } from "./common";
 
-const glpkPromise = (iGLPK as any)() as Promise<GLPK>
-
 export class FastSplitWorker implements SplitWorker {
-  glpk: GLPK = {} as any
-
   min: number[]
   nodes: NumNode[]
   arts: ArtifactsBySlot
@@ -48,7 +44,7 @@ export class FastSplitWorker implements SplitWorker {
         const polys = polyUpperBound(this.nodes, artRange)
         weights = []
         for (const poly of polys)
-          weights.push(await linearUpperBound(poly, artRange))
+          weights.push(linearUpperBound(poly, artRange))
       }
 
       const { min } = this
@@ -110,12 +106,6 @@ export class FastSplitWorker implements SplitWorker {
 function contribution(weights: DynStat, art: DynStat) {
   return Object.entries(art).reduce((accu, [key, val]) => accu + val * weights[key]!, 0)
 }
-function minWeighted(weights: DynStat, { base, values }: ArtifactsBySlot): number {
-  let result = weights["$c"] + contribution(weights, base)
-  for (const arts of Object.values(values))
-    result += Math.min(...arts.map(art => contribution(weights, art.values)))
-  return result
-}
 function maxWeighted(weights: DynStat, { base, values }: ArtifactsBySlot): number {
   function contribution(art: DynStat) {
     return Object.entries(art).reduce((accu, [key, val]) => accu + val * weights[key]!, 0)
@@ -127,7 +117,7 @@ function maxWeighted(weights: DynStat, { base, values }: ArtifactsBySlot): numbe
 }
 
 /** Compute a linear upper bound of `poly`, which must be in polynomial form */
-async function linearUpperBound(poly: NumNode, artRange: DynMinMax): Promise<{ [key in string]: number }> {
+function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string]: number } {
   /**
    * We first compute the monomials found in each node and store them in `term`.
    * Monomials are represented using one-hot encoding, e.g., given variables
@@ -157,21 +147,16 @@ async function linearUpperBound(poly: NumNode, artRange: DynMinMax): Promise<{ [
    *
    * This gives Ax + c as a linear upperbound in the region dictated by `artRange`.
    */
-  const glpk = await glpkPromise, problem: LP = {
-    name: "LP",
-    objective: { name: "obj", vars: [{ name: "$error", coef: 1 }], direction: glpk.GLP_MIN },
-    subjectTo: [],
-    bounds: [{ name: "$error", type: glpk.GLP_LO, ub: NaN, lb: 0 }],
-  }
-  const constraints = problem.subjectTo, [compute, mapping, buffer] = precompute([poly], f => f.path[1])
-  const vars = [{ name: "$c", coef: 1 }]
+  const obj: Weights = { $error: -1 }, vars: Weights = { $c: 1 }
+  const constraints: LPConstraint[] = [{ weights: { $error: 1 }, lowerBound: 0 },]
+  const [compute, mapping, buffer] = precompute([poly], f => f.path[1])
 
   function add_constraint(index: number, id: bigint, list: bigint[]) {
     if (index >= bounds.length) {
       const [val] = compute(), name = constraints.length / 2
       constraints.push(
-        { name: `${name}l`, vars: [...vars], bnds: { type: glpk.GLP_LO, ub: NaN, lb: val } },
-        { name: `${name}u`, vars: [...vars, { name: "$error", coef: -1 }], bnds: { type: glpk.GLP_UP, ub: val, lb: NaN } }
+        { weights: { ...vars }, lowerBound: val },
+        { weights: { ...vars, $error: -1 }, upperBound: val }  ,
       )
       return
     }
@@ -179,16 +164,16 @@ async function linearUpperBound(poly: NumNode, artRange: DynMinMax): Promise<{ [
     const [name, { min, max }] = bounds[index], mapped = mapping[name]!
     function bound(val: number, list: bigint[]) {
       buffer[mapped] = val
-      vars.push({ name, coef: val })
+      vars[name] = val
       add_constraint(index + 1, id << BigInt(1), list)
-      vars.pop()
+      delete vars[name]
     }
     if (maxList.length) bound(max, maxList)
     bound(min, list)
   }
   const polyTerms = [...terms.get(poly)!]
   if (polyTerms.length) add_constraint(0, BigInt(1 << 0), polyTerms)
-  return (await glpk.solve(problem)).result.vars
+  return maximizeLP(obj, constraints)
 }
 
 /** Convert `nodes` to a polynomial form */

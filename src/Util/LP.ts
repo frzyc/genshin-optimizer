@@ -1,5 +1,5 @@
-type Weights = { [key in string]: number }
-type Constraint = { weights: Weights, upperBound?: number, lowerBound?: number }
+export type Weights = { [key in string]: number }
+export type LPConstraint = { weights: Weights, upperBound?: number, lowerBound?: number }
 
 type IndexObj = { val: number, tmp: number }
 type IndexedWeight<Index = IndexObj> = [index: Index, value: number][]
@@ -13,7 +13,7 @@ type Equation<Index = IndexObj> = { weights: IndexedWeight<Index>, val: number }
  * @param constraints list of constraints, given the weights `a` and lower/upper bounds
  * @returns the optimal value of `x`
  */
-export function maximizeLP(objective: Weights, constraints: Constraint[]): Weights {
+export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Weights {
   // Solving the dual problem in https://www.jstor.org/stable/3690376
   const newIdx = (val: number) => ({ val, tmp: 0 }), names = new Map<string, IndexObj>()
   function indexWeights(weights: Weights): IndexedWeight {
