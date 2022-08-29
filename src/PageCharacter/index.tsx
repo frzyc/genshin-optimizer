@@ -1,6 +1,6 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { DeleteForever, FactCheck, Groups, TrendingUp } from '@mui/icons-material';
+import { DeleteForever, FactCheck, Groups, Science, TrendingUp } from '@mui/icons-material';
 import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, TextField, Typography } from '@mui/material';
 import { ChangeEvent, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
@@ -191,6 +191,11 @@ export default function PageCharacter() {
                 <BootstrapTooltip placement="top" title={<Typography>{t("tabs.optimize")}</Typography>}>
                   <IconButton onClick={() => navigate(`${charKey}/optimize`)} >
                     <TrendingUp />
+                  </IconButton>
+                </BootstrapTooltip>
+                <BootstrapTooltip placement="top" title={<Typography>{t("tabs.theorycraft")}</Typography>}>
+                  <IconButton onClick={() => navigate(`${charKey}/theorycraft`)} >
+                    <Science />
                   </IconButton>
                 </BootstrapTooltip>
                 <Divider orientation="vertical" />

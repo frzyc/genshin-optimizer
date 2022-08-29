@@ -1,5 +1,7 @@
-import { DeleteForever, Info } from "@mui/icons-material";
-import { Box, Button, ButtonGroup, CardContent, CardHeader, Divider, Grid, ListItem, MenuItem, Skeleton, Stack, ToggleButton } from "@mui/material";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CopyAll, DeleteForever, Info, Refresh } from "@mui/icons-material";
+import { Box, Button, ButtonGroup, CardHeader, Divider, Grid, ListItem, MenuItem, Skeleton, Stack, ToggleButton } from "@mui/material";
 import { WeaponTypeKey } from "pipeline";
 import { useCallback, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -24,7 +26,7 @@ import StatIcon from "../../../../Components/StatIcon";
 import WeaponSelectionModal from "../../../../Components/Weapon/WeaponSelectionModal";
 import { CharacterContext } from "../../../../Context/CharacterContext";
 import { DataContext, dataContextObj } from "../../../../Context/DataContext";
-import Artifact from "../../../../Data/Artifacts/Artifact";
+import Artifact, { maxArtifactLevel } from "../../../../Data/Artifacts/Artifact";
 import { ArtifactSheet } from "../../../../Data/Artifacts/ArtifactSheet";
 import WeaponSheet from "../../../../Data/Weapons/WeaponSheet";
 import { initCharTC } from "../../../../Database/Data/CharacterTCData";
@@ -36,22 +38,24 @@ import KeyMap, { cacheValueString } from "../../../../KeyMap";
 import useBoolState from "../../../../ReactHooks/useBoolState";
 import usePromise from "../../../../ReactHooks/usePromise";
 import useTeamData from "../../../../ReactHooks/useTeamData";
-import { MainStatKey, SubstatKey } from "../../../../Types/artifact";
-import { ICharTC } from "../../../../Types/character";
-import { allSlotKeys, ArtifactSetKey, SetNum, SlotKey, SubstatType, substatType } from "../../../../Types/consts";
+import { SubstatKey } from "../../../../Types/artifact";
+import { ICharTC, ICharTCArtifactSlot } from "../../../../Types/character";
+import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey, SubstatType, substatType } from "../../../../Types/consts";
 import { ICachedWeapon } from "../../../../Types/weapon";
 import { deepClone, objectMap } from "../../../../Util/Util";
+import { defaultInitialWeaponKey } from "../../../../Util/WeaponUtil";
 import useCharTC from "./useCharTC";
-type ILevels = ICharTC["artifact"]["levels"]
-type IMainstatKeys = ICharTC["artifact"]["mainstatKeys"]
+
 type ISet = Partial<Record<ArtifactSetKey, 1 | 2 | 4>>
 export default function TabTheorycraft() {
   const { database } = useContext(DatabaseContext)
   const { data: oldData } = useContext(DataContext)
   const { character, character: { key: characterKey, compareData }, characterSheet, characterDispatch } = useContext(CharacterContext)
-  const data = useCharTC(characterKey)
+  const data = useCharTC(characterKey, defaultInitialWeaponKey(characterSheet.weaponTypeKey))
   const setData = useCallback((data: ICharTC) => database.charTCs.set(characterKey, data), [characterKey, database])
-
+  const resetData = useCallback(() => {
+    setData(initCharTC(defaultInitialWeaponKey(characterSheet.weaponTypeKey)))
+  }, [setData, characterSheet])
   const setWeapon = useCallback(
     (action: Partial<ICharTC["weapon"]>) => {
       setData({ ...data, weapon: { ...data.weapon, ...action } })
@@ -72,9 +76,10 @@ export default function TabTheorycraft() {
       Object.values(character.equippedArtifacts).forEach(a => {
         const art = database.arts.get(a)
         if (!art) return
-        const { slotKey, setKey, substats, mainStatKey, level } = art
-        newData.artifact.levels[slotKey] = level
-        if (slotKey in newData.artifact.mainstatKeys) newData.artifact.mainstatKeys[slotKey] = mainStatKey
+        const { slotKey, setKey, substats, mainStatKey, level, rarity } = art
+        newData.artifact.slots[slotKey].level = level
+        newData.artifact.slots[slotKey].statKey = mainStatKey
+        newData.artifact.slots[slotKey].rarity = rarity
         sets[setKey] = (sets[setKey] ?? 0) + 1
         substats.forEach(substat =>
           newData.artifact.substats.stats[substat.key] = (newData.artifact.substats.stats[substat.key] ?? 0) + substat.accurateValue
@@ -99,15 +104,9 @@ export default function TabTheorycraft() {
       id: ""
     }
   }, [data])
-  const setLevels = useCallback((levels: ILevels) => {
+  const setArtifact = useCallback((artifact: ICharTC["artifact"]) => {
     const data_ = deepClone(data)
-    data_.artifact.levels = levels
-    setData(data_)
-  }, [data, setData])
-
-  const setMainStatKeys = useCallback((mainstatKeys: IMainstatKeys) => {
-    const data_ = deepClone(data)
-    data_.artifact.mainstatKeys = mainstatKeys
+    data_.artifact = artifact
     setData(data_)
   }, [data, setData])
 
@@ -123,18 +122,10 @@ export default function TabTheorycraft() {
     setData(data_)
   }, [data, setData])
 
-  const setArtSet = useCallback((artSet: ISet) => {
-    const data_ = deepClone(data)
-    data_.artifact.sets = artSet
-    setData(data_)
-  }, [data, setData])
-
   const overriderArtData = useMemo(() => {
     const stats = { ...data.artifact.substats.stats }
-    allSlotKeys.forEach(slotKey => {
-      const mainStatKey = slotKey === "flower" ? "hp" : slotKey === "plume" ? "atk" : data.artifact.mainstatKeys[slotKey]
-      stats[mainStatKey] = (stats[mainStatKey] ?? 0) + Artifact.mainStatValue(mainStatKey, 5, data.artifact.levels[slotKey])
-    })
+    Object.values(data.artifact.slots).forEach(({ statKey, rarity, level }) =>
+      stats[statKey] = (stats[statKey] ?? 0) + Artifact.mainStatValue(statKey, rarity, level))
     return {
       art: objectMap(stats, (v, k) => k.endsWith("_") ? percent(v / 100) : constant(v)),
       artSet: objectMap(data.artifact.sets, v => constant(v)),
@@ -167,26 +158,27 @@ export default function TabTheorycraft() {
     {dataContextValue ? <DataContext.Provider value={dataContextValue}>
       <Box>
         <CardLight>
-          <CardContent sx={{ display: "flex", gap: 1 }}>
-            <Box sx={{ flexGrow: 1 }}>
-              <Button color="info" onClick={copyFromEquipped}>Copy from equipped</Button>
+          <Box sx={{ display: "flex", gap: 1, p: 1 }}>
+            <Box sx={{ flexGrow: 1, display: "flex", gap: 1 }}>
+              <Button color="info" onClick={copyFromEquipped} startIcon={<CopyAll />}>Copy from equipped</Button>
+              <Button color="error" onClick={resetData} startIcon={<Refresh />}>Reset</Button>
             </Box>
             <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
               <ToggleButton value={false} disabled={!compareData}>Show TC stats</ToggleButton>
               <ToggleButton value={true} disabled={compareData}>Compare vs. equipped</ToggleButton>
             </SolidToggleButtonGroup>
-          </CardContent>
+          </Box>
         </CardLight>
       </Box>
       <Box>
         <Grid container spacing={1} sx={{ justifyContent: "center" }} columns={4}>
-          <Grid item sx={{ flexGrow: 1 }}  >
+          <Grid item sx={{ flexGrow: -1 }}  >
             <WeaponEditorCard weapon={weapon} setWeapon={setWeapon} weaponTypeKey={characterSheet.weaponTypeKey} />
           </Grid>
-          <Grid item sx={{ flexGrow: 10 }}  >
-            <ArtifactMainLevelCard levels={data.artifact.levels} setLevels={setLevels} mainStatKeys={data.artifact.mainstatKeys} setMainStatKeys={setMainStatKeys} artSet={data.artifact.sets} setArtSet={setArtSet} />
+          <Grid item sx={{ flexGrow: 1 }}  >
+            <ArtifactMainLevelCard artifactData={data.artifact} setArtifactData={setArtifact} />
           </Grid>
-          <Grid item sx={{ flexGrow: 10 }}  >
+          <Grid item sx={{ flexGrow: 1 }}  >
             <ArtifactSubCard substats={data.artifact.substats.stats} setSubstats={setSubstats} substatsType={data.artifact.substats.type} setSubstatsType={setSubstatsType} />
           </Grid>
         </Grid >
@@ -236,41 +228,63 @@ function WeaponEditorCard({ weapon, setWeapon, weaponTypeKey }: { weapon: ICache
   </CardLight >
 }
 
-function ArtifactMainLevelCard({ levels, setLevels, mainStatKeys, setMainStatKeys, artSet, setArtSet }:
-  { levels: ILevels, setLevels: (levels: ILevels) => void, mainStatKeys: IMainstatKeys, setMainStatKeys: (mainStatKeys: IMainstatKeys) => void, artSet: ISet, setArtSet: (a: ISet) => void }) {
-  const setLevel = useCallback((slotKey: SlotKey) => (level: number) => {
-    setLevels({ ...levels, [slotKey]: level })
-  }, [levels, setLevels])
+function ArtifactMainLevelCard({ artifactData, setArtifactData }:
+  { artifactData: ICharTC["artifact"], setArtifactData: (a: ICharTC["artifact"]) => void }) {
+  const setSlot = useCallback((slotKey: SlotKey) => (slot: ICharTCArtifactSlot) => {
+    const artifactData_ = deepClone(artifactData)
+    artifactData_.slots[slotKey] = slot
+    setArtifactData(artifactData_)
+  }, [artifactData, setArtifactData])
 
-  const setMainStatKey = useCallback((slotKey: SlotKey) => (msk: MainStatKey) => {
-    setMainStatKeys({ ...mainStatKeys, [slotKey]: msk })
-  }, [mainStatKeys, setMainStatKeys])
+  const setArtSet = useCallback((artSet: ISet) => {
+    const artifactData_ = deepClone(artifactData)
+    artifactData_.sets = artSet
+    setArtifactData(artifactData_)
+  }, [artifactData, setArtifactData])
+
   return <Stack spacing={1} sx={{ height: "100%" }}>
     <CardLight sx={{ p: 1 }}>
       <Stack spacing={1}>
-        {allSlotKeys.map(s => <ArtifactMainLevelSlot key={s} slotKey={s} level={levels[s]} mainStatKey={s === "flower" ? "hp" : s === "plume" ? "atk" : mainStatKeys[s]} setMainStatKey={setMainStatKey(s)} setLevel={setLevel(s)} />)}
+        {allSlotKeys.map(s => <ArtifactMainLevelSlot key={s} slotKey={s} slot={artifactData.slots[s]} setSlot={setSlot(s)} />)}
       </Stack>
     </CardLight>
-    <ArtifactSetsEditor artSet={artSet} setArtSet={setArtSet} />
+    <ArtifactSetsEditor artSet={artifactData.sets} setArtSet={setArtSet} />
   </Stack>
 }
-function ArtifactMainLevelSlot({ slotKey, level, setLevel, mainStatKey, setMainStatKey }: { slotKey: SlotKey, level: number, setLevel: (l: number) => void, mainStatKey: MainStatKey, setMainStatKey: (msk: MainStatKey) => void }) {
+function ArtifactMainLevelSlot({ slotKey, slot, setSlot: setSlotProp }: { slotKey: SlotKey, slot: ICharTCArtifactSlot, setSlot: (s: ICharTCArtifactSlot) => void }) {
+  const { level, statKey, rarity } = slot
   const keys = Artifact.slotMainStats(slotKey)
+  const setSlot = useCallback((action: Partial<ICharTCArtifactSlot>) => {
+    setSlotProp({ ...slot, ...action })
+  }, [slot, setSlotProp])
+  const setRarity = useCallback(
+    (r: ArtifactRarity) => {
+      const mLvl = maxArtifactLevel[r] ?? 0
+      if (level > mLvl) setSlot({ rarity: r, level: mLvl })
+      else setSlot({ rarity: r })
+    }, [level, setSlot])
+
   return <Box display="flex" gap={1} justifyContent="space-between" alignItems="center">
     <FontAwesomeSvgIcon icon={slotIconSVG[slotKey]} />
-    <CardDark sx={{ height: "100%", minWidth: "5em", flexGrow: 1 }}>
+    <CardDark sx={{ height: "100%", minWidth: "5em", flexGrow: 1, display: "flex" }}>
       {keys.length === 1 ?
         <Box p={1} justifyContent="center" alignItems="center" width="100%" display="flex" gap={1}>{StatIcon[keys[0]]}{KeyMap.getStr(keys[0])}</Box> :
-        <DropdownButton fullWidth title={<StatWithUnit statKey={mainStatKey} />} color={KeyMap.getVariant(mainStatKey) ?? "success"}>
+        <DropdownButton sx={{ px: 0 }} fullWidth title={<StatWithUnit statKey={statKey} />} color={KeyMap.getVariant(statKey) ?? "success"}>
           {keys.map(msk =>
-            <MenuItem key={msk} disabled={mainStatKey === msk} onClick={() => setMainStatKey(msk)}>
+            <MenuItem key={msk} disabled={statKey === msk} onClick={() => setSlot({ statKey: msk })}>
               <StatColoredWithUnit statKey={msk} />
             </MenuItem>)}
         </DropdownButton>}
     </CardDark>
-    <CustomNumberInput startAdornment="+" value={level} color={Artifact.levelVariant(level)} onChange={l => l !== undefined && setLevel(l)} sx={{ borderRadius: 1, pl: 1, my: 0, height: "100%" }} inputProps={{ sx: { pl: 0.5, width: "2em" }, max: 20, min: 0 }} />
+    <DropdownButton sx={{ px: 0 }} title={<span>{rarity} <FontAwesomeIcon icon={faStar} /></span>} >
+      {[5, 4, 3].map(r =>
+        <MenuItem key={r} disabled={rarity === r} onClick={() => setRarity(r as ArtifactRarity)}>
+          <span>{r} <FontAwesomeIcon icon={faStar} /></span>
+        </MenuItem>)}
+    </DropdownButton>
+    <CustomNumberInput startAdornment="+" value={level} color={Artifact.levelVariant(level)} onChange={l => l !== undefined && setSlot({ level: l })} sx={{ borderRadius: 1, pl: 1, my: 0, height: "100%" }} inputProps={{ sx: { pl: 0.5, width: "2em" }, max: 20, min: 0 }} />
     <CardDark sx={{ height: "100%", minWidth: "4em" }}>
-      <Box p={1} textAlign="center">{`${cacheValueString(Artifact.mainStatValue(mainStatKey, 5, level), KeyMap.unit(mainStatKey))}${KeyMap.unit(mainStatKey)}`}</Box>
+      <Box p={1} textAlign="center">{`${cacheValueString(Artifact.mainStatValue(statKey, rarity, level), KeyMap.unit(statKey))}${KeyMap.unit(statKey)}`}</Box>
     </CardDark>
   </Box>
 }
@@ -343,22 +357,26 @@ function ArtifactSetEditor({ setKey, value, setValue, deleteValue, remaining }: 
         </Button>
       </ButtonGroup>
     </Box>
-    <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+    {!!set4CondNums.length && <Stack spacing={1} sx={{ p: 1 }}>
       {set4CondNums.map(setNumKey =>
         <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} hideHeader conditionalsOnly />
       )}
-    </CardContent>
+    </Stack>}
   </CardLight>
 }
 function ArtifactSubCard({ substats, setSubstats, substatsType, setSubstatsType }: { substats: Record<SubstatKey, number>, setSubstats: (substats: Record<SubstatKey, number>) => void, substatsType: SubstatType, setSubstatsType: (t: SubstatType) => void }) {
   const setValue = useCallback((key: SubstatKey) => (v: number) => setSubstats({ ...substats, [key]: v }), [substats, setSubstats])
   const { t } = useTranslation("page_character")
+  const rv = Object.entries(substats).reduce((t, [k, v]) => t + (v / Artifact.substatValue(k)), 0) * 100
   return <CardLight sx={{ p: 1, height: "100%" }}>
-    <CardDark sx={{ mb: 1 }}>
+    <Box sx={{ mb: 1, display: "flex", gap: 1 }}>
       <DropdownButton fullWidth title={t(`tabTheorycraft.substatType.${substatsType}`)}>
         {substatType.map(st => <MenuItem key={st} disabled={substatsType === st} onClick={() => setSubstatsType(st)}>{t(`tabTheorycraft.substatType.${st}`)}</MenuItem>)}
       </DropdownButton>
-    </CardDark>
+      <CardDark sx={{ textAlign: "center", p: 0.5, minWidth: "10em" }}>
+        Tot. RV: <strong>{rv.toFixed(1)}%</strong>
+      </CardDark>
+    </Box>
     <Stack spacing={1}>
       {Object.entries(substats).map(([k, v]) => <ArtifactSubstatEditor key={k} statKey={k} value={v} setValue={setValue(k)} substatsType={substatsType} />)}
     </Stack>
@@ -373,6 +391,7 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType }: { sta
       {StatIcon[statKey]}{KeyMap.getStr(statKey)}{KeyMap.unit(statKey)}
     </CardDark>
     <CustomNumberInput
+      color={value ? "success" : "primary"}
       float={KeyMap.unit(statKey) === "%"}
       endAdornment={KeyMap.unit(statKey) || <Box width="1em" component="span" />}
       value={parseFloat(value.toFixed(2))}
@@ -380,12 +399,13 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType }: { sta
       sx={{ borderRadius: 1, px: 1, height: "100%", width: "6em" }}
       inputProps={{ sx: { textAlign: "right" }, min: 0 }} />
     <CustomNumberInput
+      color={value ? "success" : "primary"}
       float
       startAdornment={<Box sx={{ whiteSpace: "nowrap", width: "7em", display: "flex", justifyContent: "space-between" }}><span>{cacheValueString(substatValue, unit)}{unit}</span><span>x</span></Box>}
       value={parseFloat((value / substatValue).toFixed(2))}
       onChange={v => v !== undefined && setValue(v * substatValue)}
       sx={{ borderRadius: 1, px: 1, my: 0, height: "100%", width: "7em" }}
-      inputProps={{ sx: { textAlign: "right", pr: 0.5, }, min: 0 }} />
+      inputProps={{ sx: { textAlign: "right", pr: 0.5, }, min: 0, step: 1 }} />
     <CardDark sx={{ textAlign: "center", p: 0.5, minWidth: "8em" }}>
       RV: <strong>{rv.toFixed(1)}%</strong>
     </CardDark>

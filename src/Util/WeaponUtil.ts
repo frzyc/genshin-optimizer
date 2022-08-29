@@ -1,7 +1,7 @@
 import { WeaponKey, WeaponTypeKey } from "../Types/consts"
 import { ICachedWeapon } from "../Types/weapon"
 
-function defaultInitialWeaponKey(type: WeaponTypeKey): WeaponKey {
+export function defaultInitialWeaponKey(type: WeaponTypeKey): WeaponKey {
   switch (type) {
     case "sword": return "DullBlade"
     case "bow": return "HuntersBow"

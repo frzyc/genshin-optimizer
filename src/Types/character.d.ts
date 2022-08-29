@@ -1,5 +1,6 @@
+import { MainStatKey } from "pipeline";
 import { EleEnemyResKey, StatKey } from "../KeyMap";
-import { AdditiveReactionKey, AmpReactionKey, Ascension, CharacterKey, ElementKey, HitModeKey, InfusionAuraElements, SlotKey, SubstatType } from "./consts";
+import { AdditiveReactionKey, AmpReactionKey, ArtifactRarity, Ascension, CharacterKey, ElementKey, HitModeKey, InfusionAuraElements, SlotKey, SubstatType } from "./consts";
 import { IConditionalValues } from "./IConditional";
 
 export interface CustomTarget {
@@ -44,6 +45,11 @@ export interface ICachedCharacter extends ICharacter {
   equippedWeapon: string
 }
 
+export type ICharTCArtifactSlot = {
+  level: number,
+  statKey: MainStatKey,
+  rarity: ArtifactRarity
+}
 export type ICharTC = {
   weapon: {
     key: WeaponKey,
@@ -52,12 +58,7 @@ export type ICharTC = {
     refinement: Refinement,
   },
   artifact: {
-    levels: Record<ArtifactSlotKey, number>
-    mainstatKeys: {
-      sands: ArtifactSandsStatKey,
-      goblet: ArtifactGobletStatKey,
-      circlet: ArtifactCircletStatKey,
-    },
+    slots: Record<SlotKey, ICharTCArtifactSlot>
     substats: {
       type: SubstatType,
       stats: Record<SubstatKey, number>

@@ -8,6 +8,14 @@ import ArtifactSubstatLookupTable from './artifact_sub_rolls_gen.json';
 
 const maxStar: Rarity = 5
 
+export const maxArtifactLevel = {
+  1: 4,
+  2: 4,
+  3: 12,
+  4: 16,
+  5: 20
+} as const
+
 const ArtifactSubstatRollData: StrictDict<Rarity, { low: number, high: number, numUpgrades: number }> = {
   1: { low: 0, high: 0, numUpgrades: 1 },
   2: { low: 0, high: 1, numUpgrades: 2 },

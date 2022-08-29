@@ -1,7 +1,7 @@
-import { CharacterKey } from "pipeline";
+import { CharacterKey, MainStatKey } from "pipeline";
 import { allSubstatKeys } from "../../Types/artifact";
 import { ICharacter, ICharTC } from "../../Types/character";
-import { allSlotKeys, WeaponKey } from "../../Types/consts";
+import { allSlotKeys, ArtifactRarity, WeaponKey } from "../../Types/consts";
 import { objectKeyMap } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
@@ -26,8 +26,11 @@ export class CharacterTCDataManager extends DataManager<CharacterKey, string, IC
     super.remove(key)
   }
   get(key: CharacterKey | "" | undefined): ICharTC {
+    throw new Error("use getWithInit")
+  }
+  getWithInit(key: CharacterKey, weaponKey: WeaponKey): ICharTC {
     const charTc = key ? this.data[key] : undefined
-    return charTc || initCharTC("DullBlade")
+    return charTc || initCharTC(weaponKey)
   }
 }
 
@@ -40,12 +43,11 @@ export function initCharTC(weaponKey: WeaponKey): ICharTC {
       refinement: 1,
     },
     artifact: {
-      levels: objectKeyMap(allSlotKeys, () => 20),
-      mainstatKeys: {
-        sands: "atk_",
-        goblet: "atk_",
-        circlet: "atk_",
-      },
+      slots: objectKeyMap(allSlotKeys, s => ({
+        level: 20,
+        rarity: 5 as ArtifactRarity,
+        statKey: (s === "flower" ? "hp" : s === "plume" ? "atk" : "atk_") as MainStatKey,
+      })),
       substats: {
         type: "max",
         stats: objectKeyMap(allSubstatKeys, () => 0)
