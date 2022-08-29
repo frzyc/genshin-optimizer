@@ -5,6 +5,7 @@ import { allMainStatKeys, allSubstatKeys, IArtifact, ISubstat } from "../../Type
 import { ICharacter } from "../../Types/character";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allAmpReactions, allSlotKeys, allWeaponKeys, allAdditiveReactions } from "../../Types/consts";
 import { IWeapon } from "../../Types/weapon";
+import { objectKeyMap, objectMap } from "../../Util/Util";
 
 // MIGRATION STEP:
 // Always keep parsing in sync with the latest DB format.
@@ -73,7 +74,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   let {
     key: characterKey, level, ascension, hitMode, elementKey, reaction, conditional,
     bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
-    compareData, customMultiTarget
+    compareData, customMultiTarget, customMultiTargets
   } = obj
 
   if (!allCharacterKeys.includes(characterKey) ||
@@ -119,7 +120,12 @@ export function parseCharacter(obj: any): ICharacter | undefined {
     bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
     compareData, customMultiTarget
   }
-  if (elementKey) result.elementKey = elementKey
+  if (elementKey) {
+    result.elementKey = elementKey
+    result.customMultiTarget = []
+    if (!customMultiTargets) result.customMultiTargets = objectKeyMap(allElements, () => []) as ICharacter["customMultiTargets"]
+    else result.customMultiTargets = objectMap(customMultiTargets!, customMultiTarget => (customMultiTarget as any[]).map(cmt => validateCustomMultiTarget(cmt)).filter(t => t)) as ICharacter["customMultiTargets"]
+  }
   return result
 }
 /**

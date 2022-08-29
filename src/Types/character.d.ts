@@ -39,6 +39,7 @@ export interface ICharacter {
   infusionAura: InfusionAuraElements | ""
   compareData: boolean
   customMultiTarget: CustomMultiTarget[]
+  customMultiTargets?: Record<ElementKey, CustomMultiTarget[]>
 }
 export interface ICachedCharacter extends ICharacter {
   equippedArtifacts: StrictDict<SlotKey, string>
