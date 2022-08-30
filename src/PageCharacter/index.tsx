@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
 import CharacterCard from '../Components/Character/CharacterCard';
-import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
 import SortByButton from '../Components/SortByButton';
 import ElementToggle from '../Components/ToggleButton/ElementToggle';
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
@@ -20,36 +19,29 @@ import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
-import { allElements, allWeaponTypeKeys, CharacterKey } from '../Types/consts';
+import { CharacterKey } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
+import { initialCharacterDisplayState } from './CharacterDisplayState';
+import { CharacterSelectionModal } from './CharacterSelectionModal';
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 6 - 1, sm: 8 - 1, md: 12 - 1, lg: 16 - 1, xl: 16 - 1 }
 
-const initialState = () => ({
-  sortType: characterSortKeys[0],
-  ascending: false,
-  weaponType: [...allWeaponTypeKeys],
-  element: [...allElements],
-}
-)
-
 export default function PageCharacter() {
   const { t } = useTranslation(["page_character", "charNames_gen"])
   const { database } = useContext(DatabaseContext)
-  const [state, stateDispatch] = useDBState("CharacterDisplay", initialState)
+  const [state, stateDispatch] = useDBState("CharacterDisplay", initialCharacterDisplayState)
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
-  const [pageIndex, setPageIndex] = useState(0)
   const invScrollRef = useRef<HTMLDivElement>(null)
   const setPage = useCallback(
     (_: ChangeEvent<unknown>, value: number) => {
       invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
-      setPageIndex(value - 1);
+      stateDispatch({ pageIndex: value - 1 });
     },
-    [setPageIndex, invScrollRef]
+    [stateDispatch, invScrollRef]
   )
 
   const brPt = useMediaQueryUp()
@@ -104,7 +96,7 @@ export default function PageCharacter() {
   },
     [deferredDbDirty, database, sortConfigs, filterConfigs, deferredState, deferredSearchTerm])
 
-  const { weaponType, element, sortType, ascending } = state
+  const { weaponType, element, sortType, ascending, pageIndex = 0 } = state
 
   const { charKeyListToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(charKeyList.length / maxNumToDisplay)
@@ -138,7 +130,7 @@ export default function PageCharacter() {
         </Grid>
         <Grid item >
           <SortByButton sx={{ height: "100%" }}
-            sortKeys={characterSortKeys} value={sortType} onChange={sortType => stateDispatch({ sortType })}
+            sortKeys={characterSortKeys.slice(1)} value={sortType} onChange={sortType => stateDispatch({ sortType })}
             ascending={ascending} onChangeAsc={ascending => stateDispatch({ ascending })} />
         </Grid>
       </Grid>

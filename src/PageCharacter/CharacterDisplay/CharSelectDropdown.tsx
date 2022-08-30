@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CharacterSelectionModal } from '../../Components/Character/CharacterSelectionModal';
+import { CharacterSelectionModal } from '../CharacterSelectionModal';
 import ThumbSide from '../../Components/Character/ThumbSide';
 import { CharacterContext } from '../../Context/CharacterContext';
 import useCharSelectionCallback from '../../ReactHooks/useCharSelectionCallback';
