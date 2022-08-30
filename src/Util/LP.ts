@@ -166,6 +166,7 @@ function solveLPEq<Index>(equations: Equation<Index>[], includeEquations = false
     }
   }
   // Gaussian Elimination
+  const headKey = new Map<number, Index>()
   for (let i = 0; i < eqs.length; i++) {
     const eqi = eqs[i]
     if (eqi.size < 2) {
@@ -173,23 +174,26 @@ function solveLPEq<Index>(equations: Equation<Index>[], includeEquations = false
       if (Math.abs(eqi.get(special)!) > 1e-12) return undefined
       continue
     }
-    const [_, [key, wi]] = eqi.entries()
+    const [_, ...entries] = eqi.entries()
+    const [key, wi] = entries.reduce((best, x) => Math.abs(best[1]) < Math.abs(x[1]) ? x : best)
+    headKey.set(i, key)
     for (let j = i + 1; j < eqs.length; j++) subtract(i, j, key, wi)
   }
   // eqs is now in row echelon form
+  const weights = new Map<Index, number>()
   for (let i = eqs.length - 1; i >= 0; i--) {
     const eqi = eqs[i]
     if (eqi.size < 2) continue
-    const [_, [key, wi]] = eqi.entries()
-    for (let j = i - 1; j >= 0; j--) subtract(i, j, key, wi)
+    const [[_, c], ...terms] = eqi.entries(), head = headKey.get(i)!, hWeight = eqi.get(head)!
+    let value = c
+    for (const [index, w] of terms)
+      if (head !== index) value -= w * (weights.get(index) ?? 0)
+    if (value) weights.set(head, value / hWeight)
   }
 
   const remaining = [...eqs].filter(eq => eq.size >= 2)
   return {
-    weights: remaining.map((eq): [Index, number] => {
-      const [[_, val], [k, w]] = eq.entries()
-      return [k, val / w]
-    }),
+    weights: [...weights.entries()],
     equations: includeEquations ? remaining.map(eq => {
       const [[_, val], ...weights] = [...eq]
       return { weights, val }
