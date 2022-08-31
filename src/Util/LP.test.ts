@@ -101,10 +101,7 @@ describe("LP", () => {
       expect(y).toBeCloseTo(3, 8)
     })
     test.skip("can handle large problem", () => {
-      const obj = largeProblem.obj as Weights, constraints = largeProblem.constraints as LPConstraint[]
-      constraints.forEach(constraint => constraint.weights =
-        Object.fromEntries(Object.entries(constraint.weights).filter(([_, x]) => x)))
-
+      const obj = largeProblem.obj as Weights, constraints = largeProblem.constraints as any as LPConstraint[]
       const sol = maximizeLP(obj, constraints)
     })
   })
