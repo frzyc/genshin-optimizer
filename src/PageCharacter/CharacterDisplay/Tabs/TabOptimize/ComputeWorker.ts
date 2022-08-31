@@ -74,6 +74,7 @@ export class ComputeWorker {
     let count = { tested: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }
 
     const buffer: ArtifactBuildData[] = Array(arts.length)
+    let lastInterimReport = performance.now();
     function permute(i: number) {
       if (i < 0) {
         if (min.every((m, i) => (m <= compiledNodes[i](buffer)))) {
@@ -101,8 +102,13 @@ export class ComputeWorker {
       })
       if (i === 0) {
         count.tested += arts[0].length
-        if (count.tested > 8192)
-          interimReport(count)
+        if (count.tested > 32768) {
+          const now = performance.now()
+          if (now - lastInterimReport > 500) {
+            lastInterimReport = now
+            interimReport(count)
+          }
+        }
       }
     }
 
