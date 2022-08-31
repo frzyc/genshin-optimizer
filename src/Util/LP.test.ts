@@ -7,22 +7,22 @@ describe("LP", () => {
   describe("solveLPEq", () => {
     it("can solve welformed equations", () => {
       // x = 1, y = 2
-      const sol = new Map(solveLPEq([
+      const sol = solveLPEq([
         { weights: [], val: 0 },
         { weights: [["x", 1], ["y", 1]], val: 3 },
         { weights: [["x", 1], ["y", -1]], val: -1 },
-      ])!.weights)
+      ])!
       expect(sol.get("x")).toEqual(1)
       expect(sol.get("y")).toEqual(2)
     })
     it("can solve overspecified equations", () => {
       // x = 1, y = 2
-      const sol = new Map(solveLPEq([
+      const sol = solveLPEq([
         { weights: [], val: 0 },
         { weights: [["x", 1], ["y", 1]], val: 3 },
         { weights: [["x", 1], ["y", -1]], val: -1 },
         { weights: [["x", 3], ["y", 2]], val: 7 },
-      ])!.weights)
+      ])!
       expect(sol.get("x")).toEqual(1)
       expect(sol.get("y")).toEqual(2)
     })
@@ -38,11 +38,11 @@ describe("LP", () => {
     })
     it("accepts empty equations", () => {
       // x = 1, y = 2
-      const wellformed = new Map(solveLPEq([
+      const wellformed = solveLPEq([
         { weights: [], val: 0 },
         { weights: [["x", 1], ["y", 1]], val: 3 },
         { weights: [["x", 1], ["y", -1]], val: -1 },
-      ])!.weights)
+      ])!
       expect(wellformed.get("x")).toEqual(1)
       expect(wellformed.get("y")).toEqual(2)
 
@@ -55,10 +55,10 @@ describe("LP", () => {
     })
     it("can solve underspecified equations", () => {
       // Infinite solutions
-      const sol = new Map(solveLPEq([
+      const sol = solveLPEq([
         { weights: [["x", 1], ["y", 1], ["z", 1]], val: 3 },
         { weights: [["z", 1], ["x", 1], ["y", -1]], val: -1 },
-      ])!.weights)
+      ])!
       const x = sol.get("x") ?? 0, y = sol.get("y") ?? 0, z = sol.get("z") ?? 0
       expect(x + y + z).toEqual(3)
       expect(x - y + z).toEqual(-1)
@@ -102,6 +102,9 @@ describe("LP", () => {
     })
     test.skip("can handle large problem", () => {
       const obj = largeProblem.obj as Weights, constraints = largeProblem.constraints as LPConstraint[]
+      constraints.forEach(constraint => constraint.weights =
+        Object.fromEntries(Object.entries(constraint.weights).filter(([_, x]) => x)))
+
       const sol = maximizeLP(obj, constraints)
     })
   })

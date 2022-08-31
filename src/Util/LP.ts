@@ -86,7 +86,7 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
     eq3.weights.push([theta, z_bar], [kappa, -1])
     eq4.weights.push([tau, -z_bar])
 
-    nullEq = solveLPEq([...eq1, ...eq2, eq3, eq4], true)!.equations!
+    nullEq = [...eq1, ...eq2, eq3, eq4]
     bc_bar_norm = Math.sqrt([...b_bar, ...c_bar].reduce((accu, val) => accu + val * val, 0))
   }
 
@@ -119,8 +119,8 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
       xEq.forEach(eq => eq.val += mu)
     }
 
-    const { weights } = solveLPEq([...nullEq, ...xEq])!
-    weights.forEach(([idx, val]) => idx.tmp = val)
+    const weights = solveLPEq([...nullEq, ...xEq])!
+    weights.forEach((val, idx) => idx.tmp = val)
 
     let alpha = 1 // corrector
     if (!(round % 2)) {
@@ -138,7 +138,7 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
     y.forEach(y => y.val += alpha * y.tmp)
     theta.val += alpha * theta.tmp
 
-    weights.forEach(([idx]) => idx.tmp = 0)
+    weights.forEach((_, idx) => idx.tmp = 0)
   }
 
   throw new Error("Round limit exceeded")
@@ -150,9 +150,7 @@ function centrality(alpha: number, xTau: IndexObj[], sKappa: IndexObj[]) {
   return Math.sqrt(vec.map(x => x / mu - 1).reduce((accu, x) => accu + x * x, 0))
 }
 
-function solveLPEq<Index>(equations: Equation<Index>[], includeEquations = false): {
-  weights: IndexedWeight<Index>, equations: Equation<Index>[] | undefined
-} | undefined {
+function solveLPEq<Index>(equations: Equation<Index>[]): Map<Index, number> | undefined {
   const special = {} as Index, eqs = equations.map(eq => new Map([[special, eq.val], ...eq.weights.filter(e => e[1])]))
   /** j := j - (j[key]/i[key]) i , eliminating `key` from `j`. Requires `i[key] != 0` */
   function subtract(i: number, j: number, key: Index, w: number) {
@@ -191,14 +189,7 @@ function solveLPEq<Index>(equations: Equation<Index>[], includeEquations = false
     if (value) weights.set(head, value / hWeight)
   }
 
-  const remaining = [...eqs].filter(eq => eq.size >= 2)
-  return {
-    weights: [...weights.entries()],
-    equations: includeEquations ? remaining.map(eq => {
-      const [[_, val], ...weights] = [...eq]
-      return { weights, val }
-    }) : undefined
-  }
+  return weights
 }
 
 export const testExport = { solveLPEq }
