@@ -83,8 +83,5 @@ describe("optimization", () => {
       const compute = precompute([output3, output3], {}, x => x.path[0])
       expect([...compute([{ id: "", values: { 0: 2, 1: 44, 2: 7 } }]).slice(0, 2)]).toEqual([(1 + 2 + 44) + (44 * 7), (1 + 2 + 44) + (44 * 7)])
     })
-    test.only("this", () => {
-      console.log(`${[1, 2, 3, 4]}`)
-    })
   })
 })
