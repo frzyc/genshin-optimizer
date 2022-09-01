@@ -1,7 +1,8 @@
-import { assertUnreachable, objectKeyMap, objPathValue } from "../Util/Util"
+import type { ArtifactBuildData } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
+import { assertUnreachable, objPathValue } from "../Util/Util"
 import { forEachNodes, mapFormulas } from "./internal"
-import { constant } from "./utils"
 import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode, StrPrioNode } from "./type"
+import { constant } from "./utils"
 
 const allCommutativeMonoidOperations: StrictDict<CommutativeMonoidOperation, (_: number[]) => number> = {
   min: (x: number[]): number => Math.min(...x),
@@ -28,7 +29,7 @@ export function optimize(formulas: NumNode[], topLevelData: Data, shouldFold = (
   formulas = deduplicate(formulas)
   return formulas
 }
-export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<number> | ReadNode<string | undefined>) => string): [compute: () => number[], buffer: StrictDict<string, number>] {
+export function precompute(formulas: NumNode[], initial: ArtifactBuildData["values"], binding: (readNode: ReadNode<number> | ReadNode<string | undefined>) => string): (_: ArtifactBuildData[]) => number[] {
   let body = `
 "use strict";
 // copied from the code above
@@ -37,31 +38,29 @@ function res(res) {
   else if (res >= 0.75) return 1 / (res * 4 + 1)
   return 1 - res
 }
-const x0=0`; // make sure `const` has at least one entry
-  let base = body, x = [0]
+const x0=0`; // making sure `const` has at least one entry
 
   let i = 1;
-  const names = new Map<NumNode | StrNode, string>(), readingList = new Set<string>()
+  const names = new Map<NumNode | StrNode, string>()
   forEachNodes(formulas, _ => { }, f => {
-    const { operation, operands } = f, name = `x${i++}`, operandNames = operands.map(x => names.get(x))
+    const { operation, operands } = f, name = `x${i++}`, operandNames = operands.map(x => names.get(x)!)
     names.set(f, name)
     switch (operation) {
       case "read": {
-        const name = binding(f)
-        names.set(f, `(b["${name}"])`)
-        readingList.add(name)
+        const key = binding(f)
+        body += `,${name}=b.reduce((accu, {values}) => accu + (values["${key}"] ?? 0), ${initial[key] ?? 0})`
         break
       }
       case "const": names.set(f, `(${f.value})`); break
-      case "add": case "mul": body += `,${name}=` + operandNames.join(operation === "add" ? "+" : "*"); break
-      case "min": case "max": body += `,${name}=Math.${operation}(${operandNames.join(",")})`; break
+      case "add": case "mul": body += `,${name}=${operandNames.join(operation === "add" ? "+" : "*")}`; break
+      case "min": case "max": body += `,${name}=Math.${operation}(${operandNames})`; break
       case "threshold": {
         const [value, threshold, pass, fail] = operandNames
-        body += `,${name}=(${value} >= ${threshold}) ? ${pass} : ${fail}`
+        body += `,${name}=(${value}>=${threshold})?${pass}:${fail}`
         break
       }
       case "res": body += `,${name}=res(${operandNames[0]})`; break
-      case "sum_frac": body += `,${name}=${operandNames[0]}/(${operandNames[0]} + ${operandNames[1]})`; break
+      case "sum_frac": body += `,${name}=${operandNames[0]}/(${operandNames[0]}+${operandNames[1]})`; break
 
       case "match": case "lookup": case "subscript":
       case "prio": case "small":
@@ -70,9 +69,7 @@ const x0=0`; // make sure `const` has at least one entry
     }
   })
   body += `;\nreturn [${formulas.map(f => names.get(f)!)}]`
-  const buffer = objectKeyMap([...readingList], _ => 0)
-  const f = new Function(`b`, body)
-  return [() => f(buffer), buffer]
+  return new (Function as any)(`b`, body)
 }
 
 function flatten(formulas: NumNode[]): NumNode[] {

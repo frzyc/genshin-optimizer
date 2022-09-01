@@ -1,7 +1,7 @@
 import { optimize, precompute } from '../../../../Formula/optimization';
 import type { NumNode } from '../../../../Formula/type';
 import type { InterimResult, Setup } from './BackgroundWorker';
-import { ArtifactsBySlot, Build, countBuilds, filterArts, mergePlot, PlotData, pruneAll, RequestFilter } from './common';
+import { ArtifactBuildData, ArtifactsBySlot, Build, countBuilds, filterArts, mergePlot, PlotData, pruneAll, RequestFilter } from './common';
 
 export class ComputeWorker {
   builds: Build[] = []
@@ -40,31 +40,27 @@ export class ComputeWorker {
     ({ nodes, arts: preArts } = pruneAll(nodes, min, preArts, this.maxBuilds, {}, {
       pruneArtRange: true, pruneNodeRange: true,
     }))
-    const [compute, buffer] = precompute(nodes, f => f.path[1])
-    const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length).map(arts => arts.map(art => ({
-      id: art.id, values: Object.entries(art.values)
-        .map(([key, value]) => ({ key, value, cache: 0 }))
-        .filter(({ key, value }) => key !== undefined && value !== 0)
-    })))
+    const compute = precompute(nodes, preArts.base, f => f.path[1])
+    const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length)
 
-    const ids: string[] = Array(arts.length).fill("")
-    let count = { tested: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }
+    const buffer = Array<ArtifactBuildData>(arts.length)
+    const count = { tested: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }
 
     let lastInterimReport = performance.now()
     function permute(i: number) {
       if (i < 0) {
-        const result = compute()
+        const result = compute(buffer)
         if (min.every((m, i) => (m <= result[i]))) {
           const value = result[min.length], { builds, plotData, threshold } = self
           let build: Build | undefined
           if (value >= threshold) {
-            build = { value, artifactIds: [...ids] }
+            build = { value, artifactIds: buffer.map(x => x.id) }
             builds.push(build)
           }
           if (plotData) {
             const x = result[min.length + 1]
             if (!plotData[x] || plotData[x]!.value < value) {
-              if (!build) build = { value, artifactIds: [...ids] }
+              if (!build) build = { value, artifactIds: buffer.map(x => x.id) }
               build.plot = x
               plotData[x] = build
             }
@@ -74,18 +70,8 @@ export class ComputeWorker {
         return
       }
       arts[i].forEach(art => {
-        ids[i] = art.id
-
-        for (const current of art.values) {
-          const { key, value } = current
-          current.cache = buffer[key]
-          buffer[key] += value
-        }
-
+        buffer[i] = art
         permute(i - 1)
-
-        for (const { key, cache } of art.values)
-          buffer[key] = cache
       })
       if (i === 0) {
         count.tested += arts[0].length
@@ -98,9 +84,6 @@ export class ComputeWorker {
         }
       }
     }
-
-    for (const [key, value] of Object.entries(preArts.base))
-      buffer[key] = value
 
     permute(arts.length - 1)
     this.interimReport(count)

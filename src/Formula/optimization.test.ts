@@ -59,32 +59,32 @@ describe("optimization", () => {
       const r1 = inputs[0], r2 = inputs[1], r3 = inputs[2]
       const output1 = sum(1, r1, r2), output2 = prod(r2, r3), output3 = sum(output1, output2)
 
-      const [compute, buffer] = precompute([output1], x => x.path[0])
-      buffer[0] = 32; buffer[1] = 77;
-      expect([...compute().slice(0, 1)]).toEqual([1 + 32 + 77])
+      const compute = precompute([output1], {}, x => x.path[0])
+      expect([...compute([{ id: "", values: { 0: 32, 1: 77 } }]).slice(0, 1)]).toEqual([1 + 32 + 77])
     })
     test("Output is read node", () => {
       const r1 = inputs[0], r2 = inputs[1], r3 = inputs[2]
       const output1 = sum(1, r1, r2), output2 = prod(r2, r3), output3 = sum(output1, output2)
 
-      const [compute, buffer] = precompute([r1], x => x.path[0])
-      buffer[0] = 32
-      expect([...compute().slice(0, 1)]).toEqual([32])
+      const compute = precompute([r1], {}, x => x.path[0])
+      expect([...compute([{ id: "", values: { 0: 32 } }]).slice(0, 1)]).toEqual([32])
     })
     test("Output is constant node", () => {
       const r1 = inputs[0], r2 = inputs[1], r3 = inputs[2]
       const output1 = sum(1, r1, r2), output2 = prod(r2, r3), output3 = sum(output1, output2)
 
-      const [compute, buffer] = precompute([constant(35)], x => x.path[0])
-      expect([...compute().slice(0, 1)]).toEqual([35])
+      const compute = precompute([constant(35)], {}, x => x.path[0])
+      expect([...compute([]).slice(0, 1)]).toEqual([35])
     })
     test("Output is duplicated", () => {
       const r1 = inputs[0], r2 = inputs[1], r3 = inputs[2]
       const output1 = sum(1, r1, r2), output2 = prod(r2, r3), output3 = sum(output1, output2)
 
-      const [compute, buffer] = precompute([output3, output3], x => x.path[0])
-      buffer[0] = 2; buffer[1] = 44; buffer[2] = 7
-      expect([...compute().slice(0, 2)]).toEqual([(1 + 2 + 44) + (44 * 7), (1 + 2 + 44) + (44 * 7)])
+      const compute = precompute([output3, output3], {}, x => x.path[0])
+      expect([...compute([{ id: "", values: { 0: 2, 1: 44, 2: 7 } }]).slice(0, 2)]).toEqual([(1 + 2 + 44) + (44 * 7), (1 + 2 + 44) + (44 * 7)])
+    })
+    test.only("this", () => {
+      console.log(`${[1, 2, 3, 4]}`)
     })
   })
 })
