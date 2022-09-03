@@ -2,12 +2,14 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'build')));
+const mount_path = '/genshin-optimizer'
+app.use(mount_path, express.static(path.join(__dirname, 'build')));
 
-app.get('/', function (req, res) {
+app.get(mount_path, function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(9000, () => {
-  console.log("Test Server Listening on port 9000");
+const port = 9000
+app.listen(port, () => {
+  console.log(`Test Server Listening at http://localhost:${port}${mount_path}`);
 });
