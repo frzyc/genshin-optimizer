@@ -27,8 +27,6 @@ export interface ICharacter {
     burst: number
   }
 
-  team: [teammate1: CharacterKey | "", teammate2: CharacterKey | "", teammate3: CharacterKey | ""]
-  teamConditional: Partial<Record<CharacterKey, IConditionalValues>>
   // GO-specific
   hitMode: HitModeKey
   elementKey?: ElementKey
@@ -40,6 +38,8 @@ export interface ICharacter {
   compareData: boolean
   customMultiTarget: CustomMultiTarget[]
   customMultiTargets?: Record<ElementKey, CustomMultiTarget[]>
+  team: [teammate1: CharacterKey | "", teammate2: CharacterKey | "", teammate3: CharacterKey | ""]
+  teamConditional: Partial<Record<CharacterKey, IConditionalValues>>
 }
 export interface ICachedCharacter extends ICharacter {
   equippedArtifacts: StrictDict<SlotKey, string>

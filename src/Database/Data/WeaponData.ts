@@ -30,8 +30,12 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
         this.set(key, weapon)
       }
     }
-
+    this.ensureEquipment()
+  }
+  ensureEquipment() {
     const weaponIds = new Set(this.keys)
+    const newWeapons: IWeapon[] = []
+
     for (const [charKey, char] of Object.entries(this.database.chars.data)) {
       if (!char.equippedWeapon) {
         // A default "sword" should work well enough for this case.
@@ -43,8 +47,10 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
         this.set(weaponId, weapon)
         // No need to set anything on character side.
         this.set(weaponId, { location: charKey })
+        newWeapons.push(weapon)
       }
     }
+    return newWeapons
   }
   deCache(weapon: ICachedWeapon): IWeapon {
     const { key, level, ascension, refinement, location, lock } = weapon
@@ -53,7 +59,7 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
 
   new(value: IWeapon): string {
     const id = generateRandomWeaponID(new Set(this.keys))
-    const newWeapon = validateWeapon(parseWeapon({ ...value, location: "" })!, id)
+    const newWeapon = validateWeapon(parseWeapon(value)!, id)
     this.set(id, newWeapon)
     return id
   }
@@ -87,9 +93,17 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
         this.database.chars.setEquippedWeapon(newChar.key, newWeapon.id)
       if (prevChar)
         this.database.chars.setEquippedWeapon(prevChar.key, prevWeapon?.id ?? "")
-    } else if (newWeapon.location) // Trigger a update to character as well
+    } else if (newWeapon.location) {
+      const char = this.database.chars.get(newWeapon.location)
+      if (!char) return console.error("Weapon", newWeapon, "specified an invalid location.")
+      const prev = char.equippedWeapon
+      if (prev !== id) {
+        if (prev && this.get(prev)) this.set(prev, { location: "" })
+        this.database.chars.setEquippedWeapon(newWeapon.location, id)
+      }
+      // Trigger a update to character since its weapon was updated
       this.database.chars.trigger(newWeapon.location)
-
+    }
     super.set(id, newWeapon)
   }
 

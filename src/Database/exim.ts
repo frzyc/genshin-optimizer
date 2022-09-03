@@ -1,14 +1,16 @@
 import type { IArtifact } from "../Types/artifact"
 import type { ICharacter } from "../Types/character"
 import type { IWeapon } from "../Types/weapon"
-import type { DBStorage } from "./DBStorage"
 
 export const GOSource = "Genshin Optimizer" as const
 
-export function newCounter<T>(): ImportResultCounter<T> {
-  return { total: 0, invalid: [], new: [], updated: [], unchanged: [], removed: [], }
+function newCounter<T>(): ImportResultCounter<T> {
+  return { import: [], invalid: [], new: [], updated: [], unchanged: [], removed: [], dbTotal: 0, notInImport: 0 }
 }
 
+export function newImportResult(source: string): ImportResult {
+  return { type: "GOOD", source, artifacts: newCounter(), weapons: newCounter(), characters: newCounter() }
+}
 export type IGOOD = {
   format: "GOOD"
   source: string
@@ -25,18 +27,23 @@ export type IGO = {
 }
 
 export type ImportResultCounter<T> = {
-  total: number, // total # in file
+  import: T[], // total # in file
   new: T[],
   updated: T[], // Use new object
   unchanged: T[], // Use new object
   removed: T[],
   invalid: T[],
+  dbTotal: number,
+  notInImport: number,
 }
 export type ImportResult = {
   type: "GOOD",
-  storage: DBStorage,
   source: string,
-  artifacts?: ImportResultCounter<IArtifact>,
-  weapons?: ImportResultCounter<IWeapon>,
-  characters?: ImportResultCounter<ICharacter>,
+  artifacts: ImportResultCounter<IArtifact>,
+  weapons: ImportResultCounter<IWeapon>,
+  characters: ImportResultCounter<ICharacter>,
+  extra?: {
+    buildSettings: object[]
+    states: object[]
+  }
 }

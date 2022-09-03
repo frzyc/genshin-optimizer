@@ -1,15 +1,16 @@
 import { faArrowLeft, faFileCode, faFileUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Upload } from '@mui/icons-material'
-import { Box, Button, CardContent, Divider, Grid, styled, Typography } from '@mui/material'
-import { useContext, useMemo, useState } from "react"
+import { JoinFull, JoinLeft, MergeType, Splitscreen, Upload } from '@mui/icons-material'
+import { Box, Button, CardContent, Divider, Grid, styled, Tooltip, Typography } from '@mui/material'
+import { useCallback, useContext, useMemo, useState } from "react"
 import { Trans, useTranslation } from "react-i18next"
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database"
+import { DBLocalStorage, SandboxStorage } from '../Database/DBStorage'
 import { ImportResult, ImportResultCounter } from '../Database/exim'
 import { importGOOD } from '../Database/imports/good'
-import { importMona } from '../Database/imports/mona'
+import { merge } from '../Database/imports/merge'
 
 const InvisInput = styled('input')({
   display: 'none',
@@ -21,7 +22,9 @@ export default function UploadCard({ onReplace }: { onReplace: () => void }) {
   const [data, setdata] = useState("")
   const [filename, setfilename] = useState("")
   const [errorMsg, setErrorMsg] = useState("") // TODO localize error msg
-  const dataObj: UploadData | undefined = useMemo(() => {
+  const [partial, setPartial] = useState(false)
+  const [disjoint, setDisjoint] = useState(false)
+  const { importResult, importedDatabase } = useMemo(() => {
     if (!data) return
     let parsed: any
     try {
@@ -35,26 +38,20 @@ export default function UploadCard({ onReplace }: { onReplace: () => void }) {
       return
     }
     // Figure out the file format
-    if (parsed.version === "1" && ["flower", "feather", "sand", "cup", "head"].some(k => Object.keys(parsed).includes(k))) {
-      // Parse as mona format
-      const imported = importMona(parsed, database)
-      if (!imported) {
-        setErrorMsg("uploadCard.error.monaInvalid")
-        return
-      }
-      return imported
-    } else if (parsed.format === "GOOD") {
+    if (parsed.format === "GOOD") {
       // Parse as GOOD format
-      const imported = importGOOD(parsed, database)
+      const imported = importGOOD(parsed)
       if (!imported) {
         setErrorMsg("uploadCard.error.goInvalid")
         return
       }
-      return imported
+      const copyStorage = new SandboxStorage()
+      copyStorage.copyFrom(database.storage)
+      return { importResult: imported, importedDatabase: merge(imported, new ArtCharDatabase(copyStorage), partial, disjoint) }
     }
     setErrorMsg("uploadCard.error.unknown")
     return
-  }, [data, database])
+  }, [data, database, partial, disjoint]) ?? {}
 
   const reset = () => {
     setdata("")
@@ -85,26 +82,37 @@ export default function UploadCard({ onReplace }: { onReplace: () => void }) {
           </CardDark>
         </Grid>
       </Grid>
+      <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
+        <Tooltip title={<Box><Trans t={t} i18nKey="settings:uploadCard.tooltip.partial" >
+          <Typography variant="h6">Full Import</Typography>
+          <Typography gutterBottom>Assume the import to be the full inventory. Artifacts/weapons in GO that doesnt exist in the import are deleted.</Typography>
+          <Typography variant="h6">Partial Import</Typography>
+          <Typography>Assume the import is a partial inventory. Artifacts/weapons are updated/deduplicated(depending on setting), but not deleted.</Typography>
+        </Trans></Box>} placement='top' arrow >
+          <Box sx={{ flexGrow: 1, flexBasis: "10em" }}><Button fullWidth disabled={!data} onClick={() => setPartial(!partial)} startIcon={partial ? <JoinLeft /> : <JoinFull />} >
+            {partial ? t`uploadCard.buttons.partialImport` : t`uploadCard.buttons.fullImport`}
+          </Button></Box>
+        </Tooltip>
+        <Tooltip title={<Box><Trans t={t} i18nKey="settings:uploadCard.tooltip.disjoint" >
+          <Typography variant="h6">Merge Import</Typography>
+          <Typography gutterBottom>Find upgrade/duplicates in the GO inventory and merge the import into GO.</Typography>
+          <Typography variant="h6">Disjoint Import</Typography>
+          <Typography>Assume the import does not have any upgrades/duplicates, the import is merged into GO without upgrade/duplicate detection.</Typography>
+        </Trans></Box>} placement='top' arrow >
+          <Box sx={{ flexGrow: 1, flexBasis: "10em" }}><Button fullWidth disabled={!data} onClick={() => setDisjoint(!disjoint)} startIcon={disjoint ? <Splitscreen /> : <MergeType />}>
+            {disjoint ? t`uploadCard.buttons.disjointImport` : t`uploadCard.buttons.mergeImport`}
+          </Button></Box>
+        </Tooltip>
+      </Box>
       <Typography gutterBottom variant="caption"><Trans t={t} i18nKey="settings:uploadCard.hintPaste" /></Typography>
       <Box component="textarea" sx={{ width: "100%", fontFamily: "monospace", minHeight: "10em", mb: 2, resize: "vertical" }} value={data} onChange={e => setdata(e.target.value)} />
-      {UploadInfo(dataObj) ?? t(errorMsg)}
+      {importResult ? <GOODUploadInfo importResult={importResult} /> : t(errorMsg)}
     </CardContent>
-    {UploadAction(dataObj, reset)}
+    <GOUploadAction database={importedDatabase} reset={reset} />
   </CardLight>
 }
 
-function UploadInfo(data: UploadData | undefined) {
-  switch (data?.type) {
-    case "GOOD": return <GOODUploadInfo data={data} />
-  }
-}
-function UploadAction(data: UploadData | undefined, reset: () => void) {
-  switch (data?.type) {
-    case "GOOD": return <GOUploadAction data={data} reset={reset} />
-  }
-}
-
-function GOODUploadInfo({ data: { source, artifacts, characters, weapons }, data }: { data: ImportResult }) {
+function GOODUploadInfo({ importResult: { source, artifacts, characters, weapons } }: { importResult: ImportResult }) {
   const { t } = useTranslation("settings")
   return <CardDark>
     <CardContent sx={{ py: 1 }}>
@@ -128,43 +136,45 @@ function GOODUploadInfo({ data: { source, artifacts, characters, weapons }, data
     </CardContent>
   </CardDark>
 }
-function MergeResult({ result, type }: { result?: ImportResultCounter<any>, type: string }) {
+function MergeResult({ result, type }: { result: ImportResultCounter<any>, type: string }) {
   const { t } = useTranslation("settings")
-  if (!result) return null
+  const total = result.import.length
   return <CardLight >
     <CardContent sx={{ py: 1 }}>
       <Typography>
-        <Trans t={t} i18nKey={`count.${type}`} /> {result.total ?? 0}
+        <Trans t={t} i18nKey={`count.${type}`} /> {total}
       </Typography>
     </CardContent>
     <Divider />
     <CardContent>
-      <Typography><Trans t={t} i18nKey="count.new" /> <strong>{result.new.length}</strong> / {result.total}</Typography>
-      <Typography><Trans t={t} i18nKey="count.updated" /> <strong>{result.updated.length}</strong> / {result.total}</Typography>
-      <Typography><Trans t={t} i18nKey="count.unchanged" /> <strong>{result.unchanged.length}</strong> / {result.total}</Typography>
-      <Typography color="warning.main"><Trans t={t} i18nKey="count.removed" /> <strong>{result.removed.length}</strong></Typography>
+      <Typography><Trans t={t} i18nKey="count.new" /> <strong>{result.new.length}</strong> / {total}</Typography>
+      <Typography><Trans t={t} i18nKey="count.updated" /> <strong>{result.updated.length}</strong> / {total}</Typography>
+      <Typography><Trans t={t} i18nKey="count.unchanged" /> <strong>{result.unchanged.length}</strong> / {total}</Typography>
+      {!!result.removed.length && <Typography color="warning.main"><Trans t={t} i18nKey="count.removed" /> <strong>{result.removed.length}</strong></Typography>}
+      {!!result.notInImport && <Typography><Trans t={t} i18nKey="count.notInImport" /> <strong>{result.notInImport}</strong></Typography>}
+      <Typography><Trans t={t} i18nKey="count.dbTotal" /> <strong>{result.dbTotal}</strong></Typography>
       {!!result.invalid?.length && <div>
-        <Typography color="error.main"><Trans t={t} i18nKey="count.invalid" /> <strong>{result.invalid.length}</strong> / {result.total}</Typography>
+        <Typography color="error.main"><Trans t={t} i18nKey="count.invalid" /> <strong>{result.invalid.length}</strong> / {total}</Typography>
         <Box component="textarea" sx={{ width: "100%", fontFamily: "monospace", minHeight: "10em", resize: "vertical" }} value={JSON.stringify(result.invalid, undefined, 2)} disabled />
       </div>}
     </CardContent>
   </CardLight>
 }
 
-function GOUploadAction({ data: { storage }, data, reset }: { data: ImportResult, reset: () => void }) {
-  const { database, setDatabase } = useContext(DatabaseContext)
+function GOUploadAction({ database, reset }: { database?: ArtCharDatabase, reset: () => void }) {
+  const { setDatabase } = useContext(DatabaseContext)
   const { t } = useTranslation("settings")
-  const dataValid = data.characters?.total || data.artifacts?.total || data.weapons?.total
-  const replaceDB = () => {
-    database.clear()
-    database.storage.copyFrom(storage)
-    setDatabase(new ArtCharDatabase(database.storage))
+  const replaceDB = useCallback(() => {
+    if (!database) return
+    const dbLStorage = new DBLocalStorage(localStorage)
+    dbLStorage.copyFrom(database.storage)
+    database.storage = dbLStorage
+    setDatabase(database)
     reset()
-  }
+  }, [database, reset, setDatabase])
+
 
   return <><Divider /><CardContent sx={{ py: 1 }}>
-    <Button color={dataValid ? "success" : "error"} disabled={!dataValid} onClick={replaceDB} startIcon={<FontAwesomeIcon icon={faFileUpload} />}><Trans t={t} i18nKey="settings:uploadCard.replaceDatabase" /></Button>
+    <Button color={database ? "success" : "error"} disabled={!database} onClick={replaceDB} startIcon={<FontAwesomeIcon icon={faFileUpload} />}><Trans t={t} i18nKey="settings:uploadCard.replaceDatabase" /></Button>
   </CardContent></>
 }
-
-type UploadData = ImportResult

@@ -121,9 +121,8 @@ export default function PageScanner() {
                 <SqBadge color="warning" sx={{ display: "flex", alignItems: "center" }} ><Warning sx={{ pr: 0.5 }} />{t("tags.gameMani") as string}</SqBadge>
               </WarningWrapper>
             </Typography>
-            <Typography gutterBottom><Trans t={t} i18nKey="am.p1">Scans all you artifacts in your inventory. Follow the instruction to capture the window and scan. Has both Chinese and English versions. (Download the <code>_EN.exe</code> version to scan in english). Both the <code>mona-uranai</code> and <code>GOOD</code> format is accepted in GO. The <code>GOOD</code> format is recommended.</Trans></Typography>
-            <Typography gutterBottom><Trans t={t} i18nKey="am.p2">Beta version of this scanner can also scan materials for <Link href="https://seelie.me/" target="_blank" rel="noreferrer">Seelie.me</Link></Trans></Typography>
-            <Typography gutterBottom><Trans t={t} i18nKey="am.p3">Please feel free to join their discord if you find any bugs. They are in need of more english testers.</Trans></Typography>
+            <Typography gutterBottom><Trans t={t} i18nKey="am.p1">Scans all you artifacts in your inventory. Follow the instruction to capture the window and scan. Has both Chinese and English versions. (Download the <code>_EN.exe</code> version to scan in english). Only the<code>GOOD</code> format is accepted in GO.</Trans></Typography>
+            <Typography gutterBottom><Trans t={t} i18nKey="am.p2">This scanner can also scan materials for <Link href="https://seelie.me/" target="_blank" rel="noreferrer">Seelie.me</Link></Trans></Typography>
           </CardContent>
         </CardDark>
       </Grid>

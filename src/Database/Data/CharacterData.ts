@@ -1,7 +1,7 @@
 import { CharacterKey } from "pipeline";
 import { ICachedCharacter, ICharacter } from "../../Types/character";
-import { allSlotKeys, SlotKey } from "../../Types/consts";
-import { deepClone, objectKeyMap } from "../../Util/Util";
+import { SlotKey } from "../../Types/consts";
+import { deepClone } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 import { parseCharacter } from "../imports/parse";
@@ -20,9 +20,6 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
           continue
         }
         const character = validateCharacter(flex)
-        // Use relations from artifact
-        character.equippedArtifacts = objectKeyMap(allSlotKeys, () => "")
-
         this.set(flex.key, character)
       }
     }

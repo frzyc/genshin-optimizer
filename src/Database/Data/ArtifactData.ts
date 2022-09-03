@@ -39,7 +39,7 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
 
   new(value: IArtifact): string {
     const id = generateRandomArtID(new Set(this.keys), this.deletedArts)
-    const newArt = validateArtifact(parseArtifact({ ...value, location: "" })!, id).artifact
+    const newArt = validateArtifact(parseArtifact(value)!, id).artifact
     this.set(id, newArt)
     return id
   }
@@ -56,7 +56,7 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
   set(id: string, value: Partial<IArtifact>) {
     const oldArt = super.get(id)
     const parsedArt = parseArtifact({ ...oldArt, ...value })
-    if (!parsedArt) return
+    if (!parsedArt) return console.error("Artifact", value, "cannot be recovered.")
 
     const newArt = validateArtifact({ ...oldArt, ...parsedArt }, id).artifact
 
@@ -77,8 +77,17 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
         this.database.chars.setEquippedArtifact(newChar.key, slotKey, newArt.id)
       if (prevChar)
         this.database.chars.setEquippedArtifact(prevChar.key, slotKey, prevArt?.id ?? "")
-    } else if (newArt.location) // Trigger a update to character as well
+    } else if (newArt.location) {
+      const char = this.database.chars.get(newArt.location)
+      if (!char) return console.error("Artifact", newArt, "specified an invalid location.")
+      const prev = char.equippedArtifacts[newArt.slotKey]
+      if (prev !== id) {
+        if (prev && this.get(prev)) this.set(prev, { location: "" })
+        this.database.chars.setEquippedArtifact(newArt.location, newArt.slotKey, id)
+      }
+      // Trigger a update to character since its art was updated
       this.database.chars.trigger(newArt.location)
+    }
 
     super.set(id, newArt)
   }

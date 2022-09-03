@@ -13,7 +13,9 @@
     "updated": "Updated:",
     "removed": "Removed:",
     "unchanged": "Unchanged:",
-    "invalid": "Invalid:"
+    "invalid": "Invalid:",
+    "dbTotal": "Merged Total:",
+    "notInImport": "Not in Import:"
   },
   "DatabaseCard": {
     "title": "Database",
@@ -45,6 +47,16 @@
       "unknown": "Unknown file format.",
       "monaInvalid": "Invalid Mona-Uranai file format",
       "goInvalid": "Invalid GO backup file format."
+    },
+    "buttons": {
+      "fullImport": "Full Import",
+      "partialImport": "Partial Import",
+      "disjointImport": "Disjoint Import",
+      "mergeImport": "Merge Import"
+    },
+    "tooltip": {
+      "partial": "<0>Full Import</0><1>Assume the import to be the full inventory. Artifacts/weapons in GO that doesnt exist in the import are deleted.</1><2>Partial Import</2><3>Assume the import is a partial inventory. Artifacts/weapons are updated/deduplicated(depending on setting), but not deleted.</3>",
+      "disjoint": "<0>Merge Import</0><1>Find upgrade/duplicates in the GO inventory and merge the import into GO.</1><2>Disjoint Import</2><3>Assume the import does not have any upgrades/duplicates, the import is merged into GO without upgrade/duplicate detection.</3>"
     }
   }
 }

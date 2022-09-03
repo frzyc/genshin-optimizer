@@ -3,11 +3,13 @@ import { ICachedArtifact } from "../Types/artifact"
 import { ICachedCharacter } from "../Types/character"
 import { randomizeArtifact } from "../Util/ArtifactUtil"
 import { getArrLastElement } from "../Util/Util"
-import { defaultInitialWeapon } from "../Util/WeaponUtil"
+import { defaultInitialWeapon, initialWeapon } from "../Util/WeaponUtil"
 import { ArtCharDatabase } from "./Database"
-import { DBLocalStorage, SandboxStorage } from "./DBStorage"
+import { DBLocalStorage } from "./DBStorage"
+import { IGOOD } from "./exim"
 import { exportGOOD } from "./exports/good"
 import { importGOOD } from "./imports/good"
+import { merge } from "./imports/merge"
 import { validateArtifact } from "./imports/validate"
 
 const dbStorage = new DBLocalStorage(localStorage)
@@ -19,12 +21,6 @@ describe("Database", () => {
     database = new ArtCharDatabase(dbStorage)
   })
 
-  test("Can clear database", () => {
-    // TODO
-  })
-  test("Can import valid old storage (dbv5)", () => {
-    // TODO
-  })
   test("Support roundtrip import-export", async () => {
     const albedo = initialCharacter("Albedo"), amber = initialCharacter("Amber")
     const albedoWeapon = defaultInitialWeapon("sword"), amberWeapon = defaultInitialWeapon("bow")
@@ -44,8 +40,8 @@ describe("Database", () => {
     database.arts.set(art1.id, { location: "Albedo" })
     art1.location = "Albedo"
 
-    const { storage } = importGOOD(exportGOOD(database.storage), database) ?? { storage: new SandboxStorage() }
-    const result = new ArtCharDatabase(storage)
+    const iResult = importGOOD(exportGOOD(database.storage))!
+    const result = merge(iResult, database, false, false)
 
     albedo.equippedArtifacts.circlet = result.chars.get("Albedo")!.equippedArtifacts.circlet
     art1.id = albedo.equippedArtifacts.circlet
@@ -57,6 +53,7 @@ describe("Database", () => {
     expect(result.chars.get("Amber")).toEqual(amber)
     expect(result.arts.get(art1.id)).toEqual(art1)
   })
+
   test("Does not crash from invalid storage", () => {
     function tryStorage(setup: (storage: Storage) => void, verify: (storage: Storage) => void = () => { }) {
       localStorage.clear()
@@ -91,17 +88,15 @@ describe("Database", () => {
       expect(storage.getItem("artifact_x")).toBeNull()
     })
   })
+
   test("Support basic operations", async () => {
     // Add Character and Artifact
     const albedo = initialCharacter("Albedo"), amber = initialCharacter("Amber")
+    albedo.reaction = undefined
     const albedoWeapon = defaultInitialWeapon("sword"), amberWeapon = defaultInitialWeapon("bow")
 
     const art1 = validateArtifact(await randomizeArtifact({ slotKey: "circlet" }), "").artifact, art2 = validateArtifact(await randomizeArtifact({ slotKey: "circlet" }), "").artifact
     albedo.talent.auto = 4
-
-    // Sabotage
-    art1.location = "Albedo"
-    albedo.equippedArtifacts.flower = "1234"
 
     const albedoWeaponId = database.weapons.new(albedoWeapon)
     const amberWeaponId = database.weapons.new(amberWeapon)
@@ -119,12 +114,6 @@ describe("Database", () => {
     database.chars.set(albedo.key, albedo)
     database.chars.set(amber.key, amber)
 
-    // Ignoring equipedArtifact data
-    expect(database.chars.get("Albedo")?.equippedArtifacts.flower).toEqual("")
-    expect(database.arts.get(art1.id)?.location).toEqual("")
-    // But keep all other data
-    albedo.equippedArtifacts.flower = ""
-    art1.location = ""
     // expect(removeCharacterCache(database.chars.get("Albedo")!)).toEqual(removeCharacterCache(albedo)) // TODO:
     expect(database.arts.get(art1.id)).toEqual(validateArtifact(art1, art1.id).artifact)
 
@@ -203,4 +192,75 @@ describe("Database", () => {
     database.arts.set(art2.id, { exclude: false })
     expect(database.arts.get(art2.id)?.exclude).toEqual(false)
   })
+
+  test("Test import with initials", async () => {
+    // When adding artifacts with equipment, expect character/weapons to be created
+    const art1 = validateArtifact(await randomizeArtifact({ slotKey: "circlet" }), "").artifact,
+      art2 = validateArtifact(await randomizeArtifact(), "circlet").artifact
+
+    const amberWeapon = defaultInitialWeapon("bow")
+    amberWeapon.location = "Amber"
+
+    art1.location = "Albedo"
+    art2.location = "Amber"
+    const good: IGOOD = {
+      format: "GOOD",
+      version: 1,
+      source: "Scanner",
+      artifacts: [
+        art1,
+        art2
+      ],
+      weapons: [
+        amberWeapon
+      ]
+    }
+    const importResult = importGOOD(good)!
+    merge(importResult, database, false, false)
+    expect(importResult).toBeTruthy()
+    expect(importResult.artifacts?.new?.length).toEqual(2)
+    expect(importResult.weapons?.new?.length).toEqual(2)
+    expect(importResult.characters?.new?.length).toEqual(2)
+  })
+
+  test("Test partial merge", async () => {
+    // Add Character and Artifact
+    const albedo = initialCharacter("Albedo")
+    const albedoWeapon = defaultInitialWeapon("sword")
+
+    const art1 = validateArtifact(await randomizeArtifact({ slotKey: "circlet", setKey: "EmblemOfSeveredFate" }), "").artifact
+    art1.location = "Albedo"
+
+    database.chars.set(albedo.key, albedo)
+    albedoWeapon.id = database.weapons.new(albedoWeapon)
+
+    art1.id = database.arts.new(art1)
+    expect(database.chars.get("Albedo")?.equippedArtifacts.circlet).toEqual(art1.id)
+    const good1: IGOOD = {
+      format: "GOOD",
+      version: 1,
+      source: "Scanner",
+      artifacts: [
+        validateArtifact(await randomizeArtifact({ slotKey: "circlet", setKey: "Instructor" }), "").artifact,
+        { ...validateArtifact(await randomizeArtifact({ slotKey: "circlet", setKey: "Adventurer" }), "").artifact, location: "Albedo" }
+      ],
+      weapons: [
+        { ...initialWeapon("Akuoumaru"), location: "Albedo" }
+      ]
+    }
+    const importResult = importGOOD(good1)!
+    const importData = merge(importResult, database, true, false)
+    expect(importResult.artifacts.new.length).toEqual(2)
+    expect(importResult.weapons.new.length).toEqual(1)
+    expect(importResult.characters.new.length).toEqual(0)
+
+    const arts = importData.arts.values
+    expect(arts.length).toEqual(3)
+    expect(importData.arts.values.reduce((t, art) => t + (art.location === "Albedo" ? 1 : 0), 0)).toEqual(1)
+    const circletId = importData.chars.get("Albedo")?.equippedArtifacts.circlet
+    expect(circletId).toBeTruthy()
+    expect(importData.arts.get(circletId)?.setKey).toEqual("Adventurer")
+    expect(importData.weapons.get(importData.chars.get("Albedo")!.equippedWeapon)?.key).toEqual("Akuoumaru")
+  })
+
 })
