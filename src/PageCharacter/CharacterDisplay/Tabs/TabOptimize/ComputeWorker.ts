@@ -46,15 +46,22 @@ export class ComputeWorker {
     const buffer = Array<ArtifactBuildData>(arts.length)
     const count = { tested: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }
 
+    let { threshold } = self
     function permute(i: number) {
       if (i < 0) {
         const result = compute(buffer)
         if (min.every((m, i) => (m <= result[i]))) {
-          const value = result[min.length], { builds, plotData, threshold } = self
+          const value = result[min.length], { builds, plotData, maxBuilds } = self
           let build: Build | undefined
           if (value >= threshold) {
             build = { value, artifactIds: buffer.map(x => x.id) }
             builds.push(build)
+            if (builds.length > 127) {
+              builds
+                .sort((a, b) => b.value - a.value)
+                .splice(maxBuilds)
+              threshold = builds[maxBuilds - 1].value
+            }
           }
           if (plotData) {
             const x = result[min.length + 1]
