@@ -48,8 +48,7 @@ const x0=0`; // making sure `const` has at least one entry
     switch (operation) {
       case "read": {
         const key = binding(f)
-        // maybe ?? 0
-        let arr = (new Array(slotCount).fill(null)).map((x, i) => `b[${i}].values["${key}"]`)
+        let arr = new Array(slotCount).fill(null).map((x, i) => `(b[${i}].values["${key}"] ?? 0)`)
         if (initial[key] && initial[key] !== 0) {
           arr = [initial[key].toString(), ...arr]
         }
