@@ -40,8 +40,8 @@ export class ComputeWorker {
     ({ nodes, arts: preArts } = pruneAll(nodes, min, preArts, this.maxBuilds, {}, {
       pruneArtRange: true, pruneNodeRange: true,
     }))
-    const compute = precompute(nodes, preArts.base, f => f.path[1])
     const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length)
+    const compute = precompute(nodes, preArts.base, f => f.path[1], arts.length)
 
     const buffer = Array<ArtifactBuildData>(arts.length)
     const count = { tested: 0, failed: 0, skipped: totalCount - countBuilds(preArts) }

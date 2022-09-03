@@ -29,7 +29,7 @@ export function optimize(formulas: NumNode[], topLevelData: Data, shouldFold = (
   formulas = deduplicate(formulas)
   return formulas
 }
-export function precompute(formulas: NumNode[], initial: ArtifactBuildData["values"], binding: (readNode: ReadNode<number> | ReadNode<string | undefined>) => string): (_: ArtifactBuildData[]) => number[] {
+export function precompute(formulas: NumNode[], initial: ArtifactBuildData["values"], binding: (readNode: ReadNode<number> | ReadNode<string | undefined>) => string, slotCount: number): (_: ArtifactBuildData[]) => number[] {
   let body = `
 "use strict";
 // copied from the code above
@@ -48,7 +48,12 @@ const x0=0`; // making sure `const` has at least one entry
     switch (operation) {
       case "read": {
         const key = binding(f)
-        body += `,${name}=b.reduce((accu, {values}) => accu + (values["${key}"] ?? 0), ${initial[key] ?? 0})`
+        // maybe ?? 0
+        let arr = (new Array(slotCount).fill(null)).map((x, i) => `b[${i}].values["${key}"]`)
+        if (initial[key] && initial[key] !== 0) {
+          arr = [initial[key].toString(), ...arr]
+        }
+        body += `,${name}=${arr.join('+')}`
         break
       }
       case "const": names.set(f, `(${f.value})`); break
