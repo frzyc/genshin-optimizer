@@ -80,9 +80,8 @@ export class ComputeWorker {
       })
       if (i === 0) {
         count.tested += arts[0].length
-        if (count.tested > 1 << 16) {
+        if (count.tested > 1 << 16)
           interimReport(count)
-        }
       }
     }
 
