@@ -203,9 +203,9 @@ const sheet: ICharacterSheet = {
       constellation3: ct.talentTemplate("constellation3", [{ fields: [{ node: nodeC3 }] }]),
       constellation4: ct.talentTemplate("constellation4", [ct.fieldsTemplate("constellation4", {
         fields: [{
-          node: infoMut(dmgFormulas.constellation4.shield, { key: `char_${key}:c4shield` }),
+          node: infoMut(dmgFormulas.constellation4.shield, { key: `sheet:dmgAbsorption.none` }),
         }, {
-          node: infoMut(dmgFormulas.constellation4.cryoShield, { key: `char_${key}:c4shield` }),
+          node: infoMut(dmgFormulas.constellation4.cryoShield, { key: `sheet:dmgAbsorption.cryo` }),
         }, {
           text: tr("burst.skillParams.2"),
           value: datamine.constellation4.duration,

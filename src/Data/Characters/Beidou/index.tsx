@@ -88,6 +88,9 @@ const nodeSkillNormalDmg_ = equal(condA4, "on", percent(datamine.ascension4.norm
 const nodeSkillChargeDmg_ = equal(condA4, "on", percent(datamine.ascension4.chargeDmg_), { key: `char_${key}:a4chargeDmg_` })
 const nodeSkillAttackSpeed_ = equal(condA4, "on", percent(datamine.ascension4.attackSpeed), { key: `char_${key}:a4atkSpeed_` })
 
+const skillShieldNode = shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill")
+const c1ShieldNode = shieldNode("hp", percent(datamine.constellation1.shieldHp_), 0)
+
 const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
@@ -98,8 +101,8 @@ const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    electroShield: shieldElement("electro", shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill")),
-    shield: shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill"),
+    shield: skillShieldNode,
+    electroShield: shieldElement("electro", skillShieldNode),
     baseDmg: dmgNode("atk", datamine.skill.dmgBase, "skill"),
     dmgOneHit: dmgNode("atk", skillDmgOneHit, "skill"),
     dmgTwoHits: dmgNode("atk", skillDmgTwoHits, "skill"),
@@ -109,8 +112,8 @@ const dmgFormulas = {
     lightningDmg: dmgNode("atk", datamine.burst.lightningDmg, "burst"),
   },
   constellation1: {
-    electroShield: greaterEq(input.constellation, 1, shieldElement("electro", shieldNode("hp", percent(datamine.constellation1.shieldHp_), 0))),
-    shield: greaterEq(input.constellation, 1, shieldNode("hp", percent(datamine.constellation1.shieldHp_), 0)),
+    shield: greaterEq(input.constellation, 1, c1ShieldNode),
+    electroShield: greaterEq(input.constellation, 1, shieldElement("electro", c1ShieldNode)),
   },
   constellation4: {
     skillDmg: greaterEq(input.constellation, 4, customDmgNode(prod(input.total.atk, percent(datamine.constellation4.skillDmg)), "elemental", { hit: { ele: constant(elementKey) } }))
@@ -182,9 +185,9 @@ const sheet: ICharacterSheet = {
 
       skill: ct.talentTemplate("skill", [{
         fields: [{
-          node: infoMut(dmgFormulas.skill.electroShield, { key: `char_${key}_gen:skill.skillParams.0`, "variant": "electro" }),
+          node: infoMut(dmgFormulas.skill.shield, { key: `sheet:dmgAbsorption.none` }),
         }, {
-          node: infoMut(dmgFormulas.skill.shield, { key: `char_${key}_gen:skill.skillParams.0` }),
+          node: infoMut(dmgFormulas.skill.electroShield, { key: `sheet:dmgAbsorption.electro` }),
         }, {
           node: infoMut(dmgFormulas.skill.baseDmg, { key: `char_${key}_gen:skill.skillParams.1` }),
         }, {
@@ -258,9 +261,9 @@ const sheet: ICharacterSheet = {
       passive3: ct.talentTemplate("passive3"),
       constellation1: ct.talentTemplate("constellation1", [ct.fieldsTemplate("constellation1", {
         fields: [{
-          node: infoMut(dmgFormulas.constellation1.electroShield, { key: `char_${key}_gen:skill.skillParams.0`, "variant": "electro" })
+          node: infoMut(dmgFormulas.constellation1.shield, { key: `sheet:dmgAbsorption.none` })
         }, {
-          node: infoMut(dmgFormulas.constellation1.shield, { key: `char_${key}_gen:skill.skillParams.0` })
+          node: infoMut(dmgFormulas.constellation1.electroShield, { key: `sheet:dmgAbsorption.electro` })
         }]
       })]),
       constellation2: ct.talentTemplate("constellation2"),
