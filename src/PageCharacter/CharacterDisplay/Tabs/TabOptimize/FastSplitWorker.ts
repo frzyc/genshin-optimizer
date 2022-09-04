@@ -2,17 +2,23 @@ import { forEachNodes, mapFormulas } from "../../../../Formula/internal";
 import { allOperations, precompute } from "../../../../Formula/optimization";
 import { NumNode, StrNode } from "../../../../Formula/type";
 import { constant, prod, sum } from "../../../../Formula/utils";
+import { SlotKey } from "../../../../Types/consts";
 import { maximizeLP, Weights, LPConstraint } from "../../../../Util/LP";
-import { assertUnreachable, objectMap, strictObjectMap } from "../../../../Util/Util";
+import { assertUnreachable, clamp01, objectKeyValueMap, objectMap, strictObjectMap } from "../../../../Util/Util";
 import type { InterimResult, Setup, SplitWorker } from "./BackgroundWorker";
-import { ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynMinMax, DynStat, filterArts, MinMax, RequestFilter } from "./common";
+import { ArtifactBuildData, ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynMinMax, DynStat, filterArts, MinMax, RequestFilter } from "./common";
 
+type Approximation = {
+  base: number
+  contributions: StrictDict<string, number>
+}
+type Filter = { arts: ArtifactsBySlot, maxContributions: Record<SlotKey, number>[], approximations: Approximation[], age: number }
 export class FastSplitWorker implements SplitWorker {
   min: number[]
   nodes: NumNode[]
   arts: ArtifactsBySlot
 
-  filters: { arts: ArtifactsBySlot, weights: DynStat[], age: number }[] = []
+  filters: Filter[] = []
   interim: InterimResult | undefined
 
   callback: (interim: InterimResult) => void
@@ -24,35 +30,36 @@ export class FastSplitWorker implements SplitWorker {
     this.callback = callback
 
     // make sure we can approximate it
-    const _unused = polyUpperBound(this.nodes, computeFullArtRange(arts))
+    const _unused = toPolyUpperBound(this.nodes, computeFullArtRange(arts))
   }
 
   addFilter(filter: RequestFilter): void {
     const arts = filterArts(this.arts, filter)
-    this.filters.push({ arts, weights: [], age: 0 })
+    this.filters.push({ arts, maxContributions: [], approximations: [], age: 0 })
   }
   async split(newThreshold: number, minCount: number): Promise<RequestFilter | undefined> {
     if (newThreshold > this.min[0]) this.min[0] = newThreshold
 
     while (this.filters.length) {
-      let { arts, weights, age } = this.filters.pop()!
+      const filter = this.filters.pop()!, { arts, maxContributions, approximations, age } = filter
 
-      if (!(age % 3)) {
+      if (!(age % 5)) {
         // The problem should've gotten small enough that
         // the old approximation becomes inaccurate
         const artRange = computeFullArtRange(arts)
-        const polys = polyUpperBound(this.nodes, artRange)
-        weights = []
-        for (const poly of polys)
-          weights.push(linearUpperBound(poly, artRange))
-      }
-
-      const { min } = this
-      if (weights.some((weight, i) => maxWeighted(weight, arts) < min[i])) {
-        this.addSkip(countBuilds(arts))
+        const polys = toPolyUpperBound(this.nodes, artRange)
+        const approximations = polys.map(poly => getApproximation(poly, artRange, arts))
+        const maxContributions = approximations.map(approx => strictObjectMap(arts.values, val => getMaxContribution(val, approx)))
+        this.filters.push({ arts, maxContributions, approximations, age: age + 1 })
         continue
       }
-      if (countBuilds(arts) <= minCount) {
+
+      const { min } = this, count = countBuilds(arts)
+      if (maxContributions.some((cont, i) => Object.values(cont).reduce((a, b) => a + b, 0) < min[i])) {
+        this.addSkip(count)
+        continue
+      }
+      if (count <= minCount) {
         if (this.interim) {
           this.callback(this.interim)
           this.interim = undefined
@@ -60,7 +67,8 @@ export class FastSplitWorker implements SplitWorker {
         return strictObjectMap(arts.values, arts => ({ kind: "id" as const, ids: new Set(arts.map(art => art.id)) }))
       }
 
-      this.splitOldFilter(arts, weights, age)
+      const remaining = this.splitOldFilter(filter)
+      if (count !== remaining) this.addSkip(count - remaining)
     }
     if (this.interim) {
       this.callback(this.interim)
@@ -73,51 +81,69 @@ export class FastSplitWorker implements SplitWorker {
     else this.interim = { command: "interim", buildValues: undefined, tested: 0, failed: 0, skipped: count, }
   }
 
-  splitOldFilter(arts: ArtifactsBySlot, weights: DynStat[], age: number) {
-    const weight = weights[0]
-    const splitted = strictObjectMap(arts.values, arts => {
-      const contributions = arts.map(art => ({ id: art.id, cont: contribution(weight, art.values) })).sort((a, b) => a.cont - b.cont)
-      let cutoff = contributions.reduce((a, b) => a + b.cont, 0) / 4
-      const high: string[] = []
-      while (cutoff > 0 && contributions.length) {
-        const { id, cont } = contributions.pop()!
-        high.push(id)
-        cutoff -= cont
+  splitOldFilter({ arts, maxContributions, approximations, age }: Filter): number {
+    let totalRemaining = 1
+    const splitted = strictObjectMap(arts.values, (arts, slot) => {
+      const requiredCont = maxContributions.map((cont, i) => Object.values(cont)
+        .reduce((accu, val) => accu - val, this.min[i] - approximations[i].base + cont[slot]))
+      const remaining = arts
+        .filter(({ id }) => approximations.every((approx, i) =>
+          approx.contributions[id] > requiredCont[i]))
+        .map((art) => ({ art, cont: approximations[0].contributions[art.id] }))
+        .sort(({ cont: c1 }, { cont: c2 }) => c2 - c1)
+      totalRemaining *= remaining.length
+      let contCutoff = remaining.reduce((accu, { cont }) => accu + cont, 0) / 3
+
+      const highIndex = remaining.findIndex(({ cont }) => ((contCutoff -= cont), contCutoff <= 0))
+      const lowArts = remaining.splice(highIndex).map(({ art }) => art), highArts = remaining.map(({ art }) => art)
+      return {
+        high: { arts: highArts, maxConts: approximations.map(approx => getMaxContribution(highArts, approx)), },
+        low: { arts: lowArts, maxConts: approximations.map(approx => getMaxContribution(lowArts, approx)) },
       }
-      return { high: { kind: "id" as const, ids: new Set(high) }, low: { kind: "id" as const, ids: new Set(contributions.map(x => x.id)) } }
     })
 
-    const { filters } = this, current: RequestFilter = strictObjectMap(splitted, x => x.low), remaining = Object.keys(splitted)
+    const { filters } = this, current: StrictDict<SlotKey, ArtifactBuildData[]> = {} as any, currentCont: StrictDict<SlotKey, number[]> = {} as any, remaining = Object.keys(splitted)
     function partialSplit() {
-      if (!remaining.length)
-        return filters.push({ arts: filterArts(arts, current), weights, age: age + 1 })
-
+      if (!remaining.length) {
+        const maxContributions = approximations.map((_, i) => strictObjectMap(currentCont, val => val[i]))
+        return filters.push({ arts: { base: arts.base, values: { ...current } }, maxContributions, approximations, age: age + 1 })
+      }
       const slot = remaining.pop()!
-      current[slot] = splitted[slot].high
-      partialSplit()
-      current[slot] = splitted[slot].low
-      partialSplit()
+      const { high, low } = splitted[slot]
+      if (low.arts.length) {
+        current[slot] = low.arts
+        currentCont[slot] = low.maxConts
+        partialSplit()
+      }
+      if (high.arts.length) {
+        current[slot] = high.arts
+        currentCont[slot] = high.maxConts
+        partialSplit()
+      }
       remaining.push(slot)
     }
     partialSplit()
+    return totalRemaining
   }
 }
 
+function getMaxContribution(arts: ArtifactBuildData[], approximation: Approximation): number {
+  return Math.max(...arts.map(({ id }) => approximation.contributions[id]!))
+}
+function getApproximation(poly: NumNode, artRange: DynMinMax, arts: ArtifactsBySlot): Approximation {
+  const weight = getLinearUpperBound(poly, artRange)
+  return {
+    base: contribution(weight, arts.base) + weight.$c,
+    contributions: objectKeyValueMap(Object.values(arts.values).flat(),
+      data => [data.id, contribution(weight, data.values)])
+  }
+}
 function contribution(weights: DynStat, art: DynStat) {
   return Object.entries(art).reduce((accu, [key, val]) => accu + val * weights[key]!, 0)
 }
-function maxWeighted(weights: DynStat, { base, values }: ArtifactsBySlot): number {
-  function contribution(art: DynStat) {
-    return Object.entries(art).reduce((accu, [key, val]) => accu + val * weights[key]!, 0)
-  }
-  let result = weights["$c"] + contribution(base)
-  for (const arts of Object.values(values))
-    result += Math.max(...arts.map(art => contribution(art.values)))
-  return result
-}
 
 /** Compute a linear upper bound of `poly`, which must be in polynomial form */
-function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string]: number } {
+function getLinearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string | "$c"]: number } {
   /**
    * We first compute the monomials found in each node and store them in `term`.
    * Monomials are represented using one-hot encoding, e.g., given variables
@@ -153,10 +179,10 @@ function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string]
 
   function add_constraint(index: number, id: bigint, list: bigint[]) {
     if (index >= bounds.length) {
-      const [val] = compute(), name = constraints.length / 2
+      const [val] = compute()
       constraints.push(
         { weights: { ...vars }, lowerBound: val },
-        { weights: { ...vars, $error: -1 }, upperBound: val }  ,
+        { weights: { ...vars, $error: -1 }, upperBound: val },
       )
       return
     }
@@ -177,7 +203,7 @@ function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string]
 }
 
 /** Convert `nodes` to a polynomial form */
-function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[] {
+function toPolyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[] {
   // We need some bounds for the nodes to find appropriate polynomial upper bound
   const nodeRange = new Map<NumNode | StrNode, MinMax>(), defaultRange = { min: NaN, max: NaN }
   forEachNodes(nodes, _ => { }, f => {
