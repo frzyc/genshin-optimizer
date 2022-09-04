@@ -7,65 +7,12 @@ describe("LP", () => {
   describe("solveLPEq", () => {
     it("can solve welformed equations", () => {
       // x = 1, y = 2
-      const sol = solveLPEq([
-        { weights: [], val: 0 },
-        { weights: [["x", 1], ["y", 1]], val: 3 },
-        { weights: [["x", 1], ["y", -1]], val: -1 },
-      ])!
-      expect(sol.get("x")).toEqual(1)
-      expect(sol.get("y")).toEqual(2)
-    })
-    it("can solve overspecified equations", () => {
-      // x = 1, y = 2
-      const sol = solveLPEq([
-        { weights: [], val: 0 },
-        { weights: [["x", 1], ["y", 1]], val: 3 },
-        { weights: [["x", 1], ["y", -1]], val: -1 },
-        { weights: [["x", 3], ["y", 2]], val: 7 },
-      ])!
-      expect(sol.get("x")).toEqual(1)
-      expect(sol.get("y")).toEqual(2)
-    })
-    it("can detect infeasible equations", () => {
-      // x = 1, y = 2
-      const sol = solveLPEq([
-        { weights: [], val: 0 },
-        { weights: [["x", 1], ["y", 1]], val: 3 },
-        { weights: [["x", 1], ["y", -1]], val: -1 },
-        { weights: [["x", 3], ["y", 2]], val: 8 }, // bad eq
-      ])
-      expect(sol).toBeUndefined()
-    })
-    it("accepts empty equations", () => {
-      // x = 1, y = 2
-      const wellformed = solveLPEq([
-        { weights: [], val: 0 },
-        { weights: [["x", 1], ["y", 1]], val: 3 },
-        { weights: [["x", 1], ["y", -1]], val: -1 },
-      ])!
-      expect(wellformed.get("x")).toEqual(1)
-      expect(wellformed.get("y")).toEqual(2)
-
-      const illformed = solveLPEq([
-        { weights: [], val: 1 }, // bad eq
-        { weights: [["x", 1], ["y", 1]], val: 3 },
-        { weights: [["x", 1], ["y", -1]], val: -1 },
-      ])
-      expect(illformed).toBeUndefined()
-    })
-    it("can solve underspecified equations", () => {
-      // Infinite solutions
-      const sol = solveLPEq([
-        { weights: [["x", 1], ["y", 1], ["z", 1]], val: 3 },
-        { weights: [["z", 1], ["x", 1], ["y", -1]], val: -1 },
-      ])!
-      const x = sol.get("x") ?? 0, y = sol.get("y") ?? 0, z = sol.get("z") ?? 0
-      expect(x + y + z).toEqual(3)
-      expect(x - y + z).toEqual(-1)
+      const sol = solveLPEq([[1, 1], [1, -1]], [3, -1])
+      expect(sol).toEqual([1, 2])
     })
   })
   describe("maximizeLP", () => {
-    test("can minimize simple constrained problem", () => {
+    it("can minimize simple constrained problem", () => {
       const { x, y } = maximizeLP({ x: 3, y: 2 }, [
         { weights: { x: 1, y: 2 }, upperBound: 3.5 },
         { weights: { x: 2, y: 1 }, upperBound: 3 },
@@ -77,7 +24,7 @@ describe("LP", () => {
       expect(2 * x + y).toBeLessThan(3)
       expect(x + y).toBeLessThan(2)
     })
-    test("can minimize problem with equality constraint", () => {
+    it("can minimize problem with equality constraint", () => {
       const { x, y } = maximizeLP({ x: 2, y: 3 }, [
         { weights: { x: 1, y: 1 }, lowerBound: 1, upperBound: 1 },
         { weights: { x: 1 }, lowerBound: 0 },
@@ -89,7 +36,7 @@ describe("LP", () => {
       expect(x).toBeGreaterThan(0)
       expect(y).toBeGreaterThan(0)
     })
-    test("can handle degenerate case", () => {
+    it("can detect degenerate case", () => {
       const { x, y } = maximizeLP({}, [
         { weights: { x: 1, y: 1 }, lowerBound: 5, upperBound: 5 },
         { weights: { x: 2, y: 1 }, lowerBound: 7, upperBound: 7 },
@@ -100,9 +47,16 @@ describe("LP", () => {
       expect(x).toBeCloseTo(2, 8)
       expect(y).toBeCloseTo(3, 8)
     })
-    test.skip("can handle large problem", () => {
+    it.skip("on large test problem", () => {
       const obj = largeProblem.obj as Weights, constraints = largeProblem.constraints as any as LPConstraint[]
       const sol = maximizeLP(obj, constraints)
+
+      constraints.forEach((constraint, i) => {
+        const sum = Object.entries(constraint.weights).reduce((accu, [k, val]) => accu + sol[k] * val, 0)
+        const { lowerBound, upperBound } = constraint
+        if (lowerBound) expect(sum).toBeGreaterThanOrEqual(lowerBound)
+        if (upperBound) expect(sum).toBeLessThanOrEqual(upperBound)
+      })
     })
   })
 })
