@@ -1,6 +1,6 @@
 import { faArrowLeft, faFileCode, faFileUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { FileOpen, JoinFull, JoinLeft, MergeType, Splitscreen } from '@mui/icons-material'
+import { CheckBox, CheckBoxOutlineBlank, FileOpen, JoinFull, JoinLeft, MergeType, Splitscreen } from '@mui/icons-material'
 import { Box, Button, CardContent, Divider, Grid, styled, Tooltip, Typography } from '@mui/material'
 import { useCallback, useContext, useMemo, useState } from "react"
 import { Trans, useTranslation } from "react-i18next"
@@ -21,8 +21,8 @@ export default function UploadCard({ onReplace }: { onReplace: () => void }) {
   const [data, setdata] = useState("")
   const [filename, setfilename] = useState("")
   const [errorMsg, setErrorMsg] = useState("") // TODO localize error msg
-  const [partial, setPartial] = useState(false)
-  const [disjoint, setDisjoint] = useState(false)
+  const [keepNotInImport, setKeepNotInImport] = useState(false)
+  const [ignoreDups, setIgnoreDups] = useState(false)
   const { importResult, importedDatabase } = useMemo(() => {
     if (!data) return
     let parsed: any
@@ -42,7 +42,7 @@ export default function UploadCard({ onReplace }: { onReplace: () => void }) {
       const copyStorage = new SandboxStorage()
       copyStorage.copyFrom(database.storage)
       const importedDatabase = new ArtCharDatabase(copyStorage)
-      const importResult = importGOOD(parsed, importedDatabase, partial, disjoint)
+      const importResult = importGOOD(parsed, importedDatabase, keepNotInImport, ignoreDups)
       if (!importResult) {
         setErrorMsg("uploadCard.error.goInvalid")
         return
@@ -52,7 +52,7 @@ export default function UploadCard({ onReplace }: { onReplace: () => void }) {
     }
     setErrorMsg("uploadCard.error.unknown")
     return
-  }, [data, database, partial, disjoint]) ?? {}
+  }, [data, database, keepNotInImport, ignoreDups]) ?? {}
   const reset = () => {
     setdata("")
     setfilename("")
@@ -73,7 +73,7 @@ export default function UploadCard({ onReplace }: { onReplace: () => void }) {
         <Grid item>
           <label htmlFor="icon-button-file">
             <InvisInput accept=".json" id="icon-button-file" type="file" onChange={onUpload} />
-            <Button component="span" startIcon={<FileOpen />}>{t`uploadCard.buttons.open`}</Button>
+            <Button component="span" color="info" startIcon={<FileOpen />}>{t`uploadCard.buttons.open`}</Button>
           </label>
         </Grid>
         <Grid item flexGrow={1}>
@@ -83,24 +83,18 @@ export default function UploadCard({ onReplace }: { onReplace: () => void }) {
         </Grid>
       </Grid>
       <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
-        <Tooltip title={<Box><Trans t={t} i18nKey="settings:uploadCard.tooltip.partial" >
-          <Typography variant="h6">Full Import</Typography>
-          <Typography gutterBottom>Assume the import to be the full inventory. Artifacts/weapons in GO that doesnt exist in the import are deleted.</Typography>
-          <Typography variant="h6">Partial Import</Typography>
-          <Typography>Assume the import is a partial inventory. Artifacts/weapons are updated/deduplicated(depending on setting), but not deleted.</Typography>
-        </Trans></Box>} placement='top' arrow >
-          <Box sx={{ flexGrow: 1, flexBasis: "10em" }}><Button fullWidth disabled={!data} onClick={() => setPartial(!partial)} startIcon={partial ? <JoinLeft /> : <JoinFull />} >
-            {partial ? t`uploadCard.buttons.partialImport` : t`uploadCard.buttons.fullImport`}
+        <Tooltip title={<Typography>
+          {ignoreDups ? t`uploadCard.tooltip.ignoreDup` : t`uploadCard.tooltip.detectdup`}
+        </Typography>} placement='top' arrow >
+          <Box sx={{ flexGrow: 1, flexBasis: "10em" }}><Button fullWidth disabled={!data} color={ignoreDups ? "primary" : "success"} onClick={() => setIgnoreDups(!ignoreDups)} startIcon={ignoreDups ? <CheckBoxOutlineBlank /> : <CheckBox />}>
+            {t`uploadCard.buttons.detectDups`}
           </Button></Box>
         </Tooltip>
-        <Tooltip title={<Box><Trans t={t} i18nKey="settings:uploadCard.tooltip.disjoint" >
-          <Typography variant="h6">Merge Import</Typography>
-          <Typography gutterBottom>Find upgrade/duplicates in the GO inventory and merge the import into GO.</Typography>
-          <Typography variant="h6">Disjoint Import</Typography>
-          <Typography>Assume the import does not have any upgrades/duplicates, the import is merged into GO without upgrade/duplicate detection.</Typography>
-        </Trans></Box>} placement='top' arrow >
-          <Box sx={{ flexGrow: 1, flexBasis: "10em" }}><Button fullWidth disabled={!data} onClick={() => setDisjoint(!disjoint)} startIcon={disjoint ? <Splitscreen /> : <MergeType />}>
-            {disjoint ? t`uploadCard.buttons.disjointImport` : t`uploadCard.buttons.mergeImport`}
+        <Tooltip title={<Typography>
+          {keepNotInImport ? t`uploadCard.tooltip.keepNotInImport` : t`uploadCard.tooltip.delNotInImport`}
+        </Typography>} placement='top' arrow >
+          <Box sx={{ flexGrow: 1, flexBasis: "10em" }}><Button fullWidth disabled={!data} color={keepNotInImport ? "primary" : "success"} onClick={() => setKeepNotInImport(!keepNotInImport)} startIcon={keepNotInImport ? <CheckBoxOutlineBlank /> : <CheckBox />} >
+            {t`uploadCard.buttons.delNotInImport`}
           </Button></Box>
         </Tooltip>
       </Box>
@@ -148,11 +142,11 @@ function MergeResult({ result, dbTotal, type }: { result: ImportResultCounter<an
     <Divider />
     <CardContent>
       <Typography><Trans t={t} i18nKey="count.new" /> <strong>{result.new.length}</strong> / {total}</Typography>
-      <Typography><Trans t={t} i18nKey="count.updated" /> <strong>{result.update.length}</strong> / {total}</Typography>
       <Typography><Trans t={t} i18nKey="count.unchanged" /> <strong>{result.unchanged.length}</strong> / {total}</Typography>
+      <Typography><Trans t={t} i18nKey="count.updated" /> <strong>{result.update.length}</strong></Typography>
       {!!result.remove.length && <Typography color="warning.main"><Trans t={t} i18nKey="count.removed" /> <strong>{result.remove.length}</strong></Typography>}
       {!!result.notInImport && <Typography><Trans t={t} i18nKey="count.notInImport" /> <strong>{result.notInImport}</strong></Typography>}
-      <Typography><Trans t={t} i18nKey="count.dbTotal" /> <strong>{dbTotal}</strong></Typography>
+      <Typography><Trans t={t} i18nKey="count.dbTotal" /> <strong>{result.beforeMerge}</strong> -&gt; <strong>{dbTotal}</strong></Typography>
       {!!result.invalid?.length && <div>
         <Typography color="error.main"><Trans t={t} i18nKey="count.invalid" /> <strong>{result.invalid.length}</strong> / {total}</Typography>
         <Box component="textarea" sx={{ width: "100%", fontFamily: "monospace", minHeight: "10em", resize: "vertical" }} value={JSON.stringify(result.invalid, undefined, 2)} disabled />

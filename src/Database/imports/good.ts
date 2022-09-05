@@ -3,9 +3,9 @@ import { GOSource, IGOOD, ImportResult, newImportResult } from "../exim";
 
 // MIGRATION STEP: Always keep parsing in sync with GOODv1 format
 
-export function importGOOD(good: IGOOD, base: ArtCharDatabase, partial: boolean, disjoint: boolean): ImportResult | undefined {
+export function importGOOD(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolean, ignoreDups: boolean): ImportResult | undefined {
   switch (good.version) {
-    case 1: return importGOOD1(good, base, partial, disjoint)
+    case 1: return importGOOD1(good, base, keepNotInImport, ignoreDups)
   }
 }
 
@@ -13,9 +13,14 @@ export function importGOOD(good: IGOOD, base: ArtCharDatabase, partial: boolean,
  * Parse GOODv1 data format into a parsed data of the version specified in `data`.
  * If the DB version is not specified, the default version is used.
  */
-function importGOOD1(good: IGOOD, base: ArtCharDatabase, partial: boolean, disjoint: boolean): ImportResult | undefined {
+function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolean, ignoreDups: boolean): ImportResult | undefined {
   const source = good.source ?? "Unknown"
   const result: ImportResult = newImportResult(source)
+
+  result.characters.beforeMerge = base.chars.values.length
+  result.weapons.beforeMerge = base.weapons.values.length
+  result.artifacts.beforeMerge = base.arts.values.length
+
   const callback = (rkey: "artifacts" | "weapons" | "characters") => (key, reason, value) => result[rkey][reason].push(value)
 
   const charUnfollow = base.chars.followAny((key, reason, value) => {
@@ -42,7 +47,7 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, partial: boolean, disjo
     })
 
     const idtoRemoveArr = Array.from(idsToRemove)
-    if (partial || disjoint) result.characters.notInImport = idtoRemoveArr.length
+    if (keepNotInImport || ignoreDups) result.characters.notInImport = idtoRemoveArr.length
     else idtoRemoveArr.forEach(k => base.chars.remove(k))
     result.characters.unchanged = []
   } else result.characters.notInImport = base.chars.values.length
@@ -55,7 +60,7 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, partial: boolean, disjo
     weapons.forEach(w => {
       const weapon = base.weapons.validate(w)
       if (!weapon) return result.weapons.invalid.push(w)
-      let { duplicated, upgraded } = disjoint ? { duplicated: [], upgraded: [] } : base.weapons.findDup(weapon)
+      let { duplicated, upgraded } = ignoreDups ? { duplicated: [], upgraded: [] } : base.weapons.findDup(weapon)
       // Don't reuse dups/upgrades
       duplicated = duplicated.filter(a => idsToRemove.has(a.id))
       upgraded = upgraded.filter(a => idsToRemove.has(a.id))
@@ -70,7 +75,7 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, partial: boolean, disjo
         base.weapons.new(weapon)
     })
     const idtoRemoveArr = Array.from(idsToRemove)
-    if (partial || disjoint) result.weapons.notInImport = idtoRemoveArr.length
+    if (keepNotInImport || ignoreDups) result.weapons.notInImport = idtoRemoveArr.length
     else idtoRemoveArr.forEach(k => base.weapons.remove(k))
   } else result.weapons.notInImport = base.weapons.values.length
 
@@ -82,7 +87,7 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, partial: boolean, disjo
     artifacts.forEach(a => {
       const art = base.arts.validate(a)
       if (!art) return result.artifacts.invalid.push(a)
-      let { duplicated, upgraded } = disjoint ? { duplicated: [], upgraded: [] } : base.arts.findDups(art)
+      let { duplicated, upgraded } = ignoreDups ? { duplicated: [], upgraded: [] } : base.arts.findDups(art)
 
       // Don't reuse dups/upgrades
       duplicated = duplicated.filter(a => idsToRemove.has(a.id))
@@ -98,7 +103,7 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, partial: boolean, disjo
         base.arts.new(art)
     })
     const idtoRemoveArr = Array.from(idsToRemove)
-    if (partial || disjoint) result.artifacts.notInImport = idtoRemoveArr.length
+    if (keepNotInImport || ignoreDups) result.artifacts.notInImport = idtoRemoveArr.length
     else idtoRemoveArr.forEach(k => base.arts.remove(k))
   } else result.artifacts.notInImport = base.arts.values.length
 

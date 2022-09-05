@@ -5,7 +5,7 @@ import type { IWeapon } from "../Types/weapon"
 export const GOSource = "Genshin Optimizer" as const
 
 function newCounter<T>(): ImportResultCounter<T> {
-  return { import: 0, invalid: [], new: [], update: [], unchanged: [], remove: [], notInImport: 0 }
+  return { import: 0, invalid: [], new: [], update: [], unchanged: [], remove: [], notInImport: 0, beforeMerge: 0 }
 }
 
 export function newImportResult(source: string): ImportResult {
@@ -34,6 +34,7 @@ export type ImportResultCounter<T> = {
   remove: T[],
   invalid: T[],
   notInImport: number,
+  beforeMerge: number,
 }
 export type ImportResult = {
   type: "GOOD",

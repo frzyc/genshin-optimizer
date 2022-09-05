@@ -50,14 +50,14 @@
     },
     "buttons": {
       "open": "Open",
-      "fullImport": "Full Import",
-      "partialImport": "Partial Import",
-      "disjointImport": "Disjoint Import",
-      "mergeImport": "Merge Import"
+      "detectDups": "Detect Updates/Dupes",
+      "delNotInImport": "Delete items not in import"
     },
     "tooltip": {
-      "partial": "<0>Full Import</0><1>Assume the import to be the full inventory. Artifacts/weapons in GO that doesnt exist in the import are deleted.</1><2>Partial Import</2><3>Assume the import is a partial inventory. Artifacts/weapons are updated/deduplicated(depending on setting), but not deleted.</3>",
-      "disjoint": "<0>Merge Import</0><1>Find upgrade/duplicates in the GO inventory and merge the import into GO.</1><2>Disjoint Import</2><3>Assume the import does not have any upgrades/duplicates, the import is merged into GO without upgrade/duplicate detection.</3>"
+      "detectdup": "Find upgrade/duplicates in the GO inventory and merge the import into GO.",
+      "ignoreDup": "Do not detect upgrades/duplicates, the import is added on top of existing GO inventory.",
+      "delNotInImport": "Assume the import to be the full inventory. Items in GO Inventory that doesn't exist in the import are deleted.",
+      "keepNotInImport": "Assume the import is a partial inventory. Nothing will be deleted."
     }
   }
 }
