@@ -3,8 +3,8 @@ import { allOperations, precompute } from "../../../../Formula/optimization";
 import { NumNode, StrNode } from "../../../../Formula/type";
 import { constant, prod, sum } from "../../../../Formula/utils";
 import { SlotKey } from "../../../../Types/consts";
-import { maximizeLP, Weights, LPConstraint } from "../../../../Util/LP";
-import { assertUnreachable, clamp01, objectKeyValueMap, objectMap, strictObjectMap } from "../../../../Util/Util";
+import { LPConstraint, maximizeLP, Weights } from "../../../../Util/LP";
+import { assertUnreachable, objectKeyValueMap, objectMap, strictObjectMap } from "../../../../Util/Util";
 import type { InterimResult, Setup, SplitWorker } from "./BackgroundWorker";
 import { ArtifactBuildData, ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynMinMax, DynStat, filterArts, MinMax, RequestFilter } from "./common";
 
@@ -147,6 +147,9 @@ function approximation(poly: NumNode, artRange: DynMinMax, arts: ArtifactsBySlot
 
 /** Compute a linear upper bound of `poly`, which must be in polynomial form */
 function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string | "$c"]: number } {
+  // We use $c and $error internally. Can't have them collide
+  if ("$c" in artRange || "$error" in artRange) throw new Error("Found forbidden key when computing linear upperbound")
+
   /**
    * We first compute the monomials found in each node and store them in `term`.
    * Monomials are represented using one-hot encoding, e.g., given variables
@@ -276,7 +279,10 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[] {
 
         const threshold = thres.value, pass = p.value, fail = f.value
         const { min, max } = nodeRange.get(val)!
-        result = interpolate([Math.max(min, threshold), fail], [max, pass], val)
+        if (max < threshold) result = f
+        else if (min >= threshold) result = p
+        else if (pass > fail) result = interpolate([min, fail], [threshold, pass], val)
+        else result = interpolate([threshold, fail], [max, pass], val)
         break
       }
       case "data": case "subscript": case "lookup": case "match": case "prio": case "small":
