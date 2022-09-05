@@ -1,8 +1,6 @@
 export type Weights = { [key in string]: number }
 export type LPConstraint = { weights: Weights, upperBound?: number, lowerBound?: number }
 
-type Equation = { weights: number[], val: number }
-
 /**
  * maximize c*x
  * s.t. lower_i <= a_i*x <= upper_i for every i
@@ -45,7 +43,7 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
   const dy_1 = [...y], dy_tau = [...y], dy_theta = [...y], dx_1 = [...x], dx_tau = [...x], dx_theta = [...x]
   const bc_bar_norm = Math.sqrt(b_bar.reduce((accu, b) => accu + b * b, 0) + c_bar.reduce((accu, c) => accu + c * c, 0))
 
-  for (let round = 0; round < 120; round++) {
+  for (let round = 0; round < 500; round++) {
     const current_centrality = centrality({ x, s, tau, kappa })
     if (current_centrality >= ((round % 2) ? 0.5 : 0.25)) throw `Bad centrality at round ${round}`
 
