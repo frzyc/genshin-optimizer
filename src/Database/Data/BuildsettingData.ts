@@ -71,7 +71,7 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, B
       buildDate = 0
     }
     builds = builds.map(build => {
-      if (!Array.isArray(build)) return [] // This should have been parsed
+      if (!Array.isArray(build)) return []
       return build.filter(id => this.database.arts.get(id))
     }).filter(x => x.length)
     if (!Number.isInteger(buildDate)) buildDate = 0

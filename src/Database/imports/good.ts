@@ -110,10 +110,12 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, partial: boolean, disjo
 
   const buildSettings = (result as any).buildSettings
   if (buildSettings) buildSettings.forEach(b => {
-    const { key, ...rest } = b as any
+    // do not preserve the import builds, since their ids will be invalid.
+    const { key, builds, buildDate, ...rest } = b as any
+
     if (!key) return
     // Do not import builds
-    base.states.set(key, { ...rest, builds: [], buildDate: 0, })
+    base.states.set(key, { ...rest })
   })
   return result
 }
