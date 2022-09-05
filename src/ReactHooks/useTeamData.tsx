@@ -1,4 +1,4 @@
-import { useCallback, useContext, useDeferredValue, useEffect } from "react";
+import { useContext, useDeferredValue, useEffect } from "react";
 import { TeamData } from "../Context/DataContext";
 import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
@@ -27,14 +27,9 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
   const dbDirtyDeferred = useDeferredValue(dbDirty)
   const data = usePromise(() => getTeamDataCalc(database, characterKey, mainStatAssumptionLevel, overrideArt, overrideWeapon), [dbDirtyDeferred, characterKey, database, mainStatAssumptionLevel, overrideArt, overrideWeapon])
 
-  const setTeamDataDirty = useCallback(() => {
-    database.invalidateTeamData(characterKey)
-    setDbDirty()
-  }, [database, characterKey, setDbDirty])
-
   useEffect(() =>
-    characterKey ? database.chars.follow(characterKey, setTeamDataDirty) : undefined,
-    [characterKey, setTeamDataDirty, database])
+    characterKey ? database.chars.follow(characterKey, setDbDirty) : undefined,
+    [characterKey, setDbDirty, database])
 
   return data
 }

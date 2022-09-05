@@ -18,9 +18,8 @@ import { StatColoredWithUnit } from '../Components/StatDisplay';
 import StatIcon from '../Components/StatIcon';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
+import { validateArtifact } from '../Database/Data/ArtifactData';
 import { DatabaseContext } from '../Database/Database';
-import { parseArtifact } from '../Database/imports/parse';
-import { validateArtifact } from '../Database/imports/validate';
 import KeyMap, { cacheValueString } from '../KeyMap';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
@@ -85,7 +84,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   useEffect(() => database.arts.followAny(setDirtyDatabase), [database, setDirtyDatabase])
 
   const [editorArtifact, artifactDispatch] = useReducer(artifactReducer, undefined)
-  const artifact = useMemo(() => editorArtifact && parseArtifact(editorArtifact), [editorArtifact])
+  const artifact = useMemo(() => editorArtifact && validateArtifact(editorArtifact), [editorArtifact])
 
   const [modalShow, setModalShow] = useState(false)
 
@@ -154,7 +153,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
 
   const { artifact: cachedArtifact, errors } = useMemo(() => {
     if (!artifact) return { artifact: undefined, errors: [] as Displayable[] }
-    const validated = validateArtifact(artifact, artifactIdToEdit)
+    const validated = cachedArtifact(artifact, artifactIdToEdit)
     if (old) {
       validated.artifact.location = old.location
       validated.artifact.exclude = old.exclude

@@ -6,7 +6,7 @@ export default function useArtifact(artifactID: string | undefined = "") {
   const [artifact, setArtifact] = useState(database.arts.get(artifactID))
   useEffect(() => setArtifact(database.arts.get(artifactID)), [database, artifactID])
   useEffect(() =>
-    artifactID ? database.arts.follow(artifactID, setArtifact) : undefined,
+    artifactID ? database.arts.follow(artifactID, (k, r, v) => r === "update" && setArtifact(v)) : undefined,
     [artifactID, setArtifact, database])
   return artifact
 }

@@ -1,43 +1,92 @@
 import { CharacterKey } from "pipeline";
+import { ascensionMaxLevel } from "../../Data/LevelData";
+import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
+import { initialCharacter } from "../../ReactHooks/useCharSelectionCallback";
 import { ICachedCharacter, ICharacter } from "../../Types/character";
-import { SlotKey } from "../../Types/consts";
-import { deepClone } from "../../Util/Util";
+import { allAdditiveReactions, allAmpReactions, allCharacterKeys, allElements, allHitModes, allSlotKeys, SlotKey } from "../../Types/consts";
+import { deepClone, objectKeyMap, objectMap } from "../../Util/Util";
+import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
-import { parseCharacter } from "../imports/parse";
-import { validateCharacter } from "../imports/validate";
 
 export class CharacterDataManager extends DataManager<CharacterKey, string, ICachedCharacter, ICharacter>{
   constructor(database: ArtCharDatabase) {
     super(database)
     for (const key of this.database.storage.keys) {
       if (key.startsWith("char_")) {
-        const obj = this.database.storage.get(key)
-        const flex = parseCharacter(obj)
-        if (!flex || key !== `char_${flex.key}`) {
-          console.error("CharacterData", key, "is unrecoverable.", obj)
-          this.database.storage.remove(key)
-          continue
-        }
-        const character = validateCharacter(flex)
-        this.set(flex.key, character)
+        const [, charKey] = key.split("char_")
+        this.set(charKey as CharacterKey, this.database.storage.get(key))
       }
     }
-    // Briefly verify that each teammate is pointing to a valid character. does not check double linking.
-    Object.entries(this.data).forEach(([charKey, char]) => {
-      let updateTeam = false
-      const team = char.team.map(t => {
-        if (this.get(t))
-          return t
-        else {
-          updateTeam = true
-          return ""
-        }
-      }) as ["" | CharacterKey, "" | CharacterKey, "" | CharacterKey]
-      if (updateTeam) {
-        this.set(charKey, { ...char, team })
-      }
-    })
+  }
+  validate(obj: any): ICharacter | undefined {
+    if (typeof obj !== "object") return
+
+    let {
+      key: characterKey, level, ascension, hitMode, elementKey, reaction, conditional,
+      bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
+      compareData, customMultiTarget, customMultiTargets
+    } = obj
+
+    if (!allCharacterKeys.includes(characterKey) ||
+      typeof level !== "number" || level < 0 || level > 90)
+      return // non-recoverable
+
+    if (!allHitModes.includes(hitMode)) hitMode = "avgHit"
+    if (characterKey !== "Traveler") elementKey = undefined
+    else if (!allElements.includes(elementKey)) elementKey = "anemo"
+    if (!allAmpReactions.includes(reaction) && !allAdditiveReactions.includes(reaction)) reaction = undefined
+    if (!allElements.includes(infusionAura)) infusionAura = ""
+    if (typeof constellation !== "number" && constellation < 0 && constellation > 6) constellation = 0
+    if (typeof ascension !== "number" ||
+      !(ascension in ascensionMaxLevel) ||
+      level > ascensionMaxLevel[ascension] ||
+      level < (ascensionMaxLevel[ascension - 1] ?? 0))
+      ascension = ascensionMaxLevel.findIndex(maxLvl => level <= maxLvl)
+    if (typeof talent !== "object") talent = { auto: 1, skill: 1, burst: 1 }
+    else {
+      let { auto, skill, burst } = talent
+      if (typeof auto !== "number" || auto < 1 || auto > 15) auto = 1
+      if (typeof skill !== "number" || skill < 1 || skill > 15) skill = 1
+      if (typeof burst !== "number" || burst < 1 || burst > 15) burst = 1
+      talent = { auto, skill, burst }
+    }
+
+    if (!conditional)
+      conditional = {}
+    if (!team)
+      team = ["", "", ""]
+    team = team.map(t => this.get(t) ? t : "") as ICharacter["team"]
+
+    if (!teamConditional)
+      teamConditional = {}
+
+    if (typeof compareData !== "boolean") compareData = false
+
+    // TODO: validate bonusStats
+    if (typeof bonusStats !== "object" || !Object.entries(bonusStats).map(([_, num]) => typeof num === "number")) bonusStats = {}
+    if (typeof enemyOverride !== "object" || !Object.entries(enemyOverride).map(([_, num]) => typeof num === "number")) enemyOverride = {}
+    if (!customMultiTarget) customMultiTarget = []
+    customMultiTarget = customMultiTarget.map(cmt => validateCustomMultiTarget(cmt)).filter(t => t)
+    const char: ICharacter = {
+      key: characterKey, level, ascension, hitMode, reaction, conditional,
+      bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
+      compareData, customMultiTarget
+    }
+    if (elementKey) {
+      char.elementKey = elementKey
+      char.customMultiTarget = []
+      if (!customMultiTargets) char.customMultiTargets = objectKeyMap(allElements, () => []) as ICharacter["customMultiTargets"]
+      else char.customMultiTargets = objectMap(customMultiTargets!, customMultiTarget => (customMultiTarget as any[]).map(cmt => validateCustomMultiTarget(cmt)).filter(t => t)) as ICharacter["customMultiTargets"]
+    }
+    return char
+  }
+  toCache(storageObj: ICharacter, id: string): ICachedCharacter {
+    return {
+      equippedArtifacts: objectKeyMap(allSlotKeys, () => ""),
+      equippedWeapon: "",
+      ...storageObj,
+    }
   }
   deCache(char: ICachedCharacter): ICharacter {
     const {
@@ -56,6 +105,18 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
   toStorageKey(key: CharacterKey): string {
     return `char_${key}`
   }
+  getWithInit(key: CharacterKey): ICachedCharacter {
+    if (!this.keys.includes(key))
+      this.set(key, initialCharacter(key))
+    return this.get(key)!
+  }
+  getWithInitWeapon(key: CharacterKey): ICachedCharacter {
+    if (!this.keys.includes(key)) {
+      this.set(key, initialCharacter(key))
+      this.database.weapons.new({ ...defaultInitialWeapon("sword"), location: key })
+    }
+    return this.get(key)!
+  }
   remove(key: CharacterKey) {
     const char = this.get(key)
     if (!char) return
@@ -71,23 +132,10 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     super.remove(key)
   }
 
-  /**
-   * **Caution**: This does not propagate triggers on changes to `equippedArtifacts`
-   * **Caution**: This does not propagate triggers on changes to `equippedWeapon`
-   */
-  set(key: CharacterKey, value: Partial<ICharacter>): void {
-    const oldChar = super.get(key)
-    const parsedChar = parseCharacter({ ...oldChar, ...value })
-    if (!parsedChar) return console.error("Unable to update Character database with invalid character", value)
-
-    const newChar = validateCharacter({ ...oldChar, ...parsedChar })
-
-    super.set(key, newChar)
-  }
 
   /**
    * **Caution**:
-   * This does not update the `location` on artifact, nor trigger callback.
+   * This does not update the `location` on artifact
    * This function should be use internally for database to maintain cache on ICachedCharacter.
    */
   setEquippedArtifact(key: CharacterKey, slotKey: SlotKey, artid: string) {
@@ -95,17 +143,17 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     if (!char) return
     const equippedArtifacts = deepClone(char.equippedArtifacts)
     equippedArtifacts[slotKey] = artid
-    super.set(key, { ...char, equippedArtifacts })
+    super.setCached(key, { ...char, equippedArtifacts })
   }
   /**
    * **Caution**:
-   * This does not update the `location` on weapon, nor trigger callback.
+   * This does not update the `location` on weapon
    * This function should be use internally for database to maintain cache on ICachedCharacter.
    */
   setEquippedWeapon(key: CharacterKey, equippedWeapon: ICachedCharacter["equippedWeapon"]) {
     const char = super.get(key)
     if (!char) return
-    super.set(key, { ...char, equippedWeapon })
+    super.setCached(key, { ...char, equippedWeapon })
   }
   equipArtifacts(charKey: CharacterKey, newArts: StrictDict<SlotKey, string>) {
     const char = super.get(charKey)

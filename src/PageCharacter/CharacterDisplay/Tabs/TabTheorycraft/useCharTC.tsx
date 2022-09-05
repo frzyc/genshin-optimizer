@@ -7,7 +7,7 @@ export default function useCharTC(characterKey: CharacterKey, defWeapon: WeaponK
   const [charTC, setCharTC] = useState(database.charTCs.getWithInit(characterKey, defWeapon))
   useEffect(() => setCharTC(database.charTCs.getWithInit(characterKey, defWeapon)), [database, characterKey, defWeapon])
   useEffect(() =>
-    characterKey ? database.charTCs.follow(characterKey, (cTC) => cTC && setCharTC(cTC)) : undefined,
+    characterKey ? database.charTCs.follow(characterKey, (k, r, v) => r === "update" && setCharTC(v)) : undefined,
     [characterKey, setCharTC, database])
   return charTC
 }

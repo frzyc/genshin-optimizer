@@ -1,7 +1,6 @@
 import { ArtCharDatabase } from '../../../../Database/Database';
 import { DBLocalStorage } from '../../../../Database/DBStorage';
 import { importGOOD } from '../../../../Database/imports/good';
-import { merge } from '../../../../Database/imports/merge';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { optimize } from '../../../../Formula/optimization';
 import { customRead } from '../../../../Formula/utils';
@@ -14,8 +13,8 @@ import { compactArtifacts, dynamicData } from './foreground';
 describe.skip("Worker Perf", () => {
   test("Test", async () => {
 
-    const iResult = importGOOD(data1 as any)!
-    const database = merge(iResult, new ArtCharDatabase(new DBLocalStorage(localStorage)), false, false)
+    const database = new ArtCharDatabase(new DBLocalStorage(localStorage))
+    importGOOD(data1 as any, database, false, false)!
 
     const teamData = (await getTeamData(database, "Sucrose"))!.teamData
     // Get a new `Data` for `workerData` (and not reuse the old ones) because we are mutating it later

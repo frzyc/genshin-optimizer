@@ -1,12 +1,12 @@
 import { CharacterKey, MainStatKey } from "pipeline";
 import { allSubstatKeys } from "../../Types/artifact";
-import { ICharacter, ICharTC } from "../../Types/character";
+import { ICharTC } from "../../Types/character";
 import { allSlotKeys, ArtifactRarity, WeaponKey } from "../../Types/consts";
 import { objectKeyMap } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 
-export class CharacterTCDataManager extends DataManager<CharacterKey, string, ICharTC, ICharacter>{
+export class CharacterTCDataManager extends DataManager<CharacterKey, string, ICharTC, ICharTC>{
   constructor(database: ArtCharDatabase) {
     super(database)
     for (const key of this.database.storage.keys) {

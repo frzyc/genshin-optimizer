@@ -41,9 +41,7 @@ export class ArtCharDatabase {
 
     // invalidates character when things change.
     this.chars.followAny((key) => {
-      if (typeof key === "string")
-        this.invalidateTeamData(key as CharacterKey)
-
+      this.invalidateTeamData(key as CharacterKey)
       this.states.set("dbMeta", { lastEdit: Date.now() })
     })
     this.arts.followAny(() => {

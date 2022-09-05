@@ -44,7 +44,8 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
 
   const [favesDirty, setFavesDirty] = useForceUpdate()
   useEffect(() => {
-    return database.states.followAny(s => typeof s === "string" && s.includes("charMeta_") && setFavesDirty())
+    // character favorite updater
+    return database.states.followAny(s => s.includes("charMeta_") && setFavesDirty())
   }, [setFavesDirty, database])
 
   const [searchTerm, setSearchTerm] = useState("")

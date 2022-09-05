@@ -28,10 +28,4 @@ export class StateDataManager extends DataManager<string, string, object, object
     this.set(key, newState)
     return this.get(key) as O
   }
-
-  set<O extends object>(id: string, value: Partial<O>) {
-    const oldState = this.get(id) as O
-    super.set(id, { ...oldState, ...value })
-  }
-
 }

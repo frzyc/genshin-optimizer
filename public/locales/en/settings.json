@@ -31,7 +31,7 @@
   "uploadCard": {
     "title": "Database Upload",
     "replaceDatabase": "Replace Database",
-    "hint": "Upload your JSON file here...",
+    "hint": "Load your JSON file here...",
     "hintPaste": "...or paste your data below.",
     "dbSource": "Data source:",
     "goUpload": {
@@ -49,6 +49,7 @@
       "goInvalid": "Invalid GO backup file format."
     },
     "buttons": {
+      "open": "Open",
       "fullImport": "Full Import",
       "partialImport": "Partial Import",
       "disjointImport": "Disjoint Import",

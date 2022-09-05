@@ -1,6 +1,6 @@
 import { faArrowLeft, faFileCode, faFileUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { JoinFull, JoinLeft, MergeType, Splitscreen, Upload } from '@mui/icons-material'
+import { FileOpen, JoinFull, JoinLeft, MergeType, Splitscreen } from '@mui/icons-material'
 import { Box, Button, CardContent, Divider, Grid, styled, Tooltip, Typography } from '@mui/material'
 import { useCallback, useContext, useMemo, useState } from "react"
 import { Trans, useTranslation } from "react-i18next"
@@ -10,7 +10,6 @@ import { ArtCharDatabase, DatabaseContext } from "../Database/Database"
 import { DBLocalStorage, SandboxStorage } from '../Database/DBStorage'
 import { ImportResult, ImportResultCounter } from '../Database/exim'
 import { importGOOD } from '../Database/imports/good'
-import { merge } from '../Database/imports/merge'
 
 const InvisInput = styled('input')({
   display: 'none',
@@ -40,19 +39,20 @@ export default function UploadCard({ onReplace }: { onReplace: () => void }) {
     // Figure out the file format
     if (parsed.format === "GOOD") {
       // Parse as GOOD format
-      const imported = importGOOD(parsed)
-      if (!imported) {
+      const copyStorage = new SandboxStorage()
+      copyStorage.copyFrom(database.storage)
+      const importedDatabase = new ArtCharDatabase(copyStorage)
+      const importResult = importGOOD(parsed, importedDatabase, partial, disjoint)
+      if (!importResult) {
         setErrorMsg("uploadCard.error.goInvalid")
         return
       }
-      const copyStorage = new SandboxStorage()
-      copyStorage.copyFrom(database.storage)
-      return { importResult: imported, importedDatabase: merge(imported, new ArtCharDatabase(copyStorage), partial, disjoint) }
+
+      return { importResult, importedDatabase }
     }
     setErrorMsg("uploadCard.error.unknown")
     return
   }, [data, database, partial, disjoint]) ?? {}
-
   const reset = () => {
     setdata("")
     setfilename("")
@@ -73,7 +73,7 @@ export default function UploadCard({ onReplace }: { onReplace: () => void }) {
         <Grid item>
           <label htmlFor="icon-button-file">
             <InvisInput accept=".json" id="icon-button-file" type="file" onChange={onUpload} />
-            <Button component="span" startIcon={<Upload />}>Upload</Button>
+            <Button component="span" startIcon={<FileOpen />}>{t`uploadCard.buttons.open`}</Button>
           </label>
         </Grid>
         <Grid item flexGrow={1}>
@@ -106,13 +106,13 @@ export default function UploadCard({ onReplace }: { onReplace: () => void }) {
       </Box>
       <Typography gutterBottom variant="caption"><Trans t={t} i18nKey="settings:uploadCard.hintPaste" /></Typography>
       <Box component="textarea" sx={{ width: "100%", fontFamily: "monospace", minHeight: "10em", mb: 2, resize: "vertical" }} value={data} onChange={e => setdata(e.target.value)} />
-      {importResult ? <GOODUploadInfo importResult={importResult} /> : t(errorMsg)}
+      {(importResult && importedDatabase) ? <GOODUploadInfo importResult={importResult} importedDatabase={importedDatabase} /> : t(errorMsg)}
     </CardContent>
-    <GOUploadAction database={importedDatabase} reset={reset} />
+    <GOUploadAction importedDatabase={importedDatabase} reset={reset} />
   </CardLight>
 }
 
-function GOODUploadInfo({ importResult: { source, artifacts, characters, weapons } }: { importResult: ImportResult }) {
+function GOODUploadInfo({ importResult: { source, artifacts, characters, weapons }, importedDatabase }: { importResult: ImportResult, importedDatabase: ArtCharDatabase }) {
   const { t } = useTranslation("settings")
   return <CardDark>
     <CardContent sx={{ py: 1 }}>
@@ -124,21 +124,21 @@ function GOODUploadInfo({ importResult: { source, artifacts, characters, weapons
     <CardContent >
       <Grid container spacing={2}>
         <Grid item flexGrow={1}>
-          <MergeResult result={artifacts} type="arts" />
+          <MergeResult result={artifacts} dbTotal={importedDatabase.arts.values.length} type="arts" />
         </Grid>
         <Grid item flexGrow={1}>
-          <MergeResult result={weapons} type="weapons" />
+          <MergeResult result={weapons} dbTotal={importedDatabase.weapons.values.length} type="weapons" />
         </Grid>
         <Grid item flexGrow={1}>
-          <MergeResult result={characters} type="chars" />
+          <MergeResult result={characters} dbTotal={importedDatabase.chars.values.length} type="chars" />
         </Grid>
       </Grid>
     </CardContent>
   </CardDark>
 }
-function MergeResult({ result, type }: { result: ImportResultCounter<any>, type: string }) {
+function MergeResult({ result, dbTotal, type }: { result: ImportResultCounter<any>, dbTotal: number, type: string }) {
   const { t } = useTranslation("settings")
-  const total = result.import.length
+  const total = result.import
   return <CardLight >
     <CardContent sx={{ py: 1 }}>
       <Typography>
@@ -148,11 +148,11 @@ function MergeResult({ result, type }: { result: ImportResultCounter<any>, type:
     <Divider />
     <CardContent>
       <Typography><Trans t={t} i18nKey="count.new" /> <strong>{result.new.length}</strong> / {total}</Typography>
-      <Typography><Trans t={t} i18nKey="count.updated" /> <strong>{result.updated.length}</strong> / {total}</Typography>
+      <Typography><Trans t={t} i18nKey="count.updated" /> <strong>{result.update.length}</strong> / {total}</Typography>
       <Typography><Trans t={t} i18nKey="count.unchanged" /> <strong>{result.unchanged.length}</strong> / {total}</Typography>
-      {!!result.removed.length && <Typography color="warning.main"><Trans t={t} i18nKey="count.removed" /> <strong>{result.removed.length}</strong></Typography>}
+      {!!result.remove.length && <Typography color="warning.main"><Trans t={t} i18nKey="count.removed" /> <strong>{result.remove.length}</strong></Typography>}
       {!!result.notInImport && <Typography><Trans t={t} i18nKey="count.notInImport" /> <strong>{result.notInImport}</strong></Typography>}
-      <Typography><Trans t={t} i18nKey="count.dbTotal" /> <strong>{result.dbTotal}</strong></Typography>
+      <Typography><Trans t={t} i18nKey="count.dbTotal" /> <strong>{dbTotal}</strong></Typography>
       {!!result.invalid?.length && <div>
         <Typography color="error.main"><Trans t={t} i18nKey="count.invalid" /> <strong>{result.invalid.length}</strong> / {total}</Typography>
         <Box component="textarea" sx={{ width: "100%", fontFamily: "monospace", minHeight: "10em", resize: "vertical" }} value={JSON.stringify(result.invalid, undefined, 2)} disabled />
@@ -161,20 +161,21 @@ function MergeResult({ result, type }: { result: ImportResultCounter<any>, type:
   </CardLight>
 }
 
-function GOUploadAction({ database, reset }: { database?: ArtCharDatabase, reset: () => void }) {
-  const { setDatabase } = useContext(DatabaseContext)
+function GOUploadAction({ importedDatabase, reset }: { importedDatabase?: ArtCharDatabase, reset: () => void }) {
+  const { database, setDatabase } = useContext(DatabaseContext)
   const { t } = useTranslation("settings")
   const replaceDB = useCallback(() => {
-    if (!database) return
+    if (!importedDatabase) return
+    database.clear()
     const dbLStorage = new DBLocalStorage(localStorage)
-    dbLStorage.copyFrom(database.storage)
-    database.storage = dbLStorage
-    setDatabase(database)
+    dbLStorage.copyFrom(importedDatabase.storage)
+    importedDatabase.storage = dbLStorage
+    setDatabase(importedDatabase)
     reset()
-  }, [database, reset, setDatabase])
+  }, [database, importedDatabase, reset, setDatabase])
 
 
   return <><Divider /><CardContent sx={{ py: 1 }}>
-    <Button color={database ? "success" : "error"} disabled={!database} onClick={replaceDB} startIcon={<FontAwesomeIcon icon={faFileUpload} />}><Trans t={t} i18nKey="settings:uploadCard.replaceDatabase" /></Button>
+    <Button color={importedDatabase ? "success" : "error"} disabled={!importedDatabase} onClick={replaceDB} startIcon={<FontAwesomeIcon icon={faFileUpload} />}><Trans t={t} i18nKey="settings:uploadCard.replaceDatabase" /></Button>
   </CardContent></>
 }
