@@ -52,7 +52,7 @@ export default function PageCharacter() {
   // Set follow, should run only once
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: '/characters' })
-    return database.chars.followAny((k, r) => (r === "new" || r === "remove") && forceUpdate)
+    return database.chars.followAny((k, r) => (r === "new" || r === "remove") && forceUpdate())
   }, [forceUpdate, database])
 
   useEffect(() => {
