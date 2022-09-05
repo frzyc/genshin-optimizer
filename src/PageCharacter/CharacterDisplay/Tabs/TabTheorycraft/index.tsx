@@ -81,9 +81,9 @@ export default function TabTheorycraft() {
         newData.artifact.slots[slotKey].statKey = mainStatKey
         newData.artifact.slots[slotKey].rarity = rarity
         sets[setKey] = (sets[setKey] ?? 0) + 1
-        substats.forEach(substat =>
-          newData.artifact.substats.stats[substat.key] = (newData.artifact.substats.stats[substat.key] ?? 0) + substat.accurateValue
-        )
+        substats.forEach(substat => {
+          if (substat.key) newData.artifact.substats.stats[substat.key] = (newData.artifact.substats.stats[substat.key] ?? 0) + substat.accurateValue
+        })
       })
       newData.artifact.sets = Object.fromEntries(Object.entries(sets).map(([key, value]) => [key,
         value === 3 ? 2 :

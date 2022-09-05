@@ -1,3 +1,4 @@
+import { validateLevelAsc } from "../../Data/LevelData";
 import { allCharacterKeys, allWeaponKeys } from "../../Types/consts";
 import { ICachedWeapon, IWeapon } from "../../Types/weapon";
 import { ArtCharDatabase } from "../Database";
@@ -12,14 +13,12 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
         this.set(key, this.database.storage.get(key) as any)
     }
   }
-  validate(obj: object): IWeapon | undefined {
+  validate(obj: any): IWeapon | undefined {
     if (typeof obj !== "object") return
 
-    let { key, level, ascension, refinement, location, lock } = obj as any
+    let { key, level: rawLevel, ascension: rawAscension, refinement, location, lock } = obj
     if (!allWeaponKeys.includes(key)) return
-    if (typeof level !== "number" || level < 1 || level > 90) level = 1
-    if (typeof ascension !== "number" || ascension < 0 || ascension > 6) ascension = 0
-    // TODO: Check if level-ascension matches
+    let { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
     if (typeof refinement !== "number" || refinement < 1 || refinement > 5) refinement = 1
     if (!allCharacterKeys.includes(location)) location = ""
 

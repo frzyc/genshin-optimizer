@@ -1,5 +1,5 @@
 import { CharacterKey } from "pipeline";
-import { ascensionMaxLevel } from "../../Data/LevelData";
+import { validateLevelAsc } from "../../Data/LevelData";
 import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
 import { initialCharacter } from "../../ReactHooks/useCharSelectionCallback";
 import { ICachedCharacter, ICharacter } from "../../Types/character";
@@ -23,13 +23,12 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     if (typeof obj !== "object") return
 
     let {
-      key: characterKey, level, ascension, hitMode, elementKey, reaction, conditional,
+      key: characterKey, level: rawLevel, ascension: rawAscension, hitMode, elementKey, reaction, conditional,
       bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
       compareData, customMultiTarget, customMultiTargets
     } = obj
 
-    if (!allCharacterKeys.includes(characterKey) ||
-      typeof level !== "number" || level < 0 || level > 90)
+    if (!allCharacterKeys.includes(characterKey))
       return // non-recoverable
 
     if (!allHitModes.includes(hitMode)) hitMode = "avgHit"
@@ -38,11 +37,9 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     if (!allAmpReactions.includes(reaction) && !allAdditiveReactions.includes(reaction)) reaction = undefined
     if (!allElements.includes(infusionAura)) infusionAura = ""
     if (typeof constellation !== "number" && constellation < 0 && constellation > 6) constellation = 0
-    if (typeof ascension !== "number" ||
-      !(ascension in ascensionMaxLevel) ||
-      level > ascensionMaxLevel[ascension] ||
-      level < (ascensionMaxLevel[ascension - 1] ?? 0))
-      ascension = ascensionMaxLevel.findIndex(maxLvl => level <= maxLvl)
+
+    const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
+
     if (typeof talent !== "object") talent = { auto: 1, skill: 1, burst: 1 }
     else {
       let { auto, skill, burst } = talent
@@ -56,7 +53,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
       conditional = {}
     if (!team)
       team = ["", "", ""]
-    team = team.map(t => this.get(t) ? t : "") as ICharacter["team"]
+    team = team.map(t => allCharacterKeys.includes(t) ? t : "") as ICharacter["team"]
 
     if (!teamConditional)
       teamConditional = {}

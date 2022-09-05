@@ -28,3 +28,12 @@ export const milestoneLevels = [
 
 export const getLevelString = (level: number, ascension: Ascension): string =>
   `${level}/${ascensionMaxLevel[ascension]}`
+
+export function validateLevelAsc(level: number, ascension: Ascension): { level: number, ascension: Ascension } {
+  if (typeof level !== "number" || level < 1 || level > 90) level = 1
+  if (typeof ascension !== "number" || ascension < 0 || ascension > 6) ascension = 0
+
+  if (level > ascensionMaxLevel[ascension] || level < (ascensionMaxLevel[ascension - 1] ?? 0))
+    ascension = ascensionMaxLevel.findIndex(maxLvl => level <= maxLvl) as Ascension
+  return { level, ascension }
+}
