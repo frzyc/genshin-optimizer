@@ -25,39 +25,91 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
     }
   }
 
+  const denseAt = At.map(row => {
+    const dense = Array<number>(yMap.size).fill(0)
+    row.forEach(([iy, val]) => dense[iy] = val)
+    return dense
+  })
+
   /**
    * maximize b*y over y
    * s.t. At*y <= c
    *
    * using predictor-corrector method
    */
-  const y = Array<number>(yMap.size).fill(0), x = Array<number>(At.length).fill(1), s = [...x]
+  const numX = At.length, numY = yMap.size
+  const y = Array<number>(numY).fill(0), x = Array<number>(numX).fill(1), s = [...x]
   let tau = 1, theta = 1, kappa = 1
-  const asxa: number[][] = Array<number[]>(yMap.size).fill([]).map(_ => Array(yMap.size)) // AS^-1XA^T
 
-  const b_bar = [...b], c_bar = c.map(c => c - 1), z_bar = c.reduce((accu, c) => accu + c, 1)
-  At.forEach(at => at.forEach(([iy, val]) => { b_bar[iy] -= val }))
+  const minus_b_bar = b.map(b => -b), minus_c_bar = c.map(c => 1 - c), z_bar = c.reduce((accu, c) => accu + c, 1)
+  At.forEach(at => at.forEach(([iy, val]) => minus_b_bar[iy] += val))
 
   // Preallocated variables
-  const dx = [...x], dy = [...y], ds = [...s], minus_xs = [...x], cent_tmp = [...x]
+  const dx = [...x], dy = [...y], ds = [...s], xs = [...x], centX_tmp = [...x], xInvS = [...x], minus_r_prim = [...y].fill(0)
   const dy_1 = [...y], dy_tau = [...y], dy_theta = [...y], dx_1 = [...x], dx_tau = [...x], dx_theta = [...x]
-  const bc_bar_norm = Math.sqrt(b_bar.reduce((accu, b) => accu + b * b, 0) + c_bar.reduce((accu, c) => accu + c * c, 0))
+  const bc_bar_norm = Math.sqrt(minus_b_bar.reduce((accu, b) => accu + b * b, 0) + minus_c_bar.reduce((accu, c) => accu + c * c, 0))
 
-  for (let round = 0; round < 500; round++) {
+  function try_create_result(): Weights | undefined {
+    const ixs: number[] = []
+    for (let ix = 0; ix < numX; ix++)
+      if (x[ix] > s[ix]) ixs.push(ix)
+
+    const numVars = ixs.length + numY + 1, iTK = numVars - 1
+    const vars = Array<number>(numVars).fill(0), d = [...vars], lambdas = [...vars], invQ = [...vars].fill(1)
+    const cb = [...y.map(y => -y), ...ixs.map(ix => -x[ix]), 0], Bt = ixs.map(ix => At[ix])
+    const constraintsT = Array(numVars).fill(0).map(_ => Array<number>(numVars).fill(0))
+    Bt.forEach((bt, ixb) => bt.forEach(([iy, val]) => {
+      constraintsT[ixb + numY][iy] = val
+      constraintsT[iy][ixb + numY] = -val
+    }))
+    b.forEach((b, iy) => {
+      constraintsT[iTK][iy] = -b
+      constraintsT[iy][iTK] = b
+    })
+    if (tau >= kappa) {
+      cb[iTK] = -tau
+      ixs.forEach((ix, ixb) => {
+        constraintsT[iTK][ixb + numY] = c[ix]
+        constraintsT[ixb + numY][iTK] = -c[ix]
+      })
+    } else {
+      cb[iTK] = -kappa
+      constraints[iTK][iTK] = -1
+      // We are unsured how to recover tau from here, skip the solution instead
+      return undefined
+    }
+
+    try {
+      solveScaledQuadT(invQ, cb, constraintsT, d, vars, lambdas)
+    } catch {
+      return undefined
+    }
+    const tk = vars[iTK], result: Weights = {}
+    yMap.forEach((iy, key) => result[key] = vars[iy] / tk)
+    return result
+  }
+
+  for (let round = 0; round < 300; round++) {
     const current_centrality = centrality({ x, s, tau, kappa })
     if (current_centrality >= ((round % 2) ? 0.5 : 0.25)) throw `Bad centrality at round ${round}`
 
-    const isPredictor = !(round % 2), tau_kappa = tau * kappa
-    x.forEach((x, ix) => minus_xs[ix] = -x * s[ix])
-    const mu = minus_xs.reduce((a, b) => a - b, tau_kappa) / (x.length + 1)
-    // gamma * mu * e - Xs
-    const cent = isPredictor ? minus_xs : (minus_xs.forEach((xs, ix) => cent_tmp[ix] = mu + xs), cent_tmp)
-    const cent_tau_kappa = isPredictor ? -tau * kappa : (mu - tau * kappa)
+    const isPredictor = !(round % 2), gamma = isPredictor ? 0 : 1, tau_kappa = tau * kappa
+    x.forEach((x, ix) => {
+      xs[ix] = x * s[ix]
+      xInvS[ix] = x / s[ix]
+    })
+    const mu = xs.reduce((a, b) => a + b, tau_kappa) / (numX + 1)
 
     {
       // Exit condition
       const e1 = 1e-9 * tau * tau, e2 = 1e-9 / bc_bar_norm, e3 = 1e-9
-      if (mu - tau_kappa <= e1 && theta / tau <= e2) {
+      const condition1 = mu - tau_kappa, condition2 = theta / tau
+      if (condition1 <= 1e-7 && condition2 <= 1e-7) {
+        // Early exit if we can find something
+        const result = try_create_result()
+        if (result) return result
+      }
+      if (condition1 <= e1 && condition2 <= e2) {
         const result: Weights = {}
         yMap.forEach((val, key) => result[key] = y[val] / tau)
         return result
@@ -67,72 +119,52 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
 
     // These rounding errors/residuals accumulate over time,
     // so we have to nudge them back during a corrector step
-    let r_prim: number[] = undefined as any, r_tau = 0
-    if ((round % 32) === 31) {
-      r_prim = Array<number>(y.length).fill(0)
+    const correctingResidual = (round % 32) === 31
+    let r_tau = 0
+    if (correctingResidual) {
       s.fill(0)
       kappa = 0
       At.forEach((at, ix) => at.forEach(([iy, val]) => {
-        r_prim[iy] += val * x[ix]
+        minus_r_prim[iy] -= val * x[ix]
         s[ix] -= val * y[iy]
       }))
       b.forEach((b, iy) => {
-        r_prim[iy] -= b * tau
+        minus_r_prim[iy] += b * tau
         kappa += b * y[iy]
       })
-      b_bar.forEach((b, iy) => {
-        r_prim[iy] += b * theta
-        r_tau -= b * y[iy]
+      minus_b_bar.forEach((b, iy) => {
+        minus_r_prim[iy] += b * theta
+        r_tau += b * y[iy]
       })
       c.forEach((c, ix) => {
         s[ix] += c * tau
         kappa -= c * x[ix]
       })
-      c_bar.forEach((c, ix) => {
-        r_tau += c * x[ix]
-        s[ix] -= c * theta
+      minus_c_bar.forEach((c, ix) => {
+        r_tau -= c * x[ix]
+        s[ix] += c * theta
       })
-      r_tau += (x.length + 1) - z_bar * tau
+      r_tau += (numX + 1) - z_bar * tau
       kappa += z_bar * theta
     }
 
-    asxa.forEach(arr => arr.fill(0))
-    At.forEach((at, ix) => {
-      const factor = x[ix] / s[ix];
-      at.forEach(([iy1, val1]) => at.forEach(([iy2, val2]) => asxa[iy1][iy2] += val1 * val2 * factor))
-    })
-
     // Write dy in terms of dtau and dtheta
-    // dy = dy_1 + dy_tau * dtau + dy_theta * dtheta
-    if (r_prim) r_prim.forEach((y, i) => dy_1[i] = -y); else dy_1.fill(0)
-    b.forEach((b, iy) => dy_tau[iy] = b); b_bar.forEach((b, iy) => dy_theta[iy] = -b)
-    At.forEach((at, ix) => at.forEach(([iy, val]) => {
-      const factor = val / s[ix]
-      dy_1[iy] -= factor * cent[ix]
-      dy_tau[iy] += factor * x[ix] * c[ix]
-      dy_theta[iy] -= factor * x[ix] * c_bar[ix]
-    }))
-    solveLPEq(asxa, dy_1)!.forEach((val, i) => dy_1[i] = val)
-    solveLPEq(asxa, dy_tau)!.forEach((val, i) => dy_tau[i] = val)
-    solveLPEq(asxa, dy_theta)!.forEach((val, i) => dy_theta[i] = val)
-
-    // Write dx in terms of dtau and dtheta
     // dx = dx_1 + dx_tau * dtau + dx_theta * dtheta
-    At.forEach((at, ix) => {
-      dx_1[ix] = cent[ix]
-      dx_tau[ix] = -x[ix] * c[ix]
-      dx_theta[ix] = x[ix] * c_bar[ix]
-      at.forEach(([iy, val]) => {
-        const factor = x[ix] * val
-        dx_1[ix] += factor * dy_1[iy]
-        dx_tau[ix] += factor * dy_tau[iy]
-        dx_theta[ix] += factor * dy_theta[iy]
-      })
-      const factor = s[ix]
-      dx_1[ix] /= factor
-      dx_tau[ix] /= factor
-      dx_theta[ix] /= factor
-    })
+    // dy = dy_1 + dy_tau * dtau + dy_theta * dtheta
+    const centX = !gamma ? s : (s.forEach((s, ix) => centX_tmp[ix] = s - gamma * mu / x[ix]), centX_tmp)
+    try {
+      const { eqe } = solveScaledQuadT(xInvS, centX, denseAt, minus_r_prim, dx_1, dy_1)
+      if (correctingResidual) minus_r_prim.fill(0)
+      solveScaledQuadT(xInvS, c, denseAt, b, dx_tau, dy_tau, eqe)
+      solveScaledQuadT(xInvS, minus_c_bar, denseAt, minus_b_bar, dx_theta, dy_theta, eqe)
+    } catch {
+      // When we're getting too close to the boundary, a lot of numerical instability occurs.
+      // If we went off the rail too much into infeasible region, these solvers will likely fail.
+      break
+    }
+    dy_1.forEach((v, i, arr) => arr[i] = -v)
+    dy_tau.forEach((v, i, arr) => arr[i] = -v)
+    dy_theta.forEach((v, i, arr) => arr[i] = -v)
 
     // [  kappa ; tau * z_bar ] * [ dtau   ] + [ -tau c^T ; tau b^T ] * [ dx - dx_1 ]
     // [ -z_bar ;     0       ]   [ dtheta ]   [  c_bar^T ; b_bar^T ]   [ dy - dy_1 ]
@@ -148,23 +180,23 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
     const m12 = tau * z_bar
       - tau * dx_theta.reduce((accu, dx, ix) => accu + c[ix] * dx, 0)
       + tau * dy_theta.reduce((accu, dy, iy) => accu + b[iy] * dy, 0)
-    const m1 = cent_tau_kappa
+    const m1 = gamma * mu - tau_kappa
       + tau * dx_1.reduce((accu, dx, ix) => accu + c[ix] * dx, 0)
       - tau * dy_1.reduce((accu, dy, iy) => accu + b[iy] * dy, 0)
     const m21 = -z_bar
-      + dx_tau.reduce((accu, dx, ix) => accu + c_bar[ix] * dx, 0)
-      - dy_tau.reduce((accu, dy, iy) => accu + b_bar[iy] * dy, 0)
+      - dx_tau.reduce((accu, dx, ix) => accu + minus_c_bar[ix] * dx, 0)
+      + dy_tau.reduce((accu, dy, iy) => accu + minus_b_bar[iy] * dy, 0)
     const m22 = 0
-      + dx_theta.reduce((accu, dx, ix) => accu + c_bar[ix] * dx, 0)
-      - dy_theta.reduce((accu, dy, iy) => accu + b_bar[iy] * dy, 0)
+      - dx_theta.reduce((accu, dx, ix) => accu + minus_c_bar[ix] * dx, 0)
+      + dy_theta.reduce((accu, dy, iy) => accu + minus_b_bar[iy] * dy, 0)
     const m2 = -r_tau
-      - dx_1.reduce((accu, dx, ix) => accu + c_bar[ix] * dx, 0)
-      + dy_1.reduce((accu, dy, iy) => accu + b_bar[iy] * dy, 0)
+      + dx_1.reduce((accu, dx, ix) => accu + minus_c_bar[ix] * dx, 0)
+      - dy_1.reduce((accu, dy, iy) => accu + minus_b_bar[iy] * dy, 0)
     const det = m11 * m22 - m21 * m12, dtau = (m1 * m22 - m2 * m12) / det, dtheta = (m11 * m2 - m21 * m1) / det
 
     dx_1.forEach((d, ix) => dx[ix] = d + dx_tau[ix] * dtau + dx_theta[ix] * dtheta)
     dy_1.forEach((d, iy) => dy[iy] = d + dy_tau[iy] * dtau + dy_theta[iy] * dtheta)
-    c.forEach((c, ix) => ds[ix] = c * dtau - c_bar[ix] * dtheta)
+    c.forEach((c, ix) => ds[ix] = c * dtau + minus_c_bar[ix] * dtheta)
     At.forEach((at, ix) => at.forEach(([iy, val]) => ds[ix] -= dy[iy] * val))
     const dkappa = z_bar * dtheta
       - dx.reduce((accu, dx, ix) => accu + c[ix] * dx, 0)
@@ -175,7 +207,7 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
       if (centrality({ x, s, tau, kappa }, { alpha: 0.75, dx, ds, dtau, dkappa }) < 0.5) {
         alpha = 0.75
       } else {
-        const Pq = x.reduce((accu, x, ix) => accu + x * x * s[ix] * s[ix], tau * tau * kappa * kappa)
+        const Pq = xs.reduce((accu, xs) => accu + xs * xs, tau_kappa * tau_kappa)
         // Guaranteed valid from https://www.jstor.org/stable/3690133, lemma 4
         alpha = Math.min(0.5, Math.sqrt(mu) / Math.sqrt(8 * Pq))
         // but numerical stability means we may need to nudge it a few times
@@ -202,16 +234,16 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
     kappa += alpha * dkappa
   }
 
-  throw new Error("LP Algorithm doesn't converge")
+  const result = try_create_result()
+  if (!result) throw new Error("LP Algorithm doesn't converge")
+  return result
 }
 
-function printResidual({ x, y, At, b, c, b_bar, c_bar, s, tau, theta, kappa, z_bar }:
-  {
-    x: number[], y: number[], s: number[]
-    At: [iy: number, val: number][][], b: number[], c: number[],
-    b_bar: number[], c_bar: number[], z_bar: number,
-    tau: number, theta: number, kappa: number,
-  }) {
+function printResidual(round: number,
+  x: number[], y: number[], s: number[],
+  At: [iy: number, val: number][][], b: number[], c: number[],
+  b_bar: number[], c_bar: number[], z_bar: number,
+  tau: number, theta: number, kappa: number) {
   const test1 = Array<number>(y.length).fill(0), test2 = Array<number>(x.length).fill(0)
   let test3 = 0, test4 = 0
   At.forEach((at, ix) => at.forEach(([iy, val]) => {
@@ -237,7 +269,7 @@ function printResidual({ x, y, At, b, c, b_bar, c_bar, s, tau, theta, kappa, z_b
   s.forEach((s, ix) => test2[ix] -= s)
   test3 += z_bar * theta - kappa
   test4 += (x.length + 1) - z_bar * tau
-  console.log("Residual",
+  console.log("Residual", round,
     test1.reduce((worst, x) => Math.max(worst, Math.abs(x)), -Infinity),
     test2.reduce((worst, x) => Math.max(worst, Math.abs(x)), -Infinity),
     test3, test4)
@@ -271,8 +303,46 @@ function centrality(val: { x: number[], s: number[], tau: number, kappa: number 
   return sum_square / mu / mu - n
 }
 
-function solveLPEq(eqs: number[][], vals: number[]): number[] | undefined {
-  eqs = [...eqs], vals = [...vals]
+/**
+ * min  1/2 x^t diag(q) x  + c^t x
+ * s.t.  Ex = d
+ *
+ * Equivalently, solve
+ *
+ * [ Q  E^T ][    x   ] = [ -c ]
+ * [ E   0  ][ lambda ] = [  d ]
+ */
+function solveScaledQuadT(invQ: readonly number[], c: readonly number[], Et: readonly number[][], d: readonly number[], x: number[], lambda: number[], eqe?: readonly number[][]): { eqe: readonly number[][] } {
+  // Solving equality-constrained Quadratic programming using Schur's complement
+  // lambda = (E invQ E^T)^-1 (-1)(d + E invQ c)
+  d.forEach((d, i) => lambda[i] = -d)
+  const numL = d.length
+  if (!eqe) {
+    eqe = Array(numL).fill(0).map(_ => Array<number>(numL).fill(0))
+    Et.forEach((col, ix) => {
+      col.forEach((e, il1) => {
+        for (let il2 = il1; il2 < numL; il2++)
+          eqe![il1][il2] += invQ[ix] * e * col[il2]
+      })
+    })
+    for (let il1 = 0; il1 < numL; il1++)
+      for (let il2 = il1 + 1; il2 < numL; il2++)
+        eqe[il2][il1] = eqe[il1][il2]
+  }
+  Et.forEach((col, ix) => col.forEach((e, il) => lambda[il] -= e * invQ[ix] * c[ix]))
+  if (!solveLPEq(eqe, lambda)) {
+    throw new Error("Bad Quadratic Constraint")
+  }
+
+  // x = -invQ (c + E^t lambda)
+  x.fill(0)
+  Et.forEach((col, ix) => col.forEach((e, il) => x[ix] += e * lambda[il]))
+  x.forEach((x, ix, arr) => arr[ix] = -(x + c[ix]) * invQ[ix])
+  return { eqe }
+}
+
+function solveLPEq(_eqs: readonly number[][], vals: number[]): number[] | undefined {
+  const eqs = [..._eqs]
 
   /** j := j - (j[key]/i[key]) i , eliminating `key` from `j`. Requires `i[key] != 0` */
   function subtract(i: number, j: number, key: number) {
@@ -288,21 +358,24 @@ function solveLPEq(eqs: number[][], vals: number[]): number[] | undefined {
     let bestI = i
     for (let j = i + 1; j < vals.length; j++)
       if (Math.abs(eqs[bestI][i]) < Math.abs(eqs[j][i])) bestI = j
-    if (Math.abs(eqs[bestI][i]) < 1e-16) return undefined
     if (bestI !== i) {
       [eqs[bestI], eqs[i]] = [eqs[i], eqs[bestI]];
       [vals[bestI], vals[i]] = [vals[i], vals[bestI]]
     }
-    for (let j = i + 1; j < vals.length; j++) subtract(i, j, i)
+    if (Math.abs(eqs[i][i]) >= 1e-16)
+      for (let j = i + 1; j < vals.length; j++) subtract(i, j, i)
   }
   // eqs is now an upper triangular matrix
   for (let i = eqs.length - 1; i >= 0; i--) {
     const eqi = eqs[i]
     let sum = vals[i]
     for (let j = i + 1; j < eqi.length; j++) sum -= eqi[j] * vals[j]
+    if (Math.abs(eqs[i][i]) < 1e-16)
+      if (Math.abs(sum) >= 1e-15) return undefined
+      else continue
     vals[i] = sum / eqi[i]
   }
   return vals
 }
 
-export const testExport = { solveLPEq }
+export const testExport = { solveLPEq, solveScaledQuadT }

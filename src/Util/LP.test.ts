@@ -1,9 +1,25 @@
 import { LPConstraint, maximizeLP, testExport, Weights } from "./LP"
 import largeProblem from "./LP.test.data.json"
 
-const { solveLPEq } = testExport
+const { solveLPEq, solveScaledQuadT } = testExport
+const leeway = 1e-11
 
 describe("LP", () => {
+  describe("solveScaledQuadT", () => {
+    it("can solve simple quad", () => {
+      // min x^2 + y^2 s.t. x + y = 1
+      const x = [0, 0], y = [0]
+      solveScaledQuadT([1, 1], [0, 0], [[1], [1]], [1], x, y)
+      expect(x).toEqual([0.5, 0.5])
+    })
+    it("can solve off-center quad", () => {
+      // min (x-2)^2 + (y+3)^2 s.t. (x-2) + (y+3) = 1
+      const x = [0, 0], y = [0]
+      solveScaledQuadT([1, 1], [-2, +3], [[1], [1]], [0], x, y)
+      expect(x).toEqual([0.5 + 2, 0.5 - 3])
+    })
+
+  })
   describe("solveLPEq", () => {
     it("can solve welformed equations", () => {
       // x = 1, y = 2
@@ -20,9 +36,9 @@ describe("LP", () => {
       ])
       // max 5 at x = y = 1
       expect(3 * x + 2 * y).toBeCloseTo(5, 8)
-      expect(x + 2 * y).toBeLessThan(3.5)
-      expect(2 * x + y).toBeLessThan(3)
-      expect(x + y).toBeLessThan(2)
+      expect(x + 2 * y).toBeLessThan(3.5 + leeway)
+      expect(2 * x + y).toBeLessThan(3 + leeway)
+      expect(x + y).toBeLessThan(2 + leeway)
     })
     it("can minimize problem with equality constraint", () => {
       const { x, y } = maximizeLP({ x: 2, y: 3 }, [
@@ -33,8 +49,8 @@ describe("LP", () => {
       // max 3 at (x, y) = (0, 1)
       expect(2 * x + 3 * y).toBeCloseTo(3, 8)
       expect(x + y).toBeCloseTo(1, 8)
-      expect(x).toBeGreaterThan(0)
-      expect(y).toBeGreaterThan(0)
+      expect(x).toBeGreaterThan(0 - leeway)
+      expect(y).toBeGreaterThan(0 - leeway)
     })
     it("can detect degenerate case", () => {
       const { x, y } = maximizeLP({}, [
@@ -47,15 +63,15 @@ describe("LP", () => {
       expect(x).toBeCloseTo(2, 8)
       expect(y).toBeCloseTo(3, 8)
     })
-    it.skip("on large test problem", () => {
+    it("on large test problem", () => {
       const obj = largeProblem.obj as Weights, constraints = largeProblem.constraints as any as LPConstraint[]
       const sol = maximizeLP(obj, constraints)
 
       constraints.forEach((constraint, i) => {
         const sum = Object.entries(constraint.weights).reduce((accu, [k, val]) => accu + sol[k] * val, 0)
         const { lowerBound, upperBound } = constraint
-        if (lowerBound) expect(sum).toBeGreaterThanOrEqual(lowerBound)
-        if (upperBound) expect(sum).toBeLessThanOrEqual(upperBound)
+        if (lowerBound) expect(sum).toBeGreaterThanOrEqual(lowerBound - leeway)
+        if (upperBound) expect(sum).toBeLessThanOrEqual(upperBound + leeway)
       })
     })
   })
