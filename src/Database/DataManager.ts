@@ -21,7 +21,8 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
     return { ...storageObj, id } as any as CacheValue
   }
   deCache(cacheObj: CacheValue): StorageValue {
-    return cacheObj as any as StorageValue
+    const { id, ...storageObj } = cacheObj as any
+    return storageObj as any as StorageValue
   }
   followAny(callback: Callback<CacheKey>): () => void {
     this.anyListeners.push(callback)

@@ -1,5 +1,5 @@
 import { ArtCharDatabase } from "../Database";
-import { IGOOD, ImportResult, newImportResult } from "../exim";
+import { GOSource, IGOOD, ImportResult, newImportResult } from "../exim";
 
 // MIGRATION STEP: Always keep parsing in sync with GOODv1 format
 
@@ -18,7 +18,12 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, partial: boolean, disjo
   const result: ImportResult = newImportResult(source)
   const callback = (rkey: "artifacts" | "weapons" | "characters") => (key, reason, value) => result[rkey][reason].push(value)
 
-  const charUnfollow = base.chars.followAny(callback("characters"))
+  const charUnfollow = base.chars.followAny((key, reason, value) => {
+    const arr = result.characters[reason]
+    const ind = arr.findIndex(c => c.key === key)
+    if (ind < 0) arr.push(value)
+    else arr[ind] = value
+  })
   const artUnfollow = base.arts.followAny(callback("artifacts"))
   const weaponUnfollow = base.weapons.followAny(callback("weapons"))
 
@@ -31,7 +36,9 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, partial: boolean, disjo
     characters.forEach(c => {
       if (!c.key) result.characters.invalid.push(c)
       idsToRemove.delete(c.key)
-      base.chars.set(c.key, c)
+      if (base.chars.hasDup(c, source === GOSource))
+        result.characters.unchanged.push(c)
+      else base.chars.set(c.key, c)
     })
 
     const idtoRemoveArr = Array.from(idsToRemove)

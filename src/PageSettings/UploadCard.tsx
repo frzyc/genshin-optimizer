@@ -7,7 +7,7 @@ import { Trans, useTranslation } from "react-i18next"
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database"
-import { DBLocalStorage, SandboxStorage } from '../Database/DBStorage'
+import { SandboxStorage } from '../Database/DBStorage'
 import { ImportResult, ImportResultCounter } from '../Database/exim'
 import { importGOOD } from '../Database/imports/good'
 
@@ -167,10 +167,8 @@ function GOUploadAction({ importedDatabase, reset }: { importedDatabase?: ArtCha
   const replaceDB = useCallback(() => {
     if (!importedDatabase) return
     database.clear()
-    const dbLStorage = new DBLocalStorage(localStorage)
-    dbLStorage.copyFrom(importedDatabase.storage)
-    importedDatabase.storage = dbLStorage
-    setDatabase(importedDatabase)
+    database.storage.copyFrom(importedDatabase.storage)
+    setDatabase(new ArtCharDatabase(database.storage))
     reset()
   }, [database, importedDatabase, reset, setDatabase])
 

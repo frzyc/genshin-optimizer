@@ -159,4 +159,18 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
       if (newArt) this.database.arts.set(newArt, { location: charKey })
     }
   }
+
+  hasDup(char: ICharacter, isGO: boolean) {
+    const db = this.getStorage(char.key)
+    if (!db) return false
+    if (isGO) {
+      return JSON.stringify(db) === JSON.stringify(char)
+    } else {
+      let { key, level, constellation, ascension, talent } = db
+      const dbGOOD = { key, level, constellation, ascension, talent };
+      ({ key, level, constellation, ascension, talent } = char)
+      const charGOOD = { key, level, constellation, ascension, talent }
+      return JSON.stringify(dbGOOD) === JSON.stringify(charGOOD)
+    }
+  }
 }
