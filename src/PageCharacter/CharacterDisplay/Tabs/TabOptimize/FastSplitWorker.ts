@@ -6,7 +6,7 @@ import { SlotKey } from "../../../../Types/consts";
 import { LPConstraint, maximizeLP, Weights } from "../../../../Util/LP";
 import { assertUnreachable, objectKeyValueMap, objectMap, strictObjectMap } from "../../../../Util/Util";
 import type { InterimResult, Setup, SplitWorker } from "./BackgroundWorker";
-import { ArtifactBuildData, ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynMinMax, DynStat, filterArts, MinMax, RequestFilter } from "./common";
+import { ArtifactBuildData, ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynMinMax, DynStat, filterArts, MinMax, pruneAll, RequestFilter } from "./common";
 
 type Approximation = {
   base: number,
@@ -18,17 +18,19 @@ export class FastSplitWorker implements SplitWorker {
   min: number[]
   nodes: NumNode[]
   arts: ArtifactsBySlot
+  maxBuilds: number
 
   filters: Filter[] = []
   interim: InterimResult | undefined
 
   callback: (interim: InterimResult) => void
 
-  constructor({ arts, optimizationTarget, filters }: Setup, callback: (interim: InterimResult) => void) {
+  constructor({ arts, optimizationTarget, filters, maxBuilds }: Setup, callback: (interim: InterimResult) => void) {
     this.arts = arts
     this.min = [-Infinity, ...filters.map(x => x.min)]
     this.nodes = [optimizationTarget, ...filters.map(x => x.value)]
     this.callback = callback
+    this.maxBuilds = maxBuilds
 
     // make sure we can approximate it
     const _unused = polyUpperBound(this.nodes, computeFullArtRange(arts))
@@ -47,11 +49,15 @@ export class FastSplitWorker implements SplitWorker {
       if (!(age % 5)) {
         // The problem should've gotten small enough that
         // the old approximation becomes inaccurate
+        const { nodes, arts: newArts } = pruneAll(this.nodes, this.min, arts, this.maxBuilds, {}, {})
         const artRange = computeFullArtRange(arts)
-        const polys = polyUpperBound(this.nodes, artRange)
+        const polys = polyUpperBound(nodes, artRange)
         const approxs = polys.map(poly => approximation(poly, artRange, arts))
         const maxConts = approxs.map(approx => strictObjectMap(arts.values, val => maxContribution(val, approx)))
         this.filters.push({ arts, maxConts, approxs, age: age + 1 })
+
+        const newCounts = countBuilds(newArts), oldCount = countBuilds(arts)
+        if (oldCount !== newCounts) this.addSkip(oldCount - newCounts)
         continue
       }
 
@@ -134,7 +140,7 @@ function maxContribution(arts: ArtifactBuildData[], approximation: Approximation
 }
 function approximation(poly: NumNode, artRange: DynMinMax, arts: ArtifactsBySlot): Approximation {
   function contribution(weights: DynStat, art: DynStat) {
-    return Object.entries(art).reduce((accu, [key, val]) => accu + val * weights[key]!, 0)
+    return Object.entries(art).reduce((accu, [key, val]) => accu + val * (weights[key] ?? 0), 0)
   }
 
   const weight = linearUpperBound(poly, artRange)
@@ -160,12 +166,12 @@ function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string 
   const bounds = Object.entries(artRange), ids = objectMap(artRange, (_, _k, i) => BigInt(1) << BigInt(i))
   const terms = new Map<NumNode | StrNode, Set<bigint>>()
   forEachNodes([poly], _ => { }, f => {
-    const { operation, operands } = f
+    const { operation, operands } = f, operandTerms = operands.map(op => [...terms.get(op)!])
     switch (operation) {
       case "const": terms.set(f, new Set([BigInt(0)])); break
       case "read": terms.set(f, new Set([ids[f.path[1]]!])); break
-      case "add": terms.set(f, new Set(operands.flatMap(x => [...terms.get(x)!]))); break
-      case "mul": terms.set(f, new Set(operands.reduce((a, x) => a.flatMap(a => [...terms.get(x)!].map(b => a | b)), [BigInt(0)]))); break
+      case "add": terms.set(f, new Set(operandTerms.flat())); break
+      case "mul": terms.set(f, new Set(operandTerms.reduce((a, x) => a.flatMap(a => x.map(b => a | b)), [BigInt(0)]))); break
       default: throw new Error(`Found unsupported ${operation} node when computing linear upperbound group`)
     }
   })
@@ -179,34 +185,51 @@ function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string 
    *
    * This gives Ax + c as a linear upperbound in the region dictated by `artRange`.
    */
-  if ("$c" in artRange) throw new Error("Found forbidden ket `$c` when computing linear upperbound")
-  const obj: Weights = { $error: -1 }, vars: Weights = { $c: 1 }
-  const constraints: LPConstraint[] = [{ weights: { $error: 1 }, lowerBound: 0 },]
+  const added: bigint[] = [], weights: Weights = { $c: 0, $error: 0 }
   const [compute, mapping, buffer] = precompute([poly], f => f.path[1])
+  Object.entries(mapping).forEach(([key, i]) => buffer[i] = weights[key] = 0)
+  const [offset] = compute(), obj: Weights = { $error: -1 }
+  for (const term of [...terms.get(poly)!].sort((a, b) => a > b ? -1 : 1)) {
+    if (added.some(added => (added & term) === term)) continue
+    added.push(term)
 
-  function add_constraint(index: number, id: bigint, list: bigint[]) {
-    if (index >= bounds.length) {
-      const [val] = compute()
-      constraints.push(
-        { weights: { ...vars }, lowerBound: val },
-        { weights: { ...vars, $error: -1 }, upperBound: val },
-      )
-      return
+    const vars: Weights = { $c: 1 }, constraints: LPConstraint[] = []
+    const add_constraint = (index: number, current: bigint) => {
+      if (index >= bounds.length) {
+        const [val] = compute()
+        constraints.push(
+          { weights: { ...vars }, lowerBound: (val - offset) / 1000 },
+          { weights: { ...vars, $error: -1 }, upperBound: (val - offset) / 1000 },
+        )
+        return
+      }
+      const [key, { min, max }] = bounds[index], i = mapping[key]!
+      if (current & term) {
+        // Split upper/lower bound
+        buffer[i] = min
+        if (min) vars[key] = min
+        else delete vars[key]
+        add_constraint(index + 1, current << BigInt(1))
+
+        if (min != max) {
+          buffer[i] = max
+          vars[key] = max
+          add_constraint(index + 1, current << BigInt(1))
+        }
+      } else {
+        // Use zero and skip
+        buffer[i] = 0
+        add_constraint(index + 1, current << BigInt(1))
+      }
     }
-    const maxList = list.filter(num => num & id)
-    const [name, { min, max }] = bounds[index], mapped = mapping[name]!
-    function bound(val: number, list: bigint[]) {
-      buffer[mapped] = val
-      vars[name] = val
-      add_constraint(index + 1, id << BigInt(1), list)
-      delete vars[name]
-    }
-    if (maxList.length) bound(max, maxList)
-    bound(min, list)
+    add_constraint(0, BigInt(1))
+    const additional_weight = maximizeLP(obj, constraints)
+    Object.entries(additional_weight).forEach(([key, val]) => weights[key] = weights[key] + val)
   }
-  const polyTerms = [...terms.get(poly)!]
-  if (polyTerms.length) add_constraint(0, BigInt(1 << 0), polyTerms)
-  return maximizeLP(obj, constraints)
+  Object.keys(weights).forEach(key => weights[key] *= 1000)
+  weights.$c += offset
+  delete weights.$error
+  return weights
 }
 
 /** Convert `nodes` to a polynomial form */
