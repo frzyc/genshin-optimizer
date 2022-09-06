@@ -1,5 +1,10 @@
+import { CharacterKey } from "pipeline";
+import { allCharacterKeys } from "../../Types/consts";
 import { ArtCharDatabase } from "../Database";
-import { GOSource, IGOOD, ImportResult, newImportResult } from "../exim";
+import { SandboxStorage } from "../DBStorage";
+import { GOSource, IGO, IGOOD, ImportResult, newImportResult } from "../exim";
+import { exportGOOD } from "../exports/good";
+import { migrate } from "./migrate";
 
 // MIGRATION STEP: Always keep parsing in sync with GOODv1 format
 
@@ -9,11 +14,29 @@ export function importGOOD(good: IGOOD, base: ArtCharDatabase, keepNotInImport: 
   }
 }
 
+export function importAndMigrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
+  const storage = new SandboxStorage()
+  const source = good.source
+
+  if (good.dbVersion) storage.setDBVersion(good.dbVersion)
+  if (good.characters) good.characters.forEach(c => c.key && storage.set(`char_${c.key}`, c));
+  if (good.artifacts) good.artifacts.forEach((a, i) => storage.set(`artifact_${i}`, a))
+  if (good.weapons) good.weapons.forEach((a, i) => storage.set(`weapon_${i}`, a))
+  if (good.states) good.states.forEach(a => a.key && storage.set(`state_${a.key}`, a))
+  if (good.buildSettings) good.buildSettings.forEach(a => a.key && storage.set(`buildSetting_${a.key}`, a))
+
+  migrate(storage)
+  good = exportGOOD(storage)
+  good.source = source
+  return good
+}
+
 /**
  * Parse GOODv1 data format into a parsed data of the version specified in `data`.
  * If the DB version is not specified, the default version is used.
  */
 function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolean, ignoreDups: boolean): ImportResult | undefined {
+  good = importAndMigrateGOOD(good as IGOOD & IGO)
   const source = good.source ?? "Unknown"
   const result: ImportResult = newImportResult(source)
 
@@ -81,10 +104,11 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
 
   // Match artifacts for counter, metadata, and locations
   const artifacts = good.artifacts
+  const importArtIds = new Map<string, string>()
   if (artifacts) {
     result.artifacts.import = artifacts.length
     const idsToRemove = new Set(base.arts.values.map(a => a.id))
-    artifacts.forEach(a => {
+    artifacts.forEach((a, i) => {
       const art = base.arts.validate(a)
       if (!art) return result.artifacts.invalid.push(a)
       let { duplicated, upgraded } = ignoreDups ? { duplicated: [], upgraded: [] } : base.arts.findDups(art)
@@ -99,8 +123,9 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
         if (duplicated[0]) result.artifacts.unchanged.push(art)
         else if (upgraded[0]) result.artifacts.upgraded.push(art)
         base.arts.set(match.id, art)
+        importArtIds.set(`artifact_${i}`, match.id)
       } else
-        base.arts.new(art)
+        importArtIds.set(`artifact_${i}`, base.arts.new(art))
     })
     const idtoRemoveArr = Array.from(idsToRemove)
     if (keepNotInImport || ignoreDups) result.artifacts.notInImport = idtoRemoveArr.length
@@ -113,21 +138,21 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
   weaponUnfollow()
 
   // import extras
-  const states = (result as any).states
+  const states = (good as unknown as IGO).states
   if (states) states.forEach(s => {
     const { key, ...rest } = s as any
     if (!key) return
     base.states.set(key, rest)
   })
 
-  const buildSettings = (result as any).buildSettings
+  const buildSettings = (good as unknown as IGO).buildSettings
   if (buildSettings) buildSettings.forEach(b => {
-    // do not preserve the import builds, since their ids will be invalid.
-    const { key, builds, buildDate, ...rest } = b as any
+    const { key, ...rest } = b
+    if (!key || !allCharacterKeys.includes(key as CharacterKey)) return
+    if (rest.builds) //preserve the old build ids
+      rest.builds = rest.builds.map(build => build.map(i => importArtIds.get(i) ?? ""))
 
-    if (!key) return
-    // Do not import builds
-    base.states.set(key, { ...rest })
+    base.buildSettings.set(key as CharacterKey, { ...rest })
   })
   return result
 }

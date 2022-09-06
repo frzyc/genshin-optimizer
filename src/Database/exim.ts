@@ -1,6 +1,7 @@
 import type { IArtifact } from "../Types/artifact"
 import type { ICharacter } from "../Types/character"
 import type { IWeapon } from "../Types/weapon"
+import { BuildSetting } from "./Data/BuildsettingData"
 
 export const GOSource = "Genshin Optimizer" as const
 
@@ -22,8 +23,8 @@ export type IGOOD = {
 export type IGO = {
   dbVersion: number
   source: typeof GOSource
-  states?: object[]
-  buildSettings?: object[]
+  states?: Array<object & { key: string }>
+  buildSettings?: Array<BuildSetting & { key: string }>
 }
 
 export type ImportResultCounter<T> = {

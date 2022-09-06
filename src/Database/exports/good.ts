@@ -30,7 +30,7 @@ export function exportGOOD(storage: DBStorage): IGOOD & IGO {
     buildSettings: storage.entries
       .filter(([key]) => key.startsWith("buildSetting_"))
       .map(([key, value]) => {
-        const result: BuildSetting = { ...JSON.parse(value), key: key.split("buildSetting_")[1] }
+        const result: BuildSetting & { key: string } = { ...JSON.parse(value), key: key.split("buildSetting_")[1] }
         // Make sure the artifact ids match the new ids after import
         result.builds = result.builds.map(x => x.map(x => artifactIDs.has(x) ? `artifact_${artifactIDs.get(x)}` : "").filter(x => x))
         return result
