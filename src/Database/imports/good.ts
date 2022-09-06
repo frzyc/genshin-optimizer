@@ -65,12 +65,12 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
       duplicated = duplicated.filter(a => idsToRemove.has(a.id))
       upgraded = upgraded.filter(a => idsToRemove.has(a.id))
 
-      if (duplicated[0]) {
+      if (duplicated[0] || upgraded[0]) {
         const match = duplicated[0] || upgraded[0]
         idsToRemove.delete(match.id)
-        if (duplicated[0] && duplicated[0].location === weapon.location)
-          result.weapons.unchanged.push(weapon)
-        else base.weapons.set(match.id, weapon)
+        if (duplicated[0]) result.weapons.unchanged.push(weapon)
+        else if (upgraded[0]) result.weapons.upgraded.push(weapon)
+        base.weapons.set(match.id, weapon)
       } else
         base.weapons.new(weapon)
     })
@@ -93,12 +93,12 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
       duplicated = duplicated.filter(a => idsToRemove.has(a.id))
       upgraded = upgraded.filter(a => idsToRemove.has(a.id))
 
-      if (duplicated[0]) {
+      if (duplicated[0] || upgraded[0]) {
         const match = duplicated[0] || upgraded[0]
         idsToRemove.delete(match.id)
-        if (duplicated[0] && duplicated[0].location === art.location)
-          result.artifacts.unchanged.push(art)
-        else base.arts.set(match.id, art)
+        if (duplicated[0]) result.artifacts.unchanged.push(art)
+        else if (upgraded[0]) result.artifacts.upgraded.push(art)
+        base.arts.set(match.id, art)
       } else
         base.arts.new(art)
     })

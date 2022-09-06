@@ -18,7 +18,7 @@ import { StatColoredWithUnit } from '../Components/StatDisplay';
 import StatIcon from '../Components/StatIcon';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
-import { validateArtifact } from '../Database/Data/ArtifactData';
+import { cachedArtifact, validateArtifact } from '../Database/Data/ArtifactData';
 import { DatabaseContext } from '../Database/Database';
 import KeyMap, { cacheValueString } from '../KeyMap';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
@@ -151,7 +151,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
     return { old: duplicated[0] ?? upgraded[0], oldType: duplicated.length !== 0 ? "duplicate" : "upgrade" }
   }, [artifact, artifactIdToEdit, database, dirtyDatabase])
 
-  const { artifact: cachedArtifact, errors } = useMemo(() => {
+  const { artifact: cArtifact, errors } = useMemo(() => {
     if (!artifact) return { artifact: undefined, errors: [] as Displayable[] }
     const validated = cachedArtifact(artifact, artifactIdToEdit)
     if (old) {
@@ -211,7 +211,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const isValid = !errors.length
   const canClearArtifact = (): boolean => window.confirm(t`editor.clearPrompt` as string)
   const { rarity = 5, level = 0, slotKey = "flower" } = artifact ?? {}
-  const { currentEfficiency = 0, maxEfficiency = 0 } = cachedArtifact ? Artifact.getArtifactEfficiency(cachedArtifact, allSubstatFilter) : {}
+  const { currentEfficiency = 0, maxEfficiency = 0 } = cArtifact ? Artifact.getArtifactEfficiency(cArtifact, allSubstatFilter) : {}
   const preventClosing = processed.length || outstanding.length
   const onClose = useCallback(
     (e) => {
@@ -361,7 +361,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
           {/* Right column */}
           <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
             {/* substat selections */}
-            {[0, 1, 2, 3].map((index) => <SubstatInput key={index} index={index} artifact={cachedArtifact} setSubstat={setSubstat} />)}
+            {[0, 1, 2, 3].map((index) => <SubstatInput key={index} index={index} artifact={cArtifact} setSubstat={setSubstat} />)}
             {texts && <CardLight><CardContent>
               <div>{texts.slotKey}</div>
               <div>{texts.mainStatKey}</div>
@@ -385,7 +385,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
           </Grid>}
           <Grid item xs={12} md={5.5} lg={4} ><CardLight>
             <Typography sx={{ textAlign: "center" }} py={1} variant="h6" color="text.secondary" >{t`editor.preview`}</Typography>
-            <ArtifactCard artifactObj={cachedArtifact} />
+            <ArtifactCard artifactObj={cArtifact} />
           </CardLight></Grid>
         </Grid>}
 

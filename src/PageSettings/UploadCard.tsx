@@ -1,6 +1,6 @@
 import { faArrowLeft, faFileCode, faFileUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { CheckBox, CheckBoxOutlineBlank, FileOpen, JoinFull, JoinLeft, MergeType, Splitscreen } from '@mui/icons-material'
+import { CheckBox, CheckBoxOutlineBlank, FileOpen } from '@mui/icons-material'
 import { Box, Button, CardContent, Divider, Grid, styled, Tooltip, Typography } from '@mui/material'
 import { useCallback, useContext, useMemo, useState } from "react"
 import { Trans, useTranslation } from "react-i18next"
@@ -143,7 +143,8 @@ function MergeResult({ result, dbTotal, type }: { result: ImportResultCounter<an
     <CardContent>
       <Typography><Trans t={t} i18nKey="count.new" /> <strong>{result.new.length}</strong> / {total}</Typography>
       <Typography><Trans t={t} i18nKey="count.unchanged" /> <strong>{result.unchanged.length}</strong> / {total}</Typography>
-      <Typography><Trans t={t} i18nKey="count.updated" /> <strong>{result.update.length}</strong></Typography>
+      <Typography><Trans t={t} i18nKey="count.upgraded" /> <strong>{result.upgraded.length}</strong> / {total}</Typography>
+      {/* <Typography><Trans t={t} i18nKey="count.updated" /> <strong>{result.update.length}</strong></Typography> */}
       {!!result.remove.length && <Typography color="warning.main"><Trans t={t} i18nKey="count.removed" /> <strong>{result.remove.length}</strong></Typography>}
       {!!result.notInImport && <Typography><Trans t={t} i18nKey="count.notInImport" /> <strong>{result.notInImport}</strong></Typography>}
       <Typography><Trans t={t} i18nKey="count.dbTotal" /> <strong>{result.beforeMerge}</strong> -&gt; <strong>{dbTotal}</strong></Typography>
