@@ -1,7 +1,7 @@
 import { LPConstraint, maximizeLP, testExport, Weights } from "./LP"
 import largeProblem from "./LP.test.data.json"
 
-const { solveLPEq, solveScaledQuadT } = testExport
+const { solveLPEq, solveQP } = testExport
 const leeway = 1e-11
 
 describe("LP", () => {
@@ -9,13 +9,13 @@ describe("LP", () => {
     it("can solve simple quad", () => {
       // min x^2 + y^2 s.t. x + y = 1
       const x = [0, 0], y = [0]
-      solveScaledQuadT([1, 1], [0, 0], [[1], [1]], [1], x, y)
+      solveQP([1, 1], [0, 0], [[1], [1]], [1], x, y)
       expect(x).toEqual([0.5, 0.5])
     })
     it("can solve off-center quad", () => {
       // min (x-2)^2 + (y+3)^2 s.t. (x-2) + (y+3) = 1
       const x = [0, 0], y = [0]
-      solveScaledQuadT([1, 1], [-2, +3], [[1], [1]], [0], x, y)
+      solveQP([1, 1], [-2, +3], [[1], [1]], [0], x, y)
       expect(x).toEqual([0.5 + 2, 0.5 - 3])
     })
 
