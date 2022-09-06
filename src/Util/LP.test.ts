@@ -2,7 +2,7 @@ import { LPConstraint, maximizeLP, testExport, Weights } from "./LP"
 import largeProblem from "./LP.test.data.json"
 
 const { solveLPEq, solveQP } = testExport
-const leeway = 1e-11
+const leeway = 1e-10
 
 describe("LP", () => {
   describe("solveScaledQuadT", () => {
@@ -63,7 +63,7 @@ describe("LP", () => {
       expect(x).toBeCloseTo(2, 8)
       expect(y).toBeCloseTo(3, 8)
     })
-    it("on large test problem", () => {
+    it("can solve a large test problem", () => {
       const obj = largeProblem.obj as Weights, constraints = largeProblem.constraints as any as LPConstraint[]
       const sol = maximizeLP(obj, constraints)
 

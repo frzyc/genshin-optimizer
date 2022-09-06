@@ -114,7 +114,6 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
       const e1 = 1e-4, e2 = 1e-4, e3 = 1e-9
       const condition1 = mu / tau / tau, condition2 = bc_bar_norm * theta / tau
       if (!(round % 3) && condition1 <= e1 && condition2 <= e2) {
-        // Early exit if we can find something
         const result = try_create_result()
         if (result) return result
       }
@@ -126,30 +125,18 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
     const correctingResidual = (round & 31) === 31
     let r_tau = 0
     if (correctingResidual) {
-      s.fill(0)
-      kappa = 0
-      At.forEach((at, ix) => at.forEach(([iy, val]) => {
-        minus_r_prim[iy] -= val * x[ix]
-        s[ix] -= val * y[iy]
-      }))
-      b.forEach((b, iy) => {
-        minus_r_prim[iy] += b * tau
-        kappa += b * y[iy]
-      })
-      minus_b_bar.forEach((b, iy) => {
-        minus_r_prim[iy] += b * theta
-        r_tau += b * y[iy]
-      })
-      c.forEach((c, ix) => {
-        s[ix] += c * tau
-        kappa -= c * x[ix]
-      })
-      minus_c_bar.forEach((c, ix) => {
-        r_tau -= c * x[ix]
-        s[ix] += c * theta
-      })
-      r_tau += (numX + 1) - z_bar * tau
-      kappa += z_bar * theta
+      for (let ix = 0; ix < numX; ix++)
+        s[ix] = c[ix] * tau + minus_c_bar[ix] * theta - At[ix].reduce((accu, [iy, val]) => accu + val * y[iy], 0)
+      for (let iy = 0; iy < numY; iy++)
+        minus_r_prim[iy] = b[iy] * tau + minus_b_bar[iy] * theta
+      At.forEach((at, ix) => at.forEach(([iy, val]) => minus_r_prim[iy] -= val * x[ix]))
+
+      r_tau = (numX + 1) - z_bar * tau
+        - minus_c_bar.reduce((accu, c, ix) => accu + c * x[ix], 0)
+        + minus_b_bar.reduce((accu, b, iy) => accu + b * y[iy], 0)
+      kappa = z_bar * theta
+        - c.reduce((accu, c, ix) => accu + c * x[ix], 0)
+        + b.reduce((accu, b, iy) => accu + b * y[iy], 0)
     }
 
     // Write dy in terms of dtau and dtheta
