@@ -1,4 +1,5 @@
 import { initialCharacter } from "../ReactHooks/useCharSelectionCallback"
+import { CharacterKey } from "../Types/consts"
 import { randomizeArtifact } from "../Util/ArtifactUtil"
 import { defaultInitialWeapon, initialWeapon } from "../Util/WeaponUtil"
 import { cachedArtifact } from "./Data/ArtifactData"
@@ -83,13 +84,18 @@ describe("Database", () => {
     })
   })
   test("Ensure Equipment", async () => {
+    const newKeys: CharacterKey[] = []
+    const unfollow = database.chars.followAny((k, reason, value) => reason === "new" && newKeys.push(k))
     database.arts.new({ ...await randomizeArtifact(), location: "Amber" })
     expect(database.chars.get("Amber")).toBeTruthy()
     expect(database.weapons.get(database.chars.get("Amber")!.equippedWeapon)).toBeTruthy()
+    expect(newKeys).toEqual(["Amber"])
     const weaponid = database.weapons.new({ ...defaultInitialWeapon("sword") })
     database.weapons.set(weaponid, { location: "Albedo" })
     expect(database.chars.get("Albedo")).toBeTruthy()
     expect(database.chars.get("Albedo")!.equippedWeapon).toEqual(weaponid)
+    expect(newKeys).toEqual(["Amber", "Albedo"])
+    unfollow()
   })
 
   test("Equip swap", async () => {
@@ -166,6 +172,7 @@ describe("Database", () => {
     }
     const importResult = importGOOD(good, database, false, false)!
     expect(importResult).toBeTruthy()
+    expect(importResult.artifacts.invalid.length).toEqual(0)
     expect(importResult.artifacts?.new?.length).toEqual(2)
     expect(importResult.weapons?.new?.length).toEqual(2)
     expect(importResult.characters?.new?.length).toEqual(2)

@@ -48,7 +48,7 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
     const validated = this.validate({ ...(old ?? {}), ...value })
     if (!validated) return this.trigger(key, "invalid", value)
     const cached = this.toCache(validated, key as any)
-    if (!cached) return
+    if (!cached) return this.trigger(key, "invalid", value)
     if (!old) this.trigger(key, "new", cached)
     this.setCached(key, cached)
   }

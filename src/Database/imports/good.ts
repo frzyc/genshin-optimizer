@@ -18,7 +18,7 @@ export function importAndMigrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
   const storage = new SandboxStorage()
   const source = good.source
 
-  if (good.dbVersion) storage.setDBVersion(good.dbVersion)
+  good.dbVersion ? storage.setDBVersion(good.dbVersion) : storage.setDBVersion(8)
   if (good.characters) good.characters.forEach(c => c.key && storage.set(`char_${c.key}`, c));
   if (good.artifacts) good.artifacts.forEach((a, i) => storage.set(`artifact_${i}`, a))
   if (good.weapons) good.weapons.forEach((a, i) => storage.set(`weapon_${i}`, a))
