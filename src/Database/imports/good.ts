@@ -58,7 +58,7 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
   /* IMPORTANT: import data in characters, weapons, artifacts order. */
   // import characters
   const characters = good.characters
-  if (characters) {
+  if (characters?.length) {
     result.characters.import = characters.length
     const idsToRemove = new Set(base.chars.keys)
     characters.forEach(c => {
@@ -77,7 +77,7 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
 
   // Match weapons for counter, metadata, and locations.
   const weapons = good.weapons
-  if (weapons) {
+  if (weapons?.length) {
     result.weapons.import = weapons.length
     const idsToRemove = new Set(base.weapons.values.map(w => w.id))
     weapons.forEach(w => {
@@ -105,7 +105,7 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
   // Match artifacts for counter, metadata, and locations
   const artifacts = good.artifacts
   const importArtIds = new Map<string, string>()
-  if (artifacts) {
+  if (artifacts?.length) {
     result.artifacts.import = artifacts.length
     const idsToRemove = new Set(base.arts.values.map(a => a.id))
     artifacts.forEach((a, i) => {
