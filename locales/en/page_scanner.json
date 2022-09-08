@@ -28,9 +28,8 @@
   },
   "am": {
     "title": "「天目」-- Amenoma",
-    "p1": "Scans all you artifacts in your inventory. Follow the instruction to capture the window and scan. Has both Chinese and English versions. (Download the <1>_EN.exe</1> version to scan in english). Both the <3>mona-uranai</3> and <5>GOOD</5> format is accepted in GO. The <7>GOOD</7> format is recommended.",
-    "p2": "Beta version of this scanner can also scan materials for <1>Seelie.me</1>",
-    "p3": "Please feel free to join their discord if you find any bugs. They are in need of more english testers."
+    "p1": "Scans all you artifacts in your inventory. Follow the instruction to capture the window and scan. Has both Chinese and English versions. (Download the <1>_EN.exe</1> version to scan in english). Only the <5>GOOD</5> format is accepted in GO.",
+    "p2": "This scanner can also scan materials for <1>Seelie.me</1>"
   },
   "goodeng": "This scanner only scans in english, and exports to GOOD format."
 }

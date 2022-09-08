@@ -107,7 +107,8 @@
     "hydro": "Hydro DMG Absorption",
     "electro": "Electro DMG Absorption",
     "dendro": "Dendro DMG Absorption",
-    "geo": "Geo DMG Absorption"
+    "geo": "Geo DMG Absorption",
+    "none": "DMG Absorption"
   },
   "1set": "1-Set",
   "2set": "2-Set",
