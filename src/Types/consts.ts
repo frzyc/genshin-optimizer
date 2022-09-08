@@ -111,6 +111,7 @@ export const allCharacterKeys = [
   "Yelan",
   "ShikanoinHeizou",
   "Collei",
+  "Dori",
   "Tighnari",
 ] as const
 
