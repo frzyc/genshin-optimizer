@@ -1,9 +1,9 @@
 import { validateLevelAsc } from "../../Data/LevelData";
 import { allCharacterKeys, allWeaponKeys } from "../../Types/consts";
 import { ICachedWeapon, IWeapon } from "../../Types/weapon";
+import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
-import { ImportResult } from "../exim";
 
 export class WeaponDataManager extends DataManager<string, string, ICachedWeapon, IWeapon>{
   constructor(database: ArtCharDatabase) {
@@ -12,6 +12,24 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
       if (key.startsWith("weapon_"))
         this.set(key, this.database.storage.get(key) as any)
     }
+  }
+  ensureEquipment() {
+    const weaponIds = new Set(this.keys)
+    const newWeapons: IWeapon[] = []
+
+    for (const [charKey, char] of Object.entries(this.database.chars.data)) {
+      if (!char.equippedWeapon) {
+        // A default "sword" should work well enough for this case.
+        // We'd have to pull the hefty character sheet otherwise.
+        const weapon = defaultInitialWeapon("sword")
+        const weaponId = generateRandomWeaponID(weaponIds)
+
+        weaponIds.add(weaponId)
+        this.set(weaponId, { ...weapon, location: charKey })
+        newWeapons.push(weapon)
+      }
+    }
+    return newWeapons
   }
   validate(obj: any): IWeapon | undefined {
     if (typeof obj !== "object") return

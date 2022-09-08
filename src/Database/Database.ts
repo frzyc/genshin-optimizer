@@ -32,6 +32,8 @@ export class ArtCharDatabase {
     // Weapons needs to be instantiated after character to check for relations
     this.weapons = new WeaponDataManager(this)
 
+    this.weapons.ensureEquipment()
+
     this.states = new StateDataManager(this)
 
     // This should be instantiated after artifacts, so that invalid artifacts that persists in build results can be pruned.

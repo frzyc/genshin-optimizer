@@ -132,6 +132,8 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
     else idtoRemoveArr.forEach(k => base.arts.remove(k))
   } else result.artifacts.notInImport = base.arts.values.length
 
+  base.weapons.ensureEquipment()
+
   // stop listening to callbacks
   charUnfollow()
   artUnfollow()
