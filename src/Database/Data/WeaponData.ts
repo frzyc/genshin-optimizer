@@ -24,7 +24,7 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
 
     return { key, level, ascension, refinement, location, lock }
   }
-  toCache(storageObj: IWeapon, id: string, result?: ImportResult): ICachedWeapon | undefined {
+  toCache(storageObj: IWeapon, id: string): ICachedWeapon | undefined {
     const newWeapon = { ...storageObj, id }
     const oldWeapon = super.get(id)
 

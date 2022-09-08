@@ -78,10 +78,11 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     }
     return char
   }
-  toCache(storageObj: ICharacter, id: string): ICachedCharacter {
+  toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
+    const oldChar = this.get(id)
     return {
-      equippedArtifacts: objectKeyMap(allSlotKeys, () => ""),
-      equippedWeapon: "",
+      equippedArtifacts: oldChar ? oldChar.equippedArtifacts : objectKeyMap(allSlotKeys, () => ""),
+      equippedWeapon: oldChar ? oldChar.equippedWeapon : "",
       ...storageObj,
     }
   }

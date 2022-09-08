@@ -89,12 +89,12 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, B
     const bs = super.get(key)
     if (bs) return bs
     const newBs = initialBuildSettings()
-    this.set(key, newBs)
-    return super.get(key)
+    this.setCached(key, newBs)
+    return newBs
   }
 
   set(key: CharacterKey, value: BuildSettingReducerAction) {
-    const oldState = super.get(key) as BuildSetting
+    const oldState = this.get(key) as BuildSetting
     super.set(key, buildSettingsReducer(oldState, value))
   }
 }
