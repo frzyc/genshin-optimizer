@@ -7,13 +7,7 @@ export class StateDataManager extends DataManager<string, string, object, object
     for (const key of this.database.storage.keys) {
       if (key.startsWith("state_")) {
         const [, stateKey] = key.split("state_")
-        const stateObj = this.database.storage.get(key)
-        if (!stateObj) {
-          console.error("StateData", key, "is unrecoverable.", stateObj)
-          this.database.storage.remove(key)
-          continue
-        }
-        this.set(stateKey, stateObj)
+        this.set(stateKey, this.database.storage.get(key))
       }
     }
   }
@@ -28,10 +22,4 @@ export class StateDataManager extends DataManager<string, string, object, object
     this.set(key, newState)
     return this.get(key) as O
   }
-
-  set<O extends object>(id: string, value: Partial<O>) {
-    const oldState = this.get(id) as O
-    super.set(id, { ...oldState, ...value })
-  }
-
 }

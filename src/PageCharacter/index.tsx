@@ -52,11 +52,12 @@ export default function PageCharacter() {
   // Set follow, should run only once
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: '/characters' })
-    return database.chars.followAny(forceUpdate)
+    return database.chars.followAny((k, r) => (r === "new" || r === "remove") && forceUpdate())
   }, [forceUpdate, database])
 
   useEffect(() => {
-    return database.states.followAny(s => typeof s === "string" && s.includes("charMeta_") && forceUpdate())
+    // character favorite updater
+    return database.states.followAny(s => s.includes("charMeta_") && forceUpdate())
   }, [forceUpdate, database])
 
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])

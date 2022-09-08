@@ -33,15 +33,15 @@ export class ArtCharDatabase {
     this.weapons = new WeaponDataManager(this)
 
     this.states = new StateDataManager(this)
+
+    // This should be instantiated after artifacts, so that invalid artifacts that persists in build results can be pruned.
     this.buildSettings = new BuildsettingDataManager(this)
 
     this.charTCs = new CharacterTCDataManager(this)
 
     // invalidates character when things change.
     this.chars.followAny((key) => {
-      if (typeof key === "string")
-        this.invalidateTeamData(key as CharacterKey)
-
+      this.invalidateTeamData(key as CharacterKey)
       this.states.set("dbMeta", { lastEdit: Date.now() })
     })
     this.arts.followAny(() => {

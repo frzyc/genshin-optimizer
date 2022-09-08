@@ -1,104 +1,158 @@
+import { CharacterKey } from "pipeline";
+import { allCharacterKeys } from "../../Types/consts";
 import { ArtCharDatabase } from "../Database";
 import { SandboxStorage } from "../DBStorage";
-import { GOSource, IGO, IGOOD, ImportResult, newCounter } from "../exim";
-import { merge } from "./merge";
+import { GOSource, IGO, IGOOD, ImportResult, newImportResult } from "../exim";
+import { exportGOOD } from "../exports/good";
 import { migrate } from "./migrate";
-import { parseArtifact, parseCharacter, parseWeapon } from "./parse";
 
 // MIGRATION STEP: Always keep parsing in sync with GOODv1 format
 
-export function importGOOD(data: IGOOD, oldDatabase: ArtCharDatabase): ImportResult | undefined {
-  switch (data.version) {
-    case 1: return importGOOD1(data, oldDatabase)
+export function importGOOD(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolean, ignoreDups: boolean): ImportResult | undefined {
+  switch (good.version) {
+    case 1: return importGOOD1(good, base, keepNotInImport, ignoreDups)
   }
 }
 
-// TODO: Remove this function or move it somewhere else
-function importGOOD1(data: IGOOD, oldDatabase: ArtCharDatabase): ImportResult | undefined {
-  const result = parseImport(data)
-  if (!result) return
-  // TODO
-  // Handle the error thrown when the `storage` uses unsupported DB version.
-  migrate(result.storage)
-  // TODO
-  // The `merging` part can be separated into another step in DB migration.
-  // We can let the user select finer grain migration options, such as
-  // weapon-only migration.
-  merge(result, oldDatabase)
-  return result
+export function importAndMigrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
+  const storage = new SandboxStorage()
+  const source = good.source
+
+  good.dbVersion ? storage.setDBVersion(good.dbVersion) : storage.setDBVersion(8)
+  if (good.characters) good.characters.forEach(c => c.key && storage.set(`char_${c.key}`, c));
+  if (good.artifacts) good.artifacts.forEach((a, i) => storage.set(`artifact_${i}`, a))
+  if (good.weapons) good.weapons.forEach((a, i) => storage.set(`weapon_${i}`, a))
+  if (good.states) good.states.forEach(a => a.key && storage.set(`state_${a.key}`, a))
+  if (good.buildSettings) good.buildSettings.forEach(a => a.key && storage.set(`buildSetting_${a.key}`, a))
+
+  migrate(storage)
+  good = exportGOOD(storage)
+  good.source = source
+  return good
 }
 
 /**
  * Parse GOODv1 data format into a parsed data of the version specified in `data`.
  * If the DB version is not specified, the default version is used.
  */
-function parseImport(data: IGOOD): ImportResult | undefined {
-  const source = data.source, storage = new SandboxStorage()
-  const result: ImportResult = { type: "GOOD", storage, source }
+function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolean, ignoreDups: boolean): ImportResult | undefined {
+  good = importAndMigrateGOOD(good as IGOOD & IGO)
+  const source = good.source ?? "Unknown"
+  const result: ImportResult = newImportResult(source)
 
-  if (data.artifacts) {
-    result.artifacts = newCounter()
-    const counter = result.artifacts
-    counter.total = data.artifacts.length
+  result.characters.beforeMerge = base.chars.values.length
+  result.weapons.beforeMerge = base.weapons.values.length
+  result.artifacts.beforeMerge = base.arts.values.length
 
-    data.artifacts.forEach((a, i) => {
-      const parsed = parseArtifact(a)
-      if (!parsed) counter.invalid.push(a)
-      else storage.set(`artifact_${i}`, a)
+  const callback = (rkey: "artifacts" | "weapons" | "characters") => (key, reason, value) => result[rkey][reason].push(value)
+
+  const charUnfollow = base.chars.followAny((key, reason, value) => {
+    const arr = result.characters[reason]
+    const ind = arr.findIndex(c => c.key === key)
+    if (ind < 0) arr.push(value)
+    else arr[ind] = value
+  })
+  const artUnfollow = base.arts.followAny(callback("artifacts"))
+  const weaponUnfollow = base.weapons.followAny(callback("weapons"))
+
+  /* IMPORTANT: import data in characters, weapons, artifacts order. */
+  // import characters
+  const characters = good.characters
+  if (characters?.length) {
+    result.characters.import = characters.length
+    const idsToRemove = new Set(base.chars.keys)
+    characters.forEach(c => {
+      if (!c.key) result.characters.invalid.push(c)
+      idsToRemove.delete(c.key)
+      if (base.chars.hasDup(c, source === GOSource))
+        result.characters.unchanged.push(c)
+      else base.chars.set(c.key, c)
     })
-  }
-  if (data.weapons) {
-    result.weapons = newCounter()
-    const counter = result.weapons
-    counter.total = data.weapons!.length
 
-    data.weapons.forEach((w, i) => {
-      const parsed = parseWeapon(w)
-      if (!parsed) counter.invalid.push(w)
-      else storage.set(`weapon_${i}`, w)
-      return parsed ? [parsed] : []
+    const idtoRemoveArr = Array.from(idsToRemove)
+    if (keepNotInImport || ignoreDups) result.characters.notInImport = idtoRemoveArr.length
+    else idtoRemoveArr.forEach(k => base.chars.remove(k))
+    result.characters.unchanged = []
+  } else result.characters.notInImport = base.chars.values.length
+
+  // Match weapons for counter, metadata, and locations.
+  const weapons = good.weapons
+  if (weapons?.length) {
+    result.weapons.import = weapons.length
+    const idsToRemove = new Set(base.weapons.values.map(w => w.id))
+    weapons.forEach(w => {
+      const weapon = base.weapons.validate(w)
+      if (!weapon) return result.weapons.invalid.push(w)
+      let { duplicated, upgraded } = ignoreDups ? { duplicated: [], upgraded: [] } : base.weapons.findDup(weapon)
+      // Don't reuse dups/upgrades
+      duplicated = duplicated.filter(a => idsToRemove.has(a.id))
+      upgraded = upgraded.filter(a => idsToRemove.has(a.id))
+
+      if (duplicated[0] || upgraded[0]) {
+        const match = duplicated[0] || upgraded[0]
+        idsToRemove.delete(match.id)
+        if (duplicated[0]) result.weapons.unchanged.push(weapon)
+        else if (upgraded[0]) result.weapons.upgraded.push(weapon)
+        base.weapons.set(match.id, weapon)
+      } else
+        base.weapons.new(weapon)
     })
+    const idtoRemoveArr = Array.from(idsToRemove)
+    if (keepNotInImport || ignoreDups) result.weapons.notInImport = idtoRemoveArr.length
+    else idtoRemoveArr.forEach(k => base.weapons.remove(k))
+  } else result.weapons.notInImport = base.weapons.values.length
 
-    result.weapons = counter
-  }
-  if (data.characters) {
-    result.characters = newCounter()
-    const counter = result.characters
-    counter.total = data.characters.length
+  // Match artifacts for counter, metadata, and locations
+  const artifacts = good.artifacts
+  const importArtIds = new Map<string, string>()
+  if (artifacts?.length) {
+    result.artifacts.import = artifacts.length
+    const idsToRemove = new Set(base.arts.values.map(a => a.id))
+    artifacts.forEach((a, i) => {
+      const art = base.arts.validate(a)
+      if (!art) return result.artifacts.invalid.push(a)
+      let { duplicated, upgraded } = ignoreDups ? { duplicated: [], upgraded: [] } : base.arts.findDups(art)
 
-    data.characters.forEach(c => {
-      const parsed = parseCharacter(c)
-      if (!parsed) counter.invalid.push(c)
+      // Don't reuse dups/upgrades
+      duplicated = duplicated.filter(a => idsToRemove.has(a.id))
+      upgraded = upgraded.filter(a => idsToRemove.has(a.id))
 
-      // We invalidate build results here because we need to do
-      // it regardless of whether the file has character/art data.
-      if (c.buildSettings) {
-        c.buildSettings.builds = []
-        c.buildSettings.buildDate = 0
-      }
-
-      storage.set(`char_${c.key}`, c);
+      if (duplicated[0] || upgraded[0]) {
+        const match = duplicated[0] || upgraded[0]
+        idsToRemove.delete(match.id)
+        if (duplicated[0]) result.artifacts.unchanged.push(art)
+        else if (upgraded[0]) result.artifacts.upgraded.push(art)
+        base.arts.set(match.id, art)
+        importArtIds.set(`artifact_${i}`, match.id)
+      } else
+        importArtIds.set(`artifact_${i}`, base.arts.new(art))
     })
-  }
-  if (source === GOSource) {
-    const { dbVersion, states, buildSettings } = data as unknown as IGO
-    if (dbVersion < 8) return // Something doesn't look right here
-    storage.setDBVersion(dbVersion)
-    states && states.forEach(s => {
-      const { key, ...state } = s as any
-      if (!key) return
-      storage.set(`state_${key}`, state)
-    });
-    buildSettings && buildSettings.forEach(b => {
-      const { key, ...state } = b as any
-      if (!key) return
-      storage.set(`buildSetting_${key}`, state)
-    })
-  } else {
-    // DO NOT CHANGE THE DB VERSION
-    // Update this ONLY when it has been verified that base GOODv1 is a valid GO
-    // of that particular version. Any missing/extra keys could crash the system.
-    storage.setDBVersion(8)
-  }
+    const idtoRemoveArr = Array.from(idsToRemove)
+    if (keepNotInImport || ignoreDups) result.artifacts.notInImport = idtoRemoveArr.length
+    else idtoRemoveArr.forEach(k => base.arts.remove(k))
+  } else result.artifacts.notInImport = base.arts.values.length
+
+  // stop listening to callbacks
+  charUnfollow()
+  artUnfollow()
+  weaponUnfollow()
+
+  // import extras
+  const states = (good as unknown as IGO).states
+  if (states) states.forEach(s => {
+    const { key, ...rest } = s as any
+    if (!key) return
+    base.states.set(key, rest)
+  })
+
+  const buildSettings = (good as unknown as IGO).buildSettings
+  if (buildSettings) buildSettings.forEach(b => {
+    const { key, ...rest } = b
+    if (!key || !allCharacterKeys.includes(key as CharacterKey)) return
+    if (rest.builds) //preserve the old build ids
+      rest.builds = rest.builds.map(build => build.map(i => importArtIds.get(i) ?? ""))
+
+    base.buildSettings.set(key as CharacterKey, { ...rest })
+  })
   return result
 }

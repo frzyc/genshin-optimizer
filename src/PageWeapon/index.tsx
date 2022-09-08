@@ -48,7 +48,7 @@ export default function PageWeapon() {
   //set follow, should run only once
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: '/weapon' })
-    return database.weapons.followAny(forceUpdate)
+    return database.weapons.followAny((k, r) => (r === "new" || r === "remove") && forceUpdate())
   }, [forceUpdate, database])
 
   const brPt = useMediaQueryUp()

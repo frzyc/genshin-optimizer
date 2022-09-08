@@ -1,31 +1,36 @@
 import { deepFreeze } from "../Util/Util"
 import { ArtCharDatabase } from "./Database"
-
 export class DataManager<CacheKey extends string | number, StorageKey extends string | number, CacheValue, StorageValue> {
   database: ArtCharDatabase
 
   constructor(database: ArtCharDatabase) {
     this.database = database
   }
-  static readonly allKeys = {} as const
 
   data: Dict<CacheKey, CacheValue> = {}
-  listeners: Dict<CacheKey, Callback<CacheValue | undefined>[]> = {}
-  anyListeners: Callback<CacheKey | typeof DataManager.allKeys>[] = []
+  listeners: Dict<CacheKey, Callback<CacheKey>[]> = {}
+  anyListeners: Callback<CacheKey>[] = []
 
   toStorageKey(key: CacheKey): StorageKey {
     return key as any as StorageKey
   }
-  deCache(cacheObj: CacheValue): StorageValue {
-    return cacheObj as any as StorageValue
+  validate(obj: any): StorageValue | undefined {
+    return obj as StorageValue | undefined
   }
-  followAny(callback: Callback<CacheKey | typeof DataManager.allKeys>): () => void {
+  toCache(storageObj: StorageValue, id: string): CacheValue | undefined {
+    return { ...storageObj, id } as any as CacheValue
+  }
+  deCache(cacheObj: CacheValue): StorageValue {
+    const { id, ...storageObj } = cacheObj as any
+    return storageObj as any as StorageValue
+  }
+  followAny(callback: Callback<CacheKey>): () => void {
     this.anyListeners.push(callback)
     return () => {
       this.anyListeners = this.anyListeners.filter(cb => cb !== callback)
     }
   }
-  follow(key: CacheKey, callback: Callback<CacheValue | undefined>) {
+  follow(key: CacheKey, callback: Callback<CacheKey>) {
     if (this.listeners[key]) this.listeners[key]!.push(callback)
     else this.listeners[key] = [callback]
     return () => {
@@ -37,23 +42,33 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
   get keys() { return Object.keys(this.data) }
   get values() { return Object.values(this.data) }
   get(key: CacheKey | "" | undefined): CacheValue | undefined { return key ? this.data[key] : undefined }
-  set(key: CacheKey, value: CacheValue) {
-    deepFreeze(value)
-    this.data[key] = value
-    this.database.storage.set(this.toStorageKey(key) as string, this.deCache(value))
-    this.trigger(key)
+  getStorage(key: CacheKey) { return this.database.storage.get(this.toStorageKey(key) as any) }
+  set(key: CacheKey, value: Partial<StorageValue>) {
+    const old = this.getStorage(key)
+    const validated = this.validate({ ...(old ?? {}), ...value })
+    if (!validated) return this.trigger(key, "invalid", value)
+    const cached = this.toCache(validated, key as any)
+    if (!cached) return this.trigger(key, "invalid", value)
+    if (!old) this.trigger(key, "new", cached)
+    this.setCached(key, cached)
+  }
+  setCached(key: CacheKey, cached: CacheValue) {
+    deepFreeze(cached)
+    this.data[key] = cached
+    this.database.storage.set(this.toStorageKey(key) as string, this.deCache(cached))
+    this.trigger(key, "update", cached)
   }
   /** Trigger update event */
-  trigger(key: CacheKey) {
-    const value = this.data[key]
-    this.listeners[key]?.forEach(cb => cb(value))
-    this.anyListeners.forEach(cb => cb(key))
+  trigger(key: CacheKey, reason: TriggerString, object?: any) {
+    this.listeners[key]?.forEach(cb => cb(key, reason, object))
+    this.anyListeners.forEach(cb => cb(key, reason, object))
   }
   remove(key: CacheKey) {
+    const rem = this.data[key]
     delete this.data[key]
     this.database.storage.remove(this.toStorageKey(key) as string)
 
-    this.trigger(key)
+    this.trigger(key, "remove", rem)
     delete this.listeners[key]
   }
   clear() {
@@ -62,5 +77,5 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
     }
   }
 }
-
-type Callback<Arg> = (arg: Arg) => void
+type TriggerString = "update" | "remove" | "new" | "invalid"
+type Callback<Arg> = (key: Arg, reason: TriggerString, object: any) => void

@@ -67,7 +67,7 @@ export default function PageArtifact() {
 
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: '/artifact' })
-    return database.arts.followAny(forceUpdate)
+    return database.arts.followAny((k, r) => (r === "new" || r === "remove") && forceUpdate())
   }, [database, forceUpdate])
 
   const filterOptionDispatch = useCallback((action) => {
