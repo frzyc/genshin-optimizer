@@ -57,6 +57,7 @@ export const reactions = {
     electrocharged: trans.electrocharged,
     superconduct: trans.superconduct,
     shattered: trans.shattered,
+    burning: trans.burning,
     bloom: trans.bloom,
     burgeon: trans.burgeon,
     hyperbloom: trans.hyperbloom,
