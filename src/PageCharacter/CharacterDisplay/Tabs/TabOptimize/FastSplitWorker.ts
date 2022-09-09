@@ -13,7 +13,7 @@ type Approximation = {
   /** optimization target contribution from a given artifact (id) */
   conts: StrictDict<string, number>
 }
-type Filter = { arts: ArtifactsBySlot, maxConts: Record<SlotKey, number>[], approxs: Approximation[], age: number }
+type Filter = { nodes: NumNode[], arts: ArtifactsBySlot, maxConts: Record<SlotKey, number>[], approxs: Approximation[], age: number }
 export class FastSplitWorker implements SplitWorker {
   min: number[]
   nodes: NumNode[]
@@ -38,23 +38,23 @@ export class FastSplitWorker implements SplitWorker {
 
   addFilter(filter: RequestFilter): void {
     const arts = filterArts(this.arts, filter)
-    this.filters.push({ arts, maxConts: [], approxs: [], age: 0 })
+    this.filters.push({ nodes: this.nodes, arts, maxConts: [], approxs: [], age: 0 })
   }
   async split(newThreshold: number, minCount: number): Promise<RequestFilter | undefined> {
     if (newThreshold > this.min[0]) this.min[0] = newThreshold
 
     while (this.filters.length) {
-      const filter = this.filters.pop()!, { arts, maxConts: maxContributions, approxs: approximations, age } = filter
+      const filter = this.filters.pop()!, { nodes, arts, maxConts: maxContributions, approxs: approximations, age } = filter
 
       if (!(age % 5)) {
         // The problem should've gotten small enough that
         // the old approximation becomes inaccurate
-        const { nodes, arts: newArts } = pruneAll(this.nodes, this.min, arts, this.maxBuilds, {}, {})
+        const { nodes: newNodes, arts: newArts } = pruneAll(nodes, this.min, arts, this.maxBuilds, {}, {})
         const artRange = computeFullArtRange(arts)
-        const polys = polyUpperBound(nodes, artRange)
+        const polys = polyUpperBound(newNodes, artRange)
         const approxs = polys.map(poly => approximation(poly, artRange, arts))
         const maxConts = approxs.map(approx => strictObjectMap(arts.values, val => maxContribution(val, approx)))
-        this.filters.push({ arts, maxConts, approxs, age: age + 1 })
+        this.filters.push({ nodes: newNodes, arts: newArts, maxConts, approxs, age: age + 1 })
 
         const newCounts = countBuilds(newArts), oldCount = countBuilds(arts)
         if (oldCount !== newCounts) this.addSkip(oldCount - newCounts)
@@ -88,7 +88,7 @@ export class FastSplitWorker implements SplitWorker {
     else this.interim = { command: "interim", buildValues: undefined, tested: 0, failed: 0, skipped: count, }
   }
 
-  splitOldFilter({ arts, maxConts: maxContributions, approxs, age }: Filter): number {
+  splitOldFilter({ nodes, arts, maxConts: maxContributions, approxs, age }: Filter): number {
     let totalRemaining = 1
     const splitted = strictObjectMap(arts.values, (arts, slot) => {
       const requiredConts = maxContributions.map((cont, i) => Object.values(cont)
@@ -115,7 +115,7 @@ export class FastSplitWorker implements SplitWorker {
     function partialSplit() {
       if (!remaining.length) {
         const maxConts = approxs.map((_, i) => strictObjectMap(currentCont, val => val[i]))
-        return filters.push({ arts: { base: arts.base, values: { ...current } }, maxConts, approxs, age: age + 1 })
+        return filters.push({ nodes, arts: { base: arts.base, values: { ...current } }, maxConts, approxs, age: age + 1 })
       }
       const slot = remaining.pop()!, { high, low } = splitted[slot]
       if (low.arts.length) {
@@ -186,9 +186,8 @@ function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string 
    * This gives Ax + c as a linear upperbound in the region dictated by `artRange`.
    */
   const added: bigint[] = [], weights: Weights = { $c: 0, $error: 0 }
-  const [compute, mapping, buffer] = precompute([poly], f => f.path[1])
-  Object.entries(mapping).forEach(([key, i]) => buffer[i] = weights[key] = 0)
-  const [offset] = compute(), obj: Weights = { $error: -1 }
+  const compute = precompute([poly], {}, f => f.path[1], 1)
+  const [offset] = compute([{ id: "", values: {} }]), obj: Weights = { $error: -1 }
   for (const term of [...terms.get(poly)!].sort((a, b) => a > b ? -1 : 1)) {
     if (added.some(added => (added & term) === term)) continue
     added.push(term)
@@ -196,35 +195,32 @@ function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string 
     const vars: Weights = { $c: 1 }, constraints: LPConstraint[] = []
     const add_constraint = (index: number, current: bigint) => {
       if (index >= bounds.length) {
-        const [val] = compute()
+        const [val] = compute([{ id: "", values: vars }])
         constraints.push(
           { weights: { ...vars }, lowerBound: (val - offset) / 1000 },
           { weights: { ...vars, $error: -1 }, upperBound: (val - offset) / 1000 },
         )
         return
       }
-      const [key, { min, max }] = bounds[index], i = mapping[key]!
+      const [key, { min, max }] = bounds[index]
       if (current & term) {
         // Split upper/lower bound
-        buffer[i] = min
         if (min) vars[key] = min
         else delete vars[key]
         add_constraint(index + 1, current << BigInt(1))
 
         if (min != max) {
-          buffer[i] = max
           vars[key] = max
           add_constraint(index + 1, current << BigInt(1))
         }
       } else {
         // Use zero and skip
-        buffer[i] = 0
         add_constraint(index + 1, current << BigInt(1))
       }
     }
     add_constraint(0, BigInt(1))
     const additional_weight = maximizeLP(obj, constraints)
-    Object.entries(additional_weight).forEach(([key, val]) => weights[key] = weights[key] + val)
+    Object.entries(additional_weight).forEach(([key, val]) => weights[key] = (weights[key] ?? 0) + val)
   }
   Object.keys(weights).forEach(key => weights[key] *= 1000)
   weights.$c += offset

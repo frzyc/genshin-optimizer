@@ -100,7 +100,7 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
   for (let round = 0; round < 300; round++) {
     const current_centrality = centrality(x, s, tau, kappa)
     if (current_centrality >= ((round % 2) ? 0.5 : 0.25))
-      throw new Error(`Bad centrality at round ${round}`)
+      throw new Error(`Bad centrality ${current_centrality} at round ${round}`)
 
     x.forEach((x, ix) => {
       xs[ix] = x * s[ix]
