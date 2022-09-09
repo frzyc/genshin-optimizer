@@ -1,0 +1,173 @@
+{
+  "name": "Dori",
+  "title": "Trésor du jardin onirique",
+  "description": "Une marchande ambulante avec un penchant pour les moras scintillants.",
+  "constellationName": "Magicae Lucerna",
+  "auto": {
+    "name": "Valse des lames (modifiée)",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 3 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Exécute une succession d'attaques tournoyantes contre les ennemis proches ; cette attaque consomme de l'endurance de façon continue.",
+        "2": "L'attaque chargée se termine sur un coup puissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT enchaînement attaque chargée",
+      "4": "DGT coup final attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "Durée max",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lampe de protection : Canon pacificateur",
+    "description": {
+      "0": "Commande à une lampe de protection de déclencher un tir pacificateur sur les ennemis, infligeant des <electro>DGT Électro</electro>.",
+      "1": "À l'impact, le tir pacificateur crée 2 obus de S.A.V. qui poursuivent automatiquement les ennemis pour infliger des <electro>DGT Électro</electro>.",
+      "2": "<br/>",
+      "3": "<i>Il est dit que Dori peut résoudre n'importe lequel de vos problèmes... Pour un prix adéquat, bien sûr...</i>"
+    },
+    "skillParams": {
+      "0": "DGT tir pacificateur",
+      "1": "DGT obus de S.A.V.",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Méticulosité d'Alcazarzaray",
+    "description": {
+      "0": "Invoque le djinn à l'intérieur de la lampe pour accorder au client divers types d'aide.",
+      "1": "<br/>",
+      "2": "<strong>Djinn</strong>",
+      "3": "Relie un personnage proche, qui bénéficie alors des effets suivants :",
+      "4": [
+        " Récupère des PV de façon continue selon les PV max de Dori.",
+        " Obtient continuellement de l'énergie élémentaire.",
+        " Est affecté par l'élément <electro>Électro</electro>."
+      ],
+      "5": "<br/>",
+      "6": "Lorsque le lien entre le djinn et le personnage touche un ennemi, il lui inflige des <electro>DGT Électro</electro> une fois toutes les 0,4 s.",
+      "7": "<br/>",
+      "8": "Il ne peut exister qu'un seul djinn à la fois.",
+      "9": "<br/>",
+      "10": "<i>« Hmm ? Tu choisis cette lampe, c'est ça ? Waouh, bon goût ! Malheureusement, ce trésor n'a pas de prix... Je dirais que c'est comme cette mascotte qui traîne avec toi et que tu ne vendras jamais, même pour tous les moras du monde... »</i>"
+    },
+    "skillParams": {
+      "0": "DGT lien",
+      "1": "Soins continus",
+      "2": "Restauration énergie élémentaire",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Un œil d'or",
+    "description": {
+      "0": "Si le personnage relié au <strong>djinn</strong> a déclenché une réaction d'Électrocution, de Supraconduction, de Surcharge, de Stimulation, de Suractivation, d'Exubérance, de Dispersion Électro ou de Cristallisation Électro, le TdR de <strong>Lampe de protection : Canon pacificateur</strong> diminue de 1 s.",
+      "1": "Cet effet peut être déclenché une fois toutes les 3 s."
+    }
+  },
+  "passive2": {
+    "name": "Intérêts composés",
+    "description": {
+      "0": "Si le tir pacificateur ou les obus de S.A.V. de <strong>Lampe de protection : Canon pacificateur</strong> touche un ennemi, Dori restaure 5 pts d'énergie élémentaire tous les 100 % de recharge d'énergie qu'elle possède.",
+      "1": "Pour chaque utilisation de Lampe de protection : Canon pacificateur, l'énergie élémentaire peut être restaurée une fois et d'un maximum de 15 pts de cette manière."
+    }
+  },
+  "passive3": {
+    "name": "Commande inattendue",
+    "description": {
+      "0": "Le personnage a 25 % de chance de récupérer des matériaux de synthèse lors de la synthèse de matériaux d'amélioration de personnage ou d'arme."
+    }
+  },
+  "constellation1": {
+    "name": "Investissement supplémentaire",
+    "description": {
+      "0": "Le nombre d'obus de S.A.V. créés après un <strong>tir pacificateur</strong> augmente de 1."
+    }
+  },
+  "constellation2": {
+    "name": "Franchise spéciale",
+    "description": {
+      "0": "En combat, lorsque le <strong>djinn</strong> soigne le personnage auquel il est relié, un tir djinn est déclenché à l'emplacement du personnage, infligeant des DGT équivalant à 50 % de l'ATQ de Dori."
+    }
+  },
+  "constellation3": {
+    "name": "Merveilles sans fin",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Méticulosité d'Alcazarzaray</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Supplément discrétionnaire",
+    "description": {
+      "0": "Le personnage relié au <strong>djinn</strong> obtient les bonus suivants selon ses PV et son énergie élémentaire{NON_BREAK_SPACE}:",
+      "1": [
+        " Bonus de soins reçus de 50 % si les PV sont inférieurs à 50 %.",
+        " Recharge d'énergie augmentée de 30 % si l'énergie élémentaire est inférieure à 50 %."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Rapport qualité-mora",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Lampe de protection : Canon pacificateur</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Poids léger",
+    "description": {
+      "0": "Après avoir utilisé <strong>Lampe de protection : Canon pacificateur</strong>, Dori obtient les effets suivants pendant 3 s :",
+      "1": [
+        " <electro>Enchantement Électro</electro>.",
+        " Si une attaque normale touche un ennemi, tous les personnages de l'équipe à proximité récupèrent des PV pour une valeur équivalant à 4 % des PV max de Dori. Les PV peuvent être restaurés une fois toutes les 0,1 s de cette manière."
+      ]
+    }
+  }
+}
