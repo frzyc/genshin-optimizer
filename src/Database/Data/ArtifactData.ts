@@ -39,7 +39,8 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
         this.database.chars.setEquippedArtifact(newChar.key, slotKey, newArt.id)
       if (prevChar)
         this.database.chars.setEquippedArtifact(prevChar.key, slotKey, prevArt?.id ?? "")
-    }
+    } else
+      newArt.location && this.database.chars.trigger(newArt.location, "update", this.database.chars.get(newArt.location))
     return newArt
   }
   deCache(artifact: ICachedArtifact): IArtifact {

@@ -62,7 +62,8 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
         this.database.chars.setEquippedWeapon(newChar.key, newWeapon.id)
       if (prevChar)
         this.database.chars.setEquippedWeapon(prevChar.key, prevWeapon?.id ?? "")
-    }
+    } else
+      newWeapon.location && this.database.chars.trigger(newWeapon.location, "update", this.database.chars.get(newWeapon.location))
     return newWeapon
   }
   deCache(weapon: ICachedWeapon): IWeapon {
