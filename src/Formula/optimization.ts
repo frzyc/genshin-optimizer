@@ -1,7 +1,8 @@
-import { assertUnreachable, objectKeyMap, objPathValue } from "../Util/Util"
+import type { ArtifactBuildData } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
+import { assertUnreachable, objPathValue } from "../Util/Util"
 import { forEachNodes, mapFormulas } from "./internal"
-import { constant } from "./utils"
 import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode, StrPrioNode } from "./type"
+import { constant } from "./utils"
 
 const allCommutativeMonoidOperations: StrictDict<CommutativeMonoidOperation, (_: number[]) => number> = {
   min: (x: number[]): number => Math.min(...x),
@@ -28,105 +29,51 @@ export function optimize(formulas: NumNode[], topLevelData: Data, shouldFold = (
   formulas = deduplicate(formulas)
   return formulas
 }
-export function precompute(formulas: NumNode[], binding: (readNode: ReadNode<number>) => string): [compute: () => Float64Array, mapping: Dict<string, number>, buffer: Float64Array] {
-  // TODO: Use min-cut to minimize the size of interim array
-  type Reference = string | number | { ins: Reference[] }
+export function precompute(formulas: NumNode[], initial: ArtifactBuildData["values"], binding: (readNode: ReadNode<number> | ReadNode<string | undefined>) => string, slotCount: number): (_: ArtifactBuildData[]) => number[] {
+  let body = `
+"use strict";
+// copied from the code above
+function res(res) {
+  if (res < 0) return 1 - res / 2
+  else if (res >= 0.75) return 1 / (res * 4 + 1)
+  return 1 - res
+}
+const x0=0`; // making sure `const` has at least one entry
 
-  const uniqueReadStrings = new Set<string>()
-  const uniqueNumbers = new Set<number>()
-  const mapping = new Map<NumNode, Reference>()
-
+  let i = 1;
+  const names = new Map<NumNode | StrNode, string>()
   forEachNodes(formulas, _ => { }, f => {
-    const { operation } = f
+    const { operation, operands } = f, name = `x${i++}`, operandNames = operands.map(x => names.get(x)!)
+    names.set(f, name)
     switch (operation) {
-      case "read":
-        if (f.type !== "number" || (f.accu && f.accu !== "add"))
-          throw new Error(`Unsupported ${operation} node in precompute`)
-        const name = binding(f)
-        uniqueReadStrings.add(name)
-        mapping.set(f, name)
+      case "read": {
+        const key = binding(f)
+        let arr = new Array(slotCount).fill(null).map((x, i) => `(b[${i}].values["${key}"] ?? 0)`)
+        if (initial[key] && initial[key] !== 0) {
+          arr = [initial[key].toString(), ...arr]
+        }
+        body += `,${name}=${arr.join('+')}`
         break
-      case "add": case "min": case "max": case "mul":
-      case "threshold": case "res": case "sum_frac":
-        mapping.set(f, { ins: f.operands.map(op => mapping.get(op)!) })
+      }
+      case "const": names.set(f, `(${f.value})`); break
+      case "add": case "mul": body += `,${name}=${operandNames.join(operation === "add" ? "+" : "*")}`; break
+      case "min": case "max": body += `,${name}=Math.${operation}(${operandNames})`; break
+      case "threshold": {
+        const [value, threshold, pass, fail] = operandNames
+        body += `,${name}=(${value}>=${threshold})?${pass}:${fail}`
         break
-      case "const":
-        if (typeof f.value !== "number")
-          throw new Error("Found string constant while precomputing")
-        const value = f.value
-        uniqueNumbers.add(value)
-        mapping.set(f as ConstantNode<number>, value)
-        break
+      }
+      case "res": body += `,${name}=res(${operandNames[0]})`; break
+      case "sum_frac": body += `,${name}=${operandNames[0]}/(${operandNames[0]}+${operandNames[1]})`; break
+
       case "match": case "lookup": case "subscript":
       case "prio": case "small":
       case "data": throw new Error(`Unsupported ${operation} node in precompute`)
       default: assertUnreachable(operation)
     }
   })
-
-  /**
-   * [ Outputs , Input , Constants, Deduplicated Compute ]
-   *
-   * Note that only Compute nodes are deduplicated. Outputs are arranged
-   * in the same order as formulas even when they are duplicated. Inputs
-   * are arranged in the same order as the read strings, even when they
-   * overlap with outputs. If an output is a constant or a compute node,
-   * only put the data in the output region.
-   */
-  const locations = new Map<NumNode | number | string, number>()
-
-  const readStrings = [...uniqueReadStrings], readOffset = formulas.length
-  const constValues = [...uniqueNumbers]
-  const computations: { out: number, ins: number[], op: (_: number[]) => number, buff: number[] }[] = []
-
-  formulas.forEach((f, i) => {
-    locations.set(f, i)
-    if (f.operation === "const") locations.set(f.value, i)
-  })
-  // After this line, if some outputs are also read node, `locations`
-  // will point to the one in the read node portion instead.
-  readStrings.forEach((str, i) => locations.set(str, i + formulas.length))
-  let offset = formulas.length + readStrings.length
-  constValues.forEach(value => locations.has(value) || locations.set(value, offset++))
-
-  // `locations` is stable from this point on. We now only append new values.
-  // There is no change to existing values.
-  //
-  // DO NOT read from `location` prior to this line.
-  mapping.forEach((ref, node) => {
-    if (typeof ref !== "object") {
-      locations.set(node, locations.get(ref)!)
-      return
-    }
-    if (!locations.has(node)) locations.set(node, offset++)
-    computations.push({
-      out: locations.get(node)!,
-      ins: node.operands.map(op => locations.get(op)!),
-      op: allOperations[node.operation],
-      buff: Array(node.operands.length).fill(0),
-    })
-  })
-
-  const buffer = new Float64Array(offset).fill(0)
-  uniqueNumbers.forEach(number => buffer[locations.get(number)!] = number)
-
-  // Copy target for when some outputs are duplicated
-  const copyList = formulas.map((node, i) => {
-    const src = locations.get(node)!
-    return src !== i ? [src, i] : undefined!
-  }).filter(x => x)
-  const copyFormula = copyList.length ? () => {
-    copyList.forEach(([src, dst]) => buffer[dst] = buffer[src])
-  } : undefined
-
-  return [() => {
-    computations.forEach(({ out, ins, op, buff }) => {
-      ins.forEach((i, j) => buff[j] = buffer[i])
-      buffer[out] = op(buff)
-    })
-    copyFormula?.()
-    return buffer
-  }, objectKeyMap(readStrings, (_, i) => readOffset + i), buffer]
+  body += `;\nreturn [${formulas.map(f => names.get(f)!)}]`
+  return new (Function as any)(`b`, body)
 }
 
 function flatten(formulas: NumNode[]): NumNode[] {

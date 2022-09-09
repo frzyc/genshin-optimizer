@@ -7,7 +7,7 @@ import ArtifactCardPico from "../../../../../Components/Artifact/ArtifactCardPic
 import CardDark from "../../../../../Components/Card/CardDark";
 import CardLight from "../../../../../Components/Card/CardLight";
 import CharacterCardPico from "../../../../../Components/Character/CharacterCardPico";
-import { CharacterSelectionModal } from "../../../../../Components/Character/CharacterSelectionModal";
+import { CharacterSelectionModal } from "../../../../CharacterSelectionModal";
 import CloseButton from "../../../../../Components/CloseButton";
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from "../../../../../Components/CustomNumberInput";
 import ModalWrapper from "../../../../../Components/ModalWrapper";

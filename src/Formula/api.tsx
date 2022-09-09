@@ -84,7 +84,8 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
 
   if (sheetData?.display) {
     sheetData.display.custom = {}
-    char.customMultiTarget.forEach(({ name, targets }, i) => {
+    const customMultiTarget = char.elementKey ? char.customMultiTargets![char.elementKey]! : char.customMultiTarget
+    customMultiTarget.forEach(({ name, targets }, i) => {
       const targetNodes = targets.map(({ weight, path, hitMode, reaction, infusionAura, bonusStats }) => {
         const targetNode = objPathValue(sheetData.display, path) as NumNode | undefined
         if (!targetNode) return constant(0)

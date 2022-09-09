@@ -38,38 +38,64 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, B
     for (const key of this.database.storage.keys) {
       if (key.startsWith("buildSetting_")) {
         const [, charKey] = key.split("buildSetting_")
-        // TODO: Parse the object and check if it is valid
-        const buildSettingsObj = this.database.storage.get(key)
-        if (!buildSettingsObj) {
-          console.error("Entry", key, "is unrecoverable.", buildSettingsObj)
-          this.database.storage.remove(key)
-          continue
-        }
-        if (buildSettingsObj.builds && Array.isArray(buildSettingsObj.builds)) { // This should have been checked during parsing
-          const newBuilds = buildSettingsObj.builds.map(build => {
-            if (!Array.isArray(build)) return [] // This should have been parsed
-            return build.filter(id => this.database.arts.get(id))
-          }).filter(x => x.length)
-          buildSettingsObj.builds = newBuilds
-        }
-        this.set(charKey as CharacterKey, buildSettingsObj)
+        this.set(charKey as CharacterKey, this.database.storage.get(key))
       }
     }
   }
   toStorageKey(key: string): string {
     return `buildSetting_${key}`
   }
+  validate(obj: object): BuildSetting | undefined {
+    let { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = (obj as any) ?? {}
+
+    if (typeof statFilters !== "object") statFilters = {}
+
+    if (!mainStatKeys || !mainStatKeys.sands || !mainStatKeys.goblet || !mainStatKeys.circlet) {
+      const tempmainStatKeys = initialBuildSettings().mainStatKeys
+      if (Array.isArray(mainStatKeys)) {
+        const [sands, goblet, circlet] = mainStatKeys
+        if (sands) tempmainStatKeys.sands = [sands]
+        if (goblet) tempmainStatKeys.goblet = [goblet]
+        if (circlet) tempmainStatKeys.circlet = [circlet]
+      }
+      mainStatKeys = tempmainStatKeys
+    }
+
+    if (!optimizationTarget || !Array.isArray(optimizationTarget)) optimizationTarget = undefined
+    if (typeof mainStatAssumptionLevel !== "number" || mainStatAssumptionLevel < 0 || mainStatAssumptionLevel > 20)
+      mainStatAssumptionLevel = 0
+    useExcludedArts = !!useExcludedArts
+    useEquippedArts = !!useEquippedArts
+    if (!Array.isArray(builds)) {
+      builds = []
+      buildDate = 0
+    }
+    builds = builds.map(build => {
+      if (!Array.isArray(build)) return []
+      return build.filter(id => this.database.arts.get(id))
+    }).filter(x => x.length)
+    if (!Number.isInteger(buildDate)) buildDate = 0
+    if (!maxBuildsToShowList.includes(maxBuildsToShow)) maxBuildsToShow = maxBuildsToShowDefault
+    if (typeof plotBase !== "string") plotBase = ""
+    if (compareBuild === undefined) compareBuild = false
+    if (levelLow === undefined) levelLow = 0
+    if (levelHigh === undefined) levelHigh = 20
+    if (!artSetExclusion) artSetExclusion = {};
+    if (!allowPartial) allowPartial = false
+    artSetExclusion = Object.fromEntries(Object.entries(artSetExclusion as ArtSetExclusion).map(([k, a]) => [k, [...new Set(a)]]).filter(([k, a]) => a.length))
+    return { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
+  }
   get(key: CharacterKey) {
     const bs = super.get(key)
     if (bs) return bs
     const newBs = initialBuildSettings()
-    this.set(key, newBs)
-    return super.get(key)
+    this.setCached(key, newBs)
+    return newBs
   }
 
   set(key: CharacterKey, value: BuildSettingReducerAction) {
-    const oldState = super.get(key) as BuildSetting
-    super.set(key, validateBuildSetting(buildSettingsReducer(oldState, value)))
+    const oldState = this.get(key) as BuildSetting
+    super.set(key, buildSettingsReducer(oldState, value))
   }
 }
 type BSMainStatKey = {
@@ -131,41 +157,4 @@ function buildSettingsReducer(state: BuildSetting = initialBuildSettings(), acti
       break;
   }
   return { ...state, ...action }
-}
-
-function validateBuildSetting(obj: any): BuildSetting {
-  let { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = obj ?? {}
-
-  if (typeof statFilters !== "object") statFilters = {}
-
-  if (!mainStatKeys || !mainStatKeys.sands || !mainStatKeys.goblet || !mainStatKeys.circlet) {
-    const tempmainStatKeys = initialBuildSettings().mainStatKeys
-    if (Array.isArray(mainStatKeys)) {
-      const [sands, goblet, circlet] = mainStatKeys
-      if (sands) tempmainStatKeys.sands = [sands]
-      if (goblet) tempmainStatKeys.goblet = [goblet]
-      if (circlet) tempmainStatKeys.circlet = [circlet]
-    }
-    mainStatKeys = tempmainStatKeys
-  }
-
-  if (!optimizationTarget || !Array.isArray(optimizationTarget)) optimizationTarget = undefined
-  if (typeof mainStatAssumptionLevel !== "number" || mainStatAssumptionLevel < 0 || mainStatAssumptionLevel > 20)
-    mainStatAssumptionLevel = 0
-  useExcludedArts = !!useExcludedArts
-  useEquippedArts = !!useEquippedArts
-  if (!Array.isArray(builds) || !builds.every(b => Array.isArray(b) && b.every(s => typeof s === "string"))) {
-    builds = []
-    buildDate = 0
-  }
-  if (!Number.isInteger(buildDate)) buildDate = 0
-  if (!maxBuildsToShowList.includes(maxBuildsToShow)) maxBuildsToShow = maxBuildsToShowDefault
-  if (typeof plotBase !== "string") plotBase = ""
-  if (compareBuild === undefined) compareBuild = false
-  if (levelLow === undefined) levelLow = 0
-  if (levelHigh === undefined) levelHigh = 20
-  if (!artSetExclusion) artSetExclusion = {};
-  if (!allowPartial) allowPartial = false
-  artSetExclusion = Object.fromEntries(Object.entries(artSetExclusion as ArtSetExclusion).map(([k, a]) => [k, [...new Set(a)]]).filter(([k, a]) => a.length))
-  return { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
 }

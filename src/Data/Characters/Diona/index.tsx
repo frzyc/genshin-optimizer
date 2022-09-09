@@ -101,10 +101,10 @@ const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    pressCryoShield: shieldElement(elementKey, nodeSkillShieldPress),
     pressShield: nodeSkillShieldPress,
-    holdCryoShield: shieldElement(elementKey, nodeSkillShieldHold),
+    pressCryoShield: shieldElement(elementKey, nodeSkillShieldPress),
     holdShield: nodeSkillShieldHold,
+    holdCryoShield: shieldElement(elementKey, nodeSkillShieldHold),
     skillDmg: dmgNode("atk", datamine.skill.icyPawDmg, "skill", {}),
   },
   burst: {
@@ -180,13 +180,13 @@ const sheet: ICharacterSheet = {
 
       skill: ct.talentTemplate("skill", [{
         fields: [{
-          node: infoMut(dmgFormulas.skill.pressCryoShield, { key: `char_${key}:pressShield` }),
+          node: infoMut(dmgFormulas.skill.pressShield, { key: `sheet:dmgAbsorption.none` }),
         }, {
-          node: infoMut(dmgFormulas.skill.pressShield, { key: `char_${key}:pressShield` }),
-        }, {
-          node: infoMut(dmgFormulas.skill.holdCryoShield, { key: `char_${key}:holdShield` }),
+          node: infoMut(dmgFormulas.skill.pressCryoShield, { key: `sheet:dmgAbsorption.cryo` }),
         }, {
           node: infoMut(dmgFormulas.skill.holdShield, { key: `char_${key}:holdShield` }),
+        }, {
+          node: infoMut(dmgFormulas.skill.holdCryoShield, { key: `char_${key}:holdCryoShield` }),
         }, {
           node: infoMut(dmgFormulas.skill.skillDmg, { key: `char_${key}_gen:skill.skillParams.0` }),
         }, {

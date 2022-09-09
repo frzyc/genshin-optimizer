@@ -1,7 +1,7 @@
 {
   "homepage": "https://frzyc.github.io/genshin-optimizer/",
   "name": "genshin-optimizer",
-  "version": "8.16.1",
+  "version": "8.18.2",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -43,7 +43,7 @@
     "prebuild": "npm run gen-files",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "testserver": "set PUBLIC_URL= && npm run build && node ./test-server.js",
+    "testserver": "npm run build && node ./test-server.js",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "postinstall": "node ./clone_genshindata.js",
     "pipeline-datamined": "cd ./pipeline && npx ts-node ./main.ts",

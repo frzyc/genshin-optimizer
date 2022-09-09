@@ -13,6 +13,8 @@ export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'cataly
 export const allRollColorKeys = ['roll1', 'roll2', 'roll3', 'roll4', 'roll5', 'roll6'] as const
 export const allAscension = [0, 1, 2, 3, 4, 5, 6] as const
 export const allRefinement = [1, 2, 3, 4, 5] as const
+export const substatType = ["max", "min", "mid"] as const
+
 export const allArtifactSets = [
   "Adventurer",
   "ArchaicPetra",
@@ -314,3 +316,5 @@ export const allowedAdditiveReactions: Dict<ElementKey, AdditiveReactionKey[]> =
   electro: ["aggravate"],
   anemo: ["aggravate"],
 }
+
+export type SubstatType = typeof substatType[number]

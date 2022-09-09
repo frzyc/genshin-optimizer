@@ -13,13 +13,8 @@ import { compactArtifacts, dynamicData } from './foreground';
 describe.skip("Worker Perf", () => {
   test("Test", async () => {
 
-    /**
-     * TODO: have an import api that directly result in a database, without making 2 different databases
-     */
-    const dbStorage = new DBLocalStorage(localStorage)
-    const database = new ArtCharDatabase(dbStorage)
-    dbStorage.copyFrom(importGOOD(data1 as any, database)!.storage)
-    new ArtCharDatabase(dbStorage)
+    const database = new ArtCharDatabase(new DBLocalStorage(localStorage))
+    importGOOD(data1 as any, database, false, false)!
 
     const teamData = (await getTeamData(database, "Sucrose"))!.teamData
     // Get a new `Data` for `workerData` (and not reuse the old ones) because we are mutating it later

@@ -4,6 +4,7 @@ import { BusinessCenter, Lock, LockOpen } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, Chip, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
 import { lazy, Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ArtifactSetTooltipContent } from '../Components/Artifact/ArtifactSetTooltip';
 import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
 import CardLight from '../Components/Card/CardLight';
 import CharacterAutocomplete from '../Components/Character/CharacterAutocomplete';
@@ -12,7 +13,6 @@ import ColorText from '../Components/ColoredText';
 import ConditionalWrapper from '../Components/ConditionalWrapper';
 import InfoTooltip from '../Components/InfoTooltip';
 import PercentBadge from '../Components/PercentBadge';
-import SqBadge from '../Components/SqBadge';
 import { StarsDisplay } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
 import Artifact from '../Data/Artifacts/Artifact';
@@ -22,7 +22,7 @@ import KeyMap, { cacheValueString } from '../KeyMap';
 import useArtifact from '../ReactHooks/useArtifact';
 import usePromise from '../ReactHooks/usePromise';
 import { allSubstatKeys, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
-import { CharacterKey, Rarity } from '../Types/consts';
+import { allElementsWithPhy, CharacterKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
@@ -78,16 +78,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
     <Suspense fallback={<Skeleton variant="text" width={100} />}><Typography variant='h6'>{slotName}</Typography></Suspense>
     <Typography>{slotDesc}</Typography>
   </Box>} />
-  const setEffects = sheet?.setEffects
-  const setDescTooltip = sheet && setEffects && <InfoTooltip title={
-    <span>
-      {Object.keys(setEffects).map(setNumKey => <span key={setNumKey}>
-        <Typography variant="h6"><SqBadge color="success">{t(`artifact:setEffectNum`, { setNum: setNumKey })}</SqBadge></Typography>
-        <Typography>{sheet.setEffectDesc(setNumKey as any)}</Typography>
-      </span>)}
-    </span>
-  } />
-  const mainIcon = StatIcon[mainStatKey]// allElementsWithPhy.some(e => mainStatKey.startsWith(e)) ? uncoloredEleIcons[mainStatKey] : StatIcon[mainStatKey]
+  const ele = allElementsWithPhy.find(e => mainStatKey.startsWith(e))
+  const mainIcon = ele ? <ColorText color={ele}>{StatIcon[mainStatKey]}</ColorText> : StatIcon[mainStatKey]
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     {editor && <Suspense fallback={false}>
       <ArtifactEditor
@@ -151,7 +143,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
           </Typography>}
           <Box flexGrow={1} />
           {art.probability !== undefined && art.probability >= 0 && <strong>Probability: {(art.probability * 100).toFixed(2)}%</strong>}
-          <Typography color="success.main">{sheet?.name ?? "Artifact Set"} {setDescTooltip}</Typography>
+          <Typography color="success.main">{sheet?.name ?? "Artifact Set"} {sheet && <InfoTooltip title={<ArtifactSetTooltipContent artifactSheet={sheet} />} />}</Typography>
         </CardContent>
       </ConditionalWrapper>
       <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }}>

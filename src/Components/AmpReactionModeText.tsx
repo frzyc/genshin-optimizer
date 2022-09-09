@@ -4,7 +4,7 @@ import { Variant } from "../Formula/type";
 import { AmpReactionKey } from "../Types/consts";
 import ColorText from "./ColoredText";
 import SqBadge from "./SqBadge";
-import { uncoloredEleIcons } from "./StatIcon";
+import StatIcon from "./StatIcon";
 
 export const ampReactionMap = {
   melt: {
@@ -25,8 +25,8 @@ export default function AmpReactionModeText({ reaction, trigger }: { reaction: A
 
   return <Box display="flex" alignItems="center">
     <ColorText color="melt">{t(`reaction.${reaction}`)}</ColorText>
-    <SqBadge sx={sqBadgeStyle} color={base}>{uncoloredEleIcons[base]}</SqBadge>
+    <SqBadge sx={sqBadgeStyle} color={base}>{StatIcon[base]}</SqBadge>
     {`+`}
-    <SqBadge sx={sqBadgeStyle} color={trigger as "cryo" | "pyro" | "hydro"}>{uncoloredEleIcons[trigger]}</SqBadge>
+    <SqBadge sx={sqBadgeStyle} color={trigger as "cryo" | "pyro" | "hydro"}>{StatIcon[trigger]}</SqBadge>
   </Box>
 }

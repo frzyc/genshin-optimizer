@@ -105,7 +105,7 @@ function TeammateDisplay({ index }: { index: number }) {
       defaultIcon={<PersonAdd />}
       showDefault
     />
-    {teammateCharacterContext && <CharacterContext.Provider value={teammateCharacterContext}>
+    {teamMateKey && teammateCharacterContext && <CharacterContext.Provider value={teammateCharacterContext}>
       {teamMateDataContext && <DataContext.Provider value={teamMateDataContext}>
         <CharacterCard characterKey={teamMateKey}
           onClickHeader={onClickHandler}

@@ -9,7 +9,7 @@ import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";
 import CardLight from "./Card/CardLight";
 import ColorText from "./ColoredText";
 import ExpandButton from "./ExpandButton";
-import { uncoloredEleIcons } from "./StatIcon";
+import StatIcon from "./StatIcon";
 import StatInput from "./StatInput";
 
 export function EnemyExpandCard() {
@@ -58,8 +58,8 @@ export function EnemyResText({ element }: { element: ElementKeyWithPhy }) {
   const { data } = useContext(DataContext)
   const node = data.get(input.enemy[`${element}_res_`])
   const immune = !isFinite(node.value)
-  const content = immune ? <span >{uncoloredEleIcons[element]} IMMUNE</span> :
-    <span >{uncoloredEleIcons[element]}RES <strong>{valueString(node.value, node.unit)}</strong></span>
+  const content = immune ? <span >{StatIcon[element]} IMMUNE</span> :
+    <span >{StatIcon[element]}RES <strong>{valueString(node.value, node.unit)}</strong></span>
   return <ColorText color={element}>{content}</ColorText>
 }
 

@@ -16,7 +16,7 @@ import { DataContext } from "../Context/DataContext";
 import { allInputPremodKeys, InputPremodKey } from "../Formula";
 import { NodeDisplay, UIData } from "../Formula/uiData";
 import useBoolState from "../ReactHooks/useBoolState";
-import { CustomMultiTarget, CustomTarget } from "../Types/character";
+import { CustomMultiTarget, CustomTarget, ICachedCharacter } from "../Types/character";
 import { AdditiveReactionKey, allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, allowedAdditiveReactions, allowedAmpReactions, AmpReactionKey, HitModeKey, InfusionAuraElements } from "../Types/consts";
 import { arrayMove, deepClone, objPathValue } from "../Util/Util";
 import OptimizationTargetSelector from "./CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector";
@@ -79,13 +79,17 @@ export function validateCustomMultiTarget(cmt: any): CustomMultiTarget | undefin
   return { name, targets }
 }
 
+function getMTarget(character: ICachedCharacter): CustomMultiTarget[] {
+  return character.elementKey ? character.customMultiTargets![character.elementKey]! :
+    character.customMultiTarget
+}
 export function CustomMultiTargetButton() {
   const [show, onShow, onCloseModal] = useBoolState()
   const { character, characterDispatch } = useContext(CharacterContext)
-  const [customMultiTarget, setCustomTargets] = useState(character.customMultiTarget)
+  const [customMultiTarget, setCustomTargets] = useState(() => getMTarget(character))
 
-  useEffect(() => setCustomTargets(character.customMultiTarget),
-    [setCustomTargets, character.customMultiTarget])
+  useEffect(() => setCustomTargets(getMTarget(character)),
+    [setCustomTargets, character])
 
   const [expandedInd, setExpandedInd] = useState<number | false>(false);
 
@@ -112,8 +116,9 @@ export function CustomMultiTargetButton() {
   const onClose = useCallback(
     () => {
       onCloseModal()
-      characterDispatch({ customMultiTarget })
-    }, [customMultiTarget, onCloseModal, characterDispatch])
+      character.elementKey ? characterDispatch({ customMultiTargets: { ...character.customMultiTargets!, [character.elementKey]: customMultiTarget } }) :
+        characterDispatch({ customMultiTarget })
+    }, [customMultiTarget, character, onCloseModal, characterDispatch])
 
   const { data: origUIData, teamData } = useContext(DataContext)
   const dataContextObj = useMemo(() => {

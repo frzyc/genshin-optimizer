@@ -1,6 +1,6 @@
 {
   "skillDuration" : "Duration per Paw",
-  "pressShield" : "Shield DMG Absorption",
-  "holdShield" : "Hold Shield DMG Absorption",
+  "holdShield" : "Hold DMG Absorption",
+  "holdCryoShield" : "Hold Cryo DMG Absorption",
   "a1shielded" : "Character shielded by <strong>Icy Paws</strong>"
 }

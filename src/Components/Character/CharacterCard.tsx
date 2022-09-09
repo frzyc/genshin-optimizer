@@ -29,7 +29,7 @@ import useDBState from '../../ReactHooks/useDBState';
 import { initCharMeta } from '../../stateInit';
 
 type CharacterCardProps = {
-  characterKey: CharacterKey | "",
+  characterKey: CharacterKey,
   onClick?: (characterKey: CharacterKey) => void,
   onClickHeader?: (characterKey: CharacterKey) => void,
   onClickTeammate?: (characterKey: CharacterKey) => void,
@@ -37,9 +37,10 @@ type CharacterCardProps = {
   weaponChildren?: Displayable,
   characterChildren?: Displayable,
   footer?: Displayable,
+  hideStats?: boolean
   isTeammateCard?: boolean,
 }
-export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, characterChildren, onClick, onClickHeader, onClickTeammate, footer, isTeammateCard }: CharacterCardProps) {
+export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, characterChildren, onClick, onClickHeader, onClickTeammate, footer, hideStats, isTeammateCard }: CharacterCardProps) {
   const { teamData: teamDataContext } = useContext(DataContext)
   const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
   const character = useCharacter(characterKey)
@@ -62,18 +63,18 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
 
   const [{ favorite }, setCharMeta] = useDBState(`charMeta_${characterKey}`, initCharMeta)
 
-  if (!character || !dataContextObj || !characterContextObj) return null;
-
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
-    <CharacterContext.Provider value={characterContextObj}><DataContext.Provider value={dataContextObj}>
-      <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
-        <Box sx={{ display: "flex", position: "absolute", zIndex: 2, opacity: 0.7 }}>
-          <IconButton sx={{ p: 0.5 }} onClick={_ => setCharMeta({ favorite: !favorite })}>
-            {favorite ? <Favorite /> : <FavoriteBorder />}
-          </IconButton>
-        </Box>
-        <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >
-          <Header onClick={!onClick ? onClickHeader : undefined} />
+    <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+      <Box sx={{ display: "flex", position: "absolute", zIndex: 2, opacity: 0.7 }}>
+        <IconButton sx={{ p: 0.5 }} onClick={_ => setCharMeta({ favorite: !favorite })}>
+          {favorite ? <Favorite /> : <FavoriteBorder />}
+        </IconButton>
+      </Box>
+      <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >
+        {(character && dataContextObj && characterContextObj) ? <CharacterContext.Provider value={characterContextObj}><DataContext.Provider value={dataContextObj}>
+          <Header characterKey={characterKey} onClick={!onClick ? onClickHeader : undefined} >
+            <HeaderContent />
+          </Header>
           <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
             <Artifacts />
             {!isTeammateCard && <Grid container columns={4} spacing={0.75}>
@@ -83,37 +84,33 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
               {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} onClick={!onClick ? onClickTeammate : undefined} index={i} /></Grid>)}
             </Grid>}
             {isTeammateCard && <WeaponFullCard weaponId={character.equippedWeapon} />}
-            {!isTeammateCard && <Stats />}
+            {!isTeammateCard && !hideStats && <Stats />}
             {weaponChildren}
             {artifactChildren}
             {characterChildren}
           </CardContent>
-        </ConditionalWrapper>
-        {footer}
-      </CardLight>
-    </DataContext.Provider></CharacterContext.Provider>
+        </DataContext.Provider></CharacterContext.Provider> :
+          < >
+            <Header characterKey={characterKey} onClick={onClick} >
+              <HeaderContentNew characterKey={characterKey} />
+            </Header>
+            <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1, height: "100%" }}>
+            </CardContent>
+          </>}
+      </ConditionalWrapper>
+      {footer}
+    </CardLight>
+
   </Suspense>
 }
-function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void }) {
-  const { characterSheet } = useContext(CharacterContext)
-  const { data } = useContext(DataContext)
-  const characterKey = data.get(input.charKey).value as CharacterKey
-  const characterEle = data.get(input.charEle).value as ElementKey
-  const characterLevel = data.get(input.lvl).value
-  const constellation = data.get(input.constellation).value
-  const ascension = data.get(input.asc).value
-  const autoBoost = data.get(input.bonus.auto).value
-  const skillBoost = data.get(input.bonus.skill).value
-  const burstBoost = data.get(input.bonus.burst).value
-
-  const tAuto = data.get(input.total.auto).value
-  const tSkill = data.get(input.total.skill).value
-  const tBurst = data.get(input.total.burst).value
+function Header({ children, characterKey, onClick }: { children: JSX.Element, characterKey: CharacterKey, onClick?: (characterKey: CharacterKey) => void }) {
+  const characterSheet = usePromise(() => CharacterSheet.get(characterKey), [characterKey])
 
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={() => characterKey && onClick?.(characterKey)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
     [onClick, characterKey],
   )
+  if (!characterSheet) return null
   return <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >
     <Box display="flex"
       position="relative"
@@ -140,32 +137,67 @@ function Header({ onClick }: { onClick?: (characterKey: CharacterKey) => void })
         />
       </Box>
       <Box flexGrow={1} sx={{ py: 1, pr: 1 }} display="flex" flexDirection="column" zIndex={1}>
-        <Chip label={<Typography variant="subtitle1">{characterSheet.name}</Typography>} size="small" color={characterEle} sx={{ opacity: 0.85 }} />
-        <Grid container spacing={1} flexWrap="nowrap">
-          <Grid item sx={{ textShadow: "0 0 5px gray" }}>
-            <Typography component="span" variant="h6" whiteSpace="nowrap" >Lv. {characterLevel}</Typography>
-            <Typography component="span" variant="h6" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant="h6"><SqBadge>C{constellation}</SqBadge></Typography>
-          </Grid>
-        </Grid>
-        <Grid container spacing={1} flexWrap="nowrap">
-          <Grid item>
-            <Chip color={autoBoost ? "info" : "secondary"} label={<strong >{tAuto}</strong>} />
-          </Grid>
-          <Grid item>
-            <Chip color={skillBoost ? "info" : "secondary"} label={<strong >{tSkill}</strong>} />
-          </Grid>
-          <Grid item>
-            <Chip color={burstBoost ? "info" : "secondary"} label={<strong >{tBurst}</strong>} />
-          </Grid>
-        </Grid>
-        <Typography mt={1} ><StarsDisplay stars={characterSheet.rarity} colored /></Typography>
+        {children}
       </Box>
     </Box>
   </ConditionalWrapper>
 }
+
+function HeaderContent() {
+  const { characterSheet } = useContext(CharacterContext)
+  const { data } = useContext(DataContext)
+  const characterEle = data.get(input.charEle).value as ElementKey
+  const characterLevel = data.get(input.lvl).value
+  const constellation = data.get(input.constellation).value
+  const ascension = data.get(input.asc).value
+  const autoBoost = data.get(input.bonus.auto).value
+  const skillBoost = data.get(input.bonus.skill).value
+  const burstBoost = data.get(input.bonus.burst).value
+
+  const tAuto = data.get(input.total.auto).value
+  const tSkill = data.get(input.total.skill).value
+  const tBurst = data.get(input.total.burst).value
+
+  return <>
+    <Chip label={<Typography variant="subtitle1">{characterSheet.name}</Typography>} size="small" color={characterEle} sx={{ opacity: 0.85 }} />
+    <Grid container spacing={1} flexWrap="nowrap">
+      <Grid item sx={{ textShadow: "0 0 5px gray" }}>
+        <Typography component="span" variant="h6" whiteSpace="nowrap" >Lv. {characterLevel}</Typography>
+        <Typography component="span" variant="h6" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
+      </Grid>
+      <Grid item>
+        <Typography variant="h6"><SqBadge>C{constellation}</SqBadge></Typography>
+      </Grid>
+    </Grid>
+    <Grid container spacing={1} flexWrap="nowrap">
+      <Grid item>
+        <Chip color={autoBoost ? "info" : "secondary"} label={<strong >{tAuto}</strong>} />
+      </Grid>
+      <Grid item>
+        <Chip color={skillBoost ? "info" : "secondary"} label={<strong >{tSkill}</strong>} />
+      </Grid>
+      <Grid item>
+        <Chip color={burstBoost ? "info" : "secondary"} label={<strong >{tBurst}</strong>} />
+      </Grid>
+    </Grid>
+    <Typography mt={1} ><StarsDisplay stars={characterSheet.rarity} colored /></Typography>
+
+  </>
+}
+
+function HeaderContentNew({ characterKey }: { characterKey: CharacterKey }) {
+  const characterSheet = usePromise(() => CharacterSheet.get(characterKey), [characterKey])
+
+  if (!characterSheet) return null
+  return <>
+    <Chip label={<Typography variant="subtitle1">{characterSheet.name}</Typography>} size="small" color={characterSheet.elementKey} sx={{ opacity: 0.85 }} />
+    <Box mt={1}>
+      <Typography variant="h4"><SqBadge>NEW</SqBadge></Typography>
+    </Box>
+    <Typography mt={1.5} ><StarsDisplay stars={characterSheet.rarity} colored /></Typography>
+  </>
+}
+
 function Artifacts() {
   const { database } = useContext(DatabaseContext)
   const { data } = useContext(DataContext)

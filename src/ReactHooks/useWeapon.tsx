@@ -6,7 +6,7 @@ export default function useWeapon(weaponID: string | undefined = "") {
   const [weapon, setWeapon] = useState(database.weapons.get(weaponID))
   useEffect(() => setWeapon(database.weapons.get(weaponID)), [database, weaponID])
   useEffect(() =>
-    weaponID ? database.weapons.follow(weaponID, setWeapon) : undefined,
+    weaponID ? database.weapons.follow(weaponID, (k, r, v) => r === "update" && setWeapon(v)) : undefined,
     [weaponID, setWeapon, database])
   return weapon
 }

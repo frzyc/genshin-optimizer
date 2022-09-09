@@ -8,11 +8,13 @@ import { CharacterDataManager } from "./Data/CharacterData";
 import { StateDataManager } from "./Data/StateData";
 import { WeaponDataManager } from "./Data/WeaponData";
 import { migrate } from "./imports/migrate";
+import { CharacterTCDataManager } from "./Data/CharacterTCData";
 
 export class ArtCharDatabase {
   storage: DBStorage
   arts: ArtifactDataManager
   chars: CharacterDataManager
+  charTCs: CharacterTCDataManager
   weapons: WeaponDataManager
   states: StateDataManager
   buildSettings: BuildsettingDataManager
@@ -30,14 +32,18 @@ export class ArtCharDatabase {
     // Weapons needs to be instantiated after character to check for relations
     this.weapons = new WeaponDataManager(this)
 
+    this.weapons.ensureEquipment()
+
     this.states = new StateDataManager(this)
+
+    // This should be instantiated after artifacts, so that invalid artifacts that persists in build results can be pruned.
     this.buildSettings = new BuildsettingDataManager(this)
+
+    this.charTCs = new CharacterTCDataManager(this)
 
     // invalidates character when things change.
     this.chars.followAny((key) => {
-      if (typeof key === "string")
-        this.invalidateTeamData(key as CharacterKey)
-
+      this.invalidateTeamData(key as CharacterKey)
       this.states.set("dbMeta", { lastEdit: Date.now() })
     })
     this.arts.followAny(() => {
@@ -56,6 +62,7 @@ export class ArtCharDatabase {
   }
   invalidateTeamData(key: CharacterKey | "") {
     delete this.teamData[key]
+    Object.entries(this.teamData).forEach(([k, teamData]) => teamData[key] && delete this.teamData[k])
   }
   clear() {
     [this.arts, this.chars, this.weapons, this.states, this.buildSettings].map(dm => dm.clear())

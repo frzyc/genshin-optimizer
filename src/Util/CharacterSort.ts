@@ -4,7 +4,7 @@ import i18n from "../i18n";
 import { initCharMeta } from "../stateInit";
 import { CharacterKey } from "../Types/consts";
 import { FilterConfigs, SortConfigs } from "./SortByFilters";
-export const characterSortKeys = ["level", "rarity", "name"]
+export const characterSortKeys = ["new", "level", "rarity", "name",] as const
 export type CharacterSortKey = typeof characterSortKeys[number]
 
 export function characterSortConfigs(database: ArtCharDatabase, characterSheets: Record<CharacterKey, CharacterSheet>): SortConfigs<CharacterSortKey, CharacterKey> {

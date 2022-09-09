@@ -80,8 +80,8 @@ const dmgFormulas = {
     heal: healNode("atk", percent(datamine.passive2.healAtk_), 0),
   },
   constellation4: {
-    cryoShield: shieldElement("cryo", shieldNode("hp", percent(datamine.constellation4.shieldHp_), 0)),
-    shield: shieldNode("hp", percent(datamine.constellation4.shieldHp_), 0),
+    shield: greaterEq(input.constellation, 4, shieldNode("hp", percent(datamine.constellation4.shieldHp_), 0)),
+    cryoShield: greaterEq(input.constellation, 4, shieldElement("cryo", shieldNode("hp", percent(datamine.constellation4.shieldHp_), 0))),
   }
 }
 
@@ -203,9 +203,9 @@ const sheet: ICharacterSheet = {
       constellation3: ct.talentTemplate("constellation3", [{ fields: [{ node: nodeC3 }] }]),
       constellation4: ct.talentTemplate("constellation4", [ct.fieldsTemplate("constellation4", {
         fields: [{
-          node: infoMut(dmgFormulas.constellation4.cryoShield, { key: `char_${key}:c4shield` }),
+          node: infoMut(dmgFormulas.constellation4.shield, { key: `sheet:dmgAbsorption.none` }),
         }, {
-          node: infoMut(dmgFormulas.constellation4.shield, { key: `char_${key}:c4shield` }),
+          node: infoMut(dmgFormulas.constellation4.cryoShield, { key: `sheet:dmgAbsorption.cryo` }),
         }, {
           text: tr("burst.skillParams.2"),
           value: datamine.constellation4.duration,

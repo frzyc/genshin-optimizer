@@ -1,8 +1,8 @@
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Add, ChevronRight, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
-import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, ListItemIcon, ListItemText, MenuItem, Skeleton, styled, Typography, useMediaQuery, useTheme } from '@mui/material';
-import React, { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
+import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, MenuItem, Skeleton, styled, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { ArtifactSetSingleAutocomplete } from '../Components/Artifact/ArtifactAutocomplete';
 import ArtifactRarityDropdown from '../Components/Artifact/ArtifactRarityDropdown';
@@ -14,12 +14,12 @@ import CustomNumberTextField from '../Components/CustomNumberTextField';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import ImgIcon from '../Components/Image/ImgIcon';
 import ModalWrapper from '../Components/ModalWrapper';
-import StatIcon, { uncoloredEleIcons } from '../Components/StatIcon';
+import { StatColoredWithUnit } from '../Components/StatDisplay';
+import StatIcon from '../Components/StatIcon';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
+import { cachedArtifact, validateArtifact } from '../Database/Data/ArtifactData';
 import { DatabaseContext } from '../Database/Database';
-import { parseArtifact } from '../Database/imports/parse';
-import { validateArtifact } from '../Database/imports/validate';
 import KeyMap, { cacheValueString } from '../KeyMap';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
@@ -84,7 +84,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   useEffect(() => database.arts.followAny(setDirtyDatabase), [database, setDirtyDatabase])
 
   const [editorArtifact, artifactDispatch] = useReducer(artifactReducer, undefined)
-  const artifact = useMemo(() => editorArtifact && parseArtifact(editorArtifact), [editorArtifact])
+  const artifact = useMemo(() => editorArtifact && validateArtifact(editorArtifact), [editorArtifact])
 
   const [modalShow, setModalShow] = useState(false)
 
@@ -151,9 +151,9 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
     return { old: duplicated[0] ?? upgraded[0], oldType: duplicated.length !== 0 ? "duplicate" : "upgrade" }
   }, [artifact, artifactIdToEdit, database, dirtyDatabase])
 
-  const { artifact: cachedArtifact, errors } = useMemo(() => {
+  const { artifact: cArtifact, errors } = useMemo(() => {
     if (!artifact) return { artifact: undefined, errors: [] as Displayable[] }
-    const validated = validateArtifact(artifact, artifactIdToEdit)
+    const validated = cachedArtifact(artifact, artifactIdToEdit)
     if (old) {
       validated.artifact.location = old.location
       validated.artifact.exclude = old.exclude
@@ -211,7 +211,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const isValid = !errors.length
   const canClearArtifact = (): boolean => window.confirm(t`editor.clearPrompt` as string)
   const { rarity = 5, level = 0, slotKey = "flower" } = artifact ?? {}
-  const { currentEfficiency = 0, maxEfficiency = 0 } = cachedArtifact ? Artifact.getArtifactEfficiency(cachedArtifact, allSubstatFilter) : {}
+  const { currentEfficiency = 0, maxEfficiency = 0 } = cArtifact ? Artifact.getArtifactEfficiency(cArtifact, allSubstatFilter) : {}
   const preventClosing = processed.length || outstanding.length
   const onClose = useCallback(
     (e) => {
@@ -298,12 +298,11 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
 
             {/* main stat */}
             <Box component="div" display="flex">
-              <DropdownButton startIcon={element ? uncoloredEleIcons[element] : (artifact?.mainStatKey ? StatIcon[artifact.mainStatKey] : undefined)}
+              <DropdownButton startIcon={artifact?.mainStatKey ? StatIcon[artifact.mainStatKey] : undefined}
                 title={<b>{artifact ? KeyMap.getArtStr(artifact.mainStatKey) : t`mainStat`}</b>} disabled={!sheet} color={color} >
                 {Artifact.slotMainStats(slotKey).map(mainStatK =>
                   <MenuItem key={mainStatK} selected={artifact?.mainStatKey === mainStatK} disabled={artifact?.mainStatKey === mainStatK} onClick={() => update({ mainStatKey: mainStatK })} >
-                    <ListItemIcon>{StatIcon[mainStatK]}</ListItemIcon>
-                    <ListItemText>{KeyMap.getArtStr(mainStatK)}</ListItemText>
+                    <StatColoredWithUnit statKey={mainStatK} />
                   </MenuItem>)}
               </DropdownButton>
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>
@@ -362,7 +361,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
           {/* Right column */}
           <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
             {/* substat selections */}
-            {[0, 1, 2, 3].map((index) => <SubstatInput key={index} index={index} artifact={cachedArtifact} setSubstat={setSubstat} />)}
+            {[0, 1, 2, 3].map((index) => <SubstatInput key={index} index={index} artifact={cArtifact} setSubstat={setSubstat} />)}
             {texts && <CardLight><CardContent>
               <div>{texts.slotKey}</div>
               <div>{texts.mainStatKey}</div>
@@ -386,7 +385,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
           </Grid>}
           <Grid item xs={12} md={5.5} lg={4} ><CardLight>
             <Typography sx={{ textAlign: "center" }} py={1} variant="h6" color="text.secondary" >{t`editor.preview`}</Typography>
-            <ArtifactCard artifactObj={cachedArtifact} />
+            <ArtifactCard artifactObj={cArtifact} />
           </CardLight></Grid>
         </Grid>}
 
