@@ -1,8 +1,8 @@
-import { LPConstraint, maximizeLP, testExport, Weights } from "./LP"
+import { maximizeLP, testExport } from "./LP"
 import largeProblem from "./LP.test.data.json"
 
-const { solveLPEq, solveQP } = testExport
-const leeway = 1e-10
+const { solveQP } = testExport
+const leeway = 1e-12
 
 describe("LP", () => {
   describe("solveScaledQuadT", () => {
@@ -19,13 +19,6 @@ describe("LP", () => {
       expect(x).toEqual([0.5 + 2, 0.5 - 3])
     })
 
-  })
-  describe("solveLPEq", () => {
-    it("can solve welformed equations", () => {
-      // x = 1, y = 2
-      const sol = solveLPEq([[1, 1], [1, -1]], [3, -1])
-      expect(sol).toEqual([1, 2])
-    })
   })
   describe("maximizeLP", () => {
     it("can minimize simple constrained problem", () => {
@@ -64,10 +57,10 @@ describe("LP", () => {
       expect(y).toBeCloseTo(3, 8)
     })
     it("can solve a large test problem", () => {
-      const obj = largeProblem.obj as Weights, constraints = largeProblem.constraints as any as LPConstraint[]
-      const sol = maximizeLP(obj, constraints)
+      const { objective, constraints } = largeProblem
+      const sol = maximizeLP(objective, constraints as any)
 
-      constraints.forEach((constraint, i) => {
+      constraints.forEach(constraint => {
         const sum = Object.entries(constraint.weights).reduce((accu, [k, val]) => accu + sol[k] * val, 0)
         const { lowerBound, upperBound } = constraint
         if (lowerBound) expect(sum).toBeGreaterThanOrEqual(lowerBound - leeway)

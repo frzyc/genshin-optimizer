@@ -1,3 +1,7 @@
+import { create, lusolveDependencies } from "mathjs"
+
+const { lusolve } = create(lusolveDependencies, {})
+
 export type Weights = { [key in string]: number }
 export type LPConstraint = { weights: Weights, upperBound?: number, lowerBound?: number }
 
@@ -59,9 +63,10 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
   const eqe = Array(numY).fill(0).map(_ => Array(numY).fill(0))
 
   function try_create_result(): Weights | undefined {
-    const ixs: number[] = []
+    const ixs: number[] = [], nixs: number[] = []
     for (let ix = 0; ix < numX; ix++)
       if (x[ix] > s[ix]) ixs.push(ix)
+      else nixs.push(ix)
 
     const numVars = ixs.length + numY + 1, iTK = numVars - 1
     const vars = Array<number>(numVars).fill(0), d = [...vars], lambdas = [...vars], invQ = [...vars].fill(1)
@@ -90,6 +95,11 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
       solveQP(invQ, cb, constraintsT, d, vars, lambdas)
     } catch {
       return undefined
+    }
+    {
+      const factor = kappa <= tau ? vars[iTK] : 0
+      const s = nixs.map(ix => At[ix].reduce((accu, [iy, a]) => accu - a * y[iy], c[ix] * factor))
+      if (s.some(s => s < 0)) return undefined
     }
     if (kappa > tau) throw new Error("Unbounded or Infeasible")
     const tk = vars[iTK], result: Weights = {}
@@ -321,48 +331,11 @@ function solveQP(invQ: readonly number[], c: readonly number[], Et: readonly num
   // lambda = (E invQ E^T)^-1 (-1)(d + E invQ c)
   d.forEach((d, il) => lambda[il] = -d)
   Et.forEach((col, ix) => col.forEach((e, il) => lambda[il] -= e * invQ[ix] * c[ix]))
-  if (!solveLPEq(eqe, lambda))
-    throw new Error("Illformed/Infeasible Quadratic Programming")
+  const newLambda = lusolve(eqe, lambda) as number[]
+  newLambda.forEach((v, i) => lambda[i] = v)
 
   // x = -invQ (c + E^t lambda)
   Et.forEach((col, ix) => x[ix] = -invQ[ix] * col.reduce((accu, e, il) => accu + e * lambda[il], c[ix]))
 }
 
-function solveLPEq(_eqs: readonly number[][], vals: number[]): number[] | undefined {
-  const eqs = [..._eqs]
-
-  /** j := j - (j[key]/i[key]) i , eliminating `key` from `j`. Requires `i[key] != 0` */
-  function eliminate(i: number, j: number, key: number) {
-    const eqi = eqs[i], weight = eqs[j][key] / eqi[key]
-    if (weight) {
-      eqs[j] = eqs[j].map((val, index) => val - weight * eqi[index])
-      vals[j] -= weight * vals[i]
-    }
-    eqs[j][key] = 0
-  }
-  // Gaussian Elimination
-  for (let i = 0; i < vals.length; i++) {
-    let bestI = i
-    for (let j = i + 1; j < vals.length; j++)
-      if (Math.abs(eqs[bestI][i]) < Math.abs(eqs[j][i])) bestI = j
-    if (bestI !== i) {
-      [eqs[bestI], eqs[i]] = [eqs[i], eqs[bestI]];
-      [vals[bestI], vals[i]] = [vals[i], vals[bestI]]
-    }
-    if (Math.abs(eqs[i][i]) >= 1e-16)
-      for (let j = i + 1; j < vals.length; j++) eliminate(i, j, i)
-  }
-  // eqs is now an upper triangular matrix
-  for (let i = eqs.length - 1; i >= 0; i--) {
-    const eqi = eqs[i]
-    let sum = vals[i]
-    for (let j = i + 1; j < eqi.length; j++) sum -= eqi[j] * vals[j]
-    if (Math.abs(eqs[i][i]) < 1e-16)
-      if (Math.abs(sum) >= 1e-15) return undefined // Infeasible row
-      else continue
-    vals[i] = sum / eqi[i]
-  }
-  return vals
-}
-
-export const testExport = { solveLPEq, solveQP }
+export const testExport = { solveQP }
