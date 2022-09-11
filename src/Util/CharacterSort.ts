@@ -1,7 +1,7 @@
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { ArtCharDatabase } from "../Database/Database";
 import i18n from "../i18n";
-import { initCharMeta } from "../stateInit";
+import { initCharMeta } from "../ReactHooks/useDBState";
 import { CharacterKey } from "../Types/consts";
 import { FilterConfigs, SortConfigs } from "./SortByFilters";
 export const characterSortKeys = ["new", "level", "rarity", "name",] as const

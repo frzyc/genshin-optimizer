@@ -25,8 +25,7 @@ import { CharacterContext, CharacterContextObj } from '../../Context/CharacterCo
 import usePromise from '../../ReactHooks/usePromise';
 import CharacterSheet from '../../Data/Characters/CharacterSheet';
 import useCharacter from '../../ReactHooks/useCharacter';
-import useDBState from '../../ReactHooks/useDBState';
-import { initCharMeta } from '../../stateInit';
+import useDBState, { initCharMeta } from '../../ReactHooks/useDBState';
 
 type CharacterCardProps = {
   characterKey: CharacterKey,

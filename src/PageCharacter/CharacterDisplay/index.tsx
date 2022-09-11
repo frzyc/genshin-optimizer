@@ -29,6 +29,7 @@ import TabTalent from './Tabs/TabTalent';
 import TabTheorycraft from './Tabs/TabTheorycraft';
 import TabTeambuffs from './Tabs/TabTeambuffs';
 import TravelerElementSelect from './TravelerElementSelect';
+import SqBadge from '../../Components/SqBadge';
 
 export default function CharacterDisplay() {
   const navigate = useNavigate();
@@ -142,9 +143,14 @@ function TabNav({ tab }: { tab: string }) {
 
 
 function DetailStatButton() {
+  const { t } = useTranslation("page_character")
   const [open, onOpen, onClose] = useBoolState()
+  const { character: { bonusStats } } = useContext(CharacterContext)
+  const bStatsNum = Object.keys(bonusStats).length
   return <>
-    <Button color="info" startIcon={<BarChart />} onClick={onOpen}>Detailed Stats</Button>
+    <Button color="info" startIcon={<BarChart />} onClick={onOpen}>
+      {t`addStats.title`}{!!bStatsNum && <SqBadge sx={{ ml: 1 }} color="success" >{bStatsNum}</SqBadge>}
+    </Button>
     <StatModal open={open} onClose={onClose} />
   </>
 }

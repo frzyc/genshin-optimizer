@@ -178,6 +178,29 @@ describe("Database", () => {
     expect(importResult.characters?.new?.length).toEqual(2)
   })
 
+  test("Test import with no equip", async () => {
+    // When adding artifacts with equipment, expect character/weapons to be created
+    const art1 = cachedArtifact(await randomizeArtifact({ slotKey: "circlet" }), "").artifact
+
+    // Implicitly assign location
+    const id = database.arts.new({ ...art1, location: "Amber" })
+
+    expect(database.chars.get("Amber")!.equippedArtifacts.circlet).toEqual(id)
+
+    const good: IGOOD = {
+      format: "GOOD",
+      version: 1,
+      source: "Scanner",
+      artifacts: [
+        art1
+      ]
+    }
+
+    // Import the new artifact, with no location. this should respect current equipment
+    importGOOD(good, database, false, false)
+    expect(database.chars.get("Amber")!.equippedArtifacts.circlet).toEqual(id)
+  })
+
   test("Test partial merge", async () => {
     // Add Character and Artifact
     const albedo = initialCharacter("Albedo")

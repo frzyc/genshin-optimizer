@@ -18,8 +18,7 @@ import { TalentSheetElementKey } from "../../../../Data/Characters/CharacterShee
 import { getLevelString } from "../../../../Data/LevelData";
 import { uiInput as input } from "../../../../Formula";
 import useCharacterReducer from "../../../../ReactHooks/useCharacterReducer";
-import useDBState from "../../../../ReactHooks/useDBState";
-import { initCharMeta } from "../../../../stateInit";
+import useDBState, { initCharMeta } from "../../../../ReactHooks/useDBState";
 import { allSlotKeys, Ascension, ElementKey } from "../../../../Types/consts";
 import { range } from "../../../../Util/Util";
 import EquipmentSection from "./EquipmentSection";

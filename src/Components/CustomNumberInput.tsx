@@ -64,7 +64,7 @@ export default function CustomNumberInput({ value = 0, onChange, disabled = fals
     if (inputProps.max !== undefined && newNum > inputProps.max) return
     setNumber(newNum)
   }, [setNumber, parseFunc, inputProps.min, inputProps.max])
-  const onKeyDOwn = useCallback(e => e.key === "Enter" && onBlur(), [onBlur],)
+  const onKeyDown = useCallback(e => e.key === "Enter" && onBlur(), [onBlur],)
 
   return <StyledInputBase
     value={(focused && !number) ? "" : number}
@@ -75,7 +75,7 @@ export default function CustomNumberInput({ value = 0, onChange, disabled = fals
     onBlur={onBlur}
     onFocus={onFocus}
     disabled={disabled}
-    onKeyDown={onKeyDOwn}
+    onKeyDown={onKeyDown}
     {...restProps}
   />
 }

@@ -80,6 +80,7 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
   if (weapons?.length) {
     result.weapons.import = weapons.length
     const idsToRemove = new Set(base.weapons.values.map(w => w.id))
+    const hasEquipment = weapons.some(w => w.location)
     weapons.forEach(w => {
       const weapon = base.weapons.validate(w)
       if (!weapon) return result.weapons.invalid.push(w)
@@ -93,7 +94,7 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
         idsToRemove.delete(match.id)
         if (duplicated[0]) result.weapons.unchanged.push(weapon)
         else if (upgraded[0]) result.weapons.upgraded.push(weapon)
-        base.weapons.set(match.id, weapon)
+        base.weapons.set(match.id, { ...weapon, location: hasEquipment ? weapon.location : match.location })
       } else
         base.weapons.new(weapon)
     })
@@ -108,6 +109,7 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
   if (artifacts?.length) {
     result.artifacts.import = artifacts.length
     const idsToRemove = new Set(base.arts.values.map(a => a.id))
+    const hasEquipment = artifacts.some(a => a.location)
     artifacts.forEach((a, i) => {
       const art = base.arts.validate(a)
       if (!art) return result.artifacts.invalid.push(a)
@@ -122,7 +124,7 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
         idsToRemove.delete(match.id)
         if (duplicated[0]) result.artifacts.unchanged.push(art)
         else if (upgraded[0]) result.artifacts.upgraded.push(art)
-        base.arts.set(match.id, art)
+        base.arts.set(match.id, { ...art, location: hasEquipment ? art.location : match.location })
         importArtIds.set(`artifact_${i}`, match.id)
       } else
         importArtIds.set(`artifact_${i}`, base.arts.new(art))

@@ -4,7 +4,6 @@ import { Trans, useTranslation } from "react-i18next"
 import CardDark from '../Components/Card/CardDark'
 import DatabaseCard from './DatabaseCard'
 import LanguageCard from './LanguageCard'
-import TCToggleCard from './TCToggleCard'
 
 export default function PageSettings() {
   const { t } = useTranslation(["settings"]);
@@ -20,7 +19,6 @@ export default function PageSettings() {
     <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       <LanguageCard />
       <DatabaseCard />
-      <TCToggleCard />
     </CardContent>
   </CardDark>
 }
