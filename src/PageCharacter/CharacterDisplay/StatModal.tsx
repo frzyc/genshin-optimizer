@@ -1,6 +1,7 @@
 import { CardContent, CardHeader, Grid, ListItem, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useCallback, useContext, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import CardDark from "../../Components/Card/CardDark";
 import CardLight from "../../Components/Card/CardLight";
 import CloseButton from "../../Components/CloseButton";
@@ -22,9 +23,10 @@ const cols = {
 }
 
 export default function StatModal({ open, onClose }) {
+  const { t } = useTranslation("page_character")
   return <ModalWrapper open={open} onClose={onClose}>
     <CardDark>
-      <CardHeader title="Detailed Stats" action={<CloseButton onClick={onClose} />} />
+      <CardHeader title={t`addStats.title`} action={<CloseButton onClick={onClose} />} />
       <CardContent sx={{ pt: 0 }}>
         <Stack spacing={1}>
           <BonusStatsEditor />

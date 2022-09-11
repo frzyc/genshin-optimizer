@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import CardLight from "../../../Components/Card/CardLight";
 import CharacterAutocomplete from "../../../Components/Character/CharacterAutocomplete";
 import CharacterCard from "../../../Components/Character/CharacterCard";
+import ColorText from "../../../Components/ColoredText";
 import DocumentDisplay from "../../../Components/DocumentDisplay";
 import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
 import InfoTooltip from "../../../Components/InfoTooltip";
@@ -59,8 +60,15 @@ export function TeamBuffDisplay() {
   </CardLight>
 }
 function ResonanceDisplay() {
+  const { t } = useTranslation("page_character")
   const { data } = useContext(DataContext)
+  const { character: { team } } = useContext(CharacterContext)
+  const teamCount = team.reduce((a, t) => a + (t ? 1 : 0), 1)
   return <>
+    <CardLight>
+      <CardHeader title={<span>{t<string>("tabTeambuff.team_reso")} <strong><ColorText color={teamCount >= 4 ? "success" : "warning"}>({teamCount}/4)</ColorText></strong> <InfoTooltip title={<Typography>{t`tabTeambuff.resonance_tip`}</Typography>} /></span>}
+        titleTypographyProps={{ variant: "subtitle2" }} />
+    </CardLight>
     {resonanceSheets.map((res, i) => {
       const icon = <InfoTooltip title={<Typography>{res.desc}</Typography>} />
       const title = <span>{res.name} {icon}</span>

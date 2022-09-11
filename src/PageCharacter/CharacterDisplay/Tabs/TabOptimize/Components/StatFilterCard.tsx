@@ -12,7 +12,7 @@ import { ElementKey, WeaponTypeKey } from "../../../../../Types/consts"
 import useBuildSetting from "../useBuildSetting"
 
 export default function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
-  const { t } = useTranslation("page_character")
+  const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const { buildSetting: { statFilters }, buildSettingDispatch } = useBuildSetting(characterKey)
@@ -30,8 +30,8 @@ export default function StatFilterCard({ disabled = false }: { disabled?: boolea
   return <Box>
     <CardLight>
       <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
-        <Typography>{t`tabOptimize.constraintFilter.title`}</Typography>
-        <InfoTooltip title={<Typography>{t`tabOptimize.constraintFilter.tooltip`}</Typography>} />
+        <Typography>{t`constraintFilter.title`}</Typography>
+        <InfoTooltip title={<Typography>{t`constraintFilter.tooltip`}</Typography>} />
       </CardContent>
     </CardLight>
     <Box display="flex" flexDirection="column" gap={0.5}>

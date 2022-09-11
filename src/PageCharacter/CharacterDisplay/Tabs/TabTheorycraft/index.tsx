@@ -1,7 +1,7 @@
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CopyAll, DeleteForever, Info, Refresh } from "@mui/icons-material";
-import { Box, Button, ButtonGroup, CardHeader, Divider, Grid, ListItem, MenuItem, Skeleton, Stack, ToggleButton } from "@mui/material";
+import { Box, Button, ButtonGroup, CardHeader, Divider, Grid, ListItem, MenuItem, Skeleton, Stack, ToggleButton, Typography } from "@mui/material";
 import { WeaponTypeKey } from "pipeline";
 import { useCallback, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -9,9 +9,11 @@ import { ArtifactSetSingleAutocomplete } from "../../../../Components/Artifact/A
 import ArtifactSetTooltip from "../../../../Components/Artifact/ArtifactSetTooltip";
 import SetEffectDisplay from "../../../../Components/Artifact/SetEffectDisplay";
 import { slotIconSVG } from "../../../../Components/Artifact/SlotNameWIthIcon";
+import BootstrapTooltip from "../../../../Components/BootstrapTooltip";
 import CardDark from "../../../../Components/Card/CardDark";
 import CardLight from "../../../../Components/Card/CardLight";
 import StatDisplayComponent from "../../../../Components/Character/StatDisplayComponent";
+import ColorText from "../../../../Components/ColoredText";
 import CustomNumberInput from "../../../../Components/CustomNumberInput";
 import DocumentDisplay from "../../../../Components/DocumentDisplay";
 import DropdownButton from "../../../../Components/DropdownMenu/DropdownButton";
@@ -38,7 +40,7 @@ import KeyMap, { cacheValueString } from "../../../../KeyMap";
 import useBoolState from "../../../../ReactHooks/useBoolState";
 import usePromise from "../../../../ReactHooks/usePromise";
 import useTeamData from "../../../../ReactHooks/useTeamData";
-import { SubstatKey } from "../../../../Types/artifact";
+import { MainStatKey, SubstatKey } from "../../../../Types/artifact";
 import { ICharTC, ICharTCArtifactSlot } from "../../../../Types/character";
 import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey, SubstatType, substatType } from "../../../../Types/consts";
 import { ICachedWeapon } from "../../../../Types/weapon";
@@ -179,7 +181,7 @@ export default function TabTheorycraft() {
             <ArtifactMainLevelCard artifactData={data.artifact} setArtifactData={setArtifact} />
           </Grid>
           <Grid item sx={{ flexGrow: 1 }}  >
-            <ArtifactSubCard substats={data.artifact.substats.stats} setSubstats={setSubstats} substatsType={data.artifact.substats.type} setSubstatsType={setSubstatsType} />
+            <ArtifactSubCard substats={data.artifact.substats.stats} setSubstats={setSubstats} substatsType={data.artifact.substats.type} setSubstatsType={setSubstatsType} mainStatKeys={Object.values(data.artifact.slots).map(s => s.statKey)} />
           </Grid>
         </Grid >
       </Box>
@@ -207,7 +209,7 @@ function WeaponEditorCard({ weapon, setWeapon, weaponTypeKey }: { weapon: ICache
           sx={{ flexshrink: 1, flexBasis: 0, maxWidth: "30%", borderRadius: 1 }}
         />}
         <Stack spacing={1} flexGrow={1}>
-          <Button fullWidth color="info" sx={{ flexGrow: 1 }} onClick={onShow}>{weaponSheet?.name}</Button>
+          <Button fullWidth color="info" sx={{ flexGrow: 1 }} onClick={onShow}><Box sx={{ maxWidth: "10em" }}>{weaponSheet?.name}</Box></Button>
           {weaponSheet?.hasRefinement && <RefinementDropdown refinement={refinement} setRefinement={r => setWeapon({ refinement: r })} />}
         </Stack>
       </Box>
@@ -364,28 +366,36 @@ function ArtifactSetEditor({ setKey, value, setValue, deleteValue, remaining }: 
     </Stack>}
   </CardLight>
 }
-function ArtifactSubCard({ substats, setSubstats, substatsType, setSubstatsType }: { substats: Record<SubstatKey, number>, setSubstats: (substats: Record<SubstatKey, number>) => void, substatsType: SubstatType, setSubstatsType: (t: SubstatType) => void }) {
+function ArtifactSubCard({ substats, setSubstats, substatsType, setSubstatsType, mainStatKeys }: { substats: Record<SubstatKey, number>, setSubstats: (substats: Record<SubstatKey, number>) => void, substatsType: SubstatType, setSubstatsType: (t: SubstatType) => void, mainStatKeys: MainStatKey[] }) {
   const setValue = useCallback((key: SubstatKey) => (v: number) => setSubstats({ ...substats, [key]: v }), [substats, setSubstats])
   const { t } = useTranslation("page_character")
   const rv = Object.entries(substats).reduce((t, [k, v]) => t + (v / Artifact.substatValue(k)), 0) * 100
+  const rolls = Object.entries(substats).reduce((t, [k, v]) => t + (v / Artifact.substatValue(k, undefined, substatsType)), 0)
   return <CardLight sx={{ p: 1, height: "100%" }}>
     <Box sx={{ mb: 1, display: "flex", gap: 1 }}>
       <DropdownButton fullWidth title={t(`tabTheorycraft.substatType.${substatsType}`)}>
         {substatType.map(st => <MenuItem key={st} disabled={substatsType === st} onClick={() => setSubstatsType(st)}>{t(`tabTheorycraft.substatType.${st}`)}</MenuItem>)}
       </DropdownButton>
-      <CardDark sx={{ textAlign: "center", p: 0.5, minWidth: "10em" }}>
-        Tot. RV: <strong>{rv.toFixed(1)}%</strong>
-      </CardDark>
+      <BootstrapTooltip title={<Typography>{t`tabTheorycraft.maxTotalRolls`}</Typography>} placement="top">
+        <CardDark sx={{ textAlign: "center", py: 0.5, px: 1, minWidth: "15em", whiteSpace: "nowrap", display: "flex", gap: 2, justifyContent: "flex-end", alignItems: "center" }}>
+          <ColorText color={rolls > 45 ? "warning" : undefined} >Rolls: <strong>{rolls.toFixed(0)}</strong></ColorText>
+          <ColorText color={rolls > 45 ? "warning" : undefined} >RV: <strong>{rv.toFixed(1)}%</strong></ColorText>
+        </CardDark>
+      </BootstrapTooltip>
     </Box>
     <Stack spacing={1}>
-      {Object.entries(substats).map(([k, v]) => <ArtifactSubstatEditor key={k} statKey={k} value={v} setValue={setValue(k)} substatsType={substatsType} />)}
+      {Object.entries(substats).map(([k, v]) => <ArtifactSubstatEditor key={k} statKey={k} value={v} setValue={setValue(k)} substatsType={substatsType} mainStatKeys={mainStatKeys} />)}
     </Stack>
   </CardLight>
 }
-function ArtifactSubstatEditor({ statKey, value, setValue, substatsType }: { statKey: SubstatKey, value: number, setValue: (v: number) => void, substatsType: SubstatType }) {
+function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainStatKeys }: { statKey: SubstatKey, value: number, setValue: (v: number) => void, substatsType: SubstatType, mainStatKeys: MainStatKey[] }) {
+  const { t } = useTranslation("page_character")
   const unit = KeyMap.unit(statKey)
   const substatValue = Artifact.substatValue(statKey, 5, substatsType)
   const rv = value / Artifact.substatValue(statKey) * 100
+  const rolls = value / substatValue
+  const hasMain = mainStatKeys.includes(statKey as MainStatKey)
+  const invalid = rolls > (hasMain ? 4 * 6 : 5 * 6)
   return <Box display="flex" gap={1} justifyContent="space-between" alignItems="center">
     <CardDark sx={{ p: 0.5, minWidth: "11em", flexGrow: 1, display: "flex", gap: 1, alignItems: "center", justifyContent: "center" }}>
       {StatIcon[statKey]}{KeyMap.getStr(statKey)}{KeyMap.unit(statKey)}
@@ -399,16 +409,18 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType }: { sta
       sx={{ borderRadius: 1, px: 1, height: "100%", width: "6em" }}
       inputProps={{ sx: { textAlign: "right" }, min: 0 }} />
     <CustomNumberInput
-      color={value ? "success" : "primary"}
+      color={value ? (invalid ? "warning" : "success") : "primary"}
       float
       startAdornment={<Box sx={{ whiteSpace: "nowrap", width: "7em", display: "flex", justifyContent: "space-between" }}><span>{cacheValueString(substatValue, unit)}{unit}</span><span>x</span></Box>}
-      value={parseFloat((value / substatValue).toFixed(2))}
+      value={parseFloat(rolls.toFixed(2))}
       onChange={v => v !== undefined && setValue(v * substatValue)}
       sx={{ borderRadius: 1, px: 1, my: 0, height: "100%", width: "7em" }}
       inputProps={{ sx: { textAlign: "right", pr: 0.5, }, min: 0, step: 1 }} />
-    <CardDark sx={{ textAlign: "center", p: 0.5, minWidth: "8em" }}>
-      RV: <strong>{rv.toFixed(1)}%</strong>
-    </CardDark>
+    <BootstrapTooltip title={<Typography>{t(hasMain ? `tabTheorycraft.maxRollsMain` : `tabTheorycraft.maxRolls`)}</Typography>} placement="top">
+      <CardDark sx={{ textAlign: "center", p: 0.5, minWidth: "8em" }}>
+        <ColorText color={invalid ? "warning" : undefined}>RV: <strong>{rv.toFixed(1)}%</strong></ColorText>
+      </CardDark>
+    </BootstrapTooltip>
   </Box>
 
 }

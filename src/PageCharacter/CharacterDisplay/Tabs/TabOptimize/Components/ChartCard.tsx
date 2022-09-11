@@ -1,6 +1,7 @@
 import { CheckBox, CheckBoxOutlineBlank, Download, Info } from '@mui/icons-material';
 import { Button, CardContent, Collapse, Divider, Grid, MenuItem, styled, Tooltip, Typography } from '@mui/material';
 import { useContext, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Scatter, XAxis, YAxis, ZAxis } from 'recharts';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
@@ -25,6 +26,7 @@ type ChartCardProps = {
 }
 type Point = { x: number, y: number, min?: number }
 export default function ChartCard({ chartData, plotBase, setPlotBase, disabled = false }: ChartCardProps) {
+  const { t } = useTranslation(["page_character_optimize", "ui"])
   const [showDownload, setshowDownload] = useState(false)
   const [showMin, setshowMin] = useState(true)
   const { data } = useContext(DataContext)
@@ -66,14 +68,14 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
     <CardContent>
       <Grid container spacing={1} alignItems="center">
         <Grid item>
-          <Typography variant="h6" >Optimization Target vs</Typography>
+          <Typography >{t`tcGraph.vs`}</Typography>
         </Grid>
         <Grid item>
-          <DropdownButton title={plotBase ? KeyMap.get(plotBase) : "Not Selected"}
+          <DropdownButton size='small' title={plotBase ? KeyMap.get(plotBase) : t`tcGraph.notSel`}
             color={plotBase ? "success" : "primary"}
             disabled={disabled}
           >
-            <MenuItem onClick={() => { setPlotBase("") }}>Unselect</MenuItem>
+            <MenuItem onClick={() => { setPlotBase("") }}>{t`ui:unselect`}</MenuItem>
             <Divider />
             {statKeys.map(sKey => <MenuItem key={sKey} onClick={() => { setPlotBase(sKey as any) }}>{KeyMap.get(sKey)}</MenuItem>)}
           </DropdownButton>
@@ -84,12 +86,12 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
           </Tooltip>
         </Grid>
         {!!downloadData && <Grid item>
-          <Button startIcon={showMin ? <CheckBox /> : <CheckBoxOutlineBlank />}
+          <Button size='small' startIcon={showMin ? <CheckBox /> : <CheckBoxOutlineBlank />}
             color={showMin ? "success" : "secondary"}
-            onClick={() => setshowMin(!showMin)}>Show Min Stat Threshold</Button>
+            onClick={() => setshowMin(!showMin)}>{t`tcGraph.showMinStatThr`}</Button>
         </Grid>}
         {!!downloadData && <Grid item>
-          <Button color="info" startIcon={<Download />} onClick={() => setshowDownload(!showDownload)}>Download Data</Button>
+          <Button size='small' color="info" startIcon={<Download />} onClick={() => setshowDownload(!showDownload)}>{t`tcGraph.downloadData`}</Button>
         </Grid>}
       </Grid>
     </CardContent>
@@ -128,6 +130,7 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
   valueNode: NumNode,
   showMin: boolean
 }) {
+  const { t } = useTranslation("page_character_optimize")
   const plotBaseUnit = KeyMap.unit(plotNode.info?.key)
   const valueUnit = KeyMap.unit(valueNode.info?.key)
   return <ResponsiveContainer width="100%" height={600}>
@@ -137,8 +140,8 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
       <YAxis name="DMG" domain={["auto", "auto"]} unit={valueUnit} allowDecimals={false} tick={{ fill: 'white' }} type="number" />
       <ZAxis dataKey="y" range={[3, 25]} />
       <Legend />
-      <Scatter name="Optimization Target" dataKey="y" fill="#8884d8" line lineType="fitting" isAnimationActive={false} />
-      {showMin && <Line name="Minimum Stat Requirement Threshold" dataKey="min" stroke="#ff7300" type="stepBefore" connectNulls strokeWidth={2} isAnimationActive={false} />}
+      <Scatter name={t`tcGraph.optTarget`} dataKey="y" fill="#8884d8" line lineType="fitting" isAnimationActive={false} />
+      {showMin && <Line name={t`tcGraph.minStatReqThr`} dataKey="min" stroke="#ff7300" type="stepBefore" connectNulls strokeWidth={2} isAnimationActive={false} />}
     </ComposedChart>
   </ResponsiveContainer>
 }
