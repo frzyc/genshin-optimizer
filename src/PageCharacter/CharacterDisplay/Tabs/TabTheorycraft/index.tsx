@@ -394,8 +394,9 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
   const substatValue = Artifact.substatValue(statKey, 5, substatsType)
   const rv = value / Artifact.substatValue(statKey) * 100
   const rolls = value / substatValue
-  const hasMain = mainStatKeys.includes(statKey as MainStatKey)
-  const invalid = rolls > (hasMain ? 4 * 6 : 5 * 6)
+  const numMains = mainStatKeys.reduce((t, ms) => t + (ms === statKey ? 1 : 0), 0)
+  const maxRolls = (5 - numMains) * 6
+  const invalid = rolls > maxRolls
   return <Box display="flex" gap={1} justifyContent="space-between" alignItems="center">
     <CardDark sx={{ p: 0.5, minWidth: "11em", flexGrow: 1, display: "flex", gap: 1, alignItems: "center", justifyContent: "center" }}>
       {StatIcon[statKey]}{KeyMap.getStr(statKey)}{KeyMap.unit(statKey)}
@@ -416,7 +417,7 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
       onChange={v => v !== undefined && setValue(v * substatValue)}
       sx={{ borderRadius: 1, px: 1, my: 0, height: "100%", width: "7em" }}
       inputProps={{ sx: { textAlign: "right", pr: 0.5, }, min: 0, step: 1 }} />
-    <BootstrapTooltip title={<Typography>{t(hasMain ? `tabTheorycraft.maxRollsMain` : `tabTheorycraft.maxRolls`)}</Typography>} placement="top">
+    <BootstrapTooltip title={<Typography>{t(numMains ? `tabTheorycraft.maxRollsMain` : `tabTheorycraft.maxRolls`, { value: maxRolls })}</Typography>} placement="top">
       <CardDark sx={{ textAlign: "center", p: 0.5, minWidth: "8em" }}>
         <ColorText color={invalid ? "warning" : undefined}>RV: <strong>{rv.toFixed(1)}%</strong></ColorText>
       </CardDark>

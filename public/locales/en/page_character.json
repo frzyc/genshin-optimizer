@@ -47,7 +47,7 @@
     },
     "maxTotalRolls": "A \"valid\" build can only have a maximum of 45 rolls.",
     "maxRolls": "This substat can have a maximum of 30 rolls.",
-    "maxRollsMain": "Because a mainstat has the same stat, this substat can have a maximum of 24 rolls."
+    "maxRollsMain": "Because at least one mainstat has the same stat, this substat can have a maximum of {{value}} rolls."
   },
   "tabTeambuff": {
     "team_reso": "Team Resonance",

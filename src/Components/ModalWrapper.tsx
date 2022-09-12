@@ -12,9 +12,8 @@ const ModalContainer = styled(Container)(({ theme }) => ({
   padding: 0,
   minHeight: "100%",
   display: "flex", flexDirection: "column", justifyContent: "center",
-  pointerEvents: "none",
-  "& > *": {
-    pointerEvents: "auto"
+  ":focus": {
+    outline: "None"
   }
 }))
 
