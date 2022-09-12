@@ -158,7 +158,8 @@ export function CustomMultiTargetButton() {
             </Box>
             <Box>
               {customMultiTarget.map((ctar, i) => <CustomMultiTargetDisplay
-                key={Math.random()}
+                // Use a unique key, because indices dont allow for swapping very well.
+                key={`${i}${JSON.stringify(ctar.targets)}`}
                 index={i}
                 expanded={i === expandedInd}
                 onExpand={() => setExpandedInd(i === expandedInd ? false : i)}
@@ -236,10 +237,7 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
         <StyledInputBase value={target.name} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={setName} />
         <ButtonGroup size="small">
           <CustomNumberInputButtonGroupWrapper >
-            <CustomNumberInput onChange={n => {
-              console.log(n)
-              n && onOrder(n)
-            }} value={index + 1}
+            <CustomNumberInput onChange={n => onOrder(n!)} value={index + 1}
               inputProps={{ min: 1, max: nTargets, sx: { textAlign: "center" } }}
               sx={{ width: "100%", height: "100%", pl: 2 }} />
           </CustomNumberInputButtonGroupWrapper>
