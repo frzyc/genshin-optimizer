@@ -15,33 +15,20 @@ export type LPConstraint = { weights: Weights, upperBound?: number, lowerBound?:
  */
 export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Weights {
   // Solving the dual problem in https://www.jstor.org/stable/3690376
-  const yMap = new Map<string, number>()
-  function registerY(key: string): number {
-    const old = yMap.get(key)
-    if (old !== undefined) return old
-    yMap.set(key, yMap.size)
-    return yMap.size - 1
-  }
+  const yKeys = [...new Set([
+    ...Object.keys(objective), ...constraints.flatMap(con => Object.keys(con.weights))
+  ])], yMap = new Map(yKeys.map((key, i) => [key, i]))
 
   // Using the same variable names as the linked paper
-  const At: [iy: number, val: number][][] = [], c: number[] = []
-  Object.entries(objective).forEach(([y]) => registerY(y))
-  for (const { weights: input, lowerBound, upperBound } of constraints) {
-    const weights = Object.entries(input).map(([y, val]): [number, number] => [registerY(y), val])
-    if (upperBound !== undefined) { At.push(weights); c.push(upperBound) }
-    if (lowerBound !== undefined) {
-      At.push(weights.map(([index, val]): [number, number] => [index, -val]))
-      c.push(-lowerBound)
-    }
-  }
-  // yMap is initialized
-  const b = Array<number>(yMap.size).fill(0)
-  Object.entries(objective).forEach(([y, val]) => b[yMap.get(y)!] = val)
-  const denseAt = At.map(row => {
-    const dense = Array<number>(yMap.size).fill(0)
-    row.forEach(([iy, val]) => dense[iy] = val)
-    return dense
-  })
+  const upperBounds = constraints.filter(con => con.upperBound !== undefined)
+  const lowerBounds = constraints.filter(con => con.lowerBound !== undefined)
+  const denseAt = [
+    ...upperBounds.map(({ weights }) => yKeys.map(key => weights[key] ?? 0)),
+	...lowerBounds.map(({ weights }) => yKeys.map(key => -(weights[key] ?? 0)))
+  ], c = [
+    ...upperBounds.map(con => con.upperBound!), ...lowerBounds.map(con => -con.lowerBound!)
+  ], b = yKeys.map(y => objective[y] ?? 0)
+  const numX = denseAt.length, numY = yKeys.length
 
   /**
    * maximize b*y over y
@@ -49,18 +36,17 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
    *
    * using predictor-corrector method
    */
-  const numX = At.length, numY = yMap.size
-  const x = Array<number>(numX).fill(1), y = Array<number>(numY).fill(0), s = [...x]
+  const x = ones(numX), y = zeros(numY), s = ones(numX)
   let tau = 1, theta = 1, kappa = 1
 
-  const minus_b_bar = b.map(b => -b), minus_c_bar = c.map(c => 1 - c), z_bar = c.reduce((accu, c) => accu + c, 1)
-  At.forEach(at => at.forEach(([iy, val]) => minus_b_bar[iy] += val))
+  const minus_b_bar = b.map(b => -b), minus_c_bar = c.map(c => 1 - c), z_bar = 1 + sum(c)
+  denseAt.forEach(at => at.forEach((val, iy) => minus_b_bar[iy] += val))
 
   // Preallocated variables
-  const dx = [...x], dy = [...y], ds = [...s], xs = [...x], centX_tmp = [...x], xInvS = [...x], minus_r_prim = [...y].fill(0)
+  const dx = [...x], dy = [...y], ds = [...s], xs = [...x], centX_tmp = [...x], xInvS = [...x], minus_r_prim = zeros(numY)
   const dy_1 = [...y], dy_tau = [...y], dy_theta = [...y], dx_1 = [...x], dx_tau = [...x], dx_theta = [...x]
-  const bc_bar_norm = Math.sqrt(minus_b_bar.reduce((accu, b) => accu + b * b, 0) + minus_c_bar.reduce((accu, c) => accu + c * c, 0))
-  const eqe = Array(numY).fill(0).map(_ => Array(numY).fill(0))
+  const bc_bar_norm = Math.sqrt(dot(minus_b_bar, minus_b_bar) + dot(minus_c_bar, minus_c_bar))
+  const eqe = zeros(numY).map(_ => zeros(numY))
 
   function try_create_result(): Weights | undefined {
     const ixs: number[] = [], nixs: number[] = []
@@ -69,10 +55,10 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
       else nixs.push(ix)
 
     const numVars = ixs.length + numY + 1, iTK = numVars - 1
-    const vars = Array<number>(numVars).fill(0), d = [...vars], lambdas = [...vars], invQ = [...vars].fill(1)
-    const cb = [...y.map(y => -y), ...ixs.map(ix => -x[ix]), 0], Bt = ixs.map(ix => At[ix])
-    const constraintsT = Array(numVars).fill(0).map(_ => Array<number>(numVars).fill(0))
-    Bt.forEach((bt, ixb) => bt.forEach(([iy, val]) => {
+    const vars = zeros(numVars), d = [...vars], lambdas = [...vars], invQ = ones(numVars)
+    const cb = [...y.map(y => -y), ...ixs.map(ix => -x[ix]), 0], denseBt = ixs.map(ix => denseAt[ix])
+    const constraintsT = zeros(numVars).map(_ => zeros(numVars))
+    denseBt.forEach((bt, ixb) => bt.forEach((val, iy) => {
       constraintsT[ixb + numY][iy] = val
       constraintsT[iy][ixb + numY] = -val
     }))
@@ -98,7 +84,7 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
     }
     {
       const factor = kappa <= tau ? vars[iTK] : 0
-      const s = nixs.map(ix => At[ix].reduce((accu, [iy, a]) => accu - a * y[iy], c[ix] * factor))
+      const s = nixs.map(ix => c[ix] * factor - dot(denseAt[ix], y))
       if (s.some(s => s < 0)) return undefined
     }
     if (kappa > tau) throw new Error("Unbounded or Infeasible")
@@ -117,7 +103,7 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
       xInvS[ix] = x / s[ix]
     })
     const isPredictor = !(round % 2), gamma = isPredictor ? 0 : 1, tau_kappa = tau * kappa
-    const mu = xs.reduce((a, b) => a + b, tau_kappa) / (numX + 1)
+    const mu = (sum(xs) + tau_kappa) / (numX + 1)
 
     {
       // Exit condition
@@ -136,17 +122,13 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
     let r_tau = 0
     if (correctingResidual) {
       for (let ix = 0; ix < numX; ix++)
-        s[ix] = c[ix] * tau + minus_c_bar[ix] * theta - At[ix].reduce((accu, [iy, val]) => accu + val * y[iy], 0)
+        s[ix] = c[ix] * tau + minus_c_bar[ix] * theta - dot(denseAt[ix], y)
       for (let iy = 0; iy < numY; iy++)
         minus_r_prim[iy] = b[iy] * tau + minus_b_bar[iy] * theta
-      At.forEach((at, ix) => at.forEach(([iy, val]) => minus_r_prim[iy] -= val * x[ix]))
+      tmadd(denseAt, x, -1, minus_r_prim)
 
-      r_tau = (numX + 1) - z_bar * tau
-        - minus_c_bar.reduce((accu, c, ix) => accu + c * x[ix], 0)
-        + minus_b_bar.reduce((accu, b, iy) => accu + b * y[iy], 0)
-      kappa = z_bar * theta
-        - c.reduce((accu, c, ix) => accu + c * x[ix], 0)
-        + b.reduce((accu, b, iy) => accu + b * y[iy], 0)
+      r_tau = (numX + 1) - z_bar * tau - dot(minus_c_bar, x) + dot(minus_b_bar, y)
+      kappa = z_bar * theta - dot(c, x) + dot(b, y)
     }
 
     // Write dy in terms of dtau and dtheta
@@ -163,9 +145,9 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
       // If we went off the rail too much into infeasible region, these solvers will likely fail.
       break
     }
-    dy_1.forEach((v, i, arr) => arr[i] = -v)
-    dy_tau.forEach((v, i, arr) => arr[i] = -v)
-    dy_theta.forEach((v, i, arr) => arr[i] = -v)
+    minus(dy_1)
+    minus(dy_tau)
+    minus(dy_theta)
 
     // [  kappa ; tau * z_bar ] * [ dtau   ] + [ -tau c^T ; tau b^T ] * [ dx - dx_1 ]
     // [ -z_bar ;     0       ]   [ dtheta ]   [  c_bar^T ; b_bar^T ]   [ dy - dy_1 ]
@@ -175,41 +157,28 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
     //                              =
     // [ gamma * mu - tau * kappa ] - [ -tau c^T ; tau b^T ] * [ dx_1 ]
     // [            0             ]   [  c_bar^T ; b_bar^T ]   [ dy_1 ]
-    const m11 = kappa
-      - tau * dx_tau.reduce((accu, dx, ix) => accu + c[ix] * dx, 0)
-      + tau * dy_tau.reduce((accu, dy, iy) => accu + b[iy] * dy, 0)
-    const m12 = tau * z_bar
-      - tau * dx_theta.reduce((accu, dx, ix) => accu + c[ix] * dx, 0)
-      + tau * dy_theta.reduce((accu, dy, iy) => accu + b[iy] * dy, 0)
-    const m1 = gamma * mu - tau_kappa
-      + tau * dx_1.reduce((accu, dx, ix) => accu + c[ix] * dx, 0)
-      - tau * dy_1.reduce((accu, dy, iy) => accu + b[iy] * dy, 0)
-    const m21 = -z_bar
-      - dx_tau.reduce((accu, dx, ix) => accu + minus_c_bar[ix] * dx, 0)
-      + dy_tau.reduce((accu, dy, iy) => accu + minus_b_bar[iy] * dy, 0)
-    const m22 = 0
-      - dx_theta.reduce((accu, dx, ix) => accu + minus_c_bar[ix] * dx, 0)
-      + dy_theta.reduce((accu, dy, iy) => accu + minus_b_bar[iy] * dy, 0)
-    const m2 = -r_tau
-      + dx_1.reduce((accu, dx, ix) => accu + minus_c_bar[ix] * dx, 0)
-      - dy_1.reduce((accu, dy, iy) => accu + minus_b_bar[iy] * dy, 0)
+    const m11 = kappa - tau * dot(dx_tau, c) + tau * dot(dy_tau, b)
+    const m12 = tau * z_bar - tau * dot(dx_theta, c) + tau * dot(dy_theta, b)
+    const m1 = gamma * mu - tau_kappa + tau * dot(dx_1, c) - tau * dot(dy_1, b)
+    const m21 = -z_bar - dot(dx_tau, minus_c_bar) + dot(dy_tau, minus_b_bar)
+    const m22 = -dot(dx_theta, minus_c_bar) + dot(dy_theta, minus_b_bar)
+    const m2 = -r_tau + dot(dx_1, minus_c_bar) - dot(dy_1, minus_b_bar)
     const det = m11 * m22 - m21 * m12, dtau = (m1 * m22 - m2 * m12) / det, dtheta = (m11 * m2 - m21 * m1) / det
 
-    dx_1.forEach((d, ix) => dx[ix] = d + dx_tau[ix] * dtau + dx_theta[ix] * dtheta)
-    dy_1.forEach((d, iy) => dy[iy] = d + dy_tau[iy] * dtau + dy_theta[iy] * dtheta)
-    c.forEach((c, ix) => ds[ix] = c * dtau + minus_c_bar[ix] * dtheta)
-    At.forEach((at, ix) => at.forEach(([iy, val]) => ds[ix] -= dy[iy] * val))
-    const dkappa = z_bar * dtheta
-      - dx.reduce((accu, dx, ix) => accu + c[ix] * dx, 0)
-      + dy.reduce((accu, dy, iy) => accu + b[iy] * dy, 0)
+    dx.fill(0); dy.fill(0); ds.fill(0)
+    smadd(dx_1, 1, dx); smadd(dx_tau, dtau, dx); smadd(dx_theta, dtheta, dx)
+    smadd(dy_1, 1, dy); smadd(dy_tau, dtau, dy); smadd(dy_theta, dtheta, dy)
+    smadd(c, dtau, ds); smadd(minus_c_bar, dtheta, ds)
+    madd(denseAt, dy, -1, ds)
+    const dkappa = z_bar * dtheta - dot(dx, c) + dot(dy, b)
 
     let alpha: number
     if (isPredictor) {
       if (centrality(x, s, tau, kappa, { alpha: 0.75, dx, ds, dtau, dkappa }) < 0.5) {
         alpha = 0.75
       } else {
-        const Pq = xs.reduce((accu, xs) => accu + xs * xs, tau_kappa * tau_kappa)
-        // Guaranteed valid from https://www.jstor.org/stable/3690133, lemma 4
+        const Pq = dot(xs, xs) + tau_kappa * tau_kappa
+		// Guaranteed valid from https://www.jstor.org/stable/3690133, lemma 4
         alpha = Math.min(0.5, Math.sqrt(mu) / Math.sqrt(8 * Pq))
         // but numerical stability means we may need to nudge it a few times
         for (; alpha >= 1e-6; alpha /= 1.05)
@@ -227,9 +196,9 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
      * We'll fix the accumulated rounding errors, together
      * with other residuals in later correction steps.
      */
-    dx.forEach((dx, ix) => x[ix] += alpha * dx)
-    dy.forEach((dy, iy) => y[iy] += alpha * dy)
-    ds.forEach((ds, ix) => s[ix] += alpha * ds)
+    smadd(dx, alpha, x)
+    smadd(dy, alpha, y)
+    smadd(ds, alpha, s)
     tau += alpha * dtau
     theta += alpha * dtheta
     kappa += alpha * dkappa
@@ -245,34 +214,21 @@ function printResidual(round: number,
   At: [iy: number, val: number][][], b: number[], c: number[],
   b_bar: number[], c_bar: number[], z_bar: number,
   tau: number, theta: number, kappa: number) {
-  const test1 = Array<number>(y.length).fill(0), test2 = Array<number>(x.length).fill(0)
-  let test3 = 0, test4 = 0
+  const test1 = zeros(y.length), test2 = zeros(x.length)
   At.forEach((at, ix) => at.forEach(([iy, val]) => {
     test1[iy] += val * x[ix]
     test2[ix] -= val * y[iy]
   }))
-  b.forEach((b, iy) => {
-    test1[iy] -= b * tau
-    test3 += b * y[iy]
-  })
-  b_bar.forEach((b, iy) => {
-    test1[iy] += b * theta
-    test4 -= b * y[iy]
-  })
-  c.forEach((c, ix) => {
-    test2[ix] += c * tau
-    test3 -= c * x[ix]
-  })
-  c_bar.forEach((c, ix) => {
-    test2[ix] -= c * theta
-    test4 += c * x[ix]
-  })
-  s.forEach((s, ix) => test2[ix] -= s)
-  test3 += z_bar * theta - kappa
-  test4 += (x.length + 1) - z_bar * tau
+  smadd(b, -tau, test1)
+  smadd(b_bar, theta, test1)
+  smadd(c, tau, test2)
+  smadd(c_bar, -theta, test2)
+  smadd(s, -1, test2)
+  const test3 = dot(b, y) - dot(c, x) + z_bar * theta - kappa
+  const test4 = dot(c_bar, x) - dot(b_bar, y) + (x.length + 1) - z_bar * tau
   console.log("Residual", round,
-    test1.reduce((worst, x) => Math.max(worst, Math.abs(x)), -Infinity),
-    test2.reduce((worst, x) => Math.max(worst, Math.abs(x)), -Infinity),
+    Math.max(...test1.map(Math.abs)),
+	Math.max(...test2.map(Math.abs)),
     test3, test4)
 }
 
@@ -317,7 +273,7 @@ function solveQP(invQ: readonly number[], c: readonly number[], Et: readonly num
   if (!eqe || calcEQE) {
     // eqe = E invQ E^T
     const numL = d.length
-    if (!eqe) eqe = Array(numL).fill(0).map(_ => Array(numL))
+    if (!eqe) eqe = zeros(numL).map(_ => Array(numL))
     eqe.forEach(row => row.fill(0))
     Et.forEach((col, ix) =>
       col.forEach((e, il1) => {
@@ -335,7 +291,36 @@ function solveQP(invQ: readonly number[], c: readonly number[], Et: readonly num
   newLambda.forEach((v, i) => lambda[i] = v)
 
   // x = -invQ (c + E^t lambda)
-  Et.forEach((col, ix) => x[ix] = -invQ[ix] * col.reduce((accu, e, il) => accu + e * lambda[il], c[ix]))
+  Et.forEach((col, ix) => x[ix] = -invQ[ix] * (c[ix] + dot(col, lambda)))
+}
+
+function ones(len: number) {
+  return Array<number>(len).fill(1)
+}
+function zeros(len: number) {
+  return Array<number>(len).fill(0)
+}
+/** out[i] += a[i] * b */
+function smadd(a: number[], b: number, out: number[]) {
+  a.forEach((a, i) => out[i] += a * b)
+}
+/** out[i] += A[i][j] * b[j] * c */
+function madd(A: number[][], b: number[], c: number, out: number[]) {
+  A.forEach((row, i) => row.forEach((a, j) => out[i] += a * b[j] * c))
+}
+/** out[j] += b[i] * A[i][j] * c */
+function tmadd(A: number[][], b: number[], c: number, out: number[]) {
+  A.forEach((row, i) => row.forEach((a, j) => out[j] += a * b[i] * c))
+}
+function minus(a: number[]) {
+  a.forEach((a, i, array) => array[i] = -a)
+  return a
+}
+function sum(a: number[]) {
+  return a.reduce((accu, a) => accu + a, 0)
+}
+function dot(a: number[], b: number[]): number {
+  return a.reduce((accu, a, i) => accu + a * b[i], 0)
 }
 
 export const testExport = { solveQP }
