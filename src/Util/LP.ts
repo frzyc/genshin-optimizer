@@ -22,13 +22,13 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
   // Using the same variable names as the linked paper
   const upperBounds = constraints.filter(con => con.upperBound !== undefined)
   const lowerBounds = constraints.filter(con => con.lowerBound !== undefined)
-  const denseAt = [
+  const At = [
     ...upperBounds.map(({ weights }) => yKeys.map(key => weights[key] ?? 0)),
-	...lowerBounds.map(({ weights }) => yKeys.map(key => -(weights[key] ?? 0)))
+    ...lowerBounds.map(({ weights }) => yKeys.map(key => -(weights[key] ?? 0)))
   ], c = [
     ...upperBounds.map(con => con.upperBound!), ...lowerBounds.map(con => -con.lowerBound!)
   ], b = yKeys.map(y => objective[y] ?? 0)
-  const numX = denseAt.length, numY = yKeys.length
+  const numX = At.length, numY = yKeys.length
 
   /**
    * maximize b*y over y
@@ -40,7 +40,7 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
   let tau = 1, theta = 1, kappa = 1
 
   const minus_b_bar = b.map(b => -b), minus_c_bar = c.map(c => 1 - c), z_bar = 1 + sum(c)
-  denseAt.forEach(at => at.forEach((val, iy) => minus_b_bar[iy] += val))
+  At.forEach(at => at.forEach((val, iy) => minus_b_bar[iy] += val))
 
   // Preallocated variables
   const dx = [...x], dy = [...y], ds = [...s], xs = [...x], centX_tmp = [...x], xInvS = [...x], minus_r_prim = zeros(numY)
@@ -56,7 +56,7 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
 
     const numVars = ixs.length + numY + 1, iTK = numVars - 1
     const vars = zeros(numVars), d = [...vars], lambdas = [...vars], invQ = ones(numVars)
-    const cb = [...y.map(y => -y), ...ixs.map(ix => -x[ix]), 0], denseBt = ixs.map(ix => denseAt[ix])
+    const cb = [...y.map(y => -y), ...ixs.map(ix => -x[ix]), 0], denseBt = ixs.map(ix => At[ix])
     const constraintsT = zeros(numVars).map(_ => zeros(numVars))
     denseBt.forEach((bt, ixb) => bt.forEach((val, iy) => {
       constraintsT[ixb + numY][iy] = val
@@ -84,7 +84,7 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
     }
     {
       const factor = kappa <= tau ? vars[iTK] : 0
-      const s = nixs.map(ix => c[ix] * factor - dot(denseAt[ix], y))
+      const s = nixs.map(ix => c[ix] * factor - dot(At[ix], y))
       if (s.some(s => s < 0)) return undefined
     }
     if (kappa > tau) throw new Error("Unbounded or Infeasible")
@@ -122,10 +122,10 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
     let r_tau = 0
     if (correctingResidual) {
       for (let ix = 0; ix < numX; ix++)
-        s[ix] = c[ix] * tau + minus_c_bar[ix] * theta - dot(denseAt[ix], y)
+        s[ix] = c[ix] * tau + minus_c_bar[ix] * theta - dot(At[ix], y)
       for (let iy = 0; iy < numY; iy++)
         minus_r_prim[iy] = b[iy] * tau + minus_b_bar[iy] * theta
-      tmadd(denseAt, x, -1, minus_r_prim)
+      tmadd(At, x, -1, minus_r_prim)
 
       r_tau = (numX + 1) - z_bar * tau - dot(minus_c_bar, x) + dot(minus_b_bar, y)
       kappa = z_bar * theta - dot(c, x) + dot(b, y)
@@ -136,9 +136,9 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
     // dy = dy_1 + dy_tau * dtau + dy_theta * dtheta
     const centX = !gamma ? s : (s.forEach((s, ix) => centX_tmp[ix] = s - gamma * mu / x[ix]), centX_tmp)
     try {
-      solveQP(xInvS, centX, denseAt, minus_r_prim, dx_1, dy_1, eqe, true)
-      solveQP(xInvS, c, denseAt, b, dx_tau, dy_tau, eqe, false)
-      solveQP(xInvS, minus_c_bar, denseAt, minus_b_bar, dx_theta, dy_theta, eqe, false)
+      solveQP(xInvS, centX, At, minus_r_prim, dx_1, dy_1, eqe, true)
+      solveQP(xInvS, c, At, b, dx_tau, dy_tau, eqe, false)
+      solveQP(xInvS, minus_c_bar, At, minus_b_bar, dx_theta, dy_theta, eqe, false)
       if (correctingResidual) minus_r_prim.fill(0)
     } catch {
       // When we're getting too close to the boundary, a lot of numerical instability occurs.
@@ -169,7 +169,7 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
     smadd(dx_1, 1, dx); smadd(dx_tau, dtau, dx); smadd(dx_theta, dtheta, dx)
     smadd(dy_1, 1, dy); smadd(dy_tau, dtau, dy); smadd(dy_theta, dtheta, dy)
     smadd(c, dtau, ds); smadd(minus_c_bar, dtheta, ds)
-    madd(denseAt, dy, -1, ds)
+    madd(At, dy, -1, ds)
     const dkappa = z_bar * dtheta - dot(dx, c) + dot(dy, b)
 
     let alpha: number
@@ -178,7 +178,7 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
         alpha = 0.75
       } else {
         const Pq = dot(xs, xs) + tau_kappa * tau_kappa
-		// Guaranteed valid from https://www.jstor.org/stable/3690133, lemma 4
+        // Guaranteed valid from https://www.jstor.org/stable/3690133, lemma 4
         alpha = Math.min(0.5, Math.sqrt(mu) / Math.sqrt(8 * Pq))
         // but numerical stability means we may need to nudge it a few times
         for (; alpha >= 1e-6; alpha /= 1.05)
@@ -211,24 +211,24 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
 
 function printResidual(round: number,
   x: number[], y: number[], s: number[],
-  At: [iy: number, val: number][][], b: number[], c: number[],
-  b_bar: number[], c_bar: number[], z_bar: number,
+  At: number[][], b: number[], c: number[],
+  minus_b_bar: number[], minus_c_bar: number[], z_bar: number,
   tau: number, theta: number, kappa: number) {
   const test1 = zeros(y.length), test2 = zeros(x.length)
-  At.forEach((at, ix) => at.forEach(([iy, val]) => {
+  At.forEach((at, ix) => at.forEach((val, iy) => {
     test1[iy] += val * x[ix]
     test2[ix] -= val * y[iy]
   }))
   smadd(b, -tau, test1)
-  smadd(b_bar, theta, test1)
+  smadd(minus_b_bar, -theta, test1)
   smadd(c, tau, test2)
-  smadd(c_bar, -theta, test2)
+  smadd(minus_c_bar, theta, test2)
   smadd(s, -1, test2)
   const test3 = dot(b, y) - dot(c, x) + z_bar * theta - kappa
-  const test4 = dot(c_bar, x) - dot(b_bar, y) + (x.length + 1) - z_bar * tau
+  const test4 = dot(minus_b_bar, y) - dot(minus_c_bar, x) + (x.length + 1) - z_bar * tau
   console.log("Residual", round,
     Math.max(...test1.map(Math.abs)),
-	Math.max(...test2.map(Math.abs)),
+    Math.max(...test2.map(Math.abs)),
     test3, test4)
 }
 
