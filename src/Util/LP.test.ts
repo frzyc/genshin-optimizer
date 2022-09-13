@@ -10,13 +10,15 @@ describe("LP", () => {
       // min x^2 + y^2 s.t. x + y = 1
       const x = [0, 0], y = [0]
       solveQP([1, 1], [0, 0], [[1], [1]], [1], x, y)
-      expect(x).toEqual([0.5, 0.5])
+      expect(x[0]).toBeCloseTo(0.5)
+      expect(x[1]).toBeCloseTo(0.5)
     })
     it("can solve off-center quad", () => {
       // min (x-2)^2 + (y+3)^2 s.t. (x-2) + (y+3) = 1
       const x = [0, 0], y = [0]
       solveQP([1, 1], [-2, +3], [[1], [1]], [0], x, y)
-      expect(x).toEqual([0.5 + 2, 0.5 - 3])
+      expect(x[0]).toBeCloseTo(0.5 + 2)
+      expect(x[1]).toBeCloseTo(0.5 - 3)
     })
 
   })

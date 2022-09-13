@@ -84,8 +84,8 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
     }
     {
       const factor = kappa <= tau ? vars[iTK] : 0
-      const s = nixs.map(ix => c[ix] * factor - dot(At[ix], y))
-      if (s.some(s => s < 0)) return undefined
+      for (const ix of nixs) if (c[ix] * factor < dot(At[ix], y)) return undefined // s >= 0
+      for (let i = numY; i < numVars; i++) if (vars[i] < 0) return undefined // x, tau/kappa >= 0
     }
     if (kappa > tau) throw new Error("Unbounded or Infeasible")
     const tk = vars[iTK], result: Weights = {}
@@ -283,8 +283,10 @@ function solveQP(invQ: readonly number[], c: readonly number[], Et: readonly num
     for (let il1 = 0; il1 < numL; il1++)
       for (let il2 = il1 + 1; il2 < numL; il2++)
         eqe[il2][il1] = eqe[il1][il2]
+    for (let il = 0; il < numL; il++)
+      eqe[il][il] += 1e-12 // Preconditioning
   }
-  // lambda = (E invQ E^T)^-1 (-1)(d + E invQ c)
+  // -(E invQ E^T)lambda = d + E invQ c
   d.forEach((d, il) => lambda[il] = -d)
   Et.forEach((col, ix) => col.forEach((e, il) => lambda[il] -= e * invQ[ix] * c[ix]))
   const newLambda = lusolve(eqe, lambda) as number[]
