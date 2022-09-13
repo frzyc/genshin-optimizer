@@ -9,8 +9,8 @@ import { DatabaseContext } from "../../Database/Database";
 import usePromise from "../../ReactHooks/usePromise";
 import { initCharMeta } from "../../stateInit";
 import { allElements, allWeaponTypeKeys, CharacterKey } from "../../Types/consts";
-import { CharacterFilterConfigs, characterFilterConfigs } from "../../Util/CharacterSort";
-import { filterFunction } from "../../Util/SortByFilters";
+import { CharacterFilterConfigs, characterFilterConfigs, characterSortConfigs } from "../../Util/CharacterSort";
+import { filterFunction, sortFunction } from "../../Util/SortByFilters";
 import MenuItemWithImage from "../MenuItemWithImage";
 import SolidColoredTextField from "../SolidColoredTextfield";
 import ThumbSide from "./ThumbSide";
@@ -40,7 +40,11 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
   const { database } = useContext(DatabaseContext)
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
   const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
-  const characterKeys = database.chars.keys.filter(ck => characterSheets?.[ck] && filter(characterSheets[ck], ck)).sort()
+  const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
+  const characterKeys = useMemo(() => sortConfigs
+    && database.chars.keys.filter(ck => characterSheets?.[ck] && filter(characterSheets[ck], ck))
+      .sort(sortFunction(["favorite", "name"], false, sortConfigs)),
+    [characterSheets, sortConfigs, filter, database.chars.keys])
 
   const textForValue = useCallback((value: CharacterAutocompleteValue): string => {
     switch (value) {
@@ -68,10 +72,8 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
     }
   }, [defaultIcon, characterSheets])
 
-  const characterOptions = useMemo(() => filterConfigs && charOptions(characterKeys, filterConfigs, textForValue, showDefault, showInventory, showEquipped),
+  const characterOptions = useMemo(() => filterConfigs && characterKeys && charOptions(characterKeys, filterConfigs, textForValue, showDefault, showInventory, showEquipped),
     [filterConfigs, characterKeys, showDefault, showInventory, showEquipped, textForValue])
-
-
 
   if (!characterSheets || !characterOptions) return <Skeleton height={50} />
 
@@ -131,12 +133,9 @@ function charOptions(characterKeys: CharacterKey[], filterConfigs: CharacterFilt
   if (showEquipped) {
     base.push({ value: "Equipped", label: textForValue("Equipped") })
   }
-  const faves = characterKeys
-    .filter(filterFunction({ element: [...allElements], weaponType: [...allWeaponTypeKeys], favorite: "yes", name: "" }, filterConfigs))
-    .map(characterKey => ({ value: characterKey, label: textForValue(characterKey) }))
-  const nonFaves = characterKeys
-    .filter(filterFunction({ element: [...allElements], weaponType: [...allWeaponTypeKeys], favorite: "no", name: "" }, filterConfigs))
+  const chars = characterKeys
+    .filter(filterFunction({ element: [...allElements], weaponType: [...allWeaponTypeKeys], name: "" }, filterConfigs))
     .map(characterKey => ({ value: characterKey, label: textForValue(characterKey) }))
 
-  return base.concat(faves).concat(nonFaves)
+  return base.concat(chars)
 }

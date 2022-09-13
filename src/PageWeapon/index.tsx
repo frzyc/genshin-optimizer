@@ -88,7 +88,7 @@ export default function PageWeapon() {
     const totalWeaponNum = weapons.length
     if (!sortConfigs || !filterConfigs) return { weaponIdList: [], totalWeaponNum }
     const weaponIdList = weapons.filter(filterFunction({ weaponType, rarity, name: deferredSearchTerm }, filterConfigs))
-      .sort(sortFunction(sortType, ascending, sortConfigs))
+      .sort(sortFunction([sortType], ascending, sortConfigs))
       .map(weapon => weapon.id)
     return dbDirty && { weaponIdList, totalWeaponNum }
   }, [dbDirty, database, sortConfigs, filterConfigs, sortType, ascending, rarity, weaponType, deferredSearchTerm])

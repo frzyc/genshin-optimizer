@@ -49,18 +49,19 @@ export function artifactSortConfigs(effFilterSet: Set<SubstatKey>, probabilityFi
   return {
     rarity: {
       getValue: art => art.rarity ?? 0,
-      tieBreaker: "level"
+      tieBreakers: ["level", "artsetkey"]
     },
     level: {
       getValue: art => art.level ?? 0,
-      tieBreaker: "artsetkey"
+      tieBreakers: ["artsetkey", "rarity"]
     },
     artsetkey: {
       getValue: art => art.setKey ?? "",
-      tieBreaker: "level"
+      tieBreakers: ["level", "rarity"]
     },
     efficiency: {
-      getValue: art => Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency
+      getValue: art => Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency,
+      tieBreakers: ["artsetkey", "rarity", "level", "mefficiency"]
     },
     mefficiency: {
       getValue: art => Artifact.getArtifactEfficiency(art, effFilterSet).maxEfficiency

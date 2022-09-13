@@ -87,12 +87,8 @@ export default function PageCharacter() {
     if (!sortConfigs || !filterConfigs) return { charKeyList: [], totalCharNum }
     const { element, weaponType, sortType, ascending } = deferredState
     const charKeyList = database.chars.keys
-      .filter(filterFunction({ element, weaponType, favorite: "yes", name: deferredSearchTerm }, filterConfigs))
-      .sort(sortFunction(sortType, ascending, sortConfigs))
-      .concat(
-        database.chars.keys
-          .filter(filterFunction({ element, weaponType, favorite: "no", name: deferredSearchTerm }, filterConfigs))
-          .sort(sortFunction(sortType, ascending, sortConfigs)))
+      .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, filterConfigs))
+      .sort(sortFunction(["favorite", sortType], ascending, sortConfigs))
     return deferredDbDirty && { charKeyList, totalCharNum }
   },
     [deferredDbDirty, database, sortConfigs, filterConfigs, deferredState, deferredSearchTerm])
@@ -131,7 +127,7 @@ export default function PageCharacter() {
         </Grid>
         <Grid item >
           <SortByButton sx={{ height: "100%" }}
-            sortKeys={characterSortKeys.slice(1)} value={sortType} onChange={sortType => stateDispatch({ sortType })}
+            sortKeys={characterSortKeys.slice(1, 4)} value={sortType} onChange={sortType => stateDispatch({ sortType })}
             ascending={ascending} onChangeAsc={ascending => stateDispatch({ ascending })} />
         </Grid>
       </Grid>

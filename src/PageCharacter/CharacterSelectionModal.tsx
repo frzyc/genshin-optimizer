@@ -31,7 +31,7 @@ type CharacterSelectionModalProps = {
 }
 
 export function CharacterSelectionModal({ show, onHide, onSelect, filter = () => true, newFirst = false }: CharacterSelectionModalProps) {
-  const sortKeys = useMemo(() => newFirst ? [...characterSortKeys] : characterSortKeys.slice(1), [newFirst])
+  const sortKeys = useMemo(() => newFirst ? characterSortKeys.slice(0, 4) : characterSortKeys.slice(1, 4), [newFirst])
   const { database } = useContext(DatabaseContext)
   const [state, stateDispatch] = useDBState("CharacterDisplay", initialCharacterDisplayState)
   const { weaponType, element } = state
@@ -56,13 +56,8 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
   const ownedCharacterKeyList = useMemo(() => characterSheets ? allCharacterKeys.filter(cKey => filter(database.chars.get(cKey), characterSheets[cKey])) : [], [database, characterSheets, filter])
   const characterKeyList = useMemo(() => (characterSheets && sortConfigs && filterConfigs) ?
     ownedCharacterKeyList
-      .filter(filterFunction({ element, weaponType, favorite: "yes", name: deferredSearchTerm }, filterConfigs))
-      .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
-      .concat(
-        ownedCharacterKeyList
-          .filter(filterFunction({ element, weaponType, favorite: "no", name: deferredSearchTerm }, filterConfigs))
-          .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
-      )
+      .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, filterConfigs))
+      .sort(sortFunction(sortBy === "new" ? [sortBy] : ["favorite", sortBy], ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
     : [],
     [characterSheets, element, weaponType, sortBy, ascending, sortConfigs, filterConfigs, ownedCharacterKeyList, deferredSearchTerm])
 
