@@ -45,28 +45,29 @@ export class FastSplitWorker implements SplitWorker {
 
     while (this.filters.length) {
       const filter = this.filters.pop()!, { nodes, arts, maxConts: maxContributions, approxs: approximations, age } = filter
+      const oldCount = countBuilds(arts)
 
       if (!(age % 5)) {
         // The problem should've gotten small enough that
         // the old approximation becomes inaccurate
-        const { nodes: newNodes, arts: newArts } = pruneAll(nodes, this.min, arts, this.maxBuilds, {}, {})
-        const artRange = computeFullArtRange(arts)
-        const polys = polyUpperBound(newNodes, artRange)
-        const approxs = polys.map(poly => approximation(poly, artRange, arts))
-        const maxConts = approxs.map(approx => strictObjectMap(arts.values, val => maxContribution(val, approx)))
-        this.filters.push({ nodes: newNodes, arts: newArts, maxConts, approxs, age: age + 1 })
-
-        const newCounts = countBuilds(newArts), oldCount = countBuilds(arts)
+        const { nodes: newNodes, arts: newArts } = pruneAll(nodes, this.min, arts, this.maxBuilds, {}, { pruneNodeRange: true })
+        const newCounts = countBuilds(newArts)
         if (oldCount !== newCounts) this.addSkip(oldCount - newCounts)
+        if (newCounts) {
+          const artRange = computeFullArtRange(newArts), polys = polyUpperBound(newNodes, artRange)
+          const approxs = polys.map(poly => approximation(poly, artRange, newArts))
+          const maxConts = approxs.map(approx => strictObjectMap(newArts.values, val => maxContribution(val, approx)))
+          this.filters.push({ nodes: newNodes, arts: newArts, maxConts, approxs, age: age + 1 })
+        }
         continue
       }
 
-      const { min } = this, count = countBuilds(arts)
+      const { min } = this
       if (maxContributions.some((cont, i) => Object.values(cont).reduce((a, b) => a + b, 0) < min[i])) {
-        this.addSkip(count)
+        this.addSkip(oldCount)
         continue
       }
-      if (count <= minCount) {
+      if (oldCount <= minCount) {
         if (this.interim) {
           this.callback(this.interim)
           this.interim = undefined
@@ -75,7 +76,7 @@ export class FastSplitWorker implements SplitWorker {
       }
 
       const remaining = this.splitOldFilter(filter)
-      if (count !== remaining) this.addSkip(count - remaining)
+      if (oldCount !== remaining) this.addSkip(oldCount - remaining)
     }
     if (this.interim) {
       this.callback(this.interim)
@@ -187,42 +188,45 @@ function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string 
    */
   const added: bigint[] = [], weights: Weights = { $c: 0, $error: 0 }
   const compute = precompute([poly], {}, f => f.path[1], 1)
-  const [offset] = compute([{ id: "", values: {} }]), obj: Weights = { $error: -1 }
+  const [offset] = compute([{ id: "", values: {} }]), objective: Weights = { $error: -1 }
   for (const term of [...terms.get(poly)!].sort((a, b) => a > b ? -1 : 1)) {
     if (added.some(added => (added & term) === term)) continue
     added.push(term)
 
-    const vars: Weights = { $c: 1 }, constraints: LPConstraint[] = []
+    const vars: Weights = {}, lpVars: Weights = { $c: 1 }, constraints: LPConstraint[] = []
     const add_constraint = (index: number, current: bigint) => {
       if (index >= bounds.length) {
         const [val] = compute([{ id: "", values: vars }])
         constraints.push(
-          { weights: { ...vars }, lowerBound: (val - offset) / 1000 },
-          { weights: { ...vars, $error: -1 }, upperBound: (val - offset) / 1000 },
+          { weights: { ...lpVars }, lowerBound: val - offset },
+          { weights: { ...lpVars, $error: -1 }, upperBound: val - offset },
         )
         return
       }
       const [key, { min, max }] = bounds[index]
       if (current & term) {
         // Split upper/lower bound
-        if (min) vars[key] = min
-        else delete vars[key]
+        vars[key] = min
+        delete lpVars[key]
         add_constraint(index + 1, current << BigInt(1))
 
-        if (min != max) {
-          vars[key] = max
-          add_constraint(index + 1, current << BigInt(1))
-        }
+        vars[key] = max
+        lpVars[key] = 1
+        add_constraint(index + 1, current << BigInt(1))
       } else {
         // Use zero and skip
         add_constraint(index + 1, current << BigInt(1))
       }
     }
     add_constraint(0, BigInt(1))
-    const additional_weight = maximizeLP(obj, constraints)
+    const additional_weight = maximizeLP(objective, constraints)
     Object.entries(additional_weight).forEach(([key, val]) => weights[key] = (weights[key] ?? 0) + val)
   }
-  Object.keys(weights).forEach(key => weights[key] *= 1000)
+  bounds.forEach(([key, { min, max }]) => {
+    weights[key] /= max - min
+    weights.$c -= weights[key] * min
+  })
+  if (Object.values(weights).some(x => isNaN(x))) postMessage({ weights, bounds })
   weights.$c += offset
   delete weights.$error
   return weights
