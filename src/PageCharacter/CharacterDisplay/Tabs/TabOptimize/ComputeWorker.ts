@@ -55,12 +55,6 @@ export class ComputeWorker {
           if (value >= self.threshold) {
             build = { value, artifactIds: buffer.map(x => x.id) }
             builds.push(build)
-            if (builds.length > 127) {
-              builds
-                .sort((a, b) => b.value - a.value)
-                .splice(maxBuilds)
-              self.threshold = builds[maxBuilds - 1].value
-            }
           }
           if (plotData) {
             const x = result[min.length + 1]
@@ -94,7 +88,7 @@ export class ComputeWorker {
     if (Object.keys(this.plotData ?? {}).length >= 100000)
       this.plotData = mergePlot([this.plotData!])
 
-    if (this.builds.length >= 100000 || force) {
+    if (this.builds.length >= 1000 || force) {
       this.builds = this.builds
         .sort((a, b) => b.value - a.value)
         .slice(0, maxBuilds)
