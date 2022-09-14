@@ -197,7 +197,7 @@ function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot): NumNode[] {
       case "threshold": {
         const [value, threshold, pass, fail] = operandRanges
         if (value.min >= threshold.max) return f.operands[2]
-        else if (value.max < threshold.min) return constant(0)
+        else if (value.max < threshold.min) return f.operands[3]
         if (pass.max === pass.min &&
           fail.max === fail.min &&
           pass.min === fail.min && isFinite(pass.min))
