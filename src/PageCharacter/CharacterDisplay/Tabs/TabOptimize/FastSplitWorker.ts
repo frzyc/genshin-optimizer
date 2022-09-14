@@ -44,7 +44,7 @@ export class FastSplitWorker implements SplitWorker {
     if (newThreshold > this.min[0]) this.min[0] = newThreshold
 
     while (this.filters.length) {
-      const filter = this.filters.pop()!, { nodes, arts, maxConts: maxContributions, approxs: approximations, age } = filter
+      const filter = this.filters.pop()!, { nodes, arts, maxConts, age } = filter
       const oldCount = countBuilds(arts)
 
       if (!(age % 5)) {
@@ -63,7 +63,7 @@ export class FastSplitWorker implements SplitWorker {
       }
 
       const { min } = this
-      if (maxContributions.some((cont, i) => Object.values(cont).reduce((a, b) => a + b, 0) < min[i])) {
+      if (maxConts.some((cont, i) => Object.values(cont).reduce((a, b) => a + b, 0) < min[i])) {
         this.addSkip(oldCount)
         continue
       }
@@ -226,7 +226,6 @@ function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string 
     weights[key] /= max - min
     weights.$c -= weights[key] * min
   })
-  if (Object.values(weights).some(x => isNaN(x))) postMessage({ weights, bounds })
   weights.$c += offset
   delete weights.$error
   return weights
