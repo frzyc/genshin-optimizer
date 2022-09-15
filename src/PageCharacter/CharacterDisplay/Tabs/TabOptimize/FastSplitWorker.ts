@@ -1,10 +1,10 @@
 import { forEachNodes, mapFormulas } from "../../../../Formula/internal";
-import { allOperations, precompute } from "../../../../Formula/optimization";
+import { allOperations, optimize, precompute } from "../../../../Formula/optimization";
 import { NumNode, StrNode } from "../../../../Formula/type";
 import { constant, prod, sum } from "../../../../Formula/utils";
 import { SlotKey } from "../../../../Types/consts";
 import { LPConstraint, maximizeLP, Weights } from "../../../../Util/LP";
-import { assertUnreachable, objectKeyValueMap, objectMap, strictObjectMap } from "../../../../Util/Util";
+import { assertUnreachable, objectKeyValueMap, strictObjectMap } from "../../../../Util/Util";
 import type { InterimResult, Setup, SplitWorker } from "./BackgroundWorker";
 import { ArtifactBuildData, ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynMinMax, DynStat, filterArts, MinMax, pruneAll, RequestFilter } from "./common";
 
@@ -164,16 +164,11 @@ function linearUpperBound(monos: readonly NumNode[], artRange: DynMinMax): { [ke
    * the form `f1(c), f2(a, b)` where `f1` and `f2` are some polynomial functions.
    */
 
-  const bounds = Object.entries(artRange), ids = objectMap(artRange, (_, _k, i) => BigInt(1) << BigInt(i))
-  const terms = new Map<NumNode, bigint>()
-  monos.forEach(mono => {
-    let term = BigInt(0)
-    forEachNodes([mono], _ => { }, f => {
-      const { operation } = f
-      if (operation === "read") term |= ids[f.path[1]]!
-    })
-    terms.set(mono, term)
-  })
+  const terms = new Map<NumNode, Set<string>>(monos.map(mono => {
+    let term = new Set<string>()
+    forEachNodes([mono], _ => { }, f => { if (f.operation === "read") term.add(f.path[1]!) })
+    return [mono, term]
+  }))
 
   /**
    * From the list of monomials, find the corners of the hypercube involving
@@ -184,16 +179,23 @@ function linearUpperBound(monos: readonly NumNode[], artRange: DynMinMax): { [ke
    *
    * This gives Ax + c as a linear upperbound in the region dictated by `artRange`.
    */
-  const weights: Weights = { $c: 0, $error: 0 }, remaining = [...monos]
+  const weights: Weights = { $c: 0, $error: 0 }
+  let remaining = [...monos]
   while (remaining.length) {
-    const chosen = [remaining.pop()!], term = terms.get(chosen[0])!
-
+    let chosen = [remaining.pop()!], setTerm = terms.get(chosen[0])!
+    remaining = remaining.filter(mono => {
+      const newTerm = new Set([...setTerm, ...terms.get(mono)!])
+      if (newTerm.size !== setTerm.size && newTerm.size > 4) return true
+      chosen.push(mono)
+      setTerm = newTerm
+      return false
+    })
     const compute = precompute([sum(...chosen)], {}, f => f.path[1], 1)
 
-    const objective: Weights = { $error: -1 }
+    const objective: Weights = { $error: -1 }, term = [...setTerm]
     const vars: Weights = {}, lpVars: Weights = { $c: 1 }, constraints: LPConstraint[] = []
-    const add_constraint = (index: number, current: bigint) => {
-      if (index >= bounds.length) {
+    const add_constraint = (index: number) => {
+      if (index >= term.length) {
         const [val] = compute([{ id: "", values: vars }])
         constraints.push(
           { weights: { ...lpVars }, lowerBound: val },
@@ -201,24 +203,21 @@ function linearUpperBound(monos: readonly NumNode[], artRange: DynMinMax): { [ke
         )
         return
       }
-      const [key, { min, max }] = bounds[index]
-      if (current & term) {
-        // Split upper/lower bound
-        vars[key] = min
-        delete lpVars[key]
-        add_constraint(index + 1, current << BigInt(1))
+      const key = term[index], { min, max } = artRange[key]
+      // Split upper/lower bound
+      vars[key] = min
+      delete lpVars[key]
+      add_constraint(index + 1)
 
-        vars[key] = max
-        lpVars[key] = 1
-        add_constraint(index + 1, current << BigInt(1))
-      } else
-        add_constraint(index + 1, current << BigInt(1))
+      vars[key] = max
+      lpVars[key] = 1
+      add_constraint(index + 1)
     }
-    add_constraint(0, BigInt(1))
+    add_constraint(0)
     const additional_weight = maximizeLP(objective, constraints)
     Object.entries(additional_weight).forEach(([key, val]) => weights[key] = (weights[key] ?? 0) + val)
   }
-  bounds.forEach(([key, { min, max }]) => {
+  Object.entries(artRange).forEach(([key, { min, max }]) => {
     weights[key] /= max - min
     weights.$c -= weights[key] * min
   })
@@ -250,8 +249,8 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
     if (Math.abs(x0 - x1) < 1e-6) return constant(Math.max(y0, y1)) // degenerate case
     return sum(y0 - x0 * slope, prod(slope, node))
   }
-  return mapFormulas(nodes, f => {
-    const { operation } = f, operands = f.operands as readonly NumNode[]
+  const expanded = mapFormulas(nodes, f => {
+    const { operation, operands } = f
     switch (operation) {
       case "const": case "read": case "add": case "mul": return f
       case "res": {
@@ -310,5 +309,9 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
     if (operation === "add" && operands.some(op => op.operation === "add"))
       return sum(...operands.flatMap(op => op.operation === "add" ? op.operands : [op]))
     return f
-  }).map(node => node.operation === "add" ? node.operands as NumNode[] : [node])
+  })
+  // The `linearUpperBound` borks when there are monomials with zero coefficient.
+  // It should be safe enough if we simply don't add any zero constants during the expansion above.
+  // This `optimize`, however, should also prevent zeros introduced elsewhere from entering the pipeline.
+  return optimize(expanded, {}).map(node => node.operation === "add" ? node.operands as NumNode[] : [node])
 }
