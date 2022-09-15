@@ -37,46 +37,27 @@ export class BNBSplitWorker implements SplitWorker {
   }
 
   addFilter(filter: RequestFilter): void {
-    const arts = filterArts(this.arts, filter)
-    this.filters.push({ nodes: this.nodes, arts, maxConts: [], approxs: [], age: 0 })
+    this.addApproxFilter({ nodes: this.nodes, arts: filterArts(this.arts, filter), maxConts: [], approxs: [], age: 0 })
   }
   split(newThreshold: number, minCount: number): RequestFilter | undefined {
-    if (newThreshold > this.min[0]) this.min[0] = newThreshold
+    if (newThreshold > this.min[0]) {
+      this.min[0] = newThreshold
+      const filters = this.filters
+      this.filters = []
+      filters.forEach(filter => this.addApproxFilter(filter))
+    }
 
     while (this.filters.length) {
-      const filter = this.filters.pop()!, { nodes, arts, maxConts, age } = filter
-      const oldCount = countBuilds(arts)
+      const filter = this.filters.pop()!, { arts } = filter
 
-      if (!(age % 5)) {
-        // The problem should've gotten small enough that
-        // the old approximation becomes inaccurate
-        const { nodes: newNodes, arts: newArts } = pruneAll(nodes, this.min, arts, this.maxBuilds, {}, { pruneNodeRange: true })
-        const newCounts = countBuilds(newArts)
-        if (oldCount !== newCounts) this.addSkip(oldCount - newCounts)
-        if (newCounts) {
-          const artRange = computeFullArtRange(newArts), polys = polyUpperBound(newNodes, artRange)
-          const approxs = polys.map(poly => approximation(poly, artRange, newArts))
-          const maxConts = approxs.map(approx => strictObjectMap(newArts.values, val => maxContribution(val, approx)))
-          this.filters.push({ nodes: newNodes, arts: newArts, maxConts, approxs, age: age + 1 })
-        }
-        continue
-      }
-
-      const { min } = this
-      if (maxConts.some((cont, i) => Object.values(cont).reduce((a, b) => a + b, 0) < min[i])) {
-        this.addSkip(oldCount)
-        continue
-      }
-      if (oldCount <= minCount) {
+      if (countBuilds(arts) <= minCount) {
         if (this.interim) {
           this.callback(this.interim)
           this.interim = undefined
         }
         return strictObjectMap(arts.values, arts => ({ kind: "id" as const, ids: new Set(arts.map(art => art.id)) }))
       }
-
-      const remaining = this.splitOldFilter(filter)
-      if (oldCount !== remaining) this.addSkip(oldCount - remaining)
+      this.splitOldFilter(filter)
     }
     if (this.interim) {
       this.callback(this.interim)
@@ -84,21 +65,11 @@ export class BNBSplitWorker implements SplitWorker {
     }
     return undefined
   }
-  addSkip(count: number) {
-    if (this.interim) this.interim.skipped += count
-    else this.interim = { command: "interim", buildValues: undefined, tested: 0, failed: 0, skipped: count, }
-  }
 
-  splitOldFilter({ nodes, arts, maxConts: maxContributions, approxs, age }: Filter): number {
-    let totalRemaining = 1
-    const splitted = strictObjectMap(arts.values, (arts, slot) => {
-      const requiredConts = maxContributions.map((cont, i) => Object.values(cont)
-        .reduce((accu, val) => accu - val, this.min[i] - approxs[i].base + cont[slot]))
-      const remaining: { art: ArtifactBuildData, cont: number }[] = arts
-        .filter(({ id }) => approxs.every(({ conts }, i) => conts[id] > requiredConts[i]))
-        .map((art) => ({ art, cont: approxs[0].conts[art.id] }))
+  splitOldFilter({ nodes, arts, approxs, age }: Filter) {
+    const splitted = strictObjectMap(arts.values, arts => {
+      const remaining = arts.map((art) => ({ art, cont: approxs[0].conts[art.id] }))
         .sort(({ cont: c1 }, { cont: c2 }) => c2 - c1)
-      totalRemaining *= remaining.length
       const minCont = remaining[remaining.length - 1]?.cont ?? 0
       let contCutoff = remaining.reduce((accu, { cont }) => accu + cont, -minCont * remaining.length) / 3
 
@@ -109,14 +80,14 @@ export class BNBSplitWorker implements SplitWorker {
         low: { arts: lowArts, maxConts: approxs.map(approx => maxContribution(lowArts, approx)) },
       }
     })
-
-    const { filters } = this, remaining = Object.keys(splitted)
+    const remaining = Object.keys(splitted), self = this
     const current: StrictDict<SlotKey, ArtifactBuildData[]> = {} as any
     const currentCont: StrictDict<SlotKey, number[]> = {} as any
     function partialSplit() {
       if (!remaining.length) {
         const maxConts = approxs.map((_, i) => strictObjectMap(currentCont, val => val[i]))
-        return filters.push({ nodes, arts: { base: arts.base, values: { ...current } }, maxConts, approxs, age: age + 1 })
+        self.addApproxFilter({ nodes, arts: { base: arts.base, values: { ...current } }, maxConts, approxs, age: age + 1 })
+        return
       }
       const slot = remaining.pop()!, { high, low } = splitted[slot]
       if (low.arts.length) {
@@ -132,7 +103,33 @@ export class BNBSplitWorker implements SplitWorker {
       remaining.push(slot)
     }
     partialSplit()
-    return totalRemaining
+  }
+
+  addApproxFilter({ nodes, arts, maxConts, approxs, age }: Omit<Filter, "maxOpt">) {
+    const oldCount = countBuilds(arts)
+    if (!(age % 4)) {
+      // The problem should've gotten small enough that the old approximation becomes inaccurate
+      ({ nodes, arts } = pruneAll(nodes, this.min, arts, this.maxBuilds, {}, { pruneNodeRange: true }))
+      if (Object.values(arts.values).every(x => x.length)) {
+        const artRange = computeFullArtRange(arts), polys = polyUpperBound(nodes, artRange)
+        approxs = polys.map(poly => approximation(poly, artRange, arts))
+        maxConts = approxs.map(approx => strictObjectMap(arts.values, val => maxContribution(val, approx)))
+      }
+    }
+    const newValues = strictObjectMap(arts.values, (arts, slot) => {
+      const requiredConts = maxConts.map((cont, i) => Object.values(cont)
+        .reduce((accu, val) => accu - val, this.min[i] - approxs[i].base + cont[slot]))
+      return arts.filter(({ id }) => approxs.every(({ conts }, i) => conts[id] > requiredConts[i]))
+    })
+    arts = { base: arts.base, values: newValues }
+    const newCount = countBuilds(arts)
+    if (newCount !== oldCount) this.addSkip(oldCount - newCount)
+    if (newCount) this.filters.push({ nodes, arts, maxConts, approxs, age })
+  }
+
+  addSkip(count: number) {
+    if (this.interim) this.interim.skipped += count
+    else this.interim = { command: "interim", buildValues: undefined, tested: 0, failed: 0, skipped: count, }
   }
 }
 
