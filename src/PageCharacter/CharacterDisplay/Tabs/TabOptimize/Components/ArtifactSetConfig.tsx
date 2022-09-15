@@ -28,7 +28,7 @@ import { deepClone, objectKeyMap } from '../../../../../Util/Util';
 import useBuildSetting from '../useBuildSetting';
 
 export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, }) {
-  const { t } = useTranslation(["page_character", "sheet"])
+  const { t } = useTranslation(["page_character_optimize", "sheet"])
   const dataContext = useContext(DataContext)
   const { database } = useContext(DatabaseContext)
   const { character: { key: characterKey, conditional }, characterDispatch } = useContext(CharacterContext)
@@ -84,14 +84,14 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
     <CardLight sx={{ display: "flex" }}>
       <CardContent sx={{ flexGrow: 1 }} >
         <Typography>
-          <strong>{t`tabOptimize.artSetConfig.title`}</strong>
+          <strong>{t`artSetConfig.title`}</strong>
         </Typography>
         <Stack spacing={1}>
-          <Typography>{t`tabOptimize.artSetConfig.setEffCond`} <SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} {t<string>("tabOptimize.artSetConfig.enabled")}</SqBadge></Typography>
-          <Typography>{t`sheet:2set`} <SqBadge color="success">{allow2} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.allowed")}</SqBadge>{!!exclude2 && " / "}{!!exclude2 && <SqBadge color="secondary">{exclude2} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.excluded")}</SqBadge>}</Typography>
-          <Typography>{t`sheet:4set`} <SqBadge color="success">{allow4} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.allowed")}</SqBadge>{!!exclude4 && " / "}{!!exclude4 && <SqBadge color="secondary">{exclude4} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.excluded")}</SqBadge>}</Typography>
-          <Typography>{t`tabOptimize.artSetConfig.2rainbow`} <SqBadge color={allowRainbow2 ? "success" : "secondary"}><FontAwesomeIcon icon={allowRainbow2 ? faChartLine : faBan} className="fa-fw" /> {allowRainbow2 ? t<string>("tabOptimize.artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
-          <Typography>{t`tabOptimize.artSetConfig.4rainbow`} <SqBadge color={allowRainbow4 ? "success" : "secondary"}><FontAwesomeIcon icon={allowRainbow4 ? faChartLine : faBan} className="fa-fw" /> {allowRainbow4 ? t<string>("tabOptimize.artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
+          <Typography>{t`artSetConfig.setEffCond`} <SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} {t<string>("artSetConfig.enabled")}</SqBadge></Typography>
+          <Typography>{t`sheet:2set`} <SqBadge color="success">{allow2} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("artSetConfig.allowed")}</SqBadge>{!!exclude2 && " / "}{!!exclude2 && <SqBadge color="secondary">{exclude2} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("artSetConfig.excluded")}</SqBadge>}</Typography>
+          <Typography>{t`sheet:4set`} <SqBadge color="success">{allow4} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("artSetConfig.allowed")}</SqBadge>{!!exclude4 && " / "}{!!exclude4 && <SqBadge color="secondary">{exclude4} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("artSetConfig.excluded")}</SqBadge>}</Typography>
+          <Typography>{t`artSetConfig.2rainbow`} <SqBadge color={allowRainbow2 ? "success" : "secondary"}><FontAwesomeIcon icon={allowRainbow2 ? faChartLine : faBan} className="fa-fw" /> {allowRainbow2 ? t<string>("artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
+          <Typography>{t`artSetConfig.4rainbow`} <SqBadge color={allowRainbow4 ? "success" : "secondary"}><FontAwesomeIcon icon={allowRainbow4 ? faChartLine : faBan} className="fa-fw" /> {allowRainbow4 ? t<string>("artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
         </Stack>
 
       </CardContent>
@@ -101,28 +101,28 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
     </CardLight>
     {artifactSheets && <ModalWrapper open={open} onClose={onClose} ><CardDark>
       <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
-        <Typography variant="h6" >{t`tabOptimize.artSetConfig.title`}</Typography>
+        <Typography variant="h6" >{t`artSetConfig.title`}</Typography>
         <CloseButton onClick={onClose} />
       </CardContent>
       <Divider />
       <CardContent >
         <CardLight sx={{ mb: 1 }}><CardContent>
           <Box display="flex" gap={1}>
-            <Typography><strong>{t`tabOptimize.artSetConfig.modal.setCond.title`}</strong></Typography>
-            <Typography sx={{ flexGrow: 1 }}><SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} {t<string>("tabOptimize.artSetConfig.selected")}</SqBadge></Typography>
-            <Button size='small' onClick={resetArtConds} color="error" startIcon={<Replay />}>{t`tabOptimize.artSetConfig.modal.setCond.reset`}</Button>
+            <Typography><strong>{t`artSetConfig.modal.setCond.title`}</strong></Typography>
+            <Typography sx={{ flexGrow: 1 }}><SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} {t<string>("artSetConfig.selected")}</SqBadge></Typography>
+            <Button size='small' onClick={resetArtConds} color="error" startIcon={<Replay />}>{t`artSetConfig.modal.setCond.reset`}</Button>
           </Box>
-          <Typography>{t`tabOptimize.artSetConfig.modal.setCond.text`}</Typography>
+          <Typography>{t`artSetConfig.modal.setCond.text`}</Typography>
         </CardContent></CardLight>
         <CardLight sx={{ mb: 1 }}><CardContent>
           <Typography sx={{ flexGrow: 1 }}><strong>
-            <Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.title" >Artifact Sets <ColorText color='success'>Allowed<FontAwesomeIcon icon={faChartLine} className="fa-fw" /></ColorText> / <ColorText color='secondary' variant='light'>Excluded<FontAwesomeIcon icon={faBan} className="fa-fw" /></ColorText></Trans>
+            <Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.title" >Artifact Sets <ColorText color='success'>Allowed<FontAwesomeIcon icon={faChartLine} className="fa-fw" /></ColorText> / <ColorText color='secondary' variant='light'>Excluded<FontAwesomeIcon icon={faBan} className="fa-fw" /></ColorText></Trans>
           </strong></Typography>
-          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.intro">You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-set, and <strong>R</strong> is rainbow(off-set)</Trans></Typography>
-          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.2set"><strong><ColorText color='secondary' variant='light'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 2-Set</ColorText></strong> would exclude 2-Set builds: <strong><ColorText color='secondary' variant='light'>AA</ColorText>RRR</strong> and <strong><ColorText color='secondary' variant='light'>AAA</ColorText>RR</strong>.</Trans></Typography>
-          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.4set"><strong><ColorText color='secondary' variant='light'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 4-Set</ColorText></strong> would exclude 4-Set builds: <strong><ColorText color='secondary' variant='light'>AAAA</ColorText>R</strong> and <strong><ColorText color='secondary' variant='light'>AAAAA</ColorText></strong>.</Trans></Typography>
-          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.2rain"><strong><ColorText color='secondary' variant='light'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 3-Rainbow</ColorText></strong> would exclude 2-Set + 3-Rainbow builds: <strong>AA<ColorText color='secondary' variant='light'>RRR</ColorText></strong> and <strong>AAA<ColorText color='secondary' variant='light'>RR</ColorText></strong>.</Trans></Typography>
-          <Typography><Trans t={t} i18nKey="tabOptimize.artSetConfig.modal.ArtSetFilter.4rain"><strong><ColorText color='secondary' variant='light'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 5-Rainbow</ColorText></strong> would exclude full 5-Rainbow builds: <strong><ColorText color='secondary' variant='light'>RRRRR</ColorText></strong>.</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.intro">You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-set, and <strong>R</strong> is rainbow(off-set)</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.2set"><strong><ColorText color='secondary' variant='light'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 2-Set</ColorText></strong> would exclude 2-Set builds: <strong><ColorText color='secondary' variant='light'>AA</ColorText>RRR</strong> and <strong><ColorText color='secondary' variant='light'>AAA</ColorText>RR</strong>.</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.4set"><strong><ColorText color='secondary' variant='light'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 4-Set</ColorText></strong> would exclude 4-Set builds: <strong><ColorText color='secondary' variant='light'>AAAA</ColorText>R</strong> and <strong><ColorText color='secondary' variant='light'>AAAAA</ColorText></strong>.</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.2rain"><strong><ColorText color='secondary' variant='light'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 3-Rainbow</ColorText></strong> would exclude 2-Set + 3-Rainbow builds: <strong>AA<ColorText color='secondary' variant='light'>RRR</ColorText></strong> and <strong>AAA<ColorText color='secondary' variant='light'>RR</ColorText></strong>.</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.4rain"><strong><ColorText color='secondary' variant='light'>Excluding<FontAwesomeIcon icon={faBan} className="fa-fw" /> 5-Rainbow</ColorText></strong> would exclude full 5-Rainbow builds: <strong><ColorText color='secondary' variant='light'>RRRRR</ColorText></strong>.</Trans></Typography>
         </CardContent></CardLight>
         <Grid container columns={{ xs: 2, lg: 3 }} sx={{ mb: 1 }} spacing={1}>
           <Grid item xs={1}>
@@ -134,10 +134,10 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
           <Grid item xs={1}>
             <CardLight>
               <CardContent>
-                <Typography gutterBottom><strong><Trans t={t} i18nKey="tabOptimize.artSetConfig.alExRainbow"><ColorText color='success'>Allow <FontAwesomeIcon icon={faChartLine} className="fa-fw" /></ColorText> / <ColorText color='secondary' variant='light'>Exclude <FontAwesomeIcon icon={faBan} className="fa-fw" /></ColorText> Rainbow Builds</Trans></strong></Typography>
+                <Typography gutterBottom><strong><Trans t={t} i18nKey="artSetConfig.alExRainbow"><ColorText color='success'>Allow <FontAwesomeIcon icon={faChartLine} className="fa-fw" /></ColorText> / <ColorText color='secondary' variant='light'>Exclude <FontAwesomeIcon icon={faBan} className="fa-fw" /></ColorText> Rainbow Builds</Trans></strong></Typography>
                 <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                  <Button fullWidth onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey: "rainbow", num: 2 })} color={allowRainbow2 ? "success" : "secondary"} startIcon={!allowRainbow2 ? <CheckBoxOutlineBlank /> : <CheckBox />} endIcon={<FontAwesomeIcon icon={allowRainbow2 ? faChartLine : faBan} className="fa-fw" />}>{t`tabOptimize.artSetConfig.2rainbow`}</Button>
-                  <Button fullWidth onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey: "rainbow", num: 4 })} color={allowRainbow4 ? "success" : "secondary"} startIcon={!allowRainbow4 ? <CheckBoxOutlineBlank /> : <CheckBox />} endIcon={<FontAwesomeIcon icon={allowRainbow4 ? faChartLine : faBan} className="fa-fw" />}>{t`tabOptimize.artSetConfig.4rainbow`}</Button>
+                  <Button fullWidth onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey: "rainbow", num: 2 })} color={allowRainbow2 ? "success" : "secondary"} startIcon={!allowRainbow2 ? <CheckBoxOutlineBlank /> : <CheckBox />} endIcon={<FontAwesomeIcon icon={allowRainbow2 ? faChartLine : faBan} className="fa-fw" />}>{t`artSetConfig.2rainbow`}</Button>
+                  <Button fullWidth onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey: "rainbow", num: 4 })} color={allowRainbow4 ? "success" : "secondary"} startIcon={!allowRainbow4 ? <CheckBoxOutlineBlank /> : <CheckBox />} endIcon={<FontAwesomeIcon icon={allowRainbow4 ? faChartLine : faBan} className="fa-fw" />}>{t`artSetConfig.4rainbow`}</Button>
                 </Box>
               </CardContent>
             </CardLight>
@@ -157,13 +157,13 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   </>
 }
 function AllSetAllowExcludeCard({ numAllow, numExclude, setNum, setAllExclusion }: { numAllow: number, numExclude: number, setNum: 2 | 4, setAllExclusion: (setNum: 2 | 4, exclude?: boolean) => void }) {
-  const { t } = useTranslation(["page_character", "sheet"])
+  const { t } = useTranslation(["page_character_optimize", "sheet"])
   return <CardLight>
     <CardContent>
-      <Typography gutterBottom><strong>{t(`sheet:${setNum}set`)}</strong> <SqBadge color="success">{numAllow} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.allowed")}</SqBadge>{!!numExclude && " / "}{!!numExclude && <SqBadge color="secondary">{numExclude} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("tabOptimize.artSetConfig.excluded")}</SqBadge>}</Typography>
+      <Typography gutterBottom><strong>{t(`sheet:${setNum}set`)}</strong> <SqBadge color="success">{numAllow} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("artSetConfig.allowed")}</SqBadge>{!!numExclude && " / "}{!!numExclude && <SqBadge color="secondary">{numExclude} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("artSetConfig.excluded")}</SqBadge>}</Typography>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-        <Button fullWidth disabled={!numExclude} onClick={() => setAllExclusion(setNum, false)} color='success' startIcon={<FontAwesomeIcon icon={faChartLine} className="fa-fw" />}>{t(`tabOptimize.artSetConfig.allowAll${setNum}set`)}</Button>
-        <Button fullWidth disabled={!numAllow} onClick={() => setAllExclusion(setNum, true)} color='secondary' startIcon={<FontAwesomeIcon icon={faBan} className="fa-fw" />}>{t(`tabOptimize.artSetConfig.excludeAll${setNum}set`)}</Button>
+        <Button fullWidth disabled={!numExclude} onClick={() => setAllExclusion(setNum, false)} color='success' startIcon={<FontAwesomeIcon icon={faChartLine} className="fa-fw" />}>{t(`artSetConfig.allowAll${setNum}set`)}</Button>
+        <Button fullWidth disabled={!numAllow} onClick={() => setAllExclusion(setNum, true)} color='secondary' startIcon={<FontAwesomeIcon icon={faBan} className="fa-fw" />}>{t(`artSetConfig.excludeAll${setNum}set`)}</Button>
       </Box>
     </CardContent>
   </CardLight>

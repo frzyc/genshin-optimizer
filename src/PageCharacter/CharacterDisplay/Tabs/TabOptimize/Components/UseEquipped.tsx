@@ -23,7 +23,7 @@ import useBuildSetting from "../useBuildSetting";
 import { useOptimizeDBState } from "../DBState";
 
 export default function UseEquipped({ disabled = false }: { disabled?: boolean }) {
-  const { t } = useTranslation("page_character")
+  const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { useEquippedArts }, buildSettingDispatch } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
@@ -66,7 +66,7 @@ export default function UseEquipped({ disabled = false }: { disabled?: boolean }
       <CardContent>
         <Grid container spacing={1}>
           <Grid item flexGrow={1}>
-            <Typography variant="h6"><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.title">Character Priority for Equipped Artifacts</Trans></Typography>
+            <Typography variant="h6">{t`useEquipped.modal.title`}</Typography>
           </Grid>
           <Grid item sx={{ mb: -1 }}>
             <CloseButton onClick={onClose} />
@@ -77,8 +77,8 @@ export default function UseEquipped({ disabled = false }: { disabled?: boolean }
       <CardContent>
         <CardLight sx={{ mb: 1 }}>
           <CardContent>
-            <Typography gutterBottom><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.desc1">When generating a build, the Optimizer will only consider equipped artifacts from characters below the current character or those not on the list.</Trans></Typography>
-            <Typography gutterBottom><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.desc2">If the current character is not on the list, the Optimizer will only consider equipped artifacts from others characters that are not on the list.</Trans></Typography>
+            <Typography gutterBottom><Trans t={t} i18nKey="useEquipped.modal.desc1">When generating a build, the Optimizer will only consider equipped artifacts from characters below the current character or those not on the list.</Trans></Typography>
+            <Typography gutterBottom><Trans t={t} i18nKey="useEquipped.modal.desc2">If the current character is not on the list, the Optimizer will only consider equipped artifacts from others characters that are not on the list.</Trans></Typography>
           </CardContent>
         </CardLight>
         <Box display="flex" flexDirection="column" gap={2}>
@@ -86,17 +86,17 @@ export default function UseEquipped({ disabled = false }: { disabled?: boolean }
             <SelectItem key={ck} characterKey={ck} rank={i + 1} maxRank={equipmentPriority.length} setRank={(num) => num && setPrioRank(i, num - 1)} onRemove={() => removePrio(i)} numAbove={numAbove} />)}
           <Box sx={{ display: "flex", gap: 1 }}>
             <NewItem onAdd={addPrio} list={equipmentPriority} />
-            <Button color="error" onClick={resetPrio} startIcon={<Replay />}><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.clearList">Clear List</Trans></Button>
+            <Button color="error" onClick={resetPrio} startIcon={<Replay />}><Trans t={t} i18nKey="useEquipped.modal.clearList">Clear List</Trans></Button>
           </Box>
-          {!!numUseEquippedChar && <SqBadge color="success"><Typography><Trans t={t} i18nKey="tabOptimize.useEquipped.modal.usingNum" count={numUnlisted}>Using artifacts from <strong>{{ count: numUnlisted }}</strong> unlisted characters</Trans></Typography></SqBadge>}
+          {!!numUseEquippedChar && <SqBadge color="success"><Typography><Trans t={t} i18nKey="useEquipped.modal.usingNum" count={numUnlisted}>Using artifacts from <strong>{{ count: numUnlisted }}</strong> unlisted characters</Trans></Typography></SqBadge>}
         </Box>
       </CardContent>
     </CardDark ></ModalWrapper>
     <ButtonGroup sx={{ display: "flex", width: "100%" }}>
       <Button sx={{ flexGrow: 1 }} onClick={() => buildSettingDispatch({ useEquippedArts: !useEquippedArts })} disabled={disabled} startIcon={useEquippedArts ? <CheckBox /> : <CheckBoxOutlineBlank />} color={useEquippedArts ? "success" : "secondary"}>
         <Box>
-          <span><Trans t={t} i18nKey="tabOptimize.useEquipped.title">Use Equipped Artifacts</Trans></span>
-          {useEquippedArts && <SqBadge><Trans t={t} i18nKey="tabOptimize.useEquipped.usingNum" count={numUseEquippedChar}>Using from <strong>{{ count: numUseEquippedChar }}</strong> characters</Trans></SqBadge>}
+          <span><Trans t={t} i18nKey="useEquipped.title">Use Equipped Artifacts</Trans></span>
+          {useEquippedArts && <SqBadge><Trans t={t} i18nKey="useEquipped.usingNum" count={numUseEquippedChar}>Using from <strong>{{ count: numUseEquippedChar }}</strong> characters</Trans></SqBadge>}
         </Box>
       </Button>
       {useEquippedArts && <Button sx={{ flexShrink: 1 }} color="info" onClick={onOpen} disabled={disabled}><Settings /></Button>}
@@ -113,7 +113,7 @@ function SelectItem({ characterKey, rank, maxRank, setRank, onRemove, numAbove }
   onRemove: () => void,
   numAbove: number,
 }) {
-  const { t } = useTranslation("page_character")
+  const { t } = useTranslation("page_character_optimize")
   const { database } = useContext(DatabaseContext)
   const character = useCharacter(characterKey)
   const onClick = useCharSelectionCallback()
@@ -125,9 +125,9 @@ function SelectItem({ characterKey, rank, maxRank, setRank, onRemove, numAbove }
         <Typography>#{rank}</Typography>
       </SqBadge>
       <SqBadge sx={{ flexGrow: 1 }} color={numAbove === (rank - 1) ? "warning" : (rank - 1) < numAbove ? "error" : "success"}>
-        <Typography>{numAbove === (rank - 1) ? <Trans t={t} i18nKey="tabOptimize.useEquipped.modal.status.curr">Current character</Trans>
-          : (rank - 1) < numAbove ? <Trans t={t} i18nKey="tabOptimize.useEquipped.modal.status.dont">Don't Use artifacts</Trans> :
-            <Trans t={t} i18nKey="tabOptimize.useEquipped.modal.status.use">Use artifacts</Trans>}</Typography>
+        <Typography>{numAbove === (rank - 1) ? <Trans t={t} i18nKey="useEquipped.modal.status.curr">Current character</Trans>
+          : (rank - 1) < numAbove ? <Trans t={t} i18nKey="useEquipped.modal.status.dont">Don't Use artifacts</Trans> :
+            <Trans t={t} i18nKey="useEquipped.modal.status.use">Use artifacts</Trans>}</Typography>
       </SqBadge>
       <Box>
         <ButtonGroup sx={{ flexGrow: 1 }} size="small">
@@ -166,7 +166,7 @@ function SelectItem({ characterKey, rank, maxRank, setRank, onRemove, numAbove }
   </CardLight>
 }
 function NewItem({ onAdd, list }: { onAdd: (ck: CharacterKey) => void, list: CharacterKey[] }) {
-  const { t } = useTranslation("page_character")
+  const { t } = useTranslation("page_character_optimize")
   const [show, onOpen, onClose] = useBoolState(false)
   const filter = useCallback((char?: ICachedCharacter) => {
     if (!char) return false
@@ -175,7 +175,7 @@ function NewItem({ onAdd, list }: { onAdd: (ck: CharacterKey) => void, list: Cha
   return <>
     <CharacterSelectionModal show={show} onHide={onClose} onSelect={onAdd} filter={filter} />
     <Button fullWidth sx={{ height: itemSize }} color="info" onClick={onOpen} startIcon={<Add />} >
-      <Trans t={t} i18nKey="tabOptimize.useEquipped.modal.add">Add character to list</Trans>
+      <Trans t={t} i18nKey="useEquipped.modal.add">Add character to list</Trans>
     </Button>
   </>
 }

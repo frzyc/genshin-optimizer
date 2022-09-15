@@ -4,9 +4,9 @@ import DropdownButton from "../../../../../Components/DropdownMenu/DropdownButto
 
 const levels = [0, 4, 8, 12, 16, 20] as const
 export default function AssumeFullLevelToggle({ mainStatAssumptionLevel = 0, setmainStatAssumptionLevel, disabled }) {
-  const { t } = useTranslation("page_character")
+  const { t } = useTranslation("page_character_optimize")
   return <DropdownButton fullWidth color={mainStatAssumptionLevel ? "success" : "primary"} disabled={disabled}
-    title={mainStatAssumptionLevel ? t("tabOptimize.assumptionLvl.lvl", { lvl: mainStatAssumptionLevel }) : t("tabOptimize.assumptionLvl.no")}>
-    {levels.map((lvl) => <MenuItem key={lvl} onClick={() => setmainStatAssumptionLevel(lvl)}>{lvl ? t("tabOptimize.assumptionLvl.lvl", { lvl }) : t("tabOptimize.assumptionLvl.no")}</MenuItem>)}
+    title={mainStatAssumptionLevel ? t("mainStat.assumptionLvl.lvl", { lvl: mainStatAssumptionLevel }) : t("mainStat.assumptionLvl.no")}>
+    {levels.map((lvl) => <MenuItem key={lvl} onClick={() => setmainStatAssumptionLevel(lvl)}>{lvl ? t("mainStat.assumptionLvl.lvl", { lvl }) : t("mainStat.assumptionLvl.no")}</MenuItem>)}
   </DropdownButton>
 }

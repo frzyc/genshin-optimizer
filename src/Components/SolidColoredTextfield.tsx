@@ -20,7 +20,7 @@ export default function SolidColoredTextField({ hasValue, startAdornment, InputP
     sx={{
       ...sx,
       // Fill in the background without using the `focused` prop
-      "& .MuiFilledInput-root": { backgroundColor: hasValue ? theme.palette.success.main : theme.palette.primary.main, paddingTop: props.label ? undefined : 0, paddingBottom: 0 },
+      "& .MuiFilledInput-root": { backgroundColor: hasValue ? theme.palette.success.main : theme.palette.primary.main, paddingTop: props.label ? undefined : 0, paddingBottom: 0, flexWrap: "nowrap", },
       "& .MuiFilledInput-root.Mui-focused": { backgroundColor: hasValue ? theme.palette.success.light : theme.palette.primary.light },
       "& .MuiFilledInput-root:hover": { backgroundColor: hasValue ? theme.palette.success.dark : theme.palette.primary.dark },
       // Remove the colored bar at the bottom of the input

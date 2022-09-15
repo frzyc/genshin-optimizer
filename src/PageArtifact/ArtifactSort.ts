@@ -5,7 +5,6 @@ import Artifact from "../Data/Artifacts/Artifact";
 import { probability } from "./RollProbability";
 import { SubstatKey } from "../Types/artifact";
 export const artifactSortKeys = ["rarity", "level", "artsetkey", "efficiency", "mefficiency", "probability"] as const
-export const artifactSortKeysTC = ["probability"] as const
 export type ArtifactSortKey = typeof artifactSortKeys[number]
 export type FilterOption = {
   artSetKeys: ArtifactSetKey[],

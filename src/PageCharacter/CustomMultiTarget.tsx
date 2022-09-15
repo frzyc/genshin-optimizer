@@ -18,7 +18,7 @@ import { NodeDisplay, UIData } from "../Formula/uiData";
 import useBoolState from "../ReactHooks/useBoolState";
 import { CustomMultiTarget, CustomTarget, ICachedCharacter } from "../Types/character";
 import { AdditiveReactionKey, allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, allowedAdditiveReactions, allowedAmpReactions, AmpReactionKey, HitModeKey, InfusionAuraElements } from "../Types/consts";
-import { arrayMove, deepClone, objPathValue } from "../Util/Util";
+import { arrayMove, clamp, deepClone, objPathValue } from "../Util/Util";
 import OptimizationTargetSelector from "./CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector";
 import { TargetSelectorModal } from "./CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal";
 
@@ -84,6 +84,7 @@ function getMTarget(character: ICachedCharacter): CustomMultiTarget[] {
     character.customMultiTarget
 }
 export function CustomMultiTargetButton() {
+  const { t } = useTranslation("page_character")
   const [show, onShow, onCloseModal] = useBoolState()
   const { character, characterDispatch } = useContext(CharacterContext)
   const [customMultiTarget, setCustomTargets] = useState(() => getMTarget(character))
@@ -113,6 +114,15 @@ export function CustomMultiTargetButton() {
     customTargets_.splice(ind, 0, customMultiTarget[ind])
     setCustomTargets(customTargets_)
   }, [customMultiTarget, setCustomTargets])
+  const setOrder = useCallback((fromIndex: number) => (toIndex: number) => {
+    toIndex = clamp(toIndex - 1, 0, customMultiTarget.length - 1)
+    if (fromIndex === toIndex) return
+    const arr = [...customMultiTarget]
+    var element = arr[fromIndex];
+    arr.splice(fromIndex, 1);
+    arr.splice(toIndex, 0, element);
+    setCustomTargets(arr)
+  }, [customMultiTarget, setCustomTargets])
   const onClose = useCallback(
     () => {
       onCloseModal()
@@ -137,18 +147,19 @@ export function CustomMultiTargetButton() {
   }, [origUIData, teamData])
 
   return <Suspense fallback={<Skeleton variant="rectangular" height="100%" width={100} />}>
-    <Button color="info" onClick={onShow} startIcon={<Settings />}>Custom Multi-Target Config</Button>
+    <Button color="info" onClick={onShow} startIcon={<Settings />}>{t`multiTarget.title`}</Button>
     <DataContext.Provider value={dataContextObj}>
       <ModalWrapper open={show} onClose={onClose} containerProps={{ sx: { overflow: "visible" } }}>
         <CardDark>
           <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
             <Box display="flex" gap={1} justifyContent={"space-between"}>
-              <Typography variant="h6">Custom Multi-Target Config</Typography>
+              <Typography variant="h6">{t`multiTarget.title`}</Typography>
               <CloseButton onClick={onClose} />
             </Box>
             <Box>
               {customMultiTarget.map((ctar, i) => <CustomMultiTargetDisplay
-                key={i}
+                // Use a unique key, because indices dont allow for swapping very well.
+                key={`${i}${JSON.stringify(ctar.targets)}`}
                 index={i}
                 expanded={i === expandedInd}
                 onExpand={() => setExpandedInd(i === expandedInd ? false : i)}
@@ -156,8 +167,10 @@ export function CustomMultiTargetButton() {
                 setTarget={(t) => setCustomMultiTarget(i, t)}
                 onDelete={() => deleteCustomMultiTarget(i)}
                 onDup={() => dupCustomMultiTarget(i)}
+                onOrder={setOrder(i)}
+                nTargets={customMultiTarget.length}
               />)}
-              <Button fullWidth onClick={addNewCustomMultiTarget} startIcon={<Add />} sx={{ mt: 1 }}>Add New Custom Multi-target</Button>
+              <Button fullWidth onClick={addNewCustomMultiTarget} startIcon={<Add />} sx={{ mt: 1 }}>{t`multiTarget.addNewMTarget`}</Button>
             </Box>
           </CardContent>
         </CardDark>
@@ -166,8 +179,8 @@ export function CustomMultiTargetButton() {
   </Suspense>
 }
 
-function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand, onDelete, onDup }:
-  { index: number, target: CustomMultiTarget, setTarget: (t: CustomMultiTarget) => void, expanded: boolean, onExpand: () => void, onDelete: () => void, onDup: () => void }) {
+function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand, onDelete, onDup, onOrder, nTargets }:
+  { index: number, target: CustomMultiTarget, setTarget: (t: CustomMultiTarget) => void, expanded: boolean, onExpand: () => void, onDelete: () => void, onDup: () => void, onOrder: (nInd: number) => void, nTargets: number }) {
   const setName = useCallback((e) => setTarget({ ...target, name: e.target.value }), [setTarget, target])
   const addTarget = useCallback((t: string[]) => {
     const target_ = { ...target }
@@ -220,12 +233,19 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
       <Box display="flex" gap={1} alignItems="center" flexWrap="wrap"
         sx={{ pointerEvents: "auto", width: "100%", pr: 1 }}
       >
-        < StyledInputBase value={target.name} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={setName} />
-        <Chip color={target.targets.length ? "success" : undefined} label={`${target.targets.length} Targets`}></Chip>
-        <Tooltip title="Duplicate" placement="top" >
-          <Button onClick={onDup} color="info"><ContentCopy /></Button>
-        </Tooltip>
-        <Button color="error" onClick={onDelete} ><DeleteForever /></Button>
+        <Chip sx={{ minWidth: "8em" }} color={target.targets.length ? "success" : undefined} label={`${target.targets.length} Targets`}></Chip>
+        <StyledInputBase value={target.name} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={setName} />
+        <ButtonGroup size="small">
+          <CustomNumberInputButtonGroupWrapper >
+            <CustomNumberInput onChange={n => onOrder(n!)} value={index + 1}
+              inputProps={{ min: 1, max: nTargets, sx: { textAlign: "center" } }}
+              sx={{ width: "100%", height: "100%", pl: 2 }} />
+          </CustomNumberInputButtonGroupWrapper>
+          <Tooltip title="Duplicate" placement="top" >
+            <Button onClick={onDup} color="info"><ContentCopy /></Button>
+          </Tooltip>
+          <Button color="error" onClick={onDelete} ><DeleteForever /></Button>
+        </ButtonGroup>
       </Box>
     </AccordionSummary>
     <AccordionDetails>
@@ -305,6 +325,7 @@ function ReactionDropdown({ node, reaction, setReactionMode, infusionAura }: { n
   </DropdownButton>
 }
 function AddCustomTargetBtn({ setTarget }: { setTarget: (t: string[]) => void }) {
+  const { t } = useTranslation("page_character")
   const [show, onShow, onClose] = useBoolState(false)
   const setTargetHandler = useCallback(
     (t: string[]) => {
@@ -313,7 +334,7 @@ function AddCustomTargetBtn({ setTarget }: { setTarget: (t: string[]) => void })
     }, [onClose, setTarget])
 
   return <>
-    <Button fullWidth onClick={onShow} startIcon={<Add />} sx={{ mb: 1 }}>Add New Custom target</Button>
+    <Button fullWidth onClick={onShow} startIcon={<Add />} sx={{ mb: 1 }}>{t`multiTarget.addNewTarget`}</Button>
     <TargetSelectorModal ignoreGlobal flatOnly show={show} onClose={onClose} setTarget={setTargetHandler} excludeSections={["basic", "custom"]} />
   </>
 }

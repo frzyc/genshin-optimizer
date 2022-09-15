@@ -2,7 +2,6 @@ import { CardContent, Divider, Grid, Typography } from "@mui/material"
 import CardDark from "../Components/Card/CardDark"
 import CardLight from "../Components/Card/CardLight"
 import ColorText from "../Components/ColoredText"
-import SqBadge from "../Components/SqBadge"
 import StatEditorList from "../Components/StatEditorList"
 import { allSubstatKeys, SubstatKey } from "../Types/artifact"
 const keys = [...allSubstatKeys]
@@ -13,9 +12,7 @@ export default function ProbabilityFilter({ probabilityFilter: statFilters = {},
 }) {
   return <CardDark>
     <CardContent sx={{ py: 1 }}>
-      <Typography variant="h6">
-        Roll Probability Calculator <SqBadge color="success">TC Feature</SqBadge>
-      </Typography>
+      <Typography variant="h6">Roll Probability Calculator</Typography>
     </CardContent>
     <Divider />
     <CardContent>

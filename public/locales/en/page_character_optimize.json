@@ -1,0 +1,81 @@
+{
+  "mainStat": {
+    "title": "Main Stat",
+    "levelAssTooltip": {
+      "title": "Level Assumption",
+      "desc": "Changes mainstat value to be at least a specific level. Does not change substats."
+    },
+    "assumptionLvl": {
+      "no": "No Lv. Assumption",
+      "lvl": "Assume at least Lv. {{lvl}}"
+    }
+  },
+  "tcGraph": {
+    "vs": "Graph Optimization Target vs.",
+    "notSel": "Not Selected",
+    "showMinStatThr": "Show Min Stat Threshold",
+    "downloadData": "Download Data",
+    "optTarget": "Optimization Target",
+    "minStatReqThr": "Minimum Stat Requirement Threshold"
+  },
+  "levelFilter": "Artifact Level Filter",
+  "useExcluded": {
+    "title": "Use Excluded Artifacts",
+    "usingNum_one": "Using <1>{{count}}</1> excluded artifacts",
+    "usingNum_other": "Using <1>{{count}}</1> excluded artifacts"
+  },
+  "useEquipped": {
+    "title": "Use Equipped Artifacts",
+    "modal": {
+      "title": "Character Priority for Equipped Artifacts",
+      "desc1": "When generating a build, the Optimizer will only consider equipped artifacts from characters below the current character or those not on the list.",
+      "desc2": "If the current character is not on the list, the Optimizer will only consider equipped artifacts from others characters that are not on the list.",
+      "usingNum_one": "Using artifacts from <1>{{count}}</1> character",
+      "usingNum_other": "Using artifacts from <1>{{count}}</1> unlisted characters",
+      "status": {
+        "use": "Use artifacts",
+        "dont": "Don't use artifacts",
+        "curr": "Current character"
+      },
+      "add": "Add character to list",
+      "clearList": "Clear List"
+    },
+    "usingNum_one": "Using from <1>{{count}}</1> character",
+    "usingNum_other": "Using from <1>{{count}}</1> characters"
+  },
+  "allowPartial": "Allow Partial Builds (<5 artifacts)",
+  "constraintFilter": {
+    "title": "Build Constraints",
+    "tooltip": "Set certain requirements that generated builds must confirm to. e.g. Generated builds must have at least 140% Energy Recharge."
+  },
+  "artSetConfig": {
+    "title": "Artifact Set Configuration",
+    "setEffCond": "Set Effect Conditionals",
+    "enabled": "Enabled",
+    "allowed": "Allowed",
+    "excluded": "Excluded",
+    "selected": "Selected",
+    "2rainbow": "3-Rainbow",
+    "4rainbow": "5-Rainbow",
+    "allowAll2set": "Allow All 2-Set",
+    "excludeAll2set": "Exclude All 2-Set",
+    "allowAll4set": "Allow All 4-Set",
+    "excludeAll4set": "Exclude All 4-Set",
+    "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow Builds",
+    "modal": {
+      "setCond": {
+        "title": "Default Artifact Set Conditional Effects",
+        "reset": "Reset Conditionals",
+        "text": "Some artifact set effects provide conditional stats. This window allows you to select those effects, so they can contribute stats when a build that satifies a set effect is calculated during optimization."
+      },
+      "ArtSetFilter": {
+        "title": "Artifact Sets <1>Allowed<1></1></1> / <3>Excluded<1></1></3>",
+        "intro": "You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-set, and <strong>R</strong> is rainbow(off-set)",
+        "2set": "<0><0>Excluding<1></1> 2-Set</0></0> would exclude 2-Set builds: <2><0>AA</0>RRR</2> and <4><0>AAA</0>RR</4>.",
+        "4set": "<0><0>Excluding<1></1> 4-Set</0></0> would exclude 4-Set builds: <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",
+        "2rain": "<0><0>Excluding<1></1> 3-Rainbow</0></0> would exclude 2-Set + 3-Rainbow builds: <2>AA<1>RRR</1></2> and <4>AAA<1>RR</1></4>.",
+        "4rain": "<0><0>Excluding<1></1> 5-Rainbow</0></0> would exclude full 5-Rainbow builds: <2><0>RRRRR</0></2>."
+      }
+    }
+  }
+}

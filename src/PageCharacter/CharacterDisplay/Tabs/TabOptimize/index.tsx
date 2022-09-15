@@ -24,10 +24,8 @@ import { UIData } from '../../../../Formula/uiData';
 import KeyMap from '../../../../KeyMap';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
-import useDBState from '../../../../ReactHooks/useDBState';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
-import { initGlobalSettings } from '../../../../stateInit';
 import { ICachedArtifact } from '../../../../Types/artifact';
 import { CharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
@@ -50,9 +48,8 @@ import { compactArtifacts, dynamicData } from './foreground';
 import useBuildSetting from './useBuildSetting';
 
 export default function TabBuild() {
-  const { t } = useTranslation("page_character")
+  const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey, compareData } } = useContext(CharacterContext)
-  const [{ tcMode }] = useDBState("GlobalSettings", initGlobalSettings)
   const { database } = useContext(DatabaseContext)
 
   const [buildStatus, setBuildStatus] = useState({ type: "inactive", tested: 0, failed: 0, skipped: 0, total: 0 } as BuildStatus)
@@ -315,8 +312,11 @@ export default function TabBuild() {
         <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
           <CardLight>
             <CardContent  >
-              <Typography gutterBottom>Main Stat</Typography>
-              <BootstrapTooltip placement="top" title={<Typography><strong>Level Assumption</strong> changes mainstat value to be at least a specific level. Does not change substats.</Typography>}>
+              <Typography gutterBottom>{t`mainStat.title`}</Typography>
+              <BootstrapTooltip placement="top" title={<Box>
+                <Typography variant="h6">{t`mainStat.levelAssTooltip.title`}</Typography>
+                <Typography>{t`mainStat.levelAssTooltip.desc`}</Typography>
+              </Box>}>
                 <Box>
                   <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={mainStatAssumptionLevel => buildSettingDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
                 </Box>
@@ -338,10 +338,10 @@ export default function TabBuild() {
           {/* use equipped */}
           <UseEquipped disabled={generatingBuilds} />
 
-          <Button fullWidth startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />} color={allowPartial ? "success" : "secondary"} onClick={() => buildSettingDispatch({ allowPartial: !allowPartial })}>{t`tabOptimize.allowPartial`}</Button>
+          <Button fullWidth startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />} color={allowPartial ? "success" : "secondary"} onClick={() => buildSettingDispatch({ allowPartial: !allowPartial })}>{t`allowPartial`}</Button>
           { /* Level Filter */}
           <CardLight>
-            <CardContent>Artifact Level Filter</CardContent>
+            <CardContent>{t`levelFilter`}</CardContent>
             <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh}
               setLow={levelLow => buildSettingDispatch({ levelLow })}
               setHigh={levelHigh => buildSettingDispatch({ levelHigh })}
@@ -406,9 +406,9 @@ export default function TabBuild() {
       </Grid>
 
       {!!characterKey && <BuildAlert {...{ status: buildStatus, characterName, maxBuildsToShow }} />}
-      {tcMode && <Box >
+      <Box >
         <ChartCard disabled={generatingBuilds} chartData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} />
-      </Box>}
+      </Box>
       <CardLight>
         <CardContent>
           <Box display="flex" alignItems="center" gap={1} mb={1} >
