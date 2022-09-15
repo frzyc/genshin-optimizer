@@ -3,7 +3,7 @@ import { NumNode } from '../../../../Formula/type'
 import { assertUnreachable } from '../../../../Util/Util'
 import { ArtifactsBySlot, artSetPerm, Build, countBuilds, filterArts, filterFeasiblePerm, PlotData, RequestFilter } from "./common"
 import { ComputeWorker } from "./ComputeWorker"
-import { DefaultSplitWorker } from "./DefaultSplitWorker"
+import { FastSplitWorker } from "./FastSplitWorker"
 
 let id: number, splitWorker: SplitWorker, computeWorker: ComputeWorker
 
@@ -15,7 +15,7 @@ onmessage = async ({ data }: { data: WorkerCommand }) => {
     case "setup":
       id = data.id
       const splitID = `split${id}`, computeID = `compute${id}`
-      splitWorker = new DefaultSplitWorker(data, interim => postMessage({ id, source: splitID, ...interim }))
+      splitWorker = new FastSplitWorker(data, interim => postMessage({ id, source: splitID, ...interim }))
       computeWorker = new ComputeWorker(data, interim => postMessage({ id, source: computeID, ...interim }))
       return post({ command: "iterate" })
     case "split": {

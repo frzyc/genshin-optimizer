@@ -139,12 +139,12 @@ export class FastSplitWorker implements SplitWorker {
 function maxContribution(arts: ArtifactBuildData[], approximation: Approximation): number {
   return Math.max(...arts.map(({ id }) => approximation.conts[id]!))
 }
-function approximation(poly: NumNode, artRange: DynMinMax, arts: ArtifactsBySlot): Approximation {
+function approximation(monos: NumNode[], artRange: DynMinMax, arts: ArtifactsBySlot): Approximation {
   function contribution(weights: DynStat, art: DynStat) {
     return Object.entries(art).reduce((accu, [key, val]) => accu + val * (weights[key] ?? 0), 0)
   }
 
-  const weight = linearUpperBound(poly, artRange)
+  const weight = linearUpperBound(monos, artRange)
   return {
     base: contribution(weight, arts.base) + weight.$c,
     conts: objectKeyValueMap(Object.values(arts.values).flat(),
@@ -153,7 +153,7 @@ function approximation(poly: NumNode, artRange: DynMinMax, arts: ArtifactsBySlot
 }
 
 /** Compute a linear upper bound of `poly`, which must be in polynomial form */
-function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string | "$c"]: number } {
+function linearUpperBound(monos: readonly NumNode[], artRange: DynMinMax): { [key in string | "$c"]: number } {
   // We use $c and $error internally. Can't have them collide
   if ("$c" in artRange || "$error" in artRange) throw new Error("Found forbidden key when computing linear upperbound")
 
@@ -165,16 +165,14 @@ function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string 
    */
 
   const bounds = Object.entries(artRange), ids = objectMap(artRange, (_, _k, i) => BigInt(1) << BigInt(i))
-  const terms = new Map<NumNode | StrNode, Set<bigint>>()
-  forEachNodes([poly], _ => { }, f => {
-    const { operation, operands } = f, operandTerms = operands.map(op => [...terms.get(op)!])
-    switch (operation) {
-      case "const": terms.set(f, new Set([BigInt(0)])); break
-      case "read": terms.set(f, new Set([ids[f.path[1]]!])); break
-      case "add": terms.set(f, new Set(operandTerms.flat())); break
-      case "mul": terms.set(f, new Set(operandTerms.reduce((a, x) => a.flatMap(a => x.map(b => a | b)), [BigInt(0)]))); break
-      default: throw new Error(`Found unsupported ${operation} node when computing linear upperbound group`)
-    }
+  const terms = new Map<NumNode, bigint>()
+  monos.forEach(mono => {
+    let term = BigInt(0)
+    forEachNodes([mono], _ => { }, f => {
+      const { operation } = f
+      if (operation === "read") term |= ids[f.path[1]]!
+    })
+    terms.set(mono, term)
   })
 
   /**
@@ -186,20 +184,20 @@ function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string 
    *
    * This gives Ax + c as a linear upperbound in the region dictated by `artRange`.
    */
-  const added: bigint[] = [], weights: Weights = { $c: 0, $error: 0 }
-  const compute = precompute([poly], {}, f => f.path[1], 1)
-  const [offset] = compute([{ id: "", values: {} }]), objective: Weights = { $error: -1 }
-  for (const term of [...terms.get(poly)!].sort((a, b) => a > b ? -1 : 1)) {
-    if (added.some(added => (added & term) === term)) continue
-    added.push(term)
+  const weights: Weights = { $c: 0, $error: 0 }, remaining = [...monos]
+  while (remaining.length) {
+    const chosen = [remaining.pop()!], term = terms.get(chosen[0])!
 
+    const compute = precompute([sum(...chosen)], {}, f => f.path[1], 1)
+
+    const objective: Weights = { $error: -1 }
     const vars: Weights = {}, lpVars: Weights = { $c: 1 }, constraints: LPConstraint[] = []
     const add_constraint = (index: number, current: bigint) => {
       if (index >= bounds.length) {
         const [val] = compute([{ id: "", values: vars }])
         constraints.push(
-          { weights: { ...lpVars }, lowerBound: val - offset },
-          { weights: { ...lpVars, $error: -1 }, upperBound: val - offset },
+          { weights: { ...lpVars }, lowerBound: val },
+          { weights: { ...lpVars, $error: -1 }, upperBound: val },
         )
         return
       }
@@ -213,10 +211,8 @@ function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string 
         vars[key] = max
         lpVars[key] = 1
         add_constraint(index + 1, current << BigInt(1))
-      } else {
-        // Use zero and skip
+      } else
         add_constraint(index + 1, current << BigInt(1))
-      }
     }
     add_constraint(0, BigInt(1))
     const additional_weight = maximizeLP(objective, constraints)
@@ -226,13 +222,12 @@ function linearUpperBound(poly: NumNode, artRange: DynMinMax): { [key in string 
     weights[key] /= max - min
     weights.$c -= weights[key] * min
   })
-  weights.$c += offset
   delete weights.$error
   return weights
 }
 
-/** Convert `nodes` to a polynomial form */
-function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[] {
+/** Convert `nodes` to a polynomial form where `nude[i] <= sum(...result[i])` and each `result[i][j]` is a monomial */
+function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
   // We need some bounds for the nodes to find appropriate polynomial upper bound
   const nodeRange = new Map<NumNode | StrNode, MinMax>(), defaultRange = { min: NaN, max: NaN }
   forEachNodes(nodes, _ => { }, f => {
@@ -255,21 +250,18 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[] {
     if (Math.abs(x0 - x1) < 1e-6) return constant(Math.max(y0, y1)) // degenerate case
     return sum(y0 - x0 * slope, prod(slope, node))
   }
-
-  return mapFormulas(nodes, f => f, (f, orig) => {
-    const { operands, operation } = f
-    let result: NumNode | StrNode
+  return mapFormulas(nodes, f => {
+    const { operation } = f, operands = f.operands as readonly NumNode[]
     switch (operation) {
-      case "const": case "read": case "add": case "mul": result = f; break
+      case "const": case "read": case "add": case "mul": return f
       case "res": {
         const [base] = operands, { min, max } = nodeRange.get(base)!, res = allOperations['res']
         // linear region 1 - base/2 or concave region with peak at base = 0
-        if (min < 0 && max < 1.75) result = sum(1, prod(-0.5, base))
+        if (min < 0 && max < 1.75) return sum(1, prod(-0.5, base))
         else {
           const m = Math.max(min, 0) // Clamp `min` to guarantee upperbound
-          result = interpolate([m, res([m])], [max, res([max])], base)
+          return interpolate([m, res([m])], [max, res([max])], base)
         }
-        break
       }
       case "sum_frac": {
         const [x, cOp] = operands
@@ -278,21 +270,17 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[] {
         const { min, max } = nodeRange.get(x)!, c = cOp.value
         // The sum_frac form is concave, so its linear approximation is also a linear upperbound.
         const loc = Math.sqrt((min + c) * (max + c)) - c, below = (c + loc) * (c + loc)
-        result = sum(loc * loc / below, prod(c / below, x))
-        break
+        return sum(loc * loc / below, prod(c / below, x))
       }
       case "min": case "max": {
         const rOps: NumNode[] = operands.filter(x => x.operation !== "const"), [rOp] = rOps
         if (rOps.length !== 1)
           throw new Error("Found unsupported min/max node when computing upperbound polynomial")
-        if (operation === 'min') {
-          result = rOp // ignore constant terms
-          break
-        }
+        if (operation === 'min')
+          return rOp // ignore constant terms
         const { min: minY, max: maxY } = nodeRange.get(f)!
         const { min: minX, max: maxX } = nodeRange.get(rOp)!
-        result = interpolate([minX, minY], [maxX, maxY], rOp)
-        break
+        return interpolate([minX, minY], [maxX, maxY], rOp)
       }
       case "threshold": {
         const [val, thres, p, f]: readonly NumNode[] = operands
@@ -301,18 +289,26 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[] {
 
         const threshold = thres.value, pass = p.value, fail = f.value
         const { min, max } = nodeRange.get(val)!
-        if (max < threshold) result = f
-        else if (min >= threshold) result = p
-        else if (pass > fail) result = interpolate([min, fail], [threshold, pass], val)
-        else result = interpolate([threshold, fail], [max, pass], val)
-        break
+        if (max < threshold) return f
+        else if (min >= threshold) return p
+        else if (pass > fail) return interpolate([min, fail], [threshold, pass], val)
+        else return interpolate([threshold, fail], [max, pass], val)
       }
       case "data": case "subscript": case "lookup": case "match": case "prio": case "small":
         throw new Error(`Found unsupported ${operation} node when computing upperbound polynomial`)
       default: assertUnreachable(operation)
     }
-    if (nodeRange.has(orig) && result !== orig)
-      nodeRange.set(result, nodeRange.get(orig)!)
-    return result
-  })
+  }, f => {
+    const { operation, operands } = f
+    if (operation === "mul" && operands.some(op => op.operation === "add")) {
+      let result: NumNode[][] = [[]]
+      for (const operand of operands)
+        if (operand.operation !== "add") result.forEach(nodes => nodes.push(operand))
+        else result = operand.operands.flatMap(op => result.map(node => [...node, op]))
+      return sum(...result.map(ops => prod(...ops)))
+    }
+    if (operation === "add" && operands.some(op => op.operation === "add"))
+      return sum(...operands.flatMap(op => op.operation === "add" ? op.operands : [op]))
+    return f
+  }).map(node => node.operation === "add" ? node.operands as NumNode[] : [node])
 }
