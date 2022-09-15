@@ -40,7 +40,7 @@ export class FastSplitWorker implements SplitWorker {
     const arts = filterArts(this.arts, filter)
     this.filters.push({ nodes: this.nodes, arts, maxConts: [], approxs: [], age: 0 })
   }
-  async split(newThreshold: number, minCount: number): Promise<RequestFilter | undefined> {
+  split(newThreshold: number, minCount: number): RequestFilter | undefined {
     if (newThreshold > this.min[0]) this.min[0] = newThreshold
 
     while (this.filters.length) {

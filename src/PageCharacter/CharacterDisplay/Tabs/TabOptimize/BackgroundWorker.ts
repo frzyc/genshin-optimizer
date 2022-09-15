@@ -9,7 +9,7 @@ let id: number, splitWorker: SplitWorker, computeWorker: ComputeWorker
 
 function post(command: WorkerResult): void { postMessage({ id, ...command }) }
 
-onmessage = async ({ data }: { data: WorkerCommand }) => {
+onmessage = ({ data }: { data: WorkerCommand }) => {
   const { command } = data
   switch (command) {
     case "setup":
@@ -20,7 +20,7 @@ onmessage = async ({ data }: { data: WorkerCommand }) => {
       return post({ command: "iterate" })
     case "split": {
       if (data.filter) splitWorker.addFilter(data.filter)
-      const filter = await splitWorker.split(data.threshold, data.minCount)
+      const filter = splitWorker.split(data.threshold, data.minCount)
       return post({ command: "split", filter })
     }
     case "iterate": {
@@ -47,7 +47,7 @@ onmessage = async ({ data }: { data: WorkerCommand }) => {
 
 export interface SplitWorker {
   addFilter(filter: RequestFilter): void
-  split(newThreshold: number, minCount: number): Promise<RequestFilter | undefined>
+  split(newThreshold: number, minCount: number): RequestFilter | undefined
 }
 
 export type WorkerCommand = Setup | Split | Iterate | Finalize | Count

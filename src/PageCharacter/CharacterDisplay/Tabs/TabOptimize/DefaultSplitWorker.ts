@@ -12,7 +12,7 @@ export class DefaultSplitWorker implements SplitWorker {
   addFilter(filter: RequestFilter) {
     this.filters.push(filter)
   }
-  async split(_newThreshold: number, minCount: number) {
+  split(_newThreshold: number, minCount: number) {
     while (this.filters.length) {
       const filter = this.filters.pop()!, count = countBuilds(filterArts(this.arts, filter))
       if (count <= minCount) return filter
