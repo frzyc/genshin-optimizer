@@ -14,7 +14,7 @@ type Approximation = {
   conts: StrictDict<string, number>
 }
 type Filter = { nodes: NumNode[], arts: ArtifactsBySlot, maxConts: Record<SlotKey, number>[], approxs: Approximation[], age: number }
-export class FastSplitWorker implements SplitWorker {
+export class BNBSplitWorker implements SplitWorker {
   min: number[]
   nodes: NumNode[]
   arts: ArtifactsBySlot
