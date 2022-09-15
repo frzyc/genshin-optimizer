@@ -157,13 +157,7 @@ function linearUpperBound(monos: readonly NumNode[], artRange: DynMinMax): { [ke
   // We use $c and $error internally. Can't have them collide
   if ("$c" in artRange || "$error" in artRange) throw new Error("Found forbidden key when computing linear upperbound")
 
-  /**
-   * We first compute the monomials found in each node and store them in `term`.
-   * Monomials are represented using one-hot encoding, e.g., given variables
-   * [a, b, c], a value [1 << 2, (1 << 0 | 1 << 1)] represents a polynomial of
-   * the form `f1(c), f2(a, b)` where `f1` and `f2` are some polynomial functions.
-   */
-
+  // List of read nodes in each monomial
   const terms = new Map<NumNode, Set<string>>(monos.map(mono => {
     let term = new Set<string>()
     forEachNodes([mono], _ => { }, f => { if (f.operation === "read") term.add(f.path[1]!) })
@@ -185,6 +179,7 @@ function linearUpperBound(monos: readonly NumNode[], artRange: DynMinMax): { [ke
     let chosen = [remaining.pop()!], setTerm = terms.get(chosen[0])!
     remaining = remaining.filter(mono => {
       const newTerm = new Set([...setTerm, ...terms.get(mono)!])
+      // Include monomials that won't increase the problem size (too much)
       if (newTerm.size !== setTerm.size && newTerm.size > 4) return true
       chosen.push(mono)
       setTerm = newTerm
