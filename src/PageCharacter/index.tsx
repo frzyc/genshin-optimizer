@@ -88,7 +88,7 @@ export default function PageCharacter() {
     const { element, weaponType, sortType, ascending } = deferredState
     const charKeyList = database.chars.keys
       .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, filterConfigs))
-      .sort(sortFunction(["favorite", sortType], ascending, sortConfigs))
+      .sort(sortFunction([...sortConfigs.favorite.sortByKeys, ...sortConfigs[sortType].sortByKeys], ascending, sortConfigs))
     return deferredDbDirty && { charKeyList, totalCharNum }
   },
     [deferredDbDirty, database, sortConfigs, filterConfigs, deferredState, deferredSearchTerm])

@@ -1,6 +1,6 @@
 type SortConfig<T> = {
   getValue: (id: T) => number | string
-  tieBreakers?: string[]
+  sortByKeys: string[]
 }
 export type SortConfigs<Keys extends string, T> = Record<Keys, SortConfig<T>>
 
@@ -23,11 +23,6 @@ export function sortFunction<Keys extends string, T>(sortbyKeys: string[], ascen
       if (!sortConfig) return 0
       diff = Sort(a, b, ascending, sortConfig)
       if (diff) return diff
-
-      if (sortConfig.tieBreakers) for (const tieBreaker of sortConfig.tieBreakers) {
-        diff = Sort(a, b, ascending, configs[tieBreaker])
-        if (diff) return diff
-      }
     }
 
     return diff

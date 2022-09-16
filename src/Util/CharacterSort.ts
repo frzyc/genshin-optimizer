@@ -11,10 +11,11 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
   return {
     new: {
       getValue: (ck) => database.chars.get(ck as CharacterKey) ? 0 : 1,
-      tieBreakers: ["favorite", "name"]
+      sortByKeys: ["new", "favorite", "name"]
     },
     name: {
       getValue: (ck) => i18n.t(`charNames_gen"${ck}`).toString(),
+      sortByKeys: ["name"]
     },
     level: {
       getValue: (ck) => {
@@ -22,14 +23,15 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
         if (!char) return 0
         return char.level * char.ascension
       },
-      tieBreakers: ["rarity", "name"]
+      sortByKeys: ["level", "rarity", "name"]
     },
     rarity: {
       getValue: (ck) => characterSheets?.[ck]?.rarity,
-      tieBreakers: ["level", "name"]
+      sortByKeys: ["rarity", "level", "name"]
     },
     favorite: {
-      getValue: (ck) => database.states.getWithInit(`charMeta_${ck}`, initCharMeta).favorite ? 1 : 0
+      getValue: (ck) => database.states.getWithInit(`charMeta_${ck}`, initCharMeta).favorite ? 1 : 0,
+      sortByKeys: ["favorite"]
     }
   }
 }

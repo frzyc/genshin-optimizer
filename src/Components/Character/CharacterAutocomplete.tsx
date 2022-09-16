@@ -43,7 +43,7 @@ export default function CharacterAutocomplete({ value, onChange, defaultText = "
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
   const characterKeys = useMemo(() => sortConfigs
     && database.chars.keys.filter(ck => characterSheets?.[ck] && filter(characterSheets[ck], ck))
-      .sort(sortFunction(["favorite", "name"], false, sortConfigs)),
+      .sort(sortFunction([...sortConfigs.favorite.sortByKeys, ...sortConfigs.name.sortByKeys], false, sortConfigs)),
     [characterSheets, sortConfigs, filter, database.chars.keys])
 
   const textForValue = useCallback((value: CharacterAutocompleteValue): string => {

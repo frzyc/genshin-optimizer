@@ -44,7 +44,7 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
 
   const weaponIdList = useMemo(() => (filterConfigs && sortConfigs && dbDirty && database.weapons.values
     .filter(filterFunction({ weaponType: weaponTypeKey, rarity, name: deferredSearchTerm }, filterConfigs))
-    .sort(sortFunction(["level"], false, sortConfigs))
+    .sort(sortFunction(sortConfigs.level.sortByKeys, false, sortConfigs))
     .map(weapon => weapon.id)) ?? []
     , [dbDirty, database, filterConfigs, sortConfigs, rarity, weaponTypeKey, deferredSearchTerm])
 

@@ -10,11 +10,11 @@ export function weaponSortConfigs(weaponSheets: Record<WeaponKey, WeaponSheet>):
   return {
     level: {
       getValue: wp => wp.level * wp.ascension ?? 0,
-      tieBreakers: ["rarity"]
+      sortByKeys: ["level", "rarity"]
     },
     rarity: {
       getValue: wp => weaponSheets?.[wp.key]?.rarity,
-      tieBreakers: ["level"]
+      sortByKeys: ["rarity", "level"]
     }
   }
 }

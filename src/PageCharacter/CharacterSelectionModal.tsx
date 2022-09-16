@@ -57,7 +57,10 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
   const characterKeyList = useMemo(() => (characterSheets && sortConfigs && filterConfigs) ?
     ownedCharacterKeyList
       .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, filterConfigs))
-      .sort(sortFunction(sortBy === "new" ? [sortBy] : ["favorite", sortBy], ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
+      .sort(sortFunction(sortBy === "new"
+        ? sortConfigs[sortBy].sortByKeys
+        : [...sortConfigs.favorite.sortByKeys, ...sortConfigs[sortBy].sortByKeys],
+      ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
     : [],
     [characterSheets, element, weaponType, sortBy, ascending, sortConfigs, filterConfigs, ownedCharacterKeyList, deferredSearchTerm])
 

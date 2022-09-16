@@ -49,22 +49,23 @@ export function artifactSortConfigs(effFilterSet: Set<SubstatKey>, probabilityFi
   return {
     rarity: {
       getValue: art => art.rarity ?? 0,
-      tieBreakers: ["level", "artsetkey"]
+      sortByKeys: ["rarity", "level", "artsetkey"]
     },
     level: {
       getValue: art => art.level ?? 0,
-      tieBreakers: ["artsetkey", "rarity"]
+      sortByKeys: ["level", "artsetkey", "rarity"]
     },
     artsetkey: {
       getValue: art => art.setKey ?? "",
-      tieBreakers: ["level", "rarity"]
+      sortByKeys: ["artsetkey", "level", "rarity"]
     },
     efficiency: {
       getValue: art => Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency,
-      tieBreakers: ["artsetkey", "rarity", "level", "mefficiency"]
+      sortByKeys: ["efficiency", "artsetkey", "rarity", "level", "mefficiency"]
     },
     mefficiency: {
-      getValue: art => Artifact.getArtifactEfficiency(art, effFilterSet).maxEfficiency
+      getValue: art => Artifact.getArtifactEfficiency(art, effFilterSet).maxEfficiency,
+      sortByKeys: ["mefficiency", "artsetkey", "rarity", "level", "efficiency"]
     },
     probability: {
       getValue: art => {
@@ -72,7 +73,8 @@ export function artifactSortConfigs(effFilterSet: Set<SubstatKey>, probabilityFi
         const prob = (art as any).probability
         if (prob === undefined) return probability(art, probabilityFilter);
         return prob
-      }
+      },
+      sortByKeys: ["probability", "artsetkey", "rarity", "level"]
     }
   }
 }
