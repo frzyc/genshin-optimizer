@@ -17,15 +17,14 @@ export function sortFunction<Keys extends string, T>(sortbyKeys: string[], ascen
   }
 
   return (a: T, b: T) => {
-    let diff: number = 0;
     for (const sortby of sortbyKeys) {
       const sortConfig: SortConfig<T> = configs[sortby]
       if (!sortConfig) return 0
-      diff = Sort(a, b, ascending, sortConfig)
+      const diff = Sort(a, b, ascending, sortConfig)
       if (diff) return diff
     }
 
-    return diff
+    return 0 // Tied on all passed in keys
   }
 }
 
