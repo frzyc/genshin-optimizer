@@ -20,7 +20,7 @@ import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
 import { CharacterKey } from '../Types/consts';
-import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from '../Util/CharacterSort';
+import { characterFilterConfigs, characterSortConfigs } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import { initialCharacterDisplayState } from './CharacterDisplayState';
@@ -127,7 +127,7 @@ export default function PageCharacter() {
         </Grid>
         <Grid item >
           <SortByButton sx={{ height: "100%" }}
-            sortKeys={characterSortKeys.slice(1, 4)} value={sortType} onChange={sortType => stateDispatch({ sortType })}
+            sortKeys={["level", "rarity", "name"]} value={sortType} onChange={sortType => stateDispatch({ sortType })}
             ascending={ascending} onChangeAsc={ascending => stateDispatch({ ascending })} />
         </Grid>
       </Grid>
