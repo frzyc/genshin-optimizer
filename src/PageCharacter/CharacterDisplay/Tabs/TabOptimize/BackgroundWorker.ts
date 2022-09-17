@@ -52,7 +52,7 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
     }
     default: assertUnreachable(command)
   }
-  postMessage({ id, result })
+  postMessage({ id, ...result })
 }
 
 export interface SplitWorker {
