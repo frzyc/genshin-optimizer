@@ -15,8 +15,6 @@
                     "noOverRoll": "O subatributo não pode ser sorteado mais que {{value}} vezes."
                 },
                 "noRoll": "Sem Sorteios",
-                "RollCount": "{{count}} Sorteio",
-                "RollCount_plural": "{{count}} Sorteios",
                 "noStat": "Sem Valor",
                 "eff": "Eficiência: <1></1>"
             },
@@ -87,9 +85,7 @@
             "level": "Nível",
             "efficiency": "Efic. Atual do Subatributo",
             "mefficiency": "Efic. Máxima do Subatributo"
-        },
-        "showingNum": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
-        "showingNum_plural": "Mostrando <1>{{count}}</1> de {{value}} Artefatos"
+        }
     },
     "languages": {
         "chs": "Chinês (Simplificado)",
@@ -112,15 +108,6 @@
             "selectLanguage": "Selecione o Idioma",
             "languageFormat": "Idioma: {{language}}"
         },
-        "downloadCard": {
-            "databaseDownload": "Download do Banco de Dados",
-            "databaseDisclaimer": "Nota: Quaisquer dados dentro da página \"Ferramentas\", p.ex. Quantidade de resina/cronômetro, não fazem parte do banco de dados baixado.",
-            "button": {
-                "download": "Download",
-                "copy": "Copiar para área de transferência",
-                "delete": "Excluir banco de dados"
-            }
-        },
         "uploadCard": {
             "title": "Upload de Banco de Dados",
             "replaceDatabase": "Substituir Banco de Dados",
@@ -133,7 +120,6 @@
         "tabs": {
             "artifacts": "Artefatos",
             "characters": "Personagens",
-            "builds": "Builds",
             "tools": "Ferramentas"
         },
         "social": {
@@ -150,9 +136,8 @@
         "unselect": "Desmarcar",
         "ascending": "Crescente",
         "descending": "Decrescente",
-        "sortByFormat": "Ordenar por: {{value}}",
         "loading": "Carregando...",
-        "rightsDisclaimer": "Genshin Optimizer não é afiliado ou endossado por HoYoverse.",
+        "rightsDisclaimer": "Genshin Optimizer não é afiliado ou endossado por miHoYo.",
         "appVersion": "$t(pageTitle) Versão: {{version}}",
         "underConstruction": "Em Construção",
         "error": "Erro"
@@ -179,7 +164,6 @@
     },
     "char_Noelle": {
         "p4cd": "24s, -1s a cada 4 acertos",
-        "c1chance": "\n(100% enquanto <strong>Grande Limpeza</strong> e <strong>Guardião do Coração</strong> estiverem em efeito)",
         "c6duration": "15s, +1s por oponente derrotado, até 10s"
     },
     "char_Venti": {
@@ -187,10 +171,6 @@
         "addFullAimed": "Dano adicional no Tiro Carregado",
         "upcurrentDuration": "Duração da corrente de vento",
         "regenEner": "Regenera 15 de Energia para Venti após o efeito terminar",
-        "fullBurstDMG": {
-            "text": "<0><0>Dano total do Supremo</0><1>Calcula o Dano total do Supremo, incluindo o redemoinho. Este cálculo assume:</1><2><0>20 ticks do <1>Supremo</1></0><1>15 ticks de <1>absorção de Dano</1></1><2>7 ticks de <1>Redemoinho</1>, para um inimigo, OU,</2><3>14 ticks de <1>Redemoinho</1>, para múltiplos inimigos que rodopiam uns aos outros.</3></2></0>",
-            "dmg": "<0>Dano total (<1>{{swirlTicks}} ticks do Redemoinho</1>)</0>"
-        },
         "c6": "Alvos que levarem Dano da <strong>Grande Ode do Vento</strong>",
         "c4": "Venti pega um Orbe Elemental ou Partícula",
         "q": "Regenera 15 de Energia a todos os personagens <1>{{elementKey}}</1>.",
@@ -203,8 +183,6 @@
         "dmg": "DANO",
         "hits": "({{hits}} Acertos)",
         "lessPercentHP": "< {{percent}}% VIDA",
-        "stack": "{{count}} Acúmulo",
-        "stack_plural": "{{count}} Acúmulos",
         "hitOp": {
             "normal": "Acertos de Ataques Normais nos oponentes",
             "charged": "Acertos de Ataques Carregados nos oponentes"

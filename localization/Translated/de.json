@@ -15,8 +15,6 @@
                     "noOverRoll": "Bonusattribute können nicht mehr als {{value}}-mal aufgewertet werden."
                 },
                 "noRoll": "Keine zufälligen Aufwertungen",
-                "RollCount": "{{count}} zufällige Aufwertung",
-                "RollCount_plural": "{{count}} zufällige Aufwertungen",
                 "noStat": "Kein Wert",
                 "eff": "Effizenz: <1></1>"
             },
@@ -88,12 +86,14 @@
             "efficiency": "Aktuelle Bonusattributseffizienz",
             "mefficiency": "Maximale Bonusattributseffizienz"
         },
-        "showingNum": "<1>{{count}}</1> von {{value}} Artefakt werden angezeigt",
-        "showingNum_plural": "<1>{{count}}</1> von {{value}} Artefakten werden angezeigt",
         "efficiencyFilter": {
             "title": "In Berechnung der Effizienz zu berücksichtigende Bonusattribute"
         },
-        "resetFilters": "Filter zurücksetzen"
+        "resetFilters": "Filter zurücksetzen",
+        "setEffectNum": "Set mit {{setNum}} Teilen",
+        "excludeArtifactTip": "Das Sperren eines Artefakts verhindert, dass der Build-Generator es für Builds auswählt.",
+        "excluded": "Dieses Artefakt ist gesperrt.",
+        "included": "Diese Artefakt ist nicht gesperrt."
     },
     "languages": {
         "chs": "Chinesisch (Vereinfacht)",
@@ -116,20 +116,33 @@
             "selectLanguage": "Sprache auswählen",
             "languageFormat": "Sprache: {{language}}"
         },
-        "downloadCard": {
-            "databaseDownload": "Datenbank exportieren",
-            "databaseDisclaimer": "Hinweis: Alle Daten aus der \"Extras\" Rubrik, wie z.B. Anzahl/Timer für Ursprüngliches Harz, sind nicht teil der exportieren Datenbank.",
-            "button": {
-                "download": "Herunterladen",
-                "copy": "In die Zwischenablage kopieren",
-                "delete": "Datenbank löschen"
-            }
-        },
         "uploadCard": {
             "title": "Datenbank importieren",
             "replaceDatabase": "Datenbank ersetzen",
             "hint": "Lade die JSON-Datei hier hoch...",
-            "hintPaste": "... oder kopiere den Text hierhin."
+            "hintPaste": "... oder kopiere den Text hierhin.",
+            "goUpload": {
+                "title": "<strong>Genshin Optimizer</strong>-Format",
+                "migrate": "Datenbank wird auf eine neuere Version migriert. Ziehe in Betracht die Datenbank nach dem Hochladen noch einmal herunterzuladen.",
+                "deleteDatabasePrompt": "Bist du dir sicher die alte Datenbank zu ersetzen? Alle existierenden Charaktere und Artefakte werden gelöscht."
+            },
+            "error": {
+                "jsonParse": "Kann JSON-File nicht parsen.",
+                "unknown": "Unbekanntes Dateiformat.",
+                "monaInvalid": "Ungültiges Mona-Uranai Dateiformat",
+                "goInvalid": "Ungültiges GO Backupdateiformat"
+            }
+        },
+        "count": {
+            "chars": "Charaktere:",
+            "arts": "Artefakte:",
+            "weapons": "Waffen:",
+            "total": "Insgesamt:",
+            "new": "Neu:",
+            "updated": "Aktualisiert:",
+            "removed": "Entfernt:",
+            "unchanged": "Unverändert:",
+            "invalid": "Ungültig:"
         }
     },
     "ui": {
@@ -137,8 +150,8 @@
         "tabs": {
             "artifacts": "Artefakte",
             "characters": "Figuren",
-            "builds": "Builds",
-            "tools": "Extras"
+            "tools": "Extras",
+            "weapons": "Waffen"
         },
         "social": {
             "paypal": "Paypal",
@@ -154,13 +167,16 @@
         "unselect": "Abwählen",
         "ascending": "Aufsteigend",
         "descending": "Absteigend",
-        "sortByFormat": "Sortieren nach: {{value}}",
         "loading": "Laden...",
-        "rightsDisclaimer": "Genshin Optimizer ist kein Teil von HoYoverse und wird nicht davon unterstützt.",
+        "rightsDisclaimer": "Genshin Optimizer ist kein Teil von miHoYo und wird nicht davon unterstützt.",
         "appVersion": "$t(pageTitle) Version: {{version}}",
         "underConstruction": "In Arbeit",
         "error": "Fehler",
-        "reset": "Zurücksetzen"
+        "reset": "Zurücksetzen",
+        "info": "INFO",
+        "inventory": "Inventar",
+        "close": "Schließen",
+        "refinement": "Verfeinerung {{value}}"
     },
     "char_Eula": {
         "skillC": {
@@ -184,7 +200,6 @@
     },
     "char_Noelle": {
         "p4cd": "24s, -1s pro 4 Treffer",
-        "c1chance": "(100%, wenn sowohl <strong>Großreinigung</strong> als auch <strong>Brustpanzer</strong> aktiv sind)",
         "c6duration": "15s, +1s pro besiegtem Gegner, bis zu 10s",
         "qlarger": "Erhöhte Angriffsreichweite"
     },
@@ -193,10 +208,6 @@
         "addFullAimed": "Zusätzlicher Schaden durch voll aufgeladene gezielte Schüsse",
         "upcurrentDuration": "Dauer der Luftströmung",
         "regenEner": "Stellt Venti nach Ende des Effekts 15 Elementarenergie wiederher.",
-        "fullBurstDMG": {
-            "text": "<0><0>Vollständiger Spezialfähigkeits-Schaden</0><1>Dies berechnet den vollständigen, ausgeteilten Schaden inkl. fortlaufendem Schaden. Dabei wird das Austeilen volgendem Schaden angenommen:</1><2><0>20 Vorkommen von <1>Spezialfähigkeits-Schaden</1></0><1>15 Vorkommen von <1>Absorptions-Schaden</1></1><2>7 Vorkommen von <1>fortlaufendem Schaden</1>, für einen Gegner, ODER,</2><3>14 Vorkommen von <1>fortlaufendem Schaden</1>, für mehrere Gegner, die zusammen Schaden erhalten.</3></2></0>",
-            "dmg": "<0>Vollständiger Schaden (<1>{{swirlTicks}}-mal fortlaufender Schaden</1>)</0>"
-        },
         "c6": "Ziele, denen mit <strong>Ode vom Anemo-Archon</strong> Schaden zugefügt wird",
         "c4": "Venti erhält Elementarkristalle oder Elementarteilchen",
         "q": "Stellt allen <1>{{elementKey}}</1> Figuren 15 Elementarenergie wieder her.",
@@ -209,8 +220,6 @@
         "dmg": "Schaden",
         "hits": "({{hits}} Treffer)",
         "lessPercentHP": "< {{percent}}% HP",
-        "stack": "{{count}} Stapelung",
-        "stack_plural": "{{count}} Stapelungen",
         "hitOp": {
             "normal": "Treffer gegen Gegner bei normalen Schlägen",
             "charged": "Treffer gegen Gegner bei heftigen Schlägen",
@@ -218,34 +227,163 @@
             "skill": "Treffer gegen Gegner durch Elementarfähigkeit",
             "burst": "Treffer gegen Gegner durch Elementarfähigkeit"
         },
-        "hits_plural": "{{count}} Treffer",
         "eleAbsor": "Elementarumwandlung",
-        "absorDot": "Fortlaufender Umwandlungs-Schaden"
+        "absorDot": "Fortlaufender Umwandlungs-Schaden",
+        "afterUse": {
+            "skill": "Nach Anwendung von Elementarfähigkeiten",
+            "burst": "Nach Anwendung von Spezialfähigkeiten"
+        },
+        "increase": {
+            "atk": "ANG-Erhöhung"
+        },
+        "energy": "Energie"
     },
     "weapon_SongOfBrokenPines": {
         "name": "Bewegung des Jahrtausends – Lied vom Aufstand"
     },
-    "weapon_FreedomSworn": {
-        "name": "Bewegung des Jahrtausends – Lied der Revolution"
-    },
     "char_KaedeharaKazuha": {
         "c1": "Überspringt die Abklingzeit bei Anwendung von <strong>Kazuha-Schlag</strong>",
-        "c2": "Innerhalb des wirbelnden Herbstfeldes"
+        "c2": "Innerhalb des wirbelnden Herbstfeldes",
+        "c6": {
+            "after": "Bei Anwendung von <strong>Chihayaburu</strong> oder <strong>Kazuha-Schlag</strong>",
+            "bonus": "Schadensbonus für normale und heftige Schläge und Angriffe aus dem Fall"
+        }
     },
     "char_Rosaria": {
         "a1": "Bei Angriffen von hinten",
         "a4": {
             "name": "Bei Anwendung von <strong>Letzte Salbung<strong/>",
             "text": "Erhöhung der KT aller Truppenmitglieder"
-        },
-        "c1": "Nach Auslösen eines KT",
-        "c6": "Mit Angriffen von <strong>Letze Salbung<strong/>"
+        }
     },
     "char_KamisatoAyaka": {
         "afterSprint": "Nach dem Sprinten",
         "afterSkill": "Nach der Anwendung von <strong>Kamisato-Stil: Hyouka</strong>",
         "afterSprintCryo": "Erhält <cryo>Cryo</cryo> nach dem Sprint",
         "staminaRestore": "Stellt 10 Punkte Ausdauer wieder her",
-        "snowflakeDMG": "Eisblüte SCH"
+        "snowflakeDMG": "Eisblüte SCH",
+        "dmgBySnowflake": "Getroffene Gegner von <strong> Kamisato-Stil: Soumetsu</strong>'s Frostflocke Seki no To "
+    },
+    "char_Traveler": {
+        "electro": {
+            "skill": {
+                "absorb": "Aktiver Charakter absorbiert ein Amulett des Überflusses",
+                "amuletGenAmt": "Anzahl erzeugter Amulette des Überflusses"
+            },
+            "c2": {
+                "thunderHit": "<strong>Rollender Donner</strong> trifft Gegner"
+            },
+            "burst": {
+                "3rd": "Dritter greller Blitzschlag SCH",
+                "thunderCd": "Rollender Donner Abklingzeit"
+            },
+            "passive2": {
+                "enerRech_": "Amulett des Überflusses Aufladerateneffekt-Erhöhung"
+            },
+            "c6": {
+                "fallingThunder3": "Dritter <strong>Rollender Donner</strong>-Angriff",
+                "fallingThunderBonus_": "<strong>Rollender Donner</strong> SCH-Bonus"
+            }
+        }
+    },
+    "char_Yoimiya": {
+        "c1": "Von <strong>Ryuukin-Lohe</strong> betroffener Gegner besiegt",
+        "c2": "Kritischer Treffer durch <pyro>Pyro-Schaden</pyro>",
+        "p2": "Erhöht Angriff aller Truppenmitglieder",
+        "p2p": "Verwendung von <strong>Ryuukin-Steinbrech</strong>",
+        "normPyroInfus": "<pyro>Standardang. Pyro-Kraft</pyro>",
+        "normMult_": "Standardang.-SCH Multiplikator",
+        "c6Key_": "Naganohara-Meteorstrom Multiplikator"
+    },
+    "char_RaidenShogun": {
+        "skill": {
+            "eye": "das unheilvolle Auge der Blitzstrafe"
+        },
+        "burst": {
+            "resolves": "Stapelungen von Entschlusskraft"
+        },
+        "a4": {
+            "eleDMG": "Elektro-SCH-Bonus"
+        }
+    },
+    "page_home": {
+        "intro": "Der <strong>ultimative</strong> <3><i>Genshin Impact</i></3>-Rechner, GO behält den Überblick über dein Artefakt-/Waffen-/Charakterinventar und hilft dir, mit was du hast den besten Build zu erstellen, basierend auf deiner Spielweise."
+    },
+    "char_Ganyu": {
+        "a1": {
+            "condName": "Nach Abschießen eines Frostblütenpfeils",
+            "critRateInc": "Frostblüten-KT Erhöhung"
+        },
+        "c1": {
+            "condName": "Gegner nimmt Schaden durch einen Phase 2 Frostblütenpfeil oder dem Erblühen eines Frostblütenpfeils"
+        },
+        "c4": {
+            "lingerDuration": "Effekt-Anhaltedauer"
+        }
+    },
+    "char_Xingqiu": {
+        "burstCond": "Regenbogentechnik"
+    },
+    "char_Zhongli": {
+        "skill": {
+            "stele": "Hügelkamm-SCH",
+            "resonance": "Resonanz-SCH",
+            "maxStele": "Höchstmenge an Hügelkämmen",
+            "nearShield": "Gegner in der Nähe von <strong>Jadeblock-Schild</strong>"
+        },
+        "p1cond": "Wenn der <strong>Jadeblock-Schild</strong> Schaden nimmt"
+    },
+    "weapon_TheWidsith": {
+        "aria": "Arie",
+        "interlude": "Intermezzo",
+        "recitative": "Rezitativ"
+    },
+    "page_character": {
+        "tabEquip": {
+            "compare": "Mit aktuellem Build vergleichen"
+        },
+        "tabTheorycraft": {
+            "maxTotalRolls": "Ein \"zulässiger\" Build kann maximal 45 Rolls haben."
+        }
+    },
+    "page_character_optimize": {
+        "useExcluded": {
+            "title": "Benutze gesperrte Artefakte"
+        },
+        "useEquipped": {
+            "modal": {
+                "desc1": "Bei der Erstellung eines Builds berücksichtigt der Optimizer nur ausgerüstete Artefakte von Charakteren unterhalb des aktuellen Charakters oder solche, die nicht auf der Liste stehen."
+            }
+        },
+        "allowPartial": "Erlaube Teil-Builds (<5 Artefakte)",
+        "constraintFilter": {
+            "title": "Build-Beschränkungen",
+            "tooltip": "Lege bestimmte Anforderungen fest, die generierte Builds erfüllen müssen. z.B. generierte Builds müssen mindestens 140% Aufladerate haben."
+        },
+        "artSetConfig": {
+            "2rainbow": "3-Regenbogen",
+            "4rainbow": "5-Regenbogen",
+            "alExRainbow": "<0>Erlaube <1></1></0> / <2>Sperre <1></1></2> Regenbogen-Builds",
+            "modal": {
+                "setCond": {
+                    "text": "Einige Artefakt-Set-Effekte bieten bedingte Stats. In diesem Fenster kannst du diese Effekte auswählen, so dass sie bei der Berechnung eines Builds, der einen Set-Effekt erfüllt, während der Optimierung Werte beitragen können."
+                },
+                "ArtSetFilter": {
+                    "intro": "Du kannst erlauben/sperren, welche Sets der Builder berücksichtigen soll. In den folgenden Beispielen ist <strong>A</strong> on-set und <strong>R</strong> Regenbogen(off-set)",
+                    "2set": "<0><0>Sperre<1></1> 2-Set</0></0> würde 2-Set-Builds ausschließen: <2><0>AA</0>RRR</2> und <4><0>AAA</0>RR</4>.",
+                    "4set": "<0><0>Sperre<1></1> 4-Set</0></0> würde 4-Set-Builds ausschließen: <2><0>AAAA</0>R</2> und <4><0>AAAAA</0></4>.",
+                    "2rain": "<0><0>Sperre<1></1> 3-Regenbogen</0></0> würde 2-Set + 3-Regenbogen-Builds ausschließen: <2>AA<1>RRR</1></2> und <4>AAA<1>RR</1></4>.",
+                    "4rain": "<0><0>Sperre<1></1> 5-Regenbogen</0></0> würde vollständige 5-Regenbogen-Builds ausschließen: <2><0>RRRRR</0></2>."
+                }
+            }
+        }
+    },
+    "page_scanner": {
+        "tags": {
+            "pc": "PC",
+            "ps": "PlayStation",
+            "materials": "Materialien",
+            "characters": "Charaktere"
+        }
     }
 }

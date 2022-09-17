@@ -71,14 +71,6 @@
             "selectLanguage": "言語",
             "languageFormat": "言語: {{language}}"
         },
-        "downloadCard": {
-            "databaseDownload": "データーベースをダウンロード",
-            "button": {
-                "download": "ダウンロード",
-                "copy": "クリップボードにコピーする",
-                "delete": "データベースを消す"
-            }
-        },
         "uploadCard": {
             "title": "データベースをアップロード",
             "replaceDatabase": "データベースを入れ替え",
@@ -91,7 +83,6 @@
         "tabs": {
             "artifacts": "聖遺物",
             "characters": "キャラクター",
-            "builds": "ビルド",
             "tools": "ツール"
         },
         "social": {
@@ -108,7 +99,6 @@
         "unselect": "選択削除",
         "ascending": "昇順",
         "descending": "降順",
-        "sortByFormat": "{{value}}で並べ替え",
         "loading": "ロード中",
         "rightsDisclaimer": "Genshin Optimizerは、MiHoYoと提携していません。または、これらの会社から承認を受けていません。",
         "appVersion": "$t(pageTitle) Version: {{version}}",
