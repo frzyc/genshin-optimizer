@@ -15,8 +15,6 @@
                     "noOverRoll": "추가옵션은 {{value}}회를 넘을 수 없습니다."
                 },
                 "noRoll": "추가옵션 없음",
-                "RollCount": "추가옵션 {{count}}회",
-                "RollCount_plural": "추가옵션 {{count}}회",
                 "noStat": "값 없음",
                 "eff": "효율: <1></1>"
             },
@@ -88,8 +86,6 @@
             "efficiency": "현재 부 옵션 효율.",
             "mefficiency": "최대 부 옵션 효율."
         },
-        "showingNum": "{{value}}개의 성유물 중 <1>{{count}}</1>개 표시중",
-        "showingNum_plural": "{{value}}개의 성유물 중 <1>{{count}}</1>개 표시중",
         "efficiencyFilter": {
             "title": "효율 계산에 사용할 부 옵션"
         },
@@ -116,15 +112,6 @@
             "selectLanguage": "언어 선택",
             "languageFormat": "언어: {{language}}"
         },
-        "downloadCard": {
-            "databaseDownload": "데이터베이스 다운로드",
-            "databaseDisclaimer": "알림: 레진 타이머 등 \"기타 기능\" 페이지의 데이터들은 다운로드 데이터베이스에 포함되지 않습니다.",
-            "button": {
-                "download": "다운로드",
-                "copy": "클립보드에 복사",
-                "delete": "데이터베이스 삭제"
-            }
-        },
         "uploadCard": {
             "title": "데이터베이스 업로드",
             "replaceDatabase": "데이터베이스 덮어쓰기",
@@ -137,7 +124,6 @@
         "tabs": {
             "artifacts": "성유물",
             "characters": "캐릭터",
-            "builds": "빌드",
             "tools": "기타 기능"
         },
         "social": {
@@ -154,7 +140,6 @@
         "unselect": "선택해제",
         "ascending": "오름차순",
         "descending": "내림차순",
-        "sortByFormat": "정렬기준: {{value}}",
         "loading": "불러오는중...",
         "rightsDisclaimer": "Genshin Optimizer는 미호요와 관계가 없으며 승인되지 않았습니다.",
         "appVersion": "$t(pageTitle) 버전: {{version}}",
@@ -184,7 +169,6 @@
     },
     "char_Noelle": {
         "p4cd": "24초, 매 4회 타격시 -1초",
-        "c1chance": "(<strong>대청소</strong>와 <strong>호심경</strong>이 동시에 발동했을 때 100%)",
         "c6duration": "15초, 적 처치 시 +1초, 최대 10초",
         "qlarger": "노엘의 공격 범위가 증가한다"
     },
@@ -193,10 +177,6 @@
         "addFullAimed": "풀차지 분열된 화살 데미지",
         "upcurrentDuration": "상승 기류 지속시간",
         "regenEner": "효과 종료 후 벤티의 원소 에너지 15 회복",
-        "fullBurstDMG": {
-            "text": "<0><0>원소 폭발 전체 데미지</0><1>확산을 포함하여 계산된 원소 폭발의 전체 데미지. 이 계산은 다음 내용을 가정함:</1><2><0>20회의 <1>원소 폭발 데미지</1></0><1>15회의 <1>원소 전환 데미지</1></1>적 하나에 대한 <2>7회의 <1>확산</1> 혹은,</2>다수의 적에 대한 <3>14회의 <1>확산</1></3></2></0>",
-            "dmg": "<0>총 데미지(<1>{{swirlTicks}}회 확산</1>)</0>"
-        },
         "c6": "<strong>바람신의 시</strong>에 피격된 적",
         "c4": "벤티가 원소 구슬 혹은 원소 입자를 획득",
         "q": "모든 <1>{{elementKey}}</1> 캐릭터의 원소 에너지 15 회복.",
@@ -209,8 +189,6 @@
         "dmg": "피해",
         "hits": "{{count}}회 적중",
         "lessPercentHP": "< {{percent}}% HP",
-        "stack": "{{count}}스택",
-        "stack_plural": "{{count}}스택",
         "hitOp": {
             "normal": "일반 공격이 대상에게 적중",
             "charged": "강공격이 대상에게 적중",
@@ -218,15 +196,11 @@
             "skill": "원소 전투 스킬이 대상에게 적중",
             "burst": "원소 폭발 스킬이 대상에게 적중"
         },
-        "hits_plural": "{{count}}회 적중",
         "eleAbsor": "원소 전환",
         "absorDot": "원소 전환 도트 데미지"
     },
     "weapon_SongOfBrokenPines": {
         "name": "천년의 대악장: 깃발의 노래"
-    },
-    "weapon_FreedomSworn": {
-        "name": "천년의 대악장: 투쟁의 노래"
     },
     "char_KaedeharaKazuha": {
         "c1": "<strong>카즈하의 일도</strong> 사용 쿨다운 리셋",
@@ -237,9 +211,7 @@
         "a4": {
             "name": "<strong>죽음의 성례</strong> 발동 시",
             "text": "파티 치명타 확률 증가"
-        },
-        "c1": "치명타 적중 시",
-        "c6": "<strong>죽음의 성례</strong> 공격 적중"
+        }
     },
     "char_KamisatoAyaka": {
         "afterSprint": "대시 후",
@@ -247,7 +219,6 @@
         "afterSprintCryo": "대시 후 <cyro>얼음 원소<cyro> 부착",
         "staminaRestore": "스태미나 10pt 회복",
         "snowflakeDMG": "서리의 관문 피해",
-        "dmgBySnowflake": "<strong>카미사토류·멸망의 서리</strong>로 생성된 서리의 관문이 가하는 피해를 받은 대상",
-        "UsurashiButou": "살얼음의 춤"
+        "dmgBySnowflake": "<strong>카미사토류·멸망의 서리</strong>로 생성된 서리의 관문이 가하는 피해를 받은 대상"
     }
 }
