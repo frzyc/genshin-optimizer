@@ -356,7 +356,7 @@ function CopyArea({ customMultiTarget, setCustomMultiTarget }: { customMultiTarg
     () => navigator.clipboard.writeText(value)
       .then(() => alert("Copied configuration to clipboard."))
       .catch(console.error),
-    [error, value],
+    [value],
   )
   const validate = useCallback(
     (v: string) => {
