@@ -1,11 +1,12 @@
-import { Add, ContentCopy, DeleteForever, ExpandLess, ExpandMore, Settings } from "@mui/icons-material";
-import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, CardContent, Chip, Grid, MenuItem, Skeleton, Tooltip, Typography } from "@mui/material";
+import { Add, ContentCopy, ContentPaste, DeleteForever, ExpandLess, ExpandMore, Settings } from "@mui/icons-material";
+import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, CardContent, Chip, Grid, MenuItem, Skeleton, styled, Tooltip, Typography } from "@mui/material";
 import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import AdditiveReactionModeText from "../Components/AdditiveReactionModeText";
 import AmpReactionModeText from "../Components/AmpReactionModeText";
 import CardDark from "../Components/Card/CardDark";
 import CloseButton from "../Components/CloseButton";
+import ColorText from "../Components/ColoredText";
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper, StyledInputBase } from "../Components/CustomNumberInput";
 import DropdownButton from "../Components/DropdownMenu/DropdownButton";
 import { infusionVals } from "../Components/HitModeEditor";
@@ -244,9 +245,9 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
       </Box>
     </AccordionSummary>
     <AccordionDetails>
-      {/* <Box mb={1}>
+      <Box mb={1}>
         <CopyArea customMultiTarget={target} setCustomMultiTarget={setTarget} />
-      </Box> */}
+      </Box>
       <Box display="flex" gap={1} flexDirection="column">
         {target.targets.map((t, i) => <CustomTargetDisplay key={t.path.join() + i} customTarget={t} setCustomTarget={(ct) => setCustomTarget(i, ct)} deleteCustomTarget={() => deleteCustomTarget(i)} rank={i + 1} maxRank={target.targets.length} setTargetIndex={setTargetIndex(i)} onDup={dupCustomTarget(i)} />)}
         <AddCustomTargetBtn setTarget={addTarget} />
@@ -263,7 +264,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
   const { data } = useContext(DataContext)
   const { path, weight, hitMode, reaction, bonusStats, infusionAura } = customTarget
   const setWeight = useCallback(weight => setCustomTarget({ ...customTarget, weight }), [customTarget, setCustomTarget])
-  const node: NodeDisplay = objPathValue(data.getDisplay(), path) as any
+  const node = objPathValue(data.getDisplay(), path) as NodeDisplay | undefined
   const setFilter = useCallback((bonusStats) => setCustomTarget({ ...customTarget, bonusStats }), [customTarget, setCustomTarget])
 
   const isMeleeAuto = characterSheet?.isMelee() && (path[0] === "normal" || path[0] === "charged" || path[0] === "plunging")
@@ -273,7 +274,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
         <CustomNumberInput float startAdornment="x" value={weight} onChange={setWeight} sx={{ borderRadius: 1, pl: 1 }} inputProps={{ sx: { pl: 0.5, width: "2em" }, min: 0 }} />
         <OptimizationTargetSelector optimizationTarget={path} setTarget={path => setCustomTarget({ ...customTarget, path, reaction: undefined, infusionAura: undefined })} ignoreGlobal targetSelectorModalProps={{ flatOnly: true, excludeSections: ["basic", "custom"] }} />
         <Box sx={{ flexGrow: 1 }} />
-        <ReactionDropdown reaction={reaction} setReactionMode={(rm) => setCustomTarget({ ...customTarget, reaction: rm })} node={node} infusionAura={infusionAura} />
+        {node && <ReactionDropdown reaction={reaction} setReactionMode={(rm) => setCustomTarget({ ...customTarget, reaction: rm })} node={node} infusionAura={infusionAura} />}
         <DropdownButton title={t(`hitmode.${hitMode}`)}>
           {allHitModes.map(hm => <MenuItem key={hm} value={hm} disabled={hitMode === hm} onClick={() => setCustomTarget({ ...customTarget, hitMode: hm })} >{t(`hitmode.${hm}`)}</MenuItem>)}
         </DropdownButton>
@@ -333,20 +334,49 @@ function AddCustomTargetBtn({ setTarget }: { setTarget: (t: string[]) => void })
     <TargetSelectorModal ignoreGlobal flatOnly show={show} onClose={onClose} setTarget={setTargetHandler} excludeSections={["basic", "custom"]} />
   </>
 }
-// const TextArea = styled("textarea")({
-//   width: "100%",
-//   fontFamily: "monospace",
-//   resize: "vertical",
-//   minHeight: "2em"
-// })
-// function CopyArea({ customMultiTarget, setCustomMultiTarget }: { customMultiTarget: CustomMultiTarget, setCustomMultiTarget: (t: CustomMultiTarget) => void }) {
-//   // TODO: target validation
-//   return <Box display="flex" gap={1}>
-//     <TextArea value={JSON.stringify(customMultiTarget)} onClick={e => {
-//       const target = e.target as HTMLTextAreaElement;
-//       target.selectionStart = 0;
-//       target.selectionEnd = target.value.length;
-//     }} onChange={(e) => console.log(JSON.parse(e.target.value) as CustomMultiTarget)} />
-//     <Button><ContentPaste /></Button>
-//   </Box>
-// }
+const TextArea = styled("textarea")({
+  width: "100%",
+  fontFamily: "monospace",
+  resize: "vertical",
+  minHeight: "2em"
+})
+function CopyArea({ customMultiTarget, setCustomMultiTarget }: { customMultiTarget: CustomMultiTarget, setCustomMultiTarget: (t: CustomMultiTarget) => void }) {
+  const [value, setValue] = useState(JSON.stringify(customMultiTarget))
+  const [error, setError] = useState("")
+  useEffect(() => {
+    setError("")
+    setValue(JSON.stringify(customMultiTarget))
+  }, [customMultiTarget, setValue])
+  const copyToClipboard = useCallback(
+    () => navigator.clipboard.writeText(value)
+      .then(() => alert("Copied configuration to clipboard."))
+      .catch(console.error),
+    [value],
+  )
+  const validate = useCallback(
+    (v: string) => {
+      setError("")
+      setValue(v)
+      try {
+        const validated = validateCustomMultiTarget(JSON.parse(v))
+        if (!validated) setError("Invalid Multi-Optimization Config")
+        else setCustomMultiTarget(validated)
+      } catch (e) {
+        if (e instanceof Error) setError(e.message)
+      }
+    },
+    [setValue, setCustomMultiTarget],
+  )
+
+  return <Box>
+    <Box display="flex" gap={1}>
+      <TextArea value={value} sx={{ outlineColor: error ? "red" : undefined }} onClick={e => {
+        const target = e.target as HTMLTextAreaElement;
+        target.selectionStart = 0;
+        target.selectionEnd = target.value.length;
+      }} onChange={(e) => validate(e.target.value)} />
+      <Button color="info" disabled={!!error} onClick={copyToClipboard}><ContentPaste /></Button>
+    </Box>
+    {!!error && <ColorText color="error"><Typography>{error}</Typography></ColorText>}
+  </Box>
+}

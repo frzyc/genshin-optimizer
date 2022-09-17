@@ -84,8 +84,6 @@
             "efficiency": "Eff. Substat actuelle",
             "mefficiency": "Eff. Substat maximum"
         },
-        "showingNum": "Affiche <1>{{count}}</1> sur {{value}} Artéfact",
-        "showingNum_plural": "Affiche <1>{{count}}</1> sur {{value}} Artéfacts",
         "efficiencyFilter": {
             "title": "Substats à utiliser dans le calcul de l'efficacité"
         },
@@ -112,15 +110,6 @@
             "selectLanguage": "Choisir la langue",
             "languageFormat": "Langue: {{language}}"
         },
-        "downloadCard": {
-            "databaseDownload": "Téléchargement des Données",
-            "databaseDisclaimer": "Note: toute donnée de la page \"Outils\", par exemple les calculs de Résine, ne font pas partie de la base de donnée téléchargée.",
-            "button": {
-                "download": "Télécharger",
-                "copy": "Copier vers le presse-papier",
-                "delete": "Supprimer la base de données"
-            }
-        },
         "uploadCard": {
             "title": "Téléverser la base de données",
             "replaceDatabase": "Remplacer la base de données",
@@ -143,9 +132,8 @@
         "unselect": "Désélectionner",
         "ascending": "Croissant",
         "descending": "Décroissant",
-        "sortByFormat": "Trier Par: {{value}}",
         "loading": "Chargement...",
-        "rightsDisclaimer": "Genshin Optimizer n'est pas affilié ou approuvé par HoYoverse",
+        "rightsDisclaimer": "Genshin Optimizer n'est pas affilié ou approuvé par miHoYo",
         "underConstruction": "En Construction",
         "error": "Erreur",
         "reset": "Réinitialisation"
@@ -172,7 +160,6 @@
     },
     "char_Noelle": {
         "p4cd": "24s, -1s Tous les 4 coups",
-        "c1chance": "(100% tant que <strong>Grand ménage</strong> et <strong>Armure de coeur</strong> sont actifs en même temps)",
         "c6duration": "15s, +1s par ennemi vaincu, jusqu'à 10s"
     },
     "char_Venti": {
@@ -180,10 +167,6 @@
         "addFullAimed": "DGTs tir visé (Pleine charge)",
         "upcurrentDuration": "Durée",
         "regenEner": "Régénère 15 Énergie à Venti lorsque l'effet prend fin",
-        "fullBurstDMG": {
-            "text": "<0><0>Total DGTs Déchaînement Élémentaire</0><1>Cela calcule le total des DGTs du Déchaînement Élémentaire, y compris la Dispersion. Ce calcul comprend :</1><2><0>20 ticks de <1>DGTs de Déchaînement</1></0><1>15 ticks de <1>DGTs d'Absorption</1></1><2>7 ticks de <1>Dispersion</1>, pour un ennemi, OU,</2><3>14 ticks de <1>Dispersion</1>, pour plusieurs ennemis, qui Disperse chacun d'entre eux.</3></2></0>",
-            "dmg": "<0>DGTs Total (<1>{{swirlTicks}} ticks de Dispersion</1>)</0>"
-        },
         "c6": "Cibles qui prennent les DGTs de <strong>Ode au Vent</strong>",
         "c4": "Venti obtient une orbe ou une particule",
         "q": "Régénère 15 Énergies à chaque personnage <1>{{elementKey}}</1>.",
@@ -203,14 +186,10 @@
             "skill": "Compétence Élémentaire touche des ennemis",
             "burst": "Déchaînement Élémentaire touche des ennemis"
         },
-        "hits_plural": "{{count}} coups",
         "eleAbsor": "Absorption Élémentaire"
     },
     "weapon_SongOfBrokenPines": {
         "name": "Concert du millénaire - Hymne du drapeau"
-    },
-    "weapon_FreedomSworn": {
-        "name": "Concert du Millénaire - Ode à la Révolte"
     },
     "char_KaedeharaKazuha": {
         "c2": "Dans Vent d'automne"
@@ -220,8 +199,6 @@
         "a4": {
             "name": "Après avoir utilisé <strong>Sacrement mortel<strong/>",
             "text": "Tx CRIT de l'équipe augmente"
-        },
-        "c1": "Après coup CRIT",
-        "c6": "<strong>Sacrement mortel<strong/> sur un ennemi"
+        }
     }
 }

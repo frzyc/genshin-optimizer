@@ -147,28 +147,31 @@ export default function TabBuild() {
     const plotBaseNode = plotBase ? nodes.pop() : undefined
     optimizationTargetNode = nodes.pop()!
 
-    const wrap = { buildValues: Array(maxBuildsToShow).fill(0).map(_ => -Infinity) }
+    const wrap = { buildValues: Array(maxBuildsToShow).fill(0).map(_ => ({ src: "", val: -Infinity })) }
 
     const minFilterCount = 8_000_000, maxRequestFilterInFlight = maxWorkers * 4
     const unprunedFilters = setPerms[Symbol.iterator](), requestFilters: RequestFilter[] = []
     const idleWorkers: number[] = [], splittingWorkers = new Set<number>()
     const workers: Worker[] = []
 
+    function getThreshold(): number {
+      return wrap.buildValues[maxBuildsToShow - 1].val
+    }
     function fetchContinueWork(): WorkerCommand {
-      return { command: "split", filter: undefined, minCount: minFilterCount, threshold: wrap.buildValues[maxBuildsToShow - 1] }
+      return { command: "split", filter: undefined, minCount: minFilterCount, threshold: getThreshold() }
     }
     function fetchPruningWork(): WorkerCommand | undefined {
       const { done, value } = unprunedFilters.next()
       return done ? undefined : {
         command: "split", minCount: minFilterCount,
-        threshold: wrap.buildValues[maxBuildsToShow - 1], filter: value,
+        threshold: getThreshold(), filter: value,
       }
     }
     function fetchRequestWork(): WorkerCommand | undefined {
       const filter = requestFilters.pop()
       return !filter ? undefined : {
         command: "iterate",
-        threshold: wrap.buildValues[maxBuildsToShow - 1], filter
+        threshold: getThreshold(), filter
       }
     }
 
@@ -202,8 +205,9 @@ export default function TabBuild() {
             status.failed += data.failed
             status.skipped += data.skipped
             if (data.buildValues) {
-              wrap.buildValues.push(...data.buildValues)
-              wrap.buildValues.sort((a, b) => b - a).splice(maxBuildsToShow)
+              wrap.buildValues = wrap.buildValues.filter(({ src }) => src !== data.source)
+              wrap.buildValues.push(...data.buildValues.map(val => ({ src: data.source, val })))
+              wrap.buildValues.sort((a, b) => b.val - a.val).splice(maxBuildsToShow)
             }
             break
           case "split":

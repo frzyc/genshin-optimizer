@@ -197,7 +197,7 @@ function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot): NumNode[] {
       case "threshold": {
         const [value, threshold, pass, fail] = operandRanges
         if (value.min >= threshold.max) return f.operands[2]
-        else if (value.max < threshold.min) return constant(0)
+        else if (value.max < threshold.min) return f.operands[3]
         if (pass.max === pass.min &&
           fail.max === fail.min &&
           pass.min === fail.min && isFinite(pass.min))
@@ -285,8 +285,8 @@ function computeNodeRange(nodes: NumNode[], reads: DynMinMax): Map<NumNode, MinM
       ])); break
       case "threshold":
         if (operands[0].min >= operands[1].max) current = operands[2]
-        else if (operands[0].max < operands[1].min) current = computeMinMax([0])
-        else current = computeMinMax([0], [operands[2]])
+        else if (operands[0].max < operands[1].min) current = operands[3]
+        else current = computeMinMax([], [operands[2], operands[3]])
         break
       case "sum_frac": {
         const [x, c] = operands, sum = { min: x.min + c.min, max: x.max + c.max }

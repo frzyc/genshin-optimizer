@@ -15,8 +15,6 @@
                     "noOverRoll": "Chỉ số phụ không thể roll nhiều hơn {{value}} lần"
                 },
                 "noRoll": "Không có roll",
-                "RollCount": "{{count}} Roll",
-                "RollCount_plural": "{{count}} Rolls",
                 "noStat": "Không có giá trị",
                 "eff": "Hiệu suất: <1></1>",
                 "nextRolls": "Rolls kế tiếp:"
@@ -91,8 +89,6 @@
             "efficiency": "Hiệu suất hiện tại.",
             "mefficiency": "Hiệu suất tối đa."
         },
-        "showingNum": "Hiển thị <1>{{count}}</1> trong {{value}} thánh di vật",
-        "showingNum_plural": "Hiển thị <1>{{count}}</1> trong {{value}} thánh di vật",
         "efficiencyFilter": {
             "title": "Chỉ số phụ để dùng ở công thức tính hiệu suất"
         },
@@ -120,15 +116,6 @@
         "languageCard": {
             "selectLanguage": "Lựa chọn ngôn ngữ",
             "languageFormat": "Ngôn ngữ: {{language}}"
-        },
-        "downloadCard": {
-            "databaseDownload": "Tải dữ liệu",
-            "databaseDisclaimer": "Ghi chú: bất kỳ thông tin nào trong trang \"công cụ\", ví dụ: số lượng Nhựa, thời gian hồi không thuộc dữ liệu có thể tải xuống",
-            "button": {
-                "download": "Tải xuống",
-                "copy": "Sao chép",
-                "delete": "Xóa dữ liệu"
-            }
         },
         "uploadCard": {
             "title": "Tải dữ liệu",
@@ -161,6 +148,17 @@
             "removed": "Đã loại bỏ:",
             "unchanged": "Không thay đổi:",
             "invalid": "Không hợp lệ:"
+        },
+        "DatabaseCard": {
+            "title": "Cơ sở dữ liệu",
+            "button": {
+                "download": "Tải xuống",
+                "copy": "Lưu vào bộ nhớ tạm",
+                "delete": "Xóa",
+                "upload": "Tải lên",
+                "swap": "Đổi"
+            },
+            "currentDB": "Cơ sở dữ liệu đã chọn"
         }
     },
     "ui": {
@@ -168,11 +166,10 @@
         "tabs": {
             "artifacts": "Thánh di vật",
             "characters": "Nhân vật",
-            "builds": "Builds",
             "tools": "Công cụ",
-            "database": "Cơ sở dữ liệu",
             "weapons": "Vũ khí",
-            "doc": "Docs"
+            "doc": "Docs",
+            "scanner": "Máy quét"
         },
         "social": {
             "paypal": "Paypal",
@@ -188,7 +185,6 @@
         "unselect": "Bỏ chọn",
         "ascending": "Tăng dần",
         "descending": "Giảm dần",
-        "sortByFormat": "Xếp theo: {{value}}",
         "loading": "Đang tải...",
         "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc xác nhận bởi miHoyo",
         "appVersion": "$t(pageTitle) Phiên bản: {{version}}",
@@ -207,7 +203,15 @@
             "mefficiency": "Hiệu suất chỉ số phụ tối đa",
             "artsetkey": "Bộ Thánh Di Vật",
             "probability": "Xác xuất Roll"
-        }
+        },
+        "link": {
+            "download": "Download Link",
+            "discord": "Discord Invite Link"
+        },
+        "sortBy": "Sắp xếp theo: ",
+        "delete": "Xóa",
+        "locked": "Đã khóa",
+        "unlocked": "Đã mở khóa"
     },
     "char_Eula": {
         "skillC": {
@@ -231,7 +235,6 @@
     },
     "char_Noelle": {
         "p4cd": "24s, -1s Cứ 4 lần đánh trúng",
-        "c1chance": "(Khi cùng ở trạng thái <strong>Quét sạch</strong> và <strong>Giáp hộ tâm</strong> tỉ lệ tăng lên 100%)",
         "c6duration": "15s, +1s mỗi lần đánh bại kẻ địch, tối đa 10s",
         "qlarger": "Tăng phạm vi tấn công"
     },
@@ -240,10 +243,6 @@
         "addFullAimed": "Sát thương tụ lực của mũi tên tăng thêm",
         "upcurrentDuration": "Thời gian luồng gió duy trì",
         "regenEner": "Hồi phục 15 điểm Năng lượng nguyên tố cho Venti sau khi kết thúc hiệu ứng",
-        "fullBurstDMG": {
-            "text": "<0><0>Tổng sát thương kỹ năng nộ</0><1>Công thức này là tổng tất cả sát thương nộ, bao gồm cả Khuếch tán.Giả định:</1><2><0><0>20 ticks của <1>sát thương nộ</1></0><1>15 ticks của <1>sát thương hấp thụ</1></1><2>7 ticks của <1>Khuếch tán</1>, với một kẻ địch, Hoặc,</2><3>14 ticks của <1>Khuếch tán</1>, với nhiều kẻ địch khuếch tán lẫn nhau.</3></0></2></0>",
-            "dmg": "<0>Tổng sát thương (<1>{{swirlTicks}} ticks Khuếch tán</1>)</0>"
-        },
         "c6": "Mục tiệu nhận sát thương từ <strong>Bài thơ thần gió</strong>",
         "c4": "Venti nhận nguyên tố Tinh cầu hoặc nguyên tố Hạt nhân",
         "q": "Hồi phục 15 năng lượng nguyên tố cho tất cả nhân vật trong đội có nguyên tố tương ứng.",
@@ -256,8 +255,6 @@
         "dmg": "Sát thương",
         "hits": "{{count}} Hit",
         "lessPercentHP": "< {{percent}}% HP",
-        "stack": "{{count}} Tầng",
-        "stack_plural": "{{count}} Tầng",
         "hitOp": {
             "normal": "Tấn công thường đánh trúng kẻ địch",
             "charged": "Trọng kích đánh trúng kẻ địch",
@@ -271,7 +268,6 @@
             "pyro": "Sát thương nguyên tố Hoả khi đánh trúng đối thủ",
             "electro": "Sát thương nguyên tố Lôi khi đánh trúng đối thủ"
         },
-        "hits_plural": "{{count}} Hits",
         "eleAbsor": "Chuyển hóa nguyên tố",
         "absorDot": "Sát thương chuyển hóa theo thời gian",
         "afterUse": {
@@ -280,13 +276,35 @@
         },
         "increase": {
             "atk": "Tăng tấn công"
+        },
+        "opponentsDamaged": "Kẻ địch đã bị gây sát thương",
+        "press": "Nhấn",
+        "hold": "Nhấn giữ",
+        "conditional": "Điều kiện",
+        "maxStacks": "Tầng hiệu ứng tối đa",
+        "1set": "Bộ lẻ",
+        "2set": "Bộ hai",
+        "4set": "Bộ bốn",
+        "stamDrain": "Thể lực tiêu hao",
+        "talents": {
+            "auto": "Tự động",
+            "skill": "Kĩ năng",
+            "burst": "Kĩ năng nộ",
+            "passive": "Hiệu ứng",
+            "passive1": "Tinh luyện 1",
+            "passive2": "Tinh luyện 4",
+            "passive3": "Hiệu ứng đặc biệt",
+            "sprint": "Chạy",
+            "constellation1": "C1",
+            "constellation2": "C2",
+            "constellation3": "C3",
+            "constellation4": "C4",
+            "constellation5": "C5",
+            "constellation6": "C6"
         }
     },
     "weapon_SongOfBrokenPines": {
         "name": "Ca Khúc Thời Đại Nghìn Năm: Khúc ca vén cờ"
-    },
-    "weapon_FreedomSworn": {
-        "name": "Ca khúc thời đại nghìn năm: Bài ca kháng chiến"
     },
     "char_KaedeharaKazuha": {
         "c1": "Thi triển <strong>Kazuha nhất đao trảm</strong> làm mới thời gian CD",
@@ -294,12 +312,6 @@
         "c6": {
             "after": "Sau khi thi truyển <strong>Chihayaburu</strong> hoặc <strong>Kazuha Nhất đao trảm</strong>",
             "bonus": "Đánh thường, trọng kích, tấn công khi đáp"
-        },
-        "a4": {
-            "name_hydro": "Khi kích hoạt phản ứng khuếch tán <hydro>Nguyên tố Thủy</hydro>",
-            "name_pyro": "Khi kích hoạt phản ứng khuếch tán<pyro>Nguyên tố Hỏa</pyro>",
-            "name_electro": "Khi kích hoạt phản ứng khuếch tán<electro>Nguyên tố Lôi</electro>",
-            "name_cryo": "Khi kích hoạt phản ứng khuếch tán<cyro>Nguyên tố Băng</cyro>"
         }
     },
     "char_Rosaria": {
@@ -307,9 +319,7 @@
         "a4": {
             "name": "Khi thi triển <strong>Thánh lễ cuối cùng</strong>",
             "text": "Tăng tỉ lệ bạo kích của các nhân vật trong đội"
-        },
-        "c1": "Sau khi tạo thành bao kích",
-        "c6": "<strong>Thánh lễ cuối cùng</strong>đòn tấn công lên kẻ địch"
+        }
     },
     "char_KamisatoAyaka": {
         "afterSprint": "Sau khi lướt",
@@ -318,7 +328,6 @@
         "staminaRestore": "Phục hồi 10 Thể lực",
         "snowflakeDMG": "Sát thương Cổng băng tuyết",
         "dmgBySnowflake": "Kẻ địch chịu sát thương do Cổng băng tuyết của <strong>Trường phái Kamisato-Soumetsu</strong> gây ra",
-        "UsurashiButou": "Usurahi Butou",
         "afterBurst": "Sau khi thi truyển <strong>Trường phát Kamisato-Soumetsu</strong>"
     },
     "char_Traveler": {
@@ -334,20 +343,8 @@
             }
         }
     },
-    "weapon_Hamayumi": {
-        "ener": "100% năng lượng"
-    },
     "weapon_MistsplitterReforged": {
         "emblem": "Vết cắt sương mù"
-    },
-    "weapon_ThunderingPulse": {
-        "emblem": "Vết cắt sấm sét"
-    },
-    "char_Razor": {
-        "fullBurstDMG": {
-            "text": "<0><strong>Tổng sát thương kỹ năng nộ</strong></0><1>Công thức này bao gồm sát thương từ đòn đánh thường của Razor khi trong trạng thái nộ. Nó đơn giản là tổng X-hit của Sói và X-hit đánh thường của Razor kích hoạt nó.</1>",
-            "label": "Sát thương đánh thường + sói {{hitNum}}"
-        }
     },
     "char_Yoimiya": {
         "c1": "Đánh bại kẻ địch ảnh hưởng bởi <strong>Lưu kim quang hỏa</strong>",
@@ -377,8 +374,7 @@
             "coil1": "1 Tầng Dây Móc",
             "coil2": "2 Tầng Dây Móc",
             "coil3": "3 Tầng Dây Móc",
-            "rush": "Hồ Băng",
-            "rushDur": "Thời gian kéo dài Hồ Băng"
+            "rush": "Hồ Băng"
         }
     },
     "char_KujouSara": {
@@ -393,33 +389,39 @@
     },
     "page_home": {
         "intro": "<0>Giới thiệu về Genshin Optimizer</0><1>Genshin Optimizer (GO) là một trang web mã nguồn mở do người hâm mộ tạo ra cho trò chơi gacha hành động nhập vai <1><strong>Genshin Impact</strong></1>. Nó chủ yếu nhằm mục đích giúp đỡ người chơi về khía cạnh phức tạp của trò chơi: Tối ưu hoá Thánh Di Vật. Vì Thánh Di Vật là các yếu tố dựa trên RNG (Random Number Generator) góp phần trực tiếp vào mức độ hiệu quả của các nhân vật của bạn trong trò chơi, GO sẽ cố gắng tìm các Thánh Di Vật tốt nhất cho các nhân vật dựa trên Túi chứa Thánh Di Vật hiện tại của bạn.</1><2>GO có thể theo dõi các Thánh Di Vật và cho phép dễ dàng hơn trong việc lọc/so sánh các Thánh Di Vật, nó đóng vai trò như một công cụ giúp người dùng tìm Thánh Di Vật tốt trong túi để tăng cấp và Thánh Di Vật xấu để sử dụng làm nguyên liệu cường hoá.</2><3>Vì GO có thể sao chép các chỉ số chính xác của bất kỳ nhân vật nào, cùng với việc tính toán tất cả các con số sát thương với độ chính xác lên đến 1%, GO cũng có thể tính sát thương và là công cụ tính toán lý thuyết.</3>",
-        "helpDev": "<0>Bạn muốn giúp đỡ Genshin Optimizer?</0><1>Nếu bạn muốn hỗ trợ tài chính cho GO, vui lòng quyên góp qua <1>Paypal</1> hoặc <3>Patreon</3>. GO không lưu trữ quảng cáo và không thu phí bất kỳ tính năng nào.</1><2>Nếu bạn muốn giúp đỡ dịch thuật GO, hãy yêu cầu tính năng hoặc báo cáo lỗi, tham gia <1>Discord</1> của chúng tôi. Đây là nơi bạn sẽ tìm thấy thêm thông tin liên quan đến GO và thông tin các công việc đang thực hiện.</2><3>Bạn cũng có thể tham gia <1>Genshin Dev Discord</1> nếu bạn muốn tạo ứng dụng về Genshin.</3>",
-        "quickLinks": {
-            "title": "Quick Links",
-            "scannerTitle": "Bạn có muốn tự động hóa một số quy trình nhập Thánh Di Vật không?",
-            "scannerText": "Dưới đây là danh sách các phần mềm tự động quét tương thích có thể cung cấp dữ liệu vào GO. Các chương trình này sẽ tự động quét các Thánh Di Vật từ trò chơi của bạn và xuất dữ liệu đó thành một tập tin. Sau đó, tập tin này có thể nhập vào GO.",
-            "scannerBtn": "Danh Sách Phần Mềm",
-            "goGithubText": "GO hoàn toàn là mã nguồn mở, được viết bằng TypeScript, với <1></1>React framework.",
-            "goGithubBtn": "Genshin Optimizer Github"
+        "quickLinksCard": {
+            "title": "Danh sách liên kết",
+            "buttons": {
+                "tyGuide": {
+                    "tooltip": "Cách dùng công cụ tối ưu hóa Genshin"
+                },
+                "scanners": {
+                    "title": "Tự động nhập dữ liệu",
+                    "tooltip": "Phần mềm từ phía thứ 3 cho phép thực hiện lấy dữ liệu tdv tự động"
+                },
+                "devDiscord": {
+                    "title": "Discord của nhà phát triển Genshin ",
+                    "tooltip": "Cộng đồng các nhà phát triển dành cho Genshin"
+                },
+                "good": {
+                    "title": "Tài liệu về \"GOOD\""
+                }
+            }
         },
-        "features": {
-            "title": "Tính Năng",
-            "artifact": {
-                "title": "Trình chỉnh sửa Thánh Di Vật & Túi"
-            },
-            "characterEditor": {
-                "title": "Trình chỉnh sửa Nhân Vật & Vũ Khí"
-            },
-            "characterCalc": {
-                "title": "Tính toán sát thương của Nhân Vật"
-            },
-            "tools": {
-                "title": "Công cụ & Tiện ích"
+        "inventoryCard": {
+            "title": "ĐI ĐẾN túi đồ"
+        },
+        "vidGuideCard": {
+            "title": "Video hướng dẫn"
+        },
+        "teamCard": {
+            "title": "Gặp nhóm chúng tôi",
+            "jobTitle": {
+                "leadDev": "Trưởng nhóm phát triển",
+                "dev": "Nhà phát triển",
+                "mod": "Quản trị viên"
             }
         }
-    },
-    "page_scanner": {
-        "backHome": "Quay lại trang chủ"
     },
     "weapon_EverlastingMoonglow": {
         "name": "Tăng sát thương tấn công thường"
@@ -427,20 +429,11 @@
     "weapon_Akuoumaru": {
         "party": "Tổng giới hạn năng lượng nguyên tố"
     },
-    "weapon_PolarStar": {
-        "ashen": "Ngôi sao đêm trắng"
-    },
     "artifact_ArchaicPetra": {
         "condName": "Nhận hạt kết tinh"
     },
     "artifact_Instructor": {
         "condName": "Kích hoạt phản ứng nguyên tố"
-    },
-    "artifact_MaidenBeloved": {
-        "condName": "Thi truyển kỹ năng nguyên tố và kỹ năng nộ"
-    },
-    "artifact_NoblesseOblige": {
-        "condName": "Thi truyển kỹ năng nộ"
     },
     "artifact_TenacityOfTheMillelith": {
         "condName": "Kỹ năng nguyên tố trúng kẻ địch"
@@ -456,7 +449,7 @@
         "name": "Tăng sát thương tấn công thường"
     },
     "weapon_ElegyForTheEnd": {
-        "condName": "Ca khúc thời đại nghìn năm:Bài ca ly biệt"
+        "condName": "Ca khúc thời đại nghìn năm: Bài ca ly biệt"
     },
     "weapon_MouunsMoon": {
         "party": "Tổng giới hạn năng lượng nguyên tố"
@@ -467,7 +460,54 @@
     "weapon_WavebreakersFin": {
         "party": "Tổng giới hạn năng lượng nguyên tố"
     },
-    "weapon_WolfsGravestone": {
-        "condName": "Tấn công kẻ địch có HP dưới 30%"
+    "page_scanner": {
+        "ik": {
+            "title": "Inventory Kamera",
+            "p1": "Ứng dụng này sẽ quét tất cả các nhân vật + vũ khí + thánh di vật trong túi của bạn. Làm theo hướng dẫn trong ứng dụng để thiết lập. Ứng dụng này chỉ quét bằng ngôn ngữ tiếng Anh.",
+            "p2": "Phần mềm này cũng có thể quét dữ liệu cho <1> Seelie.me </1>",
+            "p3": "Ứng dụng này chỉ quét bằng ngôn ngữ tiếng Anh và nên xuất sang định dạng mặc định của ứng dụng."
+        },
+        "am": {
+            "title": "「天目」-- Amenoma",
+            "p1": "Quét tất cả các thánh di vật của bạn trong túi của bạn. Làm theo hướng dẫn để chụp cửa sổ và quét. Có cả phiên bản tiếng Trung và tiếng Anh. (Tải xuống phiên bản <1>_EN.exe</1> để quét bằng tiếng Anh). Cả định dạng <3>mona-uranai</3> và <5>GOOD</5> đều được chấp nhận trong GO. Nên sử dụng định dạng <7>GOOD</7>.",
+            "p2": "Phiên bản beta của ứng dụng này cũng có thể quét dữ liệu cho <1> Seelie.me </1>"
+        },
+        "as": {
+            "title": "AdeptiScanner",
+            "p1": "Quét tất cả thánh di vật của bạn trong túi. Có chế độ quét thủ công.",
+            "p2": "Ứng dụng này cũng có thể được thiết lập cho các thánh di vật mới trong các phiên bản mới nhất của Genshin mà không cần cập nhật."
+        },
+        "goodeng": "Ứng dụng này chỉ quét bằng tiếng Anh và xuất sang định dạng GOOD."
+    },
+    "page_character": {
+        "tabEquip": {
+            "swapWeapon": "Đổi vũ khí",
+            "swapArt": "Đổi thánh di vật",
+            "compare": "So sánh với bộ tdv hiện tại"
+        },
+        "characterName": "Tên nhân vật",
+        "none": "Trống"
+    },
+    "page_weapon": {
+        "showingNum_one": "Đang hiện <1>{{count}}</1> trên {{value}} Vũ khí",
+        "showingNum_other": "Đang hiện <1>{{count}}</1> trên tổng {{value}} Vũ khí",
+        "edit": "Điều chỉnh Vũ khí",
+        "weaponName": "Tên vũ khí",
+        "removeWeapon": "Bạn có chắc bạn muốn xóa {{value}}?",
+        "addWeapon": "Thêm Vũ khí mới"
+    },
+    "weapon_AquaSimulacra": {
+        "condName": "Kẻ địch ở gần"
+    },
+    "weapon_FadingTwilight": {
+        "states": {
+            "evengleam": "Chạng Vạng",
+            "afterglow": "Lưu Hà",
+            "dawnblaze": "Hừng Đông"
+        },
+        "condName": "Trạng thái hiện tại"
+    },
+    "weapon_HaranGeppakuFutsu": {
+        "consumed": "Tầng đã tiêu hao từ hiệu ứng \"mũi sóng\""
     }
 }

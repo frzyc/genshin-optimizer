@@ -15,8 +15,6 @@
                     "noOverRoll": "Substat tidak dapat diroll lebih dari {{value}} kali."
                 },
                 "noRoll": "Tanpa Roll",
-                "RollCount": "{{count}} Roll",
-                "RollCount_plural": "{{count}} Roll",
                 "noStat": "Tanpa Nilai",
                 "eff": "Efisiensi: <1></1>",
                 "nextRolls": "Roll berikutnya"
@@ -91,8 +89,6 @@
             "efficiency": "Eff. Substat Saat Ini",
             "mefficiency": "Eff. Substat Maksimum"
         },
-        "showingNum": "Menampilkan <1>{{count}}</1> dari {{value}} Artefak",
-        "showingNum_plural": "Menampilkan <1>{{count}}</1> dari {{value}} Artefak",
         "efficiencyFilter": {
             "title": "Substat yang dipakai dalam perhitungan efisiensi"
         },
@@ -120,15 +116,6 @@
         "languageCard": {
             "selectLanguage": "Pilih Bahasa",
             "languageFormat": "Bahasa: {{language}}"
-        },
-        "downloadCard": {
-            "databaseDownload": "Unduh Database",
-            "databaseDisclaimer": "Catatan: data apa pun dalam halaman \"Alat\", mis. Jumlah resin/timer, bukan bagian dari database yang diunduh.",
-            "button": {
-                "download": "Unduh",
-                "copy": "Salin ke Papan Klip",
-                "delete": "Hapus Database"
-            }
         },
         "uploadCard": {
             "title": "Unggah Database",
@@ -168,9 +155,7 @@
         "tabs": {
             "artifacts": "Artefak",
             "characters": "Karakter",
-            "builds": "Build",
             "tools": "Alat",
-            "database": "Database",
             "weapons": "Senjata",
             "doc": "Docs"
         },
@@ -188,9 +173,8 @@
         "unselect": "Batal pilih",
         "ascending": "Meningkat",
         "descending": "Menurun",
-        "sortByFormat": "Urut Berdasarkan: {{value}}",
         "loading": "Memuat...",
-        "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan HoYoverse.",
+        "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan miHoYo.",
         "appVersion": "$t(halamanJudul) Versi: <1>{{version}}</1>",
         "underConstruction": "Sedang Dibangun",
         "error": "Error",
@@ -231,7 +215,6 @@
     },
     "char_Noelle": {
         "p4cd": "24 dtk, -1 dtk Setiap 4 hit",
-        "c1chance": "(100% jika <strong>Sweeping Time</strong> dan <strong>Breastplate</strong> aktif bersamaan)",
         "c6duration": "15 dtk, +1 dtk/kill, maks 10 dtk",
         "qlarger": "Serangan area yang lebih besar"
     },
@@ -240,10 +223,6 @@
         "addFullAimed": "Tambahan DMG Membidik Penuh",
         "upcurrentDuration": "Durasi Arus Angin",
         "regenEner": "Memulihkan 15 Energy ke Venti setelah efek berakhir",
-        "fullBurstDMG": {
-            "text": "<0><0>DMG Elemental Burst Penuh</0><1>Ini menghitung total DMG Elemental Burst, termasuk swirl. Perhitungan ini mengasumsikan:</1><2><0><0>20 tick dari <1>DMG Burst</1></0><1>15 tick dari <1>DMG absorption</1></1><2>7 ticks dari <1>Swirl</1>, untuk satu musuh, ATAU,</2><3>14 tick dari <1>Swirl</1>, untuk banyak musuh, yang Swirl satu sama lain.</3></0></2></0>",
-            "dmg": "<0>DMG Total (<1>{{swirlTicks}} tick Swirl</1>)</0>"
-        },
         "c6": "Target yang menerima DMG dari <strong>Wind's Grand Ode</strong>",
         "c4": "Venti mengambil sebuah Elemental Orb atau Partikel",
         "q": "Memulihkan 15 Energy ke pada anggota party yang memiliki elemen tersebut.",
@@ -256,8 +235,6 @@
         "dmg": "DMG",
         "hits": "{{count}} Hit",
         "lessPercentHP": "< {{percent}}% HP",
-        "stack": "{{count}} Lapis",
-        "stack_plural": "{{count}} Lapis",
         "hitOp": {
             "normal": "Normal Attack mengenai musuh",
             "charged": "Charged Attack mengenai musuh",
@@ -271,7 +248,6 @@
             "pyro": "Pyro DMG mengenai musuh",
             "electro": "Electro DMG mengenai musuh"
         },
-        "hits_plural": "{{count}} Hit",
         "eleAbsor": "Elemental Absorption",
         "absorDot": "DMG Berkelanjutan",
         "afterUse": {
@@ -285,21 +261,12 @@
     "weapon_SongOfBrokenPines": {
         "name": "Millennial Movement: Banner-Hymn"
     },
-    "weapon_FreedomSworn": {
-        "name": "Millennial Movement: Song of Resistance"
-    },
     "char_KaedeharaKazuha": {
         "c1": "Menggunanakan <strong>Kazuha Slash</strong> me-reset CD",
         "c2": "Dalam area Autumn Whilelwind",
         "c6": {
             "after": "Setelah menggunakan <strong>Chihayaburu</strong> atau <strong>Kazuha Slash</strong>",
             "bonus": "DMG Normal, Charged dan Plunging"
-        },
-        "a4": {
-            "name_hydro": "Ketika memicu reaksi Swirl <hydro>Hydro</hydro>.",
-            "name_pyro": "Ketika memicu reaksi Swirl <pyro>Pyro</pyro>.",
-            "name_electro": "Ketika memicu reaksi Swirl <electro>Electro</electro>.",
-            "name_cryo": "Ketika memicu reaksi Swirl <cryo>Cryo</cryo>."
         }
     },
     "char_Rosaria": {
@@ -307,9 +274,7 @@
         "a4": {
             "name": "Setelah munggunakan <strong>Rites of Termination</strong>",
             "text": "Peningkatan CRIT Rate party"
-        },
-        "c1": "Setelah CRIT Hit",
-        "c6": "Serangan <strong>Rites of Termination</strong> ke musuh"
+        }
     },
     "char_KamisatoAyaka": {
         "afterSprint": "Setelah Lari",
@@ -318,7 +283,6 @@
         "staminaRestore": "Memulihkan 10 Stamina",
         "snowflakeDMG": "DMG Saat Mekar",
         "dmgBySnowflake": "Musuh terkena Frostflake Seki no To dari <strong>Kamisato Art: Soumetsu</strong>",
-        "UsurashiButou": "Usurahi Butou",
         "afterBurst": "Setelah menggunakan <strong>Kamisato Art: Soumetsu</strong>"
     },
     "char_Traveler": {
@@ -334,20 +298,8 @@
             }
         }
     },
-    "weapon_Hamayumi": {
-        "ener": "100% energy"
-    },
     "weapon_MistsplitterReforged": {
         "emblem": "Mistsplitter's Emblem"
-    },
-    "weapon_ThunderingPulse": {
-        "emblem": "Thunder Emblem"
-    },
-    "char_Razor": {
-        "fullBurstDMG": {
-            "text": "<0><strong>Full Elemental Burst DMG</strong></0><1>Menghitung kombinasi damage dari normal attack Razor selama Elemental Burst. Dengan kata lain, menambahkan Wolf Hit DMG dengan DMG X-Hit dari normal attack yang memicunya.</1>",
-            "label": "Normal + Wolf Hit DMG {{hitNum}}"
-        }
     },
     "char_Yoimiya": {
         "c1": "Musuh terkena efek <strong>Aurous Blaze</strong> dikalahkan",
@@ -377,8 +329,7 @@
             "coil1": "Lapisan Coil 1",
             "coil2": "Lapisan Coil 2",
             "coil3": "Lapisan Coil 3",
-            "rush": "Rushing Ice",
-            "rushDur": "Durasi Rushing Ice"
+            "rush": "Rushing Ice"
         }
     },
     "char_KujouSara": {
@@ -392,45 +343,10 @@
         "c6": "Setelah Normal dan Charged Attack memulihkan karakter dengan HP 80% atau lebih"
     },
     "page_home": {
-        "intro": "<0>Apa itu Genshin Optimizer?</0><1>Genshin Optimizer (GO) merupakan website fan-made open source untuk game gacha RPG <1><strong>Genshin Impact</strong></1>. Alat ini bertujuan untuk mempermudah pemain untuk mengoptimisasi artefak yang ada dalam game tersebut. Dikarenakan artefak mampu menentukan seberapa efektif karaktermu di dalam game, GO akan mencoba mencari artefak yang terbaik dari semua artefak yang kamu miliki untuk karaktermu.</1><2>GO bisa menyimpan informasi artefak yang kamu miliki serta bisa membandingkan dan memfilter artefak agar mempermudah pencarian artefak yang bagus di dalam tas untuk ditingkatkan levelnya atau artefak yang bisa dijadikan tumbal.</2><3>Karena GO sanggup menyalin stat untuk semua karakter, serta sanggup mengkalkulasi semua jumlah damage hingga akurasi 1%, alat ini bisa dijadikan sebagai kalkulator damage dan alat untuk theory crafting.</3>",
-        "helpDev": "<0>Ingin membantu si developer?</0><1>Jika kalian ingin membantu si developer secara finansial, kalian bisa melakukannya dengan cara donasi via <1>Paypal</1> atau <3>Patreon</3>. GO tidak akan memasang iklan dan tidak akan mengunci fitur mana pun di balik paywall. </1><2>Jika kalian ingin membantu proses penerjemahan GO ke dalam bahasamu, meminta fitur atau melaporkan bug, silakan bergabung ke dalam <1>discord</1> kami. Di sana, kalian akan menemukan semua informasi yang berkaitan dengan GO dan fitur apa saja yang masih dalam tahap pengerjaan. </2><3>Kalian juga bisa bergabung di <1>Genshin Dev discord</1> jika kalian tertarik membuat aplikasi Genshin.",
-        "credits": "<0>Ucapan terima kasih atas jasa yang tak terlupakan</0><1>GO merupakan hasil kerja keras selama berjam-jam yang dilakukan oleh dua maintainer, <1><strong>frzyc</strong></1> dan <3><strong>lantua</strong></3>. Berbagai sumber lain juga turut membantu dalam kontribusi pengembangan website ini. Ucapan terima kasih ini diberikan untuk mereka atas jasanya. </1><2><0><0>Terima kasih untuk kalian semua yang ada di komunitas, terutama bagi kalian yang ada di <1>discord</1> kami karena sudah menyediakan umpan balik dan membantu kami menyempurnakan alat ini. </0><1>Terima kasih untuk <1>Dimbreath</1>, karena sudah memberikan sumber yang konsisten untuk data genshin dan jumlah. Semua kalkulasi kami tidak akan sempurna tanpanya. </1><2>Beberapa gambar genshin yang kami miliki diambil langsung dari <1>The Genshin Impact Wiki</1>, jadi terima kasih juga untuk mereka. </2><3>Ucapan terima kasih yang istimewa bagi kalian di dalam komunitas yang sudah membantu kami menerjemahkan GO ke dalam bahasa lain, membantu kami menguji formula dengan merekam data in-game dan para programmer yang membantu kami dalam kontribusi sumber kode. </3><4>Terima kasih juga untuk kalian yang sudah membagikan alat ini dan mengundang lebih banyak orang untuk menggunakan alat ini. </4><5>Terkahir dan yang paling penting, terima kasih karena <strong>KAMU</strong> karena telah menggunakan GO. </5></0></2>",
-        "quickLinks": {
-            "title": "Quick Links",
-            "scannerTitle": "Apa kamu ingin mengimput proses artefak secara otomatis?",
-            "scannerText": "Berikut merupakan daftar pemindai otomatis kompatibel yang dapat menyajikan data ke GO. Program berikut bisa memindai artefak secara otomatis dari dalam game, lalu mengekspor data tersebut menjadi file. File tersebut lalu bisa diimpor ke dalam GO.",
-            "scannerBtn": "Daftar pemindai",
-            "goGithubText": "GO merupakan open-source, ditulis dalam TypeScript, dengan <1></1>React Framework.",
-            "goGithubBtn": "Genshin Optimizer Github"
-        },
-        "features": {
-            "title": "Fitur",
-            "artifact": {
-                "title": "Editor Artefak & Tas",
-                "content": "<0><0>Editor Artefak dengan fitur lengkap. </0><1>Tambahkan artefak dengan memindai screenshot. </1><2>Secara otomatis, mengkalkulasi nilai roll dari setiap artefak. </2><3>Mengkalkulasi efisiensi substat menggunakan kalkulasi roll. Menggunakan hasil efisiensi untuk menentukan apakah artefak tersebut layak disimpan atau ditumbal. </3><4>Artefak yang tersimpan bisa diurut dan difilter. </4><5>Mengimpor database artefak dari <1>pemindai otomatis pihak ketiga</1>.</5></0>"
-            },
-            "characterEditor": {
-                "title": "Editor karakter & Senjata",
-                "content": "<><>Editor karakter dengan fitur lengkap. </0><1>Mengisi secara otomatis stat karakter untuk setiap milestone level/ascension. </1><2>Stat yang bisa diedit untuk kostumisasi. </2><3>Mengkalkulasi stat saat ini berdasarkan senjata/artefak. </3><4>Editor senjata dengan fitur lengkap, dengan milestone stat level/ascension. </4><5>Menerapkan pasif kondisional, dari talent, senjata, dan artefak untuk meniru kondisi in-game secara akurat. </5></0>"
-            },
-            "characterCalc": {
-                "title": "Kalkulasi Damage Karakter",
-                "content": "<0><0>Semua rincian untuk semua talent karakter. </0><1>Semua jumlah harusnya sesuai dengan damage di dalam in-game (dengan perbedaan 1% error). </1><2>stat kondisional dan modifikasi dari semua konstelasi juga dihitung. </2><3>Menunjukkan kalkulasi dari semua jumlah, lengkap dengan formulanya. </3><4>Editor musuh dengan level/resistance yang dapat diisi untuk kostumisasi damage. </4><5>Elemental infusion untuk normal/charged/plunging attack juga ikut dihitung. </5><6>Kalkulasi damag secara real-time. </6></0>"
-            },
-            "build": {
-                "title": "Build Generator",
-                "content": "<0><0>Menghasilkan build untuk karakter tertentu yang menggunakan tas artefak. </0><1>Menghasilkan build karakter yang maksimal berdasarkan target optimisasi yang sesuai. </1><2>Membatasi build dengan set artefak, main stat... </2><3>Setting build dengan fitur lengkap dengan hasil yang disesuaikan. </3><4>Membandingkan build artefak yang dihasilkan dari generator dengan artefak yang saat ini dikenakan oleh karakter. </4><5>Menggunakan stat kondisional dari set artefak, mis. Bonus Elemental DMG dari Embled of Severed Fate 4-set sebagai bagian dari kalkulasi build. </5></0>"
-            },
-            "tools": {
-                "title": "Alat dan Gadget",
-                "content": "<0><0>Server time, dengan hitungan mundur hingga waktu reset. </0><1>Resin Counter. </1><2>Kalkulator Experience, untuk mengoptimisasi penggunaan EXP Book.</2></0>"
-            }
-        }
+        "intro": "<0>Apa itu Genshin Optimizer?</0><1>Genshin Optimizer (GO) merupakan website fan-made open source untuk game gacha RPG <1><strong>Genshin Impact</strong></1>. Alat ini bertujuan untuk mempermudah pemain untuk mengoptimisasi artefak yang ada dalam game tersebut. Dikarenakan artefak mampu menentukan seberapa efektif karaktermu di dalam game, GO akan mencoba mencari artefak yang terbaik dari semua artefak yang kamu miliki untuk karaktermu.</1><2>GO bisa menyimpan informasi artefak yang kamu miliki serta bisa membandingkan dan memfilter artefak agar mempermudah pencarian artefak yang bagus di dalam tas untuk ditingkatkan levelnya atau artefak yang bisa dijadikan tumbal.</2><3>Karena GO sanggup menyalin stat untuk semua karakter, serta sanggup mengkalkulasi semua jumlah damage hingga akurasi 1%, alat ini bisa dijadikan sebagai kalkulator damage dan alat untuk theory crafting.</3>"
     },
     "page_scanner": {
-        "intro": "<0>Pemindai Otomatis</0><1>Pemindai otomatis merupakan alat yang bisa memindai data in-game secara otomatis dengan cara memanipulasi pergerakan mouse, mengambil screenshot dalam game, dan memindai informasi dari screenshot tersebut. alat ini memiliki risiko rendah dan dapat membantu pemindaian artefak ke dalam GO secara otomatis. Seperti alat lainnya yang secara tidak langsung berinteraksi dengan game, meskipun alat ini tidak terdeteksi secara virtual,<1> risiko dalam menggunakannya mungkin masih ada.</1> Jadi, kebijaksanaan penggunaan disarankan.</1><2> Aspek yang paling penting dalam menggunakan pemindai dengan GO adalah format outputnya:</2><3><0><0>sejak <1>v5.21.0</1>, GO bisa mengimpor data artefak ke dalam format <3>mona-uranai</3>. </0><1>Sejak <1>v6.0.0</1>, GO bisa mengimpor data ke dalam format <3>Genshin Open Object Description (GOOD)</3>. </1></0></3><4>Berikut merupakan beberapa pemindai yang telah diuji coba dengan GO. </4><5>Untuk mengupload file yang sudah diekspor, pergi ke halaman <1>Database</1> dan unggah filemu ke dalam <strong>\"Database Upload\"</strong>.</5>",
-        "cocogoat": "<0>cocogoat</0><1>Pemindai yang berasal dari cina dan diporting ke dalam bahasa Inggris. Memiliki overlay untuk memindai artefak secara individual. </1><2>Cocogoat juga menyimpan artefak yang sudah dipindai hingga kamu bisa mengeditnya secara individual, lalu menggunakannya ke dalam fitur bawaan optimisasi mona-uranai. (Optimisasi yang hanya tersedia dalam bahasa Cina untuk saat ini) </2><3>Disarankan mengekspor ke dalam format \"Mona's Divination Shop\". </3><4> Unduh link</4><5>PERINGATAN: Jangan menggunakan format \"Genshin Optimizer\" export. Mengimpornya akan menghapus data karakter dan senjatamu.</5>",
-        "backHome": "Kembali ke halaman utama"
+        "intro": "<0>Pemindai Otomatis</0><1>Pemindai otomatis merupakan alat yang bisa memindai data in-game secara otomatis dengan cara memanipulasi pergerakan mouse, mengambil screenshot dalam game, dan memindai informasi dari screenshot tersebut. alat ini memiliki risiko rendah dan dapat membantu pemindaian artefak ke dalam GO secara otomatis. Seperti alat lainnya yang secara tidak langsung berinteraksi dengan game, meskipun alat ini tidak terdeteksi secara virtual,<1> risiko dalam menggunakannya mungkin masih ada.</1> Jadi, kebijaksanaan penggunaan disarankan.</1><2> Aspek yang paling penting dalam menggunakan pemindai dengan GO adalah format outputnya:</2><3><0><0>sejak <1>v5.21.0</1>, GO bisa mengimpor data artefak ke dalam format <3>mona-uranai</3>. </0><1>Sejak <1>v6.0.0</1>, GO bisa mengimpor data ke dalam format <3>Genshin Open Object Description (GOOD)</3>. </1></0></3><4>Berikut merupakan beberapa pemindai yang telah diuji coba dengan GO. </4><5>Untuk mengupload file yang sudah diekspor, pergi ke halaman <1>Database</1> dan unggah filemu ke dalam <strong>\"Database Upload\"</strong>.</5>"
     },
     "weapon_EverlastingMoonglow": {
         "name": "DMG Normal Attack meningkat"
@@ -438,20 +354,11 @@
     "weapon_Akuoumaru": {
         "party": "Kapasitas Energy Party"
     },
-    "weapon_PolarStar": {
-        "ashen": "Ashen Nightstar"
-    },
     "artifact_ArchaicPetra": {
         "condName": "Memperoleh Elemental Shard"
     },
     "artifact_Instructor": {
         "condName": "Memicu Reaksi Elemental"
-    },
-    "artifact_MaidenBeloved": {
-        "condName": "Menggunakan Elemental Skill atau Elemental Burst"
-    },
-    "artifact_NoblesseOblige": {
-        "condName": "Melancarkan Elemental Burst"
     },
     "artifact_TenacityOfTheMillelith": {
         "condName": "Elemental Skill mengenai musuh"
@@ -477,8 +384,5 @@
     },
     "weapon_WavebreakersFin": {
         "party": "Kapasitas energy party"
-    },
-    "weapon_WolfsGravestone": {
-        "condName": "Mengenai musuh dengan HP kurang dari 30%"
     }
 }
