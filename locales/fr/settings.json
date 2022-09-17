@@ -4,15 +4,6 @@
     "selectLanguage": "Choisir la langue",
     "languageFormat": "Langue: {{language}}"
   },
-  "downloadCard": {
-    "databaseDownload": "Téléchargement des Données",
-    "databaseDisclaimer": "Note: toute donnée de la page \"Outils\", par exemple les calculs de Résine, ne font pas partie de la base de donnée téléchargée.",
-    "button": {
-      "download": "Télécharger",
-      "copy": "Copier vers le presse-papier",
-      "delete": "Supprimer la base de données"
-    }
-  },
   "uploadCard": {
     "title": "Téléverser la base de données",
     "replaceDatabase": "Remplacer la base de données",

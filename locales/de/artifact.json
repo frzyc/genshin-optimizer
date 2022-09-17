@@ -14,8 +14,6 @@
         "noOverRoll": "Bonusattribute können nicht mehr als {{value}}-mal aufgewertet werden."
       },
       "noRoll": "Keine zufälligen Aufwertungen",
-      "RollCount": "{{count}} zufällige Aufwertung",
-      "RollCount_plural": "{{count}} zufällige Aufwertungen",
       "noStat": "Kein Wert",
       "eff": "Effizenz: <1></1>"
     },
@@ -87,10 +85,12 @@
     "efficiency": "Aktuelle Bonusattributseffizienz",
     "mefficiency": "Maximale Bonusattributseffizienz"
   },
-  "showingNum": "<1>{{count}}</1> von {{value}} Artefakt werden angezeigt",
-  "showingNum_plural": "<1>{{count}}</1> von {{value}} Artefakten werden angezeigt",
   "efficiencyFilter": {
     "title": "In Berechnung der Effizienz zu berücksichtigende Bonusattribute"
   },
-  "resetFilters": "Filter zurücksetzen"
+  "resetFilters": "Filter zurücksetzen",
+  "setEffectNum": "Set mit {{setNum}} Teilen",
+  "excludeArtifactTip": "Das Sperren eines Artefakts verhindert, dass der Build-Generator es für Builds auswählt.",
+  "excluded": "Dieses Artefakt ist gesperrt.",
+  "included": "Diese Artefakt ist nicht gesperrt."
 }

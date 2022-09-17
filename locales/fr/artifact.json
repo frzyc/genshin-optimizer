@@ -83,8 +83,6 @@
     "efficiency": "Eff. Substat actuelle",
     "mefficiency": "Eff. Substat maximum"
   },
-  "showingNum": "Affiche <1>{{count}}</1> sur {{value}} Artéfact",
-  "showingNum_plural": "Affiche <1>{{count}}</1> sur {{value}} Artéfacts",
   "efficiencyFilter": {
     "title": "Substats à utiliser dans le calcul de l'efficacité"
   },

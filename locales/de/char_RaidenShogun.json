@@ -1,0 +1,11 @@
+{
+  "skill": {
+    "eye": "das unheilvolle Auge der Blitzstrafe"
+  },
+  "burst": {
+    "resolves": "Stapelungen von Entschlusskraft"
+  },
+  "a4": {
+    "eleDMG": "Elektro-SCH-Bonus"
+  }
+}

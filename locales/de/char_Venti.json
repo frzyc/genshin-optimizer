@@ -3,10 +3,6 @@
   "addFullAimed": "Zusätzlicher Schaden durch voll aufgeladene gezielte Schüsse",
   "upcurrentDuration": "Dauer der Luftströmung",
   "regenEner": "Stellt Venti nach Ende des Effekts 15 Elementarenergie wiederher.",
-  "fullBurstDMG": {
-    "text": "<0><0>Vollständiger Spezialfähigkeits-Schaden</0><1>Dies berechnet den vollständigen, ausgeteilten Schaden inkl. fortlaufendem Schaden. Dabei wird das Austeilen volgendem Schaden angenommen:</1><2><0>20 Vorkommen von <1>Spezialfähigkeits-Schaden</1></0><1>15 Vorkommen von <1>Absorptions-Schaden</1></1><2>7 Vorkommen von <1>fortlaufendem Schaden</1>, für einen Gegner, ODER,</2><3>14 Vorkommen von <1>fortlaufendem Schaden</1>, für mehrere Gegner, die zusammen Schaden erhalten.</3></2></0>",
-    "dmg": "<0>Vollständiger Schaden (<1>{{swirlTicks}}-mal fortlaufender Schaden</1>)</0>"
-  },
   "c6": "Ziele, denen mit <strong>Ode vom Anemo-Archon</strong> Schaden zugefügt wird",
   "c4": "Venti erhält Elementarkristalle oder Elementarteilchen",
   "q": "Stellt allen <1>{{elementKey}}</1> Figuren 15 Elementarenergie wieder her.",

@@ -1,17 +1,8 @@
 {
   "title": "Настройки",
   "languageCard": {
-    "selectLanguage": "Выбрать язык",
+    "selectLanguage": "Выбрать Язык",
     "languageFormat": "Язык: {{language}}"
-  },
-  "downloadCard": {
-    "databaseDownload": "Скачать Данные",
-    "databaseDisclaimer": "Примечание: все данные на странице \"Инструменты\", к примеру количество/таймер Смолы, не являются частью скачиваемой базы данных.",
-    "button": {
-      "download": "Скачать",
-      "copy": "Скопировать в Буфер Обмена",
-      "delete": "Удалить Данные"
-    }
   },
   "uploadCard": {
     "title": "Загрузить Данные",
@@ -21,17 +12,20 @@
     "goUpload": {
       "title": "Формат <strong>Genshin Optimizer</strong>",
       "migrate": "База данных будет перенесена в новую версию. Пожалуйста, после импорта, заново сохраните базу данных.",
-      "deleteDatabasePrompt": "Вы уверены, что хотите заменить базу данных? Все загруженные персонажи и артефакты будут удалены. "
+      "deleteDatabasePrompt": "Вы уверены, что хотите заменить базу данных? Все существующие персонажи и артефакты будут удалены."
     },
     "error": {
-      "jsonParse": "Невозможно прочитать JSON файл.",
+      "jsonParse": "Невозможно считать JSON файл.",
       "unknown": "Неизвестный формат файла.",
       "monaInvalid": "Неверный формат Mona-Uranai файла",
       "goInvalid": "Неверный формат данных GO"
     },
     "dbSource": "Источник данных:",
     "goodUpload": {
-      "title": "<strong>Описание открытого объекта Genshin</strong> (ХОРОШИЙ) формат"
+      "title": "<strong>Genshin Open Object Description</strong> (GOOD) формат"
+    },
+    "buttons": {
+      "open": "Открыть"
     }
   },
   "count": {
@@ -39,10 +33,22 @@
     "arts": "Артефакты:",
     "weapons": "Оружие:",
     "total": "Общая сумма",
-    "new": "Новое",
-    "updated": "Обновленное",
-    "removed": "Удаленных",
-    "unchanged": "Не измененных",
-    "invalid": "Неисправны"
+    "new": "Новое:",
+    "updated": "Обновлено:",
+    "removed": "Удалено:",
+    "unchanged": "Не изменено:",
+    "invalid": "Неисправны:",
+    "upgraded": "Улучшеные:"
+  },
+  "DatabaseCard": {
+    "title": "Данные",
+    "button": {
+      "download": "Скачать",
+      "copy": "Буфер-обмена",
+      "delete": "Удалить",
+      "upload": "Выгрузить",
+      "swap": "Сменить"
+    },
+    "currentDB": "Выбранные Данные"
   }
 }

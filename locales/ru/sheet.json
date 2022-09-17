@@ -1,9 +1,7 @@
 {
   "dmg": "Урон",
-  "hits": "{{count}} Удар",
-  "lessPercentHP": "< {{percent}}% HP",
-  "stack": "{{count}} Стак",
-  "stack_plural": "{{count}} Стак(а/ов)",
+  "hits": "Ударов",
+  "lessPercentHP": "HP меньше {{percent}}%",
   "hitOp": {
     "normal": "Обычная атака попала по врагу",
     "charged": "Заряженная атака попала по врагу",
@@ -15,16 +13,41 @@
     "hydro": "Гидро-удар по противникам",
     "cryo": "Крио-удар по противникам",
     "pyro": "Пайро-удар по противникам",
-    "electro": "Электро-удар по противникам"
+    "electro": "Электро-удар по противникам",
+    "crit": "Крит. попадание по противнику",
+    "normalChargedOrPlunging": "Обычные / Заряженные / Атаки в палении по врагу"
   },
-  "hits_plural": "{{count}} Удар(а/ов)",
   "eleAbsor": "Поглощение стихий",
   "absorDot": "Доп. элементальный урон",
   "afterUse": {
-    "skill": "После использования элементального навыка",
-    "burst": "После использования элементального взрыва"
+    "skill": "После использования Элементального навыка",
+    "burst": "После использования Взрыва стихии",
+    "skillOrBurst": "После применения Элементального навыка или взрыва"
   },
   "increase": {
-    "atk": "увеличение атаки"
-  }
+    "atk": "Увеличение атаки"
+  },
+  "lessEqPercentHP": "HP меньше или равно {{percent}}%",
+  "greaterPercentHP": "HP больше, чем {{percent}}%",
+  "greaterEqPercentHP": "HP больше или равно {{percent}}%",
+  "lessPercentEnergy": "Энергии меньше, чем {{percent}}%",
+  "enemyLessPercentHP": "HP противника меньше {{percent}}%",
+  "enemyLessEqPercentHP": "HP противника меньше или равно {{percent}}%",
+  "enemyGreaterPercentHP": "HP противника больше {{percent}}% ",
+  "enemyGreaterEqPercentHP": "HP противника больше или равно {{percent}}%",
+  "afterSprint": "После рывка",
+  "infusion": {
+    "pyro": "Пиро инфузия",
+    "cryo": "Крио инфузия",
+    "anemo": "Анемо инфузия"
+  },
+  "durationInc": "Увеличение продолжительности",
+  "protectedByShield": "Под щитом",
+  "talents": {
+    "skill": "Навык"
+  },
+  "bonusScaling": {
+    "skill_": "Увел. Бонуса Элем. Навыка"
+  },
+  "energy": "Энергия"
 }

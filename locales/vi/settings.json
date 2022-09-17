@@ -4,15 +4,6 @@
     "selectLanguage": "Lựa chọn ngôn ngữ",
     "languageFormat": "Ngôn ngữ: {{language}}"
   },
-  "downloadCard": {
-    "databaseDownload": "Tải dữ liệu",
-    "databaseDisclaimer": "Ghi chú: bất kỳ thông tin nào trong trang \"công cụ\", ví dụ: số lượng Nhựa, thời gian hồi không thuộc dữ liệu có thể tải xuống",
-    "button": {
-      "download": "Tải xuống",
-      "copy": "Sao chép",
-      "delete": "Xóa dữ liệu"
-    }
-  },
   "uploadCard": {
     "title": "Tải dữ liệu",
     "replaceDatabase": "Thay thế dữ liệu",
@@ -44,5 +35,16 @@
     "removed": "Đã loại bỏ:",
     "unchanged": "Không thay đổi:",
     "invalid": "Không hợp lệ:"
+  },
+  "DatabaseCard": {
+    "title": "Cơ sở dữ liệu",
+    "button": {
+      "download": "Tải xuống",
+      "copy": "Lưu vào bộ nhớ tạm",
+      "delete": "Xóa",
+      "upload": "Tải lên",
+      "swap": "Đổi"
+    },
+    "currentDB": "Cơ sở dữ liệu đã chọn"
   }
 }

@@ -9,6 +9,5 @@
     "skill": "Compétence Élémentaire touche des ennemis",
     "burst": "Déchaînement Élémentaire touche des ennemis"
   },
-  "hits_plural": "{{count}} coups",
   "eleAbsor": "Absorption Élémentaire"
 }

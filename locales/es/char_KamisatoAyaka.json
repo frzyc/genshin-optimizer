@@ -1,9 +1,10 @@
 {
-  "afterSprint": "Luego de un Sprint",
-  "afterSkill": "Tras realizar <strong>Estilo Kamizato: Flor del hielo</strong>",
-  "afterSprintCryo": "Aplicando <cryo>Cryo</cryo> Luego de un Sprint",
-  "staminaRestore": "Recupera 10 pts. de Aguante",
+  "afterSprint": "Tras Esprintar",
+  "afterSkill": "Tras usar <strong>Estilo Kamisato: Flor del hielo</strong>",
+  "afterSprintCryo": "Aplicando <cryo>Cryo</cryo> tras esprintar",
+  "staminaRestore": "Aguante Recuperado",
   "snowflakeDMG": "Daño de Ráfaga de ventisca",
-  "dmgBySnowflake": "Al recibir daño mediante la Ráfaga de ventisca creada por medio de <strong>Estilo Kamisato: Devastación Glacial</strong>",
-  "UsurashiButou": "Gracilidad del Hielo"
+  "dmgBySnowflake": "Enemigos reciben daño de Ráfaga de ventisca creada por <strong>Estilo Kamisato: Devastación Glacial</strong>",
+  "afterBurst": "Tras usar <strong>Estilo Kamisato: Devastación glacial</strong>",
+  "c6Active": "Gracilidad del hielo activa"
 }

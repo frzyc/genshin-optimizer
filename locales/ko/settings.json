@@ -4,15 +4,6 @@
     "selectLanguage": "언어 선택",
     "languageFormat": "언어: {{language}}"
   },
-  "downloadCard": {
-    "databaseDownload": "데이터베이스 다운로드",
-    "databaseDisclaimer": "알림: 레진 타이머 등 \"기타 기능\" 페이지의 데이터들은 다운로드 데이터베이스에 포함되지 않습니다.",
-    "button": {
-      "download": "다운로드",
-      "copy": "클립보드에 복사",
-      "delete": "데이터베이스 삭제"
-    }
-  },
   "uploadCard": {
     "title": "데이터베이스 업로드",
     "replaceDatabase": "데이터베이스 덮어쓰기",

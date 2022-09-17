@@ -3,10 +3,6 @@
   "addFullAimed": "Tambahan DMG Membidik Penuh",
   "upcurrentDuration": "Durasi Arus Angin",
   "regenEner": "Memulihkan 15 Energy ke Venti setelah efek berakhir",
-  "fullBurstDMG": {
-    "text": "<0><0>DMG Elemental Burst Penuh</0><1>Ini menghitung total DMG Elemental Burst, termasuk swirl. Perhitungan ini mengasumsikan:</1><2><0><0>20 tick dari <1>DMG Burst</1></0><1>15 tick dari <1>DMG absorption</1></1><2>7 ticks dari <1>Swirl</1>, untuk satu musuh, ATAU,</2><3>14 tick dari <1>Swirl</1>, untuk banyak musuh, yang Swirl satu sama lain.</3></0></2></0>",
-    "dmg": "<0>DMG Total (<1>{{swirlTicks}} tick Swirl</1>)</0>"
-  },
   "c6": "Target yang menerima DMG dari <strong>Wind's Grand Ode</strong>",
   "c4": "Venti mengambil sebuah Elemental Orb atau Partikel",
   "q": "Memulihkan 15 Energy ke pada anggota party yang memiliki elemen tersebut.",

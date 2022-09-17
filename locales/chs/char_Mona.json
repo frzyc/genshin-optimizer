@@ -1,0 +1,11 @@
+{
+  "omen": "星异",
+  "omenDuration": "星异持续时间",
+  "bubbleDuration": "泡影持续时间",
+  "phantomDuration": "虚影持续时间",
+  "hitOp": {
+    "affectedByOmen": "队伍中自己的角色攻击命中处于星异状态下的敌人"
+  },
+  "frozenDuration": "<cryo>冻结反应</cryo>的持续时间延长",
+  "uponSprint": "进入虚实流动状态后"
+}

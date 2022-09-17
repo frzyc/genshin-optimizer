@@ -14,8 +14,6 @@
         "noOverRoll": "Substat tidak dapat diroll lebih dari {{value}} kali."
       },
       "noRoll": "Tanpa Roll",
-      "RollCount": "{{count}} Roll",
-      "RollCount_plural": "{{count}} Roll",
       "noStat": "Tanpa Nilai",
       "eff": "Efisiensi: <1></1>",
       "nextRolls": "Roll berikutnya"
@@ -90,8 +88,6 @@
     "efficiency": "Eff. Substat Saat Ini",
     "mefficiency": "Eff. Substat Maksimum"
   },
-  "showingNum": "Menampilkan <1>{{count}}</1> dari {{value}} Artefak",
-  "showingNum_plural": "Menampilkan <1>{{count}}</1> dari {{value}} Artefak",
   "efficiencyFilter": {
     "title": "Substat yang dipakai dalam perhitungan efisiensi"
   },

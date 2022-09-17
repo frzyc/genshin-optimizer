@@ -3,8 +3,8 @@
   "tabs": {
     "artifacts": "Artefakte",
     "characters": "Figuren",
-    "builds": "Builds",
-    "tools": "Extras"
+    "tools": "Extras",
+    "weapons": "Waffen"
   },
   "social": {
     "paypal": "Paypal",
@@ -20,11 +20,14 @@
   "unselect": "Abwählen",
   "ascending": "Aufsteigend",
   "descending": "Absteigend",
-  "sortByFormat": "Sortieren nach: {{value}}",
   "loading": "Laden...",
-  "rightsDisclaimer": "Genshin Optimizer ist kein Teil von HoYoverse und wird nicht davon unterstützt.",
+  "rightsDisclaimer": "Genshin Optimizer ist kein Teil von miHoYo und wird nicht davon unterstützt.",
   "appVersion": "$t(pageTitle) Version: {{version}}",
   "underConstruction": "In Arbeit",
   "error": "Fehler",
-  "reset": "Zurücksetzen"
+  "reset": "Zurücksetzen",
+  "info": "INFO",
+  "inventory": "Inventar",
+  "close": "Schließen",
+  "refinement": "Verfeinerung {{value}}"
 }

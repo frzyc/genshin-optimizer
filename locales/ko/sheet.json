@@ -2,8 +2,6 @@
   "dmg": "피해",
   "hits": "{{count}}회 적중",
   "lessPercentHP": "< {{percent}}% HP",
-  "stack": "{{count}}스택",
-  "stack_plural": "{{count}}스택",
   "hitOp": {
     "normal": "일반 공격이 대상에게 적중",
     "charged": "강공격이 대상에게 적중",
@@ -11,7 +9,6 @@
     "skill": "원소 전투 스킬이 대상에게 적중",
     "burst": "원소 폭발 스킬이 대상에게 적중"
   },
-  "hits_plural": "{{count}}회 적중",
   "eleAbsor": "원소 전환",
   "absorDot": "원소 전환 도트 데미지"
 }

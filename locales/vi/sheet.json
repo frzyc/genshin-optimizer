@@ -2,8 +2,6 @@
   "dmg": "Sát thương",
   "hits": "{{count}} Hit",
   "lessPercentHP": "< {{percent}}% HP",
-  "stack": "{{count}} Tầng",
-  "stack_plural": "{{count}} Tầng",
   "hitOp": {
     "normal": "Tấn công thường đánh trúng kẻ địch",
     "charged": "Trọng kích đánh trúng kẻ địch",
@@ -17,7 +15,6 @@
     "pyro": "Sát thương nguyên tố Hoả khi đánh trúng đối thủ",
     "electro": "Sát thương nguyên tố Lôi khi đánh trúng đối thủ"
   },
-  "hits_plural": "{{count}} Hits",
   "eleAbsor": "Chuyển hóa nguyên tố",
   "absorDot": "Sát thương chuyển hóa theo thời gian",
   "afterUse": {
@@ -26,5 +23,30 @@
   },
   "increase": {
     "atk": "Tăng tấn công"
+  },
+  "opponentsDamaged": "Kẻ địch đã bị gây sát thương",
+  "press": "Nhấn",
+  "hold": "Nhấn giữ",
+  "conditional": "Điều kiện",
+  "maxStacks": "Tầng hiệu ứng tối đa",
+  "1set": "Bộ lẻ",
+  "2set": "Bộ hai",
+  "4set": "Bộ bốn",
+  "stamDrain": "Thể lực tiêu hao",
+  "talents": {
+    "auto": "Tự động",
+    "skill": "Kĩ năng",
+    "burst": "Kĩ năng nộ",
+    "passive": "Hiệu ứng",
+    "passive1": "Tinh luyện 1",
+    "passive2": "Tinh luyện 4",
+    "passive3": "Hiệu ứng đặc biệt",
+    "sprint": "Chạy",
+    "constellation1": "C1",
+    "constellation2": "C2",
+    "constellation3": "C3",
+    "constellation4": "C4",
+    "constellation5": "C5",
+    "constellation6": "C6"
   }
 }

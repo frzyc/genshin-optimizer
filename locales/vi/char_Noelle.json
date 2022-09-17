@@ -1,6 +1,5 @@
 {
   "p4cd": "24s, -1s Cứ 4 lần đánh trúng",
-  "c1chance": "(Khi cùng ở trạng thái <strong>Quét sạch</strong> và <strong>Giáp hộ tâm</strong> tỉ lệ tăng lên 100%)",
   "c6duration": "15s, +1s mỗi lần đánh bại kẻ địch, tối đa 10s",
   "qlarger": "Tăng phạm vi tấn công"
 }

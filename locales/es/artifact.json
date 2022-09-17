@@ -2,7 +2,7 @@
   "editor": {
     "title": "Editor de Artefactos",
     "set": {
-      "artifactSet": "Set de Artefactos",
+      "artifactSet": "Conjunto de Artefactos",
       "maxRarity": "Rareza Máxima <1></1>"
     },
     "substat": {
@@ -10,87 +10,101 @@
       "noSubstat": "Sin Substat",
       "selectSub": "Selecciona un Substat",
       "error": {
-        "noCalc": "No se pueden calcular los rolls de stat.",
-        "noOverRoll": "El substat no puede rollear más de {{value}} veces."
+        "noCalc": "No se pueden calcular las tiradas de stat.",
+        "noOverRoll": "El substat no se puede tirar más de {{value}} veces."
       },
-      "noRoll": "Sin Rolls",
-      "RollCount": "{{count}} Roll",
-      "RollCount_plural": "{{count}} Rolls",
+      "noRoll": "Sin Tiradas",
       "noStat": "Sin Valor",
-      "eff": "Eficiencia: <1></1>"
+      "eff": "VdT: <1></1>",
+      "nextRolls": "Siguientes tiradas:",
+      "RollCount_one": "{{count}} Tirada",
+      "RollCount_other": "{{count}} Tiradas"
     },
     "rarity": "Rareza",
     "level": "Nivel",
     "unknownPieceName": "Nombre de Pieza Desconocido",
     "mainSelect": "Selecciona un Stat Principal",
-    "curSubEff": "Eficiencia de Substat Actual",
-    "curSubEffDesc": "Cada 4 niveles del artefacto, obtienes un roll de substat. <strong>La Eficiencia de Substat</strong> calcula qué tan alto rolleó el substat como un porcentaje.",
-    "maxSubEff": "Eficiencia Máxima de Substat",
-    "maxSubEffDesc": "La <strong>Eficiencia Máxima de Substat</strong> de un artefacto calcula la eficiencia si los upgrades restantes rolleasen sus valores máximos.",
+    "curSubEff": "Valor de Tirada Actual",
+    "curSubEffDesc": "Cada 4 niveles de mejora de artefacto, se obtiene una tirada de substat. El <strong>Valor de Tirada</strong> calcula cómo de alta fué la tirada de substat como un porcentaje.",
+    "maxSubEff": "Valor de Tirada Máx.",
+    "maxSubEffDesc": "El <strong>Valor de Tirada de Substat Máximo</strong> de un artefacto calcula el VdT si las mejoras restantes obtuvieran sus valores máximos.",
     "preview": "Vista Previa del Artefacto",
     "dupArt": "Artefacto duplicado detectado.",
     "upArt": "Artefacto mejorado detectado.",
-    "beforeEdit": "Antes de Edición",
+    "beforeEdit": "Anterior a la Edición",
     "btnSave": "Guardar Artefacto",
     "btnAdd": "Agregar Artefacto",
     "btnClear": "Borrar",
     "btnRandom": "Aleatorizar",
     "btnUpdate": "Actualizar Artefacto",
-    "clearPrompt": "Hay un artefacto en el editor. ¿Estás seguro de que quieres borrar el editor?"
+    "clearPrompt": "Hay un artefacto en el editor. ¿Estás seguro de que quieres borrar el editor?",
+    "unknownSetName": "Set de artefactos desconocido"
   },
   "artifactFilter": "Filtro de Artefactos",
   "filterLocation": {
     "inventory": "Inventario",
     "currentlyEquipped": "Actualmente Equipados",
-    "any": "Cualquiera"
+    "any": "Cualquiera",
+    "location": "Ubicación"
   },
   "button": {
     "unequipArtifacts": "Desequipar Artefactos",
     "deleteArtifacts": "Eliminar Artefactos",
-    "excludeArtifacts": "Bloquear Artefactos",
-    "includeArtifacts": "Desbloquear Artefactos"
+    "excludeArtifacts": "Excluir Artefactos",
+    "includeArtifacts": "Incluir Artefactos",
+    "lockArtifacts": "Bloquear Artefactos",
+    "unlockrtifacts": "Desbloquear Artefactos"
   },
   "filterLevelFormat": "Nivel <1>Bajo</1>/<3>Alto</3> (Inclusivo)",
   "buttonHint": "Nota: los botones anteriores sólo se aplican a los <1>artefactos filtrados</1>",
   "tipsOfTheDay": [
-    "La eficiencia máxima de un artefacto de 4 estrellas es en torno al 60%.",
-    "La eficacia máxima de un artefacto suele disminuir a medida que lo subes de nivel. Esto es completamente normal.",
+    "El VdT máximo de un artefacto de 4 estrellas es en torno al 540%.",
+    "El VdT máximo de un artefacto suele disminuir a medida que sube de nivel. ¡Es completamente normal!",
     "Los substats con \"1\" son los más difíciles de escanear en las capturas de pantalla.",
-    "Si todos tus rolls (6) fueron a un solo substat, ¡será de color púrpura!",
+    "Si todas tus tiradas (6) fueron a un sólo substat, ¡será de color púrpura!",
     "Haz clic en \"Detalles\" cuando estés mejorando tus artefactos en el juego para escanearlos mientras los mejoras.",
-    "Ahora puedes subir varias capturas de pantalla de artefactos para escanear!"
+    "¡Ahora puedes cargar múltiples capturas de pantalla de artefactos para escanearlos!"
   ],
   "mainStat": "Stat Principal",
   "slot": "Ranura",
   "slotName": {
     "flower": "Flor de la Vida",
     "plume": "Pluma de la Muerte",
-    "sands": "Arenas del Eon",
-    "goblet": "Caliz de Eonothem",
+    "sands": "Arenas del Eón",
+    "goblet": "Cáliz de Eonothem",
     "circlet": "Tiara de Logos"
   },
   "info": {
     "title": "Guía de Edición/Gestión de Artefactos",
-    "section1": "<0>Roll de subtat</0><1>El <1>número de rolls</1> que tiene un subtat se muestra a la izquierda del mismo. A medida que el número es más alto, el substat tiene más color:<3></3>.</1><2>Eficiencia de Substat</2><3>La Eficiencia de un substat es un porcentaje del valor actual sobre el valor potencial más alto. 5<1></1> De la Imagen, el valor máximo de la tirada de Daño CRIT es de 7,8%. En eficiencia: <3>5,8/7,8 = 69,2%.</3></3><4>Eficiencia actual vs. la potencial eficiencia máxima</4><5>Cuando un 5<1></1> tiene 9(4+5) rolls totales, con cada uno de los rolls con el valor más alto, eso se define como un artefacto 100% eficiente. Sin embargo, la mayoría de los artefactos no tienen esta suerte. La <3>eficiencia actual</3> de un artefacto es un porcentaje sobre ese artefacto del 100%. La <5>eficiencia máxima</5> es la máxima eficiencia posible que puede alcanzar un artefacto, si los rolls restantes de los upgrades del artefacto tienen el valor más alto.</5><6>Bloquear un artefacto</6><7>Al bloquear un artefacto <1></1>, este artefacto no será recogido por el generador de build para su optimización. Un artefacto equipado está bloqueado por defecto.</7>",
-    "section2": "<0>Editor de Artefactos</0><1>Un editor de artefactos completo, que puede aceptar cualquier artefacto de 3<1></1> a 5<3></3>. Cuando se introduce un substat, puede calcular los valores exactos de los rolls y, a partir de ellos, la eficiencia. También se asegurará de que tienes el número correcto de rolls en el artefacto según el nivel, junto con otras métricas de validación.</1><2>Escanear capturas de pantalla</2><3>¿La carga de datos manual no es lo tuyo? ¡Puedes escanear tus artefactos con capturas de pantalla! En el editor de artefactos, haga clic en el botón <1>Muéstrame Cómo</1> para obtener más información.</3><4>Detección de artefactos duplicados/mejorados</4><5>¿Sabía que GO puede detectar si está añadiendo un artefacto <1>duplicado</1> que existe en el sistema? También puede detectar si el artefacto actual en el editor es una <3>mejora</3> de un artefacto existente. Una vez que se detecta un duplicado/mejora, una vista previa le permitirá comparar los dos artefactos en cuestión (Ver Imagen).</5>",
-    "section3": "<0>Inventario de artefactos</0><p>Aquí se muestran todos los artefactos que has añadido a GO. Los filtros aquí le permiten refinar aún más la vista de sus artefactos. </p><2>Ejemplo: Encontrar Artefactos de Forraje</2><p>Utilizando el filtro de artefactos, y los cálculos de eficiencia de los artefactos, puede encontrar rápidamente artefactos para usar como experiencia.</p><4>En este ejemplo, los filtros se establecen así: </4><5><0>Artefactos desbloqueados en el Inventario.</0><1>Con substats: ATQ plano y DEF plana.</1><2>Ordenados por Eficiencia Máxima Ascendente.</2></5><6>Una vez que los artefactos son usados como experiencia, haz clic en <1>Eliminar Artefactos</1> para eliminar los artefactos filtrados actuales.</6>"
+    "section1": "<0>Tiradas de substat</0><1>El <1>número de tiradas</1> que posee un substat se muestra a la izquierda del mismo. A medida que el número crece, el substat se vuelve más colorido:<3></3>.</1><2>Valor de Tirada de Substat</2><3>El Valor de Tirada (VdT) de un substat es un porcentaje entre el valor actual sobre el valor potencial de 5<1></1> más alto. En la imagen, el valor máximo de la tirada de Daño CRIT es de 7,8%. En VdT: <3>5,8/7,8 = 69,2%.</3></3><4>Valor de Tirada Actual vs. Valor Máximo de Tirada</4><5>Cuando un 5<1></1> tiene 9(4+5) tiradas totales, cada una de las tiradas teniendo el valor más alto, eso es definido como un artefacto con VdT de 900%. Sin embargo, la mayoría de los artefactos no tienen esa suerte. El <3>VdT Actual</3> de un artefacto es un porcentaje sobre ese artefacto del 100%. El <5>VdT Máximo</5> es el VdT máximo posible que puede alcanzar un artefacto, si las tiradas restantes de mejora del artefacto obtuvieran el valor más alto posible.</5><6>Bloquear un artefacto</6><7>Al bloquear un artefacto <1></1>, Este artefacto no será usado por el generador de builds para su optimización. Un artefacto equipado será bloqueado por defecto.</7>",
+    "section2": "<0>Editor de Artefactos</0><1>Un editor de artefactos completo, que puede aceptar cualquier artefacto de 3<1></1> a 5<3></3>. Cuando se introduce un substat, puede calcular los valores exactos de sus tiradas. También se asegurará de que tienes el número correcto de tiradas en el artefacto según su nivel, junto con otras métricas de validación.</1><2>Escanear capturas de pantalla</2><3>¿La introducción de datos manual no es lo tuyo? ¡Puedes escanear tus artefactos con capturas de pantalla! En el editor de artefactos, haga clic en el botón <1>?</1> para aprender cómo.</3><4>Escáner Automático de Artefactos</4><5>Si juegas Genshin en PC, puedes descargar una herramienta que escanee automáticamente todos tus artefactos, para después importar esos datos en <1></1> Base de datos. <3>Haz click aquí</3> para ver una lista de escáneres compatibles con GO.</5><6>Detección de artefactos duplicados/mejorados</6><7>¿Sabías que GO puede detectar si estás añadiendo un artefacto <1>duplicado</1> ya existente en el sistema? También puede detectar si el artefacto actualmente en el editor es una <3>mejora</3> de un artefacto ya existente. Una vez detectado un duplicado/mejora, la vista previa le permitirá comparar los dos artefactos en cuestión (Ver Imagen).</7>",
+    "section3": "<0>Inventario de Artefactos</0><1>Aquí se muestran todos los artefactos que has añadido a GO. Los filtros aquí te permiten refinar aún más la vista de tus artefactos. </1><2>Ejemplo: Encontrar Artefactos de Relleno</2><3>Usando el filtro de artefactos y el VdT de los artefactos, puedes encontrar rápidamente artefactos para usar como experiencia.</3><4>En este ejemplo, los filtros se establecen así: </4><5><0><0>Nivel límite de 0-8.</0><1>Artefactos desbloqueados del Inventario.</1><2>Quitando la contribución de Vida plana, DEF plana y Recarga de Energía al cálculo de VdT.</2><3>Ordenado por Valor de Tirada Máximo Ascendente.</3></0></5><6>Así puedes filtar el inventario de artefactos para ver aquéllos artefactos con peor VdT, según substats.</6>"
   },
-  "exclusionDisplay": "Bloqueado: {{value}}",
+  "exclusionDisplay": "Exclusión: {{value}}",
   "exclusion": {
     "any": "Cualquiera",
-    "excluded": "Bloqueado",
-    "included": "Desbloqueado"
+    "excluded": "Excluído",
+    "included": "Incluído"
   },
   "sortMap": {
     "quality": "Calidad",
     "level": "Nivel",
-    "efficiency": "Ef. Actual de Substat.",
-    "mefficiency": "Ef. Máxima de Substat."
+    "efficiency": "Valor de Tirada Actual",
+    "mefficiency": "Valor de Tirada Máximo"
   },
-  "showingNum": "Mostrando <1>{{count}}</1> de {{value}} Artefacto",
-  "showingNum_plural": "Mostrando <1>{{count}}</1> de {{value}} Artefactos",
   "efficiencyFilter": {
-    "title": "Substats a utilizar en el cálculo de la eficiencia"
+    "title": "Substats a usar en el cálculo del Valor de Tirada"
   },
-  "resetFilters": "Restablecer Filtros"
+  "resetFilters": "Restablecer Filtros",
+  "setEffectNum": "{{setNum}} Piezas",
+  "excludeArtifactTip": "Excluir un artefacto impedirá al generador de builds elegirlo para builds.",
+  "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Artefacto",
+  "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Artefactos",
+  "edit": "Editar artefacto",
+  "excluded": "Este artefacto está excluido.",
+  "included": "Este artefacto no está excluido.",
+  "autocompleteLabels": {
+    "substats": "Sub-atributos",
+    "set": "Set de artefacto"
+  }
 }

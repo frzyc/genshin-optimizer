@@ -3,10 +3,6 @@
   "addFullAimed": "Dano adicional no Tiro Carregado",
   "upcurrentDuration": "Duração da corrente de vento",
   "regenEner": "Regenera 15 de Energia para Venti após o efeito terminar",
-  "fullBurstDMG": {
-    "text": "<0><0>Dano total do Supremo</0><1>Calcula o Dano total do Supremo, incluindo o redemoinho. Este cálculo assume:</1><2><0>20 ticks do <1>Supremo</1></0><1>15 ticks de <1>absorção de Dano</1></1><2>7 ticks de <1>Redemoinho</1>, para um inimigo, OU,</2><3>14 ticks de <1>Redemoinho</1>, para múltiplos inimigos que rodopiam uns aos outros.</3></2></0>",
-    "dmg": "<0>Dano total (<1>{{swirlTicks}} ticks do Redemoinho</1>)</0>"
-  },
   "c6": "Alvos que levarem Dano da <strong>Grande Ode do Vento</strong>",
   "c4": "Venti pega um Orbe Elemental ou Partícula",
   "q": "Regenera 15 de Energia a todos os personagens <1>{{elementKey}}</1>.",

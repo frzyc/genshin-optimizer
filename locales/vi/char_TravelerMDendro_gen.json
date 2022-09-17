@@ -1,0 +1,152 @@
+{
+  "auto": {
+    "name": "Xén Cỏ Dị Bang",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, vung ra hai nhát kiếm về phía trước trong chớp mắt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Đáp",
+      "8": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Thảo Duyên Kiếm",
+    "description": {
+      "0": "Vung kiếm chém ra những phiến lá sắc bén, gây <dendro>Sát Thương Nguyên Tố Thảo</dendro> về phía trước.",
+      "1": "<br/>",
+      "2": "<i>Cùng Paimon quan sát mặt sắc nhọn của lá cây nào.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Yển Thảo Nhược Hóa",
+    "description": {
+      "0": "Ngưng tụ sức mạnh hoa cỏ để tạo ra Thảo Liên Đăng.",
+      "1": "Thảo Liên Đăng sẽ liên tục tấn công kẻ địch trong khu vực, gây <dendro>Sát Thương Nguyên Tố Thảo</dendro>.",
+      "2": "<br/>",
+      "3": "<strong>Ánh Sen Biến Hóa</strong>",
+      "4": "Thảo Liên Đăng khi tiếp xúc với <hydro>Nguyên Tố Thủy</hydro>/<electro>Nguyên Tố Lôi</electro>/<pyro>Nguyên Tố Hỏa</pyro> sẽ có những thay đổi sau:",
+      "5": [
+        "<hydro>Nguyên Tố Thủy</hydro>: Khuếch đại phạm vi khu vực Thảo Liên Đăng, và gia tăng phạm vi ảnh hưởng khi tấn công của nó;",
+        "<electro>Nguyên Tố Lôi</electro>: Tăng tốc độ tấn công của Thảo Liên Đăng;",
+        "<pyro>Nguyên Tố Hỏa</pyro>: Thảo Liên Đăng sẽ phát nổ sau thời gian ngắn, gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro>."
+      ],
+      "6": "Thảo Liên Đăng trong thời gian tồn tại chỉ có thể kích hoạt một lần Ánh Sen Biến Hóa.",
+      "7": "<br/>",
+      "8": "Cùng lúc chỉ có thể tồn tại một Thảo Liên Đăng do Nhà Lữ Hành tạo ra.",
+      "9": "<br/>",
+      "10": "<i>Cùng Paimon nghiên cứu âm thanh của cây cỏ mới mọc sau mưa nào.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Thảo Liên Đăng",
+      "1": "Sát Thương Nổ",
+      "2": "Thời Gian Tồn Tại Thảo Liên Đăng",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ngọn Cỏ Sinh Trưởng",
+    "description": {
+      "0": "Trong thời gian <strong>Thảo Liên Đăng</strong> tồn tại, mỗi giây sẽ nhận được một tầng hiệu ứng Ánh Sen Chiếu Rọi, khiến nhân vật trong trận đang trong khu vực đó tăng 6 điểm Tinh Thông Nguyên Tố. Hiệu ứng Ánh Sen Chiếu Rọi của Thảo Liên Đăng tối đa cộng dồn 10 tầng."
+    }
+  },
+  "passive2": {
+    "name": "Cỏ Cây Sum Suê",
+    "description": {
+      "0": "Mỗi điểm Tinh Thông Nguyên Tố của Nhà Lữ Hành sẽ tăng 0.15% sát thương của <strong>Thảo Duyên Kiếm</strong> gây ra, tăng 0.1% sát thương của <strong>Yển Thảo Nhược Hóa</strong> gây ra."
+    }
+  },
+  "constellation1": {
+    "name": "Hạt Giống Ký Sinh",
+    "description": {
+      "0": "<strong>Thảo Duyên Kiếm</strong> khi đánh trúng kẻ địch sẽ hồi cho Nhà Lữ Hành 3.5 điểm Năng Lượng Nguyên Tố."
+    }
+  },
+  "constellation2": {
+    "name": "Mầm Non Uyển Chuyển",
+    "description": {
+      "0": "Thời gian tồn tại của <strong>Thảo Liên Đăng</strong> kéo dài thêm 3s."
+    }
+  },
+  "constellation3": {
+    "name": "Ngọn Cỏ Đung Đưa",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Thảo Duyên Kiếm</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Bụi Cỏ Um Tùm",
+    "description": {
+      "0": "<strong>Thảo Liên Đăng</strong> sau khi kích hoạt Ánh Sen Biến Hóa sẽ nhận được 5 tầng hiệu quả Ánh Sen Chiếu Rọi của thiên phú Ngọn Cỏ Sinh Trưởng.",
+      "1": "Cần mở khóa thiên phú Ngọn Cỏ Sinh Trưởng."
+    }
+  },
+  "constellation5": {
+    "name": "Đồng Cỏ Sum Suê",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Yển Thảo Nhược Hóa</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Mảng Xanh Hùng Vĩ",
+    "description": {
+      "0": "Nhân vật chịu ảnh hưởng từ Ánh Sen Chiếu Rọi của <strong>Thảo Liên Đăng</strong> sẽ nhận được 12% <dendro>Buff Sát Thương Nguyên Tố Thảo</dendro>; Nếu Thảo Liên Đăng kích hoạt Ánh Sen Biến Hóa sẽ nhận được 12% buff sát thương nguyên tố tương ứng."
+    }
+  }
+}

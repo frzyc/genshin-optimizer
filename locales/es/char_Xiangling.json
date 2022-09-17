@@ -1,0 +1,7 @@
+{
+  "afterChili": "Tras recoger un chile",
+  "explosionDMG": "Daño de Explosión",
+  "afterGuobaHit": "Enemigo golpeado por ataque de Guoba",
+  "duringPyronado": "Pyronado activo",
+  "c6Exception": "Esto no afecta a <pyro>Daño de 1 Golpe de espada</pyro>, <pyro>Daño de 2 Golpes de espada</pyro>, o <pyro>Daño de Pyronado</pyro>"
+}

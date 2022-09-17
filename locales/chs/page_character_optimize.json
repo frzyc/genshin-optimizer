@@ -1,0 +1,49 @@
+{
+  "mainStat": {
+    "title": "主词条",
+    "levelAssTooltip": {
+      "title": "等级假设",
+      "desc": "修改主词条数值至某等级之上，但不改变副词条。"
+    },
+    "assumptionLvl": {
+      "no": "无等级假设",
+      "lvl": "假设等级为{{lvl}}级"
+    }
+  },
+  "tcGraph": {
+    "notSel": "未选",
+    "downloadData": "下载数据",
+    "optTarget": "优化目标"
+  },
+  "levelFilter": "圣遗物等级过滤起",
+  "useExcluded": {
+    "title": "使用被排除的圣遗物"
+  },
+  "useEquipped": {
+    "title": "使用已装备的圣遗物",
+    "modal": {
+      "status": {
+        "use": "使用圣遗物",
+        "dont": "不使用圣遗物",
+        "curr": "目前角色"
+      },
+      "add": "添加角色入列表",
+      "clearList": "清空列表"
+    }
+  },
+  "artSetConfig": {
+    "enabled": "已启用",
+    "allowed": "已允许",
+    "excluded": "已排除",
+    "selected": "已选",
+    "allowAll2set": "允许所有两件套",
+    "excludeAll2set": "排除所有两件套",
+    "allowAll4set": "允许所有四件套",
+    "excludeAll4set": "排除所有四件套",
+    "modal": {
+      "setCond": {
+        "reset": "重置条件"
+      }
+    }
+  }
+}

@@ -3,11 +3,10 @@
   "tabs": {
     "artifacts": "Thánh di vật",
     "characters": "Nhân vật",
-    "builds": "Builds",
     "tools": "Công cụ",
-    "database": "Cơ sở dữ liệu",
     "weapons": "Vũ khí",
-    "doc": "Docs"
+    "doc": "Docs",
+    "scanner": "Máy quét"
   },
   "social": {
     "paypal": "Paypal",
@@ -23,7 +22,6 @@
   "unselect": "Bỏ chọn",
   "ascending": "Tăng dần",
   "descending": "Giảm dần",
-  "sortByFormat": "Xếp theo: {{value}}",
   "loading": "Đang tải...",
   "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc xác nhận bởi miHoyo",
   "appVersion": "$t(pageTitle) Phiên bản: {{version}}",
@@ -42,5 +40,13 @@
     "mefficiency": "Hiệu suất chỉ số phụ tối đa",
     "artsetkey": "Bộ Thánh Di Vật",
     "probability": "Xác xuất Roll"
-  }
+  },
+  "link": {
+    "download": "Download Link",
+    "discord": "Discord Invite Link"
+  },
+  "sortBy": "Sắp xếp theo: ",
+  "delete": "Xóa",
+  "locked": "Đã khóa",
+  "unlocked": "Đã mở khóa"
 }

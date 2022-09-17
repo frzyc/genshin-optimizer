@@ -1,0 +1,153 @@
+{
+  "auto": {
+    "name": "Gió Sắt Nơi Xa",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Đáp",
+      "8": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kiếm Gió Lốc",
+    "description": {
+      "0": "Nắm giữ sức mạnh của gió, trong tay hội tụ xoáy chân không, gây cho địch phía trước <anemo>Sát Thương Nguyên Tố Phong</anemo> liên tục.",
+      "1": "Khi kỹ năng kết thúc, xoáy chân không sẽ nổ, gây Sát Thương Nguyên Tố Phong ở phạm vi lớn hơn và uy lực mạnh hơn.",
+      "2": "<br/>",
+      "3": "<strong>Nhấn Giữ</strong>",
+      "4": "Sát thương và phạm vi ảnh hưởng sẽ tăng dần.",
+      "5": "<br/>",
+      "6": "<strong>Chuyển hóa nguyên tố</strong>",
+      "7": "Nếu trong thời gian duy trì xoáy chân không có tiếp xúc <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<electro>Nguyên Tố Lôi</electro>, thì sẽ nhận được thuộc tính nguyên tố tương ứng, gây thêm sát thương kèm theo của nguyên tố đó.",
+      "8": "Chuyển hóa nguyên tố chỉ phát sinh một lần trong thời gian duy trì kỹ năng.",
+      "9": "<br/>",
+      "10": "<i>Thảo luận với Paimon cách để nắm bắt ngọn gió vô hình.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Cắt Ban Đầu",
+      "1": "Sát Thương Cắt Lớn Nhất",
+      "2": "ST Bạo Phong Ban Đầu",
+      "3": "ST Bạo Phong Lớn Nhất",
+      "4": "CD Căn Bản",
+      "5": "CD Tụ Lực Tối Đa",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Khuấy Động Gió Tàn",
+    "description": {
+      "0": "Gió dẫn ra con đường, triệu hồi lốc xoáy về phía trước, cuốn vật thể và địch bên đường vào, duy trì gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "1": "<br/>",
+      "2": "<strong>Chuyển hóa nguyên tố</strong>",
+      "3": "Nếu trong thời gian duy trì kỹ năng lốc xoáy có tiếp xúc <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<electro>Nguyên Tố Lôi</electro>, sẽ nhận được thuộc tính nguyên tố tương ứng, gây thêm sát thương kèm theo của nguyên tố đó.",
+      "4": "Loại chuyển hóa này chỉ phát sinh một lần trong thời gian duy trì kỹ năng.",
+      "5": "<br/>",
+      "6": "<i>Cùng Paimon nghiên cứu cách vỗ cánh của bướm.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Gió Lốc",
+      "1": "Sát Thương Nguyên Tố Kèm Theo",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ngọn Gió Xé Trời",
+    "description": {
+      "0": "Chiêu cuối trong tấn công thường sẽ phóng ra 1 đạo phong đao, gây <anemo>sát thương Nguyên Tố Phong</anemo> với lực tấn công 60% cho địch trên đường đi."
+    }
+  },
+  "passive2": {
+    "name": "Gió Phục Sinh",
+    "description": {
+      "0": "Trong 5s sau khi dùng <strong>Kiếm Gió Lốc</strong> đánh bại địch, mỗi giây hồi 2% HP.",
+      "1": "Hiệu quả này mỗi 5s chỉ được dùng 1 lần."
+    }
+  },
+  "constellation1": {
+    "name": "Gió Giận Dữ",
+    "description": {
+      "0": "<strong>Kiếm Gió Lốc</strong> có thể khiến địch và vật thể trong phạm vi 5m bị dẫn đến trước mặt nhân vật."
+    }
+  },
+  "constellation2": {
+    "name": "Gió Lốc Đổi Mới",
+    "description": {
+      "0": "Hiệu quả Nạp Nguyên Tố tăng 16%"
+    }
+  },
+  "constellation3": {
+    "name": "Gió Trong Trời Đất",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Khuấy Động Gió Tàn</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Ngọn Gió Bảo Vệ",
+    "description": {
+      "0": "Trong thời gian <strong>Kiếm Gió Lốc</strong> tồn tại, sát thương phải chịu sẽ giảm 10%."
+    }
+  },
+  "constellation5": {
+    "name": "Vòng Xoáy Sao Rơi",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Kiếm Gió Lốc</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Gió Mùa Hỗn Loạn",
+    "description": {
+      "0": "Những mục tiêu bị sát thương bởi <strong>Khuấy Động Gió Tàn</strong>, <anemo>Kháng Nguyên Tố Phong</anemo> giảm 20%. ",
+      "1": "Nếu sinh ra chuyển hoá nguyên tố thì kháng Nguyên Tố tương ứng cũng giảm 20%."
+    }
+  }
+}

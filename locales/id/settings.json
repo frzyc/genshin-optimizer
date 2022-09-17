@@ -4,15 +4,6 @@
     "selectLanguage": "Pilih Bahasa",
     "languageFormat": "Bahasa: {{language}}"
   },
-  "downloadCard": {
-    "databaseDownload": "Unduh Database",
-    "databaseDisclaimer": "Catatan: data apa pun dalam halaman \"Alat\", mis. Jumlah resin/timer, bukan bagian dari database yang diunduh.",
-    "button": {
-      "download": "Unduh",
-      "copy": "Salin ke Papan Klip",
-      "delete": "Hapus Database"
-    }
-  },
   "uploadCard": {
     "title": "Unggah Database",
     "replaceDatabase": "Ganti Database",

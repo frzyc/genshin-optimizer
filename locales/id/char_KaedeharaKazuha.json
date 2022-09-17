@@ -4,11 +4,5 @@
   "c6": {
     "after": "Setelah menggunakan <strong>Chihayaburu</strong> atau <strong>Kazuha Slash</strong>",
     "bonus": "DMG Normal, Charged dan Plunging"
-  },
-  "a4": {
-    "name_hydro": "Ketika memicu reaksi Swirl <hydro>Hydro</hydro>.",
-    "name_pyro": "Ketika memicu reaksi Swirl <pyro>Pyro</pyro>.",
-    "name_electro": "Ketika memicu reaksi Swirl <electro>Electro</electro>.",
-    "name_cryo": "Ketika memicu reaksi Swirl <cryo>Cryo</cryo>."
   }
 }

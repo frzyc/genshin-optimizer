@@ -3,9 +3,7 @@
   "tabs": {
     "artifacts": "Artefak",
     "characters": "Karakter",
-    "builds": "Build",
     "tools": "Alat",
-    "database": "Database",
     "weapons": "Senjata",
     "doc": "Docs"
   },
@@ -23,9 +21,8 @@
   "unselect": "Batal pilih",
   "ascending": "Meningkat",
   "descending": "Menurun",
-  "sortByFormat": "Urut Berdasarkan: {{value}}",
   "loading": "Memuat...",
-  "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan HoYoverse.",
+  "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan miHoYo.",
   "appVersion": "$t(halamanJudul) Versi: <1>{{version}}</1>",
   "underConstruction": "Sedang Dibangun",
   "error": "Error",

@@ -2,8 +2,6 @@
   "dmg": "Schaden",
   "hits": "({{hits}} Treffer)",
   "lessPercentHP": "< {{percent}}% HP",
-  "stack": "{{count}} Stapelung",
-  "stack_plural": "{{count}} Stapelungen",
   "hitOp": {
     "normal": "Treffer gegen Gegner bei normalen Schlägen",
     "charged": "Treffer gegen Gegner bei heftigen Schlägen",
@@ -11,7 +9,14 @@
     "skill": "Treffer gegen Gegner durch Elementarfähigkeit",
     "burst": "Treffer gegen Gegner durch Elementarfähigkeit"
   },
-  "hits_plural": "{{count}} Treffer",
   "eleAbsor": "Elementarumwandlung",
-  "absorDot": "Fortlaufender Umwandlungs-Schaden"
+  "absorDot": "Fortlaufender Umwandlungs-Schaden",
+  "afterUse": {
+    "skill": "Nach Anwendung von Elementarfähigkeiten",
+    "burst": "Nach Anwendung von Spezialfähigkeiten"
+  },
+  "increase": {
+    "atk": "ANG-Erhöhung"
+  },
+  "energy": "Energie"
 }

@@ -4,11 +4,5 @@
   "c6": {
     "after": "Sau khi thi truyển <strong>Chihayaburu</strong> hoặc <strong>Kazuha Nhất đao trảm</strong>",
     "bonus": "Đánh thường, trọng kích, tấn công khi đáp"
-  },
-  "a4": {
-    "name_hydro": "Khi kích hoạt phản ứng khuếch tán <hydro>Nguyên tố Thủy</hydro>",
-    "name_pyro": "Khi kích hoạt phản ứng khuếch tán<pyro>Nguyên tố Hỏa</pyro>",
-    "name_electro": "Khi kích hoạt phản ứng khuếch tán<electro>Nguyên tố Lôi</electro>",
-    "name_cryo": "Khi kích hoạt phản ứng khuếch tán<cyro>Nguyên tố Băng</cyro>"
   }
 }

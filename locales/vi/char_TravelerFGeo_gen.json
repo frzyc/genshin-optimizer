@@ -1,0 +1,148 @@
+{
+  "auto": {
+    "name": "Đỉnh Núi Đá",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Đáp",
+      "8": "ST Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kiếm Sao Băng",
+    "description": {
+      "0": "Sao băng bay lên từ sâu trong lòng đất, kích hoạt nổ, gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo>.",
+      "1": "Sao băng được xem là <geo>tạo vật Nguyên Tố Nham</geo>, có thể ngăn chặn tấn công, có thể leo trèo.",
+      "2": "<br/>",
+      "3": "<strong>Nhấn Giữ</strong>",
+      "4": "Có thể điều chỉnh vị trí hiệu quả của kỹ năng.",
+      "5": "<br/>",
+      "6": "<i>Cùng Paimon thảo luận điểm dừng của sao băng.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Thời Gian Thiên Thạch Tồn Tại",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sóng Đá Trùng Điệp",
+    "description": {
+      "0": "Kích hoạt Nguyên Tố Nham sâu dưới lòng đất, khuếch tán sóng chấn động.",
+      "1": "Đánh lui địch xung quanh, gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo>.",
+      "2": "Sau đó, bên ngoài sóng chấn động mọc lên vòng tròn núi đá.",
+      "3": "Núi đá được xem là <geo>vật tạo ra Nguyên Tố Nham</geo>, có thể ngăn chặn tấn công.",
+      "4": "<br/>",
+      "5": "<i>Cùng Paimon nghiên cứu các mạch đập sâu trong núi.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương 1 Lần Động Đất",
+      "1": "Thời Gian Núi Đá Tồn Tại",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Mảnh Đá Vỡ Nát",
+    "description": {
+      "0": "Giảm CD <strong>Kiếm Sao Băng</strong> 2s."
+    }
+  },
+  "passive2": {
+    "name": "Phiến Đá Hoảng Loạn",
+    "description": {
+      "0": "Chiêu cuối tấn công thường gây sụp đổ, gây <geo>sát thương Nguyên Tố Nham</geo> bằng 60% lực tấn công cho địch xung quanh."
+    }
+  },
+  "constellation1": {
+    "name": "Đá Xanh Cao Ngất",
+    "description": {
+      "0": "Khi nhân vật trong đội được bao quanh bởi các ngọn núi của <strong>Sóng Đá Trùng Điệp</strong>, tỷ lệ bạo kích tăng 10%, đồng thời tăng khả năng kháng gián đoạn."
+    }
+  },
+  "constellation2": {
+    "name": "Dung Nham Bất Ổn",
+    "description": {
+      "0": "Khi thiên thạch <strong>Kiếm Sao Băng</strong> bị phá hủy sẽ nổ thêm lần nữa, gây thêm <geo>sát thương phạm vi Nguyên Tố Nham</geo> bằng với sát thương của Kiếm Sao Băng."
+    }
+  },
+  "constellation3": {
+    "name": "Đá Bát Giác",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Sóng Đá Trùng Điệp</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Đá Nặng Nguy Hiểm",
+    "description": {
+      "0": "<strong>Sóng Đá Trùng Điệp</strong> dẫn phát sóng chấn động đánh trúng mỗi kẻ địch đều sẽ hồi phục 5 điểm năng lượng Nguyên Tố.",
+      "1": "Bằng cách này, mỗi lần có thể hồi phục tối đa 25 điểm năng lượng Nguyên Tố."
+    }
+  },
+  "constellation5": {
+    "name": "Thiên Thạch",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Kiếm Sao Băng</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Bàn Nham Vĩnh Cửu",
+    "description": {
+      "0": "Núi đá của <strong>Sóng Đá Trùng Điệp</strong> có thời gian kéo dài 5s;",
+      "1": "Thiên thạch của <strong>Kiếm Sao Băng</strong> có thời gian kéo dài 10s."
+    }
+  }
+}

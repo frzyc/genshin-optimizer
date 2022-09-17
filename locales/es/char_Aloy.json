@@ -1,0 +1,11 @@
+{
+  "skill": {
+    "coil": "Inducción",
+    "coil1": "1 Carga de Inducción",
+    "coil2": "2 Cargas de Inducción",
+    "coil3": "3 Cargas de Inducción",
+    "rush": "Hielo Galopante",
+    "rushState": "Durante el estado de Hielo Galopante (1 carga / s)"
+  },
+  "a1CondName": "Cuando Aloy recibe el efecto de Inducción por <strong>Campo Gélido</strong>"
+}

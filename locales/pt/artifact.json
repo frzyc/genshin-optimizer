@@ -14,8 +14,6 @@
         "noOverRoll": "O subatributo não pode ser sorteado mais que {{value}} vezes."
       },
       "noRoll": "Sem Sorteios",
-      "RollCount": "{{count}} Sorteio",
-      "RollCount_plural": "{{count}} Sorteios",
       "noStat": "Sem Valor",
       "eff": "Eficiência: <1></1>"
     },
@@ -86,7 +84,5 @@
     "level": "Nível",
     "efficiency": "Efic. Atual do Subatributo",
     "mefficiency": "Efic. Máxima do Subatributo"
-  },
-  "showingNum": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
-  "showingNum_plural": "Mostrando <1>{{count}}</1> de {{value}} Artefatos"
+  }
 }

@@ -1,9 +1,7 @@
 {
-  "a1": "Luego de golpe por la espalda",
+  "a1": "Tras golpe por la espalda",
   "a4": {
-    "name": "Luego de usar <strong>Extremaunción<strong/>",
-    "text": "La Prob. CRIT de los miembros del equipo aumenta"
-  },
-  "c1": "Luego de golpe CRIT",
-  "c6": "Ataque a un enemigo con <strong>Extremaunción<strong/>"
+    "name": "Tras usar <strong>Extremaunción</strong>",
+    "text": "Aumento de Prob. CRIT del equipo"
+  }
 }

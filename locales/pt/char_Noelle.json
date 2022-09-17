@@ -1,5 +1,4 @@
 {
   "p4cd": "24s, -1s a cada 4 acertos",
-  "c1chance": "\n(100% enquanto <strong>Grande Limpeza</strong> e <strong>Guardião do Coração</strong> estiverem em efeito)",
   "c6duration": "15s, +1s por oponente derrotado, até 10s"
 }

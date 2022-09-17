@@ -4,14 +4,6 @@
     "selectLanguage": "言語",
     "languageFormat": "言語: {{language}}"
   },
-  "downloadCard": {
-    "databaseDownload": "データーベースをダウンロード",
-    "button": {
-      "download": "ダウンロード",
-      "copy": "クリップボードにコピーする",
-      "delete": "データベースを消す"
-    }
-  },
   "uploadCard": {
     "title": "データベースをアップロード",
     "replaceDatabase": "データベースを入れ替え",

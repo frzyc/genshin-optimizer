@@ -4,15 +4,6 @@
     "selectLanguage": "Selecione o Idioma",
     "languageFormat": "Idioma: {{language}}"
   },
-  "downloadCard": {
-    "databaseDownload": "Download do Banco de Dados",
-    "databaseDisclaimer": "Nota: Quaisquer dados dentro da página \"Ferramentas\", p.ex. Quantidade de resina/cronômetro, não fazem parte do banco de dados baixado.",
-    "button": {
-      "download": "Download",
-      "copy": "Copiar para área de transferência",
-      "delete": "Excluir banco de dados"
-    }
-  },
   "uploadCard": {
     "title": "Upload de Banco de Dados",
     "replaceDatabase": "Substituir Banco de Dados",

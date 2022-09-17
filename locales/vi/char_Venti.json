@@ -3,10 +3,6 @@
   "addFullAimed": "Sát thương tụ lực của mũi tên tăng thêm",
   "upcurrentDuration": "Thời gian luồng gió duy trì",
   "regenEner": "Hồi phục 15 điểm Năng lượng nguyên tố cho Venti sau khi kết thúc hiệu ứng",
-  "fullBurstDMG": {
-    "text": "<0><0>Tổng sát thương kỹ năng nộ</0><1>Công thức này là tổng tất cả sát thương nộ, bao gồm cả Khuếch tán.Giả định:</1><2><0><0>20 ticks của <1>sát thương nộ</1></0><1>15 ticks của <1>sát thương hấp thụ</1></1><2>7 ticks của <1>Khuếch tán</1>, với một kẻ địch, Hoặc,</2><3>14 ticks của <1>Khuếch tán</1>, với nhiều kẻ địch khuếch tán lẫn nhau.</3></0></2></0>",
-    "dmg": "<0>Tổng sát thương (<1>{{swirlTicks}} ticks Khuếch tán</1>)</0>"
-  },
   "c6": "Mục tiệu nhận sát thương từ <strong>Bài thơ thần gió</strong>",
   "c4": "Venti nhận nguyên tố Tinh cầu hoặc nguyên tố Hạt nhân",
   "q": "Hồi phục 15 năng lượng nguyên tố cho tất cả nhân vật trong đội có nguyên tố tương ứng.",

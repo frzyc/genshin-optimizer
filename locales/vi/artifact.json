@@ -14,8 +14,6 @@
         "noOverRoll": "Chỉ số phụ không thể roll nhiều hơn {{value}} lần"
       },
       "noRoll": "Không có roll",
-      "RollCount": "{{count}} Roll",
-      "RollCount_plural": "{{count}} Rolls",
       "noStat": "Không có giá trị",
       "eff": "Hiệu suất: <1></1>",
       "nextRolls": "Rolls kế tiếp:"
@@ -90,8 +88,6 @@
     "efficiency": "Hiệu suất hiện tại.",
     "mefficiency": "Hiệu suất tối đa."
   },
-  "showingNum": "Hiển thị <1>{{count}}</1> trong {{value}} thánh di vật",
-  "showingNum_plural": "Hiển thị <1>{{count}}</1> trong {{value}} thánh di vật",
   "efficiencyFilter": {
     "title": "Chỉ số phụ để dùng ở công thức tính hiệu suất"
   },
