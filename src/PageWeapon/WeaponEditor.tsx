@@ -23,7 +23,7 @@ import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import useBoolState from "../ReactHooks/useBoolState"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
-import { CharacterKey } from "../Types/consts"
+import { CharacterKey, charKeyToLocCharKey } from "../Types/consts"
 import { ICachedWeapon } from "../Types/weapon"
 
 type WeaponStatsEditorCardProps = {
@@ -50,11 +50,11 @@ export default function WeaponEditor({
     database.weapons.set(propWeaponId, newWeapon)
   }, [propWeaponId, database])
 
-  const characterSheet = usePromise(() => location ? CharacterSheet.get(location) : undefined, [location])
+  const characterSheet = usePromise(() => location ? CharacterSheet.get(database.chars.LocationToCharacterKey(location)) : undefined, [database, location])
 
   const initialWeaponFilter = characterSheet && characterSheet.weaponTypeKey
 
-  const equipOnChar = useCallback((charKey: CharacterKey | "") => id && database.weapons.set(id, { location: charKey }), [database, id])
+  const equipOnChar = useCallback((charKey: CharacterKey | "") => id && database.weapons.set(id, { location: charKey && charKeyToLocCharKey(charKey) }), [database, id])
   const filter = useCallback(
     (cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType,
     [weaponSheet],
@@ -125,7 +125,7 @@ export default function WeaponEditor({
     {footer && id && <CardContent sx={{ py: 1 }}>
       <Grid container spacing={1}>
         <Grid item flexGrow={1}>
-          <CharacterAutocomplete showDefault size="small" defaultIcon={<BusinessCenter />} defaultText={t("inventory")} value={location} onChange={equipOnChar} filter={filter} disable={(v: any) => v === ""} disableClearable />
+          <CharacterAutocomplete showDefault size="small" defaultIcon={<BusinessCenter />} defaultText={t("inventory")} value={location && database.chars.LocationToCharacterKey(location)} onChange={equipOnChar} filter={filter} disable={(v: any) => v === ""} disableClearable />
         </Grid>
         <Grid item flexGrow={2} />
         {!!onClose && <Grid item><CloseButton sx={{ height: "100%" }} large onClick={onClose} /></Grid>}

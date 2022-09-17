@@ -1,10 +1,11 @@
 import { BusinessCenter } from "@mui/icons-material";
 import { alpha, Box, CardActionArea, Chip, Typography, useTheme } from "@mui/material";
-import { useCallback } from "react";
+import { useCallback, useContext } from "react";
 import Assets from "../../Assets/Assets";
 import Artifact from "../../Data/Artifacts/Artifact";
 import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
+import { DatabaseContext } from "../../Database/Database";
 import KeyMap, { cacheValueString } from "../../KeyMap";
 import useArtifact from "../../ReactHooks/useArtifact";
 import usePromise from "../../ReactHooks/usePromise";
@@ -31,6 +32,7 @@ type Data = {
 
 export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainStatAssumptionLevel = 0, showLocation = false, onClick, BGComponent = CardDark }: Data) {
   const art = useArtifact(artifactId)
+  const { database } = useContext(DatabaseContext)
   const sheet = usePromise(() => ArtifactSheet.get(art?.setKey), [art?.setKey])
   const actionWrapperFunc = useCallback(children => <CardActionArea onClick={onClick} sx={{ height: "100%" }}>{children}</CardActionArea>, [onClick],)
   const theme = useTheme()
@@ -55,7 +57,7 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
         </ArtifactTooltip>
         <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, display: "flex", justifyContent: "space-between", pointerEvents: "none" }} >
           <Chip size="small" label={<strong>{` +${level}`}</strong>} color={Artifact.levelVariant(level)} />
-          {showLocation && <Chip size="small" label={<LocationIcon location={location} />} color={"secondary"} sx={{
+          {showLocation && <Chip size="small" label={<LocationIcon location={location && database.chars.LocationToCharacterKey(location)} />} color={"secondary"} sx={{
             overflow: "visible", ".MuiChip-label": {
               overflow: "visible"
             }

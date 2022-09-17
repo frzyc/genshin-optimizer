@@ -16,9 +16,10 @@ import { CharacterContext } from "../../../../Context/CharacterContext";
 import { DataContext } from "../../../../Context/DataContext";
 import { TalentSheetElementKey } from "../../../../Data/Characters/CharacterSheet";
 import { getLevelString } from "../../../../Data/LevelData";
+import { initCharMeta } from "../../../../Database/Data/StateData";
 import { uiInput as input } from "../../../../Formula";
 import useCharacterReducer from "../../../../ReactHooks/useCharacterReducer";
-import useDBState, { initCharMeta } from "../../../../ReactHooks/useDBState";
+import useDBState from "../../../../ReactHooks/useDBState";
 import { allSlotKeys, Ascension, ElementKey } from "../../../../Types/consts";
 import { range } from "../../../../Util/Util";
 import EquipmentSection from "./EquipmentSection";
@@ -127,7 +128,7 @@ function CharacterProfileCard() {
                     height: "1.25em"
                   }
                 }}>
-                <Box component="img" src={characterSheet.getTalentOfKey(tKey, charEle)?.img} width="100%" height="auto" />
+                <Box component="img" src={characterSheet.getTalentOfKey(tKey)?.img} width="100%" height="auto" />
               </Badge>
             </Grid>)}
         </Grid>
@@ -137,7 +138,7 @@ function CharacterProfileCard() {
         {range(1, 6).map(i =>
           <Grid item xs={4} key={i}>
             <CardActionArea onClick={() => characterDispatch({ constellation: i === constellation ? i - 1 : i })}>
-              <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i}` as TalentSheetElementKey, charEle)?.img}
+              <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i}` as TalentSheetElementKey)?.img}
                 sx={{
                   ...(constellation >= i ? {} : { filter: "brightness(50%)" })
                 }}

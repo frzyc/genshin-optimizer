@@ -16,7 +16,7 @@ import { DataContext } from "../../Context/DataContext";
 import { allInputPremodKeys, uiInput as input } from "../../Formula";
 import { ReadNode } from "../../Formula/type";
 import KeyMap, { allEleDmgKeys, allEleResKeys, valueString } from "../../KeyMap";
-import { allElements, ElementKey, ElementKeyWithPhy } from "../../Types/consts";
+import { allElements, ElementKeyWithPhy } from "../../Types/consts";
 
 const cols = {
   xs: 1, md: 2, lg: 3
@@ -73,10 +73,10 @@ function StatDisplayContent({ nodes, extra }: { nodes: ReadNode<number>[], extra
 }
 
 function MainStatsCards() {
-  const { character: { elementKey }, characterSheet } = useContext(CharacterContext)
+  const { characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const specialNode = data.get(input.special)
-  const charEle = (elementKey ?? characterSheet.elementKey) as ElementKey
+  const charEle = characterSheet.elementKey
   const isMelee = characterSheet.isMelee()
 
   const otherStatReadNodes = useMemo(() => {

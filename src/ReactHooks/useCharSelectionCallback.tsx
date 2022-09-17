@@ -2,7 +2,7 @@ import { useCallback, useContext } from "react";
 import { useNavigate, useMatch } from "react-router";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../Database/Database";
-import { allSlotKeys, CharacterKey } from "../Types/consts";
+import { allSlotKeys, CharacterKey, charKeyToLocCharKey } from "../Types/consts";
 import { defaultInitialWeapon } from "../Util/WeaponUtil";
 import { ICachedCharacter } from "../Types/character";
 import { objectKeyMap } from "../Util/Util";
@@ -28,7 +28,7 @@ export default function useCharSelectionCallback() {
         if (!characterSheet) return
         const weapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
         const weaponId = database.weapons.new(weapon)
-        database.weapons.set(weaponId, { location: characterKey })
+        database.weapons.set(weaponId, { location: charKeyToLocCharKey(characterKey) })
         // If we are navigating to a new character,
         // redirect to Overview, regardless of previous tab.
         // Trying to enforce a certain UI flow when building new characters

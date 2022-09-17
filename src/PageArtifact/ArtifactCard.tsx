@@ -22,7 +22,7 @@ import KeyMap, { cacheValueString } from '../KeyMap';
 import useArtifact from '../ReactHooks/useArtifact';
 import usePromise from '../ReactHooks/usePromise';
 import { allSubstatKeys, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
-import { allElementsWithPhy, CharacterKey, Rarity } from '../Types/consts';
+import { allElementsWithPhy, CharacterKey, charKeyToLocCharKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
@@ -46,7 +46,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
   const sheet = usePromise(() => ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
-  const equipOnChar = (charKey: CharacterKey | "") => database.arts.set(artifactId!, { location: charKey })
+  const equipOnChar = (charKey: CharacterKey | "") => database.arts.set(artifactId!, { location: charKey && charKeyToLocCharKey(charKey) })
   const editable = !artifactObj
   const [showEditor, setshowEditor] = useState(false)
   const onHideEditor = useCallback(() => setshowEditor(false), [setshowEditor])
@@ -150,7 +150,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
         {editable && canEquip
           ? <CharacterAutocomplete sx={{ flexGrow: 1 }} size="small" showDefault
             defaultIcon={<BusinessCenter />} defaultText={t("ui:inventory")}
-            value={location} onChange={equipOnChar} />
+            value={location && database.chars.LocationToCharacterKey(location)} onChange={equipOnChar} />
           : <LocationName location={location} />}
         {editable && <ButtonGroup sx={{ height: "100%" }}>
           {editor && <Tooltip title={<Typography>{t`artifact:edit`}</Typography>} placement="top" arrow>

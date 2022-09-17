@@ -14,7 +14,7 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
   toStorageKey(key: CacheKey): StorageKey {
     return key as any as StorageKey
   }
-  validate(obj: any): StorageValue | undefined {
+  validate(obj: any, key: CacheKey): StorageValue | undefined {
     return obj as StorageValue | undefined
   }
   toCache(storageObj: StorageValue, id: string): CacheValue | undefined {
@@ -45,7 +45,7 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
   getStorage(key: CacheKey) { return this.database.storage.get(this.toStorageKey(key) as any) }
   set(key: CacheKey, value: Partial<StorageValue>) {
     const old = this.getStorage(key)
-    const validated = this.validate({ ...(old ?? {}), ...value })
+    const validated = this.validate({ ...(old ?? {}), ...value }, key)
     if (!validated) return this.trigger(key, "invalid", value)
     const cached = this.toCache(validated, key as any)
     if (!cached) return this.trigger(key, "invalid", value)
@@ -77,5 +77,5 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
     }
   }
 }
-type TriggerString = "update" | "remove" | "new" | "invalid"
+export type TriggerString = "update" | "remove" | "new" | "invalid"
 type Callback<Arg> = (key: Arg, reason: TriggerString, object: any) => void

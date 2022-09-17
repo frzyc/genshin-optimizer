@@ -21,7 +21,7 @@ import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import KeyMap, { valueString } from "../KeyMap"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
-import { CharacterKey } from "../Types/consts"
+import { CharacterKey, charKeyToLocCharKey } from "../Types/consts"
 
 type WeaponCardProps = { weaponId: string, onClick?: (weaponId: string) => void, onEdit?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, canEquip?: boolean, extraButtons?: JSX.Element }
 export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEquip = false, extraButtons }: WeaponCardProps) {
@@ -39,7 +39,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
   const wrapperFunc = useCallback(children => <CardActionArea onClick={() => onClick?.(weaponId)} >{children}</CardActionArea>, [onClick, weaponId],)
   const falseWrapperFunc = useCallback(children => <Box >{children}</Box>, [])
 
-  const equipOnChar = useCallback((charKey: CharacterKey | "") => database.weapons.set(weaponId, { location: charKey }), [database, weaponId],)
+  const equipOnChar = useCallback((charKey: CharacterKey | "") => database.weapons.set(weaponId, { location: charKey && charKeyToLocCharKey(charKey) }), [database, weaponId],)
 
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
 
@@ -91,7 +91,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
         {canEquip
           ? <CharacterAutocomplete size="small" sx={{ flexGrow: 1 }} disable={(v: any) => v === ""}
             showDefault defaultIcon={<BusinessCenter />} defaultText={t("ui:inventory")}
-            value={location} onChange={equipOnChar} filter={filter} disableClearable />
+            value={location && database.chars.LocationToCharacterKey(location)} onChange={equipOnChar} filter={filter} disableClearable />
           : <LocationName location={location} />}
         <ButtonGroup>
           {!!onEdit && <Tooltip title={<Typography>{t`page_weapon:edit`}</Typography>} placement="top" arrow>

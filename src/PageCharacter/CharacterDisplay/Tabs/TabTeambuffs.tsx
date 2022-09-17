@@ -14,11 +14,9 @@ import { CharacterContext, CharacterContextObj } from "../../../Context/Characte
 import { DataContext, dataContextObj } from "../../../Context/DataContext";
 import { ArtifactSheet } from "../../../Data/Artifacts/ArtifactSheet";
 import { resonanceSheets } from "../../../Data/Resonance";
-import { uiInput as input } from "../../../Formula";
 import { NodeDisplay } from "../../../Formula/uiData";
 import useCharSelectionCallback from "../../../ReactHooks/useCharSelectionCallback";
 import usePromise from "../../../ReactHooks/usePromise";
-import { ElementKey } from "../../../Types/consts";
 import { objPathValue, range } from "../../../Util/Util";
 
 export default function TabTeambuffs() {
@@ -159,10 +157,9 @@ function CharWeaponCondDisplay() {
 }
 function CharTalentCondDisplay() {
   const { character: { key: charKey } } = useContext(CharacterContext)
-  const { data, teamData } = useContext(DataContext)
+  const { teamData } = useContext(DataContext)
   const characterSheet = teamData[charKey]!.characterSheet
-  const talent = characterSheet.getTalent(data.get(input.charEle).value as ElementKey)!
-  const sections = Object.values(talent.sheets).flatMap(sts => sts.sections)
+  const sections = Object.values(characterSheet.talent).flatMap(sts => sts.sections)
   if (!sections) return null
   return <DocumentDisplay sections={sections} teamBuffOnly={true} />
 }

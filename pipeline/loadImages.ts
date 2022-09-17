@@ -123,11 +123,11 @@ export default function loadImages() {
     }
 
     if (candSkillDepotIds.length) { // Traveler
-      // This will be 504,506... for male
-      genTalentHash([...keys, "anemo"], skillDepot[704])
-      genTalentHash([...keys, "geo"], skillDepot[706])
-      genTalentHash([...keys, "electro"], skillDepot[707])
-      genTalentHash([...keys, "dendro"], skillDepot[708])
+      const [_1, _2, _3, anemo, _5, geo, electro, dendro] = candSkillDepotIds
+      genTalentHash([characterIdMap[charid] + "Anemo"], skillDepot[anemo])
+      genTalentHash([characterIdMap[charid] + "Geo"], skillDepot[geo])
+      genTalentHash([characterIdMap[charid] + "Electro"], skillDepot[electro])
+      genTalentHash([characterIdMap[charid] + "Dendro"], skillDepot[dendro])
     } else {
       genTalentHash(keys, skillDepot[skillDepotId])
     }

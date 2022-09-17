@@ -8,7 +8,8 @@ import { Link as RouterLink, useMatch } from "react-router-dom";
 import Assets from "./Assets/Assets";
 import { slotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
 import FontAwesomeSvgIcon from "./Components/FontAwesomeSvgIcon";
-import useDBState, { dbMetaInit } from "./ReactHooks/useDBState";
+import { dbMetaInit } from "./Database/Data/StateData";
+import useDBState from "./ReactHooks/useDBState";
 
 const content = [{
   i18Key: "tabs.artifacts",

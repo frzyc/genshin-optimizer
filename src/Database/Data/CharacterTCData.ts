@@ -1,8 +1,7 @@
-import { CharacterKey, MainStatKey } from "pipeline";
 import { validateLevelAsc } from "../../Data/LevelData";
-import { allSubstatKeys } from "../../Types/artifact";
+import { allSubstatKeys, MainStatKey } from "../../Types/artifact";
 import { ICharTC } from "../../Types/character";
-import { allSlotKeys, allWeaponKeys, ArtifactRarity, substatType, WeaponKey } from "../../Types/consts";
+import { allSlotKeys, allWeaponKeys, ArtifactRarity, CharacterKey, substatType, WeaponKey } from "../../Types/consts";
 import { objectKeyMap } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";

@@ -79,18 +79,14 @@ export function validateCustomMultiTarget(cmt: any): CustomMultiTarget | undefin
   return { name, targets }
 }
 
-function getMTarget(character: ICachedCharacter): CustomMultiTarget[] {
-  return character.elementKey ? character.customMultiTargets![character.elementKey]! :
-    character.customMultiTarget
-}
 export function CustomMultiTargetButton() {
   const { t } = useTranslation("page_character")
   const [show, onShow, onCloseModal] = useBoolState()
   const { character, characterDispatch } = useContext(CharacterContext)
-  const [customMultiTarget, setCustomTargets] = useState(() => getMTarget(character))
+  const [customMultiTarget, setCustomTargets] = useState(() => character.customMultiTarget)
 
-  useEffect(() => setCustomTargets(getMTarget(character)),
-    [setCustomTargets, character])
+  useEffect(() => setCustomTargets(character.customMultiTarget),
+    [setCustomTargets, character.customMultiTarget])
 
   const [expandedInd, setExpandedInd] = useState<number | false>(false);
 
@@ -126,8 +122,7 @@ export function CustomMultiTargetButton() {
   const onClose = useCallback(
     () => {
       onCloseModal()
-      character.elementKey ? characterDispatch({ customMultiTargets: { ...character.customMultiTargets!, [character.elementKey]: customMultiTarget } }) :
-        characterDispatch({ customMultiTarget })
+      characterDispatch({ customMultiTarget })
     }, [customMultiTarget, character, onCloseModal, characterDispatch])
 
   const { data: origUIData, teamData } = useContext(DataContext)

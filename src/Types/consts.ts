@@ -58,7 +58,7 @@ export const allArtifactSets = [
   "ViridescentVenerer",
   "WanderersTroupe",
 ] as const
-export const allCharacterKeys = [
+export const nonTravelerCharacterKeys = [
   "Albedo",
   "Amber",
   "Barbara",
@@ -84,7 +84,6 @@ export const allCharacterKeys = [
   "Razor",
   "Sucrose",
   "Tartaglia",
-  "Traveler",
   "RaidenShogun",
   "Venti",
   "Xiangling",
@@ -113,6 +112,30 @@ export const allCharacterKeys = [
   "Collei",
   "Dori",
   "Tighnari",
+] as const
+export const locationCharacterKeys = [
+  ...nonTravelerCharacterKeys,
+  "Traveler",
+] as const
+export const travelerElements = [
+  "anemo",
+  "geo",
+  "electro",
+  "dendro"
+] as const
+export const travelerKeys = [
+  "TravelerFAnemo",
+  "TravelerFGeo",
+  "TravelerFElectro",
+  "TravelerFDendro",
+  "TravelerMAnemo",
+  "TravelerMGeo",
+  "TravelerMElectro",
+  "TravelerMDendro",
+] as const
+export const allCharacterKeys = [
+  ...nonTravelerCharacterKeys,
+  ...travelerKeys
 ] as const
 
 export const allWeaponSwordKeys = [
@@ -300,6 +323,9 @@ export type ElementKeyWithPhy = typeof allElementsWithPhy[number]
 export type InfusionAuraElements = typeof allInfusionAuraElements[number]
 export type ArtifactSetKey = typeof allArtifactSets[number]
 export type CharacterKey = typeof allCharacterKeys[number]
+export type LocationCharacterKey = typeof locationCharacterKeys[number]
+export type TravelerKey = typeof travelerKeys[number]
+export type TravelerElementKey = typeof travelerElements[number]
 export type WeaponTypeKey = typeof allWeaponTypeKeys[number]
 export type RollColorKey = typeof allRollColorKeys[number]
 export type Ascension = typeof allAscension[number]
@@ -319,3 +345,16 @@ export const allowedAdditiveReactions: Dict<ElementKey, AdditiveReactionKey[]> =
 }
 
 export type SubstatType = typeof substatType[number]
+
+export function charKeyToLocCharKey(charKey: CharacterKey): LocationCharacterKey {
+  if (travelerKeys.includes(charKey as TravelerKey)) return "Traveler"
+  return charKey as LocationCharacterKey
+}
+
+export function TravelerToElement(key: TravelerKey, element: TravelerElementKey): TravelerKey {
+  return key.slice(0, 9) + element.toUpperCase().slice(0, 1) + element.slice(1) as TravelerKey
+}
+
+export function TravelerGender(key: TravelerKey, gender: "F" | "M"): TravelerKey {
+  return key.slice(0, 8) + gender + key.slice(9) as TravelerKey
+}

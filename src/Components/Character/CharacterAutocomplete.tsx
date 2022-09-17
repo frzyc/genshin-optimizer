@@ -5,8 +5,8 @@ import { Autocomplete, AutocompleteProps, Box, Skeleton, Typography, useTheme } 
 import { Suspense, useCallback, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
+import { initCharMeta } from "../../Database/Data/StateData";
 import { DatabaseContext } from "../../Database/Database";
-import { initCharMeta } from "../../ReactHooks/useDBState";
 import usePromise from "../../ReactHooks/usePromise";
 import { allElements, allWeaponTypeKeys, CharacterKey } from "../../Types/consts";
 import { CharacterFilterConfigs, characterFilterConfigs } from "../../Util/CharacterSort";

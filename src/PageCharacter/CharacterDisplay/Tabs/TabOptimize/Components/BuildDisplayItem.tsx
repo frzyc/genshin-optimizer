@@ -19,7 +19,7 @@ import { DatabaseContext } from '../../../../../Database/Database';
 import { uiInput as input } from '../../../../../Formula';
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard';
 import usePromise from '../../../../../ReactHooks/usePromise';
-import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../../../../Types/consts';
+import { allSlotKeys, ArtifactSetKey, charKeyToLocCharKey, SlotKey } from '../../../../../Types/consts';
 import useBuildSetting from '../useBuildSetting';
 
 type NewOld = {
@@ -46,9 +46,11 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
 
   const equipBuild = useCallback(() => {
     if (!window.confirm("Do you want to equip this build to this character?")) return
-    const newBuild = Object.fromEntries(allSlotKeys.map(s => [s, data.get(input.art[s].id).value])) as Record<SlotKey, string>
-    database.chars.equipArtifacts(characterKey, newBuild)
-    database.weapons.set(data.get(input.weapon.id).value!, { location: characterKey })
+    allSlotKeys.forEach(s => {
+      const aid = data.get(input.art[s].id).value
+      if (aid) database.arts.set(aid, { location: charKeyToLocCharKey(characterKey) })
+    })
+    database.weapons.set(data.get(input.weapon.id).value!, { location: charKeyToLocCharKey(characterKey) })
   }, [characterKey, data, database])
 
   const statProviderContext = useMemo(() => {
@@ -129,7 +131,7 @@ function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLeve
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const onEquip = useCallback(() => {
     if (!window.confirm("Do you want to equip this artifact to this character?")) return
-    database.arts.set(newId, { location: characterKey })
+    database.arts.set(newId, { location: charKeyToLocCharKey(characterKey) })
     onClose()
   }, [newId, database, characterKey, onClose])
 

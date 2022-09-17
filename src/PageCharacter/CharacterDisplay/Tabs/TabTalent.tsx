@@ -1,20 +1,19 @@
 import { Box, CardActionArea, CardContent, Grid, MenuItem, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
-import React, { useCallback, useContext, useMemo } from 'react';
-import { CharacterContext } from "../../../Context/CharacterContext";
+import { useCallback, useContext, useMemo } from 'react';
 import CardDark from "../../../Components/Card/CardDark";
 import CardLight from "../../../Components/Card/CardLight";
 import ConditionalWrapper from "../../../Components/ConditionalWrapper";
 import DocumentDisplay from "../../../Components/DocumentDisplay";
 import DropdownButton from "../../../Components/DropdownMenu/DropdownButton";
 import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
-import { TalentSheetElementKey } from "../../../Data/Characters/CharacterSheet";
+import { CharacterContext } from "../../../Context/CharacterContext";
 import { DataContext } from '../../../Context/DataContext';
+import { TalentSheetElementKey } from "../../../Data/Characters/CharacterSheet";
 import { uiInput as input } from "../../../Formula";
 import { NumNode } from "../../../Formula/type";
 import { NodeDisplay } from '../../../Formula/uiData';
 import useCharacterReducer from "../../../ReactHooks/useCharacterReducer";
-import { ElementKey } from "../../../Types/consts";
 import { DocumentSection } from "../../../Types/sheet";
 import { range } from "../../../Util/Util";
 
@@ -30,7 +29,6 @@ export default function CharacterTalentPane() {
   const characterDispatch = useCharacterReducer(character.key)
   const skillBurstList = [["auto", "Normal/Charged Attack"], ["skill", "Elemental Skill"], ["burst", "Elemental Burst"]] as [TalentSheetElementKey, string][]
   const passivesList: [tKey: TalentSheetElementKey, tText: string, asc: number][] = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
-  const charEle = data.get(input.charEle).value as ElementKey | undefined
   const ascension = data.get(input.asc).value
   const constellation = data.get(input.constellation).value
 
@@ -59,13 +57,13 @@ export default function CharacterTalentPane() {
               subtitle={tText}
             />
           </Grid>)}
-        {!!characterSheet.getTalentOfKey("sprint", charEle) && <Grid item {...talentSpacing} >
+        {!!characterSheet.getTalentOfKey("sprint",) && <Grid item {...talentSpacing} >
           <SkillDisplayCard
             talentKey="sprint"
             subtitle="Alternative Sprint"
           />
         </Grid>}
-        {!!characterSheet.getTalentOfKey("passive", charEle) && <Grid item {...talentSpacing} >
+        {!!characterSheet.getTalentOfKey("passive") && <Grid item {...talentSpacing} >
           <SkillDisplayCard
             talentKey="passive"
             subtitle="Passive"
@@ -74,7 +72,7 @@ export default function CharacterTalentPane() {
         {/* passives */}
         {passivesList.map(([tKey, tText, asc]) => {
           let enabled = ascension >= asc
-          if (!characterSheet.getTalentOfKey(tKey, charEle)) return null
+          if (!characterSheet.getTalentOfKey(tKey)) return null
           return <Grid item key={tKey} style={{ opacity: enabled ? 1 : 0.5 }} {...talentSpacing} >
             <SkillDisplayCard
               talentKey={tKey}
@@ -141,7 +139,7 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
         <MenuItem key={i} selected={talent[talentKey] === (i)} disabled={talent[talentKey] === (i)} onClick={() => setTalentLevel(talentKey, i)}>Talent Lv. {i + levelBoost}</MenuItem>)}
     </DropdownButton>
   }
-  const talentSheet = characterSheet.getTalentOfKey(talentKey, data.get(input.charEle).value as ElementKey | undefined)
+  const talentSheet = characterSheet.getTalentOfKey(talentKey)
 
   // Hide header if the header matches the current talent
   const hideHeader = (section: DocumentSection): boolean => {

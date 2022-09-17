@@ -28,8 +28,6 @@ export default function InventoryCard() {
     const tally = objectKeyMap(allElements, () => 0)
     if (characterSheets) chars.forEach(ck => {
       let elementKey = characterSheets[ck]!.elementKey
-      if (!elementKey)
-        elementKey = database.chars.get(ck)!.elementKey ?? "anemo"
       tally[elementKey] = tally[elementKey] + 1
     })
     return { characterTally: tally, characterTotal: chars.length }

@@ -115,7 +115,7 @@ async function getCharDataBundle(useCustom = false, mainStatAssumptionLevel: num
   })() : weaponSheet.data
 
   const artifactSheetsData = await ArtifactSheet.getAllData
-  const sheetData = mergeData([characterSheet.getData(character.elementKey), weaponSheetsData, artifactSheetsData])
+  const sheetData = mergeData([characterSheet.data, weaponSheetsData, artifactSheetsData])
   const artifactData = Array.isArray(artifacts) ? artifacts.map(a => dataObjForArtifact(a, mainStatAssumptionLevel)) : [artifacts]
   const data = [
     ...artifactData,

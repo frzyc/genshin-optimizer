@@ -43,7 +43,14 @@ import Sucrose from "./Sucrose"
 import Tartaglia from './Tartaglia'
 import Thoma from './Thoma'
 import Tighnari from './Tighnari'
-import Traveler from './Traveler'
+import TravelerFAnemo from './TravelerFAnemo'
+import TravelerFGeo from './TravelerFGeo'
+import TravelerFElectro from './TravelerFElectro'
+import TravelerFDendro from './TravelerFDendro'
+import TravelerMAnemo from './TravelerMAnemo'
+import TravelerMGeo from './TravelerMGeo'
+import TravelerMElectro from './TravelerMElectro'
+import TravelerMDendro from './TravelerMDendro'
 import Venti from './Venti'
 import Xiangling from './Xiangling'
 import Xiao from './Xiao'
@@ -99,7 +106,14 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Tartaglia,
   Thoma,
   Tighnari,
-  Traveler,
+  TravelerFAnemo,
+  TravelerFGeo,
+  TravelerFElectro,
+  TravelerFDendro,
+  TravelerMAnemo,
+  TravelerMGeo,
+  TravelerMElectro,
+  TravelerMDendro,
   Venti,
   Xiangling,
   Xiao,
