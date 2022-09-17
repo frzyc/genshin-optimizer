@@ -242,7 +242,7 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
     return sum(y0 - x0 * slope, prod(slope, node))
   }
   const expanded = mapFormulas(nodes, f => {
-    const { operation, operands } = f
+    const { operation } = f, operands = f.operands as NumNode[]
     switch (operation) {
       case "const": case "read": case "add": case "mul": return f
       case "res": {
