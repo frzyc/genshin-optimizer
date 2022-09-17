@@ -25,7 +25,6 @@
     "i18next": "^21.8.3",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.0",
-    "mathjs": "^11.1.0",
     "pipeline": "file:./pipeline",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -78,10 +77,10 @@
     "react-i18next": ">=11.16.4"
   },
   "devDependencies": {
+    "react-scripts": "^5.0.1",
     "@types/react-router-dom": "^5.3.3",
     "express": "^4.18.1",
     "gh-pages": "^3.2.3",
-    "react-scripts": "^5.0.1",
     "sass": "^1.52.1",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.4",
