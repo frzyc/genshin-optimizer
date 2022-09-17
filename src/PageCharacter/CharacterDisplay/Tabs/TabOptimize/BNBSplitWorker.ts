@@ -107,7 +107,7 @@ export class BNBSplitWorker implements SplitWorker {
 
   addApproxFilter({ nodes, arts, maxConts, approxs, age }: Omit<Filter, "maxOpt">) {
     const oldCount = countBuilds(arts)
-    if (!(age % 4)) {
+    if (age < 2 || !(age % 5)) {
       // The problem should've gotten small enough that the old approximation becomes inaccurate
       ({ nodes, arts } = pruneAll(nodes, this.min, arts, this.maxBuilds, {}, { pruneNodeRange: true }))
       if (Object.values(arts.values).every(x => x.length)) {
@@ -155,7 +155,7 @@ function linearUpperBound(monos: readonly NumNode[], artRange: DynMinMax): { [ke
   if ("$c" in artRange || "$error" in artRange) throw new Error("Found forbidden key when computing linear upperbound")
 
   // List of read nodes in each monomial
-  const terms = new Map<NumNode, Set<string>>(monos.map(mono => {
+  const terms = new Map(monos.map(mono => {
     let term = new Set<string>()
     forEachNodes([mono], _ => { }, f => { if (f.operation === "read") term.add(f.path[1]!) })
     return [mono, term]
@@ -236,8 +236,8 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
     const ranges = computeNodeRange([...nodeRange.keys()] as NumNode[], artRange)
     ranges.forEach((val, key) => nodeRange.set(key, val))
   }
-  function interpolate(p0: [x: number, y: number], p1: [x: number, y: number], node: NumNode): NumNode {
-    const [x0, y0] = p0, [x1, y1] = p1, slope = (y1 - y0) / (x1 - x0)
+  function interpolate(x0: number, y0: number, x1: number, y1: number, node: NumNode): NumNode {
+    const slope = (y1 - y0) / (x1 - x0)
     if (Math.abs(x0 - x1) < 1e-6) return constant(Math.max(y0, y1)) // degenerate case
     return sum(y0 - x0 * slope, prod(slope, node))
   }
@@ -251,7 +251,7 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
         if (min < 0 && max < 1.75) return sum(1, prod(-0.5, base))
         else {
           const m = Math.max(min, 0) // Clamp `min` to guarantee upperbound
-          return interpolate([m, res([m])], [max, res([max])], base)
+          return interpolate(m, res([m]), max, res([max]), base)
         }
       }
       case "sum_frac": {
@@ -271,7 +271,7 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
           return rOp // ignore constant terms
         const { min: minY, max: maxY } = nodeRange.get(f)!
         const { min: minX, max: maxX } = nodeRange.get(rOp)!
-        return interpolate([minX, minY], [maxX, maxY], rOp)
+        return interpolate(minX, minY, maxX, maxY, rOp)
       }
       case "threshold": {
         const [val, thres, p, f]: readonly NumNode[] = operands
@@ -282,8 +282,8 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
         const { min, max } = nodeRange.get(val)!
         if (max < threshold) return f
         else if (min >= threshold) return p
-        else if (pass > fail) return interpolate([min, fail], [threshold, pass], val)
-        else return interpolate([threshold, fail], [max, pass], val)
+        else if (pass > fail) return interpolate(min, fail, threshold, pass, val)
+        else return interpolate(threshold, fail, max, pass, val)
       }
       case "data": case "subscript": case "lookup": case "match": case "prio": case "small":
         throw new Error(`Found unsupported ${operation} node when computing upperbound polynomial`)
