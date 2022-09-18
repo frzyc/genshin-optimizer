@@ -47,9 +47,11 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
   for (let i = 0; i < numCons; i++) tableau[i].forEach((w, c) => obj[c] += w)
 
   const basic = new Map(Array(numCons).fill(0).map((_, i) => [i, numVars + i]))
+  // Adjust the maximum distance from the boundary (`threshold`) to account for the numerical stability
+  const threshold = tableau[numCons + 1][numVars + numCons] * 1e-12 / numCons
   maximize_canonical(tableau, basic, numCons)
 
-  if (Math.abs(tableau[numCons + 1][numVars + numCons]) > 1e-10) throw "Infeasible"
+  if (Math.abs(tableau[numCons + 1][numVars + numCons]) > threshold) throw "Infeasible"
   tableau.pop()
   tableau.forEach(row => row.splice(numVars, numCons))
 
