@@ -1,7 +1,7 @@
-import { forEachNodes, mapFormulas } from "../../../../Formula/internal";
+import { forEachNodes, mapContextualFormulas } from "../../../../Formula/internal";
 import { allOperations, optimize, precompute } from "../../../../Formula/optimization";
 import { NumNode, StrNode } from "../../../../Formula/type";
-import { constant, prod, sum } from "../../../../Formula/utils";
+import { prod, sum } from "../../../../Formula/utils";
 import { SlotKey } from "../../../../Types/consts";
 import { LPConstraint, maximizeLP, Weights } from "../../../../Util/LP";
 import { assertUnreachable, objectKeyValueMap, strictObjectMap } from "../../../../Util/Util";
@@ -194,7 +194,7 @@ function approximation(monos: NumNode[], artRange: DynMinMax, arts: ArtifactsByS
 /** Compute a linear upper bound of `poly`, which must be in polynomial form */
 function linearUpperBound(monos: readonly NumNode[], artRange: DynMinMax): { [key in string | "$c"]: number } {
   // We use $c and $error internally. Can't have them collide
-  if ("$c" in artRange || "$error" in artRange) throw new Error("Found forbidden key when computing linear upperbound")
+  if ("$c" in artRange || "$error" in artRange) throw new Error("Found forbidden key when computing linear upper bound")
 
   // List of read nodes in each monomial
   const terms = new Map(monos.map(mono => {
@@ -210,10 +210,14 @@ function linearUpperBound(monos: readonly NumNode[], artRange: DynMinMax): { [ke
    *   minimize error over A, c, error
    *   s.t. error + poly(X) >= Ax + c >= poly(X) for each corner X
    *
-   * This gives Ax + c as a linear upperbound in the region dictated by `artRange`.
+   * This gives Ax + c as a linear upper bound in the region dictated by `artRange`.
    *
    * We translate the corners of the hypercube into the [0, 1] hypercube to improve
    * numerical stability, and translate it back to the original domain later.
+   *
+   * CAUTION:
+   * It seems this expansion won't work if one of th variables have degree >= 2.
+   * In that case, you need to expand `x^n` into `x1 * ... * xn` as separate variables.
    */
   const weights: Weights = { $c: 0, $error: 0 }
   let remaining = [...monos]
@@ -264,78 +268,120 @@ function linearUpperBound(monos: readonly NumNode[], artRange: DynMinMax): { [ke
 
 /** Convert `nodes` to a polynomial form where `nude[i] <= sum(...result[i])` and each `result[i][j]` is a monomial */
 function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
-  // We need some bounds for the nodes to find appropriate polynomial upper bound
+  // We need bounds for some nodes to compute appropriate poly
   const nodeRange = new Map<NumNode | StrNode, MinMax>(), defaultRange = { min: NaN, max: NaN }
   forEachNodes(nodes, _ => { }, f => {
     const { operation, operands } = f
     switch (operation) {
-      case "min": case "max":
+      case "mul": case "min": case "max": case "res": case "sum_frac":
         nodeRange.set(f, defaultRange)
         operands.forEach(op => op.operation !== "const" && nodeRange.set(op, defaultRange))
         break
       case "threshold": nodeRange.set(operands[0], defaultRange); break
-      case "res": case "sum_frac": operands.forEach(op => nodeRange.set(op, defaultRange)); break
     }
   })
   {
     const ranges = computeNodeRange([...nodeRange.keys()] as NumNode[], artRange)
     ranges.forEach((val, key) => nodeRange.set(key, val))
   }
-  function interpolate(x0: number, y0: number, x1: number, y1: number, node: NumNode): NumNode {
+  function interpolate(x0: number, y0: number, x1: number, y1: number, node: NumNode, context: number): [NumNode, number] {
+    if (Math.abs(x1 - x0) < 1e-10) throw new PolyError("degenerate interpolation", "interpolating")
     const slope = (y1 - y0) / (x1 - x0)
-    if (Math.abs(x0 - x1) < 1e-6) return constant(Math.max(y0, y1)) // degenerate case
-    return sum(y0 - x0 * slope, prod(slope, node))
+    return [sum(y0 - x0 * slope, prod(slope, node)), slope < 0 ? context ^ 1 : context]
   }
-  const expanded = mapFormulas(nodes, f => {
-    const { operation } = f, operands = f.operands as NumNode[]
+  const expanded = mapContextualFormulas(nodes, 1, (_f, context) => {
+    const f = _f as NumNode, { operation } = f, operands = f.operands as NumNode[]
+    // Context a | b
+    //  a = 0 for lower bound, a = 1 for upper bound
+    //  if b = 2, flip `a` if `f` is negative (doesn't propagate)
+    if (context & 2) {
+      const { min, max } = nodeRange.get(f)!
+      context ^= (max <= 0) ? 3 : 2
+      if (min < 0 && max > 0) throw new PolyError("zero-crossing", "flipping")
+    }
+    const isUpperBound = !!(context & 1)
     switch (operation) {
-      case "const": case "read": case "add": case "mul": return f
-      case "res": {
-        const [base] = operands, { min, max } = nodeRange.get(base)!, res = allOperations['res']
-        // linear region 1 - base/2 or concave region with peak at base = 0
-        if (min < 0 && max < 1.75) return sum(1, prod(-0.5, base))
-        else {
-          const m = Math.max(min, 0) // Clamp `min` to guarantee upperbound
-          return interpolate(m, res([m]), max, res([max]), base)
+      case "const": case "read": case "add": return [f, context]
+      case "mul": {
+        if (!nodeRange.has(f)) {
+          // Newly introduced node, which can only be in the form `c * x`
+          const [c] = operands
+          if (operands.length !== 2 || c.operation !== "const") assertUnreachable("Invalid node expansion" as never)
+          return [f, context ^ (c.value < 0 ? 1 : 0)]
         }
+        const { min, max } = nodeRange.get(f)!
+        if (min < 0 && max > 0) throw new PolyError("zero-crossing", operation)
+        /**
+         * Flip the operand of the product if the product of other operands < 0.
+         * Assuming each variable `x0` in `f = x0 * ...` has odd degree.
+         * If `f > 0`, we flip lower/upper bound for `x0` if `x0 < 0`.
+         * If `f < 0`, then we flip `x0` if `x > 0`, or flip *twice* if `x0 < 0`.
+         *
+         * CAUTION:
+         * The above assumption means that some formulas, e.g. x^2y, are invalid.
+         * This is nigh impossible to check since it can be `prod(x, x, y)`, or
+         * `prod(x, prod(x, y))`, etc. Violating this restriction will silently
+         * cause the resulting polynomial to be invalid.
+         */
+        return [f, context ^ (max <= 0 ? 3 : 2)]
+      }
+      case "res": {
+        const [base] = operands, { min, max } = nodeRange.get(base)!
+        if (isUpperBound) {
+          // linear region 1 - base/2 or concave region with peak at base = 0
+          if (min < 0 && max < 1.75) return [sum(1, prod(-0.5, base)), context]
+          else {
+            // Clamp `min` to guarantee upper bound
+            const res = allOperations['res']
+            return interpolate(min, res([min]), max, res([max]), base, context)
+          }
+        } else throw new PolyError("lower bound requirement", operation)
       }
       case "sum_frac": {
         const [x, cOp] = operands
-        if (cOp.operation !== 'const') throw new Error('Not Implemented (non-constant sum_frac denominator)')
-
+        if (cOp.operation !== 'const') throw new PolyError("non-constant denominator", operation)
         const { min, max } = nodeRange.get(x)!, c = cOp.value
-        // The sum_frac form is concave, so its linear approximation is also a linear upperbound.
-        const loc = Math.sqrt((min + c) * (max + c)) - c, below = (c + loc) * (c + loc)
-        return sum(loc * loc / below, prod(c / below, x))
+        if (cOp.value < 0) throw new PolyError("negative constant", operation)
+
+        if (isUpperBound === (min > -c)) {
+          // sum_frac is concave when computing upper bound, or convex when computing lower bound.
+          // In both cases, its linear approximation is a correct solution.
+          const loc = Math.sqrt((min + c) * (max + c)) - c, below = (c + loc) * (c + loc)
+          return [sum(loc * loc / below, prod(c / below, x)), context]
+        } else {
+          const sum_frac = allOperations["sum_frac"]
+          return interpolate(min, sum_frac([min, c]), max, sum_frac([max, c]), x, context)
+        }
       }
       case "min": case "max": {
-        const rOps: NumNode[] = operands.filter(x => x.operation !== "const"), [rOp] = rOps
-        if (rOps.length !== 1)
-          throw new Error("Found unsupported min/max node when computing upperbound polynomial")
-        if (operation === 'min')
-          return rOp // ignore constant terms
+        const rOps = operands.filter(x => x.operation !== "const"), [rOp] = rOps
+        if (rOps.length !== 1) throw new PolyError("non-unitary operand", operation)
+
+        if ((operation === 'min') === isUpperBound) return [rOp, context] // ignore constant terms
         const { min: minY, max: maxY } = nodeRange.get(f)!
         const { min: minX, max: maxX } = nodeRange.get(rOp)!
-        return interpolate(minX, minY, maxX, maxY, rOp)
+        return interpolate(minX, minY, maxX, maxY, rOp, context)
       }
       case "threshold": {
-        const [val, thres, p, f]: readonly NumNode[] = operands
+        const [val, thres, p, f] = operands
         if (thres.operation !== "const" || p.operation !== "const" || f.operation !== "const")
-          throw new Error("Unsupported threshold node when computing upperbound polynomial")
-
+          throw new PolyError("unsupported node", operation)
         const threshold = thres.value, pass = p.value, fail = f.value
         const { min, max } = nodeRange.get(val)!
-        if (max < threshold) return f
-        else if (min >= threshold) return p
-        else if (pass > fail) return interpolate(min, fail, threshold, pass, val)
-        else return interpolate(threshold, fail, max, pass, val)
+
+        // Due to pruning, we know that min < threshold < max
+        // TODO: Make sure the resulting interpolation has no zero-crossing
+        if ((pass > fail) === isUpperBound)
+          return interpolate(min, fail, threshold, pass, val, context)
+        else return interpolate(threshold, fail, max, pass, val, context)
       }
-      case "data": case "subscript": case "lookup": case "match": case "prio": case "small":
-        throw new Error(`Found unsupported ${operation} node when computing upperbound polynomial`)
+      case "data": case "subscript": case "lookup": case "match":
+        throw new PolyError("unsupported node", operation)
       default: assertUnreachable(operation)
     }
-  }, f => {
-    const { operation, operands } = f
+  }, _f => {
+    // Making sure that each monomial is propagated to the top as expansion at the end assumes so
+    const f = _f as NumNode, { operation, operands } = f
     if (operation === "mul" && operands.some(op => op.operation === "add")) {
       let result: NumNode[][] = [[]]
       for (const operand of operands)
@@ -347,8 +393,17 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
       return sum(...operands.flatMap(op => op.operation === "add" ? op.operands : [op]))
     return f
   })
-  // The `linearUpperBound` borks when there are monomials with zero coefficient.
-  // It should be safe enough if we simply don't add any zero constants during the expansion above.
-  // This `optimize`, however, should also prevent zeros introduced elsewhere from entering the pipeline.
-  return optimize(expanded, {}).map(node => node.operation === "add" ? node.operands as NumNode[] : [node])
+  /**
+   * The `linearUpperBound` borks when there are monomials with zero coefficient.
+   * It should be safe enough if we simply don't add any zero constants during the expansion above.
+   * This `optimize`, however, should also prevent zeros introduced elsewhere from entering the pipeline.
+   *
+   * We `optimize` *after* expanding each node as the deduplication process can combine some monomials.
+   */
+  return expanded.map(node => optimize(node.operation === "add" ? node.operands as NumNode[] : [node], {}))
+}
+class PolyError extends Error {
+  constructor(cause: string, operation: string) {
+    super(`Found ${cause} in ${operation} node when generating polynomial upper bound`)
+  }
 }
