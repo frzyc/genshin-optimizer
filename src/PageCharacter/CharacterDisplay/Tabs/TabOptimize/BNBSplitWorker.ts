@@ -13,7 +13,11 @@ type Approximation = {
   /** optimization target contribution from a given artifact (id) */
   conts: StrictDict<string, number>
 }
-type Filter = { nodes: NumNode[], arts: ArtifactsBySlot, maxConts: Record<SlotKey, number>[], approxs: Approximation[], age: number }
+type Filter = {
+  nodes: NumNode[], arts: ArtifactsBySlot
+  maxConts: Record<SlotKey, number>[], approxs: Approximation[]
+  age: number, count: number
+}
 export class BNBSplitWorker implements SplitWorker {
   min: number[]
   nodes: NumNode[]
@@ -37,7 +41,11 @@ export class BNBSplitWorker implements SplitWorker {
   }
 
   addFilter(filter: RequestFilter): void {
-    this.addApproxFilter({ nodes: this.nodes, arts: filterArts(this.arts, filter), maxConts: [], approxs: [], age: 0 })
+    const arts = filterArts(this.arts, filter), count = countBuilds(arts)
+    if (count)
+      // Can't use `this.addApproxFilter` as this special initial value
+      // is not a valid `Filter` especially `maxConts` and `approxs`
+      this.filters.push({ nodes: this.nodes, arts, maxConts: [], approxs: [], age: 0, count })
   }
   split(newThreshold: number, minCount: number): RequestFilter | undefined {
     if (newThreshold > this.min[0]) {
@@ -48,9 +56,10 @@ export class BNBSplitWorker implements SplitWorker {
     }
 
     while (this.filters.length) {
-      const filter = this.filters.pop()!, { arts } = filter
+      const filter = this.getApproxFilter(), { arts, count } = filter
+      if (!count) continue
 
-      if (countBuilds(arts) <= minCount) {
+      if (count <= minCount) {
         if (this.interim) {
           this.callback(this.interim)
           this.interim = undefined
@@ -105,17 +114,31 @@ export class BNBSplitWorker implements SplitWorker {
     partialSplit()
   }
 
-  addApproxFilter({ nodes, arts, maxConts, approxs, age }: Omit<Filter, "maxOpt">) {
-    const oldCount = countBuilds(arts)
-    if (age < 2 || !(age % 5)) {
-      // The problem should've gotten small enough that the old approximation becomes inaccurate
+  /** *Precondition*: `this.filters` must not be empty */
+  getApproxFilter(): Filter {
+    let { nodes, arts, maxConts, approxs, age, count: oldCount } = this.filters.pop()!
+    if (!age || (age % 5) === 1) { // Make sure the condition includes initial filter `age === 0`
+      // Either the filter is so early that we can get a good cutoff, or the problem has
+      // gotten small enough that the old approximation becomes inaccurate
       ({ nodes, arts } = pruneAll(nodes, this.min, arts, this.maxBuilds, {}, { pruneNodeRange: true }))
       if (Object.values(arts.values).every(x => x.length)) {
         const artRange = computeFullArtRange(arts), polys = polyUpperBound(nodes, artRange)
         approxs = polys.map(poly => approximation(poly, artRange, arts))
         maxConts = approxs.map(approx => strictObjectMap(arts.values, val => maxContribution(val, approx)))
       }
+      const newCount = countBuilds(arts)
+      this.addSkip(oldCount - newCount)
+      oldCount = newCount
     }
+    return { nodes, arts, maxConts, approxs, age, count: oldCount }
+  }
+  addApproxFilter({ nodes, arts, maxConts, approxs, age }: Omit<Filter, "count">) {
+    const oldCount = countBuilds(arts)
+    // Removing artifacts that doesn't meet the required opt target contributions.
+    //
+    // We could actually loop `newValues` computation if the removed artifacts have
+    // the highest contribution in one of the target node as the removal will lower
+    // the required contribution even further. However, once is generally enough.
     const newValues = strictObjectMap(arts.values, (arts, slot) => {
       const requiredConts = maxConts.map((cont, i) => Object.values(cont)
         .reduce((accu, val) => accu - val, this.min[i] - approxs[i].base + cont[slot]))
@@ -123,11 +146,12 @@ export class BNBSplitWorker implements SplitWorker {
     })
     arts = { base: arts.base, values: newValues }
     const newCount = countBuilds(arts)
-    if (newCount !== oldCount) this.addSkip(oldCount - newCount)
-    if (newCount) this.filters.push({ nodes, arts, maxConts, approxs, age })
+    this.addSkip(oldCount - newCount)
+    if (newCount) this.filters.push({ nodes, arts, maxConts, approxs, age, count: newCount })
   }
 
   addSkip(count: number) {
+    if (!count) return
     if (this.interim) this.interim.skipped += count
     else this.interim = { command: "interim", buildValues: undefined, tested: 0, failed: 0, skipped: count, }
   }
