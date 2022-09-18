@@ -358,3 +358,5 @@ export function TravelerToElement(key: TravelerKey, element: TravelerElementKey)
 export function TravelerGender(key: TravelerKey, gender: "F" | "M"): TravelerKey {
   return key.slice(0, 8) + gender + key.slice(9) as TravelerKey
 }
+
+export type LocationKey = LocationCharacterKey | ""

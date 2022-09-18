@@ -1,5 +1,5 @@
 import { artifactIdMap, artifactSlotMap, characterIdMap, CharacterKey, Language, propTypeMap, QualityTypeMap, StatKey, weaponIdMap, WeaponKey, weaponMap, WeaponTypeKey } from '.'
-import { mapHashData } from './Data'
+import { mapHashData, mapHashDataOverride } from './Data'
 import artifactMainstatData from './DataminedModules/artifact/artifactMainstat'
 import artifactSubstatData from './DataminedModules/artifact/artifactSubstat'
 import { artifactSubstatRollCorrection, artifactSubstatRollData } from './DataminedModules/artifact/artifactSubstatRolls'
@@ -323,6 +323,8 @@ Object.entries(materialExcelConfigData).forEach(([id, material]) => {
   }
 })
 dumpFile(`${__dirname}/../src/Data/Materials/material_gen.json`, materialData)
+
+mapHashDataOverride()
 
 //Main localization dumping
 const languageData = {}

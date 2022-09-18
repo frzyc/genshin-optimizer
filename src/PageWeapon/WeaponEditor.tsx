@@ -1,10 +1,9 @@
-import { BusinessCenter, Lock, LockOpen } from "@mui/icons-material"
+import { Lock, LockOpen } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardContent, CardHeader, Divider, Grid, ListItem, Typography } from "@mui/material"
 import { useCallback, useContext, useEffect, useMemo } from "react"
-import { useTranslation } from "react-i18next"
 import CardDark from "../Components/Card/CardDark"
 import CardLight from "../Components/Card/CardLight"
-import CharacterAutocomplete from "../Components/Character/CharacterAutocomplete"
+import { LocationAutocomplete } from "../Components/Character/LocationAutocomplete"
 import CloseButton from "../Components/CloseButton"
 import DocumentDisplay from "../Components/DocumentDisplay"
 import { FieldDisplayList, NodeFieldDisplay } from "../Components/FieldDisplay"
@@ -23,7 +22,7 @@ import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import useBoolState from "../ReactHooks/useBoolState"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
-import { CharacterKey, charKeyToLocCharKey } from "../Types/consts"
+import { LocationKey } from "../Types/consts"
 import { ICachedWeapon } from "../Types/weapon"
 
 type WeaponStatsEditorCardProps = {
@@ -38,7 +37,6 @@ export default function WeaponEditor({
   onClose,
   extraButtons
 }: WeaponStatsEditorCardProps) {
-  const { t } = useTranslation("ui")
   const { data } = useContext(DataContext)
 
   const { database } = useContext(DatabaseContext)
@@ -54,11 +52,8 @@ export default function WeaponEditor({
 
   const initialWeaponFilter = characterSheet && characterSheet.weaponTypeKey
 
-  const equipOnChar = useCallback((charKey: CharacterKey | "") => id && database.weapons.set(id, { location: charKey && charKeyToLocCharKey(charKey) }), [database, id])
-  const filter = useCallback(
-    (cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType,
-    [weaponSheet],
-  )
+  const setLocation = useCallback((k: LocationKey) => id && database.weapons.set(id, { location: k }), [database, id])
+  const filter = useCallback((cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType, [weaponSheet])
 
   const [showModal, onShowModal, onHideModal] = useBoolState()
   const img = weaponSheet?.getImg(ascension)
@@ -125,7 +120,7 @@ export default function WeaponEditor({
     {footer && id && <CardContent sx={{ py: 1 }}>
       <Grid container spacing={1}>
         <Grid item flexGrow={1}>
-          <CharacterAutocomplete showDefault size="small" defaultIcon={<BusinessCenter />} defaultText={t("inventory")} value={location && database.chars.LocationToCharacterKey(location)} onChange={equipOnChar} filter={filter} disable={(v: any) => v === ""} disableClearable />
+          <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} />
         </Grid>
         <Grid item flexGrow={2} />
         {!!onClose && <Grid item><CloseButton sx={{ height: "100%" }} large onClick={onClose} /></Grid>}
