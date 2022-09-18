@@ -6,11 +6,11 @@ import { Trans, useTranslation } from "react-i18next";
 import { FilterOption } from "../../PageArtifact/ArtifactSort";
 import { allArtifactRarities, allSlotKeys } from "../../Types/consts";
 import { handleMultiSelect } from "../../Util/MultiSelect";
-import CharacterAutocomplete from "../Character/CharacterAutocomplete";
 import SolidToggleButtonGroup from "../SolidToggleButtonGroup";
 import { StarsDisplay } from "../StarDisplay";
 import { ArtifactMainStatMultiAutocomplete, ArtifactSetMultiAutocomplete, ArtifactSubstatMultiAutocomplete } from "./ArtifactAutocomplete";
 import ArtifactLevelSlider from "./ArtifactLevelSlider";
+import LocationFilterAutocomplete from "./LocationFilterAutocomplete";
 import { artifactSlotIcon } from "./SlotNameWIthIcon";
 
 const exclusionValues = ["excluded", "included"] as const
@@ -64,16 +64,7 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
       <Grid container display="flex" gap={1}>
         <Grid item flexGrow={1}>
           {/* location */}
-          <CharacterAutocomplete
-            value={location}
-            onChange={location => filterOptionDispatch({ location })}
-            placeholderText={t("artifact:filterLocation.any")}
-            defaultText={t("artifact:filterLocation.any")}
-            labelText={t("artifact:filterLocation.location")}
-            showDefault
-            showInventory
-            showEquipped
-          />
+          <LocationFilterAutocomplete location={location} setLocation={location => filterOptionDispatch({ location })} />
         </Grid>
       </Grid>
     </Grid>

@@ -123,15 +123,21 @@ export const travelerElements = [
   "electro",
   "dendro"
 ] as const
-export const travelerKeys = [
+export const travelerFKeys = [
   "TravelerFAnemo",
   "TravelerFGeo",
   "TravelerFElectro",
   "TravelerFDendro",
+] as const
+export const travelerMKeys = [
   "TravelerMAnemo",
   "TravelerMGeo",
   "TravelerMElectro",
   "TravelerMDendro",
+] as const
+export const travelerKeys = [
+  ...travelerFKeys,
+  ...travelerMKeys,
 ] as const
 export const allCharacterKeys = [
   ...nonTravelerCharacterKeys,
@@ -360,3 +366,7 @@ export function TravelerGender(key: TravelerKey, gender: "F" | "M"): TravelerKey
 }
 
 export type LocationKey = LocationCharacterKey | ""
+
+export function charKeyToCharName(ck: CharacterKey): string {
+  return ck.startsWith("Traveler") ? ck.slice(0, 9) : ck
+}

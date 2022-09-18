@@ -45,13 +45,7 @@ export default class CharacterSheet {
   static get = (charKey: CharacterKey | ""): Promise<CharacterSheet> | undefined => charKey ? characterSheets.then(c => c[charKey]) : undefined
   static get getAll() { return characterSheets }
   get name() { return this.sheet.name }
-  /**
-   * @deprecated
-   */
   get icon() { return <ImgIcon src={this.thumbImgSide} sx={{ height: "2em", marginTop: "-2em", marginLeft: "-0.5em" }} /> }
-  /**
-   * @deprecated
-   */
   get nameWIthIcon() { return <span>{this.icon} {this.name}</span> }
   get cardImg() { return this.asset.card }
   get thumbImg() { return this.asset.thumb }

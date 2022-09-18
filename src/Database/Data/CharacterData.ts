@@ -2,7 +2,7 @@ import { validateLevelAsc } from "../../Data/LevelData";
 import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
 import { initialCharacter } from "../../ReactHooks/useCharSelectionCallback";
 import { ICachedCharacter, ICharacter } from "../../Types/character";
-import { allAdditiveReactions, allAmpReactions, allCharacterKeys, allElements, allHitModes, allSlotKeys, CharacterKey, LocationCharacterKey, SlotKey, travelerKeys } from "../../Types/consts";
+import { allAdditiveReactions, allAmpReactions, allCharacterKeys, allElements, allHitModes, allSlotKeys, CharacterKey, charKeyToLocCharKey, LocationCharacterKey, SlotKey, travelerFKeys, TravelerGender, TravelerKey, travelerKeys, travelerMKeys } from "../../Types/consts";
 import { deepClone, objectKeyMap } from "../../Util/Util";
 import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
@@ -72,8 +72,8 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
   toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)
     return {
-      equippedArtifacts: oldChar ? oldChar.equippedArtifacts : objectKeyMap(allSlotKeys, () => ""),
-      equippedWeapon: oldChar ? oldChar.equippedWeapon : "",
+      equippedArtifacts: oldChar ? oldChar.equippedArtifacts : objectKeyMap(allSlotKeys, sk => Object.values(this.database.arts?.data ?? {}).find(a => a.location === charKeyToLocCharKey(id) && a.slotKey === sk)?.id ?? ""),
+      equippedWeapon: oldChar ? oldChar.equippedWeapon : (Object.values(this.database.weapons?.data ?? {}).find(w => w.location === charKeyToLocCharKey(id))?.id ?? ""),
       ...storageObj,
     }
   }
@@ -114,18 +114,35 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     }
     return this.get(cKey)!
   }
+  getTravelerGenderedKeys(): TravelerKey[] {
+    if (travelerFKeys.find(k => this.keys.includes(k))) return [...travelerFKeys]
+    if (travelerMKeys.find(k => this.keys.includes(k))) return [...travelerMKeys]
+    return [...travelerKeys]
+  }
+
+  swapTravelerGender(to: "F" | "M") {
+    const keys = to === "F" ? travelerMKeys : travelerFKeys
+    keys.forEach(k => {
+      const char = this.get(k)
+      if (!char) return
+      const newK = TravelerGender(k, to)
+      this.set(newK, { ...char, key: newK })
+      this.remove(k)
+    })
+  }
   remove(key: CharacterKey) {
     const char = this.get(key)
     if (!char) return
-
     for (const artKey of Object.values(char.equippedArtifacts)) {
       const art = this.database.arts.get(artKey)
-      if (art && art.location === key)
+      // Only unequip from artifact from traveler if there are no more "Travelers" in the database
+      if (art && (art.location === key || (art.location === "Traveler" && travelerKeys.includes(key as TravelerKey) && !travelerKeys.find(t => t !== key && this.keys.includes(t)))))
         this.database.arts.set(artKey, { location: "" })
     }
     const weapon = this.database.weapons.get(char.equippedWeapon)
-    if (weapon && weapon.location === key)
-      this.database.weapons.set(char.equippedWeapon, { ...weapon, location: "" })
+    // Only unequip from weapon from traveler if there are no more "Travelers" in the database
+    if (weapon && (weapon.location === key || (weapon.location === "Traveler" && travelerKeys.includes(key as TravelerKey) && !travelerKeys.find(t => t !== key && this.keys.includes(t)))))
+      this.database.weapons.set(char.equippedWeapon, { location: "" })
     super.remove(key)
   }
 

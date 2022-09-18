@@ -15,7 +15,7 @@ import useDBState from "../ReactHooks/useDBState";
 import useForceUpdate from "../ReactHooks/useForceUpdate";
 import usePromise from "../ReactHooks/usePromise";
 import { ICachedCharacter } from "../Types/character";
-import { allCharacterKeys, CharacterKey } from "../Types/consts";
+import { allCharacterKeys, CharacterKey, TravelerKey } from "../Types/consts";
 import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from "../Util/CharacterSort";
 import { filterFunction, sortFunction } from "../Util/SortByFilters";
 import { initialCharacterDisplayState } from "./CharacterDisplayState";
@@ -53,7 +53,7 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
 
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
   const filterConfigs = useMemo(() => characterSheets && favesDirty && characterFilterConfigs(database, characterSheets), [favesDirty, database, characterSheets])
-  const ownedCharacterKeyList = useMemo(() => characterSheets ? allCharacterKeys.filter(cKey => filter(database.chars.get(cKey), characterSheets[cKey])) : [], [database, characterSheets, filter])
+  const ownedCharacterKeyList = useMemo(() => characterSheets ? allCharacterKeys.filter(k => k.startsWith("Traveler") ? database.chars.getTravelerGenderedKeys().includes(k as TravelerKey) : true).filter(cKey => filter(database.chars.get(cKey), characterSheets[cKey])) : [], [database, characterSheets, filter])
   const characterKeyList = useMemo(() => (characterSheets && sortConfigs && filterConfigs) ?
     ownedCharacterKeyList
       .filter(filterFunction({ element, weaponType, favorite: "yes", name: deferredSearchTerm }, filterConfigs))

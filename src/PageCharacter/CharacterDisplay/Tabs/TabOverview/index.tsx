@@ -106,7 +106,7 @@ function CharacterProfileCard() {
       </Box>
       <Box src={characterSheet.cardImg} component="img" width="100%" height="auto" />
     </Box>
-    <CardContent>
+    <Box>
       <CardActionArea sx={{ p: 1 }} onClick={() => navigate("talent")}>
         <Grid container spacing={1} mt={-1}>
           {(["auto", "skill", "burst"] as TalentSheetElementKey[]).map(tKey =>
@@ -151,6 +151,6 @@ function CharacterProfileCard() {
           {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={team[i]} index={i} /></Grid>)}
         </Grid>
       </CardActionArea>
-    </CardContent>
+    </Box>
   </CardLight >
 }

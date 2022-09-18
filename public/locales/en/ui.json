@@ -51,5 +51,9 @@
   "locked": "Locked",
   "unlocked": "Unlocked",
   "refinement": "Refinement {{value}}",
-  "selectlevel": "Select Level"
+  "selectlevel": "Select Level",
+  "gender": {
+    "F": "Female",
+    "M": "Male"
+  }
 }

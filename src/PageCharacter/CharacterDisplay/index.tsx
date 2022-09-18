@@ -30,12 +30,15 @@ import TabTheorycraft from './Tabs/TabTheorycraft';
 import TabTeambuffs from './Tabs/TabTeambuffs';
 import TravelerElementSelect from './TravelerElementSelect';
 import SqBadge from '../../Components/SqBadge';
+import TravelerGenderSelect from './TravelerGenderSelect';
+import { DatabaseContext } from '../../Database/Database';
 
 export default function CharacterDisplay() {
   const navigate = useNavigate();
+  const { database } = useContext(DatabaseContext)
   const onClose = useCallback(() => navigate("/characters"), [navigate])
   let { characterKey } = useParams<{ characterKey?: CharacterKey }>();
-  const invalidKey = !allCharacterKeys.includes(characterKey as any ?? "")
+  const invalidKey = !database.chars.keys.includes(characterKey as CharacterKey)
   if (invalidKey)
     return <Navigate to="/characters" />
 
@@ -84,6 +87,7 @@ function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardPro
           <Box display="flex" gap={1} flexWrap="wrap" flexGrow={1}>
             <CharSelectDropdown />
             <TravelerElementSelect />
+            <TravelerGenderSelect />
             <DetailStatButton />
             <CustomMultiTargetButton />
             <FormulasButton />
