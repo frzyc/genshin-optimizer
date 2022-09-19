@@ -124,25 +124,33 @@ export const travelerElements = [
   "dendro"
 ] as const
 export const travelerFKeys = [
-  "TravelerFAnemo",
-  "TravelerFGeo",
-  "TravelerFElectro",
-  "TravelerFDendro",
+  "TravelerAnemoF",
+  "TravelerGeoF",
+  "TravelerElectroF",
+  "TravelerDendroF",
 ] as const
 export const travelerMKeys = [
-  "TravelerMAnemo",
-  "TravelerMGeo",
-  "TravelerMElectro",
-  "TravelerMDendro",
+  "TravelerAnemoM",
+  "TravelerGeoM",
+  "TravelerElectroM",
+  "TravelerDendroM",
 ] as const
 export const travelerKeys = [
-  ...travelerFKeys,
-  ...travelerMKeys,
+  "TravelerAnemo",
+  "TravelerGeo",
+  "TravelerElectro",
+  "TravelerDendro",
 ] as const
 export const allCharacterKeys = [
   ...nonTravelerCharacterKeys,
   ...travelerKeys
 ] as const
+
+export const allCharacterSheetKeys = [
+  ...nonTravelerCharacterKeys,
+  ...travelerFKeys,
+  ...travelerMKeys,
+]
 
 export const allWeaponSwordKeys = [
   "AmenomaKageuchi",
@@ -330,6 +338,7 @@ export type InfusionAuraElements = typeof allInfusionAuraElements[number]
 export type ArtifactSetKey = typeof allArtifactSets[number]
 export type NonTravelerCharacterKey = typeof nonTravelerCharacterKeys[number]
 export type CharacterKey = typeof allCharacterKeys[number]
+export type CharacterSheetKey = typeof allCharacterSheetKeys[number]
 export type LocationCharacterKey = typeof locationCharacterKeys[number]
 export type TravelerKey = typeof travelerKeys[number]
 export type TravelerElementKey = typeof travelerElements[number]
@@ -359,15 +368,11 @@ export function charKeyToLocCharKey(charKey: CharacterKey): LocationCharacterKey
 }
 
 export function TravelerToElement(key: TravelerKey, element: TravelerElementKey): TravelerKey {
-  return key.slice(0, 9) + element.toUpperCase().slice(0, 1) + element.slice(1) as TravelerKey
-}
-
-export function TravelerGender(key: TravelerKey, gender: "F" | "M"): TravelerKey {
-  return key.slice(0, 8) + gender + key.slice(9) as TravelerKey
+  return "Traveler" + element.toUpperCase().slice(0, 1) + element.slice(1) as TravelerKey
 }
 
 export type LocationKey = LocationCharacterKey | ""
 
-export function charKeyToCharName(ck: CharacterKey): string {
-  return ck.startsWith("Traveler") ? ck.slice(0, 9) : ck
+export function charKeyToCharName(ck: CharacterKey, gender: "F" | "M" = "F"): string {
+  return ck.startsWith("Traveler") ? "Traveler" + gender : ck
 }

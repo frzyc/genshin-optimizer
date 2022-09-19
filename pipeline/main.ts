@@ -120,10 +120,11 @@ Object.entries(avatarExcelConfigData).forEach(([charid, charData]) => {
 
   if (candSkillDepotIds.length) { //Traveler
     const [_1, _2, _3, anemo, _5, geo, electro, dendro] = candSkillDepotIds
-    genTalentHash([characterIdMap[charid] + "Anemo"], skillDepot[anemo])
-    genTalentHash([characterIdMap[charid] + "Geo"], skillDepot[geo])
-    genTalentHash([characterIdMap[charid] + "Electro"], skillDepot[electro])
-    genTalentHash([characterIdMap[charid] + "Dendro"], skillDepot[dendro])
+    const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"
+    genTalentHash(["char", "TravelerAnemo" + gender], skillDepot[anemo])
+    genTalentHash(["char", "TravelerGeo" + gender], skillDepot[geo])
+    genTalentHash(["char", "TravelerElectro" + gender], skillDepot[electro])
+    genTalentHash(["char", "TravelerDendro" + gender], skillDepot[dendro])
   } else {
     genTalentHash([characterIdMap[charid]], skillDepot[skillDepotId])
   }
@@ -299,10 +300,11 @@ Object.entries(avatarExcelConfigData).filter(([charid,]) => charid in characterI
 
   if (candSkillDepotIds.length) { //Traveler
     const [_1, _2, _3, anemo, _5, geo, electro, dendro] = candSkillDepotIds
-    genTalentHash(["char", characterIdMap[charid] + "Anemo"], skillDepot[anemo])
-    genTalentHash(["char", characterIdMap[charid] + "Geo"], skillDepot[geo])
-    genTalentHash(["char", characterIdMap[charid] + "Electro"], skillDepot[electro])
-    genTalentHash(["char", characterIdMap[charid] + "Dendro"], skillDepot[dendro])
+    const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"
+    genTalentHash(["char", "TravelerAnemo" + gender], skillDepot[anemo])
+    genTalentHash(["char", "TravelerGeo" + gender], skillDepot[geo])
+    genTalentHash(["char", "TravelerElectro" + gender], skillDepot[electro])
+    genTalentHash(["char", "TravelerDendro" + gender], skillDepot[dendro])
   } else {
     genTalentHash(["char", charKey], skillDepot[skillDepotId])
   }

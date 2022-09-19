@@ -2,7 +2,7 @@ import ColorText from '../../../Components/ColoredText'
 import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, percent, prod, unequal } from '../../../Formula/utils'
-import { absorbableEle, CharacterKey, ElementKey } from '../../../Types/consts'
+import { absorbableEle, CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { objectKeyValueMap } from '../../../Util/Util'
 import { cond, sgt, st } from '../../SheetUtil'
 import { charTemplates, TalentSheet } from '../CharacterSheet'
@@ -11,7 +11,7 @@ import Traveler from '../Traveler'
 import assets from './assets'
 import skillParam_gen from './skillParam_gen.json'
 
-export default function anemo(key: CharacterKey) {
+export default function anemo(key: CharacterSheetKey, charKey: CharacterKey) {
   const elementKey: ElementKey = "anemo"
   const condCharKey = "TravelerAnemo"
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
@@ -76,7 +76,7 @@ export default function anemo(key: CharacterKey) {
 
   const nodeC3 = greaterEq(input.constellation, 3, 3)
   const nodeC5 = greaterEq(input.constellation, 5, 3)
-  const data = dataObjForCharacterSheet(key, elementKey, undefined, Traveler.data_gen, dmgFormulas, {
+  const data = dataObjForCharacterSheet(charKey, elementKey, undefined, Traveler.data_gen, dmgFormulas, {
     bonus: {
       skill: nodeC5,
       burst: nodeC3,

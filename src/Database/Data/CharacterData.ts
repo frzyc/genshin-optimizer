@@ -2,7 +2,7 @@ import { validateLevelAsc } from "../../Data/LevelData";
 import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
 import { initialCharacter } from "../../ReactHooks/useCharSelectionCallback";
 import { ICachedCharacter, ICharacter } from "../../Types/character";
-import { allAdditiveReactions, allAmpReactions, allCharacterKeys, allElements, allHitModes, allSlotKeys, CharacterKey, charKeyToLocCharKey, LocationCharacterKey, SlotKey, travelerFKeys, TravelerGender, TravelerKey, travelerKeys, travelerMKeys } from "../../Types/consts";
+import { allAdditiveReactions, allAmpReactions, allCharacterKeys, allElements, allHitModes, allSlotKeys, CharacterKey, charKeyToLocCharKey, LocationCharacterKey, SlotKey, TravelerKey, travelerKeys } from "../../Types/consts";
 import { deepClone, objectKeyMap } from "../../Util/Util";
 import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
@@ -14,7 +14,8 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     for (const key of this.database.storage.keys) {
       if (key.startsWith("char_")) {
         const [, charKey] = key.split("char_")
-        this.set(charKey as CharacterKey, this.database.storage.get(key))
+        if (!this.set(charKey as CharacterKey, this.database.storage.get(key)))
+          this.database.storage.remove(key)
       }
     }
   }
@@ -114,26 +115,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     }
     return this.get(cKey)!
   }
-  getTravelerGenderedKeys(): TravelerKey[] {
-    if (travelerFKeys.find(k => this.keys.includes(k))) return [...travelerFKeys]
-    if (travelerMKeys.find(k => this.keys.includes(k))) return [...travelerMKeys]
-    return [...travelerKeys]
-  }
 
-  swapTravelerGender(to: "F" | "M") {
-    const keys = to === "F" ? travelerMKeys : travelerFKeys
-    keys.forEach(k => {
-      const char = this.get(k)
-      if (!char) return
-      const newK = TravelerGender(k, to)
-      this.set(newK, { ...char, key: newK })
-      this.remove(k)
-    })
-    Object.entries(this.data).forEach(([key, char]) => {
-      if (!char.team.find(t => t.startsWith("Traveler"))) return
-      this.set(key, { team: char.team.map(t => t.startsWith("Traveler") ? TravelerGender(t as TravelerKey, to) : t) as ICharacter["team"] })
-    })
-  }
   remove(key: CharacterKey) {
     const char = this.get(key)
     if (!char) return

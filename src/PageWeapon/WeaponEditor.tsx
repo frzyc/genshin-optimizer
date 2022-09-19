@@ -20,6 +20,7 @@ import { DatabaseContext } from "../Database/Database"
 import { uiInput as input } from "../Formula"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import useBoolState from "../ReactHooks/useBoolState"
+import useGender from "../ReactHooks/useGender"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
 import { LocationKey } from "../Types/consts"
@@ -47,8 +48,8 @@ export default function WeaponEditor({
   const weaponDispatch = useCallback((newWeapon: Partial<ICachedWeapon>) => {
     database.weapons.set(propWeaponId, newWeapon)
   }, [propWeaponId, database])
-
-  const characterSheet = usePromise(() => location ? CharacterSheet.get(database.chars.LocationToCharacterKey(location)) : undefined, [database, location])
+  const gender = useGender(database)
+  const characterSheet = usePromise(() => location ? CharacterSheet.get(database.chars.LocationToCharacterKey(location), gender) : undefined, [database, gender, location])
 
   const initialWeaponFilter = characterSheet && characterSheet.weaponTypeKey
 

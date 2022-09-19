@@ -4,7 +4,7 @@ import SqBadge from "../../Components/SqBadge";
 import { input } from "../../Formula";
 import { Data, NumNode } from "../../Formula/type";
 import { greaterEq } from "../../Formula/utils";
-import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "../../Types/consts";
+import { CharacterKey, CharacterSheetKey, ElementKey, Rarity, TravelerKey, travelerKeys, WeaponTypeKey } from "../../Types/consts";
 import { DocumentConditional, DocumentConditionalBase, DocumentSection, IDocumentFields, IDocumentHeader } from "../../Types/sheet";
 import { ascensionMaxLevel } from "../LevelData";
 import { st, trans } from "../SheetUtil";
@@ -42,7 +42,7 @@ export default class CharacterSheet {
     this.data = data
     this.asset = asset
   }
-  static get = (charKey: CharacterKey | ""): Promise<CharacterSheet> | undefined => charKey ? characterSheets.then(c => c[charKey]) : undefined
+  static get = (charKey: CharacterKey | "", gender: "F" | "M"): Promise<CharacterSheet> | undefined => charKey ? characterSheets.then(c => c[charKeyToCharSheetKey(charKey, gender)]) : undefined
   static get getAll() { return characterSheets }
   get name() { return this.sheet.name }
   get icon() { return <ImgIcon src={this.thumbImgSide} sx={{ height: "2em", marginTop: "-2em", marginLeft: "-0.5em" }} /> }
@@ -141,7 +141,7 @@ export interface ICharacterTemplate {
   fieldsTemplate: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => IDocumentFields
   conditionalTemplate: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => DocumentConditional
 }
-export const charTemplates = (cKey: CharacterKey, wKey: WeaponTypeKey, assets: AssetType): ICharacterTemplate => {
+export const charTemplates = (cKey: CharacterSheetKey, wKey: WeaponTypeKey, assets: AssetType): ICharacterTemplate => {
   const [tr] = trans("char", cKey)
 
   const img = (tk: TalentSheetElementKey): string => {
@@ -155,4 +155,10 @@ export const charTemplates = (cKey: CharacterKey, wKey: WeaponTypeKey, assets: A
     fieldsTemplate: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => fieldsTemplate(talentKey, partialFields),
     conditionalTemplate: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => conditionalTemplate(talentKey, partialCond, tr, img(talentKey))
   }
+}
+
+
+export function charKeyToCharSheetKey(charKey: CharacterKey, gender: "F" | "M"): CharacterSheetKey {
+  if (travelerKeys.includes(charKey as TravelerKey)) return `${charKey}${gender}` as CharacterSheetKey
+  else return charKey as CharacterSheetKey
 }

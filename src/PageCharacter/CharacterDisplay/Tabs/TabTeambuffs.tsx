@@ -14,14 +14,15 @@ import InfoTooltip from "../../../Components/InfoTooltip";
 import { CharacterContext, CharacterContextObj } from "../../../Context/CharacterContext";
 import { DataContext, dataContextObj } from "../../../Context/DataContext";
 import { ArtifactSheet } from "../../../Data/Artifacts/ArtifactSheet";
-import CharacterSheet from "../../../Data/Characters/CharacterSheet";
+import CharacterSheet, { charKeyToCharSheetKey } from "../../../Data/Characters/CharacterSheet";
 import { resonanceSheets } from "../../../Data/Resonance";
 import { initCharMeta } from "../../../Database/Data/StateData";
 import { DatabaseContext } from "../../../Database/Database";
 import { NodeDisplay } from "../../../Formula/uiData";
 import useCharSelectionCallback from "../../../ReactHooks/useCharSelectionCallback";
+import useGender from "../../../ReactHooks/useGender";
 import usePromise from "../../../ReactHooks/usePromise";
-import { CharacterKey } from "../../../Types/consts";
+import { CharacterKey, charKeyToCharName } from "../../../Types/consts";
 import { objPathValue, range } from "../../../Util/Util";
 
 export default function TabTeambuffs() {
@@ -170,9 +171,10 @@ function CharTalentCondDisplay() {
 function TeammateAutocomplete({ characterKey, team, label, setChar }: { characterKey, team: Array<CharacterKey | "">, label: string, setChar: (k: CharacterKey | "") => void }) {
   const { t } = useTranslation(["charNames_gen", "page_character", "sheet_gen"])
   const { database } = useContext(DatabaseContext)
+  const gender = useGender(database)
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
-  const toText = useCallback((key: CharacterKey): string => key.startsWith("Traveler") ? `${t(`charNames_gen:${key.slice(0, 9)}`)} (${t(`sheet_gen:element.${key.slice(9).toLowerCase()}`)})` : t(`charNames_gen:${key}`), [t])
-  const toImg = useCallback((key: CharacterKey | "") => key === "" ? <PersonAdd /> : characterSheets ? <ThumbSide src={characterSheets[key]?.thumbImgSide} sx={{ pr: 1 }} /> : <></>, [characterSheets])//
+  const toText = useCallback((key: CharacterKey): string => key.startsWith("Traveler") ? `${t(`charNames_gen:${charKeyToCharName(key)}`)} (${t(`sheet_gen:element.${characterSheets?.[charKeyToCharSheetKey(key, gender)]?.elementKey}`)})` : t(`charNames_gen:${key}`), [characterSheets, t, gender])
+  const toImg = useCallback((key: CharacterKey | "") => key === "" ? <PersonAdd /> : characterSheets ? <ThumbSide src={characterSheets[charKeyToCharSheetKey(key, gender)]?.thumbImgSide} sx={{ pr: 1 }} /> : <></>, [characterSheets, gender])//
   const isFavorite = useCallback((key: CharacterKey) => database.states.getWithInit(`charMeta_${key}`, initCharMeta).favorite, [database])
   const onDisable = useCallback((key: CharacterKey | "") => team.filter(t => t && t !== characterKey).includes(key) || (key.startsWith("Traveler") && team.some((t, i) => t.startsWith("Traveler"))), [team, characterKey])
   const values: GeneralAutocompleteOption<CharacterKey | "">[] = useMemo(() => [{

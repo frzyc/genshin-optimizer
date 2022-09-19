@@ -17,6 +17,7 @@ import { DatabaseContext } from '../Database/Database';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
+import useGender from '../ReactHooks/useGender';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
 import { CharacterKey } from '../Types/consts';
@@ -61,9 +62,9 @@ export default function PageCharacter() {
   }, [forceUpdate, database])
 
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
-
+  const gender = useGender(database)
   const deleteCharacter = useCallback(async (cKey: CharacterKey) => {
-    const chararcterSheet = await CharacterSheet.get(cKey)
+    const chararcterSheet = await CharacterSheet.get(cKey, gender)
     let name = chararcterSheet?.name
     // Use translated string
     if (typeof name === "object")
@@ -71,7 +72,7 @@ export default function PageCharacter() {
 
     if (!window.confirm(t("removeCharacter", { value: name }))) return
     database.chars.remove(cKey)
-  }, [database, t])
+  }, [database, gender, t])
 
   const editCharacter = useCharSelectionCallback()
 

@@ -24,7 +24,7 @@ export default function useCharSelectionCallback() {
       if (!character) {
         const newChar = initialCharacter(characterKey)
         database.chars.set(characterKey, newChar)
-        const characterSheet = await CharacterSheet.get(characterKey)
+        const characterSheet = await CharacterSheet.get(characterKey, database.gender)
         if (!characterSheet) return
         const weapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
         const weaponId = database.weapons.new(weapon)

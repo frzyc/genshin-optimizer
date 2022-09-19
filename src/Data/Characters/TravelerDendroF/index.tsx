@@ -1,8 +1,8 @@
 import { CharacterData } from 'pipeline'
 import { infoMut } from '../../../Formula/utils'
-import { CharacterKey } from '../../../Types/consts'
+import { CharacterKey, CharacterSheetKey } from '../../../Types/consts'
 import { trans } from '../../SheetUtil'
-import CharacterSheet, { charTemplates } from '../CharacterSheet'
+import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { dmgNode } from '../dataUtil'
 import TravelerF from '../TravelerF'
 import dendro from './dendro'
@@ -10,8 +10,8 @@ import assets from './assets'
 import skillParam_gen from './skillParam_gen.json'
 
 const data_gen = TravelerF.data_gen as CharacterData
-
-const key: CharacterKey = "TravelerFDendro"
+const key: CharacterSheetKey = "TravelerDendroF"
+const charKey: CharacterKey = "TravelerDendro"
 const [tr] = trans("char", key)
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
@@ -48,7 +48,7 @@ const dmgFormulas = {
     [key, dmgNode("atk", value, "plunging")])),
 } as const
 
-const { talent, data, elementKey } = dendro(key)
+const { talent, data, elementKey } = dendro(key, charKey)
 talent.auto = ct.talentTemplate("auto", [{
   text: tr("auto.fields.normal")
 }, {
@@ -80,6 +80,6 @@ talent.auto = ct.talentTemplate("auto", [{
   }]
 }])
 
-const sheet = { ...TravelerF.sheet, talent, key, elementKey }
+const sheet: ICharacterSheet = { ...TravelerF.sheet, talent, key: charKey, elementKey }
 
 export default new CharacterSheet(sheet, data, assets)

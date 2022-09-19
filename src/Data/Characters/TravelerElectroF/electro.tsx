@@ -1,7 +1,7 @@
 import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
 import { equal, greaterEq, infoMut, percent, prod, subscript, sum } from '../../../Formula/utils'
-import { CharacterKey, ElementKey } from '../../../Types/consts'
+import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt } from '../../SheetUtil'
 import { charTemplates, TalentSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
@@ -9,7 +9,7 @@ import Traveler from '../Traveler'
 import assets from './assets'
 import skillParam_gen from './skillParam_gen.json'
 
-export default function anemo(key: CharacterKey) {
+export default function anemo(key: CharacterSheetKey, charKey: CharacterKey) {
   const elementKey: ElementKey = "electro"
   const condCharKey = "TravelerElectro"
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
@@ -95,7 +95,7 @@ export default function anemo(key: CharacterKey) {
   const burstC3 = greaterEq(input.constellation, 3, 3)
   const skillC5 = greaterEq(input.constellation, 5, 3)
 
-  const data = dataObjForCharacterSheet(key, elementKey, undefined, Traveler.data_gen, dmgFormulas, {
+  const data = dataObjForCharacterSheet(charKey, elementKey, undefined, Traveler.data_gen, dmgFormulas, {
     bonus: {
       skill: skillC5,
       burst: burstC3,

@@ -1,7 +1,7 @@
 import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod } from '../../../Formula/utils'
-import { CharacterKey, ElementKey } from '../../../Types/consts'
+import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, sgt, st } from '../../SheetUtil'
 import { charTemplates, TalentSheet } from '../CharacterSheet'
@@ -10,7 +10,7 @@ import Traveler from '../Traveler'
 import assets from './assets'
 import skillParam_gen from './skillParam_gen.json'
 
-export default function geo(key: CharacterKey) {
+export default function geo(key: CharacterSheetKey, charKey: CharacterKey) {
   const elementKey: ElementKey = "geo"
   const condCharKey = "TravelerGeo"
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
@@ -85,7 +85,7 @@ export default function geo(key: CharacterKey) {
   const burstC3 = greaterEq(input.constellation, 3, 3)
   const skillC5 = greaterEq(input.constellation, 5, 3)
 
-  const data = dataObjForCharacterSheet(key, elementKey, undefined, Traveler.data_gen, dmgFormulas, {
+  const data = dataObjForCharacterSheet(charKey, elementKey, undefined, Traveler.data_gen, dmgFormulas, {
     bonus: {
       skill: skillC5,
       burst: burstC3,

@@ -1,4 +1,4 @@
-import { CharacterKey } from '../../Types/consts'
+import { CharacterKey, CharacterSheetKey } from '../../Types/consts'
 import CharacterSheet from './CharacterSheet'
 
 import Albedo from './Albedo'
@@ -43,14 +43,14 @@ import Sucrose from "./Sucrose"
 import Tartaglia from './Tartaglia'
 import Thoma from './Thoma'
 import Tighnari from './Tighnari'
-import TravelerFAnemo from './TravelerFAnemo'
-import TravelerFGeo from './TravelerFGeo'
-import TravelerFElectro from './TravelerFElectro'
-import TravelerFDendro from './TravelerFDendro'
-import TravelerMAnemo from './TravelerMAnemo'
-import TravelerMGeo from './TravelerMGeo'
-import TravelerMElectro from './TravelerMElectro'
-import TravelerMDendro from './TravelerMDendro'
+import TravelerAnemoF from './TravelerAnemoF'
+import TravelerGeoF from './TravelerGeoF'
+import TravelerElectroF from './TravelerElectroF'
+import TravelerDendroF from './TravelerDendroF'
+import TravelerAnemoM from './TravelerAnemoM'
+import TravelerGeoM from './TravelerGeoM'
+import TravelerElectroM from './TravelerElectroM'
+import TravelerDendroM from './TravelerDendroM'
 import Venti from './Venti'
 import Xiangling from './Xiangling'
 import Xiao from './Xiao'
@@ -63,7 +63,7 @@ import Yoimiya from './Yoimiya'
 import YunJin from './YunJin'
 import Zhongli from './Zhongli'
 
-const characters: Record<CharacterKey, CharacterSheet> = {
+const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Albedo,
   Aloy,
   Amber,
@@ -106,14 +106,14 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Tartaglia,
   Thoma,
   Tighnari,
-  TravelerFAnemo,
-  TravelerFGeo,
-  TravelerFElectro,
-  TravelerFDendro,
-  TravelerMAnemo,
-  TravelerMGeo,
-  TravelerMElectro,
-  TravelerMDendro,
+  TravelerAnemoF,
+  TravelerGeoF,
+  TravelerElectroF,
+  TravelerDendroF,
+  TravelerAnemoM,
+  TravelerGeoM,
+  TravelerElectroM,
+  TravelerDendroM,
   Venti,
   Xiangling,
   Xiao,

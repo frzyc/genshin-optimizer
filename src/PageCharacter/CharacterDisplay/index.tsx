@@ -12,15 +12,16 @@ import SqBadge from '../../Components/SqBadge';
 import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
 import { DataContext, dataContextObj } from '../../Context/DataContext';
 import { FormulaDataContext, FormulaDataWrapper } from '../../Context/FormulaDataContext';
-import CharacterSheet from '../../Data/Characters/CharacterSheet';
+import CharacterSheet, { charKeyToCharSheetKey } from '../../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../../Database/Database';
 import useBoolState from '../../ReactHooks/useBoolState';
 import useCharacter from '../../ReactHooks/useCharacter';
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
+import useGender from '../../ReactHooks/useGender';
 import usePromise from '../../ReactHooks/usePromise';
 import useTeamData from '../../ReactHooks/useTeamData';
 import useTitle from '../../ReactHooks/useTitle';
-import { CharacterKey, charKeyToCharName } from '../../Types/consts';
+import { CharacterKey } from '../../Types/consts';
 import { CustomMultiTargetButton } from '../CustomMultiTarget';
 import CharSelectDropdown from './CharSelectDropdown';
 import FormulaModal from './FormulaModal';
@@ -55,12 +56,15 @@ type CharacterDisplayCardProps = {
 }
 function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardProps) {
   const character = useCharacter(characterKey)
-  const characterSheet = usePromise(() => CharacterSheet.get(characterKey), [characterKey])
+  const { database } = useContext(DatabaseContext)
+  const gender = useGender(database)
+  const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
   const teamData = useTeamData(characterKey)
   const { target: charUIData } = teamData?.[characterKey] ?? {}
   let { params: { tab = "overview" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }
   const { t } = useTranslation()
-  useTitle(`${t(`char_${charKeyToCharName(characterKey)}_gen:name`)} - ${t(`page_character:tabs.${tab}`)}`)
+  useTitle(`${t(`char_${charKeyToCharSheetKey(characterKey, gender)}_gen:name`)} - ${t(`page_character:tabs.${tab}`)}`)
+
   const characterDispatch = useCharacterReducer(character?.key ?? "")
 
   const dataContextValue: dataContextObj | undefined = useMemo(() => {

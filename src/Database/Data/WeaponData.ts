@@ -10,7 +10,8 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
     super(database)
     for (const key of this.database.storage.keys) {
       if (key.startsWith("weapon_"))
-        this.set(key, this.database.storage.get(key) as any)
+        if (!this.set(key, this.database.storage.get(key) as any))
+          this.database.storage.remove(key)
     }
   }
   ensureEquipment() {

@@ -1,7 +1,7 @@
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import { equal, greaterEq, infoMut, lookup, naught, percent, prod } from '../../../Formula/utils'
-import { CharacterKey, ElementKey } from '../../../Types/consts'
+import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, sgt, st } from '../../SheetUtil'
 import { charTemplates, TalentSheet } from '../CharacterSheet'
@@ -10,7 +10,7 @@ import Traveler from '../Traveler'
 import assets from './assets'
 import skillParam_gen from './skillParam_gen.json'
 
-export default function anemo(key: CharacterKey) {
+export default function anemo(key: CharacterSheetKey, charKey: CharacterKey) {
   const elementKey: ElementKey = "dendro"
   const condCharKey = "TravelerDendro"
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
@@ -101,7 +101,7 @@ export default function anemo(key: CharacterKey) {
   const skillC3 = greaterEq(input.constellation, 3, 3)
   const burstC5 = greaterEq(input.constellation, 5, 3)
 
-  const data = dataObjForCharacterSheet(key, elementKey, undefined, Traveler.data_gen, dmgFormulas, {
+  const data = dataObjForCharacterSheet(charKey, elementKey, undefined, Traveler.data_gen, dmgFormulas, {
     bonus: {
       burst: burstC5,
       skill: skillC3,
