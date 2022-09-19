@@ -60,6 +60,9 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
   if (characters?.length) {
     result.characters.import = characters.length
     const idsToRemove = new Set(base.chars.keys)
+
+    const newGender = characters.find(c => c?.key?.startsWith("Traveler"))?.key?.[8] ?? base.chars.keys.find(k => k.startsWith("Traveler"))?.[8] ?? "F"
+    base.chars.swapTravelerGender(newGender)
     characters.forEach(c => {
       if (!c.key) result.characters.invalid.push(c)
       idsToRemove.delete(c.key)
