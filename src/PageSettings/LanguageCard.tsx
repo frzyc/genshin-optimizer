@@ -18,8 +18,8 @@ export default function LanguageCard() {
 }
 
 const nativeLanguages = {
-  "chs": "中文 正体字",
-  "cht": "中文 繁體字",
+  "chs": "简体中文",
+  "cht": "繁體中文",
   "de": "Deutsch",
   "en": "English",
   "es": "español",

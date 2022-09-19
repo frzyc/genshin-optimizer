@@ -27,6 +27,7 @@ import CharacterSheet from '../../Data/Characters/CharacterSheet';
 import useCharacter from '../../ReactHooks/useCharacter';
 import useDBState from '../../ReactHooks/useDBState';
 import { initCharMeta } from '../../Database/Data/StateData';
+import { ICachedCharacter } from '../../Types/character';
 
 type CharacterCardProps = {
   characterKey: CharacterKey,
@@ -71,38 +72,75 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
         </IconButton>
       </Box>
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >
-        {(character && dataContextObj && characterContextObj) ? <CharacterContext.Provider value={characterContextObj}><DataContext.Provider value={dataContextObj}>
-          <Header characterKey={characterKey} onClick={!onClick ? onClickHeader : undefined} >
-            <HeaderContent />
-          </Header>
-          <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
-            <Artifacts />
-            {!isTeammateCard && <Grid container columns={4} spacing={0.75}>
-              <Grid item xs={1} height="100%">
-                <WeaponCardPico weaponId={character.equippedWeapon} />
-              </Grid>
-              {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} onClick={!onClick ? onClickTeammate : undefined} index={i} /></Grid>)}
-            </Grid>}
-            {isTeammateCard && <WeaponFullCard weaponId={character.equippedWeapon} />}
-            {!isTeammateCard && !hideStats && <Stats />}
-            {weaponChildren}
-            {artifactChildren}
-            {characterChildren}
-          </CardContent>
-        </DataContext.Provider></CharacterContext.Provider> :
-          < >
-            <Header characterKey={characterKey} onClick={onClick} >
-              <HeaderContentNew characterKey={characterKey} />
-            </Header>
-            <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1, height: "100%" }}>
-            </CardContent>
-          </>}
+        {(character && dataContextObj && characterContextObj)
+          ? <ExistingCharacterCardContent
+            characterContextObj={characterContextObj}
+            dataContextObj={dataContextObj}
+            characterKey={characterKey}
+            onClick={onClick}
+            onClickHeader={onClickHeader}
+            isTeammateCard={isTeammateCard}
+            character={character}
+            onClickTeammate={onClickTeammate}
+            hideStats={hideStats}
+            weaponChildren={weaponChildren}
+            artifactChildren={artifactChildren}
+            characterChildren={characterChildren}
+          />
+          : <NewCharacterCardContent characterKey={characterKey} />}
       </ConditionalWrapper>
       {footer}
     </CardLight>
 
   </Suspense>
 }
+
+type ExistingCharacterCardContentProps = {
+  characterContextObj: CharacterContextObj
+  dataContextObj: dataContextObj
+  characterKey: CharacterKey
+  onClick?: (characterKey: CharacterKey) => void
+  onClickHeader?: (characterKey: CharacterKey) => void
+  isTeammateCard?: boolean
+  character: ICachedCharacter
+  onClickTeammate?: (characterKey: CharacterKey) => void
+  hideStats?: boolean
+  weaponChildren?: Displayable
+  artifactChildren?: Displayable
+  characterChildren?: Displayable
+}
+function ExistingCharacterCardContent({ characterContextObj, dataContextObj, characterKey, onClick, onClickHeader, isTeammateCard, character, onClickTeammate, hideStats, weaponChildren, artifactChildren, characterChildren }: ExistingCharacterCardContentProps) {
+  return <CharacterContext.Provider value={characterContextObj}><DataContext.Provider value={dataContextObj}>
+    <Header characterKey={characterKey} onClick={!onClick ? onClickHeader : undefined} >
+      <HeaderContent />
+    </Header>
+    <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
+      <Artifacts />
+      {!isTeammateCard && <Grid container columns={4} spacing={0.75}>
+        <Grid item xs={1} height="100%">
+          <WeaponCardPico weaponId={character.equippedWeapon} />
+        </Grid>
+        {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} onClick={!onClick ? onClickTeammate : undefined} index={i} /></Grid>)}
+      </Grid>}
+      {isTeammateCard && <WeaponFullCard weaponId={character.equippedWeapon} />}
+      {!isTeammateCard && !hideStats && <Stats />}
+      {weaponChildren}
+      {artifactChildren}
+      {characterChildren}
+    </CardContent>
+  </DataContext.Provider></CharacterContext.Provider>
+}
+
+function NewCharacterCardContent({ characterKey }: { characterKey: CharacterKey }) {
+  return < >
+    <Header characterKey={characterKey} >
+      <HeaderContentNew characterKey={characterKey} />
+    </Header>
+    <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1, height: "100%" }}>
+    </CardContent>
+  </>
+}
+
 function Header({ children, characterKey, onClick }: { children: JSX.Element, characterKey: CharacterKey, onClick?: (characterKey: CharacterKey) => void }) {
   const characterSheet = usePromise(() => CharacterSheet.get(characterKey), [characterKey])
 
