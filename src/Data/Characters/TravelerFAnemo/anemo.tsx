@@ -17,7 +17,7 @@ export default function anemo(key: CharacterKey) {
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
 
   const tr = (strKey: string) => <Translate ns={`char_${key}_gen`} key18={strKey} />
-  const trm = (strKey: string) => <Translate ns={`char_${key}`} key18={strKey} />
+  const trm = (strKey: string) => <Translate ns={`char_${condCharKey}`} key18={strKey} />
 
   let s = 0, b = 0
   const datamine = {
@@ -175,7 +175,7 @@ export default function anemo(key: CharacterKey) {
     })]),
     passive1: ct.talentTemplate("passive1", [ct.fieldsTemplate("passive1", {
       fields: [{
-        node: infoMut(dmgFormulas.passive1.dmg, { key: `char_${key}:p1` })
+        node: infoMut(dmgFormulas.passive1.dmg, { key: `char_${condCharKey}:p1` })
       }]
     })]),
     passive2: ct.talentTemplate("passive2", [ct.fieldsTemplate("passive2", {

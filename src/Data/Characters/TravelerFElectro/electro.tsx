@@ -15,7 +15,7 @@ export default function anemo(key: CharacterKey) {
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
 
   const tr = (strKey: string) => <Translate ns={`char_${key}_gen`} key18={strKey} />
-  const trm = (strKey: string) => <Translate ns={`char_${key}`} key18={strKey} />
+  const trm = (strKey: string) => <Translate ns={`char_${condCharKey}`} key18={strKey} />
 
   let s = 0, b = 0
   const datamine = {
@@ -155,7 +155,7 @@ export default function anemo(key: CharacterKey) {
       }]
     }), ct.headerTemplate("passive2", {
       fields: [{
-        node: infoMut(p2_enerRech_, { key: `char_${key}:passive2.enerRech_` })
+        node: infoMut(p2_enerRech_, { key: `char_${condCharKey}:passive2.enerRech_` })
       }]
     })]),
 
@@ -211,7 +211,7 @@ export default function anemo(key: CharacterKey) {
         on: {
           fields: [{
             node: infoMut(c6_thunder_dmg_,
-              { key: `char_${key}:c6.fallingThunderBonus_`, variant: "electro" }
+              { key: `char_${condCharKey}:c6.fallingThunderBonus_`, variant: "electro" }
             )
           }, {
             text: tr("burst.skillParams.2"),

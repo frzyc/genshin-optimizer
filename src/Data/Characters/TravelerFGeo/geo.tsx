@@ -122,7 +122,7 @@ export default function geo(key: CharacterKey) {
       }]
     }), ct.headerTemplate("constellation2", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation2.dmg, { key: `char_${key}:c2.key` }),
+        node: infoMut(dmgFormulas.constellation2.dmg, { key: `char_${condCharKey}:c2.key` }),
       }]
     }), ct.headerTemplate("constellation6", {
       fields: [{
@@ -190,7 +190,7 @@ export default function geo(key: CharacterKey) {
     passive1: ct.talentTemplate("passive1"),
     passive2: ct.talentTemplate("passive2", [ct.fieldsTemplate("passive2", {
       fields: [{
-        node: infoMut(dmgFormulas.passive2.dmg, { key: `char_${key}:passive2.key` })
+        node: infoMut(dmgFormulas.passive2.dmg, { key: `char_${condCharKey}:passive2.key` })
       }]
     })]),
     constellation1: ct.talentTemplate("constellation1"),
