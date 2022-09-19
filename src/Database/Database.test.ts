@@ -239,5 +239,59 @@ describe("Database", () => {
     expect(database.arts.get(circletId)?.setKey).toEqual("Adventurer")
     expect(database.weapons.get(database.chars.get("Albedo")!.equippedWeapon)?.key).toEqual("Akuoumaru")
   })
+  test("Test Traveler share equipment", async () => {
+    database.chars.set("TravelerMAnemo", initialCharacter("TravelerMAnemo"))
+    database.chars.set("TravelerMGeo", initialCharacter("TravelerMGeo"))
+    const art1 = await randomizeArtifact({ slotKey: "circlet", setKey: "EmblemOfSeveredFate" })
+    const art1Id = database.arts.new({ ...art1, location: "Traveler" })
+    database.chars.set("TravelerMElectro", initialCharacter("TravelerMElectro"))
+
+    expect(database.chars.get("TravelerMAnemo")!.equippedArtifacts.circlet).toEqual(art1Id)
+    expect(database.chars.get("TravelerMGeo")!.equippedArtifacts.circlet).toEqual(art1Id)
+    expect(database.chars.get("TravelerMElectro")!.equippedArtifacts.circlet).toEqual(art1Id)
+    const weapon1Id = database.chars.get("TravelerMAnemo")!.equippedWeapon
+    expect(database.chars.get("TravelerMGeo")!.equippedWeapon).toEqual(weapon1Id)
+    expect(database.chars.get("TravelerMElectro")!.equippedWeapon).toEqual(weapon1Id)
+
+    const art2 = await randomizeArtifact({ slotKey: "circlet", setKey: "ArchaicPetra" })
+    const art2Id = database.arts.new({ ...art2, location: "Traveler" })
+    expect(database.chars.get("TravelerMAnemo")!.equippedArtifacts.circlet).toEqual(art2Id)
+    expect(database.chars.get("TravelerMGeo")!.equippedArtifacts.circlet).toEqual(art2Id)
+    expect(database.chars.get("TravelerMElectro")!.equippedArtifacts.circlet).toEqual(art2Id)
+
+    const weapon2Id = database.weapons.new({ ...initialWeapon("SkywardBlade"), location: "Traveler" })
+    expect(database.chars.get("TravelerMAnemo")!.equippedWeapon).toEqual(weapon2Id)
+    expect(database.chars.get("TravelerMGeo")!.equippedWeapon).toEqual(weapon2Id)
+    expect(database.chars.get("TravelerMElectro")!.equippedWeapon).toEqual(weapon2Id)
+
+    //test swap gender
+    database.chars.swapTravelerGender("F")
+    expect(database.chars.get("TravelerMAnemo")).toBeUndefined()
+    expect(database.chars.get("TravelerMGeo")).toBeUndefined()
+    expect(database.chars.get("TravelerMElectro")).toBeUndefined()
+
+    expect(database.chars.get("TravelerFAnemo")!.equippedArtifacts.circlet).toEqual(art2Id)
+    expect(database.chars.get("TravelerFGeo")!.equippedArtifacts.circlet).toEqual(art2Id)
+    expect(database.chars.get("TravelerFElectro")!.equippedArtifacts.circlet).toEqual(art2Id)
+    expect(database.chars.get("TravelerFAnemo")!.equippedWeapon).toEqual(weapon2Id)
+    expect(database.chars.get("TravelerFGeo")!.equippedWeapon).toEqual(weapon2Id)
+    expect(database.chars.get("TravelerFElectro")!.equippedWeapon).toEqual(weapon2Id)
+
+
+    // deletion dont remove equipment until all traveler is gone
+    database.chars.remove("TravelerFElectro")
+    database.chars.remove("TravelerFGeo")
+
+    expect(database.chars.get("TravelerFAnemo")!.equippedArtifacts.circlet).toEqual(art2Id)
+    expect(database.chars.get("TravelerFAnemo")!.equippedWeapon).toEqual(weapon2Id)
+    expect(database.arts.get(art2Id)!.location).toEqual("Traveler")
+    expect(database.weapons.get(weapon2Id)!.location).toEqual("Traveler")
+
+    // deletion of final traveler unequips
+    database.chars.remove("TravelerFAnemo")
+
+    expect(database.arts.get(art2Id)!.location).toEqual("")
+    expect(database.weapons.get(weapon2Id)!.location).toEqual("")
+  })
 
 })
