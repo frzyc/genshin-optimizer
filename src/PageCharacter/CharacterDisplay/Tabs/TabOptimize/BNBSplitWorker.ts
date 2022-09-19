@@ -316,12 +316,6 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
          * Assuming each variable `x0` in `f = x0 * ...` has odd degree.
          * If `f > 0`, we flip lower/upper bound for `x0` if `x0 < 0`.
          * If `f < 0`, then we flip `x0` if `x > 0`, or flip *twice* if `x0 < 0`.
-         *
-         * CAUTION:
-         * The above assumption means that some formulas, e.g. x^2y, are invalid.
-         * This is nigh impossible to check since it can be `prod(x, x, y)`, or
-         * `prod(x, prod(x, y))`, etc. Violating this restriction will silently
-         * cause the resulting polynomial to be invalid.
          */
         return [f, context ^ (max <= 0 ? 3 : 2)]
       }
