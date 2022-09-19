@@ -13,6 +13,7 @@ import skillParam_gen from './skillParam_gen.json'
 
 export default function anemo(key: CharacterKey) {
   const elementKey: ElementKey = "anemo"
+  const condCharKey = "TravelerAnemo"
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
 
   const tr = (strKey: string) => <Translate ns={`char_${key}_gen`} key18={strKey} />
@@ -49,9 +50,9 @@ export default function anemo(key: CharacterKey) {
     }
   } as const
 
-  const [condBurstAbsorptionPath, condBurstAbsorption] = cond(key, `${elementKey}BurstAbsorption`)
+  const [condBurstAbsorptionPath, condBurstAbsorption] = cond(condCharKey, `${elementKey}BurstAbsorption`)
   const nodeC2 = greaterEq(input.constellation, 2, datamine.constellation2.enerRech_)
-  const [condC6Path, condC6] = cond(key, `${elementKey}C6Hit`)
+  const [condC6Path, condC6] = cond(condCharKey, `${elementKey}C6Hit`)
   const nodeC6 = greaterEq(input.constellation, 6, equal(condC6, "on", datamine.constellation6.enemyRes_))
   const nodesC6 = objectKeyValueMap(absorbableEle, ele => [`${ele}_enemyRes_`, greaterEq(input.constellation, 6, equal(condC6, "on", equal(condBurstAbsorption, ele, datamine.constellation6.enemyRes_)))])
   const dmgFormulas = {

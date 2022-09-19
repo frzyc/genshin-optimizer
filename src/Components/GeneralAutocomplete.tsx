@@ -21,7 +21,7 @@ export default function GeneralAutocomplete<T extends string>({ options, valueKe
       {...props}
       label={label}
       startAdornment={value !== undefined ? toImg(value.key) : undefined}
-      hasValue={!!value}
+      hasValue={!!value?.key}
     />}
     renderOption={(props, option) => <MenuItem value={option.key} {...props}>
       <ListItemIcon>{toImg(option.key)}</ListItemIcon>

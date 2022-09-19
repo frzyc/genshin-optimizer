@@ -1,5 +1,5 @@
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
-import { Badge, Box, CardActionArea, CardContent, Chip, Grid, IconButton, Stack, Typography } from "@mui/material";
+import { Badge, Box, CardActionArea, Chip, Grid, IconButton, Stack, Typography } from "@mui/material";
 import { useCallback, useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Assets from "../../../../Assets/Assets";

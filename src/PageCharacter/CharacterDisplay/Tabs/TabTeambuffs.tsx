@@ -90,7 +90,7 @@ function TeammateDisplay({ index }: { index: number }) {
   const { t } = useTranslation("page_character")
   const { character: active, character: { key: activeCharacterKey }, characterDispatch } = useContext(CharacterContext)
   const teamMateKey = active.team[index]
-  const team = useMemo(() => [activeCharacterKey, ...active.team], [active.team, activeCharacterKey])
+  const team = useMemo(() => [activeCharacterKey, ...active.team].filter((t, i) => (i - 1) !== index), [active.team, activeCharacterKey, index])
   const onClickHandler = useCharSelectionCallback()
   const setTeammate = useCallback((charKey: CharacterKey | "") => characterDispatch({ type: "team", index, charKey }), [index, characterDispatch])
 
@@ -174,7 +174,7 @@ function TeammateAutocomplete({ characterKey, team, label, setChar }: { characte
   const toText = useCallback((key: CharacterKey): string => key.startsWith("Traveler") ? `${t(`charNames_gen:${key.slice(0, 9)}`)} (${t(`sheet_gen:element.${key.slice(9).toLowerCase()}`)})` : t(`charNames_gen:${key}`), [t])
   const toImg = useCallback((key: CharacterKey | "") => key === "" ? <PersonAdd /> : characterSheets ? <ThumbSide src={characterSheets[key]?.thumbImgSide} sx={{ pr: 1 }} /> : <></>, [characterSheets])//
   const isFavorite = useCallback((key: CharacterKey) => database.states.getWithInit(`charMeta_${key}`, initCharMeta).favorite, [database])
-  const onDisable = useCallback((key: CharacterKey | "") => team.filter(t => t && t !== characterKey).includes(key) || (team.some(t => t.startsWith("Traveler")) && key.startsWith("Traveler")), [team, characterKey])
+  const onDisable = useCallback((key: CharacterKey | "") => team.filter(t => t && t !== characterKey).includes(key) || (key.startsWith("Traveler") && team.some((t, i) => t.startsWith("Traveler"))), [team, characterKey])
   const values: GeneralAutocompleteOption<CharacterKey | "">[] = useMemo(() => [{
     key: "",
     label: t`page_character:none`,

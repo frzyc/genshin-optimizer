@@ -11,6 +11,7 @@ import skillParam_gen from './skillParam_gen.json'
 
 export default function anemo(key: CharacterKey) {
   const elementKey: ElementKey = "electro"
+  const condCharKey = "TravelerElectro"
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
 
   const tr = (strKey: string) => <Translate ns={`char_${key}_gen`} key18={strKey} />
@@ -56,7 +57,7 @@ export default function anemo(key: CharacterKey) {
     }
   } as const
 
-  const [condSkillAmuletPath, condSkillAmulet] = cond(key, `${elementKey}SkillAmulet`)
+  const [condSkillAmuletPath, condSkillAmulet] = cond(condCharKey, `${elementKey}SkillAmulet`)
   const p2_enerRech_ = greaterEq(input.asc, 4,
     prod(input.premod.enerRech_, percent(datamine.passive2.enerRech_))
   )
@@ -72,12 +73,12 @@ export default function anemo(key: CharacterKey) {
     { key: `char_${key}_gen:burst.skillParmas.2` }
   )
 
-  const [condC2ThunderPath, condC2Thunder] = cond(key, `${elementKey}C2Thunder`)
+  const [condC2ThunderPath, condC2Thunder] = cond(condCharKey, `${elementKey}C2Thunder`)
   const c2Thunder_electro_enemyRes_ = greaterEq(input.constellation, 2,
     equal(condC2Thunder, "on", datamine.constellation2.electro_enemyRes)
   )
 
-  const [condC6After2ThunderPath, condC6After2Thunder] = cond(key, `${elementKey}C6After2Thunder`)
+  const [condC6After2ThunderPath, condC6After2Thunder] = cond(condCharKey, `${elementKey}C6After2Thunder`)
   const c6_thunder_dmg_ = greaterEq(input.constellation, 6, equal(condC6After2Thunder, "on", datamine.constellation6.thunder_dmg_))
 
   const dmgFormulas = {

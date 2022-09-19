@@ -129,6 +129,10 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
       this.set(newK, { ...char, key: newK })
       this.remove(k)
     })
+    Object.entries(this.data).forEach(([key, char]) => {
+      if (!char.team.find(t => t.startsWith("Traveler"))) return
+      this.set(key, { team: char.team.map(t => t.startsWith("Traveler") ? TravelerGender(t as TravelerKey, to) : t) as ICharacter["team"] })
+    })
   }
   remove(key: CharacterKey) {
     const char = this.get(key)

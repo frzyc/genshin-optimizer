@@ -7,7 +7,7 @@ import { initCharMeta } from "../../Database/Data/StateData"
 import { DatabaseContext } from "../../Database/Database"
 import { FilterLocationKey } from "../../PageArtifact/ArtifactSort"
 import usePromise from "../../ReactHooks/usePromise"
-import { allCharacterKeys, charKeyToLocCharKey, LocationCharacterKey, locationCharacterKeys, travelerKeys } from "../../Types/consts"
+import { LocationCharacterKey, locationCharacterKeys, travelerKeys } from "../../Types/consts"
 import ThumbSide from "../Character/ThumbSide"
 import GeneralAutocomplete, { GeneralAutocompleteOption } from "../GeneralAutocomplete"
 
@@ -47,6 +47,6 @@ export default function LocationFilterAutocomplete({ location, setLocation }: { 
       if (!a.favorite && b.favorite) return 1
       return a.label.localeCompare(b.label)
     })
-  ], [t, toText, isFavorite, database])
+  ], [t, toText, isFavorite])
   return <Suspense fallback={<Skeleton variant="text" width={100} />}><GeneralAutocomplete size="small" options={values} valueKey={location} onChange={setLocation} toImg={toImg} clearKey="" label={t`artifact:filterLocation.location`} /></Suspense>
 }

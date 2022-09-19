@@ -12,6 +12,7 @@ import skillParam_gen from './skillParam_gen.json'
 
 export default function geo(key: CharacterKey) {
   const elementKey: ElementKey = "geo"
+  const condCharKey = "TravelerGeo"
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
 
   const tr = (strKey: string) => <Translate ns={`char_${key}_gen`} key18={strKey} />
@@ -49,13 +50,13 @@ export default function geo(key: CharacterKey) {
     }
   } as const
 
-  const [condC1BurstAreaPath, condC1BurstArea] = cond(key, `${elementKey}C1BurstArea`)
+  const [condC1BurstAreaPath, condC1BurstArea] = cond(condCharKey, `${elementKey}C1BurstArea`)
   const c1BurstArea_critRate_Disp = greaterEq(input.constellation, 1,
     equal(condC1BurstArea, "on", datamine.constellation1.critRate_)
   )
   const c1BurstArea_critRate_ = equal(input.activeCharKey, target.charKey, c1BurstArea_critRate_Disp)
 
-  const [condC4BurstHitPath, condC4BurstHit] = cond(key, `${elementKey}C4BurstHit`)
+  const [condC4BurstHitPath, condC4BurstHit] = cond(condCharKey, `${elementKey}C4BurstHit`)
   const c4Burst_energyRestore = lookup(condC4BurstHit,
     Object.fromEntries(range(1, datamine.constellation4.maxTriggers).map(stack => [
       stack,

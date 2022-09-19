@@ -12,6 +12,7 @@ import skillParam_gen from './skillParam_gen.json'
 
 export default function anemo(key: CharacterKey) {
   const elementKey: ElementKey = "dendro"
+  const condCharKey = "TravelerDendro"
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
 
   let s = 0, b = 0
@@ -48,7 +49,7 @@ export default function anemo(key: CharacterKey) {
     }
   } as const
 
-  const [condA1StacksPath, condA1Stacks] = cond(key, "a1Stacks")
+  const [condA1StacksPath, condA1Stacks] = cond(condCharKey, "a1Stacks")
   const a1StacksArr = range(1, datamine.passive1.maxStacks)
   const a1_eleMas_disp = greaterEq(input.asc, 1,
     lookup(condA1Stacks, Object.fromEntries(a1StacksArr.map(stack => [
@@ -68,8 +69,8 @@ export default function anemo(key: CharacterKey) {
     { key: "_" }
   )
 
-  const [condC6BurstEffectPath, condC6BurstEffect] = cond(key, "c6BurstEffect")
-  const [condC6BurstElePath, condC6BurstEle] = cond(key, "c6BurstEle")
+  const [condC6BurstEffectPath, condC6BurstEffect] = cond(condCharKey, "c6BurstEffect")
+  const [condC6BurstElePath, condC6BurstEle] = cond(condCharKey, "c6BurstEle")
   const c6_dendro_dmg_disp = greaterEq(input.constellation, 6,
     equal(condC6BurstEffect, "on", percent(datamine.constellation6.ele_dmg_))
   )

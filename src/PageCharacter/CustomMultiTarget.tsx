@@ -17,7 +17,7 @@ import { DataContext } from "../Context/DataContext";
 import { allInputPremodKeys, InputPremodKey } from "../Formula";
 import { NodeDisplay, UIData } from "../Formula/uiData";
 import useBoolState from "../ReactHooks/useBoolState";
-import { CustomMultiTarget, CustomTarget, ICachedCharacter } from "../Types/character";
+import { CustomMultiTarget, CustomTarget } from "../Types/character";
 import { AdditiveReactionKey, allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, allowedAdditiveReactions, allowedAmpReactions, AmpReactionKey, HitModeKey, InfusionAuraElements } from "../Types/consts";
 import { arrayMove, clamp, deepClone, objPathValue } from "../Util/Util";
 import OptimizationTargetSelector from "./CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector";
@@ -124,7 +124,7 @@ export function CustomMultiTargetButton() {
     () => {
       onCloseModal()
       characterDispatch({ customMultiTarget })
-    }, [customMultiTarget, character, onCloseModal, characterDispatch])
+    }, [customMultiTarget, onCloseModal, characterDispatch])
 
   const { data: origUIData, teamData } = useContext(DataContext)
   const dataContextObj = useMemo(() => {
