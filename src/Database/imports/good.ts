@@ -13,12 +13,16 @@ export function importGOOD(good: IGOOD, base: ArtCharDatabase, keepNotInImport: 
   }
 }
 
-export function importAndMigrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
+export function importAndMigrateGOOD(good: IGOOD & IGO, gender: "F" | "M"): IGOOD & IGO {
   const storage = new SandboxStorage()
   const source = good.source
 
   good.dbVersion ? storage.setDBVersion(good.dbVersion) : storage.setDBVersion(8)
-  if (good.characters) good.characters.forEach(c => c.key && storage.set(`char_${c.key}`, c));
+  if (good.characters) good.characters.forEach(c => {
+    if (!c.key) return
+    if (c.key === "Traveler") c.gender = gender
+    storage.set(`char_${c.key}`, c)
+  });
   if (good.artifacts) good.artifacts.forEach((a, i) => storage.set(`artifact_${i}`, a))
   if (good.weapons) good.weapons.forEach((a, i) => storage.set(`weapon_${i}`, a))
   if (good.states) good.states.forEach(a => a.key && storage.set(`state_${a.key}`, a))
@@ -35,7 +39,8 @@ export function importAndMigrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
  * If the DB version is not specified, the default version is used.
  */
 function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolean, ignoreDups: boolean): ImportResult | undefined {
-  good = importAndMigrateGOOD(good as IGOOD & IGO)
+  const baseGender = (base.chars.keys.find(k => k.startsWith("Traveler"))?.[8] ?? "F") as "F" | "M"
+  good = importAndMigrateGOOD(good as IGOOD & IGO, baseGender)
   const source = good.source ?? "Unknown"
   const result: ImportResult = newImportResult(source)
 
@@ -61,7 +66,7 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
     result.characters.import = characters.length
     const idsToRemove = new Set(base.chars.keys)
 
-    const newGender = characters.find(c => c?.key?.startsWith("Traveler"))?.key?.[8] ?? base.chars.keys.find(k => k.startsWith("Traveler"))?.[8] ?? "F"
+    const newGender = characters.find(c => c?.key?.startsWith("Traveler"))?.key?.[8] ?? baseGender
     base.chars.swapTravelerGender(newGender)
     characters.forEach(c => {
       if (!c.key) result.characters.invalid.push(c)

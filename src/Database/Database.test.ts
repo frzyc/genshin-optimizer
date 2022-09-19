@@ -293,5 +293,20 @@ describe("Database", () => {
     expect(database.arts.get(art2Id)!.location).toEqual("")
     expect(database.weapons.get(weapon2Id)!.location).toEqual("")
   })
-
+  test("Test Traveler import gender", async () => {
+    database.chars.set("TravelerMAnemo", initialCharacter("TravelerMAnemo"))
+    const importTraveler = initialCharacter("TravelerFAnemo")
+    importTraveler.key = "Traveler" as CharacterKey //GOOD format would use "Traveler" as key
+    const good1: IGOOD = {
+      format: "GOOD",
+      version: 1,
+      source: "Scanner",
+      characters: [
+        importTraveler
+      ],
+    }
+    importGOOD(good1, database, true, false)!
+    expect(database.chars.get("TravelerMAnemo")).toBeTruthy()
+    expect(database.chars.get("TravelerFAnemo")).toBeUndefined()
+  })
 })

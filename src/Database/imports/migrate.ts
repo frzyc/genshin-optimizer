@@ -268,13 +268,15 @@ function migrateV18toV19(storage: DBStorage) {
 
 // 8.20.0 - Present
 function migrateV19toV20(storage: DBStorage) {
+  // convert from "Traveler" to element/gender specific "Traveler..."
   const key = "char_Traveler"
   const character = storage.get(key)
   if (!character) return
   storage.remove(key)
   travelerElements.forEach(ele => {
     const targets = character?.customMultiTargets?.[ele] ?? []
-    const charKey = `TravelerF${ele[0].toUpperCase() + ele.slice(1)}`
+    const gender = character.gender ?? "F"
+    const charKey = `Traveler${gender}${ele[0].toUpperCase() + ele.slice(1)}`
     storage.set(`char_${charKey}`, { ...character, customMultiTarget: targets, key: charKey })
   })
 }
