@@ -17,7 +17,7 @@ import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
 import usePromise from '../../ReactHooks/usePromise';
 import useTeamData from '../../ReactHooks/useTeamData';
 import useTitle from '../../ReactHooks/useTitle';
-import { allCharacterKeys, CharacterKey } from '../../Types/consts';
+import { allCharacterKeys, CharacterKey, charKeyToCharName } from '../../Types/consts';
 import { CustomMultiTargetButton } from '../CustomMultiTarget';
 import CharSelectDropdown from './CharSelectDropdown';
 import FormulaModal from './FormulaModal';
@@ -60,7 +60,7 @@ function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardPro
   const { target: charUIData } = teamData?.[characterKey] ?? {}
   let { params: { tab = "overview" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }
   const { t } = useTranslation()
-  useTitle(`${t(`char_${characterKey}_gen:name`)} - ${t(`page_character:tabs.${tab}`)}`)
+  useTitle(`${t(`char_${charKeyToCharName(characterKey)}_gen:name`)} - ${t(`page_character:tabs.${tab}`)}`)
   const characterDispatch = useCharacterReducer(character?.key ?? "")
 
   const dataContextValue: dataContextObj | undefined = useMemo(() => {
