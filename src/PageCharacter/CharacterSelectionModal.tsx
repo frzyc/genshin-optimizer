@@ -1,16 +1,22 @@
-import { Box, CardContent, Divider, Grid, TextField } from "@mui/material";
-import { ChangeEvent, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
+import { Box, CardActionArea, CardContent, Chip, Divider, Grid, Skeleton, TextField, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
+import { styled } from "@mui/system";
+import { ChangeEvent, Suspense, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import CardDark from "../Components/Card/CardDark";
+import CardLight from "../Components/Card/CardLight";
 import CharacterCard from "../Components/Character/CharacterCard";
 import CloseButton from "../Components/CloseButton";
 import ModalWrapper from "../Components/ModalWrapper";
 import SortByButton from "../Components/SortByButton";
+import SqBadge from "../Components/SqBadge";
+import { StarsDisplay } from "../Components/StarDisplay";
 import ElementToggle from "../Components/ToggleButton/ElementToggle";
 import WeaponToggle from "../Components/ToggleButton/WeaponToggle";
 import { DataContext } from "../Context/DataContext";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
+import { ascensionMaxLevel } from "../Data/LevelData";
 import { DatabaseContext } from "../Database/Database";
+import useCharacter from "../ReactHooks/useCharacter";
 import useDBState from "../ReactHooks/useDBState";
 import useForceUpdate from "../ReactHooks/useForceUpdate";
 import useGender from "../ReactHooks/useGender";
@@ -94,12 +100,77 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
       </CardContent>
       <Divider />
       <DataContext.Provider value={{ teamData: undefined } as any}>
-        <CardContent><Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
+        <CardContent><Grid container spacing={1} columns={{ xs: 2, sm: 3, md: 4, lg: 5, }}>
           {characterKeyList.map(characterKey => <Grid item key={characterKey} xs={1} >
-            <CharacterCard key={characterKey} hideStats characterKey={characterKey} onClick={() => { onHide(); onSelect?.(characterKey) }} />
+            {/* <CharacterCard key={characterKey} hideStats characterKey={characterKey} onClick={() => { onHide(); onSelect?.(characterKey) }} /> */}
+            <SelectionCard characterKey={characterKey} onClick={() => { onHide(); onSelect?.(characterKey) }} />
           </Grid>)}
         </Grid></CardContent>
       </DataContext.Provider>
     </CardDark>
   </ModalWrapper>
+}
+
+const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))({
+  [`& .${tooltipClasses.tooltip}`]: {
+    padding: 0,
+  },
+});
+
+function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, onClick: () => void }) {
+  const { database } = useContext(DatabaseContext)
+  const gender = useGender(database)
+  const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
+  const character = useCharacter(characterKey)
+  const { level = 1, ascension = 0, constellation = 0 } = character ?? {}
+  return <CustomTooltip arrow placement="bottom" title={
+    <Box sx={{ width: 300 }}>
+      <CharacterCard hideStats characterKey={characterKey} />
+    </Box>
+  }>
+    <Box>
+      <CardLight sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
+        <CardActionArea onClick={onClick}>
+          <Box display="flex"
+            position="relative"
+            className={`grad-${characterSheet?.rarity}star`}
+            sx={{
+              "&::before": {
+                content: '""',
+                display: "block", position: "absolute",
+                left: 0, top: 0,
+                width: "100%", height: "100%",
+                opacity: 0.5,
+                backgroundImage: `url(${characterSheet?.bannerImg})`, backgroundPosition: "center", backgroundSize: "cover",
+              }
+            }}
+            width="100%" >
+            <Box flexShrink={1} sx={{ maxWidth: { xs: "33%", lg: "30%" } }} alignSelf="flex-end" display="flex" flexDirection="column" zIndex={1}>
+              <Box
+                component="img"
+                src={characterSheet?.thumbImg}
+                width="100%"
+                height="auto"
+                maxWidth={256}
+                sx={{ mt: "auto" }}
+              />
+            </Box>
+            <Box flexGrow={1} sx={{ pr: 1 }} display="flex" flexDirection="column" zIndex={1} justifyContent="space-evenly">
+              <Typography variant="body2" ><SqBadge color={characterSheet?.elementKey} sx={{ opacity: 0.85 }}>{characterSheet?.name}</SqBadge></Typography>
+              {character ? <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+                <Box sx={{ textShadow: "0 0 5px gray" }}>
+                  <Typography variant="body2" component="span" whiteSpace="nowrap" >Lv. {level}</Typography>
+                  <Typography variant="body2" component="span" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
+                </Box>
+                <Typography variant="body2" >C{constellation}</Typography>
+              </Box> : <Typography component="span" variant="body2" ><SqBadge>NEW</SqBadge></Typography>}
+              <Typography variant="body2" ><StarsDisplay stars={characterSheet?.rarity ?? 1} colored /></Typography>
+            </Box>
+          </Box>
+        </CardActionArea>
+      </CardLight>
+    </Box>
+  </CustomTooltip>
 }

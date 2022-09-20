@@ -66,7 +66,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   }), [data, teamData])
 
   const [{ favorite }, setCharMeta] = useDBState(`charMeta_${characterKey}`, initCharMeta)
-  return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
+  return <Suspense fallback={<Skeleton variant="rectangular" width={300} height={600} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <Box sx={{ display: "flex", position: "absolute", zIndex: 2, opacity: 0.7 }}>
         <IconButton sx={{ p: 0.5 }} onClick={_ => setCharMeta({ favorite: !favorite })}>
