@@ -2,20 +2,22 @@ import { BusinessCenter, PersonSearch } from "@mui/icons-material"
 import { Skeleton } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
-import CharacterSheet from "../../Data/Characters/CharacterSheet"
+import CharacterSheet, { charKeyToCharSheetKey } from "../../Data/Characters/CharacterSheet"
 import { initCharMeta } from "../../Database/Data/StateData"
 import { DatabaseContext } from "../../Database/Database"
 import { FilterLocationKey } from "../../PageArtifact/ArtifactSort"
+import useGender from "../../ReactHooks/useGender"
 import usePromise from "../../ReactHooks/usePromise"
-import { LocationCharacterKey, locationCharacterKeys, travelerKeys } from "../../Types/consts"
+import { charKeyToCharName, LocationCharacterKey, locationCharacterKeys, travelerKeys } from "../../Types/consts"
 import ThumbSide from "../Character/ThumbSide"
 import GeneralAutocomplete, { GeneralAutocompleteOption } from "../GeneralAutocomplete"
 
 export default function LocationFilterAutocomplete({ location, setLocation }: { location: FilterLocationKey, setLocation: (v: FilterLocationKey) => void }) {
   const { t } = useTranslation(["ui", "artifact", "charNames_gen"])
   const { database } = useContext(DatabaseContext)
+  const gender = useGender(database)
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
-  const toText = useCallback((key: LocationCharacterKey): string => t(`charNames_gen:${key === "Traveler" ? database.chars.LocationToCharacterKey(key).slice(0, 9) : key}`), [database, t])
+  const toText = useCallback((key: LocationCharacterKey): string => t(`charNames_gen:${charKeyToCharName(database.chars.LocationToCharacterKey(key), gender)}`), [database, gender, t])
   const toImg = useCallback((key: FilterLocationKey) => {
     switch (key) {
       case "":
@@ -25,9 +27,9 @@ export default function LocationFilterAutocomplete({ location, setLocation }: { 
       case "Equipped":
         return <PersonSearch />
       default:
-        return characterSheets ? <ThumbSide src={characterSheets[database.chars.LocationToCharacterKey(key)]?.thumbImgSide} sx={{ pr: 1 }} /> : <></>
+        return characterSheets ? <ThumbSide src={characterSheets[charKeyToCharSheetKey(database.chars.LocationToCharacterKey(key), gender)]?.thumbImgSide} sx={{ pr: 1 }} /> : <></>
     }
-  }, [database, characterSheets])
+  }, [database, gender, characterSheets])
   const isFavorite = useCallback((key: LocationCharacterKey) => key === "Traveler" ?
     travelerKeys.some(key => database.states.getWithInit(`charMeta_${key}`, initCharMeta).favorite) :
     key ? database.states.getWithInit(`charMeta_${key}`, initCharMeta).favorite : false, [database])

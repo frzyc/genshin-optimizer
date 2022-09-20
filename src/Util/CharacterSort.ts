@@ -14,7 +14,7 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
       tieBreaker: "name"
     },
     name: {
-      getValue: (ck) => i18n.t(`charNames_gen:${charKeyToCharSheetKey(ck, database.gender)}`).toString(),
+      getValue: (ck) => i18n.t(`charNames_gen:${charKeyToCharName(ck, database.gender)}`).toString(),
     },
     level: {
       getValue: (ck) => {
