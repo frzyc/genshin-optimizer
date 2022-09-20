@@ -49,5 +49,7 @@
   "sortBy": "排序：",
   "delete": "删除",
   "locked": "锁定的",
-  "unlocked": "未锁定的"
+  "unlocked": "未锁定的",
+  "refinement": "精炼{{value}}",
+  "selectlevel": "选择等级"
 }

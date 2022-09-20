@@ -7,12 +7,12 @@
   "uploadCard": {
     "title": "上传数据库",
     "replaceDatabase": "替换数据库",
-    "hint": "在此上传JSON文件…",
+    "hint": "在此加载JSON文件…",
     "hintPaste": "…或在此粘贴数据",
     "goUpload": {
       "title": "<strong>Genshin Optimizer</strong> 格式",
       "migrate": "数据库将更新为新版本，请考虑在导入后重新下载数据库。",
-      "deleteDatabasePrompt": "确定要替换数据库吗？所有已保存的角色和圣遗物会被删除。"
+      "deleteDatabasePrompt": "是否确定删除数据库？"
     },
     "error": {
       "jsonParse": "JSON文件解析失败。",
@@ -23,6 +23,17 @@
     "dbSource": "数据来源：",
     "goodUpload": {
       "title": "<strong>Genshin Open Object Description</strong> (GOOD) 格式"
+    },
+    "buttons": {
+      "open": "打开",
+      "detectDups": "检测更新/重复",
+      "delNotInImport": "删除导入数据中不存在的条目"
+    },
+    "tooltip": {
+      "detectdup": "检测GO仓库中的更新及重复条目，并将导入数据合并入GO。",
+      "ignoreDup": "不要检测更新及重复条目，将导入数据直接添加进GO仓库。",
+      "delNotInImport": "导入的数据是整个仓库，当前仓库与导入数据中不同的部分会被删除。",
+      "keepNotInImport": "导入的数据是仓库的一部分，不删除任何数据。"
     }
   },
   "count": {
@@ -36,6 +47,7 @@
     "unchanged": "未改变的：",
     "invalid": "无效的：",
     "upgraded": "已升级",
+    "dbTotal": "合并后的总数：",
     "notInImport": "不在导入文件中："
   },
   "DatabaseCard": {
