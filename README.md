@@ -83,3 +83,13 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+# Git Configurations
+The website is deployed as a Github Page, which is staged on the `gh-pages` branch. If you do not foresee any reason to deploy the website, then the `gh-pages` branch can be ignored for fetching & removed:
+```
+# Add negative ref for fetching
+git config --add remote.origin.fetch "^refs/heads/gh-pages"
+
+# Remove the remote-tracking branch from repo
+git branch -dr origin/gh-pages
+```
