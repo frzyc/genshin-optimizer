@@ -19,7 +19,7 @@ import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter';
-import { artifactFilterConfigs, artifactSortConfigs, artifactSortKeys, initialArtifactSortFilter } from './ArtifactSort';
+import { artifactFilterConfigs, artifactSortConfigs, artifactSortKeys, artifactSortMap, initialArtifactSortFilter } from './ArtifactSort';
 import ProbabilityFilter from './ProbabilityFilter';
 import { probability } from './RollProbability';
 
@@ -93,11 +93,12 @@ export default function PageArtifact() {
   const { artifactIds, totalArtNum } = useMemo(() => {
     const { sortType = artifactSortKeys[0], ascending = false, filterOption } = deferredArtifactDisplayState
     let allArtifacts = database.arts.values
-    const filterFunc = filterFunction(filterOption, filterConfigs)
-    const sortFunc = sortFunction(sortType, ascending, sortConfigs)
     //in probability mode, filter out the artifacts that already reach criteria
     if (showProbability) allArtifacts = allArtifacts.filter(art => art.probability && art.probability !== 1)
-    const artifactIds = allArtifacts.filter(filterFunc).sort(sortFunc).map(art => art.id)
+    const artifactIds = allArtifacts
+      .filter(filterFunction(filterOption, filterConfigs))
+      .sort(sortFunction(artifactSortMap[sortType] ?? [], ascending, sortConfigs))
+      .map(art => art.id)
     return { artifactIds, totalArtNum: allArtifacts.length, ...dbDirty }//use dbDirty to shoo away warnings!
   }, [deferredArtifactDisplayState, dbDirty, database, sortConfigs, filterConfigs, showProbability])
 

@@ -48,31 +48,16 @@ export const initialArtifactSortFilter = (): ArtifactSortFilter => ({
 
 export function artifactSortConfigs(effFilterSet: Set<SubstatKey>, probabilityFilter): SortConfigs<ArtifactSortKey, ICachedArtifact> {
   return {
-    rarity: {
-      getValue: art => art.rarity ?? 0,
-      tieBreaker: "level"
-    },
-    level: {
-      getValue: art => art.level ?? 0,
-      tieBreaker: "artsetkey"
-    },
-    artsetkey: {
-      getValue: art => art.setKey ?? "",
-      tieBreaker: "level"
-    },
-    efficiency: {
-      getValue: art => Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency
-    },
-    mefficiency: {
-      getValue: art => Artifact.getArtifactEfficiency(art, effFilterSet).maxEfficiency
-    },
-    probability: {
-      getValue: art => {
-        if (!Object.keys(probabilityFilter).length) return 0
-        const prob = (art as any).probability
-        if (prob === undefined) return probability(art, probabilityFilter);
-        return prob
-      }
+    rarity: art => art.rarity ?? 0,
+    level: art => art.level ?? 0,
+    artsetkey: art => art.setKey ?? "",
+    efficiency: art => Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency,
+    mefficiency: art => Artifact.getArtifactEfficiency(art, effFilterSet).maxEfficiency,
+    probability: art => {
+      if (!Object.keys(probabilityFilter).length) return 0
+      const prob = (art as any).probability
+      if (prob === undefined) return probability(art, probabilityFilter);
+      return prob
     }
   }
 }
@@ -107,4 +92,12 @@ export function artifactFilterConfigs(): FilterConfigs<keyof FilterOption, ICach
       return true
     }
   }
+}
+export const artifactSortMap: Partial<Record<ArtifactSortKey, ArtifactSortKey[]>> = {
+  level: ["level", "rarity", "artsetkey"],
+  rarity: ["rarity", "level", "artsetkey"],
+  artsetkey: ["artsetkey", "rarity", "level"],
+  efficiency: ["efficiency"],
+  mefficiency: ["mefficiency"],
+  probability: ["probability"],
 }

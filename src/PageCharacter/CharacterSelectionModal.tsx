@@ -1,6 +1,6 @@
-import { Box, CardActionArea, CardContent, Chip, Divider, Grid, Skeleton, TextField, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
+import { Box, CardActionArea, CardContent, Divider, Grid, TextField, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
 import { styled } from "@mui/system";
-import { ChangeEvent, Suspense, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
+import { ChangeEvent, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import CardDark from "../Components/Card/CardDark";
 import CardLight from "../Components/Card/CardLight";
@@ -23,9 +23,8 @@ import useGender from "../ReactHooks/useGender";
 import usePromise from "../ReactHooks/usePromise";
 import { ICachedCharacter } from "../Types/character";
 import { allCharacterKeys, CharacterKey } from "../Types/consts";
-import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from "../Util/CharacterSort";
+import { characterFilterConfigs, characterSortConfigs, CharacterSortKey, characterSortMap, initialCharacterDisplayState } from "../Util/CharacterSort";
 import { filterFunction, sortFunction } from "../Util/SortByFilters";
-import { initialCharacterDisplayState } from "./CharacterDisplayState";
 
 type characterFilter = (character: ICachedCharacter | undefined, sheet: CharacterSheet) => boolean
 
@@ -36,45 +35,35 @@ type CharacterSelectionModalProps = {
   onSelect?: (ckey: CharacterKey) => void,
   filter?: characterFilter
 }
-
+const sortKeys = Object.keys(characterSortMap)
 export function CharacterSelectionModal({ show, onHide, onSelect, filter = () => true, newFirst = false }: CharacterSelectionModalProps) {
-  const sortKeys = useMemo(() => newFirst ? [...characterSortKeys] : characterSortKeys.slice(1), [newFirst])
+  const { t } = useTranslation(["page_character", "charNames_gen"])
   const { database } = useContext(DatabaseContext)
   const [state, stateDispatch] = useDBState("CharacterDisplay", initialCharacterDisplayState)
-  const { weaponType, element } = state
-  const { t } = useTranslation(["page_character", "charNames_gen"])
-
-  const [sortBy, setsortBy] = useState(sortKeys[0])
-  const [ascending, setascending] = useState(false)
-
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
 
-  const [favesDirty, setFavesDirty] = useForceUpdate()
-  useEffect(() => {
-    // character favorite updater
-    return database.states.followAny(s => s.includes("charMeta_") && setFavesDirty())
-  }, [setFavesDirty, database])
+  const [dbDirty, forceUpdate] = useForceUpdate()
+
+  // character favorite updater
+  useEffect(() => database.states.followAny(s => s.includes("charMeta_") && forceUpdate()), [forceUpdate, database])
 
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
-
-  const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
-  const filterConfigs = useMemo(() => characterSheets && favesDirty && characterFilterConfigs(database, characterSheets), [favesDirty, database, characterSheets])
-  const gender = useGender(database)
-  const ownedCharacterKeyList = useMemo(() => characterSheets ? allCharacterKeys.filter(cKey => filter(database.chars.get(cKey), characterSheets(cKey, gender)!)) : [], [database, gender, characterSheets, filter])
-  const characterKeyList = useMemo(() => (sortConfigs && filterConfigs) ?
-    ownedCharacterKeyList
-      .filter(filterFunction({ element, weaponType, favorite: "yes", name: deferredSearchTerm }, filterConfigs))
-      .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
-      .concat(
-        ownedCharacterKeyList
-          .filter(filterFunction({ element, weaponType, favorite: "no", name: deferredSearchTerm }, filterConfigs))
-          .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
-      )
-    : [],
-    [element, weaponType, sortBy, ascending, sortConfigs, filterConfigs, ownedCharacterKeyList, deferredSearchTerm])
+  const deferredState = useDeferredValue(state)
+  const deferredDbDirty = useDeferredValue(dbDirty)
+  const characterKeyList = useMemo(() => {
+    if (!characterSheets) return []
+    const { element, weaponType, sortType, ascending } = deferredState
+    const sortByKeys = [...(newFirst ? ["new"] : []), ...(characterSortMap[sortType] ?? [])] as CharacterSortKey[]
+    return deferredDbDirty && allCharacterKeys
+      .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, characterFilterConfigs(database, characterSheets)))
+      .sort(sortFunction(sortByKeys, ascending, characterSortConfigs(database, characterSheets)))
+  }, [database, newFirst, deferredState, characterSheets, deferredDbDirty, deferredSearchTerm])
 
   if (!characterSheets) return null
+
+  const { weaponType, element, sortType, ascending } = state
+
   return <ModalWrapper open={show} onClose={onHide} sx={{ "& .MuiContainer-root": { justifyContent: "normal" } }}>
     <CardDark>
       <CardContent sx={{ py: 1, display: "flex", alignItems: "center", gap: 1, flexWrap: "wrap" }}>
@@ -94,8 +83,8 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
           />
         </Box>
         <SortByButton sx={{ height: "100%" }}
-          sortKeys={sortKeys} value={sortBy} onChange={setsortBy as any}
-          ascending={ascending} onChangeAsc={setascending} />
+          sortKeys={sortKeys} value={sortType} onChange={sortType => stateDispatch({ sortType })}
+          ascending={ascending} onChangeAsc={ascending => stateDispatch({ ascending })} />
         <CloseButton onClick={onHide} />
       </CardContent>
       <Divider />
