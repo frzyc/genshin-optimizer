@@ -22,13 +22,15 @@ export default function useCharSelectionCallback() {
       let navTab = tab
       // Create a new character + weapon, with linking if char isnt in db.
       if (!character) {
-        const newChar = initialCharacter(characterKey)
-        database.chars.set(characterKey, newChar)
-        const characterSheet = await CharacterSheet.get(characterKey, database.gender)
-        if (!characterSheet) return
-        const weapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
-        const weaponId = database.weapons.new(weapon)
-        database.weapons.set(weaponId, { location: charKeyToLocCharKey(characterKey) })
+        database.chars.set(characterKey, initialCharacter(characterKey))
+        const newChar = database.chars.get(characterKey)
+        if (!newChar?.equippedWeapon) {
+          const characterSheet = await CharacterSheet.get(characterKey, database.gender)
+          if (!characterSheet) return
+          const weapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
+          const weaponId = database.weapons.new(weapon)
+          database.weapons.set(weaponId, { location: charKeyToLocCharKey(characterKey) })
+        }
         // If we are navigating to a new character,
         // redirect to Overview, regardless of previous tab.
         // Trying to enforce a certain UI flow when building new characters

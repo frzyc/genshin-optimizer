@@ -14,9 +14,9 @@ import ThumbSide from "./ThumbSide"
 export function LocationAutocomplete({ location, setLocation, filter = () => true }: { location: LocationKey, setLocation: (v: LocationKey) => void, filter?: (v: CharacterSheet) => void }) {
   const { t } = useTranslation(["ui", "artifact", "charNames_gen"])
   const { database } = useContext(DatabaseContext)
-  const characterSheets = usePromise(() => CharacterSheet.getAll, [])
-  const toText = useCallback((key: LocationCharacterKey): string => t(`charNames_gen:${charKeyToCharName(database.chars.LocationToCharacterKey(key))}`), [database, t])
   const gender = useGender(database)
+  const characterSheets = usePromise(() => CharacterSheet.getAll, [])
+  const toText = useCallback((key: LocationCharacterKey): string => t(`charNames_gen:${charKeyToCharName(database.chars.LocationToCharacterKey(key), gender)}`), [database, gender, t])
   const toImg = useCallback((key: LocationKey) => key === "" ? <BusinessCenter /> : characterSheets ? <ThumbSide src={characterSheets[charKeyToCharSheetKey(database.chars.LocationToCharacterKey(key), gender)]?.thumbImgSide} sx={{ pr: 1 }} /> : <></>, [database, gender, characterSheets])
   const isFavorite = useCallback((key: LocationCharacterKey) => key === "Traveler" ?
     travelerKeys.some(key => database.states.getWithInit(`charMeta_${key}`, initCharMeta).favorite) :

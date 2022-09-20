@@ -373,6 +373,6 @@ export function TravelerToElement(key: TravelerKey, element: TravelerElementKey)
 
 export type LocationKey = LocationCharacterKey | ""
 
-export function charKeyToCharName(ck: CharacterKey, gender: "F" | "M" = "F"): string {
+export function charKeyToCharName(ck: CharacterKey, gender: "F" | "M"): string {
   return ck.startsWith("Traveler") ? "Traveler" + gender : ck
 }

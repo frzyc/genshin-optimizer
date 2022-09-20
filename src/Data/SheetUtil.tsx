@@ -1,7 +1,7 @@
 import { Translate } from "../Components/Translate"
 import { ReadNode } from "../Formula/type"
 import { customStringRead } from "../Formula/utils"
-import { ArtifactSetKey, CharacterKey, CharacterSheetKey, NonTravelerCharacterKey, WeaponKey } from "../Types/consts"
+import { ArtifactSetKey, CharacterSheetKey, NonTravelerCharacterKey, WeaponKey } from "../Types/consts"
 
 export const st = (strKey: string, values?: object) => <Translate ns="sheet" key18={strKey} values={values} />
 export const sgt = (strKey: string) => <Translate ns="sheet_gen" key18={strKey} />

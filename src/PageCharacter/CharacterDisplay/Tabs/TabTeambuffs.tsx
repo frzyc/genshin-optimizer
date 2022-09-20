@@ -173,7 +173,7 @@ function TeammateAutocomplete({ characterKey, team, label, setChar }: { characte
   const { database } = useContext(DatabaseContext)
   const gender = useGender(database)
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
-  const toText = useCallback((key: CharacterKey): string => key.startsWith("Traveler") ? `${t(`charNames_gen:${charKeyToCharName(key)}`)} (${t(`sheet_gen:element.${characterSheets?.[charKeyToCharSheetKey(key, gender)]?.elementKey}`)})` : t(`charNames_gen:${key}`), [characterSheets, t, gender])
+  const toText = useCallback((key: CharacterKey): string => key.startsWith("Traveler") ? `${t(`charNames_gen:${charKeyToCharName(key, gender)}`)} (${t(`sheet_gen:element.${characterSheets?.[charKeyToCharSheetKey(key, gender)]?.elementKey}`)})` : t(`charNames_gen:${key}`), [characterSheets, t, gender])
   const toImg = useCallback((key: CharacterKey | "") => key === "" ? <PersonAdd /> : characterSheets ? <ThumbSide src={characterSheets[charKeyToCharSheetKey(key, gender)]?.thumbImgSide} sx={{ pr: 1 }} /> : <></>, [characterSheets, gender])//
   const isFavorite = useCallback((key: CharacterKey) => database.states.getWithInit(`charMeta_${key}`, initCharMeta).favorite, [database])
   const onDisable = useCallback((key: CharacterKey | "") => team.filter(t => t && t !== characterKey).includes(key) || (key.startsWith("Traveler") && team.some((t, i) => t.startsWith("Traveler"))), [team, characterKey])

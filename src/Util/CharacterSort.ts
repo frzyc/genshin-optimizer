@@ -38,6 +38,6 @@ export function characterFilterConfigs(database: ArtCharDatabase, characterSheet
     weaponType: (ck, filter) => filter.includes(characterSheets?.[charKeyToCharSheetKey(ck, database.gender)]?.weaponTypeKey),
     favorite: (ck, filter) =>
       !filter || (filter === (database.states.getWithInit(`charMeta_${ck}`, initCharMeta).favorite ? "yes" : "no")),
-    name: (ck, filter) => !filter || (i18n.t(`charNames_gen:${charKeyToCharName(ck)}`).toLowerCase().includes(filter.toLowerCase()))
+    name: (ck, filter) => !filter || (i18n.t(`charNames_gen:${charKeyToCharName(ck, database.gender)}`).toLowerCase().includes(filter.toLowerCase()))
   }
 }
