@@ -14,7 +14,7 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
   toStorageKey(key: CacheKey): StorageKey {
     return key as any as StorageKey
   }
-  validate(obj: any): StorageValue | undefined {
+  validate(obj: any, key: CacheKey): StorageValue | undefined {
     return obj as StorageValue | undefined
   }
   toCache(storageObj: StorageValue, id: string): CacheValue | undefined {
@@ -43,14 +43,21 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
   get values() { return Object.values(this.data) }
   get(key: CacheKey | "" | undefined): CacheValue | undefined { return key ? this.data[key] : undefined }
   getStorage(key: CacheKey) { return this.database.storage.get(this.toStorageKey(key) as any) }
-  set(key: CacheKey, value: Partial<StorageValue>) {
+  set(key: CacheKey, value: Partial<StorageValue>): boolean {
     const old = this.getStorage(key)
-    const validated = this.validate({ ...(old ?? {}), ...value })
-    if (!validated) return this.trigger(key, "invalid", value)
+    const validated = this.validate({ ...(old ?? {}), ...value }, key)
+    if (!validated) {
+      this.trigger(key, "invalid", value)
+      return false
+    }
     const cached = this.toCache(validated, key as any)
-    if (!cached) return this.trigger(key, "invalid", value)
+    if (!cached) {
+      this.trigger(key, "invalid", value)
+      return false
+    }
     if (!old) this.trigger(key, "new", cached)
     this.setCached(key, cached)
+    return true
   }
   setCached(key: CacheKey, cached: CacheValue) {
     deepFreeze(cached)
@@ -77,5 +84,5 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
     }
   }
 }
-type TriggerString = "update" | "remove" | "new" | "invalid"
+export type TriggerString = "update" | "remove" | "new" | "invalid"
 type Callback<Arg> = (key: Arg, reason: TriggerString, object: any) => void

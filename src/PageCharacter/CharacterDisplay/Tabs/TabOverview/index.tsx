@@ -1,5 +1,5 @@
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
-import { Badge, Box, CardActionArea, CardContent, Chip, Grid, IconButton, Stack, Typography } from "@mui/material";
+import { Badge, Box, CardActionArea, Chip, Grid, IconButton, Stack, Typography } from "@mui/material";
 import { useCallback, useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Assets from "../../../../Assets/Assets";
@@ -16,9 +16,10 @@ import { CharacterContext } from "../../../../Context/CharacterContext";
 import { DataContext } from "../../../../Context/DataContext";
 import { TalentSheetElementKey } from "../../../../Data/Characters/CharacterSheet";
 import { getLevelString } from "../../../../Data/LevelData";
+import { initCharMeta } from "../../../../Database/Data/StateData";
 import { uiInput as input } from "../../../../Formula";
 import useCharacterReducer from "../../../../ReactHooks/useCharacterReducer";
-import useDBState, { initCharMeta } from "../../../../ReactHooks/useDBState";
+import useDBState from "../../../../ReactHooks/useDBState";
 import { allSlotKeys, Ascension, ElementKey } from "../../../../Types/consts";
 import { range } from "../../../../Util/Util";
 import EquipmentSection from "./EquipmentSection";
@@ -105,7 +106,7 @@ function CharacterProfileCard() {
       </Box>
       <Box src={characterSheet.cardImg} component="img" width="100%" height="auto" />
     </Box>
-    <CardContent>
+    <Box>
       <CardActionArea sx={{ p: 1 }} onClick={() => navigate("talent")}>
         <Grid container spacing={1} mt={-1}>
           {(["auto", "skill", "burst"] as TalentSheetElementKey[]).map(tKey =>
@@ -127,7 +128,7 @@ function CharacterProfileCard() {
                     height: "1.25em"
                   }
                 }}>
-                <Box component="img" src={characterSheet.getTalentOfKey(tKey, charEle)?.img} width="100%" height="auto" />
+                <Box component="img" src={characterSheet.getTalentOfKey(tKey)?.img} width="100%" height="auto" />
               </Badge>
             </Grid>)}
         </Grid>
@@ -137,7 +138,7 @@ function CharacterProfileCard() {
         {range(1, 6).map(i =>
           <Grid item xs={4} key={i}>
             <CardActionArea onClick={() => characterDispatch({ constellation: i === constellation ? i - 1 : i })}>
-              <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i}` as TalentSheetElementKey, charEle)?.img}
+              <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i}` as TalentSheetElementKey)?.img}
                 sx={{
                   ...(constellation >= i ? {} : { filter: "brightness(50%)" })
                 }}
@@ -150,6 +151,6 @@ function CharacterProfileCard() {
           {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={team[i]} index={i} /></Grid>)}
         </Grid>
       </CardActionArea>
-    </CardContent>
+    </Box>
   </CardLight >
 }

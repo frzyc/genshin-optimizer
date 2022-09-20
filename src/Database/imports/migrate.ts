@@ -1,5 +1,5 @@
 import { allSubstatKeys } from "../../Types/artifact"
-import { allElements, allWeaponTypeKeys } from "../../Types/consts"
+import { allElements, allWeaponTypeKeys, travelerElements } from "../../Types/consts"
 import { crawlObject, layeredAssignment } from "../../Util/Util"
 import { DBStorage } from "../DBStorage"
 
@@ -9,7 +9,7 @@ import { DBStorage } from "../DBStorage"
 // 2. Call the added `migrateV<x>ToV<x+1>` from `migrate`
 // 3. Update `currentDBVersion`
 
-export const currentDBVersion = 19
+export const currentDBVersion = 20
 
 /**
  * Migrate parsed data in `storage` in-place to a parsed data of the latest supported DB version.
@@ -38,6 +38,7 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 17) { migrateV16toV17(storage); storage.setDBVersion(17) }
   if (version < 18) { migrateV17toV18(storage); storage.setDBVersion(18) }
   if (version < 19) { migrateV18toV19(storage); storage.setDBVersion(19) }
+  if (version < 20) { migrateV19toV20(storage); storage.setDBVersion(20) }
 
   if (version > currentDBVersion) throw new Error(`Database version ${version} is not supported`)
 
@@ -246,7 +247,7 @@ function migrateV17toV18(storage: DBStorage) {
     }
   }
 }
-// 8.11.0 - Present
+// 8.11.0 - 8.19.2
 function migrateV18toV19(storage: DBStorage) {
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {
@@ -263,4 +264,18 @@ function migrateV18toV19(storage: DBStorage) {
       storage.set(`state_charMeta_${characterKey}`, charMeta)
     }
   }
+}
+
+// 8.20.0 - Present
+function migrateV19toV20(storage: DBStorage) {
+  // convert from "Traveler" to element specific "Traveler..."
+  const key = "char_Traveler"
+  const character = storage.get(key)
+  if (!character) return
+  storage.remove(key)
+  travelerElements.forEach(ele => {
+    const targets = character?.customMultiTargets?.[ele] ?? []
+    const charKey = `Traveler${ele[0].toUpperCase() + ele.slice(1)}`
+    storage.set(`char_${charKey}`, { ...character, customMultiTarget: targets, key: charKey })
+  })
 }

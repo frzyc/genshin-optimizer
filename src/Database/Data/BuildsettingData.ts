@@ -1,7 +1,7 @@
 import { StatKey } from "../../KeyMap";
 import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Build";
 import { MainStatKey, SubstatKey } from "../../Types/artifact";
-import { ArtifactSetKey, CharacterKey } from "../../Types/consts";
+import { allCharacterKeys, ArtifactSetKey, CharacterKey } from "../../Types/consts";
 import { deepClone } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
@@ -38,14 +38,16 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, B
     for (const key of this.database.storage.keys) {
       if (key.startsWith("buildSetting_")) {
         const [, charKey] = key.split("buildSetting_")
-        this.set(charKey as CharacterKey, this.database.storage.get(key))
+        if (!this.set(charKey as CharacterKey, this.database.storage.get(key)))
+          this.database.storage.remove(key)
       }
     }
   }
   toStorageKey(key: string): string {
     return `buildSetting_${key}`
   }
-  validate(obj: object): BuildSetting | undefined {
+  validate(obj: object, key: string): BuildSetting | undefined {
+    if (!allCharacterKeys.includes(key as CharacterKey)) return
     let { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = (obj as any) ?? {}
 
     if (typeof statFilters !== "object") statFilters = {}
@@ -95,7 +97,7 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, B
 
   set(key: CharacterKey, value: BuildSettingReducerAction) {
     const oldState = this.get(key) as BuildSetting
-    super.set(key, buildSettingsReducer(oldState, value))
+    return super.set(key, buildSettingsReducer(oldState, value))
   }
 }
 type BSMainStatKey = {

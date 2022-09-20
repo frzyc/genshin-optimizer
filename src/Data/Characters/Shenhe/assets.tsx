@@ -1,4 +1,4 @@
-import { TalentSheetElementKey } from '../CharacterSheet'
+import { AssetType } from '../AssetType'
 import banner from './Banner.png'
 import burst from './burst.png'
 import card from './Character_Shenhe_Card.jpg'
@@ -15,8 +15,4 @@ import passive2 from './passive2.png'
 import passive3 from './passive3.png'
 import skill from './skill.png'
 
-const talentAssets: Partial<Record<TalentSheetElementKey, string>> = {
-  constellation1, constellation2, constellation3, constellation4, constellation5, constellation6, skill, burst, passive1, passive2, passive3
-}
-
-export { card, thumb, thumbSide, banner, talentAssets }
+export default { card, thumb, thumbSide, banner, constellation1, constellation2, constellation3, constellation4, constellation5, constellation6, skill, burst, passive1, passive2, passive3 } as AssetType

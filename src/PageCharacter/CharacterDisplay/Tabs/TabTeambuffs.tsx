@@ -1,24 +1,28 @@
 import { PersonAdd } from "@mui/icons-material";
-import { CardContent, CardHeader, Divider, Grid, Typography } from "@mui/material";
+import { CardContent, CardHeader, Divider, Grid, Skeleton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { useContext, useMemo } from 'react';
+import { Suspense, useCallback, useContext, useMemo } from 'react';
 import { useTranslation } from "react-i18next";
 import CardLight from "../../../Components/Card/CardLight";
-import CharacterAutocomplete from "../../../Components/Character/CharacterAutocomplete";
 import CharacterCard from "../../../Components/Character/CharacterCard";
+import ThumbSide from "../../../Components/Character/ThumbSide";
 import ColorText from "../../../Components/ColoredText";
 import DocumentDisplay from "../../../Components/DocumentDisplay";
 import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
+import GeneralAutocomplete, { GeneralAutocompleteOption } from "../../../Components/GeneralAutocomplete";
 import InfoTooltip from "../../../Components/InfoTooltip";
 import { CharacterContext, CharacterContextObj } from "../../../Context/CharacterContext";
 import { DataContext, dataContextObj } from "../../../Context/DataContext";
 import { ArtifactSheet } from "../../../Data/Artifacts/ArtifactSheet";
+import CharacterSheet from "../../../Data/Characters/CharacterSheet";
 import { resonanceSheets } from "../../../Data/Resonance";
-import { uiInput as input } from "../../../Formula";
+import { initCharMeta } from "../../../Database/Data/StateData";
+import { DatabaseContext } from "../../../Database/Database";
 import { NodeDisplay } from "../../../Formula/uiData";
 import useCharSelectionCallback from "../../../ReactHooks/useCharSelectionCallback";
+import useGender from "../../../ReactHooks/useGender";
 import usePromise from "../../../ReactHooks/usePromise";
-import { ElementKey } from "../../../Types/consts";
+import { CharacterKey, charKeyToCharName } from "../../../Types/consts";
 import { objPathValue, range } from "../../../Util/Util";
 
 export default function TabTeambuffs() {
@@ -87,7 +91,9 @@ function TeammateDisplay({ index }: { index: number }) {
   const { t } = useTranslation("page_character")
   const { character: active, character: { key: activeCharacterKey }, characterDispatch } = useContext(CharacterContext)
   const teamMateKey = active.team[index]
+  const team = useMemo(() => [activeCharacterKey, ...active.team].filter((t, i) => (i - 1) !== index), [active.team, activeCharacterKey, index])
   const onClickHandler = useCharSelectionCallback()
+  const setTeammate = useCallback((charKey: CharacterKey | "") => characterDispatch({ type: "team", index, charKey }), [index, characterDispatch])
 
   const dataBundle = teamData[teamMateKey]
   const teammateCharacterContext: CharacterContextObj | undefined = useMemo(() => dataBundle && {
@@ -105,13 +111,9 @@ function TeammateDisplay({ index }: { index: number }) {
     teamData: teamData,
   }, [dataBundle, teamData])
   return <CardLight>
-    <CharacterAutocomplete fullWidth value={teamMateKey}
-      onChange={charKey => characterDispatch({ type: "team", index, charKey })}
-      disable={ck => ck === activeCharacterKey || (ck !== "" && active.team.includes(ck))}
-      labelText={t("teammate", { count: index + 1 })}
-      defaultText={t("none")}
-      defaultIcon={<PersonAdd />}
-      showDefault
+    <TeammateAutocomplete characterKey={teamMateKey} team={team}
+      setChar={setTeammate}
+      label={t("teammate", { count: index + 1 })}
     />
     {teamMateKey && teammateCharacterContext && <CharacterContext.Provider value={teammateCharacterContext}>
       {teamMateDataContext && <DataContext.Provider value={teamMateDataContext}>
@@ -145,7 +147,7 @@ function CharArtifactCondDisplay() {
   const sections = useMemo(() => artifactSheets &&
     Object.entries(ArtifactSheet.setEffects(artifactSheets, data))
       .flatMap(([setKey, setNums]) =>
-        setNums.flatMap(sn => artifactSheets[setKey]!.setEffectDocument(sn)!))
+        setNums.flatMap(sn => artifactSheets(setKey)!.setEffectDocument(sn)!))
     , [artifactSheets, data])
   if (!sections) return null
   return <DocumentDisplay sections={sections} teamBuffOnly={true} />
@@ -159,10 +161,33 @@ function CharWeaponCondDisplay() {
 }
 function CharTalentCondDisplay() {
   const { character: { key: charKey } } = useContext(CharacterContext)
-  const { data, teamData } = useContext(DataContext)
+  const { teamData } = useContext(DataContext)
   const characterSheet = teamData[charKey]!.characterSheet
-  const talent = characterSheet.getTalent(data.get(input.charEle).value as ElementKey)!
-  const sections = Object.values(talent.sheets).flatMap(sts => sts.sections)
+  const sections = Object.values(characterSheet.talent).flatMap(sts => sts.sections)
   if (!sections) return null
   return <DocumentDisplay sections={sections} teamBuffOnly={true} />
+}
+
+function TeammateAutocomplete({ characterKey, team, label, setChar }: { characterKey, team: Array<CharacterKey | "">, label: string, setChar: (k: CharacterKey | "") => void }) {
+  const { t } = useTranslation(["charNames_gen", "page_character", "sheet_gen"])
+  const { database } = useContext(DatabaseContext)
+  const gender = useGender(database)
+  const characterSheets = usePromise(() => CharacterSheet.getAll, [])
+  const toText = useCallback((key: CharacterKey): string => key.startsWith("Traveler") ? `${t(`charNames_gen:${charKeyToCharName(key, gender)}`)} (${t(`sheet_gen:element.${characterSheets?.(key, gender)?.elementKey}`)})` : t(`charNames_gen:${key}`), [characterSheets, t, gender])
+  const toImg = useCallback((key: CharacterKey | "") => key === "" ? <PersonAdd /> : characterSheets ? <ThumbSide src={characterSheets(key, gender)?.thumbImgSide} sx={{ pr: 1 }} /> : <></>, [characterSheets, gender])//
+  const isFavorite = useCallback((key: CharacterKey) => database.states.getWithInit(`charMeta_${key}`, initCharMeta).favorite, [database])
+  const onDisable = useCallback((key: CharacterKey | "") => team.filter(t => t && t !== characterKey).includes(key) || (key.startsWith("Traveler") && team.some((t, i) => t.startsWith("Traveler"))), [team, characterKey])
+  const values: GeneralAutocompleteOption<CharacterKey | "">[] = useMemo(() => [{
+    key: "",
+    label: t`page_character:none`,
+  },
+  ...database.chars.keys
+    .map(v => ({ key: v, label: toText(v), favorite: isFavorite(v) }))
+    .sort((a, b) => {
+      if (a.favorite && !b.favorite) return -1
+      if (!a.favorite && b.favorite) return 1
+      return a.label.localeCompare(b.label)
+    })
+  ], [t, toText, isFavorite, database])
+  return <Suspense fallback={<Skeleton variant="text" width={100} />}><GeneralAutocomplete size="small" label={label} options={values} valueKey={characterKey} clearKey="" onChange={setChar} disable={onDisable} toImg={toImg} /></Suspense>
 }

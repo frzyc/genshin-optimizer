@@ -111,7 +111,7 @@ function Content() {
 function MatchTitle() {
   const { t } = useTranslation("ui")
   let { params: { page = "" } } = useMatch({ path: "/:page" }) ?? { params: { page: "" } }
-  useTitle(page && t(`tabs.${page}`))
+  useTitle(useMemo(() => page && t(`tabs.${page}`), [page, t]))
   return null
 }
 export default App;

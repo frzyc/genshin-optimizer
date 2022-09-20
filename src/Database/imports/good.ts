@@ -1,5 +1,4 @@
-import { CharacterKey } from "pipeline";
-import { allCharacterKeys } from "../../Types/consts";
+import { allCharacterKeys, CharacterKey } from "../../Types/consts";
 import { ArtCharDatabase } from "../Database";
 import { SandboxStorage } from "../DBStorage";
 import { GOSource, IGO, IGOOD, ImportResult, newImportResult } from "../exim";
@@ -48,7 +47,7 @@ function importGOOD1(good: IGOOD, base: ArtCharDatabase, keepNotInImport: boolea
 
   const charUnfollow = base.chars.followAny((key, reason, value) => {
     const arr = result.characters[reason]
-    const ind = arr.findIndex(c => c.key === key)
+    const ind = arr.findIndex(c => c?.key === key)
     if (ind < 0) arr.push(value)
     else arr[ind] = value
   })

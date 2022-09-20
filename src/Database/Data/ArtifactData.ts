@@ -1,7 +1,7 @@
 import Artifact from "../../Data/Artifacts/Artifact";
 import KeyMap from "../../KeyMap";
 import { allMainStatKeys, allSubstatKeys, IArtifact, ICachedArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../../Types/artifact";
-import { allArtifactRarities, allArtifactSets, allCharacterKeys, allSlotKeys } from "../../Types/consts";
+import { allArtifactRarities, allArtifactSets, allSlotKeys, charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 
@@ -11,7 +11,8 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
     super(database)
     for (const key of this.database.storage.keys)
       if (key.startsWith("artifact_"))
-        this.set(key, this.database.storage.get(key) as any)
+        if (!this.set(key, this.database.storage.get(key) as any))
+          this.database.storage.remove(key)
   }
   validate(obj: object): IArtifact | undefined {
     return validateArtifact(obj)
@@ -34,13 +35,13 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
       //swap to prevArt <-> prevChar && newArt <-> newChar(outside of this if)
 
       if (prevArt)
-        super.setCached(prevArt.id, { ...prevArt, location: prevChar?.key ?? "" })
+        super.setCached(prevArt.id, { ...prevArt, location: prevChar?.key ? charKeyToLocCharKey(prevChar.key) : "" })
       if (newChar)
-        this.database.chars.setEquippedArtifact(newChar.key, slotKey, newArt.id)
+        this.database.chars.setEquippedArtifact(charKeyToLocCharKey(newChar.key), slotKey, newArt.id)
       if (prevChar)
-        this.database.chars.setEquippedArtifact(prevChar.key, slotKey, prevArt?.id ?? "")
+        this.database.chars.setEquippedArtifact(charKeyToLocCharKey(prevChar.key), slotKey, prevArt?.id ?? "")
     } else
-      newArt.location && this.database.chars.trigger(newArt.location, "update", this.database.chars.get(newArt.location))
+      newArt.location && this.database.chars.triggerCharacter(newArt.location, "update")
     return newArt
   }
   deCache(artifact: ICachedArtifact): IArtifact {
@@ -56,10 +57,7 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
   remove(key: string) {
     const art = this.get(key)
     if (!art) return
-
-    const char = art.location && this.database.chars.get(art.location)
-    if (char && char.equippedArtifacts[art.slotKey] === key)
-      this.database.chars.setEquippedArtifact(char.key, art.slotKey, "")
+    art.location && this.database.chars.setEquippedArtifact(art.location, art.slotKey, "")
     this.deletedArts.add(key)
     super.remove(key)
   }
@@ -243,7 +241,7 @@ export function validateArtifact(obj: any): IArtifact | undefined {
   if (!plausibleMainStats.includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return // ambiguous mainstat
-  if (!allCharacterKeys.includes(location)) location = ""
+  if (!locationCharacterKeys.includes(location)) location = ""
   return { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock }
 }
 function parseSubstats(obj: any): ISubstat[] {

@@ -295,7 +295,7 @@ function ArtifactSetsEditor({ artSet, setArtSet }: { artSet: ISet, setArtSet(art
   const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const setSet = useCallback((setKey: ArtifactSetKey | "") => {
     if (!setKey || !artifactSheets) return
-    setArtSet({ ...artSet, [setKey]: parseInt(Object.keys(artifactSheets[setKey].setEffects)[0]) })
+    setArtSet({ ...artSet, [setKey]: parseInt(Object.keys(artifactSheets(setKey).setEffects)[0]) })
   }, [artSet, setArtSet, artifactSheets])
 
   const setValue = useCallback((setKey: ArtifactSetKey) => (value: 1 | 2 | 4) => setArtSet({ ...artSet, [setKey]: value }), [artSet, setArtSet])
@@ -323,7 +323,7 @@ function ArtifactSetsEditor({ artSet, setArtSet }: { artSet: ISet, setArtSet(art
           }
         })}
         defaultText={"New Artifact Set"}
-        disable={(setKey) => Object.keys(artSet).includes(setKey) || !artifactSheets?.[setKey] || Object.keys(artifactSheets[setKey].setEffects).every(n => parseInt(n) > remaining)}
+        disable={(setKey) => Object.keys(artSet).includes(setKey) || !artifactSheets?.(setKey) || Object.keys(artifactSheets(setKey).setEffects).every(n => parseInt(n) > remaining)}
       />
     </CardLight>
 

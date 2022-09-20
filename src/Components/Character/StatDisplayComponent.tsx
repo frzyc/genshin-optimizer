@@ -4,6 +4,7 @@ import { Box } from "@mui/system"
 import { useContext, useMemo } from "react"
 import { DataContext } from "../../Context/DataContext"
 import { OptimizationTargetContext } from "../../Context/OptimizationTargetContext"
+import { DatabaseContext } from "../../Database/Database"
 import { getDisplayHeader, getDisplaySections } from "../../Formula/DisplayUtil"
 import { DisplaySub } from "../../Formula/type"
 import { NodeDisplay } from "../../Formula/uiData"
@@ -32,7 +33,8 @@ export default function StatDisplayComponent() {
 function Section({ displayNs, sectionKey }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string }) {
   const optimizationTarget = useContext(OptimizationTargetContext)
   const { data, oldData } = useContext(DataContext)
-  const header = usePromise(() => getDisplayHeader(data, sectionKey), [data, sectionKey])
+  const { database } = useContext(DatabaseContext)
+  const header = usePromise(() => getDisplayHeader(data, sectionKey, database), [data, sectionKey])
   const displayNsReads = useMemo(() => objectMap(displayNs, (n, nodeKey) => customRead(["display", sectionKey, nodeKey])), [displayNs, sectionKey]);
   if (!header) return <CardDark></CardDark>
 

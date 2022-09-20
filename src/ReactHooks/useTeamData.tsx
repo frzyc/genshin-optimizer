@@ -63,7 +63,7 @@ export async function getTeamData(database: ArtCharDatabase, characterKey: Chara
   const character = database.chars.get(characterKey)
   if (!character) return
 
-  const char1DataBundle = await getCharDataBundle(true, mainStatAssumptionLevel,
+  const char1DataBundle = await getCharDataBundle(database, true, mainStatAssumptionLevel,
     character,
     overrideWeapon ? overrideWeapon : database.weapons.get(character.equippedWeapon)!,
     (overrideArt ?? Object.values(character.equippedArtifacts).map(a => database.arts.get(a)).filter(a => a) as ICachedArtifact[])
@@ -76,7 +76,7 @@ export async function getTeamData(database: ArtCharDatabase, characterKey: Chara
     if (!ck) return
     const tchar = database.chars.get(ck)
     if (!tchar) return
-    const databundle = await getCharDataBundle(false, 0,
+    const databundle = await getCharDataBundle(database, false, 0,
       { ...tchar, conditional: character.teamConditional[ck] ?? {} },
       database.weapons.get(tchar.equippedWeapon)!,
       Object.values(tchar.equippedArtifacts).map(a => database.arts.get(a)).filter(a => a) as ICachedArtifact[])
@@ -95,13 +95,13 @@ type CharBundle = {
   data: Data[]
 }
 
-async function getCharDataBundle(useCustom = false, mainStatAssumptionLevel: number,
+async function getCharDataBundle(database: ArtCharDatabase, useCustom = false, mainStatAssumptionLevel: number,
   character: ICachedCharacter,
   weapon: ICachedWeapon,
   artifacts: ICachedArtifact[] | Data,
 ): Promise<CharBundle | undefined> {
 
-  const characterSheet = await CharacterSheet.get(character.key)
+  const characterSheet = await CharacterSheet.get(character.key, database.gender)
   if (!characterSheet) return
   const weaponSheet = await WeaponSheet.get(weapon.key)
   if (!weaponSheet) return
@@ -115,7 +115,7 @@ async function getCharDataBundle(useCustom = false, mainStatAssumptionLevel: num
   })() : weaponSheet.data
 
   const artifactSheetsData = await ArtifactSheet.getAllData
-  const sheetData = mergeData([characterSheet.getData(character.elementKey), weaponSheetsData, artifactSheetsData])
+  const sheetData = mergeData([characterSheet.data, weaponSheetsData, artifactSheetsData])
   const artifactData = Array.isArray(artifacts) ? artifacts.map(a => dataObjForArtifact(a, mainStatAssumptionLevel)) : [artifacts]
   const data = [
     ...artifactData,

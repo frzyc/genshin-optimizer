@@ -13,6 +13,7 @@ import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../Database/Database";
 import useDBState from "../ReactHooks/useDBState";
 import useForceUpdate from "../ReactHooks/useForceUpdate";
+import useGender from "../ReactHooks/useGender";
 import usePromise from "../ReactHooks/usePromise";
 import { ICachedCharacter } from "../Types/character";
 import { allCharacterKeys, CharacterKey } from "../Types/consts";
@@ -53,8 +54,9 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
 
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
   const filterConfigs = useMemo(() => characterSheets && favesDirty && characterFilterConfigs(database, characterSheets), [favesDirty, database, characterSheets])
-  const ownedCharacterKeyList = useMemo(() => characterSheets ? allCharacterKeys.filter(cKey => filter(database.chars.get(cKey), characterSheets[cKey])) : [], [database, characterSheets, filter])
-  const characterKeyList = useMemo(() => (characterSheets && sortConfigs && filterConfigs) ?
+  const gender = useGender(database)
+  const ownedCharacterKeyList = useMemo(() => characterSheets ? allCharacterKeys.filter(cKey => filter(database.chars.get(cKey), characterSheets(cKey, gender)!)) : [], [database, gender, characterSheets, filter])
+  const characterKeyList = useMemo(() => (sortConfigs && filterConfigs) ?
     ownedCharacterKeyList
       .filter(filterFunction({ element, weaponType, favorite: "yes", name: deferredSearchTerm }, filterConfigs))
       .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
@@ -64,7 +66,7 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
           .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number)
       )
     : [],
-    [characterSheets, element, weaponType, sortBy, ascending, sortConfigs, filterConfigs, ownedCharacterKeyList, deferredSearchTerm])
+    [element, weaponType, sortBy, ascending, sortConfigs, filterConfigs, ownedCharacterKeyList, deferredSearchTerm])
 
   if (!characterSheets) return null
   return <ModalWrapper open={show} onClose={onHide} sx={{ "& .MuiContainer-root": { justifyContent: "normal" } }}>

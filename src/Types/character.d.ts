@@ -1,5 +1,5 @@
-import { MainStatKey } from "pipeline";
 import { EleEnemyResKey, StatKey } from "../KeyMap";
+import { MainStatKey } from "./artifact";
 import { AdditiveReactionKey, AmpReactionKey, ArtifactRarity, Ascension, CharacterKey, ElementKey, HitModeKey, InfusionAuraElements, SlotKey, SubstatType } from "./consts";
 import { IConditionalValues } from "./IConditional";
 
@@ -29,7 +29,6 @@ export interface ICharacter {
 
   // GO-specific
   hitMode: HitModeKey
-  elementKey?: ElementKey
   reaction?: AmpReactionKey | AdditiveReactionKey
   conditional: IConditionalValues
   bonusStats: Partial<Record<StatKey, number>>
@@ -37,7 +36,6 @@ export interface ICharacter {
   infusionAura: InfusionAuraElements | ""
   compareData: boolean
   customMultiTarget: CustomMultiTarget[]
-  customMultiTargets?: Record<ElementKey, CustomMultiTarget[]>
   team: [teammate1: CharacterKey | "", teammate2: CharacterKey | "", teammate3: CharacterKey | ""]
   teamConditional: Partial<Record<CharacterKey, IConditionalValues>>
 }

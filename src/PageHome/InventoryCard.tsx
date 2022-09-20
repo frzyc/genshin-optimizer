@@ -14,6 +14,7 @@ import { elementSvg } from "../Components/StatIcon"
 import CharacterSheet from "../Data/Characters/CharacterSheet"
 import WeaponSheet from "../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../Database/Database"
+import useGender from "../ReactHooks/useGender"
 import usePromise from "../ReactHooks/usePromise"
 import { allElements, allSlotKeys, allWeaponTypeKeys } from "../Types/consts"
 import { objectKeyMap } from "../Util/Util"
@@ -22,25 +23,24 @@ import { objectKeyMap } from "../Util/Util"
 export default function InventoryCard() {
   const { t } = useTranslation(["page_home", "ui"])
   const { database } = useContext(DatabaseContext)
+  const gender = useGender(database)
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
   const { characterTally, characterTotal } = useMemo(() => {
     const chars = database.chars.keys
     const tally = objectKeyMap(allElements, () => 0)
     if (characterSheets) chars.forEach(ck => {
-      let elementKey = characterSheets[ck]!.elementKey
-      if (!elementKey)
-        elementKey = database.chars.get(ck)!.elementKey ?? "anemo"
+      let elementKey = characterSheets(ck, gender)!.elementKey
       tally[elementKey] = tally[elementKey] + 1
     })
     return { characterTally: tally, characterTotal: chars.length }
-  }, [database, characterSheets])
+  }, [database, characterSheets, gender])
 
   const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
   const { weaponTally, weaponTotal } = useMemo(() => {
     const weapons = database.weapons.values
     const tally = objectKeyMap(allWeaponTypeKeys, () => 0)
     if (weaponSheets) weapons.forEach(wp => {
-      let type = weaponSheets[wp.key].weaponType
+      let type = weaponSheets(wp.key).weaponType
       tally[type] = tally[type] + 1
     })
     return { weaponTally: tally, weaponTotal: weapons.length }

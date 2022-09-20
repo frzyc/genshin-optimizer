@@ -1,11 +1,13 @@
-import { ICachedArtifact, MainStatKey } from "../Types/artifact";
-import { allArtifactRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, CharacterKey, SlotKey } from "../Types/consts";
-import { FilterConfigs, SortConfigs } from "../Util/SortByFilters";
 import Artifact from "../Data/Artifacts/Artifact";
+import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
+import { allArtifactRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, LocationKey, SlotKey } from "../Types/consts";
+import { FilterConfigs, SortConfigs } from "../Util/SortByFilters";
 import { probability } from "./RollProbability";
-import { SubstatKey } from "../Types/artifact";
 export const artifactSortKeys = ["rarity", "level", "artsetkey", "efficiency", "mefficiency", "probability"] as const
 export type ArtifactSortKey = typeof artifactSortKeys[number]
+
+export type FilterLocationKey = LocationKey | "Equipped" | "Inventory"
+
 export type FilterOption = {
   artSetKeys: ArtifactSetKey[],
   rarity: ArtifactRarity[],
@@ -14,7 +16,7 @@ export type FilterOption = {
   slotKeys: SlotKey[],
   mainStatKeys: MainStatKey[],
   substats: SubstatKey[]
-  location: CharacterKey | "Inventory" | "Equipped" | ""
+  location: FilterLocationKey
   exclusion: Array<"excluded" | "included">,
   locked: Array<"locked" | "unlocked">,
 }
