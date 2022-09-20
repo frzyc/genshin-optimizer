@@ -49,7 +49,7 @@ const dmgFormulas = {
     [key, dmgNode("atk", value, "plunging")])),
 } as const
 
-const { talent, data, elementKey } = electro(key, charKey)
+const { talent, data, elementKey } = electro(key, charKey, dmgFormulas)
 talent.auto = ct.talentTemplate("auto", [{
   text: tr("auto.fields.normal")
 }, {

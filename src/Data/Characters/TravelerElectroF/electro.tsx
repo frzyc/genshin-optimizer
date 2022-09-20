@@ -1,5 +1,6 @@
 import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
+import { DisplaySub } from '../../../Formula/type'
 import { equal, greaterEq, infoMut, percent, prod, subscript, sum } from '../../../Formula/utils'
 import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt } from '../../SheetUtil'
@@ -9,7 +10,7 @@ import Traveler from '../Traveler'
 import assets from './assets'
 import skillParam_gen from './skillParam_gen.json'
 
-export default function anemo(key: CharacterSheetKey, charKey: CharacterKey) {
+export default function electro(key: CharacterSheetKey, charKey: CharacterKey, dmgForms: { [key: string]: DisplaySub }) {
   const elementKey: ElementKey = "electro"
   const condCharKey = "TravelerElectro"
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
@@ -82,6 +83,7 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey) {
   const c6_thunder_dmg_ = greaterEq(input.constellation, 6, equal(condC6After2Thunder, "on", datamine.constellation6.thunder_dmg_))
 
   const dmgFormulas = {
+    ...dmgForms,
     skill: {
       dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
     },
