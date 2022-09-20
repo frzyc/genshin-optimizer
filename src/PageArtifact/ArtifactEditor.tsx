@@ -182,7 +182,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
     artifactDispatch({ type: "reset" })
   }, [cancelEdit, artifactDispatch])
   const update = useCallback((newValue: Partial<IArtifact>) => {
-    const newSheet = newValue.setKey ? artifactSheets![newValue.setKey] : sheet!
+    const newSheet = newValue.setKey ? artifactSheets!(newValue.setKey) : sheet!
 
     function pick<T>(value: T | undefined, available: readonly T[], prefer?: T): T {
       return (value && available.includes(value)) ? value : (prefer ?? available[0])
