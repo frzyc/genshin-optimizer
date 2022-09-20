@@ -90,8 +90,8 @@ export function ArtifactSetMultiAutocomplete({ artSetKeys, setArtSetKeys, ...pro
     allArtifactKeysWithGrouper={allArtifactSetsAndRarities}
     selectedArtifactKeys={artSetKeys}
     setArtifactKeys={setArtSetKeys}
-    getName={(key: ArtifactSetKey) => artifactSheets[key].nameRaw}
-    getImage={(key: ArtifactSetKey) => artifactSheets[key].defIcon}
+    getName={(key: ArtifactSetKey) => artifactSheets(key).nameRaw}
+    getImage={(key: ArtifactSetKey) => artifactSheets(key).defIcon}
     label={t("artifact:autocompleteLabels.sets")}
     groupBy={(option) => option.grouper?.toString() ?? ""}
     renderGroup={(params: AutocompleteRenderGroupParams) => params.group && <List key={params.group} component={Box}>
@@ -221,8 +221,8 @@ export function ArtifactSetSingleAutocomplete({ artSetKey, setArtSetKey, label =
     allArtifactKeysWithGrouper={allArtifactSetsAndRarities}
     selectedArtifactKey={artSetKey}
     setArtifactKey={setArtSetKey}
-    getName={(key: ArtifactSetKey | "") => key && artifactSheets[key].nameRaw}
-    getImage={(key: ArtifactSetKey | "") => key ? artifactSheets[key].defIcon : <></>}
+    getName={(key: ArtifactSetKey | "") => key && artifactSheets(key).nameRaw}
+    getImage={(key: ArtifactSetKey | "") => key ? artifactSheets(key).defIcon : <></>}
     label={label}
     groupBy={(option) => option.grouper?.toString() ?? ""}
     renderGroup={(params: AutocompleteRenderGroupParams) => params.group && <List key={params.group} component={Box}>

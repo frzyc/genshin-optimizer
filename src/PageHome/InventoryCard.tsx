@@ -11,7 +11,7 @@ import CardLight from "../Components/Card/CardLight"
 import FontAwesomeSvgIcon from "../Components/FontAwesomeSvgIcon"
 import ImgIcon from "../Components/Image/ImgIcon"
 import { elementSvg } from "../Components/StatIcon"
-import CharacterSheet, { charKeyToCharSheetKey } from "../Data/Characters/CharacterSheet"
+import CharacterSheet from "../Data/Characters/CharacterSheet"
 import WeaponSheet from "../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../Database/Database"
 import useGender from "../ReactHooks/useGender"
@@ -29,7 +29,7 @@ export default function InventoryCard() {
     const chars = database.chars.keys
     const tally = objectKeyMap(allElements, () => 0)
     if (characterSheets) chars.forEach(ck => {
-      let elementKey = characterSheets[charKeyToCharSheetKey(ck, gender)]!.elementKey
+      let elementKey = characterSheets(ck, gender)!.elementKey
       tally[elementKey] = tally[elementKey] + 1
     })
     return { characterTally: tally, characterTotal: chars.length }
@@ -40,7 +40,7 @@ export default function InventoryCard() {
     const weapons = database.weapons.values
     const tally = objectKeyMap(allWeaponTypeKeys, () => 0)
     if (weaponSheets) weapons.forEach(wp => {
-      let type = weaponSheets[wp.key].weaponType
+      let type = weaponSheets(wp.key).weaponType
       tally[type] = tally[type] + 1
     })
     return { weaponTally: tally, weaponTotal: weapons.length }

@@ -32,10 +32,10 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
-  const weaponIdList = !weaponSheets ? [] : allWeaponKeys.filter(wKey => filter(weaponSheets[wKey]))
-    .filter(wKey => weaponFilter.includes(weaponSheets?.[wKey]?.weaponType))
+  const weaponIdList = !weaponSheets ? [] : allWeaponKeys.filter(wKey => filter(weaponSheets(wKey)))
+    .filter(wKey => weaponFilter.includes(weaponSheets(wKey).weaponType))
     .filter(wKey => !deferredSearchTerm || t(`weaponNames_gen:${wKey}`).toLowerCase().includes(deferredSearchTerm.toLowerCase()))
-    .sort((a, b) => (weaponSheets?.[b]?.rarity ?? 0) - (weaponSheets?.[a]?.rarity ?? 0))
+    .sort((a, b) => weaponSheets(b).rarity - weaponSheets(a).rarity)
 
   if (!weaponSheets) return null
 
@@ -67,7 +67,7 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
       <Divider />
       <CardContent><Grid container spacing={1}>
         {weaponIdList.map(weaponKey => {
-          const weaponSheet = weaponSheets[weaponKey]
+          const weaponSheet = weaponSheets(weaponKey)
           return <Grid item key={weaponKey} lg={3} md={4}>
             <CardLight sx={{ height: "100%" }} >
               <CardActionArea onClick={() => { onHide(); onSelect(weaponKey) }} sx={{ display: "flex" }}>

@@ -2,7 +2,7 @@ import { BusinessCenter, PersonSearch } from "@mui/icons-material"
 import { Skeleton } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
-import CharacterSheet, { charKeyToCharSheetKey } from "../../Data/Characters/CharacterSheet"
+import CharacterSheet from "../../Data/Characters/CharacterSheet"
 import { initCharMeta } from "../../Database/Data/StateData"
 import { DatabaseContext } from "../../Database/Database"
 import { FilterLocationKey } from "../../PageArtifact/ArtifactSort"
@@ -27,7 +27,7 @@ export default function LocationFilterAutocomplete({ location, setLocation }: { 
       case "Equipped":
         return <PersonSearch />
       default:
-        return characterSheets ? <ThumbSide src={characterSheets[charKeyToCharSheetKey(database.chars.LocationToCharacterKey(key), gender)]?.thumbImgSide} sx={{ pr: 1 }} /> : <></>
+        return characterSheets ? <ThumbSide src={characterSheets(database.chars.LocationToCharacterKey(key), gender)?.thumbImgSide} sx={{ pr: 1 }} /> : <></>
     }
   }, [database, gender, characterSheets])
   const isFavorite = useCallback((key: LocationCharacterKey) => key === "Traveler" ?

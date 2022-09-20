@@ -23,6 +23,8 @@ const displayDataMap = weaponSheets.then(as =>
     [k, mergeData(Object.values(as).filter(sheet => sheet.weaponType === k).map(sheet => ({ display: sheet.data.display })))]
   )) as Record<WeaponTypeKey, Data>
 )
+
+export type AllWeaponSheets = (weaponKey: WeaponKey) => WeaponSheet
 export default class WeaponSheet {
   readonly key: WeaponKey;
   readonly sheet: IWeaponSheet;
@@ -37,7 +39,7 @@ export default class WeaponSheet {
     this.data = data
   }
   static get = (weaponKey: WeaponKey | ""): Promise<WeaponSheet> | undefined => weaponKey ? weaponSheets.then(w => w[weaponKey]) : undefined
-  static get getAll() { return weaponSheets }
+  static get getAll(): Promise<AllWeaponSheets> { return weaponSheets.then(ws => (weaponKey: WeaponKey): WeaponSheet => ws[weaponKey]) }
   static getAllDataOfType(weaponType: WeaponTypeKey) { return displayDataMap.then(map => map[weaponType]) }
   static getWeaponsOfType = (sheets: StrictDict<WeaponKey, WeaponSheet>, weaponType: string): Dict<WeaponKey, WeaponSheet> => Object.fromEntries(Object.entries(sheets).filter(([_, sheet]) => (sheet as WeaponSheet).weaponType === weaponType))
   static getLevelString = (weapon: ICachedWeapon) => getLevelString(weapon.level, weapon.ascension)

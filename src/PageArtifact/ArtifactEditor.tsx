@@ -175,7 +175,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
     }
   }, [artifactIdToEdit, database, dirtyDatabase])
 
-  const sheet = artifact ? artifactSheets?.[artifact.setKey] : undefined
+  const sheet = artifact ? artifactSheets?.(artifact.setKey) : undefined
   const reset = useCallback(() => {
     cancelEdit?.();
     dispatchQueue({ type: "pop" })
