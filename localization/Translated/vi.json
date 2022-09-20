@@ -330,19 +330,6 @@
         "dmgBySnowflake": "Kẻ địch chịu sát thương do Cổng băng tuyết của <strong>Trường phái Kamisato-Soumetsu</strong> gây ra",
         "afterBurst": "Sau khi thi truyển <strong>Trường phát Kamisato-Soumetsu</strong>"
     },
-    "char_Traveler": {
-        "electro": {
-            "skill": {
-                "absorb": "Hấp thụ Khuyết ngọc dậy sóng"
-            },
-            "c2": {
-                "thunderHit": "<strong>Sấm set uy vũ</strong> đánh trúng kẻ địch"
-            },
-            "burst": {
-                "3rd": "Sát thương Sấm sét uy vũ lần 3"
-            }
-        }
-    },
     "weapon_MistsplitterReforged": {
         "emblem": "Vết cắt sương mù"
     },

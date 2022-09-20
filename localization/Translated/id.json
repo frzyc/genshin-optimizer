@@ -285,19 +285,6 @@
         "dmgBySnowflake": "Musuh terkena Frostflake Seki no To dari <strong>Kamisato Art: Soumetsu</strong>",
         "afterBurst": "Setelah menggunakan <strong>Kamisato Art: Soumetsu</strong>"
     },
-    "char_Traveler": {
-        "electro": {
-            "skill": {
-                "absorb": "Menyerap Abundance Amulet"
-            },
-            "c2": {
-                "thunderHit": "<strong>Falling THunder</strong> mengenai musuh"
-            },
-            "burst": {
-                "3rd": "DMG Falling Thunder ke-3"
-            }
-        }
-    },
     "weapon_MistsplitterReforged": {
         "emblem": "Mistsplitter's Emblem"
     },
