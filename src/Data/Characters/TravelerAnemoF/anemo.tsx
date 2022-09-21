@@ -114,7 +114,7 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
         unit: "s"
       }, {
         canShow: data => data.get(input.constellation).value >= 4,
-        text: trm("c1"),
+        text: trm("c4"),
         value: 10,
         unit: "%"
       }]
