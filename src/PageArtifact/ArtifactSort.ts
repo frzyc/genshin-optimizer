@@ -43,7 +43,7 @@ export function initialFilterOption(): FilterOption {
     locked: ["locked", "unlocked"],
     rvLow: 0,
     rvHigh: 900,
-    lines: []
+    lines: [1, 2, 3, 4]
   }
 }
 export const initialArtifactSortFilter = (): ArtifactSortFilter => ({
