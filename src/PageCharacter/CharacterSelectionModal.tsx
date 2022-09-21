@@ -147,7 +147,7 @@ function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, 
               />
             </Box>
             <Box flexGrow={1} sx={{ pr: 1 }} display="flex" flexDirection="column" zIndex={1} justifyContent="space-evenly">
-              <Typography variant="body2" ><SqBadge color={characterSheet?.elementKey} sx={{ opacity: 0.85 }}>{characterSheet?.name}</SqBadge></Typography>
+              <Typography variant="body2" ><SqBadge color={characterSheet?.elementKey} sx={{ opacity: 0.85, textShadow: "0 0 5px gray" }}>{characterSheet?.name}</SqBadge></Typography>
               {character ? <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <Box sx={{ textShadow: "0 0 5px gray" }}>
                   <Typography variant="body2" component="span" whiteSpace="nowrap" >Lv. {level}</Typography>
