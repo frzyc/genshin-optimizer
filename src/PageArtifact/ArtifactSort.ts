@@ -1,5 +1,5 @@
 import Artifact from "../Data/Artifacts/Artifact";
-import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
+import { allSubstatKeys, ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { allArtifactRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, LocationKey, SlotKey } from "../Types/consts";
 import { FilterConfigs, SortConfigs } from "../Util/SortByFilters";
 import { probability } from "./RollProbability";
@@ -19,6 +19,9 @@ export type FilterOption = {
   location: FilterLocationKey
   exclusion: Array<"excluded" | "included">,
   locked: Array<"locked" | "unlocked">,
+  rvLow: number,
+  rvHigh: number,
+  lines: Array<1 | 2 | 3 | 4>
 }
 
 type ArtifactSortFilter = {
@@ -38,6 +41,9 @@ export function initialFilterOption(): FilterOption {
     location: "",
     exclusion: ["excluded", "included"],
     locked: ["locked", "unlocked"],
+    rvLow: 0,
+    rvHigh: 900,
+    lines: []
   }
 }
 export const initialArtifactSortFilter = (): ArtifactSortFilter => ({
@@ -61,7 +67,7 @@ export function artifactSortConfigs(effFilterSet: Set<SubstatKey>, probabilityFi
     }
   }
 }
-export function artifactFilterConfigs(): FilterConfigs<keyof FilterOption, ICachedArtifact> {
+export function artifactFilterConfigs(effFilterSet: Set<SubstatKey> = new Set(allSubstatKeys)): FilterConfigs<keyof FilterOption, ICachedArtifact> {
   return {
     exclusion: (art, filter) => {
       if (!filter.includes("included") && !art.exclude) return false
@@ -85,12 +91,16 @@ export function artifactFilterConfigs(): FilterConfigs<keyof FilterOption, ICach
     mainStatKeys: (art, filter) => filter.length ? filter.includes(art.mainStatKey) : true,
     levelLow: (art, filter) => filter <= art.level,
     levelHigh: (art, filter) => filter >= art.level,
+    // When RV is set to 0/900, allow all, just incase someone is doing some teehee haha with negative substats or stupid rolls
+    rvLow: (art, filter) => filter === 0 ? true : filter <= Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency,
+    rvHigh: (art, filter) => filter === 900 ? true : filter >= Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency,
     rarity: (art, filter) => filter.includes(art.rarity),
     substats: (art, filter) => {
       for (const filterKey of filter)
         if (filterKey && !art.substats.some(substat => substat.key === filterKey)) return false;
       return true
-    }
+    },
+    lines: (art, filter) => filter.includes(art.substats.filter(s => s.value).length),
   }
 }
 export const artifactSortMap: Partial<Record<ArtifactSortKey, ArtifactSortKey[]>> = {

@@ -41,13 +41,10 @@ export default function PageArtifact() {
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const [artifactDisplayState, setArtifactDisplayState] = useDBState("ArtifactDisplay", initialState)
-  const stateDispatch = useCallback(
-    action => {
-      if (action.type === "reset") setArtifactDisplayState(initialArtifactSortFilter())
-      else setArtifactDisplayState(action)
-    },
-    [setArtifactDisplayState],
-  )
+  const stateDispatch = useCallback(action => {
+    if (action.type === "reset") setArtifactDisplayState(initialArtifactSortFilter())
+    else setArtifactDisplayState(action)
+  }, [setArtifactDisplayState])
   const brPt = useMediaQueryUp()
   const maxNumArtifactsToDisplay = numToShowMap[brPt]
 
@@ -79,15 +76,13 @@ export default function PageArtifact() {
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
   const sortConfigs = useMemo(() => artifactSortConfigs(effFilterSet, probabilityFilter), [effFilterSet, probabilityFilter])
-  const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
+  const filterConfigs = useMemo(() => artifactFilterConfigs(effFilterSet), [effFilterSet])
   const deferredArtifactDisplayState = useDeferredValue(artifactDisplayState)
   const deferredProbabilityFilter = useDeferredValue(probabilityFilter)
   useEffect(() => {
     if (!showProbability) return
     database.arts.values.forEach(art => database.arts.setProbability(art.id, probability(art, deferredProbabilityFilter)))
-    return () => {
-      database.arts.values.forEach(art => database.arts.setProbability(art.id, -1))
-    }
+    return () => database.arts.values.forEach(art => database.arts.setProbability(art.id, -1))
   }, [database, showProbability, deferredProbabilityFilter])
 
   const { artifactIds, totalArtNum } = useMemo(() => {
