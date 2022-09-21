@@ -16,7 +16,7 @@ import usePromise from "../../../../ReactHooks/usePromise"
 import { allRarities, Rarity, WeaponTypeKey } from "../../../../Types/consts"
 import { handleMultiSelect } from "../../../../Util/MultiSelect"
 import { filterFunction, sortFunction } from '../../../../Util/SortByFilters'
-import { weaponFilterConfigs, weaponSortConfigs } from '../../../../Util/WeaponSort'
+import { weaponFilterConfigs, weaponSortConfigs, weaponSortMap } from '../../../../Util/WeaponSort'
 import CompareBuildButton from "./CompareBuildButton"
 
 const rarityHandler = handleMultiSelect([...allRarities])
@@ -34,19 +34,15 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
 
   const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
 
-  const filterConfigs = useMemo(() => weaponSheets && weaponFilterConfigs(weaponSheets), [weaponSheets])
-  const sortConfigs = useMemo(() => weaponSheets && weaponSortConfigs(weaponSheets), [weaponSheets])
-
   const [rarity, setRarity] = useState<Rarity[]>([5, 4, 3])
-
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
-  const weaponIdList = useMemo(() => (filterConfigs && sortConfigs && dbDirty && database.weapons.values
-    .filter(filterFunction({ weaponType: weaponTypeKey, rarity, name: deferredSearchTerm }, filterConfigs))
-    .sort(sortFunction("level", false, sortConfigs))
+  const weaponIdList = useMemo(() => (weaponSheets && dbDirty && database.weapons.values
+    .filter(filterFunction({ weaponType: weaponTypeKey, rarity, name: deferredSearchTerm }, weaponFilterConfigs(weaponSheets)))
+    .sort(sortFunction(weaponSortMap["level"] ?? [], false, weaponSortConfigs(weaponSheets)))
     .map(weapon => weapon.id)) ?? []
-    , [dbDirty, database, filterConfigs, sortConfigs, rarity, weaponTypeKey, deferredSearchTerm])
+    , [dbDirty, database, weaponSheets, rarity, weaponTypeKey, deferredSearchTerm])
 
   return <ModalWrapper open={show} onClose={onClose} >
     <CardDark>

@@ -109,5 +109,7 @@
     "mainStats": "Main Stats",
     "substats": "Sub-Stats",
     "set": "Artifact Set"
-  }
+  },
+  "substat_one": "{{count}} substat",
+  "substat_other": "{{count}} substats"
 }
