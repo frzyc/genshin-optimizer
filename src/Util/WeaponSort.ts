@@ -6,7 +6,7 @@ export const weaponSortKeys = ["level", "rarity", "name"] as const
 export type WeaponSortKey = typeof weaponSortKeys[number]
 export function weaponSortConfigs(weaponSheets: AllWeaponSheets): SortConfigs<WeaponSortKey, ICachedWeapon> {
   return {
-    level: wp => wp.level * wp.ascension ?? 0,
+    level: wp => wp.level * (wp.ascension + 1) ?? 0,
     rarity: wp => weaponSheets(wp.key).rarity,
     name: wp => i18n.t(`weaponNames_gen:${wp.key}`) as string
   }

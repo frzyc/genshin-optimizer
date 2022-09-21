@@ -13,7 +13,7 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
     name: (ck) => i18n.t(`charNames_gen:${charKeyToCharName(ck, database.gender)}`).toString(),
     level: (ck) => {
       const char = database.chars.get(ck as CharacterKey)
-      return char ? char.level * char.ascension : 0
+      return char ? char.level * (char.ascension + 1) : 0
     },
     rarity: (ck) => characterSheets(ck, database.gender)?.rarity ?? 0,
     favorite: (ck,) => (database.states.getWithInit(`charMeta_${ck}`, initCharMeta).favorite ? 1 : 0),
