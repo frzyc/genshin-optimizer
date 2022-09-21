@@ -48,7 +48,7 @@ const dmgFormulas = {
     [key, dmgNode("atk", value, "plunging")])),
 } as const
 
-const { talent, data, elementKey } = dendro(key, charKey)
+const { talent, data, elementKey } = dendro(key, charKey, dmgFormulas)
 talent.auto = ct.talentTemplate("auto", [{
   text: tr("auto.fields.normal")
 }, {

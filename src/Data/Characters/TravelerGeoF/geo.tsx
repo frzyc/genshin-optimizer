@@ -1,5 +1,6 @@
 import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
+import { DisplaySub } from '../../../Formula/type'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod } from '../../../Formula/utils'
 import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
@@ -10,7 +11,7 @@ import Traveler from '../Traveler'
 import assets from './assets'
 import skillParam_gen from './skillParam_gen.json'
 
-export default function geo(key: CharacterSheetKey, charKey: CharacterKey) {
+export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgForms: { [key: string]: DisplaySub }) {
   const elementKey: ElementKey = "geo"
   const condCharKey = "TravelerGeo"
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
@@ -66,6 +67,7 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey) {
   )
 
   const dmgFormulas = {
+    ...dmgForms,
     skill: {
       dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
     },

@@ -1,6 +1,7 @@
 import ColorText from '../../../Components/ColoredText'
 import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
+import { DisplaySub } from '../../../Formula/type'
 import { constant, equal, greaterEq, infoMut, percent, prod, unequal } from '../../../Formula/utils'
 import { absorbableEle, CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { objectKeyValueMap } from '../../../Util/Util'
@@ -11,7 +12,7 @@ import Traveler from '../Traveler'
 import assets from './assets'
 import skillParam_gen from './skillParam_gen.json'
 
-export default function anemo(key: CharacterSheetKey, charKey: CharacterKey) {
+export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmgForms: { [key: string]: DisplaySub }) {
   const elementKey: ElementKey = "anemo"
   const condCharKey = "TravelerAnemo"
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
@@ -56,6 +57,7 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey) {
   const nodeC6 = greaterEq(input.constellation, 6, equal(condC6, "on", datamine.constellation6.enemyRes_))
   const nodesC6 = objectKeyValueMap(absorbableEle, ele => [`${ele}_enemyRes_`, greaterEq(input.constellation, 6, equal(condC6, "on", equal(condBurstAbsorption, ele, datamine.constellation6.enemyRes_)))])
   const dmgFormulas = {
+    ...dmgForms,
     skill: {
       initial_dmg: dmgNode("atk", datamine.skill.initial_dmg, "skill"),
       initial_max: dmgNode("atk", datamine.skill.initial_max, "skill"),
