@@ -50,7 +50,7 @@ export class ComputeWorker {
       if (i < 0) {
         const result = compute(buffer)
         if (min.every((m, i) => (m <= result[i]))) {
-          const value = result[min.length], { builds, plotData, maxBuilds } = self
+          const value = result[min.length], { builds, plotData } = self
           let build: Build | undefined
           if (value >= self.threshold) {
             build = { value, artifactIds: buffer.map(x => x.id) }

@@ -4,7 +4,7 @@ import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, u
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
-import Worker from "worker-loader!./BackgroundWorker";
+
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider';
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
 import CardLight from '../../../../Components/Card/CardLight';
@@ -101,7 +101,7 @@ export default function TabBuild() {
       if (mainStats?.length && !mainStats.includes(art.mainStatKey)) return false
 
       // If its equipped on the selected character, bypass the check
-      if (art.location === characterKey) return true
+      if (art.location === charKeyToLocCharKey(characterKey)) return true
 
       if (art.exclude && !useExcludedArts) return false
       if (art.location && !useEquippedArts) return false
@@ -181,7 +181,7 @@ export default function TabBuild() {
 
     const finalizedList: Promise<FinalizeResult>[] = []
     for (let i = 0; i < maxWorkers; i++) {
-      const worker = new Worker()
+      const worker = new Worker(new URL('./BackgroundWorker.ts', import.meta.url))
 
       const setup: Setup = {
         command: "setup",
