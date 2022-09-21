@@ -1,7 +1,7 @@
 type SortConfig<T> = (id: T) => number | string
 export type SortConfigs<Keys extends string, T> = Record<Keys, SortConfig<T>>
 
-export function sortFunction<Keys extends string, T>(sortbyKeys: Keys[], ascending: boolean, configs: SortConfigs<Keys, T>) {
+export function sortFunction<Keys extends string, T>(sortbyKeys: Keys[], ascending: boolean, configs: SortConfigs<Keys, T>, ascendingBypass: Keys[] = []) {
   return (a: T, b: T): number => {
     for (const sortby of sortbyKeys) {
       let diff = 0
@@ -10,7 +10,7 @@ export function sortFunction<Keys extends string, T>(sortbyKeys: Keys[], ascendi
       const bV = config(b)
       if (typeof aV === "string" && typeof bV === "string") diff = aV.localeCompare(bV)
       else diff = ((bV as number) - (aV as number))
-      if (diff !== 0) return (ascending ? -1 : 1) * diff
+      if (diff !== 0) return ascendingBypass.includes(sortby) ? diff : (ascending ? -1 : 1) * diff
     }
     return 0
   }

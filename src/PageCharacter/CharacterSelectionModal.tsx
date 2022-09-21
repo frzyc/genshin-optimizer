@@ -57,7 +57,7 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
     const sortByKeys = [...(newFirst ? ["new"] : []), ...(characterSortMap[sortType] ?? [])] as CharacterSortKey[]
     return deferredDbDirty && allCharacterKeys
       .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, characterFilterConfigs(database, characterSheets)))
-      .sort(sortFunction(sortByKeys, ascending, characterSortConfigs(database, characterSheets)))
+      .sort(sortFunction(sortByKeys, ascending, characterSortConfigs(database, characterSheets), ["new", "favorite"]))
   }, [database, newFirst, deferredState, characterSheets, deferredDbDirty, deferredSearchTerm])
 
   if (!characterSheets) return null
