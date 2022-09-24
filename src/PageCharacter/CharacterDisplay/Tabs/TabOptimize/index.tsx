@@ -471,7 +471,6 @@ function BuildItemWrapper({ index, build, compareData, disabled }: {
   const toTC = useCallback(() => {
     const paths = location.pathname.split("/")
     paths.pop()
-    console.log(location, `${paths.join("/")}/theorycraft`)
     navigate(`${paths.join("/")}/theorycraft`, { state: { build } })
   }, [navigate])
 
