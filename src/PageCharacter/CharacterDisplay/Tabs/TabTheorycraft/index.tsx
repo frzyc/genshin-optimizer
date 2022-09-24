@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CopyAll, DeleteForever, Info, Refresh } from "@mui/icons-material";
 import { Box, Button, ButtonGroup, CardHeader, Divider, Grid, ListItem, MenuItem, Skeleton, Stack, ToggleButton, Typography } from "@mui/material";
 import { WeaponTypeKey } from "pipeline";
-import { useCallback, useContext, useMemo } from "react";
+import { useCallback, useContext, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import { ArtifactSetSingleAutocomplete } from "../../../../Components/Artifact/ArtifactAutocomplete";
 import ArtifactSetTooltip from "../../../../Components/Artifact/ArtifactSetTooltip";
 import SetEffectDisplay from "../../../../Components/Artifact/SetEffectDisplay";
@@ -40,7 +41,7 @@ import KeyMap, { cacheValueString } from "../../../../KeyMap";
 import useBoolState from "../../../../ReactHooks/useBoolState";
 import usePromise from "../../../../ReactHooks/usePromise";
 import useTeamData from "../../../../ReactHooks/useTeamData";
-import { MainStatKey, SubstatKey } from "../../../../Types/artifact";
+import { ICachedArtifact, MainStatKey, SubstatKey } from "../../../../Types/artifact";
 import { ICharTC, ICharTCArtifactSlot } from "../../../../Types/character";
 import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey, SubstatType, substatType } from "../../../../Types/consts";
 import { ICachedWeapon } from "../../../../Types/weapon";
@@ -64,9 +65,9 @@ export default function TabTheorycraft() {
     },
     [setData, data],
   )
-  const copyFromEquipped = useCallback(
-    () => {
-      const eWeapon = database.weapons.get(character.equippedWeapon)!
+
+  const copyFrom = useCallback(
+    (eWeapon: ICachedWeapon, build: ICachedArtifact[]) => {
       const newData = initCharTC(eWeapon.key)
       newData.artifact.substats.type = data.artifact.substats.type
 
@@ -75,8 +76,7 @@ export default function TabTheorycraft() {
       newData.weapon.refinement = eWeapon.refinement
 
       const sets = {}
-      Object.values(character.equippedArtifacts).forEach(a => {
-        const art = database.arts.get(a)
+      build.forEach(art => {
         if (!art) return
         const { slotKey, setKey, substats, mainStatKey, level, rarity } = art
         newData.artifact.slots[slotKey].level = level
@@ -92,8 +92,22 @@ export default function TabTheorycraft() {
           value === 5 ? 4 :
             value === 1 && !(key as string).startsWith("PrayersFor") ? 0 : value
       ]).filter(([key, value]) => value))
-
       setData(newData)
+    },
+    [database, data,],
+  )
+
+  const location = useLocation()
+  const { build: locBuild } = location.state as { build: ICachedArtifact[] }
+  useEffect(() => {
+    const eWeapon = database.weapons.get(character.equippedWeapon)!
+    copyFrom(eWeapon, locBuild)
+  }, [database, locBuild, character.equippedWeapon])
+
+  const copyFromEquipped = useCallback(
+    () => {
+      const eWeapon = database.weapons.get(character.equippedWeapon)!
+      copyFrom(eWeapon, Object.values(character.equippedArtifacts).map(a => database.arts.get(a)!).filter(a => a))
     },
     [database, data, character.equippedArtifacts, character.equippedWeapon, setData],
   )

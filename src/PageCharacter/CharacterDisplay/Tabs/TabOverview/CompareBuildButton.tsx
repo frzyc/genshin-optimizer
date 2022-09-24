@@ -40,7 +40,7 @@ function CompareContent({ artId, weaponId, onHide }: { artId?: string, weaponId?
   const dataProviderValue = useMemo(() => teamData && ({ data: teamData[characterKey]!.target, teamData, oldData }), [characterKey, teamData, oldData])
   return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
     {dataProviderValue && <DataContext.Provider value={dataProviderValue}>
-      <BuildDisplayItem compareBuild={true} extraButtons={<><HitModeToggle size="small" /><ReactionToggle size="small" /><Button size='small' color="error" onClick={onHide} ><Close /></Button></>} />
+      <BuildDisplayItem compareBuild={true} extraButtonsLeft={<><HitModeToggle size="small" /><ReactionToggle size="small" /></>} extraButtonsRight={<><Button size='small' color="error" onClick={onHide} ><Close /></Button></>} />
     </DataContext.Provider>}
   </Suspense>
 }
