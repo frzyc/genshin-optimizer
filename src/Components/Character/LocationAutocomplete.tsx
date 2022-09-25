@@ -10,7 +10,7 @@ import { charKeyToCharName, charKeyToLocCharKey, LocationCharacterKey, LocationK
 import GeneralAutocomplete, { GeneralAutocompleteOption } from "../GeneralAutocomplete"
 import ThumbSide from "./ThumbSide"
 
-export function LocationAutocomplete({ location, setLocation, filter = () => true }: { location: LocationKey, setLocation: (v: LocationKey) => void, filter?: (v: CharacterSheet) => void }) {
+export function LocationAutocomplete({ location, setLocation, filter = () => true, autoCompleteDisable = () => false }: { location: LocationKey, setLocation: (v: LocationKey) => void, filter?: (v: CharacterSheet) => void, autoCompleteDisable?: (v: LocationKey) => boolean }) {
   const { t } = useTranslation(["ui", "artifact", "charNames_gen"])
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
@@ -33,5 +33,5 @@ export function LocationAutocomplete({ location, setLocation, filter = () => tru
       return a.label.localeCompare(b.label)
     })
   ], [t, toText, isFavorite, database, characterSheets, filter, gender])
-  return <Suspense fallback={<Skeleton variant="text" width={100} />}><GeneralAutocomplete size="small" options={values} valueKey={location} onChange={setLocation} toImg={toImg} clearKey="" /></Suspense>
+  return <Suspense fallback={<Skeleton variant="text" width={100} />}><GeneralAutocomplete size="small" options={values} valueKey={location} onChange={setLocation} toImg={toImg} clearKey="" disable={autoCompleteDisable} /></Suspense>
 }
