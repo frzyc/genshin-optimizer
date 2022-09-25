@@ -8,7 +8,7 @@ import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
 import KeyMap, { cacheValueString } from "../../KeyMap";
 import useArtifact from "../../ReactHooks/useArtifact";
-import useGender from "../../ReactHooks/useGender";
+import useDBMeta from "../../ReactHooks/useDBMeta";
 import usePromise from "../../ReactHooks/usePromise";
 import { ICachedSubstat } from "../../Types/artifact";
 import { allElementsWithPhy, CharacterKey, SlotKey } from "../../Types/consts";
@@ -95,8 +95,7 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
   </Box>)
 }
 function LocationIcon({ charKey }: { charKey: CharacterKey | "" }) {
-  const { database } = useContext(DatabaseContext)
-  const gender = useGender(database)
+  const { gender } = useDBMeta()
   const characterSheet = usePromise(() => CharacterSheet.get(charKey, gender), [charKey, gender])
   return characterSheet ? <BootstrapTooltip placement="right-end" title={<Typography>{characterSheet.name}</Typography>}><ImgIcon src={characterSheet.thumbImgSide} sx={{ height: "3em", marginTop: "-1.5em", marginLeft: "-0.5em" }} /></BootstrapTooltip> : <BusinessCenter />
 }

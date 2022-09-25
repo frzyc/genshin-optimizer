@@ -1,6 +1,6 @@
 import { Add, CheckBox, CheckBoxOutlineBlank, Close, KeyboardArrowDown, KeyboardArrowUp, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp, Replay, Settings } from "@mui/icons-material";
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Typography } from "@mui/material";
-import { useCallback, useContext, useMemo } from "react";
+import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import ArtifactCardPico from "../../../../../Components/Artifact/ArtifactCardPico";
 import CardDark from "../../../../../Components/Card/CardDark";
@@ -12,12 +12,10 @@ import ModalWrapper from "../../../../../Components/ModalWrapper";
 import SqBadge from "../../../../../Components/SqBadge";
 import WeaponCardPico from "../../../../../Components/Weapon/WeaponCardPico";
 import { CharacterContext } from "../../../../../Context/CharacterContext";
-import { initialTabOptimizeDBState } from "../../../../../Database/Data/StateData";
 import { DatabaseContext } from "../../../../../Database/Database";
 import useBoolState from "../../../../../ReactHooks/useBoolState";
 import useCharacter from "../../../../../ReactHooks/useCharacter";
 import useCharSelectionCallback from "../../../../../ReactHooks/useCharSelectionCallback";
-import useDBState from "../../../../../ReactHooks/useDBState";
 import { ICachedCharacter } from "../../../../../Types/character";
 import { CharacterKey } from "../../../../../Types/consts";
 import { CharacterSelectionModal } from "../../../../CharacterSelectionModal";
@@ -29,10 +27,11 @@ export default function UseEquipped({ disabled = false }: { disabled?: boolean }
   const { buildSetting: { useEquippedArts }, buildSettingDispatch } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState(false)
-  const [{ equipmentPriority: tempEquipmentPriority }, setOptimizeDBState] = useDBState("TabOptimize", initialTabOptimizeDBState)
+  const [{ equipmentPriority: tempEquipmentPriority }, setTO] = useState(database.displayOptimize.get())
+  useEffect(() => database.displayOptimize.follow((r, to) => setTO(to)), [database, setTO])
   //Basic validate for the equipmentPrio list to remove dups and characters that doesnt exist.
   const equipmentPriority = useMemo(() => [...new Set(tempEquipmentPriority)].filter(ck => database.chars.get(ck)), [database, tempEquipmentPriority])
-  const setPrio = useCallback((equipmentPriority: CharacterKey[]) => setOptimizeDBState({ equipmentPriority }), [setOptimizeDBState])
+  const setPrio = useCallback((equipmentPriority: CharacterKey[]) => database.displayOptimize.set({ equipmentPriority }), [database])
 
   const setPrioRank = useCallback((fromIndex, toIndex) => {
     const arr = [...equipmentPriority]

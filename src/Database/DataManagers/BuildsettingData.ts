@@ -5,6 +5,7 @@ import { allCharacterKeys, ArtifactSetKey, CharacterKey } from "../../Types/cons
 import { deepClone } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
+import { IGO, IGOOD, ImportResult } from "../exim";
 
 export type ArtSetExclusion = Dict<Exclude<ArtifactSetKey, "PrayersForDestiny" | "PrayersForIllumination" | "PrayersForWisdom" | "PrayersToSpringtime"> | "rainbow", (2 | 4)[]>
 
@@ -32,9 +33,9 @@ export interface BuildSetting {
   levelHigh: number,
 }
 
-export class BuildsettingDataManager extends DataManager<CharacterKey, string, BuildSetting, BuildSetting>{
+export class BuildsettingDataManager extends DataManager<CharacterKey, string, "buildSettings", BuildSetting, BuildSetting>{
   constructor(database: ArtCharDatabase) {
-    super(database)
+    super(database, "buildSettings")
     for (const key of this.database.storage.keys) {
       if (key.startsWith("buildSetting_")) {
         const [, charKey] = key.split("buildSetting_")
@@ -98,6 +99,26 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, B
   set(key: CharacterKey, value: BuildSettingReducerAction) {
     const oldState = this.get(key) as BuildSetting
     return super.set(key, buildSettingsReducer(oldState, value))
+  }
+  exportGOOD(good: Partial<IGOOD & IGO>) {
+    const artifactIDs = new Map<string, number>()
+    Object.entries(this.database.arts.data).forEach(([id, value], i) => {
+      artifactIDs.set(id, i)
+    })
+    good[this.goKey as any] = Object.entries(this.data).map(([id, value]) =>
+      ({ ...value, id, builds: value.builds.map(b => b.map(x => artifactIDs.has(x) ? `artifact_${artifactIDs.get(x)}` : "")) })
+    )
+  }
+  importGOOD(good: IGOOD & IGO, result: ImportResult) {
+    const buildSettings = good[this.goKey]
+    if (Array.isArray(buildSettings) && buildSettings) buildSettings.forEach(b => {
+      const { key, ...rest } = b
+      if (!key || !allCharacterKeys.includes(key as CharacterKey)) return
+      if (rest.builds) //preserve the old build ids
+        rest.builds = rest.builds.map(build => build.map(i => result.importArtIds.get(i) ?? ""))
+
+      this.set(key as CharacterKey, { ...rest })
+    })
   }
 }
 type BSMainStatKey = {

@@ -16,10 +16,10 @@ import { CharacterContext } from "../../../../Context/CharacterContext";
 import { DataContext } from "../../../../Context/DataContext";
 import { TalentSheetElementKey } from "../../../../Data/Characters/CharacterSheet";
 import { getLevelString } from "../../../../Data/LevelData";
-import { initCharMeta } from "../../../../Database/Data/StateData";
+import { DatabaseContext } from "../../../../Database/Database";
 import { uiInput as input } from "../../../../Formula";
 import useCharacterReducer from "../../../../ReactHooks/useCharacterReducer";
-import useDBState from "../../../../ReactHooks/useDBState";
+import useCharMeta from "../../../../ReactHooks/useCharMeta";
 import { allSlotKeys, Ascension, ElementKey } from "../../../../Types/consts";
 import { range } from "../../../../Util/Util";
 import EquipmentSection from "./EquipmentSection";
@@ -61,6 +61,7 @@ function EquipmentRow({ onClick }: { onClick: () => void }) {
 }
 /* Image card with star and name and level */
 function CharacterProfileCard() {
+  const { database } = useContext(DatabaseContext)
   const { characterSheet, character: { key: characterKey, team } } = useContext(CharacterContext)
   const { data, } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
@@ -80,7 +81,7 @@ function CharacterProfileCard() {
     skill: data.get(input.bonus.skill).value,
     burst: data.get(input.bonus.burst).value,
   }
-  const [{ favorite }, setCharMeta] = useDBState(`charMeta_${characterKey}`, initCharMeta)
+  const { favorite } = useCharMeta(characterKey)
   return <CardLight sx={{ height: "100%" }} >
     <Box sx={{ position: "relative" }}>
       <Box sx={{ position: "absolute", width: "100%", height: "100%" }}>
@@ -96,7 +97,7 @@ function CharacterProfileCard() {
             </Typography>} />
         </Box>
         <Box sx={{ position: "absolute", left: 0, top: 0 }}>
-          <IconButton sx={{ p: 1 }} color="error" onClick={() => setCharMeta({ favorite: !favorite })}>
+          <IconButton sx={{ p: 1 }} color="error" onClick={() => database.charMeta.set(characterKey, { favorite: !favorite })}>
             {favorite ? <Favorite /> : <FavoriteBorder />}
           </IconButton>
         </Box>

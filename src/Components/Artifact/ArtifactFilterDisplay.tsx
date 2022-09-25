@@ -25,7 +25,7 @@ const lineHandler = handleMultiSelect([1, 2, 3, 4])
 
 interface ArtifactFilterDisplayProps {
   filterOption: FilterOption
-  filterOptionDispatch: (option: any) => void
+  filterOptionDispatch: (option: Partial<FilterOption>) => void
   disableSlotFilter?: boolean
 }
 export default function ArtifactFilterDisplay({ filterOption, filterOptionDispatch, disableSlotFilter = false }: ArtifactFilterDisplayProps) {
@@ -60,7 +60,7 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
       </Box>
       {/* Lines */}
       <SolidToggleButtonGroup fullWidth value={lines} size="small">
-        {[1, 2, 3, 4].map(line => <ToggleButton key={line} value={line} onClick={() => filterOptionDispatch({ lines: lineHandler(lines, line) })}>{t("substat", { count: line })}</ToggleButton>)}
+        {[1, 2, 3, 4].map(line => <ToggleButton key={line} value={line} onClick={() => filterOptionDispatch({ lines: lineHandler(lines, line) as Array<1 | 2 | 3 | 4> })}>{t("substat", { count: line })}</ToggleButton>)}
       </SolidToggleButtonGroup>
       {/* Artiface level filter */}
       <ArtifactLevelSlider showLevelText levelLow={levelLow} levelHigh={levelHigh}

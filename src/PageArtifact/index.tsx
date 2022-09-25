@@ -11,7 +11,7 @@ import CardDark from '../Components/Card/CardDark';
 import InfoComponent from '../Components/InfoComponent';
 import SortByButton from '../Components/SortByButton';
 import { DatabaseContext } from '../Database/Database';
-import useDBState from '../ReactHooks/useDBState';
+import useDisplayArtifact from '../ReactHooks/useDisplayArtifact';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import { allSubstatKeys, SubstatKey } from '../Types/artifact';
@@ -19,7 +19,7 @@ import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter';
-import { artifactFilterConfigs, artifactSortConfigs, artifactSortKeys, artifactSortMap, initialArtifactSortFilter } from './ArtifactSort';
+import { artifactFilterConfigs, artifactSortConfigs, artifactSortKeys, artifactSortMap } from './ArtifactSort';
 import ProbabilityFilter from './ProbabilityFilter';
 import { probability } from './RollProbability';
 
@@ -30,26 +30,16 @@ const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10 - 1, sm: 12 - 1, md: 24 - 1, lg: 24 - 1, xl: 24 - 1 }
-function initialState() {
-  return {
-    ...initialArtifactSortFilter(),
-    effFilter: [...allSubstatKeys] as SubstatKey[],
-    probabilityFilter: {} as Dict<SubstatKey, number>,
-  }
-}
+
 export default function PageArtifact() {
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
-  const [artifactDisplayState, setArtifactDisplayState] = useDBState("ArtifactDisplay", initialState)
-  const stateDispatch = useCallback(action => {
-    if (action.type === "reset") setArtifactDisplayState(initialArtifactSortFilter())
-    else setArtifactDisplayState(action)
-  }, [setArtifactDisplayState])
+  const artifactDisplayState = useDisplayArtifact()
+
   const brPt = useMediaQueryUp()
   const maxNumArtifactsToDisplay = numToShowMap[brPt]
 
-  const { effFilter, filterOption, ascending, probabilityFilter } = artifactDisplayState
-  let { sortType } = artifactDisplayState
+  const { sortType, effFilter, ascending, probabilityFilter } = artifactDisplayState
   const showProbability = sortType === "probability"
 
   const [pageIdex, setpageIdex] = useState(0)
@@ -63,16 +53,7 @@ export default function PageArtifact() {
     return database.arts.followAny(() => forceUpdate())
   }, [database, forceUpdate])
 
-  const filterOptionDispatch = useCallback((action) => {
-    stateDispatch({
-      filterOption: {
-        ...filterOption,
-        ...action
-      }
-    })
-  }, [stateDispatch, filterOption])
-
-  const setProbabilityFilter = useCallback(probabilityFilter => stateDispatch({ probabilityFilter }), [stateDispatch],)
+  const setProbabilityFilter = useCallback(probabilityFilter => database.displayArtifact.set({ probabilityFilter }), [database],)
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
   const sortConfigs = useMemo(() => artifactSortConfigs(effFilterSet, probabilityFilter), [effFilterSet, probabilityFilter])
@@ -125,17 +106,16 @@ export default function PageArtifact() {
 
     {noArtifact && <Alert severity="info" variant="filled">Looks like you haven't added any artifacts yet. If you want, there are <Link color="warning.main" component={RouterLink} to="/scanner">automatic scanners</Link> that can speed up the import process!</Alert>}
 
-    <ArtifactFilter filterOption={filterOption} filterOptionDispatch={filterOptionDispatch} filterDispatch={stateDispatch}
-      numShowing={artifactIds.length} total={totalArtNum} />
+    <ArtifactFilter numShowing={artifactIds.length} total={totalArtNum} />
     <CardDark ref={invScrollRef}>
       <CardContent>
         <Grid container sx={{ mb: 1 }}>
           <Grid item flexGrow={1}><span><Trans t={t} i18nKey="efficiencyFilter.title">Substats to use in efficiency calculation</Trans></span></Grid>
           <Grid item>
-            <Button size="small" color="error" onClick={() => stateDispatch({ effFilter: [...allSubstatKeys] })} startIcon={<Replay />}><Trans t={t} i18nKey="ui:reset" /></Button>
+            <Button size="small" color="error" onClick={() => database.displayArtifact.set({ effFilter: [...allSubstatKeys] })} startIcon={<Replay />}><Trans t={t} i18nKey="ui:reset" /></Button>
           </Grid>
         </Grid>
-        <SubstatToggle selectedKeys={effFilter} onChange={n => stateDispatch({ effFilter: n })} />
+        <SubstatToggle selectedKeys={effFilter} onChange={n => database.displayArtifact.set({ effFilter: n })} />
       </CardContent>
     </CardDark>
     <CardDark ><CardContent>
@@ -149,8 +129,8 @@ export default function PageArtifact() {
         <Grid item xs={12} sm={6} md={4} lg={4} xl={3} display="flex">
           <Box flexGrow={1} />
           <SortByButton sortKeys={[...artifactSortKeys]}
-            value={sortType} onChange={sortType => stateDispatch({ sortType })}
-            ascending={ascending} onChangeAsc={ascending => stateDispatch({ ascending })}
+            value={sortType} onChange={sortType => database.displayArtifact.set({ sortType })}
+            ascending={ascending} onChangeAsc={ascending => database.displayArtifact.set({ ascending })}
           />
         </Grid>
       </Grid>

@@ -2,12 +2,10 @@ import { initialCharacter } from "../ReactHooks/useCharSelectionCallback"
 import { CharacterKey } from "../Types/consts"
 import { randomizeArtifact } from "../Util/ArtifactUtil"
 import { defaultInitialWeapon, initialWeapon } from "../Util/WeaponUtil"
-import { cachedArtifact } from "./Data/ArtifactData"
+import { cachedArtifact } from "./DataManagers/ArtifactData"
 import { ArtCharDatabase } from "./Database"
 import { DBLocalStorage, SandboxStorage } from "./DBStorage"
-import { IGOOD } from "./exim"
-import { exportGOOD } from "./exports/good"
-import { importGOOD } from "./imports/good"
+import { IGO, IGOOD } from "./exim"
 
 const dbStorage = new DBLocalStorage(localStorage)
 let database = new ArtCharDatabase(dbStorage)
@@ -40,7 +38,8 @@ describe("Database", () => {
     database.weapons.set(amberWeaponid, { location: "Amber" })
 
     const newDB = new ArtCharDatabase(new SandboxStorage())
-    importGOOD(exportGOOD(database.storage), newDB, false, false)!
+    const good = database.exportGOOD()
+    newDB.importGOOD(good, false, false)!
     expect(database.storage.entries.filter(([k]) => k.startsWith("weapon_") || k.startsWith("character_") || k.startsWith("artifact_")))
       .toEqual(newDB.storage.entries.filter(([k]) => k.startsWith("weapon_") || k.startsWith("character_") || k.startsWith("artifact_")))
     expect(database.chars.values).toEqual(newDB.chars.values)
@@ -170,7 +169,7 @@ describe("Database", () => {
         amberWeapon
       ]
     }
-    const importResult = importGOOD(good, database, false, false)!
+    const importResult = database.importGOOD(good as IGOOD & IGO, false, false)!
     expect(importResult).toBeTruthy()
     expect(importResult.artifacts.invalid.length).toEqual(0)
     expect(importResult.artifacts?.new?.length).toEqual(2)
@@ -197,7 +196,7 @@ describe("Database", () => {
     }
 
     // Import the new artifact, with no location. this should respect current equipment
-    importGOOD(good, database, false, false)
+    database.importGOOD(good as IGOOD & IGO, false, false)
     expect(database.chars.get("Amber")!.equippedArtifacts.circlet).toEqual(id)
   })
 
@@ -226,7 +225,7 @@ describe("Database", () => {
         { ...initialWeapon("Akuoumaru"), location: "Albedo" }
       ]
     }
-    const importResult = importGOOD(good1, database, true, false)!
+    const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)!
     expect(importResult.artifacts.new.length).toEqual(2)
     expect(importResult.weapons.new.length).toEqual(1)
     expect(importResult.characters.new.length).toEqual(0)

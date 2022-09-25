@@ -14,6 +14,9 @@ export const allRollColorKeys = ['roll1', 'roll2', 'roll3', 'roll4', 'roll5', 'r
 export const allAscension = [0, 1, 2, 3, 4, 5, 6] as const
 export const allRefinement = [1, 2, 3, 4, 5] as const
 export const substatType = ["max", "mid", "min"] as const
+export const genderKeys = ["F", "M"] as const
+export type Gender = typeof genderKeys[number]
+
 
 export const allArtifactSets = [
   "Adventurer",
@@ -373,6 +376,6 @@ export function TravelerToElement(key: TravelerKey, element: TravelerElementKey)
 
 export type LocationKey = LocationCharacterKey | ""
 
-export function charKeyToCharName(ck: CharacterKey, gender: "F" | "M"): string {
+export function charKeyToCharName(ck: CharacterKey, gender: Gender): string {
   return ck.startsWith("Traveler") ? "Traveler" + gender : ck
 }

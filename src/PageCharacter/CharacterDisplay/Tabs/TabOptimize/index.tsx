@@ -15,8 +15,8 @@ import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGrou
 import { CharacterContext } from '../../../../Context/CharacterContext';
 import { DataContext, dataContextObj } from '../../../../Context/DataContext';
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext';
-import { defThreads, initialTabOptimizeDBState } from '../../../../Database/Data/StateData';
 import { DatabaseContext } from '../../../../Database/Database';
+import { defThreads } from '../../../../Database/DataEntries/DisplayOptimizeEntry';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
@@ -25,7 +25,6 @@ import { UIData } from '../../../../Formula/uiData';
 import KeyMap from '../../../../KeyMap';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
-import useDBState from '../../../../ReactHooks/useDBState';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../../../Types/artifact';
@@ -60,9 +59,11 @@ export default function TabBuild() {
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
-  const [{ equipmentPriority, threads = defThreads }, setOptimizeDBState] = useDBState("TabOptimize", initialTabOptimizeDBState)
+  const [{ equipmentPriority, threads = defThreads }, setDisplayOptimize] = useState(database.displayOptimize.get())
+  useEffect(() => database.displayOptimize.follow((r, to) => setDisplayOptimize(to)), [database, setDisplayOptimize])
+
   const maxWorkers = threads > defThreads ? defThreads : threads
-  const setMaxWorkers = useCallback(threads => setOptimizeDBState({ threads }), [setOptimizeDBState],)
+  const setMaxWorkers = useCallback(threads => database.displayOptimize.set({ threads }), [database],)
 
   const characterDispatch = useCharacterReducer(characterKey)
   const onClickTeammate = useCharSelectionCallback()

@@ -1,18 +1,20 @@
 import { AccessTimeFilled } from "@mui/icons-material"
 import { CardActionArea, CardContent, CardHeader, Divider, Typography } from "@mui/material"
-import { useEffect, useRef, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import { Link as RouterLink } from 'react-router-dom'
 import Assets from "../Assets/Assets"
 import CardDark from "../Components/Card/CardDark"
 import CardLight from "../Components/Card/CardLight"
 import ImgIcon from "../Components/Image/ImgIcon"
-import { initToolsDisplayResin, RESIN_MAX, RESIN_RECH_MS } from "../PageTools/ResinCounter"
-import { initToolsDisplayTimezone, timeZones } from "../PageTools/TeyvatTime"
-import useDBState from "../ReactHooks/useDBState"
+import { DatabaseContext } from "../Database/Database"
+import { RESIN_MAX, RESIN_RECH_MS } from "../PageTools/ResinCounter"
+import { timeZones } from "../PageTools/TeyvatTime"
 import { SECOND_MS } from "../Util/TimeUtil"
 
 export default function ResinCard() {
-  const [{ timeZoneKey }] = useDBState("ToolsDisplayTimezone", initToolsDisplayTimezone)
+  const { database } = useContext(DatabaseContext)
+  const [{ timeZoneKey, resin, resinDate }, setState] = useState(() => database.displayTool.get())
+  useEffect(() => database.displayTool.follow((r, s) => setState(s)), [database])
   const [time, setTime] = useState(new Date(Date.now() + timeZones[timeZoneKey]))
 
   useEffect(() => {
@@ -26,7 +28,6 @@ export default function ResinCard() {
     return () => clearTimeout(interval)
   }, [timeZoneKey])
 
-  const [{ resin, date }, setResinState] = useDBState("ToolsDisplayResin", initToolsDisplayResin)
   const resinIncrement = useRef(undefined as undefined | NodeJS.Timeout)
 
   const setResin = (newResin: number) => {
@@ -35,23 +36,23 @@ export default function ResinCard() {
       resinIncrement.current = undefined
     } else
       resinIncrement.current = setTimeout(() => console.log("set resin", newResin + 1), RESIN_RECH_MS);
-    setResinState({ resin: newResin, date: new Date().getTime() })
+    database.displayTool.set({ resin: newResin, resinDate: new Date().getTime() })
   }
 
   useEffect(() => {
     if (resin < RESIN_MAX) {
       const now = Date.now()
       const resinToMax = RESIN_MAX - resin
-      const resinSinceLastDate = Math.min(Math.floor((now - date) / (RESIN_RECH_MS)), resinToMax)
+      const resinSinceLastDate = Math.min(Math.floor((now - resinDate) / (RESIN_RECH_MS)), resinToMax)
       const catchUpResin = resin + resinSinceLastDate
-      const newDate = date + resinSinceLastDate * RESIN_RECH_MS
-      setResinState({ resin: catchUpResin, date: newDate })
+      const newDate = resinDate + resinSinceLastDate * RESIN_RECH_MS
+      database.displayTool.set({ resin: catchUpResin, resinDate: newDate })
       if (catchUpResin < RESIN_MAX)
         resinIncrement.current = setTimeout(() => setResin(catchUpResin + 1), now - newDate);
     }
     return () => resinIncrement.current && clearTimeout(resinIncrement.current)
     // eslint-disable-next-line
-  }, [])
+  }, [database])
 
   return <CardDark>
     <CardHeader title={<Typography variant="h5">{timeZoneKey}{' '}{time.toLocaleTimeString([], { timeZone: "UTC" })}</Typography>} avatar={<AccessTimeFilled fontSize="large" />} />
