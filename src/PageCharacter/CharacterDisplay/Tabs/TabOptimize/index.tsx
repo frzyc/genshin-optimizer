@@ -475,7 +475,7 @@ function BuildItemWrapper({ index, build, compareData, disabled }: {
   }, [navigate])
 
   return <BuildDisplayItem index={index} compareBuild={compareData} disabled={disabled}
-    extraButtonsLeft={<Button color="info" startIcon={<Science />} onClick={toTC}>Theorycraft</Button>} />
+    extraButtonsLeft={<Button color="info" size="small" startIcon={<Science />} onClick={toTC}>Theorycraft</Button>} />
 }
 
 type Prop = {
