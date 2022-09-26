@@ -472,7 +472,7 @@ function BuildItemWrapper({ index, build, compareData, disabled }: {
     const paths = location.pathname.split("/")
     paths.pop()
     navigate(`${paths.join("/")}/theorycraft`, { state: { build } })
-  }, [navigate])
+  }, [navigate, build, location.pathname])
 
   return <BuildDisplayItem index={index} compareBuild={compareData} disabled={disabled}
     extraButtonsLeft={<Button color="info" size="small" startIcon={<Science />} onClick={toTC}>Theorycraft</Button>} />

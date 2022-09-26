@@ -94,7 +94,7 @@ export default function TabTheorycraft() {
       ]).filter(([key, value]) => value))
       setData(newData)
     },
-    [database, data,],
+    [data, setData],
   )
 
   const location = useLocation()
@@ -103,14 +103,14 @@ export default function TabTheorycraft() {
     if (!locBuild) return
     const eWeapon = database.weapons.get(character.equippedWeapon)!
     copyFrom(eWeapon, locBuild)
-  }, [database, locBuild, character.equippedWeapon])
+  }, [database, locBuild, character.equippedWeapon, copyFrom])
 
   const copyFromEquipped = useCallback(
     () => {
       const eWeapon = database.weapons.get(character.equippedWeapon)!
       copyFrom(eWeapon, Object.values(character.equippedArtifacts).map(a => database.arts.get(a)!).filter(a => a))
     },
-    [database, data, character.equippedArtifacts, character.equippedWeapon, setData],
+    [database, character.equippedArtifacts, character.equippedWeapon, copyFrom],
   )
 
   const weapon: ICachedWeapon = useMemo(() => {
