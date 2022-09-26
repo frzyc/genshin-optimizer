@@ -1,6 +1,6 @@
 
 import { objectKeyMap } from "../Util/Util"
-import type { AnyNode, Data, DataNode, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode } from "./type"
+import type { AnyNode, Data, DataNode, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, UIField } from "./type"
 
 type Num = number | NumNode
 type Str = string | undefined | StrNode
@@ -27,6 +27,13 @@ export function infoMut(node: NumNode, info: Info): NumNode
 export function infoMut(node: StrNode, info: Info): StrNode
 export function infoMut(node: NumNode | StrNode, info: Info): NumNode | StrNode {
   if (info) node.info = { ...node.info, ...info }
+  return node
+}
+/** Inject `field` to the node in-place */
+export function uiFieldMut(node: NumNode, field: UIField): NumNode
+export function uiFieldMut(node: StrNode, field: UIField): StrNode
+export function uiFieldMut(node: NumNode | StrNode, field: UIField): NumNode | StrNode {
+  node.field = field
   return node
 }
 

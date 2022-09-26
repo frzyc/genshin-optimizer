@@ -19,15 +19,25 @@ export type AnyNode = NumNode | StrNode | {
   info?: Info
 }
 
+/** Turn this into class if there's only one implementation */
+interface UIField {
+  getNameDisplay(value: number, variant: Variant): Displayable
+}
+
 interface Info {
+  /** @deprecated Use `UIField` instead */
   key?: string
+  /** @deprecated Use `UIField` instead */
   prefix?: KeyMapPrefix
+  /** @deprecated Use `UIField` instead */
   source?: CharacterKey | WeaponKey | ArtifactSetKey
   variant?: Variant
   subVariant?: Variant
   asConst?: true
   pivot?: true
+  /** @deprecated Use `UIField` instead */
   fixed?: number
+  /** @deprecated Use `UIField` instead */
   isTeamBuff?: boolean
 }
 export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | AdditiveReactionsKey | "heal" | "invalid"
@@ -35,6 +45,7 @@ export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | Amplifyin
 interface Base {
   operands: readonly AnyNode[]
   info?: Info
+  field?: UIField
 }
 export interface StrPrioNode extends Base {
   operation: "prio"

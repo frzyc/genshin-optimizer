@@ -3,7 +3,7 @@ import ColorText from "../Components/ColoredText"
 import KeyMap, { Unit, valueString } from "../KeyMap"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
-import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput } from "./type"
+import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIField, UIInput } from "./type"
 
 const shouldWrap = true
 export interface NodeDisplay<V = number> {
@@ -92,7 +92,7 @@ export class UIData {
     const old = this.nodes.get(node)
     if (old) return old
 
-    const { operation, info } = node
+    const { operation, info, field } = node
     let result: ContextNodeDisplay<number | string | undefined>
     switch (operation) {
       case "add": case "mul": case "min": case "max":
@@ -112,7 +112,7 @@ export class UIData {
 
     if (info) {
       const { asConst } = info
-      result = { ...result }
+      result = { ...result, field }
       result.info = mergeInfo(result.info, info)
 
       // Pivot all keyed nodes for debugging
@@ -335,8 +335,12 @@ function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
   }
 }
 
-//* Comment/uncomment this line to toggle between string formulas and JSX formulas
 function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
+  /**
+   * TODO Fetch these `Displayable` from `node.field` instead
+   * In particular, `node.valueDisplay` and `node.name` below
+   */
+
   const { info, value, formula } = node
   const { key, prefix, source, variant, fixed } = info
   if (typeof value !== "number") return
@@ -359,30 +363,6 @@ function createFormulaComponent(node: ContextNodeDisplay): Displayable {
 function mergeFormulaComponents(components: Displayable[]): Displayable {
   return <>{components.map((x, i) => <span key={i}>{x}</span>)}</>
 }
-/*/
-function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
-  const { info, value, formula } = node
-  const { key, prefix, source, fixed } = info
-  if (typeof value !== "number") return
-  node.valueDisplay = valueString(value, KeyMap.unit(key), fixed)
-  if (key && key !== '_') {
-    const prefixDisplay = (prefix && !source) ? `${KeyMap.getPrefixStr(prefix)} ` : ""
-    // TODO: Convert `source` key to actual name
-    const sourceDisplay = source ? ` ${source}` : ""
-    node.name = `${prefixDisplay}${KeyMap.getStr(key!)}${sourceDisplay}`
-
-    if (formula)
-      node.assignment = `${node.name} ${node.valueDisplay} = ${formula}`
-  }
-}
-function createFormulaComponent(node: ContextNodeDisplay): Displayable {
-  const { name, valueDisplay } = node
-  return name ? `${name} ${valueDisplay}` : valueDisplay!
-}
-function mergeFormulaComponents(components: Displayable[]): Displayable {
-  return (components as string[]).join("")
-}
-//*/
 
 function mergeInfo(base: Info, override: Info): Info {
   const result = { ...base }
@@ -395,6 +375,7 @@ interface ContextNodeDisplay<V = number> {
   info: Info
   empty: boolean
   value: V
+  field?: UIField
 
   dependencies: Set<Displayable>
 
