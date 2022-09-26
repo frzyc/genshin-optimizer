@@ -1,8 +1,8 @@
-import { CheckBox, CheckBoxOutlineBlank, Close, TrendingUp } from '@mui/icons-material';
+import { CheckBox, CheckBoxOutlineBlank, Close, Science, TrendingUp } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 // eslint-disable-next-line
 
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider';
@@ -455,11 +455,28 @@ function BuildList({ buildsArts, characterKey, data, compareData, disabled }: {
       build={build}
       oldData={data}
     >
-      <BuildDisplayItem index={index} compareBuild={compareData} disabled={disabled} />
+      <BuildItemWrapper index={index} build={build} compareData={compareData} disabled={disabled} />
     </DataContextWrapper>
     )}
   </Suspense>, [buildsArts, characterKey, data, compareData, disabled])
   return list
+}
+function BuildItemWrapper({ index, build, compareData, disabled }: {
+  index: number
+  build: ICachedArtifact[],
+  compareData: boolean,
+  disabled: boolean,
+}) {
+  const location = useLocation()
+  const navigate = useNavigate()
+  const toTC = useCallback(() => {
+    const paths = location.pathname.split("/")
+    paths.pop()
+    navigate(`${paths.join("/")}/theorycraft`, { state: { build } })
+  }, [navigate, build, location.pathname])
+
+  return <BuildDisplayItem index={index} compareBuild={compareData} disabled={disabled}
+    extraButtonsLeft={<Button color="info" size="small" startIcon={<Science />} onClick={toTC}>Theorycraft</Button>} />
 }
 
 type Prop = {
