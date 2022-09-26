@@ -1,4 +1,4 @@
-import { ArtifactRarity, ArtifactSetKey, CharacterKey, SlotKey } from "./consts";
+import { ArtifactRarity, ArtifactSetKey, LocationKey, SlotKey } from "./consts";
 
 export interface IArtifact {
   setKey: ArtifactSetKey,
@@ -6,7 +6,7 @@ export interface IArtifact {
   level: number,
   rarity: ArtifactRarity,
   mainStatKey: MainStatKey,
-  location: CharacterKey | "",
+  location: LocationKey,
   lock: boolean,
   substats: ISubstat[],
 

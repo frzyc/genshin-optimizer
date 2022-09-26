@@ -12,6 +12,7 @@ import ModalWrapper from "../../Components/ModalWrapper";
 import SqBadge from '../../Components/SqBadge';
 import { DataContext } from '../../Context/DataContext';
 import { FormulaDataContext } from '../../Context/FormulaDataContext';
+import { DatabaseContext } from '../../Database/Database';
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil';
 import { DisplaySub, Variant } from '../../Formula/type';
 import { NodeDisplay } from '../../Formula/uiData';
@@ -46,8 +47,9 @@ function CalculationDisplay() {
 }
 function FormulaCalc({ sectionKey, displayNs }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string }) {
   const { data } = useContext(DataContext)
+  const { database } = useContext(DatabaseContext)
   const { data: contextData } = useContext(FormulaDataContext)
-  const header = usePromise(() => getDisplayHeader(contextData ?? data, sectionKey), [contextData, data, sectionKey])
+  const header = usePromise(() => getDisplayHeader(contextData ?? data, sectionKey, database), [contextData, data, sectionKey])
   if (!header) return null
   if (Object.entries(displayNs).every(([_, node]) => node.isEmpty)) return null
   const { title, icon, action } = header

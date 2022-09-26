@@ -175,14 +175,14 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
     }
   }, [artifactIdToEdit, database, dirtyDatabase])
 
-  const sheet = artifact ? artifactSheets?.[artifact.setKey] : undefined
+  const sheet = artifact ? artifactSheets?.(artifact.setKey) : undefined
   const reset = useCallback(() => {
     cancelEdit?.();
     dispatchQueue({ type: "pop" })
     artifactDispatch({ type: "reset" })
   }, [cancelEdit, artifactDispatch])
   const update = useCallback((newValue: Partial<IArtifact>) => {
-    const newSheet = newValue.setKey ? artifactSheets![newValue.setKey] : sheet!
+    const newSheet = newValue.setKey ? artifactSheets!(newValue.setKey) : sheet!
 
     function pick<T>(value: T | undefined, available: readonly T[], prefer?: T): T {
       return (value && available.includes(value)) ? value : (prefer ?? available[0])

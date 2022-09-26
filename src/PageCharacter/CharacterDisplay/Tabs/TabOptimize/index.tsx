@@ -1,10 +1,10 @@
-import { CheckBox, CheckBoxOutlineBlank, Close, TrendingUp } from '@mui/icons-material';
+import { CheckBox, CheckBoxOutlineBlank, Close, Science, TrendingUp } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 // eslint-disable-next-line
-import Worker from "worker-loader!./BackgroundWorker";
+
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider';
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
 import CardLight from '../../../../Components/Card/CardLight';
@@ -15,6 +15,7 @@ import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGrou
 import { CharacterContext } from '../../../../Context/CharacterContext';
 import { DataContext, dataContextObj } from '../../../../Context/DataContext';
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext';
+import { defThreads, initialTabOptimizeDBState } from '../../../../Database/Data/StateData';
 import { DatabaseContext } from '../../../../Database/Database';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { uiInput as input } from '../../../../Formula/index';
@@ -24,10 +25,11 @@ import { UIData } from '../../../../Formula/uiData';
 import KeyMap from '../../../../KeyMap';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
+import useDBState from '../../../../ReactHooks/useDBState';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../../../Types/artifact';
-import { CharacterKey } from '../../../../Types/consts';
+import { CharacterKey, charKeyToLocCharKey, LocationCharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
 import { FinalizeResult, Setup, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
@@ -43,7 +45,6 @@ import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard';
 import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
-import { defThreads, useOptimizeDBState } from './DBState';
 import { compactArtifacts, dynamicData } from './foreground';
 import useBuildSetting from './useBuildSetting';
 
@@ -59,7 +60,7 @@ export default function TabBuild() {
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
-  const [{ equipmentPriority, threads = defThreads }, setOptimizeDBState] = useOptimizeDBState()
+  const [{ equipmentPriority, threads = defThreads }, setOptimizeDBState] = useDBState("TabOptimize", initialTabOptimizeDBState)
   const maxWorkers = threads > defThreads ? defThreads : threads
   const setMaxWorkers = useCallback(threads => setOptimizeDBState({ threads }), [setOptimizeDBState],)
 
@@ -87,11 +88,11 @@ export default function TabBuild() {
     const { artSetExclusion, plotBase, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, levelLow, levelHigh } = buildSetting
     if (!characterKey || !optimizationTarget) return
 
-    let cantTakeList: CharacterKey[] = []
+    let cantTakeList: Set<LocationCharacterKey> = new Set()
     if (useEquippedArts) {
       const index = equipmentPriority.indexOf(characterKey)
-      if (index < 0) cantTakeList = [...equipmentPriority]
-      else cantTakeList = equipmentPriority.slice(0, index)
+      if (index < 0) equipmentPriority.forEach(ek => cantTakeList.add(charKeyToLocCharKey(ek)))
+      else equipmentPriority.slice(0, index).forEach(ek => cantTakeList.add(charKeyToLocCharKey(ek)))
     }
     const filteredArts = database.arts.values.filter(art => {
       if (art.level < levelLow) return false
@@ -100,11 +101,11 @@ export default function TabBuild() {
       if (mainStats?.length && !mainStats.includes(art.mainStatKey)) return false
 
       // If its equipped on the selected character, bypass the check
-      if (art.location === characterKey) return true
+      if (art.location === charKeyToLocCharKey(characterKey)) return true
 
       if (art.exclude && !useExcludedArts) return false
       if (art.location && !useEquippedArts) return false
-      if (art.location && useEquippedArts && cantTakeList.includes(art.location)) return false
+      if (art.location && useEquippedArts && cantTakeList.has(art.location)) return false
       return true
     })
     const split = compactArtifacts(filteredArts, mainStatAssumptionLevel, allowPartial)
@@ -181,7 +182,7 @@ export default function TabBuild() {
 
     const finalizedList: Promise<FinalizeResult>[] = []
     for (let i = 0; i < maxWorkers; i++) {
-      const worker = new Worker()
+      const worker = new Worker(new URL('./BackgroundWorker.ts', import.meta.url))
 
       const setup: Setup = {
         command: "setup",
@@ -454,11 +455,28 @@ function BuildList({ buildsArts, characterKey, data, compareData, disabled }: {
       build={build}
       oldData={data}
     >
-      <BuildDisplayItem index={index} compareBuild={compareData} disabled={disabled} />
+      <BuildItemWrapper index={index} build={build} compareData={compareData} disabled={disabled} />
     </DataContextWrapper>
     )}
   </Suspense>, [buildsArts, characterKey, data, compareData, disabled])
   return list
+}
+function BuildItemWrapper({ index, build, compareData, disabled }: {
+  index: number
+  build: ICachedArtifact[],
+  compareData: boolean,
+  disabled: boolean,
+}) {
+  const location = useLocation()
+  const navigate = useNavigate()
+  const toTC = useCallback(() => {
+    const paths = location.pathname.split("/")
+    paths.pop()
+    navigate(`${paths.join("/")}/theorycraft`, { state: { build } })
+  }, [navigate, build, location.pathname])
+
+  return <BuildDisplayItem index={index} compareBuild={compareData} disabled={disabled}
+    extraButtonsLeft={<Button color="info" size="small" startIcon={<Science />} onClick={toTC}>Theorycraft</Button>} />
 }
 
 type Prop = {

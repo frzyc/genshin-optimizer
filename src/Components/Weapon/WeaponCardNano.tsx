@@ -1,15 +1,18 @@
 import { BusinessCenter } from "@mui/icons-material";
 import { Box, CardActionArea, Chip, Skeleton, Typography } from "@mui/material";
-import { useCallback, useMemo } from "react";
+import { useCallback, useContext, useMemo } from "react";
 import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import WeaponSheet from "../../Data/Weapons/WeaponSheet";
+import { DatabaseContext } from "../../Database/Database";
 import { input } from "../../Formula";
 import { computeUIData, dataObjForWeapon } from "../../Formula/api";
 import { NodeDisplay } from '../../Formula/uiData';
 import KeyMap, { valueString } from "../../KeyMap";
+import useGender from "../../ReactHooks/useGender";
 import usePromise from "../../ReactHooks/usePromise";
 import useWeapon from "../../ReactHooks/useWeapon";
 import { MainStatKey, SubstatKey } from "../../Types/artifact";
+import { LocationKey } from "../../Types/consts";
 import BootstrapTooltip from "../BootstrapTooltip";
 import CardDark from "../Card/CardDark";
 import ConditionalWrapper from "../ConditionalWrapper";
@@ -72,7 +75,9 @@ function WeaponStat({ node }: { node: NodeDisplay }) {
     </Typography>
   </Box>)
 }
-function LocationIcon({ location }) {
-  const characterSheet = usePromise(() => CharacterSheet.get(location ?? ""), [location])
+function LocationIcon({ location }: { location: LocationKey }) {
+  const { database } = useContext(DatabaseContext)
+  const gender = useGender(database)
+  const characterSheet = usePromise(() => CharacterSheet.get(location ? database.chars.LocationToCharacterKey(location) : "", gender), [location, gender])
   return characterSheet ? <BootstrapTooltip placement="right-end" title={<Typography>{characterSheet.name}</Typography>}><ImgIcon src={characterSheet.thumbImgSide} sx={{ height: "3em", marginTop: "-1.5em", marginLeft: "-0.5em" }} /></BootstrapTooltip> : <BusinessCenter />
 }

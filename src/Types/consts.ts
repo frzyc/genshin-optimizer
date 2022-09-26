@@ -58,7 +58,7 @@ export const allArtifactSets = [
   "ViridescentVenerer",
   "WanderersTroupe",
 ] as const
-export const allCharacterKeys = [
+export const nonTravelerCharacterKeys = [
   "Albedo",
   "Amber",
   "Barbara",
@@ -84,7 +84,6 @@ export const allCharacterKeys = [
   "Razor",
   "Sucrose",
   "Tartaglia",
-  "Traveler",
   "RaidenShogun",
   "Venti",
   "Xiangling",
@@ -114,6 +113,44 @@ export const allCharacterKeys = [
   "Dori",
   "Tighnari",
 ] as const
+export const locationCharacterKeys = [
+  ...nonTravelerCharacterKeys,
+  "Traveler",
+] as const
+export const travelerElements = [
+  "anemo",
+  "geo",
+  "electro",
+  "dendro"
+] as const
+export const travelerFKeys = [
+  "TravelerAnemoF",
+  "TravelerGeoF",
+  "TravelerElectroF",
+  "TravelerDendroF",
+] as const
+export const travelerMKeys = [
+  "TravelerAnemoM",
+  "TravelerGeoM",
+  "TravelerElectroM",
+  "TravelerDendroM",
+] as const
+export const travelerKeys = [
+  "TravelerAnemo",
+  "TravelerGeo",
+  "TravelerElectro",
+  "TravelerDendro",
+] as const
+export const allCharacterKeys = [
+  ...nonTravelerCharacterKeys,
+  ...travelerKeys
+] as const
+
+export const allCharacterSheetKeys = [
+  ...nonTravelerCharacterKeys,
+  ...travelerFKeys,
+  ...travelerMKeys,
+]
 
 export const allWeaponSwordKeys = [
   "AmenomaKageuchi",
@@ -299,7 +336,12 @@ export type ElementKey = typeof allElements[number]
 export type ElementKeyWithPhy = typeof allElementsWithPhy[number]
 export type InfusionAuraElements = typeof allInfusionAuraElements[number]
 export type ArtifactSetKey = typeof allArtifactSets[number]
+export type NonTravelerCharacterKey = typeof nonTravelerCharacterKeys[number]
 export type CharacterKey = typeof allCharacterKeys[number]
+export type CharacterSheetKey = typeof allCharacterSheetKeys[number]
+export type LocationCharacterKey = typeof locationCharacterKeys[number]
+export type TravelerKey = typeof travelerKeys[number]
+export type TravelerElementKey = typeof travelerElements[number]
 export type WeaponTypeKey = typeof allWeaponTypeKeys[number]
 export type RollColorKey = typeof allRollColorKeys[number]
 export type Ascension = typeof allAscension[number]
@@ -319,3 +361,18 @@ export const allowedAdditiveReactions: Dict<ElementKey, AdditiveReactionKey[]> =
 }
 
 export type SubstatType = typeof substatType[number]
+
+export function charKeyToLocCharKey(charKey: CharacterKey): LocationCharacterKey {
+  if (travelerKeys.includes(charKey as TravelerKey)) return "Traveler"
+  return charKey as LocationCharacterKey
+}
+
+export function TravelerToElement(key: TravelerKey, element: TravelerElementKey): TravelerKey {
+  return "Traveler" + element.toUpperCase().slice(0, 1) + element.slice(1) as TravelerKey
+}
+
+export type LocationKey = LocationCharacterKey | ""
+
+export function charKeyToCharName(ck: CharacterKey, gender: "F" | "M"): string {
+  return ck.startsWith("Traveler") ? "Traveler" + gender : ck
+}

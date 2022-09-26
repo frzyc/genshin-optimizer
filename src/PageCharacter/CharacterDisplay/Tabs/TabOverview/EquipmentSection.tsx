@@ -16,15 +16,16 @@ import { CharacterContext } from '../../../../Context/CharacterContext';
 import { DataContext } from '../../../../Context/DataContext';
 import Artifact from '../../../../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../../../../Data/Artifacts/ArtifactSheet';
+import { initCharMeta } from '../../../../Database/Data/StateData';
 import { DatabaseContext } from '../../../../Database/Database';
 import { uiInput as input } from '../../../../Formula';
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard';
 import WeaponCard from '../../../../PageWeapon/WeaponCard';
 import useBoolState from '../../../../ReactHooks/useBoolState';
-import useDBState, { initCharMeta } from "../../../../ReactHooks/useDBState";
+import useDBState from "../../../../ReactHooks/useDBState";
 import usePromise from '../../../../ReactHooks/usePromise';
 import { allSubstatKeys } from '../../../../Types/artifact';
-import { allSlotKeys, SlotKey, WeaponTypeKey } from '../../../../Types/consts';
+import { allSlotKeys, charKeyToLocCharKey, SlotKey, WeaponTypeKey } from '../../../../Types/consts';
 import { IFieldDisplay } from '../../../../Types/fieldDisplay';
 import useBuildSetting from '../TabOptimize/useBuildSetting';
 import ArtifactSwapModal from './ArtifactSwapModal';
@@ -104,7 +105,7 @@ function ArtSwapCard({ slotKey }: { slotKey: SlotKey }) {
       alignItems: "center"
     }}
     >
-      <ArtifactSwapModal slotKey={slotKey} show={show} onClose={onClose} onChangeId={id => database.arts.set(id, { location: characterKey })} />
+      <ArtifactSwapModal slotKey={slotKey} show={show} onClose={onClose} onChangeId={id => database.arts.set(id, { location: charKeyToLocCharKey(characterKey) })} />
       <Button onClick={onOpen} color="info" sx={{ borderRadius: "1em", }}>
         <SwapHoriz sx={{ height: 100, width: 100 }} />
       </Button>
@@ -120,7 +121,7 @@ function WeaponSwapButton({ weaponTypeKey }: { weaponTypeKey: WeaponTypeKey }) {
     <Tooltip title={<Typography>{t`tabEquip.swapWeapon`}</Typography>} placement="top" arrow>
       <Button color="info" size="small" onClick={onOpen} ><SwapHoriz /></Button>
     </Tooltip>
-    <WeaponSwapModal weaponTypeKey={weaponTypeKey} onChangeId={id => database.weapons.set(id, { location: characterKey })} show={show} onClose={onClose} />
+    <WeaponSwapModal weaponTypeKey={weaponTypeKey} onChangeId={id => database.weapons.set(id, { location: charKeyToLocCharKey(characterKey) })} show={show} onClose={onClose} />
   </>
 }
 function LargeWeaponSwapButton({ weaponTypeKey }: { weaponTypeKey: WeaponTypeKey }) {
@@ -130,7 +131,7 @@ function LargeWeaponSwapButton({ weaponTypeKey }: { weaponTypeKey: WeaponTypeKey
   const [show, onOpen, onClose] = useBoolState()
   return <>
     <Button color="info" onClick={onOpen} startIcon={<SwapHoriz />} >{t`tabEquip.swapWeapon`}</Button>
-    <WeaponSwapModal weaponTypeKey={weaponTypeKey} onChangeId={id => database.weapons.set(id, { location: characterKey })} show={show} onClose={onClose} />
+    <WeaponSwapModal weaponTypeKey={weaponTypeKey} onChangeId={id => database.weapons.set(id, { location: charKeyToLocCharKey(characterKey) })} show={show} onClose={onClose} />
   </>
 }
 function ArtifactSwapButton({ slotKey }: { slotKey: SlotKey }) {
@@ -142,7 +143,7 @@ function ArtifactSwapButton({ slotKey }: { slotKey: SlotKey }) {
     <Tooltip title={<Typography>{t`tabEquip.swapArt`}</Typography>} placement="top" arrow>
       <Button color="info" size="small" onClick={onOpen} ><SwapHoriz /></Button>
     </Tooltip>
-    <ArtifactSwapModal slotKey={slotKey} show={show} onClose={onClose} onChangeId={id => database.arts.set(id, { location: characterKey })} />
+    <ArtifactSwapModal slotKey={slotKey} show={show} onClose={onClose} onChangeId={id => database.arts.set(id, { location: charKeyToLocCharKey(characterKey) })} />
   </>
 }
 function ArtifactSectionCard() {

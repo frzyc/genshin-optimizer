@@ -1,4 +1,4 @@
-import { ChevronRight } from '@mui/icons-material';
+import { Checkroom, ChevronRight } from '@mui/icons-material';
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { ArtifactSlotKey } from 'pipeline';
@@ -19,7 +19,7 @@ import { DatabaseContext } from '../../../../../Database/Database';
 import { uiInput as input } from '../../../../../Formula';
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard';
 import usePromise from '../../../../../ReactHooks/usePromise';
-import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../../../../Types/consts';
+import { allSlotKeys, ArtifactSetKey, charKeyToLocCharKey, SlotKey } from '../../../../../Types/consts';
 import useBuildSetting from '../useBuildSetting';
 
 type NewOld = {
@@ -31,10 +31,11 @@ type BuildDisplayItemProps = {
   index?: number,
   compareBuild: boolean,
   disabled?: boolean,
-  extraButtons?: JSX.Element
+  extraButtonsRight?: JSX.Element,
+  extraButtonsLeft?: JSX.Element,
 }
 //for displaying each artifact build
-export default function BuildDisplayItem({ index, compareBuild, extraButtons, disabled }: BuildDisplayItemProps) {
+export default function BuildDisplayItem({ index, compareBuild, extraButtonsRight, extraButtonsLeft, disabled }: BuildDisplayItemProps) {
   const { character: { key: characterKey, equippedArtifacts } } = useContext(CharacterContext)
   const { buildSetting: { mainStatAssumptionLevel } } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
@@ -46,9 +47,11 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
 
   const equipBuild = useCallback(() => {
     if (!window.confirm("Do you want to equip this build to this character?")) return
-    const newBuild = Object.fromEntries(allSlotKeys.map(s => [s, data.get(input.art[s].id).value])) as Record<SlotKey, string>
-    database.chars.equipArtifacts(characterKey, newBuild)
-    database.weapons.set(data.get(input.weapon.id).value!, { location: characterKey })
+    allSlotKeys.forEach(s => {
+      const aid = data.get(input.art[s].id).value
+      if (aid) database.arts.set(aid, { location: charKeyToLocCharKey(characterKey) })
+    })
+    database.weapons.set(data.get(input.weapon.id).value!, { location: charKeyToLocCharKey(characterKey) })
   }, [characterKey, data, database])
 
   const statProviderContext = useMemo(() => {
@@ -79,8 +82,9 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtons, di
           <SetBadges currentlyEquipped={currentlyEquipped} />
           <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}>
           </Box>
-          <Button size='small' color="success" onClick={equipBuild} disabled={disabled || currentlyEquipped}>Equip Build</Button>
-          {extraButtons}
+          {extraButtonsLeft}
+          <Button size='small' color="success" onClick={equipBuild} disabled={disabled || currentlyEquipped} startIcon={<Checkroom />}>Equip Build</Button>
+          {extraButtonsRight}
         </Box>
         <Grid container spacing={1} sx={{ pb: 1 }} columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}>
           <Grid item xs={1}>
@@ -129,7 +133,7 @@ function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLeve
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const onEquip = useCallback(() => {
     if (!window.confirm("Do you want to equip this artifact to this character?")) return
-    database.arts.set(newId, { location: characterKey })
+    database.arts.set(newId, { location: charKeyToLocCharKey(characterKey) })
     onClose()
   }, [newId, database, characterKey, onClose])
 

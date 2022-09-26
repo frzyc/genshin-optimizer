@@ -17,17 +17,18 @@ import { DatabaseContext } from '../Database/Database';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
+import useGender from '../ReactHooks/useGender';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
-import { CharacterKey } from '../Types/consts';
-import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from '../Util/CharacterSort';
+import { CharacterKey, charKeyToCharName } from '../Types/consts';
+import { characterFilterConfigs, characterSortConfigs, characterSortMap, initialCharacterDisplayState } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
-import { initialCharacterDisplayState } from './CharacterDisplayState';
 import { CharacterSelectionModal } from './CharacterSelectionModal';
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 6 - 1, sm: 8 - 1, md: 12 - 1, lg: 16 - 1, xl: 16 - 1 }
+const sortKeys = Object.keys(characterSortMap)
 
 export default function PageCharacter() {
   const { t } = useTranslation(["page_character", "charNames_gen"])
@@ -55,47 +56,39 @@ export default function PageCharacter() {
     return database.chars.followAny((k, r) => (r === "new" || r === "remove") && forceUpdate())
   }, [forceUpdate, database])
 
-  useEffect(() => {
-    // character favorite updater
-    return database.states.followAny(s => s.includes("charMeta_") && forceUpdate())
-  }, [forceUpdate, database])
+  // character favorite updater
+  useEffect(() => database.states.followAny(s => s.includes("charMeta_") && forceUpdate()), [forceUpdate, database])
 
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
-
+  const gender = useGender(database)
   const deleteCharacter = useCallback(async (cKey: CharacterKey) => {
-    const chararcterSheet = await CharacterSheet.get(cKey)
+    const chararcterSheet = await CharacterSheet.get(cKey, gender)
     let name = chararcterSheet?.name
     // Use translated string
     if (typeof name === "object")
-      name = t(`charNames_gen:${cKey}`)
+      name = t(`charNames_gen:${charKeyToCharName(cKey, gender)}`)
 
     if (!window.confirm(t("removeCharacter", { value: name }))) return
     database.chars.remove(cKey)
-  }, [database, t])
+  }, [database, gender, t])
 
   const editCharacter = useCharSelectionCallback()
 
   const navigate = useNavigate()
 
-  const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
-  const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(database, characterSheets), [database, characterSheets])
   const deferredState = useDeferredValue(state)
   const deferredDbDirty = useDeferredValue(dbDirty)
   const { charKeyList, totalCharNum } = useMemo(() => {
     const chars = database.chars.keys
     const totalCharNum = chars.length
-    if (!sortConfigs || !filterConfigs) return { charKeyList: [], totalCharNum }
+    if (!characterSheets) return { charKeyList: [], totalCharNum }
     const { element, weaponType, sortType, ascending } = deferredState
     const charKeyList = database.chars.keys
-      .filter(filterFunction({ element, weaponType, favorite: "yes", name: deferredSearchTerm }, filterConfigs))
-      .sort(sortFunction(sortType, ascending, sortConfigs))
-      .concat(
-        database.chars.keys
-          .filter(filterFunction({ element, weaponType, favorite: "no", name: deferredSearchTerm }, filterConfigs))
-          .sort(sortFunction(sortType, ascending, sortConfigs)))
+      .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, characterFilterConfigs(database, characterSheets)))
+      .sort(sortFunction(characterSortMap[sortType] ?? [], ascending, characterSortConfigs(database, characterSheets), ["new", "favorite"]))
     return deferredDbDirty && { charKeyList, totalCharNum }
   },
-    [deferredDbDirty, database, sortConfigs, filterConfigs, deferredState, deferredSearchTerm])
+    [deferredDbDirty, database, characterSheets, deferredState, deferredSearchTerm])
 
   const { weaponType, element, sortType, ascending, pageIndex = 0 } = state
 
@@ -131,7 +124,7 @@ export default function PageCharacter() {
         </Grid>
         <Grid item >
           <SortByButton sx={{ height: "100%" }}
-            sortKeys={characterSortKeys.slice(1)} value={sortType} onChange={sortType => stateDispatch({ sortType })}
+            sortKeys={sortKeys} value={sortType} onChange={sortType => stateDispatch({ sortType })}
             ascending={ascending} onChangeAsc={ascending => stateDispatch({ ascending })} />
         </Grid>
       </Grid>

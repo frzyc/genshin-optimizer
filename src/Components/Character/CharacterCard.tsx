@@ -25,7 +25,10 @@ import { CharacterContext, CharacterContextObj } from '../../Context/CharacterCo
 import usePromise from '../../ReactHooks/usePromise';
 import CharacterSheet from '../../Data/Characters/CharacterSheet';
 import useCharacter from '../../ReactHooks/useCharacter';
-import useDBState, { initCharMeta } from '../../ReactHooks/useDBState';
+import useDBState from '../../ReactHooks/useDBState';
+import { initCharMeta } from '../../Database/Data/StateData';
+import { ICachedCharacter } from '../../Types/character';
+import useGender from '../../ReactHooks/useGender';
 
 type CharacterCardProps = {
   characterKey: CharacterKey,
@@ -40,10 +43,12 @@ type CharacterCardProps = {
   isTeammateCard?: boolean,
 }
 export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, characterChildren, onClick, onClickHeader, onClickTeammate, footer, hideStats, isTeammateCard }: CharacterCardProps) {
+  const { database } = useContext(DatabaseContext)
   const { teamData: teamDataContext } = useContext(DataContext)
   const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
   const character = useCharacter(characterKey)
-  const characterSheet = usePromise(() => CharacterSheet.get(characterKey), [characterKey])
+  const gender = useGender(database)
+  const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
   const characterDispatch = useCharacterReducer(characterKey)
   const data = teamData?.[characterKey]?.target
   const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
@@ -61,8 +66,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   }), [data, teamData])
 
   const [{ favorite }, setCharMeta] = useDBState(`charMeta_${characterKey}`, initCharMeta)
-
-  return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
+  return <Suspense fallback={<Skeleton variant="rectangular" width={300} height={600} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <Box sx={{ display: "flex", position: "absolute", zIndex: 2, opacity: 0.7 }}>
         <IconButton sx={{ p: 0.5 }} onClick={_ => setCharMeta({ favorite: !favorite })}>
@@ -70,40 +74,78 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
         </IconButton>
       </Box>
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >
-        {(character && dataContextObj && characterContextObj) ? <CharacterContext.Provider value={characterContextObj}><DataContext.Provider value={dataContextObj}>
-          <Header characterKey={characterKey} onClick={!onClick ? onClickHeader : undefined} >
-            <HeaderContent />
-          </Header>
-          <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
-            <Artifacts />
-            {!isTeammateCard && <Grid container columns={4} spacing={0.75}>
-              <Grid item xs={1} height="100%">
-                <WeaponCardPico weaponId={character.equippedWeapon} />
-              </Grid>
-              {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} onClick={!onClick ? onClickTeammate : undefined} index={i} /></Grid>)}
-            </Grid>}
-            {isTeammateCard && <WeaponFullCard weaponId={character.equippedWeapon} />}
-            {!isTeammateCard && !hideStats && <Stats />}
-            {weaponChildren}
-            {artifactChildren}
-            {characterChildren}
-          </CardContent>
-        </DataContext.Provider></CharacterContext.Provider> :
-          < >
-            <Header characterKey={characterKey} onClick={onClick} >
-              <HeaderContentNew characterKey={characterKey} />
-            </Header>
-            <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1, height: "100%" }}>
-            </CardContent>
-          </>}
+        {(character && dataContextObj && characterContextObj) ?
+          <ExistingCharacterCardContent
+            characterContextObj={characterContextObj}
+            dataContextObj={dataContextObj}
+            characterKey={characterKey}
+            onClick={onClick}
+            onClickHeader={onClickHeader}
+            isTeammateCard={isTeammateCard}
+            character={character}
+            onClickTeammate={onClickTeammate}
+            hideStats={hideStats}
+            weaponChildren={weaponChildren}
+            artifactChildren={artifactChildren}
+            characterChildren={characterChildren}
+          /> : <NewCharacterCardContent characterKey={characterKey} />}
       </ConditionalWrapper>
       {footer}
     </CardLight>
 
   </Suspense>
 }
+
+type ExistingCharacterCardContentProps = {
+  characterContextObj: CharacterContextObj
+  dataContextObj: dataContextObj
+  characterKey: CharacterKey
+  onClick?: (characterKey: CharacterKey) => void
+  onClickHeader?: (characterKey: CharacterKey) => void
+  isTeammateCard?: boolean
+  character: ICachedCharacter
+  onClickTeammate?: (characterKey: CharacterKey) => void
+  hideStats?: boolean
+  weaponChildren?: Displayable
+  artifactChildren?: Displayable
+  characterChildren?: Displayable
+}
+function ExistingCharacterCardContent({ characterContextObj, dataContextObj, characterKey, onClick, onClickHeader, isTeammateCard, character, onClickTeammate, hideStats, weaponChildren, artifactChildren, characterChildren }: ExistingCharacterCardContentProps) {
+  return <CharacterContext.Provider value={characterContextObj}><DataContext.Provider value={dataContextObj}>
+    <Header characterKey={characterKey} onClick={!onClick ? onClickHeader : undefined} >
+      <HeaderContent />
+    </Header>
+    <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
+      <Artifacts />
+      {!isTeammateCard && <Grid container columns={4} spacing={0.75}>
+        <Grid item xs={1} height="100%">
+          <WeaponCardPico weaponId={character.equippedWeapon} />
+        </Grid>
+        {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} onClick={!onClick ? onClickTeammate : undefined} index={i} /></Grid>)}
+      </Grid>}
+      {isTeammateCard && <WeaponFullCard weaponId={character.equippedWeapon} />}
+      {!isTeammateCard && !hideStats && <Stats />}
+      {weaponChildren}
+      {artifactChildren}
+      {characterChildren}
+    </CardContent>
+  </DataContext.Provider></CharacterContext.Provider>
+}
+
+function NewCharacterCardContent({ characterKey }: { characterKey: CharacterKey }) {
+  return < >
+    <Header characterKey={characterKey} >
+      <HeaderContentNew characterKey={characterKey} />
+    </Header>
+    <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1, height: "100%" }}>
+    </CardContent>
+  </>
+}
+
 function Header({ children, characterKey, onClick }: { children: JSX.Element, characterKey: CharacterKey, onClick?: (characterKey: CharacterKey) => void }) {
-  const characterSheet = usePromise(() => CharacterSheet.get(characterKey), [characterKey])
+  const { database } = useContext(DatabaseContext)
+  const gender = useGender(database)
+  const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
 
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={() => characterKey && onClick?.(characterKey)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
@@ -185,7 +227,9 @@ function HeaderContent() {
 }
 
 function HeaderContentNew({ characterKey }: { characterKey: CharacterKey }) {
-  const characterSheet = usePromise(() => CharacterSheet.get(characterKey), [characterKey])
+  const { database } = useContext(DatabaseContext)
+  const gender = useGender(database)
+  const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, database, gender])
 
   if (!characterSheet) return null
   return <>

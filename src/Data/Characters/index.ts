@@ -1,4 +1,4 @@
-import { CharacterKey } from '../../Types/consts'
+import { CharacterSheetKey } from '../../Types/consts'
 import CharacterSheet from './CharacterSheet'
 
 import Albedo from './Albedo'
@@ -43,7 +43,14 @@ import Sucrose from "./Sucrose"
 import Tartaglia from './Tartaglia'
 import Thoma from './Thoma'
 import Tighnari from './Tighnari'
-import Traveler from './Traveler'
+import TravelerAnemoF from './TravelerAnemoF'
+import TravelerAnemoM from './TravelerAnemoM'
+import TravelerDendroF from './TravelerDendroF'
+import TravelerDendroM from './TravelerDendroM'
+import TravelerElectroF from './TravelerElectroF'
+import TravelerElectroM from './TravelerElectroM'
+import TravelerGeoF from './TravelerGeoF'
+import TravelerGeoM from './TravelerGeoM'
 import Venti from './Venti'
 import Xiangling from './Xiangling'
 import Xiao from './Xiao'
@@ -56,7 +63,7 @@ import Yoimiya from './Yoimiya'
 import YunJin from './YunJin'
 import Zhongli from './Zhongli'
 
-const characters: Record<CharacterKey, CharacterSheet> = {
+const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Albedo,
   Aloy,
   Amber,
@@ -99,7 +106,14 @@ const characters: Record<CharacterKey, CharacterSheet> = {
   Tartaglia,
   Thoma,
   Tighnari,
-  Traveler,
+  TravelerAnemoF,
+  TravelerGeoF,
+  TravelerElectroF,
+  TravelerDendroF,
+  TravelerAnemoM,
+  TravelerGeoM,
+  TravelerElectroM,
+  TravelerDendroM,
   Venti,
   Xiangling,
   Xiao,

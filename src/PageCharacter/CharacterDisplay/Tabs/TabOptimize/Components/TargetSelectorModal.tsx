@@ -8,6 +8,7 @@ import ImgIcon from "../../../../../Components/Image/ImgIcon"
 import ModalWrapper from "../../../../../Components/ModalWrapper"
 import SqBadge from "../../../../../Components/SqBadge"
 import { DataContext } from "../../../../../Context/DataContext"
+import { DatabaseContext } from "../../../../../Database/Database"
 import { getDisplayHeader, getDisplaySections } from "../../../../../Formula/DisplayUtil"
 import { DisplaySub } from "../../../../../Formula/type"
 import { NodeDisplay } from "../../../../../Formula/uiData"
@@ -54,7 +55,8 @@ export function TargetSelectorModal({ show, onClose, setTarget, ignoreGlobal = f
 }
 function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[]) => void, flatOnly?: boolean }) {
   const { data } = useContext(DataContext)
-  const header = usePromise(() => getDisplayHeader(data, sectionKey), [data, sectionKey])
+  const { database } = useContext(DatabaseContext)
+  const header = usePromise(() => getDisplayHeader(data, sectionKey, database), [data, sectionKey])
   return <CardLight key={sectionKey as string}>
     {header && <CardHeader avatar={header.icon && <ImgIcon size={2} sx={{ m: -1 }} src={header.icon} />} title={header.title} action={header.action && <SqBadge>{header.action}</SqBadge>} titleTypographyProps={{ variant: "subtitle1" }} />}
     <Divider />

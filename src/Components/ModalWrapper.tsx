@@ -14,6 +14,11 @@ const ModalContainer = styled(Container)(({ theme }) => ({
   display: "flex", flexDirection: "column", justifyContent: "center",
   ":focus": {
     outline: "None"
+  },
+  // Allow clicking on the Container to exit modal
+  pointerEvents: "none",
+  "& > *": {
+    pointerEvents: "auto"
   }
 }))
 

@@ -264,28 +264,6 @@
         "snowflakeDMG": "Eisblüte SCH",
         "dmgBySnowflake": "Getroffene Gegner von <strong> Kamisato-Stil: Soumetsu</strong>'s Frostflocke Seki no To "
     },
-    "char_Traveler": {
-        "electro": {
-            "skill": {
-                "absorb": "Aktiver Charakter absorbiert ein Amulett des Überflusses",
-                "amuletGenAmt": "Anzahl erzeugter Amulette des Überflusses"
-            },
-            "c2": {
-                "thunderHit": "<strong>Rollender Donner</strong> trifft Gegner"
-            },
-            "burst": {
-                "3rd": "Dritter greller Blitzschlag SCH",
-                "thunderCd": "Rollender Donner Abklingzeit"
-            },
-            "passive2": {
-                "enerRech_": "Amulett des Überflusses Aufladerateneffekt-Erhöhung"
-            },
-            "c6": {
-                "fallingThunder3": "Dritter <strong>Rollender Donner</strong>-Angriff",
-                "fallingThunderBonus_": "<strong>Rollender Donner</strong> SCH-Bonus"
-            }
-        }
-    },
     "char_Yoimiya": {
         "c1": "Von <strong>Ryuukin-Lohe</strong> betroffener Gegner besiegt",
         "c2": "Kritischer Treffer durch <pyro>Pyro-Schaden</pyro>",

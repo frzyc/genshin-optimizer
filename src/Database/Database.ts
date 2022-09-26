@@ -1,14 +1,14 @@
 import { createContext } from "react";
 import { TeamData } from "../Context/DataContext";
 import { CharacterKey } from "../Types/consts";
-import { DBStorage } from "./DBStorage";
 import { ArtifactDataManager } from "./Data/ArtifactData";
 import { BuildsettingDataManager } from "./Data/BuildsettingData";
 import { CharacterDataManager } from "./Data/CharacterData";
+import { CharacterTCDataManager } from "./Data/CharacterTCData";
 import { StateDataManager } from "./Data/StateData";
 import { WeaponDataManager } from "./Data/WeaponData";
+import { DBStorage } from "./DBStorage";
 import { migrate } from "./imports/migrate";
-import { CharacterTCDataManager } from "./Data/CharacterTCData";
 
 export class ArtCharDatabase {
   storage: DBStorage
@@ -67,6 +67,10 @@ export class ArtCharDatabase {
   clear() {
     [this.arts, this.chars, this.weapons, this.states, this.buildSettings].map(dm => dm.clear())
     this.teamData = {}
+  }
+  get gender() {
+    const gender: "F" | "M" = (this.states.get("dbMeta") as any)?.gender ?? "F"
+    return gender
   }
 }
 export type DatabaseContextObj = {

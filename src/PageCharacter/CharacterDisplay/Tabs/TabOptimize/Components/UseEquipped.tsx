@@ -2,25 +2,26 @@ import { Add, CheckBox, CheckBoxOutlineBlank, Close, KeyboardArrowDown, Keyboard
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Typography } from "@mui/material";
 import { useCallback, useContext, useMemo } from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { CharacterContext } from "../../../../../Context/CharacterContext";
 import ArtifactCardPico from "../../../../../Components/Artifact/ArtifactCardPico";
 import CardDark from "../../../../../Components/Card/CardDark";
 import CardLight from "../../../../../Components/Card/CardLight";
 import CharacterCardPico from "../../../../../Components/Character/CharacterCardPico";
-import { CharacterSelectionModal } from "../../../../CharacterSelectionModal";
 import CloseButton from "../../../../../Components/CloseButton";
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from "../../../../../Components/CustomNumberInput";
 import ModalWrapper from "../../../../../Components/ModalWrapper";
 import SqBadge from "../../../../../Components/SqBadge";
 import WeaponCardPico from "../../../../../Components/Weapon/WeaponCardPico";
+import { CharacterContext } from "../../../../../Context/CharacterContext";
+import { initialTabOptimizeDBState } from "../../../../../Database/Data/StateData";
 import { DatabaseContext } from "../../../../../Database/Database";
 import useBoolState from "../../../../../ReactHooks/useBoolState";
 import useCharacter from "../../../../../ReactHooks/useCharacter";
 import useCharSelectionCallback from "../../../../../ReactHooks/useCharSelectionCallback";
+import useDBState from "../../../../../ReactHooks/useDBState";
 import { ICachedCharacter } from "../../../../../Types/character";
 import { CharacterKey } from "../../../../../Types/consts";
+import { CharacterSelectionModal } from "../../../../CharacterSelectionModal";
 import useBuildSetting from "../useBuildSetting";
-import { useOptimizeDBState } from "../DBState";
 
 export default function UseEquipped({ disabled = false }: { disabled?: boolean }) {
   const { t } = useTranslation("page_character_optimize")
@@ -28,7 +29,7 @@ export default function UseEquipped({ disabled = false }: { disabled?: boolean }
   const { buildSetting: { useEquippedArts }, buildSettingDispatch } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState(false)
-  const [{ equipmentPriority: tempEquipmentPriority }, setOptimizeDBState] = useOptimizeDBState()
+  const [{ equipmentPriority: tempEquipmentPriority }, setOptimizeDBState] = useDBState("TabOptimize", initialTabOptimizeDBState)
   //Basic validate for the equipmentPrio list to remove dups and characters that doesnt exist.
   const equipmentPriority = useMemo(() => [...new Set(tempEquipmentPriority)].filter(ck => database.chars.get(ck)), [database, tempEquipmentPriority])
   const setPrio = useCallback((equipmentPriority: CharacterKey[]) => setOptimizeDBState({ equipmentPriority }), [setOptimizeDBState])

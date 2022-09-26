@@ -1,8 +1,7 @@
-import React from 'react';
 import { createScheduler, createWorker, RecognizeResult, Scheduler } from 'tesseract.js';
 import ColorText from '../Components/ColoredText';
 import Artifact from '../Data/Artifacts/Artifact';
-import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
+import { AllArtifactSheets, ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import KeyMap, { cacheValueString } from '../KeyMap';
 import { allMainStatKeys, allSubstatKeys, IArtifact, ICachedArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
 import { allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
@@ -133,7 +132,7 @@ async function textsFromImage(imageData: ImageData, options: object | undefined 
   return rec.data.lines.map(line => line.text)
 }
 
-export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: ISubstat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IArtifact, Dict<keyof ICachedArtifact, Displayable>] {
+export function findBestArtifact(sheets: AllArtifactSheets, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: ISubstat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IArtifact, Dict<keyof ICachedArtifact, Displayable>] {
   // const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "Adventurer", "ArchaicPetra"])]
   // TODO: restore
   const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "EmblemOfSeveredFate"])]
@@ -149,7 +148,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   const rarityRates = objectKeyMap(allArtifactRarities, rarity => {
     let score = 0
     if (textSetKeys.size) {
-      const count = [...textSetKeys].reduce((count, set) => count + (sheets[set].rarity.includes(rarity) ? 1 : 0), 0)
+      const count = [...textSetKeys].reduce((count, set) => count + (sheets(set).rarity.includes(rarity) ? 1 : 0), 0)
       score += count / textSetKeys.size
     }
     if (substats.length) {
@@ -170,7 +169,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
 
       for (const [rarityString, rarityIndividualScore] of Object.entries(rarityRates)) {
         const rarity = parseInt(rarityString) as ArtifactRarity
-        const setKeys = relevantSetKey.filter(setKey => sheets[setKey].rarity.includes(rarity))
+        const setKeys = relevantSetKey.filter(setKey => sheets(setKey).rarity.includes(rarity))
         const rarityScore = mainStatScore + rarityIndividualScore
 
         if (rarityScore + 2 < bestScore) continue // Early bail out
@@ -254,7 +253,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
       texts[key] = inferredText(result[key], name, text)
   }
 
-  addText("setKey", textSetKeys, "Set", (value) => sheets[value].name)
+  addText("setKey", textSetKeys, "Set", (value) => sheets(value).name)
   addText("rarity", rarities, "Rarity", (value) => <>{value} {value !== 1 ? "Stars" : "Star"}</>)
   addText("slotKey", slotKeys, "Slot", (value) => <>{Artifact.slotName(value)}</>)
   addText("mainStatKey", mainStatKeys, "Main Stat", (value) => <>{KeyMap.getStr(value)}</>)
@@ -279,11 +278,11 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   return [result, texts]
 }
 
-function parseSetKeys(texts: string[], sheets): Set<ArtifactSetKey> {
+function parseSetKeys(texts: string[], sheets: AllArtifactSheets): Set<ArtifactSetKey> {
   const results = new Set<ArtifactSetKey>([])
   for (const text of texts)
     for (const key of allArtifactSets)
-      if (hammingDistance(text.replace(/\W/g, ''), sheets[key].nameRaw.replace(/\W/g, '')) <= 2)
+      if (hammingDistance(text.replace(/\W/g, ''), sheets(key).nameRaw.replace(/\W/g, '')) <= 2)
         results.add(key)
   return results
 }

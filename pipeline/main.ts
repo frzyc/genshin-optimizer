@@ -1,5 +1,5 @@
 import { artifactIdMap, artifactSlotMap, characterIdMap, CharacterKey, Language, propTypeMap, QualityTypeMap, StatKey, weaponIdMap, WeaponKey, weaponMap, WeaponTypeKey } from '.'
-import { mapHashData } from './Data'
+import { mapHashData, mapHashDataOverride } from './Data'
 import artifactMainstatData from './DataminedModules/artifact/artifactMainstat'
 import artifactSubstatData from './DataminedModules/artifact/artifactSubstat'
 import { artifactSubstatRollCorrection, artifactSubstatRollData } from './DataminedModules/artifact/artifactSubstatRolls'
@@ -66,87 +66,73 @@ const characterDataDump = Object.fromEntries(Object.entries(avatarExcelConfigDat
     star: QualityTypeMap[qualityType] ?? 5,
     ascensions: ascensionData[avatarPromoteId]
   }
-
-  return [characterIdMap[charid], result]
+  const charKey = characterIdMap[charid]
+  return [charKey.startsWith("Traveler") ? "Traveler" : charKey, result]
 })) as Record<CharacterKey, CharacterData>
 
 //dump data file to respective character directory.
-Object.entries(characterDataDump).forEach(([characterKey, data]) => {
-  if (characterKey.includes('_')) {//Traveler, for multi element support
-    const [charKey, eleKey] = characterKey.split("_")
-    dumpFile(`${__dirname}/../src/Data/Characters/${charKey}/data_${eleKey}_gen.json`, data)
-  } else
-    dumpFile(`${__dirname}/../src/Data/Characters/${characterKey}/data_gen.json`, data)
-})
+Object.entries(characterDataDump).forEach(([characterKey, data]) =>
+  dumpFile(`${__dirname}/../src/Data/Characters/${characterKey}/data_gen.json`, data))
 
 
-const characterSkillParamDump = Object.fromEntries(Object.entries(avatarExcelConfigData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
-  const { candSkillDepotIds, skillDepotId } = charData
-  const result = {}
+const characterSkillParamDump = {} as Record<CharacterKey, CharacterData>
+function genTalentHash(keys: string[], depot: AvatarSkillDepotExcelConfigData) {
+  const { energySkill: burst, skills: [normal, skill, sprint], talents, inherentProudSkillOpens: [passive1, passive2, passive3, , passive] } = depot
 
-  function genTalentHash(keys: string[], depot: AvatarSkillDepotExcelConfigData) {
-    const { energySkill: burst, skills: [normal, skill, sprint], talents, inherentProudSkillOpens: [passive1, passive2, passive3, , passive] } = depot
+  function parseSkillParams(keys: string[], skillArr: ProudSkillExcelConfigData[]) {
+    const skillParamBase = skillArr.map(proud => proud.paramList)
 
-    function parseSkillParams(obj: object, keys: string[], skillArr: ProudSkillExcelConfigData[]) {
-      const skillParamBase = skillArr.map(proud => proud.paramList)
-
-      //need to transpose the skillParam
-      const skillParamUntrimmed: Array<Array<number>> = []
-      skillParamBase.forEach((arr, i) => {
-        arr.forEach((value, j) => {
-          if (!skillParamUntrimmed[j]) skillParamUntrimmed[j] = []
-          //The assumption is that any value >10 is a "flat" value that is not a percent.
-          skillParamUntrimmed[j][i] = extrapolateFloat(value)
-        })
+    //need to transpose the skillParam
+    const skillParamUntrimmed: Array<Array<number>> = []
+    skillParamBase.forEach((arr, i) => {
+      arr.forEach((value, j) => {
+        if (!skillParamUntrimmed[j]) skillParamUntrimmed[j] = []
+        //The assumption is that any value >10 is a "flat" value that is not a percent.
+        skillParamUntrimmed[j][i] = extrapolateFloat(value)
       })
-      //filter out empty entries
-      const skillParam = skillParamUntrimmed.filter(arr => !arr.every(i => !i))
-      layeredAssignment(result, keys, skillParam)
-    }
-    parseSkillParams(result, [...keys, "auto"], skillGroups[talentsData[normal].proudSkillGroupId])
-
-    parseSkillParams(result, [...keys, "skill"], skillGroups[talentsData[skill].proudSkillGroupId])
-    parseSkillParams(result, [...keys, "burst"], skillGroups[talentsData[burst].proudSkillGroupId])
-
-    if (sprint)
-      parseSkillParams(result, [...keys, "sprint"], skillGroups[talentsData[sprint].proudSkillGroupId])
-
-    passive1.proudSkillGroupId && parseSkillParams(result, [...keys, "passive1"], skillGroups[passive1.proudSkillGroupId])
-    passive2.proudSkillGroupId && parseSkillParams(result, [...keys, "passive2"], skillGroups[passive2.proudSkillGroupId])
-    if (passive3?.proudSkillGroupId)
-      parseSkillParams(result, [...keys, "passive3"], skillGroups[passive3.proudSkillGroupId])
-    //seems to be only used by sangonomiyaKokomi
-    if (passive?.proudSkillGroupId)
-      parseSkillParams(result, [...keys, "passive"], skillGroups[passive.proudSkillGroupId])
-
-    talents.forEach((skId, i) =>
-      layeredAssignment(result, [...keys, `constellation${i + 1}`], constellations[skId].paramList.filter(i => i).map(value => extrapolateFloat(value))))
+    })
+    //filter out empty entries
+    const skillParam = skillParamUntrimmed.filter(arr => !arr.every(i => !i))
+    layeredAssignment(characterSkillParamDump, keys, skillParam)
   }
+  parseSkillParams([...keys, "auto"], skillGroups[talentsData[normal].proudSkillGroupId])
 
-  const keys = []
+  parseSkillParams([...keys, "skill"], skillGroups[talentsData[skill].proudSkillGroupId])
+  parseSkillParams([...keys, "burst"], skillGroups[talentsData[burst].proudSkillGroupId])
+
+  if (sprint)
+    parseSkillParams([...keys, "sprint"], skillGroups[talentsData[sprint].proudSkillGroupId])
+
+  passive1.proudSkillGroupId && parseSkillParams([...keys, "passive1"], skillGroups[passive1.proudSkillGroupId])
+  passive2.proudSkillGroupId && parseSkillParams([...keys, "passive2"], skillGroups[passive2.proudSkillGroupId])
+  if (passive3?.proudSkillGroupId)
+    parseSkillParams([...keys, "passive3"], skillGroups[passive3.proudSkillGroupId])
+  //seems to be only used by sangonomiyaKokomi
+  if (passive?.proudSkillGroupId)
+    parseSkillParams([...keys, "passive"], skillGroups[passive.proudSkillGroupId])
+
+  talents.forEach((skId, i) =>
+    layeredAssignment(characterSkillParamDump, [...keys, `constellation${i + 1}`], constellations[skId].paramList.filter(i => i).map(value => extrapolateFloat(value))))
+}
+Object.entries(avatarExcelConfigData).forEach(([charid, charData]) => {
+  if (!(charid in characterIdMap)) return
+  const { candSkillDepotIds, skillDepotId } = charData
+
   if (candSkillDepotIds.length) { //Traveler
-    //this will be 504,506... for male
-    genTalentHash([...keys, "anemo"], skillDepot[704])
-    genTalentHash([...keys, "geo"], skillDepot[706])
-    genTalentHash([...keys, "electro"], skillDepot[707])
-    genTalentHash([...keys, "dendro"], skillDepot[708])
+    const [_1, _2, _3, anemo, _5, geo, electro, dendro] = candSkillDepotIds
+    const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"
+    genTalentHash(["TravelerAnemo" + gender], skillDepot[anemo])
+    genTalentHash(["TravelerGeo" + gender], skillDepot[geo])
+    genTalentHash(["TravelerElectro" + gender], skillDepot[electro])
+    genTalentHash(["TravelerDendro" + gender], skillDepot[dendro])
   } else {
-    genTalentHash(keys, skillDepot[skillDepotId])
+    genTalentHash([characterIdMap[charid]], skillDepot[skillDepotId])
   }
-
-
-  return [characterIdMap[charid], result]
-})) as Record<CharacterKey, CharacterData>
-
-//dump data file to respective character directory.
-Object.entries(characterSkillParamDump).forEach(([characterKey, data]) => {
-  if (characterKey === "Traveler") {//Traveler, for multi element support
-    Object.entries(data as any).forEach(([eleKey, eData]) => {
-      dumpFile(`${__dirname}/../src/Data/Characters/${characterKey}/${eleKey}/skillParam_gen.json`, eData)
-    });
-  } else
-    dumpFile(`${__dirname}/../src/Data/Characters/${characterKey}/skillParam_gen.json`, data)
 })
+dumpFile(`${__dirname}/allChar_gen.json`, characterSkillParamDump)
+//dump data file to respective character directory.
+Object.entries(characterSkillParamDump).forEach(([characterKey, data]) =>
+  dumpFile(`${__dirname}/../src/Data/Characters/${characterKey}/skillParam_gen.json`, data))
 
 type WeaponProp = {
   type: StatKey,
@@ -263,15 +249,14 @@ Object.entries(avatarExcelConfigData).filter(([charid,]) => charid in characterI
   const { nameTextMapHash, descTextMapHash, skillDepotId, candSkillDepotIds } = charData
   const { avatarTitleTextMapHash, avatarConstellationBeforTextMapHash } = characterInfo[charid]
 
-
-  const keys = ["char", characterIdMap[charid]]
   mapHashData.charNames[characterIdMap[charid]] = nameTextMapHash
-  layeredAssignment(mapHashData, [...keys, "name"], nameTextMapHash)
-  layeredAssignment(mapHashData, [...keys, "title"], avatarTitleTextMapHash)
-  layeredAssignment(mapHashData, [...keys, "description"], descTextMapHash)
+  const charKey = characterIdMap[charid]
+  layeredAssignment(mapHashData, ["char", charKey, "name"], nameTextMapHash)
+  layeredAssignment(mapHashData, ["char", charKey, "title"], avatarTitleTextMapHash)
+  layeredAssignment(mapHashData, ["char", charKey, "description"], descTextMapHash)
   // layeredAssignment(mapHashData, [...keys, "descriptionDetail"], avatarDetailTextMapHash)
   // Don't override constellation name if manually specified. For Zhongli
-  !mapHashData.char[characterIdMap[charid]].constellationName && layeredAssignment(mapHashData, [...keys, "constellationName"], avatarConstellationBeforTextMapHash)
+  !mapHashData.char[characterIdMap[charid]].constellationName && layeredAssignment(mapHashData, ["char", charKey, "constellationName"], avatarConstellationBeforTextMapHash)
   function genTalentHash(keys: string[], depot: AvatarSkillDepotExcelConfigData) {
     const { energySkill: burst, skills: [normal, skill, sprint], talents, inherentProudSkillOpens: [passive1, passive2, passive3, , passive] } = depot
     layeredAssignment(mapHashData, [...keys, "auto", "name"], [talentsData[normal].nameTextMapHash, "autoName"])
@@ -314,13 +299,14 @@ Object.entries(avatarExcelConfigData).filter(([charid,]) => charid in characterI
   }
 
   if (candSkillDepotIds.length) { //Traveler
-    //this will be 504,506... for male
-    genTalentHash([...keys, "anemo"], skillDepot[704])
-    genTalentHash([...keys, "geo"], skillDepot[706])
-    genTalentHash([...keys, "electro"], skillDepot[707])
-    genTalentHash([...keys, "dendro"], skillDepot[708])
+    const [_1, _2, _3, anemo, _5, geo, electro, dendro] = candSkillDepotIds
+    const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"
+    genTalentHash(["char", "TravelerAnemo" + gender], skillDepot[anemo])
+    genTalentHash(["char", "TravelerGeo" + gender], skillDepot[geo])
+    genTalentHash(["char", "TravelerElectro" + gender], skillDepot[electro])
+    genTalentHash(["char", "TravelerDendro" + gender], skillDepot[dendro])
   } else {
-    genTalentHash(keys, skillDepot[skillDepotId])
+    genTalentHash(["char", charKey], skillDepot[skillDepotId])
   }
 })
 
@@ -339,6 +325,8 @@ Object.entries(materialExcelConfigData).forEach(([id, material]) => {
   }
 })
 dumpFile(`${__dirname}/../src/Data/Materials/material_gen.json`, materialData)
+
+mapHashDataOverride()
 
 //Main localization dumping
 const languageData = {}

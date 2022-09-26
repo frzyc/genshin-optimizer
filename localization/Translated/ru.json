@@ -352,19 +352,6 @@
         "afterBurst": "После использования <strong> Искусство Камисато: Соумэцу </strong>",
         "c6Active": "Усурахи Буто активно"
     },
-    "char_Traveler": {
-        "electro": {
-            "skill": {
-                "absorb": "Поглощение Амулета изобилия"
-            },
-            "c2": {
-                "thunderHit": "<strong>Нисходящий гром</strong> попал по врагу"
-            },
-            "burst": {
-                "3rd": "Урон 3-го удара Нисходящего грома"
-            }
-        }
-    },
     "weapon_MistsplitterReforged": {
         "emblem": "Печать рассекателя тумана"
     },

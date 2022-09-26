@@ -1,5 +1,5 @@
 import { validateLevelAsc } from "../../Data/LevelData";
-import { allCharacterKeys, allWeaponKeys } from "../../Types/consts";
+import { allWeaponKeys, charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
 import { ICachedWeapon, IWeapon } from "../../Types/weapon";
 import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
@@ -10,7 +10,8 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
     super(database)
     for (const key of this.database.storage.keys) {
       if (key.startsWith("weapon_"))
-        this.set(key, this.database.storage.get(key) as any)
+        if (!this.set(key, this.database.storage.get(key) as any))
+          this.database.storage.remove(key)
     }
   }
   ensureEquipment() {
@@ -25,7 +26,7 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
         const weaponId = generateRandomWeaponID(weaponIds)
 
         weaponIds.add(weaponId)
-        this.set(weaponId, { ...weapon, location: charKey })
+        this.set(weaponId, { ...weapon, location: charKeyToLocCharKey(charKey) })
         newWeapons.push(weapon)
       }
     }
@@ -38,7 +39,7 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
     if (!allWeaponKeys.includes(key)) return
     let { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
     if (typeof refinement !== "number" || refinement < 1 || refinement > 5) refinement = 1
-    if (!allCharacterKeys.includes(location)) location = ""
+    if (!locationCharacterKeys.includes(location)) location = ""
 
     return { key, level, ascension, refinement, location, lock }
   }
@@ -57,13 +58,13 @@ export class WeaponDataManager extends DataManager<string, string, ICachedWeapon
       //swap to prevWeapon <-> prevChar && newWeapon <-> newChar(outside of this if)
 
       if (prevWeapon)
-        super.setCached(prevWeapon.id, { ...prevWeapon, location: prevChar?.key ?? "" })
+        super.setCached(prevWeapon.id, { ...prevWeapon, location: prevChar?.key ? charKeyToLocCharKey(prevChar.key) : "" })
       if (newChar)
-        this.database.chars.setEquippedWeapon(newChar.key, newWeapon.id)
+        this.database.chars.setEquippedWeapon(charKeyToLocCharKey(newChar.key), newWeapon.id)
       if (prevChar)
-        this.database.chars.setEquippedWeapon(prevChar.key, prevWeapon?.id ?? "")
+        this.database.chars.setEquippedWeapon(charKeyToLocCharKey(prevChar.key), prevWeapon?.id ?? "")
     } else
-      newWeapon.location && this.database.chars.trigger(newWeapon.location, "update", this.database.chars.get(newWeapon.location))
+      newWeapon.location && this.database.chars.triggerCharacter(newWeapon.location, "update")
     return newWeapon
   }
   deCache(weapon: ICachedWeapon): IWeapon {

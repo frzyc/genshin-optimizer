@@ -7,35 +7,39 @@ import CardDark from '../../Components/Card/CardDark';
 import CardLight from '../../Components/Card/CardLight';
 import CloseButton from '../../Components/CloseButton';
 import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../../Components/HitModeEditor';
+import LevelSelect from '../../Components/LevelSelect';
+import SqBadge from '../../Components/SqBadge';
 import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
 import { DataContext, dataContextObj } from '../../Context/DataContext';
 import { FormulaDataContext, FormulaDataWrapper } from '../../Context/FormulaDataContext';
 import CharacterSheet from '../../Data/Characters/CharacterSheet';
+import { DatabaseContext } from '../../Database/Database';
 import useBoolState from '../../ReactHooks/useBoolState';
 import useCharacter from '../../ReactHooks/useCharacter';
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
+import useGender from '../../ReactHooks/useGender';
 import usePromise from '../../ReactHooks/usePromise';
 import useTeamData from '../../ReactHooks/useTeamData';
 import useTitle from '../../ReactHooks/useTitle';
-import { allCharacterKeys, CharacterKey } from '../../Types/consts';
+import { CharacterKey, charKeyToCharName } from '../../Types/consts';
 import { CustomMultiTargetButton } from '../CustomMultiTarget';
 import CharSelectDropdown from './CharSelectDropdown';
 import FormulaModal from './FormulaModal';
-import LevelSelect from '../../Components/LevelSelect';
 import StatModal from './StatModal';
 import TabBuild from './Tabs/TabOptimize';
 import TabOverview from './Tabs/TabOverview';
 import TabTalent from './Tabs/TabTalent';
-import TabTheorycraft from './Tabs/TabTheorycraft';
 import TabTeambuffs from './Tabs/TabTeambuffs';
+import TabTheorycraft from './Tabs/TabTheorycraft';
 import TravelerElementSelect from './TravelerElementSelect';
-import SqBadge from '../../Components/SqBadge';
+import TravelerGenderSelect from './TravelerGenderSelect';
 
 export default function CharacterDisplay() {
   const navigate = useNavigate();
+  const { database } = useContext(DatabaseContext)
   const onClose = useCallback(() => navigate("/characters"), [navigate])
   let { characterKey } = useParams<{ characterKey?: CharacterKey }>();
-  const invalidKey = !allCharacterKeys.includes(characterKey as any ?? "")
+  const invalidKey = !database.chars.keys.includes(characterKey as CharacterKey)
   if (invalidKey)
     return <Navigate to="/characters" />
 
@@ -52,12 +56,16 @@ type CharacterDisplayCardProps = {
 }
 function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardProps) {
   const character = useCharacter(characterKey)
-  const characterSheet = usePromise(() => CharacterSheet.get(characterKey), [characterKey])
+  const { database } = useContext(DatabaseContext)
+  const gender = useGender(database)
+  const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
   const teamData = useTeamData(characterKey)
   const { target: charUIData } = teamData?.[characterKey] ?? {}
   let { params: { tab = "overview" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }
-  const { t } = useTranslation()
-  useTitle(`${t(`char_${characterKey}_gen:name`)} - ${t(`page_character:tabs.${tab}`)}`)
+  const { t } = useTranslation(["charNames_gen", "page_character"])
+
+  useTitle(useMemo(() => `${t(`charNames_gen:${charKeyToCharName(characterKey, gender)}`)} - ${t(`page_character:tabs.${tab}`)}`, [t, characterKey, gender, tab]))
+
   const characterDispatch = useCharacterReducer(character?.key ?? "")
 
   const dataContextValue: dataContextObj | undefined = useMemo(() => {
@@ -84,6 +92,7 @@ function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardPro
           <Box display="flex" gap={1} flexWrap="wrap" flexGrow={1}>
             <CharSelectDropdown />
             <TravelerElementSelect />
+            <TravelerGenderSelect />
             <DetailStatButton />
             <CustomMultiTargetButton />
             <FormulasButton />

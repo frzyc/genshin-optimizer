@@ -6,11 +6,12 @@ import { Trans, useTranslation } from "react-i18next";
 import { FilterOption } from "../../PageArtifact/ArtifactSort";
 import { allArtifactRarities, allSlotKeys } from "../../Types/consts";
 import { handleMultiSelect } from "../../Util/MultiSelect";
-import CharacterAutocomplete from "../Character/CharacterAutocomplete";
 import SolidToggleButtonGroup from "../SolidToggleButtonGroup";
 import { StarsDisplay } from "../StarDisplay";
 import { ArtifactMainStatMultiAutocomplete, ArtifactSetMultiAutocomplete, ArtifactSubstatMultiAutocomplete } from "./ArtifactAutocomplete";
 import ArtifactLevelSlider from "./ArtifactLevelSlider";
+import LocationFilterAutocomplete from "./LocationFilterAutocomplete";
+import RVSlide from "./RVSlide";
 import { artifactSlotIcon } from "./SlotNameWIthIcon";
 
 const exclusionValues = ["excluded", "included"] as const
@@ -20,6 +21,7 @@ const rarityHandler = handleMultiSelect([...allArtifactRarities])
 const slotHandler = handleMultiSelect([...allSlotKeys])
 const exclusionHandler = handleMultiSelect([...exclusionValues])
 const lockedHandler = handleMultiSelect([...lockedValues])
+const lineHandler = handleMultiSelect([1, 2, 3, 4])
 
 interface ArtifactFilterDisplayProps {
   filterOption: FilterOption
@@ -29,8 +31,8 @@ interface ArtifactFilterDisplayProps {
 export default function ArtifactFilterDisplay({ filterOption, filterOptionDispatch, disableSlotFilter = false }: ArtifactFilterDisplayProps) {
   const { t } = useTranslation(["artifact", "ui"]);
 
-  const { artSetKeys = [], mainStatKeys = [], rarity = [], slotKeys = [], levelLow, levelHigh, substats = [],
-    location = "", exclusion = [...exclusionValues], locked = [...lockedValues] } = filterOption
+  const { artSetKeys = [], mainStatKeys = [], rarity = [], slotKeys = [], levelLow = 0, levelHigh = 20, substats = [],
+    location = "", exclusion = [...exclusionValues], locked = [...lockedValues], rvLow = 0, rvHigh = 900, lines = [] } = filterOption
 
   return <Grid container spacing={1}>
     {/* left */}
@@ -56,26 +58,21 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
           </ToggleButton>)}
         </SolidToggleButtonGroup>
       </Box>
+      {/* Lines */}
+      <SolidToggleButtonGroup fullWidth value={lines} size="small">
+        {[1, 2, 3, 4].map(line => <ToggleButton key={line} value={line} onClick={() => filterOptionDispatch({ lines: lineHandler(lines, line) })}>{t("substat", { count: line })}</ToggleButton>)}
+      </SolidToggleButtonGroup>
       {/* Artiface level filter */}
       <ArtifactLevelSlider showLevelText levelLow={levelLow} levelHigh={levelHigh}
         setLow={levelLow => filterOptionDispatch({ levelLow })}
         setHigh={levelHigh => filterOptionDispatch({ levelHigh })}
         setBoth={(levelLow, levelHigh) => filterOptionDispatch({ levelLow, levelHigh })} />
-      <Grid container display="flex" gap={1}>
-        <Grid item flexGrow={1}>
-          {/* location */}
-          <CharacterAutocomplete
-            value={location}
-            onChange={location => filterOptionDispatch({ location })}
-            placeholderText={t("artifact:filterLocation.any")}
-            defaultText={t("artifact:filterLocation.any")}
-            labelText={t("artifact:filterLocation.location")}
-            showDefault
-            showInventory
-            showEquipped
-          />
-        </Grid>
-      </Grid>
+
+      <RVSlide showLevelText levelLow={rvLow} levelHigh={rvHigh}
+        setLow={rvLow => filterOptionDispatch({ rvLow })}
+        setHigh={rvHigh => filterOptionDispatch({ rvHigh })}
+        setBoth={(rvLow, rvHigh) => filterOptionDispatch({ rvLow, rvHigh })} />
+
     </Grid>
     {/* right */}
     <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
@@ -83,6 +80,7 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
       <ArtifactSetMultiAutocomplete artSetKeys={artSetKeys} setArtSetKeys={artSetKeys => filterOptionDispatch({ artSetKeys })} />
       <ArtifactMainStatMultiAutocomplete mainStatKeys={mainStatKeys} setMainStatKeys={mainStatKeys => filterOptionDispatch({ mainStatKeys })} />
       <ArtifactSubstatMultiAutocomplete substatKeys={substats} setSubstatKeys={substats => filterOptionDispatch({ substats })} />
+      <LocationFilterAutocomplete location={location} setLocation={location => filterOptionDispatch({ location })} />
     </Grid>
   </Grid>
 }

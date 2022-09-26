@@ -1,45 +1,54 @@
-import CharacterSheet from "../Data/Characters/CharacterSheet";
+import { AllCharacterSheets } from "../Data/Characters/CharacterSheet";
+import { initCharMeta } from "../Database/Data/StateData";
 import { ArtCharDatabase } from "../Database/Database";
 import i18n from "../i18n";
-import { initCharMeta } from "../ReactHooks/useDBState";
-import { CharacterKey } from "../Types/consts";
+import { allElements, allWeaponTypeKeys, CharacterKey, charKeyToCharName, ElementKey, WeaponTypeKey } from "../Types/consts";
 import { FilterConfigs, SortConfigs } from "./SortByFilters";
-export const characterSortKeys = ["new", "level", "rarity", "name",] as const
+export const characterSortKeys = ["new", "level", "rarity", "name", "favorite"] as const
 export type CharacterSortKey = typeof characterSortKeys[number]
 
-export function characterSortConfigs(database: ArtCharDatabase, characterSheets: Record<CharacterKey, CharacterSheet>): SortConfigs<CharacterSortKey, CharacterKey> {
+export function characterSortConfigs(database: ArtCharDatabase, characterSheets: AllCharacterSheets): SortConfigs<CharacterSortKey, CharacterKey> {
   return {
-    new: {
-      getValue: (ck) => database.chars.get(ck as CharacterKey) ? 0 : 1,
-      tieBreaker: "name"
+    new: (ck) => database.chars.get(ck as CharacterKey) ? 0 : 1,
+    name: (ck) => i18n.t(`charNames_gen:${charKeyToCharName(ck, database.gender)}`).toString(),
+    level: (ck) => {
+      const char = database.chars.get(ck as CharacterKey)
+      return char ? char.level * (char.ascension + 1) : 0
     },
-    name: {
-      getValue: (ck) => i18n.t(`charNames_gen"${ck}`).toString(),
-    },
-    level: {
-      getValue: (ck) => {
-        const char = database.chars.get(ck as CharacterKey)
-        if (!char) return 0
-        return char.level * char.ascension
-      },
-      tieBreaker: "rarity"
-    },
-    rarity: {
-      getValue: (ck) => characterSheets?.[ck]?.rarity,
-      tieBreaker: "level"
-    }
+    rarity: (ck) => characterSheets(ck, database.gender)?.rarity ?? 0,
+    favorite: (ck,) => (database.states.getWithInit(`charMeta_${ck}`, initCharMeta).favorite ? 1 : 0),
   }
 }
 
-export type CharacterFilterConfigs = FilterConfigs<"element" | "weaponType" | "favorite" | "name", CharacterKey>
-export function characterFilterConfigs(database: ArtCharDatabase, characterSheets: Record<CharacterKey, CharacterSheet>): CharacterFilterConfigs {
+export const characterFilterKeys = ["element", "weaponType", "name", "new"] as const
+export type CharacterFilterKey = typeof characterFilterKeys[number]
+
+export type CharacterFilterConfigs = FilterConfigs<CharacterFilterKey, CharacterKey>
+export function characterFilterConfigs(database: ArtCharDatabase, characterSheets: AllCharacterSheets): CharacterFilterConfigs {
   return {
-    element: (ck, filter) => filter.includes(characterSheets?.[ck]?.elementKey) ||
-      (ck === "Traveler" && !database.chars.get(ck as CharacterKey) && filter.some(fe => characterSheets.Traveler.elementKeys.includes(fe))) ||
-      (ck === "Traveler" && filter.includes(database.chars.get(ck as CharacterKey)?.elementKey)),
-    weaponType: (ck, filter) => filter.includes(characterSheets?.[ck]?.weaponTypeKey),
-    favorite: (ck, filter) =>
-      !filter || (filter === (database.states.getWithInit(`charMeta_${ck}`, initCharMeta).favorite ? "yes" : "no")),
-    name: (ck, filter) => !filter || (i18n.t(`charNames_gen:${ck}`).toLowerCase().includes(filter.toLowerCase()))
+    element: (ck, filter) => filter.includes(characterSheets(ck, database.gender)?.elementKey),
+    weaponType: (ck, filter) => filter.includes(characterSheets(ck, database.gender)?.weaponTypeKey),
+    name: (ck, filter) => filter === undefined || (i18n.t(`charNames_gen:${charKeyToCharName(ck, database.gender)}`).toLowerCase().includes(filter.toLowerCase())),
+    new: (ck, filter) => filter === undefined || (filter === (database.chars.get(ck as CharacterKey) ? "no" : "yes")),
   }
 }
+
+export const characterSortMap: Partial<Record<CharacterSortKey, CharacterSortKey[]>> = {
+  name: ["favorite", "name"],
+  level: ["favorite", "level", "rarity", "name"],
+  rarity: ["favorite", "rarity", "level", "name"]
+}
+
+export const initialCharacterDisplayState = (): {
+  sortType: CharacterSortKey
+  ascending: boolean
+  weaponType: WeaponTypeKey[]
+  element: ElementKey[]
+  pageIndex: number
+} => ({
+  sortType: characterSortKeys[0],
+  ascending: false,
+  weaponType: [...allWeaponTypeKeys],
+  element: [...allElements],
+  pageIndex: 0
+})

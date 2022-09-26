@@ -1,13 +1,12 @@
-import { CharacterKey } from "pipeline";
 import { validateLevelAsc } from "../../Data/LevelData";
 import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
 import { initialCharacter } from "../../ReactHooks/useCharSelectionCallback";
 import { ICachedCharacter, ICharacter } from "../../Types/character";
-import { allAdditiveReactions, allAmpReactions, allCharacterKeys, allElements, allHitModes, allSlotKeys, SlotKey } from "../../Types/consts";
-import { deepClone, objectKeyMap, objectMap } from "../../Util/Util";
+import { allAdditiveReactions, allAmpReactions, allCharacterKeys, allElements, allHitModes, allSlotKeys, CharacterKey, charKeyToLocCharKey, LocationCharacterKey, SlotKey, TravelerKey, travelerKeys } from "../../Types/consts";
+import { deepClone, objectKeyMap } from "../../Util/Util";
 import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
-import { DataManager } from "../DataManager";
+import { DataManager, TriggerString } from "../DataManager";
 
 export class CharacterDataManager extends DataManager<CharacterKey, string, ICachedCharacter, ICharacter>{
   constructor(database: ArtCharDatabase) {
@@ -15,7 +14,8 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     for (const key of this.database.storage.keys) {
       if (key.startsWith("char_")) {
         const [, charKey] = key.split("char_")
-        this.set(charKey as CharacterKey, this.database.storage.get(key))
+        if (!this.set(charKey as CharacterKey, this.database.storage.get(key)))
+          this.database.storage.remove(key)
       }
     }
   }
@@ -23,17 +23,15 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
     if (typeof obj !== "object") return
 
     let {
-      key: characterKey, level: rawLevel, ascension: rawAscension, hitMode, elementKey, reaction, conditional,
+      key: characterKey, level: rawLevel, ascension: rawAscension, hitMode, reaction, conditional,
       bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
-      compareData, customMultiTarget, customMultiTargets
+      compareData, customMultiTarget
     } = obj
 
     if (!allCharacterKeys.includes(characterKey))
       return // non-recoverable
 
     if (!allHitModes.includes(hitMode)) hitMode = "avgHit"
-    if (characterKey !== "Traveler") elementKey = undefined
-    else if (!allElements.includes(elementKey)) elementKey = "anemo"
     if (!allAmpReactions.includes(reaction) && !allAdditiveReactions.includes(reaction)) reaction = undefined
     if (!allElements.includes(infusionAura)) infusionAura = ""
     if (typeof constellation !== "number" && constellation < 0 && constellation > 6) constellation = 0
@@ -70,63 +68,67 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
       bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
       compareData, customMultiTarget
     }
-    if (elementKey) {
-      char.elementKey = elementKey
-      char.customMultiTarget = []
-      if (!customMultiTargets) char.customMultiTargets = objectKeyMap(allElements, () => []) as ICharacter["customMultiTargets"]
-      else char.customMultiTargets = objectMap(customMultiTargets!, customMultiTarget => (customMultiTarget as any[]).map(cmt => validateCustomMultiTarget(cmt)).filter(t => t)) as ICharacter["customMultiTargets"]
-    }
     return char
   }
   toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)
     return {
-      equippedArtifacts: oldChar ? oldChar.equippedArtifacts : objectKeyMap(allSlotKeys, () => ""),
-      equippedWeapon: oldChar ? oldChar.equippedWeapon : "",
+      equippedArtifacts: oldChar ? oldChar.equippedArtifacts : objectKeyMap(allSlotKeys, sk => Object.values(this.database.arts?.data ?? {}).find(a => a.location === charKeyToLocCharKey(id) && a.slotKey === sk)?.id ?? ""),
+      equippedWeapon: oldChar ? oldChar.equippedWeapon : (Object.values(this.database.weapons?.data ?? {}).find(w => w.location === charKeyToLocCharKey(id))?.id ?? ""),
       ...storageObj,
     }
   }
   deCache(char: ICachedCharacter): ICharacter {
     const {
-      key: characterKey, level, ascension, hitMode, elementKey, reaction, conditional,
+      key, level, ascension, hitMode, reaction, conditional,
       bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
-      compareData, customMultiTarget, customMultiTargets
+      compareData, customMultiTarget
     } = char
     const result: ICharacter = {
-      key: characterKey, level, ascension, hitMode, reaction, conditional,
+      key, level, ascension, hitMode, reaction, conditional,
       bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
-      compareData, customMultiTarget, customMultiTargets
+      compareData, customMultiTarget
     }
-    if (elementKey) result.elementKey = elementKey
     return result
   }
   toStorageKey(key: CharacterKey): string {
     return `char_${key}`
   }
-  getWithInit(key: CharacterKey): ICachedCharacter {
-    if (!this.keys.includes(key))
-      this.set(key, initialCharacter(key))
-    return this.get(key)!
+  getTravelerCharacterKey(): CharacterKey {
+    return travelerKeys.find(k => this.keys.includes(k)) ?? travelerKeys[0]
   }
-  getWithInitWeapon(key: CharacterKey): ICachedCharacter {
-    if (!this.keys.includes(key)) {
-      this.set(key, initialCharacter(key))
+  LocationToCharacterKey(key: LocationCharacterKey): CharacterKey {
+    return key === "Traveler" ? this.getTravelerCharacterKey() : key
+  }
+  getWithInit(key: LocationCharacterKey): ICachedCharacter {
+    const cKey = this.LocationToCharacterKey(key)
+
+    if (!this.keys.includes(cKey))
+      this.set(cKey, initialCharacter(cKey))
+    return this.get(cKey)!
+  }
+  getWithInitWeapon(key: LocationCharacterKey): ICachedCharacter {
+    const cKey = this.LocationToCharacterKey(key)
+    if (!this.keys.includes(cKey)) {
+      this.set(cKey, initialCharacter(cKey))
       this.database.weapons.new({ ...defaultInitialWeapon("sword"), location: key })
     }
-    return this.get(key)!
+    return this.get(cKey)!
   }
+
   remove(key: CharacterKey) {
     const char = this.get(key)
     if (!char) return
-
     for (const artKey of Object.values(char.equippedArtifacts)) {
       const art = this.database.arts.get(artKey)
-      if (art && art.location === key)
+      // Only unequip from artifact from traveler if there are no more "Travelers" in the database
+      if (art && (art.location === key || (art.location === "Traveler" && travelerKeys.includes(key as TravelerKey) && !travelerKeys.find(t => t !== key && this.keys.includes(t)))))
         this.database.arts.set(artKey, { location: "" })
     }
     const weapon = this.database.weapons.get(char.equippedWeapon)
-    if (weapon && weapon.location === key)
-      this.database.weapons.set(char.equippedWeapon, { ...weapon, location: "" })
+    // Only unequip from weapon from traveler if there are no more "Travelers" in the database
+    if (weapon && (weapon.location === key || (weapon.location === "Traveler" && travelerKeys.includes(key as TravelerKey) && !travelerKeys.find(t => t !== key && this.keys.includes(t)))))
+      this.database.weapons.set(char.equippedWeapon, { location: "" })
     super.remove(key)
   }
 
@@ -136,29 +138,31 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
    * This does not update the `location` on artifact
    * This function should be use internally for database to maintain cache on ICachedCharacter.
    */
-  setEquippedArtifact(key: CharacterKey, slotKey: SlotKey, artid: string) {
-    const char = super.get(key)
-    if (!char) return
-    const equippedArtifacts = deepClone(char.equippedArtifacts)
-    equippedArtifacts[slotKey] = artid
-    super.setCached(key, { ...char, equippedArtifacts })
+  setEquippedArtifact(key: LocationCharacterKey, slotKey: SlotKey, artid: string) {
+    const setEq = (k: CharacterKey) => {
+      const char = super.get(k)
+      if (!char) return
+      const equippedArtifacts = deepClone(char.equippedArtifacts)
+      equippedArtifacts[slotKey] = artid
+      super.setCached(k, { ...char, equippedArtifacts })
+    }
+    if (key === "Traveler") travelerKeys.forEach(k => setEq(k))
+    else setEq(key)
   }
+
   /**
    * **Caution**:
    * This does not update the `location` on weapon
    * This function should be use internally for database to maintain cache on ICachedCharacter.
    */
-  setEquippedWeapon(key: CharacterKey, equippedWeapon: ICachedCharacter["equippedWeapon"]) {
-    const char = super.get(key)
-    if (!char) return
-    super.setCached(key, { ...char, equippedWeapon })
-  }
-  equipArtifacts(charKey: CharacterKey, newArts: StrictDict<SlotKey, string>) {
-    const char = super.get(charKey)
-    if (!char) return
-    for (const newArt of Object.values(newArts)) {
-      if (newArt) this.database.arts.set(newArt, { location: charKey })
+  setEquippedWeapon(key: LocationCharacterKey, equippedWeapon: ICachedCharacter["equippedWeapon"]) {
+    const setEq = (k: CharacterKey) => {
+      const char = super.get(k)
+      if (!char) return
+      super.setCached(k, { ...char, equippedWeapon })
     }
+    if (key === "Traveler") travelerKeys.forEach(k => setEq(k))
+    else setEq(key)
   }
 
   hasDup(char: ICharacter, isGO: boolean) {
@@ -173,5 +177,9 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
       const charGOOD = { key, level, constellation, ascension, talent }
       return JSON.stringify(dbGOOD) === JSON.stringify(charGOOD)
     }
+  }
+  triggerCharacter(key: LocationCharacterKey, reason: TriggerString) {
+    if (key === "Traveler") travelerKeys.forEach(ck => this.trigger(ck, reason, this.get(ck)))
+    else this.trigger(key, reason, this.get(key))
   }
 }

@@ -1,7 +1,7 @@
 {
   "homepage": "https://frzyc.github.io/genshin-optimizer/",
   "name": "genshin-optimizer",
-  "version": "8.19.3",
+  "version": "8.21.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -77,13 +77,12 @@
     "react-i18next": ">=11.16.4"
   },
   "devDependencies": {
-    "react-scripts": "^5.0.1",
     "@types/react-router-dom": "^5.3.3",
     "express": "^4.18.1",
     "gh-pages": "^3.2.3",
+    "react-scripts": "^5.0.1",
     "sass": "^1.52.1",
     "ts-node": "^10.7.0",
-    "typescript": "^4.6.4",
-    "worker-loader": "^3.0.8"
+    "typescript": "^4.6.4"
   }
 }

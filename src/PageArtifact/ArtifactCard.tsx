@@ -1,13 +1,13 @@
 import { faBan, faChartLine, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { BusinessCenter, Lock, LockOpen } from '@mui/icons-material';
+import { Lock, LockOpen } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, Chip, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
 import { lazy, Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArtifactSetTooltipContent } from '../Components/Artifact/ArtifactSetTooltip';
 import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
 import CardLight from '../Components/Card/CardLight';
-import CharacterAutocomplete from '../Components/Character/CharacterAutocomplete';
+import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete';
 import LocationName from '../Components/Character/LocationName';
 import ColorText from '../Components/ColoredText';
 import ConditionalWrapper from '../Components/ConditionalWrapper';
@@ -22,7 +22,7 @@ import KeyMap, { cacheValueString } from '../KeyMap';
 import useArtifact from '../ReactHooks/useArtifact';
 import usePromise from '../ReactHooks/usePromise';
 import { allSubstatKeys, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
-import { allElementsWithPhy, CharacterKey, Rarity } from '../Types/consts';
+import { allElementsWithPhy, LocationKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
@@ -46,7 +46,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
   const sheet = usePromise(() => ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
-  const equipOnChar = (charKey: CharacterKey | "") => database.arts.set(artifactId!, { location: charKey })
+  const setLocation = useCallback((k: LocationKey) => artifactId && database.arts.set(artifactId, { location: k }), [database, artifactId])
+
   const editable = !artifactObj
   const [showEditor, setshowEditor] = useState(false)
   const onHideEditor = useCallback(() => setshowEditor(false), [setshowEditor])
@@ -147,11 +148,11 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
         </CardContent>
       </ConditionalWrapper>
       <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }}>
-        {editable && canEquip
-          ? <CharacterAutocomplete sx={{ flexGrow: 1 }} size="small" showDefault
-            defaultIcon={<BusinessCenter />} defaultText={t("ui:inventory")}
-            value={location} onChange={equipOnChar} />
-          : <LocationName location={location} />}
+        <Box sx={{ flexGrow: 1 }}>
+          {editable && canEquip
+            ? <LocationAutocomplete location={location} setLocation={setLocation} />
+            : <LocationName location={location} />}
+        </Box>
         {editable && <ButtonGroup sx={{ height: "100%" }}>
           {editor && <Tooltip title={<Typography>{t`artifact:edit`}</Typography>} placement="top" arrow>
             <Button color="info" size="small" onClick={onShowEditor} >

@@ -5,7 +5,7 @@ import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import { banner, card, talentAssets, thumb, thumbSide } from './assets'
+import assets from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -14,7 +14,7 @@ const data_gen = data_gen_src as CharacterData
 const key: CharacterKey = "YaeMiko"
 const elementKey: ElementKey = "electro"
 const [tr, trm] = trans("char", key)
-const ct = charTemplates(key, data_gen.weaponTypeKey, talentAssets)
+const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p2 = 0
 const datamine = {
@@ -105,20 +105,15 @@ const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFor
 })
 
 const sheet: ICharacterSheet = {
+  key,
   name: tr("name"),
-  cardImg: card,
-  thumbImg: thumb,
-  thumbImgSide: thumbSide,
-  bannerImg: banner,
   rarity: data_gen.star,
   elementKey,
   weaponTypeKey: data_gen.weaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),
-  talent: {
-    sheets: {
-      auto: ct.talentTemplate("auto", [{
+  talent: {  auto: ct.talentTemplate("auto", [{
         text: tr("auto.fields.normal"),
       }, {
         fields: datamine.normal.hitArr.map((_, i) => ({
@@ -200,6 +195,5 @@ const sheet: ICharacterSheet = {
       constellation5: ct.talentTemplate("constellation5", [{ fields: [{ node: nodeC5 }] }]),
       constellation6: ct.talentTemplate("constellation6"),
     }
-  },
-}
-export default new CharacterSheet(sheet, data)
+  }
+export default new CharacterSheet(sheet, data, assets)

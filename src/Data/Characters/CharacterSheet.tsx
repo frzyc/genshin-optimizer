@@ -1,14 +1,14 @@
 import Assets from "../../Assets/Assets";
 import ImgIcon from "../../Components/Image/ImgIcon";
 import SqBadge from "../../Components/SqBadge";
-import { Translate } from "../../Components/Translate";
 import { input } from "../../Formula";
 import { Data, NumNode } from "../../Formula/type";
 import { greaterEq } from "../../Formula/utils";
-import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "../../Types/consts";
+import { CharacterKey, CharacterSheetKey, ElementKey, Rarity, TravelerKey, travelerKeys, WeaponTypeKey } from "../../Types/consts";
 import { DocumentConditional, DocumentConditionalBase, DocumentSection, IDocumentFields, IDocumentHeader } from "../../Types/sheet";
 import { ascensionMaxLevel } from "../LevelData";
 import { st, trans } from "../SheetUtil";
+import { AssetType } from "./AssetType";
 
 const characterSheets = import('.').then(imp => imp.default)
 
@@ -19,52 +19,41 @@ interface TalentSheetElement {
 }
 
 export type TalentSheetElementKey = "auto" | "skill" | "burst" | "sprint" | "passive" | "passive1" | "passive2" | "passive3" | "constellation1" | "constellation2" | "constellation3" | "constellation4" | "constellation5" | "constellation6"
-export type TalentSheet = {
-  sheets: Dict<TalentSheetElementKey, TalentSheetElement>
-}
 
-
-interface ICharacterSheetBase {
+export type TalentSheet = Dict<TalentSheetElementKey, TalentSheetElement>
+export type ICharacterSheet = {
+  key: CharacterKey
   name: Displayable
-  cardImg: string
-  thumbImg: string
-  thumbImgSide: string
-  barImg?: string
-  bannerImg?: string
   rarity: Rarity
   weaponTypeKey: WeaponTypeKey
   gender: string
   constellationName: Displayable
   title: Displayable
-}
-interface ICharacterSheetTalent extends ICharacterSheetBase {
   elementKey: ElementKey
   talent: TalentSheet
 }
-interface ICharacterSheetTalents extends ICharacterSheetBase {
-  talents: Dict<ElementKey, TalentSheet>
-}
-export type ICharacterSheet = ICharacterSheetTalent | ICharacterSheetTalents
-
+export type AllCharacterSheets = (characterkey: CharacterKey, gender: "F" | "M") => CharacterSheet
 export default class CharacterSheet {
   sheet: ICharacterSheet;
-  private data: Data | Partial<Record<ElementKey, Data>>;
-  constructor(charSheet: ICharacterSheet, data: Data | Partial<Record<ElementKey, Data>>) {
+  asset: AssetType;
+  data: Data;
+  constructor(charSheet: ICharacterSheet, data: Data, asset: AssetType) {
     this.sheet = charSheet
     this.data = data
+    this.asset = asset
   }
-  static get = (charKey: CharacterKey | ""): Promise<CharacterSheet> | undefined => charKey ? characterSheets.then(c => c[charKey]) : undefined
-  static get getAll() { return characterSheets }
+  static get = (charKey: CharacterKey | "", gender: "F" | "M"): Promise<CharacterSheet> | undefined => charKey ? characterSheets.then(c => c[charKeyToCharSheetKey(charKey, gender)]) : undefined
+  static get getAll(): Promise<AllCharacterSheets> { return characterSheets.then(cs => (characterkey: CharacterKey, gender: "F" | "M"): CharacterSheet => cs[charKeyToCharSheetKey(characterkey, gender)]) }
   get name() { return this.sheet.name }
   get icon() { return <ImgIcon src={this.thumbImgSide} sx={{ height: "2em", marginTop: "-2em", marginLeft: "-0.5em" }} /> }
   get nameWIthIcon() { return <span>{this.icon} {this.name}</span> }
-  get cardImg() { return this.sheet.cardImg }
-  get thumbImg() { return this.sheet.thumbImg }
-  get thumbImgSide() { return this.sheet.thumbImgSide }
-  get bannerImg() { return this.sheet.bannerImg }
+  get cardImg() { return this.asset.card }
+  get thumbImg() { return this.asset.thumb }
+  get thumbImgSide() { return this.asset.thumbSide }
+  get bannerImg() { return this.asset.banner }
+
   get rarity() { return this.sheet.rarity }
-  get elementKey() { return "elementKey" in this.sheet ? this.sheet.elementKey : undefined }
-  get elementKeys() { return "talents" in this.sheet ? Object.keys(this.sheet.talents) : [] }
+  get elementKey() { return this.sheet.elementKey }
   get weaponTypeKey() { return this.sheet.weaponTypeKey }
   get constellationName() { return this.sheet.constellationName }
 
@@ -75,16 +64,8 @@ export default class CharacterSheet {
   get isTraveler() {
     return "talents" in this.sheet
   }
-  getData = (ele: ElementKey = "anemo"): Data => {
-    if ("charKey" in this.data)
-      return this.data
-    return this.data[ele]!
-  }
-  getTalent = (eleKey: ElementKey = "anemo"): TalentSheet | undefined => {
-    if ("talent" in this.sheet) return this.sheet.talent
-    else return this.sheet.talents[eleKey]
-  }
-  getTalentOfKey = (talentKey: TalentSheetElementKey, eleKey: ElementKey = "anemo") => this.getTalent(eleKey)?.sheets[talentKey]
+  get talent() { return this.sheet.talent }
+  getTalentOfKey = (talentKey: TalentSheetElementKey) => this.talent[talentKey]
 
   static getLevelString = (level: number, ascension: number): string =>
     `${level}/${ascensionMaxLevel[ascension]}`
@@ -154,21 +135,30 @@ function canShowTemplate(talentKey: TalentSheetElementKey, canShow: NumNode | un
     : canShowTalentsNodes[talentKey]
 }
 
-interface ICharacterTemplate {
+export interface ICharacterTemplate {
   talentTemplate: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => TalentSheetElement
   headerTemplate: (talentKey: TalentSheetElementKey, partialSection: DocumentSection) => DocumentSection
   fieldsTemplate: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => IDocumentFields
   conditionalTemplate: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => DocumentConditional
 }
-export const charTemplates = (cKey: CharacterKey, wKey: WeaponTypeKey, assets: Partial<Record<TalentSheetElementKey, string>>, travelerEle?: ElementKey): ICharacterTemplate => {
-  const [tr] = cKey === "Traveler"
-    ? [(key: string) => <Translate ns="char_Traveler_gen" key18={`${travelerEle}.${key}`} />]
-    : trans("char", cKey)
-  assets.auto = Assets.weaponTypes[wKey]
-  return {
-    talentTemplate: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => talentTemplate(talentKey, tr, assets[talentKey] ?? "", docSections),
-    headerTemplate: (talentKey: TalentSheetElementKey, partialSection: DocumentSection) => headerTemplate(talentKey, tr, assets[talentKey] ?? "", partialSection),
-    fieldsTemplate: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => fieldsTemplate(talentKey, partialFields),
-    conditionalTemplate: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => conditionalTemplate(talentKey, partialCond, tr, assets[talentKey] ?? "")
+export const charTemplates = (cKey: CharacterSheetKey, wKey: WeaponTypeKey, assets: AssetType): ICharacterTemplate => {
+  const [tr] = trans("char", cKey)
+
+  const img = (tk: TalentSheetElementKey): string => {
+    if (tk === "auto") return Assets.weaponTypes[wKey]
+    return assets[tk] ?? ""
   }
+
+  return {
+    talentTemplate: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => talentTemplate(talentKey, tr, img(talentKey), docSections),
+    headerTemplate: (talentKey: TalentSheetElementKey, partialSection: DocumentSection) => headerTemplate(talentKey, tr, img(talentKey), partialSection),
+    fieldsTemplate: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => fieldsTemplate(talentKey, partialFields),
+    conditionalTemplate: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => conditionalTemplate(talentKey, partialCond, tr, img(talentKey))
+  }
+}
+
+
+function charKeyToCharSheetKey(charKey: CharacterKey, gender: "F" | "M"): CharacterSheetKey {
+  if (travelerKeys.includes(charKey as TravelerKey)) return `${charKey}${gender}` as CharacterSheetKey
+  else return charKey as CharacterSheetKey
 }

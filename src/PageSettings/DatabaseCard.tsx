@@ -9,11 +9,12 @@ import CardLight from '../Components/Card/CardLight'
 import { StyledInputBase } from '../Components/CustomNumberInput'
 import FontAwesomeSvgIcon from '../Components/FontAwesomeSvgIcon'
 import ModalWrapper from '../Components/ModalWrapper'
+import { dbMetaInit } from '../Database/Data/StateData'
 import { ArtCharDatabase, DatabaseContext, DatabaseContextObj } from "../Database/Database"
 import { ExtraStorage } from '../Database/DBStorage'
 import { exportGOOD } from '../Database/exports/good'
 import useBoolState from '../ReactHooks/useBoolState'
-import useDBState, { dbMetaInit } from '../ReactHooks/useDBState'
+import useDBState from '../ReactHooks/useDBState'
 import { range } from '../Util/Util'
 import UploadCard from './UploadCard'
 

@@ -3,7 +3,8 @@ import ColorText from "../Components/ColoredText";
 import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import WeaponSheet from "../Data/Weapons/WeaponSheet";
-import { ArtifactSetKey, CharacterKey, ElementKey, WeaponKey } from "../Types/consts";
+import { ArtCharDatabase } from "../Database/Database";
+import { ArtifactSetKey, CharacterKey, WeaponKey } from "../Types/consts";
 import { range } from "../Util/Util";
 import { DisplaySub } from "./type";
 import { NodeDisplay, UIData } from "./uiData";
@@ -24,7 +25,7 @@ const talentMap = {
   passive3: "Util. Pass.",
   ...Object.fromEntries(range(1, 6).map(i => [`constellation${i}`, `Const. ${i}`]))
 }
-export async function getDisplayHeader(data: UIData, sectionKey: string): Promise<{
+export async function getDisplayHeader(data: UIData, sectionKey: string, database: ArtCharDatabase): Promise<{
   title: Displayable,
   icon?: string,
   action?: Displayable
@@ -53,11 +54,10 @@ export async function getDisplayHeader(data: UIData, sectionKey: string): Promis
     }
   } else {
     const cKey = data.get(input.charKey).value
-    const cEle = data.get(input.charEle).value
-    if (!cKey || !cEle) return errHeader
-    const sheet = await CharacterSheet.get(cKey as CharacterKey)
+    if (!cKey) return errHeader
+    const sheet = await CharacterSheet.get(cKey as CharacterKey, database.gender)
     const talentKey = ["normal", "charged", "plunging"].includes(sectionKey) ? "auto" : sectionKey
-    const talent = sheet?.getTalentOfKey(talentKey as any, cEle as ElementKey)
+    const talent = sheet?.getTalentOfKey(talentKey as any)
     if (!talent) return errHeader
     const actionText = talentMap[sectionKey]
     return {

@@ -23,9 +23,9 @@ export const characterIdMap = {
   //10000001: Kate
   10000002: "KamisatoAyaka",
   10000003: "Jean",
-  // 10000005: "Traveler_geo",// travler_male
+  10000005: "TravelerM",// traveler_male
   10000006: "Lisa",
-  10000007: "Traveler",// Traveler_female
+  10000007: "TravelerF",// Traveler_female
   10000014: "Barbara",
   10000015: "Kaeya",
   10000016: "Diluc",

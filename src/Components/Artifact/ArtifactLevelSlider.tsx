@@ -31,7 +31,7 @@ export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHi
       value={sliderLow}
       onChange={val => setLow(clamp(val, 0, levelHigh))}
       sx={{ px: 1, pl: showLevelText ? 2 : undefined, width: showLevelText ? 100 : 50, }}
-      inputProps={{ sx: { textAlign: "center" } }}
+      inputProps={{ sx: { textAlign: showLevelText ? "right" : "center" } }}
       startAdornment={showLevelText ? "Level: " : undefined}
       disabled={disabled}
     />

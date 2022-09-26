@@ -51,6 +51,12 @@ export const mapHashData = {
     }
   }
 }
+export function mapHashDataOverride() {
+  (mapHashData.charNames as any).TravelerF = 3241049361;
+  (mapHashData.charNames as any).TravelerM = 2329553598;
+  (mapHashData.char as any).TravelerF.name = 3241049361;
+  (mapHashData.char as any).TravelerM.name = 2329553598;
+}
 type WeaponIcon = { icon: string, awakenIcon: string }
 type WeaponIconData = { [key: string]: WeaponIcon }
 

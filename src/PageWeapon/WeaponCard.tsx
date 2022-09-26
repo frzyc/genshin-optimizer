@@ -1,12 +1,12 @@
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { BusinessCenter, Lock, LockOpen } from "@mui/icons-material"
+import { Lock, LockOpen } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, IconButton, Skeleton, Tooltip, Typography } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import Assets from "../Assets/Assets"
 import CardLight from "../Components/Card/CardLight"
-import CharacterAutocomplete from '../Components/Character/CharacterAutocomplete'
+import { LocationAutocomplete } from "../Components/Character/LocationAutocomplete"
 import LocationName from "../Components/Character/LocationName"
 import ConditionalWrapper from "../Components/ConditionalWrapper"
 import ImgIcon from "../Components/Image/ImgIcon"
@@ -21,7 +21,7 @@ import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import KeyMap, { valueString } from "../KeyMap"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
-import { CharacterKey } from "../Types/consts"
+import { LocationKey } from "../Types/consts"
 
 type WeaponCardProps = { weaponId: string, onClick?: (weaponId: string) => void, onEdit?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, canEquip?: boolean, extraButtons?: JSX.Element }
 export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEquip = false, extraButtons }: WeaponCardProps) {
@@ -31,15 +31,11 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
   const weapon = databaseWeapon
   const weaponSheet = usePromise(() => weapon?.key ? WeaponSheet.get(weapon.key) : undefined, [weapon?.key])
 
-  const filter = useCallback(
-    (cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType,
-    [weaponSheet],
-  )
+  const filter = useCallback((cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType, [weaponSheet])
 
   const wrapperFunc = useCallback(children => <CardActionArea onClick={() => onClick?.(weaponId)} >{children}</CardActionArea>, [onClick, weaponId],)
   const falseWrapperFunc = useCallback(children => <Box >{children}</Box>, [])
-
-  const equipOnChar = useCallback((charKey: CharacterKey | "") => database.weapons.set(weaponId, { location: charKey }), [database, weaponId],)
+  const setLocation = useCallback((k: LocationKey) => weaponId && database.weapons.set(weaponId, { location: k }), [database, weaponId])
 
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
 
@@ -88,12 +84,12 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
         </CardContent>
       </ConditionalWrapper>
       <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }}>
-        {canEquip
-          ? <CharacterAutocomplete size="small" sx={{ flexGrow: 1 }} disable={(v: any) => v === ""}
-            showDefault defaultIcon={<BusinessCenter />} defaultText={t("ui:inventory")}
-            value={location} onChange={equipOnChar} filter={filter} disableClearable />
-          : <LocationName location={location} />}
-        <ButtonGroup>
+        <Box sx={{ flexGrow: 1 }}>
+          {canEquip
+            ? <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} />
+            : <LocationName location={location} />}
+        </Box>
+        <ButtonGroup sx={{ height: "100%" }}>
           {!!onEdit && <Tooltip title={<Typography>{t`page_weapon:edit`}</Typography>} placement="top" arrow>
             <Button color="info" onClick={() => onEdit(id)} >
               <FontAwesomeIcon icon={faEdit} className="fa-fw" />

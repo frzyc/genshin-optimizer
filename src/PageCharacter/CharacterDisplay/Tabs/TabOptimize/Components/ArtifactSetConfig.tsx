@@ -145,7 +145,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
         </Grid>
         <Grid container spacing={1} columns={{ xs: 2, lg: 3 }}>
           {artSetKeyList.map(setKey => {
-            return <ArtifactSetCard key={setKey} setKey={setKey} sheet={artifactSheets[setKey]} fakeDataContextObj={fakeDataContextObj} slotCount={artSlotCount[setKey]!} />
+            return <ArtifactSetCard key={setKey} setKey={setKey} sheet={artifactSheets(setKey)} fakeDataContextObj={fakeDataContextObj} slotCount={artSlotCount[setKey]!} />
           })}
         </Grid>
       </CardContent>

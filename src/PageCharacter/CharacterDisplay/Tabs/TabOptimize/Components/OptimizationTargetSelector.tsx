@@ -4,6 +4,7 @@ import { useCallback, useContext } from 'react';
 import ImgIcon from '../../../../../Components/Image/ImgIcon';
 import SqBadge from '../../../../../Components/SqBadge';
 import { DataContext } from '../../../../../Context/DataContext';
+import { DatabaseContext } from '../../../../../Database/Database';
 import { getDisplayHeader } from '../../../../../Formula/DisplayUtil';
 import { NodeDisplay } from '../../../../../Formula/uiData';
 import KeyMap from '../../../../../KeyMap';
@@ -25,7 +26,8 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
     [onClose, setTarget],
   )
   const { data } = useContext(DataContext)
-  const displayHeader = usePromise(() => optimizationTarget && getDisplayHeader(data, optimizationTarget[0]), [data, optimizationTarget])
+  const { database } = useContext(DatabaseContext)
+  const displayHeader = usePromise(() => optimizationTarget && getDisplayHeader(data, optimizationTarget[0], database), [data, optimizationTarget, database])
 
   const { title, icon, action } = displayHeader ?? {}
   const node: NodeDisplay | undefined = optimizationTarget && objPathValue(data.getDisplay(), optimizationTarget) as any

@@ -5,15 +5,14 @@ import { Box } from "@mui/system";
 import { Trans, useTranslation } from "react-i18next";
 import DropdownButton from "./DropdownMenu/DropdownButton";
 
-type SortByButtonProps = ButtonGroupProps & {
-  sortKeys: string[]
-  value: string
-  onChange: (value: string) => void
+// Assumes that all the sortKeys has corresponding translations in ui.json sortMap
+export default function SortByButton<Key extends string>({ sortKeys, value, onChange, ascending, onChangeAsc, ...props }: ButtonGroupProps & {
+  sortKeys: Key[]
+  value: Key
+  onChange: (value: Key) => void
   ascending: boolean
   onChangeAsc: (value: boolean) => void
-}
-// Assumes that all the sortKeys has corresponding translations in ui.json sortMap
-export default function SortByButton({ sortKeys, value, onChange, ascending, onChangeAsc, ...props }: SortByButtonProps) {
+}) {
   const { t } = useTranslation("ui")
   return <Box display="flex" alignItems="center" gap={1}>
     <Trans t={t} i18nKey={t("sortBy") as any}>Sort by: </Trans>

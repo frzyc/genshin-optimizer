@@ -7,14 +7,15 @@ import { useEffect, useState } from "react";
  * @returns
  */
 export default function usePromise<T>(promiseFunc: () => Promise<T> | undefined, dependencies: any[], useOld = true): T | undefined {
-  const [res, setRes] = useState<T | undefined>(undefined);
+  const [res, setRes] = useState<[T] | undefined>(undefined);
   useEffect(() => {
     let pending = true
-    promiseFunc()?.then(res => pending && setRes(res), console.error) ?? setRes(undefined)
+    //encapsulate `res` in an array `[res]`, because res can sometimes be a function, that can interfere with the `useState` api.
+    promiseFunc()?.then(res => pending && setRes([res]), console.error) ?? setRes(undefined)
     return () => {
       pending = false
       !useOld && setRes(undefined)
     }
   }, dependencies)// eslint-disable-line react-hooks/exhaustive-deps
-  return res
+  return res?.[0]
 }

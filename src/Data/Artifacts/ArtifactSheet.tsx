@@ -6,7 +6,7 @@ import { input } from "../../Formula";
 import { mergeData } from "../../Formula/api";
 import { Data } from "../../Formula/type";
 import { UIData } from "../../Formula/uiData";
-import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey } from "../../Types/consts";
+import { allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey } from "../../Types/consts";
 import { DocumentSection, IDocumentHeader } from "../../Types/sheet";
 import { st } from "../SheetUtil";
 
@@ -23,7 +23,7 @@ export interface SetEffectEntry {
   document: DocumentSection[],
 }
 
-
+export type AllArtifactSheets = (setKey: ArtifactSetKey) => ArtifactSheet
 const tr = (setKey: string, strKey: string) => <Translate ns={`artifact_${setKey}_gen`} key18={strKey} />
 const allData = artifactSheets.then(as => mergeData(Object.values(as).map(s => s.data)))
 export class ArtifactSheet {
@@ -72,21 +72,23 @@ export class ArtifactSheet {
   setEffectDocument = (setNum: SetNum) => this.sheet.setEffects[setNum]?.document
 
   static get(set: ArtifactSetKey | undefined): Promise<ArtifactSheet> | undefined { return set ? artifactSheets.then(a => a[set]) : undefined }
-  static get getAll() { return artifactSheets }
+  static get getAll(): Promise<AllArtifactSheets> { return artifactSheets.then(as => (setKey: ArtifactSetKey): ArtifactSheet => as[setKey]) }
   static get getAllData() { return allData }
-  static setKeysByRarities(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>): Dict<ArtifactRarity, ArtifactSetKey[]> {
+  static setKeysByRarities(sheets: AllArtifactSheets): Dict<ArtifactRarity, ArtifactSetKey[]> {
     const grouped: Dict<ArtifactRarity, ArtifactSetKey[]> = {}
-    Object.entries(sheets).forEach(([key, sheet]) => {
+    allArtifactSets.forEach(setKey => {
+      const sheet = sheets(setKey)
       const rarity = Math.max(...sheet.rarity) as ArtifactRarity
-      if (grouped[rarity]) grouped[rarity]!.push(key)
-      else grouped[rarity] = [key]
+      if (grouped[rarity]) grouped[rarity]!.push(setKey)
+      else grouped[rarity] = [setKey]
     })
     return grouped
   }
 
-  static setEffects(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, data: UIData) {
+  static setEffects(sheets: AllArtifactSheets, data: UIData) {
     const artifactSetEffect: Partial<Record<ArtifactSetKey, SetNum[]>> = {}
-    Object.entries(sheets).forEach(([setKey, sheet]) => {
+    allArtifactSets.forEach(setKey => {
+      const sheet = sheets(setKey)
       const setNums = (Object.keys(sheet.setEffects).map(k => parseInt(k)) as SetNum[]).filter(sn => sheet.hasEnough(sn, data))
       if (setNums.length) artifactSetEffect[setKey] = setNums
     })
