@@ -23,7 +23,7 @@ export type AnyNode = NumNode | StrNode | {
 interface UIField {
   // <value> <Info.key -> unit>
   getValueDisplay(value: number): Displayable
-  // <variant> <Info.prefix> <Info.key> </variant>
+  // <variant> <Info.prefix> <Info.key> </variant> <Info.source>
   getName(value: number, variant: Variant): Displayable
 }
 
