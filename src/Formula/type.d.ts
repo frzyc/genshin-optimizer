@@ -21,7 +21,10 @@ export type AnyNode = NumNode | StrNode | {
 
 /** Turn this into class if there's only one implementation */
 interface UIField {
-  getNameDisplay(value: number, variant: Variant): Displayable
+  // <value> <Info.key -> unit>
+  getValueDisplay(value: number): Displayable
+  // <variant> <Info.prefix> <Info.key> </variant>
+  getName(value: number, variant: Variant): Displayable
 }
 
 interface Info {
