@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input, target } from '../../../Formula'
-import { constant, equal, equalStr, greaterEq, infoMut, lookup, none, percent, prod, stringPrio, sum, unequal, unequalStr } from '../../../Formula/utils'
+import { constant, equal, equalStr, greaterEq, infoMut, lookup, percent, prod, sum, unequal } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
@@ -69,33 +69,19 @@ const datamine = {
 } as const
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, "afterBurst")
-const normalEle_dmg_disp = equal(condAfterBurst, "on", percent(datamine.burst.dmg_bonus_))
-const isNormalElemental = greaterEq(
-  sum(
-    unequal(
-      stringPrio(
-        target.infusion.nonOverridableSelf,
-        unequalStr(target.infusion.team, none, target.infusion.team),
-        target.infusion.overridableSelf
-      ), "", 1
-    ),
-    equal(target.weaponType, "catalyst", 1)
-  ), 1, 1
-)
+const normalEle_dmg_ = equal(condAfterBurst, "on", percent(datamine.burst.dmg_bonus_), { key: "normalEle_dmg_" })
 
-const normalEle_dmg_ = equal(isNormalElemental, 1, normalEle_dmg_disp, { key: `char_${key}:normalAttEleKey` })
 const hydroInfusion = equalStr(condAfterBurst, "on",
   lookup(target.weaponType,
     { "sword": constant("hydro"), "claymore": constant("hydro"), "polearm": constant("hydro") }, constant("")))
 
-const a4_normalEle_dmg_disp = greaterEq(input.asc, 4, equal(condAfterBurst, "on",
+const a4_normalEle_dmg_ = greaterEq(input.asc, 4, equal(condAfterBurst, "on",
   prod(
     percent(datamine.passive2.normalEle_dmg_),
     input.total.hp,
     1 / 1000
   )
-))
-const a4_normalEle_dmg_ = equal(isNormalElemental, 1, a4_normalEle_dmg_disp, { key: `char_${key}:normalAttEleKey` })
+), { key: "normalEle_dmg_" })
 
 const [condC2AfterSkillHitPath, condC2AfterSkillHit] = cond(key, "c2AfterSkillHit")
 const c2_hp_ = greaterEq(input.constellation, 2,
@@ -121,7 +107,7 @@ const dmgFormulas = {
     waveDmg: dmgNode("hp", datamine.burst.wave_dmg, "burst"),
   },
   passive2: {
-    normalEle_dmg_: a4_normalEle_dmg_disp
+    normalEle_dmg_: a4_normalEle_dmg_
   },
   constellation6: {
     dmg: greaterEq(input.constellation, 6, customDmgNode(
@@ -145,7 +131,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "sumeru", data_gen
   },
   teamBuff: {
     premod: {
-      normal_dmg_: sum(normalEle_dmg_, a4_normalEle_dmg_)
+      normalEle_dmg_: sum(normalEle_dmg_, a4_normalEle_dmg_)
     },
     infusion: {
       team: hydroInfusion,
@@ -253,7 +239,7 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: infoMut(normalEle_dmg_disp, { key: `char_${key}:normalAttEleKey_`, isTeamBuff: true }),
+            node: normalEle_dmg_,
           }, {
             text: trm("hydroInfusion")
           }, {
@@ -268,7 +254,7 @@ const sheet: ICharacterSheet = {
     }), ct.headerTemplate("passive2", {
       teamBuff: true,
       fields: [{
-        node: infoMut(a4_normalEle_dmg_disp, { key: `char_${key}:normalAttEleKey_`, isTeamBuff: true })
+        node: a4_normalEle_dmg_
       }]
     }), ct.headerTemplate("constellation6", {
       fields: [{
