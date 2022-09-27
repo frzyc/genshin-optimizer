@@ -1,7 +1,7 @@
 import { SubstatKey } from "pipeline";
 import { input } from "../../Formula";
 import { inferInfoMut, mergeData } from "../../Formula/api";
-import { reactions } from "../../Formula/reaction";
+import { getReactions } from "../../Formula/reaction";
 import { Data, DisplaySub, NumNode } from "../../Formula/type";
 import { constant, data, infoMut, lookup, none, one, percent, prod, stringPrio, subscript, sum, unequalStr } from "../../Formula/utils";
 import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
@@ -117,7 +117,7 @@ export function dataObjForCharacterSheet(
     data.charEle = constant(element)
     data.teamBuff = { tally: { [element]: constant(1) } }
     data.display!.basic[`${element}_dmg_`] = input.total[`${element}_dmg_`]
-    data.display!.reaction = reactions[element]
+    data.display!.reaction = getReactions(element)
   }
   if (region)
     layeredAssignment(data, ["teamBuff", "tally", region], constant(1))

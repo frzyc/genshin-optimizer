@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
-import { reactions } from '../../../Formula/reaction'
+import { getReactions } from '../../../Formula/reaction'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
 import { absorbableEle, CharacterKey, ElementKey } from '../../../Types/consts'
 import { objectKeyMap } from '../../../Util/Util'
@@ -126,12 +126,12 @@ const dmgFormulas = {
     full7: unequal(condBurstAbsorption, undefined, sum(
       prod(dmgNode("atk", datamine.burst.baseDmg, "burst"), 20),
       prod(dmgNode("atk", datamine.burst.absorbDmg, "burst", { hit: { ele: condBurstAbsorption } }), 15),
-      prod(lookup(condBurstAbsorption, objectKeyMap(absorbableEle, ele => reactions.anemo[`${ele}Swirl`]), naught), 7)
+      prod(lookup(condBurstAbsorption, objectKeyMap(absorbableEle, ele => getReactions(elementKey)[`${ele}Swirl`]), naught), 7)
     )),
     full14: unequal(condBurstAbsorption, "hydro", unequal(condBurstAbsorption, undefined, sum(
       prod(dmgNode("atk", datamine.burst.baseDmg, "burst"), 20),
       prod(dmgNode("atk", datamine.burst.absorbDmg, "burst", { hit: { ele: condBurstAbsorption } }), 15),
-      prod(lookup(condBurstAbsorption, objectKeyMap(absorbableEle, ele => reactions.anemo[`${ele}Swirl`]), naught), 14)
+      prod(lookup(condBurstAbsorption, objectKeyMap(absorbableEle, ele => getReactions(elementKey)[`${ele}Swirl`]), naught), 14)
     )))
   },
   constellation1: {
