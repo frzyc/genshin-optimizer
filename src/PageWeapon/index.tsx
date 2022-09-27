@@ -1,7 +1,7 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Button, CardContent, Grid, Pagination, Skeleton, TextField, ToggleButton, Typography } from '@mui/material';
-import React, { ChangeEvent, lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import { ChangeEvent, lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import CardDark from '../Components/Card/CardDark';
@@ -12,14 +12,13 @@ import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
 import WeaponSelectionModal from '../Components/Weapon/WeaponSelectionModal';
 import WeaponSheet from '../Data/Weapons/WeaponSheet';
 import { DatabaseContext } from '../Database/Database';
-import useDBState from '../ReactHooks/useDBState';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
-import { allRarities, allWeaponTypeKeys, WeaponKey } from '../Types/consts';
+import { allRarities, WeaponKey } from '../Types/consts';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
-import { weaponFilterConfigs, weaponSortConfigs, weaponSortKeys, weaponSortMap } from '../Util/WeaponSort';
+import { weaponFilterConfigs, weaponSortConfigs, weaponSortMap } from '../Util/WeaponSort';
 import { initialWeapon } from '../Util/WeaponUtil';
 import WeaponCard from './WeaponCard';
 
@@ -29,20 +28,14 @@ const WeaponEditor = lazy(() => import('./WeaponEditor'))
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10 - 1, sm: 12 - 1, md: 24 - 1, lg: 24 - 1, xl: 24 - 1 }
 
-const initialState = () => ({
-  editWeaponId: "",
-  sortType: weaponSortKeys[0],
-  ascending: false,
-  rarity: [...allRarities],
-  weaponType: [...allWeaponTypeKeys],
-})
-
 const sortKeys = Object.keys(weaponSortMap)
 
 export default function PageWeapon() {
   const { t } = useTranslation(["page_weapon", "ui", "weaponNames_gen"])
   const { database } = useContext(DatabaseContext)
-  const [state, stateDispatch] = useDBState("WeaponDisplay", initialState)
+  const [state, setState] = useState(database.displayWeapon.get())
+  useEffect(() => database.displayWeapon.follow((r, dbMeta) => setState(dbMeta)), [database])
+
   const [newWeaponModalShow, setnewWeaponModalShow] = useState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
   const invScrollRef = useRef<HTMLDivElement>(null)
@@ -66,12 +59,12 @@ export default function PageWeapon() {
     if (!window.confirm(t("removeWeapon", { value: name }))) return
     database.weapons.remove(key)
     if (state.editWeaponId === key)
-      stateDispatch({ editWeaponId: "" })
-  }, [state.editWeaponId, stateDispatch, database, t])
+      database.displayWeapon.set({ editWeaponId: "" })
+  }, [state.editWeaponId, database, t])
 
   const editWeapon = useCallback((key: string | undefined) => {
-    stateDispatch({ editWeaponId: key })
-  }, [stateDispatch])
+    database.displayWeapon.set({ editWeaponId: key })
+  }, [database])
 
   const newWeapon = useCallback(
     (weaponKey: WeaponKey) => {
@@ -110,7 +103,7 @@ export default function PageWeapon() {
     [setPageIndex, invScrollRef]
   )
 
-  const resetEditWeapon = useCallback(() => stateDispatch({ editWeaponId: "" }), [stateDispatch])
+  const resetEditWeapon = useCallback(() => database.displayWeapon.set({ editWeaponId: "" }), [database])
 
   const { editWeaponId } = state
 
@@ -134,10 +127,10 @@ export default function PageWeapon() {
     <CardDark ref={invScrollRef} sx={{ p: 2, pb: 1 }}>
       <Grid container spacing={1} sx={{ mb: 1 }}>
         <Grid item>
-          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => stateDispatch({ weaponType })} value={weaponType} size="small" />
+          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => database.displayWeapon.set({ weaponType })} value={weaponType} size="small" />
         </Grid>
         <Grid item>
-          <SolidToggleButtonGroup sx={{ height: "100%" }} onChange={(e, newVal) => stateDispatch({ rarity: newVal })} value={rarity} size="small">
+          <SolidToggleButtonGroup sx={{ height: "100%" }} onChange={(e, newVal) => database.displayWeapon.set({ rarity: newVal })} value={rarity} size="small">
             {allRarities.map(star => <ToggleButton key={star} value={star}><Box display="flex" gap={1}><strong>{star}</strong><StarsDisplay stars={1} /></Box></ToggleButton>)}
           </SolidToggleButtonGroup>
         </Grid>
@@ -156,8 +149,8 @@ export default function PageWeapon() {
         </Grid>
         <Grid item>
           <SortByButton sx={{ height: "100%" }} sortKeys={sortKeys}
-            value={sortType} onChange={sortType => stateDispatch({ sortType })}
-            ascending={ascending} onChangeAsc={ascending => stateDispatch({ ascending })}
+            value={sortType} onChange={sortType => database.displayWeapon.set({ sortType })}
+            ascending={ascending} onChangeAsc={ascending => database.displayWeapon.set({ ascending })}
           />
         </Grid>
       </Grid>

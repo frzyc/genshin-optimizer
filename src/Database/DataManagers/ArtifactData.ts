@@ -4,11 +4,12 @@ import { allMainStatKeys, allSubstatKeys, IArtifact, ICachedArtifact, ICachedSub
 import { allArtifactRarities, allArtifactSets, allSlotKeys, charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
+import { IGOOD, IGO, ImportResult } from "../exim";
 
-export class ArtifactDataManager extends DataManager<string, string, ICachedArtifact, IArtifact>{
+export class ArtifactDataManager extends DataManager<string, string, "artifacts", ICachedArtifact, IArtifact>{
   deletedArts = new Set<string>()
   constructor(database: ArtCharDatabase) {
-    super(database)
+    super(database, "artifacts")
     for (const key of this.database.storage.keys)
       if (key.startsWith("artifact_"))
         if (!this.set(key, this.database.storage.get(key) as any))
@@ -69,7 +70,42 @@ export class ArtifactDataManager extends DataManager<string, string, ICachedArti
     super.clear()
     this.deletedArts = new Set<string>()
   }
+  importGOOD(good: IGOOD & IGO, result: ImportResult) {
+    result.artifacts.beforeMerge = this.values.length
 
+    // Match artifacts for counter, metadata, and locations
+    const artifacts = good.artifacts
+    if (Array.isArray(artifacts) && artifacts?.length) {
+      result.artifacts.import = artifacts.length
+      const idsToRemove = new Set(this.values.map(a => a.id))
+      const hasEquipment = artifacts.some(a => a.location)
+      artifacts.forEach((a, i) => {
+        const art = this.validate(a)
+        if (!art) return result.artifacts.invalid.push(a)
+        let { duplicated, upgraded } = result.ignoreDups ? { duplicated: [], upgraded: [] } : this.findDups(art)
+
+        // Don't reuse dups/upgrades
+        duplicated = duplicated.filter(a => idsToRemove.has(a.id))
+        upgraded = upgraded.filter(a => idsToRemove.has(a.id))
+
+        if (duplicated[0] || upgraded[0]) {
+          const match = duplicated[0] || upgraded[0]
+          idsToRemove.delete(match.id)
+          if (duplicated[0]) result.artifacts.unchanged.push(art)
+          else if (upgraded[0]) result.artifacts.upgraded.push(art)
+          this.set(match.id, { ...art, location: hasEquipment ? art.location : match.location })
+          result.importArtIds.set(`artifact_${i}`, match.id)
+        } else
+          result.importArtIds.set(`artifact_${i}`, this.new(art))
+      })
+      const idtoRemoveArr = Array.from(idsToRemove)
+      if (result.keepNotInImport || result.ignoreDups) result.artifacts.notInImport = idtoRemoveArr.length
+      else idtoRemoveArr.forEach(k => this.remove(k))
+    } else result.artifacts.notInImport = this.values.length
+
+
+    this.database.weapons.ensureEquipment()
+  }
   findDups(editorArt: IArtifact): { duplicated: ICachedArtifact[], upgraded: ICachedArtifact[] } {
     const { setKey, rarity, level, slotKey, mainStatKey, substats } = editorArt
 

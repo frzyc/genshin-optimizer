@@ -1,4 +1,4 @@
-import { ArtSetExclusion } from '../../../../Database/Data/BuildsettingData'
+import { ArtSetExclusion } from '../../../../Database/DataManagers/BuildsettingData'
 import { NumNode } from '../../../../Formula/type'
 import { assertUnreachable } from '../../../../Util/Util'
 import { ArtifactsBySlot, artSetPerm, Build, countBuilds, filterArts, filterFeasiblePerm, PlotData, RequestFilter } from "./common"

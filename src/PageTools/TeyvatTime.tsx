@@ -2,10 +2,10 @@
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CardContent, Divider, Grid, MenuItem, Typography } from '@mui/material';
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import CardDark from '../Components/Card/CardDark';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
-import useDBState from '../ReactHooks/useDBState';
+import { DatabaseContext } from '../Database/Database';
 import { DAY_MS, HOUR_MS, MINUTE_MS, SECOND_MS, timeString } from '../Util/TimeUtil';
 
 export const timeZones = {
@@ -14,14 +14,16 @@ export const timeZones = {
   "Asia": 8 * HOUR_MS,
   "TW, HK, MO": 8 * HOUR_MS,
 }
-type TimeZoneKey = keyof typeof timeZones
+export type TimeZoneKey = keyof typeof timeZones
 
 export function initToolsDisplayTimezone() {
   return { timeZoneKey: Object.keys(timeZones)[0] as TimeZoneKey }
 }
 export default function TeyvatTime() {
-  const [{ timeZoneKey }, setTimeZone] = useDBState("ToolsDisplayTimezone", initToolsDisplayTimezone)
-  const setTimeZoneKey = useCallback((timeZoneKey) => setTimeZone({ timeZoneKey }), [setTimeZone])
+  const { database } = useContext(DatabaseContext)
+  const [{ timeZoneKey }, setState] = useState(() => database.displayTool.get())
+  useEffect(() => database.displayTool.follow((r, s) => setState(s)), [database])
+  const setTimeZoneKey = useCallback((timeZoneKey: TimeZoneKey) => database.displayTool.set({ timeZoneKey }), [database])
 
   const [time, setTime] = useState(new Date(Date.now() + timeZones[timeZoneKey]))
   //set a timer. timer resets when timezone is changed.

@@ -14,6 +14,8 @@ export interface DBStorage {
   clear(): void
   getDBVersion(): number
   setDBVersion(version: number): void
+  getDBIndex(): 1 | 2 | 3 | 4
+  setDBIndex(ind: 1 | 2 | 3 | 4): void
 }
 
 export class DBLocalStorage implements DBStorage {
@@ -74,6 +76,12 @@ export class DBLocalStorage implements DBStorage {
   setDBVersion(version: number): void {
     this.setString('db_ver', version.toString())
   }
+  getDBIndex(): 1 | 2 | 3 | 4 {
+    return parseInt(this.getString('dbIndex') ?? '1') as 1 | 2 | 3 | 4
+  }
+  setDBIndex(ind: 1 | 2 | 3 | 4) {
+    this.setString('dbIndex', ind.toString())
+  }
 }
 
 export class SandboxStorage implements DBStorage {
@@ -130,6 +138,12 @@ export class SandboxStorage implements DBStorage {
   }
   setDBVersion(version: number): void {
     this.setString('db_ver', version.toString())
+  }
+  getDBIndex(): 1 | 2 | 3 | 4 {
+    return parseInt(this.getString('dbIndex') ?? '1') as 1 | 2 | 3 | 4
+  }
+  setDBIndex(ind: 1 | 2 | 3 | 4) {
+    this.setString('dbIndex', ind.toString())
   }
 }
 

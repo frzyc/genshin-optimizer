@@ -7,10 +7,11 @@ import { deepClone, objectKeyMap } from "../../Util/Util";
 import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
 import { DataManager, TriggerString } from "../DataManager";
+import { GOSource, IGO, IGOOD, ImportResult } from "../exim";
 
-export class CharacterDataManager extends DataManager<CharacterKey, string, ICachedCharacter, ICharacter>{
+export class CharacterDataManager extends DataManager<CharacterKey, string, "characters", ICachedCharacter, ICharacter>{
   constructor(database: ArtCharDatabase) {
-    super(database)
+    super(database, "characters")
     for (const key of this.database.storage.keys) {
       if (key.startsWith("char_")) {
         const [, charKey] = key.split("char_")
@@ -181,5 +182,27 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, ICac
   triggerCharacter(key: LocationCharacterKey, reason: TriggerString) {
     if (key === "Traveler") travelerKeys.forEach(ck => this.trigger(ck, reason, this.get(ck)))
     else this.trigger(key, reason, this.get(key))
+  }
+  importGOOD(good: IGOOD & IGO, result: ImportResult) {
+    result.characters.beforeMerge = this.values.length
+
+    const source = good.source ?? "Unknown"
+    const characters = good[this.goKey as any]
+    if (Array.isArray(characters) && characters?.length) {
+      result.characters.import = characters.length
+      const idsToRemove = new Set(this.keys)
+      characters.forEach(c => {
+        if (!c.key) result.characters.invalid.push(c)
+        idsToRemove.delete(c.key)
+        if (this.hasDup(c, source === GOSource))
+          result.characters.unchanged.push(c)
+        else this.set(c.key, c)
+      })
+
+      const idtoRemoveArr = Array.from(idsToRemove)
+      if (result.keepNotInImport || result.ignoreDups) result.characters.notInImport = idtoRemoveArr.length
+      else idtoRemoveArr.forEach(k => this.remove(k))
+      result.characters.unchanged = []
+    } else result.characters.notInImport = this.values.length
   }
 }

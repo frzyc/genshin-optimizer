@@ -6,9 +6,9 @@ import { objectKeyMap } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 
-export class CharacterTCDataManager extends DataManager<CharacterKey, string, ICharTC, ICharTC>{
+export class CharacterTCDataManager extends DataManager<CharacterKey, string, "charTCs", ICharTC, ICharTC>{
   constructor(database: ArtCharDatabase) {
-    super(database)
+    super(database, "charTCs")
     for (const key of this.database.storage.keys) {
       if (key.startsWith("charTC_")) {
         const obj = this.database.storage.get(key)

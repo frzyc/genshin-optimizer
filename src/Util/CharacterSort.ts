@@ -1,5 +1,4 @@
 import { AllCharacterSheets } from "../Data/Characters/CharacterSheet";
-import { initCharMeta } from "../Database/Data/StateData";
 import { ArtCharDatabase } from "../Database/Database";
 import i18n from "../i18n";
 import { allElements, allWeaponTypeKeys, CharacterKey, charKeyToCharName, ElementKey, WeaponTypeKey } from "../Types/consts";
@@ -16,7 +15,7 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
       return char ? char.level * (char.ascension + 1) : 0
     },
     rarity: (ck) => characterSheets(ck, database.gender)?.rarity ?? 0,
-    favorite: (ck,) => (database.states.getWithInit(`charMeta_${ck}`, initCharMeta).favorite ? 1 : 0),
+    favorite: (ck,) => (database.charMeta.get(ck).favorite ? 1 : 0),
   }
 }
 

@@ -1,6 +1,6 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import { DatabaseContext } from "../../../../Database/Database";
-import { BuildSetting, BuildSettingReducerAction } from "../../../../Database/Data/BuildsettingData";
+import { BuildSetting, BuildSettingReducerAction } from "../../../../Database/DataManagers/BuildsettingData";
 import { CharacterKey } from "../../../../Types/consts";
 
 export default function useBuildSetting(characterKey: CharacterKey) {
