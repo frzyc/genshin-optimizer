@@ -10,11 +10,18 @@ export const todo: NumNode = constant(NaN, { key: "TODO" })
 export const one = percent(1), naught = percent(0)
 export const none = constant("none")
 
+export function empty(value: number, info?: Info): NumNode
+export function empty(value: string | undefined, info?: Info): StrNode
+export function empty(value: number | string | undefined, info?: Info): AnyNode
+export function empty(value: number | string | undefined, info?: Info): AnyNode {
+  return { operation: "const", operands: [], value, info, isEmpty: true }
+}
+
 export function constant(value: number, info?: Info): NumNode
 export function constant(value: string | undefined, info?: Info): StrNode
 export function constant(value: number | string | undefined, info?: Info): AnyNode
 export function constant(value: number | string | undefined, info?: Info): AnyNode {
-  return { operation: "const", operands: [], value, info }
+  return { operation: "const", operands: [], value, info, isEmpty: false }
 }
 /** `value` in percentage. The value is written as non-percentage, e.g., `percent(1)` for 100% */
 export function percent(value: number, info?: Info): NumNode {

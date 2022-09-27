@@ -4,7 +4,7 @@ import { absorbableEle, ElementKey } from "../Types/consts";
 import { objectKeyMap } from "../Util/Util";
 import { input } from "./index";
 import { NumNode } from "./type";
-import { compareEq, constant, data, equal, frac, infoMut, one, percent, prod, subscript, sum } from "./utils";
+import { constant, data, empty, frac, infoMut, lookup, one, percent, prod, subscript, sum } from "./utils";
 
 const crystallizeMulti1 = subscript(input.lvl, crystallizeLevelMultipliers, { key: "crystallize_level_multi" })
 const crystallizeElemas = prod(40 / 9, frac(input.total.eleMas, 1400))
@@ -106,19 +106,9 @@ export function getReactions(charElement: ElementKey) {
   }
 }
 
-// Recursively creates a node that will check the character's element and infusion against an array of elements. If any match, the nodes value will be nodeToReturn.
+// Check the character's element and infusion against an array of elements. If any matches, the nodes value will be `nodeToReturn`.
 function checkCharEleAndInfusion(charElement: ElementKey, elementsToMatch: ElementKey[], nodeToReturn: NumNode): NumNode {
-  const elementToMatch = elementsToMatch[0]
-  if (elementsToMatch.length === 1) {
-    return compareEq(elementToMatch, charElement,
-      nodeToReturn,
-      equal(elementToMatch, infusionNode, nodeToReturn)
-    )
-  }
-
-  const otherEleNodes = checkCharEleAndInfusion(charElement, elementsToMatch.slice(1), nodeToReturn)
-  return compareEq(elementToMatch, charElement,
-    nodeToReturn,
-    compareEq(elementToMatch, infusionNode, nodeToReturn, otherEleNodes)
-  )
+  return elementsToMatch.includes(charElement)
+    ? nodeToReturn
+    : lookup(infusionNode, objectKeyMap(elementsToMatch, _ => nodeToReturn), empty(0))
 }

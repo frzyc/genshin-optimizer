@@ -99,7 +99,7 @@ export class UIData {
       case "res": case "sum_frac":
         result = this._compute(node); break
       case "threshold": result = this._threshold(node); break
-      case "const": result = this._constant(node.value); break
+      case "const": result = this._constant(node.value, node.isEmpty); break
       case "subscript": result = this._subscript(node); break
       case "read": result = this._read(node); break
       case "data": result = this._data(node); break
@@ -203,12 +203,12 @@ export class UIData {
   private _subscript(node: SubscriptNode<number>): ContextNodeDisplay {
     const operand = this.computeNode(node.operands[0])
     const value = node.list[operand.value] ?? NaN
-    return this._constant(value)
+    return this._constant(value, false)
   }
-  private _constant<V>(value: V): ContextNodeDisplay<V> {
+  private _constant<V>(value: V, isEmpty: boolean): ContextNodeDisplay<V> {
     return {
       info: {}, value,
-      empty: false,
+      empty: isEmpty,
       mayNeedWrapping: false,
       dependencies: new Set(),
     }
@@ -228,7 +228,7 @@ export class UIData {
         if (process.env.NODE_ENV !== "development")
           operands = operands.filter(operand => operand.value !== identity)
         if (!operands.length)
-          return Object.values(info).some(x => x) ? { ...this._constant(identity), info } : this._constant(identity)
+          return Object.values(info).some(x => x) ? { ...this._constant(identity, false), info } : this._constant(identity, false)
     }
 
     let formula: { display: Displayable, dependencies: Displayable[] }
