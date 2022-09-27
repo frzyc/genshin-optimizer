@@ -45,7 +45,7 @@
     "inventory": "背包",
     "currentlyEquipped": "当前装备",
     "any": "位置：任意",
-    "location": "部位"
+    "location": "位置"
   },
   "button": {
     "unequipArtifacts": "卸除圣遗物",
@@ -109,5 +109,7 @@
     "mainStats": "主词条",
     "substats": "副词条",
     "set": "圣遗物套装"
-  }
+  },
+  "substat_one": "{{count}}项副词条",
+  "substat_other": "{{count}}项副词条"
 }

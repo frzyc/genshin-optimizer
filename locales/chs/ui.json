@@ -51,5 +51,9 @@
   "locked": "锁定的",
   "unlocked": "未锁定的",
   "refinement": "精炼{{value}}",
-  "selectlevel": "选择等级"
+  "selectlevel": "选择等级",
+  "gender": {
+    "F": "女",
+    "M": "男"
+  }
 }

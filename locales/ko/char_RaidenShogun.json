@@ -1,0 +1,13 @@
+{
+  "skill": {
+    "eye": "뇌벌 악요의 눈",
+    "partyCost": "원소 에너지"
+  },
+  "burst": {
+    "resolves": "원력 스택"
+  },
+  "a4": {
+    "enerRest": "<strong>몽상의 일심</strong> 상태에서 원소 에너지 회복",
+    "eleDMG": "번개 원소 피해 증가"
+  }
+}

@@ -24,5 +24,18 @@
   "appVersion": "$t(pageTitle) 버전: {{version}}",
   "underConstruction": "개발중",
   "error": "오류",
-  "reset": "리셋"
+  "reset": "리셋",
+  "info": "정보",
+  "sortMap": {
+    "name": "이름",
+    "level": "레벨",
+    "rarity": "희귀도",
+    "efficiency": "현재 효율",
+    "mefficiency": "최대 효율"
+  },
+  "sortBy": "다음으로 정렬: ",
+  "locked": "보호됨",
+  "unlocked": "보호되지않음",
+  "refinement": "{{value}}재련",
+  "selectlevel": "레벨 선택"
 }

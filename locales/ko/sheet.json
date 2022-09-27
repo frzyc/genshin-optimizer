@@ -7,8 +7,36 @@
     "charged": "강공격이 대상에게 적중",
     "plunging": "낙하 공격이 대상에게 적중",
     "skill": "원소 전투 스킬이 대상에게 적중",
-    "burst": "원소 폭발 스킬이 대상에게 적중"
+    "burst": "원소 폭발이 대상에게 적중"
   },
   "eleAbsor": "원소 전환",
-  "absorDot": "원소 전환 도트 데미지"
+  "absorDot": "원소 전환 도트 데미지",
+  "afterUse": {
+    "skill": "원소 전투 스킬 사용 후",
+    "burst": "원소 폭발 사용 후",
+    "skillOrBurst": "원소전투스킬 혹은 원소폭발 사용 이후"
+  },
+  "increase": {
+    "atk": "ATK 증가"
+  },
+  "burstCDRed": "원소 폭발 재사용 대기시간 감소",
+  "charges": "사용 횟수",
+  "addlCharges": "추가 사용 횟수",
+  "activeCharField": "필드 위 캐릭터가 영역내 존재",
+  "opponentsField": "영역에 적 존재",
+  "talents": {
+    "skill": "스킬",
+    "burst": "원폭",
+    "passive": "패시브",
+    "passive1": "고유특성1",
+    "passive2": "고유특성4",
+    "passive3": "패시브",
+    "sprint": "대시",
+    "constellation1": "1돌",
+    "constellation2": "2돌",
+    "constellation3": "3돌",
+    "constellation4": "4돌",
+    "constellation5": "5돌",
+    "constellation6": "6돌"
+  }
 }
