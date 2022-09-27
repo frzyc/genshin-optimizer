@@ -1,5 +1,5 @@
 import { BusinessCenter } from "@mui/icons-material"
-import { Skeleton } from "@mui/material"
+import { AutocompleteProps, Skeleton } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import CharacterSheet from "../../Data/Characters/CharacterSheet"
@@ -10,7 +10,8 @@ import { charKeyToCharName, charKeyToLocCharKey, LocationCharacterKey, LocationK
 import GeneralAutocomplete, { GeneralAutocompleteOption } from "../GeneralAutocomplete"
 import ThumbSide from "./ThumbSide"
 
-export function LocationAutocomplete({ location, setLocation, filter = () => true, autoCompleteDisable = () => false }: { location: LocationKey, setLocation: (v: LocationKey) => void, filter?: (v: CharacterSheet) => void, autoCompleteDisable?: (v: LocationKey) => boolean }) {
+export function LocationAutocomplete({ location, setLocation, filter = () => true, autoCompleteProps = {} }:
+  { location: LocationKey, setLocation: (v: LocationKey) => void, filter?: (v: CharacterSheet) => void, autoCompleteProps?: Omit<AutocompleteProps<GeneralAutocompleteOption<LocationKey>, false, true, false>, "renderInput" | "onChange" | "options"> }) {
   const { t } = useTranslation(["ui", "artifact", "charNames_gen"])
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
@@ -33,5 +34,5 @@ export function LocationAutocomplete({ location, setLocation, filter = () => tru
       return a.label.localeCompare(b.label)
     })
   ], [t, toText, isFavorite, database, characterSheets, filter, gender])
-  return <Suspense fallback={<Skeleton variant="text" width={100} />}><GeneralAutocomplete size="small" options={values} valueKey={location} onChange={setLocation} toImg={toImg} clearKey="" disable={autoCompleteDisable} /></Suspense>
+  return <Suspense fallback={<Skeleton variant="text" width={100} />}><GeneralAutocomplete size="small" options={values} valueKey={location} onChange={setLocation} toImg={toImg} clearKey="" {...autoCompleteProps} /></Suspense>
 }
