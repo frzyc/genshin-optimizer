@@ -133,7 +133,7 @@
         "ascending": "Croissant",
         "descending": "Décroissant",
         "loading": "Chargement...",
-        "rightsDisclaimer": "Genshin Optimizer n'est pas affilié ou approuvé par miHoYo",
+        "rightsDisclaimer": "Genshin Optimizer n'est pas affilié ou approuvé par HoYoverse",
         "underConstruction": "En Construction",
         "error": "Erreur",
         "reset": "Réinitialisation"
@@ -192,7 +192,11 @@
         "name": "Concert du millénaire - Hymne du drapeau"
     },
     "char_KaedeharaKazuha": {
-        "c2": "Dans Vent d'automne"
+        "c1": "Utiliser <strong>Coupure de mille feuilles</strong> réinitialise le TdR",
+        "c2": "Dans Vent d'automne",
+        "c6": {
+            "after": "Après avoir utilisé <strong>Véhémence divine</strong> ou <strong>Coupure de mille feuilles</strong>"
+        }
     },
     "char_Rosaria": {
         "a1": "Après le coup dans le dos",
@@ -200,5 +204,54 @@
             "name": "Après avoir utilisé <strong>Sacrement mortel<strong/>",
             "text": "Tx CRIT de l'équipe augmente"
         }
+    },
+    "char_KamisatoAyaka": {
+        "afterSkill": "Après l'utilisation de <strong>École Kamisato: Fleur de glace</strong>",
+        "snowflakeDMG": "DGT Tourbillon givré",
+        "afterBurst": "Après avoir utilisé <strong>École Kamisato: Givre mortel</strong>",
+        "c6Active": "Gracieuseté gelée active"
+    },
+    "char_KukiShinobu": {
+        "skill": {
+            "cost": "% de PV actuel"
+        },
+        "a4": {
+            "heal": "Augmentation du soin de compétence élémentaire"
+        },
+        "c4": {
+            "dmg": "DGT de Marque d'herbes tonitruantes"
+        }
+    },
+    "char_Yelan": {
+        "c2": {
+            "dmg": "DGT d'Offert par la maison"
+        },
+        "c4": {
+            "condName": "Nombre d'ennemis marqués par la ligne vitale"
+        },
+        "c6": {
+            "condName": "Dans l'état de Stratége",
+            "dmg": "DGT de flèches perçantes spéciales"
+        }
+    },
+    "char_Collei": {
+        "sproutDmg": "DGT de Germe",
+        "miniAnbarDmg": "DGT de Cuilein-Anbar miniature"
+    },
+    "char_Dori": {
+        "c2MultiplierKey_": "Multiplicateur de Franchise spéciale",
+        "c2DmgKey": "DGT de Franchise spéciale",
+        "c4ConnectedBelowHp": "Personnage relié au djinn et sous 50% PV",
+        "c4ConnectedBelowEner": "Personnage relié au djinn et sous 50% d'énergie",
+        "c6Heal": "Soin d'attaque normale"
+    },
+    "char_ShikanoinHeizou": {
+        "declensionStacks": "Cumuls de Détection",
+        "takingField": "Après être arrivé sur le terrain"
+    },
+    "char_Tighnari": {
+        "p1Cond": "Après avoir tiré une <strong>Flèche florale</strong>",
+        "c6DmgKey": "DGT de flèche fleuronnée supplémentaire",
+        "c6WreathRed": "Diminution du temps de charge de <strong>Flèche florale</strong>"
     }
 }
