@@ -77,6 +77,7 @@ export const characterIdMap = {
   10000068: "Dori",
   10000069: "Tighnari",
   10000071: "Cyno",
+  10000072: "Candace",
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",
@@ -192,6 +193,7 @@ export const weaponIdMap = {
   // 13506: "Deicide",
   13507: "CalamityQueller",
   13509: "EngulfingLightning",
+  13511: "StaffOfTheScarletSands",
 
   //catalyst
   14101: "ApprenticesNotes",
