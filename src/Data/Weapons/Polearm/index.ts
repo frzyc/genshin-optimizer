@@ -14,6 +14,7 @@ import Halberd from './Halberd'
 import IronPoint from './IronPoint'
 import KitainCrossSpear from './KitainCrossSpear'
 import LithicSpear from './LithicSpear'
+import MissiveWindspear from './MissiveWindspear'
 import Moonpiercer from './Moonpiercer'
 import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
 import PrototypeStarglitter from './PrototypeStarglitter'
@@ -39,6 +40,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   IronPoint,
   KitainCrossSpear,
   LithicSpear,
+  MissiveWindspear,
   Moonpiercer,
   PrimordialJadeWingedSpear,
   PrototypeStarglitter,

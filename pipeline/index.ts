@@ -182,6 +182,7 @@ export const weaponIdMap = {
   13415: "TheCatch",
   13416: "WavebreakersFin",
   13417: "Moonpiercer",
+  13419: "MissiveWindspear",
   13501: "StaffOfHoma",
   13502: "SkywardSpine",
   // 13503: "",

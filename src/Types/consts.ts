@@ -237,6 +237,7 @@ export const allWeaponPolearmKeys = [
   "IronPoint",
   "KitainCrossSpear",
   "LithicSpear",
+  "MissiveWindspear",
   "Moonpiercer",
   "PrimordialJadeWingedSpear",
   "PrototypeStarglitter",
