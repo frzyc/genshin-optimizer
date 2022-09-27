@@ -77,6 +77,7 @@ export function getReactions(charElement: ElementKey) {
       checkCharEleAndInfusion(charElement, ["cryo", "electro", "anemo"], trans.superconduct),
       { key: "superconduct_hit" }
     ),
+    // Technically shatter does not apply to all characters, but the logic would be too complicated for no reason
     shattered: infoMut(trans.shattered, { key: "shattered_hit" }),
     burning: infoMut(
       checkCharEleAndInfusion(charElement, ["pyro", "dendro", "anemo"], trans.burning),
@@ -105,17 +106,19 @@ export function getReactions(charElement: ElementKey) {
   }
 }
 
-function checkCharEleAndInfusion(charElement: ElementKey, elementsToMatch: ElementKey[], node: NumNode): NumNode {
+// Recursively creates a node that will check the character's element and infusion against an array of elements. If any match, the nodes value will be nodeToReturn.
+function checkCharEleAndInfusion(charElement: ElementKey, elementsToMatch: ElementKey[], nodeToReturn: NumNode): NumNode {
+  const elementToMatch = elementsToMatch[0]
   if (elementsToMatch.length === 1) {
-    return compareEq(elementsToMatch[0], charElement,
-      node,
-      equal(infusionNode, elementsToMatch[0], node)
+    return compareEq(elementToMatch, charElement,
+      nodeToReturn,
+      equal(elementToMatch, infusionNode, nodeToReturn)
     )
   }
 
-  const n = checkCharEleAndInfusion(charElement, elementsToMatch.slice(1), node)
-  return compareEq(elementsToMatch[0], charElement,
-    node,
-    compareEq(infusionNode, elementsToMatch[0], node, n)
+  const otherEleNodes = checkCharEleAndInfusion(charElement, elementsToMatch.slice(1), nodeToReturn)
+  return compareEq(elementToMatch, charElement,
+    nodeToReturn,
+    compareEq(elementToMatch, infusionNode, nodeToReturn, otherEleNodes)
   )
 }
