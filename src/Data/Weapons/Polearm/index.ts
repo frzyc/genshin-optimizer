@@ -21,6 +21,7 @@ import PrototypeStarglitter from './PrototypeStarglitter'
 import RoyalSpear from './RoyalSpear'
 import SkywardSpine from './SkywardSpine'
 import StaffOfHoma from './StaffOfHoma'
+import StaffOfTheScarletSands from './StaffOfTheScarletSands'
 import TheCatch from './TheCatch'
 import VortexVanquisher from './VortexVanquisher'
 import WavebreakersFin from './WavebreakersFin'
@@ -47,6 +48,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   RoyalSpear,
   SkywardSpine,
   StaffOfHoma,
+  StaffOfTheScarletSands,
   TheCatch,
   VortexVanquisher,
   WavebreakersFin,
