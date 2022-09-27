@@ -47,7 +47,7 @@ export class DisplayArtifactEntry extends DataEntry<"display_artifact", "display
       slotKeys = validateArr(slotKeys, allSlotKeys)
       mainStatKeys = validateArr(mainStatKeys, mainStatKeys, [])
       substats = validateArr(substats, allSubstatKeys, [])
-      if (typeof location !== "string" || (location && !locationCharacterKeys.includes(location as LocationCharacterKey))) location = ""
+      if (typeof location !== "string" || (![...locationCharacterKeys, "", "Inventory", "Equipped"].includes(location as LocationCharacterKey))) location = ""
       exclusion = validateArr(exclusion, ["excluded", "included"])
       locked = validateArr(locked, ["locked", "unlocked"])
 
