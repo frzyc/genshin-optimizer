@@ -50,9 +50,8 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, "cha
 
     if (!conditional)
       conditional = {}
-    if (!team)
-      team = ["", "", ""]
-    team = team.map(t => allCharacterKeys.includes(t) ? t : "") as ICharacter["team"]
+    if (!team || !Array.isArray(team)) team = ["", "", ""]
+    else team = team.map((t, i) => allCharacterKeys.includes(t) && !team.find((ot, j) => i > j && t === ot) ? t : "") as ICharacter["team"]
 
     if (!teamConditional)
       teamConditional = {}
