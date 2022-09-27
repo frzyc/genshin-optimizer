@@ -253,6 +253,7 @@ const sheet: ICharacterSheet = {
       }
     }), ct.headerTemplate("passive2", {
       teamBuff: true,
+      canShow: equal(condAfterBurst, "on", 1),
       fields: [{
         node: a4_normalEle_dmg_
       }]
