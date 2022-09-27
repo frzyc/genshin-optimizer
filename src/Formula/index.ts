@@ -3,7 +3,7 @@ import { transformativeReactionLevelMultipliers } from "../KeyMap/StatConstants"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
 import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
-import { constant, equal, frac, infoMut, lookup, max, min, naught, one, percent, prod, read, res, setReadNodeKeys, stringRead, subscript, sum, todo } from "./utils"
+import { constant, equal, frac, infoMut, lookup, max, min, naught, one, percent, prod, read, res, setReadNodeKeys, stringRead, subscript, sum, todo, unequal } from "./utils"
 
 const asConst = true as const, pivot = true as const
 
@@ -21,7 +21,7 @@ const allMisc = [
 
 const allModStats = [
   ...allArtModStats,
-  ...(["all", ...allTransformative, ...allAmplifying, ...allAdditive, ...allMoves] as const).map(x => `${x}_dmg_` as const),
+  ...(["all", ...allTransformative, ...allAmplifying, ...allAdditive, ...allMoves, "normalEle"] as const).map(x => `${x}_dmg_` as const),
 ] as const
 const allNonModStats = [
   ...allElements.flatMap(x => [
@@ -202,7 +202,8 @@ const common: Data = {
     dmgBonus: sum(
       total.all_dmg_,
       lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmg_`]), naught),
-      lookup(hit.ele, objectKeyMap(allElements, ele => total[`${ele}_dmg_`]), naught)
+      lookup(hit.ele, objectKeyMap(allElements, ele => total[`${ele}_dmg_`]), naught),
+      equal(hit.move, "normal", unequal(hit.ele, "physical", total.normalEle_dmg_))
     ),
     dmgInc: sum(
       infoMut(sum(

@@ -76,6 +76,8 @@ export const characterIdMap = {
   10000067: "Collei",
   10000068: "Dori",
   10000069: "Tighnari",
+  10000071: "Cyno",
+  10000072: "Candace",
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",
@@ -150,6 +152,7 @@ export const weaponIdMap = {
   12411: "SnowTombedStarsilver",
   12412: "LuxuriousSeaLord",
   12414: "KatsuragikiriNagamasa",
+  12415: "MakhairaAquamarine",
   12416: "Akuoumaru",
   12417: "ForestRegalia",
   12501: "SkywardPride",
@@ -181,6 +184,7 @@ export const weaponIdMap = {
   13415: "TheCatch",
   13416: "WavebreakersFin",
   13417: "Moonpiercer",
+  13419: "MissiveWindspear",
   13501: "StaffOfHoma",
   13502: "SkywardSpine",
   // 13503: "",
@@ -189,6 +193,7 @@ export const weaponIdMap = {
   // 13506: "Deicide",
   13507: "CalamityQueller",
   13509: "EngulfingLightning",
+  13511: "StaffOfTheScarletSands",
 
   //catalyst
   14101: "ApprenticesNotes",
