@@ -201,6 +201,7 @@ export const allWeaponClaymoreKeys = [
   "KatsuragikiriNagamasa",
   "LithicBlade",
   "LuxuriousSeaLord",
+  "MakhairaAquamarine",
   "OldMercsPal",
   "PrototypeArchaic",
   "Rainslasher",

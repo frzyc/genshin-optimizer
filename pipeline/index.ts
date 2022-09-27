@@ -150,6 +150,7 @@ export const weaponIdMap = {
   12411: "SnowTombedStarsilver",
   12412: "LuxuriousSeaLord",
   12414: "KatsuragikiriNagamasa",
+  12415: "MakhairaAquamarine",
   12416: "Akuoumaru",
   12417: "ForestRegalia",
   12501: "SkywardPride",
