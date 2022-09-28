@@ -125,9 +125,6 @@ const dmgFormulas = {
       subscript(input.total.burstIndex, datamine.burst.companionDmg)), input.total.atk), "burst"),
     companionDmg4: customDmgNode(prod(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[3]),
       subscript(input.total.burstIndex, datamine.burst.companionDmg)), input.total.atk), "burst"),
-    // TODO: this is for the additional section to calculate the full burst dmg where the full burst dmg = sum of normal dmg and burst companion dmg
-    // However, the final dmg then defaults to Electro text color which is sort of incorrect?
-    // Is there a way to disable the electro text color and default it to just normal color instead?
     fullBurstDmg1: sum(customDmgNode(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[0]), input.total.atk), "normal"),
       customDmgNode(prod(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[0]),
         subscript(input.total.burstIndex, datamine.burst.companionDmg)), input.total.atk), "burst")),
@@ -298,13 +295,13 @@ const sheet: ICharacterSheet = {
       text: trm("fullBurstDMG.description"),
     }, ct.headerTemplate("burst", {
       fields: [{
-        node: infoMut(dmgFormulas.burst.fullBurstDmg1, { key: `char_${key}:fullBurstDMG.dmg1` })
+        node: infoMut(dmgFormulas.burst.fullBurstDmg1, { key: `char_${key}:fullBurstDMG.dmg1`, variant: "invalid" })
       }, {
-        node: infoMut(dmgFormulas.burst.fullBurstDmg2, { key: `char_${key}:fullBurstDMG.dmg2` })
+        node: infoMut(dmgFormulas.burst.fullBurstDmg2, { key: `char_${key}:fullBurstDMG.dmg2`, variant: "invalid" })
       }, {
-        node: infoMut(dmgFormulas.burst.fullBurstDmg3, { key: `char_${key}:fullBurstDMG.dmg3` })
+        node: infoMut(dmgFormulas.burst.fullBurstDmg3, { key: `char_${key}:fullBurstDMG.dmg3`, variant: "invalid" })
       }, {
-        node: infoMut(dmgFormulas.burst.fullBurstDmg4, { key: `char_${key}:fullBurstDMG.dmg4` })
+        node: infoMut(dmgFormulas.burst.fullBurstDmg4, { key: `char_${key}:fullBurstDMG.dmg4`, variant: "invalid" })
       }]
     })]),
 
