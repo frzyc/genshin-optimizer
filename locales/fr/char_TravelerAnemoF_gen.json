@@ -38,13 +38,13 @@
     "name": "Vortex destructeur",
     "description": {
       "0": "Un vortex de vent, tournant et tranchant, se forme dans la paume de votre main, infligeant des <anemo>DGT Anémo continus</anemo> aux ennemis en face.",
-      "1": "Le vortex finit par exploser à la fin de la compétence ; l'explosion couvre une zone plus large, et inflige des DGT Anémo plus importants.",
+      "1": "Le vortex finit par exploser à la fin de la compétence, l'explosion couvrant une zone plus large et infligeant des DGT Anémo plus importants.",
       "2": "<br/>",
       "3": "<strong>Appui long</strong>",
       "4": "Augmente les DGT et la zone d'effet.",
       "5": "<br/>",
       "6": "<strong>Absorption élémentaire</strong>",
-      "7": "Le vortex absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact ; ceux-ci lui confèrent un bonus de DGT de l'élément correspondant.",
+      "7": "Le vortex absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact, ceux-ci conférant un bonus de DGT de l'élément correspondant.",
       "8": "Une seule réaction d'absorption élémentaire peut avoir lieu par utilisation.",
       "9": "<br/>",
       "10": "<i>Vous avez discuté de la maîtrise de vos nouveaux pouvoirs Anémo avec Paimon.</i>"
@@ -74,7 +74,7 @@
       "0": "Vous invoquez une tornade qui attire les objets et les ennemis en avançant, et qui inflige des <anemo>DGT Anémo continus</anemo>.",
       "1": "<br/>",
       "2": "<strong>Absorption élémentaire</strong>",
-      "3": "La tornade absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels elle entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
+      "3": "La tornade absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels elle entre en contact, ceux-ci conférant leurs attributs et infligeant un bonus de DGT de l'élément correspondant.",
       "4": "Un seul élément peut être absorbé à la fois.",
       "5": "<br/>",
       "6": "<i>Vous avez étudié le battement des ailes du papillon avec Paimon.</i>"

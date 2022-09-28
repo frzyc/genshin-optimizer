@@ -108,7 +108,7 @@
   "constellation1": {
     "name": "Mur de roche incassable",
     "description": {
-      "0": "Le taux CRIT des personnages de l'équipe se trouvant entourés par le mur de roche de <strong>Réveil de la terre</strong> augmente de 10 % ; leur RÉS à l'interruption augmente également."
+      "0": "Le taux CRIT des personnages de l'équipe se trouvant entourés par le mur de roche de <strong>Réveil de la terre</strong> augmente de 10 %, leur RÉS à l'interruption augmentant également."
     }
   },
   "constellation2": {
@@ -128,7 +128,7 @@
     "name": "Force de réaction",
     "description": {
       "0": "Chaque onde de choc de <strong>Réveil de la terre</strong> restaure 5 pts d'énergie élémentaire à chaque ennemi touché.",
-      "1": "Jusqu'à 25 pts d'énergie élémentaire peuvent être restaurés de cette manière."
+      "1": "Un maximum de 25 pts d'énergie élémentaire peut être restauré de cette manière."
     }
   },
   "constellation5": {

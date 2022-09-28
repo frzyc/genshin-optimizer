@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
-        "1": "Performs up to five consecutive spear strikes."
+        "1": "Performs up to 5 consecutive spear strikes."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",

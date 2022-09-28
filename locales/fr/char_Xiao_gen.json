@@ -115,7 +115,7 @@
     "name": "Dissolution d'éon : Chute des cieux",
     "description": {
       "0": "<strong>Cycle du vent lemniscatique</strong> inflige 15 % de DGT en plus lorsqu'il est relancé dans les 7 s.",
-      "1": "Cet effet dure 7 s et peut être cumulé 3 fois au maximum. Le délai est réinitialisé à chaque nouveau cumul."
+      "1": "Cet effet dure 7 s et peut être cumulé 3 fois maximum. Le délai est réinitialisé à chaque nouveau cumul."
     }
   },
   "passive3": {

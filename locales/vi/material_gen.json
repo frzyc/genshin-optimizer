@@ -175,6 +175,18 @@
     "name": "Tiền Sắt Cổ",
     "description": "Tiền Sắt Cổ mà Ulman nói có thể bán được một số tiền lớn. Sờ vào thì hình như không có gì đặc biệt..."
   },
+  "BusinessEarnings": {
+    "name": "Doanh Thu",
+    "description": "Số lượng \"Pha Lê Fairbrew\" là tổng thu nhập của hoạt động bán hàng từ thiện. Vào cuối \"Mùa Gió Rượu Giao Hòa\", Bernhard sẽ đem số \"Pha Lê Fairbrew\" này đổi lấy Mora, và tặng cho người già trẻ em có hoàn cảnh khó khăn."
+  },
+  "UsableFunds": {
+    "name": "Vốn Khả Dụng",
+    "description": "Số lượng \"Pha Lê Fairbrew\" có hạn là số vốn cơ bản đầu tư vào hoạt động của tiệm trong đợt bán hàng từ thiện.\\nThu hút khách hàng và mở rộng doanh thu là mục tiêu của tất cả các chủ tiệm, muốn vậy cần phải dự trù kinh phí chính xác để tăng sức hấp dẫn của tiệm."
+  },
+  "StrategicInspiration": {
+    "name": "Cảm Hứng Chiến Lược",
+    "description": "Tài liệu ghi chép các lý thuyết kinh doanh và các trường hợp kinh doanh khác nhau, đối với những người có kinh nghiệm, mỗi trang mỗi câu chữ đều có thể đem lại cảm hứng để họ cải thiện chiến lược kinh doanh của tiệm mình."
+  },
   "Primogem": {
     "name": "Nguyên Thạch",
     "description": "Tinh Thạch Nguyên Thủy, nằm trong vũ trụ hắc ám, ánh sáng được kết tinh từ hy vọng và mộng tưởng."
@@ -507,6 +519,18 @@
     "name": "Tighnari",
     "description": "Học giả thiếu niên tinh thông thực vật học, hiện đang làm đội trưởng kiểm lâm của Rừng Avidya. Tính tình thẳng thắn nhiệt tình, hay dạy bảo những người hay lơ là đầu óc."
   },
+  "Nilou": {
+    "name": "Nilou",
+    "description": "Vũ công nổi danh của Nhà Hát Zubayr, điệu nhảy sống động và tính cách hồn nhiên ấm áp."
+  },
+  "Cyno": {
+    "name": "Cyno",
+    "description": "\"Tổng Quản Mahamatra\", phụ trách giám sát các học giả trong Giáo Viện. Hiệu suất trong lúc làm việc sẽ còn hiệu quả hơn \"Vayuvyastra Vĩ Đại\" của Học Phái Kshahrewar."
+  },
+  "Candace": {
+    "name": "Candace",
+    "description": "Hậu duệ của Vua Deshret với con mắt bên trái màu hổ phách, là người thủ hộ của Làng Aaru."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Chòm Sao Của Kamisato Ayaka",
     "description": "Nguyên liệu kích hoạt cung mệnh Kamisato Ayaka"
@@ -726,6 +750,18 @@
   "TighnarisStellaFortuna": {
     "name": "Chòm Sao Của Tighnari",
     "description": "Nguyên liệu kích hoạt cung mệnh Tighnari"
+  },
+  "NilousStellaFortuna": {
+    "name": "Chòm Sao Của Nilou",
+    "description": "Nguyên liệu kích hoạt cung mệnh Nilou"
+  },
+  "CynosStellaFortuna": {
+    "name": "Chòm Sao Của Cyno",
+    "description": "Nguyên liệu kích hoạt cung mệnh Cyno"
+  },
+  "CandacesStellaFortuna": {
+    "name": "Chòm Sao Của Candace",
+    "description": "Nguyên liệu kích hoạt cung mệnh Candace"
   },
   "GnosticHymnOldNotes": {
     "name": "Nhật Ký Hành Trình Trân Châu - Khởi Đầu",
@@ -2620,7 +2656,7 @@
     "description": "Bức thư lấy từ chỗ Vile, phía trên có ký hiệu đặc thù của Đạo Bảo Đoàn."
   },
   "ViktorsLostBox": {
-    "name": "Chiệc Hộp Viktor Làm Mất",
+    "name": "Chiếc Hộp Viktor Làm Mất",
     "description": "Chiếc hộp Viktor làm mất. Túi bên ngoài đã nhăn nhúm... Nhưng không bị hỏng, không biết bên trong đứng thứ đồ quan trọng gì..."
   },
   "NoticePaper": {
@@ -3818,6 +3854,18 @@
   "SumeruRose": {
     "name": "Tường Vi Sumeru",
     "description": "Bông hoa tím đậm và rực rỡ tỏa hương thơm ngát khiến người đi đường phải dừng chân. Mặc dù được gọi là tường vi, nhưng thật ra nó nên được gọi là hoa hồng."
+  },
+  "Redcrest": {
+    "name": "Quả Xích Niệm",
+    "description": "Quả của một loại cây có thể sinh tồn trong môi trường khắc nghiệt của sa mạc, những trái màu đỏ thẫm rực rỡ của nó càng trở nên bắt mắt hơn trên nền cát vàng."
+  },
+  "AjilenakhNut": {
+    "name": "Quả Ajilenakh",
+    "description": "Quả của cây thường xanh trong ốc đảo sa mạc. Dưới lớp vỏ cứng là lớp thịt dày, ngọt và thơm ngon, là nguồn lương thực quan trọng của người dân nơi biển cát."
+  },
+  "Scarab": {
+    "name": "Bọ Thánh Kim",
+    "description": "Một loài bọ cánh cứng ngoan cường sống trên biển cát rộng lớn. Đường vân màu vàng trên vỏ dường như gợi ý một số liên quan đến các di tích cổ nằm rải rác trên sa mạc."
   },
   "ActivatedStarshroom": {
     "name": "Nấm Sao Bung Nở",
@@ -5278,6 +5326,102 @@
   "TreasureMapInABox": {
     "name": "Bản Đồ Kho Báu Trong Rương",
     "description": "Bản Đồ Kho Báu dưới đáy rương. Bên trên có đánh dấu đơn giản là \"đồ tốt\"."
+  },
+  "GlintingComponent": {
+    "name": "Linh Kiện Lấp Lánh",
+    "description": "Một phần linh kiện của Kết Cấu Nguyên Thủy đã chặn đường đi của bạn, hình như nó đang không ngừng lóe sáng để phản ứng với các thiết bị gần đó."
+  },
+  "SacredSealValley": {
+    "name": "Đá Thánh Chương - Thung Lũng",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Các học giả cho rằng nghĩa ban đầu của từ này là thung lũng."
+  },
+  "SacredSealBirdHead": {
+    "name": "Đá Thánh Chương - Đầu Chim",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Những chữ được khắc trên đó được cho là hình ảnh đầu của một con chim."
+  },
+  "SacredSealRaisedArm": {
+    "name": "Đá Thánh Chương - Giơ Tay",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Các học giả cho rằng ký tự này không chỉ là một biểu tượng ngữ âm, mà có thể còn có ý nghĩa mở rộng về sự tôn kính và phục tùng."
+  },
+  "SacredSealSandstorm": {
+    "name": "Đá Thánh Chương - Bão Cát",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Hình dạng của chữ có lẽ bắt nguồn từ cơn bão trên sa mạc."
+  },
+  "SacredSealAuricle": {
+    "name": "Đá Thánh Chương - Vành Tai",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Văn tự trên đó có hình dạng giống như chiếc tai, nhưng cũng có một số học giả không có cùng ý kiến này."
+  },
+  "SacredSealForest": {
+    "name": "Đá Thánh Chương - Cây Cối",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Hầu hết các học giả đều cho rằng từ này có nghĩa là rừng cây, có nghĩa là vào một thời điểm nào đó trong quá khứ, sa mạc không cằn cỗi như bây giờ."
+  },
+  "SacredSealThunderstrike": {
+    "name": "Đá Thánh Chương - Sấm Sét",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Hình dạng của văn tự này có lẽ được bắt nguồn từ tia chớp hiếm thấy trên sa mạc."
+  },
+  "SacredSealDanger": {
+    "name": "Đá Thánh Chương - Nguy Hiểm",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Văn tự bên trên dường như chỉ ra sự nguy hiểm của việc treo một cái đục và một cái búa trên một vách đá, đó là những văn tự mới xuất hiện ở thời đại sau này."
+  },
+  "SacredSealChiselHammer": {
+    "name": "Đá Thánh Chương - Búa Đục",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Biểu tượng tượng trưng cho chiếc búa đục là một trong những ký tự xuất hiện sớm nhất."
+  },
+  "SacredSealSunrise": {
+    "name": "Đá Thánh Chương - Mặt Trời Mọc",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Nguồn gốc của biểu tượng này có lẽ là mặt trời mọc."
+  },
+  "SacredSealRightToRule": {
+    "name": "Đá Thánh Chương - Vương Quyền",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Hình dạng văn tự giống như một người cai trị đang ngồi trên ngai vàng."
+  },
+  "SacredSealSheepHead": {
+    "name": "Đá Thánh Chương - Đầu Cừu",
+    "description": "Phiến đá cổ có khắc văn tự, mặc dù không biết văn tự có nguồn gốc từ đâu, nhưng có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Văn tự khắc trên đó thường được cho là hình đầu cừu."
+  },
+  "SacredSealCrocodileHead": {
+    "name": "Đá Thánh Chương - Đầu Cá Sấu",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Nguồn gốc của văn tự được khắc trên đó có lẽ là cái miệng đáng sợ của con Cá Sấu Gai."
+  },
+  "SacredSealGiantSerpent": {
+    "name": "Đá Thánh Chương - Mãng Xà",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Mặc dù các học giả Học Phái Haravatat cho rằng văn tự này là biểu tượng của mãng xà, nhưng học giả Học Phái Amurta lại đưa ra ý kiến khác: hiện không có dấu vết của rắn ở Biển Cát Đỏ. Vì vậy đến nay nguồn gốc của văn tự này vẫn còn nhiều tranh cãi."
+  },
+  "SacredSealCeremony": {
+    "name": "Đá Thánh Chương - Tế Lễ",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Ý nghĩa ban đầu của văn tự trên đó là tế phẩm, về sau mở rộng ra thành tế lễ."
+  },
+  "SacredSealLabor": {
+    "name": "Đá Thánh Chương - Lao Động",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Văn tự trên đó xuất hiện gần như cùng lúc với búa đục, và nó là một trong số ít văn bản đầu tiên xuất hiện."
+  },
+  "SacredSealDune": {
+    "name": "Đá Thánh Chương - Đồi Cát",
+    "description": "Phiến đá cổ có khắc văn tự, có vẻ như vốn là một bộ phận của kết cấu nào đó. Không biết đã ngủ trong biển cát bao lâu, cũng không biết chứa đựng ước nguyện của ai. Văn hiến để lại từ thời Vua Deshret có nhiều tên gọi khác nhau cho các đồi cát có hình dạng khác nhau, điều này đã gây ra không ít rắc rối cho các nhà nghiên cứu."
+  },
+  "GoldenRoseSeeds": {
+    "name": "Hạt Giống Tường Vi Vàng",
+    "description": "So với Tường Vi Sumeru thì Tường Vi Vàng thích hợp hơn với môi trường sa mạc. Để sinh tồn, nó phải bảo vệ mình bằng bùn và đá, nhưng trong môi trường thích hợp, nó có thể nở ra vẻ đẹp vốn có của mình."
+  },
+  "TransparentRuinsRecordI": {
+    "name": "Ghi Chép Của Di Tích Trong Suốt I",
+    "description": "Một phiến đá được tìm thấy trong di tích trong suốt gần Lăng Mộ Vua Deshret. Có vẻ như là một ghi chép để lại bởi một nền văn minh đã mất..."
+  },
+  "RecordOfLambDevourerRock": {
+    "name": "Ghi Chép Của Thôn Dương Nham",
+    "description": "Phiến đá được tìm thấy trong căn cứ bí mật của Eremite Thôn Dương Nham. Có vẻ như là một ghi chép để lại bởi một nền văn minh đã mất..."
+  },
+  "RecordOfTheTombOfCarouses": {
+    "name": "Ghi Chép Của Lăng No Say",
+    "description": "Phiến đá được tìm thấy trong Lăng No Say. Có vẻ như là một ghi chép để lại bởi một nền văn minh đã mất..."
+  },
+  "SoheilsOldNotes": {
+    "name": "Ghi Chép Khảo Cổ Của Soheil",
+    "description": "Ghi chép do Soheil, một học giả của Giáo Viện để lại khi tham gia khảo cổ trên sa mạc lúc còn trẻ. Trông có vẻ cổ xưa, nhưng không hề bị nhàu nát."
+  },
+  "RecordOfAarusShut": {
+    "name": "Ghi Chép Về Hình Bóng Của Aaru",
+    "description": "Phiến đá được lấy ở nơi cao nhất trong Lăng Mộ Vua Deshret. Có vẻ như là một ghi chép để lại bởi một nền văn minh đã mất..."
   },
   "TwilightTheaterHeadsNotes": {
     "name": "Bản Thảo Trưởng Đoàn Kịch Hoàng Hôn",
@@ -7539,6 +7683,94 @@
     "name": "Tháp Nấm Sữa Giòn Ngon",
     "description": "Món ăn vặt giòn tan. Vị kem thoang thoảng tan chảy nơi đầu lưỡi khi nhấm nháp những miếng nấm mọng nước và bánh mì giòn... Sự thỏa mãn tuyệt đối này khiến người ta không muốn buông những vụn bánh còn sót lại trên đầu ngón tay."
   },
+  "SuspiciousCoconutCharcoalCake": {
+    "name": "Bánh Ajilenakh Nướng Kỳ Lạ",
+    "description": "Một chiếc bánh ngọt màu đen. Thoạt nhìn, nó trông như một món ăn đen tối, lấy hết can đảm cắn một miếng, cảm giác khô khan này... lẽ nào là vô tình trộn lẫn than rồi mang lên bàn ăn sao?"
+  },
+  "CoconutCharcoalCake": {
+    "name": "Bánh Ajilenakh Nướng",
+    "description": "Một chiếc bánh ngọt có màu đen. Đầu tiên là rang Quả Ajilenakh thành bột, sau đó rây mịn, rồi thêm bột vào, trộn đều sau đó đem nướng chín. Thành phẩm không màu mè, thơm nhẹ mùi Quả Ajilenakh, thơm ngon đặc biệt khi kết hợp với mứt."
+  },
+  "DeliciousCoconutCharcoalCake": {
+    "name": "Bánh Ajilenakh Nướng Ngon",
+    "description": "Một chiếc bánh ngọt có màu đen. Thân bánh mỏng manh, bóng bẩy, hương thơm của Quả Ajilenakh vừa sống động vừa ấm áp, mềm tan trong miệng... Bất kể thực khách lúc này đang mệt mỏi hay buồn bã, tâm trạng tồi tệ cũng đều có thể được xua tan bởi \"vị ngọt màu đen\" này. Nhìn người không thể chỉ nhìn bề ngoài, và bánh cũng vậy."
+  },
+  "SuspiciousBaklava": {
+    "name": "Baklava Kỳ Lạ",
+    "description": "Món tráng miệng Sumeru truyền thống. Vị ngọt béo ngậy như một quả bom nổ tung trong miệng, thậm chí khiến răng đau âm ỉ... Lượng đường phù hợp có thể khiến người ta cảm thấy dễ chịu, nhưng một khi quá nhiều đường thì khó mà chịu được."
+  },
+  "Baklava": {
+    "name": "Baklava",
+    "description": "Món tráng miệng Sumeru truyền thống. Bọc các loại hạt đã nghiền vào giữa bánh phồng, phết bơ nóng và nướng. Đừng quên thêm si rô sau khi ra khỏi lò. Một số học giả sẽ đặt mua một phần \"lâu đài ngọt ngào\" này trước kỳ thi để bổ sung năng lượng, nhờ vậy mà nó chiếm vị trí đầu trong các món tráng miệng phổ biến nhất của Giáo Viện."
+  },
+  "DeliciousBaklava": {
+    "name": "Baklava Ngon",
+    "description": "Món tráng miệng Sumeru truyền thống. Một học giả từng nói rằng, người Sumeru đơn giản có thể chia thành hai loại, đó là người ăn món tráng miệng để sống, và người sống để ăn món tráng miệng. Những lớp bánh phồng mỏng, thơm mùi bơ và mật ong thấm vào tận xương tủy, có lẽ những ai nếm thử sẽ bị lôi vào loại thứ hai."
+  },
+  "SuspiciousCandiedAjilenakhNut": {
+    "name": "Ajilenakh Ngào Đường Kỳ Lạ",
+    "description": "Món tráng miệng nhiều nhân. Những hạt cứng giống như những phiến đá nhỏ ẩn trong cát, nếu không cẩn thận sẽ bị mắc bẫy. Vị ngọt đem lại niềm vui, nhưng sự va chạm giữa kẽ răng đã làm giảm bớt đi hơn một nửa niềm vui đó."
+  },
+  "CandiedAjilenakhNut": {
+    "name": "Ajilenakh Ngào Đường",
+    "description": "Món tráng miệng nhiều nhân. Đầu tiên đun nước đường cho đến khi trong, sau đó trộn với nhân bánh và mè Sumeru, cuối cùng đổ si rô được trộn đều vào khuôn và chờ đông đặc thành dạng giòn. Nghe nói ở Snezhnaya lạnh giá cũng có món tương tự như vậy, nhưng khác nhau về hương vị. Tất nhiên, cả hai bên đều nghĩ món của nước mình mới là ngon nhất Teyvat."
+  },
+  "DeliciousCandiedAjilenakhNut": {
+    "name": "Ajilenakh Ngào Đường Ngon",
+    "description": "Món tráng miệng nhiều nhân. Mật ong tan chảy trong miệng, các hạt bên trong giống như những viên đá quý được bọc trong vải nhung, đem đến nhiều sự bất ngờ. Nếm một miếng thôi đã thấy ngọt đến nao lòng, cả người như bơi trong nồi mật... Lần sau làm nhiều hơn đi!"
+  },
+  "SuspiciousPadisarahPudding": {
+    "name": "Pudding Padisarah Kỳ Lạ",
+    "description": "Món tráng miệng nổi tiếng của Sumeru. Ăn một miếng sẽ thấy mùi vị như sữa bò với hương hoa... Vị cũng không tệ, nhưng khác xa với pudding trong tưởng tượng. Ôi, lẽ nào là tính sai liều lượng rồi sao?"
+  },
+  "PadisarahPudding": {
+    "name": "Pudding Padisarah",
+    "description": "Món tráng miệng phổ biến của Sumeru. Giã nát cánh hoa Padisarah và Tường Vi Sumeru lấy nước, trộn với sữa, đường và các nguyên liệu khác để đông đặc. Bên ngoài trông đáng yêu, hương vị ngọt ngào, và nó rất phổ biến trong các ngày lễ của Sumeru."
+  },
+  "DeliciousPadisarahPudding": {
+    "name": "Pudding Padisarah Ngon",
+    "description": "Món tráng miệng phổ biến của Sumeru. Ngay khi cho vào miệng, kết cấu mềm mịn sẽ khiến bạn cảm giác như đang ở trên mây với hương thơm sữa. Nếm kỹ sẽ thấy mùi thơm quyện vào nhau của Padisarah và Tường Vi Sumeru, thơm phức. Cho đến miếng cuối cùng, cảm giác như vẫn có gì đó còn dang dở, và không thể không liếm mặt sau của chiếc thìa như để tận hưởng những giây phút thưởng thức tuyệt vời cuối cùng."
+  },
+  "SuspiciousAaruMixedRice": {
+    "name": "Cơm Trộn Aaru Kỳ Lạ",
+    "description": "Món cơm được phục vụ với số lượng lớn. Do vội vàng nên không trộn đều trước khi ăn dẫn đến vị cà chua trên một phần cơm quá đậm, nhưng phần còn lại thì nhạt nhẽo vô vị... vẫn nên trộn lại lần nữa thì hơn."
+  },
+  "AaruMixedRice": {
+    "name": "Cơm Trộn Aaru",
+    "description": "Món cơm được phục vụ với số lượng lớn. Món ăn kết hợp giữa cơm, mì và đậu, bí quyết tạo nên độ ngon của nó là từ vị chua ngọt của cà chua. Vì nguyên liệu dễ tìm, giá thành rẻ, nên đây là một lựa chọn tốt để thỏa mãn cơn đói, cách làm này cũng dần được lan truyền từ Làng Aaru ra khắp Sumeru."
+  },
+  "DeliciousAaruMixedRice": {
+    "name": "Cơm Trộn Aaru Ngon",
+    "description": "Món cơm được phục vụ với số lượng lớn. Hạt cơm dẻo quánh, quyện trong nước sốt đậm đà cho vào miệng, rõ ràng là không cần thêm dầu nhưng vẫn hấp dẫn hơn hẳn hương vị thịt."
+  },
+  "SuspiciousFruitsOfTheFestival": {
+    "name": "Hương Vị Lễ Hội Kỳ Lạ",
+    "description": "Đồ uống không cồn màu sắc rực rỡ. Không xử lý được vị chua của Quả Móc Câu dẫn đến đầu lưỡi bị tê. Có, có chuyện gì vậy... Tiếng sói tru nơi Lang Lãnh vang vọng bên tai, có lẽ là ảo giác chăng..."
+  },
+  "FruitsOfTheFestival": {
+    "name": "Hương Vị Lễ Hội",
+    "description": "Đồ uống không cồn màu sắc rực rỡ. Giã nát Quả Nhật Lạc và Quả Móc Câu lấy nước, sau đó rót lần lượt vào cốc. Hương vị mát lạnh và màu sắc mát mẻ có thể dễ dàng mang lại những kỷ niệm khó phai trong những ngày lễ. Để tạo hiệu ứng biến đổi dần, tuyệt đối đừng nhầm lẫn thứ tự!"
+  },
+  "DeliciousFruitsOfTheFestival": {
+    "name": "Hương Vị Lễ Hội Ngon",
+    "description": "Đồ uống không cồn màu sắc rực rỡ. Hương vị sảng khoái mang đến cảm giác thưởng thức tuyệt vời như một giấc mơ. Chỉ cần nhấp một ngụm là có cảm giác như đang nằm trên bãi biển cát trắng, nước biển lấp lánh hòa nhịp, tạo nên một kỳ nghỉ nhàn nhã như thơ."
+  },
+  "SwirlingSteps": {
+    "name": "Vũ Điệu Quay Cuồng",
+    "description": "Món ăn đặc sắc của Nilou. Chiếc cốc trong suốt như pha lê giống như một chiếc hộp trang sức được trang trí công phu, chứa một chiếc bánh pudding mềm tan trong miệng. Màu đỏ tươi này... làm cho người ta nghĩ đến hình dáng tỏa sáng của Nilou khi cô ấy nhảy. Cứ thế hy vọng rằng điệu nhảy này sẽ không bao giờ kết thúc."
+  },
+  "DuelSoul": {
+    "name": "Linh Hồn Quyết Đấu",
+    "description": "Món ăn đặc biệt của Cyno. Những hạt cơm vàng óng xếp thành hình gò đất đặc sắc, múc một thìa, đưa miếng thịt thơm phức bên trong vào miệng, một sự thôi thúc không thể gọi tên trỗi dậy trong lồng ngực - thật sự muốn lấy \"Thất Thánh Triệu Hồi\" ra để quyết đấu một trận sảng khoái!"
+  },
+  "UtmostCare": {
+    "name": "Chăm Sóc Tận Tình",
+    "description": "Món ăn đặc biệt của Candace. Trước khi bưng lên đã ngửi thấy mùi thơm phức, có vẻ như Candace cũng có nhiều kinh nghiệm trong việc bảo vệ \"khẩu vị\"... Chỉ là phần này nhiều hơn so với Cơm Trộn Aaru thông thường, phải làm sao để ăn hết phần \"chăm sóc quá mức\" này đây?"
+  },
+  "SparklingBerryJuice": {
+    "name": "Nước Trái Cây Sủi Bọt",
+    "description": "Thức uống không cồn hoàn toàn mới. Quả Dâu Đỏ có độ chín khác nhau tạo nên dư vị từ ngọt đến chua cho nước ép, nước có ga mát lạnh làm sảng khoái tâm hồn, đồng hành cùng bạn để tận hưởng khoảng thời gian giải trí thú vị."
+  },
   "RecipeItem": {
     "name": "Đạo Cụ Công Thức",
     "description": "Mở Đạo Cụ Công Thức"
@@ -8051,6 +8283,30 @@
     "name": "Công Thức: Tháp Nấm Sữa Giòn",
     "description": "Công thức món ăn, ghi lại cách làm món \"Tháp Nấm Sữa Giòn\""
   },
+  "RecipeCoconutCharcoalCake": {
+    "name": "Công Thức: Bánh Ajilenakh Nướng",
+    "description": "Công thức món ăn, ghi lại cách làm món \"Bánh Ajilenakh Nướng\"."
+  },
+  "RecipeBaklava": {
+    "name": "Công Thức: Baklava",
+    "description": "Công thức món ăn, ghi lại cách làm món \"Baklava\"."
+  },
+  "RecipeCandiedAjilenakhNut": {
+    "name": "Công Thức: Ajilenakh Ngào Đường",
+    "description": "Công thức món ăn, ghi lại cách làm món \"Ajilenakh Ngào Đường\"."
+  },
+  "RecipePadisarahPudding": {
+    "name": "Công Thức: Pudding Padisarah",
+    "description": "Công thức món ăn, ghi lại cách làm món \"Pudding Padisarah\"."
+  },
+  "RecipeAaruMixedRice": {
+    "name": "Công Thức: Cơm Trộn Aaru",
+    "description": "Công thức món ăn, ghi lại cách làm món \"Cơm Trộn Aaru\"."
+  },
+  "RecipeFruitsOfTheFestival": {
+    "name": "Công Thức: Hương Vị Lễ Hội",
+    "description": "Công thức món ăn, ghi lại cách làm món \"Hương Vị Lễ Hội\""
+  },
   "CraftedItems": {
     "name": "Sản Phẩm Ghép",
     "description": "Vật phẩm từ hệ thống Ghép"
@@ -8132,7 +8388,7 @@
     "description": "Thuốc giúp người khác không bị sự xâm nhập của cát bụi, tăng kháng Nguyên Tố Nham.\\nKhi uống sẽ có vị của nam châm. Giúp người lữ khách không bị bụi bám bẩn."
   },
   "DendrocidePotion": {
-    "name": "Thuốc Diệt Cỏ",
+    "name": "Thuốc Thảo Dược",
     "description": "Thuốc hạn chế sự tăng trưởng của cây cỏ, tăng kháng Nguyên Tố Thảo.\\nNguyên lý giống với những loại thuốc diệt cỏ thông thường, không phải giết chết cây cối, mà khiến nó chìm vào giấc ngủ. Uống vào nghe nói có thể giúp điều dưỡng cơ thể."
   },
   "FlamingEssentialOil": {
@@ -8479,6 +8735,18 @@
     "name": "Chốt Neo Hỗn Độn",
     "description": "Đến từ Rồng Di Tích Cổ Đại không còn hoạt động.\\nTrong vương quốc cổ đại, có một nhóm người bị ám ảnh bởi nguyên lý về mô phỏng sinh mệnh. Cho dù là nguyên tố trật tự thuần túy nguyên bản hay sức mạnh nguyên thủy cổ xưa của rồng cũng đều nên chế tạo, cải tiến và nâng cấp.\\nBằng cách này, một cơ thể ưu việt và hoàn mỹ hơn sẽ thay thế trật tự đang bị hao mòn liên tục."
   },
+  "DamagedPrism": {
+    "name": "Lăng Kính Hỏng Hóc",
+    "description": "Linh kiện vỡ vụn thu được sau khi đánh bại kết cấu năng lượng.\\nNhững cỗ máy có hình thù kỳ dị này là những người bảo vệ di tích sa mạc vĩnh hằng, có đủ sức mạnh để đâm xuyên qua núi đá và tái tạo lại các tảng đá. Nguyên tắc điều khiển những cỗ máy này tương tự như nhiều cơ quan bí ẩn trên và dưới mặt đất."
+  },
+  "TurbidPrism": {
+    "name": "Lăng Kính Vẩn Đục",
+    "description": "Linh kiện cũ thu được sau khi đánh bại kết cấu năng lượng.\\nNghe nói những cỗ máy này không được tạo ra để làm sứ giả của sự hủy diệt và chinh phục, không giống như những \"Cơ Quan Di Tích\" khác nơi sâu trong sa mạc."
+  },
+  "RadiantPrism": {
+    "name": "Lăng Kính Phát Sáng",
+    "description": "Linh kiện tinh xảo thu được sau khi đánh bại kết cấu năng lượng.\\nVị vua của sa mạc đã từng có một giấc mơ và hứa hẹn nhiều điều.\\nTrong truyền thuyết về sa mạc, những sáng tạo máy móc này ban đầu là đạo cụ để thực hiện lời hứa của họ, và bây giờ chỉ có ký ức máy móc của chúng là khắc ghi những giấc mơ và lời hứa mà không ai có thể nhớ được."
+  },
   "HurricaneSeed": {
     "name": "Hạt Giống Bão",
     "description": "Sau khi đánh bại Phong Nguyên Bản hình thành nên thể cô đặc. Nó chứa sức mạnh của gió thuần khiết.\\nNgười ta nói rằng những chú bướm với đôi cánh mỏng manh cũng chứa đựng sức mạnh đem đến bão tố. Những chú bướm được tạo ra bằng gió thuần khiết này chắc chắn đang chờ ngày gọi bão trở lại."
@@ -8626,6 +8894,14 @@
   "ThunderclapFruitcore": {
     "name": "Hạt Tụ Sấm",
     "description": "Lõi cây kích điện được bọc trong những chiếc lá sắc nhọn, tản ra nguyên tố Lôi khắp cơ thể.\\nNăng lượng cuồn cuộn sâu trong lòng đất đang muốn trút cơn thịnh nộ, thế là dây leo không may cũng bị nhiễm cơn cuồng bạo, vẫy cành uốn éo than khóc, không biết là muốn để người khác thử nếm trải nỗi đau khi bị sét đánh xuyên thân, hay là chật vật mong chờ cái kết không thể tránh khỏi."
+  },
+  "PerpetualCaliber": {
+    "name": "Lõi Chuyển Động Vĩnh Viễn",
+    "description": "Một cơ quan động lực lấy từ máy móc di tích thần bí.\\nNgay cả khi cơ thể mà nó điều khiển đã bị phá hủy, thì nó vẫn tiếp tục hoạt động.\\nTheo lý thì trên mặt đất không tồn tại năng lượng vô hạn và liên tục, hầu hết các kết quả nghiên cứu được công bố về \"chuyển động vĩnh viễn\" cũng đã bị làm sai lệch. Tuy nhiên, từ chiếc lõi này có thể thấy nền văn minh đã bị hủy diệt từng chạm đến những khu vực mà con người không thể tiếp cận."
+  },
+  "LightGuidingTetrahedron": {
+    "name": "Khối Tứ Diện Dẫn Sáng",
+    "description": "Hạt nhân nhận được sau khi đánh bại tổ hợp cơ quan thần bí.\\nCho đến bây giờ, cỗ máy cổ xưa vẫn không bao giờ quên ước mơ của chủ nhân và trách nhiệm của nó: Xây dựng một nghìn cung điện, cai trị hơn ba nghìn cỗ máy, trồng mười nghìn bông hoa bây giờ không còn nở nữa, tái hiện \"thiên đường\" bị chôn vùi trong biển cát cho tất cả các linh hồn trên mặt đất.\\nNgay cả khi vị vua của sa mạc không còn nữa, những giấc mơ bị hủy hoại bởi những lời thì thầm của tội lỗi sâu thẳm; Ngay cả khi tất cả các trụ cột ma thuật hoàn toàn bị phá vỡ và sụp đổ, con thú từng được nhà vua sủng ái vẫn ẩn mình trong cơn bão cát nóng."
   },
   "TileOfDecarabiansTower": {
     "name": "Ngói Vỡ Tháp Cô Vương",
@@ -8797,7 +9073,7 @@
   },
   "OasisGardensMourning": {
     "name": "Nỗi Buồn Vườn Hoa Ốc Đảo",
-    "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\\nVua của các loài hoa từng có mối quan hệ thân thiết với Jinn.\\nNữ chủ nhân của những bông hoa và ốc đảo từng cùng Vua Sa Mạc xây dựng \"thành phố của rạp hát\" Ay-Khanoum cho Jinn, trong ngôn ngữ cổ của Jinn thì nó mang ý nghĩa là \"Nguyệt Nữ Thành\".\\nNhưng sau này, người ta nói rằng nữ vương của các loài hoa đã chết vì cái nắng thiêu đốt và cát vàng, cả ốc đảo cũng không còn loài hoa Padisarah màu đỏ tím nở rộ nữa.\\nSau khi cô ấy ngã xuống, cơn bão cát kêu gào, Jinn khóc thương, ánh trắng như mảnh ngọc trắng bạc cũng mất đi công dụng thưởng thức và tỏa ra ánh sáng u buồn."
+    "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\\nVua của các loài hoa từng có mối quan hệ thân thiết với Trấn Linh.\\nNữ chủ nhân của những bông hoa và ốc đảo từng cùng Vua Sa Mạc xây dựng \"thành phố của rạp hát\" Ay-Khanoum cho Trấn Linh, trong ngôn ngữ cổ của Trấn Linh thì nó mang ý nghĩa là \"Nguyệt Nữ Thành\".\\nNhưng sau này, người ta nói rằng nữ vương của các loài hoa đã chết vì cái nắng thiêu đốt và cát vàng, cả ốc đảo cũng không còn loài hoa Padisarah màu đỏ tím nở rộ nữa.\\nSau khi cô ấy ngã xuống, cơn bão cát kêu gào, Trấn Linh khóc thương, ánh trăng như mảnh ngọc trắng bạc cũng mất đi công dụng thưởng thức và tỏa ra ánh sáng u buồn."
   },
   "OasisGardensTruth": {
     "name": "Chân Lý Vườn Hoa Ốc Đảo",
@@ -9111,6 +9387,18 @@
     "name": "Bài Ca Ánh Sáng",
     "description": "Truyền thuyết kể rằng đó là bài ca dao của giáo đoàn sa mạc thất lạc, không biết do ai sáng tác."
   },
+  "TransparentRuinsRecordII": {
+    "name": "Ghi Chép Của Di Tích Trong Suốt II",
+    "description": "Một phiến đá được tìm thấy trong di tích trong suốt gần Lăng Mộ Vua Deshret. Có vẻ như là một ghi chép để lại bởi một nền văn minh đã mất..."
+  },
+  "TransparentRuinsRecordIII": {
+    "name": "Ghi Chép Của Di Tích Trong Suốt III",
+    "description": "Một phiến đá được tìm thấy trong di tích trong suốt gần Lăng Mộ Vua Deshret. Có vẻ như là một ghi chép để lại bởi một nền văn minh đã mất..."
+  },
+  "AncientKey": {
+    "name": "Chìa Khóa Cũ Kỹ",
+    "description": "Chìa khóa bị Chồn Mặt Nạ đánh cắp. Có chìa khóa thì sẽ có ổ khóa tương ứng, rõ ràng bệnh viện này đã bị bỏ hoang, nhưng vẫn che giấu thứ gì đó, đó là gì chứ?"
+  },
   "UnsealedParchment": {
     "name": "Cuộn Giấy Da Mở Niêm",
     "description": "Một cuộn giấy da cổ xưa và bí ẩn, dường như là nhật ký của một nhà mạo hiểm nào đó để lại. Hình như không ngừng có ký tự mới xuất hiện."
@@ -9155,9 +9443,189 @@
     "name": "Sổ Tay Chuyên Cần Rách Nát",
     "description": "Sổ Tay Chuyên Cần Rách Nát"
   },
+  "PurchasedGoods": {
+    "name": "Vật Tư Mua Sắm",
+    "description": "Vật tư mà Nilou đã mua cho Nhà Hát Zubayr, ngoài nguyên liệu chế tạo đạo cụ ra thì còn rất nhiều vật dụng hằng ngày. Nếu mang vác một mình thì hơi nặng, nhưng một nhà mạo hiểm giàu kinh nghiệm sẽ biết phải làm thế nào."
+  },
+  "MedicalRecords": {
+    "name": "Hồ Sơ Bệnh Án",
+    "description": "Một trang tài liệu nguyên vẹn của bệnh viện, hình như đã bị rơi ra khỏi cuốn sách."
+  },
+  "DiagnosticReport": {
+    "name": "Báo Cáo Chẩn Đoán",
+    "description": "Một trang tài liệu nguyên vẹn của bệnh viện, hình như đã bị rơi ra khỏi cuốn sách."
+  },
+  "ShevirmesFunds": {
+    "name": "Tiền Vốn Của Shevirme",
+    "description": "Tiền vốn của chủ tiệm Shevirme, \"Pha Lê Fairbrew\" đựng trong chiếc túi tinh tế, dùng để đặt 50 thùng \"Hương Vị Lễ Hội\" từ \"Quà Tặng Của Thiên Sứ\"."
+  },
+  "QuqingsFunds": {
+    "name": "Tiền Vốn Của Quqing",
+    "description": "Tiền vốn của chủ tiệm Quqing, \"Pha Lê Fairbrew\" đựng trong chiếc túi tinh tế, dùng để đặt 65 thùng \"Mâm Xôi Bạc Hà\" từ \"Quán Rượu Đuôi Mèo\"."
+  },
+  "GuanchuisFunds": {
+    "name": "Tiền Vốn Của Guanchui",
+    "description": "\"Tiền vốn\" của đầu bếp Guanchui, \"Pha Lê Fairbrew\" đựng trong chiếc túi tinh tế, dùng để đặt 100 thùng \"Hương Vị Lễ Hội\" từ \"Quà Tặng Của Thiên Sứ\"."
+  },
+  "ZakariyasPrescriptionForMaruf": {
+    "name": "Đơn Thuốc Zakariya Kê Cho Maruf",
+    "description": "Chữ viết trên đơn thuốc giống như rồng bay phượng múa, chỉ có thể mơ hồ nhận ra được mấy chữ \"Bạc Hà\", \"lửa lớn\", \"thuốc nổi lên\"..."
+  },
+  "ZakariyasMedicineForMaruf": {
+    "name": "Thuốc Zakariya đưa cho Maruf",
+    "description": "Thuốc Zakariya nấu cho Maruf. Dù là ngửi hay nhìn thì trông cũng rất đắng..."
+  },
   "AnElegantlyWrittenNote": {
     "name": "Sổ Tay Với Nét Chữ Ngay Ngắn",
     "description": "Xem giọng điệu quả đúng là sổ tay của Dunyarzad để lại, nét chữ rất nho nhã, nếu không bị bệnh Eleazar ảnh hưởng, chắc nét chữ sẽ càng đẹp hơn."
+  },
+  "NerminsMintyBeanSoup": {
+    "name": "Canh Đậu Bạc Hà Nermin Nấu",
+    "description": "Canh Đậu Bạc Hà do chính tay Nermin nấu. Cô ấy còn thêm Đào Zaytun vào đó, có vẻ như mùi vị không tệ..."
+  },
+  "FutureStar": {
+    "name": "Sao Tương Lai",
+    "description": "Trong một thiết kế nào đó, Ngôi Sao Tương Lai Lớn là một báu vật quý giá chứa đựng hy vọng và khả năng vô hạn, Sao Tương Lai chỉ là mảnh vỡ của nó. Nếu có thể thu thập đủ 6 mảnh vỡ, sẽ có thể triệu hồi được Ngôi Sao Tương Lai Lớn thật sự. Còn về việc Ngôi Sao Tương Lai Lớn trông như thế nào, có công dụng gì thì thiết kế không nói.\\nTất nhiên, trong những thiết kế khác, nó cũng có thể là một vật thể được lưu trữ bởi một tổ chức có tên là Giáo Viện, và tên được đăng ký của nó là Lõi Parvo. Bởi vì không ai sử dụng nên nó bị bám một lớp bụi mỏng."
+  },
+  "RaefsPackage": {
+    "name": "Túi Của Raef",
+    "description": "Chiếc túi chứa chậu hoa, hạt giống, phân bón và nhiều dụng cụ làm vườn. Chiếc túi rất nặng, muốn mang nó đi qua sa mạc chắc không phải chuyện dễ..."
+  },
+  "NerminsPerfumeIngredients": {
+    "name": "Gia Vị Của Nermin",
+    "description": "Hương liệu mà Nermin đặt từ chỗ Azalai. Không mắc lắm, chất lượng cũng không tệ."
+  },
+  "KeystoneI": {
+    "name": "Đá Chìa Khóa I",
+    "description": "Phiến đá vẫn còn chút năng lượng, có thể mở ra lối đi gần đó. Theo một ý nghĩa nào đó, đây là một chiếc chìa khóa rất cũ chăng?"
+  },
+  "TornPageAThousandNightsI": {
+    "name": "Mảnh Câu Chuyện Ngàn Đêm I",
+    "description": "Thu thập đủ 10 mảnh sẽ có thể ghép thành \"Câu Chuyện Ngàn Đêm I\".\\n\\nNhững trang sách đung đưa trong gió dường như đã rơi ra từ một bộ truyện cũ.\\nBiết đâu nếu có thể tìm được thêm những trang sách khác thì sẽ có thể ghép thành một quyển sách hoàn chỉnh không chừng...?"
+  },
+  "TornPageAThousandNightsII": {
+    "name": "Mảnh Câu Chuyện Ngàn Đêm II",
+    "description": "Thu thập đủ 10 mảnh sẽ có thể ghép thành \"Câu Chuyện Ngàn Đêm II\".\\n\\nNhững trang sách đung đưa trong gió dường như đã rơi ra từ một bộ truyện cũ.\\nBiết đâu nếu có thể tìm được thêm những trang sách khác thì sẽ có thể ghép thành một quyển sách hoàn chỉnh không chừng...?"
+  },
+  "TornPageAThousandNightsIII": {
+    "name": "Mảnh Câu Chuyện Ngàn Đêm III",
+    "description": "Thu thập đủ 10 mảnh sẽ có thể ghép thành \"Câu Chuyện Ngàn Đêm III\".\\n\\nNhững trang sách đung đưa trong gió dường như đã rơi ra từ một bộ truyện cũ.\\nBiết đâu nếu có thể tìm được thêm những trang sách khác thì sẽ có thể ghép thành một quyển sách hoàn chỉnh không chừng...?"
+  },
+  "TornPageAThousandNightsIV": {
+    "name": "Mảnh Câu Chuyện Ngàn Đêm IV",
+    "description": "Thu thập đủ 10 mảnh sẽ có thể ghép thành \"Câu Chuyện Ngàn Đêm IV\".\\n\\nNhững trang sách đung đưa trong gió dường như đã rơi ra từ một bộ truyện cũ.\\nBiết đâu nếu có thể tìm được thêm những trang sách khác thì sẽ có thể ghép thành một quyển sách hoàn chỉnh không chừng...?"
+  },
+  "TornPageAThousandNightsV": {
+    "name": "Mảnh Câu Chuyện Ngàn Đêm V",
+    "description": "Thu thập đủ 10 mảnh sẽ có thể ghép thành \"Câu Chuyện Ngàn Đêm V\".\\n\\nNhững trang sách đung đưa trong gió dường như đã rơi ra từ một bộ truyện cũ.\\nBiết đâu nếu có thể tìm được thêm những trang sách khác thì sẽ có thể ghép thành một quyển sách hoàn chỉnh không chừng...?"
+  },
+  "TornPageAThousandNightsVI": {
+    "name": "Mảnh Câu Chuyện Ngàn Đêm VI",
+    "description": "Thu thập đủ 10 mảnh sẽ có thể ghép thành \"Câu Chuyện Ngàn Đêm VI\".\\n\\nNhững trang sách đung đưa trong gió dường như đã rơi ra từ một bộ truyện cũ.\\nBiết đâu nếu có thể tìm được thêm những trang sách khác thì sẽ có thể ghép thành một quyển sách hoàn chỉnh không chừng...?"
+  },
+  "AThousandNightsI": {
+    "name": "Câu Chuyện Ngàn Đêm I",
+    "description": "Trong thời kỳ tai họa, học giả lưu lạc đi khắp rừng mưa, sa mạc và thành bang, thu thập và biên soạn lại bộ câu chuyện. Tương truyền câu chuyện mà tác giả đã thu thập được là vô số, nhưng giờ đây chỉ còn vài phần sót lại."
+  },
+  "AThousandNightsII": {
+    "name": "Câu Chuyện Ngàn Đêm II",
+    "description": "Trong thời kỳ tai họa, học giả lưu lạc đi khắp rừng mưa, sa mạc và thành bang, thu thập và biên soạn lại bộ câu chuyện. Tương truyền câu chuyện mà tác giả đã thu thập được là vô số, nhưng giờ đây chỉ còn vài phần sót lại."
+  },
+  "AThousandNightsIII": {
+    "name": "Câu Chuyện Ngàn Đêm III",
+    "description": "Trong thời kỳ tai họa, học giả lưu lạc đi khắp rừng mưa, sa mạc và thành bang, thu thập và biên soạn lại bộ câu chuyện. Tương truyền câu chuyện mà tác giả đã thu thập được là vô số, nhưng giờ đây chỉ còn vài phần sót lại."
+  },
+  "AThousandNightsIV": {
+    "name": "Câu Chuyện Ngàn Đêm IV",
+    "description": "Trong thời kỳ tai họa, học giả lưu lạc đi khắp rừng mưa, sa mạc và thành bang, thu thập và biên soạn lại bộ câu chuyện. Tương truyền câu chuyện mà tác giả đã thu thập được là vô số, nhưng giờ đây chỉ còn vài phần sót lại."
+  },
+  "AThousandNightsV": {
+    "name": "Câu Chuyện Ngàn Đêm V",
+    "description": "Trong thời kỳ tai họa, học giả lưu lạc đi khắp rừng mưa, sa mạc và thành bang, thu thập và biên soạn lại bộ câu chuyện. Tương truyền câu chuyện mà tác giả đã thu thập được là vô số, nhưng giờ đây chỉ còn vài phần sót lại."
+  },
+  "AThousandNightsVI": {
+    "name": "Câu Chuyện Ngàn Đêm VI",
+    "description": "Trong thời kỳ tai họa, học giả lưu lạc đi khắp rừng mưa, sa mạc và thành bang, thu thập và biên soạn lại bộ câu chuyện. Tương truyền câu chuyện mà tác giả đã thu thập được là vô số, nhưng giờ đây chỉ còn vài phần sót lại."
+  },
+  "SamailsMissive": {
+    "name": "Tin Nhắn Của Samail",
+    "description": ""
+  },
+  "ShevirmesInvoice": {
+    "name": "Hóa Đơn Đặt Hàng Của Shevirme",
+    "description": "Hóa đơn đặt hàng mà Georg viết cho Shevirme, ghi lại giá của 50 thùng Hương Vị Lễ Hội, chi tiết các khoản phí, thời gian giao dịch và ngày giao hàng dự kiến. Khách mua hàng sẽ cảm thấy yên tâm hơn sau khi đọc nó."
+  },
+  "QuqingsInvoice": {
+    "name": "Hóa Đơn Đặt Hàng Của Quqing",
+    "description": "Hóa đơn đặt hàng mà Diane viết cho Quqing, ghi lại giá của 65 thùng Mâm Xôi Bạc Hà, chi tiết các khoản phí, thời gian giao dịch và ngày giao hàng dự kiến. Khách mua hàng sẽ cảm thấy yên tâm hơn sau khi đọc nó."
+  },
+  "GuanchuisInvoice": {
+    "name": "Hóa Đơn Đặt Hàng Của Guanchui",
+    "description": "Hóa đơn đặt hàng Georg viết cho Guanchui, ghi lại giá của 100 thùng Hương Vị Lễ Hội, chi tiết các khoản phí, thời gian giao dịch và ngày giao hàng dự kiến. Khách mua hàng sẽ cảm thấy yên tâm hơn sau khi đọc nó."
+  },
+  "CynosIntroductionLetter": {
+    "name": "Thư Giới Thiệu Của Cyno",
+    "description": "Thư giới thiệu do Cyno viết, tượng trưng cho sự tín nhiệm của Tổng Quản Mahamatra Cyno."
+  },
+  "AncientMap": {
+    "name": "Bản Đồ Cổ",
+    "description": "Bản đồ tìm được trong phòng của Taj, bên trên có đánh dấu vị trí của Sảnh Đường Phiền Muộn."
+  },
+  "AuctionInformation": {
+    "name": "Thông Tin Đấu Giá",
+    "description": "Thông tin đấu giá được Dori thu thập và sắp xếp, bên trên có ghi thông tin buổi đấu giá Hũ Tri Thức tổ chức ở sa mạc."
+  },
+  "SealedMaterialsTheCourtOfDesolation": {
+    "name": "Tài Liệu Mật Của Sảnh Đường Phiền Muộn",
+    "description": ""
+  },
+  "KeystoneII": {
+    "name": "Đá Chìa Khóa II",
+    "description": "Phiến đá vẫn còn chút năng lượng, có thể mở ra lối đi gần đó. Theo một ý nghĩa nào đó, đây là một chiếc chìa khóa rất cũ chăng?"
+  },
+  "AzalaisPayment": {
+    "name": "Tiền Hàng Của Azalai",
+    "description": "Tiền hàng của Azalai, nó có vẻ khá nặng..."
+  },
+  "RamasReceipt": {
+    "name": "Biên Nhận Của Rama",
+    "description": "Biên nhận lấy ở chỗ Rama. Có thể dùng biên nhận này để nhận hàng của Rama."
+  },
+  "ButrusReceipt": {
+    "name": "Biên Nhận Của Butrus",
+    "description": "Biên nhận lấy ở chỗ Butrus. Có thể dùng biên nhận này để nhận hàng của Butrus."
+  },
+  "JutsReceipt": {
+    "name": "Biên Nhận Của Jut",
+    "description": "Biên nhận lấy ở chỗ Jut. Có thể dùng biên nhận này để nhận hàng của Jut."
+  },
+  "JahangirsReceipt": {
+    "name": "Biên Nhận Của Jahangir",
+    "description": "Biên nhận lấy ở chỗ Jahangir. Có thể dùng biên nhận này để nhận hàng của Jahangir."
+  },
+  "LimitedEditionDesertSpecialTravelPack": {
+    "name": "Túi Du Lịch Sa Mạc Đặc Biệt Phiên Bản Giới Hạn",
+    "description": "Một chiếc túi du lịch mua từ chỗ Dori, bên trong chứa đầy những thứ độc lạ. Thoạt nghe thì có vẻ khó hiểu, nhưng sau khi nghiên cứu kỹ thì phát hiện ra nó rất thực dụng chăng...?"
+  },
+  "AShortLetter": {
+    "name": "Bức Thư Ngắn",
+    "description": "Bức thư ngắn viết bằng mật ngữ. Không biết ai đã viết nó, tại sao hoặc mục đích xuất hiện ở đây."
+  },
+  "VaguelyReadableInscription": {
+    "name": "Dòng Chữ Mơ Hồ Có Thể Đọc",
+    "description": ""
+  },
+  "AkademiyaInvestigationTeamsReport": {
+    "name": "Báo Cáo Của Đội Điều Tra Giáo Viện",
+    "description": ""
+  },
+  "SealedOrders": {
+    "name": "Sắc Lệnh Niêm Phong",
+    "description": ""
+  },
+  "OldOrders": {
+    "name": "Sắc Lệnh Cổ",
+    "description": ""
   },
   "SilkFlowerSeed": {
     "name": "Hạt giống Hoa Nghê Thường",
@@ -9478,6 +9946,10 @@
   "OriginalFishOintment": {
     "name": "Dầu Cá Biển Cả",
     "description": "Đạo cụ chuyên dùng để tinh luyện \"Sông Cạn\".\\nDầu cá được chiết xuất từ cá đánh bắt ở hồ lớn phía bắc, có thể phục hồi tạm thời sức sống của cá có thể được tạo thành cung tốt.\\nNgười ta nói rằng trong hồ có những sinh vật thủy sinh không thể nhìn thấy ở những nơi khác."
+  },
+  "PlumeOfTheChangingWinds": {
+    "name": "Lông Vũ Chuyển Gió",
+    "description": "Đạo cụ tinh luyện \"Mũi Nhọn Của Gió\".\\nNhững chiếc lông vũ cổ xưa, được chạm khắc từ Tùng Thạch, dường như đã từng được dùng làm trang sức hoặc tín vật."
   },
   "FalconsDance": {
     "name": "Vũ Điệu Chim Ưng",
@@ -10183,6 +10655,34 @@
     "name": "Sumeru - Quang Minh",
     "description": "Hoa văn danh thiếp.\\nTrí giả thấu hiểu chân lý sẽ không bị tội ác tiêm nhiễm, cũng giống như đóa Sen Nilotpala dù tắm trong sương gió vẫn luôn giữ được sự trong sạch."
   },
+  "TravelNotesReturningWinds": {
+    "name": "Nhật Ký Hành Trình Gió Về",
+    "description": "Hoa văn danh thiếp.\\nNăm tháng trôi đi, chỉ có suy nghĩ và ngọn gió trở về là không thay đổi."
+  },
+  "CynoSilence": {
+    "name": "Cyno - Yên Lặng",
+    "description": "Hoa văn danh thiếp.\\nKhi Cyno trông trầm tư và im lặng, chưa chắc là đang nghĩ về một sự phán xét nghiêm túc, cũng có thể là chỉ đang nghĩ về những trò đùa hài hước thôi."
+  },
+  "CandaceGreyHeron": {
+    "name": "Candace - Vạc Trời",
+    "description": "Hoa văn danh thiếp.\\nNgọn gió thổi qua làm tung bay những chiếc lông đuôi của chim vạc, mà chú chim đó chỉ nhìn về phía bình minh."
+  },
+  "NilouLotusDance": {
+    "name": "Nilou - Vũ Điệu Hoa Sen",
+    "description": "Hoa văn danh thiếp.\\nĐóa hoa sen nở trong làn nước thanh khiết chỉ là một tia sáng dưới ngón chân nàng."
+  },
+  "AchievementSevenLights": {
+    "name": "Thành Tựu - Bảy Tia Sáng",
+    "description": "Hoa văn danh thiếp.\\nBất cứ ai cũng có thể chơi một giai điệu chỉ thuộc về họ, giống như sương trên cỏ, có thể phản chiếu bảy tia sáng của thiên đường."
+  },
+  "SumeruSandtreader": {
+    "name": "Sumeru - Giẫm Chân Lên Cát",
+    "description": "Hoa văn danh thiếp.\\nNhững bãi cát chôn vùi dấu chân của du khách, và chờ đợi một ngày khi cơn gió thổi qua sẽ hé lộ những ký ức vàng son này một lần nữa."
+  },
+  "AchievementMirroredDreams": {
+    "name": "Thành Tựu - Giấc Mơ Phản Chiếu",
+    "description": "Hoa văn danh thiếp.\\nNgàn năm kiêu ngạo và những ước nguyện buồn bã đều đã tan biến trong cát đêm rực cháy. Nhưng ốc đảo vĩnh hằng trong giấc mơ của cô vẫn mềm mại và tươi tốt như ngày nào...\""
+  },
   "AnemoculusResonanceStone": {
     "name": "Đá Cộng Hưởng Phong Thần Đồng",
     "description": "Khi sử dụng ở Mondstadt, có thể tìm được \"Mảnh Phong Thần Đồng\" ở gần đó.\\nLà đĩa đá do con người tạo ra có tính chất tương tự như Thất Thiên Thần Tượng Phong, cộng hưởng với Phong Thần Đồng.\\nĐá Cộng Hưởng Thần Đồng là những vật mô phỏng không hoàn hảo so với chất liệu gây dựng Thất Thiên Thần Tượng được người xưa đặt khắp đại lục. Chính vì sự không hoàn hảo, mới khao khát sức mạnh của Thần Đồng, tạo cơ hội cho những người thành kính và nhà mạo hiểm tìm kiếm Thần Đồng."
@@ -10391,6 +10891,10 @@
     "name": "Máy Ảnh Tinh Tế",
     "description": "Chiếc máy ảnh mà Razi mượn ở cửa hàng của Đại Nhân Sangemah Bay, là một trợ thủ đắc lực khi chụp phong cảnh, chụp ảnh hoang dã, và chụp ảnh lễ hội!\\nNó có nhiều đồ trang trí bằng kim loại hơn so với các máy chụp ảnh thông thường, trông có vẻ đắt hơn rất nhiều, tuyệt đối đừng làm hỏng nó!\\nNgoài ra, theo điều khoản mượn máy, chiếc máy ảnh này chỉ được dùng trong Sumeru."
   },
+  "BanusWisdom": {
+    "name": "Trí Tuệ Của Banu",
+    "description": "Một cây trượng phép được truyền sức mạnh thần kỳ trong một thiết kế nào đó. Nó có thể cộng hưởng với sự tồn tại của Sao Tương Lai, từ đó chỉ ra vị trí của Sao Tương Lai.\\nTất nhiên, trong những thiết kế khác, nó cũng có thể là một vật thể được lưu trữ bởi một tổ chức có tên là Giáo Viện, và tên được đăng ký của nó là Máy Thăm Dò Hỗn Độn Ayesha. Bởi vì không ai sử dụng nên nó bị bám một lớp bụi mỏng."
+  },
   "FishingLineStabilizer": {
     "name": "Máy Ổn Định Dây Câu",
     "description": "Một loại máy ổn định lực căng có khả năng tự thích ứng, sau khi được lắp vào cần câu, có thể làm giảm sự dao động lực căng của dây câu, giúp thợ câu có thể câu cá nhẹ nhàng hơn. Máy ổn định có thể tự động đo lường lực vùng vẫy của nhiều loại cá khác nhau, dữ liệu ghi được càng nhiều thì hiệu quả ổn định càng tốt.\\n\\nNguyên mẫu là một phát minh vô dụng của một nhà phát minh Fontaine, và không được chú ý trong một thời gian dài. Mãi cho đến khi được Hội Câu Cá Fontaine phát hiện, sau nhiều lần cải tiến mới có được Máy Ổn Định Dây Câu như hiện nay. Thành phẩm vừa ra lò đã được rất nhiều thành viên công nhận, dần dần lan ra các khu vực khác.\\nViệc quảng bá ở Snezhnaya rất suôn sẻ, nghe nói vì nó được một vị quan chấp hành nào đó yêu thích."
@@ -10399,9 +10903,21 @@
     "name": "Đàn Cổ",
     "description": "Nhạc cụ truyền thống Mondstadt, có thể diễn tấu sau khi sử dụng. Trong khu rừng của Sumeru, đôi khi có thể phát huy hiệu quả thần kỳ.\\nMột cây đàn cũ mượn ở chỗ Amadhiah của Làng Vimara.\\nMondstadt có truyền thống thơ ca. Nhà thơ sẽ gọi nhạc cụ của mình là \"bạn thân\", \"bạn đồng hành\", vì vậy việc giao nhạc cụ cho Amadhiah chắc chắn là rất thân mật và đáng tin cậy."
   },
+  "JumpyDumptyPartyPopper": {
+    "name": "Pháo Kéo Nảy Nảy",
+    "description": "Dùng sẽ phóng ra dải lụa màu và kim tuyến.\\n\"Nảy Nảy là bạn thân của Klee, cũng là trợ thủ đắc lực cùng chiên cá, nhưng đem nó ra lễ hội thì sẽ bị đội trưởng Jean bắt mất... Nhưng đừng lo, dưới sự cải tiến hoàn hảo của anh trai Albedo, Nảy Nảy đã có khả năng hoàn toàn mới! Nhìn kìa, chỉ cần kéo cái đuôi của nó là sẽ có thể thả ra rất nhiều dải lụa đẹp mắt rồi!\""
+  },
+  "ScarletSandSlate": {
+    "name": "Phiến Đá Cát Đỏ",
+    "description": "Đối tượng nghiên cứu nhiều năm của học giả Tirzad trong Giáo Viện, xét về hoa văn và công nghệ thì đây có lẽ là tạo vật của nền văn minh Vua Deshret. Hình như nó ẩn chứa quyền năng có thể lay chuyển cơ quan di tích của Vua Deshret..."
+  },
   "BubblyKamera": {
     "name": "\"Máy Ảnh Bọt Nước Trong Vắt\"",
     "description": "Khi sử dụng, sẽ ghi và lưu trữ lại bối cảnh hiện tại, và điều chỉnh màu sắc đặc biệt cho bức ảnh.\\nMột thiết bị lạ không rõ nguồn gốc. Những bức ảnh mà nó chụp có một hiệu ứng đặc biệt. Ai có thể nghĩ rằng một chiếc máy không có nước bên trong lại có thể tạo ra những bức ảnh có bong bóng vui nhộn, làm cho bức ảnh có cảm giác kỳ ảo.\\nVì vậy, một đội trưởng kỵ binh nào đó từng hình dung chiếc máy này là \"nắm bắt được kỳ vọng của mọi người về sự mát mẻ.\""
+  },
+  "CloudRetainersDamaskedDevice": {
+    "name": "Cơ Quan Giấy Lụa - Lưu Vân",
+    "description": "Một cơ quan nhẹ được làm bằng giấy và trông giống như một con chim, do Lưu Vân Tá Phong Chân Quân ban tặng.\\nMặc dù nói là \"cơ quan\", nhưng nhìn từ bên ngoài hầu như không thấy cấu trúc cơ quan truyền thống nào cả.\\n\"Cơ quan thuật\" của vị tiên nhân đó hình như lại tiến thêm một bước rồi..."
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Giải Thích: Đá Cộng Hưởng Phong Thần Đồng",
@@ -10991,6 +11507,10 @@
     "name": "Kệ Gỗ Sáng",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Kệ Gỗ Sáng\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "DesertDeskHospitality": {
+    "name": "Bàn Tủ Sa Mạc - Hoan Nghênh",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bàn Tủ Sa Mạc - Hoan Nghênh\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "TwoTierLibraryBookshelf": {
     "name": "Kệ Sách Hai Tầng Thư Viện",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Kệ Sách Hai Tầng Thư Viện\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -11030,6 +11550,10 @@
   "MapleWoodBookcaseTroveOfAThousandTomes": {
     "name": "Tủ Sách Gỗ Phong - Kho Tàng Tri Thức",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Tủ Sách Gỗ Phong - Kho Tàng Tri Thức.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertCabinetOddsAndEnds": {
+    "name": "Tủ Đứng Sa Mạc - Đồ Linh Tinh",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tủ Đứng Sa Mạc - Đồ Linh Tinh\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "SturdyLibraryTable": {
     "name": "Bàn Thư Viện Dài",
@@ -11095,6 +11619,10 @@
     "name": "Bàn Xoay Làm Gốm",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bàn Xoay Làm Gốm\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "LongAthelwoodTable": {
+    "name": "Bàn Dài Gỗ Sanh",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bàn Dài Gỗ Sanh\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "BreezeBlessedBed": {
     "name": "Giường Bảo Vệ Êm Ái",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Giường Bảo Vệ Êm Ái\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -11114,6 +11642,18 @@
   "TeahouseCounterToshimaru": {
     "name": "Quầy Phòng Trà - \"Toshimaru\"",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Quầy Phòng Trà - \"Toshimaru\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertStonePlatformSturdy": {
+    "name": "Bệ Đá Sa Mạc - Kiên Cố",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bệ Đá Sa Mạc - Kiên Cố\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertFireplaceWarmth": {
+    "name": "Bếp Đá Sa Mạc - Ấm Áp",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bếp Đá Sa Mạc - Ấm Áp\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertStudyConscientiousness": {
+    "name": "Bàn Sa Mạc - Tận Tâm",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bàn Sa Mạc - Tận Tâm\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "SoftLoungeSofa": {
     "name": "Sofa Êm Ái",
@@ -11243,6 +11783,18 @@
     "name": "Bình Thuần Khiết - Đào Tông",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bình Thuần Khiết - Đào Tông\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "HuedVaseSeashell": {
+    "name": "Bình Sắc Màu - Vỏ Sò",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bình Sắc Màu - Vỏ Sò\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "HuedVaseDarkRock": {
+    "name": "Bình Sắc Màu - Đá Đen",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bình Sắc Màu - Đá Đen\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "AmidstTheFleeingSmoke": {
+    "name": "\"Trong Làn Khói Mờ Ảo\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trong Làn Khói Mờ Ảo\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Thảm Mondstadt - Ngọn Lửa Nhiệt Tình",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Thảm Mondstadt - Ngọn Lửa Nhiệt Tình\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -11271,6 +11823,14 @@
     "name": "Hoa Văn Trầm Ấm",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Hoa Văn Trầm Ấm\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "SunScorchedSolemnity": {
+    "name": "\"Hoa Văn Trang Trọng\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Hoa Văn Trang Trọng\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "TheOliveGrove": {
+    "name": "\"Hoa Văn Ô Liu\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Hoa Văn Ô Liu\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "TrustyPortableLamp": {
     "name": "Đèn Treo Ánh Sáng Bất Tận",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đèn Treo Ánh Sáng Bất Tận\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -11290,6 +11850,10 @@
   "TranquilStarlight": {
     "name": "Ánh Sao Trong Vắt",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ánh Sao Trong Vắt\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertLampLingeringLight": {
+    "name": "Đèn Sa Mạc - Ánh Sáng",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ngọn Đèn Sa Mạc - Ánh Sáng\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Bình Hoa - Ung Dung Nhạt Nhòa",
@@ -11403,6 +11967,18 @@
     "name": "Hình Thái Vui Vẻ",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Hình Thái Vui Vẻ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "TheMellowPot": {
+    "name": "\"Trong Chiếc Ấm Êm Dịu\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trong Chiếc Ấm Êm Dịu\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "TheCrispSweetness": {
+    "name": "\"Trong Vị Ngọt Giòn Tan\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trong Vị Ngọt Giòn Tan\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "TheTwistingMist": {
+    "name": "\"Trong Sương Mù Quanh Quẩn\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trong Sương Mù Quanh Quẩn\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "LandscapePaintingCountryHome": {
     "name": "Tranh Phong Cảnh - Quê Hương",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tranh Phong Cảnh - Quê Hương\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -11486,6 +12062,18 @@
   "EmbroideredCurtains": {
     "name": "Rèm Gấm",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Rèm Gấm\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "AthelwoodMetalBuckler": {
+    "name": "Khiên Gỗ Sanh Tròn",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Khiên Gỗ Sanh Tròn\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertWallDrapesSunset": {
+    "name": "Trang Trí Tường Sa Mạc - Hoàng Hôn",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trang Trí Tường Sa Mạc - Hoàng Hôn\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertWallDrapesFlamingFeathers": {
+    "name": "Trang Trí Tường Sa Mạc - Hỏa Vũ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trang Trí Tường Sa Mạc - Hỏa Vũ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "LingeringMoment": {
     "name": "Thời Khắc Nhớ Nhung",
@@ -11879,6 +12467,30 @@
     "name": "Kiên Trì Của Cư Dân Rừng Sâu",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Kiên Trì Của Cư Dân Rừng Sâu\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "DesertHouseOrdinaryLives": {
+    "name": "Ngôi Nhà Sa Mạc - Bình Dị",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ngôi Nhà Sa Mạc - Bình Dị\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertHouseSpicesAbound": {
+    "name": "Ngôi Nhà Sa Mạc - Hương Thơm",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ngôi Nhà Sa Mạc - Hương Thơm\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertHouseHueAndCry": {
+    "name": "Ngôi Nhà Sa Mạc - Hiệu Lệnh",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ngôi Nhà Sa Mạc - Hiệu Lệnh\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertHouseBriefSleep": {
+    "name": "Ngôi Nhà Sa Mạc - Giấc Ngủ Ngắn",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ngôi Nhà Sa Mạc - Giấc Ngủ Ngắn\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertHouseHiddenLight": {
+    "name": "Ngôi Nhà Sa Mạc - Ánh Sáng Tiềm Ẩn",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ngôi Nhà Sa Mạc - Ánh Sáng Tiềm Ẩn\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertHouseSaveAndStore": {
+    "name": "Ngôi Nhà Sa Mạc - Lưu Trữ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ngôi Nhà Sa Mạc - Lưu Trữ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Đài Phun Nước Hoa Và Chim",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đài Phun Nước Hoa Và Chim\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -11942,6 +12554,22 @@
   "StoneworksCraneHillTamer": {
     "name": "Cần Trục Nham Xưởng - San Bằng",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Cần Trục Nham Xưởng - San Bằng\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertHutMinutiae": {
+    "name": "Túp Lều Sa Mạc - Vụn Vặt",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Túp Lều Sa Mạc - Vụn Vặt\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertHutQuestions": {
+    "name": "Túp Lều Sa Mạc - Hỏi Chuyện",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Túp Lều Sa Mạc - Hỏi Chuyện\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertHutWilting": {
+    "name": "Túp Lều Sa Mạc - Khô Héo",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Túp Lều Sa Mạc - Khô Héo\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertHutRest": {
+    "name": "Túp Lều Sa Mạc - Nghỉ Ngơi",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Túp Lều Sa Mạc - Nghỉ Ngơi\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "AdeptusGate": {
     "name": "Tam Nhãn Thủ Tiên Bài",
@@ -12070,6 +12698,18 @@
   "NoFishingAhead": {
     "name": "Giới Hạn Đánh Bắt",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Giới Hạn Đánh Bắt\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertStoneStepsClimbing": {
+    "name": "Bậc Đá Sa Mạc - Leo Núi",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bậc Đá Sa Mạc - Leo Núi\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertWallSurpriseAttack": {
+    "name": "Bức Tường Sa Mạc - Tấn Công Bất Ngờ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bức Tường Sa Mạc - Tấn Công Bất Ngờ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DesertWallStalwartDefense": {
+    "name": "Bức Tường Sa Mạc - Phòng Thủ Nghiêm Ngặt",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bức Tường Sa Mạc - Phòng Thủ Nghiêm Ngặt\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Nền Đá - \"Thời Đại May Mắn\"",

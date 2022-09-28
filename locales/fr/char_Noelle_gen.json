@@ -79,7 +79,7 @@
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Exécute une succession d'attaques tournoyantes contre les ennemis proches ; cette attaque consomme de l'endurance de façon continue.",
+        "1": "Consomme de l'endurance de façon continue pour exécuter une succession d'attaques tournoyantes contre les ennemis proches.",
         "2": "L'attaque chargée se termine sur un coup puissant."
       },
       "plunging": {

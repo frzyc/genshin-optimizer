@@ -69,14 +69,14 @@
     "description": {
       "0": "Crea una onda expansiva Geo que nace de las profundidades de la tierra.",
       "1": "Inflige <geo>Daño Geo en el AdE</geo> a todos los enemigos a los que alcanza.",
-      "2": "Tras ello, crea una columna de piedra que se levanta abruptamente en el límite de la onda.",
-      "3": "La columna de piedra se considera una <geo>creación Geo</geo>, y puede usarse para bloquear ataques.",
+      "2": "Tras ello, crea crestas de piedra que se levantan abruptamente en el límite de la onda.",
+      "3": "Las crestas de piedra se consideran <geo>creaciones Geo</geo>, y pueden usarse para bloquear ataques.",
       "4": "<br/>",
       "5": "<i>Investigaste con Paimon la vibración de las montañas</i>."
     },
     "skillParams": {
       "0": "Daño por cada onda expansiva",
-      "1": "Duración del muro de piedra",
+      "1": "Duración de las crestas de piedra",
       "2": "TdE",
       "3": "Energía Elemental",
       "4": "",
@@ -96,13 +96,13 @@
   "passive1": {
     "name": "Roca quebrada",
     "description": {
-      "0": "Disminuye el TdE de <strong>Espada estrellacaída</strong> -2 s."
+      "0": "Disminuye el TdE de <strong>Espada estrellacaída</strong> en 2 s."
     }
   },
   "passive2": {
     "name": "Roca turbulenta",
     "description": {
-      "0": "El último golpe del Ataque Normal provoca una destrucción, infligiendo un 60% de <geo>Daño Geo</geo> a los enemigos dentro del AdE."
+      "0": "El último golpe del Ataque Normal provoca una destrucción que inflige un 60% de <geo>Daño Geo</geo> a los enemigos dentro del AdE."
     }
   },
   "constellation1": {
@@ -141,7 +141,7 @@
   "constellation6": {
     "name": "Bloque eterno",
     "description": {
-      "0": "Extiende la duración del muro de piedra de <strong>Despertar de la Tierra</strong> en 5 s.",
+      "0": "Extiende la duración de las crestas de piedra de <strong>Despertar de la Tierra</strong> en 5 s.",
       "1": "Extiende la duración del meteorito de <strong>Espada estrellacaída</strong> en 10 s."
     }
   }

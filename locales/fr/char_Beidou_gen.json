@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Exécute une succession d'entailles aussi rapides que tranchantes ; cette attaque consomme de l'endurance de façon continue.",
+        "1": "Consomme de l'endurance de façon continue pour exécuter une succession d'entailles aussi rapides que tranchantes.",
         "2": "L'attaque chargée se termine sur un coup puissant."
       },
       "plunging": {
@@ -89,7 +89,7 @@
         " Augmente la RÉS à l'interruption du personnage et réduit les DGT subis."
       ],
       "4": "<br/>",
-      "5": "Au maximum, une décharge par seconde peut être libérée.<i>Le plus puissant des éclairs peut fendre mers et montagnes.</i>"
+      "5": "Une décharge peut être libérée une fois toutes les secondes.<i>Le plus puissant des éclairs peut fendre mers et montagnes.</i>"
     },
     "skillParams": {
       "0": "DGT compétence",

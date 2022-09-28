@@ -175,6 +175,18 @@
     "name": "Tael antiguo",
     "description": "Un Tael antiguo hecho de hierro. Según Ulman, vale una verdadera fortuna. Aunque a primera vista no parece nada especial..."
   },
+  "BusinessEarnings": {
+    "name": "Ingresos",
+    "description": "Una cantidad considerable de néctares cristalizados que representa la suma total de tus ganancias durante la venta benéfica. Cuando el Festival de la Vendimia llegue a su fin, Bernhard lo intercambiará por Moras para donarlo a los ancianos y niños más necesitados."
+  },
+  "UsableFunds": {
+    "name": "Fondos disponibles",
+    "description": "Una cantidad limitada de néctares cristalizados que representa el capital invertido para establecer tu tienda en el mercadillo benéfico.\\nEl principal objetivo de todo tendero es atraer clientes y aumentar sus ingresos, por lo que es necesario planificar los gastos y hacer la tienda más atractiva."
+  },
+  "StrategicInspiration": {
+    "name": "Inspiración estratégica",
+    "description": "Una colección de teorías y estudios de casos prácticos de negocios. Para alguien que ya goza de bastante experiencia, cada una de sus páginas puede servir de inspiración para mejorar las estrategias de su negocio."
+  },
   "Primogem": {
     "name": "Protogema",
     "description": "Una gema cristalina que va más allá del mundo terrenal. Brilla con esperanzas y sueños condensados de universos que existieron alguna vez."
@@ -393,7 +405,7 @@
   },
   "Diona": {
     "name": "Diona",
-    "description": "Una joven cuya sangre no es humana por completo. Es la popular cantinera de la Taberna Cola de Gato."
+    "description": "Una joven cuya sangre no es humana por completo. Es la popular cantinera de la taberna Cola de Gato."
   },
   "Mona": {
     "name": "Mona",
@@ -437,7 +449,7 @@
   },
   "Eula": {
     "name": "Eula",
-    "description": "La Caballera de la Marea, procedente de una familia con un gran linaje y Capitana del Equipo de Reconocimiento de los Caballeros de Favonius. Aunque es descendiente de la antigua aristocracia, se unió a los Caballeros de Favonius, sus archienemigos, lo cual sigue siendo un gran enigma para todo Mondstadt hasta hoy en día."
+    "description": "La Caballera de la Marea, procedente de una familia con un gran linaje y Capitana del Equipo de Reconocimiento de los Caballeros de Favonius. Aunque es descendiente de la antigua aristocracia, se unió a los Caballeros de Favonius, sus archienemigos, algo que sigue siendo un gran enigma para toda Mondstadt hasta hoy en día."
   },
   "RaidenShogun": {
     "name": "Shogun Raiden",
@@ -506,6 +518,18 @@
   "Tighnari": {
     "name": "Tignari",
     "description": "Un joven erudito experto en botánica que desempeña el cargo de guarda forestal en el Bosque Avidya. Es muy franco, entusiasta y bueno instruyendo a las personas con menos conocimientos."
+  },
+  "Nilou": {
+    "name": "Nilou",
+    "description": "La famosa bailarina del Teatro Zubayr. Su estilo de danza es elegante y agraciado, y posee un carácter puro y bondadoso."
+  },
+  "Cyno": {
+    "name": "Cyno",
+    "description": "Gran Juez de la matra y supervisor de los eruditos de la Academia de Sumeru. Cuando trabaja, es incluso más eficiente que la “Gran Vayuvyastra” creada por la Facultad Kshahrewar."
+  },
+  "Candace": {
+    "name": "Candace",
+    "description": "Custodia de la Aldea Aaru. Esta muchacha con un ojo color ámbar es descendiente del Rey Deshret."
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka",
@@ -726,6 +750,18 @@
   "TighnarisStellaFortuna": {
     "name": "Stella Fortuna de Tignari",
     "description": "Material de activación de constelación de Tignari"
+  },
+  "NilousStellaFortuna": {
+    "name": "Stella Fortuna de Nilou",
+    "description": "Material de activación de constelación de Nilou"
+  },
+  "CynosStellaFortuna": {
+    "name": "Stella Fortuna de Cyno",
+    "description": "Material de activación de constelación de Cyno"
+  },
+  "CandacesStellaFortuna": {
+    "name": "Stella Fortuna de Candace",
+    "description": "Material de activación de constelación de Candace"
   },
   "GnosticHymnOldNotes": {
     "name": "Pase de Batalla del Gnóstico - Borrador",
@@ -1360,8 +1396,8 @@
     "description": "Tablón de pedidos de la Boutique de Mondstadt"
   },
   "CatsTailTavernMessageBoard": {
-    "name": "Tablón de anuncios de la Taberna Cola de Gato",
-    "description": "Tablón de anuncios de la Taberna Cola de Gato"
+    "name": "Tablón de anuncios de la taberna Cola de Gato",
+    "description": "Tablón de anuncios de la taberna Cola de Gato"
   },
   "TheFoxInTheDandelionSeaI": {
     "name": "El zorro en el mar de dientes de león (I)",
@@ -2853,7 +2889,7 @@
   },
   "HexHoundVI": {
     "name": "Más que un simple perro (VI)",
-    "description": "Nota del editor: ¡Gracias a todos por su apoyo! Fuimos a la Taberna Cola de Gato y sacamos a rastras al borrachuzo del autor. Aunque estaba como una cuba, debería poder seguir escribiendo el siguiente tomo. ¡Permanezcan atentos!"
+    "description": "Nota del editor: ¡Gracias a todos por su apoyo! Fuimos a la taberna Cola de Gato y sacamos a rastras al borrachuzo del autor. Aunque estaba como una cuba, debería poder seguir escribiendo el siguiente tomo. ¡Permanezcan atentos!"
   },
   "HexHoundVII": {
     "name": "Más que un simple perro (VII)",
@@ -3819,6 +3855,18 @@
     "name": "Rosa de Sumeru",
     "description": "Una deslumbrante flor púrpura cuyo aroma cautiva a todo transeúnte que pase a su lado. Hay quien la confunde con las rosas de rosal, pero técnicamente hablando, pertenecen a otra categoría."
   },
+  "Redcrest": {
+    "name": "Añoraescarlata",
+    "description": "El fruto de una planta que es capaz de sobrevivir hasta en el inhóspito entorno del desierto. Este fruto escarlata se ve incluso más impresionante con el contraste de las arenas doradas del desierto."
+  },
+  "AjilenakhNut": {
+    "name": "Dátil",
+    "description": "El fruto de un árbol de hoja perenne que crece en los oasis del desierto. La carne que se encuentra bajo su dura piel es gruesa, dulce y deliciosa. Es una importante fuente de alimento para los habitantes del desierto."
+  },
+  "Scarab": {
+    "name": "Escarabajo dorado",
+    "description": "Un tenaz escarabajo que habita en el vasto mar de arena del desierto. Los patrones dorados de su caparazón parecen tener cierta conexión con las antiguas ruinas distribuidas por todo el desierto."
+  },
   "ActivatedStarshroom": {
     "name": "Hongo vigorestelar",
     "description": "Un hongo con un sombrero en forma de estrella y una gran vitalidad. Solo con verlo es posible sentir toda esa vitalidad que desprende."
@@ -4744,7 +4792,7 @@
     "description": "Carta náutica con la ubicación del tesoro que escondió la banda de Ako Domeki antes de abandonar este lugar. Tras reunir las cuatro partes, revela el lugar donde está enterrado el tesoro."
   },
   "OutlanderBrigadeWhenTheWindOfDeathBlewTowardsTheBlondSamuraiScript": {
-    "name": "Guion de «La Brigada Extranjera: los vientos que soplan sobre un rubio samurái»",
+    "name": "Guion de «{F#La forastera luchadora}{M#El forastero luchador}: los vientos que soplan sobre {F#una rubia}{M#un rubio} samurái»",
     "description": "Un guion kinográfico obtenido de Xavier."
   },
   "MushouninScript": {
@@ -5279,6 +5327,102 @@
     "name": "Mapa del tesoro escondido en un cofre",
     "description": "Un mapa del tesoro que se encontraba dentro de un cofre. Señala la ubicación de algunos artículos de valor con marcas muy rudimentarias."
   },
+  "GlintingComponent": {
+    "name": "Componente tintineante",
+    "description": "Una pieza de una Creación Primigenia que bloqueaba el camino. Parece que parpadea cuando un mecanismo se encuentra cerca."
+  },
+  "SacredSealValley": {
+    "name": "Piedra sagrada: Valle",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de alguna estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. Los eruditos creen que el significado original de la inscripción es “valle”."
+  },
+  "SacredSealBirdHead": {
+    "name": "Piedra sagrada: Cabeza de pájaro",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. Se cree que la inscripción es un pictograma de una cabeza de pájaro."
+  },
+  "SacredSealRaisedArm": {
+    "name": "Piedra sagrada: Brazo elevado",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. Los eruditos creen que su inscripción era un símbolo fonético que pudo haber significado “respeto” o “sumisión”."
+  },
+  "SacredSealSandstorm": {
+    "name": "Piedra sagrada: Tormenta de arena",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. La forma de la inscripción debe estar inspirada en las tormentas de arena del desierto."
+  },
+  "SacredSealAuricle": {
+    "name": "Piedra sagrada: Aurícula",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. La inscripción tiene forma de aurícula, aunque algunos eruditos no están de acuerdo con esta afirmación."
+  },
+  "SacredSealForest": {
+    "name": "Piedra sagrada: Bosque",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. La mayoría de eruditos coinciden en que esta inscripción representa un bosque, lo que sugiere que en el pasado el desierto no era tan árido como lo es hoy."
+  },
+  "SacredSealThunderstrike": {
+    "name": "Piedra sagrada: Relámpago",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. La forma de esta inscripción debe estar inspirada en un relámpago, algo que rara vez se ve en el desierto."
+  },
+  "SacredSealDanger": {
+    "name": "Piedra sagrada: Peligro",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. La inscripción muestra el peligro de que un martillo y un cincel caigan de un acantilado. Se cree que este símbolo surgió en una era posterior."
+  },
+  "SacredSealChiselHammer": {
+    "name": "Piedra sagrada: Martillo",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. El símbolo del martillo fue uno de los primeros ideogramas en surgir."
+  },
+  "SacredSealSunrise": {
+    "name": "Piedra sagrada: Sol naciente",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. El símbolo de la inscripción está inspirado en el sol naciente."
+  },
+  "SacredSealRightToRule": {
+    "name": "Piedra sagrada: Reino",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. El símbolo de la inscripción representa a un rey sentado en su trono."
+  },
+  "SacredSealSheepHead": {
+    "name": "Piedra sagrada: Cabeza de oveja",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. Se cree que este símbolo representa la cabeza de una oveja."
+  },
+  "SacredSealCrocodileHead": {
+    "name": "Piedra sagrada: Cabeza de espinodrilo",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. Probablemente, este símbolo esté inspirado en las enormes fauces del espinodrilo."
+  },
+  "SacredSealGiantSerpent": {
+    "name": "Piedra sagrada: Serpiente",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. Los eruditos de la Escuela de Semiótica creen que este símbolo representa a una serpiente gigante, pero los de la Escuela de Biología no están de acuerdo, pues no hay rastros de serpientes en el Gran Desierto Escarlata, así que el origen de este símbolo sigue siendo un misterio."
+  },
+  "SacredSealCeremony": {
+    "name": "Piedra sagrada: Sacrificio",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. El significado original de esta inscripción probablemente era “sacrificio” pero con el tiempo, su significado se extendió a “ritos” o “ceremonias”."
+  },
+  "SacredSealLabor": {
+    "name": "Piedra sagrada: Trabajo",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. La inscripción que lleva apareció casi al mismo tiempo que el martillo y fue uno de los primeros ideogramas en surgir."
+  },
+  "SacredSealDune": {
+    "name": "Piedra sagrada: Duna",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. La civilización que vivió durante la era del Rey Deshret usaba nombres diferentes para las dunas dependiendo de la forma que tuvieran, lo cual ha causado muchos problemas a los investigadores."
+  },
+  "GoldenRoseSeeds": {
+    "name": "Semilla de rosa dorada",
+    "description": "La rosa dorada es una especie única, más adaptada al desierto que la rosa de Sumeru. Para sobrevivir, ha tenido que protegerse con barro y piedras, pero en el entorno adecuado podría recuperar su hermosa forma original."
+  },
+  "TransparentRuinsRecordI": {
+    "name": "Registro de las Ruinas Transparentes (I)",
+    "description": "Una placa de piedra que encontraste en las Ruinas Transparentes cerca del Mausoleo del Rey Deshret. Parece ser el registro de una civilización perdida."
+  },
+  "RecordOfLambDevourerRock": {
+    "name": "Registro del Peñasco Devoracarneros",
+    "description": "Una placa de piedra que encontraste en la base secreta de Los Eremitas en el Peñasco Devoracarneros. Parece ser el registro de una civilización perdida."
+  },
+  "RecordOfTheTombOfCarouses": {
+    "name": "Registro de la Tumba del Festín",
+    "description": "Una placa de piedra que encontraste en la Tumba del Festín. Parece ser el registro de una civilización perdida."
+  },
+  "SoheilsOldNotes": {
+    "name": "Notas arqueológicas de Soheil",
+    "description": "Unas notas que dejó Soheil, un erudito de la Academia que se adentró en el desierto cuando era joven para una expedición arqueológica. Parecen antiguas pero no están arrugadas."
+  },
+  "RecordOfAarusShut": {
+    "name": "Registro de la Sombra de Aaru",
+    "description": "Una placa de piedra que encontraste en la parte más alta del Mausoleo del Rey Deshret. Parece ser el registro de una civilización perdida."
+  },
   "TwilightTheaterHeadsNotes": {
     "name": "Manuscrito del director de la Compañía de Teatro Crepúsculo",
     "description": "El guion de la obra «Fantasía nocturna: La leyenda de la princesa guerrera». Hay algunas cosas escritas de manera un poco caótica que parecen ser las anotaciones del director. Algunas de esas anotaciones tienen comentarios muy crudos. Da la impresión de que no aceptarán este guion..."
@@ -5717,7 +5861,7 @@
   },
   "MondstadtShrineOfDepthsKey": {
     "name": "Llave de Santuario de Mondstadt",
-    "description": "Capaz de romper los sellos de los antiguos santuarios esparcidos por todo Mondstadt.\\nEl altar de una deidad antigua se levanta imponente, a pesar de la destrucción de su civilización. Las llaves, que pueden encontrarse en dominios, pueden romper su sello. Tal vez un soplo del pasado pueda hacer que la deidad del altar olvide sus aflicciones."
+    "description": "Capaz de romper los sellos de los antiguos santuarios esparcidos por toda Mondstadt.\\nEl altar de una deidad antigua se levanta imponente, a pesar de la destrucción de su civilización. Las llaves, que pueden encontrarse en dominios, pueden romper su sello. Tal vez un soplo del pasado pueda hacer que la deidad del altar olvide sus aflicciones."
   },
   "LiyueShrineOfDepthsKey": {
     "name": "Llave de Santuario de Liyue",
@@ -7539,6 +7683,94 @@
     "name": "Tostadas crujientes de champiñones y queso deliciosas",
     "description": "Un aperitivo muy crujiente. El sabor de los champiñones se entremezcla en el paladar con el regusto del queso fresco y la textura crujiente del pan recién horneado... La sensación de satisfacción es tal que uno no puede evitar lamerse los dedos."
   },
+  "SuspiciousCoconutCharcoalCake": {
+    "name": "Panecillos de coco carbonizados extraños",
+    "description": "Un pastel dulce de color oscuro. A simple vista, es un plato negro. Si te atreves a darle un mordisco, sentirás su textura seca y áspera... ¿Acaso se han equivocado y han puesto un trozo de carbón en el plato?"
+  },
+  "CoconutCharcoalCake": {
+    "name": "Panecillos de coco carbonizados",
+    "description": "Un pastel dulce de color oscuro. Primero, se tuestan los dátiles y se muelen hasta convertirlos en polvo. Luego, se tamizan y se mezclan con la masa para llevarlos a hornear. El resultado final tiene un ligero aroma a dátiles y es especialmente dulce cuando se acompaña con mermelada."
+  },
+  "DeliciousCoconutCharcoalCake": {
+    "name": "Panecillos de coco carbonizados deliciosos",
+    "description": "Un pastel dulce de color oscuro. La masa es delgada y brillante, con un cálido aroma a dátiles y una sensación en boca suave y ligeramente húmeda... No importa si te encuentras cansado o triste, todo lo malo desaparece una vez que pruebas este dulce de color negro. Igual que no se debe juzgar a una persona por su apariencia, tampoco se debe juzgar a una comida por su aspecto."
+  },
+  "SuspiciousBaklava": {
+    "name": "Baklava extraño",
+    "description": "Un postre tradicional de Sumeru. El dulce es como una bomba que estalla en tu boca dejando los dientes doloridos... El azúcar es agradable en cantidades adecuadas, pero en exceso puede volverse insoportable."
+  },
+  "Baklava": {
+    "name": "Baklava",
+    "description": "Un postre tradicional de Sumeru. El centro de hojaldre está cubierto con nueces trituradas y horneado con mantequilla caliente, con un poco de sirope por encima. Algunos eruditos piden este “castillo de dulzura” antes de tomar un examen para recargar energías, por lo que es el postre más popular de la Academia."
+  },
+  "DeliciousBaklava": {
+    "name": "Baklava delicioso",
+    "description": "Un postre tradicional de Sumeru. Un erudito una vez dijo que existen dos tipos de personas: los que comen postres para vivir y los que viven para comerlos. Las finas capas del hojaldre, combinadas con el aroma de la mantequilla y la miel que se cuela por los huesos, atraerán a cualquiera que lo pruebe."
+  },
+  "SuspiciousCandiedAjilenakhNut": {
+    "name": "Dátiles caramelizados extraños",
+    "description": "Un postre con un abundante relleno. Las almendras duras son como pequeñas piedras escondidas en la arena: si no tienes cuidado, podrían darte una sorpresa. Comer algo dulce es motivo de felicidad, pero la sensación de los trozos duros entre los dientes arruina totalmente la experiencia."
+  },
+  "CandiedAjilenakhNut": {
+    "name": "Dátiles caramelizados",
+    "description": "Un postre con un abundante relleno. Primero, se cuece el caramelo hasta que se aclara. Luego, se mezcla con el relleno y la pasta de sésamo de Sumeru. Por último, cuando todo esté bien mezclado, se vierte en un molde y se espera a que se seque hasta volverse crujiente. Se dice que existe un postre similar en la nación helada de Snezhnaya, pero con un sabor ligeramente diferente. Como era de esperar, los habitantes de ambas naciones piensan que el suyo es el mejor de todo Teyvat."
+  },
+  "DeliciousCandiedAjilenakhNut": {
+    "name": "Dátiles caramelizados deliciosos",
+    "description": "Un postre con un abundante relleno. El caramelo se derrite con solo el primer bocado, mientras que los frutos secos del interior son como joyas envueltas en terciopelo con una capa tras otra de felicidad. Basta con un bocado para sentir que estás nadando en un tarro de miel. ¡La próxima vez deberías preparar un poco más!"
+  },
+  "SuspiciousPadisarahPudding": {
+    "name": "Pudín de orquídea padishá extraño",
+    "description": "Un postre popular en Sumeru. Un solo bocado es una mezcla de leche con un aroma floral... No se puede decir que sabe mal, pero está muy lejos de lo que imaginabas. Ay, no. ¿Acaso las medidas de los ingredientes no son las correctas?"
+  },
+  "PadisarahPudding": {
+    "name": "Pudín de orquídea padishá",
+    "description": "Un postre popular en Sumeru. Se extrae el jugo de los pétalos de orquídeas padishá y de las rosas de Sumeru para mezclarlo con leche, gelatina, azúcar y otros ingredientes y obtener una forma sólida. Tiene un aspecto agradable y un sabor dulce, y es muy común encontrarlo en los festivales de Sumeru."
+  },
+  "DeliciousPadisarahPudding": {
+    "name": "Pudín de orquídea padishá delicioso",
+    "description": "Un postre popular en Sumeru. Su textura suave y cremosa se siente como si estuvieras sobre una nube con sabor a leche. Puedes percibir los aromas de la orquídea padishá y la rosa de Sumeru al saborearlo. Es imposible no lamer la cuchara al terminar el último bocado, solo para prolongar unos segundos más el placer que causa comerlo."
+  },
+  "SuspiciousAaruMixedRice": {
+    "name": "Arroz de Aaru extraño",
+    "description": "Una gran porción de un alimento básico saciante. Por el apuro, los ingredientes no se mezclaron bien antes de servirlo, por eso una parte del arroz tiene demasiado sabor a tomate, y la otra parte es sosa e insípida... Será mejor que la próxima vez se mezclen con más cuidado."
+  },
+  "AaruMixedRice": {
+    "name": "Arroz de Aaru",
+    "description": "Una gran porción de un alimento básico saciante. Combina arroz, fideos y frijoles, pero el secreto de su exquisitez proviene del sabor agridulce del tomate. Como los ingredientes son comunes y baratos, esta es una buena opción para llenar el estómago. Por esa razón, su receta se ha extendido poco a poco desde la Aldea Aaru hasta el resto de Sumeru."
+  },
+  "DeliciousAaruMixedRice": {
+    "name": "Arroz de Aaru delicioso",
+    "description": "Una gran porción de un alimento básico saciante. Los granos de arroz se han remojado en una sabrosa salsa. No contiene carne ni aceites, pero es más tentador que la carne misma. El sabor se amontona como las dunas y proporciona una extraordinaria sensación de satisfacción."
+  },
+  "SuspiciousFruitsOfTheFestival": {
+    "name": "Jugo festivo extraño",
+    "description": "Una bebida sin alcohol de colores brillantes. La acidez de los ganchos de lobo no se ha gestionado correctamente, lo cual causa que la lengua se entumezca. ¡¿Qu-qué está pasando?! ¿Escuchaste ese aullido? Tiene que ser una ilusión, ¿verdad?"
+  },
+  "FruitsOfTheFestival": {
+    "name": "Jugo festivo",
+    "description": "Una bebida sin alcohol de colores brillantes. Las solsettias y los ganchos de lobo se exprimen por separado y se vierten en ese orden en un vaso. Su sabor refrescante y color vibrante traen gratos recuerdos de las vacaciones. ¡Para conseguir el efecto de sabor graduado, hay que verter los ingredientes en el orden correcto!"
+  },
+  "DeliciousFruitsOfTheFestival": {
+    "name": "Jugo festivo delicioso",
+    "description": "Una bebida no alcohólica de colores brillantes. Su sabor refrescante causa un ligero placer, como si se tratase de un dulce sueño imaginario. Un solo sorbo es capaz de transportarte a una playa de arena blanca y aguas cristalina cuyas olas componen una canción que bien sería el himno de tus vacaciones."
+  },
+  "SwirlingSteps": {
+    "name": "Danza espiral",
+    "description": "La especialidad de Nilou. La copa cristalina parece un magnífico joyero que contiene un suave pudín que se derrite en la boca. El tono rojo recuerda a la figura resplandeciente de Nilou cuando baila. Uno no puede evitar desear que este baile no se termine nunca."
+  },
+  "DuelSoul": {
+    "name": "Alma del duelo",
+    "description": "La especialidad de Cyno. Los granos dorados de arroz están apilados como si fueran un monte increíble. Al tomar una cucharada, te encuentras con una carne sabrosa que despierta en ti un impulso indescriptible: ¡el deseo de sacar tus cartas para enfrentarte en un duelo de Invocación de los Sabios!"
+  },
+  "UtmostCare": {
+    "name": "Cuidado extremo",
+    "description": "La especialidad de Candace. El aroma de este plato llega a tu nariz mucho antes de servirlo. Parece que Candace también tiene un don para cuidar el apetito... Sin embargo, viene servido con una cantidad de arroz de Aaru mayor de lo habitual. ¿Cómo se supone que alguien pueda terminarse esta montaña de “cuidado excesivo”?"
+  },
+  "SparklingBerryJuice": {
+    "name": "Jugo de bayas burbujeante",
+    "description": "Una bebida novedosa sin alcohol. La diferente madurez de las valbayas le da un sabor agridulce a este jugo, mientras que el agua burbujeante refresca los sentidos. Es un gran acompañante para un momento de relajación."
+  },
   "RecipeItem": {
     "name": "Ingredientes",
     "description": "Utensilios de cocina desbloqueados"
@@ -8051,6 +8283,30 @@
     "name": "Receta: Tostadas crujientes de champiñones y queso",
     "description": "Receta paso a paso para hacer unas tostadas crujientes de champiñones y queso."
   },
+  "RecipeCoconutCharcoalCake": {
+    "name": "Receta: Panecillos de coco carbonizados",
+    "description": "Receta paso a paso para hacer panecillos de coco carbonizados."
+  },
+  "RecipeBaklava": {
+    "name": "Receta: Baklava",
+    "description": "Receta paso a paso para hacer baklava."
+  },
+  "RecipeCandiedAjilenakhNut": {
+    "name": "Receta: Dátiles caramelizados",
+    "description": "Receta paso a paso para hacer dátiles caramelizados."
+  },
+  "RecipePadisarahPudding": {
+    "name": "Receta: Pudín de orquídea padishá",
+    "description": "Receta paso a paso para hacer pudín de orquídea padishá."
+  },
+  "RecipeAaruMixedRice": {
+    "name": "Receta: Arroz de Aaru",
+    "description": "Receta paso a paso para hacer arroz de Aaru."
+  },
+  "RecipeFruitsOfTheFestival": {
+    "name": "Receta: Jugo festivo",
+    "description": "Receta paso a paso para hacer un jugo festivo."
+  },
   "CraftedItems": {
     "name": "Objeto sintetizado",
     "description": "Objetos creados al combinar materiales."
@@ -8433,7 +8689,7 @@
   },
   "FungalSpores": {
     "name": "Espora fúngica",
-    "description": "Polvo brillante que dejan tras de sí las esporas de los Flotihongos. Solo hace falta un estornudo para que este polvo desaparezca por completo."
+    "description": "Polvo brillante que dejan tras de sí las esporas de los Hongos. Solo hace falta un estornudo para que este polvo desaparezca por completo."
   },
   "LuminescentPollen": {
     "name": "Polen fluorescente",
@@ -8441,7 +8697,7 @@
   },
   "CrystallineCystDust": {
     "name": "Polvo quistecristalino",
-    "description": "Un montón de polvo de esporas extraído con sumo cuidado de un esporangio. Al ponerlo en un entorno con las condiciones adecuadas, brotará una colonia de Flotihongos."
+    "description": "Un montón de polvo de esporas extraído con sumo cuidado de un esporangio. Al ponerlo en un entorno con las condiciones adecuadas, brotará una colonia de Hongos."
   },
   "InactivatedFungalNucleus": {
     "name": "Núcleo fúngico inerte",
@@ -8465,7 +8721,7 @@
   },
   "RichRedBrocade": {
     "name": "Brocado rojo lujoso",
-    "description": "Un pedazo de brocado rojo de seda dorada.\\nLos exiliados nacidos en las arenas doradas del desierto en ocasiones cantan una canción cuyo significado ha caído en el olvido. Adoran al sol abrasador que ilumina la tierra por igual, y lamentan su ida durante el ocaso. Al final de la canción se pronuncian algunas palabras desconocidas, las cuales se dice que son nombres de dioses antiguos. Cuenta la leyenda que cuando el rey del desierto aún vivía, su gente decidió cubrirse los ojos por no atreverse a mirarle directamente, ya que su esplendor era mayor que el del mismo sol."
+    "description": "Un pedazo de brocado rojo de seda dorada.\\nLos exiliados nacidos en las arenas doradas del desierto en ocasiones cantan una canción cuyo significado ha caído en el olvido. Adoran al sol abrasador que ilumina la tierra por igual, y lamentan su ida durante el ocaso. Al final de la canción se pronuncian algunas palabras desconocidas, las cuales se dice que son nombres de dioses antiguos. Cuenta la leyenda que cuando el Rey del Desierto aún vivía, su gente decidió cubrirse los ojos por no atreverse a mirarle directamente, ya que su esplendor era mayor que el del mismo sol."
   },
   "ChaosStorage": {
     "name": "Contenedor del caos",
@@ -8478,6 +8734,18 @@
   "ChaosBolt": {
     "name": "Perno del caos",
     "description": "Proviene de un Dragón de las Ruinas inactivo.\\nEn el antiguo reino caído había un grupo de gente que estaba obsesionada con la idea del mimetismo. Ya fueran los elementos puros y en perfecto orden de los Hipostasis o el poder primigenio y ancestral de los dragones, estas personas creían que todo podía replicarse y modificarse hasta superar a sus homólogos naturales.\\nDeste esta óptica, un cuerpo físico superior e inmaculado podría ser capaz de reemplazar el decadente orden destinado a ser destruido."
+  },
+  "DamagedPrism": {
+    "name": "Prisma dañado",
+    "description": "Una pieza dañada obtenida tras derrotar a una Creación Primigenia.\\nEstas máquinas de forma extraña son las guardianas eternas de las ruinas del desierto y tienen el poder de perforar las montañas y moldear las rocas. Los principios de funcionamiento de estas máquinas son similares a muchos de los misteriosos mecanismos que hay sobre y bajo la tierra."
+  },
+  "TurbidPrism": {
+    "name": "Prisma enturbiado",
+    "description": "Una pieza antigua obtenida tras derrotar a una Creación Primigenia.\\nSe dice que estas máquinas no fueron creadas para la destrucción o la conquista, a diferencia de las máquinas de las ruinas que provienen de las profundidades del desierto."
+  },
+  "RadiantPrism": {
+    "name": "Prisma radiante",
+    "description": "Una pieza de exquisita elaboración obtenida tras derrotar a una Creación Primigenia.\\nEn el pasado, el rey del desierto tuvo un sueño e hizo muchas promesas.\\nCuentan las leyendas del desierto que estas máquinas fueron creadas para cumplir esas promesas. Sin embargo, hoy en día, tanto el sueño como las promesas han sido olvidados y solo viven en la memoria mecánica de estas máquinas."
   },
   "HurricaneSeed": {
     "name": "Semilla de huracán",
@@ -8627,6 +8895,14 @@
     "name": "Fruto atronador",
     "description": "El núcleo de una Regisvid Electro envuelto en unas afiladas hojas. Emite energía Electro de forma aleatoria.\\nSu energía, que ruge desde las profundidades de la tierra, ansía liberar su furia. Por eso, sus enredaderas están teñidas de furia mientras agitan sus retorcidas ramas entre sollozos, sin saber si están deseando que los demás prueben el dolor abrasador del rayo o si se están resistiendo contra su inevitable perdición."
   },
+  "PerpetualCaliber": {
+    "name": "Resorte perpetuo",
+    "description": "Un dispositivo motriz extraído de una misteriosa máquina de las ruinas.\\nContinúa girando aunque la máquina a la que le daba energía ya ha sido destruida.\\nSe supone que no existe ninguna fuente de energía continua e infinita en el mundo. De hecho, la mayoría de investigaciones sobre el movimiento perpetuo han sido refutadas. Sin embargo, este dispositivo demuestra que una civilización que desapareció hace tiempo alcanzó niveles que hoy en día parecen imposibles de igualar."
+  },
+  "LightGuidingTetrahedron": {
+    "name": "Tetraedro guialuz",
+    "description": "Un componente principal obtenido tras derrotar a una misteriosa combinación de mecanismos.\\nA día de hoy, estas antiguas máquinas no han olvidado los sueños de sus dueños ni sus propios deberes: construir mil palacios, comandar tres mil máquinas, plantar diez mil flores que ya no florecen y recrear el paraíso enterrado en la arena del desierto para todos aquellos que habitan este mundo.\\nAunque el rey del desierto ya no exista y su sueño haya sido corrompido por los susurros de sus pecados, aunque todos los pilares mágicos estén completamente destruidos y se hayan derribado, la criatura gigante que antaño fue la favorita del rey ahora se encuentra oculta en una tormenta de arena ardiente."
+  },
   "TileOfDecarabiansTower": {
     "name": "Fragmento de azulejo de Decarabian",
     "description": "Material de ascensión de arma.\\nEn el pasado, el lugar actualmente conocido como la Guarida de Stormterror fue la capital construida por Decarabian, el Arconte de la Tempestad. Dado que este próspero sueño fue creado por su poder, las piezas rotas que quedaron cuando el sueño se hizo añicos todavía poseen un gran poder."
@@ -8649,11 +8925,11 @@
   },
   "BorealWolfsCrackedTooth": {
     "name": "Diente roto de lobo boreal",
-    "description": "Material de ascensión de arma.\\nLa vida de un lobo nunca está exenta de violencia, por lo que romperse un hueso o partirse un diente es algo muy habitual. Andrius una vez dijo que la humanidad solo trae decepciones, excepto los bebés, unas criaturas inocentes. Cuando una manada y un niño se escogían mutuamente, se convertían en “Lupical”, una familia predestinada."
+    "description": "Material de ascensión de arma.\\nLa vida de un lobo nunca está exenta de violencia, por lo que romperse un hueso o partirse un diente es algo muy habitual. Andrius una vez dijo que la humanidad solo trae decepciones, excepto los bebés, unas criaturas inocentes. Cuando una manada y un niño se escogían mutuamente, se convertían en “lupical”, una familia predestinada."
   },
   "BorealWolfsBrokenFang": {
     "name": "Colmillo roto de lobo boreal",
-    "description": "Material de ascensión de arma.\\nLa manada de lobos entiende que los humanos no son criaturas solitarias. Un colmillo roto es un honorable regalo de despedida que, según se dice, trae protección y buena suerte.\\nEn las leyendas de otro mundo, una loba adoptó dos gemelos humanos, y su madriguera era conocida como “Lupercal”, palabra que guarda el mismo significado que el “Lupical” de este mundo."
+    "description": "Material de ascensión de arma.\\nLa manada de lobos entiende que los humanos no son criaturas solitarias. Un colmillo roto es un honorable regalo de despedida que, según se dice, trae protección y buena suerte.\\nEn las leyendas de otro mundo, una loba adoptó dos gemelos humanos, y su madriguera era conocida como “lupercal”, palabra que guarda el mismo significado que el “lupical” de este mundo."
   },
   "BorealWolfsNostalgia": {
     "name": "Nostalgia del lobo boreal",
@@ -8797,11 +9073,11 @@
   },
   "OasisGardensMourning": {
     "name": "Lamento del oasis exuberante",
-    "description": "Material de ascensión de arma.\\nEn el pasado, la Reina de las Flores era buena amiga de los genios.\\nElla, maestra de las flores y los oasis, unió esfuerzos con el Rey del Desierto y construyó para los genios Ai Janum, la ciudad de los anfiteatros. En la antigua lengua de estos genios, “Ai Janum” significaba “Ciudad de la Dama Luna”.\\nSin embargo, más tarde, la Reina de las Flores murió a causa de la maldad del sol abrasador y del desierto, y las violáceas orquídeas padishá nunca más volvieron a florecer.\\nCuando ella cayó, el desierto y los genios lloraron su pérdida, la redonda gema que brillaba como la luna perdió su función de esparcir felicidad y comenzó a emitir un brillo aciago."
+    "description": "Material de ascensión de arma.\\nEn el pasado, la Reina de las Flores era buena amiga de los genios.\\nElla, maestra de las flores y los oasis, unió esfuerzos con el Rey del Desierto y construyó para los genios Ai Janum, la Ciudad de los Anfiteatros. En la antigua lengua de estos genios, “Ai Janum” significaba “Ciudad de la Dama Luna”.\\nSin embargo, más tarde, la Reina de las Flores murió a causa de la maldad del sol abrasador y del desierto, y las violáceas orquídeas padishá nunca más volvieron a florecer.\\nCuando ella cayó, el desierto y los genios lloraron su pérdida, la redonda gema que brillaba como la luna perdió su función de esparcir felicidad y comenzó a emitir un brillo aciago."
   },
   "OasisGardensTruth": {
     "name": "Esencia del oasis exuberante",
-    "description": "Material de ascensión de arma.\\n“¿Quién adoraría a una deidad que ya ha muerto?”\\nLa Reina de las Flores formó una alianza con los otros dos reyes divinos de aquella época y, aparte de sabiduría y poder, trajo misericordia y alegría al pueblo aún no civilizado.\\nIgual que en la tierra no puede haber solamente lluvia y calor, junto a la razón y el poder había otras cosas igual de importantes: la alegría y el amor, las canciones y la música, el vino y la indulgencia...\\nDicen que la razón de que las flores se abran es para marchitarse estando en todo su esplendor, y ese marchitamiento fue precisamente lo que la Maestra de las Flores estuvo buscando desde siempre, pues la muerte añade un regusto amargo a la alegría que se pierde al morir, y hace que ese regusto sea cada vez más fuerte en los infinitos recuerdos.\\nEl ignorante rey del desierto nunca entendió esta idea y solo se dedicó a embriagarse con la ilimitada belleza y amabilidad de la Reina de las Flores. Así pues, aunque aquel recuerdo se distorsionara, también era algo que ella ya había anticipado."
+    "description": "Material de ascensión de arma.\\n“¿Quién adoraría a una deidad que ya ha muerto?”\\nLa Reina de las Flores formó una alianza con los otros dos reyes divinos de aquella época y, aparte de sabiduría y poder, trajo misericordia y alegría al pueblo aún no civilizado.\\nIgual que en la tierra no puede haber solamente lluvia y calor, junto a la razón y el poder había otras cosas igual de importantes: la alegría y el amor, las canciones y la música, el vino y la indulgencia...\\nDicen que la razón de que las flores se abran es para marchitarse estando en todo su esplendor, y ese marchitamiento fue precisamente lo que la Maestra de las Flores estuvo buscando desde siempre, pues la muerte añade un regusto amargo a la alegría que se pierde al morir, y hace que ese regusto sea cada vez más fuerte en los infinitos recuerdos.\\nEl ignorante Rey del Desierto nunca entendió esta idea y solo se dedicó a embriagarse con la ilimitada belleza y amabilidad de la Reina de las Flores. Así pues, aunque aquel recuerdo se distorsionara, también era algo que ella ya había anticipado."
   },
   "EchoOfScorchingMight": {
     "name": "Eco del poder del sol",
@@ -8817,7 +9093,7 @@
   },
   "OldenDaysOfScorchingMight": {
     "name": "Pasado del poder del sol",
-    "description": "Material de ascensión de arma.\\nEn la época en la que gobernaba el necio rey del desierto, su poder se extendía por la tierra como los rayos del dorado sol abrasador.\\nSegún las inscripciones de algunas antiguas estelas, su poder se transformó en siete rayos de luz o en siete pilares, y su misericordia llegó por igual a todas las personas. Nadie quedó excluido de ella y todo el mundo quedó satisfecho.\\nPero aquello ocurrió en una era de oro ya olvidada, en la que la Reina de las Flores ya se había marchitado y la Maestra de las Plantas ya había decidido marcharse. Aun así, los descendientes del desierto decidieron seguir a sus deidades y, aunque el desastre se avecinaba, el poder en el que tanto confiaban emitía un inextinguible resplandor tan refulgente como el ámbar y como el oro.\\nEntonces, el desastre se cernió sobre el mundo y las doradas insignias de escarabajo quedaron enterradas en las profundidades de los templos y los palacios y bajo los pilares rotos que, en el pasado, tenían forma de buitres y bueyes."
+    "description": "Material de ascensión de arma.\\nEn la época en la que gobernaba el necio Rey del Desierto, su poder se extendía por la tierra como los rayos del dorado sol abrasador.\\nSegún las inscripciones de algunas antiguas estelas, su poder se transformó en siete rayos de luz o en siete pilares, y su misericordia llegó por igual a todas las personas. Nadie quedó excluido de ella y todo el mundo quedó satisfecho.\\nPero aquello ocurrió en una era de oro ya olvidada, en la que la Reina de las Flores ya se había marchitado y la Maestra de las Plantas ya había decidido marcharse. Aun así, los descendientes del desierto decidieron seguir a sus deidades y, aunque el desastre se avecinaba, el poder en el que tanto confiaban emitía un inextinguible resplandor tan refulgente como el ámbar y como el oro.\\nEntonces, el desastre se cernió sobre el mundo y las doradas insignias de escarabajo quedaron enterradas en las profundidades de los templos y los palacios y bajo los pilares rotos que, en el pasado, tenían forma de buitres y bueyes."
   },
   "StarterSupplyBundle": {
     "name": "Paquete de suministros de principiante",
@@ -9111,6 +9387,18 @@
     "name": "Stotra de la luz de los espíritus",
     "description": "Según se dice, una comunidad religiosa del desierto, ahora inexistente, transmitió esta canción de generación en generación de manera oral. Sin embargo, no se sabe quién la transcribió."
   },
+  "TransparentRuinsRecordII": {
+    "name": "Registro de las Ruinas Transparentes (II)",
+    "description": "Una placa de piedra que encontraste en las Ruinas Transparentes cerca del Mausoleo del Rey Deshret. Parece ser el registro de una civilización perdida."
+  },
+  "TransparentRuinsRecordIII": {
+    "name": "Registro de las Ruinas Transparentes (III)",
+    "description": "Una placa de piedra que encontraste en las Ruinas Transparentes cerca del Mausoleo del Rey Deshret. Parece ser el registro de una civilización perdida."
+  },
+  "AncientKey": {
+    "name": "Llave antigua",
+    "description": "Una llave robada por un hurón enmascarado. Si existe una llave, debe haber una cerradura que le corresponda. Es obvio que este hospital ha estado abandonado desde hace mucho tiempo, ¿pero qué más podría esconder?"
+  },
   "UnsealedParchment": {
     "name": "Pergamino abierto",
     "description": "Un antiguo y misterioso pergamino. Parece una nota que dejó algún aventurero. En él aparecen palabras nuevas continuamente."
@@ -9155,9 +9443,189 @@
     "name": "Registro de trabajo estropeado",
     "description": "Un registro de trabajo en mal estado."
   },
+  "PurchasedGoods": {
+    "name": "Materiales comprados",
+    "description": "Los suministros que Nilou ha comprado para el Teatro Zubayr. Incluyen no solo materiales para la producción de utilería, sino también muchos artículos de uso cotidiano y para celebraciones. Son un poco pesados como para que una sola persona intente moverlos, pero seguro que algún aventurero experimentado sabrá cómo hacerlo."
+  },
+  "MedicalRecords": {
+    "name": "Historial médico",
+    "description": "Una página intacta de los registros del hospital. Parece haberse desprendido de algún libro."
+  },
+  "DiagnosticReport": {
+    "name": "Informe de diagnóstico",
+    "description": "Una página intacta de los registros del hospital. Parece haberse desprendido de algún libro."
+  },
+  "ShevirmesFunds": {
+    "name": "Fondos de Shevirme",
+    "description": "Fondos que pertenecen al tendero Shevirme. Los néctares cristalizados que contiene la refinada bolsa están destinados a comprar 50 cajas de jugo festivo en el puesto de la taberna El Obsequio del Ángel."
+  },
+  "QuqingsFunds": {
+    "name": "Fondos de Chuching",
+    "description": "Fondos que pertenecen a la tendera Chuching. Los néctares cristalizados que contiene la refinada bolsa están destinados a comprar 65 cajas de bayamentas en la taberna Cola de Gato."
+  },
+  "GuanchuisFunds": {
+    "name": "Fondos de Guanchui",
+    "description": "Fondos que pertenecen al chef Guanchui. Los néctares cristalizados que contiene la refinada bolsa están destinados a comprar 100 cajas de jugo festivo en el puesto de la taberna El Obsequio del Ángel."
+  },
+  "ZakariyasPrescriptionForMaruf": {
+    "name": "Receta médica de Zakariya para Maruf",
+    "description": "La letra de esta receta es tan extravagante que solo se distinguen vagamente las palabras “menta”, “fuego alto” y “las hierbas floten”..."
+  },
+  "ZakariyasMedicineForMaruf": {
+    "name": "Medicina de Zakariya para Maruf",
+    "description": "Una medicina que Zakariya ha preparado para Maruf. Tiene el olor y el aspecto de ser amarga..."
+  },
   "AnElegantlyWrittenNote": {
     "name": "Cuaderno con escritura hermosa",
     "description": "A juzgar por la forma de escribir, se trata de un cuaderno de Dunyarzad con una escritura hermosa. Si no fuera porque su eleazar le impide controlar bien su fuerza, seguramente le habría salido una escritura aún más bella."
+  },
+  "NerminsMintyBeanSoup": {
+    "name": "Sopa de menta y frijoles de Nermín",
+    "description": "Una sopa de menta y frijoles hecha por Nermín. Incluso le ha agregado duraznolivas. Debe saber muy bien..."
+  },
+  "FutureStar": {
+    "name": "Estrella del porvenir",
+    "description": "En cierto contexto cosmológico, la Estrella del Porvenir Definitiva es un valioso tesoro lleno de esperanza y posibilidades infinitas, mientras que las estrellas del porvenir solo son fragmentos separados de ella. Si reúnes los seis fragmentos que existen, podrás invocar la Estrella del Porvenir Definitiva, sobre cuyo aspecto y utilidad no hay información.\\nEn un contexto distinto, las estrellas del porvenir también podrían tratarse de valiosos objetos en la colección de cierta organización llamada “Academia de Sumeru”, y denominarse “núcleos de Parvo” en sus registros. Como nadie las ha usado en mucho tiempo, sobre ellas hay una pequeña capa de polvo."
+  },
+  "RaefsPackage": {
+    "name": "Paquete de Raef",
+    "description": "Un paquete que contiene macetas, semillas, fertilizantes y muchos otros artículos de jardinería. Es muy pesado. No es fácil llevarlo a través del desierto..."
+  },
+  "NerminsPerfumeIngredients": {
+    "name": "Especias de Nermín",
+    "description": "Unas especias que Nermín compró de Azalai. No son tan caras y son de buena calidad."
+  },
+  "KeystoneI": {
+    "name": "Llave de piedra (I)",
+    "description": "Una placa de piedra que aún guarda cierta energía. Puede usarse para abrir caminos en los alrededores. ¿Acaso se trata de una llave muy antigua?"
+  },
+  "TornPageAThousandNightsI": {
+    "name": "Página arrancada de «Las mil noches (I)»",
+    "description": "Una vez que reúnas las 10 páginas de este volumen, podrás formar «Las mil noches (I)».\\n\\nEsta ligera página parece haberse desprendido de un antiguo libro de cuentos.\\nSi encuentras las demás páginas, podrías reconstruir el libro."
+  },
+  "TornPageAThousandNightsII": {
+    "name": "Página arrancada de «Las mil noches (II)»",
+    "description": "Una vez que reúnas las 10 páginas de este volumen, podrás formar «Las mil noches (II)».\\n\\nEsta ligera página parece haberse desprendido de un antiguo libro de cuentos.\\nSi encuentras las demás páginas, podrías reconstruir el libro."
+  },
+  "TornPageAThousandNightsIII": {
+    "name": "Página arrancada de «Las mil noches (III)»",
+    "description": "Una vez que reúnas las 10 páginas de este volumen, podrás formar «Las mil noches (III)».\\n\\nEsta ligera página parece haberse desprendido de un antiguo libro de cuentos.\\nSi encuentras las demás páginas, podrías reconstruir el libro."
+  },
+  "TornPageAThousandNightsIV": {
+    "name": "Página arrancada de «Las mil noches (IV)»",
+    "description": "Una vez que reúnas las 10 páginas de este volumen, podrás formar «Las mil noches (IV)».\\n\\nEsta ligera página parece haberse desprendido de un antiguo libro de cuentos.\\nSi encuentras las demás páginas, podrías reconstruir el libro."
+  },
+  "TornPageAThousandNightsV": {
+    "name": "Página arrancada de «Las mil noches (V)»",
+    "description": "Una vez que reúnas las 10 páginas de este volumen, podrás formar «Las mil noches (V)».\\n\\nEsta ligera página parece haberse desprendido de un antiguo libro de cuentos.\\nSi encuentras las demás páginas, podrías reconstruir el libro."
+  },
+  "TornPageAThousandNightsVI": {
+    "name": "Página arrancada de «Las mil noches (VI)»",
+    "description": "Una vez que reúnas las 10 páginas de este volumen, podrás formar «Las mil noches (VI)».\\n\\nEsta ligera página parece haberse desprendido de un antiguo libro de cuentos.\\nSi encuentras las demás páginas, podrías reconstruir el libro."
+  },
+  "AThousandNightsI": {
+    "name": "Las mil noches (I)",
+    "description": "Una antología de relatos compilada por un erudito itinerante que viajó por la selva, el desierto y la ciudad en la época de la gran catástrofe. Dicen que la obra original contenía una infinidad de cuentos, pero lo que nos ha llegado hasta hoy no es más que una pequeñísima parte."
+  },
+  "AThousandNightsII": {
+    "name": "Las mil noches (II)",
+    "description": "Una antología de relatos compilada por un erudito itinerante que viajó por la selva, el desierto y la ciudad en la época de la gran catástrofe. Dicen que la obra original contenía una infinidad de cuentos, pero lo que nos ha llegado hasta hoy no es más que una pequeñísima parte."
+  },
+  "AThousandNightsIII": {
+    "name": "Las mil noches (III)",
+    "description": "Una antología de relatos compilada por un erudito itinerante que viajó por la selva, el desierto y la ciudad en la época de la gran catástrofe. Dicen que la obra original contenía una infinidad de cuentos, pero lo que nos ha llegado hasta hoy no es más que una pequeñísima parte."
+  },
+  "AThousandNightsIV": {
+    "name": "Las mil noches (IV)",
+    "description": "Una antología de relatos compilada por un erudito itinerante que viajó por la selva, el desierto y la ciudad en la época de la gran catástrofe. Dicen que la obra original contenía una infinidad de cuentos, pero lo que nos ha llegado hasta hoy no es más que una pequeñísima parte."
+  },
+  "AThousandNightsV": {
+    "name": "Las mil noches (V)",
+    "description": "Una antología de relatos compilada por un erudito itinerante que viajó por la selva, el desierto y la ciudad en la época de la gran catástrofe. Dicen que la obra original contenía una infinidad de cuentos, pero lo que nos ha llegado hasta hoy no es más que una pequeñísima parte."
+  },
+  "AThousandNightsVI": {
+    "name": "Las mil noches (VI)",
+    "description": "Una antología de relatos compilada por un erudito itinerante que viajó por la selva, el desierto y la ciudad en la época de la gran catástrofe. Dicen que la obra original contenía una infinidad de cuentos, pero lo que nos ha llegado hasta hoy no es más que una pequeñísima parte."
+  },
+  "SamailsMissive": {
+    "name": "Mensaje de Samail",
+    "description": ""
+  },
+  "ShevirmesInvoice": {
+    "name": "Recibo de Shevirme",
+    "description": "Un recibo que Georg le entregó a Shevirme. Contiene el precio de 50 cajas de jugo festivo, el detalle de los costes, la fecha de compra y la fecha prevista de entrega de la mercancía. Cuando el cliente lo lea, seguro que se sentirá más tranquilo."
+  },
+  "QuqingsInvoice": {
+    "name": "Recibo de Chuching",
+    "description": "Un recibo que Diane le entregó a Chuching. Contiene el precio de 65 cajas de bayamentas, el detalle de los costes, la fecha de compra y la fecha prevista de entrega de la mercancía. Cuando la clienta lo lea, seguro que se sentirá más tranquila."
+  },
+  "GuanchuisInvoice": {
+    "name": "Recibo de Guanchui",
+    "description": "Un recibo que Georg le entregó a Guanchui. Contiene el precio de 100 cajas de jugo festivo, el detalle de los costes, la fecha de compra y la fecha prevista de entrega de la mercancía. Cuando el cliente lo lea, seguro que se sentirá más tranquilo."
+  },
+  "CynosIntroductionLetter": {
+    "name": "Carta de presentación de Cyno",
+    "description": "Una carta de presentación escrita por Cyno. Simboliza la confianza del Gran Juez."
+  },
+  "AncientMap": {
+    "name": "Mapa antiguo",
+    "description": "Un mapa que encontraste en la casa de Taj. En él se muestra la ubicación de la Corte de la Desolación."
+  },
+  "AuctionInformation": {
+    "name": "Información sobre la subasta",
+    "description": "Información sobre una subasta que ha recopilado Dori. Contiene detalles sobre la subasta de cápsulas de conocimiento que tiene lugar en el desierto."
+  },
+  "SealedMaterialsTheCourtOfDesolation": {
+    "name": "Documento sellado sobre la Corte de la Desolación",
+    "description": ""
+  },
+  "KeystoneII": {
+    "name": "Llave de piedra (II)",
+    "description": "Una placa de piedra que aún guarda cierta energía. Puede usarse para abrir caminos en los alrededores. ¿Acaso se trata de una llave muy antigua?"
+  },
+  "AzalaisPayment": {
+    "name": "Pago de Azalai",
+    "description": "El pago de Azalai. Parece una cantidad considerable..."
+  },
+  "RamasReceipt": {
+    "name": "Recibo de Rama",
+    "description": "Un recibo que te entregó Rama. Puedes usarlo para recoger sus mercancías en su nombre."
+  },
+  "ButrusReceipt": {
+    "name": "Recibo de Butrus",
+    "description": "Un recibo que te entregó Butrus. Puedes usarlo para recoger sus mercancías en su nombre."
+  },
+  "JutsReceipt": {
+    "name": "Recibo de Yut",
+    "description": "Un recibo que te entregó Yut. Puedes usarlo para recoger sus mercancías en su nombre."
+  },
+  "JahangirsReceipt": {
+    "name": "Recibo de Jahangir",
+    "description": "Un recibo que te entregó Jahangir. Puedes usarlo para recoger sus mercancías en su nombre."
+  },
+  "LimitedEditionDesertSpecialTravelPack": {
+    "name": "Bolsa especial de viaje para el desierto de edición limitada",
+    "description": "Unas bolsas de viaje que le compraste a Dori. Están llena de cosas extrañas. Aunque a primera vista resultan desconcertantes, una inspección más a fondo revela que en realidad podrían ser bastante útiles."
+  },
+  "AShortLetter": {
+    "name": "Una carta corta",
+    "description": "Una breve carta escrita en código. No sabes quién la escribió o por qué, pero ahí está."
+  },
+  "VaguelyReadableInscription": {
+    "name": "Inscripción apenas reconocible",
+    "description": ""
+  },
+  "AkademiyaInvestigationTeamsReport": {
+    "name": "Informe del equipo de investigación de la Academia de Sumeru",
+    "description": ""
+  },
+  "SealedOrders": {
+    "name": "Comunicado con órdenes sellado",
+    "description": ""
+  },
+  "OldOrders": {
+    "name": "Antiguo comunicado con órdenes",
+    "description": ""
   },
   "SilkFlowerSeed": {
     "name": "Semilla de flor de seda",
@@ -9478,6 +9946,10 @@
   "OriginalFishOintment": {
     "name": "Ungüento de pez primigenio",
     "description": "Objeto de refinamiento exclusivo para el arma “Fin de las Aguas”.\\nUn bálsamo extraído de los peces capturados en un gran lago del norte. Puede restaurar temporalmente la vitalidad de un pez convertido en arco.\\nDicen que en ese lago viven criaturas acuáticas que no existen en ningún otro sitio."
+  },
+  "PlumeOfTheChangingWinds": {
+    "name": "Pluma de los vientos cambiantes",
+    "description": "Objeto de refinamiento exclusivo para el arma “Alabarda del Viento Epistolar”.\\nUna antigua pluma tallada en turquesa que, en el pasado, servía como accesorio decorativo o como objeto conmemorativo."
   },
   "FalconsDance": {
     "name": "Danza del halcón",
@@ -10183,6 +10655,34 @@
     "name": "Sumeru - Rectitud",
     "description": "Diseño de tarjeta de presentación.\\nEl sabio que conoce la verdad no se deja manchar por el mal, así como el loto nilotpala permanece puro tras la lluvia."
   },
+  "TravelNotesReturningWinds": {
+    "name": "PB - Viento del retorno",
+    "description": "Diseño de tarjeta de presentación.\\nMientras los años pasan, lo único que perdura son los recuerdos y los vientos que retornan."
+  },
+  "CynoSilence": {
+    "name": "Cyno - Taciturno",
+    "description": "Diseño de tarjeta de presentación.\\nCuando Cyno se encuentra sumergido en un profundo silencio, puede significar que esté reflexionando sobre algún veredicto importante... O que simplemente esté pensando en un chiste."
+  },
+  "CandaceGreyHeron": {
+    "name": "Candace - Garza real",
+    "description": "Diseño de tarjeta de presentación.\\nLos vientos abrasadores del pasado erizaron las plumas de la garza real. Pero el ave solo tiene ojos para la estrella del alba."
+  },
+  "NilouLotusDance": {
+    "name": "Nilou - Baile del loto",
+    "description": "Diseño de tarjeta de presentación.\\nEl loto que florece en un agua pura no es más que un destello de luz bajo los dedos de sus pies."
+  },
+  "AchievementSevenLights": {
+    "name": "Logro - Siete luces",
+    "description": "Diseño de tarjeta de presentación.\\nCualquiera puede tocar su propia melodía que, al igual que el rocío sobre la hierba, pueda reflejar las siete luces del cielo."
+  },
+  "SumeruSandtreader": {
+    "name": "Sumeru - Caminante del desierto",
+    "description": "Diseño de tarjeta de presentación.\\nLas llanuras arenosas entierran las huellas de los viajeros a la espera de que un día, una ráfaga de viento vuelva a revelar sus recuerdos dorados."
+  },
+  "AchievementMirroredDreams": {
+    "name": "Logro - Reflejo de un sueño",
+    "description": "Diseño de tarjeta de presentación.\\n“Las obsesiones y los anhelos de miles de años se han desvanecido en las tormentas de arena de las noches luminosas. Sin embargo, el oasis eterno con el que ella soñaba sigue siendo tan exuberante como siempre”."
+  },
   "AnemoculusResonanceStone": {
     "name": "Roca de resonancia de anemóculus",
     "description": "Puede utilizarse en Mondstadt para encontrar anemóculus en las cercanías.\\nUn disco de piedra con características similares a las Estatuas de Los Siete que emite un sonido cuando hay anemóculus en los alrededores.\\nEstos discos son una burda imitación de las Estatuas de Los Siete diseminadas por todo el continente. Como falsificaciones que son, desean el poder de los óculus y ofrecen a devotos y aventureros la oportunidad de encontrarlos."
@@ -10391,6 +10891,10 @@
     "name": "Daguerrotipo primoroso",
     "description": "Un Daguerrotipo que el pequeño Razi tomó prestado de la tienda de la magnate Sangemah Bay. ¡Perfecto para capturar el paisaje, obtener inspiración de la naturaleza y recordar momentos felices!\\nComparado con un Daguerrotipo normal, tiene unos ornamentos metálicos adicionales y parece bastante caro, ¡así que ten cuidado con él! Además, según las condiciones del préstamo, el Daguerrotipo solo puede utilizarse en Sumeru."
   },
+  "BanusWisdom": {
+    "name": "Sabiduría de Banu",
+    "description": "En cierto contexto, es un báculo mágico al que han imbuido con un misterioso poder, capaz de resonar con las estrellas del porvenir para señalar su ubicación.\\nEn un contexto distinto, también podría tratarse de un valioso objeto en la colección de cierta organización llamada “Academia de Sumeru”, y denominarse “Buscador del caos de Ayesha” en sus registros. Como nadie lo ha usado en mucho tiempo, hay una pequeña capa de polvo sobre él."
+  },
   "FishingLineStabilizer": {
     "name": "Estabilizador de pesca",
     "description": "Un estabilizador de tensión autoadaptativo que, una vez instalado en la caña de pescar, nivela la tensión del sedal para que la pesca resulte más cómoda. El dispositivo es capaz de registrar automáticamente la intensidad de forcejeo de los diferentes peces. Cuantos más datos recoja, más preciso será el estabilizador.\\n\\nEl prototipo de este dispositivo surgió a partir de una ocurrencia disparatada de un inventor de Fontaine, y durante mucho tiempo pasó completamente desapercibido. Después de que el Gremio de Pescadores de Fontaine se percatara de su existencia, llevaron a cabo ciertas modificaciones que dieron como resultado el Estabilizador de pesca del que disponemos hoy en día. En cuanto salió a la luz, la mayoría de los miembros del Gremio dieron su aprobación. Con el tiempo, comenzó a utilizarse en otras regiones.\\nLa región donde más se popularizó este dispositivo fue en Snezhnaya porque, según dicen, le gustó mucho a cierto miembro de Los Once."
@@ -10399,9 +10903,21 @@
     "name": "Lira antigua",
     "description": "Con este instrumento tradicional de Mondstadt se pueden interpretar diferentes melodías. Es posible que tenga cierto efecto misterioso si lo tocas en los bosques de Sumeru.\\nUna lira antigua que tomaste prestada en la Aldea Vimara de Sumeru.\\nEn Mondstadt, la nación de la música y la poesía, los bardos se refieren a su instrumento como “querido amigo” o “compañero del alma”. Por eso, si uno de ellos confiara su instrumento a Amadhiah, significaría que guardan aprecio y confianza hacia su persona."
   },
+  "JumpyDumptyPartyPopper": {
+    "name": "Cañón de celebración de Bomba saltarina",
+    "description": "Un cañón que arroja cintas y serpentinas de colores.\\n“Bomba saltarina es muy buena amiga mía, y una gran ayudante para ir de pesca explosiva, pero si la llevo al festival, la Maestra Jean se pondrá furiosa... Bueno, ¡no hay de que preocuparse! ¡Bomba saltarina ha adquirido nuevas habilidades gracias a Albedo! ¡Mira, tira de su colita y un montón de cintas hermosas saldrán volando!”."
+  },
+  "ScarletSandSlate": {
+    "name": "Placa escarlata",
+    "description": "Durante muchos años, ha sido el objeto de estudio de Tirzad, un erudito de la Academia de Sumeru. A juzgar por sus grabados y su elaboración, fue creada por la civilización del Rey Deshret. Parece que tiene el poder de activar los mecanismos de las ruinas del rey."
+  },
   "BubblyKamera": {
     "name": "Daguerrotipo burbujeante",
     "description": "Al usar este artilugio, registrarás y guardarás la imagen de un paisaje a color.\\nEsta herramienta de origen desconocido es excelente para conseguir imágenes. Aunque en su interior no tiene agua, al capturar una imagen, esta presenta muchas burbujitas alrededor, lo que le da una sensación ilusoria.\\nPor eso, cierto Capitán de Caballería dice que esta máquina “captura las ganas de tener algo fresco”."
+  },
+  "CloudRetainersDamaskedDevice": {
+    "name": "Dispositivo papirofléxico de Preservadora de Nubes",
+    "description": "Un dispositivo liviano hecho de papel y con forma de pájaro que te entregó Preservadora de Nubes.\\nAunque se llame “dispositivo”, no parece que contenga componentes mecánicos tradicionales, al menos visto desde el exterior.\\nParece que esta Adeptus ha mejorado aún más sus habilidad mecánicas."
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instrucciones: Roca de resonancia de anemóculus",
@@ -10480,7 +10996,7 @@
     "description": "A través de este cuento, aprenderás a fabricar Espada de Madera (espada ligera).\\n\\nTrata sobre un amigo que se perdió en el desierto.\\n“Esta es historia procedente de valuka...”."
   },
   "TaleOfTheKingsSquire": {
-    "name": "Historia de la vasalla del rey",
+    "name": "Cuento de la vasalla del rey",
     "description": "A través de este cuento, aprenderás a fabricar Vasalla del Rey (arco).\\n\\nTrata sobre una damisela que se perdió en el gran laberinto del bosque.\\n“Érase una vez una princesa...”."
   },
   "TaleOfTheMoonlight": {
@@ -10991,6 +11507,10 @@
     "name": "Estantería aséptica de madera radiante",
     "description": "Plano detallado para fabricar “Estantería aséptica de madera radiante”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "DesertDeskHospitality": {
+    "name": "Escritorio del desierto: Hospitalidad",
+    "description": "Plano detallado para fabricar un Escritorio del desierto: Hospitalidad.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "TwoTierLibraryBookshelf": {
     "name": "Estantería de biblioteca de dos pisos",
     "description": "Plano detallado para fabricar una Estantería de biblioteca de dos pisos.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -11030,6 +11550,10 @@
   "MapleWoodBookcaseTroveOfAThousandTomes": {
     "name": "Estantería de madera de arce: Escondite literario",
     "description": "Plano detallado para fabricar una Estantería de madera de arce: Escondite literario.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertCabinetOddsAndEnds": {
+    "name": "Armario del desierto: Cachivaches",
+    "description": "Plano detallado para fabricar un Armario del desierto: Cachivaches.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "SturdyLibraryTable": {
     "name": "Mesa voluminosa de biblioteca",
@@ -11095,6 +11619,10 @@
     "name": "Mesa para cerámica de madera radiante",
     "description": "Plano detallado para fabricar “Mesa para cerámica de madera radiante”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "LongAthelwoodTable": {
+    "name": "Mesa larga de madera de tamarisco",
+    "description": "Plano detallado para fabricar una Mesa larga de madera de tamarisco.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "BreezeBlessedBed": {
     "name": "Cama baja suave como la brisa",
     "description": "Plano detallado para fabricar una Cama baja suave como la brisa.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -11114,6 +11642,18 @@
   "TeahouseCounterToshimaru": {
     "name": "Mostrador para casa de té: “Catorcemaru”",
     "description": "Plano detallado para fabricar un Mostrador para casa de té: “Catorcemaru”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertStonePlatformSturdy": {
+    "name": "Plataforma de piedra del desierto: Firmeza",
+    "description": "Plano detallado para fabricar una Plataforma de piedra del desierto: Firmeza.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertFireplaceWarmth": {
+    "name": "Chimenea del desierto: Calidez",
+    "description": "Plano detallado para fabricar una Chimenea del desierto: Calidez.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertStudyConscientiousness": {
+    "name": "Escritorio del desierto: Meticulosidad",
+    "description": "Plano detallado para fabricar Escritorio del desierto: Meticulosidad.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "SoftLoungeSofa": {
     "name": "Sofá cómodo para sala de estar",
@@ -11243,6 +11783,18 @@
     "name": "Jarrón simple: Tostado",
     "description": "Plano detallado para fabricar “Jarrón simple: Tostado”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "HuedVaseSeashell": {
+    "name": "Vasija pigmentada: Concha marina",
+    "description": "Plano detallado para fabricar una Vasija pigmentada: Concha marina.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "HuedVaseDarkRock": {
+    "name": "Vasija pigmentada: Roca oscura",
+    "description": "Plano detallado para fabricar una Vasija pigmentada: Roca oscura.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "AmidstTheFleeingSmoke": {
+    "name": "Entre el humo disperso",
+    "description": "Plano detallado para fabricar “Entre el humo disperso”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Alfombra de Mondstadt: Ardor carmesí",
     "description": "Plano detallado para fabricar una Alfombra de Mondstadt: Ardor carmesí.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -11271,6 +11823,14 @@
     "name": "Alfombra café coco",
     "description": "Plano detallado para fabricar una Alfombra café coco.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "SunScorchedSolemnity": {
+    "name": "Solemnidad del sol abrasador",
+    "description": "Plano detallado para fabricar “Solemnidad del sol abrasador”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TheOliveGrove": {
+    "name": "Timidez olivácea",
+    "description": "Plano detallado para fabricar “Timidez olivácea”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "TrustyPortableLamp": {
     "name": "Lámpara portátil inapagable",
     "description": "Plano detallado para fabricar una Lámpara portátil inapagable.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -11290,6 +11850,10 @@
   "TranquilStarlight": {
     "name": "Sosiego estelar",
     "description": "Plano detallado para fabricar “Sosiego estelar”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertLampLingeringLight": {
+    "name": "Lámpara del desierto: Luz encendida",
+    "description": "Plano detallado para fabricar una Lámpara del desierto: Luz encendida.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Arreglo floral: Tranquilidad celeste",
@@ -11403,6 +11967,18 @@
     "name": "Percepción risueña",
     "description": "Plano detallado para fabricar “Percepción risueña”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "TheMellowPot": {
+    "name": "Fluidez apacible",
+    "description": "Plano detallado para fabricar “Fluidez apacible”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TheCrispSweetness": {
+    "name": "Crujiente dulzor",
+    "description": "Plano detallado para fabricar “Crujiente dulzor”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TheTwistingMist": {
+    "name": "Neblina circundante",
+    "description": "Plano detallado para fabricar “Neblina circundante”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "LandscapePaintingCountryHome": {
     "name": "Paisaje: Casa de campo",
     "description": "Plano detallado para fabricar Paisaje: Casa de campo.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -11486,6 +12062,18 @@
   "EmbroideredCurtains": {
     "name": "Cortina de brocado",
     "description": "Plano detallado para fabricar una Cortina de brocado.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "AthelwoodMetalBuckler": {
+    "name": "Escudo fortalecido de madera de tamarisco",
+    "description": "Plano detallado para fabricar un Escudo fortalecido de madera de tamarisco.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertWallDrapesSunset": {
+    "name": "Decoración de pared del desierto: Puesta de sol",
+    "description": "Plano detallado para fabricar Decoración de pared del desierto: Puesta de sol.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertWallDrapesFlamingFeathers": {
+    "name": "Decoración de pared del desierto: Plumas igníferas",
+    "description": "Plano detallado para fabricar una Decoración de pared del desierto: Plumas igníferas.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "LingeringMoment": {
     "name": "Momento inolvidable",
@@ -11879,6 +12467,30 @@
     "name": "Perseverancia de los moradores del bosque",
     "description": "Plano detallado para fabricar “Perseverancia de los moradores del bosque”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "DesertHouseOrdinaryLives": {
+    "name": "Casa del desierto: Vida ordinaria",
+    "description": "Plano detallado para fabricar Casa del desierto: Vida ordinaria.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertHouseSpicesAbound": {
+    "name": "Casa del desierto: Especias abundantes",
+    "description": "Plano detallado para fabricar Casa del desierto: Especias abundantes.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertHouseHueAndCry": {
+    "name": "Casa del desierto: Torre del clamor",
+    "description": "Plano detallado para fabricar una Casa del desierto: Torre del clamor.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertHouseBriefSleep": {
+    "name": "Casa del desierto: Sueño breve",
+    "description": "Plano detallado para fabricar Casa del desierto: Sueño breve.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertHouseHiddenLight": {
+    "name": "Casa del desierto: Luz oculta",
+    "description": "Plano detallado para fabricar Casa del desierto: Luz oculta.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertHouseSaveAndStore": {
+    "name": "Casa del desierto: Almacén",
+    "description": "Plano detallado para fabricar Casa del desierto: Almacén.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fuente con flores y pájaros",
     "description": "Plano detallado para fabricar una Fuente con flores y pájaros.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -11942,6 +12554,22 @@
   "StoneworksCraneHillTamer": {
     "name": "Grúa de mampostería: Aplanacolinas",
     "description": "Plano detallado para fabricar una Grúa de mampostería: Aplanacolinas.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertHutMinutiae": {
+    "name": "Tienda de campaña del desierto: Minucias",
+    "description": "Plano detallado para fabricar una Tienda de campaña del desierto: Minucias.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertHutQuestions": {
+    "name": "Tienda de campaña del desierto: Indicaciones",
+    "description": "Plano detallado para fabricar Tienda de campaña del desierto: Indicaciones.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertHutWilting": {
+    "name": "Tienda de campaña del desierto: Agostamiento",
+    "description": "Plano detallado para fabricar una Tienda de campaña del desierto: Agostamiento.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertHutRest": {
+    "name": "Tienda de campaña del desierto: Reposo",
+    "description": "Plano detallado para fabricar Tienda de campaña del desierto: Reposo.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "AdeptusGate": {
     "name": "Puerta de Adeptus",
@@ -12070,6 +12698,18 @@
   "NoFishingAhead": {
     "name": "Valla limitadora de pescador",
     "description": "Plano detallado para fabricar “Valla limitadora de pescador”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertStoneStepsClimbing": {
+    "name": "Escalones de piedra del desierto: Tobogán",
+    "description": "Plano detallado para fabricar Escalones de piedra del desierto: Tobogán.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertWallSurpriseAttack": {
+    "name": "Pared del desierto: Ataque sorpresa",
+    "description": "Plano detallado para fabricar Pared del desierto: Ataque sorpresa.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertWallStalwartDefense": {
+    "name": "Pared del desierto: Defensa incondicional",
+    "description": "Plano detallado para fabricar Pared del desierto: Defensa incondicional.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Suelo rocoso: Fortuna y tranquilidad",

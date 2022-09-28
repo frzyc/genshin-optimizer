@@ -4,7 +4,7 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
-        "1": "Perform up to 5 rapid strikes."
+        "1": "Performs up to 5 rapid strikes."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -63,20 +63,21 @@
   "burst": {
     "name": "Surgent Manifestation",
     "description": {
-      "0": "Calling upon the might of the flora all around you, you create a Lea Lotus Lamp. This Lamp will deal continuous <dendro>Dendro DMG</dendro> to opponents within its AoE.",
-      "1": "<br/>",
-      "2": "<strong>Lotuslight Transfiguration</strong>",
-      "3": "The Lea Lotus Lamp will undergo the following changes after it comes into contact with <hydro>Hydro</hydro>/<electro>Electro</electro>/<pyro>Pyro</pyro>:",
-      "4": [
+      "0": "Calling upon the might of the flora all around you, you create a Lea Lotus Lamp.",
+      "1": "This Lamp will deal continuous <dendro>Dendro DMG</dendro> to opponents within its AoE.",
+      "2": "<br/>",
+      "3": "<strong>Lotuslight Transfiguration</strong>",
+      "4": "The Lea Lotus Lamp will undergo the following changes after it comes into contact with <hydro>Hydro</hydro>/<electro>Electro</electro>/<pyro>Pyro</pyro>:",
+      "5": [
         "<hydro>Hydro</hydro>: the Lamp's AoE and the AoE of its attacks are increased.",
         "<electro>Electro</electro>: the Lamp's ATK SPD is increased.",
         "<pyro>Pyro</pyro>: the Lamp will explode after a short delay and then disappear, dealing <dendro>AoE Dendro DMG</dendro>."
       ],
-      "5": "The Lea Lotus Lamp can only undergo one Lotuslight Transfiguration in its duration.",
-      "6": "<br/>",
-      "7": "Only one Lamp created by the Traveler can exist at any one time.",
-      "8": "<br/>",
-      "9": "<i>You and Paimon studied the sounds of plants that sprout after the rain.</i>"
+      "6": "The Lea Lotus Lamp can only undergo one Lotuslight Transfiguration in its duration.",
+      "7": "<br/>",
+      "8": "Only one Lamp created by the Traveler can exist at any one time.",
+      "9": "<br/>",
+      "10": "<i>You and Paimon studied the sounds of plants that sprout after the rain.</i>"
     },
     "skillParams": {
       "0": "Lea Lotus Lamp Attack DMG",

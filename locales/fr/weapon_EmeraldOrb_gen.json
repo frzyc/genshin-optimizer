@@ -1,6 +1,6 @@
 {
   "name": "Orbe jadien",
-  "description": "Un catalyseur sculpté dans la jadéite, produit au Karst Jueyun, au nord de Liyue. Petit et léger, résistant et durable, les gens l'appellent souvent « Boulette de jade ».",
+  "description": "Un catalyseur sculpté dans la jadéite, produite au Karst Jueyun, au nord de Liyue. Petit et léger, résistant et durable, les gens l'appellent souvent « Boulette de jade ».",
   "passiveName": "Torrent",
   "passiveDescription": {
     "0": "Augmente l'ATQ de <cryo>20 %</cryo> pendant 12 s après avoir déclenché Évaporation, Électrocution, Gel, Fleurissement ou Dispersion Hydro.",

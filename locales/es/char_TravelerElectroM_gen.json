@@ -108,7 +108,7 @@
   "passive2": {
     "name": "Relámpago resonante",
     "description": {
-      "0": "Aumenta la Energía recargada por el abalorio de la profusión creado mediante <strong>Espada electrosombría</strong> en una cantidad proporcional al 10% de la Recarga de Energía {F#de la viajera}{M#del viajero}."
+      "0": "Aumenta la Energía recargada por el abalorio de la profusión creado mediante <strong>Espada electrosombría</strong> en una cantidad proporcional al 10% de la Recarga de Energía {F#de la Viajera}{M#del Viajero}."
     }
   },
   "constellation1": {

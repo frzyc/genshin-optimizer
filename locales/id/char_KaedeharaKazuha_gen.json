@@ -130,7 +130,7 @@
     "name": "Cloud Strider",
     "description": {
       "0": "Mengurangi 20% konsumsi Stamina Karakter sendiri saat berlari.",
-      "1": "Efek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama persis."
+      "1": "Efek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama."
     }
   },
   "constellation1": {

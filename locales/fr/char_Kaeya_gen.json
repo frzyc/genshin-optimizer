@@ -101,7 +101,7 @@
     "name": "Cœur de l'Abîme glacial",
     "description": {
       "0": "Les ennemis <cryo>gelés</cryo> par <strong>Attaque givrée</strong> font tomber davantage de particules élémentaires.",
-      "1": "Jusqu'à 2 particules supplémentaires peuvent ainsi être obtenues par Attaque givrée."
+      "1": "Attaque givrée peut accorder un maximum de 2 particules supplémentaires de cette manière à chaque utilisation."
     }
   },
   "passive3": {

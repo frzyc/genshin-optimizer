@@ -2,7 +2,7 @@
   "setName": "Gilded Dreams",
   "setEffects": {
     "2": "Elemental Mastery +80.",
-    "4": "Selama 8 detik setelah memicu Reaksi Elemental, Karakter yang mengenakannya mendapatkan efek penguatan berdasarkan tipe elemen Karakter lain yang berada dalam tim: Untuk setiap anggota party yang berelemen sama dengan Karakter yang mengenakan, maka ATK meningkat 14%; Untuk setiap anggota party yang berelemen berbeda dengan Karakter yang mengenakan, maka Elemental Mastery meningkat 50 poin. Efek yang dijelaskan tersebut maksimal dihitung untuk 3 Karakter. Efek ini terpicu setiap 8 detik. Efek ini tetap dapat terpicu meskipun penggunanya ada dalam party namun sedang tidak berada di medan pertempuran."
+    "4": "Selama 8 detik setelah memicu Reaksi Elemental, Karakter yang mengenakannya mendapatkan efek penguatan berdasarkan tipe elemen Karakter lain yang berada dalam tim: Untuk setiap anggota party yang berelemen sama dengan Karakter yang mengenakan, maka ATK meningkat 14%; Untuk setiap anggota party yang berelemen berbeda dengan Karakter yang mengenakan, maka Elemental Mastery meningkat 50 poin. Efek yang dijelaskan tersebut maksimal dihitung untuk 3 Karakter. Efek ini dapat terpicu setiap 8 detik. Efek ini tetap dapat terpicu meskipun penggunanya ada dalam party namun sedang tidak berada di medan pertempuran."
   },
   "pieces": {
     "flower": {

@@ -16,7 +16,7 @@
         "2": "Lors du tir visé, la puissance de la nature vient se concentrer sur la pointe de la flèche. Les effets varient selon le nombre de charges :",
         "3": [
           " 1 charge : Tire une flèche écologique qui inflige des <dendro>DGT Dendro</dendro>.",
-          " 2 charges : Tire une flèche florale qui inflige des <dendro>DGT Dendro</dendro>. En touchant, elle génère 4 flèches fleuronnées qui poursuivent automatiquement les ennemis pour infliger des <dendro>DGT Dendro</dendro>."
+          " 2 charges : Tire une flèche florale qui inflige des <dendro>DGT Dendro</dendro>. En touchant, elle génère 4 flèches fleuronnées qui poursuivent automatiquement les ennemis proches pour infliger des <dendro>DGT Dendro</dendro>."
         ]
       },
       "plunging": {

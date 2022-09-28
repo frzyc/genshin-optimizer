@@ -122,7 +122,7 @@
     "name": "Circuit infini",
     "description": {
       "0": "Lisa regagne 2 pts d'énergie par ennemi touché tant qu'<strong>Arc fulminant</strong> reste activé.",
-      "1": "Jusqu'à 10 pts d'énergie élémentaire peuvent être restaurés de cette manière."
+      "1": "Un maximum de 10 pts d'énergie élémentaire peut être restauré à chaque utilisation de cette manière."
     }
   },
   "constellation2": {

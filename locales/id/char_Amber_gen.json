@@ -117,7 +117,7 @@
   "passive3": {
     "name": "Gliding Champion",
     "description": {
-      "0": "Mengurangi 20% konsumsi Stamina karakter sendiri saat terbang.",
+      "0": "Mengurangi 20% konsumsi Stamina Karakter sendiri saat terbang.",
       "1": "Efek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama."
     }
   },

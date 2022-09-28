@@ -8,11 +8,11 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
-        "1": "Perform up to 5 rapid strikes."
+        "1": "Performs up to 5 rapid strikes."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Consumes a certain amount of Stamina to dash forward and perform an iai."
+        "1": "Consumes a certain amount of Stamina to dash forward and performs an iai."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",

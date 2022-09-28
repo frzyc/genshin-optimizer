@@ -107,7 +107,8 @@
   "passive2": {
     "name": "Second Wind",
     "description": {
-      "0": "<strong>Palm Vortex</strong> kills regenerate 2% HP for 5s. This effect can only occur once every 5s."
+      "0": "<strong>Palm Vortex</strong> kills regenerate 2% HP for 5s.",
+      "1": "This effect can only occur once every 5s."
     }
   },
   "constellation1": {

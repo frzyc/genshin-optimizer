@@ -107,7 +107,7 @@
   "passive3": {
     "name": "Hidden Strength",
     "description": {
-      "0": "Mengurangi 20% konsumsi Stamina karakter sendiri saat berlari.",
+      "0": "Mengurangi 20% konsumsi Stamina Karakter sendiri saat berlari.",
       "1": "Efek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama."
     }
   },

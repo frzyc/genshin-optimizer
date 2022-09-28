@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
-        "1": "Throws things that go boom when they hit things! Perform up to 3 explosive attacks, dealing <pyro>AoE Pyro DMG</pyro>."
+        "1": "Throws things that go boom when they hit things! Performs up to 3 explosive attacks, dealing <pyro>AoE Pyro DMG</pyro>."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",

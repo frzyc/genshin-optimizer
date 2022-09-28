@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Perform a more precise <strong>Aimed Shot</strong> with increased DMG.",
+        "1": "Performs a more precise <strong>Aimed Shot</strong> with increased DMG.",
         "2": "While aiming, flowing water will accumulate on the arrowhead. A fully charged torrential arrow will deal <hydro>Hydro DMG</hydro>."
       },
       "breakthrough": {

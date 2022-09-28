@@ -38,11 +38,11 @@
     "name": "Lame d'éclair",
     "description": {
       "0": "Libère trois ombres de foudre rapides, qui infligent des <electro>DGT Électro</electro> aux ennemis, et laissent une amulette d'abondance lorsqu'elles touchent un ennemi.",
-      "1": "Jusqu'à 2 amulettes d'abondance peuvent être ainsi générées. Réutiliser la compétence annule les amulettes d'abondance générées.",
+      "1": "Un maximum de 2 amulettes d'abondance peut être généré initialement. Réutiliser la compétence annule les amulettes d'abondance générées.",
       "2": "<br/>",
       "3": "<strong>Amulettes d'abondance</strong>",
       "4": "Lorsqu'un personnage s'approche d'une amulette d'abondance, il l'absorbe et obtient les effets suivants :",
-      "5": "Son énergie élémentaire se régénère ;",
+      "5": "Son énergie élémentaire se régénère.",
       "6": "Sa recharge d'énergie élémentaire augmente.",
       "7": "<br/>",
       "8": "<i>Vous discutez des différents chemins que peut prendre l'électricité avec Paimon.</i>"
@@ -74,7 +74,7 @@
       "2": "<strong>Voile de foudre</strong>",
       "3": "Les attaques chargées ou normales du personnage déployé font pleuvoir la Foudre majestueuse lorsqu'elles touchent, qui inflige des <electro>DGT Électro</electro>.",
       "4": "Lorsque la Foudre majestueuse touche un ennemi, elle fait récupérer de l'énergie élémentaire à ce personnage.",
-      "5": "Jusqu'à 1 Foudre majestueuse peut être déclenchée toutes les 0,5 s.",
+      "5": "Une Foudre majestueuse peut être déclenchée toutes les 0,5 s maximum.",
       "6": "<br/>",
       "7": "<i>Paimon et vous avez étudié la lumière qui traverse les nuages.</i>"
     },

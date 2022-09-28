@@ -42,7 +42,7 @@
   "skill": {
     "name": "Garra y trueno",
     "description": {
-      "0": "Caza su presa usando las técnicas que le enseñó su maestro y su Lupical.",
+      "0": "Caza su presa usando las técnicas que le enseñó su maestro y su lupical.",
       "1": "<br/>",
       "2": "<strong>Pulsar una vez</strong>",
       "3": "Ataca con las garras del Lobo del Trueno, infligiendo <electro>Daño Electro</electro> a los enemigos frente a Razor.",

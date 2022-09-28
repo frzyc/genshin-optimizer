@@ -52,7 +52,7 @@
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Exécute une succession d'entailles aussi rapides que tranchantes ; cette attaque consomme de l'endurance de façon continue.",
+        "1": "Consomme de l'endurance de façon continue pour exécuter une succession d'entailles aussi rapides que tranchantes.",
         "2": "L'attaque chargée se termine sur un coup puissant."
       },
       "plunging": {
@@ -92,7 +92,7 @@
     },
     "skillParams": {
       "0": "DGT compétence",
-      "1": "DGT de base Épée de lumière",
+      "1": "DGT de base épée de lumière",
       "2": "DGT élémentaires par cumul d'énergie",
       "3": "Limite de cumuls d'énergie",
       "4": "Temps de recharge",

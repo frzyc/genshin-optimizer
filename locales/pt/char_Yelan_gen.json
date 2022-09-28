@@ -15,7 +15,7 @@
         "1": "Realiza um <strong>disparo com mira</strong> de maior dano e precisão.",
         "2": "Ao mirar, o fluxo de água acumulará continuamente na ponta da flecha. Quando a flecha estiver totalmente carregada com esse fluxo torrencial, infligirá <hydro>Dano Hydro</hydro>.",
         "3": "<strong>Ruptura</strong>",
-        "4": "Depois de 5s fora do campo de batalha, Yelan entra no estado \"Ruptura\", no qual o carregamento de seu próximo Disparo com Mira terá seu tempo necessário reduzido em 80%, e quando estiver totalmente carregado, ela disparará a sua \"Flecha da Ruptura\", que infligirá <hydro>Dano Hydro em AdE</hydro> baseado em sua Vida Máxima."
+        "4": "Depois de 5s fora de batalha, Yelan entra no estado \"Ruptura\", no qual o carregamento de seu próximo Disparo com Mira terá seu tempo necessário reduzido em 80%, e quando estiver totalmente carregado, ela disparará a sua \"Flecha da Ruptura\", que infligirá <hydro>Dano Hydro em AdE</hydro> baseado em sua Vida Máxima."
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",

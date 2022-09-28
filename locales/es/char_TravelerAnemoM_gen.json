@@ -50,8 +50,8 @@
       "10": "<i>Hablaste con Paimon de cómo atrapar el viento sin forma.</i>"
     },
     "skillParams": {
-      "0": "Daño de corte inicial",
-      "1": "Daño de corte Máx.",
+      "0": "Daño de ráfaga inicial",
+      "1": "Daño de ráfaga máx.",
       "2": "Daño de explosión inicial",
       "3": "Daño de explosión de viento máx.",
       "4": "TdE Básico",

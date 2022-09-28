@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
-        "1": "Perform up to 3 consecutive strikes."
+        "1": "Performs up to 3 consecutive strikes."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -43,7 +43,7 @@
     "name": "Spirit-Warding Lamp: Troubleshooter Cannon",
     "description": {
       "0": "Directs a Spirit-Warding Lamp to fire off a Troubleshooter Shot at opponents, dealing <electro>Electro DMG</electro>.",
-      "1": "After the Troubleshooter Shot hits, it will create 2 After-Sales Service Rounds that will automatically track opponents and deal <electro>Electro DMG</electro>.",
+      "1": "After the Troubleshooter Shot hits, it will create 2 After-Sales Service Rounds that will automatically track nearby opponents and deal <electro>Electro DMG</electro>.",
       "2": "<br/>",
       "3": "<i>It is said that Dori can fix any problem for you... for the right price.</i>"
     },

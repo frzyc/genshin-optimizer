@@ -175,6 +175,18 @@
     "name": "Antike Eisenmünze",
     "description": "Eine antike Eisenmünze, von der Ulman sagt, man könne sie für viel Geld verkaufen. Fühlt sich ganz normal an ..."
   },
+  "BusinessEarnings": {
+    "name": "Betriebseinnahmen",
+    "description": "Eine beachtliche Menge „Weingelee“. Es ist das Gesamtergebnis des Wohltätigkeitsverkaufs. Zum Schlussakkord des „Weinlesefests“ wird Bernhard diese gegen Mora eintauschen und den bedürftigen Alten und Kindern spenden."
+  },
+  "UsableFunds": {
+    "name": "Verfügbare Finanzmittel",
+    "description": "Eine begrenzte Menge „Weingelee“. Sie ist das zu investierende Startkapital für den Betrieb eines Ladens beim Wohltätigkeitsverkauf.\\nKunden anzuziehen und die Einnahmen zu erhöhen, sind die zwei Hauptziele jedes Geschäfts. Der Kapitaleinsatz muss genau geplant werden, um die Anziehungskraft des Ladens zu stärken."
+  },
+  "StrategicInspiration": {
+    "name": "Strategische Inspiration",
+    "description": "Hier sind die verschiedensten Unternehmenstheorien und Beispiele für den erfolgreichen Betrieb verzeichnet. Für belesene Leute kann jede Seite, jedes Wort eine inspirierende Wirkung mit sich bringen und ihnen dabei helfen, ihre Geschäftsstrategie zu verbessern."
+  },
   "Primogem": {
     "name": "Urgestein",
     "description": "Ein urzeitliches Mineral, das dem finsteren Universum einen Glanz, gemacht aus Träumen und Hoffnung, gibt."
@@ -507,6 +519,18 @@
     "name": "Tighnari",
     "description": "Ein junger Gelehrter, der sich in der Botanik gut auskennt. Derzeit arbeitet er als Waldhütermeister im Avidya-Wald. Er ist aufrichtig, warmherzig und gut darin, ungeschickte Schüler zu unterrichten."
   },
+  "Nilou": {
+    "name": "Nilou",
+    "description": "Die berühmte Tänzerin des Theaters Zubayr. Sie hat ein reines Herz und ist voller Wärme. Ihre Tänze sind elegant und anmutig."
+  },
+  "Cyno": {
+    "name": "Cyno",
+    "description": "Mahamatra an der Akademie, der die Arbeit der Gelehrten beaufsichtigt. Bei seiner Arbeit ist er effizienter als das „Große Vayuvyastra“, das das Kshahrewar-Institut geschaffen hat."
+  },
+  "Candace": {
+    "name": "Candace",
+    "description": "Beschützerin des Aaru-Dorfs, die Nachfahrin von König Deshret, deren linkes Auge golden wie Bernstein strahlt."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna von Kamisato Ayaka",
     "description": "Material zum Aktivieren von Kamisato Ayakas Sternbild"
@@ -726,6 +750,18 @@
   "TighnarisStellaFortuna": {
     "name": "Stella Fortuna von Tighnari",
     "description": "Material zum Aktivieren von Tighnaris Sternbild"
+  },
+  "NilousStellaFortuna": {
+    "name": "Stella Fortuna von Nilou",
+    "description": "Material zum Aktivieren von Nilous Sternbild"
+  },
+  "CynosStellaFortuna": {
+    "name": "Stella Fortuna von Cyno",
+    "description": "Material zum Aktivieren von Cynos Sternbild"
+  },
+  "CandacesStellaFortuna": {
+    "name": "Stella Fortuna von Candace",
+    "description": "Material zum Aktivieren von Candaces Sternbild"
   },
   "GnosticHymnOldNotes": {
     "name": "Gnostiker-Erlebnispass – Erste Aufzeichnungen",
@@ -1877,7 +1913,7 @@
   },
   "VersesOfEquilibrium": {
     "name": "Schrift vom Gleichgewicht",
-    "description": "Diese alte heilige Schrift gedenkt Rex Lapis, der Adepten und der Yakshas und ist darüber hinaus ein Zeugnis des frühen Glaubens an den Archon."
+    "description": "Diese alte heilige Schrift gedenkt Rex Lapis, der Adepten und der Yaksha und ist darüber hinaus ein Zeugnis des frühen Glaubens an den Archon."
   },
   "RecordsOfTheGallantTheHermit": {
     "name": "Aufzeichnungen eines Helden – Vom Einsiedler",
@@ -1936,8 +1972,8 @@
     "description": "Eine Schatzkarte, die du von Bolai bekommen hast. Wo der Schatz wohl versteckt ist?"
   },
   "YakshasTheGuardianAdepti": {
-    "name": "Yakshas, die schützenden Adepten",
-    "description": "„Schmuckkästchen Liyue“ aus der von Masudi, einem Gelehrten aus Sumeru, verfassten Enzyklopädie über Brauchtümer „Ausflug durch Liyue, das Reich des Gesteins“ ist so kompliziert und unverständlich geschrieben, dass es von Buchhändlern und Lesern gleichermaßen geschmäht wird. „Yakshas, die schützenden Adepten“ ist ein Band aus der Sammlung, in dem die Heldentaten der Yakshas, die Seite an Seite mit dem Geo-Archon gekämpft haben, vorgestellt werden."
+    "name": "Yaksha, die schützenden Adepten",
+    "description": "„Schmuckkästchen Liyue“ aus der von Masudi, einem Gelehrten aus Sumeru, verfassten Enzyklopädie über Brauchtümer „Ausflug durch Liyue, das Reich des Gesteins“ ist so kompliziert und unverständlich geschrieben, dass es von Buchhändlern und Lesern gleichermaßen geschmäht wird. „Yaksha, die schützenden Adepten“ ist ein Band aus der Sammlung, in dem die Heldentaten der Yaksha, die Seite an Seite mit dem Geo-Archon gekämpft haben, vorgestellt werden."
   },
   "WitnessSigil": {
     "name": "Bezwingersiegel",
@@ -3524,8 +3560,8 @@
     "description": "Ein Edelstein, der eine elektrische Aura hat und der sich ziemlich elektrisierend anfühlt. Er hat eine unbekannte Verbindung zu den Felssäulen auf der Insel."
   },
   "NakuWeedSeed": {
-    "name": "Samen vom Naku-Kraut",
-    "description": "Eine Tüte mit Samen vom Naku-Kraut."
+    "name": "Naku-Kraut-Samen",
+    "description": "Eine Tüte mit Naku-Kraut-Samen."
   },
   "PipingHotBraisedMeat": {
     "name": "Kochendheißer Fleischeintopf",
@@ -3819,6 +3855,18 @@
     "name": "Sumeru-Rose",
     "description": "Eine helle und wunderschöne tief purpurne Blume, die einen jeden vorbeikommenden zum Anhalten bewegenden Duft von sich gibt. Sie wird als Rose bezeichnet, weil sie genau betrachtet der Definition einer Rose entspricht."
   },
+  "Redcrest": {
+    "name": "Rotdornfrucht",
+    "description": "Die Früchte einer Pflanze, die auch unter den widrigen Bedingungen der Wüste überleben kann. Der starke Kontrast zwischen gelbem Wüstensand und kräftig roten Früchten rührt die Betrachter sehr."
+  },
+  "AjilenakhNut": {
+    "name": "Dattel",
+    "description": "Früchte immergrüner Bäume, die in Wüstenoasen wachsen. Unter der harten Fruchtschale findet sich seidenweiches, üppiges, wohlschmeckend süßes Fruchtfleisch. Für die Bewohner des Sandmeeres ist diese Art von Frucht eine bedeutende Nahrungsquelle."
+  },
+  "Scarab": {
+    "name": "Skarabäus",
+    "description": "Ein in den Weiten des Sandmeeres lebender, hartnäckiger Käfer. Die goldenen Muster auf seinem Panzer scheinen auf eine enge Verbindung mit den überall in der Wüste verstreuten uralten Ruinen hinzudeuten."
+  },
   "ActivatedStarshroom": {
     "name": "Aktivierter Sternpilz",
     "description": "Ein Pilz mit einer an einen fünf-zackigen Stern erinnernden Kappe, in dem viel Lebensenergie steckt. Er sieht aus, als platze er fast vor Lebenskraft."
@@ -4085,7 +4133,7 @@
   },
   "SupersizedFirework": {
     "name": "Supergroßes Feuerwerk",
-    "description": "Yoimiyas ganzer Stolz als aktuelle Inhaberin von Naganoharas Feuerwerksartikeln. Es scheint noch in einem experimentellen Zustand zu sein. Da kann doch nichts schief gehen ... oder?"
+    "description": "Yoimiyas ganzer Stolz als aktuelle Inhaberin von Naganoharas Feuerwerksartikeln. Es scheint noch in einem experimentellen Zustand zu sein. Da kann doch nichts schiefgehen ... oder?"
   },
   "SpecialMagicalCrystalOre": {
     "name": "Besonderes magisches Kristallerz",
@@ -4565,7 +4613,7 @@
   },
   "WoodenCageKey": {
     "name": "Holzkäfigschlüssel",
-    "description": "Ein Schlüssel, der von einem der Beamten der Kanjou-Verwaltung weggeworfen wurde. Es wird nützlich sein, um Shinnojou zu retten."
+    "description": "Ein Schlüssel, der von einem der Beamten der Kanjou-Verwaltung weggeworfen wurde. Er wird nützlich sein, um Shinnojou zu retten."
   },
   "DamagedStoneSlate": {
     "name": "Beschädigte Steintafel",
@@ -4825,7 +4873,7 @@
   },
   "Bija": {
     "name": "Bija",
-    "description": "Diese Kristallisation ist der wertvollste Schatz der Aranara. Auch wenn es eine Frucht ist, ist sie doch der Same der Hoffnung."
+    "description": "Die Kristallisation der wertvollsten Dinge der Aranara. Auch wenn sie eine Frucht ist, ist sie doch der Samen der Hoffnung."
   },
   "AranasFlower": {
     "name": "Blume von Arana",
@@ -4857,7 +4905,7 @@
   },
   "AranagasFlower": {
     "name": "Blume von Aranaga",
-    "description": "Eine von Aranaga geschenkte Blume.\\n„Rückkehr des Regens, Freude der Pflanzen ... Granatäpfel singen, Äpfel klatschen.“"
+    "description": "Eine von Aranaga geschenkte Blume.\\n„Rückkehr des Regens, Freude der Pflanzen ... die Granatäpfel singen, die Äpfel klatschen.“"
   },
   "AranakinsFlower": {
     "name": "Blume von Aranakin",
@@ -5278,6 +5326,102 @@
   "TreasureMapInABox": {
     "name": "Schatzkarte in einer Kiste",
     "description": "Eine Schatzkarte am Boden einer Kiste, die mit einfachen Markierungen den Standort der „guten Sache“ anzeigt."
+  },
+  "GlintingComponent": {
+    "name": "Glitzernde Komponente",
+    "description": "Ein Teil des Urkonstrukts, das den Weg versperrt, scheint auf eine naheliegende Vorrichtung zu reagieren und flackert ununterbrochen."
+  },
+  "SacredSealValley": {
+    "name": "Heiliger Siegelstein – Tal",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Gelehrte sind der Ansicht, die Zeichen bedeuteten ursprünglich „Tal“."
+  },
+  "SacredSealBirdHead": {
+    "name": "Heiliger Siegelstein – Vogelkopf",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Die darauf eingravierten Zeichen haben nach einer verbreiteten Meinung die Form von Vogelköpfen."
+  },
+  "SacredSealRaisedArm": {
+    "name": "Heiliger Siegelstein – Erhobener Arm",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Gelehrte sind der Ansicht, die Zeichen seien wahrscheinlich nicht nur phonetisch, sondern hätten auch eine von Ehrfurcht und Gehorsamkeit erfüllte Bedeutung."
+  },
+  "SacredSealSandstorm": {
+    "name": "Heiliger Siegelstein – Sandsturm",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Die Form der Zeichen dürfte den Wirbelstürmen der Wüste entstammen."
+  },
+  "SacredSealAuricle": {
+    "name": "Heiliger Siegelstein – Ohrmuschel",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Die Form der Zeichen darauf erinnert an eine Ohrmuschel, es gibt aber auch Gelehrte, die anderer Meinung sind."
+  },
+  "SacredSealForest": {
+    "name": "Heiliger Siegelstein – Wald",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Gelehrte meinen, diese Zeichen ständen für Wälder, was bedeuten würde, dass die Wüste einst gar nicht die heutige Einöde war."
+  },
+  "SacredSealThunderstrike": {
+    "name": "Heiliger Siegelstein – Donnerschlag",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Die Form der Zeichen darauf dürfte einen der in der Wüste seltenen Blitze symbolisieren."
+  },
+  "SacredSealDanger": {
+    "name": "Heiliger Siegelstein – Gefahr",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Die Zeichen, die darauf eingemeißelt sind, zeigen die Gefahr durch einen über einer Klippe hängenden Hammer. Diese Zeichen sind erst etwas später entstanden."
+  },
+  "SacredSealChiselHammer": {
+    "name": "Heiliger Siegelstein – Hammer",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Die darin eingemeißelten Symbole zählen zu den ältesten Zeichen überhaupt."
+  },
+  "SacredSealSunrise": {
+    "name": "Heiliger Siegelstein – Sonnenaufgang",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Die Form der Zeichen dürfte der aufsteigenden Sonne entlehnt sein."
+  },
+  "SacredSealRightToRule": {
+    "name": "Heiliger Siegelstein – Herrschaftsanspruch",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Die Zeichen sehen wie ein auf einem Thron sitzender Herrscher aus."
+  },
+  "SacredSealSheepHead": {
+    "name": "Heiliger Siegelstein – Schafkopf",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind. Auch wenn die Herkunft der Form dieses Zeichen unbekannt ist, scheinen sie einst Teil eines Gebäudes gewesen zu sein. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Die darauf eingravierten Zeichen haben nach einer verbreiteten Meinung die Form von Schafköpfen."
+  },
+  "SacredSealCrocodileHead": {
+    "name": "Heiliger Siegelstein – Krokodilkopf",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Die darauf eingravierten Zeichen dürften vom furchterregend aufgerissenen Maul eines Stachelkrokodils hergeleitet sein."
+  },
+  "SacredSealGiantSerpent": {
+    "name": "Heiliger Siegelstein – Riesenschlange",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Während die Gelehrten der Redelehre meinen, diese Zeichen symbolisierten eine Riesenschlange, sind die Gelehrten der Lebenskunde einer anderen Meinung: Im jetzigen Roten Sandmeer gibt es keine Spuren von Schlangen, daher ist die Herleitung der Zeichen noch umstritten."
+  },
+  "SacredSealCeremony": {
+    "name": "Heiliger Siegelstein – Opfer",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Die eingemeißelten Zeichen scheinen ursprünglich eine Opfergabe dargestellt zu haben, aber die Bedeutung hat sich über die Opfergabe hinaus entwickelt."
+  },
+  "SacredSealLabor": {
+    "name": "Heiliger Siegelstein – Arbeit",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. Die Zeichen darauf sind so alt wie die auf dem heiligen Siegelstein – Hammer. Sie zählen zu den ältesten Zeichen überhaupt."
+  },
+  "SacredSealDune": {
+    "name": "Heiliger Siegelstein – Düne",
+    "description": "Eine Steinplatte, in die antike Zeichen eingraviert sind, die einst Teil eines Gebäudes gewesen zu sein scheint. Nachdem sie viele Jahre im Sandmeer geschlummert hat, weiß niemand mehr, wessen Wünsche sie trägt. In den aus der Zeit des Königs Deshret hinterlassenen Dokumenten ist erkennbar, dass es für unterschiedliche Formen von Sanddünen unterschiedliche Namen gab, was den Forschern viel Kopfzerbrechen bereitet hat."
+  },
+  "GoldenRoseSeeds": {
+    "name": "Goldrosen-Samen",
+    "description": "Anders als Sumeru-Rosen sind Goldrosen gut an das Leben in der Wüste angepasst. Zum Überleben schützt sie sich mit Lehm und Steinen, aber in geeigneten Umgebungen kann sie zu ihrer eigentlichen Schönheit aufblühen."
+  },
+  "TransparentRuinsRecordI": {
+    "name": "Aufzeichnungen der durchsichtigen Ruinen I",
+    "description": "Eine in durchsichtigen Ruinen in der Nähe des Mausoleums von König Deshret gefundene Steinplatte. Sie scheint die Niederschrift einer verlorenen Zivilisation zu sein ..."
+  },
+  "RecordOfLambDevourerRock": {
+    "name": "Aufzeichnung des Lammfresser-Felsens",
+    "description": "Eine in der geheimen Basis der Goldbrigade bei Lammfresser-Felsen entdeckte Steinplatte. Sie scheint die Niederschrift einer verlorenen Zivilisation zu sein ..."
+  },
+  "RecordOfTheTombOfCarouses": {
+    "name": "Aufzeichnung vom Mausoleum des Trunks",
+    "description": "Inmitten des Mausoleums des Trunks gefundene Steinplatte. Sie scheint die Niederschrift einer verlorenen Zivilisation zu sein ..."
+  },
+  "SoheilsOldNotes": {
+    "name": "Soheils archäologische Notizen",
+    "description": "Vom Gelehrten Soheil in seiner Jugend bei der archäologischen Erforschung der Wüste hinterlassene Aufzeichnungen. Sie sehen zwar alt aus, sind aber ohne Falten."
+  },
+  "RecordOfAarusShut": {
+    "name": "Aufzeichnung von Aarus Spiegelbild",
+    "description": "Eine aus dem höchsten Teil des Mausoleums von König Deshret erhaltene Steinplatte. Sie scheint die Niederschrift einer verlorenen Zivilisation zu sein ..."
   },
   "TwilightTheaterHeadsNotes": {
     "name": "Manuskript des Leiters der Theatergruppe Zwielicht",
@@ -6733,7 +6877,7 @@
   },
   "StormcrestPie": {
     "name": "Stürmische Calzone",
-    "description": "Eulas Spezialzubereitung. Es ist schwer zu sagen, ob die Abweichung von der traditionellen Vollmond-Form der absichtliche Rebell gegen die Tradition ist oder ihr „Zahn für Zahn”-Ethos ausdrücken soll. Unter der goldenen Kruste kommt ein salziger, frischer, geräucherter Geschmack zum Vorschein, der in seiner Fülle und Intensität wahrscheinlich von keinem anderen in der Mondstadt erreicht wird. Am besten sagst du ihr das aber nicht, damit sie sich nicht daran „erinnert“."
+    "description": "Eulas Spezialzubereitung. Es ist schwer zu sagen, ob die Abweichung von der traditionellen Vollmond-Form der absichtliche Rebell gegen die Tradition ist oder ihr „Zahn für Zahn”-Ethos ausdrücken soll. Unter der goldenen Kruste kommt ein salziger, frischer, geräucherter Geschmack zum Vorschein, der in seiner Fülle und Intensität wahrscheinlich von keinem anderen in Mondstadt erreicht wird. Am besten sagst du ihr das aber nicht, damit sie sich nicht daran „erinnert“."
   },
   "SuspiciousChickenTofuPudding": {
     "name": "Misslungener Hühnerpudding",
@@ -7065,7 +7209,7 @@
   },
   "DeliciousOmeletteRice": {
     "name": "Leckerer Omelette-Reis",
-    "description": "Ein Hauptgericht, eingewickelt in eine Eihaut. Wenn man die äußere Schicht der Eihaut, die noch nicht ganz gar gekocht ist, sanft ansticht, wickelt sie sich, garniert mit einer dicken süß-sauren Soße, um den dicht gepackten weißen Reis, und der Appetit eines jeden Kunden wird geweckt. Nach dem genussvollen Verzehr kann man sich ein Lächeln nicht verkneifen."
+    "description": "Ein Hauptgericht, eingewickelt in eine Eihaut. Wenn man die äußere Schicht der Eihaut, die noch nicht ganz gar gekocht ist, sanft ansticht, wickelt sie sich, garniert mit einer dicken süßsauren Soße, um den dicht gepackten weißen Reis, und der Appetit eines jeden Kunden wird geweckt. Nach dem genussvollen Verzehr kann man sich ein Lächeln nicht verkneifen."
   },
   "SuspiciousTaiyaki": {
     "name": "Misslungenes Taiyaki",
@@ -7517,15 +7661,15 @@
   },
   "SuspiciousSunsetBerryTea": {
     "name": "Misslungener Dämmerfrucht-Beerentee",
-    "description": "Süß-saures Fruchtgetränk. Um den sauren Geschmack zu unterdrücken hast du Zucker hinzugefügt, leider hast du dabei aber nicht auf die Menge achtgegeben und zuviel hinzugegeben. Ursprünglich wolltest du einen Durstlöscher trinken, aber jetzt wirst du umso durstiger, je mehr du trinkst. Am besten gibst du noch ein bisschen Wasser hinzu ..."
+    "description": "Süßsaures Fruchtgetränk. Um den sauren Geschmack zu unterdrücken hast du Zucker hinzugefügt, leider hast du dabei aber nicht auf die Menge achtgegeben und zuviel hinzugegeben. Ursprünglich wolltest du einen Durstlöscher trinken, aber jetzt wirst du umso durstiger, je mehr du trinkst. Am besten gibst du noch ein bisschen Wasser hinzu ..."
   },
   "SunsetBerryTea": {
     "name": "Dämmerfrucht-Beerentee",
-    "description": "Süß-saures Fruchtgetränk. Reine Teebasis, gemischt mit Fruchtaroma. Mit einem Schluck kann der erfrischende Geschmack jede Dumpfheit und Hitze zerstreuen."
+    "description": "Süßsaures Fruchtgetränk. Reine Teebasis, gemischt mit Fruchtaroma. Mit einem Schluck kann der erfrischende Geschmack jede Dumpfheit und Hitze zerstreuen."
   },
   "DeliciousSunsetBerryTea": {
     "name": "Leckerer Dämmerfrucht-Beerentee",
-    "description": "Süß-saures Fruchtgetränk. Der sanfte Geschmack dieses duftenden Tees entführt deine Gedanken auf eine Reise in die Ferne. Mit einem Schluck bekommst du das Gefühl in einem blühenden Garten zu entspannen, beseelt von der kühlenden Brise, die ein fruchtiges Aroma in sich trägt."
+    "description": "Süßsaures Fruchtgetränk. Der sanfte Geschmack dieses duftenden Tees entführt deine Gedanken auf eine Reise in die Ferne. Mit einem Schluck bekommst du das Gefühl in einem blühenden Garten zu entspannen, beseelt von der kühlenden Brise, die ein fruchtiges Aroma in sich trägt."
   },
   "SuspiciousMilkyMushroomCrispTower": {
     "name": "Misslungener kross gebratener Milchpilzturm",
@@ -7538,6 +7682,94 @@
   "DeliciousMilkyMushroomCrispTower": {
     "name": "Leckerer kross gebratener Milchpilzturm",
     "description": "Eine knusprige Delikatesse. Die leicht cremigen Noten zergehen auf deiner Zunge, während du die saftigen Pilze und das knusprige Brot mampfst. Das unübertroffene Gefühl der Befriedigung macht dich irgendwie unersättlich – du zögerst nicht einmal, die Brotkrümel von deinen Fingerspitzen zu lecken."
+  },
+  "SuspiciousCoconutCharcoalCake": {
+    "name": "Misslungener gebackener Dattelfladen",
+    "description": "Ein süßer, rabenschwarzer Fladen. Bei diesem schwarzen Gericht braucht es erst einiges an Überwindung, um einen Bissen zu wagen. Und wenn man erst einmal dieses trockene und raue Gefühl im Mund hat ... fragt man sich nicht ohne Grund, ob man nicht aus Versehen ein Stück Kohle auf den Teller gelegt hat."
+  },
+  "CoconutCharcoalCake": {
+    "name": "Gebackener Dattelfladen",
+    "description": "Ein süßer, rabenschwarzer Fladen. Zuerst lässt man die Datteln zu Pulver verbrennen, filtriert es und gibt es zum Teig hinzu, verrührt es und backt damit den Kuchen. Das nicht besonders erwähnenswerte fertige Produkt hat Noten von Dattelaroma und passt gut zum süßen Geschmack von Konfitüre."
+  },
+  "DeliciousCoconutCharcoalCake": {
+    "name": "Leckerer gebackener Dattelfladen",
+    "description": "Ein süßer, rabenschwarzer Fladen. Ein delikater, glänzender Kuchen mit dem angenehm warmen Gefühl von Datteln und einem seidigen, leicht feuchten Gefühl, wenn man einen Bissen davon nimmt ... Erschöpfung und Traurigkeit werden von einem Stückchen „schwarzer Süße“ vertrieben. So wie man keinen Menschen nur nach dem Äußeren beurteilen sollte, so ist das auch bei Kuchen."
+  },
+  "SuspiciousBaklava": {
+    "name": "Misslungenes Baklava",
+    "description": "Eine traditionelle Süßspeise Sumerus. Ein ungestüm süßer Angriff entfaltet sich wie die Explosion einer Granate im Mund und versetzt selbst die Zähne in leichte Schmerzen ... Eine angemessene Menge Zucker macht fröhlich, aber eine solch überbordende Menge ist kaum zu ertragen."
+  },
+  "Baklava": {
+    "name": "Baklava",
+    "description": "Eine traditionelle Süßspeise Sumerus. Inmitten der Teigschichten finden sich gehackte Nüsse und vor dem Backen wurde das Gebäck mit warmer Butter besprenkelt. Beim Herausnehmen aus dem Ofen darf man das Beträufeln mit Sirup nicht vergessen. Manche Gelehrte essen vor Klausuren ein Stück von dieser „Burg der Süße“, um Kraft zu sammeln, weshalb es die beliebteste Süßspeise an der Akademie ist."
+  },
+  "DeliciousBaklava": {
+    "name": "Leckeres Baklava",
+    "description": "Eine traditionelle Süßspeise Sumerus. Ein Gelehrter sagte einst, die Menschen von Sumeru könnten einfach in zwei Typen unterteilt werden. Der erste Typ isst Süßspeisen, um zu leben. Der zweite wiederum lebt, um Süßspeisen zu essen. Dieser sich in unzähligen Schichten auftürmende Blätterteig mit dem markanten Aroma von geschmolzener Butter und Honig bringt alle Menschen, die dieses Gericht probieren, dazu, vom ersten zum zweiten Typ überzutreten."
+  },
+  "SuspiciousCandiedAjilenakhNut": {
+    "name": "Misslungene Honigdatteln",
+    "description": "Ein reichhaltig gefülltes Dessert. Die enthaltenen Nüsse sind wie kleine, im Boden der Wüste verborgene Steine. Wenn man nicht gut achtgibt, verschwören sie sich gegen den Genießer. Süßer Geschmack bringt Freude, aber harte Stücke zwischen den Zähnen machen diese Freude zunichte."
+  },
+  "CandiedAjilenakhNut": {
+    "name": "Honigdatteln",
+    "description": "Ein reichhaltig gefülltes Dessert. Zuerst muss man das Zuckerwasser kochen lassen, bis es klar wird. Dann muss man es mit der Füllung und Sumeru-Sesammus vermischen und den sich ergebenden Sirup schließlich nach gleichmäßigem Umrühren in einer Form von der Sonne zu dem knusprigen fertigen Produkt trocknen lassen. Es heißt, dass es im kalten Snezhnaya eine vergleichbare Speise gebe, die sich nur im Geschmack minimal unterscheide. Natürlich glauben die Bewohner beider Reiche, dass das jeweils eigene Rezept das wohlschmeckendste ganz Teyvats sei."
+  },
+  "DeliciousCandiedAjilenakhNut": {
+    "name": "Leckere Honigdatteln",
+    "description": "Ein reichhaltig gefülltes Dessert. Der Honig selbst zerschmilzt auf der Zunge, die darin enthaltenen Nüsse, Schwanendaunen umhüllten Edelsteinen gleich, bringen eine große Vielfalt an Überraschungen mit sich. Kaum sind sie im Mund, beginnt die Süße ins Herz vorzudringen und es fühlt sich an, als schwimme man selbst in einer Honigwabe ... Beim nächsten Mal bitte noch ein bisschen mehr!"
+  },
+  "SuspiciousPadisarahPudding": {
+    "name": "Misslungener Padisarah-Pudding",
+    "description": "Ein in Sumeru beliebtes Dessert. Mit einem Bissen heruntergeschluckt führt er den herrlichen Geschmack von blumiger Milch mit sich ... Es schmeckt nicht schlecht, aber es ist doch ganz anders als der Pudding, den man sich vorstellt. War das Mischungsverhältnis etwa falsch?"
+  },
+  "PadisarahPudding": {
+    "name": "Padisarah-Pudding",
+    "description": "Ein in Sumeru beliebtes Dessert. Zuerst werden Blütenblätter von Padisarah und Sumeru-Rose ausgepresst, dann mit Milch vermischt, Gelatine, Zucker und andere Zutaten hinzugegeben, bis sich die Mischung verfestigt. Süßes Aussehen und süßer Geschmack, auf allen Festen Sumerus gern gesehen."
+  },
+  "DeliciousPadisarahPudding": {
+    "name": "Leckerer Padisarah-Pudding",
+    "description": "Ein in Sumeru beliebtes Dessert. Sobald man es im Mund hat, entfaltet sich eine wahre Geschmacksexplosion, als wandle man in luftigen Höhen von Wolken aus Milch. Wenn man dem Geschmack genauer nachgeht, verbinden sich der Geschmack von Padisarah und Sumeru-Rose zu einem starken, duftenden Aroma. Selbst nach dem letzten Bissen versiegt die Lust darauf nicht und man findet sich selbst dabei, den Löffel abzulecken, auf dass dieser Geschmack noch ein wenig länger anhalten möge."
+  },
+  "SuspiciousAaruMixedRice": {
+    "name": "Misslungener gemischter Aaru-Reis",
+    "description": "Ein sättigendes Hauptgericht. Aufgrund zu großer Ungeduld wurde der Reis vor dem Verzehr nicht gründlich durchmischt, weshalb der Reis teilweise übermäßig viel vom Geschmack der Tomate aufgenommen hat und ein anderer Teil nahezu geschmacklos geblieben ist ... Besser noch einmal mischen."
+  },
+  "AaruMixedRice": {
+    "name": "Gemischter Aaru-Reis",
+    "description": "Ein sättigendes Hauptgericht. Dieses Nahrungsmittel bringt Reis, Weizenmehl und Bohnen zusammen. Sein wahres Geheimnis ist aber der süßsaure Geschmack der Tomate. Aufgrund seiner weit verbreiteten Zutaten und deren günstigen Preises ist es eine gute Wahl, um den Hunger zu stillen. Daher breitet sich die Art der Herstellung allmählich vom Aaru-Dorf auf das ganze Gebiet von Sumeru aus."
+  },
+  "DeliciousAaruMixedRice": {
+    "name": "Leckerer gemischter Aaru-Reis",
+    "description": "Ein sättigendes Hauptgericht. Der Reis wurde Korn für Korn mit kräftigem Tomatensaft benetzt. Obwohl kein Öl hinzugefügt wurde, ist dieses vegane Gericht noch viel verlockender als der Geruch von gebratenem Fleisch. Der sich wie Sanddünen auftürmende Wohlgeschmack bringt ein ungewöhnlich befriedigendes Gefühl mit sich."
+  },
+  "SuspiciousFruitsOfTheFestival": {
+    "name": "Misslungener Festtagssaft",
+    "description": "Ein alkoholfreies Getränk mit klarer, anziehender Farbe. Eine schlechte Beherrschung des Umgangs mit der Säure des Wolfshakens führt zu einer, die Zunge betäubenden Wirkung. Wa... Was ist das ... In der Ferne hört man das Wolfsgeheul des Wolfenlaufs. Das muss eine Illusion sein ..."
+  },
+  "FruitsOfTheFestival": {
+    "name": "Festtagssaft",
+    "description": "Ein alkoholfreies Getränk mit klarer, anziehender Farbe. Dämmerfrucht und Wolfshaken werden getrennt ausgepresst und abgeschmeckt, bevor sie in der Reihenfolge ihrer oberen Erwähnung ins Glas geschüttet werden. Das erfrischend kühle Gefühl im Mund und die angenehme Farbe wecken angenehme Erinnerungen an Urlaube. Um den richtigen Effekt zu erzielen, muss man die Herstellungsreihenfolge genau einhalten!"
+  },
+  "DeliciousFruitsOfTheFestival": {
+    "name": "Leckerer Festtagssaft",
+    "description": "Ein alkoholfreies Getränk mit klarer, anziehender Farbe. Der das Herz erquickende Geschmack bringt einen traumtänzerisch leichten Genuss mit sich. Ein einziger kleiner Schluck genügt, um sich wie an einem weißen, funkelnden Sandstrand zu fühlen. Die glitzernden Meereswellen brechen sich zum Takt der Musik, in welcher sich die Leichtigkeit der Freizeit findet."
+  },
+  "SwirlingSteps": {
+    "name": "Wirbelnder Tanz",
+    "description": "Nilous Spezialzubereitung. Im kristallklaren Glas findet sich, einem prächtigen Schmuckkästchen gleich, der im Mund zerschmelzende süßlich weiche Pudding. Dieser rötliche Glanz ... weckt bei jedem die Erinnerung an Nilous wirbelnden Tanz, diese feurig, glänzende Gestalt. Man kann nicht anders, als zu wünschen, dieser Tanz nähme nie ein Ende."
+  },
+  "DuelSoul": {
+    "name": "Kämpferseele",
+    "description": "Cynos Spezialzubereitung. Glänzende Reiskörner türmen sich zu einem unvorstellbaren Hügel auf. Gräbt man sich mit einem Löffel in ihn hinein, findet man geschmackvoll saftiges Fleisch, welches im Herzen sofort ein nicht in Worte zu fassendes Verlangen auslösen. Man verspürt sofort den Wunsch, sich in eine sorgenfreie Partie „Geniale Beschwörung“ zu stürzen!"
+  },
+  "UtmostCare": {
+    "name": "Mit größter Hingabe",
+    "description": "Candaces Spezialzubereitung. Vorm Servieren riechst du bereits diesen auf die Nase einstürmenden Duft. Es scheint, als sei Candace auch im Schutz des „Appetits“ sehr gewissenhaft ... Allein die Menge ist noch ein wenig größer als bei einem gewöhnlichen gemischten Aaru-Reis. Wie soll man diese „fast schon übermäßige Hingabe“ ganz aufessen?"
+  },
+  "SparklingBerryJuice": {
+    "name": "Sprudelnd-saurer Beerensaft",
+    "description": "Ein neu kreiertes alkoholfreies Getränk. Valbeeren unterschiedlicher Reife fügen dem Beerensaft Schichten von Nachgeschmack, die von Süß bis Sauer reichen, hinzu. Das eiskalte, mit Kohlensäure versetzte Wasser erfrischt das Herz und erlaubt dir, eine unbesorgte Zeit zu verbringen."
   },
   "RecipeItem": {
     "name": "Objekt für Rezepte",
@@ -8051,6 +8283,30 @@
     "name": "Rezept: Kross gebratener Milchpilzturm",
     "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Kross gebratener Milchpilzturm“."
   },
+  "RecipeCoconutCharcoalCake": {
+    "name": "Rezept: Gebackener Dattelfladen",
+    "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Gebackener Dattelfladen“."
+  },
+  "RecipeBaklava": {
+    "name": "Rezept: Baklava",
+    "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Baklava“."
+  },
+  "RecipeCandiedAjilenakhNut": {
+    "name": "Rezept: Honigdatteln",
+    "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Honigdatteln“."
+  },
+  "RecipePadisarahPudding": {
+    "name": "Rezept: Padisarah-Pudding",
+    "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Padisarah-Pudding“."
+  },
+  "RecipeAaruMixedRice": {
+    "name": "Rezept: Gemischter Aaru-Reis",
+    "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Gemischter Aaru-Reis“."
+  },
+  "RecipeFruitsOfTheFestival": {
+    "name": "Rezept: Festtagssaft",
+    "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Festtagssaft“."
+  },
   "CraftedItems": {
     "name": "Hergestelltes Produkt",
     "description": "Selbst aus verschiedenen Stoffen hergestellte Produkte"
@@ -8289,15 +8545,15 @@
   },
   "ChaosDevice": {
     "name": "Chaos-Apparat",
-    "description": "Ein Relikt aus uralten Ruinen, das einmal dazu diente, ein Gerät am Laufen zu halten. Die Technik sieht verblüffend aus."
+    "description": "Ein uraltes Ruinenkonstrukt, das einmal dazu diente, ein Gerät am Laufen zu halten. Die Technik sieht verblüffend aus."
   },
   "ChaosCircuit": {
     "name": "Chaos-Schaltkreis",
-    "description": "Ein Relikt aus uralten Ruinen, das einmal dazu diente, ein Gerät zu steuern. Die Technik dahinter ist nicht einmal annähernd zu begreifen."
+    "description": "Ein uraltes Ruinenkonstrukt, das einmal dazu diente, ein Gerät zu steuern. Die Technik dahinter ist nicht einmal annähernd zu begreifen."
   },
   "ChaosCore": {
     "name": "Chaos-Getriebe",
-    "description": "Ein Relikt aus uralten Ruinen, das einmal dazu diente, ein Gerät mit Energie zu versorgen. Wenn man diese Technik verstehen und nachbauen könnte, wäre die Welt womöglich eine vollkommen andere."
+    "description": "Ein uraltes Ruinenkonstrukt, das einmal dazu diente, ein Gerät mit Energie zu versorgen. Wenn man diese Technik verstehen und nachbauen könnte, wäre die Welt womöglich eine vollkommen andere."
   },
   "MistGrassPollen": {
     "name": "Nebelgraspollen",
@@ -8479,6 +8735,18 @@
     "name": "Chaos-Anker",
     "description": "Stammt von einem nicht länger aktiven uralten Ruinendrachen.\\nIn den lange verlorenen uralten Königreichen gab es eine Gruppe von Menschen, die in das Prinzip der Mimesis verliebt waren. Egal ob es die Reinheit der in Hypostasen geordneten Elemente war oder die primitive Kraft der uralten Drachen, das alles konnte, so glaubten sie, nachgeahmt, verbessert und schließlich übertroffen werden.\\nDenn so könne das makellose Überlegene den Platz des zum Schluss Zerfallenden einnehmen."
   },
+  "DamagedPrism": {
+    "name": "Zerbrochenes Prisma",
+    "description": "Ein nach dem Besiegen eines Urkonstrukts erhaltenes zerbrochenes Teil.\\nDiese ungewöhnlich geformte Maschine ist der ewige Wächter der Ruinen der Wüste mit der Kraft, Felsen zu durchschlagen und wieder zusammenzusetzen. Der Mechanismus dieser Maschinen ähnelt dem von vielen geheimen oberirdischen und unterirdischen Apparaten."
+  },
+  "TurbidPrism": {
+    "name": "Trübes Prisma",
+    "description": "Ein nach dem Besiegen eines Urkonstrukts erhaltenes altes Teil.\\nEs heißt, diese Maschinen seien anders als andere „Ruinenmaschinen“ in der Tiefe der Wüste und seien gar nicht zur Eroberung und Vernichtung geschaffen worden."
+  },
+  "RadiantPrism": {
+    "name": "Leuchtendes Prisma",
+    "description": "Ein nach dem Besiegen eines Urkonstrukts erhaltenes elaboriertes Teil.\\nDer König der Wüste hatte einst einen Traum und gab viele Versprechen ab.\\nIn den Legenden der Wüste waren diese Maschinen geschaffen worden, um diese Versprechen einzulösen. Heute sind der Traum und diese Versprechen jedoch in Vergessenheit geraten und verbleiben wohl nur noch eingeprägt im Arbeitsspeicher der Maschinen."
+  },
   "HurricaneSeed": {
     "name": "Orkansamen",
     "description": "Die konzentrierte Form einer Anemo-Hypostase, nachdem sie besiegt worden ist. In ihr steckt pure Anemo-Kraft.\\nMan sagt, dass der Flügelschlag eines Schmetterlings die Kraft birgt, einen ganzen Orkan auszulösen. Dieser Schmetterling, der aus reiner Anemo-Kraft besteht, wartet gewiss auf den Tag, an dem er erneut einen Sturm entfachen kann."
@@ -8626,6 +8894,14 @@
   "ThunderclapFruitcore": {
     "name": "Donnerknall-Fruchtkern",
     "description": "Der von messerscharfen Blättern umgebene Kern des Fluxblitzbaumes, der rücksichtslos die Elektro-Energie in seine Umgebung hineinstrahlt.\\nDie in den Tiefen der Erde donnernde Energie will ihre Wut eilig ausschütten und so sind die unglücklichen Reben in Raserei getränkt. Dadurch schlagen sie mit ihren Ästen wild um sich und stoßen klagende Schreie aus. Niemand weiß, ob es ihn verlangt, anderen eine Kostprobe seiner Schmerzen durch die andauernden Stromstöße und Verbrennungen zu geben, oder ob er versucht, dagegen anzukämpfen und seinem unausweichlichen Ende entgegenzublicken."
+  },
+  "PerpetualCaliber": {
+    "name": "Ewiges Uhrwerk",
+    "description": "Eine Antriebsvorrichtung, die einer mysteriösen Ruinenmaschine entnommen wurde.\\nAlle von ihm angetriebenen Körperteile wurden bereits zerstört, doch es dreht sich unaufhörlich weiter.\\nAuf der Erde sollte es eigentlich keine unerschöpflichen Energiequellen geben und alle Forschungsergebnisse, die die „unendliche Bewegung“ zeigten, erwiesen sich zuletzt als falsch. Doch dieses Uhrwerk zeigt, dass längst untergegangene Zivilisationen zu Dingen in Stande waren, die den Menschen verwehrt bleiben."
+  },
+  "LightGuidingTetrahedron": {
+    "name": "Lichtgesteuerter Tetraeder",
+    "description": "Ein nach dem Besiegen einer mysteriösen Kombination von Vorrichtungen erhaltener Kernbestandteil.\\nNoch heute haben diese antiken Maschinen weder den Traum ihres Herrn noch ihre eigenen Pflichten vergessen: Eintausend Paläste errichten, dreitausend Maschinen beherrschen, zehntausend Blumen einer heute verlorenen Art pflanzen, für alle Seelen der Erde das im Wüstenmeer untergegangene „Paradies“ wiederaufleben lassen.\\nAuch wenn der König der Wüste nicht mehr existieren mag und der Traum aufgrund der tiefen Schuld nur noch geflüstert wird und verdorben ist, auch wenn alle monströsen Säulen gebrochen und niedergeworfen wurden und die einst von der Gnade des Königs beglückten riesigen Bestien längst im heißen Sandsturm verschwunden sind."
   },
   "TileOfDecarabiansTower": {
     "name": "Decabarians zerbrochener Ziegel",
@@ -9037,7 +9313,7 @@
   },
   "LostEnergyBlock": {
     "name": "Zurückgelassener Energieblock",
-    "description": "Ein Block, der aus reiner komprimierter Energie geschaffen wurde. Es scheint, als könne er den Aufzeichnungsapparat irgendeiner uralte Ruinenstruktur aktivieren."
+    "description": "Ein Block, der aus reiner komprimierter Energie geschaffen wurde. Es scheint, als könne er den Aufzeichnungsapparat irgendeines uralten Ruinenkonstrukts aktivieren."
   },
   "StrangeParchment": {
     "name": "Merkwürdiges Pergament",
@@ -9111,6 +9387,18 @@
     "name": "Ode an das Seelenlicht",
     "description": "Eine Ballade, die angeblich von einer verlorenen religiösen Gruppe in der Wüste weitergegeben wurde. Jemand hat sie in einem Skript aufgezeichnet."
   },
+  "TransparentRuinsRecordII": {
+    "name": "Aufzeichnungen der durchsichtigen Ruinen II",
+    "description": "Eine in durchsichtigen Ruinen in der Nähe des Mausoleums von König Deshret gefundene Steinplatte. Sie scheint die Niederschrift einer verlorenen Zivilisation zu sein ..."
+  },
+  "TransparentRuinsRecordIII": {
+    "name": "Aufzeichnungen der durchsichtigen Ruinen III",
+    "description": "Eine in durchsichtigen Ruinen in der Nähe des Mausoleums von König Deshret gefundene Steinplatte. Sie scheint die Niederschrift einer verlorenen Zivilisation zu sein ..."
+  },
+  "AncientKey": {
+    "name": "Uralter Schlüssel",
+    "description": "Ein von Maskenmardern gestohlener Schlüssel. Da es einen Schlüssel gibt, sollte es auch ein dazugehöriges Schloss geben. Dieses Krankenhaus wurde eindeutig schon lange verlassen, aber was könnte sich hier noch verbergen?"
+  },
   "UnsealedParchment": {
     "name": "Aufgerolltes Pergament",
     "description": "Eine rätselhafte antike Pergamentrolle. Es scheinen die von einem Abenteurer hinterlassenen Notizen zu sein. Es sieht so aus, als würden immer wieder neue Worte darauf erscheinen."
@@ -9155,9 +9443,189 @@
     "name": "Zerrissene Anwesenheitsliste",
     "description": "Zerrissene Anwesenheitsliste"
   },
+  "PurchasedGoods": {
+    "name": "Gekaufte Materialien",
+    "description": "Von Nilou für das Theater Zubayr gekaufte Materialien. Abgesehen von Herstellungsmaterial für Requisiten für die Vorstellungen gibt es noch jede Menge Gebrauchsgüter für Feste und den Alltag. Wenn man sie allein transportieren wollte, wäre die Bürde sehr groß, aber erfahrene Abenteurer sollten wissen, wie damit umzugehen ist."
+  },
+  "MedicalRecords": {
+    "name": "Krankenakte",
+    "description": "Eine intakte Seite von Krankenhausdokumenten. Sie scheint aus einem Ordner gefallen zu sein."
+  },
+  "DiagnosticReport": {
+    "name": "Befund",
+    "description": "Eine intakte Seite von Krankenhausdokumenten. Sie scheint aus einem Ordner gefallen zu sein."
+  },
+  "ShevirmesFunds": {
+    "name": "Shevirmes „Beschaffungsmittel“",
+    "description": "„Beschaffungsmittel“ vom Geschäftsinhaber Shevirme. In einen feinen Geldbeutel gestecktes „Weingelee“, zum Kauf von fünfzig Kisten „Festtagssaft“ beim Stand der „Engelsgabe“."
+  },
+  "QuqingsFunds": {
+    "name": "Quqings „Beschaffungsmittel“",
+    "description": "„Beschaffungsmittel“ der Geschäftsinhaberin Quqing. In einen feinen Geldbeutel gestecktes „Weingelee“, zum Kauf von fünfundsechzig Kisten „Minzbeere“ beim Stand der „Taverne Zum Katzenschwanz“."
+  },
+  "GuanchuisFunds": {
+    "name": "Guanchuis „Beschaffungsmittel“",
+    "description": "„Beschaffungsmittel“ vom Koch Guanchui. In einen feinen Geldbeutel gestecktes „Weingelee“, zum Kauf von hundert Kisten „Festtagssaft“ beim Stand der „Engelsgabe“."
+  },
+  "ZakariyasPrescriptionForMaruf": {
+    "name": "Zakariyas „Rezept“ für Maruf",
+    "description": "Die Schrift auf dem Rezept ist äußerst extravagant. Lediglich die Worte „Minze“, „große Flamme“ und „Kräuter aufsteigen“ sind zu entziffern ..."
+  },
+  "ZakariyasMedicineForMaruf": {
+    "name": "Zakariyas Arznei für Maruf",
+    "description": "Von Zakariya für Maruf hergestellte Arznei. Sie riecht und sieht bitter aus ..."
+  },
   "AnElegantlyWrittenNote": {
     "name": "Notizbuch mit anmutiger Handschrift",
     "description": "Am Schreibstil ist mit Leichtigkeit zu erkennen, dass dieses Notizbuch von Dunyarzad stammt. Das Schriftbild ist äußerst elegant, würde sie nicht an Eleazar leiden und ihren Krafteinsatz daher nur schlecht kontrollieren können, würde es wahrscheinlich noch schöner sein."
+  },
+  "NerminsMintyBeanSoup": {
+    "name": "Nermins spezielle „Minzbohnensuppe“",
+    "description": "Von Nermin selbst zubereitete „Minzbohnensuppe“. Sie hat auch ein paar „Zaytun-Pfirsiche“ hinzugefügt, sollte wirklich nicht schlecht schmecken ..."
+  },
+  "FutureStar": {
+    "name": "Stern der Zukunft",
+    "description": "In einem bestimmten Szenario ist der große Stern der Zukunft ein Schatz, der Hoffnung und unendliche Möglichkeiten enthält, nun aber ist er zerbrochen. Wenn du alle sechs Bruchstücke einsammelst, kannst du den wahren großen Stern der Zukunft herbeirufen. Darüber, wie dieser tatsächlich aussieht und wozu er gut ist, ist nichts bekannt.\\nNatürlich kann er in einem anderen Szenario ein Objekt, das in der Akademie gelagert wird, sein. Und sein Name im Register könnte Parvo-Kern sein. Über ihm liegt schon eine kleine Staubschicht, denn ihn hat schon lange keiner mehr verwendet."
+  },
+  "RaefsPackage": {
+    "name": "Raefs Paket",
+    "description": "Ein Paket, in dem sich Blumentöpfe, Blumen, Dünger und viele weitere Gärtnereiutensilien befinden. Es ist sehr schwer, wenn man mit ihm in den Händen die Wüste durchqueren wollte, wäre das keine leichte Aufgabe ..."
+  },
+  "NerminsPerfumeIngredients": {
+    "name": "Nermins Gewürze",
+    "description": "Von Nermin bei Azalai bestellte Gewürze. Nicht sehr teuer, aber von sehr hoher Qualität."
+  },
+  "KeystoneI": {
+    "name": "Schlüsselstein I",
+    "description": "Eine Steinplatte, in der noch ein wenig Energie verblieben ist und mit der ein naher Durchgang geöffnet werden kann. In gewisser Weise kann man sie also als eine uralte Art von Schlüssel verstehen."
+  },
+  "TornPageAThousandNightsI": {
+    "name": "Zerrissene Buchseite „Erzählungen aus tausend Nächten I“",
+    "description": "Sobald du alle 10 Seiten gesammelt hast, kannst du die „Erzählungen aus tausend Nächten I“ zusammenfügen.\\n\\nDiese Seite weht in der Brise und scheint aus einer sehr alten Geschichtensammlung gefallen zu sein.\\nVielleicht kannst du den kompletten Text rekonstruieren, wenn du an anderer Stelle weitere zerrissene Seiten findest."
+  },
+  "TornPageAThousandNightsII": {
+    "name": "Zerrissene Buchseite „Erzählungen aus tausend Nächten II“",
+    "description": "Sobald du alle 10 Seiten gesammelt hast, kannst du die „Erzählungen aus tausend Nächten II“ zusammenfügen.\\n\\nDiese Seite weht in der Brise und scheint aus einer sehr alten Geschichtensammlung gefallen zu sein.\\nVielleicht kannst du den kompletten Text rekonstruieren, wenn du an anderer Stelle weitere zerrissene Seiten findest."
+  },
+  "TornPageAThousandNightsIII": {
+    "name": "Zerrissene Buchseite „Erzählungen aus tausend Nächten III“",
+    "description": "Sobald du alle 10 Seiten gesammelt hast, kannst du die „Erzählungen aus tausend Nächten III“ zusammenfügen.\\n\\nDiese Seite weht in der Brise und scheint aus einer sehr alten Geschichtensammlung gefallen zu sein.\\nVielleicht kannst du den kompletten Text rekonstruieren, wenn du an anderer Stelle weitere zerrissene Seiten findest."
+  },
+  "TornPageAThousandNightsIV": {
+    "name": "Zerrissene Buchseite „Erzählungen aus tausend Nächten IV“",
+    "description": "Sobald du alle 10 Seiten gesammelt hast, kannst du die „Erzählungen aus tausend Nächten IV“ zusammenfügen.\\n\\nDiese Seite weht in der Brise und scheint aus einer sehr alten Geschichtensammlung gefallen zu sein.\\nVielleicht kannst du den kompletten Text rekonstruieren, wenn du an anderer Stelle weitere zerrissene Seiten findest."
+  },
+  "TornPageAThousandNightsV": {
+    "name": "Zerrissene Buchseite „Erzählungen aus tausend Nächten V“",
+    "description": "Sobald du alle 10 Seiten gesammelt hast, kannst du die „Erzählungen aus tausend Nächten V“ zusammenfügen.\\n\\nDiese Seite weht in der Brise und scheint aus einer sehr alten Geschichtensammlung gefallen zu sein.\\nVielleicht kannst du den kompletten Text rekonstruieren, wenn du an anderer Stelle weitere zerrissene Seiten findest."
+  },
+  "TornPageAThousandNightsVI": {
+    "name": "Zerrissene Buchseite „Erzählungen aus tausend Nächten VI“",
+    "description": "Sobald du alle 10 Seiten gesammelt hast, kannst du die „Erzählungen aus tausend Nächten VI“ zusammenfügen.\\n\\nDiese Seite weht in der Brise und scheint aus einer sehr alten Geschichtensammlung gefallen zu sein.\\nVielleicht kannst du den kompletten Text rekonstruieren, wenn du an anderer Stelle weitere zerrissene Seiten findest."
+  },
+  "AThousandNightsI": {
+    "name": "Erzählungen aus tausend Nächten I",
+    "description": "Ein reisender Gelehrter aus der Zeit der Katastrophe hat Regenwälder, Wüsten und Stadtstaaten durchquert und diese Geschichten entlang seines Wegs gesammelt. Es heißt, dass sie ursprünglich endlos viele Geschichten umfassten. Heute sind nur ein paar Fragmente davon erhalten geblieben."
+  },
+  "AThousandNightsII": {
+    "name": "Erzählungen aus tausend Nächten II",
+    "description": "Ein reisender Gelehrter aus der Zeit der Katastrophe hat Regenwälder, Wüsten und Stadtstaaten durchquert und diese Geschichten entlang seines Wegs gesammelt. Es heißt, dass sie ursprünglich endlos viele Geschichten umfassten. Heute sind nur ein paar Fragmente davon erhalten geblieben."
+  },
+  "AThousandNightsIII": {
+    "name": "Erzählungen aus tausend Nächten III",
+    "description": "Ein reisender Gelehrter aus der Zeit der Katastrophe hat Regenwälder, Wüsten und Stadtstaaten durchquert und diese Geschichten entlang seines Wegs gesammelt. Es heißt, dass sie ursprünglich endlos viele Geschichten umfassten. Heute sind nur ein paar Fragmente davon erhalten geblieben."
+  },
+  "AThousandNightsIV": {
+    "name": "Erzählungen aus tausend Nächten IV",
+    "description": "Ein reisender Gelehrter aus der Zeit der Katastrophe hat Regenwälder, Wüsten und Stadtstaaten durchquert und diese Geschichten entlang seines Wegs gesammelt. Es heißt, dass sie ursprünglich endlos viele Geschichten umfassten. Heute sind nur ein paar Fragmente davon erhalten geblieben."
+  },
+  "AThousandNightsV": {
+    "name": "Erzählungen aus tausend Nächten V",
+    "description": "Ein reisender Gelehrter aus der Zeit der Katastrophe hat Regenwälder, Wüsten und Stadtstaaten durchquert und diese Geschichten entlang seines Wegs gesammelt. Es heißt, dass sie ursprünglich endlos viele Geschichten umfassten. Heute sind nur ein paar Fragmente davon erhalten geblieben."
+  },
+  "AThousandNightsVI": {
+    "name": "Erzählungen aus tausend Nächten VI",
+    "description": "Ein reisender Gelehrter aus der Zeit der Katastrophe hat Regenwälder, Wüsten und Stadtstaaten durchquert und diese Geschichten entlang seines Wegs gesammelt. Es heißt, dass sie ursprünglich endlos viele Geschichten umfassten. Heute sind nur ein paar Fragmente davon erhalten geblieben."
+  },
+  "SamailsMissive": {
+    "name": "Samails Nachricht",
+    "description": ""
+  },
+  "ShevirmesInvoice": {
+    "name": "Shevirmes Bestellungsbeleg",
+    "description": "Ein von Georg an Shevirme geschriebener Bestellungsbeleg, auf dem der Preis, die einzelnen Gebühren, die Zeit des Auftragseingangs sowie die voraussichtliche Lieferzeit der bestellten fünfzig Kisten „Festtagssaft“ verzeichnet sind. Nachdem der Kunde ihn gelesen hat, wird er bestimmt zutiefst beruhigt."
+  },
+  "QuqingsInvoice": {
+    "name": "Quqings Bestellungsbeleg",
+    "description": "Ein von Diane an Quqing geschriebener Bestellungsbeleg, auf dem der Preis, die einzelnen Gebühren, die Zeit des Auftragseingangs sowie die voraussichtliche Lieferzeit der bestellten fünfundsechzig Kisten „Minzbeere“ verzeichnet sind. Nachdem die Kundin ihn gelesen hat, wird sie bestimmt zutiefst beruhigt."
+  },
+  "GuanchuisInvoice": {
+    "name": "Guanchuis Bestellungsbeleg",
+    "description": "Ein von Georg an Guanchui geschriebener Bestellungsbeleg, auf dem der Preis, die einzelnen Gebühren, die Zeit des Auftragseingangs sowie die voraussichtliche Lieferzeit der bestellten hundert Kisten „Festtagssaft“ verzeichnet sind. Nachdem der Kunde ihn gelesen hat, wird er bestimmt zutiefst beruhigt."
+  },
+  "CynosIntroductionLetter": {
+    "name": "Cynos Vorstellungsschreiben",
+    "description": "Eine von Cyno geschriebene Vorstellung. Sie symbolisiert das Vertrauen des Mahamatra Cyno."
+  },
+  "AncientMap": {
+    "name": "Archaische Karte",
+    "description": "Eine in Tajs Zimmer gefundene Karte. Auf ihr ist die Lage des Hofs der Trübsal markiert."
+  },
+  "AuctionInformation": {
+    "name": "Auktionsmaterial",
+    "description": "Von Dori gesammelte und geordnete Informationen zu der Auktion. Darauf sind Informationen zur in der Wüste abgehaltenen Auktion von Wissenskonserven verzeichnet."
+  },
+  "SealedMaterialsTheCourtOfDesolation": {
+    "name": "Versiegelte Materialien „Hof der Trübsal“",
+    "description": ""
+  },
+  "KeystoneII": {
+    "name": "Schlüsselstein II",
+    "description": "Eine Steinplatte, in der noch ein wenig Energie verblieben ist und mit der ein naher Durchgang geöffnet werden kann. In gewisser Weise kann man sie also als eine uralte Art von Schlüssel verstehen."
+  },
+  "AzalaisPayment": {
+    "name": "Azalais Zahlung",
+    "description": "Azalais Zahlung, fühlt sich recht schwer an ..."
+  },
+  "RamasReceipt": {
+    "name": "Ramas Empfangsberechtigung",
+    "description": "Eine von Rama erhaltene Berechtigung zum Warenempfang. Mit dieser ist man berechtigt, Waren von Rama zu empfangen."
+  },
+  "ButrusReceipt": {
+    "name": "Butrus’ Empfangsberechtigung",
+    "description": "Eine von Butrus erhaltene Berechtigung zum Warenempfang. Mit dieser ist man berechtigt, Waren von Butrus zu empfangen."
+  },
+  "JutsReceipt": {
+    "name": "Juts Empfangsberechtigung",
+    "description": "Eine von Jut erhaltene Berechtigung zum Warenempfang. Mit dieser ist man berechtigt, Waren von Jut zu empfangen."
+  },
+  "JahangirsReceipt": {
+    "name": "Jahangirs Empfangsberechtigung",
+    "description": "Eine von Jahangir erhaltene Berechtigung zum Warenempfang. Mit dieser ist man berechtigt, Waren von Jahangir zu empfangen."
+  },
+  "LimitedEditionDesertSpecialTravelPack": {
+    "name": "„Limitiertes Spezial-Wüstenreisepaket“",
+    "description": "Ein Reisepaket, das du von Dori erworben hast. Es ist voll mit merkwürdigen Dingen. Auf dem ersten Blick kannst du dir auf diese keinen Reim machen, bei genauer Betrachtung scheinen sie aber ziemlich nützlich zu sein ..."
+  },
+  "AShortLetter": {
+    "name": "Kurzer Brief",
+    "description": "Ein kurzer Brief, der in Geheimsprache geschrieben wurde. Du weißt nicht, von wem er stammt oder zu welchem Zweck er hierhin gelangt ist."
+  },
+  "VaguelyReadableInscription": {
+    "name": "Vage zu entziffernde Inschrift",
+    "description": ""
+  },
+  "AkademiyaInvestigationTeamsReport": {
+    "name": "Bericht des Untersuchungstrupps der Akademie",
+    "description": ""
+  },
+  "SealedOrders": {
+    "name": "Versiegelte Befehlschrift",
+    "description": ""
+  },
+  "OldOrders": {
+    "name": "Antike Befehlschrift",
+    "description": ""
   },
   "SilkFlowerSeed": {
     "name": "Seidenblumensamen",
@@ -9357,7 +9825,7 @@
   },
   "PeachOfTheDeepWaves": {
     "name": "Tiefwellen-Pfirsich",
-    "description": "Ein mittelgroßer Fisch mit kugelrundem Körper mit einer hornartigen Struktur aus Knorpel. Es heißt, er setze diese Struktur ein, um Unterwasser-Bauten zu graben und um Angreifer zu vertreiben.\\nDer Hornkugelfisch weckt mit seinem in Gänze rosa gefärbten Körper, seinen zärtlich grünen Flossen bei Betrachtern Gedanken an Zaytun-Pfirsiche. Seinem Namen entsprechend, schmeckt dieses Fisches tatsächlich recht süß, weshalb die Fischköche meinen, es sei wirklich „ideal zur Zubereitung von Desserts“.\\nAllerdings ist es aufgrund verschiedenster Einflüsse nicht zu dem von den Köchen erhofften Erfolg gekommen. Da Hornkugelfische zudem selten und dementsprechend teuer sind, werden sie kaum als Speisefisch verwendet, viel lieber finden sie als Zierfische und in der Zucht ein neues Zuhause.\\nDa nur wenige bereit sind, eine solche Summe zum Kauf eines solchen Fisches aufzubringen, gibt es sogar findige Geschäftsleute, die den gegenteiligen Weg gegangen sind und echte Zaytun-Pfirsiche in Form von Hornkugelfischen sehr erfolgreich verkaufen."
+    "description": "Ein Fisch mittlerer Größe mit kugelrundem Körper und einer hornartigen Struktur aus Knorpel. Es heißt, er setze diese Struktur ein, um Unterwasser-Bauten zu graben und um Angreifer zu vertreiben.\\nDer Hornkugelfisch weckt mit seinem in Gänze rosa gefärbtem Körpern und seinen zärtlich grünen Flossen bei Betrachtern Gedanken an Zaytun-Pfirsich. Seinem Namen entsprechend schmeckt dieser Fisch tatsächlich recht süß, weshalb die Fischköche meinen, der sei wirklich „ideal zur Zubereitung von Desserts“.\\nAllerdings kam es aufgrund verschiedenster Einflüsse nicht zu dem von den Köchen erhofften Erfolg. Da Hornkugelfische zudem selten und dementsprechend teuer sind, werden sie kaum als Speisefisch verwendet, viel lieber finden sie als Zierfische und in der Zucht ein neues Zuhause.\\nDa nur wenige bereit sind, eine solche Summe zum Kauf eines solchen Fisches aufzubringen, gibt es sogar findige Geschäftsleute, die den gegenteiligen Weg gegangen sind und echte Zaytun-Pfirsiche in Form von Hornkugelfischen sehr erfolgreich verkaufen."
   },
   "SandstormAngler": {
     "name": "Sandsturm-Hornkugelfisch",
@@ -9478,6 +9946,10 @@
   "OriginalFishOintment": {
     "name": "Urfisch-Salbe",
     "description": "Spezielles Verfeinerungsmaterial für „Schwertfischer“.\\nSalbe, die aus einem Fang aus dem großen See im Norden gewonnen wurde. Sie bewirkt, dass die Energie des Fischs, der in diesen Bogen verwandelt wurde, vorübergehend wiederhergestellt wird.\\nEs heißt, dass in dem See Wasserlebewesen leben, die nirgendwo sonst in Teyvat zu sehen sind."
+  },
+  "PlumeOfTheChangingWinds": {
+    "name": "Feder des wechselnden Windes",
+    "description": "Objekt zur Verfeinerung von „Spitze der klingenden Winde“.\\nEin aus Türkis geschnitzter antiker Federkiel, der anscheinend einst als Schmuck oder eine Art Zeichen verwendet wurde."
   },
   "FalconsDance": {
     "name": "Falkentanz",
@@ -10183,6 +10655,34 @@
     "name": "Sumeru – Unbefleckt",
     "description": "Ein Motiv für ein Namenskärtchen.\\nDie Weisen, die mit der gründlichen Kenntnis der Wahrheit gesegnet sind, werden nicht durch Sünde befleckt. Sie sind wie der Nilotpala-Lotos, der auch dann noch klar und rein bleibt, wenn Regen und Wind vorübergegangen sind."
   },
+  "TravelNotesReturningWinds": {
+    "name": "Erlebnispass – Heimkehr",
+    "description": "Namenskärtchen.\\nDie Jahre laufen unaufhörlich fort, allein die Gedanken und der zurückkehrende Wind bleiben unabänderlich."
+  },
+  "CynoSilence": {
+    "name": "Cyno – Innere Ruhe",
+    "description": "Namenskärtchen.\\nWenn Cyno tief in sich gekehrt ist, fällt er nicht immer über gewichtige Urteile, manchmal denkt er stattdessen über lustige Dinge nach."
+  },
+  "CandaceGreyHeron": {
+    "name": "Candace – Graureiher",
+    "description": "Namenskärtchen.\\nDer feurige Wind von Gestern zerzaust die Schwanzfedern des Graureihers, nun aber schaut dieser Vogel nur noch auf das Licht des Morgensterns."
+  },
+  "NilouLotusDance": {
+    "name": "Nilou – Lotostanz",
+    "description": "Namenskärtchen.\\nDer sich in sauberem Wasser öffnende Lotos, ist nichts als ein vorbeirauschendes Licht unter ihren Fußspitzen."
+  },
+  "AchievementSevenLights": {
+    "name": "Errungenschaft – Sieben Farben",
+    "description": "Namenskärtchen.\\nWirklich jeder kann seinen eigenen schönen Takt spielen, so wie auch der Tau auf dem Gras die sieben Farben des himmlischen Lichts spiegeln kann."
+  },
+  "SumeruSandtreader": {
+    "name": "Sumeru – Sandmeerwanderung",
+    "description": "Namenskärtchen.\\nDie Wüste verschluckt die Spuren der Reisenden und wartet auf einen Sandsturm, der eines Tages die goldenen Erinnerungen aufwirbelt."
+  },
+  "AchievementMirroredDreams": {
+    "name": "Errungenschaft – Gespiegelte Träume",
+    "description": "Namenskärtchen.\\n„Wahn und Demut von tausend Jahren, schon lange vergangen unter dem die Nacht verbrennenden Flugsand. Doch in ihrem Traum ist die grüne Oase wohl noch immer so sanft und üppig wie damals ...“"
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus-Resonanzstein",
     "description": "Im Gebiet von Mondstadt angewendet kannst du hiermit verlorene Anemoculi in der Nähe aufspüren.\\nDiese künstliche Steinplatte besitzt eine gewisse Charakteristik, die der der Anemo-Statuen der Sieben ähnelt und ihr die Kraft verleiht, mit den Anemoculi zu interagieren.\\nOculus-Resonanzsteine sind grobe Imitationen der Statuen der Sieben, die von den Menschen des Altertums gebaut wurden. Gerade die Rohheit solcher Steine ist es, was sie dazu bringt, nach der Kraft der Oculi zu verlangen, um Anhängern der Götter und Abenteurern die Möglichkeit zu geben, Oculi zu finden."
@@ -10391,6 +10891,10 @@
     "name": "Exquisiter Fotoapparat",
     "description": "Ein Fotoapparat, den Razi sich von Herrn Sangemah Bay geliehen hat. Er wird dir nützlich sein, wenn du Fotos von schönen Landschaften, Inspirationen in der Wildnis oder Momente auf Festen als Erinnerungen aufnimmst.\\nDieser Fotoapparat ist mit Metalldekorationen verziert und sieht viel teurer aus als normale Fotoapparate. Sei vorsichtig mit ihm!\\nAufgrund der Bedingungen des Mietvertrags darf dieser Fotoapparat nur innerhalb von Sumeru verwendet werden."
   },
+  "BanusWisdom": {
+    "name": "Banus Weisheit",
+    "description": "Ein Gegenstand, der in einem bestimmten Szenario mit rätselhafter Macht durchströmt wird. Wenn er zusammen mit Sternen der Zukunft resoniert, kann er die Richtung zu diesen weisen.\\nNatürlich kann er in einem anderen Szenario ein Objekt, das in der Akademie gelagert wird, sein. Und sein Name im Register könnte „Ayeshas Chaosdetektor“ sein. Über ihm liegt schon eine kleine Staubschicht, denn ihn hat schon lange keiner mehr verwendet."
+  },
   "FishingLineStabilizer": {
     "name": "Angelschnur-Stabilisator",
     "description": "Ein selbstanpassender Spannungsstabilisator, der an einer Angelrute angebracht werden kann, um das Angeln zu erleichtern. Das Gerät kann automatisch erkennen und aufzeichnen, wie stark verschiedene Fische zappeln. Je mehr Daten der Stabilisator sammelt, desto besser funktioniert er.\\n\\nDer Prototyp des Geräts war eine sinnlose Erfindung eines Erfinders aus Fontaine, die lange Zeit auf wenig Interesse stieß, bis der Angelverein Fontaine sie entdeckte und das Produkt zum heutigen Angelschnur-Stabilisator modifizierte. Als das Gerät zum ersten Mal auf den Markt kam, wurde es von den Mitgliedern des Vereins so begeistert aufgenommen, dass es nun nach und nach auch in anderen Regionen eingeführt wurde.\\nAuf dem Markt von Snezhnaya ist er eine besonders beliebte Ware. Man munkelt, dass einer der Elf der Fatui von dem Produkt besonders angetan ist, was seine Popularität erklärt."
@@ -10399,9 +10903,21 @@
     "name": "Alte Leier",
     "description": "Mit diesem traditionellen Instrument aus Mondstadt kannst du Melodien spielen. Es kann Wunder bewirken, wenn es in den Wäldern von Sumeru gespielt wird.\\nEine alte Leier, die du dir von Amadhiah im Dorf Vimara geliehen hast.\\nMondstadt hat eine lange Tradition in Poesie und Gesang. Barden von dort neigen dazu, ihre Instrumente als „Freund“ oder „Partner“ anzusprechen. Amadhiah das Instrument anzuvertrauen, war also nichts weniger als eine Geste der Vertrautheit und des Vertrauens."
   },
+  "JumpyDumptyPartyPopper": {
+    "name": "Bimm-Bamm-Feiertagstischfeuerwerk",
+    "description": "Tischfeuerwerk, das bei Benutzung Lametta und Glitter verschießt.\\n„Bimm-Bamm ist ein guter Freund von mir und ein guter Helfer, wenn man Fische in die Luft jagen will. Aber wenn man Bimm-Bamm beim Feiern mitbringt, macht man sich Jean nicht zur Freundin ... Aber mach dir keine Sorgen, durch Albedos perfekte Verbesserung hat Bimm-Bamm ganz neue Qualitäten bekommen! Schau, ich muss nur an seinem kurzen Schwanz ziehen und schon spuckt er hübsches Lametta!“"
+  },
+  "ScarletSandSlate": {
+    "name": "Steinplatte roter Sande",
+    "description": "Dies ist ein langzeitiges Forschungsobjekt des Gelehrten der Akademie Tirzad. Anhand der eingeätzten Mustern und der Kunstfertigkeit ist es als Relikt der Zivilisation von König Deshret zu erkennen. Es scheint die Berechtigungen zu besitzen, Vorrichtungen in den Ruinen von König Deshret steuern zu können."
+  },
   "BubblyKamera": {
     "name": "„Blasenfotoapparat“",
     "description": "Wenn es benutzt wird, kann dieses nützliche Hilfsmittel die Szenerie vor ihm speichern und ihr einen besonderen Farbton verleihen.\\nEin seltsames Gerät unbekannter Herkunft. Die Fotos, die es aufnimmt, haben einen merkwürdigen Effekt. Obwohl kein Wasser darin ist, werden beim Fotografieren viele Blasen erzeugt, die ein fantastisches Gefühl vermitteln.\\nAuf Grund dieser besonderen Eigenschaft beschrieb ein Rittmeister diese Maschine als „die Sehnsucht der Menschen, kühle und erfrischende Tage einzufangen“."
+  },
+  "CloudRetainersDamaskedDevice": {
+    "name": "Türkis verzierte Papiervorrichtung – Stehende Wolken",
+    "description": "Eine aus Papier aufgestapelte Vorrichtung, mit der Form eines graziösen Vogels, ein Geschenk der Fürstin der stehenden Wolken und des stillen Windes.\\nAuch wenn es eine „Vorrichtung“ ist, kann man dies von außen nicht erkennen, da es keinerlei für Vorrichtungen typische Strukturen besitzt.\\nDie Fähigkeit dieser Adeptin, Vorrichtungen zu schaffen, scheint sich noch ein wenig gesteigert zu haben ..."
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Erläuterung: Anemoculus-Resonanzstein",
@@ -10991,6 +11507,10 @@
     "name": "„Einfaches Regal aus Hellholz“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Einfaches Regal aus Hellholz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "DesertDeskHospitality": {
+    "name": "Wüstenschreibtisch – „Gastfreundschaft“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenschreibtisch – Gastfreundschaft“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "TwoTierLibraryBookshelf": {
     "name": "Zweistöckiges Bibliotheksbücherregal",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Zweistöckiges Bibliotheksbücherregal“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -11030,6 +11550,10 @@
   "MapleWoodBookcaseTroveOfAThousandTomes": {
     "name": "Bücherregal aus Ahornholz – „Tausend Schriften“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Bücherregal aus Ahornholz – Tausend Schriften“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertCabinetOddsAndEnds": {
+    "name": "Wüstenschrank – „Habseligkeit“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenschrank – Habseligkeit“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "SturdyLibraryTable": {
     "name": "Stabiler Bibliothekstisch",
@@ -11095,6 +11619,10 @@
     "name": "„Töpferwerkbank aus Hellholz“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Töpferwerkbank aus Hellholz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "LongAthelwoodTable": {
+    "name": "Langer Tisch aus Athel-Holz",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Langer Tisch aus Athel-Holz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "BreezeBlessedBed": {
     "name": "Brisenbelüftetes Bett",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Brisenbelüftetes Bett“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -11114,6 +11642,18 @@
   "TeahouseCounterToshimaru": {
     "name": "Teestuben-Tresen – „Toshimaru“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Teestuben-Tresen – Toshimaru“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertStonePlatformSturdy": {
+    "name": "Wüstensteinplattform – „Robust“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstensteinplattform – Robust“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertFireplaceWarmth": {
+    "name": "Wüstenkamin – „Wohlig warm“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenkamin – Wohlig warm“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertStudyConscientiousness": {
+    "name": "Wüstenlesetisch – „Gewissenhaftigkeit“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenlesetisch – Gewissenhaftigkeit“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "SoftLoungeSofa": {
     "name": "Weiches Foyersofa",
@@ -11243,6 +11783,18 @@
     "name": "Reine Vase – „Sepia“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Reine Vase – Sepia“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "HuedVaseSeashell": {
+    "name": "Gefärbte Vase – „Muschel“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Gefärbte Vase – Muschel“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "HuedVaseDarkRock": {
+    "name": "Gefärbte Vase – „Dunkler Fels“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Gefärbte Vase – Dunkler Fels“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "AmidstTheFleeingSmoke": {
+    "name": "„Unter verziehendem Rauch“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Unter verziehendem Rauch“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Teppich (Mondstadt) – „Rotglühende Begeisterung“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Teppich (Mondstadt) – Rotglühende Begeisterung“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -11271,6 +11823,14 @@
     "name": "„Unergründlich brauner Teppich“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Unergründlich brauner Teppich“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "SunScorchedSolemnity": {
+    "name": "„Sonnendurchfluteter feierlicher Teppich“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Sonnendurchfluteter feierlicher Teppich“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "TheOliveGrove": {
+    "name": "„Olivenhain-Teppich“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Olivenhain-Teppich“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "TrustyPortableLamp": {
     "name": "Zuverlässige tragbare Lampe",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Zuverlässige tragbare Lampe“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -11290,6 +11850,10 @@
   "TranquilStarlight": {
     "name": "„Klares Sternenlicht“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Klares Sternenlicht“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertLampLingeringLight": {
+    "name": "Wüstenlampe – „Bleibendes Licht“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenlampe – Bleibendes Licht“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Blumenarrangement – „Himmelblaue Ruhe“",
@@ -11403,6 +11967,18 @@
     "name": "„Jubelpose“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Jubelpose“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "TheMellowPot": {
+    "name": "„Im sanften Fluss“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Im sanften Fluss“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "TheCrispSweetness": {
+    "name": "„In der knusprigen Süße“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „In der knusprigen Süße“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "TheTwistingMist": {
+    "name": "„Im wirbelnden Nebel“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Im wirbelnden Nebel“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "LandscapePaintingCountryHome": {
     "name": "Landschaftsmalerei – „Landhaus“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Landschaftsmalerei – Landhaus“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -11486,6 +12062,18 @@
   "EmbroideredCurtains": {
     "name": "Brokatvorhang",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Brokatvorhang“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "AthelwoodMetalBuckler": {
+    "name": "Athel-Holzschild mit Metallrahmen",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Athel-Holzschild mit Metallrahmen“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertWallDrapesSunset": {
+    "name": "Wüstenwanddekoration – „Sonnenuntergang“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenwanddekoration – Sonnenuntergang“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertWallDrapesFlamingFeathers": {
+    "name": "Wüstenwanddekoration – „Feuerfedern“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenwanddekoration – Feuerfedern“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "LingeringMoment": {
     "name": "„Moment des Nachklangs“",
@@ -11600,8 +12188,8 @@
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Preiswerter Obststand“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "OpenAirWorkshop": {
-    "name": "Offene Bäckerei",
-    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Offene Bäckerei“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+    "name": "Offene Werkstatt",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Offene Werkstatt“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "BountifulHarvestFruitCart": {
     "name": "Obstkarren mit reicher Ernte",
@@ -11879,6 +12467,30 @@
     "name": "„Standhaftigkeit des Waldbewohners“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Standhaftigkeit des Waldbewohners“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "DesertHouseOrdinaryLives": {
+    "name": "Wüstenhaus – „Gewöhnliches Leben“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenhaus – Gewöhnliches Leben“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertHouseSpicesAbound": {
+    "name": "Wüstenhaus – „Gewürze in Hülle und Fülle“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenhaus – Gewürze in Hülle und Fülle“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertHouseHueAndCry": {
+    "name": "Wüstenhaus – „Hornsignal“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenhaus – Hornsignal“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertHouseBriefSleep": {
+    "name": "Wüstenhaus – „Kurzschlaf“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenhaus – Kurzschlaf“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertHouseHiddenLight": {
+    "name": "Wüstenhaus – „Verborgenes Leuchten“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenhaus – Verborgenes Leuchten“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertHouseSaveAndStore": {
+    "name": "Wüstenhaus – „Lager“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenhaus – Lager“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Springbrunnen mit Blumen- und Vogelmuster",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Springbrunnen mit Blumen- und Vogelmuster“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -11942,6 +12554,22 @@
   "StoneworksCraneHillTamer": {
     "name": "Steinbruchkran – „Hügelbändiger“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Steinbruchkran – Hügelbändiger“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertHutMinutiae": {
+    "name": "Wüstenüberdachung – „Minutiös“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenüberdachung – Minutiös“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertHutQuestions": {
+    "name": "Wüstenüberdachung – „Fragen“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenüberdachung – Fragen“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertHutWilting": {
+    "name": "Wüstenüberdachung – „Welken“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenüberdachung – Welken“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertHutRest": {
+    "name": "Wüstenüberdachung – „Ruhe“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenüberdachung – Ruhe“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "AdeptusGate": {
     "name": "Adeptentor",
@@ -12070,6 +12698,18 @@
   "NoFishingAhead": {
     "name": "„Grenzen des Fischers“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Grenzen des Fischers“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertStoneStepsClimbing": {
+    "name": "Wüstenstufen – „Erklimmen“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenstufen – Erklimmen“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertWallSurpriseAttack": {
+    "name": "Wüstenwall – „Hinterhalt“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenwall – Hinterhalt“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertWallStalwartDefense": {
+    "name": "Wüstenwall – „Standhafte Abwehr“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenwall – Standhafte Abwehr“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Steinbodenbelag – „Glückliche Zeiten“",

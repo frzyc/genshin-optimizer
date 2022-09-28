@@ -106,7 +106,7 @@
   "passive2": {
     "name": "Florakunde",
     "description": {
-      "0": "Für jeden Punkt der Elementarkunde, den Tighnari besitzt, wird der Schaden seiner heftigen Schläge und der von <strong>Des Erschaffers Schlingstängel-Pfeil</strong> um 0,06 % erhöht.",
+      "0": "Für jeden Punkt der Elementarkunde, den Tighnari besitzt, werden der Schaden seiner heftigen Schläge und der von <strong>Des Erschaffers Schlingstängel-Pfeil</strong> um 0,06 % erhöht.",
       "1": "Der maximale SCH-Bonus, der auf diese Weise erreicht werden kann, beträgt 60 %."
     }
   },
