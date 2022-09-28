@@ -1,9 +1,9 @@
 import { SubstatKey } from "pipeline";
-import { input } from "../../Formula";
+import { infusionNode, input } from "../../Formula";
 import { inferInfoMut, mergeData } from "../../Formula/api";
-import { getReactions } from "../../Formula/reaction";
+import { reactions } from "../../Formula/reaction";
 import { Data, DisplaySub, NumNode } from "../../Formula/type";
-import { constant, data, infoMut, lookup, none, one, percent, prod, stringPrio, subscript, sum, unequalStr } from "../../Formula/utils";
+import { constant, data, infoMut, lookup, one, percent, prod, stringPrio, subscript, sum } from "../../Formula/utils";
 import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey, Region } from "../../Types/consts";
 import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
@@ -14,10 +14,6 @@ const charCurves = objectMap(_charCurves, value => [0, ...Object.values(value)])
 
 const commonBasic = objectKeyMap(["hp", "atk", "def", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_"], key => input.total[key])
 
-export const infusionNode = stringPrio(
-  input.infusion.nonOverridableSelf,
-  unequalStr(input.infusion.team, none, input.infusion.team),
-  input.infusion.overridableSelf)
 const inferredHitEle = stringPrio(
   lookup(input.hit.move, {
     "skill": input.charEle, "burst": input.charEle,
@@ -117,7 +113,7 @@ export function dataObjForCharacterSheet(
     data.charEle = constant(element)
     data.teamBuff = { tally: { [element]: constant(1) } }
     data.display!.basic[`${element}_dmg_`] = input.total[`${element}_dmg_`]
-    data.display!.reaction = getReactions(element)
+    data.display!.reaction = reactions[element]
   }
   if (region)
     layeredAssignment(data, ["teamBuff", "tally", region], constant(1))
