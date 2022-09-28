@@ -17,6 +17,7 @@ export const infusionVals = {
   "": <span>No Team Melee Infusion</span>,
   "pyro": <span >{StatIcon.pyro} <SqBadge>Bennett C6</SqBadge> Fire Ventures with Me</span>,
   "cryo": <span >{StatIcon.cryo} <SqBadge>Chongyun Skill</SqBadge> Spirit Blade: Chonghua's Layered Frost</span>,
+  "hydro": <span >{StatIcon.hydro} <SqBadge>Candace Burst</SqBadge> Sacred Rite: Wagtail's Tide</span>,
 }
 type InfusionAuraDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" | "children">
 export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {

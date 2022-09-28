@@ -8,7 +8,7 @@ export const allArtifactRarities = [5, 4, 3] as const
 export const allSlotKeys = ["flower", "plume", "sands", "goblet", "circlet"] as const
 export const allElements = ['anemo', 'geo', 'electro', 'hydro', 'pyro', 'cryo', 'dendro'] as const
 export const allElementsWithPhy = ["physical", ...allElements] as const
-export const allInfusionAuraElements = ["pyro", 'cryo'] as const
+export const allInfusionAuraElements = ["pyro", 'cryo', 'hydro'] as const
 export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'] as const
 export const allRollColorKeys = ['roll1', 'roll2', 'roll3', 'roll4', 'roll5', 'roll6'] as const
 export const allAscension = [0, 1, 2, 3, 4, 5, 6] as const
@@ -115,6 +115,8 @@ export const nonTravelerCharacterKeys = [
   "Collei",
   "Dori",
   "Tighnari",
+  "Cyno",
+  "Candace",
 ] as const
 export const locationCharacterKeys = [
   ...nonTravelerCharacterKeys,
@@ -201,6 +203,7 @@ export const allWeaponClaymoreKeys = [
   "KatsuragikiriNagamasa",
   "LithicBlade",
   "LuxuriousSeaLord",
+  "MakhairaAquamarine",
   "OldMercsPal",
   "PrototypeArchaic",
   "Rainslasher",
@@ -236,12 +239,14 @@ export const allWeaponPolearmKeys = [
   "IronPoint",
   "KitainCrossSpear",
   "LithicSpear",
+  "MissiveWindspear",
   "Moonpiercer",
   "PrimordialJadeWingedSpear",
   "PrototypeStarglitter",
   "RoyalSpear",
   "SkywardSpine",
   "StaffOfHoma",
+  "StaffOfTheScarletSands",
   "TheCatch",
   "VortexVanquisher",
   "WavebreakersFin",

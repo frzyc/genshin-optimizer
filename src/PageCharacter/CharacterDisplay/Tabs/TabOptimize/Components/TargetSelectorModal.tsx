@@ -68,7 +68,7 @@ function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: Disp
 }
 
 function TargetSelectorMenuItem({ node, onClick }: { node: NodeDisplay, onClick: () => void }) {
-  return <MenuItem onClick={onClick} style={{ overflow: "hidden", textOverflow: "ellipsis" }}>
+  return <MenuItem onClick={onClick} style={{ whiteSpace: "normal" }}>
     <ColorText color={node.info.variant} >{KeyMap.get(node.info.key)}</ColorText>
   </MenuItem>
 }
