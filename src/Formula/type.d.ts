@@ -87,7 +87,6 @@ export interface ConstantNode<Value> extends Base {
   operands: readonly []
   value: Value
   type: Value extends number ? "number" : Value extends string ? "string" : undefined
-  isEmpty: boolean
 }
 
 type _StrictInput<T, Num, Str> = T extends ReadNode<number> ? Num : T extends ReadNode<string> ? Str : { [key in keyof T]: _StrictInput<T[key], Num, Str> }
