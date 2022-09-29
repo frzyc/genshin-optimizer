@@ -31,8 +31,7 @@ export type IGOOD = {
 export type IGO = {
   dbVersion: number
   source: typeof GOSource
-  states?: Array<object & { key: string }>
-  buildSettings?: Array<BuildSetting & { key: string }>
+  buildSettings?: Array<BuildSetting & { id: string }>
 }
 
 export type ImportResultCounter<T> = {

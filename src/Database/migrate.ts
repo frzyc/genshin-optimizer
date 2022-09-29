@@ -43,8 +43,8 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
 
   // 8.22.0 - Present
   migrateVersion(21, () => {
-    if (!good.states) return
-    (good.states as any[]).forEach(value => {
+    const states = (good as any).states as Array<object & { key: string }> | undefined
+    if (states) (states as any[]).forEach(value => {
       if (value.key) {
         if (value.key === "dbMeta")
           (good as any).dbMeta = value
@@ -65,6 +65,10 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
         }
       }
     })
+
+    const buildSettings = (good as any).buildSettings
+    if (buildSettings)
+      good.buildSettings = buildSettings.map(b => ({ ...b, id: b.key }))
   })
   good.dbVersion = currentDBVersion
   if (version > currentDBVersion) throw new Error(`Database version ${version} is not supported`)

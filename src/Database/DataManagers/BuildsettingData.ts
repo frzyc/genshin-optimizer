@@ -111,13 +111,13 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, "
   }
   importGOOD(good: IGOOD & IGO, result: ImportResult) {
     const buildSettings = good[this.goKey]
-    if (Array.isArray(buildSettings) && buildSettings) buildSettings.forEach(b => {
-      const { key, ...rest } = b
-      if (!key || !allCharacterKeys.includes(key as CharacterKey)) return
+    if (buildSettings && Array.isArray(buildSettings)) buildSettings.forEach(b => {
+      const { id, ...rest } = b
+      if (!id || !allCharacterKeys.includes(id as CharacterKey)) return
       if (rest.builds) //preserve the old build ids
         rest.builds = rest.builds.map(build => build.map(i => result.importArtIds.get(i) ?? ""))
 
-      this.set(key as CharacterKey, { ...rest })
+      this.set(id as CharacterKey, { ...rest })
     })
   }
 }
