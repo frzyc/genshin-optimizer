@@ -21,9 +21,9 @@ const initialState = () => ({
   pageIndex: 0
 })
 
-export class DisplayCharacterEntry extends DataEntry<"display_weapon", "display_weapon", IDisplayCharacterEntry, IDisplayCharacterEntry>{
+export class DisplayCharacterEntry extends DataEntry<"display_character", "display_character", IDisplayCharacterEntry, IDisplayCharacterEntry>{
   constructor(database: ArtCharDatabase) {
-    super(database, "display_weapon", initialState, "display_weapon",)
+    super(database, "display_character", initialState, "display_character",)
   }
   validate(obj: any): IDisplayCharacterEntry | undefined {
     if (typeof obj !== "object") return
