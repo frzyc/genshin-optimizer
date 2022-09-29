@@ -96,14 +96,15 @@ export default function TabTheorycraft() {
     },
     [data, setData],
   )
-
   const location = useLocation()
   const { build: locBuild } = (location.state as { build: ICachedArtifact[] } | undefined) ?? { build: undefined }
   useEffect(() => {
     if (!locBuild) return
     const eWeapon = database.weapons.get(character.equippedWeapon)!
     copyFrom(eWeapon, locBuild)
-  }, [database, locBuild, character.equippedWeapon, copyFrom])
+    // WARNING: if copyFrom is included, it will cause a render loop due to its setData <---> data
+    // eslint-disable-next-line
+  }, [locBuild, database])
 
   const copyFromEquipped = useCallback(
     () => {

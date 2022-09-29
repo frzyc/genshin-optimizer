@@ -35,7 +35,7 @@ export class CharacterTCDataManager extends DataManager<CharacterKey, string, "c
   }
   getWithInit(key: CharacterKey, weaponKey: WeaponKey): ICharTC {
     const charTc = key ? this.data[key] : undefined
-    return charTc || initCharTC(weaponKey)
+    return charTc ?? initCharTC(weaponKey)
   }
 }
 
