@@ -1,7 +1,7 @@
 import { forEachNodes, mapContextualFormulas } from "../../../../Formula/internal";
 import { allOperations, optimize, precompute } from "../../../../Formula/optimization";
 import { NumNode, StrNode } from "../../../../Formula/type";
-import { prod, sum } from "../../../../Formula/utils";
+import { constant, prod, sum } from "../../../../Formula/utils";
 import { SlotKey } from "../../../../Types/consts";
 import { LPConstraint, maximizeLP, Weights } from "../../../../Util/LP";
 import { assertUnreachable, objectKeyValueMap, strictObjectMap } from "../../../../Util/Util";
@@ -284,16 +284,17 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
     const ranges = computeNodeRange([...nodeRange.keys()] as NumNode[], artRange)
     ranges.forEach((val, key) => nodeRange.set(key, val))
   }
-  function interpolate(x0: number, y0: number, x1: number, y1: number, node: NumNode): NumNode {
-    if (Math.abs(x1 - x0) < 1e-10) throw new PolyError("degenerate interpolation", "interpolating")
+  // Context a | b
+  //  a = 0 for lower bound, a = 1 for upper bound
+  //  if b = 2, flip `a` if `f` is negative (doesn't propagate)
+  function interpolate(x0: number, y0: number, x1: number, y1: number, node: NumNode, context: number): [NumNode, number] {
+    if (Math.abs(x1 - x0) < 1e-10) // Degenerate case
+      return [constant((context & 1) ? Math.max(y0, y1) : Math.min(y0, y1)), context]
     const slope = (y1 - y0) / (x1 - x0)
-    return sum(y0 - x0 * slope, prod(slope, node))
+    return [sum(y0 - x0 * slope, prod(slope, node)), context]
   }
   const expanded = mapContextualFormulas(nodes, 1, (_f, context) => {
     const f = _f as NumNode, { operation } = f, operands = f.operands as NumNode[]
-    // Context a | b
-    //  a = 0 for lower bound, a = 1 for upper bound
-    //  if b = 2, flip `a` if `f` is negative (doesn't propagate)
     if (context & 2) {
       const { min, max } = nodeRange.get(f)!
       context ^= (max <= 0) ? 3 : 2
@@ -306,16 +307,15 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
         if (!nodeRange.has(f)) {
           // Newly introduced node, which can only be in the form `c * x`
           const [c] = operands
-          if (operands.length !== 2 || c.operation !== "const") assertUnreachable("Invalid node expansion" as never)
+          if (operands.length !== 2 || c.operation !== "const")
+            assertUnreachable("Invalid node expansion" as never)
           return [f, context ^ (c.value < 0 ? 1 : 0)]
         }
         const { min, max } = nodeRange.get(f)!
         if (min < 0 && max > 0) throw new PolyError("zero-crossing", operation)
-        /**
-         * Flip the operand of the product if fx0 < 0, or more precisely, if f/x0 < 0.
-         * If `f > 0`, we flip lower/upper bound for `x0` if `x0 < 0`.
-         * If `f < 0`, then we flip `x0` if `x0 > 0`, or flip *twice* if `x0 < 0`.
-         */
+        // Flip the upper/lower bound for `x0` if `f/x0 < 0`.
+        // If `f > 0`, we flip bound for `x0` if `x0 < 0`.
+        // If `f < 0`, then we flip *twice* if `x0 < 0`.
         return [f, context ^ (max <= 0 ? 3 : 2)]
       }
       case "res": {
@@ -326,7 +326,7 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
           else {
             // Clamp `min` to guarantee upper bound
             const res = allOperations['res']
-            return [interpolate(min, res([min]), max, res([max]), base), context]
+            return interpolate(min, res([min]), max, res([max]), base, context)
           }
         } else throw new PolyError("lower bound requirement", operation)
       }
@@ -343,7 +343,7 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
           return [sum(loc * loc / below, prod(c / below, x)), context]
         } else {
           const sum_frac = allOperations["sum_frac"]
-          return [interpolate(min, sum_frac([min, c]), max, sum_frac([max, c]), x), context]
+          return interpolate(min, sum_frac([min, c]), max, sum_frac([max, c]), x, context)
         }
       }
       case "min": case "max": {
@@ -353,7 +353,7 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
         if ((operation === 'min') === isUpperBound) return [rOp, context] // ignore constant terms
         const { min: minY, max: maxY } = nodeRange.get(f)!
         const { min: minX, max: maxX } = nodeRange.get(rOp)!
-        return [interpolate(minX, minY, maxX, maxY, rOp), context]
+        return interpolate(minX, minY, maxX, maxY, rOp, context)
       }
       case "threshold": {
         const [val, thres, p, f] = operands
@@ -362,11 +362,13 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
         const threshold = thres.value, pass = p.value, fail = f.value
         const { min, max } = nodeRange.get(val)!
 
+        // Make sure that there is no zero-crossing in the result
+        if (isUpperBound) { if (pass < 0 || fail < 0) throw new PolyError("negative upper bound", operation) }
+        else { if (pass > 0 || fail > 0) throw new PolyError("positive lower bound", operation) }
         // Due to pruning, we know that min < threshold < max
-        // TODO: Make sure the resulting interpolation has no zero-crossing
         if ((pass > fail) === isUpperBound)
-          return [interpolate(min, fail, threshold, pass, val), context]
-        else return [interpolate(threshold, fail, max, pass, val), context]
+          return interpolate(min, fail, threshold, pass, val, context)
+        else return interpolate(threshold, fail, max, pass, val, context)
       }
       case "data": case "subscript": case "lookup": case "match":
         throw new PolyError("unsupported node", operation)
