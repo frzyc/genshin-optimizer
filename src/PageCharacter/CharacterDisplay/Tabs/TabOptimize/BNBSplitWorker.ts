@@ -314,7 +314,7 @@ function polyUpperBound(nodes: NumNode[], artRange: DynMinMax): NumNode[][] {
         /**
          * Flip the operand of the product if fx0 < 0, or more precisely, if f/x0 < 0.
          * If `f > 0`, we flip lower/upper bound for `x0` if `x0 < 0`.
-         * If `f < 0`, then we flip `x0` if `x > 0`, or flip *twice* if `x0 < 0`.
+         * If `f < 0`, then we flip `x0` if `x0 > 0`, or flip *twice* if `x0 < 0`.
          */
         return [f, context ^ (max <= 0 ? 3 : 2)]
       }
