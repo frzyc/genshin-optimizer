@@ -92,7 +92,7 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
         <StatInput
           sx={{ bgcolor: t => t.palette.contentLight.main, width: "100%" }}
           name={<ColorText color={eleKey}><b>{KeyMap.get(statKey)}</b></ColorText>}
-          value={val ? (elementImmunity ? Infinity : val) : 10}
+          value={val !== undefined ? (elementImmunity ? Infinity : val) : 10}
           placeholder={elementImmunity ? "∞ " : KeyMap.getStr(statKey)}
           defaultValue={defaultVal}
           onValueChange={value => characterDispatch({ type: "enemyOverride", statKey, value })}
