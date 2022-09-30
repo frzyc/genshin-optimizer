@@ -125,18 +125,6 @@ const dmgFormulas = {
       subscript(input.total.burstIndex, datamine.burst.companionDmg)), input.total.atk), "burst"),
     companionDmg4: customDmgNode(prod(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[3]),
       subscript(input.total.burstIndex, datamine.burst.companionDmg)), input.total.atk), "burst"),
-    fullBurstDmg1: sum(customDmgNode(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[0]), input.total.atk), "normal"),
-      customDmgNode(prod(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[0]),
-        subscript(input.total.burstIndex, datamine.burst.companionDmg)), input.total.atk), "burst")),
-    fullBurstDmg2: sum(customDmgNode(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[1]), input.total.atk), "normal"),
-      customDmgNode(prod(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[1]),
-        subscript(input.total.burstIndex, datamine.burst.companionDmg)), input.total.atk), "burst")),
-    fullBurstDmg3: sum(customDmgNode(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[2]), input.total.atk), "normal"),
-      customDmgNode(prod(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[2]),
-        subscript(input.total.burstIndex, datamine.burst.companionDmg)), input.total.atk), "burst")),
-    fullBurstDmg4: sum(customDmgNode(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[3]), input.total.atk), "normal"),
-      customDmgNode(prod(prod(subscript(input.total.autoIndex, datamine.normal.hitArr[3]),
-        subscript(input.total.burstIndex, datamine.burst.companionDmg)), input.total.atk), "burst"))
   },
   constellation6: {
     dmg: greaterEq(input.constellation, 6, customDmgNode(prod(percent(datamine.constellation6.dmg), input.total.atk), "elemental",
@@ -291,18 +279,6 @@ const sheet: ICharacterSheet = {
           }]
         }
       }
-    }), {
-      text: trm("fullBurstDMG.description"),
-    }, ct.headerTemplate("burst", {
-      fields: [{
-        node: infoMut(dmgFormulas.burst.fullBurstDmg1, { key: `char_${key}:fullBurstDMG.dmg1`, variant: "invalid" })
-      }, {
-        node: infoMut(dmgFormulas.burst.fullBurstDmg2, { key: `char_${key}:fullBurstDMG.dmg2`, variant: "invalid" })
-      }, {
-        node: infoMut(dmgFormulas.burst.fullBurstDmg3, { key: `char_${key}:fullBurstDMG.dmg3`, variant: "invalid" })
-      }, {
-        node: infoMut(dmgFormulas.burst.fullBurstDmg4, { key: `char_${key}:fullBurstDMG.dmg4`, variant: "invalid" })
-      }]
     })]),
 
     passive1: ct.talentTemplate("passive1"),
