@@ -115,7 +115,7 @@ function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, 
   const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
   const character = useCharacter(characterKey)
   const { level = 1, ascension = 0, constellation = 0 } = character ?? {}
-  return <CustomTooltip arrow placement="bottom" title={
+  return <CustomTooltip enterDelay={300} enterNextDelay={300} arrow placement="bottom" title={
     <Box sx={{ width: 300 }}>
       <CharacterCard hideStats characterKey={characterKey} />
     </Box>
