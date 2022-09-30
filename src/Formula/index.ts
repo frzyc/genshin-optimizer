@@ -1,9 +1,9 @@
 import { allEleEnemyResKeys } from "../KeyMap"
 import { transformativeReactionLevelMultipliers } from "../KeyMap/StatConstants"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
-import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
+import { crawlObject, deepClone, layeredAssignment, objectKeyMap, objectKeyValueMap, objPathValue } from "../Util/Util"
 import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
-import { constant, equal, frac, infoMut, lookup, max, min, naught, one, percent, prod, read, res, setReadNodeKeys, stringRead, subscript, sum, todo, unequal } from "./utils"
+import { constant, customRead, equal, frac, infoMut, lookup, max, min, naught, one, percent, prod, read, res, setReadNodeKeys, stringRead, subscript, sum, todo, unequal } from "./utils"
 
 const asConst = true as const, pivot = true as const
 
@@ -256,6 +256,19 @@ const tally = {
   ele: todo,
 }
 tally.ele = sum(...allElements.map(ele => min(tally[ele], 1)))
+/** Get a singleton `tally` node with path `["tally", ...path]` */
+function getTally(path: readonly string[], accu: ReadNode<number>["accu"] = "add", info?: Info): ReadNode<number> {
+  let node = objPathValue(tally, path) as ReadNode<number> | undefined
+  if (node) {
+    if (node.accu !== accu)
+      if (process.env.NODE_ENV === "development") throw new Error(`Found non-congruent tally nodes ${path}`)
+      else console.error(`Found non-congruent tally nodes ${path}`)
+    return node
+  }
+  node = customRead(["tally", ...path], info)
+  layeredAssignment(tally, path, node)
+  return node
+}
 
 /**
  * List of `input` nodes, rearranged to conform to the needs of the
@@ -271,5 +284,5 @@ const uiInput = input
 export {
   input, uiInput, common, customBonus,
 
-  target, tally,
+  target, tally, getTally
 }
