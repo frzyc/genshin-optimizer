@@ -4,7 +4,7 @@ import { Suspense } from "react"
 import SolidColoredTextField from "./SolidColoredTextfield"
 
 export type GeneralAutocompleteOption<T extends string> = { key: T, label: string, favorite?: boolean }
-export default function GeneralAutocomplete<T extends string>({ options, valueKey: key, label, onChange, disable = () => false, clearKey, toImg }:
+export default function GeneralAutocomplete<T extends string>({ options, valueKey: key, label, onChange, disable = () => false, clearKey, toImg, ...acProps }:
   { valueKey: T, label?: string, onChange: (v: T) => void, toImg: (v: T) => JSX.Element, disable?: (v: T) => boolean, clearKey?: T } & Omit<AutocompleteProps<GeneralAutocompleteOption<T>, false, true, false>, "renderInput" | "onChange">) {
   const value = options.find(o => o.key === key)
   return <Autocomplete
@@ -16,7 +16,6 @@ export default function GeneralAutocomplete<T extends string>({ options, valueKe
       return newValue !== null && onChange(newValue.key)
     }}
     isOptionEqualToValue={(option, value) => option.key === value.key}
-    getOptionDisabled={option => disable(option.key)}
     renderInput={props => <SolidColoredTextField
       {...props}
       label={label}
@@ -33,5 +32,6 @@ export default function GeneralAutocomplete<T extends string>({ options, valueKe
       {!!option.favorite && <Favorite />}
     </MenuItem>
     }
+    {...acProps}
   />
 }

@@ -32,7 +32,7 @@ import { DataContext, dataContextObj } from "../../../../Context/DataContext";
 import Artifact, { maxArtifactLevel } from "../../../../Data/Artifacts/Artifact";
 import { ArtifactSheet } from "../../../../Data/Artifacts/ArtifactSheet";
 import WeaponSheet from "../../../../Data/Weapons/WeaponSheet";
-import { initCharTC } from "../../../../Database/Data/CharacterTCData";
+import { initCharTC } from "../../../../Database/DataManagers/CharacterTCData";
 import { DatabaseContext } from "../../../../Database/Database";
 import { uiInput as input } from "../../../../Formula";
 import { computeUIData, dataObjForWeapon } from "../../../../Formula/api";
@@ -96,14 +96,15 @@ export default function TabTheorycraft() {
     },
     [data, setData],
   )
-
   const location = useLocation()
   const { build: locBuild } = (location.state as { build: ICachedArtifact[] } | undefined) ?? { build: undefined }
   useEffect(() => {
     if (!locBuild) return
     const eWeapon = database.weapons.get(character.equippedWeapon)!
     copyFrom(eWeapon, locBuild)
-  }, [database, locBuild, character.equippedWeapon, copyFrom])
+    // WARNING: if copyFrom is included, it will cause a render loop due to its setData <---> data
+    // eslint-disable-next-line
+  }, [locBuild, database])
 
   const copyFromEquipped = useCallback(
     () => {

@@ -18,7 +18,7 @@ import { StatColoredWithUnit } from '../Components/StatDisplay';
 import StatIcon from '../Components/StatIcon';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
-import { cachedArtifact, validateArtifact } from '../Database/Data/ArtifactData';
+import { cachedArtifact, validateArtifact } from '../Database/DataManagers/ArtifactData';
 import { DatabaseContext } from '../Database/Database';
 import KeyMap, { cacheValueString } from '../KeyMap';
 import useForceUpdate from '../ReactHooks/useForceUpdate';

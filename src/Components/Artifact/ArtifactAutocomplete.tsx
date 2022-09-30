@@ -7,6 +7,7 @@ import KeyMap from '../../KeyMap';
 import usePromise from '../../ReactHooks/usePromise';
 import { allMainStatKeys, allSubstatKeys, MainStatKey, SubstatKey } from '../../Types/artifact';
 import { allElementsWithPhy, ArtifactRarity, ArtifactSetKey } from '../../Types/consts';
+import ColorText from '../ColoredText';
 import MenuItemWithImage from '../MenuItemWithImage';
 import SolidColoredTextField from '../SolidColoredTextfield';
 import { StarsDisplay } from '../StarDisplay';
@@ -57,8 +58,8 @@ function ArtifactMultiAutocomplete<T extends ArtifactMultiAutocompleteKey, G ext
       <MenuItemWithImage
         key={option.key}
         value={option.key}
-        image={getImage(option.key)}
-        text={option.label}
+        image={<ColorText color={KeyMap.getVariant(option.key)}>{getImage(option.key)}</ColorText>}
+        text={<ColorText color={KeyMap.getVariant(option.key)}>{option.label}</ColorText>}
         theme={theme}
         isSelected={selectedArtifactKeys.includes(option.key)}
         props={props}

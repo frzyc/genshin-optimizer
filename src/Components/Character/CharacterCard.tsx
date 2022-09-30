@@ -1,15 +1,21 @@
 import { Favorite, FavoriteBorder } from '@mui/icons-material';
 import { Box, CardActionArea, CardContent, Chip, Grid, IconButton, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
+import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
+import { DataContext, dataContextObj, TeamData } from '../../Context/DataContext';
+import CharacterSheet from '../../Data/Characters/CharacterSheet';
 import { ascensionMaxLevel } from '../../Data/LevelData';
 import { DatabaseContext } from '../../Database/Database';
-import { DataContext, dataContextObj, TeamData } from '../../Context/DataContext';
 import { uiInput as input } from '../../Formula';
 import KeyMap from '../../KeyMap';
-import CharacterCardPico from './CharacterCardPico';
+import useCharacter from '../../ReactHooks/useCharacter';
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
+import useCharMeta from '../../ReactHooks/useCharMeta';
+import useDBMeta from '../../ReactHooks/useDBMeta';
+import usePromise from '../../ReactHooks/usePromise';
 import useTeamData from '../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../Types/artifact';
+import { ICachedCharacter } from '../../Types/character';
 import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '../../Types/consts';
 import { range } from '../../Util/Util';
 import ArtifactCardPico from '../Artifact/ArtifactCardPico';
@@ -21,14 +27,7 @@ import { StarsDisplay } from '../StarDisplay';
 import StatIcon from '../StatIcon';
 import WeaponCardPico from '../Weapon/WeaponCardPico';
 import WeaponFullCard from '../Weapon/WeaponFullCard';
-import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
-import usePromise from '../../ReactHooks/usePromise';
-import CharacterSheet from '../../Data/Characters/CharacterSheet';
-import useCharacter from '../../ReactHooks/useCharacter';
-import useDBState from '../../ReactHooks/useDBState';
-import { initCharMeta } from '../../Database/Data/StateData';
-import { ICachedCharacter } from '../../Types/character';
-import useGender from '../../ReactHooks/useGender';
+import CharacterCardPico from './CharacterCardPico';
 
 type CharacterCardProps = {
   characterKey: CharacterKey,
@@ -47,7 +46,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   const { teamData: teamDataContext } = useContext(DataContext)
   const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
   const character = useCharacter(characterKey)
-  const gender = useGender(database)
+  const { gender } = useDBMeta()
   const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
   const characterDispatch = useCharacterReducer(characterKey)
   const data = teamData?.[characterKey]?.target
@@ -65,11 +64,11 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
     teamData,
   }), [data, teamData])
 
-  const [{ favorite }, setCharMeta] = useDBState(`charMeta_${characterKey}`, initCharMeta)
+  const { favorite } = useCharMeta(characterKey)
   return <Suspense fallback={<Skeleton variant="rectangular" width={300} height={600} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <Box sx={{ display: "flex", position: "absolute", zIndex: 2, opacity: 0.7 }}>
-        <IconButton sx={{ p: 0.5 }} onClick={_ => setCharMeta({ favorite: !favorite })}>
+        <IconButton sx={{ p: 0.5 }} onClick={_ => database.charMeta.set(characterKey, { favorite: !favorite })}>
           {favorite ? <Favorite /> : <FavoriteBorder />}
         </IconButton>
       </Box>
@@ -143,8 +142,7 @@ function NewCharacterCardContent({ characterKey }: { characterKey: CharacterKey 
 }
 
 function Header({ children, characterKey, onClick }: { children: JSX.Element, characterKey: CharacterKey, onClick?: (characterKey: CharacterKey) => void }) {
-  const { database } = useContext(DatabaseContext)
-  const gender = useGender(database)
+  const { gender } = useDBMeta()
   const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
 
   const actionWrapperFunc = useCallback(
@@ -228,7 +226,7 @@ function HeaderContent() {
 
 function HeaderContentNew({ characterKey }: { characterKey: CharacterKey }) {
   const { database } = useContext(DatabaseContext)
-  const gender = useGender(database)
+  const { gender } = useDBMeta()
   const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, database, gender])
 
   if (!characterSheet) return null

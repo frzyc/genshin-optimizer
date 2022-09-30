@@ -24,11 +24,6 @@ export type FilterOption = {
   lines: Array<1 | 2 | 3 | 4>
 }
 
-type ArtifactSortFilter = {
-  filterOption: FilterOption
-  ascending: boolean
-  sortType: ArtifactSortKey
-}
 export function initialFilterOption(): FilterOption {
   return {
     artSetKeys: [],
@@ -46,11 +41,6 @@ export function initialFilterOption(): FilterOption {
     lines: [1, 2, 3, 4]
   }
 }
-export const initialArtifactSortFilter = (): ArtifactSortFilter => ({
-  filterOption: initialFilterOption(),
-  ascending: false,
-  sortType: artifactSortKeys[0],
-})
 
 export function artifactSortConfigs(effFilterSet: Set<SubstatKey>, probabilityFilter): SortConfigs<ArtifactSortKey, ICachedArtifact> {
   return {

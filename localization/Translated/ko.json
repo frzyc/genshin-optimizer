@@ -16,11 +16,13 @@
                 },
                 "noRoll": "추가옵션 없음",
                 "noStat": "값 없음",
-                "eff": "효율: <1></1>"
+                "eff": "효율: <1></1>",
+                "RollCount_one": "{{count}}회",
+                "RollCount_other": "{{count}}회"
             },
             "rarity": "등급",
             "level": "레벨",
-            "unknownPieceName": "세트 이름 미확인",
+            "unknownPieceName": "성유물 이름 미지정",
             "mainSelect": "주 옵션 선택",
             "curSubEff": "현재 부 옵션 효율",
             "curSubEffDesc": "성유물 강화 시 4레벨마다 부 옵션이 추가됩니다. <strong>부 옵션 효율</strong>은 얼마나 높은 수치로 옵션이 추가되었는지 계산되어 표시됩니다.",
@@ -35,24 +37,26 @@
             "btnClear": "초기화",
             "btnRandom": "무작위",
             "btnUpdate": "성유물 업데이트",
-            "clearPrompt": "성유물 편집기에 내용이 있습니다. 정말 편집기의 내용을 비우시겠습니까?"
+            "clearPrompt": "성유물 편집기에 내용이 있습니다. 정말 편집기의 내용을 비우시겠습니까?",
+            "unknownSetName": "성유물 세트 미지정"
         },
         "artifactFilter": "성유물 필터",
         "filterLocation": {
             "inventory": "보관함",
             "currentlyEquipped": "현재 장비중",
-            "any": "모두"
+            "any": "모두",
+            "location": "위치"
         },
         "button": {
             "unequipArtifacts": "미착용 성유물",
             "deleteArtifacts": "성유물 삭제",
-            "excludeArtifacts": "성유물 보호",
-            "includeArtifacts": "성유물 보호해제"
+            "excludeArtifacts": "성유물 제외",
+            "includeArtifacts": "성유물 포함"
         },
         "filterLevelFormat": "레벨 <1>최소</1>/<3>최대</3> (포함)",
         "buttonHint": "주의: 위 빨간 버튼들은 <1>필터링된 성유물</1>에만 적용됩니다",
         "tipsOfTheDay": [
-            "4성 성유물의 최대 효율은 약 60%입니다.",
+            "4성 성유물의 최대 효율은 약 540%입니다.",
             "보통 성유물의 최대 효율은 업그레이드할 때 감소합니다. 이는 평범한 현상입니다!",
             "스크린샷 부 옵션에 숫자 \"1\"이 있다면 스캔이 잘 되지 않습니다.",
             "만약 부 옵션 하나에 모든 추가옵션(6)이 붙는다면, 보라색이 될 겁니다!",
@@ -74,11 +78,11 @@
             "section2": "<0>성유물 편집기</0><1>3<1></1>성에서 5<3></3>성 사이의 어떤 성유물이라도 입력할 수 있는 완벽한 기능의 성유물 편집기입니다. 성유물의 부 옵션이 입력되면 자동으로 몇 번의 추가옵션이 붙었는지 자동으로 계산되어 효율을 알려줍니다. 또한 여러분이 레벨에 따라 성유물에 올바른 값의 부 옵션을 입력했는지 확인해줍니다.</1><2>스크린샷 스캔</2><3>하나하나 입력하는 건 여러분이 취향이 아닌가요? 그렇다면 여러분은 스크린샷 스캔을 통해 성유물을 입력하실 수 있습니다! 성유물 편집기에서 <1>Show Me How!</1> 버튼을 누르시면 자세하게 확인하실 수 있습니다.</3><4>중복/강화 성유물 체크</4><5>혹시 <1>중복된</1> 성유물을 체크하는 기능이 있다는 걸 알고 계시나요? 게다가 만약 새로 등록하려는 성유물이 기존에 등록된 성유물의 <3>강화된</3> 성유물이라 판단되면 이 또한 알려줍니다. 일단 중복/강화 성유물이 체크되면 두 가지 성유물의 비교 화면을 통해 확인하실 수 있습니다. (이미지를 참고하세요)</5>",
             "section3": "<0>성유물 보관함</0><p>여러분이 추가한 모든 성유물이 이 곳에 표시됩니다. 여기에 있는 필터를 활용하여 성유물을 세부적으로 확인할 수 있습니다.</p><2>예시: 강화 재료로 쓸 성유물 찾기</2><p>성유물 필터와 성유물 효율 계산을 통해 강화 재료로 사용할 성유물을 빠르게 찾을 수 있습니다.</p><4>이 예시에서는 다음과 같이 설정합니다: </4><5><0>0에서 8레벨로 제한.</0><1>보호되지 않은 보관함 내 성유물.</1><2>효율 계산에서 %가 아닌 체력, 방어력, 원소 충전 효율 제거.</2><3>최대 효율로 오름차순 정렬.</3></5><p>이렇게 하면 효율성이 가장 낮은 성유물을 기준으로 성유물 보관함을 필터링합니다.</p>"
         },
-        "exclusionDisplay": "보호: {{value}}",
+        "exclusionDisplay": "제외: {{value}}",
         "exclusion": {
             "any": "모두",
-            "excluded": "보호됨",
-            "included": "보호되지 않음"
+            "excluded": "제외됨",
+            "included": "포함됨"
         },
         "sortMap": {
             "quality": "품질",
@@ -89,7 +93,18 @@
         "efficiencyFilter": {
             "title": "효율 계산에 사용할 부 옵션"
         },
-        "resetFilters": "필터 리셋"
+        "resetFilters": "필터 리셋",
+        "setEffectNum": "{{setNum}}-셋",
+        "excludeArtifactTip": "성유물 제외시 빌드 생성 때 선택되지 않습니다.",
+        "excluded": "이 성유물은 제외되었습니다.",
+        "included": "이 성유물은 제외되지 않았습니다.",
+        "autocompleteLabels": {
+            "sets": "성유물 세트",
+            "mainStats": "주옵션",
+            "substats": "부옵션"
+        },
+        "substat_one": "부옵션 {{count}}줄",
+        "substat_other": "부옵션 {{count}}줄"
     },
     "languages": {
         "chs": "중국어 (간체)",
@@ -116,7 +131,28 @@
             "title": "데이터베이스 업로드",
             "replaceDatabase": "데이터베이스 덮어쓰기",
             "hint": "JSON 파일 불러오기...",
-            "hintPaste": "...아니면 내용을 아래에 붙여넣기."
+            "hintPaste": "...아니면 내용을 아래에 붙여넣기.",
+            "goUpload": {
+                "title": "<strong>Genshin Optimizer</strong> 형식",
+                "migrate": "데이터베이스가 새 버전으로 전환됩니다. import 이후 새로 다운로드 받으시길 권장드립니다.",
+                "deleteDatabasePrompt": "데이터베이스를 정말 지우시겠습니까?"
+            },
+            "error": {
+                "jsonParse": "JSON 파일을 해석 할 수 없습니다.",
+                "unknown": "알 수 없는 파일 형식입니다.",
+                "monaInvalid": "잘못된 Mona-Uranai 파일 형식",
+                "goInvalid": "잘못된 GO 백업 파일 형식"
+            }
+        },
+        "count": {
+            "chars": "캐릭터:",
+            "arts": "성유물:",
+            "weapons": "무기:"
+        },
+        "DatabaseCard": {
+            "button": {
+                "copy": "클립보드로 복사"
+            }
         }
     },
     "ui": {
@@ -145,7 +181,20 @@
         "appVersion": "$t(pageTitle) 버전: {{version}}",
         "underConstruction": "개발중",
         "error": "오류",
-        "reset": "리셋"
+        "reset": "리셋",
+        "info": "정보",
+        "sortMap": {
+            "name": "이름",
+            "level": "레벨",
+            "rarity": "희귀도",
+            "efficiency": "현재 효율",
+            "mefficiency": "최대 효율"
+        },
+        "sortBy": "다음으로 정렬: ",
+        "locked": "보호됨",
+        "unlocked": "보호되지않음",
+        "refinement": "{{value}}재련",
+        "selectlevel": "레벨 선택"
     },
     "char_Eula": {
         "skillC": {
@@ -179,10 +228,16 @@
         "regenEner": "효과 종료 후 벤티의 원소 에너지 15 회복",
         "c6": "<strong>바람신의 시</strong>에 피격된 적",
         "c4": "벤티가 원소 구슬 혹은 원소 입자를 획득",
-        "q": "모든 <1>{{elementKey}}</1> 캐릭터의 원소 에너지 15 회복.",
+        "q": "원소 전환 발생시 해당 원소와 대응하는 파티 내 모든 캐릭터의 원소 에너지 15pt 회복.",
         "c2": {
             "hit": "공중에 띄워진 적",
             "launched": "공중에 띄워진 적"
+        },
+        "fullBurstDMG": {
+            "description": {
+                "0": "<strong>총 원소 폭발 피해</strong>",
+                "1": "폭풍의 눈 효과를 포함한 총 원소 폭발 피해를 계산합니다. 이 계산은 다음을 가정합니다."
+            }
         }
     },
     "sheet": {
@@ -194,17 +249,49 @@
             "charged": "강공격이 대상에게 적중",
             "plunging": "낙하 공격이 대상에게 적중",
             "skill": "원소 전투 스킬이 대상에게 적중",
-            "burst": "원소 폭발 스킬이 대상에게 적중"
+            "burst": "원소 폭발이 대상에게 적중"
         },
         "eleAbsor": "원소 전환",
-        "absorDot": "원소 전환 도트 데미지"
+        "absorDot": "원소 전환 도트 데미지",
+        "afterUse": {
+            "skill": "원소 전투 스킬 사용 후",
+            "burst": "원소 폭발 사용 후",
+            "skillOrBurst": "원소전투스킬 혹은 원소폭발 사용 이후"
+        },
+        "increase": {
+            "atk": "ATK 증가"
+        },
+        "burstCDRed": "원소 폭발 재사용 대기시간 감소",
+        "charges": "사용 횟수",
+        "addlCharges": "추가 사용 횟수",
+        "activeCharField": "필드 위 캐릭터가 영역내 존재",
+        "opponentsField": "영역에 적 존재",
+        "talents": {
+            "skill": "스킬",
+            "burst": "원폭",
+            "passive": "패시브",
+            "passive1": "고유특성1",
+            "passive2": "고유특성4",
+            "passive3": "패시브",
+            "sprint": "대시",
+            "constellation1": "1돌",
+            "constellation2": "2돌",
+            "constellation3": "3돌",
+            "constellation4": "4돌",
+            "constellation5": "5돌",
+            "constellation6": "6돌"
+        }
     },
     "weapon_SongOfBrokenPines": {
         "name": "천년의 대악장: 깃발의 노래"
     },
     "char_KaedeharaKazuha": {
         "c1": "<strong>카즈하의 일도</strong> 사용 쿨다운 리셋",
-        "c2": "바람 부는 가을 들판"
+        "c2": "바람 부는 가을 들판",
+        "c6": {
+            "after": "<strong>치하야부루</strong> 혹은 <strong>카즈하의 일도</strong> 발동",
+            "bonus": "일반 공격, 강공격, 낙하 공격 가하는 피해 증가"
+        }
     },
     "char_Rosaria": {
         "a1": "뒤에서 공격 시",
@@ -216,9 +303,273 @@
     "char_KamisatoAyaka": {
         "afterSprint": "대시 후",
         "afterSkill": "<strong>카미사토류·얼음꽃</strong> 사용 후",
-        "afterSprintCryo": "대시 후 <cyro>얼음 원소<cyro> 부착",
+        "afterSprintCryo": "대시 후 <cryo>얼음 원소</cryo> 부착",
         "staminaRestore": "스태미나 10pt 회복",
         "snowflakeDMG": "서리의 관문 피해",
-        "dmgBySnowflake": "<strong>카미사토류·멸망의 서리</strong>로 생성된 서리의 관문이 가하는 피해를 받은 대상"
+        "dmgBySnowflake": "<strong>카미사토류·멸망의 서리</strong>로 생성된 서리의 관문이 가하는 피해를 받은 대상",
+        "afterBurst": "<strong>카미사토류·멸망의 서리</strong> 사용 후",
+        "c6Active": "살얼음의 춤 상태 획득"
+    },
+    "weapon_MistsplitterReforged": {
+        "emblem": "무절(霧切)의 문장"
+    },
+    "char_Yoimiya": {
+        "c1": "<strong>유금화광</string> 상태의 적을 처치",
+        "c2": "<pyro>불 원소 피해</pyro>가 치명타를 입힘",
+        "p2": "파티 ATK 상승",
+        "normPyroInfus": "<pyro>일반 공격이 불 원소 피해로 전환</pyro>"
+    },
+    "char_RaidenShogun": {
+        "skill": {
+            "eye": "뇌벌 악요의 눈",
+            "partyCost": "원소 에너지"
+        },
+        "burst": {
+            "resolves": "원력 스택"
+        },
+        "a4": {
+            "enerRest": "<strong>몽상의 일심</strong> 상태에서 원소 에너지 회복",
+            "eleDMG": "번개 원소 피해 증가"
+        }
+    },
+    "char_Aloy": {
+        "skill": {
+            "coil": "코일",
+            "coil1": "코일 1스택",
+            "coil2": "코일 2스택",
+            "coil3": "코일 3스택",
+            "rush": "얼음 질주"
+        },
+        "normCryoInfus": "<cryo>일반 공격이 얼음 원소 피해로 전환</cryo>"
+    },
+    "char_KujouSara": {
+        "skill": {
+            "ambush": "텐구 주뢰·매복"
+        }
+    },
+    "char_SangonomiyaKokomi": {
+        "burst": "의식의 날개옷",
+        "c2": "HP 50% 이하의 캐릭터",
+        "c6": "일반 혹은 강공격이 HP 80% 이상인 캐릭터 치유",
+        "c2SkillHeal": "<strong>해파리의 서약</strong> 치유 증가량",
+        "c2BurstHeal": "<strong>해인화우(海人化羽)</strong> 치유 증가량"
+    },
+    "weapon_ThrillingTalesOfDragonSlayers": {
+        "condName": "캐릭터 교체"
+    },
+    "artifact_BlizzardStrayer": {
+        "condName": "공격받은 적"
+    },
+    "artifact_ShimenawasReminiscence": {
+        "afterUseEnergy": "원소 에너지 15 사용 후"
+    },
+    "char_Albedo": {
+        "blossomDmg_": "찰나의 꽃 피해 증가"
+    },
+    "char_Barbara": {
+        "constellation2": {
+            "cond": "<strong>공련, 시작♪</strong> 지속중"
+        }
+    },
+    "char_Beidou": {
+        "a4normalDmg_": "일반 공격 피해 증가",
+        "a4chargeDmg_": "강공격 피해 증가"
+    },
+    "char_Bennett": {
+        "c6PyroInfusion": "<pyro>한손검, 양손검, 장병기 무기 캐릭터에 불 원소 부여 효과"
+    },
+    "char_Chongyun": {
+        "infusion": "한손검, 대검, 장병기를 사용하는 캐릭터에 얼음 원소 부여 효과",
+        "constellation1": "얼음 칼날 피해",
+        "constellation6": "적의 HP 백분율이 중운보다 낮음"
+    },
+    "char_Ganyu": {
+        "a1": {
+            "condName": "서리꽃 화살 발사 후",
+            "critRateInc": "서리꽃 치명확률 증가"
+        },
+        "c1": {
+            "condName": "적이 2단 차지 강공격의 서리꽃 화살 혹은 피어난 서리꽃에 명중"
+        },
+        "c4": {
+            "lingerDuration": "영역 이탈 시 지속시간"
+        }
+    },
+    "char_HuTao": {
+        "constellation2": {
+            "applyBloodBlossom": "혈매향 효과 적용(2돌)",
+            "skillParams": {
+                "2": "혈매향 피해(2돌)"
+            }
+        },
+        "constellation4": {
+            "condName": "호두가 부여한 혈매향 효과 상태의 적 처치시"
+        },
+        "constellation6": {
+            "condName": "HP가 25% 이하로 떨어지거나 전투 뷸능이 될 정도의 피해를 입음"
+        }
+    },
+    "char_Ningguang": {
+        "a4bonus_": "바위 원소 피해 증가"
+    },
+    "char_Razor": {
+        "fullBurstDMG": {
+            "description": {
+                "0": "<strong>총 원소 폭발 피해</strong>",
+                "1": "원소 폭발 중 레이저의 일반 공격 피해의 총량을 계산합니다."
+            }
+        }
+    },
+    "char_Xiao": {
+        "burst": {
+            "autoAtkDmgBonus_": "일반/강/낙하 공격 피해 증가"
+        }
+    },
+    "weapon_AmosBow": {
+        "condName": "화살 체공 시간"
+    },
+    "char_KamisatoAyato": {
+        "c1": {
+            "shun_dmg_": "<hydro>순수검 피해 증가</hydro>"
+        }
+    },
+    "page_character": {
+        "addNew": "새 캐릭터 추가",
+        "tabs": {
+            "overview": "기본정보",
+            "talent": "특성 및 돌파",
+            "teambuffs": "팀 버프",
+            "optimize": "최적화"
+        },
+        "formulas": "식",
+        "calculations": "계산",
+        "selectCharacter": "캐릭터 선택",
+        "removeCharacter": "{{value}}을/를 정말 지우시겠습니까?",
+        "delete": "캐릭터 삭제",
+        "teammates": "파티원",
+        "showingNum_one": "<1>{{count}}</1> 캐릭터 표시중 (총 {{value}})",
+        "showingNum_other": "<1>{{count}}</1> 캐릭터 표시중 (총 {{value}})",
+        "hitmode": {
+            "hit": "최소 피해(치명X)",
+            "avgHit": "평균 피해량",
+            "critHit": "최대 피해(치명O)"
+        },
+        "tabEquip": {
+            "swapWeapon": "무기 교환",
+            "swapArt": "성유물 교환",
+            "compare": "현재 빌드와 비교",
+            "unequipArts": "성유물 모두 해제"
+        },
+        "characterName": "캐릭터 이름",
+        "addStats": {
+            "title": "적 설정 및 스탯 조정"
+        },
+        "tabTheorycraft": {
+            "substatType": {
+                "min": "부옵션 최소값 사용",
+                "max": "부옵션 최대값 사용",
+                "mid": "부옵션 중간값 사용"
+            },
+            "maxRolls": "부옵션은 최대 30회 붙을 수 있습니다."
+        },
+        "tabTeambuff": {
+            "team_reso": "파티 원소 공명",
+            "resonance_tip": "원소 공명을 받기 위해선 파티가 4명으로 가득 차야 합니다."
+        }
+    },
+    "page_weapon": {
+        "showingNum_one": "<1>{{count}}</1> 무기 표시중 (총 {{value}})",
+        "showingNum_other": "<1>{{count}}</1> 무기 표시중 (총 {{value}})",
+        "edit": "무기 편집",
+        "weaponName": "무기 이름",
+        "removeWeapon": "{{value}}을/를 정말 삭제하시겠습니까?",
+        "addWeapon": "새 무기 추가"
+    },
+    "char_Collei": {
+        "sproutDmg": "신엽 효과 피해",
+        "miniAnbarDmg": "미니 콜린엔바 피해"
+    },
+    "char_Tighnari": {
+        "p1Cond": "<strong>화엽의 화살</strong> 발사 후",
+        "c6DmgKey": "꽃을 품은 화살 피해",
+        "c6WreathRed": "<strong>화엽의 화살</strong> 차지 시간 감소"
+    },
+    "page_character_optimize": {
+        "mainStat": {
+            "title": "주옵션",
+            "levelAssTooltip": {
+                "title": "레벨 가정",
+                "desc": "주옵션 값을 지정된 레벨로 변경. 부옵션 값은 변하지 않습니다."
+            },
+            "assumptionLvl": {
+                "no": "레벨 변화 없음",
+                "lvl": "최소 {{lvl}} 레벨로"
+            }
+        },
+        "tcGraph": {
+            "vs": "최적화 대상과 다음 값을 도식화 :",
+            "notSel": "선택되지 않음",
+            "optTarget": "최적화 대상"
+        },
+        "levelFilter": "성유물 레벨 필터",
+        "useExcluded": {
+            "title": "제외된 성유물도 사용",
+            "usingNum_one": "<1>{{count}}</1>개의 제외된 성유물 사용",
+            "usingNum_other": "<1>{{count}}</1>개의 제외된 성유물 사용"
+        },
+        "useEquipped": {
+            "title": "착용중인 성유물 사용",
+            "modal": {
+                "title": "착용 성유물에 대한 캐릭터 우선순위",
+                "desc1": "빌드를 만드는 동안, Optimizer는 현재 캐릭터보다 아래에 있거나 목록에 없는 캐릭터의 성유물만 사용합니다.",
+                "desc2": "현재 캐릭터가 목록에 없는 경우, 리스트에 없는 캐릭터의 성유물만 사용합니다.",
+                "usingNum_one": "<1>{{count}}</1> 캐릭터의 성유물 사용",
+                "usingNum_other": "목록에 없는 <1>{{count}}</1> 캐릭터의 성유물 사용",
+                "status": {
+                    "use": "성유물 사용",
+                    "dont": "성유물 사용 안함",
+                    "curr": "현재 캐릭터"
+                },
+                "add": "캐릭터 추가",
+                "clearList": "목록 초기화"
+            },
+            "usingNum_one": "<1>{{count}}</1> 캐릭터 사용",
+            "usingNum_other": "<1>{{count}}</1> 캐릭터 사용"
+        },
+        "allowPartial": "성유물 일부 착용 허용(5개 미만)",
+        "constraintFilter": {
+            "title": "제한 조건",
+            "tooltip": "빌드 생성시 조건을 지정할 수 있습니다. 예제: 원충 140% 이상"
+        },
+        "artSetConfig": {
+            "title": "성유물 세트 설정",
+            "setEffCond": "성유물 효과 적용 조건",
+            "enabled": "활성화",
+            "allowed": "허용",
+            "excluded": "제외됨",
+            "selected": "선택됨",
+            "2rainbow": "3-Rainbow",
+            "4rainbow": "5-Rainbow",
+            "allowAll2set": "모든 2셋 허용",
+            "excludeAll2set": "모든 2셋 제외",
+            "allowAll4set": "모든 4셋 허용",
+            "excludeAll4set": "모든 4셋 제외",
+            "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow 구성",
+            "modal": {
+                "setCond": {
+                    "title": "조건부 성유물 세트 효과 적용",
+                    "reset": "조건 초기화",
+                    "text": "일부 성유물은 조건에 따라 효과가 적용됩니다. 이 창에서 조건들을 선택하게 되면 해당 효과는 최적화 과정중에 같이 계산됩니다."
+                },
+                "ArtSetFilter": {
+                    "title": "성유물 세트 <1>포함됨<1></1></1> / <3>제외됨<1></1></3>",
+                    "intro": "성유물 세트 조합을 허용하거나 제외시킬 수 있습니다. 다음 예제에서 A는 세트헤 해당하는 성유물이고 R은 해당되지 않는 성유물(rainbow)을 의미합니다.",
+                    "2set": "<0><0>Excluding<1></1> 2-Set</0></0>은 2셋 구성을 제외합니다: <2><0>AA</0>RRR</2> 혹은 <4><0>AAA</0>RR</4>.",
+                    "4set": "<0><0>Excluding<1></1> 4-Set</0></0>은 4셋 구성을 제외합니다.: <2><0>AAAA</0>R</2> 혹은 <4><0>AAAAA</0></4>.",
+                    "2rain": "<0><0>Excluding<1></1> 3-Rainbow</0></0>은 2셋 + 3-Rainbow 구성을 제외합니다: <2>AA<1>RRR</1></2> 혹은 <4>AAA<1>RR</1></4>.",
+                    "4rain": "<0><0>Excluding<1></1> 5-Rainbow</0></0>은 5-Rainbow 구성을 제외합니다: <2><0>RRRRR</0></2>."
+                }
+            }
+        }
     }
 }

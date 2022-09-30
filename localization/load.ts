@@ -2,6 +2,7 @@ const fs = require('fs')
 //put all manual translation into one file.
 const enDir = './Translated/'
 const localeDir = '../public/locales/'
+const logging = false
 fs.readdir(enDir, (err, files) => {
   files = files.filter(fn => fn.includes(".json"))
   files.forEach(file => {
@@ -13,7 +14,7 @@ fs.readdir(enDir, (err, files) => {
       const fileDir = `${localeDir}${lang}`
       const fileName = `${fileDir}/${ns}.json`
       if (!fs.existsSync(fileDir)) fs.mkdirSync(fileDir)
-      fs.writeFile(fileName, content, () => console.log("Generated JSON at", fileName));
+      fs.writeFile(fileName, content, () => logging && console.log("Generated JSON at", fileName));
     })
   });
 });

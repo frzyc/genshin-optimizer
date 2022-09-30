@@ -20,7 +20,7 @@ import { DatabaseContext } from "../Database/Database"
 import { uiInput as input } from "../Formula"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import useBoolState from "../ReactHooks/useBoolState"
-import useGender from "../ReactHooks/useGender"
+import useDBMeta from "../ReactHooks/useDBMeta"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
 import { LocationKey } from "../Types/consts"
@@ -48,7 +48,7 @@ export default function WeaponEditor({
   const weaponDispatch = useCallback((newWeapon: Partial<ICachedWeapon>) => {
     database.weapons.set(propWeaponId, newWeapon)
   }, [propWeaponId, database])
-  const gender = useGender(database)
+  const { gender } = useDBMeta()
   const characterSheet = usePromise(() => location ? CharacterSheet.get(database.chars.LocationToCharacterKey(location), gender) : undefined, [database, gender, location])
 
   const initialWeaponFilter = characterSheet && characterSheet.weaponTypeKey
@@ -121,7 +121,7 @@ export default function WeaponEditor({
     {footer && id && <CardContent sx={{ py: 1 }}>
       <Grid container spacing={1}>
         <Grid item flexGrow={1}>
-          <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} />
+          <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} autoCompleteProps={{ getOptionDisabled: t => !t, disableClearable: true }} />
         </Grid>
         <Grid item flexGrow={2} />
         {!!onClose && <Grid item><CloseButton sx={{ height: "100%" }} large onClick={onClose} /></Grid>}

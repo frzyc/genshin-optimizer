@@ -1,22 +1,18 @@
 import { Button, ButtonGroup, CardContent, Divider, Grid, InputBase, Typography } from '@mui/material';
-import React, { useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import Assets from '../Assets/Assets';
 import CardDark from '../Components/Card/CardDark';
 import ImgIcon from '../Components/Image/ImgIcon';
-import useDBState from '../ReactHooks/useDBState';
+import { DatabaseContext } from '../Database/Database';
 import { MINUTE_MS, timeString } from '../Util/TimeUtil';
 
 export const RESIN_MAX = 160
 export const RESIN_RECH_MS = 8 * MINUTE_MS
-export function initToolsDisplayResin() {
-  return {
-    resin: RESIN_MAX,
-    date: new Date().getTime()
-  }
-}
 
 export default function ResinCounter() {
-  const [{ resin, date }, setResinState] = useDBState("ToolsDisplayResin", initToolsDisplayResin)
+  const { database } = useContext(DatabaseContext)
+  const [{ resin, resinDate }, setState] = useState(() => database.displayTool.get())
+  useEffect(() => database.displayTool.follow((r, s) => setState(s)), [database])
   const resinIncrement = useRef(undefined as undefined | NodeJS.Timeout)
 
   const setResin = (newResin: number) => {
@@ -25,17 +21,17 @@ export default function ResinCounter() {
       resinIncrement.current = undefined
     } else
       resinIncrement.current = setTimeout(() => console.log("set resin", newResin + 1), RESIN_RECH_MS);
-    setResinState({ resin: newResin, date: new Date().getTime() })
+    database.displayTool.set({ resin: newResin, resinDate: new Date().getTime() })
   }
 
   useEffect(() => {
     if (resin < RESIN_MAX) {
       const now = Date.now()
       const resinToMax = RESIN_MAX - resin
-      const resinSinceLastDate = Math.min(Math.floor((now - date) / (RESIN_RECH_MS)), resinToMax)
+      const resinSinceLastDate = Math.min(Math.floor((now - resinDate) / (RESIN_RECH_MS)), resinToMax)
       const catchUpResin = resin + resinSinceLastDate
-      const newDate = date + resinSinceLastDate * RESIN_RECH_MS
-      setResinState({ resin: catchUpResin, date: newDate })
+      const newDate = resinDate + resinSinceLastDate * RESIN_RECH_MS
+      database.displayTool.set({ resin: catchUpResin, resinDate: newDate })
       if (catchUpResin < RESIN_MAX)
         resinIncrement.current = setTimeout(() => setResin(catchUpResin + 1), now - newDate);
     }
@@ -43,9 +39,9 @@ export default function ResinCounter() {
     // eslint-disable-next-line
   }, [])
 
-  const nextResinDateNum = resin >= RESIN_MAX ? date : date + RESIN_RECH_MS;
+  const nextResinDateNum = resin >= RESIN_MAX ? resinDate : resinDate + RESIN_RECH_MS;
 
-  const resinFullDateNum = resin >= RESIN_MAX ? date : (date + (RESIN_MAX - resin) * RESIN_RECH_MS)
+  const resinFullDateNum = resin >= RESIN_MAX ? resinDate : (resinDate + (RESIN_MAX - resin) * RESIN_RECH_MS)
   const resinFullDate = new Date(resinFullDateNum)
 
   const nextDeltaString = timeString(Math.abs(nextResinDateNum - Date.now()))

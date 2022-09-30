@@ -123,7 +123,7 @@
         },
         "uploadCard": {
             "title": "Загрузить Данные",
-            "replaceDatabase": "Заменить Данные",
+            "replaceDatabase": "Обновить данные",
             "hint": "Загрузите сюда ваш JSON файл...",
             "hintPaste": "...либо вставьте данные ниже.",
             "goUpload": {

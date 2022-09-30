@@ -9,7 +9,6 @@ import CardLight from '../Components/Card/CardLight'
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database"
 import { SandboxStorage } from '../Database/DBStorage'
 import { ImportResult, ImportResultCounter } from '../Database/exim'
-import { importGOOD } from '../Database/imports/good'
 
 const InvisInput = styled('input')({
   display: 'none',
@@ -42,7 +41,7 @@ export default function UploadCard({ onReplace }: { onReplace: () => void }) {
       const copyStorage = new SandboxStorage()
       copyStorage.copyFrom(database.storage)
       const importedDatabase = new ArtCharDatabase(copyStorage)
-      const importResult = importGOOD(parsed, importedDatabase, keepNotInImport, ignoreDups)
+      const importResult = importedDatabase.importGOOD(parsed, keepNotInImport, ignoreDups)
       if (!importResult) {
         setErrorMsg("uploadCard.error.goInvalid")
         return

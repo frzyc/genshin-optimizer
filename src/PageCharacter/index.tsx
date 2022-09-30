@@ -15,13 +15,12 @@ import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
 import CharacterSheet from '../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../Database/Database';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
-import useDBState from '../ReactHooks/useDBState';
+import useDBMeta from '../ReactHooks/useDBMeta';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
-import useGender from '../ReactHooks/useGender';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
 import { CharacterKey, charKeyToCharName } from '../Types/consts';
-import { characterFilterConfigs, characterSortConfigs, characterSortMap, initialCharacterDisplayState } from '../Util/CharacterSort';
+import { characterFilterConfigs, characterSortConfigs, characterSortMap } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import { CharacterSelectionModal } from './CharacterSelectionModal';
@@ -33,16 +32,17 @@ const sortKeys = Object.keys(characterSortMap)
 export default function PageCharacter() {
   const { t } = useTranslation(["page_character", "charNames_gen"])
   const { database } = useContext(DatabaseContext)
-  const [state, stateDispatch] = useDBState("CharacterDisplay", initialCharacterDisplayState)
+  const [state, setState] = useState(() => database.displayCharacter.get())
+  useEffect(() => database.displayCharacter.follow((r, s) => setState(s)), [database, setState])
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
   const invScrollRef = useRef<HTMLDivElement>(null)
   const setPage = useCallback(
     (_: ChangeEvent<unknown>, value: number) => {
       invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
-      stateDispatch({ pageIndex: value - 1 });
+      database.displayCharacter.set({ pageIndex: value - 1 });
     },
-    [stateDispatch, invScrollRef]
+    [database, invScrollRef]
   )
 
   const brPt = useMediaQueryUp()
@@ -57,10 +57,10 @@ export default function PageCharacter() {
   }, [forceUpdate, database])
 
   // character favorite updater
-  useEffect(() => database.states.followAny(s => s.includes("charMeta_") && forceUpdate()), [forceUpdate, database])
+  useEffect(() => database.charMeta.followAny(s => forceUpdate()), [forceUpdate, database])
 
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
-  const gender = useGender(database)
+  const { gender } = useDBMeta()
   const deleteCharacter = useCallback(async (cKey: CharacterKey) => {
     const chararcterSheet = await CharacterSheet.get(cKey, gender)
     let name = chararcterSheet?.name
@@ -104,10 +104,10 @@ export default function PageCharacter() {
     <CardDark ref={invScrollRef} ><CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
       <Grid container spacing={1}>
         <Grid item>
-          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => stateDispatch({ weaponType })} value={weaponType} size="small" />
+          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => database.displayCharacter.set({ weaponType })} value={weaponType} size="small" />
         </Grid>
         <Grid item>
-          <ElementToggle sx={{ height: "100%" }} onChange={element => stateDispatch({ element })} value={element} size="small" />
+          <ElementToggle sx={{ height: "100%" }} onChange={element => database.displayCharacter.set({ element })} value={element} size="small" />
         </Grid>
         <Grid item flexGrow={1}>
           <TextField
@@ -124,8 +124,8 @@ export default function PageCharacter() {
         </Grid>
         <Grid item >
           <SortByButton sx={{ height: "100%" }}
-            sortKeys={sortKeys} value={sortType} onChange={sortType => stateDispatch({ sortType })}
-            ascending={ascending} onChangeAsc={ascending => stateDispatch({ ascending })} />
+            sortKeys={sortKeys} value={sortType} onChange={sortType => database.displayCharacter.set({ sortType })}
+            ascending={ascending} onChangeAsc={ascending => database.displayCharacter.set({ ascending })} />
         </Grid>
       </Grid>
       <Grid container alignItems="flex-end">

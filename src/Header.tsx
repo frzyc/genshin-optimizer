@@ -8,8 +8,7 @@ import { Link as RouterLink, useMatch } from "react-router-dom";
 import Assets from "./Assets/Assets";
 import { slotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
 import FontAwesomeSvgIcon from "./Components/FontAwesomeSvgIcon";
-import { dbMetaInit } from "./Database/Data/StateData";
-import useDBState from "./ReactHooks/useDBState";
+import useDBMeta from "./ReactHooks/useDBMeta";
 
 const content = [{
   i18Key: "tabs.artifacts",
@@ -81,7 +80,7 @@ function HeaderContent({ anchor }) {
   const theme = useTheme();
   const isLarge = useMediaQuery(theme.breakpoints.up('lg'));
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const [{ name }] = useDBState("dbMeta", dbMetaInit(1))
+  const { name } = useDBMeta()
 
   const { t } = useTranslation("ui")
 
@@ -124,7 +123,7 @@ function HeaderContent({ anchor }) {
   </AppBar>
 }
 function MobileHeader({ anchor, currentTab }) {
-  const [{ name }] = useDBState("dbMeta", dbMetaInit(1))
+  const { name } = useDBMeta()
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {

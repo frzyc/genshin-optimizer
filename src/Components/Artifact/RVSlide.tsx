@@ -46,7 +46,7 @@ export default function RVSlide({ levelLow, levelHigh, setLow, setHigh, setBoth,
     />
     <CustomNumberInput
       value={sliderHigh}
-      onChange={val => setHigh(clamp(val, levelLow, 20))}
+      onChange={val => setHigh(clamp(val, levelLow, 900))}
       sx={{ px: 1, width: 50, }}
       inputProps={{ sx: { textAlign: "center" } }}
       disabled={disabled}
