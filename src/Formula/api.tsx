@@ -141,7 +141,10 @@ function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>, activeCharKey?: Cha
     const custom = objPathValue(customReadNodes, path)
     if (custom) return custom
     const newNode = customRead(path)
-    if (path[0] === "teamBuff" && path[1] === "tally") newNode.accu = getTally(path.slice(2)).accu
+    if (path[0] === "teamBuff" && path[1] === "tally")
+      // This is fine as long as a datasheet that mentions
+      // the tally node is loaded before this invocation.
+      newNode.accu = getTally(path.slice(2)).accu
     layeredAssignment(customReadNodes, path, newNode)
     return newNode
   }
@@ -210,7 +213,10 @@ function mergeData(data: Data[]): Data {
     if (data[0].operation) {
       if (path[0] === "teamBuff") path = path.slice(1)
       let { accu, type } = (objPathValue(input, path) as ReadNode<number> | ReadNode<string> | undefined) ?? {}
-      if (path[0] === "tally") accu = getTally(path.slice(1)).accu!
+      if (path[0] === "tally")
+        // This is fine as long as a datasheet that mentions
+        // the tally node is loaded before this invocation.
+        accu = getTally(path.slice(1)).accu!
       else if (accu === undefined) {
         const errMsg = `Multiple entries when merging \`unique\` for key ${path}`
         if (process.env.NODE_ENV === "development")
