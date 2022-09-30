@@ -57,9 +57,10 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
     const { element, weaponType, sortType, ascending } = deferredState
     const sortByKeys = [...(newFirst ? ["new"] : []), ...(characterSortMap[sortType] ?? [])] as CharacterSortKey[]
     return deferredDbDirty && allCharacterKeys
+      .filter(key => filter(database.chars.get(key), characterSheets[key]))
       .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, characterFilterConfigs(database, characterSheets)))
       .sort(sortFunction(sortByKeys, ascending, characterSortConfigs(database, characterSheets), ["new", "favorite"]))
-  }, [database, newFirst, deferredState, characterSheets, deferredDbDirty, deferredSearchTerm])
+  }, [database, newFirst, deferredState, characterSheets, deferredDbDirty, deferredSearchTerm, filter])
 
   if (!characterSheets) return null
 
@@ -114,7 +115,7 @@ function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, 
   const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
   const character = useCharacter(characterKey)
   const { level = 1, ascension = 0, constellation = 0 } = character ?? {}
-  return <CustomTooltip arrow placement="bottom" title={
+  return <CustomTooltip enterDelay={300} enterNextDelay={300} arrow placement="bottom" title={
     <Box sx={{ width: 300 }}>
       <CharacterCard hideStats characterKey={characterKey} />
     </Box>

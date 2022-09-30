@@ -294,7 +294,7 @@ const sheet: ICharacterSheet = {
       states: {
         c2p: {
           fields: [{
-            node: infoMut(c2PEleMasDisp, { key: "eleMas" })
+            node: infoMut(c2PEleMasDisp, { key: "eleMas", isTeamBuff: true })
           }]
         }
       }
