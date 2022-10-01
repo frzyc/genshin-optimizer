@@ -3,7 +3,7 @@ import { transformativeReactionLevelMultipliers } from "../KeyMap/StatConstants"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
 import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
-import { constant, equal, frac, infoMut, lookup, max, min, naught, none, one, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, subscript, sum, todo, unequal, unequalStr } from "./utils"
+import { constant, equal, frac, infoMut, lookup, max, min, naught, none, one, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, subscript, sum, unequal, unequalStr } from "./utils"
 
 const asConst = true as const, pivot = true as const
 
