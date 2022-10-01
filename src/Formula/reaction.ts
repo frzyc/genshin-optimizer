@@ -1,8 +1,8 @@
 import { crystallizeLevelMultipliers, transformativeReactionLevelMultipliers, transformativeReactions } from "../KeyMap/StatConstants";
 import { absorbableEle } from "../Types/consts";
 import { objectKeyMap } from "../Util/Util";
-import { input } from "./index";
-import { constant, data, frac, infoMut, one, percent, prod, subscript, sum } from "./utils";
+import { infusionNode, input } from "./index";
+import { constant, data, equal, frac, infoMut, one, percent, prod, subscript, sum } from "./utils";
 
 const crystallizeMulti1 = subscript(input.lvl, crystallizeLevelMultipliers, { key: "crystallize_level_multi" })
 const crystallizeElemas = prod(40 / 9, frac(input.total.eleMas, 1400))
@@ -47,6 +47,14 @@ const trans = {
       { key: `${ele}_swirl_hit` })
   })
 }
+const infusionReactions = {
+  overloaded: equal(infusionNode, "pyro", trans.overloaded, { key: "overloaded_hit" }),
+  electrocharged: equal(infusionNode, "hydro", trans.electrocharged, { key: "electrocharged_hit" }),
+  superconduct: equal(infusionNode, "cryo", trans.superconduct, { key: "superconduct_hit" }),
+  burning: equal(infusionNode, "pyro", trans.burning, { key: "burning_hit" }),
+  bloom: equal(infusionNode, "hydro", trans.bloom, { key: "bloom_hit" }),
+  burgeon: equal(infusionNode, "pyro", trans.burgeon, { key: "burgeon_hit" }),
+}
 export const reactions = {
   anemo: {
     electroSwirl: trans.swirl.electro,
@@ -67,6 +75,12 @@ export const reactions = {
     ...Object.fromEntries(absorbableEle.map(e => [`${e}Crystallize`,
     infoMut(prod(percent(2.5), crystallizeHit), { key: `${e}_crystallize`, variant: e })])),
     shattered: trans.shattered,
+    overloaded: infusionReactions.overloaded,
+    electrocharged: infusionReactions.electrocharged,
+    superconduct: infusionReactions.superconduct,
+    burning: infusionReactions.burning,
+    bloom: infusionReactions.bloom,
+    burgeon: infusionReactions.burgeon,
   },
   electro: {
     overloaded: trans.overloaded,
@@ -74,24 +88,44 @@ export const reactions = {
     superconduct: trans.superconduct,
     shattered: trans.shattered,
     hyperbloom: trans.hyperbloom,
+    burning: infusionReactions.burning,
+    bloom: infusionReactions.bloom,
+    burgeon: infusionReactions.burgeon,
   },
   hydro: {
     electrocharged: trans.electrocharged,
     shattered: trans.shattered,
     bloom: trans.bloom,
+    overloaded: infusionReactions.overloaded,
+    superconduct: infusionReactions.superconduct,
+    burning: infusionReactions.burning,
+    burgeon: infusionReactions.burgeon,
   },
   pyro: {
     overloaded: trans.overloaded,
     shattered: trans.shattered,
     burning: trans.burning,
     burgeon: trans.burgeon,
+    electrocharged: infusionReactions.electrocharged,
+    superconduct: infusionReactions.superconduct,
+    bloom: infusionReactions.bloom,
   },
   cryo: {
     superconduct: trans.superconduct,
     shattered: trans.shattered,
+    overloaded: infusionReactions.overloaded,
+    electrocharged: infusionReactions.electrocharged,
+    burning: infusionReactions.burning,
+    bloom: infusionReactions.bloom,
+    burgeon: infusionReactions.burgeon,
   },
   dendro: {
+    shattered: trans.shattered,
     burning: trans.burning,
     bloom: trans.bloom,
+    overloaded: infusionReactions.overloaded,
+    electrocharged: infusionReactions.electrocharged,
+    superconduct: infusionReactions.superconduct,
+    burgeon: infusionReactions.burgeon,
   }
 }

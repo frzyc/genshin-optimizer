@@ -1,6 +1,6 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
-import { compareEq, constant, equal, greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
+import { constant, equal, greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
@@ -106,10 +106,6 @@ const dmgFormulas = {
   },
   burst: {
     singleDmg: dmgNode("hp", datamine.burst.singleDmg, "burst"),
-    totalDmg: compareEq(condUnderHP, "on",
-      dmgNode("hp", datamine.burst.maxDmgExtend, "burst"),
-      dmgNode("hp", datamine.burst.maxDmgBase, "burst")
-    )
   },
   constellation4: {
     markDmg: greaterEq(input.constellation, 4, customDmgNode(prod(percent(datamine.constellation4.markDmg), input.total.hp), "elemental", { hit: { ele: constant(elementKey) } })),
@@ -217,8 +213,6 @@ const sheet: ICharacterSheet = {
       burst: ct.talentTemplate("burst", [{
         fields: [{
           node: infoMut(dmgFormulas.burst.singleDmg, { key: `char_${key}_gen:burst.skillParams.0` }),
-        }, {
-          node: infoMut(dmgFormulas.burst.totalDmg, { key: `char_${key}_gen:burst.skillParams.1` }),
         }, {
           text: sgt("duration"),
           value: (data) => data.get(condUnderHP).value === "on"
