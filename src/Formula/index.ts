@@ -255,7 +255,7 @@ const _tally = setReadNodeKeys(objectKeyMap([...allElements, ...allRegions], _ =
 const tally = {
   ..._tally,
   // Special handling since it's not a `ReadNode`
-  ele: sum(...allElements.map(ele => min(tally[ele], 1)))
+  ele: sum(...allElements.map(ele => min(_tally[ele], 1)))
 }
 
 /**
