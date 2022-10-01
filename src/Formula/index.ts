@@ -3,7 +3,7 @@ import { transformativeReactionLevelMultipliers } from "../KeyMap/StatConstants"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
 import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
-import { constant, equal, frac, infoMut, lookup, max, min, naught, one, percent, prod, read, res, setReadNodeKeys, stringRead, subscript, sum, todo, unequal } from "./utils"
+import { constant, equal, frac, infoMut, lookup, max, min, naught, none, one, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, subscript, sum, unequal, unequalStr } from "./utils"
 
 const asConst = true as const, pivot = true as const
 
@@ -251,11 +251,15 @@ const common: Data = {
 }
 
 const target = setReadNodeKeys(deepClone(input), ["target"])
+const _tally = setReadNodeKeys({
+  ...objectKeyMap([...allElements, ...allRegions], _ => read("add")),
+  maxEleMas: read("max"),
+}, ["tally"])
 const tally = {
-  ...setReadNodeKeys(objectKeyMap([...allElements, ...allRegions], _ => read("add")), ["tally"]),
-  ele: todo,
+  ..._tally,
+  // Special handling since it's not a `ReadNode`
+  ele: sum(...allElements.map(ele => min(_tally[ele], 1)))
 }
-tally.ele = sum(...allElements.map(ele => min(tally[ele], 1)))
 
 /**
  * List of `input` nodes, rearranged to conform to the needs of the
@@ -268,8 +272,13 @@ tally.ele = sum(...allElements.map(ele => min(tally[ele], 1)))
  */
 const uiInput = input
 
+export const infusionNode = stringPrio(
+  input.infusion.nonOverridableSelf,
+  unequalStr(input.infusion.team, none, input.infusion.team),
+  input.infusion.overridableSelf)
+
 export {
   input, uiInput, common, customBonus,
 
-  target, tally,
+  target, tally
 }
