@@ -51,7 +51,7 @@ export function maximizeLP(objective: Weights, constraints: LPConstraint[]): Wei
   const threshold = tableau[numCons + 1][numVars + numCons] * 1e-12 / numCons
   maximize_canonical(tableau, basic, numCons)
 
-  if (Math.abs(tableau[numCons + 1][numVars + numCons]) > threshold) throw "Infeasible"
+  if (Math.abs(tableau[numCons + 1][numVars + numCons]) > threshold) throw new Error("Infeasible")
   tableau.pop()
   tableau.forEach(row => row.splice(numVars, numCons))
 

@@ -102,7 +102,7 @@ export class BNBSplitWorker implements SplitWorker {
       const minCont = remaining[remaining.length - 1]?.cont ?? 0
       let contCutoff = remaining.reduce((accu, { cont }) => accu + cont, -minCont * remaining.length) / 3
 
-      const index = Math.max(1, remaining.findIndex(({ cont }) => ((contCutoff -= cont - minCont), contCutoff <= 0)))
+      const index = Math.max(1, remaining.findIndex(({ cont }) => (contCutoff -= cont - minCont) <= 0))
       const lowArts = remaining.splice(index).map(({ art }) => art), highArts = remaining.map(({ art }) => art)
       return {
         high: { arts: highArts, maxConts: approxs.map(approx => maxContribution(highArts, approx)), },
