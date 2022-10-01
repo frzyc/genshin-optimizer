@@ -4,7 +4,7 @@ import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, deepClone, layeredAssignment, objectKeyMap, objectMap, objPathValue } from "../Util/Util";
-import { getTally, input } from "./index";
+import { input, tally } from "./index";
 import { Data, DisplaySub, Info, Input, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData } from "./uiData";
 import { constant, customRead, data, infoMut, none, percent, prod, resetData, setReadNodeKeys, sum } from "./utils";
@@ -142,9 +142,7 @@ function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>, activeCharKey?: Cha
     if (custom) return custom
     const newNode = customRead(path)
     if (path[0] === "teamBuff" && path[1] === "tally")
-      // This is fine as long as a datasheet that mentions
-      // the tally node is loaded before this invocation.
-      newNode.accu = getTally(path.slice(2)).accu
+      newNode.accu = objPathValue(tally, path.slice(2)).accu
     layeredAssignment(customReadNodes, path, newNode)
     return newNode
   }
@@ -212,12 +210,9 @@ function mergeData(data: Data[]): Data {
     if (data.length <= 1) return data[0]
     if (data[0].operation) {
       if (path[0] === "teamBuff") path = path.slice(1)
-      let { accu, type } = (objPathValue(input, path) as ReadNode<number> | ReadNode<string> | undefined) ?? {}
-      if (path[0] === "tally")
-        // This is fine as long as a datasheet that mentions
-        // the tally node is loaded before this invocation.
-        accu = getTally(path.slice(1)).accu!
-      else if (accu === undefined) {
+      const base = path[0] === "tally" ? (path = path.slice(1), tally) : input
+      let { accu, type } = objPathValue(base, path) as ReadNode<number | string> ?? {}
+      if (accu === undefined) {
         const errMsg = `Multiple entries when merging \`unique\` for key ${path}`
         if (process.env.NODE_ENV === "development")
           throw new Error(errMsg)
