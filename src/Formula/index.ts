@@ -251,7 +251,10 @@ const common: Data = {
 }
 
 const target = setReadNodeKeys(deepClone(input), ["target"])
-const _tally = setReadNodeKeys(objectKeyMap([...allElements, ...allRegions], _ => read("add")), ["tally"])
+const _tally = setReadNodeKeys({
+  ...objectKeyMap([...allElements, ...allRegions], _ => read("add")),
+  maxEleMas: read("max"),
+}, ["tally"])
 const tally = {
   ..._tally,
   // Special handling since it's not a `ReadNode`

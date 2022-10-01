@@ -121,6 +121,7 @@ export function dataObjForCharacterSheet(
   }
   if (region)
     layeredAssignment(data, ["teamBuff", "tally", region], constant(1))
+  layeredAssignment(data, ["teamBuff", "tally", "maxEleMas"], input.premod.eleMas)
   if (gen.weaponTypeKey !== "catalyst") {
     if (!data.display!.basic) data.display!.basic = {}
     data.display!.basic!.physical_dmg_ = input.total.physical_dmg_
