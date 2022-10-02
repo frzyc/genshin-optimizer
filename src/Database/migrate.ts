@@ -94,17 +94,16 @@ export function migrate(storage: DBStorage) {
     }
   }
 
-  migrateVersion(8, () => {
-    storage.clear()
-    storage.setDBVersion(currentDBVersion)
-  })
+  migrateVersion(8, () => { })
 
   // 6.1.9 - 6.2.3
   migrateVersion(11, () => {
     for (const key of storage.keys) {
       if (key.startsWith("char_")) {
         const character = storage.get(key)
-        const { baseStatOverrides = {} } = character
+        if (!character) continue
+        const baseStatOverrides = character?.baseStatOverrides ?? {}
+        if (!baseStatOverrides) continue
         if (baseStatOverrides.critRate_) baseStatOverrides.critRate_ -= 5
         if (baseStatOverrides.critDMG_) baseStatOverrides.critDMG_ -= 50
         if (baseStatOverrides.enerRech_) baseStatOverrides.enerRech_ -= 100

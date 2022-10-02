@@ -10,7 +10,7 @@ import { StyledInputBase } from '../Components/CustomNumberInput'
 import FontAwesomeSvgIcon from '../Components/FontAwesomeSvgIcon'
 import ModalWrapper from '../Components/ModalWrapper'
 import { ArtCharDatabase, DatabaseContext, DatabaseContextObj } from "../Database/Database"
-import { ExtraStorage } from '../Database/DBStorage'
+import { SandboxStorage } from '../Database/DBStorage'
 import useBoolState from '../ReactHooks/useBoolState'
 import useDBMeta from '../ReactHooks/useDBMeta'
 import { range } from '../Util/Util'
@@ -43,14 +43,10 @@ export default function DatabaseCard() {
 function ExtraDatabaseWrapper({ index, children }) {
   const [database, setDatabase] = useState(() => {
     const dbName = `extraDatabase_${index}`
-    const storage = new ExtraStorage(dbName)
-    const dbObj = JSON.parse(localStorage.getItem(dbName) ?? `{ "dbIndex": "${index}" }`)
-    storage.setStorage(dbObj)
-
-    // A bit of preventive programming
-    storage.removeForKeys(k => k.startsWith("extraDatabase_"))
-    const db = new ArtCharDatabase(storage)
-    storage.saveStorage()
+    const eDB = localStorage.getItem(dbName)
+    const dbObj = eDB ? JSON.parse(eDB) : { dbIndex: `${index}` }
+    const db = new ArtCharDatabase(new SandboxStorage(dbObj))
+    db.toExtraLocalDB()
     return db
   })
 
@@ -60,7 +56,7 @@ function ExtraDatabaseWrapper({ index, children }) {
 }
 
 function DataCard({ index, databaseContextObj }: { index: number, databaseContextObj?: DatabaseContextObj }) {
-  const { database, setDatabase } = useContext(DatabaseContext)
+  const { database } = useContext(DatabaseContext)
   const { name, lastEdit } = useDBMeta()
 
   const current = !databaseContextObj
@@ -76,28 +72,12 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
       .catch(console.error),
     [database],
   )
-  const onUpload = useCallback(() => {
-    onClose()
-    if (!current) {
-      const storage = database.storage as ExtraStorage
-      storage.saveStorage()
-    }
-  }, [onClose, current, database.storage])
 
   const onDelete = useCallback(() => {
     if (!window.confirm(`Are you sure you want to delete "${name}"?`)) return
-    if (current) {
-      database.clear()
-      setDatabase(new ArtCharDatabase(database.storage))
-    } else {
-      const storage = database.storage as ExtraStorage
-      const dbName = storage.databaseName
-      const extraStorage = new ExtraStorage(dbName)
-      extraStorage.setStorage({})
-      setDatabase(new ArtCharDatabase(extraStorage))
-      localStorage.removeItem(dbName)
-    }
-  }, [database, current, name, setDatabase])
+    database.rmExtraLocalDB()
+    database.clear()
+  }, [database, name])
 
   const download = useCallback(() => {
     const date = new Date()
@@ -116,33 +96,18 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
 
   const onSwap = useCallback(() => {
     if (!databaseContextObj) return
-
-    // save current database to appropriate slot
-    const dbIndex = parseInt(databaseContextObj.database.storage.getString("dbIndex") || "1")
-    const tempStorage = new ExtraStorage(`extraDatabase_${dbIndex}`, databaseContextObj.database.storage)
-    tempStorage.removeForKeys(k => k.startsWith("extraDatabase_"))
-    tempStorage.saveStorage()
-
-    // clear this slot database
-    const storage = database.storage as ExtraStorage
-    const dbName = storage.databaseName
-    localStorage.removeItem(dbName)
-
-    // swap over database
-    databaseContextObj.database.clear()
-    databaseContextObj.database.storage.copyFrom(database.storage)
-    databaseContextObj.database.storage.set("dbIndex", index)
-    databaseContextObj.setDatabase(new ArtCharDatabase(databaseContextObj.database.storage))
-
-  }, [databaseContextObj, database, index])
+    databaseContextObj.database.toExtraLocalDB()
+    database.swapStorage(databaseContextObj.database)
+    databaseContextObj.setDatabase(database)
+  }, [databaseContextObj, database])
 
   const [tempName, setTempName] = useState(name)
   useEffect(() => setTempName(name), [name])
 
   const onBlur = useCallback(() => {
     database.dbMeta.set({ name: tempName })
-    if (!current && "saveStorage" in database.storage) (database.storage as ExtraStorage).saveStorage()
-  }, [tempName, database, current])
+    database.toExtraLocalDB()
+  }, [tempName, database])
   const onKeyDOwn = useCallback(e => e.key === "Enter" && onBlur(), [onBlur],)
 
   return <CardDark sx={{ height: "100%", boxShadow: current ? "0px 0px 0px 2px green inset" : undefined }}>
@@ -169,7 +134,7 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
             </Grid>
             <Grid item xs={1}>
               <ModalWrapper open={uploadOpen} onClose={onClose} >
-                <UploadCard onReplace={onUpload} />
+                <UploadCard onReplace={onClose} />
               </ModalWrapper>
               <Button fullWidth component="span" color="info" startIcon={<Upload />} onClick={onOpen}>
                 {t`DatabaseCard.button.upload`}

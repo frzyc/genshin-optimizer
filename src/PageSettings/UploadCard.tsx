@@ -160,9 +160,9 @@ function GOUploadAction({ importedDatabase, reset }: { importedDatabase?: ArtCha
   const { t } = useTranslation("settings")
   const replaceDB = useCallback(() => {
     if (!importedDatabase) return
-    database.clear()
-    database.storage.copyFrom(importedDatabase.storage)
-    setDatabase(new ArtCharDatabase(database.storage))
+    database.swapStorage(importedDatabase)
+    setDatabase(importedDatabase)
+    importedDatabase.toExtraLocalDB()
     reset()
   }, [database, importedDatabase, reset, setDatabase])
 

@@ -5,20 +5,20 @@ import { IGO, IGOOD, ImportResult } from "./exim"
 
 export class DataEntry<Key extends string, GOkey extends string, CacheValue, StorageValue>{
   database: ArtCharDatabase
-  init: () => StorageValue
+  init: (database: ArtCharDatabase) => StorageValue
   data: CacheValue
   key: Key
   goKey: GOkey
-  constructor(database: ArtCharDatabase, key: Key, init: () => StorageValue, goKey: GOkey) {
+  constructor(database: ArtCharDatabase, key: Key, init: (database: ArtCharDatabase) => StorageValue, goKey: GOkey) {
     this.database = database
     this.key = key
     this.init = init
     this.goKey = goKey
     if (this.database.storage.keys.includes(key)) {
-      this.data = this.toCache(init())!
+      this.data = this.toCache(init(this.database))!
       this.set(this.database.storage.get(key))
     } else {
-      this.data = this.toCache(init())!
+      this.data = this.toCache(init(this.database))!
       this.setCached(this.data)
     }
   }
@@ -57,10 +57,16 @@ export class DataEntry<Key extends string, GOkey extends string, CacheValue, Sto
     this.database.storage.set(this.key, this.deCache(cached))
     this.trigger("update", cached)
   }
-  reset() {
-    this.data = this.toCache(this.init())!
+  clear() {
+    this.data = this.toCache(this.init(this.database))!
     this.setCached(this.data)
     this.listeners = []
+  }
+  clearStorage() {
+    this.database.storage.remove(this.key)
+  }
+  saveStorage() {
+    this.database.storage.set(this.key, this.deCache(this.data))
   }
 
   trigger(reason: TriggerString, object?: any) {
