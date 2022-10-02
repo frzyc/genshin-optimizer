@@ -1,6 +1,6 @@
 import { ArrowRightAlt } from "@mui/icons-material";
 import { Box, CardContent, Divider, Grid, Link as MuiLink, Skeleton, styled, Tab, Tabs, Typography } from "@mui/material";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import ReactGA from 'react-ga4';
 import { useTranslation } from 'react-i18next';
 import { Link, Route, Routes, useMatch } from "react-router-dom";
@@ -9,7 +9,7 @@ import CardLight from "../Components/Card/CardLight";
 import SqBadge from "../Components/SqBadge";
 import material from "../Data/Materials/Material";
 import KeyMap from "../KeyMap";
-import { allArtifactSets, allCharacterKeys, allWeaponKeys } from "../Types/consts";
+import { allArtifactSets, allCharacterKeys, allWeaponKeys, locationCharacterKeys } from "../Types/consts";
 
 export default function PageDocumentation() {
   // const { t } = useTranslation("documentation")
@@ -203,7 +203,7 @@ function ArtifactSetKeyPane() {
 }
 function CharacterKeyPane() {
   const { t } = useTranslation([...new Set(allCharacterKeys)].map(k => `char_${k}_gen`))
-  const charKeysCode = `type CharacterKey\n  = ${[...new Set(allCharacterKeys)].sort().map(k => `"${k}" //${t(`char_${k}_gen:name`)}`).join(`\n  | `)}`
+  const charKeysCode = `type CharacterKey\n  = ${[...new Set(locationCharacterKeys)].sort().map(k => `"${k}" //${k === "Traveler" ? "Traveler" : t(`char_${k}_gen:name`)}`).join(`\n  | `)}`
   return <>
     <Typography gutterBottom variant="h4">CharacterKey</Typography>
     <CardDark>
