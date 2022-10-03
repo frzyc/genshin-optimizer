@@ -75,7 +75,7 @@ export default function EquipmentSection() {
         {allSlotKeys.map(slotKey => <Grid item xs={12} sm={6} md={4} key={slotKey} >
           {!!data.get(input.art[slotKey].id).value ?
             <ArtifactCard artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} effFilter={deferredRvSet}
-              extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editor canExclude canEquip /> :
+              extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editorProps={{}} canExclude canEquip /> :
             <ArtSwapCard slotKey={slotKey} />}
         </Grid>)}
       </Grid>
