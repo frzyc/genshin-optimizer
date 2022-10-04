@@ -71,8 +71,8 @@ function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean 
 
   const dynKeys = new Set<string>()
 
-  forEachNodes(nodes, _ => { }, f => {
-    const operation = f.operation
+  forEachNodes(nodes, _ => { }, _f => {
+    const f = _f as NumNode, { operation } = f
     switch (operation) {
       case "read":
         if (f.type !== "number" || f.path[0] !== "dyn" || f.accu !== "add")
@@ -92,7 +92,7 @@ function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean 
         visit(f as NumNode, true); break
       case "res": case "threshold": case "sum_frac":
       case "max": case "min": visit(f, false); break
-      case "data": case "subscript": case "lookup": case "match": case "prio": case "small":
+      case "data": case "subscript": case "lookup": case "match":
         throw new Error(`Found unsupported ${operation} node when computing affine nodes`)
       default: assertUnreachable(operation)
     }

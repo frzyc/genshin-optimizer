@@ -1,10 +1,12 @@
-import { AnyNode, NumNode, StrNode } from "./type"
+import { NumNode, StrNode } from "./type"
 import { constant } from "./utils"
 
-export function forEachNodes(formulas: (NumNode | StrNode)[], topDown: (formula: (NumNode | StrNode)) => void, bottomUp: (formula: (NumNode | StrNode)) => void): void {
-  const visiting = new Set<(NumNode | StrNode)>(), visited = new Set<(NumNode | StrNode)>()
+type Node = NumNode | StrNode
 
-  function traverse(formula: (NumNode | StrNode)) {
+export function forEachNodes(formulas: Node[], topDown: (formula: Node) => void, bottomUp: (formula: Node) => void): void {
+  const visiting = new Set<Node>(), visited = new Set<Node>()
+
+  function traverse(formula: Node) {
     if (visited.has(formula)) return
 
     if (visiting.has(formula)) {
@@ -26,13 +28,13 @@ export function forEachNodes(formulas: (NumNode | StrNode)[], topDown: (formula:
   formulas.forEach(traverse)
 }
 
-export function mapFormulas(formulas: NumNode[], topDownMap: (formula: (NumNode | StrNode)) => (NumNode | StrNode), bottomUpMap: (current: (NumNode | StrNode), orig: (NumNode | StrNode)) => (NumNode | StrNode)): NumNode[]
-export function mapFormulas(formulas: (NumNode | StrNode)[], topDownMap: (formula: (NumNode | StrNode)) => (NumNode | StrNode), bottomUpMap: (current: (NumNode | StrNode), orig: (NumNode | StrNode)) => (NumNode | StrNode)): (NumNode | StrNode)[] {
-  const visiting = new Set<(NumNode | StrNode)>()
-  const topDownMapped = new Map<(NumNode | StrNode), (NumNode | StrNode)>()
-  const bottomUpMapped = new Map<(NumNode | StrNode), (NumNode | StrNode)>()
+export function mapFormulas(formulas: NumNode[], topDownMap: (formula: Node) => Node, bottomUpMap: (current: Node, orig: Node) => Node): NumNode[]
+export function mapFormulas(formulas: Node[], topDownMap: (formula: Node) => Node, bottomUpMap: (current: Node, orig: Node) => Node): Node[] {
+  const visiting = new Set<Node>()
+  const topDownMapped = new Map<Node, Node>()
+  const bottomUpMapped = new Map<Node, Node>()
 
-  function check(formula: (NumNode | StrNode)): (NumNode | StrNode) {
+  function check(formula: Node): Node {
     let topDown = topDownMapped.get(formula)
     if (topDown) return topDown
     topDown = topDownMap(formula)
@@ -55,7 +57,7 @@ export function mapFormulas(formulas: (NumNode | StrNode)[], topDownMap: (formul
     return bottomUp
   }
 
-  function traverse(formula: (NumNode | StrNode)): (NumNode | StrNode) {
+  function traverse(formula: Node): Node {
     const operands = formula.operands.map(check)
     return arrayEqual(operands, formula.operands) ? formula : { ...formula, operands } as any
   }
@@ -64,13 +66,13 @@ export function mapFormulas(formulas: (NumNode | StrNode)[], topDownMap: (formul
   return arrayEqual(result, formulas) ? formulas : result
 }
 
-export function mapContextualFormulas(formulas: NumNode[], baseContextId: number, topDownMap: (formula: AnyNode, contextId: ContextID) => [AnyNode, ContextID], bottomUpMap: (formula: AnyNode, orig: AnyNode, contextId: ContextID, origContextId: ContextID) => AnyNode): NumNode[]
-export function mapContextualFormulas(formulas: AnyNode[], baseContextId: number, topDownMap: (formula: AnyNode, contextId: ContextID) => [AnyNode, ContextID], bottomUpMap: (formula: AnyNode, orig: AnyNode, contextId: ContextID, origContextId: ContextID) => AnyNode): AnyNode[] {
-  const visiting = new Set<AnyNode>()
-  const topDownByContext = new Map<ContextID, Map<AnyNode, AnyNode>>()
-  const bottomUpByContext = new Map<ContextID, Map<AnyNode, AnyNode>>()
+export function mapContextualFormulas(formulas: NumNode[], baseContextId: number, topDownMap: (formula: Node, contextId: ContextID) => [Node, ContextID], bottomUpMap: (formula: Node, orig: Node, contextId: ContextID, origContextId: ContextID) => Node): NumNode[]
+export function mapContextualFormulas(formulas: Node[], baseContextId: number, topDownMap: (formula: Node, contextId: ContextID) => [Node, ContextID], bottomUpMap: (formula: Node, orig: Node, contextId: ContextID, origContextId: ContextID) => Node): Node[] {
+  const visiting = new Set<Node>()
+  const topDownByContext = new Map<ContextID, Map<Node, Node>>()
+  const bottomUpByContext = new Map<ContextID, Map<Node, Node>>()
 
-  function check(formula: AnyNode, parentContextId: ContextID): AnyNode {
+  function check(formula: Node, parentContextId: ContextID): Node {
     let topDownMapping = topDownByContext.get(parentContextId)
     if (!topDownMapping) {
       topDownMapping = new Map()
@@ -105,9 +107,9 @@ export function mapContextualFormulas(formulas: AnyNode[], baseContextId: number
     return bottomUp
   }
 
-  function traverse(formula: AnyNode, contextId: ContextID): AnyNode {
+  function traverse(formula: Node, contextId: ContextID): Node {
     const operands = formula.operands.map(f => check(f, contextId))
-    return arrayEqual(operands, formula.operands) ? formula : { ...formula, operands }
+    return arrayEqual(operands, formula.operands) ? formula : { ...formula, operands } as any
   }
 
   const result = formulas.map(f => check(f, baseContextId))
