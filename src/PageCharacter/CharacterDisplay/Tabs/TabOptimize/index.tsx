@@ -3,8 +3,6 @@ import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, Menu
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
-// eslint-disable-next-line
-
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider';
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
 import CardLight from '../../../../Components/Card/CardLight';
@@ -27,7 +25,6 @@ import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
-import { ICachedArtifact } from '../../../../Types/artifact';
 import { CharacterKey, charKeyToLocCharKey, LocationCharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
 import { FinalizeResult, Setup, WorkerCommand, WorkerResult } from './BackgroundWorker';
@@ -489,7 +486,7 @@ function DataContextWrapper({ children, characterKey, build, oldData }: Prop) {
   const { buildSetting: { mainStatAssumptionLevel } } = useBuildSetting(characterKey)
   // Update the build when the build artifacts are changed.
   const [dirty, setDirty] = useForceUpdate()
-  useEffect(() => database.arts.followAny((id) => build.includes(id) && setDirty()), [build, setDirty])
+  useEffect(() => database.arts.followAny((id) => build.includes(id) && setDirty()), [database, build, setDirty])
   const buildsArts = useMemo(() => dirty && build.map(i => database.arts.get(i)!), [dirty, build, database])
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel, buildsArts)
   const providerValue = useMemo(() => teamData && ({ data: teamData[characterKey]!.target, teamData, oldData }), [teamData, oldData, characterKey])

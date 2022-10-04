@@ -42,7 +42,7 @@ type Data = {
 }
 const allSubstatFilter = new Set(allSubstatKeys)
 
-export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, editorProps: editorProps, canExclude = false, canEquip = false, extraButtons }: Data): JSX.Element | null {
+export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, editorProps, canExclude = false, canEquip = false, extraButtons }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
