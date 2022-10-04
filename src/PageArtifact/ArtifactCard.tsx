@@ -24,6 +24,7 @@ import usePromise from '../ReactHooks/usePromise';
 import { allSubstatKeys, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
 import { allElementsWithPhy, LocationKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
+import { ArtifactEditorProps } from './ArtifactEditor';
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
 
@@ -34,14 +35,14 @@ type Data = {
   onDelete?: (id: string) => void,
   mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
-  editor?: boolean,
+  editorProps?: Partial<ArtifactEditorProps>,
   canExclude?: boolean
   canEquip?: boolean,
   extraButtons?: JSX.Element
 }
 const allSubstatFilter = new Set(allSubstatKeys)
 
-export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, editor = false, canExclude = false, canEquip = false, extraButtons }: Data): JSX.Element | null {
+export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, editorProps, canExclude = false, canEquip = false, extraButtons }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
@@ -82,10 +83,11 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
   const ele = allElementsWithPhy.find(e => mainStatKey.startsWith(e))
   const mainIcon = ele ? <ColorText color={ele}>{StatIcon[mainStatKey]}</ColorText> : StatIcon[mainStatKey]
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
-    {editor && <Suspense fallback={false}>
+    {editorProps && <Suspense fallback={false}>
       <ArtifactEditor
         artifactIdToEdit={showEditor ? artifactId : ""}
         cancelEdit={onHideEditor}
+        {...editorProps}
       />
     </Suspense>}
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
@@ -154,7 +156,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
             : <LocationName location={location} />}
         </Box>
         {editable && <ButtonGroup sx={{ height: "100%" }}>
-          {editor && <Tooltip title={<Typography>{t`artifact:edit`}</Typography>} placement="top" arrow>
+          {editorProps && <Tooltip title={<Typography>{t`artifact:edit`}</Typography>} placement="top" arrow>
             <Button color="info" size="small" onClick={onShowEditor} >
               <FontAwesomeIcon icon={faEdit} className="fa-fw" />
             </Button>

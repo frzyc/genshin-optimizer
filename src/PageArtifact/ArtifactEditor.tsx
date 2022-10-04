@@ -69,9 +69,8 @@ function artifactReducer(state: IEditorArtifact | undefined, action: Message): I
 const InputInvis = styled('input')({
   display: 'none',
 });
-
-export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allowUpload = false, allowEmpty = false, }:
-  { artifactIdToEdit?: string, cancelEdit: () => void, allowUpload?: boolean, allowEmpty?: boolean, }) {
+export type ArtifactEditorProps = { artifactIdToEdit?: string, cancelEdit: () => void, allowUpload?: boolean, allowEmpty?: boolean, disableSet?: boolean, disableSlot?: boolean }
+export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allowUpload = false, allowEmpty = false, disableSet = false, disableSlot = false }: ArtifactEditorProps) {
   const { t } = useTranslation("artifact")
 
   const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
@@ -101,7 +100,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const { artifact: artifactProcessed, texts } = firstProcessed ?? {}
   // const fileName = firstProcessed?.fileName ?? firstOutstanding?.fileName ?? "Click here to upload Artifact screenshot files"
 
-  const disableEditSlot = !!artifact?.location
+  const disableEditSlot = !!artifact?.location || disableSlot
 
   useEffect(() => {
     if (!artifact && artifactProcessed)
@@ -253,6 +252,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             <Box sx={{ display: "flex", gap: 1, mb: 1 }}>
               {/* Artifact Set */}
               <ArtifactSetSingleAutocomplete
+                disabled={disableSet}
                 showDefault
                 disableClearable
                 size="small"

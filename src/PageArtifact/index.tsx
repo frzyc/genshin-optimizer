@@ -148,7 +148,7 @@ export default function PageArtifact() {
               artifactId={artId}
               effFilter={effFilterSet}
               onDelete={deleteArtifact}
-              editor
+              editorProps={{}}
               canExclude
               canEquip
             />

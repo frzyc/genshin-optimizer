@@ -3,8 +3,6 @@ import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, Menu
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
-// eslint-disable-next-line
-
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider';
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
 import CardLight from '../../../../Components/Card/CardLight';
@@ -27,7 +25,6 @@ import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
-import { ICachedArtifact } from '../../../../Types/artifact';
 import { CharacterKey, charKeyToLocCharKey, LocationCharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
 import { FinalizeResult, Setup, WorkerCommand, WorkerResult } from './BackgroundWorker';
@@ -74,7 +71,6 @@ export default function TabBuild() {
   const { plotBase, optimizationTarget, mainStatAssumptionLevel, allowPartial, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
-  const buildsArts = useMemo(() => builds.map(build => build.map(i => database.arts.get(i)!)), [builds, database])
 
   //register changes in artifact database
   useEffect(() =>
@@ -435,13 +431,13 @@ export default function TabBuild() {
         </CardContent>
       </CardLight>
       <OptimizationTargetContext.Provider value={optimizationTarget}>
-        <BuildList buildsArts={buildsArts} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} />
+        <BuildList builds={builds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} />
       </OptimizationTargetContext.Provider>
     </DataContext.Provider>}
   </Box>
 }
-function BuildList({ buildsArts, characterKey, data, compareData, disabled }: {
-  buildsArts: ICachedArtifact[][],
+function BuildList({ builds, characterKey, data, compareData, disabled }: {
+  builds: string[][],
   characterKey?: "" | CharacterKey,
   data?: UIData,
   compareData: boolean,
@@ -449,7 +445,7 @@ function BuildList({ buildsArts, characterKey, data, compareData, disabled }: {
 }) {
   // Memoize the build list because calculating/rendering the build list is actually very expensive, which will cause longer optimization times.
   const list = useMemo(() => <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
-    {buildsArts?.map((build, index) => characterKey && data && <DataContextWrapper
+    {builds?.map((build, index) => characterKey && data && <DataContextWrapper
       key={index + build.join()}
       characterKey={characterKey}
       build={build}
@@ -458,12 +454,12 @@ function BuildList({ buildsArts, characterKey, data, compareData, disabled }: {
       <BuildItemWrapper index={index} build={build} compareData={compareData} disabled={disabled} />
     </DataContextWrapper>
     )}
-  </Suspense>, [buildsArts, characterKey, data, compareData, disabled])
+  </Suspense>, [builds, characterKey, data, compareData, disabled])
   return list
 }
 function BuildItemWrapper({ index, build, compareData, disabled }: {
   index: number
-  build: ICachedArtifact[],
+  build: string[],
   compareData: boolean,
   disabled: boolean,
 }) {
@@ -482,12 +478,17 @@ function BuildItemWrapper({ index, build, compareData, disabled }: {
 type Prop = {
   children: React.ReactNode
   characterKey: CharacterKey,
-  build: ICachedArtifact[],
+  build: string[],
   oldData: UIData,
 }
 function DataContextWrapper({ children, characterKey, build, oldData }: Prop) {
+  const { database } = useContext(DatabaseContext)
   const { buildSetting: { mainStatAssumptionLevel } } = useBuildSetting(characterKey)
-  const teamData = useTeamData(characterKey, mainStatAssumptionLevel, build)
+  // Update the build when the build artifacts are changed.
+  const [dirty, setDirty] = useForceUpdate()
+  useEffect(() => database.arts.followAny((id) => build.includes(id) && setDirty()), [database, build, setDirty])
+  const buildsArts = useMemo(() => dirty && build.map(i => database.arts.get(i)!), [dirty, build, database])
+  const teamData = useTeamData(characterKey, mainStatAssumptionLevel, buildsArts)
   const providerValue = useMemo(() => teamData && ({ data: teamData[characterKey]!.target, teamData, oldData }), [teamData, oldData, characterKey])
   if (!providerValue) return null
   return <DataContext.Provider value={providerValue}>
