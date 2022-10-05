@@ -1,9 +1,8 @@
 import { CharacterData } from 'pipeline'
-import { DisplaySub } from '../../../Formula/type'
 import { infoMut } from '../../../Formula/utils'
 import { CharacterKey, CharacterSheetKey, WeaponTypeKey } from '../../../Types/consts'
 import { trans } from '../../SheetUtil'
-import CharacterSheet, { charTemplates, ICharacterSheet, ICharacterTemplate, TalentSheet } from '../CharacterSheet'
+import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 const data_gen = data_gen_src as CharacterData
@@ -81,47 +80,6 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
   const sheet = { ...baseTravelerSheet, talent, key: charKey, elementKey } as ICharacterSheet
 
   return new CharacterSheet(sheet, data, assets)
-}
-
-export function autoDatamineDmgFormulas(skillParam_gen: any): [any, { [key: string]: DisplaySub }] {
-  const datamine = {
-    normal: {
-      hitArr: [
-        skillParam_gen.auto[0],
-        skillParam_gen.auto[1],
-        skillParam_gen.auto[2],
-        skillParam_gen.auto[3],
-        skillParam_gen.auto[4],
-      ]
-    },
-    charged: {
-      hit1: skillParam_gen.auto[5],
-      hit2: skillParam_gen.auto[6],
-      stamina: skillParam_gen.auto[7][0],
-    },
-    plunging: {
-      dmg: skillParam_gen.auto[8],
-      low: skillParam_gen.auto[9],
-      high: skillParam_gen.auto[10],
-    },
-  } as const
-
-  return [
-    datamine,
-    {
-      normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
-        [i, dmgNode("atk", arr, "normal")])),
-      charged: {
-        dmg1: dmgNode("atk", datamine.charged.hit1, "charged"),
-        dmg2: dmgNode("atk", datamine.charged.hit2, "charged")
-      },
-      plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
-        [key, dmgNode("atk", value, "plunging")])),
-    } as const
-  ]
-}
-
-export function autoTalent(talent: TalentSheet, ct: ICharacterTemplate, key: CharacterSheetKey, tr: (i18key: string) => Displayable, datamine: any, dmgFormulas: { [key: string]: DisplaySub }) {
 }
 
 export default {
