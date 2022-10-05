@@ -4,6 +4,8 @@ import type { ComputeNode, ConstantNode, Data, DataNode, Info, LookupNode, Match
 
 type Num = number | NumNode
 type Str = string | undefined | StrNode
+type Any = Num | Str
+type AnyNode = NumNode | StrNode
 
 export const todo: NumNode = constant(NaN, { key: "TODO" })
 export const one = percent(1), naught = percent(0)
@@ -18,7 +20,7 @@ export function constant(value: number | string | undefined, info?: Info): Const
     : { operation: "const", operands: [], type: "string", value, info }
 }
 /** `value` in percentage. The value is written as non-percentage, e.g., `percent(1)` for 100% */
-export function percent(value: number, info?: Info): NumNode {
+export function percent(value: number, info?: Info): ConstantNode<number> {
   if (value >= Number.MAX_VALUE / 100) value = Infinity
   if (value <= -Number.MAX_VALUE / 100) value = -Infinity
   return constant(value, { key: "_", ...info })
@@ -26,7 +28,7 @@ export function percent(value: number, info?: Info): NumNode {
 /** Inject `info` to the node in-place */
 export function infoMut(node: NumNode, info: Info): NumNode
 export function infoMut(node: StrNode, info: Info): StrNode
-export function infoMut(node: NumNode | StrNode, info: Info): NumNode | StrNode {
+export function infoMut(node: AnyNode, info: Info): AnyNode {
   if (info) node.info = { ...node.info, ...info }
   return node
 }
@@ -34,7 +36,7 @@ export function infoMut(node: NumNode | StrNode, info: Info): NumNode | StrNode 
 /** `table[string] ?? defaultNode` */
 export function lookup(index: StrNode, table: Dict<string, NumNode>, defaultV: Num | "none", info?: Info): LookupNode<NumNode>
 export function lookup(index: StrNode, table: Dict<string, StrNode>, defaultV: Str | "none", info?: Info): LookupNode<StrNode>
-export function lookup(index: StrNode, table: Dict<string, NumNode> | Dict<string, StrNode>, defaultV: Num | Str | "none", info?: Info): LookupNode<NumNode | StrNode> {
+export function lookup(index: StrNode, table: Dict<string, AnyNode>, defaultV: Any | "none", info?: Info): LookupNode<AnyNode> {
   const operands = defaultV !== "none" ? [intoV(index), intoV(defaultV)] as const : [intoV(index)] as const
   return { operation: "lookup", operands, table, info }
 }
@@ -68,31 +70,31 @@ export function compareEq(v1: Num, v2: Num, eq: Num, neq: Num, info?: Info): Mat
 export function compareEq(v1: Num, v2: Num, eq: Str, neq: Str, info?: Info): MatchNode<NumNode, StrNode>
 export function compareEq(v1: Str, v2: Str, eq: Num, neq: Num, info?: Info): MatchNode<StrNode, NumNode>
 export function compareEq(v1: Str, v2: Str, eq: Str, neq: Str, info?: Info): MatchNode<StrNode, StrNode>
-export function compareEq(v1: Num | Str, v2: Num | Str, eq: Num | Str, neq: Num | Str, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
+export function compareEq(v1: Any, v2: Any, eq: Any, neq: Any, info?: Info): MatchNode<AnyNode, AnyNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(eq), intoV(neq)], info }
 }
 /** v1 == v2 ? pass : 0 */
 export function equal(v1: Num, v2: Num, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
 export function equal(v1: Str, v2: Str, pass: Num, info?: Info): MatchNode<StrNode, NumNode>
-export function equal(v1: Num | Str, v2: Num | Str, pass: Num, info?: Info): MatchNode<NumNode | StrNode, NumNode> {
+export function equal(v1: Any, v2: Any, pass: Num, info?: Info): MatchNode<AnyNode, NumNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(pass), intoV(0)], info, emptyOn: "unmatch" }
 }
 /** v1 == v2 ? pass : `undefined` */
 export function equalStr(v1: Num, v2: Num, pass: Str, info?: Info): MatchNode<NumNode, StrNode>
 export function equalStr(v1: Str, v2: Str, pass: Str, info?: Info): MatchNode<StrNode, StrNode>
-export function equalStr(v1: Num | Str, v2: Num | Str, pass: Str, info?: Info): MatchNode<NumNode | StrNode, StrNode> {
+export function equalStr(v1: Any, v2: Any, pass: Str, info?: Info): MatchNode<AnyNode, StrNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(pass), intoV(undefined)], info, emptyOn: "unmatch" }
 }
 /** v1 != v2 ? pass : 0 */
 export function unequal(v1: Num, v2: Num, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
 export function unequal(v1: Str, v2: Str, pass: Num, info?: Info): MatchNode<StrNode, NumNode>
-export function unequal(v1: Num | Str, v2: Num | Str, pass: Num, info?: Info): MatchNode<NumNode | StrNode, NumNode> {
+export function unequal(v1: Any, v2: Any, pass: Num, info?: Info): MatchNode<AnyNode, NumNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(0), intoV(pass)], info, emptyOn: "match" }
 }
 /** v1 != v2 ? pass : `undefined` */
 export function unequalStr(v1: Num, v2: Num, pass: Str, info?: Info): MatchNode<NumNode, StrNode>
 export function unequalStr(v1: Str, v2: Str, pass: Str, info?: Info): MatchNode<StrNode, StrNode>
-export function unequalStr(v1: Num | Str, v2: Num | Str, pass: Str, info?: Info): MatchNode<NumNode | StrNode, StrNode> {
+export function unequalStr(v1: Any, v2: Any, pass: Str, info?: Info): MatchNode<AnyNode, StrNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(undefined), intoV(pass)], info, emptyOn: "match" }
 }
 /** v1 >= v2 ? pass : 0 */
@@ -123,14 +125,14 @@ export function setReadNodeKeys<T extends NodeList>(nodeList: T, prefix: string[
 }
 export function data(base: NumNode, data: Data): DataNode<NumNode>
 export function data(base: StrNode, data: Data): DataNode<StrNode>
-export function data(base: NumNode | StrNode, data: Data): DataNode<NumNode> | DataNode<StrNode>
-export function data(base: NumNode | StrNode, data: Data): DataNode<NumNode> | DataNode<StrNode> {
+export function data(base: AnyNode, data: Data): DataNode<NumNode> | DataNode<StrNode>
+export function data(base: AnyNode, data: Data): DataNode<NumNode> | DataNode<StrNode> {
   return { operation: "data", operands: [base as any], data }
 }
 export function resetData(base: NumNode, data: Data, info?: Info): DataNode<NumNode>
 export function resetData(base: StrNode, data: Data, info?: Info): DataNode<StrNode>
-export function resetData(base: NumNode | StrNode, data: Data, info?: Info): DataNode<NumNode | StrNode>
-export function resetData(base: NumNode | StrNode, data: Data, info?: Info): DataNode<NumNode | StrNode> {
+export function resetData(base: AnyNode, data: Data, info?: Info): DataNode<AnyNode>
+export function resetData(base: AnyNode, data: Data, info?: Info): DataNode<AnyNode> {
   return { operation: "data", operands: [base], data, reset: true, info }
 }
 
@@ -160,21 +162,17 @@ export function subscript<V>(index: NumNode, list: V[], info?: Info): SubscriptN
 
 function intoOps(values: Num[]): NumNode[]
 function intoOps(values: Str[]): StrNode[]
-function intoOps(values: (Num | Str)[]): (NumNode | StrNode)[] {
+function intoOps(values: Any[]): AnyNode[] {
   return values.map(value => typeof value === "object" ? value : constant(value))
 }
 function intoV(value: Num): NumNode
 function intoV(value: Str): StrNode
-function intoV(value: Num | Str): NumNode | StrNode
-function intoV(value: Num | Str): NumNode | StrNode {
+function intoV(value: Any): AnyNode
+function intoV(value: Any): AnyNode {
   return (typeof value !== "object") ? constant(value) : value
 }
 
-type _NodeList = {
-  [key: string]: NodeList
-} & {
-  operation?: never
-}
+type _NodeList = { [key: string]: NodeList } & { operation?: never }
 type NodeList = _NodeList | ReadNode<number> | ReadNode<string>
 
 /**
@@ -185,6 +183,6 @@ export function matchFull(v1: Num, v2: Num, match: Num, unmatch: Num, info?: Inf
 export function matchFull(v1: Num, v2: Num, match: Str, unmatch: Str, info?: Info): MatchNode<NumNode, StrNode>
 export function matchFull(v1: Str, v2: Str, match: Num, unmatch: Num, info?: Info): MatchNode<StrNode, NumNode>
 export function matchFull(v1: Str, v2: Str, match: Str, unmatch: Str, info?: Info): MatchNode<StrNode, StrNode>
-export function matchFull(v1: Num | Str, v2: Num | Str, match: Num | Str, unmatch: Num | Str, info?: Info): MatchNode<NumNode | StrNode, NumNode | StrNode> {
+export function matchFull(v1: Any, v2: Any, match: Any, unmatch: Any, info?: Info): MatchNode<AnyNode, AnyNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(unmatch)], info }
 }
