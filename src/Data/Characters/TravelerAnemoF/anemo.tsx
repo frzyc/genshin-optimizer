@@ -2,7 +2,7 @@ import ColorText from '../../../Components/ColoredText'
 import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
 import { DisplaySub } from '../../../Formula/type'
-import { constant, equal, greaterEq, infoMut, percent, prod, unequal } from '../../../Formula/utils'
+import { constant, equal, greaterEq, infoMut, percent, prod, subscript, unequal } from '../../../Formula/utils'
 import { absorbableEle, CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { objectKeyValueMap } from '../../../Util/Util'
 import { cond, sgt, st } from '../../SheetUtil'
@@ -25,6 +25,7 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
     skill: {
       initial_dmg: skillParam_gen.skill[s++],
       initial_max: skillParam_gen.skill[s++],
+      ele_dmg: 0.25,
       storm_dmg: skillParam_gen.skill[s++],
       storm_max: skillParam_gen.skill[s++],
       cd: skillParam_gen.skill[s++][0],
@@ -51,6 +52,7 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
     }
   } as const
 
+  const [condSkillAbsorptionPath, condSkillAbsorption] = cond(condCharKey, "skillAbsorption")
   const [condBurstAbsorptionPath, condBurstAbsorption] = cond(condCharKey, `${elementKey}BurstAbsorption`)
   const nodeC2 = greaterEq(input.constellation, 2, datamine.constellation2.enerRech_)
   const [condC6Path, condC6] = cond(condCharKey, `${elementKey}C6Hit`)
@@ -61,6 +63,28 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
     skill: {
       initial_dmg: dmgNode("atk", datamine.skill.initial_dmg, "skill"),
       initial_max: dmgNode("atk", datamine.skill.initial_max, "skill"),
+      initial_ele_dmg: unequal(condSkillAbsorption, undefined, customDmgNode(
+        prod(
+          infoMut(
+            prod(
+              datamine.skill.ele_dmg,
+              subscript(input.total.skillIndex, datamine.skill.initial_dmg),
+            ), { asConst: true, key: "_" }
+          ),
+          input.total.atk
+        ), "skill", { hit: { ele: condSkillAbsorption }}
+      )),
+      max_ele_dmg: unequal(condSkillAbsorption, undefined, customDmgNode(
+        prod(
+          infoMut(
+            prod(
+              datamine.skill.ele_dmg,
+              subscript(input.total.skillIndex, datamine.skill.initial_max),
+            ), { asConst: true, key: "_" }
+          ),
+          input.total.atk
+        ), "skill", { hit: { ele: condSkillAbsorption }}
+      )),
       storm_dmg: dmgNode("atk", datamine.skill.storm_dmg, "skill"),
       storm_max: dmgNode("atk", datamine.skill.storm_max, "skill"),
     },
@@ -118,7 +142,19 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
         value: 10,
         unit: "%"
       }]
-    }]),
+    }, ct.conditionalTemplate("skill", {
+      value: condSkillAbsorption,
+      path: condSkillAbsorptionPath,
+      name: st("eleAbsor"),
+      states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+        name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+        fields: [{
+          node: infoMut(dmgFormulas.skill.initial_ele_dmg, { key: `char_${condCharKey}:initialEleDmg` }),
+        }, {
+          node: infoMut(dmgFormulas.skill.max_ele_dmg, { key: `char_${condCharKey}:maxEleDmg` }),
+        }]
+      }]))
+    })]),
 
     burst: ct.talentTemplate("burst", [{
       fields: [{
