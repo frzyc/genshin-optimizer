@@ -9,18 +9,13 @@ import CardLight from '../Components/Card/CardLight'
 import { StyledInputBase } from '../Components/CustomNumberInput'
 import FontAwesomeSvgIcon from '../Components/FontAwesomeSvgIcon'
 import ModalWrapper from '../Components/ModalWrapper'
-import { ArtCharDatabase, DatabaseContext, DatabaseContextObj } from "../Database/Database"
-import { SandboxStorage } from '../Database/DBStorage'
+import { DatabaseContext } from "../Database/Database"
 import useBoolState from '../ReactHooks/useBoolState'
-import useDBMeta from '../ReactHooks/useDBMeta'
 import { range } from '../Util/Util'
 import UploadCard from './UploadCard'
 
 export default function DatabaseCard() {
-  const databaseContextObj = useContext(DatabaseContext)
-  const dbIndex = parseInt(databaseContextObj.database.storage.getString("dbIndex") || "1")
   const { t } = useTranslation(["settings"]);
-
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
       <Typography variant="subtitle1">
@@ -30,36 +25,23 @@ export default function DatabaseCard() {
     <Divider />
     <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       <Grid container spacing={2} columns={{ xs: 1, md: 2, }}>
-        {range(1, 4).map(i => <Grid key={i} item xs={1}>
-          {i === dbIndex ? <DataCard index={i} /> :
-            <ExtraDatabaseWrapper index={i}>
-              <DataCard index={i} databaseContextObj={databaseContextObj} />
-            </ExtraDatabaseWrapper>}
+        {range(0, 3).map(i => <Grid key={i} item xs={1}>
+          <DataCard index={i} />
         </Grid>)}
       </Grid>
     </CardContent >
   </CardLight >
 }
-function ExtraDatabaseWrapper({ index, children }) {
-  const [database, setDatabase] = useState(() => {
-    const dbName = `extraDatabase_${index}`
-    const eDB = localStorage.getItem(dbName)
-    const dbObj = eDB ? JSON.parse(eDB) : { dbIndex: `${index}` }
-    const db = new ArtCharDatabase(new SandboxStorage(dbObj))
-    db.toExtraLocalDB()
-    return db
-  })
 
-  return <DatabaseContext.Provider value={{ database, setDatabase }}>
-    {children}
-  </DatabaseContext.Provider>
-}
+function DataCard({ index }: { index: number }) {
+  const { databases, database: mainDB, setDatabase } = useContext(DatabaseContext)
+  const database = databases[index]
+  const [{ name, lastEdit }, setDBMeta] = useState(database.dbMeta.get())
+  useEffect(() => database.dbMeta.follow((r, dbMeta) => setDBMeta(dbMeta)), [database])
+  // Need to update the dbMeta when database changes
+  useEffect(() => setDBMeta(database.dbMeta.get()), [database])
 
-function DataCard({ index, databaseContextObj }: { index: number, databaseContextObj?: DatabaseContextObj }) {
-  const { database } = useContext(DatabaseContext)
-  const { name, lastEdit } = useDBMeta()
-
-  const current = !databaseContextObj
+  const current = mainDB === database
   const [uploadOpen, onOpen, onClose] = useBoolState()
   const { t } = useTranslation(["settings"]);
   const numChar = database.chars.keys.length
@@ -95,11 +77,11 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
   }, [database, name])
 
   const onSwap = useCallback(() => {
-    if (!databaseContextObj) return
-    databaseContextObj.database.toExtraLocalDB()
-    database.swapStorage(databaseContextObj.database)
-    databaseContextObj.setDatabase(database)
-  }, [databaseContextObj, database])
+    if (current) return
+    mainDB.toExtraLocalDB()
+    database.swapStorage(mainDB)
+    setDatabase(database)
+  }, [setDatabase, mainDB, database])
 
   const [tempName, setTempName] = useState(name)
   useEffect(() => setTempName(name), [name])
@@ -134,7 +116,7 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
             </Grid>
             <Grid item xs={1}>
               <ModalWrapper open={uploadOpen} onClose={onClose} >
-                <UploadCard onReplace={onClose} />
+                <UploadCard index={index} onReplace={onClose} />
               </ModalWrapper>
               <Button fullWidth component="span" color="info" startIcon={<Upload />} onClick={onOpen}>
                 {t`DatabaseCard.button.upload`}

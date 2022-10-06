@@ -180,6 +180,8 @@ export class ArtCharDatabase {
   }
 }
 export type DatabaseContextObj = {
+  databases: ArtCharDatabase[],
+  setDatabases: (dbs: ArtCharDatabase[]) => void,
   database: ArtCharDatabase,
   setDatabase: (db: ArtCharDatabase) => void
 }
