@@ -8,6 +8,7 @@ import { DisplayOptimizeEntry } from "./DataEntries/DisplayOptimizeEntry";
 import { DisplayToolEntry } from "./DataEntries/DisplayTool";
 import { DisplayWeaponEntry } from "./DataEntries/DisplayWeaponEntry";
 import { ArtifactDataManager } from "./DataManagers/ArtifactData";
+import { BuildResultDataManager } from "./DataManagers/BuildResult";
 import { BuildsettingDataManager } from "./DataManagers/BuildsettingData";
 import { CharacterDataManager } from "./DataManagers/CharacterData";
 import { CharacterTCDataManager } from "./DataManagers/CharacterTCData";
@@ -24,6 +25,7 @@ export class ArtCharDatabase {
   charTCs: CharacterTCDataManager
   weapons: WeaponDataManager
   buildSettings: BuildsettingDataManager
+  buildResult: BuildResultDataManager
   charMeta: CharMetaDataManager
   teamData: Partial<Record<CharacterKey, TeamData>> = {}
 
@@ -48,8 +50,10 @@ export class ArtCharDatabase {
 
     this.weapons.ensureEquipment()
 
-    // This should be instantiated after artifacts, so that invalid artifacts that persists in build results can be pruned.
     this.buildSettings = new BuildsettingDataManager(this)
+
+    // This should be instantiated after artifacts, so that invalid artifacts that persists in build results can be pruned.
+    this.buildResult = new BuildResultDataManager(this)
 
     this.charTCs = new CharacterTCDataManager(this)
     this.charMeta = new CharMetaDataManager(this)
@@ -75,7 +79,7 @@ export class ArtCharDatabase {
   }
   get dataManagers() {
     // IMPORTANT: it must be chars, weapon, arts in order, to respect import order
-    return [this.chars, this.weapons, this.arts, this.buildSettings, this.charMeta] as const
+    return [this.chars, this.weapons, this.arts, this.buildSettings, this.buildSettings, this.charMeta] as const
   }
   get dataEntries() {
     return [this.dbMeta, this.displayWeapon, this.displayArtifact, this.displayOptimize, this.displayCharacter, this.displayTool] as const
