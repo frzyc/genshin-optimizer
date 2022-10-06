@@ -122,8 +122,8 @@ export function objectKeyValueMap<T, K extends string | number, V>(items: readon
   return Object.fromEntries(items.map(t => map(t))) as any
 }
 
+export function objectMap<K extends string, V, T>(obj: Record<K, Exclude<V, undefined>>, fn: (value: V, key: `${K}`, index: number) => T): Record<K, T>
 export function objectMap<K extends string, V, T>(obj: Partial<Record<K, V>>, fn: (value: V, key: `${K}`, index: number) => T): Partial<Record<K, T>>
-export function objectMap<K extends string, V, T>(obj: Record<K, V>, fn: (value: V, key: `${K}`, index: number) => T): Record<K, T>
 export function objectMap<K extends string, V, T>(obj: Partial<Record<K, V>>, fn: (value: V, key: `${K}`, index: number) => T): Partial<Record<K, T>> {
   return Object.fromEntries(Object.entries(obj).map(
     ([k, v], i) => [k, fn(v, k, i)]
