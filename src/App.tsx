@@ -58,8 +58,21 @@ function ScrollTop({ children }: { children: React.ReactElement }) {
 }
 
 function App() {
-  const [database, setDatabase] = useState(() => new ArtCharDatabase(new DBLocalStorage(localStorage)))
-  const dbContextObj = useMemo(() => ({ database, setDatabase }), [database, setDatabase])
+  const [databases, setDatabases] = useState(() => [1, 2, 3, 4].map(index => {
+    const curDBIndex = parseInt(localStorage.getItem("dbIndex") || "1")
+    if (index === curDBIndex) {
+      return new ArtCharDatabase(new DBLocalStorage(localStorage))
+    } else {
+      const dbName = `extraDatabase_${index}`
+      const eDB = localStorage.getItem(dbName)
+      const dbObj = eDB ? JSON.parse(eDB) : { dbIndex: `${index}` }
+      const db = new ArtCharDatabase(new SandboxStorage(dbObj))
+      db.toExtraLocalDB()
+      return db
+    }
+  }))
+  const [database, setDatabase] = useState(() => databases[parseInt(localStorage.getItem("dbIndex") || "1") - 1])
+  const dbContextObj = useMemo(() => ({ databases, setDatabases, database, setDatabase }), [databases, setDatabases, database, setDatabase])
   return <StyledEngineProvider injectFirst>{/* https://mui.com/guides/interoperability/#css-injection-order-2 */}
     <ThemeProvider theme={theme}>
       <CssBaseline />
