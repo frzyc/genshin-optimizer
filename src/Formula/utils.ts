@@ -4,7 +4,7 @@ import type { ComputeNode, ConstantNode, Data, DataNode, Info, LookupNode, Match
 
 type Num = number | NumNode
 type Str = string | undefined | StrNode
-type Any = Num | Str
+type N_S = Num | Str
 type AnyNode = NumNode | StrNode
 
 export const todo: NumNode = constant(NaN, { key: "TODO" })
@@ -36,7 +36,7 @@ export function infoMut(node: AnyNode, info: Info): AnyNode {
 /** `table[string] ?? defaultNode` */
 export function lookup(index: StrNode, table: Dict<string, NumNode>, defaultV: Num | "none", info?: Info): LookupNode<NumNode>
 export function lookup(index: StrNode, table: Dict<string, StrNode>, defaultV: Str | "none", info?: Info): LookupNode<StrNode>
-export function lookup(index: StrNode, table: Dict<string, AnyNode>, defaultV: Any | "none", info?: Info): LookupNode<AnyNode> {
+export function lookup(index: StrNode, table: Dict<string, AnyNode>, defaultV: N_S | "none", info?: Info): LookupNode<AnyNode> {
   const operands = defaultV !== "none" ? [intoV(index), intoV(defaultV)] as const : [intoV(index)] as const
   return { operation: "lookup", operands, table, info }
 }
@@ -70,31 +70,31 @@ export function compareEq(v1: Num, v2: Num, eq: Num, neq: Num, info?: Info): Mat
 export function compareEq(v1: Num, v2: Num, eq: Str, neq: Str, info?: Info): MatchNode<NumNode, StrNode>
 export function compareEq(v1: Str, v2: Str, eq: Num, neq: Num, info?: Info): MatchNode<StrNode, NumNode>
 export function compareEq(v1: Str, v2: Str, eq: Str, neq: Str, info?: Info): MatchNode<StrNode, StrNode>
-export function compareEq(v1: Any, v2: Any, eq: Any, neq: Any, info?: Info): MatchNode<AnyNode, AnyNode> {
+export function compareEq(v1: N_S, v2: N_S, eq: N_S, neq: N_S, info?: Info): MatchNode<AnyNode, AnyNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(eq), intoV(neq)], info }
 }
 /** v1 == v2 ? pass : 0 */
 export function equal(v1: Num, v2: Num, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
 export function equal(v1: Str, v2: Str, pass: Num, info?: Info): MatchNode<StrNode, NumNode>
-export function equal(v1: Any, v2: Any, pass: Num, info?: Info): MatchNode<AnyNode, NumNode> {
+export function equal(v1: N_S, v2: N_S, pass: Num, info?: Info): MatchNode<AnyNode, NumNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(pass), intoV(0)], info, emptyOn: "unmatch" }
 }
 /** v1 == v2 ? pass : `undefined` */
 export function equalStr(v1: Num, v2: Num, pass: Str, info?: Info): MatchNode<NumNode, StrNode>
 export function equalStr(v1: Str, v2: Str, pass: Str, info?: Info): MatchNode<StrNode, StrNode>
-export function equalStr(v1: Any, v2: Any, pass: Str, info?: Info): MatchNode<AnyNode, StrNode> {
+export function equalStr(v1: N_S, v2: N_S, pass: Str, info?: Info): MatchNode<AnyNode, StrNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(pass), intoV(undefined)], info, emptyOn: "unmatch" }
 }
 /** v1 != v2 ? pass : 0 */
 export function unequal(v1: Num, v2: Num, pass: Num, info?: Info): MatchNode<NumNode, NumNode>
 export function unequal(v1: Str, v2: Str, pass: Num, info?: Info): MatchNode<StrNode, NumNode>
-export function unequal(v1: Any, v2: Any, pass: Num, info?: Info): MatchNode<AnyNode, NumNode> {
+export function unequal(v1: N_S, v2: N_S, pass: Num, info?: Info): MatchNode<AnyNode, NumNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(0), intoV(pass)], info, emptyOn: "match" }
 }
 /** v1 != v2 ? pass : `undefined` */
 export function unequalStr(v1: Num, v2: Num, pass: Str, info?: Info): MatchNode<NumNode, StrNode>
 export function unequalStr(v1: Str, v2: Str, pass: Str, info?: Info): MatchNode<StrNode, StrNode>
-export function unequalStr(v1: Any, v2: Any, pass: Str, info?: Info): MatchNode<AnyNode, StrNode> {
+export function unequalStr(v1: N_S, v2: N_S, pass: Str, info?: Info): MatchNode<AnyNode, StrNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(undefined), intoV(pass)], info, emptyOn: "match" }
 }
 /** v1 >= v2 ? pass : 0 */
@@ -162,13 +162,13 @@ export function subscript<V>(index: NumNode, list: V[], info?: Info): SubscriptN
 
 function intoOps(values: Num[]): NumNode[]
 function intoOps(values: Str[]): StrNode[]
-function intoOps(values: Any[]): AnyNode[] {
+function intoOps(values: N_S[]): AnyNode[] {
   return values.map(value => typeof value === "object" ? value : constant(value))
 }
 function intoV(value: Num): NumNode
 function intoV(value: Str): StrNode
-function intoV(value: Any): AnyNode
-function intoV(value: Any): AnyNode {
+function intoV(value: N_S): AnyNode
+function intoV(value: N_S): AnyNode {
   return (typeof value !== "object") ? constant(value) : value
 }
 
@@ -183,6 +183,6 @@ export function matchFull(v1: Num, v2: Num, match: Num, unmatch: Num, info?: Inf
 export function matchFull(v1: Num, v2: Num, match: Str, unmatch: Str, info?: Info): MatchNode<NumNode, StrNode>
 export function matchFull(v1: Str, v2: Str, match: Num, unmatch: Num, info?: Info): MatchNode<StrNode, NumNode>
 export function matchFull(v1: Str, v2: Str, match: Str, unmatch: Str, info?: Info): MatchNode<StrNode, StrNode>
-export function matchFull(v1: Any, v2: Any, match: Any, unmatch: Any, info?: Info): MatchNode<AnyNode, AnyNode> {
+export function matchFull(v1: N_S, v2: N_S, match: N_S, unmatch: N_S, info?: Info): MatchNode<AnyNode, AnyNode> {
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(unmatch)], info }
 }
