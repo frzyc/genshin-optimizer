@@ -168,7 +168,7 @@ function GOUploadAction({ index, importedDatabase, reset }: { index: number, imp
     setDatabases(dbs)
     importedDatabase.toExtraLocalDB()
     reset()
-  }, [database, importedDatabase, reset, setDatabases])
+  }, [databases, database, index, importedDatabase, reset, setDatabases])
 
 
   return <><Divider /><CardContent sx={{ py: 1 }}>

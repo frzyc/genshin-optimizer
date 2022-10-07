@@ -6,7 +6,7 @@ import { HashRouter, Route, Routes, useMatch } from "react-router-dom";
 import './App.scss';
 import './Database/Database';
 import { ArtCharDatabase, DatabaseContext } from './Database/Database';
-import { DBLocalStorage } from './Database/DBStorage';
+import { DBLocalStorage, SandboxStorage } from './Database/DBStorage';
 import Footer from './Footer';
 import Header from './Header';
 import './i18n';

@@ -81,7 +81,7 @@ function DataCard({ index }: { index: number }) {
     mainDB.toExtraLocalDB()
     database.swapStorage(mainDB)
     setDatabase(database)
-  }, [setDatabase, mainDB, database])
+  }, [setDatabase, mainDB, current, database])
 
   const [tempName, setTempName] = useState(name)
   useEffect(() => setTempName(name), [name])
