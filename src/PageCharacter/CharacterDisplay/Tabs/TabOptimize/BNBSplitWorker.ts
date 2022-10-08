@@ -27,7 +27,6 @@ type Filter = {
   calculated?: boolean
 }
 export class BNBSplitWorker implements SplitWorker {
-  id: number
   min: number[]
   nodes: NumNode[]
   arts: ArtifactsBySlot
@@ -44,8 +43,7 @@ export class BNBSplitWorker implements SplitWorker {
 
   callback: (interim: InterimResult) => void
 
-  constructor({ id, arts, optimizationTarget, filters, maxBuilds }: Setup, callback: (interim: InterimResult) => void) {
-    this.id = id
+  constructor({ arts, optimizationTarget, filters, maxBuilds }: Setup, callback: (interim: InterimResult) => void) {
     this.arts = arts
     this.min = [-Infinity, ...filters.map(x => x.min)]
     this.nodes = [optimizationTarget, ...filters.map(x => x.value)]
@@ -159,11 +157,12 @@ export class BNBSplitWorker implements SplitWorker {
     // Removing artifacts that doesn't meet the required opt target contributions.
     //
     // We could actually loop `newValues` computation if the removed artifacts have
-    // the highest contribution in one of the target node as the removal will lower
+    // the highest contribution in one of the target node as the removal will raise
     // the required contribution even further. However, once is generally enough.
+    const leadingConts = maxConts.map((cont, i) => Object.values(cont)
+      .reduce((accu, val) => accu + val, approxs[i].base - this.min[i]))
     const newValues = objectMap(arts.values, (arts, slot) => {
-      const requiredConts = maxConts.map((cont, i) => Object.values(cont)
-        .reduce((accu, val) => accu - val, this.min[i] - approxs[i].base + cont[slot]))
+      const requiredConts = leadingConts.map((lc, i) => maxConts[i][slot] - lc)
       return arts.filter(({ id }) => approxs.every(({ conts }, i) => conts[id] > requiredConts[i]))
     })
     arts = { base: arts.base, values: newValues }
@@ -185,7 +184,6 @@ function approximation(nodes: NumNode[], arts: ArtifactsBySlot): Approximation[]
       data => [data.id, dot(data.values, weight, 0)])
   }))
 }
-
 function dot(values: DynStat, lin: DynStat, c: number): number {
   return Object.entries(values).reduce((accu, [k, v]) => accu + (lin[k] ?? 0) * v, c)
 }
