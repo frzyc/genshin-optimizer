@@ -154,8 +154,7 @@ export class BNBSplitWorker implements SplitWorker {
       if (Object.values(arts.values).every(x => x.length)) {
         approxs = approximation(nodes, arts)
         maxConts = approxs.map(approx => objectMap(arts.values, val => maxContribution(val, approx)))
-        console.log(Object.values(maxConts[0]).reduce((a, b) => a + b, approxs[0].base), this.min[0])
-      }
+      } else maxConts = approxs.map(_ => objectMap(arts.values, _ => -Infinity))
     }
     // Removing artifacts that doesn't meet the required opt target contributions.
     //
