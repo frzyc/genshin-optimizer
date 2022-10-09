@@ -189,12 +189,31 @@ function approximation(nodes: NumNode[], arts: ArtifactsBySlot): Approximation[]
   }))
 }
 
-type Const = { $c: number }
-type Poly = { [key: string]: Poly } | Const
 type Linear = { [key: string]: number }
 function dot(values: DynStat, lin: Linear): number {
   return Object.entries(lin).reduce((accu, [key, val]) => accu + (values[key] ?? 0) * val, 0)
 }
+
+type Const = { $c: number }
+/**
+ * Keys on the key path represents the keys used in each monomial term. The coefficient
+ * is `number` at the leaf of the path, with `$c` as a separater. For example, the following
+ *
+ * {
+ *   x: {
+ *     $c: 2,
+ *     y: { $c: 3 }
+ *   }
+ * }
+ *
+ * represents 2x * 3xy. The key `$c` is necessary because, without it, we can't express sum of
+ * two monomials where one uses a subset of the keys of another, e.g., the example above.
+ *
+ * CAUTION:
+ * Typescript isn't strong enough to enforce that the key `$c`,and only `$c`, can map to `number`
+ * values. As is, care must be taken when constructing/updating `Poly`.
+ */
+type Poly = { [key: string]: Poly } | Const
 function weightedSum(...entries: readonly (readonly [number, Poly])[]): Poly {
   const keys = new Set(entries.flatMap(([_, poly]) => Object.keys(poly))), result: Poly = {}
   for (const key of keys) {
