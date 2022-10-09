@@ -3,9 +3,9 @@ import { allOperations } from "../../../../Formula/optimization";
 import { ConstantNode, NumNode } from "../../../../Formula/type";
 import { prod, threshold } from "../../../../Formula/utils";
 import { SlotKey } from "../../../../Types/consts";
-import { assertUnreachable, objectKeyValueMap, objectMap } from "../../../../Util/Util";
+import { assertUnreachable, crawlObject, layeredAssignment, objectKeyValueMap, objectMap } from "../../../../Util/Util";
 import type { InterimResult, Setup, SplitWorker } from "./BackgroundWorker";
-import { ArtifactBuildData, ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynStat, filterArts, MinMax, pruneAll, RequestFilter } from "./common";
+import { ArtifactBuildData, ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynMinMax, DynStat, filterArts, MinMax, pruneAll, RequestFilter } from "./common";
 
 type Approximation = {
   base: number,
@@ -51,7 +51,7 @@ export class BNBSplitWorker implements SplitWorker {
     this.maxBuilds = maxBuilds
 
     // make sure we can approximate it
-    linearUpperBound(this.nodes, arts)
+    polyUpperBound(this.nodes, computeFullArtRange(arts))
   }
 
   addFilter(filter: RequestFilter): void {
@@ -180,32 +180,41 @@ function maxContribution(arts: ArtifactBuildData[], approximation: Approximation
   return Math.max(...arts.map(({ id }) => approximation.conts[id]!))
 }
 function approximation(nodes: NumNode[], arts: ArtifactsBySlot): Approximation[] {
-  return linearUpperBound(nodes, arts).map(weight => ({
-    base: dot(arts.base, weight, weight.$c),
+  const ranges = computeFullArtRange(arts)
+  const polys = polyUpperBound(nodes, ranges)
+  return linearUpperBound(polys, ranges).map(weight => ({
+    base: dot(arts.base, weight) + (weight.$c ?? 0),
     conts: objectKeyValueMap(Object.values(arts.values).flat(),
-      data => [data.id, dot(data.values, weight, 0)])
+      data => [data.id, dot(data.values, weight)])
   }))
 }
-function dot(values: DynStat, lin: DynStat, c: number): number {
-  return Object.entries(values).reduce((accu, [k, v]) => accu + (lin[k] ?? 0) * v, c)
-}
 
-function weightedSum(...entries: readonly (readonly [number, Linear])[]): Linear
-function weightedSum(...entries: readonly (readonly [number, DynStat])[]): DynStat
-function weightedSum(...entries: readonly (readonly [number, DynStat])[]): DynStat {
-  const result = {}
-  for (const [weight, entry] of entries)
-    for (const [k, v] of Object.entries(entry))
-      result[k] = (result[k] ?? 0) + weight * v
+type Const = { $c: number }
+type Poly = { [key: string]: Poly } | Const
+type Linear = { [key: string]: number }
+function dot(values: DynStat, lin: Linear): number {
+  return Object.entries(lin).reduce((accu, [key, val]) => accu + (values[key] ?? 0) * val, 0)
+}
+function weightedSum(...entries: readonly (readonly [number, Poly])[]): Poly {
+  const keys = new Set(entries.flatMap(([_, poly]) => Object.keys(poly))), result: Poly = {}
+  for (const key of keys) {
+    if (key === "$c") {
+      result.$c = entries.reduce((accu, [weight, poly]) => accu + weight * (poly.$c as number ?? 0), 0) as any
+    } else {
+      const nested = entries.map(([weight, poly]) => [weight, poly[key] as Poly] as const).filter(([_, poly]) => poly)
+      result[key] = (nested.length === 1 && nested[0][0] === 1) ? nested[0][1] : weightedSum(...nested)
+    }
+  }
   return result
 }
-type Linear = DynStat & { $c: number }
-/** Compute a linear upper bound of `nodes` */
-function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linear[] {
-  const cents = weightedSum([1, arts.base], ...Object.values(arts.values).map(arts =>
-    [1 / arts.length, weightedSum(...arts.map(art => [1, art.values] as const))] as const))
-  const getCent = (lin: Linear) => dot(cents, lin, lin.$c)
 
+function linearUpperBound(polys: Poly[], ranges: DynMinMax): Linear[] {
+  throw "TODO"
+}
+
+/** Compute a poly upper bound of `nodes` */
+function polyUpperBound(nodes: NumNode[], ranges: DynMinMax): Poly[] {
+  if (ranges["$c"]) throw new PolyError("Unsupported key", "init")
   const minMaxes = new Map<NumNode, MinMax>()
   forEachNodes(nodes, _f => {
     const f = _f as NumNode, { operation } = f
@@ -215,23 +224,22 @@ function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linear[] {
         f.operands.forEach(op => minMaxes.set(op, { min: NaN, max: NaN })); break
     }
   }, _ => _)
-  const nodeRanges = computeNodeRange([...minMaxes.keys()], computeFullArtRange(arts))
-  for (const [node, minMax] of nodeRanges.entries()) minMaxes.set(node, minMax)
+  for (const [node, minMax] of computeNodeRange([...minMaxes.keys()], ranges)) minMaxes.set(node, minMax)
 
-  function slopePoint(slope: number, x0: number, y0: number, lin: Linear): Linear {
-    return weightedSum([1, { $c: y0 - slope * x0 }], [slope, lin])
+  function slopePoint(slope: number, x0: number, y0: number, poly: Poly): Poly {
+    return weightedSum([1, { $c: y0 - slope * x0 }], [slope, poly])
   }
-  function interpolate(x0: number, y0: number, x1: number, y1: number, lin: Linear, upper: boolean): Linear {
+  function interpolate(x0: number, y0: number, x1: number, y1: number, poly: Poly, upper: boolean): Poly {
     if (Math.abs(x0 - x1) < 1e-10)
       return { $c: upper ? Math.max(y0, y1) : Math.min(y0, y1) }
-    return slopePoint((y1 - y0) / (x1 - x0), x0, y0, lin)
+    return slopePoint((y1 - y0) / (x1 - x0), x0, y0, poly)
   }
 
   const upper = "u", lower = "l", outward = "o"
   type Context = typeof upper | typeof lower | typeof outward
-  return customMapFormula<Context, Linear>(nodes, upper, (_f, context, _map) => {
+  return customMapFormula<Context, Poly>(nodes, upper, (_f, context, _map) => {
     const f = _f as NumNode, { operation } = f
-    const map: (op: NumNode, c?: Context) => Linear = (op, c = context) => _map(op, c)
+    const map: (op: NumNode, c?: Context) => Poly = (op, c = context) => _map(op, c)
     const oppositeContext = context === upper ? lower : upper
 
     if (context === outward) {
@@ -239,13 +247,13 @@ function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linear[] {
       if (min < 0 && max > 0)
         // TODO: We can bypass this restriction by converting `f`
         // to `min(f, 0)` or `max(f, 0)` as appropriate
-        throw new PolyError("Zero-crossing", operation)
+        throw new PolyError("Zero-crossing (outward)", operation)
       return map(f, max <= 0 ? lower : upper)
     }
 
     switch (operation) {
       case "const": return { $c: f.value }
-      case "read": return { $c: 0, [f.path[1]]: 1 }
+      case "read": return { [f.path[1]]: { $c: 1 } }
       case "add": return weightedSum(...f.operands.map(op => [1, map(op)] as const))
       case "min": case "max": {
         const op = allOperations[operation]
@@ -254,8 +262,7 @@ function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linear[] {
 
         const x = map(xOp), c = op(f.operands.filter(op => op.operation === "const")
           .map(c => (c as ConstantNode<number>).value))
-        if ((operation === "max" && context === lower) || (operation === "min" && context === upper))
-          return x
+        if (operation === (context === lower ? "max" : "min")) return x
         const { min, max } = minMaxes.get(xOp)!, yMin = op([min, c]), yMax = op([max, c])
         return interpolate(min, yMin, max, yMax, x, context === upper)
       }
@@ -273,10 +280,11 @@ function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linear[] {
         if (context !== upper) throw new PolyError("Unsupported direction", operation)
         const [xOp, cOp] = f.operands
         if (cOp.operation !== "const") throw new PolyError("Non-constant node", operation)
-        const x = map(xOp), c = cOp.value, { min, max } = minMaxes.get(xOp)!
-        const loc = Math.sqrt((min + c) * (max + c))
+        const c = cOp.value, { min, max } = minMaxes.get(xOp)!, loc = Math.sqrt((min + c) * (max + c))
         if (min <= -c) throw new PolyError("Unsupported pattern", operation)
-        return slopePoint(c / (c + loc) / (c + loc), loc, loc / (loc + c), x)
+
+        const x = map(xOp), slope = c / (c + loc) / (c + loc), yLoc = loc / (loc + c)
+        return slopePoint(slope, loc, yLoc, x)
       }
       case "threshold": {
         const [vOp, tOp, pOp, fOp] = f.operands
@@ -307,11 +315,6 @@ function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linear[] {
         if ((min < 0 && context !== lower) || (max > 0 && context !== upper))
           throw new PolyError("Unsupported Direction", operation)
 
-        // For x/a >= 0, sum{x/a} <= n, and k > 0, it follows that
-        //
-        //   k prod{x} <= k/n prod{a} sum{x/a}
-        //
-        // This follows from AM-GM; prod{x/a} <= (sum{x/a}/n)^n <= sum{x/a}/n
         const operands = [...f.operands], flattenedOperands: NumNode[] = []
         let coeff = 1
         while (operands.length) {
@@ -321,13 +324,13 @@ function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linear[] {
           else flattenedOperands.push(operand)
         }
         const lins = flattenedOperands.map(op => map(op, outward))
-        const ranges = flattenedOperands.map(op => minMaxes.get(op)!)
-
-        // Set `a` to the centroid of `x`, normalizing so that `sum{x/a} = n`
-        const cents = lins.map(getCent)
-        const factor = cents.reduce((accu, cent, i) => accu + (cent >= 0 ? ranges[i].max : ranges[i].min) / cent, 0)
-        const prod = cents.reduce((a, b) => a * factor * b / lins.length, coeff / factor)
-        return weightedSum(...lins.map((op, i) => [prod / cents[i], op] as const))
+        return lins.reduce((result, lin) => {
+          const newResult: Poly = {}
+          crawlObject(lin, [], v => typeof v === "number", (val1: number, keys: string[]) =>
+            crawlObject(result, keys.slice(0, -1), v => typeof v === "number", (val2: number, keys: string[]) =>
+              layeredAssignment(newResult, keys, val1 * val2)))
+          return newResult
+        }, (coeff === 1 && lins.length) ? lins.pop()! : { $c: coeff })
       }
 
       case "data": case "match": case "lookup": case "subscript":
