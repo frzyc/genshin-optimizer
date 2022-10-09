@@ -3,7 +3,7 @@ import { allOperations } from "../../../../Formula/optimization";
 import { ConstantNode, NumNode } from "../../../../Formula/type";
 import { prod, threshold } from "../../../../Formula/utils";
 import { SlotKey } from "../../../../Types/consts";
-import { assertUnreachable, crawlObject, layeredAssignment, objectKeyValueMap, objectMap } from "../../../../Util/Util";
+import { assertUnreachable, crawlObject, layeredAssignment, objectKeyValueMap, objectMap, objPathValue } from "../../../../Util/Util";
 import type { InterimResult, Setup, SplitWorker } from "./BackgroundWorker";
 import { ArtifactBuildData, ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynMinMax, DynStat, filterArts, MinMax, pruneAll, RequestFilter } from "./common";
 
@@ -215,14 +215,15 @@ type Const = { $c: number }
  */
 type Poly = { [key: string]: Poly } | Const
 function weightedSum(...entries: readonly (readonly [number, Poly])[]): Poly {
+  if (entries.length === 1 && entries[0][0] === 1) return entries[0][1]
   const keys = new Set(entries.flatMap(([_, poly]) => Object.keys(poly))), result: Poly = {}
   for (const key of keys) {
-    if (key === "$c") {
-      result.$c = entries.reduce((accu, [weight, poly]) => accu + weight * (poly.$c as number ?? 0), 0) as any
-    } else {
-      const nested = entries.map(([weight, poly]) => [weight, poly[key] as Poly] as const).filter(([_, poly]) => poly)
-      result[key] = (nested.length === 1 && nested[0][0] === 1) ? nested[0][1] : weightedSum(...nested)
-    }
+    if (key === "$c")
+      result[key] = entries.reduce((accu, [weight, poly]) => accu + weight * (poly.$c as number ?? 0), 0) as any
+    else
+      result[key] = weightedSum(...entries
+        .map(([weight, poly]) => [weight, poly[key] as Poly] as const)
+        .filter(([_, poly]) => poly))
   }
   return result
 }
@@ -342,14 +343,19 @@ function polyUpperBound(nodes: NumNode[], ranges: DynMinMax): Poly[] {
           else if (operand.operation === "const") coeff *= operand.value;
           else flattenedOperands.push(operand)
         }
-        const lins = flattenedOperands.map(op => map(op, outward))
-        return lins.reduce((result, lin) => {
-          const newResult: Poly = {}
-          crawlObject(lin, [], v => typeof v === "number", (val1: number, keys: string[]) =>
-            crawlObject(result, keys.slice(0, -1), v => typeof v === "number", (val2: number, keys: string[]) =>
-              layeredAssignment(newResult, keys, val1 * val2)))
+        return flattenedOperands.reduce((result, op) => {
+          let newResult: Poly = {}, lin = map(op, outward)
+          crawlObject(result, [], v => typeof v === "number", (val: number, keys: string[]) => {
+            const path = keys.slice(0, -1) // Remove trailing "$c"
+            const old = objPathValue(newResult, path)
+            const newValue = old
+              ? weightedSum([1, old], [val, lin])
+              : weightedSum([val, lin])
+            if (path.length) layeredAssignment(newResult, path, newValue)
+            else newResult = newValue
+          })
           return newResult
-        }, (coeff === 1 && lins.length) ? lins.pop()! : { $c: coeff })
+        }, { $c: coeff } as Poly)
       }
 
       case "data": case "match": case "lookup": case "subscript":
