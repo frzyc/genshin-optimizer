@@ -66,7 +66,7 @@ export function mapFormulas(formulas: Node[], topDownMap: (formula: Node) => Nod
   return arrayEqual(result, formulas) ? formulas : result
 }
 
-export function customMapFormula<Context, Output>(formulas: NumNode[], context: Context, map: (formula: Node, context: Context, map: (node: NumNode, context: Context, state: { changed: boolean }) => Output) => Output): Output[] {
+export function customMapFormula<Context, Output>(formulas: NumNode[], context: Context, map: (formula: Node, context: Context, map: (node: NumNode, context: Context) => Output) => Output): Output[] {
   const contextMapping = new Map<Context, [Set<NumNode>, Map<NumNode, Output>]>()
   function internalMap(formula: NumNode, context: Context): Output {
     let current = contextMapping.get(context)

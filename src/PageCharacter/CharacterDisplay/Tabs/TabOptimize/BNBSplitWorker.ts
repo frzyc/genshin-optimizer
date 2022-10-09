@@ -230,8 +230,8 @@ function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linear[] {
   const upper = "u", lower = "l", outward = "o"
   type Context = typeof upper | typeof lower | typeof outward
   return customMapFormula<Context, Linear>(nodes, upper, (_f, context, _map) => {
-    const f = _f as NumNode, { operation } = f, state = { changed: false }
-    const map: (op: NumNode, c?: Context) => Linear = (op, c = context) => _map(op, c, state)
+    const f = _f as NumNode, { operation } = f
+    const map: (op: NumNode, c?: Context) => Linear = (op, c = context) => _map(op, c)
     const oppositeContext = context === upper ? lower : upper
 
     if (context === outward) {
@@ -276,7 +276,7 @@ function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linear[] {
         const x = map(xOp), c = cOp.value, { min, max } = minMaxes.get(xOp)!
         const loc = Math.sqrt((min + c) * (max + c))
         if (min <= -c) throw new PolyError("Unsupported pattern", operation)
-        return slopePoint(c / (c + loc) * (c + loc), loc, loc / (loc + c), x)
+        return slopePoint(c / (c + loc) / (c + loc), loc, loc / (loc + c), x)
       }
       case "threshold": {
         const [vOp, tOp, pOp, fOp] = f.operands
