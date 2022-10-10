@@ -16,13 +16,12 @@ import { CharacterContext } from '../../../../Context/CharacterContext';
 import { DataContext } from '../../../../Context/DataContext';
 import Artifact from '../../../../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../../../../Data/Artifacts/ArtifactSheet';
-import { initCharMeta } from '../../../../Database/Data/StateData';
 import { DatabaseContext } from '../../../../Database/Database';
 import { uiInput as input } from '../../../../Formula';
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard';
 import WeaponCard from '../../../../PageWeapon/WeaponCard';
 import useBoolState from '../../../../ReactHooks/useBoolState';
-import useDBState from "../../../../ReactHooks/useDBState";
+import useCharMeta from '../../../../ReactHooks/useCharMeta';
 import usePromise from '../../../../ReactHooks/usePromise';
 import { allSubstatKeys } from '../../../../Types/artifact';
 import { allSlotKeys, charKeyToLocCharKey, SlotKey, WeaponTypeKey } from '../../../../Types/consts';
@@ -52,7 +51,7 @@ export default function EquipmentSection() {
   const breakpoint = useMediaQuery(theme.breakpoints.up('lg'));
 
   const weaponDoc = useMemo(() => weaponSheet && weaponSheet.document.length > 0 && <CardLight><CardContent><DocumentDisplay sections={weaponSheet.document} /></CardContent></CardLight>, [weaponSheet])
-  const [{ rvFilter }] = useDBState(`charMeta_${characterKey}`, initCharMeta)
+  const { rvFilter } = useCharMeta(characterKey)
   const deferredRvFilter = useDeferredValue(rvFilter)
   const deferredRvSet = useMemo(() => new Set(deferredRvFilter), [deferredRvFilter])
   return <Box >
@@ -76,7 +75,7 @@ export default function EquipmentSection() {
         {allSlotKeys.map(slotKey => <Grid item xs={12} sm={6} md={4} key={slotKey} >
           {!!data.get(input.art[slotKey].id).value ?
             <ArtifactCard artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} effFilter={deferredRvSet}
-              extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editor canExclude canEquip /> :
+              extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editorProps={{}} canExclude canEquip /> :
             <ArtSwapCard slotKey={slotKey} />}
         </Grid>)}
       </Grid>
@@ -160,8 +159,8 @@ function ArtifactSectionCard() {
   }, [character, database, equippedArtifacts])
 
   const setEffects = useMemo(() => artifactSheets && ArtifactSheet.setEffects(artifactSheets, data), [artifactSheets, data])
-  const [{ rvFilter }, setCharMeta] = useDBState(`charMeta_${characterKey}`, initCharMeta)
-  const setRVFilter = useCallback(rvFilter => setCharMeta({ rvFilter }), [setCharMeta],)
+  const { rvFilter } = useCharMeta(characterKey)
+  const setRVFilter = useCallback(rvFilter => database.charMeta.set(characterKey, { rvFilter }), [database, characterKey],)
 
   const [show, onShow, onHide] = useBoolState()
   const deferredrvFilter = useDeferredValue(rvFilter)

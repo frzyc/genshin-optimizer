@@ -17,13 +17,12 @@ import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { ascensionMaxLevel } from "../Data/LevelData";
 import { DatabaseContext } from "../Database/Database";
 import useCharacter from "../ReactHooks/useCharacter";
-import useDBState from "../ReactHooks/useDBState";
+import useDBMeta from "../ReactHooks/useDBMeta";
 import useForceUpdate from "../ReactHooks/useForceUpdate";
-import useGender from "../ReactHooks/useGender";
 import usePromise from "../ReactHooks/usePromise";
 import { ICachedCharacter } from "../Types/character";
 import { allCharacterKeys, CharacterKey } from "../Types/consts";
-import { characterFilterConfigs, characterSortConfigs, CharacterSortKey, characterSortMap, initialCharacterDisplayState } from "../Util/CharacterSort";
+import { characterFilterConfigs, characterSortConfigs, CharacterSortKey, characterSortMap } from "../Util/CharacterSort";
 import { filterFunction, sortFunction } from "../Util/SortByFilters";
 
 type characterFilter = (character: ICachedCharacter | undefined, sheet: CharacterSheet) => boolean
@@ -39,13 +38,15 @@ const sortKeys = Object.keys(characterSortMap)
 export function CharacterSelectionModal({ show, onHide, onSelect, filter = () => true, newFirst = false }: CharacterSelectionModalProps) {
   const { t } = useTranslation(["page_character", "charNames_gen"])
   const { database } = useContext(DatabaseContext)
-  const [state, stateDispatch] = useDBState("CharacterDisplay", initialCharacterDisplayState)
+  const [state, setState] = useState(() => database.displayCharacter.get())
+  useEffect(() => database.displayCharacter.follow((r, s) => setState(s)), [database, setState])
+
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
 
   const [dbDirty, forceUpdate] = useForceUpdate()
 
   // character favorite updater
-  useEffect(() => database.states.followAny(s => s.includes("charMeta_") && forceUpdate()), [forceUpdate, database])
+  useEffect(() => database.charMeta.followAny(s => forceUpdate()), [forceUpdate, database])
 
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
@@ -56,9 +57,10 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
     const { element, weaponType, sortType, ascending } = deferredState
     const sortByKeys = [...(newFirst ? ["new"] : []), ...(characterSortMap[sortType] ?? [])] as CharacterSortKey[]
     return deferredDbDirty && allCharacterKeys
+      .filter(key => filter(database.chars.get(key), characterSheets[key]))
       .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, characterFilterConfigs(database, characterSheets)))
       .sort(sortFunction(sortByKeys, ascending, characterSortConfigs(database, characterSheets), ["new", "favorite"]))
-  }, [database, newFirst, deferredState, characterSheets, deferredDbDirty, deferredSearchTerm])
+  }, [database, newFirst, deferredState, characterSheets, deferredDbDirty, deferredSearchTerm, filter])
 
   if (!characterSheets) return null
 
@@ -67,8 +69,8 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
   return <ModalWrapper open={show} onClose={onHide} sx={{ "& .MuiContainer-root": { justifyContent: "normal" } }}>
     <CardDark>
       <CardContent sx={{ py: 1, display: "flex", alignItems: "center", gap: 1, flexWrap: "wrap" }}>
-        <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => stateDispatch({ weaponType })} value={weaponType} size="small" />
-        <ElementToggle sx={{ height: "100%" }} onChange={element => stateDispatch({ element })} value={element} size="small" />
+        <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => database.displayCharacter.set({ weaponType })} value={weaponType} size="small" />
+        <ElementToggle sx={{ height: "100%" }} onChange={element => database.displayCharacter.set({ element })} value={element} size="small" />
         <Box flexGrow={1}>
           <TextField
             autoFocus
@@ -83,8 +85,8 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
           />
         </Box>
         <SortByButton sx={{ height: "100%" }}
-          sortKeys={sortKeys} value={sortType} onChange={sortType => stateDispatch({ sortType })}
-          ascending={ascending} onChangeAsc={ascending => stateDispatch({ ascending })} />
+          sortKeys={sortKeys} value={sortType} onChange={sortType => database.displayCharacter.set({ sortType })}
+          ascending={ascending} onChangeAsc={ascending => database.displayCharacter.set({ ascending })} />
         <CloseButton onClick={onHide} />
       </CardContent>
       <Divider />
@@ -109,12 +111,11 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 });
 
 function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, onClick: () => void }) {
-  const { database } = useContext(DatabaseContext)
-  const gender = useGender(database)
+  const { gender } = useDBMeta()
   const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
   const character = useCharacter(characterKey)
   const { level = 1, ascension = 0, constellation = 0 } = character ?? {}
-  return <CustomTooltip arrow placement="bottom" title={
+  return <CustomTooltip enterDelay={300} enterNextDelay={300} arrow placement="bottom" title={
     <Box sx={{ width: 300 }}>
       <CharacterCard hideStats characterKey={characterKey} />
     </Box>

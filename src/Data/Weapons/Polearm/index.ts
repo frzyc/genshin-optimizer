@@ -14,12 +14,14 @@ import Halberd from './Halberd'
 import IronPoint from './IronPoint'
 import KitainCrossSpear from './KitainCrossSpear'
 import LithicSpear from './LithicSpear'
+import MissiveWindspear from './MissiveWindspear'
 import Moonpiercer from './Moonpiercer'
 import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
 import PrototypeStarglitter from './PrototypeStarglitter'
 import RoyalSpear from './RoyalSpear'
 import SkywardSpine from './SkywardSpine'
 import StaffOfHoma from './StaffOfHoma'
+import StaffOfTheScarletSands from './StaffOfTheScarletSands'
 import TheCatch from './TheCatch'
 import VortexVanquisher from './VortexVanquisher'
 import WavebreakersFin from './WavebreakersFin'
@@ -39,12 +41,14 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   IronPoint,
   KitainCrossSpear,
   LithicSpear,
+  MissiveWindspear,
   Moonpiercer,
   PrimordialJadeWingedSpear,
   PrototypeStarglitter,
   RoyalSpear,
   SkywardSpine,
   StaffOfHoma,
+  StaffOfTheScarletSands,
   TheCatch,
   VortexVanquisher,
   WavebreakersFin,

@@ -4,7 +4,7 @@ import SqBadge from "../../Components/SqBadge";
 import { input } from "../../Formula";
 import { Data, NumNode } from "../../Formula/type";
 import { greaterEq } from "../../Formula/utils";
-import { CharacterKey, CharacterSheetKey, ElementKey, Rarity, TravelerKey, travelerKeys, WeaponTypeKey } from "../../Types/consts";
+import { CharacterKey, CharacterSheetKey, ElementKey, Gender, Rarity, TravelerKey, travelerKeys, WeaponTypeKey } from "../../Types/consts";
 import { DocumentConditional, DocumentConditionalBase, DocumentSection, IDocumentFields, IDocumentHeader } from "../../Types/sheet";
 import { ascensionMaxLevel } from "../LevelData";
 import { st, trans } from "../SheetUtil";
@@ -32,7 +32,7 @@ export type ICharacterSheet = {
   elementKey: ElementKey
   talent: TalentSheet
 }
-export type AllCharacterSheets = (characterkey: CharacterKey, gender: "F" | "M") => CharacterSheet
+export type AllCharacterSheets = (characterkey: CharacterKey, gender: Gender) => CharacterSheet
 export default class CharacterSheet {
   sheet: ICharacterSheet;
   asset: AssetType;
@@ -42,8 +42,8 @@ export default class CharacterSheet {
     this.data = data
     this.asset = asset
   }
-  static get = (charKey: CharacterKey | "", gender: "F" | "M"): Promise<CharacterSheet> | undefined => charKey ? characterSheets.then(c => c[charKeyToCharSheetKey(charKey, gender)]) : undefined
-  static get getAll(): Promise<AllCharacterSheets> { return characterSheets.then(cs => (characterkey: CharacterKey, gender: "F" | "M"): CharacterSheet => cs[charKeyToCharSheetKey(characterkey, gender)]) }
+  static get = (charKey: CharacterKey | "", gender: Gender): Promise<CharacterSheet> | undefined => charKey ? characterSheets.then(c => c[charKeyToCharSheetKey(charKey, gender)]) : undefined
+  static get getAll(): Promise<AllCharacterSheets> { return characterSheets.then(cs => (characterkey: CharacterKey, gender: Gender): CharacterSheet => cs[charKeyToCharSheetKey(characterkey, gender)]) }
   get name() { return this.sheet.name }
   get icon() { return <ImgIcon src={this.thumbImgSide} sx={{ height: "2em", marginTop: "-2em", marginLeft: "-0.5em" }} /> }
   get nameWIthIcon() { return <span>{this.icon} {this.name}</span> }
@@ -157,8 +157,7 @@ export const charTemplates = (cKey: CharacterSheetKey, wKey: WeaponTypeKey, asse
   }
 }
 
-
-function charKeyToCharSheetKey(charKey: CharacterKey, gender: "F" | "M"): CharacterSheetKey {
+function charKeyToCharSheetKey(charKey: CharacterKey, gender: Gender): CharacterSheetKey {
   if (travelerKeys.includes(charKey as TravelerKey)) return `${charKey}${gender}` as CharacterSheetKey
   else return charKey as CharacterSheetKey
 }

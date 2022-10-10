@@ -1,10 +1,8 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
-import { reactions } from '../../../Formula/reaction'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
 import { absorbableEle, CharacterKey, ElementKey } from '../../../Types/consts'
-import { objectKeyMap } from '../../../Util/Util'
 import { cond, sgt, st, trans } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
@@ -123,16 +121,6 @@ const dmgFormulas = {
   burst: {
     base: dmgNode("atk", datamine.burst.baseDmg, "burst"),
     absorb: unequal(condBurstAbsorption, undefined, dmgNode("atk", datamine.burst.absorbDmg, "burst", { hit: { ele: condBurstAbsorption } })),
-    full7: unequal(condBurstAbsorption, undefined, sum(
-      prod(dmgNode("atk", datamine.burst.baseDmg, "burst"), 20),
-      prod(dmgNode("atk", datamine.burst.absorbDmg, "burst", { hit: { ele: condBurstAbsorption } }), 15),
-      prod(lookup(condBurstAbsorption, objectKeyMap(absorbableEle, ele => reactions.anemo[`${ele}Swirl`]), naught), 7)
-    )),
-    full14: unequal(condBurstAbsorption, "hydro", unequal(condBurstAbsorption, undefined, sum(
-      prod(dmgNode("atk", datamine.burst.baseDmg, "burst"), 20),
-      prod(dmgNode("atk", datamine.burst.absorbDmg, "burst", { hit: { ele: condBurstAbsorption } }), 15),
-      prod(lookup(condBurstAbsorption, objectKeyMap(absorbableEle, ele => reactions.anemo[`${ele}Swirl`]), naught), 14)
-    )))
   },
   constellation1: {
     aimed: greaterEq(input.constellation, 1,
@@ -289,16 +277,7 @@ const sheet: ICharacterSheet = {
           textSuffix: st("brHits", { count: datamine.burst.absorbTicks })
         }]
       }]))
-    }), ct.headerTemplate("burst", { // Custom burst formula
-      fields: [{
-        node: infoMut(dmgFormulas.burst.full7, { key: `char_${key}:fullBurstDMG.dmg7`, variant: "physical" }),
-      }, {
-        node: infoMut(dmgFormulas.burst.full14, { key: `char_${key}:fullBurstDMG.dmg14`, variant: "physical" }),
-      }],
-      canShow: unequal(condBurstAbsorption, undefined, 1),
-    }), {
-      text: trm("fullBurstDMG.description"),
-    }, ct.headerTemplate("passive2", {
+    }), ct.headerTemplate("passive2", {
       fields: [{
         text: trm("regenEner"),
       }, {

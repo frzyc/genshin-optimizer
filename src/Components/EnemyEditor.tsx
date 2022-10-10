@@ -1,5 +1,5 @@
-import { CheckBox, CheckBoxOutlineBlank, ExpandMore } from "@mui/icons-material";
-import { Button, CardContent, Chip, Collapse, Grid, Typography } from "@mui/material";
+import { CheckBox, CheckBoxOutlineBlank, ExpandMore, Replay } from "@mui/icons-material";
+import { Box, Button, CardContent, Chip, Collapse, Grid, Typography } from "@mui/material";
 import { useCallback, useContext, useState } from 'react';
 import { CharacterContext } from "../Context/CharacterContext";
 import { DataContext } from "../Context/DataContext";
@@ -13,38 +13,34 @@ import StatIcon from "./StatIcon";
 import StatInput from "./StatInput";
 
 export function EnemyExpandCard() {
+  const { characterDispatch } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const [expanded, setexpanded] = useState(false)
   const toggle = useCallback(() => setexpanded(!expanded), [setexpanded, expanded])
   const eLvlNode = data.get(input.enemy.level)
   const eDefRed = data.get(input.enemy.defRed)
   const eDefIgn = data.get(input.enemy.defIgn)
+  const onReset = useCallback(() => characterDispatch({ enemyOverride: {} }), [characterDispatch])
+
   return <CardLight>
-    <CardContent sx={{ display: "flex" }}>
-      <Grid container spacing={1} flexGrow={1} alignItems="center">
-        <Grid item>
-          <Chip size="small" color="success" label={<span>{KeyMap.get(eLvlNode.info.key)} <strong>{eLvlNode.value}</strong></span>} />
-        </Grid>
-        {allElementsWithPhy.map(element => <Grid item key={element}>
-          <Typography key={element} ><EnemyResText element={element} /></Typography>
-        </Grid>)}
-        <Grid item>
-          <Typography>DEF Reduction {valueString(eDefRed.value, eDefRed.unit)}</Typography>
-        </Grid>
-        <Grid item>
-          <Typography>DEF Ignore {valueString(eDefIgn.value, eDefIgn.unit)}</Typography>
-        </Grid>
-      </Grid>
-      <ExpandButton
-        expand={expanded}
-        onClick={toggle}
-        aria-expanded={expanded}
-        aria-label="show more"
-        size="small"
-        sx={{ p: 0 }}
-      >
-        <ExpandMore />
-      </ExpandButton>
+    <CardContent sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+      <Chip size="small" color="success" label={<span>{KeyMap.get(eLvlNode.info.key)} <strong>{eLvlNode.value}</strong></span>} />
+      {allElementsWithPhy.map(element => <Typography key={element} ><EnemyResText element={element} /></Typography>)}
+      <Typography>DEF Red. {valueString(eDefRed.value, eDefRed.unit)}</Typography>
+      <Typography>DEF Ignore {valueString(eDefIgn.value, eDefIgn.unit)}</Typography>
+      <Box flexGrow={1} display="flex" justifyContent="flex-end" gap={1}>
+        <Button size="small" color="error" sx={{ minWidth: 0, p: 0.5 }} onClick={onReset}><Replay /> RESET</Button>
+        <ExpandButton
+          expand={expanded}
+          onClick={toggle}
+          aria-expanded={expanded}
+          aria-label="show more"
+          size="small"
+          sx={{  marginLeft: 0 }}
+        >
+          <ExpandMore />
+        </ExpandButton>
+      </Box>
     </CardContent>
     <Collapse in={expanded} timeout="auto" unmountOnExit>
       <CardContent sx={{ pt: 0 }}>
@@ -58,8 +54,8 @@ export function EnemyResText({ element }: { element: ElementKeyWithPhy }) {
   const { data } = useContext(DataContext)
   const node = data.get(input.enemy[`${element}_res_`])
   const immune = !isFinite(node.value)
-  const content = immune ? <span >{StatIcon[element]} IMMUNE</span> :
-    <span >{StatIcon[element]}RES <strong>{valueString(node.value, node.unit)}</strong></span>
+  const content = immune ? <span >{StatIcon[element]} &#8734;</span> :
+    <span >{StatIcon[element]} <strong>{valueString(node.value, node.unit)}</strong></span>
   return <ColorText color={element}>{content}</ColorText>
 }
 
@@ -96,8 +92,8 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
         <StatInput
           sx={{ bgcolor: t => t.palette.contentLight.main, width: "100%" }}
           name={<ColorText color={eleKey}><b>{KeyMap.get(statKey)}</b></ColorText>}
-          value={val ? (elementImmunity ? Infinity : val) : 10}
-          placeholder={elementImmunity ? "Immune " : KeyMap.getStr(statKey)}
+          value={val !== undefined ? (elementImmunity ? Infinity : val) : 10}
+          placeholder={elementImmunity ? "∞ " : KeyMap.getStr(statKey)}
           defaultValue={defaultVal}
           onValueChange={value => characterDispatch({ type: "enemyOverride", statKey, value })}
           disabled={elementImmunity}

@@ -1,10 +1,13 @@
 import { deepFreeze } from "../Util/Util"
 import { ArtCharDatabase } from "./Database"
-export class DataManager<CacheKey extends string | number, StorageKey extends string | number, CacheValue, StorageValue> {
+import { IGO, IGOOD, ImportResult } from "./exim"
+export class DataManager<CacheKey extends string | number, StorageKey extends string | number, GOKey extends string, CacheValue, StorageValue> {
   database: ArtCharDatabase
+  goKey: GOKey
 
-  constructor(database: ArtCharDatabase) {
+  constructor(database: ArtCharDatabase, goKey: GOKey) {
     this.database = database
+    this.goKey = goKey
   }
 
   data: Dict<CacheKey, CacheValue> = {}
@@ -82,6 +85,13 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
     for (const key in this.data) {
       this.remove(key)
     }
+  }
+  exportGOOD(go: Partial<IGOOD & IGO>) {
+    go[this.goKey as any] = Object.entries(this.data).map(([id, value]) => ({ ...value, id }))
+  }
+  importGOOD(go: IGOOD & IGO, result: ImportResult) {
+    const entries = go[this.goKey as any]
+    if (entries && Array.isArray(entries)) entries.map(ele => ele.id && this.set(ele.id, ele))
   }
 }
 export type TriggerString = "update" | "remove" | "new" | "invalid"

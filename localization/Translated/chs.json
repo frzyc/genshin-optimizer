@@ -46,7 +46,7 @@
             "inventory": "背包",
             "currentlyEquipped": "当前装备",
             "any": "位置：任意",
-            "location": "部位"
+            "location": "位置"
         },
         "button": {
             "unequipArtifacts": "卸除圣遗物",
@@ -110,7 +110,9 @@
             "mainStats": "主词条",
             "substats": "副词条",
             "set": "圣遗物套装"
-        }
+        },
+        "substat_one": "{{count}}项副词条",
+        "substat_other": "{{count}}项副词条"
     },
     "languages": {
         "chs": "简体中文",
@@ -244,7 +246,11 @@
         "locked": "锁定的",
         "unlocked": "未锁定的",
         "refinement": "精炼{{value}}",
-        "selectlevel": "选择等级"
+        "selectlevel": "选择等级",
+        "gender": {
+            "F": "女",
+            "M": "男"
+        }
     },
     "char_Eula": {
         "skillC": {
@@ -432,7 +438,7 @@
             "constellation3": "命之座3",
             "constellation4": "命之座4",
             "constellation5": "命之座5",
-            "constellation6": "命之座5"
+            "constellation6": "命之座6"
         },
         "swirlReaction": {
             "hydro": "触发<hydro>水</hydro>扩散反应",
@@ -1301,7 +1307,7 @@
             "optTarget": "优化目标",
             "minStatReqThr": "最低词条要求阈值"
         },
-        "levelFilter": "圣遗物等级过滤起",
+        "levelFilter": "圣遗物等级过滤器",
         "useExcluded": {
             "title": "使用被排除的圣遗物",
             "usingNum_one": "使用<1>{{count}}</1>件已排除圣遗物",
@@ -1355,7 +1361,7 @@
                     "title": "圣遗物套装 <1>已包含<1></1></1> / <3>已排除<1></1></3>",
                     "intro": "你可以指定配装中哪些套装应该被包含/排除。在下面例子中，<strong>A</strong>代表成套的部件，<strong>R</strong>代表散件",
                     "2set": "<0><0>排除<1></1>两件套</0></0>会排除两件套搭配：<2><0>AA</0>RRR</2>与<4><0>AAA</0>RR</4>。",
-                    "4set": "<0><0>排除<1></1>四件套</0></0>会排除四件套搭配：<2><0>AAAA</0>R</2>与<4><0>AAAAA</0></4>.",
+                    "4set": "<0><0>排除<1></1>四件套</0></0>会排除四件套搭配：<2><0>AAAA</0>R</2>与<4><0>AAAAA</0></4>。",
                     "2rain": "<0><0>排除<1></1>3散件</0></0>会排除两件套+3散件的搭配：<2>AA<1>RRR</1></2>与<4>AAA<1>RR</1></4>。",
                     "4rain": "<0><0>排除<1></1>5散件</0></0>会排除纯散件的搭配：<2><0>RRRRR</0></2>。\n"
                 }
@@ -1376,5 +1382,54 @@
     },
     "weapon_SapwoodBlade": {
         "condName": "拾取种识之叶后"
+    },
+    "char_TravelerAnemo": {
+        "p1": "风刃伤害",
+        "c6": "受到<strong>风息激荡</strong>伤害的目标",
+        "c4": "风涡剑持续期间，受到的伤害降低"
+    },
+    "char_TravelerElectro": {
+        "skill": {
+            "amuletGenAmt": "丰穰勾玉产生数量",
+            "absorb": "角色吸收丰穰勾玉"
+        },
+        "burst": {
+            "3rd": "第三次威光落雷伤害",
+            "thunderCd": "威光落雷冷却时间"
+        },
+        "passive2": {
+            "enerRech_": "丰穰勾玉提供的元素充能效率提升"
+        },
+        "c2": {
+            "thunderHit": "<strong>威光落雷</strong>命中敌人"
+        },
+        "c6": {
+            "fallingThunder3": "第三次<strong>威光落雷</strong>攻击",
+            "fallingThunderBonus_": "<strong>威光落雷</strong>伤害提升"
+        }
+    },
+    "char_TravelerGeo": {
+        "passive2": {
+            "key": "狂乱的崩岩伤害"
+        },
+        "c2": {
+            "key": "荒星爆炸伤害"
+        }
+    },
+    "page_newTab": {
+        "title": "🛑检测到新的优化器标签页🛑",
+        "p1": "你似乎在另一标签页中打开了Genshin Optimizer💞，GO并没有针对多标签页操作进行设计📵，这可能导致：",
+        "symptom": {
+            "1": "不同标签页之间的数据不同步🙃。",
+            "2": "数据库损坏💔。",
+            "3": "胃部不适🤰，以及令开发者很沮丧😡。",
+            "4": "在极其罕见的情况下会挂掉☠️。"
+        },
+        "p2": "我们展示这段信息以阻止这种情况发生📝，你有以下几种选择：",
+        "choice": {
+            "1": "关闭此标签页🔪，并使用新标签页🆕。",
+            "2": "关闭新标签页↩️，只留下此标签页🔂，然后刷新页面🔄。"
+        },
+        "refresh": "刷新页面"
     }
 }

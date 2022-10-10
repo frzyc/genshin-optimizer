@@ -1,6 +1,6 @@
 import { faDiscord } from "@fortawesome/free-brands-svg-icons"
-import { Backpack, Computer, Download, Gamepad, InsertLink, PersonSearch, SendToMobile, SportsEsports, Warning } from "@mui/icons-material"
-import { Box, CardContent, CardMedia, Grid, IconButton, Link, Tooltip, Typography } from "@mui/material"
+import { Backpack, Computer, Download, Gamepad, InsertLink, PersonSearch, SendToMobile, SportsEsports, Warning, YouTube } from "@mui/icons-material"
+import { Box, CardActionArea, CardContent, CardMedia, Grid, IconButton, Link, Tooltip, Typography } from "@mui/material"
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
 import { Link as RouterLink } from "react-router-dom"
@@ -9,8 +9,8 @@ import FontAwesomeSvgIcon from "../Components/FontAwesomeSvgIcon"
 import SqBadge from "../Components/SqBadge"
 import AdScanner from './AdeptiScanner.png'
 import Amenoma from './Amenoma.png'
-import GIScanner from './GIScanner.png'
 import Artiscan from './artiscan.png'
+import GIScanner from './GIScanner.png'
 
 export default function PageScanner() {
   const { t } = useTranslation('page_scanner')
@@ -28,17 +28,22 @@ export default function PageScanner() {
     <Grid container columns={{ xs: 1, md: 2, lg: 3 }} spacing={2}>
       <Grid item xs={1}>
         <CardDark sx={{ height: "100%" }}>
-          <CardMedia component="img" image={Artiscan} />
+          <CardActionArea href="https://artiscan.ninjabay.org/" target="_blank">
+            <CardMedia component="img" image={Artiscan} />
+          </CardActionArea>
           <CardContent>
             <Box display="flex" gap={1} alignItems="center">
               <Typography variant="h5" flexGrow={1} ><Trans t={t} i18nKey="nb.title">Artiscan</Trans></Typography>
               <IconButton href="https://artiscan.ninjabay.org/" target="_blank">
                 <InsertLink />
               </IconButton>
+              <IconButton href="https://youtu.be/_qzzunuef4Y" target="_blank">
+                <YouTube />
+              </IconButton>
             </Box>
 
             <Typography variant="subtitle2" sx={{ display: "flex", gap: 1, py: 1, flexWrap: "wrap" }}>
-              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.0</SqBadge>
+              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.1</SqBadge>
               <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Computer sx={{ pr: 0.5 }} />{t("tags.pc") as string}</SqBadge>
               <SqBadge sx={{ display: "flex", alignItems: "center" }} ><SendToMobile sx={{ pr: 0.5 }} />{t("tags.mobile") as string}</SqBadge>
               <SqBadge sx={{ display: "flex", alignItems: "center" }} ><SportsEsports sx={{ pr: 0.5 }} />{t("tags.ps") as string}</SqBadge>
@@ -51,7 +56,9 @@ export default function PageScanner() {
       </Grid>
       <Grid item xs={1}>
         <CardDark sx={{ height: "100%" }}>
-          <CardMedia component="img" image={GIScanner} />
+          <CardActionArea href="https://github.com/Andrewthe13th/Inventory_Kamera" target="_blank">
+            <CardMedia component="img" image={GIScanner} />
+          </CardActionArea>
           <CardContent>
             <Box display="flex" gap={1} alignItems="center">
               <Typography variant="h5" flexGrow={1} ><Trans t={t} i18nKey="ik.title">Inventory Kamera</Trans></Typography>
@@ -77,7 +84,9 @@ export default function PageScanner() {
       </Grid>
       <Grid item xs={1}>
         <CardDark sx={{ height: "100%" }}>
-          <CardMedia component="img" image={AdScanner} />
+          <CardActionArea href="https://github.com/D1firehail/AdeptiScanner-GI" target="_blank">
+            <CardMedia component="img" image={AdScanner} />
+          </CardActionArea>
           <CardContent>
             <Box display="flex" gap={1} alignItems="center">
               <Typography variant="h5" flexGrow={1} ><Trans t={t} i18nKey="as.title">AdeptiScanner</Trans></Typography>
@@ -87,7 +96,7 @@ export default function PageScanner() {
             </Box>
 
             <Typography variant="subtitle2" sx={{ display: "flex", gap: 1, py: 1, flexWrap: "wrap" }}>
-              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.0</SqBadge>
+              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.1</SqBadge>
               <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Computer sx={{ pr: 0.5 }} />{t("tags.pc") as string}</SqBadge>
               <WarningWrapper>
                 <SqBadge color="warning" sx={{ display: "flex", alignItems: "center" }} ><Warning sx={{ pr: 0.5 }} />{t("tags.gameMani") as string}</SqBadge>
@@ -101,7 +110,9 @@ export default function PageScanner() {
       </Grid>
       <Grid item xs={1}>
         <CardDark sx={{ height: "100%" }}>
-          <CardMedia component="img" image={Amenoma} />
+          <CardActionArea href="https://github.com/daydreaming666/Amenoma" target="_blank">
+            <CardMedia component="img" image={Amenoma} />
+          </CardActionArea>
           <CardContent>
             <Box display="flex" gap={1} alignItems="center">
               <Typography variant="h5" flexGrow={1} ><Trans t={t} i18nKey="am.title">「天目」-- Amenoma</Trans></Typography>

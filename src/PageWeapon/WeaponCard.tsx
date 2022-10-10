@@ -86,7 +86,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
       <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }}>
         <Box sx={{ flexGrow: 1 }}>
           {canEquip
-            ? <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} />
+            ? <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} autoCompleteProps={{ getOptionDisabled: t => !t, disableClearable: true }} />
             : <LocationName location={location} />}
         </Box>
         <ButtonGroup sx={{ height: "100%" }}>

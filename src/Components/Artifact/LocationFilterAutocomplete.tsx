@@ -3,10 +3,9 @@ import { Skeleton } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import CharacterSheet from "../../Data/Characters/CharacterSheet"
-import { initCharMeta } from "../../Database/Data/StateData"
 import { DatabaseContext } from "../../Database/Database"
 import { FilterLocationKey } from "../../PageArtifact/ArtifactSort"
-import useGender from "../../ReactHooks/useGender"
+import useDBMeta from "../../ReactHooks/useDBMeta"
 import usePromise from "../../ReactHooks/usePromise"
 import { charKeyToCharName, LocationCharacterKey, locationCharacterKeys, travelerKeys } from "../../Types/consts"
 import ThumbSide from "../Character/ThumbSide"
@@ -15,7 +14,7 @@ import GeneralAutocomplete, { GeneralAutocompleteOption } from "../GeneralAutoco
 export default function LocationFilterAutocomplete({ location, setLocation }: { location: FilterLocationKey, setLocation: (v: FilterLocationKey) => void }) {
   const { t } = useTranslation(["ui", "artifact", "charNames_gen"])
   const { database } = useContext(DatabaseContext)
-  const gender = useGender(database)
+  const { gender } = useDBMeta()
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
   const toText = useCallback((key: LocationCharacterKey): string => t(`charNames_gen:${charKeyToCharName(database.chars.LocationToCharacterKey(key), gender)}`), [database, gender, t])
   const toImg = useCallback((key: FilterLocationKey) => {
@@ -31,8 +30,8 @@ export default function LocationFilterAutocomplete({ location, setLocation }: { 
     }
   }, [database, gender, characterSheets])
   const isFavorite = useCallback((key: LocationCharacterKey) => key === "Traveler" ?
-    travelerKeys.some(key => database.states.getWithInit(`charMeta_${key}`, initCharMeta).favorite) :
-    key ? database.states.getWithInit(`charMeta_${key}`, initCharMeta).favorite : false, [database])
+    travelerKeys.some(key => database.charMeta.get(key).favorite) :
+    key ? database.charMeta.get(key).favorite : false, [database])
   const values: GeneralAutocompleteOption<FilterLocationKey>[] = useMemo(() => [{
     key: "",
     label: t`artifact:filterLocation.any`,

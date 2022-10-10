@@ -97,7 +97,7 @@ function ReactionDisplay() {
   return <CardLight>
     <CardContent>
       <Grid container spacing={1}>
-        {Object.entries(reaction).map(([key, node]) => {
+        {Object.entries(reaction).filter(([_, node]) => !node.isEmpty).map(([key, node]) => {
           return <Grid item key={key}>
             <CardDark><CardContent sx={{ p: 1, "&:last-child": { pb: 1 } }}>
               <NodeFieldDisplay node={node} />

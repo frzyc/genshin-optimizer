@@ -1,7 +1,7 @@
 import type { IArtifact } from "../Types/artifact"
 import type { ICharacter } from "../Types/character"
 import type { IWeapon } from "../Types/weapon"
-import { BuildSetting } from "./Data/BuildsettingData"
+import { BuildSetting } from "./DataManagers/BuildsettingData"
 
 export const GOSource = "Genshin Optimizer" as const
 
@@ -9,8 +9,16 @@ function newCounter<T>(): ImportResultCounter<T> {
   return { import: 0, invalid: [], new: [], update: [], unchanged: [], upgraded: [], remove: [], notInImport: 0, beforeMerge: 0 }
 }
 
-export function newImportResult(source: string): ImportResult {
-  return { type: "GOOD", source, artifacts: newCounter(), weapons: newCounter(), characters: newCounter() }
+export function newImportResult(source: string, keepNotInImport: boolean, ignoreDups: boolean): ImportResult {
+  return {
+    type: "GOOD", source,
+    artifacts: newCounter(),
+    weapons: newCounter(),
+    characters: newCounter(),
+    keepNotInImport,
+    ignoreDups,
+    importArtIds: new Map<string, string>()
+  }
 }
 export type IGOOD = {
   format: "GOOD"
@@ -23,8 +31,7 @@ export type IGOOD = {
 export type IGO = {
   dbVersion: number
   source: typeof GOSource
-  states?: Array<object & { key: string }>
-  buildSettings?: Array<BuildSetting & { key: string }>
+  buildSettings?: Array<BuildSetting & { id: string }>
 }
 
 export type ImportResultCounter<T> = {
@@ -44,4 +51,7 @@ export type ImportResult = {
   artifacts: ImportResultCounter<IArtifact>,
   weapons: ImportResultCounter<IWeapon>,
   characters: ImportResultCounter<ICharacter>,
+  keepNotInImport: boolean,
+  ignoreDups: boolean
+  importArtIds: Map<string, string>
 }

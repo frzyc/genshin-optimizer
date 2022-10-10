@@ -14,16 +14,15 @@ import { elementSvg } from "../Components/StatIcon"
 import CharacterSheet from "../Data/Characters/CharacterSheet"
 import WeaponSheet from "../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../Database/Database"
-import useGender from "../ReactHooks/useGender"
+import useDBMeta from "../ReactHooks/useDBMeta"
 import usePromise from "../ReactHooks/usePromise"
 import { allElements, allSlotKeys, allWeaponTypeKeys } from "../Types/consts"
 import { objectKeyMap } from "../Util/Util"
 
-
 export default function InventoryCard() {
   const { t } = useTranslation(["page_home", "ui"])
   const { database } = useContext(DatabaseContext)
-  const gender = useGender(database)
+  const { gender } = useDBMeta()
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
   const { characterTally, characterTotal } = useMemo(() => {
     const chars = database.chars.keys

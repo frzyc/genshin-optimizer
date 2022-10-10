@@ -3,8 +3,7 @@ import { useContext } from 'react';
 import { useTranslation } from "react-i18next";
 import { CharacterContext } from "../Context/CharacterContext";
 import { DataContext } from "../Context/DataContext";
-import { infusionNode } from "../Data/Characters/dataUtil";
-import { uiInput as input } from "../Formula";
+import { infusionNode, uiInput as input } from "../Formula";
 import { AdditiveReactionKey, allAmpReactions, allHitModes, allowedAdditiveReactions, allowedAmpReactions, AmpReactionKey, ElementKey } from "../Types/consts";
 import AdditiveReactionModeText from "./AdditiveReactionModeText";
 import AmpReactionModeText from "./AmpReactionModeText";
@@ -17,6 +16,7 @@ export const infusionVals = {
   "": <span>No Team Melee Infusion</span>,
   "pyro": <span >{StatIcon.pyro} <SqBadge>Bennett C6</SqBadge> Fire Ventures with Me</span>,
   "cryo": <span >{StatIcon.cryo} <SqBadge>Chongyun Skill</SqBadge> Spirit Blade: Chonghua's Layered Frost</span>,
+  "hydro": <span >{StatIcon.hydro} <SqBadge>Candace Burst</SqBadge> Sacred Rite: Wagtail's Tide</span>,
 }
 type InfusionAuraDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" | "children">
 export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {

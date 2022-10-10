@@ -2,22 +2,25 @@ import { faBan, faChartLine, faTrash, faUserSlash } from "@fortawesome/free-soli
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Lock, LockOpen, Replay } from "@mui/icons-material"
 import { Button, CardContent, Grid, Skeleton, Typography } from "@mui/material"
-import { lazy, Suspense, useContext, useMemo } from "react"
+import { lazy, Suspense, useCallback, useContext, useMemo } from "react"
 import { Trans, useTranslation } from "react-i18next"
 import CardDark from "../Components/Card/CardDark"
 import SqBadge from "../Components/SqBadge"
 import { DatabaseContext } from "../Database/Database"
+import useDisplayArtifact from "../ReactHooks/useDisplayArtifact"
 import { ICachedArtifact } from "../Types/artifact"
 import { FilterOption } from "./ArtifactSort"
 
 const ArtifactFilterDisplay = lazy(() => import('../Components/Artifact/ArtifactFilterDisplay'))
 
-export default function ArtifactFilter({ filterOption, filterOptionDispatch, filterDispatch, numShowing, total, }:
-  { filterOption: FilterOption, filterOptionDispatch: (any) => void, filterDispatch: (any) => void, numShowing: number, total: number }) {
+export default function ArtifactFilter({ numShowing, total, }: { numShowing: number, total: number }) {
   const { t } = useTranslation(["artifact", "ui"])
+  const { database } = useContext(DatabaseContext)
+  const { filterOption } = useDisplayArtifact()
+  const filterOptionDispatch = useCallback((option: Partial<FilterOption>) => database.displayArtifact.set({ filterOption: { ...filterOption, ...option } }), [database, filterOption])
 
   return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={300} />}>
-    <CardDark  >
+    <CardDark>
       <CardContent>
         <Grid container>
           <Grid item >
@@ -27,7 +30,7 @@ export default function ArtifactFilter({ filterOption, filterOptionDispatch, fil
             {numShowing !== total && <Typography>Filtered {numShowing} / {total}</Typography>}
           </Grid>
           <Grid item>
-            <Button size="small" color="error" onClick={() => filterDispatch({ type: "reset" })} startIcon={<Replay />}>
+            <Button size="small" color="error" onClick={() => database.displayArtifact.set({ action: "reset" })} startIcon={<Replay />}>
               <Trans t={t} i18nKey="ui:reset" />
             </Button>
           </Grid>

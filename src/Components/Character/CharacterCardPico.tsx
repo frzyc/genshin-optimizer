@@ -1,11 +1,10 @@
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material';
-import { Suspense, useCallback, useContext } from 'react';
+import { Suspense, useCallback } from 'react';
 import Assets from '../../Assets/Assets';
 import CharacterSheet from '../../Data/Characters/CharacterSheet';
 import { ascensionMaxLevel } from '../../Data/LevelData';
-import { DatabaseContext } from '../../Database/Database';
 import useCharacter from '../../ReactHooks/useCharacter';
-import useGender from '../../ReactHooks/useGender';
+import useDBMeta from '../../ReactHooks/useDBMeta';
 import usePromise from '../../ReactHooks/usePromise';
 import { CharacterKey } from '../../Types/consts';
 import BootstrapTooltip from '../BootstrapTooltip';
@@ -15,8 +14,7 @@ import SqBadge from '../SqBadge';
 import StatIcon from '../StatIcon';
 
 export default function CharacterCardPico({ characterKey = "", index = -1, onClick }: { characterKey: CharacterKey | "", index?: number, onClick?: (characterKey: CharacterKey) => void }) {
-  const { database } = useContext(DatabaseContext)
-  const gender = useGender(database)
+  const { gender } = useDBMeta()
   const teammateSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
   const character = useCharacter(characterKey)
   const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])

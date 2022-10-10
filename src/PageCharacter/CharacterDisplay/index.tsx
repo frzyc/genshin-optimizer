@@ -17,7 +17,7 @@ import { DatabaseContext } from '../../Database/Database';
 import useBoolState from '../../ReactHooks/useBoolState';
 import useCharacter from '../../ReactHooks/useCharacter';
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
-import useGender from '../../ReactHooks/useGender';
+import useDBMeta from '../../ReactHooks/useDBMeta';
 import usePromise from '../../ReactHooks/usePromise';
 import useTeamData from '../../ReactHooks/useTeamData';
 import useTitle from '../../ReactHooks/useTitle';
@@ -56,8 +56,7 @@ type CharacterDisplayCardProps = {
 }
 function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardProps) {
   const character = useCharacter(characterKey)
-  const { database } = useContext(DatabaseContext)
-  const gender = useGender(database)
+  const { gender } = useDBMeta()
   const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
   const teamData = useTeamData(characterKey)
   const { target: charUIData } = teamData?.[characterKey] ?? {}

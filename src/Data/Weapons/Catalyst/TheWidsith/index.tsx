@@ -1,7 +1,7 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
-import { WeaponKey } from '../../../../Types/consts'
+import { allElements, WeaponKey } from '../../../../Types/consts'
 import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
@@ -18,23 +18,15 @@ const refinementEleMasVals = [240, 300, 360, 420, 480]
 
 const [condPassivePath, condPassive] = cond(key, "Debut")
 const atk_ = equal("recitative", condPassive, subscript(input.weapon.refineIndex, refinementAtkVals))
-const anemo_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
-const cryo_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
-const electro_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
-const geo_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
-const hydro_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
-const pyro_dmg_ = equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))
+const eleBonus_ = Object.fromEntries(allElements.map(
+  ele => [ele, equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))]
+))
 const eleMas = equal("interlude", condPassive, subscript(input.weapon.refineIndex, refinementEleMasVals))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_,
-    anemo_dmg_,
-    cryo_dmg_,
-    electro_dmg_,
-    geo_dmg_,
-    hydro_dmg_,
-    pyro_dmg_,
+    ...Object.fromEntries(allElements.map(ele => [`${ele}_dmg_`, eleBonus_[ele]])),
     eleMas
   }
 })
@@ -51,19 +43,9 @@ const sheet: IWeaponSheet = {
     states: {
       aria: {
         name: trm("aria"),
-        fields: [{
-          node: anemo_dmg_
-        }, {
-          node: cryo_dmg_
-        }, {
-          node: electro_dmg_
-        }, {
-          node: geo_dmg_
-        }, {
-          node: hydro_dmg_
-        }, {
-          node: pyro_dmg_
-        }, {
+        fields: [
+          ...allElements.map(ele => ({ node: eleBonus_[ele] }))
+        ,{
           text: sgt("duration"),
           value: 10,
           unit: "s"

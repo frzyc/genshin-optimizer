@@ -9,12 +9,10 @@ import CardLight from '../Components/Card/CardLight'
 import { StyledInputBase } from '../Components/CustomNumberInput'
 import FontAwesomeSvgIcon from '../Components/FontAwesomeSvgIcon'
 import ModalWrapper from '../Components/ModalWrapper'
-import { dbMetaInit } from '../Database/Data/StateData'
 import { ArtCharDatabase, DatabaseContext, DatabaseContextObj } from "../Database/Database"
 import { ExtraStorage } from '../Database/DBStorage'
-import { exportGOOD } from '../Database/exports/good'
 import useBoolState from '../ReactHooks/useBoolState'
-import useDBState from '../ReactHooks/useDBState'
+import useDBMeta from '../ReactHooks/useDBMeta'
 import { range } from '../Util/Util'
 import UploadCard from './UploadCard'
 
@@ -63,7 +61,8 @@ function ExtraDatabaseWrapper({ index, children }) {
 
 function DataCard({ index, databaseContextObj }: { index: number, databaseContextObj?: DatabaseContextObj }) {
   const { database, setDatabase } = useContext(DatabaseContext)
-  const [{ name, lastEdit }, setDbMeta] = useDBState("dbMeta", dbMetaInit(index))
+  const { name, lastEdit } = useDBMeta()
+
   const current = !databaseContextObj
   const [uploadOpen, onOpen, onClose] = useBoolState()
   const { t } = useTranslation(["settings"]);
@@ -72,7 +71,7 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
   const numWeapon = database.weapons.values.length
   const hasData = Boolean(numChar || numArt || numWeapon)
   const copyToClipboard = useCallback(
-    () => navigator.clipboard.writeText(JSON.stringify(exportGOOD(database.storage)))
+    () => navigator.clipboard.writeText(JSON.stringify(database.exportGOOD()))
       .then(() => alert("Copied database to clipboard."))
       .catch(console.error),
     [database],
@@ -103,7 +102,7 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
   const download = useCallback(() => {
     const date = new Date()
     const dateStr = date.toISOString().split(".")[0].replace("T", "_").replaceAll(":", "-")
-    const JSONStr = JSON.stringify(exportGOOD(database.storage))
+    const JSONStr = JSON.stringify(database.exportGOOD())
     const filename = `${name.trim().replaceAll(" ", "_")}_${dateStr}.json`
     const contentType = "application/json;charset=utf-8"
     const a = document.createElement('a');
@@ -141,9 +140,9 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
   useEffect(() => setTempName(name), [name])
 
   const onBlur = useCallback(() => {
-    setDbMeta({ name: tempName })
-    if (!current) (database.storage as ExtraStorage).saveStorage()
-  }, [setDbMeta, tempName, database, current])
+    database.dbMeta.set({ name: tempName })
+    if (!current && "saveStorage" in database.storage) (database.storage as ExtraStorage).saveStorage()
+  }, [tempName, database, current])
   const onKeyDOwn = useCallback(e => e.key === "Enter" && onBlur(), [onBlur],)
 
   return <CardDark sx={{ height: "100%", boxShadow: current ? "0px 0px 0px 2px green inset" : undefined }}>

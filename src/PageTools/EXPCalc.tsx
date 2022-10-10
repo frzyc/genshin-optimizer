@@ -1,7 +1,7 @@
 
 import { Check } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Typography } from '@mui/material';
-import React from 'react';
+import { useState } from 'react';
 import Assets from '../Assets/Assets';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
@@ -10,7 +10,6 @@ import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../Compo
 import ImgFullwidth from '../Components/Image/ImgFullwidth';
 import ImgIcon from '../Components/Image/ImgIcon';
 import TextButton from '../Components/TextButton';
-import useDBState from '../ReactHooks/useDBState';
 import { clamp, objectMap } from "../Util/Util";
 const booksData = {
   advice: {
@@ -46,7 +45,8 @@ function initExpCalc() {
 }
 
 export default function EXPCalc() {
-  const [{ mora, level, curExp, goUnder, books, books: { advice, experience, wit } }, setState] = useDBState("ToolDisplayExpCalc", initExpCalc)
+  const [state, setState] = useState(() => initExpCalc())
+  const { mora, level, curExp, goUnder, books, books: { advice, experience, wit } } = state
 
   let milestoneLvl = milestone.find(lvl => lvl > level)!
   let expReq = -curExp
@@ -84,8 +84,8 @@ export default function EXPCalc() {
       </Grid>
       <Grid item>
         <ButtonGroup>
-          <Button color="primary" disabled={!goUnder} onClick={() => setState({ goUnder: false })}>Full Level</Button>
-          <Button color="primary" disabled={goUnder} onClick={() => setState({ goUnder: true })}>Don't fully level</Button>
+          <Button color="primary" disabled={!goUnder} onClick={() => setState({ ...state, goUnder: false })}>Full Level</Button>
+          <Button color="primary" disabled={goUnder} onClick={() => setState({ ...state, goUnder: true })}>Don't fully level</Button>
         </ButtonGroup>
       </Grid>
     </Grid>
@@ -106,7 +106,7 @@ export default function EXPCalc() {
             <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }}>
               <CustomNumberInput
                 value={level}
-                onChange={(val) => setState({ level: clamp(val, 0, 90) })}
+                onChange={(val) => setState({ ...state, level: clamp(val, 0, 90) })}
                 sx={{ px: 2 }}
               />
             </CustomNumberInputButtonGroupWrapper >
@@ -118,7 +118,7 @@ export default function EXPCalc() {
             <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }}>
               <CustomNumberInput
                 value={curExp}
-                onChange={(val) => setState({ curExp: clamp(val, 0, (levelExp[level] || 1) - 1) })}
+                onChange={(val) => setState({ ...state, curExp: clamp(val, 0, (levelExp[level] || 1) - 1) })}
                 endAdornment={`/${levelExp[level] || 0}`}
                 sx={{ px: 2 }}
               />
@@ -147,7 +147,7 @@ export default function EXPCalc() {
         </CardLight></Grid>
         {Object.entries(books).map(([bookKey]) => {
           return <Grid item xs={12} md={4} key={bookKey}>
-            <BookDisplay bookKey={bookKey} value={books[bookKey]} setValue={b => setState({ books: { ...books, [bookKey]: b } })} required={bookResultObj[bookKey]} />
+            <BookDisplay bookKey={bookKey} value={books[bookKey]} setValue={b => setState({ ...state, books: { ...books, [bookKey]: b } })} required={bookResultObj[bookKey]} />
           </Grid>
         })}
         <Grid item xs={12} md={4} >
@@ -156,7 +156,7 @@ export default function EXPCalc() {
             <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }}>
               <CustomNumberInput
                 value={mora}
-                onChange={(val) => setState({ mora: Math.max(val ?? 0, 0) })}
+                onChange={(val) => setState({ ...state, mora: Math.max(val ?? 0, 0) })}
                 sx={{ px: 2 }}
               />
             </CustomNumberInputButtonGroupWrapper>
@@ -202,6 +202,7 @@ export default function EXPCalc() {
         </Grid>
         <Grid item xs="auto"><Button disabled={!!invalidText}
           onClick={() => setState({
+            ...state,
             level: finalLvl,
             curExp: finalExp,
             books: objectMap(bookResultObj, (val, bookKey) => books[bookKey] - val) as any,
