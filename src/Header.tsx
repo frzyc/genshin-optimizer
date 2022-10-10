@@ -1,13 +1,15 @@
 import { faDiscord, faPatreon, faPaypal } from "@fortawesome/free-brands-svg-icons";
-import { Article, Construction, Menu as MenuIcon, People, Scanner, Settings } from "@mui/icons-material";
-import { AppBar, Box, Button, Chip, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { Suspense, useState } from "react";
+import { Article, Construction, Description, Menu as MenuIcon, People, Scanner, Settings } from "@mui/icons-material";
+import { AppBar, Badge, Box, Button, Chip, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Suspense, useCallback, useContext, useMemo, useState } from "react";
 import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from "react-i18next";
 import { Link as RouterLink, useMatch } from "react-router-dom";
+import packageInfo from "../package.json";
 import Assets from "./Assets/Assets";
 import { slotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
 import FontAwesomeSvgIcon from "./Components/FontAwesomeSvgIcon";
+import { DatabaseContext } from "./Database/Database";
 import useDBMeta from "./ReactHooks/useDBMeta";
 
 const content = [{
@@ -85,9 +87,14 @@ function HeaderContent({ anchor }) {
   const theme = useTheme();
   const isLarge = useMediaQuery(theme.breakpoints.up('lg'));
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const { name } = useDBMeta()
+  const { database } = useContext(DatabaseContext)
+  const { name, latestVersion } = useDBMeta()
 
   const { t } = useTranslation("ui")
+
+  const setLatestVersion = useCallback(() => database.dbMeta.set({ latestVersion: packageInfo.version }), [database])
+  const shouldShowBadge = useMemo(() => isDbVersionOlder(latestVersion), [latestVersion])
+  console.log(shouldShowBadge)
 
   const { params: { currentTab } } = useMatch({ path: "/:currentTab", end: false }) ?? { params: { currentTab: "" } };
   if (isMobile) return <MobileHeader anchor={anchor} currentTab={currentTab} />
@@ -117,13 +124,37 @@ function HeaderContent({ anchor }) {
       <Tab value="" component={RouterLink} to="/" label={<Typography variant="h6" sx={{ px: 1 }}>
         <Trans t={t} i18nKey="pageTitle">Genshin Optimizer</Trans>
       </Typography>} />
-      {content.map(({ i18Key, value, to, icon, resize }) => <Tab key={value} value={value} component={RouterLink} to={to} icon={icon} iconPosition="start" label={(isLarge || !resize) && t(i18Key)} />)}
+      {content.map(({ i18Key, value, to, icon, resize }) =>
+        <Tab
+          key={value}
+          value={value}
+          component={RouterLink}
+          to={to}
+          icon={icon}
+          iconPosition="start"
+          label={(isLarge || !resize) && t(i18Key)}
+        />
+      )}
       <Box display="flex" alignItems="center">
         <Chip color="success" label={name} />
       </Box>
 
       <Box flexGrow={1} />
-      {links.map(({ i18Key, href, label, icon }) => <Tab key={label} component="a" href={href} target="_blank" icon={icon} iconPosition="start" onClick={e => ReactGA.outboundLink({ label }, () => { })} label={isLarge && t(i18Key)} />)}
+      {links.map(({ i18Key, href, label, icon }) =>
+        <Tab
+          key={label}
+          component="a"
+          href={href}
+          target="_blank"
+          icon={label === "patch" && shouldShowBadge
+            ? <Badge badgeContent=" " color="error" variant="dot">{icon}</Badge>
+            : icon}
+          iconPosition="start"
+          onClick={e => ReactGA.outboundLink({ label }, () => { })}
+          label={isLarge && t(i18Key)}
+          onMouseEnter={() => label === "patch" && shouldShowBadge && setLatestVersion()}
+        />
+      )}
     </Tabs>
   </AppBar>
 }
@@ -190,4 +221,17 @@ function MobileHeader({ anchor, currentTab }) {
     {/* add a blank toolbar to keep space and provide a scroll anchor */}
     <Toolbar id={anchor} />
   </>
+}
+
+function isDbVersionOlder(dbVersion: string) {
+  const verDb = dbVersion.split(".")
+  const verCur = packageInfo.version.split(".")
+
+  for (let i = 0; i < 3; i++) {
+    if (verCur[i] > verDb[i]) return true
+    else if (verCur[i] < verDb[i]) return false
+  }
+
+  // Version match
+  return false
 }
