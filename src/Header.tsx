@@ -55,6 +55,11 @@ const content = [{
 },] as const
 
 const links = [{
+  i18Key: "social.patch",
+  href: `${process.env.REACT_APP_URL_GITHUB_GO}/releases`,
+  icon: <Description />,
+  label: "patch",
+}, {
   i18Key: "social.paypal",
   href: process.env.REACT_APP_URL_PAYPAL_FRZYC,
   icon: <FontAwesomeSvgIcon icon={faPaypal} />,

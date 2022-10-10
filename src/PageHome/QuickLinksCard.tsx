@@ -1,5 +1,5 @@
 import { faDiscord, faPatreon, faPaypal, faTwitch } from "@fortawesome/free-brands-svg-icons"
-import { Article, GitHub, Handshake, InsertLink, Scanner, Twitter, YouTube } from "@mui/icons-material"
+import { Article, Description, GitHub, Handshake, InsertLink, Scanner, Twitter, YouTube } from "@mui/icons-material"
 import { Box, Button, CardContent, CardHeader, Divider, Link, Tooltip, Typography } from "@mui/material"
 import CardDark from "../Components/Card/CardDark"
 import FontAwesomeSvgIcon from "../Components/FontAwesomeSvgIcon"
@@ -16,6 +16,11 @@ const smallIcons = [{
   icon: <GitHub />,
   url: process.env.REACT_APP_URL_GITHUB_GO,
   color: "white",
+}, {
+  tooltip: "Genshin Optimizer Patch Notes",
+  icon: <Description />,
+  url: `${process.env.REACT_APP_URL_GITHUB_GO}/releases`,
+  color: "secondary",
 }, {
   tooltip: "Youtube (frzyc)",
   icon: <YouTube />,
