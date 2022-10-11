@@ -1,6 +1,6 @@
 import { KeyboardArrowUp } from '@mui/icons-material';
 import { Box, Container, CssBaseline, Fab, Grid, Skeleton, StyledEngineProvider, ThemeProvider, useScrollTrigger, Zoom } from '@mui/material';
-import React, { lazy, Suspense, useMemo, useState } from 'react';
+import React, { lazy, Suspense, useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HashRouter, Route, Routes, useMatch } from "react-router-dom";
 import './App.scss';
@@ -58,9 +58,9 @@ function ScrollTop({ children }: { children: React.ReactElement }) {
 }
 
 function App() {
+  const dbIndex = parseInt(localStorage.getItem("dbIndex") || "1")
   const [databases, setDatabases] = useState(() => [1, 2, 3, 4].map(index => {
-    const curDBIndex = parseInt(localStorage.getItem("dbIndex") || "1")
-    if (index === curDBIndex) {
+    if (index === dbIndex) {
       return new ArtCharDatabase(new DBLocalStorage(localStorage))
     } else {
       const dbName = `extraDatabase_${index}`
@@ -71,7 +71,13 @@ function App() {
       return db
     }
   }))
-  const [database, setDatabase] = useState(() => databases[parseInt(localStorage.getItem("dbIndex") || "1") - 1])
+  const setDatabase = useCallback((index: number, db: ArtCharDatabase) => {
+    const dbs = [...databases]
+    dbs[index] = db
+    setDatabases(dbs)
+  }, [databases, setDatabases],)
+
+  const database = databases[dbIndex - 1]
   const dbContextObj = useMemo(() => ({ databases, setDatabases, database, setDatabase }), [databases, setDatabases, database, setDatabase])
   return <StyledEngineProvider injectFirst>{/* https://mui.com/guides/interoperability/#css-injection-order-2 */}
     <ThemeProvider theme={theme}>

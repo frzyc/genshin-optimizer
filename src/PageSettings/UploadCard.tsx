@@ -157,18 +157,16 @@ function MergeResult({ result, dbTotal, type }: { result: ImportResultCounter<an
 }
 
 function GOUploadAction({ index, importedDatabase, reset }: { index: number, importedDatabase?: ArtCharDatabase, reset: () => void }) {
-  const { databases, setDatabases } = useContext(DatabaseContext)
+  const { databases, setDatabase } = useContext(DatabaseContext)
   const database = databases[index]
   const { t } = useTranslation("settings")
   const replaceDB = useCallback(() => {
     if (!importedDatabase) return
     importedDatabase.swapStorage(database)
-    const dbs = [...databases]
-    dbs[index] = importedDatabase
-    setDatabases(dbs)
+    setDatabase(index, importedDatabase)
     importedDatabase.toExtraLocalDB()
     reset()
-  }, [databases, database, index, importedDatabase, reset, setDatabases])
+  }, [database, index, importedDatabase, reset, setDatabase])
 
 
   return <><Divider /><CardContent sx={{ py: 1 }}>

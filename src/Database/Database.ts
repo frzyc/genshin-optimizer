@@ -174,15 +174,11 @@ export class ArtCharDatabase {
     this.storage = oldstorage
     localStorage.setItem(key, JSON.stringify(Object.fromEntries(other.entries)))
   }
-  rmExtraLocalDB() {
-    const key = `extraDatabase_${this.storage.getDBIndex()}`
-    localStorage.removeItem(key)
-  }
+
 }
 export type DatabaseContextObj = {
   databases: ArtCharDatabase[],
-  setDatabases: (dbs: ArtCharDatabase[]) => void,
-  database: ArtCharDatabase,
-  setDatabase: (db: ArtCharDatabase) => void
+  setDatabase: (index: number, db: ArtCharDatabase) => void,
+  database: ArtCharDatabase
 }
 export const DatabaseContext = createContext({} as DatabaseContextObj)

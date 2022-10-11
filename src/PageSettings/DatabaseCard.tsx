@@ -57,8 +57,8 @@ function DataCard({ index }: { index: number }) {
 
   const onDelete = useCallback(() => {
     if (!window.confirm(`Are you sure you want to delete "${name}"?`)) return
-    database.rmExtraLocalDB()
     database.clear()
+    database.toExtraLocalDB()
   }, [database, name])
 
   const download = useCallback(() => {
@@ -80,8 +80,8 @@ function DataCard({ index }: { index: number }) {
     if (current) return
     mainDB.toExtraLocalDB()
     database.swapStorage(mainDB)
-    setDatabase(database)
-  }, [setDatabase, mainDB, current, database])
+    setDatabase(index, database)
+  }, [index, setDatabase, mainDB, current, database])
 
   const [tempName, setTempName] = useState(name)
   useEffect(() => setTempName(name), [name])
