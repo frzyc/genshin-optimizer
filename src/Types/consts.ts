@@ -356,13 +356,13 @@ export type Ascension = typeof allAscension[number]
 export type Refinement = typeof allRefinement[number]
 export type CharacterSpecializedStatKey = typeof characterSpecializedStatKeys[number]
 export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[]
-export const allowedAmpReactions: Dict<ElementKey, AmpReactionKey[]> = {
+export const allowedAmpReactions: Partial<Record<ElementKey, AmpReactionKey[]>> = {
   pyro: ["vaporize", "melt"],
   hydro: ["vaporize"],
   cryo: ["melt"],
   anemo: ["vaporize", "melt"],
 }
-export const allowedAdditiveReactions: Dict<ElementKey, AdditiveReactionKey[]> = {
+export const allowedAdditiveReactions: Partial<Record<ElementKey, AdditiveReactionKey[]>> = {
   dendro: ["spread"],
   electro: ["aggravate"],
   anemo: ["aggravate"],

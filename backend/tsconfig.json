@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "module": "ES2022",
+    "moduleResolution": "Node",
+    "target": "ES2022",
+    "esModuleInterop": true,
+    "outDir": "dist/"
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

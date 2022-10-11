@@ -1,5 +1,5 @@
 import { faDiscord, faPatreon, faPaypal } from "@fortawesome/free-brands-svg-icons";
-import { Article, Construction, Menu as MenuIcon, People, Scanner, Settings } from "@mui/icons-material";
+import { AccountCircle, Article, Construction, Menu as MenuIcon, People, Scanner, Settings } from "@mui/icons-material";
 import { AppBar, Box, Button, Chip, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Suspense, useState } from "react";
 import ReactGA from 'react-ga4';
@@ -118,7 +118,8 @@ function HeaderContent({ anchor }) {
       </Box>
 
       <Box flexGrow={1} />
-      {links.map(({ i18Key, href, label, icon }) => <Tab key={label} component="a" href={href} target="_blank" icon={icon} iconPosition="start" onClick={e => ReactGA.outboundLink({ label }, () => { })} label={isLarge && t(i18Key)} />)}
+      <Tab icon={<AccountCircle />}value={"user"} iconPosition="start" component={RouterLink} to={"/user"} label={isLarge && t("Login")} />
+      {/* {links.map(({ i18Key, href, label, icon }) => <Tab key={label} component="a" href={href} target="_blank" icon={icon} iconPosition="start" onClick={e => ReactGA.outboundLink({ label }, () => { })} label={isLarge && t(i18Key)} />)} */}
     </Tabs>
   </AppBar>
 }
