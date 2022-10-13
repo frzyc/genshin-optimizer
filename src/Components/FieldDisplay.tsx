@@ -5,6 +5,7 @@ import { DataContext } from "../Context/DataContext";
 import { FormulaDataContext } from "../Context/FormulaDataContext";
 import { NodeDisplay } from "../Formula/api";
 import { Variant } from "../Formula/type";
+import { nodeVStr } from "../Formula/uiData";
 import { valueString } from "../KeyMap";
 import { allAmpReactions, AmpReactionKey } from "../Types/consts";
 import { IBasicFieldDisplay, IFieldDisplay } from "../Types/fieldDisplay";
@@ -58,32 +59,24 @@ export function NodeFieldDisplay({ node, oldValue, component, emphasize }: { nod
 
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>
   const multiDisplay = multi && <span>{multi}&#215;</span>
-  let icon = node.info.icon
-  if (icon && !Object.isFrozen(icon)) {
-    console.error("node.info.icon has been tampered with!", node, icon)
-    icon = undefined
-  }
-  const fieldText = node.info.name
-  const isTeamBuff = node.info.isTeamBuff
-  const fieldFormulaText = node.formula
   let fieldVal = "" as Displayable
   if (oldValue !== undefined) {
     const diff = node.value - oldValue
-    fieldVal = <span>{valueString(oldValue, node.unit)}{diff > 0.0001 || diff < -0.0001 ? <ColorText color={diff > 0 ? "success" : "error"}> {diff > 0 ? "+" : ""}{valueString(diff, node.unit)}</ColorText> : ""}</span>
-  } else fieldVal = valueString(node.value, node.unit)
+    fieldVal = <span>{valueString(oldValue, node.info.unit, node.info.fixed)}{diff > 0.0001 || diff < -0.0001 ? <ColorText color={diff > 0 ? "success" : "error"}> {diff > 0 ? "+" : ""}{valueString(diff, node.info.unit, node.info.fixed)}</ColorText> : ""}</span>
+  } else fieldVal = nodeVStr(node)
 
   const formulaTextOverlay = !!node.formula && <QuestionTooltip onClick={onClick} title={<Typography><Suspense fallback={<Skeleton variant="rectangular" width={300} height={30} />}>
     {allAmpReactions.includes(node.info.variant as any) && <Box sx={{ display: "inline-flex", gap: 1, mr: 1 }}>
       <Box><AmpReactionModeText reaction={node.info.variant as AmpReactionKey} trigger={node.info.subVariant as Variant} /></Box>
       <Divider orientation="vertical" flexItem />
     </Box>}
-    <span>{fieldFormulaText}</span>
+    <span>{node.formula}</span>
   </Suspense></Typography>} />
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1, boxShadow: emphasize ? "0px 0px 0px 2px red inset" : undefined }} component={component} >
     <Box sx={{ display: "flex", gap: 1, alignItems: "center" }} >
-      {icon}
-      {!!isTeamBuff && <Groups />}
-      <Typography color={`${node.info.variant}.main`} >{fieldText}{suffixDisplay}</Typography>
+      {node.info.icon}
+      {!!node.info.isTeamBuff && <Groups />}
+      <Typography color={`${node.info.variant}.main`} >{node.info.name}{suffixDisplay}</Typography>
     </Box>
     <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
       <Typography noWrap>{multiDisplay}{fieldVal}</Typography>

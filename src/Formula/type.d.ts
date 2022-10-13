@@ -23,8 +23,6 @@ interface UIField {
 }
 
 interface Info {
-  /** @deprecated */
-  key?: string
   name?: Displayable
   unit?: Unit
   icon?: Displayable

@@ -36,7 +36,7 @@ const sheet: IWeaponSheet = {
     fields: [{
       node: infoMut(dmgAoe, { name: WeaponSheet.trm(key)("aoeDmg") }),
     }, {
-      node: infoMut(dmgOnCryoOp, { key: `weapon_${key}:cryoAffectedDmg` }),
+      node: infoMut(dmgOnCryoOp, { name: WeaponSheet.trm(key)("cryoAffectedDmg") }),
     }]
   }],
 }

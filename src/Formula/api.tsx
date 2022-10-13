@@ -255,7 +255,6 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
       operation: true,
       value: 0,
       isEmpty: true,
-      unit: d2?.unit!,
       formulas: [],
       ...d1,
       diff: (d2?.value ?? 0) - (d1?.value ?? 0)

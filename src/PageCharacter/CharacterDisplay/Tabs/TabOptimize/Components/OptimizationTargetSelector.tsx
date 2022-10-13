@@ -7,7 +7,6 @@ import { DataContext } from '../../../../../Context/DataContext';
 import { DatabaseContext } from '../../../../../Database/Database';
 import { getDisplayHeader } from '../../../../../Formula/DisplayUtil';
 import { NodeDisplay } from '../../../../../Formula/uiData';
-import KeyMap from '../../../../../KeyMap';
 import useBoolState from '../../../../../ReactHooks/useBoolState';
 import usePromise from '../../../../../ReactHooks/usePromise';
 import { objPathValue } from '../../../../../Util/Util';
@@ -45,7 +44,7 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
           <span>{title}</span>
           {!!action && <SqBadge color='success'>{action}</SqBadge>}
         </Box>
-        <SqBadge color={variant}><strong>{KeyMap.get(node.info.key)}</strong></SqBadge>
+        <SqBadge color={variant}><strong>{node.info.name}</strong></SqBadge>
       </Stack>}
     </Button>
     <TargetSelectorModal show={show} onClose={onClose} setTarget={setTargetHandler} ignoreGlobal={ignoreGlobal} {...targetSelectorModalProps} />

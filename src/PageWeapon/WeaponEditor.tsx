@@ -106,10 +106,10 @@ export default function WeaponEditor({
               <CardHeader title={"Main Stats"} titleTypographyProps={{ variant: "subtitle2" }} />
               <Divider />
               <FieldDisplayList>
-                {[input.weapon.main, input.weapon.sub, input.weapon.sub2].map((node, i) => {
+                {[input.weapon.main, input.weapon.sub, input.weapon.sub2].map(node => {
                   const n = weaponUIData.get(node)
                   if (n.isEmpty || !n.value) return null
-                  return <NodeFieldDisplay key={`${i}${n.value}`} node={n} component={ListItem} />
+                  return <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} component={ListItem} />
                 })}
               </FieldDisplayList>
             </CardDark>

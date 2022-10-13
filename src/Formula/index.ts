@@ -150,7 +150,7 @@ total.critRate_.info!.prefix = "uncapped"
 // Nodes that are not used anywhere else but `common` below
 
 /** Base Amplifying Bonus */
-const baseAmpBonus = infoMut(sum(one, prod(25 / 9, frac(total.eleMas, 1400))), { key: "base_amplifying_multi", pivot })
+const baseAmpBonus = infoMut(sum(one, prod(25 / 9, frac(total.eleMas, 1400))), { ...KeyMap.keyToInfo("base_amplifying_multi"), pivot })
 
 /** Base Additive Bonus */
 const baseAddBonus = sum(one, prod(5, frac(total.eleMas, 1200)))
@@ -169,21 +169,22 @@ const common: Data = {
     }),
     ...objectKeyMap(allModStats, key => {
       const operands: NumNode[] = []
+      const info = KeyMap.keyToInfo(key)
       switch (key) {
         case "atk": case "def": case "hp":
           operands.push(prod(base[key], sum(one, premod[`${key}_`])))
           break
         case "critRate_":
-          operands.push(percent(0.05, { key, prefix: "default" }),
+          operands.push(percent(0.05, { ...info, prefix: "default" }),
             lookup(hit.move, objectKeyMap(allMoves, move => premod[`${move}_critRate_`]), 0))
           break
         case "critDMG_":
-          operands.push(percent(0.5, { key, prefix: "default" }),
+          operands.push(percent(0.5, { ...info, prefix: "default" }),
             lookup(hit.ele, objectKeyMap(allElements, ele => premod[`${ele}_critDMG_`]), 0),
             lookup(hit.move, objectKeyMap(allMoves, ele => premod[`${ele}_critDMG_`]), 0))
           break
         case "enerRech_":
-          operands.push(percent(1, { key, prefix: "default" }))
+          operands.push(percent(1, { ...info, prefix: "default" }))
           break
       }
       const list = [...operands, art[key], customBonus[key]].filter(x => x)
@@ -212,7 +213,7 @@ const common: Data = {
         total.all_dmgInc,
         lookup(hit.ele, objectKeyMap(allElements, element => total[`${element}_dmgInc`]), NaN),
         lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmgInc`]), NaN),
-      ), { key: "dmgInc", pivot }),
+      ), { ...KeyMap.keyToInfo("dmgInc"), pivot }),
       hit.addTerm,
     ),
     addTerm: lookup(hit.reaction, {

@@ -4,6 +4,7 @@ import { inferInfoMut, mergeData } from "../../Formula/api";
 import { reactions } from "../../Formula/reaction";
 import { Data, DisplaySub, NumNode } from "../../Formula/type";
 import { constant, data, infoMut, lookup, one, percent, prod, stringPrio, subscript, sum } from "../../Formula/utils";
+import KeyMap from "../../KeyMap";
 import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey, Region } from "../../Types/consts";
 import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
@@ -134,7 +135,7 @@ export function dataObjForCharacterSheet(
 
     if (!list.length) continue
 
-    const result = infoMut(list.length === 1 ? list[0] : sum(...list), { key: stat, prefix: "char", asConst: true })
+    const result = infoMut(list.length === 1 ? list[0] : sum(...list), { ...KeyMap.keyToInfo(stat), prefix: "char", asConst: true })
     if (stat.endsWith("_dmg_")) result.info!.variant = stat.slice(0, -5) as any
     if (stat === "atk" || stat === "def" || stat === "hp")
       data.base![stat] = result

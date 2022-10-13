@@ -1,11 +1,16 @@
 import { uiInput } from "."
 import ColorText from "../Components/ColoredText"
-import KeyMap, { Unit, valueString } from "../KeyMap"
+import KeyMap, { valueString } from "../KeyMap"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
 import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIField, UIInput } from "./type"
 
 const shouldWrap = true
+
+export function nodeVStr(n: NodeDisplay) {
+  return valueString(n.value, n.info.unit, n.info.fixed)
+}
+
 export interface NodeDisplay<V = number> {
   /** Leave this here to make sure one can use `crawlObject` on hierarchy of `NodeDisplay` */
   operation: true
@@ -13,8 +18,6 @@ export interface NodeDisplay<V = number> {
   value: V
   /** Whether the node fails the conditional test (`threshold_add`, `match`, etc.) or consists solely of empty nodes */
   isEmpty: boolean
-  /**@deprecated Should use info.unit instead */
-  unit: Unit
   formula?: Displayable
   formulas: Displayable[]
 }
@@ -76,7 +79,7 @@ export class UIData {
   get(node: NumNode | StrNode): NodeDisplay<number | string | undefined> {
     if (node === undefined) {
       console.trace("Please report this bug with this trace")
-      return { info: {}, operation: true, value: undefined, isEmpty: true, unit: "", formulas: [] }
+      return { info: {}, operation: true, value: undefined, isEmpty: true, formulas: [] }
     }
     const old = this.processed.get(node)
     if (old) return old
@@ -331,7 +334,6 @@ function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
     info,
     value,
     isEmpty: empty,
-    unit: KeyMap.unit(info.key),
     formula, formulas: [...(assignment ? [assignment] : []), ...dependencies]
   }
 }
@@ -342,15 +344,14 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
    * In particular, `node.valueDisplay` and `node.name` below
    */
 
-  const { info, value, formula } = node
-  const { key, prefix, source, variant, fixed } = info
+  const { info: { name, prefix, source, variant, fixed, unit }, value, formula } = node
   if (typeof value !== "number") return
-  node.valueDisplay = <ColorText color="info">{valueString(value, KeyMap.unit(key), fixed)}</ColorText>
-  if (key && key !== '_') {
+  node.valueDisplay = <ColorText color="info">{valueString(value, unit, fixed)}</ColorText>
+  if (name) {
     const prefixDisplay = (prefix && !source) ? <>{KeyMap.getPrefixStr(prefix)} </> : <></>
     // TODO: Convert `source` key to actual name
     const sourceDisplay = source ? <ColorText color="secondary"> ({source})</ColorText> : null
-    node.name = <><ColorText color={variant}>{prefixDisplay}{KeyMap.get(key!)}</ColorText>{sourceDisplay}</>
+    node.name = <><ColorText color={variant}>{prefixDisplay}{name}</ColorText>{sourceDisplay}</>
 
     if (formula)
       node.assignment = <div id="formula">{node.name} {node.valueDisplay} = {formula}</div>

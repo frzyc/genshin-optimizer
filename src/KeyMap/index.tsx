@@ -207,8 +207,6 @@ export default class KeyMap {
     info.unit = this.unit(key)
     info.variant = this.getVariant(key)
     info.icon = StatIcon[allElementsWithPhy.find(e => key.startsWith(e)) ?? key]
-    // FIXME: freeze the icon because icon is getting tampered enroute to UI
-    Object.freeze(info.icon)
     return info
   }
 }

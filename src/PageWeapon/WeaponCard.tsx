@@ -17,7 +17,7 @@ import WeaponSheet from "../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../Database/Database"
 import { uiInput as input } from "../Formula"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
-import { valueString } from "../KeyMap"
+import { nodeVStr } from "../Formula/uiData"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
 import { LocationKey } from "../Types/consts"
@@ -74,10 +74,9 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
         <CardContent>
           {stats.map(node => {
             if (!node.info.name) return null
-            const displayVal = valueString(node.value, node.info.unit, node.info.fixed)
-            return <Box key={node.info.key} sx={{ display: "flex" }}>
+            return <Box key={JSON.stringify(node.info)} sx={{ display: "flex" }}>
               <Typography flexGrow={1}>{node.info.icon} {node.info.name}</Typography>
-              <Typography>{displayVal}</Typography>
+              <Typography>{nodeVStr(node)}</Typography>
             </Box>
           })}
         </CardContent>

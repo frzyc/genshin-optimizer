@@ -12,7 +12,6 @@ import { DatabaseContext } from "../../../../../Database/Database"
 import { getDisplayHeader, getDisplaySections } from "../../../../../Formula/DisplayUtil"
 import { DisplaySub } from "../../../../../Formula/type"
 import { NodeDisplay } from "../../../../../Formula/uiData"
-import KeyMap from "../../../../../KeyMap"
 import usePromise from "../../../../../ReactHooks/usePromise"
 
 export interface TargetSelectorModalProps {
@@ -29,7 +28,7 @@ export function TargetSelectorModal({ show, onClose, setTarget, ignoreGlobal = f
   const sections = useMemo(() => {
     return getDisplaySections(data).filter(([key]) => !excludeSections.includes(key))
       .map(([key, sectionObj]) => [key, Object.fromEntries(Object.entries(sectionObj).filter(([sectionKey, node]) => {
-        if (flatOnly && KeyMap.unit(node.info.key) === "%") return false
+        if (flatOnly && node.info.unit === "%") return false
 
         // Assume `ignoreGlobal`= multitarget, ignore heal nodes on multi-target
         if (ignoreGlobal && node.info.variant === "heal") return false
@@ -69,6 +68,6 @@ function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: Disp
 
 function TargetSelectorMenuItem({ node, onClick }: { node: NodeDisplay, onClick: () => void }) {
   return <MenuItem onClick={onClick} style={{ whiteSpace: "normal" }}>
-    <ColorText color={node.info.variant} >{KeyMap.get(node.info.key)}</ColorText>
+    <ColorText color={node.info.variant} >{node.info.name}</ColorText>
   </MenuItem>
 }

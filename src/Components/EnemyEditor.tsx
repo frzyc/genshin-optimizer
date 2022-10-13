@@ -4,7 +4,8 @@ import { useCallback, useContext, useState } from 'react';
 import { CharacterContext } from "../Context/CharacterContext";
 import { DataContext } from "../Context/DataContext";
 import { uiInput as input } from "../Formula";
-import KeyMap, { valueString } from '../KeyMap';
+import { nodeVStr } from "../Formula/uiData";
+import KeyMap from '../KeyMap';
 import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";
 import CardLight from "./Card/CardLight";
 import ColorText from "./ColoredText";
@@ -24,10 +25,10 @@ export function EnemyExpandCard() {
 
   return <CardLight>
     <CardContent sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-      <Chip size="small" color="success" label={<span>{KeyMap.get(eLvlNode.info.key)} <strong>{eLvlNode.value}</strong></span>} />
+      <Chip size="small" color="success" label={<span>{eLvlNode.info.name} <strong>{eLvlNode.value}</strong></span>} />
       {allElementsWithPhy.map(element => <Typography key={element} ><EnemyResText element={element} /></Typography>)}
-      <Typography>DEF Red. {valueString(eDefRed.value, eDefRed.unit)}</Typography>
-      <Typography>DEF Ignore {valueString(eDefIgn.value, eDefIgn.unit)}</Typography>
+      <Typography>DEF Red. {nodeVStr(eDefRed)}</Typography>
+      <Typography>DEF Ignore {nodeVStr(eDefIgn)}</Typography>
       <Box flexGrow={1} display="flex" justifyContent="flex-end" gap={1}>
         <Button size="small" color="error" sx={{ minWidth: 0, p: 0.5 }} onClick={onReset}><Replay /> RESET</Button>
         <ExpandButton
@@ -36,7 +37,7 @@ export function EnemyExpandCard() {
           aria-expanded={expanded}
           aria-label="show more"
           size="small"
-          sx={{  marginLeft: 0 }}
+          sx={{ marginLeft: 0 }}
         >
           <ExpandMore />
         </ExpandButton>
@@ -55,7 +56,7 @@ export function EnemyResText({ element }: { element: ElementKeyWithPhy }) {
   const node = data.get(input.enemy[`${element}_res_`])
   const immune = !isFinite(node.value)
   const content = immune ? <span >{StatIcon[element]} &#8734;</span> :
-    <span >{StatIcon[element]} <strong>{valueString(node.value, node.unit)}</strong></span>
+    <span >{StatIcon[element]} <strong>{nodeVStr(node)}</strong></span>
   return <ColorText color={element}>{content}</ColorText>
 }
 

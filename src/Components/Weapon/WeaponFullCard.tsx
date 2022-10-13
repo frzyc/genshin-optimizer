@@ -3,14 +3,12 @@ import { useMemo } from 'react';
 import WeaponSheet from '../../Data/Weapons/WeaponSheet';
 import { uiInput as input } from '../../Formula';
 import { computeUIData, dataObjForWeapon } from '../../Formula/api';
-import { NodeDisplay } from '../../Formula/uiData';
-import { valueString } from '../../KeyMap';
+import { NodeDisplay, nodeVStr } from '../../Formula/uiData';
 import usePromise from '../../ReactHooks/usePromise';
 import useWeapon from '../../ReactHooks/useWeapon';
 import { ICachedWeapon } from '../../Types/weapon';
 import CardDark from '../Card/CardDark';
 import SqBadge from '../SqBadge';
-import StatIcon from '../StatIcon';
 
 export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
@@ -44,7 +42,5 @@ export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
   </CardDark>
 }
 function WeaponStat({ node }: { node: NodeDisplay }) {
-  if (!node.info.key) return null
-  const val = valueString(node.value, node.unit, !node.unit ? 0 : undefined)
-  return <SqBadge color="secondary">{StatIcon[node.info.key]} {val}</SqBadge>
+  return <SqBadge color="secondary">{node.info.icon} {nodeVStr(node)}</SqBadge>
 }

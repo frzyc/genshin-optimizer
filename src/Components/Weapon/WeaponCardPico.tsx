@@ -3,13 +3,11 @@ import { useMemo } from 'react';
 import WeaponSheet from '../../Data/Weapons/WeaponSheet';
 import { uiInput as input } from '../../Formula';
 import { computeUIData, dataObjForWeapon } from '../../Formula/api';
-import { NodeDisplay } from '../../Formula/uiData';
-import { valueString } from '../../KeyMap';
+import { NodeDisplay, nodeVStr } from '../../Formula/uiData';
 import usePromise from '../../ReactHooks/usePromise';
 import useWeapon from '../../ReactHooks/useWeapon';
 import CardDark from '../Card/CardDark';
 import SqBadge from '../SqBadge';
-import StatIcon from '../StatIcon';
 import WeaponNameTooltip from './WeaponNameTooltip';
 
 export default function WeaponCardPico({ weaponId }: { weaponId: string }) {
@@ -44,7 +42,5 @@ export default function WeaponCardPico({ weaponId }: { weaponId: string }) {
   </CardDark>
 }
 function WeaponStatPico({ node }: { node: NodeDisplay }) {
-  if (!node.info.key) return null
-  const val = valueString(node.value, node.unit, !node.unit ? 0 : undefined)
-  return <Typography>{StatIcon[node.info.key]} {val}</Typography>
+  return <Typography>{node.info.icon} {nodeVStr(node)}</Typography>
 }
