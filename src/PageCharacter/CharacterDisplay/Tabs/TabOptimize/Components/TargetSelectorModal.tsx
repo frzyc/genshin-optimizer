@@ -17,7 +17,7 @@ import usePromise from "../../../../../ReactHooks/usePromise"
 export interface TargetSelectorModalProps {
   show: boolean,
   onClose: () => void,
-  setTarget: (target: string[]) => void,
+  setTarget: (target: string[], multi?: number) => void,
   ignoreGlobal?: boolean,
   flatOnly?: boolean
   excludeSections?: string[]
@@ -52,7 +52,7 @@ export function TargetSelectorModal({ show, onClose, setTarget, ignoreGlobal = f
     </CardDark>
   </ModalWrapper>
 }
-function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[]) => void, flatOnly?: boolean }) {
+function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[], multi?: number) => void, flatOnly?: boolean }) {
   const { data } = useContext(DataContext)
   const { database } = useContext(DatabaseContext)
   const header = usePromise(() => getDisplayHeader(data, sectionKey, database), [data, sectionKey])
@@ -61,7 +61,7 @@ function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: Disp
     <Divider />
     <MenuList>
       {Object.entries(displayNs).map(([key, n]) =>
-        <TargetSelectorMenuItem key={key} node={n} onClick={() => setTarget([sectionKey, key])} />)}
+        <TargetSelectorMenuItem key={key} node={n} onClick={() => setTarget([sectionKey, key], n.info.multi)} />)}
     </MenuList>
   </CardLight>
 }

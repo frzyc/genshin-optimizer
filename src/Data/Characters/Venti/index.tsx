@@ -178,8 +178,7 @@ const sheet: ICharacterSheet = {
       text: ct.chg("auto.fields.normal")
     }, {
       fields: datamine.normal.hitArr.map((_, i) => ({
-        node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-        multi: (i === 0 || i === 3) ? 2 : undefined
+        node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`), multi: (i === 0 || i === 3) ? 2 : undefined }),
       }))
     }, {
       text: ct.chg("auto.fields.charged"),
@@ -273,8 +272,7 @@ const sheet: ICharacterSheet = {
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
         name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
         fields: [{
-          node: infoMut(dmgFormulas.burst.absorb, { name: ct.chg(`burst.skillParams.1`) }),
-          multi: datamine.burst.absorbTicks
+          node: infoMut(dmgFormulas.burst.absorb, { name: ct.chg(`burst.skillParams.1`), multi: datamine.burst.absorbTicks }),
         }]
       }]))
     }), ct.headerTem("passive2", {

@@ -142,9 +142,11 @@ const sheet: ICharacterSheet = {
       text: ct.chg("auto.fields.normal"),
     }, {
       fields: datamine.normal.hitArr.map((_, i) => ({
-        node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i + (i < 5 ? 0 : -1)}`) }),
-        textSuffix: i === 4 ? "(1)" : i === 5 ? "(2)" : "",
-        multi: i === 2 ? 2 : undefined,
+        node: infoMut(dmgFormulas.normal[i], {
+          name: ct.chg(`auto.skillParams.${i + (i < 5 ? 0 : -1)}`),
+          textSuffix: i === 4 ? "(1)" : i === 5 ? "(2)" : "",
+          multi: i === 2 ? 2 : undefined,
+        }),
       }))
     }, {
       text: ct.chg("auto.fields.charged"),

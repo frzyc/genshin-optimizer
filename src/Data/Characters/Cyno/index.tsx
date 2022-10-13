@@ -194,8 +194,7 @@ const sheet: ICharacterSheet = {
       text: ct.chg("auto.fields.normal"),
     }, {
       fields: datamine.normal.hitArr.map((_, i) => ({
-        node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-        multi: i === 2 ? 2 : undefined
+        node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`), multi: i === 2 ? 2 : undefined }),
       }))
     }, {
       text: ct.chg("auto.fields.charged"),
@@ -242,8 +241,8 @@ const sheet: ICharacterSheet = {
     burst: ct.talentTem("burst", [{
       fields: [
         ...datamine.burst.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.burst[`normal_${i}`], { name: ct.chg(`burst.skillParams.${i}`) }),
-          multi: i === 3 ? 2 : undefined
+          node: infoMut(dmgFormulas.burst[`normal_${i}`], { name: ct.chg(`burst.skillParams.${i}`), multi: i === 3 ? 2 : undefined }),
+
         })), {
           node: infoMut(dmgFormulas.burst.charged, { name: ct.chg(`burst.skillParams.5`) }),
         }, {
