@@ -1,7 +1,16 @@
-import { NumNode, StrNode } from "./type"
+import { crawlObject, deepClone, objPathValue } from "../Util/Util"
+import { NodeData, NumNode, StrNode } from "./type"
 import { constant } from "./utils"
 
 type Node = NumNode | StrNode
+
+export function deepNodeClone<T extends NodeData<NumNode | StrNode | undefined>>(data: T): T {
+  const result = deepClone(data)
+  // Restore `Info`
+  crawlObject(result, [], n => n.operation, (node, path) =>
+    node.info = { ...objPathValue(data, path).info })
+  return result
+}
 
 export function forEachNodes(formulas: Node[], topDown: (formula: Node) => void, bottomUp: (formula: Node) => void): void {
   const visiting = new Set<Node>(), visited = new Set<Node>()

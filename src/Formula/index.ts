@@ -2,8 +2,9 @@ import KeyMap, { allEleEnemyResKeys } from "../KeyMap"
 import { transformativeReactionLevelMultipliers } from "../KeyMap/StatConstants"
 import { artifactTr } from "../names"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
-import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
-import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
+import { crawlObject, objectKeyMap, objectKeyValueMap } from "../Util/Util"
+import { deepNodeClone } from "./internal"
+import { Data, Info, NodeData, NumNode, ReadNode, StrNode } from "./type"
 import { constant, equal, frac, infoMut, lookup, max, min, naught, none, one, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, subscript, sum, unequal, unequalStr } from "./utils"
 
 const asConst = true as const, pivot = true as const
@@ -61,8 +62,8 @@ allNonModStatNodes.healInc.info!.variant = "heal"
 allNonModStatNodes.incHeal_.info!.variant = "heal"
 allModStatNodes.heal_.info!.variant = "heal"
 
-function withDefaultInfo<T>(info: Info, value: T): T {
-  value = deepClone(value)
+function withDefaultInfo<T extends NodeData<NumNode | StrNode>>(info: Info, value: T): T {
+  value = deepNodeClone(value)
   crawlObject(value, [], (x: any) => x.operation, (x: NumNode | StrNode) => x.info = { ...info, ...x.info, })
   return value
 }
@@ -73,7 +74,7 @@ function markAccu<T>(accu: ReadNode<number>["accu"], value: T): void {
 }
 
 /** All read nodes */
-const input = setReadNodeKeys(deepClone({
+const input = setReadNodeKeys(deepNodeClone({
   activeCharKey: stringRead(),
   charKey: stringRead(), charEle: stringRead(), weaponType: stringRead(),
   lvl: read(undefined, { ...KeyMap.keyToInfo("level"), prefix: "char" }), constellation: read(), asc: read(), special: read(),
@@ -251,7 +252,7 @@ const common: Data = {
   },
 }
 
-const target = setReadNodeKeys(deepClone(input), ["target"])
+const target = setReadNodeKeys(deepNodeClone(input), ["target"])
 const _tally = setReadNodeKeys({
   ...objectKeyMap([...allElements, ...allRegions], _ => read("add")),
   maxEleMas: read("max"),
