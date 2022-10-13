@@ -13,8 +13,8 @@ export interface IDisplayCharacterEntry {
   pageIndex: number
 }
 
-const initialState = () => ({
-  sortType: characterSortKeys[0],
+const initialState = (): IDisplayCharacterEntry => ({
+  sortType: "level",
   ascending: false,
   weaponType: [...allWeaponTypeKeys],
   element: [...allElements],
@@ -28,7 +28,9 @@ export class DisplayCharacterEntry extends DataEntry<"display_character", "displ
   validate(obj: any): IDisplayCharacterEntry | undefined {
     if (typeof obj !== "object") return
     let { sortType, ascending, weaponType, element, pageIndex } = obj
-    if (!characterSortKeys.includes(sortType)) sortType = characterSortKeys[0]
+
+    //Disallow sorting by "new" explicitly.
+    if (sortType === "new" || !characterSortKeys.includes(sortType)) sortType = "level"
     if (typeof ascending !== "boolean") ascending = false
     weaponType = validateArr(weaponType, allWeaponTypeKeys)
     element = validateArr(element, allElements)
