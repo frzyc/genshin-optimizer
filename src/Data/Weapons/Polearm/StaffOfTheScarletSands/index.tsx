@@ -4,7 +4,7 @@ import { equal, lookup, naught, prod, subscript, sum } from '../../../../Formula
 import KeyMap from '../../../../KeyMap'
 import { WeaponKey } from '../../../../Types/consts'
 import { range } from '../../../../Util/Util'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
@@ -22,7 +22,7 @@ const stacksArr = range(1, 3)
 const baseAtk = equal(input.weapon.key, key, prod(
   subscript(input.weapon.refineIndex, baseAtkArr, { unit: "%" }),
   input.premod.eleMas
-), KeyMap.keyToInfo("atk"))
+), KeyMap.info("atk"))
 const stacksAtk = lookup(condStacks, Object.fromEntries(stacksArr.map(stack => [
   stack,
   prod(
@@ -30,7 +30,7 @@ const stacksAtk = lookup(condStacks, Object.fromEntries(stacksArr.map(stack => [
     subscript(input.weapon.refineIndex, stacksAttArr, { unit: "%" }),
     input.premod.eleMas
   )
-])), naught, KeyMap.keyToInfo("atk"))
+])), naught, KeyMap.info("atk"))
 const atk = equal(input.weapon.key, key, sum(baseAtk, stacksAtk))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
@@ -60,7 +60,7 @@ const sheet: IWeaponSheet = {
         fields: [{
           node: stacksAtk
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 10,
           unit: "s"
         }]

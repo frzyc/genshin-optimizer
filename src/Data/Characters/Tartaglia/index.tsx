@@ -2,7 +2,7 @@ import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
 import { constant, greaterEq, infoMut, prod, subscript } from '../../../Formula/utils'
 import { CharacterKey, ElementKey, Region } from '../../../Types/consts'
-import { sgt } from '../../SheetUtil'
+import { stg } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import assets from './assets'
@@ -129,99 +129,99 @@ export const data = dataObjForCharacterSheet(key, elementKey, region, data_gen, 
 
 const sheet: ICharacterSheet = {
   key,
-  name: ct.tr("name"),
+  name: ct.chg("name"),
   rarity: data_gen.star,
   elementKey,
   weaponTypeKey: data_gen.weaponTypeKey,
   gender: "M",
-  constellationName: ct.tr("constellationName"),
-  title: ct.tr("title"),
+  constellationName: ct.chg("constellationName"),
+  title: ct.chg("title"),
   talent: {
-    auto: ct.talentTemplate("auto", [{
-      text: ct.tr("auto.fields.normal"),
+    auto: ct.talentTem("auto", [{
+      text: ct.chg("auto.fields.normal"),
     }, {
       fields: datamine.normal.hitArr.map((_, i) => ({
-        node: infoMut(dmgFormulas.normal[i], { name: ct.tr(`auto.skillParams.${i}`) }),
+        node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
-      text: ct.tr("auto.fields.charged"),
+      text: ct.chg("auto.fields.charged"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.charged.aimed, { name: ct.tr(`auto.skillParams.6`) }),
+        node: infoMut(dmgFormulas.charged.aimed, { name: ct.chg(`auto.skillParams.6`) }),
       }, {
-        node: infoMut(dmgFormulas.charged.aimedCharged, { name: ct.tr(`auto.skillParams.7`) }),
+        node: infoMut(dmgFormulas.charged.aimedCharged, { name: ct.chg(`auto.skillParams.7`) }),
       }]
     }, {
-      text: ct.tr("auto.fields.riptide"),
+      text: ct.chg("auto.fields.riptide"),
     }, {
       fields: [{
         node: infoMut(dmgFormulas.charged.flashDmg, {
-          name: ct.tr(`auto.skillParams.8`),
+          name: ct.chg(`auto.skillParams.8`),
           multi: 3,
         }),
       }, {
-        node: infoMut(dmgFormulas.charged.burstDmg, { name: ct.tr(`auto.skillParams.9`) }),
+        node: infoMut(dmgFormulas.charged.burstDmg, { name: ct.chg(`auto.skillParams.9`) }),
       }, {
-        text: ct.tr("auto.skillParams.10"),
+        text: ct.chg("auto.skillParams.10"),
         value: (data) => data.get(input.asc).value >= 1
           ? datamine.passive1.durationExt + datamine.riptideDuration
           : datamine.riptideDuration,
         unit: "s"
       }]
     }, {
-      text: ct.tr("auto.fields.plunging"),
+      text: ct.chg("auto.fields.plunging"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.plunging.dmg, { name: sgt("plunging.dmg") }),
+        node: infoMut(dmgFormulas.plunging.dmg, { name: stg("plunging.dmg") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.low, { name: sgt("plunging.low") }),
+        node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.high, { name: sgt("plunging.high") }),
+        node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
       }]
     }]),
 
-    skill: ct.talentTemplate("skill", [{
+    skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.stanceDmg, { name: ct.tr(`skill.skillParams.0`) }),
+        node: infoMut(dmgFormulas.skill.stanceDmg, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.normal1, { name: ct.tr(`skill.skillParams.1`) }),
+        node: infoMut(dmgFormulas.skill.normal1, { name: ct.chg(`skill.skillParams.1`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.normal2, { name: ct.tr(`skill.skillParams.2`) }),
+        node: infoMut(dmgFormulas.skill.normal2, { name: ct.chg(`skill.skillParams.2`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.normal3, { name: ct.tr(`skill.skillParams.3`) }),
+        node: infoMut(dmgFormulas.skill.normal3, { name: ct.chg(`skill.skillParams.3`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.normal4, { name: ct.tr(`skill.skillParams.4`) }),
+        node: infoMut(dmgFormulas.skill.normal4, { name: ct.chg(`skill.skillParams.4`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.normal5, { name: ct.tr(`skill.skillParams.5`) }),
+        node: infoMut(dmgFormulas.skill.normal5, { name: ct.chg(`skill.skillParams.5`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.normal61, { name: ct.tr(`skill.skillParams.6`) }),
+        node: infoMut(dmgFormulas.skill.normal61, { name: ct.chg(`skill.skillParams.6`) }),
         textSuffix: "(1)"
       }, {
-        node: infoMut(dmgFormulas.skill.normal62, { name: ct.tr(`skill.skillParams.6`) }),
+        node: infoMut(dmgFormulas.skill.normal62, { name: ct.chg(`skill.skillParams.6`) }),
         textSuffix: "(2)"
       }, {
-        node: infoMut(dmgFormulas.skill.charged1, { name: ct.tr(`skill.skillParams.7`) }),
+        node: infoMut(dmgFormulas.skill.charged1, { name: ct.chg(`skill.skillParams.7`) }),
         textSuffix: "(1)"
       }, {
-        node: infoMut(dmgFormulas.skill.charged2, { name: ct.tr(`skill.skillParams.7`) }),
+        node: infoMut(dmgFormulas.skill.charged2, { name: ct.chg(`skill.skillParams.7`) }),
         textSuffix: "(2)"
       }, {
-        node: infoMut(constant(datamine.skill.chargedStamina), { name: ct.tr(`skill.skillParams.8`) }),
+        node: infoMut(constant(datamine.skill.chargedStamina), { name: ct.chg(`skill.skillParams.8`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.riptideSlash, { name: ct.tr(`skill.skillParams.9`) }),
+        node: infoMut(dmgFormulas.skill.riptideSlash, { name: ct.chg(`skill.skillParams.9`) }),
       }, {
-        text: ct.tr("skill.skillParams.10"),
+        text: ct.chg("skill.skillParams.10"),
         value: datamine.skill.duration,
         unit: "s"
       }, {
-        text: ct.tr("skill.skillParams.11"),
+        text: ct.chg("skill.skillParams.11"),
         value: (data) => data.get(input.constellation).value >= 1
           ? `${datamine.skill.preemptiveCd1 - (datamine.skill.preemptiveCd1 * datamine.constellation1.cdRed)}
             - ${datamine.skill.preemptiveCd2 - (datamine.skill.preemptiveCd2 * datamine.constellation1.cdRed)}`
           : `${datamine.skill.preemptiveCd1} - ${datamine.skill.preemptiveCd2}`,
         unit: "s"
       }, {
-        text: ct.tr("skill.skillParams.12"),
+        text: ct.chg("skill.skillParams.12"),
         value: (data) => data.get(input.constellation).value >= 1
           ? `${datamine.skill.maxCd - (datamine.skill.maxCd * datamine.constellation1.cdRed)}`
           : `${datamine.skill.maxCd}`,
@@ -229,37 +229,37 @@ const sheet: ICharacterSheet = {
       }]
     }]),
 
-    burst: ct.talentTemplate("burst", [{
+    burst: ct.talentTem("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.meleeDmg, { name: ct.tr(`burst.skillParams.0`) }),
+        node: infoMut(dmgFormulas.burst.meleeDmg, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.rangedDmg, { name: ct.tr(`burst.skillParams.1`) }),
+        node: infoMut(dmgFormulas.burst.rangedDmg, { name: ct.chg(`burst.skillParams.1`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.riptideBlastDmg, { name: ct.tr(`burst.skillParams.2`) }),
+        node: infoMut(dmgFormulas.burst.riptideBlastDmg, { name: ct.chg(`burst.skillParams.2`) }),
       }, {
-        text: ct.tr("burst.skillParams.4"),
+        text: ct.chg("burst.skillParams.4"),
         value: `${datamine.burst.cd}`,
         unit: "s"
       }, {
-        text: ct.tr("burst.skillParams.5"),
+        text: ct.chg("burst.skillParams.5"),
         value: `${datamine.burst.enerCost}`,
       }, {
-        text: ct.tr("burst.skillParams.3"),
+        text: ct.chg("burst.skillParams.3"),
         value: `${datamine.burst.enerReturned}`,
       }]
     }]),
-    passive1: ct.talentTemplate("passive1"),
-    passive2: ct.talentTemplate("passive2"),
-    passive3: ct.talentTemplate("passive3", [ct.headerTemplate("passive3", {
+    passive1: ct.talentTem("passive1"),
+    passive2: ct.talentTem("passive2"),
+    passive3: ct.talentTem("passive3", [ct.headerTem("passive3", {
       teamBuff: true,
       fields: [{ node: nodePassive }]
     })]),
-    constellation1: ct.talentTemplate("constellation1"),
-    constellation2: ct.talentTemplate("constellation2"),
-    constellation3: ct.talentTemplate("constellation3", [{ fields: [{ node: nodeC3 }] }]),
-    constellation4: ct.talentTemplate("constellation4"),
-    constellation5: ct.talentTemplate("constellation5", [{ fields: [{ node: nodeC5 }] }]),
-    constellation6: ct.talentTemplate("constellation6"),
+    constellation1: ct.talentTem("constellation1"),
+    constellation2: ct.talentTem("constellation2"),
+    constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),
+    constellation4: ct.talentTem("constellation4"),
+    constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),
+    constellation6: ct.talentTem("constellation6"),
   },
 }
 export default new CharacterSheet(sheet, data, assets)

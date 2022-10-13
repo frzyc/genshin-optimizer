@@ -1,14 +1,14 @@
 import { trans } from '../../SheetUtil'
 import Traveler from '../Traveler'
-const [tr] = trans("char", "TravelerM")
+const [chg] = trans("char", "TravelerM")
 
 export default {
   sheet: {
     ...Traveler.sheet,
-    name: tr("name"),
+    name: chg("name"),
     gender: "M",
-    constellationName: tr("constellationName"),
-    title: tr("title"),
+    constellationName: chg("constellationName"),
+    title: chg("title"),
   },
   data_gen: Traveler.data_gen
 } as const

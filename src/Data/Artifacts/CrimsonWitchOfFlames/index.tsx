@@ -13,7 +13,7 @@ const key: ArtifactSetKey = "CrimsonWitchOfFlames"
 const setHeader = setHeaderTemplate(key, icons)
 
 const [condStackPath, condStack] = cond(key, "stack")
-const pyro_dmg_info: Info = KeyMap.keyToInfo("pyro_dmg_")
+const pyro_dmg_info: Info = KeyMap.info("pyro_dmg_")
 const set2 = greaterEq(input.artSet.CrimsonWitchOfFlames, 2, percent(0.15), pyro_dmg_info)
 const set4Overload = greaterEq(input.artSet.CrimsonWitchOfFlames, 4, percent(0.4))
 const set4Burning = { ...set4Overload }

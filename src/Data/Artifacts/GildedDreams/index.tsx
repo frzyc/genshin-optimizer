@@ -3,7 +3,7 @@ import { Data } from '../../../Formula/type'
 import { equal, greaterEq, lookup, naught, percent, prod, sum, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import { allElements, ArtifactSetKey } from '../../../Types/consts'
-import { cond, sgt, st } from '../../SheetUtil'
+import { cond, stg, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
@@ -11,7 +11,7 @@ import icons from './icons'
 const key: ArtifactSetKey = "GildedDreams"
 const setHeader = setHeaderTemplate(key, icons)
 
-const set2 = greaterEq(input.artSet.GildedDreams, 2, 80, KeyMap.keyToInfo("eleMas"))
+const set2 = greaterEq(input.artSet.GildedDreams, 2, 80, KeyMap.info("eleMas"))
 
 const [condPassivePath, condPassive] = cond(key, "passive")
 const set4_atk_ = greaterEq(input.artSet.GildedDreams, 4,
@@ -34,7 +34,7 @@ const totalNonEleParty = sum(
 const set4_eleMas = greaterEq(input.artSet.GildedDreams, 4,
   equal(condPassive, "on",
     greaterEq(totalNonEleParty, 1, prod(totalNonEleParty, 50)),
-    KeyMap.keyToInfo("eleMas")
+    KeyMap.info("eleMas")
   )
 )
 
@@ -64,12 +64,12 @@ const sheet: IArtifactSheet = {
               node: set4_eleMas
             }, {
               canShow: (data) => !data.get(set4_atk_).isEmpty || !data.get(set4_eleMas).isEmpty,
-              text: sgt("duration"),
+              text: stg("duration"),
               value: 8,
               unit: "s",
             }, {
               canShow: (data) => !data.get(set4_atk_).isEmpty || !data.get(set4_eleMas).isEmpty,
-              text: sgt("cd"),
+              text: stg("cd"),
               value: 8,
               unit: "s",
             }]

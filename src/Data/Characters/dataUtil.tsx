@@ -135,7 +135,7 @@ export function dataObjForCharacterSheet(
 
     if (!list.length) continue
 
-    const result = infoMut(list.length === 1 ? list[0] : sum(...list), { ...KeyMap.keyToInfo(stat), prefix: "char", asConst: true })
+    const result = infoMut(list.length === 1 ? list[0] : sum(...list), { ...KeyMap.info(stat), prefix: "char", asConst: true })
     if (stat.endsWith("_dmg_")) result.info!.variant = stat.slice(0, -5) as any
     if (stat === "atk" || stat === "def" || stat === "hp")
       data.base![stat] = result

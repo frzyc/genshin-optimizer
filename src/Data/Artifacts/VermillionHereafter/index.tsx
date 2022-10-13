@@ -12,10 +12,10 @@ import icons from './icons'
 const key: ArtifactSetKey = "VermillionHereafter"
 const setHeader = setHeaderTemplate(key, icons)
 
-const set2 = greaterEq(input.artSet.VermillionHereafter, 2, percent(0.18), KeyMap.keyToInfo("atk_"))
+const set2 = greaterEq(input.artSet.VermillionHereafter, 2, percent(0.18), KeyMap.info("atk_"))
 const [condAfterBurstPath, condAfterBurst] = cond(key, "afterBurst")
 const afterBurstAtk_ = greaterEq(input.artSet.VermillionHereafter, 4,
-  equal(condAfterBurst, "on", percent(0.08)), KeyMap.keyToInfo("atk_")
+  equal(condAfterBurst, "on", percent(0.08)), KeyMap.info("atk_")
 )
 const [condStacksPath, condStacks] = cond(key, "stacks")
 const stacksAtk_ = greaterEq(input.artSet.VermillionHereafter, 4, equal(condAfterBurst, "on",
@@ -23,7 +23,7 @@ const stacksAtk_ = greaterEq(input.artSet.VermillionHereafter, 4, equal(condAfte
     stacks,
     percent(0.10 * stacks)
   ])), naught),
-  KeyMap.keyToInfo("atk_")
+  KeyMap.info("atk_")
 ))
 
 export const data: Data = dataObjForArtifactSheet(key, {

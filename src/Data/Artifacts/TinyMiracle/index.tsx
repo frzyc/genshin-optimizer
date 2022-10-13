@@ -4,7 +4,7 @@ import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import { allElements, ArtifactSetKey } from '../../../Types/consts'
-import { cond, sgt, trans } from '../../SheetUtil'
+import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
@@ -16,12 +16,12 @@ const [condElePath, condEle] = cond(key, "element")
 
 const set2Nodes = Object.fromEntries(allElements.map(ele => [
   ele,
-  greaterEq(input.artSet.TinyMiracle, 2, percent(0.2), KeyMap.keyToInfo(`${ele}_res_`))
+  greaterEq(input.artSet.TinyMiracle, 2, percent(0.2), KeyMap.info(`${ele}_res_`))
 ]))
 
 const set4Nodes = Object.fromEntries(allElements.map(ele => [
   ele,
-  greaterEq(input.artSet.TinyMiracle, 4, equal(condEle, ele, percent(0.3)), KeyMap.keyToInfo(`${ele}_res_`))
+  greaterEq(input.artSet.TinyMiracle, 4, equal(condEle, ele, percent(0.3)), KeyMap.info(`${ele}_res_`))
 ]))
 
 export const data: Data = dataObjForArtifactSheet(key, {
@@ -49,11 +49,11 @@ const sheet: IArtifactSheet = {
         teamBuff: true,
         name: trm("condName"),
         states: Object.fromEntries(allElements.map(e => [e, {
-          name: <ColorText color={e}>{sgt(`element.${e}`)}</ColorText>,
+          name: <ColorText color={e}>{stg(`element.${e}`)}</ColorText>,
           fields: [
             ...Object.values(set4Nodes).map(n => ({ node: n })),
             {
-              text: sgt("duration"),
+              text: stg("duration"),
               value: 10,
               unit: "s"
             }

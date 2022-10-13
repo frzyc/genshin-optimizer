@@ -8,7 +8,7 @@ import KeyMap from "../KeyMap";
 import { allElements, allElementsWithPhy } from "../Types/consts";
 import { DocumentSection } from "../Types/sheet";
 import { objectKeyValueMap } from "../Util/Util";
-import { condReadNode, sgt, st } from "./SheetUtil";
+import { condReadNode, stg, st } from "./SheetUtil";
 const tr = (strKey: string) => <Translate ns="elementalResonance_gen" key18={strKey} />
 const trm = (strKey: string) => <Translate ns="elementalResonance" key18={strKey} />
 
@@ -179,7 +179,7 @@ const enduringRock: IResonance = {
         }, {
           node: erNodeRes_
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 15,
           unit: "s"
         }]
@@ -193,9 +193,9 @@ const condSC2elePath = ["resonance", "SprawlingCanopy2ele"]
 const condSC2ele = condReadNode(condSC2elePath)
 const condSC3elePath = ["resonance", "SprawlingCanopy3ele"]
 const condSC3ele = condReadNode(condSC3elePath)
-const scBase_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, 50, KeyMap.keyToInfo("eleMas")))
-const sc2ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC2ele, "on", 30, KeyMap.keyToInfo("eleMas"))))
-const sc3ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC3ele, "on", 20, KeyMap.keyToInfo("eleMas"))))
+const scBase_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, 50, KeyMap.info("eleMas")))
+const sc2ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC2ele, "on", 30, KeyMap.info("eleMas"))))
+const sc3ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC3ele, "on", 20, KeyMap.info("eleMas"))))
 const sprawlingGreenery: IResonance = {
   name: tr("SprawlingGreenery.name"),
   desc: tr("SprawlingGreenery.desc"),
@@ -219,7 +219,7 @@ const sprawlingGreenery: IResonance = {
         fields: [{
           node: sc2ele_eleMas
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 6,
           unit: "s"
         }]
@@ -239,7 +239,7 @@ const sprawlingGreenery: IResonance = {
         fields: [{
           node: sc3ele_eleMas
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 6,
           unit: "s"
         }]

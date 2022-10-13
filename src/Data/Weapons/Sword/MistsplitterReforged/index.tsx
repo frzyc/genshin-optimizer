@@ -25,13 +25,13 @@ const stacksRefine = {
 const [condPath, condNode] = cond(key, "MistsplittersEmblem")
 const passive_dmg_ = Object.fromEntries(allElements.map(ele =>
   [`${ele}_dmg_`,
-  subscript(input.weapon.refineIndex, passiveRefine, KeyMap.keyToInfo(`${ele}_dmg_`))]
+  subscript(input.weapon.refineIndex, passiveRefine, KeyMap.info(`${ele}_dmg_`))]
 ))
 const stacks_dmg_ = Object.fromEntries(allElements.map(ele =>
   [`${ele}_dmg_`,
   equal(input.charEle, ele,
     lookup(condNode, objectKeyMap(stacks, stack =>
-      subscript(input.weapon.refineIndex, stacksRefine[stack])), naught, KeyMap.keyToInfo(`${ele}_dmg_`))
+      subscript(input.weapon.refineIndex, stacksRefine[stack])), naught, KeyMap.info(`${ele}_dmg_`))
   )]
 ))
 const allEle_dmg_ = Object.fromEntries(allElements.map(ele =>

@@ -3,7 +3,7 @@ import { input, target } from '../../../../Formula'
 import { equal, infoMut, subscript, unequal } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -43,9 +43,9 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: infoMut(atk_Disp, KeyMap.keyToInfo("atk_"))
+          node: infoMut(atk_Disp, KeyMap.info("atk_"))
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 10,
           unit: "s"
         }]

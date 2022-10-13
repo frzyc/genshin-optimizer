@@ -2,7 +2,7 @@ import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
-import { cond, sgt, trans } from '../../SheetUtil'
+import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
@@ -44,7 +44,7 @@ const sheet: IArtifactSheet = {
             fields: [{
               node: set4,
             }, {
-              text: sgt("duration"),
+              text: stg("duration"),
               value: 8,
               unit: "s"
             }]

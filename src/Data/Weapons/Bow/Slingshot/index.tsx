@@ -17,10 +17,10 @@ const [, trm] = trans("weapon", key)
 const dmg_arr = [.36, .42, .48, .54, .60]
 
 const [condPassivePath, condPassive] = cond(key, "Slingshot")
-const normal_dmg_inc = equal(condPassive, "on", subscript(input.weapon.refineIndex, dmg_arr), KeyMap.keyToInfo("normal_dmg_"))
-const charged_dmg_inc = equal(condPassive, "on", subscript(input.weapon.refineIndex, dmg_arr), KeyMap.keyToInfo("charged_dmg_"))
-const normal_dmg_dec = equal(condPassive, undefined, percent(-0.1, KeyMap.keyToInfo("normal_dmg_")))
-const charged_dmg_dec = equal(condPassive, undefined, percent(-0.1, KeyMap.keyToInfo("charged_dmg_")))
+const normal_dmg_inc = equal(condPassive, "on", subscript(input.weapon.refineIndex, dmg_arr), KeyMap.info("normal_dmg_"))
+const charged_dmg_inc = equal(condPassive, "on", subscript(input.weapon.refineIndex, dmg_arr), KeyMap.info("charged_dmg_"))
+const normal_dmg_dec = equal(condPassive, undefined, percent(-0.1, KeyMap.info("normal_dmg_")))
+const charged_dmg_dec = equal(condPassive, undefined, percent(-0.1, KeyMap.info("charged_dmg_")))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { infoMut, equal, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { customShieldNode } from '../../../Characters/dataUtil'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -39,9 +39,9 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: infoMut(shield, { name: sgt(`dmgAbsorption`) })
+          node: infoMut(shield, { name: stg(`dmgAbsorption`) })
         }, {
-          text: sgt("cd"),
+          text: stg("cd"),
           value: 45,
           unit: "s"
         }]

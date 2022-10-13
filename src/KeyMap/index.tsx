@@ -201,7 +201,7 @@ export default class KeyMap {
     if (key.endsWith("_")) return "%"
     return ""
   }
-  static keyToInfo(key: string): Partial<Info> {
+  static info(key: string): Partial<Info> {
     const info = {} as Partial<Info>
     info.name = this.get(key)
     info.unit = this.unit(key)

@@ -4,7 +4,7 @@ import { input } from '../../../../Formula'
 import { equal, infoMut, percent, prod, subscript, unequal } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
@@ -54,7 +54,7 @@ const sheet: IWeaponSheet = {
         fields: [{
           node: atkSelf
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 12,
           unit: "s"
         }],
@@ -65,9 +65,9 @@ const sheet: IWeaponSheet = {
     teamBuff: true,
     canShow: equal(condPassive, "on", 1),
     fields: [{
-      node: infoMut(atkTeamDisp, { ...KeyMap.keyToInfo("atk"), isTeamBuff: true }),
+      node: infoMut(atkTeamDisp, { ...KeyMap.info("atk"), isTeamBuff: true }),
     }, {
-        text: sgt("duration"),
+        text: stg("duration"),
         value: 12,
         unit: "s"
     }]

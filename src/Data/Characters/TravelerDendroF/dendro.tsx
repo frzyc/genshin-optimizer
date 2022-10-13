@@ -5,7 +5,7 @@ import { equal, greaterEq, infoMut, lookup, naught, percent, prod } from '../../
 import KeyMap from '../../../KeyMap'
 import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
-import { cond, sgt, st } from '../../SheetUtil'
+import { cond, stg, st } from '../../SheetUtil'
 import { charTemplates, TalentSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import Traveler from '../Traveler'
@@ -58,7 +58,7 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
       stack,
       prod(datamine.passive1.eleMas, stack)
     ])), naught),
-    KeyMap.keyToInfo("eleMas")
+    KeyMap.info("eleMas")
   )
   const a1_eleMas = equal(input.activeCharKey, target.charKey, a1_eleMas_disp)
 
@@ -123,40 +123,40 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
   })
 
   const talent: TalentSheet = {
-    skill: ct.talentTemplate("skill", [{
+    skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.dmg, { name: ct.tr(`skill.skillParams.0`) })
+        node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) })
       }, {
-        text: sgt("cd"),
+        text: stg("cd"),
         value: datamine.skill.cd,
         unit: "s",
       }]
     }]),
 
-    burst: ct.talentTemplate("burst", [{
+    burst: ct.talentTem("burst", [{
       fields: [{
         node: infoMut(dmgFormulas.burst.lampDmg,
-          { name: ct.tr(`burst.skillParams.0`) }
+          { name: ct.chg(`burst.skillParams.0`) }
         )
       }, {
         node: infoMut(dmgFormulas.burst.explosionDmg,
-          { name: ct.tr(`burst.skillParams.1`) }
+          { name: ct.chg(`burst.skillParams.1`) }
         )
       }, {
-        text: sgt("duration"),
+        text: stg("duration"),
         value: (data) => data.get(input.constellation).value >= 2
           ? `${datamine.burst.lampDuration}s + ${datamine.constellation2.durationInc}s = ${datamine.burst.lampDuration + datamine.constellation2.durationInc}`
           : datamine.burst.lampDuration,
         unit: "s"
       }, {
-        text: sgt("cd"),
+        text: stg("cd"),
         value: datamine.burst.cd,
         unit: "s"
       }, {
-        text: sgt("energyCost"),
+        text: stg("energyCost"),
         value: datamine.burst.enerCost,
       }]
-    }, ct.conditionalTemplate("passive1", {
+    }, ct.condTem("passive1", {
       path: condA1StacksPath,
       value: condA1Stacks,
       teamBuff: true,
@@ -170,13 +170,13 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
           }]
         }
       ])),
-    }), ct.headerTemplate("constellation2", {
+    }), ct.headerTem("constellation2", {
       fields: [{
         text: st("durationInc"),
         value: datamine.constellation2.durationInc,
         unit: "s"
       }]
-    }), ct.conditionalTemplate("constellation6", {
+    }), ct.condTem("constellation6", {
       path: condC6BurstEffectPath,
       value: condC6BurstEffect,
       teamBuff: true,
@@ -184,11 +184,11 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
       states: {
         on: {
           fields: [{
-            node: infoMut(c6_dendro_dmg_disp, { ...KeyMap.keyToInfo("dendro_dmg_"), isTeamBuff: true }),
+            node: infoMut(c6_dendro_dmg_disp, { ...KeyMap.info("dendro_dmg_"), isTeamBuff: true }),
           }]
         }
       }
-    }), ct.conditionalTemplate("constellation6", {
+    }), ct.condTem("constellation6", {
       path: condC6BurstElePath,
       value: condC6BurstEle,
       teamBuff: true,
@@ -196,26 +196,26 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
       name: st("eleAbsor"),
       states: Object.fromEntries(Object.entries(c6_ele_dmg_disp).map(([ele, node]) => [
         ele, {
-          name: <ColorText color={ele}>{sgt(`element.${ele}`)}</ColorText>,
-          fields: [{ node: infoMut(node, { ...KeyMap.keyToInfo(`${ele}_dmg_`), isTeamBuff: true }) }],
+          name: <ColorText color={ele}>{stg(`element.${ele}`)}</ColorText>,
+          fields: [{ node: infoMut(node, { ...KeyMap.info(`${ele}_dmg_`), isTeamBuff: true }) }],
         }
       ]))
     })]),
 
-    passive1: ct.talentTemplate("passive1"),
-    passive2: ct.talentTemplate("passive2", [ct.fieldsTemplate("passive2", {
+    passive1: ct.talentTem("passive1"),
+    passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
       fields: [{
         node: a4_skill_dmg_,
       }, {
         node: a4_burst_dmg_,
       }]
     })]),
-    constellation1: ct.talentTemplate("constellation1"),
-    constellation2: ct.talentTemplate("constellation2"),
-    constellation3: ct.talentTemplate("constellation3", [{ fields: [{ node: skillC3 }] }]),
-    constellation4: ct.talentTemplate("constellation4"),
-    constellation5: ct.talentTemplate("constellation5", [{ fields: [{ node: burstC5 }] }]),
-    constellation6: ct.talentTemplate("constellation6"),
+    constellation1: ct.talentTem("constellation1"),
+    constellation2: ct.talentTem("constellation2"),
+    constellation3: ct.talentTem("constellation3", [{ fields: [{ node: skillC3 }] }]),
+    constellation4: ct.talentTem("constellation4"),
+    constellation5: ct.talentTem("constellation5", [{ fields: [{ node: burstC5 }] }]),
+    constellation6: ct.talentTem("constellation6"),
   }
 
   return {

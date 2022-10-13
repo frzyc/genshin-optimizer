@@ -14,7 +14,7 @@ const setHeader = setHeaderTemplate(key, icons)
 const [, trm] = trans("artifact", key)
 
 const [condStackPath, condStack] = cond(key, "stack")
-const def_info: Info = KeyMap.keyToInfo("def_")
+const def_info: Info = KeyMap.info("def_")
 const set2 = greaterEq(input.artSet.HuskOfOpulentDreams, 2, percent(0.3), def_info)
 const stackArr = range(1, 4)
 const set4Def = greaterEq(input.artSet.HuskOfOpulentDreams, 4,

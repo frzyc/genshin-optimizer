@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, prod, subscript } from '../../../../Formula/utils'
 import { allElements, WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -51,14 +51,14 @@ const sheet: IWeaponSheet = {
         fields: [{
           node: charged_dmgInc,
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 10,
           unit: "s"
         }, {
           text: st("charges"),
           value: 12
         }, {
-          text: sgt("cd"),
+          text: stg("cd"),
           value: 12,
           unit: "s"
         }]

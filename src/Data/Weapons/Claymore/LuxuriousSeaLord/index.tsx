@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { constant, equal, infoMut, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -50,7 +50,7 @@ const sheet: IWeaponSheet = {
         fields: [{
           node: infoMut(dmg, { name: st("dmg") })
         }, {
-          text: sgt("cd"),
+          text: stg("cd"),
           value: 15,
           unit: "s"
         }]

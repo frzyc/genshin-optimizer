@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
 import { infoMut } from '../../../Formula/utils'
 import { CharacterKey, CharacterSheetKey, WeaponTypeKey } from '../../../Types/consts'
-import { sgt } from '../../SheetUtil'
+import { stg } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
@@ -45,34 +45,34 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
 
   const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
-  talent.auto = ct.talentTemplate("auto", [{
-    text: ct.tr("auto.fields.normal")
+  talent.auto = ct.talentTem("auto", [{
+    text: ct.chg("auto.fields.normal")
   }, {
     fields: datamine.normal.hitArr.map((_: any, i: number) => ({
-      node: infoMut(dmgFormulas.normal[i]!, { name: ct.tr(`auto.skillParams.${i}`) }),
+      node: infoMut(dmgFormulas.normal[i]!, { name: ct.chg(`auto.skillParams.${i}`) }),
     }))
   }, {
-    text: ct.tr("auto.fields.charged"),
+    text: ct.chg("auto.fields.charged"),
   }, {
     fields: [{
-      node: infoMut(dmgFormulas.charged.dmg1!, { name: ct.tr(`auto.skillParams.5`) }),
+      node: infoMut(dmgFormulas.charged.dmg1!, { name: ct.chg(`auto.skillParams.5`) }),
       textSuffix: "(1)"
     }, {
-      node: infoMut(dmgFormulas.charged.dmg2!, { name: ct.tr(`auto.skillParams.5`) }),
+      node: infoMut(dmgFormulas.charged.dmg2!, { name: ct.chg(`auto.skillParams.5`) }),
       textSuffix: "(2)"
     }, {
-      text: ct.tr("auto.skillParams.6"),
+      text: ct.chg("auto.skillParams.6"),
       value: datamine.charged.stamina,
     }]
   }, {
-    text: ct.tr("auto.fields.plunging"),
+    text: ct.chg("auto.fields.plunging"),
   }, {
     fields: [{
-      node: infoMut(dmgFormulas.plunging.dmg!, { name: sgt("plunging.dmg") }),
+      node: infoMut(dmgFormulas.plunging.dmg!, { name: stg("plunging.dmg") }),
     }, {
-      node: infoMut(dmgFormulas.plunging.low!, { name: sgt("plunging.low") }),
+      node: infoMut(dmgFormulas.plunging.low!, { name: stg("plunging.low") }),
     }, {
-      node: infoMut(dmgFormulas.plunging.high!, { name: sgt("plunging.high") }),
+      node: infoMut(dmgFormulas.plunging.high!, { name: stg("plunging.high") }),
     }]
   }])
 

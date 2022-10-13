@@ -11,7 +11,7 @@ import icons from './icons'
 const key: ArtifactSetKey = "Berserker"
 const setHeader = setHeaderTemplate(key, icons)
 
-const critRate_info: Info = KeyMap.keyToInfo("critRate_")
+const critRate_info: Info = KeyMap.info("critRate_")
 const set2 = greaterEq(input.artSet.Berserker, 2, percent(0.12), critRate_info)
 const [condPath, condNode] = cond(key, "hp")
 const set4 = greaterEq(input.artSet.Berserker, 4,

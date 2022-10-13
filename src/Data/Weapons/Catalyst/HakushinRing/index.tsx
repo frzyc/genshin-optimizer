@@ -4,7 +4,7 @@ import { input, target } from '../../../../Formula'
 import { equal, infoMut, subscript, unequal } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -59,73 +59,73 @@ const sheet: IWeaponSheet = {
     header: headerTemplate(key, icon, iconAwaken, st("conditional")),
     states: {
       anemo: {
-        name: <ColorText color="swirl">{sgt("reaction.swirl")}</ColorText>,
+        name: <ColorText color="swirl">{stg("reaction.swirl")}</ColorText>,
         fields: [{
-          node: infoMut(anemo_dmg_disp, { ...KeyMap.keyToInfo("anemo_dmg_"), isTeamBuff: true }),
+          node: infoMut(anemo_dmg_disp, { ...KeyMap.info("anemo_dmg_"), isTeamBuff: true }),
         }, {
-          node: infoMut(electro_dmg_disp, { ...KeyMap.keyToInfo("electro_dmg_"), isTeamBuff: true }),
+          node: infoMut(electro_dmg_disp, { ...KeyMap.info("electro_dmg_"), isTeamBuff: true }),
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 6,
           unit: "s"
         }]
       },
       cryo: {
-        name: <ColorText color="superconduct">{sgt("reaction.superconduct")}</ColorText>,
+        name: <ColorText color="superconduct">{stg("reaction.superconduct")}</ColorText>,
         fields: [{
-          node: infoMut(cryo_dmg_disp, { ...KeyMap.keyToInfo("cryo_dmg_"), isTeamBuff: true }),
+          node: infoMut(cryo_dmg_disp, { ...KeyMap.info("cryo_dmg_"), isTeamBuff: true }),
         }, {
-          node: infoMut(electro_dmg_disp, { ...KeyMap.keyToInfo("electro_dmg_"), isTeamBuff: true }),
+          node: infoMut(electro_dmg_disp, { ...KeyMap.info("electro_dmg_"), isTeamBuff: true }),
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 6,
           unit: "s"
         }]
       },
       geo: {
-        name: <ColorText color="crystallize">{sgt("reaction.crystallize")}</ColorText>,
+        name: <ColorText color="crystallize">{stg("reaction.crystallize")}</ColorText>,
         fields: [{
-          node: infoMut(geo_dmg_disp, { ...KeyMap.keyToInfo("geo_dmg_"), isTeamBuff: true }),
+          node: infoMut(geo_dmg_disp, { ...KeyMap.info("geo_dmg_"), isTeamBuff: true }),
         }, {
-          node: infoMut(electro_dmg_disp, { ...KeyMap.keyToInfo("electro_dmg_"), isTeamBuff: true }),
+          node: infoMut(electro_dmg_disp, { ...KeyMap.info("electro_dmg_"), isTeamBuff: true }),
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 6,
           unit: "s"
         }]
       },
       pyro: {
-        name: <ColorText color="overloaded">{sgt("reaction.overloaded")}</ColorText>,
+        name: <ColorText color="overloaded">{stg("reaction.overloaded")}</ColorText>,
         fields: [{
-          node: infoMut(pyro_dmg_disp, { ...KeyMap.keyToInfo("pyro_dmg_"), isTeamBuff: true }),
+          node: infoMut(pyro_dmg_disp, { ...KeyMap.info("pyro_dmg_"), isTeamBuff: true }),
         }, {
-          node: infoMut(electro_dmg_disp, { ...KeyMap.keyToInfo("electro_dmg_"), isTeamBuff: true }),
+          node: infoMut(electro_dmg_disp, { ...KeyMap.info("electro_dmg_"), isTeamBuff: true }),
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 6,
           unit: "s"
         }]
       },
       hydro: {
-        name: <ColorText color="electrocharged">{sgt("reaction.electrocharged")}</ColorText>,
+        name: <ColorText color="electrocharged">{stg("reaction.electrocharged")}</ColorText>,
         fields: [{
-          node: infoMut(hydro_dmg_disp, { ...KeyMap.keyToInfo("hydro_dmg_"), isTeamBuff: true }),
+          node: infoMut(hydro_dmg_disp, { ...KeyMap.info("hydro_dmg_"), isTeamBuff: true }),
         }, {
-          node: infoMut(electro_dmg_disp, { ...KeyMap.keyToInfo("electro_dmg_"), isTeamBuff: true }),
+          node: infoMut(electro_dmg_disp, { ...KeyMap.info("electro_dmg_"), isTeamBuff: true }),
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 6,
           unit: "s"
         }]
       },
       dendro: {
-        name: <ColorText color="aggravate">{sgt("reaction.aggravate")}</ColorText>,
+        name: <ColorText color="aggravate">{stg("reaction.aggravate")}</ColorText>,
         fields: [{
-          node: infoMut(dendro_dmg_disp, { ...KeyMap.keyToInfo("dendro_dmg_"), isTeamBuff: true }),
+          node: infoMut(dendro_dmg_disp, { ...KeyMap.info("dendro_dmg_"), isTeamBuff: true }),
         }, {
-          node: infoMut(electro_dmg_disp, { ...KeyMap.keyToInfo("electro_dmg_"), isTeamBuff: true }),
+          node: infoMut(electro_dmg_disp, { ...KeyMap.info("electro_dmg_"), isTeamBuff: true }),
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 6,
           unit: "s"
         }]

@@ -5,31 +5,31 @@ import { objectKeyMap } from "../Util/Util";
 import { infusionNode, input } from "./index";
 import { constant, data, equal, frac, infoMut, one, percent, prod, subscript, sum } from "./utils";
 
-const crystallizeMulti1 = subscript(input.lvl, crystallizeLevelMultipliers, KeyMap.keyToInfo("crystallize_level_multi"))
+const crystallizeMulti1 = subscript(input.lvl, crystallizeLevelMultipliers, KeyMap.info("crystallize_level_multi"))
 const crystallizeElemas = prod(40 / 9, frac(input.total.eleMas, 1400))
 const crystallizeHit = infoMut(prod(
-  infoMut(sum(one, /** + Crystallize bonus */ crystallizeElemas), { pivot: true, ...KeyMap.keyToInfo("base_crystallize_multi") }),
+  infoMut(sum(one, /** + Crystallize bonus */ crystallizeElemas), { pivot: true, ...KeyMap.info("base_crystallize_multi") }),
   crystallizeMulti1),
-  KeyMap.keyToInfo("crystallize"))
+  KeyMap.info("crystallize"))
 
-const transMulti1 = subscript(input.lvl, transformativeReactionLevelMultipliers, KeyMap.keyToInfo("transformative_level_multi"))
+const transMulti1 = subscript(input.lvl, transformativeReactionLevelMultipliers, KeyMap.info("transformative_level_multi"))
 const transMulti2 = prod(16, frac(input.total.eleMas, 2000))
 const trans = {
   ...objectKeyMap(Object.keys(transformativeReactions), reaction => {
     const { multi, resist } = transformativeReactions[reaction]
     return infoMut(prod(
-      prod(constant(multi, KeyMap.keyToInfo(`${reaction}_multi`)), transMulti1),
+      prod(constant(multi, KeyMap.info(`${reaction}_multi`)), transMulti1),
       sum(
-        infoMut(sum(one, transMulti2), { pivot: true, ...KeyMap.keyToInfo("base_transformative_multi") }),
+        infoMut(sum(one, transMulti2), { pivot: true, ...KeyMap.info("base_transformative_multi") }),
         input.total[`${reaction}_dmg_`]
       ),
       input.enemy[`${resist}_resMulti`]
-    ), KeyMap.keyToInfo(`${reaction}_hit`))
+    ), KeyMap.info(`${reaction}_hit`))
   }),
   swirl: objectKeyMap(transformativeReactions.swirl.variants, ele => {
     const base = prod(
-      prod(constant(transformativeReactions.swirl.multi, KeyMap.keyToInfo("swirl_multi")), transMulti1),
-      sum(infoMut(sum(one, transMulti2), { pivot: true, ...KeyMap.keyToInfo("base_transformative_multi") }), input.total.swirl_dmg_)
+      prod(constant(transformativeReactions.swirl.multi, KeyMap.info("swirl_multi")), transMulti1),
+      sum(infoMut(sum(one, transMulti2), { pivot: true, ...KeyMap.info("base_transformative_multi") }), input.total.swirl_dmg_)
     )
     const res = input.enemy[`${ele}_resMulti`]
     return infoMut(
@@ -45,16 +45,16 @@ const trans = {
           // Amp reaction
           : data(prod(base, res, input.hit.ampMulti), { hit: { ele: constant(ele) } }))
         : prod(base, res),
-      KeyMap.keyToInfo(`${ele}_swirl_hit`))
+      KeyMap.info(`${ele}_swirl_hit`))
   })
 }
 const infusionReactions = {
-  overloaded: equal(infusionNode, "pyro", trans.overloaded, KeyMap.keyToInfo("overloaded_hit")),
-  electrocharged: equal(infusionNode, "hydro", trans.electrocharged, KeyMap.keyToInfo("electrocharged_hit")),
-  superconduct: equal(infusionNode, "cryo", trans.superconduct, KeyMap.keyToInfo("superconduct_hit")),
-  burning: equal(infusionNode, "pyro", trans.burning, KeyMap.keyToInfo("burning_hit")),
-  bloom: equal(infusionNode, "hydro", trans.bloom, KeyMap.keyToInfo("bloom_hit")),
-  burgeon: equal(infusionNode, "pyro", trans.burgeon, KeyMap.keyToInfo("burgeon_hit")),
+  overloaded: equal(infusionNode, "pyro", trans.overloaded, KeyMap.info("overloaded_hit")),
+  electrocharged: equal(infusionNode, "hydro", trans.electrocharged, KeyMap.info("electrocharged_hit")),
+  superconduct: equal(infusionNode, "cryo", trans.superconduct, KeyMap.info("superconduct_hit")),
+  burning: equal(infusionNode, "pyro", trans.burning, KeyMap.info("burning_hit")),
+  bloom: equal(infusionNode, "hydro", trans.bloom, KeyMap.info("bloom_hit")),
+  burgeon: equal(infusionNode, "pyro", trans.burgeon, KeyMap.info("burgeon_hit")),
 }
 export const reactions = {
   anemo: {
@@ -74,7 +74,7 @@ export const reactions = {
   geo: {
     crystallize: crystallizeHit,
     ...Object.fromEntries(absorbableEle.map(e => [`${e}Crystallize`,
-    infoMut(prod(percent(2.5), crystallizeHit), KeyMap.keyToInfo(`${e}_crystallize`))])),
+    infoMut(prod(percent(2.5), crystallizeHit), KeyMap.info(`${e}_crystallize`))])),
     shattered: trans.shattered,
     overloaded: infusionReactions.overloaded,
     electrocharged: infusionReactions.electrocharged,
