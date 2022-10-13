@@ -3,7 +3,7 @@ import { CardContent, CardHeader, Divider, MenuItem, MenuList } from "@mui/mater
 import { useContext, useMemo } from "react"
 import CardDark from "../../../../../Components/Card/CardDark"
 import CardLight from "../../../../../Components/Card/CardLight"
-import ColorText from "../../../../../Components/ColoredText"
+import { NodeFieldDisplayText } from "../../../../../Components/FieldDisplay"
 import ImgIcon from "../../../../../Components/Image/ImgIcon"
 import ModalWrapper from "../../../../../Components/ModalWrapper"
 import SqBadge from "../../../../../Components/SqBadge"
@@ -68,6 +68,6 @@ function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: Disp
 
 function TargetSelectorMenuItem({ node, onClick }: { node: NodeDisplay, onClick: () => void }) {
   return <MenuItem onClick={onClick} style={{ whiteSpace: "normal" }}>
-    <ColorText color={node.info.variant} >{node.info.name}</ColorText>
+    <NodeFieldDisplayText node={node} />
   </MenuItem>
 }

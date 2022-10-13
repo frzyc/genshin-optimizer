@@ -55,9 +55,8 @@ export function NodeFieldDisplay({ node, oldValue, component, emphasize }: { nod
   const onClick = useCallback(() => setFormulaData(data, node), [setFormulaData, data, node])
 
   if (node.isEmpty) return null
-  const { textSuffix, multi } = node.info
+  const { multi } = node.info
 
-  const suffixDisplay = textSuffix && <span> {textSuffix}</span>
   const multiDisplay = multi && <span>{multi}&#215;</span>
   let fieldVal = "" as Displayable
   if (oldValue !== undefined) {
@@ -73,15 +72,20 @@ export function NodeFieldDisplay({ node, oldValue, component, emphasize }: { nod
     <span>{node.formula}</span>
   </Suspense></Typography>} />
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1, boxShadow: emphasize ? "0px 0px 0px 2px red inset" : undefined }} component={component} >
-    <Box sx={{ display: "flex", gap: 1, alignItems: "center" }} >
-      {node.info.icon}
-      {!!node.info.isTeamBuff && <Groups />}
-      <Typography color={`${node.info.variant}.main`} >{node.info.name}{suffixDisplay}</Typography>
-    </Box>
+    <NodeFieldDisplayText node={node} />
     <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
       <Typography noWrap>{multiDisplay}{fieldVal}</Typography>
       {formulaTextOverlay}
     </Box>
+  </Box>
+}
+export function NodeFieldDisplayText({ node }: { node: NodeDisplay }) {
+  const { textSuffix } = node.info
+  const suffixDisplay = textSuffix && <span> {textSuffix}</span>
+  return <Box sx={{ display: "flex", gap: 1, alignItems: "center" }} >
+    {node.info.icon}
+    {!!node.info.isTeamBuff && <Groups />}
+    <Typography ><ColorText color={node.info.variant} >{node.info.name}{suffixDisplay}</ColorText></Typography>
   </Box>
 }
 export interface FieldDisplayListProps extends ListProps {

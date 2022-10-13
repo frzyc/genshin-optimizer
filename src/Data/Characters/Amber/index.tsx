@@ -144,13 +144,11 @@ const sheet: ICharacterSheet = {
       fields: [{
         node: infoMut(dmgFormulas.charged.aimed, { name: ct.chg(`auto.skillParams.5`) }),
       }, {
-        node: infoMut(dmgFormulas.charged.secondAimed, { name: ct.chg(`auto.skillParams.5`) }),
-        textSuffix: ct.ch("secondArrow")
+        node: infoMut(dmgFormulas.charged.secondAimed, { name: ct.chg(`auto.skillParams.5`), textSuffix: ct.ch("secondArrow") }),
       }, {
         node: infoMut(dmgFormulas.charged.aimedCharged, { name: ct.chg(`auto.skillParams.6`) }),
       }, {
-        node: infoMut(dmgFormulas.charged.secondAimedCharged, { name: ct.chg(`auto.skillParams.6`) }),
-        textSuffix: ct.ch("secondArrow")
+        node: infoMut(dmgFormulas.charged.secondAimedCharged, { name: ct.chg(`auto.skillParams.6`), textSuffix: ct.ch("secondArrow") }),
       },],
     }, {
       text: ct.chg("auto.fields.plunging"),

@@ -194,17 +194,13 @@ const sheet: ICharacterSheet = {
       }, {
         node: infoMut(dmgFormulas.skill.normal5, { name: ct.chg(`skill.skillParams.5`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.normal61, { name: ct.chg(`skill.skillParams.6`) }),
-        textSuffix: "(1)"
+        node: infoMut(dmgFormulas.skill.normal61, { name: ct.chg(`skill.skillParams.6`), textSuffix: "(1)" }),
       }, {
-        node: infoMut(dmgFormulas.skill.normal62, { name: ct.chg(`skill.skillParams.6`) }),
-        textSuffix: "(2)"
+        node: infoMut(dmgFormulas.skill.normal62, { name: ct.chg(`skill.skillParams.6`), textSuffix: "(2)" }),
       }, {
-        node: infoMut(dmgFormulas.skill.charged1, { name: ct.chg(`skill.skillParams.7`) }),
-        textSuffix: "(1)"
+        node: infoMut(dmgFormulas.skill.charged1, { name: ct.chg(`skill.skillParams.7`), textSuffix: "(1)" }),
       }, {
-        node: infoMut(dmgFormulas.skill.charged2, { name: ct.chg(`skill.skillParams.7`) }),
-        textSuffix: "(2)"
+        node: infoMut(dmgFormulas.skill.charged2, { name: ct.chg(`skill.skillParams.7`), textSuffix: "(2)" }),
       }, {
         node: infoMut(constant(datamine.skill.chargedStamina), { name: ct.chg(`skill.skillParams.8`) }),
       }, {

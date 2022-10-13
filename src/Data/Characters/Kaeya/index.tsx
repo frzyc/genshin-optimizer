@@ -122,11 +122,9 @@ const sheet: ICharacterSheet = {
       text: ct.chg("auto.fields.charged"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.charged.dmg1, { name: ct.chg(`auto.skillParams.5`) }),
-        textSuffix: "(1)"
+        node: infoMut(dmgFormulas.charged.dmg1, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(1)" }),
       }, {
-        node: infoMut(dmgFormulas.charged.dmg2, { name: ct.chg(`auto.skillParams.5`) }),
-        textSuffix: "(2)"
+        node: infoMut(dmgFormulas.charged.dmg2, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(2)" }),
       }, {
         text: ct.chg("auto.skillParams.7"),
         value: datamine.charged.stamina,

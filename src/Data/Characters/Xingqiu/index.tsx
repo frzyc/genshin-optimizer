@@ -149,11 +149,9 @@ const sheet: ICharacterSheet = {
       text: ct.chg("auto.fields.charged"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.charged.dmg1, { name: ct.chg(`auto.skillParams.5`) }),
-        textSuffix: "(1)"
+        node: infoMut(dmgFormulas.charged.dmg1, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(1)" }),
       }, {
-        node: infoMut(dmgFormulas.charged.dmg2, { name: ct.chg(`auto.skillParams.5`) }),
-        textSuffix: "(2)"
+        node: infoMut(dmgFormulas.charged.dmg2, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(2)" }),
       }, {
         text: ct.chg("auto.skillParams.6"),
         value: datamine.charged.stamina,
@@ -172,11 +170,9 @@ const sheet: ICharacterSheet = {
 
     skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.press1, { name: ct.chg(`skill.skillParams.0`) }),
-        textSuffix: "(1)"
+        node: infoMut(dmgFormulas.skill.press1, { name: ct.chg(`skill.skillParams.0`), textSuffix: "(1)" }),
       }, {
-        node: infoMut(dmgFormulas.skill.press2, { name: ct.chg(`skill.skillParams.0`) }),
-        textSuffix: "(2)"
+        node: infoMut(dmgFormulas.skill.press2, { name: ct.chg(`skill.skillParams.0`), textSuffix: "(2)" }),
       }, {
         text: ct.chg("skill.skillParams.2"),
         value: data => data.get(input.constellation).value >= 2

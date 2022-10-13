@@ -241,17 +241,13 @@ const sheet: ICharacterSheet = {
       fields: [{
         node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.companionDmg1, { name: ct.chg(`burst.skillParams.1`) }),
-        textSuffix: ct.chg("auto.skillParams.0")
+        node: infoMut(dmgFormulas.burst.companionDmg1, { name: ct.chg(`burst.skillParams.1`), textSuffix: ct.chg("auto.skillParams.0") }),
       }, {
-        node: infoMut(dmgFormulas.burst.companionDmg2, { name: ct.chg(`burst.skillParams.1`) }),
-        textSuffix: ct.chg("auto.skillParams.1")
+        node: infoMut(dmgFormulas.burst.companionDmg2, { name: ct.chg(`burst.skillParams.1`), textSuffix: ct.chg("auto.skillParams.1") }),
       }, {
-        node: infoMut(dmgFormulas.burst.companionDmg3, { name: ct.chg(`burst.skillParams.1`) }),
-        textSuffix: ct.chg("auto.skillParams.2")
+        node: infoMut(dmgFormulas.burst.companionDmg3, { name: ct.chg(`burst.skillParams.1`), textSuffix: ct.chg("auto.skillParams.2") }),
       }, {
-        node: infoMut(dmgFormulas.burst.companionDmg4, { name: ct.chg(`burst.skillParams.1`) }),
-        textSuffix: ct.chg("auto.skillParams.3")
+        node: infoMut(dmgFormulas.burst.companionDmg4, { name: ct.chg(`burst.skillParams.1`), textSuffix: ct.chg("auto.skillParams.3") }),
       }, {
         text: ct.chg("burst.skillParams.4"),
         value: datamine.burst.duration,

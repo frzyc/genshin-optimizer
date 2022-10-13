@@ -204,8 +204,7 @@ const sheet: ICharacterSheet = {
       fields: [{
         node: infoMut(auto_dmg_, { name: ct.chg("burst.autoAtkDmgBonus_") }),
       }, {
-        node: infoMut(lifeDrain, { name: ct.chg("burst.lifeDrain_") }),
-        textSuffix: ct.ch("burst.currentHPPerSec"),
+        node: infoMut(lifeDrain, { name: ct.chg("burst.lifeDrain_"), textSuffix: ct.ch("burst.currentHPPerSec"), }),
       }, {
         text: stg("duration"),
         value: datamine.burst.duration,

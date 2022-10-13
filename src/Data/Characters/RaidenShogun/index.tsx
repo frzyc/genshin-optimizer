@@ -200,8 +200,7 @@ const sheet: ICharacterSheet = {
       text: ct.chg("auto.fields.normal"),
     }, {
       fields: datamine.normal.hitArr.map((_, i) => ({
-        node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i + (i < 4 ? 0 : -1)}`) }),
-        textSuffix: i === 3 ? "(1)" : i === 4 ? "(2)" : ""
+        node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i + (i < 4 ? 0 : -1)}`), textSuffix: i === 3 ? "(1)" : i === 4 ? "(2)" : "" }),
       }))
     }, {
       text: ct.chg("auto.fields.charged"),
@@ -272,28 +271,24 @@ const sheet: ICharacterSheet = {
       }, {
         node: infoMut(dmgFormulas.burst.hit3, { name: ct.chg(`burst.skillParams.5`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.hit41, { name: ct.chg(`burst.skillParams.6`) }),
-        textSuffix: "(1)"
+        node: infoMut(dmgFormulas.burst.hit41, { name: ct.chg(`burst.skillParams.6`), textSuffix: "(1)" }),
       }, {
-        node: infoMut(dmgFormulas.burst.hit42, { name: ct.chg(`burst.skillParams.6`) }),
-        textSuffix: "(2)"
+        node: infoMut(dmgFormulas.burst.hit42, { name: ct.chg(`burst.skillParams.6`), textSuffix: "(2)" }),
       }, {
         node: infoMut(dmgFormulas.burst.hit5, { name: ct.chg(`burst.skillParams.7`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.charged1, { name: ct.chg(`burst.skillParams.8`) }),
-        textSuffix: "(1)"
+        node: infoMut(dmgFormulas.burst.charged1, { name: ct.chg(`burst.skillParams.8`), textSuffix: "(1)" }),
       }, {
-        node: infoMut(dmgFormulas.burst.charged2, { name: ct.chg(`burst.skillParams.8`) }),
-        textSuffix: "(2)"
+        node: infoMut(dmgFormulas.burst.charged2, { name: ct.chg(`burst.skillParams.8`), textSuffix: "(2)" }),
       }, {
         text: ct.chg("burst.skillParams.9"),
         value: `${datamine.burst.stam}`,
       }, {
         node: infoMut(dmgFormulas.burst.plunge, { name: ct.chg(`burst.skillParams.10`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.plungeLow, { name: ct.chg(`burst.skillParams.11`) }),
+        node: infoMut(dmgFormulas.burst.plungeLow, { name: stg("plunging.low") }),
       }, {
-        node: infoMut(dmgFormulas.burst.plungeHigh, { name: ct.chg(`burst.skillParams.11`) }),
+        node: infoMut(dmgFormulas.burst.plungeHigh, { name: stg("plunging.high") }),
       }, {
         text: ct.chg("burst.skillParams.12"),
         value: (data) => `${datamine.burst.enerGen[data.get(input.total.burstIndex).value]}`,

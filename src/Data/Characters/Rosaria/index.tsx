@@ -171,11 +171,9 @@ const sheet: ICharacterSheet = {
 
     skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.hit1, { name: ct.chg(`skill.skillParams.0`) }),
-        textSuffix: "(1)"
+        node: infoMut(dmgFormulas.skill.hit1, { name: ct.chg(`skill.skillParams.0`), textSuffix: "(1)" }),
       }, {
-        node: infoMut(dmgFormulas.skill.hit2, { name: ct.chg(`skill.skillParams.0`) }),
-        textSuffix: "(2)"
+        node: infoMut(dmgFormulas.skill.hit2, { name: ct.chg(`skill.skillParams.0`), textSuffix: "(2)" }),
       }, {
         text: ct.chg("skill.skillParams.1"),
         value: datamine.skill.cd,
@@ -185,11 +183,9 @@ const sheet: ICharacterSheet = {
 
     burst: ct.talentTem("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.hit1, { name: ct.chg(`burst.skillParams.0`) }),
-        textSuffix: "(1)"
+        node: infoMut(dmgFormulas.burst.hit1, { name: ct.chg(`burst.skillParams.0`), textSuffix: "(1)" }),
       }, {
-        node: infoMut(dmgFormulas.burst.hit2, { name: ct.chg(`burst.skillParams.0`) }),
-        textSuffix: "(2)"
+        node: infoMut(dmgFormulas.burst.hit2, { name: ct.chg(`burst.skillParams.0`), textSuffix: "(2)" }),
       }, {
         node: infoMut(dmgFormulas.burst.dotDmg, { name: ct.chg(`burst.skillParams.1`) })
       }, {

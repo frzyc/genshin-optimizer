@@ -206,7 +206,7 @@ export default class KeyMap {
     info.name = this.get(key)
     info.unit = this.unit(key)
     info.variant = this.getVariant(key)
-    info.icon = StatIcon[allElementsWithPhy.find(e => key.startsWith(e)) ?? key]
+    info.icon = StatIcon[allElementsWithPhy.find(e => key.startsWith(`${e}_`)) ?? key]
     return info
   }
 }
