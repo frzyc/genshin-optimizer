@@ -1,7 +1,6 @@
-import { Translate } from '../../../Components/Translate'
+import { trans } from '../../SheetUtil'
 import Traveler from '../Traveler'
-const key = "TravelerF"
-const tr = (strKey: string) => <Translate ns={`char_${key}_gen`} key18={strKey} />
+const [tr] = trans("char", "TravelerF")
 
 export default {
   sheet: {

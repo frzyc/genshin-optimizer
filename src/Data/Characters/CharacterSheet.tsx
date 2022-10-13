@@ -136,13 +136,15 @@ function canShowTemplate(talentKey: TalentSheetElementKey, canShow: NumNode | un
 }
 
 export interface ICharacterTemplate {
+  tr: (i18key: string) => Displayable,
+  trm: (i18key: string) => Displayable,
   talentTemplate: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => TalentSheetElement
   headerTemplate: (talentKey: TalentSheetElementKey, partialSection: DocumentSection) => DocumentSection
   fieldsTemplate: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => IDocumentFields
   conditionalTemplate: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => DocumentConditional
 }
 export const charTemplates = (cKey: CharacterSheetKey, wKey: WeaponTypeKey, assets: AssetType): ICharacterTemplate => {
-  const [tr] = trans("char", cKey)
+  const [tr, trm] = trans("char", cKey)
 
   const img = (tk: TalentSheetElementKey): string => {
     if (tk === "auto") return Assets.weaponTypes[wKey]
@@ -150,6 +152,8 @@ export const charTemplates = (cKey: CharacterSheetKey, wKey: WeaponTypeKey, asse
   }
 
   return {
+    tr,
+    trm,
     talentTemplate: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => talentTemplate(talentKey, tr, img(talentKey), docSections),
     headerTemplate: (talentKey: TalentSheetElementKey, partialSection: DocumentSection) => headerTemplate(talentKey, tr, img(talentKey), partialSection),
     fieldsTemplate: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => fieldsTemplate(talentKey, partialFields),

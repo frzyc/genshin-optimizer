@@ -1,8 +1,9 @@
 import { CharacterData } from 'pipeline'
 import { input, tally, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, prod, subscript, sum } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
-import { cond, sgt, st, trans } from '../../SheetUtil'
+import { cond, sgt, st } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode, healNode } from '../dataUtil'
 import assets from './assets'
@@ -13,7 +14,6 @@ const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "Gorou"
 const elementKey: ElementKey = "geo"
-const [tr] = trans("char", key)
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
@@ -142,43 +142,43 @@ export const data = dataObjForCharacterSheet(key, elementKey, "inazuma", data_ge
 
 const sheet: ICharacterSheet = {
   key,
-  name: tr("name"),
+  name: ct.tr("name"),
   rarity: data_gen.star,
   elementKey,
   weaponTypeKey: data_gen.weaponTypeKey,
   gender: "M",
-  constellationName: tr("constellationName"),
-  title: tr("title"),
+  constellationName: ct.tr("constellationName"),
+  title: ct.tr("title"),
   talent: {
     auto: ct.talentTemplate("auto", [{
-      text: tr("auto.fields.normal")
+      text: ct.tr("auto.fields.normal")
     }, {
       fields: datamine.normal.hitArr.map((_, i) => ({
-        node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
+        node: infoMut(dmgFormulas.normal[i], { name: ct.tr(`auto.skillParams.${i}`) }),
       }))
     }, {
-      text: tr("auto.fields.charged"),
+      text: ct.tr("auto.fields.charged"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.charged.aimed, { key: `char_${key}_gen:auto.skillParams.4` }),
+        node: infoMut(dmgFormulas.charged.aimed, { name: ct.tr(`auto.skillParams.4`) }),
       }, {
-        node: infoMut(dmgFormulas.charged.fully, { key: `char_${key}_gen:auto.skillParams.5` }),
+        node: infoMut(dmgFormulas.charged.fully, { name: ct.tr(`auto.skillParams.5`) }),
       }]
     }, {
-      text: tr("auto.fields.plunging"),
+      text: ct.tr("auto.fields.plunging"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+        node: infoMut(dmgFormulas.plunging.dmg, { name: sgt("plunging.dmg") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        node: infoMut(dmgFormulas.plunging.low, { name: sgt("plunging.low") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        node: infoMut(dmgFormulas.plunging.high, { name: sgt("plunging.high") }),
       }]
     }]),
 
     skill: ct.talentTemplate("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` })
+        node: infoMut(dmgFormulas.skill.dmg, { name: ct.tr(`skill.skillParams.0`) })
       }, {
         text: sgt("duration"),
         value: datamine.skill.duration,
@@ -196,12 +196,12 @@ const sheet: ICharacterSheet = {
       states: {
         inField: {
           fields: [{
-            node: infoMut(skill1_defDisp, { key: "def" }),
+            node: infoMut(skill1_defDisp, KeyMap.keyToInfo("def")),
           }, {
             canShow: data => data.get(tally["geo"]).value >= 2,
             text: st("incInterRes")
           }, {
-            node: infoMut(skill3_geo_dmg_Disp, { key: "geo_dmg_", variant: "geo" }),
+            node: infoMut(skill3_geo_dmg_Disp, KeyMap.keyToInfo("geo_dmg_")),
           }]
         }
       }
@@ -213,16 +213,18 @@ const sheet: ICharacterSheet = {
       teamBuff: true,
       canShow: greaterEq(tally.geo, 2, 1),
       fields: [{
-        node: infoMut(dmgFormulas.constellation4.heal, { key: "sheet_gen:healing" }),
+        node: infoMut(dmgFormulas.constellation4.heal, { name: sgt("healing") }),
       }]
     })]),
 
     burst: ct.talentTemplate("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` })
+        node: infoMut(dmgFormulas.burst.dmg, { name: ct.tr(`burst.skillParams.0`) })
       }, {
-        node: infoMut(dmgFormulas.burst.crystalCollapse, { key: `char_${key}_gen:burst.skillParams.1` }),
-        textSuffix: st("brHits", { count: datamine.burst.crystalHits })
+        node: infoMut(dmgFormulas.burst.crystalCollapse, {
+          name: ct.tr(`burst.skillParams.1`),
+          multi: datamine.burst.crystalHits,
+        }),
       }, {
         text: sgt("duration"),
         value: datamine.burst.duration,

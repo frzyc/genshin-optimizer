@@ -19,7 +19,7 @@ const eleMas = equal(condPassive, "on", subscript(input.weapon.refineIndex, eleM
 const dmg_arr = [1, 1.2, 1.4, 1.6, 1.8]
 const dmg = equal(input.weapon.key, key, customDmgNode(
   prod(
-    subscript(input.weapon.refineIndex, dmg_arr, { key: "_" }),
+    subscript(input.weapon.refineIndex, dmg_arr, { unit: "%" }),
     input.total.atk
   ),
   "elemental",
@@ -39,7 +39,7 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
-      node: infoMut(dmg, { key: "sheet:dmg" }),
+      node: infoMut(dmg, { name: st("dmg") }),
     }]
   }, {
     value: condPassive,

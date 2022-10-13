@@ -1,6 +1,7 @@
 import { WeaponData } from 'pipeline'
 import { input, target } from '../../../../Formula'
 import { equal, infoMut, subscript } from '../../../../Formula/utils'
+import KeyMap from '../../../../KeyMap'
 import { WeaponKey } from '../../../../Types/consts'
 import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
@@ -38,7 +39,7 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: infoMut(eleMas_disp, { key: "ele_mas" }),
+          node: infoMut(eleMas_disp, KeyMap.keyToInfo("eleMas")),
         }, {
           text: sgt("duration"),
           value: 12,

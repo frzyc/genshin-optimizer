@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { equal, infoMut, prod, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { customHealNode } from '../../../Characters/dataUtil'
-import { st } from '../../../SheetUtil'
+import { sgt, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
@@ -25,7 +25,7 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
-      node: infoMut(healing, { key: "sheet_gen:healing" })
+      node: infoMut(healing, { name: sgt("healing"), variant: "heal" })
     }]
   }]
 }

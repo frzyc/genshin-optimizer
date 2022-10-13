@@ -34,7 +34,7 @@ const sheet: IArtifactSheet = {
       document: [{
         header: setHeader(4),
         fields: [{
-          node: infoMut(heal, { key: `artifact_${key}:condName`, variant: "physical" })
+          node: infoMut(heal, { name: ArtifactSheet.trm(key)("condName"), variant: "physical" })
         }]
       }]
     }

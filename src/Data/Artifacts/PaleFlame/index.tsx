@@ -1,6 +1,7 @@
 import { input } from '../../../Formula'
 import { Data, Info } from '../../../Formula/type'
 import { equal, greaterEq, lookup, naught, percent, sum } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, sgt, st } from '../../SheetUtil'
@@ -13,7 +14,7 @@ const setHeader = setHeaderTemplate(key, icons)
 
 const [condStackPath, condStack] = cond(key, "stacks")
 
-const physical_dmg_info: Info = { key: "physical_dmg_" }
+const physical_dmg_info: Info = KeyMap.keyToInfo("physical_dmg_")
 const set2 = greaterEq(input.artSet.PaleFlame, 2, percent(0.25), physical_dmg_info)
 
 const stackArr = range(1, 2)

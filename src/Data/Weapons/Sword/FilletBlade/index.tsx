@@ -16,7 +16,7 @@ const data_gen = data_gen_json as WeaponData
 const dmg_Src = [2.4, 2.8, 3.2, 3.6, 4]
 const cd_Src = [15, 14, 13, 12, 11]
 const dmg_ = equal(input.weapon.key, key,
-  customDmgNode(prod(subscript(input.weapon.refineIndex, dmg_Src, { key: "_" }), input.premod.atk), "elemental", {
+  customDmgNode(prod(subscript(input.weapon.refineIndex, dmg_Src, { unit: "%" }), input.premod.atk), "elemental", {
     hit: { ele: constant("physical") }
   }))
 
@@ -29,7 +29,7 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
-      node: infoMut(dmg_, { key: "sheet:dmg" })
+      node: infoMut(dmg_, { name: st("dmg") })
     }, {
       text: sgt("cd"),
       value: (data) => cd_Src[data.get(input.weapon.refineIndex).value],

@@ -2,7 +2,7 @@ import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
 import { constant, equal, equalStr, greaterEq, infoMut, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
-import { cond, st, trans } from '../../SheetUtil'
+import { cond, sgt, st } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode, healNodeTalent, shieldElement, shieldNode, shieldNodeTalent } from '../dataUtil'
 import assets from './assets'
@@ -13,7 +13,6 @@ const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "Noelle"
 const elementKey: ElementKey = "geo"
-const [tr, trm] = trans("char", key)
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0
@@ -81,13 +80,13 @@ const nodeBurstInfusion = equalStr(condBurst, "on", "geo")
 const nodeBurstAtk = equal("on", condBurst, prod(
   input.total.def,
   sum(
-    subscript(input.total.burstIndex, datamine.burst.defToAtk, { key: "_" }),
+    subscript(input.total.burstIndex, datamine.burst.defToAtk, { unit: "%" }),
     greaterEq(input.constellation, 6, percent(datamine.constellation6.burstAtkBonus))
   )
 ))
 
-const nodeSkillHealChanceBase = subscript(input.total.skillIndex, datamine.skill.healChance, { key: `char_${key}:skillHeal_` })
-const nodeSkillHealChanceC1BurstOn = equal("on", condBurst, percent(datamine.constellation1.healingChance), { key: `char_${key}:skillHeal_` })
+const nodeSkillHealChanceBase = subscript(input.total.skillIndex, datamine.skill.healChance, { name: ct.tr("skillHeal_") })
+const nodeSkillHealChanceC1BurstOn = equal("on", condBurst, percent(datamine.constellation1.healingChance), { name: ct.tr("skillHeal_") })
 const nodeSkillHealChanceC1BurstOff = unequal("on", condBurst, nodeSkillHealChanceBase)
 
 const nodeC2ChargeDMG = greaterEq(input.constellation, 2, percent(datamine.constellation2.chargeDmg_))
@@ -141,55 +140,55 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
 
 const sheet: ICharacterSheet = {
   key,
-  name: tr("name"),
+  name: ct.tr("name"),
   rarity: data_gen.star,
   elementKey: "geo",
   weaponTypeKey: data_gen.weaponTypeKey,
   gender: "F",
-  constellationName: tr("constellationName"),
-  title: tr("title"),
+  constellationName: ct.tr("constellationName"),
+  title: ct.tr("title"),
   talent: {
     auto: ct.talentTemplate("auto", [{
-      text: tr("auto.fields.normal"),
+      text: ct.tr("auto.fields.normal"),
     }, {
       fields: datamine.normal.hitArr.map((_, i) => ({
-        node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
+        node: infoMut(dmgFormulas.normal[i], { name: ct.tr(`auto.skillParams.${i}`) }),
       }))
     }, {
-      text: tr("auto.fields.charged"),
+      text: ct.tr("auto.fields.charged"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.charged.spinningDmg, { key: `char_${key}_gen:auto.skillParams.4` }),
+        node: infoMut(dmgFormulas.charged.spinningDmg, { name: ct.tr(`auto.skillParams.4`) }),
       }, {
-        node: infoMut(dmgFormulas.charged.finalDmg, { key: `char_${key}_gen:auto.skillParams.5` }),
+        node: infoMut(dmgFormulas.charged.finalDmg, { name: ct.tr(`auto.skillParams.5`) }),
       }, {
-        text: tr("auto.skillParams.6"),
+        text: ct.tr("auto.skillParams.6"),
         value: datamine.charged.stamina,
         unit: '/s'
       }, {
-        text: tr("auto.skillParams.7"),
+        text: ct.tr("auto.skillParams.7"),
         value: datamine.charged.duration,
         unit: 's'
       }],
     }, {
-      text: tr("auto.fields.plunging"),
+      text: ct.tr("auto.fields.plunging"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+        node: infoMut(dmgFormulas.plunging.dmg, { name: sgt("plunging.dmg") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        node: infoMut(dmgFormulas.plunging.low, { name: sgt("plunging.low") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        node: infoMut(dmgFormulas.plunging.high, { name: sgt("plunging.high") }),
       }],
     }]),
 
     skill: ct.talentTemplate("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
+        node: infoMut(dmgFormulas.skill.dmg, { name: ct.tr(`skill.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.shield, { key: `char_${key}_gen:skill.skillParams.1` }),
+        node: infoMut(dmgFormulas.skill.shield, { name: ct.tr(`skill.skillParams.1`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.heal, { key: `char_${key}_gen:skill.skillParams.2` }),
+        node: infoMut(dmgFormulas.skill.heal, { name: ct.tr(`skill.skillParams.2`) }),
       }, { //Heal trigger chance
         canShow: data => data.get(input.constellation).value === 0,
         node: nodeSkillHealChanceBase,
@@ -200,44 +199,44 @@ const sheet: ICharacterSheet = {
         canShow: data => data.get(input.constellation).value >= 1,
         node: nodeSkillHealChanceC1BurstOn,
       }, { //Shield Duration
-        text: tr("skill.skillParams.4"),
+        text: ct.tr("skill.skillParams.4"),
         value: datamine.skill.shieldDuration,
         unit: "s"
       }, { //Cooldown
         canShow: data => data.get(input.asc).value < 4,
-        text: tr("skill.skillParams.5"),
+        text: ct.tr("skill.skillParams.5"),
         value: datamine.skill.cd,
         unit: "s"
       }, {
         canShow: data => data.get(input.asc).value >= 4,
-        text: tr("skill.skillParams.5"),
-        value: trm(`p4cd`),
+        text: ct.tr("skill.skillParams.5"),
+        value: ct.trm(`p4cd`),
       }]
     }]),
 
     burst: ct.talentTemplate("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.burstDmg, { key: `char_${key}_gen:burst.skillParams.0` }),
+        node: infoMut(dmgFormulas.burst.burstDmg, { name: ct.tr(`burst.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.skillDmg, { key: `char_${key}_gen:burst.skillParams.1` }),
+        node: infoMut(dmgFormulas.burst.skillDmg, { name: ct.tr(`burst.skillParams.1`) }),
       }, {
         canShow: data => data.get(input.constellation).value < 6,
-        text: tr("burst.skillParams.3"),
+        text: ct.tr("burst.skillParams.3"),
         value: datamine.burst.duration,
         unit: "s"
       }, {
         canShow: data => data.get(input.constellation).value >= 6,
-        text: tr("burst.skillParams.3"),
-        value: trm(`c6duration`),
+        text: ct.tr("burst.skillParams.3"),
+        value: ct.trm(`c6duration`),
       }, {
-        text: tr("burst.skillParams.4"),
+        text: ct.tr("burst.skillParams.4"),
         value: datamine.burst.cd,
       }, {
-        text: tr("burst.skillParams.5"),
+        text: ct.tr("burst.skillParams.5"),
         value: datamine.burst.enerCost,
       }],
     }, ct.conditionalTemplate("burst", {
-      name: tr("burst.name"),
+      name: ct.tr("burst.name"),
       value: condBurst,
       path: condBurstPath,
       states: {
@@ -246,7 +245,7 @@ const sheet: ICharacterSheet = {
             text: st("infusion.geo"),
             variant: "geo",
           }, {
-            text: trm("qlarger")
+            text: ct.trm("qlarger")
           }, {
             node: nodeBurstAtk
           }]
@@ -256,13 +255,13 @@ const sheet: ICharacterSheet = {
 
     passive1: ct.talentTemplate("passive1", [ct.fieldsTemplate("passive1", {
       fields: [{
-        node: infoMut(dmgFormulas.passive1.devotionShield, { key: `char_${key}_gen:skill.skillParams.1` })
+        node: infoMut(dmgFormulas.passive1.devotionShield, { name: ct.tr(`skill.skillParams.1`) })
       }, {
-        text: tr("skill.skillParams.4"),
+        text: ct.tr("skill.skillParams.4"),
         value: datamine.passive1.duration,
         unit: "s"
       }, {
-        text: tr("skill.skillParams.5"),
+        text: ct.tr("skill.skillParams.5"),
         value: datamine.passive1.cooldown,
         unit: "s"
       }]
@@ -280,7 +279,7 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTemplate("constellation3", [{ fields: [{ node: nodeC3 }] }]),
     constellation4: ct.talentTemplate("constellation4", [ct.fieldsTemplate("constellation4", {
       fields: [{
-        node: infoMut(nodeC4dmg, { key: `char_${key}:c4dmg` })
+        node: infoMut(nodeC4dmg, { name: ct.tr("c4dmg") })
       }]
     })]),
     constellation5: ct.talentTemplate("constellation5", [{ fields: [{ node: nodeC5 }] }]),

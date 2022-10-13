@@ -4,6 +4,7 @@ import { tally } from "../Formula";
 import { inferInfoMut } from "../Formula/api";
 import { UIData } from "../Formula/uiData";
 import { equal, greaterEq, infoMut, percent, sum } from "../Formula/utils";
+import KeyMap from "../KeyMap";
 import { allElements, allElementsWithPhy } from "../Types/consts";
 import { DocumentSection } from "../Types/sheet";
 import { objectKeyValueMap } from "../Util/Util";
@@ -192,9 +193,9 @@ const condSC2elePath = ["resonance", "SprawlingCanopy2ele"]
 const condSC2ele = condReadNode(condSC2elePath)
 const condSC3elePath = ["resonance", "SprawlingCanopy3ele"]
 const condSC3ele = condReadNode(condSC3elePath)
-const scBase_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, 50, { key: "eleMas" }))
-const sc2ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC2ele, "on", 30, { key: "eleMas" })))
-const sc3ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC3ele, "on", 20, { key: "eleMas" })))
+const scBase_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, 50, KeyMap.keyToInfo("eleMas")))
+const sc2ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC2ele, "on", 30, KeyMap.keyToInfo("eleMas"))))
+const sc3ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC3ele, "on", 20, KeyMap.keyToInfo("eleMas"))))
 const sprawlingGreenery: IResonance = {
   name: tr("SprawlingGreenery.name"),
   desc: tr("SprawlingGreenery.desc"),

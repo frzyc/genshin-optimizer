@@ -1,9 +1,10 @@
 import { CharacterData } from 'pipeline'
 import { input, target } from '../../../Formula'
 import { equal, greaterEq, infoMut, lookup, naught, prod } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
-import { cond, sgt, st, trans } from '../../SheetUtil'
+import { cond, sgt, st } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import assets from './assets'
@@ -14,7 +15,6 @@ const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "Albedo"
 const elementKey: ElementKey = "geo"
-const [tr, trm] = trans("char", key)
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
@@ -156,56 +156,56 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
 
 const sheet: ICharacterSheet = {
   key,
-  name: tr("name"),
+  name: ct.tr("name"),
   rarity: data_gen.star,
   elementKey,
   weaponTypeKey: data_gen.weaponTypeKey,
   gender: "M",
-  constellationName: tr("constellationName"),
-  title: tr("title"),
+  constellationName: ct.tr("constellationName"),
+  title: ct.tr("title"),
   talent: {
     auto: ct.talentTemplate("auto", [{
-      text: tr("auto.fields.normal")
+      text: ct.tr("auto.fields.normal")
     }, {
       fields: datamine.normal.hitArr.map((_, i) => ({
-        node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
+        node: infoMut(dmgFormulas.normal[i], { name: ct.tr(`auto.skillParams.${i}`) }),
       }))
     }, {
-      text: tr("auto.fields.charged"),
+      text: ct.tr("auto.fields.charged"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.5` }),
+        node: infoMut(dmgFormulas.charged.dmg1, { name: ct.tr(`auto.skillParams.5`) }),
         textSuffix: "(1)"
       }, {
-        node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${key}_gen:auto.skillParams.5` }),
+        node: infoMut(dmgFormulas.charged.dmg2, { name: ct.tr(`auto.skillParams.5`) }),
         textSuffix: "(2)"
       }, {
-        text: tr("auto.skillParams.6"),
+        text: ct.tr("auto.skillParams.6"),
         value: datamine.charged.stamina,
       }],
     }, {
-      text: tr("auto.fields.plunging"),
+      text: ct.tr("auto.fields.plunging"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+        node: infoMut(dmgFormulas.plunging.dmg, { name: sgt("plunging.dmg") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        node: infoMut(dmgFormulas.plunging.low, { name: sgt("plunging.low") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        node: infoMut(dmgFormulas.plunging.high, { name: sgt("plunging.high") }),
       }],
     }]),
 
     skill: ct.talentTemplate("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` })
+        node: infoMut(dmgFormulas.skill.dmg, { name: ct.tr(`skill.skillParams.0`) })
       }, {
-        node: infoMut(dmgFormulas.skill.blossom, { key: `char_${key}_gen:skill.skillParams.1` })
+        node: infoMut(dmgFormulas.skill.blossom, { name: ct.tr(`skill.skillParams.1`) })
       }, {
-        text: trm("blossomCD"),
+        text: ct.trm("blossomCD"),
         value: datamine.skill.blossomCd,
         unit: "s"
       }, {
-        text: tr("skill.skillParams.2"),
+        text: ct.tr("skill.skillParams.2"),
         value: datamine.skill.duration,
         unit: "s"
       }, {
@@ -220,13 +220,13 @@ const sheet: ICharacterSheet = {
       states: {
         belowHp: {
           fields: [{
-            node: infoMut(p1_blossom_dmg_, { key: `char_${key}:blossomDmg_` })
+            node: infoMut(p1_blossom_dmg_, { name: ct.tr("blossomDmg_") })
           }]
         }
       }
     }), ct.headerTemplate("constellation1", {
       fields: [{
-        text: trm("enerPerBlossom"),
+        text: ct.trm("enerPerBlossom"),
         value: datamine.constellation1.blossomEner,
         fixed: 1,
       }]
@@ -238,7 +238,7 @@ const sheet: ICharacterSheet = {
       states: {
         skillInField: {
           fields: [{
-            node: infoMut(c4_plunging_dmg_disp, { key: "plunging_dmg_" })
+            node: infoMut(c4_plunging_dmg_disp, KeyMap.keyToInfo("plunging_dmg_"))
           }]
         }
       }
@@ -251,7 +251,7 @@ const sheet: ICharacterSheet = {
       states: {
         c6Crystallize: {
           fields: [{
-            node: infoMut(c6_Crystal_all_dmg_disp, { key: "all_dmg_" }),
+            node: infoMut(c6_Crystal_all_dmg_disp, KeyMap.keyToInfo("all_dmg_")),
           }]
         }
       }
@@ -259,7 +259,7 @@ const sheet: ICharacterSheet = {
 
     burst: ct.talentTemplate("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
+        node: infoMut(dmgFormulas.burst.dmg, { name: ct.tr(`burst.skillParams.0`) }),
       }, {
         text: sgt("cd"),
         value: datamine.burst.cd,
@@ -271,12 +271,14 @@ const sheet: ICharacterSheet = {
     }, ct.conditionalTemplate("burst", {
       value: condBurstBlossom,
       path: condBurstBlossomPath,
-      name: trm("isotomaOnField"),
+      name: ct.trm("isotomaOnField"),
       states: {
         isoOnField: {
           fields: [{
-            node: infoMut(dmgFormulas.burst.blossom, { key: `char_${key}_gen:burst.skillParams.1` }),
-            textSuffix: st("brHits", { count: datamine.burst.blossomAmt })
+            node: infoMut(dmgFormulas.burst.blossom, {
+              name: ct.tr(`burst.skillParams.1`),
+              multi: datamine.burst.blossomAmt,
+            }),
           }]
         }
       }
@@ -299,7 +301,7 @@ const sheet: ICharacterSheet = {
     }), ct.conditionalTemplate("constellation2", {
       value: condC2Stacks,
       path: condC2StacksPath,
-      name: trm("c2Stacks"),
+      name: ct.trm("c2Stacks"),
       states: Object.fromEntries(range(1, datamine.constellation2.maxStacks).map(i =>
         [i, {
           name: st("stack", { count: i }),

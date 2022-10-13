@@ -14,10 +14,11 @@ export function cond(key: NonTravelerCharacterKey | "TravelerAnemo" | "TravelerG
 }
 
 type Translated = [tr: ((i18key: string) => Displayable), tran: ((i18key: string, values?: object) => Displayable)]
-export function trans(typeKey: "char", key: CharacterSheetKey): Translated
+type CharTransKey = CharacterSheetKey | "TravelerM" | "TravelerF" | "TravelerAnemo" | "TravelerGeo" | "TravelerElectro" | "TravelerElectro"
+export function trans(typeKey: "char", key: CharTransKey): Translated
 export function trans(typeKey: "weapon", key: WeaponKey): Translated
 export function trans(typeKey: "artifact", key: ArtifactSetKey): Translated
-export function trans(typeKey: "char" | "weapon" | "artifact", key: CharacterSheetKey | WeaponKey | ArtifactSetKey): Translated {
+export function trans(typeKey: "char" | "weapon" | "artifact", key: CharTransKey | WeaponKey | ArtifactSetKey): Translated {
   return [
     (strKey: string) => <Translate ns={`${typeKey}_${key}_gen`} key18={strKey} />,
     (strKey: string, values?: object) => <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />

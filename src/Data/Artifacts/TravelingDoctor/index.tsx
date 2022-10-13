@@ -2,7 +2,7 @@ import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
-import { cond, st } from '../../SheetUtil'
+import { cond, sgt, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
@@ -38,7 +38,7 @@ const sheet: IArtifactSheet = {
         states: {
           on: {
             fields: [{
-              node: infoMut(heal, { key: "sheet_gen:healing", variant: "heal" })
+              node: infoMut(heal, { name: sgt("healing"), variant: "heal" })
             }]
           }
         }

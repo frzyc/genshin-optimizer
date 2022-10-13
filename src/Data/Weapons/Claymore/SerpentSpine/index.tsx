@@ -18,7 +18,7 @@ const all_dmg_s = [0.06, 0.07, 0.08, 0.09, 0.1]
 const takeDMG_s = [3, 2.7, 2.4, 2.2, 2]
 
 const [condPassivePath, condPassive] = cond(key, "Wavesplitter")
-const all_dmg_ = subscript(input.weapon.refineIndex, all_dmg_s, { key: "_" })
+const all_dmg_ = subscript(input.weapon.refineIndex, all_dmg_s, { unit: "%" })
 const all_dmg_stack = lookup(condPassive, {
   ...objectKeyMap(range(1, 5), i => prod(all_dmg_, i)),
 }, naught)

@@ -17,9 +17,9 @@ const normal_dmg_Src = [0.4, 0.5, 0.6, 0.7, 0.8]
 const charged_dmg_Src = [0.4, 0.5, 0.6, 0.7, 0.8]
 const def_ = subscript(input.weapon.refineIndex, def_Src)
 const normal_dmgInc = equal(input.weapon.key, key,
-  prod(subscript(input.weapon.refineIndex, normal_dmg_Src, { key: "_" }), input.premod.def))
+  prod(subscript(input.weapon.refineIndex, normal_dmg_Src, { unit: "%" }), input.premod.def))
 const charged_dmgInc = equal(input.weapon.key, key,
-  prod(subscript(input.weapon.refineIndex, charged_dmg_Src, { key: "_" }), input.premod.def))
+  prod(subscript(input.weapon.refineIndex, charged_dmg_Src, { unit: "%" }), input.premod.def))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

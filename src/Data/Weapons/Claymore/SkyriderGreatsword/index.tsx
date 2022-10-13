@@ -15,7 +15,7 @@ const data_gen = data_gen_json as WeaponData
 
 const [condStackPath, condStack] = cond(key, "stack")
 const bonusInc = [0.06, 0.07, 0.08, 0.09, 0.1]
-const atk_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(input.weapon.refineIndex, bonusInc, { key: "_" }), i)), naught)
+const atk_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(input.weapon.refineIndex, bonusInc, { unit: "%" }), i)), naught)
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

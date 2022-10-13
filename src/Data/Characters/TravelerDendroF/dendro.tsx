@@ -2,6 +2,7 @@ import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import { DisplaySub } from '../../../Formula/type'
 import { equal, greaterEq, infoMut, lookup, naught, percent, prod } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, sgt, st } from '../../SheetUtil'
@@ -57,17 +58,17 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
       stack,
       prod(datamine.passive1.eleMas, stack)
     ])), naught),
-    { key: "eleMas" }
+    KeyMap.keyToInfo("eleMas")
   )
   const a1_eleMas = equal(input.activeCharKey, target.charKey, a1_eleMas_disp)
 
   const a4_skill_dmg_ = greaterEq(input.asc, 4,
     prod(percent(datamine.passive2.skill_dmgInc, { fixed: 2 }), input.total.eleMas),
-    { key: "_" }
+    { unit: "%" }
   )
   const a4_burst_dmg_ = greaterEq(input.asc, 4,
     prod(percent(datamine.passive2.burst_dmgInc), input.total.eleMas),
-    { key: "_" }
+    { unit: "%" }
   )
 
   const [condC6BurstEffectPath, condC6BurstEffect] = cond(condCharKey, "c6BurstEffect")
@@ -124,7 +125,7 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
   const talent: TalentSheet = {
     skill: ct.talentTemplate("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` })
+        node: infoMut(dmgFormulas.skill.dmg, { name: ct.tr(`skill.skillParams.0`) })
       }, {
         text: sgt("cd"),
         value: datamine.skill.cd,
@@ -135,11 +136,11 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
     burst: ct.talentTemplate("burst", [{
       fields: [{
         node: infoMut(dmgFormulas.burst.lampDmg,
-          { key: `char_${key}_gen:burst.skillParams.0` }
+          { name: ct.tr(`burst.skillParams.0`) }
         )
       }, {
         node: infoMut(dmgFormulas.burst.explosionDmg,
-          { key: `char_${key}_gen:burst.skillParams.1` }
+          { name: ct.tr(`burst.skillParams.1`) }
         )
       }, {
         text: sgt("duration"),
@@ -183,7 +184,7 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
       states: {
         on: {
           fields: [{
-            node: infoMut(c6_dendro_dmg_disp, { key: "dendro_dmg_", variant: "dendro", isTeamBuff: true }),
+            node: infoMut(c6_dendro_dmg_disp, { ...KeyMap.keyToInfo("dendro_dmg_"), isTeamBuff: true }),
           }]
         }
       }
@@ -196,7 +197,7 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
       states: Object.fromEntries(Object.entries(c6_ele_dmg_disp).map(([ele, node]) => [
         ele, {
           name: <ColorText color={ele}>{sgt(`element.${ele}`)}</ColorText>,
-          fields: [{ node: infoMut(node, { key: `${ele}_dmg_`, variant: ele as ElementKey, isTeamBuff: true }) }],
+          fields: [{ node: infoMut(node, { ...KeyMap.keyToInfo(`${ele}_dmg_`), isTeamBuff: true }) }],
         }
       ]))
     })]),

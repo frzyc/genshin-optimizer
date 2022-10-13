@@ -1,6 +1,7 @@
 import { WeaponData } from 'pipeline'
 import { input, target } from '../../../../Formula'
 import { equal, infoMut, subscript } from '../../../../Formula/utils'
+import KeyMap from '../../../../KeyMap'
 import { WeaponKey } from '../../../../Types/consts'
 import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
@@ -15,7 +16,7 @@ const [, trm] = trans("weapon", key)
 
 const [condPassivePath, condPassive] = cond(key, "passive")
 const atk_arr = [0.16, 0.2, 0.24, 0.28, 0.32]
-const atk_disp = equal(condPassive, 'on', subscript(input.weapon.refineIndex, atk_arr, { key: "_" }))
+const atk_disp = equal(condPassive, 'on', subscript(input.weapon.refineIndex, atk_arr, { unit: "%" }))
 const atk_ = equal(input.activeCharKey, target.charKey, atk_disp)
 const data = dataObjForWeaponSheet(key, data_gen, {
   teamBuff: {
@@ -37,7 +38,7 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: infoMut(atk_disp, { key: "atk_" }),
+          node: infoMut(atk_disp, KeyMap.keyToInfo("atk_")),
         }, {
           text: sgt("duration"),
           value: 12,

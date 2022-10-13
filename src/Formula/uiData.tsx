@@ -13,6 +13,7 @@ export interface NodeDisplay<V = number> {
   value: V
   /** Whether the node fails the conditional test (`threshold_add`, `match`, etc.) or consists solely of empty nodes */
   isEmpty: boolean
+  /**@deprecated Should use info.unit instead */
   unit: Unit
   formula?: Displayable
   formulas: Displayable[]

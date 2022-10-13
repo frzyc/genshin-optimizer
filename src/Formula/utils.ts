@@ -7,7 +7,7 @@ type Str = string | undefined | StrNode
 type N_S = Num | Str
 type AnyNode = NumNode | StrNode
 
-export const todo: NumNode = constant(NaN, { key: "TODO" })
+export const todo: NumNode = constant(NaN, { name: "TODO" })
 export const one = percent(1), naught = percent(0)
 export const none = constant("none")
 
@@ -23,7 +23,7 @@ export function constant(value: number | string | undefined, info?: Info): Const
 export function percent(value: number, info?: Info): ConstantNode<number> {
   if (value >= Number.MAX_VALUE / 100) value = Infinity
   if (value <= -Number.MAX_VALUE / 100) value = -Infinity
-  return constant(value, { key: "_", ...info })
+  return constant(value, { unit: "%", ...info })
 }
 /** Inject `info` to the node in-place */
 export function infoMut(node: NumNode, info: Info): NumNode

@@ -2,8 +2,9 @@ import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { absorbableEle, CharacterKey, ElementKey } from '../../../Types/consts'
-import { cond, sgt, st, trans } from '../../SheetUtil'
+import { cond, sgt, st } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import assets from './assets'
@@ -14,7 +15,6 @@ const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "Venti"
 const elementKey: ElementKey = "anemo"
-const [tr, trm] = trans("char", key)
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
@@ -127,7 +127,7 @@ const dmgFormulas = {
       customDmgNode(
         prod(
           percent(datamine.constellation1.dmgRatio),
-          subscript(input.total.autoIndex, datamine.charged.aimed, { key: "_" }),
+          subscript(input.total.autoIndex, datamine.charged.aimed, { unit: "%" }),
           input.total.atk
         ),
         "charged"
@@ -137,7 +137,7 @@ const dmgFormulas = {
       customDmgNode(
         prod(
           percent(datamine.constellation1.dmgRatio),
-          subscript(input.total.autoIndex, datamine.charged.fully, { key: "_" }),
+          subscript(input.total.autoIndex, datamine.charged.fully, { unit: "%" }),
           input.total.atk
         ),
         "charged", { hit: { ele: constant(elementKey) } }
@@ -166,54 +166,54 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
 
 const sheet: ICharacterSheet = {
   key,
-  name: tr("name"),
+  name: ct.tr("name"),
   rarity: data_gen.star,
   elementKey,
   weaponTypeKey: data_gen.weaponTypeKey,
   gender: "M",
-  constellationName: tr("constellationName"),
-  title: tr("title"),
+  constellationName: ct.tr("constellationName"),
+  title: ct.tr("title"),
   talent: {
     auto: ct.talentTemplate("auto", [{
-      text: tr("auto.fields.normal")
+      text: ct.tr("auto.fields.normal")
     }, {
       fields: datamine.normal.hitArr.map((_, i) => ({
-        node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
-        textSuffix: (i === 0 || i === 3) ? st("brHits", { count: 2 }) : ""
+        node: infoMut(dmgFormulas.normal[i], { name: ct.tr(`auto.skillParams.${i}`) }),
+        multi: (i === 0 || i === 3) ? 2 : undefined
       }))
     }, {
-      text: tr("auto.fields.charged"),
+      text: ct.tr("auto.fields.charged"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.charged.aimed, { key: `char_${key}_gen:auto.skillParams.6` }),
+        node: infoMut(dmgFormulas.charged.aimed, { name: ct.tr(`auto.skillParams.6`) }),
       }, {
-        node: infoMut(dmgFormulas.constellation1.aimed, { key: `char_${key}:addAimed` })
+        node: infoMut(dmgFormulas.constellation1.aimed, { name: ct.tr("addAimed") })
       }, {
-        node: infoMut(dmgFormulas.charged.fully, { key: `char_${key}_gen:auto.skillParams.7` }),
+        node: infoMut(dmgFormulas.charged.fully, { name: ct.tr(`auto.skillParams.7`) }),
       }, {
-        node: infoMut(dmgFormulas.constellation1.fully, { key: `char_${key}:addFullAimed` })
+        node: infoMut(dmgFormulas.constellation1.fully, { name: ct.tr("addFullAimed") })
       }]
     }, {
-      text: tr("auto.fields.plunging"),
+      text: ct.tr("auto.fields.plunging"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+        node: infoMut(dmgFormulas.plunging.dmg, { name: sgt("plunging.dmg") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        node: infoMut(dmgFormulas.plunging.low, { name: sgt("plunging.low") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        node: infoMut(dmgFormulas.plunging.high, { name: sgt("plunging.high") }),
       }]
     }]),
 
     skill: ct.talentTemplate("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` })
+        node: infoMut(dmgFormulas.skill.press, { name: ct.tr(`skill.skillParams.0`) })
       }, {
-        text: tr("skill.skillParams.1"),
+        text: ct.tr("skill.skillParams.1"),
         value: datamine.skill.pressCD,
         unit: "s"
       }, {
-        node: infoMut(dmgFormulas.skill.hold, { key: `char_${key}_gen:skill.skillParams.2` })
+        node: infoMut(dmgFormulas.skill.hold, { name: ct.tr(`skill.skillParams.2`) })
       }, {
         text: st("holdCD"),
         value: datamine.skill.holdCD,
@@ -221,7 +221,7 @@ const sheet: ICharacterSheet = {
       }]
     }, ct.headerTemplate("passive1", {
       fields: [{
-        text: trm("upcurrentDuration"),
+        text: ct.trm("upcurrentDuration"),
         value: datamine.passive1.duration,
         unit: "s"
       }]
@@ -229,20 +229,20 @@ const sheet: ICharacterSheet = {
       value: condC2,
       path: condC2Path,
       teamBuff: true,
-      name: tr("constellation2.name"),
+      name: ct.tr("constellation2.name"),
       states: {
         hit: {
-          name: trm("c2.hit"),
+          name: ct.trm("c2.hit"),
           fields: [{
-            node: infoMut(c2Hit_anemo_enemyRes_, { key: "anemo_enemyRes_", variant: "anemo" })
+            node: infoMut(c2Hit_anemo_enemyRes_, KeyMap.keyToInfo("anemo_enemyRes_"))
           }, {
             node: c2Hit_phys_enemyRes__
           }]
         },
         launched: {
-          name: trm("c2.launched"),
+          name: ct.trm("c2.launched"),
           fields: [{
-            node: infoMut(c2Hit_anemo_enemyRes_, { key: "anemo_enemyRes_", variant: "anemo" })
+            node: infoMut(c2Hit_anemo_enemyRes_, KeyMap.keyToInfo("anemo_enemyRes_"))
           }, {
             node: c2Hit_phys_enemyRes__
           }]
@@ -252,18 +252,18 @@ const sheet: ICharacterSheet = {
 
     burst: ct.talentTemplate("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.base, { key: `char_${key}_gen:burst.skillParams.0` }),
-        textSuffix: st("brHits", { count: datamine.burst.baseTicks })
+        node: infoMut(dmgFormulas.burst.base, { name: ct.tr(`burst.skillParams.0`), multi: datamine.burst.baseTicks }),
+
       }, {
-        text: tr("burst.skillParams.2"),
+        text: ct.tr("burst.skillParams.2"),
         value: datamine.burst.duration,
         unit: "s"
       }, {
-        text: tr("burst.skillParams.3"),
+        text: ct.tr("burst.skillParams.3"),
         value: datamine.burst.cd,
         unit: "s"
       }, {
-        text: tr("burst.skillParams.4"),
+        text: ct.tr("burst.skillParams.4"),
         value: datamine.burst.enerCost,
       }]
     }, ct.conditionalTemplate("burst", {
@@ -273,25 +273,25 @@ const sheet: ICharacterSheet = {
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
         name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
         fields: [{
-          node: infoMut(dmgFormulas.burst.absorb, { key: `char_${key}_gen:burst.skillParams.1` }),
-          textSuffix: st("brHits", { count: datamine.burst.absorbTicks })
+          node: infoMut(dmgFormulas.burst.absorb, { name: ct.tr(`burst.skillParams.1`) }),
+          multi: datamine.burst.absorbTicks
         }]
       }]))
     }), ct.headerTemplate("passive2", {
       fields: [{
-        text: trm("regenEner"),
+        text: ct.trm("regenEner"),
       }, {
-        text: trm("q"),
+        text: ct.trm("q"),
       }]
     }), ct.conditionalTemplate("constellation6", { // C6 Anemo
       value: condC6,
       path: condC6Path,
       teamBuff: true,
-      name: trm("c6"),
+      name: ct.trm("c6"),
       states: {
         takeDmg: {
           fields: [{
-            node: infoMut(c6_anemo_enemyRes_, { key: "anemo_enemyRes_", variant: "anemo" })
+            node: infoMut(c6_anemo_enemyRes_, KeyMap.keyToInfo("anemo_enemyRes_"))
           }]
         }
       }
@@ -328,7 +328,7 @@ const sheet: ICharacterSheet = {
       ct.conditionalTemplate("constellation4", {
         value: condC4,
         path: condC4Path,
-        name: trm("c4"),
+        name: ct.trm("c4"),
         states: {
           pickup: {
             fields: [{

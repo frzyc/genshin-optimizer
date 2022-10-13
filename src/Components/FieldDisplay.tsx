@@ -5,14 +5,13 @@ import { DataContext } from "../Context/DataContext";
 import { FormulaDataContext } from "../Context/FormulaDataContext";
 import { NodeDisplay } from "../Formula/api";
 import { Variant } from "../Formula/type";
-import KeyMap, { valueString } from "../KeyMap";
+import { valueString } from "../KeyMap";
 import { allAmpReactions, AmpReactionKey } from "../Types/consts";
 import { IBasicFieldDisplay, IFieldDisplay } from "../Types/fieldDisplay";
 import { evalIfFunc } from "../Util/Util";
 import AmpReactionModeText from "./AmpReactionModeText";
 import ColorText from "./ColoredText";
 import QuestionTooltip from "./QuestionTooltip";
-import StatIcon from "./StatIcon";
 
 export default function FieldsDisplay({ fields }: { fields: IFieldDisplay[] }) {
   return <FieldDisplayList sx={{ m: 0 }}>
@@ -30,9 +29,9 @@ function FieldDisplay({ field, component }: { field: IFieldDisplay, component?: 
     if (oldData) {
       const oldNode = oldData.get(field.node)
       const oldValue = oldNode.isEmpty ? 0 : oldNode.value
-      return <NodeFieldDisplay node={node} oldValue={oldValue} suffix={field.textSuffix} component={component} />
+      return <NodeFieldDisplay node={node} oldValue={oldValue} component={component} />
     }
-    else return <NodeFieldDisplay node={node} suffix={field.textSuffix} component={component} />
+    else return <NodeFieldDisplay node={node} component={component} />
   }
   return <BasicFieldDisplay field={field} component={component} />
 }
@@ -42,23 +41,29 @@ export function BasicFieldDisplay({ field, component }: { field: IBasicFieldDisp
   const v = evalIfFunc(field.value, data)
   const variant = evalIfFunc(field.variant, data)
   const text = field.text && <span>{field.text}</span>
-  const suffix = field.textSuffix && <span>{field.textSuffix}</span>
+  const suffix = field.textSuffix && <span> {field.textSuffix}</span>
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1 }} component={component} >
-    <Typography color={`${variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{text}{suffix}</Typography>
+    <Typography color={`${variant}.main`} >{text}{suffix}</Typography>
     <Typography >{typeof v === "number" ? v.toFixed?.(field.fixed) : v}{field.unit}</Typography>
   </Box>
 }
 
-export function NodeFieldDisplay({ node, oldValue, suffix, component, emphasize }: { node: NodeDisplay, oldValue?: number, suffix?: Displayable, component?: React.ElementType, emphasize?: boolean }) {
+export function NodeFieldDisplay({ node, oldValue, component, emphasize }: { node: NodeDisplay, oldValue?: number, component?: React.ElementType, emphasize?: boolean }) {
   const { data } = useContext(DataContext)
   const { setFormulaData } = useContext(FormulaDataContext)
   const onClick = useCallback(() => setFormulaData(data, node), [setFormulaData, data, node])
 
   if (node.isEmpty) return null
+  const { textSuffix, multi } = node.info
 
-  suffix = suffix && <span>{suffix}</span>
-  const icon = node.info.key && StatIcon[node.info.key]
-  const fieldText = node.info.key ? KeyMap.get(node.info.key) : ""
+  const suffixDisplay = textSuffix && <span> {textSuffix}</span>
+  const multiDisplay = multi && <span>{multi}&#215;</span>
+  let icon = node.info.icon
+  if (icon && !Object.isFrozen(icon)) {
+    console.error("node.info.icon has been tampered with!", node, icon)
+    icon = undefined
+  }
+  const fieldText = node.info.name
   const isTeamBuff = node.info.isTeamBuff
   const fieldFormulaText = node.formula
   let fieldVal = "" as Displayable
@@ -75,9 +80,13 @@ export function NodeFieldDisplay({ node, oldValue, suffix, component, emphasize 
     <span>{fieldFormulaText}</span>
   </Suspense></Typography>} />
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1, boxShadow: emphasize ? "0px 0px 0px 2px red inset" : undefined }} component={component} >
-    <Typography color={`${node.info.variant}.main`} sx={{ display: "flex", gap: 1, alignItems: "center" }}>{!!isTeamBuff && <Groups />}{icon}{fieldText}{suffix}</Typography>
+    <Box sx={{ display: "flex", gap: 1, alignItems: "center" }} >
+      {icon}
+      {!!isTeamBuff && <Groups />}
+      <Typography color={`${node.info.variant}.main`} >{fieldText}{suffixDisplay}</Typography>
+    </Box>
     <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-      <Typography noWrap>{fieldVal}</Typography>
+      <Typography noWrap>{multiDisplay}{fieldVal}</Typography>
       {formulaTextOverlay}
     </Box>
   </Box>

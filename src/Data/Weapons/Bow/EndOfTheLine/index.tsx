@@ -16,7 +16,7 @@ const data_gen = data_gen_json as WeaponData
 const dmgArr = [0.8, 1, 1.2, 1.4, 1.6]
 const dmg = equal(input.weapon.key, key, customDmgNode(
   prod(
-    subscript(input.weapon.refineIndex, dmgArr, { key: "_" }),
+    subscript(input.weapon.refineIndex, dmgArr, { unit: "%" }),
     input.total.atk
   ),
   "elemental"
@@ -30,7 +30,7 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
-      node: infoMut(dmg, { key: "sheet:dmg" })
+      node: infoMut(dmg, { name: st("dmg") })
     }]
   }],
 }

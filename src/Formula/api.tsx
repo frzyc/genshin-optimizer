@@ -105,7 +105,7 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
         )
       })
       // Make the variant "invalid" because its not easy to determine variants in multitarget
-      const multiTargetNode = infoMut(sum(...targetNodes), { key: name, variant: "invalid" })
+      const multiTargetNode = infoMut(sum(...targetNodes), { name, variant: "invalid" })
       sheetData.display!.custom[i] = multiTargetNode
     })
   }

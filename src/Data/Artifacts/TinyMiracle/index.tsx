@@ -2,6 +2,7 @@ import ColorText from '../../../Components/ColoredText'
 import { input } from "../../../Formula/index"
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent, sum } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { allElements, ArtifactSetKey } from '../../../Types/consts'
 import { cond, sgt, trans } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -15,12 +16,12 @@ const [condElePath, condEle] = cond(key, "element")
 
 const set2Nodes = Object.fromEntries(allElements.map(ele => [
   ele,
-  greaterEq(input.artSet.TinyMiracle, 2, percent(0.2), { key: `${ele}_res_` })
+  greaterEq(input.artSet.TinyMiracle, 2, percent(0.2), KeyMap.keyToInfo(`${ele}_res_`))
 ]))
 
 const set4Nodes = Object.fromEntries(allElements.map(ele => [
   ele,
-  greaterEq(input.artSet.TinyMiracle, 4, equal(condEle, ele, percent(0.3)), { key: `${ele}_res_` })
+  greaterEq(input.artSet.TinyMiracle, 4, equal(condEle, ele, percent(0.3)), KeyMap.keyToInfo(`${ele}_res_`))
 ]))
 
 export const data: Data = dataObjForArtifactSheet(key, {

@@ -17,9 +17,9 @@ const shieldSrc = [0.2, 0.23, 0.26, 0.29, 0.32]
 const allDmgSrc = [0.12, 0.15, 0.18, 0.21, 0.24]
 const [condPassivePath, condPassive] = cond(key, "RebelliousGuardian")
 const shield = equal(input.weapon.key, key,
-  equal(condPassive, "on", customShieldNode(prod(subscript(input.weapon.refineIndex, shieldSrc, { key: "_" }), input.total.hp))))
+  equal(condPassive, "on", customShieldNode(prod(subscript(input.weapon.refineIndex, shieldSrc, { unit: "%" }), input.total.hp))))
 const [condWithShieldPath, condWithShield] = cond(key, "WithShield")
-const all_dmg_ = equal(condWithShield, "protected", subscript(input.weapon.refineIndex, allDmgSrc, { key: "_" }))
+const all_dmg_ = equal(condWithShield, "protected", subscript(input.weapon.refineIndex, allDmgSrc, { unit: "%" }))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
@@ -39,7 +39,7 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: infoMut(shield, { key: `sheet_gen:dmgAbsorption` })
+          node: infoMut(shield, { name: sgt(`dmgAbsorption`) })
         }, {
           text: sgt("cd"),
           value: 45,

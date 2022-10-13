@@ -23,20 +23,21 @@ interface UIField {
 }
 
 interface Info {
-  /** @deprecated Use `UIField` instead */
+  /** @deprecated */
   key?: string
-  /** @deprecated Use `UIField` instead */
+  name?: Displayable
+  unit?: Unit
+  icon?: Displayable
   prefix?: KeyMapPrefix
-  /** @deprecated Use `UIField` instead */
   source?: CharacterKey | WeaponKey | ArtifactSetKey
   variant?: Variant
   subVariant?: Variant
   asConst?: true
   pivot?: true
-  /** @deprecated Use `UIField` instead */
   fixed?: number
-  /** @deprecated Use `UIField` instead */
   isTeamBuff?: boolean
+  multi?: number
+  textSuffix?: Displayable
 }
 export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | AdditiveReactionsKey | "heal" | "invalid"
 

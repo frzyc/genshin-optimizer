@@ -1,6 +1,7 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, lookup, naught, prod, subscript, sum } from '../../../../Formula/utils'
+import KeyMap from '../../../../KeyMap'
 import { WeaponKey } from '../../../../Types/consts'
 import { range } from '../../../../Util/Util'
 import { cond, sgt, st } from '../../../SheetUtil'
@@ -19,17 +20,17 @@ const baseAtkArr = [0.52, 0.65, 0.78, 0.91, 1.04]
 const stacksAttArr = [0.28, 0.35, 0.42, 0.49, 0.56]
 const stacksArr = range(1, 3)
 const baseAtk = equal(input.weapon.key, key, prod(
-  subscript(input.weapon.refineIndex, baseAtkArr, { key: "_" }),
+  subscript(input.weapon.refineIndex, baseAtkArr, { unit: "%" }),
   input.premod.eleMas
-), { key: "atk" })
+), KeyMap.keyToInfo("atk"))
 const stacksAtk = lookup(condStacks, Object.fromEntries(stacksArr.map(stack => [
   stack,
   prod(
     stack,
-    subscript(input.weapon.refineIndex, stacksAttArr, { key: "_" }),
+    subscript(input.weapon.refineIndex, stacksAttArr, { unit: "%" }),
     input.premod.eleMas
   )
-])), naught, { key: "atk" })
+])), naught, KeyMap.keyToInfo("atk"))
 const atk = equal(input.weapon.key, key, sum(baseAtk, stacksAtk))
 
 const data = dataObjForWeaponSheet(key, data_gen, {

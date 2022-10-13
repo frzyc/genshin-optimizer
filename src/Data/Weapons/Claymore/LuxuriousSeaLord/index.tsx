@@ -20,7 +20,7 @@ const [condPassivePath, condPassive] = cond(key, "OceanicVictory")
 const dmg = equal(input.weapon.key, key, equal(condPassive, 'on',
   customDmgNode(prod(
     subscript(
-      input.weapon.refineIndex, dmg_Src, { key: "_" }),
+      input.weapon.refineIndex, dmg_Src, { unit: "%" }),
       input.total.atk
     ),
     "elemental",
@@ -48,7 +48,7 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: infoMut(dmg, { key: "sheet:dmg" })
+          node: infoMut(dmg, { name: st("dmg") })
         }, {
           text: sgt("cd"),
           value: 15,

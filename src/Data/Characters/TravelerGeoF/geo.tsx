@@ -1,10 +1,10 @@
-import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
 import { DisplaySub } from '../../../Formula/type'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
-import { cond, sgt, st } from '../../SheetUtil'
+import { cond, sgt, st, trans } from '../../SheetUtil'
 import { charTemplates, TalentSheet } from '../CharacterSheet'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import Traveler from '../Traveler'
@@ -15,8 +15,7 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
   const elementKey: ElementKey = "geo"
   const condCharKey = "TravelerGeo"
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
-
-  const tr = (strKey: string) => <Translate ns={`char_${key}_gen`} key18={strKey} />
+  const [, charTrm] = trans("char", condCharKey)
 
   let s = 0, b = 0
   const datamine = {
@@ -102,9 +101,9 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
   const talent: TalentSheet = {
     skill: ct.talentTemplate("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
+        node: infoMut(dmgFormulas.skill.dmg, { name: ct.tr(`skill.skillParams.0`) }),
       }, {
-        text: tr("skill.skillParams.1"),
+        text: ct.tr("skill.skillParams.1"),
         value: data => data.get(input.constellation).value >= 6
           ? `${datamine.skill.duration}s + ${datamine.constellation6.skillDuration}s = ${datamine.skill.duration + datamine.constellation6.skillDuration}`
           : datamine.skill.duration,
@@ -124,7 +123,7 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
       }]
     }), ct.headerTemplate("constellation2", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation2.dmg, { key: `char_${condCharKey}:c2.key` }),
+        node: infoMut(dmgFormulas.constellation2.dmg, { name: charTrm("c2.key") }),
       }]
     }), ct.headerTemplate("constellation6", {
       fields: [{
@@ -136,12 +135,12 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
 
     burst: ct.talentTemplate("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.dmg,
-          { key: `sheet_gen:skillDMG` }
-        ),
-        textSuffix: st("brHits", { count: datamine.burst.numShockwaves })
+        node: infoMut(dmgFormulas.burst.dmg, {
+          name: sgt(`skillDMG`),
+          multi: datamine.burst.numShockwaves,
+        }),
       }, {
-        text: tr("burst.skillParams.1"),
+        text: ct.tr("burst.skillParams.1"),
         value: data => data.get(input.constellation).value >= 6
           ? `${datamine.burst.duration}s + ${datamine.constellation6.burstDuration}s = ${datamine.burst.duration + datamine.constellation6.burstDuration}`
           : datamine.burst.duration,
@@ -162,7 +161,7 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
       states: {
         on: {
           fields: [{
-            node: infoMut(c1BurstArea_critRate_Disp, { key: "critRate_" }),
+            node: infoMut(c1BurstArea_critRate_Disp, KeyMap.keyToInfo("critRate_")),
           }, {
             text: st("incInterRes"),
           }]
@@ -177,7 +176,7 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
         {
           name: st("hits", { count: stack }),
           fields: [{
-            node: infoMut(c4Burst_energyRestore, { key: "sheet:energyRegen" }),
+            node: infoMut(c4Burst_energyRestore, { name: st("energyRegen") }),
           }]
         }
       ]))
@@ -192,7 +191,7 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
     passive1: ct.talentTemplate("passive1"),
     passive2: ct.talentTemplate("passive2", [ct.fieldsTemplate("passive2", {
       fields: [{
-        node: infoMut(dmgFormulas.passive2.dmg, { key: `char_${condCharKey}:passive2.key` })
+        node: infoMut(dmgFormulas.passive2.dmg, { name: charTrm("passive2.key") })
       }]
     })]),
     constellation1: ct.talentTemplate("constellation1"),

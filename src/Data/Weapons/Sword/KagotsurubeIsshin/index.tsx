@@ -37,7 +37,7 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: infoMut(dmg, { key: "sheet:dmg" })
+          node: infoMut(dmg, { name: st("dmg") })
         }, {
           node: atk_
         }, {

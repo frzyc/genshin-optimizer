@@ -3,7 +3,7 @@ import { input } from '../../../Formula'
 import { equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
-import { cond, sgt, st, trans } from '../../SheetUtil'
+import { cond, sgt, st } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { customDmgNode, customShieldNode, dataObjForCharacterSheet, dmgNode, shieldElement } from '../dataUtil'
 import assets from './assets'
@@ -14,7 +14,6 @@ const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "Yanfei"
 const elementKey: ElementKey = "pyro"
-const [tr, trm] = trans("char", key)
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, b = 0
@@ -158,56 +157,56 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
 
 const sheet: ICharacterSheet = {
   key,
-  name: tr("name"),
+  name: ct.tr("name"),
   rarity: data_gen.star,
   elementKey,
   weaponTypeKey: data_gen.weaponTypeKey,
   gender: "F",
-  constellationName: tr("constellationName"),
-  title: tr("title"),
+  constellationName: ct.tr("constellationName"),
+  title: ct.tr("title"),
   talent: {
     auto: ct.talentTemplate("auto", [{
-      text: tr("auto.fields.normal"),
+      text: ct.tr("auto.fields.normal"),
     }, {
       fields: datamine.normal.hitArr.map((_, i) => ({
-        node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
+        node: infoMut(dmgFormulas.normal[i], { name: ct.tr(`auto.skillParams.${i}`) }),
       }))
     }, {
-      text: tr("auto.fields.charged"),
+      text: ct.tr("auto.fields.charged"),
     }, {
       fields: [
         // TODO: Would probably be better as a conditional,
         // but can't make conditional states based on constellation value
         ...datamine.charged.dmgArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.charged[i], { key: `char_${key}:charged.${i}` }),
+          node: infoMut(dmgFormulas.charged[i], { name: ct.tr(`charged.${i}`) }),
         })), {
-          text: tr("auto.skillParams.4"),
+          text: ct.tr("auto.skillParams.4"),
           // TODO: Should change this value based on how many seals, but can't do without conditional
           // charged attack. And its a bit execssive.
           value: datamine.charged.stamina,
         }, {
           text: st("staminaDec_"),
           value: datamine.charged.sealStaminaRed_ * 100,
-          textSuffix: trm("perSeal"),
+          textSuffix: ct.trm("perSeal"),
           unit: "%",
         }, {
-          text: trm("maxSeals"),
+          text: ct.trm("maxSeals"),
           value: data => data.get(input.constellation).value >= 6
             ? datamine.charged.maxSeals + datamine.c6.extraSeals
             : datamine.charged.maxSeals,
         }, {
-          text: tr("auto.skillParams.6"),
+          text: ct.tr("auto.skillParams.6"),
           value: datamine.sealDuration,
           unit: "s"
         }],
     }, ct.conditionalTemplate("passive1", {
       value: condP1Seals,
       path: condP1SealsPath,
-      name: trm("passive1.sealsConsumed"),
+      name: ct.trm("passive1.sealsConsumed"),
       // TODO: Should be changing number of seals shown based on C6
       states: Object.fromEntries(range(1, 4).map(seals => [
         seals, {
-          name: trm(`seals.${seals}`),
+          name: ct.trm(`seals.${seals}`),
           fields: [{
             node: p1_pyro_dmg_,
           }, {
@@ -220,19 +219,19 @@ const sheet: ICharacterSheet = {
     }), ct.conditionalTemplate("passive2", {
       value: condP2ChargedCrit,
       path: condP2ChargedCritPath,
-      name: trm("passive2.chargedCrit"),
+      name: ct.trm("passive2.chargedCrit"),
       states: {
         on: {
           fields: [{
-            node: infoMut(dmgFormulas.passive2.dmg, { key: `char_${key}:passive2.key` })
+            node: infoMut(dmgFormulas.passive2.dmg, { name: ct.tr("passive2.key") })
           }]
         }
       }
     }), ct.headerTemplate("constellation1", {
       fields: [{
-        text: trm("c1.sealChargedStam_"),
+        text: ct.trm("c1.sealChargedStam_"),
         value: datamine.c1.sealStaminaRed_ * -100,
-        textSuffix: trm("perSeal"),
+        textSuffix: ct.trm("perSeal"),
         unit: "%"
       }, {
         text: st("incInterRes")
@@ -250,24 +249,24 @@ const sheet: ICharacterSheet = {
       }
     }), ct.headerTemplate("constellation6", {
       fields: [{
-        text: trm("c6.maxSealInc"),
+        text: ct.trm("c6.maxSealInc"),
         value: datamine.c6.extraSeals
       }]
     }), {
-      text: tr("auto.fields.plunging"),
+      text: ct.tr("auto.fields.plunging"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+        node: infoMut(dmgFormulas.plunging.dmg, { name: sgt("plunging.dmg") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        node: infoMut(dmgFormulas.plunging.low, { name: sgt("plunging.low") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        node: infoMut(dmgFormulas.plunging.high, { name: sgt("plunging.high") }),
       }],
     }]),
 
     skill: ct.talentTemplate("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
+        node: infoMut(dmgFormulas.skill.dmg, { name: ct.tr(`skill.skillParams.0`) }),
       }, {
         text: sgt("cd"),
         value: datamine.skill.cd,
@@ -277,9 +276,9 @@ const sheet: ICharacterSheet = {
 
     burst: ct.talentTemplate("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
+        node: infoMut(dmgFormulas.burst.dmg, { name: ct.tr(`burst.skillParams.0`) }),
       }, {
-        text: trm("burst.grantMax")
+        text: ct.trm("burst.grantMax")
       }, {
         text: sgt("cd"),
         value: datamine.burst.cd,
@@ -295,7 +294,7 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            text: tr("burst.skillParams.2"),
+            text: ct.tr("burst.skillParams.2"),
             value: datamine.burst.sealInterval,
             unit: "s"
           }, {
@@ -305,9 +304,9 @@ const sheet: ICharacterSheet = {
       }
     }), ct.headerTemplate("constellation4", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation4.norm_shield, { key: "sheet_gen:dmgAbsorption" })
+        node: infoMut(dmgFormulas.constellation4.norm_shield, { name: sgt("dmgAbsorption") })
       }, {
-        node: infoMut(dmgFormulas.constellation4.pyro_shield, { key: `sheet:dmgAbsorption.${elementKey}` })
+        node: infoMut(dmgFormulas.constellation4.pyro_shield, { name: st(`dmgAbsorption.${elementKey}`) })
       }, {
         text: sgt("duration"),
         value: datamine.c4.duration,

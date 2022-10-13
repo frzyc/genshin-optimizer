@@ -18,8 +18,8 @@ const [, trm] = trans("weapon", key)
 const [condStackPath, condStack] = cond(key, "stack")
 const atkInc = [0.07, 0.08, 0.09, 0.1, 0.11]
 const critInc = [0.03, 0.04, 0.05, 0.06, 0.07]
-const atk_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(input.weapon.refineIndex, atkInc, { key: "_" }), i)), naught)
-const critRate_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(input.weapon.refineIndex, critInc, { key: "_" }), i)), naught)
+const atk_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(input.weapon.refineIndex, atkInc, { unit: "%" }), i)), naught)
+const critRate_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(input.weapon.refineIndex, critInc, { unit: "%" }), i)), naught)
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_,

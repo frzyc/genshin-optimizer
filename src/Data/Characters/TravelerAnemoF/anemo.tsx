@@ -1,11 +1,11 @@
 import ColorText from '../../../Components/ColoredText'
-import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
 import { DisplaySub } from '../../../Formula/type'
 import { constant, equal, greaterEq, infoMut, percent, prod, subscript, unequal } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { absorbableEle, CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { objectKeyValueMap } from '../../../Util/Util'
-import { cond, sgt, st } from '../../SheetUtil'
+import { cond, sgt, st, trans } from '../../SheetUtil'
 import { charTemplates, TalentSheet } from '../CharacterSheet'
 import { customDmgNode, customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import Traveler from '../Traveler'
@@ -15,10 +15,8 @@ import skillParam_gen from './skillParam_gen.json'
 export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmgForms: { [key: string]: DisplaySub }) {
   const elementKey: ElementKey = "anemo"
   const condCharKey = "TravelerAnemo"
+  const [, charTrm] = trans("char", condCharKey)
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
-
-  const tr = (strKey: string) => <Translate ns={`char_${key}_gen`} key18={strKey} />
-  const trm = (strKey: string) => <Translate ns={`char_${condCharKey}`} key18={strKey} />
 
   let s = 0, b = 0
   const datamine = {
@@ -69,10 +67,10 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
             prod(
               datamine.skill.ele_dmg,
               subscript(input.total.skillIndex, datamine.skill.initial_dmg),
-            ), { asConst: true, key: "_" }
+            ), { asConst: true, unit: "%" }
           ),
           input.total.atk
-        ), "skill", { hit: { ele: condSkillAbsorption }}
+        ), "skill", { hit: { ele: condSkillAbsorption } }
       )),
       max_ele_dmg: unequal(condSkillAbsorption, undefined, customDmgNode(
         prod(
@@ -80,10 +78,10 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
             prod(
               datamine.skill.ele_dmg,
               subscript(input.total.skillIndex, datamine.skill.initial_max),
-            ), { asConst: true, key: "_" }
+            ), { asConst: true, unit: "%" }
           ),
           input.total.atk
-        ), "skill", { hit: { ele: condSkillAbsorption }}
+        ), "skill", { hit: { ele: condSkillAbsorption } }
       )),
       storm_dmg: dmgNode("atk", datamine.skill.storm_dmg, "skill"),
       storm_max: dmgNode("atk", datamine.skill.storm_max, "skill"),
@@ -121,24 +119,24 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
   const talent: TalentSheet = {
     skill: ct.talentTemplate("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.initial_dmg, { key: `char_${key}_gen:skill.skillParams.0` }),
+        node: infoMut(dmgFormulas.skill.initial_dmg, { name: ct.tr(`skill.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.initial_max, { key: `char_${key}_gen:skill.skillParams.1` }),
+        node: infoMut(dmgFormulas.skill.initial_max, { name: ct.tr(`skill.skillParams.1`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.storm_dmg, { key: `char_${key}_gen:skill.skillParams.2` }),
+        node: infoMut(dmgFormulas.skill.storm_dmg, { name: ct.tr(`skill.skillParams.2`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.storm_max, { key: `char_${key}_gen:skill.skillParams.3` }),
+        node: infoMut(dmgFormulas.skill.storm_max, { name: ct.tr(`skill.skillParams.3`) }),
       }, {
-        text: tr("skill.skillParams.4"),
+        text: ct.tr("skill.skillParams.4"),
         value: datamine.skill.cd,
         unit: "s"
       }, {
-        text: tr("skill.skillParams.5"),
+        text: ct.tr("skill.skillParams.5"),
         value: datamine.skill.maxCd,
         unit: "s"
       }, {
         canShow: data => data.get(input.constellation).value >= 4,
-        text: trm("c4"),
+        text: ct.trm("c4"),
         value: 10,
         unit: "%"
       }]
@@ -149,26 +147,26 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
         name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
         fields: [{
-          node: infoMut(dmgFormulas.skill.initial_ele_dmg, { key: `char_${condCharKey}:initialEleDmg` }),
+          node: infoMut(dmgFormulas.skill.initial_ele_dmg, { name: charTrm("initialEleDmg") }),
         }, {
-          node: infoMut(dmgFormulas.skill.max_ele_dmg, { key: `char_${condCharKey}:maxEleDmg` }),
+          node: infoMut(dmgFormulas.skill.max_ele_dmg, { name: charTrm("maxEleDmg") }),
         }]
       }]))
     })]),
 
     burst: ct.talentTemplate("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
+        node: infoMut(dmgFormulas.burst.dmg, { name: ct.tr(`burst.skillParams.0`) }),
       }, {
-        text: tr("burst.skillParams.2"),
+        text: ct.tr("burst.skillParams.2"),
         value: datamine.burst.duration,
         unit: "s"
       }, {
-        text: tr("burst.skillParams.3"),
+        text: ct.tr("burst.skillParams.3"),
         value: datamine.burst.cd,
         unit: "s"
       }, {
-        text: tr("burst.skillParams.4"),
+        text: ct.tr("burst.skillParams.4"),
         value: datamine.burst.enerCost,
       }]
     }, ct.conditionalTemplate("burst", {
@@ -178,18 +176,18 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
         name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
         fields: [{
-          node: infoMut(dmgFormulas.burst.absorb, { key: `char_${key}_gen:burst.skillParams.1` }),
+          node: infoMut(dmgFormulas.burst.absorb, { name: ct.tr(`burst.skillParams.1`) }),
         }]
       }]))
     }), ct.conditionalTemplate("constellation6", { // C6 anemo
       value: condC6,
       path: condC6Path,
       teamBuff: true,
-      name: trm("c6"),
+      name: ct.trm("c6"),
       states: {
         on: {
           fields: [{
-            node: infoMut(nodeC6, { key: "anemo_enemyRes_", variant: "anemo" })
+            node: infoMut(nodeC6, KeyMap.keyToInfo("anemo_enemyRes_"))
           }]
         }
       }
@@ -213,12 +211,12 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
     })]),
     passive1: ct.talentTemplate("passive1", [ct.fieldsTemplate("passive1", {
       fields: [{
-        node: infoMut(dmgFormulas.passive1.dmg, { key: `char_${condCharKey}:p1` })
+        node: infoMut(dmgFormulas.passive1.dmg, { name: charTrm("p1") })
       }]
     })]),
     passive2: ct.talentTemplate("passive2", [ct.fieldsTemplate("passive2", {
       fields: [{
-        node: infoMut(dmgFormulas.passive2.heal, { key: `sheet_gen:healing` })
+        node: infoMut(dmgFormulas.passive2.heal, { name: sgt(`healing`) })
       }]
     })]),
     constellation1: ct.talentTemplate("constellation1"),

@@ -2,9 +2,10 @@ import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { constant, equal, equalStr, greaterEq, infoMut, lookup, sum } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
-import { cond, sgt, st, trans } from '../../SheetUtil'
+import { cond, sgt, st } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import assets from './assets'
@@ -14,7 +15,6 @@ import skillParam_gen from './skillParam_gen.json'
 const key: CharacterKey = "Diluc"
 const elementKey: ElementKey = "pyro"
 const data_gen = data_gen_src as CharacterData
-const [tr] = trans("char", key)
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0, c2i = 0, c6i = 0
@@ -91,11 +91,11 @@ const nodeA4Bonus = greaterEq(input.asc, 4, equal(condBurst, "on", datamine.pass
 
 const nodeC1Bonus = equal(condC1, "on", greaterEq(input.constellation, 1, datamine.constellation1.dmgInc))
 const nodeC2AtkBonus = greaterEq(input.constellation, 2,
-  lookup(condC2, Object.fromEntries(range(1, datamine.constellation2.maxStack).map(i => [i, constant(datamine.constellation2.atkInc * i)])), 0, { key: "atk_" }))
+  lookup(condC2, Object.fromEntries(range(1, datamine.constellation2.maxStack).map(i => [i, constant(datamine.constellation2.atkInc * i)])), 0, KeyMap.keyToInfo("atk_")))
 const nodeC2SpdBonus = greaterEq(input.constellation, 2,
-  lookup(condC2, Object.fromEntries(range(1, datamine.constellation2.maxStack).map(i => [i, constant(datamine.constellation2.atkSpdInc * i)])), 0, { key: "atkSPD_" }))
+  lookup(condC2, Object.fromEntries(range(1, datamine.constellation2.maxStack).map(i => [i, constant(datamine.constellation2.atkSpdInc * i)])), 0, KeyMap.keyToInfo("atkSPD_")))
 const nodeC6DmgBonus = equal(condC6, "on", greaterEq(input.constellation, 6, datamine.constellation6.dmgInc))
-const nodeC6SpdBonus = equal(condC6, "on", greaterEq(input.constellation, 6, datamine.constellation6.atkSpdInc), { key: "atkSPD_" })
+const nodeC6SpdBonus = equal(condC6, "on", greaterEq(input.constellation, 6, datamine.constellation6.atkSpdInc), KeyMap.keyToInfo("atkSPD_"))
 
 const skillAdditional: Data = {
   premod: { skill_dmg_: constant(datamine.constellation4.dmgInc) },
@@ -151,60 +151,60 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
 
 const sheet: ICharacterSheet = {
   key,
-  name: tr("name"),
+  name: ct.tr("name"),
   rarity: data_gen.star,
   elementKey: elementKey,
   weaponTypeKey: data_gen.weaponTypeKey,
   gender: "M",
-  constellationName: tr("constellationName"),
-  title: tr("title"),
+  constellationName: ct.tr("constellationName"),
+  title: ct.tr("title"),
   talent: {
     auto: ct.talentTemplate("auto", [{
-      text: tr("auto.fields.normal")
+      text: ct.tr("auto.fields.normal")
     }, {
       fields: datamine.normal.hitArr.map((_, i) => ({
-        node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
+        node: infoMut(dmgFormulas.normal[i], { name: ct.tr(`auto.skillParams.${i}`) }),
       }))
     }, {
-      text: tr("auto.fields.charged"),
+      text: ct.tr("auto.fields.charged"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.charged.spinningDmg, { key: `char_${key}_gen:auto.skillParams.4` }),
+        node: infoMut(dmgFormulas.charged.spinningDmg, { name: ct.tr(`auto.skillParams.4`) }),
       }, {
-        node: infoMut(dmgFormulas.charged.finalDmg, { key: `char_${key}_gen:auto.skillParams.5` }),
+        node: infoMut(dmgFormulas.charged.finalDmg, { name: ct.tr(`auto.skillParams.5`) }),
       }, {
-        text: tr("auto.skillParams.6"),
+        text: ct.tr("auto.skillParams.6"),
         value: data => data.get(input.asc).value >= 1 ? `${datamine.charged.stamina}/s - ${datamine.passive1.stamReduction * 100}%` : `${datamine.charged.stamina}/s`,
       }, {
-        text: tr("auto.skillParams.7"),
+        text: ct.tr("auto.skillParams.7"),
         value: data => data.get(input.asc).value >= 1 ? `${datamine.charged.duration}s + ${datamine.passive1.duration}` : datamine.charged.duration,
         unit: 's'
       }],
     }, {
-      text: tr("auto.fields.plunging"),
+      text: ct.tr("auto.fields.plunging"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+        node: infoMut(dmgFormulas.plunging.dmg, { name: sgt("plunging.dmg") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        node: infoMut(dmgFormulas.plunging.low, { name: sgt("plunging.low") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        node: infoMut(dmgFormulas.plunging.high, { name: sgt("plunging.high") }),
       }]
     }]),
 
     skill: ct.talentTemplate("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.firstHit, { key: `char_${key}_gen:skill.skillParams.0` }),
+        node: infoMut(dmgFormulas.skill.firstHit, { name: ct.tr(`skill.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.secondHit, { key: `char_${key}_gen:skill.skillParams.1` }),
+        node: infoMut(dmgFormulas.skill.secondHit, { name: ct.tr(`skill.skillParams.1`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.thirdHit, { key: `char_${key}_gen:skill.skillParams.2` }),
+        node: infoMut(dmgFormulas.skill.thirdHit, { name: ct.tr(`skill.skillParams.2`) }),
       }, {
-        node: infoMut(dmgFormulas.constellation4.secondHitBoost, { key: `char_${key}:skillB.0` }),
+        node: infoMut(dmgFormulas.constellation4.secondHitBoost, { name: ct.tr("skillB.0") }),
       }, {
-        node: infoMut(dmgFormulas.constellation4.thirdHitBoost, { key: `char_${key}:skillB.1` }),
+        node: infoMut(dmgFormulas.constellation4.thirdHitBoost, { name: ct.tr("skillB.1") }),
       }, {
-        text: tr("burst.skillParams.3"),
+        text: ct.tr("burst.skillParams.3"),
         value: datamine.skill.cd,
       }],
     }, ct.conditionalTemplate("constellation6", {
@@ -224,17 +224,17 @@ const sheet: ICharacterSheet = {
 
     burst: ct.talentTemplate("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.slashDmg, { key: `char_${key}_gen:burst.skillParams.0` })
+        node: infoMut(dmgFormulas.burst.slashDmg, { name: ct.tr(`burst.skillParams.0`) })
       }, {
-        node: infoMut(dmgFormulas.burst.dotDmg, { key: `char_${key}_gen:burst.skillParams.1` })
+        node: infoMut(dmgFormulas.burst.dotDmg, { name: ct.tr(`burst.skillParams.1`) })
       }, {
-        node: infoMut(dmgFormulas.burst.explosionDmg, { key: `char_${key}_gen:burst.skillParams.2` })
+        node: infoMut(dmgFormulas.burst.explosionDmg, { name: ct.tr(`burst.skillParams.2`) })
       }, {
-        text: tr("burst.skillParams.3"),
+        text: ct.tr("burst.skillParams.3"),
         value: datamine.burst.cd,
         unit: "s"
       }, {
-        text: tr("burst.skillParams.5"),
+        text: ct.tr("burst.skillParams.5"),
         value: datamine.burst.cost,
       }]
     }, ct.conditionalTemplate("burst", {

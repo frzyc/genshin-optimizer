@@ -14,7 +14,7 @@ const data_gen = data_gen_json as WeaponData
 
 const atkInc = [0.2, 0.25, 0.3, 0.35, 0.5]
 const [condPassivePath, condPassive] = cond(key, "Overloaded")
-const atk_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkInc, { key: "_" }))
+const atk_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkInc, { unit: "%" }))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

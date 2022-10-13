@@ -15,8 +15,8 @@ const data_gen = data_gen_json as WeaponData
 
 const [condStackPath, condStack] = cond(key, "stack")
 const dmgInc = [0.08, 0.1, 0.12, 0.14, 0.16]
-const normal_dmg_ = lookup(condStack, objectKeyMap(range(1, 2), i => prod(subscript(input.weapon.refineIndex, dmgInc, { key: "_" }), i)), naught)
-const charged_dmg_ = lookup(condStack, objectKeyMap(range(1, 2), i => prod(subscript(input.weapon.refineIndex, dmgInc, { key: "_" }), i)), naught)
+const normal_dmg_ = lookup(condStack, objectKeyMap(range(1, 2), i => prod(subscript(input.weapon.refineIndex, dmgInc, { unit: "%" }), i)), naught)
+const charged_dmg_ = lookup(condStack, objectKeyMap(range(1, 2), i => prod(subscript(input.weapon.refineIndex, dmgInc, { unit: "%" }), i)), naught)
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     normal_dmg_,

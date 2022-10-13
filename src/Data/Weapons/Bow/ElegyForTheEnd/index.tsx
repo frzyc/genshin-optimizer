@@ -1,6 +1,7 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from "../../../../Formula/utils"
+import KeyMap from '../../../../KeyMap'
 import { WeaponKey } from '../../../../Types/consts'
 import { cond, sgt, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
@@ -17,11 +18,11 @@ const eleMasInc2 = [100, 125, 150, 175, 200]
 const atk_s = [0.20, 0.25, 0.30, 0.35, 0.40]
 
 const [condPath, condNode] = cond(key, "ThePartingRefrain")
-const eleMas = subscript(input.weapon.refineIndex, eleMasInc, { key: "eleMas" })
+const eleMas = subscript(input.weapon.refineIndex, eleMasInc, KeyMap.keyToInfo("eleMas"))
 // TODO: These should not stack, similar to NO. But I don't want to copy NO's
 // solution, since then these nodes won't show in the team buff panel. And it's
 // a bit unlikely people will try to stack this buff
-const eleMas2 = equal(condNode, 'on', subscript(input.weapon.refineIndex, eleMasInc2, { key: "eleMas" }))
+const eleMas2 = equal(condNode, 'on', subscript(input.weapon.refineIndex, eleMasInc2, KeyMap.keyToInfo("eleMas")))
 const atk_ = equal(condNode, 'on', subscript(input.weapon.refineIndex, atk_s,))
 
 export const data = dataObjForWeaponSheet(key, data_gen, {

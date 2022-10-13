@@ -14,7 +14,7 @@ const key: WeaponKey = "DebateClub"
 const data_gen = data_gen_json as WeaponData
 
 const dmgPerc = [0.6, 0.75, 0.9, 1.05, 1.2]
-const dmg = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgPerc, { key: "_" }), input.total.atk), "elemental", {
+const dmg = customDmgNode(prod(subscript(input.weapon.refineIndex, dmgPerc, { unit: "%" }), input.total.atk), "elemental", {
   hit: { ele: constant("physical") }
 })
 const data = dataObjForWeaponSheet(key, data_gen)
@@ -24,7 +24,7 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
-      node: infoMut(dmg, { key: "sheet:dmg" }),
+      node: infoMut(dmg, { name: st("dmg") }),
     }]
   }],
 }
