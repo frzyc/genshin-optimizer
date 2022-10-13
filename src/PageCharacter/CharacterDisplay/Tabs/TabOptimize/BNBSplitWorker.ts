@@ -199,9 +199,9 @@ function weightedSum(...entries: readonly (readonly [number, DynStat])[]): DynSt
       result[k] = (result[k] ?? 0) + weight * v
   return result
 }
-type Linear = DynStat & { $c: number }
+export type Linear = DynStat & { $c: number }
 /** Compute a linear upper bound of `nodes` */
-function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linear[] {
+export function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linear[] {
   const cents = weightedSum([1, arts.base], ...Object.values(arts.values).map(arts =>
     [1 / arts.length, weightedSum(...arts.map(art => [1, art.values] as const))] as const))
   const getCent = (lin: Linear) => dot(cents, lin, lin.$c)
@@ -305,7 +305,7 @@ function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linear[] {
         const { min, max } = minMaxes.get(f)!
         if (min < 0 && max > 0) throw new PolyError("Zero-crossing", operation)
         if ((min < 0 && context !== lower) || (max > 0 && context !== upper))
-          throw new PolyError("Unsupported Direction", operation)
+          throw new PolyError("Unsupported direction", operation)
 
         // For x/a >= 0, sum{x/a} <= n, and k > 0, it follows that
         //
