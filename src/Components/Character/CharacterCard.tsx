@@ -256,7 +256,7 @@ function Artifacts() {
 function Stats() {
   const { data } = useContext(DataContext)
   return <Box sx={{ width: "100%" }} >
-    {Object.values(data.getDisplay().basic).map((n, i) => <NodeFieldDisplay key={`${i}${JSON.stringify(n.info)}`} node={n} />)}
+    {Object.values(data.getDisplay().basic).map(n => <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} />)}
     {data.get(input.special).info.name && <Box sx={{ display: "flex", gap: 1, alignItems: "center" }} >
       <Typography flexGrow={1}><strong>Specialized:</strong></Typography>
       {data.get(input.special).info.icon}
