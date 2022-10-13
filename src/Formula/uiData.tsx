@@ -3,7 +3,7 @@ import ColorText from "../Components/ColoredText"
 import KeyMap, { valueString } from "../KeyMap"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
-import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIField, UIInput } from "./type"
+import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput } from "./type"
 
 const shouldWrap = true
 
@@ -96,7 +96,7 @@ export class UIData {
     const old = this.nodes.get(node)
     if (old) return old
 
-    const { operation, info, field } = node
+    const { operation, info } = node
     let result: ContextNodeDisplay<number | string | undefined>
     switch (operation) {
       case "add": case "mul": case "min": case "max":
@@ -116,7 +116,7 @@ export class UIData {
 
     if (info) {
       const { asConst } = info
-      result = { ...result, field }
+      result = { ...result }
       result.info = mergeInfo(result.info, info)
 
       // Pivot all keyed nodes for debugging
@@ -377,7 +377,6 @@ interface ContextNodeDisplay<V = number> {
   info: Info
   empty: boolean
   value: V
-  field?: UIField
 
   dependencies: Set<Displayable>
 

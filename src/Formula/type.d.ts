@@ -14,14 +14,6 @@ export type StrNode = StrPrioNode | SmallestNode | ThresholdNode<StrNode> |
   MatchNode<StrNode, StrNode> | MatchNode<NumNode, StrNode> |
   ReadNode<string | undefined> | ConstantNode<string | undefined>
 
-/** Turn this into class if there's only one implementation */
-interface UIField {
-  // <value> <Info.key -> unit>
-  getValueDisplay(value: number): Displayable
-  // <variant> <Info.prefix> <Info.key> </variant> <Info.source>
-  getName(value: number, variant: Variant): Displayable
-}
-
 interface Info {
   name?: Displayable
   unit?: Unit
@@ -41,7 +33,6 @@ export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | Amplifyin
 
 interface Base {
   info?: Info
-  field?: UIField
 }
 export interface StrPrioNode extends Base {
   operation: "prio"

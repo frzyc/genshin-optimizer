@@ -1,7 +1,6 @@
-import { forEachNodes } from "./internal"
 import { precompute, testing } from "./optimization"
-import { ConstantNode, Data, UIField } from "./type"
-import { constant, customRead, data, max, min, prod, read, resetData, setReadNodeKeys, sum, uiFieldMut } from "./utils"
+import { ConstantNode, Data } from "./type"
+import { constant, customRead, data, max, min, prod, read, resetData, setReadNodeKeys, sum } from "./utils"
 
 const { constantFold, deduplicate, flatten } = testing
 
@@ -45,18 +44,6 @@ describe("optimization", () => {
 
     // Remove wrapper for single-value formula
     expect(constantFold([sum(1, -1, r1)], {})).toEqual([r1])
-
-    {
-      // Removing UIField
-      const node = sum(1, -1, uiFieldMut(sum(r1), {} as any), r2, r3)
-      let field: UIField | undefined = undefined
-      forEachNodes([node], _ => _, f => field ||= f.field)
-      expect(field).toBeTruthy()
-
-      field = undefined
-      forEachNodes(constantFold([node], {}), _ => _, f => field ||= f.field)
-      expect(field).toBeFalsy()
-    }
   })
   test("data unpacking", () => {
     const r1 = customRead(["aa"])
