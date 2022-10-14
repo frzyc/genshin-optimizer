@@ -22,6 +22,10 @@
       "good": {
         "title": "GOOD documentation",
         "tooltip": "Genshin Open Object Descriptor Documentation"
+      },
+      "patchNotes": {
+        "title": "Genshin Optimizer Patch Notes",
+        "tooltip": "All patch notes for GO"
       }
     }
   },

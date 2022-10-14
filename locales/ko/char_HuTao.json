@@ -1,4 +1,8 @@
 {
+  "paramita": {
+    "enter": "피안접무 상태 진입",
+    "end": "나비의 서가 부여하는 피안접무 상태 종료"
+  },
   "constellation2": {
     "applyBloodBlossom": "혈매향 효과 적용(2돌)",
     "skillParams": {

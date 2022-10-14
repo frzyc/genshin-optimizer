@@ -31,8 +31,6 @@
   },
   "hits_one": "{{count}} Golpe",
   "hits_other": "{{count}} Golpes",
-  "brHits_one": "({{count}} Golpe)",
-  "brHits_other": "({{count}} Golpes)",
   "lessEqPercentHP": "Vida menor o igual al {{percent}}%",
   "greaterPercentHP": "Vida mayor del {{percent}}%",
   "greaterEqPercentHP": "Vida mayor o igual al {{percent}}%",

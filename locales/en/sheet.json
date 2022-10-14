@@ -2,8 +2,6 @@
   "dmg": "DMG",
   "hits_one": "{{count}} Hit",
   "hits_other": "{{count}} Hits",
-  "brHits_one": "({{count}} Hit)",
-  "brHits_other": "({{count}} Hits)",
   "lessPercentHP": "HP less than {{percent}}%",
   "lessEqPercentHP": "HP less than or equal to {{percent}}%",
   "greaterPercentHP": "HP greater than {{percent}}%",

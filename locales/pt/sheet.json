@@ -5,5 +5,9 @@
   "hitOp": {
     "normal": "Acertos de Ataques Normais nos oponentes",
     "charged": "Acertos de Ataques Carregados nos oponentes"
+  },
+  "afterUse": {
+    "skill": "Após usar a Habilidade Elemental",
+    "burst": "Após usar o Supremo"
   }
 }

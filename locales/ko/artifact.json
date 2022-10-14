@@ -16,6 +16,7 @@
       "noRoll": "추가옵션 없음",
       "noStat": "값 없음",
       "eff": "효율: <1></1>",
+      "nextRolls": "다음 강화:",
       "RollCount_one": "{{count}}회",
       "RollCount_other": "{{count}}회"
     },
@@ -50,7 +51,9 @@
     "unequipArtifacts": "미착용 성유물",
     "deleteArtifacts": "성유물 삭제",
     "excludeArtifacts": "성유물 제외",
-    "includeArtifacts": "성유물 포함"
+    "includeArtifacts": "성유물 포함",
+    "lockArtifacts": "성유물 잠금",
+    "unlockrtifacts": "성유물 잠금 해제"
   },
   "filterLevelFormat": "레벨 <1>최소</1>/<3>최대</3> (포함)",
   "buttonHint": "주의: 위 빨간 버튼들은 <1>필터링된 성유물</1>에만 적용됩니다",
@@ -95,12 +98,16 @@
   "resetFilters": "필터 리셋",
   "setEffectNum": "{{setNum}}-셋",
   "excludeArtifactTip": "성유물 제외시 빌드 생성 때 선택되지 않습니다.",
+  "showingNum_one": "<1>{{count}}</1>개의 성유물을 표시중입니다. 총 {{value}}개",
+  "showingNum_other": "<1>{{count}}</1>개의 성유물을 표시중입니다. 총 {{value}}개",
+  "edit": "성유물 편집",
   "excluded": "이 성유물은 제외되었습니다.",
   "included": "이 성유물은 제외되지 않았습니다.",
   "autocompleteLabels": {
     "sets": "성유물 세트",
     "mainStats": "주옵션",
-    "substats": "부옵션"
+    "substats": "부옵션",
+    "set": "성유물 세트"
   },
   "substat_one": "부옵션 {{count}}줄",
   "substat_other": "부옵션 {{count}}줄"
