@@ -123,12 +123,12 @@ export class CharacterDataManager extends DataManager<CharacterKey, string, "cha
       const art = this.database.arts.get(artKey)
       // Only unequip from artifact from traveler if there are no more "Travelers" in the database
       if (art && (art.location === key || (art.location === "Traveler" && travelerKeys.includes(key as TravelerKey) && !travelerKeys.find(t => t !== key && this.keys.includes(t)))))
-        this.database.arts.set(artKey, { location: "" })
+        this.database.arts.setCached(artKey, { ...art, location: "" })
     }
     const weapon = this.database.weapons.get(char.equippedWeapon)
     // Only unequip from weapon from traveler if there are no more "Travelers" in the database
     if (weapon && (weapon.location === key || (weapon.location === "Traveler" && travelerKeys.includes(key as TravelerKey) && !travelerKeys.find(t => t !== key && this.keys.includes(t)))))
-      this.database.weapons.set(char.equippedWeapon, { location: "" })
+      this.database.weapons.setCached(char.equippedWeapon, { ...weapon, location: "" })
     super.remove(key)
   }
 

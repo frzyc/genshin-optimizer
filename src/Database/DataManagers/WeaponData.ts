@@ -47,7 +47,8 @@ export class WeaponDataManager extends DataManager<string, string, "weapons", IC
   toCache(storageObj: IWeapon, id: string): ICachedWeapon | undefined {
     const newWeapon = { ...storageObj, id }
     const oldWeapon = super.get(id)
-
+    // Disallow unequipping of weapons
+    if (!newWeapon.location && oldWeapon?.location) return
     if (newWeapon.location !== oldWeapon?.location) {
       const prevChar = oldWeapon?.location ? this.database.chars.getWithInit(oldWeapon.location) : undefined
       const newChar = newWeapon.location ? this.database.chars.getWithInit(newWeapon.location) : undefined
