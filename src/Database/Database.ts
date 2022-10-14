@@ -14,7 +14,7 @@ import { CharacterDataManager } from "./DataManagers/CharacterData";
 import { CharacterTCDataManager } from "./DataManagers/CharacterTCData";
 import { CharMetaDataManager } from "./DataManagers/CharMetaData";
 import { WeaponDataManager } from "./DataManagers/WeaponData";
-import { DBStorage } from "./DBStorage";
+import { DBStorage, SandboxStorage } from "./DBStorage";
 import { GOSource, IGO, IGOOD, ImportResult, newImportResult } from "./exim";
 import { currentDBVersion, migrate, migrateGOOD } from "./migrate";
 
@@ -35,11 +35,20 @@ export class ArtCharDatabase {
   displayOptimize: DisplayOptimizeEntry
   displayCharacter: DisplayCharacterEntry
   displayTool: DisplayToolEntry
+  dbIndex: number
+  dbVer: number
 
   constructor(storage: DBStorage) {
     this.storage = storage
 
     migrate(storage)
+    // Transfer non DataManager/DataEntry data from storage
+    this.dbIndex = storage.getDBIndex()
+    this.dbVer = storage.getDBVersion()
+    this.storage.setDBVersion(this.dbVer)
+    this.storage.setDBIndex(this.dbIndex as 1 | 2 | 3 | 4)
+
+    // Handle Datamanagers
     this.chars = new CharacterDataManager(this)
 
     // Weapons needs to be instantiated after character to check for relations
@@ -58,6 +67,7 @@ export class ArtCharDatabase {
     this.charTCs = new CharacterTCDataManager(this)
     this.charMeta = new CharMetaDataManager(this)
 
+    // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
     this.displayWeapon = new DisplayWeaponEntry(this)
     this.displayArtifact = new DisplayArtifactEntry(this)
@@ -98,7 +108,7 @@ export class ArtCharDatabase {
   clear() {
     this.dataManagers.map(dm => dm.clear())
     this.teamData = {};
-    this.dataEntries.map(de => de.reset())
+    this.dataEntries.map(de => de.clear())
   }
   get gender() {
     const gender: Gender = this.dbMeta.get().gender ?? "F"
@@ -138,9 +148,41 @@ export class ArtCharDatabase {
 
     return result
   }
+  clearStorage() {
+    this.dataManagers.map(dm => dm.clearStorage());
+    this.dataEntries.map(de => de.clearStorage());
+  }
+  saveStorage() {
+    this.dataManagers.map(dm => dm.saveStorage());
+    this.dataEntries.map(de => de.saveStorage());
+    this.storage.setDBVersion(this.dbVer)
+    this.storage.setDBIndex(this.dbIndex as 1 | 2 | 3 | 4)
+  }
+  swapStorage(other: ArtCharDatabase) {
+    this.clearStorage()
+    other.clearStorage()
+
+    const thisStorage = this.storage
+    this.storage = other.storage
+    other.storage = thisStorage
+
+    this.saveStorage()
+    other.saveStorage()
+  }
+  toExtraLocalDB() {
+    const key = `extraDatabase_${this.storage.getDBIndex()}`
+    const other = new SandboxStorage()
+    const oldstorage = this.storage
+    this.storage = other
+    this.saveStorage()
+    this.storage = oldstorage
+    localStorage.setItem(key, JSON.stringify(Object.fromEntries(other.entries)))
+  }
+
 }
 export type DatabaseContextObj = {
-  database: ArtCharDatabase,
-  setDatabase: (db: ArtCharDatabase) => void
+  databases: ArtCharDatabase[],
+  setDatabase: (index: number, db: ArtCharDatabase) => void,
+  database: ArtCharDatabase
 }
 export const DatabaseContext = createContext({} as DatabaseContextObj)

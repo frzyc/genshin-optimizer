@@ -65,7 +65,7 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
   setCached(key: CacheKey, cached: CacheValue) {
     deepFreeze(cached)
     this.data[key] = cached
-    this.database.storage.set(this.toStorageKey(key) as string, this.deCache(cached))
+    this.saveStorageEntry(key, cached)
     this.trigger(key, "update", cached)
   }
   /** Trigger update event */
@@ -76,7 +76,7 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
   remove(key: CacheKey) {
     const rem = this.data[key]
     delete this.data[key]
-    this.database.storage.remove(this.toStorageKey(key) as string)
+    this.removeStorageEntry(key)
 
     this.trigger(key, "remove", rem)
     delete this.listeners[key]
@@ -85,6 +85,19 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
     for (const key in this.data) {
       this.remove(key)
     }
+  }
+  removeStorageEntry(key: CacheKey) {
+    this.database.storage.remove(this.toStorageKey(key) as string)
+  }
+  saveStorageEntry(key: CacheKey, cached: CacheValue) {
+    this.database.storage.set(this.toStorageKey(key) as string, this.deCache(cached))
+  }
+  clearStorage() {
+    for (const key in this.data)
+      this.removeStorageEntry(key)
+  }
+  saveStorage() {
+    Object.entries(this.data).forEach(([k, v]) => this.saveStorageEntry(k as CacheKey, v))
   }
   exportGOOD(go: Partial<IGOOD & IGO>) {
     go[this.goKey as any] = Object.entries(this.data).map(([id, value]) => ({ ...value, id }))
