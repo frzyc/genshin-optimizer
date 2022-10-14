@@ -26,6 +26,7 @@ import SolarPearl from './SolarPearl'
 import TheWidsith from './TheWidsith'
 import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
 import TwinNephrite from './TwinNephrite'
+import WanderingEvenstar from './WanderingEvenstar'
 import WineAndSong from './WineAndSong'
 const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   ApprenticesNotes,
@@ -54,6 +55,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   TheWidsith,
   ThrillingTalesOfDragonSlayers,
   TwinNephrite,
+  WanderingEvenstar,
   WineAndSong,
 } as const
 export default catalyst

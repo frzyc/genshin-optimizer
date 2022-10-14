@@ -174,6 +174,7 @@ export const allWeaponSwordKeys = [
   "HaranGeppakuFutsu",
   "HarbingerOfDawn",
   "IronSting",
+  "KeyOfKhajNisut",
   "LionsRoar",
   "MistsplitterReforged",
   "PrimordialJadeCutter",
@@ -190,6 +191,7 @@ export const allWeaponSwordKeys = [
   "TheBlackSword",
   "TheFlute",
   "TravelersHandySword",
+  "XiphosMoonlight",
 ] as const
 export type WeaponSwordKey = typeof allWeaponSwordKeys[number]
 
@@ -318,6 +320,7 @@ export const allWeaponCatalystKeys = [
   "TheWidsith",
   "ThrillingTalesOfDragonSlayers",
   "TwinNephrite",
+  "WanderingEvenstar",
   "WineAndSong",
 ] as const
 export type WeaponCatalystKey = typeof allWeaponCatalystKeys[number]
