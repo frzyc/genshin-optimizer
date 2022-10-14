@@ -115,6 +115,7 @@ export const nonTravelerCharacterKeys = [
   "Collei",
   "Dori",
   "Tighnari",
+  "Nilou",
   "Cyno",
   "Candace",
 ] as const
