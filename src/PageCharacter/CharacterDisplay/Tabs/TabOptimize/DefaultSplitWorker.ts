@@ -1,37 +1,21 @@
-import type { NumNode } from '../../../../Formula/type';
 import { allSlotKeys } from '../../../../Types/consts';
-import type { InterimResult, Setup } from './BackgroundWorker';
+import type { InterimResult, Setup, SplitWorker } from './BackgroundWorker';
 import { ArtifactsBySlot, countBuilds, filterArts, RequestFilter } from './common';
 
-export class SplitWorker {
-  min: number[]
-
+export class DefaultSplitWorker implements SplitWorker {
   arts: ArtifactsBySlot
-  nodes: NumNode[]
+  filters: RequestFilter[] = []
 
-  filters: { count: number, filter: RequestFilter }[] = []
-
-  callback: (interim: InterimResult) => void
-
-  constructor({ arts, optimizationTarget, filters }: Setup, callback: (interim: InterimResult) => void) {
+  constructor({ arts }: Setup, _callback: (interim: InterimResult) => void) {
     this.arts = arts
-    this.min = filters.map(x => x.min)
-    this.nodes = filters.map(x => x.value)
-    this.callback = callback
-
-    this.min.push(-Infinity)
-    this.nodes.push(optimizationTarget)
   }
   addFilter(filter: RequestFilter) {
-    const count = countBuilds(filterArts(this.arts, filter))
-    this.filters.push({ count, filter })
+    this.filters.push(filter)
   }
-  split(newThreshold: number, minCount: number) {
-    if (this.min[this.min.length - 1] > newThreshold) this.min[this.min.length - 1] = newThreshold
-
+  split(_newThreshold: number, minCount: number) {
     while (this.filters.length) {
-      const { count, filter } = this.filters.pop()!
-      if (count <= minCount) return { count, filter }
+      const filter = this.filters.pop()!, count = countBuilds(filterArts(this.arts, filter))
+      if (count <= minCount) return filter
       splitBySetOrID(this.arts, filter, minCount).forEach(filter => this.addFilter(filter))
     }
   }

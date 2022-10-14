@@ -29,7 +29,7 @@ import { CharacterKey, charKeyToLocCharKey, LocationCharacterKey } from '../../.
 import { objPathValue, range } from '../../../../Util/Util';
 import { FinalizeResult, Setup, WorkerCommand, WorkerResult } from './BackgroundWorker';
 import { maxBuildsToShowList } from './Build';
-import { artSetPerm, Build, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, RequestFilter } from './common';
+import { artSetPerm, Build, filterFeasiblePerm, mergeBuilds, mergePlot, pruneAll, pruneExclusion, RequestFilter } from './common';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
@@ -137,7 +137,8 @@ export default function TabBuild() {
     }
 
     const prepruneArts = arts
-    nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn");
+    nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn")
+    nodes = pruneExclusion(nodes, artSetExclusion);
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow, artSetExclusion, {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
     }))
@@ -148,7 +149,7 @@ export default function TabBuild() {
 
     const wrap = { buildValues: Array(maxBuildsToShow).fill(0).map(_ => ({ src: "", val: -Infinity })) }
 
-    const minFilterCount = 8_000_000, maxRequestFilterInFlight = maxWorkers * 4
+    const minFilterCount = 16_000_000, maxRequestFilterInFlight = maxWorkers * 16
     const unprunedFilters = setPerms[Symbol.iterator](), requestFilters: RequestFilter[] = []
     const idleWorkers: number[] = [], splittingWorkers = new Set<number>()
     const workers: Worker[] = []
@@ -241,7 +242,7 @@ export default function TabBuild() {
           if (work) worker.postMessage(work)
           else {
             idleWorkers.push(id)
-            if (idleWorkers.length === 8 * maxWorkers) {
+            if (idleWorkers.length === 4 * maxWorkers) {
               const command: WorkerCommand = { command: "finalize" }
               workers.forEach(worker => worker.postMessage(command))
             }
@@ -254,7 +255,7 @@ export default function TabBuild() {
       cancelled.then(() => worker.terminate())
       finalizedList.push(finalized)
     }
-    for (let i = 0; i < 7; i++)
+    for (let i = 0; i < 3; i++)
       idleWorkers.push(...range(0, maxWorkers - 1))
 
     const buildTimer = setInterval(() => setBuildStatus({ type: "active", ...status }), 100)
