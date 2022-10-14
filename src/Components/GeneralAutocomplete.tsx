@@ -8,6 +8,7 @@ export default function GeneralAutocomplete<T extends string>({ options, valueKe
   { valueKey: T, label?: string, onChange: (v: T) => void, toImg: (v: T) => JSX.Element, disable?: (v: T) => boolean, clearKey?: T } & Omit<AutocompleteProps<GeneralAutocompleteOption<T>, false, true, false>, "renderInput" | "onChange">) {
   const value = options.find(o => o.key === key) ?? { key: "" as T, label: "ERROR" }
   return <Autocomplete
+    autoHighlight
     options={options}
     value={value}
     clearIcon={key !== clearKey ? undefined : null}
