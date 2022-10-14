@@ -2,7 +2,7 @@ import { CharacterData } from 'pipeline'
 import { input, tally } from "../../../Formula/index"
 import { equal, greaterEq, infoMut, max, min, percent, prod, sum, unequal } from "../../../Formula/utils"
 import { CharacterKey, ElementKey } from '../../../Types/consts'
-import { cond, sgt, st, trans } from '../../SheetUtil'
+import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import assets from './assets'
@@ -12,7 +12,6 @@ import skillParam_gen from './skillParam_gen.json'
 const key: CharacterKey = "Nilou"
 const elementKey: ElementKey = "hydro"
 const data_gen = data_gen_src as CharacterData
-const [tr, trm] = trans("char", key)
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
@@ -106,7 +105,7 @@ const bountifulBloom_dmg_ = greaterEq(input.asc, 4,
   )
 )
 
-const c1_moon_dmg_ = greaterEq(input.constellation, 1, percent(datamine.constellation1.moon_dmg_, { key: `char_${key}:c1.moon_dmg_` }))
+const c1_moon_dmg_ = greaterEq(input.constellation, 1, percent(datamine.constellation1.moon_dmg_, { name: ct.ch(`c1.moon_dmg_`) }))
 
 const [condC2HydroPath, condC2Hydro] = cond(key, "c2Hydro")
 const [condC2DendroPath, condC2Dendro] = cond(key, "c2Dendro")
@@ -129,7 +128,7 @@ const c6_critRate_ = greaterEq(input.constellation, 6,
     prod(
       percent(datamine.constellation6.critRate_),
       input.total.hp,
-      1/1000
+      1 / 1000
     ),
     percent(datamine.constellation6.maxCritRate_)
   )
@@ -139,7 +138,7 @@ const c6_critDMG_ = greaterEq(input.constellation, 6,
     prod(
       percent(datamine.constellation6.critDmg_),
       input.total.hp,
-      1/1000
+      1 / 1000
     ),
     percent(datamine.constellation6.maxCritDmg_)
   )
@@ -199,199 +198,201 @@ export const data = dataObjForCharacterSheet(key, elementKey, "sumeru", data_gen
 
 const sheet: ICharacterSheet = {
   key,
-  name: tr("name"),
+  name: ct.chg("name"),
   rarity: data_gen.star,
   elementKey,
   weaponTypeKey: data_gen.weaponTypeKey,
   gender: "F",
-  constellationName: tr("constellationName"),
-  title: tr("title"),
+  constellationName: ct.chg("constellationName"),
+  title: ct.chg("title"),
   talent: {
-      auto: ct.talentTemplate("auto", [{
-        text: tr("auto.fields.normal"),
+    auto: ct.talentTem("auto", [{
+      text: ct.chg("auto.fields.normal"),
+    }, {
+      fields: datamine.normal.hitArr.map((_, i) => ({
+        node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
+      }))
+    }, {
+      text: ct.chg("auto.fields.charged"),
+    }, {
+      fields: [{
+        node: infoMut(dmgFormulas.charged.dmg1, { name: ct.chg(`auto.skillParams.3`) }),
+        textSuffix: "(1)"
       }, {
-        fields: datamine.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
-        }))
+        node: infoMut(dmgFormulas.charged.dmg2, { name: ct.chg(`auto.skillParams.3`) }),
+        textSuffix: "(2)"
       }, {
-        text: tr("auto.fields.charged"),
+        text: ct.chg("auto.skillParams.4"),
+        value: datamine.charged.stamina,
+      }]
+    }, {
+      text: ct.chg(`auto.fields.plunging`),
+    }, {
+      fields: [{
+        node: infoMut(dmgFormulas.plunging.dmg, { name: stg("plunging.dmg") }),
       }, {
-        fields: [{
-          node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.3` }),
-          textSuffix: "(1)"
-        }, {
-          node: infoMut(dmgFormulas.charged.dmg2, { key: `char_${key}_gen:auto.skillParams.3` }),
-          textSuffix: "(2)"
-        }, {
-          text: tr("auto.skillParams.4"),
-          value: datamine.charged.stamina,
-        }]
+        node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
-        text: tr(`auto.fields.plunging`),
-      }, {
-        fields: [{
-          node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
-        }, {
-          node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
-        }, {
-          node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
-        }]
-      }]),
+        node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
+      }],
+    }]),
 
-      skill: ct.talentTemplate("skill", [{
-        fields: [{
-          node: infoMut(dmgFormulas.skill.skillDmg, { key: `char_${key}_gen:skill.skillParams.0` }),
-        }, {
-          node: infoMut(dmgFormulas.skill.dance1Dmg, { key: `char_${key}:skill.dance1` }),
-        }, {
-          node: infoMut(dmgFormulas.skill.whirl1Dmg, { key: `char_${key}:skill.whirl1` }),
-        }, {
-          node: infoMut(dmgFormulas.skill.dance2Dmg, { key: `char_${key}:skill.dance2` }),
-        }, {
-          node: infoMut(dmgFormulas.skill.whirl2Dmg, { key: `char_${key}:skill.whirl2` }),
-        }, {
-          node: infoMut(dmgFormulas.skill.moonDmg, { key: `char_${key}:skill.moon` }),
-        }, {
-          node: infoMut(dmgFormulas.skill.wheelDmg, { key: `char_${key}:skill.wheel` }),
-        }, {
-          text: tr("skill.skillParams.4"),
-          value: datamine.skill.pirouetteDuration,
-          unit: "s"
-        }, {
-          text: tr("skill.skillParams.5"),
-          value: datamine.skill.lunarPrayerDuration,
-          unit: "s"
-        }, {
-          text: tr("skill.skillParams.6"),
-          value: (data) => data.get(input.constellation).value >= 1
-            ? `${datamine.skill.tranquilityAuraDuration}s + ${datamine.constellation1.durationInc}s = ${datamine.skill.tranquilityAuraDuration + datamine.constellation1.durationInc}`
-            : datamine.skill.tranquilityAuraDuration,
-          unit: "s"
-        }, {
-          text: sgt("cd"),
-          value: datamine.skill.cd,
-          unit: "s"
-        }]
-      }, ct.conditionalTemplate("constellation4", {
-        path: condC4AfterPirHitPath,
-        value: condC4AfterPirHit,
-        name: trm("c4.condName"),
-        states: {
-          on: {
-            fields: [{
-              text: st("energyRegen"),
-              value: datamine.constellation4.energyRegen,
-            }, {
-              node: c4_burst_dmg_
-            }, {
-              text: sgt("duration"),
-              value: datamine.constellation4.duration,
-              unit: "s",
-            }]
-          }
+    skill: ct.talentTem("skill", [{
+      fields: [{
+        node: infoMut(dmgFormulas.skill.skillDmg, { name: ct.chg(`skill.skillParams.0`) }),
+      }, {
+        node: infoMut(dmgFormulas.skill.dance1Dmg, { name: ct.ch(`skill.dance1`) }),
+      }, {
+        node: infoMut(dmgFormulas.skill.whirl1Dmg, { name: ct.ch(`skill.whirl1`) }),
+      }, {
+        node: infoMut(dmgFormulas.skill.dance2Dmg, { name: ct.ch(`skill.dance2`) }),
+      }, {
+        node: infoMut(dmgFormulas.skill.whirl2Dmg, { name: ct.ch(`skill.whirl2`) }),
+      }, {
+        node: infoMut(dmgFormulas.skill.moonDmg, { name: ct.ch(`skill.moon`) }),
+      }, {
+        node: infoMut(dmgFormulas.skill.wheelDmg, { name: ct.ch(`skill.wheel`) }),
+      }, {
+        text: ct.chg("skill.skillParams.4"),
+        value: datamine.skill.pirouetteDuration,
+        unit: "s"
+      }, {
+        text: ct.chg("skill.skillParams.5"),
+        value: datamine.skill.lunarPrayerDuration,
+        unit: "s"
+      }, {
+        text: ct.chg("skill.skillParams.6"),
+        value: (data) => data.get(input.constellation).value >= 1
+          ? `${datamine.skill.tranquilityAuraDuration}s + ${datamine.constellation1.durationInc}s = ${datamine.skill.tranquilityAuraDuration + datamine.constellation1.durationInc}`
+          : datamine.skill.tranquilityAuraDuration,
+        unit: "s"
+      }, {
+        text: stg("cd"),
+        value: datamine.skill.cd,
+        unit: "s"
+      }]
+    }, ct.condTem("constellation4", {
+      path: condC4AfterPirHitPath,
+      value: condC4AfterPirHit,
+      name: ct.ch("c4.condName"),
+      states: {
+        on: {
+          fields: [{
+            text: st("energyRegen"),
+            value: datamine.constellation4.energyRegen,
+          }, {
+            node: c4_burst_dmg_
+          }, {
+            text: stg("duration"),
+            value: datamine.constellation4.duration,
+            unit: "s",
+          }]
         }
-      })]),
+      }
+    })]),
 
-      burst: ct.talentTemplate("burst", [{
-        fields: [{
-          node: infoMut(dmgFormulas.burst.skillDmg, { key: `char_${key}_gen:burst.skillParams.0` })
-        }, {
-          node: infoMut(dmgFormulas.burst.aeonDmg, { key: `char_${key}_gen:burst.skillParams.1` })
-        }, {
-          text: sgt("cd"),
-          value: datamine.burst.cd,
-          unit: "s"
-        }, {
-          text: sgt("energyCost"),
-          value: datamine.burst.cost,
-        }]
-      }]),
+    burst: ct.talentTem("burst", [{
+      fields: [{
+        node: infoMut(dmgFormulas.burst.skillDmg, { name: ct.chg(`burst.skillParams.0`) })
+      }, {
+        node: infoMut(dmgFormulas.burst.aeonDmg, { name: ct.chg(`burst.skillParams.1`) })
+      }, {
+        text: stg("cd"),
+        value: datamine.burst.cd,
+        unit: "s"
+      }, {
+        text: stg("energyCost"),
+        value: datamine.burst.cost,
+      }]
+    }]),
 
-      passive1: ct.talentTemplate("passive1", [ct.fieldsTemplate("passive1", {
-        teamBuff: true,
-        canShow: unequal(onlyDendroHydroTeam, 1, 1),
-        fields: [{
-          text: trm("passive1.notDendroHydroTeam")
-        }]
-      }), ct.conditionalTemplate("passive1", {
-        path: condA1AfterSkillPath,
-        value: condA1AfterSkill,
-        teamBuff: true,
-        canShow: onlyDendroHydroTeam,
-        name: trm("passive1.underChaliceEffect"),
-        states: {
-          on: {
-            fields: [{
-              text: trm("passive1.bountifulCores")
-            }]
-          }
+    passive1: ct.talentTem("passive1", [ct.fieldsTem("passive1", {
+      teamBuff: true,
+      canShow: unequal(onlyDendroHydroTeam, 1, 1),
+      fields: [{
+        text: ct.ch("passive1.notDendroHydroTeam")
+      }]
+    }), ct.condTem("passive1", {
+      path: condA1AfterSkillPath,
+      value: condA1AfterSkill,
+      teamBuff: true,
+      canShow: onlyDendroHydroTeam,
+      name: ct.ch("passive1.underChaliceEffect"),
+      states: {
+        on: {
+          fields: [{
+            text: ct.ch("passive1.bountifulCores")
+          }]
         }
-      }), ct.conditionalTemplate("passive1", {
-        path: condA1AfterHitPath,
-        value: condA1AfterHit,
-        name: trm("passive1.condName"),
-        teamBuff: true,
-        canShow: isGoldenChaliceBountyActive,
-        states: {
-          on: {
-            fields: [{
-              node: a1AfterSkillAndHit_eleMas
-            }, {
-              text: sgt("duration"),
-              value: datamine.passive1.buffDuration,
-              unit: "s"
-            }]
-          }
+      }
+    }), ct.condTem("passive1", {
+      path: condA1AfterHitPath,
+      value: condA1AfterHit,
+      name: ct.ch("passive1.condName"),
+      teamBuff: true,
+      canShow: isGoldenChaliceBountyActive,
+      states: {
+        on: {
+          fields: [{
+            node: a1AfterSkillAndHit_eleMas
+          }, {
+            text: stg("duration"),
+            value: datamine.passive1.buffDuration,
+            unit: "s"
+          }]
         }
-      }), ct.headerTemplate("passive2", {
-        canShow: isGoldenChaliceBountyActive,
-        teamBuff: true,
-        fields: [{
-          node: bountifulBloom_dmg_
-        }]
-      }), ct.conditionalTemplate("constellation2", {
-        teamBuff: true,
-        canShow: isGoldenChaliceBountyActive,
-        states: {
-          hydro: {
-            path: condC2HydroPath,
-            value: condC2Hydro,
-            name: st("hitOp.hydro"),
-            fields: [{
-              node: c2_hydro_enemyRes_,
-            }, {
-              text: sgt("duration"),
-              value: datamine.constellation2.duration,
-              unit: "s"
-            }]
-          },
-          dendro: {
-            path: condC2DendroPath,
-            value: condC2Dendro,
-            name: st("hitOp.dendro"),
-            fields: [{
-              node: c2_dendro_enemyRes_
-            }, {
-              text: sgt("duration"),
-              value: datamine.constellation2.duration,
-              unit: "s"
-            }]
-          }
+      }
+    }), ct.headerTem("passive2", {
+      canShow: isGoldenChaliceBountyActive,
+      teamBuff: true,
+      fields: [{
+        node: bountifulBloom_dmg_
+      }]
+    }), ct.condTem("constellation2", {
+      teamBuff: true,
+      canShow: isGoldenChaliceBountyActive,
+      states: {
+        hydro: {
+          path: condC2HydroPath,
+          value: condC2Hydro,
+          name: st("hitOp.hydro"),
+          fields: [{
+            node: c2_hydro_enemyRes_,
+          }, {
+            text: stg("duration"),
+            value: datamine.constellation2.duration,
+            unit: "s"
+          }]
+        },
+        dendro: {
+          path: condC2DendroPath,
+          value: condC2Dendro,
+          name: st("hitOp.dendro"),
+          fields: [{
+            node: c2_dendro_enemyRes_
+          }, {
+            text: stg("duration"),
+            value: datamine.constellation2.duration,
+            unit: "s"
+          }]
         }
-      })]),
-      passive2: ct.talentTemplate("passive2"),
-      passive3: ct.talentTemplate("passive3"),
-      constellation1: ct.talentTemplate("constellation1"),
-      constellation2: ct.talentTemplate("constellation2"),
-      constellation3: ct.talentTemplate("constellation3", [{ fields: [{ node: burstC3 }] }]),
-      constellation4: ct.talentTemplate("constellation4"),
-      constellation5: ct.talentTemplate("constellation5", [{ fields: [{ node: skillC5 }] }]),
-      constellation6: ct.talentTemplate("constellation6", [{ fields: [{
+      }
+    })]),
+    passive2: ct.talentTem("passive2"),
+    passive3: ct.talentTem("passive3"),
+    constellation1: ct.talentTem("constellation1"),
+    constellation2: ct.talentTem("constellation2"),
+    constellation3: ct.talentTem("constellation3", [{ fields: [{ node: burstC3 }] }]),
+    constellation4: ct.talentTem("constellation4"),
+    constellation5: ct.talentTem("constellation5", [{ fields: [{ node: skillC5 }] }]),
+    constellation6: ct.talentTem("constellation6", [{
+      fields: [{
         node: c6_critRate_
       }, {
         node: c6_critDMG_
-      }]}]),
-    },
+      }]
+    }]),
+  },
 };
 
 export default new CharacterSheet(sheet, data, assets)

@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { equal, lookup, naught, percent, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { range } from '../../../../Util/Util'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
@@ -24,7 +24,7 @@ const selfEleMas = equal(input.weapon.key, key,
     stack,
     prod(
       stack,
-      subscript(input.weapon.refineIndex, selfEmSrc, { key: "_", fixed: 2 }),
+      subscript(input.weapon.refineIndex, selfEmSrc, { unit: "%", fixed: 2 }),
       input.total.hp
     )
   ])), naught)
@@ -32,7 +32,7 @@ const selfEleMas = equal(input.weapon.key, key,
 const teamEleMas = equal(input.weapon.key, key,
   equal(condAfterSkillStacks, "3",
     prod(
-      subscript(input.weapon.refineIndex, teamEmSrc, { key: "_", fixed: 2 }),
+      subscript(input.weapon.refineIndex, teamEmSrc, { unit: "%", fixed: 2 }),
       input.total.hp
     )))
 
@@ -71,7 +71,7 @@ const sheet: IWeaponSheet = {
         fields: [{
           node: selfEleMas
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 20,
           unit: "s"
         }]
@@ -84,7 +84,7 @@ const sheet: IWeaponSheet = {
     fields: [{
       node: teamEleMas
     }, {
-      text: sgt("duration"),
+      text: stg("duration"),
       value: 20,
       unit: "s"
     }]

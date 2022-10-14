@@ -1,8 +1,9 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, infoMut, percent, prod, subscript, unequal } from '../../../../Formula/utils'
+import KeyMap from '../../../../KeyMap'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -16,7 +17,7 @@ const [, trm] = trans("weapon", key)
 const [condPassivePath, condPassive] = cond(key, "passive")
 const atkArr = [0.24, 0.3, 0.36, 0.42, 0.48]
 const selfAtk = equal(input.weapon.key, key, equal("on", condPassive, prod(
-  subscript(input.weapon.refineIndex, atkArr, { key: "_" }),
+  subscript(input.weapon.refineIndex, atkArr, { unit: "%" }),
   input.premod.eleMas
 )))
 const teamAtkDisp = equal(input.weapon.key, key, prod(percent(0.3), selfAtk))
@@ -50,7 +51,7 @@ const sheet: IWeaponSheet = {
         fields: [{
           node: selfAtk
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 12,
           unit: "s"
         }]
@@ -61,9 +62,9 @@ const sheet: IWeaponSheet = {
     teamBuff: true,
     canShow: equal(condPassive, "on", 1),
     fields: [{
-      node: infoMut(teamAtkDisp, { key: "atk", isTeamBuff: true }),
+      node: infoMut(teamAtkDisp, { ...KeyMap.info("atk"), isTeamBuff: true }),
     }, {
-      text: sgt("duration"),
+      text: stg("duration"),
       value: 12,
       unit: "s"
     }]
