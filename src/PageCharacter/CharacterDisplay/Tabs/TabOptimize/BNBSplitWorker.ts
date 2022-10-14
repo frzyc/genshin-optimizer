@@ -3,6 +3,7 @@ import { allOperations } from "../../../../Formula/optimization";
 import { ConstantNode, NumNode } from "../../../../Formula/type";
 import { prod, threshold } from "../../../../Formula/utils";
 import { SlotKey } from "../../../../Types/consts";
+import { maximizeLP } from "../../../../Util/LP";
 import { assertUnreachable, crawlObject, layeredAssignment, objectKeyValueMap, objectMap, objPathValue } from "../../../../Util/Util";
 import type { InterimResult, Setup, SplitWorker } from "./BackgroundWorker";
 import { ArtifactBuildData, ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynMinMax, DynStat, filterArts, MinMax, pruneAll, RequestFilter } from "./common";
@@ -229,7 +230,81 @@ function weightedSum(...entries: readonly (readonly [number, Poly])[]): Poly {
 }
 
 function linearUpperBound(polys: Poly[], ranges: DynMinMax): Linear[] {
-  throw "TODO"
+  /** Merge two (sorted) strings, keeping duplicity */
+  function merge(a: string[], b: string[]): string[] {
+    const result: string[] = [], bLen = b.length
+    let ai = 0, bi = 0
+    while (bi < bLen) {
+      if (a[ai] === b[bi]) result.push(a[(bi++, ai++)])
+      // If `ai >= aLen`, the condition is automatically not met
+      else if (a[ai] < b[bi]) result.push(a[ai++])
+      else result.push(b[bi++])
+    }
+    result.push(...a.slice(ai))
+    return result
+  }
+  /** a * bVal, adjusted for appropriate keys, requiring that `a` is a subset of `b` */
+  function apply(a: string[], b: string[], bVal: number[]): number {
+    let bi = 0
+    return a.reduce((accu, key) => {
+      while (key !== b[bi]) bi++
+      return accu * bVal[bi++]
+    }, 1)
+  }
+  return polys.map(poly => {
+    let terms: { path: string[], coeff: number }[] = [], weights: Linear = { $c: 0 }
+    crawlObject(poly, [], v => typeof v === "number", (coeff, path) =>
+      terms.push({ path: path.slice(0, -1).sort(), coeff }))
+    terms.sort((a, b) => b.path.length - a.path.length)
+
+    while (terms.length) {
+      let path = terms[0].path, chosen: (typeof terms[number])[] = []
+      terms = terms.filter(term => {
+        let candidatePath = merge(term.path, path)
+        if (path.length === candidatePath.length || candidatePath.length <= 5) {
+          chosen.push(term)
+          path = candidatePath
+          return false
+        } else return true
+      })
+
+      /**
+       * minimize e over w+, w-, c+, c-, e >= 0
+       * s.t. val + e >= x * w + c >= val for each corner x and val = f(x)
+       * where w = w+ - w- and c = c+ - c- .
+       *
+       * Terms are arranged as [x0+, x1+, ..., x0-, x1-, ..., c+, c-, e]
+       */
+      const constraints: number[][] = []
+      const permute = (i: number, dir: number[], vals: number[]): void => {
+        if (i === path.length) {
+          const value = chosen.reduce((accu, { path: chosenPath, coeff }) =>
+            accu + coeff * apply(chosenPath, path, vals), 0)
+          const negDir = dir.map(x => -x)
+          constraints.push([-value, ...negDir, ...dir, -1, 1, +0]) // x + c >= val
+          constraints.push([+value, ...dir, ...negDir, 1, -1, -1]) // x + c <= val + e
+          return
+        }
+
+        const key = path[i], { min, max } = ranges[key]!
+        permute(i + 1, [...dir, 0], [...vals, min])
+        permute(i + 1, [...dir, 1], [...vals, max])
+      }
+      permute(0, [], [])
+      const objective = [...Array<number>(2 * path.length + 2).fill(0), -1]
+
+      const pos = maximizeLP(objective, constraints)
+      const neg = pos.slice(path.length), [c, negC] = neg.slice(path.length)
+      path.forEach((key, i) => {
+        if (!weights[key]) weights[key] = 0
+        weights[key] += pos[i] - neg[i]
+      })
+      weights.$c += c - negC
+    }
+
+    throw "TODO: Renormalize weight"
+    return weights
+  })
 }
 
 /** Compute a poly upper bound of `nodes` */
