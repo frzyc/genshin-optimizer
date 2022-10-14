@@ -17,11 +17,6 @@ const smallIcons = [{
   url: process.env.REACT_APP_URL_GITHUB_GO,
   color: "white",
 }, {
-  tooltip: "Genshin Optimizer Patch Notes",
-  icon: <Description />,
-  url: `${process.env.REACT_APP_URL_GITHUB_GO}/releases`,
-  color: "secondary",
-}, {
   tooltip: "Youtube (frzyc)",
   icon: <YouTube />,
   url: process.env.REACT_APP_URL_YOUTUBE_FRZYC,
@@ -60,6 +55,12 @@ const buttons = [{
   tooltip: t => t`quickLinksCard.buttons.scanners.tooltip`,
   to: "/scanner",
   color: "primary",
+}, {
+  title: t => t`quickLinksCard.buttons.patchNotes.title`,
+  icon: <Description />,
+  tooltip: t => t`quickLinksCard.buttons.patchNotes.tooltip`,
+  url: `${process.env.REACT_APP_URL_GITHUB_GO}/releases`,
+  color: "secondary",
 }, {
   title: t => t`quickLinksCard.buttons.kqm.title`,
   icon: <Handshake />,
