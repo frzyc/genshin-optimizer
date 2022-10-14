@@ -18,7 +18,7 @@ const dmgPerc = [0.4, 0.55, 0.7, 0.85, 1]
 const atkSPD_ = percent(0.12)
 const critRate_ = subscript(input.weapon.refineIndex, critRateInc)
 const dmg = equal(input.weapon.key, key,
-  customDmgNode(prod(subscript(input.weapon.refineIndex, dmgPerc, { key: "_" }), input.total.atk), "elemental", {
+  customDmgNode(prod(subscript(input.weapon.refineIndex, dmgPerc, { unit: "%" }), input.total.atk), "elemental", {
     hit: { ele: constant("physical") }
   }))
 const data = dataObjForWeaponSheet(key, data_gen, {
@@ -40,7 +40,7 @@ const sheet: IWeaponSheet = {
     }, {
       node: atkSPD_,
     }, {
-      node: infoMut(dmg, { key: "sheet:dmg" }),
+      node: infoMut(dmg, { name: st("dmg") }),
     }]
   }],
 }

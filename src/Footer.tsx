@@ -22,8 +22,8 @@ function FooterContent() {
           <a
             href={`${process.env.REACT_APP_URL_GITHUB_GO}/releases`}
             style={{ color: "white", fontFamily: "monospace" }}
-            target={"_blank"}
-            rel="noopener"
+            target="_blank"
+            rel="noreferrer"
           >
             {{ version: packageInfo.version }}
           </a>

@@ -237,7 +237,7 @@ function WeaponEditorCard({ weapon, setWeapon, weaponTypeKey }: { weapon: ICache
           {[input.weapon.main, input.weapon.sub, input.weapon.sub2].map((node, i) => {
             const n = weaponUIData.get(node)
             if (n.isEmpty || !n.value) return null
-            return <NodeFieldDisplay key={n.info.key} node={n} component={ListItem} />
+            return <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} component={ListItem} />
           })}
         </FieldDisplayList>}
       </CardDark>

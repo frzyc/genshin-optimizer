@@ -15,8 +15,7 @@ import { FormulaDataContext } from '../../Context/FormulaDataContext';
 import { DatabaseContext } from '../../Database/Database';
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil';
 import { DisplaySub, Variant } from '../../Formula/type';
-import { NodeDisplay } from '../../Formula/uiData';
-import KeyMap, { valueString } from '../../KeyMap';
+import { NodeDisplay, nodeVStr } from '../../Formula/uiData';
 import usePromise from '../../ReactHooks/usePromise';
 import { allAmpReactions, AmpReactionKey } from '../../Types/consts';
 
@@ -73,7 +72,7 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
 
   return <Accordion sx={{ bgcolor: "contentDark.main" }} expanded={node === contextNode || expanded} onChange={handleChange} ref={scrollRef} >
     <AccordionSummary expandIcon={<ExpandMore />} >
-      <Typography><ColorText color={node.info.variant}>{KeyMap.get(node.info.key ?? "")}</ColorText> <strong>{valueString(node.value, node.unit)}</strong></Typography>
+      <Typography><ColorText color={node.info.variant}>{node.info.name}</ColorText> <strong>{nodeVStr(node)}</strong></Typography>
       {allAmpReactions.includes(node.info.variant as any) && <Box sx={{ display: "inline-block", ml: "auto", mr: 2 }}>
         <AmpReactionModeText reaction={node.info.variant as AmpReactionKey} trigger={node.info.subVariant as Variant} />
       </Box>}

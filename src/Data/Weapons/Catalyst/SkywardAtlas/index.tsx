@@ -18,7 +18,7 @@ const eleBonus_ = Object.fromEntries(allElements.map(ele => [ele, subscript(inpu
 const dmgPerc = [1.6, 2, 2.4, 2.8, 3.2]
 
 const dmg = equal(input.weapon.key, key,
-  customDmgNode(prod(subscript(input.weapon.refineIndex, dmgPerc, { key: "_" }), input.total.atk), "elemental", {
+  customDmgNode(prod(subscript(input.weapon.refineIndex, dmgPerc, { unit: "%" }), input.total.atk), "elemental", {
     hit: { ele: constant("physical") }
   }))
 const data = dataObjForWeaponSheet(key, data_gen, {
@@ -35,7 +35,7 @@ const sheet: IWeaponSheet = {
     fields: [
       ...allElements.map(ele => ({ node: eleBonus_[ele] })),
       {
-        node: infoMut(dmg, { key: "sheet:dmg" }),
+        node: infoMut(dmg, { name: st("dmg") }),
       }]
   }],
 }

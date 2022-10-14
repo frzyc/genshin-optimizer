@@ -3,7 +3,7 @@ import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { absorbableEle, ArtifactSetKey } from '../../../Types/consts'
 import { objectKeyMap, objectKeyValueMap } from '../../../Util/Util'
-import { condReadNode, sgt, st } from '../../SheetUtil'
+import { condReadNode, stg, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
@@ -57,7 +57,7 @@ const sheet: IArtifactSheet = {
           fields: [{
             node: condSwirlNodes[`${eleKey}_enemyRes_`]
           }, {
-            text: sgt("duration"),
+            text: stg("duration"),
             value: 10,
             unit: "s"
           }]

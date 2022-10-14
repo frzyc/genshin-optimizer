@@ -16,7 +16,7 @@ const hpSrc = [0.2, 0.25, 0.3, 0.35, 0.4]
 const atkSrc = [0.012, 0.015, 0.018, 0.021, 0.024]
 const hp_ = subscript(input.weapon.refineIndex, hpSrc)
 const atk = equal(input.weapon.key, key,
-  prod(subscript(input.weapon.refineIndex, atkSrc, { key: "_" }), input.premod.hp))
+  prod(subscript(input.weapon.refineIndex, atkSrc, { unit: "%" }), input.premod.hp))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

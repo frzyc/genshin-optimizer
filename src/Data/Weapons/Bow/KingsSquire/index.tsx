@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { equal, infoMut, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -19,7 +19,7 @@ const eleMas = equal(condPassive, "on", subscript(input.weapon.refineIndex, eleM
 const dmg_arr = [1, 1.2, 1.4, 1.6, 1.8]
 const dmg = equal(input.weapon.key, key, customDmgNode(
   prod(
-    subscript(input.weapon.refineIndex, dmg_arr, { key: "_" }),
+    subscript(input.weapon.refineIndex, dmg_arr, { unit: "%" }),
     input.total.atk
   ),
   "elemental",
@@ -39,7 +39,7 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
-      node: infoMut(dmg, { key: "sheet:dmg" }),
+      node: infoMut(dmg, { name: st("dmg") }),
     }]
   }, {
     value: condPassive,
@@ -51,11 +51,11 @@ const sheet: IWeaponSheet = {
         fields: [{
           node: eleMas,
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 12,
           unit: "s"
         }, {
-          text: sgt("cd"),
+          text: stg("cd"),
           value: 20,
           unit: "s",
         }]

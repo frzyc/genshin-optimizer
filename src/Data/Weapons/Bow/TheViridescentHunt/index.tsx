@@ -24,7 +24,7 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
-      node: infoMut(dmg, { key: "sheet:dmg" })
+      node: infoMut(dmg, { name: st("dmg") })
     }]
   }]
 }

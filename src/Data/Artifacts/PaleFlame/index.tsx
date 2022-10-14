@@ -1,9 +1,10 @@
 import { input } from '../../../Formula'
 import { Data, Info } from '../../../Formula/type'
 import { equal, greaterEq, lookup, naught, percent, sum } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
-import { cond, sgt, st } from '../../SheetUtil'
+import { cond, stg, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
@@ -13,7 +14,7 @@ const setHeader = setHeaderTemplate(key, icons)
 
 const [condStackPath, condStack] = cond(key, "stacks")
 
-const physical_dmg_info: Info = { key: "physical_dmg_" }
+const physical_dmg_info: Info = KeyMap.info("physical_dmg_")
 const set2 = greaterEq(input.artSet.PaleFlame, 2, percent(0.25), physical_dmg_info)
 
 const stackArr = range(1, 2)
@@ -50,7 +51,7 @@ const sheet: IArtifactSheet = {
           fields: [{ node: set4Atk }, {
             node: set4Phys
           }, {
-            text: sgt("duration"),
+            text: stg("duration"),
             value: 7,
             unit: "s"
           }]

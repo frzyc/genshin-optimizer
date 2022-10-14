@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { equal, lookup, naught, prod, subscript, sum } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { range } from '../../../../Util/Util'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
@@ -51,7 +51,7 @@ const sheet: IWeaponSheet = {
         fields: [{
           node: atkStacks
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 8,
           unit: "s"
         }]

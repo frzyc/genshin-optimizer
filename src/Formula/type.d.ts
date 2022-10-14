@@ -15,7 +15,9 @@ export type StrNode = StrPrioNode | SmallestNode | ThresholdNode<StrNode> |
   ReadNode<string | undefined> | ConstantNode<string | undefined>
 
 interface Info {
-  key?: string
+  name?: Displayable
+  unit?: Unit
+  icon?: Displayable
   prefix?: KeyMapPrefix
   source?: CharacterKey | WeaponKey | ArtifactSetKey
   variant?: Variant
@@ -24,6 +26,8 @@ interface Info {
   pivot?: true
   fixed?: number
   isTeamBuff?: boolean
+  multi?: number
+  textSuffix?: Displayable
 }
 export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | AdditiveReactionsKey | "heal" | "invalid"
 

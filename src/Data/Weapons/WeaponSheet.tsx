@@ -38,12 +38,14 @@ export default class WeaponSheet {
     this.sheet = weaponSheet
     this.data = data
   }
+  static trm(key: string) { return (strKey: string) => <Translate ns={`weapon_${key}`} key18={strKey} /> }
+  static tr(key: string) { return (strKey: string) => <Translate ns={`weapon_${key}_gen`} key18={strKey} /> }
   static get = (weaponKey: WeaponKey | ""): Promise<WeaponSheet> | undefined => weaponKey ? weaponSheets.then(w => w[weaponKey]) : undefined
   static get getAll(): Promise<AllWeaponSheets> { return weaponSheets.then(ws => (weaponKey: WeaponKey): WeaponSheet => ws[weaponKey]) }
   static getAllDataOfType(weaponType: WeaponTypeKey) { return displayDataMap.then(map => map[weaponType]) }
   static getWeaponsOfType = (sheets: StrictDict<WeaponKey, WeaponSheet>, weaponType: string): Dict<WeaponKey, WeaponSheet> => Object.fromEntries(Object.entries(sheets).filter(([_, sheet]) => (sheet as WeaponSheet).weaponType === weaponType))
   static getLevelString = (weapon: ICachedWeapon) => getLevelString(weapon.level, weapon.ascension)
-  tr = (strKey: string) => <Translate ns={`weapon_${this.key}_gen`} key18={strKey} />
+  get tr() { return WeaponSheet.tr(this.key) }
   get name() { return this.tr("name") }
   get hasRefinement() { return this.rarity > 2 }
   get passiveName() { return this.hasRefinement ? this.tr("passiveName") : "" }

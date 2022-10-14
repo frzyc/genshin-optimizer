@@ -29,9 +29,9 @@ function initCustomMultiTarget() {
     targets: []
   }
 }
-function initCustomTarget(path: string[]): CustomTarget {
+function initCustomTarget(path: string[], multi: number = 1): CustomTarget {
   return {
-    weight: 1,
+    weight: multi,
     path,
     hitMode: "avgHit",
     bonusStats: {}
@@ -178,9 +178,9 @@ export function CustomMultiTargetButton() {
 function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand, onDelete, onDup, onOrder, nTargets }:
   { index: number, target: CustomMultiTarget, setTarget: (t: CustomMultiTarget) => void, expanded: boolean, onExpand: () => void, onDelete: () => void, onDup: () => void, onOrder: (nInd: number) => void, nTargets: number }) {
   const setName = useCallback((e) => setTarget({ ...target, name: e.target.value }), [setTarget, target])
-  const addTarget = useCallback((t: string[]) => {
+  const addTarget = useCallback((t: string[], multi?: number) => {
     const target_ = { ...target }
-    target_.targets = [...target_.targets, initCustomTarget(t)]
+    target_.targets = [...target_.targets, initCustomTarget(t, multi)]
     setTarget(target_)
   }, [target, setTarget])
 
@@ -321,13 +321,13 @@ function ReactionDropdown({ node, reaction, setReactionMode, infusionAura }: { n
     </MenuItem >)}
   </DropdownButton>
 }
-function AddCustomTargetBtn({ setTarget }: { setTarget: (t: string[]) => void }) {
+function AddCustomTargetBtn({ setTarget }: { setTarget: (t: string[], m?: number) => void }) {
   const { t } = useTranslation("page_character")
   const [show, onShow, onClose] = useBoolState(false)
   const setTargetHandler = useCallback(
-    (t: string[]) => {
+    (target: string[], multi?: number) => {
       onClose()
-      setTarget(t)
+      setTarget(target, multi)
     }, [onClose, setTarget])
 
   return <>

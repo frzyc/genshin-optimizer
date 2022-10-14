@@ -1,11 +1,18 @@
 import { uiInput } from "."
 import ColorText from "../Components/ColoredText"
-import KeyMap, { Unit, valueString } from "../KeyMap"
+import { Translate } from "../Components/Translate"
+import KeyMap, { valueString } from "../KeyMap"
+import { allArtifactSets, allCharacterKeys, allWeaponKeys, ArtifactSetKey, CharacterKey, WeaponKey } from "../Types/consts"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
 import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput } from "./type"
 
 const shouldWrap = true
+
+export function nodeVStr(n: NodeDisplay) {
+  return valueString(n.value, n.info.unit, n.info.fixed)
+}
+
 export interface NodeDisplay<V = number> {
   /** Leave this here to make sure one can use `crawlObject` on hierarchy of `NodeDisplay` */
   operation: true
@@ -13,7 +20,6 @@ export interface NodeDisplay<V = number> {
   value: V
   /** Whether the node fails the conditional test (`threshold_add`, `match`, etc.) or consists solely of empty nodes */
   isEmpty: boolean
-  unit: Unit
   formula?: Displayable
   formulas: Displayable[]
 }
@@ -75,7 +81,7 @@ export class UIData {
   get(node: NumNode | StrNode): NodeDisplay<number | string | undefined> {
     if (node === undefined) {
       console.trace("Please report this bug with this trace")
-      return { info: {}, operation: true, value: undefined, isEmpty: true, unit: "", formulas: [] }
+      return { info: {}, operation: true, value: undefined, isEmpty: true, formulas: [] }
     }
     const old = this.processed.get(node)
     if (old) return old
@@ -330,22 +336,28 @@ function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
     info,
     value,
     isEmpty: empty,
-    unit: KeyMap.unit(info.key),
     formula, formulas: [...(assignment ? [assignment] : []), ...dependencies]
   }
 }
 
-//* Comment/uncomment this line to toggle between string formulas and JSX formulas
 function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
-  const { info, value, formula } = node
-  const { key, prefix, source, variant, fixed } = info
+  /**
+   * TODO Fetch these `Displayable` from `node.field` instead
+   * In particular, `node.valueDisplay` and `node.name` below
+   */
+
+  const { info: { name, prefix, source, variant, fixed, unit }, value, formula } = node
   if (typeof value !== "number") return
-  node.valueDisplay = <ColorText color="info">{valueString(value, KeyMap.unit(key), fixed)}</ColorText>
-  if (key && key !== '_') {
+  node.valueDisplay = <ColorText color="info">{valueString(value, unit, fixed)}</ColorText>
+  if (name) {
     const prefixDisplay = (prefix && !source) ? <>{KeyMap.getPrefixStr(prefix)} </> : <></>
-    // TODO: Convert `source` key to actual name
-    const sourceDisplay = source ? <ColorText color="secondary"> ({source})</ColorText> : null
-    node.name = <><ColorText color={variant}>{prefixDisplay}{KeyMap.get(key!)}</ColorText>{sourceDisplay}</>
+    const sourceText = source && (
+      (allArtifactSets.includes(source as ArtifactSetKey) && <Translate ns="artifactNames_gen" key18={source} />) ||
+      (allWeaponKeys.includes(source as WeaponKey) && <Translate ns="weaponNames_gen" key18={source} />) ||
+      (allCharacterKeys.includes(source as CharacterKey) && <Translate ns="charNames_gen" key18={source} />)
+    )
+    const sourceDisplay = sourceText ? <ColorText color="secondary"> ({sourceText})</ColorText> : null
+    node.name = <><ColorText color={variant}>{prefixDisplay}{name}</ColorText>{sourceDisplay}</>
 
     if (formula)
       node.assignment = <div id="formula">{node.name} {node.valueDisplay} = {formula}</div>
@@ -359,30 +371,6 @@ function createFormulaComponent(node: ContextNodeDisplay): Displayable {
 function mergeFormulaComponents(components: Displayable[]): Displayable {
   return <>{components.map((x, i) => <span key={i}>{x}</span>)}</>
 }
-/*/
-function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
-  const { info, value, formula } = node
-  const { key, prefix, source, fixed } = info
-  if (typeof value !== "number") return
-  node.valueDisplay = valueString(value, KeyMap.unit(key), fixed)
-  if (key && key !== '_') {
-    const prefixDisplay = (prefix && !source) ? `${KeyMap.getPrefixStr(prefix)} ` : ""
-    // TODO: Convert `source` key to actual name
-    const sourceDisplay = source ? ` ${source}` : ""
-    node.name = `${prefixDisplay}${KeyMap.getStr(key!)}${sourceDisplay}`
-
-    if (formula)
-      node.assignment = `${node.name} ${node.valueDisplay} = ${formula}`
-  }
-}
-function createFormulaComponent(node: ContextNodeDisplay): Displayable {
-  const { name, valueDisplay } = node
-  return name ? `${name} ${valueDisplay}` : valueDisplay!
-}
-function mergeFormulaComponents(components: Displayable[]): Displayable {
-  return (components as string[]).join("")
-}
-//*/
 
 function mergeInfo(base: Info, override: Info): Info {
   const result = { ...base }

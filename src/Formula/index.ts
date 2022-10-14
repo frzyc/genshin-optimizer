@@ -1,8 +1,10 @@
-import { allEleEnemyResKeys } from "../KeyMap"
+import KeyMap, { allEleEnemyResKeys } from "../KeyMap"
 import { transformativeReactionLevelMultipliers } from "../KeyMap/StatConstants"
+import { artifactTr } from "../names"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
-import { crawlObject, deepClone, objectKeyMap, objectKeyValueMap } from "../Util/Util"
-import { Data, Info, NumNode, ReadNode, StrNode } from "./type"
+import { crawlObject, objectKeyMap, objectKeyValueMap } from "../Util/Util"
+import { deepNodeClone } from "./internal"
+import { Data, Info, NodeData, NumNode, ReadNode, StrNode } from "./type"
 import { constant, equal, frac, infoMut, lookup, max, min, naught, none, one, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, subscript, sum, unequal, unequalStr } from "./utils"
 
 const asConst = true as const, pivot = true as const
@@ -43,8 +45,8 @@ export const allInputPremodKeys = [...allModStats, ...allNonModStats] as const
 export type InputPremodKey = typeof allInputPremodKeys[number]
 
 const talent = objectKeyMap(allTalents, _ => read())
-const allModStatNodes = objectKeyMap(allModStats, key => read(undefined, { key }))
-const allNonModStatNodes = objectKeyMap(allNonModStats, key => read(undefined, { key }))
+const allModStatNodes = objectKeyMap(allModStats, key => read(undefined, KeyMap.info(key)))
+const allNonModStatNodes = objectKeyMap(allNonModStats, key => read(undefined, KeyMap.info(key)))
 
 for (const ele of allElements) {
   allNonModStatNodes[`${ele}_res_`].info!.variant = ele
@@ -60,8 +62,8 @@ allNonModStatNodes.healInc.info!.variant = "heal"
 allNonModStatNodes.incHeal_.info!.variant = "heal"
 allModStatNodes.heal_.info!.variant = "heal"
 
-function withDefaultInfo<T>(info: Info, value: T): T {
-  value = deepClone(value)
+function withDefaultInfo<T extends NodeData<NumNode | StrNode>>(info: Info, value: T): T {
+  value = deepNodeClone(value)
   crawlObject(value, [], (x: any) => x.operation, (x: NumNode | StrNode) => x.info = { ...info, ...x.info, })
   return value
 }
@@ -72,10 +74,10 @@ function markAccu<T>(accu: ReadNode<number>["accu"], value: T): void {
 }
 
 /** All read nodes */
-const input = setReadNodeKeys(deepClone({
+const input = setReadNodeKeys(deepNodeClone({
   activeCharKey: stringRead(),
   charKey: stringRead(), charEle: stringRead(), weaponType: stringRead(),
-  lvl: read(undefined, { key: "level", prefix: "char" }), constellation: read(), asc: read(), special: read(),
+  lvl: read(undefined, { ...KeyMap.info("level"), prefix: "char" }), constellation: read(), asc: read(), special: read(),
 
   infusion: {
     overridableSelf: stringRead("small"),
@@ -83,7 +85,7 @@ const input = setReadNodeKeys(deepClone({
     team: stringRead("small"),
   },
 
-  base: objectKeyMap(['atk', 'hp', 'def'], key => read("add", { key })),
+  base: objectKeyMap(['atk', 'hp', 'def'], key => read("add", KeyMap.info(key))),
   customBonus: withDefaultInfo({ prefix: "custom", pivot }, {
     ...allModStatNodes, ...allNonModStatNodes,
   }),
@@ -93,14 +95,14 @@ const input = setReadNodeKeys(deepClone({
     ...talent, ...objectKeyValueMap(allTalents, talent => [`${talent}Index`, read()]),
     ...allModStatNodes, ...allNonModStatNodes,
     /** Total Crit Rate capped to [0%, 100%] */
-    cappedCritRate: read(undefined, { key: "critRate_" }),
+    cappedCritRate: read(undefined, KeyMap.info("critRate_")),
   }),
 
   art: withDefaultInfo({ prefix: "art", asConst }, {
     ...objectKeyMap(allArtModStats, key => allModStatNodes[key]),
     ...objectKeyMap(allSlotKeys, _ => ({ id: stringRead(), set: stringRead() })),
   }),
-  artSet: objectKeyMap(allArtifactSets, set => read("add", { key: set })),
+  artSet: objectKeyMap(allArtifactSets, set => read("add", { name: artifactTr(set) })),
 
   weapon: withDefaultInfo({ prefix: "weapon", asConst }, {
     id: stringRead(),
@@ -111,22 +113,22 @@ const input = setReadNodeKeys(deepClone({
   }),
 
   enemy: {
-    def: read("add", { key: "enemyDef_multi", pivot }),
+    def: read("add", { ...KeyMap.info("enemyDef_multi"), pivot }),
     ...objectKeyMap(allElements.map(ele => `${ele}_resMulti` as const), _ => read()),
 
-    level: read(undefined, { key: "enemyLevel" }),
-    ...objectKeyValueMap(allElements, ele => [`${ele}_res_`, read(undefined, { prefix: "base", key: `${ele}_enemyRes_`, variant: ele })]),
+    level: read(undefined, KeyMap.info("enemyLevel")),
+    ...objectKeyValueMap(allElements, ele => [`${ele}_res_`, read(undefined, { prefix: "base", ...KeyMap.info(`${ele}_enemyRes_`) })]),
     defRed: read(undefined),
-    defIgn: read("add", { key: "enemyDefIgn_", pivot }),
+    defIgn: read("add", { ...KeyMap.info("enemyDefIgn_"), pivot }),
   },
 
   hit: {
     reaction: stringRead(),
     ele: stringRead(), move: stringRead(), hitMode: stringRead(),
-    base: read("add", { key: "base" }), ampMulti: read(), addTerm: read(undefined, { pivot }),
+    base: read("add", KeyMap.info("base")), ampMulti: read(), addTerm: read(undefined, { pivot }),
 
-    dmgBonus: read("add", { key: "dmg_", pivot }),
-    dmgInc: read("add", { key: "dmgInc" }),
+    dmgBonus: read("add", { ...KeyMap.info("dmg_"), pivot }),
+    dmgInc: read("add", KeyMap.info("dmgInc")),
     dmg: read(),
   },
 }))
@@ -138,17 +140,17 @@ markAccu('add', {
   bonus, customBonus, premod, art,
   total: objectKeyMap(allModStats, stat => total[stat]),
 })
-bonus.auto.info = { key: "autoBoost" }
-bonus.skill.info = { key: "skillBoost" }
-bonus.burst.info = { key: "burstBoost" }
-base.atk.info = { key: "atk", prefix: "base", pivot }
+bonus.auto.info = KeyMap.info("autoBoost")
+bonus.skill.info = KeyMap.info("skillBoost")
+bonus.burst.info = KeyMap.info("burstBoost")
+base.atk.info = { ...KeyMap.info("atk"), prefix: "base", pivot }
 delete total.critRate_.info!.pivot
 total.critRate_.info!.prefix = "uncapped"
 
 // Nodes that are not used anywhere else but `common` below
 
 /** Base Amplifying Bonus */
-const baseAmpBonus = infoMut(sum(one, prod(25 / 9, frac(total.eleMas, 1400))), { key: "base_amplifying_multi", pivot })
+const baseAmpBonus = infoMut(sum(one, prod(25 / 9, frac(total.eleMas, 1400))), { ...KeyMap.info("base_amplifying_multi"), pivot })
 
 /** Base Additive Bonus */
 const baseAddBonus = sum(one, prod(5, frac(total.eleMas, 1200)))
@@ -167,21 +169,22 @@ const common: Data = {
     }),
     ...objectKeyMap(allModStats, key => {
       const operands: NumNode[] = []
+      const info = KeyMap.info(key)
       switch (key) {
         case "atk": case "def": case "hp":
           operands.push(prod(base[key], sum(one, premod[`${key}_`])))
           break
         case "critRate_":
-          operands.push(percent(0.05, { key, prefix: "default" }),
+          operands.push(percent(0.05, { ...info, prefix: "default" }),
             lookup(hit.move, objectKeyMap(allMoves, move => premod[`${move}_critRate_`]), 0))
           break
         case "critDMG_":
-          operands.push(percent(0.5, { key, prefix: "default" }),
+          operands.push(percent(0.5, { ...info, prefix: "default" }),
             lookup(hit.ele, objectKeyMap(allElements, ele => premod[`${ele}_critDMG_`]), 0),
             lookup(hit.move, objectKeyMap(allMoves, ele => premod[`${ele}_critDMG_`]), 0))
           break
         case "enerRech_":
-          operands.push(percent(1, { key, prefix: "default" }))
+          operands.push(percent(1, { ...info, prefix: "default" }))
           break
       }
       const list = [...operands, art[key], customBonus[key]].filter(x => x)
@@ -193,7 +196,7 @@ const common: Data = {
     ...objectKeyMap(allModStats, key => premod[key]),
     ...objectKeyMap(allNonModStats, key => premod[key]),
     ...objectKeyValueMap(allTalents, talent => [`${talent}Index`, sum(total[talent], -1)]),
-    stamina: sum(constant(100, { key: "stamina", prefix: "default" }), customBonus.stamina),
+    stamina: sum(constant(100, { ...KeyMap.info("stamina"), prefix: "default" }), customBonus.stamina),
 
     cappedCritRate: max(min(total.critRate_, one), naught),
   },
@@ -210,12 +213,12 @@ const common: Data = {
         total.all_dmgInc,
         lookup(hit.ele, objectKeyMap(allElements, element => total[`${element}_dmgInc`]), NaN),
         lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmgInc`]), NaN),
-      ), { key: "dmgInc", pivot }),
+      ), { ...KeyMap.info("dmgInc"), pivot }),
       hit.addTerm,
     ),
     addTerm: lookup(hit.reaction, {
-      spread: equal(hit.ele, "dendro", prod(subscript(input.lvl, transformativeReactionLevelMultipliers), 1.25, sum(baseAddBonus, total.spread_dmg_)), { key: "spread_dmgInc" }),
-      aggravate: equal(hit.ele, "electro", prod(subscript(input.lvl, transformativeReactionLevelMultipliers), 1.15, sum(baseAddBonus, total.aggravate_dmg_)), { key: "aggravate_dmgInc" }),
+      spread: equal(hit.ele, "dendro", prod(subscript(input.lvl, transformativeReactionLevelMultipliers), 1.25, sum(baseAddBonus, total.spread_dmg_)), KeyMap.info("spread_dmgInc")),
+      aggravate: equal(hit.ele, "electro", prod(subscript(input.lvl, transformativeReactionLevelMultipliers), 1.15, sum(baseAddBonus, total.aggravate_dmg_)), KeyMap.info("aggravate_dmgInc")),
     }, naught),
     dmg: prod(
       sum(hit.base, hit.dmgInc),
@@ -236,8 +239,8 @@ const common: Data = {
         pyro: prod(1.5, sum(baseAmpBonus, total.vaporize_dmg_)),
       }, one),
       melt: lookup(hit.ele, {
-        pyro: prod(constant(2, { key: "melt_multi", variant: "melt" }), sum(baseAmpBonus, total.melt_dmg_)),
-        cryo: prod(constant(1.5, { key: "melt_multi", variant: "melt" }), sum(baseAmpBonus, total.melt_dmg_)),
+        pyro: prod(constant(2, KeyMap.info("melt_multi")), sum(baseAmpBonus, total.melt_dmg_)),
+        cryo: prod(constant(1.5, KeyMap.info("melt_multi")), sum(baseAmpBonus, total.melt_dmg_)),
       }, one),
     }, one),
   },
@@ -250,7 +253,7 @@ const common: Data = {
   },
 }
 
-const target = setReadNodeKeys(deepClone(input), ["target"])
+const target = setReadNodeKeys(deepNodeClone(input), ["target"])
 const _tally = setReadNodeKeys({
   ...objectKeyMap([...allElements, ...allRegions], _ => read("add")),
   maxEleMas: read("max"),

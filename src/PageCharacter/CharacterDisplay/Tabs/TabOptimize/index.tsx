@@ -20,7 +20,6 @@ import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
 import { NumNode } from '../../../../Formula/type';
 import { UIData } from '../../../../Formula/uiData';
-import KeyMap from '../../../../KeyMap';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
@@ -273,9 +272,9 @@ export default function TabBuild() {
         const plotData = mergePlot(results.map(x => x.plotData!))
         const plotBaseNode = input.total[plotBase] as NumNode
         let data = Object.values(plotData)
-        if (KeyMap.unit(targetNode.info?.key) === "%")
+        if (targetNode.info?.unit === "%")
           data = data.map(({ value, plot }) => ({ value: value * 100, plot })) as Build[]
-        if (KeyMap.unit(plotBaseNode!.info?.key) === "%")
+        if (plotBaseNode.info?.unit === "%")
           data = data.map(({ value, plot }) => ({ value, plot: (plot ?? 0) * 100 })) as Build[]
         setchartData({
           valueNode: targetNode,

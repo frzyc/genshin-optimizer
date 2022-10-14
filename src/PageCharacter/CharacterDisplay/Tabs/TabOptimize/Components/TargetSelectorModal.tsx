@@ -3,7 +3,7 @@ import { CardContent, CardHeader, Divider, MenuItem, MenuList } from "@mui/mater
 import { useContext, useMemo } from "react"
 import CardDark from "../../../../../Components/Card/CardDark"
 import CardLight from "../../../../../Components/Card/CardLight"
-import ColorText from "../../../../../Components/ColoredText"
+import { NodeFieldDisplayText } from "../../../../../Components/FieldDisplay"
 import ImgIcon from "../../../../../Components/Image/ImgIcon"
 import ModalWrapper from "../../../../../Components/ModalWrapper"
 import SqBadge from "../../../../../Components/SqBadge"
@@ -12,13 +12,12 @@ import { DatabaseContext } from "../../../../../Database/Database"
 import { getDisplayHeader, getDisplaySections } from "../../../../../Formula/DisplayUtil"
 import { DisplaySub } from "../../../../../Formula/type"
 import { NodeDisplay } from "../../../../../Formula/uiData"
-import KeyMap from "../../../../../KeyMap"
 import usePromise from "../../../../../ReactHooks/usePromise"
 
 export interface TargetSelectorModalProps {
   show: boolean,
   onClose: () => void,
-  setTarget: (target: string[]) => void,
+  setTarget: (target: string[], multi?: number) => void,
   ignoreGlobal?: boolean,
   flatOnly?: boolean
   excludeSections?: string[]
@@ -29,7 +28,7 @@ export function TargetSelectorModal({ show, onClose, setTarget, ignoreGlobal = f
   const sections = useMemo(() => {
     return getDisplaySections(data).filter(([key]) => !excludeSections.includes(key))
       .map(([key, sectionObj]) => [key, Object.fromEntries(Object.entries(sectionObj).filter(([sectionKey, node]) => {
-        if (flatOnly && KeyMap.unit(node.info.key) === "%") return false
+        if (flatOnly && node.info.unit === "%") return false
 
         // Assume `ignoreGlobal`= multitarget, ignore heal nodes on multi-target
         if (ignoreGlobal && node.info.variant === "heal") return false
@@ -53,7 +52,7 @@ export function TargetSelectorModal({ show, onClose, setTarget, ignoreGlobal = f
     </CardDark>
   </ModalWrapper>
 }
-function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[]) => void, flatOnly?: boolean }) {
+function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[], multi?: number) => void, flatOnly?: boolean }) {
   const { data } = useContext(DataContext)
   const { database } = useContext(DatabaseContext)
   const header = usePromise(() => getDisplayHeader(data, sectionKey, database), [data, sectionKey])
@@ -62,13 +61,13 @@ function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: Disp
     <Divider />
     <MenuList>
       {Object.entries(displayNs).map(([key, n]) =>
-        <TargetSelectorMenuItem key={key} node={n} onClick={() => setTarget([sectionKey, key])} />)}
+        <TargetSelectorMenuItem key={key} node={n} onClick={() => setTarget([sectionKey, key], n.info.multi)} />)}
     </MenuList>
   </CardLight>
 }
 
 function TargetSelectorMenuItem({ node, onClick }: { node: NodeDisplay, onClick: () => void }) {
   return <MenuItem onClick={onClick} style={{ whiteSpace: "normal" }}>
-    <ColorText color={node.info.variant} >{KeyMap.get(node.info.key)}</ColorText>
+    <NodeFieldDisplayText node={node} />
   </MenuItem>
 }

@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
@@ -15,8 +15,8 @@ const data_gen = data_gen_json as WeaponData
 
 const [condStackPath, condStack] = cond(key, "stack")
 const bonusInc = [0.04, 0.05, 0.06, 0.07, 0.08]
-const atk_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(input.weapon.refineIndex, bonusInc, { key: "_" }), i)), naught)
-const def_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(input.weapon.refineIndex, bonusInc, { key: "_" }), i)), naught)
+const atk_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(input.weapon.refineIndex, bonusInc, { unit: "%" }), i)), naught)
+const def_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(input.weapon.refineIndex, bonusInc, { unit: "%" }), i)), naught)
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
@@ -39,7 +39,7 @@ const sheet: IWeaponSheet = {
       }, {
         node: def_
       }, {
-        text: sgt("duration"),
+        text: stg("duration"),
         value: 6,
         unit: "s"
       }]

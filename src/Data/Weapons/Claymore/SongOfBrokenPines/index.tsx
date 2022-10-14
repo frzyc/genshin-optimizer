@@ -1,8 +1,9 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
+import KeyMap from '../../../../KeyMap'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
@@ -17,8 +18,8 @@ const atk_Src = [0.16, 0.20, 0.24, 0.28, 0.32]
 const atkTeam_Src = [0.20, 0.25, 0.30, 0.35, 0.40]
 const atkSPD_Src = [0.12, 0.15, 0.18, 0.21, 0.24]
 const [condPassivePath, condPassive] = cond(key, "RebelsBannerHymn")
-const atk_ = subscript(input.weapon.refineIndex, atk_Src, { key: "_" })
-const atkTeam_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkTeam_Src, { key: "atk_" }))
+const atk_ = subscript(input.weapon.refineIndex, atk_Src, { unit: "%" })
+const atkTeam_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkTeam_Src, KeyMap.info("atk_")))
 const atkSPD_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkSPD_Src))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
@@ -51,7 +52,7 @@ const sheet: IWeaponSheet = {
         }, {
           node: atkSPD_
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 12,
           unit: "s"
         }]

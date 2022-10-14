@@ -1,9 +1,9 @@
-import { Translate } from '../../../Components/Translate'
 import { input, target } from '../../../Formula'
 import { DisplaySub } from '../../../Formula/type'
 import { equal, greaterEq, infoMut, percent, prod, subscript, sum } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
-import { cond, sgt } from '../../SheetUtil'
+import { cond, stg, trans } from '../../SheetUtil'
 import { charTemplates, TalentSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import Traveler from '../Traveler'
@@ -14,10 +14,7 @@ export default function electro(key: CharacterSheetKey, charKey: CharacterKey, d
   const elementKey: ElementKey = "electro"
   const condCharKey = "TravelerElectro"
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
-
-  const tr = (strKey: string) => <Translate ns={`char_${key}_gen`} key18={strKey} />
-  const trm = (strKey: string) => <Translate ns={`char_${condCharKey}`} key18={strKey} />
-
+  const [, ch] = trans("char", condCharKey)
   let s = 0, b = 0
   const datamine = {
     skill: {
@@ -71,7 +68,7 @@ export default function electro(key: CharacterSheetKey, charKey: CharacterKey, d
   const skillAmulet_enerRech_ = equal(input.activeCharKey, target.charKey, skillAmulet_enerRech_Disp)
 
   const burstEnergyRestore = subscript(input.total.burstIndex, datamine.burst.energyRestore,
-    { key: `char_${key}_gen:burst.skillParmas.2` }
+    { name: ct.chg(`burst.skillParmas.2`) }
   )
 
   const [condC2ThunderPath, condC2Thunder] = cond(condCharKey, `${elementKey}C2Thunder`)
@@ -113,124 +110,124 @@ export default function electro(key: CharacterSheetKey, charKey: CharacterKey, d
   })
 
   const talent: TalentSheet = {
-    skill: ct.talentTemplate("skill", [{
+    skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.dmg, { key: `char_${key}_gen:skill.skillParams.0` })
+        node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) })
       }, {
-        text: trm("skill.amuletGenAmt"),
+        text: ch("skill.amuletGenAmt"),
         value: data => data.get(input.constellation).value >= 1
           ? datamine.skill.amulets + datamine.constellation1.addlAmulets
           : datamine.skill.amulets
       }, {
-        text: tr("skill.skillParams.4"),
+        text: ct.chg("skill.skillParams.4"),
         value: datamine.skill.amuletDuration,
         unit: "s"
       }, {
-        text: sgt("cd"),
+        text: stg("cd"),
         value: datamine.skill.cd,
         unit: "s",
         fixed: 1
       }]
-    }, ct.conditionalTemplate("skill", {
+    }, ct.condTem("skill", {
       value: condSkillAmulet,
       path: condSkillAmuletPath,
-      name: trm("skill.absorb"),
+      name: ch("skill.absorb"),
       teamBuff: true,
       states: {
         on: {
           fields: [{
             node: subscript(input.total.skillIndex, datamine.skill.energyRestore,
-              { key: `char_${key}_gen:skill.skillParams.1` }
+              { name: ct.chg(`skill.skillParams.1`) }
             )
           }, {
-            node: infoMut(skillAmulet_enerRech_Disp, { key: "enerRech_" })
+            node: infoMut(skillAmulet_enerRech_Disp, KeyMap.info("enerRech_"))
           }, {
-            text: sgt("duration"),
+            text: stg("duration"),
             value: datamine.skill.enerRech_duration,
             unit: "s"
           }]
         }
       }
-    }), ct.headerTemplate("passive1", {
+    }), ct.headerTem("passive1", {
       fields: [{
-        text: tr("passive1.description")
+        text: ct.chg("passive1.description")
       }]
-    }), ct.headerTemplate("passive2", {
+    }), ct.headerTem("passive2", {
       fields: [{
-        node: infoMut(p2_enerRech_, { key: `char_${condCharKey}:passive2.enerRech_` })
+        node: infoMut(p2_enerRech_, { name: ch("passive2.enerRech_") })
       }]
     })]),
 
-    burst: ct.talentTemplate("burst", [{
+    burst: ct.talentTem("burst", [{
       fields: [{
         node: infoMut(dmgFormulas.burst.pressDmg,
-          { key: `char_${key}_gen:burst.skillParams.0` }
+          { name: ct.chg(`burst.skillParams.0`) }
         )
       }, {
         node: infoMut(dmgFormulas.burst.thunderDmg,
-          { key: `char_${key}_gen:burst.skillParams.1` }
+          { name: ct.chg(`burst.skillParams.1`) }
         )
       }, {
-        text: trm("burst.thunderCd"),
+        text: ch("burst.thunderCd"),
         value: datamine.burst.thunderCd,
         unit: "s",
         fixed: 1
       }, {
-        node: infoMut(burstEnergyRestore, { key: `char_${key}_gen:burst.skillParams.2` })
+        node: infoMut(burstEnergyRestore, { name: ct.chg(`burst.skillParams.2`) })
       }, {
-        text: sgt("duration"),
+        text: stg("duration"),
         value: datamine.burst.duration,
         unit: "s"
       }, {
-        text: sgt("cd"),
+        text: stg("cd"),
         value: datamine.burst.cd,
         unit: "s"
       }, {
-        text: sgt("energyCost"),
+        text: stg("energyCost"),
         value: datamine.burst.enerCost,
       }]
-    }, ct.conditionalTemplate("constellation2", {
+    }, ct.condTem("constellation2", {
       value: condC2Thunder,
       path: condC2ThunderPath,
-      name: trm("c2.thunderHit"),
+      name: ch("c2.thunderHit"),
       teamBuff: true,
       states: {
         on: {
           fields: [{
             node: c2Thunder_electro_enemyRes_
           }, {
-            text: sgt("duration"),
+            text: stg("duration"),
             value: datamine.constellation2.duration,
             unit: "s"
           }]
         }
       }
-    }), ct.conditionalTemplate("constellation6", {
+    }), ct.condTem("constellation6", {
       value: condC6After2Thunder,
       path: condC6After2ThunderPath,
-      name: trm("c6.fallingThunder3"),
+      name: ch("c6.fallingThunder3"),
       states: {
         on: {
           fields: [{
             node: infoMut(c6_thunder_dmg_,
-              { key: `char_${condCharKey}:c6.fallingThunderBonus_`, variant: "electro" }
+              { name: ch("c6.fallingThunderBonus_"), variant: "electro" }
             )
           }, {
-            text: tr("burst.skillParams.2"),
+            text: ct.chg("burst.skillParams.2"),
             value: datamine.constellation6.energyRestore
           }]
         }
       }
     })]),
 
-    passive1: ct.talentTemplate("passive1"),
-    passive2: ct.talentTemplate("passive2"),
-    constellation1: ct.talentTemplate("constellation1"),
-    constellation2: ct.talentTemplate("constellation2"),
-    constellation3: ct.talentTemplate("constellation3", [{ fields: [{ node: burstC3 }] }]),
-    constellation4: ct.talentTemplate("constellation4"),
-    constellation5: ct.talentTemplate("constellation5", [{ fields: [{ node: skillC5 }] }]),
-    constellation6: ct.talentTemplate("constellation6"),
+    passive1: ct.talentTem("passive1"),
+    passive2: ct.talentTem("passive2"),
+    constellation1: ct.talentTem("constellation1"),
+    constellation2: ct.talentTem("constellation2"),
+    constellation3: ct.talentTem("constellation3", [{ fields: [{ node: burstC3 }] }]),
+    constellation4: ct.talentTem("constellation4"),
+    constellation5: ct.talentTem("constellation5", [{ fields: [{ node: skillC5 }] }]),
+    constellation6: ct.talentTem("constellation6"),
   }
   return {
     talent,

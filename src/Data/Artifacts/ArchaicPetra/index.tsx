@@ -2,7 +2,7 @@ import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { absorbableEle, ArtifactSetKey } from '../../../Types/consts'
-import { cond, sgt, trans } from '../../SheetUtil'
+import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
@@ -41,11 +41,11 @@ const sheet: IArtifactSheet = {
         teamBuff: true,
         name: trm("condName"),
         states: Object.fromEntries(absorbableEle.map(e => [e, {
-          name: sgt(`element.${e}`),
+          name: stg(`element.${e}`),
           fields: [{
             node: set4Nodes[`${e}_dmg_`]
           }, {
-            text: sgt("duration"),
+            text: stg("duration"),
             value: 10,
             unit: "s"
           }]

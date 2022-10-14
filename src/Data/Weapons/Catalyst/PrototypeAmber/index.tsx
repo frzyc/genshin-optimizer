@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { equal, infoMut, prod, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { customHealNode } from '../../../Characters/dataUtil'
-import { cond, st } from '../../../SheetUtil'
+import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -17,7 +17,7 @@ const [condPassivePath, condPassive] = cond(key, "Gliding")
 const healPerc = [0.04, 0.045, 0.05, 0.055, 0.06]
 
 const heal = equal(input.weapon.key, key,
-  customHealNode(prod(subscript(input.weapon.refineIndex, healPerc, { key: "_" }), input.total.hp)))
+  customHealNode(prod(subscript(input.weapon.refineIndex, healPerc, { unit: "%" }), input.total.hp)))
 export const data = dataObjForWeaponSheet(key, data_gen, undefined, { heal })
 const sheet: IWeaponSheet = {
   icon,
@@ -29,7 +29,7 @@ const sheet: IWeaponSheet = {
     header: headerTemplate(key, icon, iconAwaken, st("conditional")),
     states: {
       on: {
-        fields: [{ node: infoMut(heal, { key: "sheet_gen:healing" }) }]
+        fields: [{ node: infoMut(heal, { name: stg("healing"), variant: "heal" }) }]
       }
     }
   }]

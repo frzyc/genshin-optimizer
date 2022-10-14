@@ -131,13 +131,11 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
   showMin: boolean
 }) {
   const { t } = useTranslation("page_character_optimize")
-  const plotBaseUnit = KeyMap.unit(plotNode.info?.key)
-  const valueUnit = KeyMap.unit(valueNode.info?.key)
   return <ResponsiveContainer width="100%" height={600}>
     <ComposedChart data={displayData}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="x" scale="linear" unit={plotBaseUnit} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)} />
-      <YAxis name="DMG" domain={["auto", "auto"]} unit={valueUnit} allowDecimals={false} tick={{ fill: 'white' }} type="number" />
+      <XAxis dataKey="x" scale="linear" unit={plotNode.info?.unit} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)} />
+      <YAxis name="DMG" domain={["auto", "auto"]} unit={valueNode.info?.unit} allowDecimals={false} tick={{ fill: 'white' }} type="number" />
       <ZAxis dataKey="y" range={[3, 25]} />
       <Legend />
       <Scatter name={t`tcGraph.optTarget`} dataKey="y" fill="#8884d8" line lineType="fitting" isAnimationActive={false} />

@@ -1,6 +1,7 @@
 import type { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, lookup, naught, subscript, sum } from "../../../../Formula/utils"
+import KeyMap from '../../../../KeyMap'
 import { allElements, WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
@@ -24,13 +25,13 @@ const stacksRefine = {
 const [condPath, condNode] = cond(key, "MistsplittersEmblem")
 const passive_dmg_ = Object.fromEntries(allElements.map(ele =>
   [`${ele}_dmg_`,
-  subscript(input.weapon.refineIndex, passiveRefine, { key: `${ele}_dmg_`, variant: ele })]
+  subscript(input.weapon.refineIndex, passiveRefine, KeyMap.info(`${ele}_dmg_`))]
 ))
 const stacks_dmg_ = Object.fromEntries(allElements.map(ele =>
   [`${ele}_dmg_`,
   equal(input.charEle, ele,
     lookup(condNode, objectKeyMap(stacks, stack =>
-      subscript(input.weapon.refineIndex, stacksRefine[stack])), naught, { key: `${ele}_dmg_`, variant: ele })
+      subscript(input.weapon.refineIndex, stacksRefine[stack])), naught, KeyMap.info(`${ele}_dmg_`))
   )]
 ))
 const allEle_dmg_ = Object.fromEntries(allElements.map(ele =>

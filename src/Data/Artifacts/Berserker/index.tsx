@@ -1,6 +1,7 @@
 import { input } from '../../../Formula'
 import { Data, Info } from '../../../Formula/type'
 import { equal, greaterEq, percent, sum } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -10,7 +11,7 @@ import icons from './icons'
 const key: ArtifactSetKey = "Berserker"
 const setHeader = setHeaderTemplate(key, icons)
 
-const critRate_info: Info = { key: "critRate_" }
+const critRate_info: Info = KeyMap.info("critRate_")
 const set2 = greaterEq(input.artSet.Berserker, 2, percent(0.12), critRate_info)
 const [condPath, condNode] = cond(key, "hp")
 const set4 = greaterEq(input.artSet.Berserker, 4,

@@ -1,6 +1,7 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, infoMut, prod, subscript, sum } from '../../../../Formula/utils'
+import KeyMap from '../../../../KeyMap'
 import { WeaponKey } from '../../../../Types/consts'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
@@ -15,11 +16,11 @@ const data_gen = data_gen_json as WeaponData
 const hpInc = [0.2, 0.25, 0.3, 0.35, 0.4]
 const atkInc = [0.008, 0.01, 0.012, 0.014, 0.016]
 const lowHpAtkInc = [0.01, 0.012, 0.014, 0.016, 0.018]
-const hp_ = subscript(input.weapon.refineIndex, hpInc, { key: "_" })
+const hp_ = subscript(input.weapon.refineIndex, hpInc, { unit: "%" })
 const [condPassivePath, condPassive] = cond(key, "RecklessCinnabar")
-const atk1 = prod(subscript(input.weapon.refineIndex, atkInc, { key: "_" }), input.premod.hp)
+const atk1 = prod(subscript(input.weapon.refineIndex, atkInc, { unit: "%" }), input.premod.hp)
 const atk2 = equal(input.weapon.key, key,
-  equal("on", condPassive, prod(subscript(input.weapon.refineIndex, lowHpAtkInc, { key: "_" }), input.premod.hp), { key: "atk" }))
+  equal("on", condPassive, prod(subscript(input.weapon.refineIndex, lowHpAtkInc, { unit: "%" }), input.premod.hp), KeyMap.info("atk")))
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     hp_,
@@ -39,7 +40,7 @@ const sheet: IWeaponSheet = {
     fields: [{
       node: hp_
     }, {
-      node: infoMut(atk1, { key: "atk" })
+      node: infoMut(atk1, KeyMap.info("atk"))
     }],
   }, {
     value: condPassive,
@@ -50,7 +51,7 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: infoMut(atk2, { key: "atk" }),
+          node: infoMut(atk2, KeyMap.info("atk")),
         }]
       }
     }

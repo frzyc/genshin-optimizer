@@ -136,13 +136,15 @@ function canShowTemplate(talentKey: TalentSheetElementKey, canShow: NumNode | un
 }
 
 export interface ICharacterTemplate {
-  talentTemplate: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => TalentSheetElement
-  headerTemplate: (talentKey: TalentSheetElementKey, partialSection: DocumentSection) => DocumentSection
-  fieldsTemplate: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => IDocumentFields
-  conditionalTemplate: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => DocumentConditional
+  chg: (i18key: string) => Displayable,
+  ch: (i18key: string) => Displayable,
+  talentTem: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => TalentSheetElement
+  headerTem: (talentKey: TalentSheetElementKey, partialSection: DocumentSection) => DocumentSection
+  fieldsTem: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => IDocumentFields
+  condTem: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => DocumentConditional
 }
 export const charTemplates = (cKey: CharacterSheetKey, wKey: WeaponTypeKey, assets: AssetType): ICharacterTemplate => {
-  const [tr] = trans("char", cKey)
+  const [chg, ch] = trans("char", cKey)
 
   const img = (tk: TalentSheetElementKey): string => {
     if (tk === "auto") return Assets.weaponTypes[wKey]
@@ -150,10 +152,12 @@ export const charTemplates = (cKey: CharacterSheetKey, wKey: WeaponTypeKey, asse
   }
 
   return {
-    talentTemplate: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => talentTemplate(talentKey, tr, img(talentKey), docSections),
-    headerTemplate: (talentKey: TalentSheetElementKey, partialSection: DocumentSection) => headerTemplate(talentKey, tr, img(talentKey), partialSection),
-    fieldsTemplate: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => fieldsTemplate(talentKey, partialFields),
-    conditionalTemplate: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => conditionalTemplate(talentKey, partialCond, tr, img(talentKey))
+    chg,
+    ch,
+    talentTem: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => talentTemplate(talentKey, chg, img(talentKey), docSections),
+    headerTem: (talentKey: TalentSheetElementKey, partialSection: DocumentSection) => headerTemplate(talentKey, chg, img(talentKey), partialSection),
+    fieldsTem: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => fieldsTemplate(talentKey, partialFields),
+    condTem: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => conditionalTemplate(talentKey, partialCond, chg, img(talentKey))
   }
 }
 

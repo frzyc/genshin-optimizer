@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { constant, equal, infoMut, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -20,7 +20,7 @@ const [condPassivePath, condPassive] = cond(key, "OceanicVictory")
 const dmg = equal(input.weapon.key, key, equal(condPassive, 'on',
   customDmgNode(prod(
     subscript(
-      input.weapon.refineIndex, dmg_Src, { key: "_" }),
+      input.weapon.refineIndex, dmg_Src, { unit: "%" }),
       input.total.atk
     ),
     "elemental",
@@ -48,9 +48,9 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: infoMut(dmg, { key: "sheet:dmg" })
+          node: infoMut(dmg, { name: st("dmg") })
         }, {
-          text: sgt("cd"),
+          text: stg("cd"),
           value: 15,
           unit: "s"
         }]

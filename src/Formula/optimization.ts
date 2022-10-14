@@ -355,6 +355,10 @@ export function constantFold(formulas: NumNode[], topLevelData: Data, shouldFold
       default: assertUnreachable(operation)
     }
 
+    if (result.info) {
+      result = { ...result }
+      delete result.info
+    }
     context.processed.set(formula, result)
     return result
   }

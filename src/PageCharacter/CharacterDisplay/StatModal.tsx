@@ -10,13 +10,12 @@ import { EnemyExpandCard } from "../../Components/EnemyEditor";
 import { FieldDisplayList, NodeFieldDisplay } from "../../Components/FieldDisplay";
 import ModalWrapper from "../../Components/ModalWrapper";
 import StatEditorList from "../../Components/StatEditorList";
-import StatIcon from "../../Components/StatIcon";
 import { CharacterContext } from "../../Context/CharacterContext";
 import { DataContext } from "../../Context/DataContext";
 import { allInputPremodKeys, uiInput as input } from "../../Formula";
 import { ReadNode } from "../../Formula/type";
-import KeyMap, { allEleDmgKeys, allEleResKeys, valueString } from "../../KeyMap";
-import { allElements, ElementKeyWithPhy } from "../../Types/consts";
+import { nodeVStr } from "../../Formula/uiData";
+import { allEleDmgKeys, allEleResKeys } from "../../KeyMap";
 
 const cols = {
   xs: 1, md: 2, lg: 3
@@ -67,7 +66,7 @@ const miscStatkeys = allInputPremodKeys.filter(k => !mainEditKeys.includes(k as 
 function StatDisplayContent({ nodes, extra }: { nodes: ReadNode<number>[], extra?: Displayable }) {
   const { data, oldData } = useContext(DataContext)
   return <FieldDisplayList >
-    {nodes.map(rn => <NodeFieldDisplay component={ListItem} key={rn.info?.key} node={data.get(rn)} oldValue={oldData?.get(rn)?.value} />)}
+    {nodes.map(rn => <NodeFieldDisplay component={ListItem} key={JSON.stringify(rn.info)} node={data.get(rn)} oldValue={oldData?.get(rn)?.value} />)}
     {extra}
   </FieldDisplayList>
 }
@@ -80,11 +79,13 @@ function MainStatsCards() {
   const isMelee = characterSheet.isMelee()
 
   const otherStatReadNodes = useMemo(() => {
-    const nodes = otherStatKeys.map(k => input.total[k])
-    const eles: ElementKeyWithPhy[] = [...allElements].filter(k => k !== charEle)
-    if (isMelee) eles.concat(["physical"])
+    const nodes = otherStatKeys.filter(k => {
+      if (k.includes(charEle)) return false
+      if (isMelee && k.includes("physical")) return true
+      return true
+    }).map(k => input.total[k])
 
-    return nodes.filter(n => !(!data.get(n).value && eles.some(e => n.info?.key?.includes?.(e))))
+    return nodes.filter(n => !!data.get(n).value)
   }, [data, charEle, isMelee])
 
 
@@ -96,8 +97,8 @@ function MainStatsCards() {
         <StatDisplayCard title="Main Stats">
           <StatDisplayContent nodes={mainReadNodes}
             extra={specialNode && <ListItem sx={{ display: "flex", justifyContent: "space-between" }}>
-              <span><b>Special:</b> <ColorText color={specialNode.info.variant}>{specialNode.info.key && StatIcon[specialNode.info.key]} {specialNode.info.key && KeyMap.get(specialNode.info.key)}</ColorText></span>
-              <span >{valueString(specialNode.value, specialNode.unit)}</span>
+              <span><b>Special:</b> <ColorText color={specialNode.info.variant}>{specialNode.info.icon} {specialNode.info.name}</ColorText></span>
+              <span >{nodeVStr(specialNode)}</span>
             </ListItem>}
           />
         </StatDisplayCard>

@@ -2,6 +2,7 @@ import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
+import { stg } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
@@ -30,7 +31,7 @@ const sheet: IArtifactSheet = {
       document: [{
         header: setHeader(4),
         fields: [{
-          node: infoMut(heal, { key: "sheet_gen:healing", variant: "heal" })
+          node: infoMut(heal, { name: stg("healing"), variant: "heal" })
         }]
       }]
     }

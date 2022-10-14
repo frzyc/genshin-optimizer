@@ -6,18 +6,15 @@ import WeaponSheet from "../../Data/Weapons/WeaponSheet";
 import { DatabaseContext } from "../../Database/Database";
 import { input } from "../../Formula";
 import { computeUIData, dataObjForWeapon } from "../../Formula/api";
-import { NodeDisplay } from '../../Formula/uiData';
-import KeyMap, { valueString } from "../../KeyMap";
+import { NodeDisplay, nodeVStr } from '../../Formula/uiData';
 import useDBMeta from "../../ReactHooks/useDBMeta";
 import usePromise from "../../ReactHooks/usePromise";
 import useWeapon from "../../ReactHooks/useWeapon";
-import { MainStatKey, SubstatKey } from "../../Types/artifact";
 import { LocationKey } from "../../Types/consts";
 import BootstrapTooltip from "../BootstrapTooltip";
 import CardDark from "../Card/CardDark";
 import ConditionalWrapper from "../ConditionalWrapper";
 import ImgIcon from "../Image/ImgIcon";
-import StatIcon from "../StatIcon";
 import WeaponNameTooltip from "./WeaponNameTooltip";
 
 type Data = {
@@ -64,14 +61,13 @@ export default function WeaponCardNano({ weaponId, showLocation = false, onClick
   </ConditionalWrapper></BGComponent >
 }
 function WeaponStat({ node }: { node: NodeDisplay }) {
-  if (!node.info.key) return null
-  const val = valueString(node.value, node.unit, !node.unit ? 0 : undefined)
+  if (!node.info.name) return null
   return (<Box display="flex" gap={1} alignContent="center">
     <Typography sx={{ flexGrow: 1, display: "flex", gap: 1 }} component="span">
-      <BootstrapTooltip placement="top" title={<Typography>{node.info.key && KeyMap.getArtStr(node.info.key as MainStatKey | SubstatKey)}</Typography>} disableInteractive>
-        <span>{StatIcon[node.info.key]}</span>
+      <BootstrapTooltip placement="top" title={<Typography>{node.info.name}</Typography>} disableInteractive>
+        <span>{node.info.icon}</span>
       </BootstrapTooltip>
-      <span>{val}</span>
+      <span>{nodeVStr(node)}</span>
     </Typography>
   </Box>)
 }

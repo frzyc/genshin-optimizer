@@ -1,8 +1,9 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
+import KeyMap from '../../../../KeyMap'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -16,7 +17,7 @@ const atk_Src = [0.2, 0.25, 0.3, 0.35, 0.4]
 const atkTeam_Src = [0.4, 0.5, 0.6, 0.7, 0.8]
 const [condPassivePath, condPassive] = cond(key, "WolfishTracker")
 const atk_ = subscript(input.weapon.refineIndex, atk_Src)
-const atkTeam_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkTeam_Src, { key: "atk_" }))
+const atkTeam_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkTeam_Src, KeyMap.info("atk_")))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
@@ -45,7 +46,7 @@ const sheet: IWeaponSheet = {
         fields: [{
           node: atkTeam_
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 12,
           unit: "s"
         }]

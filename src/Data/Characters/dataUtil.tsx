@@ -4,6 +4,7 @@ import { inferInfoMut, mergeData } from "../../Formula/api";
 import { reactions } from "../../Formula/reaction";
 import { Data, DisplaySub, NumNode } from "../../Formula/type";
 import { constant, data, infoMut, lookup, one, percent, prod, stringPrio, subscript, sum } from "../../Formula/utils";
+import KeyMap from "../../KeyMap";
 import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey, Region } from "../../Types/consts";
 import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
@@ -54,7 +55,7 @@ export function customHealNode(base: NumNode, additional?: Data): NumNode {
 /** Note: `additional` applies only to this formula */
 export function dmgNode(base: MainStatKey | SubstatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
   const talentType = getTalentType(move)
-  return customDmgNode(prod(subscript(input.total[`${talentType}Index`], lvlMultiplier, { key: '_' }), input.total[base]), move, additional)
+  return customDmgNode(prod(subscript(input.total[`${talentType}Index`], lvlMultiplier, { unit: "%" }), input.total[base]), move, additional)
 }
 /** Note: `additional` applies only to this formula */
 export function shieldNode(base: MainStatKey | SubstatKey, percent: NumNode | number, flat: NumNode | number, additional?: Data): NumNode {
@@ -69,7 +70,7 @@ export function shieldNodeTalent(base: MainStatKey | SubstatKey, baseMultiplier:
   const talentType = getTalentType(move)
   const talentIndex = input.total[`${talentType}Index`]
   return customShieldNode(sum(
-    prod(subscript(talentIndex, baseMultiplier, { key: '_' }), input.total[base]),
+    prod(subscript(talentIndex, baseMultiplier, { unit: "%" }), input.total[base]),
     subscript(talentIndex, flat)
   ), additional)
 }
@@ -81,7 +82,7 @@ export function healNodeTalent(base: MainStatKey | SubstatKey, baseMultiplier: n
   const talentType = getTalentType(move)
   const talentIndex = input.total[`${talentType}Index`]
   return customHealNode(sum(
-    prod(subscript(talentIndex, baseMultiplier, { key: '_' }), input.total[base]),
+    prod(subscript(talentIndex, baseMultiplier, { unit: "%" }), input.total[base]),
     subscript(talentIndex, flat)
   ), additional)
 }
@@ -134,7 +135,7 @@ export function dataObjForCharacterSheet(
 
     if (!list.length) continue
 
-    const result = infoMut(list.length === 1 ? list[0] : sum(...list), { key: stat, prefix: "char", asConst: true })
+    const result = infoMut(list.length === 1 ? list[0] : sum(...list), { ...KeyMap.info(stat), prefix: "char", asConst: true })
     if (stat.endsWith("_dmg_")) result.info!.variant = stat.slice(0, -5) as any
     if (stat === "atk" || stat === "def" || stat === "hp")
       data.base![stat] = result

@@ -1,7 +1,7 @@
 import { CharacterData } from 'pipeline'
 import { infoMut } from '../../../Formula/utils'
 import { CharacterKey, CharacterSheetKey, WeaponTypeKey } from '../../../Types/consts'
-import { trans } from '../../SheetUtil'
+import { stg } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
@@ -43,37 +43,34 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
 
   const { talent, data, elementKey } = talentFunc(key, charKey, dmgFormulas)
 
-  const [tr] = trans("char", key)
   const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
-  talent.auto = ct.talentTemplate("auto", [{
-    text: tr("auto.fields.normal")
+  talent.auto = ct.talentTem("auto", [{
+    text: ct.chg("auto.fields.normal")
   }, {
     fields: datamine.normal.hitArr.map((_: any, i: number) => ({
-      node: infoMut(dmgFormulas.normal[i]!, { key: `char_${key}_gen:auto.skillParams.${i}` }),
+      node: infoMut(dmgFormulas.normal[i]!, { name: ct.chg(`auto.skillParams.${i}`) }),
     }))
   }, {
-    text: tr("auto.fields.charged"),
+    text: ct.chg("auto.fields.charged"),
   }, {
     fields: [{
-      node: infoMut(dmgFormulas.charged.dmg1!, { key: `char_${key}_gen:auto.skillParams.5` }),
-      textSuffix: "(1)"
+      node: infoMut(dmgFormulas.charged.dmg1!, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(1)" }),
     }, {
-      node: infoMut(dmgFormulas.charged.dmg2!, { key: `char_${key}_gen:auto.skillParams.5` }),
-      textSuffix: "(2)"
+      node: infoMut(dmgFormulas.charged.dmg2!, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(2)" }),
     }, {
-      text: tr("auto.skillParams.6"),
+      text: ct.chg("auto.skillParams.6"),
       value: datamine.charged.stamina,
     }]
   }, {
-    text: tr("auto.fields.plunging"),
+    text: ct.chg("auto.fields.plunging"),
   }, {
     fields: [{
-      node: infoMut(dmgFormulas.plunging.dmg!, { key: "sheet_gen:plunging.dmg" }),
+      node: infoMut(dmgFormulas.plunging.dmg!, { name: stg("plunging.dmg") }),
     }, {
-      node: infoMut(dmgFormulas.plunging.low!, { key: "sheet_gen:plunging.low" }),
+      node: infoMut(dmgFormulas.plunging.low!, { name: stg("plunging.low") }),
     }, {
-      node: infoMut(dmgFormulas.plunging.high!, { key: "sheet_gen:plunging.high" }),
+      node: infoMut(dmgFormulas.plunging.high!, { name: stg("plunging.high") }),
     }]
   }])
 

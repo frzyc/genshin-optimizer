@@ -17,8 +17,8 @@ const [, trm] = trans("weapon", key)
 const [condStackPath, condStack] = cond(key, "stack")
 const atkDefInc = [0.16, 0.2, 0.24, 0.28, 0.32]
 const atkInc = [0.24, 0.3, 0.36, 0.42, 0.48]
-const atk_ = lookup(condStack, { "oneOrNone": subscript(input.weapon.refineIndex, atkInc, { key: "_" }), "moreThanOne": subscript(input.weapon.refineIndex, atkDefInc, { key: "_" }) }, naught)
-const def_ = equal(condStack, "moreThanOne", subscript(input.weapon.refineIndex, atkDefInc, { key: "_" }))
+const atk_ = lookup(condStack, { "oneOrNone": subscript(input.weapon.refineIndex, atkInc, { unit: "%" }), "moreThanOne": subscript(input.weapon.refineIndex, atkDefInc, { unit: "%" }) }, naught)
+const def_ = equal(condStack, "moreThanOne", subscript(input.weapon.refineIndex, atkDefInc, { unit: "%" }))
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

@@ -1,9 +1,10 @@
 import { CharacterData } from 'pipeline'
 import { input } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { CharacterKey, ElementKey, Region } from '../../../Types/consts'
 import { objectKeyMap, range } from '../../../Util/Util'
-import { cond, sgt, st, trans } from '../../SheetUtil'
+import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import assets from './assets'
@@ -15,7 +16,6 @@ const data_gen = data_gen_src as CharacterData
 const key: CharacterKey = "Razor"
 const elementKey: ElementKey = "electro"
 const regionKey: Region = "mondstadt"
-const [tr, trm] = trans("char", key)
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
@@ -94,10 +94,10 @@ const [condC2Path, condC2] = cond(key, "C2")
 const [condC4Path, condC4] = cond(key, "C4")
 
 const enerRechElectroSigil_ = lookup(condElectroSigil, objectKeyMap(range(1, 3), i => prod(i, percent(datamine.skill.erBonus))),
-  naught, { key: "enerRech_" })
+  naught, KeyMap.info("enerRech_"))
 const electro_res_ = equal("on", condTheWolfWithin, percent(datamine.burst.electroResBonus))
-const atkSPD_ = equal("on", condTheWolfWithin, subscript(input.total.burstIndex, datamine.burst.atkSpdBonus, { key: "_" }))
-const enerRechA4_ = greaterEq(input.asc, 4, equal("on", condA4, percent(datamine.passive2.erInc, { key: "enerRech_" })))
+const atkSPD_ = equal("on", condTheWolfWithin, subscript(input.total.burstIndex, datamine.burst.atkSpdBonus, { unit: "%" }))
+const enerRechA4_ = greaterEq(input.asc, 4, equal("on", condA4, percent(datamine.passive2.erInc, KeyMap.info("enerRech_"))))
 const all_dmg_ = greaterEq(input.constellation, 1, equal("on", condC1, percent(datamine.constellation1.allDmgInc)))
 const critRate_ = greaterEq(input.constellation, 2, equal("on", condC2, percent(datamine.constellation2.critRateInc)))
 const enemyDefRed_ = greaterEq(input.constellation, 4, equal("on", condC4, percent(datamine.constellation4.defDec)))
@@ -156,118 +156,114 @@ export const data = dataObjForCharacterSheet(key, elementKey, regionKey, data_ge
 
 const sheet: ICharacterSheet = {
   key,
-  name: tr("name"),
+  name: ct.chg("name"),
   rarity: data_gen.star,
   elementKey,
   weaponTypeKey: data_gen.weaponTypeKey,
   gender: "M",
-  constellationName: tr("constellationName"),
-  title: tr("title"),
+  constellationName: ct.chg("constellationName"),
+  title: ct.chg("title"),
   talent: {
-    auto: ct.talentTemplate("auto", [{
-      text: tr("auto.fields.normal"),
+    auto: ct.talentTem("auto", [{
+      text: ct.chg("auto.fields.normal"),
     }, {
       fields: datamine.normal.hitArr.map((_, i) => ({
-        node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` })
+        node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) })
       }))
     }, {
-      text: tr("auto.fields.charged"),
+      text: ct.chg("auto.fields.charged"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.charged.spinningDmg, { key: `char_${key}_gen:auto.skillParams.4` }),
+        node: infoMut(dmgFormulas.charged.spinningDmg, { name: ct.chg(`auto.skillParams.4`) }),
       }, {
-        node: infoMut(dmgFormulas.charged.finalDmg, { key: `char_${key}_gen:auto.skillParams.5` }),
+        node: infoMut(dmgFormulas.charged.finalDmg, { name: ct.chg(`auto.skillParams.5`) }),
       }, {
-        text: tr("auto.skillParams.6"),
+        text: ct.chg("auto.skillParams.6"),
         value: datamine.charged.stamina,
         unit: '/s'
       }, {
-        text: tr("auto.skillParams.7"),
+        text: ct.chg("auto.skillParams.7"),
         value: datamine.charged.duration,
         unit: 's'
       }]
     }, {
-      text: tr("auto.fields.plunging"),
+      text: ct.chg("auto.fields.plunging"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+        node: infoMut(dmgFormulas.plunging.dmg, { name: stg("plunging.dmg") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
       }]
     }]),
 
-    skill: ct.talentTemplate("skill", [{
+    skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` }),
+        node: infoMut(dmgFormulas.skill.press, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
-        text: tr("skill.skillParams.5"),
+        text: ct.chg("skill.skillParams.5"),
         value: (data) => data.get(input.asc).value >= 1
           ? datamine.skill.pressCd - (datamine.skill.pressCd * datamine.passive1.cdRed)
           : datamine.skill.pressCd,
         unit: 's'
       }, {
-        node: infoMut(dmgFormulas.skill.hold, { key: `char_${key}_gen:skill.skillParams.1` }),
+        node: infoMut(dmgFormulas.skill.hold, { name: ct.chg(`skill.skillParams.1`) }),
       }, {
-        text: tr("skill.skillParams.6"),
+        text: ct.chg("skill.skillParams.6"),
         value: (data) => data.get(input.asc).value >= 1
           ? datamine.skill.holdCd - (datamine.skill.holdCd * datamine.passive1.cdRed)
           : datamine.skill.holdCd,
         unit: 's'
       }]
-    }, ct.conditionalTemplate("skill", { // Electro Sigil
+    }, ct.condTem("skill", { // Electro Sigil
       value: condElectroSigil,
       path: condElectroSigilPath,
-      name: trm("electroSigil"),
+      name: ct.ch("electroSigil"),
       states: {
         ...objectKeyMap(range(1, 3), i => ({
           name: st("stack", { count: i }),
           fields: [{
             node: enerRechElectroSigil_
           }, {
-            text: tr("skill.skillParams.4"),
+            text: ct.chg("skill.skillParams.4"),
             value: datamine.skill.duration,
             unit: "s"
           }, {
-            text: trm("electroSigilAbsorbed"),
+            text: ct.ch("electroSigilAbsorbed"),
             value: datamine.skill.enerRegen * i,
           }]
         })),
       }
     })]),
 
-    burst: ct.talentTemplate("burst", [{
+    burst: ct.talentTem("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.dmg, { key: `char_${key}_gen:burst.skillParams.0` }),
+        node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.companionDmg1, { key: `char_${key}_gen:burst.skillParams.1` }),
-        textSuffix: tr("auto.skillParams.0")
+        node: infoMut(dmgFormulas.burst.companionDmg1, { name: ct.chg(`burst.skillParams.1`), textSuffix: ct.chg("auto.skillParams.0") }),
       }, {
-        node: infoMut(dmgFormulas.burst.companionDmg2, { key: `char_${key}_gen:burst.skillParams.1` }),
-        textSuffix: tr("auto.skillParams.1")
+        node: infoMut(dmgFormulas.burst.companionDmg2, { name: ct.chg(`burst.skillParams.1`), textSuffix: ct.chg("auto.skillParams.1") }),
       }, {
-        node: infoMut(dmgFormulas.burst.companionDmg3, { key: `char_${key}_gen:burst.skillParams.1` }),
-        textSuffix: tr("auto.skillParams.2")
+        node: infoMut(dmgFormulas.burst.companionDmg3, { name: ct.chg(`burst.skillParams.1`), textSuffix: ct.chg("auto.skillParams.2") }),
       }, {
-        node: infoMut(dmgFormulas.burst.companionDmg4, { key: `char_${key}_gen:burst.skillParams.1` }),
-        textSuffix: tr("auto.skillParams.3")
+        node: infoMut(dmgFormulas.burst.companionDmg4, { name: ct.chg(`burst.skillParams.1`), textSuffix: ct.chg("auto.skillParams.3") }),
       }, {
-        text: tr("burst.skillParams.4"),
+        text: ct.chg("burst.skillParams.4"),
         value: datamine.burst.duration,
         unit: 's'
       }, {
-        text: tr("burst.skillParams.5"),
+        text: ct.chg("burst.skillParams.5"),
         value: datamine.burst.cd,
         unit: 's'
       }, {
-        text: tr("burst.skillParams.6"),
+        text: ct.chg("burst.skillParams.6"),
         value: datamine.burst.enerCost,
       }]
-    }, ct.conditionalTemplate("burst", { // The Wolf Within
+    }, ct.condTem("burst", { // The Wolf Within
       value: condTheWolfWithin,
       path: condTheWolfWithinPath,
-      name: tr("burst.description.3"),
+      name: ct.chg("burst.description.3"),
       states: {
         "on": {
           fields: [{
@@ -281,8 +277,8 @@ const sheet: ICharacterSheet = {
       }
     })]),
 
-    passive1: ct.talentTemplate("passive1"),
-    passive2: ct.talentTemplate("passive2", [ct.conditionalTemplate("passive2", {
+    passive1: ct.talentTem("passive1"),
+    passive2: ct.talentTem("passive2", [ct.condTem("passive2", {
       value: condA4,
       path: condA4Path,
       name: st("lessPercentEnergy", { percent: datamine.passive2.enerThreshold * 100 }),
@@ -294,24 +290,24 @@ const sheet: ICharacterSheet = {
         }
       }
     })]),
-    passive3: ct.talentTemplate("passive3"),
-    constellation1: ct.talentTemplate("constellation1", [ct.conditionalTemplate("constellation1", {
+    passive3: ct.talentTem("passive3"),
+    constellation1: ct.talentTem("constellation1", [ct.condTem("constellation1", {
       value: condC1,
       path: condC1Path,
-      name: trm("pickUpElementalOrbParticle"),
+      name: ct.ch("pickUpElementalOrbParticle"),
       states: {
         "on": {
           fields: [{
             node: all_dmg_
           }, {
-            text: sgt("duration"),
+            text: stg("duration"),
             value: datamine.constellation1.duration,
             unit: "s"
           }]
         }
       }
     })]),
-    constellation2: ct.talentTemplate("constellation2", [ct.conditionalTemplate("constellation2", {
+    constellation2: ct.talentTem("constellation2", [ct.condTem("constellation2", {
       value: condC2,
       path: condC2Path,
       name: st("enemyLessPercentHP", { percent: datamine.constellation2.hpThreshold * 100 }),
@@ -323,30 +319,30 @@ const sheet: ICharacterSheet = {
         }
       }
     })]),
-    constellation3: ct.talentTemplate("constellation3", [{ fields: [{ node: nodeC3 }] }]),
-    constellation4: ct.talentTemplate("constellation4", [ct.conditionalTemplate("constellation4", {
+    constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),
+    constellation4: ct.talentTem("constellation4", [ct.condTem("constellation4", {
       value: condC4,
       path: condC4Path,
       teamBuff: true,
-      name: trm("opHitWithClawAndThunder"),
+      name: ct.ch("opHitWithClawAndThunder"),
       states: {
         "on": {
           fields: [{
             node: enemyDefRed_
           }, {
-            text: sgt("duration"),
+            text: stg("duration"),
             value: datamine.constellation4.duration,
             unit: "s"
           }]
         }
       }
     })]),
-    constellation5: ct.talentTemplate("constellation5", [{ fields: [{ node: nodeC5 }] }]),
-    constellation6: ct.talentTemplate("constellation6", [ct.fieldsTemplate("constellation6", {
+    constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),
+    constellation6: ct.talentTem("constellation6", [ct.fieldsTem("constellation6", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation6.dmg, { key: "sheet:dmg" })
+        node: infoMut(dmgFormulas.constellation6.dmg, { name: st("dmg") })
       }, {
-        text: trm("electroSigilPerProc"),
+        text: ct.ch("electroSigilPerProc"),
         value: datamine.constellation6.electroSigilGenerated
       }, {
         text: st("cooldown"),

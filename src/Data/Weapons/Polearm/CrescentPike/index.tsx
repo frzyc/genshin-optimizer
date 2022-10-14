@@ -17,7 +17,7 @@ const [, trm] = trans("weapon", key)
 const atkInc = [0.2, 0.25, 0.3, 0.35, 0.4]
 const [condPassivePath, condPassive] = cond(key, "InfusionNeedle")
 const hit = equal(input.weapon.key, key,
-  equal(condPassive, 'on', customDmgNode(prod(input.total.atk, subscript(input.weapon.refineIndex, atkInc, { key: "_" })), "elemental", {
+  equal(condPassive, 'on', customDmgNode(prod(input.total.atk, subscript(input.weapon.refineIndex, atkInc, { unit: "%" })), "elemental", {
     hit: { ele: constant("physical") }
   })))
 const data = dataObjForWeaponSheet(key, data_gen, undefined, { hit })
@@ -33,7 +33,7 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: infoMut(hit, { key: `weapon_${key}:hitName` })
+          node: infoMut(hit, { name: WeaponSheet.trm(key)("hitName") })
         }]
       }
     }
