@@ -96,7 +96,7 @@ function DataCard({ index }: { index: number }) {
     <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
       < StyledInputBase value={tempName} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={(e) => setTempName(e.target.value)} onBlur={onBlur} onKeyDown={onKeyDOwn} />
       {!current && <Button startIcon={<ImportExport />} onClick={onSwap} color="warning">{t`DatabaseCard.button.swap`}</Button>}
-      <Chip color={current ? "success" : "secondary"} label={current ? t`DatabaseCard.currentDB` : `${t`DatabaseCard.title`} ${index}`} />
+      <Chip color={current ? "success" : "secondary"} label={current ? t`DatabaseCard.currentDB` : `${t`DatabaseCard.title`} ${database.dbIndex}`} />
     </CardContent>
     <Divider />
     <CardContent>
