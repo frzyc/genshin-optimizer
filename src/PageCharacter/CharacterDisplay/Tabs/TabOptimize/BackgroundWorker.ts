@@ -3,54 +3,61 @@ import { NumNode } from '../../../../Formula/type'
 import { assertUnreachable } from '../../../../Util/Util'
 import { ArtifactsBySlot, artSetPerm, Build, countBuilds, filterArts, filterFeasiblePerm, PlotData, RequestFilter } from "./common"
 import { ComputeWorker } from "./ComputeWorker"
-import { SplitWorker } from "./SplitWorker"
+import { BNBSplitWorker } from "./BNBSplitWorker"
+import { DefaultSplitWorker } from './DefaultSplitWorker'
 
 let id: number, splitWorker: SplitWorker, computeWorker: ComputeWorker
 
 onmessage = ({ data }: { data: WorkerCommand }) => {
-  const command = data.command
+  const { command } = data
   let result: WorkerResult
   switch (command) {
     case "setup":
       id = data.id
       const splitID = `split${id}`, computeID = `compute${id}`
-      splitWorker = new SplitWorker(data, interim => postMessage({ id, source: splitID, ...interim }))
+      try {
+        splitWorker = new BNBSplitWorker(data, interim => postMessage({ id, source: splitID, ...interim }))
+      } catch {
+        splitWorker = new DefaultSplitWorker(data, interim => postMessage({ id, source: splitID, ...interim }))
+      }
       computeWorker = new ComputeWorker(data, interim => postMessage({ id, source: computeID, ...interim }))
       result = { command: "iterate" }
       break
-    case "split":
+    case "split": {
       if (data.filter) splitWorker.addFilter(data.filter)
-      let total = 0, split = splitWorker.split(data.threshold, data.minCount)
-      while (split && split.count <= 50_000 && total <= 500_000) {
-        total += split.count
-        computeWorker.compute(-Infinity, split.filter)
-        split = splitWorker.split(-Infinity, data.minCount)
-      }
-      result = { command: "split", filter: split?.filter }
+      const filter = splitWorker.split(data.threshold, data.minCount)
+      result = { command: "split", filter }
       break
-    case "iterate":
+    }
+    case "iterate": {
       const { threshold, filter } = data
       computeWorker.compute(threshold, filter)
       result = { command: "iterate" }
       break
-    case "finalize":
+    }
+    case "finalize": {
       computeWorker.refresh(true)
       const { builds, plotData } = computeWorker
       result = { command: "finalize", builds, plotData }
       break
-    case "count":
-      {
-        const { exclusion } = data, arts = computeWorker.arts
-        const setPerm = filterFeasiblePerm(artSetPerm(exclusion, [...new Set(Object.values(arts.values).flatMap(x => x.map(x => x.set!)))]), arts)
-        let counts = data.arts.map(_ => 0)
-        for (const perm of setPerm)
-          data.arts.forEach((arts, i) => counts[i] += countBuilds(filterArts(arts, perm)));
-        result = { command: "count", counts }
-        break
-      }
+    }
+    case "count": {
+      const { exclusion } = data, arts = computeWorker.arts
+      const setPerm = filterFeasiblePerm(artSetPerm(exclusion, [...new Set(Object.values(arts.values).flatMap(x => x.map(x => x.set!)))]), arts)
+      let counts = data.arts.map(_ => 0)
+      for (const perm of setPerm)
+        data.arts.forEach((arts, i) => counts[i] += countBuilds(filterArts(arts, perm)));
+      result = { command: "count", counts }
+      break
+    }
     default: assertUnreachable(command)
   }
-  postMessage({ id, ...result });
+  postMessage({ id, ...result })
+}
+
+export interface SplitWorker {
+  addFilter(filter: RequestFilter): void
+  split(newThreshold: number, minCount: number): RequestFilter | undefined
 }
 
 export type WorkerCommand = Setup | Split | Iterate | Finalize | Count

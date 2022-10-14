@@ -34,7 +34,7 @@ export class ComputeWorker {
     if (this.threshold > newThreshold) this.threshold = newThreshold
     const { min, interimReport } = this, self = this // `this` in nested functions means different things
     let preArts = filterArts(this.arts, filter)
-    const totalCount = countBuilds(preArts)
+    const totalCount = countBuilds(preArts), oldMaxBuildCount = this.builds.length
 
     let nodes = this.nodes;
     ({ nodes, arts: preArts } = pruneAll(nodes, min, preArts, this.maxBuilds, {}, {
@@ -80,7 +80,7 @@ export class ComputeWorker {
     }
 
     permute(arts.length - 1)
-    this.interimReport(count)
+    interimReport(count, this.builds.length > oldMaxBuildCount)
   }
 
   refresh(force: boolean): void {
@@ -96,8 +96,8 @@ export class ComputeWorker {
       this.threshold = Math.max(this.threshold, this.buildValues[maxBuilds - 1] ?? -Infinity)
     }
   }
-  interimReport = (count: { tested: number, failed: number, skipped: number }) => {
-    this.refresh(false)
+  interimReport = (count: { tested: number, failed: number, skipped: number }, forced = false) => {
+    this.refresh(forced)
     this.callback({ command: "interim", buildValues: this.buildValues, ...count })
     this.buildValues = undefined
     count.tested = 0

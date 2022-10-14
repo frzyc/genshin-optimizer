@@ -118,8 +118,8 @@ export function objectKeyMap<K extends string | number, V>(keys: readonly K[], m
   return Object.fromEntries(keys.map((k, i) => [k, map(k, i)])) as any
 }
 //fromEntries doesn't result in StrictDict, this is just a utility wrapper.
-export function objectKeyValueMap<T, K extends string | number, V>(items: readonly T[], map: (item: T) => [K, V]): StrictDict<`${K}`, V> {
-  return Object.fromEntries(items.map(t => map(t))) as any
+export function objectKeyValueMap<T, K extends string | number, V>(items: readonly T[], map: (item: T, i: number) => [K, V]): StrictDict<`${K}`, V> {
+  return Object.fromEntries(items.map((t, i) => map(t, i))) as any
 }
 
 export function objectMap<K extends string, V, T>(obj: Record<K, Exclude<V, undefined>>, fn: (value: V, key: `${K}`, index: number) => T): Record<K, T>
