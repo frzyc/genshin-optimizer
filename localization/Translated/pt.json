@@ -112,7 +112,20 @@
             "title": "Upload de Banco de Dados",
             "replaceDatabase": "Substituir Banco de Dados",
             "hint": "Faça upload do seu arquivo JSON aqui...",
-            "hintPaste": "...ou cole seus dados abaixo."
+            "hintPaste": "...ou cole seus dados abaixo.",
+            "goUpload": {
+                "title": "Formato <strong>Genshin Optimizer</strong>",
+                "deleteDatabasePrompt": "Tem certeza que deseja excluir seu banco de dados?"
+            },
+            "error": {
+                "unknown": "Formato de arquivo desconhecido."
+            },
+            "dbSource": "Origem dos dados:"
+        },
+        "count": {
+            "chars": "Personagens:",
+            "arts": "Artefatos:",
+            "weapons": "Armas:"
         }
     },
     "ui": {
@@ -140,7 +153,9 @@
         "rightsDisclaimer": "Genshin Optimizer não é afiliado ou endossado por miHoYo.",
         "appVersion": "$t(pageTitle) Versão: {{version}}",
         "underConstruction": "Em Construção",
-        "error": "Erro"
+        "error": "Erro",
+        "reset": "Redefinir",
+        "info": "INFO"
     },
     "char_Eula": {
         "skillC": {
@@ -186,9 +201,28 @@
         "hitOp": {
             "normal": "Acertos de Ataques Normais nos oponentes",
             "charged": "Acertos de Ataques Carregados nos oponentes"
+        },
+        "afterUse": {
+            "skill": "Após usar a Habilidade Elemental",
+            "burst": "Após usar o Supremo"
         }
     },
     "weapon_SongOfBrokenPines": {
         "name": "Concerto Milenar: Rebelião da Bandeira"
+    },
+    "char_KamisatoAyaka": {
+        "afterSprintCryo": "Aplicando <cryo>Cryo</cryo> depois da corrida"
+    },
+    "char_Yoimiya": {
+        "c2": "crítico de <pyro>Dano Pyro</pyro>",
+        "p2": "Aumento de ATK do Time"
+    },
+    "char_RaidenShogun": {
+        "skill": {
+            "partyCost": "Custo de energia"
+        },
+        "a4": {
+            "eleDMG": "Bônus de Dano Electro"
+        }
     }
 }
