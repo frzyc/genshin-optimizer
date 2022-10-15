@@ -1,8 +1,5 @@
 import { crawlObject, deepClone, objPathValue } from "../Util/Util"
-import { NodeData, NumNode, StrNode } from "./type"
-import { constant } from "./utils"
-
-type Node = NumNode | StrNode
+import { Base, NodeData, NumNode, StrNode } from "./type"
 
 export function deepNodeClone<T extends NodeData<NumNode | StrNode | undefined>>(data: T): T {
   const result = deepClone(data)
@@ -12,7 +9,7 @@ export function deepNodeClone<T extends NodeData<NumNode | StrNode | undefined>>
   return result
 }
 
-export function forEachNodes(formulas: Node[], topDown: (formula: Node) => void, bottomUp: (formula: Node) => void): void {
+export function forEachNodes<Node extends Base>(formulas: Node[], topDown: (formula: Node) => void, bottomUp: (formula: Node) => void): void {
   const visiting = new Set<Node>(), visited = new Set<Node>()
 
   function traverse(formula: Node) {
@@ -26,7 +23,7 @@ export function forEachNodes(formulas: Node[], topDown: (formula: Node) => void,
 
     topDown(formula)
 
-    formula.operands.forEach(traverse)
+    ;(formula.operands as Node[]).forEach(traverse)
 
     bottomUp(formula)
 
@@ -37,8 +34,7 @@ export function forEachNodes(formulas: Node[], topDown: (formula: Node) => void,
   formulas.forEach(traverse)
 }
 
-export function mapFormulas(formulas: NumNode[], topDownMap: (formula: Node) => Node, bottomUpMap: (current: Node, orig: Node) => Node): NumNode[]
-export function mapFormulas(formulas: Node[], topDownMap: (formula: Node) => Node, bottomUpMap: (current: Node, orig: Node) => Node): Node[] {
+export function mapFormulas<Node extends Base>(formulas: Node[], topDownMap: (formula: Node) => Node, bottomUpMap: (current: Node, orig: Node) => Node): Node[] {
   const visiting = new Set<Node>()
   const topDownMapped = new Map<Node, Node>()
   const bottomUpMapped = new Map<Node, Node>()
@@ -52,8 +48,7 @@ export function mapFormulas(formulas: Node[], topDownMap: (formula: Node) => Nod
     if (bottomUp) return bottomUp
 
     if (visiting.has(topDown)) {
-      console.error("Found cyclical dependency during formula mapping")
-      return constant(NaN)
+      throw new Error("Found cyclical dependency during formula mapping")
     }
     visiting.add(topDown)
 
@@ -67,7 +62,7 @@ export function mapFormulas(formulas: Node[], topDownMap: (formula: Node) => Nod
   }
 
   function traverse(formula: Node): Node {
-    const operands = formula.operands.map(check)
+    const operands = (formula.operands as Node[]).map(check)
     return arrayEqual(operands, formula.operands) ? formula : { ...formula, operands } as any
   }
 
@@ -75,7 +70,7 @@ export function mapFormulas(formulas: Node[], topDownMap: (formula: Node) => Nod
   return arrayEqual(result, formulas) ? formulas : result
 }
 
-export function customMapFormula<Context, Output>(formulas: NumNode[], context: Context, map: (formula: Node, context: Context, map: (node: NumNode, context: Context) => Output) => Output): Output[] {
+export function customMapFormula<Context, Output>(formulas: NumNode[], context: Context, map: (formula: NumNode | StrNode, context: Context, map: (node: NumNode, context: Context) => Output) => Output): Output[] {
   const contextMapping = new Map<Context, [Set<NumNode>, Map<NumNode, Output>]>()
   function internalMap(formula: NumNode, context: Context): Output {
     let current = contextMapping.get(context)

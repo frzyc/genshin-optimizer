@@ -31,8 +31,10 @@ interface Info {
 }
 export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | AdditiveReactionsKey | "heal" | "invalid"
 
-interface Base {
+export interface Base {
   info?: Info
+  operation: string
+  operands: readonly Base[]
 }
 export interface StrPrioNode extends Base {
   operation: "prio"

@@ -67,7 +67,6 @@ const x0=0`; // making sure `const` has at least one entry
       case "sum_frac": body += `,${name}=${operandNames[0]}/(${operandNames[0]}+${operandNames[1]})`; break
 
       case "match": case "lookup": case "subscript":
-      case "prio": case "small":
       case "data": throw new Error(`Unsupported ${operation} node in precompute`)
       default: assertUnreachable(operation)
     }
