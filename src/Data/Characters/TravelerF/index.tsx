@@ -1,15 +1,14 @@
-import { Translate } from '../../../Components/Translate'
+import { trans } from '../../SheetUtil'
 import Traveler from '../Traveler'
-const key = "TravelerF"
-const tr = (strKey: string) => <Translate ns={`char_${key}_gen`} key18={strKey} />
+const [chg] = trans("char", "TravelerF")
 
 export default {
   sheet: {
     ...Traveler.sheet,
-    name: tr("name"),
+    name: chg("name"),
     gender: "F",
-    constellationName: tr("constellationName"),
-    title: tr("title"),
+    constellationName: chg("constellationName"),
+    title: chg("title"),
   },
   data_gen: Traveler.data_gen
 } as const

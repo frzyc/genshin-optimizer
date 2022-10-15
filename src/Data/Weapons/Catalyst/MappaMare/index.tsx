@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
 import { allElements, WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, objectKeyValueMap, range } from '../../../../Util/Util'
-import { cond, sgt, st, trans } from '../../../SheetUtil'
+import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
@@ -37,7 +37,7 @@ const sheet: IWeaponSheet = {
     states: objectKeyMap(range(1, 2), i => ({
       name: st("stack", { count: i }),
       fields: [...Object.values(eleDmgs).map(node => ({ node })), {
-        text: sgt("duration"),
+        text: stg("duration"),
         value: 10,
         unit: "s"
       }]

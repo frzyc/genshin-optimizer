@@ -14,8 +14,8 @@ const data_gen = data_gen_json as WeaponData
 
 const skill_dmgInc = [0.16, 0.2, 0.24, 0.28, 0.32]
 const skill_critInc = [0.06, 0.075, 0.09, 0.105, 0.12]
-const skill_dmg_ = subscript(input.weapon.refineIndex, skill_dmgInc, { key: '_' })
-const skill_critRate_ = subscript(input.weapon.refineIndex, skill_critInc, { key: '_' })
+const skill_dmg_ = subscript(input.weapon.refineIndex, skill_dmgInc, { unit: "%" })
+const skill_critRate_ = subscript(input.weapon.refineIndex, skill_critInc, { unit: "%" })
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

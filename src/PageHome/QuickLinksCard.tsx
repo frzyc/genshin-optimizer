@@ -1,5 +1,5 @@
 import { faDiscord, faPatreon, faPaypal, faTwitch } from "@fortawesome/free-brands-svg-icons"
-import { Article, GitHub, Handshake, InsertLink, Scanner, Twitter, YouTube } from "@mui/icons-material"
+import { Article, Description, GitHub, Handshake, InsertLink, Scanner, Twitter, YouTube } from "@mui/icons-material"
 import { Box, Button, CardContent, CardHeader, Divider, Link, Tooltip, Typography } from "@mui/material"
 import CardDark from "../Components/Card/CardDark"
 import FontAwesomeSvgIcon from "../Components/FontAwesomeSvgIcon"
@@ -55,6 +55,12 @@ const buttons = [{
   tooltip: t => t`quickLinksCard.buttons.scanners.tooltip`,
   to: "/scanner",
   color: "primary",
+}, {
+  title: t => t`quickLinksCard.buttons.patchNotes.title`,
+  icon: <Description />,
+  tooltip: t => t`quickLinksCard.buttons.patchNotes.tooltip`,
+  url: `${process.env.REACT_APP_URL_GITHUB_GO}/releases`,
+  color: "secondary",
 }, {
   title: t => t`quickLinksCard.buttons.kqm.title`,
   icon: <Handshake />,

@@ -1,8 +1,9 @@
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent, sum } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { ArtifactSetKey } from '../../../Types/consts'
-import { cond, sgt, st } from '../../SheetUtil'
+import { cond, stg, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import icons from './icons'
@@ -11,10 +12,10 @@ const key: ArtifactSetKey = "MartialArtist"
 const setHeader = setHeaderTemplate(key, icons)
 const [condStatePath, condState] = cond(key, "state")
 
-const set2NA = greaterEq(input.artSet.MartialArtist, 2, percent(0.15), { key: "normal_dmg_" })
-const set2CA = greaterEq(input.artSet.MartialArtist, 2, percent(0.15), { key: "charged_dmg_" })
-const set4NA = greaterEq(input.artSet.MartialArtist, 4, equal("on", condState, percent(0.25), { key: "normal_dmg_" }))
-const set4CA = greaterEq(input.artSet.MartialArtist, 4, equal("on", condState, percent(0.25), { key: "charged_dmg_" }))
+const set2NA = greaterEq(input.artSet.MartialArtist, 2, percent(0.15), KeyMap.info("normal_dmg_"))
+const set2CA = greaterEq(input.artSet.MartialArtist, 2, percent(0.15), KeyMap.info("charged_dmg_"))
+const set4NA = greaterEq(input.artSet.MartialArtist, 4, equal("on", condState, percent(0.25), KeyMap.info("normal_dmg_")))
+const set4CA = greaterEq(input.artSet.MartialArtist, 4, equal("on", condState, percent(0.25), KeyMap.info("charged_dmg_")))
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
@@ -41,7 +42,7 @@ const sheet: IArtifactSheet = {
             }, {
               node: set4CA,
             }, {
-              text: sgt('duration'),
+              text: stg('duration'),
               value: 8,
               unit: 's'
             }]

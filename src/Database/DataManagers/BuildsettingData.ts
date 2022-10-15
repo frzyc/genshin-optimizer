@@ -5,7 +5,6 @@ import { allCharacterKeys, ArtifactSetKey, CharacterKey } from "../../Types/cons
 import { deepClone } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
-import { IGO, IGOOD, ImportResult } from "../exim";
 
 export type ArtSetExclusion = Dict<Exclude<ArtifactSetKey, "PrayersForDestiny" | "PrayersForIllumination" | "PrayersForWisdom" | "PrayersToSpringtime"> | "rainbow", (2 | 4)[]>
 
@@ -24,8 +23,6 @@ export interface BuildSetting {
   useExcludedArts: boolean,
   useEquippedArts: boolean,
   allowPartial: boolean,
-  builds: string[][]
-  buildDate: number,
   maxBuildsToShow: number,
   plotBase: MainStatKey | SubstatKey | "",
   compareBuild: boolean,
@@ -49,7 +46,7 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, "
   }
   validate(obj: object, key: string): BuildSetting | undefined {
     if (!allCharacterKeys.includes(key as CharacterKey)) return
-    let { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = (obj as any) ?? {}
+    let { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = (obj as any) ?? {}
 
     if (typeof statFilters !== "object") statFilters = {}
 
@@ -69,15 +66,6 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, "
       mainStatAssumptionLevel = 0
     useExcludedArts = !!useExcludedArts
     useEquippedArts = !!useEquippedArts
-    if (!Array.isArray(builds)) {
-      builds = []
-      buildDate = 0
-    }
-    builds = builds.map(build => {
-      if (!Array.isArray(build)) return []
-      return build.filter(id => this.database.arts.get(id))
-    }).filter(x => x.length)
-    if (!Number.isInteger(buildDate)) buildDate = 0
     if (!maxBuildsToShowList.includes(maxBuildsToShow)) maxBuildsToShow = maxBuildsToShowDefault
     if (typeof plotBase !== "string") plotBase = ""
     if (compareBuild === undefined) compareBuild = false
@@ -86,7 +74,7 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, "
     if (!artSetExclusion) artSetExclusion = {};
     if (!allowPartial) allowPartial = false
     artSetExclusion = Object.fromEntries(Object.entries(artSetExclusion as ArtSetExclusion).map(([k, a]) => [k, [...new Set(a)]]).filter(([k, a]) => a.length))
-    return { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
+    return { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
   }
   get(key: CharacterKey) {
     const bs = super.get(key)
@@ -99,26 +87,6 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, "
   set(key: CharacterKey, value: BuildSettingReducerAction) {
     const oldState = this.get(key) as BuildSetting
     return super.set(key, buildSettingsReducer(oldState, value))
-  }
-  exportGOOD(good: Partial<IGOOD & IGO>) {
-    const artifactIDs = new Map<string, number>()
-    Object.entries(this.database.arts.data).forEach(([id, value], i) => {
-      artifactIDs.set(id, i)
-    })
-    good[this.goKey as any] = Object.entries(this.data).map(([id, value]) =>
-      ({ ...value, id, builds: value.builds.map(b => b.map(x => artifactIDs.has(x) ? `artifact_${artifactIDs.get(x)}` : "")) })
-    )
-  }
-  importGOOD(good: IGOOD & IGO, result: ImportResult) {
-    const buildSettings = good[this.goKey]
-    if (buildSettings && Array.isArray(buildSettings)) buildSettings.forEach(b => {
-      const { id, ...rest } = b
-      if (!id || !allCharacterKeys.includes(id as CharacterKey)) return
-      if (rest.builds) //preserve the old build ids
-        rest.builds = rest.builds.map(build => build.map(i => result.importArtIds.get(i) ?? ""))
-
-      this.set(id as CharacterKey, { ...rest })
-    })
   }
 }
 type BSMainStatKey = {
@@ -139,8 +107,6 @@ const initialBuildSettings = (): BuildSetting => ({
   useExcludedArts: false,
   useEquippedArts: false,
   allowPartial: false,
-  builds: [],
-  buildDate: 0,
   maxBuildsToShow: 5,
   plotBase: "",
   compareBuild: true,

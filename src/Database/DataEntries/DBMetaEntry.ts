@@ -9,9 +9,9 @@ interface IDBMeta {
   gender: Gender
 }
 
-function dbMetaInit(): IDBMeta {
+function dbMetaInit(database: ArtCharDatabase): IDBMeta {
   return {
-    name: `Database`,
+    name: `Database ${database.storage.getDBIndex()}`,
     lastEdit: 0,
     gender: "F"
   }

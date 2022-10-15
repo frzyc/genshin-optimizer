@@ -343,8 +343,6 @@
         },
         "hits_one": "命中{{count}}次",
         "hits_other": "命中{{count}}次",
-        "brHits_one": "（命中{{count}}次）",
-        "brHits_other": "（命中{{count}}次）",
         "lessEqPercentHP": "生命值低于或等于{{percent}}%",
         "greaterPercentHP": "生命值高于{{percent}}%",
         "greaterEqPercentHP": "生命值高于或等于{{percent}}%",

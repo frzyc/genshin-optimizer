@@ -11,14 +11,13 @@ import LocationName from "../Components/Character/LocationName"
 import ConditionalWrapper from "../Components/ConditionalWrapper"
 import ImgIcon from "../Components/Image/ImgIcon"
 import { StarsDisplay } from "../Components/StarDisplay"
-import StatIcon from "../Components/StatIcon"
 import CharacterSheet from "../Data/Characters/CharacterSheet"
 import { ascensionMaxLevel } from "../Data/LevelData"
 import WeaponSheet from "../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../Database/Database"
 import { uiInput as input } from "../Formula"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
-import KeyMap, { valueString } from "../KeyMap"
+import { nodeVStr } from "../Formula/uiData"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
 import { LocationKey } from "../Types/consts"
@@ -74,11 +73,10 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
         </Box>
         <CardContent>
           {stats.map(node => {
-            if (!node.info.key) return null
-            const displayVal = valueString(node.value, node.unit, !node.unit ? 0 : undefined)
-            return <Box key={node.info.key} sx={{ display: "flex" }}>
-              <Typography flexGrow={1}>{StatIcon[node.info.key!]} {KeyMap.get(node.info.key)}</Typography>
-              <Typography>{displayVal}</Typography>
+            if (!node.info.name) return null
+            return <Box key={JSON.stringify(node.info)} sx={{ display: "flex" }}>
+              <Typography flexGrow={1}>{node.info.icon} {node.info.name}</Typography>
+              <Typography>{nodeVStr(node)}</Typography>
             </Box>
           })}
         </CardContent>
@@ -86,7 +84,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
       <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }}>
         <Box sx={{ flexGrow: 1 }}>
           {canEquip
-            ? <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} autoCompleteProps={{ getOptionDisabled: t => !t, disableClearable: true }} />
+            ? <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} autoCompleteProps={{ getOptionDisabled: t => !t.key, disableClearable: true }} />
             : <LocationName location={location} />}
         </Box>
         <ButtonGroup sx={{ height: "100%" }}>

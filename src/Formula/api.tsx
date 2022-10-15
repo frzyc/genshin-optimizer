@@ -3,8 +3,9 @@ import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import { crawlObject, deepClone, layeredAssignment, objectKeyMap, objectMap, objPathValue } from "../Util/Util";
+import { crawlObject, layeredAssignment, objectKeyMap, objectMap, objPathValue } from "../Util/Util";
 import { input, tally } from "./index";
+import { deepNodeClone } from "./internal";
 import { Data, DisplaySub, Info, Input, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData } from "./uiData";
 import { constant, customRead, data, infoMut, none, percent, prod, resetData, setReadNodeKeys, sum } from "./utils";
@@ -105,7 +106,7 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
         )
       })
       // Make the variant "invalid" because its not easy to determine variants in multitarget
-      const multiTargetNode = infoMut(sum(...targetNodes), { key: name, variant: "invalid" })
+      const multiTargetNode = infoMut(sum(...targetNodes), { name, variant: "invalid" })
       sheetData.display!.custom[i] = multiTargetNode
     })
   }
@@ -123,7 +124,7 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
   }
 }
 /** These read nodes are very context-specific, and cannot be used anywhere else outside of `uiDataForTeam` */
-const teamBuff = setReadNodeKeys(deepClone(input), ["teamBuff"]); // Use ONLY by dataObjForTeam
+const teamBuff = setReadNodeKeys(deepNodeClone(input), ["teamBuff"]); // Use ONLY by dataObjForTeam
 function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>, activeCharKey?: CharacterKey): Dict<CharacterKey, { target: UIData, buffs: Dict<CharacterKey, UIData> }> {
   // May the goddess of wisdom bless any and all souls courageous
   // enough to attempt for the understanding of this abomination.
@@ -151,7 +152,7 @@ function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>, activeCharKey?: Cha
     mergedData.forEach(([sourceKey, source]) => {
       const sourceBuff = source.teamBuff
       // Create new copy of `calc` as we're mutating it later
-      const buff: Data = {}, calc: Data = deepClone({ teamBuff: sourceBuff })
+      const buff: Data = {}, calc: Data = deepNodeClone({ teamBuff: sourceBuff })
       buffs.push(buff)
       calcs[sourceKey] = calc
 
@@ -254,7 +255,6 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
       operation: true,
       value: 0,
       isEmpty: true,
-      unit: d2?.unit!,
       formulas: [],
       ...d1,
       diff: (d2?.value ?? 0) - (d1?.value ?? 0)

@@ -17,7 +17,7 @@ const ele_dmg_s = [0.08, 0.10, 0.12, 0.14, 0.16]
 const [condPassivePath, condPassive] = cond(key, "BoundlessBlessing")
 
 const moveSPD_ = percent(0.1)
-const eleDmgInc = subscript(input.weapon.refineIndex, ele_dmg_s, { key: "_" })
+const eleDmgInc = subscript(input.weapon.refineIndex, ele_dmg_s, { unit: "%" })
 const eleDmgStacks = Object.fromEntries(allElements.map(ele => [ele, lookup(condPassive, {
   ...objectKeyMap(range(1, 4), i => prod(eleDmgInc, i)),
 }, naught)]))

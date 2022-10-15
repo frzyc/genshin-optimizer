@@ -1,4 +1,5 @@
-import { Translate } from "../Components/Translate";
+import StatIcon from "../Components/StatIcon";
+import { Info } from "../Formula/type";
 import { MainStatKey, SubstatKey } from "../Types/artifact";
 import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";
 import elementalData from "./ElementalData";
@@ -183,16 +184,8 @@ export default class KeyMap {
   static getArtStr(key: MainStatKey | SubstatKey): string {
     return statMap[key] + (showPercentKeys.includes(key) ? "%" : "")
   }
-  static get(key: string = ""): Displayable | undefined {
-    const name = KeyMap.getStr(key)
-    if (name) return <span>{name}</span>
-    if (key.includes(":")) {
-      let [ns, key18] = key.split(":")
-      if (ns.endsWith("_gen") && key18.endsWith("_"))
-        key18 = key18.slice(0, -1);
-      return <Translate ns={ns} key18={key18} />
-    }
-    return <span>{key}</span>
+  static get(key: string = "") {
+    return KeyMap.getStr(key) ?? key
   }
   static getVariant(key: string = ""): ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | AdditiveReactionsKey | "heal" | undefined {
     const trans = Object.keys(transformativeReactions).find(e => key.startsWith(e))
@@ -208,9 +201,17 @@ export default class KeyMap {
     if (key.endsWith("_")) return "%"
     return ""
   }
+  static info(key: string): Partial<Info> {
+    const info = {} as Partial<Info>
+    info.name = this.get(key)
+    info.unit = this.unit(key)
+    info.variant = this.getVariant(key)
+    info.icon = StatIcon[allElementsWithPhy.find(e => key.startsWith(`${e}_`)) ?? key]
+    return info
+  }
 }
 
-export function valueString(value: number, unit: Unit, fixed = -1): string {
+export function valueString(value: number, unit: Unit = "", fixed = -1): string {
   if (!isFinite(value)) {
     if (value > 0) return `\u221E`
     if (value < 0) return `-\u221E`

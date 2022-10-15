@@ -18,7 +18,7 @@ export default function BonusStatsCard() {
     </CardContent>
     <Divider />
     <CardContent>
-      {nodes.map(n => <NodeFieldDisplay key={n.info.key} node={n} />)}
+      {nodes.map(n => <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} />)}
     </CardContent>
   </CardLight>
 }

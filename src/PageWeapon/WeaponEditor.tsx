@@ -106,10 +106,10 @@ export default function WeaponEditor({
               <CardHeader title={"Main Stats"} titleTypographyProps={{ variant: "subtitle2" }} />
               <Divider />
               <FieldDisplayList>
-                {[input.weapon.main, input.weapon.sub, input.weapon.sub2].map((node, i) => {
+                {[input.weapon.main, input.weapon.sub, input.weapon.sub2].map(node => {
                   const n = weaponUIData.get(node)
                   if (n.isEmpty || !n.value) return null
-                  return <NodeFieldDisplay key={n.info.key} node={n} component={ListItem} />
+                  return <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} component={ListItem} />
                 })}
               </FieldDisplayList>
             </CardDark>
@@ -121,7 +121,7 @@ export default function WeaponEditor({
     {footer && id && <CardContent sx={{ py: 1 }}>
       <Grid container spacing={1}>
         <Grid item flexGrow={1}>
-          <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} autoCompleteProps={{ getOptionDisabled: t => !t, disableClearable: true }} />
+          <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} autoCompleteProps={{ getOptionDisabled: t => !t.key, disableClearable: true }} />
         </Grid>
         <Grid item flexGrow={2} />
         {!!onClose && <Grid item><CloseButton sx={{ height: "100%" }} large onClick={onClose} /></Grid>}

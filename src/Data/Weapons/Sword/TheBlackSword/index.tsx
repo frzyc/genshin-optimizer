@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { equal, infoMut, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { customHealNode } from '../../../Characters/dataUtil'
-import { st } from '../../../SheetUtil'
+import { stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
@@ -18,7 +18,7 @@ const hpRegenSrc = [0.6, 0.7, 0.8, 0.9, 1]
 const normal_dmg_ = subscript(input.weapon.refineIndex, autoSrc)
 const charged_dmg_ = subscript(input.weapon.refineIndex, autoSrc)
 const heal = equal(input.weapon.key, key,
-  customHealNode(prod(subscript(input.weapon.refineIndex, hpRegenSrc, { key: "_" }), input.total.atk)))
+  customHealNode(prod(subscript(input.weapon.refineIndex, hpRegenSrc, { unit: "%" }), input.total.atk)))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
@@ -36,7 +36,7 @@ const sheet: IWeaponSheet = {
     }, {
       node: charged_dmg_
     }, {
-      node: infoMut(heal, { key: "sheet_gen:healing" })
+      node: infoMut(heal, { name: stg("healing"), variant: "heal" })
     }]
   }],
 }

@@ -9,18 +9,13 @@ import CardLight from '../Components/Card/CardLight'
 import { StyledInputBase } from '../Components/CustomNumberInput'
 import FontAwesomeSvgIcon from '../Components/FontAwesomeSvgIcon'
 import ModalWrapper from '../Components/ModalWrapper'
-import { ArtCharDatabase, DatabaseContext, DatabaseContextObj } from "../Database/Database"
-import { ExtraStorage } from '../Database/DBStorage'
+import { DatabaseContext } from "../Database/Database"
 import useBoolState from '../ReactHooks/useBoolState'
-import useDBMeta from '../ReactHooks/useDBMeta'
 import { range } from '../Util/Util'
 import UploadCard from './UploadCard'
 
 export default function DatabaseCard() {
-  const databaseContextObj = useContext(DatabaseContext)
-  const dbIndex = parseInt(databaseContextObj.database.storage.getString("dbIndex") || "1")
   const { t } = useTranslation(["settings"]);
-
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
       <Typography variant="subtitle1">
@@ -30,40 +25,23 @@ export default function DatabaseCard() {
     <Divider />
     <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       <Grid container spacing={2} columns={{ xs: 1, md: 2, }}>
-        {range(1, 4).map(i => <Grid key={i} item xs={1}>
-          {i === dbIndex ? <DataCard index={i} /> :
-            <ExtraDatabaseWrapper index={i}>
-              <DataCard index={i} databaseContextObj={databaseContextObj} />
-            </ExtraDatabaseWrapper>}
+        {range(0, 3).map(i => <Grid key={i} item xs={1}>
+          <DataCard index={i} />
         </Grid>)}
       </Grid>
     </CardContent >
   </CardLight >
 }
-function ExtraDatabaseWrapper({ index, children }) {
-  const [database, setDatabase] = useState(() => {
-    const dbName = `extraDatabase_${index}`
-    const storage = new ExtraStorage(dbName)
-    const dbObj = JSON.parse(localStorage.getItem(dbName) ?? `{ "dbIndex": "${index}" }`)
-    storage.setStorage(dbObj)
 
-    // A bit of preventive programming
-    storage.removeForKeys(k => k.startsWith("extraDatabase_"))
-    const db = new ArtCharDatabase(storage)
-    storage.saveStorage()
-    return db
-  })
+function DataCard({ index }: { index: number }) {
+  const { databases, database: mainDB, setDatabase } = useContext(DatabaseContext)
+  const database = databases[index]
+  const [{ name, lastEdit }, setDBMeta] = useState(database.dbMeta.get())
+  useEffect(() => database.dbMeta.follow((r, dbMeta) => setDBMeta(dbMeta)), [database])
+  // Need to update the dbMeta when database changes
+  useEffect(() => setDBMeta(database.dbMeta.get()), [database])
 
-  return <DatabaseContext.Provider value={{ database, setDatabase }}>
-    {children}
-  </DatabaseContext.Provider>
-}
-
-function DataCard({ index, databaseContextObj }: { index: number, databaseContextObj?: DatabaseContextObj }) {
-  const { database, setDatabase } = useContext(DatabaseContext)
-  const { name, lastEdit } = useDBMeta()
-
-  const current = !databaseContextObj
+  const current = mainDB === database
   const [uploadOpen, onOpen, onClose] = useBoolState()
   const { t } = useTranslation(["settings"]);
   const numChar = database.chars.keys.length
@@ -76,28 +54,12 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
       .catch(console.error),
     [database],
   )
-  const onUpload = useCallback(() => {
-    onClose()
-    if (!current) {
-      const storage = database.storage as ExtraStorage
-      storage.saveStorage()
-    }
-  }, [onClose, current, database.storage])
 
   const onDelete = useCallback(() => {
     if (!window.confirm(`Are you sure you want to delete "${name}"?`)) return
-    if (current) {
-      database.clear()
-      setDatabase(new ArtCharDatabase(database.storage))
-    } else {
-      const storage = database.storage as ExtraStorage
-      const dbName = storage.databaseName
-      const extraStorage = new ExtraStorage(dbName)
-      extraStorage.setStorage({})
-      setDatabase(new ArtCharDatabase(extraStorage))
-      localStorage.removeItem(dbName)
-    }
-  }, [database, current, name, setDatabase])
+    database.clear()
+    database.toExtraLocalDB()
+  }, [database, name])
 
   const download = useCallback(() => {
     const date = new Date()
@@ -115,41 +77,26 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
   }, [database, name])
 
   const onSwap = useCallback(() => {
-    if (!databaseContextObj) return
-
-    // save current database to appropriate slot
-    const dbIndex = parseInt(databaseContextObj.database.storage.getString("dbIndex") || "1")
-    const tempStorage = new ExtraStorage(`extraDatabase_${dbIndex}`, databaseContextObj.database.storage)
-    tempStorage.removeForKeys(k => k.startsWith("extraDatabase_"))
-    tempStorage.saveStorage()
-
-    // clear this slot database
-    const storage = database.storage as ExtraStorage
-    const dbName = storage.databaseName
-    localStorage.removeItem(dbName)
-
-    // swap over database
-    databaseContextObj.database.clear()
-    databaseContextObj.database.storage.copyFrom(database.storage)
-    databaseContextObj.database.storage.set("dbIndex", index)
-    databaseContextObj.setDatabase(new ArtCharDatabase(databaseContextObj.database.storage))
-
-  }, [databaseContextObj, database, index])
+    if (current) return
+    mainDB.toExtraLocalDB()
+    database.swapStorage(mainDB)
+    setDatabase(index, database)
+  }, [index, setDatabase, mainDB, current, database])
 
   const [tempName, setTempName] = useState(name)
   useEffect(() => setTempName(name), [name])
 
   const onBlur = useCallback(() => {
     database.dbMeta.set({ name: tempName })
-    if (!current && "saveStorage" in database.storage) (database.storage as ExtraStorage).saveStorage()
-  }, [tempName, database, current])
+    database.toExtraLocalDB()
+  }, [tempName, database])
   const onKeyDOwn = useCallback(e => e.key === "Enter" && onBlur(), [onBlur],)
 
   return <CardDark sx={{ height: "100%", boxShadow: current ? "0px 0px 0px 2px green inset" : undefined }}>
     <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
       < StyledInputBase value={tempName} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={(e) => setTempName(e.target.value)} onBlur={onBlur} onKeyDown={onKeyDOwn} />
       {!current && <Button startIcon={<ImportExport />} onClick={onSwap} color="warning">{t`DatabaseCard.button.swap`}</Button>}
-      <Chip color={current ? "success" : "secondary"} label={current ? t`DatabaseCard.currentDB` : `${t`DatabaseCard.title`} ${index}`} />
+      <Chip color={current ? "success" : "secondary"} label={current ? t`DatabaseCard.currentDB` : `${t`DatabaseCard.title`} ${database.dbIndex}`} />
     </CardContent>
     <Divider />
     <CardContent>
@@ -169,7 +116,7 @@ function DataCard({ index, databaseContextObj }: { index: number, databaseContex
             </Grid>
             <Grid item xs={1}>
               <ModalWrapper open={uploadOpen} onClose={onClose} >
-                <UploadCard onReplace={onUpload} />
+                <UploadCard index={index} onReplace={onClose} />
               </ModalWrapper>
               <Button fullWidth component="span" color="info" startIcon={<Upload />} onClick={onOpen}>
                 {t`DatabaseCard.button.upload`}

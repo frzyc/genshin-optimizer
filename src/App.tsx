@@ -1,12 +1,12 @@
 import { KeyboardArrowUp } from '@mui/icons-material';
 import { Box, Container, CssBaseline, Fab, Grid, Skeleton, StyledEngineProvider, ThemeProvider, useScrollTrigger, Zoom } from '@mui/material';
-import React, { lazy, Suspense, useMemo, useState } from 'react';
+import React, { lazy, Suspense, useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HashRouter, Route, Routes, useMatch } from "react-router-dom";
 import './App.scss';
 import './Database/Database';
 import { ArtCharDatabase, DatabaseContext } from './Database/Database';
-import { DBLocalStorage } from './Database/DBStorage';
+import { DBLocalStorage, SandboxStorage } from './Database/DBStorage';
 import Footer from './Footer';
 import Header from './Header';
 import './i18n';
@@ -58,8 +58,27 @@ function ScrollTop({ children }: { children: React.ReactElement }) {
 }
 
 function App() {
-  const [database, setDatabase] = useState(() => new ArtCharDatabase(new DBLocalStorage(localStorage)))
-  const dbContextObj = useMemo(() => ({ database, setDatabase }), [database, setDatabase])
+  const dbIndex = parseInt(localStorage.getItem("dbIndex") || "1")
+  const [databases, setDatabases] = useState(() => [1, 2, 3, 4].map(index => {
+    if (index === dbIndex) {
+      return new ArtCharDatabase(new DBLocalStorage(localStorage))
+    } else {
+      const dbName = `extraDatabase_${index}`
+      const eDB = localStorage.getItem(dbName)
+      const dbObj = eDB ? JSON.parse(eDB) : { dbIndex: `${index}` }
+      const db = new ArtCharDatabase(new SandboxStorage(dbObj))
+      db.toExtraLocalDB()
+      return db
+    }
+  }))
+  const setDatabase = useCallback((index: number, db: ArtCharDatabase) => {
+    const dbs = [...databases]
+    dbs[index] = db
+    setDatabases(dbs)
+  }, [databases, setDatabases],)
+
+  const database = databases[dbIndex - 1]
+  const dbContextObj = useMemo(() => ({ databases, setDatabases, database, setDatabase }), [databases, setDatabases, database, setDatabase])
   return <StyledEngineProvider injectFirst>{/* https://mui.com/guides/interoperability/#css-injection-order-2 */}
     <ThemeProvider theme={theme}>
       <CssBaseline />

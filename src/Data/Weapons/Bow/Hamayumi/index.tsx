@@ -1,6 +1,7 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript, sum } from '../../../../Formula/utils'
+import KeyMap from '../../../../KeyMap'
 import { WeaponKey } from '../../../../Types/consts'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
@@ -16,12 +17,12 @@ const [, trm] = trans("weapon", key)
 const normal_dmg_s = [.16, .20, .24, .28, .32]
 const charged_dmg_s = [.12, .15, .18, .21, .24]
 
-const normal_dmg = subscript(input.weapon.refineIndex, normal_dmg_s, { key: "normal_dmg_" })
-const charged_dmg = subscript(input.weapon.refineIndex, charged_dmg_s, { key: "charged_dmg_" })
+const normal_dmg = subscript(input.weapon.refineIndex, normal_dmg_s, KeyMap.info("normal_dmg_"))
+const charged_dmg = subscript(input.weapon.refineIndex, charged_dmg_s, KeyMap.info("charged_dmg_"))
 
 const [condPassivePath, condPassive] = cond(key, "FullDraw")
-const normal_passive = equal(condPassive, "on", subscript(input.weapon.refineIndex, normal_dmg_s, { key: "normal_dmg_" }))
-const charged_passive = equal(condPassive, "on", subscript(input.weapon.refineIndex, charged_dmg_s, { key: "charged_dmg_" }))
+const normal_passive = equal(condPassive, "on", subscript(input.weapon.refineIndex, normal_dmg_s, KeyMap.info("normal_dmg_")))
+const charged_passive = equal(condPassive, "on", subscript(input.weapon.refineIndex, charged_dmg_s, KeyMap.info("charged_dmg_")))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

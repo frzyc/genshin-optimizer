@@ -4,7 +4,7 @@ import { input } from '../../../Formula'
 import { equal, equalStr, greaterEq, infoMut, lookup, naught, prod, subscript, unequal } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
-import { cond, sgt, st, trans } from '../../SheetUtil'
+import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import assets from './assets'
@@ -15,7 +15,6 @@ const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "Xiao"
 const elementKey: ElementKey = "anemo"
-const [tr, trm] = trans("char", key)
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let s = 0, b = 0
@@ -90,8 +89,8 @@ const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 const [condInBurstPath, condInBurst] = cond(key, "inBurst")
-const auto_dmg_ = subscript(input.total.burstIndex, datamine.burst.dmgBonus, { key: "_" })
-const normal_dmg_ = equal("inBurst", condInBurst, auto_dmg_, { key: "_" })
+const auto_dmg_ = subscript(input.total.burstIndex, datamine.burst.dmgBonus, { unit: "%" })
+const normal_dmg_ = equal("inBurst", condInBurst, auto_dmg_, { unit: "%" })
 const charged_dmg_ = { ...normal_dmg_ }
 const plunging_dmg_ = { ...normal_dmg_ }
 const lifeDrain = subscript(input.total.burstIndex, datamine.burst.drain)
@@ -145,84 +144,83 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
 
 const sheet: ICharacterSheet = {
   key,
-  name: tr("name"),
+  name: ct.chg("name"),
   rarity: data_gen.star,
   elementKey,
   weaponTypeKey: data_gen.weaponTypeKey,
   gender: "M",
-  constellationName: tr("constellationName"),
-  title: tr("title"),
+  constellationName: ct.chg("constellationName"),
+  title: ct.chg("title"),
   talent: {
-    auto: ct.talentTemplate("auto", [{
-      text: tr("auto.fields.normal"),
+    auto: ct.talentTem("auto", [{
+      text: ct.chg("auto.fields.normal"),
     }, {
       fields: datamine.normal.hitArr.map((_, i) => ({
-        node: infoMut(dmgFormulas.normal[i], { key: `char_${key}_gen:auto.skillParams.${i}` }),
+        node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
-      text: tr("auto.fields.charged"),
+      text: ct.chg("auto.fields.charged"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.charged.dmg1, { key: `char_${key}_gen:auto.skillParams.6` }),
+        node: infoMut(dmgFormulas.charged.dmg1, { name: ct.chg(`auto.skillParams.6`) }),
       }, {
-        text: tr("auto.skillParams.7"),
+        text: ct.chg("auto.skillParams.7"),
         value: datamine.charged.stamina,
       }]
     }, {
-      text: tr("auto.fields.plunging"),
+      text: ct.chg("auto.fields.plunging"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+        node: infoMut(dmgFormulas.plunging.dmg, { name: stg("plunging.dmg") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+        node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
-        node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+        node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
       }]
     }]),
 
-    skill: ct.talentTemplate("skill", [{
+    skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.press, { key: `char_${key}_gen:skill.skillParams.0` }),
+        node: infoMut(dmgFormulas.skill.press, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
-        text: tr("skill.skillParams.1"),
+        text: ct.chg("skill.skillParams.1"),
         value: datamine.skill.cd,
         unit: "s",
       }, {
         text: st("charges"),
         value: data => data.get(input.constellation).value >= 1 ? 3 : 2,
       }]
-    }, ct.conditionalTemplate("passive2", { // A4
+    }, ct.condTem("passive2", { // A4
       path: condA4SkillStackPath,
       value: condA4SkillStack,
-      name: trm("skillStack"),
+      name: ct.ch("skillStack"),
       states: Object.fromEntries(a4SkillStackArr.map(i => [i, {
         name: st("uses", { count: i }),
         fields: [{ node: skill_dmg_ }]
       }]))
     })]),
 
-    burst: ct.talentTemplate("burst", [{
+    burst: ct.talentTem("burst", [{
       fields: [{
-        node: infoMut(auto_dmg_, { key: `char_${key}:burst.autoAtkDmgBonus_` }),
+        node: infoMut(auto_dmg_, { name: ct.chg("burst.autoAtkDmgBonus_") }),
       }, {
-        node: infoMut(lifeDrain, { key: `char_${key}:burst.lifeDrain_` }),
-        textSuffix: trm("burst.currentHPPerSec"),
+        node: infoMut(lifeDrain, { name: ct.chg("burst.lifeDrain_"), textSuffix: ct.ch("burst.currentHPPerSec"), }),
       }, {
-        text: sgt("duration"),
+        text: stg("duration"),
         value: datamine.burst.duration,
         unit: "s",
       }, {
-        text: sgt("cd"),
+        text: stg("cd"),
         value: datamine.burst.cd,
         unit: "s",
       }, {
-        text: sgt("energyCost"),
+        text: stg("energyCost"),
         value: datamine.burst.enerCost,
       }]
-    }, ct.conditionalTemplate("burst", {
+    }, ct.condTem("burst", {
       path: condInBurstPath,
       value: condInBurst,
-      name: trm("burst.inBurst"),
+      name: ct.ch("burst.inBurst"),
       states: {
         inBurst: {
           fields: [{
@@ -232,19 +230,19 @@ const sheet: ICharacterSheet = {
           }, {
             node: plunging_dmg_,
           }, {
-            text: trm("burst.incJump"),
+            text: ct.ch("burst.incJump"),
           }, {
-            text: trm("burst.incAtkAoe"),
+            text: ct.ch("burst.incAtkAoe"),
           }, {
             canShow: data => data.get(infusion).value === elementKey,
             text: <ColorText color="anemo">{st("infusion.anemo")}</ColorText>
           }]
         }
       }
-    }), ct.conditionalTemplate("passive1", { // A1
+    }), ct.condTem("passive1", { // A1
       path: condA1BurstStackPath,
       value: condA1BurstStack,
-      name: trm("burst.stack"),
+      name: ct.ch("burst.stack"),
       canShow: equal("inBurst", condInBurst, 1),
       states: Object.fromEntries(a1BurstStackArr.map(i => [i, {
         name: st("seconds", { count: i * 3 }),
@@ -252,17 +250,17 @@ const sheet: ICharacterSheet = {
       }]))
     })]),
 
-    passive1: ct.talentTemplate("passive1"),
-    passive2: ct.talentTemplate("passive2"),
-    passive3: ct.talentTemplate("passive3"),
-    constellation1: ct.talentTemplate("constellation1"),
-    constellation2: ct.talentTemplate("constellation2", [ct.fieldsTemplate("constellation2", {
+    passive1: ct.talentTem("passive1"),
+    passive2: ct.talentTem("passive2"),
+    passive3: ct.talentTem("passive3"),
+    constellation1: ct.talentTem("constellation1"),
+    constellation2: ct.talentTem("constellation2", [ct.fieldsTem("constellation2", {
       canShow: equal(c2Inactive, 1, 1),
       teamBuff: true,
       fields: [{ node: c2Inactive_enerRech_ }],
     })]),
-    constellation3: ct.talentTemplate("constellation3", [{ fields: [{ node: nodeC3 }] }]),
-    constellation4: ct.talentTemplate("constellation4", [ct.conditionalTemplate("constellation4", {
+    constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),
+    constellation4: ct.talentTem("constellation4", [ct.condTem("constellation4", {
       path: condC4BelowHPPath,
       value: condC4BelowHP,
       name: st("lessPercentHP", { percent: datamine.constellation4.hpThresh * 100 }),
@@ -272,8 +270,8 @@ const sheet: ICharacterSheet = {
         }
       }
     })]),
-    constellation5: ct.talentTemplate("constellation5", [{ fields: [{ node: nodeC5 }] }]),
-    constellation6: ct.talentTemplate("constellation6"),
+    constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),
+    constellation6: ct.talentTem("constellation6"),
   }
 }
 

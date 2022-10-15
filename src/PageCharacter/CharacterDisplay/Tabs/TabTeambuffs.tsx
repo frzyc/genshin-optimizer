@@ -55,7 +55,7 @@ export function TeamBuffDisplay() {
     <Divider />
     <CardContent>
       <Grid container>
-        {nodes.map(([path, n], i) => n && <Grid item xs={12} key={(n.info.key ?? "") + i} >
+        {nodes.map(([path, n]) => n && <Grid item xs={12} key={JSON.stringify(n.info)} >
           <NodeFieldDisplay node={n} oldValue={objPathValue(oldData?.getTeamBuff(), path)?.value} />
         </Grid>)}
       </Grid>

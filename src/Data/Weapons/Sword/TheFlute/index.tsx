@@ -26,7 +26,7 @@ const sheet: IWeaponSheet = {
   iconAwaken,
   document: [{
     header: headerTemplate(key, icon, iconAwaken, st("base")),
-    fields: [{ node: infoMut(dmg_, { key: "sheet:dmg" }) }]
+    fields: [{ node: infoMut(dmg_, { name: st("dmg") }) }]
   }]
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

@@ -15,7 +15,7 @@ const data_gen = data_gen_json as WeaponData
 
 const dmg_Src = [2.4, 2.7, 3, 3.3, 3.6]
 const dmg = equal(input.weapon.key, key,
-  customDmgNode(prod(subscript(input.weapon.refineIndex, dmg_Src, { key: "_" }), input.premod.atk), "elemental", {
+  customDmgNode(prod(subscript(input.weapon.refineIndex, dmg_Src, { unit: "%" }), input.premod.atk), "elemental", {
     hit: { ele: constant("physical") }
   }))
 
@@ -28,7 +28,7 @@ const sheet: IWeaponSheet = {
   iconAwaken,
   document: [{
     header: headerTemplate(key, icon, iconAwaken, st("base")),
-    fields: [{ node: infoMut(dmg, { key: "sheet:dmg" }) }],
+    fields: [{ node: infoMut(dmg, { name: st("dmg") }) }],
   }]
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

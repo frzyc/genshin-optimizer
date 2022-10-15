@@ -14,8 +14,9 @@ const InvisInput = styled('input')({
   display: 'none',
 });
 
-export default function UploadCard({ onReplace }: { onReplace: () => void }) {
-  const { database } = useContext(DatabaseContext)
+export default function UploadCard({ index, onReplace }: { index: number, onReplace: () => void }) {
+  const { databases } = useContext(DatabaseContext)
+  const database = databases[index]
   const { t } = useTranslation("settings");
   const [data, setdata] = useState("")
   const [filename, setfilename] = useState("")
@@ -101,7 +102,7 @@ export default function UploadCard({ onReplace }: { onReplace: () => void }) {
       <Box component="textarea" sx={{ width: "100%", fontFamily: "monospace", minHeight: "10em", mb: 2, resize: "vertical" }} value={data} onChange={e => setdata(e.target.value)} />
       {(importResult && importedDatabase) ? <GOODUploadInfo importResult={importResult} importedDatabase={importedDatabase} /> : t(errorMsg)}
     </CardContent>
-    <GOUploadAction importedDatabase={importedDatabase} reset={reset} />
+    <GOUploadAction index={index} importedDatabase={importedDatabase} reset={reset} />
   </CardLight>
 }
 
@@ -155,16 +156,17 @@ function MergeResult({ result, dbTotal, type }: { result: ImportResultCounter<an
   </CardLight>
 }
 
-function GOUploadAction({ importedDatabase, reset }: { importedDatabase?: ArtCharDatabase, reset: () => void }) {
-  const { database, setDatabase } = useContext(DatabaseContext)
+function GOUploadAction({ index, importedDatabase, reset }: { index: number, importedDatabase?: ArtCharDatabase, reset: () => void }) {
+  const { databases, setDatabase } = useContext(DatabaseContext)
+  const database = databases[index]
   const { t } = useTranslation("settings")
   const replaceDB = useCallback(() => {
     if (!importedDatabase) return
-    database.clear()
-    database.storage.copyFrom(importedDatabase.storage)
-    setDatabase(new ArtCharDatabase(database.storage))
+    importedDatabase.swapStorage(database)
+    setDatabase(index, importedDatabase)
+    importedDatabase.toExtraLocalDB()
     reset()
-  }, [database, importedDatabase, reset, setDatabase])
+  }, [database, index, importedDatabase, reset, setDatabase])
 
 
   return <><Divider /><CardContent sx={{ py: 1 }}>

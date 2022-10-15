@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, prod, subscript } from '../../../../Formula/utils'
 import { allElements, WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -15,14 +15,14 @@ const data_gen = data_gen_json as WeaponData
 const allEle_dmg_arr = [0.12, 0.15, 0.18, 0.21, 0.24]
 const allEle_dmg_ = Object.fromEntries(allElements.map(ele => [
   `${ele}_dmg_`,
-  subscript(input.weapon.refineIndex, allEle_dmg_arr, { key: "_" })
+  subscript(input.weapon.refineIndex, allEle_dmg_arr, { unit: "%" })
 ]))
 
 const charged_dmgIncArr = [1.6, 2, 2.4, 2.8, 3.2]
 const [condPassivePath, condPassive] = cond(key, "passive")
 const charged_dmgInc = equal(condPassive, "on",
   prod(
-    subscript(input.weapon.refineIndex, charged_dmgIncArr, { key: "_" }),
+    subscript(input.weapon.refineIndex, charged_dmgIncArr, { unit: "%" }),
     input.total.eleMas
   ))
 
@@ -51,14 +51,14 @@ const sheet: IWeaponSheet = {
         fields: [{
           node: charged_dmgInc,
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 10,
           unit: "s"
         }, {
           text: st("charges"),
           value: 12
         }, {
-          text: sgt("cd"),
+          text: stg("cd"),
           value: 12,
           unit: "s"
         }]

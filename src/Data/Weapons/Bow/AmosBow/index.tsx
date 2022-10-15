@@ -1,6 +1,7 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript, sum } from '../../../../Formula/utils'
+import KeyMap from '../../../../KeyMap'
 import { WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
@@ -17,16 +18,16 @@ const autoDmgInc = [0.12, 0.15, 0.18, 0.21, 0.24]
 const arrowDmgInc = [0.08, 0.10, 0.12, 0.14, 0.16]
 
 const [condPassivePath, condPassive] = cond(key, "StrongWilled")
-const normal_dmg_ = subscript(input.weapon.refineIndex, autoDmgInc, { key: "normal_dmg_" })
-const charged_dmg_ = subscript(input.weapon.refineIndex, autoDmgInc, { key: "charged_dmg_" })
+const normal_dmg_ = subscript(input.weapon.refineIndex, autoDmgInc, KeyMap.info("normal_dmg_"))
+const charged_dmg_ = subscript(input.weapon.refineIndex, autoDmgInc, KeyMap.info("charged_dmg_"))
 
 const dmgInc = subscript(input.weapon.refineIndex, arrowDmgInc)
 const normal_dmg_arrow_ = lookup(condPassive, {
   ...objectKeyMap(range(1, 5), i => prod(dmgInc, i)),
-}, naught, { key: "normal_dmg_" })
+}, naught, KeyMap.info("normal_dmg_"))
 const charged_dmg_arrow_ = lookup(condPassive, {
   ...objectKeyMap(range(1, 5), i => prod(dmgInc, i)),
-}, naught, { key: "charged_dmg_" })
+}, naught, KeyMap.info("charged_dmg_"))
 
 
 const data = dataObjForWeaponSheet(key, data_gen, {

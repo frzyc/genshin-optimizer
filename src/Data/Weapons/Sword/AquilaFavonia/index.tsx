@@ -3,7 +3,7 @@ import { input } from '../../../../Formula'
 import { constant, equal, infoMut, prod, subscript } from "../../../../Formula/utils"
 import { WeaponKey } from '../../../../Types/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'
@@ -17,9 +17,9 @@ const atkDealt = [2, 2.3, 2.6, 2.9, 3.2]
 const hpRegen = [1, 1.15, 1.3, 1.45, 1.6]
 const [condPath, condNode] = cond(key, "FalconOfTheWest")
 const atk_ = subscript(input.weapon.refineIndex, data_gen.addProps.map(x => x.atk_ ?? NaN))
-const heal = equal(input.weapon.key, key, equal(condNode, 'on', prod(subscript(input.weapon.refineIndex, hpRegen, { key: "_" }), input.premod.atk)))
+const heal = equal(input.weapon.key, key, equal(condNode, 'on', prod(subscript(input.weapon.refineIndex, hpRegen, { unit: "%" }), input.premod.atk)))
 const dmg = equal(input.weapon.key, key,
-  equal(condNode, 'on', customDmgNode(prod(subscript(input.weapon.refineIndex, atkDealt, { key: "_" }), input.premod.atk), "elemental", {
+  equal(condNode, 'on', customDmgNode(prod(subscript(input.weapon.refineIndex, atkDealt, { unit: "%" }), input.premod.atk), "elemental", {
     hit: { ele: constant("physical") }
   })))
 
@@ -46,11 +46,11 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: infoMut(heal, { key: "sheet_gen:healing", variant: "heal" })
+          node: infoMut(heal, { name: stg("healing"), variant: "heal" })
         }, {
-          node: infoMut(dmg, { key: "sheet:dmg" })
+          node: infoMut(dmg, { name: st("dmg") })
         }, {
-          text: sgt("cd"),
+          text: stg("cd"),
           value: 15,
           unit: "s"
         }]

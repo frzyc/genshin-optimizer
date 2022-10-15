@@ -7,7 +7,6 @@ import CharacterSheet from '../../Data/Characters/CharacterSheet';
 import { ascensionMaxLevel } from '../../Data/LevelData';
 import { DatabaseContext } from '../../Database/Database';
 import { uiInput as input } from '../../Formula';
-import KeyMap from '../../KeyMap';
 import useCharacter from '../../ReactHooks/useCharacter';
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
 import useCharMeta from '../../ReactHooks/useCharMeta';
@@ -24,7 +23,6 @@ import ConditionalWrapper from '../ConditionalWrapper';
 import { NodeFieldDisplay } from '../FieldDisplay';
 import SqBadge from '../SqBadge';
 import { StarsDisplay } from '../StarDisplay';
-import StatIcon from '../StatIcon';
 import WeaponCardPico from '../Weapon/WeaponCardPico';
 import WeaponFullCard from '../Weapon/WeaponFullCard';
 import CharacterCardPico from './CharacterCardPico';
@@ -258,11 +256,11 @@ function Artifacts() {
 function Stats() {
   const { data } = useContext(DataContext)
   return <Box sx={{ width: "100%" }} >
-    {Object.values(data.getDisplay().basic).map(n => <NodeFieldDisplay key={n.info.key} node={n} />)}
-    {data.get(input.special).info.key && <Box sx={{ display: "flex", gap: 1, alignItems: "center" }} >
+    {Object.values(data.getDisplay().basic).map(n => <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} />)}
+    {data.get(input.special).info.name && <Box sx={{ display: "flex", gap: 1, alignItems: "center" }} >
       <Typography flexGrow={1}><strong>Specialized:</strong></Typography>
-      {StatIcon[data.get(input.special).info.key!]}
-      <Typography>{KeyMap.get(data.get(input.special).info.key!)}</Typography>
+      {data.get(input.special).info.icon}
+      <Typography>{data.get(input.special).info.name}</Typography>
     </Box>}
   </Box>
 }

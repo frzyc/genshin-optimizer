@@ -16,11 +16,11 @@ const data_gen = data_gen_json as WeaponData
 const dmgAoePerc = [0.8, 0.95, 1.1, 1.25, 1.4]
 const dmgCryoPerc = [2, 2.4, 2.8, 3.2, 3.6]
 const dmgAoe = equal(input.weapon.key, key,
-  customDmgNode(prod(subscript(input.weapon.refineIndex, dmgAoePerc, { key: "_" }), input.total.atk), "elemental", {
+  customDmgNode(prod(subscript(input.weapon.refineIndex, dmgAoePerc, { unit: "%" }), input.total.atk), "elemental", {
     hit: { ele: constant("physical") }
   }))
 const dmgOnCryoOp = equal(input.weapon.key, key,
-  customDmgNode(prod(subscript(input.weapon.refineIndex, dmgCryoPerc, { key: "_" }), input.total.atk), "elemental", {
+  customDmgNode(prod(subscript(input.weapon.refineIndex, dmgCryoPerc, { unit: "%" }), input.total.atk), "elemental", {
     hit: { ele: constant("physical") }
   }))
 
@@ -31,9 +31,9 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, icon, iconAwaken, st("base")),
     fields: [{
-      node: infoMut(dmgAoe, { key: `weapon_${key}:aoeDmg` }),
+      node: infoMut(dmgAoe, { name: WeaponSheet.trm(key)("aoeDmg") }),
     }, {
-      node: infoMut(dmgOnCryoOp, { key: `weapon_${key}:cryoAffectedDmg` }),
+      node: infoMut(dmgOnCryoOp, { name: WeaponSheet.trm(key)("cryoAffectedDmg") }),
     }]
   }],
 }

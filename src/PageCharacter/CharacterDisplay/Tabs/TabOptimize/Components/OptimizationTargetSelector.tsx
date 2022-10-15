@@ -7,7 +7,6 @@ import { DataContext } from '../../../../../Context/DataContext';
 import { DatabaseContext } from '../../../../../Database/Database';
 import { getDisplayHeader } from '../../../../../Formula/DisplayUtil';
 import { NodeDisplay } from '../../../../../Formula/uiData';
-import KeyMap from '../../../../../KeyMap';
 import useBoolState from '../../../../../ReactHooks/useBoolState';
 import usePromise from '../../../../../ReactHooks/usePromise';
 import { objPathValue } from '../../../../../Util/Util';
@@ -37,15 +36,18 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
   const prevariant = invalidTarget ? "secondary" : node.info.variant
   const variant = prevariant === "invalid" ? undefined : prevariant
 
+  const { textSuffix } = node?.info ?? {}
+  const suffixDisplay = textSuffix && <span> {textSuffix}</span>
+  const iconDisplay = icon ? <ImgIcon src={icon} size={2} sx={{ my: -1 }} /> : node?.info.icon
   return <>
     <Button color="info" onClick={onShow} disabled={disabled} >
       {invalidTarget ? <strong>Select an Optimization Target</strong> : <Stack direction="row" divider={<Divider orientation='vertical' flexItem />} spacing={1}>
         <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-          {!!icon && <ImgIcon src={icon} size={2} sx={{ my: -1 }} />}
+          {iconDisplay}
           <span>{title}</span>
           {!!action && <SqBadge color='success'>{action}</SqBadge>}
         </Box>
-        <SqBadge color={variant}><strong>{KeyMap.get(node.info.key)}</strong></SqBadge>
+        <SqBadge color={variant}><strong>{node.info.name}</strong>{suffixDisplay}</SqBadge>
       </Stack>}
     </Button>
     <TargetSelectorModal show={show} onClose={onClose} setTarget={setTargetHandler} ignoreGlobal={ignoreGlobal} {...targetSelectorModalProps} />

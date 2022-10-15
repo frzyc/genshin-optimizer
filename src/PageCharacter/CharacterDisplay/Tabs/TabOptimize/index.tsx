@@ -20,7 +20,6 @@ import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
 import { NumNode } from '../../../../Formula/type';
 import { UIData } from '../../../../Formula/uiData';
-import KeyMap from '../../../../KeyMap';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
@@ -42,6 +41,7 @@ import StatFilterCard from './Components/StatFilterCard';
 import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
 import { compactArtifacts, dynamicData } from './foreground';
+import useBuildResult from './useBuildResult';
 import useBuildSetting from './useBuildSetting';
 
 export default function TabBuild() {
@@ -68,7 +68,8 @@ export default function TabBuild() {
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
-  const { plotBase, optimizationTarget, mainStatAssumptionLevel, allowPartial, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSetting
+  const { plotBase, optimizationTarget, mainStatAssumptionLevel, allowPartial, maxBuildsToShow, levelLow, levelHigh } = buildSetting
+  const { buildResult: { builds, buildDate }, buildResultDispatch } = useBuildResult(characterKey)
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
 
@@ -271,9 +272,9 @@ export default function TabBuild() {
         const plotData = mergePlot(results.map(x => x.plotData!))
         const plotBaseNode = input.total[plotBase] as NumNode
         let data = Object.values(plotData)
-        if (KeyMap.unit(targetNode.info?.key) === "%")
+        if (targetNode.info?.unit === "%")
           data = data.map(({ value, plot }) => ({ value: value * 100, plot })) as Build[]
-        if (KeyMap.unit(plotBaseNode!.info?.key) === "%")
+        if (plotBaseNode.info?.unit === "%")
           data = data.map(({ value, plot }) => ({ value, plot: (plot ?? 0) * 100 })) as Build[]
         setchartData({
           valueNode: targetNode,
@@ -283,10 +284,10 @@ export default function TabBuild() {
       }
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
       if (process.env.NODE_ENV === "development") console.log("Build Result", builds)
-      buildSettingDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
+      buildResultDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
     }
     setBuildStatus({ ...status, type: "inactive", finishTime: performance.now() })
-  }, [characterKey, database, buildSettingDispatch, maxWorkers, buildSetting, equipmentPriority])
+  }, [characterKey, database, buildResultDispatch, maxWorkers, buildSetting, equipmentPriority])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
@@ -418,7 +419,7 @@ export default function TabBuild() {
               {builds ? <span>Showing <strong>{builds.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
                 : <span>Select a character to generate builds.</span>}
             </Typography>
-            <Button disabled={!builds.length} color="error" onClick={() => buildSettingDispatch({ builds: [], buildDate: 0 })} >Clear Builds</Button>
+            <Button disabled={!builds.length} color="error" onClick={() => buildResultDispatch({ builds: [], buildDate: 0 })} >Clear Builds</Button>
           </Box>
           <Grid container display="flex" spacing={1}>
             <Grid item><HitModeToggle size="small" /></Grid>

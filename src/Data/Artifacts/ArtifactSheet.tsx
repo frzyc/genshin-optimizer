@@ -24,7 +24,6 @@ export interface SetEffectEntry {
 }
 
 export type AllArtifactSheets = (setKey: ArtifactSetKey) => ArtifactSheet
-const tr = (setKey: string, strKey: string) => <Translate ns={`artifact_${setKey}_gen`} key18={strKey} />
 const allData = artifactSheets.then(as => mergeData(Object.values(as).map(s => s.data)))
 export class ArtifactSheet {
   readonly sheet: IArtifactSheet
@@ -35,21 +34,22 @@ export class ArtifactSheet {
     this.key = setKey
     this.data = data
   }
+  get tr() { return ArtifactSheet.tr(this.key) }
 
-  get name() { return tr(this.key, "setName") }
+  get name() { return this.tr("setName") }
   get defIconSrc() {
     const slotKey = this.slots[0]
     if (!this.slotIcons[slotKey]) return undefined
     return this.slotIcons[slotKey]
   }
   get defIcon() { return <ImgIcon src={this.defIconSrc} sx={{ fontSize: "1.5em" }} /> }
-  get setName() { return tr(this.key, "setName") }
+  get setName() { return this.tr("setName") }
   /**
    * @deprecated use src directly
    */
   get nameWithIcon() {
     const slotKey = this.slots[0]
-    return <span><ImgIcon src={this.slotIcons[slotKey]} /> {tr(this.key, "setName")}</span>
+    return <span><ImgIcon src={this.slotIcons[slotKey]} /> {this.tr("setName")}</span>
   }
 
   //This is only for OCR, because we only scan in english right now.
@@ -66,11 +66,12 @@ export class ArtifactSheet {
   }
   get slotIcons(): Dict<SlotKey, string> { return this.sheet.icons }
   get setEffects(): Dict<SetNum, SetEffectEntry> { return this.sheet.setEffects }
-  getSlotName = (slotKey: SlotKey) => tr(this.key, `pieces.${slotKey}.name`)
-  getSlotDesc = (slotKey: SlotKey) => tr(this.key, `pieces.${slotKey}.desc`)
-  setEffectDesc = (setNum: SetNum): Displayable => tr(this.key, `setEffects.${setNum}`)
+  getSlotName = (slotKey: SlotKey) => this.tr(`pieces.${slotKey}.name`)
+  getSlotDesc = (slotKey: SlotKey) => this.tr(`pieces.${slotKey}.desc`)
+  setEffectDesc = (setNum: SetNum): Displayable => this.tr(`setEffects.${setNum}`)
   setEffectDocument = (setNum: SetNum) => this.sheet.setEffects[setNum]?.document
-
+  static trm(setKey: ArtifactSetKey) { return (strKey: string) => <Translate ns={`artifact_${setKey}`} key18={strKey} /> }
+  static tr(setKey: string) { return (strKey: string) => <Translate ns={`artifact_${setKey}_gen`} key18={strKey} /> }
   static get(set: ArtifactSetKey | undefined): Promise<ArtifactSheet> | undefined { return set ? artifactSheets.then(a => a[set]) : undefined }
   static get getAll(): Promise<AllArtifactSheets> { return artifactSheets.then(as => (setKey: ArtifactSetKey): ArtifactSheet => as[setKey]) }
   static get getAllData() { return allData }

@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
-import { cond, sgt, st } from '../../../SheetUtil'
+import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
 import iconAwaken from './AwakenIcon.png'
@@ -14,7 +14,7 @@ const data_gen = data_gen_json as WeaponData
 
 const atkInc = [0.2, 0.25, 0.3, 0.35, 0.5]
 const [condPassivePath, condPassive] = cond(key, "Overloaded")
-const atk_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkInc, { key: "_" }))
+const atk_ = equal("on", condPassive, subscript(input.weapon.refineIndex, atkInc, { unit: "%" }))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
@@ -34,7 +34,7 @@ const sheet: IWeaponSheet = {
         fields: [{
           node: atk_,
         }, {
-          text: sgt("duration"),
+          text: stg("duration"),
           value: 12,
           unit: 's'
         }]
