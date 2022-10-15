@@ -132,7 +132,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.charged.aimedCharged, { name: ct.chg(`auto.skillParams.6`) }),
         }, {
           canShow: (data) => data.get(input.asc).value >= 1,
-          node: infoMut(dmgFormulas.charged.aimedChargedOz, { name: ct.chg("a1Name") }),
+          node: infoMut(dmgFormulas.charged.aimedChargedOz, { name: ct.ch("a1Name") }),
         }]
       }, {
         text: ct.chg("auto.fields.plunging"),
@@ -157,7 +157,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.skill.summonDmgC2, { name: ct.chg(`skill.skillParams.1`) }),
         }, {
           canShow: (data) => data.get(input.constellation).value >= 6,
-          node: infoMut(dmgFormulas.skill.ozActiveCharDmg, { name: ct.chg("c6OzDmg") })
+          node: infoMut(dmgFormulas.skill.ozActiveCharDmg, { name: ct.ch("c6OzDmg") })
         }, {
           text: ct.chg("skill.skillParams.2"),
           value: (data) => data.get(input.constellation).value >= 6 ? datamine.skill.duration + datamine.constellation6.duration : datamine.skill.duration,
@@ -179,7 +179,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) }),
         }, {
           canShow: (data) => data.get(input.constellation).value >= 4,
-          node: infoMut(dmgFormulas.burst.additionalDmg, { name: ct.chg("c4AoeDmg") }),
+          node: infoMut(dmgFormulas.burst.additionalDmg, { name: ct.ch("c4AoeDmg") }),
         }, {
           canShow: (data) => data.get(input.constellation).value >= 4,
           node: infoMut(dmgFormulas.burst.regen, { name: stg(`healing`) }),
@@ -196,13 +196,13 @@ const sheet: ICharacterSheet = {
       passive1: ct.talentTem("passive1"),
       passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
         fields: [{
-          node: infoMut(dmgFormulas.passive2.dmg, { name: ct.chg("a2Name") })
+          node: infoMut(dmgFormulas.passive2.dmg, { name: ct.ch("a2Name") })
         }]
       })]),
       passive3: ct.talentTem("passive3"),
       constellation1: ct.talentTem("constellation1", [ct.fieldsTem("constellation1", {
         fields: [{
-          node: infoMut(dmgFormulas.constellation1.dmg, { name: ct.chg("c1Name") })
+          node: infoMut(dmgFormulas.constellation1.dmg, { name: ct.ch("c1Name") })
         }]
       })]),
       constellation2: ct.talentTem("constellation2"),

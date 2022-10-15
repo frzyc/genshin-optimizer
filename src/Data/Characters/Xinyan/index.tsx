@@ -294,7 +294,7 @@ const sheet: ICharacterSheet = {
       }]
     }, ct.headerTem("constellation2", {
       fields: [{
-        node: infoMut(c2BurstPhysical_critRate_, { name: ct.chg("c2.key_") }),
+        node: infoMut(c2BurstPhysical_critRate_, { name: ct.ch("c2.key_"), unit: "%" }),
       }, {
         text: ct.ch("c2.shield"),
       }]

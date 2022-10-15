@@ -62,6 +62,9 @@ export default function PageScanner() {
           <CardContent>
             <Box display="flex" gap={1} alignItems="center">
               <Typography variant="h5" flexGrow={1} ><Trans t={t} i18nKey="ik.title">Inventory Kamera</Trans></Typography>
+              <IconButton href="https://discord.gg/zh56aVWe3U" target="_blank">
+                <FontAwesomeSvgIcon icon={faDiscord} />
+              </IconButton>
               <IconButton href="https://github.com/Andrewthe13th/Inventory_Kamera" target="_blank">
                 <Download />
               </IconButton>

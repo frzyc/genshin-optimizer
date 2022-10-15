@@ -188,7 +188,7 @@ const sheet: ICharacterSheet = {
       }]
     }, ct.headerTem("passive2", {
       fields: [{
-        node: infoMut(a4Skill_healInc, { name: ct.chg("a4.heal"), variant: "heal" }),
+        node: infoMut(a4Skill_healInc, { name: ct.ch("a4.heal"), variant: "heal" }),
       }, {
         node: a4Skill_dmgInc
       }]
@@ -200,7 +200,7 @@ const sheet: ICharacterSheet = {
       }]
     }), ct.headerTem("constellation4", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation4.markDmg, { name: ct.chg("c4.dmg") })
+        node: infoMut(dmgFormulas.constellation4.markDmg, { name: ct.ch("c4.dmg") })
       }, {
         text: stg("cd"),
         value: datamine.constellation4.cd,

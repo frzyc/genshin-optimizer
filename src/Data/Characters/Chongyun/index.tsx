@@ -237,7 +237,7 @@ const sheet: ICharacterSheet = {
     passive1: ct.talentTem("passive1"),
     passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
       fields: [{
-        node: infoMut(dmgFormulas.passive2.dmg, { name: ct.chg("passive2") }),
+        node: infoMut(dmgFormulas.passive2.dmg, { name: ct.ch("passive2") }),
       }]
     }), ct.condTem("passive2", {
       teamBuff: true,
@@ -255,7 +255,7 @@ const sheet: ICharacterSheet = {
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1", [ct.fieldsTem("constellation1", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation1.dmg, { name: ct.chg("constellation1") })
+        node: infoMut(dmgFormulas.constellation1.dmg, { name: ct.ch("constellation1") })
       }]
     })]),
     constellation2: ct.talentTem("constellation2"),

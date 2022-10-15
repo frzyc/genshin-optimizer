@@ -242,7 +242,7 @@ const sheet: ICharacterSheet = {
       }]))
     }), ct.headerTem("constellation2", {
       fields: [{
-        node: infoMut(c2_kickPressDmg_, { name: ct.chg("c2KickPressDmg_") })
+        node: infoMut(c2_kickPressDmg_, { name: ct.ch("c2KickPressDmg_"), unit: "%" })
       }]
     }), ct.condTem("constellation2", {
       value: condC2SkillStack,
@@ -251,7 +251,7 @@ const sheet: ICharacterSheet = {
       states: Object.fromEntries(range(1, datamine.constellation2.maxStacks).map(stack => [stack, {
         name: st("seconds", { count: stack * 0.5 }),
         fields: [{
-          node: infoMut(c2_kickDmg_, { name: ct.chg("c2KickDmg_") })
+          node: infoMut(c2_kickDmg_, { name: ct.ch("c2KickDmg_"), unit: "%" })
         }]
       }]))
     })]),
@@ -271,7 +271,7 @@ const sheet: ICharacterSheet = {
       }]
     }, ct.headerTem("passive2", {
       fields: [{
-        node: infoMut(dmgFormulas.passive2.extraHeal, { name: ct.chg("p2Heal"), variant: "heal" })
+        node: infoMut(dmgFormulas.passive2.extraHeal, { name: ct.ch("p2Heal"), variant: "heal" })
       }, {
         text: ct.ch("p2Aoe")
       }]
@@ -281,9 +281,9 @@ const sheet: ICharacterSheet = {
       }]
     }), ct.headerTem("constellation6", {
       fields: [{
-        node: infoMut(c6_daruma_dmg_inc, { name: ct.chg("c6DarumaDmgInc"), variant: "anemo" })
+        node: infoMut(c6_daruma_dmg_inc, { name: ct.ch("c6DarumaDmgInc"), variant: "anemo" })
       }, {
-        node: infoMut(c6_daruma_heal_inc, { name: ct.chg("c6DarumaHealInc"), variant: "heal" })
+        node: infoMut(c6_daruma_heal_inc, { name: ct.ch("c6DarumaHealInc"), variant: "heal" })
       }]
     })]),
 

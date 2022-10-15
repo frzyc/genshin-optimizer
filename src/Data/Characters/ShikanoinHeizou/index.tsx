@@ -81,7 +81,7 @@ const declension_dmg_ = lookup(
     stacks,
     prod(
       subscript(input.total.skillIndex, datamine.skill.declension_dmg_, { name: st("bonusScaling.skill_"), unit: "%" }),
-      constant(stacks, { name: ct.chg("declensionStacks") })
+      constant(stacks, { name: ct.ch("declensionStacks") })
     )
   ])), naught, { name: st("bonusScaling.skill_"), unit: "%" })
 const conviction_dmg_ = equal(condDeclensionStacks, "4",
@@ -108,7 +108,7 @@ const c6_skill_critRate_ = greaterEq(input.constellation, 6, lookup(
     stacks,
     prod(
       percent(datamine.constellation6.hsCritRate_),
-      constant(stacks, { name: ct.chg("declensionStacks") })
+      constant(stacks, { name: ct.ch("declensionStacks") })
     )
   ])),
   naught

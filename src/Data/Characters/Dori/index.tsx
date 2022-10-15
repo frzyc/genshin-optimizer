@@ -261,7 +261,7 @@ const sheet: ICharacterSheet = {
       }]
     }, ct.headerTem("constellation2", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation2.dmg, { name: ct.chg("c2DmgKey") })
+        node: infoMut(dmgFormulas.constellation2.dmg, { name: ct.ch("c2DmgKey") })
       }]
     }), ct.condTem("constellation4", {
       teamBuff: true,

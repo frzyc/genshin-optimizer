@@ -191,7 +191,7 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: infoMut(dmgFormulas.constellation6.barbDmg, { name: ct.chg("c6.dmg") }),
+            node: infoMut(dmgFormulas.constellation6.barbDmg, { name: ct.ch("c6.dmg") }),
           }, {
             text: st("charges"),
             value: datamine.constellation6.charges,
@@ -301,7 +301,7 @@ const sheet: ICharacterSheet = {
       ]))
     }), ct.headerTem("constellation2", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation2.arrowDmg, { name: ct.chg("c2.dmg") })
+        node: infoMut(dmgFormulas.constellation2.arrowDmg, { name: ct.ch("c2.dmg") })
       }, {
         text: stg("cd"),
         value: datamine.constellation2.cd,

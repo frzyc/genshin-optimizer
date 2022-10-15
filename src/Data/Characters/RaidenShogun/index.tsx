@@ -99,13 +99,13 @@ const skillEyeTeamBurstDmgInc = unequal(input.activeCharKey, input.charKey,
 const resolveStacks = [10, 20, 30, 40, 50, 60]
 const [condResolveStackPath, condResolveStack] = cond(key, "burstResolve")
 
-const resolveStackNode = lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0, { name: ct.chg("burst.resolves") })
+const resolveStackNode = lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0, { name: ct.ch("burst.resolves") })
 const resolveInitialBonus_ = prod(
-  subscript(input.total.burstIndex, datamine.burst.resolveBonus1, { name: ct.chg("burst.resolveInitial_") }),
+  subscript(input.total.burstIndex, datamine.burst.resolveBonus1, { name: ct.ch("burst.resolveInitial_"), unit: "%" }),
   resolveStackNode
 )
 const resolveInfusedBonus_ = prod(
-  subscript(input.total.burstIndex, datamine.burst.resolveBonus2, { name: ct.chg("burst.resolveInfused_") }),
+  subscript(input.total.burstIndex, datamine.burst.resolveBonus2, { name: ct.ch("burst.resolveInfused_"), unit: "%" }),
   resolveStackNode
 )
 function burstResolve(mvArr: number[], initial = false) {
@@ -309,9 +309,9 @@ const sheet: ICharacterSheet = {
       states: Object.fromEntries(resolveStacks.map(c => [c, {
         name: st("stack", { count: c }),
         fields: [{
-          node: infoMut(resolveInitialBonus_, { name: ct.chg("burst.resolveInitial_") }),
+          node: infoMut(resolveInitialBonus_, { name: ct.ch("burst.resolveInitial_"), unit: "%" }),
         }, {
-          node: infoMut(resolveInfusedBonus_, { name: ct.chg("burst.resolveInfused_") })
+          node: infoMut(resolveInfusedBonus_, { name: ct.ch("burst.resolveInfused_"), unit: "%" })
         }]
       }]))
     })]),

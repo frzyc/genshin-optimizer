@@ -249,7 +249,7 @@ const sheet: ICharacterSheet = {
         stacks, {
           name: st("stack", { count: stacks }),
           fields: [{
-            node: infoMut(skillStacks_dmgInc, { name: ct.chg("skill.shun_dmgInc") })
+            node: infoMut(skillStacks_dmgInc, { name: ct.ch("skill.shun_dmgInc") })
           }, {
             text: st("maxStacks"),
             value: data => data.get(input.constellation).value >= 2
@@ -277,7 +277,7 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: infoMut(c1Shun_dmg_, { name: ct.chg("c1.shun_dmg_") }),
+            node: infoMut(c1Shun_dmg_, { name: ct.ch("c1.shun_dmg_") }),
           }]
         }
       }
@@ -293,7 +293,7 @@ const sheet: ICharacterSheet = {
       canShow: equal(condInSkill, "on", 1),
       fields: [{
         node: infoMut(dmgFormulas.constellation6.dmg, {
-          name: ct.chg("c6.dmg"),
+          name: ct.ch("c6.dmg"),
           multi: datamine.constellation6.extraStrikes,
         }),
       }]

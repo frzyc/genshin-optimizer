@@ -173,7 +173,7 @@ const sheet: ICharacterSheet = {
 
     passive1: ct.talentTem("passive1", [ct.headerTem("passive1", {
       fields: [{
-        node: infoMut(dmgFormulas.passive1.heal, { name: ct.chg("p1heal") }),
+        node: infoMut(dmgFormulas.passive1.heal, { name: ct.ch("p1heal") }),
       }]
     })]),
     passive2: ct.talentTem("passive2"),
