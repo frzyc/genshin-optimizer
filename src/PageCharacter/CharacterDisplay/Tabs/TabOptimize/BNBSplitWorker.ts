@@ -261,7 +261,7 @@ function linearUpperBound(polys: Poly[], ranges: DynMinMax): Linear[] {
       let path = terms[0].path, chosen: (typeof terms[number])[] = []
       terms = terms.filter(term => {
         let candidatePath = merge(term.path, path)
-        if (path.length === candidatePath.length || candidatePath.length <= 5) {
+        if (path.length === candidatePath.length) {
           chosen.push(term)
           path = candidatePath
           return false
