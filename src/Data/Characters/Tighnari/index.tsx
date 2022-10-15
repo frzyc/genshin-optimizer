@@ -201,7 +201,7 @@ const sheet: ICharacterSheet = {
         unit: "s",
         fixed: 1
       }, {
-        node: infoMut(dmgFormulas.constellation6.cluster, { name: ct.chg("c6DmgKey") })
+        node: infoMut(dmgFormulas.constellation6.cluster, { name: ct.ch("c6DmgKey") })
       }]
     }), {
       text: ct.chg("auto.fields.plunging"),

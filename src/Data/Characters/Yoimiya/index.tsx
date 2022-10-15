@@ -86,7 +86,7 @@ const [condC1Path, condC1] = cond(key, "c1")
 const [condC2Path, condC2] = cond(key, "c2")
 const const3TalentInc = greaterEq(input.constellation, 3, 3)
 const const5TalentInc = greaterEq(input.constellation, 5, 3)
-const normal_dmgMult = compareEq(condSkill, "skill", subscript(input.total.skillIndex, datamine.skill.dmg_, { name: ct.chg("normMult_") }), one)
+const normal_dmgMult = compareEq(condSkill, "skill", subscript(input.total.skillIndex, datamine.skill.dmg_, { name: ct.ch("normMult_"), unit: "%" }), one)
 const a1Stacks = lookup(condA1, Object.fromEntries(range(1, datamine.passive1.maxStacks).map(i => [i, constant(i)])), 0)
 const pyro_dmg_ = greaterEq(input.asc, 1, equal(condSkill, "skill", infoMut(prod(percent(datamine.passive1.pyro_dmg_), a1Stacks), KeyMap.info("pyro_dmg_"))))
 const atk_ = greaterEq(input.asc, 4, equal(condBurst, "on", unequal(input.activeCharKey, key,
@@ -111,7 +111,7 @@ const kindlingEntries = datamine.normal.hitArr.map((arr, i) => [i, greaterEq(inp
     customDmgNode(
       prod(
         subscript(input.total.autoIndex, arr, { unit: "%" }),
-        constant(datamine.constellation6.dmg_, { name: ct.chg("c6Key_") }),
+        constant(datamine.constellation6.dmg_, { name: ct.ch("c6Key_"), unit: "%" }),
         input.total.atk,
         normal_dmgMult
       ),

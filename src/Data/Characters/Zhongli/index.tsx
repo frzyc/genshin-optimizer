@@ -186,9 +186,9 @@ const sheet: ICharacterSheet = {
 
     skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.stele, { name: ct.chg("skill.stele") })
+        node: infoMut(dmgFormulas.skill.stele, { name: ct.ch("skill.stele") })
       }, {
-        node: infoMut(dmgFormulas.skill.resonance, { name: ct.chg("skill.resonance") })
+        node: infoMut(dmgFormulas.skill.resonance, { name: ct.ch("skill.resonance") })
       }, {
         text: ct.ch("skill.maxStele"),
         value: data => data.get(input.constellation).value >= 1 ? 2 : 1
@@ -270,7 +270,7 @@ const sheet: ICharacterSheet = {
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),
     constellation6: ct.talentTem("constellation6", [ct.fieldsTem("constellation6", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation6.heal, { name: ct.chg("c6heal") })
+        node: infoMut(dmgFormulas.constellation6.heal, { name: ct.ch("c6heal") })
       }]
     })]),
   },

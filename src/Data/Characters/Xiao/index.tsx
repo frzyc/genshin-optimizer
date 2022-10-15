@@ -202,9 +202,9 @@ const sheet: ICharacterSheet = {
 
     burst: ct.talentTem("burst", [{
       fields: [{
-        node: infoMut(auto_dmg_, { name: ct.chg("burst.autoAtkDmgBonus_") }),
+        node: infoMut(auto_dmg_, { name: ct.ch("burst.autoAtkDmgBonus_"), unit: "%" }),
       }, {
-        node: infoMut(lifeDrain, { name: ct.chg("burst.lifeDrain_"), textSuffix: ct.ch("burst.currentHPPerSec"), }),
+        node: infoMut(lifeDrain, { name: ct.ch("burst.lifeDrain_"), textSuffix: ct.ch("burst.currentHPPerSec"), unit: "%" }),
       }, {
         text: stg("duration"),
         value: datamine.burst.duration,

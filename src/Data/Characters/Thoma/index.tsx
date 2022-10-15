@@ -187,10 +187,10 @@ const sheet: ICharacterSheet = {
           { name: st(`dmgAbsorption.${elementKey}`), variant: elementKey }
         ),
       }, {
-        node: infoMut(dmgFormulas.skill.maxShield, { name: ct.chg("maxShield") })
+        node: infoMut(dmgFormulas.skill.maxShield, { name: ct.ch("maxShield") })
       }, {
         node: infoMut(dmgFormulas.skill.maxPyroShield,
-          { name: ct.chg("maxPyroShield"), variant: elementKey }
+          { name: ct.ch("maxPyroShield"), variant: elementKey }
         ),
       }, {
         text: stg("duration"),
@@ -257,7 +257,7 @@ const sheet: ICharacterSheet = {
       ]))
     }), ct.headerTem("passive2", {
       fields: [{
-        node: infoMut(p2Collapse_dmgInc, { name: ct.chg("a2"), variant: elementKey }),
+        node: infoMut(p2Collapse_dmgInc, { name: ct.ch("a2"), variant: elementKey }),
       }]
     }), ct.headerTem("constellation2", {
       fields: [{

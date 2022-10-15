@@ -168,7 +168,7 @@ const sheet: ICharacterSheet = {
       }, {
         node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.1`) }),
       }, {
-        node: infoMut(dmgFormulas.constellation2.manualDetonationDmg, { name: ct.chg("manualDetonationDmg") }),
+        node: infoMut(dmgFormulas.constellation2.manualDetonationDmg, { name: ct.ch("manualDetonationDmg") }),
       }, {
         text: ct.chg("skill.skillParams.2"),
         value: (data) => data.get(input.constellation).value >= 4 ? datamine.skill.cd - datamine.skill.cd * 0.2 : datamine.skill.cd,

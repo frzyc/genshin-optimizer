@@ -188,7 +188,7 @@ const sheet: ICharacterSheet = {
       ))
     }), ct.headerTem("passive2", {
       fields: [{
-        node: infoMut(nodeA4Bonus, { name: ct.chg("a4:dmgInc") })
+        node: infoMut(nodeA4Bonus, { name: ct.ch("a4:dmgInc") })
       }]
     }), ct.headerTem("constellation6", {
       fields: [{

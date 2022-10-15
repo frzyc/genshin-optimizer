@@ -218,7 +218,7 @@ const sheet: ICharacterSheet = {
       states: {
         belowHp: {
           fields: [{
-            node: infoMut(p1_blossom_dmg_, { name: ct.chg("blossomDmg_") })
+            node: infoMut(p1_blossom_dmg_, { name: ct.ch("blossomDmg_"), unit: "%" })
           }]
         }
       }

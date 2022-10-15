@@ -85,8 +85,8 @@ const nodeBurstAtk = equal("on", condBurst, prod(
   )
 ))
 
-const nodeSkillHealChanceBase = subscript(input.total.skillIndex, datamine.skill.healChance, { name: ct.chg("skillHeal_") })
-const nodeSkillHealChanceC1BurstOn = equal("on", condBurst, percent(datamine.constellation1.healingChance), { name: ct.chg("skillHeal_") })
+const nodeSkillHealChanceBase = subscript(input.total.skillIndex, datamine.skill.healChance, { name: ct.ch("skillHeal_"), unit: "%" })
+const nodeSkillHealChanceC1BurstOn = equal("on", condBurst, percent(datamine.constellation1.healingChance), { name: ct.ch("skillHeal_"), unit: "%" })
 const nodeSkillHealChanceC1BurstOff = unequal("on", condBurst, nodeSkillHealChanceBase)
 
 const nodeC2ChargeDMG = greaterEq(input.constellation, 2, percent(datamine.constellation2.chargeDmg_))
@@ -279,7 +279,7 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),
     constellation4: ct.talentTem("constellation4", [ct.fieldsTem("constellation4", {
       fields: [{
-        node: infoMut(nodeC4dmg, { name: ct.chg("c4dmg") })
+        node: infoMut(nodeC4dmg, { name: ct.ch("c4dmg") })
       }]
     })]),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),

@@ -265,9 +265,9 @@ const sheet: ICharacterSheet = {
         states: {
           on: {
             fields: [{
-              node: infoMut(c2SkillHeal, { name: ct.chg("c2SkillHeal") }),
+              node: infoMut(c2SkillHeal, { name: ct.ch("c2SkillHeal") }),
             }, {
-              node: infoMut(c2BurstHeal, { name: ct.chg("c2BurstHeal") }),
+              node: infoMut(c2BurstHeal, { name: ct.ch("c2BurstHeal") }),
             }]
           }
         }

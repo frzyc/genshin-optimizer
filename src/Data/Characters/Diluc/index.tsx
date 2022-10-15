@@ -200,9 +200,9 @@ const sheet: ICharacterSheet = {
       }, {
         node: infoMut(dmgFormulas.skill.thirdHit, { name: ct.chg(`skill.skillParams.2`) }),
       }, {
-        node: infoMut(dmgFormulas.constellation4.secondHitBoost, { name: ct.chg("skillB.0") }),
+        node: infoMut(dmgFormulas.constellation4.secondHitBoost, { name: ct.ch("skillB.0") }),
       }, {
-        node: infoMut(dmgFormulas.constellation4.thirdHitBoost, { name: ct.chg("skillB.1") }),
+        node: infoMut(dmgFormulas.constellation4.thirdHitBoost, { name: ct.ch("skillB.1") }),
       }, {
         text: ct.chg("burst.skillParams.3"),
         value: datamine.skill.cd,

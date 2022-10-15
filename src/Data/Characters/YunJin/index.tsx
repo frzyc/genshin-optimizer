@@ -233,7 +233,7 @@ const sheet: ICharacterSheet = {
 
     passive1: ct.talentTem("passive1"),
     passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
-      fields: [{ node: infoMut(nodeA4, { name: ct.chg("a4Inc_") }) }]
+      fields: [{ node: infoMut(nodeA4, { name: ct.ch("a4Inc_"), unit: "%" }) }]
     })]),
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1"),

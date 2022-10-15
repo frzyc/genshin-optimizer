@@ -82,10 +82,10 @@ const nodeC5 = greaterEq(input.constellation, 5, 3)
 const skillDmgOneHit = datamine.skill.dmgBase.map((dmg, i) => dmg + datamine.skill.onHitDmgBonus[i])
 const skillDmgTwoHits = datamine.skill.dmgBase.map((dmg, i) => dmg + 2 * datamine.skill.onHitDmgBonus[i])
 
-const nodeBurstElectroResRed_ = equal(condC6, "on", percent(datamine.constellation6.electroResShred_), { name: ct.chg("baneOfEvil_") })
-const nodeSkillNormalDmg_ = equal(condA4, "on", percent(datamine.ascension4.normalDmg_), { name: ct.chg("a4normalDmg_") })
-const nodeSkillChargeDmg_ = equal(condA4, "on", percent(datamine.ascension4.chargeDmg_), { name: ct.chg("a4chargeDmg_") })
-const nodeSkillAttackSpeed_ = equal(condA4, "on", percent(datamine.ascension4.attackSpeed), { name: ct.chg("a4atkSpeed_") })
+const nodeBurstElectroResRed_ = equal(condC6, "on", percent(datamine.constellation6.electroResShred_), { name: ct.ch("baneOfEvil_"), unit: "%" })
+const nodeSkillNormalDmg_ = equal(condA4, "on", percent(datamine.ascension4.normalDmg_), { name: ct.ch("a4normalDmg_"), unit: "%" })
+const nodeSkillChargeDmg_ = equal(condA4, "on", percent(datamine.ascension4.chargeDmg_), { name: ct.ch("a4chargeDmg_"), unit: "%" })
+const nodeSkillAttackSpeed_ = equal(condA4, "on", percent(datamine.ascension4.attackSpeed), { name: ct.ch("a4atkSpeed_"), unit: "%" })
 
 const skillShieldNode = shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill")
 const c1ShieldNode = shieldNode("hp", percent(datamine.constellation1.shieldHp_), 0)
@@ -186,9 +186,9 @@ const sheet: ICharacterSheet = {
       }, {
         node: infoMut(dmgFormulas.skill.baseDmg, { name: ct.chg(`skill.skillParams.1`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.dmgOneHit, { name: ct.chg("skillOneHit") }),
+        node: infoMut(dmgFormulas.skill.dmgOneHit, { name: ct.ch("skillOneHit") }),
       }, {
-        node: infoMut(dmgFormulas.skill.dmgTwoHits, { name: ct.chg("skillTwoHit") }),
+        node: infoMut(dmgFormulas.skill.dmgTwoHits, { name: ct.ch("skillTwoHit") }),
       }, {
         text: ct.chg("skill.skillParams.3"),
         value: datamine.skill.cd,
@@ -224,7 +224,7 @@ const sheet: ICharacterSheet = {
       }, {
         node: infoMut(dmgFormulas.burst.lightningDmg, { name: ct.chg(`burst.skillParams.1`) }),
       }, {
-        node: infoMut(subscript(input.total.burstIndex, datamine.burst.damageReduction), { name: ct.chg("burstDmgRed_") })
+        node: infoMut(subscript(input.total.burstIndex, datamine.burst.damageReduction), { name: ct.ch("burstDmgRed_"), unit: "%" })
       }, {
         text: ct.chg("burst.skillParams.3"),
         value: datamine.burst.duration,
@@ -265,7 +265,7 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),
     constellation4: ct.talentTem("constellation4", [ct.fieldsTem("constellation4", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation4.skillDmg, { name: ct.chg("c4dmg") }),
+        node: infoMut(dmgFormulas.constellation4.skillDmg, { name: ct.ch("c4dmg") }),
       }]
     })]),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),

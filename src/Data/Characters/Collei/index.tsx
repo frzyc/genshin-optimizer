@@ -205,7 +205,7 @@ const sheet: ICharacterSheet = {
 
       passive1: ct.talentTem("passive1", [ct.fieldsTem("passive1", {
         fields: [{
-          node: infoMut(dmgFormulas.passive1.dmg, { name: ct.chg("sproutDmg") })
+          node: infoMut(dmgFormulas.passive1.dmg, { name: ct.ch("sproutDmg") })
         }, {
           text: stg("duration"),
           value: datamine.passive1.duration,
@@ -221,7 +221,7 @@ const sheet: ICharacterSheet = {
       constellation5: ct.talentTem("constellation5", [{ fields: [{ node: burstC5 }] }]),
       constellation6: ct.talentTem("constellation6", [ct.fieldsTem("constellation6", {
         fields: [{
-          node: infoMut(dmgFormulas.constellation6.dmg, { name: ct.chg("miniAnbarDmg") })
+          node: infoMut(dmgFormulas.constellation6.dmg, { name: ct.ch("miniAnbarDmg") })
         }]
       })]),
     },

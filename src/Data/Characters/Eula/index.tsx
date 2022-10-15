@@ -250,7 +250,7 @@ const sheet: ICharacterSheet = {
       fields: [{
         node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.lightFallSwordNew, { name: ct.chg("burstC.dmg") }),
+        node: infoMut(dmgFormulas.burst.lightFallSwordNew, { name: ct.ch("burstC.dmg") }),
       }, {
         text: ct.chg("burst.skillParams.4"),
         value: `${datamine.burst.cd}`,
@@ -294,7 +294,7 @@ const sheet: ICharacterSheet = {
 
     passive1: ct.talentTem("passive1", [ct.fieldsTem("passive1", {
       fields: [{
-        node: infoMut(dmgFormulas.passive1.shatteredLightfallSword, { name: ct.chg("passive1") }),
+        node: infoMut(dmgFormulas.passive1.shatteredLightfallSword, { name: ct.ch("passive1") }),
       }]
     })]),
     passive2: ct.talentTem("passive2"),

@@ -186,11 +186,11 @@ const sheet: ICharacterSheet = {
       fields: [{
         node: infoMut(dmgFormulas.charged.aimed, { name: ct.chg(`auto.skillParams.6`) }),
       }, {
-        node: infoMut(dmgFormulas.constellation1.aimed, { name: ct.chg("addAimed") })
+        node: infoMut(dmgFormulas.constellation1.aimed, { name: ct.ch("addAimed") })
       }, {
         node: infoMut(dmgFormulas.charged.fully, { name: ct.chg(`auto.skillParams.7`) }),
       }, {
-        node: infoMut(dmgFormulas.constellation1.fully, { name: ct.chg("addFullAimed") })
+        node: infoMut(dmgFormulas.constellation1.fully, { name: ct.ch("addFullAimed") })
       }]
     }, {
       text: ct.chg("auto.fields.plunging"),

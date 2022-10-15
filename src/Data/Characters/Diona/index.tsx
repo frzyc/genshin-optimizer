@@ -180,9 +180,9 @@ const sheet: ICharacterSheet = {
       }, {
         node: infoMut(dmgFormulas.skill.pressCryoShield, { name: st(`dmgAbsorption.cryo`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.holdShield, { name: ct.chg("holdShield") }),
+        node: infoMut(dmgFormulas.skill.holdShield, { name: ct.ch("holdShield") }),
       }, {
-        node: infoMut(dmgFormulas.skill.holdCryoShield, { name: ct.chg("holdCryoShield") }),
+        node: infoMut(dmgFormulas.skill.holdCryoShield, { name: ct.ch("holdCryoShield") }),
       }, {
         node: infoMut(dmgFormulas.skill.skillDmg, { name: ct.chg(`skill.skillParams.0`) }),
       }, {

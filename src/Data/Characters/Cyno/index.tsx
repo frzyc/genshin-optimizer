@@ -284,7 +284,7 @@ const sheet: ICharacterSheet = {
 
     passive1: ct.talentTem("passive1", [ct.fieldsTem("passive1", {
       fields: [{
-        node: infoMut(dmgFormulas.passive1.boltDmg, { name: ct.chg("p1Dmg") })
+        node: infoMut(dmgFormulas.passive1.boltDmg, { name: ct.ch("p1Dmg") })
       }]
     }), ct.condTem("passive1", {
       path: condA1JudicationPath,
@@ -300,9 +300,9 @@ const sheet: ICharacterSheet = {
     })]),
     passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
       fields: [{
-        node: infoMut(dmgFormulas.passive2.burstNormalDmgInc, { name: ct.chg("burstNormalDmgInc") })
+        node: infoMut(dmgFormulas.passive2.burstNormalDmgInc, { name: ct.ch("burstNormalDmgInc") })
       }, {
-        node: infoMut(dmgFormulas.passive2.boltDmgInc, { name: ct.chg("boltDmgInc") })
+        node: infoMut(dmgFormulas.passive2.boltDmgInc, { name: ct.ch("boltDmgInc") })
       }]
     })]),
     passive3: ct.talentTem("passive3"),

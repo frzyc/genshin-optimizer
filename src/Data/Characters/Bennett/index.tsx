@@ -83,7 +83,7 @@ const a1SkillCd = greaterEq(input.asc, 1, datamine.passive1.cd_red)
 
 const burstAtkRatio = subscript(input.total.burstIndex, datamine.burst.atkBonus, { unit: "%" })
 const burstAddlAtk = prod(burstAtkRatio, input.base.atk)
-const c1AtkRatio = greaterEq(input.constellation, 1, datamine.constellation1.atk_inc, { name: ct.chg("additionalATKRatio_") })
+const c1AtkRatio = greaterEq(input.constellation, 1, datamine.constellation1.atk_inc, { name: ct.ch("additionalATKRatio_"), unit: "%" })
 const c1AddlAtk = greaterEq(input.constellation, 1, prod(c1AtkRatio, input.base.atk))
 const atkIncRatio = sum(burstAtkRatio, c1AtkRatio)
 const activeInAreaAtkDisp = prod(atkIncRatio, input.base.atk)
@@ -202,27 +202,27 @@ const sheet: ICharacterSheet = {
     skill: ct.talentTem("skill", [{
       fields: [{
         // Press
-        node: infoMut(dmgFormulas.skill.press, { name: ct.chg("skill.pressDMG") }),
+        node: infoMut(dmgFormulas.skill.press, { name: ct.ch("skill.pressDMG") }),
       }, {
         text: stg("press.cd"),
         unit: "s",
         value: data => calculateSkillCD(data, datamine.skill.cd_press),
       }, {
         // Lvl 1
-        node: infoMut(dmgFormulas.skill.hold1_1, { name: ct.chg("skill.lvl1_1DMG") }),
+        node: infoMut(dmgFormulas.skill.hold1_1, { name: ct.ch("skill.lvl1_1DMG") }),
       }, {
-        node: infoMut(dmgFormulas.skill.hold1_2, { name: ct.chg("skill.lvl1_2DMG") }),
+        node: infoMut(dmgFormulas.skill.hold1_2, { name: ct.ch("skill.lvl1_2DMG") }),
       }, {
         text: ct.ch("skill.lvl1CD"),
         unit: "s",
         value: data => calculateSkillCD(data, datamine.skill.cd_hold1),
       }, {
         // Lvl 2
-        node: infoMut(dmgFormulas.skill.hold2_1, { name: ct.chg("skill.lvl2_1DMG") }),
+        node: infoMut(dmgFormulas.skill.hold2_1, { name: ct.ch("skill.lvl2_1DMG") }),
       }, {
-        node: infoMut(dmgFormulas.skill.hold2_2, { name: ct.chg("skill.lvl2_2DMG") }),
+        node: infoMut(dmgFormulas.skill.hold2_2, { name: ct.ch("skill.lvl2_2DMG") }),
       }, {
-        node: infoMut(dmgFormulas.skill.explosion, { name: ct.chg("skill.explDMG") }),
+        node: infoMut(dmgFormulas.skill.explosion, { name: ct.ch("skill.explDMG") }),
       }, {
         text: ct.ch("skill.lvl2CD"),
         unit: "s",
@@ -278,7 +278,7 @@ const sheet: ICharacterSheet = {
         text: ct.ch("additionalATKRatio"),
         node: c1AtkRatio
       }, {
-        node: infoMut(c1AddlAtk, { name: ct.chg("additionalATK") })
+        node: infoMut(c1AddlAtk, { name: ct.ch("additionalATK") })
       }],
       canShow: equal(condInArea, "activeInArea", 1),
       teamBuff: true,
@@ -312,7 +312,7 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),
     constellation4: ct.talentTem("constellation4", [ct.fieldsTem("constellation4", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation4.dmg, { name: ct.chg("c4DMG") })
+        node: infoMut(dmgFormulas.constellation4.dmg, { name: ct.ch("c4DMG") })
       }],
     })]),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),
