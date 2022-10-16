@@ -1,13 +1,13 @@
 import { ArtSetExclusion } from "../../../../Database/DataManagers/BuildsettingData";
 import { forEachNodes, mapFormulas } from "../../../../Formula/internal";
-import { allOperations, constantFold } from "../../../../Formula/optimization";
-import { ConstantNode, NumNode } from "../../../../Formula/type";
+import { allOperations, constantFold, OptNode } from "../../../../Formula/optimization";
+import { ConstantNode } from "../../../../Formula/type";
 import { constant, customRead, max, min, threshold } from "../../../../Formula/utils";
 import { allSlotKeys, ArtifactSetKey, SlotKey } from "../../../../Types/consts";
 import { assertUnreachable, objectKeyMap, objectMap, range } from "../../../../Util/Util";
 
 type MicropassOperation = "reaffine" | "pruneArtRange" | "pruneNodeRange" | "pruneOrder"
-export function pruneAll(nodes: NumNode[], minimum: number[], arts: ArtifactsBySlot, numTop: number, exclusion: ArtSetExclusion, forced: Dict<MicropassOperation, boolean>): { nodes: NumNode[], arts: ArtifactsBySlot } {
+export function pruneAll(nodes: OptNode[], minimum: number[], arts: ArtifactsBySlot, numTop: number, exclusion: ArtSetExclusion, forced: Dict<MicropassOperation, boolean>): { nodes: OptNode[], arts: ArtifactsBySlot } {
   let should = forced
   /** If `key` makes progress, all operations in `value` should be performed */
   const deps: StrictDict<MicropassOperation, Dict<MicropassOperation, true>> = {
@@ -55,7 +55,7 @@ export function pruneAll(nodes: NumNode[], minimum: number[], arts: ArtifactsByS
   return { nodes, arts }
 }
 
-export function pruneExclusion(nodes: NumNode[], exclusion: ArtSetExclusion): NumNode[] {
+export function pruneExclusion(nodes: OptNode[], exclusion: ArtSetExclusion): OptNode[] {
   const maxValues: Dict<keyof typeof exclusion, number> = {}
   for (const [key, e] of Object.entries(exclusion)) {
     if (!e.includes(4)) continue
@@ -64,7 +64,7 @@ export function pruneExclusion(nodes: NumNode[], exclusion: ArtSetExclusion): Nu
   return mapFormulas(nodes, f => f, f => {
     if (f.operation !== "threshold") return f
 
-    const [v, t, pass, fail] = f.operands as readonly NumNode[]
+    const [v, t, pass, fail] = f.operands
     if (v.operation === "read" && t.operation === "const") {
       const key = v.path[v.path.length - 1], thres = t.value
       if (key in maxValues) {
@@ -78,25 +78,20 @@ export function pruneExclusion(nodes: NumNode[], exclusion: ArtSetExclusion): Nu
   })
 }
 
-function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean = false): { nodes: NumNode[], arts: ArtifactsBySlot } {
-  const affineNodes = new Set<NumNode>(), topLevelAffine = new Set<NumNode>()
+function reaffine(nodes: OptNode[], arts: ArtifactsBySlot, forceRename: boolean = false): { nodes: OptNode[], arts: ArtifactsBySlot } {
+  const affineNodes = new Set<OptNode>(), topLevelAffine = new Set<OptNode>()
 
-  function visit(node: NumNode, isAffine: boolean) {
+  function visit(node: OptNode, isAffine: boolean) {
     if (isAffine) affineNodes.add(node)
-    else node.operands.forEach(_op => {
-      const op = _op as NumNode
-      affineNodes.has(op) && topLevelAffine.add(op)
-    })
+    else node.operands.forEach(op => affineNodes.has(op) && topLevelAffine.add(op))
   }
 
   const dynKeys = new Set<string>()
 
-  forEachNodes(nodes, _ => { }, _f => {
-    const f = _f as NumNode, { operation } = f
+  forEachNodes(nodes, _ => { }, f => {
+    const { operation } = f
     switch (operation) {
       case "read":
-        if (f.type !== "number" || f.path[0] !== "dyn" || f.accu !== "add")
-          throw new Error(`Found unsupported ${operation} node at path ${f.path} when computing affine nodes`)
         dynKeys.add(f.path[1])
         visit(f, true)
         break
@@ -106,14 +101,9 @@ function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean 
         visit(f, nonConst.length === 0 || (nonConst.length === 1 && affineNodes.has(nonConst[0])))
         break
       }
-      case "const":
-        if (typeof f.value === "string" || f.value === undefined)
-          throw new Error(`Found constant ${f.value} while compacting`)
-        visit(f as NumNode, true); break
+      case "const": visit(f, true); break
       case "res": case "threshold": case "sum_frac":
       case "max": case "min": visit(f, false); break
-      case "data": case "subscript": case "lookup": case "match":
-        throw new Error(`Found unsupported ${operation} node when computing affine nodes`)
       default: assertUnreachable(operation)
     }
   })
@@ -134,7 +124,7 @@ function reaffine(nodes: NumNode[], arts: ArtifactsBySlot, forceRename: boolean 
     !forceRename && node.operation === "read" && node.path[0] === "dyn"
       ? node
       : { ...customRead(["dyn", `${nextDynKey()}`]), accu: "add" as const }]))
-  nodes = mapFormulas(nodes, f => affineMap.get(f as NumNode) ?? f, f => f)
+  nodes = mapFormulas(nodes, f => affineMap.get(f) ?? f, f => f)
 
   function reaffineArt(stat: DynStat): DynStat {
     const values = constantFold([...affineMap.keys()], {
@@ -181,7 +171,7 @@ function pruneOrder(arts: ArtifactsBySlot, numTop: number, exclusion: ArtSetExcl
   return progress ? { base: arts.base, values } : arts
 }
 /** Remove artifacts that cannot reach `minimum` in any build */
-function pruneArtRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[]): ArtifactsBySlot {
+function pruneArtRange(nodes: OptNode[], arts: ArtifactsBySlot, minimum: number[]): ArtifactsBySlot {
   const baseRange = Object.fromEntries(Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }]))
   const wrap = { arts }
   while (true) {
@@ -205,14 +195,14 @@ function pruneArtRange(nodes: NumNode[], arts: ArtifactsBySlot, minimum: number[
   }
   return wrap.arts
 }
-function pruneNodeRange(nodes: NumNode[], arts: ArtifactsBySlot): NumNode[] {
+function pruneNodeRange(nodes: OptNode[], arts: ArtifactsBySlot): OptNode[] {
   const baseRange = Object.fromEntries(Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }]))
   const reads = addArtRange([baseRange, ...Object.values(arts.values).map(values => computeArtRange(values))])
   const nodeRange = computeNodeRange(nodes, reads)
 
   return mapFormulas(nodes, f => {
     {
-      const { min, max } = nodeRange.get(f as NumNode)!
+      const { min, max } = nodeRange.get(f)!
       if (min === max) return constant(min)
     }
     const { operation } = f
@@ -282,11 +272,10 @@ export function computeFullArtRange(arts: ArtifactsBySlot): DynMinMax {
   const baseRange = Object.fromEntries(Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }]))
   return addArtRange([baseRange, ...Object.values(arts.values).map(values => computeArtRange(values))])
 }
-export function computeNodeRange(nodes: NumNode[], reads: DynMinMax): Map<NumNode, MinMax> {
-  const range = new Map<NumNode, MinMax>()
+export function computeNodeRange(nodes: OptNode[], reads: DynMinMax): Map<OptNode, MinMax> {
+  const range = new Map<OptNode, MinMax>()
 
-  forEachNodes(nodes, _ => { }, _f => {
-    const f = _f as NumNode
+  forEachNodes(nodes, _ => { }, f => {
     const { operation } = f
     const operands = f.operands.map(op => range.get(op)!)
     let current: MinMax
@@ -297,7 +286,6 @@ export function computeNodeRange(nodes: NumNode[], reads: DynMinMax): Map<NumNod
         current = reads[f.path[1]] ?? { min: 0, max: 0 }
         break
       case "const": current = computeMinMax([f.value]); break
-      case "subscript": current = computeMinMax(f.list); break
       case "add": case "min": case "max":
         current = {
           min: allOperations[operation](operands.map(x => x.min)),
@@ -328,8 +316,6 @@ export function computeNodeRange(nodes: NumNode[], reads: DynMinMax): Map<NumNod
           ])
         break
       }
-      case "data": case "lookup": case "match":
-        throw new Error(`Unsupported ${operation} node`)
       default: assertUnreachable(operation)
     }
     range.set(f, current)

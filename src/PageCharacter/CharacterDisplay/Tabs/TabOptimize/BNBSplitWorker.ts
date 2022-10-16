@@ -1,6 +1,6 @@
 import { customMapFormula, forEachNodes } from "../../../../Formula/internal";
-import { allOperations } from "../../../../Formula/optimization";
-import { ConstantNode, NumNode } from "../../../../Formula/type";
+import { allOperations, OptNode } from "../../../../Formula/optimization";
+import { ConstantNode } from "../../../../Formula/type";
 import { prod, threshold } from "../../../../Formula/utils";
 import { SlotKey } from "../../../../Types/consts";
 import { assertUnreachable, objectKeyValueMap, objectMap } from "../../../../Util/Util";
@@ -13,7 +13,7 @@ type Approximation = {
   conts: StrictDict<string, number>
 }
 type Filter = {
-  nodes: NumNode[], arts: ArtifactsBySlot
+  nodes: OptNode[], arts: ArtifactsBySlot
   /**
    * The contribution of each artifact to the optimization target. The (over)estimated
    * optimization target value is the sum of contributions of all artifacts in the build.
@@ -28,7 +28,7 @@ type Filter = {
 }
 export class BNBSplitWorker implements SplitWorker {
   min: number[]
-  nodes: NumNode[]
+  nodes: OptNode[]
   arts: ArtifactsBySlot
   maxBuilds: number
 
@@ -179,7 +179,7 @@ export class BNBSplitWorker implements SplitWorker {
 function maxContribution(arts: ArtifactBuildData[], approximation: Approximation): number {
   return Math.max(...arts.map(({ id }) => approximation.conts[id]!))
 }
-function approximation(nodes: NumNode[], arts: ArtifactsBySlot): Approximation[] {
+function approximation(nodes: OptNode[], arts: ArtifactsBySlot): Approximation[] {
   return linearUpperBound(nodes, arts).map(weight => ({
     base: dot(arts.base, weight, weight.$c),
     conts: objectKeyValueMap(Object.values(arts.values).flat(),
@@ -201,14 +201,14 @@ function weightedSum(...entries: readonly (readonly [number, DynStat])[]): DynSt
 }
 export type Linear = DynStat & { $c: number }
 /** Compute a linear upper bound of `nodes` */
-export function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linear[] {
+export function linearUpperBound(nodes: OptNode[], arts: ArtifactsBySlot): Linear[] {
   const cents = weightedSum([1, arts.base], ...Object.values(arts.values).map(arts =>
     [1 / arts.length, weightedSum(...arts.map(art => [1, art.values] as const))] as const))
   const getCent = (lin: Linear) => dot(cents, lin, lin.$c)
 
-  const minMaxes = new Map<NumNode, MinMax>()
-  forEachNodes(nodes, _f => {
-    const f = _f as NumNode, { operation } = f
+  const minMaxes = new Map<OptNode, MinMax>()
+  forEachNodes(nodes, f => {
+    const { operation } = f
     if (operation === "mul") minMaxes.set(f, { min: NaN, max: NaN })
     switch (operation) {
       case "mul": case "min": case "max": case "threshold": case "res": case "sum_frac":
@@ -229,9 +229,9 @@ export function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linea
 
   const upper = "u", lower = "l", outward = "o"
   type Context = typeof upper | typeof lower | typeof outward
-  return customMapFormula<Context, Linear>(nodes, upper, (_f, context, _map) => {
-    const f = _f as NumNode, { operation } = f
-    const map: (op: NumNode, c?: Context) => Linear = (op, c = context) => _map(op, c)
+  return customMapFormula<Context, Linear, OptNode>(nodes, upper, (f, context, _map) => {
+    const { operation } = f
+    const map: (op: OptNode, c?: Context) => Linear = (op, c = context) => _map(op, c)
     const oppositeContext = context === upper ? lower : upper
 
     if (context === outward) {
@@ -312,7 +312,7 @@ export function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linea
         //   k prod{x} <= k/n prod{a} sum{x/a}
         //
         // This follows from AM-GM; prod{x/a} <= (sum{x/a}/n)^n <= sum{x/a}/n
-        const operands = [...f.operands], flattenedOperands: NumNode[] = []
+        const operands = [...f.operands], flattenedOperands: OptNode[] = []
         let coeff = 1
         while (operands.length) {
           const operand = operands.pop()!
@@ -330,8 +330,6 @@ export function linearUpperBound(nodes: NumNode[], arts: ArtifactsBySlot): Linea
         return weightedSum(...lins.map((op, i) => [prod / cents[i], op] as const))
       }
 
-      case "data": case "match": case "lookup": case "subscript":
-        throw new PolyError("Unsupported operation", operation)
       default: assertUnreachable(operation)
     }
   })
