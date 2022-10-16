@@ -113,9 +113,9 @@ export default function TabBuild() {
     const workerData = uiDataForTeam(teamData.teamData, characterKey)[characterKey as CharacterKey]?.target.data![0]
     if (!workerData) return
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
-    let optimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
-    if (!optimizationTargetNode) return
-    const targetNode = optimizationTargetNode
+    let unoptimizedOptimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
+    if (!unoptimizedOptimizationTargetNode) return
+    const targetNode = unoptimizedOptimizationTargetNode
     const valueFilter: { value: NumNode, minimum: number }[] = Object.entries(statFilters).map(([key, value]) => {
       if (key.endsWith("_")) value = value / 100 // TODO: Conversion
       return { value: input.total[key], minimum: value }
@@ -125,18 +125,18 @@ export default function TabBuild() {
 
     const cancelled = new Promise<void>(r => cancelToken.current = r)
 
-    let nodes = [...valueFilter.map(x => x.value), optimizationTargetNode], arts = split!
+    let unoptimizedNodes = [...valueFilter.map(x => x.value), unoptimizedOptimizationTargetNode], arts = split!
     const setPerms = filterFeasiblePerm(artSetPerm(artSetExclusion, Object.values(split.values).flatMap(x => x.map(x => x.set!))), split)
 
     const minimum = [...valueFilter.map(x => x.minimum), -Infinity]
     const status: Omit<BuildStatus, "type"> = { tested: 0, failed: 0, skipped: 0, total: NaN, startTime: performance.now() }
     if (plotBase) {
-      nodes.push(input.total[plotBase])
+      unoptimizedNodes.push(input.total[plotBase])
       minimum.push(-Infinity)
     }
 
     const prepruneArts = arts
-    nodes = optimize(nodes, workerData, ({ path: [p] }) => p !== "dyn")
+    let nodes = optimize(unoptimizedNodes, workerData, ({ path: [p] }) => p !== "dyn")
     nodes = pruneExclusion(nodes, artSetExclusion);
     ({ nodes, arts } = pruneAll(nodes, minimum, arts, maxBuildsToShow, artSetExclusion, {
       reaffine: true, pruneArtRange: true, pruneNodeRange: true, pruneOrder: true
@@ -144,7 +144,7 @@ export default function TabBuild() {
     nodes = optimize(nodes, {}, _ => false)
 
     const plotBaseNode = plotBase ? nodes.pop() : undefined
-    optimizationTargetNode = nodes.pop()!
+    let optimizationTargetNode = nodes.pop()!
 
     const wrap = { buildValues: Array(maxBuildsToShow).fill(0).map(_ => ({ src: "", val: -Infinity })) }
 

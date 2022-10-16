@@ -1,9 +1,9 @@
 import { ArtSetExclusion } from '../../../../Database/DataManagers/BuildsettingData'
-import { NumNode } from '../../../../Formula/type'
+import { OptNode } from '../../../../Formula/optimization'
 import { assertUnreachable } from '../../../../Util/Util'
+import { BNBSplitWorker } from "./BNBSplitWorker"
 import { ArtifactsBySlot, artSetPerm, Build, countBuilds, filterArts, filterFeasiblePerm, PlotData, RequestFilter } from "./common"
 import { ComputeWorker } from "./ComputeWorker"
-import { BNBSplitWorker } from "./BNBSplitWorker"
 import { DefaultSplitWorker } from './DefaultSplitWorker'
 
 let id: number, splitWorker: SplitWorker, computeWorker: ComputeWorker
@@ -69,9 +69,9 @@ export interface Setup {
   id: number
   arts: ArtifactsBySlot
 
-  optimizationTarget: NumNode
-  filters: { value: NumNode, min: number }[]
-  plotBase: NumNode | undefined,
+  optimizationTarget: OptNode
+  filters: { value: OptNode, min: number }[]
+  plotBase: OptNode | undefined,
   maxBuilds: number
 }
 export interface Split {

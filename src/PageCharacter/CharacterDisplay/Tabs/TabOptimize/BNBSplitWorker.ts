@@ -1,6 +1,6 @@
 import { customMapFormula, forEachNodes } from "../../../../Formula/internal";
-import { allOperations } from "../../../../Formula/optimization";
-import { ConstantNode, NumNode } from "../../../../Formula/type";
+import { allOperations, OptNode } from "../../../../Formula/optimization";
+import { ConstantNode } from "../../../../Formula/type";
 import { prod, threshold } from "../../../../Formula/utils";
 import { SlotKey } from "../../../../Types/consts";
 import { maximizeLP } from "../../../../Util/LP";
@@ -14,7 +14,7 @@ type Approximation = {
   conts: StrictDict<string, number>
 }
 type Filter = {
-  nodes: NumNode[], arts: ArtifactsBySlot
+  nodes: OptNode[], arts: ArtifactsBySlot
   /**
    * The contribution of each artifact to the optimization target. The (over)estimated
    * optimization target value is the sum of contributions of all artifacts in the build.
@@ -29,7 +29,7 @@ type Filter = {
 }
 export class BNBSplitWorker implements SplitWorker {
   min: number[]
-  nodes: NumNode[]
+  nodes: OptNode[]
   arts: ArtifactsBySlot
   maxBuilds: number
 
@@ -180,7 +180,7 @@ export class BNBSplitWorker implements SplitWorker {
 function maxContribution(arts: ArtifactBuildData[], approximation: Approximation): number {
   return Math.max(...arts.map(({ id }) => approximation.conts[id]!))
 }
-function approximation(nodes: NumNode[], arts: ArtifactsBySlot): Approximation[] {
+function approximation(nodes: OptNode[], arts: ArtifactsBySlot): Approximation[] {
   const ranges = computeFullArtRange(arts)
   const polys = polyUpperBound(nodes, ranges)
   return linearUpperBound(polys, ranges).map(weight => ({
@@ -308,11 +308,11 @@ function linearUpperBound(polys: Poly[], ranges: DynMinMax): Linear[] {
 }
 
 /** Compute a poly upper bound of `nodes` */
-function polyUpperBound(nodes: NumNode[], ranges: DynMinMax): Poly[] {
+function polyUpperBound(nodes: OptNode[], ranges: DynMinMax): Poly[] {
   if (ranges["$c"]) throw new PolyError("Unsupported key", "init")
-  const minMaxes = new Map<NumNode, MinMax>()
-  forEachNodes(nodes, _f => {
-    const f = _f as NumNode, { operation } = f
+  const minMaxes = new Map<OptNode, MinMax>()
+  forEachNodes(nodes, f => {
+    const { operation } = f
     if (operation === "mul") minMaxes.set(f, { min: NaN, max: NaN })
     switch (operation) {
       case "mul": case "min": case "max": case "threshold": case "res": case "sum_frac":
@@ -332,9 +332,9 @@ function polyUpperBound(nodes: NumNode[], ranges: DynMinMax): Poly[] {
 
   const upper = "u", lower = "l", outward = "o"
   type Context = typeof upper | typeof lower | typeof outward
-  return customMapFormula<Context, Poly>(nodes, upper, (_f, context, _map) => {
-    const f = _f as NumNode, { operation } = f
-    const map: (op: NumNode, c?: Context) => Poly = (op, c = context) => _map(op, c)
+  return customMapFormula<Context, Poly, OptNode>(nodes, upper, (f, context, _map) => {
+    const { operation } = f
+    const map: (op: OptNode, c?: Context) => Poly = (op, c = context) => _map(op, c)
     const oppositeContext = context === upper ? lower : upper
 
     if (context === outward) {
@@ -410,7 +410,7 @@ function polyUpperBound(nodes: NumNode[], ranges: DynMinMax): Poly[] {
         if ((min < 0 && context !== lower) || (max > 0 && context !== upper))
           throw new PolyError("Unsupported Direction", operation)
 
-        const operands = [...f.operands], flattenedOperands: NumNode[] = []
+        const operands = [...f.operands], flattenedOperands: OptNode[] = []
         let coeff = 1
         while (operands.length) {
           const operand = operands.pop()!
@@ -433,8 +433,6 @@ function polyUpperBound(nodes: NumNode[], ranges: DynMinMax): Poly[] {
         }, { $c: coeff } as Poly)
       }
 
-      case "data": case "match": case "lookup": case "subscript":
-        throw new PolyError("Unsupported operation", operation)
       default: assertUnreachable(operation)
     }
   })
