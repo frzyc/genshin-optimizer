@@ -190,7 +190,7 @@ function approximation(nodes: OptNode[], arts: ArtifactsBySlot): Approximation[]
   }))
 }
 
-type Linear = { [key: string]: number }
+export type Linear = { [key: string]: number }
 function dot(values: DynStat, lin: Linear): number {
   return Object.entries(lin).reduce((accu, [key, val]) => accu + (values[key] ?? 0) * val, 0)
 }
@@ -214,7 +214,7 @@ type Const = { $c: number }
  * Typescript isn't strong enough to enforce that the key `$c`,and only `$c`, can map to `number`
  * values. As is, care must be taken when constructing/updating `Poly`.
  */
-type Poly = { [key: string]: Poly } | Const
+export type Poly = { [key: string]: Poly } | Const
 function weightedSum(...entries: readonly (readonly [number, Poly])[]): Poly {
   if (entries.length === 1 && entries[0][0] === 1) return entries[0][1]
   const keys = new Set(entries.flatMap(([_, poly]) => Object.keys(poly))), result: Poly = {}
@@ -229,7 +229,7 @@ function weightedSum(...entries: readonly (readonly [number, Poly])[]): Poly {
   return result
 }
 
-function linearUpperBound(polys: Poly[], ranges: DynMinMax): Linear[] {
+export function linearUpperBound(polys: Poly[], ranges: DynMinMax): Linear[] {
   /** Merge two (sorted) strings, keeping duplicity */
   function merge(a: string[], b: string[]): string[] {
     const result: string[] = [], bLen = b.length
@@ -308,7 +308,7 @@ function linearUpperBound(polys: Poly[], ranges: DynMinMax): Linear[] {
 }
 
 /** Compute a poly upper bound of `nodes` */
-function polyUpperBound(nodes: OptNode[], ranges: DynMinMax): Poly[] {
+export function polyUpperBound(nodes: OptNode[], ranges: DynMinMax): Poly[] {
   if (ranges["$c"]) throw new PolyError("Unsupported key", "init")
   const minMaxes = new Map<OptNode, MinMax>()
   forEachNodes(nodes, f => {
