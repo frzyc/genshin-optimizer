@@ -1,9 +1,9 @@
 import { WeaponData } from 'pipeline'
 import { input } from '../../../../Formula'
-import { equal, lookup, naught, percent, prod, subscript } from '../../../../Formula/utils'
+import { equal, lookup, naught, prod, subscript } from '../../../../Formula/utils'
 import { WeaponKey } from '../../../../Types/consts'
 import { range } from '../../../../Util/Util'
-import { cond, stg, st } from '../../../SheetUtil'
+import { cond, st, stg } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
 import iconAwaken from './AwakenIcon.png'

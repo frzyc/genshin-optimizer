@@ -52,7 +52,7 @@ export default function UploadCard({ index, onReplace }: { index: number, onRepl
     }
     setErrorMsg("uploadCard.error.unknown")
     return
-  }, [data, database, keepNotInImport, ignoreDups]) ?? {}
+  }, [data, database, keepNotInImport, ignoreDups, index]) ?? {}
   const reset = () => {
     setdata("")
     setfilename("")
