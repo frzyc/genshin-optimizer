@@ -214,7 +214,7 @@ export function constantFold(formulas: NumNode[], topLevelData: Data, shouldFold
     const foldStr = (x: StrNode, c: typeof context) => map(x, c) as StrNode
     let result: OptNode | StrNode
     switch (operation) {
-      case "const": return formula
+      case "const": result = formula; break
       case "add": case "mul": case "max": case "min":
         const f = allOperations[operation]
         const numericOperands: number[] = []

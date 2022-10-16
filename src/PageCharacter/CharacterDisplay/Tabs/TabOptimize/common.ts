@@ -1,7 +1,7 @@
 import { ArtSetExclusion } from "../../../../Database/DataManagers/BuildsettingData";
 import { forEachNodes, mapFormulas } from "../../../../Formula/internal";
 import { allOperations, constantFold, OptNode } from "../../../../Formula/optimization";
-import { ConstantNode, NumNode } from "../../../../Formula/type";
+import { ConstantNode } from "../../../../Formula/type";
 import { constant, customRead, max, min, threshold } from "../../../../Formula/utils";
 import { allSlotKeys, ArtifactSetKey, SlotKey } from "../../../../Types/consts";
 import { assertUnreachable, objectKeyMap, objectMap, range } from "../../../../Util/Util";
@@ -79,24 +79,19 @@ export function pruneExclusion(nodes: OptNode[], exclusion: ArtSetExclusion): Op
 }
 
 function reaffine(nodes: OptNode[], arts: ArtifactsBySlot, forceRename: boolean = false): { nodes: OptNode[], arts: ArtifactsBySlot } {
-  const affineNodes = new Set<NumNode>(), topLevelAffine = new Set<NumNode>()
+  const affineNodes = new Set<OptNode>(), topLevelAffine = new Set<OptNode>()
 
-  function visit(node: NumNode, isAffine: boolean) {
+  function visit(node: OptNode, isAffine: boolean) {
     if (isAffine) affineNodes.add(node)
-    else node.operands.forEach(_op => {
-      const op = _op as NumNode
-      affineNodes.has(op) && topLevelAffine.add(op)
-    })
+    else node.operands.forEach(op => affineNodes.has(op) && topLevelAffine.add(op))
   }
 
   const dynKeys = new Set<string>()
 
-  forEachNodes(nodes, _ => { }, _f => {
-    const f = _f as NumNode, { operation } = f
+  forEachNodes(nodes, _ => { }, f => {
+    const { operation } = f
     switch (operation) {
       case "read":
-        if (f.type !== "number" || f.path[0] !== "dyn" || f.accu !== "add")
-          throw new Error(`Found unsupported ${operation} node at path ${f.path} when computing affine nodes`)
         dynKeys.add(f.path[1])
         visit(f, true)
         break
@@ -106,14 +101,9 @@ function reaffine(nodes: OptNode[], arts: ArtifactsBySlot, forceRename: boolean 
         visit(f, nonConst.length === 0 || (nonConst.length === 1 && affineNodes.has(nonConst[0])))
         break
       }
-      case "const":
-        if (typeof f.value === "string" || f.value === undefined)
-          throw new Error(`Found constant ${f.value} while compacting`)
-        visit(f as NumNode, true); break
+      case "const": visit(f, true); break
       case "res": case "threshold": case "sum_frac":
       case "max": case "min": visit(f, false); break
-      case "data": case "subscript": case "lookup": case "match":
-        throw new Error(`Found unsupported ${operation} node when computing affine nodes`)
       default: assertUnreachable(operation)
     }
   })
@@ -134,7 +124,7 @@ function reaffine(nodes: OptNode[], arts: ArtifactsBySlot, forceRename: boolean 
     !forceRename && node.operation === "read" && node.path[0] === "dyn"
       ? node
       : { ...customRead(["dyn", `${nextDynKey()}`]), accu: "add" as const }]))
-  nodes = mapFormulas(nodes, f => affineMap.get(f as NumNode) ?? f, f => f)
+  nodes = mapFormulas(nodes, f => affineMap.get(f) ?? f, f => f)
 
   function reaffineArt(stat: DynStat): DynStat {
     const values = constantFold([...affineMap.keys()], {
