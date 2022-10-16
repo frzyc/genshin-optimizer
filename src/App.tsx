@@ -59,14 +59,14 @@ function ScrollTop({ children }: { children: React.ReactElement }) {
 
 function App() {
   const dbIndex = parseInt(localStorage.getItem("dbIndex") || "1")
-  const [databases, setDatabases] = useState(() => [1, 2, 3, 4].map(index => {
+  const [databases, setDatabases] = useState(() => ([1, 2, 3, 4] as const).map(index => {
     if (index === dbIndex) {
-      return new ArtCharDatabase(new DBLocalStorage(localStorage))
+      return new ArtCharDatabase(index, new DBLocalStorage(localStorage))
     } else {
       const dbName = `extraDatabase_${index}`
       const eDB = localStorage.getItem(dbName)
-      const dbObj = eDB ? JSON.parse(eDB) : { dbIndex: `${index}` }
-      const db = new ArtCharDatabase(new SandboxStorage(dbObj))
+      const dbObj = eDB ? JSON.parse(eDB) : {}
+      const db = new ArtCharDatabase(index, new SandboxStorage(dbObj))
       db.toExtraLocalDB()
       return db
     }
