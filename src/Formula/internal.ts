@@ -72,7 +72,7 @@ export function mapFormulas<Input extends Base<Input> = AnyNode, Interim extends
   return arrayEqual<Input | Output>(result, formulas) ? formulas as any : result
 }
 
-export function customMapFormula<Context, Output, Input extends Base<Input> = AnyNode>(formulas: Input[], context: Context, map: (formula: Input, context: Context, map: (node: Input, context: Context) => Output) => Output): Output[] {
+export function customMapFormula<Context, Output, Input extends Base<Input>>(formulas: Input[], context: Context, map: (formula: Input, context: Context, map: (node: Input, context: Context) => Output) => Output): Output[] {
   const contextMapping = new Map<Context, [Set<Input>, Map<Input, Output>]>()
   function internalMap(formula: Input, context: Context): Output {
     let current = contextMapping.get(context)
