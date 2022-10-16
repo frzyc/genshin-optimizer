@@ -1,13 +1,15 @@
 
 import { objectKeyMap } from "../Util/Util"
+import type { OptNode } from "./optimization"
 import type { ComputeNode, ConstantNode, Data, DataNode, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, StrPrioNode, SubscriptNode, ThresholdNode } from "./type"
 
+type Opt = number | OptNode
 type Num = number | NumNode
 type Str = string | undefined | StrNode
 type N_S = Num | Str
 type AnyNode = NumNode | StrNode
 
-export const todo: NumNode = constant(NaN, { name: "TODO" })
+export const todo: OptNode = constant(NaN, { name: "TODO" })
 export const one = percent(1), naught = percent(0)
 export const none = constant("none")
 
@@ -26,6 +28,7 @@ export function percent(value: number, info?: Info): ConstantNode<number> {
   return constant(value, { unit: "%", ...info })
 }
 /** Inject `info` to the node in-place */
+export function infoMut(node: OptNode, info: Info): OptNode
 export function infoMut(node: NumNode, info: Info): NumNode
 export function infoMut(node: StrNode, info: Info): StrNode
 export function infoMut(node: AnyNode, info: Info): AnyNode {
@@ -42,25 +45,37 @@ export function lookup(index: StrNode, table: Dict<string, AnyNode>, defaultV: N
 }
 
 /** min( x1, x2, ... ) */
+export function min(...values: Opt[]): ComputeNode<OptNode, OptNode>
+export function min(...values: Num[]): ComputeNode
 export function min(...values: Num[]): ComputeNode {
   return { operation: "min", operands: intoOps(values) }
 }
 /** max( x1, x2, ... ) */
+export function max(...values: Opt[]): ComputeNode<OptNode, OptNode>
+export function max(...values: Num[]): ComputeNode
 export function max(...values: Num[]): ComputeNode {
   return { operation: "max", operands: intoOps(values) }
 }
 /** x1 + x2 + ... */
+export function sum(...values: Opt[]): ComputeNode<OptNode, OptNode>
+export function sum(...values: Num[]): ComputeNode
 export function sum(...values: Num[]): ComputeNode {
   return { operation: "add", operands: intoOps(values) }
 }
 /** x1 * x2 * ... */
+export function prod(...values: Opt[]): ComputeNode<OptNode, OptNode>
+export function prod(...values: Num[]): ComputeNode
 export function prod(...values: Num[]): ComputeNode {
   return { operation: "mul", operands: intoOps(values) }
 }
 /** x / (x + c) */
+export function frac(x: Opt, c: Opt): ComputeNode<OptNode, OptNode>
+export function frac(x: Num, c: Num): ComputeNode
 export function frac(x: Num, c: Num): ComputeNode {
   return { operation: "sum_frac", operands: intoOps([x, c]) }
 }
+export function res(base: Opt): ComputeNode<OptNode, OptNode>
+export function res(base: Num): ComputeNode
 export function res(base: Num): ComputeNode {
   return { operation: "res", operands: intoOps([base]) }
 }
@@ -98,6 +113,8 @@ export function unequalStr(v1: N_S, v2: N_S, pass: Str, info?: Info): MatchNode<
   return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(undefined), intoV(pass)], info, emptyOn: "match" }
 }
 /** v1 >= v2 ? pass : 0 */
+export function greaterEq(v1: Opt, v2: Opt, pass: Opt, info?: Info): ThresholdNode<OptNode, OptNode, OptNode>
+export function greaterEq(v1: Num, v2: Num, pass: Num, info?: Info): ThresholdNode<NumNode>
 export function greaterEq(v1: Num, v2: Num, pass: Num, info?: Info): ThresholdNode<NumNode> {
   const operands = [intoV(v1), intoV(v2), intoV(pass), intoV(0)] as any
   return { operation: "threshold", operands, info, emptyOn: "l" }
@@ -108,11 +125,15 @@ export function greaterEqStr(v1: Num, v2: Num, pass: Str, info?: Info): Threshol
   return { operation: "threshold", operands, info, emptyOn: "l" }
 }
 /** v1 < v2 ? pass : 0 */
+export function lessThan(v1: Opt, v2: Opt, pass: Opt, info?: Info): ThresholdNode<OptNode, OptNode, OptNode>
+export function lessThan(v1: Num, v2: Num, pass: Num, info?: Info): ThresholdNode<NumNode>
 export function lessThan(v1: Num, v2: Num, pass: Num, info?: Info): ThresholdNode<NumNode> {
   const operands = [intoV(v1), intoV(v2), intoV(0), intoV(pass)] as any
   return { operation: "threshold", operands, info, emptyOn: "ge" }
 }
 /** v1 >= v2 ? ge : le */
+export function threshold(v1: Opt, v2: Opt, ge: Opt, le: Opt, info?: Info): OptNode
+export function threshold(v1: Num, v2: Num, ge: Num, le: Num, info?: Info): NumNode
 export function threshold(v1: Num, v2: Num, ge: Num, le: Num, info?: Info): NumNode {
   return { operation: "threshold", operands: intoOps([v1, v2, ge, le]) as any, info }
 }

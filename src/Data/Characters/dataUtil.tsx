@@ -100,7 +100,7 @@ export function dataObjForCharacterSheet(
   additional: Data = {},
 ): Data {
   function curve(base: number, lvlCurve: string): NumNode {
-    return prod(base, subscript(input.lvl, charCurves[lvlCurve]))
+    return prod(base, subscript<number>(input.lvl, charCurves[lvlCurve]))
   }
   display.basic = { ...commonBasic }
   const data: Data = {
