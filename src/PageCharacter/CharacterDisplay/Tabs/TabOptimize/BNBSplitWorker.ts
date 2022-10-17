@@ -302,7 +302,13 @@ export function linearUpperBound(polys: Poly[], ranges: DynMinMax): Linear[] {
       weights.$c += c - negC
     }
 
-    throw "TODO: Renormalize weight"
+    // f(x) = c + w * (x - min) / (max - min) = ( c - min / (max - min) ) + w / (max - min) x
+    for (const [key, value] of Object.entries(weights)) {
+      if (key === "$c") continue
+      const { min, max } = ranges[key]!
+      weights[key] /= max - min
+      weights.$c -= value * min
+    }
     return weights
   })
 }
