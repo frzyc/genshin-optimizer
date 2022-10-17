@@ -83,9 +83,8 @@ export function NodeFieldDisplayText({ node }: { node: NodeDisplay }) {
   const { textSuffix } = node.info
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>
   return <Box sx={{ display: "flex", gap: 1, alignItems: "center" }} >
-    {node.info.icon && <Typography><ColorText color={node.info.variant}>{node.info.icon}</ColorText></Typography>}
     {!!node.info.isTeamBuff && <Groups />}
-    <Typography ><ColorText color={node.info.variant} >{node.info.name}{suffixDisplay}</ColorText></Typography>
+    <Typography ><ColorText color={node.info.variant} >{node.info.icon} {node.info.name}{suffixDisplay}</ColorText></Typography>
   </Box>
 }
 export interface FieldDisplayListProps extends ListProps {
