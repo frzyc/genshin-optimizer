@@ -1,5 +1,5 @@
 import { faDiscord, faPatreon, faPaypal } from "@fortawesome/free-brands-svg-icons";
-import { Article, Construction, Menu as MenuIcon, People, Scanner, Settings } from "@mui/icons-material";
+import { Add, Article, Construction, Menu as MenuIcon, People, Scanner, Settings } from "@mui/icons-material";
 import { AppBar, Box, Button, Chip, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Suspense, useState } from "react";
 import ReactGA from 'react-ga4';
@@ -10,49 +10,76 @@ import { slotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
 import FontAwesomeSvgIcon from "./Components/FontAwesomeSvgIcon";
 import useDBMeta from "./ReactHooks/useDBMeta";
 
-const content = [{
+type ITab = {
+  i18Key: string,
+  icon: Displayable,
+  to: string,
+  value: string,
+  resize?: boolean,
+  textSuffix?: Displayable,
+}
+const artifacts: ITab = {
   i18Key: "tabs.artifacts",
   icon: <FontAwesomeSvgIcon icon={slotIconSVG.flower} />,
   to: "/artifacts",
   value: "artifacts",
-  resize: false
-}, {
+  resize: false,
+  textSuffix: <BtnTest key="weaponAdd" />
+}
+const weapons: ITab = {
   i18Key: "tabs.weapons",
   icon: Assets.svg.anvil,
   to: "/weapons",
   value: "weapons",
-  resize: false
-}, {
+  resize: false,
+  textSuffix: <BtnTest key="weaponAdd" />
+}
+const characters: ITab = {
   i18Key: "tabs.characters",
   icon: <People />,
   to: "/characters",
   value: "characters",
-  resize: false
-}, {
+  resize: false,
+  textSuffix: <BtnTest key="charAdd" />
+}
+const tools: ITab = {
   i18Key: "tabs.tools",
   icon: <Construction />,
   to: "/tools",
   value: "tools",
   resize: true,
-}, {
+}
+const scanner: ITab = {
   i18Key: "tabs.scanner",
   icon: <Scanner />,
   to: "/scanner",
   value: "scanner",
   resize: true,
-}, {
+}
+const doc: ITab = {
   i18Key: "tabs.doc",
   icon: <Article />,
   to: "/doc",
   value: "doc",
   resize: true,
-}, {
+}
+const setting: ITab = {
   i18Key: "tabs.setting",
   icon: <Settings />,
   to: "/setting",
   value: "setting",
   resize: true,
-},] as const
+  textSuffix: <DBChip />
+}
+function BtnTest() {
+  return <Chip label={<strong>999</strong>} deleteIcon={<Add />} onDelete={e => {
+    e.preventDefault()
+  }} />
+}
+function DBChip() {
+  const { name } = useDBMeta()
+  return <Chip color="success" label={name} />
+}
 
 const links = [{
   i18Key: "social.paypal",
@@ -76,60 +103,53 @@ export default function Header(props) {
     <HeaderContent {...props} />
   </Suspense>
 }
+
+const maincontent = [artifacts, weapons, characters, tools, scanner, doc, setting] as const
 function HeaderContent({ anchor }) {
   const theme = useTheme();
-  const isLarge = useMediaQuery(theme.breakpoints.up('lg'));
+  const isXL = useMediaQuery(theme.breakpoints.up('xl'));
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const { name } = useDBMeta()
 
   const { t } = useTranslation("ui")
 
   const { params: { currentTab } } = useMatch({ path: "/:currentTab", end: false }) ?? { params: { currentTab: "" } };
   if (isMobile) return <MobileHeader anchor={anchor} currentTab={currentTab} />
-  return <AppBar position="static" sx={{ bgcolor: "#343a40", display: "flex", flexWrap: "nowrap" }} elevation={0} id={anchor} >
-    <Tabs
-      value={currentTab}
-      variant="scrollable"
-      scrollButtons="auto"
+  return <Box>
+    <AppBar position="static" sx={{ bgcolor: "#343a40", display: "flex", flexWrap: "nowrap" }} elevation={0} id={anchor} >
+      <Tabs
+        value={currentTab}
 
-      sx={{
-        "& .MuiTab-root": {
-          px: 1,
-          flexDirection: "row",
-          minWidth: 40,
-          minHeight: "auto",
-        },
-        "& .MuiTab-root:hover": {
-          transition: "background-color 0.5s ease",
-          backgroundColor: "rgba(255,255,255,0.1)"
-        },
-        "& .MuiTab-root > .MuiTab-iconWrapper": {
-          mb: 0,
-          mr: 0.5
-        },
-      }}
-    >
-      <Tab value="" component={RouterLink} to="/" label={<Typography variant="h6" sx={{ px: 1 }}>
-        <Trans t={t} i18nKey="pageTitle">Genshin Optimizer</Trans>
-      </Typography>} />
-      {content.map(({ i18Key, value, to, icon, resize }) => <Tab key={value} value={value} component={RouterLink} to={to} icon={icon} iconPosition="start" label={(isLarge || !resize) && t(i18Key)} />)}
-      <Box display="flex" alignItems="center">
-        <Chip color="success" label={name} />
-      </Box>
+        sx={{
+          "& .MuiTab-root": {
+            p: 1,
+            minWidth: "auto",
+            minHeight: "auto",
+          },
+          "& .MuiTab-root:hover": {
+            transition: "background-color 0.5s ease",
+            backgroundColor: "rgba(255,255,255,0.1)"
+          },
+        }}
+      >
+        <Tab value="" component={RouterLink} to="/" label={<Typography variant="h6" sx={{ px: 1 }}>
+          <Trans t={t} i18nKey="pageTitle">Genshin Optimizer</Trans>
+        </Typography>} />
+        {maincontent.map(({ i18Key, value, to, icon, resize, textSuffix }) => <Tab key={value} value={value} component={RouterLink} to={to} icon={icon} iconPosition="start" label={(isXL || textSuffix) ? <Box display="flex" gap={1} alignItems="center">{(isXL) && <span>{t(i18Key)}</span>}{textSuffix}</Box> : undefined} />)}
 
-      <Box flexGrow={1} />
-      {links.map(({ i18Key, href, label, icon }) => <Tab key={label} component="a" href={href} target="_blank" icon={icon} iconPosition="start" onClick={e => ReactGA.outboundLink({ label }, () => { })} label={isLarge && t(i18Key)} />)}
-    </Tabs>
-  </AppBar>
+        <Box flexGrow={1} />
+        {links.map(({ i18Key, href, label, icon }) => <Tab key={label} component="a" href={href} target="_blank" icon={icon} iconPosition="start" onClick={e => ReactGA.outboundLink({ label }, () => { })} label={isXL ? t(i18Key) : undefined} />)}
+      </Tabs>
+    </AppBar>
+  </Box>
 }
+
+const mobileContent = [artifacts, weapons, characters, tools, scanner, doc, setting] as const
 function MobileHeader({ anchor, currentTab }) {
-  const { name } = useDBMeta()
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
 
   const { t } = useTranslation("ui")
   return <>
@@ -147,14 +167,11 @@ function MobileHeader({ anchor, currentTab }) {
           <ListItemButton key="home" component={RouterLink} to={'/'} selected={currentTab === ""} disabled={currentTab === ""} onClick={handleDrawerToggle} >
             <ListItemText>{t("pageTitle")}</ListItemText>
           </ListItemButton >
-          {content.map(({ i18Key, value, to, icon }) =>
+          {mobileContent.map(({ i18Key, value, to, icon, textSuffix: extra }) =>
             <ListItemButton key={value} component={RouterLink} to={to} selected={currentTab === value} disabled={currentTab === value} onClick={handleDrawerToggle} >
               <ListItemIcon>{icon}</ListItemIcon>
-              <ListItemText>{t(i18Key)}</ListItemText>
+              <ListItemText><Box display="flex" gap={1} alignItems="center">{t(i18Key)}{extra}</Box></ListItemText>
             </ListItemButton >)}
-          <Box display="flex" justifyContent="center">
-            <Chip color="success" label={name} />
-          </Box>
         </List>
         <Divider />
         <List>
