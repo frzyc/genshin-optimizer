@@ -41,10 +41,10 @@ export const datamine = {
     wheelDmg: skillParam_gen.skill[s++],
     dance1Dmg: skillParam_gen.skill[s++],
     dance2Dmg: skillParam_gen.skill[s++],
-    pirouetteDuration: skillParam_gen.skill[s++][0],
-    lunarPrayerDuration: skillParam_gen.skill[s++][0],
     tranquilityAuraDuration: skillParam_gen.skill[s++][0],
     cd: skillParam_gen.skill[s++][0],
+    lunarPrayerDuration: skillParam_gen.skill[s++][0],
+    pirouetteDuration: skillParam_gen.skill[s++][0],
   },
   burst: {
     skillDmg: skillParam_gen.burst[b++],

@@ -8,12 +8,13 @@ import { DBLocalStorage, SandboxStorage } from "./DBStorage"
 import { IGO, IGOOD } from "./exim"
 
 const dbStorage = new DBLocalStorage(localStorage)
-let database = new ArtCharDatabase(dbStorage)
+const dbIndex = 1;
+let database = new ArtCharDatabase(dbIndex, dbStorage)
 
 describe("Database", () => {
   beforeEach(() => {
     dbStorage.clear()
-    database = new ArtCharDatabase(dbStorage)
+    database = new ArtCharDatabase(dbIndex, dbStorage)
   })
 
   test("Support roundtrip import-export", async () => {
@@ -37,7 +38,7 @@ describe("Database", () => {
     database.arts.set(art2id, { location: "Amber" })
     database.weapons.set(amberWeaponid, { location: "Amber" })
 
-    const newDB = new ArtCharDatabase(new SandboxStorage())
+    const newDB = new ArtCharDatabase(dbIndex, new SandboxStorage())
     const good = database.exportGOOD()
     newDB.importGOOD(good, false, false)!
     expect(database.storage.entries.filter(([k]) => k.startsWith("weapon_") || k.startsWith("character_") || k.startsWith("artifact_")))
@@ -52,7 +53,7 @@ describe("Database", () => {
     function tryStorage(setup: (storage: Storage) => void, verify: (storage: Storage) => void = () => { }) {
       localStorage.clear()
       setup(localStorage)
-      new ArtCharDatabase(dbStorage)
+      new ArtCharDatabase(dbIndex, dbStorage)
       verify(localStorage)
     }
 

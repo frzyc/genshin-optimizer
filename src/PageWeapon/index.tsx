@@ -16,6 +16,7 @@ import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
 import { allRarities, WeaponKey } from '../Types/consts';
+import { handleMultiSelect } from '../Util/MultiSelect';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import { weaponFilterConfigs, weaponSortConfigs, weaponSortMap } from '../Util/WeaponSort';
@@ -29,7 +30,7 @@ const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10 - 1, sm: 12 - 1, md: 24 - 1, lg: 24 - 1, xl: 24 - 1 }
 
 const sortKeys = Object.keys(weaponSortMap)
-
+const rarityHandler = handleMultiSelect([...allRarities])
 export default function PageWeapon() {
   const { t } = useTranslation(["page_weapon", "ui", "weaponNames_gen"])
   const { database } = useContext(DatabaseContext)
@@ -130,8 +131,8 @@ export default function PageWeapon() {
           <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => database.displayWeapon.set({ weaponType })} value={weaponType} size="small" />
         </Grid>
         <Grid item>
-          <SolidToggleButtonGroup sx={{ height: "100%" }} onChange={(e, newVal) => database.displayWeapon.set({ rarity: newVal })} value={rarity} size="small">
-            {allRarities.map(star => <ToggleButton key={star} value={star}><Box display="flex" gap={1}><strong>{star}</strong><StarsDisplay stars={1} /></Box></ToggleButton>)}
+          <SolidToggleButtonGroup sx={{ height: "100%" }} value={rarity} size="small">
+            {allRarities.map(star => <ToggleButton key={star} value={star} onClick={() => database.displayWeapon.set({ rarity: rarityHandler(rarity, star) })}><Box display="flex" gap={1}><strong>{star}</strong><StarsDisplay stars={1} /></Box></ToggleButton>)}
           </SolidToggleButtonGroup>
         </Grid>
         <Grid item flexGrow={1}>

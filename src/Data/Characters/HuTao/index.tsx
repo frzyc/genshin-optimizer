@@ -185,7 +185,7 @@ const sheet: ICharacterSheet = {
       fields: [{
         node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.2`) })
       }, {
-        node: infoMut(dmgFormulas.skill.dmgC2, { name: ct.chg("constellation2.skillParams.2") }),
+        node: infoMut(dmgFormulas.skill.dmgC2, { name: ct.chg("skill.skillParams.2"), textSuffix: "(C2)" }),
       }, {
         text: ct.chg("skill.skillParams.3"),
         value: datamine.skill.bloodBlossomDuration,

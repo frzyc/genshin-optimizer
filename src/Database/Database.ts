@@ -38,12 +38,12 @@ export class ArtCharDatabase {
   dbIndex: number
   dbVer: number
 
-  constructor(storage: DBStorage) {
+  constructor(dbIndex: 1 | 2 | 3 | 4, storage: DBStorage) {
     this.storage = storage
 
     migrate(storage)
     // Transfer non DataManager/DataEntry data from storage
-    this.dbIndex = storage.getDBIndex()
+    this.dbIndex = dbIndex
     this.dbVer = storage.getDBVersion()
     this.storage.setDBVersion(this.dbVer)
     this.storage.setDBIndex(this.dbIndex as 1 | 2 | 3 | 4)

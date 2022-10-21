@@ -42,12 +42,13 @@ export default function LocationFilterAutocomplete({ location, setLocation }: { 
     key: "Inventory",
     label: t`artifact:filterLocation.inventory`
   },
-  ...locationCharacterKeys.map(v => ({ key: v, label: toText(v), favorite: isFavorite(v) }))
+  ...locationCharacterKeys.filter(lck => database.chars.get(database.chars.LocationToCharacterKey(lck)))
+    .map(v => ({ key: v, label: toText(v), favorite: isFavorite(v) }))
     .sort((a, b) => {
       if (a.favorite && !b.favorite) return -1
       if (!a.favorite && b.favorite) return 1
       return a.label.localeCompare(b.label)
     })
-  ], [t, toText, isFavorite])
+  ], [t, toText, isFavorite, database])
   return <Suspense fallback={<Skeleton variant="text" width={100} />}><GeneralAutocomplete size="small" options={values} valueKey={location} onChange={setLocation} toImg={toImg} clearKey="" label={t`artifact:filterLocation.location`} /></Suspense>
 }

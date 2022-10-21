@@ -12,7 +12,7 @@ import { compactArtifacts, dynamicData } from './foreground';
 describe.skip("Worker Perf", () => {
   test("Test", async () => {
 
-    const database = new ArtCharDatabase(new DBLocalStorage(localStorage))
+    const database = new ArtCharDatabase(1, new DBLocalStorage(localStorage))
     database.importGOOD(data1 as any, false, false)!
 
     const teamData = (await getTeamData(database, "Sucrose"))!.teamData

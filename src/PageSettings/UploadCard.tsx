@@ -41,7 +41,7 @@ export default function UploadCard({ index, onReplace }: { index: number, onRepl
       // Parse as GOOD format
       const copyStorage = new SandboxStorage()
       copyStorage.copyFrom(database.storage)
-      const importedDatabase = new ArtCharDatabase(copyStorage)
+      const importedDatabase = new ArtCharDatabase((index + 1) as 1 | 2 | 3 | 4, copyStorage)
       const importResult = importedDatabase.importGOOD(parsed, keepNotInImport, ignoreDups)
       if (!importResult) {
         setErrorMsg("uploadCard.error.goInvalid")
@@ -52,7 +52,7 @@ export default function UploadCard({ index, onReplace }: { index: number, onRepl
     }
     setErrorMsg("uploadCard.error.unknown")
     return
-  }, [data, database, keepNotInImport, ignoreDups]) ?? {}
+  }, [data, database, keepNotInImport, ignoreDups, index]) ?? {}
   const reset = () => {
     setdata("")
     setfilename("")
