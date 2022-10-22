@@ -59,7 +59,6 @@
         "builds": [],
         "buildDate": 0,
         "maxBuildsToShow": 2,
-        "plotBase": "",
         "compareBuild": true,
         "levelLow": 0,
         "levelHigh": 20

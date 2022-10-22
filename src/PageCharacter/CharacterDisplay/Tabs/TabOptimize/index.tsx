@@ -131,7 +131,7 @@ export default function TabBuild() {
     const minimum = [...valueFilter.map(x => x.minimum), -Infinity]
     const status: Omit<BuildStatus, "type"> = { tested: 0, failed: 0, skipped: 0, total: NaN, startTime: performance.now() }
     if (plotBase) {
-      unoptimizedNodes.push(input.total[plotBase])
+      unoptimizedNodes.push(objPathValue(workerData.display ?? {}, plotBase))
       minimum.push(-Infinity)
     }
 
@@ -270,7 +270,7 @@ export default function TabBuild() {
     } else {
       if (plotBase) {
         const plotData = mergePlot(results.map(x => x.plotData!))
-        const plotBaseNode = input.total[plotBase] as NumNode
+        const plotBaseNode = objPathValue(workerData.display ?? {}, plotBase) as NumNode
         let data = Object.values(plotData)
         if (targetNode.info?.unit === "%")
           data = data.map(({ value, plot }) => ({ value: value * 100, plot })) as Build[]
