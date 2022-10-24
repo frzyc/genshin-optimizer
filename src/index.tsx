@@ -18,6 +18,7 @@ root.render(<React.StrictMode><App /></React.StrictMode>);
 
 // Detect a storage event, and unmount the main page to show a newTab event.
 function handleStorage(this: Window, event: StorageEvent) {
+  if (event.key === "i18next.translate.boo") return
   if (mode === "newtab") return
   mode = "newtab"
   this.document.title = "ERROR"
