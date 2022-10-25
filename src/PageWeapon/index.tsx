@@ -1,7 +1,6 @@
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Add } from '@mui/icons-material';
 import { Box, Button, CardContent, Grid, Pagination, Skeleton, TextField, ToggleButton, Typography } from '@mui/material';
-import { ChangeEvent, lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import React, { ChangeEvent, lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import CardDark from '../Components/Card/CardDark';
@@ -9,7 +8,6 @@ import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import SortByButton from '../Components/SortByButton';
 import { StarsDisplay } from '../Components/StarDisplay';
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
-import WeaponSelectionModal from '../Components/Weapon/WeaponSelectionModal';
 import WeaponSheet from '../Data/Weapons/WeaponSheet';
 import { DatabaseContext } from '../Database/Database';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
@@ -22,12 +20,12 @@ import { clamp } from '../Util/Util';
 import { weaponFilterConfigs, weaponSortConfigs, weaponSortMap } from '../Util/WeaponSort';
 import { initialWeapon } from '../Util/WeaponUtil';
 import WeaponCard from './WeaponCard';
-
+const WeaponSelectionModal = React.lazy(() => import('../Components/Weapon/WeaponSelectionModal'))
 // Lazy load the weapon display
 const WeaponEditor = lazy(() => import('./WeaponEditor'))
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
-const numToShowMap = { xs: 10 - 1, sm: 12 - 1, md: 24 - 1, lg: 24 - 1, xl: 24 - 1 }
+const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
 
 const sortKeys = Object.keys(weaponSortMap)
 const rarityHandler = handleMultiSelect([...allRarities])
@@ -116,6 +114,9 @@ export default function PageWeapon() {
   }, [database, editWeaponId, resetEditWeapon])
 
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
+    <Suspense fallback={false}>
+      <WeaponSelectionModal show={newWeaponModalShow} onHide={() => setnewWeaponModalShow(false)} onSelect={newWeapon} />
+    </Suspense>
     {/* Editor/character detail display */}
     <Suspense fallback={false}>
       <WeaponEditor
@@ -165,26 +166,8 @@ export default function PageWeapon() {
       </Grid>
     </CardDark>
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 500 }} />}>
+      <Button fullWidth onClick={() => setnewWeaponModalShow(true)} color="info" startIcon={<Add />} >{t("page_weapon:addWeapon")}</Button>
       <Grid container spacing={1} columns={columns}>
-        <Grid item xs={1}>
-          <CardDark sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
-            <CardContent>
-              <Typography sx={{ textAlign: "center" }}>{t("page_weapon:addWeapon")}</Typography>
-            </CardContent>
-            <WeaponSelectionModal show={newWeaponModalShow} onHide={() => setnewWeaponModalShow(false)} onSelect={newWeapon} />
-            <Box sx={{
-              flexGrow: 1,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-            >
-              <Button onClick={() => setnewWeaponModalShow(true)} color="info" sx={{ borderRadius: "1em" }}>
-                <Typography variant="h1"><FontAwesomeIcon icon={faPlus} className="fa-fw" /></Typography>
-              </Button>
-            </Box>
-          </CardDark>
-        </Grid>
         {weaponIdsToShow.map(weaponId =>
           <Grid item key={weaponId} xs={1} >
             <WeaponCard

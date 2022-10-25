@@ -111,5 +111,6 @@
     "set": "Artifact Set"
   },
   "substat_one": "{{count}} substat",
-  "substat_other": "{{count}} substats"
+  "substat_other": "{{count}} substats",
+  "addNew": "Add New Artifact"
 }

@@ -1,6 +1,6 @@
 import { Add, CheckBox, CheckBoxOutlineBlank, Close, KeyboardArrowDown, KeyboardArrowUp, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp, Replay, Settings } from "@mui/icons-material";
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Typography } from "@mui/material";
-import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import React, { Suspense, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import ArtifactCardPico from "../../../../../Components/Artifact/ArtifactCardPico";
 import CardDark from "../../../../../Components/Card/CardDark";
@@ -18,8 +18,8 @@ import useCharacter from "../../../../../ReactHooks/useCharacter";
 import useCharSelectionCallback from "../../../../../ReactHooks/useCharSelectionCallback";
 import { ICachedCharacter } from "../../../../../Types/character";
 import { CharacterKey } from "../../../../../Types/consts";
-import { CharacterSelectionModal } from "../../../../CharacterSelectionModal";
 import useBuildSetting from "../useBuildSetting";
+const CharacterSelectionModal = React.lazy(() => import('../../../../CharacterSelectionModal'))
 
 export default function UseEquipped({ disabled = false }: { disabled?: boolean }) {
   const { t } = useTranslation("page_character_optimize")
@@ -173,7 +173,9 @@ function NewItem({ onAdd, list }: { onAdd: (ck: CharacterKey) => void, list: Cha
     return !list.includes(char.key)
   }, [list])
   return <>
-    <CharacterSelectionModal show={show} onHide={onClose} onSelect={onAdd} filter={filter} />
+    <Suspense fallback={false}>
+      <CharacterSelectionModal show={show} onHide={onClose} onSelect={onAdd} filter={filter} />
+    </Suspense>
     <Button fullWidth sx={{ height: itemSize }} color="info" onClick={onOpen} startIcon={<Add />} >
       <Trans t={t} i18nKey="useEquipped.modal.add">Add character to list</Trans>
     </Button>

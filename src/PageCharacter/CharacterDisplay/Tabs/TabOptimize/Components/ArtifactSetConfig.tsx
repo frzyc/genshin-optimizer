@@ -183,9 +183,8 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
   }, [sheet.setEffects, allow4, slots])
   const exclude2 = setExclusionSet.includes(2)
   const exclude4 = setExclusionSet.includes(4)
-  if (slots < 2) return null
   return <Grid item key={setKey} xs={1}>
-    <CardLight sx={{ height: "100%" }}>
+    <CardLight sx={{ height: "100%", opacity: slots < 2 ? "50%" : undefined }}>
       <Box className={`grad-${sheet.rarity[0]}star`} width="100%" sx={{ display: "flex" }} >
         <Box component="img" src={sheet.defIconSrc} sx={{ height: 100, width: "auto", mx: -1 }} />
         <Box sx={{ flexGrow: 1, px: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
