@@ -360,7 +360,7 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
     node.name = <><ColorText color={variant}>{prefixDisplay}{name}</ColorText>{sourceDisplay}</>
 
     if (formula)
-      node.assignment = <div id="formula">{node.name} {node.valueDisplay} = {formula}</div>
+      node.assignment = <div className="formula">{node.name} {node.valueDisplay} = {formula}</div>
   }
 }
 function createFormulaComponent(node: ContextNodeDisplay): Displayable {
