@@ -12,14 +12,20 @@
         "tooltip": "게임내 성유물을 자동으로 읽어주는 스캐너들입니다"
       },
       "kqm": {
+        "title": "KeqingMains",
         "tooltip": "이론을 연구하고 가이드를 제공하는 커뮤니티"
       },
       "devDiscord": {
+        "title": "Genshin Dev 디스코드",
         "tooltip": "원신과 관련된 개발을 하는 사람들의 커뮤니티"
       },
       "good": {
         "title": "GOOD 설명문서",
         "tooltip": "Genshin Open Object Descriptor 설명문서"
+      },
+      "patchNotes": {
+        "title": "Genshin Optimizer 패치 노트",
+        "tooltip": "GO의 패치 노트가 모여 있습니다"
       }
     }
   },

@@ -13,8 +13,10 @@
   "tcGraph": {
     "vs": "최적화 대상과 다음 값을 도식화 :",
     "notSel": "선택되지 않음",
+    "showMinStatThr": "속성의 최소 임계값 표시",
     "downloadData": "데이터 다운로드",
-    "optTarget": "최적화 대상"
+    "optTarget": "최적화 대상",
+    "minStatReqThr": "속성의 최소 요구되는 임계값"
   },
   "levelFilter": "성유물 레벨 필터",
   "useExcluded": {

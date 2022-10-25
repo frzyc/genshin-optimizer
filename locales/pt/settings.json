@@ -21,6 +21,12 @@
   "count": {
     "chars": "Personagens:",
     "arts": "Artefatos:",
-    "weapons": "Armas:"
+    "weapons": "Armas:",
+    "total": "Total:",
+    "new": "Novo:",
+    "updated": "Atualizado:",
+    "removed": "Removido:",
+    "unchanged": "Inalterado:",
+    "invalid": "inválido:"
   }
 }

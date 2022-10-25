@@ -84,7 +84,8 @@
   "exclusion": {
     "any": "모두",
     "excluded": "제외됨",
-    "included": "포함됨"
+    "included": "포함됨",
+    "exclusion": "제외"
   },
   "sortMap": {
     "quality": "품질",

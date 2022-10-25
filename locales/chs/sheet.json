@@ -18,7 +18,8 @@
     "normalOrCharged": "普通攻击、重击命中敌人",
     "skillOrBurst": "元素战技或元素爆发命中敌人",
     "crit": "命中敌人并造成暴击",
-    "normalChargedOrPlunging": "普通/蓄力/下落攻击命中敌人"
+    "normalChargedOrPlunging": "普通/蓄力/下落攻击命中敌人",
+    "dendro": "<dendro>草元素伤害</dendro>击中敌人"
   },
   "eleAbsor": "元素转化",
   "absorDot": "元素转化持续伤害",
@@ -142,5 +143,6 @@
   "bonusScaling": {
     "skill_": "元素战技额外倍率"
   },
-  "energy": "能量"
+  "energy": "能量",
+  "teamBuff": "队伍加成"
 }

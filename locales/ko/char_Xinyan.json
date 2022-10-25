@@ -23,7 +23,7 @@
     "shield": "발동시 3급: 댄스리듬 생성"
   },
   "c4": {
-    "swingHit": "<pyro>휘두르기 피해</pyro>가 적 명중"
+    "swingHit": "<pyro>휘두르기 피해</pyro>가 대상에게 명중"
   },
   "c6": {
     "duringCharge": "강공격시"

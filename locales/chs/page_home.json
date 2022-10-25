@@ -22,6 +22,10 @@
       "good": {
         "title": "GOOD文档",
         "tooltip": "Genshin Open Object Descriptor文档"
+      },
+      "patchNotes": {
+        "title": "Genshin Optimizer更新日志",
+        "tooltip": "所有更新日志"
       }
     }
   },

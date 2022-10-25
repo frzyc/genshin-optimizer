@@ -3,8 +3,9 @@
   "tabs": {
     "overview": "기본정보",
     "talent": "특성 및 돌파",
-    "teambuffs": "팀 버프",
-    "optimize": "최적화"
+    "teambuffs": "파티 버프",
+    "optimize": "최적화",
+    "theorycraft": "이론 연구실"
   },
   "formulas": "식",
   "calculations": "계산",
@@ -28,6 +29,11 @@
   "characterName": "캐릭터 이름",
   "teammate": "파티원 {{count}}",
   "none": "없음",
+  "multiTarget": {
+    "title": "다중 최적화 목표 설정",
+    "addNewTarget": "새로운 대상 추가",
+    "addNewMTarget": "새로운 다중 최적화 목표 추가"
+  },
   "addStats": {
     "title": "적 설정 및 스탯 조정"
   },
@@ -38,7 +44,8 @@
       "mid": "부옵션 중간값 사용"
     },
     "maxTotalRolls": "\"정상적인\" 빌드는 최대 45회 강화만 가질 수 있습니다.",
-    "maxRolls": "부옵션은 최대 30회 붙을 수 있습니다."
+    "maxRolls": "부옵션은 최대 30회 붙을 수 있습니다.",
+    "maxRollsMain": "하나 이상의 주옵션이 같은 항목을 가지기 때문에, 이 부옵션은 최대 {{value}}회만 가능합니다."
   },
   "tabTeambuff": {
     "team_reso": "파티 원소 공명",

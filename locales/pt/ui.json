@@ -3,7 +3,9 @@
   "tabs": {
     "artifacts": "Artefatos",
     "characters": "Personagens",
-    "tools": "Ferramentas"
+    "tools": "Ferramentas",
+    "weapons": "Armas",
+    "doc": "Docs"
   },
   "social": {
     "paypal": "Paypal",
