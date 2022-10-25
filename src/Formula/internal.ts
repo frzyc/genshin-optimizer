@@ -1,13 +1,21 @@
-import { crawlObject, deepClone, objPathValue } from "../Util/Util"
 import { AnyNode, Base, NodeData, NumNode, StrNode } from "./type"
 import { constant } from "./utils"
 
 export function deepNodeClone<T extends NodeData<NumNode | StrNode | undefined>>(data: T): T {
-  const result = deepClone(data)
-  // Restore `Info`
-  crawlObject(result, [], n => n.operation, (node, path) =>
-    node.info = { ...objPathValue(data, path).info })
-  return result
+  const map = new Map()
+  function internal(orig: any) {
+    if (typeof orig !== "object") return orig
+    const old = map.get(orig)
+    if (old) return old
+
+    const cache: any = Array.isArray(orig)
+      ? orig.map(val => internal(val))
+      : Object.fromEntries(Object.entries(orig).map(([key, val]) =>
+        [key, key === "info" ? val : internal(val)]))
+    map.set(orig, cache)
+    return cache
+  }
+  return internal(data)
 }
 
 export function forEachNodes<T extends Base<T> = AnyNode>(formulas: T[], topDown: (formula: T) => void, bottomUp: (formula: T) => void): void {
