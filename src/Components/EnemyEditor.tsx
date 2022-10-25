@@ -30,7 +30,7 @@ export function EnemyExpandCard() {
       <Typography>DEF Red. {nodeVStr(eDefRed)}</Typography>
       <Typography>DEF Ignore {nodeVStr(eDefIgn)}</Typography>
       <Box flexGrow={1} display="flex" justifyContent="flex-end" gap={1}>
-        <Button size="small" color="error" sx={{ minWidth: 0, p: 0.5 }} onClick={onReset}><Replay /> RESET</Button>
+        <Button size="small" color="error" sx={{ }} onClick={onReset} startIcon={<Replay />}>RESET</Button>
         <ExpandButton
           expand={expanded}
           onClick={toggle}
