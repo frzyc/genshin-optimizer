@@ -78,7 +78,7 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
       </Box>}
     </AccordionSummary>
     <AccordionDetails >
-      {node.formulas.map((subform, i) => <Typography key={i}>{subform}</Typography>)}
+      {node.formulas.map((subform, i) => <Typography key={i} component="div">{subform}</Typography>)}
     </AccordionDetails>
   </Accordion>
 }
