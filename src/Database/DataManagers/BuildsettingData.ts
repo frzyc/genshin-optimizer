@@ -1,6 +1,6 @@
 import { StatKey } from "../../KeyMap";
 import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Build";
-import { MainStatKey, SubstatKey } from "../../Types/artifact";
+import { MainStatKey } from "../../Types/artifact";
 import { allCharacterKeys, ArtifactSetKey, CharacterKey } from "../../Types/consts";
 import { deepClone } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
@@ -24,7 +24,7 @@ export interface BuildSetting {
   useEquippedArts: boolean,
   allowPartial: boolean,
   maxBuildsToShow: number,
-  plotBase: MainStatKey | SubstatKey | "",
+  plotBase?: string[],
   compareBuild: boolean,
   levelLow: number,
   levelHigh: number,
@@ -67,7 +67,7 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, "
     useExcludedArts = !!useExcludedArts
     useEquippedArts = !!useEquippedArts
     if (!maxBuildsToShowList.includes(maxBuildsToShow)) maxBuildsToShow = maxBuildsToShowDefault
-    if (typeof plotBase !== "string") plotBase = ""
+    if (!plotBase || !Array.isArray(plotBase)) plotBase = undefined
     if (compareBuild === undefined) compareBuild = false
     if (levelLow === undefined) levelLow = 0
     if (levelHigh === undefined) levelHigh = 20
@@ -108,7 +108,7 @@ const initialBuildSettings = (): BuildSetting => ({
   useEquippedArts: false,
   allowPartial: false,
   maxBuildsToShow: 5,
-  plotBase: "",
+  plotBase: undefined,
   compareBuild: true,
   levelLow: 0,
   levelHigh: 20,
