@@ -125,7 +125,13 @@
         "count": {
             "chars": "Personagens:",
             "arts": "Artefatos:",
-            "weapons": "Armas:"
+            "weapons": "Armas:",
+            "total": "Total:",
+            "new": "Novo:",
+            "updated": "Atualizado:",
+            "removed": "Removido:",
+            "unchanged": "Inalterado:",
+            "invalid": "inválido:"
         }
     },
     "ui": {
@@ -133,7 +139,9 @@
         "tabs": {
             "artifacts": "Artefatos",
             "characters": "Personagens",
-            "tools": "Ferramentas"
+            "tools": "Ferramentas",
+            "weapons": "Armas",
+            "doc": "Docs"
         },
         "social": {
             "paypal": "Paypal",
@@ -200,7 +208,12 @@
         "lessPercentHP": "< {{percent}}% VIDA",
         "hitOp": {
             "normal": "Acertos de Ataques Normais nos oponentes",
-            "charged": "Acertos de Ataques Carregados nos oponentes"
+            "charged": "Acertos de Ataques Carregados nos oponentes",
+            "anemo": "<anemo>Dano Anemo</anemo> acerta os oponentes",
+            "hydro": "<hydro>Dano Hydro</hydro> acerta os oponentes",
+            "cryo": "<cryo>Dano Cryo</cryo> acerta os oponentes",
+            "pyro": "<pyro>Dano Pyro</pyro> acerta os oponentes",
+            "electro": "<electro>Dano Electro</electro> acerta os oponentes"
         },
         "afterUse": {
             "skill": "Após usar a Habilidade Elemental",
@@ -224,5 +237,8 @@
         "a4": {
             "eleDMG": "Bônus de Dano Electro"
         }
+    },
+    "weapon_EverlastingMoonglow": {
+        "name": "Dano de Ataque normal aumentado"
     }
 }

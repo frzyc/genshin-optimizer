@@ -329,7 +329,8 @@
             "normalOrCharged": "普通攻击、重击命中敌人",
             "skillOrBurst": "元素战技或元素爆发命中敌人",
             "crit": "命中敌人并造成暴击",
-            "normalChargedOrPlunging": "普通/蓄力/下落攻击命中敌人"
+            "normalChargedOrPlunging": "普通/蓄力/下落攻击命中敌人",
+            "dendro": "<dendro>草元素伤害</dendro>击中敌人"
         },
         "eleAbsor": "元素转化",
         "absorDot": "元素转化持续伤害",
@@ -453,7 +454,8 @@
         "bonusScaling": {
             "skill_": "元素战技额外倍率"
         },
-        "energy": "能量"
+        "energy": "能量",
+        "teamBuff": "队伍加成"
     },
     "weapon_SongOfBrokenPines": {
         "name": "获得「千年的大乐章·揭旗之歌」效果"
@@ -568,6 +570,10 @@
                 "good": {
                     "title": "GOOD文档",
                     "tooltip": "Genshin Open Object Descriptor文档"
+                },
+                "patchNotes": {
+                    "title": "Genshin Optimizer更新日志",
+                    "tooltip": "所有更新日志"
                 }
             }
         },
@@ -1384,7 +1390,9 @@
     "char_TravelerAnemo": {
         "p1": "风刃伤害",
         "c6": "受到<strong>风息激荡</strong>伤害的目标",
-        "c4": "风涡剑持续期间，受到的伤害降低"
+        "c4": "风涡剑持续期间，受到的伤害降低",
+        "initialEleDmg": "初始切割伤害",
+        "maxEleDmg": "最大切割伤害"
     },
     "char_TravelerElectro": {
         "skill": {
@@ -1429,5 +1437,45 @@
             "2": "关闭新标签页↩️，只留下此标签页🔂，然后刷新页面🔄。"
         },
         "refresh": "刷新页面"
+    },
+    "char_Candace": {
+        "hydroInfusion": "<hydro>单手剑、双手剑、长柄武器水元素附魔</hydro>"
+    },
+    "char_Cyno": {
+        "p1Dmg": "渡荒之雷伤害",
+        "judication": "触发裁定效果后",
+        "burstNormalDmgInc": "启途誓使普通攻击伤害加成",
+        "boltDmgInc": "渡荒之雷伤害加成"
+    },
+    "char_Nilou": {
+        "skill": {
+            "dance1": "剑舞步一段伤害",
+            "dance2": "剑舞步二段伤害",
+            "whirl1": "旋舞步一段伤害",
+            "whirl2": "旋舞步二段伤害",
+            "moon": "水月伤害",
+            "wheel": "水轮伤害"
+        },
+        "passive1": {
+            "underChaliceEffect": "金杯的丰馈状态下",
+            "notDendroHydroTeam": "提示：设置队伍中所有角色的元素类型均为草元素与水元素，可以启动额外的效果",
+            "condName": "处于金杯的丰馈状态下的角色受到<dendro>草元素攻击</dendro>后",
+            "bountifulCores": "绽放反应产生丰穰之核"
+        },
+        "c1": {
+            "moon_dmg_": "水月造成的伤害提升"
+        },
+        "c4": {
+            "condName": "<strong>七域舞步</strong>的翩转状态下的第三段舞步命中敌人后"
+        }
+    },
+    "weapon_MakhairaAquamarine": {
+        "condName": "增益效果产生"
+    },
+    "weapon_WanderingEvenstar": {
+        "condName": "增益效果产生"
+    },
+    "weapon_XiphosMoonlight": {
+        "condName": "增益效果产生"
     }
 }

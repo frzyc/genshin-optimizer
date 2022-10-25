@@ -85,7 +85,8 @@
         "exclusion": {
             "any": "모두",
             "excluded": "제외됨",
-            "included": "포함됨"
+            "included": "포함됨",
+            "exclusion": "제외"
         },
         "sortMap": {
             "quality": "품질",
@@ -311,17 +312,18 @@
             "plunging": "낙하 공격이 대상에게 명중",
             "skill": "원소 전투 스킬이 대상에게 명중",
             "burst": "원소 폭발이 대상에게 명중",
-            "geo": "바위 원소 피해가 적에게 명중",
-            "anemo": "바람 원소 피해가 적에게 명중",
-            "hydro": "물 원소 피해가 적에게 명중",
-            "cryo": "얼음 원소 피해가 적에게 명중",
-            "pyro": "불원소 피해가 적에게 명중",
-            "electro": "번개 원소 피해가 적에게 명중",
+            "geo": "<geo>바위 원소 피해</geo>가 대상에게 명중",
+            "anemo": "<anemo>바람 원소 피해</anemo>가 대상에게 명중",
+            "hydro": "<hydro>물 원소 피해</hydro>가 대상에게 명중",
+            "cryo": "<cryo>얼음 원소 피해</cryo>가 대상에게 명중",
+            "pyro": "<pyro>불 원소 피해</pyro>가 대상에게 명중",
+            "electro": "<electro>번개 원소 피해</electro>가 대상에게 명중",
             "none": "적에게 명중",
-            "normalOrCharged": "일반/강공격이 적에게 명중",
-            "skillOrBurst": "원소 전투 스킬 혹은 원소 폭발이 적에게 명중",
-            "crit": "치명타가 적에게 명중",
-            "normalChargedOrPlunging": "일반/강/낙하 공격이 적에게 명중"
+            "normalOrCharged": "일반/강공격이 대상에게 명중",
+            "skillOrBurst": "원소 전투 스킬 혹은 원소 폭발이 대상에게 명중",
+            "crit": "치명타가 대상에게 명중",
+            "normalChargedOrPlunging": "일반/강/낙하 공격이 대상에게 명중",
+            "dendro": "<dendro>풀 원소 피해</dendro>가 대상에게 명중"
         },
         "eleAbsor": "원소 전환",
         "absorDot": "원소 전환 도트 데미지",
@@ -355,12 +357,16 @@
         "burstCDRed": "원소 폭발 재사용 대기시간 감소",
         "pressCD": "짧은 터치 재사용 대기시간",
         "holdCD": "홀드 재사용 대기시간",
+        "triggerCD": "발동 최소 간격",
+        "eleSwirled": "확산된 원소",
         "incInterRes": "경직 저항력 상승",
         "charges": "사용 횟수",
         "cooldown": "재사용 대기시간",
         "addlCharges": "추가 사용 횟수",
         "activeCharField": "필드 위 캐릭터가 영역내 존재",
         "opponentsField": "영역에 적 존재",
+        "takeDmg": "피해를 받음",
+        "onHit": "공격 명중",
         "infusion": {
             "pyro": "불 원소 부여",
             "cryo": "얼음 원소 부여",
@@ -381,6 +387,7 @@
             "geo": "바위 원소 부착 시간"
         },
         "durationInc": "지속시간 증가",
+        "base": "기본",
         "stacks": "스택",
         "members": "파티원",
         "protectedByShield": "보호막 존재",
@@ -396,9 +403,15 @@
             "geo": "바위원소 피해 흡수량",
             "none": "피해 흡수량"
         },
+        "opponentsDamaged": "대상이 피해를 받음",
         "press": "짧은 터치",
         "hold": "홀드",
         "maxStacks": "최대 스택",
+        "1set": "1세트",
+        "2set": "2세트",
+        "4set": "4세트",
+        "activationStam": "발동 시 소모 스태미나",
+        "stamDrain": "지속 스태미나 소모",
         "talents": {
             "skill": "스킬",
             "burst": "원폭",
@@ -425,7 +438,11 @@
         "elementalReaction": {
             "hydro": "<hydro>물 관련</hydro> 원소 반응 발동",
             "electro": "<electro>번개 관련</electro> 원소 반응 발동"
-        }
+        },
+        "bonusScaling": {
+            "skill_": "원소 전투 스킬 피해 증가량"
+        },
+        "teamBuff": "파티 버프"
     },
     "weapon_SongOfBrokenPines": {
         "name": "천년의 대악장: 깃발의 노래"
@@ -450,7 +467,7 @@
         "afterSprint": "대시 후",
         "afterSkill": "<strong>카미사토류·얼음꽃</strong> 사용 후",
         "afterSprintCryo": "대시 후 <cryo>얼음 원소</cryo> 부착",
-        "staminaRestore": "스태미나 10pt 회복",
+        "staminaRestore": "스태미나 회복",
         "snowflakeDMG": "서리의 관문 피해",
         "dmgBySnowflake": "<strong>카미사토류·멸망의 서리</strong>로 생성된 서리의 관문이 가하는 피해를 받은 대상",
         "afterBurst": "<strong>카미사토류·멸망의 서리</strong> 사용 후",
@@ -530,14 +547,20 @@
                     "tooltip": "게임내 성유물을 자동으로 읽어주는 스캐너들입니다"
                 },
                 "kqm": {
+                    "title": "KeqingMains",
                     "tooltip": "이론을 연구하고 가이드를 제공하는 커뮤니티"
                 },
                 "devDiscord": {
+                    "title": "Genshin Dev 디스코드",
                     "tooltip": "원신과 관련된 개발을 하는 사람들의 커뮤니티"
                 },
                 "good": {
                     "title": "GOOD 설명문서",
                     "tooltip": "Genshin Open Object Descriptor 설명문서"
+                },
+                "patchNotes": {
+                    "title": "Genshin Optimizer 패치 노트",
+                    "tooltip": "GO의 패치 노트가 모여 있습니다"
                 }
             }
         },
@@ -603,7 +626,7 @@
         "maxPyroShield": "최대 불원소 피해 흡수량"
     },
     "weapon_CinnabarSpindle": {
-        "name": "원소 전추 스킬 피해량 증가"
+        "name": "원소 전투 스킬 피해량 증가"
     },
     "weapon_ElegyForTheEnd": {
         "condName": "천년의 대악장: 이별의 노래"
@@ -706,10 +729,10 @@
         "additionalATK": "추가 공격력 증가",
         "additionalATKRatio_": "추가 공격력 증가 비율",
         "c4DMG": "열정 과부화 피해",
-        "c6PyroInfusion": "<pyro>한손검, 양손검, 장병기 무기 캐릭터에 불 원소 부여 효과"
+        "c6PyroInfusion": "<pyro>한손검, 양손검, 장병기 캐릭터에 불 원소 부여 효과"
     },
     "char_Chongyun": {
-        "infusion": "한손검, 대검, 장병기를 사용하는 캐릭터에 얼음 원소 부여 효과",
+        "infusion": "한손검, 양손검, 장병기 캐릭터에 얼음 원소 부여 효과",
         "passive2": "영도 피해",
         "asc4Cond": "영도에 피격된 적",
         "constellation1": "얼음 칼날 피해",
@@ -907,7 +930,7 @@
             "shield": "발동시 3급: 댄스리듬 생성"
         },
         "c4": {
-            "swingHit": "<pyro>휘두르기 피해</pyro>가 적 명중"
+            "swingHit": "<pyro>휘두르기 피해</pyro>가 대상에게 명중"
         },
         "c6": {
             "duringCharge": "강공격시"
@@ -1008,7 +1031,7 @@
         "cryoAffectedDmg": "<cryo>얼음</cryo> 원소의 영향을 받는 적에게 주는 피해량"
     },
     "weapon_FerrousShadow": {
-        "condName": "HP가 다음 미만일때",
+        "condName": "HP 조건 만족시",
         "resistance": "강공격 발동 시 경직 저항"
     },
     "weapon_FreedomSworn": {
@@ -1088,6 +1111,7 @@
         "condName": "비뢰의 문장"
     },
     "weapon_VortexVanquisher": {
+        "shield": "보호막",
         "atkEffInc": "공격력 증가효과 증가"
     },
     "artifact_EchoesOfAnOffering": {
@@ -1143,8 +1167,9 @@
         "tabs": {
             "overview": "기본정보",
             "talent": "특성 및 돌파",
-            "teambuffs": "팀 버프",
-            "optimize": "최적화"
+            "teambuffs": "파티 버프",
+            "optimize": "최적화",
+            "theorycraft": "이론 연구실"
         },
         "formulas": "식",
         "calculations": "계산",
@@ -1168,6 +1193,11 @@
         "characterName": "캐릭터 이름",
         "teammate": "파티원 {{count}}",
         "none": "없음",
+        "multiTarget": {
+            "title": "다중 최적화 목표 설정",
+            "addNewTarget": "새로운 대상 추가",
+            "addNewMTarget": "새로운 다중 최적화 목표 추가"
+        },
         "addStats": {
             "title": "적 설정 및 스탯 조정"
         },
@@ -1178,7 +1208,8 @@
                 "mid": "부옵션 중간값 사용"
             },
             "maxTotalRolls": "\"정상적인\" 빌드는 최대 45회 강화만 가질 수 있습니다.",
-            "maxRolls": "부옵션은 최대 30회 붙을 수 있습니다."
+            "maxRolls": "부옵션은 최대 30회 붙을 수 있습니다.",
+            "maxRollsMain": "하나 이상의 주옵션이 같은 항목을 가지기 때문에, 이 부옵션은 최대 {{value}}회만 가능합니다."
         },
         "tabTeambuff": {
             "team_reso": "파티 원소 공명",
@@ -1194,7 +1225,7 @@
         "addWeapon": "새 무기 추가"
     },
     "weapon_AquaSimulacra": {
-        "condName": "근처에 있는 적"
+        "condName": "주변에 적 존재"
     },
     "weapon_FadingTwilight": {
         "states": {
@@ -1243,8 +1274,10 @@
         "tcGraph": {
             "vs": "최적화 대상과 다음 값을 도식화 :",
             "notSel": "선택되지 않음",
+            "showMinStatThr": "속성의 최소 임계값 표시",
             "downloadData": "데이터 다운로드",
-            "optTarget": "최적화 대상"
+            "optTarget": "최적화 대상",
+            "minStatReqThr": "속성의 최소 요구되는 임계값"
         },
         "levelFilter": "성유물 레벨 필터",
         "useExcluded": {
@@ -1325,7 +1358,9 @@
     "char_TravelerAnemo": {
         "p1": "바람의 칼날 피해량",
         "c6": "<strong>격동의 바람</strong>에 피격된 적",
-        "c4": "시전하는 동안 피해 감소량"
+        "c4": "시전하는 동안 피해 감소량",
+        "initialEleDmg": "획득된 원소의 초기 절단 피해",
+        "maxEleDmg": "획득된 원소의 최대 절단 피해"
     },
     "char_TravelerElectro": {
         "skill": {
@@ -1370,5 +1405,45 @@
             "2": "새 탭을 닫고↩️, 이 탭만 열려 있는지 반드시 확인 한 후🔂, 이 탭을 새로고침 하세요🔄."
         },
         "refresh": "새로고침"
+    },
+    "char_Candace": {
+        "hydroInfusion": "<hydro>한손검, 양손검, 장병기 캐릭터에 물 원소 부여 효과</hydro>"
+    },
+    "char_Cyno": {
+        "p1Dmg": "기근의 번개 피해",
+        "judication": "「판정」 효과를 발동시",
+        "burstNormalDmgInc": "길을 여는 사자 상태에서의 일반 공격 증가",
+        "boltDmgInc": "기근의 번개 피해 증가"
+    },
+    "char_Nilou": {
+        "skill": {
+            "dance1": "검의 춤 1단 피해",
+            "dance2": "검의 춤 2단 피해",
+            "whirl1": "선회의 춤 1단 피해",
+            "whirl2": "선회의 춤 2단 피해",
+            "moon": "물의 달 피해",
+            "wheel": "수륜 피해"
+        },
+        "passive1": {
+            "underChaliceEffect": "황금잔의 선물 효과 부여",
+            "notDendroHydroTeam": "힌트: 부가적인 조건과 효과를 보려면 파티를 풀과 물 캐릭터로만 구성하세요",
+            "condName": "황금잔의 선물 효과를 부여받은 캐릭터가 <dendro>풀 원소 공격</dendro>을 받음",
+            "bountifulCores": "개화 반응 발동시 풍요의 핵 생성"
+        },
+        "c1": {
+            "moon_dmg_": "물의 달 피해 증가"
+        },
+        "c4": {
+            "condName": "<strong>칠역의 춤</strong>의 사뿐한 회전 상태에서 세 번째 춤이 적을 명중"
+        }
+    },
+    "weapon_MakhairaAquamarine": {
+        "condName": "효과 발동"
+    },
+    "weapon_WanderingEvenstar": {
+        "condName": "효과 발동"
+    },
+    "weapon_XiphosMoonlight": {
+        "condName": "효과 발동"
     }
 }
