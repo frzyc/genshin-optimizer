@@ -1,6 +1,7 @@
 import { CheckBox, CheckBoxOutlineBlank, ExpandMore, Replay } from "@mui/icons-material";
 import { Box, Button, CardContent, Chip, Collapse, Grid, Typography } from "@mui/material";
 import { useCallback, useContext, useState } from 'react';
+import { useTranslation } from "react-i18next";
 import { CharacterContext } from "../Context/CharacterContext";
 import { DataContext } from "../Context/DataContext";
 import { uiInput as input } from "../Formula";
@@ -14,6 +15,7 @@ import StatIcon from "./StatIcon";
 import StatInput from "./StatInput";
 
 export function EnemyExpandCard() {
+  const { t } = useTranslation("ui")
   const { characterDispatch } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const [expanded, setexpanded] = useState(false)
@@ -30,7 +32,7 @@ export function EnemyExpandCard() {
       <Typography>DEF Red. {nodeVStr(eDefRed)}</Typography>
       <Typography>DEF Ignore {nodeVStr(eDefIgn)}</Typography>
       <Box flexGrow={1} display="flex" justifyContent="flex-end" gap={1}>
-        <Button size="small" color="error" sx={{ }} onClick={onReset} startIcon={<Replay />}>RESET</Button>
+        <Button size="small" color="error" onClick={onReset} startIcon={<Replay />}>{t`reset`}</Button>
         <ExpandButton
           expand={expanded}
           onClick={toggle}
