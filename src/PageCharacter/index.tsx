@@ -1,8 +1,8 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { DeleteForever, FactCheck, Groups, Science, TrendingUp } from '@mui/icons-material';
+import { Add, DeleteForever, FactCheck, Groups, Science, TrendingUp } from '@mui/icons-material';
 import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, TextField, Typography } from '@mui/material';
-import { ChangeEvent, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import React, { ChangeEvent, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -23,10 +23,9 @@ import { CharacterKey, charKeyToCharName } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortMap } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
-import { CharacterSelectionModal } from './CharacterSelectionModal';
-
+const CharacterSelectionModal = React.lazy(() => import('./CharacterSelectionModal'))
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
-const numToShowMap = { xs: 6 - 1, sm: 8 - 1, md: 12 - 1, lg: 16 - 1, xl: 16 - 1 }
+const numToShowMap = { xs: 6, sm: 8, md: 12, lg: 16, xl: 16 }
 const sortKeys = Object.keys(characterSortMap)
 
 export default function PageCharacter() {
@@ -101,6 +100,9 @@ export default function PageCharacter() {
   const totalShowing = charKeyList.length !== totalCharNum ? `${charKeyList.length}/${totalCharNum}` : `${totalCharNum}`
 
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
+    <Suspense fallback={false}>
+      <CharacterSelectionModal newFirst show={newCharacter} onHide={() => setnewCharacter(false)} onSelect={editCharacter} />
+    </Suspense>
     <CardDark ref={invScrollRef} ><CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
       <Grid container spacing={1}>
         <Grid item>
@@ -137,27 +139,9 @@ export default function PageCharacter() {
         </Grid>
       </Grid>
     </CardContent></CardDark>
+    <Button fullWidth onClick={() => setnewCharacter(true)} color="info" startIcon={<Add />} >{t`addNew`}</Button>
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
       <Grid container spacing={1} columns={columns}>
-        <Grid item xs={1} >
-          <CardDark sx={{ height: "100%", minHeight: 400, width: "100%", display: "flex", flexDirection: "column" }}>
-            <CardContent>
-              <Typography sx={{ textAlign: "center" }}><Trans t={t} i18nKey="addNew" /></Typography>
-            </CardContent>
-            <CharacterSelectionModal newFirst show={newCharacter} onHide={() => setnewCharacter(false)} onSelect={editCharacter} />
-            <Box sx={{
-              flexGrow: 1,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-            >
-              <Button onClick={() => setnewCharacter(true)} color="info" sx={{ borderRadius: "1em" }}>
-                <Typography variant="h1"><FontAwesomeIcon icon={faPlus} className="fa-fw" /></Typography>
-              </Button>
-            </Box>
-          </CardDark>
-        </Grid>
         {charKeyListToShow.map(charKey =>
           <Grid item key={charKey} xs={1} >
             <CharacterCard
@@ -195,8 +179,9 @@ export default function PageCharacter() {
           </Grid>)}
       </Grid>
     </Suspense>
-    {numPages > 1 && <CardDark ><CardContent>
-      <Grid container alignItems="flex-end">
+    {numPages > 1 && <CardDark ><CardContent sx={{ display: "flex", gap: 1 }}>
+      <Button onClick={() => setnewCharacter(true)} color="info" sx={{ minWidth: 0 }} ><Typography><FontAwesomeIcon icon={faPlus} className="fa-fw" /></Typography></Button>
+      <Grid container alignItems="flex-end" sx={{ flexGrow: 1 }}>
         <Grid item flexGrow={1}>
           <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
         </Grid>

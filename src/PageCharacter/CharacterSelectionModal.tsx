@@ -35,7 +35,7 @@ type CharacterSelectionModalProps = {
   filter?: characterFilter
 }
 const sortKeys = Object.keys(characterSortMap)
-export function CharacterSelectionModal({ show, onHide, onSelect, filter = () => true, newFirst = false }: CharacterSelectionModalProps) {
+export default function CharacterSelectionModal({ show, onHide, onSelect, filter = () => true, newFirst = false }: CharacterSelectionModalProps) {
   const { t } = useTranslation(["page_character", "charNames_gen"])
   const { database } = useContext(DatabaseContext)
   const [state, setState] = useState(() => database.displayCharacter.get())

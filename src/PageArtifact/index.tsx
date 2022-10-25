@@ -1,6 +1,4 @@
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Replay } from '@mui/icons-material';
+import { Add, Replay } from '@mui/icons-material';
 import { Alert, Box, Button, CardContent, Grid, Link, Pagination, Skeleton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
@@ -11,6 +9,7 @@ import CardDark from '../Components/Card/CardDark';
 import InfoComponent from '../Components/InfoComponent';
 import SortByButton from '../Components/SortByButton';
 import { DatabaseContext } from '../Database/Database';
+import useBoolState from '../ReactHooks/useBoolState';
 import useDisplayArtifact from '../ReactHooks/useDisplayArtifact';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
@@ -29,12 +28,14 @@ const ArtifactEditor = React.lazy(() => import('./ArtifactEditor'))
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
-const numToShowMap = { xs: 10 - 1, sm: 12 - 1, md: 24 - 1, lg: 24 - 1, xl: 24 - 1 }
+const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
 
 export default function PageArtifact() {
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const artifactDisplayState = useDisplayArtifact()
+
+  const [showEditor, onShowEditor, onHideEditor] = useBoolState(false)
 
   const brPt = useMediaQueryUp()
   const maxNumArtifactsToDisplay = numToShowMap[brPt]
@@ -96,6 +97,12 @@ export default function PageArtifact() {
   )
 
   return <Box display="flex" flexDirection="column" gap={1} my={1}>
+    <Suspense fallback={false}><ArtifactEditor
+      artifactIdToEdit={showEditor ? "new" : ""}
+      cancelEdit={onHideEditor}
+      allowUpload
+      allowEmpty
+    /></Suspense>
     <InfoComponent
       pageKey="artifactPage"
       modalTitle={t`info.title`}
@@ -137,11 +144,9 @@ export default function PageArtifact() {
       <ArtifactRedButtons artifactIds={artifactIds} />
     </CardContent></CardDark>
     {showProbability && <ProbabilityFilter probabilityFilter={probabilityFilter} setProbabilityFilter={setProbabilityFilter} />}
+    <Button fullWidth onClick={onShowEditor} color="info" startIcon={<Add />} >{t`addNew`}</Button>
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
       <Grid container spacing={1} columns={columns} >
-        <Grid item xs={1} >
-          <NewArtifactCard />
-        </Grid>
         {artifactIdsToShow.map(artId =>
           <Grid item key={artId} xs={1}  >
             <ArtifactCard
@@ -167,34 +172,6 @@ export default function PageArtifact() {
       </Grid>
     </CardContent></CardDark>}
   </Box >
-}
-function NewArtifactCard() {
-  const [show, setshow] = useState(false)
-  const onShow = useCallback(() => setshow(true), [setshow])
-  const onHide = useCallback(() => setshow(false), [setshow])
-
-  return <CardDark sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
-    <Suspense fallback={false}><ArtifactEditor
-      artifactIdToEdit={show ? "new" : ""}
-      cancelEdit={onHide}
-      allowUpload
-      allowEmpty
-    /></Suspense>
-    <CardContent>
-      <Typography sx={{ textAlign: "center" }}>Add New Artifact</Typography>
-    </CardContent>
-    <Box sx={{
-      flexGrow: 1,
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center"
-    }}
-    >
-      <Button onClick={onShow} color="info" sx={{ borderRadius: "1em" }}>
-        <Typography variant="h1"><FontAwesomeIcon icon={faPlus} className="fa-fw" /></Typography>
-      </Button>
-    </Box>
-  </CardDark>
 }
 
 function ShowingArt({ numShowing, total, t }) {

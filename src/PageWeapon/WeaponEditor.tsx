@@ -1,6 +1,6 @@
 import { Lock, LockOpen } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardContent, CardHeader, Divider, Grid, ListItem, Typography } from "@mui/material"
-import { useCallback, useContext, useEffect, useMemo } from "react"
+import React, { useCallback, useContext, useEffect, useMemo } from "react"
 import CardDark from "../Components/Card/CardDark"
 import CardLight from "../Components/Card/CardLight"
 import { LocationAutocomplete } from "../Components/Character/LocationAutocomplete"
@@ -11,7 +11,6 @@ import LevelSelect from "../Components/LevelSelect"
 import ModalWrapper from "../Components/ModalWrapper"
 import RefinementDropdown from "../Components/RefinementDropdown"
 import { StarsDisplay } from "../Components/StarDisplay"
-import WeaponSelectionModal from "../Components/Weapon/WeaponSelectionModal"
 import { DataContext } from "../Context/DataContext"
 import CharacterSheet from "../Data/Characters/CharacterSheet"
 import { milestoneLevelsLow } from "../Data/LevelData"
@@ -25,7 +24,7 @@ import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
 import { LocationKey } from "../Types/consts"
 import { ICachedWeapon } from "../Types/weapon"
-
+const WeaponSelectionModal = React.lazy(() => import('../Components/Weapon/WeaponSelectionModal'))
 type WeaponStatsEditorCardProps = {
   weaponId: string
   footer?: boolean

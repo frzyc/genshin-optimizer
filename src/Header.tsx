@@ -1,15 +1,16 @@
 import { faDiscord, faPatreon, faPaypal } from "@fortawesome/free-brands-svg-icons";
-import { Add, Article, Construction, Menu as MenuIcon, People, Scanner, Settings } from "@mui/icons-material";
-import { AppBar, Box, Button, Chip, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { Suspense, useState } from "react";
+import { Article, Construction, Menu as MenuIcon, People, Scanner, Settings } from "@mui/icons-material";
+import { AppBar, Box, Button, Chip, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Tooltip, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Suspense, useContext, useEffect, useMemo, useState } from "react";
 import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from "react-i18next";
 import { Link as RouterLink, useMatch } from "react-router-dom";
 import Assets from "./Assets/Assets";
 import { slotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
 import FontAwesomeSvgIcon from "./Components/FontAwesomeSvgIcon";
+import { DatabaseContext } from "./Database/Database";
 import useDBMeta from "./ReactHooks/useDBMeta";
-
+import useForceUpdate from "./ReactHooks/useForceUpdate";
 type ITab = {
   i18Key: string,
   icon: Displayable,
@@ -24,7 +25,7 @@ const artifacts: ITab = {
   to: "/artifacts",
   value: "artifacts",
   resize: false,
-  textSuffix: <BtnTest key="weaponAdd" />
+  textSuffix: <ArtifactChip key="weaponAdd" />
 }
 const weapons: ITab = {
   i18Key: "tabs.weapons",
@@ -32,7 +33,7 @@ const weapons: ITab = {
   to: "/weapons",
   value: "weapons",
   resize: false,
-  textSuffix: <BtnTest key="weaponAdd" />
+  textSuffix: <WeaponChip key="weaponAdd" />
 }
 const characters: ITab = {
   i18Key: "tabs.characters",
@@ -40,7 +41,7 @@ const characters: ITab = {
   to: "/characters",
   value: "characters",
   resize: false,
-  textSuffix: <BtnTest key="charAdd" />
+  textSuffix: <CharacterChip key="charAdd" />
 }
 const tools: ITab = {
   i18Key: "tabs.tools",
@@ -71,14 +72,32 @@ const setting: ITab = {
   resize: true,
   textSuffix: <DBChip />
 }
-function BtnTest() {
-  return <Chip label={<strong>999</strong>} deleteIcon={<Add />} onDelete={e => {
-    e.preventDefault()
-  }} />
-}
+
 function DBChip() {
   const { name } = useDBMeta()
   return <Chip color="success" label={name} />
+}
+
+function ArtifactChip() {
+  const { database } = useContext(DatabaseContext)
+  const [dirty, setDirty] = useForceUpdate()
+  useEffect(() => database.arts.followAny(() => setDirty()), [database, setDirty])
+  const total = useMemo(() => dirty && database.arts.keys.length, [dirty, database,])
+  return <Chip label={<strong>{total}</strong>} />
+}
+function CharacterChip() {
+  const { database } = useContext(DatabaseContext)
+  const [dirty, setDirty] = useForceUpdate()
+  useEffect(() => database.chars.followAny(() => setDirty()), [database, setDirty])
+  const total = useMemo(() => dirty && database.chars.keys.length, [dirty, database,])
+  return <Chip label={<strong>{total}</strong>} />
+}
+function WeaponChip() {
+  const { database } = useContext(DatabaseContext)
+  const [dirty, setDirty] = useForceUpdate()
+  useEffect(() => database.weapons.followAny(() => setDirty()), [database, setDirty])
+  const total = useMemo(() => dirty && database.weapons.keys.length, [database, dirty])
+  return <Chip label={<strong>{total}</strong>} />
 }
 
 const links = [{
@@ -134,7 +153,10 @@ function HeaderContent({ anchor }) {
         <Tab value="" component={RouterLink} to="/" label={<Typography variant="h6" sx={{ px: 1 }}>
           <Trans t={t} i18nKey="pageTitle">Genshin Optimizer</Trans>
         </Typography>} />
-        {maincontent.map(({ i18Key, value, to, icon, resize, textSuffix }) => <Tab key={value} value={value} component={RouterLink} to={to} icon={icon} iconPosition="start" label={(isXL || textSuffix) ? <Box display="flex" gap={1} alignItems="center">{(isXL) && <span>{t(i18Key)}</span>}{textSuffix}</Box> : undefined} />)}
+        {maincontent.map(({ i18Key, value, to, icon, resize, textSuffix }) => {
+          const tab = <Tab key={value} value={value} component={RouterLink} to={to} icon={icon} iconPosition="start" label={(isXL || textSuffix) ? <Box display="flex" gap={1} alignItems="center">{(isXL) && <span>{t(i18Key)}</span>}{textSuffix}</Box> : undefined} />
+          return isXL ? tab : <Tooltip arrow title={t(i18Key)}>{tab}</Tooltip>
+        })}
 
         <Box flexGrow={1} />
         {links.map(({ i18Key, href, label, icon }) => <Tab key={label} component="a" href={href} target="_blank" icon={icon} iconPosition="start" onClick={e => ReactGA.outboundLink({ label }, () => { })} label={isXL ? t(i18Key) : undefined} />)}
