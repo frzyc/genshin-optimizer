@@ -145,12 +145,15 @@ function HeaderContent({ anchor }) {
           <Trans t={t} i18nKey="pageTitle">Genshin Optimizer</Trans>
         </Typography>} />
         {maincontent.map(({ i18Key, value, to, icon, textSuffix }) => {
-          const tab = <Tab key={value} value={value} component={RouterLink} to={to} icon={icon} iconPosition="start" label={(isXL || textSuffix) ? <Box display="flex" gap={1} alignItems="center">{(isXL) && <span>{t(i18Key)}</span>}{textSuffix}</Box> : undefined} />
-          return isXL ? tab : <Tooltip key={value} arrow title={t(i18Key)}>{tab}</Tooltip>
+          const tooltipIcon = isXL ? icon : <Tooltip arrow title={t(i18Key)}>{icon as JSX.Element}</Tooltip>
+          return <Tab key={value} value={value} component={RouterLink} to={to} icon={tooltipIcon} iconPosition="start" label={(isXL || textSuffix) ? <Box display="flex" gap={1} alignItems="center">{(isXL) && <span>{t(i18Key)}</span>}{textSuffix}</Box> : undefined} />
         })}
 
         <Box flexGrow={1} />
-        {links.map(({ i18Key, href, label, icon }) => <Tab key={label} component="a" href={href} target="_blank" icon={icon} iconPosition="start" onClick={e => ReactGA.outboundLink({ label }, () => { })} label={isXL ? t(i18Key) : undefined} />)}
+        {links.map(({ i18Key, href, label, icon }) => {
+          const tooltipIcon = isXL ? icon : <Tooltip arrow title={t(i18Key)}>{icon as JSX.Element}</Tooltip>
+          return <Tab key={label} component="a" href={href} target="_blank" icon={tooltipIcon} iconPosition="start" onClick={(_: any) => ReactGA.outboundLink({ label }, () => { })} label={isXL ? t(i18Key) : undefined} />
+        })}
       </Tabs>
     </AppBar>
   </Box>
