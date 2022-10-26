@@ -1,11 +1,12 @@
-import { CheckBox, CheckBoxOutlineBlank, Download, Info, Replay } from '@mui/icons-material';
-import { Button, CardContent, Collapse, Divider, Grid, styled, Tooltip, Typography } from '@mui/material';
+import { CheckBox, CheckBoxOutlineBlank, Download, Replay } from '@mui/icons-material';
+import { Button, CardContent, Collapse, Divider, Grid, styled, Typography } from '@mui/material';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Scatter, XAxis, YAxis, ZAxis } from 'recharts';
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
+import InfoTooltip from '../../../../../Components/InfoTooltip';
 import { NumNode } from '../../../../../Formula/type';
 import { Build } from '../common';
 import OptimizationTargetSelector from './OptimizationTargetSelector';
@@ -64,7 +65,7 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
           <Typography >{t`tcGraph.vs`}</Typography>
         </Grid>
         <Grid item>
-          <OptimizationTargetSelector optimizationTarget={plotBase} setTarget={target => setPlotBase(target)}/>
+          <OptimizationTargetSelector optimizationTarget={plotBase} setTarget={target => setPlotBase(target)} />
         </Grid>
         <Grid item>
           <BootstrapTooltip title={t("ui:reset")} placement="top">
@@ -74,9 +75,7 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
           </BootstrapTooltip>
         </Grid>
         <Grid item flexGrow={1}>
-          <Tooltip placement="top" title={t("page_character_optimize:tcGraph.desc")}>
-            <Info />
-          </Tooltip>
+          <InfoTooltip placement="top" title={t("page_character_optimize:tcGraph.desc")} />
         </Grid>
         {!!downloadData && <Grid item>
           <Button size='small' startIcon={showMin ? <CheckBox /> : <CheckBoxOutlineBlank />}
