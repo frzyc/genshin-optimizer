@@ -1,8 +1,9 @@
-import { CheckBox, CheckBoxOutlineBlank, Download, Info } from '@mui/icons-material';
+import { CheckBox, CheckBoxOutlineBlank, Download, Info, Replay } from '@mui/icons-material';
 import { Button, CardContent, Collapse, Divider, Grid, styled, Tooltip, Typography } from '@mui/material';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Scatter, XAxis, YAxis, ZAxis } from 'recharts';
+import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import { NumNode } from '../../../../../Formula/type';
@@ -64,6 +65,13 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
         </Grid>
         <Grid item>
           <OptimizationTargetSelector optimizationTarget={plotBase} setTarget={target => setPlotBase(target)}/>
+        </Grid>
+        <Grid item>
+          <BootstrapTooltip title={t("ui:reset")} placement="top">
+            <span><Button color="error" onClick={() => setPlotBase(undefined)} disabled={!plotBase}>
+              <Replay />
+            </Button></span>
+          </BootstrapTooltip>
         </Grid>
         <Grid item flexGrow={1}>
           <Tooltip placement="top" title="Using data from the builder, this will generate a graph to visualize Optimization Target vs. a selected stat. The graph will show the maximum Optimization Target value per 0.01 of the selected stat.">
