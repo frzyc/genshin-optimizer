@@ -126,8 +126,8 @@ export default function PageWeapon() {
       />
     </Suspense>
 
-    <CardDark ref={invScrollRef} sx={{ p: 2, pb: 1 }}>
-      <Grid container spacing={1} sx={{ mb: 1 }}>
+    <CardDark ref={invScrollRef}><CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+      <Grid container spacing={1}>
         <Grid item>
           <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => database.displayWeapon.set({ weaponType })} value={weaponType} size="small" />
         </Grid>
@@ -164,7 +164,7 @@ export default function PageWeapon() {
           <ShowingWeapon numShowing={weaponIdsToShow.length} total={totalShowing} t={t} />
         </Grid>
       </Grid>
-    </CardDark>
+    </CardContent></CardDark>
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 500 }} />}>
       <Button fullWidth onClick={() => setnewWeaponModalShow(true)} color="info" startIcon={<Add />} >{t("page_weapon:addWeapon")}</Button>
       <Grid container spacing={1} columns={columns}>
