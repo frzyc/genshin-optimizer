@@ -16,7 +16,8 @@
     "showMinStatThr": "Show Min Stat Threshold",
     "downloadData": "Download Data",
     "optTarget": "Optimization Target",
-    "minStatReqThr": "Minimum Stat Requirement Threshold"
+    "minStatReqThr": "Minimum Stat Requirement Threshold",
+    "desc": "Using data from the builder, this will generate a graph to visualize Optimization Target vs. another selected target. The graph will show the maximum Optimization Target value per 0.01 of the selected target. Enabling this is optional, and doing so will slow down build times"
   },
   "levelFilter": "Artifact Level Filter",
   "useExcluded": {

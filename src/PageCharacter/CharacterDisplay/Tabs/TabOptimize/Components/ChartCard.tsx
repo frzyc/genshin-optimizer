@@ -74,7 +74,7 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
           </BootstrapTooltip>
         </Grid>
         <Grid item flexGrow={1}>
-          <Tooltip placement="top" title="Using data from the builder, this will generate a graph to visualize Optimization Target vs. a selected stat. The graph will show the maximum Optimization Target value per 0.01 of the selected stat.">
+          <Tooltip placement="top" title={t("page_character_optimize:tcGraph.desc")}>
             <Info />
           </Tooltip>
         </Grid>
