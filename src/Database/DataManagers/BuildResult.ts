@@ -40,11 +40,7 @@ export class BuildResultDataManager extends DataManager<CharacterKey, string, "b
     return { builds, buildDate }
   }
   get(key: CharacterKey) {
-    const bs = super.get(key)
-    if (bs) return bs
-    const newBs = initialBuildResult()
-    this.setCached(key, newBs)
-    return newBs
+    return super.get(key) ?? initialBuildResult
   }
 
   exportGOOD(good: Partial<IGOOD & IGO>) {
@@ -69,7 +65,7 @@ export class BuildResultDataManager extends DataManager<CharacterKey, string, "b
   }
 }
 
-const initialBuildResult = (): IBuildResult => ({
-  builds: [],
+const initialBuildResult: IBuildResult = Object.freeze({
+  builds: Object.freeze([]) as never[],
   buildDate: 0,
 })

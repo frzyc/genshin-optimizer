@@ -50,16 +50,8 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, "
 
     if (typeof statFilters !== "object") statFilters = {}
 
-    if (!mainStatKeys || !mainStatKeys.sands || !mainStatKeys.goblet || !mainStatKeys.circlet) {
-      const tempmainStatKeys = initialBuildSettings().mainStatKeys
-      if (Array.isArray(mainStatKeys)) {
-        const [sands, goblet, circlet] = mainStatKeys
-        if (sands) tempmainStatKeys.sands = [sands]
-        if (goblet) tempmainStatKeys.goblet = [goblet]
-        if (circlet) tempmainStatKeys.circlet = [circlet]
-      }
-      mainStatKeys = tempmainStatKeys
-    }
+    if (!mainStatKeys || !mainStatKeys.sands || !mainStatKeys.goblet || !mainStatKeys.circlet)
+      mainStatKeys = deepClone(initialBuildSettings.mainStatKeys)
 
     if (!optimizationTarget || !Array.isArray(optimizationTarget)) optimizationTarget = undefined
     if (typeof mainStatAssumptionLevel !== "number" || mainStatAssumptionLevel < 0 || mainStatAssumptionLevel > 20)
@@ -77,11 +69,7 @@ export class BuildsettingDataManager extends DataManager<CharacterKey, string, "
     return { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
   }
   get(key: CharacterKey) {
-    const bs = super.get(key)
-    if (bs) return bs
-    const newBs = initialBuildSettings()
-    this.setCached(key, newBs)
-    return newBs
+    return super.get(key) ?? initialBuildSettings
   }
 
   set(key: CharacterKey, value: BuildSettingReducerAction) {
@@ -98,10 +86,10 @@ type BSArtSetExclusion = {
 
 export type BuildSettingReducerAction = BSMainStatKey | BSArtSetExclusion | Partial<BuildSetting>
 
-const initialBuildSettings = (): BuildSetting => ({
-  artSetExclusion: {},
-  statFilters: {},
-  mainStatKeys: { sands: [], goblet: [], circlet: [] },
+const initialBuildSettings: BuildSetting = Object.freeze({
+  artSetExclusion: Object.freeze({}),
+  statFilters: Object.freeze({}),
+  mainStatKeys: Object.freeze({ sands: Object.freeze([]) as never[], goblet: Object.freeze([]) as never[], circlet: Object.freeze([]) as never[] }),
   optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,
   useExcludedArts: false,
@@ -114,7 +102,7 @@ const initialBuildSettings = (): BuildSetting => ({
   levelHigh: 20,
 })
 
-function buildSettingsReducer(state: BuildSetting = initialBuildSettings(), action: BuildSettingReducerAction): BuildSetting {
+function buildSettingsReducer(state: BuildSetting = initialBuildSettings, action: BuildSettingReducerAction): BuildSetting {
   if ("type" in action) switch (action.type) {
     case 'mainStatKey': {
       const { slotKey, mainStatKey } = action
