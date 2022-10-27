@@ -1,4 +1,5 @@
 import { allCharacterKeys, CharacterKey } from "../../Types/consts";
+import { deepFreeze } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 import { IGO, IGOOD, ImportResult } from "../exim";
@@ -11,12 +12,11 @@ export interface IBuildResult {
 export class BuildResultDataManager extends DataManager<CharacterKey, "buildResults", IBuildResult, IBuildResult>{
   constructor(database: ArtCharDatabase) {
     super(database, "buildResults")
-    for (const key of this.database.storage.keys) {
+    for (const key of this.database.storage.keys)
       if (key.startsWith("buildResult_")) {
         const charKey = key.split("buildResult_")[1] as CharacterKey
         if (!this.set(charKey, {})) this.database.storage.remove(key)
       }
-    }
   }
   toStorageKey(key: string): string {
     return `buildResult_${key}`
@@ -39,11 +39,7 @@ export class BuildResultDataManager extends DataManager<CharacterKey, "buildResu
     return { builds, buildDate }
   }
   get(key: CharacterKey) {
-    const bs = super.get(key)
-    if (bs) return bs
-    const newBs = initialBuildResult()
-    this.setCached(key, newBs)
-    return newBs
+    return super.get(key) ?? initialBuildResult
   }
 
   exportGOOD(good: Partial<IGOOD & IGO>) {
@@ -64,7 +60,7 @@ export class BuildResultDataManager extends DataManager<CharacterKey, "buildResu
   }
 }
 
-const initialBuildResult = (): IBuildResult => ({
+const initialBuildResult: IBuildResult = deepFreeze({
   builds: [],
   buildDate: 0,
 })

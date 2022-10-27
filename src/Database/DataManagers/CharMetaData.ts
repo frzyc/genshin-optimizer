@@ -1,5 +1,6 @@
 import { allSubstatKeys, SubstatKey } from "../../Types/artifact";
 import { CharacterKey, LocationCharacterKey, travelerKeys } from "../../Types/consts";
+import { deepFreeze } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 
@@ -7,12 +8,10 @@ interface ICharMeta {
   rvFilter: SubstatKey[]
   favorite: boolean
 }
-export function initCharMeta(): ICharMeta {
-  return {
-    rvFilter: [...allSubstatKeys],
-    favorite: false
-  }
-}
+const initCharMeta: ICharMeta = deepFreeze({
+  rvFilter: [...allSubstatKeys],
+  favorite: false
+})
 const storageHash = "charMeta_"
 export class CharMetaDataManager extends DataManager<CharacterKey, "charMetas", ICharMeta, ICharMeta>{
   constructor(database: ArtCharDatabase) {
@@ -41,9 +40,6 @@ export class CharMetaDataManager extends DataManager<CharacterKey, "charMetas", 
     return key === "Traveler" ? this.getTravelerCharacterKey() : key
   }
   get(key: CharacterKey): ICharMeta {
-    if (!this.data[key])
-      if (!this.set(key, initCharMeta()))
-        console.error("Something wrong with creating initial CharMeta")
-    return this.data[key]!
+    return this.data[key] ?? initCharMeta
   }
 }
