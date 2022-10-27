@@ -47,20 +47,16 @@ export class BuildResultDataManager extends DataManager<CharacterKey, "buildResu
   }
 
   exportGOOD(good: Partial<IGOOD & IGO>) {
-    const artifactIDs = new Map<string, number>()
-    Object.entries(this.database.arts.data).forEach(([id, value], i) => {
-      artifactIDs.set(id, i)
-    })
-    good[this.goKey as any] = Object.entries(this.data).map(([id, value]) =>
-      ({ ...value, id, builds: value.builds.map(b => b.map(x => artifactIDs.has(x) ? `artifact_${artifactIDs.get(x)}` : "")) })
-    )
+    const artIDs = new Map<string, number>(Object.keys(this.database.arts.data).map((key, i) => [key, i]))
+    good[this.goKey] = Object.entries(this.data).map(([id, value]) =>
+      ({ ...value, id, builds: value.builds.map(b => b.map(x => artIDs.has(x) ? `artifact_${artIDs.get(x)}` : "")) }))
   }
   importGOOD(good: IGOOD & IGO, result: ImportResult) {
     const buildResults = good[this.goKey]
     if (buildResults && Array.isArray(buildResults)) buildResults.forEach(b => {
       const { id, ...rest } = b
       if (!id || !allCharacterKeys.includes(id as CharacterKey)) return
-      if (rest.builds) //preserve the old build ids
+      if (rest.builds) // Preserve the old build ids
         rest.builds = rest.builds.map(build => build.map(i => result.importArtIds.get(i) ?? ""))
 
       this.set(id as CharacterKey, { ...rest })
