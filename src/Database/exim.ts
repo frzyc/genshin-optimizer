@@ -1,7 +1,7 @@
 import type { IArtifact } from "../Types/artifact"
 import type { ICharacter } from "../Types/character"
 import type { IWeapon } from "../Types/weapon"
-import { BuildSetting } from "./DataManagers/BuildsettingData"
+import { BuildSetting } from "./DataManagers/BuildSettingData"
 
 export const GOSource = "Genshin Optimizer" as const
 

@@ -1,4 +1,4 @@
-import { ArtSetExclusion } from '../../../../Database/DataManagers/BuildsettingData'
+import { ArtSetExclusion } from '../../../../Database/DataManagers/BuildSettingData'
 import { OptNode } from '../../../../Formula/optimization'
 import { assertUnreachable } from '../../../../Util/Util'
 import { BNBSplitWorker } from "./BNBSplitWorker"

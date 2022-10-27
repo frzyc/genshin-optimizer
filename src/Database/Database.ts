@@ -9,7 +9,7 @@ import { DisplayToolEntry } from "./DataEntries/DisplayTool";
 import { DisplayWeaponEntry } from "./DataEntries/DisplayWeaponEntry";
 import { ArtifactDataManager } from "./DataManagers/ArtifactData";
 import { BuildResultDataManager } from "./DataManagers/BuildResult";
-import { BuildsettingDataManager } from "./DataManagers/BuildsettingData";
+import { BuildSettingDataManager } from "./DataManagers/BuildSettingData";
 import { CharacterDataManager } from "./DataManagers/CharacterData";
 import { CharacterTCDataManager } from "./DataManagers/CharacterTCData";
 import { CharMetaDataManager } from "./DataManagers/CharMetaData";
@@ -24,7 +24,7 @@ export class ArtCharDatabase {
   chars: CharacterDataManager
   charTCs: CharacterTCDataManager
   weapons: WeaponDataManager
-  buildSettings: BuildsettingDataManager
+  buildSettings: BuildSettingDataManager
   buildResult: BuildResultDataManager
   charMeta: CharMetaDataManager
   teamData: Partial<Record<CharacterKey, TeamData>> = {}
@@ -59,7 +59,7 @@ export class ArtCharDatabase {
 
     this.weapons.ensureEquipment()
 
-    this.buildSettings = new BuildsettingDataManager(this)
+    this.buildSettings = new BuildSettingDataManager(this)
 
     // This should be instantiated after artifacts, so that invalid artifacts that persists in build results can be pruned.
     this.buildResult = new BuildResultDataManager(this)
