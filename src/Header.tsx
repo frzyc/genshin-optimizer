@@ -16,7 +16,6 @@ type ITab = {
   icon: Displayable,
   to: string,
   value: string,
-  resize?: boolean,
   textSuffix?: Displayable,
 }
 const artifacts: ITab = {
@@ -24,7 +23,6 @@ const artifacts: ITab = {
   icon: <FontAwesomeSvgIcon icon={slotIconSVG.flower} />,
   to: "/artifacts",
   value: "artifacts",
-  resize: false,
   textSuffix: <ArtifactChip key="weaponAdd" />
 }
 const weapons: ITab = {
@@ -32,7 +30,6 @@ const weapons: ITab = {
   icon: Assets.svg.anvil,
   to: "/weapons",
   value: "weapons",
-  resize: false,
   textSuffix: <WeaponChip key="weaponAdd" />
 }
 const characters: ITab = {
@@ -40,7 +37,6 @@ const characters: ITab = {
   icon: <People />,
   to: "/characters",
   value: "characters",
-  resize: false,
   textSuffix: <CharacterChip key="charAdd" />
 }
 const tools: ITab = {
@@ -48,28 +44,24 @@ const tools: ITab = {
   icon: <Construction />,
   to: "/tools",
   value: "tools",
-  resize: true,
 }
 const scanner: ITab = {
   i18Key: "tabs.scanner",
   icon: <Scanner />,
   to: "/scanner",
   value: "scanner",
-  resize: true,
 }
 const doc: ITab = {
   i18Key: "tabs.doc",
   icon: <Article />,
   to: "/doc",
   value: "doc",
-  resize: true,
 }
 const setting: ITab = {
   i18Key: "tabs.setting",
   icon: <Settings />,
   to: "/setting",
   value: "setting",
-  resize: true,
   textSuffix: <DBChip />
 }
 
@@ -137,7 +129,6 @@ function HeaderContent({ anchor }) {
     <AppBar position="static" sx={{ bgcolor: "#343a40", display: "flex", flexWrap: "nowrap" }} elevation={0} id={anchor} >
       <Tabs
         value={currentTab}
-
         sx={{
           "& .MuiTab-root": {
             p: 1,
@@ -153,13 +144,16 @@ function HeaderContent({ anchor }) {
         <Tab value="" component={RouterLink} to="/" label={<Typography variant="h6" sx={{ px: 1 }}>
           <Trans t={t} i18nKey="pageTitle">Genshin Optimizer</Trans>
         </Typography>} />
-        {maincontent.map(({ i18Key, value, to, icon, resize, textSuffix }) => {
-          const tab = <Tab key={value} value={value} component={RouterLink} to={to} icon={icon} iconPosition="start" label={(isXL || textSuffix) ? <Box display="flex" gap={1} alignItems="center">{(isXL) && <span>{t(i18Key)}</span>}{textSuffix}</Box> : undefined} />
-          return isXL ? tab : <Tooltip arrow title={t(i18Key)}>{tab}</Tooltip>
+        {maincontent.map(({ i18Key, value, to, icon, textSuffix }) => {
+          const tooltipIcon = isXL ? icon : <Tooltip arrow title={t(i18Key)}>{icon as JSX.Element}</Tooltip>
+          return <Tab key={value} value={value} component={RouterLink} to={to} icon={tooltipIcon} iconPosition="start" label={(isXL || textSuffix) ? <Box display="flex" gap={1} alignItems="center">{(isXL) && <span>{t(i18Key)}</span>}{textSuffix}</Box> : undefined} />
         })}
 
         <Box flexGrow={1} />
-        {links.map(({ i18Key, href, label, icon }) => <Tab key={label} component="a" href={href} target="_blank" icon={icon} iconPosition="start" onClick={e => ReactGA.outboundLink({ label }, () => { })} label={isXL ? t(i18Key) : undefined} />)}
+        {links.map(({ i18Key, href, label, icon }) => {
+          const tooltipIcon = isXL ? icon : <Tooltip arrow title={t(i18Key)}>{icon as JSX.Element}</Tooltip>
+          return <Tab key={label} component="a" href={href} target="_blank" icon={tooltipIcon} iconPosition="start" onClick={(_: any) => ReactGA.outboundLink({ label }, () => { })} label={isXL ? t(i18Key) : undefined} />
+        })}
       </Tabs>
     </AppBar>
   </Box>

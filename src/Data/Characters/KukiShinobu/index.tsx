@@ -107,7 +107,7 @@ const dmgFormulas = {
     singleDmg: dmgNode("hp", datamine.burst.singleDmg, "burst"),
   },
   constellation4: {
-    markDmg: greaterEq(input.constellation, 4, customDmgNode(prod(percent(datamine.constellation4.markDmg), input.total.hp), "elemental", { hit: { ele: constant(elementKey) } })),
+    markDmg: greaterEq(input.constellation, 4, customDmgNode(prod(percent(datamine.constellation4.markDmg), input.total.hp), "skill", { hit: { ele: constant(elementKey) } })),
   },
 }
 
