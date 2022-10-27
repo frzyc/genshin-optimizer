@@ -14,7 +14,7 @@ export function initCharMeta(): ICharMeta {
   }
 }
 const storageHash = "charMeta_"
-export class CharMetaDataManager extends DataManager<CharacterKey, string, "charMetas", ICharMeta, ICharMeta>{
+export class CharMetaDataManager extends DataManager<CharacterKey, "charMetas", ICharMeta, ICharMeta>{
   constructor(database: ArtCharDatabase) {
     super(database, "charMetas")
     for (const key of this.database.storage.keys) {

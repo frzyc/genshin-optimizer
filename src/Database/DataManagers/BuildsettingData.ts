@@ -30,7 +30,7 @@ export interface BuildSetting {
   levelHigh: number,
 }
 
-export class BuildSettingDataManager extends DataManager<CharacterKey, string, "buildSettings", BuildSetting, BuildSetting>{
+export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSettings", BuildSetting, BuildSetting>{
   constructor(database: ArtCharDatabase) {
     super(database, "buildSettings")
     for (const key of this.database.storage.keys) {

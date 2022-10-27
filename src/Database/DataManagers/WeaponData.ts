@@ -6,7 +6,7 @@ import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 import { IGO, IGOOD, ImportResult } from "../exim";
 
-export class WeaponDataManager extends DataManager<string, string, "weapons", ICachedWeapon, IWeapon>{
+export class WeaponDataManager extends DataManager<string, "weapons", ICachedWeapon, IWeapon>{
   constructor(database: ArtCharDatabase) {
     super(database, "weapons")
     for (const key of this.database.storage.keys) {

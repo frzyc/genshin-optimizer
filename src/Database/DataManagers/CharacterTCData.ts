@@ -6,7 +6,7 @@ import { objectKeyMap } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 
-export class CharacterTCDataManager extends DataManager<CharacterKey, string, "charTCs", ICharTC, ICharTC>{
+export class CharacterTCDataManager extends DataManager<CharacterKey, "charTCs", ICharTC, ICharTC>{
   constructor(database: ArtCharDatabase) {
     super(database, "charTCs")
     for (const key of this.database.storage.keys) {

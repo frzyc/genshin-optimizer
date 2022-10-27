@@ -9,7 +9,7 @@ import { ArtCharDatabase } from "../Database";
 import { DataManager, TriggerString } from "../DataManager";
 import { GOSource, IGO, IGOOD, ImportResult } from "../exim";
 
-export class CharacterDataManager extends DataManager<CharacterKey, string, "characters", ICachedCharacter, ICharacter>{
+export class CharacterDataManager extends DataManager<CharacterKey, "characters", ICachedCharacter, ICharacter>{
   constructor(database: ArtCharDatabase) {
     super(database, "characters")
     for (const key of this.database.storage.keys) {

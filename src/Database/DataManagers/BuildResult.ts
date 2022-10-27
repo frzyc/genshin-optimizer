@@ -8,7 +8,7 @@ export interface IBuildResult {
   buildDate: number,
 }
 
-export class BuildResultDataManager extends DataManager<CharacterKey, string, "buildResults", IBuildResult, IBuildResult>{
+export class BuildResultDataManager extends DataManager<CharacterKey, "buildResults", IBuildResult, IBuildResult>{
   constructor(database: ArtCharDatabase) {
     super(database, "buildResults")
     for (const key of this.database.storage.keys) {

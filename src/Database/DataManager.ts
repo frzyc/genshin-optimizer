@@ -1,7 +1,7 @@
 import { deepFreeze } from "../Util/Util"
 import { ArtCharDatabase } from "./Database"
 import { IGO, IGOOD, ImportResult } from "./exim"
-export class DataManager<CacheKey extends string | number, StorageKey extends string | number, GOKey extends string, CacheValue, StorageValue> {
+export class DataManager<CacheKey extends string | number, GOKey extends string, CacheValue, StorageValue> {
   database: ArtCharDatabase
   goKey: GOKey
 
@@ -14,8 +14,8 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
   listeners: Dict<CacheKey, Callback<CacheKey>[]> = {}
   anyListeners: Callback<CacheKey>[] = []
 
-  toStorageKey(key: CacheKey): StorageKey {
-    return key as any as StorageKey
+  toStorageKey(key: CacheKey): string {
+    return `${key}`
   }
   validate(obj: any, key: CacheKey): StorageValue | undefined {
     return obj as StorageValue | undefined

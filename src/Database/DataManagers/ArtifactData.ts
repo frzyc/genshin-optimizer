@@ -6,7 +6,7 @@ import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 import { IGOOD, IGO, ImportResult } from "../exim";
 
-export class ArtifactDataManager extends DataManager<string, string, "artifacts", ICachedArtifact, IArtifact>{
+export class ArtifactDataManager extends DataManager<string, "artifacts", ICachedArtifact, IArtifact>{
   deletedArts = new Set<string>()
   constructor(database: ArtCharDatabase) {
     super(database, "artifacts")
