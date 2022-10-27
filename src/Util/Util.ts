@@ -154,10 +154,11 @@ export function toggleArr<T>(arr: T[], value: T) {
   return arr.includes(value) ? arr.filter(a => a !== value) : [...arr, value]
 }
 
-export function deepFreeze(obj: any, layers: number = 5) {
-  if (layers === 0) return
+export function deepFreeze<T>(obj: T, layers: number = 5): T {
+  if (layers === 0) return obj
   if (typeof obj === "object")
     Object.values(Object.freeze(obj)).forEach(o => deepFreeze(o, layers--))
+  return obj
 }
 
 export function arrayMove<T>(arr: T[], oldIndex: number, newIndex: number) {

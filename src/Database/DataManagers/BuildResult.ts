@@ -1,4 +1,5 @@
 import { allCharacterKeys, CharacterKey } from "../../Types/consts";
+import { deepFreeze } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 import { IGO, IGOOD, ImportResult } from "../exim";
@@ -8,22 +9,20 @@ export interface IBuildResult {
   buildDate: number,
 }
 
-export class BuildResultDataManager extends DataManager<CharacterKey, string, "buildResults", IBuildResult, IBuildResult>{
+export class BuildResultDataManager extends DataManager<CharacterKey, "buildResults", IBuildResult, IBuildResult>{
   constructor(database: ArtCharDatabase) {
     super(database, "buildResults")
-    for (const key of this.database.storage.keys) {
+    for (const key of this.database.storage.keys)
       if (key.startsWith("buildResult_")) {
-        const [, charKey] = key.split("buildResult_")
-        if (!this.set(charKey as CharacterKey, this.database.storage.get(key)))
-          this.database.storage.remove(key)
+        const charKey = key.split("buildResult_")[1] as CharacterKey
+        if (!this.set(charKey, {})) this.database.storage.remove(key)
       }
-    }
   }
   toStorageKey(key: string): string {
     return `buildResult_${key}`
   }
-  validate(obj: object, key: string): IBuildResult | undefined {
-    if (!allCharacterKeys.includes(key as CharacterKey)) return
+  validate(obj: object, key: CharacterKey): IBuildResult | undefined {
+    if (!allCharacterKeys.includes(key)) return
     let { builds, buildDate } = (obj as any) ?? {}
 
     if (!Array.isArray(builds)) {
@@ -40,28 +39,20 @@ export class BuildResultDataManager extends DataManager<CharacterKey, string, "b
     return { builds, buildDate }
   }
   get(key: CharacterKey) {
-    const bs = super.get(key)
-    if (bs) return bs
-    const newBs = initialBuildResult()
-    this.setCached(key, newBs)
-    return newBs
+    return super.get(key) ?? initialBuildResult
   }
 
   exportGOOD(good: Partial<IGOOD & IGO>) {
-    const artifactIDs = new Map<string, number>()
-    Object.entries(this.database.arts.data).forEach(([id, value], i) => {
-      artifactIDs.set(id, i)
-    })
-    good[this.goKey as any] = Object.entries(this.data).map(([id, value]) =>
-      ({ ...value, id, builds: value.builds.map(b => b.map(x => artifactIDs.has(x) ? `artifact_${artifactIDs.get(x)}` : "")) })
-    )
+    const artIDs = new Map<string, number>(Object.keys(this.database.arts.data).map((key, i) => [key, i]))
+    good[this.goKey] = Object.entries(this.data).map(([id, value]) =>
+      ({ ...value, id, builds: value.builds.map(b => b.map(x => artIDs.has(x) ? `artifact_${artIDs.get(x)}` : "")) }))
   }
   importGOOD(good: IGOOD & IGO, result: ImportResult) {
     const buildResults = good[this.goKey]
     if (buildResults && Array.isArray(buildResults)) buildResults.forEach(b => {
       const { id, ...rest } = b
       if (!id || !allCharacterKeys.includes(id as CharacterKey)) return
-      if (rest.builds) //preserve the old build ids
+      if (rest.builds) // Preserve the old build ids
         rest.builds = rest.builds.map(build => build.map(i => result.importArtIds.get(i) ?? ""))
 
       this.set(id as CharacterKey, { ...rest })
@@ -69,7 +60,7 @@ export class BuildResultDataManager extends DataManager<CharacterKey, string, "b
   }
 }
 
-const initialBuildResult = (): IBuildResult => ({
+const initialBuildResult: IBuildResult = deepFreeze({
   builds: [],
   buildDate: 0,
 })

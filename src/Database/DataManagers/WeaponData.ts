@@ -6,14 +6,12 @@ import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 import { IGO, IGOOD, ImportResult } from "../exim";
 
-export class WeaponDataManager extends DataManager<string, string, "weapons", ICachedWeapon, IWeapon>{
+export class WeaponDataManager extends DataManager<string, "weapons", ICachedWeapon, IWeapon>{
   constructor(database: ArtCharDatabase) {
     super(database, "weapons")
-    for (const key of this.database.storage.keys) {
-      if (key.startsWith("weapon_"))
-        if (!this.set(key, this.database.storage.get(key) as any))
-          this.database.storage.remove(key)
-    }
+    for (const key of this.database.storage.keys)
+      if (key.startsWith("weapon_") && !this.set(key, {}))
+        this.database.storage.remove(key)
   }
   ensureEquipment() {
     const weaponIds = new Set(this.keys)

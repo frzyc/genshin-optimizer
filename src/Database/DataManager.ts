@@ -1,7 +1,7 @@
 import { deepFreeze } from "../Util/Util"
 import { ArtCharDatabase } from "./Database"
 import { IGO, IGOOD, ImportResult } from "./exim"
-export class DataManager<CacheKey extends string | number, StorageKey extends string | number, GOKey extends string, CacheValue, StorageValue> {
+export class DataManager<CacheKey extends string, GOKey extends string, CacheValue extends StorageValue, StorageValue> {
   database: ArtCharDatabase
   goKey: GOKey
 
@@ -14,18 +14,18 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
   listeners: Dict<CacheKey, Callback<CacheKey>[]> = {}
   anyListeners: Callback<CacheKey>[] = []
 
-  toStorageKey(key: CacheKey): StorageKey {
-    return key as any as StorageKey
+  toStorageKey(key: CacheKey): string {
+    return `${key}`
   }
   validate(obj: any, key: CacheKey): StorageValue | undefined {
-    return obj as StorageValue | undefined
+    return obj
   }
-  toCache(storageObj: StorageValue, id: string): CacheValue | undefined {
+  toCache(storageObj: StorageValue, id: CacheKey): CacheValue | undefined {
     return { ...storageObj, id } as any as CacheValue
   }
   deCache(cacheObj: CacheValue): StorageValue {
     const { id, ...storageObj } = cacheObj as any
-    return storageObj as any as StorageValue
+    return storageObj
   }
   followAny(callback: Callback<CacheKey>): () => void {
     this.anyListeners.push(callback)
@@ -45,7 +45,7 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
   get keys() { return Object.keys(this.data) }
   get values() { return Object.values(this.data) }
   get(key: CacheKey | "" | undefined): CacheValue | undefined { return key ? this.data[key] : undefined }
-  getStorage(key: CacheKey) { return this.database.storage.get(this.toStorageKey(key) as any) }
+  getStorage(key: CacheKey): StorageValue { return this.database.storage.get(this.toStorageKey(key)) }
   set(key: CacheKey, value: Partial<StorageValue>): boolean {
     const old = this.getStorage(key)
     const validated = this.validate({ ...(old ?? {}), ...value }, key)
@@ -53,7 +53,7 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
       this.trigger(key, "invalid", value)
       return false
     }
-    const cached = this.toCache(validated, key as any)
+    const cached = this.toCache(validated, key)
     if (!cached) {
       this.trigger(key, "invalid", value)
       return false
@@ -87,20 +87,19 @@ export class DataManager<CacheKey extends string | number, StorageKey extends st
     }
   }
   removeStorageEntry(key: CacheKey) {
-    this.database.storage.remove(this.toStorageKey(key) as string)
+    this.database.storage.remove(this.toStorageKey(key))
   }
   saveStorageEntry(key: CacheKey, cached: CacheValue) {
-    this.database.storage.set(this.toStorageKey(key) as string, this.deCache(cached))
+    this.database.storage.set(this.toStorageKey(key), this.deCache(cached))
   }
   clearStorage() {
-    for (const key in this.data)
-      this.removeStorageEntry(key)
+    for (const key in this.data) this.removeStorageEntry(key)
   }
   saveStorage() {
     Object.entries(this.data).forEach(([k, v]) => this.saveStorageEntry(k as CacheKey, v))
   }
   exportGOOD(go: Partial<IGOOD & IGO>) {
-    go[this.goKey as any] = Object.entries(this.data).map(([id, value]) => ({ ...value, id }))
+    go[this.goKey as any] = Object.entries(this.data).map(([id, value]) => ({ ...this.deCache(value), id }))
   }
   importGOOD(go: IGOOD & IGO, result: ImportResult) {
     const entries = go[this.goKey as any]

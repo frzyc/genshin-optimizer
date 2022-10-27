@@ -6,15 +6,12 @@ import { objectKeyMap } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 
-export class CharacterTCDataManager extends DataManager<CharacterKey, string, "charTCs", ICharTC, ICharTC>{
+export class CharacterTCDataManager extends DataManager<CharacterKey, "charTCs", ICharTC, ICharTC>{
   constructor(database: ArtCharDatabase) {
     super(database, "charTCs")
     for (const key of this.database.storage.keys) {
-      if (key.startsWith("charTC_")) {
-        const obj = this.database.storage.get(key)
-        const [, chatTCKey] = key.split("charTC_")
-        this.set(chatTCKey as CharacterKey, obj)
-      }
+      if (key.startsWith("charTC_") && !this.set(key.split("charTC_")[1] as CharacterKey, {}))
+        database.storage.remove(key)
     }
   }
   validate(obj: any): ICharTC | undefined {

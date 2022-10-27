@@ -1,4 +1,4 @@
-import { ArtSetExclusion } from "../../../../Database/DataManagers/BuildsettingData";
+import { ArtSetExclusion } from "../../../../Database/DataManagers/BuildSettingData";
 import { forEachNodes, mapFormulas } from "../../../../Formula/internal";
 import { allOperations, constantFold, OptNode } from "../../../../Formula/optimization";
 import { ConstantNode } from "../../../../Formula/type";

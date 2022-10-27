@@ -9,7 +9,7 @@ import { DisplayToolEntry } from "./DataEntries/DisplayTool";
 import { DisplayWeaponEntry } from "./DataEntries/DisplayWeaponEntry";
 import { ArtifactDataManager } from "./DataManagers/ArtifactData";
 import { BuildResultDataManager } from "./DataManagers/BuildResult";
-import { BuildsettingDataManager } from "./DataManagers/BuildsettingData";
+import { BuildSettingDataManager } from "./DataManagers/BuildSettingData";
 import { CharacterDataManager } from "./DataManagers/CharacterData";
 import { CharacterTCDataManager } from "./DataManagers/CharacterTCData";
 import { CharMetaDataManager } from "./DataManagers/CharMetaData";
@@ -24,7 +24,7 @@ export class ArtCharDatabase {
   chars: CharacterDataManager
   charTCs: CharacterTCDataManager
   weapons: WeaponDataManager
-  buildSettings: BuildsettingDataManager
+  buildSettings: BuildSettingDataManager
   buildResult: BuildResultDataManager
   charMeta: CharMetaDataManager
   teamData: Partial<Record<CharacterKey, TeamData>> = {}
@@ -35,7 +35,7 @@ export class ArtCharDatabase {
   displayOptimize: DisplayOptimizeEntry
   displayCharacter: DisplayCharacterEntry
   displayTool: DisplayToolEntry
-  dbIndex: number
+  dbIndex: 1 | 2 | 3 | 4
   dbVer: number
 
   constructor(dbIndex: 1 | 2 | 3 | 4, storage: DBStorage) {
@@ -46,7 +46,7 @@ export class ArtCharDatabase {
     this.dbIndex = dbIndex
     this.dbVer = storage.getDBVersion()
     this.storage.setDBVersion(this.dbVer)
-    this.storage.setDBIndex(this.dbIndex as 1 | 2 | 3 | 4)
+    this.storage.setDBIndex(this.dbIndex)
 
     // Handle Datamanagers
     this.chars = new CharacterDataManager(this)
@@ -59,7 +59,7 @@ export class ArtCharDatabase {
 
     this.weapons.ensureEquipment()
 
-    this.buildSettings = new BuildsettingDataManager(this)
+    this.buildSettings = new BuildSettingDataManager(this)
 
     // This should be instantiated after artifacts, so that invalid artifacts that persists in build results can be pruned.
     this.buildResult = new BuildResultDataManager(this)
@@ -77,7 +77,7 @@ export class ArtCharDatabase {
 
     // invalidates character when things change.
     this.chars.followAny((key) => {
-      this.invalidateTeamData(key as CharacterKey)
+      this.invalidateTeamData(key)
       this.dbMeta.set({ lastEdit: Date.now() })
     })
     this.arts.followAny(() => {
@@ -89,7 +89,7 @@ export class ArtCharDatabase {
   }
   get dataManagers() {
     // IMPORTANT: it must be chars, weapon, arts in order, to respect import order
-    return [this.chars, this.weapons, this.arts, this.buildSettings, this.buildSettings, this.charMeta] as const
+    return [this.chars, this.weapons, this.arts, this.buildSettings, this.buildResult, this.charMeta] as const
   }
   get dataEntries() {
     return [this.dbMeta, this.displayWeapon, this.displayArtifact, this.displayOptimize, this.displayCharacter, this.displayTool] as const
@@ -115,12 +115,12 @@ export class ArtCharDatabase {
     return gender
   }
   exportGOOD() {
-    const good = {
+    const good: Partial<IGO & IGOOD> = {
       format: "GOOD",
       dbVersion: currentDBVersion,
       source: GOSource,
       version: 1,
-    } as Partial<IGO & IGOOD>
+    }
     this.dataManagers.map(dm => dm.exportGOOD(good));
     this.dataEntries.map(de => de.exportGOOD(good))
     return good as IGO & IGOOD
@@ -156,7 +156,7 @@ export class ArtCharDatabase {
     this.dataManagers.map(dm => dm.saveStorage());
     this.dataEntries.map(de => de.saveStorage());
     this.storage.setDBVersion(this.dbVer)
-    this.storage.setDBIndex(this.dbIndex as 1 | 2 | 3 | 4)
+    this.storage.setDBIndex(this.dbIndex)
   }
   swapStorage(other: ArtCharDatabase) {
     this.clearStorage()

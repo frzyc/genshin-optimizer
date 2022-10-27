@@ -9,15 +9,12 @@ import { ArtCharDatabase } from "../Database";
 import { DataManager, TriggerString } from "../DataManager";
 import { GOSource, IGO, IGOOD, ImportResult } from "../exim";
 
-export class CharacterDataManager extends DataManager<CharacterKey, string, "characters", ICachedCharacter, ICharacter>{
+export class CharacterDataManager extends DataManager<CharacterKey, "characters", ICachedCharacter, ICharacter>{
   constructor(database: ArtCharDatabase) {
     super(database, "characters")
     for (const key of this.database.storage.keys) {
-      if (key.startsWith("char_")) {
-        const [, charKey] = key.split("char_")
-        if (!this.set(charKey as CharacterKey, this.database.storage.get(key)))
-          this.database.storage.remove(key)
-      }
+      if (key.startsWith("char_") && !this.set(key.split("char_")[1] as CharacterKey, {}))
+        this.database.storage.remove(key)
     }
   }
   validate(obj: any): ICharacter | undefined {
