@@ -13,17 +13,16 @@ export class BuildResultDataManager extends DataManager<CharacterKey, "buildResu
     super(database, "buildResults")
     for (const key of this.database.storage.keys) {
       if (key.startsWith("buildResult_")) {
-        const [, charKey] = key.split("buildResult_")
-        if (!this.set(charKey as CharacterKey, this.database.storage.get(key)))
-          this.database.storage.remove(key)
+        const charKey = key.split("buildResult_")[1] as CharacterKey
+        if (!this.set(charKey, {})) this.database.storage.remove(key)
       }
     }
   }
   toStorageKey(key: string): string {
     return `buildResult_${key}`
   }
-  validate(obj: object, key: string): IBuildResult | undefined {
-    if (!allCharacterKeys.includes(key as CharacterKey)) return
+  validate(obj: object, key: CharacterKey): IBuildResult | undefined {
+    if (!allCharacterKeys.includes(key)) return
     let { builds, buildDate } = (obj as any) ?? {}
 
     if (!Array.isArray(builds)) {

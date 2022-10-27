@@ -10,11 +10,8 @@ export class CharacterTCDataManager extends DataManager<CharacterKey, "charTCs",
   constructor(database: ArtCharDatabase) {
     super(database, "charTCs")
     for (const key of this.database.storage.keys) {
-      if (key.startsWith("charTC_")) {
-        const obj = this.database.storage.get(key)
-        const [, chatTCKey] = key.split("charTC_")
-        this.set(chatTCKey as CharacterKey, obj)
-      }
+      if (key.startsWith("charTC_") && !this.set(key.split("charTC_")[1] as CharacterKey, {}))
+        database.storage.remove(key)
     }
   }
   validate(obj: any): ICharTC | undefined {

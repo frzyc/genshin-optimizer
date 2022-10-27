@@ -34,11 +34,8 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
   constructor(database: ArtCharDatabase) {
     super(database, "buildSettings")
     for (const key of this.database.storage.keys) {
-      if (key.startsWith("buildSetting_")) {
-        const [, charKey] = key.split("buildSetting_")
-        if (!this.set(charKey as CharacterKey, this.database.storage.get(key)))
-          this.database.storage.remove(key)
-      }
+      if (key.startsWith("buildSetting_") && !this.set(key.split("buildSetting_")[1] as CharacterKey, {}))
+        this.database.storage.remove(key)
     }
   }
   toStorageKey(key: string): string {

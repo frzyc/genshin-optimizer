@@ -17,13 +17,9 @@ const storageHash = "charMeta_"
 export class CharMetaDataManager extends DataManager<CharacterKey, "charMetas", ICharMeta, ICharMeta>{
   constructor(database: ArtCharDatabase) {
     super(database, "charMetas")
-    for (const key of this.database.storage.keys) {
-      if (key.startsWith(storageHash)) {
-        const [, charKey] = key.split(storageHash)
-        if (!this.set(charKey as CharacterKey, this.database.storage.get(key)))
-          this.database.storage.remove(key)
-      }
-    }
+    for (const key of this.database.storage.keys)
+      if (key.startsWith(storageHash) && !this.set(key.split(storageHash)[1] as CharacterKey, {}))
+        this.database.storage.remove(key)
   }
   validate(obj: any): ICharMeta | undefined {
     if (typeof obj !== "object") return
@@ -32,8 +28,7 @@ export class CharMetaDataManager extends DataManager<CharacterKey, "charMetas", 
     if (!Array.isArray(rvFilter)) rvFilter = []
     else rvFilter = rvFilter.filter(k => allSubstatKeys.includes(k))
     if (typeof favorite !== "boolean") favorite = false
-    const charMeta: ICharMeta = { rvFilter, favorite }
-    return charMeta
+    return { rvFilter, favorite }
   }
 
   toStorageKey(key: CharacterKey): string {

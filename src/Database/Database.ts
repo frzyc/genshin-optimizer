@@ -35,7 +35,7 @@ export class ArtCharDatabase {
   displayOptimize: DisplayOptimizeEntry
   displayCharacter: DisplayCharacterEntry
   displayTool: DisplayToolEntry
-  dbIndex: number
+  dbIndex: 1 | 2 | 3 | 4
   dbVer: number
 
   constructor(dbIndex: 1 | 2 | 3 | 4, storage: DBStorage) {
@@ -46,7 +46,7 @@ export class ArtCharDatabase {
     this.dbIndex = dbIndex
     this.dbVer = storage.getDBVersion()
     this.storage.setDBVersion(this.dbVer)
-    this.storage.setDBIndex(this.dbIndex as 1 | 2 | 3 | 4)
+    this.storage.setDBIndex(this.dbIndex)
 
     // Handle Datamanagers
     this.chars = new CharacterDataManager(this)
@@ -77,7 +77,7 @@ export class ArtCharDatabase {
 
     // invalidates character when things change.
     this.chars.followAny((key) => {
-      this.invalidateTeamData(key as CharacterKey)
+      this.invalidateTeamData(key)
       this.dbMeta.set({ lastEdit: Date.now() })
     })
     this.arts.followAny(() => {
@@ -115,12 +115,12 @@ export class ArtCharDatabase {
     return gender
   }
   exportGOOD() {
-    const good = {
+    const good: Partial<IGO & IGOOD> = {
       format: "GOOD",
       dbVersion: currentDBVersion,
       source: GOSource,
       version: 1,
-    } as Partial<IGO & IGOOD>
+    }
     this.dataManagers.map(dm => dm.exportGOOD(good));
     this.dataEntries.map(de => de.exportGOOD(good))
     return good as IGO & IGOOD
@@ -156,7 +156,7 @@ export class ArtCharDatabase {
     this.dataManagers.map(dm => dm.saveStorage());
     this.dataEntries.map(de => de.saveStorage());
     this.storage.setDBVersion(this.dbVer)
-    this.storage.setDBIndex(this.dbIndex as 1 | 2 | 3 | 4)
+    this.storage.setDBIndex(this.dbIndex)
   }
   swapStorage(other: ArtCharDatabase) {
     this.clearStorage()

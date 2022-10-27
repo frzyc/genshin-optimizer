@@ -11,9 +11,8 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
   constructor(database: ArtCharDatabase) {
     super(database, "artifacts")
     for (const key of this.database.storage.keys)
-      if (key.startsWith("artifact_"))
-        if (!this.set(key, this.database.storage.get(key) as any))
-          this.database.storage.remove(key)
+      if (key.startsWith("artifact_") && !this.set(key, {}))
+        this.database.storage.remove(key)
   }
   validate(obj: object): IArtifact | undefined {
     return validateArtifact(obj)
@@ -102,7 +101,6 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
       if (result.keepNotInImport || result.ignoreDups) result.artifacts.notInImport = idtoRemoveArr.length
       else idtoRemoveArr.forEach(k => this.remove(k))
     } else result.artifacts.notInImport = this.values.length
-
 
     this.database.weapons.ensureEquipment()
   }
