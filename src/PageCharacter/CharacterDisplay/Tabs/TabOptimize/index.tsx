@@ -1,7 +1,7 @@
 import { CheckBox, CheckBoxOutlineBlank, Close, Science, TrendingUp } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider';
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
@@ -300,7 +300,7 @@ export default function TabBuild() {
   }, [data, teamData])
 
   return <Box display="flex" flexDirection="column" gap={1}>
-    {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
+    {noArtifact && <Alert severity="warning" variant="filled"><Trans t={t} i18nKey="noArtis">Oops! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifacts">Artifacts</Link> page and add some!</Trans></Alert>}
     {/* Build Generator Editor */}
     {dataContext && <DataContext.Provider value={dataContext}>
 
@@ -369,26 +369,38 @@ export default function TabBuild() {
               startIcon={<TrendingUp />}
             >Generate Builds</Button>
             <DropdownButton disabled={generatingBuilds || !characterKey}
-              title={<span><b>{maxBuildsToShow}</b> {maxBuildsToShow === 1 ? "Build" : "Builds"}</span>}>
+              title={<Trans t={t} i18nKey="build" count={maxBuildsToShow}>
+                {{ count: maxBuildsToShow }} Builds
+                </Trans>}>
               <MenuItem>
                 <Typography variant="caption" color="info.main">
-                  Decreasing the number of generated build will decrease build calculation time for large number of builds.
+                  {t("buildDropdownDesc")}
                 </Typography>
               </MenuItem>
               <Divider />
               {maxBuildsToShowList.map(v => <MenuItem key={v}
-                onClick={() => buildSettingDispatch({ maxBuildsToShow: v })}>{v} {v === 1 ? "Build" : "Builds"}</MenuItem>)}
+                onClick={() => buildSettingDispatch({ maxBuildsToShow: v })}>
+                  <Trans t={t} i18nKey="build" count={v}>
+                    {{ count: v }} Builds
+                  </Trans>
+                </MenuItem>)}
             </DropdownButton>
             <DropdownButton disabled={generatingBuilds || !characterKey}
-              title={<span><b>{maxWorkers}</b> {maxWorkers === 1 ? "Thread" : "Threads"}</span>}>
+              title={<Trans t={t} i18nKey="thread" count={maxWorkers}>
+                {{ count: maxWorkers }} Threads
+                </Trans>}>
               <MenuItem>
                 <Typography variant="caption" color="info.main">
-                  Increasing the number of threads will speed up build time, but will use more CPU power.
+                  {t("threadDropdownDesc")}
                 </Typography>
               </MenuItem>
               <Divider />
               {range(1, defThreads).reverse().map(v => <MenuItem key={v}
-                onClick={() => setMaxWorkers(v)}>{v} {v === 1 ? "Thread" : "Threads"}</MenuItem>)}
+                onClick={() => setMaxWorkers(v)}>
+                  <Trans t={t} i18nKey="thread" count={v}>
+                    {{ count: v }} Threads
+                  </Trans>
+              </MenuItem>)}
             </DropdownButton>
             <Button
               disabled={!generatingBuilds}

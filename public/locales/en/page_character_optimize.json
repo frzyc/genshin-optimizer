@@ -16,7 +16,8 @@
     "showMinStatThr": "Show Min Stat Threshold",
     "downloadData": "Download Data",
     "optTarget": "Optimization Target",
-    "minStatReqThr": "Minimum Stat Requirement Threshold"
+    "minStatReqThr": "Minimum Stat Requirement Threshold",
+    "desc": "Using data from the builder, this will generate a graph to visualize Optimization Target vs. another selected target. The graph will show the maximum Optimization Target value per 0.01 of the selected target. Enabling this is optional, and doing so will slow down build times"
   },
   "levelFilter": "Artifact Level Filter",
   "useExcluded": {
@@ -77,5 +78,12 @@
         "4rain": "<0><0>Excluding<1></1> 5-Rainbow</0></0> would exclude full 5-Rainbow builds: <2><0>RRRRR</0></2>."
       }
     }
-  }
+  },
+  "buildDropdownDesc": "Decreasing the number of generated build will decrease build calculation time for large number of builds.",
+  "threadDropdownDesc": "Increasing the number of threads will speed up build time, but will use more CPU power.",
+  "noArtis": "Oops! It looks like you haven't added any artifacts to GO yet! You should go to the <1>Artifacts</1> page and add some!",
+  "build_one": "<0>{{count}}</0> Build",
+  "build_other": "<0>{{count}}</0> Builds",
+  "thread_one": "<0>{{count}}</0> Thread",
+  "thread_other": "<0>{{count}}</0> Threads"
 }
