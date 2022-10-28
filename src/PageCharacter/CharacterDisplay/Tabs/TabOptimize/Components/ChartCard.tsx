@@ -65,7 +65,11 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
           <Typography >{t`tcGraph.vs`}</Typography>
         </Grid>
         <Grid item>
-          <OptimizationTargetSelector optimizationTarget={plotBase} setTarget={target => setPlotBase(target)} />
+          <OptimizationTargetSelector
+            optimizationTarget={plotBase}
+            setTarget={target => setPlotBase(target)}
+            defaultText={t("page_character_optimize:targetSelector.selectGraphTarget")}
+          />
         </Grid>
         <Grid item>
           <BootstrapTooltip title={t("ui:reset")} placement="top">
