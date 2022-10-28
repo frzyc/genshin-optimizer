@@ -137,7 +137,8 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
 }
 
 function getLabelFromNode(node: NumNode, t: any) {
+  console.log(node)
   return typeof node.info?.name === "string"
       ? node.info.name
-      : `${t(`${node.info?.name?.props.ns}:${node.info?.name?.props.key18}`)} ${node.info?.textSuffix}`
+      : `${t(`${node.info?.name?.props.ns}:${node.info?.name?.props.key18}`)}${node.info?.textSuffix ? ` ${node.info?.textSuffix}` : ""}`
 }
