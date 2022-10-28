@@ -341,7 +341,15 @@ export default function TabBuild() {
           {/* use equipped */}
           <UseEquipped disabled={generatingBuilds} />
 
-          <Button fullWidth startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />} color={allowPartial ? "success" : "secondary"} onClick={() => buildSettingDispatch({ allowPartial: !allowPartial })}>{t`allowPartial`}</Button>
+          <Button
+            fullWidth
+            startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />}
+            color={allowPartial ? "success" : "secondary"}
+            onClick={() => buildSettingDispatch({ allowPartial: !allowPartial })}
+            disabled={generatingBuilds}
+          >
+              {t`allowPartial`}
+          </Button>
           { /* Level Filter */}
           <CardLight>
             <CardContent>{t`levelFilter`}</CardContent>
