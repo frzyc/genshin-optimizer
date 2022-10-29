@@ -2,7 +2,7 @@ import { CheckBox, CheckBoxOutlineBlank, Download, Replay } from '@mui/icons-mat
 import { Button, CardContent, Collapse, Divider, Grid, styled, Typography } from '@mui/material';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Scatter, XAxis, YAxis, ZAxis } from 'recharts';
+import { CartesianGrid, ComposedChart, Label, Legend, Line, ResponsiveContainer, Scatter, XAxis, YAxis, ZAxis } from 'recharts';
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
@@ -123,15 +123,29 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
   showMin: boolean
 }) {
   const { t } = useTranslation("page_character_optimize")
+  // Below works because character translation should already be loaded
+  const xLabel = <Label fill="white" dy={10}>
+    {getLabelFromNode(plotNode, t)}
+  </Label>
+  const yLabel = <Label fill="white" angle={-90} dx={-40}>
+    {getLabelFromNode(valueNode, t)}
+  </Label>
   return <ResponsiveContainer width="100%" height={600}>
     <ComposedChart data={displayData}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="x" scale="linear" unit={plotNode.info?.unit} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)} />
-      <YAxis name="DMG" domain={["auto", "auto"]} unit={valueNode.info?.unit} allowDecimals={false} tick={{ fill: 'white' }} type="number" />
+      <XAxis dataKey="x" scale="linear" unit={plotNode.info?.unit} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)} label={xLabel} height={50} />
+      <YAxis name="DMG" domain={["auto", "auto"]} unit={valueNode.info?.unit} allowDecimals={false} tick={{ fill: 'white' }} type="number" label={yLabel} width={100} />
       <ZAxis dataKey="y" range={[3, 25]} />
       <Legend />
       <Scatter name={t`tcGraph.optTarget`} dataKey="y" fill="#8884d8" line lineType="fitting" isAnimationActive={false} />
       {showMin && <Line name={t`tcGraph.minStatReqThr`} dataKey="min" stroke="#ff7300" type="stepBefore" connectNulls strokeWidth={2} isAnimationActive={false} />}
     </ComposedChart>
   </ResponsiveContainer>
+}
+
+function getLabelFromNode(node: NumNode, t: any) {
+  console.log(node)
+  return typeof node.info?.name === "string"
+      ? node.info.name
+      : `${t(`${node.info?.name?.props.ns}:${node.info?.name?.props.key18}`)}${node.info?.textSuffix ? ` ${node.info?.textSuffix}` : ""}`
 }
