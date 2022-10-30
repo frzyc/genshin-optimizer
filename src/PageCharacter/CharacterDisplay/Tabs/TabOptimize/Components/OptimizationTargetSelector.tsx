@@ -32,6 +32,8 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
   const node: NodeDisplay | undefined = optimizationTarget && objPathValue(data.getDisplay(), optimizationTarget) as any
 
   const invalidTarget = !optimizationTarget || !displayHeader || !node
+    // Make sure the opt target is valid, if we are not in multi-target
+    || (!ignoreGlobal && optimizationTarget && data.getDisplay()?.[optimizationTarget[0]][optimizationTarget[1]]?.isEmpty)
 
   const prevariant = invalidTarget ? "secondary" : node.info.variant
   const variant = prevariant === "invalid" ? undefined : prevariant

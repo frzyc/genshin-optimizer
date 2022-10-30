@@ -1,10 +1,9 @@
 import { faBan, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { CheckBoxOutlineBlank, CheckBox, Replay, Settings } from '@mui/icons-material';
+import { CheckBox, CheckBoxOutlineBlank, Replay, Settings } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Stack, Typography } from '@mui/material';
-import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { CharacterContext } from '../../../../../Context/CharacterContext';
 import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay';
 import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
 import CardDark from '../../../../../Components/Card/CardDark';
@@ -16,9 +15,10 @@ import ModalWrapper from '../../../../../Components/ModalWrapper';
 import SqBadge from '../../../../../Components/SqBadge';
 import { StarsDisplay } from '../../../../../Components/StarDisplay';
 import { Translate } from '../../../../../Components/Translate';
+import { CharacterContext } from '../../../../../Context/CharacterContext';
+import { DataContext, dataContextObj } from '../../../../../Context/DataContext';
 import { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../../Database/Database';
-import { DataContext, dataContextObj } from '../../../../../Context/DataContext';
 import { UIData } from '../../../../../Formula/uiData';
 import { constant } from '../../../../../Formula/utils';
 import useForceUpdate from '../../../../../ReactHooks/useForceUpdate';
@@ -37,16 +37,33 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   const onOpen = useCallback(() => setOpen(true), [setOpen])
   const onClose = useCallback(() => setOpen(false), [setOpen])
   const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
-  const artSetKeyList = useMemo(() => artifactSheets ? Object.entries(ArtifactSheet.setKeysByRarities(artifactSheets)).reverse().flatMap(([, sets]) => sets).filter(key => !key.includes("Prayers")) : [], [artifactSheets])
 
   const [dbDirty, forceUpdate] = useForceUpdate()
   useEffect(() => database.arts.followAny(forceUpdate), [database, forceUpdate])
 
+  const artKeys = useMemo(() => artifactSheets && Object.entries(ArtifactSheet.setKeysByRarities(artifactSheets))
+    .reverse()
+    .flatMap(([, sets]) => sets)
+    .filter(key => !key.includes("Prayers")),
+  [artifactSheets])
   const artSlotCount = useMemo(() => {
-    const artSlotCount: Dict<ArtifactSetKey, Record<SlotKey, number>> = Object.fromEntries(artSetKeyList.map(k => [k, Object.fromEntries(allSlotKeys.map(sk => [sk, 0]))]))
+    const artSlotCount: Dict<ArtifactSetKey, Record<SlotKey, number>> = artKeys
+      ? Object.fromEntries(artKeys.map(k => [k, Object.fromEntries(allSlotKeys.map(sk => [sk, 0]))]))
+      : {}
     database.arts.values.map(art => artSlotCount[art.setKey] && artSlotCount[art.setKey]![art.slotKey]++)
     return dbDirty && artSlotCount
-  }, [dbDirty, database, artSetKeyList])
+  }, [dbDirty, database, artKeys])
+  const artSetKeyList = useMemo(() => artKeys
+    ? artKeys.sort((a, b) => {
+      const aCount = getNumSlots(artSlotCount[a])
+      const bCount = getNumSlots(artSlotCount[b])
+      if (aCount < bCount) return 1
+      if (aCount > bCount) return -1
+      return 0
+    })
+    : [],
+  [artSlotCount, artKeys])
+
   const allowRainbow2 = !artSetExclusion.rainbow?.includes(2)
   const allowRainbow4 = !artSetExclusion.rainbow?.includes(4)
 
@@ -174,7 +191,7 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
   const setExclusionSet = buildSetting?.artSetExclusion?.[setKey] ?? []
   const allow4 = !setExclusionSet.includes(4)
-  const slots = useMemo(() => Object.values(slotCount).reduce((tot, v) => tot + (v ? 1 : 0), 0), [slotCount])
+  const slots = useMemo(() => getNumSlots(slotCount), [slotCount])
 
   /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
   const set4CondNums = useMemo(() => {
@@ -218,4 +235,8 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
       </DataContext.Provider>}
     </CardLight>
   </Grid >
+}
+
+function getNumSlots(slotCount: Record<string, number> | undefined): number {
+  return slotCount ? Object.values(slotCount).reduce((tot, v) => tot + (v ? 1 : 0), 0) : 0
 }

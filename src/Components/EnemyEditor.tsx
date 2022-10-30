@@ -26,7 +26,7 @@ export function EnemyExpandCard() {
   const onReset = useCallback(() => characterDispatch({ enemyOverride: {} }), [characterDispatch])
 
   return <CardLight>
-    <CardContent sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+    <CardContent sx={{ display: "flex", gap: 1, alignItems: "center", flexWrap: "wrap" }}>
       <Chip size="small" color="success" label={<span>{eLvlNode.info.name} <strong>{eLvlNode.value}</strong></span>} />
       {allElementsWithPhy.map(element => <Typography key={element} ><EnemyResText element={element} /></Typography>)}
       <Typography>DEF Red. {nodeVStr(eDefRed)}</Typography>
