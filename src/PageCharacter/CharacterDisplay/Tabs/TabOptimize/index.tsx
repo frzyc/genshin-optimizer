@@ -360,18 +360,20 @@ export default function TabBuild() {
       </Grid>
       {/* Footer */}
       <Grid container spacing={1}>
-        <Grid item flexGrow={1} >
+        <Grid item flexGrow={1}>
+          <span>Optimization Target: </span>
+          {<OptimizationTargetSelector
+            optimizationTarget={optimizationTarget}
+            setTarget={target => buildSettingDispatch({ optimizationTarget: target })}
+            disabled={!!generatingBuilds}
+          />}
+        </Grid>
+        <Grid item>
           <ButtonGroup>
-            <Button
-              disabled={!characterKey || generatingBuilds || !optimizationTarget || !objPathValue(data?.getDisplay(), optimizationTarget)}
-              color={characterKey ? "success" : "warning"}
-              onClick={generateBuilds}
-              startIcon={<TrendingUp />}
-            >Generate Builds</Button>
             <DropdownButton disabled={generatingBuilds || !characterKey}
               title={<Trans t={t} i18nKey="build" count={maxBuildsToShow}>
                 {{ count: maxBuildsToShow }} Builds
-                </Trans>}>
+              </Trans>}>
               <MenuItem>
                 <Typography variant="caption" color="info.main">
                   {t("buildDropdownDesc")}
@@ -380,15 +382,16 @@ export default function TabBuild() {
               <Divider />
               {maxBuildsToShowList.map(v => <MenuItem key={v}
                 onClick={() => buildSettingDispatch({ maxBuildsToShow: v })}>
-                  <Trans t={t} i18nKey="build" count={v}>
-                    {{ count: v }} Builds
-                  </Trans>
-                </MenuItem>)}
+                <Trans t={t} i18nKey="build" count={v}>
+                  {{ count: v }} Builds
+                </Trans>
+              </MenuItem>)}
             </DropdownButton>
             <DropdownButton disabled={generatingBuilds || !characterKey}
+              sx={{ borderRadius: "4px 0px 0px 4px"}}
               title={<Trans t={t} i18nKey="thread" count={maxWorkers}>
                 {{ count: maxWorkers }} Threads
-                </Trans>}>
+              </Trans>}>
               <MenuItem>
                 <Typography variant="caption" color="info.main">
                   {t("threadDropdownDesc")}
@@ -397,32 +400,29 @@ export default function TabBuild() {
               <Divider />
               {range(1, defThreads).reverse().map(v => <MenuItem key={v}
                 onClick={() => setMaxWorkers(v)}>
-                  <Trans t={t} i18nKey="thread" count={v}>
-                    {{ count: v }} Threads
-                  </Trans>
+                <Trans t={t} i18nKey="thread" count={v}>
+                  {{ count: v }} Threads
+                </Trans>
               </MenuItem>)}
             </DropdownButton>
-            <Button
-              disabled={!generatingBuilds}
-              color="error"
-              onClick={() => cancelToken.current()}
-              startIcon={<Close />}
-            >Cancel</Button>
+            <BootstrapTooltip placement="top" title={!optimizationTarget ? t("selectTargetFirst") : ""}>
+              <span>
+                <Button
+                  disabled={!characterKey || !optimizationTarget || !objPathValue(data?.getDisplay(), optimizationTarget)}
+                  color={generatingBuilds ? "error" : "success"}
+                  onClick={generatingBuilds ? () => cancelToken.current() : generateBuilds}
+                  startIcon={generatingBuilds ? <Close /> : <TrendingUp />}
+                  sx={{ borderRadius: "0px 4px 4px 0px"}}
+                >{generatingBuilds ? "Cancel" : "Generate Builds"}</Button>
+              </span>
+            </BootstrapTooltip>
           </ButtonGroup>
-        </Grid>
-        <Grid item>
-          <span>Optimization Target: </span>
-          {<OptimizationTargetSelector
-            optimizationTarget={optimizationTarget}
-            setTarget={target => buildSettingDispatch({ optimizationTarget: target })}
-            disabled={!!generatingBuilds}
-          />}
         </Grid>
       </Grid>
 
       {!!characterKey && <BuildAlert {...{ status: buildStatus, characterName, maxBuildsToShow }} />}
       <Box >
-        <ChartCard disabled={generatingBuilds} chartData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} />
+        <ChartCard disabled={generatingBuilds || !optimizationTarget} chartData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} showTooltip={!optimizationTarget} />
       </Box>
       <CardLight>
         <CardContent>

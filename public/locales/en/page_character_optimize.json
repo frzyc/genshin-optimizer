@@ -89,5 +89,6 @@
   "targetSelector": {
     "selectOptTarget": "Select an Optimization Target",
     "selectGraphTarget": "Select a Graph Target"
-  }
+  },
+  "selectTargetFirst": "Select an Optimization Target first"
 }
