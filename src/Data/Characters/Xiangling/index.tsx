@@ -101,8 +101,8 @@ const dmgFormulas = {
     dmgNado: dmgNode("atk", datamine.burst.dmgNado, "burst", { premod: { pyro_dmg_: antiC6 } }),
   },
   constellation2: {
-    dmg: customDmgNode(prod(input.total.atk, percent(datamine.constellation2.dmg)), "elemental",
-      { hit: { ele: constant(elementKey) } })
+    dmg: greaterEq(input.constellation, 2, customDmgNode(prod(input.total.atk, percent(datamine.constellation2.dmg)), "elemental",
+      { hit: { ele: constant(elementKey) } }))
   }
 }
 
