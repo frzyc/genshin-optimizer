@@ -44,7 +44,7 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>
   const iconDisplay = icon ? <ImgIcon src={icon} size={2} sx={{ my: -1 }} /> : node?.info.icon
   return <>
-    <Button color="info" onClick={onShow} disabled={disabled} >
+    <Button color="info" onClick={onShow} disabled={disabled} sx={{ flexGrow: 1 }} >
       {invalidTarget ? <strong>{defaultText}</strong> : <Stack direction="row" divider={<Divider orientation='vertical' flexItem />} spacing={1}>
         <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
           {iconDisplay}

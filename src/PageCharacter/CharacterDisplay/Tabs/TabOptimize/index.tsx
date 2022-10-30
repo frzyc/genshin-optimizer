@@ -23,6 +23,7 @@ import { UIData } from '../../../../Formula/uiData';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
+import useMediaQueryUp from '../../../../ReactHooks/useMediaQueryUp';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { CharacterKey, charKeyToLocCharKey, LocationCharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
@@ -72,6 +73,7 @@ export default function TabBuild() {
   const { buildResult: { builds, buildDate }, buildResultDispatch } = useBuildResult(characterKey)
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
+  const isSM = ["xs", "sm"].includes(useMediaQueryUp())
 
   //register changes in artifact database
   useEffect(() =>
@@ -299,6 +301,12 @@ export default function TabBuild() {
     return data && teamData && { data, teamData }
   }, [data, teamData])
 
+  const targetSelector = <OptimizationTargetSelector
+    optimizationTarget={optimizationTarget}
+    setTarget={target => buildSettingDispatch({ optimizationTarget: target })}
+    disabled={!!generatingBuilds}
+  />
+
   return <Box display="flex" flexDirection="column" gap={1}>
     {noArtifact && <Alert severity="warning" variant="filled"><Trans t={t} i18nKey="noArtis">Oops! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifacts">Artifacts</Link> page and add some!</Trans></Alert>}
     {/* Build Generator Editor */}
@@ -359,66 +367,56 @@ export default function TabBuild() {
         </Grid>
       </Grid>
       {/* Footer */}
-      <Grid container spacing={1}>
-        <Grid item flexGrow={1}>
-          <span>Optimization Target: </span>
-          {<OptimizationTargetSelector
-            optimizationTarget={optimizationTarget}
-            setTarget={target => buildSettingDispatch({ optimizationTarget: target })}
-            disabled={!!generatingBuilds}
-          />}
-        </Grid>
-        <Grid item>
-          <ButtonGroup>
-            <DropdownButton disabled={generatingBuilds || !characterKey}
-              title={<Trans t={t} i18nKey="build" count={maxBuildsToShow}>
-                {{ count: maxBuildsToShow }} Builds
-              </Trans>}>
-              <MenuItem>
-                <Typography variant="caption" color="info.main">
-                  {t("buildDropdownDesc")}
-                </Typography>
-              </MenuItem>
-              <Divider />
-              {maxBuildsToShowList.map(v => <MenuItem key={v}
-                onClick={() => buildSettingDispatch({ maxBuildsToShow: v })}>
-                <Trans t={t} i18nKey="build" count={v}>
-                  {{ count: v }} Builds
-                </Trans>
-              </MenuItem>)}
-            </DropdownButton>
-            <DropdownButton disabled={generatingBuilds || !characterKey}
-              sx={{ borderRadius: "4px 0px 0px 4px"}}
-              title={<Trans t={t} i18nKey="thread" count={maxWorkers}>
-                {{ count: maxWorkers }} Threads
-              </Trans>}>
-              <MenuItem>
-                <Typography variant="caption" color="info.main">
-                  {t("threadDropdownDesc")}
-                </Typography>
-              </MenuItem>
-              <Divider />
-              {range(1, defThreads).reverse().map(v => <MenuItem key={v}
-                onClick={() => setMaxWorkers(v)}>
-                <Trans t={t} i18nKey="thread" count={v}>
-                  {{ count: v }} Threads
-                </Trans>
-              </MenuItem>)}
-            </DropdownButton>
-            <BootstrapTooltip placement="top" title={!optimizationTarget ? t("selectTargetFirst") : ""}>
-              <span>
-                <Button
-                  disabled={!characterKey || !optimizationTarget || !objPathValue(data?.getDisplay(), optimizationTarget)}
-                  color={generatingBuilds ? "error" : "success"}
-                  onClick={generatingBuilds ? () => cancelToken.current() : generateBuilds}
-                  startIcon={generatingBuilds ? <Close /> : <TrendingUp />}
-                  sx={{ borderRadius: "0px 4px 4px 0px"}}
-                >{generatingBuilds ? "Cancel" : "Generate Builds"}</Button>
-              </span>
-            </BootstrapTooltip>
-          </ButtonGroup>
-        </Grid>
-      </Grid>
+      {isSM && targetSelector}
+      <ButtonGroup>
+        {!isSM && targetSelector}
+        <DropdownButton disabled={generatingBuilds || !characterKey}
+          title={<Trans t={t} i18nKey="build" count={maxBuildsToShow}>
+            {{ count: maxBuildsToShow }} Builds
+          </Trans>}>
+          <MenuItem>
+            <Typography variant="caption" color="info.main">
+              {t("buildDropdownDesc")}
+            </Typography>
+          </MenuItem>
+          <Divider />
+          {maxBuildsToShowList.map(v => <MenuItem key={v}
+            onClick={() => buildSettingDispatch({ maxBuildsToShow: v })}>
+            <Trans t={t} i18nKey="build" count={v}>
+              {{ count: v }} Builds
+            </Trans>
+          </MenuItem>)}
+        </DropdownButton>
+        <DropdownButton disabled={generatingBuilds || !characterKey}
+          sx={{ borderRadius: "4px 0px 0px 4px" }}
+          title={<Trans t={t} i18nKey="thread" count={maxWorkers}>
+            {{ count: maxWorkers }} Threads
+          </Trans>}>
+          <MenuItem>
+            <Typography variant="caption" color="info.main">
+              {t("threadDropdownDesc")}
+            </Typography>
+          </MenuItem>
+          <Divider />
+          {range(1, defThreads).reverse().map(v => <MenuItem key={v}
+            onClick={() => setMaxWorkers(v)}>
+            <Trans t={t} i18nKey="thread" count={v}>
+              {{ count: v }} Threads
+            </Trans>
+          </MenuItem>)}
+        </DropdownButton>
+        <BootstrapTooltip placement="top" title={!optimizationTarget ? t("selectTargetFirst") : ""}>
+          <span>
+            <Button
+              disabled={!characterKey || !optimizationTarget || !objPathValue(data?.getDisplay(), optimizationTarget)}
+              color={generatingBuilds ? "error" : "success"}
+              onClick={generatingBuilds ? () => cancelToken.current() : generateBuilds}
+              startIcon={generatingBuilds ? <Close /> : <TrendingUp />}
+              sx={{ borderRadius: "0px 4px 4px 0px" }}
+            >{generatingBuilds ? "Cancel" : "Generate Builds"}</Button>
+          </span>
+        </BootstrapTooltip>
+      </ButtonGroup>
 
       {!!characterKey && <BuildAlert {...{ status: buildStatus, characterName, maxBuildsToShow }} />}
       <Box >
