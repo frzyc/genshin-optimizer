@@ -73,7 +73,7 @@ const [condSkillPath, condSkill] = cond(key, "skill")
 
 const [condBurstPath, condBurst] = cond(key, "burst")
 const nodeC4 = greaterEq(input.constellation, 4,
-  equal(condBurst, "on", datamine.constellation4.dmg_), { name: ct.chg("c4dmg_") })
+  equal(condBurst, "on", datamine.constellation4.dmg_), { name: ct.ch("c4dmg_"), unit: "%" })
 
 const nodeSkillDmgRed_ = equal(condSkill, "on",
   sum(subscript(input.total.skillIndex, datamine.skill.dmgRed_, { unit: "%" }), min(percent(0.24), prod(percent(0.2), input.premod.hydro_dmg_))))
