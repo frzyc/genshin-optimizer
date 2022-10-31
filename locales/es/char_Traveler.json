@@ -1,0 +1,35 @@
+{
+  "electro": {
+    "skill": {
+      "absorb": "Personaje activo absorbe un Abalorio de la profusión",
+      "amuletGenAmt": "Número de Abalorios de la profusión generados"
+    },
+    "c2": {
+      "thunderHit": "<strong>Rayo Temible</strong> golpea a enemigo"
+    },
+    "burst": {
+      "3rd": "Daño del 3er Rayo Temible",
+      "thunderCd": "TdE de Rayo temible"
+    },
+    "passive2": {
+      "enerRech_": "Aum. de la Recarga de Energía por efecto de Abalorio de la profusión"
+    },
+    "c6": {
+      "fallingThunder3": "Ataque de 3er <strong>Rayo temible</strong>",
+      "fallingThunderBonus_": "Bono de Daño de <strong>Rayo temible</strong>"
+    }
+  },
+  "anemo": {
+    "p1": "Daño de Viento afilado",
+    "c1": "Reduce el Daño recibido durante el lanzamiento",
+    "c6": "Objetivos que reciben Daño por <strong>Oleada de ráfagas</strong>"
+  },
+  "geo": {
+    "passive2": {
+      "key": "Daño de Roca turbulenta"
+    },
+    "c2": {
+      "key": "Daño de Fusión de lava"
+    }
+  }
+}

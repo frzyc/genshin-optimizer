@@ -17,7 +17,7 @@
     "downloadData": "Download Data",
     "optTarget": "Optimization Target",
     "minStatReqThr": "Minimum Stat Requirement Threshold",
-    "desc": "Using data from the builder, this will generate a graph to visualize Optimization Target vs. another selected target. The graph will show the maximum Optimization Target value per 0.01 of the selected target. Enabling this is optional, and doing so will slow down build times"
+    "desc": "Using data from the builder, this will generate a graph to visualize Optimization Target vs. the selected Graph Target. The graph will show the maximum Optimization Target value per 0.01 of the selected Graph Target. Enabling this is optional, and doing so will slow down build times"
   },
   "levelFilter": "Artifact Level Filter",
   "useExcluded": {
@@ -85,5 +85,10 @@
   "build_one": "<0>{{count}}</0> Build",
   "build_other": "<0>{{count}}</0> Builds",
   "thread_one": "<0>{{count}}</0> Thread",
-  "thread_other": "<0>{{count}}</0> Threads"
+  "thread_other": "<0>{{count}}</0> Threads",
+  "targetSelector": {
+    "selectOptTarget": "Select an Optimization Target",
+    "selectGraphTarget": "Select a Graph Target"
+  },
+  "selectTargetFirst": "Select an Optimization Target first"
 }

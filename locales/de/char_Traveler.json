@@ -1,0 +1,22 @@
+{
+  "electro": {
+    "skill": {
+      "absorb": "Aktiver Charakter absorbiert ein Amulett des Überflusses",
+      "amuletGenAmt": "Anzahl erzeugter Amulette des Überflusses"
+    },
+    "c2": {
+      "thunderHit": "<strong>Rollender Donner</strong> trifft Gegner"
+    },
+    "burst": {
+      "3rd": "Dritter greller Blitzschlag SCH",
+      "thunderCd": "Rollender Donner Abklingzeit"
+    },
+    "passive2": {
+      "enerRech_": "Amulett des Überflusses Aufladerateneffekt-Erhöhung"
+    },
+    "c6": {
+      "fallingThunder3": "Dritter <strong>Rollender Donner</strong>-Angriff",
+      "fallingThunderBonus_": "<strong>Rollender Donner</strong> SCH-Bonus"
+    }
+  }
+}
