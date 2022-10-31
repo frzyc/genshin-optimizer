@@ -21,9 +21,10 @@ type ChartCardProps = {
   plotBase?: string[],
   setPlotBase: (path: string[] | undefined) => void
   disabled?: boolean
+  showTooltip?: boolean
 }
 type Point = { x: number, y: number, min?: number }
-export default function ChartCard({ chartData, plotBase, setPlotBase, disabled = false }: ChartCardProps) {
+export default function ChartCard({ chartData, plotBase, setPlotBase, disabled = false, showTooltip = false }: ChartCardProps) {
   const { t } = useTranslation(["page_character_optimize", "ui"])
   const [showDownload, setshowDownload] = useState(false)
   const [showMin, setshowMin] = useState(true)
@@ -65,10 +66,19 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
           <Typography >{t`tcGraph.vs`}</Typography>
         </Grid>
         <Grid item>
-          <OptimizationTargetSelector optimizationTarget={plotBase} setTarget={target => setPlotBase(target)} />
+          <BootstrapTooltip placement="top" title={showTooltip ? t("page_character_optimize:selectTargetFirst") : ""}>
+            <span>
+              <OptimizationTargetSelector
+                optimizationTarget={plotBase}
+                setTarget={target => setPlotBase(target)}
+                defaultText={t("page_character_optimize:targetSelector.selectGraphTarget")}
+                disabled={disabled}
+              />
+            </span>
+          </BootstrapTooltip>
         </Grid>
         <Grid item>
-          <BootstrapTooltip title={t("ui:reset")} placement="top">
+          <BootstrapTooltip title={!plotBase ? "" : t("ui:reset")} placement="top">
             <span><Button color="error" onClick={() => setPlotBase(undefined)} disabled={!plotBase}>
               <Replay />
             </Button></span>
@@ -146,6 +156,6 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
 function getLabelFromNode(node: NumNode, t: any) {
   console.log(node)
   return typeof node.info?.name === "string"
-      ? node.info.name
-      : `${t(`${node.info?.name?.props.ns}:${node.info?.name?.props.key18}`)}${node.info?.textSuffix ? ` ${node.info?.textSuffix}` : ""}`
+    ? node.info.name
+    : `${t(`${node.info?.name?.props.ns}:${node.info?.name?.props.key18}`)}${node.info?.textSuffix ? ` ${node.info?.textSuffix}` : ""}`
 }
