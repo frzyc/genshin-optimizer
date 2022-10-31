@@ -203,15 +203,3 @@ function intoVInfo(value: N_S, info: Info | undefined): AnyNode {
 
 type _NodeList = { [key: string]: NodeList } & { operation?: never }
 type NodeList = _NodeList | ReadNode<number> | ReadNode<string>
-
-/**
- * `v1` === `v2` ? `match` : `unmatch`
- * @deprecated Use `equal`, `unequal`, `equalStr`, or `compareEq` instead
- */
-export function matchFull(v1: Num, v2: Num, match: Num, unmatch: Num, info?: Info): MatchNode<NumNode>
-export function matchFull(v1: Num, v2: Num, match: Str, unmatch: Str, info?: Info): MatchNode<StrNode>
-export function matchFull(v1: Str, v2: Str, match: Num, unmatch: Num, info?: Info): MatchNode<NumNode>
-export function matchFull(v1: Str, v2: Str, match: Str, unmatch: Str, info?: Info): MatchNode<StrNode>
-export function matchFull(v1: N_S, v2: N_S, match: N_S, unmatch: N_S, info?: Info): MatchNode<AnyNode> {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(match), intoV(unmatch)], info }
-}
