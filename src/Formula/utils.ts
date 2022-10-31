@@ -31,6 +31,7 @@ export function percent(value: number, info?: Info): ConstantNode<number> {
 export function infoMut(node: OptNode, info: Info): OptNode
 export function infoMut(node: NumNode, info: Info): NumNode
 export function infoMut(node: StrNode, info: Info): StrNode
+export function infoMut(node: AnyNode, info: Info): AnyNode
 export function infoMut(node: AnyNode, info: Info): AnyNode {
   if (info) node.info = { ...node.info, ...info }
   return node
@@ -40,8 +41,7 @@ export function infoMut(node: AnyNode, info: Info): AnyNode {
 export function lookup(index: StrNode, table: Dict<string, NumNode>, defaultV: Num | "none", info?: Info): LookupNode<NumNode>
 export function lookup(index: StrNode, table: Dict<string, StrNode>, defaultV: Str | "none", info?: Info): LookupNode<StrNode>
 export function lookup(index: StrNode, table: Dict<string, AnyNode>, defaultV: N_S | "none", info?: Info): LookupNode<AnyNode> {
-  const operands = defaultV !== "none" ? [intoV(index), intoV(defaultV)] as const : [intoV(index)] as const
-  return { operation: "lookup", operands, table, info }
+  return { operation: "lookup", operands: defaultV !== "none" ? [intoV(index), intoV(defaultV)] : [intoV(index)], table, info }
 }
 
 /** min( x1, x2, ... ) */
@@ -92,50 +92,47 @@ export function compareEq(v1: N_S, v2: N_S, eq: N_S, neq: N_S, info?: Info): Mat
 export function equal(v1: Num, v2: Num, pass: Num, info?: Info): MatchNode<NumNode>
 export function equal(v1: Str, v2: Str, pass: Num, info?: Info): MatchNode<NumNode>
 export function equal(v1: N_S, v2: N_S, pass: Num, info?: Info): MatchNode<NumNode> {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(pass), intoV(0)], info, emptyOn: "unmatch" }
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoVInfo(pass, info), intoV(0)], emptyOn: "unmatch" }
 }
 /** v1 == v2 ? pass : `undefined` */
 export function equalStr(v1: Num, v2: Num, pass: Str, info?: Info): MatchNode<StrNode>
 export function equalStr(v1: Str, v2: Str, pass: Str, info?: Info): MatchNode<StrNode>
 export function equalStr(v1: N_S, v2: N_S, pass: Str, info?: Info): MatchNode<StrNode> {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(pass), intoV(undefined)], info, emptyOn: "unmatch" }
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoVInfo(pass, info), intoV(undefined)], emptyOn: "unmatch" }
 }
 /** v1 != v2 ? pass : 0 */
 export function unequal(v1: Num, v2: Num, pass: Num, info?: Info): MatchNode<NumNode>
 export function unequal(v1: Str, v2: Str, pass: Num, info?: Info): MatchNode<NumNode>
 export function unequal(v1: N_S, v2: N_S, pass: Num, info?: Info): MatchNode<NumNode> {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(0), intoV(pass)], info, emptyOn: "match" }
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(0), intoVInfo(pass, info)], emptyOn: "match" }
 }
 /** v1 != v2 ? pass : `undefined` */
 export function unequalStr(v1: Num, v2: Num, pass: Str, info?: Info): MatchNode<StrNode>
 export function unequalStr(v1: Str, v2: Str, pass: Str, info?: Info): MatchNode<StrNode>
 export function unequalStr(v1: N_S, v2: N_S, pass: Str, info?: Info): MatchNode<StrNode> {
-  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(undefined), intoV(pass)], info, emptyOn: "match" }
+  return { operation: "match", operands: [intoV(v1), intoV(v2), intoV(undefined), intoVInfo(pass, info)], emptyOn: "match" }
 }
 /** v1 >= v2 ? pass : 0 */
 export function greaterEq(v1: Opt, v2: Opt, pass: Opt, info?: Info): ThresholdNode<OptNode, OptNode, OptNode>
 export function greaterEq(v1: Num, v2: Num, pass: Num, info?: Info): ThresholdNode<NumNode>
 export function greaterEq(v1: Num, v2: Num, pass: Num, info?: Info): ThresholdNode<NumNode> {
-  const operands = [intoV(v1), intoV(v2), intoV(pass), intoV(0)] as any
-  return { operation: "threshold", operands, info, emptyOn: "l" }
+  return { operation: "threshold", operands: [intoV(v1), intoV(v2), intoVInfo(pass, info), intoV(0)], emptyOn: "l" }
 }
 /** v1 >= v2 ? pass : `undefined` */
 export function greaterEqStr(v1: Num, v2: Num, pass: Str, info?: Info): ThresholdNode<StrNode> {
-  const operands = [intoV(v1), intoV(v2), intoV(pass), intoV(undefined)] as any
-  return { operation: "threshold", operands, info, emptyOn: "l" }
+  return { operation: "threshold", operands: [intoV(v1), intoV(v2), intoVInfo(pass, info), intoV(undefined)], emptyOn: "l" }
 }
 /** v1 < v2 ? pass : 0 */
 export function lessThan(v1: Opt, v2: Opt, pass: Opt, info?: Info): ThresholdNode<OptNode, OptNode, OptNode>
 export function lessThan(v1: Num, v2: Num, pass: Num, info?: Info): ThresholdNode<NumNode>
 export function lessThan(v1: Num, v2: Num, pass: Num, info?: Info): ThresholdNode<NumNode> {
-  const operands = [intoV(v1), intoV(v2), intoV(0), intoV(pass)] as any
-  return { operation: "threshold", operands, info, emptyOn: "ge" }
+  return { operation: "threshold", operands: [intoV(v1), intoV(v2), intoV(0), intoVInfo(pass, info)], emptyOn: "ge" }
 }
 /** v1 >= v2 ? ge : le */
-export function threshold(v1: Opt, v2: Opt, ge: Opt, le: Opt, info?: Info): OptNode
-export function threshold(v1: Num, v2: Num, ge: Num, le: Num, info?: Info): NumNode
-export function threshold(v1: Num, v2: Num, ge: Num, le: Num, info?: Info): NumNode {
-  return { operation: "threshold", operands: intoOps([v1, v2, ge, le]) as any, info }
+export function threshold(v1: Opt, v2: Opt, ge: Opt, le: Opt, info?: Info): ThresholdNode<OptNode, OptNode, OptNode>
+export function threshold(v1: Num, v2: Num, ge: Num, le: Num, info?: Info): ThresholdNode<NumNode>
+export function threshold(v1: Num, v2: Num, ge: Num, le: Num, info?: Info): ThresholdNode<NumNode> {
+  return { operation: "threshold", operands: [intoV(v1), intoV(v2), intoV(ge), intoV(le)], info }
 }
 
 export function setReadNodeKeys<T extends NodeList>(nodeList: T, prefix: string[] = []): T {
@@ -195,6 +192,13 @@ function intoV(value: Str): StrNode
 function intoV(value: N_S): AnyNode
 function intoV(value: N_S): AnyNode {
   return (typeof value !== "object") ? constant(value) : value
+}
+function intoVInfo(value: Num, info: Info | undefined): NumNode
+function intoVInfo(value: Str, info: Info | undefined): StrNode
+function intoVInfo(value: N_S, info: Info | undefined): AnyNode
+function intoVInfo(value: N_S, info: Info | undefined): AnyNode {
+  if (!info) return intoV(value)
+  return (typeof value !== "object") ? constant(value, info) : infoMut({ ...value }, info)
 }
 
 type _NodeList = { [key: string]: NodeList } & { operation?: never }
