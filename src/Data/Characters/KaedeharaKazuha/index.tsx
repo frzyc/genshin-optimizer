@@ -54,7 +54,7 @@ const datamine = {
     enerCost: skillParam_gen.burst[b++][0],
   },
   passive1: {
-    asorbAdd: skillParam_gen.passive1[p1++][0],
+    absorbAdd: skillParam_gen.passive1[p1++][0],
   },
   passive2: {
     elemas_dmg_: skillParam_gen.passive2[p2++][0],
@@ -128,11 +128,11 @@ const dmgFormulas = {
   burst: {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
     dot: dmgNode("atk", datamine.burst.dot, "burst"),
-    ...Object.fromEntries(absorbableEle.map(key =>
-      [key, equal(condBurstAbsorption, key, dmgNode("atk", datamine.burst.add, "burst", { hit: { ele: constant(key) } }))]))
+    absorb: unequal(condBurstAbsorption, undefined, dmgNode("atk", datamine.burst.add, "burst", { hit: { ele: condBurstAbsorption } }))
   },
-  passive1: Object.fromEntries(absorbableEle.map(key =>
-    [key, equal(condSkillAbsorption, key, customDmgNode(prod(input.total.atk, datamine.passive1.asorbAdd), "plunging", { hit: { ele: constant(key) } }))])),
+  passive1: {
+    absorb: unequal(condSkillAbsorption, undefined, customDmgNode(prod(input.total.atk, datamine.passive1.absorbAdd), "plunging", { hit: { ele: condSkillAbsorption } }))
+  },
   passive2: asc4,
   constellation6: {
     normal_dmg_: c6NormDmg_,
@@ -272,7 +272,7 @@ const sheet: ICharacterSheet = {
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
         name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
         fields: [{
-          node: infoMut(dmgFormulas.burst[eleKey], { name: ct.chg(`burst.skillParams.2`) }),
+          node: infoMut(dmgFormulas.burst.absorb, { name: ct.chg(`burst.skillParams.2`) }),
         }]
       }]))
     }), ct.condTem("constellation2", { // C2 self
@@ -309,7 +309,7 @@ const sheet: ICharacterSheet = {
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
         name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
         fields: [{
-          node: infoMut(dmgFormulas.passive1[eleKey], { name: stg(`addEleDMG`) }),
+          node: infoMut(dmgFormulas.passive1.absorb, { name: stg(`addEleDMG`) }),
         }]
       }]))
     })]),
