@@ -88,7 +88,7 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
     },
     burst: {
       dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
-      absorb: dmgNode("atk", datamine.burst.absorbDmg, "burst", { hit: { ele: condBurstAbsorption } }),
+      absorb: unequal(condBurstAbsorption, undefined, dmgNode("atk", datamine.burst.absorbDmg, "burst", { hit: { ele: condBurstAbsorption } })),
     },
     passive1: {
       dmg: greaterEq(input.asc, 1, customDmgNode(prod(input.total.atk, datamine.passive1.dmg), "elemental", { hit: { ele: constant(elementKey) } })),
