@@ -62,9 +62,10 @@ for (const ele of allElements) {
 for (const reaction of [...allTransformative, ...allAmplifying, ...allAdditive]) {
   allModStatNodes[`${reaction}_dmg_`].info!.variant = reaction
 }
-crittableTransformativeReactions.forEach(reaction =>
+crittableTransformativeReactions.forEach(reaction => {
   allNonModStatNodes[`${reaction}_critRate_`].info!.variant = reaction
-)
+  allNonModStatNodes[`${reaction}_critDMG_`].info!.variant = reaction
+})
 allNonModStatNodes.healInc.info!.variant = "heal"
 allNonModStatNodes.incHeal_.info!.variant = "heal"
 allModStatNodes.heal_.info!.variant = "heal"
