@@ -44,6 +44,7 @@ const sheet: IWeaponSheet = {
   icon,
   iconAwaken,
   document: [{
+    teamBuff: true,
     header: headerTemplate(key, icon, iconAwaken, st("stacks")),
     path: condStacksPath,
     value: condStacks,
