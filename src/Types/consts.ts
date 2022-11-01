@@ -92,6 +92,7 @@ export const nonTravelerCharacterKeys = [
   "KukiShinobu",
   "Lisa",
   "Mona",
+  "Nahida",
   "Nilou",
   "Ningguang",
   "Noelle",
@@ -295,6 +296,7 @@ export type WeaponBowKey = typeof allWeaponBowKeys[number]
 
 export const allWeaponCatalystKeys = [
   "ApprenticesNotes",
+  "AThousandFloatingDreams",
   "BlackcliffAgate",
   "DodocoTales",
   "EmeraldOrb",

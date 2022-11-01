@@ -3,7 +3,7 @@ import { crystallizeLevelMultipliers, transformativeReactionLevelMultipliers, tr
 import { absorbableEle } from "../Types/consts";
 import { objectKeyMap } from "../Util/Util";
 import { infusionNode, input } from "./index";
-import { constant, data, equal, frac, infoMut, one, percent, prod, subscript, sum } from "./utils";
+import { constant, data, equal, frac, infoMut, lookup, max, min, naught, one, percent, prod, subscript, sum } from "./utils";
 
 const crystallizeMulti1 = subscript(input.lvl, crystallizeLevelMultipliers, KeyMap.info("crystallize_level_multi"))
 const crystallizeElemas = prod(40 / 9, frac(input.total.eleMas, 1400))
@@ -16,13 +16,30 @@ const transMulti1 = subscript(input.lvl, transformativeReactionLevelMultipliers,
 const transMulti2 = prod(16, frac(input.total.eleMas, 2000))
 const trans = {
   ...objectKeyMap(Object.keys(transformativeReactions), reaction => {
-    const { multi, resist } = transformativeReactions[reaction]
+    const { multi, resist, canCrit } = transformativeReactions[reaction]
     return infoMut(prod(
       prod(constant(multi, KeyMap.info(`${reaction}_multi`)), transMulti1),
       sum(
         infoMut(sum(one, transMulti2), { pivot: true, ...KeyMap.info("base_transformative_multi") }),
         input.total[`${reaction}_dmg_`]
       ),
+      lookup(input.hit.hitMode, {
+        hit: one,
+        critHit: canCrit
+          ? sum(one, input.total[`${reaction}_critDMG_`])
+          : one,
+        avgHit: canCrit
+          ? sum(one,
+            prod(
+              infoMut(max(min(
+                input.total[`${reaction}_critRate_`],
+                sum(one, one)
+              ), naught), { ...input.total[`${reaction}_critRate_`].info, pivot: true }),
+              input.total[`${reaction}_critDMG_`]
+            )
+          )
+          : one
+      }, NaN),
       input.enemy[`${resist}_resMulti`]
     ), KeyMap.info(`${reaction}_hit`))
   }),
