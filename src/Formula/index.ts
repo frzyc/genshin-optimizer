@@ -20,6 +20,7 @@ const allMisc = [
   "stamina", "staminaDec_", "staminaSprintDec_", "staminaGlidingDec_", "staminaChargedDec_",
   "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_", "dmgRed_", "healInc"
 ] as const
+const allBase = ["base_atk", "base_hp", "base_def"] as const
 
 const allModStats = [
   ...allArtModStats,
@@ -38,6 +39,7 @@ const allNonModStats = [
   ...allEleEnemyResKeys,
   "enemyDefRed_" as const,
   ...allMisc,
+  ...allBase,
 ] as const
 
 export const allInputPremodKeys = [...allModStats, ...allNonModStats] as const
@@ -88,7 +90,6 @@ const input = setReadNodeKeys(deepNodeClone({
   base: objectKeyMap(['atk', 'hp', 'def'], key => read("add", KeyMap.info(key))),
   customBonus: withDefaultInfo({ prefix: "custom", pivot }, {
     ...allModStatNodes, ...allNonModStatNodes,
-    "base_atk": read(undefined, { /* TODO: Add info */ }), "base_def": read(undefined, { /* TODO: Add info */ }), "base_hp": read(undefined, { /* TODO: Add info */ }),
   }),
   bonus: { ...talent },
   premod: { ...talent, ...allModStatNodes, ...allNonModStatNodes },
