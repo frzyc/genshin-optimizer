@@ -91,7 +91,7 @@ export function ArtifactSetMultiAutocomplete({ artSetKeys, setArtSetKeys, ...pro
     allArtifactKeysWithGrouper={allArtifactSetsAndRarities}
     selectedArtifactKeys={artSetKeys}
     setArtifactKeys={setArtSetKeys}
-    getName={(key: ArtifactSetKey) => artifactSheets(key).nameRaw}
+    getName={(key: ArtifactSetKey) => t(`artifactNames_gen:${key}`)}
     getImage={(key: ArtifactSetKey) => artifactSheets(key).defIcon}
     label={t("artifact:autocompleteLabels.sets")}
     groupBy={(option) => option.grouper?.toString() ?? ""}
@@ -222,7 +222,7 @@ export function ArtifactSetSingleAutocomplete({ artSetKey, setArtSetKey, label =
     allArtifactKeysWithGrouper={allArtifactSetsAndRarities}
     selectedArtifactKey={artSetKey}
     setArtifactKey={setArtSetKey}
-    getName={(key: ArtifactSetKey | "") => key && artifactSheets(key).nameRaw}
+    getName={(key: ArtifactSetKey | "") => key && t(`artifactNames_gen:${key}`)}
     getImage={(key: ArtifactSetKey | "") => key ? artifactSheets(key).defIcon : <></>}
     label={label}
     groupBy={(option) => option.grouper?.toString() ?? ""}
