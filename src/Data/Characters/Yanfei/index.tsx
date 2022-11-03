@@ -17,7 +17,7 @@ const elementKey: ElementKey = "pyro"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -90,7 +90,7 @@ const datamine = {
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, "afterBurst")
 const afterBurst_charged_dmg_ = equal(condAfterBurst, "on",
-  subscript(input.total.burstIndex, datamine.burst.charged_dmg_)
+  subscript(input.total.burstIndex, dm.burst.charged_dmg_)
 )
 
 const [condP1SealsPath, condP1Seals] = cond(key, "p1Seals")
@@ -98,7 +98,7 @@ const p1_pyro_dmg_ = greaterEq(input.asc, 1,
   // TODO: Should be changing number of seals shown based on C6
   lookup(condP1Seals, Object.fromEntries(range(1, 4).map(seals => [
     seals,
-    prod(seals, datamine.passive1.seal_pyro_dmg_)
+    prod(seals, dm.passive1.seal_pyro_dmg_)
   ])), naught)
 )
 
@@ -106,36 +106,36 @@ const [condP2ChargedCritPath, condP2ChargedCrit] = cond(key, "p2ChargedCrit")
 
 const [condC2EnemyHpPath, condC2EnemyHp] = cond(key, "c2EnemyHp")
 const c2EnemyHp_critRate_ = greaterEq(input.constellation, 2,
-  equal(condC2EnemyHp, "on", datamine.c2.charged_critRate_)
+  equal(condC2EnemyHp, "on", dm.c2.charged_critRate_)
 )
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
-  charged: Object.fromEntries(datamine.charged.dmgArr.map((arr, i) =>
+  charged: Object.fromEntries(dm.charged.dmgArr.map((arr, i) =>
     [i, i < 4
       ? dmgNode("atk", arr, "charged")
       : greaterEq(input.constellation, 6, dmgNode("atk", arr, "charged"))
     ])),
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill")
+    dmg: dmgNode("atk", dm.skill.dmg, "skill")
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst")
+    dmg: dmgNode("atk", dm.burst.dmg, "burst")
   },
   passive2: {
     dmg: greaterEq(input.asc, 4, equal(condP2ChargedCrit, "on",
-      customDmgNode(prod(input.total.atk, datamine.passive2.dmg), "charged")
+      customDmgNode(prod(input.total.atk, dm.passive2.dmg), "charged")
     ))
   },
   constellation4: {
     pyro_shield: greaterEq(input.constellation, 4,
-      shieldElement(elementKey, customShieldNode(prod(input.total.hp, datamine.c4.hpShield_)))
+      shieldElement(elementKey, customShieldNode(prod(input.total.hp, dm.c4.hpShield_)))
     ),
     norm_shield: greaterEq(input.constellation, 4,
-      customShieldNode(prod(input.total.hp, datamine.c4.hpShield_))
+      customShieldNode(prod(input.total.hp, dm.c4.hpShield_))
     ),
   },
 } as const
@@ -168,7 +168,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
@@ -177,26 +177,26 @@ const sheet: ICharacterSheet = {
       fields: [
         // TODO: Would probably be better as a conditional,
         // but can't make conditional states based on constellation value
-        ...datamine.charged.dmgArr.map((_, i) => ({
+        ...dm.charged.dmgArr.map((_, i) => ({
           node: infoMut(dmgFormulas.charged[i], { name: ct.ch(`charged.${i}`) }),
         })), {
           text: ct.chg("auto.skillParams.4"),
           // TODO: Should change this value based on how many seals, but can't do without conditional
           // charged attack. And its a bit execssive.
-          value: datamine.charged.stamina,
+          value: dm.charged.stamina,
         }, {
           text: st("staminaDec_"),
-          value: datamine.charged.sealStaminaRed_ * 100,
+          value: dm.charged.sealStaminaRed_ * 100,
           textSuffix: ct.ch("perSeal"),
           unit: "%",
         }, {
           text: ct.ch("maxSeals"),
           value: data => data.get(input.constellation).value >= 6
-            ? datamine.charged.maxSeals + datamine.c6.extraSeals
-            : datamine.charged.maxSeals,
+            ? dm.charged.maxSeals + dm.c6.extraSeals
+            : dm.charged.maxSeals,
         }, {
           text: ct.chg("auto.skillParams.6"),
-          value: datamine.sealDuration,
+          value: dm.sealDuration,
           unit: "s"
         }],
     }, ct.condTem("passive1", {
@@ -211,7 +211,7 @@ const sheet: ICharacterSheet = {
             node: p1_pyro_dmg_,
           }, {
             text: stg("duration"),
-            value: datamine.passive1.duration,
+            value: dm.passive1.duration,
             unit: "s"
           }]
         }
@@ -230,7 +230,7 @@ const sheet: ICharacterSheet = {
     }), ct.headerTem("constellation1", {
       fields: [{
         text: ct.ch("c1.sealChargedStam_"),
-        value: datamine.c1.sealStaminaRed_ * -100,
+        value: dm.c1.sealStaminaRed_ * -100,
         textSuffix: ct.ch("perSeal"),
         unit: "%"
       }, {
@@ -239,7 +239,7 @@ const sheet: ICharacterSheet = {
     }), ct.condTem("constellation2", {
       value: condC2EnemyHp,
       path: condC2EnemyHpPath,
-      name: st("enemyLessPercentHP", { percent: datamine.c2.hpThresh * 100 }),
+      name: st("enemyLessPercentHP", { percent: dm.c2.hpThresh * 100 }),
       states: {
         on: {
           fields: [{
@@ -250,7 +250,7 @@ const sheet: ICharacterSheet = {
     }), ct.headerTem("constellation6", {
       fields: [{
         text: ct.ch("c6.maxSealInc"),
-        value: datamine.c6.extraSeals
+        value: dm.c6.extraSeals
       }]
     }), {
       text: ct.chg("auto.fields.plunging"),
@@ -269,7 +269,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
         text: stg("cd"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s",
       }]
     }]),
@@ -281,11 +281,11 @@ const sheet: ICharacterSheet = {
         text: ct.ch("burst.grantMax")
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s",
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }, ct.condTem("burst", {
       value: condAfterBurst,
@@ -295,7 +295,7 @@ const sheet: ICharacterSheet = {
         on: {
           fields: [{
             text: ct.chg("burst.skillParams.2"),
-            value: datamine.burst.sealInterval,
+            value: dm.burst.sealInterval,
             unit: "s"
           }, {
             node: afterBurst_charged_dmg_
@@ -309,7 +309,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.constellation4.pyro_shield, { name: st(`dmgAbsorption.${elementKey}`) })
       }, {
         text: stg("duration"),
-        value: datamine.c4.duration,
+        value: dm.c4.duration,
         unit: "s"
       }]
     })]),

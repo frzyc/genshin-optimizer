@@ -19,7 +19,7 @@ const region: Region = "liyue"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -71,31 +71,31 @@ const [condA1Path, condA1] = cond(key, "A1")
 const [condA4Path, condA4] = cond(key, "A4")
 const [condC1Path, condC1] = cond(key, "C1")
 const [condC4Path, condC4] = cond(key, "C4")
-const cryo_enemyRes_ = greaterEq(input.constellation, 1, equal("on", condC1, percent(datamine.constellation1.opCryoRes)))
-const cryo_dmg_disp = greaterEq(input.asc, 4, equal("on", condA4, percent(datamine.passive2.cryoDmgBonus)))
+const cryo_enemyRes_ = greaterEq(input.constellation, 1, equal("on", condC1, percent(dm.constellation1.opCryoRes)))
+const cryo_dmg_disp = greaterEq(input.asc, 4, equal("on", condA4, percent(dm.passive2.cryoDmgBonus)))
 const cryo_dmg_ = equal(input.activeCharKey, target.charKey, cryo_dmg_disp)
 const all_dmg_ = greaterEq(input.constellation, 4,
   lookup(condC4, Object.fromEntries(range(1, 5).map(i => [i, percent(0.05 * i)])), naught))
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
-    aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('cryo') } }),
-    frostflake: dmgNode("atk", datamine.charged.frostflake, "charged",
-      { premod: { critRate_: greaterEq(input.asc, 1, equal(condA1, "on", percent(datamine.passive1.critRateInc))) }, hit: { ele: constant('cryo') } }),
-    frostflakeBloom: dmgNode("atk", datamine.charged.frostflakeBloom, "charged",
-      { premod: { critRate_: greaterEq(input.asc, 1, equal(condA1, "on", percent(datamine.passive1.critRateInc))) }, hit: { ele: constant('cryo') } }),
+    aimed: dmgNode("atk", dm.charged.aimed, "charged"),
+    aimedCharged: dmgNode("atk", dm.charged.aimedCharged, "charged", { hit: { ele: constant('cryo') } }),
+    frostflake: dmgNode("atk", dm.charged.frostflake, "charged",
+      { premod: { critRate_: greaterEq(input.asc, 1, equal(condA1, "on", percent(dm.passive1.critRateInc))) }, hit: { ele: constant('cryo') } }),
+    frostflakeBloom: dmgNode("atk", dm.charged.frostflakeBloom, "charged",
+      { premod: { critRate_: greaterEq(input.asc, 1, equal(condA1, "on", percent(dm.passive1.critRateInc))) }, hit: { ele: constant('cryo') } }),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    inheritedHp: prod(subscript(input.total.skillIndex, datamine.skill.inheritedHp), input.total.hp),
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+    inheritedHp: prod(subscript(input.total.skillIndex, dm.skill.inheritedHp), input.total.hp),
+    dmg: dmgNode("atk", dm.skill.dmg, "skill"),
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
+    dmg: dmgNode("atk", dm.burst.dmg, "burst"),
   },
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -128,7 +128,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal")
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
@@ -151,11 +151,11 @@ const sheet: ICharacterSheet = {
         on: {
           fields: [{
             text: ct.ch("a1.critRateInc"),
-            value: datamine.passive1.critRateInc * 100,
+            value: dm.passive1.critRateInc * 100,
             unit: "%"
           }, {
             text: stg("duration"),
-            value: `${datamine.passive1.duration}s`,
+            value: `${dm.passive1.duration}s`,
           }]
         }
       }
@@ -170,7 +170,7 @@ const sheet: ICharacterSheet = {
             node: cryo_enemyRes_
           }, {
             text: stg("duration"),
-            value: `${datamine.constellation1.duration}s`,
+            value: `${dm.constellation1.duration}s`,
           }]
         }
       }
@@ -193,10 +193,10 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.1`) }),
       }, {
         text: ct.chg("skill.skillParams.2"),
-        value: `${datamine.skill.duration}s`,
+        value: `${dm.skill.duration}s`,
       }, {
         text: ct.chg("skill.skillParams.3"),
-        value: `${datamine.skill.cd}s`,
+        value: `${dm.skill.cd}s`,
       }, {
         canShow: (data) => data.get(input.constellation).value >= 2,
         text: st("charges"),
@@ -209,13 +209,13 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
         text: ct.chg("burst.skillParams.1"),
-        value: `${datamine.burst.duration}s`,
+        value: `${dm.burst.duration}s`,
       }, {
         text: ct.chg("burst.skillParams.2"),
-        value: `${datamine.burst.cd}s`,
+        value: `${dm.burst.cd}s`,
       }, {
         text: ct.chg("burst.skillParams.3"),
-        value: `${datamine.burst.enerCost}`,
+        value: `${dm.burst.enerCost}`,
       }],
     }, ct.condTem("passive2", {
       value: condA4,

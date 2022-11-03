@@ -16,7 +16,7 @@ const elementKey: ElementKey = "geo"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++],
@@ -52,7 +52,7 @@ const datamine = {
 const [condA4Path, condA4] = cond(key, "Ascension4") //12% Geo DMG bonus after passing through the Jade Screen
 const [condC4Path, condC4] = cond(key, "Constellation4")
 
-const nodeA4GeoDmgBonus_ = equal(condA4, "on", percent(datamine.passive2.geoDmgBonus_), { name: ct.chg("a4bonus_") })
+const nodeA4GeoDmgBonus_ = equal(condA4, "on", percent(dm.passive2.geoDmgBonus_), { name: ct.chg("a4bonus_") })
 
 const nodesC4 = Object.fromEntries(allElements.map(ele => [
   `${ele}_res_`,
@@ -60,20 +60,20 @@ const nodesC4 = Object.fromEntries(allElements.map(ele => [
 ]))
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    baseDmg: dmgNode("atk", datamine.charged.dmg, "charged"),
-    jadeDmg: dmgNode("atk", datamine.charged.jadeDmg, "charged"),
+    baseDmg: dmgNode("atk", dm.charged.dmg, "charged"),
+    jadeDmg: dmgNode("atk", dm.charged.jadeDmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    screenHp: prod(subscript(input.total.skillIndex, datamine.skill.screenHp, { unit: "%" }), input.total.hp),
-    dmg: dmgNode("atk", datamine.skill.skillDmg, "skill"),
+    screenHp: prod(subscript(input.total.skillIndex, dm.skill.screenHp, { unit: "%" }), input.total.hp),
+    dmg: dmgNode("atk", dm.skill.skillDmg, "skill"),
   },
   burst: {
-    gemDmg: dmgNode("atk", datamine.burst.dmgPerGem, "burst"),
+    gemDmg: dmgNode("atk", dm.burst.dmgPerGem, "burst"),
   },
 }
 
@@ -121,7 +121,7 @@ const sheet: ICharacterSheet = {
       }, {
         canShow: data => data.get(input.asc).value < 1,
         text: ct.chg("auto.skillParams.3"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }, {
         canShow: data => data.get(input.asc).value >= 1,
         text: ct.chg("auto.skillParams.3"),
@@ -146,7 +146,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.1`) }),
       }, {
         text: ct.chg("skill.skillParams.2"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         canShow: data => data.get(input.constellation).value >= 2,
@@ -163,7 +163,7 @@ const sheet: ICharacterSheet = {
             node: nodeA4GeoDmgBonus_
           }, {
             text: ct.ch("a4duration"),
-            value: datamine.passive2.duration,
+            value: dm.passive2.duration,
             unit: "s"
           }]
         }
@@ -185,11 +185,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.gemDmg, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
         text: ct.chg("burst.skillParams.1"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s",
       }, {
         text: ct.chg("burst.skillParams.2"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }, {
         canShow: data => data.get(input.constellation).value >= 6,
         text: ct.ch("c6bonus"),

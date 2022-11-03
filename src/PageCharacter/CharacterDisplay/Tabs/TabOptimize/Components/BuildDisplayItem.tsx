@@ -1,7 +1,6 @@
 import { Checkroom, ChevronRight } from '@mui/icons-material';
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import { ArtifactSlotKey } from 'pipeline';
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano';
 import ArtifactSetTooltip from '../../../../../Components/Artifact/ArtifactSetTooltip';
@@ -113,7 +112,7 @@ function SetBadges({ currentlyEquipped = false }: { currentlyEquipped: boolean }
   )}</>
 
 }
-function SetBadge({ setKey, currentlyEquipped = false, slotarr }: { setKey: ArtifactSetKey, currentlyEquipped: boolean, slotarr: ArtifactSlotKey[] }) {
+function SetBadge({ setKey, currentlyEquipped = false, slotarr }: { setKey: ArtifactSetKey, currentlyEquipped: boolean, slotarr: SlotKey[] }) {
   const artifactSheet = usePromise(() => ArtifactSheet.get(setKey), [])
   if (!artifactSheet) return null
   const numInSet = slotarr.length

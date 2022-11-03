@@ -16,7 +16,7 @@ const elementKey: ElementKey = "geo"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++],
@@ -80,40 +80,40 @@ const nodeBurstInfusion = equalStr(condBurst, "on", "geo")
 const nodeBurstAtk = equal("on", condBurst, prod(
   input.total.def,
   sum(
-    subscript(input.total.burstIndex, datamine.burst.defToAtk, { unit: "%" }),
-    greaterEq(input.constellation, 6, percent(datamine.constellation6.burstAtkBonus))
+    subscript(input.total.burstIndex, dm.burst.defToAtk, { unit: "%" }),
+    greaterEq(input.constellation, 6, percent(dm.constellation6.burstAtkBonus))
   )
 ))
 
-const nodeSkillHealChanceBase = subscript(input.total.skillIndex, datamine.skill.healChance, { name: ct.ch("skillHeal_"), unit: "%" })
-const nodeSkillHealChanceC1BurstOn = equal("on", condBurst, percent(datamine.constellation1.healingChance), { name: ct.ch("skillHeal_"), unit: "%" })
+const nodeSkillHealChanceBase = subscript(input.total.skillIndex, dm.skill.healChance, { name: ct.ch("skillHeal_"), unit: "%" })
+const nodeSkillHealChanceC1BurstOn = equal("on", condBurst, percent(dm.constellation1.healingChance), { name: ct.ch("skillHeal_"), unit: "%" })
 const nodeSkillHealChanceC1BurstOff = unequal("on", condBurst, nodeSkillHealChanceBase)
 
-const nodeC2ChargeDMG = greaterEq(input.constellation, 2, percent(datamine.constellation2.chargeDmg_))
-const nodeC2ChargeDec = greaterEq(input.constellation, 2, percent(-datamine.constellation2.chargeStamina))
-const nodeC4dmg = greaterEq(input.constellation, 4, customDmgNode(prod(input.total.atk, percent(datamine.constellation4.skillDmg)), "elemental", { hit: { ele: constant(elementKey) } }))
+const nodeC2ChargeDMG = greaterEq(input.constellation, 2, percent(dm.constellation2.chargeDmg_))
+const nodeC2ChargeDec = greaterEq(input.constellation, 2, percent(-dm.constellation2.chargeStamina))
+const nodeC4dmg = greaterEq(input.constellation, 4, customDmgNode(prod(input.total.atk, percent(dm.constellation4.skillDmg)), "elemental", { hit: { ele: constant(elementKey) } }))
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    spinningDmg: dmgNode("atk", datamine.charged.spinningDmg, "charged"),
-    finalDmg: dmgNode("atk", datamine.charged.finalDmg, "charged"),
+    spinningDmg: dmgNode("atk", dm.charged.spinningDmg, "charged"),
+    finalDmg: dmgNode("atk", dm.charged.finalDmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("def", datamine.skill.skillDmg, "skill"),
-    shield: shieldElement("geo", shieldNodeTalent("def", datamine.skill.shieldDef, datamine.skill.shieldFlat, "skill")),
-    heal: healNodeTalent("def", datamine.skill.healDef, datamine.skill.healFlat, "skill"),
+    dmg: dmgNode("def", dm.skill.skillDmg, "skill"),
+    shield: shieldElement("geo", shieldNodeTalent("def", dm.skill.shieldDef, dm.skill.shieldFlat, "skill")),
+    heal: healNodeTalent("def", dm.skill.healDef, dm.skill.healFlat, "skill"),
   },
   burst: {
     defConv: nodeBurstAtk,
-    burstDmg: dmgNode("atk", datamine.burst.burstDmg, "burst"),
-    skillDmg: dmgNode("atk", datamine.burst.skillDmg, "burst"),
+    burstDmg: dmgNode("atk", dm.burst.burstDmg, "burst"),
+    skillDmg: dmgNode("atk", dm.burst.skillDmg, "burst"),
   },
   passive1: {
-    devotionShield: greaterEq(input.asc, 1, shieldElement("geo", shieldNode("def", percent(datamine.passive1.shield), 0)))
+    devotionShield: greaterEq(input.asc, 1, shieldElement("geo", shieldNode("def", percent(dm.passive1.shield), 0)))
   },
   constellation4: {
     dmg: nodeC4dmg
@@ -151,7 +151,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
@@ -163,11 +163,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.finalDmg, { name: ct.chg(`auto.skillParams.5`) }),
       }, {
         text: ct.chg("auto.skillParams.6"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
         unit: '/s'
       }, {
         text: ct.chg("auto.skillParams.7"),
-        value: datamine.charged.duration,
+        value: dm.charged.duration,
         unit: 's'
       }],
     }, {
@@ -200,12 +200,12 @@ const sheet: ICharacterSheet = {
         node: nodeSkillHealChanceC1BurstOn,
       }, { //Shield Duration
         text: ct.chg("skill.skillParams.4"),
-        value: datamine.skill.shieldDuration,
+        value: dm.skill.shieldDuration,
         unit: "s"
       }, { //Cooldown
         canShow: data => data.get(input.asc).value < 4,
         text: ct.chg("skill.skillParams.5"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s"
       }, {
         canShow: data => data.get(input.asc).value >= 4,
@@ -222,7 +222,7 @@ const sheet: ICharacterSheet = {
       }, {
         canShow: data => data.get(input.constellation).value < 6,
         text: ct.chg("burst.skillParams.3"),
-        value: datamine.burst.duration,
+        value: dm.burst.duration,
         unit: "s"
       }, {
         canShow: data => data.get(input.constellation).value >= 6,
@@ -230,10 +230,10 @@ const sheet: ICharacterSheet = {
         value: ct.ch(`c6duration`),
       }, {
         text: ct.chg("burst.skillParams.4"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
       }, {
         text: ct.chg("burst.skillParams.5"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }],
     }, ct.condTem("burst", {
       name: ct.chg("burst.name"),
@@ -258,11 +258,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.passive1.devotionShield, { name: ct.chg(`skill.skillParams.1`) })
       }, {
         text: ct.chg("skill.skillParams.4"),
-        value: datamine.passive1.duration,
+        value: dm.passive1.duration,
         unit: "s"
       }, {
         text: ct.chg("skill.skillParams.5"),
-        value: datamine.passive1.cooldown,
+        value: dm.passive1.cooldown,
         unit: "s"
       }]
     })]),

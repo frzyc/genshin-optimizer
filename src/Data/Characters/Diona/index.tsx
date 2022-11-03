@@ -17,7 +17,7 @@ const elementKey: ElementKey = "cryo"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++],
@@ -81,45 +81,45 @@ const [condA1Path, condA1] = cond(key, "Ascension1")
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
-const nodeC2skillDmg_ = greaterEq(input.constellation, 2, percent(datamine.constellation2.icyPawDmg_))
+const nodeC2skillDmg_ = greaterEq(input.constellation, 2, percent(dm.constellation2.icyPawDmg_))
 
 // Hold shield bonus is a separate multiplier
 const holdSkillShieldStr_ = percent(1.75)
 // C2 Shield bonus modifies everything at the very end, it's not a shield strength bonus
 // 100% if not C2, 175% if C2 or higher
-const nodeC2shieldStr_ = sum(percent(1), greaterEq(input.constellation, 2, percent(datamine.constellation2.icyPawShield_)))
-const nodeSkillShieldPress = prod(nodeC2shieldStr_, shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill",))
-const nodeSkillShieldHold = prod(nodeC2shieldStr_, holdSkillShieldStr_, shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill"))
+const nodeC2shieldStr_ = sum(percent(1), greaterEq(input.constellation, 2, percent(dm.constellation2.icyPawShield_)))
+const nodeSkillShieldPress = prod(nodeC2shieldStr_, shieldNodeTalent("hp", dm.skill.shieldHp_, dm.skill.shieldFlat, "skill",))
+const nodeSkillShieldHold = prod(nodeC2shieldStr_, holdSkillShieldStr_, shieldNodeTalent("hp", dm.skill.shieldHp_, dm.skill.shieldFlat, "skill"))
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
-    aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('cryo') } }),
+    aimed: dmgNode("atk", dm.charged.aimed, "charged"),
+    aimedCharged: dmgNode("atk", dm.charged.aimedCharged, "charged", { hit: { ele: constant('cryo') } }),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
     pressShield: nodeSkillShieldPress,
     pressCryoShield: shieldElement(elementKey, nodeSkillShieldPress),
     holdShield: nodeSkillShieldHold,
     holdCryoShield: shieldElement(elementKey, nodeSkillShieldHold),
-    skillDmg: dmgNode("atk", datamine.skill.icyPawDmg, "skill", {}),
+    skillDmg: dmgNode("atk", dm.skill.icyPawDmg, "skill", {}),
   },
   burst: {
-    skillDmg: dmgNode("atk", datamine.burst.skillDmg, "burst"),
-    fieldDmg: dmgNode("atk", datamine.burst.fieldDmg, "burst"),
-    healDot: healNodeTalent("hp", datamine.burst.healHp_, datamine.burst.healBase, "burst"),
+    skillDmg: dmgNode("atk", dm.burst.skillDmg, "burst"),
+    fieldDmg: dmgNode("atk", dm.burst.fieldDmg, "burst"),
+    healDot: healNodeTalent("hp", dm.burst.healHp_, dm.burst.healBase, "burst"),
   },
 }
 
-const nodeA1MoveSpeed = equal(condA1, "on", percent(datamine.passive1.moveSpeed_),)
-const nodeA1Stamina = equal(condA1, "on", percent(datamine.passive1.stamRed_),)
+const nodeA1MoveSpeed = equal(condA1, "on", percent(dm.passive1.moveSpeed_),)
+const nodeA1Stamina = equal(condA1, "on", percent(dm.passive1.stamRed_),)
 
-const nodeC6healing_Disp = equal(condC6, "lower", percent(datamine.constellation6.healingBonus_),)
+const nodeC6healing_Disp = equal(condC6, "lower", percent(dm.constellation6.healingBonus_),)
 const nodeC6healing_ = equal(input.activeCharKey, target.charKey, nodeC6healing_Disp)
-const nodeC6emDisp = equal(condC6, "higher", datamine.constellation6.emBonus,)
+const nodeC6emDisp = equal(condC6, "higher", dm.constellation6.emBonus,)
 const nodeC6em = equal(input.activeCharKey, target.charKey, nodeC6emDisp)
 
 export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {
@@ -151,7 +151,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
@@ -187,16 +187,16 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.skillDmg, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
         text: ct.ch("skillDuration"),
-        value: data => datamine.skill.duration[data.get(input.total.skillIndex).value],
+        value: data => dm.skill.duration[data.get(input.total.skillIndex).value],
         unit: "s",
         fixed: 1,
       }, {
         text: ct.chg(`skill.skillParams.3`),
-        value: datamine.skill.cdPress,
+        value: dm.skill.cdPress,
         unit: "s"
       }, {
         text: ct.chg(`skill.skillParams.4`),
-        value: datamine.skill.cdHold,
+        value: dm.skill.cdHold,
         unit: "s",
       }],
     }, ct.condTem("passive1", {
@@ -224,14 +224,14 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.healDot, { name: ct.chg(`burst.skillParams.2`) }),
       }, {
         text: ct.chg("burst.skillParams.3"),
-        value: datamine.burst.duration,
+        value: dm.burst.duration,
         unit: "s"
       }, {
         text: ct.chg("burst.skillParams.4"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
       }, {
         text: ct.chg("burst.skillParams.5"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }, ct.condTem("constellation6", {
       teamBuff: true,

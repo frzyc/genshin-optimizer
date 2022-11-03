@@ -16,7 +16,7 @@ const elementKey: ElementKey = "electro"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -60,30 +60,30 @@ const datamine = {
 
 } as const
 
-const nodeAsc4 = greaterEq(input.asc, 4, prod(input.total.eleMas, percent(datamine.passive2.eleMas_dmg_, { fixed: 2 })))
+const nodeAsc4 = greaterEq(input.asc, 4, prod(input.total.eleMas, percent(dm.passive2.eleMas_dmg_, { fixed: 2 })))
 
 const [condC4Path, condC4] = cond(key, "c4")
-const nodeC4 = greaterEq(input.constellation, 4, equal("hit", condC4, datamine.constellation4.ele_dmg_))
+const nodeC4 = greaterEq(input.constellation, 4, equal("hit", condC4, dm.constellation4.ele_dmg_))
 
-const nodeC6 = greaterEq(input.constellation, 6, datamine.constellation6.defIgn_)
+const nodeC6 = greaterEq(input.constellation, 6, dm.constellation6.defIgn_)
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg: dmgNode("atk", datamine.charged.dmg, "charged"),
+    dmg: dmgNode("atk", dm.charged.dmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg1: lessThan(input.constellation, 2, dmgNode("atk", datamine.skill.dmg1, "skill")),
-    dmg2: dmgNode("atk", datamine.skill.dmg2, "skill", { enemy: { defIgn: nodeC6 } }),
-    dmg3: dmgNode("atk", datamine.skill.dmg3, "skill", { enemy: { defIgn: nodeC6 } }),
-    dmg4: greaterEq(input.constellation, 2, dmgNode("atk", datamine.skill.dmg4, "skill", { enemy: { defIgn: nodeC6 } })),
+    dmg1: lessThan(input.constellation, 2, dmgNode("atk", dm.skill.dmg1, "skill")),
+    dmg2: dmgNode("atk", dm.skill.dmg2, "skill", { enemy: { defIgn: nodeC6 } }),
+    dmg3: dmgNode("atk", dm.skill.dmg3, "skill", { enemy: { defIgn: nodeC6 } }),
+    dmg4: greaterEq(input.constellation, 2, dmgNode("atk", dm.skill.dmg4, "skill", { enemy: { defIgn: nodeC6 } })),
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
-    tenkoDmg: dmgNode("atk", datamine.burst.tenkoDmg, "burst"),
+    dmg: dmgNode("atk", dm.burst.dmg, "burst"),
+    tenkoDmg: dmgNode("atk", dm.burst.tenkoDmg, "burst"),
   },
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -115,7 +115,7 @@ const sheet: ICharacterSheet = {
   talent: {  auto: ct.talentTem("auto", [{
         text: ct.chg("auto.fields.normal"),
       }, {
-        fields: datamine.normal.hitArr.map((_, i) => ({
+        fields: dm.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
         }))
       }, {
@@ -125,7 +125,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.3`) }),
         }, {
           text: ct.chg("auto.skillParams.4"),
-          value: datamine.charged.stamina,
+          value: dm.charged.stamina,
         }]
       }, {
         text: ct.chg(`auto.fields.plunging`),
@@ -150,11 +150,11 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.skill.dmg4, { name: ct.chg(`skill.skillParams.3`) }),
         }, {
           text: ct.chg("skill.skillParams.4"),
-          value: datamine.skill.duration,
+          value: dm.skill.duration,
           unit: "s"
         }, {
           text: ct.chg("skill.skillParams.5"),
-          value: datamine.skill.cd,
+          value: dm.skill.cd,
         }],
       }]),
 
@@ -165,11 +165,11 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.burst.tenkoDmg, { name: ct.chg(`burst.skillParams.1`) }),
         }, {
           text: ct.chg("burst.skillParams.2"),
-          value: datamine.burst.cd,
+          value: dm.burst.cd,
           unit: "s"
         }, {
           text: ct.chg("burst.skillParams.3"),
-          value: datamine.burst.enerCost,
+          value: dm.burst.enerCost,
         }]
       }]),
       passive1: ct.talentTem("passive1"),

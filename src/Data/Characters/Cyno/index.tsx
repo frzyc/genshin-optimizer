@@ -17,7 +17,7 @@ const elementKey: ElementKey = "electro"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let s = 0, b = 5, p1 = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[0], // 1
@@ -93,60 +93,60 @@ const datamine = {
 } as const
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, "afterBurst")
-const afterBurst_eleMas = equal(condAfterBurst, "on", datamine.burst.eleMas)
+const afterBurst_eleMas = equal(condAfterBurst, "on", dm.burst.eleMas)
 
 const [condA1JudicationPath, condA1Judication] = cond(key, "a1Judication")
 const a1Judication_skill_dmg_ = greaterEq(input.asc, 1,
-  equal(condA1Judication, "on", datamine.passive1.skill_dmg_)
+  equal(condA1Judication, "on", dm.passive1.skill_dmg_)
 )
 
 // TODO: Check if this is total or premod
 // If it is total, this fits with Shenhe, where dmgInc is allowed to inherit from total
 // If it is premod, this breaks Shenhe's "precedent"
 const a4_burstNormal_dmgInc = greaterEq(input.asc, 4,
-  prod(percent(datamine.passive2.burst_normal_dmgInc_), input.total.eleMas)
+  prod(percent(dm.passive2.burst_normal_dmgInc_), input.total.eleMas)
 )
 const a4_bolt_dmgInc = greaterEq(input.asc, 4,
-  prod(percent(datamine.passive2.bolt_dmgInc_), input.total.eleMas)
+  prod(percent(dm.passive2.bolt_dmgInc_), input.total.eleMas)
 )
 
 const c1_atkSPD_ = greaterEq(input.constellation, 1,
-  greaterEq(input.asc, 1, datamine.constellation1.normal_atkSpd_)
+  greaterEq(input.asc, 1, dm.constellation1.normal_atkSpd_)
 )
 
-const c2NormHitStacksArr = range(1, datamine.constellation2.maxStacks)
+const c2NormHitStacksArr = range(1, dm.constellation2.maxStacks)
 const [condC2NormHitStacksPath, condC2NormHitStacks] = cond(key, "c2NormHitStacks")
 const c2_electro_dmg_ = greaterEq(input.constellation, 2,
   lookup(condC2NormHitStacks, Object.fromEntries(c2NormHitStacksArr.map(stack => [
     stack,
-    prod(percent(datamine.constellation2.electro_dmg_), stack)
+    prod(percent(dm.constellation2.electro_dmg_), stack)
   ])), naught)
 )
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg: dmgNode("atk", datamine.charged.dmg, "charged"),
+    dmg: dmgNode("atk", dm.charged.dmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    skillDmg: dmgNode("atk", datamine.skill.skillDmg, "skill"),
-    riteDmg: dmgNode("atk", datamine.skill.riteDmg, "skill"),
+    skillDmg: dmgNode("atk", dm.skill.skillDmg, "skill"),
+    riteDmg: dmgNode("atk", dm.skill.riteDmg, "skill"),
   },
   burst: {
-    ...Object.fromEntries(datamine.burst.normal.hitArr.map((arr, i) =>
+    ...Object.fromEntries(dm.burst.normal.hitArr.map((arr, i) =>
       [`normal_${i}`, customDmgNode(prod(
         subscript(input.total.burstIndex, arr, { unit: "%" }),
         input.total.atk
       ), "normal", { hit: { ele: constant(elementKey) }, premod: { normal_dmgInc: a4_burstNormal_dmgInc } })]
     )),
     charged: customDmgNode(prod(
-      subscript(input.total.burstIndex, datamine.burst.charged.dmg, { unit: "%" }),
+      subscript(input.total.burstIndex, dm.burst.charged.dmg, { unit: "%" }),
       input.total.atk
     ), "charged", { hit: { ele: constant(elementKey) } }),
-    ...Object.fromEntries(Object.entries(datamine.burst.plunging).map(([key, value]) =>
+    ...Object.fromEntries(Object.entries(dm.burst.plunging).map(([key, value]) =>
       [`plunging_${key}`, customDmgNode(prod(
         subscript(input.total.burstIndex, value, { unit: "%" }),
         input.total.atk
@@ -155,7 +155,7 @@ const dmgFormulas = {
   },
   passive1: {
     boltDmg: greaterEq(input.asc, 1, customDmgNode(prod(
-      datamine.passive1.boltDmg, input.total.atk
+      dm.passive1.boltDmg, input.total.atk
     ), "skill", { hit: { ele: constant(elementKey) }, premod: { skill_dmgInc: a4_bolt_dmgInc } }))
   },
   passive2: {
@@ -193,7 +193,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`), multi: i === 2 ? 2 : undefined }),
       }))
     }, {
@@ -203,7 +203,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.4`) }),
       }, {
         text: ct.chg("auto.skillParams.5"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }]
     }, {
       text: ct.chg(`auto.fields.plunging`),
@@ -224,44 +224,44 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.riteDmg, { name: ct.chg(`skill.skillParams.1`) })
       }, {
         text: ct.chg("skill.skillParams.2"),
-        value: datamine.skill.durationBonus,
+        value: dm.skill.durationBonus,
         unit: "s"
       }, {
         text: stg("cd"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s",
         fixed: 1
       }, {
         text: ct.chg("skill.skillParams.4"),
-        value: datamine.skill.cdRite,
+        value: dm.skill.cdRite,
         unit: "s"
       }]
     }]),
 
     burst: ct.talentTem("burst", [{
       fields: [
-        ...datamine.burst.normal.hitArr.map((_, i) => ({
+        ...dm.burst.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.burst[`normal_${i}`], { name: ct.chg(`burst.skillParams.${i}`), multi: i === 3 ? 2 : undefined }),
 
         })), {
           node: infoMut(dmgFormulas.burst.charged, { name: ct.chg(`burst.skillParams.5`) }),
         }, {
           text: ct.chg("burst.skillParams.6"),
-          value: datamine.burst.charged.stamina,
+          value: dm.burst.charged.stamina,
         },
-        ...Object.entries(datamine.burst.plunging).map(([key]) => ({
+        ...Object.entries(dm.burst.plunging).map(([key]) => ({
           node: infoMut(dmgFormulas.burst[`plunging_${key}`], { name: stg(`plunging.${key}`) })
         })), {
           text: stg("duration"),
-          value: datamine.burst.duration,
+          value: dm.burst.duration,
           unit: "s"
         }, {
           text: stg("cd"),
-          value: datamine.burst.cd,
+          value: dm.burst.cd,
           unit: "s"
         }, {
           text: stg("energyCost"),
-          value: datamine.burst.enerCost,
+          value: dm.burst.enerCost,
         }
       ]
     }, ct.condTem("burst", {

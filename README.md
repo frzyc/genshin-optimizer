@@ -18,8 +18,6 @@ In the project directory, you can run:
 ### `npm install`
 Install all dependencies/modules to build the site.
 
-`postinstall:` Pulls the [GenshinData repo](https://github.com/Dimbreath/GenshinData) into `pipeline/GenshinData`.
-
 ### `npm start`
 `prestart: npm run gen-files`
 
@@ -63,15 +61,10 @@ Will generate the JSON as `/public/locales/en/main_gen.json`.
 ### `npm run localization-load`
 Load the translated JSON into each locale, and separate them into namespaces.
 Load the translations from [POEditor](https://poeditor.com/projects/view?id=439583) into `/src/pipeline/Translated`.
-
-### `npm run pipeline-datamined`
-Generate localization & data from datamined data in `pipeline/GenshinData` from the repo [Dimbreath/GenshinData](https://github.com/Dimbreath/GenshinData)
 This will create localization files in `/public/locales/...` with in-game translated text.
 
-This will also try to populate the arifact/weapon/character images from a `pipeline/Texture2D/` directory. This is optional.
-
 ### `npm run gen-files`
-`npm run pipeline-datamined && npm run localization-load`
+`npm run localization-load`
 Run pipeline and load localization.
 
 ### `npm run eject`

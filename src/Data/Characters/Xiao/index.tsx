@@ -18,7 +18,7 @@ const elementKey: ElementKey = "anemo"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let s = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[0], // 1
@@ -73,15 +73,15 @@ const datamine = {
 } as const
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg1: dmgNode("atk", datamine.charged.dmg1, "charged"),
+    dmg1: dmgNode("atk", dm.charged.dmg1, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    press: dmgNode("atk", datamine.skill.press, "skill"),
+    press: dmgNode("atk", dm.skill.press, "skill"),
   },
 }
 
@@ -89,27 +89,27 @@ const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 const [condInBurstPath, condInBurst] = cond(key, "inBurst")
-const auto_dmg_ = subscript(input.total.burstIndex, datamine.burst.dmgBonus, { unit: "%" })
+const auto_dmg_ = subscript(input.total.burstIndex, dm.burst.dmgBonus, { unit: "%" })
 const normal_dmg_ = equal("inBurst", condInBurst, auto_dmg_, { unit: "%" })
 const charged_dmg_ = { ...normal_dmg_ }
 const plunging_dmg_ = { ...normal_dmg_ }
-const lifeDrain = subscript(input.total.burstIndex, datamine.burst.drain)
+const lifeDrain = subscript(input.total.burstIndex, dm.burst.drain)
 const infusion = equalStr("inBurst", condInBurst, elementKey)
 
 const [condA1BurstStackPath, condA1BurstStack] = cond(key, "a1BurstStack")
 const a1BurstStackArr = range(0, 4)
 const all_dmg_ = equal("inBurst", condInBurst,
   lookup(condA1BurstStack,
-    Object.fromEntries(a1BurstStackArr.map(i => [i, prod(datamine.passive1.dmgBonus, i + 1)])),
+    Object.fromEntries(a1BurstStackArr.map(i => [i, prod(dm.passive1.dmgBonus, i + 1)])),
     naught
   )
 )
 
 const [condA4SkillStackPath, condA4SkillStack] = cond(key, "a4SkillStack")
-const a4SkillStackArr = range(1, datamine.passive2.maxStacks)
+const a4SkillStackArr = range(1, dm.passive2.maxStacks)
 const skill_dmg_ = greaterEq(input.asc, 4,
   lookup(condA4SkillStack,
-    Object.fromEntries(a4SkillStackArr.map(i => [i, prod(datamine.passive2.skillDmgBonus, i)])),
+    Object.fromEntries(a4SkillStackArr.map(i => [i, prod(dm.passive2.skillDmgBonus, i)])),
     naught
   )
 )
@@ -117,11 +117,11 @@ const skill_dmg_ = greaterEq(input.asc, 4,
 const c2Inactive = greaterEq(input.constellation, 2,
   unequal(input.activeCharKey, key, 1)
 )
-const c2Inactive_enerRech_ = equal(c2Inactive, 1, datamine.constellation2.enerRech_)
+const c2Inactive_enerRech_ = equal(c2Inactive, 1, dm.constellation2.enerRech_)
 
 const [condC4BelowHPPath, condC4BelowHP] = cond(key, "c4BelowHP")
 const c4BelowHP_def_ = greaterEq(input.constellation, 4,
-  equal("c4BelowHP", condC4BelowHP, datamine.constellation4.def_))
+  equal("c4BelowHP", condC4BelowHP, dm.constellation4.def_))
 
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
   bonus: {
@@ -155,7 +155,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
@@ -165,7 +165,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.dmg1, { name: ct.chg(`auto.skillParams.6`) }),
       }, {
         text: ct.chg("auto.skillParams.7"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }]
     }, {
       text: ct.chg("auto.fields.plunging"),
@@ -184,7 +184,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.press, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
         text: ct.chg("skill.skillParams.1"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s",
       }, {
         text: st("charges"),
@@ -207,15 +207,15 @@ const sheet: ICharacterSheet = {
         node: infoMut(lifeDrain, { name: ct.ch("burst.lifeDrain_"), textSuffix: ct.ch("burst.currentHPPerSec"), unit: "%" }),
       }, {
         text: stg("duration"),
-        value: datamine.burst.duration,
+        value: dm.burst.duration,
         unit: "s",
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s",
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }, ct.condTem("burst", {
       path: condInBurstPath,
@@ -263,7 +263,7 @@ const sheet: ICharacterSheet = {
     constellation4: ct.talentTem("constellation4", [ct.condTem("constellation4", {
       path: condC4BelowHPPath,
       value: condC4BelowHP,
-      name: st("lessPercentHP", { percent: datamine.constellation4.hpThresh * 100 }),
+      name: st("lessPercentHP", { percent: dm.constellation4.hpThresh * 100 }),
       states: {
         c4BelowHP: {
           fields: [{ node: c4BelowHP_def_ }]

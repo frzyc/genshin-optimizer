@@ -15,7 +15,7 @@ const data_gen = data_gen_src as CharacterData
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
-export const datamine = {
+export const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -88,83 +88,83 @@ const [condA1AfterSkillPath, condA1AfterSkill] = cond(key, "a1AfterSkill")
 const [condA1AfterHitPath, condA1AfterHit] = cond(key, "a1AfterHit")
 const onlyDendroHydroTeam = greaterEq(tally.dendro, 1, equal(tally.ele, 2, 1))
 const isGoldenChaliceBountyActive = greaterEq(input.asc, 1, equal(onlyDendroHydroTeam, 1, equal(condA1AfterSkill, "on", 1)))
-const a1AfterSkillAndHit_eleMas = equal(isGoldenChaliceBountyActive, 1, equal(condA1AfterHit, "on", datamine.passive1.eleMas))
+const a1AfterSkillAndHit_eleMas = equal(isGoldenChaliceBountyActive, 1, equal(condA1AfterHit, "on", dm.passive1.eleMas))
 
 const bountifulBloom_dmg_ = greaterEq(input.asc, 4,
   equal(isGoldenChaliceBountyActive, 1,
     min(
       prod(
-        percent(datamine.passive2.dmg_),
+        percent(dm.passive2.dmg_),
         prod(
-          max(sum(input.total.hp, datamine.passive2.minHp), 0),
+          max(sum(input.total.hp, dm.passive2.minHp), 0),
           1 / 1000
         )
       ),
-      percent(datamine.passive2.maxDmg_)
+      percent(dm.passive2.maxDmg_)
     )
   )
 )
 
-const c1_moon_dmg_ = greaterEq(input.constellation, 1, percent(datamine.constellation1.moon_dmg_, { name: ct.ch(`c1.moon_dmg_`) }))
+const c1_moon_dmg_ = greaterEq(input.constellation, 1, percent(dm.constellation1.moon_dmg_, { name: ct.ch(`c1.moon_dmg_`) }))
 
 const [condC2HydroPath, condC2Hydro] = cond(key, "c2Hydro")
 const [condC2DendroPath, condC2Dendro] = cond(key, "c2Dendro")
 const c2_hydro_enemyRes_ = greaterEq(input.constellation, 2,
   equal(isGoldenChaliceBountyActive, 1,
-    equal(condC2Hydro, "hydro", percent(datamine.constellation2.hydro_enemyRes_))
+    equal(condC2Hydro, "hydro", percent(dm.constellation2.hydro_enemyRes_))
   )
 )
 const c2_dendro_enemyRes_ = greaterEq(input.constellation, 2,
   equal(isGoldenChaliceBountyActive, 1,
-    equal(condC2Dendro, "dendro", percent(datamine.constellation2.dendro_enemyRes_))
+    equal(condC2Dendro, "dendro", percent(dm.constellation2.dendro_enemyRes_))
   )
 )
 
 const [condC4AfterPirHitPath, condC4AfterPirHit] = cond(key, "c4AfterPirHit")
-const c4_burst_dmg_ = greaterEq(input.constellation, 4, equal(condC4AfterPirHit, "on", percent(datamine.constellation4.burst_dmg_)))
+const c4_burst_dmg_ = greaterEq(input.constellation, 4, equal(condC4AfterPirHit, "on", percent(dm.constellation4.burst_dmg_)))
 
 const c6_critRate_ = greaterEq(input.constellation, 6,
   min(
     prod(
-      percent(datamine.constellation6.critRate_),
+      percent(dm.constellation6.critRate_),
       input.total.hp,
       1 / 1000
     ),
-    percent(datamine.constellation6.maxCritRate_)
+    percent(dm.constellation6.maxCritRate_)
   )
 )
 const c6_critDMG_ = greaterEq(input.constellation, 6,
   min(
     prod(
-      percent(datamine.constellation6.critDmg_),
+      percent(dm.constellation6.critDmg_),
       input.total.hp,
       1 / 1000
     ),
-    percent(datamine.constellation6.maxCritDmg_)
+    percent(dm.constellation6.maxCritDmg_)
   )
 )
 
 export const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg1: dmgNode("atk", datamine.charged.hit1, "charged"),
-    dmg2: dmgNode("atk", datamine.charged.hit2, "charged")
+    dmg1: dmgNode("atk", dm.charged.hit1, "charged"),
+    dmg2: dmgNode("atk", dm.charged.hit2, "charged")
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    skillDmg: dmgNode("hp", datamine.skill.skillDmg, "skill"),
-    dance1Dmg: dmgNode("hp", datamine.skill.dance1Dmg, "skill"),
-    dance2Dmg: dmgNode("hp", datamine.skill.dance2Dmg, "skill"),
-    whirl1Dmg: dmgNode("hp", datamine.skill.whirl1Dmg, "skill"),
-    whirl2Dmg: dmgNode("hp", datamine.skill.whirl2Dmg, "skill"),
-    moonDmg: dmgNode("hp", datamine.skill.moonDmg, "skill", { premod: { skill_dmg_: c1_moon_dmg_ } }),
-    wheelDmg: dmgNode("hp", datamine.skill.wheelDmg, "skill"),
+    skillDmg: dmgNode("hp", dm.skill.skillDmg, "skill"),
+    dance1Dmg: dmgNode("hp", dm.skill.dance1Dmg, "skill"),
+    dance2Dmg: dmgNode("hp", dm.skill.dance2Dmg, "skill"),
+    whirl1Dmg: dmgNode("hp", dm.skill.whirl1Dmg, "skill"),
+    whirl2Dmg: dmgNode("hp", dm.skill.whirl2Dmg, "skill"),
+    moonDmg: dmgNode("hp", dm.skill.moonDmg, "skill", { premod: { skill_dmg_: c1_moon_dmg_ } }),
+    wheelDmg: dmgNode("hp", dm.skill.wheelDmg, "skill"),
   },
   burst: {
-    skillDmg: dmgNode("hp", datamine.burst.skillDmg, "burst"),
-    aeonDmg: dmgNode("hp", datamine.burst.aeonDmg, "burst"),
+    skillDmg: dmgNode("hp", dm.burst.skillDmg, "burst"),
+    aeonDmg: dmgNode("hp", dm.burst.aeonDmg, "burst"),
   },
   passive2: {
     bountifulBloom_dmg_
@@ -209,7 +209,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
@@ -223,7 +223,7 @@ const sheet: ICharacterSheet = {
         textSuffix: "(2)"
       }, {
         text: ct.chg("auto.skillParams.4"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }]
     }, {
       text: ct.chg(`auto.fields.plunging`),
@@ -254,21 +254,21 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.wheelDmg, { name: ct.ch(`skill.wheel`) }),
       }, {
         text: ct.chg("skill.skillParams.4"),
-        value: datamine.skill.pirouetteDuration,
+        value: dm.skill.pirouetteDuration,
         unit: "s"
       }, {
         text: ct.chg("skill.skillParams.5"),
-        value: datamine.skill.lunarPrayerDuration,
+        value: dm.skill.lunarPrayerDuration,
         unit: "s"
       }, {
         text: ct.chg("skill.skillParams.6"),
         value: (data) => data.get(input.constellation).value >= 1
-          ? `${datamine.skill.tranquilityAuraDuration}s + ${datamine.constellation1.durationInc}s = ${datamine.skill.tranquilityAuraDuration + datamine.constellation1.durationInc}`
-          : datamine.skill.tranquilityAuraDuration,
+          ? `${dm.skill.tranquilityAuraDuration}s + ${dm.constellation1.durationInc}s = ${dm.skill.tranquilityAuraDuration + dm.constellation1.durationInc}`
+          : dm.skill.tranquilityAuraDuration,
         unit: "s"
       }, {
         text: stg("cd"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s"
       }]
     }, ct.condTem("constellation4", {
@@ -279,12 +279,12 @@ const sheet: ICharacterSheet = {
         on: {
           fields: [{
             text: st("energyRegen"),
-            value: datamine.constellation4.energyRegen,
+            value: dm.constellation4.energyRegen,
           }, {
             node: c4_burst_dmg_
           }, {
             text: stg("duration"),
-            value: datamine.constellation4.duration,
+            value: dm.constellation4.duration,
             unit: "s",
           }]
         }
@@ -298,11 +298,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.aeonDmg, { name: ct.chg(`burst.skillParams.1`) })
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.cost,
+        value: dm.burst.cost,
       }]
     }]),
 
@@ -337,7 +337,7 @@ const sheet: ICharacterSheet = {
             node: a1AfterSkillAndHit_eleMas
           }, {
             text: stg("duration"),
-            value: datamine.passive1.buffDuration,
+            value: dm.passive1.buffDuration,
             unit: "s"
           }]
         }
@@ -360,7 +360,7 @@ const sheet: ICharacterSheet = {
             node: c2_hydro_enemyRes_,
           }, {
             text: stg("duration"),
-            value: datamine.constellation2.duration,
+            value: dm.constellation2.duration,
             unit: "s"
           }]
         },
@@ -372,7 +372,7 @@ const sheet: ICharacterSheet = {
             node: c2_dendro_enemyRes_
           }, {
             text: stg("duration"),
-            value: datamine.constellation2.duration,
+            value: dm.constellation2.duration,
             unit: "s"
           }]
         }

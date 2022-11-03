@@ -17,7 +17,7 @@ const region: Region = "snezhnaya"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++],
@@ -80,33 +80,33 @@ const datamine = {
 } as const
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
-    aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('hydro') } }),
-    flashDmg: dmgNode("atk", datamine.riptide.flashDmg, "normal", { hit: { ele: constant('hydro') } }),
-    burstDmg: dmgNode("atk", datamine.riptide.burstDmg, "normal", { hit: { ele: constant('hydro') } })
+    aimed: dmgNode("atk", dm.charged.aimed, "charged"),
+    aimedCharged: dmgNode("atk", dm.charged.aimedCharged, "charged", { hit: { ele: constant('hydro') } }),
+    flashDmg: dmgNode("atk", dm.riptide.flashDmg, "normal", { hit: { ele: constant('hydro') } }),
+    burstDmg: dmgNode("atk", dm.riptide.burstDmg, "normal", { hit: { ele: constant('hydro') } })
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    stanceDmg: dmgNode("atk", datamine.skill.stanceDmg, "skill"),
-    normal1: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal1, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    normal2: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal2, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    normal3: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal3, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    normal4: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal4, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    normal5: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal5, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    normal61: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal61, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    normal62: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.normal62, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
-    charged1: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.charged1, { unit: "%" }), input.total.atk), "charged", { hit: { ele: constant('hydro') } }),
-    charged2: customDmgNode(prod(subscript(input.total.skillIndex, datamine.skill.charged2, { unit: "%" }), input.total.atk), "charged", { hit: { ele: constant('hydro') } }),
-    riptideSlash: dmgNode("atk", datamine.skill.riptideSlash, "skill")
+    stanceDmg: dmgNode("atk", dm.skill.stanceDmg, "skill"),
+    normal1: customDmgNode(prod(subscript(input.total.skillIndex, dm.skill.normal1, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal2: customDmgNode(prod(subscript(input.total.skillIndex, dm.skill.normal2, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal3: customDmgNode(prod(subscript(input.total.skillIndex, dm.skill.normal3, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal4: customDmgNode(prod(subscript(input.total.skillIndex, dm.skill.normal4, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal5: customDmgNode(prod(subscript(input.total.skillIndex, dm.skill.normal5, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal61: customDmgNode(prod(subscript(input.total.skillIndex, dm.skill.normal61, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    normal62: customDmgNode(prod(subscript(input.total.skillIndex, dm.skill.normal62, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
+    charged1: customDmgNode(prod(subscript(input.total.skillIndex, dm.skill.charged1, { unit: "%" }), input.total.atk), "charged", { hit: { ele: constant('hydro') } }),
+    charged2: customDmgNode(prod(subscript(input.total.skillIndex, dm.skill.charged2, { unit: "%" }), input.total.atk), "charged", { hit: { ele: constant('hydro') } }),
+    riptideSlash: dmgNode("atk", dm.skill.riptideSlash, "skill")
   },
   burst: {
-    meleeDmg: dmgNode("atk", datamine.burst.meleeDmg, "burst"),
-    rangedDmg: dmgNode("atk", datamine.burst.rangedDmg, "burst"),
-    riptideBlastDmg: dmgNode("atk", datamine.burst.riptideBlastDmg, "burst")
+    meleeDmg: dmgNode("atk", dm.burst.meleeDmg, "burst"),
+    rangedDmg: dmgNode("atk", dm.burst.rangedDmg, "burst"),
+    riptideBlastDmg: dmgNode("atk", dm.burst.riptideBlastDmg, "burst")
   }
 }
 
@@ -140,7 +140,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
@@ -164,8 +164,8 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("auto.skillParams.10"),
         value: (data) => data.get(input.asc).value >= 1
-          ? datamine.passive1.durationExt + datamine.riptideDuration
-          : datamine.riptideDuration,
+          ? dm.passive1.durationExt + dm.riptideDuration
+          : dm.riptideDuration,
         unit: "s"
       }]
     }, {
@@ -202,25 +202,25 @@ const sheet: ICharacterSheet = {
       }, {
         node: infoMut(dmgFormulas.skill.charged2, { name: ct.chg(`skill.skillParams.7`), textSuffix: "(2)" }),
       }, {
-        node: infoMut(constant(datamine.skill.chargedStamina), { name: ct.chg(`skill.skillParams.8`) }),
+        node: infoMut(constant(dm.skill.chargedStamina), { name: ct.chg(`skill.skillParams.8`) }),
       }, {
         node: infoMut(dmgFormulas.skill.riptideSlash, { name: ct.chg(`skill.skillParams.9`) }),
       }, {
         text: ct.chg("skill.skillParams.10"),
-        value: datamine.skill.duration,
+        value: dm.skill.duration,
         unit: "s"
       }, {
         text: ct.chg("skill.skillParams.11"),
         value: (data) => data.get(input.constellation).value >= 1
-          ? `${datamine.skill.preemptiveCd1 - (datamine.skill.preemptiveCd1 * datamine.constellation1.cdRed)}
-            - ${datamine.skill.preemptiveCd2 - (datamine.skill.preemptiveCd2 * datamine.constellation1.cdRed)}`
-          : `${datamine.skill.preemptiveCd1} - ${datamine.skill.preemptiveCd2}`,
+          ? `${dm.skill.preemptiveCd1 - (dm.skill.preemptiveCd1 * dm.constellation1.cdRed)}
+            - ${dm.skill.preemptiveCd2 - (dm.skill.preemptiveCd2 * dm.constellation1.cdRed)}`
+          : `${dm.skill.preemptiveCd1} - ${dm.skill.preemptiveCd2}`,
         unit: "s"
       }, {
         text: ct.chg("skill.skillParams.12"),
         value: (data) => data.get(input.constellation).value >= 1
-          ? `${datamine.skill.maxCd - (datamine.skill.maxCd * datamine.constellation1.cdRed)}`
-          : `${datamine.skill.maxCd}`,
+          ? `${dm.skill.maxCd - (dm.skill.maxCd * dm.constellation1.cdRed)}`
+          : `${dm.skill.maxCd}`,
         unit: "s"
       }]
     }]),
@@ -234,14 +234,14 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.riptideBlastDmg, { name: ct.chg(`burst.skillParams.2`) }),
       }, {
         text: ct.chg("burst.skillParams.4"),
-        value: `${datamine.burst.cd}`,
+        value: `${dm.burst.cd}`,
         unit: "s"
       }, {
         text: ct.chg("burst.skillParams.5"),
-        value: `${datamine.burst.enerCost}`,
+        value: `${dm.burst.enerCost}`,
       }, {
         text: ct.chg("burst.skillParams.3"),
-        value: `${datamine.burst.enerReturned}`,
+        value: `${dm.burst.enerReturned}`,
       }]
     }]),
     passive1: ct.talentTem("passive1"),

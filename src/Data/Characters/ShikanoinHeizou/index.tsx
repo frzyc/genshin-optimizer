@@ -17,7 +17,7 @@ const elementKey: ElementKey = "anemo"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -80,56 +80,56 @@ const declension_dmg_ = lookup(
   Object.fromEntries(stacksArr.map(stacks => [
     stacks,
     prod(
-      subscript(input.total.skillIndex, datamine.skill.declension_dmg_, { name: st("bonusScaling.skill_"), unit: "%" }),
+      subscript(input.total.skillIndex, dm.skill.declension_dmg_, { name: st("bonusScaling.skill_"), unit: "%" }),
       constant(stacks, { name: ct.ch("declensionStacks") })
     )
   ])), naught, { name: st("bonusScaling.skill_"), unit: "%" })
 const conviction_dmg_ = equal(condDeclensionStacks, "4",
-  subscript(input.total.skillIndex, datamine.skill.conviction_dmg_, { unit: "%" }),
+  subscript(input.total.skillIndex, dm.skill.conviction_dmg_, { unit: "%" }),
   { name: st("bonusScaling.skill_"), unit: "%" }
 )
 const totalStacks_dmg_ = sum(declension_dmg_, conviction_dmg_)
 
 const [condSkillHitPath, condSkillHit] = cond(key, "skillHit")
 const a4_eleMasDisp = greaterEq(input.asc, 4,
-  equal(condSkillHit, "on", datamine.passive2.eleMas)
+  equal(condSkillHit, "on", dm.passive2.eleMas)
 )
 const a4_eleMas = unequal(target.charKey, key, a4_eleMasDisp)
 
 // TODO: After non-stacking buffs
-// const staminaSprintDec_ = percent(datamine.passive3.staminaSprintDec_)
+// const staminaSprintDec_ = percent(dm.passive3.staminaSprintDec_)
 
 const [condTakeFieldPath, condTakeField] = cond(key, "takeField")
-const c1_atkSpd_ = greaterEq(input.constellation, 1, equal(condTakeField, "on", percent(datamine.constellation1.atkSpd_)))
+const c1_atkSpd_ = greaterEq(input.constellation, 1, equal(condTakeField, "on", percent(dm.constellation1.atkSpd_)))
 
 const c6_skill_critRate_ = greaterEq(input.constellation, 6, lookup(
   condDeclensionStacks,
   Object.fromEntries(stacksArr.map(stacks => [
     stacks,
     prod(
-      percent(datamine.constellation6.hsCritRate_),
+      percent(dm.constellation6.hsCritRate_),
       constant(stacks, { name: ct.ch("declensionStacks") })
     )
   ])),
   naught
 ))
 const c6_skill_critDMG_ = greaterEq(input.constellation, 6,
-  equal(condDeclensionStacks, "4", percent(datamine.constellation6.hsCritDmg_))
+  equal(condDeclensionStacks, "4", percent(dm.constellation6.hsCritDmg_))
 )
 
 export const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg: dmgNode("atk", datamine.charged.dmg, "charged")
+    dmg: dmgNode("atk", dm.charged.dmg, "charged")
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
     dmg: customDmgNode(
       prod(
         sum(
-          subscript(input.total.skillIndex, datamine.skill.dmg, { unit: "%" }),
+          subscript(input.total.skillIndex, dm.skill.dmg, { unit: "%" }),
           totalStacks_dmg_
         ),
         input.total.atk
@@ -139,10 +139,10 @@ export const dmgFormulas = {
     )
   },
   burst: {
-    slugger_dmg: dmgNode("atk", datamine.burst.slugger_dmg, "burst"),
+    slugger_dmg: dmgNode("atk", dm.burst.slugger_dmg, "burst"),
     ...Object.fromEntries(absorbableEle.map(ele => [
       `${ele}_iris_dmg`,
-      dmgNode("atk", datamine.burst.iris_dmg, "burst", { hit: { ele: constant(ele) } })
+      dmgNode("atk", dm.burst.iris_dmg, "burst", { hit: { ele: constant(ele) } })
     ]))
   },
 }
@@ -181,7 +181,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal")
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i > 2 ? (i < 6 ? 3 : 4) : i}`), textSuffix: (i > 2 && i < 6) ? `(${i - 2})` : undefined, }),
       }))
     }, {
@@ -191,7 +191,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.5`) }),
       }, {
         text: ct.chg("auto.skillParams.6"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }],
     }, {
       text: ct.chg("auto.fields.plunging"),
@@ -210,7 +210,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
         text: stg("cd"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s"
       }]
     }, ct.condTem("skill", {
@@ -228,7 +228,7 @@ const sheet: ICharacterSheet = {
             text: st("aoeInc"),
           }, {
             text: stg("duration"),
-            value: datamine.skill.declension_duration,
+            value: dm.skill.declension_duration,
             unit: "s"
           }]
         }
@@ -245,7 +245,7 @@ const sheet: ICharacterSheet = {
             node: infoMut(a4_eleMasDisp, KeyMap.info("eleMas")),
           }, {
             text: stg("duration"),
-            value: datamine.passive2.duration,
+            value: dm.passive2.duration,
             unit: "s"
           }]
         }
@@ -265,11 +265,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst[`${ele}_iris_dmg`], { name: ct.chg(`burst.skillParams.1`) }),
       })), {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }]),
 
@@ -286,11 +286,11 @@ const sheet: ICharacterSheet = {
             node: c1_atkSpd_
           }, {
             text: stg("duration"),
-            value: datamine.constellation1.duration,
+            value: dm.constellation1.duration,
             unit: "s"
           }, {
             text: stg("cd"),
-            value: datamine.constellation1.cd,
+            value: dm.constellation1.cd,
             unit: "s"
           }]
         }
