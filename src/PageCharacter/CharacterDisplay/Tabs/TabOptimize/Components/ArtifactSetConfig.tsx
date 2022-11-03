@@ -226,6 +226,6 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
   </Grid >
 }
 
-function getNumSlots(slotCount: Record<string, number> | undefined): number {
-  return slotCount ? Object.values(slotCount).reduce((tot, v) => tot + (v ? 1 : 0), 0) : 0
+function getNumSlots(slotCount: Record<string, number>): number {
+  return Object.values(slotCount).reduce((tot, v) => tot + (v ? 1 : 0), 0)
 }
