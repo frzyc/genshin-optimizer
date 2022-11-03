@@ -45,7 +45,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
     .reverse()
     .flatMap(([, sets]) => sets)
     .filter(key => !key.includes("Prayers")),
-  [artifactSheets])
+    [artifactSheets])
   const artSlotCount = useMemo(() => {
     const artSlotCount: Dict<ArtifactSetKey, Record<SlotKey, number>> = artKeys
       ? Object.fromEntries(artKeys.map(k => [k, Object.fromEntries(allSlotKeys.map(sk => [sk, 0]))]))
@@ -55,14 +55,14 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   }, [dbDirty, database, artKeys])
   const artSetKeyList = useMemo(() => artKeys
     ? artKeys.sort((a, b) => {
-      const aCount = getNumSlots(artSlotCount[a])
-      const bCount = getNumSlots(artSlotCount[b])
-      if (aCount < bCount) return 1
-      if (aCount > bCount) return -1
-      return 0
+      const hasA = !!getNumSlots(artSlotCount[a])
+      const hasB = !!getNumSlots(artSlotCount[b])
+      return hasA === hasB
+        ? (a < b ? -1 : 1)
+        : (hasA ? -1 : 1)
     })
     : [],
-  [artSlotCount, artKeys])
+    [artSlotCount, artKeys])
 
   const allowRainbow2 = !artSetExclusion.rainbow?.includes(2)
   const allowRainbow4 = !artSetExclusion.rainbow?.includes(4)
