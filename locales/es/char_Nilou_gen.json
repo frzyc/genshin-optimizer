@@ -44,7 +44,7 @@
       "0": "Nilou entra en el estado de “pirueta” e inflige <hydro>Daño Hydro</hydro> contra los enemigos cercanos en función de su Vida Máx.",
       "1": "Además, cuando Nilou ejecuta un Ataque Normal o una Habilidad Elemental mientras está en este estado, entra respectivamente en los estados de “danza de espadas” y “danza espiral”, con los que inflige un <hydro>Daño Hydro</hydro> que no puede sustituirse imbuyéndose de otro elemento y que se considera daño de Habilidad Elemental.",
       "2": "<br/>",
-      "3": "Mientras estos estados estén activos, el tercer paso de baile de Nilou anulará el estado de pirueta y dará lugar a varios efectos distintos dependiendo del tipo del tercer paso baile:",
+      "3": "Mientras estos estados estén activos, el tercer paso de baile de Nilou anulará el estado de pirueta y dará lugar a varios efectos distintos dependiendo del tipo del tercer paso de baile:",
       "4": [
         "Danza de espadas: libera una luna de agua que inflige <hydro>Daño Hydro</hydro> contra los enemigos con los que colisiona y hace que Nilou entre en el estado de “rezo de la luna”. Los Ataques Normales que ejecute en este estado se convertirán en danza de espadas, y el último golpe liberará una luna de agua.",
         "Danza espiral: libera una rueda de agua purificadora que inflige <hydro>Daño Hydro en el AdE</hydro> y crea un aura de quietud que sigue a tu personaje en uso y que aplica continuamente sobre él el estado de <hydro>Mojado</hydro>."

@@ -187,6 +187,18 @@
     "name": "Inspiration stratégique",
     "description": "Matériaux contenant diverses théories et études de cas liées à la pratique commerciale. Pour ceux qui ont l'expérience appropriée, chaque page et chaque mot est rempli d'inspiration potentielle pour s'améliorer..."
   },
+  "MushroomCurrency": {
+    "name": "Pièce fongique",
+    "description": "Une pièce commémorative finement ouvragée qui sert de récompense donnée aux participants qui se sont distingués lors des étapes de la capture de Fongus et de la coruscation de potentiel du tournoi de dompteur de la Coupe des nilotpalotus.\\nIndépendamment des résultats de la compétition, cette pièce est un témoin des échanges amicaux entre les participants et les gentils Fongus.\\nPeut être échangée contre des objets précieux lors de l'événement « Chahut de Fongus »."
+  },
+  "FungusMedal": {
+    "name": "Médaille mycophile",
+    "description": "Une médaille fabriquée à partir de matériaux uniques qui sert de récompense aux participants qui se sont distingués lors de l'étape de l'entraînement renforcé du tournoi de dompteur de la Coupe des nilotpalotus.\\nTravailler en équipe et vaincre les puissants ennemis du terrain d'entraînement spécial est l'un des aspects clés pour renforcer le lien qui vous unit à vos Fongus et devenir plus fort ensemble.\\nPeut être échangée contre des objets précieux lors de l'événement « Chahut de Fongus »."
+  },
+  "ShatteredPhenocryst": {
+    "name": "Phénocristal brisé",
+    "description": "Une mystérieuse substance cristalline que vous avez obtenue après avoir vaincu les puissantes Hypostases dans un donjon que nul n'a encore découvert. Ses jolies couleurs rappellent les vestiges lumière que laissent les éléments en se dispersant.\\nCet objet peut être échangé contre de précieuses ressources lors de l'événement « Symphonie Hypostase : Verset de dissonance »."
+  },
   "Primogem": {
     "name": "Primo-gemme",
     "description": "Une gemme cristalline originelle qui brille grâce à la condensation des espoirs et des rêves des univers d'autrefois."
@@ -531,6 +543,14 @@
     "name": "Candace",
     "description": "Descendante du roi Deshret avec un œil gauche de couleur ambre, c'est la protectrice du Village d'Aaru."
   },
+  "Nahida": {
+    "name": "Nahida",
+    "description": "Une oiselle en cage isolée dans les profondeurs du Sanctuaire de Surasthana qui ne peut voir le monde que dans ses rêves."
+  },
+  "Layla": {
+    "name": "Layla",
+    "description": "Une étudiante du Rtawahist spécialisée en astrologie théorique. Parfois somnambule, parfois insomniaque, elle souffre de troubles du sommeil."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka.",
     "description": "Matériau d'activation de la constellation d'Ayaka."
@@ -762,6 +782,14 @@
   "CandacesStellaFortuna": {
     "name": "Stella Fortuna de Candace",
     "description": "Matériau d'activation de la constellation de Candace."
+  },
+  "NahidasStellaFortuna": {
+    "name": "Stella Fortuna de Nahida",
+    "description": "Matériau d'activation de la constellation de Nahida."
+  },
+  "LaylasStellaFortuna": {
+    "name": "Stella Fortuna de Layla",
+    "description": "Matériau d'activation de la constellation de Layla."
   },
   "GnosticHymnOldNotes": {
     "name": "Pass de bataille « Gnostique » - Ébauche",
@@ -1552,7 +1580,7 @@
     "description": "Le journal laissé par le cébèbre aventurier Roald dans un campement provisoire. Il a l'air encore neuf, et dégage une odeur d'herbes des montagnes de Qingce."
   },
   "DiaryOfRoaldTheAdventurerLuhuaPool": {
-    "name": "Journal de l'aventurier Roald - Lac de Luhua",
+    "name": "Journal de l'aventurier Roald - Lac Luhua",
     "description": "Un journal laissé par hasard par le célèbre aventurier Roald dans un campement provisoire. Il semble avoir été mouillé ; on y voit l'empreinte d'un renard."
   },
   "DiaryOfRoaldTheAdventurerYaoguangShoal": {
@@ -3855,7 +3883,7 @@
     "name": "Rose sumérienne",
     "description": "Vives et belles, ces fleurs d'un violet pur dégagent un parfum agréable qui fera s'arrêter toute personne passant devant elles. Leur nom peut porter à confusion, car bien qu'elles soient des roses, elles sont semblables à nulle autre fleur de la même classification florale."
   },
-  "Redcrest": {
+  "HennaBerry": {
     "name": "Quandong",
     "description": "Un fruit qui pousse même dans les environnements désertiques les plus hostiles. Ces fruits pourpres vibrants sont rendus encore plus beaux sur un fond de sable jaune."
   },
@@ -6492,8 +6520,8 @@
     "description": "Une boisson typique de Liyue. Explorer une région aussi vaste que Liyue demande de l'énergie, et on aimerait que chaque tasse de thé que l'on prend sur la route soit de plus en plus grande."
   },
   "WolfhookJuice": {
-    "name": "Jus de baies à crochet glacé",
-    "description": "Une boisson fraîche non alcoolisée très en vogue dernièrement. Ajoutez quelques glaçons dans du jus de baies à crochet fraîchement pressé et mélangez pour lui faire prendre une couleur violette."
+    "name": "Jus de baie à crochet glacé",
+    "description": "Une boisson fraîche non alcoolisée très en vogue dernièrement. Ajoutez quelques glaçons dans du jus de baie à crochet fraîchement pressé et mélangez pour lui faire prendre une couleur violette."
   },
   "BerryMintBurst": {
     "name": "Boisson aux baies et à la menthe",
@@ -7683,15 +7711,15 @@
     "name": "Tour de champignons au lait (délicieuse)",
     "description": "Un amuse-bouche croustillant. Les légères notes crémeuses fondent sur la langue lorsqu'on croque les succulents champignons et le pain croustillant... Ce mets délicieux procure un sentiment de satisfaction inégalé, au point ou il est impossible de ne pas se lécher les doigts pour n'en laisser aucune miette."
   },
-  "SuspiciousCoconutCharcoalCake": {
+  "SuspiciousCharcoalBakedAjilenakhCake": {
     "name": "Charbon d'ajilenakh (suspect)",
     "description": "Une pâtisserie de couleur foncée. Un coup d'œil suffit pour voir qu'il s'agit d'une catastrophe en attente... Votre immense courage est récompensé par une sensation en bouche extrêmement sèche et râpeuse après une simple bouchée... Est-ce une sorte d'erreur ? A-t-on mis un vrai morceau de charbon de bois à la place du gâteau ?"
   },
-  "CoconutCharcoalCake": {
+  "CharcoalBakedAjilenakhCake": {
     "name": "Charbon d'ajilenakh",
     "description": "Une pâtisserie de couleur foncée. Les noix d'ajilenakh sont d'abord grillées et transformées en poudre avant d'être filtrées au travers d'un tamis, ajoutées à une pâte, mélangées uniformément, puis cuites. Le produit final n'a rien d'impressionnant, mais l'arôme frais des noix s'en dégage, et il a encore meilleur goût avec de la confiture."
   },
-  "DeliciousCoconutCharcoalCake": {
+  "DeliciousCharcoalBakedAjilenakhCake": {
     "name": "Charbon d'ajilenakh (délicieux)",
     "description": "Une pâtisserie de couleur foncée. D'une pâte fine et presque brillante et d'un parfum de noix d'ajilenakh à la fois vif et chaleureux, ce gâteau est moelleux et délicat lorsqu'il entre en bouche, exorcisant l'épuisement et muselant la misère. Tout comme un livre ne peut pas être jugé par sa couverture, ou un religieux par son habit, un gâteau ne devrait pas non plus être condamné par sa croûte."
   },
@@ -7770,6 +7798,26 @@
   "SparklingBerryJuice": {
     "name": "Jus de tombaie pétillant",
     "description": "Une boisson non alcoolisée qui vient de sortir. Des tombaies de maturités différentes sont utilisées pour sa préparation, ce qui lui donne un goût aigre-doux, tandis que l'eau pétillante glaciale vient rafraîchir les sens. Cette boisson est idéale pour accompagner vos moments de détente."
+  },
+  "SuspiciousRoseCustard": {
+    "name": "Crème à la rose (suspecte)",
+    "description": "Un dessert confectionné à partir de lait fermenté. Il a l'air normal en apparence, mais vos dents seront attaquées par son acidité. L'absence de goût peut se rattraper en ajoutant un peu plus de sucre. Cependant, vous n'êtes pas près d'oublier cet arrière-goût désagréable."
+  },
+  "RoseCustard": {
+    "name": "Crème à la rose",
+    "description": "Un dessert confectionné à partir de lait fermenté. Une fois que le lait fermenté est filtré pour faire du yaourt, ajoutez du sucre et mélangez bien avant d'y incorporer des roses séchées et des fruits secs. Cet encas qui était autrefois seulement apprécié des aventuriers et des marchands ambulants, est servi pour le petit déjeuner et le thé à travers tout Sumeru."
+  },
+  "DeliciousRoseCustard": {
+    "name": "Crème à la rose (délicieuse)",
+    "description": "Un dessert confectionné à partir de lait fermenté. Lorsqu'ils sont mélangés, le lait caillé, les pétales parfumés et les fruits secs craquants créent une saveur douce et sucrée. C'est comme si la fragrance des fleurs d'antan vous chatouillait les sens lorsque vous avalez ce délice lacté."
+  },
+  "ExtravagantSlumber": {
+    "name": "Sommeil extravagant",
+    "description": "Spécialité culinaire de Layla. Les fruits secs éparpillés rappellent des étoiles dans le ciel nocturne tranquille. Une bouchée suffit à détendre et apaiser votre corps et votre esprit après une longue journée de labeur. Après avoir dit à Layla ce que son plat vous inspirait, un air mêlant joie et regret apparaît sur son visage : «{NON_BREAK_SPACE}C—C'est génial ! J'aurais aimé que ça me fasse le même effet.{NON_BREAK_SPACE}»"
+  },
+  "Halvamazd": {
+    "name": "Halvamazd",
+    "description": "Spécialité culinaire de Nahida. Le terme «{NON_BREAK_SPACE}mazd » signifie sagesse en sumérien et personne ne peut résister à ce genre de «{NON_BREAK_SPACE}sagesse ». Un sourire apparaît dans les yeux de Nahida : « L'anémone de mer a aidé le petit poisson à grandir, et ce dernier veut évidemment lui rendre la pareille. »"
   },
   "RecipeItem": {
     "name": "Ingrédient",
@@ -8283,7 +8331,7 @@
     "name": "Recette : Tour de champignons au lait",
     "description": "Étapes de préparation de la tour de champignons au lait."
   },
-  "RecipeCoconutCharcoalCake": {
+  "RecipeCharcoalBakedAjilenakhCake": {
     "name": "Recette : Charbon d'ajilenakh",
     "description": "Étapes de préparation du charbon d'ajilenakh."
   },
@@ -8306,6 +8354,10 @@
   "RecipeFruitsOfTheFestival": {
     "name": "Recette : Jus de fruits du festival",
     "description": "Étapes de préparation du jus de fruits du festival."
+  },
+  "RecipeRoseCustard": {
+    "name": "Recette : Crème à la rose",
+    "description": "Étapes de préparation de la crème à la rose."
   },
   "CraftedItems": {
     "name": "Produit synthétisé",
@@ -8902,6 +8954,22 @@
   "LightGuidingTetrahedron": {
     "name": "Tétraèdre de lumière",
     "description": "Un composant essentiel que vous avez obtenu après avoir vaincu un mystérieux ensemble de mécanismes.\\nJusqu'à nos jours, ces anciennes machines n'ont pas oublié les rêves de leurs maîtres ni leurs devoirs : construire mille palais, administrer trois mille machines, semer dix mille fleurs qui ne fleuriront plus jamais, et recréer un paradis désormais enfoui sous les sables du désert pour le bien de tous ceux qui vivent dans ce monde.\\nBien que le roi du désert ne soit plus, que son rêve ait été depuis longtemps corrompu par des murmures impies et que tous les piliers magiques aient été brisés avant de s'effondrer, l'immense créature des temps anciens que le roi appréciait tant se cache toujours au sein des tempêtes de sable brûlantes."
+  },
+  "QuelledCreeper": {
+    "name": "Liane d'oblitération",
+    "description": "La forme finale condensée d'une Hypostase Dendro. Des lianes robustes protègent un cristal élémentaire pur.\\nL'élément Dendro, dont l'existence est la plus opposée à l'ordre naturel des choses, mais l'élément le plus compatible avec la vie, et une Hypostase, un être élémentaire très éloigné de toutes les autres formes de vie, n'auraient pas dû avoir la possibilité de ne faire qu'un dans ce monde. On raconte qu'une Hypostase est capable d'«{NON_BREAK_SPACE}apprendre{NON_BREAK_SPACE}» de leur environnement. C'est pour cette raison que les rêves et les nuances de la forêt n'ont aucun secret pour celle-ci en particulier. Sa forme actuelle est le fruit de milliers d'années de transformation."
+  },
+  "PuppetStrings": {
+    "name": "Fils de marionnette",
+    "description": "Des tubes qui étaient insérés dans le dos de la marionnette. Les substances qui transitaient dedans étaient aussi bien de couleurs monotones que vives. Leur contraste était aussi impressionnant qu'effrayant.\\nIls alimentaient la marionnette en force et servaient également de fils pour la manipuler et l'attacher.\\nUne fois ces tubes rompus, elle est devenue aussi faible qu'un nouveau-né, incapable du moindre mouvement."
+  },
+  "MirrorOfMushin": {
+    "name": "Miroir de mushin",
+    "description": "Le miroir qui se trouvait sur la poitrine de Shouki no Kami pour le séparer du monde extérieur. Le mitsudomoe gravé dessus est un signe ostentatoire d'autorité et de puissance.\\nCependant, il ne représente plus l'obéissance à la maîtresse de la foudre.\\nCe symbole est désormais une épée pointée vers les forces qui régissent ce monde.\\nLe miroir ne sert pas à se défendre contre le regard plein de jugement des mortels, mais il agit comme protection contre la souillure du monde.\\nDans ce grand temple, le châtiment est infligé et l'ignorance est purifiée.\\nLes rêves s'effondrent, les désirs sont arrachés et le karma est restauré."
+  },
+  "DakasBell": {
+    "name": "Cloche de daka",
+    "description": "Une boule utilisée pour articuler deux membres mécaniques qui a la forme d'une cloche. Sous ses airs délicats se cache une quantité d'énergie inimaginable.\\nSi elle est utilisée pour relier les bras, ces derniers perdront toute sensation, tandis que ce sera la force qui disparaîtra pour les jambes.\\nSi elle relie le crâne...\\nLa haine, la douleur, la folie et l'orgueil demeurent intacts.\\nQuelle chance."
   },
   "TileOfDecarabiansTower": {
     "name": "Tuile cassée de Décabarian",
@@ -9611,21 +9679,69 @@
     "name": "Courte lettre",
     "description": "Un message court écrit en langage codé. Vous ne savez pas qui en est l'auteur et pourquoi il a été laissé ici."
   },
+  "SilverTwig": {
+    "name": "Brindille d'argent",
+    "description": "Une brindille qui a été extraite du centre du monde.\\nElle faisait partie d'un arbre géant dont les racines s'étendaient dans le monde entier. Bien qu'elle ait été arrachée de celui-ci, leur lien demeure aussi fort qu'autrefois. Tant que l'arbre blanc géant qui symbolise le centre de ce monde ne dépérit pas, cette brindille conservera sa vitalité.\\n\\nLes arbres symbolisent la vie. Une histoire raconte que quelqu'un a confié sa conscience aux branches de l'arbre blanc avant son trépas pour que sa vie et ses espoirs ne soient pas perdus : les branches pousseraient et bourgeonneraient avec le soleil et la pluie pour finalement porter de nouveaux fruits.\\nLes arbres symbolisent également la sagesse. Une légende raconte qu'un sage suspendu à l'envers à un arbre avait obtenu le savoir nécessaire pour écrire des runes et contrôler les mots sacrés. En parcourant le royaume qui se trouvait le long des racines, il a pu entrevoir le secret du cosmos.\\nL'ensemble des connaissances, tous souvenirs et expériences du monde circulent à travers les racines du grand arbre, comme des ruisseaux qui convergent pour former une rivière qui se jette dans la mer et dont l'eau tombe des nuages. Ce cycle est celui de la vie."
+  },
   "VaguelyReadableInscription": {
     "name": "Inscription vaguement lisible",
     "description": ""
   },
-  "AkademiyaInvestigationTeamsReport": {
-    "name": "Rapport d'enquête de l'Académie",
+  "IncompleteMedicalRecords": {
+    "name": "Dossiers médicaux incomplets",
     "description": ""
   },
-  "SealedOrders": {
-    "name": "Ordres scellés",
+  "SomeonesDiary": {
+    "name": "Journal de quelqu'un",
     "description": ""
   },
-  "OldOrders": {
-    "name": "Ordres anciens",
+  "EventNotice": {
+    "name": "Annonce d'événement",
     "description": ""
+  },
+  "HaniyyahsNotesFirstPart": {
+    "name": "Notes d'Haniyyah (1)",
+    "description": "Des vieilles notes laissées par Haniyyah à propos de sa famille."
+  },
+  "HaniyyahsNotesSecondPart": {
+    "name": "Notes d'Haniyyah (2)",
+    "description": "Des vieilles notes laissées par Haniyyah à propos de sa famille."
+  },
+  "CluesForYaeMiko": {
+    "name": "Indices pour Yae Miko",
+    "description": "Après avoir pris des photos du cadeau de Dori, vous les assemblez aux indices obtenus précédemment et obtenir cet ensemble de notes que vous enverrez à Yae Miko pour une analyse approfondie. Celle-ci n'est pas une chercheuse, mais ses vastes connaissances et son expérience devraient lui permettre de déceler quelque chose à partir de ces indices."
+  },
+  "CynosMissive": {
+    "name": "Lettre de Cyno",
+    "description": "Une lettre de Cyno que Sido vous a remise. Elle semble expliquer des événements récents..."
+  },
+  "LaylasListOfOrders": {
+    "name": "Commande de Layla",
+    "description": "Une liste d'objets que Layla a commandés au trouvetout. Les ingrédients de cuisine qu'elle souhaite acheter se trouvent dessus ainsi que le lieu de rendez-vous avec le trouvetout et les articles que Layla a précédemment achetés. La phrase « Elle a acheté un produit introuvable au Grand bazar » s'y trouve, comme un rappel pour ne pas oublier la jeune femme. Pour une raison qui vous échappe, le lieu de rendez-vous se trouve étonnamment sur une route en dehors de la Ville de Sumeru. Ce «{NON_BREAK_SPACE}trouvetout » semble être très doué pour planifier ses transactions, car il a accepté la commande de Layla alors que sa marchandise n'est pas encore arrivée."
+  },
+  "InitialInvestigationClues": {
+    "name": "Premiers indices d'enquête",
+    "description": "Une photo de la gelée florale et de sa recette que vous avez prise à l'étal de gelée florale du tournoi de dompteur de la Coupe des nilotpalotus quand personne n'y était.\\nCependant, une analyse professionnelle est requise pour en faire quoi que ce soit."
+  },
+  "HaniyyahsNotes": {
+    "name": "Notes d'Haniyyah",
+    "description": "Des vieilles notes laissées par Haniyyah à propos de sa famille."
+  },
+  "SpecialWisdomOrb": {
+    "name": "Orbe de sagesse spécial",
+    "description": "Cet Orbe de sagesse vous paraît familier. Son dos et sa base portent des marques d'impact, comme si on se l'était disputé. Si vous regardez de plus près, les inscriptions « Exemple d'utilisation de la commande de porte dérobée » et « Confirmé sans valeur, peut être jeté », ainsi qu'un peu de sang se trouvent dessus. Il semble que quelqu'un se soit emparé de cet Orbe et qu'il ait rencontré une mésaventure..."
+  },
+  "MysteriousFatuiLetter": {
+    "name": "Mystérieuse lettre des Fatui",
+    "description": "Une lettre que vous avez obtenue par hasard après avoir vaincu un Usurier des Fatui. Qu'est-ce qu'il faisait en sa possession ?"
+  },
+  "DerivedContents": {
+    "name": "Contenu déchiffré",
+    "description": "Les informations que vous avez découvertes en rassemblant tous les indices dont vous disposiez."
+  },
+  "XudongsLetter": {
+    "name": "Lettre de Xudong",
+    "description": "Une lettre que Xudong vous a laissée. Elle comporte une pièce jointe..."
   },
   "SilkFlowerSeed": {
     "name": "Graine de fleur de soie",
@@ -9945,7 +10061,7 @@
   },
   "OriginalFishOintment": {
     "name": "Huile de poisson originale",
-    "description": "Matériau de raffinement spécial pour le chalutier.\\nUn onguent fabriqué en utilisant des extraits de poissons pêchés dans le grand lac au nord. Il peut restaurer temporairement la vitalité d'un poisson transformé en arc.\\nOn dit que le lac abrite des créatures aquatiques que l'on ne peut voir nulle part ailleurs dans Teyvat."
+    "description": "Matériau de raffinement spécial pour le Chalutier.\\nUn onguent fabriqué en utilisant des extraits de poissons pêchés dans le grand lac au nord. Il peut restaurer temporairement la vitalité d'un poisson transformé en arc.\\nOn dit que le lac abrite des créatures aquatiques que l'on ne peut voir nulle part ailleurs dans Teyvat."
   },
   "PlumeOfTheChangingWinds": {
     "name": "Panache des vents changeants",
@@ -9989,7 +10105,7 @@
   },
   "BladeDance": {
     "name": "Danse de lames",
-    "description": "Les personnages disposent de 5 cumuls de l'effet Danse de lames, chaque cumul augmentant les DGT des attaques normales de 15 %. Avec 5 cumuls, la VIT d'attaque normale augmente de 15 %. Lorsqu'un personnage subit des DGT, il perd 1 cumul de Danse de lames. Un maximum de 1 cumul peut être perdu toutes les secondes de cette manière. Un personnage gagne un cumul de Danse de lames toutes les 10 s qu'il passe sur le champ de bataille, jusqu'à un maximum de 5 cumuls. Le TdR, le nombre de cumuls et les effets sont calculés indépendamment pour tous les personnages."
+    "description": "Les personnages disposent de 5 cumuls de l'effet Danse de lames, chaque cumul augmentant les DGT des attaques normales de 15 %. Avec 5 cumuls, la VIT d'attaque normale augmente de 15 %. Lorsqu'un personnage subit des DGT, il perd 1 cumul de Danse de lames. Un maximum de 1 cumul peut être perdu toutes les secondes de cette manière. Un personnage obtient 1 cumul de Danse de lames toutes les 10 s qu'il passe sur le champ de bataille, jusqu'à un maximum de 5 cumuls. Le TdR, le nombre de cumuls et les effets sont calculés indépendamment pour tous les personnages."
   },
   "Courageous": {
     "name": "Vaillance",
@@ -10683,6 +10799,18 @@
     "name": "Succès - Rêves reflétés",
     "description": "Thème.\\n« Un millénaire d'obsession et de nostalgie tragique s'est perdu depuis longtemps dans les tempêtes de sable de ces nuits flamboyantes. Mais l'éternelle oasis verdoyante de ses rêves est, selon toute vraisemblance, aussi douce qu'elle l'était au premier jour... »"
   },
+  "NahidaCrescent": {
+    "name": "Nahida - Croissant",
+    "description": "Thème.\\nLa lune montante admire le soleil, car sa lumière illumine le monde, tandis que le soleil couchant envie la lune, car elle est toujours accompagnée par les plus beaux des rêves."
+  },
+  "LaylaDaydream": {
+    "name": "Layla - Rêverie",
+    "description": "Thème.\\n« Le ciel étoilé de tes rêves illuminera le chemin si le cristal de ton cœur reflète une lumière pure. »"
+  },
+  "TravelNotesFungusLand": {
+    "name": "PB - Fongisme",
+    "description": "Thème.\\n« ... {M#Voyageur}{F#Voyageuse}, nul besoin d'être triste. À l'aube, un nouveau vent soufflera les spores qui transportent de merveilleux rêves vers tes terres d'espoir... »"
+  },
   "AnemoculusResonanceStone": {
     "name": "Pierre de résonance Anémoculus",
     "description": "Outil permettant de détecter les Anémoculus proches à Mondstadt.\\nUn disque de pierre fabriqué par l'homme, dont les caractéristiques se rapprochent de celles des Statues des Sept et capable de résonner avec les Anémoculus.\\nCe type de pierre résonnant avec les Oculus est un dérivé maladroit des Statues des Sept construites autrefois à travers les terres. C'est précisément cette infériorité qui explique cette soif de résonance vis-à-vis des statues représentant les Archons, en faisant un ustensile prisé des aventuriers et des croyants pour la collecte d'Oculus."
@@ -10915,6 +11043,10 @@
     "name": "« Daguerréotype pétillant »",
     "description": "Ce gadget permet d'enregistrer et de stocker des paysages tout en y ajoutant un filtre de couleur spécial.\\nUn objet à la provenance inconnue. Il capture des images qui ne ressemblent à nulle autre, car celles-ci sont entourées de bulles, ce qui leur donne un aspect fantaisiste. C'est assez curieux, étant donné que l'intérieur de l'appareil ne contient pas d'eau.\\nUn certain capitaine de cavalerie a dit au sujet de cette machine qu'elle « capture le désir de fraîcheur des gens »."
   },
+  "WisdomOrb": {
+    "name": "Orbe de sagesse",
+    "description": "Un objet important que vous a remis l'organisateur du tournoi de dompteur de la Coupe des nilotpalotus et qui aurait été inventé par le chercheur Kautilya. Utilisez-le pour capturer, héberger et commander des Fongus intelligents. Seuls ceux qui sont capables d'en faire usage peuvent participer au tournoi. Étrangement, cet Orbe vous donne une sensation de déjà-vu..."
+  },
   "CloudRetainersDamaskedDevice": {
     "name": "Appareil turquoise de Souffle-Nuages",
     "description": "Ce mécanisme léger fait à partir de papier et à l'apparence d'un oiseau vous a été offert par Souffle-Nuages.\\nBien qu'il s'agisse effectivement d'un mécanisme, il est impossible de distinguer un quelconque composant quand on le regarde.\\nIl semblerait que cet Adepte se soit encore amélioré dans l'art de fabriquer des mécanismes..."
@@ -11047,6 +11179,10 @@
     "name": "Imprimé de soie",
     "description": "Un ema sur lequel figure un paysage inazumien, gravé sur du bois de rêve d'excellente qualité.\\nVous pourrez modifier le décor de votre Sérénithéière grâce à l'énergie dimensionnelle..."
   },
+  "NaturesTrueFruit": {
+    "name": "Vérifruit de la nature",
+    "description": "Un fruit qui dégage un parfum délicieux. Toby, l'esprit itinérant, l'a ramené comme souvenir de Sumeru.\\nUn relent de celui-ci vous évoque certaines images que vous pouvez manipuler grâce à l'énergie dimensionnelle pour recréer de merveilleux paysages de Sumeru dans votre royaume intérieur..."
+  },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "Des nuages de montagne, la pluie dorée tombe",
     "description": "Un feu d'artifice bleu-nuage qui montre ses formes aussi bien intérieures qu'extérieures après avoir explosé dans le ciel comme une fleur qui s'épanouit."
@@ -11141,11 +11277,11 @@
   },
   "FrontierLife": {
     "name": "« Vie au poste-frontière »",
-    "description": "Étapes de mise en place de « Vie au poste-frontière ».\\nL'ancien Grand Maître des chevaliers de l'Ordre de Favonius suggéra un jour que les compagnies de chevaliers en déplacement établissent des camps aussi solides que possible pour se prémunir contre les attaques soudaines. La cabane en pin miniature s'est avérée être le meilleur choix à cet égard.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
+    "description": "Étapes de mise en place de la « Vie au poste-frontière ».\\nL'ancien Grand Maître des chevaliers de l'Ordre de Favonius suggéra un jour que les compagnies de chevaliers en déplacement établissent des camps aussi solides que possible pour se prémunir contre les attaques soudaines. La cabane en pin miniature s'est avérée être le meilleur choix à cet égard.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
   },
   "RocksPlants": {
     "name": "« Plantes et pierres »",
-    "description": "Étapes de mise en place de « Plantes et pierres ».\\nL'herbe et les arbres poussent librement dans la nature, loin des hommes. Les pierres ont été entassées dans un coin, sans doute par un monstre.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
+    "description": "Étapes de mise en place des « Plantes et pierres ».\\nL'herbe et les arbres poussent librement dans la nature, loin des hommes. Les pierres ont été entassées dans un coin, sans doute par un monstre.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
   },
   "PlainLiyueBedroom": {
     "name": "Chambre liyuéenne simple",
@@ -11169,7 +11305,7 @@
   },
   "TeaTalk": {
     "name": "« Conversation autour d'une tasse de thé »",
-    "description": "Étapes de mise en place de « Conversation autour d'une tasse de thé ».\\nLes habitants de Liyue invitent souvent des amis à venir discuter en prenant le thé chez eux. Un bon moment en perspective avec seulement cette table à thé et ces deux chaises.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
+    "description": "Étapes de mise en place de la « Conversation autour d'une tasse de thé ».\\nLes habitants de Liyue invitent souvent des amis à venir discuter en prenant le thé chez eux. Un bon moment en perspective avec seulement cette table à thé et ces deux chaises.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
   },
   "BookLoversStudy": {
     "name": "Salle d'étude pour férus de livres",
@@ -11193,7 +11329,7 @@
   },
   "ParlorCordiality": {
     "name": "« Cordialité au salon »",
-    "description": "Étapes de mise en place de « Cordialité au salon ».\\nLa cheminée qui éclaire cet espace de réception imprègne l'espace d'une chaleur qui détend le corps et l'esprit. Ajoutez-y quelques coupes de vin et vous aurez tout ce qu'il faut pour apaiser même les hommes d'affaires les plus agressifs de Snezhnaya.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
+    "description": "Étapes de mise en place de la « Cordialité au salon ».\\nLa cheminée qui éclaire cet espace de réception imprègne l'espace d'une chaleur qui détend le corps et l'esprit. Ajoutez-y quelques coupes de vin et vous aurez tout ce qu'il faut pour apaiser même les hommes d'affaires les plus agressifs de Snezhnaya.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
   },
   "WellEquippedStudy": {
     "name": "Salle d'étude bien meublée",
@@ -11245,11 +11381,11 @@
   },
   "LoneAndCautiousAdventurer": {
     "name": "« Prudence de l'aventurier solitaire »",
-    "description": "Étapes de mise en place de « Prudence de l'aventurier solitaire ».\\nLes aventuriers qui voyagent seuls ont tendance à être prudents et montent préférablement leur camp près des panneaux indicateurs. S'agissant de lieux de passage, les monstres ont tendance à les éviter.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
+    "description": "Étapes de mise en place de la « Prudence de l'aventurier solitaire ».\\nLes aventuriers qui voyagent seuls ont tendance à être prudents et montent préférablement leur camp près des panneaux indicateurs. S'agissant de lieux de passage, les monstres ont tendance à les éviter.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
   },
   "ClimateCrossover": {
     "name": "« Croisée des climats »",
-    "description": "Étapes de mise en place de « Croisée des climats ».\\nUne étrange zone où différentes conditions météorologiques se mêlent, et où poussent des plantes aux caractéristiques variées. Au départ, certains chercheurs pensaient que cela pouvait résulter d'anomalies dans les lignes énergétiques, mais des recherches ultérieures ont révélé qu'il s'agissait d'un des nombreux phénomènes extraordinaires de Teyvat.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
+    "description": "Étapes de mise en place de la « Croisée des climats ».\\nUne étrange zone où différentes conditions météorologiques se mêlent, et où poussent des plantes aux caractéristiques variées. Au départ, certains chercheurs pensaient que cela pouvait résulter d'anomalies dans les lignes énergétiques, mais des recherches ultérieures ont révélé qu'il s'agissait d'un des nombreux phénomènes extraordinaires de Teyvat.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
   },
   "DialogueTwixtAncientTreeAndRock": {
     "name": "Conversation entre un arbre et une roche",
@@ -11257,11 +11393,11 @@
   },
   "AmidstPoeticPondering": {
     "name": "« Réflexion poétique »",
-    "description": "Étapes de mise en place de « Réflexion poétique ».\\nUne étude subtilement décorée basée sur les bureaux de l'Ordre de Favonius. Il est dit que chaque partie de cette étude a suivi des règles de placement minutieuses, permettant aux lumières des bougies et aux ombres de se mélanger parfaitement pour créer un effet d'éclairage unique. Les lecteurs et écrivains passionnés de littérature trouveront ici une source d'inspiration, tandis que les personnes occupées pourront aller et venir dans la pièce avec un minimum de bruit et de risques d'interruption.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Jean, Lisa, Fischl, Mona, Eula."
+    "description": "Étapes de mise en place de la « Réflexion poétique ».\\nUne étude subtilement décorée basée sur les bureaux de l'Ordre de Favonius. Il est dit que chaque partie de cette étude a suivi des règles de placement minutieuses, permettant aux lumières des bougies et aux ombres de se mélanger parfaitement pour créer un effet d'éclairage unique. Les lecteurs et écrivains passionnés de littérature trouveront ici une source d'inspiration, tandis que les personnes occupées pourront aller et venir dans la pièce avec un minimum de bruit et de risques d'interruption.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Jean, Lisa, Fischl, Mona, Eula."
   },
   "AmidstWhisperingWinds": {
     "name": "« Vents murmurants »",
-    "description": "Étapes de mise en place de « Vents murmurants ».\\nUne chambre qui incarne le concept d'un « cœur attentionné ». Pour les gens occupés, une chambre n'est qu'un endroit qui contient un lit, un endroit où l'on ferme un peu les yeux et qui ne demande pas trop d'attention. Mais pour ceux qui ont le souci du détail, chaque partie de leur espace de vie en vaut le temps et le soin.\\nQue ce soit les vents de la liberté ou ceux de la résistance, tous ont commencé comme la plus petite des brises douces. Celui qui voyage loin doit prendre soin de lui-même et la fatigue passera sûrement inaperçue si l'on vit entouré de chaleur et de confort.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Barbara, Eula, Noëlle."
+    "description": "Étapes de mise en place des « Vents murmurants ».\\nUne chambre qui incarne le concept d'un « cœur attentionné ». Pour les gens occupés, une chambre n'est qu'un endroit qui contient un lit, un endroit où l'on ferme un peu les yeux et qui ne demande pas trop d'attention. Mais pour ceux qui ont le souci du détail, chaque partie de leur espace de vie en vaut le temps et le soin.\\nQue ce soit les vents de la liberté ou ceux de la résistance, tous ont commencé comme la plus petite des brises douces. Celui qui voyage loin doit prendre soin de lui-même et la fatigue passera sûrement inaperçue si l'on vit entouré de chaleur et de confort.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Barbara, Eula, Noëlle."
   },
   "FeiyunStudyRoom": {
     "name": "Salle d'étude de Feiyun",
@@ -11363,6 +11499,62 @@
     "name": "Fragrance d'érable et de thé",
     "description": "Étapes de mise en place de la fragrance d'érable et de thé.\\nLa disposition de ce salon de thé traditionnel inazumien s'est inspirée du Salon de thé Komore comme référence et a utilisé de similaires tables en bois d'érable et objets de cérémonie du thé, ce qui évoque cette atmosphère élégante mais pas trop stricte, amicale mais pas arbitraire.\\nLa légende veut que diverses formes d'inspiration jaillissent de ceux qui sont assis dans un salon de thé rempli des arômes du bois d'érable et du thé. Ainsi, certains poètes ont tendance à écrire leur poésie en sirotant un thé, le jeune vagabond qui a donné à de nombreuses plantes leurs surnoms élégants comptant parmi ces gens.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Thomas, Kaedehara Kazuha."
   },
+  "ForestPatrolAnecdotes": {
+    "name": "Anecdotes de la patrouille forestière",
+    "description": "Une salle de pause entièrement meublée qui n'est pas sans rappeler les camps des gardes forestiers de Gandharva. L'agencement de la pièce a été revu selon les missions attribuées.\\nLorsque le signal retenti, les gardes forestiers attrapent leur sac et sortent. En revenant de patrouille, ils peuvent rapidement procéder au traitement, au stockage et à l'analyse des échantillons prélevés. S'ils sont de service jusqu'à tard la nuit, la marmite leur permettra de cuisiner un bon dîner pour reprendre des forces. Cette salle de pause a tout pour que les gardes forestiers soient au meilleur de leurs performances... du moment que les équipes sont bien faites.\\nCompagnons préférant ce set : Tighnari, Collei."
+  },
+  "CoalescedBrilliance": {
+    "name": "Brillance fusionnée",
+    "description": "Une pièce dans laquelle on retrouve des pierres précieuses, des ornements et une collection d'objets rares. L'intérieur reflète un certain luxe, mais il n'est éclairé par rien d'autre qu'une lampe dans le coin qui permet de réfléchir la lumière dans toute la pièce, illuminant votre regard.\\nCeux à la recherche de la richesse trouveront cette pièce comme une friandise avec juste la bonne quantité de sucre et un arrière-goût persistant. Quant à ceux qui préfèrent l'esthétique, ils seront agréablement surpris par l'éclat des œuvres d'art, quel que soit l'angle dans lequel ils regardent.\\nCompagnons préférant ce set : Dori, Nilou."
+  },
+  "FervidAroma": {
+    "name": "Arôme fervent",
+    "description": "Le modèle de ce restaurant au décor exquis est une célèbre taverne de la Ville de Sumeru... Modifié pour être utilisé dans la Sérénithéière, évidemment. La vapeur et les effluves des épices flottent dans l'air, enrichissant une expérience déjà joyeuse. Un peu de bon vin et de compagnie suffiront pour un bon repas.\\nLes personnes qui voyagent souvent en groupe choisissent les restaurants où elles mangent en fonction du nombre de places et de la taille des plats. De ce fait, un restaurant de viande grillée constitue un choix optimal. Quant à celles qui voyagent seules, l'ambiance bruyante et animée de ce genre de lieux leur permet de dissimuler leurs gestes pour mieux observer, suivre et manigancer."
+  },
+  "OfSettledThoughts": {
+    "name": "Pensées arrêtées",
+    "description": "Un bureau dans lequel sont empilés des tomes et dont les bibliothèques ressemblent à des murs. Il est difficile de ne pas se sentir intimidé devant ces montagnes d'ouvrages, mais les connaisseurs savent que la frontière entre la sagesse et l'ignorance n'est pas insurmontable. Il faut seulement être prêt à lire tous ces livres, un par un, en suivant un plan soigneusement élaboré pour rapidement acquérir de nombreuses nouvelles connaissances.\\nCompagnon préférant ce set : Cyno."
+  },
+  "AFarewellBriefToBustleAndBother": {
+    "name": "Bref d'adieu à l'agitation et la peine",
+    "description": "Une chambre à l'esthétique sumérienne. Ses décorations et son ameublement peuvent être trouvés dans de nombreuses maisons de la ville. Grâce à l'énergie dimensionnelle, chaque meuble est une réplique parfaite, ce qui donne l'impression qu'ils viennent tout juste d'être fabriqués. La pièce semble être tout ce qu'il y a de plus propice au repos : propre, ordonnée, ouverte et généreuse.\\nCeux qui ont toit et couvert se retrouvent aussi affectés par des pensées négatives, tout comme ceux qui occupent des positions que les autres envient n'échappent pas aux problèmes de la vie. Dans ces moments-là, il vaut mieux se vider l'esprit et dormir un peu, afin de pouvoir affronter le monde à nouveau en pleine forme...\\nCompagnons préférant ce set : Nahida, Layla."
+  },
+  "DwellingAmidstTheSands": {
+    "name": "Habitation parmi les sables",
+    "description": "Une pièce simple qui dispose d'outils et d'ustensiles issus communs au Village d'Aaru. Ceux qui vivent au milieu des vents du désert possèdent des habitudes propres à la vie dans cet environnement unique. Par exemple, se débarrasser du sable qui aurait pu être pris dans leurs vêtements ou maintenir la température et l'humidité d'une pièce avec les moyens du bord...\\nCes pratiques ne sont pas utiles dans le royaume intérieur, mais elles peuvent réchauffer le cœur et sont donc dignes de respect. L'aménagement de cet intérieur est si minutieux qu'on a réellement l'impression de vivre dans une maison au milieu du désert.\\nCompagnon préférant ce set : Candace."
+  },
+  "AmidstProsperingMarkets": {
+    "name": "Au milieu de marchés prospères",
+    "description": "Ce quartier marchand est meublé de façon exquise. Il rend hommage aux rues de la Ville Sumeru et de son Grand bazar. Les étals proposent des fruits frais, des plats délicieux et des produits de consommation courante à la vente. En faisant quelques tours dans le quartier, vous ressentirez sans doute une certaine familiarité qui s'installe quand l'on fréquente un marché animé.\\nLes boutiques et les étals situés de part et d'autre des rues de la Ville de Sumeru ont apparemment été modifiés selon des règles spécifiques qui ont été déterminées par certaines recherches de l'Académie, de sorte de fournir le meilleur service possible avec le moins de place et une gestion facile.\\nCompagnon préférant ce set : Dori."
+  },
+  "DeepInTheQuietForest": {
+    "name": "Au fond de la forêt tranquille",
+    "description": "Ce bâtiment a été conçu dans le style de Gandharva et dont l'esthétique est clairement inspirée de la forêt tropicale. Peu importe ce qui se trouve autour, vous pourrez faire l'expérience de la forêt, au milieu de sa végétation et ses cours d'eau apaisants.\\nCeci dit, vous devrez maîtriser des compétences de survie lorsque vous devrez véritablement vous aventurer dans la forêt et ajuster vos gestes pour éviter les petits désagréments du climat humide. Vous devrez également comprendre les habitudes quotidiennes de certains gardes forestiers...\\nCompagnons préférant ce set : Collei, Cyno."
+  },
+  "OfTwirlingDancesUnfettered": {
+    "name": "Danses virevoltantes sans entraves",
+    "description": "Un grand et beau théâtre. La scène majestueuse, les brumes de la fontaine jaillissante et les nombreuses fleurs précieuses, qui ont été créées par l'énergie dimensionnelle, imitent l'atmosphère festive du théâtre Zubayr.\\nCertains spectacles sont mieux appréciés la nuit. La disposition des lampes semble être le résultat d'une étude minutieuse visant à optimiser la clarté avec laquelle le public peut voir les danseurs, indépendamment des places assises ou debout, tandis que l'éclairage est réglé de manière à illuminer la scène au maximum.\\nCompagnon préférant ce set : Nilou."
+  },
+  "QuietTimesByTheRiverbank": {
+    "name": "Temps calmes au bord de la rivière",
+    "description": "Un village paisible qui revêt l'esthétique unique du Village de Vimara. Bien qu'il ne soit pas situé au bord d'une rivière ou de la mer, l'arôme du poisson qui embaume dans ce village suffit à vous faire entendre le bruit de l'eau.\\nLe Village de Vimara est très différent du camp des gardes forestiers : ses habitants n'effectuent pas de tâches à haute responsabilité et mènent une vie tranquille, ce qui en fait un lieu très agréable la détente."
+  },
+  "SetekhDemurs": {
+    "name": "Refus de Setekh",
+    "description": "Inspiré du Village d'Aaru, ce village possède des bâtiments solides qui ne craignent ni l'érosion du sable ni l'intrusion de bêtes sauvages indésirables en raison de leur robustesse meilleure que celle du bois. Cependant, les matériaux de construction sont apparemment assez particuliers. Les murs intérieurs nécessitent donc un entretien régulier de la part des résidents pour s'assurer qu'ils ne se sont pas fissurés après de longues périodes d'exposition à des vents violents et au soleil brûlant, et de les réparer si besoin. Ce travail permet également d'aiguiser la perception des habitants, les rendant plus attentifs et précis sur chaque aspect de leur vie.\\nCompagnons préférant ce set : Candace, Layla."
+  },
+  "TheTravelingTroopsPomp": {
+    "name": "Faste de la troupe itinérante",
+    "description": "Un campement militaire qui abonde d'une diversité de marchandises. Des fortifications défensives ont été installées, ainsi que des feux de camp à des endroits stratégiques pour les opérations nocturnes. En théorie, ce camp peut résister à l'assaut de nombreux ennemis et même former le pivot d'une ligne défensive avec des ressources humaines suffisantes.\\nLe transport et la mise en place de ce campement peuvent s'avérer difficiles et l'absence de tentes pour s'abriter du vent et de la pluie créent des conditions de vie difficiles... Cependant, les mercenaires aguerris n'ont besoin que d'un lit de paille pour dormir et ne se soucient pas de ces petits désagréments."
+  },
+  "AmidstScentsAndSerenity": {
+    "name": "Entre senteurs et sérénité",
+    "description": "Un jardin élégant et serein qui présente des pavillons inspirés du Jardin de Razan et du Pardis Dhyai. Dans ce lieu, la création d'une ambiance tranquille prime sur l'uniformité des styles architecturaux.\\nLes jolies fleurs sommeillent paisiblement et les lampadaires illuminent les eaux de la fontaine... À la tombée de la nuit, une promenade dans ce jardin chassera les pensées intrusives de votre esprit tels des nuages vaporeux et vous trouverez peut-être même l'inspiration qui vous échappait...\\nCompagnon préférant ce set : Nahida."
+  },
+  "ChorusOfDesertAndWood": {
+    "name": "Chœur du désert et des bois",
+    "description": "De nombreuses variétés de plantes poussent en abondance dans cet espace merveilleux. Grâce à l'énergie dimensionnelle, les propriétés des plantes ont été harmonisées pour avoir la possibilité de pousser côte à côte, qu'elles viennent du désert ou de la forêt tropicale, et donner ainsi un magnifique ensemble de fleurs, d'arbres et d'herbes sauvages.\\nLes chercheurs férus de plantes considèrent ce genre de zones comme de véritables mines d'or pour leur travail, mais de simples passants peuvent également y trouver un intérêt particulier...\\nCompagnon préférant ce set : Tighnari."
+  },
   "TimberWallWithJadeEaves": {
     "name": "Mur en bois avec alcôve de jade",
     "description": "Étapes de fabrication du mur en bois avec alcôve de jade.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -11374,6 +11566,10 @@
   "MapleWoodVaultedWall": {
     "name": "Mur voûté en bois d'érable",
     "description": "Étapes de fabrication du mur voûté en bois d'érable.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "SimpleBrightwoodCarvedWall": {
+    "name": "Mur sculpté rustique en bois radiant",
+    "description": "Étapes de fabrication du mur sculpté rustique en bois radiant.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "TraditionalCedarFlooring": {
     "name": "Plancher traditionnel en cèdre",
@@ -11387,6 +11583,10 @@
     "name": "Plancher marron en bois d'érable",
     "description": "Étapes de fabrication du plancher marron en bois d'érable.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "DarkBrightwoodFlooring": {
+    "name": "Plancher à motif veiné en bois radiant",
+    "description": "Étapes de fabrication du plancher à motif veiné en bois radiant.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "CheckeredCedarCeiling": {
     "name": "Plafond quadrillé en cèdre",
     "description": "Étapes de fabrication du plafond quadrillé en cèdre.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -11398,6 +11598,10 @@
   "MapleWoodSquareCeiling": {
     "name": "Plafond quadrillé en bois d'érable",
     "description": "Étapes de fabrication du plafond quadrillé en bois d'érable.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "BrightwoodChiseledCeiling": {
+    "name": "Plafond ciselé en bois radiant",
+    "description": "Étapes de fabrication du plafond ciselé en bois radiant.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "TwoTierCandleChandelier": {
     "name": "Lustre à deux rangées de chandelles",
@@ -11479,6 +11683,22 @@
     "name": "« Illumination des bois »",
     "description": "Étapes de fabrication de l'« Illumination des bois ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "ImmersiveLight": {
+    "name": "Lumière immersive",
+    "description": "Étapes de fabrication de la lumière immersive.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "PerennialIllumination": {
+    "name": "Illumination pérenne",
+    "description": "Étapes de fabrication de l'illumination pérenne.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "BloomingIllumination": {
+    "name": "Illumination florissante",
+    "description": "Étapes de fabrication de l'illumination florissante.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "EfflorescentIllumination": {
+    "name": "Illumination efflorescente",
+    "description": "Étapes de fabrication de l'illumination efflorescente.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "NorthernBirchFoldingCounter": {
     "name": "Comptoir avec abattant en bouleau du nord",
     "description": "Étapes de fabrication du comptoir avec abattant en bouleau du nord.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -11511,6 +11731,14 @@
     "name": "Bureau du désert « Hospitalité »",
     "description": "Étapes de fabrication du bureau du désert « Hospitalité ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "AdhigamaWoodVersatileShelves": {
+    "name": "Étagère « Polyvalence » en bois d'épiphanie",
+    "description": "Étapes de fabrication de l'étagère « Polyvalence » en bois d'épiphanie.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "BrightwoodInvigoratingNightstand": {
+    "name": "Table de chevet « Vivifiance » en bois radiant",
+    "description": "Étapes de fabrication de la table de chevet « Vivifiance » en bois radiant.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "TwoTierLibraryBookshelf": {
     "name": "Bibliothèque à deux étages",
     "description": "Étapes de fabrication de la bibliothèque à deux étages.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -11525,7 +11753,7 @@
   },
   "LostBetweenThePagesOfABook": {
     "name": "« Voyage au milieu des livres »",
-    "description": "Étapes de fabrication de « Voyage au milieu des livres ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    "description": "Étapes de fabrication du « Voyage au milieu des livres ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "ArchivistsTreasureTrove": {
     "name": "« Trésor de l'archiviste »",
@@ -11554,6 +11782,14 @@
   "DesertCabinetOddsAndEnds": {
     "name": "Armoire du désert « Fouillis »",
     "description": "Étapes de fabrication de l'armoire du désert « Fouillis ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "TreasureFromTheLandOfWisdom": {
+    "name": "« Trésor du pays de la sagesse »",
+    "description": "Étapes de fabrication du « Trésor du pays de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "ScrollsFromTheLandOfWisdom": {
+    "name": "« Parchemins du pays de la sagesse{NON_BREAK_SPACE}»",
+    "description": "Étapes de fabrication des «{NON_BREAK_SPACE}Parchemins du pays de la sagesse{NON_BREAK_SPACE}».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "SturdyLibraryTable": {
     "name": "Table d'étude robuste",
@@ -11623,6 +11859,18 @@
     "name": "Table longue en bois de tamaris Athel",
     "description": "Étapes de fabrication de la table longue en bois de tamaris Athel.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "AChoiceOfDelicacies": {
+    "name": "Choix de délices",
+    "description": "Étapes de fabrication du choix de délices.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "SpiritOfTheBanquet": {
+    "name": "Esprit du banquet",
+    "description": "Étapes de fabrication de l'esprit du banquet.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "ATableForTwo": {
+    "name": "Table pour deux",
+    "description": "Étapes de fabrication de la table pour deux.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "BreezeBlessedBed": {
     "name": "Lit « Douce brise »",
     "description": "Étapes de fabrication du lit « Douce brise ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -11634,6 +11882,14 @@
   "YumemiruSakurasRestBed": {
     "name": "Lit « Repos des cerisiers » en bois de rêve",
     "description": "Étapes de fabrication du lit « Repos des cerisiers » en bois de rêve.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "BrightwoodConcordBed": {
+    "name": "Lit « Concorde » en bois radiant",
+    "description": "Étapes de fabrication du lit «{NON_BREAK_SPACE}Concorde » en bois radiant.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "AdhigamaWoodComfortBed": {
+    "name": "Lit « Confort » en bois d'épiphanie",
+    "description": "Étapes de fabrication du lit «{NON_BREAK_SPACE}Confort » en bois d'épiphanie.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "PineReceptionCounter": {
     "name": "Comptoir de réception en pin",
@@ -11654,6 +11910,10 @@
   "DesertStudyConscientiousness": {
     "name": "Bibliothèque du désert «{NON_BREAK_SPACE}Consciencieux »",
     "description": "Étapes de fabrication de la bibliothèque du désert «{NON_BREAK_SPACE}Consciencieux ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "WitnessOfTavernAffairs": {
+    "name": "Témoin des affaires de taverne",
+    "description": "Étapes de fabrication du témoin des affaires de taverne.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "SoftLoungeSofa": {
     "name": "Canapé de salon confortable",
@@ -11682,6 +11942,18 @@
   "TeahouseRoundStoolPainPointReduction": {
     "name": "Tabouret de salon de thé « Confort apaisant »",
     "description": "Étapes de fabrication du tabouret de salon de thé « Confort apaisant ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "KarmaphalaWoodSubduedSpeechBench": {
+    "name": "Banc « Discours discret » en bois de karmaphalien",
+    "description": "Étapes de fabrication du banc «{NON_BREAK_SPACE}Discours discret » en bois de karmaphalien.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "KarmaphalaWoodCounterAssaultDiningChair": {
+    "name": "Chaise « Contre-assaut » en bois de karmaphalien",
+    "description": "Étapes de fabrication de la chaise «{NON_BREAK_SPACE}Contre-assaut » en bois de karmaphalien.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "SatisfactionOfSatedThirst": {
+    "name": "« Satisfaction de la soif rassasiée »",
+    "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Satisfaction de la soif rassasiée ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "NorthernStoneHearth": {
     "name": "Cheminée en pierre du nord",
@@ -11795,6 +12067,26 @@
     "name": "« Au milieu de la fumée fuyante »",
     "description": "Étapes de fabrication d'« Au milieu de la fumée fuyante ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "ForestWatchersFastidiousness": {
+    "name": "« Méticulosité du brigadier forestier »",
+    "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Méticulosité du brigadier forestier{NON_BREAK_SPACE}».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "ForestRangersProvisions": {
+    "name": "« Provisions du garde forestier »",
+    "description": "Étapes de fabrication des «{NON_BREAK_SPACE}Provisions du garde forestier ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "DeepwoodDwellersDelicacies": {
+    "name": "« Délices de l'habitant des bois »",
+    "description": "Étapes de fabrication des « Délices de l'habitant des bois ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "AromaOfHighHeatBarbecue": {
+    "name": "Arôme de barbecue à haute température",
+    "description": "Étapes de fabrication de l'arôme de barbecue à haute température.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "FragranceOfLowHeatRoast": {
+    "name": "Parfum de rôti à feu doux",
+    "description": "Étapes de fabrication du parfum de rôti à feu doux.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Tapis de Mondstadt « Ardeur pourpre »",
     "description": "Étapes de fabrication du tapis de Mondstadt « Ardeur pourpre ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -11855,6 +12147,10 @@
     "name": "Lampe du désert « Lueur »",
     "description": "Étapes de fabrication de la lampe du désert « Lueur ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "JoyfulIllumination": {
+    "name": "Illumination joyeuse",
+    "description": "Étapes de fabrication de l'illumination joyeuse.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Composition florale « Tranquillité céleste »",
     "description": "Étapes de fabrication de la composition florale « Tranquillité céleste ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -11897,11 +12193,11 @@
   },
   "ScholarsWeariness": {
     "name": "« Épuisement de l'érudit »",
-    "description": "Étapes de fabrication de « Épuisement de l'érudit ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    "description": "Étapes de fabrication de l'« Épuisement de l'érudit ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "EtiquetteOfCorrespondence": {
     "name": "« Protocole d'écriture »",
-    "description": "Étapes de fabrication de « Protocole d'écriture ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    "description": "Étapes de fabrication du « Protocole d'écriture ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "ExquisiteHourglassOrnament": {
     "name": "Sablier raffiné ornemental",
@@ -11978,6 +12274,18 @@
   "TheTwistingMist": {
     "name": "Brume tordue",
     "description": "Étapes de fabrication de la brume tordue.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "AppraisersTreasure": {
+    "name": "Trésor de l'évaluateur",
+    "description": "Étapes de fabrication du trésor de l'évaluateur.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "CeramicCenterpiece": {
+    "name": "Pièce centrale en céramique",
+    "description": "Étapes de fabrication de la pièce centrale en céramique.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "EphemeralSpirit": {
+    "name": "Esprit éphémère",
+    "description": "Étapes de fabrication de l'esprit éphémère.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "LandscapePaintingCountryHome": {
     "name": "Tableau de paysage « Maison de campagne »",
@@ -12074,6 +12382,10 @@
   "DesertWallDrapesFlamingFeathers": {
     "name": "Tenture murale du désert «{NON_BREAK_SPACE}Plumes enflammées »",
     "description": "Étapes de fabrication de la tenture murale du désert « Plumes enflammées ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "ForestWatchersConsiderations": {
+    "name": "« Considérations du brigadier forestier »",
+    "description": "Étapes de fabrication des «{NON_BREAK_SPACE}Considérations du brigadier forestier ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "LingeringMoment": {
     "name": "« Moment suspendu »",
@@ -12197,7 +12509,7 @@
   },
   "TravelingMerchantNorthOfTheStoneGate": {
     "name": "« Marchand itinérant du nord de la Porte de Pierre »",
-    "description": "Étapes de fabrication de « Marchand itinérant du nord de la Porte de Pierre ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    "description": "Étapes de fabrication du « Marchand itinérant du nord de la Porte de Pierre ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "RollRoofedFruitAndVegetableCart": {
     "name": "Étal itinérant de fruits et légumes",
@@ -12269,7 +12581,7 @@
   },
   "CloudsEastOfBishui": {
     "name": "« Nuages à l'est de Bishui »",
-    "description": "Étapes de fabrication de « Nuages à l'est de Bishui ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    "description": "Étapes de fabrication des « Nuages à l'est de Bishui ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "StrawShed": {
     "name": "Abri en paille",
@@ -12491,6 +12803,74 @@
     "name": "Maison du désert « Entreposage »",
     "description": "Étapes de fabrication de la maison du désert « Entreposage ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "MansionPagodaFlowerOfRevelation": {
+    "name": "Pagode de manoir « Fleur de révélation »",
+    "description": "Étapes de fabrication de la pagode de manoir « Fleur de révélation ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "MansionPagodaTreeOfPondering": {
+    "name": "Pagode de manoir « Arbre de réflexion »",
+    "description": "Étapes de fabrication de la pagode de manoir « Arbre de réflexion ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "MansionCourtyardWarblingPavilion": {
+    "name": "Cour de manoir « Pavillon gazouillant »",
+    "description": "Étapes de fabrication de la cour de manoir « Pavillon gazouillant ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "MansionCourtyardWatchtowerOfForesight": {
+    "name": "Cour de manoir « Tour de prévoyance »",
+    "description": "Étapes de fabrication de la cour de manoir « Tour de prévoyance ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "MansionCourtyardPlaceOfRepose": {
+    "name": "Cour de manoir « Lieu de repos »",
+    "description": "Étapes de fabrication de la cour de manoir « Lieu de repos ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "MansionCourtyardCuisiniersAbode": {
+    "name": "Cour de manoir « Antre du cuisinier »",
+    "description": "Étapes de fabrication de la cour de manoir « Antre du cuisinier ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "TreasuresOfTheCityOfWisdom": {
+    "name": "« Trésors de la cité de la sagesse »",
+    "description": "Étapes de fabrication des « Trésors de la cité de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "DelicaciesOfTheCityOfWisdom": {
+    "name": "« Délices de la cité de la sagesse »",
+    "description": "Étapes de fabrication des « Délices de la cité de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "AromasOfTheCityOfWisdom": {
+    "name": "« Arômes de la cité de la sagesse »",
+    "description": "Étapes de fabrication des « Arômes de la cité de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "TenacityOfTheCityOfWisdom": {
+    "name": "« Ténacité de la cité de la sagesse{NON_BREAK_SPACE}»",
+    "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Ténacité de la cité de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "CommerceOfTheCityOfWisdom": {
+    "name": "« Commerce de la cité de la sagesse »",
+    "description": "Étapes de fabrication du «{NON_BREAK_SPACE}Commerce de la cité de la sagesse{NON_BREAK_SPACE}».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "ShadeInTheTranquilCourt": {
+    "name": "« Ombre sur la cour tranquille »",
+    "description": "Étapes de fabrication de l'« Ombre sur la cour tranquille ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "LightInTheTranquilCourt": {
+    "name": "« Lumière sur la cour tranquille »",
+    "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Lumière sur la cour tranquille ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "FabricOfTheCityOfWisdom": {
+    "name": "« Tissu de la cité de la sagesse »",
+    "description": "Étapes de fabrication du « Tissu de la cité de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "PotteryOfTheCityOfWisdom": {
+    "name": "« Poterie de la cité de la sagesse »",
+    "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Poterie de la cité de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "DiligenceOfTheCityOfWisdom": {
+    "name": "« Diligence de la cité de la sagesse{NON_BREAK_SPACE}»",
+    "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Diligence de la cité de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "BuildingBlockOfTheCityOfWisdom": {
+    "name": "« Universalité de la cité de la sagesse »",
+    "description": "Étapes de fabrication de l'«{NON_BREAK_SPACE}Universalité de la cité de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fontaine à fleurs et oiseaux",
     "description": "Étapes de fabrication de la fontaine à fleurs et oiseaux.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -12570,6 +12950,14 @@
   "DesertHutRest": {
     "name": "Cabane du désert « Repos »",
     "description": "Étapes de fabrication de la cabane du désert « Repos ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "TheatersCoolMist": {
+    "name": "Brume fraîche du théâtre",
+    "description": "Étapes de fabrication de la brume fraîche du théâtre.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "ClarityFromTheLandOfWisdom": {
+    "name": "« Clarté du pays de la sagesse »",
+    "description": "Étapes de fabrication de la « Clarté du pays de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "AdeptusGate": {
     "name": "Portail des Adeptes",
@@ -12715,6 +13103,14 @@
     "name": "Fondations de pierre « Temps fortuné »",
     "description": "Étapes de fabrication des fondations de pierre « Temps fortuné ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "SubspaceStructureSuspendedPathway": {
+    "name": "Structure dimensionnelle « Sentier suspendu »",
+    "description": "Étapes de fabrication de la structure dimensionnelle « Sentier suspendu ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "SubSpaceStructureTreetopStroll": {
+    "name": "Structure dimensionnelle « Balade dans les arbres »",
+    "description": "Étapes de fabrication de la structure dimensionnelle « Balade dans les arbres ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "MessyPileOfFirCrates": {
     "name": "Pile désordonnée de caisses en épicéa",
     "description": "Étapes de fabrication de la pile désordonnée de caisses en épicéa.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -12745,11 +13141,11 @@
   },
   "FruitSellersCaution": {
     "name": "« Marchand de fruits précautionneux »",
-    "description": "Étapes de fabrication de « Marchand de fruits précautionneux ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    "description": "Étapes de fabrication du « Marchand de fruits précautionneux ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "FruitSellersToil": {
     "name": "« Mésaventures du marchand de fruits »",
-    "description": "Étapes de fabrication de « Mésaventures du marchand de fruits ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    "description": "Étapes de fabrication des « Mésaventures du marchand de fruits ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "HardenedGlazedVase": {
     "name": "Vases en terre cuite",
@@ -12769,7 +13165,7 @@
   },
   "TheAdventurersBurdens": {
     "name": "« Poids de l'aventure »",
-    "description": "Étapes de fabrication de « Poids de l'aventure ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    "description": "Étapes de fabrication du « Poids de l'aventure ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "SturdyWoodenBarrel": {
     "name": "Tonneau en bois solide",
@@ -12813,7 +13209,7 @@
   },
   "CourtyardCleansingPool": {
     "name": "« Purification de l'esprit »",
-    "description": "Étapes de fabrication de « Purification de l'esprit ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    "description": "Étapes de fabrication de la « Purification de l'esprit ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "HeadquartersAlarmSoundOfThunder": {
     "name": "Horloge de caserne « Son du tonnerre »",
@@ -13099,6 +13495,10 @@
     "name": "Traversée des Érémites",
     "description": "Étapes de fabrication de la traversée des Érémites.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "TheEremitesFame": {
+    "name": "Renommée des Érémites",
+    "description": "Étapes de fabrication de la renommée des Érémites.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "WroughtIronCarvedStreetLight": {
     "name": "Lampadaire en fer forgé",
     "description": "Étapes de fabrication du lampadaire en fer forgé.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -13125,7 +13525,7 @@
   },
   "ThreeReachesBright": {
     "name": "« Trois portées brillantes »",
-    "description": "Étapes de fabrication de « Trois portées brillantes ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+    "description": "Étapes de fabrication des « Trois portées brillantes ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "WhitestoneMeichuuStandingLamp": {
     "name": "Lampadaire « Meichuu » en pierre blanche",

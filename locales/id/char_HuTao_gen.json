@@ -41,7 +41,7 @@
   "skill": {
     "name": "Guide to Afterlife",
     "description": {
-      "0": "Hanya kobaran api tak terpadamkan yang dapat membersihkan ketidakmurnian dunia ini.",
+      "0": "Hanya kobaran api tak terpadamkan yang dapat memurnikan dunia.",
       "1": "Hu Tao mengonsumsi sejumlah HP untuk menyerang dan menghempas musuh di sekitar, kemudian masuk ke dalam kondisi Paramita Papilio.",
       "2": "<br/>",
       "3": "<strong>Paramita Papilio</strong>",
@@ -58,7 +58,7 @@
       "9": "<br/>",
       "10": "<strong>Paramita Papilio</strong> berhenti saat durasi waktunya berakhir, atau saat Hu Tao telah meninggalkan medan pertempuran/gugur.",
       "11": "<br/>",
-      "12": "<i>Teknik Secret Spear Hu Tao didasarkan pada beberapa aturan, di mana aturan yang pertama adalah: \"Tombak membuka jalan menuju akhirat, dan kupu-kupu menjembatani dunia sekarang dan dunia berikutnya.\"</i>"
+      "12": "<i>Jurus tombak rahasia Hu Tao didasari oleh beberapa aturan. Yang pertama: \"Tombak membuka jalan menuju akhirat, dan kupu-kupu menjembatani dunia sekarang dan dunia berikutnya.\"</i>"
     },
     "skillParams": {
       "0": "Mengonsumsi",
@@ -86,7 +86,7 @@
       "1": "Saat memukul musuh, akan memulihkan HP berdasarkan persentase Max HP Hu Tao. Efek ini dapat terpicu ke 5 musuh berbeda.",
       "2": "Jika HP Hu Tao sama dengan atau kurang dari 50% saat skill ini mengenai musuh, maka DMG dan pemulihan HP akan meningkat.",
       "3": "<br/>",
-      "4": "<i>Aktivitas supernatural dari roh-roh yang telah meninggalkan dunia ini adalah kecemasan terbesar Wangsheng Funeral Parlor. Tetapi kegiatan kremasi selalu bisa meredakan kecemasan Hu Tao, dan semakin cemas Hu Tao, semakin kuat juga api kremasi yang dia gunakan.</i>"
+      "4": "<i>Aktivitas supernatural dari roh-roh gentayangan adalah kecemasan terbesar Wangsheng Funeral Parlor. Tetapi mengadakan kremasi selalu bisa meredakan kecemasan Hu Tao, dan semakin cemas Hu Tao, semakin kuat juga api kremasi yang dia gunakan.</i>"
     },
     "skillParams": {
       "0": "DMG Skill",

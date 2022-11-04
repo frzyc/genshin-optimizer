@@ -47,8 +47,8 @@
       "3": "<strong>Mariposa excelsa</strong>",
       "4": [
         "Aumenta el ATQ de Hu Tao en función de la Vida Máx. que tenía al entrar en este estado. El bono de ATQ obtenido de esta forma no podrá ser superior al 400% del ATQ Básico de Hu Tao.",
-        "El daño de ATQ se convierte en <pyro>Daño Pyro</pyro>. Este cambio elemental no puede sustituirse imbuyéndose de otro elemento.",
-        "Al atacar a sus enemigos con Ataques Cargados, aplicará sobre ellos el efecto de pétalos sangrientos.",
+        "El daño de los ataques se convierte en <pyro>Daño Pyro</pyro>. Este cambio elemental no puede sustituirse imbuyéndose de otro elemento.",
+        "Al atacar a los enemigos con Ataques Cargados, aplicará sobre ellos el efecto de pétalos sangrientos.",
         "Aumenta la RES a interrupción de Hu Tao."
       ],
       "5": "<br/>",
@@ -83,8 +83,8 @@
     "name": "Calma de los espíritus",
     "description": {
       "0": "Hu Tao ordena a un espíritu en llamas que ataque, e inflige <pyro>Daño Pyro</pyro> en una gran AdE.",
-      "1": "Al golpear a sus enemigos, Hu Tao regenera Vida en proporción a su Vida Máx. Este efecto solo puede tener lugar contra un máximo de 5 enemigos.",
-      "2": "Si la Vida de Hu Tao es inferior o igual al 50% al atacar con esta habilidad, infligirá mayor daño y regenerará más Vida.",
+      "1": "Al golpear a sus enemigos, Hu Tao regenera Vida en proporción a su Vida Máx. Este efecto solo puede tener lugar contra un máximo de 5 enemigos golpeados.",
+      "2": "Si la Vida de Hu Tao es inferior o igual al 50% en el momento de golpear con esta habilidad, infligirá mayor daño y regenerará más Vida.",
       "3": "<br/>",
       "4": "<i>Si un alma que ya ha dejado este mundo sigue revoloteando por él a sus anchas, causará una gran preocupación a la Funeraria El Camino. La cremación es el método que más tranquiliza a Hu Tao, ya que cuanto más nerviosa está, más grandes son sus llamas.</i>"
     },
@@ -135,14 +135,14 @@
     "name": "Mal presagio",
     "description": {
       "0": "Aumenta el daño infligido por <strong>pétalos sangrientos</strong> en una cantidad equivalente al 10% de la Vida Máx. que tenía Hu Tao al aplicar dicho efecto.",
-      "1": "Además, <strong>Calma de los espíritus</strong> aplicará sobre los enemigos atacados el efecto de <strong>pétalos sangrientos</strong>."
+      "1": "Además, <strong>Calma de los espíritus</strong> aplicará sobre los enemigos golpeados el efecto de <strong>pétalos sangrientos</strong>."
     }
   },
   "constellation3": {
     "name": "Persistencia escarlata",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Guía hacia el más allá</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv. 15."
+      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
     }
   },
   "constellation4": {
@@ -155,7 +155,7 @@
     "name": "Ofrenda de incienso",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Calma de los espíritus</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv. 15."
+      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
     }
   },
   "constellation6": {

@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Mengumpulkan kekuatan Anemo, Heizou menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <anemo>Anemo DMG Area</anemo> saat mendarat."
+        "1": "Mengumpulkan kekuatan Anemo, Heizou menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <anemo>Anemo DMG Area</anemo> saat mendarat."
       }
     },
     "skillParams": {
@@ -122,7 +122,7 @@
   "constellation1": {
     "name": "Named Juvenile Casebook",
     "description": {
-      "0": "Setelah Shikanoin Heizou berada di medan tempur selama 5 detik, Normal Attack SPD-nya akan meningkat 15%. Lalu akan mendapatkan 1 lapis efek Declension dari <strong>Heartstopper Strike</strong>. Efek dapat terpicu setiap 10 detik."
+      "0": "Selama 5 detik setelah Shikanoin Heizou memasuki medan tempur, Normal Attack SPD-nya akan meningkat 15%. Lalu akan mendapatkan 1 lapis efek Declension dari <strong>Heartstopper Strike</strong>. Efek dapat terpicu setiap 10 detik."
     }
   },
   "constellation2": {

@@ -39,7 +39,7 @@
     }
   },
   "skill": {
-    "name": "Adeptenkunst: Frostbringer",
+    "name": "Adeptenkunst – Frostbringer",
     "description": {
       "0": "Beschwört den Frostbringer mithilfe des Frostader-Talismans und fügt den Gegnern in der Umgebung <cryo>Kryo-Schaden</cryo> zu.",
       "1": "<br/>",
@@ -72,14 +72,14 @@
     }
   },
   "burst": {
-    "name": "Adeptenkunst: Befreiung vom Leid",
+    "name": "Adeptenkunst – Befreiung vom Leid",
     "description": {
       "0": "Qiqi lässt der adeptischen Kraft, die in ihrem Körper versiegelt ist, freien Lauf, markiert Gegner in der Nähe mit ihrem Leidbefreiungs-Talisman und verursacht <cryo>Kryo-Schaden</cryo>.",
       "1": "<br/>",
       "2": "<strong>Leidbefreiungs-Talisman</strong>",
       "3": "Stellt Figuren, die vom Effekt des Leidbefreiungs-Talismans betroffenen Gegnern Schaden zufügen, LP wieder her.",
       "4": "<br/>",
-      "5": "<i>„Ich bin die Fürstin der Befreiung von Leid und Elend“, das wiederauferstandene Kind.</i>",
+      "5": "<i>„Ich bin die Fürstin der Befreiung von Leid und Elend, das wiederauferstandene Kind.“</i>",
       "6": "<i>- An diese Worte erinnert sich Qiqi längst nicht mehr.</i>"
     },
     "skillParams": {

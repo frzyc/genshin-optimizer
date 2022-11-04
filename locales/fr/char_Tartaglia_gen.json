@@ -51,7 +51,7 @@
   "skill": {
     "name": "Posture du démon : Marée déchaînée",
     "description": {
-      "0": "Tartaglia invoque des armes qui exploitent la puissance de l'eau pure et infligent des <hydro>DGT Hydro</hydro> aux ennemis proches ; Tartaglia entre en état de mêlée.",
+      "0": "Tartaglia invoque des armes qui exploitent la puissance de l'eau pure et infligent des <hydro>DGT Hydro</hydro> aux ennemis proches, puis passe en état de mêlée.",
       "1": "En état de mêlée, les attaques normales et chargées de Tartaglia sont converties en <hydro>DGT Hydro</hydro> ne pouvant pas être enchantés, et changent de la manière suivante :",
       "2": "<br/>",
       "3": "<strong>Attaque normale</strong>",
@@ -63,8 +63,8 @@
       "9": "<strong>Contre-courant : Entaille</strong>",
       "10": "Les attaques de mêlée appliquent à nouveau l'effet Contre-courant lorsqu'elles touchent un ennemi affecté par Contre-courant. Ceci inflige des <hydro>DGT Hydro de zone</hydro>. Les DGT infligés par Contre-courant : Entaille sont considérés comme étant des DGT de compétence élémentaire. Contre-courant : Entaille peut être déclenché une fois toutes les 1,5 s.",
       "11": "<br/>",
-      "12": "La compétence prend fin après 30 s, ou lorsque vous appuyez dessus à nouveau. Tartaglia repasse alors en état de distance ; le TdR de la compétence est réinitialisé, et dure plus longtemps si l'état de mêlée a perduré.",
-      "13": "L'état de mêlée ne peut excéder 30 s. Au bout de cette durée, Tartaglia repasse automatiquement à l'état de distance.",
+      "12": "La compétence prend fin après 30 s, ou lorsque vous appuyez dessus à nouveau. Tartaglia repasse alors en état à distance ; le TdR de la compétence est réinitialisé, et dure plus longtemps si l'état de mêlée a perduré.",
+      "13": "L'état de mêlée ne peut excéder 30 s. Au bout de cette durée, Tartaglia repasse automatiquement à l'état à distance.",
       "14": "<br/>",
       "15": "<i>C'est pour venir à bout de ses difficultés avec cette arme que Tartaglia a choisi l'arc comme arme de prédilection. Mais... C'est sur le champ de bataille que sa vraie puissance se déchaîne.</i>"
     },
@@ -178,7 +178,7 @@
     "name": "Ravage : Annihilation",
     "description": {
       "0": "En état de mêlée, l'activation de <strong>Ravage : Oblitération</strong> supprime le TdR de <strong>Posture du démon : Marée déchaînée</strong>.",
-      "1": "Cet effet se produit après le retour à l'état de distance."
+      "1": "Cet effet se produit après le retour à l'état à distance."
     }
   }
 }

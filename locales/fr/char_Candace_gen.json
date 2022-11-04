@@ -74,7 +74,7 @@
   "burst": {
     "name": "Liturgie : Marée de la bergeronnette",
     "description": {
-      "0": "Brandissant son arme en l'air, Candace invoque une bénédiction divine qui inflige des <hydro>DGT Hydro de zone</hydro> selon ses PV max et confère l'état de Prière de couronne cramoisie à votre personnage déployé.",
+      "0": "Brandissant son arme en l'air, Candace invoque une bénédiction divine qui inflige des <hydro>DGT Hydro de zone</hydro> selon ses PV max et confère l'état Prière de couronne cramoisie à votre personnage déployé.",
       "1": "<br/>",
       "2": "<strong>Prière de couronne cramoisie</strong>",
       "3": "Les caractéristiques suivantes s'appliquent :",
@@ -114,7 +114,7 @@
   "passive2": {
     "name": "Dôme céleste de sable",
     "description": {
-      "0": "Lorsqu'un personnage affecté par l'état de Prière de couronne cramoisie de <strong>Liturgie : Marée de la bergeronnette</strong> inflige des DGT élémentaires à un ennemi avec une attaque normale, les DGT augmentent de 0,5 % pour chaque tranche de 1{NON_BREAK_SPACE}000 PV max de Candace."
+      "0": "Lorsqu'un personnage affecté par l'état Prière de couronne cramoisie de <strong>Liturgie : Marée de la bergeronnette</strong> inflige des DGT élémentaires à un ennemi avec une attaque normale, les DGT augmentent de 0,5 % pour chaque tranche de 1{NON_BREAK_SPACE}000 PV max de Candace."
     }
   },
   "passive3": {
@@ -127,7 +127,7 @@
   "constellation1": {
     "name": "Retour de l'héritière des sables écarlates",
     "description": {
-      "0": "La durée de l'état de Prière de couronne cramoisie de <strong>Liturgie : Marée de la bergeronnette</strong> augmente de 3 s."
+      "0": "La durée de l'état Prière de couronne cramoisie de <strong>Liturgie : Marée de la bergeronnette</strong> augmente de 3 s."
     }
   },
   "constellation2": {
@@ -159,7 +159,7 @@
   "constellation6": {
     "name": "Débordement",
     "description": {
-      "0": "Lorsqu'un personnage déployé (hormis Candace) affecté par l'état de Prière de couronne cramoisie de <strong>Liturgie : Marée de la bergeronnette</strong> inflige des DGT élémentaires à un ennemi avec une attaque normale, il déclenche une marée d'impact, infligeant des <hydro>DGT Hydro de zone</hydro> d'une valeur équivalant à 15 % des PV max de Candace.",
+      "0": "Lorsqu'un personnage déployé (hormis Candace) affecté par l'état Prière de couronne cramoisie de <strong>Liturgie : Marée de la bergeronnette</strong> inflige des DGT élémentaires à un ennemi avec une attaque normale, il déclenche une marée d'impact, infligeant des <hydro>DGT Hydro de zone</hydro> d'une valeur équivalant à 15 % des PV max de Candace.",
       "1": "Cet effet peut être déclenché une fois toutes les 2,3 s. Les DGT infligés sont considérés comme des DGT de déchaînement élémentaire."
     }
   }

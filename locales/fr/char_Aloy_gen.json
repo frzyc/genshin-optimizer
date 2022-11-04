@@ -49,10 +49,10 @@
       "4": "<strong>Bobine</strong>",
       "5": [
         " Chaque cumul augmente les DGT des attaques normales d'Aloy ;",
-        " Avec 4 cumuls de bobine, Aloy consomme tous les cumuls de bobine pour entrer dans un état de Glace précipitée, ce qui augmente davantage les DGT infligés par ses attaques normales et les convertit en <cryo>DGT Cryo</cryo>."
+        " Avec 4 cumuls de bobine, Aloy consomme tous les cumuls de bobine pour entrer dans l'état Glace précipitée, ce qui augmente davantage les DGT infligés par ses attaques normales et les convertit en <cryo>DGT Cryo</cryo>."
       ],
       "6": "<br/>",
-      "7": "Quand Aloy est en état de Glace précipitée, elle ne peut pas recevoir de nouveaux cumuls de bobine.",
+      "7": "Quand Aloy est dans l'état Glace précipitée, elle ne peut pas recevoir de nouveaux cumuls de bobine.",
       "8": "Les effets de la bobine seront annulés après 30 s si Aloy quitte le combat.",
       "9": "<br/>",
       "10": "<i>Vous trouvez ça froid ? On voit bien que vous n'avez jamais mis les pieds à la Plaie !</i>"
@@ -111,7 +111,7 @@
   "passive2": {
     "name": "Frappe puissante",
     "description": {
-      "0": "Lorsqu'Aloy est dans l'état de Glace précipitée accordé par <strong>Frozen Wilds</strong>, son <cryo>bonus de DGT Cryo</cryo> augmente de 3,5 % toutes les secondes. Son <cryo>bonus de DGT Cryo</cryo> peut augmenter de cette manière jusqu'à 35 %."
+      "0": "Lorsqu'Aloy est dans l'état Glace précipitée accordé par <strong>Frozen Wilds</strong>, son <cryo>bonus de DGT Cryo</cryo> augmente de 3,5 % toutes les secondes. Son <cryo>bonus de DGT Cryo</cryo> peut augmenter de cette manière jusqu'à 35 %."
     }
   },
   "passive3": {

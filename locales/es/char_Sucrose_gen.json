@@ -12,11 +12,11 @@
       },
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",
-        "1": "Consume una cierta cantidad de Aguante e inflige <anemo>Daño Anemo en el AdE</anemo> después de un corto tiempo de lanzamiento."
+        "1": "Consume una cierta cantidad de Aguante e inflige <anemo>Daño Anemo en el AdE</anemo> después de un corto tiempo de canalización."
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Al llamar a los espíritus del viento, Sacarosa se lanza desde el aire para golpear el suelo, dañando a todos los enemigos cercanos e infligiendo <anemo>Daño Anemo en el AdE</anemo> en el momento del impacto."
+        "1": "Concentra el poder del viento y se lanza desde el aire para golpear el suelo y dañar a los enemigos a su paso e infligir <anemo>Daño Anemo en el AdE</anemo> en el momento del impacto."
       }
     },
     "skillParams": {

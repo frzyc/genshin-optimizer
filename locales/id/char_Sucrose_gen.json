@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Mengumpulkan kekuatan Anemo dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <anemo>Anemo DMG area</anemo> saat mendarat."
+        "1": "Mengumpulkan kekuatan Anemo dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <anemo>Anemo DMG area</anemo> saat mendarat."
       }
     },
     "skillParams": {

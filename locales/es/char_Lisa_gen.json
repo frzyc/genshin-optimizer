@@ -12,11 +12,11 @@
       },
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",
-        "1": "Consume una cierta cantidad de Aguante para infligir <electro>Daño Electro en el AdE</electro> después de un corto tiempo de lanzamiento."
+        "1": "Consume una cierta cantidad de Aguante para infligir <electro>Daño Electro en el AdE</electro> después de un corto tiempo de canalización."
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Concentra el poder Electro y desciende hacia el suelo, dañando a todos los enemigos cercanos e infligiendo <electro>Daño Electro en el AdE</electro> en el momento del impacto."
+        "1": "Concentra el poder del rayo y se lanza desde el aire para golpear el suelo y dañar a los enemigos a su paso e infligir <electro>Daño Electro en el AdE</electro> en el momento del impacto."
       }
     },
     "skillParams": {

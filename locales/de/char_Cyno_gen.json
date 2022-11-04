@@ -134,7 +134,7 @@
   "constellation2": {
     "name": "Zeremonienritus – Heimkehrende Seelen",
     "description": {
-      "0": "Erhöht 4 s lang nach Treffen von Gegnern mit Cynos Standardangriffen Cynos <electro>Elektro-SCH</electro> um 10 %. 0,1 s Abklingzeit. 5-fach stapelbar."
+      "0": "Erhöht 4 s lang nach dem Treffen von Gegnern mit Cynos Standardangriffen Cynos <electro>Elektro-SCH</electro> um 10 %. 0,1 s Abklingzeit. 5-fach stapelbar."
     }
   },
   "constellation3": {
@@ -161,7 +161,7 @@
   "constellation6": {
     "name": "Federritus – Gerechte Waage",
     "description": {
-      "0": "Cyno erhält beim Anwenden der Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong> oder nach Auslösen des Effekts „Zumessung“ des passiven Talents „Urteil der Federn“ 4 Stapelungen des Effekts „Opfer des Schakals“. Bei einem Treffer mit Cynos Standardangriff verbraucht er 1 Stapelung von „Opfer des Schakals“, um einen Staubblitz auszulösen.",
+      "0": "Cyno erhält beim Anwenden der Spezialfähigkeit <strong>Heiliger Ritus – Schnelligkeit des Wolfs</strong> oder nach Auslösen des Effekts „Zumessung“ des passiven Talents „Urteil der Federn“ 4 Stapelungen des Effekts „Opfer des Schakals“. Beim Treffen von Gegnern mit Cynos Standardangriff verbraucht er 1 Stapelung von „Opfer des Schakals“, um einen Staubblitz auszulösen.",
       "1": "Der Effekt „Opfer des Schakals“ hält 8 s, 8-fach stapelbar. „Opfer des Schakals“ wird entfernt, sobald der Modus „Paktverschworener Pfadklärer“ der Fähigkeit „Heiliger Ritus – Schnelligkeit des Wolfs“ endet.",
       "2": "0,4 s Abklingzeit für das Auslösen solch eines Staubblitzes.",
       "3": "Das passive Talent „Urteil der Federn“ muss zuerst freigeschaltet werden."

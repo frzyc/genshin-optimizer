@@ -9,7 +9,7 @@
       "normal": {
         "0": "<strong><strong>Attaque normale</strong>",
         "1": "Enchaîne jusqu'à 4 coups d'épée.",
-        "2": "Lorsque son 2e et 4e coup touchent un ennemi, Itto gagne respectivement 1 et 2 cumuls de Mégaforce superlative.",
+        "2": "Lorsque son 2e et 4e coup touchent un ennemi, Itto obtient respectivement 1 et 2 cumuls de Mégaforce superlative.",
         "3": "Itto peut détenir un maximum de 5 cumuls de Mégaforce superlative, et chaque fois que cet effet se déclenche, la durée des cumuls en sa possession est réinitialisée.",
         "4": "<br/>",
         "5": "De plus, l'enchaînement d'attaques normales d'Itto ne sera pas réinitialisé pendant une courte période après Zetsugi anti-démon : Catapultage d'akaushi ou l'initiation d'un sprint."
@@ -145,7 +145,7 @@
   "constellation1": {
     "name": "Du calme et on écoute !",
     "description": {
-      "0": "Après avoir utilisé <strong>Roi oni maléfique : Avènement d'Itto</strong>, Arataki Itto gagne 2 cumuls de Mégaforce superlative. Après 1 s, Itto gagne 1 cumul de Mégaforce superlative toutes les 0,5 s pendant 1,5 s."
+      "0": "Après avoir utilisé <strong>Roi oni maléfique : Avènement d'Itto</strong>, Arataki Itto obtient 2 cumuls de Mégaforce superlative. Après 1 s, Itto obtient 1 cumul de Mégaforce superlative toutes les 0,5 s pendant 1,5 s."
     }
   },
   "constellation2": {
@@ -165,7 +165,7 @@
   "constellation4": {
     "name": "Au pain sec et à l'eau !",
     "description": {
-      "0": "Lorsque l'état de Roi oni courroucé accordé par <strong>Roi oni maléfique : Avènement d'Itto</strong> prend fin, la DÉF et l'ATQ de tous les personnages de l'équipe à proximité augmentent de 20{NON_BREAK_SPACE}% pendant 10{NON_BREAK_SPACE}s."
+      "0": "Lorsque l'état Roi oni courroucé accordé par <strong>Roi oni maléfique : Avènement d'Itto</strong> prend fin, la DÉF et l'ATQ de tous les personnages de l'équipe à proximité augmentent de 20{NON_BREAK_SPACE}% pendant 10{NON_BREAK_SPACE}s."
     }
   },
   "constellation5": {

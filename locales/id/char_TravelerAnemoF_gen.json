@@ -12,7 +12,7 @@
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
       }
     },
     "skillParams": {

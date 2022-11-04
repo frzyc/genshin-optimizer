@@ -125,7 +125,7 @@
   "constellation2": {
     "name": "Từ Mầm Chồi Hiểu Ngọn Nguồn",
     "description": {
-      "0": "Khi có kẻ địch trong Khu Vực Vijnana-Khanda từ kỹ năng <strong>Hạt Giống Vijnana-Phala</strong>, Tighnari nhận được 20%<dendro>Buff Sát Thương Nguyên Tố Thảo</dendro>.",
+      "0": "Khi có kẻ địch trong Khu Vực Vijnana-Khanda từ kỹ năng <strong>Hạt Giống Vijnana-Phala</strong>, Tighnari nhận được 20% <dendro>Buff Sát Thương Nguyên Tố Thảo</dendro>.",
       "1": "Khi Khu Vực Vijnana-Khanda kết thúc hoặc không còn kẻ địch, hiệu ứng này tối đa duy trì 6s."
     }
   },

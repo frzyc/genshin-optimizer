@@ -12,11 +12,11 @@
       },
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",
-        "1": "Consume una cierta cantidad de Aguante para infligir <hydro>Daño Hydro en el AdE</hydro> después de un corto tiempo de lanzamiento."
+        "1": "Consume una cierta cantidad de Aguante para infligir <hydro>Daño Hydro en el AdE</hydro> después de un corto tiempo de canalización."
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Concentra el poder Hydro y desciende hacia el suelo, dañando a todos los enemigos cercanos e infligiendo <hydro>Daño Hydro en el AdE</hydro> en el momento del impacto."
+        "1": "Concentra el poder del agua y se lanza desde el aire para golpear el suelo y dañar a los enemigos a su paso e infligir <hydro>Daño Hydro en el AdE</hydro> en el momento del impacto."
       }
     },
     "skillParams": {

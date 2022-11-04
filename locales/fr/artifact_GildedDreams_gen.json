@@ -2,7 +2,7 @@
   "setName": "Rêve doré",
   "setEffects": {
     "2": "Augmente la maîtrise élémentaire de 80 pts.",
-    "4": "Déclencher une réaction élémentaire confère pendant 8 s au personnage équipé de l'artéfact des bonus en fonction du nombre de types élémentaires des autres personnages de l'équipe : son ATQ augmente de 14 % pour chaque membre du même type élémentaire que le sien, et sa maîtrise élémentaire augmente de 50 pts pour chaque membre de type élémentaire différent du sien. Chacun des bonus susmentionnés compte un maximum de 3 personnages. Cet effet peut être déclenché une fois toutes les 8 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+    "4": "Déclencher une réaction élémentaire confère pendant 8 s au personnage équipé de l'artéfact des bonus en fonction du nombre de types élémentaires des autres personnages de l'équipe : son ATQ augmente de 14 % pour chaque membre du même type élémentaire que le sien, et sa maîtrise élémentaire augmente de 50 pts pour chaque membre de type élémentaire différent du sien. Chacun des bonus susmentionnés compte un maximum de 3 personnages. Cet effet peut être déclenché une fois toutes les 8 s, même si le personnage équipé de l'artéfact fait partie de l'équipe mais n'est pas déployé."
   },
   "pieces": {
     "flower": {

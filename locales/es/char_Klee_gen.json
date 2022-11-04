@@ -12,11 +12,11 @@
       },
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",
-        "1": "Consume una cierta cantidad de Aguante para infligir <pyro>Daño Pyro en el AdE</pyro> después de un corto tiempo de lanzamiento."
+        "1": "Consume una cierta cantidad de Aguante para infligir <pyro>Daño Pyro en el AdE</pyro> después de un corto tiempo de canalización."
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Al acumular poder Pyro, Klee se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo <pyro>Daño Pyro en el AdE</pyro> en el momento del impacto."
+        "1": "Concentra el poder del fuego y se lanza desde el aire para golpear el suelo y dañar a los enemigos a su paso e infligir <pyro>Daño Pyro en el AdE</pyro> en el momento del impacto."
       }
     },
     "skillParams": {

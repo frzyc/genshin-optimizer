@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
-        "1": "Melancarkan hingga 5 serangan tombak berturut-turut."
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
       }
     },
     "skillParams": {

@@ -18,7 +18,7 @@
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Mengumpulkan kekuatan Geo dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <geo>Geo DMG area</geo> saat mendarat."
+        "1": "Mengumpulkan kekuatan Geo dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <geo>Geo DMG area</geo> saat mendarat."
       }
     },
     "skillParams": {

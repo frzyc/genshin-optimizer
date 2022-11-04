@@ -54,7 +54,7 @@
     },
     "skillParams": {
       "0": "Daño de habilidad",
-      "1": "Curación al atacar",
+      "1": "Curación al golpear",
       "2": "Curación continua",
       "3": "Daño de Heraldo de la escarcha",
       "4": "Duración",
@@ -110,7 +110,7 @@
   "passive2": {
     "name": "Apertura arcana",
     "description": {
-      "0": "Cuando Qiqi golpea a sus enemigos con Ataque Normal o Ataque Cargado, tiene un 50% de probabilidad de ponerles un talismán de conservación de la fortuna durante 6 s. Este efecto solo puede activarse una vez cada 30 s."
+      "0": "Cuando Qiqi golpea a sus enemigos con un Ataque Normal o Cargado, tiene un 50% de probabilidad de ponerles un talismán de conservación de la fortuna durante 6 s. Este efecto solo puede activarse una vez cada 30 s."
     }
   },
   "passive3": {
@@ -135,7 +135,7 @@
     "name": "Mandato celestial",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Magia Adeptus: Preservadora de la fortuna</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv. 15."
+      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
     }
   },
   "constellation4": {
@@ -148,7 +148,7 @@
     "name": "Flor de loto carmesí",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Magia Adeptus: Heraldo de la escarcha</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv. 15."
+      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
     }
   },
   "constellation6": {

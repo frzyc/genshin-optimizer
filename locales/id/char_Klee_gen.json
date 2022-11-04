@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Mengumpulkan kekuatan Pyro dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <pyro>Pyro DMG Area</pyro> saat mendarat."
+        "1": "Mengumpulkan kekuatan Pyro dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <pyro>Pyro DMG Area</pyro> saat mendarat."
       }
     },
     "skillParams": {

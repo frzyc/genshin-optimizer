@@ -161,7 +161,7 @@
   "constellation4": {
     "name": "Léchouille canine : Bonté de l'eau",
     "description": {
-      "0": "Lorsque le <strong>prestige de général</strong> est en état d'imprenabilité ou de fracas, il restaure également les PV du personnage déployé dans la zone d'effet toutes les 1,5{NON_BREAK_SPACE}s d'une valeur équivalant à 50{NON_BREAK_SPACE}% de la DÉF de Gorou."
+      "0": "Lorsque le <strong>prestige de général</strong> est dans l'état Imprenabilité ou Fracas, il restaure également les PV du personnage déployé dans la zone d'effet toutes les 1,5{NON_BREAK_SPACE}s d'une valeur équivalant à 50{NON_BREAK_SPACE}% de la DÉF de Gorou."
     }
   },
   "constellation5": {

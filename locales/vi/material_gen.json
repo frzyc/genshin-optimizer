@@ -187,6 +187,18 @@
     "name": "Cảm Hứng Chiến Lược",
     "description": "Tài liệu ghi chép các lý thuyết kinh doanh và các trường hợp kinh doanh khác nhau, đối với những người có kinh nghiệm, mỗi trang mỗi câu chữ đều có thể đem lại cảm hứng để họ cải thiện chiến lược kinh doanh của tiệm mình."
   },
+  "MushroomCurrency": {
+    "name": "Tiền Nấm",
+    "description": "Tiền kỷ niệm được làm với thủ công tinh xảo, là phần thưởng dành cho tuyển thủ có biểu hiện xuất sắc trong hai vòng \"Bắt Nấm\" và \"Kích Hoạt Tiềm Năng\" của Giải Đấu Luyện Thú Cúp Nilotpala.\\nBất luận kết quả trận đấu thế nào, loại tiền kỷ niệm này vẫn là chứng nhân cho tình hảo hữu giữa các tuyển thủ và Nấm Quỷ.\\nTrong thời gian \"Đại Hội Đấu Nấm Siêu Cấp\" có thể dùng để đổi các vật phẩm quý giá."
+  },
+  "FungusMedal": {
+    "name": "Huy Chương Nấm",
+    "description": "Huy chương làm bằng nguyên liệu độc đáo, là phần thưởng cho tuyển thủ có biểu hiện xuất sắc trong vòng \"Huấn Luyện Cường Hóa\" của Giải Đấu Luyện Thú Cúp Nilotpala.\\nCùng với các đồng đội Nấm Quỷ cùng nhau chiến thắng kẻ địch mạnh mẽ trong khu vực huấn luyện, là một yếu tố then chốt để bồi dưỡng sự thấu hiểu nhau và cùng nhau mạnh lên.\\nTrong thời gian \"Đại Hội Đấu Nấm Siêu Cấp\" có thể dùng để đổi các vật phẩm quý giá."
+  },
+  "ShatteredPhenocryst": {
+    "name": "Tinh Thể Vỡ Vụn",
+    "description": "Tinh thể tìm được sau khi đánh bại Nguyên Tố Nguyên Bản mạnh mẽ trong bí cảnh thần bí, màu sắc đẹp đẽ như dấu tích nguyên tố tan biến để lại.\\nTrong sự kiện \"Bài Thơ Giao Hưởng - Giai Điệu Lạc Nhịp\", có thể dùng để đổi vật tư quý giá."
+  },
   "Primogem": {
     "name": "Nguyên Thạch",
     "description": "Tinh Thạch Nguyên Thủy, nằm trong vũ trụ hắc ám, ánh sáng được kết tinh từ hy vọng và mộng tưởng."
@@ -531,6 +543,14 @@
     "name": "Candace",
     "description": "Hậu duệ của Vua Deshret với con mắt bên trái màu hổ phách, là người thủ hộ của Làng Aaru."
   },
+  "Nahida": {
+    "name": "Nahida",
+    "description": "Chim nhỏ trong lồng ở sâu trong Thánh Địa Surasthana, chỉ có thể ngắm nhìn thế giới từ trong giấc mơ."
+  },
+  "Layla": {
+    "name": "Layla",
+    "description": "Học sinh của Học Viện Rtawahist, chuyên nghiên cứu Lý Luận Tinh Tượng Học. Thường hay mộng du, mất ngủ trường kỳ, đau đầu vì những vấn đề về giấc ngủ."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Chòm Sao Của Kamisato Ayaka",
     "description": "Nguyên liệu kích hoạt cung mệnh Kamisato Ayaka"
@@ -762,6 +782,14 @@
   "CandacesStellaFortuna": {
     "name": "Chòm Sao Của Candace",
     "description": "Nguyên liệu kích hoạt cung mệnh Candace"
+  },
+  "NahidasStellaFortuna": {
+    "name": "Chòm Sao Của Nahida",
+    "description": "Nguyên liệu kích hoạt cung mệnh Nahida"
+  },
+  "LaylasStellaFortuna": {
+    "name": "Chòm Sao Của Layla",
+    "description": "Nguyên liệu kích hoạt cung mệnh Layla"
   },
   "GnosticHymnOldNotes": {
     "name": "Nhật Ký Hành Trình Trân Châu - Khởi Đầu",
@@ -3855,7 +3883,7 @@
     "name": "Tường Vi Sumeru",
     "description": "Bông hoa tím đậm và rực rỡ tỏa hương thơm ngát khiến người đi đường phải dừng chân. Mặc dù được gọi là tường vi, nhưng thật ra nó nên được gọi là hoa hồng."
   },
-  "Redcrest": {
+  "HennaBerry": {
     "name": "Quả Xích Niệm",
     "description": "Quả của một loại cây có thể sinh tồn trong môi trường khắc nghiệt của sa mạc, những trái màu đỏ thẫm rực rỡ của nó càng trở nên bắt mắt hơn trên nền cát vàng."
   },
@@ -4869,7 +4897,7 @@
   },
   "Garland": {
     "name": "Dây Hoa",
-    "description": "Vòng hoa của Arama.\\nVòng hoa này tượng trưng cho chúc phúc của cả Vanarana. Khi chiến đấu với \"Hóa Thân Của Marana\", sức mạnh tuôn ra liên tục. Nhưng có lẽ vì thiêu đốt quá mức nên ánh sáng chói lóa giờ đã tắt dần.\\n\\nMỗi một bông hoa được kết nối với một trái tim bé nhỏ của Aranara; Kết những bông hoa đó thành vòng hoa là có thể kết nối với cánh cửa của \"Mahavanaranapna\". Aranara sẽ hỗ trợ những người bạn đội vòng hoa này, chia sẽ đau khổ cùng họ, chống lại những cơn ác mộng, giúp bạn bè vượt qua những ngày đen tối và lấp đầy khoảng trống trong trái tim họ."
+    "description": "Vòng hoa của Arama.\\nVòng hoa này tượng trưng cho chúc phúc của cả Vanarana. Khi chiến đấu với \"Hóa Thân Của Marana\", sức mạnh tuôn ra liên tục. Nhưng có lẽ vì thiêu đốt quá mức nên ánh sáng chói lóa giờ đã tắt dần.\\n\\nMỗi một bông hoa được kết nối với một trái tim bé nhỏ của Aranara; Kết những bông hoa đó thành vòng hoa là có thể kết nối với cánh cửa của \"Mahavanaranapna\". Aranara sẽ hỗ trợ những người bạn đội vòng hoa này, chia sẻ đau khổ cùng họ, chống lại những cơn ác mộng, giúp bạn bè vượt qua những ngày đen tối và lấp đầy khoảng trống trong trái tim họ."
   },
   "Bija": {
     "name": "Bija",
@@ -4933,7 +4961,7 @@
   },
   "TheSongGatherersFlowers": {
     "name": "Hoa Người Lấy Nhạc",
-    "description": "Hoa của những Người Lấy Nhạc khác tặng.\\nDù bầu trời hay mặt đất có tối tăm đến thế nào, chỉ cần trái tim bạn luôn như mặt trời, tỏa ra ánh sáng vàng ấm áp, thì sẽ luôn có hy vọng.\""
+    "description": "Hoa của những Người Lấy Nhạc tặng.\\n\"Dù bầu trời hay mặt đất có tối tăm đến thế nào, chỉ cần trái tim bạn luôn như mặt trời, tỏa ra ánh sáng vàng ấm áp, thì sẽ luôn có hy vọng.\""
   },
   "AralilaAndAranishatsFlowers": {
     "name": "Hoa Aralila Và Aranishat",
@@ -7683,15 +7711,15 @@
     "name": "Tháp Nấm Sữa Giòn Ngon",
     "description": "Món ăn vặt giòn tan. Vị kem thoang thoảng tan chảy nơi đầu lưỡi khi nhấm nháp những miếng nấm mọng nước và bánh mì giòn... Sự thỏa mãn tuyệt đối này khiến người ta không muốn buông những vụn bánh còn sót lại trên đầu ngón tay."
   },
-  "SuspiciousCoconutCharcoalCake": {
+  "SuspiciousCharcoalBakedAjilenakhCake": {
     "name": "Bánh Ajilenakh Nướng Kỳ Lạ",
     "description": "Một chiếc bánh ngọt màu đen. Thoạt nhìn, nó trông như một món ăn đen tối, lấy hết can đảm cắn một miếng, cảm giác khô khan này... lẽ nào là vô tình trộn lẫn than rồi mang lên bàn ăn sao?"
   },
-  "CoconutCharcoalCake": {
+  "CharcoalBakedAjilenakhCake": {
     "name": "Bánh Ajilenakh Nướng",
     "description": "Một chiếc bánh ngọt có màu đen. Đầu tiên là rang Quả Ajilenakh thành bột, sau đó rây mịn, rồi thêm bột vào, trộn đều sau đó đem nướng chín. Thành phẩm không màu mè, thơm nhẹ mùi Quả Ajilenakh, thơm ngon đặc biệt khi kết hợp với mứt."
   },
-  "DeliciousCoconutCharcoalCake": {
+  "DeliciousCharcoalBakedAjilenakhCake": {
     "name": "Bánh Ajilenakh Nướng Ngon",
     "description": "Một chiếc bánh ngọt có màu đen. Thân bánh mỏng manh, bóng bẩy, hương thơm của Quả Ajilenakh vừa sống động vừa ấm áp, mềm tan trong miệng... Bất kể thực khách lúc này đang mệt mỏi hay buồn bã, tâm trạng tồi tệ cũng đều có thể được xua tan bởi \"vị ngọt màu đen\" này. Nhìn người không thể chỉ nhìn bề ngoài, và bánh cũng vậy."
   },
@@ -7770,6 +7798,26 @@
   "SparklingBerryJuice": {
     "name": "Nước Trái Cây Sủi Bọt",
     "description": "Thức uống không cồn hoàn toàn mới. Quả Dâu Đỏ có độ chín khác nhau tạo nên dư vị từ ngọt đến chua cho nước ép, nước có ga mát lạnh làm sảng khoái tâm hồn, đồng hành cùng bạn để tận hưởng khoảng thời gian giải trí thú vị."
+  },
+  "SuspiciousRoseCustard": {
+    "name": "Sữa Trứng Tường Vi Kỳ Lạ",
+    "description": "Món tráng miệng làm từ sữa lên men, nhìn thì ngon nhưng ăn vào thì... chua đến ê cả răng. Việc thiếu gia vị có thể giải quyết bằng cách cho thêm đường, nhưng nỗi sợ chua kéo dài trong lòng bạn thì không thể nào nguôi ngoai được."
+  },
+  "RoseCustard": {
+    "name": "Sữa Trứng Tường Vi",
+    "description": "Món tráng miệng làm từ sữa lên men. Sữa lên men xong đem lọc, sau khi làm sữa chua, trộn với đường, trang trí bằng tường vi khô và các loại hạt. Cách ăn này ban đầu chỉ phổ biến ở những nhà thám hiểm và thương nhân bôn ba khắp nơi. Nhưng giờ nó đã lưu truyền khắp Sumeru, có thể thấy bóng dáng của nó trong bữa ăn sáng và cả món tráng miệng buổi chiều."
+  },
+  "DeliciousRoseCustard": {
+    "name": "Sữa Trứng Tường Vi Ngon",
+    "description": "Món tráng miệng được làm từ sữa lên men. Sữa đông đặc, cánh hoa tươi và các loại hạt mềm mịn hòa quyện với nhau tạo nên hương vị êm dịu và ngọt ngào. Điều khiến bạn mê đắm trong cổ họng là hương sữa thoảng qua và điều đọng lại trong tim bạn là hương hoa ngập tràn lúc này."
+  },
+  "ExtravagantSlumber": {
+    "name": "Giấc Ngủ Xa Hoa",
+    "description": "Món ăn đặc sắc của Layla. Những quả hạch rải rác giống như những vì sao điểm xuyết trong đêm khuya tĩnh lặng. Nếm thử một miếng, thân thể bôn ba cả ngày bỗng cảm thấy được bình yên. Sau khi nói cho Layla biết cảm nhận, cô ấy lộ ra vẻ mặt phức tạp cả vui lẫn hối tiếc... \"Tốt, tốt quá! Ôi, nếu như cũng hiệu quả với tôi thì tốt quá.\""
+  },
+  "Halvamazd": {
+    "name": "Halvamazd",
+    "description": "Món ăn đặc sắc của Nahida. Nghe nói \"mazd\" có nghĩa là \"trí tuệ\" ở Sumeru, \"trí tuệ\" tinh tế lung linh như thế, thật khiến người ta không thể từ chối được. Ánh mắt của Nahida chứa nụ cười dịu dàng: \"Hải quỳ giúp đỡ và chứng kiến cho sự trưởng thành của cá, món quà hồi đáp nho nhỏ của cá cũng là lẽ đương nhiên.\""
   },
   "RecipeItem": {
     "name": "Đạo Cụ Công Thức",
@@ -8283,7 +8331,7 @@
     "name": "Công Thức: Tháp Nấm Sữa Giòn",
     "description": "Công thức món ăn, ghi lại cách làm món \"Tháp Nấm Sữa Giòn\""
   },
-  "RecipeCoconutCharcoalCake": {
+  "RecipeCharcoalBakedAjilenakhCake": {
     "name": "Công Thức: Bánh Ajilenakh Nướng",
     "description": "Công thức món ăn, ghi lại cách làm món \"Bánh Ajilenakh Nướng\"."
   },
@@ -8306,6 +8354,10 @@
   "RecipeFruitsOfTheFestival": {
     "name": "Công Thức: Hương Vị Lễ Hội",
     "description": "Công thức món ăn, ghi lại cách làm món \"Hương Vị Lễ Hội\""
+  },
+  "RecipeRoseCustard": {
+    "name": "Công Thức: Sữa Trứng Tường Vi",
+    "description": "Công thức món ăn, ghi lại cách làm món \"Sữa Trứng Tường Vi\""
   },
   "CraftedItems": {
     "name": "Sản Phẩm Ghép",
@@ -8902,6 +8954,22 @@
   "LightGuidingTetrahedron": {
     "name": "Khối Tứ Diện Dẫn Sáng",
     "description": "Hạt nhân nhận được sau khi đánh bại tổ hợp cơ quan thần bí.\\nCho đến bây giờ, cỗ máy cổ xưa vẫn không bao giờ quên ước mơ của chủ nhân và trách nhiệm của nó: Xây dựng một nghìn cung điện, cai trị hơn ba nghìn cỗ máy, trồng mười nghìn bông hoa bây giờ không còn nở nữa, tái hiện \"thiên đường\" bị chôn vùi trong biển cát cho tất cả các linh hồn trên mặt đất.\\nNgay cả khi vị vua của sa mạc không còn nữa, những giấc mơ bị hủy hoại bởi những lời thì thầm của tội lỗi sâu thẳm; Ngay cả khi tất cả các trụ cột ma thuật hoàn toàn bị phá vỡ và sụp đổ, con thú từng được nhà vua sủng ái vẫn ẩn mình trong cơn bão cát nóng."
+  },
+  "QuelledCreeper": {
+    "name": "Dây Leo Chế Ngự",
+    "description": "Hình thái cuối cùng mà Thảo Nguyên Bản ngưng tụ thành, tinh thể nguyên tố thuần túy được bao bọc dưới lớp dây leo.\\nNguyên tố Thảo nghịch lý nhất, nhưng cũng thích nghi nhất với sự sống, vốn dĩ không nên kết hợp với Nguyên Tố Nguyên Bản xa xưa nhất với hình thái xa cách mọi sự sống để xuất hiện trên mặt đất này. Có nhận định cho rằng Nguyên Tố Nguyên Bản có trí tuệ \"học tập\", cho nên đã hiểu được sự đặc sắc và giấc mơ của rừng sâu. Trải qua hơn ngàn năm, cũng đã biến thành hình thái thế này."
+  },
+  "PuppetStrings": {
+    "name": "Dây Tơ Con Rối",
+    "description": "Ống dẫn được cắm vào phần lưng của con rối. Màu sắc tuôn chảy trong đó lúc ảm đạm lúc rực rỡ, mâu thuẫn đến mức đáng kinh ngạc.\\nCung cấp năng lượng cho con rối, đồng thời cũng giống như sợi dây treo con rối dùng để khống chế và trói buộc nó.\\nMất đi ống dẫn, con rối sẽ yếu đuối như một đứa trẻ mới sinh, cất bước cũng khó thành."
+  },
+  "MirrorOfMushin": {
+    "name": "Gương Mushin",
+    "description": "Tấm kính phía trước ngực Shouki no Kami dùng để ngăn cách hoàn toàn với thế giới bên ngoài. Cố ý vẽ hoa văn Tam Trùng Lôi để tuyên bố thân phận và uy nghiêm của nó.\\nHoa văn này không mang ý nghĩa quy phục chủ nhân lôi điện,\\nMà là lưỡi đao sắc bén đâm vào quyền uy hiện có của thế gian;\\nTấm kính này không phải ngăn cách ánh mắt phê phán của thế nhân;\\nMà là bức tường thành đoạn tuyệt mọi ô uế của thế tục.\\nThực thi trừng phạt, thanh tẩy mê muội ngay tại thần điện này,\\nMộng tưởng đảo điên, vứt bỏ tâm niệm, tái lập mọi nghiệp báo."
+  },
+  "DakasBell": {
+    "name": "Chuông Daka",
+    "description": "Trông như chiếc chuông, là linh kiện mấu chốt hình cầu dùng để liên kết phần cánh tay. Trông có vẻ rất sắc sảo tỉ mỉ, nhưng lại có thể chứa đựng năng lượng vượt xa mức tưởng tượng.\\nKết nối với cánh tay, hai tay của mình sẽ mất đi cảm giác;\\nKết nối với chân, hai chân của mình hầu như không thể dùng sức;\\nCòn kết nối với phần đầu của cỗ máy này...\\nCăm hận và đau khổ, điên cuồng và cao ngạo, đều không thể nào xóa sạch.\\nThật may."
   },
   "TileOfDecarabiansTower": {
     "name": "Ngói Vỡ Tháp Cô Vương",
@@ -9611,21 +9679,69 @@
     "name": "Bức Thư Ngắn",
     "description": "Bức thư ngắn viết bằng mật ngữ. Không biết ai đã viết nó, tại sao hoặc mục đích xuất hiện ở đây."
   },
+  "SilverTwig": {
+    "name": "Cành Trắng Mới Mọc",
+    "description": "Một nhánh cây mới lấy từ trung tâm thế giới.\\nĐã từng có một cây đại thụ trải dài khắp nơi trên thế giới; cành này là một phần của nó, tuy bị gãy nhưng mối liên hệ với cây không bao giờ bị đứt. Vì vậy, miễn là cây đại thụ màu trắng tượng trưng cho trung tâm của thế giới không chết thì nó sẽ không bao giờ khô héo.\\n\\n\"Cây\" tượng trưng cho sự sống. Trong câu chuyện ở nơi nào đó từng có một người, khi sắp chết đã đặt tâm tư vào cành của cây trắng. Có như vậy thì sự sống và hy vọng mới không mất đi, cành sẽ mọc ở nơi có nắng mưa, đâm chồi nảy lộc và cuối cùng đơm hoa kết trái.\\n\"Cây\" đồng thời cũng tượng trưng cho trí tuệ. Trong truyền thuyết ở một nơi nào đó, bậc hiền triết treo ngược trên cây đã có được trí tuệ viết bùa để thao túng ngôn linh, vương quốc được xây dọc theo rễ cây cuối cùng đã nhìn trộm được bí mật của vũ trụ.\\nTất cả tri thức, ký ức và trải nghiệm tuôn trào trong thân rễ của cây đại thụ. Như suối chảy ra sông lớn, sông chảy ra biển, lại hóa thành mưa rồi rơi xuống đất. Giống như sự sống vậy."
+  },
   "VaguelyReadableInscription": {
     "name": "Dòng Chữ Mơ Hồ Có Thể Đọc",
     "description": ""
   },
-  "AkademiyaInvestigationTeamsReport": {
-    "name": "Báo Cáo Của Đội Điều Tra Giáo Viện",
+  "IncompleteMedicalRecords": {
+    "name": "Lịch Sử Trị Liệu Không Nguyên Vẹn",
     "description": ""
   },
-  "SealedOrders": {
-    "name": "Sắc Lệnh Niêm Phong",
+  "SomeonesDiary": {
+    "name": "Nhật Ký Không Biết Của Ai",
     "description": ""
   },
-  "OldOrders": {
-    "name": "Sắc Lệnh Cổ",
+  "EventNotice": {
+    "name": "Bản Tin Hoạt Động",
     "description": ""
+  },
+  "HaniyyahsNotesFirstPart": {
+    "name": "Sổ Tay Của Haniyyah - Đoạn 1",
+    "description": "Sổ tay cũ kỹ do Haniyyah để lại, hình như ghi chép về gia tộc của cô ấy."
+  },
+  "HaniyyahsNotesSecondPart": {
+    "name": "Sổ Tay Của Haniyyah - Đoạn 2",
+    "description": "Sổ tay cũ kỹ do Haniyyah để lại, hình như ghi chép về gia tộc của cô ấy."
+  },
+  "CluesForYaeMiko": {
+    "name": "Manh Mối Chuẩn Bị Đưa Cho Yae Miko",
+    "description": "Sau khi cẩn thận chụp ảnh \"quà tặng\" mà Dori đưa, rồi sắp xếp chung với các manh mối điều tra sơ bộ, chuẩn bị giao cho Yae Miko để tiến hành phân tích đôi chút. Tuy nói rằng Yae Miko không phải học giả, nhưng với kiến thức sâu rộng của cô ấy, nói không chừng có thể tìm ra thông tin quan trọng..."
+  },
+  "CynosMissive": {
+    "name": "Thư Của Cyno",
+    "description": "Bức thư do Cyno nhờ Sido đem đến, hình như có giải thích về tình trạng hiện tại..."
+  },
+  "LaylasListOfOrders": {
+    "name": "Đơn Đặt Hàng Của Layla",
+    "description": "Đơn hàng mà Layla dùng để đặt hàng với \"Thương Nhân Toàn Năng\", ghi chép các loại nguyên liệu món ăn mà Layla định mua.\\nTrên đơn hàng có nhắc đến địa điểm từng gặp mặt \"Thương Nhân Toàn Năng\", và tên sản phẩm mà đối phương bán cho Layla, còn đặc biệt ghi chú sản phẩm \"cả Đại Khu Bazaar cũng không tìm thấy loại tương tự\" mà Layla đã mua được từ chỗ đối phương, dường như là sợ đối phương không nhớ ra thân phận của Layla. Nhưng không biết tại sao, địa điểm gặp mặt không phải trong Thành Sumeru, mà là ở một con đường nào đó ngoài thành. \"Thương Nhân Toàn Năng\" dường như rất biết sắp xếp thời gian, dự định tiếp nhận đơn hàng của Layla trong quá trình vận chuyển hàng hóa sao?"
+  },
+  "InitialInvestigationClues": {
+    "name": "Manh Mối Điều Tra Sơ Bộ",
+    "description": "Nhân lúc không có ai, đã tìm thấy manh mối tại quầy hàng \"Rau Câu Hoa Hoa\" ở Giải Đấu Luyện Thú Cúp Nilotpala, đã chụp ảnh Rau Câu Hoa Hoa và công thức ở trên bàn.\\nChỉ có điều, hai thứ này hình như cần có người chuyên nghiệp phân tích mới có thể tìm ra điểm khả nghi trong đó."
+  },
+  "HaniyyahsNotes": {
+    "name": "Sổ Tay Của Haniyyah",
+    "description": "Sổ tay cũ kỹ do Haniyyah để lại, hình như ghi chép về gia tộc của cô ấy."
+  },
+  "SpecialWisdomOrb": {
+    "name": "Ngọc Trí Tuệ Đặc Biệt",
+    "description": "Ngọc Trí Tuệ có chút quen thuộc, phần lưng và bên dưới có dấu vết va chạm, hình như đã trải qua tranh chấp. Khi nhìn kỹ, còn có thể tìm thấy chữ viết \"Mẫu thử ứng dụng mệnh lệnh phụ\" và \"Xác nhận không có giá trị, có thể bỏ đi\", và một ít vết máu, dường như đã có người đoạt ra, và lại gặp phải bất trắc..."
+  },
+  "MysteriousFatuiLetter": {
+    "name": "Thư Của Fatui Thần Bí",
+    "description": "Lá thư phát hiện được sau khi đánh bại Người Xử Lý Nợ Fatui vô tình gặp phải, không biết tại sao hắn đem theo bên mình."
+  },
+  "DerivedContents": {
+    "name": "Nội Dung Lý Giải",
+    "description": "Nội dung lý giải được sau khi tổng hợp các manh mối"
+  },
+  "XudongsLetter": {
+    "name": "Thư Của Xudong",
+    "description": "Thư do Xudong để lại, trong phong thư hình như còn kẹp theo thứ gì đó..."
   },
   "SilkFlowerSeed": {
     "name": "Hạt giống Hoa Nghê Thường",
@@ -10683,6 +10799,18 @@
     "name": "Thành Tựu - Giấc Mơ Phản Chiếu",
     "description": "Hoa văn danh thiếp.\\nNgàn năm kiêu ngạo và những ước nguyện buồn bã đều đã tan biến trong cát đêm rực cháy. Nhưng ốc đảo vĩnh hằng trong giấc mơ của cô vẫn mềm mại và tươi tốt như ngày nào...\""
   },
+  "NahidaCrescent": {
+    "name": "Nahida - Ngắm Trăng",
+    "description": "Hoa văn danh thiếp.\\nTrăng non ngưỡng mộ mặt trời, vì ánh sáng đó có thể chiếu rọi khắp vùng đất. Mặt khác, mặt trời lặn lại ghen tị với mặt trăng, vì mặt trăng sẽ đi kèm với những giấc mơ ngọt ngào nhất."
+  },
+  "LaylaDaydream": {
+    "name": "Layla - Giấc Mơ Ban Ngày",
+    "description": "Hoa văn danh thiếp.\\n\"Bầu trời sao trong mơ sẽ soi sáng con đường của bạn, với điều kiện viên pha lê trong tim bạn phải tỏa ra vầng sáng trong veo.\""
+  },
+  "TravelNotesFungusLand": {
+    "name": "Nhật Ký Hành Trình Rừng Nấm",
+    "description": "Hoa văn danh thiếp.\\n\"...Nhà Lữ Hành, đừng đau lòng, vì cơn gió bình minh đó sẽ mang theo bào tử nấm của giấc mơ đẹp, thổi đến cánh đồng trong khao khát của bạn...\""
+  },
   "AnemoculusResonanceStone": {
     "name": "Đá Cộng Hưởng Phong Thần Đồng",
     "description": "Khi sử dụng ở Mondstadt, có thể tìm được \"Mảnh Phong Thần Đồng\" ở gần đó.\\nLà đĩa đá do con người tạo ra có tính chất tương tự như Thất Thiên Thần Tượng Phong, cộng hưởng với Phong Thần Đồng.\\nĐá Cộng Hưởng Thần Đồng là những vật mô phỏng không hoàn hảo so với chất liệu gây dựng Thất Thiên Thần Tượng được người xưa đặt khắp đại lục. Chính vì sự không hoàn hảo, mới khao khát sức mạnh của Thần Đồng, tạo cơ hội cho những người thành kính và nhà mạo hiểm tìm kiếm Thần Đồng."
@@ -10915,6 +11043,10 @@
     "name": "\"Máy Ảnh Bọt Nước Trong Vắt\"",
     "description": "Khi sử dụng, sẽ ghi và lưu trữ lại bối cảnh hiện tại, và điều chỉnh màu sắc đặc biệt cho bức ảnh.\\nMột thiết bị lạ không rõ nguồn gốc. Những bức ảnh mà nó chụp có một hiệu ứng đặc biệt. Ai có thể nghĩ rằng một chiếc máy không có nước bên trong lại có thể tạo ra những bức ảnh có bong bóng vui nhộn, làm cho bức ảnh có cảm giác kỳ ảo.\\nVì vậy, một đội trưởng kỵ binh nào đó từng hình dung chiếc máy này là \"nắm bắt được kỳ vọng của mọi người về sự mát mẻ.\""
   },
+  "WisdomOrb": {
+    "name": "Ngọc Trí Tuệ",
+    "description": "Đạo cụ quan trọng mà ban tổ chức Giải Đấu Luyện Thú Cúp Nilotpala đã cung cấp. Có thể bắt, dung nạp và chỉ huy Nấm Quỷ có linh tính, nghe nói là phát minh của học giả Kautilya. Chỉ khi sử dụng đạo cụ này thuần thục thì mới được tham gia Giải Đấu Luyện Thú Cúp Nilotpala. Có điều, đạo cụ này cứ có cảm giác quen thuộc, dường như đã thấy ở đâu rồi..."
+  },
   "CloudRetainersDamaskedDevice": {
     "name": "Cơ Quan Giấy Lụa - Lưu Vân",
     "description": "Một cơ quan nhẹ được làm bằng giấy và trông giống như một con chim, do Lưu Vân Tá Phong Chân Quân ban tặng.\\nMặc dù nói là \"cơ quan\", nhưng nhìn từ bên ngoài hầu như không thấy cấu trúc cơ quan truyền thống nào cả.\\n\"Cơ quan thuật\" của vị tiên nhân đó hình như lại tiến thêm một bước rồi..."
@@ -11046,6 +11178,10 @@
   "SilkenPrint": {
     "name": "\"Dấu Ấn Sắc Màu\"",
     "description": "Thẻ cầu nguyện được trang trí bằng tranh, điêu khắc từ Gỗ Mơ Mộng thượng hạng, mô tả phong cảnh tươi đẹp của Inazuma.\\nMượn \"sức mạnh ngoại cảnh\" để đưa cảnh sắc tao nhã trong tranh vào trong Ấm Trần Ca..."
+  },
+  "NaturesTrueFruit": {
+    "name": "Hoa Quả Của Rừng Rậm",
+    "description": "Loài quả mang hương thơm kỳ diệu, là món quà kỷ niệm mà Tiên Ấm Chu Du Chubby đã mang về từ Sumeru.\\nNgửi nhẹ hương thơm của loại quả này, trong đầu dường như sẽ hiện ra một cảnh tượng nào đó. Mượn \"sức mạnh ngoại cảnh\" có thể xây dựng nên cảnh sắc Sumeru kỳ diệu..."
   },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "Mây Trôi Nghìn Trùng Đón Tiếng Mưa",
@@ -11363,6 +11499,62 @@
     "name": "Phòng Trà Đậm Hương Phong",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách bố trí \"Phòng Trà Đậm Hương Phong\".\\nPhòng trà phong cách truyền thống của Inazuma, bố cục và bày trí tham khảo theo Phòng Trà Komore, đồng thời sử dụng tủ quầy và trà cụ cũng bằng gỗ Phong tương đồng, tái hiện bầu không khí tao nhã nhưng không nghiêm khắc, gần gũi nhưng không tùy tiện.\\nNghe nói, ngồi trong phòng trà với mùi hương gỗ Phong và hương trà phảng phất, những cảm hứng sẽ cuồn cuộn tuôn trào. Do đó, một số nhà thơ thường vung bút thành thơ trong khi thưởng thức trà đạo, ví dụ như Ronin trẻ tuổi hay đặt nhiều biệt danh tao nhã cho các loài hoa cỏ. \\nSau khi dùng có thể đến giao diện bày trí để xem.\\nBạn đồng hành thích bộ trang trí này: Thoma, Kaedehara Kazuha"
   },
+  "ForestPatrolAnecdotes": {
+    "name": "Chuyện Thú Vị Trên Đường Kiểm Lâm",
+    "description": "Phòng nghỉ ngơi với đầy đủ trang thiết bị, tham khảo theo nơi ở của các kiểm lâm ở Làng Gandharva, và căn cứ theo nhiệm vụ mà các kiểm lâm thường làm, để tối ưu bố cục của gian phòng.\\nMột khi nhận được thông báo, lập tức có thể đeo hành trang và xuất phát ngay, khi quay về thì có thể nhanh chóng nuôi dưỡng, cất giữ hoặc phân tích tiêu bản. Nếu phải trực ban chờ mệnh lệnh đến khuya, thì cũng có thể dùng bếp lò để làm một bữa ăn khuya bổ sung thể lực. Tổng hợp những vấn đề trên, phòng nghỉ ngơi này có lẽ sẽ luôn giúp cho các kiểm lâm duy trì trạng thái tốt nhất, đương nhiên, tiền đề là việc xếp ca phải thật hợp lý.\\nBạn đồng hành thích bộ trang trí này: Tighnari, Collei"
+  },
+  "CoalescedBrilliance": {
+    "name": "Sắc Thái Lung Linh",
+    "description": "Căn phòng được trưng bày đủ loại châu báu, trang sức và hàng sưu tầm giá trị, trong phòng có luồng khí giàu sang đang tuôn chảy, chỉ cần đặt một cây đèn ở góc phòng là có thể phản chiếu ánh sáng lấp lánh đến chói lòa, khiến người ta mê đắm.\\nĐối với những người theo đuổi sự giàu có, thì một căn phòng như thế này giống như một món bánh ngọt với độ ngọt vừa phải, mà dư vị kéo dài dai dẳng. Còn những vị khách xem trọng tính thẩm mỹ, thì bất luận ngắm nhìn những tác phẩm nghệ thuật trong phòng từ góc độ nào, đều có thể tìm thấy điểm tỏa sáng bất ngờ.\\nBạn đồng hành thích bộ trang trí này: Dori, Nilou"
+  },
+  "FervidAroma": {
+    "name": "Hương Thơm Nồng Nhiệt",
+    "description": "Nhà ăn được bố trí tỉ mỉ dựa theo nguyên mẫu của quán rượu và quán cà phê trong Thành Sumeru, đồng thời điều chỉnh theo bố cục của Động Tiên. Hơi nóng và hương thơm tràn ngập khiến người ta vô cùng tận hưởng. Nếu có bạn thân bầu bạn, thêm vài bình rượu ngon, thì có thể trải nghiệm một bữa ăn hoàn hảo.\\nNhững người thường đi cùng với đoàn thể khi lựa chọn quán ăn sẽ suy nghĩ đến chỗ ngồi và lượng thức ăn, đối với những người này, quán thịt nướng thường là lựa chọn thỏa đáng nhất. Còn những người độc hành cũng có thể mượn không khí náo nhiệt của quán thịt nướng để che lấp hành tung của bản thân, hoặc tạo điều kiện an toàn và tương đối khiêm tốn để quan sát, truy vết hoặc để suy nghĩ một vấn đề gì đó."
+  },
+  "OfSettledThoughts": {
+    "name": "Nơi Tri Thức Lắng Đọng",
+    "description": "Phòng đọc sách với nhiều tài liệu phong phú, kệ sách lớn giống như bức tường cao không thể vượt qua. Người bình thường khi lướt mắt qua những cuốn sách xinh đẹp lung linh, trong lòng khó tránh nảy sinh phần nào nể phục.\\nĐương nhiên, đối với những người có lòng, thì giữa trí tuệ và sự vô tri sẽ không tồn tại giới hạn không thể vượt qua. Nếu như bình tâm lại, mỗi ngày đều ngồi tĩnh tâm trong phòng đọc sách, làm theo kế hoạch rõ ràng, đọc kỹ từng quyển từng quyển sách trên kệ, không cần thời gian quá dài, sẽ có thể tiếp cận với một lượng kiến thức mới khó mà ước lượng.\\nBạn đồng hành thích bộ trang trí này: Cyno"
+  },
+  "AFarewellBriefToBustleAndBother": {
+    "name": "Tạm Biệt Ưu Phiền",
+    "description": "Phòng ngủ được trang hoàng theo phong cách Sumeru, vật dụng trong đó đều là kiểu thông dụng. Với hiệu quả phục chế hoàn hảo của sức mạnh ngoại cảnh, mỗi món đồ trang trí đều như vừa được chế tác xong, bố cục gọn gàng đem lại cảm giác sạch sẽ ngăn nắp, rộng rãi sảng khoái, là nơi lý tưởng để bình tâm tịnh khí, trút bỏ muộn phiền.\\nDù sống trong hoàn cảnh không phải lo lắng về cái ăn cái mặc, thỉnh thoảng cũng có tâm trạng tiêu cực; dù cho ở trên địa vị mà mọi người mong ước, thì cũng không thể triệt để trút bỏ những nỗi phiền lòng. Những lúc này, hãy thả lỏng tâm trạng, ngủ một giấc thật ngon, nghênh đón thử thách của cuộc sống bằng trạng thái tốt nhất, có lẽ là một lựa chọn thỏa đáng...\\nBạn đồng hành thích bộ trang trí này: Nahida, Layla"
+  },
+  "DwellingAmidstTheSands": {
+    "name": "Thân Nơi Cát Bụi",
+    "description": "Căn phòng được trang trí bình dị, sử dụng các vật dụng trong nhà giống ở Làng Aaru. Những người sống trong sa mạc có thói quen ứng phó với môi trường đặc biệt, ví dụ như lập tức dọn sạch những hạt cát dính trên trang phục, hoặc là dùng cách khá tiết kiệm để duy trì nhiệt độ và độ ẩm trong nhà...\\nCó lẽ trong Động Tiên với khí hậu dễ chịu, thì những thói quen này không còn mang tính bắt buộc, nhưng vẫn mang lại bầu không khí khiến cho người ta cảm thấy ấm lòng, đáng để xem trọng. Bố cục như thế này quả thực đã chú ý đến từng tiểu tiết, khi ở trong đó, giống như đang ở trong nhà dân nơi sa mạc.\\nBạn đồng hành thích bộ trang trí này: Candace"
+  },
+  "AmidstProsperingMarkets": {
+    "name": "Khu Chợ Náo Nhiệt",
+    "description": "Khu chợ với bố cục tinh tế, tham khảo theo bố trí của Đại Khu Bazaar và đường phố trong Thành Sumeru, có trái cây tươi ngon, ẩm thực khiến người ta mê đắm và các quầy hàng bán các loại nhu yếu phẩm thường ngày, chỉ cần rảo vài bước là có thể tìm được cảm giác quen thuộc, dường như đã thực sự bước vào khu phố chợ náo nhiệt.\\nTương truyền, các cửa tiệm và quầy hàng ở hai bên đường phố Sumeru đều đã được quy hoạch chỉn chu, vận dụng một số thành quả nghiên cứu của Giáo Viện, có thể tận dụng diện tích có hạn để phục vụ chu đáo cho nhiều cư dân hơn với tiền đề là giảm độ khó quản lý.\\nBạn đồng hành thích bộ trang trí này: Dori"
+  },
+  "DeepInTheQuietForest": {
+    "name": "Trú Ngụ Trong Rừng Sâu",
+    "description": "Tham khảo theo phong cách của Làng Gandharva, vận dụng cách bố trí của kiến trúc mang phong cách rừng mưa, màu xanh ngọc làm cho lòng người khoan khoái, bất luận cảnh sắc xung quanh thế nào, đều có thể mang đến trải nghiệm như được trú ngụ trong rừng.\\nĐương nhiên, khi thực sự vào ở trong rừng mưa, thì cần phải nắm vững nhiều kỹ năng sống, điều chỉnh tiết tấu sinh hoạt, để tránh những vấn đề nho nhỏ mà môi trường khí hậu ẩm ướt mang lại, đồng thời hiểu được thói quen thường nhật của các kiểm lâm...\\nBạn đồng hành thích bộ trang trí này: Collei, Cyno"
+  },
+  "OfTwirlingDancesUnfettered": {
+    "name": "Điệu Múa Huyền Diệu",
+    "description": "Nhà hát hùng vĩ và xinh đẹp, ngoài sân khấu lung linh hoành tráng, đài phun nước với hơi nước bao trùm, thì còn có loài hoa quý được phục chế bởi sức mạnh của ngoại cảnh, với mong muốn tái hiện lại không khí của Nhà Hát Zubayr trong thời gian lễ hội quan trọng.\\nTương truyền, có một số ngày lễ nếu chiêm ngưỡng vào ban đêm thì hiệu quả sẽ hoàn hảo nhất. Việc bố trí đèn trong nhà hát cũng rất cầu kỳ, để đảm bảo cho khán giả dù ở góc độ nào cũng có thể nhìn rõ tư thế của vũ công, ánh sáng và màu sắc phù hợp sẽ đem lại cho cảm nhận thêm phần tuyệt hảo.\\nBạn đồng hành thích bộ trang trí này: Nilou"
+  },
+  "QuietTimesByTheRiverbank": {
+    "name": "Thời Khắc An Yên Bên Bờ Hồ",
+    "description": "Chốn an nhàn yên ả, tái hiện một cách hoàn hảo phong thái độc đáo của Làng Vimara. Dù chưa từng ngồi bên bờ sông hay bờ biển, chỉ cần ngửi qua mùi cá trong làng, thì bên tai cũng dường như có tiếng sóng nước vang vọng.\\nSo với nơi trú đóng của các kiểm lâm, thì Làng Vimara như thế này lại có một nhịp điệu riêng, cư dân phần lớn không có chức trách gì to lớn, cuộc sống hàng ngày khá nhàn hạ, hình như là một nơi thích hợp để điều chỉnh tâm trạng."
+  },
+  "SetekhDemurs": {
+    "name": "Nơi Tránh Gió",
+    "description": "Thôn làng với những căn nhà trông có vẻ nặng nề, bố cục và kiến trúc tham khảo theo Làng Aaru, không sợ cát bụi ăn mòn, khi đối diện với dã thú hoặc những vị khách không mời, cũng có khả năng phòng ngự tốt hơn so với kiến trúc bằng gỗ. Chỉ có điều, nghe nói do vật liệu xây dựng hơi đặc thù, nên cư dân phải định kỳ duy tu tường nhà, kiểm tra xem những bức tường có bị nứt sau thời gian dài bị gió thổi nắng rọi hay không, để kịp thời tu sửa. Công việc này cũng rèn luyện cho khả năng cảm nhận của cư dân, làm cho họ khi đối mặt với từng hạng mục trong đời sống thường ngày cũng đều chuyên tâm hơn.\\nBạn đồng hành thích bộ trang trí này: Candace, Layla"
+  },
+  "TheTravelingTroopsPomp": {
+    "name": "Trận Địa Của Lữ Đoàn",
+    "description": "Doanh trại bày trí đủ loại thiết bị quân dụng, vật tư phong phú, xây dựng tuyến phòng thủ, bố trí lửa trại để sẵn sàng cho việc tác chiến giữa đêm. Trên lý thuyết, doanh trại như thế này đủ để ứng phó với sự tấn công của quân địch đông đảo, khi nhân lực đầy đủ, thậm chí còn có thể làm điểm trọng yếu trong tuyến phòng thủ.\\nDù cho việc bố trí và di chuyển khá phiền phức, cũng chưa được dựng lều trại tránh mưa gió, điều kiện khá gian khổ... Nhưng những người lính đánh thuê thiện chiến chỉ cần một chiếc đệm cỏ là có thể vào giấc an lành, hoàn toàn không để tâm đến những thiếu sót nho nhỏ này."
+  },
+  "AmidstScentsAndSerenity": {
+    "name": "Đắm Chìm Trong Hương Thơm Nhàn Nhã",
+    "description": "Hoa viên tao nhã thanh tịnh, sử dụng kiểu đình nghỉ chân giống với Vườn Razan và Pardis Dhyai, cũng không câu nệ tính tuyệt đối thống nhất trong phong cách kiến trúc, đồ vật và bố trí đều hướng đến việc tạo nên bầu không khí an nhàn.\\nNhững đóa hoa kiều diễm đang say giấc, cây đèn tinh tế điểm tô cho đài phun nước trang nhã... Chờ khi đêm xuống, bước đi giữa khu vườn này, mọi tạp niệm trong đầu đều sẽ tan biến, có lẽ sẽ tìm thấy được linh cảm khó tìm...\\nBạn đồng hành thích bộ trang trí này: Nahida"
+  },
+  "ChorusOfDesertAndWood": {
+    "name": "Bản Hợp Tấu Giữa Rừng Rậm Và Sa Mạc",
+    "description": "Vùng đất kỳ diệu với nhiều loại thực vật sinh trưởng rậm rạp, như mượn sức mạnh của ngoại cảnh trong Động Tiên mà điều hòa các đặc tính khác nhau của chủng loại, làm cho thực vật đến từ sa mạc và rừng mưa có thể chung sống với nhau, viết nên một khúc nhạc hòa tấu giữa hoa lá và cỏ cây.\\nĐối với học giả yêu thích thực vật, thì một nơi thế này quả thực là một thánh địa nghiên cứu. Còn trong mắt người thường, khu rừng với nhiều màu sắc đan xen, cũng là một cảnh sắc thú vị...\\nBạn đồng hành thích bộ trang trí này: Tighnari"
+  },
   "TimberWallWithJadeEaves": {
     "name": "Tường Cao Mặt Ngọc",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tường Cao Mặt Ngọc\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -11374,6 +11566,10 @@
   "MapleWoodVaultedWall": {
     "name": "Tường Vòm Gỗ Phong",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tường Vòm Gỗ Phong\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "SimpleBrightwoodCarvedWall": {
+    "name": "Tường Điêu Khắc Gỗ Sáng",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tường Điêu Khắc Gỗ Sáng\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "TraditionalCedarFlooring": {
     "name": "Sàn Gỗ Thùy Hương Truyền Thống",
@@ -11387,6 +11583,10 @@
     "name": "Nền Gỗ Phong Nâu",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Nền Gỗ Phong Nâu\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "DarkBrightwoodFlooring": {
+    "name": "Nền Hoa Văn Gỗ Sáng",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Nền Hoa Văn Gỗ Sáng\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "CheckeredCedarCeiling": {
     "name": "Trần Caro Gỗ Thùy Hương",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trần Caro Gỗ Thùy Hương\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -11398,6 +11598,10 @@
   "MapleWoodSquareCeiling": {
     "name": "Trần Caro Gỗ Phong",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trần Caro Gỗ Phong\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "BrightwoodChiseledCeiling": {
+    "name": "Trần Nhà Điêu Khắc Gỗ Sáng",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trần Nhà Điêu Khắc Gỗ Sáng\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "TwoTierCandleChandelier": {
     "name": "Đèn Chùm Giá Nến 2 Tầng",
@@ -11479,6 +11683,22 @@
     "name": "Ánh Sáng Rừng Sâu",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ánh Sáng Rừng Sâu\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "ImmersiveLight": {
+    "name": "Ánh Sáng Chuyên Tâm",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ánh Sáng Chuyên Tâm\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "PerennialIllumination": {
+    "name": "Ánh Sáng Thường Lệ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ánh Sáng Thường Lệ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "BloomingIllumination": {
+    "name": "Ánh Sáng Rực Rỡ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ánh Sáng Rực Rỡ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "EfflorescentIllumination": {
+    "name": "Ánh Sáng Trăm Hoa",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ánh Sáng Trăm Hoa\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "NorthernBirchFoldingCounter": {
     "name": "Quầy Hàng Chữ L Gỗ Hoa Cực Bắc",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Quầy Hàng Chữ L Gỗ Hoa Cực Bắc\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -11510,6 +11730,14 @@
   "DesertDeskHospitality": {
     "name": "Bàn Tủ Sa Mạc - Hoan Nghênh",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bàn Tủ Sa Mạc - Hoan Nghênh\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "AdhigamaWoodVersatileShelves": {
+    "name": "Kệ Đồ \"Hỗn Loạn\" Gỗ Adhigama",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Kệ Đồ \"Hỗn Loạn\" Gỗ Adhigama.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "BrightwoodInvigoratingNightstand": {
+    "name": "Tủ Đầu Giường \"Chữa Trị\" Gỗ Sáng",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Tủ Đầu Giường \"Chữa Trị\" Gỗ Sáng.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "TwoTierLibraryBookshelf": {
     "name": "Kệ Sách Hai Tầng Thư Viện",
@@ -11554,6 +11782,14 @@
   "DesertCabinetOddsAndEnds": {
     "name": "Tủ Đứng Sa Mạc - Đồ Linh Tinh",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tủ Đứng Sa Mạc - Đồ Linh Tinh\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "TreasureFromTheLandOfWisdom": {
+    "name": "Báu Vật Ở Vùng Đất Trí Tuệ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Báu Vật Ở Vùng Đất Trí Tuệ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "ScrollsFromTheLandOfWisdom": {
+    "name": "Kho Tàng Ở Vùng Đất Trí Tuệ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Kho Tàng Ở Vùng Đất Trí Tuệ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "SturdyLibraryTable": {
     "name": "Bàn Thư Viện Dài",
@@ -11623,6 +11859,18 @@
     "name": "Bàn Dài Gỗ Sanh",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bàn Dài Gỗ Sanh\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "AChoiceOfDelicacies": {
+    "name": "Lựa Chọn Đủ Loại Món Ngon",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Lựa Chọn Đủ Loại Món Ngon.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "SpiritOfTheBanquet": {
+    "name": "Bữa Tiệc Hào Sảng",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Bữa Tiệc Hào Sảng.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "ATableForTwo": {
+    "name": "Nhâm Nhi Vài Chén",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Nhâm Nhi Vài Chén.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "BreezeBlessedBed": {
     "name": "Giường Bảo Vệ Êm Ái",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Giường Bảo Vệ Êm Ái\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -11634,6 +11882,14 @@
   "YumemiruSakurasRestBed": {
     "name": "Giường \"Giấc Ngủ Anh Đào\" Gỗ Mơ Mộng",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Giường \"Giấc Ngủ Anh Đào\" Gỗ Mơ Mộng.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "BrightwoodConcordBed": {
+    "name": "Giường \"Định Thần\" Gỗ Sáng",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Giường \"Định Thần\" Gỗ Sáng.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "AdhigamaWoodComfortBed": {
+    "name": "Giường \"Thoải Mái\" Gỗ Adhigama",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Giường \"Thoải Mái\" Gỗ Adhigama.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "PineReceptionCounter": {
     "name": "Quầy Lễ Tân Phòng Trọ Gỗ Thông",
@@ -11654,6 +11910,10 @@
   "DesertStudyConscientiousness": {
     "name": "Bàn Sa Mạc - Tận Tâm",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bàn Sa Mạc - Tận Tâm\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "WitnessOfTavernAffairs": {
+    "name": "Chứng Nhân Của Mọi Chuyện Tại Quán Rượu",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Chứng Nhân Của Mọi Chuyện Tại Quán Rượu\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "SoftLoungeSofa": {
     "name": "Sofa Êm Ái",
@@ -11682,6 +11942,18 @@
   "TeahouseRoundStoolPainPointReduction": {
     "name": "Ghế Tròn Phòng Trà - Vỗ Về Niềm Đau",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ghế Tròn Phòng Trà - Vỗ Về Niềm Đau\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "KarmaphalaWoodSubduedSpeechBench": {
+    "name": "Ghế Dài \"Tịnh Ngữ\" Gỗ Karmaphala",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Ghế Dài \"Tịnh Ngữ\" Gỗ Karmaphala.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "KarmaphalaWoodCounterAssaultDiningChair": {
+    "name": "Ghế \"Phản Truy Bắt\" Gỗ Karmaphala",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Ghế \"Phản Truy Bắt\" Gỗ Karmaphala.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "SatisfactionOfSatedThirst": {
+    "name": "Niềm Vui Lúc Nhàn Rỗi",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Niềm Vui Lúc Nhàn Rỗi\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "NorthernStoneHearth": {
     "name": "Lò Sưởi Bằng Đá Bắc Địa",
@@ -11795,6 +12067,26 @@
     "name": "\"Trong Làn Khói Mờ Ảo\"",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trong Làn Khói Mờ Ảo\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "ForestWatchersFastidiousness": {
+    "name": "Đội Trưởng Kiểm Lâm Cẩn Trọng",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đội Trưởng Kiểm Lâm Cẩn Trọng\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "ForestRangersProvisions": {
+    "name": "Kiểm Lâm Tác Chiến",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Kiểm Lâm Tác Chiến\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DeepwoodDwellersDelicacies": {
+    "name": "Bữa Ăn Của Cư Dân Rừng Sâu",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bữa Ăn Của Cư Dân Rừng Sâu\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "AromaOfHighHeatBarbecue": {
+    "name": "Thơm Nồng Món Nướng",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Thơm Nồng Món Nướng\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "FragranceOfLowHeatRoast": {
+    "name": "Hương Thơm Tươi Mới",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Hương Thơm Tươi Mới\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Thảm Mondstadt - Ngọn Lửa Nhiệt Tình",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Thảm Mondstadt - Ngọn Lửa Nhiệt Tình\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -11854,6 +12146,10 @@
   "DesertLampLingeringLight": {
     "name": "Đèn Sa Mạc - Ánh Sáng",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ngọn Đèn Sa Mạc - Ánh Sáng\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "JoyfulIllumination": {
+    "name": "Ánh Sáng Hoan Ca",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ánh Sáng Hoan Ca\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Bình Hoa - Ung Dung Nhạt Nhòa",
@@ -11979,6 +12275,18 @@
     "name": "\"Trong Sương Mù Quanh Quẩn\"",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trong Sương Mù Quanh Quẩn\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "AppraisersTreasure": {
+    "name": "Báu Vật Của Tiệm",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Báu Vật Của Tiệm\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "CeramicCenterpiece": {
+    "name": "Đường Vân Của Tiệm",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đường Vân Của Tiệm\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "EphemeralSpirit": {
+    "name": "Rượu Mạnh Không Thể Để Lâu",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Rượu Mạnh Không Thể Để Lâu\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "LandscapePaintingCountryHome": {
     "name": "Tranh Phong Cảnh - Quê Hương",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tranh Phong Cảnh - Quê Hương\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -12074,6 +12382,10 @@
   "DesertWallDrapesFlamingFeathers": {
     "name": "Trang Trí Tường Sa Mạc - Hỏa Vũ",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Trang Trí Tường Sa Mạc - Hỏa Vũ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "ForestWatchersConsiderations": {
+    "name": "Ghi Nhớ Của Đội Trưởng Kiểm Lâm",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ghi Nhớ Của Đội Trưởng Kiểm Lâm\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "LingeringMoment": {
     "name": "Thời Khắc Nhớ Nhung",
@@ -12491,6 +12803,74 @@
     "name": "Ngôi Nhà Sa Mạc - Lưu Trữ",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Ngôi Nhà Sa Mạc - Lưu Trữ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
+  "MansionPagodaFlowerOfRevelation": {
+    "name": "Tháp \"Hoa Giác Ngộ\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Tháp \"Hoa Giác Ngộ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "MansionPagodaTreeOfPondering": {
+    "name": "Tháp \"Cây Suy Ngẫm\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Tháp \"Cây Suy Ngẫm\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "MansionCourtyardWarblingPavilion": {
+    "name": "Mái Đình \"Tiếng Chim Ngân\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Mái Đình \"Tiếng Chim Ngân\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "MansionCourtyardWatchtowerOfForesight": {
+    "name": "Mái Đình \"Lầu Vọng Cảnh\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Mái Đình \"Lầu Vọng Cảnh\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "MansionCourtyardPlaceOfRepose": {
+    "name": "Mái Đình \"Nơi Thưởng Trà\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Mái Đình \"Nơi Thưởng Trà\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "MansionCourtyardCuisiniersAbode": {
+    "name": "Mái Đình \"Nơi Khói Tỏa\"",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Mái Đình \"Nơi Khói Tỏa\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "TreasuresOfTheCityOfWisdom": {
+    "name": "Tài Sản Của Thành Phố Trí Tuệ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Tài Sản Của Thành Phố Trí Tuệ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DelicaciesOfTheCityOfWisdom": {
+    "name": "Mỹ Thực Của Thành Phố Trí Tuệ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Mỹ Thực Của Thành Phố Trí Tuệ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "AromasOfTheCityOfWisdom": {
+    "name": "Làn Gió Thơm Của Thành Phố Trí Tuệ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Làn Gió Thơm Của Thành Phố Trí Tuệ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "TenacityOfTheCityOfWisdom": {
+    "name": "Sự Kiên Cường Của Thành Phố Trí Tuệ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Sự Kiên Cường Của Thành Phố Trí Tuệ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "CommerceOfTheCityOfWisdom": {
+    "name": "Giao Dịch Của Thành Phố Trí Tuệ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Giao Dịch Của Thành Phố Trí Tuệ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "ShadeInTheTranquilCourt": {
+    "name": "Bóng Râm Trong Khu Vườn Tĩnh Mịch",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Bóng Râm Trong Khu Vườn Tĩnh Mịch\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "LightInTheTranquilCourt": {
+    "name": "Sắc Thủy Tinh Trong Khu Vườn Tĩnh Mịch",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Sắc Thủy Tinh Trong Khu Vườn Tĩnh Mịch\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "FabricOfTheCityOfWisdom": {
+    "name": "Sợi Tơ Của Thành Phố Trí Tuệ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Sợi Tơ Của Thành Phố Trí Tuệ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "PotteryOfTheCityOfWisdom": {
+    "name": "Nung Đốt Của Thành Phố Trí Tuệ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Nung Đốt Của Thành Phố Trí Tuệ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "DiligenceOfTheCityOfWisdom": {
+    "name": "Sự Cần Mẫn Của Thành Phố Trí Tuệ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Sự Cần Mẫn Của Thành Phố Trí Tuệ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "BuildingBlockOfTheCityOfWisdom": {
+    "name": "Sự Bình Dị Của Thành Phố Trí Tuệ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Sự Bình Dị Của Thành Phố Trí Tuệ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Đài Phun Nước Hoa Và Chim",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Đài Phun Nước Hoa Và Chim\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
@@ -12570,6 +12950,14 @@
   "DesertHutRest": {
     "name": "Túp Lều Sa Mạc - Nghỉ Ngơi",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Túp Lều Sa Mạc - Nghỉ Ngơi\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "TheatersCoolMist": {
+    "name": "Hơi Nước Tươi Mát Của Nhà Hát",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Hơi Nước Tươi Mát Của Nhà Hát\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "ClarityFromTheLandOfWisdom": {
+    "name": "Sự Trong Sáng Ở Vùng Đất Trí Tuệ",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Sự Trong Sáng Ở Vùng Đất Trí Tuệ\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "AdeptusGate": {
     "name": "Tam Nhãn Thủ Tiên Bài",
@@ -12714,6 +13102,14 @@
   "FoundationsOfStoneFortunateTimes": {
     "name": "Nền Đá - \"Thời Đại May Mắn\"",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Nền Đá - \"Thời Đại May Mắn\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "SubspaceStructureSuspendedPathway": {
+    "name": "Kiệt Tác Ngoại Cảnh - Đường Mòn Sương Khói",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Kiệt Tác Ngoại Cảnh - Đường Mòn Sương Khói.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "SubSpaceStructureTreetopStroll": {
+    "name": "Kiệt Tác Ngoại Cảnh - Bước Đi Trên Cành",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo Kiệt Tác Ngoại Cảnh - Bước Đi Trên Cành.\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "MessyPileOfFirCrates": {
     "name": "Rương Hàng Gỗ Sam Chất Chồng",
@@ -13098,6 +13494,10 @@
   "TheEremitesOdyssey": {
     "name": "Cuộc Chinh Phục Của Lữ Đoàn",
     "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Cuộc Chinh Phục Của Lữ Đoàn\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
+  },
+  "TheEremitesFame": {
+    "name": "Thanh Danh Lữ Đoàn",
+    "description": "Bản vẽ chi tiết từng bước, ghi lại cách chế tạo \"Thanh Danh Lữ Đoàn\".\\nSau khi dùng có thể đến giao diện chế tạo để xem."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Đèn Đường Khắc Hoa",

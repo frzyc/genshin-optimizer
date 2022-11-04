@@ -17,7 +17,7 @@
       },
       "breakthrough": {
         "0": "<strong>Percée</strong>",
-        "1": "Si l'équipe est hors combat pendant 5{NON_BREAK_SPACE}s, Yelan entre dans un état de Percée permettant de diminuer le temps de charge de son prochain tir visé de 80{NON_BREAK_SPACE}%, et une fois le tir complètement chargé, elle peut tirer une flèche perçante qui inflige des <hydro>DGT Hydro de zone</hydro> selon ses PV max."
+        "1": "Si l'équipe est hors combat pendant 5{NON_BREAK_SPACE}s, Yelan entre dans l'état Percée permettant de diminuer le temps de charge de son prochain tir visé de 80{NON_BREAK_SPACE}%, et une fois le tir complètement chargé, elle peut tirer une flèche perçante qui inflige des <hydro>DGT Hydro de zone</hydro> selon ses PV max."
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",
@@ -56,7 +56,7 @@
       "7": "Avance rapidement de façon continue, tout en augmentant la RÉS à l'interruption de Yelan pendant son mouvement.",
       "8": "Pendant ce déplacement, Yelan peut contrôler la direction de sa course et peut s'arrêter en utilisant à nouveau la compétence.",
       "9": "<br/>",
-      "10": "De plus, chaque ennemi marqué par la ligne vitale lorsqu'elle explose accorde à Yelan 34 % de chances d'obtenir un état de Percée.",
+      "10": "De plus, chaque ennemi marqué par la ligne vitale lorsqu'elle explose accorde à Yelan 34 % de chances d'obtenir l'état Percée.",
       "11": "<br/>",
       "12": "<i>Ce n'est que lorsqu'elle commence à tirer sur la corde que les malfaiteurs, les escrocs et les tricheurs se rendent compte qu'il n'y a pas d'échappatoire...</i>"
     },
@@ -167,10 +167,10 @@
   "constellation6": {
     "name": "Tout pour le vainqueur",
     "description": {
-      "0": "Après avoir utilisé <strong>Dé exquis des profondeurs</strong>, Yelan entre dans un état de Stratège.",
+      "0": "Après avoir utilisé <strong>Dé exquis des profondeurs</strong>, Yelan entre dans l'état Stratège.",
       "1": "Ses attaques normales deviennent alors des flèches perçantes spéciales. Ces flèches possèdent les mêmes capacités que les flèches perçantes normales, et les DGT qu'elles infligent sont considérés comme des DGT d'attaque chargée infligeant 156{NON_BREAK_SPACE}% des DGT des flèches perçantes normales.",
       "2": "<br/>",
-      "3": "L'état de Stratège dure 20 s maximum ou est annulé après avoir tiré 5 flèches."
+      "3": "L'état Stratège dure 20 s maximum ou est annulé après avoir tiré 5 flèches."
     }
   }
 }

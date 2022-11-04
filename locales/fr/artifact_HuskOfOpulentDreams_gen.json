@@ -2,7 +2,7 @@
   "setName": "Coquille des rêves opulents",
   "setEffects": {
     "2": "Augmente la DÉF de 30 %.",
-    "4": "Un personnage équipé de ce set d'artéfacts obtiendra 1 cumul de Curiosité des façons suivantes : sur le champ de bataille, il gagne 1 cumul en touchant un ennemi avec une attaque Géo, ceci pouvant être déclenché une fois toutes les 0,3 s ; en faisant partie de l'équipe mais en n'étant pas déployé, il gagne 1 cumul toutes les 3 s. La Curiosité peut être cumulée 4 fois maximum, chaque cumul accordant 6 % de bonus de DÉF et 6 % de bonus de DGT Géo. Si 6 s s'écoulent sans gagner de cumul de Curiosité, 1 cumul sera perdu."
+    "4": "Un personnage équipé de ce set d'artéfacts obtiendra 1 cumul de Curiosité des façons suivantes : sur le champ de bataille, il obtient 1 cumul en touchant un ennemi avec une attaque Géo, ceci pouvant être déclenché une fois toutes les 0,3 s ; en faisant partie de l'équipe mais en n'étant pas déployé, il obtient 1 cumul toutes les 3 s. La Curiosité peut être cumulée 4 fois maximum, chaque cumul accordant 6 % de bonus de DÉF et 6 % de bonus de DGT Géo. Si 6 s s'écoulent sans obtenir de cumul de Curiosité, 1 cumul sera perdu."
   },
   "pieces": {
     "flower": {

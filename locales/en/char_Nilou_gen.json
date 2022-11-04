@@ -104,7 +104,7 @@
     "name": "Court of Dancing Petals",
     "description": {
       "0": "When all characters in the party are all <dendro>Dendro</dendro> or <hydro>Hydro</hydro>, and there are at least one Dendro character and one Hydro character:",
-      "1": "The completion of the third dance step of Nilou's <strong>Dance of Haftkarsvar</strong> will grant all nearby characters the Golden Chalice's Bounty for 30s upon its completion.",
+      "1": "The completion of the third dance step of Nilou's <strong>Dance of Haftkarsvar</strong> will grant all nearby characters the Golden Chalice's Bounty for 30s.",
       "2": "Characters under the effect of Golden Chalice's Bounty will increase the Elemental Mastery of all nearby characters by 100 for 10s whenever they are hit by <dendro>Dendro attacks</dendro>. Also, triggering the Bloom reaction will create Bountiful Cores instead of Dendro Cores.",
       "3": "Such Cores will burst very quickly after being created, and they have larger AoEs.",
       "4": "Bountiful Cores cannot trigger Hyperbloom or Burgeon, and they share an upper numerical limit with Dendro Cores. Bountiful Core DMG is considered DMG dealt by Dendro Cores produced by Bloom.",

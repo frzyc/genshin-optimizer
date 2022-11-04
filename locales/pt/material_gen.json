@@ -187,6 +187,18 @@
     "name": "Inspiração Estratégica",
     "description": "Uma coleção de teorias e estudos de caso relacionados a práticas comerciais. Para as pessoas com experiência apropriada, cada página está repleta de possíveis inspirações para melhoramentos."
   },
+  "MushroomCurrency": {
+    "name": "Cogumoedas",
+    "description": "Uma moeda comemorativa feita com bom gosto como recompensa para os participantes de \"Captura Cogumélica\" e \"Despertar de Potencial\" da Copa Nilotpala de Domadores de Feras.\\nIndependentemente dos resultados, esta moeda comemorativa é um lembrete vívido da interação amigável entre os participantes e os Cogumelos.\\nUtilize-as para trocá-las por itens incríveis durante o \"Torneio Cogumélico\"."
+  },
+  "FungusMedal": {
+    "name": "Insígnia Cogumelo",
+    "description": "Uma medalha feita de materiais únicos como recompensa para os melhores participantes do \"Treinamento Especial\" da Copa Nilotpala de Domadores de Feras.\\nUma das chaves para alcançar um entendimento tácito e ficar mais fortes é lutar e derrotar inimigos poderosos com seus Cogumelos no campo de treinamento especial.\\nUse seus Emblemas de Cogumelo para trocá-los por itens incríveis durante o \"Torneio Cogumélico\"."
+  },
+  "ShatteredPhenocryst": {
+    "name": "Fragmento de Fenocristal",
+    "description": "Derrote o poderoso Hypostasis em seu Domínio desconhecido e obtenha o misterioso cristal que se forma quando sua força elemental se dissipa.\\n Durante o evento \"Sinfonia Hipostática — Verso Dissonante\", você pode usá-lo para trocar itens valiosos."
+  },
   "Primogem": {
     "name": "Gema Essencial",
     "description": "Uma gema cristalina primordial que vai além da compreensão mundana. Seu brilho está cheio de esperanças e sonhos do universo em que esteve."
@@ -531,6 +543,14 @@
     "name": "Candace",
     "description": "Guardiã da Vila Aaru, descendente do Rei Deshret, seu olho esquerdo é da cor do âmbar."
   },
+  "Nahida": {
+    "name": "Nahida",
+    "description": "Um pássaro enjaulado no Santuário de Surasthana, que só pode contemplar o mundo através de seus sonhos."
+  },
+  "Layla": {
+    "name": "Layla",
+    "description": "Estudante dos Rtawahist, especializada em astrologia teórica. Sofre de sonambulismo e insônia, ela está sempre enfrentando distúrbios de sono."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka",
     "description": "Material de Ativação da Stella Fortuna de Kamisato Ayaka"
@@ -762,6 +782,14 @@
   "CandacesStellaFortuna": {
     "name": "Stella Fortuna de Candace",
     "description": "Material de Ativação da Constelação de Candace"
+  },
+  "NahidasStellaFortuna": {
+    "name": "Stella Fortuna de Nahida",
+    "description": "Material de Ativação da Constelação de Nahida"
+  },
+  "LaylasStellaFortuna": {
+    "name": "Stella Fortuna de Layla",
+    "description": "Material de Ativação da Constelação de Layla"
   },
   "GnosticHymnOldNotes": {
     "name": "Canção do Gnóstico - Anotações Antigas",
@@ -3855,7 +3883,7 @@
     "name": "Rosa de Sumeru",
     "description": "Flor roxa escura e exuberante, exala uma fragrância agradável que faz qualquer pessoa querer parar para sentir o seu aroma. Muitas pessoas a chamam de \"rosa multiflora\", mas na verdade, ela é \"rosa\"."
   },
-  "Redcrest": {
+  "HennaBerry": {
     "name": "Bagas de Espinheiro",
     "description": "Uma fruta que cresce mesmo no ambiente hostil do deserto. Este fruto escarlate fica ainda mais impressionante sob o contrates das areias douradas do deserto."
   },
@@ -4869,7 +4897,7 @@
   },
   "Garland": {
     "name": "Coroa",
-    "description": "Guirlanda de Arama. \\nEste tipo de coroa simboliza a bênção de Vanarana. Ao lutar contra a \"Personificação de Marana\", o poder surgia continuamente. Mas talvez por causa da queima excessiva, a luz brilhante desapareceu. \\n\\nJá que cada flor está conectada ao pequeno coração de um Aranara, a corola feita destas flores naturalmente está conectada à porta da Mahavanaranapna. Os Aranaras costumam usar este tipo de coroa para dar apoio aos seus amigos e ajudá-los a superar as dificuldades, livrando-os das preocupações e pesadelos."
+    "description": "Uma guirlanda feita por Arama. \\nEste tipo de guirlanda simboliza as bênçãos de Vanarana e foi usada para canalizar poder contínuo na luta contra a Personificação de Marana. Entretanto, sua luz brilhante desapareceu, talvez por ter emanado tanto.\\n\\nCada flor da guirlanda está conectada ao pequeno coração de um Aranara, e união de todos eles é o portal para Mahavanaranapna. Os Aranaras apoiam quem usa a guirlanda. Por serem seus amigos, os Aranaras apagam as dores, afastam pesadelos, ajudam a enfrentar o dia e enchem o vazio do coração de quem está com a guirlanda."
   },
   "Bija": {
     "name": "Bija",
@@ -5145,7 +5173,7 @@
   },
   "NightwatchContract": {
     "name": "Contrato de Patrulha Voadora da Noite Eterna",
-    "description": "Um contrato assinado pessoalmente pela Princesa do Pecado. Ele pode ser utilizado para autorizar a abertura do local de navegação. Aqueles que mostrarem essa carta estarão autorizados a espalhar suas penas negras onde a alvorada encontra o crepúsculo, e envolver os céus no abraço da noite."
+    "description": "Um contrato assinado pessoalmente pela Princesa dos Pecados. Ele pode ser utilizado para autorizar a abertura do local de navegação. Aqueles que mostrarem essa carta estarão autorizados a espalhar suas penas negras onde a alvorada encontra o crepúsculo, e envolver os céus no abraço da noite."
   },
   "SpecialConcresoilForToys": {
     "name": "Barro Misto para Brinquedos",
@@ -5265,7 +5293,7 @@
   },
   "OldInsignia": {
     "name": "Insígnia Antiga",
-    "description": "Uma insígnia que deve ser de um Fatui. Mas você não sabe porque ela está repleta de arranhões."
+    "description": "Uma insígnia que deve ser de um Fatuus. Mas você não sabe o motivo dela estar repleta de arranhões."
   },
   "SarehsNote": {
     "name": "Nota da Sareh",
@@ -5841,7 +5869,7 @@
   },
   "Anemoculus": {
     "name": "Anemoculus",
-    "description": "Uma substância que acumulou intensa energia Anemo. Ofereça à Estátua para recuperar a energia perdida ao longo dos anos."
+    "description": "Uma substância que acumulou intensa energia Anemo. Ofereça-o à Estátua e ajude a reestabelecer o poder que perdeu ao longo dos anos."
   },
   "ElementalDust": {
     "name": "Poeira Elemental",
@@ -5893,7 +5921,7 @@
   },
   "Electroculus": {
     "name": "Electroculus Perdido",
-    "description": "Uma substância que acumulou intensa energia Electro. Ofereça-a à Estátua e ajude a restabelecer o poder que perdeu ao longo dos anos."
+    "description": "Uma substância que acumulou intensa energia Electro. Ofereça-o à Estátua e ajude a restabelecer o poder que perdeu ao longo dos anos."
   },
   "MoonchaseCharm": {
     "name": "Amuleto Lunar",
@@ -7433,7 +7461,7 @@
   },
   "RainbowAster": {
     "name": "Áster Arco-íris",
-    "description": "Uma bebida única. Chegou a aparecer na light novel \"Por Favor, Minha Kitsune Guuji?\", e foi trazida a vida pela Brisa Marítima em colaboração com a Editora Yae, junto com seu fascinante sabor. Como esta versão não contém nenhum produto derivado do feijão, é levemente diferente da versão limitada especial que estava disponível durante o Festival Irodori, mas isso também significa que não existe o risco de causar nenhum tipo de alergia a feijão."
+    "description": "Uma bebida única. Chegou a aparecer na light novel \"Por Favor, Minha Kitsune Guuji?\", e foi trazida à vida pela Brisa Marítima em colaboração com a Editora Yae, junto com seu fascinante sabor. Como esta versão não contém nenhum produto derivado do feijão, é levemente diferente da versão limitada especial que estava disponível durante o Festival Irodori, mas isso também significa que não existe o risco de causar nenhum tipo de alergia a feijão."
   },
   "DeliciousRainbowAster": {
     "name": "Áster Arco-íris Delicioso",
@@ -7683,15 +7711,15 @@
     "name": "Torre Crocante de Cogumelo ao Leite Deliciosa",
     "description": "Uma iguaria crocante. É como se o creme derretesse em sua boca enquanto morde os suculentos cogumelos e pão crocante. Essa sensação imbatível de satisfação lhe deixa insaciável, ao ponto de sequer hesitar em lamber o farelo de pão na ponta de seus dedos."
   },
-  "SuspiciousCoconutCharcoalCake": {
+  "SuspiciousCharcoalBakedAjilenakhCake": {
     "name": "Bolo de Coco-Carvão Estranho",
     "description": "Um lanche de cor escura. Só de olhar já é possível perceber que esse prato é um desastre. Sua coragem imensa para prová-lo é recompensada com uma textura absurdamente seca e áspera... será algum erro? Será que serviram carvão ao invés de bolo?"
   },
-  "CoconutCharcoalCake": {
+  "CharcoalBakedAjilenakhCake": {
     "name": "Bolo de Coco-Carvão",
-    "description": "Um lanche de cor escura. As tâmaras foram primeiro assadas e moídas após serem peneiradas, adicionadas a massa, misturadas igualmente, e então assada. O produto final não parece nada impressionada, mas exala o aroma fresco das Tâmaras, e o sabor é melhor com um pouco de geleia."
+    "description": "Um lanche de cor escura. As tâmaras foram primeiro assadas e moídas após serem peneiradas, adicionadas a massa, misturadas igualmente, e então assada. O produto final não parece nada impressionante, mas exala o aroma fresco das Tâmaras, e o sabor é melhor com um pouco de geleia."
   },
-  "DeliciousCoconutCharcoalCake": {
+  "DeliciousCharcoalBakedAjilenakhCake": {
     "name": "Bolo de Coco-Carvão Delicioso",
     "description": "Um lanche de cor escura. O lanche foi feito atenciosamente, e a fragrância de tâmaras é vívida e confortante. O bolo é fofinho e delicado ao entrar em sua boca, acabando com a exaustão. Um livro não pode ser julgado por sua capa, por isso um bolo não deve ser condenado por sua aparência."
   },
@@ -7765,11 +7793,31 @@
   },
   "UtmostCare": {
     "name": "Cuidado Extremo",
-    "description": "Especialidade Candace. O aroma desse prato atinge seu nariz antes de ser servido. Parece que as habilidades guardiãs de Candace também incluem a satisfazer paladares... Mas isso é uma quantidade extraordinária de Arroz Misturado de Aaru. Como você vai lidar com essa montanha de \"consideração excessiva\"?"
+    "description": "Especialidade de Candace. O aroma desse prato atinge seu nariz antes de ser servido. Parece que as habilidades guardiãs de Candace também incluem a satisfazer paladares... Mas isso é uma quantidade extraordinária de Arroz Misturado de Aaru. Como você vai lidar com essa montanha de \"consideração excessiva\"?"
   },
   "SparklingBerryJuice": {
     "name": "Suco de Baga com Gás",
     "description": "Uma bebida nova não alcoólica. Valberries maduras em graus diferentes acrescentam camadas de azedo e doce para esse suco, enquanto a bebida reluzente refresca a alma. É a companhia perfeita para um momento de descanso agradável."
+  },
+  "SuspiciousRoseCustard": {
+    "name": "Creme de Rosa Suspeita",
+    "description": "Uma sobremesa de leite fermentado. Não parece haver nada de errado com ela, mas assim que é colocada na boca... faz estremecer os dentes por causa de sua acidez. A falta de gosto pode ser resolvida adicionando-se açúcar, mas o medo persistente da acidez e adstringência não pode ser superado facilmente."
+  },
+  "RoseCustard": {
+    "name": "Creme de Rosa",
+    "description": "Uma sobremesa feita de leite fermentado. Quando o leite é fermentado e filtrado para virar iogurte, misture o açúcar antes de guarnecer com rosas desidratadas e nozes picadas. No início, este prato era popular apenas entre aventureiros e comerciantes itinerantes, mas agora, é servida como café da manhã ou sobremesa da hora do chá por toda Sumeru."
+  },
+  "DeliciousRoseCustard": {
+    "name": "Creme de Rosa Deliciosa",
+    "description": "Uma sobremesa de leite fermentado. A coalhada adensada, as pétalas frescas e as nozes crocantes misturam-se em um sabor suave e doce. O que você sente ao engolir é o gosto do leite, e mais tarde a fragrância floral é que aflora."
+  },
+  "ExtravagantSlumber": {
+    "name": "Sono Extravagante",
+    "description": "A especialidade da Layla. Nozes polvilhadas são como estrelas na noite profunda e tranquila. Depois de experimentar, sente-se uma paz repentina mesmo após um dia muito corrido. Ao contar a Layla sobre minhas impressões, ela exibiu uma expressão mista de felicidade e arrependimento: \"Isso é ó-ótimo! Ah, se pelo menos funcionasse para mim também.\""
+  },
+  "Halvamazd": {
+    "name": "Halvamazd",
+    "description": "A especialidade da Nahida. Diz-se que Mazi significa \"sabedoria\" em Sumeru. Uma \"sabedoria\" assim requintada é realmente irresistível. Nahida exibia um sorriso suave no olhar: \"As anêmonas do mar ajudaram e testemunharam o crescimento dos peixes, então não é nada além do normal que os peixinhos quiseram dar algo em troca\"."
   },
   "RecipeItem": {
     "name": "Ingredientes",
@@ -8233,7 +8281,7 @@
   },
   "RecipePitaPocket": {
     "name": "Receita: Pão Pita",
-    "description": "Uma receite escrita à mão de Pão Pita, com dicas sobre como cozinhar numa letra menor. A caligrafia da autora não é boa. Algumas letras estão trêmulas, talvez devido a má condição em que ela estava. Entretanto, toda palavra foi escrita com cuidado.\\nSe você aprendeu a fazer essa comida, não se esqueça de dividir essa deliciosa refeição com ela na próxima vez que vier para a Vila Gandharva."
+    "description": "Uma receita escrita à mão de Pão Pita, com dicas sobre como cozinhar numa letra menor. A caligrafia da autora não é boa. Algumas letras estão trêmulas, talvez devido à má condição em que ela estava. Entretanto, toda palavra foi escrita com cuidado.\\nSe você aprendeu a fazer essa comida, não se esqueça de dividir essa deliciosa refeição com ela na próxima vez que vier para a Vila Gandharva."
   },
   "RecipePanipuri": {
     "name": "Receita: Panipuri",
@@ -8273,17 +8321,17 @@
   },
   "RecipeMeatLoversMushroomPizza": {
     "name": "Receita: Pizza de Carne e Cogumelos",
-    "description": "Uma receita passo a passo detalhada para fazer Pizza de Carne e Cogumelos"
+    "description": "Uma receita passo a passo detalhada para fazer Pizza de Carne e Cogumelos."
   },
   "RecipeSunsetBerryTea": {
     "name": "Receita: Chá de Baga do Crepúsculo",
-    "description": "Uma receita passo a passo detalhada para fazer Chá de Baga do Crepúsculo"
+    "description": "Uma receita passo a passo detalhada para fazer Chá de Baga do Crepúsculo."
   },
   "RecipeMilkyMushroomCrispTower": {
     "name": "Receita: Torre Crocante de Cogumelo ao Leite",
     "description": "Receita passo a passo detalhada de como fazer Torre Crocante de Cogumelo ao Leite."
   },
-  "RecipeCoconutCharcoalCake": {
+  "RecipeCharcoalBakedAjilenakhCake": {
     "name": "Receita: Bolo de Coco-Carvão",
     "description": "Uma receita passo a passo detalhada para fazer Bolo de Coco-Carvão."
   },
@@ -8306,6 +8354,10 @@
   "RecipeFruitsOfTheFestival": {
     "name": "Receita: Frutas do Festival",
     "description": "Uma receita com o passo a passo detalhado de como fazer Frutas do Festival."
+  },
+  "RecipeRoseCustard": {
+    "name": "Receita: Creme de Rosa",
+    "description": "Uma receita passo a passo detalhada para fazer Creme de Rosa."
   },
   "CraftedItems": {
     "name": "Produtos Combinados",
@@ -8741,11 +8793,11 @@
   },
   "TurbidPrism": {
     "name": "Prisma Turvo",
-    "description": "Um componente danificado obtido após derrotar a Estrutura Primordial.\\nDizem que essas máquinas são diferentes das Máquinas das Ruínas oriundas das profundezas do deserto, pois não foram feitas como emissárias da destruição ou conquistas."
+    "description": "Um componente antigo obtido após derrotar a Estrutura Primordial.\\nDizem que essas máquinas são diferentes das Máquinas das Ruínas oriundas das profundezas do deserto, pois não foram feitas como emissárias da destruição ou conquistas."
   },
   "RadiantPrism": {
     "name": "Prisma Radiante",
-    "description": "Um componente danificado obtido após derrotar a Estrutura Primordial.\\nO senhor do deserto desolado tinha um sonho, e fez muitas promessas.\\nAs lendas do deserto dizem que essas máquinas eram ferramentas para essas promessas desconhecidas que agora vivem somente nas suas memórias de armazenamento mecânicas."
+    "description": "Um componente requintado obtido após derrotar a Estrutura Primordial.\\nO senhor do deserto desolado tinha um sonho, e fez muitas promessas.\\nAs lendas do deserto dizem que essas máquinas eram ferramentas para essas promessas desconhecidas que agora vivem somente nas suas memórias de armazenamento mecânicas."
   },
   "HurricaneSeed": {
     "name": "Semente de Furacão",
@@ -8903,6 +8955,22 @@
     "name": "Tetraedro da Luz Guiadora",
     "description": "Um componente de núcleo obtido após derrotar um misterioso mecanismo das ruínas.\\nAté hoje, esses dispositivos não esqueceram os sonhos de seus mestres, ou os seus deveres; construir mil palácios, administrar três mil máquinas, cultivar dez mil flores que nunca desabrocharão, e recriar um paraíso agora enterrado sob as areias do deserto pelo bem de todos que vivem nesse mundo.\\nApesar do senhor do deserto não estar mais vivo, e esses sonhos terem sido corrompidos por sussurros pecaminosos, e por todos os pilares mágicos terem quebrado ou colapsado, a grande besta agraciada pelo rei ainda se esconde na grande tempestade."
   },
+  "QuelledCreeper": {
+    "name": "Vinhas da Destruição",
+    "description": "A forma final consolidada do Hypostasis Dendro. As vinhas grossas protegem o cristal elemental cúbico.\\nOs Hypostasis Elementais existem contrários a qualquer lógica e são os mais distantes da aparência de vida existente, e ainda assim são os mais adaptados a viver, provavelmente nunca deveriam ter aparecido nesse mundo. Dizem que tais Hypostasis Elementais tem inteligência o suficiente para \"aprender\" e, portanto, aprenderam as cores e sonhos da floresta, um processo que os transformou nesse formato ao longo de milhares de anos."
+  },
+  "PuppetStrings": {
+    "name": "Fios da Marionete",
+    "description": "Tubos inseridos na parte de trás de uma marionete mecânica. As cores que fluem dentro deles às vezes são monótonas, e outras vezes, vibrantes, e o seu contraste é tão grande a ponto de ser assustador.\\nEles forneciam energia para a marionete, e, simultaneamente, serviam como suas cordas, controlando-a e prendendo-a.\\nUma vez que o suporte desses tubos foi perdido, a marionete ficou fraca como um recém-nascido, quase incapaz de se mover."
+  },
+  "MirrorOfMushin": {
+    "name": "Lentes Desalmadas",
+    "description": "O espelho que estava no peito de Shouki no Kami para separá-lo do mundo externo. O símbolo mitsudomoe está gravado nele como uma demonstração proposital de posição e poder.\\nEntretanto, esse símbolo não é uma demonstração de obediência à Deusa do Trovão,\\nÉ, na verdade, uma lâmina apontada para os poderes existentes neste mundo.\\nO espelho também não é um meio de impedir os olhares de julgamento das pessoas, Mas um baluarte contra este mundo maculado. Dentro deste grande templo, o castigo deve ser aplicado e a ignorância deve ser purificada,\\nSonhos devem ser abandonados, desejos devem ser cortados, e o carma deve ser restabelecido."
+  },
+  "DakasBell": {
+    "name": "Sino do Vazio",
+    "description": "Essa rótula costumava conectar partes mecânicas juntas, seu formato é quase como o de um sino. Parece quase delicado, mas pode ser usado para armazenar quantidades inimagináveis de energia.\\nSe conectado ao braço de alguém, a pessoa perderá toda a sensação nele.\\nE caso essa rótula seja colocada na perna de alguém, a força de suas pernas se dissipará.\\nColoque-o no crânio de alguém e...\\nAh. O ódio, dor, insanidade, orgulho — permanecerão intactos.\\nQue sorte."
+  },
   "TileOfDecarabiansTower": {
     "name": "Fragmento de Azulejo de Decarabian",
     "description": "Material de Ascensão de Armas.\\nO local atualmente conhecido como Toca de Stormterror já foi a capital construída por Decarabian, o Arconte Anemo. Desde que esse sonho próspero foi criado pelo seu poder, os pedaços partidos deixados para trás quando o sonho foi destruído ainda possuem grandes poderes."
@@ -9033,7 +9101,7 @@
   },
   "MaskOfTheWickedLieutenant": {
     "name": "Máscara do Tenente Perverso",
-    "description": "Material de Ascensão de Armas.\\nOs contos populares falam sobre uma oni chamada Torachiyo. Torachiyo era uma guerreira muito habilidosa. Diziam que ela podia dançar entre mil espadas, rasgando seu juunihitoe como pétalas de violeta, e ainda assim não recebia um único golpe. No entanto, essa oni traiu a Shogun e se revoltou. Perdeu um braço e um chifre em uma luta antes de fugir e acabou morrendo em um ataque de loucura furiosa.\\nDizem que os teimosos onis muitas vezes guardam medo e angústia em seus corações. Que fantasiam sobre a eternidade, mas temem a realidade. Que podem ser consumidos pelo terror, ou que a raiva é sua justa recompensa. Esta máscara retrata Torachiyo, com as presas à mostra."
+    "description": "Material de Ascensão de Armas.\\nOs contos populares falam sobre uma Oni chamada Torachiyo. Torachiyo era uma guerreira muito habilidosa. Diziam que ela podia dançar entre mil espadas, rasgando seu juunihitoe como pétalas de violeta, e ainda assim não recebia um único golpe. No entanto, essa oni traiu a Shogun e se revoltou. Perdeu um braço e um chifre em uma luta antes de fugir e acabou morrendo em um ataque de loucura furiosa.\\nDizem que os teimosos Oni muitas vezes guardam medo e angústia em seus corações. Que fantasiam sobre a eternidade, mas temem a realidade. Que podem ser consumidos pelo terror, ou que a raiva é sua justa recompensa. Esta máscara retrata Torachiyo, com as presas à mostra."
   },
   "MaskOfTheTigersBite": {
     "name": "Máscara da Mordida do Tigre",
@@ -9041,7 +9109,7 @@
   },
   "MaskOfTheOneHorned": {
     "name": "Máscara Daquele com Um Chifre",
-    "description": "Material de Ascensão de Armas.\\nNas antigas canções das babás onis, Torachiyo era uma jovem elegante, de corpo forte e rosto bonito. Ela havia sido uma querida tenente da Shogun, e a seguiu até os sombrios reinos abissais para combater os profanados, aumentando o renome dos onis, cujos descendentes diminuíam a cada dia.\\nNinguém mais canta essas canções, mas a máscara de uma oni com chifres, mesmo em um formato diferente, ainda possui um poder além do normal."
+    "description": "Material de Ascensão de Armas.\\nNas antigas canções das babás Oni, Torachiyo era uma jovem elegante, de corpo forte e rosto bonito. Ela havia sido uma querida tenente da Shogun, e a seguiu até os sombrios reinos abissais para combater os profanados, aumentando o renome dos Oni, cujos descendentes diminuíam a cada dia.\\nNinguém mais canta essas canções, mas a máscara de uma Oni com chifres, mesmo em um formato diferente, ainda possui um poder além do normal."
   },
   "MaskOfTheKijin": {
     "name": "Máscara de Kijin",
@@ -9257,15 +9325,15 @@
   },
   "DomainReliquaryTierIII": {
     "name": "Relicário do Domínio - Categoria III",
-    "description": "Um relicário usado para guardar artefatos. Que aquele que o veja, seja amado.\\n\\nCada relicário irá conceder um artefato do seguinte conjunto de artefatos:\\n·Berserker\\n·Instrutor\\nExilado"
+    "description": "Um relicário usado para guardar artefatos. Que aquele que o veja, seja amado.\\n\\nCada relicário irá conceder um artefato dos seguintes conjuntos de artefatos:\\n·Berserker\\n·Instrutor\\nExilado"
   },
   "DomainReliquaryTierII": {
     "name": "Relicário do Domínio - Categoria II",
-    "description": "Um relicário usado para guardar artefatos. Que aquele que o veja, seja abençoado.\\n\\nCada relicário irá conceder um artefato do seguinte conjunto de artefatos:\\n·Último Juramento do Gladiador\\n·Trupe Itinerante\\n·Berserker\\n·Instrutor\\nExilado"
+    "description": "Um relicário usado para guardar artefatos. Que aquele que o veja, seja abençoado.\\n\\nCada relicário irá conceder um artefato dos seguintes conjuntos de artefatos:\\n·Último Juramento do Gladiador\\n·Trupe Itinerante\\n·Berserker\\n·Instrutor\\nExilado"
   },
   "DomainReliquaryTierI": {
     "name": "Relicário do Domínio - Categoria I",
-    "description": "Um relicário usado para guardar artefatos. Que aquele que o veja, seja abençoado.\\n\\nCada relicário irá conceder um artefato do seguinte conjunto de artefatos:\\n·Último Juramento do Gladiador\\n·Trupe Itinerante\\"
+    "description": "Um relicário usado para guardar artefatos. Que aquele que o veja, seja abençoado.\\n\\nCada relicário irá conceder um artefato dos seguintes conjuntos de artefatos:\\n·Último Juramento do Gladiador\\n·Trupe Itinerante\\"
   },
   "ReliquaryWanderersTroupeAndGladiator": {
     "name": "Relicário: Trupe Itinerante e Gladiador",
@@ -9611,21 +9679,69 @@
     "name": "Uma Carta Sucinta",
     "description": "Uma carta sucinta escrita em códigos. Você não sabe quem a escreveu ou porque ela foi escrita, mas ela acabou aqui de toda forma."
   },
+  "SilverTwig": {
+    "name": "Galho Primário",
+    "description": "Um novo ramo foi recolhido do centro do mundo.\\nAntes havia uma enorme árvore que atuava em todas as partes do mundo; este ramo fazia parte dela. Embora tenha sido quebrado, este ramo nunca perdeu a ligação que tinha com a árvore. Dessa forma, enquanto a madeira daquela gigante branca, que simboliza o centro do mundo, não morrer, o ramo também nunca murchará.\\n\\n\"Árvore\" é um símbolo de vida. Nas histórias do mundo todo sempre há alguém que, em seu leito de morte, confia seus pensamentos aos galhos de alguma árvore branca. É por isso que vida e a esperança não serão perdidas, e ramos crescerão e brotarão em lugares onde houve sol, chuva e orvalho para por fim florescer e dar frutos.\\nE \"Árvore\" também é símbolo de sabedoria. Nas lendas de alguma parte do mundo, um sábio pendurado de cabeça para baixo em uma árvore obteve o conhecimento de escrever runas, e o reino construído através da raiz da árvore finalmente conseguiu um vislumbre do segredo do submundo.\\nTodo conhecimento, memória e experiência fluem nas raízes desta árvore. Assim como riachos fluem para rios, e rios para o oceano, eles voltam a se transformar em chuva e caem sobre a terra. Assim como a vida."
+  },
   "VaguelyReadableInscription": {
     "name": "Inscrição Vagamente Legível",
     "description": ""
   },
-  "AkademiyaInvestigationTeamsReport": {
-    "name": "Relatório Investigado pela Academia",
+  "IncompleteMedicalRecords": {
+    "name": "Registros Médicos Incompletos",
     "description": ""
   },
-  "SealedOrders": {
-    "name": "Ordem Selada",
+  "SomeonesDiary": {
+    "name": "Diário de Autoria Desconhecida",
     "description": ""
   },
-  "OldOrders": {
-    "name": "Ordem Antiga",
+  "EventNotice": {
+    "name": "Avisos de Eventos",
     "description": ""
+  },
+  "HaniyyahsNotesFirstPart": {
+    "name": "Notas de Haniyyah - Primeira Parte",
+    "description": "Notas antigas deixadas por Haniyyah, parecem registrar algo sobre sua família."
+  },
+  "HaniyyahsNotesSecondPart": {
+    "name": "Notas de Haniyyah - Segunda Parte",
+    "description": "Notas antigas deixadas por Haniyyah, parecem registrar algo sobre sua família."
+  },
+  "CluesForYaeMiko": {
+    "name": "Pistas para Yae Miko",
+    "description": "Depois de fotografar o presente de Dori com cuidado, você combina as fotos e as pistas que obteve na análise anterior — o que resulta nesse conjunto de notas a serem enviadas para que Yae Miko as avalie. Yae Miko não é nenhuma pesquisadora, mas tem muito conhecimento e experiência e, por isso, deve ser capaz de encontrar alguma informação relevante entre essas pistas."
+  },
+  "CynosMissive": {
+    "name": "Carta de Cyno",
+    "description": "Uma carta que Cyno pediu para Sido lhe entregar. Parece dizer algo sobre o que está acontecendo..."
+  },
+  "LaylasListOfOrders": {
+    "name": "Pedido de Layla",
+    "description": "Essa é uma lista contendo os itens que Layla solicitou à Comerciante Poderosa. Os ingredientes culinários que a Layla queria comprar estão escritos aqui.\\nA lista menciona o endereço onde ela se encontrou com a Comerciante Poderosa e o nome dos itens que Layla comprou. Há uma menção especial de um item \"nunca visto antes no Grande Bazar\" comprado por ela, como se fosse uma dica para que a identidade de Layla fosse lembrada. Entretanto, por algum motivo, o endereço do encontro não era na Cidade de Sumeru, e sim em uma estrada fora da cidade. Essa Comerciante Poderosa parece saber bem se planejar, já que aceitou o pedido de Layla enquanto ainda transportava suas mercadorias."
+  },
+  "InitialInvestigationClues": {
+    "name": "Pistas Iniciais da Investigação",
+    "description": "Pistas que você reuniu da tenda de Geleia Floral da Copa Nilotpala de Domadores de Feras enquanto ninguém olhava — você fotografou algumas Geleias Florais e a receita de Geleia Floral.\\nEntretanto, essas fotos vão precisar de análise profissional para que possam resultar em informações relevantes."
+  },
+  "HaniyyahsNotes": {
+    "name": "Notas de Haniyyah",
+    "description": "Notas antigas deixadas por Haniyyah, parecem registrar algo sobre sua família."
+  },
+  "SpecialWisdomOrb": {
+    "name": "Orbe da Sabedoria Especial",
+    "description": "O Orbe da Sabedoria parece familiar, apesar de suas parte de trás e sua base parecerem danificadas, como se alguém tivesse lutado por ele. Ao se olhar mais atentamente, é possível ler o seguinte: \"Amostra de aplicação de comando na porta dos fundos\" e \"Confirmado em não possuir valor, pode ser descartado\". Também há um pouco de sangue. Parece que alguém não apenas roubou isso, mas que também se deparou com algum infortúnio..."
+  },
+  "MysteriousFatuiLetter": {
+    "name": "Carta Fatui Misteriosa",
+    "description": "Uma carta que você encontrou depois de derrotar um Agente de Dívidas dos Fatui. Você não sabe porque ele estava com ela."
+  },
+  "DerivedContents": {
+    "name": "Conteúdo Decifrado",
+    "description": "Conteúdo decifrado depois de ter suas pistas reunidas."
+  },
+  "XudongsLetter": {
+    "name": "Carta de Xudong",
+    "description": "Uma carta deixada por Xudong. Parece haver algo pressionado dentro dela..."
   },
   "SilkFlowerSeed": {
     "name": "Semente de Flor de Seda",
@@ -10683,6 +10799,18 @@
     "name": "Conquista: Sonhos Espelhados",
     "description": "Estilo de Cartão de Visita.\\n\"Um milênio de obsessão e lembranças trágicas foi perdido nas tempestades de areia daquelas noites flamejantes. Mas o eterno oásis verdejante ainda deve estar aconchegante como era no começo...\""
   },
+  "NahidaCrescent": {
+    "name": "Nahida: Contemplando o Luar",
+    "description": "Estilo de cartão de visita.\\nA lua nova que se ergue no céu admirará a paisagem do crepúsculo, porque sua luz brilha por todo o mundo; O sol crepuscular sente inveja da lua, porque ela tem milhares de sonhos a lhe fazerem companhia."
+  },
+  "LaylaDaydream": {
+    "name": "Layla: Sonhando Acordado",
+    "description": "Estilo de cartão de visita.\\n\"O céu estrelado do sonho iluminará seu caminho, e o cristal em seu coração também vai refletir um brilho claro.\""
+  },
+  "TravelNotesFungusLand": {
+    "name": "Passe de Batalha: Origem Fúngica",
+    "description": "Estilo de cartão de visita.\\n\"...Viajantes, não se entristeçam, pois o vento do amanhecer certamente soprará os esporos dos fungos e os levará para os campos dos belos sonhos esperançosos de vocês...\""
+  },
   "AnemoculusResonanceStone": {
     "name": "Pedra de Ressonância de Anemoculus",
     "description": "Pode usar em Mondstadt para buscar 'Anemoculus Perdidos' nos arredores.\\nEssa pedra tem características similares às Estátuas Anemo das Estátuas dos Sete e gera ressonância com Anemoculus.\\nAs Pedras de Ressonância de Oculus são imitações brutas das Estátuas dos Sete construídas pelos antigos. Mas é exatamente devido a essa rudeza que desejam a força de oculus elemental e oferecendo uma boa oportunidade a devotos e aventureiros para encontrar oculus."
@@ -10915,6 +11043,10 @@
     "name": "\"Aparelho Fotográfico Borbulhante\"",
     "description": "Quando é utilizado, esse dispositivo pode gravar a paisagem e adicionar um tom de cor especial.\\nUm dispositivo estranho de origem desconhecida. As fotos que ele tira possuem um efeito peculiar. Ninguém imaginaria que uma água sem água dentro poderia produzir fotos com muitas bolhas nelas, dando uma sensação de fantasia?\\nUm certo Capitão de Cavalaria descreveu essa máquina antes como capaz de \"capturar o anseio das pessoas por dias refrescantes\"."
   },
+  "WisdomOrb": {
+    "name": "Orbe da Sabedoria",
+    "description": "Um item indispensável dado a você pelo organizador da Copa Nilotpala de Domadores de Feras. Com ele você poderá capturar, armazenar e controlar Cogumelos de um determinado nível de inteligência. Dizem que é obra de um erudito chamado Kautilya. Somente aqueles capazes de manusear esse item com maestria serão dignos de participar deste torneio. Dito isto, por que este item é tão familiar? Tem características que você parece já ter visto antes..."
+  },
   "CloudRetainersDamaskedDevice": {
     "name": "Dispositivo Adamascado da Retentora de Nuvem",
     "description": "Um dispositivo feito de papel na forma de um pássaro que Retentora de Nuvem deu para você.\\nApesar de poder ser chamado um \"dispositivo\", você não consegue ver nenhum componente mecânico tradicional aqui, bem, não do exterior. Parece que as habilidades dessa Adeptus como uma mecânica estão ainda melhores..."
@@ -11046,6 +11178,10 @@
   "SilkenPrint": {
     "name": "Selo de Seda",
     "description": "Uma Placa de Oração com arte colorida exibindo a adorável paisagem de Inazuma esculpida na requintada Madeira Yumemiru.\\nVocê pode usar a criação subespacial para estampar esta elegante cena em seu Bule de Relachá."
+  },
+  "NaturesTrueFruit": {
+    "name": "Fruto Verdadeiro da Natureza",
+    "description": "Essa fruta foi trazida como uma lembrança de Sumeru pelo Espírito do Bule Viajador, ela possui uma fragrância fantástica.\\nAo inalar sua doce fragrância, belas imagens se formam na mente, permitindo que se manipule o poder da Criação Sub-espacial para recriar as vistas fantásticas de Sumeru no Paraíso Mágico..."
   },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "As Nuvens Montanhosas Jorram Chuva Dourada",
@@ -11363,6 +11499,62 @@
     "name": "Fragrância de Bordo e Chá",
     "description": "Um diagrama detalhado passo a passo para fazer Fragrância de Bordo e Chá.\\nO layout desta Casa de Chá no Estilo de Inazuma usou a Casa de Chá Komore como referência. As mesas de madeira de bordo e os objetos de cerimônia do chá são semelhantes, com um estilo elegante, mas não excessivamente austero, acolhedor mas não casual.\\nA lenda diz que quem se senta em uma sala de chá repleta da fragrância de madeira de bordo e chá será abençoado com várias formas de inspiração. Como tal, alguns poetas tendem a escrever sua poesia enquanto bebem chá, como o andarilho de cabelos brancos que deu a muitas plantas seus elegantes apelidos.\\nDepois de usar, você pode entrar na interface de colocação para vê-la.\\nCompanheiros que preferem este conjunto: Thoma, Kaedehara Kazuha"
   },
+  "ForestPatrolAnecdotes": {
+    "name": "Anedotas de Patrulha Florestal",
+    "description": "Um quarto de descanso totalmente equipado e mobiliado. É inspirado nas residências dos guardas-florestais da Vila Gandharva. O layout das salas é otimizado para acomodar totalmente as tarefas mais frequentes que os guardas-florestais costumam realizar.\\nAssim que receberem uma notificação, os guardas-florestais devem fazer as malas e sair imediatamente. Retornando de sua patrulha, eles ainda precisam classificar, processar e analisar as amostras coletadas. Se por acaso eles tenham que trabalhar até tarde da madrugada, eles podem usar o fogão para aquecer um pequeno lanche e reabastecer suas forças. É por isso que este tipo de sala permite que os patrulheiros estejam sempre preparados para qualquer imprevisto que possa surgir, desde que a organização dos turnos de patrulha seja razoável.\\nEste conjunto de decorações é o preferido dos seguintes companheiros: Tighnari e Collei."
+  },
+  "CoalescedBrilliance": {
+    "name": "Brilho Condensado",
+    "description": "Um camarim onde são exibidos todos os tipos de joias e joias preciosas. A suntuosidade transparente em cada canto desta sala. Basta colocar uma luminária de chão em um dos cantos para garantir que o brilho dos anéis seja refletido por toda a sala.\\nEsta sala é como uma sobremesa com a quantidade exata de açúcar e um sabor que não se dissipa para os amantes da ostentação. Os hóspedes que tiverem o prazer de acessar esta sala poderão descobrir todos os tipos de detalhes incríveis das muitas joias expostas na sala, não importa de que ângulo sejam vistas.\\nEsta decoração é a preferida das seguintes companheiras: Dori e Nilou."
+  },
+  "FervidAroma": {
+    "name": "Aroma Fervente",
+    "description": "Este luxuoso esquema de decoração imita o interior de um conhecido café da Cidade de Sumeru, mas incorpora as mudanças necessárias para torná-lo adequado para a residência do Paraíso Mágico do Bule. Tem uma decoração soberba perfeitamente organizada. No interior, misturam-se os vapores das cozinhas e o delicioso aroma das iguarias que são servidas, inundando o ambiente com uma sensação agradável. Basta uma boa companhia e uma garrafa de vinho para desfrutar da melhor experiência gastronômica possível.\\nAqueles que viajam frequentemente de um lugar para outro escolhem sempre com antecedência os restaurantes onde vão comer, tendo em conta a dimensão do estabelecimento e a quantidade de porções. Para esse tipo de pessoa, uma churrascaria é sempre a opção mais segura. Mesmo quem viaja sozinho pode aproveitar o ambiente animado deste café para manter em segredo o propósito da sua viagem ou sentir, observar e analisar a situação da segurança deste movimentado estabelecimento."
+  },
+  "OfSettledThoughts": {
+    "name": "Pensamentos Enraizados",
+    "description": "Um estúdio totalmente mobiliado com estantes tão altas quanto as paredes e abarrotado com as melhores coleções de livros de todos os tempos. Quando uma pessoa comum olha ao redor das prateleiras e contempla a variedade de cópias, é inevitável se sentir um pouco sobrecarregado.\\nEmbora, é claro, a barreira entre saber e não saber seja uma linha tênue que qualquer um com coragem pode cruzar à vontade Se alguém se dedicar a isso e se sentar em uma sala como essa todos os dias com um plano claro para estudar e analisar livro após livro, será capaz de adquirir uma quantidade surpreendente de conhecimento muito mais cedo do que se poderia esperar.\\nEste conjunto de decorações é o preferido do seguinte companheiro: Cyno."
+  },
+  "AFarewellBriefToBustleAndBother": {
+    "name": "Despedida a Agitação e Preocupação",
+    "description": "Um quarto decorado no mais puro estilo de Sumeru. Está equipado com todo o tipo de objetos e utensílios que as pessoas utilizam no seu dia-a-dia. Graças ao efeito restaurador da criação dimensional, cada peça de mobiliário parece recém-polida, dando ao ambiente um ar de ordem, limpeza e espaço perfeito para descanso e relaxamento.\\nMesmo quando você vive despreocupado, sempre haverá negócios que podem levar a sentimentos negativos. Mesmo quando um estiver acima dos outros, você não poderá evitar situações difíceis de resolver. Nesses momentos, a melhor solução é esquecer todas as suas preocupações e ter uma boa noite de sono. Você só pode enfrentar as vicissitudes da vida quando tem baterias bem carregadas.\\nEste conjunto de decorações é o preferido das seguintes companheiras: Nahida e Layla."
+  },
+  "DwellingAmidstTheSands": {
+    "name": "Residência entre as Areias",
+    "description": "Um quarto simples decorado com móveis muito populares na Vila Aaru. Quem vive no deserto tem que lidar com todo tipo de tarefas particulares no seu dia a dia: desde sacudir as partículas de areia levadas pelos ventos quentes, manter um nível de temperatura e umidade adequado para as pessoas, etc.\\nTudo isso pode não ser necessário no clima agradável do Paraíso Mágico do Bule, mas não é desnecessário. São precisamente esses tipos de tarefas comuns que fazem de um espaço um lugar acolhedor. E esse design dá atenção especial a toda essa série de detalhes. Ao entrar na sala, você terá a sensação de estar em uma casa no meio do deserto.\\nEste conjunto de decorações é o preferido da seguinte companheira: Candace."
+  },
+  "AmidstProsperingMarkets": {
+    "name": "Mercado Próspero",
+    "description": "Uma área comercial movimentada e decorada com bom gosto, que lembra as ruas repletas de barracas da cidade de Sumeru ou o projeto do Grande Bazar. Aqui você encontra tudo; desde bancas de frutas e legumes frescos e petiscos deliciosos para animar o dia, até produtos do dia a dia, e tudo a poucos metros de distância. Este tipo de mercado é caracterizado pelo seu ambiente divertido e movimentado.\\nHá rumores de que a distribuição das barracas e lojas nas ruas de Sumeru em ambos os lados da rua segue uma organização planejada resultante das investigações realizadas pela Academia. O objetivo é aproveitar o uso do espaço e reduzir a necessidade de gerenciamento de tarefas para oferecer um serviço de maior qualidade aos clientes.\\nEste conjunto de decorações é o preferido da seguinte companheira: Dori."
+  },
+  "DeepInTheQuietForest": {
+    "name": "Tranquilidade da Floresta Profunda",
+    "description": "Um assentamento formado por edifícios típicos das florestas de Sumeru, que lembram a estética da Vila Gandharva. Não importa onde você esteja, os tons clássicos de esmeralda e azul-petróleo deste design farão com que você se sinta no meio da floresta.\\nEmbora, é claro, a vida na floresta exija todo um repertório de habilidades de sobrevivência para se encaixar aos pequenos inconvenientes que um clima tão úmido apresenta. Também não custa nada se familiarizar com os costumes e orientações dos guardas-florestais...\\nEste conjunto de decorações é o preferido dos seguintes companheiros: Collei e Cyno."
+  },
+  "OfTwirlingDancesUnfettered": {
+    "name": "Danças Rodopiantes",
+    "description": "Um teatro majestoso e bonito. Incluído neste projeto está não apenas o grande palco, mas também uma fonte refinada, toda adornada com as mais belas flores replicadas pela criação dimensional. Este teatro é um verdadeiro reflexo da majestade e beleza do Teatro Zubayr.\\nHá rumores de que algumas apresentações são mais bem vistas à noite, já que a disposição das lâmpadas do teatro não deixa o público apático e permite que todos os participantes desfrutem de uma visão clara de todos os dançarinos de qualquer ângulo.\\nEste conjunto de decorações é o preferido da seguinte companheira: Nilou."
+  },
+  "QuietTimesByTheRiverbank": {
+    "name": "Tempos Calmos nas Margens",
+    "description": "Um assentamento tranquilo que reflete a paisagem rústica da Vila Vimara. Não importa se você não está perto do rio ou do mar, o cheiro de peixe fresco na vila sempre consegue evocar o som das ondas no coração de seus habitantes.\\nComparado aos acampamentos de guardas-florestais, o ritmo de vida na vila é completamente diferente. A maioria de seus habitantes não tem responsabilidades urgentes, então suas vidas são relativamente calmas. Com certeza é o lugar ideal para relaxar."
+  },
+  "SetekhDemurs": {
+    "name": "Rejeição de Setekh",
+    "description": "Um assentamento formado por construções robustas que protegem a estética da Vila Aaru. Esses tipos de casas não sofrem erosão do vento ou da areia, com maior resistência a ataques inesperados de feras, ou intrusos do que as casas de madeira. No entanto, devido aos materiais especiais utilizados na construção, é necessário verificar regularmente o estado das paredes portantes de cada habitação e verificar se surgiram fissuras como reflexo da exposição prolongada ao sol e às tempestades. Essa simples tarefa de manutenção fez com que os aldeões desenvolvessem uma tendência óbvia à meticulosidade e cuidado.\\nEste conjunto de decorações é o preferido das seguintes companheiras: Candace e Layla."
+  },
+  "TheTravelingTroopsPomp": {
+    "name": "Ostentação da Tropa Viajante",
+    "description": "Um acampamento de estilo militar equipado com todos os tipos de armas, materiais e mercadorias. Está rodeado por fortificações defensivas. Fogueiras devidamente organizadas são um requisito essencial para realizar operações noturnas. Em teoria, esses tipos de acampamentos podem lidar com um grande número de inimigos e, com o número necessário de soldados, podem até servir como um posto de apoio na frente de defesa.\\nNo entanto, mover e montá-los exige mais esforço e as barracas não são projetados para resistir ao frio e à chuva, por isso as condições do acampamento são geralmente adversas... Por isso é um acampamento muito popular entre os mercenários, lutadores habilidosos e capazes de dormir à noite ao ar livre sem sequer vacilar."
+  },
+  "AmidstScentsAndSerenity": {
+    "name": "Entre Cheiros e Serenidade",
+    "description": "Um jardim refinado e sereno que imita a estética dos pavilhões Jardim Razan e Pardis Dhyai. Este espaço ignora a disparidade estética entre os diferentes estilos arquitetônicos e se concentra em criar uma atmosfera relaxante.\\nJovens botões de flores desabrocham em completa serenidade e lâmpadas iluminam a superfície da água da fonte com seus brilhos dourados... Um anoitecer, caminhando por esse jardim sinuoso, conseguirá silenciar todas as preocupações vãs que tão teimosamente se agarram à mente durante o dia...\\nEste conjunto de decorações é o preferido da seguinte companheira: Nahida."
+  },
+  "ChorusOfDesertAndWood": {
+    "name": "Coro do Deserto e da Floresta",
+    "description": "Um espaço maravilhoso cheio de fertilidade. A criação dimensional do Paraíso Mágico do Bule permitiu ajustar as características ambientais do subespaço para que todos os tipos de plantas possam coexistir. A coalescência da vegetação mais característica do deserto e a vegetação frondosa da floresta conferem vida e harmonia a esta terra.\\nPara pesquisadores que amam plantas, essas áreas são verdadeiros tesouros para pesquisa, embora esses bosques vibrantes também sejam locais de interesse único para os transeuntes comuns.\\nEste conjunto de decorações é o preferido do seguinte companheiro: Tighnari."
+  },
   "TimberWallWithJadeEaves": {
     "name": "Parede de Madeira com Beiral de Jade",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Parede de Madeira com Beiral de Jade\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -11374,6 +11566,10 @@
   "MapleWoodVaultedWall": {
     "name": "Parede de Bordo Arqueada",
     "description": "Um diagrama que descreve passo a passo como fabricar Parede de Bordo Arqueada.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "SimpleBrightwoodCarvedWall": {
+    "name": "Parede de Madeira Radiante com Colunas Entalhadas",
+    "description": "Um diagrama que descreve passo a passo como fabricar Parede de Madeira Radiante com Colunas Entalhadas.\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
   "TraditionalCedarFlooring": {
     "name": "Assoalho Tradicional de Cedro Fragrante",
@@ -11387,6 +11583,10 @@
     "name": "Piso Marrom de Bordo",
     "description": "Um diagrama que descreve passo a passo como fabricar Piso Marrom de Bordo.\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
+  "DarkBrightwoodFlooring": {
+    "name": "Piso de Madeira Radiante com Padrões Escuros",
+    "description": "Um diagrama que descreve passo a passo como fabricar Piso de Madeira Radiante com Padrões Escuros.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
   "CheckeredCedarCeiling": {
     "name": "Teto Xadrez de Cedro",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Teto Xadrez de Cedro\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -11398,6 +11598,10 @@
   "MapleWoodSquareCeiling": {
     "name": "Teto Xadrez de Bordo",
     "description": "Um diagrama que descreve passo a passo como fabricar Teto Xadrez de Bordo.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "BrightwoodChiseledCeiling": {
+    "name": "Teto de Madeira Radiante Entalhada",
+    "description": "Um diagrama que descreve passo a passo como fabricar Teto de Madeira Radiante Entalhada.\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
   "TwoTierCandleChandelier": {
     "name": "Lustre com Dupla Camada de Velas",
@@ -11479,6 +11683,22 @@
     "name": "\"Iluminação Arbórea\"",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Iluminação Arbórea\".\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
   },
+  "ImmersiveLight": {
+    "name": "Luz da Concentração",
+    "description": "Um diagrama que descreve passo a passo como fabricar Luz da Concentração.\\nDepois de usar, você pode entrar na interface de produção para ver."
+  },
+  "PerennialIllumination": {
+    "name": "Luz Eterna",
+    "description": "Um diagrama que descreve passo a passo como fabricar Luz Eterna.\\nDepois de usar, você pode entrar na interface de produção para ver."
+  },
+  "BloomingIllumination": {
+    "name": "Luz do Colocar",
+    "description": "Um diagrama que descreve passo a passo como fabricar Luz do Colocar.\\nDepois de usar, você pode entrar na interface de produção para ver."
+  },
+  "EfflorescentIllumination": {
+    "name": "Luz Floral",
+    "description": "Um diagrama que descreve passo a passo como fabricar Luz Floral.\\nDepois de usar, você pode entrar na interface de produção para ver."
+  },
   "NorthernBirchFoldingCounter": {
     "name": "Balcão Dobrável de Vidoeiro do Norte",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Balcão Dobrável de Vidoeiro do Norte\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -11510,6 +11730,14 @@
   "DesertDeskHospitality": {
     "name": "Mesa do Deserto — Hospitalidade",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Mesa do Deserto — Hospitalidade\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "AdhigamaWoodVersatileShelves": {
+    "name": "Prateleiras de Madeira da Adhigama \"Confusão Classificatória\"",
+    "description": "Um diagrama que descreve passo a passo como fabricar Prateleiras de Madeira da Adhigama \"Confusão Classificatória\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "BrightwoodInvigoratingNightstand": {
+    "name": "Mesa de Cabeceira de Madeira Radiante \"Cura\"",
+    "description": "Um diagrama que descreve passo a passo como fabricar Mesa de Cabeceira de Madeira Radiante \"Cura\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
   },
   "TwoTierLibraryBookshelf": {
     "name": "Prateleiras Duplas da Biblioteca",
@@ -11554,6 +11782,14 @@
   "DesertCabinetOddsAndEnds": {
     "name": "Armário do Deserto — Bugigangas",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Armário do Deserto — Bugigangas\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "TreasureFromTheLandOfWisdom": {
+    "name": "Gema do Local da Sagacidade",
+    "description": "Um diagrama que descreve passo a passo como fabricar Gema do Local da Sagacidade.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "ScrollsFromTheLandOfWisdom": {
+    "name": "Pergaminho do Local da Sagacidade",
+    "description": "Um diagrama que descreve passo a passo como fabricar Pergaminho do Local da Sagacidade.\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
   "SturdyLibraryTable": {
     "name": "Mesa Grande e Pesada da Biblioteca",
@@ -11623,6 +11859,18 @@
     "name": "Mesa Longa de Madeira de Tamarisco",
     "description": "Um diagrama que descreve passo a passo como fabricar Mesa Longa de Madeira de Tamarisco.\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
+  "AChoiceOfDelicacies": {
+    "name": "Gosto Universal",
+    "description": "Um diagrama que descreve passo a passo como fabricar Gosto Universal.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "SpiritOfTheBanquet": {
+    "name": "Banquete Glorioso",
+    "description": "Um diagrama que descreve passo a passo como fabricar a Banquete Glorioso.\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
+  "ATableForTwo": {
+    "name": "Mesa para Dois",
+    "description": "Um diagrama que descreve passo a passo como fabricar Mesa para Dois.\\nDepois de usar, você pode entrar na interface de produção para vê-la."
+  },
   "BreezeBlessedBed": {
     "name": "Cama Suave Como a Brisa",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Cama Suave Como a Brisa\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -11634,6 +11882,14 @@
   "YumemiruSakurasRestBed": {
     "name": "Cama de Madeira Yumemiru \"Sono da Sakura\"",
     "description": "Um diagrama que descreve passo a passo como fabricar Cama de Madeira Yumemiru \"Sono da Sakura\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "BrightwoodConcordBed": {
+    "name": "Cama de Madeira Radiante \"Concentração\"",
+    "description": "Um diagrama que descreve passo a passo como fabricar Cama de Madeira Radiante \"Concentração\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "AdhigamaWoodComfortBed": {
+    "name": "Cama de Madeira da Adhigama \"Tranquilidade\"",
+    "description": "Um diagrama que descreve passo a passo como fabricar Cama de Madeira da Adhigama \"Tranquilidade\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
   },
   "PineReceptionCounter": {
     "name": "Balcão de Pinheiro",
@@ -11654,6 +11910,10 @@
   "DesertStudyConscientiousness": {
     "name": "Escrivaninha do Deserto: Meticulosidade",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Escrivaninha do Deserto: Meticulosidade\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "WitnessOfTavernAffairs": {
+    "name": "Testemunha Onisciente da Taverna",
+    "description": "Um diagrama que descreve passo a passo como fabricar a Testemunha Onisciente da Taverna.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
   },
   "SoftLoungeSofa": {
     "name": "Sofá Confortável para Sala de Estar",
@@ -11682,6 +11942,18 @@
   "TeahouseRoundStoolPainPointReduction": {
     "name": "Banco Redondo da Casa de Chá: Renúncia à Dor",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Banco Redondo da Casa de Chá: Renúncia à Dor\".\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
+  "KarmaphalaWoodSubduedSpeechBench": {
+    "name": "Banco de Madeira Karmaphal \"Língua do Silêncio\"",
+    "description": "Um diagrama que descreve passo a passo como fabricar Banco de Madeira Karmaphal \"Língua do Silêncio\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "KarmaphalaWoodCounterAssaultDiningChair": {
+    "name": "Cadeira de Madeira Karmaphal \"Resistência Inabalável\"",
+    "description": "Um diagrama que descreve passo a passo como fabricar Cadeira de Madeira Karmaphal \"Resistência Inabalável\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "SatisfactionOfSatedThirst": {
+    "name": "Alegria do Lazer ao Beber",
+    "description": "Um diagrama que descreve passo a passo como fabricar a Alegria do Lazer ao Beber.\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
   "NorthernStoneHearth": {
     "name": "Lareira de Pedra do Norte",
@@ -11795,6 +12067,26 @@
     "name": "Entre a Fumaça Dispersa",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Entre a Fumaça Dispersa\".\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
   },
+  "ForestWatchersFastidiousness": {
+    "name": "Seriedade do Patrulheiro Florestal",
+    "description": "Um diagrama que descreve passo a passo como fabricar Seriedade do Patrulheiro Florestal.\\nDepois de usar, você pode entrar na interface de produção para ver."
+  },
+  "ForestRangersProvisions": {
+    "name": "Preparativos do Guarda-Florestal",
+    "description": "Um diagrama que descreve passo a passo como fabricar Preparativos do Guarda-Florestal.\\nDepois de usar, você pode entrar na interface de produção para ver."
+  },
+  "DeepwoodDwellersDelicacies": {
+    "name": "Refeição do Morador do Bosque",
+    "description": "Um diagrama que descreve passo a passo como fabricar Refeição do Morador do Bosque.\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
+  },
+  "AromaOfHighHeatBarbecue": {
+    "name": "Aroma Assado Forte",
+    "description": "Um diagrama que descreve passo a passo como fabricar Aroma Assado Forte.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "FragranceOfLowHeatRoast": {
+    "name": "Aroma da Lenta Chama",
+    "description": "Um diagrama que descreve passo a passo como fabricar Aroma da Lenta Chama.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Tapete de Mondstadt: \"Paixão Escarlate\"",
     "description": "Um diagrama que descreve passo a passo como fabricar Tapete de Mondstadt: \"Paixão Escarlate\"\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -11854,6 +12146,10 @@
   "DesertLampLingeringLight": {
     "name": "Lanterna do Deserto — Luz Remanescente",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Lanterna do Deserto — Luz Remanescente\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "JoyfulIllumination": {
+    "name": "\"Luz de Boas-Vindas\"",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Luz de Boas-Vindas\".\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Arranjo de Flores: \"Graciosidade Azul\"",
@@ -11979,6 +12275,18 @@
     "name": "Na Neblina Circundante",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Na Neblina Circundante\".\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
   },
+  "AppraisersTreasure": {
+    "name": "Preciosidades da Loja",
+    "description": "Um diagrama que descreve passo a passo como fabricar Preciosidades da Loja.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "CeramicCenterpiece": {
+    "name": "Padrões da Loja",
+    "description": "Um diagrama que descreve passo a passo como fabricar Padrões da Loja.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "EphemeralSpirit": {
+    "name": "Efêmero Caldo",
+    "description": "Um diagrama que descreve passo a passo como fabricar Efêmero Caldo.\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
+  },
   "LandscapePaintingCountryHome": {
     "name": "Pintura com Paisagem: \"Casa de Campo\"",
     "description": "Um diagrama que descreve passo a passo como fabricar Pintura com Paisagem: \"Casa de Campo\"\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -12074,6 +12382,10 @@
   "DesertWallDrapesFlamingFeathers": {
     "name": "Decoração de Parede do Deserto — Penas Flamejantes",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Decoração de Parede do Deserto — Penas Flamejantes\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "ForestWatchersConsiderations": {
+    "name": "Reminiscências do Patrulheiro Florestal",
+    "description": "Um diagrama que descreve passo a passo como fabricar Reminiscências do Patrulheiro Florestal.\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
   },
   "LingeringMoment": {
     "name": "Momento Marcante",
@@ -12491,6 +12803,74 @@
     "name": "Casa do Deserto — Armazém",
     "description": "Um diagrama que descreve passo a passo como fabricar Casa do Deserto — Armazém.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
   },
+  "MansionPagodaFlowerOfRevelation": {
+    "name": "Decoração da Residência: Flor da Contemplação",
+    "description": "Um diagrama que descreve passo a passo como fabricar Decoração da Residência: Flor da Contemplação.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "MansionPagodaTreeOfPondering": {
+    "name": "Decoração da Residência: Árvore da Deliberação",
+    "description": "Um diagrama que descreve passo a passo como fabricar Decoração da Residência: Árvore da Deliberação.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "MansionCourtyardWarblingPavilion": {
+    "name": "Plataforma da Residência: Pavilhão do Canto dos Pássaros",
+    "description": "Um diagrama que descreve passo a passo como fabricar Plataforma da Residência: Pavilhão do Canto dos Pássaros.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "MansionCourtyardWatchtowerOfForesight": {
+    "name": "Plataforma da Residência: Andares da Saudade",
+    "description": "Um diagrama que descreve passo a passo como fabricar Plataforma da Residência: Andares da Saudade.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "MansionCourtyardPlaceOfRepose": {
+    "name": "Plataforma da Residência: Salão de Chá",
+    "description": "Um diagrama que descreve passo a passo como fabricar Plataforma da Residência: Salão de Chá.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "MansionCourtyardCuisiniersAbode": {
+    "name": "Plataforma da Residência: Local da Fumaça",
+    "description": "Um diagrama que descreve passo a passo como fabricar Plataforma da Residência: Local da Fumaça.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "TreasuresOfTheCityOfWisdom": {
+    "name": "Ouro da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Ouro da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "DelicaciesOfTheCityOfWisdom": {
+    "name": "Iguaria da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Iguaria da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "AromasOfTheCityOfWisdom": {
+    "name": "Aroma da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Aroma da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "TenacityOfTheCityOfWisdom": {
+    "name": "Firmeza da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Firmeza da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "CommerceOfTheCityOfWisdom": {
+    "name": "Comércio da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Comércio da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
+  "ShadeInTheTranquilCourt": {
+    "name": "Frescor do Jardim Tranquilo Palaciano",
+    "description": "Um diagrama que descreve passo a passo como fabricar Frescor do Jardim Tranquilo Palaciano.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "LightInTheTranquilCourt": {
+    "name": "Alvorada Tranquila do Jardim Tranquilo Palaciano",
+    "description": "Um diagrama que descreve passo a passo como fabricar Alvorada Tranquila do Jardim Tranquilo Palaciano.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "FabricOfTheCityOfWisdom": {
+    "name": "Seda da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Seda da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "PotteryOfTheCityOfWisdom": {
+    "name": "Assado da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Assado da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "DiligenceOfTheCityOfWisdom": {
+    "name": "Frugalidade da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Frugalidade da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "BuildingBlockOfTheCityOfWisdom": {
+    "name": "Vista Comum da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Vista Comum da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fonte com Pássaros e Flores",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Fonte com Pássaros e Flores\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -12570,6 +12950,14 @@
   "DesertHutRest": {
     "name": "Cabana do Deserto — Repouso",
     "description": "Um diagrama que descreve passo a passo como fabricar Cabana do Deserto — Repouso.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "TheatersCoolMist": {
+    "name": "Névoa Refrescante do Teatro",
+    "description": "Um diagrama que descreve passo a passo como fabricar Névoa Refrescante do Teatro.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "ClarityFromTheLandOfWisdom": {
+    "name": "Claridade do Local da Sagacidade",
+    "description": "Um diagrama que descreve passo a passo como fabricar Claridade do Local da Sagacidade.\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
   "AdeptusGate": {
     "name": "Portão do Adeptus",
@@ -12714,6 +13102,14 @@
   "FoundationsOfStoneFortunateTimes": {
     "name": "Fundações de Pedra: Fortuna e Tranquilidade",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Fundações de Pedra: Fortuna e Tranquilidade\".\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
+  "SubspaceStructureSuspendedPathway": {
+    "name": "Estrutura Subespacial: Ponte Suspensa",
+    "description": "Um diagrama que descreve passo a passo como fabricar Pintura com Estrutura Subespacial: Ponte Suspensa.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "SubSpaceStructureTreetopStroll": {
+    "name": "Estrutura Subespacial: Passeio Arbóreo",
+    "description": "Um diagrama que descreve passo a passo como fabricar Pintura com Estrutura Subespacial: Passeio Arbóreo.\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
   "MessyPileOfFirCrates": {
     "name": "Pilha Bagunçada de Caixotes de Abeto",
@@ -13098,6 +13494,10 @@
   "TheEremitesOdyssey": {
     "name": "\"Jornada Eremita\"",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Jornada Eremita\".\\nDepois de usar, você pode entrar na interface de produção para vê-la."
+  },
+  "TheEremitesFame": {
+    "name": "Reputação da Organização",
+    "description": "Um diagrama que descreve passo a passo como fabricar Reputação da Organização.\\nDepois de usar, você pode entrar na interface de produção para ver."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Poste de Rua Esculpido em Ferro Fundido",

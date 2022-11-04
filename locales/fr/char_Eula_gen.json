@@ -8,7 +8,7 @@
       "1": "<br/>",
       "2": "<strong>Appui simple</strong>",
       "3": "Eula exécute une frappe rapide qui inflige des <cryo>DGT Cryo</cryo>.",
-      "4": "Si elle touche un ennemi, Eula gagne un cumul de Cœur de glace (jusqu'à 2 cumuls max). Eula peut gagner un cumul toutes les 0,3 s max.",
+      "4": "Si elle touche un ennemi, Eula obtient 1 cumul de Cœur de glace (jusqu'à 2 cumuls max). Eula peut obtenir un cumul toutes les 0,3 s max.",
       "5": "<br/>",
       "6": "<strong>Cœur de glace</strong>",
       "7": "Améliore la RÉS à l'interruption et la DÉF d'Eula.",
@@ -118,7 +118,7 @@
   "passive2": {
     "name": "Esprit belligérant",
     "description": {
-      "0": "Le TdR de <strong>Vortex des mers glacées</strong> est réinitialisé lors de l'utilisation de <strong>Lame de fond</strong>, et Eula obtient un cumul de Cœur de glace."
+      "0": "Le TdR de <strong>Vortex des mers glacées</strong> est réinitialisé lors de l'utilisation de <strong>Lame de fond</strong>, et Eula obtient 1 cumul de Cœur de glace."
     }
   },
   "passive3": {
@@ -163,7 +163,7 @@
   "constellation6": {
     "name": "Obligations aristocratiques",
     "description": {
-      "0": "Confère immédiatement 5 cumuls d'énergie à l'épée de lumière créée par <strong>Lame de fond</strong>. De plus, lorsque vous utilisez des attaques normales, la compétence ou le déchaînement élémentaire pour obtenir des cumuls, vous avez 50 % de chances de gagner un cumul supplémentaire."
+      "0": "Confère immédiatement 5 cumuls d'énergie à l'épée de lumière créée par <strong>Lame de fond</strong>. De plus, lorsque vous utilisez des attaques normales, la compétence ou le déchaînement élémentaire pour obtenir des cumuls, vous avez 50 % de chances d'obtenir un cumul supplémentaire."
     }
   }
 }

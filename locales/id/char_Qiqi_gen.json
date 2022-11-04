@@ -12,11 +12,11 @@
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang secara cepat."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+        "1": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG Area saat mendarat."
       }
     },
     "skillParams": {
@@ -41,21 +41,21 @@
   "skill": {
     "name": "Adeptus Art: Herald of Frost",
     "description": {
-      "0": "Qiqi memanggil Herald of Frost dengan menggunakan Icevein Talisman dan mengakibatkan <cryo>Cryo DMG</cryo> ke musuh di sekitarnya.",
+      "0": "Qiqi memanggil Herald of Frost dengan menggunakan Icevein Talisman dan mengakibatkan <cryo>Cryo DMG</cryo> ke musuh di sekelilingnya.",
       "1": "<br/>",
       "2": "<strong>Herald of Frost</strong>",
       "3": [
-        "Saat Normal Attack atau Charged Attack Qiqi mengenai musuh, Qiqi akan memulihkan HP anggota party dan karakter teman lainnya. Jumlah HP yang disembuhkan ditentukan berdasarkan ATK Qiqi;",
-        "Setiap beberapa saat, Herald of Frost juga akan memulihkan HP karakter yang sedang digunakan;",
-        "Mengikuti gerakan karakter dan mengakibatkan <cryo>Cryo DMG</cryo> kepada musuh yang dilewati."
+        "Saat Normal Attack atau Charged Attack Qiqi mengenai musuh, Qiqi akan memulihkan HP anggota party sendiri dan Karakter teman lain di dekatnya. Jumlah HP yang dipulihkan ditentukan berdasarkan ATK Qiqi;",
+        "Setiap beberapa saat, Herald of Frost juga akan memulihkan HP Karakter aktif sendiri;",
+        "Mengikuti gerakan Karakter dan mengakibatkan <cryo>Cryo DMG</cryo> kepada musuh yang dilewati."
       ],
       "4": "<br/>",
-      "5": "<i>Aku menggunakan ini supaya tidak busuk... Eh, aku sedang bicara soal bahan-bahan Dr. Bai.</i>"
+      "5": "<i>Aku pakai ini supaya tidak jadi hangat dan busuk... Eh, maksudku bahan-bahan berharganya Dokter Baizhu.</i>"
     },
     "skillParams": {
       "0": "DMG Skill",
       "1": "Pemulihan HP/Hit",
-      "2": "Regenerasi HP",
+      "2": "Pemulihan HP Berkelanjutan",
       "3": "DMG Herald of Frost",
       "4": "Durasi",
       "5": "Cooldown",
@@ -74,12 +74,12 @@
   "burst": {
     "name": "Adeptus Art: Preserver of Fortune",
     "description": {
-      "0": "Qiqi mengerahkan kekuatan Adeptus yang disegel di dalam tubuhnya dan menandai musuh di sekitar dengan jimat keberuntungan yang mengakibatkan <cryo>Cryo DMG</cryo>.",
+      "0": "Qiqi mengerahkan kekuatan Adeptus yang disegel di dalam tubuhnya dan menandai musuh di sekitar dengan Fortune-Preserving Talisman yang mengakibatkan <cryo>Cryo DMG</cryo>.",
       "1": "<br/>",
       "2": "<strong>Fortune-Preserving Talisman</strong>",
-      "3": "Saat musuh yang telah ditandai menerima DMG, maka karakter yang mengakibatkan DMG tersebut akan menerima pemulihan HP.",
+      "3": "Saat musuh yang telah ditandai menerima DMG, maka Karakter yang mengakibatkan DMG tersebut akan menerima pemulihan HP.",
       "4": "<br/>",
-      "5": "<i>\"Aku adalah Penjaga Keberuntungan, sang Gadis Kebangkitan.\"</i>",
+      "5": "<i>\"Aku adalah Pemelihara Keberuntungan, sang Gadis Kebangkitan.\"</i>",
       "6": "<i>—Qiqi tidak ingat kata-kata ini.</i>"
     },
     "skillParams": {
@@ -104,7 +104,7 @@
   "passive1": {
     "name": "Life-Prolonging Methods",
     "description": {
-      "0": "Meningkatkan 20% Bonus Pemulihan karakter selama 8 detik saat karakter dalam efek <strong>Adeptus Art: Herald of Frost</strong> memicu reaksi elemental."
+      "0": "Saat Karakter berada dalam efek <strong>Adeptus Art: Herald of Frost</strong> memicu Reaksi Elemental, Incoming Healing Bonus mereka meningkat sebesar 20% selama 8 detik."
     }
   },
   "passive2": {
@@ -116,13 +116,13 @@
   "passive3": {
     "name": "Former Life Memories",
     "description": {
-      "0": "Memperlihatkan lokasi <strong>produk khas Liyue</strong> di sekitar pada mini-map."
+      "0": "Menunjukkan lokasi <strong>produk khas Liyue</strong> di sekitar pada peta mini."
     }
   },
   "constellation1": {
     "name": "Ascetics of Frost",
     "description": {
-      "0": "Saat Herald of Frost mengenai musuh yang ditandai oleh Fortune-Preserving Talisman, Qiqi mendapatkan 2 Energy."
+      "0": "Saat Herald of Frost mengenai musuh yang ditandai oleh Fortune-Preserving Talisman, Qiqi memulihkan 2 Energy."
     }
   },
   "constellation2": {

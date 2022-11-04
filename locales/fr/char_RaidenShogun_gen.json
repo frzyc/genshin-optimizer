@@ -15,7 +15,7 @@
         "1": "Consomme de l'endurance pour déclencher une attaque ascendante."
       },
       "plunging": {
-        "0": "<strong>Attaque descendante</strong>",
+        "0": "<strong>Attaque plongeante</strong>",
         "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
       }
     },
@@ -144,7 +144,7 @@
   "constellation2": {
     "name": "Brise-acier",
     "description": {
-      "0": "Lorsqu'elles bénéficient de l'état d'Harmonie d'idéal accordé par <strong>Art secret : Dogme d'idéal</strong>, les attaques de la Shogun Raiden ignorent 60 % de la DÉF des ennemis."
+      "0": "Lorsqu'elles bénéficient de l'état Harmonie d'idéal accordé par <strong>Art secret : Dogme d'idéal</strong>, les attaques de la Shogun Raiden ignorent 60 % de la DÉF des ennemis."
     }
   },
   "constellation3": {
@@ -157,7 +157,7 @@
   "constellation4": {
     "name": "Serment de droiture",
     "description": {
-      "0": "Lorsque l'état d'<strong>Harmonie d'idéal</strong> accordé par <strong>Art secret : Dogme d'idéal</strong> prend fin, l'ATQ de tous les membres de l'équipe à proximité (hormis la Shogun Raiden) augmente de 30 % pendant 10 s."
+      "0": "Lorsque l'état <strong>Harmonie d'idéal</strong> accordé par <strong>Art secret : Dogme d'idéal</strong> prend fin, l'ATQ de tous les membres de l'équipe à proximité (hormis la Shogun Raiden) augmente de 30 % pendant 10 s."
     }
   },
   "constellation5": {
@@ -170,7 +170,7 @@
   "constellation6": {
     "name": "Porteur de souhaits",
     "description": {
-      "0": "Lorsqu'elles bénéficient de l'état d'<strong>Harmonie d'idéal</strong> accordé par <strong>Art secret : Dogme d'idéal</strong>, les attaques de la Shogun Raiden qui sont considérées comme faisant partie de son déchaînement élémentaire diminuent le TdR des déchaînements élémentaires de tous les membres de l'équipe à proximité (hormis la Shogun Raiden) de 1 s.",
+      "0": "Lorsqu'elles bénéficient de l'état <strong>Harmonie d'idéal</strong> accordé par <strong>Art secret : Dogme d'idéal</strong>, les attaques de la Shogun Raiden qui sont considérées comme faisant partie de son déchaînement élémentaire diminuent le TdR des déchaînements élémentaires de tous les membres de l'équipe à proximité (hormis la Shogun Raiden) de 1 s.",
       "1": "Cet effet peut être déclenché une fois toutes les secondes, et un maximum de 5 fois pendant la durée de cet état."
     }
   }

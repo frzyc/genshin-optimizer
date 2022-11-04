@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Mengumpulkan kekuatan Hydro dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <hydro>Hydro DMG area</hydro> saat mendarat."
+        "1": "Mengumpulkan kekuatan Hydro dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <hydro>Hydro DMG area</hydro> saat mendarat."
       }
     },
     "skillParams": {

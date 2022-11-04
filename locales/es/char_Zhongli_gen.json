@@ -52,7 +52,7 @@
         "Si aún no se ha alcanzado la cantidad máxima de crestas de piedra, invocará una cresta de piedra.",
         "Crea un escudo de jade. La cantidad de absorción de daño del escudo es proporcional a la Vida Máx. de Zhongli.",
         "Inflige <geo>Daño Geo en el AdE</geo>.",
-        "Si hay enemigos cercanos afectados por el <geo>elemento Geo</geo>, absorberá una gran cantidad de dicho elemento de un máximo de dos objetivos afectados por él. Este efecto no causa daño."
+        "Si hay objetivos cercanos que contengan el <geo>elemento Geo</geo>, desgastará una gran cantidad de dicho elemento de un máximo de dos objetivos. Este efecto no causa daño."
       ],
       "8": "<br/>",
       "9": "<strong>Cresta de piedra</strong>",

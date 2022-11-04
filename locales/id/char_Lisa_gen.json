@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Mengumpulkan kekuatan Electro dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <electro>Electro DMG area</electro> saat mendarat."
+        "1": "Mengumpulkan kekuatan Electro dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <electro>Electro DMG area</electro> saat mendarat."
       }
     },
     "skillParams": {

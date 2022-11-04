@@ -12,16 +12,14 @@
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar. ",
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
         "2": "Saat membidik, air akan berkumpul di ujung anak panah. Panah dengan air yang terkumpul penuh akan mengakibatkan <hydro>Hydro DMG</hydro> dan menyebabkan efek Riptide."
       },
       "riptide": {
         "0": "<strong>Riptide</strong>",
         "1": "Musuh yang terpengaruh Riptide akan menerima berbagai efek <hydro>Hydro DMG area</hydro> saat diserang oleh Tartaglia. Efek-efek ini dihitung sebagai Normal Attack.",
-        "2": [
-          "Riptide Flash: Serangan Membidik yang terisi penuh dan mengenai musuh yang terpengaruh efek Riptide akan mengakibatkan DMG area berturut-turut. Riptide Flash dapat terpicu setiap 0,7 detik.",
-          "Riptide Burst: Mengalahkan musuh yang terkena efek Riptide akan menciptakan ledakan Hydro yang menyebabkan efek Riptide pada musuh di sekitar."
-        ]
+        "2": "Riptide Flash: Serangan Membidik yang terisi penuh dan mengenai musuh yang terpengaruh efek Riptide akan mengakibatkan DMG area berturut-turut. Riptide Flash dapat terpicu setiap 0,7 detik.",
+        "3": "Riptide Burst: Mengalahkan musuh yang terkena efek Riptide akan menciptakan ledakan Hydro yang menyebabkan efek Riptide pada musuh di sekitar."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
@@ -52,7 +50,7 @@
     "name": "Foul Legacy: Raging Tide",
     "description": {
       "0": "Mengerahkan sejumlah senjata yang terbuat dari air untuk mengakibatkan <hydro>Hydro DMG</hydro> ke musuh di sekitar dan memasuki mode jarak dekat.",
-      "1": "Dalam Mode ini, Normal Attack dan Charged Attack milik Tartaglia berubah menjadi <hydro>Hydro DMG</hydro> yang tidak dapat ditimpa oleh Elemental Infusion lain dan efek berikut akan muncul:",
+      "1": "Dalam mode ini, Normal Attack dan Charged Attack milik Tartaglia berubah menjadi <hydro>Hydro DMG</hydro> yang tidak bisa ditimpa oleh Elemental Infusion lain dan efek berikut akan muncul:",
       "2": "<br/>",
       "3": "<strong>Normal Attack</strong>",
       "4": "Melakukan hingga 6 serangan <hydro>Hydro</hydro> berturut-turut.",
@@ -66,7 +64,7 @@
       "12": "Setelah 30 detik atau saat skill ini digunakan lagi, efek skill ini akan berakhir dan Tartaglia kembali ke mode jarak jauh. Skill ini kemudian akan memasuki cooldown. Semakin lama Tartaglia menggunakan mode jarak dekat, waktu cooldown skill juga akan menjadi semakin panjang.",
       "13": "Bila Tartaglia kembali menjadi mode jarak jauh secara otomatis dalam waktu 30 detik, waktu cooldown skill akan menjadi semakin panjang lagi.",
       "14": "<br/>",
-      "15": "<i>Tartaglia sengaja memilih busur sebagai senjatanya untuk mengatasi kelemahannya dalam menggunakan senjata tersebut. Tapi saat harus bertarung sungguh-sungguh, Tartaglia akan mengerahkan kemampuannya yang sebenarnya...</i>"
+      "15": "<i>Tartaglia sengaja memilih busur sebagai senjatanya untuk mengatasi kelemahannya dalam menggunakan senjata tersebut. Tapi saat harus bertarung sungguh-sungguh, Tartaglia akan mengerahkan kemampuannya yang sebenarnya ....</i>"
     },
     "skillParams": {
       "0": "DMG Perubahan Mode Bertarung",
@@ -88,7 +86,7 @@
     }
   },
   "burst": {
-    "name": "Havoc - Obliteration",
+    "name": "Havoc: Obliteration",
     "description": {
       "0": "Melancarkan serangan yang berbeda-beda sesuai dengan mode bertarung yang sedang digunakan Targtalia:",
       "1": "<br/>",
@@ -163,7 +161,7 @@
   "constellation4": {
     "name": "Abyssal Mayhem: Hydrospout",
     "description": {
-      "0": "Bila ada musuh yang terkena efek Riptide milik Tartaglia dan Tartaglia sedang menggunakan mode jarak dekat dari <strong>Foul Legacy: Raging Tide</strong>, maka Tartaglia akan memicu Riptide Slash setiap 4 detik; bila tidak, akan memicu Riptide Flash.",
+      "0": "Bila ada musuh yang terkena efek Riptide milik Tartaglia dan Tartaglia sedang menggunakan mode jarak dekat dari <strong>Foul Legacy: Raging Tide</strong>, maka Tartaglia akan memicu Riptide Slash setiap 4 detik; Bila tidak, akan memicu Riptide Flash.",
       "1": "Riptide Slash dan Riptide Flash yang terpicu dari Konstelasi ini tidak dibatasi oleh jeda waktu masing-masing skill, juga tidak memengaruhi jeda waktu masing-masing skill."
     }
   },

@@ -124,7 +124,7 @@
     "name": "Tallo primordial",
     "description": {
       "0": "Si en el área vijñana de <strong>Frutos del vijñana</strong> hay algún enemigo, Tignari obtiene un 20% de <dendro>Bono de Daño Dendro</dendro>.",
-      "1": "Este efecto permanecerá hasta 6 s después de que termine la duración del área vijñana o cuando ya no haya enemigos en ella."
+      "1": "Este efecto permanecerá hasta 6{NON_BREAK_SPACE}s después de que termine la duración del área vijñana o cuando ya no haya enemigos en ella."
     }
   },
   "constellation3": {

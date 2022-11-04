@@ -104,7 +104,7 @@
     "name": "The Languid Wood",
     "description": {
       "0": "When a character within the <strong>Cuilein-Anbar Zone</strong> triggers Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon reactions, the Zone's duration will be increased by 1s.",
-      "1": "A single <strong>Trump-Card Kitty</strong> can be extended by up to 3s."
+      "1": "A single <strong>Trump-Card Kitty</strong> can be extended this way by up to 3s."
     }
   },
   "passive3": {

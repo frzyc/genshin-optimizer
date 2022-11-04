@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
       }
     },
     "skillParams": {
@@ -72,8 +72,8 @@
   "burst": {
     "name": "Gyoei Narukami Kariyama Rite",
     "description": {
-      "0": "Menancapkan pedang pengusir roh jahat di tanah, dan membuat perisai yang membersihkan area yang kotor, mengakibatkan <electro>Electro DMG</electro> secara berkelanjutan kepada musuh di dalam Area efeknya berdasarkan Max HP Kuki Shinobu.",
-      "1": "Jika HP Shinobu kurang atau berada pada 50% saat skill ini digunakan, perisai akan bertahan lebih lama.",
+      "0": "Menancapkan pedang pengusir roh jahat di tanah, dan membuat sebuah medan yang membersihkan area yang kotor, mengakibatkan <electro>Electro DMG</electro> secara berkelanjutan kepada musuh di dalam Area efeknya berdasarkan Max HP Kuki Shinobu.",
+      "1": "Jika HP Shinobu 50% atau kurang saat skill ini digunakan, durasi medan ini akan lebih lama.",
       "2": "<br/>",
       "3": "<i>Sebenarnya ini teknik yang digunakan saat menyiangi rumput dan ritual doa saat panen, dan walaupun hari-harinya sebagai miko telah berakhir tapi Shinobu tidak pernah lupa dengan teknik ini.</i>"
     },

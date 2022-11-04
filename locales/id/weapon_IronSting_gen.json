@@ -1,7 +1,7 @@
 {
   "name": "Iron Sting",
   "description": "Pedang panjang eksotis yang mencapai Liyue melalui perdagangan antar bangsa. Beratnya ringan, mudah diayunkan, dan sangat tajam.",
-  "passiveName": "Infused Stinger",
+  "passiveName": "Infusion Stinger",
   "passiveDescription": {
     "0": "Mengakibatkan Elemental DMG akan meningkatkan <cryo>6%</cryo> DMG selama 6 detik. Maksimum 2 lapis. Dapat terpicu setiap 1 detik.",
     "1": "Mengakibatkan Elemental DMG akan meningkatkan <cryo>7,5%</cryo> DMG selama 6 detik. Maksimum 2 lapis. Dapat terpicu setiap 1 detik.",

@@ -15,7 +15,7 @@
         "1": "Consomme de l'endurance pour exécuter une entaille tournoyante."
       },
       "plunging": {
-        "0": "<strong>Attaque descendante</strong>",
+        "0": "<strong>Attaque plongeante</strong>",
         "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
       }
     },
@@ -41,10 +41,10 @@
   "skill": {
     "name": "Danse des haftkarsvars",
     "description": {
-      "0": "Active l'état de Pirouette, infligeant des <hydro>DGT Hydro</hydro> aux ennemis proches selon les PV max de Nilou.",
-      "1": "En état de Pirouette, les attaques normales et les compétences élémentaires de Nilou la feront entrer respectivement dans les postures de Danse d'épée et de Danse de tourbillon, provoquant la conversion de ses DGT en <hydro>DGT Hydro</hydro> ne pouvant pas être enchantés et étant considérés comme des DGT de compétence élémentaire.",
+      "0": "Active l'état Pirouette, infligeant des <hydro>DGT Hydro</hydro> aux ennemis proches selon les PV max de Nilou.",
+      "1": "Dans l'état Pirouette, les attaques normales et les compétences élémentaires de Nilou la feront entrer respectivement dans les postures de Danse d'épée et de Danse de tourbillon, provoquant la conversion de ses DGT en <hydro>DGT Hydro</hydro> ne pouvant pas être enchantés et étant considérés comme des DGT de compétence élémentaire.",
       "2": "<br/>",
-      "3": "Dans ces postures, le troisième pas de danse de Nilou annule l'état de Pirouette tout en ayant les effets suivants selon la posture :",
+      "3": "Dans ces postures, le troisième pas de danse de Nilou annule l'état Pirouette tout en ayant les effets suivants selon la posture :",
       "4": [
         " Danse d'épée : Nilou libère une lune aqueuse qui inflige des <hydro>DGT Hydro</hydro> aux ennemis qu'elle touche et accorde à Nilou l'effet Prière lunaire. Avec cet effet, les attaques normales de Nilou sont converties en techniques de la Danse d'épée et son coup final déclenche une lune aqueuse.",
         " Danse de tourbillon : Nilou déchaîne une roue à eau qui inflige des <hydro>DGT Hydro de zone</hydro> et crée une aura de tranquillité qui suit votre personnage déployé et applique de façon continue l'état <hydro>Trempé</hydro> aux ennemis à portée."
@@ -104,7 +104,7 @@
     "name": "Cour des pétales dansants",
     "description": {
       "0": "Lorsque les personnages de l'équipe sont de l'élément <dendro>Dendro</dendro> ou <hydro>Hydro</hydro> et qu'il y a au moins un personnage Dendro et un personnage Hydro :",
-      "1": "Le troisième pas de la <strong>Danse des haftkarsvars</strong> de Nilou accorde à tous les personnages à proximité l'effet Prime du calice d'or pendant 30{NON_BREAK_SPACE}s.",
+      "1": "La complétion du troisième pas de la <strong>Danse des haftkarsvars</strong> de Nilou accorde à tous les personnages à proximité l'effet Prime du calice d'or pendant 30{NON_BREAK_SPACE}s.",
       "2": "Lorsqu'un personnage sous l'effet de Prime du calice d'or subit une <dendro>attaque Dendro</dendro>, la maîtrise élémentaire de tous les personnages à proximité augmente de 100 pts pendant 10 s. De plus, déclencher une réaction de Fleurissement permet de créer des noyaux d'abondance au lieu de noyaux Dendro.",
       "3": "Comparés aux noyaux Dendro, ces noyaux d'abondance éclatent très rapidement après avoir été créés et possèdent une zone d'effet plus grande.",
       "4": "Les noyaux d'abondance ne peuvent pas déclencher de réactions d'Exubérance ou de Bourgeonnement et partagent une limite avec les noyaux Dendro. Les attaques des noyaux d'abondance sont considérées comme étant des attaques infligées par les noyaux Dendro générés par la réaction de Fleurissement.",
@@ -151,7 +151,7 @@
   "constellation4": {
     "name": "Impulsion fricative",
     "description": {
-      "0": "Lorsque le troisième pas de danse de l'état de Pirouette de <strong>Danse des haftkarsvars</strong> a touché un ennemi, Nilou récupère 15 pts d'énergie élémentaire et les DGT qu'elle inflige en utilisant <strong>Danse d'abzendegi : Ruisseau des rêves lointains</strong> augmentent de 50 % pendant 8 s."
+      "0": "Lorsque le troisième pas de danse de l'état Pirouette de <strong>Danse des haftkarsvars</strong> a touché un ennemi, Nilou récupère 15 pts d'énergie élémentaire et les DGT qu'elle inflige en utilisant <strong>Danse d'abzendegi : Ruisseau des rêves lointains</strong> augmentent de 50 % pendant 8 s."
     }
   },
   "constellation5": {

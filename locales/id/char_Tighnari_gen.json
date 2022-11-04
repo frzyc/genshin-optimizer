@@ -15,7 +15,7 @@
         "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
         "2": "Saat membidik, kekuatan Dendro akan berkumpul di ujung anak panah. Memiliki efek yang berbeda tergantung dari lama serangannya ditahan:",
         "3": [
-          "Charge Tahap 1: Menembakkan panah berisi elemen Dendro dan mengakibatkan Dendro DMG</undefined>;",
+          "Charge Tahap 1: Menembakkan panah berisi elemen Dendro dan mengakibatkan <dendro>Dendro DMG</dendro>;",
           "Charge Tahap 2: Menembakkan sebuah Wreath Arrow yang mengakibatkan <dendro>Dendro DMG</dendro>. Setelah mengenai target, Wreath Arrow akan menciptakan 4 Clusterbloom Arrow yang akan otomatis mengikuti musuh di sekitar dan mengakibatkan <dendro>Dendro DMG</dendro>."
         ]
       },

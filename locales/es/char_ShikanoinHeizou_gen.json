@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",
-        "1": "Consume una cierta cantidad de Aguante para ejecutar una patada que levanta polvo e inflige <anemo>Daño Anemo</anemo> después de un corto tiempo de lanzamiento."
+        "1": "Consume una cierta cantidad de Aguante para ejecutar una patada que levanta polvo e inflige <anemo>Daño Anemo</anemo> después de un corto tiempo de canalización."
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",

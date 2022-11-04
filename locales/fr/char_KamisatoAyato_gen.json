@@ -41,19 +41,19 @@
   "skill": {
     "name": "École Kamisato : Beauté réfléchie",
     "description": {
-      "0": "Kamisato Ayato change d'emplacement et entre dans un état de Réflexion torrentielle.",
+      "0": "Kamisato Ayato change d'emplacement et entre dans l'état Réflexion torrentielle.",
       "1": "Après ce déplacement, il laisse une illusion aqueuse à son emplacement d'origine, qui, une fois complètement formée, explose après un certain temps ou si des ennemis sont à proximité, infligeant des <hydro>DGT Hydro de zone</hydro>.",
       "2": "<br/>",
       "3": "<strong>Réflexion torrentielle</strong>",
       "4": "Dans cet état, Ayato utilise son Shunsuiken pour attaquer avec une rapidité aveuglante, convertissant les DGT infligés par ses attaques normales en <hydro>DGT Hydro de zone</hydro> ne pouvant pas être enchantés.",
       "5": "Les propriétés suivantes sont également appliquées :",
       "6": [
-        " Après avoir touché un ennemi avec une attaque de Shunsuiken, Ayato obtient un effet de Flash onduleux, augmentant les DGT infligés par son Shunsuiken en fonction de ses PV max actuels. Le Flash onduleux peut être initialement cumulé 4 fois maximum, et 1 cumul peut être obtenu une fois toutes les 0,1 s grâce à une attaque de Shunsuiken. Cet effet prend fin quand l'état de Réflexion torrentielle se termine.",
+        " Après avoir touché un ennemi avec une attaque de Shunsuiken, Ayato obtient un effet de Flash onduleux, augmentant les DGT infligés par son Shunsuiken en fonction de ses PV max actuels. Le Flash onduleux peut être initialement cumulé 4 fois maximum, et 1 cumul peut être obtenu une fois toutes les 0,1 s grâce à une attaque de Shunsuiken. Cet effet prend fin quand l'état Réflexion torrentielle se termine.",
         " La RÉS à l'interruption d'Ayato augmente.",
         " Il est impossible d'utiliser des attaques chargées ou plongeantes."
       ],
       "7": "<br/>",
-      "8": "L'état de Réflexion torrentielle cesse lorsqu'Ayato quitte le champ de bataille. Utiliser à nouveau École Kamisato : Beauté réfléchie en état de Réflexion torrentielle y mettra fin.",
+      "8": "L'état Réflexion torrentielle cesse lorsqu'Ayato quitte le champ de bataille. Utiliser à nouveau École Kamisato : Beauté réfléchie dans l'état Réflexion torrentielle y mettra fin.",
       "9": "<br/>",
       "10": "<i>« Quand, je me demande, en êtes-vous arrivé à penser que vous aviez le dessus ? »</i>",
       "11": "<i>Ayato est ainsi qu'il s'agisse de prouesses martiales ou d'intrigues politiques... Cependant, afin de préserver la dignité des autres Commissaires, il ne leur dit pas de telles choses en face. Ainsi, seuls Thomas, Itto et Ayaka ont déjà entendu ces mots.</i>"
