@@ -158,7 +158,7 @@ const sheet: ICharacterSheet = {
       }, {
         node: infoMut(dmgFormulas.skill.chillWaterBomblets, { name: ct.chg(`skill.skillParams.1`) }),
       }, {
-        node: subscript(input.total.skillIndex, datamine.skill.atkDecrease, { name: ct.chg(`skill.skillParams.2`), unit: "%" }),
+        node: subscript(input.total.skillIndex, dm.skill.atkDecrease, { name: ct.chg(`skill.skillParams.2`), unit: "%" }),
       }, {
         text: ct.chg("skill.skillParams.3"),
         value: `${dm.skill.atkDecreaseDuration}`,
