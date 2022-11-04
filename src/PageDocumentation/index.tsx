@@ -236,7 +236,7 @@ function MaterialKeyPane() {
     <Typography gutterBottom variant="h4">MaterialKey</Typography>
     <CardDark>
       <CardContent>
-        <Typography gutterBottom>The material keys here are generated using the <MuiLink href="https://github.com/Dimbreath/GenshinData/blob/master/ExcelBinOutput/MaterialExcelConfigData.json" target="_blank" rel="noreferrer"><code>MaterialExcelConfigData.json</code></MuiLink> of the datamine. The item names are taken from the english translation, and then converted into <MuiLink component={Link} to="KeyNaming"><code>PascalCase</code></MuiLink>.</Typography>
+        <Typography gutterBottom>The item names are taken from the english translation, and then converted into <MuiLink component={Link} to="KeyNaming"><code>PascalCase</code></MuiLink>.</Typography>
         <CodeBlock text={weaponKeysCode} />
       </CardContent>
     </CardDark>

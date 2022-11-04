@@ -17,7 +17,7 @@ const key: CharacterKey = "Eula"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -77,39 +77,39 @@ const [condLightfallSwordPath, condLightfallSword] = cond(key, "LightfallSword")
 const [condC4Path, condC4] = cond(key, "LightfallSwordC4")
 const [condTidalIllusionPath, condTidalIllusion] = cond(key, "TidalIllusion")
 
-const def_ = sum(equal("stack1", condGrimheart, percent(datamine.skill.defBonus)), equal("stack2", condGrimheart, percent(2 * datamine.skill.defBonus)))
-const cryo_enemyRes_ = equal("consumed", condGrimheart, subscript(input.total.skillIndex, datamine.skill.cryoResDecNegative))
-const physical_enemyRes_ = equal("consumed", condGrimheart, subscript(input.total.skillIndex, datamine.skill.physResDecNegative))
-const physical_dmg_ = equal("on", condTidalIllusion, percent(datamine.constellation1.physInc))
+const def_ = sum(equal("stack1", condGrimheart, percent(dm.skill.defBonus)), equal("stack2", condGrimheart, percent(2 * dm.skill.defBonus)))
+const cryo_enemyRes_ = equal("consumed", condGrimheart, subscript(input.total.skillIndex, dm.skill.cryoResDecNegative))
+const physical_enemyRes_ = equal("consumed", condGrimheart, subscript(input.total.skillIndex, dm.skill.physResDecNegative))
+const physical_dmg_ = equal("on", condTidalIllusion, percent(dm.constellation1.physInc))
 
 const lightSwordAdditional: Data = {
-  premod: { burst_dmg_: equal(condC4, "on", constant(datamine.constellation4.dmgInc)) },
+  premod: { burst_dmg_: equal(condC4, "on", constant(dm.constellation4.dmgInc)) },
   hit: { ele: constant("physical") }
 }
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    spinningDmg: dmgNode("atk", datamine.charged.spinningDmg, "charged"),
-    finalDmg: dmgNode("atk", datamine.charged.finalDmg, "charged"),
+    spinningDmg: dmgNode("atk", dm.charged.spinningDmg, "charged"),
+    finalDmg: dmgNode("atk", dm.charged.finalDmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    press: dmgNode("atk", datamine.skill.press, "skill"),
-    hold: dmgNode("atk", datamine.skill.hold, "skill"),
-    icewhirl: dmgNode("atk", datamine.skill.icewhirl, "skill"),
+    press: dmgNode("atk", dm.skill.press, "skill"),
+    hold: dmgNode("atk", dm.skill.hold, "skill"),
+    icewhirl: dmgNode("atk", dm.skill.icewhirl, "skill"),
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
+    dmg: dmgNode("atk", dm.burst.dmg, "burst"),
     lightFallSwordNew: customDmgNode(
       prod(
         sum(
-          subscript(input.total.burstIndex, datamine.burst.lightfallDmg, { unit: "%" }),
+          subscript(input.total.burstIndex, dm.burst.lightfallDmg, { unit: "%" }),
           prod(
             lookup(condLightfallSword, objectKeyMap(range(1, 30), i => constant(i)), constant(0)),
-            subscript(input.total.burstIndex, datamine.burst.dmgPerStack, { unit: "%" })
+            subscript(input.total.burstIndex, dm.burst.dmgPerStack, { unit: "%" })
           ),
         ),
         input.total.atk
@@ -117,8 +117,8 @@ const dmgFormulas = {
   },
   passive1: {
     shatteredLightfallSword: prod(
-      percent(datamine.passive1.percentage),
-      dmgNode("atk", datamine.burst.lightfallDmg, "burst", lightSwordAdditional))
+      percent(dm.passive1.percentage),
+      dmgNode("atk", dm.burst.lightfallDmg, "burst", lightSwordAdditional))
   }
 }
 
@@ -151,7 +151,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`), multi: (i === 2 || i === 4) ? 2 : undefined }),
 
       }))
@@ -164,11 +164,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.finalDmg, { name: ct.chg(`auto.skillParams.6`) }),
       }, {
         text: ct.chg("auto.skillParams.7"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
         unit: '/s'
       }, {
         text: ct.chg("auto.skillParams.8"),
-        value: datamine.charged.duration,
+        value: dm.charged.duration,
         unit: 's'
       }]
     }, {
@@ -188,13 +188,13 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.press, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
         text: ct.chg("skill.skillParams.8"),
-        value: `${datamine.skill.pressCd}`,
+        value: `${dm.skill.pressCd}`,
         unit: 's'
       }, {
         node: infoMut(dmgFormulas.skill.hold, { name: ct.chg(`skill.skillParams.1`) }),
       }, {
         text: st("holdCD"),
-        value: `${datamine.skill.holdCd}`,
+        value: `${dm.skill.holdCd}`,
         unit: 's'
       }, {
         text: ct.chg("burst.skillParams.3"),
@@ -215,7 +215,7 @@ const sheet: ICharacterSheet = {
             text: ct.ch("skillC.grimheart.int")
           }, {
             text: ct.chg("skill.skillParams.4"),
-            value: datamine.skill.grimheartDuration,
+            value: dm.skill.grimheartDuration,
             unit: 's'
           }]
         },
@@ -227,7 +227,7 @@ const sheet: ICharacterSheet = {
             text: ct.ch("skillC.grimheart.int")
           }, {
             text: ct.chg("skill.skillParams.4"),
-            value: datamine.skill.grimheartDuration,
+            value: dm.skill.grimheartDuration,
             unit: 's'
           }]
         },
@@ -253,11 +253,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.lightFallSwordNew, { name: ct.ch("burstC.dmg") }),
       }, {
         text: ct.chg("burst.skillParams.4"),
-        value: `${datamine.burst.cd}`,
+        value: `${dm.burst.cd}`,
         unit: 's'
       }, {
         text: ct.chg("burst.skillParams.5"),
-        value: `${datamine.burst.enerCost}`,
+        value: `${dm.burst.enerCost}`,
       }, {
         text: stg("duration"),
         value: 7,

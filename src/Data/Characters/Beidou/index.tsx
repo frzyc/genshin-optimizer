@@ -15,7 +15,7 @@ const data_gen = data_gen_src as CharacterData
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++],
@@ -79,43 +79,43 @@ const [condA4Path, condA4] = cond(key, "Ascension4")
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
-const skillDmgOneHit = datamine.skill.dmgBase.map((dmg, i) => dmg + datamine.skill.onHitDmgBonus[i])
-const skillDmgTwoHits = datamine.skill.dmgBase.map((dmg, i) => dmg + 2 * datamine.skill.onHitDmgBonus[i])
+const skillDmgOneHit = dm.skill.dmgBase.map((dmg, i) => dmg + dm.skill.onHitDmgBonus[i])
+const skillDmgTwoHits = dm.skill.dmgBase.map((dmg, i) => dmg + 2 * dm.skill.onHitDmgBonus[i])
 
-const nodeBurstElectroResRed_ = equal(condC6, "on", percent(datamine.constellation6.electroResShred_), { name: ct.ch("baneOfEvil_"), unit: "%" })
-const nodeSkillNormalDmg_ = equal(condA4, "on", percent(datamine.ascension4.normalDmg_), { name: ct.ch("a4normalDmg_"), unit: "%" })
-const nodeSkillChargeDmg_ = equal(condA4, "on", percent(datamine.ascension4.chargeDmg_), { name: ct.ch("a4chargeDmg_"), unit: "%" })
-const nodeSkillAttackSpeed_ = equal(condA4, "on", percent(datamine.ascension4.attackSpeed), { name: ct.ch("a4atkSpeed_"), unit: "%" })
+const nodeBurstElectroResRed_ = equal(condC6, "on", percent(dm.constellation6.electroResShred_), { name: ct.ch("baneOfEvil_"), unit: "%" })
+const nodeSkillNormalDmg_ = equal(condA4, "on", percent(dm.ascension4.normalDmg_), { name: ct.ch("a4normalDmg_"), unit: "%" })
+const nodeSkillChargeDmg_ = equal(condA4, "on", percent(dm.ascension4.chargeDmg_), { name: ct.ch("a4chargeDmg_"), unit: "%" })
+const nodeSkillAttackSpeed_ = equal(condA4, "on", percent(dm.ascension4.attackSpeed), { name: ct.ch("a4atkSpeed_"), unit: "%" })
 
-const skillShieldNode = shieldNodeTalent("hp", datamine.skill.shieldHp_, datamine.skill.shieldFlat, "skill")
-const c1ShieldNode = shieldNode("hp", percent(datamine.constellation1.shieldHp_), 0)
+const skillShieldNode = shieldNodeTalent("hp", dm.skill.shieldHp_, dm.skill.shieldFlat, "skill")
+const c1ShieldNode = shieldNode("hp", percent(dm.constellation1.shieldHp_), 0)
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    spinningDmg: dmgNode("atk", datamine.charged.spinningDmg, "charged"),
-    finalDmg: dmgNode("atk", datamine.charged.finalDmg, "charged"),
+    spinningDmg: dmgNode("atk", dm.charged.spinningDmg, "charged"),
+    finalDmg: dmgNode("atk", dm.charged.finalDmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
     shield: skillShieldNode,
     electroShield: shieldElement("electro", skillShieldNode),
-    baseDmg: dmgNode("atk", datamine.skill.dmgBase, "skill"),
+    baseDmg: dmgNode("atk", dm.skill.dmgBase, "skill"),
     dmgOneHit: dmgNode("atk", skillDmgOneHit, "skill"),
     dmgTwoHits: dmgNode("atk", skillDmgTwoHits, "skill"),
   },
   burst: {
-    burstDmg: dmgNode("atk", datamine.burst.burstDmg, "burst"),
-    lightningDmg: dmgNode("atk", datamine.burst.lightningDmg, "burst"),
+    burstDmg: dmgNode("atk", dm.burst.burstDmg, "burst"),
+    lightningDmg: dmgNode("atk", dm.burst.lightningDmg, "burst"),
   },
   constellation1: {
     shield: greaterEq(input.constellation, 1, c1ShieldNode),
     electroShield: greaterEq(input.constellation, 1, shieldElement("electro", c1ShieldNode)),
   },
   constellation4: {
-    skillDmg: greaterEq(input.constellation, 4, customDmgNode(prod(input.total.atk, percent(datamine.constellation4.skillDmg)), "elemental", { hit: { ele: constant(elementKey) } }))
+    skillDmg: greaterEq(input.constellation, 4, customDmgNode(prod(input.total.atk, percent(dm.constellation4.skillDmg)), "elemental", { hit: { ele: constant(elementKey) } }))
   }
 }
 
@@ -147,7 +147,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
@@ -159,11 +159,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.finalDmg, { name: ct.chg(`auto.skillParams.6`) }),
       }, {
         text: ct.chg("auto.skillParams.7"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
         unit: '/s'
       }, {
         text: ct.chg("auto.skillParams.8"),
-        value: datamine.charged.duration,
+        value: dm.charged.duration,
         unit: 's'
       }]
     }, {
@@ -191,7 +191,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.dmgTwoHits, { name: ct.ch("skillTwoHit") }),
       }, {
         text: ct.chg("skill.skillParams.3"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s"
       }]
     }, ct.condTem("passive2", {
@@ -224,18 +224,18 @@ const sheet: ICharacterSheet = {
       }, {
         node: infoMut(dmgFormulas.burst.lightningDmg, { name: ct.chg(`burst.skillParams.1`) }),
       }, {
-        node: infoMut(subscript(input.total.burstIndex, datamine.burst.damageReduction), { name: ct.ch("burstDmgRed_"), unit: "%" })
+        node: infoMut(subscript(input.total.burstIndex, dm.burst.damageReduction), { name: ct.ch("burstDmgRed_"), unit: "%" })
       }, {
         text: ct.chg("burst.skillParams.3"),
-        value: datamine.burst.duration,
+        value: dm.burst.duration,
         unit: "s"
       }, {
         text: ct.chg("burst.skillParams.4"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: ct.chg("burst.skillParams.5"),
-        value: datamine.burst.energyCost,
+        value: dm.burst.energyCost,
       }]
     }, ct.condTem("constellation6", {
       teamBuff: true,

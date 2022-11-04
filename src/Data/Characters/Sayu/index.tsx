@@ -18,7 +18,7 @@ const elementKey: ElementKey = "anemo"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let s = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[0], // 1
@@ -88,12 +88,12 @@ const [condSkillAbsorptionPath, condSkillAbsorption] = cond(key, "skillAbsorptio
 const [condActiveSwirlPath, condActiveSwirl] = cond(key, "activeSwirl")
 
 const [condC2SkillStackPath, condC2SkillStack] = cond(key, "c2SkillStack")
-const c2_kickPressDmg_ = greaterEq(input.constellation, 2, percent(datamine.constellation2.dmgInc))
+const c2_kickPressDmg_ = greaterEq(input.constellation, 2, percent(dm.constellation2.dmgInc))
 const c2_kickDmg_ = greaterEq(input.constellation, 2,
   lookup(condC2SkillStack,
-    Object.fromEntries(range(1, datamine.constellation2.maxStacks).map(stack => [
+    Object.fromEntries(range(1, dm.constellation2.maxStacks).map(stack => [
       stack,
-      prod(stack, percent(datamine.constellation2.dmgInc))
+      prod(stack, percent(dm.constellation2.dmgInc))
     ])),
     naught
   )
@@ -101,65 +101,65 @@ const c2_kickDmg_ = greaterEq(input.constellation, 2,
 
 const c6_daruma_dmg_inc = greaterEq(input.constellation, 6,
   prod(
-    min(input.total.eleMas, datamine.constellation6.maxStacks),
-    datamine.constellation6.darumaDmgInc,
+    min(input.total.eleMas, dm.constellation6.maxStacks),
+    dm.constellation6.darumaDmgInc,
     input.total.atk
   )
 )
 const c6_daruma_heal_inc = greaterEq(input.constellation, 6,
-  prod(min(input.total.eleMas, datamine.constellation6.maxStacks), datamine.constellation6.darumaHealInc)
+  prod(min(input.total.eleMas, dm.constellation6.maxStacks), dm.constellation6.darumaHealInc)
 )
 // Using customHealNode so I can have healInc
 const darumaHeal = customHealNode(sum(
   prod(
-    subscript(input.total.burstIndex, datamine.burst.darumaAtkHeal, { unit: "%" }),
+    subscript(input.total.burstIndex, dm.burst.darumaAtkHeal, { unit: "%" }),
     input.total.atk,
   ),
-  subscript(input.total.burstIndex, datamine.burst.darumaBaseHeal),
+  subscript(input.total.burstIndex, dm.burst.darumaBaseHeal),
   c6_daruma_heal_inc,
 ))
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    spin: dmgNode("atk", datamine.charged.spin, "charged"),
-    final: dmgNode("atk", datamine.charged.final, "charged")
+    spin: dmgNode("atk", dm.charged.spin, "charged"),
+    final: dmgNode("atk", dm.charged.final, "charged")
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    wheelDmg: dmgNode("atk", datamine.skill.wheelDmg, "skill"),
-    kickPressDmg: dmgNode("atk", datamine.skill.kickPressDmg, "skill",
+    wheelDmg: dmgNode("atk", dm.skill.wheelDmg, "skill"),
+    kickPressDmg: dmgNode("atk", dm.skill.kickPressDmg, "skill",
       { premod: { skill_dmg_: sum(c2_kickDmg_, c2_kickPressDmg_) } }),
-    kickHoldDmg: dmgNode("atk", datamine.skill.kickHoldDmg, "skill",
+    kickHoldDmg: dmgNode("atk", dm.skill.kickHoldDmg, "skill",
       { premod: { skill_dmg_: c2_kickDmg_ } }),
     eleWheelDmg: lookup(condSkillAbsorption, Object.fromEntries(absorbableEle.map(eleKey => [
       eleKey,
-      dmgNode("atk", datamine.skill.eleWheelDmg, "skill", { hit: { ele: constant(eleKey) } })
+      dmgNode("atk", dm.skill.eleWheelDmg, "skill", { hit: { ele: constant(eleKey) } })
     ])), naught),
     eleKickDmg: lookup(condSkillAbsorption, Object.fromEntries(absorbableEle.map(eleKey => [
       eleKey,
-      dmgNode("atk", datamine.skill.eleKickDmg, "skill",
+      dmgNode("atk", dm.skill.eleKickDmg, "skill",
         { hit: { ele: constant(eleKey) }, premod: { skill_dmg_: c2_kickDmg_ } })
     ])), naught)
   },
   burst: {
-    pressDmg: dmgNode("atk", datamine.burst.pressDmg, "burst"),
-    pressHeal: healNodeTalent("atk", datamine.burst.pressAtkHeal, datamine.burst.pressBaseHeal, "burst"),
-    darumaDmg: dmgNode("atk", datamine.burst.darumaDmg, "burst",
+    pressDmg: dmgNode("atk", dm.burst.pressDmg, "burst"),
+    pressHeal: healNodeTalent("atk", dm.burst.pressAtkHeal, dm.burst.pressBaseHeal, "burst"),
+    darumaDmg: dmgNode("atk", dm.burst.darumaDmg, "burst",
       { premod: { burst_dmgInc: c6_daruma_dmg_inc } }),
     darumaHeal
   },
   passive1: {
     heal: greaterEq(input.asc, 1, equal(condActiveSwirl, "activeSwirl",
       customHealNode(
-        sum(datamine.passive1.baseHeal, prod(datamine.passive1.emHeal, input.total.eleMas))
+        sum(dm.passive1.baseHeal, prod(dm.passive1.emHeal, input.total.eleMas))
       )
     ))
   },
   passive2: {
-    extraHeal: greaterEq(input.asc, 4, prod(darumaHeal, percent(datamine.passive2.nearHeal)))
+    extraHeal: greaterEq(input.asc, 4, prod(darumaHeal, percent(dm.passive2.nearHeal)))
   }
 }
 
@@ -186,7 +186,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal")
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`), multi: i === 2 ? 2 : undefined }),
       }))
     }, {
@@ -198,7 +198,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.final, { name: ct.chg(`auto.skillParams.5`) }),
       }, {
         text: ct.chg("auto.skillParams.6"),
-        value: `${datamine.charged.stamina}/s`,
+        value: `${dm.charged.stamina}/s`,
       }]
     }, {
       text: ct.chg("auto.fields.plunging"),
@@ -221,11 +221,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.kickHoldDmg, { name: ct.chg(`skill.skillParams.2`) })
       }, {
         text: ct.chg("skill.skillParams.5"),
-        value: datamine.skill.duration,
+        value: dm.skill.duration,
         unit: "s",
       }, {
         text: stg("cd"),
-        value: `${datamine.skill.cdMin}s ~ ${datamine.skill.cdMax}`,
+        value: `${dm.skill.cdMin}s ~ ${dm.skill.cdMax}`,
         unit: "s",
       }]
     }, ct.condTem("skill", {
@@ -248,7 +248,7 @@ const sheet: ICharacterSheet = {
       value: condC2SkillStack,
       path: condC2SkillStackPath,
       name: ct.ch("c2Cond"),
-      states: Object.fromEntries(range(1, datamine.constellation2.maxStacks).map(stack => [stack, {
+      states: Object.fromEntries(range(1, dm.constellation2.maxStacks).map(stack => [stack, {
         name: st("seconds", { count: stack * 0.5 }),
         fields: [{
           node: infoMut(c2_kickDmg_, { name: ct.ch("c2KickDmg_"), unit: "%" })
@@ -267,7 +267,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.darumaHeal, { name: ct.chg(`burst.skillParams.3`) })
       }, {
         text: ct.ch("burstHits"),
-        value: datamine.burst.darumaHits,
+        value: dm.burst.darumaHits,
       }]
     }, ct.headerTem("passive2", {
       fields: [{
@@ -297,7 +297,7 @@ const sheet: ICharacterSheet = {
             node: infoMut(dmgFormulas.passive1.heal, { name: stg(`healing`) })
           }, {
             text: stg("cd"),
-            value: datamine.passive1.cd,
+            value: dm.passive1.cd,
             unit: "s"
           }]
         }
@@ -311,11 +311,11 @@ const sheet: ICharacterSheet = {
     constellation4: ct.talentTem("constellation4", [ct.fieldsTem("constellation4", {
       fields: [{
         text: ct.ch("c4Ener"),
-        value: datamine.constellation4.ener,
+        value: dm.constellation4.ener,
         fixed: 1
       }, {
         text: stg("cd"),
-        value: datamine.constellation4.cd,
+        value: dm.constellation4.cd,
         unit: "s"
       }]
     })]),

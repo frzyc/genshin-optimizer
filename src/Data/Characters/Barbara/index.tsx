@@ -17,7 +17,7 @@ const elementKey: ElementKey = "hydro"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++],
@@ -67,27 +67,27 @@ const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 const [condSkillPath, condSkill] = cond(key, "skill")
-const nodeA1 = greaterEq(input.asc, 1, equal(condSkill, "on", equal(input.activeCharKey, target.charKey, datamine.passive1.stam)))
-const nodeA1Display = greaterEq(input.asc, 1, equal(condSkill, "on", datamine.passive1.stam))
+const nodeA1 = greaterEq(input.asc, 1, equal(condSkill, "on", equal(input.activeCharKey, target.charKey, dm.passive1.stam)))
+const nodeA1Display = greaterEq(input.asc, 1, equal(condSkill, "on", dm.passive1.stam))
 
 const [condC2Path, condC2] = cond(key, "c2")
-const nodeC2 = greaterEq(input.constellation, 2, equal(condC2, "on", equal(input.activeCharKey, target.charKey, datamine.constellation2.hydro_dmg_)))
-const nodeC2Display = greaterEq(input.constellation, 2, equal(condC2, "on", datamine.constellation2.hydro_dmg_))
+const nodeC2 = greaterEq(input.constellation, 2, equal(condC2, "on", equal(input.activeCharKey, target.charKey, dm.constellation2.hydro_dmg_)))
+const nodeC2Display = greaterEq(input.constellation, 2, equal(condC2, "on", dm.constellation2.hydro_dmg_))
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg: dmgNode("atk", datamine.charged.dmg, "charged"),
+    dmg: dmgNode("atk", dm.charged.dmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    regen: healNodeTalent("hp", datamine.skill.regen_hp_, datamine.skill.regen_hp, "skill"),
-    cregen: healNodeTalent("hp", datamine.skill.cregen_hp_, datamine.skill.cregen_hp, "skill"),
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+    regen: healNodeTalent("hp", dm.skill.regen_hp_, dm.skill.regen_hp, "skill"),
+    cregen: healNodeTalent("hp", dm.skill.cregen_hp_, dm.skill.cregen_hp, "skill"),
+    dmg: dmgNode("atk", dm.skill.dmg, "skill"),
   },
   burst: {
-    regen: healNodeTalent("hp", datamine.burst.hp_, datamine.burst.hp, "burst"),
+    regen: healNodeTalent("hp", dm.burst.hp_, dm.burst.hp, "burst"),
   }
 }
 
@@ -117,7 +117,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
@@ -127,7 +127,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.4`) }),
       }, {
         text: ct.chg("auto.skillParams.5"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }],
     }, {
       text: ct.chg("auto.fields.plunging"),
@@ -150,11 +150,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.2`) })
       }, {
         text: ct.chg(`skill.skillParams.3`),
-        value: datamine.skill.duration,
+        value: dm.skill.duration,
         unit: "s",
       }, {
         text: ct.chg(`skill.skillParams.4`),
-        value: data => data.get(input.constellation).value >= 2 ? `${datamine.skill.cd}s - ${datamine.constellation2.cdDec * 100}%` : `${datamine.skill.cd}s`,
+        value: data => data.get(input.constellation).value >= 2 ? `${dm.skill.cd}s - ${dm.constellation2.cdDec * 100}%` : `${dm.skill.cd}s`,
       }]
     }]),
 
@@ -163,10 +163,10 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.regen, { name: ct.chg(`burst.skillParams.0`) })
       }, {
         text: ct.chg("burst.skillParams.1"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
       }, {
         text: ct.chg("burst.skillParams.2"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }]),
 

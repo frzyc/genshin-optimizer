@@ -17,7 +17,7 @@ const region: Region = "mondstadt"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -70,36 +70,36 @@ const datamine = {
   }
 } as const
 
-const burst_critRate_ = greaterEq(input.asc, 1, percent(datamine.passive1.critRateInc))
+const burst_critRate_ = greaterEq(input.asc, 1, percent(dm.passive1.critRateInc))
 const [condA4Path, condA4] = cond(key, "A4")
-const atk_ = equal("on", condA4, percent(datamine.passive2.atkInc))
+const atk_ = equal("on", condA4, percent(dm.passive2.atkInc))
 
 const [condC6Path, condC6] = cond(key, "C6")
-const moveSPD_ = equal("on", condC6, percent(datamine.constellation6.moveSpdInc))
-const teamAtk_ = equal("on", condC6, percent(datamine.constellation6.atkInc))
+const moveSPD_ = equal("on", condC6, percent(dm.constellation6.moveSpdInc))
+const teamAtk_ = equal("on", condC6, percent(dm.constellation6.atkInc))
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
-    aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('pyro') } }),
-    secondAimed: greaterEq(input.constellation, 1, prod(percent(datamine.constellation1.secArrowDmg), dmgNode("atk", datamine.charged.aimed, "charged"))),
-    secondAimedCharged: greaterEq(input.constellation, 1, prod(dmgNode("atk", datamine.charged.aimedCharged, "charged",
-      { hit: { ele: constant('pyro') } }), percent(datamine.constellation1.secArrowDmg))),
+    aimed: dmgNode("atk", dm.charged.aimed, "charged"),
+    aimedCharged: dmgNode("atk", dm.charged.aimedCharged, "charged", { hit: { ele: constant('pyro') } }),
+    secondAimed: greaterEq(input.constellation, 1, prod(percent(dm.constellation1.secArrowDmg), dmgNode("atk", dm.charged.aimed, "charged"))),
+    secondAimedCharged: greaterEq(input.constellation, 1, prod(dmgNode("atk", dm.charged.aimedCharged, "charged",
+      { hit: { ele: constant('pyro') } }), percent(dm.constellation1.secArrowDmg))),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    inheritedHp: prod(subscript(input.total.skillIndex, datamine.skill.inheritedHp), input.total.hp),
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+    inheritedHp: prod(subscript(input.total.skillIndex, dm.skill.inheritedHp), input.total.hp),
+    dmg: dmgNode("atk", dm.skill.dmg, "skill"),
   },
   burst: {
-    rainDmg: dmgNode("atk", datamine.burst.rainDmg, "burst"),
-    dmgPerWave: dmgNode("atk", datamine.burst.dmgPerWave, "burst"),
+    rainDmg: dmgNode("atk", dm.burst.rainDmg, "burst"),
+    dmgPerWave: dmgNode("atk", dm.burst.dmgPerWave, "burst"),
   },
   constellation2: {
-    manualDetonationDmg: greaterEq(input.constellation, 2, dmgNode("atk", datamine.skill.dmg, "skill", { premod: { skill_dmg_: percent(datamine.constellation2.manualDetionationDmg) } })),
+    manualDetonationDmg: greaterEq(input.constellation, 2, dmgNode("atk", dm.skill.dmg, "skill", { premod: { skill_dmg_: percent(dm.constellation2.manualDetionationDmg) } })),
   }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -135,7 +135,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal")
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       })),
     }, {
@@ -171,7 +171,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.constellation2.manualDetonationDmg, { name: ct.ch("manualDetonationDmg") }),
       }, {
         text: ct.chg("skill.skillParams.2"),
-        value: (data) => data.get(input.constellation).value >= 4 ? datamine.skill.cd - datamine.skill.cd * 0.2 : datamine.skill.cd,
+        value: (data) => data.get(input.constellation).value >= 4 ? dm.skill.cd - dm.skill.cd * 0.2 : dm.skill.cd,
         unit: "s"
       }, {
         canShow: (data) => data.get(input.constellation).value >= 4,
@@ -187,15 +187,15 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.rainDmg, { name: ct.chg(`burst.skillParams.1`) }),
       }, {
         text: ct.chg("burst.skillParams.2"),
-        value: datamine.burst.duration,
+        value: dm.burst.duration,
         unit: "s"
       }, {
         text: ct.chg("burst.skillParams.3"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: ct.chg("burst.skillParams.4"),
-        value: `${datamine.burst.enerCost}`,
+        value: `${dm.burst.enerCost}`,
       }]
     }, ct.condTem("constellation6", {
       value: condC6,
@@ -210,7 +210,7 @@ const sheet: ICharacterSheet = {
             node: moveSPD_
           }, {
             text: stg("duration"),
-            value: datamine.passive2.duration,
+            value: dm.passive2.duration,
             unit: "s"
           }]
         }
@@ -220,11 +220,11 @@ const sheet: ICharacterSheet = {
     passive1: ct.talentTem("passive1", [ct.fieldsTem("passive1", {
       fields: [{
         text: ct.ch("critRateBonus"),
-        value: datamine.passive1.critRateInc * 100,
+        value: dm.passive1.critRateInc * 100,
         unit: "%"
       }, {
         text: ct.ch("aoeRangeBonus"),
-        value: datamine.passive1.aoeInc * 100,
+        value: dm.passive1.aoeInc * 100,
         unit: "%"
       }, {
         node: burst_critRate_
@@ -240,7 +240,7 @@ const sheet: ICharacterSheet = {
             node: atk_
           }, {
             text: stg("duration"),
-            value: datamine.passive2.duration,
+            value: dm.passive2.duration,
             unit: "s"
           }]
         }
