@@ -18,7 +18,7 @@ const region: Region = "sumeru"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -73,35 +73,35 @@ const datamine = {
   }
 } as const
 
-const c1_enerRech_ = greaterEq(input.constellation, 1, datamine.constellation1.enerRech_)
+const c1_enerRech_ = greaterEq(input.constellation, 1, dm.constellation1.enerRech_)
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, "afterBurst")
 const c4AfterBurst_eleMasDisp = greaterEq(input.constellation, 4,
-  equal(condAfterBurst, "on", datamine.constellation4.eleMas)
+  equal(condAfterBurst, "on", dm.constellation4.eleMas)
 )
 const c4AfterBurst_eleMas = unequal(target.charKey, key, c4AfterBurst_eleMasDisp)
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
-    aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant(elementKey) } }),
+    aimed: dmgNode("atk", dm.charged.aimed, "charged"),
+    aimedCharged: dmgNode("atk", dm.charged.aimedCharged, "charged", { hit: { ele: constant(elementKey) } }),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+    dmg: dmgNode("atk", dm.skill.dmg, "skill"),
   },
   burst: {
-    explosionDmg: dmgNode("atk", datamine.burst.explosionDmg, "burst"),
-    leapDmg: dmgNode("atk", datamine.burst.leapDmg, "burst"),
+    explosionDmg: dmgNode("atk", dm.burst.explosionDmg, "burst"),
+    leapDmg: dmgNode("atk", dm.burst.leapDmg, "burst"),
   },
   passive1: {
-    dmg: greaterEq(input.asc, 1, customDmgNode(prod(percent(datamine.passive1.sproutDmg), input.total.atk), "skill", { hit: { ele: constant(elementKey) } }))
+    dmg: greaterEq(input.asc, 1, customDmgNode(prod(percent(dm.passive1.sproutDmg), input.total.atk), "skill", { hit: { ele: constant(elementKey) } }))
   },
   constellation6: {
-    dmg: greaterEq(input.constellation, 6, customDmgNode(prod(percent(datamine.constellation6.anbarDmg), input.total.atk), "elemental", { hit: { ele: constant(elementKey) } })) // This is possibly burst damage
+    dmg: greaterEq(input.constellation, 6, customDmgNode(prod(percent(dm.constellation6.anbarDmg), input.total.atk), "elemental", { hit: { ele: constant(elementKey) } })) // This is possibly burst damage
   }
 }
 const skillC3 = greaterEq(input.constellation, 3, 3)
@@ -134,7 +134,7 @@ const sheet: ICharacterSheet = {
   talent: {  auto: ct.talentTem("auto", [{
         text: ct.chg("auto.fields.normal")
       }, {
-        fields: datamine.normal.hitArr.map((_, i) => ({
+        fields: dm.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
         })),
       }, {
@@ -162,7 +162,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) }),
         }, {
           text: ct.chg("skill.skillParams.1"),
-          value: datamine.skill.cd,
+          value: dm.skill.cd,
           unit: "s"
         }]
       }]),
@@ -174,15 +174,15 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.burst.leapDmg, { name: ct.chg(`burst.skillParams.1`) }),
         }, {
           text: stg("duration"),
-          value: datamine.burst.duration,
+          value: dm.burst.duration,
           unit: "s"
         }, {
           text: stg("cd"),
-          value: datamine.burst.cd,
+          value: dm.burst.cd,
           unit: "s"
         }, {
           text: stg("energyCost"),
-          value: datamine.burst.enerCost,
+          value: dm.burst.enerCost,
         }]
       }, ct.condTem("constellation4", {
         path: condAfterBurstPath,
@@ -196,7 +196,7 @@ const sheet: ICharacterSheet = {
               node: infoMut(c4AfterBurst_eleMasDisp, KeyMap.info("eleMas"))
             }, {
               text: stg("duration"),
-              value: datamine.constellation4.duration,
+              value: dm.constellation4.duration,
               unit: "s"
             }]
           }
@@ -208,7 +208,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.passive1.dmg, { name: ct.ch("sproutDmg") })
         }, {
           text: stg("duration"),
-          value: datamine.passive1.duration,
+          value: dm.passive1.duration,
           unit: "s",
         }]
       })]),

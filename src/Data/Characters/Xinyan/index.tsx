@@ -18,7 +18,7 @@ const elementKey: ElementKey = "pyro"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -80,54 +80,54 @@ const datamine = {
 const [condSkillHitNumPath, condSkillHitNum] = cond(key, "skillHitNum")
 
 const [condP2ShieldPath, condP2Shield] = cond(key, "p2Shield")
-const p2Shield_physical_dmg_Disp = greaterEq(input.asc, 4, equal(condP2Shield, "on", datamine.passive2.physical_dmg_))
+const p2Shield_physical_dmg_Disp = greaterEq(input.asc, 4, equal(condP2Shield, "on", dm.passive2.physical_dmg_))
 const p2Shield_physical_dmg_ = equal(input.activeCharKey, target.charKey, p2Shield_physical_dmg_Disp)
 
 const [condC1CritPath, condC1Crit] = cond(key, "c1Crit")
-const c1Crit_atkSPD_ = greaterEq(input.constellation, 1, equal(condC1Crit, "on", datamine.c1.atkSPD_))
+const c1Crit_atkSPD_ = greaterEq(input.constellation, 1, equal(condC1Crit, "on", dm.c1.atkSPD_))
 
-const c2BurstPhysical_critRate_ = greaterEq(input.constellation, 2, datamine.c2.burstphysical_critRate_)
+const c2BurstPhysical_critRate_ = greaterEq(input.constellation, 2, dm.c2.burstphysical_critRate_)
 
 const [condC4SkillHitPath, condC4SkillHit] = cond(key, "c4Burst")
-const c4SkillHit_physical_enemyRes_ = greaterEq(input.constellation, 4, equal(condC4SkillHit, "on", datamine.c4.physical_enemyRes_))
+const c4SkillHit_physical_enemyRes_ = greaterEq(input.constellation, 4, equal(condC4SkillHit, "on", dm.c4.physical_enemyRes_))
 
-const c6_staminaChargedDec_ = greaterEq(input.constellation, 6, datamine.c6.staminaChargedDec_)
+const c6_staminaChargedDec_ = greaterEq(input.constellation, 6, dm.c6.staminaChargedDec_)
 const [condC6ChargedPath, condC6Charged] = cond(key, "c6Charged")
 const c6_chargedAtkBonus = greaterEq(input.constellation, 6,
   equal(condC6Charged, "on",
-    prod(input.total.def, percent(datamine.c6.charged_atkBonus))
+    prod(input.total.def, percent(dm.c6.charged_atkBonus))
   )
 )
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    spin: dmgNode("atk", datamine.charged.spin, "charged"),
-    final: dmgNode("atk", datamine.charged.final, "charged")
+    spin: dmgNode("atk", dm.charged.spin, "charged"),
+    final: dmgNode("atk", dm.charged.final, "charged")
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
-    ...Object.fromEntries(datamine.skill.shieldArr.map((data, i) => [
+    dmg: dmgNode("atk", dm.skill.dmg, "skill"),
+    ...Object.fromEntries(dm.skill.shieldArr.map((data, i) => [
       `normShield${i + 1}`,
       shieldNodeTalent("def", data.defShield_, data.baseShield, "skill"),
     ])),
-    ...Object.fromEntries(datamine.skill.shieldArr.map((data, i) => [
+    ...Object.fromEntries(dm.skill.shieldArr.map((data, i) => [
       `pyroShield${i + 1}`,
       shieldElement(elementKey, shieldNodeTalent("def", data.defShield_, data.baseShield, "skill"))
     ])),
-    lvl3Dmg: dmgNode("atk", datamine.skill.lvl3Dmg, "skill"),
+    lvl3Dmg: dmgNode("atk", dm.skill.lvl3Dmg, "skill"),
   },
   burst: {
-    pressPhysDmg: dmgNode("atk", datamine.burst.pressPhysDmg, "burst", {
+    pressPhysDmg: dmgNode("atk", dm.burst.pressPhysDmg, "burst", {
       hit: { ele: constant("physical") },
       premod: {
         burst_critRate_: c2BurstPhysical_critRate_,
       }
     }),
-    dotPyroDmg: dmgNode("atk", datamine.burst.dotPyroDmg, "burst"),
+    dotPyroDmg: dmgNode("atk", dm.burst.dotPyroDmg, "burst"),
   },
 } as const
 
@@ -165,7 +165,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal")
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
@@ -177,7 +177,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.final, { name: ct.chg(`auto.skillParams.5`) }),
       }, {
         text: ct.chg("auto.skillParams.6"),
-        value: `${datamine.charged.stamina}/s`,
+        value: `${dm.charged.stamina}/s`,
       }],
     }, ct.headerTem("constellation6", {
       fields: [{
@@ -211,7 +211,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
         text: stg("cd"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s"
       }]
     }, ct.condTem("skill", {
@@ -233,7 +233,7 @@ const sheet: ICharacterSheet = {
             },
             ])), {
               text: stg("duration"),
-              value: datamine.skill.duration,
+              value: dm.skill.duration,
               unit: "s",
             },
             // Level 3 damage
@@ -268,7 +268,7 @@ const sheet: ICharacterSheet = {
             node: c4SkillHit_physical_enemyRes_
           }, {
             text: stg("duration"),
-            value: datamine.c4.duration,
+            value: dm.c4.duration,
             unit: "s",
           }]
         }
@@ -282,15 +282,15 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.dotPyroDmg, { name: ct.chg(`burst.skillParams.1`) }),
       }, {
         text: stg("duration"),
-        value: datamine.burst.duration,
+        value: dm.burst.duration,
         unit: "s"
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }, ct.headerTem("constellation2", {
       fields: [{
@@ -313,11 +313,11 @@ const sheet: ICharacterSheet = {
             node: c1Crit_atkSPD_,
           }, {
             text: stg("duration"),
-            value: datamine.c1.duration,
+            value: dm.c1.duration,
             unit: "s",
           }, {
             text: stg("cd"),
-            value: datamine.c1.cd,
+            value: dm.c1.cd,
             unit: "s",
           }]
         }

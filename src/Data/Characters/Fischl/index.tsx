@@ -16,7 +16,7 @@ const region: Region = "mondstadt"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++],
@@ -69,33 +69,33 @@ const datamine = {
 } as const
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
-    aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('electro') } }),
-    aimedChargedOz: greaterEq(input.asc, 1, prod(percent(datamine.passive1.dmg), dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('electro') } })))
+    aimed: dmgNode("atk", dm.charged.aimed, "charged"),
+    aimedCharged: dmgNode("atk", dm.charged.aimedCharged, "charged", { hit: { ele: constant('electro') } }),
+    aimedChargedOz: greaterEq(input.asc, 1, prod(percent(dm.passive1.dmg), dmgNode("atk", dm.charged.aimedCharged, "charged", { hit: { ele: constant('electro') } })))
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    ozDmg: dmgNode("atk", datamine.skill.ozDmg, "skill"),
-    summonDmg: lessThan(input.constellation, 2, dmgNode("atk", datamine.skill.summonDmg, "skill")),
+    ozDmg: dmgNode("atk", dm.skill.ozDmg, "skill"),
+    summonDmg: lessThan(input.constellation, 2, dmgNode("atk", dm.skill.summonDmg, "skill")),
     summonDmgC2: greaterEq(input.constellation, 2, customDmgNode(prod(sum(subscript(input.total.skillIndex,
-      datamine.skill.summonDmg, { unit: "%" }), percent(datamine.constellation2.dmg)), input.total.atk), "skill",
+      dm.skill.summonDmg, { unit: "%" }), percent(dm.constellation2.dmg)), input.total.atk), "skill",
       { hit: { ele: constant('electro') } })),
-    ozActiveCharDmg: greaterEq(input.constellation, 6, customDmgNode(prod(input.total.atk, percent(datamine.constellation6.dmg)), "skill", { hit: { ele: constant('electro') } }))
+    ozActiveCharDmg: greaterEq(input.constellation, 6, customDmgNode(prod(input.total.atk, percent(dm.constellation6.dmg)), "skill", { hit: { ele: constant('electro') } }))
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
-    additionalDmg: greaterEq(input.constellation, 4, customDmgNode(prod(input.total.atk, percent(datamine.constellation4.dmg)), "burst", { hit: { ele: constant('electro') } })),
-    regen: greaterEq(input.constellation, 4, customHealNode(prod(input.total.hp, percent(datamine.constellation4.regen))))
+    dmg: dmgNode("atk", dm.burst.dmg, "burst"),
+    additionalDmg: greaterEq(input.constellation, 4, customDmgNode(prod(input.total.atk, percent(dm.constellation4.dmg)), "burst", { hit: { ele: constant('electro') } })),
+    regen: greaterEq(input.constellation, 4, customHealNode(prod(input.total.hp, percent(dm.constellation4.regen))))
   },
   passive2: {
-    dmg: greaterEq(input.asc, 4, customDmgNode(prod(input.total.atk, percent(datamine.passive2.dmg)), "skill", { hit: { ele: constant('electro') } }))
+    dmg: greaterEq(input.asc, 4, customDmgNode(prod(input.total.atk, percent(dm.passive2.dmg)), "skill", { hit: { ele: constant('electro') } }))
   },
   constellation1: {
-    dmg: greaterEq(input.constellation, 1, customDmgNode(prod(input.total.atk, percent(datamine.constellation1.dmg)), "normal", { hit: { ele: constant('physical') } }))
+    dmg: greaterEq(input.constellation, 1, customDmgNode(prod(input.total.atk, percent(dm.constellation1.dmg)), "normal", { hit: { ele: constant('physical') } }))
   }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -120,7 +120,7 @@ const sheet: ICharacterSheet = {
   talent: {  auto: ct.talentTem("auto", [{
         text: ct.chg("auto.fields.normal"),
       }, {
-        fields: datamine.normal.hitArr.map((_, i) => ({
+        fields: dm.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
         }))
       }, {
@@ -160,11 +160,11 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.skill.ozActiveCharDmg, { name: ct.ch("c6OzDmg") })
         }, {
           text: ct.chg("skill.skillParams.2"),
-          value: (data) => data.get(input.constellation).value >= 6 ? datamine.skill.duration + datamine.constellation6.duration : datamine.skill.duration,
+          value: (data) => data.get(input.constellation).value >= 6 ? dm.skill.duration + dm.constellation6.duration : dm.skill.duration,
           unit: "s"
         }, {
           text: ct.chg("skill.skillParams.3"),
-          value: `${datamine.skill.cd}`,
+          value: `${dm.skill.cd}`,
           unit: "s"
         }, {
           canShow: (data) => data.get(input.constellation).value >= 2,
@@ -185,11 +185,11 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.burst.regen, { name: stg(`healing`) }),
         }, {
           text: ct.chg("burst.skillParams.1"),
-          value: `${datamine.burst.cd}`,
+          value: `${dm.burst.cd}`,
           unit: "s"
         }, {
           text: ct.chg("burst.skillParams.2"),
-          value: `${datamine.burst.enerCost}`,
+          value: `${dm.burst.enerCost}`,
         }]
       }]),
 

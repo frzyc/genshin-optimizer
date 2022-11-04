@@ -1,5 +1,4 @@
-import { WeaponTypeKey } from "pipeline";
-import { allRarities, allWeaponTypeKeys, Rarity } from "../../Types/consts";
+import { allRarities, allWeaponTypeKeys, Rarity, WeaponTypeKey } from "../../Types/consts";
 import { weaponSortKeys } from "../../Util/WeaponSort";
 import { ArtCharDatabase } from "../Database";
 import { DataEntry } from "../DataEntry";

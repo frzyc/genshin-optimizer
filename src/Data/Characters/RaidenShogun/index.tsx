@@ -16,7 +16,7 @@ const key: CharacterKey = "RaidenShogun"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -81,12 +81,12 @@ const datamine = {
 
 const [condSkillEyePath, condSkillEye] = cond(key, "skillEye")
 const skillEye_ = equal("skillEye", condSkillEye,
-  prod(constant(datamine.burst.enerCost, { name: st("energy") }), subscript(input.total.skillIndex, datamine.skill.burstDmg_bonus, { fixed: 2, unit: "%" })))
+  prod(constant(dm.burst.enerCost, { name: st("energy") }), subscript(input.total.skillIndex, dm.skill.burstDmg_bonus, { fixed: 2, unit: "%" })))
 
 function skillDmg(atkType: number[]) {
   // if Raiden is above or equal to C2, then account for DEF Ignore else not
   return dmgNode('atk', atkType, 'skill', {
-    enemy: { defIgn: greaterEq(input.constellation, 2, datamine.constellation2.def_ignore) }
+    enemy: { defIgn: greaterEq(input.constellation, 2, dm.constellation2.def_ignore) }
   })
 }
 
@@ -94,18 +94,18 @@ const energyCosts = [40, 50, 60, 70, 80, 90]
 const [condSkillEyeTeamPath, condSkillEyeTeam] = cond(key, "skillEyeTeam")
 const skillEyeTeamBurstDmgInc = unequal(input.activeCharKey, input.charKey,
   prod(lookup(condSkillEyeTeam, objectKeyMap(energyCosts, i => constant(i, { name: st("energy") })), 0),
-    subscript(input.total.skillIndex, datamine.skill.burstDmg_bonus, { fixed: 2, unit: "%" })))
+    subscript(input.total.skillIndex, dm.skill.burstDmg_bonus, { fixed: 2, unit: "%" })))
 
 const resolveStacks = [10, 20, 30, 40, 50, 60]
 const [condResolveStackPath, condResolveStack] = cond(key, "burstResolve")
 
 const resolveStackNode = lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0, { name: ct.ch("burst.resolves") })
 const resolveInitialBonus_ = prod(
-  subscript(input.total.burstIndex, datamine.burst.resolveBonus1, { name: ct.ch("burst.resolveInitial_"), unit: "%" }),
+  subscript(input.total.burstIndex, dm.burst.resolveBonus1, { name: ct.ch("burst.resolveInitial_"), unit: "%" }),
   resolveStackNode
 )
 const resolveInfusedBonus_ = prod(
-  subscript(input.total.burstIndex, datamine.burst.resolveBonus2, { name: ct.ch("burst.resolveInfused_"), unit: "%" }),
+  subscript(input.total.burstIndex, dm.burst.resolveBonus2, { name: ct.ch("burst.resolveInfused_"), unit: "%" }),
   resolveStackNode
 )
 function burstResolve(mvArr: number[], initial = false) {
@@ -125,45 +125,45 @@ function burstResolve(mvArr: number[], initial = false) {
         ele: constant('electro')
       }, enemy: {
         // if Raiden is above or equal to C2, then account for DEF Ignore else not
-        defIgn: greaterEq(input.constellation, 2, datamine.constellation2.def_ignore)
+        defIgn: greaterEq(input.constellation, 2, dm.constellation2.def_ignore)
       }
     }
   )
 }
 
-const passive2ElecDmgBonus = greaterEq(input.asc, 4, prod(sum(input.premod.enerRech_, percent(-1)), (datamine.passive2.electroDmg_bonus * 100)))
+const passive2ElecDmgBonus = greaterEq(input.asc, 4, prod(sum(input.premod.enerRech_, percent(-1)), (dm.passive2.electroDmg_bonus * 100)))
 
 const [condC4Path, condC4] = cond(key, "c4")
 const c4AtkBonus_ = greaterEq(input.constellation, 4,
-  equal("c4", condC4, unequal(input.activeCharKey, input.charKey, datamine.constellation4.atk_bonus))
+  equal("c4", condC4, unequal(input.activeCharKey, input.charKey, dm.constellation4.atk_bonus))
 )
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg: dmgNode("atk", datamine.charged.dmg, "charged"),
+    dmg: dmgNode("atk", dm.charged.dmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: skillDmg(datamine.skill.skillDmg),
-    coorDmg: skillDmg(datamine.skill.coorDmg),
+    dmg: skillDmg(dm.skill.skillDmg),
+    coorDmg: skillDmg(dm.skill.coorDmg),
     skillEye_
   },
   burst: {
-    dmg: burstResolve(datamine.burst.dmg, true),
-    hit1: burstResolve(datamine.burst.hit1),
-    hit2: burstResolve(datamine.burst.hit2),
-    hit3: burstResolve(datamine.burst.hit3),
-    hit41: burstResolve(datamine.burst.hit41),
-    hit42: burstResolve(datamine.burst.hit42),
-    hit5: burstResolve(datamine.burst.hit5),
-    charged1: burstResolve(datamine.burst.charged1),
-    charged2: burstResolve(datamine.burst.charged2),
-    plunge: burstResolve(datamine.burst.plunge),
-    plungeLow: burstResolve(datamine.burst.plungeLow),
-    plungeHigh: burstResolve(datamine.burst.plungeHigh),
+    dmg: burstResolve(dm.burst.dmg, true),
+    hit1: burstResolve(dm.burst.hit1),
+    hit2: burstResolve(dm.burst.hit2),
+    hit3: burstResolve(dm.burst.hit3),
+    hit41: burstResolve(dm.burst.hit41),
+    hit42: burstResolve(dm.burst.hit42),
+    hit5: burstResolve(dm.burst.hit5),
+    charged1: burstResolve(dm.burst.charged1),
+    charged2: burstResolve(dm.burst.charged2),
+    plunge: burstResolve(dm.burst.plunge),
+    plungeLow: burstResolve(dm.burst.plungeLow),
+    plungeHigh: burstResolve(dm.burst.plungeHigh),
   },
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -199,7 +199,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i + (i < 4 ? 0 : -1)}`), textSuffix: i === 3 ? "(1)" : i === 4 ? "(2)" : "" }),
       }))
     }, {
@@ -209,7 +209,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.5`) }),
       }, {
         text: ct.chg("auto.skillParams.6"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }]
     }, {
       text: ct.chg("auto.fields.plunging"),
@@ -230,10 +230,10 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.coorDmg, { name: ct.chg(`skill.skillParams.1`) }),
       }, {
         text: ct.chg("skill.skillParams.2"),
-        value: `${datamine.skill.duration}s`,
+        value: `${dm.skill.duration}s`,
       }, {
         text: ct.chg("skill.skillParams.4"),
-        value: `${datamine.skill.cd}s`,
+        value: `${dm.skill.cd}s`,
       }],
     }, ct.condTem("skill", {
       value: condSkillEye,
@@ -282,7 +282,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.charged2, { name: ct.chg(`burst.skillParams.8`), textSuffix: "(2)" }),
       }, {
         text: ct.chg("burst.skillParams.9"),
-        value: `${datamine.burst.stam}`,
+        value: `${dm.burst.stam}`,
       }, {
         node: infoMut(dmgFormulas.burst.plunge, { name: ct.chg(`burst.skillParams.10`) }),
       }, {
@@ -291,16 +291,16 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.plungeHigh, { name: stg("plunging.high") }),
       }, {
         text: ct.chg("burst.skillParams.12"),
-        value: (data) => `${datamine.burst.enerGen[data.get(input.total.burstIndex).value]}`,
+        value: (data) => `${dm.burst.enerGen[data.get(input.total.burstIndex).value]}`,
       }, {
         text: ct.chg("burst.skillParams.13"),
-        value: `${datamine.burst.duration}s`,
+        value: `${dm.burst.duration}s`,
       }, {
         text: ct.chg("burst.skillParams.14"),
-        value: `${datamine.burst.cd}s`,
+        value: `${dm.burst.cd}s`,
       }, {
         text: ct.chg("burst.skillParams.15"),
-        value: `${datamine.burst.enerCost}`,
+        value: `${dm.burst.enerCost}`,
       }],
     }, ct.condTem("burst", {
       value: condResolveStack,
@@ -320,7 +320,7 @@ const sheet: ICharacterSheet = {
     passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
       fields: [{
         text: ct.ch("a4.enerRest"),
-        value: (data) => (data.get(input.total.enerRech_).value * 100 - 100) * (datamine.passive2.energyGen * 100),
+        value: (data) => (data.get(input.total.enerRech_).value * 100 - 100) * (dm.passive2.energyGen * 100),
         unit: "%"
       }, {
         node: passive2ElecDmgBonus,
@@ -342,7 +342,7 @@ const sheet: ICharacterSheet = {
             node: c4AtkBonus_,
           }, {
             text: ct.chg("skill.skillParams.2"),
-            value: `${datamine.constellation4.duration}s`
+            value: `${dm.constellation4.duration}s`
           }]
         }
       }

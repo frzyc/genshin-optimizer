@@ -8,7 +8,7 @@ import data_gen_src from './data_gen.json'
 const data_gen = data_gen_src as CharacterData
 
 export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, talentFunc: any, skillParam_gen: any, assets: any, baseTravelerSheet: Partial<ICharacterSheet>) {
-  const datamine = {
+  const dm = {
     normal: {
       hitArr: [
         skillParam_gen.auto[0],
@@ -31,13 +31,13 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
   } as const
 
   const dmgFormulas = {
-    normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+    normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
       [i, dmgNode("atk", arr, "normal")])),
     charged: {
-      dmg1: dmgNode("atk", datamine.charged.hit1, "charged"),
-      dmg2: dmgNode("atk", datamine.charged.hit2, "charged")
+      dmg1: dmgNode("atk", dm.charged.hit1, "charged"),
+      dmg2: dmgNode("atk", dm.charged.hit2, "charged")
     },
-    plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+    plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
       [key, dmgNode("atk", value, "plunging")])),
   } as const
 
@@ -48,7 +48,7 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
   talent.auto = ct.talentTem("auto", [{
     text: ct.chg("auto.fields.normal")
   }, {
-    fields: datamine.normal.hitArr.map((_: any, i: number) => ({
+    fields: dm.normal.hitArr.map((_: any, i: number) => ({
       node: infoMut(dmgFormulas.normal[i]!, { name: ct.chg(`auto.skillParams.${i}`) }),
     }))
   }, {
@@ -60,7 +60,7 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
       node: infoMut(dmgFormulas.charged.dmg2!, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(2)" }),
     }, {
       text: ct.chg("auto.skillParams.6"),
-      value: datamine.charged.stamina,
+      value: dm.charged.stamina,
     }]
   }, {
     text: ct.chg("auto.fields.plunging"),

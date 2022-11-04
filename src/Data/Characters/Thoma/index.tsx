@@ -17,7 +17,7 @@ const elementKey: ElementKey = "pyro"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -80,45 +80,45 @@ const [condP1BarrierStacksPath, condP1BarrierStacks] = cond(key, "p1BarrierStack
 // This should technically only apply to the active character, but I am trying
 // to minimize the amount of jank active character fixes.
 const p1_shield_ = greaterEq(input.asc, 1,
-  lookup(condP1BarrierStacks, Object.fromEntries(range(1, datamine.passive1.maxStacks).map(stacks => [
+  lookup(condP1BarrierStacks, Object.fromEntries(range(1, dm.passive1.maxStacks).map(stacks => [
     stacks,
-    constant(stacks * datamine.passive1.shield_)
+    constant(stacks * dm.passive1.shield_)
   ])), naught)
 )
 
-const p2Collapse_dmgInc = greaterEq(input.asc, 4, prod(input.total.hp, datamine.passive2.collapse_dmgInc))
+const p2Collapse_dmgInc = greaterEq(input.asc, 4, prod(input.total.hp, dm.passive2.collapse_dmgInc))
 
 const [condC4AfterBurstPath, condC4AfterBurst] = cond(key, "c4AfterBurst")
 
 const [condC6AfterBarrierPath, condC6AfterBarrier] = cond(key, "c6AfterBarrier")
 const c6_normal_dmg_ = greaterEq(input.constellation, 6,
-  equal(condC6AfterBarrier, "on", datamine.c6.auto_dmg)
+  equal(condC6AfterBarrier, "on", dm.c6.auto_dmg)
 )
 const c6_charged_dmg_ = { ...c6_normal_dmg_ }
 const c6_plunging_dmg_ = { ...c6_normal_dmg_ }
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg1: dmgNode("atk", datamine.charged.dmg, "charged"),
+    dmg1: dmgNode("atk", dm.charged.dmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
-    minShield: shieldNodeTalent("hp", datamine.skill.hpShield_, datamine.skill.baseShield, "skill"),
-    minPyroShield: shieldElement("pyro", shieldNodeTalent("hp", datamine.skill.hpShield_, datamine.skill.baseShield, "skill")),
-    maxShield: shieldNodeTalent("hp", datamine.skill.maxHpShield_, datamine.skill.maxBaseShield, "skill"),
-    maxPyroShield: shieldElement("pyro", shieldNodeTalent("hp", datamine.skill.maxHpShield_, datamine.skill.maxBaseShield, "skill")),
+    dmg: dmgNode("atk", dm.skill.dmg, "skill"),
+    minShield: shieldNodeTalent("hp", dm.skill.hpShield_, dm.skill.baseShield, "skill"),
+    minPyroShield: shieldElement("pyro", shieldNodeTalent("hp", dm.skill.hpShield_, dm.skill.baseShield, "skill")),
+    maxShield: shieldNodeTalent("hp", dm.skill.maxHpShield_, dm.skill.maxBaseShield, "skill"),
+    maxPyroShield: shieldElement("pyro", shieldNodeTalent("hp", dm.skill.maxHpShield_, dm.skill.maxBaseShield, "skill")),
   },
   burst: {
-    pressDmg: dmgNode("atk", datamine.burst.pressDmg, "burst"),
-    collapseDmg: dmgNode("atk", datamine.burst.collapseDmg, "burst",
+    pressDmg: dmgNode("atk", dm.burst.pressDmg, "burst"),
+    collapseDmg: dmgNode("atk", dm.burst.collapseDmg, "burst",
       { premod: { burst_dmgInc: p2Collapse_dmgInc } }
     ),
-    shield: shieldNodeTalent("hp", datamine.burst.hpShield_, datamine.burst.baseShield, "burst"),
-    pyroShield: shieldElement("pyro", shieldNodeTalent("hp", datamine.burst.hpShield_, datamine.burst.baseShield, "burst")),
+    shield: shieldNodeTalent("hp", dm.burst.hpShield_, dm.burst.baseShield, "burst"),
+    pyroShield: shieldElement("pyro", shieldNodeTalent("hp", dm.burst.hpShield_, dm.burst.baseShield, "burst")),
   }
 }
 
@@ -153,7 +153,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`), multi: i === 2 ? 2 : undefined }),
       }))
     }, {
@@ -163,7 +163,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.dmg1, { name: ct.chg(`auto.skillParams.4`) }),
       }, {
         text: ct.chg("auto.skillParams.5"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }],
     }, {
       text: ct.chg("auto.fields.plunging"),
@@ -194,11 +194,11 @@ const sheet: ICharacterSheet = {
         ),
       }, {
         text: stg("duration"),
-        value: datamine.skill.shieldDuration,
+        value: dm.skill.shieldDuration,
         unit: "s"
       }, {
         text: stg("cd"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s"
       }]
     }]),
@@ -214,30 +214,30 @@ const sheet: ICharacterSheet = {
         ),
       }, {
         text: ct.chg("burst.skillParams.3"),
-        value: datamine.burst.shieldDuration,
+        value: dm.burst.shieldDuration,
         unit: "s",
       }, {
         node: infoMut(dmgFormulas.burst.collapseDmg, { name: ct.chg(`burst.skillParams.1`) })
       }, {
         text: ct.chg("burst.skillParams.4"),
         value: data => data.get(input.constellation).value >= 2
-          ? `${datamine.burst.scorchingDuration}s + ${datamine.c2.burstDuration}s = ${datamine.burst.scorchingDuration + datamine.c2.burstDuration}`
-          : datamine.burst.scorchingDuration,
+          ? `${dm.burst.scorchingDuration}s + ${dm.c2.burstDuration}s = ${dm.burst.scorchingDuration + dm.c2.burstDuration}`
+          : dm.burst.scorchingDuration,
         unit: "s",
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s",
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }, ct.condTem("passive1", {
       value: condP1BarrierStacks,
       path: condP1BarrierStacksPath,
       name: ct.ch("a1"),
       teamBuff: true,
-      states: Object.fromEntries(range(1, datamine.passive1.maxStacks).map(stacks => [
+      states: Object.fromEntries(range(1, dm.passive1.maxStacks).map(stacks => [
         stacks,
         {
           name: st("stack", { count: stacks }),
@@ -245,11 +245,11 @@ const sheet: ICharacterSheet = {
             node: p1_shield_
           }, {
             text: stg("duration"),
-            value: datamine.passive1.duration,
+            value: dm.passive1.duration,
             unit: "s"
           }, {
             text: st("triggerCD"),
-            value: datamine.passive1.cd,
+            value: dm.passive1.cd,
             unit: "s",
             fixed: 1
           }]
@@ -262,7 +262,7 @@ const sheet: ICharacterSheet = {
     }), ct.headerTem("constellation2", {
       fields: [{
         text: ct.ch("c2"),
-        value: datamine.c2.burstDuration,
+        value: dm.c2.burstDuration,
         unit: "s"
       }]
     }), ct.condTem("constellation4", {
@@ -273,7 +273,7 @@ const sheet: ICharacterSheet = {
         on: {
           fields: [{
             text: st("energyRegen"),
-            value: datamine.c4.energyRestore,
+            value: dm.c4.energyRestore,
           }]
         }
       }

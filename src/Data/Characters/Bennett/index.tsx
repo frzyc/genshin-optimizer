@@ -18,7 +18,7 @@ const elementKey: ElementKey = "pyro"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -59,10 +59,10 @@ const datamine = {
     enerCost: skillParam_gen.burst[b++][0],
   },
   passive1: {
-    cd_red: 0.2, // Not in the datamine for some reason
+    cd_red: 0.2, // Not in the dm for some reason
   },
   passive2: {
-    cd_red: 0.5, // Not in the datamine for some reason
+    cd_red: 0.5, // Not in the dm for some reason
   },
   constellation1: {
     atk_inc: skillParam_gen.constellation1[0],
@@ -79,11 +79,11 @@ const datamine = {
   }
 } as const
 
-const a1SkillCd = greaterEq(input.asc, 1, datamine.passive1.cd_red)
+const a1SkillCd = greaterEq(input.asc, 1, dm.passive1.cd_red)
 
-const burstAtkRatio = subscript(input.total.burstIndex, datamine.burst.atkBonus, { unit: "%" })
+const burstAtkRatio = subscript(input.total.burstIndex, dm.burst.atkBonus, { unit: "%" })
 const burstAddlAtk = prod(burstAtkRatio, input.base.atk)
-const c1AtkRatio = greaterEq(input.constellation, 1, datamine.constellation1.atk_inc, { name: ct.ch("additionalATKRatio_"), unit: "%" })
+const c1AtkRatio = greaterEq(input.constellation, 1, dm.constellation1.atk_inc, { name: ct.ch("additionalATKRatio_"), unit: "%" })
 const c1AddlAtk = greaterEq(input.constellation, 1, prod(c1AtkRatio, input.base.atk))
 const atkIncRatio = sum(burstAtkRatio, c1AtkRatio)
 const activeInAreaAtkDisp = prod(atkIncRatio, input.base.atk)
@@ -93,45 +93,45 @@ const activeInArea = equal("activeInArea", condInArea, equal(input.activeCharKey
 const activeInAreaAtk = equal(activeInArea, 1, activeInAreaAtkDisp)
 
 const activeInAreaA4 = greaterEq(input.asc, 4,
-  equal(activeInArea, 1, datamine.passive2.cd_red)
+  equal(activeInArea, 1, dm.passive2.cd_red)
 )
 
 const c6AndCorrectWep = greaterEq(input.constellation, 6,
   lookup(target.weaponType,
     { "sword": constant(1), "claymore": constant(1), "polearm": constant(1) }, constant(0)))
 const activeInAreaC6PyroDmg = equal(activeInArea, 1,
-  greaterEq(input.constellation, 6, datamine.constellation6.pyro_dmg)
+  greaterEq(input.constellation, 6, dm.constellation6.pyro_dmg)
 )
 const activeInAreaC6Infusion = equalStr(c6AndCorrectWep, 1, equalStr(activeInArea, 1, elementKey))
 
 const [condUnderHPPath, condUnderHP] = cond(key, "underHP")
 const underHP = greaterEq(input.constellation, 2,
-  equal("underHP", condUnderHP, datamine.constellation2.er_inc))
+  equal("underHP", condUnderHP, dm.constellation2.er_inc))
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg1: dmgNode("atk", datamine.charged.dmg1, "charged"),
-    dmg2: dmgNode("atk", datamine.charged.dmg2, "charged"),
+    dmg1: dmgNode("atk", dm.charged.dmg1, "charged"),
+    dmg2: dmgNode("atk", dm.charged.dmg2, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    press: dmgNode("atk", datamine.skill.press, "skill"),
-    hold1_1: dmgNode("atk", datamine.skill.hold1_1, "skill"),
-    hold1_2: dmgNode("atk", datamine.skill.hold1_2, "skill"),
-    hold2_1: dmgNode("atk", datamine.skill.hold2_1, "skill"),
-    hold2_2: dmgNode("atk", datamine.skill.hold2_2, "skill"),
-    explosion: dmgNode("atk", datamine.skill.explosion, "skill"),
+    press: dmgNode("atk", dm.skill.press, "skill"),
+    hold1_1: dmgNode("atk", dm.skill.hold1_1, "skill"),
+    hold1_2: dmgNode("atk", dm.skill.hold1_2, "skill"),
+    hold2_1: dmgNode("atk", dm.skill.hold2_1, "skill"),
+    hold2_2: dmgNode("atk", dm.skill.hold2_2, "skill"),
+    explosion: dmgNode("atk", dm.skill.explosion, "skill"),
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
-    regen: healNodeTalent("hp", datamine.burst.regen_, datamine.burst.regenFlat, "burst"),
+    dmg: dmgNode("atk", dm.burst.dmg, "burst"),
+    regen: healNodeTalent("hp", dm.burst.regen_, dm.burst.regenFlat, "burst"),
     atkInc: activeInAreaAtk,
   },
   constellation4: {
-    dmg: greaterEq(input.constellation, 4, prod(dmgNode("atk", datamine.skill.hold1_2, "skill"), datamine.constellation4.dmg))
+    dmg: greaterEq(input.constellation, 4, prod(dmgNode("atk", dm.skill.hold1_2, "skill"), dm.constellation4.dmg))
   }
 }
 
@@ -173,7 +173,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       })),
     }, {
@@ -185,7 +185,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.dmg2, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(2)" }),
       }, {
         text: ct.chg("auto.skillParams.6"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }],
     }, {
       text: ct.chg("auto.fields.plunging"),
@@ -206,7 +206,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: stg("press.cd"),
         unit: "s",
-        value: data => calculateSkillCD(data, datamine.skill.cd_press),
+        value: data => calculateSkillCD(data, dm.skill.cd_press),
       }, {
         // Lvl 1
         node: infoMut(dmgFormulas.skill.hold1_1, { name: ct.ch("skill.lvl1_1DMG") }),
@@ -215,7 +215,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.ch("skill.lvl1CD"),
         unit: "s",
-        value: data => calculateSkillCD(data, datamine.skill.cd_hold1),
+        value: data => calculateSkillCD(data, dm.skill.cd_hold1),
       }, {
         // Lvl 2
         node: infoMut(dmgFormulas.skill.hold2_1, { name: ct.ch("skill.lvl2_1DMG") }),
@@ -226,7 +226,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.ch("skill.lvl2CD"),
         unit: "s",
-        value: data => calculateSkillCD(data, datamine.skill.cd_hold2),
+        value: data => calculateSkillCD(data, dm.skill.cd_hold2),
       }]
     }, ct.headerTem("passive1", {
       fields: [{
@@ -241,15 +241,15 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.regen, { name: ct.chg(`burst.skillParams.1`) })
       }, {
         text: ct.chg("burst.skillParams.3"),
-        value: datamine.burst.duration,
+        value: dm.burst.duration,
         unit: "s",
       }, {
         text: ct.chg("burst.skillParams.4"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s",
       }, {
         text: ct.chg("burst.skillParams.5"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }, ct.condTem("burst", {
       value: condInArea,
@@ -284,7 +284,7 @@ const sheet: ICharacterSheet = {
       teamBuff: true,
     }), ct.headerTem("constellation6", {
       fields: [{
-        node: constant(datamine.constellation6.pyro_dmg, KeyMap.info("pyro_dmg_"))
+        node: constant(dm.constellation6.pyro_dmg, KeyMap.info("pyro_dmg_"))
       }, {
         text: ct.ch("c6PyroInfusion")
       }],
@@ -299,7 +299,7 @@ const sheet: ICharacterSheet = {
       ct.condTem("constellation2", {
         value: condUnderHP,
         path: condUnderHPPath,
-        name: st("lessPercentHP", { percent: datamine.constellation2.hp_thresh * 100 }),
+        name: st("lessPercentHP", { percent: dm.constellation2.hp_thresh * 100 }),
         states: {
           underHP: {
             fields: [{

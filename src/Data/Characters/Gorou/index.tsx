@@ -17,7 +17,7 @@ const elementKey: ElementKey = "geo"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -75,46 +75,46 @@ const datamine = {
 const [condInFieldPath, condInField] = cond(key, "inField")
 const skill1_defDisp = equal(condInField, "inField",
   greaterEq(tally["geo"], 1,
-    subscript(input.total.skillIndex, datamine.skill.defInc)
+    subscript(input.total.skillIndex, dm.skill.defInc)
   )
 )
 const skill1_def = equal(input.activeCharKey, target.charKey, skill1_defDisp)
 const skill3_geo_dmg_Disp = equal(condInField, "inField",
-  greaterEq(tally["geo"], 3, datamine.skill.geo_dmg_)
+  greaterEq(tally["geo"], 3, dm.skill.geo_dmg_)
 )
 const skill3_geo_dmg_ = equal(input.activeCharKey, target.charKey, skill3_geo_dmg_Disp)
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, "afterBurst")
-const afterBurst_def_ = greaterEq(input.asc, 1, equal(condAfterBurst, "afterBurst", datamine.passive1.def_))
+const afterBurst_def_ = greaterEq(input.asc, 1, equal(condAfterBurst, "afterBurst", dm.passive1.def_))
 
-const p2_skill_dmgInc = greaterEq(input.asc, 4, prod(input.total.def, datamine.passive2.skill_dmgInc))
-const p2_burst_dmgInc = greaterEq(input.asc, 4, prod(input.total.def, datamine.passive2.burst_dmgInc))
+const p2_skill_dmgInc = greaterEq(input.asc, 4, prod(input.total.def, dm.passive2.skill_dmgInc))
+const p2_burst_dmgInc = greaterEq(input.asc, 4, prod(input.total.def, dm.passive2.burst_dmgInc))
 
 const [condAfterSkillBurstPath, condAfterSkillBurst] = cond(key, "afterSkillBurst")
 const c6_geo_critDMG_ = greaterEq(input.constellation, 6,
   equal(condAfterSkillBurst, "afterSkillBurst",
-    subscript(sum(tally["geo"], -1), datamine.constellation6.geo_critDMG_)
+    subscript(sum(tally["geo"], -1), dm.constellation6.geo_critDMG_)
   )
 )
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
-    fully: dmgNode("atk", datamine.charged.fully, "charged", { hit: { ele: constant(elementKey) } }),
+    aimed: dmgNode("atk", dm.charged.aimed, "charged"),
+    fully: dmgNode("atk", dm.charged.fully, "charged", { hit: { ele: constant(elementKey) } }),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+    dmg: dmgNode("atk", dm.skill.dmg, "skill"),
   },
   burst: {
-    dmg: dmgNode("def", datamine.burst.dmg_def, "burst"),
-    crystalCollapse: dmgNode("def", datamine.burst.crystalDmg_def, "burst")
+    dmg: dmgNode("def", dm.burst.dmg_def, "burst"),
+    crystalCollapse: dmgNode("def", dm.burst.crystalDmg_def, "burst")
   },
   constellation4: {
-    heal: greaterEq(input.constellation, 4, greaterEq(tally["geo"], 2, healNode("def", datamine.constellation4.heal_def_, 0)))
+    heal: greaterEq(input.constellation, 4, greaterEq(tally["geo"], 2, healNode("def", dm.constellation4.heal_def_, 0)))
   }
 }
 
@@ -153,7 +153,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal")
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
@@ -181,11 +181,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) })
       }, {
         text: stg("duration"),
-        value: datamine.skill.duration,
+        value: dm.skill.duration,
         unit: "s"
       }, {
         text: stg("cd"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s"
       }],
     }, ct.condTem("skill", {
@@ -223,19 +223,19 @@ const sheet: ICharacterSheet = {
       }, {
         node: infoMut(dmgFormulas.burst.crystalCollapse, {
           name: ct.chg(`burst.skillParams.1`),
-          multi: datamine.burst.crystalHits,
+          multi: dm.burst.crystalHits,
         }),
       }, {
         text: stg("duration"),
-        value: datamine.burst.duration,
+        value: dm.burst.duration,
         unit: "s"
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.enerCost
+        value: dm.burst.enerCost
       }]
     }, ct.condTem("passive1", {
       value: condAfterBurst,
@@ -248,7 +248,7 @@ const sheet: ICharacterSheet = {
             node: afterBurst_def_
           }, {
             text: stg("duration"),
-            value: datamine.passive1.duration,
+            value: dm.passive1.duration,
             unit: "s"
           }]
         }
@@ -278,7 +278,7 @@ const sheet: ICharacterSheet = {
             node: c6_geo_critDMG_
           }, {
             text: stg("duration"),
-            value: datamine.constellation6.duration,
+            value: dm.constellation6.duration,
             unit: "s"
           }]
         }

@@ -15,7 +15,7 @@ const elementKey: ElementKey = "hydro"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, c6i = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++],
@@ -81,57 +81,57 @@ const [condC6Path, condC6] = cond(key, "c6")
 
 const burstNormalDmgInc = equal(condBurst, "on", prod(
   sum(
-    subscript(input.total.burstIndex, datamine.burst.nBonus_, { unit: "%" }),
-    greaterEq(input.asc, 4, prod(percent(datamine.p2.heal_ratio_), input.premod.heal_)),
+    subscript(input.total.burstIndex, dm.burst.nBonus_, { unit: "%" }),
+    greaterEq(input.asc, 4, prod(percent(dm.p2.heal_ratio_), input.premod.heal_)),
   ),
   input.premod.hp), { variant: "invalid" })
 const burstChargedDmgInc = equal(condBurst, "on", prod(
   sum(
-    subscript(input.total.burstIndex, datamine.burst.cBonus_, { unit: "%" }),
-    greaterEq(input.asc, 4, prod(percent(datamine.p2.heal_ratio_), input.premod.heal_)),
+    subscript(input.total.burstIndex, dm.burst.cBonus_, { unit: "%" }),
+    greaterEq(input.asc, 4, prod(percent(dm.p2.heal_ratio_), input.premod.heal_)),
   ),
   input.premod.hp), { variant: "invalid" })
 const burstSkillDmgInc = equal(condBurst, "on", prod(
-  subscript(input.total.burstIndex, datamine.burst.sBonus_, { unit: "%" }),
+  subscript(input.total.burstIndex, dm.burst.sBonus_, { unit: "%" }),
   input.premod.hp))
 
-const passiveHeal_ = constant(datamine.p.heal_)
-const passiveCritRate_ = constant(datamine.p.critRate_)
+const passiveHeal_ = constant(dm.p.heal_)
+const passiveCritRate_ = constant(dm.p.critRate_)
 const c2SkillHeal = greaterEq(input.constellation, 2,
   equal(condC2, "on",
-    prod(percent(datamine.c2.s_heal_), input.total.hp)
+    prod(percent(dm.c2.s_heal_), input.total.hp)
   )
 )
 const c2BurstHeal = greaterEq(input.constellation, 2,
   equal(condC2, "on",
-    prod(percent(datamine.c2.nc_heal_), input.total.hp)
+    prod(percent(dm.c2.nc_heal_), input.total.hp)
   )
 )
-const c4AtkSpd_ = greaterEq(input.constellation, 4, datamine.c4.atkSPD_)
-const c6Hydro_ = greaterEq(input.constellation, 6, equal(condC6, "on", datamine.c6.hydro_))
+const c4AtkSpd_ = greaterEq(input.constellation, 4, dm.c4.atkSPD_)
+const c6Hydro_ = greaterEq(input.constellation, 6, equal(condC6, "on", dm.c6.hydro_))
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg: dmgNode("atk", datamine.charged.dmg, "charged"),
+    dmg: dmgNode("atk", dm.charged.dmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
-    heal: healNodeTalent("hp", datamine.skill.heal_, datamine.skill.heal, "skill",
+    dmg: dmgNode("atk", dm.skill.dmg, "skill"),
+    heal: healNodeTalent("hp", dm.skill.heal_, dm.skill.heal, "skill",
       { premod: { healInc: c2SkillHeal } }
     )
   },
   burst: {
-    dmg: dmgNode("hp", datamine.burst.dmg, "burst"),
-    heal: healNodeTalent("hp", datamine.burst.heal_, datamine.burst.heal, "burst",
+    dmg: dmgNode("hp", dm.burst.dmg, "burst"),
+    heal: healNodeTalent("hp", dm.burst.heal_, dm.burst.heal, "burst",
       { premod: { healInc: c2BurstHeal } }
     )
   },
   constellation1: {
-    dmg: greaterEq(input.constellation, 1, customDmgNode(prod(input.total.hp, percent(datamine.c1.hp_)), "elemental", {
+    dmg: greaterEq(input.constellation, 1, customDmgNode(prod(input.total.hp, percent(dm.c1.hp_)), "elemental", {
       hit: { ele: constant(elementKey) }
     }))
   }
@@ -169,7 +169,7 @@ const sheet: ICharacterSheet = {
   talent: {  auto: ct.talentTem("auto", [{
         text: ct.chg("auto.fields.normal"),
       }, {
-        fields: datamine.normal.hitArr.map((_, i) => ({
+        fields: dm.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) })
         }))
       }, {
@@ -179,7 +179,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.3`) })
         }, {
           text: ct.chg("auto.skillParams.4"),
-          value: datamine.charged.stamina,
+          value: dm.charged.stamina,
         }]
       }, {
         text: ct.chg("auto.fields.plunging"),
@@ -200,11 +200,11 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.1`) }),
         }, {
           text: ct.chg("skill.skillParams.2"),
-          value: datamine.skill.duration,
+          value: dm.skill.duration,
           unit: "s"
         }, {
           text: ct.chg("skill.skillParams.3"),
-          value: datamine.skill.cd,
+          value: dm.skill.cd,
           unit: "s"
         }]
       }]),
@@ -214,11 +214,11 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) }),
         }, {
           text: ct.chg("burst.skillParams.6"),
-          value: datamine.burst.cd,
+          value: dm.burst.cd,
           unit: "s"
         }, {
           text: ct.chg("burst.skillParams.7"),
-          value: datamine.burst.enerCost,
+          value: dm.burst.enerCost,
         }]
       }, ct.condTem("burst", {
         value: condBurst,
@@ -236,7 +236,7 @@ const sheet: ICharacterSheet = {
               node: infoMut(dmgFormulas.burst.heal, { name: ct.chg(`burst.skillParams.4`), variant: "heal" }),
             }, {
               text: ct.chg("burst.skillParams.5"),
-              value: datamine.burst.duration,
+              value: dm.burst.duration,
               unit: "s"
             }]
           }
