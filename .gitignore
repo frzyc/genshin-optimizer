@@ -37,3 +37,6 @@ _TEMPLATE
 # template files
 TEMPLATE*
 *_ignore.png
+
+# pipeline
+pipeline

@@ -51,7 +51,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "check-types": "tsc --noEmit",
-    "audit": "npm audit --production"
+    "audit": "npm audit --production",
+    "pull": "git pull && cd ./pipeline && npm run pull"
   },
   "eslintConfig": {
     "extends": [
