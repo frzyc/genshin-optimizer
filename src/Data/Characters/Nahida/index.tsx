@@ -123,7 +123,6 @@ const a1InBurst_eleMasDisp = greaterEq(input.asc, 1,
 )
 const a1InBurst_eleMas = equal(input.activeCharKey, target.charKey, a1InBurst_eleMasDisp)
 
-// TODO: Verify if this is premod or total eleMas. Should be total.
 const a4Karma_dmg_ = greaterEq(input.asc, 4,
   min(
     prod(
@@ -150,6 +149,13 @@ const a4Karma_critRate_ = greaterEq(input.asc, 4,
   ),
   { unit: "%" }
 )
+
+const triKarmaAddl = {
+  premod: {
+    skill_dmg_: sum(a4Karma_dmg_, burst_karma_dmg_),
+    skill_critRate_: a4Karma_critRate_
+  }
+}
 
 const [condC2BloomPath, condC2Bloom] = cond(key, "c2Bloom")
 const c2Burning_critRate_ = greaterEq(input.constellation, 2,
@@ -202,13 +208,12 @@ const dmgFormulas = {
         ),
       ),
       "skill",
-      {
-        premod: {
-          skill_dmg_: sum(burst_karma_dmg_, a4Karma_dmg_),
-          skill_critRate_: a4Karma_critRate_
-        }
-      }
+      triKarmaAddl
     )
+  },
+  passive2: {
+    a4Karma_dmg_,
+    a4Karma_critRate_
   },
   constellation6: {
     dmg: greaterEq(input.constellation, 6, customDmgNode(
@@ -222,7 +227,8 @@ const dmgFormulas = {
           input.total.eleMas
         ),
       ),
-      "skill"
+      "skill",
+      triKarmaAddl
     ))
   }
 }
@@ -334,9 +340,9 @@ const sheet: ICharacterSheet = {
       }]
     }), ct.headerTem("passive2", {
       fields: [{
-        node: infoMut(a4Karma_dmg_, { name: ct.ch(`karmaDmg_`) })
+        node: infoMut(dmgFormulas.passive2.a4Karma_dmg_, { name: ct.ch(`karmaDmg_`) })
       }, {
-        node: infoMut(a4Karma_critRate_, { name: ct.ch(`karmaCritRate_`) })
+        node: infoMut(dmgFormulas.passive2.a4Karma_critRate_, { name: ct.ch(`karmaCritRate_`) })
       }]
     }), ct.condTem("constellation2", {
       teamBuff: true,
