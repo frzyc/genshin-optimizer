@@ -18,7 +18,7 @@ const elementKey: ElementKey = "dendro"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -90,24 +90,24 @@ const [condPartyInBurstPath, condPartyInBurst] = cond(key, "partyInBurst")
 const pyroLevel = sum(tally.pyro, greaterEq(input.constellation, 1, 1))
 const burst_karma_dmg_ = equal(condPartyInBurst, "on", greaterEq(pyroLevel, 1,
   compareEq(pyroLevel, 1,
-    subscript(input.total.burstIndex, datamine.burst.dmg_1),
-    subscript(input.total.burstIndex, datamine.burst.dmg_2)
+    subscript(input.total.burstIndex, dm.burst.dmg_1),
+    subscript(input.total.burstIndex, dm.burst.dmg_2)
   )
 ), { unit: "%" })
 
 const electroLevel = sum(tally.electro, greaterEq(input.constellation, 1, 1))
 const burst_skillIntervalDec = equal(condPartyInBurst, "on", greaterEq(electroLevel, 1,
   compareEq(electroLevel, 1,
-    subscript(input.total.burstIndex, datamine.burst.intervalDec_1),
-    subscript(input.total.burstIndex, datamine.burst.intervalDec_2)
+    subscript(input.total.burstIndex, dm.burst.intervalDec_1),
+    subscript(input.total.burstIndex, dm.burst.intervalDec_2)
   )
 ), { unit: "%" })
 
 const hydroLevel = sum(tally.hydro, greaterEq(input.constellation, 1, 1))
 const burst_durationInc = equal(condPartyInBurst, "on", greaterEq(hydroLevel, 1,
   compareEq(hydroLevel, 1,
-    subscript(input.total.burstIndex, datamine.burst.durationInc1),
-    subscript(input.total.burstIndex, datamine.burst.durationInc2)
+    subscript(input.total.burstIndex, dm.burst.durationInc1),
+    subscript(input.total.burstIndex, dm.burst.durationInc2)
   )
 ), { unit: "%" })
 
@@ -115,8 +115,8 @@ const [condA1ActiveInBurstPath, condA1ActiveInBurst] = cond(key, "condA1ActiveIn
 const a1InBurst_eleMasDisp = greaterEq(input.asc, 1,
   equal(condA1ActiveInBurst, "on",
     min(
-      prod(percent(datamine.passive1.eleMas_), tally.maxEleMas),
-      datamine.passive1.maxEleMas
+      prod(percent(dm.passive1.eleMas_), tally.maxEleMas),
+      dm.passive1.maxEleMas
     )
   ),
   { ...KeyMap.info("eleMas"), isTeamBuff: true }
@@ -127,39 +127,39 @@ const a1InBurst_eleMas = equal(input.activeCharKey, target.charKey, a1InBurst_el
 const a4Karma_dmg_ = greaterEq(input.asc, 4,
   min(
     prod(
-      percent(datamine.passive2.eleMas_dmg_),
+      percent(dm.passive2.eleMas_dmg_),
       max(
-        sum(input.total.eleMas, -datamine.passive2.eleMas_min),
+        sum(input.total.eleMas, -dm.passive2.eleMas_min),
         0
       )
     ),
-    percent(datamine.passive2.eleMas_dmg_ * datamine.passive2.eleMas_maxCounted)
+    percent(dm.passive2.eleMas_dmg_ * dm.passive2.eleMas_maxCounted)
   ),
   { unit: "%" }
 )
 const a4Karma_critRate_ = greaterEq(input.asc, 4,
   min(
     prod(
-      percent(datamine.passive2.eleMas_critRate_),
+      percent(dm.passive2.eleMas_critRate_),
       max(
-        sum(input.total.eleMas, -datamine.passive2.eleMas_min),
+        sum(input.total.eleMas, -dm.passive2.eleMas_min),
         0
       )
     ),
-    percent(datamine.passive2.eleMas_critRate_ * datamine.passive2.eleMas_maxCounted)
+    percent(dm.passive2.eleMas_critRate_ * dm.passive2.eleMas_maxCounted)
   ),
   { unit: "%" }
 )
 
 const [condC2BloomPath, condC2Bloom] = cond(key, "c2Bloom")
 const c2Burning_critRate_ = greaterEq(input.constellation, 2,
-  equal(condC2Bloom, "on", percent(datamine.constellation2.critRate_))
+  equal(condC2Bloom, "on", percent(dm.constellation2.critRate_))
 )
 const c2Bloom_critRate_ = {...c2Burning_critRate_}
 const c2Hyperbloom_critRate_ = {...c2Burning_critRate_}
 const c2Burgeon_critRate_ = {...c2Burning_critRate_}
 const c2Burning_critDMG_ = greaterEq(input.constellation, 2,
-  equal(condC2Bloom, "on", percent(datamine.constellation2.critDMG_))
+  equal(condC2Bloom, "on", percent(dm.constellation2.critDMG_))
 )
 const c2Bloom_critDMG_ = {...c2Burning_critDMG_}
 const c2Hyperbloom_critDMG_ = {...c2Burning_critDMG_}
@@ -167,7 +167,7 @@ const c2Burgeon_critDMG_ = {...c2Burning_critDMG_}
 
 const [condC2QSAPath, condC2QSA] = cond(key, "c2QSA")
 const c2qsa_DefRed_ = greaterEq(input.constellation, 2,
-  equal(condC2QSA, "on", percent(datamine.constellation2.defDec_))
+  equal(condC2QSA, "on", percent(dm.constellation2.defDec_))
 )
 
 const [condC4CountPath, condC4Count] = cond(key, "c4Count")
@@ -175,29 +175,29 @@ const c4CountArr = range(1, 4)
 const c4_eleMas = greaterEq(input.constellation, 4,
   lookup(condC4Count, Object.fromEntries(c4CountArr.map(count => [
     count,
-    subscript(constant(count - 1), [...datamine.constellation4.eleMas])
+    subscript(constant(count - 1), [...dm.constellation4.eleMas])
   ])), naught)
 )
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg: dmgNode("atk", datamine.charged.dmg, "charged"),
+    dmg: dmgNode("atk", dm.charged.dmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    pressDmg: dmgNode("atk", datamine.skill.pressDmg, "skill"),
-    holdDmg: dmgNode("atk", datamine.skill.holdDmg, "skill"),
+    pressDmg: dmgNode("atk", dm.skill.pressDmg, "skill"),
+    holdDmg: dmgNode("atk", dm.skill.holdDmg, "skill"),
     karmaDmg: customDmgNode(
       sum(
         prod(
-          subscript(input.total.skillIndex, datamine.skill.karmaAtkDmg, { unit: "%" }),
+          subscript(input.total.skillIndex, dm.skill.karmaAtkDmg, { unit: "%" }),
           input.total.atk
         ),
         prod(
-          subscript(input.total.skillIndex, datamine.skill.karmaEleMasDmg, { unit: "%" }),
+          subscript(input.total.skillIndex, dm.skill.karmaEleMasDmg, { unit: "%" }),
           input.total.eleMas
         ),
       ),
@@ -214,11 +214,11 @@ const dmgFormulas = {
     dmg: greaterEq(input.constellation, 6, customDmgNode(
       sum(
         prod(
-          percent(datamine.constellation6.atkDmg),
+          percent(dm.constellation6.atkDmg),
           input.total.atk
         ),
         prod(
-          percent(datamine.constellation6.eleMasDmg),
+          percent(dm.constellation6.eleMasDmg),
           input.total.eleMas
         ),
       ),
@@ -267,7 +267,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
@@ -277,7 +277,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.4`) }),
       }, {
         text: ct.chg("auto.skillParams.5"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }]
     }, {
       text: ct.chg(`auto.fields.plunging`),
@@ -303,22 +303,22 @@ const sheet: ICharacterSheet = {
         value: (data) => {
           const intervalDec = +data.get(burst_skillIntervalDec).value.toFixed(2)
           return intervalDec !== 0
-            ? `${datamine.skill.triggerInterval}s - ${intervalDec}s = ${datamine.skill.triggerInterval - intervalDec}`
-            : datamine.skill.triggerInterval
+            ? `${dm.skill.triggerInterval}s - ${intervalDec}s = ${dm.skill.triggerInterval - intervalDec}`
+            : dm.skill.triggerInterval
         },
         unit: "s",
         fixed: 1
       }, {
         text: ct.chg("skill.skillParams.4"),
-        value: datamine.skill.duration,
+        value: dm.skill.duration,
         unit: "s"
       }, {
         text: st("pressCD"),
-        value: datamine.skill.pressCd,
+        value: dm.skill.pressCd,
         unit: "s"
       }, {
         text: st("holdCD"),
-        value: datamine.skill.holdCd,
+        value: dm.skill.holdCd,
         unit: "s"
       }],
     }, ct.headerTem("burst", {
@@ -401,18 +401,18 @@ const sheet: ICharacterSheet = {
         value: (data) => {
           const durInc = +data.get(burst_durationInc).value.toFixed(2)
           return durInc !== 0
-            ? `${datamine.burst.duration}s + ${durInc}s = ${datamine.burst.duration + durInc}`
-            : datamine.burst.duration
+            ? `${dm.burst.duration}s + ${durInc}s = ${dm.burst.duration + durInc}`
+            : dm.burst.duration
         },
         unit: "s",
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s",
         fixed: 1
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.energyCost,
+        value: dm.burst.energyCost,
       }]
     }, ct.condTem("burst", {
       path: condPartyInBurstPath,
