@@ -43,7 +43,7 @@ export default function PageScanner() {
             </Box>
 
             <Typography variant="subtitle2" sx={{ display: "flex", gap: 1, py: 1, flexWrap: "wrap" }}>
-              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.1</SqBadge>
+              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.2</SqBadge>
               <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Computer sx={{ pr: 0.5 }} />{t("tags.pc") as string}</SqBadge>
               <SqBadge sx={{ display: "flex", alignItems: "center" }} ><SendToMobile sx={{ pr: 0.5 }} />{t("tags.mobile") as string}</SqBadge>
               <SqBadge sx={{ display: "flex", alignItems: "center" }} ><SportsEsports sx={{ pr: 0.5 }} />{t("tags.ps") as string}</SqBadge>
@@ -71,7 +71,7 @@ export default function PageScanner() {
             </Box>
 
             <Typography variant="subtitle2" sx={{ display: "flex", gap: 1, py: 1, flexWrap: "wrap" }}>
-              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.0</SqBadge>
+              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.2</SqBadge>
               <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Computer sx={{ pr: 0.5 }} />{t("tags.pc") as string}</SqBadge>
               <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Backpack sx={{ pr: 0.5 }} />{t("tags.materials") as string}</SqBadge>
               <SqBadge sx={{ display: "flex", alignItems: "center" }} ><PersonSearch sx={{ pr: 0.5 }} />{t("tags.characters") as string}</SqBadge>
@@ -99,7 +99,7 @@ export default function PageScanner() {
             </Box>
 
             <Typography variant="subtitle2" sx={{ display: "flex", gap: 1, py: 1, flexWrap: "wrap" }}>
-              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.1</SqBadge>
+              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.2</SqBadge>
               <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Computer sx={{ pr: 0.5 }} />{t("tags.pc") as string}</SqBadge>
               <WarningWrapper>
                 <SqBadge color="warning" sx={{ display: "flex", alignItems: "center" }} ><Warning sx={{ pr: 0.5 }} />{t("tags.gameMani") as string}</SqBadge>
