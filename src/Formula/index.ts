@@ -20,6 +20,7 @@ const allMisc = [
   "stamina", "staminaDec_", "staminaSprintDec_", "staminaGlidingDec_", "staminaChargedDec_",
   "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_", "dmgRed_", "healInc"
 ] as const
+const allBase = ["base_atk", "base_hp", "base_def"] as const
 
 const allModStats = [
   ...allArtModStats,
@@ -38,6 +39,7 @@ const allNonModStats = [
   ...allEleEnemyResKeys,
   "enemyDefRed_" as const,
   ...allMisc,
+  ...allBase,
 ] as const
 
 export const allInputPremodKeys = [...allModStats, ...allNonModStats] as const
@@ -156,6 +158,7 @@ const baseAmpBonus = infoMut(sum(one, prod(25 / 9, frac(total.eleMas, 1400))), {
 const baseAddBonus = sum(one, prod(5, frac(total.eleMas, 1200)))
 
 const common: Data = {
+  base: objectKeyMap(["atk", "def", "hp"], key => input.customBonus[`base_${key}`]),
   premod: {
     ...objectKeyMap(allTalents, talent => bonus[talent]),
     ...objectKeyMap(allNonModStats, key => {

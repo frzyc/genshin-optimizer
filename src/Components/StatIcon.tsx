@@ -24,12 +24,15 @@ const uncoloredEleIcons = {
 const StatIcon = {
   hp_: <FontAwesomeIcon icon={faHp as any} />,
   hp: <FontAwesomeIcon icon={faHp as any} />,
+  base_hp: <FontAwesomeIcon icon={faHp as any} />,
 
   atk_: <FontAwesomeIcon icon={faAtk as any} />,
   atk: <FontAwesomeIcon icon={faAtk as any} />,
+  base_atk: <FontAwesomeIcon icon={faAtk as any} />,
 
   def_: <FontAwesomeIcon icon={faDef as any} />,
   def: <FontAwesomeIcon icon={faDef as any} />,
+  base_def: <FontAwesomeIcon icon={faDef as any} />,
 
   eleMas: <FontAwesomeIcon icon={faElementalMastery as any} />,
   critRate_: <FontAwesomeIcon icon={faCritRate as any} />,

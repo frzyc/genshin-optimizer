@@ -1,6 +1,7 @@
-import { EleEnemyResKey, StatKey } from "../KeyMap";
+import { input } from "../Formula";
+import { EleEnemyResKey } from "../KeyMap";
 import { MainStatKey } from "./artifact";
-import { AdditiveReactionKey, AmpReactionKey, ArtifactRarity, Ascension, CharacterKey, ElementKey, HitModeKey, InfusionAuraElements, SlotKey, SubstatType } from "./consts";
+import { AdditiveReactionKey, AmpReactionKey, ArtifactRarity, Ascension, CharacterKey, HitModeKey, InfusionAuraElements, SlotKey, SubstatType } from "./consts";
 import { IConditionalValues } from "./IConditional";
 
 export interface CustomTarget {
@@ -31,7 +32,7 @@ export interface ICharacter {
   hitMode: HitModeKey
   reaction?: AmpReactionKey | AdditiveReactionKey
   conditional: IConditionalValues
-  bonusStats: Partial<Record<StatKey, number>>
+  bonusStats: Partial<Record<keyof typeof input["customBonus"], number>>
   enemyOverride: Partial<Record<EleEnemyResKey | "enemyLevel" | "enemyDefRed_" | "enemyDefIgn_", number>>
   infusionAura: InfusionAuraElements | ""
   compareData: boolean
