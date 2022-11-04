@@ -63,6 +63,11 @@ const statMap = {
   skillBoost: "Ele. Skill Level Boost",
   burstBoost: "Ele. Burst Level Boost",
 
+  // Modifiable base stats
+  base_atk: "Base ATK",
+  base_hp: "Base HP",
+  base_def: "Base DEF",
+
   level: "Level",
 } as const
 

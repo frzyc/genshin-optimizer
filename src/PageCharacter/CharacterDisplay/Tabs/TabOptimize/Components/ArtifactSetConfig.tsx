@@ -41,38 +41,27 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   const [dbDirty, forceUpdate] = useForceUpdate()
   useEffect(() => database.arts.followAny(forceUpdate), [database, forceUpdate])
 
-  const artKeys = useMemo(() => artifactSheets && Object.entries(ArtifactSheet.setKeysByRarities(artifactSheets))
-    .reverse()
-    .flatMap(([, sets]) => sets)
-    .filter(key => !key.includes("Prayers")),
-  [artifactSheets])
-  const artSlotCount = useMemo(() => {
-    const artSlotCount: Dict<ArtifactSetKey, Record<SlotKey, number>> = artKeys
-      ? Object.fromEntries(artKeys.map(k => [k, Object.fromEntries(allSlotKeys.map(sk => [sk, 0]))]))
-      : {}
-    database.arts.values.map(art => artSlotCount[art.setKey] && artSlotCount[art.setKey]![art.slotKey]++)
-    return dbDirty && artSlotCount
-  }, [dbDirty, database, artKeys])
-  const artSetKeyList = useMemo(() => artKeys
-    ? artKeys.sort((a, b) => {
-      const aCount = getNumSlots(artSlotCount[a])
-      const bCount = getNumSlots(artSlotCount[b])
-      if (aCount < bCount) return 1
-      if (aCount > bCount) return -1
-      return 0
-    })
-    : [],
-  [artSlotCount, artKeys])
+  const artKeysByRarity = useMemo(() => artifactSheets
+    ? Object.entries(ArtifactSheet.setKeysByRarities(artifactSheets))
+      .reverse().flatMap(([, sets]) => sets)
+      .filter(key => !key.includes("Prayers"))
+    : [], [artifactSheets])
+  const { artKeys, artSlotCount } = useMemo(() => {
+    const artSlotCount = objectKeyMap(artKeysByRarity, _ => objectKeyMap(allSlotKeys, _ => 0))
+    database.arts.values.forEach(art => artSlotCount[art.setKey] && artSlotCount[art.setKey]![art.slotKey]++)
+    const artKeys = [...artKeysByRarity].sort((a, b) =>
+      +(getNumSlots(artSlotCount[a]) < 2) - +(getNumSlots(artSlotCount[b]) < 2))
+    return dbDirty && { artKeys, artSlotCount }
+  }, [dbDirty, database, artKeysByRarity])
 
   const allowRainbow2 = !artSetExclusion.rainbow?.includes(2)
   const allowRainbow4 = !artSetExclusion.rainbow?.includes(4)
 
-  const { allow2, allow4, exclude2, exclude4 } = useMemo(() => ({
-    allow2: artSetKeyList.filter(k => !artSetExclusion[k]?.includes(2)).length,
-    allow4: artSetKeyList.filter(k => !artSetExclusion[k]?.includes(4)).length,
-    exclude2: artSetKeyList.filter(k => artSetExclusion[k]?.includes(2)).length,
-    exclude4: artSetKeyList.filter(k => artSetExclusion[k]?.includes(4)).length,
-  }), [artSetKeyList, artSetExclusion])
+  const { allow2, allow4 } = useMemo(() => ({
+    allow2: artKeysByRarity.filter(k => !artSetExclusion[k]?.includes(2)).length,
+    allow4: artKeysByRarity.filter(k => !artSetExclusion[k]?.includes(4)).length,
+  }), [artKeysByRarity, artSetExclusion])
+  const exclude2 = artKeysByRarity.length - allow2, exclude4 = artKeysByRarity.length - allow4
   const artifactCondCount = useMemo(() =>
     (Object.keys(conditional)).filter(k =>
       allArtifactSets.includes(k as ArtifactSetKey) && Object.keys(conditional[k]).length !== 0).length
@@ -88,13 +77,13 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   const setAllExclusion = useCallback(
     (setnum: number, exclude = true) => {
       const artSetExclusion_ = deepClone(artSetExclusion)
-      artSetKeyList.forEach(k => {
+      artKeysByRarity.forEach(k => {
         if (exclude) artSetExclusion_[k] = [...(artSetExclusion_[k] ?? []), setnum];
         else if (artSetExclusion_[k]) artSetExclusion_[k] = artSetExclusion_[k].filter(n => n !== setnum);
       })
       buildSettingDispatch({ artSetExclusion: artSetExclusion_ })
     },
-    [artSetKeyList, artSetExclusion, buildSettingDispatch],
+    [artKeysByRarity, artSetExclusion, buildSettingDispatch],
   )
 
   return <>
@@ -161,7 +150,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
           </Grid>
         </Grid>
         <Grid container spacing={1} columns={{ xs: 2, lg: 3 }}>
-          {artSetKeyList.map(setKey => {
+          {artKeys.map(setKey => {
             return <ArtifactSetCard key={setKey} setKey={setKey} sheet={artifactSheets(setKey)} fakeDataContextObj={fakeDataContextObj} slotCount={artSlotCount[setKey]!} />
           })}
         </Grid>
@@ -237,6 +226,6 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
   </Grid >
 }
 
-function getNumSlots(slotCount: Record<string, number> | undefined): number {
-  return slotCount ? Object.values(slotCount).reduce((tot, v) => tot + (v ? 1 : 0), 0) : 0
+function getNumSlots(slotCount: Record<string, number>): number {
+  return Object.values(slotCount).reduce((tot, v) => tot + (v ? 1 : 0), 0)
 }
